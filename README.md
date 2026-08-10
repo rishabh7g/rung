@@ -1,26 +1,39 @@
-# bhasha (भाषा)
+# Shidi (शिडी — "ladder")
 
-A language-learning app. First language: **Marathi** — but the architecture
-treats Marathi as the first instance of a general "language pack", so any
-language can be added later. *bhasha* is the Marathi word for "language".
+A ladder of checkpoints for learning a language — not a timeline. First pair:
+**Hindi (L1) → Marathi (L2)**. A fully offline, installable, mobile-first PWA:
+no backend, no accounts, no audio, no runtime AI. Built by one person, for one
+friend.
 
-**Status:** project setup — awaiting the requirements document
-(`docs/00-requirements.md`). The full plan and GitHub issue set are derived
-from it.
+*Shidi* (शिडी) is Marathi for "ladder" — the core metaphor: a fixed sequence of
+10 modules ("rungs"), each exited only by **writing** a novel "11th sentence"
+of the same complexity, verified by a human.
 
-## How this repo works
+## Start here
 
-- Every change is tracked by a **GitHub issue**; one PR per issue; squash-merge.
-- `main` is always deployable; verify on the running instance before closing an issue.
-- Issues are grouped into **milestones** (e.g. data + backend → frontend →
-  integration) and written so a junior developer can pick any ready ticket and
-  implement it without follow-up questions.
-- To pick your next ticket: take any issue in the current milestone whose
-  "Depends on" issues are all closed.
-
-## Layout
-
-| Path | Purpose |
+| Doc | What it is |
 |---|---|
-| `docs/00-requirements.md` | Product requirements (source of truth) |
-| `docs/01-plan.md` | Architecture + milestone plan (written after requirements land) |
+| [`docs/PRD-engineering.md`](docs/PRD-engineering.md) | Canonical engineering PRD — features F1–F9, phases P0–P5 |
+| [`docs/PRD-design.md`](docs/PRD-design.md) | Canonical design PRD — flows, screens, components, tone |
+| [`docs/01-plan.md`](docs/01-plan.md) | Implementation plan: stack, layout, data contracts, Devanagari primer. **Read before your first ticket.** |
+| [`design/`](design/) | Design mockups + tokens (added by Rishabh as milestone D completes) |
+
+## How work happens
+
+- Every change is a **GitHub issue**; one PR per issue; PR title references the
+  issue; **squash-merge**; `main` is always deployable.
+- Issues live in milestones: **D** (design track, Rishabh) and **P0–P5**
+  (engineering, in order).
+- **Picking your next ticket:** open issues in the lowest unfinished milestone
+  → no assignee → every issue linked under "Depends on" is closed → assign
+  yourself, branch, go.
+- The **7 product invariants** (identical in both PRDs, §2) are contractual.
+  Politely reject scope creep: no audio, no runtime AI, no backend, no
+  gamification, no calendar framing.
+
+## Quick facts
+
+- Stack: Vite + React + TypeScript PWA; all state in `localStorage`; content is
+  static, native-speaker-verified JSON. Details and rationale: `docs/01-plan.md`.
+- The app only ever gives deterministic, pre-authored feedback (Invariant 4).
+  Novel sentences are verified by humans via a designed copy-paste hand-off.
