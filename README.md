@@ -18,6 +18,7 @@ fixed sequence of 10 modules ("rungs"), each exited only by **writing** a novel
 | [`docs/01-plan.md`](docs/01-plan.md) | Implementation plan: stack, layout, data contracts, Devanagari primer. **Read before your first ticket.** |
 | [`design/`](design/) | Design mockups + tokens (added by Rishabh as milestone D completes) |
 | [`docs/design-contract.md`](docs/design-contract.md) | How to build UI against the design package — tokens, prototype fidelity, mobile rules |
+| [`docs/04-font-notes.md`](docs/04-font-notes.md) | What bundling Mukta + Barlow proved: the specimen, glyph coverage, shipped font bytes (#85) |
 
 ## Development
 
@@ -361,6 +362,28 @@ Two rules the scaffold bakes in, before you write a component:
   module and emits `public/content/` — see the gate table above. Never import from `content/`
   in `src/`: the app reads `public/content/` (via `fetch`), which is the only tree the gate
   has approved.
+
+### The fonts — bundled, because offline is the product
+
+Mukta (all Devanagari), Barlow (body/UI) and Barlow Condensed (headings, kickers, wordmark) are
+self-hosted via `@fontsource`, imported one line per weight in `src/main.tsx` (#85, [D15]). The
+prototype pulls Mukta off Google Fonts; a PWA that works on a plane cannot
+(`design/pwa-checklist.md` §2). `vite.config.ts` strips the `.woff` fallback @fontsource writes
+beside each `.woff2`, so `dist/` carries woff2 only — the service worker precaches all of it.
+
+**`src/fonts.test.ts` is the guard.** A weight the ramp asks for and the bundle lacks is not an
+error: the browser synthesises the face and nobody is told. So the test reads the `--text-*`
+shorthands out of `design/tokens.css`, derives every (family, weight) the product renders, and
+fails naming any that `main.tsx` does not import. That is how Barlow Condensed **700** got
+bundled — `--text-brand` is the wordmark and it is 700.
+
+**`#/dev/type`** is the font specimen: the Devanagari matrix at 18/22/26/32px × 400–700, the
+romanization diacritics, the kickers. It is **development only** — `src/dev/typeRoute.tsx`
+imports it dynamically inside an `import.meta.env.DEV` branch, so no chunk, no CSS and no
+Devanagari reaches `dist/` — and it is the single entry in `shellPurity.test.ts`'s allowlist.
+
+Findings, screenshots, the shipped byte count and the one real gap (`ʾ`, `ʿ` and `ḥ` are not in
+Barlow) are in [`docs/04-font-notes.md`](docs/04-font-notes.md).
 
 ## How work happens
 
