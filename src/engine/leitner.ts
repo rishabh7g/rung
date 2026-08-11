@@ -12,8 +12,7 @@
  * `src/engine/` is pure TypeScript: no React, no storage, no clock (docs/01-plan.md §3). Every
  * function here takes a queue and returns a NEW array — nothing is mutated, nothing is read from
  * outside its arguments, and the same input always produces the identical output. The store owns
- * when these run and what gets persisted (#95, #96, #103); this module owns only what the answer
- * is.
+ * when these run and what gets persisted (#96, #103); this module owns only what the answer is.
  *
  * **Enrolment policy — a sentence enters review when its module is PASSED.** Production ends,
  * maintenance begins: while a module is the current rung the learner is still building those
@@ -96,8 +95,10 @@ export function dueItems(queue: readonly ReviewItem[], max = 5): ReviewItem[] {
  *     otherwise for the next three sessions.
  *
  * A `sentenceId` the queue does not hold changes nothing. Review serves only what is enrolled, and
- * a mark on anything else belongs to the Produce counters (#95), which are a different number in a
- * different place.
+ * a mark on anything else belongs to the Produce counters — `recordProduction` in the store,
+ * `exitAvailable` in `engine/exit.ts` (#95) — which are a different number in a different place.
+ * The routing is the caller's (PRD §8 F4): a Review mark comes here and NEVER to the counters, a
+ * Produce mark goes there and never here.
  */
 export function applyMark(
   queue: readonly ReviewItem[],

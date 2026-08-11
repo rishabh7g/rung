@@ -99,7 +99,7 @@ describe('applyMark — missed', () => {
     }
   });
 
-  it('is a no-op for a sentence the queue does not hold — Produce marks are #95’s counters', () => {
+  it('is a no-op for a sentence the queue does not hold — Produce marks go to the counters', () => {
     const queue = [item('L1-M1-S01', 2, 3)];
 
     expect(applyMark(queue, 'L1-M2-S01', false)).toEqual(queue);

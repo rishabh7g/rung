@@ -20,7 +20,8 @@
  * `progressionInput` the store guards `passRitual` with, never stored. This component takes the
  * answer and renders it; it holds no state and reads none. The stage flips because the engine's
  * inputs changed: `markStudied` on first module open turns `fresh` into `studied` (#88), and the
- * production counters turn `studied` into `exit_ready` (#95).
+ * last got-it that brings every sentence to 2× turns `studied` into `exit_ready` — the production
+ * counters, read live through `screens/useExitAvailable.ts` (#95).
  *
  * **Every label is the course's** (`strings.json`, PRD §4) — the shell has no copy of its own, so
  * a Marathi learner reads Hindi here and an Arabic learner reads English, without this file

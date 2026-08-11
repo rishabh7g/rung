@@ -22,7 +22,8 @@
  *
  * **The card writes nothing** (Invariant 4). It emits `onResult({ sentenceId, gotIt })` when the
  * learner takes Next, and the parent decides what that means: a Review mark feeds the Leitner
- * queue, a Produce mark the production counters (#95, #96). Nothing here imports the store, and
+ * queue (`applyMark`), a Produce mark the production counters (`recordProduction`, #95) — and the
+ * session machine (#96) is the parent that routes them. Nothing here imports the store, and
  * the mark is only committed on Next — so a learner who taps "missed", thinks again and taps "got
  * it" sends one result, the one they meant.
  *

@@ -12,7 +12,10 @@
  *      and it is an effect because it is a write.
  *   3. **Assembles the engine's input** out of what the store then holds — the very
  *      `progressionInput` `passRitual` guards with, so a count on a screen and a rule in that
- *      action cannot disagree: they are one derivation.
+ *      action cannot disagree: they are one derivation. The one fact the store cannot supply is
+ *      `exitAvailable` (it needs the module's sentence ids, which are content), so this is also
+ *      where `useExitAvailable` (#95) is joined on — every screen that asks a progression question
+ *      gets the real counters, and no screen has an injection point to get them wrong with.
  *
  * It exists as a hook rather than as three copies because the Ladder is no longer the only screen
  * that needs it: the module list guards its route on `deriveStatuses` (#88), and a deep link
@@ -24,15 +27,9 @@ import { useEffect, useMemo } from 'react';
 import { useCourse } from '../course/CourseProvider.tsx';
 import { useLevels, type AsyncContent } from '../course/content.ts';
 import type { Levels } from '../course/types.ts';
-import { ladderFromLevels, type ProgressionInput } from '../engine/progression.ts';
+import { currentRungId, ladderFromLevels, type ProgressionInput } from '../engine/progression.ts';
 import { progressionInput, useAppStore } from '../state/store.ts';
-
-/**
- * Nothing is exit-ready until the production counters exist (**#95**). The engine takes the fact
- * as an injected predicate, so this is the honest answer rather than a placeholder — and it is a
- * module constant so the memo below has a stable dependency.
- */
-export const NOTHING_EXIT_READY = () => false;
+import { useExitAvailable } from './useExitAvailable.ts';
 
 export interface Progression {
   /** The raw ladder, for the screens that render its names and taglines. */
@@ -46,9 +43,7 @@ export interface Progression {
   ready: boolean;
 }
 
-export function useProgression(
-  exitAvailable: (moduleId: string) => boolean = NOTHING_EXIT_READY,
-): Progression {
+export function useProgression(): Progression {
   const { course } = useCourse();
   const levels = useLevels();
   const setLadder = useAppStore((store) => store.setLadder);
@@ -63,6 +58,14 @@ export function useProgression(
   useEffect(() => {
     if (ladder !== null) setLadder(course.id, ladder);
   }, [course.id, ladder, setLadder]);
+
+  /**
+   * Which rung the learner is on, asked before the exit predicate exists — which is not circular:
+   * `currentRungId` reads the ladder and the passed set only, and never `exitAvailable`. The rung
+   * is what `useExitAvailable` needs, because the counters answer per module (#95).
+   */
+  const rung = useMemo(() => currentRungId(progressionInput(state, course.id)), [state, course.id]);
+  const exitAvailable = useExitAvailable(rung);
 
   const input = useMemo(
     () => progressionInput(state, course.id, exitAvailable),

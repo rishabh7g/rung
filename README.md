@@ -281,9 +281,9 @@ date in the whole document is `passedAt` on a passed module.
   P4). It stays **thin, and free of rules**: `ensureCourse` (idempotent — an existing course
   returns the same object, so no write can blank a ladder), `setActiveCourse` (a bare pointer swap;
   the learner-facing switch flow with its toast is #106), `setSetting`, `setLadder` /`markStudied` /
-  `passRitual` (progression, below — every rule they obey is derived in the engine), and `_reset()`
-  for dev and tests. Production and the review queue (#95) and the session snapshot (#96) bring
-  their own actions.
+  `passRitual` (progression, below — every rule they obey is derived in the engine),
+  `recordProduction` (the counters, below), and `_reset()` for dev and tests. The review queue
+  (#103) and the session snapshot (#96) bring their own actions.
 
 `store.test.ts` pins the initial shape against the literal the PRD prints, so drift is a red test
 rather than a discovery; the rest of it proves per-course isolation, a round trip through storage,
@@ -305,10 +305,8 @@ derived, never stored"):
 
 `ladderFromLevels(levels)` turns a course's `levels.json` into the engine's ladder; the two live
 facts arrive as **injected predicates** — `studied(id)` (the per-course flag) and `exitAvailable(id)`
-(every sentence produced ≥ 2×, whose real implementation lands with the production counters in #95;
-call sites pass `() => false` until then, which is what "no counters yet" honestly means).
-`progressionInput(state, courseId)` in the store assembles one from what a course actually holds, and
-the screens derive from the same input the store guards with.
+(every sentence produced ≥ 2×, below). `progressionInput(state, courseId)` in the store assembles one
+from what a course actually holds, and the screens derive from the same input the store guards with.
 
 Sealing counts a rung whose module has not been authored yet — hi-mr ships 2 of L1's 10 today, so L2
 stays sealed until the other 8 exist and are passed. That is the rule working: there is nothing to
@@ -327,6 +325,47 @@ action out of `store.ts` **by name** and fails if more than one contains a write
 the map (the call table is asserted to cover the store's whole action surface, so a new action
 cannot skip the check by being new); and it scans every shipped file for a `setState` call, because
 an action list is not a gate if a screen can write past it.
+
+### The production counters — the one number that opens the exit ritual
+
+`exit_available` is a single line of the PRD — "all sentences self-marked got-it ≥ 2×"
+(PRD-engineering §8 F1) — and it is the thing standing between the learner and the rung's exit
+ritual. Three pieces carry it (#95), on purpose: the rule is pure, the write is one action, and the
+join between them is a hook, because the answer needs a fact from each side of the app.
+
+| | |
+|---|---|
+| `src/engine/exit.ts` | pure — `exitAvailable(sentenceIds, production)` (every id ≥ 2) and `started(sentenceIds, production)` (any id ≥ 1), plus `PRODUCTIONS_PER_SENTENCE`, the `2` the module list's dots and its `n / 20` count read too |
+| `recordProduction(courseId, sentenceId)` | the store's counter action: `production[sentenceId] += 1`, and nothing else |
+| `src/screens/useExitAvailable.ts` | the join — this course's counters (state) against the current rung's sentence ids (content, loaded through the content layer's cache), handed to `progressionInput` as the real predicate |
+
+**An empty sentence list answers `false`**, never the vacuous "every sentence of nothing". That is
+what a caller says while a module file is in flight, or when it will not load at all, and answering
+"ready" there would open the exit ritual on a module nobody has read. The same reasoning is why the
+hook answers for **one module — the rung it was given**: the engine only ever asks about the current
+rung, and a module whose sentences have not been loaded is a module nobody can claim is finished.
+
+**The counters only ever count up.** There is no decrement, no reset, no undo and no ceiling: the
+only arithmetic in the action is `+ 1`. A number that can fall is a rung that can close again under
+a learner who did nothing wrong — and undo is not missing by oversight, because the mark commits on
+Next rather than on the tap ([D11]), which is where a mis-tap is corrected. A count above two is
+kept as it is: two is what the ritual asks for, not a cap on practice.
+
+`src/state/productionCounters.test.ts` is that promise's mechanical half, in the same three parts as
+`unlockPath.test.ts`: it slices every action out of `store.ts` **by name** and fails if more than one
+writes `production`, then reads that one for any arithmetic that could lower a counter (`--`, `-=`,
+a subtraction, a reset, a `delete`, even a careful `Math.max(0, …)` floor); it *calls* every action
+the store exposes against a seeded counter — twice through, so a refusal is covered too — and fails
+if any of them moves it, or moves it down; and it scans every shipped file for a counter write
+outside the store. Introduce `Math.max(0, produced - 1)` in the action and thirteen tests go red.
+
+**Routing (PRD-engineering §8 F4): only Produce got-its count.** A Review-phase mark feeds the
+Leitner queue (`applyMark` — a box and a countdown) and never these counters; they are different
+numbers in different places, because Review measures what is being kept and production measures what
+is being built. The distinction belongs to the caller — the self-mark control is deliberately
+identical in Review, Produce and Comprehension and cannot see a phase — so the session machine (#96)
+is the one caller, and `recordProduction`'s doc comment is the contract it wires against. No screen
+calls it yet; the Ladder and the module list only read what it writes.
 
 ### The Leitner scheduler — due in sessions, never in days
 
@@ -436,8 +475,10 @@ Three things it is responsible for keeping true:
 
 Loading that ladder and handing it to the store is `src/screens/useProgression.ts`, which the
 Ladder and the module list both start with: it fetches `levels.json`, calls `setLadder` from an
-effect when it resolves — which is what gives `passRitual` a rung to check against — and returns
-the assembled `progressionInput` plus a `ready` flag. Screens draw nothing until that flag is up
+effect when it resolves — which is what gives `passRitual` a rung to check against — joins on the
+real `exitAvailable` predicate (`useExitAvailable`, above: the current rung's counters against its
+sentence ids, so no screen has an injection point to get it wrong with), and returns the assembled
+`progressionInput` plus a `ready` flag. Screens draw nothing until that flag is up
 (`aria-busy`), because an empty input would render a *finished* ladder. It is a hook rather than
 a line in the Ladder because a deep link (`#/module/L1-M1`) reaches a guarded screen with the
 Ladder never having mounted.
@@ -467,8 +508,9 @@ the kicker, the title at `--text-rung-title`, the job, and **one CTA set, chosen
 
 The stage is `rungStage(input, id)` off the same `progressionInput` every other number on the
 screen derives from — so it moves when the facts do: `markStudied` on first module open flips
-`fresh` → `studied` (#88), the production counters flip `studied` → `exit_ready` (#95). Nothing
-about the card is stored, and it holds no state of its own.
+`fresh` → `studied` (#88), and the got-it that brings every sentence of the rung to 2× flips
+`studied` → `exit_ready` (#95 — read live off the counters, not injected). Nothing about the card
+is stored, and it holds no state of its own.
 
 **The stage guides; it never gates** (the invariant, PRD-design §6.2). The bottom nav's Practice
 tab is untouched at every stage — asserted per stage in `LadderScreen.test.tsx` — three of the
@@ -511,7 +553,9 @@ Four things it owes, and each is a test:
   "open full" → `/sentence/:id` — 250ms, `--motion-expand`, collapsed under `prefers-reduced-motion`.
   The open set lives in the screen, not in the cards, which is why one card opening never closes
   another. `module/ProductionDots.tsx` draws each sentence's two 6px dots off
-  `production[sentenceId]` (0 / 1 / ≥2), **read-only** until Practice writes the counters (#95).
+  `production[sentenceId]` (0 / 1 / ≥2), and the header's `n / 20` counts the same map — both
+  **read-only** here, live off what `recordProduction` writes (#95), so a row of full dots down the
+  list is the exit ritual unlocking, one sentence at a time.
 - **Where the learner was.** Scroll offset *and* open cards survive a detour into Sentence Detail,
   in **`sessionStorage`** (`module/moduleView.ts`, `rung:module-view:<course>:<module>`) and never
   in the store: `src/state/` is the export contract (#82), and which cards were open is this
@@ -628,8 +672,9 @@ Four things it promises, and each is a test (`RevealCard.test.tsx`, `SelfMark.te
   hidden `<input type="radio">`) could not be used: the segments are `<button aria-pressed>` in a
   `role="group"` named by the course's own question.
 - **The card writes nothing** (Invariant 4). It emits `onResult({ sentenceId, gotIt })` on Next and
-  the parent decides what that costs — Leitner for a Review mark, the production counters for a
-  Produce one (#95, #96). The mark commits on Next, not on the tap, so a learner who marks
+  the parent decides what that costs — `applyMark` for a Review mark, `recordProduction` for a
+  Produce one (#95), routed by the session machine (#96). The mark commits on Next, not on the tap,
+  so a learner who marks
   "missed", thinks again and marks "got it" sends one result: the one they meant. A test reads both
   source files and fails on `useAppStore`, `localStorage` or `sessionStorage`.
 

@@ -271,23 +271,24 @@ describe('a card', () => {
 /* ---------------------------------------------------------------- the dots */
 
 describe('the production dots', () => {
+  /** One Produce-phase got-it per call, through the store's one counter action (#95). */
+  function produce(...sentenceIds: string[]): void {
+    const { ensureCourse, recordProduction } = useAppStore.getState();
+    ensureCourse(COURSE);
+    for (const sentenceId of sentenceIds) recordProduction(COURSE, sentenceId);
+  }
+
   it('draw 0, 1 and ≥2 got-its off the store’s counters', async () => {
     const first = `${CURRENT}-S01`;
     const second = `${CURRENT}-S02`;
 
-    // The counters are written in Practice (#95); until that action exists, seeding the map is
-    // the only way to render the states this screen has to be able to draw.
-    useAppStore.getState().ensureCourse(COURSE);
-    useAppStore.setState((state) => ({
-      courses: {
-        ...state.courses,
-        [COURSE]: { ...state.courses[COURSE]!, production: { [first]: 1, [second]: 3 } },
-      },
-    }));
+    produce(first, second, second, second);
 
     await renderModule();
 
     expect(dots(0)).toEqual(['done', 'pending']);
+    // Three got-its draw the same two dots: two is what the ritual asks for, and there is
+    // nothing further to say about a sentence past it.
     expect(dots(1)).toEqual(['done', 'done']);
   });
 
@@ -296,6 +297,19 @@ describe('the production dots', () => {
 
     expect(dots(0)).toEqual(['pending', 'pending']);
     expect(dots(1)).toEqual(['pending', 'pending']);
+  });
+
+  it('fill as the got-its land, with no reload — the count above them follows', async () => {
+    await renderModule();
+    expect(screen.getByText('0 / 4')).toBeInTheDocument();
+
+    act(() => {
+      produce(`${CURRENT}-S01`, `${CURRENT}-S01`, `${CURRENT}-S02`);
+    });
+
+    expect(dots(0)).toEqual(['done', 'done']);
+    expect(dots(1)).toEqual(['done', 'pending']);
+    expect(screen.getByText('3 / 4')).toBeInTheDocument();
   });
 });
 

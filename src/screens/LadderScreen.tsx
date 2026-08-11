@@ -44,25 +44,17 @@ import { LevelStrip, type LevelCell, type SquareState } from './ladder/LevelStri
 import { RungCard } from './ladder/RungCard.tsx';
 import { RungMarker } from './ladder/RungMarker.tsx';
 import { rungLabel } from './ladder/rungLabel.ts';
-import { NOTHING_EXIT_READY, useProgression } from './useProgression.ts';
+import { useProgression } from './useProgression.ts';
 import styles from './LadderScreen.module.css';
 
-interface LadderScreenProps {
-  /**
-   * Every sentence of a module produced ≥ 2× (PRD §8 F1). Injectable for the same reason the
-   * engine takes it: **#95** owns the real predicate, and until then the screen is honest about
-   * having no counters to read.
-   */
-  exitAvailable?: (moduleId: string) => boolean;
-}
-
-export default function LadderScreen({ exitAvailable = NOTHING_EXIT_READY }: LadderScreenProps) {
+export default function LadderScreen() {
   const { course } = useCourse();
   const strings = useStrings();
   const toast = useToast();
   // Loads the ladder, hands it to the store, and assembles the engine's input — the same input
-  // `passRitual` guards writes with (`./useProgression.ts`).
-  const { levels, input, ready } = useProgression(exitAvailable);
+  // `passRitual` guards writes with (`./useProgression.ts`), production counters included, so the
+  // rung card's `exit_ready` stage is read here rather than injected (#95).
+  const { levels, input, ready } = useProgression();
 
   // A broken ladder is the content layer failing, which is one screen wherever it fails (#79).
   if (levels.error !== null) return <ContentErrorScreen detail={levels.error.message} />;

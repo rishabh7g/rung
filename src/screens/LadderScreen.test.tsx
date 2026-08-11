@@ -17,11 +17,8 @@
  * `levelsFixture`, because "M2–M10 are locked" is the assertion.
  */
 import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
-import { HashRouter } from 'react-router-dom';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from '../App.tsx';
-import LadderScreen from './LadderScreen.tsx';
-import { CourseProvider } from '../course/CourseProvider.tsx';
 import { resetContentCache } from '../course/content.ts';
 import { resetManifestCache } from '../course/manifest.ts';
 import { resetStringsCache } from '../course/strings.ts';
@@ -63,6 +60,16 @@ function tenRungLadder(courseId = COURSE) {
       level('L3', 'Fluency', 'stories & opinions', 0),
     ],
   };
+}
+
+/**
+ * Seeds production the only way the app can: one `recordProduction` per Produce-phase got-it, in
+ * the order the learner would have marked them. Two per sentence is what opens the exit ritual.
+ */
+function produce(...sentenceIds: string[]): void {
+  const store = useAppStore.getState();
+  store.ensureCourse(COURSE);
+  for (const sentenceId of sentenceIds) store.recordProduction(COURSE, sentenceId);
 }
 
 /** Seeds progress the only way the app can make it: one exit ritual per rung, in order. */
@@ -294,10 +301,10 @@ describe('mid-journey — three rungs climbed', () => {
  * **the stage guides, it never gates**. The Practice tab is asserted per stage, because a card
  * that made Practice unreachable would be a phase gate wearing a CTA's clothes.
  *
- * `exit_ready` cannot be reached through `<App />`: the route table renders `<LadderScreen />`
- * with the honest `exitAvailable = () => false` until the production counters land (#95). That
- * one case injects the predicate instead — which is exactly the seam #86 left for #95, exercised.
- * The card's own four-stage table is `ladder/RungCard.test.tsx`.
+ * All four stages are reached through `<App />` now (#95): `exit_ready` used to need an injected
+ * predicate, and needs nothing of the kind since the counters exist — the case below produces the
+ * rung's sentences out through `recordProduction`, the same action a Produce got-it calls, and the
+ * card follows. The card's own four-stage table is `ladder/RungCard.test.tsx`.
  */
 describe('the staged rung card [D22]', () => {
   /** The tab that must survive every stage. */
@@ -339,23 +346,16 @@ describe('the staged rung card [D22]', () => {
     expect(screen.queryByText(strings('rungCard.freshNote'))).not.toBeInTheDocument();
   });
 
-  it('offers the exit ritual once the rung is produced out — #95’s predicate, injected', async () => {
+  it('offers the exit ritual once every sentence is produced twice — the real counters', async () => {
     useAppStore.getState().markStudied(COURSE, 'L1-M1');
-    mockContentFetch(DEV_MANIFEST, undefined, { levels: tenRungLadder() });
+    produce('L1-M1-S01', 'L1-M1-S02', 'L1-M1-S01', 'L1-M1-S02');
 
-    render(
-      <CourseProvider>
-        <HashRouter>
-          <LadderScreen exitAvailable={() => true} />
-        </HashRouter>
-      </CourseProvider>,
-    );
-    await screen.findByRole('list');
+    await renderLadder();
 
-    expect(screen.getByRole('link', { name: strings('rungCard.exitRitual') })).toHaveAttribute(
-      'href',
-      '#/ritual',
-    );
+    // The rung's module has to load before the card can know its sentences, so this is a find.
+    expect(
+      await screen.findByRole('link', { name: strings('rungCard.exitRitual') }),
+    ).toHaveAttribute('href', '#/ritual');
     // Practice and Module drop to secondary — quieter, never gone.
     expect(screen.getByRole('link', { name: strings('rungCard.practice') })).toHaveAttribute(
       'href',
@@ -365,6 +365,24 @@ describe('the staged rung card [D22]', () => {
       'href',
       '#/module/L1-M1',
     );
+  });
+
+  it('holds the ritual back while one sentence is a got-it short', async () => {
+    useAppStore.getState().markStudied(COURSE, 'L1-M1');
+    // The module's other sentence is at 2×; this one is at 1×. Nine-of-ten, at the fixture's scale.
+    produce('L1-M1-S01', 'L1-M1-S01', 'L1-M1-S02');
+
+    await renderLadder();
+    await screen.findByRole('link', { name: strings('rungCard.practice') });
+
+    expect(screen.queryByText(strings('rungCard.exitRitual'))).not.toBeInTheDocument();
+
+    // …and the got-it that finishes it opens the ritual, with no reload: the stage is derived.
+    act(() => {
+      useAppStore.getState().recordProduction(COURSE, 'L1-M1-S02');
+    });
+
+    expect(screen.getByRole('link', { name: strings('rungCard.exitRitual') })).toBeInTheDocument();
   });
 
   it('answers a rung with no module yet with a note and a way back to practice', async () => {

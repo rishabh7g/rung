@@ -9,6 +9,7 @@ import {
   progressionInput,
   useAppStore,
 } from './store.ts';
+import { exitAvailable } from '../engine/exit.ts';
 import { currentRungId, deriveStatuses, ladderFromLevels } from '../engine/progression.ts';
 import { levelsFixture } from '../test/courseContent.ts';
 import type { CourseState } from './types.ts';
@@ -40,7 +41,7 @@ function stored(): { state: unknown; version: number } {
   return JSON.parse(raw) as { state: unknown; version: number };
 }
 
-/** Stands in for a domain write (#83, #95, #96) — the store ships no action that does this. */
+/** Stands in for a domain write (#96, #103) — the store ships no action that does this. */
 function writeCourse(courseId: string, patch: Partial<CourseState>): void {
   useAppStore.setState((state) => ({
     courses: {
@@ -230,6 +231,59 @@ describe('markStudied', () => {
   });
 });
 
+/**
+ * The counters themselves (#95). That they can only ever RISE — one writer, `+ 1` and nothing
+ * else, no action able to move them — is `productionCounters.test.ts`; what they mean once written
+ * is `engine/exit.test.ts`. This is the action doing its one job.
+ */
+describe('recordProduction', () => {
+  it('counts one got-it, and keeps counting on the same sentence', () => {
+    bootHiMr();
+    const { recordProduction } = useAppStore.getState();
+
+    recordProduction('hi-mr', 'L1-M1-S01');
+    expect(useAppStore.getState().courses['hi-mr']?.production).toEqual({ 'L1-M1-S01': 1 });
+
+    recordProduction('hi-mr', 'L1-M1-S01');
+    expect(useAppStore.getState().courses['hi-mr']?.production).toEqual({ 'L1-M1-S01': 2 });
+  });
+
+  it('is what makes a rung exit-available, through the engine and never on its own', () => {
+    bootHiMr();
+    const sentences = ['L1-M1-S01', 'L1-M1-S02'];
+    const ready = () =>
+      exitAvailable(sentences, useAppStore.getState().courses['hi-mr']?.production ?? {});
+
+    for (const sentenceId of sentences)
+      useAppStore.getState().recordProduction('hi-mr', sentenceId);
+    expect(ready()).toBe(false);
+
+    useAppStore.getState().recordProduction('hi-mr', 'L1-M1-S01');
+    expect(ready()).toBe(false);
+
+    useAppStore.getState().recordProduction('hi-mr', 'L1-M1-S02');
+    expect(ready()).toBe(true);
+    // …and it did not unlock anything on the way: the ritual is still the only path (Invariant 1).
+    expect(useAppStore.getState().courses['hi-mr']?.modules).toEqual({});
+    expect(deriveStatuses(progressionInput(useAppStore.getState(), 'hi-mr'))['L1-M1']).toBe(
+      'unlocked',
+    );
+  });
+
+  it('survives a reload — the counters are persisted state, not session state', async () => {
+    bootHiMr();
+    useAppStore.getState().recordProduction('hi-mr', 'L1-M1-S01');
+    const document_ = storage.items.get(STORAGE_KEY) ?? '';
+
+    // The reload: state gone, storage kept — then boot.
+    useAppStore.getState()._reset();
+    storage.items.set(STORAGE_KEY, document_);
+    await useAppStore.persist.rehydrate();
+
+    expect(useAppStore.getState().courses['hi-mr']?.production).toEqual({ 'L1-M1-S01': 1 });
+  });
+});
+
 describe('passRitual (Invariant 1 — the only unlock path)', () => {
   it('passes the current rung and stamps it from the clock it was given', () => {
     bootHiMr();
@@ -348,8 +402,14 @@ describe('progressionInput', () => {
     expect(input.studied('L1-M2')).toBe(false);
   });
 
-  it('reports nothing exit-ready until #95 injects the real predicate', () => {
+  it('reports nothing exit-ready without a predicate — the counters alone cannot answer', () => {
     bootHiMr();
+    // Every sentence of the fixture's L1-M1, produced twice: the store still says false, because
+    // "every sentence" is a fact about the module file, which is content the store never holds.
+    // `screens/useExitAvailable.ts` is what injects the answer (#95).
+    for (const sentenceId of ['L1-M1-S01', 'L1-M1-S02', 'L1-M1-S01', 'L1-M1-S02']) {
+      useAppStore.getState().recordProduction('hi-mr', sentenceId);
+    }
 
     expect(progressionInput(useAppStore.getState(), 'hi-mr').exitAvailable('L1-M1')).toBe(false);
     expect(

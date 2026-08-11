@@ -211,6 +211,9 @@ const CALLS: Record<string, (store: AppStore) => void> = {
   setSetting: (store) => store.setSetting('elapsedTickEnabled', false),
   setLadder: (store) => store.setLadder('hi-mr', ladderFromLevels(levelsFixture('hi-mr').levels)),
   markStudied: (store) => store.markStudied('hi-mr', 'L1-M2'),
+  // Producing every sentence of a rung is what OFFERS the exit ritual (#95); it is not the ritual,
+  // and it unlocks nothing — the counters are a number the card reads, never a write to `modules`.
+  recordProduction: (store) => store.recordProduction('hi-mr', 'L1-M2-S01'),
   passRitual: (store) => store.passRitual('hi-mr', 'L1-M2', () => '2026-02-02T02:40:00.000Z'),
   // Dev + tests only, and it can only erase: `_reset` blanks the whole document back to first run.
   // It cannot mark anything passed, which is what Invariant 1 is about. Checked on its own below.

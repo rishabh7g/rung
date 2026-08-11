@@ -4,8 +4,9 @@
  *
  * It is the learner's own verdict on their own recall, and the app's whole part in it is to take
  * it: nothing here checks, compares or scores anything (Invariant 4). The parent decides what a
- * mark MEANS — a Review mark feeds the Leitner queue, a Produce mark feeds the production
- * counters (#95/#96) — and this control never learns the difference.
+ * mark MEANS — a Review mark feeds the Leitner queue, a Produce mark feeds the production counters
+ * (`recordProduction`, #95; routed by the session machine, #96) — and this control never learns
+ * the difference.
  *
  * **Never preselected.** `mark` is `Mark | null` and the null is the point: a segment lit before
  * the learner touched it would be the app answering for them, and every honest reading of "did
