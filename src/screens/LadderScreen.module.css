@@ -1,0 +1,23 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   SMOKE (#79, #81) — every rule here goes when #86 renders the real ladder. */
+
+/* A line of the active course's own microcopy — whatever script that course writes in. */
+.courseString {
+  margin: 0;
+  font: var(--text-l2-hero);
+}
+
+.note {
+  margin: 0;
+  font: var(--text-caption);
+  color: var(--ink-55);
+}
+
+/* L1's rungs, straight out of the course's levels.json. */
+.rungs {
+  margin: 0;
+  padding-inline-start: var(--space-6);
+  font: var(--text-caption);
+  color: var(--ink-55);
+  text-align: start;
+}

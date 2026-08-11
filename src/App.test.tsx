@@ -48,7 +48,8 @@ describe('App', () => {
     expect(await screen.findByRole('alert')).toHaveTextContent(/no "courses" array/);
   });
 
-  // SMOKE (#81) — these two go with the wiring the Ladder ticket (#86) replaces.
+  // SMOKE (#81) — the wiring moved to `src/screens/LadderScreen.tsx` with the shell (#84) and is
+  // still reached through the app's own routes, so these two stay boot tests. #86 replaces both.
   it("lists the active course's L1 rungs, read from its own levels.json", async () => {
     const fetchMock = mockContentFetch(DEV_MANIFEST);
 

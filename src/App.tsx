@@ -1,69 +1,42 @@
-import { BRAND } from './brand.ts';
-import { CourseProvider, useCourse } from './course/CourseProvider.tsx';
-import { interpolate, useStrings } from './course/strings.ts';
-import { useLevels } from './course/content.ts';
-import { ContentErrorScreen } from './course/BootScreens.tsx';
-import styles from './App.module.css';
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { CourseProvider } from './course/CourseProvider.tsx';
+import { AppShell } from './shell/AppShell.tsx';
+import { ImmersiveProvider } from './shell/immersive.tsx';
+import { HOME_PATH, SHELL_ROUTES } from './shell/routes.tsx';
 
 /**
- * The app's root. Boot order is manifest → provider → screens (#79, PRD §8 F0): `CourseProvider`
- * owns the loading and content-error states, so everything it renders already has a course.
+ * The app's root: three providers deep, and nothing else.
+ *
+ * Boot order is manifest → provider → screens (#79, PRD §8 F0), so `CourseProvider` is outermost
+ * — it owns the loading and content-error screens, and everything below it already has a course
+ * and its words. Then the immersive flag (#84), which is shell state and above the router
+ * because the shell and the screen that raises it read the same one. Then the routes.
+ *
+ * **HashRouter, not BrowserRouter:** the product is a static, installable, zero-backend PWA
+ * (PRD §3) — a deep link under a history router needs a server rewrite, and there is no server
+ * to ask. `#/module/L1-M1` survives a refresh, an offline cold start and whatever static host
+ * #91 lands on.
+ *
+ * Every screen is a child of one pathless layout route, so `AppShell` mounts once and stays
+ * mounted across navigation — the frame does not blink between screens. The route table itself
+ * is `src/shell/routes.tsx`; unknown paths land on the Ladder, replacing the bad entry rather
+ * than trapping the back button behind it.
  */
 export default function App() {
   return (
     <CourseProvider>
-      <ScaffoldScreen />
+      <ImmersiveProvider>
+        <HashRouter>
+          <Routes>
+            <Route element={<AppShell />}>
+              {SHELL_ROUTES.map(({ path, element }) => (
+                <Route key={path} path={path} element={element} />
+              ))}
+              <Route path="*" element={<Navigate to={HOME_PATH} replace />} />
+            </Route>
+          </Routes>
+        </HashRouter>
+      </ImmersiveProvider>
     </CourseProvider>
-  );
-}
-
-/**
- * Scaffold screen. It proves three things the rest of P1 builds on: design/tokens.css is loaded
- * (steel wordmark), the course layer resolved an active course out of the emitted manifest, and
- * that course's microcopy loaded — the two lines below come from `strings.json` through
- * `useStrings()`, which is the ONLY way a learner-facing word reaches the screen (#80, PRD §4).
- * The script rendering here is the course's, not the shell's: `src/` carries no Devanagari at all
- * (`shellPurity.test.ts`), and the font stack itself gets its own page in #85.
- *
- * The real screens (Ladder, Module list, Detail) replace this; the English captions are
- * scaffolding, not copy.
- */
-function ScaffoldScreen() {
-  const { course, courses } = useCourse();
-  const strings = useStrings();
-  // SMOKE (#81) — replaced by Ladder (#86). The ladder is what levels.json is for; listing L1's
-  // rungs here proves the loader reads the active course's file and the hook hands over a value.
-  const levels = useLevels();
-
-  // The content layer failing is one screen, wherever it fails: the provider shows this when the
-  // manifest or the strings bundle is broken, and a missing ladder is the same answer (#79).
-  if (levels.error !== null) return <ContentErrorScreen detail={levels.error.message} />;
-
-  const first = levels.data?.levels[0];
-
-  return (
-    <main className={styles.screen}>
-      <h1 className={styles.wordmark}>{BRAND}</h1>
-      <p className={styles.courseString} dir={course.dir}>
-        {strings.cueLabel} · {interpolate(strings.ordinal, { n: 3 })}
-      </p>
-      <p className={styles.caption}>tokens loaded · course strings render</p>
-      <p className={styles.caption}>
-        active course: {course.pairLabel} ({course.id}) · {courses.length} in this build
-      </p>
-      {first !== undefined && (
-        <>
-          <p className={styles.caption}>
-            {first.name} · {first.modules.filter((module) => module.hasContent).length} of{' '}
-            {first.modules.length} rungs have content
-          </p>
-          <ol className={styles.rungs} dir={course.dir}>
-            {first.modules.map((module) => (
-              <li key={module.id}>{module.title}</li>
-            ))}
-          </ol>
-        </>
-      )}
-    </main>
   );
 }
