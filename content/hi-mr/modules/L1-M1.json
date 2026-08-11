@@ -1,0 +1,598 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M1",
+  "title": "Who I am",
+  "job": "Introduce yourself and state your likes",
+  "prerequisites": [],
+  "verified": false,
+  "verifiedBy": null,
+  "verifiedAt": null,
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 5,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "मी + N/Adj + आहे",
+      "माझा/माझी/माझं + N + N + आहे",
+      "मला + N + आवड-"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "Word order is Subject–Object–Verb, exactly as in Hindi — nothing to relearn here."
+    },
+    {
+      "tag": "delta",
+      "text": "Naming yourself: माझं नाव + name + आहे — the same frame as मेरा नाम … है."
+    },
+    {
+      "tag": "interference",
+      "text": "A possessive agrees with the gender of the thing possessed: माझा (m) · माझी (f) · माझं (n). Hindi has no neuter, so माझं has no Hindi twin."
+    },
+    {
+      "tag": "delta",
+      "text": "The copula आहे covers both हूँ and है. It changes with the person (आहे · आहेस · आहात), never with gender."
+    },
+    {
+      "tag": "delta",
+      "text": "Liking: मला + thing + आवड-. The thing liked is the subject, so the ending agrees with it — आवडतो (m) · आवडते (f) · आवडतं (n)."
+    },
+    {
+      "tag": "interference",
+      "text": "Genders drift between the two languages (चाय f → चहा m). Agreement always follows the Marathi gender, not the Hindi one."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M1-S01",
+      "display": "माझं नाव रोहन आहे",
+      "cue": "मेरा नाम रोहन है",
+      "glossEn": "My name is Rohan",
+      "literal": "मेरा(नपुं.) नाम रोहन है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "माझं",
+            "cue": "मेरा",
+            "tag": "interference",
+            "forms": ["माझा", "माझी", "माझं"],
+            "note": "Possessive in the neuter — नाव is neuter, so माझं, never माझा."
+          },
+          {
+            "display": "नाव",
+            "cue": "नाम",
+            "tag": "free",
+            "forms": [],
+            "note": "Near-identical cognate of नाम; neuter in Marathi."
+          },
+          {
+            "display": "रोहन",
+            "cue": "रोहन",
+            "tag": "free",
+            "forms": [],
+            "note": "Names carry over unchanged — swap in your own."
+          },
+          {
+            "display": "आहे",
+            "cue": "है",
+            "tag": "delta",
+            "forms": ["आहे", "आहेस", "आहात"],
+            "note": "The copula. One word for है and हूँ; it changes with the person, not the gender."
+          }
+        ],
+        "rules": [0, 1, 2]
+      },
+      "trap": "हिंदी का 'मेरा' सुनकर हाथ माझा लिखता है — पर नाव नपुंसकलिंग है, इसलिए माझं. हिंदी में तीसरा लिंग है ही नहीं, यही सबसे बड़ी फिसलन है.",
+      "sound": "माझं के अंत की 'ं' सिर्फ़ नाक की हल्की हवा है — 'माझा' मत बोलो. आहे = आ‑हे, दो साफ़ हिस्से.",
+      "variations": [
+        {
+          "display": "माझं नाव प्रिया आहे",
+          "cue": "मेरा नाम प्रिया है",
+          "changed": "सिर्फ़ नाम बदला — माझं नाव … आहे का साँचा वैसा ही रहता है."
+        },
+        {
+          "display": "माझा देश भारत आहे",
+          "cue": "मेरा देश भारत है",
+          "changed": "नाव(नपुं.) → देश(पु.) — इसलिए माझं → माझा."
+        }
+      ],
+      "mistake": {
+        "display": "माझा नाव रोहन आहे",
+        "why": "नाव नपुंसकलिंग है — माझं नाव. 'मेरा नाम' से सीधा अनुवाद यहीं गिरता है."
+      },
+      "usage": "अपना परिचय देने की सबसे आम लाइन — किसी से पहली बार मिलते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "नाव नपुंसक है, और नपुंसक का साथी हमेशा माझं — दोनों के अंत में वही हल्की 'ं' सुनाई देती है."
+    },
+    {
+      "id": "L1-M1-S02",
+      "display": "मी विद्यार्थी आहे",
+      "cue": "मैं विद्यार्थी हूँ",
+      "glossEn": "I am a student",
+      "literal": "मैं विद्यार्थी हूँ (आहे = है और हूँ, दोनों)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "मी",
+            "cue": "मैं",
+            "tag": "free",
+            "forms": [],
+            "note": "Near-identical to मैं, and it sits in the same place in the sentence."
+          },
+          {
+            "display": "विद्यार्थी",
+            "cue": "विद्यार्थी",
+            "tag": "free",
+            "forms": ["विद्यार्थी", "विद्यार्थिनी"],
+            "note": "Same word as Hindi; विद्यार्थिनी if you are a woman."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "sound": "विद्यार्थी में द् और य जुड़े हैं — 'विद्‑या‑र्थी', तीन हिस्सों में तोड़कर बोलो.",
+      "variations": [
+        {
+          "display": "मी भारतीय आहे",
+          "cue": "मैं भारतीय हूँ",
+          "changed": "विद्यार्थी → भारतीय — मी … आहे का साँचा वही रहता है."
+        },
+        {
+          "display": "मी विद्यार्थिनी आहे",
+          "cue": "मैं विद्यार्थिनी हूँ",
+          "changed": "लड़की कहे तो विद्यार्थिनी — आहे फिर भी नहीं बदलता."
+        }
+      ],
+      "mistake": {
+        "display": "मी विद्यार्थी आहेस",
+        "why": "आहेस सिर्फ़ 'तू' के साथ आता है. 'मी' के साथ हमेशा आहे."
+      },
+      "usage": "अपना काम या पढ़ाई बताने के लिए — मी + पहचान + आहे.",
+      "register": "neutral",
+      "mnemonic": "मी … आहे = 'मैं … हूँ'. आहे लिंग नहीं देखता — लड़का हो या लड़की, आहे ही रहता है."
+    },
+    {
+      "id": "L1-M1-S03",
+      "display": "माझा देश भारत आहे",
+      "cue": "मेरा देश भारत है",
+      "glossEn": "My country is India",
+      "literal": "मेरा(पु.) देश भारत है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "माझा",
+            "cue": "मेरा",
+            "tag": "delta",
+            "forms": ["माझा", "माझी", "माझं"],
+            "note": "The masculine possessive — देश is masculine, so माझा."
+          },
+          {
+            "display": "देश",
+            "cue": "देश",
+            "tag": "free",
+            "forms": [],
+            "note": "Identical to Hindi, and masculine in both."
+          },
+          {
+            "display": "भारत",
+            "cue": "भारत",
+            "tag": "free",
+            "forms": [],
+            "note": "Country names carry over unchanged."
+          }
+        ],
+        "rules": [0, 2, 3]
+      },
+      "trap": "माझं सीख लेने के बाद हिंदी वाले उसे हर जगह चिपका देते हैं. देश पुल्लिंग है — माझा देश, माझं देश नहीं.",
+      "sound": "देश और भारत हिंदी जैसे ही; माझा का 'आ' पूरा खुला रखो — तभी वह नपुंसक माझं से अलग सुनाई देगा.",
+      "variations": [
+        {
+          "display": "माझी भाषा हिंदी आहे",
+          "cue": "मेरी भाषा हिंदी है",
+          "changed": "देश(पु.) → भाषा(स्त्री.) — इसलिए माझा → माझी."
+        },
+        {
+          "display": "माझं नाव रोहन आहे",
+          "cue": "मेरा नाम रोहन है",
+          "changed": "नाव नपुंसकलिंग है — इसलिए माझं."
+        }
+      ],
+      "mistake": {
+        "display": "माझं देश भारत आहे",
+        "why": "देश पुल्लिंग है — माझा देश. नपुंसक माझं सिर्फ़ नाव जैसे शब्दों के साथ आता है."
+      },
+      "usage": "कहाँ के हो, यह बताने का सबसे सीधा तरीक़ा — परिचय की दूसरी-तीसरी लाइन.",
+      "register": "neutral",
+      "mnemonic": "'आ' की मात्रा = पुल्लिंग. देश पुल्लिंग → माझा देश."
+    },
+    {
+      "id": "L1-M1-S04",
+      "display": "माझी भाषा हिंदी आहे",
+      "cue": "मेरी भाषा हिंदी है",
+      "glossEn": "My language is Hindi",
+      "literal": "मेरी(स्त्री.) भाषा हिंदी है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "माझी",
+            "cue": "मेरी",
+            "tag": "delta",
+            "forms": ["माझा", "माझी", "माझं"],
+            "note": "The feminine possessive — भाषा is feminine, so माझी."
+          },
+          {
+            "display": "भाषा",
+            "cue": "भाषा",
+            "tag": "free",
+            "forms": [],
+            "note": "Identical to Hindi, and feminine in both."
+          },
+          {
+            "display": "हिंदी",
+            "cue": "हिंदी",
+            "tag": "free",
+            "forms": [],
+            "note": "Language names carry over; they are feminine."
+          }
+        ],
+        "rules": [0, 2, 3]
+      },
+      "trap": "तीनों रूप एक साथ याद रखो: माझा (पु) · माझी (स्त्री) · माझं (नपुं). हिंदी में दो ही हैं, इसलिए तीसरा रूप हमेशा छूटता है.",
+      "sound": "मराठी में 'ष' अक्सर 'श' जैसा बोला जाता है — भाषा ≈ 'भाशा'.",
+      "variations": [
+        {
+          "display": "माझी भाषा मराठी आहे",
+          "cue": "मेरी भाषा मराठी है",
+          "changed": "सिर्फ़ भाषा का नाम बदला — माझी वैसी ही रहती है (मराठी भी स्त्रीलिंग)."
+        },
+        {
+          "display": "माझा देश भारत आहे",
+          "cue": "मेरा देश भारत है",
+          "changed": "भाषा(स्त्री.) → देश(पु.) — इसलिए माझी → माझा."
+        }
+      ],
+      "mistake": {
+        "display": "माझा भाषा हिंदी आहे",
+        "why": "भाषा स्त्रीलिंग है — माझी भाषा."
+      },
+      "usage": "अपनी भाषा बताना — मराठी बोलने वाले से बातचीत शुरू करने में सबसे काम आता है.",
+      "register": "neutral",
+      "mnemonic": "'ई' की मात्रा = स्त्रीलिंग. भाषा स्त्रीलिंग → माझी भाषा."
+    },
+    {
+      "id": "L1-M1-S05",
+      "display": "मला मराठी आवडते",
+      "cue": "मुझे मराठी पसंद है",
+      "glossEn": "I like Marathi",
+      "literal": "मुझको मराठी अच्छी‑लगती‑है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "मला",
+            "cue": "मुझे/मुझको",
+            "tag": "delta",
+            "forms": [],
+            "note": "Dative \"to me\" — the same job as मुझे, and every liking sentence starts here."
+          },
+          {
+            "display": "मराठी",
+            "cue": "मराठी",
+            "tag": "free",
+            "forms": [],
+            "note": "Same word; feminine, which is what the verb ending follows."
+          },
+          {
+            "display": "आवडते",
+            "cue": "पसंद है",
+            "tag": "interference",
+            "forms": ["आवडतो", "आवडते", "आवडतं"],
+            "note": "One verb replaces पसंद है. The liked thing is the subject, so the ending agrees with it — मराठी is feminine → आवडते."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "हिंदी में 'मैं' कर्ता है (मुझे … पसंद है में भी सोच वही रहती है). मराठी में पसंद की गई चीज़ कर्ता है — क्रिया 'मी' से नहीं, मराठी से मिलती है.",
+      "sound": "मराठी का 'ठ' मूर्धन्य है — जीभ ऊपर मोड़कर; 'मराठी' को 'मराथी' मत बनाओ.",
+      "variations": [
+        {
+          "display": "मला हिंदी आवडते",
+          "cue": "मुझे हिंदी पसंद है",
+          "changed": "मराठी → हिंदी — दोनों स्त्रीलिंग, इसलिए आवडते वैसा ही."
+        },
+        {
+          "display": "मला संगीत आवडतं",
+          "cue": "मुझे संगीत पसंद है",
+          "changed": "संगीत नपुंसकलिंग है — इसलिए आवडते → आवडतं."
+        }
+      ],
+      "mistake": {
+        "display": "मला मराठी आवडतो",
+        "why": "मराठी स्त्रीलिंग है — आवडते. क्रिया कहने वाले से नहीं, पसंद की गई चीज़ से मिलती है."
+      },
+      "usage": "किसी भाषा, चीज़ या जगह के लिए पसंद बताना — रोज़मर्रा की बात.",
+      "register": "neutral",
+      "mnemonic": "आवड- का अंत चीज़ के लिंग से: ‑तो (पु) · ‑ते (स्त्री) · ‑तं (नपुं)."
+    },
+    {
+      "id": "L1-M1-S06",
+      "display": "मला संगीत आवडतं",
+      "cue": "मुझे संगीत पसंद है",
+      "glossEn": "I like music",
+      "literal": "मुझको संगीत अच्छा‑लगता‑है (नपुंसक रूप)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "संगीत",
+            "cue": "संगीत",
+            "tag": "free",
+            "forms": [],
+            "note": "Identical to Hindi; neuter, which the verb has to follow."
+          },
+          {
+            "display": "आवडतं",
+            "cue": "पसंद है",
+            "tag": "interference",
+            "forms": ["आवडतो", "आवडते", "आवडतं"],
+            "note": "The neuter ending — संगीत is neuter, so आवडतं. Hindi has no neuter to copy from."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "हिंदी में 'पसंद है' हर चीज़ के लिए एक ही रहता है, इसलिए हाथ आवडते पर अटक जाता है. मराठी में तीन अंत हैं और चीज़ ही तय करती है कि कौन सा.",
+      "sound": "आवडतं का 'ड' मूर्धन्य है — जीभ तालु से टकराए; अंत की 'ं' सिर्फ़ नाक की हवा है.",
+      "variations": [
+        {
+          "display": "मला मराठी संगीत आवडतं",
+          "cue": "मुझे मराठी संगीत पसंद है",
+          "changed": "मराठी जोड़ा — क्रिया फिर भी संगीत(नपुं.) के पीछे ही चलती है."
+        },
+        {
+          "display": "मला चहा आवडतो",
+          "cue": "मुझे चाय पसंद है",
+          "changed": "संगीत(नपुं.) → चहा(पु.) — इसलिए आवडतं → आवडतो."
+        }
+      ],
+      "mistake": {
+        "display": "मी संगीत आवडतं",
+        "why": "पसंद करने वाला 'मी' नहीं, 'मला' होता है — मराठी में चीज़ ही कर्ता है."
+      },
+      "usage": "शौक़ बताने की सबसे आम लाइन — परिचय के तुरंत बाद.",
+      "register": "neutral",
+      "mnemonic": "संगीत नपुंसक → आवडतं. वही हल्की 'ं' जो माझं में है."
+    },
+    {
+      "id": "L1-M1-S07",
+      "display": "मला चहा आवडतो",
+      "cue": "मुझे चाय पसंद है",
+      "glossEn": "I like tea",
+      "literal": "मुझको चाय अच्छा‑लगता‑है (मराठी में चहा पुल्लिंग है)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "चहा",
+            "cue": "चाय",
+            "tag": "delta",
+            "forms": [],
+            "note": "New word — and masculine in Marathi, where Hindi चाय is feminine."
+          },
+          {
+            "display": "आवडतो",
+            "cue": "पसंद है",
+            "tag": "interference",
+            "forms": ["आवडतो", "आवडते", "आवडतं"],
+            "note": "The masculine ending — चहा is masculine, so आवडतो."
+          }
+        ],
+        "rules": [4, 5]
+      },
+      "trap": "हिंदी की चाय स्त्रीलिंग है, मराठी का चहा पुल्लिंग — लिंग ही बदल गया, इसलिए आवडते नहीं, आवडतो.",
+      "sound": "चहा = च‑हा; बीच का 'ह' सुनाई देना चाहिए — हिंदी 'चाय' की तरह मत खींचो.",
+      "variations": [
+        {
+          "display": "मला कॉफी आवडते",
+          "cue": "मुझे कॉफ़ी पसंद है",
+          "changed": "चहा(पु.) → कॉफी(स्त्री.) — इसलिए आवडतो → आवडते."
+        },
+        {
+          "display": "मला भात आवडतो",
+          "cue": "मुझे चावल पसंद है",
+          "changed": "भात भी पुल्लिंग है — आवडतो वैसा ही रहता है."
+        }
+      ],
+      "mistake": {
+        "display": "मला चहा आवडते",
+        "why": "हिंदी की चाय स्त्रीलिंग है, पर मराठी का चहा पुल्लिंग — आवडतो."
+      },
+      "usage": "चाय-कॉफ़ी की रोज़ की बात — घर, ऑफ़िस, कहीं भी.",
+      "register": "neutral",
+      "mnemonic": "चाय मराठी में 'चहा' बनकर पुल्लिंग हो जाती है — नाम बदला, लिंग भी बदला, इसलिए आवडतो."
+    },
+    {
+      "id": "L1-M1-S08",
+      "display": "मला कॉफी आवडते",
+      "cue": "मुझे कॉफ़ी पसंद है",
+      "glossEn": "I like coffee",
+      "literal": "मुझको कॉफ़ी अच्छी‑लगती‑है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "कॉफी",
+            "cue": "कॉफ़ी",
+            "tag": "free",
+            "forms": [],
+            "note": "Same word as Hindi, and feminine in both."
+          },
+          {
+            "display": "आवडते",
+            "cue": "पसंद है",
+            "tag": "interference",
+            "forms": ["आवडतो", "आवडते", "आवडतं"],
+            "note": "Feminine agreement again — the ending tracks कॉफी, never you."
+          }
+        ],
+        "rules": [4]
+      },
+      "sound": "कॉफी का 'ऑ' गोल है — 'का' नहीं, 'कॉ'.",
+      "variations": [
+        {
+          "display": "मला कॉफी खूप आवडते",
+          "cue": "मुझे कॉफ़ी बहुत पसंद है",
+          "changed": "खूप जोड़ा ('बहुत') — क्रिया का रूप फिर भी नहीं बदला."
+        },
+        {
+          "display": "मला संगीत आवडतं",
+          "cue": "मुझे संगीत पसंद है",
+          "changed": "कॉफी(स्त्री.) → संगीत(नपुं.) — इसलिए आवडते → आवडतं."
+        }
+      ],
+      "mistake": {
+        "display": "मला कॉफी आवडतो",
+        "why": "कॉफी स्त्रीलिंग है — आवडते. आवडतो सिर्फ़ पुल्लिंग चीज़ों के साथ."
+      },
+      "usage": "पसंद बताने का वही साँचा, बस चीज़ बदलो और अंत मिलाओ.",
+      "register": "neutral",
+      "mnemonic": "कॉफी की 'ई' → आवडते. ई = स्त्रीलिंग, हर जगह."
+    },
+    {
+      "id": "L1-M1-S09",
+      "display": "मला भात खूप आवडतो",
+      "cue": "मुझे चावल बहुत पसंद है",
+      "glossEn": "I like rice a lot",
+      "literal": "मुझको चावल बहुत अच्छा‑लगता‑है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "भात",
+            "cue": "चावल",
+            "tag": "delta",
+            "forms": [],
+            "note": "Cooked rice — a different word from चावल, and masculine."
+          },
+          {
+            "display": "खूप",
+            "cue": "बहुत",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"A lot\" — it sits just before the verb and never changes shape."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "खूप जोड़ते ही हिंदी वाले क्रिया छेड़ देते हैं. खूप कुछ नहीं बदलता — अंत अब भी भात(पु.) से ही मिलता है.",
+      "sound": "भात का 'भ' हवा छोड़ते हुए (महाप्राण); खूप का 'ऊ' लंबा — 'खुप' नहीं.",
+      "variations": [
+        {
+          "display": "मला चहा खूप आवडतो",
+          "cue": "मुझे चाय बहुत पसंद है",
+          "changed": "भात → चहा — दोनों पुल्लिंग, इसलिए आवडतो वही."
+        },
+        {
+          "display": "मला मराठी खूप आवडते",
+          "cue": "मुझे मराठी बहुत पसंद है",
+          "changed": "मराठी स्त्रीलिंग है — इसलिए आवडतो → आवडते."
+        }
+      ],
+      "mistake": {
+        "display": "मला भात खूप आवडतं",
+        "why": "भात पुल्लिंग है — आवडतो. खूप लगाने से क्रिया का रूप नहीं बदलता."
+      },
+      "usage": "पसंद को गाढ़ा करना — खाने-पीने की बातचीत में रोज़ काम आता है.",
+      "register": "informal",
+      "mnemonic": "खूप = बहुत. वह सिर्फ़ मात्रा बढ़ाता है, लिंग को हाथ नहीं लगाता."
+    },
+    {
+      "id": "L1-M1-S10",
+      "display": "मी भारतीय आहे",
+      "cue": "मैं भारतीय हूँ",
+      "glossEn": "I am Indian",
+      "literal": "मैं भारतीय हूँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "भारतीय",
+            "cue": "भारतीय",
+            "tag": "free",
+            "forms": [],
+            "note": "Same word as Hindi; this form does not change for a man or a woman."
+          },
+          {
+            "display": "आहे",
+            "cue": "हूँ",
+            "tag": "delta",
+            "forms": ["आहे", "आहेस", "आहात"],
+            "note": "The same आहे as in माझं नाव … आहे — Marathi does not split है and हूँ."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "हिंदी का 'है' मराठी में नहीं चलता, और 'हूँ' का अलग रूप भी नहीं है — दोनों जगह आहे.",
+      "sound": "भारतीय हिंदी जैसा ही; आहे को 'आहै' मत बनाओ — अंत में साफ़ 'ए'.",
+      "variations": [
+        {
+          "display": "मी विद्यार्थी आहे",
+          "cue": "मैं विद्यार्थी हूँ",
+          "changed": "भारतीय → विद्यार्थी — मी … आहे का साँचा वही."
+        },
+        {
+          "display": "माझा देश भारत आहे",
+          "cue": "मेरा देश भारत है",
+          "changed": "वही बात दूसरे साँचे में — माझा + देश."
+        }
+      ],
+      "mistake": {
+        "display": "मी भारतीय है",
+        "why": "मराठी में 'है' नहीं होता — उसका रूप आहे है."
+      },
+      "usage": "देश या पहचान बताना — परिचय की दूसरी लाइन.",
+      "register": "neutral",
+      "mnemonic": "मराठी में हर 'हूँ/है' की जगह एक ही आहे खड़ा है."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M1-C01",
+      "display": "मी भारतीय विद्यार्थी आहे",
+      "cue": "मैं भारतीय विद्यार्थी हूँ"
+    },
+    {
+      "id": "L1-M1-C02",
+      "display": "मला हिंदी आवडते",
+      "cue": "मुझे हिंदी पसंद है"
+    },
+    {
+      "id": "L1-M1-C03",
+      "display": "माझी भाषा मराठी आहे",
+      "cue": "मेरी भाषा मराठी है"
+    },
+    {
+      "id": "L1-M1-C04",
+      "display": "मला कॉफी खूप आवडते",
+      "cue": "मुझे कॉफ़ी बहुत पसंद है"
+    },
+    {
+      "id": "L1-M1-C05",
+      "display": "मला माझा देश आवडतो",
+      "cue": "मुझे अपना देश पसंद है"
+    },
+    {
+      "id": "L1-M1-C06",
+      "display": "मला मराठी संगीत आवडतं",
+      "cue": "मुझे मराठी संगीत पसंद है"
+    },
+    {
+      "id": "L1-M1-C07",
+      "display": "मी विद्यार्थिनी आहे",
+      "cue": "मैं विद्यार्थिनी हूँ"
+    },
+    {
+      "id": "L1-M1-C08",
+      "display": "मला चहा खूप आवडतो",
+      "cue": "मुझे चाय बहुत पसंद है"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
