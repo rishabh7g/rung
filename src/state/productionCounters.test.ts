@@ -293,6 +293,11 @@ const CALLS: Record<string, (store: AppStore) => void> = {
   startSession: (store) => store.startSession(COURSE, [SENTENCE]),
   setSession: (store) => store.setSession(COURSE, { phase: 'produce', idx: 0, queue: [SENTENCE] }),
   passRitual: (store) => store.passRitual(COURSE, 'L1-M1', () => '2026-02-02T02:40:00.000Z'),
+  // The end of the exit ritual (#103): a rung passes and its sentences enter review. Neither half
+  // is a production got-it — the counters are what OPENED the ritual, and passing it does not add
+  // to them.
+  completeRitual: (store) =>
+    store.completeRitual(COURSE, 'L1-M1', [SENTENCE], () => '2026-02-02T02:40:00.000Z'),
   // Dev + tests only, and it can only erase: `_reset` blanks the whole document back to first run.
   // It cannot raise a counter, which is the direction this file is about. Checked on its own below.
   _reset: (store) => store._reset(),

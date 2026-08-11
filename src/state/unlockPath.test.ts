@@ -222,6 +222,12 @@ const CALLS: Record<string, (store: AppStore) => void> = {
   setSession: (store) =>
     store.setSession('hi-mr', { phase: 'produce', idx: 1, queue: ['L1-M2-S01'] }),
   passRitual: (store) => store.passRitual('hi-mr', 'L1-M2', () => '2026-02-02T02:40:00.000Z'),
+  // The end of the exit ritual (#103) — and the one action besides `passRitual` whose call
+  // changes the map, because it IS a call to `passRitual`. It has its own describe below: the
+  // source scan above proves it holds no write of its own, and the guard it inherits is proved
+  // by refusing a rung that is not current.
+  completeRitual: (store) =>
+    store.completeRitual('hi-mr', 'L1-M2', ['L1-M2-S01'], () => '2026-02-02T02:40:00.000Z'),
   // Dev + tests only, and it can only erase: `_reset` blanks the whole document back to first run.
   // It cannot mark anything passed, which is what Invariant 1 is about. Checked on its own below.
   _reset: (store) => store._reset(),
@@ -259,21 +265,22 @@ describe('no other action can change what the learner has passed', () => {
     expect(Object.keys(CALLS).sort()).toEqual(actionNames());
   });
 
-  it.each(Object.keys(CALLS).filter((name) => name !== 'passRitual' && name !== '_reset'))(
-    '%s leaves the modules map exactly as it found it',
-    (name) => {
-      seedHiMr();
-      const before = modulesOf('hi-mr');
+  it.each(
+    Object.keys(CALLS).filter(
+      (name) => name !== 'passRitual' && name !== 'completeRitual' && name !== '_reset',
+    ),
+  )('%s leaves the modules map exactly as it found it', (name) => {
+    seedHiMr();
+    const before = modulesOf('hi-mr');
 
-      CALLS[name]?.(useAppStore.getState());
+    CALLS[name]?.(useAppStore.getState());
 
-      // Same object, not merely equal: nothing rebuilt it, so nothing could have added to it.
-      expect(modulesOf('hi-mr')).toBe(before);
-      expect(modulesOf('hi-mr')).toEqual({
-        'L1-M1': { status: 'passed', passedAt: '2026-02-02T02:40:00.000Z' },
-      });
-    },
-  );
+    // Same object, not merely equal: nothing rebuilt it, so nothing could have added to it.
+    expect(modulesOf('hi-mr')).toBe(before);
+    expect(modulesOf('hi-mr')).toEqual({
+      'L1-M1': { status: 'passed', passedAt: '2026-02-02T02:40:00.000Z' },
+    });
+  });
 
   it('passRitual does write — so the check above is not passing on an empty map', () => {
     seedHiMr();
@@ -293,6 +300,38 @@ describe('no other action can change what the learner has passed', () => {
 
     expect(useAppStore.getState().courses).toEqual({});
     expect(useAppStore.getState().ladders).toEqual({});
+  });
+});
+
+/**
+ * `completeRitual` (#103) is the second action whose call changes `modules` — and it is not a
+ * second unlock path, because it does not write: it calls `passRitual` and rides its single write.
+ * That is a claim the two scans above already half-prove (its body carries no `modules` write of
+ * any shape, and it cannot reach `setState`), and what is left is the guard: a delegated pass
+ * refuses exactly what the delegate refuses, and takes its enrolment down with it.
+ */
+describe('completeRitual passes only by calling passRitual', () => {
+  it('holds no write of its own — the source scan attributes the only one to passRitual', () => {
+    const bodies = actionBodies(SOURCES[STORE_FILE] ?? '', actionNames());
+
+    expect(bodies['completeRitual']).toContain('passRitual(');
+    expect(modulesWriters(SOURCES[STORE_FILE] ?? '', actionNames())).toEqual(['passRitual']);
+  });
+
+  it('refuses a rung that is not current, with passRitual’s own words and no write at all', () => {
+    seedHiMr();
+    const before = useAppStore.getState().courses;
+
+    expect(() =>
+      useAppStore
+        .getState()
+        .completeRitual('hi-mr', 'L1-M3', ['L1-M3-S01'], () => '2026-04-04T04:40:00.000Z'),
+    ).toThrow(/passRitual: L1-M3 is not hi-mr's current rung \(L1-M2\)/);
+
+    // The whole course map, by reference: a refusal is not a write — not of the pass, and not of
+    // the enrolment that would have ridden with it.
+    expect(useAppStore.getState().courses).toBe(before);
+    expect(useAppStore.getState().courses['hi-mr']?.reviewQueue).toEqual([]);
   });
 });
 

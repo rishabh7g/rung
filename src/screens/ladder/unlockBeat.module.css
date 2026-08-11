@@ -1,0 +1,52 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   design/Rung App v3.3.dc.html → `@keyframes unlockBeat`, and design/tokens.md §5's fourth and
+   last movement: 1000ms (`--motion-unlock`), cubic-bezier(.2,.7,.3,1), an accent-200 flash and a
+   10px settle, ONCE. */
+
+/**
+ * THE UNLOCK BEAT — the product's single celebration (#103).
+ *
+ * It lives in a module of its own because two elements wear it and there must be exactly one of
+ * it: the newly current rung's card, and — at a level boundary — the level cell that just
+ * unsealed ([Q4]'s recommendation, PRD-design §12.3). CSS-module keyframes are scoped per file,
+ * so a copy in each stylesheet would be two beats that could drift into two durations.
+ *
+ * `backwards` rather than the prototype's `both`: the fill matters on the way IN (the flash must
+ * be up on the very first frame, before the 10px settle starts) and must not persist on the way
+ * out, because the two elements that share this class rest on different backgrounds — the card on
+ * the paper ground, the level cell on nothing at all. `both` would leave `transparent` painted
+ * over whichever the element actually had.
+ *
+ * The easing is written out because `design/tokens.css` carries it as a comment on
+ * `--motion-unlock` rather than as a token of its own; `design/` is read-only here
+ * (docs/design-contract.md), so this is the same call `LevelStrip.module.css` documents for the
+ * 2px accent bar. Raised for #117 with the rest.
+ */
+@keyframes unlockBeat {
+  0% {
+    background: var(--color-accent-200);
+    transform: translateY(var(--space-3));
+  }
+
+  55% {
+    background: var(--color-accent-100);
+  }
+
+  100% {
+    background: transparent;
+    transform: none;
+  }
+}
+
+.beat {
+  animation: unlockBeat var(--motion-unlock) cubic-bezier(0.2, 0.7, 0.3, 1) backwards;
+}
+
+/* design/tokens.md §5: reduced motion collapses every movement in the product. The beat is the
+   loudest one there is, so it is also the one that most has to go — what remains is what the
+   Ladder would have shown anyway: the rung, open. */
+@media (prefers-reduced-motion: reduce) {
+  .beat {
+    animation: none;
+  }
+}

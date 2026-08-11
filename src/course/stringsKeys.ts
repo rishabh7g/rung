@@ -29,7 +29,7 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 77 keys: the 21 of PRD §4, the 5 the frozen screens forced
+ * file it is complaining about). 82 keys: the 21 of PRD §4, the 5 the frozen screens forced
  * (PR #120) — `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and the four
  * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — the 3 the Ladder
  * forced (#86): the counts-only pending line, the ownership footer and the sealed-level toast,
@@ -50,9 +50,10 @@
  * and the two ways out of it (pick it up, or leave it and start a new one) — and the 2 the
  * press-and-hold forced (#101): what the held control says once it is signed, and the way on to
  * part 2 (the prototype writes both in English for every course, which is the shell owning a
- * learner-facing sentence).
+ * learner-facing sentence) — and the 5 the Verdict forced (#103): the three checklist lines the
+ * ritual ends on, the honesty line under them, and the CTA that climbs back to the ladder.
  *
- * Those fifty-one are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
+ * Those fifty-six are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
  * as PR #120's were. The alternative each time was hardcoding learner-facing lines in the shell,
  * which is the one thing this list exists to prevent.
  */
@@ -130,7 +131,12 @@ export const STRINGS_KEYS = [
   'practice.resumeContinue',
   'practice.resumeNew',
   'pendingAuthoring',
+  'verdict.checkSentence',
+  'verdict.checkChecked',
+  'verdict.checkComprehension',
+  'verdict.honesty',
   'verdict.line',
+  'verdict.toLadder',
   'switchToast',
   'storageNote',
   'notebookInvitation',
@@ -338,8 +344,34 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'practice.resumeContinue': [],
   'practice.resumeNew': [],
   pendingAuthoring: [],
+  /**
+   * The Verdict (#103) — the pass checklist, the honesty line under it, and the way back to the
+   * ladder (PRD-design §6.7 flow 7). The prototype writes all five in English for every course,
+   * which is what a prototype does and what this product cannot: they are the last words of the
+   * ritual, and the ritual is the course's.
+   *
+   * The three checklist lines are the receipt for what the learner actually did, in the PRD's own
+   * order — wrote the sentence, checked it themselves, self-marked the comprehension — and two of
+   * them carry a number, because a number's place in a sentence is the language's business:
+   * `{ordinal}` is the course's own word for "the 11th" (`ordinal`, rendered by the caller, as
+   * `ritual.confirm.holdLabel` does), and `{count}` of `{total}` is the comprehension, both from
+   * the module's own `exitTest.comprehendCount` — every item was marked "same meaning", because
+   * anything else is a retry rather than a verdict — so a module that asked for three items reads
+   * "3 of 3" with no code change. Two names rather than one repeated, so a course can put them in
+   * its own order — Hindi says "of {total}, {count}" — the way `practice.summaryAtTwo` already
+   * does.
+   *
+   * `verdict.honesty` is Principle §3.4 verbatim — "the app graded nothing; it saved nothing you
+   * wrote" — and it is the one line on the screen that is about the app rather than the learner.
+   * `verdict.toLadder` is the CTA that fires the unlock beat.
+   */
+  'verdict.checkSentence': ['{ordinal}'],
+  'verdict.checkChecked': [],
+  'verdict.checkComprehension': ['{count}', '{total}'],
+  'verdict.honesty': [],
   /** The rung that just opened. */
   'verdict.line': ['{nextModule}'],
+  'verdict.toLadder': [],
   /** Course pair labels, both directions. */
   switchToast: ['{to}', '{from}'],
   storageNote: [],

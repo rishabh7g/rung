@@ -10,7 +10,8 @@
  *   • **Invariant 4**: a failed round writes *nothing* — the persisted document is byte-identical
  *     across one, and these files cannot reach the store to make it otherwise,
  *   • **the pass seam**: two "same meaning" marks hand over to #103's Verdict, carrying the token
- *     that says the comprehension was really taken.
+ *     that says the comprehension was really taken — which that screen spends on arrival, and
+ *     turns into the ritual's one write.
  *
  * Everything renders the real `<App />` over a mocked `fetch`, the way every screen test in this
  * repo does — and the only way in is the one the learner has: the arc's ~900ms hold, paid in full,
@@ -519,12 +520,18 @@ describe('two "same meaning" marks finish the test', () => {
     playAttempt(pool, ['got', 'got']);
 
     await waitFor(() => expect(window.location.hash).toBe('#/verdict'));
-    // The seam, as the next ticket will read it: the navigation itself carries the proof.
-    expect(cameFrom('comprehension', (window.history.state as { usr?: unknown } | null)?.usr)).toBe(
-      true,
+    // The seam, from the far side: the navigation carried the proof, and the Verdict acted on it
+    // — nothing else in the app can mark a module passed (#103, Invariant 1).
+    await waitFor(() =>
+      expect(useAppStore.getState().courses[COURSE]?.modules).toEqual({
+        [CURRENT]: { status: 'passed', passedAt: expect.any(String) },
+      }),
     );
-    // And #102 still wrote nothing — the pass is #103's to record.
-    expect(useAppStore.getState().courses[COURSE]?.modules).toEqual({});
+    // And this screen still wrote nothing itself — every write in the ritual is the Verdict's,
+    // which is also why the token is spent on arrival there rather than left in the entry.
+    expect(cameFrom('comprehension', (window.history.state as { usr?: unknown } | null)?.usr)).toBe(
+      false,
+    );
   });
 
   it('does not finish on one "same meaning" and one "not quite"', async () => {

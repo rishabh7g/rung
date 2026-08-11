@@ -23,9 +23,11 @@ import { resetContentCache } from '../course/content.ts';
 import { resetManifestCache } from '../course/manifest.ts';
 import { resetStringsCache } from '../course/strings.ts';
 import { ladderFromLevels } from '../engine/progression.ts';
+import { justPassed, passedRung } from '../shell/routes.tsx';
 import { useAppStore } from '../state/store.ts';
 import { DEV_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
 import { stringValue } from '../test/courseStrings.ts';
+import beatCss from './ladder/unlockBeat.module.css?raw';
 
 /* ------------------------------------------------------------------ the ladder */
 
@@ -416,6 +418,141 @@ describe('the staged rung card [D22]', () => {
     }
 
     expect(practiceTab()).toHaveAttribute('href', '#/practice');
+  });
+});
+
+/* -------------------------------------------------------------- the unlock beat */
+
+/**
+ * The product's one celebration (#103; PRD-design §3.6, §9, §12.3 [Q4]) — and the whole of what
+ * keeps it to one moment.
+ *
+ * The Verdict's "climb to the ladder" carries a one-shot flag naming the rung it just passed
+ * (`passedRung`, `shell/routes.tsx`); the Ladder plays the beat on what that pass OPENED and
+ * spends the flag as it lands. `VerdictScreen.test.tsx` walks the whole loop through the real
+ * ritual; these cases are about where the beat lands and where it does not, which needs a ten-rung
+ * ladder and a level boundary rather than a ~900ms hold.
+ *
+ * The handles are `data-beat` attributes rather than class names, because a CSS-module class is a
+ * hash — and the same two attributes are what a live walk in a browser reads.
+ */
+describe('the unlock beat', () => {
+  /** Arrives on the Ladder the way the Verdict does: one navigation carrying the flag. */
+  async function arriveAfterPassing(moduleId: string) {
+    window.location.hash = '#/';
+    window.history.replaceState({ usr: passedRung(moduleId), key: 'seed', idx: 0 }, '');
+    await renderLadder();
+  }
+
+  function beats(): string[] {
+    return [...document.querySelectorAll('[data-beat]')].map(
+      (node) => node.getAttribute('data-beat') ?? '',
+    );
+  }
+
+  it('plays on the rung the pass opened, and on nothing else', async () => {
+    climb('L1-M1');
+    await arriveAfterPassing('L1-M1');
+
+    expect(beats()).toEqual(['rung']);
+    // On the card of the rung that is now current — not on the one that was just passed.
+    expect(document.querySelector('[data-beat="rung"]')?.textContent).toContain(
+      'M2 · CURRENT RUNG',
+    );
+  });
+
+  it('does not play on an ordinary visit — no flag, no beat', async () => {
+    climb('L1-M1');
+    await renderLadder();
+
+    expect(beats()).toEqual([]);
+  });
+
+  it('spends the flag on arrival, and never plays again on that entry', async () => {
+    climb('L1-M1');
+    await arriveAfterPassing('L1-M1');
+
+    // The entry the screen is standing on no longer carries it: a reload has nothing to replay.
+    await waitFor(() =>
+      expect(justPassed((window.history.state as { usr?: unknown } | null)?.usr)).toBeNull(),
+    );
+    // And the beat is still up — spending the flag does not take back the celebration.
+    expect(beats()).toEqual(['rung']);
+  });
+
+  it('is over by the next visit: leave the Ladder and come back, and nothing beats', async () => {
+    climb('L1-M1');
+    await arriveAfterPassing('L1-M1');
+    expect(beats()).toEqual(['rung']);
+
+    fireEvent.click(screen.getByRole('link', { name: 'Practice' }));
+    await screen.findByText(strings('practice.hubTitle'));
+    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
+    await screen.findByText('M2 · CURRENT RUNG');
+
+    expect(beats()).toEqual([]);
+  });
+
+  /**
+   * The seal rule made a moment (PRD-design §5, §12.3 [Q4]): a level unlocks only when EVERY
+   * module of the previous one is passed, so the tenth pass is the one that unseals — and the
+   * recommendation is the rung's own beat, on the level cell and on its first rung.
+   */
+  it('adds the level cell at exactly 10 of 10 — the pass that unsealed it', async () => {
+    climb(...Array.from({ length: 10 }, (_, index) => `L1-M${index + 1}`));
+    await arriveAfterPassing('L1-M10');
+
+    expect(beats().sort()).toEqual(['level', 'rung']);
+    expect(document.querySelector('[data-beat="level"]')?.textContent).toContain('LEVEL 2');
+    expect(document.querySelector('[data-beat="rung"]')?.textContent).toContain(
+      'M1 · CURRENT RUNG',
+    );
+  });
+
+  it('does not touch the strip at nine of ten — the level below is not complete', async () => {
+    climb(...Array.from({ length: 9 }, (_, index) => `L1-M${index + 1}`));
+    await arriveAfterPassing('L1-M9');
+
+    expect(beats()).toEqual(['rung']);
+    expect(screen.getByText(/LEVEL 1 · 9 OF 10/)).toBeInTheDocument();
+  });
+
+  it('stays quiet on a ladder with nothing left to open', async () => {
+    const all = ['L1', 'L2', 'L3'].flatMap((id) =>
+      Array.from({ length: 10 }, (_, index) => `${id}-M${index + 1}`),
+    );
+    climb(...all);
+    await arriveAfterPassing('L3-M10');
+
+    // Nothing opened, so nothing beats: the completion state is quiet (PRD-design §3.6).
+    expect(beats()).toEqual([]);
+  });
+
+  /**
+   * The motion itself, read out of the stylesheet — jsdom runs no animation, and the values are
+   * the design's rather than this file's: 1000ms `--motion-unlock`, cubic-bezier(.2,.7,.3,1),
+   * ONCE, with a 10px settle off the space scale (design/tokens.md §5).
+   */
+  describe('the movement', () => {
+    it('is the design’s duration, easing and single iteration', () => {
+      const rule = /\.beat \{([\s\S]*?)\n\}/.exec(beatCss)?.[1] ?? '';
+
+      expect(rule).toContain('var(--motion-unlock)');
+      expect(rule).toContain('cubic-bezier(0.2, 0.7, 0.3, 1)');
+      // No `infinite`, no iteration count at all: one beat is the whole point.
+      expect(rule).not.toMatch(/infinite|iteration-count/);
+      expect(beatCss).toContain('var(--color-accent-200)');
+      expect(beatCss).toContain('translateY(var(--space-3))');
+    });
+
+    it('collapses under prefers-reduced-motion — the loudest movement is the first to go', () => {
+      const reduced = /@media \(prefers-reduced-motion: reduce\) \{([\s\S]*)\n\}/.exec(
+        beatCss,
+      )?.[1];
+
+      expect(reduced).toBeDefined();
+      expect(reduced).toContain('animation: none');
+    });
   });
 });
 

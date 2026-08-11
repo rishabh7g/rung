@@ -15,6 +15,11 @@
  *      "The ladder is visible; the rungs are sealed" (PRD-design §3.2) is a DOM fact here.
  *   4. **The pending line and the ownership footer** — the recurring "yours to pace" copy.
  *
+ * And one thing that is not a state but a moment: **the unlock beat** (#103). A ritual that has
+ * just passed hands this screen a one-shot flag naming the rung it climbed, and the newly current
+ * rung — plus, at a level boundary, the cell that just unsealed — plays the product's single
+ * celebration, once (`useUnlockBeat` below; PRD-design §3.6, §12.3 [Q4]).
+ *
  * Everything the learner reads is the course's: rung titles and jobs and level names come from
  * that course's `levels.json`, the three sentences come from its `strings.json` (PRD §4, guarded
  * by `src/shellPurity.test.ts`). The only English in here is structural furniture — the `LEVEL`
@@ -27,7 +32,8 @@
  * `passRitual` guards with. A count rendered here and a rule enforced there cannot disagree,
  * because they are the same derivation.
  */
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Lock } from 'lucide-react';
 import { useCourse } from '../course/CourseProvider.tsx';
 import { interpolate, useStrings } from '../course/strings.ts';
@@ -39,6 +45,7 @@ import {
   rungStage,
   type RungStage,
 } from '../engine/progression.ts';
+import { HOME_PATH, justPassed } from '../shell/routes.tsx';
 import { Toast, useToast } from '../shell/Toast.tsx';
 import { LevelStrip, type LevelCell, type SquareState } from './ladder/LevelStrip.tsx';
 import { RungCard } from './ladder/RungCard.tsx';
@@ -55,6 +62,7 @@ export default function LadderScreen() {
   // `passRitual` guards writes with (`./useProgression.ts`), production counters included, so the
   // rung card's `exit_ready` stage is read here rather than injected (#95).
   const { levels, input, ready } = useProgression();
+  const justUnlocked = useUnlockBeat();
 
   // A broken ladder is the content layer failing, which is one screen wherever it fails (#79).
   if (levels.error !== null) return <ContentErrorScreen detail={levels.error.message} />;
@@ -71,7 +79,7 @@ export default function LadderScreen() {
   const current = currentRungId(input);
 
   // The level the rung list shows: the one holding the current rung, or the last level when the
-  // whole ladder is passed — the quiet completion state, whose beat and edge states are #68/#103.
+  // whole ladder is passed — the quiet completion state: nothing left to open, so nothing beats.
   const activeIndex =
     current === null
       ? plan.length - 1
@@ -84,6 +92,26 @@ export default function LadderScreen() {
   const total = active.modules.length;
   const passed = active.modules.filter((module) => statuses[module.id] === 'passed').length;
 
+  /**
+   * **Where the beat lands, derived like everything else on this screen.**
+   *
+   * The flag names the rung the ritual just passed; the beat belongs to what that pass OPENED —
+   * the newly current rung, which is the whole of it on an ordinary rung. At a level boundary the
+   * pass unsealed a level as well (the seal rule, PRD-design §5: every module of the previous
+   * level passed), and the recommendation on [Q4] is the same beat on the level cell and on its
+   * first rung — which is that very rung, since an unsealed level's first rung is where the
+   * learner now stands. So: one derivation, and the boundary is "the pass and the opening are in
+   * different levels".
+   *
+   * A finished ladder has no current rung and therefore no beat: the last pass opens nothing, and
+   * the completion state is quiet (PRD-design §3.6).
+   */
+  const beatRung = justUnlocked !== null && current !== null ? current : null;
+  const beatLevel =
+    beatRung === null || levelOf(plan, justUnlocked) === levelOf(plan, beatRung)
+      ? null
+      : levelOf(plan, beatRung);
+
   const cells: LevelCell[] = plan.map((entry, index) => {
     const sealed = levelSealed(input, index + 1);
     return {
@@ -92,6 +120,7 @@ export default function LadderScreen() {
       tagline: entry.tagline,
       sealed,
       active: index === activeIndex,
+      unsealed: index + 1 === beatLevel,
       squares: entry.modules.map((module): SquareState => {
         if (sealed) return 'sealed';
         if (statuses[module.id] === 'passed') return 'passed';
@@ -151,6 +180,7 @@ export default function LadderScreen() {
                 title={module.title}
                 job={module.job}
                 dir={course.dir}
+                unlocked={module.id === beatRung}
               />
             ) : statuses[module.id] === 'passed' ? (
               <PassedRung
@@ -182,6 +212,44 @@ export default function LadderScreen() {
   );
 }
 
+/* -------------------------------------------------------------------- the beat */
+
+/**
+ * **The unlock beat, read once and consumed** (#103) — the product's one celebration, and the
+ * whole of what keeps it to one.
+ *
+ * The Verdict's "climb to the ladder" carries a flag naming the rung it just passed
+ * (`passedRung`, `shell/routes.tsx`); this reads it on mount and then **replaces the history
+ * entry with one that carries nothing**. Two things follow, and they are the requirement:
+ *
+ *   • It fires **once**. The value is captured in a cell of this component, so removing the flag
+ *     from the entry does not remove the beat from the render that is already playing it — and
+ *     nothing can put it back, because nothing here ever writes that cell again.
+ *   • It **never replays on a revisit**. Tapping the Ladder tab is a new entry with no flag; a
+ *     reload, a back tap onto this entry, or a re-mount reads the replaced entry and finds
+ *     nothing. The flag is gone from history, not merely ignored.
+ *
+ * Returns the module id the ritual passed, or `null` for every other way of arriving here — which
+ * is every way but one.
+ */
+function useUnlockBeat(): string | null {
+  const { state } = useLocation();
+  const navigate = useNavigate();
+  const [justUnlocked] = useState(() => justPassed(state));
+
+  useEffect(() => {
+    if (justUnlocked === null) return;
+    navigate(HOME_PATH, { replace: true, state: null });
+  }, [justUnlocked, navigate]);
+
+  return justUnlocked;
+}
+
+/** Which level of the ladder a module is on, 1-based — `0` for an id the ladder does not list. */
+function levelOf(plan: readonly { modules: readonly { id: string }[] }[], moduleId: string | null) {
+  return plan.findIndex((entry) => entry.modules.some((module) => module.id === moduleId)) + 1;
+}
+
 /* --------------------------------------------------------------------- the rows */
 
 interface RungProps {
@@ -193,6 +261,8 @@ interface RungProps {
 
 interface CurrentRungProps extends RungProps {
   stage: RungStage;
+  /** The beat lands here: this rung is the one the pass just opened. */
+  unlocked: boolean;
 }
 
 /**
@@ -205,11 +275,18 @@ interface CurrentRungProps extends RungProps {
  * the title is no longer a link: the card's primary CTA is the permanent way into the module, and
  * a `pending` rung has no module to link to at all.
  */
-function CurrentRung({ stage, moduleId, title, job, dir }: CurrentRungProps) {
+function CurrentRung({ stage, moduleId, title, job, dir, unlocked }: CurrentRungProps) {
   return (
     <li className={styles.currentItem}>
       <RungMarker state="current" />
-      <RungCard stage={stage} moduleId={moduleId} title={title} job={job} dir={dir} />
+      <RungCard
+        stage={stage}
+        moduleId={moduleId}
+        title={title}
+        job={job}
+        dir={dir}
+        unlocked={unlocked}
+      />
     </li>
   );
 }
