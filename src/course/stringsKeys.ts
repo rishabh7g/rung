@@ -29,7 +29,7 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 72 keys: the 21 of PRD §4, the 5 the frozen screens forced
+ * file it is complaining about). 75 keys: the 21 of PRD §4, the 5 the frozen screens forced
  * (PR #120) — `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and the four
  * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — the 3 the Ladder
  * forced (#86): the counts-only pending line, the ownership footer and the sealed-level toast,
@@ -44,10 +44,12 @@
  * session machine forced (#96): the Practice hub's title, its three phase lines and the line that
  * says the phases never gate, the two Begin labels, the three phase names the soft chips wear, the
  * honest answer to a Review chip with nothing due, and the summary's title, four count lines and
- * its way back to the Ladder — and the 5 the Read phase forced (#97): the cue toggle's two labels
- * and its pager's three, the last of which names where the rung's last sentence goes.
+ * its way back to the Ladder — the 5 the Read phase forced (#97): the cue toggle's two labels
+ * and its pager's three, the last of which names where the rung's last sentence goes — and the 3
+ * lossless resume forced (#99): the line that says a session is still open and where it stopped,
+ * and the two ways out of it (pick it up, or leave it and start a new one).
  *
- * Those forty-six are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
+ * Those forty-nine are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
  * as PR #120's were. The alternative each time was hardcoding learner-facing lines in the shell,
  * which is the one thing this list exists to prevent.
  */
@@ -119,6 +121,9 @@ export const STRINGS_KEYS = [
   'practice.summaryProduced',
   'practice.summaryAtTwo',
   'practice.backToLadder',
+  'practice.resumeLine',
+  'practice.resumeContinue',
+  'practice.resumeNew',
   'pendingAuthoring',
   'verdict.line',
   'switchToast',
@@ -309,6 +314,22 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   /** How many of the rung's sentences now stand at ≥ 2×, out of how many there are. */
   'practice.summaryAtTwo': ['{count}', '{total}'],
   'practice.backToLadder': [],
+  /**
+   * Lossless resume (#99, PRD §8 F4) — the hub's offer when the course has a session still open.
+   *
+   * The line says WHERE it stopped, because a resume the learner cannot picture is a button they
+   * will not press: the phase in the course's own name (`practice.phase.*`, interpolated as
+   * `{phase}` — one name per phase, wherever a phase is named) and the card as a `{count}` of
+   * `{total}`. Counts, never time (Invariant 2): nothing here says when the session was left,
+   * how long ago, or how long it ran — the app has no calendar to say it with.
+   *
+   * The two controls are separate keys rather than one toggle because they are two different
+   * promises: `resumeContinue` keeps the place AND the session (no second `sessionCount`, no
+   * second tick of the review queue), `resumeNew` drops the place and spends a fresh session.
+   */
+  'practice.resumeLine': ['{phase}', '{count}', '{total}'],
+  'practice.resumeContinue': [],
+  'practice.resumeNew': [],
   pendingAuthoring: [],
   /** The rung that just opened. */
   'verdict.line': ['{nextModule}'],

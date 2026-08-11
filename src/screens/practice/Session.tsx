@@ -24,14 +24,29 @@
  *
  * **The position is snapshotted per course on every advance** (PRD §8 F7 — `session`), written
  * through `setSession` and cleared at the summary. Nothing else about a session persists: what the
- * learner earned is in the counters and the queue, and this is only where they were. Restoring it
- * — a resume banner, and `startSession` deliberately NOT called again — is #99's.
+ * learner earned is in the counters and the queue, and this is only where they were.
+ *
+ * **And it is flushed the moment the page goes away** (#99). That write is a passive effect, and a
+ * passive effect is SCHEDULED: tap Next, and the OS can background, freeze or discard the page in
+ * the gap before React gets round to running it — which is exactly when a learner leaves — so the
+ * position would come back one advance stale. `visibilitychange → hidden` and `pagehide` write the
+ * CURRENT position synchronously, off a ref the commit keeps up to date, and between them they
+ * fire on every path a phone actually takes (home button, app switcher, tab close, bfcache). An
+ * unchanged position leaves the state object untouched, so nothing re-renders and no screen sees
+ * a flush happen — it costs one rewrite of a document that already said the same thing, which is
+ * the right price for the last moment the app is certain it can still write.
+ *
+ * **Coming back is a `resume` prop, and it is deliberately NOT a second `startSession`** (#99):
+ * the count and the review queue's tick were spent when the session opened, and charging a
+ * learner a session for closing their tab is the divergence PRD §17 names. The hub restores the
+ * snapshot's phase and index here, and the plan it hands over carries the snapshot's own queue
+ * for that phase (`resume.ts`).
  *
  * **Read (#97) is the phase that costs nothing.** It writes to neither queue: its pager moves the
  * position and hands over to Produce at the end of the rung, which is why it needs no `onResult`
  * of its own. `ReadPhase` draws the card; the position stays here, because the snapshot is here.
  */
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useModules } from '../../course/content.ts';
 import { useStrings } from '../../course/strings.ts';
 import type { Sentence } from '../../course/types.ts';
@@ -40,7 +55,7 @@ import type { SessionPlan } from '../../engine/session.ts';
 import { RevealCard, type RevealResult } from '../../components/RevealCard.tsx';
 import { WhyPanel } from '../../components/WhyPanel.tsx';
 import { useAppStore } from '../../state/store.ts';
-import type { SessionPhase } from '../../state/types.ts';
+import type { SessionPhase, SessionSnapshot } from '../../state/types.ts';
 import { Toast, useToast } from '../../shell/Toast.tsx';
 import { rungLabel } from '../ladder/rungLabel.ts';
 import { ProductionDots } from '../module/ProductionDots.tsx';
@@ -53,6 +68,21 @@ import styles from './Session.module.css';
 
 /** Shared, so a course with no counters yet reads the same map every render. */
 const NO_COUNTERS: Readonly<Record<string, number>> = {};
+
+/**
+ * The ids a phase serves: Review's and Produce's come from the plan, Read walks the rung itself.
+ * One definition, because the snapshot's position is an index INTO this and the resumed session
+ * has to land on the very card the interrupted one was showing.
+ */
+function queueOf(
+  phase: SessionPhase,
+  plan: SessionPlan,
+  sentenceIds: readonly string[],
+): readonly string[] {
+  if (phase === 'review') return plan.reviewIds;
+  if (phase === 'produce') return plan.produceIds;
+  return sentenceIds;
+}
 
 /**
  * Everything the session holds that is not in the plan: where the learner is, and what they have
@@ -79,11 +109,16 @@ interface SessionProps {
   sentenceIds: readonly string[];
   /** What this session serves, taken once at `startSession` (`engine/session.ts`). */
   plan: SessionPlan;
+  /**
+   * Where an INTERRUPTED session picks up (#99) — the per-course snapshot's phase and index.
+   * Absent on a fresh session, which opens at the first card of its first phase.
+   */
+  resume?: { phase: SessionPhase; idx: number };
   /** The course's writing direction — every word on screen is its content or its copy. */
   dir?: string;
 }
 
-export function Session({ courseId, moduleId, sentenceIds, plan, dir }: SessionProps) {
+export function Session({ courseId, moduleId, sentenceIds, plan, resume, dir }: SessionProps) {
   const strings = useStrings();
   const toast = useToast();
   const recordReview = useAppStore((store) => store.recordReview);
@@ -93,26 +128,44 @@ export function Session({ courseId, moduleId, sentenceIds, plan, dir }: SessionP
 
   // `setLive`, never `setState`: `src/state/unlockPath.test.ts` scans the shell for that call and
   // the store's actions are the only place allowed to make it (Invariant 1).
-  const [live, setLive] = useState<Live>(() => ({
+  const [live, setLive] = useState<Live>(() => {
     // A session with nothing due opens at Read (`startSession` wrote the same phase into the
-    // snapshot); the Review chip is still there, and still answers.
-    phase: plan.reviewIds.length > 0 ? 'review' : 'read',
-    idx: 0,
-    done: false,
-    reviewed: 0,
-    gotIt: 0,
-    produced: 0,
-  }));
+    // snapshot); the Review chip is still there, and still answers. A RESUMED one opens wherever
+    // it was left (#99).
+    const phase = resume?.phase ?? (plan.reviewIds.length > 0 ? 'review' : 'read');
+    // Clamped, because the queue is re-planned and the stored index is not: a Produce queue that
+    // lost a card while the app was closed must land the learner on a real card rather than on the
+    // blank one an out-of-range index draws.
+    const last = Math.max(0, queueOf(phase, plan, sentenceIds).length - 1);
+
+    return {
+      phase,
+      idx: Math.min(Math.max(0, resume?.idx ?? 0), last),
+      done: false,
+      // Zero on a resume too: these count THIS sitting's cards, which is what the summary is about.
+      // What the interrupted half earned is already in the counters and the review queue — those
+      // are the numbers that keep, and nothing here re-counts them.
+      reviewed: 0,
+      gotIt: 0,
+      produced: 0,
+    };
+  });
 
   /* ------------------------------------------------------------------ the material */
 
   // Review's five cards routinely come from five different rungs, so the session loads whatever
   // modules its ids name — silently, through the content layer's cache (`useModules`, #81/#94).
+  // Produce's ids are the rung's own in every fresh session, so that half of the set is normally
+  // just `moduleId`; a RESUMED session (#99) is the case where it need not be, because the rung
+  // can have moved on while the app was closed and the stored queue still names the old one.
   const moduleIds = useMemo(
     () => [
-      ...new Set([moduleId, ...plan.reviewIds.map((id) => moduleIdOf(id)).filter(isModuleId)]),
+      ...new Set([
+        moduleId,
+        ...[...plan.reviewIds, ...plan.produceIds].map((id) => moduleIdOf(id)).filter(isModuleId),
+      ]),
     ],
-    [moduleId, plan.reviewIds],
+    [moduleId, plan.reviewIds, plan.produceIds],
   );
   const modules = useModules(moduleIds);
   const sentences = useMemo(() => {
@@ -124,23 +177,69 @@ export function Session({ courseId, moduleId, sentenceIds, plan, dir }: SessionP
   }, [modules]);
 
   /** The ids the phase on screen serves — the queue the snapshot records. */
-  const queue = useMemo(() => {
-    if (live.phase === 'review') return plan.reviewIds;
-    if (live.phase === 'produce') return plan.produceIds;
-    return sentenceIds;
-  }, [live.phase, plan.reviewIds, plan.produceIds, sentenceIds]);
+  const queue = useMemo(
+    () => queueOf(live.phase, plan, sentenceIds),
+    [live.phase, plan, sentenceIds],
+  );
 
   /* --------------------------------------------------------------- the snapshot */
+
+  /**
+   * Where the learner is, as of this render — `null` at the summary, because a session that
+   * reached its end is not one to resume. Memoised so it only changes when the position does.
+   */
+  const position = useMemo<SessionSnapshot | null>(
+    () => (live.done ? null : { phase: live.phase, idx: live.idx, queue: [...queue] }),
+    [live.done, live.phase, live.idx, queue],
+  );
+
+  /**
+   * The same position, held where an event listener can read it — and kept up to date in a LAYOUT
+   * effect, which is the whole trick: layout effects run synchronously with the commit, while the
+   * write below is a passive effect and therefore scheduled. So this ref always holds the card
+   * that is actually on screen, and the flush can persist it without waiting for work the browser
+   * may never get round to running.
+   */
+  const pending = useRef(position);
+  useLayoutEffect(() => {
+    pending.current = position;
+  }, [position]);
 
   // Written on every advance and every phase change, cleared at the summary (PRD §8 F7). It is an
   // effect because it is a write, and `setSession` ignores an unchanged position — so a re-render
   // that has not moved touches neither the store nor localStorage.
   useEffect(() => {
-    setSession(
-      courseId,
-      live.done ? null : { phase: live.phase, idx: live.idx, queue: [...queue] },
-    );
-  }, [courseId, live.done, live.phase, live.idx, queue, setSession]);
+    setSession(courseId, position);
+  }, [courseId, position, setSession]);
+
+  /**
+   * THE FLUSH (#99) — the position, written the moment the page goes away.
+   *
+   * A phone leaves a session by backgrounding it, not by finishing it, and the effect above is
+   * scheduled work: between the tap that moved the card and React committing that write, the OS
+   * can freeze or discard the page and the last advance is simply lost. `visibilitychange →
+   * hidden` is the one event that fires on every one of those paths (home button, app switcher,
+   * tab switch, close) and `pagehide` catches the bfcache/unload path the older Safaris take, so
+   * between them the stored position is exact rather than one card stale.
+   *
+   * It writes SYNCHRONOUSLY, off the ref — the whole point is not to be scheduled — and an
+   * unchanged position is not a state change, so the ordinary path re-renders nothing.
+   */
+  useEffect(() => {
+    const flush = (): void => setSession(courseId, pending.current);
+    const onVisibility = (): void => {
+      // Only `hidden`: coming BACK is not a moment to write, and a visible tab's position is
+      // already whatever the effect above last wrote.
+      if (document.visibilityState === 'hidden') flush();
+    };
+
+    document.addEventListener('visibilitychange', onVisibility);
+    window.addEventListener('pagehide', flush);
+    return () => {
+      document.removeEventListener('visibilitychange', onVisibility);
+      window.removeEventListener('pagehide', flush);
+    };
+  }, [courseId, setSession]);
 
   /* ----------------------------------------------------------------- the marks */
 

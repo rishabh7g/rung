@@ -10,12 +10,23 @@
  *
  * **Starting is one call, and it happens once.** `startSession` increments `sessionCount`, ticks
  * the review queue and writes the opening snapshot in a single write, and answers with the plan
- * the session then runs on. Nothing else in the app may do any of that — the resume flow (#99)
- * restores a snapshot and calls it not at all, which is only safe while there is one caller.
+ * the session then runs on. Nothing else in the app may do any of that — and RESUMING (#99) calls
+ * it not at all, which is only safe while there is one caller.
  *
  * **The session is immersive** (#84): `enterSession` hides the nav and puts the pause ✕ in the
  * header; the ✕, the back button, and any navigation away end it (`AppShell`). The learner's
- * position survives that in the per-course snapshot; picking it back up is #99's.
+ * position survives that in the per-course snapshot, and this screen is where they pick it back
+ * up: an open session for the ACTIVE course turns the Begin CTA into the resume plate
+ * (`ResumeBanner`), whose two controls are the ticket's whole rule —
+ *
+ *   • **Continue** restores the snapshot's phase, index and queue, and starts NOTHING: no second
+ *     `sessionCount`, no second tick of the review queue. Closing a tab is not a session.
+ *   • **New session** drops the snapshot and begins a fresh one, which is the one that counts.
+ *
+ * **The snapshot is per course, and the hub reads the ACTIVE one** — so switching away and back
+ * offers that course's own position, untouched, exactly as PRD §8 F0's AC asks and exactly where
+ * the prototype resets instead (§17: do not copy). Nothing on this screen has to do anything for
+ * that to be true; it falls out of state v6's keying (Invariant 8).
  *
  * Every learner-facing word is the course's (`practice.*`, PRD §4). The only English is structural
  * furniture in the register of the nav's tab labels — the `M1 · WHO I AM` kicker and the phase
@@ -33,9 +44,12 @@ import { useImmersive } from '../shell/immersive.tsx';
 import { RegistrationMarks } from './RegistrationMarks.tsx';
 import { rungLabel } from './ladder/rungLabel.ts';
 import { PHASES } from './practice/PhaseChips.tsx';
+import { isResumable, resumePlan } from './practice/resume.ts';
+import { ResumeBanner } from './practice/ResumeBanner.tsx';
 import { Session } from './practice/Session.tsx';
 import { useProgression } from './useProgression.ts';
 import type { StringsKey } from '../course/stringsKeys.ts';
+import type { SessionPhase } from '../state/types.ts';
 import styles from './PracticeScreen.module.css';
 
 /** Shared, so a course with no state yet reads the same values every render. */
@@ -54,6 +68,8 @@ interface Run {
   moduleId: string;
   sentenceIds: readonly string[];
   plan: SessionPlan;
+  /** Set only on a resume (#99): where the interrupted session left off. */
+  resume?: { phase: SessionPhase; idx: number };
 }
 
 export default function PracticeScreen() {
@@ -62,8 +78,15 @@ export default function PracticeScreen() {
   const { immersive, enterSession } = useImmersive();
   const { input, ready } = useProgression();
   const startSession = useAppStore((store) => store.startSession);
+  const setSession = useAppStore((store) => store.setSession);
   const reviewQueue = useAppStore((store) => store.courses[course.id]?.reviewQueue) ?? NO_QUEUE;
   const production = useAppStore((store) => store.courses[course.id]?.production) ?? NO_COUNTERS;
+  /**
+   * The ACTIVE course's open session, or `null` (#99). It is read per course and never per app, so
+   * a switch away and back finds this course's own position exactly where it was left — the state
+   * layer's keying is the whole of that promise (Invariant 8, PRD §8 F0 AC).
+   */
+  const snapshot = useAppStore((store) => store.courses[course.id]?.session) ?? null;
 
   const rung = ready ? currentRungId(input) : null;
   const stage = rung === null ? null : rungStage(input, rung);
@@ -105,6 +128,7 @@ export default function PracticeScreen() {
         moduleId={run.moduleId}
         sentenceIds={run.sentenceIds}
         plan={run.plan}
+        resume={run.resume}
         dir={course.dir}
       />
     );
@@ -130,6 +154,38 @@ export default function PracticeScreen() {
     const plan = startSession(course.id, sentenceIds);
     setRun({ moduleId: rung, sentenceIds, plan });
     enterSession();
+  };
+
+  /**
+   * CONTINUE (#99) — the same session, picked up at the card it was left on.
+   *
+   * `startSession` is deliberately not called: its count and its tick were spent when this session
+   * opened, and spending them again would charge a learner a session for closing their tab and
+   * bring the whole review queue due a second time on one sitting's work. So the queue goes into
+   * the plan UNTICKED (`resumePlan`), the snapshot's own order is kept for the phase it names, and
+   * the position rides along to the session.
+   */
+  const carryOn = (): void => {
+    if (rung === null || !startable || !isResumable(snapshot)) return;
+
+    const plan = resumePlan(snapshot, {
+      queue: reviewQueue,
+      moduleSentenceIds: sentenceIds,
+      production,
+    });
+    setRun({
+      moduleId: rung,
+      sentenceIds,
+      plan,
+      resume: { phase: snapshot.phase, idx: snapshot.idx },
+    });
+    enterSession();
+  };
+
+  /** NEW SESSION — the snapshot dropped on purpose, then a fresh start, which is the one that counts. */
+  const beginFresh = (): void => {
+    setSession(course.id, null);
+    begin();
   };
 
   return (
@@ -192,19 +248,29 @@ export default function PracticeScreen() {
               {strings['practice.guideLine']}
             </p>
 
-            {startable && (
-              <div className={styles.beginFrame}>
-                <RegistrationMarks />
-                <button type="button" className={styles.begin} onClick={begin} dir={course.dir}>
-                  {/* The CTA names where the session opens, because that is what it does: Review
-                      when something is due, Read when nothing is (PRD §8 F4). Resuming an
-                      interrupted session is #99's second label, in this same place. */}
-                  {preview.reviewIds.length > 0
-                    ? strings['practice.beginReview']
-                    : strings['practice.beginRead']}
-                </button>
-              </div>
-            )}
+            {/* One entry into the session, at the bottom of the column where the prototype puts
+                it — and an open session replaces it rather than sitting beside it (#99): two CTAs
+                on one screen is the learner deciding which of them means "practise". */}
+            {startable &&
+              (isResumable(snapshot) ? (
+                <ResumeBanner
+                  snapshot={snapshot}
+                  onContinue={carryOn}
+                  onFresh={beginFresh}
+                  dir={course.dir}
+                />
+              ) : (
+                <div className={styles.beginFrame}>
+                  <RegistrationMarks />
+                  <button type="button" className={styles.begin} onClick={begin} dir={course.dir}>
+                    {/* The CTA names where the session opens, because that is what it does: Review
+                        when something is due, Read when nothing is (PRD §8 F4). */}
+                    {preview.reviewIds.length > 0
+                      ? strings['practice.beginReview']
+                      : strings['practice.beginRead']}
+                  </button>
+                </div>
+              ))}
           </>
         )
       )}

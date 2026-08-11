@@ -1,0 +1,72 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   Geometry follows design/Rung App v3.3.dc.html → Practice → the hub's CTA block (`phStart`):
+   the plate stands exactly where the Begin button stands, held at the bottom of the column, and
+   wears the four registration marks the other blueprint objects on this screen wear. */
+
+/* A blueprint object (design/tokens.md §3): radius 0, hairline, no fill — and the
+   `position: relative` the registration marks are absolutely positioned against. */
+.banner {
+  position: relative;
+  margin-top: auto;
+  padding: var(--space-4);
+  background: var(--color-bg);
+  border: var(--border-hairline);
+}
+
+/* Course prose at the Devanagari floor, like every other line the hub says in the course's own
+   words (the phase lines, the guide line) — a caption token would set Hindi in Barlow, which
+   draws no Devanagari at all (design/tokens.md §2). */
+.line {
+  margin: 0 0 var(--space-3);
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  color: var(--ink-65);
+}
+
+/* The shape both controls share. Transparent border by default so a variant colours it without
+   moving anything — the rung card's `.action`, same reason (#87). */
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: var(--border-hairline);
+  border-color: transparent;
+  color: inherit;
+  font: var(--text-l2-card);
+  font-size: var(--devanagari-min-size);
+  text-align: center;
+  cursor: pointer;
+  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* THE filled object on the hub, inherited from the Begin CTA it stands in for: solid accent,
+   ground-coloured text, --cta-height (48px). */
+.continue {
+  composes: action;
+  min-height: var(--cta-height);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.continue:active {
+  background: var(--color-accent-700);
+  border-color: var(--color-accent-700);
+}
+
+/* Starting over is the quieter of the two: a wireframe at the secondary height (46px,
+   design/tokens.md §4), clearing --tap-min either way. */
+.fresh {
+  composes: action;
+  min-height: var(--btn-secondary-height);
+  margin-top: var(--space-2);
+  border-color: var(--color-divider);
+}
+
+.fresh:active {
+  background: color-mix(in srgb, var(--color-text) 14%, transparent);
+}
