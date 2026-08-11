@@ -32,11 +32,10 @@ describe('App', () => {
 
     render(<App />);
 
-    // Loading: the shell is up, the screen is not.
-    expect(screen.queryByText(/active course/)).not.toBeInTheDocument();
-    expect(
-      await screen.findByText(/active course: hindi → marathi \(hi-mr\) · 3 in this build/),
-    ).toBeInTheDocument();
+    // Loading: the boot screen is up, the Ladder is not — no screen mounts without a course.
+    expect(screen.queryByText(/LEVEL/)).not.toBeInTheDocument();
+    // Then the Ladder, whose first line is the position kicker off the active course's ladder.
+    expect(await screen.findByText(/LEVEL 1 · 0 OF 3/)).toBeInTheDocument();
     expect(fetchMock).toHaveBeenCalledWith('/content/courses.json');
   });
 
@@ -48,8 +47,8 @@ describe('App', () => {
     expect(await screen.findByRole('alert')).toHaveTextContent(/no "courses" array/);
   });
 
-  // SMOKE (#81) — the wiring moved to `src/screens/LadderScreen.tsx` with the shell (#84) and is
-  // still reached through the app's own routes, so these two stay boot tests. #86 replaces both.
+  // The boot half of the Ladder (#86): the screen the app opens on reads its rungs out of the
+  // active course's own levels.json. What the screen DOES with them is `LadderScreen.test.tsx`.
   it("lists the active course's L1 rungs, read from its own levels.json", async () => {
     const fetchMock = mockContentFetch(DEV_MANIFEST);
 
@@ -57,7 +56,7 @@ describe('App', () => {
 
     expect(await screen.findByText('Who I am')).toBeInTheDocument();
     expect(screen.getByText('First exchange')).toBeInTheDocument();
-    expect(screen.getByText(/Foundations · 2 of 3 rungs have content/)).toBeInTheDocument();
+    expect(screen.getByText(/Foundations — say what you need/)).toBeInTheDocument();
     expect(fetchMock).toHaveBeenCalledWith('/content/hi-mr/levels.json');
   });
 
@@ -74,10 +73,9 @@ describe('App', () => {
 
     render(<App />);
 
-    const ordinal = stringValue('hi-mr', 'ordinal').replace('{n}', '3');
-    expect(
-      await screen.findByText(`${stringValue('hi-mr', 'cueLabel')} · ${ordinal}`),
-    ).toBeInTheDocument();
+    // The ownership footer is the Ladder's own line and the shell has no copy of its own to
+    // fall back on: what renders is whatever hi-mr's bundle ships, verbatim (PRD §4).
+    expect(await screen.findByText(stringValue('hi-mr', 'ladder.ownership'))).toBeInTheDocument();
     expect(fetchMock).toHaveBeenCalledWith('/content/hi-mr/strings.json');
   });
 });
