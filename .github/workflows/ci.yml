@@ -1,0 +1,46 @@
+# CI is the same gate as local: scripts/verify.sh, and nothing else.
+# Adding a second lint/test/build job here is how CI and the harness drift apart.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# The run reads the repo, builds it, and writes nothing back.
+permissions:
+  contents: read
+
+# One run per ref: a new push supersedes the one still going.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - run: npm ci
+
+      # TYPES → LINT → TEST → CONTENT → BUILD; one line when green, one failure
+      # block when it isn't.
+      - name: scripts/verify.sh
+        run: bash scripts/verify.sh
+
+      # Red only. Each step's full output lives in .verify/<step>.log, which is
+      # gitignored — without this, the 20-line tail in the log above is all a
+      # failure leaves behind.
+      - name: Upload .verify logs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verify-logs
+          path: .verify/
