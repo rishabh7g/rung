@@ -623,6 +623,30 @@ walked Ladder → Module → Sentence Detail with **57 requests, 57 served by th
 network, 0 failed**. Screenshots, the byte tables, Chrome's installability verdict and the list
 of what still needs a physical device are in [`docs/05-pwa-notes.md`](docs/05-pwa-notes.md).
 
+## Deployment
+
+**Live: [`https://rishabh7g.github.io/rung/`](https://rishabh7g.github.io/rung/)** — GitHub Pages,
+served straight from this repo (#91). It exists so the app can be **installed once** from an HTTPS
+URL; after that it runs entirely from the service worker's precache and never needs the origin
+again.
+
+- **How it deploys:** every push to `main` runs `.github/workflows/deploy.yml` — `npm ci` →
+  `VITE_BASE=/rung/ npm run build` → `upload-pages-artifact` → `deploy-pages`. Pages' source is
+  **GitHub Actions** (no `gh-pages` branch, nothing committed). CI runs beside it as the gate;
+  the deploy workflow publishes and does not re-verify.
+- **How to redeploy:** Actions → **Deploy** → *Run workflow* (`workflow_dispatch`). Same commit,
+  fresh artifact — no empty commit needed.
+- **The sub-path is a build input, not a constant.** A project site serves from `/rung/`, so
+  `vite.config.ts` reads `base: process.env.VITE_BASE ?? '/'` and everything downstream follows it:
+  the content fetches through `import.meta.env.BASE_URL`, `index.html`'s hrefs through Vite's own
+  rewrite, and the manifest `id`/`start_url`/icons plus the worker's registration scope through
+  `tools/pwa.ts`. Default is `/`, so `npm run dev` and `npm run preview` are unchanged. HashRouter
+  keeps every route in the fragment, so there is no 404-rewrite to configure.
+- **The live site ships an empty ladder, and that is correct.** The deploy builds strict content,
+  and every module in `content/` is `verified: false` until native verification (#64) — so the URL
+  serves the honest "no course content" boot screen. Deploying dev content to make the demo look
+  fuller would be lying to the one person this is for.
+
 ## How work happens
 
 - Every change is a **GitHub issue**; one PR per issue; PR title references the

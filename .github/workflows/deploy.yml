@@ -1,0 +1,69 @@
+# Every green `main` is the live site (#91): https://rishabh7g.github.io/rung/
+#
+# CI (.github/workflows/ci.yml) is still the gate — this workflow builds and
+# publishes, it does not re-verify. The two run in parallel on a push to main;
+# a red CI does not hold the deploy back, which is the tradeoff for `main` being
+# always-deployable rather than always-blocked.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  # The redeploy button: Actions → Deploy → "Run workflow". Pages serves an
+  # artifact, so re-running the last deploy of the same commit is the only way
+  # back to a known-good build without an empty commit.
+  workflow_dispatch:
+
+# `pages: write` + `id-token: write` are what deploy-pages@v4 needs to mint its
+# OIDC token; the checkout only ever reads.
+permissions:
+  pages: write
+  id-token: write
+  contents: read
+
+# One deploy at a time, and the newest push wins: the site is a single artifact,
+# so an older build finishing last would silently roll the site back.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    # Pages resolves the live URL through this environment; it is also what puts
+    # the link on the run and on the repo's home page.
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # Node 24, same as CI — the floor is jsdom 30's (>= 22.22.2), and
+      # package.json `engines` says the same.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+
+      - run: npm ci
+
+      # A PROJECT site serves from a sub-path, so the base is explicit and the
+      # build resolves everything under it: `import.meta.env.BASE_URL` for the
+      # content fetches, Vite's own rewrite for index.html, and the manifest +
+      # precache through `tools/pwa.ts`. Default `/` is untouched for dev.
+      #
+      # `npm run build`, not `vite build`: prebuild runs content:build STRICT, so
+      # what deploys carries only native-verified content — an empty ladder until
+      # #64 verifies L1-M1/M2, which is the honest state of this product.
+      - name: Build
+        run: VITE_BASE=/rung/ npm run build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -16,7 +16,14 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import { BRAND } from '../src/brand.ts';
-import { APPLE_TOUCH_ICON, FAVICON, PRECACHE_GLOBS, PWA_MANIFEST, pwaOptions } from './pwa.ts';
+import {
+  appleTouchIcon,
+  favicon,
+  PRECACHE_GLOBS,
+  pwaManifest,
+  pwaOptions,
+  publicUrl,
+} from './pwa.ts';
 import { token } from './tokens.ts';
 
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -48,14 +55,14 @@ function pngSize(file: string): { width: number; height: number } {
 
 describe('the manifest is the checklist', () => {
   it('matches design/pwa-checklist.md §3.1 key for key', () => {
-    expect(PWA_MANIFEST).toEqual(checklistManifest());
+    expect(pwaManifest()).toEqual(checklistManifest());
   });
 
   it('takes the name from src/brand.ts, not from a string typed twice', () => {
     const checklist = checklistManifest();
 
-    expect(PWA_MANIFEST.name).toBe(BRAND);
-    expect(PWA_MANIFEST.short_name).toBe(BRAND);
+    expect(pwaManifest().name).toBe(BRAND);
+    expect(pwaManifest().short_name).toBe(BRAND);
     // …and the checklist agrees, so the brand constant is not quietly renaming the product.
     expect(checklist['name']).toBe(BRAND);
   });
@@ -64,8 +71,8 @@ describe('the manifest is the checklist', () => {
     const paper = token('--color-bg');
 
     expect(paper).toBe('#f2f2f3');
-    expect(PWA_MANIFEST.background_color).toBe(paper);
-    expect(PWA_MANIFEST.theme_color).toBe(paper);
+    expect(pwaManifest().background_color).toBe(paper);
+    expect(pwaManifest().theme_color).toBe(paper);
   });
 
   it('deletes the two keys the plugin would otherwise add', () => {
@@ -81,13 +88,66 @@ describe('the manifest is the checklist', () => {
   });
 });
 
+/* ------------------------------------------------------------------------------- the sub-path */
+
+/**
+ * The deploy is a PROJECT site — `https://rishabh7g.github.io/rung/` (#91) — so the build runs
+ * with `VITE_BASE=/rung/`. Vite rewrites `index.html` and the app reads `import.meta.env.BASE_URL`,
+ * but the manifest is JSON nothing rewrites: a `/icons/…` in it resolves against the origin ROOT,
+ * where there is no app. That failure is silent (a 404 for an icon, an installed app that opens
+ * the wrong page), so it is asserted here rather than discovered on a phone.
+ */
+describe('the manifest follows the base the build is served from', () => {
+  const BASE = '/rung/';
+
+  it('is the checklist with the base in front of every path', () => {
+    // Mechanical: the checklist prints the manifest for a site at `/`, so the sub-path build is
+    // that same document with `/rung` in front of each root-absolute path, and nothing else
+    // changed. Only a value can start with `"/` — no key in it does.
+    const subPath = JSON.stringify(checklistManifest()).replaceAll('"/', `"${BASE}`);
+
+    expect(pwaManifest(BASE)).toEqual(JSON.parse(subPath));
+  });
+
+  it('opens the app and not the origin root — id, start_url and scope', () => {
+    const emitted = JSON.parse(JSON.stringify(pwaOptions(BASE).manifest)) as Record<
+      string,
+      unknown
+    >;
+
+    expect(emitted['id']).toBe(BASE);
+    expect(emitted['start_url']).toBe(BASE);
+    // `scope` is deleted, so the browser derives it from `start_url`'s directory — which is the
+    // base, and the same scope vite-plugin-pwa registers the worker with.
+    expect(emitted).not.toHaveProperty('scope');
+  });
+
+  it('leaves no icon pointing above the base', () => {
+    const paths = [
+      ...(pwaManifest(BASE).icons ?? []).map((icon) => icon.src),
+      appleTouchIcon(BASE),
+      favicon(BASE),
+    ];
+
+    expect(paths).not.toHaveLength(0);
+    for (const path of paths) expect(path.startsWith(BASE)).toBe(true);
+  });
+
+  it('is `/` for dev, preview and every test — the default, so nothing else moves', () => {
+    expect(pwaManifest().start_url).toBe('/');
+    expect(publicUrl('/', 'icons/icon-192.png')).toBe('/icons/icon-192.png');
+    expect(appleTouchIcon()).toBe('/icons/apple-touch-icon-180.png');
+    expect(favicon()).toBe('/icons/favicon-32.png');
+  });
+});
+
 /* ----------------------------------------------------------------------------------- the icons */
 
 describe('the icons the manifest names', () => {
   const icons = [
-    ...(PWA_MANIFEST.icons ?? []).map((icon) => ({ src: icon.src, sizes: icon.sizes ?? '' })),
-    { src: APPLE_TOUCH_ICON, sizes: '180x180' },
-    { src: FAVICON, sizes: '32x32' },
+    ...(pwaManifest().icons ?? []).map((icon) => ({ src: icon.src, sizes: icon.sizes ?? '' })),
+    { src: appleTouchIcon(), sizes: '180x180' },
+    { src: favicon(), sizes: '32x32' },
   ];
 
   it.each(icons)('ships $src at $sizes', ({ src, sizes }) => {
@@ -104,7 +164,7 @@ describe('the icons the manifest names', () => {
   });
 
   it('offers a maskable icon — Android crops, and a cropped mark is a broken mark', () => {
-    expect((PWA_MANIFEST.icons ?? []).some((icon) => icon.purpose === 'maskable')).toBe(true);
+    expect((pwaManifest().icons ?? []).some((icon) => icon.purpose === 'maskable')).toBe(true);
   });
 });
 
@@ -140,12 +200,18 @@ describe('the precache', () => {
 describe('index.html carries the iOS basics (checklist §3.3)', () => {
   const html = readFileSync(repoFile('index.html'), 'utf8');
 
+  // The two hrefs stay root-absolute in the SOURCE document on purpose: Vite rewrites the `href`
+  // of every asset link it resolves with the build's base, so `/icons/…` leaves `dist/` as
+  // `/rung/icons/…` on the sub-path deploy (#91). The manifest is the file that has to say the
+  // base itself, and does — see "the manifest follows the base" above.
   it('names the 180px apple-touch-icon the icon set generates', () => {
-    expect(html).toContain(`href="${APPLE_TOUCH_ICON}"`);
+    expect(html).toContain(`href="${appleTouchIcon()}"`);
   });
 
   it('declares a favicon, so the browser never guesses /favicon.ico offline', () => {
-    expect(html).toContain(`<link rel="icon" type="image/png" sizes="32x32" href="${FAVICON}" />`);
+    expect(html).toContain(
+      `<link rel="icon" type="image/png" sizes="32x32" href="${favicon()}" />`,
+    );
   });
 
   it('declares standalone capability and the translucent status bar', () => {
