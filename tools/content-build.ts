@@ -16,10 +16,11 @@
  * quietly masquerade as a learner build. `predev` runs with both flags (so `npm run dev` has
  * something to render while every module is still unverified); `prebuild` runs strict.
  *
- * Module validation is NOT reimplemented here — `validateModule` (#73) owns it. This tool adds
- * only what it alone knows: the manifest shape, the course's `scriptMode`, the gate, and the
- * per-module word index (#75) — which only a whole-course build can compute, because a surface is
- * taught once and stays taught for every later module.
+ * Module validation is NOT reimplemented here — `validateModule` (#73) owns it, and `checkStrings`
+ * (#76) owns the strings.json key list. This tool adds only what it alone knows: the manifest
+ * shape, the course's `scriptMode`, the gate, and the per-module word index (#75) — which only a
+ * whole-course build can compute, because a surface is taught once and stays taught for every
+ * later module.
  */
 import { copyFileSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
@@ -31,6 +32,7 @@ import {
   tokenizeSurface,
   type SurfaceLookup,
 } from '../src/engine/surface.ts';
+import { checkStrings } from './strings-check.ts';
 import {
   DEFAULT_CONTENT_ROOT,
   REPO_ROOT,
@@ -610,11 +612,10 @@ export function buildContent(options: BuildOptions): BuildReport {
     const levels = levelsJson === null ? null : validateLevels(levelsJson.json, row.id, errors);
 
     const stringsFile = path.join(courseDir, 'strings.json');
-    readJsonFile(stringsFile, `${row.id}/strings.json`, errors);
-    // #76 drop-in — strings.json completeness (PRD §6.5: a missing key is a build failure).
-    // When tools/strings-check.ts lands, call it HERE, before the course is planned:
-    //   for (const issue of checkStrings(strings.json, row.id)) errors.push(`${row.id}/strings.json: ${issue}`);
-    // Until then the build only proves the file exists and parses.
+    const stringsJson = readJsonFile(stringsFile, `${row.id}/strings.json`, errors);
+    // Completeness against the canonical key list (#76) — PRD §6.5: a missing key is a build
+    // failure, because the shell has no fallback copy. `checkStrings` already names course + key.
+    if (stringsJson !== null) errors.push(...checkStrings(stringsJson.json, row.id));
 
     // A course with nothing authored yet is a state, not an error: it simply ships nothing and
     // drops out of the manifest. The gate must never freeze work in progress.

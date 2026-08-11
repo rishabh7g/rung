@@ -90,6 +90,28 @@ Two consequences worth knowing before you author content:
   emitter imports it; the runtime resolver will too. Never copy it: a second copy is a word
   that silently has no "why".
 
+### The strings contract — 26 keys, no fallback copy
+
+Every course ships one `strings.json` carrying **all** the microcopy the shell renders, because
+the shell has none of its own (PRD §4). So the build validates it against the canonical key list
+in `tools/strings-keys.ts` — the only list in the repo, which the app's `Strings` type derives
+from — and a bundle that fails takes the whole build down with it (PRD §6.5): a missing key is a
+blank screen for the learner, not an English word.
+
+`tools/strings-check.ts` runs per course, flattens the nested file onto dot-paths
+(`ritual.check.copy`), and reports four things, always naming course **and** key:
+
+- **missing key** — the 26 canonical paths must all be there;
+- **empty or non-string value** — a present-but-blank key is a missing key with extra steps;
+- **unknown key** — the typo tripwire; `ritual.check.plate` would otherwise sit quietly beside a
+  missing `plateLabel`;
+- **placeholder mismatch** — a value carries exactly its canonical `{placeholders}`
+  (`{sentenceCount} {maxWords} {ordinal} {n} {nextModule} {to} {from}`), so a translation cannot
+  drop `{ordinal}` or invent `{name}`.
+
+Adding a key is one edit to `tools/strings-keys.ts` plus a line in each of the three bundles —
+in that order, because the build will tell you exactly which course you forgot.
+
 Two rules the scaffold bakes in, before you write a component:
 
 - **Tokens only.** `src/main.tsx` imports `design/tokens.css` *in place* — `design/`
