@@ -6,11 +6,16 @@
  * Everything course-shaped hangs off this: levels, strings, modules, the word index, and the
  * per-course slice of state. That is what makes the app course-agnostic — a screen asks for
  * `course`, never for hi-mr.
+ *
+ * It is also where persistence meets the manifest (#82): the active course comes out of the
+ * store, is resolved against the courses this build actually shipped, and is written back only
+ * on the first run — never when resolution had to fall back (Invariant 8).
  */
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import { loadManifest, resolveActiveCourse, type Course } from './manifest.ts';
 import { loadStrings, StringsContext, type Strings } from './strings.ts';
 import { BootLoadingScreen, ContentErrorScreen } from './BootScreens.tsx';
+import { useAppStore } from '../state/store.ts';
 
 export interface CourseContextValue {
   /** The active course. Never null below the provider — that is the point of the boot gate. */
@@ -34,16 +39,6 @@ export function useCourse(): CourseContextValue {
 
 interface CourseProviderProps {
   children: ReactNode;
-  /**
-   * SEAM — #82 (state store) wires this up.
-   *
-   * The store does not exist yet, so the provider is NOT coupled to persistence: it takes the
-   * previously active course id as a prop and defaults to undefined, which resolves to the first
-   * manifest entry. When #82 lands, read `state.activeCourse` and pass it here (or read it inside
-   * this component and drop the prop) — the resolution rule itself is already done and tested in
-   * `resolveActiveCourse`, so nothing below this line has to change.
-   */
-  persistedCourseId?: string;
 }
 
 type BootState =
@@ -51,11 +46,18 @@ type BootState =
   | { status: 'ready'; value: CourseContextValue; strings: Strings }
   | { status: 'error'; detail: string };
 
-export function CourseProvider({ children, persistedCourseId }: CourseProviderProps) {
+export function CourseProvider({ children }: CourseProviderProps) {
   const [boot, setBoot] = useState<BootState>({ status: 'loading' });
+  // The seam #79 left open, closed by #82: the previously active course is persisted state.
+  // Subscribing rather than reading once is what makes a switch work — `setActiveCourse` (the
+  // P4 flow, #106) re-runs this effect, so the new course's strings and content boot with it.
+  const storedCourseId = useAppStore((state) => state.activeCourse);
 
   useEffect(() => {
     let cancelled = false;
+    // `''` is the store's first-run value — nothing has been chosen yet, which is exactly
+    // `resolveActiveCourse`'s "no persisted id" case (and not a course that went missing).
+    const persistedCourseId = storedCourseId === '' ? undefined : storedCourseId;
 
     void (async () => {
       try {
@@ -64,9 +66,19 @@ export function CourseProvider({ children, persistedCourseId }: CourseProviderPr
         // Strings are part of BOOT, not of the first screen that wants a word (#80): the shell
         // owns no copy, so a screen mounted without its bundle would have nothing to render.
         const strings = await loadStrings(course.id);
-        if (!cancelled) {
-          setBoot({ status: 'ready', value: { course, courses, devBuild }, strings });
-        }
+        if (cancelled) return;
+
+        const { ensureCourse, setActiveCourse } = useAppStore.getState();
+        // Idempotent, so this is a no-op from the second boot on: the active course simply
+        // always has somewhere to write (#83, #95, #96).
+        ensureCourse(course.id);
+        // First run only. A FALLBACK never writes: when a persisted course is missing from this
+        // build, `resolveActiveCourse` warns and returns another one, and the stored id stays
+        // exactly where it is — so the course keeps its position and gets it back when its
+        // content returns (Invariant 8).
+        if (persistedCourseId === undefined) setActiveCourse(course.id);
+
+        setBoot({ status: 'ready', value: { course, courses, devBuild }, strings });
       } catch (error) {
         // Every failure below the manifest is one screen: the content layer did not load.
         if (!cancelled) setBoot({ status: 'error', detail: describe(error) });
@@ -76,7 +88,7 @@ export function CourseProvider({ children, persistedCourseId }: CourseProviderPr
     return () => {
       cancelled = true;
     };
-  }, [persistedCourseId]);
+  }, [storedCourseId]);
 
   if (boot.status === 'loading') return <BootLoadingScreen />;
   if (boot.status === 'error') return <ContentErrorScreen detail={boot.detail} />;

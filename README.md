@@ -216,9 +216,9 @@ The app knows a manifest, not a language pair (PRD-engineering §8 F0). Boot ord
   and ladder off disk and fails naming any key no type declares, so the mirror cannot rot.
 - `resolveActiveCourse(courses, persistedId?)` is a **pure function**: the persisted course when
   it is still in the manifest, else the first entry with a `console.warn`. It never writes, so a
-  fallback does not erase the stored id (Invariant 8). The provider takes that id as a prop and
-  defaults to `undefined` — #82 (state store) wires `state.activeCourse` into it; the marked
-  seam in `CourseProvider.tsx` is the whole change.
+  fallback does not erase the stored id (Invariant 8). The id it reads is `state.activeCourse`
+  (#82) — the provider subscribes to the store, so `setActiveCourse` re-boots the layer with the
+  new course's strings and content, which is what the P4 switch flow (#106) will hang off.
 
 Adding a course stays "a folder plus a manifest row": nothing in the shell names a course id.
 
@@ -234,6 +234,37 @@ English shell furniture (the boot error copy, later a Settings header) stays per
 is about course scripts, not about English. The exemption list in that file is **empty**; the one
 entry anyone anticipates is the `/dev/type` font page (#85), and adding it will be a conscious
 line in that ticket's diff.
+
+### The state layer — one document, keyed by course
+
+`src/state/` is zustand + persist over a single `localStorage` document, `rung:state`, whose shape
+is PRD-engineering §8 F7 **verbatim**: `{stateVersion: 6, activeCourse, courses: {<courseId>:
+{modules, production, reviewQueue, sessionCount, studied, session}}, settings}`. Everything a
+learner earns hangs under `courses[<courseId>]`, which is what makes **course switching never
+destroy progress** (Invariant 8): a switch moves a pointer, and a course whose content is missing
+from a build keeps its subtree, its ladder and its stored id until the folder comes back.
+
+Two things are not in the shape and never will be: **anything the learner wrote** (Invariant 4 —
+the v2 state had an `attempts` array; v6 has nothing of the kind) and **any calendar**. The one
+date in the whole document is `passedAt` on a passed module.
+
+- `src/state/types.ts` — the shape, plus `STATE_VERSION`. Nothing else declares it.
+- `src/state/clock.ts` — `Clock = () => string` and `systemClock`, **the only place in the app
+  that constructs a date**. Actions that need a stamp take a `Clock` and default to it, so the
+  engine stays pure and testable without fake timers. `clock.test.ts` scans every shipped file
+  under `src/` and fails naming the file and line that reached for the wall clock — the same
+  mechanical guard as shell purity, for the same reason.
+- `src/state/store.ts` — `useAppStore`, persisted with `version: 6` and a wired `migrate` stub
+  (its doc comment is the contract for the real v5 → v6 wrap, which ships with export/import in
+  P4). It is deliberately **thin**: `ensureCourse` (idempotent — an existing course returns the
+  same object, so no write can blank a ladder), `setActiveCourse` (a bare pointer swap; the
+  learner-facing switch flow with its toast is #106), `setSetting`, and `_reset()` for dev and
+  tests. Progression (#83), production and the review queue (#95) and the session snapshot (#96)
+  bring their own actions; the store holds no domain rules.
+
+`store.test.ts` pins the initial shape against the literal the PRD prints, so drift is a red test
+rather than a discovery; the rest of it proves per-course isolation, a round trip through storage,
+and that a v5 payload reaches `migrate`.
 
 Two rules the scaffold bakes in, before you write a component:
 
