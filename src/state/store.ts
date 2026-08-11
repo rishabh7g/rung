@@ -25,6 +25,7 @@ import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 import { currentRungId, type LevelPlan, type ProgressionInput } from '../engine/progression.ts';
 import { systemClock, type Clock } from './clock.ts';
+import { durableLocalStorage } from './durableStorage.ts';
 import {
   STATE_VERSION,
   type AppState,
@@ -279,8 +280,10 @@ export const useAppStore = create<AppStore>()(
       name: STORAGE_KEY,
       version: STATE_VERSION,
       // Explicit rather than implied: this app persists to localStorage and to nothing else —
-      // no IndexedDB, no backend, no accounts (docs/01-plan.md §3).
-      storage: createJSONStorage(() => localStorage),
+      // no IndexedDB, no backend, no accounts (docs/01-plan.md §3). `durableLocalStorage` IS
+      // that localStorage; its one addition is asking the browser, after the first write, not to
+      // evict it (#90, design/pwa-checklist.md §3.5).
+      storage: createJSONStorage(() => durableLocalStorage),
       partialize: persistedSlice,
       migrate,
     },
