@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="../_ds/industry-d90b7b10-6e53-48b0-84c4-fc390fa108a0/styles.css">
+<script src="../_ds/industry-d90b7b10-6e53-48b0-84c4-fc390fa108a0/_ds_bundle.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f2f2f3}
+@keyframes rowIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes unlockBeat{0%{background:var(--color-accent-200);transform:translateY(10px)}55%{background:var(--color-accent-100)}100%{background:transparent;transform:none}}
+@keyframes toastIn{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}
+@media (prefers-reduced-motion: reduce){*{animation-duration:.01ms !important;transition-duration:.01ms !important}}
+</style>
+</helmet>
+<div style="min-height:100vh;display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start;justify-content:center;padding:36px 28px;background-image:repeating-linear-gradient(0deg,color-mix(in srgb,var(--color-accent) 6%,transparent) 0 1px,transparent 1px 28px),repeating-linear-gradient(90deg,color-mix(in srgb,var(--color-accent) 6%,transparent) 0 1px,transparent 1px 28px)">
+
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+<div style="height:100%;display:flex;flex-direction:column;padding-top:56px;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body)">
+
+<!-- ══ LADDER ══ -->
+<sc-if value="{{isLadder}}" hint-placeholder-val="{{true}}">
+<div data-screen-label="Ladder" style="flex:1;min-height:0;display:flex;flex-direction:column">
+  <div style="padding:14px 20px 10px;display:flex;align-items:baseline;gap:10px;border-bottom:1px solid var(--color-divider)">
+    <span style="display:inline-flex;align-items:center;gap:8px">
+      <svg width="20" height="20" viewBox="0 0 22 22" fill="none" style="flex:none"><path d="M5.5 1v20M16.5 1v20" stroke="var(--color-text)" stroke-width="1.5"></path><path d="M5.5 4.5h11M5.5 17.5h11" stroke="var(--color-text)" stroke-width="1.5"></path><rect x="5.5" y="9.5" width="11" height="3" fill="var(--color-accent)"></rect></svg>
+      <span style="font-family:var(--font-heading);font-weight:700;font-size:23px;line-height:1">rung</span>
+    </span>
+    <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:color-mix(in srgb,var(--color-text) 55%,transparent);white-space:nowrap">{{pairLabel}}</span>
+    <span style="margin-left:auto;font-family:var(--font-heading);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent-700);white-space:nowrap">{{posLine}}</span>
+  </div>
+  <div style="display:flex;border-bottom:1px solid var(--color-divider)">
+    <sc-for list="{{levels}}" as="lv" hint-placeholder-count="3">
+      <div onClick="{{lv.tap}}" style="flex:1;padding:9px 10px 8px;cursor:pointer;border-left:{{lv.bl}};border-top:2px solid {{lv.topBar}}">
+        <div style="display:flex;align-items:center;gap:5px">
+          <span style="font-family:var(--font-heading);font-weight:600;font-size:10px;letter-spacing:.1em;color:{{lv.col}};white-space:nowrap">{{lv.label}}</span>
+          <sc-if value="{{lv.locked}}" hint-placeholder-val="{{false}}"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--color-neutral-500)" stroke-width="1.8"><rect x="5" y="11" width="14" height="9"></rect><path d="M8 11V7a4 4 0 018 0v4"></path></svg></sc-if>
+        </div>
+        <div style="font-size:10.5px;line-height:1.3;margin-top:1px;color:color-mix(in srgb,var(--color-text) 55%,transparent)">{{lv.name}}</div>
+        <div style="display:flex;gap:2.5px;margin-top:6px">
+          <sc-for list="{{lv.squares}}" as="q" hint-placeholder-count="10"><span style="flex:1;height:4px;background:{{q.bg}}"></span></sc-for>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="flex:1;overflow-y:auto;overflow-x:hidden;padding:14px 20px 24px">
+    <div style="font-size:11.5px;margin-bottom:12px;color:color-mix(in srgb,var(--color-text) 55%,transparent)">{{pendingLine}}</div>
+    <div style="position:relative;display:flex;flex-direction:column;gap:10px">
+      <div style="position:absolute;left:9px;top:10px;bottom:10px;width:1px;background:var(--color-divider)"></div>
+      <sc-for list="{{rungs}}" as="r" hint-placeholder-count="4">
+        <sc-if value="{{r.isCurrent}}" hint-placeholder-val="{{false}}">
+          <div style="position:relative;padding-left:32px">
+            <svg width="19" height="19" viewBox="0 0 19 19" style="position:absolute;left:0;top:18px;background:var(--color-bg)"><path d="M9.5 0v19M0 9.5h19" stroke="var(--color-accent)" stroke-width="1.2"></path></svg>
+            <div class="blueprint elev-sm" style="padding:16px 16px 14px;background:var(--color-bg);animation:{{r.anim}}"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <div style="display:flex;align-items:baseline;gap:8px">
+                <span style="font-family:var(--font-heading);font-weight:600;font-size:11px;letter-spacing:.12em;color:var(--color-accent-700);white-space:nowrap;flex:none">{{r.num}} · CURRENT RUNG</span>
+                <sc-if value="{{r.justUnlocked}}" hint-placeholder-val="{{false}}"><span class="tag tag-accent" style="font-size:10px">unlocked</span></sc-if>
+              </div>
+              <h3 style="font-size:26px;margin:4px 0 2px">{{r.title}}</h3>
+              <div style="font-size:13px;color:color-mix(in srgb,var(--color-text) 65%,transparent)">{{r.job}}</div>
+              <div style="display:flex;align-items:center;gap:5px;margin-top:12px">
+                <sc-for list="{{r.dots}}" as="d" hint-placeholder-count="10">
+                  <span style="display:flex;flex-direction:column;gap:3px"><span style="width:6px;height:6px;background:{{d.c1}}"></span><span style="width:6px;height:6px;background:{{d.c2}}"></span></span>
+                </sc-for>
+                <span style="font-size:11px;margin-left:8px;color:color-mix(in srgb,var(--color-text) 55%,transparent)">{{r.writesLine}}</span>
+              </div>
+              <sc-if value="{{r.stageNew}}" hint-placeholder-val="{{false}}">
+                <button class="btn btn-primary btn-block" style="min-height:48px;margin-top:14px" onClick="{{openModule}}">Start with the module</button>
+                <div style="font-size:11px;line-height:1.5;margin-top:7px;color:color-mix(in srgb,var(--color-text) 50%,transparent)">Read it through once — Practice picks up from there. Nothing is locked; the tab stays open.</div>
+              </sc-if>
+              <sc-if value="{{r.stageGo}}" hint-placeholder-val="{{false}}">
+                <button class="btn btn-primary btn-block" style="min-height:48px;margin-top:14px" onClick="{{goPracticeTab}}">Practice</button>
+                <div style="text-align:center;margin-top:4px"><button class="btn btn-ghost" style="min-height:36px;font-size:12px;white-space:nowrap;flex:none" onClick="{{openModule}}">revisit the module</button></div>
+              </sc-if>
+              <sc-if value="{{r.stageExit}}" hint-placeholder-val="{{false}}">
+                <button class="btn btn-primary btn-block" style="min-height:48px;margin-top:14px" onClick="{{goRitual}}">Exit ritual — open</button>
+                <div style="display:flex;gap:8px;margin-top:8px">
+                  <button class="btn btn-secondary" style="flex:1;min-height:44px" onClick="{{goPracticeTab}}">Practice</button>
+                  <button class="btn btn-secondary" style="flex:1;min-height:44px" onClick="{{openModule}}">Module</button>
+                </div>
+              </sc-if>
+              <sc-if value="{{r.stagePending}}" hint-placeholder-val="{{false}}">
+                <div style="font-size:12px;line-height:1.55;margin-top:12px;color:color-mix(in srgb,var(--color-text) 55%,transparent)">{{r.pendingNote}}</div>
+                <div style="text-align:center;margin-top:4px"><button class="btn btn-ghost" style="min-height:36px;font-size:12px;white-space:nowrap;flex:none" onClick="{{goPracticeTab}}">practice earlier rungs</button></div>
+              </sc-if>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{r.isPassed}}" hint-placeholder-val="{{false}}">
+          <div onClick="{{r.tap}}" style="position:relative;padding:8px 0 8px 32px;display:flex;align-items:center;gap:10px;cursor:pointer;min-height:44px">
+            <svg width="19" height="19" viewBox="0 0 19 19" style="position:absolute;left:0;background:var(--color-bg)"><circle cx="9.5" cy="9.5" r="8.5" fill="var(--color-accent-600)"></circle><path d="M5.5 9.8l2.6 2.6 5.4-5.6" stroke="#f2f2f3" stroke-width="1.6" fill="none"></path></svg>
+            <div style="flex:1"><div style="font-family:var(--font-heading);font-weight:600;font-size:15px">{{r.num}} · {{r.title}}</div><div style="font-size:11.5px;color:color-mix(in srgb,var(--color-text) 50%,transparent)">{{r.job}}</div></div>
+            <span style="font-family:var(--font-heading);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-700)">passed</span>
+          </div>
+        </sc-if>
+        <sc-if value="{{r.isLocked}}" hint-placeholder-val="{{false}}">
+          <div style="position:relative;padding:8px 0 8px 32px;display:flex;align-items:center;gap:10px;opacity:.5;min-height:44px">
+            <svg width="19" height="19" viewBox="0 0 19 19" style="position:absolute;left:0;background:var(--color-bg)"><circle cx="9.5" cy="9.5" r="8.5" fill="none" stroke="var(--color-neutral-500)" stroke-width="1.2"></circle></svg>
+            <div style="flex:1"><div style="font-family:var(--font-heading);font-weight:600;font-size:15px">{{r.num}} · {{r.title}}</div><div style="font-size:11.5px;color:color-mix(in srgb,var(--color-text) 55%,transparent)">{{r.job}}</div></div>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="11" width="14" height="9"></rect><path d="M8 11V7a4 4 0 018 0v4"></path></svg>
+          </div>
+        </sc-if>
+      </sc-for>
+    </div>
+    <p style="font-size:11.5px;line-height:1.6;margin:18px 4px 0;text-align:center;color:color-mix(in srgb,var(--color-text) 45%,transparent)">Yours to pace. Practice any rung you've passed, anytime — keep the app or delete it. The ladder stays where you left it.</p>
+  </div>
+</div>
+</sc-if>
+
+<!-- ══ MODULE LIST ══ -->
+<sc-if value="{{isModule}}" hint-placeholder-val="{{false}}">
+<div data-screen-label="Module" style="flex:1;min-height:0;display:flex;flex-direction:column">
+  <div style="padding:12px 16px 10px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--color-divider)">
+    <button class="btn btn-icon btn-ghost" style="min-width:40px;min-height:40px" onClick="{{goLadder}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"></path></svg></button>
+    <div><div style="font-family:var(--font-heading);font-weight:600;font-size:11px;letter-spacing:.12em;color:var(--color-accent-700);white-space:nowrap">{{modNum}} · MODULE</div>
+    <div style="font-family:var(--font-heading);font-weight:600;font-size:19px;line-height:1.1">{{modTitle}}</div></div>
+    <span style="margin-left:auto;font-size:11px;color:color-mix(in srgb,var(--color-text) 55%,transparent);white-space:nowrap">{{modWrites}}</span>
+  </div>
+  <div ref="{{modListRef}}" style="flex:1;overflow-y:auto;overflow-x:hidden;padding:16px 20px 28px;display:flex;flex-direction:column;gap:10px">
+    <div style="font-size:12.5px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">{{modHelper}}</div>
+    <sc-for list="{{cards}}" as="c" hint-placeholder-count="4">
+      <div class="blueprint" style="background:var(--color-bg)"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div onClick="{{c.tap}}" style="padding:13px 14px;cursor:pointer;display:flex;align-items:flex-start;gap:10px;min-height:44px">
+          <div style="flex:1">
+            <div style="font-family:'Mukta',sans-serif;font-weight:600;font-size:22px;line-height:1.6">{{c.mr}}</div>
+            <div style="font-family:'Mukta',sans-serif;font-size:14px;margin-top:2px;color:color-mix(in srgb,var(--color-text) 55%,transparent)">{{c.hi}}</div>
+            <sc-if value="{{c.hasScript}}" hint-placeholder-val="{{false}}"><div style="font-size:14px;margin-top:2px;color:color-mix(in srgb,var(--color-text) 40%,transparent)">{{c.script}}</div></sc-if>
+          </div>
+          <span style="display:flex;flex-direction:column;gap:3px;margin-top:8px;flex:none"><span style="width:6px;height:6px;background:{{c.d1}}"></span><span style="width:6px;height:6px;background:{{c.d2}}"></span></span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-neutral-600)" stroke-width="1.5" style="flex:none;margin-top:10px;transform:{{c.chev}}"><path d="M6 9l6 6 6-6"></path></svg>
+        </div>
+        <sc-if value="{{c.open}}" hint-placeholder-val="{{false}}">
+          <div style="padding:0 14px 13px;display:flex;flex-direction:column;gap:10px;animation:rowIn .25s both">
+            <div style="font-size:12px;color:color-mix(in srgb,var(--color-text) 55%,transparent);border-top:1px solid var(--color-divider);padding-top:10px">{{c.en}}</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px">
+              <sc-for list="{{c.chips}}" as="w" hint-placeholder-count="3">
+                <span class="tag" style="font-size:11px;padding:3px 9px;font-family:'Mukta',sans-serif;background:{{w.bg}};color:{{w.col}}">{{w.t}}</span>
+              </sc-for>
+            </div>
+            <sc-if value="{{c.hasTrap}}" hint-placeholder-val="{{false}}">
+              <div style="display:flex;gap:8px;align-items:center;font-size:11.5px;color:oklch(0.4 0.07 65)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="oklch(0.55 0.12 70)" stroke-width="1.5" style="flex:none"><path d="M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"></path><path d="M12 9v4M12 17h.01"></path></svg>has an interference trap</div>
+            </sc-if>
+            <button class="btn btn-secondary" style="min-height:42px;align-self:flex-start;gap:6px" onClick="{{c.openFull}}">Open full<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+          </div>
+        </sc-if>
+      </div>
+    </sc-for>
+    <button class="btn btn-primary btn-block" style="min-height:48px" onClick="{{goPracticeTab}}">Practice</button>
+  </div>
+</div>
+</sc-if>
+
+<!-- ══ SENTENCE DETAIL ══ -->
+<sc-if value="{{isDetail}}" hint-placeholder-val="{{false}}">
+<div data-screen-label="Sentence detail" style="flex:1;min-height:0;display:flex;flex-direction:column">
+  <div style="padding:12px 16px 8px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--color-divider)">
+    <button class="btn btn-icon btn-ghost" style="min-width:40px;min-height:40px" onClick="{{detailBack}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"></path></svg></button>
+    <div style="font-family:var(--font-heading);font-weight:600;font-size:11px;letter-spacing:.12em;color:var(--color-accent-700);white-space:nowrap">{{modNum}} · SENTENCE {{dNum}}</div>
+    <span style="margin-left:auto;display:flex;gap:3px;flex:none"><span style="width:6px;height:6px;background:{{dD1}}"></span><span style="width:6px;height:6px;background:{{dD2}}"></span></span>
+  </div>
+  <div style="flex:1;overflow-y:auto;overflow-x:hidden;padding:20px 22px 24px;display:flex;flex-direction:column;gap:18px">
+    <div>
+      <div style="font-family:'Mukta',sans-serif;font-weight:700;font-size:32px;line-height:1.55">{{dMr}}</div>
+      <div style="font-family:'Mukta',sans-serif;font-size:17px;margin-top:4px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">{{dHi}}</div>
+      <div style="font-size:12px;margin-top:2px;color:color-mix(in srgb,var(--color-text) 45%,transparent)">{{dEn}}</div>
+      <sc-if value="{{dHasScript}}" hint-placeholder-val="{{false}}"><div style="font-size:16px;margin-top:6px;color:color-mix(in srgb,var(--color-text) 45%,transparent)" title="the script — for recognition, not required">{{dScript}}</div></sc-if>
+    </div>
+    <sc-if value="{{dHasLit}}" hint-placeholder-val="{{false}}">
+      <div style="border-left:2px solid var(--color-accent-300);padding-left:12px">
+        <div style="font-family:var(--font-heading);font-weight:600;font-size:10px;letter-spacing:.12em;color:var(--color-accent-700);white-space:nowrap">WORD-FOR-WORD</div>
+        <div style="font-family:'Mukta',sans-serif;font-size:14.5px;line-height:1.65;margin-top:2px">{{dLit}}</div>
+      </div>
+    </sc-if>
+    <div>
+      <div style="font-family:var(--font-heading);font-weight:600;font-size:10px;letter-spacing:.12em;color:var(--color-accent-700);margin-bottom:8px">WORD BY WORD</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <sc-for list="{{dWords}}" as="w" hint-placeholder-count="3">
+          <div style="border:1px solid var(--color-divider);padding:10px 12px">
+            <div style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap">
+              <span style="font-family:'Mukta',sans-serif;font-weight:600;font-size:18px">{{w.mr}}</span>
+              <span style="font-family:'Mukta',sans-serif;font-size:13px;color:color-mix(in srgb,var(--color-text) 50%,transparent)">{{w.hi}}</span>
+              <span class="tag" style="font-size:9.5px;padding:1px 7px;margin-left:auto;background:{{w.tagBg}};color:{{w.tagCol}}">{{w.tagLabel}}</span>
+            </div>
+            <div style="font-size:12.5px;line-height:1.55;margin-top:4px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">{{w.note}}</div>
+            <sc-if value="{{w.hasForms}}" hint-placeholder-val="{{false}}">
+              <div style="font-size:11.5px;margin-top:4px;font-family:'Mukta',sans-serif;color:color-mix(in srgb,var(--color-text) 50%,transparent)">forms: {{w.forms}}</div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:var(--font-heading);font-weight:600;font-size:10px;letter-spacing:.12em;color:var(--color-accent-700);margin-bottom:6px">RULES USED</div>
+      <sc-for list="{{dRules}}" as="ru" hint-placeholder-count="2">
+        <div style="display:flex;gap:8px;align-items:baseline;margin-bottom:6px">
+          <span class="tag" style="font-size:9.5px;padding:1px 7px;flex:none;background:{{ru.tagBg}};color:{{ru.tagCol}}">{{ru.tagLabel}}</span>
+          <span style="font-size:13px;line-height:1.5">{{ru.text}}</span>
+        </div>
+      </sc-for>
+    </div>
+    <sc-if value="{{dHasTrap}}" hint-placeholder-val="{{false}}">
+      <div style="display:flex;gap:9px;padding:11px 12px;background:oklch(0.96 0.03 85);border:1px solid oklch(0.72 0.11 75)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.55 0.12 70)" stroke-width="1.5" style="flex:none;margin-top:1px"><path d="M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"></path><path d="M12 9v4M12 17h.01"></path></svg>
+        <span style="font-size:12.5px;line-height:1.55;color:oklch(0.4 0.07 65)"><b style="letter-spacing:.06em;font-size:10px;text-transform:uppercase;font-family:var(--font-heading)">{{trapHead}}</b><br>{{dTrap}}</span>
+      </div>
+    </sc-if>
+    <sc-if value="{{dHasPhon}}" hint-placeholder-val="{{false}}">
+      <div style="border-left:2px solid var(--color-neutral-300);padding-left:12px">
+        <div style="font-family:var(--font-heading);font-weight:600;font-size:10px;letter-spacing:.12em;color:var(--color-accent-700)">SOUND NOTE</div>
+        <div style="font-family:'Mukta',sans-serif;font-size:13px;line-height:1.6;margin-top:2px">{{dPhon}}</div>
+      </div>
+    </sc-if>
+    <sc-if value="{{dHasVars}}" hint-placeholder-val="{{false}}">
+      <div>
+        <div style="font-family:var(--font-heading);font-weight:600;font-size:10px;letter-spacing:.12em;color:var(--color-accent-700);margin-bottom:8px">SAME PATTERN, SWAPPED PARTS</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <sc-for list="{{dVars}}" as="v" hint-placeholder-count="2">
+            <div style="border:1px solid var(--color-divider);padding:10px 12px">
+              <div style="font-family:'Mukta',sans-serif;font-weight:600;font-size:17px;line-height:1.6;display:flex;flex-wrap:wrap;gap:0 6px">
+                <sc-for list="{{v.toks}}" as="t" hint-placeholder-count="4"><span style="background:{{t.bg}};padding:0 2px">{{t.w}}</span></sc-for>
+              </div>
+              <div style="font-family:'Mukta',sans-serif;font-size:12.5px;margin-top:2px;color:color-mix(in srgb,var(--color-text) 50%,transparent)">{{v.hi}}</div>
+              <div style="font-size:11.5px;margin-top:5px;font-family:'Mukta',sans-serif;color:var(--color-accent-800)">{{v.changed}}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+    <sc-if value="{{dHasMist}}" hint-placeholder-val="{{false}}">
+      <div>
+        <div style="font-family:var(--font-heading);font-weight:600;font-size:10px;letter-spacing:.12em;color:var(--color-accent-700);margin-bottom:8px">COMMON MISTAKE</div>
+        <sc-for list="{{dMist}}" as="m" hint-placeholder-count="1">
+          <div style="border:1px solid var(--color-neutral-400);background:var(--color-neutral-100);padding:10px 12px;margin-bottom:8px">
+            <div style="font-family:'Mukta',sans-serif;font-size:16px;line-height:1.6;text-decoration:line-through;color:var(--color-neutral-600)">{{m.wrong}}</div>
+            <div style="font-family:'Mukta',sans-serif;font-size:12.5px;line-height:1.55;margin-top:3px">{{m.why}}</div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+    <sc-if value="{{dHasUsage}}" hint-placeholder-val="{{false}}">
+      <div style="border-left:2px solid var(--color-neutral-300);padding-left:12px">
+        <div style="display:flex;gap:8px;align-items:baseline"><span style="font-family:var(--font-heading);font-weight:600;font-size:10px;letter-spacing:.12em;color:var(--color-accent-700)">WHEN TO USE IT</span><span class="tag tag-neutral" style="font-size:9px;padding:1px 6px">{{dRegister}}</span></div>
+        <div style="font-family:'Mukta',sans-serif;font-size:13px;line-height:1.6;margin-top:2px">{{dUsage}}</div>
+      </div>
+    </sc-if>
+    <sc-if value="{{dHasMnem}}" hint-placeholder-val="{{false}}">
+      <div class="blueprint" style="padding:12px 14px;background:var(--color-bg)"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div style="font-family:var(--font-heading);font-weight:600;font-size:10px;letter-spacing:.12em;color:var(--color-accent-700)">POCKET IT</div>
+        <div style="font-family:'Mukta',sans-serif;font-size:14.5px;line-height:1.65;margin-top:3px">{{dMnem}}</div>
+      </div>
+    </sc-if>
+  </div>
+  <div style="display:flex;gap:8px;padding:10px 22px 12px;border-top:1px solid var(--color-divider);align-items:center;background:var(--color-bg)">
+    <button class="btn btn-secondary" style="flex:1;min-height:46px;gap:6px" disabled="{{dPrevOff}}" onClick="{{dPrev}}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg>Prev</button>
+    <span style="font-size:11px;color:color-mix(in srgb,var(--color-text) 50%,transparent);white-space:nowrap">{{dPos}}</span>
+    <button class="btn btn-secondary" style="flex:1;min-height:46px;gap:6px" disabled="{{dNextOff}}" onClick="{{dNext}}">Next<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+  </div>
+</div>
+</sc-if>
+
+<!-- ══ PRACTICE ══ -->
+<sc-if value="{{isPractice}}" hint-placeholder-val="{{false}}">
+<div data-screen-label="Practice" style="flex:1;min-height:0;display:flex;flex-direction:column">
+  <sc-if value="{{phStart}}" hint-placeholder-val="{{false}}">
+    <div style="flex:1;overflow-y:auto;overflow-x:hidden;padding:22px 22px 28px;display:flex;flex-direction:column;gap:16px">
+      <div><div style="font-family:var(--font-heading);font-weight:600;font-size:11px;letter-spacing:.12em;color:var(--color-accent-700)">{{hubKicker}}</div>
+      <h3 style="font-size:26px;margin:2px 0 0">{{hubTitle}}</h3></div>
+      <sc-if value="{{hubOpen}}" hint-placeholder-val="{{true}}">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="blueprint" style="padding:12px 14px;display:flex;gap:12px;align-items:center"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <span style="font-family:var(--font-heading);font-weight:600;font-size:13px;color:var(--color-accent-700)">01</span>
+            <div style="flex:1"><b style="font-size:14px">Review</b><div style="font-size:12px;color:color-mix(in srgb,var(--color-text) 55%,transparent)">{{hubReviewLine}}</div></div>
+          </div>
+          <div class="blueprint" style="padding:12px 14px;display:flex;gap:12px;align-items:center"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <span style="font-family:var(--font-heading);font-weight:600;font-size:13px;color:var(--color-accent-700)">02</span>
+            <div style="flex:1"><b style="font-size:14px">Read</b><div style="font-size:12px;color:color-mix(in srgb,var(--color-text) 55%,transparent)">{{hubReadLine}}</div></div>
+          </div>
+          <div class="blueprint" style="padding:12px 14px;display:flex;gap:12px;align-items:center"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <span style="font-family:var(--font-heading);font-weight:600;font-size:13px;color:var(--color-accent-700)">03</span>
+            <div style="flex:1"><b style="font-size:14px">Produce</b><div style="font-size:12px;color:color-mix(in srgb,var(--color-text) 55%,transparent)">{{hubProdLine}}</div></div>
+          </div>
+        </div>
+        <p style="font-size:12px;margin:0;color:color-mix(in srgb,var(--color-text) 50%,transparent)">The phases guide, they never gate — skip or extend anything. Leave anytime; nothing is lost.</p>
+        <div class="blueprint" style="border-color:transparent;margin-top:auto"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <button class="btn btn-primary btn-block" style="min-height:48px;font-size:15px;margin:0" onClick="{{beginSession}}">{{hubCta}}</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{hubPending}}" hint-placeholder-val="{{false}}">
+        <div class="blueprint" style="padding:16px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <p style="font-size:13.5px;line-height:1.6;margin:0">{{hubPendingLine}}</p>
+        </div>
+      </sc-if>
+    </div>
+  </sc-if>
+  <sc-if value="{{phLive}}" hint-placeholder-val="{{false}}">
+    <div style="padding:10px 16px 0;display:flex;align-items:center;gap:8px">
+      <button class="btn btn-icon btn-ghost" style="min-width:40px;min-height:40px" onClick="{{exitSession}}" title="Pause — nothing is lost"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"></path></svg></button>
+      <div style="display:flex;gap:6px;flex:1;justify-content:center">
+        <sc-for list="{{chips}}" as="ch" hint-placeholder-count="3">
+          <button onClick="{{ch.tap}}" style="font-family:var(--font-heading);font-weight:600;font-size:11px;letter-spacing:.09em;text-transform:uppercase;padding:7px 12px;min-height:32px;cursor:pointer;background:{{ch.bg}};color:{{ch.col}};border:1px solid {{ch.bd}}">{{ch.label}}</button>
+        </sc-for>
+      </div>
+      <span style="width:40px"></span>
+    </div>
+    <sc-if value="{{tickVis}}" hint-placeholder-val="{{false}}">
+      <div title="gentle elapsed — never a countdown" style="height:2px;margin:8px 22px 0;background:var(--color-neutral-200)"><div style="height:2px;background:var(--color-accent-400);transition:width 1s linear;width:{{tickPct}}"></div></div>
+    </sc-if>
+
+    <sc-if value="{{phCard}}" hint-placeholder-val="{{false}}">
+      <div style="flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding:14px 22px 12px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:baseline;gap:8px"><span style="font-family:var(--font-heading);font-weight:600;font-size:11px;letter-spacing:.12em;color:var(--color-accent-700);white-space:nowrap;flex:none">{{cardKicker}}</span>
+          <sc-if value="{{phProduce}}" hint-placeholder-val="{{false}}"><span style="display:flex;gap:3px;margin-left:6px;flex:none"><span style="width:6px;height:6px;background:{{pd1}}"></span><span style="width:6px;height:6px;background:{{pd2}}"></span></span></sc-if>
+          <span style="margin-left:auto;font-size:11px;color:color-mix(in srgb,var(--color-text) 45%,transparent);white-space:nowrap">{{cardPos}}</span></div>
+        <div style="border-left:2px solid var(--color-accent-300);padding:2px 0 2px 12px">
+          <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-family:var(--font-heading);color:color-mix(in srgb,var(--color-text) 45%,transparent)">{{cueLabel}}</div>
+          <div style="font-family:'Mukta',sans-serif;font-size:20px;line-height:1.6">{{cardCue}}</div>
+        </div>
+        <sc-if value="{{cardHidden}}" hint-placeholder-val="{{false}}">
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:14px">
+            <div style="border:1px dashed var(--color-neutral-400);padding:22px 16px;text-align:center">
+              <div style="font-family:'Mukta',sans-serif;font-size:14px;line-height:1.65;color:color-mix(in srgb,var(--color-text) 60%,transparent)">{{cardNudge}}</div>
+            </div>
+            <div class="blueprint" style="border-color:transparent"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <button class="btn btn-primary btn-block" style="min-height:52px;font-size:15px;margin:0" onClick="{{revealNow}}">{{revealLabel}}</button>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{cardShown}}" hint-placeholder-val="{{false}}">
+          <div style="flex:1;display:flex;flex-direction:column;gap:12px;animation:rowIn .3s both">
+            <div class="blueprint" style="padding:16px 16px 12px;background:var(--color-bg)"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <div style="font-family:'Mukta',sans-serif;font-weight:600;font-size:26px;line-height:1.6">{{cardMr}}</div>
+              <sc-if value="{{cardHasScript}}" hint-placeholder-val="{{false}}"><div style="font-size:15px;margin-top:2px;color:color-mix(in srgb,var(--color-text) 40%,transparent)">{{cardScript}}</div></sc-if>
+              <div style="display:flex;gap:8px;margin-top:8px">
+                <button class="btn btn-ghost" style="min-height:34px;font-size:12px;padding-inline:6px;white-space:nowrap;flex:none" onClick="{{toggleCardWhy}}">{{cardWhyLabel}}</button>
+                <sc-if value="{{cardCanFull}}" hint-placeholder-val="{{false}}"><button class="btn btn-ghost" style="min-height:34px;font-size:12px;padding-inline:6px;white-space:nowrap;flex:none" onClick="{{cardOpenFull}}">open full</button></sc-if>
+              </div>
+              <sc-if value="{{cardWhyOn}}" hint-placeholder-val="{{false}}">
+                <div style="border-top:1px solid var(--color-divider);margin-top:8px;padding-top:10px;display:flex;flex-direction:column;gap:9px;animation:rowIn .25s both">
+                  <sc-for list="{{cardWords}}" as="w" hint-placeholder-count="2">
+                    <div style="display:flex;gap:9px;align-items:baseline;flex-wrap:wrap">
+                      <span style="font-family:'Mukta',sans-serif;font-weight:600;font-size:15px;min-width:52px">{{w.mr}}</span>
+                      <span style="font-family:'Mukta',sans-serif;font-size:12px;min-width:40px;color:color-mix(in srgb,var(--color-text) 50%,transparent)">{{w.hi}}</span>
+                      <span class="tag" style="font-size:9.5px;padding:1px 7px;background:{{w.tagBg}};color:{{w.tagCol}}">{{w.tagLabel}}</span>
+                    </div>
+                    <div style="font-size:11.5px;line-height:1.5;margin:-5px 0 0;color:color-mix(in srgb,var(--color-text) 60%,transparent)">{{w.note}}</div>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
+            <div style="font-size:12px;color:color-mix(in srgb,var(--color-text) 55%,transparent)">Against your notebook — did you have it?</div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:auto">
+              <div class="seg" style="flex:1">
+                <label class="seg-opt" style="flex:1;justify-content:center;min-height:44px;background:{{gotBg}};color:{{gotCol}}"><input type="radio" name="mark" checked="{{gotSel}}" onChange="{{pickGot}}">Got it</label>
+                <label class="seg-opt" style="flex:1;justify-content:center;min-height:44px;background:{{missBg}};color:{{missCol}}"><input type="radio" name="mark" checked="{{missSel}}" onChange="{{pickMiss}}">Missed</label>
+              </div>
+              <sc-if value="{{marked}}" hint-placeholder-val="{{false}}">
+                <button class="btn btn-primary" style="flex:1;min-height:46px;animation:rowIn .2s both" onClick="{{nextCard}}">Next</button>
+              </sc-if>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{phRead}}" hint-placeholder-val="{{false}}">
+      <div style="flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding:16px 22px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:baseline;gap:8px"><span style="font-family:var(--font-heading);font-weight:600;font-size:11px;letter-spacing:.12em;color:var(--color-accent-700);white-space:nowrap">{{readKicker}}</span><span style="margin-left:auto;font-size:11px;color:color-mix(in srgb,var(--color-text) 45%,transparent);white-space:nowrap">{{readPos}}</span></div>
+        <div class="blueprint" style="padding:20px 18px;background:var(--color-bg)"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <div style="font-family:'Mukta',sans-serif;font-weight:600;font-size:28px;line-height:1.6">{{readMr}}</div>
+          <sc-if value="{{readHasScript}}" hint-placeholder-val="{{false}}"><div style="font-size:15px;margin-top:4px;color:color-mix(in srgb,var(--color-text) 40%,transparent)">{{readScript}}</div></sc-if>
+          <sc-if value="{{readHiOn}}" hint-placeholder-val="{{true}}"><div style="font-family:'Mukta',sans-serif;font-size:15px;margin-top:6px;color:color-mix(in srgb,var(--color-text) 55%,transparent)">{{readHi}}</div></sc-if>
+          <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+            <button class="btn btn-ghost" style="min-height:36px;font-size:12px;padding-inline:6px;white-space:nowrap;flex:none" onClick="{{toggleReadHi}}">{{readHiLabel}}</button>
+            <button class="btn btn-ghost" style="min-height:36px;font-size:12px;padding-inline:6px;white-space:nowrap;flex:none" onClick="{{toggleReadWhy}}">{{readWhyLabel}}</button>
+            <button class="btn btn-ghost" style="min-height:36px;font-size:12px;padding-inline:6px;white-space:nowrap;flex:none" onClick="{{readOpenFull}}">open full</button>
+          </div>
+          <sc-if value="{{readWhyOn}}" hint-placeholder-val="{{false}}">
+            <div style="border-top:1px solid var(--color-divider);margin-top:10px;padding-top:10px;display:flex;flex-direction:column;gap:8px;animation:rowIn .25s both">
+              <sc-for list="{{readWords}}" as="w" hint-placeholder-count="2">
+                <div style="display:flex;gap:9px;align-items:baseline">
+                  <span style="font-family:'Mukta',sans-serif;font-weight:600;font-size:15px;min-width:52px">{{w.mr}}</span>
+                  <span style="font-family:'Mukta',sans-serif;font-size:12px;min-width:40px;color:color-mix(in srgb,var(--color-text) 50%,transparent)">{{w.hi}}</span>
+                  <span class="tag" style="font-size:9.5px;padding:1px 7px;background:{{w.tagBg}};color:{{w.tagCol}}">{{w.tagLabel}}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <p style="font-size:12.5px;margin:0;font-family:'Mukta',sans-serif;color:color-mix(in srgb,var(--color-text) 50%,transparent)">{{readNudge}}</p>
+        <div style="display:flex;gap:8px;margin-top:auto">
+          <button class="btn btn-secondary" style="flex:1;min-height:46px" onClick="{{readPrev}}">Back</button>
+          <button class="btn btn-primary" style="flex:2;min-height:46px" onClick="{{readNext}}">{{readNextLabel}}</button>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{phDone}}" hint-placeholder-val="{{false}}">
+      <div style="flex:1;overflow-y:auto;overflow-x:hidden;padding:20px 22px;display:flex;flex-direction:column;gap:16px">
+        <div><div style="font-family:var(--font-heading);font-weight:600;font-size:11px;letter-spacing:.12em;color:var(--color-accent-700)">SESSION END</div>
+        <h3 style="font-size:26px;margin:2px 0 0">Done for today.</h3></div>
+        <div class="blueprint" style="padding:14px 16px;display:flex;flex-direction:column;gap:8px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <div style="display:flex;justify-content:space-between;font-size:13.5px"><span>Reviewed (earlier rungs)</span><b>{{sumRev}}</b></div>
+          <div style="display:flex;justify-content:space-between;font-size:13.5px"><span>Sentences read</span><b>{{sumRead}}</b></div>
+          <div style="display:flex;justify-content:space-between;font-size:13.5px"><span>Produced & self-marked</span><b>{{sumProd}}</b></div>
+          <div style="display:flex;justify-content:space-between;font-size:13.5px;border-top:1px solid var(--color-divider);padding-top:8px"><span>Production</span><b>{{sumTotal}}</b></div>
+        </div>
+        <sc-if value="{{sumExitOpen}}" hint-placeholder-val="{{false}}">
+          <div class="blueprint" style="padding:14px 16px;border-color:var(--color-accent)"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <b style="font-size:14.5px">The exit ritual is open.</b>
+            <p style="font-size:12.5px;margin:4px 0 10px;color:color-mix(in srgb,var(--color-text) 65%,transparent)">Every sentence produced ×2. Whenever you're ready — today or next week. The rung waits.</p>
+            <button class="btn btn-primary btn-block" style="min-height:46px;margin:0" onClick="{{goRitual}}">Begin the exit ritual</button>
+          </div>
+        </sc-if>
+        <button class="btn btn-secondary btn-block" style="min-height:44px" onClick="{{goLadder}}">Back to the ladder</button>
+      </div>
+    </sc-if>
+  </sc-if>
+</div>
+</sc-if>
+
+<!-- ══ EXIT RITUAL — GENERATE ══ -->
+<sc-if value="{{isRitual}}" hint-placeholder-val="{{false}}">
+<div data-screen-label="Exit ritual" style="flex:1;min-height:0;display:flex;flex-direction:column">
+  <div style="padding:12px 16px 8px;display:flex;align-items:center;gap:10px">
+    <button class="btn btn-icon btn-ghost" style="min-width:40px;min-height:40px" onClick="{{goLadder}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"></path></svg></button>
+    <div><div style="font-family:var(--font-heading);font-weight:600;font-size:11px;letter-spacing:.12em;color:var(--color-accent-700);white-space:nowrap">{{ritKicker}}</div>
+    <div style="font-family:var(--font-heading);font-weight:600;font-size:18px;line-height:1.1">{{ritTitle}}</div></div>
+    <span style="margin-left:auto;font-size:11px;color:color-mix(in srgb,var(--color-text) 45%,transparent);white-space:nowrap">part 1 of 2</span>
+  </div>
+  <div style="flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding:8px 22px 16px">
+    <div style="position:relative;display:flex;flex-direction:column;gap:16px">
+      <div style="position:absolute;left:11px;top:16px;bottom:16px;width:1px;background:var(--color-divider)"></div>
+      <div style="position:relative;padding-left:36px">
+        <span style="position:absolute;left:0;top:0;width:23px;height:23px;display:flex;align-items:center;justify-content:center;background:var(--color-bg);border:1px solid var(--color-accent);font-family:var(--font-heading);font-weight:600;font-size:11px;color:var(--color-accent-700)">1</span>
+        <div style="font-family:'Mukta',sans-serif;font-weight:700;font-size:19px">{{rt1}}</div>
+        <p style="font-size:13.5px;line-height:1.6;margin:4px 0 0;font-family:'Mukta',sans-serif">{{rt1p}}</p>
+        <p style="font-size:12px;margin:4px 0 0;color:color-mix(in srgb,var(--color-text) 50%,transparent)">The sentence stays on your paper. It never enters the app.</p>
+      </div>
+      <div style="position:relative;padding-left:36px">
+        <span style="position:absolute;left:0;top:0;width:23px;height:23px;display:flex;align-items:center;justify-content:center;background:var(--color-bg);border:1px solid var(--color-accent);font-family:var(--font-heading);font-weight:600;font-size:11px;color:var(--color-accent-700)">2</span>
+        <div style="font-family:'Mukta',sans-serif;font-weight:700;font-size:19px">{{rt2}}</div>
+        <p style="font-size:13.5px;line-height:1.65;margin:4px 0 0;font-family:'Mukta',sans-serif">{{rt2p}} <b>{{rt2b}}</b></p>
+        <div style="margin-top:12px;border:1px dashed var(--color-neutral-500);padding:13px 14px;display:flex;flex-direction:column;gap:12px">
+          <span style="font-family:var(--font-heading);font-weight:600;font-size:10px;letter-spacing:.12em;color:color-mix(in srgb,var(--color-text) 50%,transparent)">{{rtPlate}}</span>
+          <div style="display:flex;gap:12px;align-items:flex-start">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-700)" stroke-width="1.5" style="flex:none;margin-top:2px"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87"></path><path d="M16 3.13a4 4 0 010 7.75"></path></svg>
+            <div><div style="font-family:'Mukta',sans-serif;font-weight:600;font-size:14.5px;line-height:1.5">{{rtR1}}</div>
+            <div style="font-size:12px;line-height:1.5;font-family:'Mukta',sans-serif;color:color-mix(in srgb,var(--color-text) 55%,transparent)">{{rtR1s}}</div></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-700)" stroke-width="1.5" style="flex:none;margin-top:2px"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"></path></svg>
+            <div><div style="font-family:'Mukta',sans-serif;font-weight:600;font-size:14.5px;line-height:1.5">{{rtR2}}</div>
+            <div style="font-size:12px;line-height:1.5;font-family:'Mukta',sans-serif;color:color-mix(in srgb,var(--color-text) 55%,transparent)">{{rtR2s}}</div></div>
+          </div>
+        </div>
+        <div style="font-size:11px;margin-top:7px;font-family:'Mukta',sans-serif;color:color-mix(in srgb,var(--color-text) 42%,transparent)">{{rtCap}}</div>
+      </div>
+      <div style="position:relative;padding-left:36px;padding-bottom:4px">
+        <span style="position:absolute;left:0;top:0;width:23px;height:23px;display:flex;align-items:center;justify-content:center;background:{{s3Bg}};border:1px solid var(--color-accent);font-family:var(--font-heading);font-weight:600;font-size:11px;color:{{s3Col}}">3</span>
+        <div style="font-family:'Mukta',sans-serif;font-weight:700;font-size:19px">{{rt3}}</div>
+        <p style="font-size:12.5px;line-height:1.6;margin:4px 0 10px;color:color-mix(in srgb,var(--color-text) 65%,transparent)">This is the signature. Hold it down — no tap-through.</p>
+        <sc-if value="{{notConfirmed}}" hint-placeholder-val="{{true}}">
+          <div onPointerDown="{{holdStart}}" onPointerUp="{{holdEnd}}" onPointerLeave="{{holdEnd}}" style="position:relative;border:1px solid var(--color-accent);min-height:56px;display:flex;align-items:center;justify-content:center;padding:10px 14px;cursor:pointer;user-select:none;-webkit-user-select:none;overflow:hidden;touch-action:none">
+            <div style="position:absolute;inset:0;background:var(--color-accent-200);transform-origin:left;transform:scaleX({{holdScale}});transition:transform .05s linear"></div>
+            <span style="position:relative;font-family:'Mukta',sans-serif;font-size:14.5px;line-height:1.55;text-align:center;font-weight:600">{{rtHold}}</span>
+          </div>
+        </sc-if>
+        <sc-if value="{{confirmed}}" hint-placeholder-val="{{false}}">
+          <div style="border:1px solid var(--color-accent);background:var(--color-accent-100);min-height:56px;display:flex;align-items:center;justify-content:center;gap:9px;padding:10px 14px;animation:rowIn .3s both">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-700)" stroke-width="1.7"><path d="M20 6L9 17l-5-5"></path></svg>
+            <span style="font-family:'Mukta',sans-serif;font-size:14.5px;font-weight:600;color:var(--color-accent-800)">{{rtDone}}</span>
+          </div>
+          <button class="btn btn-primary btn-block" style="min-height:48px;margin-top:10px" onClick="{{goComp}}">Comprehension — part 2</button>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<!-- ══ EXIT RITUAL — COMPREHEND ══ -->
+<sc-if value="{{isComp}}" hint-placeholder-val="{{false}}">
+<div data-screen-label="Comprehend" style="flex:1;min-height:0;display:flex;flex-direction:column">
+  <div style="padding:12px 16px 8px;display:flex;align-items:center;gap:10px">
+    <button class="btn btn-icon btn-ghost" style="min-width:40px;min-height:40px" onClick="{{goRitual}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"></path></svg></button>
+    <div><div style="font-family:var(--font-heading);font-weight:600;font-size:11px;letter-spacing:.12em;color:var(--color-accent-700);white-space:nowrap">{{ritKicker}}</div>
+    <div style="font-family:var(--font-heading);font-weight:600;font-size:18px;line-height:1.1">Comprehend</div></div>
+    <span style="margin-left:auto;font-size:11px;color:color-mix(in srgb,var(--color-text) 45%,transparent);white-space:nowrap">part 2 of 2 · {{compPos}}</span>
+  </div>
+  <div style="flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding:10px 22px 16px;display:flex;flex-direction:column;gap:12px">
+    <sc-if value="{{compRetry}}" hint-placeholder-val="{{false}}">
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:14px;animation:rowIn .3s both">
+        <div style="font-family:var(--font-heading);font-weight:600;font-size:11px;letter-spacing:.12em;color:var(--color-accent-700)">{{retryKicker}}</div>
+        <h3 style="font-size:26px;margin:0">{{retryHead}}</h3>
+        <p style="font-size:13.5px;line-height:1.65;margin:0;font-family:'Mukta',sans-serif">{{retryBody}}</p>
+        <p style="font-size:12px;margin:0;color:color-mix(in srgb,var(--color-text) 50%,transparent)">Unlimited retries. The rung waits; nothing is counted against you.</p>
+        <div class="blueprint" style="border-color:transparent;margin-top:8px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <button class="btn btn-primary btn-block" style="min-height:48px;font-size:15px;margin:0" onClick="{{compFresh}}">Fresh sentences</button>
+        </div>
+      </div>
+    </sc-if>
+    <sc-if value="{{compActive}}" hint-placeholder-val="{{true}}">
+      <div class="blueprint" style="padding:20px 16px;background:var(--color-bg)"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div style="font-family:'Mukta',sans-serif;font-weight:600;font-size:26px;line-height:1.6">{{compMr}}</div>
+        <sc-if value="{{compHasScript}}" hint-placeholder-val="{{false}}"><div style="font-size:15px;margin-top:2px;color:color-mix(in srgb,var(--color-text) 40%,transparent)">{{compScript}}</div></sc-if>
+      </div>
+      <sc-if value="{{compHidden}}" hint-placeholder-val="{{true}}">
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:14px">
+          <div style="border:1px dashed var(--color-neutral-400);padding:20px 16px;text-align:center">
+            <div style="font-family:'Mukta',sans-serif;font-size:14px;line-height:1.65;color:color-mix(in srgb,var(--color-text) 60%,transparent)">{{compNudge}}</div>
+          </div>
+          <div class="blueprint" style="border-color:transparent"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <button class="btn btn-primary btn-block" style="min-height:52px;font-size:15px;margin:0" onClick="{{compReveal}}">{{compRevealLabel}}</button>
+          </div>
+        </div>
+      </sc-if>
+      <sc-if value="{{compShown}}" hint-placeholder-val="{{false}}">
+        <div style="display:flex;flex-direction:column;gap:10px;animation:rowIn .3s both;flex:1">
+          <div style="border-left:2px solid var(--color-accent-400);padding-left:12px">
+            <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-family:var(--font-heading);color:var(--color-accent-700)">Model answer</div>
+            <div style="font-family:'Mukta',sans-serif;font-size:17px;line-height:1.65">{{compAns}}</div>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button class="btn btn-ghost" style="min-height:34px;font-size:12px;padding-inline:6px;white-space:nowrap;flex:none" onClick="{{toggleCompWhy}}">{{compWhyLabel}}</button>
+          </div>
+          <sc-if value="{{compWhyOn}}" hint-placeholder-val="{{false}}">
+            <div style="border-top:1px solid var(--color-divider);padding-top:10px;display:flex;flex-direction:column;gap:8px;animation:rowIn .25s both">
+              <sc-for list="{{compWords}}" as="w" hint-placeholder-count="2">
+                <div style="display:flex;gap:9px;align-items:baseline">
+                  <span style="font-family:'Mukta',sans-serif;font-weight:600;font-size:15px;min-width:52px">{{w.mr}}</span>
+                  <span style="font-family:'Mukta',sans-serif;font-size:12px;min-width:40px;color:color-mix(in srgb,var(--color-text) 50%,transparent)">{{w.hi}}</span>
+                  <span class="tag" style="font-size:9.5px;padding:1px 7px;background:{{w.tagBg}};color:{{w.tagCol}}">{{w.tagLabel}}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+          <p style="font-size:12px;margin:0;color:color-mix(in srgb,var(--color-text) 55%,transparent)">Same meaning counts — it doesn't have to be word-for-word.</p>
+          <div style="display:flex;gap:8px;align-items:center;margin-top:auto">
+            <div class="seg" style="flex:1">
+              <label class="seg-opt" style="flex:1;justify-content:center;min-height:44px;background:{{sameBg}};color:{{sameCol}}"><input type="radio" name="cmark" checked="{{compSameSel}}" onChange="{{compPickSame}}">Same meaning</label>
+              <label class="seg-opt" style="flex:1;justify-content:center;min-height:44px;background:{{notBg}};color:{{notCol}}"><input type="radio" name="cmark" checked="{{compNotSel}}" onChange="{{compPickNot}}">Not quite</label>
+            </div>
+            <sc-if value="{{compMarked}}" hint-placeholder-val="{{false}}">
+              <button class="btn btn-primary" style="flex:none;min-width:86px;min-height:46px;animation:rowIn .2s both" onClick="{{compNextTap}}">{{compNextLabel}}</button>
+            </sc-if>
+          </div>
+        </div>
+      </sc-if>
+    </sc-if>
+  </div>
+</div>
+</sc-if>
+
+<!-- ══ VERDICT ══ -->
+<sc-if value="{{isVerdict}}" hint-placeholder-val="{{false}}">
+<div data-screen-label="Verdict" style="flex:1;overflow-y:auto;overflow-x:hidden;padding:70px 22px 24px;display:flex;flex-direction:column;gap:14px">
+  <div style="animation:rowIn .4s both">
+    <div style="font-family:var(--font-heading);font-weight:600;font-size:11px;letter-spacing:.12em;color:var(--color-accent-700)">EXIT RITUAL COMPLETE</div>
+    <h2 style="font-size:34px;margin:2px 0 0">{{vTitle}}</h2>
+  </div>
+  <div class="blueprint" style="padding:14px 16px;background:var(--color-bg);animation:rowIn .4s .15s both"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:13.5px">
+      <div style="display:flex;gap:8px;align-items:flex-start"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-700)" stroke-width="1.7" style="flex:none;margin-top:2px"><path d="M20 6L9 17l-5-5"></path></svg><span>{{vB1}}</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-700)" stroke-width="1.7" style="flex:none;margin-top:2px"><path d="M20 6L9 17l-5-5"></path></svg><span>Checked by you, in your world — your resources, your call</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-700)" stroke-width="1.7" style="flex:none;margin-top:2px"><path d="M20 6L9 17l-5-5"></path></svg><span>Comprehension 2 of 2 — self-marked</span></div>
+    </div>
+    <p style="font-size:11.5px;margin:10px 0 0;padding-top:8px;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 50%,transparent)">The app graded nothing. It saved nothing you wrote. That was the deal.</p>
+  </div>
+  <p style="font-family:'Mukta',sans-serif;font-size:15px;line-height:1.7;margin:0;animation:rowIn .4s .3s both">{{vLine}}</p>
+  <div class="blueprint" style="border-color:transparent;margin-top:auto;animation:rowIn .4s .45s both"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    <button class="btn btn-primary btn-block" style="min-height:50px;font-size:15px;margin:0" onClick="{{continueUnlock}}">Climb to the ladder</button>
+  </div>
+</div>
+</sc-if>
+
+<!-- ══ SETTINGS ══ -->
+<sc-if value="{{isSettings}}" hint-placeholder-val="{{false}}">
+<div data-screen-label="Settings" style="flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding:18px 22px 24px;display:flex;flex-direction:column;gap:14px">
+  <h3 style="font-size:24px;margin:0">Settings</h3>
+  <div class="blueprint" style="padding:13px 14px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    <div style="font-family:var(--font-heading);font-weight:600;font-size:10px;letter-spacing:.12em;color:var(--color-accent-700);margin-bottom:10px">COURSE</div>
+    <div style="display:flex;flex-direction:column;gap:7px">
+      <label for="course-select" style="font-size:14px;font-weight:600">Active course</label>
+      <select id="course-select" class="input" style="min-height:44px;font-size:14.5px;font-family:var(--font-body);cursor:pointer" value="{{courseValue}}" onChange="{{courseChange}}">
+        <sc-for list="{{courseOptions}}" as="co" hint-placeholder-count="3"><option value="{{co.value}}">{{co.label}}</option></sc-for>
+      </select>
+      <div style="font-size:11.5px;color:color-mix(in srgb,var(--color-text) 55%,transparent)">{{courseStatus}}</div>
+    </div>
+    <div style="font-size:11px;line-height:1.55;margin-top:6px;padding-top:9px;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 50%,transparent)">Switching never erases anything — each course keeps its own ladder, review queue and counters. Come back anytime; it's exactly where you left it.</div>
+  </div>
+  <div class="blueprint" style="padding:13px 14px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    <div style="font-family:var(--font-heading);font-weight:600;font-size:10px;letter-spacing:.12em;color:var(--color-accent-700);margin-bottom:10px">PRACTICE</div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <div style="flex:1"><b style="font-size:14px">Gentle elapsed tick</b><div style="font-size:11.5px;color:color-mix(in srgb,var(--color-text) 55%,transparent)">A thin, numberless line during sessions — fills once, never counts down</div></div>
+      <div class="seg"><label class="seg-opt" style="min-height:36px"><input type="radio" name="tick" checked="{{tickOnSel}}" onChange="{{tickPickOn}}">On</label><label class="seg-opt" style="min-height:36px"><input type="radio" name="tick" checked="{{tickOffSel}}" onChange="{{tickPickOff}}">Off</label></div>
+    </div>
+  </div>
+  <div class="blueprint" style="padding:13px 14px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    <div style="font-family:var(--font-heading);font-weight:600;font-size:10px;letter-spacing:.12em;color:var(--color-accent-700);margin-bottom:9px">STORAGE</div>
+    <div style="display:flex;height:8px;border:1px solid var(--color-divider)">
+      <div style="width:78%;background:var(--color-accent-400)"></div>
+      <div style="width:11%;background:var(--color-accent-600)"></div>
+      <div style="width:3%;background:var(--color-accent-800)"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:5px;margin-top:9px;font-size:12.5px">
+      <div style="display:flex;justify-content:space-between"><span style="display:flex;gap:7px;align-items:center"><span style="width:8px;height:8px;background:var(--color-accent-400)"></span>hindi → marathi course (offline)</span><b>2.4 MB</b></div>
+      <div style="display:flex;justify-content:space-between"><span style="display:flex;gap:7px;align-items:center"><span style="width:8px;height:8px;background:var(--color-accent-600)"></span>english → spanish course (offline)</span><b>0.3 MB</b></div>
+      <div style="display:flex;justify-content:space-between"><span style="display:flex;gap:7px;align-items:center"><span style="width:8px;height:8px;background:var(--color-accent-800)"></span>Your saved progress — all courses</span><b>7.1 KB</b></div>
+    </div>
+    <div style="font-size:10.5px;margin-top:7px;color:color-mix(in srgb,var(--color-text) 45%,transparent)">Nothing you write is in here — the app doesn't store it.</div>
+  </div>
+  <div class="blueprint" style="padding:13px 14px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    <b style="font-size:14px">Backup</b>
+    <p style="font-size:12.5px;line-height:1.55;margin:4px 0 10px;color:color-mix(in srgb,var(--color-text) 65%,transparent)">One file, every course: ladder positions, review queues, counters, settings. Never anything you wrote — the app holds none of it.</p>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-secondary" style="flex:1;min-height:44px;margin:0;gap:7px" onClick="{{exportTap}}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 15V3M7 8l5-5 5 5"></path><path d="M4 15v4a2 2 0 002 2h12a2 2 0 002-2v-4"></path></svg>Export</button>
+      <button class="btn btn-secondary" style="flex:1;min-height:44px;margin:0;gap:7px" onClick="{{importTap}}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v12M7 10l5 5 5-5"></path><path d="M4 15v4a2 2 0 002 2h12a2 2 0 002-2v-4"></path></svg>Import</button>
+    </div>
+  </div>
+  <p style="font-size:11.5px;line-height:1.6;margin:0;color:color-mix(in srgb,var(--color-text) 45%,transparent)">rung v3.3 — read-only teaching · zero inputs · zero network. <span style="font-family:'Mukta',sans-serif">install के बाद यह app internet से कभी बात नहीं करता; बाहर सिर्फ़ वही export file जाती है जो तुम खुद share करते हो.</span> Built by Rishabh, for one learner.</p>
+</div>
+</sc-if>
+
+<!-- ══ BOTTOM NAV ══ -->
+<sc-if value="{{navVis}}" hint-placeholder-val="{{false}}">
+<div style="display:flex;border-top:1px solid var(--color-divider);background:var(--color-bg);padding:6px 10px 30px">
+  <button onClick="{{goLadder}}" style="flex:1;min-height:48px;display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;cursor:pointer;color:{{tabLadCol}}">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v20M16 2v20M8 7h8M8 12h8M8 17h8"></path></svg>
+    <span style="font-family:var(--font-heading);font-weight:600;font-size:9.5px;letter-spacing:.1em">LADDER</span>
+  </button>
+  <button onClick="{{goPracticeTab}}" style="flex:1;min-height:48px;display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;cursor:pointer;color:{{tabPraCol}}">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+    <span style="font-family:var(--font-heading);font-weight:600;font-size:9.5px;letter-spacing:.1em">PRACTICE</span>
+  </button>
+  <button onClick="{{goSettings}}" style="flex:1;min-height:48px;display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;cursor:pointer;color:{{tabSetCol}}">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33h0a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51h0a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82v0a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"></path></svg>
+    <span style="font-family:var(--font-heading);font-weight:600;font-size:9.5px;letter-spacing:.1em">SETTINGS</span>
+  </button>
+</div>
+</sc-if>
+<sc-if value="{{navPad}}" hint-placeholder-val="{{false}}"><div style="height:26px"></div></sc-if>
+
+<sc-if value="{{toastVis}}" hint-placeholder-val="{{false}}">
+<div style="position:absolute;bottom:110px;left:50%;transform:translateX(-50%);max-width:320px;background:var(--color-neutral-900);color:var(--color-neutral-100);font-size:12.5px;padding:9px 14px;animation:toastIn .25s both;z-index:80;text-align:center">{{toast}}</div>
+</sc-if>
+
+</div>
+</x-import>
+
+<!-- ══ DESIGNER'S NOTES RAIL ══ -->
+<aside class="blueprint" style="width:330px;padding:20px 22px;background:var(--color-bg);font-size:12px;line-height:1.55"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+  <div style="font-family:var(--font-heading);font-weight:600;font-size:18px;display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 22 22" fill="none"><path d="M5.5 1v20M16.5 1v20" stroke="currentColor" stroke-width="1.5"></path><path d="M5.5 4.5h11M5.5 17.5h11" stroke="currentColor" stroke-width="1.5"></path><rect x="5.5" y="9.5" width="11" height="3" fill="var(--color-accent)"></rect></svg>rung v3.3 — multi-course prototype</div>
+  <div style="font-size:11px;color:color-mix(in srgb,var(--color-text) 55%,transparent);margin-bottom:14px">v3.2 scope + courses + rebrand (was शिडी/Shidi) · design phase only</div>
+  <div style="font-family:var(--font-heading);font-weight:600;font-size:10.5px;letter-spacing:.12em;color:var(--color-accent-700);margin-bottom:5px">BRAND PROPOSAL</div>
+  <ul style="margin:0 0 14px;padding-left:16px;display:flex;flex-direction:column;gap:4px">
+    <li><b>rung</b> — the unit the product is built on: one checkpoint, one step. शिडी was Marathi-bound; with courses the name must outlive any one language. Four letters, lowercase, plain-English meaningful.</li>
+    <li><b>Mark:</b> two rails + three rungs, middle rung solid accent — "you are here". Drawn in the blueprint grammar: hairline, square, registration-mark-compatible.</li>
+    <li><b>Alternates</b> if it doesn't land: <b>Paydan</b> (पायदान — Hindi for rung; warmer, but L1-tied again) · <b>Climb</b> (verb energy, more generic). One caution to test with P1: a Hindi ear may hear "rung" as रंग (colour).</li>
+  </ul>
+  <div style="font-family:var(--font-heading);font-weight:600;font-size:10.5px;letter-spacing:.12em;color:var(--color-accent-700);margin-bottom:5px">NEW: COURSES, NOT A TOGGLE</div>
+  <ul style="margin:0 0 14px;padding-left:16px;display:flex;flex-direction:column;gap:4px">
+    <li><b>Course = one L1→L2 pair</b> (hindi→marathi, english→spanish). One active at a time; Settings → COURSE switches.</li>
+    <li><b>Nothing is erased:</b> every course keeps its own ladder, production counters and review queue. Switch away mid-M3, switch back — still 16/20.</li>
+    <li><b>Microcopy travels with the course,</b> not the shell: the Hindi nudges, ritual copy and cue labels are course content — the Spanish course speaks English because its L1 is English. Engineering: nudge/ritual strings move into the course bundle.</li>
+    <li>The engine (levels, seal rule, reveal practice, ritual, retry) is untouched — proof the ladder generalises.</li>
+    <li>Spanish here is a <b>4-sentence M1 sample</b> to prove the seam; real authoring waits until Marathi L1 proves out (native gate per course).</li>
+    <li><b>Speech-first script policy</b> (Rishabh): a course whose script doesn\u2019t transfer runs <b>romanized-first</b> — Arabic shows "ismī Rohān" as the primary line, the script kept as one quiet secondary line for recognition (not required reading). Devanagari courses stay native (the script IS free transfer from Hindi). PRD: per-course <b>scriptMode</b> flag + romanization field in the sentence schema.</li>
+    <li><b>Rung card sequenced</b> (team review): fresh rung → one CTA, "Start with the module"; once studied → Practice primary + quiet "revisit the module"; production done → Exit ritual primary; pending rung → note only. Guides the order (read → practice → exit) without gating — the Practice tab stays reachable, per Invariant "phases guide, never gate".</li>
+  </ul>
+  <div style="font-family:var(--font-heading);font-weight:600;font-size:10.5px;letter-spacing:.12em;color:var(--color-accent-700);margin-bottom:5px">PRD IMPLICATIONS (FOR RISHABH)</div>
+  <ul style="margin:0 0 14px;padding-left:16px;display:flex;flex-direction:column;gap:4px">
+    <li>State: key progress by courseId — <span style="font-family:monospace;font-size:10.5px">{activeCourse, courses:{'hi-mr':{…}}}</span>; stateVersion bump; export carries all courses.</li>
+    <li>Content manifest gains a course layer; delta/interference tags are pair-specific by definition.</li>
+    <li>Invariants unchanged and course-agnostic (no time framing, no inputs, learner checks).</li>
+    <li>Recommend: ship the schema seam in v1, ship ONE course. Course #2 is a content project, not an app project.</li>
+  </ul>
+  <div style="font-family:var(--font-heading);font-weight:600;font-size:10.5px;letter-spacing:.12em;color:var(--color-accent-700);margin-bottom:5px">DEMO PATH</div>
+  <ol style="margin:0 0 14px;padding-left:16px;display:flex;flex-direction:column;gap:4px">
+    <li>Settings → COURSE → tap english → spanish: ladder shows its own fresh state, M1 current, English microcopy throughout (module, practice, ritual).</li>
+    <li>Switch back to hindi → marathi: M3 untouched at 16/20 — nothing erased.</li>
+    <li>Everything from v3.2 still demos: जांचो guidance step, hold-to-confirm, comprehension retry, unlock beat.</li>
+  </ol>
+  <div style="font-family:var(--font-heading);font-weight:600;font-size:10.5px;letter-spacing:.12em;color:var(--color-accent-700);margin-bottom:5px">SIGN-OFF CHECKLIST</div>
+  <ul style="margin:0 0 12px;padding-left:16px;display:flex;flex-direction:column;gap:4px">
+    <li>Course switcher: is Settings the right home, and is the "nothing erased" promise clear enough?</li>
+    <li>Rung-card sequencing: single-CTA stages vs the old two-button row — right call? (Spanish course shows the fresh-rung stage.)</li>
+    <li>Brand: "rung" + you-are-here mark — or Paydan? Course dropdown: is Settings enough, or should the Ladder header hint at it?</li>
+    <li>Should the Ladder header show the pair (it does) or a course glyph?</li>
+    <li>Carried from v3.2: जांचो weight [Q2] · tick default [Q3] · unseal beat [Q4] · level-strip edge states.</li>
+  </ul>
+  <div style="font-size:11px;color:color-mix(in srgb,var(--color-text) 50%,transparent)">Reference of record — single surviving version; v2–v3.2 retired. Tweak: elapsed tick.</div>
+</aside>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;elapsedTick&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Recommendations&quot;}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    const W = (mr,hi,tag,forms,note) => ({mr,hi,tag,forms,note});
+    const MODS_SHARED = [
+      ['M1','Who I am','Introduce yourself and state your likes'],
+      ['M2','First exchange','Greetings, wellbeing, yes/no questions'],
+      ['M3','Needs and wants',"Say what you want and don't want"],
+      ['M4','My day','Daily habits and time words'],
+      ['M5','Yesterday','Past tense — the big gender zone'],
+      ['M6','Tomorrow','Future and plans'],
+      ['M7','Where things are','Locations and postpositions'],
+      ['M8','Numbers & shopping','Prices, quantities, buying'],
+      ['M9','Feelings & opinions','Why — because and so'],
+      ['M10','Connected talk','Short 2–3 sentence exchanges']
+    ];
+    const S_MR = [
+      {id:'S1',hi:'मुझे पानी चाहिए',mr:'मला पाणी हवंय',en:'I want water',
+       literal:'मुझको पानी चाहिए-है (शब्दशः क्रम)',
+       words:[W('मला','मुझे/मुझको','delta','','Dative "to me" — same job as मुझे, in every want/need pattern.'),W('पाणी','पानी','interference','','Neuter in Marathi (Hindi: masculine) — this flips the verb ending.'),W('हवंय','चाहिए','delta','हवाय · हवीय · हवंय','Want-form of हव- with -य = "right now"; agrees with the thing wanted: पाणी neuter → हवंय.')],
+       rules:[0,1,3], trap:'Hindi पानी is masculine; Marathi पाणी is neuter — हवंय, never हवाय.',
+       phon:'पाणी का ण retroflex है — जीभ मोड़कर; हिंदी न से अलग.',
+       vars:[{mr:'मला चहा हवाय',hi:'मुझे चाय चाहिए',changed:'पाणी→चहा (पुल्लिंग) → हवंय→हवाय'},{mr:'मला कॉफी हवीय',hi:'मुझे कॉफ़ी चाहिए',changed:'स्त्रीलिंग चीज़ → हवीय'}],
+       mist:[{wrong:'मला पाणी हवाय',why:'पाणी नपुंसकलिंग है — हवंय. हिंदी वाले पानी को पुल्लिंग मान लेते हैं.'}],
+       usage:'रोज़मर्रा की माँग — घर, दुकान, कहीं भी.',register:'neutral',
+       mnem:'हवंय = "चाहिए, अभी" — जो चीज़ चाहिए, verb उसी के लिंग का पीछा करता है.'},
+      {id:'S2',hi:'मुझे चाय नहीं चाहिए',mr:'मला चहा नको',en:"I don't want tea",
+       literal:'मुझको चाय नहीं-चाहिए',
+       words:[W('चहा','चाय','delta','','New word — and masculine in Marathi (Hindi चाय is feminine).'),W('नको','नहीं चाहिए','delta','','One word does the whole "नहीं चाहिए".')],
+       rules:[0,2], trap:'नको के साथ नाही मत लगाओ — "नाही नको" हिंदी pattern की गलती है.',
+       phon:null,
+       vars:[{mr:'मला हे नको',hi:'मुझे यह नहीं चाहिए',changed:'चहा→हे (नपुंसक "यह")'},{mr:'मला आराम नको',hi:'मुझे आराम नहीं चाहिए',changed:'बस चीज़ बदली — नको वैसा ही रहता है'}],
+       mist:[{wrong:'मला चहा नाही नको',why:'नको अकेला काफ़ी है — नाही जोड़ना double negative है.'}],
+       usage:'सीधा मना करना — दोस्तों में ठीक; अनजान से "नको, धन्यवाद" नरम लगता है.',register:'neutral',
+       mnem:'नको = no + नहीं चाहिए, एक ही शब्द में.'},
+      {id:'S3',hi:'मुझे एक किताब चाहिए',mr:'मला एक पुस्तक हवंय',en:'I want a book',
+       literal:null,words:[W('एक','एक','free','','Identical.'),W('पुस्तक','किताब','delta','','New word; neuter — so हवंय again.')],rules:[0,1],trap:null,phon:null,vars:[],mist:[],usage:null,register:null,mnem:null},
+      {id:'S4',hi:'मुझे कॉफ़ी चाहिए',mr:'मला कॉफी हवीय',en:'I want coffee',
+       literal:'मुझको कॉफ़ी चाहिए-है',
+       words:[W('कॉफी','कॉफ़ी','free','','Same word.'),W('हवीय','चाहिए','interference','हवाय · हवीय · हवंय','Feminine agreement — the ending tracks कॉफी, not you.')],
+       rules:[1,3], trap:'हव- का रूप चीज़ के लिंग से: हवाय (पु) · हवीय (स्त्री) · हवंय (नपुं).',
+       phon:null,
+       vars:[{mr:'मला चहा हवाय',hi:'मुझे चाय चाहिए',changed:'पुल्लिंग → हवाय'},{mr:'मला पाणी हवंय',hi:'मुझे पानी चाहिए',changed:'नपुंसक → हवंय'}],
+       mist:[{wrong:'मला कॉफी हवाय',why:'कॉफी स्त्रीलिंग है — हवीय.'}],
+       usage:'माँगने का सबसे आम साँचा — चीज़ बदलो, ending मिलाओ.',register:'neutral',
+       mnem:'ई की मात्रा = स्त्रीलिंग — कॉफी → हवीय.'},
+      {id:'S5',hi:'मुझे नया फ़ोन चाहिए',mr:'मला नवा फोन हवाय',en:'I want a new phone',
+       literal:null,words:[W('नवा','नया','delta','नवा · नवी · नवं','Adjectives agree too: नवा (m).'),W('फोन','फ़ोन','free','','Same word; masculine in both.')],rules:[0,1],trap:null,phon:null,vars:[],mist:[],usage:null,register:null,mnem:null},
+      {id:'S6',hi:'मुझे थोड़ा समय चाहिए',mr:'मला थोडा वेळ हवाय',en:'I need some time',
+       literal:null,words:[W('थोडा','थोड़ा','free','थोडा · थोडी · थोडं','Near-identical; agrees like an adjective.'),W('वेळ','समय','delta','','Everyday word diverges — note the ळ.')],rules:[0,1],trap:null,phon:'ळ जीभ पीछे मोड़कर — हिंदी ल से अलग आवाज़.',vars:[],mist:[],usage:null,register:null,mnem:null},
+      {id:'S7',hi:'मुझे मदद चाहिए',mr:'मला मदत हवीय',en:'I need help',
+       literal:null,words:[W('मदत','मदद','free','','Cognate — the last द becomes त.'),W('हवीय','चाहिए','delta','हवाय · हवीय · हवंय','मदत is feminine.')],rules:[1],trap:null,phon:null,vars:[],mist:[],usage:null,register:null,mnem:null},
+      {id:'S8',hi:'मुझे यह नहीं चाहिए',mr:'मला हे नको',en:"I don't want this",
+       literal:null,words:[W('हे','यह','delta','','Neuter "this".'),W('नको','नहीं चाहिए','delta','','Refusal in one word.')],rules:[2],trap:null,phon:null,vars:[],mist:[],usage:null,register:null,mnem:null},
+      {id:'S9',hi:'मुझे आराम चाहिए',mr:'मला आराम हवाय',en:'I need rest',
+       literal:null,words:[W('आराम','आराम','free','','Identical; masculine.'),W('हवाय','चाहिए','delta','हवाय · हवीय · हवंय','Masculine agreement.')],rules:[1],trap:null,phon:null,vars:[],mist:[],usage:null,register:null,mnem:null},
+      {id:'S10',hi:'मुझे और चावल चाहिए',mr:'मला अजून भात हवाय',en:'I want more rice',
+       literal:null,words:[W('अजून','और','delta','','"More" is अजून.'),W('भात','चावल','delta','','Cooked rice; masculine.')],rules:[0,1],trap:null,phon:null,vars:[{mr:'मला अजून पाणी हवंय',hi:'मुझे और पानी चाहिए',changed:'भात→पाणी (नपुंसक) → हवंय'}],mist:[],usage:null,register:null,mnem:null}
+    ];
+    const RULES_MR = [
+      {tag:'free',text:'Word order stays Subject–Object–Verb, exactly as in Hindi.'},
+      {tag:'delta',text:'Wanting: मला + thing + हव-. The ending agrees with the thing wanted — हवाय (m) · हवीय (f) · हवंय (n).'},
+      {tag:'delta',text:'Refusing: नको alone replaces नहीं चाहिए.'},
+      {tag:'interference',text:'Genders flip between the languages (पानी m → पाणी n; चाय f → चहा m). Agreement follows the Marathi gender.'}
+    ];
+    const REVIEW_MR = [
+      {mod:'M1',hi:'मेरा नाम रोहन है',mr:'माझं नाव रोहन आहे',words:[W('माझं','मेरा','interference','','Agrees with नाव (neuter) — माझं, not माझा.'),W('नाव','नाम','free','','Near-identical cognate.'),W('आहे','है','delta','आहे · आहेस · आहात','Copula; conjugates by person.')]},
+      {mod:'M2',hi:'तुम कैसे हो?',mr:'तू कसा आहेस?',words:[W('तू','तुम','free','','Informal "you".'),W('कसा','कैसे','delta','कसा · कशी · कसं','Agrees with who you ask.'),W('आहेस','हो','delta','','आहे → आहेस with तू.')]},
+      {mod:'M1',hi:'मुझे संगीत पसंद है',mr:'मला संगीत आवडतं',words:[W('मला','मुझे','delta','','Dative "to me".'),W('संगीत','संगीत','free','','Identical.'),W('आवडतं','पसंद है','interference','आवडतं · आवडतो · आवडते','One verb for "पसंद है" — agrees with the thing liked.')]}
+    ];
+    const COMP_MR = [
+      {mr:'मला थंड पाणी हवंय',ans:'मुझे ठंडा पानी चाहिए',words:[W('थंड','ठंडा','free','','Cognate — ठंडा → थंड.'),W('पाणी','पानी','interference','','Neuter → हवंय.'),W('हवंय','चाहिए','delta','','Neuter agreement.')]},
+      {mr:'तुला चहा हवाय का?',ans:'क्या तुम्हें चाय चाहिए?',words:[W('तुला','तुम्हें','delta','','Dative "to you" — मला की तरह.'),W('चहा','चाय','delta','','Masculine → हवाय.'),W('का','क्या','delta','','Question particle — sentence-final (M2).')]},
+      {mr:'मला अजून भात नको',ans:'मुझे और चावल नहीं चाहिए',words:[W('अजून','और','delta','','"More".'),W('भात','चावल','delta','','Cooked rice.'),W('नको','नहीं चाहिए','delta','','Refusal in one word.')]},
+      {mr:'मला थोडा आराम हवाय',ans:'मुझे थोड़ा आराम चाहिए',words:[W('थोडा','थोड़ा','free','','Near-identical.'),W('आराम','आराम','free','','Identical; masculine.'),W('हवाय','चाहिए','delta','','Masculine agreement.')]},
+      {mr:'मला एक नवा फोन हवाय',ans:'मुझे एक नया फ़ोन चाहिए',words:[W('नवा','नया','delta','','Adjective agrees: नवा (m).'),W('फोन','फ़ोन','free','','Same word.'),W('हवाय','चाहिए','delta','','Masculine agreement.')]},
+      {mr:'मला मदत हवीय',ans:'मुझे मदद चाहिए',words:[W('मदत','मदद','free','','Cognate — द → त.'),W('हवीय','चाहिए','interference','','मदत is feminine → हवीय.')]}
+    ];
+    const S_ES = [
+      {id:'E1',hi:'My name is Rohan',mr:'Me llamo Rohan',en:'lit. "I call myself Rohan"',
+       literal:'I call-myself Rohan',
+       words:[W('Me llamo','My name is','delta','llamo · llamas · llama','Reflexive "I call myself" — the everyday way to give your name.'),W('Rohan','Rohan','free','','Names carry over.')],
+       rules:[0,1], trap:'"Mi nombre es…" is literal English — grammatical, but nobody introduces themselves that way.',
+       phon:'ll sounds like the y in "yes" — "me YAH-mo".',
+       vars:[{mr:'Me llamo Priya',hi:'My name is Priya',changed:'swap the name — llamo stays'},{mr:'¿Cómo te llamas?',hi:'What is your name?',changed:'te + llamas asks it back'}],
+       mist:[{wrong:'Me llamo es Rohan',why:'No "es" — llamo is already the verb.'}],
+       usage:'First introductions, any register.',register:'neutral',
+       mnem:'llamo = "I call (myself)" — the name is what you call yourself.'},
+      {id:'E2',hi:'I am from India',mr:'Soy de India',en:'ser for origin',
+       literal:null,words:[W('Soy','I am','delta','soy · eres · es','"ser" — the permanent "am": origin, identity.'),W('de','from','free','','Works like English "from".')],rules:[0,2],trap:null,phon:null,vars:[],mist:[],usage:null,register:null,mnem:null},
+      {id:'E3',hi:'I like coffee',mr:'Me gusta el café',en:'lit. "coffee pleases me"',
+       literal:'To-me pleases the coffee',
+       words:[W('Me gusta','I like','interference','gusta · gustan','Backwards from English: the coffee does the pleasing — like Marathi मला आवडतं!'),W('el café','coffee','delta','el · la','Nouns carry gender; el = masculine article.')],
+       rules:[1,2], trap:'"Yo gusto café" is the English pattern — wrong. The liked thing is the subject.',
+       phon:null,
+       vars:[{mr:'Me gusta el té',hi:'I like tea',changed:'café→té — gusta stays'},{mr:'Me gustan los libros',hi:'I like books',changed:'plural thing → gustan'}],
+       mist:[{wrong:'Yo gusto el café',why:'gustar works backwards — the thing liked is the subject.'}],
+       usage:'Likes of every kind — food, music, people.',register:'neutral',
+       mnem:'gustar = "to please" — English likes, Spanish pleases.'},
+      {id:'E4',hi:'I want water',mr:'Quiero agua',en:'querer for wanting',
+       literal:null,words:[W('Quiero','I want','delta','quiero · quieres · quiere','"querer" — wanting (and, later, loving).'),W('agua','water','delta','','Feminine noun that still takes "el" in the singular — a famous quirk.')],rules:[0,2],trap:null,phon:null,vars:[],mist:[],usage:null,register:null,mnem:null}
+    ];
+    const RULES_ES = [
+      {tag:'free',text:'Word order mostly matches English (Subject–Verb–Object).'},
+      {tag:'delta',text:'Reflexive introductions: me llamo / te llamas — the name is what you call yourself.'},
+      {tag:'delta',text:'Every noun has a gender; articles (el/la) and adjectives agree with it.'},
+      {tag:'interference',text:'gustar works backwards: the thing liked is the grammatical subject — "coffee pleases me".'}
+    ];
+    const COMP_ES = [
+      {mr:'¿Cómo te llamas?',ans:'What is your name?',words:[W('Cómo','how','free','','Question word.'),W('te llamas','you call yourself','delta','','The asking-back form of me llamo.')]},
+      {mr:'Quiero café',ans:'I want coffee',words:[W('Quiero','I want','delta','','querer, 1st person.'),W('café','coffee','free','','Cognate.')]}
+    ];
+    const S_AR = [
+      {id:'A1',hi:'My name is Rohan',mr:'ismī Rohān',script:'اسمي روهان',en:'lit. "my-name Rohan"',
+       literal:'name-my Rohan',
+       words:[W('ismī','my name','delta','ismī · ismuka / ismuki · ismuhu','ism (name) + the attached ‑ī = "my". Possession is a suffix, not a word.'),W('Rohān','Rohan','free','','Names carry over.')],
+       rules:[0,1], trap:'No "is" — Arabic drops the verb "to be" in the present. "ismī huwa Rohān" sounds stilted.',
+       phon:'Say it ISS-mee ro-HAAN — crisp double s, long final vowels.',
+       vars:[{mr:'ismī Priya',hi:'My name is Priya',changed:'swap the name — ismī stays'},{mr:'mā ismuka?',hi:'What is your name? (to a man)',changed:'mā + ‑ka (your) asks it back'}],
+       mist:[{wrong:'ismī huwa Rohān',why:'The present-tense "to be" (huwa) is dropped — ismī Rohān is complete.'}],
+       usage:'First introductions, any register.',register:'neutral',
+       mnem:'ismī = "name-my" — the owner hangs off the end of the word.'},
+      {id:'A2',hi:'I am from India',mr:'anā min al-Hind',script:'أنا من الهند',en:'lit. "I from the-India"',
+       literal:'I from the-India',
+       words:[W('anā','I','delta','','Pronoun "I" — needed here since there\u2019s no verb.'),W('min','from','free','','Works like English "from".'),W('al-Hind','India','delta','al‑ + Hind','Country names usually take al‑ ("the India").')],
+       rules:[0,1],trap:null,phon:'Run it together: a-NAA min al-HIND.',vars:[],mist:[],usage:null,register:null,mnem:null},
+      {id:'A3',hi:'I like coffee',mr:'uḥibb al-qahwa',script:'أحب القهوة',en:'lit. "I-love the-coffee"',
+       literal:'I-love the-coffee',
+       words:[W('uḥibb','I like/love','delta','uḥibb · tuḥibb · yuḥibb','One verb covers like and love; the subject "I" lives inside the verb.'),W('al-qahwa','coffee','interference','al‑ + qahwa','General statements take al‑ — English drops "the", Arabic keeps it.')],
+       rules:[0,2,3], trap:'"uḥibb qahwa" (no al‑) sounds like "I like a coffee". Liking coffee in general needs al-qahwa.',
+       phon:'The q of qahwa is a deep k from the back of the throat — u-HIBB al-QAH-wa.',
+       vars:[{mr:'uḥibb ash-shāy',hi:'I like tea',changed:'qahwa→shāy — and al‑ melts into ash‑ before sh'},{mr:'uḥibb al-kutub',hi:'I like books',changed:'plural thing — the verb stays uḥibb'}],
+       mist:[{wrong:'anā uḥibb qahwa',why:'Drop the extra anā (it\u2019s already inside the verb) and keep al‑: uḥibb al-qahwa.'}],
+       usage:'Likes of every kind — food, people, places.',register:'neutral',
+       mnem:'ḥubb = love — Arabic "likes" by loving; the same root as ḥabībī.'},
+      {id:'A4',hi:'I want water',mr:'urīd māʾ',script:'أريد ماء',en:'lit. "I-want water"',
+       literal:null,words:[W('urīd','I want','delta','urīd · turīd · yurīd','The everyday wanting verb; "I" is inside it.'),W('māʾ','water','free','','The ʾ is a tiny catch in the throat.')],rules:[0,2],trap:null,phon:'u-REED maa\u2019 — end on the little throat-catch, not a long aah.',vars:[],mist:[],usage:null,register:null,mnem:null}
+    ];
+    const RULES_AR = [
+      {tag:'free',text:'Subject–Verb–Object order works, just like English.'},
+      {tag:'delta',text:'"To be" vanishes in the present: ismī Rohān ("my-name Rohan") — no is/am.'},
+      {tag:'delta',text:'The subject usually lives inside the verb: uḥibb = I-like, urīd = I-want.'},
+      {tag:'interference',text:'General statements keep the article: English "I like coffee" → Arabic "I like THE coffee" (al-qahwa).'}
+    ];
+    const COMP_AR = [
+      {mr:'mā ismuka?',script:'ما اسمك؟',ans:'What is your name?',words:[W('mā','what','free','','Question word.'),W('ismuka','your name','delta','','ism + ‑ka (‑ki to a woman) = "your".')]},
+      {mr:'urīd qahwa',script:'أريد قهوة',ans:'I want a coffee',words:[W('urīd','I want','delta','','"I" is inside the verb.'),W('qahwa','a coffee','delta','','No al‑ → one coffee, not coffee in general.')]}
+    ];
+    this.COURSES = {
+      mr: {
+        pairLabel:'Hindi → Marathi', pairName:'hindi → marathi',
+        MODS: MODS_SHARED, S: S_MR, RULES: RULES_MR, REVIEW: REVIEW_MR, COMP: COMP_MR,
+        authoredIdx: 2, cueLabel:'Hindi cue', trapHead:'Hindi will mislead you',
+        modHelper:'Tap a card for a quick summary; open full for everything. हर वाक्य दो बार got-it → exit ritual खुलेगा.',
+        writesNote:'हर वाक्य दो बार got-it → exit खुलेगा',
+        nudgeRev:'पहले खुद बनाओ — दिमाग़ में, बोलकर, या notebook में. फिर reveal.',
+        nudgeProd:'notebook में लिखो — पूरा वाक्य, अपने हाथ से. फिर मिलाओ.',
+        readNudge:'बोलकर पढ़ो — और जो नया लगे, notebook में उतारो.',
+        revealLabel:'Reveal the Marathi', compRevealLabel:'Reveal the Hindi',
+        hubRevSuffix:'due from earlier rungs — recall, then reveal',
+        readLineMid:'sentences, Marathi first — aloud, in your own voice',
+        prodLineSuffix:'sentences to write in your notebook, then reveal',
+        pendingBody:'This prototype ends at the M4 unlock. In the product, M4\u2019s ten sentences load here the moment the native speaker signs them off — same patterns, next rung.',
+        ordinal:'11th', rt1:'लिखो',
+        rt1p:'इस level का एक नया वाक्य — 10 में से नहीं — अपनी notebook में लिखो. 5 शब्द तक, सिर्फ़ सीखे हुए शब्द.',
+        rt2:'जांचो', rt2p:'अब खुद जांचो — किसी मराठी जानने वाले से पूछो, या internet पर खुद ढूँढो.', rt2b:'जांचना तुम्हारा काम है, app का नहीं.',
+        rtPlate:'APP के बाहर — तुम्हारी दुनिया',
+        rtR1:'मराठी जानने वाला कोई भी', rtR1s:'दोस्त, colleague, family — पूछ लो. सबसे पक्का यही है.',
+        rtR2:'internet पर, खुद', rtR2s:'dictionary, search — जो तरीका तुम्हें ठीक लगे.',
+        rtCap:'इस step में कोई button नहीं — जानबूझकर. यह काम app के बाहर होता है.',
+        rt3:'पक्का करो', rtHold:'मैंने अपना 11वाँ वाक्य लिखा और खुद जांच लिया — दबाकर रखो',
+        rtDone:'पक्का — generate half done.',
+        compNudge:'इसका मतलब सोचो — दिमाग़ में, बोलकर, या notebook में. फिर मिलाओ.',
+        retryKicker:'COMPREHEND · फिर से', retryHead:'नए वाक्य, फिर से.',
+        retryBody:'एक जवाब अलग निकला — कोई बात नहीं, यही तो information है. pool से दो नए वाक्य लो, आराम से मिलाओ.',
+        vLinePre:'अपना वाक्य, अपनी मराठी. अगली सीढ़ी खुल गई — '
+      },
+      es: {
+        pairLabel:'English → Spanish', pairName:'english → spanish',
+        MODS: MODS_SHARED, S: S_ES, RULES: RULES_ES, REVIEW: [], COMP: COMP_ES,
+        authoredIdx: 0, cueLabel:'English cue', trapHead:'English will mislead you',
+        modHelper:'Tap a card for a quick summary; open full for everything. Two got-its per sentence opens the exit ritual.',
+        writesNote:'two got-its per sentence → exit opens',
+        nudgeRev:'Build it yourself first — in your head, out loud, or in your notebook. Then reveal.',
+        nudgeProd:'Write it in your notebook — the whole sentence, by hand. Then compare.',
+        readNudge:'Read aloud — and jot anything new into your notebook.',
+        revealLabel:'Reveal the Spanish', compRevealLabel:'Reveal the English',
+        hubRevSuffix:'due — nothing yet; this is the first rung',
+        readLineMid:'sentences, Spanish first — aloud, in your own voice',
+        prodLineSuffix:'sentences to write in your notebook, then reveal',
+        pendingBody:'This sample course ends at the M2 unlock. In the product, M2\u2019s sentences load here once they\u2019re authored and verified — same ladder, next rung.',
+        ordinal:'5th', rt1:'Write',
+        rt1p:'One new sentence at this level — not one of the 4 — in your notebook. Up to 5 words, only words you\u2019ve learned.',
+        rt2:'Check', rt2p:'Now check it yourself — ask someone who knows Spanish, or dig on the internet.', rt2b:'Checking is your job, not the app\u2019s.',
+        rtPlate:'OUTSIDE THE APP — YOUR WORLD',
+        rtR1:'Anyone who knows Spanish', rtR1s:'A friend, a colleague, family — asking is the surest way.',
+        rtR2:'The internet, yourself', rtR2s:'A dictionary, search — whatever method feels right.',
+        rtCap:'No buttons in this step — deliberately. This work happens outside the app.',
+        rt3:'Confirm', rtHold:'I wrote my 5th sentence and checked it myself — press and hold',
+        rtDone:'Signed — generate half done.',
+        compNudge:'Work out what it means — in your head, out loud, or on paper. Then compare.',
+        retryKicker:'COMPREHEND · AGAIN', retryHead:'Fresh sentences, once more.',
+        retryBody:'One answer came out different — that\u2019s fine, that\u2019s information. Take two fresh sentences from the pool and compare calmly.',
+        vLinePre:'Your sentence, your Spanish. The next rung is open — '
+      },
+      ar: {
+        pairLabel:'English → Arabic', pairName:'english → arabic',
+        MODS: MODS_SHARED, S: S_AR, RULES: RULES_AR, REVIEW: [], COMP: COMP_AR,
+        authoredIdx: 0, cueLabel:'English cue', trapHead:'English will mislead you',
+        modHelper:'Tap a card for a quick summary; open full for everything. Two got-its per sentence opens the exit ritual.',
+        writesNote:'two got-its per sentence → exit opens',
+        nudgeRev:'Build it yourself first — in your head, out loud, or in your notebook. Then reveal.',
+        nudgeProd:'Write it in your notebook — the whole sentence, by hand, right to left. Then compare.',
+        readNudge:'Read aloud — and jot anything new into your notebook.',
+        revealLabel:'Reveal the Arabic', compRevealLabel:'Reveal the English',
+        hubRevSuffix:'due — nothing yet; this is the first rung',
+        readLineMid:'sentences, Arabic first — aloud, in your own voice',
+        prodLineSuffix:'sentences to write in your notebook, then reveal',
+        pendingBody:'This sample course ends at the M2 unlock. In the product, M2\u2019s sentences load here once they\u2019re authored and verified — same ladder, next rung.',
+        ordinal:'5th', rt1:'Write',
+        rt1p:'One new sentence at this level — not one of the 4 — in your notebook. Up to 5 words, only words you\u2019ve learned.',
+        rt2:'Check', rt2p:'Now check it yourself — ask someone who knows Arabic, or dig on the internet.', rt2b:'Checking is your job, not the app\u2019s.',
+        rtPlate:'OUTSIDE THE APP — YOUR WORLD',
+        rtR1:'Anyone who knows Arabic', rtR1s:'A friend, a colleague, family — asking is the surest way.',
+        rtR2:'The internet, yourself', rtR2s:'A dictionary, search — whatever method feels right.',
+        rtCap:'No buttons in this step — deliberately. This work happens outside the app.',
+        rt3:'Confirm', rtHold:'I wrote my 5th sentence and checked it myself — press and hold',
+        rtDone:'Signed — generate half done.',
+        compNudge:'Work out what it means — in your head, out loud, or on paper. Then compare.',
+        retryKicker:'COMPREHEND · AGAIN', retryHead:'Fresh sentences, once more.',
+        retryBody:'One answer came out different — that\u2019s fine, that\u2019s information. Take two fresh sentences from the pool and compare calmly.',
+        vLinePre:'Your sentence, your Arabic. The next rung is open — '
+      }
+    };
+    this.state = {
+      course: 'mr',
+      prog: {
+        mr: {passed: 2, production: {S1:2,S2:2,S3:2,S4:2,S5:2,S6:2,S7:1,S8:1,S9:1,S10:1}, sessionStart: null, justUnlocked: false, studied: true},
+        es: {passed: 0, production: {E1:0,E2:0,E3:0,E4:0}, sessionStart: null, justUnlocked: false, studied: false},
+        ar: {passed: 0, production: {A1:0,A2:0,A3:0,A4:0}, sessionStart: null, justUnlocked: false, studied: false}
+      },
+      screen: 'ladder', toast: '',
+      expanded: [], detailIdx: 0, detailFrom: 'module',
+      phase: 'start', idx: 0, revealed: false, mark: null, cardWhy: false, queue: [],
+      readIdx: 0, readHiOn: true, readWhyOn: false,
+      now: Date.now(), doneRev: 0, doneProd: 0, didRead: false,
+      confirmed: false, holdP: 0,
+      compQueue: [0,1], compIdx: 0, compShown: false, compMark: null, compWhy: false, compResults: [], compUsed: [], compRetry: false,
+      tick: null
+    };
+  }
+  C() { return this.COURSES[this.state.course]; }
+  P() { return this.state.prog[this.state.course]; }
+  setProg(upd) {
+    const s = this.state;
+    const prog = Object.assign({}, s.prog);
+    prog[s.course] = Object.assign({}, prog[s.course], upd);
+    return prog;
+  }
+  componentDidMount() { this._t = setInterval(() => { if (this.P().sessionStart && this.state.phase !== 'start') this.setState({now: Date.now()}); }, 8000); }
+  componentWillUnmount() { clearInterval(this._t); clearTimeout(this._toast); clearInterval(this._hold); }
+  setToast(m) { clearTimeout(this._toast); this.setState({toast: m}); this._toast = setTimeout(() => this.setState({toast: ''}), 2800); }
+  curTarget() {
+    const s = this.state, C = this.C();
+    if (s.phase === 'review') return C.REVIEW[s.idx] || null;
+    if (s.phase === 'produce') { const id = s.queue[s.idx]; return C.S.find(x => x.id === id) || null; }
+    return null;
+  }
+  applyMark() {
+    const s = this.state, C = this.C();
+    const upd = {revealed: false, mark: null, cardWhy: false};
+    if (s.phase === 'review') {
+      upd.doneRev = s.doneRev + 1;
+      if (s.idx + 1 < C.REVIEW.length) upd.idx = s.idx + 1;
+      else { upd.phase = 'read'; upd.readIdx = 0; }
+    } else {
+      if (s.mark === 'got') { const p = Object.assign({}, this.P().production); const id = s.queue[s.idx]; p[id] = Math.min(2, (p[id]||0) + 1); upd.prog = this.setProg({production: p}); }
+      upd.doneProd = s.doneProd + 1;
+      if (s.idx + 1 < s.queue.length) upd.idx = s.idx + 1;
+      else upd.phase = 'done';
+    }
+    this.setState(upd);
+  }
+  holdStart() {
+    if (this.state.confirmed) return;
+    clearInterval(this._hold);
+    this._hold = setInterval(() => {
+      const p = this.state.holdP + 0.04;
+      if (p >= 1) { clearInterval(this._hold); this.setState({holdP: 1, confirmed: true}); }
+      else this.setState({holdP: p});
+    }, 30);
+  }
+  holdEnd() { clearInterval(this._hold); if (!this.state.confirmed) this.setState({holdP: 0}); }
+  pickComp(used) {
+    const ids = this.C().COMP.map((x, i) => i);
+    let avail = ids.filter(i => !used.includes(i));
+    if (avail.length < 2) avail = ids.filter(i => !this.state.compQueue.includes(i));
+    if (avail.length < 2) avail = ids;
+    avail = avail.slice().sort(() => Math.random() - 0.5);
+    return avail.slice(0, 2);
+  }
+  switchCourse(id) {
+    if (id === this.state.course) return;
+    const to = this.COURSES[id], from = this.C();
+    this.setState({
+      course: id, expanded: [], detailIdx: 0, detailFrom: 'module',
+      phase: 'start', idx: 0, revealed: false, mark: null, cardWhy: false, queue: [],
+      readIdx: 0, readWhyOn: false, doneRev: 0, doneProd: 0, didRead: false,
+      confirmed: false, holdP: 0,
+      compQueue: [0,1], compIdx: 0, compShown: false, compMark: null, compWhy: false, compResults: [], compUsed: [], compRetry: false
+    });
+    this.setToast('Switched to ' + to.pairName + '. Your ' + from.pairName + ' ladder is saved exactly where it was.');
+  }
+  renderVals() {
+    const s = this.state, st = this.setState.bind(this);
+    const C = this.C(), P = this.P();
+    const TAG = {
+      free: {tagLabel:'free', tagBg:'var(--color-neutral-200)', tagCol:'var(--color-neutral-800)'},
+      delta: {tagLabel:'delta', tagBg:'var(--color-accent-200)', tagCol:'var(--color-accent-800)'},
+      interference: {tagLabel:'⚠ interference', tagBg:'oklch(0.95 0.04 85)', tagCol:'oklch(0.42 0.08 70)'}
+    };
+    const effTick = s.tick === null ? (this.props.elapsedTick ?? true) : s.tick;
+    const goLadder = () => st({screen:'ladder'});
+    const goRitual = () => st({screen:'ritual'});
+    const total = C.S.length * 2;
+    const prodDone = C.S.filter(x => (P.production[x.id]||0) >= 2).length;
+    const writes = C.S.reduce((a,x) => a + (P.production[x.id]||0), 0);
+    const exitOpen = prodDone === C.S.length;
+    const pending = P.passed > C.authoredIdx;
+    const curIdx = Math.min(P.passed, 9);
+    const authored = C.MODS[C.authoredIdx];
+    const modNum = 'L1-' + authored[0];
+    const queueNow = C.S.filter(x => (P.production[x.id]||0) < 2).map(x => x.id);
+    const cur = this.curTarget();
+    const rungs = C.MODS.map((m, i) => {
+      const passed = i < P.passed;
+      const current = i === curIdx && !passed;
+      return {
+        key: m[0], num: m[0], title: m[1], job: m[2],
+        isPassed: passed, isCurrent: current, isLocked: !passed && !current,
+        justUnlocked: current && P.justUnlocked, anim: current && P.justUnlocked ? 'unlockBeat 1s cubic-bezier(.2,.7,.3,1) both' : 'none',
+        dots: C.S.map(x => (current && i === C.authoredIdx) ? ({
+          c1: (P.production[x.id]||0) >= 1 ? 'var(--color-accent-600)' : 'var(--color-neutral-300)',
+          c2: (P.production[x.id]||0) >= 2 ? 'var(--color-accent-600)' : 'var(--color-neutral-300)'
+        }) : ({c1:'var(--color-neutral-300)', c2:'var(--color-neutral-300)'})),
+        writesLine: (i === C.authoredIdx ? writes : 0) + ' of ' + total + ' — ' + C.writesNote,
+        stageNew: current && i === C.authoredIdx && !P.studied,
+        stageGo: current && i === C.authoredIdx && P.studied && !exitOpen,
+        stageExit: current && i === C.authoredIdx && exitOpen,
+        stagePending: current && i !== C.authoredIdx,
+        pendingNote: 'Sentences arrive once authored and native-verified. The rung waits.',
+        tap: passed && i === C.authoredIdx ? () => st({screen:'module'}) : undefined
+      };
+    });
+    const openDetail = (idx, from) => { if (from === 'module' && this._modList) this._modScroll = this._modList.scrollTop; st({screen:'detail', detailIdx: idx, detailFrom: from}); };
+    const cards = C.S.map((x, i) => {
+      const n = P.production[x.id] || 0, open = s.expanded.includes(x.id);
+      return {
+        key: x.id, mr: x.mr, hi: x.hi, en: x.en, open,
+        chev: open ? 'rotate(180deg)' : 'none',
+        d1: n >= 1 ? 'var(--color-accent-600)' : 'var(--color-neutral-300)',
+        d2: n >= 2 ? 'var(--color-accent-600)' : 'var(--color-neutral-300)',
+        script: x.script || '', hasScript: !!x.script,
+        tap: () => st({expanded: open ? s.expanded.filter(id => id !== x.id) : s.expanded.concat([x.id])}),
+        openFull: () => openDetail(i, 'module'),
+        chips: x.words.map(w => ({key: w.mr, t: w.mr, bg: TAG[w.tag].tagBg, col: TAG[w.tag].tagCol})),
+        hasTrap: !!x.trap
+      };
+    });
+    const D = C.S[Math.min(s.detailIdx, C.S.length - 1)] || C.S[0];
+    const dn = P.production[D.id] || 0;
+    const baseToks = D.mr.split(' ');
+    const dVars = (D.vars||[]).map((v, i) => ({key:'v'+i, hi: v.hi, changed: v.changed,
+      toks: v.mr.split(' ').map((w, q) => ({key:q, w, bg: baseToks.includes(w) ? 'transparent' : 'var(--color-accent-200)'}))}));
+    const chips = ['review','read','produce'].map(p => {
+      const active = s.phase === p;
+      return {key: p, label: p, active,
+        bg: active ? 'var(--color-accent)' : 'transparent', col: active ? 'var(--color-bg)' : 'var(--color-text)',
+        bd: active ? 'var(--color-accent)' : 'var(--color-divider)',
+        tap: () => { if (p === 'review' && C.REVIEW.length === 0) { this.setToast('Nothing due yet — this is the first rung.'); return; } st({phase: p, idx: 0, revealed: false, mark: null, cardWhy: false, readIdx: 0, queue: p === 'produce' ? C.S.filter(x => (this.P().production[x.id]||0) < 2).map(x => x.id) : s.queue}); }};
+    });
+    const elapsedMin = P.sessionStart ? (s.now - P.sessionStart) / 60000 : 0;
+    const isRev = s.phase === 'review';
+    const read = C.S[Math.min(s.readIdx, C.S.length - 1)] || C.S[0];
+    const prodId = s.queue[s.idx], prodN = prodId ? (P.production[prodId]||0) : 0;
+    const compCur = C.COMP[s.compQueue[s.compIdx]] || C.COMP[0];
+    const lastRead = s.readIdx >= C.S.length - 1;
+    return {
+      isLadder: s.screen === 'ladder', isModule: s.screen === 'module',
+      isDetail: s.screen === 'detail', isPractice: s.screen === 'practice', isRitual: s.screen === 'ritual',
+      isComp: s.screen === 'comp', isVerdict: s.screen === 'verdict', isSettings: s.screen === 'settings',
+      navVis: s.screen === 'ladder' || s.screen === 'settings' || (s.screen === 'practice' && s.phase === 'start'),
+      navPad: ['module','detail','ritual','comp','verdict'].includes(s.screen) || (s.screen === 'practice' && s.phase !== 'start'),
+      tabLadCol: s.screen === 'ladder' ? 'var(--color-accent-700)' : 'var(--color-neutral-600)',
+      tabPraCol: s.screen === 'practice' ? 'var(--color-accent-700)' : 'var(--color-neutral-600)',
+      tabSetCol: s.screen === 'settings' ? 'var(--color-accent-700)' : 'var(--color-neutral-600)',
+      goLadder, goSettings: () => st({screen:'settings'}), goPracticeTab: () => st({screen:'practice'}),
+      goRitual, toast: s.toast, toastVis: !!s.toast,
+      pairLabel: C.pairLabel, cueLabel: C.cueLabel, trapHead: C.trapHead,
+      rungs, posLine: 'LEVEL 1 · ' + P.passed + ' OF 10',
+      levels: [
+        {key:'l1', label:'LEVEL 1', name:'Foundations — say what you need', locked:false,
+         col:'var(--color-accent-700)', topBar:'var(--color-accent)', bl:'none',
+         squares: C.MODS.map((m,i) => ({key:'q'+i, bg: i < P.passed ? 'var(--color-accent-600)' : i === curIdx ? 'var(--color-accent-300)' : 'var(--color-neutral-300)'})),
+         tap: () => {}},
+        {key:'l2', label:'LEVEL 2', name:'Conversations — hold your own', locked:true,
+         col:'var(--color-neutral-600)', topBar:'transparent', bl:'1px solid var(--color-divider)',
+         squares: C.MODS.map((m,i) => ({key:'q'+i, bg:'var(--color-neutral-200)'})),
+         tap: () => this.setToast('Sealed — Level 2 opens when Level 1 is climbed.')},
+        {key:'l3', label:'LEVEL 3', name:'Fluency — stories & opinions', locked:true,
+         col:'var(--color-neutral-600)', topBar:'transparent', bl:'1px solid var(--color-divider)',
+         squares: C.MODS.map((m,i) => ({key:'q'+i, bg:'var(--color-neutral-200)'})),
+         tap: () => this.setToast('Sealed — one level at a time.')}
+      ],
+      pendingLine: (10 - P.passed) + ' rungs left in Level 1 · 10 modules per level, Levels 2–3 wait sealed. Go as far as you want — the sequence is the system\u2019s, the pace is yours.',
+      openModule: () => st({screen:'module', prog: this.setProg({studied: true})}),
+      cards, modNum, modTitle: authored[1], modHelper: C.modHelper, modWrites: writes + ' / ' + total,
+      modListRef: (el) => { this._modList = el; if (el && this._modScroll != null) { el.scrollTop = this._modScroll; this._modScroll = null; } },
+      dNum: String(Math.min(s.detailIdx, C.S.length - 1) + 1).padStart(2,'0'), dPos: (Math.min(s.detailIdx, C.S.length - 1)+1) + ' of ' + C.S.length,
+      dD1: dn >= 1 ? 'var(--color-accent-600)' : 'var(--color-neutral-300)',
+      dD2: dn >= 2 ? 'var(--color-accent-600)' : 'var(--color-neutral-300)',
+      dMr: D.mr, dHi: D.hi, dEn: D.en,
+      dHasScript: !!D.script, dScript: D.script || '',
+      dHasLit: !!D.literal, dLit: D.literal || '',
+      dWords: D.words.map(w => Object.assign({key: w.mr, mr: w.mr, hi: w.hi, note: w.note, forms: w.forms, hasForms: !!w.forms}, TAG[w.tag])),
+      dRules: D.rules.map(i => Object.assign({key:'r'+i, text: C.RULES[i].text}, TAG[C.RULES[i].tag])),
+      dHasTrap: !!D.trap, dTrap: D.trap || '',
+      dHasPhon: !!D.phon, dPhon: D.phon || '',
+      dHasVars: dVars.length > 0, dVars,
+      dHasMist: (D.mist||[]).length > 0, dMist: (D.mist||[]).map((m,i) => ({key:'m'+i, wrong: m.wrong, why: m.why})),
+      dHasUsage: !!D.usage, dUsage: D.usage || '', dRegister: D.register || '',
+      dHasMnem: !!D.mnem, dMnem: D.mnem || '',
+      dPrevOff: s.detailIdx === 0, dNextOff: s.detailIdx >= C.S.length - 1,
+      dPrev: () => st({detailIdx: Math.max(0, s.detailIdx - 1)}),
+      dNext: () => st({detailIdx: Math.min(C.S.length - 1, s.detailIdx + 1)}),
+      detailBack: () => st({screen: s.detailFrom === 'read' ? 'practice' : 'module'}),
+      phStart: s.phase === 'start', phLive: s.phase !== 'start',
+      phCard: isRev || s.phase === 'produce', phReview: isRev, phProduce: s.phase === 'produce',
+      phRead: s.phase === 'read', phDone: s.phase === 'done',
+      hubKicker: pending ? modNum.replace(authored[0], C.MODS[Math.min(C.authoredIdx + 1, 9)][0]) + ' · ' + C.MODS[Math.min(C.authoredIdx + 1, 9)][1].toUpperCase() : modNum + ' · ' + authored[1].toUpperCase(),
+      hubTitle: P.sessionStart && !pending ? 'Pick up where you left off' : 'Today\u2019s session',
+      hubOpen: !pending, hubPending: pending, hubPendingLine: C.pendingBody,
+      hubReviewLine: C.REVIEW.length + ' ' + C.hubRevSuffix,
+      hubReadLine: 'the ' + C.S.length + ' ' + C.readLineMid,
+      hubProdLine: (queueNow.length || 'no') + ' ' + C.prodLineSuffix,
+      hubCta: P.sessionStart && !pending ? 'Resume' : (C.REVIEW.length ? 'Begin — Review first' : 'Begin — Read first'),
+      beginSession: () => st({phase: C.REVIEW.length ? 'review' : 'read', idx:0, revealed:false, mark:null, cardWhy:false, readIdx:0, prog: this.setProg({sessionStart: P.sessionStart || Date.now()}), queue: queueNow, doneRev:0, doneProd:0, didRead:false}),
+      exitSession: () => st({phase:'start'}),
+      chips, tickVis: effTick && s.phase !== 'done', tickPct: Math.min(100, elapsedMin / 25 * 100).toFixed(1) + '%',
+      cardKicker: isRev ? 'REVIEW · FROM ' + (cur ? cur.mod : '') : 'PRODUCE · SENTENCE ' + (s.idx + 1),
+      cardPos: isRev ? (s.idx+1) + ' of ' + C.REVIEW.length : (s.idx+1) + ' of ' + s.queue.length,
+      cardCue: cur ? cur.hi : '', cardMr: cur ? cur.mr : '',
+      cardHasScript: !!(cur && cur.script), cardScript: cur && cur.script ? cur.script : '',
+      cardNudge: isRev ? C.nudgeRev : C.nudgeProd,
+      revealLabel: C.revealLabel,
+      cardHidden: !s.revealed, cardShown: s.revealed,
+      revealNow: () => st({revealed: true, mark: null, cardWhy: false}),
+      cardWhyOn: !!s.cardWhy, cardWhyLabel: s.cardWhy ? 'hide why' : 'why',
+      toggleCardWhy: () => st({cardWhy: !s.cardWhy}),
+      cardWords: (cur && cur.words ? cur.words : []).map(w => Object.assign({key: w.mr, mr: w.mr, hi: w.hi, note: w.note}, TAG[w.tag])),
+      cardCanFull: !isRev && !!prodId,
+      cardOpenFull: () => { const i = C.S.findIndex(x => x.id === prodId); if (i >= 0) st({screen:'detail', detailIdx: i, detailFrom: 'read'}); },
+      pd1: prodN >= 1 ? 'var(--color-accent-600)' : 'var(--color-neutral-300)',
+      pd2: prodN >= 2 ? 'var(--color-accent-600)' : 'var(--color-neutral-300)',
+      gotSel: s.mark === 'got', missSel: s.mark === 'miss',
+      gotBg: s.mark === 'got' ? 'oklch(0.52 0.1 150)' : 'transparent',
+      gotCol: s.mark === 'got' ? 'var(--color-bg)' : 'inherit',
+      missBg: s.mark === 'miss' ? 'oklch(0.52 0.13 27)' : 'transparent',
+      missCol: s.mark === 'miss' ? 'var(--color-bg)' : 'inherit',
+      pickGot: () => st({mark:'got'}), pickMiss: () => st({mark:'miss'}),
+      marked: !!s.mark, nextCard: () => this.applyMark(),
+      readKicker: 'READ · ' + authored[0], readPos: (Math.min(s.readIdx, C.S.length - 1)+1) + ' of ' + C.S.length,
+      readMr: read.mr, readHi: read.hi, readNudge: C.readNudge,
+      readHasScript: !!read.script, readScript: read.script || '',
+      readHiOn: s.readHiOn, readHiLabel: s.readHiOn ? 'hide cue' : 'show cue',
+      toggleReadHi: () => st({readHiOn: !s.readHiOn}),
+      readWhyOn: s.readWhyOn, readWhyLabel: s.readWhyOn ? 'hide why' : 'why',
+      toggleReadWhy: () => st({readWhyOn: !s.readWhyOn}),
+      readOpenFull: () => st({screen:'detail', detailIdx: Math.min(s.readIdx, C.S.length - 1), detailFrom: 'read'}),
+      readWords: read.words.map(w => Object.assign({key: w.mr, mr: w.mr, hi: w.hi}, TAG[w.tag])),
+      readPrev: () => st({readIdx: Math.max(0, s.readIdx - 1), readWhyOn: false}),
+      readNext: () => !lastRead ? st({readIdx: s.readIdx + 1, readWhyOn: false}) : st({phase:'produce', idx:0, revealed:false, mark:null, cardWhy:false, queue: queueNow, didRead: true}),
+      readNextLabel: !lastRead ? 'Next' : 'On to producing',
+      sumRev: s.doneRev + ' of ' + C.REVIEW.length, sumRead: s.didRead ? 'all ' + C.S.length : 'skipped',
+      sumProd: String(s.doneProd), sumTotal: writes + ' of ' + total + ' writes',
+      sumExitOpen: exitOpen,
+      ritKicker: modNum + ' · EXIT RITUAL', ritTitle: 'The ' + C.ordinal + ' sentence',
+      rt1: C.rt1, rt1p: C.rt1p, rt2: C.rt2, rt2p: C.rt2p, rt2b: C.rt2b,
+      rtPlate: C.rtPlate, rtR1: C.rtR1, rtR1s: C.rtR1s, rtR2: C.rtR2, rtR2s: C.rtR2s,
+      rtCap: C.rtCap, rt3: C.rt3, rtHold: C.rtHold, rtDone: C.rtDone,
+      s3Bg: s.confirmed ? 'var(--color-accent)' : 'var(--color-bg)',
+      s3Col: s.confirmed ? 'var(--color-bg)' : 'var(--color-accent-700)',
+      notConfirmed: !s.confirmed, confirmed: s.confirmed,
+      holdScale: s.holdP.toFixed(3),
+      holdStart: () => this.holdStart(), holdEnd: () => this.holdEnd(),
+      goComp: () => { const q = this.pickComp([]); st({screen:'comp', compQueue:q, compUsed:q.slice(), compIdx:0, compShown:false, compMark:null, compWhy:false, compResults:[], compRetry:false}); },
+      compPos: (s.compIdx+1) + ' of 2', compMr: compCur.mr, compAns: compCur.ans,
+      compHasScript: !!compCur.script, compScript: compCur.script || '',
+      compActive: !s.compRetry, compRetry: s.compRetry,
+      compHidden: !s.compShown, compShown: s.compShown,
+      compNudge: C.compNudge, compRevealLabel: C.compRevealLabel,
+      retryKicker: C.retryKicker, retryHead: C.retryHead, retryBody: C.retryBody,
+      compReveal: () => st({compShown: true, compMark: null, compWhy: false}),
+      compWhyOn: !!s.compWhy, compWhyLabel: s.compWhy ? 'hide why' : 'why',
+      toggleCompWhy: () => st({compWhy: !s.compWhy}),
+      compWords: (compCur.words||[]).map(w => Object.assign({key: w.mr, mr: w.mr, hi: w.hi}, TAG[w.tag])),
+      compSameSel: s.compMark === 'same', compNotSel: s.compMark === 'not',
+      sameBg: s.compMark === 'same' ? 'oklch(0.52 0.1 150)' : 'transparent',
+      sameCol: s.compMark === 'same' ? 'var(--color-bg)' : 'inherit',
+      notBg: s.compMark === 'not' ? 'oklch(0.52 0.13 27)' : 'transparent',
+      notCol: s.compMark === 'not' ? 'var(--color-bg)' : 'inherit',
+      compPickSame: () => st({compMark:'same'}), compPickNot: () => st({compMark:'not'}),
+      compMarked: !!s.compMark, compNextLabel: s.compIdx === 0 ? 'Next' : 'Finish',
+      compNextTap: () => {
+        const res = s.compResults.concat([s.compMark]);
+        if (s.compIdx === 0) st({compIdx: 1, compShown: false, compMark: null, compWhy: false, compResults: res});
+        else if (res.every(r => r === 'same')) st({screen:'verdict'});
+        else st({compRetry: true, compResults: []});
+      },
+      compFresh: () => { const q = this.pickComp(s.compUsed); st({compQueue:q, compUsed: s.compUsed.concat(q), compIdx:0, compShown:false, compMark:null, compWhy:false, compResults:[], compRetry:false}); },
+      vTitle: authored[0] + ' · Passed',
+      vB1: 'The ' + C.ordinal + ' sentence — written in your notebook, new, at level',
+      vLine: C.vLinePre + C.MODS[Math.min(C.authoredIdx + 1, 9)][1] + '.',
+      continueUnlock: () => st({screen:'ladder', phase:'start', confirmed:false, holdP:0, prog: this.setProg({passed: Math.max(this.P().passed, C.authoredIdx + 1), justUnlocked: true})}),
+      courseOptions: Object.keys(this.COURSES).map(id => ({key: id, value: id, label: this.COURSES[id].pairName})),
+      courseValue: s.course,
+      courseChange: (e) => this.switchCourse(e.target.value),
+      courseStatus: 'Level 1 · ' + P.passed + ' of 10 passed' + (pending ? ' · next rung pending authoring' : ' · ' + C.MODS[curIdx][0] + (P.studied ? ' in progress' : ' not started')),
+      tickOnSel: effTick, tickOffSel: !effTick,
+      tickPickOn: () => st({tick: true}), tickPickOff: () => st({tick: false}),
+      exportTap: () => this.setToast('Export ready — one file, all courses. The share sheet opens on your phone.'),
+      importTap: () => this.setToast('Import: pick a rung backup file on your phone.')
+    };
+  }
+}
+</script>
+</body>
+</html>

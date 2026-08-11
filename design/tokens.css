@@ -1,0 +1,128 @@
+/* rung — design tokens v3.3 (single source of truth for the PWA build)
+   Base layer verbatim from the Industry design system (_ds/…/styles.css);
+   app layer adds every rung-specific value used in the signed-off prototype
+   (design/Shidi App v3.3.dc.html). Load this file, style against var(--*)
+   only — no hard-coded hex/px in components. */
+
+:root {
+  /* ── 1. Color — ground & roles (Industry base) ─────────────────────── */
+  --color-bg: #f2f2f3;
+  --color-surface: #e9e9ea;
+  --color-text: #1d1f20;
+  --color-accent: #5980a6;               /* the one steel accent (mono scheme) */
+  --color-divider: color-mix(in srgb, #1d1f20 16%, transparent);
+
+  /* Tonal ramps — OKLCH-generated, shared lightness scale.
+     100–300 tinted fills/hovers/subtle borders · 500 base · 700–900 text-on-tint & pressed. */
+  --color-neutral-100: #f5f5f8;  --color-neutral-200: #e7e7ea;
+  --color-neutral-300: #d4d4d7;  --color-neutral-400: #b7b7ba;
+  --color-neutral-500: #98989b;  --color-neutral-600: #7a7a7d;
+  --color-neutral-700: #5d5d60;  --color-neutral-800: #424244;
+  --color-neutral-900: #2b2b2d;
+
+  --color-accent-100: #eef6ff;   --color-accent-200: #d6ebff;
+  --color-accent-300: #b5d9fd;   --color-accent-400: #94bce3;
+  --color-accent-500: #749dc4;   --color-accent-600: #597ea3;
+  --color-accent-700: #416180;   --color-accent-800: #2c455d;
+  --color-accent-900: #1d2d3d;
+
+  /* ── 2. Color — rung semantic (app layer; the ONLY colors beyond steel) ── */
+  /* Self-marks [D11] — the sanctioned loud exception. White text when filled. */
+  --mark-got-bg: oklch(0.52 0.10 150);      /* "Got it" / "Same meaning" */
+  --mark-miss-bg: oklch(0.52 0.13 27);      /* "Missed" / "Not quite"    */
+  --mark-fg: var(--color-bg);
+
+  /* Interference (amber) — exclusively for L1-misleads-you moments. */
+  --interference-bg: oklch(0.96 0.03 85);   /* trap callout fill   */
+  --interference-border: oklch(0.72 0.11 75);
+  --interference-icon: oklch(0.55 0.12 70);
+  --interference-text: oklch(0.40 0.07 65);
+  --interference-tag-bg: oklch(0.95 0.04 85);
+  --interference-tag-fg: oklch(0.42 0.08 70);
+
+  /* Delta-tag chips (steel) & free-tag chips (neutral). */
+  --tag-delta-bg: var(--color-accent-200);  --tag-delta-fg: var(--color-accent-800);
+  --tag-free-bg: var(--color-neutral-200);  --tag-free-fg: var(--color-neutral-800);
+
+  /* Progress & state */
+  --dot-done: var(--color-accent-600);      /* production dots, level squares (passed) */
+  --dot-pending: var(--color-neutral-300);
+  --level-current: var(--color-accent-300); /* level-strip square, current rung */
+  --level-sealed: var(--color-neutral-200);
+  --tick-track: var(--color-neutral-200);   /* gentle elapsed tick */
+  --tick-fill: var(--color-accent-400);
+  --variation-highlight: var(--color-accent-200); /* changed part in variations */
+  --mistake-border: var(--color-neutral-400);     /* struck-text plate */
+  --mistake-bg: var(--color-neutral-100);
+  --toast-bg: var(--color-neutral-900);
+  --toast-fg: var(--color-neutral-100);
+
+  /* Muted ink steps (used instead of extra grays — always color-mix on text) */
+  --ink-75: color-mix(in srgb, var(--color-text) 75%, transparent);
+  --ink-65: color-mix(in srgb, var(--color-text) 65%, transparent);
+  --ink-55: color-mix(in srgb, var(--color-text) 55%, transparent);
+  --ink-50: color-mix(in srgb, var(--color-text) 50%, transparent);
+  --ink-45: color-mix(in srgb, var(--color-text) 45%, transparent);
+  --ink-40: color-mix(in srgb, var(--color-text) 40%, transparent);  /* quiet script line */
+
+  /* ── 3. Type ───────────────────────────────────────────────────────── */
+  --font-heading: "Barlow Condensed", system-ui, sans-serif;   /* + weight 600 */
+  --font-heading-weight: 600;
+  --font-body: "Barlow", system-ui, sans-serif;
+  --font-devanagari: "Mukta", system-ui, sans-serif;           /* ALL Devanagari, weights 400–700 */
+  --font-script-fallback: system-ui, sans-serif;               /* Arabic quiet line (bundle Naskh if ar ships) */
+
+  /* Type ramp (from the prototype; L2 = target-language text) */
+  --text-brand: 700 23px/1 var(--font-heading);                /* "rung" wordmark */
+  --text-screen-title: var(--font-heading-weight) 24px/1.12 var(--font-heading);
+  --text-rung-title: var(--font-heading-weight) 26px/1.12 var(--font-heading);
+  --text-verdict-title: var(--font-heading-weight) 34px/1.12 var(--font-heading);
+  --text-l2-hero: 700 32px/1.55 var(--font-devanagari);        /* Detail hero */
+  --text-l2-card: 600 26px/1.6 var(--font-devanagari);         /* reveal/read/comp cards */
+  --text-l2-list: 600 22px/1.6 var(--font-devanagari);         /* module list rows */
+  --text-l2-cue: 400 20px/1.6 var(--font-devanagari);          /* practice cue */
+  --text-kicker: 600 11px/1.2 var(--font-heading);             /* + letter-spacing .12em, uppercase */
+  --text-kicker-sm: 600 10px/1.2 var(--font-heading);
+  --text-body: 400 15px/1.55 var(--font-body);
+  --text-secondary: 400 13px/1.55 var(--font-body);
+  --text-caption: 400 11.5px/1.5 var(--font-body);
+  --text-micro: 400 10.5px/1.5 var(--font-body);
+  --kicker-tracking: .12em;
+  --devanagari-min-size: 18px;    /* floor for body-role Devanagari; line-height 1.6; never italic */
+
+  /* ── 4. Space, radius, elevation (Industry base) ───────────────────── */
+  --space-1: 3.4px;  --space-2: 6.8px;  --space-3: 10.2px;
+  --space-4: 13.6px; --space-6: 20.4px; --space-8: 27.2px;
+  --radius-sm: 2px; --radius-md: 4px; --radius-lg: 7px;   /* blueprint objects stay radius 0 */
+  --shadow-sm: 0 1px 2px color-mix(in srgb, #2b2b2d 14%, transparent);
+  --shadow-md: 0 3px 10px color-mix(in srgb, #2b2b2d 16%, transparent);
+  --shadow-lg: 0 12px 32px color-mix(in srgb, #2b2b2d 22%, transparent);
+  --border-hairline: 1px solid var(--color-divider);
+  --border-dashed-world: 1px dashed var(--color-neutral-500); /* "outside the app" plate + recall boxes */
+
+  /* ── 5. Size & touch ───────────────────────────────────────────────── */
+  --tap-min: 44px;                 /* WCAG floor — every control */
+  --cta-height: 48px;              /* primary block CTAs */
+  --cta-height-lg: 52px;           /* reveal buttons */
+  --hold-height: 56px;             /* press-and-hold confirm */
+  --btn-secondary-height: 46px;
+  --btn-compact-height: 44px;
+  --ghost-height: 36px;            /* ghost text buttons — white-space: nowrap always */
+  --seg-opt-height: 44px;
+  --nav-item-height: 48px;         /* bottom nav (+ 30px home-indicator padding) */
+  --dot-size: 6px;                 /* production dots */
+  --level-square-h: 4px;           /* level-strip mini squares */
+  --tick-height: 2px;              /* gentle elapsed tick */
+  --icon-ui: 20px; --icon-inline: 15px; --icon-stroke: 1.5; /* Lucide, thin-stroke */
+  --brand-mark: 20px;              /* rails mark beside wordmark */
+
+  /* ── 6. Motion [reduced-motion: all → 0.01ms] ──────────────────────── */
+  --motion-reveal: 300ms;          /* rowIn: fade + 7px rise, ease default */
+  --motion-expand: 250ms;          /* in-place card expand / why rows */
+  --motion-next-appear: 200ms;     /* Next button after self-mark */
+  --motion-unlock: 1000ms;         /* unlockBeat, cubic-bezier(.2,.7,.3,1), once */
+  --motion-toast: 250ms;
+  --motion-hold-total: ~900ms;     /* press-and-hold fill [D14]; release resets */
+  --motion-hold-step: 30ms;        /* fill increment cadence (0.04/step) */
+  --motion-tick-cap: 25min;        /* tick fills once over ~25 min, then stops */
+}
