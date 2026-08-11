@@ -9,6 +9,7 @@
  */
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import { loadManifest, resolveActiveCourse, type Course } from './manifest.ts';
+import { loadStrings, StringsContext, type Strings } from './strings.ts';
 import { BootLoadingScreen, ContentErrorScreen } from './BootScreens.tsx';
 
 export interface CourseContextValue {
@@ -47,7 +48,7 @@ interface CourseProviderProps {
 
 type BootState =
   | { status: 'loading' }
-  | { status: 'ready'; value: CourseContextValue }
+  | { status: 'ready'; value: CourseContextValue; strings: Strings }
   | { status: 'error'; detail: string };
 
 export function CourseProvider({ children, persistedCourseId }: CourseProviderProps) {
@@ -60,7 +61,12 @@ export function CourseProvider({ children, persistedCourseId }: CourseProviderPr
       try {
         const { courses, devBuild } = await loadManifest();
         const course = resolveActiveCourse(courses, persistedCourseId);
-        if (!cancelled) setBoot({ status: 'ready', value: { course, courses, devBuild } });
+        // Strings are part of BOOT, not of the first screen that wants a word (#80): the shell
+        // owns no copy, so a screen mounted without its bundle would have nothing to render.
+        const strings = await loadStrings(course.id);
+        if (!cancelled) {
+          setBoot({ status: 'ready', value: { course, courses, devBuild }, strings });
+        }
       } catch (error) {
         // Every failure below the manifest is one screen: the content layer did not load.
         if (!cancelled) setBoot({ status: 'error', detail: describe(error) });
@@ -75,7 +81,14 @@ export function CourseProvider({ children, persistedCourseId }: CourseProviderPr
   if (boot.status === 'loading') return <BootLoadingScreen />;
   if (boot.status === 'error') return <ContentErrorScreen detail={boot.detail} />;
 
-  return <CourseContext.Provider value={boot.value}>{children}</CourseContext.Provider>;
+  // Two contexts, one provider: `useCourse()` answers "which course", `useStrings()` answers
+  // "in whose words". They are filled by the same boot, so a screen never has one without
+  // the other, and neither hook needs a null branch.
+  return (
+    <CourseContext.Provider value={boot.value}>
+      <StringsContext.Provider value={boot.strings}>{children}</StringsContext.Provider>
+    </CourseContext.Provider>
+  );
 }
 
 function describe(error: unknown): string {

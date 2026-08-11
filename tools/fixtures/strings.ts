@@ -1,12 +1,12 @@
 /**
  * A complete strings.json for a fixture course tree, built FROM the canonical list (#76) rather
- * than hand-written beside it: add a key to `tools/strings-keys.ts` and every fixture tree in the
+ * than hand-written beside it: add a key to `src/course/stringsKeys.ts` and every fixture tree in the
  * test suite still scaffolds a passing bundle, so the tests that are about the gate keep being
  * about the gate.
  *
  * Test-support only — nothing under `src/` or the CLIs import this.
  */
-import { STRINGS_KEYS, STRINGS_PLACEHOLDERS } from '../strings-keys.ts';
+import { STRINGS_KEYS, STRINGS_PLACEHOLDERS } from '../../src/course/stringsKeys.ts';
 
 /** Writes `value` at a dot-path, creating the objects on the way down. */
 function setPath(root: Record<string, unknown>, key: string, value: string): void {

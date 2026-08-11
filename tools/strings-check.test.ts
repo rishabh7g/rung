@@ -3,7 +3,7 @@ import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { completeStrings } from './fixtures/strings.ts';
 import { checkStrings, flattenStrings } from './strings-check.ts';
-import { STRINGS_KEYS, STRINGS_PLACEHOLDERS, type StringsKey } from './strings-keys.ts';
+import { STRINGS_KEYS, STRINGS_PLACEHOLDERS, type StringsKey } from '../src/course/stringsKeys.ts';
 import { DEFAULT_CONTENT_ROOT } from './validate.ts';
 
 /**
@@ -139,7 +139,7 @@ describe('the four rules', () => {
 
     expect(issues).toEqual([
       'en-es/strings.json: missing key "ritual.check.plateLabel"',
-      'en-es/strings.json: unknown key "ritual.check.plate" — not in the canonical list (tools/strings-keys.ts)',
+      'en-es/strings.json: unknown key "ritual.check.plate" — not in the canonical list (src/course/stringsKeys.ts)',
     ]);
   });
 
@@ -169,8 +169,8 @@ describe('the four rules', () => {
 
     expect(issues).toEqual([
       'hi-mr/strings.json: missing key "retry.cta"',
-      'hi-mr/strings.json: unknown key "retry.cta.short" — not in the canonical list (tools/strings-keys.ts)',
-      'hi-mr/strings.json: unknown key "retry.cta.long" — not in the canonical list (tools/strings-keys.ts)',
+      'hi-mr/strings.json: unknown key "retry.cta.short" — not in the canonical list (src/course/stringsKeys.ts)',
+      'hi-mr/strings.json: unknown key "retry.cta.long" — not in the canonical list (src/course/stringsKeys.ts)',
     ]);
   });
 
@@ -243,7 +243,7 @@ describe('the four rules', () => {
       'hi-mr/strings.json: missing key "cueLabel"',
       'hi-mr/strings.json: "revealLabel" must be a non-empty string — got an empty string',
       'hi-mr/strings.json: "ordinal" placeholders — expected {n}, found none',
-      'hi-mr/strings.json: unknown key "notASetting" — not in the canonical list (tools/strings-keys.ts)',
+      'hi-mr/strings.json: unknown key "notASetting" — not in the canonical list (src/course/stringsKeys.ts)',
     ]);
   });
 });

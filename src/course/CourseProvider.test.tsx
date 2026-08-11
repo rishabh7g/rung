@@ -2,7 +2,9 @@ import { render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { CourseProvider, useCourse } from './CourseProvider.tsx';
 import { resetManifestCache } from './manifest.ts';
-import { DEV_MANIFEST, STRICT_EMPTY_MANIFEST, mockManifestFetch } from '../test/courseManifest.ts';
+import { resetStringsCache, useStrings } from './strings.ts';
+import { DEV_MANIFEST, STRICT_EMPTY_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
+import { completeStrings, stringValue } from '../test/courseStrings.ts';
 
 /** Renders what the context holds, so a test can read the resolution the provider made. */
 function CourseProbe() {
@@ -16,8 +18,16 @@ function CourseProbe() {
   );
 }
 
+/** The same, for the microcopy half: what a screen would render, from the bundle only. */
+function StringsProbe() {
+  const strings = useStrings();
+
+  return <p>says {strings['retry.title']}</p>;
+}
+
 beforeEach(() => {
   resetManifestCache();
+  resetStringsCache();
 });
 
 afterEach(() => {
@@ -27,7 +37,7 @@ afterEach(() => {
 
 describe('CourseProvider', () => {
   it('boots on the first manifest entry when nothing is persisted', async () => {
-    mockManifestFetch(DEV_MANIFEST);
+    mockContentFetch(DEV_MANIFEST);
 
     render(
       <CourseProvider>
@@ -39,7 +49,7 @@ describe('CourseProvider', () => {
   });
 
   it('boots on the persisted course when it is still in the manifest', async () => {
-    mockManifestFetch(DEV_MANIFEST);
+    mockContentFetch(DEV_MANIFEST);
 
     render(
       <CourseProvider persistedCourseId="en-ar">
@@ -52,7 +62,7 @@ describe('CourseProvider', () => {
 
   it('falls back to the first entry, with a warn, when the persisted course is gone', async () => {
     const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
-    mockManifestFetch(DEV_MANIFEST);
+    mockContentFetch(DEV_MANIFEST);
 
     render(
       <CourseProvider persistedCourseId="fr-de">
@@ -65,7 +75,7 @@ describe('CourseProvider', () => {
   });
 
   it('exposes the dev-build marker for a later banner, and nothing else changes', async () => {
-    mockManifestFetch(DEV_MANIFEST);
+    mockContentFetch(DEV_MANIFEST);
 
     render(
       <CourseProvider>
@@ -77,7 +87,7 @@ describe('CourseProvider', () => {
   });
 
   it('reports devBuild false for a strict build', async () => {
-    mockManifestFetch({ courses: DEV_MANIFEST.courses });
+    mockContentFetch({ courses: DEV_MANIFEST.courses });
 
     render(
       <CourseProvider>
@@ -89,7 +99,7 @@ describe('CourseProvider', () => {
   });
 
   it('shows the wordmark and nothing else while the manifest is in flight', () => {
-    mockManifestFetch(DEV_MANIFEST);
+    mockContentFetch(DEV_MANIFEST);
 
     render(
       <CourseProvider>
@@ -118,7 +128,7 @@ describe('CourseProvider', () => {
   });
 
   it('shows the content-error screen for a strict build that shipped no courses', async () => {
-    mockManifestFetch(STRICT_EMPTY_MANIFEST);
+    mockContentFetch(STRICT_EMPTY_MANIFEST);
 
     render(
       <CourseProvider>
@@ -144,7 +154,7 @@ describe('CourseProvider', () => {
         },
       ],
     };
-    mockManifestFetch(withNewCourse);
+    mockContentFetch(withNewCourse);
 
     render(
       <CourseProvider persistedCourseId="en-fr">
@@ -154,10 +164,45 @@ describe('CourseProvider', () => {
 
     expect(await screen.findByText(/active en-fr of 4/)).toBeInTheDocument();
   });
+
+  it("loads the active course's strings as part of boot, not after it", async () => {
+    const fetchMock = mockContentFetch(DEV_MANIFEST);
+
+    render(
+      <CourseProvider persistedCourseId="en-ar">
+        <StringsProbe />
+      </CourseProvider>,
+    );
+
+    // No screen mounts half-dressed: the first render below the provider already has the bundle.
+    expect(screen.queryByText(/says/)).not.toBeInTheDocument();
+    expect(
+      await screen.findByText(`says ${stringValue('en-ar', 'retry.title')}`),
+    ).toBeInTheDocument();
+    expect(fetchMock).toHaveBeenCalledWith('/content/en-ar/strings.json');
+  });
+
+  it('shows the content-error screen when the bundle is missing a key — never a blank word', async () => {
+    const gutted = completeStrings('hi-mr');
+    delete gutted['cueLabel'];
+    mockContentFetch(DEV_MANIFEST, gutted);
+
+    render(
+      <CourseProvider>
+        <StringsProbe />
+      </CourseProvider>,
+    );
+
+    expect(await screen.findByRole('alert')).toHaveTextContent(/no usable value for cueLabel/);
+    expect(screen.queryByText(/says/)).not.toBeInTheDocument();
+  });
 });
 
-describe('useCourse', () => {
-  it('throws when called above the provider — that is a wiring bug, not a state', () => {
+describe('useCourse and useStrings', () => {
+  it.each([
+    ['useCourse', <CourseProbe key="course" />],
+    ['useStrings', <StringsProbe key="strings" />],
+  ])('%s throws when called above the provider — that is a wiring bug, not a state', (_, probe) => {
     // A render that throws is noisy by design: React logs it, and jsdom reports the window
     // `error` event it rethrows on. Both are swallowed so a green run stays one line.
     vi.spyOn(console, 'error').mockImplementation(() => {});
@@ -165,7 +210,7 @@ describe('useCourse', () => {
     window.addEventListener('error', swallow);
 
     try {
-      expect(() => render(<CourseProbe />)).toThrow(/inside <CourseProvider>/);
+      expect(() => render(probe)).toThrow(/inside <CourseProvider>/);
     } finally {
       window.removeEventListener('error', swallow);
     }
