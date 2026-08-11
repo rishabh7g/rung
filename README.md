@@ -69,6 +69,27 @@ copied verbatim, `levels.json` re-emitted with `hasContent` **derived from what 
 shipped** (the authored flag is never trusted), and `courses.json` filtered to courses that
 shipped at least one module.
 
+### The word index — and the rule it enforces
+
+Every shipped module also gets `public/content/<courseId>/index/<moduleId>.json`: each L2
+surface form (a word's `display` plus every entry of its `forms` — romanized for romanized
+courses, never the `script` line) mapped to the word entry that **teaches** it,
+`{moduleId, sentenceId, wordIdx}`. It is **cumulative** — L1-M2's index is L1-M1's plus what
+M2 adds, because a module never re-teaches what an earlier one taught — and **first
+occurrence wins**, so the pointer names where the learner met the word. The run notes each
+one: `index L1-M2: 47 surfaces`. This is what the "why" resolver reads (PRD §6.3).
+
+Two consequences worth knowing before you author content:
+
+- **A comprehension-pool item may only use taught words.** Every whitespace-split token of
+  every pool item must resolve in that module's cumulative index, or the build fails naming
+  the course, module, item id and token. Sentences' own `variations` and `mistake` lines are
+  deliberately outside the rule — a mistake is wrong L2 *by design*.
+- **`normalizeSurface` is the one definition of "same word"** — `src/engine/surface.ts`, NFC
+  + edge punctuation stripped (`आहात?` → `आहात`), case and apostrophes untouched (#116). The
+  emitter imports it; the runtime resolver will too. Never copy it: a second copy is a word
+  that silently has no "why".
+
 Two rules the scaffold bakes in, before you write a component:
 
 - **Tokens only.** `src/main.tsx` imports `design/tokens.css` *in place* — `design/`
