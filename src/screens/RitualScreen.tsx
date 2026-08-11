@@ -29,9 +29,11 @@
  * The predicate is the very one the Ladder's card reads (`useProgression` → `useExitAvailable`),
  * so the card and the route cannot disagree about whether the ritual is open.
  *
- * **Step 3 is a marked slot, not a stub.** The press-and-hold confirmation is #101's: it renders
- * its own title here (the arc is three steps from the first frame, because a two-step arc that
- * grows a third is a different screen), and the control goes where the comment says.
+ * **Step 3 is the signature** (#101). `HoldToConfirm` stands under its title: ~900ms of held
+ * finger [D14], release resets to 0, and no tap ever passes — the physical cost IS the honesty
+ * mechanism, because nothing in the app can check what the learner wrote. It keeps a progress
+ * number of its own, in its own file; this screen still holds no state at all, which is the whole
+ * of the second invariant above.
  *
  * Every learner-facing word is the course's (`ritual.*`, PRD §4). The English is structural
  * furniture in the register of the module list's `M1 · MODULE` kicker, and the `1 / 2` is a
@@ -39,6 +41,7 @@
  */
 import { Globe, Users } from 'lucide-react';
 import { Navigate } from 'react-router-dom';
+import { HoldToConfirm } from '../components/HoldToConfirm.tsx';
 import { useCourse } from '../course/CourseProvider.tsx';
 import { useModule } from '../course/content.ts';
 import { interpolate, useStrings } from '../course/strings.ts';
@@ -194,10 +197,16 @@ function RitualArc({ moduleId, open }: RitualArcProps) {
           <h3 className={styles.stepTitle} dir={course.dir}>
             {strings['ritual.stepTitle.confirm']}
           </h3>
-          {/* #101's slot: the press-and-hold confirmation (~900ms [D14], release resets) and the
-              CTA to Comprehension it reveals. `ritual.confirm.holdLabel` carries `{ordinal}`, the
-              same ordinal the head renders. Nothing is drawn here until it lands — a disabled
-              stand-in would be a control that does nothing, which is what step 2 is about. */}
+          {/**
+           * The press-and-hold (#101): ~900ms of held finger [D14], release resets, and the ✓
+           * plus the way on to part 2 once it is paid. It takes the head's own `ordinal` so the
+           * label and the title name the same sentence, and it keeps its own progress — the one
+           * state cell in this flow, in its own file, holding a number rather than a word of
+           * what the learner wrote (`HoldToConfirm.tsx`, and the scan below runs over it too).
+           */}
+          <div className={styles.hold}>
+            <HoldToConfirm ordinal={ordinal} dir={course.dir} />
+          </div>
         </li>
       </ol>
     </section>

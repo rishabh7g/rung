@@ -130,6 +130,26 @@
   color: var(--ink-75);
 }
 
+/* Step 3's control sits the same distance under its title as every step's copy does; the hold
+   itself (`HoldToConfirm.module.css`) owns everything inside this box. The prototype's 10px gap. */
+.hold {
+  margin-top: var(--space-3);
+}
+
+/**
+ * A signed step fills its badge — the prototype's `s3Bg`/`s3Col`: solid accent, ground-coloured
+ * numeral, the arc's one "this part is done" mark.
+ *
+ * It is a `:has()` rule and not a prop on purpose. The screen holds no state (see RitualScreen.tsx),
+ * so the fact that the hold is paid lives exactly where it happens — in the DOM, as the ✓ state's
+ * own `data-hold="signed"` (#101) — and the badge reads it from there. Nothing here can be told a
+ * thing about the learner, because nothing here is told anything.
+ */
+.step:has([data-hold='signed']) .stepNumber {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
 /* ------------------------------------------------------------- the check plate */
 
 /**

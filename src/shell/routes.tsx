@@ -38,6 +38,8 @@ export const PRACTICE_PATH = '/practice';
 export const SETTINGS_PATH = '/settings';
 /** The exit ritual — the only unlock path, and the rung card's primary once a rung is ready. */
 export const RITUAL_PATH = '/ritual';
+/** The ritual's second half, where the completed hold hands over (#101, #102). */
+export const COMPREHENSION_PATH = '/comprehension';
 
 /**
  * Which header a screen gets. `brand` = the rails mark + wordmark (the three tabs);
@@ -61,7 +63,7 @@ export const SHELL_ROUTES: readonly ShellRoute[] = [
   { path: PRACTICE_PATH, label: 'Practice', chrome: 'brand', element: <PracticeScreen /> },
   { path: RITUAL_PATH, label: 'Exit ritual', chrome: 'back', element: <RitualScreen /> },
   {
-    path: '/comprehension',
+    path: COMPREHENSION_PATH,
     label: 'Comprehension',
     chrome: 'back',
     element: <ComprehensionScreen />,
