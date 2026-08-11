@@ -13,9 +13,12 @@ and interaction; engineering builds against what lands here.
   styling.** Base Industry layer + rung semantic layer.
 - `tokens.md` — developer reference for `tokens.css`: what each group means and
   the rules CSS cannot express.
-- `rung App v3.3.dc.html` — the clickable prototype; the visual and interaction
+- `Rung App v3.3.dc.html` — the clickable prototype; the visual and interaction
   **reference of record** (v2–v3.2 retired).
 - `ios-frame.jsx`, `support.js` — supporting files for the prototype above.
+- `_ds/` — the upstream Industry design system. Read-only: never edit, it is
+  vendored from source.
+- `rebrand-prompt.md` — reusable prompt for running a rename across this folder.
 
 Still to land: formal component specs (staged rung card, course dropdown, retry
 interstitial, brand mark), flow diagrams, and final microcopy.

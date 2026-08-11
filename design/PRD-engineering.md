@@ -4,7 +4,7 @@
 - Date: 2026-08-11
 - Owner: Rishabh
 - Audience: Product Engineer
-- Companion documents: `PRD-design.md` (v3.3) and the clickable prototype `design/rung App v3.3.dc.html` (reference for look, feel, and states — see §17 for divergences).
+- Companion documents: `PRD-design.md` (v3.3) and the clickable prototype `design/Rung App v3.3.dc.html` (reference for look, feel, and states — see §17 for divergences).
 - Status of decisions: **[D#]** = decided; **[P#]** = proposed, awaiting Rishabh; **[Q#]** = open.
 
 **Changelog v3.3:**
@@ -13,7 +13,7 @@
 - **Speech-first script policy [D20].** Per-course `scriptMode`: `native` (shared script, e.g. Devanagari for hi-mr) or `romanized` (romanization is the primary string everywhere; native script carried as an optional quiet secondary line). Word entries, variations, mistakes, and comprehension items in romanized courses are authored romanized.
 - **Onboarding removed [D21].** No first-run screens; the app opens on the Ladder.
 - **Rung-card stages [D22].** The current rung's CTA is staged off a per-course `studied` flag: not studied → "Start with the module"; studied → Practice primary; production complete → Exit ritual primary; unlocked-but-unauthored → pending note. Never gates the Practice tab.
-- **Brand [P1]:** शिडी → **rung** (pending sign-off). Affects display strings, PWA manifest name/icons, export filename prefix.
+- **Brand [P1]:** शिडी → **rung** (ratified 2026-08-11). Affects display strings, PWA manifest name/icons, export filename prefix.
 - Landed from v3.2 deliverables: comprehension **retry with fresh items** is implemented behaviour; **Next hidden until self-mark** everywhere; Settings = Course · Practice (tick toggle) · Storage · Backup + privacy line.
 
 **Changelog v3.2 (retained):** translation feature removed [D18]; zero text inputs; zero network calls after first load; जांचो guidance-only.
@@ -208,7 +208,7 @@ Unchanged: the app neither validates nor helps validate. Per-course native gate 
 - **Design tokens:** build styling exclusively against `design/tokens.css` (reference: `design/tokens.md`) — base Industry layer + rung semantic layer; no hard-coded hex/px/font names in components.
 - **Fonts [D15]:** bundle Mukta (Devanagari incl. ळ, conjuncts, matras at ≥ 18 px / 1.6) + Barlow / Barlow Condensed; subset per course at build time. If en-ar ships: bundle a Naskh face for the quiet script lines (system fallback acceptable for the dev fixture only); ʾ/ḥ/ī diacritics of the romanization must render in Barlow — verify glyph coverage, fall back to a diacritic-complete face if needed.
 - Browser targets: Chrome Android + Safari iOS current-1.
-- **Brand [P1]:** app name "rung" in PWA manifest, header wordmark + rails mark (SVG in repo), pending sign-off — keep the name in one config constant.
+- **Brand [P1]:** app name "rung" in PWA manifest, header wordmark + rails mark (SVG in repo), ratified — keep the name in one config constant.
 
 ## 11. Delivery phases
 
@@ -241,7 +241,7 @@ Unchanged: the app neither validates nor helps validate. Per-course native gate 
 - **[Q1 → Rishabh + native speaker]** L2/L3 module lists + level names (per course).
 - **[Q2 → engineer]** `navigator.storage.estimate()` on P1's device; fallback presentation.
 - **[Q3 → engineer]** Word-index edge cases for romanized text (apostrophes/ʾ, hyphens in al-, case).
-- **[Q4 → Rishabh]** Brand [P1] sign-off — blocks PWA manifest, icons, export filenames.
+- **[Q4]** ~~Brand sign-off~~ **closed** — rung ratified [P1]; proceed with PWA manifest, icons, export filenames.
 
 ## 15. Sync points with the design track
 

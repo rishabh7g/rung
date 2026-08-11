@@ -4,7 +4,7 @@
 - Date: 2026-08-11
 - Owner: Rishabh
 - Audience: Product Designer
-- Companion documents: `PRD-engineering.md` (v3.3) and the clickable prototype `design/rung App v3.3.dc.html` — the visual/interaction **reference of record** and the single surviving prototype file (v2–v3.2 retired).
+- Companion documents: `PRD-engineering.md` (v3.3) and the clickable prototype `design/Rung App v3.3.dc.html` — the visual/interaction **reference of record** and the single surviving prototype file (v2–v3.2 retired).
 - Status of decisions: **[D#]** = decided; **[P#]** = proposed by design, awaiting Rishabh's sign-off; **[Q#]** = open.
 
 **Changelog v3.3:**
@@ -12,7 +12,7 @@
 - **Speech-first script policy [D20].** The product's goal is spoken fluency, not literacy. A course whose L2 script does not transfer from the L1 runs **romanized-first**: the primary sentence line is romanization ("ismī Rohān"), with the native script kept as one quiet secondary line for recognition — never required reading. Devanagari courses stay native-script (the script IS free transfer from Hindi). Per-course `scriptMode` flag.
 - **Onboarding removed [D21]** (Rishabh). The app opens directly on the Ladder. Consequence to resolve: the notebook invitation has no home — recommendation in §12.
 - **Rung-card sequencing [D22]** (team review). The current rung shows one clear action per stage instead of two competing buttons: fresh rung → "Start with the module"; module studied → "Practice" primary + quiet "revisit the module"; production complete → "Exit ritual — open" primary; pending rung → note only. Guides the order (read → practice → exit) **without gating** — the Practice tab stays reachable (Invariant: phases guide, never gate).
-- **Rebrand proposal [P1]: शिडी → "rung".** Name and mark in §9; alternates and one caution listed for sign-off.
+- **Rebrand [P1 — ratified 2026-08-11]: शिडी → "rung".** Name and mark in §9; alternates kept as considered-and-not-chosen.
 - **v3.2 deliverables landed in the prototype:** guidance-only जांचो designed ([Q2] answered, §6.5); comprehension retry with fresh pool items implemented; Next hidden (not disabled) until self-mark, everywhere; Settings gained the Practice section (elapsed-tick toggle, wired) and the privacy line.
 
 **Changelog v3.2 (retained):** translation feature removed entirely [D18]; zero text inputs; जांचो is guidance-only; Settings keeps tick toggle, storage, export/import.
@@ -115,9 +115,9 @@ Every word and rule carries one of three tags: **free** (transfers from L1; quie
 
 ## 9. Visual language and brand [D15, D16, P1]
 
-- **Brand proposal [P1]: "rung"** — lowercase wordmark in Barlow Condensed. Rationale: the unit the whole product is built on (one checkpoint, one step); शिडी was Marathi-bound and the name must now outlive any one language; four letters, plain-English meaningful.
+- **Brand [P1 — ratified]: "rung"** — lowercase wordmark in Barlow Condensed. Rationale: the unit the whole product is built on (one checkpoint, one step); शिडी was Marathi-bound and the name must now outlive any one language; four letters, plain-English meaningful.
 - **Mark:** two vertical rails + three rungs, the **middle rung solid accent — "you are here"**. Drawn in the blueprint grammar: hairline 1.5, square corners, no rounding. Renders at 20 px in the app header beside the wordmark.
-- **Alternates for sign-off:** *Paydan* (पायदान — Hindi for rung; warmer, but L1-tied again) · *Climb* (verb energy, more generic). Caution to test with P1: a Hindi ear may hear "rung" as रंग (colour).
+- **Alternates considered (not chosen):** *Paydan* (पायदान — Hindi for rung; warmer, but L1-tied again) · *Climb* (verb energy, more generic). Caution to test with P1: a Hindi ear may hear "rung" as रंग (colour).
 - **System: Industry** — steel-blue blueprint; square corners, hairline borders, registration marks. Prototype holds token values of record.
 - **Type:** Mukta for all Devanagari; Barlow / Barlow Condensed for UI. Devanagari body ≥ 18 px equivalent, line-height 1.6, no italics. Arabic script lines render via system fallback at quiet sizes (bundle a Naskh face if Arabic ships — engineering §10).
 - **Colour semantics:** calm steel; amber exclusively for interference; green/red only in self-marks; success reserved for the unlock beat.
@@ -141,7 +141,7 @@ Any translation/checking UI [D18]; any text input; grading or storage of learner
 1. **Notebook invitation's new home** [D21 consequence]: recommend a one-time dismissible line on the first Practice hub ("तुम्हारी notebook ही तुम्हारी workbook है — app में कुछ नहीं लिखा जाता."). Decide and freeze at Sync-3.
 2. ~~Exported design tokens~~ **done** — `design/tokens.css` (machine-usable) + `design/tokens.md` (usage rules). Remaining: formal component specs for the staged rung card, course dropdown, retry interstitial, brand mark.
 3. Level-strip edge states: level just-completed, next-level unseal, all-three-complete ([Q4] recommendation: reuse the rung beat on the level cell + its first rung, same duration).
-4. Brand sign-off [P1]: rung vs Paydan; test the रंग homophone with P1; then app-icon and PWA splash from the mark.
+4. ~~Brand sign-off~~ **done** — rung ratified; remaining: app-icon + PWA splash from the mark (still worth an informal रंग-homophone check with P1).
 5. RTL mirroring spec if/when an Arabic course is greenlit.
 6. Microcopy freeze at Sync-3: Hindi set + English mirror set (per-course tables).
 
@@ -151,7 +151,7 @@ Any translation/checking UI [D18]; any text input; grading or storage of learner
 - **[Q2]** ~~जांचो weight without a control~~ **closed** — dashed-plate design ratified in prototype.
 - **[Q3 → Rishabh]** Elapsed tick default at first run — design recommends **ON** (numberless, calm, one tap to off).
 - **[Q4 → Rishabh]** Unseal moment — design recommends the shared beat (§12.3).
-- **[Q5 → Rishabh]** Brand: rung [P1] — yes/no/Paydan.
+- **[Q5]** ~~Brand~~ **closed** — rung ratified [P1].
 - **[Q6 → Rishabh]** Notebook invitation home (§12.1).
 
 ## 14. Sync points with the engineering track
@@ -172,4 +172,4 @@ Any translation/checking UI [D18]; any text input; grading or storage of learner
 - **scriptMode:** per-course flag — `native` (script transfers; e.g. Devanagari for Hindi speakers) or `romanized` (romanization primary, script as quiet recognition line).
 - **Level / rung / module / 11th sentence / exit ritual / "why" toggle / gentle elapsed tick / Pocket it:** unchanged from v3.2.
 - **Staged rung card:** the current rung's single-CTA action area (fresh → studied → exit-ready → pending).
-- **rung [P1]:** proposed brand — the checkpoint itself; mark = rails + solid middle rung ("you are here").
+- **rung [P1]:** ratified brand [P1] — the checkpoint itself; mark = rails + solid middle rung ("you are here").

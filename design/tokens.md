@@ -1,6 +1,6 @@
 # rung — design tokens v3.3 (developer reference)
 
-Machine-usable file: **`design/tokens.css`** — load it and style against `var(--*)` only. This page explains what each group means and the rules that aren't expressible in CSS. Base layer = the Industry design system (`_ds/…/styles.css`, the upstream source of truth); app layer = rung-specific tokens from the signed-off prototype (`design/rung App v3.3.dc.html`).
+Machine-usable file: **`design/tokens.css`** — load it and style against `var(--*)` only. This page explains what each group means and the rules that aren't expressible in CSS. Base layer = the Industry design system (`_ds/…/styles.css`, the upstream source of truth); app layer = rung-specific tokens from the signed-off prototype (`design/Rung App v3.3.dc.html`).
 
 ## 1. Color
 
