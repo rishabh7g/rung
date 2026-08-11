@@ -21,8 +21,9 @@ fixed sequence of 10 modules ("rungs"), each exited only by **writing** a novel
 
 ## Development
 
-**Prerequisites:** Node **≥ 20** (enforced by `engines.node`) and npm. No other
-runtime, no backend, no env vars.
+**Prerequisites:** Node **22.22.2+ or 24.15+** (`engines.node`; CI runs 24) and npm. No
+other runtime, no backend, no env vars. The floor is jsdom 30's, not ours — on Node 20
+every test file fails to import before it asserts anything.
 
 ```bash
 npm install
@@ -92,6 +93,12 @@ Two things worth knowing before you read a result:
 The harness has its own tests (`scripts/verify.test.ts`): they run it in a tmp dir against fake
 `npm`/`npx` shims, because a test that really shelled out to `npm run test` would run vitest inside
 vitest.
+
+**CI runs this exact command** — `.github/workflows/ci.yml` is `npm ci` then `bash scripts/verify.sh`
+on every pull request and every push to `main`, and it is the only job. There is deliberately no
+separate lint/test/build pipeline to keep in sync: what fails on your machine fails in CI, with the
+same one-line output. When a run is red, the `.verify/` logs are attached to it as the
+`verify-logs` artifact, so the failing step's whole log is one download away.
 
 ### The content gate — why `dev` and `build` see different content
 
