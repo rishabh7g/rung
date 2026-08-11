@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M1",
+  "title": "Who I am",
+  "job": "Introduce yourself and state what you like",
+  "prerequisites": [],
+  "verified": false,
+  "verifiedBy": null,
+  "verifiedAt": null,
+  "fixture": true,
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 4,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "Me llamo + name",
+      "Soy de + place",
+      "Me gusta + el/la + N",
+      "Quiero + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    { "tag": "free", "text": "Word order mostly matches English (Subject–Verb–Object)." },
+    {
+      "tag": "delta",
+      "text": "Reflexive introductions: me llamo / te llamas — your name is what you call yourself."
+    },
+    {
+      "tag": "delta",
+      "text": "The subject pronoun is usually dropped — the ending already says who: soy = I-am, quiero = I-want."
+    },
+    {
+      "tag": "delta",
+      "text": "Every noun carries a gender, and the article agrees with it — el (m) · la (f) · los / las (plural)."
+    },
+    {
+      "tag": "interference",
+      "text": "gustar works backwards: the thing liked is the grammatical subject — \"the coffee pleases me\"."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M1-S01",
+      "display": "Me llamo Rohan",
+      "cue": "My name is Rohan",
+      "glossEn": "lit. \"I call myself Rohan\"",
+      "literal": "I call-myself Rohan",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Me llamo",
+            "cue": "my name is",
+            "tag": "delta",
+            "forms": ["Me llamo", "te llamas", "se llama"],
+            "note": "Reflexive — literally \"I call myself\". This, not \"mi nombre\", is how a name is given."
+          },
+          {
+            "display": "Rohan",
+            "cue": "Rohan",
+            "tag": "free",
+            "forms": [],
+            "note": "Names carry over."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "\"Mi nombre es…\" is the English sentence translated word for word — grammatical, but nobody introduces themselves that way.",
+      "sound": "ll sounds like the y in \"yes\" — me YAH-mo.",
+      "variations": [
+        {
+          "display": "Me llamo Priya",
+          "cue": "My name is Priya",
+          "changed": "swap the name — Me llamo never changes"
+        },
+        {
+          "display": "se llama Rohan",
+          "cue": "His name is Rohan",
+          "changed": "me → se: the same verb, a different person"
+        }
+      ],
+      "mistake": {
+        "display": "Me llamo es Rohan",
+        "why": "No \"es\" — llamo is already the verb."
+      },
+      "usage": "First introductions, any register.",
+      "register": "neutral",
+      "mnemonic": "llamo = \"I call (myself)\" — your name is what you call yourself."
+    },
+    {
+      "id": "L1-M1-S02",
+      "display": "Soy de India",
+      "cue": "I am from India",
+      "glossEn": "lit. \"I-am from India\"",
+      "literal": "I-am from India",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Soy",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": ["Soy", "eres", "es"],
+            "note": "ser — the lasting \"am\": origin and identity. The \"I\" sits inside the ending."
+          },
+          {
+            "display": "de",
+            "cue": "from",
+            "tag": "free",
+            "forms": [],
+            "note": "Works like English \"from\"."
+          },
+          {
+            "display": "India",
+            "cue": "India",
+            "tag": "free",
+            "forms": [],
+            "note": "Country names carry over."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "English has one \"am\"; Spanish has two. Where you are from is ser (soy), never estar.",
+      "sound": "Soy rhymes with English \"boy\"; India opens with EEN-, not EYE-.",
+      "variations": [
+        {
+          "display": "eres de India",
+          "cue": "You are from India",
+          "changed": "soy → eres: the ending swaps the person"
+        },
+        {
+          "display": "es de India",
+          "cue": "He is from India",
+          "changed": "soy → es — and still no pronoun in front"
+        }
+      ],
+      "mistake": {
+        "display": "Yo soy de India",
+        "why": "Drop the yo — soy already says \"I am\". Keep it only for contrast."
+      },
+      "usage": "Where you are from — the second or third line of any introduction.",
+      "register": "neutral",
+      "mnemonic": "ser = who you are, lastingly. Soy de India, not estoy."
+    },
+    {
+      "id": "L1-M1-S03",
+      "display": "Me gusta el café",
+      "cue": "I like coffee",
+      "glossEn": "lit. \"the coffee pleases me\"",
+      "literal": "To-me pleases the coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Me gusta",
+            "cue": "I like",
+            "tag": "interference",
+            "forms": ["Me gusta", "te gusta", "Me gustan"],
+            "note": "Backwards from English: the coffee does the pleasing, so the verb follows the coffee — not you."
+          },
+          {
+            "display": "el",
+            "cue": "the",
+            "tag": "delta",
+            "forms": ["el", "la", "los", "las"],
+            "note": "The article carries the noun's gender and number: el (m) · la (f) · los / las (plural)."
+          },
+          {
+            "display": "café",
+            "cue": "coffee",
+            "tag": "free",
+            "forms": ["café", "cafés"],
+            "note": "Cognate, and masculine — so el café."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "\"Yo gusto el café\" copies the English shape — it says that you are the one doing the pleasing.",
+      "sound": "Stress lands on the last syllable — ka-FEH, with a clipped final e.",
+      "variations": [
+        {
+          "display": "Me gusta el agua",
+          "cue": "I like water",
+          "changed": "café → agua — and it still takes el, though agua is feminine"
+        },
+        {
+          "display": "te gusta el café",
+          "cue": "You like coffee",
+          "changed": "Me → te: who is pleased changes, gusta does not"
+        }
+      ],
+      "mistake": {
+        "display": "Yo gusto el café",
+        "why": "gustar runs backwards — the thing liked is the subject: Me gusta el café."
+      },
+      "usage": "Likes of every kind — food, music, people.",
+      "register": "neutral",
+      "mnemonic": "gustar = \"to please\" — English likes, Spanish pleases."
+    },
+    {
+      "id": "L1-M1-S04",
+      "display": "Quiero agua",
+      "cue": "I want water",
+      "glossEn": "lit. \"I-want water\"",
+      "literal": "I-want water",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Quiero",
+            "cue": "I want",
+            "tag": "delta",
+            "forms": ["Quiero", "quieres", "quiere"],
+            "note": "querer — wanting (and, later, loving). The \"I\" is inside the ending."
+          },
+          {
+            "display": "agua",
+            "cue": "water",
+            "tag": "delta",
+            "forms": [],
+            "note": "Feminine, yet it takes el in the singular — el agua. A famous quirk."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "\"Yo quiero agua\" is the English habit of always naming the subject; Spanish drops it unless it is drawing a contrast.",
+      "sound": "agua is AH-gwa — the u is a glide, not a syllable of its own.",
+      "variations": [
+        {
+          "display": "quieres agua",
+          "cue": "You want water",
+          "changed": "Quiero → quieres: the ending says who wants"
+        },
+        {
+          "display": "Quiero el café",
+          "cue": "I want the coffee",
+          "changed": "add el — that particular coffee, not coffee in general"
+        }
+      ],
+      "mistake": {
+        "display": "Yo quiero agua",
+        "why": "Drop the yo — quiero already means \"I want\"."
+      },
+      "usage": "Asking for what you want — shops, tables, homes.",
+      "register": "neutral",
+      "mnemonic": "querer → Quiero: the -o ending is the \"I\"."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M1-C01", "display": "Quiero café", "cue": "I want coffee" },
+    { "id": "L1-M1-C02", "display": "se llama Rohan", "cue": "His name is Rohan" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}
