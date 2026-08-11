@@ -17,11 +17,11 @@
  * **Cross-module lookups are loaded, not skipped.** The index is CUMULATIVE — practising L1-M2, most
  * of a sentence's words were taught in L1-M1 — so a ref usually names a module other than the one on
  * screen, and dropping those rows would empty the panel exactly where it teaches most. So the panel
- * loads whichever modules its refs name, through the content layer's own cache (`loadModule`, #81),
- * which the session has usually already warmed. A module that will not load degrades **silently**:
- * `useModule`'s error screen is the right answer for a screen whose whole content is missing and
- * the wrong one for an optional expansion mid-session. That policy is this panel's, which is why
- * the loading lives here rather than in `content.ts`.
+ * loads whichever modules its refs name, through `useModules` (#81, #96), which is the content
+ * layer's many-files loader and shares this panel's failure policy: a module that will not load
+ * degrades **silently**, because `useModule`'s error screen is the right answer for a screen whose
+ * whole content is missing and the wrong one for an optional expansion mid-session. The session's
+ * Review queue (#96) reads the same way, which is what moved that loader out of this file.
  *
  * **Which index it asks.** The module is read out of the sentence id (`moduleIdOf`, #89) rather
  * than passed in: a sentence's own module's cumulative index is by construction the smallest one
@@ -29,11 +29,10 @@
  * no module (a Produce card built from something else later) expands to nothing, the same as an
  * unresolvable sentence.
  */
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { useCourse } from '../course/CourseProvider.tsx';
-import { loadModule, useIndex } from '../course/content.ts';
+import { useIndex, useModules } from '../course/content.ts';
 import { useStrings } from '../course/strings.ts';
 import type { ModuleContent, Word } from '../course/types.ts';
 import { resolveSentence, type WordRef } from '../engine/wordIndex.ts';
@@ -114,7 +113,7 @@ interface WhyRowsProps {
 function WhyRows({ moduleId, display, dir }: WhyRowsProps) {
   const index = useIndex(moduleId);
   const spans = index.data === null ? [] : resolveSentence(display, index.data);
-  const modules = useDefiningModules(spans.map((span) => span.ref));
+  const modules = useModules(spans.map((span) => span.ref.moduleId));
 
   return (
     <>
@@ -132,51 +131,4 @@ function WhyRows({ moduleId, display, dir }: WhyRowsProps) {
 function wordOf(modules: ReadonlyMap<string, ModuleContent>, ref: WordRef): Word | undefined {
   const sentence = modules.get(ref.moduleId)?.sentences.find((item) => item.id === ref.sentenceId);
   return sentence?.deconstruction.words[ref.wordIdx];
-}
-
-/** Shared, so a render with nothing to show is reference-equal to the last one. */
-const NO_MODULES: ReadonlyMap<string, ModuleContent> = new Map();
-
-/**
- * Loads every module the refs name, and answers with the ones that arrived.
- *
- * `loadModule` is the content layer's cached loader, so the module already on screen costs
- * nothing and a second span pointing at the same file costs nothing either. A rejection is
- * **swallowed** — that module's rows do not render, and the rest of the panel does.
- *
- * The dependency is the module ids as a sorted string rather than the array, so a re-render that
- * resolves to the same set does not re-enter the effect; and the answer is tagged with the key it
- * answers for, so a new sentence never renders through the previous one's modules.
- */
-function useDefiningModules(refs: readonly WordRef[]): ReadonlyMap<string, ModuleContent> {
-  const { course } = useCourse();
-  const key = [...new Set(refs.map((ref) => ref.moduleId))].sort().join(' ');
-  const [loaded, setLoaded] = useState<{
-    key: string;
-    modules: ReadonlyMap<string, ModuleContent>;
-  } | null>(null);
-
-  useEffect(() => {
-    let cancelled = false;
-    const moduleIds = key === '' ? [] : key.split(' ');
-
-    void Promise.all(
-      moduleIds.map((moduleId) =>
-        loadModule(course.id, moduleId).then(
-          (module) => [moduleId, module] as const,
-          () => null,
-        ),
-      ),
-    ).then((entries) => {
-      if (cancelled) return;
-      const modules = new Map(entries.filter((entry) => entry !== null));
-      setLoaded({ key: `${course.id} ${key}`, modules });
-    });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [course.id, key]);
-
-  return loaded !== null && loaded.key === `${course.id} ${key}` ? loaded.modules : NO_MODULES;
 }

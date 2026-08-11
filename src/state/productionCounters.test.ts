@@ -286,6 +286,12 @@ const CALLS: Record<string, (store: AppStore) => void> = {
   setLadder: (store) => store.setLadder(COURSE, ladderFromLevels(levelsFixture(COURSE).levels)),
   markStudied: (store) => store.markStudied(COURSE, 'L1-M2'),
   recordProduction: (store) => store.recordProduction(COURSE, SENTENCE),
+  // The session machine's three (#96), called on the very sentence the counters are seeded with:
+  // a Review mark, a fresh session and a snapshot all pass right by it. That is the routing
+  // contract from the counters' side — only a Produce got-it may move this number.
+  recordReview: (store) => store.recordReview(COURSE, SENTENCE, true),
+  startSession: (store) => store.startSession(COURSE, [SENTENCE]),
+  setSession: (store) => store.setSession(COURSE, { phase: 'produce', idx: 0, queue: [SENTENCE] }),
   passRitual: (store) => store.passRitual(COURSE, 'L1-M1', () => '2026-02-02T02:40:00.000Z'),
   // Dev + tests only, and it can only erase: `_reset` blanks the whole document back to first run.
   // It cannot raise a counter, which is the direction this file is about. Checked on its own below.

@@ -22,11 +22,18 @@ import styles from './ProductionDots.module.css';
 interface ProductionDotsProps {
   /** `production[sentenceId]` — how many times this sentence has been self-marked got-it. */
   produced: number;
+  /**
+   * How the pair sits, which is a fact about the row it is in rather than about the dots: the
+   * module list stacks them in a card's top-right corner beside the chevron, and the Practice
+   * session's card header (#96) lays them along one baseline beside the kicker — both straight
+   * from the prototype.
+   */
+  direction?: 'column' | 'row';
 }
 
-export function ProductionDots({ produced }: ProductionDotsProps) {
+export function ProductionDots({ produced, direction = 'column' }: ProductionDotsProps) {
   return (
-    <span className={styles.dots} aria-hidden="true">
+    <span className={direction === 'row' ? styles.dotsRow : styles.dots} aria-hidden="true">
       <span className={styles.dot} data-state={produced >= 1 ? 'done' : 'pending'} />
       <span className={styles.dot} data-state={produced >= 2 ? 'done' : 'pending'} />
     </span>

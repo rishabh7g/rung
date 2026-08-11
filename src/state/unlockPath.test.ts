@@ -214,6 +214,13 @@ const CALLS: Record<string, (store: AppStore) => void> = {
   // Producing every sentence of a rung is what OFFERS the exit ritual (#95); it is not the ritual,
   // and it unlocks nothing — the counters are a number the card reads, never a write to `modules`.
   recordProduction: (store) => store.recordProduction('hi-mr', 'L1-M2-S01'),
+  // The session machine's three (#96). A review mark moves a Leitner box, a session start moves
+  // the session count and the queue's clock, and a snapshot moves a position — a whole session,
+  // start to summary, climbs nothing.
+  recordReview: (store) => store.recordReview('hi-mr', 'L1-M1-S01', true),
+  startSession: (store) => store.startSession('hi-mr', ['L1-M2-S01', 'L1-M2-S02']),
+  setSession: (store) =>
+    store.setSession('hi-mr', { phase: 'produce', idx: 1, queue: ['L1-M2-S01'] }),
   passRitual: (store) => store.passRitual('hi-mr', 'L1-M2', () => '2026-02-02T02:40:00.000Z'),
   // Dev + tests only, and it can only erase: `_reset` blanks the whole document back to first run.
   // It cannot mark anything passed, which is what Invariant 1 is about. Checked on its own below.

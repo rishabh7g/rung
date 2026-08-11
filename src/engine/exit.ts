@@ -75,8 +75,12 @@ export function started(sentenceIds: readonly string[], production: ProductionCo
  * map arrives from `localStorage` (PRD §8 F7) and a plain-object lookup would otherwise answer for
  * `constructor` and friends. Anything that is not a positive number reads as 0 — a document that
  * came back damaged loses progress, which is visible, rather than gaining a rung, which is not.
+ *
+ * Exported because the session plan orders the Produce queue by it (`session.ts`, #96): "how many
+ * times has this sentence been produced" is one question with one defensive answer, and a second
+ * reader of the same map would be a second chance to trust a damaged one.
  */
-function producedTimes(production: ProductionCounts, sentenceId: string): number {
+export function producedTimes(production: ProductionCounts, sentenceId: string): number {
   if (!Object.hasOwn(production, sentenceId)) return 0;
 
   const times = production[sentenceId];

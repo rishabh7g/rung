@@ -43,15 +43,15 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the three shipped bundles carry — 50 keys, nested, identical', () => {
+  it('is exactly what the three shipped bundles carry — 67 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(50);
+      expect(keys.length, courseId).toBe(67);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(50);
-    expect(new Set(STRINGS_KEYS).size).toBe(50);
+    expect(STRINGS_KEYS.length).toBe(67);
+    expect(new Set(STRINGS_KEYS).size).toBe(67);
   });
 
   it('carries the five keys PR #120 added beyond the issue text', () => {
@@ -142,6 +142,54 @@ describe('the canonical key list', () => {
     expect(STRINGS_KEYS).toContain('module.openFull');
   });
 
+  /**
+   * The session machine's seventeen (#96). PRD-design §6.3's hub, its soft phase chips and its
+   * counts-only summary are learner-facing top to bottom, and the prototype writes every line of
+   * them in English for every course. Draft values in all three bundles, flagged on #71.
+   */
+  it('carries the seventeen keys the session machine forced (#96)', () => {
+    const added: StringsKey[] = [
+      'practice.hubTitle',
+      'practice.hubReview',
+      'practice.hubRead',
+      'practice.hubProduce',
+      'practice.guideLine',
+      'practice.beginReview',
+      'practice.beginRead',
+      'practice.phase.review',
+      'practice.phase.read',
+      'practice.phase.produce',
+      'practice.nothingDue',
+      'practice.summaryTitle',
+      'practice.summaryReviewed',
+      'practice.summaryGotIt',
+      'practice.summaryProduced',
+      'practice.summaryAtTwo',
+      'practice.backToLadder',
+    ];
+
+    for (const key of added) expect(STRINGS_KEYS).toContain(key);
+  });
+
+  /**
+   * The summary is COUNTS, never time (Invariant 2; #96's acceptance criterion). The shell holds
+   * no copy of its own, so the only place a duration or a percentage could enter that screen is an
+   * authored bundle — which is what this reads, in all three courses.
+   */
+  it('has no time, duration or percentage in any course’s session copy', () => {
+    const TIME =
+      /%|\b(streak|second|seconds|minute|minutes|hour|hours|day|days|week|weeks|month|months|min|sec)\b/i;
+
+    for (const courseId of COURSES) {
+      const flat = flattenStrings(authoredStrings(courseId));
+
+      for (const [key, value] of flat) {
+        if (!key.startsWith('practice.')) continue;
+        expect(String(value), `${courseId} ${key}`).not.toMatch(TIME);
+      }
+    }
+  });
+
   it('records the placeholder of every templated key, and none for the rest', () => {
     const templated = Object.entries(STRINGS_PLACEHOLDERS).filter(([, names]) => names.length > 0);
 
@@ -153,6 +201,13 @@ describe('the canonical key list', () => {
       'ladder.sealedToast': ['{level}', '{remaining}'],
       'verdict.line': ['{nextModule}'],
       switchToast: ['{to}', '{from}'],
+      'practice.hubReview': ['{count}'],
+      'practice.hubRead': ['{count}'],
+      'practice.hubProduce': ['{count}'],
+      'practice.summaryReviewed': ['{count}'],
+      'practice.summaryGotIt': ['{count}'],
+      'practice.summaryProduced': ['{count}'],
+      'practice.summaryAtTwo': ['{count}', '{total}'],
     });
   });
 });

@@ -19,6 +19,7 @@ import { resetManifestCache } from '../course/manifest.ts';
 import { resetStringsCache } from '../course/strings.ts';
 import { useAppStore } from '../state/store.ts';
 import { DEV_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
+import { stringValue } from '../test/courseStrings.ts';
 import { SHELL_ROUTES } from './routes.tsx';
 
 /** Renders the app at `hash` and waits for boot — no screen mounts before there is a course. */
@@ -27,6 +28,17 @@ async function renderAt(hash: string) {
   mockContentFetch(DEV_MANIFEST);
   render(<App />);
   await screen.findByRole('main');
+}
+
+/**
+ * Starts a real session from the Practice hub (#96) — the control that raises the immersive flag.
+ * With no rung passed the review queue is empty, so the hub offers "Begin — Read first"; the label
+ * comes from the course's own bundle, as every learner-facing word does.
+ */
+async function beginSession(): Promise<void> {
+  fireEvent.click(
+    await screen.findByRole('button', { name: stringValue('hi-mr', 'practice.beginRead') }),
+  );
 }
 
 /** The tab links, in nav order — scoped to the nav, because screens have links of their own. */
@@ -62,7 +74,7 @@ describe('bottom nav', () => {
     expect(screen.getByRole('link', { name: 'Ladder' })).toHaveAttribute('aria-current', 'page');
 
     fireEvent.click(screen.getByRole('link', { name: 'Practice' }));
-    expect(await screen.findByText('Screen stub — built in #96.')).toBeInTheDocument();
+    expect(await screen.findByText(stringValue('hi-mr', 'practice.hubTitle'))).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Practice' })).toHaveAttribute('aria-current', 'page');
     expect(screen.getByRole('link', { name: 'Ladder' })).not.toHaveAttribute('aria-current');
 
@@ -156,7 +168,7 @@ describe('immersive mode', () => {
     expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument();
     expect(screen.queryByRole('button', { name: 'Pause session' })).not.toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole('button', { name: 'Start a session' }));
+    await beginSession();
 
     expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
     expect(screen.queryByRole('link')).not.toBeInTheDocument();
@@ -167,18 +179,20 @@ describe('immersive mode', () => {
 
   it('pauses back to the Practice hub, nav and all', async () => {
     await renderAt('#/practice');
-    fireEvent.click(screen.getByRole('button', { name: 'Start a session' }));
+    await beginSession();
 
     fireEvent.click(screen.getByRole('button', { name: 'Pause session' }));
 
-    expect(await screen.findByRole('button', { name: 'Start a session' })).toBeInTheDocument();
+    expect(
+      await screen.findByRole('button', { name: stringValue('hi-mr', 'practice.beginRead') }),
+    ).toBeInTheDocument();
     expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument();
     expect(window.location.hash).toBe('#/practice');
   });
 
   it('ends with the route — the back button cannot walk out of a session and hide the nav', async () => {
     await renderAt('#/practice');
-    fireEvent.click(screen.getByRole('button', { name: 'Start a session' }));
+    await beginSession();
     expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
 
     window.location.hash = '#/settings';

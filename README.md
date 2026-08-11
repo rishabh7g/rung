@@ -152,7 +152,7 @@ Two consequences worth knowing before you author content:
   emitter imports it, and so does the runtime resolver (`src/engine/wordIndex.ts`, #94). Never
   copy it: a second copy is a word that silently has no "why".
 
-### The strings contract — 50 keys, no fallback copy
+### The strings contract — 67 keys, no fallback copy
 
 Every course ships one `strings.json` carrying **all** the microcopy the shell renders, because
 the shell has none of its own (PRD §4). So the build validates it against the canonical key list
@@ -168,18 +168,18 @@ declared twice.
 `tools/strings-check.ts` runs per course, flattens the nested file onto dot-paths
 (`ritual.check.copy`), and reports four things, always naming course **and** key:
 
-- **missing key** — the 50 canonical paths must all be there;
+- **missing key** — the 67 canonical paths must all be there;
 - **empty or non-string value** — a present-but-blank key is a missing key with extra steps;
 - **unknown key** — the typo tripwire; `ritual.check.plate` would otherwise sit quietly beside a
   missing `plateLabel`;
 - **placeholder mismatch** — a value carries exactly its canonical `{placeholders}`
   (`{sentenceCount} {maxWords} {ordinal} {n} {nextModule} {to} {from} {level} {remaining}
-  {total}`), so a translation cannot
+  {total} {count}`), so a translation cannot
   drop `{ordinal}` or invent `{name}`.
 
 Adding a key is one edit to `src/course/stringsKeys.ts` plus a line in each of the three bundles —
 in that order, because the build will tell you exactly which course you forgot. The list grew that
-way five times: five keys the frozen screens forced (PR #120), three the Ladder forced (#86 —
+way seven times: five keys the frozen screens forced (PR #120), three the Ladder forced (#86 —
 `ladder.pendingLine`, `ladder.ownership`, `ladder.sealedToast`), seven the staged rung card forced
 (#87 — `rungCard.startModule`, `.freshNote`, `.practice`, `.revisitModule`, `.exitRitual`,
 `.module`, `.practiceEarlier`: a label for every control across the four [D22] stages), three
@@ -189,7 +189,10 @@ callout's heading, the mnemonic's label and the two pager buttons), four the rev
 (#93 — `mark.gotIt`, `.missed`, `.prompt`, `.next`: the two self-mark segments [D11], the question
 above them and the Next that does not exist until one is chosen) and three the "why" panel forced
 (#94 — `why.show`, `.hide`, `.openFull`: the toggle's two labels, because it names what it will
-do, and the link that leaves a running session). All twenty-four
+do, and the link that leaves a running session) and seventeen the session machine forced
+(#96 — `practice.*`: the hub's title, its three phase lines and the line that says the phases never
+gate, the two Begin labels, the three phase names the chips wear, the honest answer to a Review
+chip with nothing due, and the summary's title, four count lines and its way back). All forty-one
 are **draft values pending the Sync-3 freeze** (#71). The alternative each time was a
 learner-facing line hardcoded in the shell, which is the one thing this list exists to prevent.
 
@@ -282,8 +285,8 @@ date in the whole document is `passedAt` on a passed module.
   returns the same object, so no write can blank a ladder), `setActiveCourse` (a bare pointer swap;
   the learner-facing switch flow with its toast is #106), `setSetting`, `setLadder` /`markStudied` /
   `passRitual` (progression, below — every rule they obey is derived in the engine),
-  `recordProduction` (the counters, below), and `_reset()` for dev and tests. The review queue
-  (#103) and the session snapshot (#96) bring their own actions.
+  `recordProduction` (the counters, below), the session's three (`startSession`, `recordReview`,
+  `setSession` — below), and `_reset()` for dev and tests. Review enrolment (#103) brings its own.
 
 `store.test.ts` pins the initial shape against the literal the PRD prints, so drift is a red test
 rather than a discovery; the rest of it proves per-course isolation, a round trip through storage,
@@ -363,9 +366,9 @@ outside the store. Introduce `Math.max(0, produced - 1)` in the action and thirt
 Leitner queue (`applyMark` — a box and a countdown) and never these counters; they are different
 numbers in different places, because Review measures what is being kept and production measures what
 is being built. The distinction belongs to the caller — the self-mark control is deliberately
-identical in Review, Produce and Comprehension and cannot see a phase — so the session machine (#96)
-is the one caller, and `recordProduction`'s doc comment is the contract it wires against. No screen
-calls it yet; the Ladder and the module list only read what it writes.
+identical in Review, Produce and Comprehension and cannot see a phase — so the session machine
+(#96, below) is the one caller, and it calls `recordProduction` from its Produce branch and
+`recordReview` from its Review branch. The Ladder and the module list only read what they write.
 
 ### The Leitner scheduler — due in sessions, never in days
 
@@ -418,8 +421,9 @@ session is on screen right now" is not something to restore into a build that is
 Ladder. Raising it hides the bottom nav **entirely** and puts a `--tap-min` pause ✕ top right —
 always, because an immersive screen with no way out is the failure the shell exists to prevent.
 The ✕ ends the session and lands on the Practice hub; so does leaving the route, so the Android
-back button cannot walk out of a session and leave the nav hidden. What a session *is* (the
-per-course snapshot, and resuming into it) is #96 and #99.
+back button cannot walk out of a session and leave the nav hidden. What a session *is* — the
+phases, the marks and the per-course snapshot — is the session machine (#96, below); resuming into
+that snapshot is #99.
 
 **Phone-correct layout**, and the two rules that keep it that way: the app column is `100dvh`
 (never `100vh` — a mobile URL bar shrinks the viewport and `100vh` does not notice) and never
@@ -743,6 +747,66 @@ Fidelity: the rows are the 18px Mukta floor again (seventh recurrence, #117) whe
 writes 11.5–15px, and the prototype's 52px/40px alignment columns are dropped — there is no token
 for either, and a wrapping Devanagari word needs the width more than the rows need a shared left
 edge. `TagChip` keeps the design's own 9.5–11px band, because its label is English furniture.
+
+### The session machine — three phases, two queues, and one rule about marks
+
+`/practice` is the hub and the immersive session that runs from it (#96; PRD §8 F4, PRD-design
+§6.3, flow 3): Review → Read → Produce as soft chips, ending on a counts-only summary, with the
+learner's position snapshotted per course from the first card.
+
+| file | what it is |
+|---|---|
+| `src/engine/session.ts` | pure: `planSession({queue, moduleSentenceIds, production})` → `{reviewIds, produceIds}` |
+| `startSession` / `recordReview` / `setSession` | the store's three session actions — the count and the tick, a Leitner mark, and the position |
+| `src/screens/PracticeScreen.tsx` | the hub: the rung, what the three phases will serve, one CTA |
+| `src/screens/practice/Session.tsx` | the session: chips, cards, the mark routing, the snapshot |
+| `src/screens/practice/PhaseChips.tsx`, `SessionSummary.tsx` | the three chips, and the four counts |
+
+| the hub | Review | Produce | the summary |
+|---|---|---|---|
+| [practice-hub-360.png](docs/images/practice-hub-360.png) | [practice-review-360.png](docs/images/practice-review-360.png) | [practice-produce-360.png](docs/images/practice-produce-360.png) | [practice-summary-360.png](docs/images/practice-summary-360.png) |
+
+- **The routing contract is the ticket** (PRD §8 F4). A **Review** mark goes to the Leitner queue
+  (`recordReview` → `applyMark`) and **never** to the production counters; a **Produce** got-it goes
+  to the counters (`recordProduction`) and **never** to the queue. They are different numbers
+  answering different questions — what is being *kept* against what is being *built* — and crossing
+  them would open a rung's exit ritual on sentences nobody produced. `RevealCard` and `SelfMark`
+  cannot see a phase by design, so `Session.tsx` is the only place that knows, and
+  `PracticeScreen.test.tsx` proves both directions: routing a Produce mark to `recordReview`, or a
+  Review mark to `recordProduction`, turns tests red.
+- **One session, counted once.** `startSession` increments `sessionCount`, ticks the queue
+  (`tickSession`) and writes the opening snapshot in a single write, and it is the only action that
+  does any of it. That is what lossless resume (#99) rests on: restoring a snapshot must not charge
+  a learner a session for closing their tab, or bring the whole queue due twice in one day's work.
+- **The plan is taken once, and the hub previews it with the same function.** `planSession` runs
+  against the queue *after* the tick, so the hub's "2 due · 10 to read · 10 to produce" is the
+  session that will actually be served. Review is `dueItems(queue, 5)` verbatim; Produce is **every
+  sentence of the rung, least-produced first** — a learner who leaves early leaves the most-owed
+  sentences done, and nothing is dropped for being finished (two is what the ritual asks for, not a
+  cap on practice). The prototype filters its Produce queue to sentences under 2×; the product
+  orders instead of filtering.
+- **Empty review is an honest state, not an empty screen.** A course with no passed rung starts at
+  Read, and tapping the Review chip toasts the course's own "nothing due yet — this is the first
+  rung" rather than opening a phase with nothing in it ([practice-nothing-due-360.png](docs/images/practice-nothing-due-360.png)).
+  That is a message, not a lock: **the chips never gate** — every phase is one tap away from every
+  other, in any order, and no chip is ever disabled.
+- **The summary is counts, and only counts** (Invariant 2): reviewed, how many of those you had,
+  produced, and how many of the rung's sentences now stand at two — four templates from the course
+  bundle, so the number sits where the language puts it. No duration, no percentage, no date, and a
+  test scans the rendered screen for all three. The gentle elapsed tick (numberless, 2px) is #98's.
+- **The snapshot is a position, per course** — `{phase, idx, queue}`, written on every advance and
+  cleared at the summary. The pause ✕ leaves it standing; restoring it is #99's, which is why
+  nothing here calls `startSession` twice.
+- **Read is #97's slot** and renders as a stub, reachable by chip. `useModules` (the content
+  layer's many-files loader, moved out of `WhyPanel`) fetches whatever modules the Review queue
+  names — five due cards routinely come from five different rungs — and a module that will not load
+  costs its own card and nothing else.
+
+Fidelity: the chips are `--tap-min` tall in 18px Mukta where the prototype writes a 32px chip in
+11px uppercase Barlow Condensed (the type wall again, #117), the summary's rows are sentences
+rather than the prototype's label-and-right-aligned-number, and the prototype's "the exit ritual is
+open" block is deliberately absent — that unlock is the Ladder's rung card, and offering it from two
+places is how one of them ends up out of step with the rule.
 
 ### The fonts — bundled, because offline is the product
 
