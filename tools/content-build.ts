@@ -17,17 +17,27 @@
  * something to render while every module is still unverified); `prebuild` runs strict.
  *
  * Module validation is NOT reimplemented here — `validateModule` (#73) owns it. This tool adds
- * only what it alone knows: the manifest shape, the course's `scriptMode`, and the gate.
+ * only what it alone knows: the manifest shape, the course's `scriptMode`, the gate, and the
+ * per-module word index (#75) — which only a whole-course build can compute, because a surface is
+ * taught once and stays taught for every later module.
  */
 import { copyFileSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  matchSurfaces,
+  normalizeSurface,
+  surfaceSpan,
+  tokenizeSurface,
+  type SurfaceLookup,
+} from '../src/engine/surface.ts';
 import {
   DEFAULT_CONTENT_ROOT,
   REPO_ROOT,
   collectModuleFiles,
   validateModule,
   type Module,
+  type ValidationIssue,
 } from './validate.ts';
 
 /* ------------------------------------------------------------------ contract */
@@ -323,6 +333,136 @@ export function moduleRanges(ids: readonly string[]): string {
   return runs.join(', ');
 }
 
+/* ---------------------------------------------------------------- word index */
+
+/**
+ * Where a surface is TAUGHT — the word row that defines it, so the "why" resolver can open
+ * `modules/<moduleId>.json`, find `<sentenceId>`, and read `deconstruction.words[wordIdx]`.
+ */
+export interface WordIndexEntry {
+  moduleId: string;
+  sentenceId: string;
+  wordIdx: number;
+}
+
+/** The emitted `public/content/<courseId>/index/<moduleId>.json` (PRD §4 tree, §6.3). */
+export interface WordIndexFile {
+  courseId: string;
+  moduleId: string;
+  /** The shipped modules folded in, in ladder order, ending with `moduleId`. */
+  cumulativeThrough: string[];
+  surfaceCount: number;
+  /** Longest surface in tokens — the resolver's greedy-match bound; 2 for en-es's `Me llamo`. */
+  maxSpan: number;
+  /** Normalised surface → its defining word entry. Code-point sorted; first occurrence wins. */
+  surfaces: Record<string, WordIndexEntry>;
+}
+
+/** Code-unit order: deterministic and locale-independent, unlike `localeCompare`. */
+function byCodePoint(a: string, b: string): number {
+  return a < b ? -1 : a > b ? 1 : 0;
+}
+
+function sortedSurfaces(
+  surfaces: ReadonlyMap<string, WordIndexEntry>,
+): Record<string, WordIndexEntry> {
+  const sorted: Record<string, WordIndexEntry> = {};
+  for (const surface of [...surfaces.keys()].sort(byCodePoint)) {
+    const entry = surfaces.get(surface);
+    if (entry !== undefined) sorted[surface] = entry;
+  }
+  return sorted;
+}
+
+/**
+ * One index per module, each CUMULATIVE over everything shipped at or before it in ladder order
+ * (PRD §6.3) — a module does not re-teach what an earlier one taught, so a module-local index
+ * would leave most of L1-M2's own sentences unexplainable (PR #119).
+ *
+ * Indexed: every word row's `display` and every entry of its `forms`. Nothing else — a variation
+ * is a sentence, and a `mistake` is WRONG L2 by definition (deliberately-wrong Spanish, wrong-
+ * language intrusions in hi-mr; PR #124), so indexing one would teach the error.
+ *
+ * Romanized courses index themselves: `display`/`forms` ARE the romanization and the native line
+ * lives in `script`, which is never read here — so en-ar indexes `ismī`, never اسمي.
+ *
+ * First occurrence wins, in ladder → sentence → word → forms order: the pointer names where the
+ * learner MET the word, and a later module reusing it cannot steal the definition.
+ *
+ * `modules` is the shipped sequence, so the index describes what a learner build actually
+ * contains: a module the gate held back teaches nothing, here or on the learner's screen.
+ */
+export function buildWordIndex(
+  courseId: string,
+  modules: readonly { id: string; module: Module }[],
+): WordIndexFile[] {
+  const surfaces = new Map<string, WordIndexEntry>();
+  const through: string[] = [];
+  const files: WordIndexFile[] = [];
+  let maxSpan = 1;
+
+  for (const shipped of modules) {
+    through.push(shipped.id);
+    for (const sentence of shipped.module.sentences) {
+      sentence.deconstruction.words.forEach((word, wordIdx) => {
+        for (const raw of [word.display, ...word.forms]) {
+          const surface = normalizeSurface(raw);
+          if (surface === '' || surfaces.has(surface)) continue;
+          surfaces.set(surface, { moduleId: shipped.id, sentenceId: sentence.id, wordIdx });
+          maxSpan = Math.max(maxSpan, surfaceSpan(surface));
+        }
+      });
+    }
+    files.push({
+      courseId,
+      moduleId: shipped.id,
+      cumulativeThrough: [...through],
+      surfaceCount: surfaces.size,
+      maxSpan,
+      surfaces: sortedSurfaces(surfaces),
+    });
+  }
+
+  return files;
+}
+
+/**
+ * The build-failing rule of PRD §6.3: every token of every comprehension-pool item must resolve
+ * in that module's cumulative index. A pool item is what the learner is asked to UNDERSTAND at the
+ * exit ritual, so an untaught word in one is a content bug — caught here, at build, rather than as
+ * a "why" row that silently has nothing to say.
+ *
+ * Pool items only. Variations and mistakes are deliberately outside the rule: a mistake is wrong
+ * L2 by definition, and variations carry proper nouns the modules never declare (प्रिया / Priya —
+ * the known gap on #61). Extending the rule to them would fail the build on correct content.
+ *
+ * The index is the SHIPPED sequence, so a build that shipped L1-M2 without L1-M1 fails here, and
+ * the named range (`is not taught by L1-M2`) says why: in THAT build those words really are
+ * untaught. Ship the ladder in order.
+ */
+export function checkComprehensionPool(module: Module, index: WordIndexFile): ValidationIssue[] {
+  const lookup: SurfaceLookup = {
+    maxSpan: index.maxSpan,
+    has: (surface) => Object.hasOwn(index.surfaces, surface),
+  };
+  const taught = moduleRanges(index.cumulativeThrough);
+  const issues: ValidationIssue[] = [];
+
+  module.comprehensionPool.forEach((item, i) => {
+    for (const match of matchSurfaces(tokenizeSurface(item.display), lookup)) {
+      if (match.resolved) continue;
+      issues.push({
+        path: `/comprehensionPool/${i}/display`,
+        message:
+          `"${match.surface}" (item ${item.id}) is not taught by ${taught} — every ` +
+          `comprehension token must resolve in the cumulative word index (PRD §6.3)`,
+      });
+    }
+  });
+
+  return issues;
+}
+
 /* --------------------------------------------------------------------- build */
 
 interface CoursePlan {
@@ -330,6 +470,8 @@ interface CoursePlan {
   levels: Levels;
   stringsFile: string;
   shipped: { id: string; file: string }[];
+  /** One per shipped module, same order — computed before anything is written. */
+  indexes: WordIndexFile[];
   gatedOut: { id: string; reason: string }[];
   /** Course-level exclusion (a fixture course on a strict build); modules are not even considered. */
   excluded: string | null;
@@ -480,7 +622,7 @@ export function buildContent(options: BuildOptions): BuildReport {
 
     const courseExcluded = row.fixture === true && !flags.withFixtures;
     const seenIds = new Map<string, string>();
-    const shipped: { id: string; file: string }[] = [];
+    const shipped: { id: string; file: string; module: Module }[] = [];
     const gatedOut: { id: string; reason: string }[] = [];
     const warnings: string[] = [];
     const known = new Set(
@@ -515,7 +657,7 @@ export function buildContent(options: BuildOptions): BuildReport {
         gatedOut.push({ id: module.id, reason: verdict.reason });
         continue;
       }
-      shipped.push({ id: module.id, file });
+      shipped.push({ id: module.id, file, module });
       const missing = scriptMode.surfaces - scriptMode.withScript;
       if (missing > 0) {
         warnings.push(
@@ -527,11 +669,26 @@ export function buildContent(options: BuildOptions): BuildReport {
     if (levels === null) continue;
     shipped.sort((a, b) => byLadderOrder(a.id, b.id));
     gatedOut.sort((a, b) => byLadderOrder(a.id, b.id));
+
+    // The index needs the whole shipped sequence in ladder order, so it is built here — and the
+    // pool rule runs with it, in the read-and-validate phase, so a content bug leaves the previous
+    // output untouched rather than half-replaced.
+    const indexes = buildWordIndex(row.id, shipped);
+    shipped.forEach((entry, i) => {
+      const index = indexes[i];
+      if (index === undefined) return;
+      const name = `${row.id}/${path.basename(entry.file)}`;
+      for (const issue of checkComprehensionPool(entry.module, index)) {
+        errors.push(`${name}: ${issue.path}: ${issue.message}`);
+      }
+    });
+
     plans.push({
       row,
       levels,
       stringsFile,
       shipped,
+      indexes,
       gatedOut,
       excluded: courseExcluded ? 'fixture course' : null,
       warnings,
@@ -556,6 +713,10 @@ export function buildContent(options: BuildOptions): BuildReport {
     mkdirSync(path.join(courseOut, 'modules'), { recursive: true });
     for (const module of plan.shipped) {
       copyFileSync(module.file, path.join(courseOut, 'modules', `${module.id}.json`));
+    }
+    mkdirSync(path.join(courseOut, 'index'), { recursive: true });
+    for (const index of plan.indexes) {
+      writeJson(path.join(courseOut, 'index', `${index.moduleId}.json`), index);
     }
     const ids = plan.shipped.map((module) => module.id);
     writeJson(path.join(courseOut, 'levels.json'), emitLevels(plan.levels, new Set(ids)));
@@ -594,6 +755,9 @@ export function buildContent(options: BuildOptions): BuildReport {
       continue;
     }
     lines.push(`${id}: ${countModules(ids.length)} (${moduleRanges(ids)})`);
+    for (const index of plan.indexes) {
+      lines.push(`  index ${index.moduleId}: ${index.surfaceCount} surfaces`);
+    }
     if (plan.gatedOut.length > 0) lines.push(`  held back: ${describeGated(plan.gatedOut)}`);
     lines.push(...plan.warnings);
   }

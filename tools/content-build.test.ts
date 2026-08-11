@@ -1,9 +1,19 @@
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import {
+  existsSync,
+  mkdirSync,
+  mkdtempSync,
+  readFileSync,
+  readdirSync,
+  rmSync,
+  writeFileSync,
+} from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { afterAll, describe, expect, it } from 'vitest';
 import {
   buildContent,
+  buildWordIndex,
+  checkComprehensionPool,
   checkScriptMode,
   devBanner,
   gateModule,
@@ -15,6 +25,7 @@ import {
   type CourseRow,
   type EmittedManifest,
   type Levels,
+  type WordIndexFile,
 } from './content-build.ts';
 import { DEFAULT_CONTENT_ROOT, REPO_ROOT, type Module } from './validate.ts';
 
@@ -57,6 +68,8 @@ interface FixtureModule {
   id: string;
   verified?: boolean;
   fixture?: boolean;
+  /** Applied last, so a test can bend the clone into the shape it is actually about. */
+  edit?: (module: Module) => void;
 }
 
 interface FixtureCourse {
@@ -88,6 +101,7 @@ function moduleFrom(fixture: FixtureModule): Module {
     module.verifiedAt = '2026-01-01T00:00:00Z';
   }
   if (fixture.fixture === true) module.fixture = true;
+  fixture.edit?.(module);
   return module;
 }
 
@@ -155,6 +169,17 @@ function build(contentRoot: string, flags: BuildFlags): { report: BuildReport; o
 
 function readManifest(outRoot: string): EmittedManifest {
   return JSON.parse(readFileSync(path.join(outRoot, 'courses.json'), 'utf8')) as EmittedManifest;
+}
+
+function readIndex(outRoot: string, courseId: string, moduleId: string): WordIndexFile {
+  const file = path.join(outRoot, courseId, 'index', `${moduleId}.json`);
+  return JSON.parse(readFileSync(file, 'utf8')) as WordIndexFile;
+}
+
+/** A module straight out of `content/` — the real thing, not a fixture clone. */
+function authored(courseId: string, moduleId: string): Module {
+  const file = path.join(DEFAULT_CONTENT_ROOT, courseId, 'modules', `${moduleId}.json`);
+  return JSON.parse(readFileSync(file, 'utf8')) as Module;
 }
 
 function shippedIds(report: BuildReport, courseId: string): string[] {
@@ -619,6 +644,242 @@ describe('the summary line', () => {
 });
 
 /**
+ * The word index (#75). `teaches` bolts an extra word row onto the clone's first sentence, which
+ * is how a fixture module comes to teach something the module before it did not.
+ */
+describe('the word index', () => {
+  function teaches(display: string, forms: string[] = []): (module: Module) => void {
+    return (module) => {
+      module.sentences[0]?.deconstruction.words.push({
+        display,
+        cue: 'नया',
+        tag: 'free',
+        forms,
+      });
+    };
+  }
+
+  const M1_THEN_M2: FixtureCourse[] = [
+    {
+      row: courseRow('hi-mr'),
+      modules: [
+        { id: 'L1-M1', verified: true },
+        // A clone: it re-teaches every one of M1's words, and adds exactly one of its own.
+        { id: 'L1-M2', verified: true, edit: teaches('झाड', ['झाड', 'झाडं']) },
+      ],
+    },
+  ];
+
+  it('emits one index per shipped module — and none for a module the gate held back', () => {
+    const { outRoot } = build(
+      scaffold([
+        {
+          row: courseRow('hi-mr'),
+          modules: [
+            { id: 'L1-M1', verified: true },
+            { id: 'L1-M2', verified: false },
+          ],
+        },
+      ]),
+      STRICT,
+    );
+
+    expect(existsSync(path.join(outRoot, 'hi-mr', 'index', 'L1-M1.json'))).toBe(true);
+    expect(existsSync(path.join(outRoot, 'hi-mr', 'index', 'L1-M2.json'))).toBe(false);
+  });
+
+  it('grows cumulatively: M2 is a strict superset of M1', () => {
+    const { outRoot } = build(scaffold(M1_THEN_M2), STRICT);
+    const first = readIndex(outRoot, 'hi-mr', 'L1-M1');
+    const second = readIndex(outRoot, 'hi-mr', 'L1-M2');
+
+    expect(first.cumulativeThrough).toEqual(['L1-M1']);
+    expect(second.cumulativeThrough).toEqual(['L1-M1', 'L1-M2']);
+    for (const surface of Object.keys(first.surfaces)) {
+      expect(second.surfaces[surface]).toEqual(first.surfaces[surface]);
+    }
+    expect(second.surfaceCount).toBe(first.surfaceCount + 2);
+    expect(Object.keys(second.surfaces)).toContain('झाडं');
+  });
+
+  it('keeps the first occurrence: re-teaching a word never steals its pointer', () => {
+    const { outRoot } = build(scaffold(M1_THEN_M2), STRICT);
+    const second = readIndex(outRoot, 'hi-mr', 'L1-M2');
+
+    // The clone teaches all of M1's words a second time; every one still points at M1 …
+    const owners = new Set(Object.values(second.surfaces).map((entry) => entry.moduleId));
+    expect([...owners].sort()).toEqual(['L1-M1', 'L1-M2']);
+    expect(second.surfaces['आहे']?.moduleId).toBe('L1-M1');
+    // … and inside a module the earliest sentence that teaches a surface owns it.
+    expect(second.surfaces['आहे']).toEqual({
+      moduleId: 'L1-M1',
+      sentenceId: 'L1-M1-S01',
+      wordIdx: 3,
+    });
+    // … while the one genuinely new surface points at the module that introduced it.
+    expect(second.surfaces['झाड']?.moduleId).toBe('L1-M2');
+  });
+
+  it('points at the defining word entry, forms included', () => {
+    const { outRoot } = build(scaffold(M1_THEN_M2), STRICT);
+    const index = readIndex(outRoot, 'hi-mr', 'L1-M1');
+    const entry = index.surfaces['आहेस'];
+    if (entry === undefined) throw new Error('आहेस is a taught form of आहे');
+    const word = authored('hi-mr', 'L1-M1').sentences.find((s) => s.id === entry.sentenceId)
+      ?.deconstruction.words[entry.wordIdx];
+
+    // आहेस is never a `display` — it is reachable only through आहे's paradigm.
+    expect(word?.display).toBe('आहे');
+    expect(word?.forms).toContain('आहेस');
+  });
+
+  it('indexes what is TAUGHT — never a variation, never a mistake', () => {
+    const modules = [
+      { id: 'L1-M1', module: authored('hi-mr', 'L1-M1') },
+      { id: 'L1-M2', module: authored('hi-mr', 'L1-M2') },
+    ];
+    const index = buildWordIndex('hi-mr', modules)[1];
+    if (index === undefined) throw new Error('expected an index per module');
+
+    // नमस्ते and हाँ are the Hindi intrusions M2's mistake lines warn against (PR #124);
+    // प्रिया is a proper noun that only ever appears in a variation (the known gap on #61).
+    for (const surface of ['नमस्ते', 'हाँ', 'प्रिया']) {
+      expect(Object.keys(index.surfaces)).not.toContain(surface);
+    }
+    expect(JSON.stringify(modules[0]?.module.sentences[0]?.variations)).toContain('प्रिया');
+  });
+
+  it('is deterministic: surfaces are code-point sorted', () => {
+    const { outRoot } = build(scaffold(M1_THEN_M2), STRICT);
+    const keys = Object.keys(readIndex(outRoot, 'hi-mr', 'L1-M2').surfaces);
+
+    expect(keys).toEqual([...keys].sort((a, b) => (a < b ? -1 : a > b ? 1 : 0)));
+  });
+
+  it('notes the surface count per module in the build output', () => {
+    const { report } = build(scaffold(M1_THEN_M2), STRICT);
+
+    expect(report.lines).toContain('  index L1-M1: 26 surfaces');
+    expect(report.lines).toContain('  index L1-M2: 28 surfaces');
+  });
+});
+
+describe('the comprehension-pool rule', () => {
+  it('fails the build, naming the course, the module, the item and the token', () => {
+    const tree = scaffold([
+      {
+        row: courseRow('hi-mr'),
+        modules: [
+          {
+            id: 'L1-M1',
+            verified: true,
+            edit: (module) => {
+              const item = module.comprehensionPool[0];
+              if (item !== undefined) item.display = 'मी नमस्ते आहे';
+            },
+          },
+        ],
+      },
+    ]);
+
+    const { report, outRoot } = build(tree, STRICT);
+
+    expect(report.exitCode).toBe(1);
+    expect(report.lines).toContain(
+      '  hi-mr/L1-M1.json: /comprehensionPool/0/display: "नमस्ते" (item L1-M1-C01) is not taught ' +
+        'by L1-M1 — every comprehension token must resolve in the cumulative word index (PRD §6.3)',
+    );
+    expect(existsSync(outRoot)).toBe(false);
+  });
+
+  it('resolves against everything taught so far, not just this module', () => {
+    const first = authored('hi-mr', 'L1-M1');
+    const second = authored('hi-mr', 'L1-M2');
+    const [, cumulative] = buildWordIndex('hi-mr', [
+      { id: 'L1-M1', module: first },
+      { id: 'L1-M2', module: second },
+    ]);
+    const [moduleLocal] = buildWordIndex('hi-mr', [{ id: 'L1-M2', module: second }]);
+    if (cumulative === undefined || moduleLocal === undefined) throw new Error('no index');
+
+    // M2 deliberately does not re-teach M1's words (PR #119), so a module-local index would
+    // reject its own pool — the failure this test exists to keep failing.
+    expect(checkComprehensionPool(second, cumulative)).toEqual([]);
+    expect(checkComprehensionPool(second, moduleLocal).length).toBeGreaterThan(0);
+    expect(checkComprehensionPool(second, moduleLocal)[0]?.message).toContain('is not taught by');
+  });
+
+  it('strips edge punctuation before matching, so `?` and `,` resolve', () => {
+    const first = authored('hi-mr', 'L1-M1');
+    const second = authored('hi-mr', 'L1-M2');
+    const [, index] = buildWordIndex('hi-mr', [
+      { id: 'L1-M1', module: first },
+      { id: 'L1-M2', module: second },
+    ]);
+    if (index === undefined) throw new Error('no index');
+    const punctuated = second.comprehensionPool.filter((item) => /[?,]/.test(item.display));
+
+    expect(punctuated.map((item) => item.id)).toContain('L1-M2-C01'); // नमस्कार, तुम्ही कसे आहात?
+    expect(Object.keys(index.surfaces)).not.toContain('आहात?'); // the key is the bare word …
+    expect(Object.keys(index.surfaces)).toContain('आहात');
+    expect(checkComprehensionPool(second, index)).toEqual([]); // … and the token still resolves
+  });
+
+  it('says nothing about variations or mistakes — they are wrong L2 by design', () => {
+    const second = authored('hi-mr', 'L1-M2');
+    const [, index] = buildWordIndex('hi-mr', [
+      { id: 'L1-M1', module: authored('hi-mr', 'L1-M1') },
+      { id: 'L1-M2', module: second },
+    ]);
+    if (index === undefined) throw new Error('no index');
+    const mistakes = second.sentences.map((sentence) => sentence.mistake?.display ?? '').join(' ');
+
+    expect(mistakes).toContain('नमस्ते'); // the Hindi intrusion the callout warns against
+    expect(Object.keys(index.surfaces)).not.toContain('नमस्ते'); // never indexed …
+    expect(checkComprehensionPool(second, index)).toEqual([]); // … and never a build failure
+  });
+});
+
+/**
+ * #116 will fold case and the apostrophe class. The only way that lands safely is if there is
+ * exactly ONE normalisation to change — so this suite guards the seam, not the behaviour.
+ */
+describe('the shared normaliser', () => {
+  const SOURCE_ROOTS = ['src', 'tools'];
+  const OWNER = path.join('src', 'engine', 'surface.ts');
+
+  function sourceFiles(): string[] {
+    const files: string[] = [];
+    for (const root of SOURCE_ROOTS) {
+      for (const entry of readdirSync(path.join(REPO_ROOT, root), {
+        recursive: true,
+        withFileTypes: true,
+      })) {
+        if (!entry.isFile() || !entry.name.endsWith('.ts')) continue;
+        files.push(path.relative(REPO_ROOT, path.join(entry.parentPath, entry.name)));
+      }
+    }
+    return files;
+  }
+
+  it('is what the emitter imports — no local copy of the rule', () => {
+    const emitter = readFileSync(path.join(REPO_ROOT, 'tools', 'content-build.ts'), 'utf8');
+
+    expect(emitter).toContain("from '../src/engine/surface.ts'");
+  });
+
+  it('is the only place NFC and edge punctuation are decided', () => {
+    const owners = sourceFiles().filter((file) => {
+      if (file.endsWith('.test.ts')) return false;
+      const source = readFileSync(path.join(REPO_ROOT, file), 'utf8');
+      return source.includes("normalize('NFC')") || source.includes('\\p{P}');
+    });
+
+    expect(owners).toEqual([OWNER]);
+  });
+});
+
+/**
  * The repo's own content, built both ways. This is the test that would catch someone quietly
  * marking a module verified, or a fixture course leaking into a strict build.
  */
@@ -661,6 +922,43 @@ describe('the authored content', () => {
     ]) {
       expect(existsSync(path.join(outRoot, ...file.split('/')))).toBe(true);
     }
+  });
+
+  it('indexes hi-mr cumulatively — L1-M2 is L1-M1 plus what M2 teaches', () => {
+    const { report, outRoot } = build(DEFAULT_CONTENT_ROOT, DEV);
+    const first = readIndex(outRoot, 'hi-mr', 'L1-M1');
+    const second = readIndex(outRoot, 'hi-mr', 'L1-M2');
+
+    expect(first.surfaceCount).toBe(26);
+    expect(second.surfaceCount).toBe(47);
+    expect(Object.keys(first.surfaces).every((s) => Object.hasOwn(second.surfaces, s))).toBe(true);
+    expect(report.lines).toContain('  index L1-M1: 26 surfaces');
+    expect(report.lines).toContain('  index L1-M2: 47 surfaces');
+  });
+
+  it('indexes the romanized course in Latin script — the Arabic line is never a key [D20]', () => {
+    const { outRoot } = build(DEFAULT_CONTENT_ROOT, DEV);
+    const index = readIndex(outRoot, 'en-ar', 'L1-M1');
+    // Arabic block + supplement + presentation forms, as escapes: the range ends on U+FEFF.
+    const arabic = /[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]/;
+    const module = readFileSync(path.join(outRoot, 'en-ar', 'modules', 'L1-M1.json'), 'utf8');
+
+    expect(Object.keys(index.surfaces)).toContain('ismī');
+    expect(Object.keys(index.surfaces)).toContain('al-qahwa');
+    expect(Object.keys(index.surfaces).filter((surface) => arabic.test(surface))).toEqual([]);
+    expect(arabic.test(module)).toBe(true); // the script lines are there — they are just not index keys
+  });
+
+  it('handles a multi-token surface: en-es indexes `Me llamo` as one surface', () => {
+    const { outRoot } = build(DEFAULT_CONTENT_ROOT, DEV);
+    const index = readIndex(outRoot, 'en-es', 'L1-M1');
+
+    expect(index.maxSpan).toBe(2);
+    expect(index.surfaces['se llama']).toEqual({
+      moduleId: 'L1-M1',
+      sentenceId: 'L1-M1-S01',
+      wordIdx: 0,
+    });
   });
 
   it('never claims content for a module nobody has authored', () => {
