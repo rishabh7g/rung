@@ -29,9 +29,15 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 26 keys: the 21 of PRD §4 plus the 5 the frozen screens forced
+ * file it is complaining about). 29 keys: the 21 of PRD §4, the 5 the frozen screens forced
  * (PR #120) — `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and the four
- * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`).
+ * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — and the 3 the
+ * Ladder forced (#86): the counts-only pending line, the ownership footer and the sealed-level
+ * toast, which PRD-design §5 prints as copy but PRD §4's inventory never listed.
+ *
+ * Those three are DRAFT values in all three bundles, flagged on #71 for ratification, exactly as
+ * PR #120's were. The alternative was hardcoding three learner-facing lines in the shell, which
+ * is the one thing this list exists to prevent.
  */
 export const STRINGS_KEYS = [
   'cueLabel',
@@ -55,6 +61,9 @@ export const STRINGS_KEYS = [
   'retry.body',
   'retry.cta',
   'ordinal',
+  'ladder.pendingLine',
+  'ladder.ownership',
+  'ladder.sealedToast',
   'pendingAuthoring',
   'verdict.line',
   'switchToast',
@@ -101,6 +110,14 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'retry.cta': [],
   /** The number to ordinalise. */
   ordinal: ['{n}'],
+  /**
+   * The Ladder's pending line — counts only, never time (Invariant 2): which level the learner is
+   * on, and how many of its rungs are still to climb.
+   */
+  'ladder.pendingLine': ['{level}', '{remaining}', '{total}'],
+  'ladder.ownership': [],
+  /** The sealed level, and how many rungs below it are left — the honest half of the seal rule. */
+  'ladder.sealedToast': ['{level}', '{remaining}'],
   pendingAuthoring: [],
   /** The rung that just opened. */
   'verdict.line': ['{nextModule}'],

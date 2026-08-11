@@ -10,7 +10,7 @@
  * `layout.test.ts`: jsdom resolves neither `env()` nor `max()`, so the browser is where a
  * computed padding means anything, and the CSS source is where the rule can be pinned.
  */
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from '../App.tsx';
 import { BRAND } from '../brand.ts';
@@ -29,9 +29,11 @@ async function renderAt(hash: string) {
   await screen.findByRole('main');
 }
 
-/** The tab links, in nav order. */
+/** The tab links, in nav order — scoped to the nav, because screens have links of their own. */
 function tabs(): string[] {
-  return screen.getAllByRole('link').map((link) => link.textContent ?? '');
+  return within(screen.getByRole('navigation', { name: 'Primary' }))
+    .getAllByRole('link')
+    .map((link) => link.textContent ?? '');
 }
 
 beforeEach(() => {

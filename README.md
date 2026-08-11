@@ -150,7 +150,7 @@ Two consequences worth knowing before you author content:
   emitter imports it; the runtime resolver will too. Never copy it: a second copy is a word
   that silently has no "why".
 
-### The strings contract — 26 keys, no fallback copy
+### The strings contract — 29 keys, no fallback copy
 
 Every course ships one `strings.json` carrying **all** the microcopy the shell renders, because
 the shell has none of its own (PRD §4). So the build validates it against the canonical key list
@@ -166,16 +166,21 @@ declared twice.
 `tools/strings-check.ts` runs per course, flattens the nested file onto dot-paths
 (`ritual.check.copy`), and reports four things, always naming course **and** key:
 
-- **missing key** — the 26 canonical paths must all be there;
+- **missing key** — the 29 canonical paths must all be there;
 - **empty or non-string value** — a present-but-blank key is a missing key with extra steps;
 - **unknown key** — the typo tripwire; `ritual.check.plate` would otherwise sit quietly beside a
   missing `plateLabel`;
 - **placeholder mismatch** — a value carries exactly its canonical `{placeholders}`
-  (`{sentenceCount} {maxWords} {ordinal} {n} {nextModule} {to} {from}`), so a translation cannot
+  (`{sentenceCount} {maxWords} {ordinal} {n} {nextModule} {to} {from} {level} {remaining}
+  {total}`), so a translation cannot
   drop `{ordinal}` or invent `{name}`.
 
 Adding a key is one edit to `src/course/stringsKeys.ts` plus a line in each of the three bundles —
-in that order, because the build will tell you exactly which course you forgot.
+in that order, because the build will tell you exactly which course you forgot. The list grew that
+way twice: five keys the frozen screens forced (PR #120) and three the Ladder forced (#86 —
+`ladder.pendingLine`, `ladder.ownership`, `ladder.sealedToast`, all **draft values pending the
+Sync-3 freeze**, #71). The alternative each time was a learner-facing line hardcoded in the shell,
+which is the one thing this list exists to prevent.
 
 ### The course layer — what boots first
 
@@ -362,6 +367,48 @@ Two rules the scaffold bakes in, before you write a component:
   module and emits `public/content/` — see the gate table above. Never import from `content/`
   in `src/`: the app reads `public/content/` (via `fetch`), which is the only tree the gate
   has approved.
+
+### The Ladder — the home screen, and nothing it renders is stored
+
+`src/screens/LadderScreen.tsx` (#86; PRD-design §5, §7 [D16]) is where the engine becomes a
+screen: the position line, the three-cell level strip, the rungs of the active level, the
+counts-only pending line and the ownership footer. Every one of those is **derived on render** —
+`deriveStatuses`, `currentRungId`, `levelSealed` off the very `progressionInput` the store guards
+`passRitual` with (#83). A count on this screen and a rule in that action cannot disagree, because
+they are one derivation.
+
+Three things it is responsible for keeping true:
+
+- **A locked rung is not a control.** No link, no button, no `tabindex` — the row is text, a
+  hollow marker and a lock at 50% opacity. "The ladder is visible; the rungs are sealed"
+  (PRD-design §3.2) is a DOM fact, asserted per rung in `LadderScreen.test.tsx`, not a CSS one:
+  `pointer-events: none` would still leave a link for a screen reader to offer.
+- **A sealed level answers honestly, in counts.** Only sealed cells are `<button>`s (the active
+  cell is the screen you are on; a control with nothing to do is not one), and tapping one raises
+  the shared toast (`src/shell/Toast.tsx` — the timer is the control, the region is always mounted
+  so a screen reader hears the change, and #106's course-switch toast reuses both) with the sealed
+  level and how many rungs below it remain.
+- **Counts, never time.** No `%`, no date, no streak, no "due" — asserted over the rendered screen
+  in both a fresh and a mid-journey state.
+
+It is also the one place the course layer's ladder reaches the store: an effect calls `setLadder`
+when `levels.json` resolves, which is what gives `passRitual` a rung to check against. The screen
+waits (`aria-busy`, nothing drawn) until it has — an empty input would render a *finished* ladder.
+
+The current rung is a blueprint card holding a kicker, the rung title at `--text-rung-title` and
+its job; **the staged CTA [D22] mounts inside it and is #87** (the seam is commented at
+`CurrentRung`). Until then the card's title is the link into the module, so the rung is reachable
+from its own row.
+
+Two deliberate divergences from the prototype, both recorded in the code that makes them:
+
+- **Course prose is 18px Mukta, not an 11.5px caption.** The prototype renders the pending line,
+  the footer and the toasts in English for every course; in the product they are course copy, and
+  design/tokens.md §2 is absolute — all Devanagari is Mukta, never below `--devanagari-min-size`.
+  A caption token would set Hindi in Barlow, which draws no Devanagari at all. The ramp has no
+  caption-sized Devanagari slot and cannot have one below the floor.
+- **The position line is the screen's first row**, not part of the header: the shell's brand header
+  is screen-agnostic (#84). #117 reconciles both.
 
 ### The fonts — bundled, because offline is the product
 

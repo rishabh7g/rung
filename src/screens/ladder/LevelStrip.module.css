@@ -1,0 +1,111 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   design/tokens.md §6 "Level strip cell": active = 2px top bar --color-accent, label
+   --color-accent-700; sealed = no bar, label --color-neutral-600 + lock icon. */
+
+.strip {
+  display: flex;
+  border-bottom: var(--border-hairline);
+}
+
+.cell {
+  flex: 1;
+  min-width: 0;
+  /* A cell is a control when it is sealed, so every cell clears the WCAG floor. */
+  min-height: var(--tap-min);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  /* The bar is drawn on every cell and only coloured on the active one: a border that appears
+     with the state would move the row it is on. */
+  border-top: var(--tick-height) solid transparent;
+  /* Button reset — a sealed cell is a <button>, an open one a <div>, and they must look alike. */
+  background: none;
+  border-inline: 0;
+  border-bottom: 0;
+  color: inherit;
+  text-align: start;
+  font: inherit;
+  cursor: pointer;
+  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cell + .cell {
+  border-left: var(--border-hairline);
+}
+
+/* "You are here": the 2px accent bar. --tick-height is the design package's only 2px length —
+   the contract forbids writing the number, and a --level-bar-h token would have to come from
+   design/tokens.css, which is read-only here (docs/design-contract.md). Flagged in #86's PR. */
+.cellActive {
+  composes: cell;
+  border-top-color: var(--color-accent);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.label {
+  font: var(--text-kicker-sm);
+  letter-spacing: var(--kicker-tracking);
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--color-accent-700);
+}
+
+.labelSealed {
+  composes: label;
+  color: var(--color-neutral-600);
+}
+
+.lock {
+  flex: none;
+  width: var(--icon-inline);
+  height: var(--icon-inline);
+  stroke-width: var(--icon-stroke);
+  color: var(--color-neutral-500);
+}
+
+/* The level's own words — name and tagline, straight out of levels.json. */
+.name {
+  font: var(--text-micro);
+  color: var(--ink-55);
+}
+
+.squares {
+  display: flex;
+  gap: var(--space-1);
+  align-self: stretch;
+  margin-top: var(--space-1);
+}
+
+.square {
+  flex: 1;
+  height: var(--level-square-h);
+}
+
+.squarePassed {
+  composes: square;
+  background: var(--dot-done);
+}
+
+.squareCurrent {
+  composes: square;
+  background: var(--level-current);
+}
+
+.squarePending {
+  composes: square;
+  background: var(--dot-pending);
+}
+
+.squareSealed {
+  composes: square;
+  background: var(--level-sealed);
+}

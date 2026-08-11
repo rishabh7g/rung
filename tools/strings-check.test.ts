@@ -8,9 +8,9 @@ import { DEFAULT_CONTENT_ROOT } from './validate.ts';
 
 /**
  * The three shipped bundles are the source of truth for what the canonical list must say — the
- * issue text predates two PRs and lists 21 keys; the files carry 26 (PR #120, verified across
- * courses by PR #124). Where they disagree, the files win, so the suite checks the list AGAINST
- * the files rather than the other way round.
+ * issue text predates three PRs and lists 21 keys; the files carry 29 (PR #120, verified across
+ * courses by PR #124, plus the Ladder's three in #86). Where they disagree, the files win, so the
+ * suite checks the list AGAINST the files rather than the other way round.
  */
 const COURSES = ['hi-mr', 'en-es', 'en-ar'] as const;
 
@@ -42,15 +42,15 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the three shipped bundles carry — 26 keys, nested, identical', () => {
+  it('is exactly what the three shipped bundles carry — 29 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(26);
+      expect(keys.length, courseId).toBe(29);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(26);
-    expect(new Set(STRINGS_KEYS).size).toBe(26);
+    expect(STRINGS_KEYS.length).toBe(29);
+    expect(new Set(STRINGS_KEYS).size).toBe(29);
   });
 
   it('carries the five keys PR #120 added beyond the issue text', () => {
@@ -65,6 +65,18 @@ describe('the canonical key list', () => {
     for (const key of added) expect(STRINGS_KEYS).toContain(key);
   });
 
+  /**
+   * The Ladder's three (#86). PRD-design §5 prints all three as copy — the counts-only pending
+   * line, the ownership footer, the sealed-cell toast — and PRD §4's inventory never listed them,
+   * so the screen would otherwise have had to hardcode them in the shell. Draft values in all
+   * three bundles, flagged on #71 for the Sync-3 freeze.
+   */
+  it('carries the three keys the Ladder forced (#86)', () => {
+    const added: StringsKey[] = ['ladder.pendingLine', 'ladder.ownership', 'ladder.sealedToast'];
+
+    for (const key of added) expect(STRINGS_KEYS).toContain(key);
+  });
+
   it('records the placeholder of every templated key, and none for the rest', () => {
     const templated = Object.entries(STRINGS_PLACEHOLDERS).filter(([, names]) => names.length > 0);
 
@@ -72,6 +84,8 @@ describe('the canonical key list', () => {
       'ritual.constraint': ['{sentenceCount}', '{maxWords}'],
       'ritual.confirm.holdLabel': ['{ordinal}'],
       ordinal: ['{n}'],
+      'ladder.pendingLine': ['{level}', '{remaining}', '{total}'],
+      'ladder.sealedToast': ['{level}', '{remaining}'],
       'verdict.line': ['{nextModule}'],
       switchToast: ['{to}', '{from}'],
     });

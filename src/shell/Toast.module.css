@@ -1,0 +1,52 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1). */
+
+/* The always-mounted live region. Fixed rather than absolute: the app column is a 100dvh flex
+   box and the toast belongs to the viewport, not to whichever screen raised it. It sits clear of
+   the bottom nav — item height + the home-indicator gap + the design's own margin — which is the
+   prototype's 110px from the bottom of the frame. */
+.region {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--nav-item-height) + var(--space-8) + var(--space-6) + var(--space-4));
+  display: flex;
+  justify-content: center;
+  /* Never eats a tap: the region is over the screen at all times, message or not. */
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Everything a toast says is the course's own words, so it is set the way course prose is: all
+   Devanagari is Mukta at or above --devanagari-min-size (design/tokens.md §2), and the ramp's
+   smallest Mukta slot is --text-l2-cue. A --text-secondary here would be Barlow, which draws no
+   Devanagari at all. */
+.toast {
+  margin: 0;
+  max-width: 80%;
+  padding: var(--space-2) var(--space-4);
+  background: var(--toast-bg);
+  color: var(--toast-fg);
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  text-align: center;
+  animation: toast-in var(--motion-toast) both;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-2));
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* design/tokens.md §5: reduced motion collapses every movement in the product. */
+@media (prefers-reduced-motion: reduce) {
+  .toast {
+    animation: none;
+  }
+}

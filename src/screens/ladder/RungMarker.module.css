@@ -1,0 +1,34 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   design/tokens.md §6: passed = accent-600 filled circle + bg-coloured check; current = accent
+   crosshair; locked = neutral-500 hollow circle. */
+
+.marker {
+  flex: none;
+  width: var(--icon-ui);
+  height: var(--icon-ui);
+  /* The rail line runs behind the column of markers; each one masks the segment it covers, so the
+     line reads as rungs on a ladder rather than a stripe through them. */
+  background: var(--color-bg);
+}
+
+.disc {
+  fill: var(--color-accent-600);
+}
+
+/* Cut out of the disc in the ground colour — never white (design/tokens.md §7 rule 2). */
+.check {
+  fill: none;
+  stroke: var(--color-bg);
+  stroke-width: var(--icon-stroke);
+}
+
+.crosshair {
+  stroke: var(--color-accent);
+  stroke-width: var(--icon-stroke);
+}
+
+.ring {
+  fill: none;
+  stroke: var(--color-neutral-500);
+  stroke-width: var(--icon-stroke);
+}

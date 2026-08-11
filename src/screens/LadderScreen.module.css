@@ -1,23 +1,203 @@
 /* Layout only, tokens only (docs/design-contract.md rule 1).
-   SMOKE (#79, #81) — every rule here goes when #86 renders the real ladder. */
+   Geometry follows design/Rung App v3.3.dc.html → Ladder; every length is the nearest token on
+   the Industry scale (design/tokens.md §3). */
 
-/* A line of the active course's own microcopy — whatever script that course writes in. */
-.courseString {
-  margin: 0;
-  font: var(--text-l2-hero);
+.ladder {
+  display: flex;
+  flex-direction: column;
 }
 
-.note {
+/* Position line + strip: the frame of the screen, held while the rungs scroll under it. */
+.head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--color-bg);
+}
+
+.position {
   margin: 0;
-  font: var(--text-caption);
+  padding: var(--space-2) var(--space-6);
+  font: var(--text-kicker);
+  letter-spacing: var(--kicker-tracking);
+  text-transform: uppercase;
+  text-align: end;
+  white-space: nowrap;
+  color: var(--color-accent-700);
+}
+
+.body {
+  padding: var(--space-4) var(--space-6) var(--space-8);
+}
+
+/**
+ * A line the COURSE wrote, in the course's own L1 — which for hi-mr is Devanagari, and
+ * design/tokens.md §2 is absolute about that: all Devanagari is Mukta, never below
+ * `--devanagari-min-size`, line-height 1.6, no italics. A caption token would render it in
+ * Barlow, which has no Devanagari at all — tofu on this machine, a system fallback on a phone,
+ * and off-brand either way. So course prose takes the smallest Mukta slot in the ramp
+ * (`--text-l2-cue`, 20px/1.6) pulled down to the 18px floor.
+ *
+ * The consequence is deliberate and worth seeing: the Ladder's two course lines are 18px rather
+ * than the prototype's 11.5px, because the prototype renders them in English. The ramp has no
+ * caption-sized Devanagari slot and cannot have one below the floor — flagged in #86's PR for
+ * the design package (a `--text-course-prose` token, or a per-course face).
+ */
+.courseProse {
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+}
+
+/* Counts only, and it closes with "the pace is yours" — the line is the course's, not ours. */
+.pending {
+  composes: courseProse;
+  margin: 0 0 var(--space-4);
   color: var(--ink-55);
 }
 
-/* L1's rungs, straight out of the course's levels.json. */
+/* ------------------------------------------------------------------- the rungs */
+
 .rungs {
+  position: relative;
+  list-style: none;
   margin: 0;
-  padding-inline-start: var(--space-6);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* The rail the markers sit on. Zero-width with a hairline border, because the hairline is a
+   token and "1px" is not (docs/design-contract.md rule 1). */
+.rungs::before {
+  content: '';
+  position: absolute;
+  left: calc(var(--icon-ui) / 2);
+  top: var(--space-3);
+  bottom: var(--space-3);
+  width: 0;
+  border-left: var(--border-hairline);
+}
+
+.row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: var(--tap-min);
+  padding: var(--space-2) 0;
+  color: inherit;
+  text-decoration: none;
+  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* [D16]: a locked row is the same row at half strength — and no control at all (see the TSX). */
+.rowLocked {
+  composes: row;
+  opacity: 0.5;
+}
+
+.rowText {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The prototype sets this line in Barlow Condensed 600 at 15px; the ramp has no condensed 15px
+   slot and the contract forbids naming a face outside a token, so it is the body size at the
+   heading weight. A --text-row-title token would close the gap — raised in #86's PR for #117. */
+.rowTitle {
+  font: var(--text-body);
+  font-weight: var(--font-heading-weight);
+}
+
+/* The rung's own title, in the course's script and direction. */
+.rowTitleContent {
+  unicode-bidi: isolate;
+}
+
+.rowJob {
   font: var(--text-caption);
-  color: var(--ink-55);
-  text-align: start;
+  color: var(--ink-50);
+}
+
+.passedLabel {
+  flex: none;
+  font: var(--text-kicker-sm);
+  letter-spacing: var(--kicker-tracking);
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--color-accent-700);
+}
+
+.rowLock {
+  flex: none;
+  width: var(--icon-inline);
+  height: var(--icon-inline);
+  stroke-width: var(--icon-stroke);
+}
+
+/* -------------------------------------------------------------- the current rung */
+
+.currentItem {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+/* Blueprint object: square corners, hairline, --shadow-sm, no surface fill (tokens.md §3).
+   The four registration marks belong to the staged card component — #87. */
+.card {
+  flex: 1;
+  min-width: 0;
+  padding: var(--space-4);
+  background: var(--color-bg);
+  border: var(--border-hairline);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Lines the crosshair up with the kicker inside the card rather than with the card's top edge. */
+.currentItem > svg {
+  margin-top: var(--space-4);
+}
+
+.cardKicker {
+  margin: 0;
+  font: var(--text-kicker);
+  letter-spacing: var(--kicker-tracking);
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--color-accent-700);
+}
+
+.cardTitle {
+  margin: var(--space-1) 0 0;
+  font: var(--text-rung-title);
+}
+
+.cardLink {
+  color: inherit;
+  text-decoration: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cardJob {
+  margin: var(--space-1) 0 0;
+  font: var(--text-secondary);
+  color: var(--ink-65);
+}
+
+/* ---------------------------------------------------------------- the footer */
+
+/* The recurring ownership copy (PRD-design §5) — the last word on the screen, and quiet. */
+.ownership {
+  composes: courseProse;
+  margin: var(--space-6) 0 0;
+  text-align: center;
+  color: var(--ink-45);
 }
