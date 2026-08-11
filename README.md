@@ -171,6 +171,30 @@ blank screen for the learner, not an English word.
 Adding a key is one edit to `tools/strings-keys.ts` plus a line in each of the three bundles —
 in that order, because the build will tell you exactly which course you forgot.
 
+### The course layer — what boots first
+
+The app knows a manifest, not a language pair (PRD-engineering §8 F0). Boot order is
+**manifest → provider → screens**, and no screen mounts until there is an active course:
+
+- `src/course/manifest.ts` — `loadCourses()` fetches `${BASE_URL}content/courses.json` once
+  (the cache is the promise, so concurrent callers share one request) and parses the **emitted
+  envelope**: `{courses: [...]}`, plus `devBuild: true` on a relaxed build. The authored
+  `content/courses.json` keeps the PRD §4 bare-array shape — only the build output is wrapped,
+  and `src/` never reads the authored tree. Anything wrong — offline, 404, not JSON, wrong
+  shape, **no courses** — throws a `ManifestError`, which is the tripwire, not an edge case: a
+  strict build ships zero courses today, so `npm run build` really does render the
+  content-error screen.
+- `src/course/CourseProvider.tsx` — resolves the active course and exposes
+  `{course, courses, devBuild}` through `useCourse()`. It owns the loading and error screens
+  (`BootScreens.tsx`), so everything below it already has a course.
+- `resolveActiveCourse(courses, persistedId?)` is a **pure function**: the persisted course when
+  it is still in the manifest, else the first entry with a `console.warn`. It never writes, so a
+  fallback does not erase the stored id (Invariant 8). The provider takes that id as a prop and
+  defaults to `undefined` — #82 (state store) wires `state.activeCourse` into it; the marked
+  seam in `CourseProvider.tsx` is the whole change.
+
+Adding a course stays "a folder plus a manifest row": nothing in the shell names a course id.
+
 Two rules the scaffold bakes in, before you write a component:
 
 - **Tokens only.** `src/main.tsx` imports `design/tokens.css` *in place* — `design/`
