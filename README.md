@@ -19,6 +19,7 @@ fixed sequence of 10 modules ("rungs"), each exited only by **writing** a novel
 | [`design/`](design/) | Design mockups + tokens (added by Rishabh as milestone D completes) |
 | [`docs/design-contract.md`](docs/design-contract.md) | How to build UI against the design package — tokens, prototype fidelity, mobile rules |
 | [`docs/04-font-notes.md`](docs/04-font-notes.md) | What bundling Mukta + Barlow proved: the specimen, glyph coverage, shipped font bytes (#85) |
+| [`docs/05-pwa-notes.md`](docs/05-pwa-notes.md) | The PWA: manifest, precache byte tables, the airplane-mode gate and its screenshots, what still needs a phone (#90) |
 
 ## Development
 
@@ -42,6 +43,7 @@ npm run dev     # http://localhost:5173
 | `npm run format` | Prettier write across the source tree |
 | `npm run content:validate` | Schema v5 + cross-checks over `content/*/modules/*.json` |
 | `npm run content:build` | Builds `public/content/` from `content/` — strict by default |
+| `npm run icons:build` | Regenerates `public/icons/*.png` from the header rails mark. Committed output; run it only when the mark changes |
 
 ### `scripts/verify.sh` — one line, or one failure
 
@@ -583,6 +585,43 @@ Devanagari reaches `dist/` — and it is the single entry in `shellPurity.test.t
 
 Findings, screenshots, the shipped byte count and the one real gap (`ʾ`, `ʿ` and `ḥ` are not in
 Barlow) are in [`docs/04-font-notes.md`](docs/04-font-notes.md).
+
+### The PWA — precache everything, route nothing
+
+The app installs a service worker that precaches **the entire build** and never touches the
+network again (#90, `design/pwa-checklist.md` §3). `tools/pwa.ts` holds the whole configuration —
+`vite.config.ts` is one line, `VitePWA(pwaOptions())` — and four globs say what "everything"
+means: `**/*.{html,css,js}`, `**/*.woff2`, `content/**/*.json`, `icons/*.png`. A strict build
+precaches **41 files / 1073 KiB**; a dev-content build 55 / 1197 KiB, the difference being the
+14 course JSONs the native gate keeps out of a shipped bundle.
+
+There is deliberately **no `runtimeCaching`**. Zero network after first load is the product
+(PRD-engineering §3, §10), so a request the precache does not answer is a bug in the app, not a
+case for a network fallback. `registerType: 'autoUpdate'`: a new build's worker skips waiting,
+claims the page and reloads it — this product never asks a learner to think about versions —
+and `cleanupOutdatedCaches` deletes the previous build's cache on activate.
+
+- **The manifest is the checklist.** `design/pwa-checklist.md` §3.1 prints the exact JSON, and
+  `tools/pwa.test.ts` **parses that block out of the checklist** and deep-equals it against what
+  the build ships. The name comes from `src/brand.ts`, both colours and `<meta name="theme-color">`
+  from `design/tokens.css` `--color-bg` (`tools/tokens.ts`) — a manifest cannot drift from the
+  app's own paper ground.
+- **The icons are the header mark, read not redrawn.** `tools/make-icons.ts` reads
+  `src/shell/RailsMark.tsx`, lifts its five shapes, resolves `currentColor` and the accent token
+  out of `design/tokens.css`, and rasterises 192 / 512 / maskable-512 / apple-touch-180 /
+  favicon-32 onto the paper ground (`npm run icons:build`; PNGs committed). The maskable safe
+  zone is asserted as arithmetic, not eyeballed.
+- **`npm run dev` is untouched** — `devOptions.enabled: false`, so no worker is generated or
+  served in development and HMR is never fighting a cache. The worker exists in `build` and
+  `preview` only.
+- **Storage durability:** `src/state/durableStorage.ts` asks `navigator.storage.persist()` once,
+  *after* the first write, and logs the answer. There is nothing else to do with a "no" — F7's
+  manual export is the real backup — but a log is the explanation on the day a ladder is evicted.
+
+The airplane-mode gate (§3.6) was run headlessly with the origin server killed: a cold start
+walked Ladder → Module → Sentence Detail with **57 requests, 57 served by the worker, 0 from the
+network, 0 failed**. Screenshots, the byte tables, Chrome's installability verdict and the list
+of what still needs a physical device are in [`docs/05-pwa-notes.md`](docs/05-pwa-notes.md).
 
 ## How work happens
 

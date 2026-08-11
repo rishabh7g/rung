@@ -6,6 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <!-- title placeholder below is substituted from src/brand.ts at build time (vite.config.ts) -->
     <title>%BRAND%</title>
+    <!-- %THEME_COLOR% is design/tokens.css's --color-bg, substituted at build time so the browser
+         chrome, the manifest and the app's own paper ground can never disagree (tools/pwa.ts) -->
+    <meta name="theme-color" content="%THEME_COLOR%" />
+    <!-- Declared rather than left to the browser's /favicon.ico guess: the guess is a request
+         nothing precaches, and offline that is a failure on every screen (tools/pwa.ts) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
+    <!-- iOS has no install prompt: Share → "Add to Home Screen" is P1's install flow, and these
+         three lines are what it reads (design/pwa-checklist.md §3.3). `black-translucent` puts the
+         status bar over the app, which is why the shell owns env(safe-area-inset-top). The
+         standard `mobile-web-app-capable` sits beside the apple one because Chrome deprecated
+         reading the latter — both, until iOS stops needing its own. Splash images are #91/#115. -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="%BRAND%" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon-180.png" />
   </head>
   <body>
     <div id="root"></div>

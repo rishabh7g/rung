@@ -1,15 +1,24 @@
 /// <reference types="vitest/config" />
 import { defineConfig, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
+import { VitePWA } from 'vite-plugin-pwa';
 import { BRAND } from './src/brand.ts';
+import { pwaOptions } from './tools/pwa.ts';
+import { token } from './tools/tokens.ts';
 
-/** Substitutes %BRAND% in index.html so src/brand.ts stays the single source of the name. */
-function brandHtml(): Plugin {
+/**
+ * Substitutes the two build-time values index.html carries, so each keeps ONE source: %BRAND%
+ * from src/brand.ts, and %THEME_COLOR% from design/tokens.css's --color-bg (#90). The theme
+ * colour is also the manifest's `background_color`/`theme_color` (tools/pwa.ts) — one token, one
+ * paper ground, in the browser chrome and in the app.
+ */
+function htmlValues(): Plugin {
   return {
-    name: 'rung-brand-html',
+    name: 'rung-html-values',
     transformIndexHtml: {
       order: 'pre',
-      handler: (html) => html.replaceAll('%BRAND%', BRAND),
+      handler: (html) =>
+        html.replaceAll('%BRAND%', BRAND).replaceAll('%THEME_COLOR%', token('--color-bg')),
     },
   };
 }
@@ -39,7 +48,8 @@ function woff2Only(): Plugin {
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), brandHtml(), woff2Only()],
+  // VitePWA runs after woff2Only so the precache manifest sees the fonts that actually shipped.
+  plugins: [react(), htmlValues(), woff2Only(), VitePWA(pwaOptions())],
   test: {
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
