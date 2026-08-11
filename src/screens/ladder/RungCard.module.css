@@ -1,0 +1,198 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   Geometry follows design/Rung App v3.3.dc.html → Ladder → the current-rung card in all four
+   [D22] stages; every length is the nearest token on the Industry scale (design/tokens.md §3, §4). */
+
+/* The blueprint object the screen is built around (design/tokens.md §3): radius 0, a hairline,
+   --shadow-sm, no surface fill — and the four registration marks below, which is why it is
+   `position: relative`. */
+.card {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  padding: var(--space-4);
+  background: var(--color-bg);
+  border: var(--border-hairline);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ------------------------------------------------------------- registration marks */
+
+/* A + centred on each corner, straddling the hairline. --space-3 (10.2px) is the scale's stand-in
+   for the design system's 11px mark; the arms come out at ~1px because --icon-stroke is 1.5 in a
+   16-unit viewBox scaled down to it. */
+.mark {
+  position: absolute;
+  width: var(--space-3);
+  height: var(--space-3);
+}
+
+.markLine {
+  stroke: var(--ink-55);
+  stroke-width: var(--icon-stroke);
+}
+
+.markTopLeft {
+  composes: mark;
+  top: calc(var(--space-3) / -2);
+  left: calc(var(--space-3) / -2);
+}
+
+.markTopRight {
+  composes: mark;
+  top: calc(var(--space-3) / -2);
+  right: calc(var(--space-3) / -2);
+}
+
+.markBottomLeft {
+  composes: mark;
+  bottom: calc(var(--space-3) / -2);
+  left: calc(var(--space-3) / -2);
+}
+
+.markBottomRight {
+  composes: mark;
+  bottom: calc(var(--space-3) / -2);
+  right: calc(var(--space-3) / -2);
+}
+
+/* ---------------------------------------------------------------------- the head */
+
+/* English shell furniture, in the register of the nav's tab labels — raised on #71 with the
+   Ladder's other two. */
+.kicker {
+  margin: 0;
+  font: var(--text-kicker);
+  letter-spacing: var(--kicker-tracking);
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--color-accent-700);
+}
+
+.title {
+  margin: var(--space-1) 0 0;
+  font: var(--text-rung-title);
+}
+
+.job {
+  margin: var(--space-1) 0 0;
+  font: var(--text-secondary);
+  color: var(--ink-65);
+}
+
+/* ------------------------------------------------------------------ course words */
+
+/**
+ * Everything below the job line is the COURSE's copy — for hi-mr that is Devanagari, and
+ * design/tokens.md §2 is absolute about it: Mukta, never below `--devanagari-min-size`,
+ * line-height 1.6. A caption token would set Hindi in Barlow, which draws no Devanagari at all.
+ *
+ * So the card's notes and its CTA labels take the smallest Mukta slots in the ramp pulled down to
+ * the 18px floor — prose at weight 400 (`--text-l2-cue`), labels at 600 (`--text-l2-card`) — and
+ * the consequence is deliberate: the prototype's 11–12px notes and its 14px Barlow Condensed
+ * button labels are English-for-every-course, which the product is not. Same divergence the
+ * Ladder's prose made in #138, same reason, and it wants the same answer from the design package
+ * (a `--text-course-prose` slot, or a per-course face) — raised for #117.
+ */
+.courseProse {
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+}
+
+.label {
+  font: var(--text-l2-card);
+  font-size: var(--devanagari-min-size);
+}
+
+/* "Read it through once — Practice picks up from there. Nothing is locked; the tab stays open." */
+.note {
+  composes: courseProse;
+  margin: var(--space-2) 0 0;
+  color: var(--ink-50);
+}
+
+/* The rung whose module is still being written — the note IS the state (strings: pendingAuthoring). */
+.pendingNote {
+  composes: courseProse;
+  margin: var(--space-3) 0 0;
+  color: var(--ink-55);
+}
+
+/* ------------------------------------------------------------------- the actions */
+
+/* The shape every CTA shares. Transparent border by default so a variant colours it without
+   moving anything: a border that appears with a state shifts the button it is on. */
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: var(--border-hairline);
+  border-color: transparent;
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* THE one filled object on the screen (design/tokens.md §3): solid accent, ground-coloured text,
+   full width, --cta-height (48px). Everything else on the Ladder is a wireframe. */
+.primary {
+  composes: action label;
+  width: 100%;
+  min-height: var(--cta-height);
+  margin-top: var(--space-4);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.primary:active {
+  background: var(--color-accent-700);
+  border-color: var(--color-accent-700);
+}
+
+/* exit_ready only: Practice and Module side by side under the ritual. */
+.secondaryRow {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+/* --btn-secondary-height (46px) is design/tokens.md §4's secondary; the prototype writes 44 inline
+   on this pair. The token is the rule of record and clears --tap-min either way. */
+.secondary {
+  composes: action label;
+  flex: 1;
+  min-height: var(--btn-secondary-height);
+  border-color: var(--color-divider);
+}
+
+.secondary:active {
+  background: color-mix(in srgb, var(--color-text) 14%, transparent);
+}
+
+.ghostRow {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-1);
+}
+
+/* A ghost is text that navigates: no border, no fill, accent ink — and --ghost-height (36px),
+   which design/tokens.md §4 sets for ghosts in the same breath as the 44px --tap-min floor it
+   sits under. The design package owes that reconciliation; noted for #117. `white-space: nowrap`
+   is not optional on one (§4). */
+.ghost {
+  composes: action label;
+  min-height: var(--ghost-height);
+  padding-inline: var(--space-1);
+  color: var(--color-accent);
+  white-space: nowrap;
+}
+
+.ghost:active {
+  background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+}

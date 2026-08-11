@@ -30,6 +30,8 @@ export const HOME_PATH = '/';
 /** The Practice hub — where the pause ✕ returns a paused session. */
 export const PRACTICE_PATH = '/practice';
 export const SETTINGS_PATH = '/settings';
+/** The exit ritual — the only unlock path, and the rung card's primary once a rung is ready. */
+export const RITUAL_PATH = '/ritual';
 
 /**
  * Which header a screen gets. `brand` = the rails mark + wordmark (the three tabs);
@@ -51,7 +53,7 @@ export const SHELL_ROUTES: readonly ShellRoute[] = [
   { path: '/module/:id', label: 'Module', chrome: 'back', element: <ModuleScreen /> },
   { path: '/sentence/:id', label: 'Sentence', chrome: 'back', element: <SentenceScreen /> },
   { path: PRACTICE_PATH, label: 'Practice', chrome: 'brand', element: <PracticeScreen /> },
-  { path: '/ritual', label: 'Exit ritual', chrome: 'back', element: <RitualScreen /> },
+  { path: RITUAL_PATH, label: 'Exit ritual', chrome: 'back', element: <RitualScreen /> },
   {
     path: '/comprehension',
     label: 'Comprehension',
