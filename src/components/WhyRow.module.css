@@ -1,0 +1,61 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   Geometry follows design/Rung App v3.3.dc.html → Practice → revealed card → why, and the recipe
+   in design/tokens.md §6; every length is the nearest token on the Industry scale (§3, §4). */
+
+/**
+ * The word, its cue and its note are the COURSE's prose — Devanagari for hi-mr — so they are
+ * Mukta and never below `--devanagari-min-size` (design/tokens.md §2), where the prototype writes
+ * 11.5–15px. Seventh recurrence of the wall #86 opened and #87, #88, #89 and #93 each hit again:
+ * §2 forbids Devanagari below the floor and the small slots (`--text-caption`, `--text-micro`) set
+ * Barlow, which draws none, so the ramp still owes a course-prose slot below 18px. Built to the
+ * floor per the standing precedent, flagged again on #117, no token invented.
+ *
+ * It costs more here than anywhere: three lines of a row that the prototype fits on one and a
+ * half, inside a card that already carries the answer at 26px. What it buys is a "why" a learner
+ * can actually read in Devanagari — which is the entire feature.
+ */
+.courseProse {
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+}
+
+/* No border and no fill: the rows are separated by the panel's gap, and the panel's own top
+   hairline is the only rule in the expansion (the prototype's `border-top` + column gap). */
+.row {
+  display: flex;
+  flex-direction: column;
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+/* The word itself — Mukta 600 at the floor, the same row Sentence Detail prints (#89) and the one
+   line where the prototype and §2 already agree. The prototype's 52px/40px alignment columns are
+   dropped: there is no token for either, and a wrapping Devanagari word needs the width more than
+   the rows need a shared left edge. */
+.display {
+  font: var(--text-l2-list);
+  font-size: var(--devanagari-min-size);
+}
+
+.cue {
+  composes: courseProse;
+  color: var(--ink-50);
+}
+
+/* The chip ends the row — `margin-inline-start: auto`, so an RTL course flips it. */
+.head > :last-child {
+  margin-inline-start: auto;
+}
+
+/* The note sits under the head as its second line, at `--ink-65` for the prototype's 60% ink. */
+.note {
+  composes: courseProse;
+  margin: var(--space-1) 0 0;
+  color: var(--ink-65);
+}

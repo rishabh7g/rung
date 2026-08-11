@@ -29,7 +29,7 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 47 keys: the 21 of PRD §4, the 5 the frozen screens forced
+ * file it is complaining about). 50 keys: the 21 of PRD §4, the 5 the frozen screens forced
  * (PR #120) — `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and the four
  * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — the 3 the Ladder
  * forced (#86): the counts-only pending line, the ownership footer and the sealed-level toast,
@@ -37,11 +37,12 @@
  * card forced (#87): a label per CTA across the four [D22] stages, plus the fresh-rung note — the
  * 3 the module list forced (#88): its helper line, the "open full" label and the interference
  * -trap note on an expanded card — the 4 Sentence Detail forced (#89): the trap callout's
- * heading, the mnemonic's "pocket it" label, and the two pager buttons — and the 4 the reveal
+ * heading, the mnemonic's "pocket it" label, and the two pager buttons — the 4 the reveal
  * card forced (#93): the two self-mark segments [D11], the question the card asks above them, and
- * the Next that does not exist until one of them is chosen.
+ * the Next that does not exist until one of them is chosen — and the 3 the "why" panel forced
+ * (#94): its toggle's two labels and the "open full" that leaves the session.
  *
- * Those twenty-one are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
+ * Those twenty-four are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
  * as PR #120's were. The alternative each time was hardcoding learner-facing lines in the shell,
  * which is the one thing this list exists to prevent.
  */
@@ -88,6 +89,9 @@ export const STRINGS_KEYS = [
   'mark.missed',
   'mark.prompt',
   'mark.next',
+  'why.show',
+  'why.hide',
+  'why.openFull',
   'pendingAuthoring',
   'verdict.line',
   'switchToast',
@@ -194,6 +198,25 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'mark.missed': [],
   'mark.prompt': [],
   'mark.next': [],
+  /**
+   * The "why" panel (#94) — the three words the shared expansion says in its own right, on every
+   * revealed surface (Review, Produce, Comprehension). The toggle carries two labels because it
+   * says what it will DO, and the prototype writes both ("why" / "hide why"); `aria-expanded`
+   * states the same thing to a screen reader, which is why the words may differ per course
+   * without the control changing meaning.
+   *
+   * `why.openFull` is deliberately NOT `module.openFull`: the module list's control opens a
+   * sentence from a browsing list, this one leaves a running session for it. A course may well
+   * word them the same; sharing the key would mean it could never word them differently — the
+   * call #93 made for `mark.next` against `sentence.next`.
+   *
+   * None of them interpolates: they are labels, not sentences. The delta-learning tag inside the
+   * rows stays English furniture (`TagChip`, #89) — it names the model, it does not teach the
+   * language.
+   */
+  'why.show': [],
+  'why.hide': [],
+  'why.openFull': [],
   pendingAuthoring: [],
   /** The rung that just opened. */
   'verdict.line': ['{nextModule}'],
