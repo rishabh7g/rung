@@ -1,0 +1,48 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1). */
+
+.nav {
+  flex: none;
+  display: flex;
+  background: var(--color-bg);
+  border-top: var(--border-hairline);
+  padding: var(--space-2) var(--space-3);
+  /* The home indicator (design/pwa-checklist.md §2): the device's own inset when there is one,
+     the design's gap when there isn't — so a desktop browser, where every inset is 0, still
+     gets the padding the prototype draws. */
+  padding-bottom: max(var(--space-8), env(safe-area-inset-bottom));
+}
+
+.item {
+  flex: 1;
+  min-width: 0;
+  /* 48px — above the --tap-min floor, because a bottom nav is thumb territory. */
+  min-height: var(--nav-item-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  color: var(--ink-55);
+  text-decoration: none;
+  cursor: pointer;
+  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* The active tab, straight off NavLink's own aria-current — one state, not two. */
+.item[aria-current='page'] {
+  color: var(--color-accent-700);
+}
+
+.icon {
+  width: var(--icon-ui);
+  height: var(--icon-ui);
+  stroke-width: var(--icon-stroke);
+}
+
+.label {
+  font: var(--text-kicker-sm);
+  letter-spacing: var(--kicker-tracking);
+  text-transform: uppercase;
+}

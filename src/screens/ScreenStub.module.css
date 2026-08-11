@@ -1,0 +1,23 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1). */
+
+.stub {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-6);
+}
+
+.kicker {
+  margin: 0;
+  font: var(--text-kicker);
+  letter-spacing: var(--kicker-tracking);
+  text-transform: uppercase;
+  color: var(--color-accent-700);
+}
+
+.note {
+  margin: 0;
+  font: var(--text-caption);
+  color: var(--ink-55);
+}

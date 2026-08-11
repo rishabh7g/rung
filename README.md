@@ -306,12 +306,50 @@ the map (the call table is asserted to cover the store's whole action surface, s
 cannot skip the check by being new); and it scans every shipped file for a `setState` call, because
 an action list is not a gate if a screen can write past it.
 
+### The app shell — one frame, three headers, one flag
+
+`src/shell/` is the chrome every screen renders inside (#84; PRD-design §4 [D8, D21]), and
+`src/screens/` is the eight screens themselves — stubs today, each naming the ticket that builds
+it. The IA is the whole route table, and the table is data (`src/shell/routes.tsx`): `App` builds
+the `<Routes>` from it and `AppShell` matches the location against it, so a screen the router
+knows about and the chrome does not cannot happen.
+
+| | |
+|---|---|
+| `/` | Ladder (#86) — home, first run, and where an unknown route lands |
+| `/module/:id` · `/sentence/:id` · `/ritual` · `/comprehension` · `/verdict` | children of the active rung: **back header** to the Ladder |
+| `/practice` · `/settings` | the other two tabs: **brand header** |
+
+**HashRouter, not BrowserRouter.** The product is a static, zero-backend, installable PWA — a
+deep link under a history router needs a server rewrite and there is no server to ask.
+`#/module/L1-M1` survives a refresh and an offline cold start.
+
+**Immersion is one boolean, and it lives in a context** (`src/shell/immersive.tsx`), never in the
+store: `src/state/` is the persisted document whose shape is the export contract (#82), and "a
+session is on screen right now" is not something to restore into a build that is showing the
+Ladder. Raising it hides the bottom nav **entirely** and puts a `--tap-min` pause ✕ top right —
+always, because an immersive screen with no way out is the failure the shell exists to prevent.
+The ✕ ends the session and lands on the Practice hub; so does leaving the route, so the Android
+back button cannot walk out of a session and leave the nav hidden. What a session *is* (the
+per-course snapshot, and resuming into it) is #96 and #99.
+
+**Phone-correct layout**, and the two rules that keep it that way: the app column is `100dvh`
+(never `100vh` — a mobile URL bar shrinks the viewport and `100vh` does not notice) and never
+scrolls; `<main>` is the one scroll area, `overflow-y: auto; overflow-x: hidden;
+overscroll-behavior: contain`. Every safe area is written `max(var(--space-N),
+env(safe-area-inset-*))` — a phone gets its real inset, and a desktop browser, where every inset
+is 0, still gets the design's padding. `src/shell/layout.test.ts` pins both from the CSS source,
+because jsdom resolves neither `env()` nor `max()`; the numbers themselves are checked in a
+browser at 360px and 430px, which is the ticket's acceptance criterion.
+
 Two rules the scaffold bakes in, before you write a component:
 
 - **Tokens only.** `src/main.tsx` imports `design/tokens.css` *in place* — `design/`
   is read-only and re-copied wholesale, so importing it directly means token updates
   land with zero copy step. Style with `var(--*)`; no hard-coded hex, px or font names
-  anywhere in `src/` (`docs/design-contract.md`).
+  anywhere in `src/` (`docs/design-contract.md`) — `src/styleContract.test.ts` scans every
+  stylesheet the app ships and fails naming the file and line, the same mechanical shape as
+  shell purity and the clock guard.
 - **One brand constant.** `src/brand.ts` exports `BRAND` — the only place the product
   name lives. Page title, manifest and export filenames all read from it.
 - **Content has a contract.** `content/schema/module.schema.json` (JSON Schema draft

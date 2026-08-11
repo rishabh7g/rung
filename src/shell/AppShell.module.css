@@ -1,0 +1,100 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   Safe areas are written as max(token, env(...)): a phone gets its real inset, and a desktop
+   browser — where every inset resolves to 0 — still gets the design's padding
+   (design/pwa-checklist.md §2). */
+
+.app {
+  /* 100dvh, never 100vh: a mobile URL bar shrinks the viewport and 100vh does not notice
+     (design/pwa-checklist.md §2). The 100% line ahead of it is the fallback for engines with
+     no dvh — the html/body/#root chain is 100% tall. */
+  height: 100%;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  /* The column itself never scrolls; the screen inside it does. */
+  overflow: hidden;
+}
+
+.header {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-6);
+  padding-top: max(var(--space-3), env(safe-area-inset-top));
+  border-bottom: var(--border-hairline);
+}
+
+/* During a session the chrome is gone — the safe area is not. */
+.headerImmersive {
+  composes: header;
+  border-bottom: none;
+}
+
+/* The brand lockup: mark + lowercase wordmark, --font-heading at the brand size. */
+.brand {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font: var(--text-brand);
+  color: var(--color-text);
+}
+
+.mark {
+  flex: none;
+  width: var(--brand-mark);
+  height: var(--brand-mark);
+}
+
+.screenTitle {
+  margin: 0;
+  min-width: 0;
+  font: var(--text-screen-title);
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  /* Every control clears the WCAG floor (design/tokens.md §4). */
+  min-width: var(--tap-min);
+  min-height: var(--tap-min);
+  padding: 0;
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.back {
+  composes: iconButton;
+  /* pull the chevron's box back to the header's edge, leaving the target its full size */
+  margin-left: calc(-1 * var(--space-3));
+}
+
+.pause {
+  composes: iconButton;
+  /* top right, and the only thing in the row */
+  margin-left: auto;
+}
+
+.icon {
+  width: var(--icon-ui);
+  height: var(--icon-ui);
+  stroke-width: var(--icon-stroke);
+}
+
+/* The one scroll area: every screen scrolls its own column (design/pwa-checklist.md §1). */
+.screen {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* no pull-to-refresh, no scroll chaining out of a session */
+  overscroll-behavior: contain;
+}

@@ -21,5 +21,10 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
     include: ['src/**/*.test.{ts,tsx}', 'tools/**/*.test.ts', 'scripts/**/*.test.ts'],
+    // Stylesheets stay stubbed — components are tested through the DOM, and jsdom resolves
+    // neither env() nor max() anyway. The one exception is an explicit `?raw` import: the style
+    // guards (src/styleContract.test.ts, src/shell/layout.test.ts) read the CSS as text, and
+    // without this vitest hands them its class-name proxy instead of the source.
+    css: { include: [/\.css\?raw$/] },
   },
 });
