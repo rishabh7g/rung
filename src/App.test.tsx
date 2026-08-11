@@ -2,12 +2,14 @@ import { render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App.tsx';
 import { BRAND } from './brand.ts';
+import { resetContentCache } from './course/content.ts';
 import { resetManifestCache } from './course/manifest.ts';
 import { resetStringsCache } from './course/strings.ts';
 import { DEV_MANIFEST, mockContentFetch } from './test/courseManifest.ts';
 import { stringValue } from './test/courseStrings.ts';
 
 beforeEach(() => {
+  resetContentCache();
   resetManifestCache();
   resetStringsCache();
 });
@@ -44,6 +46,26 @@ describe('App', () => {
     render(<App />);
 
     expect(await screen.findByRole('alert')).toHaveTextContent(/no "courses" array/);
+  });
+
+  // SMOKE (#81) — these two go with the wiring the Ladder ticket (#86) replaces.
+  it("lists the active course's L1 rungs, read from its own levels.json", async () => {
+    const fetchMock = mockContentFetch(DEV_MANIFEST);
+
+    render(<App />);
+
+    expect(await screen.findByText('Who I am')).toBeInTheDocument();
+    expect(screen.getByText('First exchange')).toBeInTheDocument();
+    expect(screen.getByText(/Foundations · 2 of 3 rungs have content/)).toBeInTheDocument();
+    expect(fetchMock).toHaveBeenCalledWith('/content/hi-mr/levels.json');
+  });
+
+  it('shows the content-error screen when the ladder is broken, not a blank rung list', async () => {
+    mockContentFetch(DEV_MANIFEST, undefined, { levels: { courseId: 'hi-mr' } });
+
+    render(<App />);
+
+    expect(await screen.findByRole('alert')).toHaveTextContent(/levels: must be a non-empty array/);
   });
 
   it("renders the active course's own microcopy, interpolated — the shell supplies none", async () => {

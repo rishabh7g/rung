@@ -8,6 +8,7 @@
  */
 import { vi } from 'vitest';
 import { completeStrings } from './courseStrings.ts';
+import { indexFixture, levelsFixture, moduleFixture } from './courseContent.ts';
 
 export const DEV_MANIFEST = {
   devBuild: true,
@@ -48,21 +49,52 @@ export const DEV_MANIFEST = {
 export const STRICT_EMPTY_MANIFEST = { courses: [] } as const;
 
 /**
- * Installs a `fetch` over the whole content tree and returns the mock, so a test can count calls
- * (both loaders cache) or read the URLs it asked for.
- *
- * It routes rather than answering everything alike, because boot now reads two files (#80):
- * `…/strings.json` gets the strings payload — a complete bundle for whichever course was asked
- * for, unless a test supplies its own — and anything else gets the manifest.
+ * A test's own answer for one of the per-course files, when what it is testing is a BROKEN one.
+ * Omitted files answer with the fixture for whichever course and module were asked for.
  */
-export function mockContentFetch(manifest: unknown, strings?: unknown) {
+export interface ContentOverrides {
+  levels?: unknown;
+  module?: unknown;
+  index?: unknown;
+}
+
+/**
+ * Installs a `fetch` over the whole content tree and returns the mock, so a test can count calls
+ * (every loader caches) or read the URLs it asked for.
+ *
+ * It routes rather than answering everything alike, because the app reads five kinds of file
+ * (#80, #81): the manifest, then per course a strings bundle, a ladder, a module and its word
+ * index. Each route answers with that file's fixture for the course and module in the URL —
+ * so a test only supplies a payload when the payload is the point.
+ */
+export function mockContentFetch(
+  manifest: unknown,
+  strings?: unknown,
+  content: ContentOverrides = {},
+) {
   const fetchMock = vi.fn((input: RequestInfo | URL) => {
     const url = String(input);
-    const match = /content\/([^/]+)\/strings\.json$/.exec(url);
-    const payload = match === null ? manifest : (strings ?? completeStrings(match[1] as string));
-
-    return Promise.resolve(new Response(JSON.stringify(payload), { status: 200 }));
+    return Promise.resolve(new Response(JSON.stringify(route(url)), { status: 200 }));
   });
   vi.stubGlobal('fetch', fetchMock);
+
+  function route(url: string): unknown {
+    const strings_ = /content\/([^/]+)\/strings\.json$/.exec(url);
+    if (strings_ !== null) return strings ?? completeStrings(strings_[1] as string);
+
+    const levels = /content\/([^/]+)\/levels\.json$/.exec(url);
+    if (levels !== null) return content.levels ?? levelsFixture(levels[1] as string);
+
+    const module = /content\/[^/]+\/modules\/([^/]+)\.json$/.exec(url);
+    if (module !== null) return content.module ?? moduleFixture(module[1] as string);
+
+    const index = /content\/([^/]+)\/index\/([^/]+)\.json$/.exec(url);
+    if (index !== null) {
+      return content.index ?? indexFixture(index[1] as string, index[2] as string);
+    }
+
+    return manifest;
+  }
+
   return fetchMock;
 }
