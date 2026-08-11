@@ -29,16 +29,17 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 39 keys: the 21 of PRD §4, the 5 the frozen screens forced
+ * file it is complaining about). 43 keys: the 21 of PRD §4, the 5 the frozen screens forced
  * (PR #120) — `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and the four
  * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — the 3 the Ladder
  * forced (#86): the counts-only pending line, the ownership footer and the sealed-level toast,
  * which PRD-design §5 prints as copy but PRD §4's inventory never listed — the 7 the staged rung
- * card forced (#87): a label per CTA across the four [D22] stages, plus the fresh-rung note — and
- * the 3 the module list forced (#88): its helper line, the "open full" label and the interference
- * -trap note on an expanded card.
+ * card forced (#87): a label per CTA across the four [D22] stages, plus the fresh-rung note — the
+ * 3 the module list forced (#88): its helper line, the "open full" label and the interference
+ * -trap note on an expanded card — and the 4 Sentence Detail forced (#89): the trap callout's
+ * heading, the mnemonic's "pocket it" label, and the two pager buttons.
  *
- * Those thirteen are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
+ * Those seventeen are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
  * as PR #120's were. The alternative each time was hardcoding learner-facing lines in the shell,
  * which is the one thing this list exists to prevent.
  */
@@ -77,6 +78,10 @@ export const STRINGS_KEYS = [
   'module.helper',
   'module.openFull',
   'module.trapNote',
+  'sentence.trapHead',
+  'sentence.pocketIt',
+  'sentence.prev',
+  'sentence.next',
   'pendingAuthoring',
   'verdict.line',
   'switchToast',
@@ -154,6 +159,19 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'module.helper': [],
   'module.openFull': [],
   'module.trapNote': [],
+  /**
+   * Sentence Detail (#89) — the four things the screen says in its own right. Its ten section
+   * labels stay English furniture (`WORD BY WORD`, `RULES USED` …), in the register of the
+   * `M1 · SENTENCE 02` kicker; these four are not. The trap's heading is a sentence about the
+   * learner's own first language ("Hindi will mislead you"), `pocketIt` is the mnemonic's label
+   * and PRD §8 F3 names it as course copy, and the two pager buttons are controls the learner
+   * reads — the same call #87 made for the rung card's labels. None of them interpolates: the
+   * pager's position is a `n / total` count the shell renders, not a sentence.
+   */
+  'sentence.trapHead': [],
+  'sentence.pocketIt': [],
+  'sentence.prev': [],
+  'sentence.next': [],
   pendingAuthoring: [],
   /** The rung that just opened. */
   'verdict.line': ['{nextModule}'],

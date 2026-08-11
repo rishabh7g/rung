@@ -1,0 +1,428 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   Geometry follows design/Rung App v3.3.dc.html → Sentence Detail, section by section; every
+   length is the nearest token on the Industry scale (design/tokens.md §3, §4).
+
+   ONE rule governs the colour of this screen (design/tokens.md §7 rule 2): the interference
+   trap is amber and nothing else is. The `--interference-*` fill, border, icon and text appear
+   in `.trap*` below and nowhere else in this file; the mistake plate is `--mistake-border` /
+   `--mistake-bg` with struck neutral text — never amber, never red. SentenceScreen.test.tsx
+   scans this stylesheet for exactly that. */
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  /* the prototype's 18px between sections */
+  gap: var(--space-6);
+  padding: var(--space-4) var(--space-6) var(--space-8);
+}
+
+/* ------------------------------------------------------------------- the head row */
+
+/* The prototype's header row, minus the chevron and the screen name the shell owns (#84, #117):
+   the kicker on the left, the sentence's two production dots hard right. */
+.head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: var(--border-hairline);
+}
+
+.kicker {
+  flex: 1;
+  margin: 0;
+  font: var(--text-kicker);
+  letter-spacing: var(--kicker-tracking);
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--color-accent-700);
+}
+
+/* ------------------------------------------------------------ course prose, once */
+
+/**
+ * Everything on this screen that the LEARNER reads as teaching — the cue, the literal, the word
+ * cues and notes, the rules, the trap, the sound note, the variations, the mistake's why, the
+ * usage and the mnemonic — is the course's own prose, which for hi-mr is Devanagari. So it is
+ * Mukta, never below `--devanagari-min-size` (design/tokens.md §2), where the prototype writes
+ * 11.5–14.5px in the body face.
+ *
+ * Fourth recurrence of the same wall: #86 (prose), #87 (CTA labels), #88 (word chips), and now
+ * a whole screen of it. §2 forbids Devanagari below the floor and a caption token sets it in
+ * Barlow, which draws none — so the ramp still owes a course-prose slot. Built to the floor per
+ * the standing precedent; flagged again on #117; no token invented.
+ *
+ * The one place this screen escapes it is `TagChip` — its label is English furniture, so the
+ * design's own 9.5–11px band applies there.
+ */
+.courseProse {
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+}
+
+.prose {
+  composes: courseProse;
+  margin: 0;
+}
+
+/* A section's label: the prototype's 10px condensed kicker, uppercase and tracked. English
+   furniture in the register of the `M1 · SENTENCE 02` kicker above (#71) — never course copy,
+   which is why it may live below the Devanagari floor. */
+.sectionLabel {
+  margin: 0;
+  font: var(--text-kicker-sm);
+  letter-spacing: var(--kicker-tracking);
+  text-transform: uppercase;
+  color: var(--color-accent-700);
+}
+
+/**
+ * The two labels that ARE course copy — the trap's heading and the mnemonic's "pocket it"
+ * (PRD §8 F3: "labelled 'Pocket it' (label from strings)"). They take the course-prose treatment
+ * rather than the kicker's: uppercasing and tracking a Devanagari string is not a style the
+ * design package has, and §2's floor applies to a label as much as to a paragraph.
+ */
+.courseLabel {
+  composes: courseProse;
+  margin: 0;
+  font-weight: var(--font-heading-weight);
+  color: var(--color-accent-700);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* ---------------------------------------------------------------------- 1 · hero */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+}
+
+/* The one hero slot in the ramp: Mukta 700 32px/1.55 (design/tokens.md §2). */
+.display {
+  margin: 0;
+  font: var(--text-l2-hero);
+}
+
+.cue {
+  composes: prose;
+  margin-top: var(--space-1);
+  color: var(--ink-55);
+}
+
+/* Romanized courses only: 15px in `--ink-40`, set in `--font-script-fallback` because Barlow
+   draws no Arabic and Mukta is Devanagari (design/tokens.md §2). Same recipe as the module
+   list's quiet line — the app's only two font-family overrides, and both take the token. */
+.script {
+  margin: var(--space-2) 0 0;
+  font: var(--text-body);
+  font-family: var(--font-script-fallback);
+  color: var(--ink-40);
+}
+
+/* --------------------------------------------------------------------- 2 · gloss */
+
+/* English in every course by name (`glossEn`), so the body face and no floor — it is the quiet
+   line under the hero, exactly as the prototype has it. */
+.gloss {
+  margin: 0;
+  font: var(--text-secondary);
+  color: var(--ink-45);
+}
+
+/* The word-for-word plate: an accent rule down the start edge, no fill (design/tokens.md §3 —
+   blueprint objects carry no surface). */
+.plateAccent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-inline-start: var(--space-3);
+  border-inline-start: var(--border-hairline);
+  border-inline-start-width: var(--tick-height);
+  border-inline-start-color: var(--color-accent-300);
+}
+
+/* The same plate in the neutral key — the sound note and the usage note (prototype: a 2px
+   neutral-300 rule). */
+.plateQuiet {
+  composes: plateAccent;
+  border-inline-start-color: var(--color-neutral-300);
+}
+
+/* --------------------------------------------------------------------- 3 · words */
+
+.rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* A blueprint row: hairline, radius 0, no fill. */
+.word {
+  padding: var(--space-3);
+  border: var(--border-hairline);
+}
+
+.wordHead {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+/* The word itself — the prototype's Mukta 600 18px, which is the floor exactly: the one line on
+   this screen where the two agree. */
+.wordDisplay {
+  font: var(--text-l2-list);
+  font-size: var(--devanagari-min-size);
+}
+
+.wordCue {
+  composes: courseProse;
+  color: var(--ink-50);
+}
+
+/* The chip is pushed to the row's end — `margin-inline-start: auto` so an RTL course flips it. */
+.wordHead > :last-child {
+  margin-inline-start: auto;
+}
+
+.wordNote {
+  composes: prose;
+  margin-top: var(--space-1);
+  color: var(--ink-75);
+}
+
+.forms {
+  composes: prose;
+  margin-top: var(--space-1);
+  color: var(--ink-50);
+}
+
+/* --------------------------------------------------------------------- 4 · rules */
+
+.rules {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.rule {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+/* ---------------------------------------------------------------------- 5 · trap */
+
+/**
+ * The ONLY loud object on the screen (design/tokens.md §6 "Trap callout", §7 rule 2): the amber
+ * fill, the amber hairline, the ⚠ in `--interference-icon` and the text in `--interference-text`.
+ * Nothing else in this file touches an `--interference-*` token, and the test asserts it.
+ */
+.trap {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--interference-bg);
+  border: var(--border-hairline);
+  border-color: var(--interference-border);
+}
+
+.trapIcon {
+  flex: none;
+  width: var(--icon-ui);
+  height: var(--icon-ui);
+  color: var(--interference-icon);
+  stroke-width: var(--icon-stroke);
+}
+
+.trapText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.trapHead {
+  composes: courseLabel;
+  color: var(--interference-text);
+}
+
+.trapBody {
+  composes: prose;
+  color: var(--interference-text);
+}
+
+/* ---------------------------------------------------------------- 7 · variations */
+
+.variation {
+  padding: var(--space-3);
+  border: var(--border-hairline);
+}
+
+/* The tokens are laid out with the gap where the spaces were, so the changed part can carry a
+   fill of its own without the space beside it lighting up too. */
+.variationLine {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-2);
+  margin: 0;
+  font: var(--text-l2-list);
+  font-size: var(--devanagari-min-size);
+}
+
+/* "Same pattern, swapped parts" — the swapped part, and only it, is filled [D10]. */
+.changed {
+  background: var(--variation-highlight);
+}
+
+.variationCue {
+  composes: prose;
+  margin-top: var(--space-1);
+  color: var(--ink-50);
+}
+
+.variationChanged {
+  composes: prose;
+  margin-top: var(--space-2);
+  color: var(--color-accent-800);
+}
+
+/* ------------------------------------------------------------------- 8 · mistake */
+
+/**
+ * The struck-text plate (design/tokens.md §1): `--mistake-border` / `--mistake-bg`, the wrong
+ * line struck through in neutral ink. **Never amber, never red** — a common mistake is
+ * information about the language, not a warning about the learner, and amber means exactly one
+ * thing in this product.
+ */
+.mistake {
+  padding: var(--space-3);
+  background: var(--mistake-bg);
+  border: var(--border-hairline);
+  border-color: var(--mistake-border);
+}
+
+.mistakeDisplay {
+  composes: courseProse;
+  margin: 0;
+  text-decoration: line-through;
+  color: var(--color-neutral-600);
+}
+
+.mistake > .prose {
+  margin-top: var(--space-1);
+}
+
+/* --------------------------------------------------------------------- 9 · usage */
+
+.usageHead {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+/* The register chip — a closed enum (`neutral` · `informal`), English like the tag labels, so
+   it takes the neutral tag pair at the design's own chip size (design/tokens.md §6). */
+.register {
+  padding: var(--space-1) var(--space-2);
+  background: var(--tag-free-bg);
+  color: var(--tag-free-fg);
+  font: var(--text-micro);
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------- 10 · mnemonic */
+
+/* A blueprint object — hairline, radius 0, ground fill, and the four `+` registration marks
+   (design/tokens.md §3, §7 rule 3), which is what `position: relative` is for. */
+.mnemonic {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg);
+  border: var(--border-hairline);
+}
+
+/* ------------------------------------------------------------------- the pager */
+
+/**
+ * Prev / position / next. The prototype pins this bar below its own scroll area; the app has
+ * exactly one scroll area (`<main>`, design/pwa-checklist.md §1), so it is **sticky** at the
+ * bottom of the screen's column instead — reachable one-handed at any scroll depth, which is
+ * the affordance the prototype's footer has. The negative margins bleed it to the screen's
+ * edges, past the column's own padding.
+ */
+.pager {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0 calc(-1 * var(--space-6)) calc(-1 * var(--space-8));
+  padding: var(--space-3) var(--space-6);
+  background: var(--color-bg);
+  border-top: var(--border-hairline);
+}
+
+/* Secondary buttons at `--btn-secondary-height` (46px), which clears `--tap-min` — the same call
+   PR #139 and #140 made where the prototype writes a bare 46 inline. */
+.step {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--btn-secondary-height);
+  padding: var(--space-2) var(--space-3);
+  background: none;
+  border: var(--border-hairline);
+  color: inherit;
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  white-space: nowrap;
+  cursor: pointer;
+  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.step:active:not(:disabled) {
+  background: color-mix(in srgb, var(--color-text) 14%, transparent);
+}
+
+/* The ends of the module: 45% opacity, the base system's disabled state (design/tokens.md §6). */
+.step:disabled {
+  opacity: 45%;
+  cursor: default;
+}
+
+.stepIcon {
+  flex: none;
+  width: var(--icon-inline);
+  height: var(--icon-inline);
+  stroke-width: var(--icon-stroke);
+}
+
+.position {
+  flex: none;
+  margin: 0;
+  font: var(--text-caption);
+  white-space: nowrap;
+  color: var(--ink-50);
+}

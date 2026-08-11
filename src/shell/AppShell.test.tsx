@@ -76,7 +76,10 @@ describe('bottom nav', () => {
 
 describe('routes', () => {
   it.each(SHELL_ROUTES.map((route) => route.path))('mounts a screen at %s', async (path) => {
-    const hash = `#${path.replace(':id', 'L1-M1')}`;
+    // Sentence Detail reads its module back out of the id (#89), so `:id` there is a sentence's
+    // id and not a module's — an id that names no module is a route that redirects, which is the
+    // one thing this case must not do.
+    const hash = `#${path.replace('/sentence/:id', '/sentence/L1-M1-S01').replace(':id', 'L1-M1')}`;
 
     await renderAt(hash);
 
@@ -116,7 +119,6 @@ describe('headers', () => {
   });
 
   it.each([
-    ['#/sentence/S1', 'Sentence'],
     ['#/ritual', 'Exit ritual'],
     ['#/comprehension', 'Comprehension'],
     ['#/verdict', 'Verdict'],
@@ -125,6 +127,26 @@ describe('headers', () => {
 
     expect(screen.getByRole('heading', { level: 1, name: title })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Back to the ladder' })).toBeInTheDocument();
+  });
+
+  it('takes Sentence Detail back to its module, not to the Ladder (#89)', async () => {
+    await renderAt('#/sentence/L1-M1-S02');
+
+    expect(screen.getByRole('heading', { level: 1, name: 'Sentence' })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Back to the ladder' })).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Back to the module' }));
+
+    expect(window.location.hash).toBe('#/module/L1-M1');
+  });
+
+  it('sends a sentence id that names no module back to the Ladder', async () => {
+    // `/sentence/S1` is a real thing a deep link can carry: the screen refuses it, and the
+    // chevron the shell drew on the way there points at the Ladder rather than at nothing.
+    await renderAt('#/sentence/S1');
+
+    expect(await screen.findByRole('heading', { level: 1, name: BRAND })).toBeInTheDocument();
+    expect(window.location.hash).toBe('#/');
   });
 });
 

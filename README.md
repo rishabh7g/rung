@@ -150,7 +150,7 @@ Two consequences worth knowing before you author content:
   emitter imports it; the runtime resolver will too. Never copy it: a second copy is a word
   that silently has no "why".
 
-### The strings contract — 39 keys, no fallback copy
+### The strings contract — 43 keys, no fallback copy
 
 Every course ships one `strings.json` carrying **all** the microcopy the shell renders, because
 the shell has none of its own (PRD §4). So the build validates it against the canonical key list
@@ -166,7 +166,7 @@ declared twice.
 `tools/strings-check.ts` runs per course, flattens the nested file onto dot-paths
 (`ritual.check.copy`), and reports four things, always naming course **and** key:
 
-- **missing key** — the 39 canonical paths must all be there;
+- **missing key** — the 43 canonical paths must all be there;
 - **empty or non-string value** — a present-but-blank key is a missing key with extra steps;
 - **unknown key** — the typo tripwire; `ritual.check.plate` would otherwise sit quietly beside a
   missing `plateLabel`;
@@ -177,11 +177,13 @@ declared twice.
 
 Adding a key is one edit to `src/course/stringsKeys.ts` plus a line in each of the three bundles —
 in that order, because the build will tell you exactly which course you forgot. The list grew that
-way four times: five keys the frozen screens forced (PR #120), three the Ladder forced (#86 —
+way five times: five keys the frozen screens forced (PR #120), three the Ladder forced (#86 —
 `ladder.pendingLine`, `ladder.ownership`, `ladder.sealedToast`), seven the staged rung card forced
 (#87 — `rungCard.startModule`, `.freshNote`, `.practice`, `.revisitModule`, `.exitRitual`,
-`.module`, `.practiceEarlier`: a label for every control across the four [D22] stages) and three
-the module list forced (#88 — `module.helper`, `module.openFull`, `module.trapNote`). All thirteen
+`.module`, `.practiceEarlier`: a label for every control across the four [D22] stages), three
+the module list forced (#88 — `module.helper`, `module.openFull`, `module.trapNote`) and four
+Sentence Detail forced (#89 — `sentence.trapHead`, `.pocketIt`, `.prev`, `.next`: the trap
+callout's heading, the mnemonic's label and the two pager buttons). All seventeen
 are **draft values pending the Sync-3 freeze** (#71). The alternative each time was a
 learner-facing line hardcoded in the shell, which is the one thing this list exists to prevent.
 
@@ -495,6 +497,70 @@ Three divergences from the prototype, on top of the Ladder's and the card's:
 The one place the app overrides a font shorthand's family is the quiet script line, which takes
 `--font-script-fallback` (design/tokens.md §2) — so `src/styleContract.test.ts` bans a face by
 *name* and allows `font-family: var(--…)`, which is the opposite of one.
+
+### Sentence Detail — ten sections, one order, and the mnemonic last
+
+`src/screens/SentenceScreen.tsx` (#89; PRD §8 F3 [D10], PRD-design §6.4, §7) is one sentence taken
+apart. **The order is the feature**, and it is frozen:
+
+> hero → gloss → words → rules → trap → sound → variations → mistake → usage → mnemonic
+
+It runs from what the sentence says, to why it says it, to what will trip a Hindi speaker, and ends
+on the one thing worth carrying away — the mnemonic, under the course's own "pocket it" label. A
+learner who opens a second sentence finds the same shape in the same place, which is the whole
+point of freezing it; every section carries a `data-section`, so the order is a **DOM assertion**
+in `SentenceScreen.test.tsx` rather than the reading order of a file.
+
+Four more things it owes:
+
+- **A section with nothing in it renders nothing.** No heading, no empty plate, no "not available".
+  Enrichment is optional in the schema past M3, so an M4+ module may ship as hero + gloss + words +
+  rules and nothing else — and that is a simple sentence, not a broken screen (asserted against a
+  sparse fixture).
+- **Amber exactly once.** The interference trap is the only loud object on the screen
+  (design/tokens.md §7 rule 2); the mistake plate is deliberately **neutral** — `--mistake-border`
+  / `--mistake-bg`, struck text — because a common mistake is information about the language, not
+  a warning about the learner. The test **reads the stylesheet**: every rule carrying an
+  `--interference-*` token must be a `.trap*` selector, and the mistake rules must carry neither
+  that nor the self-marks' red.
+- **`deconstruction.rules` are indices**, resolved through the module's own ordered `rules` array
+  (PRD §7). An index the module has not got renders nothing at all and the rest of the section
+  still draws: the build checks the ranges (`tools/validate.ts`), and a learner's screen is not
+  where a content bug should surface.
+- **Prev/next inside the module, and the back chevron to the module.** The pager is bounded by the
+  module's own list (`disabled` at both ends, `--btn-secondary-height`) and navigates with
+  `replace`, because paging is one screen rather than ten destinations. Where "back" goes is the
+  route table's answer (`shell/routes.tsx` → `backTarget`), not the header's: Sentence Detail is
+  the one child of a rung that returns to its **module**, which restores the offset and the open
+  cards #88 remembered. Every sentence opens at its own top.
+
+`screens/TagChip.tsx` is the delta-learning tag as a shared component — `free` · `delta` ·
+`interference`, one token pair each, and **the name is always a text node**: a chip that said
+"interference" only in amber says nothing to a screen reader, to a greyscale screenshot or to
+anyone who cannot separate amber from steel. It is the one chip in the app at the design's own
+size (`--text-micro`, inside §6's 9.5–11px band) because its label is English furniture and no
+Devanagari can land in it. The word rows and the rules both wear it, and Practice's "why" rows
+(#93) are the next caller.
+
+Divergences from the prototype, on top of the module list's:
+
+- **The whole screen is course prose at the 18px Mukta floor** — the cue, the literal, the word
+  cues and notes, the forms, the rules, the trap, the sound note, the variations, the mistake's
+  why, the usage, the mnemonic and the two pager labels, where the prototype writes 11.5–14.5px.
+  Fourth recurrence of #86's wall, same answer: build to §2's floor, flag it on **#117**, invent no
+  token. The hero (`--text-l2-hero`) and the word rows (18px, weight 600) match the prototype
+  exactly.
+- **The two course-copy labels are not kickers.** `sentence.trapHead` and `sentence.pocketIt` are
+  the course's words, and uppercasing + tracking a Devanagari string is not a style the design
+  package has — so they render as course prose in `--color-accent-700` where the prototype writes a
+  10px condensed kicker. The eight structural section labels (`WORD BY WORD`, `RULES USED` …) stay
+  English furniture at `--text-kicker-sm`, in the register of the `M1 · SENTENCE 02` kicker.
+- **The pager is sticky, not fixed.** The prototype pins it below its own scroll area; the app has
+  exactly one scroll area, so the bar sticks to the bottom of the screen's column — same
+  one-handed affordance, one scroll area. The head row (kicker + production dots) is the screen's
+  first row for the same reason the module list's is (#84, #117).
+- **The position reads `3 / 10`**, not the prototype's "3 of 10": counts, never a sentence the
+  shell would have to own an English word for.
 
 ### The fonts — bundled, because offline is the product
 

@@ -1,0 +1,50 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   design/tokens.md §6 "Tag chips: 9.5–11px, padding 1px 7px – 3px 9px; delta/free/interference
+   token pairs" — the recipe verbatim, at the nearest tokens on the Industry scale. */
+
+/**
+ * The chip's label is English furniture (`free` · `delta` · `interference`), never a course
+ * string — which is why this is the one chip in the app that sits at the design's own size:
+ * `--text-micro` (10.5px) is inside §6's 9.5–11px band, and no Devanagari can land in it, so
+ * the `--devanagari-min-size` floor that pushed the module list's WORD chips to 18px
+ * (`module/SentenceCard.module.css`, #117) has nothing to hold up here.
+ */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  flex: none;
+  padding: var(--space-1) var(--space-2);
+  font: var(--text-micro);
+  /* radius 0, like every blueprint object (design/tokens.md §3, §7 rule 3) */
+  white-space: nowrap;
+}
+
+.chipFree {
+  composes: chip;
+  background: var(--tag-free-bg);
+  color: var(--tag-free-fg);
+}
+
+.chipDelta {
+  composes: chip;
+  background: var(--tag-delta-bg);
+  color: var(--tag-delta-fg);
+}
+
+/* The one amber chip the design package sanctions (design/tokens.md §1: "interference traps +
+   ⚠ tag chips only"). The callout's own fill and border are a different pair — see
+   SentenceScreen.module.css, where the trap is the only loud object on the screen. */
+.chipInterference {
+  composes: chip;
+  background: var(--interference-tag-bg);
+  color: var(--interference-tag-fg);
+}
+
+/* Decoration: it repeats the word beside it, so it is aria-hidden in the component. */
+.icon {
+  flex: none;
+  width: var(--icon-inline);
+  height: var(--icon-inline);
+  stroke-width: var(--icon-stroke);
+}
