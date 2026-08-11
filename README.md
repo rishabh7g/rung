@@ -39,6 +39,35 @@ npm run dev     # http://localhost:5173
 | `npm run lint` | ESLint (flat config), Prettier-compatible |
 | `npm run format` | Prettier write across the source tree |
 | `npm run content:validate` | Schema v5 + cross-checks over `content/*/modules/*.json` |
+| `npm run content:build` | Builds `public/content/` from `content/` — strict by default |
+
+### The content gate — why `dev` and `build` see different content
+
+`content:build` runs automatically as `predev` and `prebuild`, and it is the thing that
+decides what a build is allowed to contain (PRD-engineering §3, §6.2, [D4]):
+
+| | modules shipped |
+|---|---|
+| `npm run build` (`prebuild`, **strict — no flags**) | only `verified: true` **and** not `fixture: true`, from non-fixture courses |
+| `npm run dev` (`predev`, `--with-unverified --with-fixtures`) | everything that validates |
+
+**Strict is production truth: a learner build can never contain unverified or sample
+content.** Every module in `content/` is `verified: false` today (the native gate is a
+human's signature, not a flag to flip), so **`npm run build` currently ships an empty
+ladder — that is correct, not a bug.** `npm run dev` relaxes the gate so the app has
+hi-mr L1-M1..M2 and the two fixture courses to render.
+
+The two relaxations are independent (`--with-unverified`, `--with-fixtures`), and either
+one makes the output a **dev build**, which says so twice over: the run prints
+`CONTENT ⚠ DEV BUILD — includes … content; NOT shippable` as its first and last line, and
+the emitted `public/content/courses.json` carries `"devBuild": true` plus a `devBuildNote`.
+A strict build has neither key, so an artefact can never quietly pass for a learner build —
+check `devBuild` before you trust a bundle.
+
+`public/content/` is generated and gitignored: clean-recreated on every run, module files
+copied verbatim, `levels.json` re-emitted with `hasContent` **derived from what actually
+shipped** (the authored flag is never trusted), and `courses.json` filtered to courses that
+shipped at least one module.
 
 Two rules the scaffold bakes in, before you write a component:
 
@@ -53,6 +82,10 @@ Two rules the scaffold bakes in, before you write a component:
   cannot express (filename ↔ id, the 10-sentence / pool ≥ 6 budget and its `fixture: true`
   relaxation, full enrichment for M1–M3, rule-index ranges). Run `npm run content:validate`
   before opening any content PR — one line per file, then `CONTENT <n>/<m> ok`.
+- **Content ships through a gate.** `tools/content-build.ts` runs that validator over every
+  module and emits `public/content/` — see the gate table above. Never import from `content/`
+  in `src/`: the app reads `public/content/` (via `fetch`), which is the only tree the gate
+  has approved.
 
 ## How work happens
 
