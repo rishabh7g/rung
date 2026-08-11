@@ -217,8 +217,8 @@ describe('starting a session', () => {
     expect(chip('read')).toHaveAttribute('aria-pressed', 'true');
     expect(chip('review')).toHaveAttribute('aria-pressed', 'false');
     expect(courseState()?.session?.phase).toBe('read');
-    // Read itself is #97's; the slot says so rather than inventing the screen.
-    expect(screen.getByText('Screen stub — built in #97.')).toBeInTheDocument();
+    // …on the rung's first sentence (#97).
+    expect(await screen.findByText(moduleFixture(M1).sentences[0]!.display)).toBeInTheDocument();
   });
 });
 
@@ -332,6 +332,165 @@ describe('a Produce got-it reaches the counters and never the queue', () => {
       idx: 1,
       queue: ['L1-M2-S01', 'L1-M2-S02'],
     });
+  });
+});
+
+/* ----------------------------------------------------------------- the Read phase */
+
+/**
+ * Read (#97) — the phase that costs nothing: one sentence at a time, the cue behind a toggle, and
+ * a pager whose last step is Produce. The two rules under the assertions are that the CUE STARTS
+ * HIDDEN (recall before recognition — the prototype opens with it showing, and this is the
+ * deliberate divergence) and that the read-aloud nudge belongs to the PHASE, not to the sentence.
+ */
+describe('the Read phase', () => {
+  /** The rung's sentences, in the module's own order — Read's material and its count. */
+  function sentence(index: number) {
+    return moduleFixture(M1).sentences[index]!;
+  }
+
+  /** A session that opens at Read: nothing is passed, so nothing is due. */
+  async function read(): Promise<void> {
+    await renderHub();
+    await begin();
+    await screen.findByText(sentence(0).display);
+  }
+
+  /** The pager's two controls, by the course's own labels. */
+  function pager(key: 'read.prev' | 'read.next' | 'read.toProduce'): HTMLElement {
+    return screen.getByRole('button', { name: strings(key) });
+  }
+
+  it('reads one sentence at a time, and counts the rung as it goes', async () => {
+    await read();
+
+    expect(screen.getByText(`READ · ${M1.split('-')[1]}`)).toBeInTheDocument();
+    expect(screen.getByText('1 / 2')).toBeInTheDocument();
+    // Back has nowhere to go on the rung's first sentence; the CHIPS are what never gate.
+    expect(pager('read.prev')).toBeDisabled();
+
+    fireEvent.click(pager('read.next'));
+
+    expect(await screen.findByText(sentence(1).display)).toBeInTheDocument();
+    expect(screen.getByText('2 / 2')).toBeInTheDocument();
+    expect(screen.queryByText(sentence(0).display)).not.toBeInTheDocument();
+    // The position is snapshotted like every other advance (PRD §8 F7).
+    expect(courseState()?.session).toEqual({
+      phase: 'read',
+      idx: 1,
+      queue: ['L1-M1-S01', 'L1-M1-S02'],
+    });
+
+    fireEvent.click(pager('read.prev'));
+
+    expect(await screen.findByText(sentence(0).display)).toBeInTheDocument();
+    expect(screen.getByText('1 / 2')).toBeInTheDocument();
+  });
+
+  it('keeps the cue hidden until it is asked for, and puts it away again', async () => {
+    await read();
+
+    expect(screen.queryByText(sentence(0).cue)).not.toBeInTheDocument();
+    const toggle = screen.getByRole('button', { name: strings('read.showCue') });
+    expect(toggle).toHaveAttribute('aria-expanded', 'false');
+
+    fireEvent.click(toggle);
+
+    expect(screen.getByText(sentence(0).cue)).toBeInTheDocument();
+    const shown = screen.getByRole('button', { name: strings('read.hideCue') });
+    expect(shown).toHaveAttribute('aria-expanded', 'true');
+
+    fireEvent.click(shown);
+
+    expect(screen.queryByText(sentence(0).cue)).not.toBeInTheDocument();
+  });
+
+  it('offers "why" and "open full" on the sentence it is showing', async () => {
+    await read();
+
+    expect(screen.getByRole('button', { name: strings('why.show') })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: strings('why.openFull') })).toHaveAttribute(
+      'href',
+      `#/sentence/${sentence(0).id}`,
+    );
+  });
+
+  it('closes "why" on a move, and leaves the cue where the learner put it', async () => {
+    await read();
+
+    fireEvent.click(screen.getByRole('button', { name: strings('read.showCue') }));
+    fireEvent.click(screen.getByRole('button', { name: strings('why.show') }));
+    expect(screen.getByRole('button', { name: strings('why.hide') })).toBeInTheDocument();
+
+    fireEvent.click(pager('read.next'));
+
+    await screen.findByText(sentence(1).display);
+    // The prototype's split, kept: a new sentence's rows are not the last one's, but a learner who
+    // asked for the cue asked for it for the phase.
+    expect(screen.getByRole('button', { name: strings('why.show') })).toBeInTheDocument();
+    expect(screen.getByText(sentence(1).cue)).toBeInTheDocument();
+  });
+
+  it('shows the read-aloud nudge ONCE, at the start of the phase — not under every sentence', async () => {
+    await read();
+
+    expect(screen.getByText(strings('nudge.read'))).toBeInTheDocument();
+
+    fireEvent.click(pager('read.next'));
+
+    await screen.findByText(sentence(1).display);
+    expect(screen.queryByText(strings('nudge.read'))).not.toBeInTheDocument();
+
+    // Coming back to Read is a phase start, so the instruction is worth saying again.
+    fireEvent.click(chip('produce'));
+    await cardFor('L1-M1-S01');
+    fireEvent.click(chip('read'));
+
+    expect(await screen.findByText(strings('nudge.read'))).toBeInTheDocument();
+  });
+
+  it('hands over to Produce when the rung has been read through', async () => {
+    await read();
+
+    fireEvent.click(pager('read.next'));
+    await screen.findByText(sentence(1).display);
+    // The last sentence's control says where it goes, as the prototype's does.
+    fireEvent.click(pager('read.toProduce'));
+
+    expect(chip('produce')).toHaveAttribute('aria-pressed', 'true');
+    expect(courseState()?.session?.phase).toBe('produce');
+    expect(courseState()?.session?.idx).toBe(0);
+    expect(await screen.findByText(strings('revealLabel'))).toBeInTheDocument();
+  });
+
+  it('writes nothing on the way through: no box moves, no counter moves', async () => {
+    // Enrolled and not due, so the session opens at Read with the queue standing behind it.
+    seedQueue([{ sentenceId: 'L1-M1-S01', box: 2, dueInSessions: 3 }]);
+    await read();
+
+    fireEvent.click(screen.getByRole('button', { name: strings('read.showCue') }));
+    fireEvent.click(pager('read.next'));
+    await screen.findByText(sentence(1).display);
+
+    // Ticked once by the session start, and by nothing since. Read is the phase between the two
+    // that write, and it writes to neither.
+    expect(courseState()?.reviewQueue).toEqual([
+      { sentenceId: 'L1-M1-S01', box: 2, dueInSessions: 2 },
+    ]);
+    expect(courseState()?.production).toEqual({});
+  });
+
+  it('leaves the chips free — Produce is one tap away mid-read', async () => {
+    await read();
+
+    for (const phase of ['review', 'read', 'produce'] as const) {
+      expect(chip(phase)).not.toBeDisabled();
+    }
+
+    fireEvent.click(chip('produce'));
+
+    expect(await cardFor('L1-M1-S01')).toBeInTheDocument();
+    expect(chip('produce')).toHaveAttribute('aria-pressed', 'true');
   });
 });
 

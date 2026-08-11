@@ -152,7 +152,7 @@ Two consequences worth knowing before you author content:
   emitter imports it, and so does the runtime resolver (`src/engine/wordIndex.ts`, #94). Never
   copy it: a second copy is a word that silently has no "why".
 
-### The strings contract — 67 keys, no fallback copy
+### The strings contract — 72 keys, no fallback copy
 
 Every course ships one `strings.json` carrying **all** the microcopy the shell renders, because
 the shell has none of its own (PRD §4). So the build validates it against the canonical key list
@@ -168,7 +168,7 @@ declared twice.
 `tools/strings-check.ts` runs per course, flattens the nested file onto dot-paths
 (`ritual.check.copy`), and reports four things, always naming course **and** key:
 
-- **missing key** — the 67 canonical paths must all be there;
+- **missing key** — the 72 canonical paths must all be there;
 - **empty or non-string value** — a present-but-blank key is a missing key with extra steps;
 - **unknown key** — the typo tripwire; `ritual.check.plate` would otherwise sit quietly beside a
   missing `plateLabel`;
@@ -192,14 +192,16 @@ above them and the Next that does not exist until one is chosen) and three the "
 do, and the link that leaves a running session) and seventeen the session machine forced
 (#96 — `practice.*`: the hub's title, its three phase lines and the line that says the phases never
 gate, the two Begin labels, the three phase names the chips wear, the honest answer to a Review
-chip with nothing due, and the summary's title, four count lines and its way back). All forty-one
-are **draft values pending the Sync-3 freeze** (#71). The alternative each time was a
+chip with nothing due, and the summary's title, four count lines and its way back) and five the
+Read phase forced (#97 — `read.showCue`, `.hideCue`, `.prev`, `.next`, `.toProduce`: the cue
+toggle's two labels and the pager's three, the last of which names where the rung's last sentence
+goes). All forty-six are **draft values pending the Sync-3 freeze** (#71). The alternative each time was a
 learner-facing line hardcoded in the shell, which is the one thing this list exists to prevent.
 
 `why.openFull` is deliberately **not** `module.openFull`: one opens a sentence from a browsing
 list, the other leaves a running session for it. A course may well word them the same; sharing the
 key would mean it could never word them differently — the call #93 made for `mark.next` against
-`sentence.next`.
+`sentence.next`, and #97 for `read.prev`/`read.next` against Sentence Detail's pager.
 
 ### The course layer — what boots first
 
@@ -259,6 +261,22 @@ English shell furniture (the boot error copy, later a Settings header) stays per
 is about course scripts, not about English. The exemption list in that file is **empty**; the one
 entry anyone anticipates is the `/dev/type` font page (#85), and adding it will be a conscious
 line in that ticket's diff.
+
+### The silence guard — the app plays nothing and records nothing
+
+`src/silence.test.ts` is the same shape of scan for invariant **[D1]** ("the app plays no audio,
+records nothing", PRD-engineering §1): no shipped file under `src/` may name a sound API —
+playback (`Audio` and its contexts, `<audio>`, `<video>`), synthesis (`speechSynthesis`,
+`SpeechSynthesisUtterance`) or capture (`MediaRecorder`, `getUserMedia`) — and a violation fails
+naming file, line and API.
+
+It landed with the **Read phase** (#97) because Read is where the temptation lands: the phase asks
+the learner to say the sentence out loud, and the obvious "help" is a play button — a synthesised
+Marathi voice, or a recorder to compare yourself against. Both are the app saying the line *for*
+the learner (Invariant 3), and neither could be right offline for a pronunciation nobody has
+signed off. Comments count, as in #80 and #82, and the exemption list is **empty and stays empty**:
+there is no file that gets to make a sound. Its own tests plant one violation per API, so a
+pattern that stops matching cannot pass as a clean tree.
 
 ### The state layer — one document, keyed by course
 
@@ -797,16 +815,56 @@ learner's position snapshotted per course from the first card.
 - **The snapshot is a position, per course** — `{phase, idx, queue}`, written on every advance and
   cleared at the summary. The pause ✕ leaves it standing; restoring it is #99's, which is why
   nothing here calls `startSession` twice.
-- **Read is #97's slot** and renders as a stub, reachable by chip. `useModules` (the content
-  layer's many-files loader, moved out of `WhyPanel`) fetches whatever modules the Review queue
-  names — five due cards routinely come from five different rungs — and a module that will not load
-  costs its own card and nothing else.
+- **Read is the phase in the middle** (`practice/ReadPhase.tsx`, #97 — its own section below).
+  `useModules` (the content layer's many-files loader, moved out of `WhyPanel`) fetches whatever
+  modules the Review queue names — five due cards routinely come from five different rungs — and a
+  module that will not load costs its own card and nothing else.
 
 Fidelity: the chips are `--tap-min` tall in 18px Mukta where the prototype writes a 32px chip in
 11px uppercase Barlow Condensed (the type wall again, #117), the summary's rows are sentences
 rather than the prototype's label-and-right-aligned-number, and the prototype's "the exit ritual is
 open" block is deliberately absent — that unlock is the Ladder's rung card, and offering it from two
 places is how one of them ends up out of step with the rule.
+
+### The Read phase — L2 first, and the cue only when you ask
+
+`src/screens/practice/ReadPhase.tsx` is the session's middle phase (#97; PRD §8 F4, PRD-design
+§6.3): the rung's sentences one at a time, `display` at the card size the ramp names for it, the L1
+cue behind a toggle, "why" and "open full" beside it, `3 / 10` on the header row, and a pager whose
+last step hands over to Produce.
+
+| cue hidden (the default) | cue shown | the last sentence |
+|---|---|---|
+| [practice-read-360.png](docs/images/practice-read-360.png) | [practice-read-cue-360.png](docs/images/practice-read-cue-360.png) | [practice-read-last-360.png](docs/images/practice-read-last-360.png) |
+
+- **The cue starts hidden** — the deliberate divergence from the prototype, which opens with the
+  Hindi line showing (`readHiOn: true`). Read sits one phase before Produce and the whole sequence
+  is a production bias: L2 first, recall before recognition, the L1 as what you check yourself
+  against. A cue on screen by default makes the L2 line optional, which is the opposite of what the
+  phase is for. Recorded for #117 rather than "fixed" back.
+- **The read-aloud nudge (`nudge.read`) is shown once, at phase start** — it is an instruction for
+  the phase, and a line repeated under all ten sentences stops being read by the third. The
+  prototype prints it per card. It is state on the phase, not on the sentence, so re-entering Read
+  by chip says it again; also #117's.
+- **Read costs nothing.** No box moves, no counter moves — the phase between the two that write is
+  the one that does not. All it moves is the position, which the session snapshots per course like
+  every other advance, so leaving mid-read comes back to the same sentence (#99).
+- **The cue toggle rides inside `WhyPanel`'s controls row** (a `leading` slot added there rather
+  than a second row here), so the prototype's three ghosts share one line and the "why" rows still
+  expand under all of them. The panel is keyed by the sentence and the cue is not: a new sentence
+  never arrives with the last one's rows open, and a learner who asked for the cue asked for the
+  phase.
+- **Back is disabled on the first sentence** — the same bound Sentence Detail's pager takes (#89) —
+  and that is not a gate on anything: the phase chips are still live in every direction, which is
+  what "guide, never gate" is about.
+
+Fidelity: the sentence is `--text-l2-card` (26px) where the prototype writes 28px inline — the ramp
+has no 28px step and its 26px slot is named "reveal/read/comp cards", so the token wins; the
+kicker reads `READ · M1` and the count `1 / 10`, because the shell owns no learner-facing word
+(#88, #89); and the pager's labels are the course's (`read.*`) where the prototype writes "Back" /
+"Next" / "On to producing" in English for every course. Live at 360px the Devanagari clears its
+18px floor everywhere: 26px for the sentence, 18px for the cue, the nudge, the ghosts and both
+pager buttons.
 
 ### The fonts — bundled, because offline is the product
 

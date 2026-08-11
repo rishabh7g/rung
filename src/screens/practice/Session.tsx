@@ -27,8 +27,9 @@
  * learner earned is in the counters and the queue, and this is only where they were. Restoring it
  * — a resume banner, and `startSession` deliberately NOT called again — is #99's.
  *
- * **Read is #97's**, and its slot renders as a stub rather than as an invented screen: the phase
- * exists, the chips reach it, and the ticket that builds it says so on the placeholder.
+ * **Read (#97) is the phase that costs nothing.** It writes to neither queue: its pager moves the
+ * position and hands over to Produce at the end of the rung, which is why it needs no `onResult`
+ * of its own. `ReadPhase` draws the card; the position stays here, because the snapshot is here.
  */
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useModules } from '../../course/content.ts';
@@ -44,8 +45,8 @@ import { Toast, useToast } from '../../shell/Toast.tsx';
 import { rungLabel } from '../ladder/rungLabel.ts';
 import { ProductionDots } from '../module/ProductionDots.tsx';
 import { moduleIdOf } from '../sentence/sentenceId.ts';
-import { ScreenStub } from '../ScreenStub.tsx';
 import { PhaseChips } from './PhaseChips.tsx';
+import { ReadPhase } from './ReadPhase.tsx';
 import { SessionSummary } from './SessionSummary.tsx';
 import styles from './Session.module.css';
 
@@ -180,6 +181,26 @@ export function Session({ courseId, moduleId, sentenceIds, plan, dir }: SessionP
     [courseId, plan.produceIds.length, recordProduction],
   );
 
+  /* ------------------------------------------------------------------ reading */
+
+  /**
+   * Read's pager, and the whole of what Read costs: a position. No box moves, no counter moves —
+   * the phase between the two that write is the one that does not (PRD §8 F4). Back is never
+   * called on the first sentence; the control is disabled there, and the clamp is belt-and-braces.
+   */
+  const onReadPrev = useCallback(() => {
+    setLive((held) => ({ ...held, idx: Math.max(0, held.idx - 1) }));
+  }, []);
+
+  /** Next — and, on the rung's last sentence, the hand-over to Produce (PRD-design §6.3). */
+  const onReadNext = useCallback(() => {
+    setLive((held) =>
+      held.idx + 1 < sentenceIds.length
+        ? { ...held, idx: held.idx + 1 }
+        : { ...held, phase: 'produce' as const, idx: 0 },
+    );
+  }, [sentenceIds.length]);
+
   /**
    * A chip. Every phase is reachable from every phase — except that Review with nothing due
    * answers instead of opening, in the course's own words. That is a message, not a lock.
@@ -224,7 +245,20 @@ export function Session({ courseId, moduleId, sentenceIds, plan, dir }: SessionP
         />
       )}
 
-      {!live.done && live.phase === 'read' && <ScreenStub title="Read" ticket="#97" />}
+      {/* Read (#97): one sentence, its cue behind a toggle, and a pager that ends in Produce.
+          It is keyed by nothing on purpose — the nudge is shown once per PHASE, and a key per
+          sentence would remount it (and the cue toggle) under every card. */}
+      {!live.done && live.phase === 'read' && sentence !== undefined && (
+        <ReadPhase
+          moduleId={moduleId}
+          sentence={sentence}
+          at={live.idx}
+          total={queue.length}
+          onPrev={onReadPrev}
+          onNext={onReadNext}
+          dir={dir}
+        />
+      )}
 
       {!live.done &&
         live.phase !== 'read' &&
@@ -273,10 +307,9 @@ export function Session({ courseId, moduleId, sentenceIds, plan, dir }: SessionP
         )}
 
       {/* A card whose module has not arrived yet (or never will) is nothing to draw: the session
-          waits rather than inventing a sentence, and the phase's other cards are unaffected. */}
-      {!live.done && live.phase !== 'read' && sentence === undefined && (
-        <div className={styles.card} aria-busy="true" />
-      )}
+          waits rather than inventing a sentence, and the phase's other cards are unaffected. Read
+          waits the same way — a rung whose file is still in flight has no sentence to read. */}
+      {!live.done && sentence === undefined && <div className={styles.card} aria-busy="true" />}
 
       <Toast message={toast.message} dir={dir} />
     </section>
