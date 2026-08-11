@@ -18,6 +18,7 @@
  * word in it (the level's name and tagline) comes from the course's own `levels.json`.
  */
 import { Lock } from 'lucide-react';
+import beat from './unlockBeat.module.css';
 import styles from './LevelStrip.module.css';
 
 /** What one mini square says about one rung. Ten per cell, in ladder order. */
@@ -32,6 +33,12 @@ export interface LevelCell {
   sealed: boolean;
   /** The level the rung list below the strip is showing. Exactly one cell is active. */
   active: boolean;
+  /**
+   * This level unsealed a moment ago: play the unlock beat on the cell ([Q4]'s recommendation,
+   * PRD-design §12.3 — the rung's own beat, on the cell and on its first rung, same duration).
+   * The screen decides, off a one-shot flag it consumes; the strip only renders the answer.
+   */
+  unsealed?: boolean;
   squares: readonly SquareState[];
 }
 
@@ -67,7 +74,12 @@ export function LevelStrip({ cells, dir, onSealedTap }: LevelStripProps) {
           </>
         );
 
-        const className = cell.active ? styles.cellActive : styles.cell;
+        const className = [
+          cell.active ? styles.cellActive : styles.cell,
+          cell.unsealed === true ? beat.beat : null,
+        ]
+          .filter(Boolean)
+          .join(' ');
 
         return cell.sealed ? (
           <button
@@ -79,7 +91,13 @@ export function LevelStrip({ cells, dir, onSealedTap }: LevelStripProps) {
             {body}
           </button>
         ) : (
-          <div key={cell.level} className={className}>
+          // The beat's own handle, for a test and a live walk: the class name is a hash, and a
+          // sealed cell never carries one — nothing celebrates a level that did not open.
+          <div
+            key={cell.level}
+            className={className}
+            data-beat={cell.unsealed === true ? 'level' : undefined}
+          >
             {body}
           </div>
         );

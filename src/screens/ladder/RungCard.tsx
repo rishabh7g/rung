@@ -38,6 +38,7 @@ import type { RungStage } from '../../engine/progression.ts';
 import { PRACTICE_PATH, RITUAL_PATH } from '../../shell/routes.tsx';
 import { RegistrationMarks } from '../RegistrationMarks.tsx';
 import { rungLabel } from './rungLabel.ts';
+import beat from './unlockBeat.module.css';
 import styles from './RungCard.module.css';
 
 interface RungCardProps {
@@ -49,14 +50,25 @@ interface RungCardProps {
   job: string;
   /** The course's writing direction: the title, the job and every label are its words. */
   dir?: string;
+  /**
+   * Play the unlock beat on this card — the one moment the product celebrates (#103). The screen
+   * decides, off a one-shot navigation flag it consumes (`shell/routes.tsx`), so the card cannot
+   * replay it: it is a prop, never a state, and a re-render never turns it on by itself.
+   */
+  unlocked?: boolean;
 }
 
-export function RungCard({ stage, moduleId, title, job, dir }: RungCardProps) {
+export function RungCard({ stage, moduleId, title, job, dir, unlocked = false }: RungCardProps) {
   const strings = useStrings();
   const modulePath = `/module/${moduleId}`;
 
   return (
-    <div className={styles.card}>
+    <div
+      className={[styles.card, unlocked ? beat.beat : null].filter(Boolean).join(' ')}
+      // The beat's own handle: a test and a live walk both need to see the celebration land on
+      // the right rung, and the class name is a CSS-modules hash.
+      data-beat={unlocked ? 'rung' : undefined}
+    >
       <RegistrationMarks />
 
       <p className={styles.kicker}>{rungLabel(moduleId)} · CURRENT RUNG</p>

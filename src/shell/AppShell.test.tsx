@@ -20,7 +20,13 @@ import { resetStringsCache } from '../course/strings.ts';
 import { useAppStore } from '../state/store.ts';
 import { DEV_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
 import { stringValue } from '../test/courseStrings.ts';
-import { COMPREHENSION_PATH, handover, RITUAL_PATH, SHELL_ROUTES } from './routes.tsx';
+import {
+  COMPREHENSION_PATH,
+  handover,
+  RITUAL_PATH,
+  SHELL_ROUTES,
+  VERDICT_PATH,
+} from './routes.tsx';
 
 /**
  * Renders the app at `hash` and waits for boot — no screen mounts before there is a course.
@@ -45,9 +51,13 @@ async function renderAt(hash: string, state?: unknown) {
  * hold (#102). Anything else in the table mounts on its own.
  */
 function precondition(path: string): unknown {
-  if (path !== RITUAL_PATH && path !== COMPREHENSION_PATH) return undefined;
+  if (path !== RITUAL_PATH && path !== COMPREHENSION_PATH && path !== VERDICT_PATH) {
+    return undefined;
+  }
   produceRung();
-  return path === COMPREHENSION_PATH ? handover('hold') : undefined;
+  if (path === COMPREHENSION_PATH) return handover('hold');
+  // The Verdict is where the comprehension leaves you (#103), and arriving there passes the rung.
+  return path === VERDICT_PATH ? handover('comprehension') : undefined;
 }
 
 /**

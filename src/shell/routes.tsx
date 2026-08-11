@@ -95,6 +95,38 @@ export function cameFrom(step: RitualStep, state: unknown): boolean {
 }
 
 /**
+ * **The unlock beat's one-shot flag** (#103) — the ritual's last hand-over, and the only one that
+ * carries something the receiving screen celebrates.
+ *
+ * The beat is "one moment, once" (PRD-design §3.6, §9 — the product's single sanctioned
+ * celebration), so what fires it has to be a fact about THIS navigation and not a fact about the
+ * ladder: a rung that just opened and a rung that opened last week are the same rung, and the
+ * Ladder is the home screen the learner returns to a dozen times a day. The same argument the
+ * ritual's own guard makes (`handover` above) applies with even more force here — a `justUnlocked`
+ * flag in `rung:state` would survive a reload, an app kill and a course switch, and would have to
+ * be cleaned up by whichever screen happened to see it first.
+ *
+ * So it rides in the history entry, and the Ladder **consumes it**: the screen reads it once on
+ * mount, then replaces its own entry with a stateless one, so a reload of that entry is a Ladder
+ * with nothing to celebrate. Coming back later is a new entry, which never carried a flag at all.
+ *
+ * It names the module that was passed rather than the one that opened, because that is the fact
+ * the Verdict actually knows — where the beat lands (the newly current rung, and its level cell
+ * when the pass unsealed one) is the Ladder's own derivation from the ladder it already has.
+ */
+export function passedRung(moduleId: string): { passedRung: string } {
+  return { passedRung: moduleId };
+}
+
+/** The rung a navigation says was just passed — `null` for every navigation that says nothing. */
+export function justPassed(state: unknown): string | null {
+  if (typeof state !== 'object' || state === null || !('passedRung' in state)) return null;
+
+  const moduleId = (state as { passedRung: unknown }).passedRung;
+  return typeof moduleId === 'string' && moduleId !== '' ? moduleId : null;
+}
+
+/**
  * Which header a screen gets. `brand` = the rails mark + wordmark (the three tabs);
  * `back` = a chevron to the Ladder plus the screen's name (the children of a rung).
  */

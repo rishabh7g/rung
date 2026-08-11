@@ -152,7 +152,7 @@ Two consequences worth knowing before you author content:
   emitter imports it, and so does the runtime resolver (`src/engine/wordIndex.ts`, #94). Never
   copy it: a second copy is a word that silently has no "why".
 
-### The strings contract — 77 keys, no fallback copy
+### The strings contract — 82 keys, no fallback copy
 
 Every course ships one `strings.json` carrying **all** the microcopy the shell renders, because
 the shell has none of its own (PRD §4). So the build validates it against the canonical key list
@@ -168,7 +168,7 @@ declared twice.
 `tools/strings-check.ts` runs per course, flattens the nested file onto dot-paths
 (`ritual.check.copy`), and reports four things, always naming course **and** key:
 
-- **missing key** — the 77 canonical paths must all be there;
+- **missing key** — the 82 canonical paths must all be there;
 - **empty or non-string value** — a present-but-blank key is a missing key with extra steps;
 - **unknown key** — the typo tripwire; `ritual.check.plate` would otherwise sit quietly beside a
   missing `plateLabel`;
@@ -179,7 +179,7 @@ declared twice.
 
 Adding a key is one edit to `src/course/stringsKeys.ts` plus a line in each of the three bundles —
 in that order, because the build will tell you exactly which course you forgot. The list grew that
-way eight times: five keys the frozen screens forced (PR #120), three the Ladder forced (#86 —
+way nine times: five keys the frozen screens forced (PR #120), three the Ladder forced (#86 —
 `ladder.pendingLine`, `ladder.ownership`, `ladder.sealedToast`), seven the staged rung card forced
 (#87 — `rungCard.startModule`, `.freshNote`, `.practice`, `.revisitModule`, `.exitRitual`,
 `.module`, `.practiceEarlier`: a label for every control across the four [D22] stages), three
@@ -199,7 +199,10 @@ goes) and three lossless resume forced (#99 — `practice.resumeLine`, `.resumeC
 `.resumeNew`: where the open session stopped, and the two ways out of it) and two the
 press-and-hold forced (#101 — `ritual.confirm.done`, `.toComprehension`: what the control says
 once it is signed, and the way on to part 2 — the prototype writes both in English for every
-course, which is the shell owning a learner-facing sentence). All fifty-one are
+course, which is the shell owning a learner-facing sentence) and five the Verdict forced
+(#103 — `verdict.checkSentence`, `.checkChecked`, `.checkComprehension`, `.honesty`, `.toLadder`:
+the three checklist lines the ritual ends on, the honesty line under them, and the CTA that climbs
+back to the ladder). All fifty-six are
 **draft values pending the Sync-3 freeze** (#71). The alternative each time was a
 learner-facing line hardcoded in the shell, which is the one thing this list exists to prevent.
 
@@ -309,7 +312,8 @@ date in the whole document is `passedAt` on a passed module.
   the learner-facing switch flow with its toast is #106), `setSetting`, `setLadder` /`markStudied` /
   `passRitual` (progression, below — every rule they obey is derived in the engine),
   `recordProduction` (the counters, below), the session's three (`startSession`, `recordReview`,
-  `setSession` — below), and `_reset()` for dev and tests. Review enrolment (#103) brings its own.
+  `setSession` — below), and `_reset()` for dev and tests. `completeRitual` (#103) adds none of its
+  own: it calls `passRitual` and rides its single write.
 
 `store.test.ts` pins the initial shape against the literal the PRD prints, so drift is a red test
 rather than a discovery; the rest of it proves per-course isolation, a round trip through storage,
@@ -417,8 +421,9 @@ seeded permutations assert it).
 **Enrolment policy: a sentence enters review when its module is PASSED** — production ends,
 maintenance begins. Until then the sentences are the current rung's Produce work (the ≥ 2×
 counters), and scheduling them for review too would be the same work twice under two names. The
-call site is the exit ritual's pass action (#103); this module states the policy and stays pure —
-no React, no storage, no clock, every function returning a new array.
+call site is the exit ritual's pass action (`completeRitual`, #103), which enrols in the very write
+that marks the module passed; this module states the policy and stays pure — no React, no storage,
+no clock, every function returning a new array.
 
 ### The app shell — one frame, three headers, one flag
 
@@ -499,6 +504,9 @@ Three things it is responsible for keeping true:
   level and how many rungs below it remain.
 - **Counts, never time.** No `%`, no date, no streak, no "due" — asserted over the rendered screen
   in both a fresh and a mid-journey state.
+- **The one celebration is a moment, not a state.** A verdict hands the screen a one-shot flag and
+  the newly opened rung plays the unlock beat once; the Ladder spends the flag as it lands, so a
+  reload has nothing to replay and a revisit never carried one (#103, below).
 
 Loading that ladder and handing it to the store is `src/screens/useProgression.ts`, which the
 Ladder and the module list both start with: it fetches `levels.json`, calls `setLadder` from an
@@ -1114,6 +1122,74 @@ the reveal brings exactly 1; Next does not exist until a mark does; item 2 is a 
 "not quite" opens the interstitial and the stored document is unchanged byte for byte; "नए वाक्य
 लो" deals two sentences disjoint from the failed pair; and two "same meaning" marks land on
 `#/verdict` with `{"ritualStep":"comprehension"}` and `modules` still `{}`.
+
+### The verdict and the unlock beat — the ritual's one write, and the one celebration
+
+`/verdict` is where the exit ritual ends and **the only place in the app a module passes** (#103;
+PRD §8 F5, F1; PRD-design §6.7 flow 7). The arc holds no state, the hold's number dies with it,
+Comprehension writes nothing on a failed round — and then this screen records everything the
+ritual ever records: the rung passes, and the sentences it taught enter the review queue.
+
+| file | what it is |
+|---|---|
+| `src/screens/VerdictScreen.tsx` | the guard, the receipt, the write on arrival, the way back |
+| `src/state/store.ts` — `completeRitual` | pass + enrol, in one persisted document |
+| `src/screens/ladder/unlockBeat.module.css` | the beat: 1000ms, accent-200 flash, 10px settle, once |
+| `src/shell/routes.tsx` — `passedRung`/`justPassed` | the one-shot navigation flag |
+
+[verdict-360.png](docs/images/verdict-360.png) ·
+[unlock-beat-360.png](docs/images/unlock-beat-360.png) ·
+[unlock-settled-360.png](docs/images/unlock-settled-360.png) ·
+[unseal-beat-360.png](docs/images/unseal-beat-360.png)
+— the receipt, the beat landing on the rung that just opened, the same card a second later, and
+the level-boundary beat on the cell that unsealed plus its first rung, all at 360px.
+
+- **One action, one write, and the asymmetry is the reason.** `completeRitual(courseId, moduleId,
+  sentenceIds, clock?)` **delegates the pass to `passRitual`** — still the only writer of `modules`
+  (Invariant 1) — and hands it the enrolment to carry, so both land in the same `set` and the same
+  `localStorage` document. A document holding a passed module whose sentences never enrolled would
+  be **unrecoverable**: `passRitual` refuses a rung that is no longer current, so those sentences
+  would never come up for review again. The reverse costs nothing — `enrol` is idempotent (#92).
+  `store.test.ts` counts the `setItem` calls (exactly one) and re-reads every document ever
+  written, asserting none holds a pass without its enrolment; the live walk instruments
+  `Storage.prototype.setItem` in the browser and asserts the same thing.
+- **The pass happens on arrival, not on the button.** The comprehension is what earned it, and a
+  learner who closes the app on this screen has still climbed the rung. The button's job is the
+  celebration.
+- **The entry is spent on arrival.** Comprehension's token (`handover('comprehension')`) is read
+  once and then cleared from the history entry, because `history.state` outlives a reload — a token
+  left in it would let a refresh mint a second verdict for whichever rung had become current. A
+  deep link, a refresh or a back tap lands on the Ladder; a rung that was never produced out lands
+  on `/ritual`, which sends the learner to the work.
+- **The checklist is a receipt, not a score** — the 11th sentence written in the notebook, checked
+  by you, comprehension 2 of 2 — and every line of it is the course's (`verdict.*`, five new keys
+  in all three bundles, drafts on #71). The two numbers are the module's own: the ordinal is
+  `sentences.length + 1` rendered through the course's `ordinal` template, and the "2 of 2" is
+  `exitTest.comprehendCount`, so a module that asked for three would read "3 of 3" with no code
+  change.
+- **The beat plays once, and cannot be replayed.** "Climb to the ladder" carries a one-shot flag
+  naming the rung just passed; the Ladder reads it on mount, plays the beat on the rung that pass
+  **opened**, and immediately replaces its own entry with a stateless one. So a reload has nothing
+  to replay, and a revisit — a new entry — never carried a flag at all. At a level boundary
+  (10 of 10 passed, the seal rule) the beat also lands on the level cell that unsealed and on its
+  first rung, which is [Q4]'s recommendation implemented pending #68's spec.
+- **`--motion-unlock` is the whole movement**: 1000ms, `cubic-bezier(.2,.7,.3,1)`, an accent-200
+  flash and a `--space-3` settle, `animation-fill-mode: backwards` so the card and the cell each
+  return to their own ground — and `animation: none` under `prefers-reduced-motion`, where what is
+  left is what the Ladder would have shown anyway: the rung, open.
+- **Level status stays derived** (F1). Nothing about the unseal is stored: `levelSealed` reads the
+  passed set, the beat reads a navigation flag, and both are gone the moment the learner looks away.
+
+Verified live at 360px in headless Chrome against `npm run dev` (hi-mr), with the ten L1-M1
+counters seeded and **real CDP touch input**: the ~900ms hold hands over, two "same meaning" marks
+land on `#/verdict` with the token already spent, the receipt reads `11वाँ वाक्य …`,
+`Comprehension 2 में से 2 …` and the honesty line from the real bundle, storage shows
+`L1-M1 passed` with **all ten sentences enrolled at box 1 due in 1**, and of the five documents
+written across the whole walk **zero** hold a pass without its enrolment. "सीढ़ी पर चढ़ो" lands on
+the Ladder with the beat on M2's card (`1s cubic-bezier(0.2, 0.7, 0.3, 1)`), the flag already
+consumed; leaving and coming back shows **0** beats. Seeded at 10 of 10, the beat is on the LEVEL 2
+cell **and** L2-M1; at 9 of 10 the strip is untouched; under `prefers-reduced-motion` both collapse
+to `animation-name: none`.
 
 ### The fonts — bundled, because offline is the product
 

@@ -1,0 +1,140 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   Geometry follows design/Rung App v3.3.dc.html → Verdict: the kicker and the 34px title, the
+   receipt plate with its three checks and the honesty line under a divider, the course's closing
+   sentence, and the one filled CTA held at the bottom of the screen. Every length is the nearest
+   token on the Industry scale (design/tokens.md §3). */
+
+/* The whole column, with the CTA pinned to the foot of it (`margin-top: auto` below).
+   `min-height: 100%` is what makes that true: the shell's `<main>` is the scroll area and a plain
+   block, so a child that only asked for `flex: 1` would bunch at the top (#84, and Comprehension's
+   column makes the same call, #102). */
+.verdict {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-6) var(--space-8);
+}
+
+/* ---------------------------------------------------------------------- the head */
+
+.head {
+  padding-bottom: var(--space-3);
+  border-bottom: var(--border-hairline);
+}
+
+/* English shell furniture, in the register of the module list's `M1 · MODULE` — raised on #71. */
+.kicker {
+  margin: 0;
+  font: var(--text-kicker);
+  letter-spacing: var(--kicker-tracking);
+  text-transform: uppercase;
+  color: var(--color-accent-700);
+}
+
+/* `--text-verdict-title` (34px) exists for exactly this line and nothing else in the product.
+   `M1 · Passed` is the Ladder's own PASSED status label at the size the prototype gives it — the
+   same English furniture, in the one place the ritual is allowed to be loud in words. */
+.title {
+  margin: var(--space-1) 0 0;
+  font: var(--text-verdict-title);
+}
+
+/* ------------------------------------------------------------------- the receipt */
+
+/* A blueprint object (design/tokens.md §3): radius 0, hairline, no surface fill, and the four
+   registration marks it wears — which is why it is `position: relative`. */
+.receipt {
+  position: relative;
+  padding: var(--space-4);
+  background: var(--color-bg);
+  border: var(--border-hairline);
+}
+
+.checks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+/* The check itself: Lucide, inline size, accent — decoration beside a line that says the same
+   thing in words, so it is `aria-hidden` at the call site. */
+.tick {
+  flex: none;
+  width: var(--icon-inline);
+  height: var(--icon-inline);
+  margin-top: var(--space-1);
+  stroke-width: var(--icon-stroke);
+  color: var(--color-accent-700);
+}
+
+/**
+ * The checks, the honesty line and the closing sentence are all the COURSE's copy — for hi-mr that
+ * is Devanagari, and design/tokens.md §2 is absolute about it: Mukta, never below
+ * `--devanagari-min-size`, line-height 1.6. The prototype's 13.5px and 11.5px lines are
+ * English-for-every-course, which the product is not — the same divergence the rung card and the
+ * Ladder's prose made (#138, #139), same reason, and it wants the same answer from the design
+ * package. Raised for #117.
+ */
+.checkText {
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+}
+
+/* "The app graded nothing. It saved nothing you wrote." — the app's own line about itself, under
+   the divider the prototype draws, and one shade quieter than the receipt above it. */
+.honesty {
+  composes: checkText;
+  margin: var(--space-3) 0 0;
+  padding-top: var(--space-2);
+  border-top: var(--border-hairline);
+  color: var(--ink-50);
+}
+
+/* The course's closing sentence — it names the rung that just opened. */
+.line {
+  composes: checkText;
+  margin: 0;
+  color: var(--ink-75);
+}
+
+/* --------------------------------------------------------------------- the way out */
+
+/* THE one filled object on the screen (design/tokens.md §3): solid accent, ground-coloured text,
+   full width, `--cta-height` where the prototype writes 50px inline. `margin-top: auto` holds it
+   at the foot of the screen, as the prototype does. */
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: var(--cta-height);
+  margin-top: auto;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-accent);
+  border: var(--border-hairline);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+  font: var(--text-l2-card);
+  font-size: var(--devanagari-min-size);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cta:active {
+  background: var(--color-accent-700);
+  border-color: var(--color-accent-700);
+}

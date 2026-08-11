@@ -21,12 +21,18 @@ import type { CourseState } from './types.ts';
  */
 function memoryStorage() {
   const items = new Map<string, string>();
+  /** Every document written, oldest first — how "one write" is proved rather than asserted. */
+  const writes: string[] = [];
 
   return {
     items,
+    writes,
     api: {
       getItem: (name: string) => items.get(name) ?? null,
-      setItem: (name: string, value: string) => void items.set(name, value),
+      setItem: (name: string, value: string) => {
+        writes.push(value);
+        items.set(name, value);
+      },
       removeItem: (name: string) => void items.delete(name),
     } satisfies StateStorage,
   };
@@ -386,6 +392,133 @@ describe('passRitual (Invariant 1 — the only unlock path)', () => {
     expect(useAppStore.getState().courses['en-ar']).toBe(enAr);
     expect(useAppStore.getState().courses['en-ar']).toEqual(emptyCourseState());
     expect(currentRungId(progressionInput(useAppStore.getState(), 'en-ar'))).toBe('L1-M1');
+  });
+});
+
+/**
+ * `completeRitual` (#103) — the end of the exit ritual: the module passes AND its sentences enter
+ * review, in ONE persisted document.
+ *
+ * The atomicity is the point, and it is asymmetric. A document holding a passed module whose
+ * sentences never enrolled is **unrecoverable** — `passRitual` refuses a rung that is no longer
+ * current, so there is no second chance to enrol them and they never come up for review again —
+ * while a replay costs nothing, because `enrol` is idempotent. So the storage spy counts writes:
+ * exactly one, carrying both facts.
+ */
+describe('completeRitual (the ritual’s one write)', () => {
+  /** The sentences a rung teaches, as the Verdict reads them off the module file. */
+  const SENTENCES = ['L1-M1-S01', 'L1-M1-S02'];
+
+  /** The course subtree as it sits in storage — the bytes a reload would restore. */
+  function storedCourse(document: string) {
+    const { state } = JSON.parse(document) as { state: { courses: Record<string, CourseState> } };
+    return state.courses['hi-mr'];
+  }
+
+  it('passes the rung and enrols its sentences in a single persisted document', () => {
+    bootHiMr();
+    const before = storage.writes.length;
+
+    useAppStore.getState().completeRitual('hi-mr', 'L1-M1', SENTENCES, fixedClock);
+
+    // ONE write. Two would mean a moment — however short — in which storage held one half.
+    expect(storage.writes.length - before).toBe(1);
+
+    const written = storedCourse(storage.writes.at(-1) as string);
+    expect(written?.modules).toEqual({ 'L1-M1': { status: 'passed', passedAt: AT } });
+    expect(written?.reviewQueue).toEqual([
+      { sentenceId: 'L1-M1-S01', box: 1, dueInSessions: 1 },
+      { sentenceId: 'L1-M1-S02', box: 1, dueInSessions: 1 },
+    ]);
+  });
+
+  it('never writes a passed module without its enrolment — every document holds both or neither', () => {
+    bootHiMr();
+
+    useAppStore.getState().completeRitual('hi-mr', 'L1-M1', SENTENCES, fixedClock);
+
+    // Every document this course has ever been in, read back: the pass and the enrolment are
+    // either both there or both absent. A half-written ritual would show up here as the one
+    // document that has the module and an empty queue.
+    for (const document of storage.writes) {
+      const course = storedCourse(document);
+      if (course === undefined) continue;
+      expect(Object.keys(course.modules).length > 0).toBe(course.reviewQueue.length > 0);
+    }
+  });
+
+  it('enters the queue at box 1, due next session — a rung passed today is not reviewed today', () => {
+    bootHiMr();
+
+    useAppStore.getState().completeRitual('hi-mr', 'L1-M1', SENTENCES, fixedClock);
+
+    expect(useAppStore.getState().courses['hi-mr']?.reviewQueue).toEqual([
+      { sentenceId: 'L1-M1-S01', box: 1, dueInSessions: 1 },
+      { sentenceId: 'L1-M1-S02', box: 1, dueInSessions: 1 },
+    ]);
+  });
+
+  it('leaves an already-enrolled sentence exactly where it is (enrol is idempotent)', () => {
+    bootHiMr();
+    useAppStore.getState().completeRitual('hi-mr', 'L1-M1', SENTENCES, fixedClock);
+    // A session's worth of review: S01 promoted to box 2 and bought three sessions.
+    useAppStore.getState().recordReview('hi-mr', 'L1-M1-S01', true);
+
+    useAppStore.getState().completeRitual('hi-mr', 'L1-M2', ['L1-M1-S01', 'L1-M2-S01'], fixedClock);
+
+    expect(useAppStore.getState().courses['hi-mr']?.reviewQueue).toEqual([
+      { sentenceId: 'L1-M1-S01', box: 2, dueInSessions: 3 },
+      { sentenceId: 'L1-M1-S02', box: 1, dueInSessions: 1 },
+      { sentenceId: 'L1-M2-S01', box: 1, dueInSessions: 1 },
+    ]);
+  });
+
+  it('refuses anything but the current rung — and writes neither half on the way out', () => {
+    bootHiMr();
+    const before = useAppStore.getState().courses;
+    const writes = storage.writes.length;
+
+    expect(() =>
+      useAppStore.getState().completeRitual('hi-mr', 'L1-M2', ['L1-M2-S01'], fixedClock),
+    ).toThrow(/not hi-mr's current rung \(L1-M1\)/);
+
+    // The guard is `passRitual`'s, and it runs before the write — so nothing reached storage at
+    // all, not even the enrolment (Invariant 1: one unlock path, one place it is checked).
+    expect(useAppStore.getState().courses).toBe(before);
+    expect(storage.writes.length).toBe(writes);
+  });
+
+  it('takes the system clock when the app calls it with three arguments', () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(1_770_000_000_000);
+    bootHiMr();
+
+    useAppStore.getState().completeRitual('hi-mr', 'L1-M1', SENTENCES);
+
+    expect(useAppStore.getState().courses['hi-mr']?.modules['L1-M1']?.passedAt).toBe(
+      '2026-02-02T02:40:00.000Z',
+    );
+    vi.useRealTimers();
+  });
+
+  it('enrols nothing when the rung teaches nothing, and still passes it', () => {
+    bootHiMr();
+
+    useAppStore.getState().completeRitual('hi-mr', 'L1-M1', [], fixedClock);
+
+    expect(useAppStore.getState().courses['hi-mr']?.modules['L1-M1']?.status).toBe('passed');
+    expect(useAppStore.getState().courses['hi-mr']?.reviewQueue).toEqual([]);
+  });
+
+  it('touches one course only (Invariant 8)', () => {
+    bootHiMr();
+    const { ensureCourse } = useAppStore.getState();
+    ensureCourse('en-ar');
+    const enAr = useAppStore.getState().courses['en-ar'];
+
+    useAppStore.getState().completeRitual('hi-mr', 'L1-M1', SENTENCES, fixedClock);
+
+    expect(useAppStore.getState().courses['en-ar']).toBe(enAr);
   });
 });
 

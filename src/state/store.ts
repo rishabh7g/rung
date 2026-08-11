@@ -3,11 +3,11 @@
  * (docs/01-plan.md §4, §6; PRD §8 F7).
  *
  * It stays THIN, and the rules stay out of it. It owns which course is active, the per-course
- * subtree existing at all, settings, the two writes progression needs (#83) and the production
- * counters (#95) — and every rule those obey is derived in `src/engine/` (`progression.ts`,
- * `exit.ts`), which the store asks rather than reimplements. The remaining domain actions land in
- * their own tickets and write through this same shape: the review queue (#103), the session
- * snapshot (#96), the full course-switch flow with its toast (#106).
+ * subtree existing at all, settings, the two writes progression needs (#83), the production
+ * counters (#95), the review queue and the session snapshot (#96, #103) — and every rule those
+ * obey is derived in `src/engine/` (`progression.ts`, `exit.ts`, `leitner.ts`), which the store
+ * asks rather than reimplements. The full course-switch flow with its toast (#106) lands in its
+ * own ticket and writes through this same shape.
  *
  * Four properties this module is responsible for keeping true:
  *
@@ -16,8 +16,11 @@
  *     state untouched when the course is already there — so a re-boot, a switch, and a
  *     course that has temporarily vanished from a build all leave the stored ladders alone.
  *   • **One unlock path (Invariant 1).** `passRitual` is the only action that writes `modules`,
- *     and it refuses any module that is not the current rung. `unlockPath.test.ts` proves both —
- *     mechanically over this file's source, and behaviourally over every action the store exposes.
+ *     and it refuses any module that is not the current rung. `completeRitual` — the end of the
+ *     exit ritual, and the only place in the app a module passes — calls THROUGH it rather than
+ *     beside it, carrying the review enrolment into its single write. `unlockPath.test.ts` proves
+ *     both — mechanically over this file's source, and behaviourally over every action the store
+ *     exposes.
  *   • **The production counters only ever count up.** `recordProduction` is their one writer and
  *     its only arithmetic is `+ 1`; nothing in the app can lower one. `productionCounters.test.ts`
  *     proves that the same three ways.
@@ -26,7 +29,7 @@
  */
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
-import { applyMark, tickSession } from '../engine/leitner.ts';
+import { applyMark, enrol, tickSession } from '../engine/leitner.ts';
 import { currentRungId, type LevelPlan, type ProgressionInput } from '../engine/progression.ts';
 import { planSession, type SessionPlan } from '../engine/session.ts';
 import { systemClock, type Clock } from './clock.ts';
@@ -37,6 +40,7 @@ import {
   type CourseId,
   type CourseState,
   type ModuleId,
+  type ReviewItem,
   type SentenceId,
   type SessionPhase,
   type SessionSnapshot,
@@ -169,8 +173,42 @@ export interface AppActions {
   /**
    * Passes a module — see the comment block on the implementation. THE ONLY WRITER OF `modules`
    * (Invariant 1), and it refuses anything but the current rung.
+   *
+   * `enrolment` is the review queue this same write also lays down, derived from the one it
+   * replaces. It exists so a pass and its enrolment are ONE persisted document rather than two
+   * (`completeRitual` below is its only caller, and passes `enrol`); it is typed as a queue
+   * transform precisely so a caller cannot smuggle anything else — least of all a `modules`
+   * entry — into the pass's write.
    */
-  passRitual: (courseId: CourseId, moduleId: ModuleId, clock?: Clock) => void;
+  passRitual: (
+    courseId: CourseId,
+    moduleId: ModuleId,
+    clock?: Clock,
+    enrolment?: (reviewQueue: readonly ReviewItem[]) => readonly ReviewItem[],
+  ) => void;
+  /**
+   * **The exit ritual, completed** (#103, PRD §8 F5): the module passes, and the sentences it
+   * taught enter the review queue — one action, one write, and the only place either happens at
+   * the end of a ritual.
+   *
+   * It writes nothing itself. The pass is `passRitual`'s (the single unlock path, Invariant 1 —
+   * so a module that is not the current rung throws out of here exactly as it throws out of
+   * there, having written neither the pass nor the enrolment), and the queue is `enrol`'s
+   * (`engine/leitner.ts`, which owns the policy this call makes: **a sentence enters review when
+   * its module is passed**, because that is when production ends and maintenance begins).
+   *
+   * **Atomic, and that is the point.** Both halves ride in `passRitual`'s single `set`, so
+   * storage never holds a passed module whose sentences are not enrolled. That intermediate state
+   * would be unrecoverable rather than untidy: `passRitual` refuses a module the learner has
+   * already passed, so those sentences would have no second chance to be enrolled and would never
+   * come up for review again. `enrol` is idempotent, so the reverse — a replay — costs nothing.
+   */
+  completeRitual: (
+    courseId: CourseId,
+    moduleId: ModuleId,
+    sentenceIds: readonly SentenceId[],
+    clock?: Clock,
+  ) => void;
   /** Dev + tests only: back to first-run state. No screen may call this — there is no Erase. */
   _reset: () => void;
 }
@@ -458,10 +496,12 @@ export const useAppStore = create<AppStore>()(
        * module list, never a schedule (Invariant 2), and injectable so a test pins it without
        * touching global time.
        *
-       * #103 wraps this: `completeRitual` will enrol the module's sentences into the review queue
-       * in the same write. It must call through here rather than beside it.
+       * #103 wraps this: `completeRitual` enrols the module's sentences into the review queue in
+       * THIS write, by handing the queue transform in as `enrolment` — it calls through here
+       * rather than writing beside it, which is what keeps the pass and its enrolment one
+       * document and keeps this the only action with a `modules` write in it.
        * ---------------------------------------------------------------------------------- */
-      passRitual: (courseId, moduleId, clock = systemClock) => {
+      passRitual: (courseId, moduleId, clock = systemClock, enrolment) => {
         const current = currentRungId(progressionInput(get(), courseId));
         if (current !== moduleId) {
           throw new Error(
@@ -479,11 +519,34 @@ export const useAppStore = create<AppStore>()(
               [courseId]: {
                 ...course,
                 modules: { ...course.modules, [moduleId]: { status: 'passed', passedAt } },
+                // #103's enrolment, in this same write — or the queue exactly as it was, when
+                // the pass came without one.
+                reviewQueue:
+                  enrolment === undefined ? course.reviewQueue : [...enrolment(course.reviewQueue)],
               },
             },
           };
         });
       },
+
+      /* ------------------------------------------------------------------------------------
+       * THE END OF THE RITUAL — ONE ACTION, ONE WRITE, AND NEITHER HALF WITHOUT THE OTHER.
+       *
+       * The pass is delegated (Invariant 1: `passRitual` is the single unlock path, and this is
+       * its one caller in the app), and the enrolment rides in the same `set` as the queue
+       * transform it is given. `enrol` is `engine/leitner.ts`'s and idempotent — a module passed
+       * long ago whose ids are already in the queue keeps its boxes and its countdowns.
+       *
+       * The order of the two facts in storage is the whole reason they share a write. A document
+       * holding a PASSED module whose sentences never enrolled is unrecoverable: the pass cannot
+       * be replayed (`passRitual` refuses a rung that is no longer current), so that module's
+       * sentences would sit outside review forever. One write has no such in-between —
+       * `store.test.ts` counts the `setItem` calls and reads the single document back.
+       * ---------------------------------------------------------------------------------- */
+      completeRitual: (courseId, moduleId, sentenceIds, clock = systemClock) =>
+        get().passRitual(courseId, moduleId, clock, (reviewQueue) =>
+          enrol(reviewQueue, [...sentenceIds]),
+        ),
 
       // Back to first-run state, ladders included: the course layer re-registers them on boot, and
       // a ladder left behind would outlive the state it describes.

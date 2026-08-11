@@ -43,15 +43,15 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the three shipped bundles carry — 77 keys, nested, identical', () => {
+  it('is exactly what the three shipped bundles carry — 82 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(77);
+      expect(keys.length, courseId).toBe(82);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(77);
-    expect(new Set(STRINGS_KEYS).size).toBe(77);
+    expect(STRINGS_KEYS.length).toBe(82);
+    expect(new Set(STRINGS_KEYS).size).toBe(82);
   });
 
   it('carries the five keys PR #120 added beyond the issue text', () => {
@@ -194,6 +194,31 @@ describe('the canonical key list', () => {
   });
 
   /**
+   * The Verdict's five (#103). PRD-design §6.7 prints the whole screen — the three checklist
+   * lines, the honesty line under them and the CTA that climbs back — in English for every
+   * course, and it is the last thing the learner reads at the end of their own ritual, which
+   * makes it the last place the shell could be allowed to speak for them.
+   *
+   * Two carry a number, and both are the module's own: `{ordinal}` is the course's word for "the
+   * 11th" (rendered through `ordinal`, as `ritual.confirm.holdLabel` does) and `{count}` is
+   * `exitTest.comprehendCount`, twice — "2 of 2" today, "3 of 3" for a module that asks for
+   * three. Draft values in all three bundles, flagged on #71.
+   */
+  it('carries the five keys the Verdict forced (#103)', () => {
+    const added: StringsKey[] = [
+      'verdict.checkSentence',
+      'verdict.checkChecked',
+      'verdict.checkComprehension',
+      'verdict.honesty',
+      'verdict.toLadder',
+    ];
+
+    for (const key of added) expect(STRINGS_KEYS).toContain(key);
+    // The honesty line the ritual has always ended on, which names the rung that just opened.
+    expect(STRINGS_KEYS).toContain('verdict.line');
+  });
+
+  /**
    * The summary is COUNTS, never time (Invariant 2; #96's acceptance criterion). The shell holds
    * no copy of its own, so the only place a duration or a percentage could enter that screen is an
    * authored bundle — which is what this reads, in all three courses.
@@ -221,6 +246,8 @@ describe('the canonical key list', () => {
       ordinal: ['{n}'],
       'ladder.pendingLine': ['{level}', '{remaining}', '{total}'],
       'ladder.sealedToast': ['{level}', '{remaining}'],
+      'verdict.checkSentence': ['{ordinal}'],
+      'verdict.checkComprehension': ['{count}', '{total}'],
       'verdict.line': ['{nextModule}'],
       switchToast: ['{to}', '{from}'],
       'practice.hubReview': ['{count}'],
