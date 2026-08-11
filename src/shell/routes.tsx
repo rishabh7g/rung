@@ -40,6 +40,59 @@ export const SETTINGS_PATH = '/settings';
 export const RITUAL_PATH = '/ritual';
 /** The ritual's second half, where the completed hold hands over (#101, #102). */
 export const COMPREHENSION_PATH = '/comprehension';
+/** The ritual's end: the pass checklist and the climb back (#103). */
+export const VERDICT_PATH = '/verdict';
+
+/* ------------------------------------------------------- the ritual's hand-overs */
+
+/**
+ * The exit ritual's steps, in order — the three screens that are only reachable from each other
+ * (#101 → #102 → #103). They are a chain rather than a menu: the hold is what opens Comprehension,
+ * and passing Comprehension is what opens the Verdict.
+ */
+export type RitualStep = 'hold' | 'comprehension';
+
+/**
+ * **How the chain is guarded: the navigation itself carries the proof.**
+ *
+ * Every route in this app is a real deep link — HashRouter, an installable PWA — so
+ * `#/comprehension` is a URL a learner can reach with the ritual never started. What makes it
+ * legitimate is one fact that happened a moment ago on another screen, and the honest question is
+ * where that fact should live:
+ *
+ *   • **Not in the store.** Nothing about an unfinished ritual is progress, and Invariant 4 says
+ *     only the pass writes anything; a `heldTheHold` flag in `rung:state` would be a durable
+ *     record of a ritual in progress, surviving app kills and course switches, that some later
+ *     screen would eventually have to clean up.
+ *   • **Not on the ritual screen.** It deliberately holds no state at all (#100) — a source scan
+ *     fails it on `useState`/`useReducer`/`useRef`, which is what keeps the learner's sentence
+ *     from having anywhere to live, not even for one render — so a lifted flag would reopen
+ *     exactly the door that scan closed.
+ *   • **In the history entry**, which is where "how did you get here" already lives. React
+ *     Router's location state is per entry: the hold's own `<Link state={handover('hold')}>`
+ *     writes it, this screen reads it, a typed URL or a tap on a stale entry does not carry it,
+ *     and it dies with the entry. It holds one literal string, so there is nothing in the
+ *     mechanism a learner's sentence could ever be put into.
+ *
+ * The token is a **key, not a claim**: it proves the learner arrived through the hold, and the
+ * receiving screen still asks the ladder whether the ritual is open at all (`exit_available`,
+ * #95), so a forged history entry buys nothing a stale one does not.
+ */
+export function handover(step: RitualStep): { ritualStep: RitualStep } {
+  return { ritualStep: step };
+}
+
+/** Did this navigation come from `step`? Anything else — a deep link, a refresh, a back tap onto
+ * an entry that never held one — answers false, and the screen sends the learner to the step that
+ * hands over. */
+export function cameFrom(step: RitualStep, state: unknown): boolean {
+  return (
+    typeof state === 'object' &&
+    state !== null &&
+    'ritualStep' in state &&
+    (state as { ritualStep: unknown }).ritualStep === step
+  );
+}
 
 /**
  * Which header a screen gets. `brand` = the rails mark + wordmark (the three tabs);
@@ -68,7 +121,7 @@ export const SHELL_ROUTES: readonly ShellRoute[] = [
     chrome: 'back',
     element: <ComprehensionScreen />,
   },
-  { path: '/verdict', label: 'Verdict', chrome: 'back', element: <VerdictScreen /> },
+  { path: VERDICT_PATH, label: 'Verdict', chrome: 'back', element: <VerdictScreen /> },
   { path: SETTINGS_PATH, label: 'Settings', chrome: 'brand', element: <SettingsScreen /> },
 ];
 

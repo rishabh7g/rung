@@ -1049,6 +1049,72 @@ on release, is still unsigned at 860ms, and signs at 900ms — then the same run
 `prefers-reduced-motion: reduce` emulated (fill transition 0s) passes nothing on a tap, is still
 unsigned at 700ms, and signs only on the full hold. Tapping the CTA lands on `#/comprehension`.
 
+### Comprehension — the same self-mark, and a retry that always deals fresh sentences
+
+`/comprehension` is the ritual's second half (#102; PRD §8 F5, PRD-design §6.6 flow 6): two
+sentences from the rung's pool, read for meaning, revealed against the scripted answer, self-marked
+— and **any "not quite" leads to a calm retry with two NEW sentences, unlimited, with nothing
+counted against the learner**.
+
+| file | what it is |
+|---|---|
+| `src/screens/ComprehensionScreen.tsx` | the guard, the head's counts, the attempt, and the pass seam |
+| `src/screens/comprehension/ComprehensionItem.tsx` | one item: the line, the reveal, the model answer, the gated self-mark |
+| `src/screens/comprehension/RetryInterstitial.tsx` | three lines and one button, and no counter of any kind |
+| `src/engine/comprehension.ts` | the draw: no repeats, exclusion until the pool exhausts, then recycling |
+
+[comprehension-item-360.png](docs/images/comprehension-item-360.png) ·
+[comprehension-revealed-360.png](docs/images/comprehension-revealed-360.png) ·
+[comprehension-marked-360.png](docs/images/comprehension-marked-360.png) ·
+[comprehension-retry-360.png](docs/images/comprehension-retry-360.png) ·
+[comprehension-fresh-360.png](docs/images/comprehension-fresh-360.png)
+— the line under test, its revealed answer, the mark that summons Next, the interstitial, and the
+fresh sentence behind it, all at 360px.
+
+- **The guard is the hold's own hand-over, and it travels in the history entry.** `#/comprehension`
+  is a real deep link, so what makes it legitimate is one fact that happened a moment ago on
+  another screen: the ✓'d hold's `<Link state={handover('hold')}>` writes a token into the history
+  entry, and this screen reads it back (`shell/routes.tsx`). It is deliberately **not** in the
+  store — nothing about an unfinished ritual is progress, and a durable "held the hold" flag would
+  outlive the ritual and need cleaning up — and deliberately not on the ritual screen, which holds
+  no state at all (#100) and must not start now. The token is a key, not a claim: the counters are
+  still asked (`exit_available`, #95), so a stale entry — a rung passed since, or a back tap after
+  #103 — lands on `/ritual`, which sends the learner on to the work. There is nothing in the
+  mechanism a learner's sentence could ever be put into, which is the whole reason it was chosen.
+- **The retry algorithm is `drawItems`, and the PRD's AC is arithmetic.** Fresh items are drawn
+  excluding every id already used this visit; when the pool cannot fill an attempt it recycles,
+  **minus the attempt just played** — dealing back the two sentences that went wrong would read as
+  the app marking them. A pool of 6 (the authored floor, `POOL_MIN`) therefore supports **≥ 3 fresh
+  attempts before recycling**, which is PRD §8 F5's acceptance criterion tested twice: over the
+  pure function against an injected random source, and over the real screen, where three attempts
+  deal six distinct sentences.
+- **Nothing is stored on a failed round** (Invariant 4). The attempt lives in one component cell
+  that dies with the screen; the marks are dropped on the way into the interstitial; there is no
+  attempt count, no failure count and no history — absent, not hidden, so there is no number a
+  screen could render even by accident. The three files are scanned for a store import, a store
+  hook and a storage call, and the behavioural test asserts the persisted document is
+  **byte-identical** across two failed attempts. The interstitial is asserted to say exactly the
+  same thing on the third failure as on the first.
+- **The controls are the product's own.** `SelfMark` verbatim (#93) — the same two segments, the
+  same fills, and **Next hidden until marked** [D11] — and `WhyPanel` (#94) on the reveal, which
+  resolves a pool item against its module's word index (`moduleIdOf` now reads `-C<nn>` ids as well
+  as `-S<nn>`; the schema fixes both shapes). The reveal itself is this screen's own, because it
+  runs the other way round: Practice reveals the L2 for an L1 cue, Comprehension reveals the L1 for
+  an L2 line (`revealLabelComprehend`), and `RevealCard`'s header says why that is not a third mode
+  there.
+- **The pass is a seam, not a write.** Two "same meaning" marks navigate to `/verdict` carrying the
+  same kind of token (`handover('comprehension')`); the module's `passed`, the next rung's unlock
+  and the beat are #103's, on the screen that receives it. This one writes nothing at all.
+
+Verified live at 360px in headless Chrome against `npm run dev` (hi-mr), with the ten L1-M1
+counters seeded to 2 and **real CDP touch input**: a deep link to `#/comprehension` lands on
+`#/ritual`; the full hold hands over with `history.state.usr = {"ritualStep":"hold"}`; item 1 shows
+`माझी भाषा मराठी आहे` at 26px with **0 of the pool's 8 scripted answers anywhere in the DOM**, and
+the reveal brings exactly 1; Next does not exist until a mark does; item 2 is a different sentence;
+"not quite" opens the interstitial and the stored document is unchanged byte for byte; "नए वाक्य
+लो" deals two sentences disjoint from the failed pair; and two "same meaning" marks land on
+`#/verdict` with `{"ritualStep":"comprehension"}` and `modules` still `{}`.
+
 ### The fonts — bundled, because offline is the product
 
 Mukta (all Devanagari), Barlow (body/UI) and Barlow Condensed (headings, kickers, wordmark) are
