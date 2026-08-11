@@ -1,4 +1,4 @@
-# PRD — Rung (formerly Shidi / शिडी, "ladder") — Product Design
+# PRD — rung (formerly Shidi / शिडी, "ladder") — Product Design
 
 - Version: 2.0
 - Date: 2026-08-10

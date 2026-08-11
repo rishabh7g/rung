@@ -1,4 +1,4 @@
-# Rung — Implementation Plan
+# rung — Implementation Plan
 
 **Audience:** a junior engineer new to this codebase — possibly new to
 Devanagari, PWAs, or frontend entirely. Read `PRD-engineering.md` first, then
@@ -167,7 +167,7 @@ export interface AppState {
 
 Rules:
 - Engine functions are pure. **No `Date.now()`/`new Date()` inside `src/engine/`** —
-  Rung lives in session-count time, not calendar time (Invariant 2). The only
+  rung lives in session-count time, not calendar time (Invariant 2). The only
   timestamps in state are record-keeping (`passedAt`, `attestation.at`) and are
   produced at the store layer via `src/state/clock.ts` (injectable for tests).
 - Counters never decrement. Statuses never regress. The ONLY code path that

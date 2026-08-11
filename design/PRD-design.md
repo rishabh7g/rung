@@ -4,7 +4,7 @@
 - Date: 2026-08-11
 - Owner: Rishabh
 - Audience: Product Designer
-- Companion documents: `PRD-engineering.md` (v3.3) and the clickable prototype `design/Shidi App v3.3.dc.html` — the visual/interaction **reference of record** and the single surviving prototype file (v2–v3.2 retired).
+- Companion documents: `PRD-engineering.md` (v3.3) and the clickable prototype `design/rung App v3.3.dc.html` — the visual/interaction **reference of record** and the single surviving prototype file (v2–v3.2 retired).
 - Status of decisions: **[D#]** = decided; **[P#]** = proposed by design, awaiting Rishabh's sign-off; **[Q#]** = open.
 
 **Changelog v3.3:**

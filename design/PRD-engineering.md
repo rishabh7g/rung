@@ -4,7 +4,7 @@
 - Date: 2026-08-11
 - Owner: Rishabh
 - Audience: Product Engineer
-- Companion documents: `PRD-design.md` (v3.3) and the clickable prototype `design/Shidi App v3.3.dc.html` (reference for look, feel, and states — see §17 for divergences).
+- Companion documents: `PRD-design.md` (v3.3) and the clickable prototype `design/rung App v3.3.dc.html` (reference for look, feel, and states — see §17 for divergences).
 - Status of decisions: **[D#]** = decided; **[P#]** = proposed, awaiting Rishabh; **[Q#]** = open.
 
 **Changelog v3.3:**
