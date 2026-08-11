@@ -7,11 +7,7 @@ import styles from './App.module.css';
  * The real screens (Ladder, Module list, Detail) replace this; learner-facing copy
  * always comes from the course's strings.json, never from the shell.
  */
-// DELIBERATE BREAK — CI failure-path demo for #78. Reverted in the next commit.
-const broken: string = 42;
-
 export default function App() {
-  void broken;
   return (
     <main className={styles.screen}>
       <h1 className={styles.wordmark}>{BRAND}</h1>
