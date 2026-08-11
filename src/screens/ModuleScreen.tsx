@@ -16,7 +16,10 @@
  *      the Ladder, and it is idempotent in the store, which is what lets an effect fire it.
  *      It marks; it cannot unlock (`state/store.ts`).
  *   3. **The cards**, expanding in place and independently (`module/SentenceCard.tsx`), each with
- *      its two production dots — read-only until the counters are written in Practice (#95).
+ *      its two production dots — live off `courses[<id>].production`, which the Produce phase
+ *      writes through the store's one counter action (`recordProduction`, #95). This screen only
+ *      reads them: two full dots on every card is the rung's exit ritual open, drawn one sentence
+ *      at a time.
  *   4. **Where the learner was.** Scroll offset and open cards survive a detour into Sentence
  *      Detail, in `sessionStorage` and never in the store (`module/moduleView.ts`).
  *
@@ -36,6 +39,7 @@ import { useCourse } from '../course/CourseProvider.tsx';
 import { useStrings } from '../course/strings.ts';
 import { useModule } from '../course/content.ts';
 import { ContentErrorScreen } from '../course/BootScreens.tsx';
+import { PRODUCTIONS_PER_SENTENCE } from '../engine/exit.ts';
 import { deriveStatuses, rungStage } from '../engine/progression.ts';
 import { useAppStore } from '../state/store.ts';
 import { PRACTICE_PATH, HOME_PATH } from '../shell/routes.tsx';
@@ -50,9 +54,6 @@ import {
 } from './module/moduleView.ts';
 import { useProgression } from './useProgression.ts';
 import styles from './ModuleScreen.module.css';
-
-/** Two got-its per sentence is what opens the exit ritual (PRD §8 F1) — the counter's whole scale. */
-const PRODUCTIONS_PER_SENTENCE = 2;
 
 /**
  * The route's component. It reads the id and hands it to a **keyed** list, so opening a different
@@ -176,7 +177,8 @@ function ModuleList({ moduleId }: ModuleListProps) {
           </h2>
         </div>
         {/* Counts, never time (Invariant 2): got-its across the module, out of the two per
-            sentence the exit ritual asks for. Written in Practice (#95); read here. */}
+            sentence the exit ritual asks for (`PRODUCTIONS_PER_SENTENCE`, the same constant the
+            exit rule reads). Written by Produce got-its; read here. */}
         <p className={styles.count}>
           {produced} / {sentences.length * PRODUCTIONS_PER_SENTENCE}
         </p>

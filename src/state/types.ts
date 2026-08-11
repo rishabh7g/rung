@@ -17,9 +17,9 @@
  *     one timestamp in the whole document — a receipt for the module list, not a schedule —
  *     and it is stamped through `clock.ts`, the only date-construction site in the app.
  *
- * These types are the contract the domain tickets fill in: progression (#83), production and
- * the review queue (#95), the session snapshot (#96). This module declares the shape; the
- * store (`store.ts`) owns only course bookkeeping and settings.
+ * These types are the contract the domain tickets fill in: progression (#83), the production
+ * counters (#95), the review queue (#103), the session snapshot (#96). This module declares the
+ * shape; the store (`store.ts`) owns only course bookkeeping and settings.
  */
 
 /** Manifest course id — `hi-mr`, `en-ar`. Never hardcoded in the shell, only carried around. */
@@ -72,7 +72,11 @@ export interface SessionSnapshot {
 export interface CourseState {
   /** Passed modules only — the ladder position. */
   modules: Record<ModuleId, ModuleProgress>;
-  /** Times each sentence has been produced. Counters never decrement. */
+  /**
+   * Times each sentence has been self-marked got-it in Produce. **Counters never decrement**:
+   * `recordProduction` is their one writer and its only arithmetic is `+ 1`
+   * (`productionCounters.test.ts` proves it). Every sentence at ≥ 2 is `exit_available` (F1).
+   */
   production: Record<SentenceId, number>;
   reviewQueue: ReviewItem[];
   sessionCount: number;

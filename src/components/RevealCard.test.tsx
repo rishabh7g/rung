@@ -266,9 +266,10 @@ describe('the card as a whole', () => {
   });
 
   /**
-   * Invariant 4, as a source fact: what a mark COSTS is the parent's call — Leitner for a Review
-   * mark, the production counters for a Produce one (#95, #96) — and a card that reached for the
-   * store would make that decision twice, in the one place that cannot see the phase.
+   * Invariant 4, as a source fact: what a mark COSTS is the parent's call — Leitner's `applyMark`
+   * for a Review mark, `recordProduction` for a Produce one (#95), routed by the session machine
+   * (#96) — and a card that reached for the store would make that decision twice, in the one place
+   * that cannot see the phase.
    */
   it('writes nothing: no store, no storage, in either file', () => {
     for (const [file, source] of [

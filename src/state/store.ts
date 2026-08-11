@@ -3,13 +3,13 @@
  * (docs/01-plan.md §4, §6; PRD §8 F7).
  *
  * It stays THIN, and the rules stay out of it. It owns which course is active, the per-course
- * subtree existing at all, settings, and the two writes progression needs (#83) — and every rule
- * those two obey is derived in `src/engine/progression.ts`, which the store asks rather than
- * reimplements. The remaining domain actions land in their own tickets and write through this same
- * shape: production + review queue (#95), the session snapshot (#96), the full course-switch flow
- * with its toast (#106).
+ * subtree existing at all, settings, the two writes progression needs (#83) and the production
+ * counters (#95) — and every rule those obey is derived in `src/engine/` (`progression.ts`,
+ * `exit.ts`), which the store asks rather than reimplements. The remaining domain actions land in
+ * their own tickets and write through this same shape: the review queue (#103), the session
+ * snapshot (#96), the full course-switch flow with its toast (#106).
  *
- * Three properties this module is responsible for keeping true:
+ * Four properties this module is responsible for keeping true:
  *
  *   • **Switching never destroys progress (Invariant 8).** `setActiveCourse` writes one string.
  *     Nothing in this file deletes or rewrites a course subtree, and `ensureCourse` returns the
@@ -18,6 +18,9 @@
  *   • **One unlock path (Invariant 1).** `passRitual` is the only action that writes `modules`,
  *     and it refuses any module that is not the current rung. `unlockPath.test.ts` proves both —
  *     mechanically over this file's source, and behaviourally over every action the store exposes.
+ *   • **The production counters only ever count up.** `recordProduction` is their one writer and
+ *     its only arithmetic is `+ 1`; nothing in the app can lower one. `productionCounters.test.ts`
+ *     proves that the same three ways.
  *   • **No dates.** Nothing here stamps a time; when an action needs one it takes a `Clock`
  *     (`clock.ts`). `passedAt` is the only date in the document.
  */
@@ -32,6 +35,7 @@ import {
   type CourseId,
   type CourseState,
   type ModuleId,
+  type SentenceId,
   type Settings,
 } from './types.ts';
 
@@ -112,6 +116,24 @@ export interface AppActions {
    */
   markStudied: (courseId: CourseId, moduleId: ModuleId) => void;
   /**
+   * One self-marked got-it, counted: `production[sentenceId]` goes up by one (PRD §8 F1 —
+   * `exit_available` is every sentence of a module at ≥ 2×). See the comment block on the
+   * implementation for the increment-only rule and how it is proved.
+   *
+   * **Who may call it (PRD §8 F4, the routing contract).** ONLY a **Produce**-phase got-it.
+   * A **Review**-phase mark is the Leitner scheduler's — `applyMark` in `engine/leitner.ts`,
+   * which moves a box and a countdown and touches no counter here — and the two are different
+   * numbers in different places for a reason: Review measures what is being kept, production
+   * measures what is being built. Counting a review as production would open the exit ritual on a
+   * rung the learner has not produced at all.
+   *
+   * The distinction belongs to the caller, because nothing below it can see a phase: the self-mark
+   * control is deliberately identical in Review, Produce and Comprehension (`components/SelfMark`,
+   * [D11]) and the reveal card imports no store. The session machine (#96) is the one caller, and
+   * it must call this from its Produce branch and from nowhere else — a red mark calls nothing.
+   */
+  recordProduction: (courseId: CourseId, sentenceId: SentenceId) => void;
+  /**
    * Passes a module — see the comment block on the implementation. THE ONLY WRITER OF `modules`
    * (Invariant 1), and it refuses anything but the current rung.
    */
@@ -128,9 +150,12 @@ export type AppStore = AppState & LoadedContent & AppActions;
  * `studied` flags. Exported because the screens derive from the same input the store guards with:
  * the Ladder (#86) and the rung card (#87) read `deriveStatuses`/`rungStage` off this.
  *
- * `exitAvailable` defaults to `() => false` — the real predicate (every sentence self-marked
- * got-it ≥ 2×) arrives with the production counters in **#95**, and until the counters exist,
- * "nothing is exit-ready" is the honest answer rather than a placeholder.
+ * `exitAvailable` stays **injected** rather than derived here, because half of its answer is
+ * content: "every sentence self-marked got-it ≥ 2×" needs the module's sentence ids, which live in
+ * `modules/<id>.json` and never in the store. `screens/useExitAvailable.ts` (#95) joins the two —
+ * this course's counters and the current rung's sentences — through `engine/exit.ts`, and passes
+ * the real predicate in. The `() => false` default is what a caller holding no sentence list can
+ * honestly say: you cannot claim every sentence is produced when you do not know what they are.
  */
 export function progressionInput(
   state: AppState & LoadedContent,
@@ -221,6 +246,47 @@ export const useAppStore = create<AppStore>()(
             courses: {
               ...state.courses,
               [courseId]: { ...course, studied: { ...course.studied, [moduleId]: true } },
+            },
+          };
+        }),
+
+      /* ------------------------------------------------------------------------------------
+       * THE PRODUCTION COUNTERS — ONE WRITER, AND IT ONLY EVER COUNTS UP.
+       *
+       * One self-marked got-it in the Produce phase, counted, and that is the entire action.
+       * `exit_available` is "every sentence of the module at ≥ 2×" (PRD §8 F1), so this number is
+       * what opens the exit ritual — and a number that can fall is a rung that can close again
+       * under a learner who did nothing wrong. So there is no decrement, no reset, no undo and no
+       * ceiling: the only arithmetic in here is `+ 1`.
+       *
+       * Undo is not missing by oversight. The mark commits on Next rather than on the tap
+       * ([D11], `components/SelfMark`), which is where a mis-tap is corrected; past that, the
+       * counter is a record of work the learner says they did, and the app does not argue with it.
+       * A count above two is kept exactly as it is: two is what the ritual asks for, not a cap on
+       * practice, and the module list draws its two dots full and says nothing more.
+       *
+       * `productionCounters.test.ts` is the mechanical half — it slices this file by action and
+       * fails if a second one writes `production`, reads this body for any arithmetic that could
+       * lower a counter, and calls every action the store exposes against a seeded counter to
+       * prove none of them moves it. The same posture as `unlockPath.test.ts` (#83), for the same
+       * reason: a rule that lives only in prose decays one well-meant convenience at a time.
+       *
+       * WHO CALLS IT is on the interface above, and it is the other half of the rule (PRD §8 F4):
+       * Produce got-its only. Review marks are the Leitner queue's, and pass through
+       * `engine/leitner.ts` instead. The session machine (#96) owns that branch.
+       * ---------------------------------------------------------------------------------- */
+      recordProduction: (courseId, sentenceId) =>
+        set((state) => {
+          const course = state.courses[courseId] ?? emptyCourseState();
+          const produced = course.production[sentenceId] ?? 0;
+
+          return {
+            courses: {
+              ...state.courses,
+              [courseId]: {
+                ...course,
+                production: { ...course.production, [sentenceId]: produced + 1 },
+              },
             },
           };
         }),

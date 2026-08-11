@@ -13,9 +13,11 @@
  * **predicates the caller injects**:
  *
  *   • `studied(id)` — the per-course `studied` flag, set on first module open (state v6, #82).
- *   • `exitAvailable(id)` — every sentence self-marked got-it ≥ 2× (PRD §8 F1). The real predicate
- *     lands with the production counters in **#95**; until then callers pass `() => false`, which is
- *     what "no counters yet" honestly means: nothing is exit-ready.
+ *   • `exitAvailable(id)` — every sentence self-marked got-it ≥ 2× (PRD §8 F1). Injected rather
+ *     than computed here because half of its answer is content: `src/engine/exit.ts` holds the
+ *     rule, the store holds the counters, the module file holds the sentence ids they are counted
+ *     against, and `screens/useExitAvailable.ts` (#95) is where the three meet. A caller with no
+ *     sentence list passes `() => false`, which is what "nothing to check" honestly means.
  *
  * **The single unlock path is not here.** This module can say which rung is current; only
  * `passRitual` in `src/state/store.ts` can make one passed (Invariant 1), and it asks this module
@@ -49,7 +51,7 @@ export interface ProgressionInput {
   /** Module ids the learner has passed. In state v6 that is exactly `courses[id].modules`' keys. */
   passed: ReadonlySet<string>;
   studied: (moduleId: string) => boolean;
-  /** All sentences produced ≥ 2× — injected; the real predicate is #95. */
+  /** All sentences produced ≥ 2× — injected; the predicate is `exit.ts` + the counters (#95). */
   exitAvailable: (moduleId: string) => boolean;
 }
 

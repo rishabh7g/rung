@@ -7,9 +7,10 @@
  * literally the exit unlocking, with no bar, no percentage and no date anywhere near it
  * (Invariant 2).
  *
- * **It only reads.** The counters are written by the Practice loop's self-marks (#95); this draws
- * whatever `production[sentenceId]` currently says, and a count above two draws the same two full
- * dots because there is nothing further to say.
+ * **It only reads.** The counters are written by the Practice loop's Produce got-its, through the
+ * store's one writer (`recordProduction`, #95); this draws whatever `production[sentenceId]`
+ * currently says, and a count above two draws the same two full dots because there is nothing
+ * further to say.
  *
  * `aria-hidden`, like the Ladder's level squares and rung markers: it is a drawing of a number a
  * screen reader is already told in the module header's count, and three announcements per row is

@@ -70,7 +70,7 @@ export function CourseProvider({ children }: CourseProviderProps) {
 
         const { ensureCourse, setActiveCourse } = useAppStore.getState();
         // Idempotent, so this is a no-op from the second boot on: the active course simply
-        // always has somewhere to write (#83, #95, #96).
+        // always has somewhere to write (#83, #95's counters, #96).
         ensureCourse(course.id);
         // First run only. A FALLBACK never writes: when a persisted course is missing from this
         // build, `resolveActiveCourse` warns and returns another one, and the stored id stays

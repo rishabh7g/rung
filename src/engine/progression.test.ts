@@ -32,7 +32,8 @@ function input(overrides: Partial<ProgressionInput> = {}): ProgressionInput {
     levels: ladder(),
     passed: new Set<string>(),
     studied: () => false,
-    // #95's real predicate; every call site defaults to this until the counters exist.
+    // What a caller with no sentence list says; the real predicate is `engine/exit.ts` over the
+    // course's counters, joined to the module's sentence ids in `useExitAvailable` (#95).
     exitAvailable: () => false,
     ...overrides,
   };

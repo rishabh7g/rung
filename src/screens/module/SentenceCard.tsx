@@ -38,7 +38,7 @@ const CHIP_CLASS: Readonly<Record<Tag, string | undefined>> = {
 
 interface SentenceCardProps {
   sentence: Sentence;
-  /** `production[sentenceId]` — read-only here; the counters are written in Practice (#95). */
+  /** `production[sentenceId]` — read-only here; the counters are written by `recordProduction`. */
   produced: number;
   expanded: boolean;
   /** Called with this sentence's id; the screen keeps the open set. */

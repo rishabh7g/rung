@@ -4,9 +4,10 @@
  *
  * The assertion that matters is the NEGATIVE one: a stage is only "one clear action" if the other
  * stages' actions are absent, so every case compares the card's whole link list rather than
- * checking that a button it wants is somewhere on screen. `exit_ready` is testable here and
- * nowhere else today — the app injects `exitAvailable = () => false` until the production
- * counters land (#95) — which is the other reason this file renders the component directly.
+ * checking that a button it wants is somewhere on screen. Every stage — `exit_ready` included, now
+ * that the production counters decide it (#95) — is reached on the real screen in
+ * `LadderScreen.test.tsx`; this file renders the component directly to hold it to its four CTA
+ * sets, one stage at a time, with nothing else on screen to read them off.
  *
  * Strings come from the shared fixture, built FROM the canonical key list, so a label reads
  * `hi-mr rungCard.practice`: an assertion against a prototype literal would pass on a hardcoded
