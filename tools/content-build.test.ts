@@ -27,6 +27,7 @@ import {
   type Levels,
   type WordIndexFile,
 } from './content-build.ts';
+import { completeStrings } from './fixtures/strings.ts';
 import { DEFAULT_CONTENT_ROOT, REPO_ROOT, type Module } from './validate.ts';
 
 /**
@@ -77,6 +78,8 @@ interface FixtureCourse {
   modules: FixtureModule[];
   /** Module ids listed in levels.json. Defaults to the module ids, all hand-flagged hasContent: true. */
   listed?: string[];
+  /** Defaults to a complete bundle built from the canonical key list (#76); override to break it. */
+  strings?: Record<string, unknown>;
 }
 
 function courseRow(id: string, overrides: Partial<CourseRow> = {}): CourseRow {
@@ -147,7 +150,7 @@ function scaffold(courses: readonly FixtureCourse[]): string {
     );
     writeFileSync(
       path.join(dir, 'strings.json'),
-      JSON.stringify({ cueLabel: `${course.row.id} cue` }, null, 2),
+      JSON.stringify(course.strings ?? completeStrings(course.row.id), null, 2),
       'utf8',
     );
     for (const fixture of course.modules) {
@@ -368,10 +371,86 @@ describe('the emitted manifest', () => {
 
     const { outRoot } = build(tree, STRICT);
 
-    expect(JSON.parse(readFileSync(path.join(outRoot, 'hi-mr', 'strings.json'), 'utf8'))).toEqual({
-      cueLabel: 'hi-mr cue',
-    });
+    expect(JSON.parse(readFileSync(path.join(outRoot, 'hi-mr', 'strings.json'), 'utf8'))).toEqual(
+      completeStrings('hi-mr'),
+    );
     expect(existsSync(path.join(outRoot, 'en-es', 'strings.json'))).toBe(false);
+  });
+});
+
+/** The build's half of #76 — the check itself is covered in `strings-check.test.ts`. */
+describe('the strings gate', () => {
+  function tamper(edit: (bundle: Record<string, unknown>) => void): Record<string, unknown> {
+    const bundle = completeStrings('hi-mr');
+    edit(bundle);
+    return bundle;
+  }
+
+  it('fails the build, writing nothing, when a course drops a key (PRD §6.5)', () => {
+    const tree = scaffold([
+      {
+        row: courseRow('hi-mr'),
+        modules: [{ id: 'L1-M1', verified: true }],
+        strings: tamper((bundle) => {
+          delete (bundle.retry as Record<string, unknown>).cta;
+        }),
+      },
+    ]);
+
+    const { report, outRoot } = build(tree, STRICT);
+
+    expect(report.exitCode).toBe(1);
+    expect(report.lines).toEqual([
+      'CONTENT build FAIL',
+      '  hi-mr/strings.json: missing key "retry.cta"',
+    ]);
+    expect(existsSync(outRoot)).toBe(false);
+  });
+
+  it('checks the strings of a course the gate will ship nothing from', () => {
+    const tree = scaffold([
+      { row: courseRow('hi-mr'), modules: [{ id: 'L1-M1', verified: true }] },
+      {
+        row: courseRow('en-es', { fixture: true }),
+        modules: [{ id: 'L1-M1', verified: false, fixture: true }],
+        strings: tamper((bundle) => {
+          bundle.storageNote = '';
+        }),
+      },
+    ]);
+
+    const { report } = build(tree, STRICT);
+
+    expect(report.exitCode).toBe(1);
+    expect(report.lines).toContain(
+      '  en-es/strings.json: "storageNote" must be a non-empty string — got an empty string',
+    );
+  });
+
+  it('fails a placeholder a translation dropped, naming course and key', () => {
+    const tree = scaffold([
+      {
+        row: courseRow('hi-mr'),
+        modules: [{ id: 'L1-M1', verified: true }],
+        strings: tamper((bundle) => {
+          bundle.switchToast = 'You are on the other course now.';
+        }),
+      },
+    ]);
+
+    const { report } = build(tree, STRICT);
+
+    expect(report.exitCode).toBe(1);
+    expect(report.lines).toContain(
+      '  hi-mr/strings.json: "switchToast" placeholders — expected {from} {to}, found none',
+    );
+  });
+
+  it('passes the three authored bundles as they ship', () => {
+    const { report } = build(DEFAULT_CONTENT_ROOT, DEV);
+
+    expect(report.exitCode).toBe(0);
+    expect(report.lines.join('\n')).not.toMatch(/strings\.json/);
   });
 });
 
