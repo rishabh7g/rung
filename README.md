@@ -38,6 +38,7 @@ npm run dev     # http://localhost:5173
 | `npm run test` | Vitest (jsdom + Testing Library), single run |
 | `npm run lint` | ESLint (flat config), Prettier-compatible |
 | `npm run format` | Prettier write across the source tree |
+| `npm run content:validate` | Schema v5 + cross-checks over `content/*/modules/*.json` |
 
 Two rules the scaffold bakes in, before you write a component:
 
@@ -47,6 +48,11 @@ Two rules the scaffold bakes in, before you write a component:
   anywhere in `src/` (`docs/design-contract.md`).
 - **One brand constant.** `src/brand.ts` exports `BRAND` — the only place the product
   name lives. Page title, manifest and export filenames all read from it.
+- **Content has a contract.** `content/schema/module.schema.json` (JSON Schema draft
+  2020-12) is the frozen shape of a module; `tools/validate.ts` adds the checks a schema
+  cannot express (filename ↔ id, the 10-sentence / pool ≥ 6 budget and its `fixture: true`
+  relaxation, full enrichment for M1–M3, rule-index ranges). Run `npm run content:validate`
+  before opening any content PR — one line per file, then `CONTENT <n>/<m> ok`.
 
 ## How work happens
 

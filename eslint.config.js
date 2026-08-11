@@ -22,4 +22,11 @@ export default tseslint.config(
       globals: globals.browser,
     },
   },
+  {
+    // tools/ holds the build-time CLIs (content:validate …); they run in Node.
+    files: ['tools/**/*.ts', 'vite.config.ts'],
+    languageOptions: {
+      globals: globals.node,
+    },
+  },
 );
