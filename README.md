@@ -21,8 +21,9 @@ fixed sequence of 10 modules ("rungs"), each exited only by **writing** a novel
 
 ## Development
 
-**Prerequisites:** Node **≥ 20** (enforced by `engines.node`) and npm. No other
-runtime, no backend, no env vars.
+**Prerequisites:** Node **22.22.2+ or 24.15+** (`engines.node`; CI runs 24) and npm. No
+other runtime, no backend, no env vars. The floor is jsdom 30's, not ours — on Node 20
+every test file fails to import before it asserts anything.
 
 ```bash
 npm install

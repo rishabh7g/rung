@@ -23,9 +23,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Node 24, not the 20 the ticket asked for: jsdom 30 (and its undici) needs
+      # >= 22.22.2, so on 20 every test file fails to import and TEST is red
+      # before it runs a single assertion. package.json engines says the same.
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
           cache: npm
 
       - run: npm ci
@@ -37,10 +40,12 @@ jobs:
 
       # Red only. Each step's full output lives in .verify/<step>.log, which is
       # gitignored — without this, the 20-line tail in the log above is all a
-      # failure leaves behind.
+      # failure leaves behind. include-hidden-files is required: .verify is a
+      # dotted path, and v4 drops those silently ("No files were found").
       - name: Upload .verify logs
         if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: verify-logs
           path: .verify/
+          include-hidden-files: true

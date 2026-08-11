@@ -69,7 +69,8 @@ See design/PRD-engineering.md §4 for the diagram. Essentials:
 | **Mukta + Barlow + Barlow Condensed, self-hosted** [D15] | per tokens.md; subset per course at build |
 | lucide-react | the only icon set (tokens.md §4), stroke 1.5 |
 
-Node ≥ 20, npm. No other runtime dependency without an issue first.
+Node 22.22.2+ or 24.15+ (jsdom 30's floor, mirrored in `engines.node`; CI runs 24),
+npm. No other runtime dependency without an issue first.
 There is NO text-input component, NO diff/normalisation engine, NO clipboard
 integration — if a ticket seems to need one, re-read Invariants 4–6 and stop.
 
