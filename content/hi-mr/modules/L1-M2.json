@@ -1,0 +1,535 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M2",
+  "title": "First exchange",
+  "job": "Greetings, wellbeing, yes/no questions",
+  "prerequisites": ["L1-M1"],
+  "verified": false,
+  "verifiedBy": null,
+  "verifiedAt": null,
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 5,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "तू/तुम्ही + N/Adj + आहेस/आहात",
+      "मी + बरा/बरी + आहे",
+      "तुझा/तुझी/तुझं + N + काय + आहे",
+      "<statement> + का",
+      "हो/नाही + <statement>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "नमस्कार and धन्यवाद carry over from Hindi unchanged — the greeting frame is one of the few places with nothing to relearn."
+    },
+    {
+      "tag": "interference",
+      "text": "A yes/no question is the plain statement plus का at the very end. Hindi fronts क्या; Marathi moves nothing and only adds का last."
+    },
+    {
+      "tag": "delta",
+      "text": "Two words for \"you\": तू (informal, takes आहेस) and तुम्ही (polite or plural, takes आहात). The copula follows the person, never the gender."
+    },
+    {
+      "tag": "interference",
+      "text": "कसा · कशी · कसं and बरा · बरी · बरं agree with the person they describe — the one being spoken about, not the speaker. Hindi agrees too, but has no neuter form."
+    },
+    {
+      "tag": "delta",
+      "text": "Answers are one word: हो (yes) · नाही (no). नाही also carries \"नहीं है\" — मी विद्यार्थी नाही needs no आहे after it."
+    },
+    {
+      "tag": "interference",
+      "text": "तुझा · तुझी · तुझं (\"your\") agree with the thing owned, exactly as माझा · माझी · माझं did in M1."
+    },
+    {
+      "tag": "delta",
+      "text": "काय is \"what\" and sits where the answer will sit. It is not का — one letter apart, and का only marks a yes/no question at the end."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M2-S01",
+      "display": "नमस्कार, मी रोहन आहे",
+      "cue": "नमस्कार, मैं रोहन हूँ",
+      "glossEn": "Hello, I am Rohan",
+      "literal": "नमस्कार, मैं रोहन हूँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "नमस्कार",
+            "cue": "नमस्कार",
+            "tag": "free",
+            "forms": [],
+            "note": "The same word as Hindi, and the everyday Marathi greeting — it works for hello and for goodbye, at any hour."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "हिंदी में ज़्यादातर 'नमस्ते' निकलता है. मराठी का रोज़ का शब्द नमस्कार है — नमस्ते समझ तो आएगा, पर मराठी जैसा नहीं लगेगा.",
+      "sound": "नम‑स्कार — तीन साफ़ हिस्से; अंत का 'र' हल्का रखो, खींचो मत.",
+      "variations": [
+        {
+          "display": "नमस्कार, माझं नाव रोहन आहे",
+          "cue": "नमस्कार, मेरा नाम रोहन है",
+          "changed": "M1 वाला पूरा साँचा जोड़ दिया — नमस्कार के बाद कोई भी वाक्य आ सकता है."
+        },
+        {
+          "display": "नमस्कार, मी विद्यार्थी आहे",
+          "cue": "नमस्कार, मैं विद्यार्थी हूँ",
+          "changed": "परिचय बदला — नमस्कार वैसा ही रहता है, वह कभी रूप नहीं बदलता."
+        }
+      ],
+      "mistake": {
+        "display": "नमस्ते, मी रोहन आहे",
+        "why": "नमस्ते हिंदी की आदत है — मराठी में नमस्कार कहो. बाक़ी वाक्य बिल्कुल ठीक है."
+      },
+      "usage": "किसी से मिलते ही पहली लाइन — फ़ोन उठाते वक़्त भी यही चलता है.",
+      "register": "neutral",
+      "mnemonic": "नमस्कार एक ही शब्द में हैलो भी और अलविदा भी — सुबह हो या रात, यही एक शब्द काफ़ी है."
+    },
+    {
+      "id": "L1-M2-S02",
+      "display": "तू कसा आहेस?",
+      "cue": "तुम कैसे हो?",
+      "glossEn": "How are you? (to a man)",
+      "literal": "तू कैसा है? ('तू' के साथ आहे नहीं, आहेस)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "तू",
+            "cue": "तुम/तू",
+            "tag": "free",
+            "forms": ["तू", "तुम्ही"],
+            "note": "Informal \"you\" — the same word as Hindi तू, but in Marathi it is the ordinary form between friends. तुम्ही is the polite or plural one."
+          },
+          {
+            "display": "कसा",
+            "cue": "कैसे/कैसा",
+            "tag": "delta",
+            "forms": ["कसा", "कशी", "कसं", "कसे"],
+            "note": "\"How\" — it agrees with the person you are asking: कसा to a man, कशी to a woman, कसे with तुम्ही."
+          },
+          {
+            "display": "आहेस",
+            "cue": "हो",
+            "tag": "delta",
+            "forms": ["आहे", "आहेस", "आहात"],
+            "note": "M1's copula in its तू form. The shape follows the person: मी आहे · तू आहेस · तुम्ही आहात."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "हिंदी में 'तुम कैसे हो' कहते वक़्त क्रिया एक ही रहती है. मराठी में 'तू' आते ही आहे बदलकर आहेस हो जाता है — 'तू कसा आहे?' कान को तुरंत खटकता है.",
+      "sound": "आहेस = आ‑हे‑स, तीन हिस्से; अंत का 'स' छोटा और हल्का — खींचकर 'आहेSS' मत करो.",
+      "variations": [
+        {
+          "display": "तू कशी आहेस?",
+          "cue": "तुम कैसी हो?",
+          "changed": "किसी लड़की से पूछो तो कसा → कशी; आहेस वैसा ही रहता है."
+        },
+        {
+          "display": "तुम्ही कसे आहात?",
+          "cue": "आप कैसे हैं?",
+          "changed": "आदर या एक से ज़्यादा लोग → तू → तुम्ही, कसा → कसे, आहेस → आहात."
+        }
+      ],
+      "mistake": {
+        "display": "तू कसा आहे?",
+        "why": "'तू' के साथ आहे नहीं आता — आहेस आता है. रूप व्यक्ति से मिलता है, लिंग से नहीं."
+      },
+      "usage": "नमस्कार के तुरंत बाद की लाइन — दोस्त, भाई-बहन, अपनी उम्र के लोगों से.",
+      "register": "informal",
+      "mnemonic": "'तू' के साथ 'स' — तू आहेस. जिससे तू कहते हो, उसी के साथ आख़िर में 'स' लगता है."
+    },
+    {
+      "id": "L1-M2-S03",
+      "display": "मी बरा आहे, आणि तू?",
+      "cue": "मैं ठीक हूँ, और तुम?",
+      "glossEn": "I am well, and you?",
+      "literal": "मैं ठीक(पु.) हूँ, और तू?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "बरा",
+            "cue": "ठीक",
+            "tag": "delta",
+            "forms": ["बरा", "बरी", "बरं"],
+            "note": "\"Well, fine\" — an adjective, so it agrees with the person it describes: a man says बरा, a woman बरी."
+          },
+          {
+            "display": "आणि",
+            "cue": "और",
+            "tag": "free",
+            "forms": [],
+            "note": "\"And\" — the same job as और, and आणि तू? on its own is a whole question back."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "हिंदी का 'ठीक' किसी लिंग से नहीं बदलता, इसलिए हाथ हर बार बरा लिख देता है. मराठी में बोलने वाला ही तय करता है — लड़की कहेगी 'मी बरी आहे'.",
+      "sound": "बरा का 'र' हल्का सा लुढ़कता है; आणि का 'ण' मूर्धन्य है — जीभ ऊपर मोड़कर, हिंदी वाला 'न' नहीं.",
+      "variations": [
+        {
+          "display": "मी बरी आहे, आणि तू?",
+          "cue": "मैं ठीक हूँ, और तुम?",
+          "changed": "कहने वाली लड़की है — इसलिए बरा → बरी. आणि तू? वैसा ही."
+        },
+        {
+          "display": "मी विद्यार्थी आहे, आणि तू?",
+          "cue": "मैं विद्यार्थी हूँ, और तुम?",
+          "changed": "हाल की जगह पहचान — आणि तू? किसी भी वाक्य के बाद सवाल लौटा देता है."
+        }
+      ],
+      "mistake": {
+        "display": "मी बरा आहेस, आणि तू?",
+        "why": "आहेस सिर्फ़ 'तू' के लिए है. अपने बारे में हमेशा मी … आहे."
+      },
+      "usage": "'तू कसा आहेस?' का सबसे आम जवाब — और आणि तू? से बातचीत आगे बढ़ जाती है.",
+      "register": "informal",
+      "mnemonic": "आणि तू? — दो शब्दों में पूरा सवाल वापस. पहली बातचीत यहीं से चलती है."
+    },
+    {
+      "id": "L1-M2-S04",
+      "display": "तुझं नाव काय आहे?",
+      "cue": "तुम्हारा नाम क्या है?",
+      "glossEn": "What is your name?",
+      "literal": "तेरा(नपुं.) नाम क्या है?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "तुझं",
+            "cue": "तुम्हारा/तेरा",
+            "tag": "interference",
+            "forms": ["तुझा", "तुझी", "तुझं"],
+            "note": "\"Your\" for a तू-person. It agrees with the thing owned, not the owner — नाव is neuter, so तुझं, exactly like माझं in M1."
+          },
+          {
+            "display": "काय",
+            "cue": "क्या",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"What\" — it stands in the slot the answer will fill, just as क्या does in Hindi."
+          }
+        ],
+        "rules": [5, 6]
+      },
+      "trap": "काय और का सिर्फ़ एक अक्षर की दूरी पर हैं. काय = क्या (सवाल का शब्द), का = हाँ/ना वाला निशान जो वाक्य के अंत में बैठता है. 'तुझं नाव का आहे?' का मतलब ही बदल जाता है.",
+      "sound": "तुझं का 'झ' नरम है, और अंत की 'ं' सिर्फ़ नाक की हल्की हवा — वही जो माझं में सुनी थी.",
+      "variations": [
+        {
+          "display": "तुझी भाषा काय आहे?",
+          "cue": "तुम्हारी भाषा क्या है?",
+          "changed": "नाव(नपुं.) → भाषा(स्त्री.) — इसलिए तुझं → तुझी."
+        },
+        {
+          "display": "माझं नाव रोहन आहे",
+          "cue": "मेरा नाम रोहन है",
+          "changed": "यही सवाल का जवाब — सिर्फ़ तुझं की जगह माझं, बाक़ी साँचा वही."
+        }
+      ],
+      "mistake": {
+        "display": "तुझा नाव काय आहे?",
+        "why": "नाव नपुंसकलिंग है — तुझं नाव. वही नियम जो M1 में माझं के साथ था."
+      },
+      "usage": "पहली मुलाक़ात में नाम पूछने का सीधा तरीक़ा — दोस्ताना माहौल में.",
+      "register": "informal",
+      "mnemonic": "माझं → तुझं. सिर्फ़ मालिक बदला; अंत की 'ं' वही रही, क्योंकि नाव तो अब भी नपुंसक है."
+    },
+    {
+      "id": "L1-M2-S05",
+      "display": "तू विद्यार्थी आहेस का?",
+      "cue": "क्या तुम विद्यार्थी हो?",
+      "glossEn": "Are you a student?",
+      "literal": "तू विद्यार्थी है — क्या? (का सबसे आख़िर में)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "का",
+            "cue": "क्या",
+            "tag": "interference",
+            "forms": [],
+            "note": "The yes/no marker. It goes at the very end and changes nothing else — the statement stays exactly as it was."
+          }
+        ],
+        "rules": [1, 2, 6]
+      },
+      "trap": "हिंदी में सवाल शुरुआत से बनता है — 'क्या तुम विद्यार्थी हो?'. मराठी में उलटा है: बयान जस का तस रहता है और का सबसे अंत में जुड़ता है. शुरू में का लगाना सबसे आम ग़लती है.",
+      "sound": "का पर ज़ोर मत दो — वाक्य के अंत में आवाज़ बस हल्की सी ऊपर उठती है, इतना ही काफ़ी है.",
+      "variations": [
+        {
+          "display": "तू भारतीय आहेस का?",
+          "cue": "क्या तुम भारतीय हो?",
+          "changed": "विद्यार्थी → भारतीय — का वैसा ही, अंत में ही रहता है."
+        },
+        {
+          "display": "तू विद्यार्थी आहेस",
+          "cue": "तुम विद्यार्थी हो",
+          "changed": "का हटा दो — वही वाक्य फिर से सीधा बयान बन जाता है."
+        }
+      ],
+      "mistake": {
+        "display": "का तू विद्यार्थी आहेस?",
+        "why": "हिंदी के 'क्या' की तरह शुरू में मत लगाओ — मराठी में का हमेशा वाक्य के आख़िर में."
+      },
+      "usage": "किसी के बारे में सीधी पुष्टि — जवाब हाँ या ना में मिलता है.",
+      "register": "informal",
+      "mnemonic": "हिंदी का 'क्या' आगे खड़ा होता है, मराठी का 'का' पीछे — सवाल का ताला अंत में लगता है."
+    },
+    {
+      "id": "L1-M2-S06",
+      "display": "हो, मी विद्यार्थी आहे",
+      "cue": "हाँ, मैं विद्यार्थी हूँ",
+      "glossEn": "Yes, I am a student",
+      "literal": "हाँ, मैं विद्यार्थी हूँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "हो",
+            "cue": "हाँ",
+            "tag": "delta",
+            "forms": ["हो", "होय"],
+            "note": "\"Yes\" in everyday speech. होय is the fuller, more formal yes; हो is the one you will actually hear in conversation."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "हिंदी वाले कान को 'हो' सुनकर 'होना/हो जाओ' सुनाई देता है. यहाँ वह क्रिया नहीं — सिर्फ़ 'हाँ' है.",
+      "sound": "हो छोटा और सीधा है — 'ओ' को खींचो मत.",
+      "variations": [
+        {
+          "display": "हो, मला चहा आवडतो",
+          "cue": "हाँ, मुझे चाय पसंद है",
+          "changed": "जवाब कोई भी हो — हो से शुरू करके पूरा वाक्य जोड़ दो."
+        },
+        {
+          "display": "होय, मी विद्यार्थी आहे",
+          "cue": "जी हाँ, मैं विद्यार्थी हूँ",
+          "changed": "हो → होय — बात वही, लहजा थोड़ा औपचारिक."
+        }
+      ],
+      "mistake": {
+        "display": "हाँ, मी विद्यार्थी आहे",
+        "why": "'हाँ' हिंदी का है — मराठी में हो. आधा वाक्य मराठी और आधा हिंदी सबसे जल्दी पकड़ा जाता है."
+      },
+      "usage": "का वाले सवाल का सबसे छोटा जवाब — फिर पूरा वाक्य दोहराना मराठी में आम है.",
+      "register": "informal",
+      "mnemonic": "सवाल के अंत में का, जवाब की शुरुआत में हो — दोनों दो अक्षर के."
+    },
+    {
+      "id": "L1-M2-S07",
+      "display": "नाही, मी विद्यार्थी नाही",
+      "cue": "नहीं, मैं विद्यार्थी नहीं हूँ",
+      "glossEn": "No, I am not a student",
+      "literal": "नहीं, मैं विद्यार्थी नहीं(‑हूँ)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "नाही",
+            "cue": "नहीं / नहीं है",
+            "tag": "delta",
+            "forms": [],
+            "note": "Both \"no\" and \"am/is not\". In a negative statement it replaces आहे completely — nothing else is left to add."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "हिंदी में 'नहीं' के बाद भी 'हूँ' लगाना पड़ता है — 'मैं विद्यार्थी नहीं हूँ'. मराठी में नाही अकेला ही पूरा काम करता है; 'मी विद्यार्थी नाही आहे' मत बोलो.",
+      "sound": "नाही = ना‑ही, दोनों हिस्से बराबर और खुले; हिंदी 'नहीं' वाली नाक की आवाज़ यहाँ नहीं आती.",
+      "variations": [
+        {
+          "display": "नाही, मी बरा नाही",
+          "cue": "नहीं, मैं ठीक नहीं हूँ",
+          "changed": "विद्यार्थी → बरा — नाही दोनों जगह वैसा ही, और आहे कहीं नहीं आता."
+        },
+        {
+          "display": "मी विद्यार्थी नाही",
+          "cue": "मैं विद्यार्थी नहीं हूँ",
+          "changed": "शुरू का नाही हटा दो — बचा हुआ वाक्य ही 'नहीं हूँ' कह देता है."
+        }
+      ],
+      "mistake": {
+        "display": "नाही, मी विद्यार्थी नाही आहे",
+        "why": "नाही के बाद आहे नहीं आता — नाही ख़ुद ही 'नहीं हूँ' है."
+      },
+      "usage": "मना करने या किसी की ग़लतफ़हमी सुधारने के लिए — अकेला नाही भी चलता है, पर पूरा वाक्य नरम लगता है.",
+      "register": "informal",
+      "mnemonic": "नाही दो काम एक साथ करता है: 'नहीं' भी और 'नहीं हूँ' भी — इसलिए आहे की जगह ही नहीं बचती."
+    },
+    {
+      "id": "L1-M2-S08",
+      "display": "तुला चहा आवडतो का?",
+      "cue": "क्या तुम्हें चाय पसंद है?",
+      "glossEn": "Do you like tea?",
+      "literal": "तुझको चाय अच्छी‑लगती‑है — क्या?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "तुला",
+            "cue": "तुम्हें/तुझको",
+            "tag": "delta",
+            "forms": [],
+            "note": "Dative \"to you\" — मला's partner. Anything the other person likes or wants starts here."
+          },
+          {
+            "display": "आवडतो",
+            "cue": "पसंद है",
+            "tag": "delta",
+            "forms": ["आवडतो", "आवडते", "आवडतं"],
+            "note": "M1's verb, untouched: the ending still follows चहा (masculine). Adding का at the end does not change it."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "हिंदी में सवाल आगे से बनता है — 'क्या तुम्हें चाय पसंद है?'. मराठी में वाक्य पूरा वैसा ही रहता है, सिर्फ़ का अंत में जुड़ता है. और आवडतो भी नहीं बदलता — वह अब भी चहा(पु.) के पीछे चलता है.",
+      "sound": "तुला और मला एक ही धुन पर बोले जाते हैं — सिर्फ़ पहला अक्षर बदलता है.",
+      "variations": [
+        {
+          "display": "तुला कॉफी आवडते का?",
+          "cue": "क्या तुम्हें कॉफ़ी पसंद है?",
+          "changed": "चहा(पु.) → कॉफी(स्त्री.) — इसलिए आवडतो → आवडते; का फिर भी अंत में ही."
+        },
+        {
+          "display": "तुला चहा आवडतो",
+          "cue": "तुम्हें चाय पसंद है",
+          "changed": "का हटा — अब यह सवाल नहीं, बयान है."
+        }
+      ],
+      "mistake": {
+        "display": "मला चहा आवडतो का?",
+        "why": "सवाल सामने वाले से है — मला नहीं, तुला. मला अपने बारे में कहने के लिए है."
+      },
+      "usage": "किसी को चाय-कॉफ़ी पूछने से पहले की लाइन — रोज़ की मेहमाननवाज़ी.",
+      "register": "informal",
+      "mnemonic": "मला = मुझे, तुला = तुझे. एक 'म' अपने लिए, एक 'त' तेरे लिए."
+    },
+    {
+      "id": "L1-M2-S09",
+      "display": "तू बरी आहेस का?",
+      "cue": "क्या तुम ठीक हो? (किसी लड़की से)",
+      "glossEn": "Are you well? (to a woman)",
+      "literal": "तू ठीक(स्त्री.) है — क्या?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "बरी",
+            "cue": "ठीक",
+            "tag": "delta",
+            "forms": ["बरा", "बरी", "बरं"],
+            "note": "The feminine of बरा — the ending follows the person you are asking, never you."
+          }
+        ],
+        "rules": [1, 2, 3]
+      },
+      "trap": "यहाँ दो चीज़ें एक साथ चलती हैं: बरी जिससे पूछ रहे हो उसके लिंग से मिलता है, और का सबसे अंत में बैठता है. हिंदी वाले का को 'क्या' समझकर आगे खींच ले जाते हैं.",
+      "sound": "बरी का 'ई' साफ़ और लंबा; पूरा वाक्य एक ही साँस में — बरी‑आहेस‑का.",
+      "variations": [
+        {
+          "display": "तू बरा आहेस का?",
+          "cue": "क्या तुम ठीक हो? (किसी लड़के से)",
+          "changed": "लड़के से पूछो तो बरी → बरा; बाक़ी सब वैसा ही."
+        },
+        {
+          "display": "तू कशी आहेस?",
+          "cue": "तुम कैसी हो?",
+          "changed": "हाँ/ना वाला सवाल नहीं रहा — कशी से पूरा हाल पूछा जाता है, इसलिए का की ज़रूरत नहीं."
+        }
+      ],
+      "mistake": {
+        "display": "तू का बरी आहेस?",
+        "why": "का बीच में नहीं आता — मराठी में वह हमेशा वाक्य के आख़िर में लगता है."
+      },
+      "usage": "किसी की तबीयत या हाल पूछना — फ़िक्र जताने की सबसे आम लाइन.",
+      "register": "informal",
+      "mnemonic": "जिससे पूछ रहे हो उसी का लिंग: लड़की → बरी. और सवाल का निशान का हमेशा सबसे पीछे."
+    },
+    {
+      "id": "L1-M2-S10",
+      "display": "मी बरी आहे, धन्यवाद",
+      "cue": "मैं ठीक हूँ, धन्यवाद",
+      "glossEn": "I am well, thank you",
+      "literal": "मैं ठीक(स्त्री.) हूँ, धन्यवाद",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "धन्यवाद",
+            "cue": "धन्यवाद",
+            "tag": "free",
+            "forms": [],
+            "note": "The same word as Hindi, and it does not change shape — the polite way to close a first exchange."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "sound": "धन्यवाद का 'ध' महाप्राण है — हवा छोड़ते हुए; बोलचाल में यह शब्द ज़रा तेज़ी से निकलता है.",
+      "variations": [
+        {
+          "display": "मी बरा आहे, धन्यवाद",
+          "cue": "मैं ठीक हूँ, धन्यवाद",
+          "changed": "कहने वाला लड़का है — इसलिए बरी → बरा. धन्यवाद वैसा ही."
+        },
+        {
+          "display": "धन्यवाद, मी बरी आहे",
+          "cue": "धन्यवाद, मैं ठीक हूँ",
+          "changed": "धन्यवाद आगे भी चल जाता है — मतलब वही रहता है."
+        }
+      ],
+      "mistake": {
+        "display": "मी बरं आहे, धन्यवाद",
+        "why": "बरं नपुंसक रूप है — इंसान के लिए बरा या बरी. नपुंसक रूप चीज़ों के लिए बचाकर रखो."
+      },
+      "usage": "हाल पूछने का जवाब देकर बात नरमी से बंद करना.",
+      "register": "neutral",
+      "mnemonic": "जवाब + धन्यवाद = बातचीत का नरम अंत, और दोनों शब्द हिंदी से सीधे उतर आते हैं."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M2-C01",
+      "display": "नमस्कार, तुम्ही कसे आहात?",
+      "cue": "नमस्कार, आप कैसे हैं?"
+    },
+    {
+      "id": "L1-M2-C02",
+      "display": "तुम्ही विद्यार्थी आहात का?",
+      "cue": "क्या आप विद्यार्थी हैं?"
+    },
+    {
+      "id": "L1-M2-C03",
+      "display": "तुला मराठी आवडते का?",
+      "cue": "क्या तुम्हें मराठी पसंद है?"
+    },
+    {
+      "id": "L1-M2-C04",
+      "display": "हो, मला संगीत खूप आवडतं",
+      "cue": "हाँ, मुझे संगीत बहुत पसंद है"
+    },
+    {
+      "id": "L1-M2-C05",
+      "display": "तुझी भाषा मराठी आहे का?",
+      "cue": "क्या तुम्हारी भाषा मराठी है?"
+    },
+    {
+      "id": "L1-M2-C06",
+      "display": "मला चहा आवडतो, आणि तुला?",
+      "cue": "मुझे चाय पसंद है, और तुम्हें?"
+    },
+    {
+      "id": "L1-M2-C07",
+      "display": "तू भारतीय विद्यार्थी आहेस का?",
+      "cue": "क्या तुम भारतीय विद्यार्थी हो?"
+    },
+    {
+      "id": "L1-M2-C08",
+      "display": "तुझं नाव रोहन आहे का?",
+      "cue": "क्या तुम्हारा नाम रोहन है?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
