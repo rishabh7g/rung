@@ -23,8 +23,9 @@ export default tseslint.config(
     },
   },
   {
-    // tools/ holds the build-time CLIs (content:validate …); they run in Node.
-    files: ['tools/**/*.ts', 'vite.config.ts'],
+    // tools/ holds the build-time CLIs (content:validate …) and scripts/ the harness's
+    // own tests; they run in Node.
+    files: ['tools/**/*.ts', 'scripts/**/*.ts', 'vite.config.ts'],
     languageOptions: {
       globals: globals.node,
     },
