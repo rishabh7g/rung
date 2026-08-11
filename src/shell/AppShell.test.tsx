@@ -20,7 +20,7 @@ import { resetStringsCache } from '../course/strings.ts';
 import { useAppStore } from '../state/store.ts';
 import { DEV_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
 import { stringValue } from '../test/courseStrings.ts';
-import { SHELL_ROUTES } from './routes.tsx';
+import { RITUAL_PATH, SHELL_ROUTES } from './routes.tsx';
 
 /** Renders the app at `hash` and waits for boot — no screen mounts before there is a course. */
 async function renderAt(hash: string) {
@@ -39,6 +39,21 @@ async function beginSession(): Promise<void> {
   fireEvent.click(
     await screen.findByRole('button', { name: stringValue('hi-mr', 'practice.beginRead') }),
   );
+}
+
+/**
+ * The current rung, produced out — the one precondition a route in this table has (#100). The exit
+ * ritual belongs to a rung whose every sentence has been self-marked got-it twice, and a deep link
+ * into it while the rung is not lands on that rung's module instead. Seeding the counters (through
+ * the store's one writer, as the app itself does) is what keeps these cases about the shell.
+ */
+function produceRung(): void {
+  const store = useAppStore.getState();
+  store.ensureCourse('hi-mr');
+  for (const sentenceId of ['L1-M1-S01', 'L1-M1-S02']) {
+    store.recordProduction('hi-mr', sentenceId);
+    store.recordProduction('hi-mr', sentenceId);
+  }
 }
 
 /** The tab links, in nav order — scoped to the nav, because screens have links of their own. */
@@ -93,6 +108,9 @@ describe('routes', () => {
     // one thing this case must not do.
     const hash = `#${path.replace('/sentence/:id', '/sentence/L1-M1-S01').replace(':id', 'L1-M1')}`;
 
+    // The exit ritual is the one route with a precondition of its own (#100) — see `produceRung`.
+    if (path === RITUAL_PATH) produceRung();
+
     await renderAt(hash);
 
     // Something rendered, and it was not the redirect: the location is still where we asked.
@@ -135,6 +153,8 @@ describe('headers', () => {
     ['#/comprehension', 'Comprehension'],
     ['#/verdict', 'Verdict'],
   ])('%s is a child screen with a back header', async (hash, title) => {
+    if (hash === '#/ritual') produceRung();
+
     await renderAt(hash);
 
     expect(screen.getByRole('heading', { level: 1, name: title })).toBeInTheDocument();
