@@ -183,8 +183,11 @@ describe('immersive mode', () => {
 
     fireEvent.click(screen.getByRole('button', { name: 'Pause session' }));
 
+    expect(await screen.findByText(stringValue('hi-mr', 'practice.hubTitle'))).toBeInTheDocument();
+    // The hub, with the session it just left still standing: since #99 the CTA slot holds the
+    // resume plate rather than Begin, because pausing keeps the learner's place.
     expect(
-      await screen.findByRole('button', { name: stringValue('hi-mr', 'practice.beginRead') }),
+      screen.getByRole('button', { name: stringValue('hi-mr', 'practice.resumeContinue') }),
     ).toBeInTheDocument();
     expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument();
     expect(window.location.hash).toBe('#/practice');

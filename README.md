@@ -152,7 +152,7 @@ Two consequences worth knowing before you author content:
   emitter imports it, and so does the runtime resolver (`src/engine/wordIndex.ts`, #94). Never
   copy it: a second copy is a word that silently has no "why".
 
-### The strings contract — 72 keys, no fallback copy
+### The strings contract — 75 keys, no fallback copy
 
 Every course ships one `strings.json` carrying **all** the microcopy the shell renders, because
 the shell has none of its own (PRD §4). So the build validates it against the canonical key list
@@ -168,18 +168,18 @@ declared twice.
 `tools/strings-check.ts` runs per course, flattens the nested file onto dot-paths
 (`ritual.check.copy`), and reports four things, always naming course **and** key:
 
-- **missing key** — the 72 canonical paths must all be there;
+- **missing key** — the 75 canonical paths must all be there;
 - **empty or non-string value** — a present-but-blank key is a missing key with extra steps;
 - **unknown key** — the typo tripwire; `ritual.check.plate` would otherwise sit quietly beside a
   missing `plateLabel`;
 - **placeholder mismatch** — a value carries exactly its canonical `{placeholders}`
   (`{sentenceCount} {maxWords} {ordinal} {n} {nextModule} {to} {from} {level} {remaining}
-  {total} {count}`), so a translation cannot
+  {total} {count} {phase}`), so a translation cannot
   drop `{ordinal}` or invent `{name}`.
 
 Adding a key is one edit to `src/course/stringsKeys.ts` plus a line in each of the three bundles —
 in that order, because the build will tell you exactly which course you forgot. The list grew that
-way seven times: five keys the frozen screens forced (PR #120), three the Ladder forced (#86 —
+way eight times: five keys the frozen screens forced (PR #120), three the Ladder forced (#86 —
 `ladder.pendingLine`, `ladder.ownership`, `ladder.sealedToast`), seven the staged rung card forced
 (#87 — `rungCard.startModule`, `.freshNote`, `.practice`, `.revisitModule`, `.exitRitual`,
 `.module`, `.practiceEarlier`: a label for every control across the four [D22] stages), three
@@ -195,7 +195,9 @@ gate, the two Begin labels, the three phase names the chips wear, the honest ans
 chip with nothing due, and the summary's title, four count lines and its way back) and five the
 Read phase forced (#97 — `read.showCue`, `.hideCue`, `.prev`, `.next`, `.toProduce`: the cue
 toggle's two labels and the pager's three, the last of which names where the rung's last sentence
-goes). All forty-six are **draft values pending the Sync-3 freeze** (#71). The alternative each time was a
+goes) and three lossless resume forced (#99 — `practice.resumeLine`, `.resumeContinue`,
+`.resumeNew`: where the open session stopped, and the two ways out of it). All forty-nine are
+**draft values pending the Sync-3 freeze** (#71). The alternative each time was a
 learner-facing line hardcoded in the shell, which is the one thing this list exists to prevent.
 
 `why.openFull` is deliberately **not** `module.openFull`: one opens a sentence from a browsing
@@ -441,7 +443,7 @@ always, because an immersive screen with no way out is the failure the shell exi
 The ✕ ends the session and lands on the Practice hub; so does leaving the route, so the Android
 back button cannot walk out of a session and leave the nav hidden. What a session *is* — the
 phases, the marks and the per-course snapshot — is the session machine (#96, below); resuming into
-that snapshot is #99.
+that snapshot is lossless resume (#99, further below), and the ✕ is one of the ways in.
 
 **Phone-correct layout**, and the two rules that keep it that way: the app column is `100dvh`
 (never `100vh` — a mobile URL bar shrinks the viewport and `100vh` does not notice) and never
@@ -813,8 +815,9 @@ learner's position snapshotted per course from the first card.
   bundle, so the number sits where the language puts it. No duration, no percentage, no date, and a
   test scans the rendered screen for all three. The gentle elapsed tick (numberless, 2px) is #98's.
 - **The snapshot is a position, per course** — `{phase, idx, queue}`, written on every advance and
-  cleared at the summary. The pause ✕ leaves it standing; restoring it is #99's, which is why
-  nothing here calls `startSession` twice.
+  cleared at the summary — plus a flush on `visibilitychange`/`pagehide` so a page that goes away
+  mid-card is not one advance stale (#99). The pause ✕ leaves it standing, and the hub offers it
+  back, which is why nothing here calls `startSession` twice.
 - **Read is the phase in the middle** (`practice/ReadPhase.tsx`, #97 — its own section below).
   `useModules` (the content layer's many-files loader, moved out of `WhyPanel`) fetches whatever
   modules the Review queue names — five due cards routinely come from five different rungs — and a
@@ -913,6 +916,59 @@ Verified at 360px in headless Chrome inside a real hi-mr session, driving `perfo
 forward: 0% → 21% (5 min) → 98% (24 min) → 100% (31 min, capped), 2px tall, `rgb(231,231,234)`
 under `rgb(148,188,227)`, `textContent` empty at every step, and with reduced motion emulated the
 computed transition is `none` while the fill still reads 41%.
+
+### Lossless resume — the place is kept, and the session is not re-counted
+
+An interrupted session costs the learner the interruption and nothing else (#99; PRD §8 F4
+"immersive mode + lossless resume", §8 F0 AC "resumable session exactly", §17). There is **no draft
+text anywhere** in this app — no inputs at all (Invariant 6) — so the snapshot is pure position,
+`{phase, idx, queue}` per course, and all an app kill can take is the place.
+
+| file | what it is |
+|---|---|
+| `src/screens/practice/resume.ts` | pure: `resumePlan(snapshot, input)` → the two queues a resumed session serves |
+| `src/screens/practice/ResumeBanner.tsx` | the hub's offer: where it stopped, Continue, New session |
+| `src/screens/practice/Session.tsx` | the flush on `visibilitychange`/`pagehide`, and the `resume` entry point |
+
+[practice-resume-360.png](docs/images/practice-resume-360.png) — the banner in the CTA's place.
+
+- **The stored position is exact, not one card stale.** The snapshot is written from a passive
+  effect, and a passive effect is *scheduled*: tap Next and the OS can background, freeze or
+  discard the page before React runs it. `visibilitychange → hidden` and `pagehide` write the
+  current position **synchronously**, off a ref a layout effect keeps in step with the commit, and
+  between them they fire on every path a phone actually takes (home button, app switcher, tab
+  close, bfcache). The tests clear the store behind the session's back and prove the flush puts the
+  position back; deleting either listener turns them red.
+- **A resume is not a session.** Continue restores the phase, the index and the queue and calls
+  `startSession` *not at all* — no second `sessionCount`, no second `tickSession`. Charging a
+  learner a session for closing their tab, or bringing the whole review queue due twice on one
+  sitting's work, is what the single-caller contract (#96) exists to prevent, and a test walks
+  start → kill → resume → finish asserting `sessionCount === 1` and one tick throughout. **New
+  session** is the other button: it drops the snapshot and spends a fresh one (2, and a second
+  tick).
+- **The phase named by the snapshot keeps its own queue.** Review's five cards were chosen against
+  a queue that has since moved — every card marked before the interruption changed a box and a
+  countdown — so re-deriving that list would drop answered cards and shift the position under the
+  learner. The phase it does *not* name is planned fresh, because the chips never gate and both
+  must be honest the moment they are tapped.
+- **The snapshot belongs to its course** (Invariant 8). The hub reads `courses[active].session`, so
+  switching away and back offers *that* course's own position, untouched — which is exactly where
+  the prototype resets instead (§17: do not copy). Nothing on the screen implements it; it falls
+  out of state v6's keying.
+- **The banner replaces the Begin CTA** rather than sitting beside it: two CTAs on one screen is
+  the learner deciding which of them means "practise". The prototype makes the same call
+  (`hubCta: 'Resume'`) — what it does not do is come back to the card you left. Three draft strings
+  (#71): `practice.resumeLine` (`{phase}`, `{count}`, `{total}` — counts, never time), plus a label
+  each for the two controls. The canonical list is 75.
+- **The elapsed tick still starts fresh** on a resumed session (#98), and that is intended: the
+  tick is about the sitting, not the ladder.
+
+Verified live at 360px in headless Chrome against `npm run dev` (hi-mr): Read 3 / 10 on
+"माझा देश भारत आहे" → tab hidden → snapshot `{phase: 'read', idx: 2, queue: [10 ids]}` →
+**page killed** → the hub offers "पिछला session अधूरा है — पढ़ो, 10 में से 3." → Continue → the same
+card, `sessionCount` still 1 → active course swapped to en-ar and rebooted (its own hub, its own
+Begin, hi-mr's snapshot untouched) → swapped back → the same banner, the same card, still one
+session.
 
 ### The fonts — bundled, because offline is the product
 
