@@ -41,6 +41,58 @@ npm run dev     # http://localhost:5173
 | `npm run content:validate` | Schema v5 + cross-checks over `content/*/modules/*.json` |
 | `npm run content:build` | Builds `public/content/` from `content/` — strict by default |
 
+### `scripts/verify.sh` — one line, or one failure
+
+The gate before every PR (docs/01-plan.md §8). Run it from anywhere; it finds the repo root
+itself:
+
+```bash
+scripts/verify.sh          # everything
+scripts/verify.sh --fast   # everything except BUILD
+```
+
+A green run says exactly one thing, and exits 0:
+
+```
+TYPES ok | LINT ok | TEST 142/142 ok | CONTENT ok | BUILD ok
+```
+
+| Step | Exit | Command |
+|---|---|---|
+| TYPES | 10 | `npm run typecheck` |
+| LINT | 20 | `npm run lint`, then `npx prettier --check .` — **either one failing is exit 20** |
+| TEST | 30 | `npm run test`; the segment carries vitest's own count |
+| CONTENT | 40 | `npm run content:build` — schema validation, word index and the strings check in one |
+| BUILD | 50 | `npx vite build`; omitted entirely with `--fast` |
+
+Steps run in that order and the **first failure stops the run**, so a red run names exactly one
+thing: `FAIL <STEP> (exit <code>)`, the last 20 lines of that step's log, and the path to the
+whole log. Nothing else is printed — no progress chatter to scroll past, on either colour.
+
+```
+FAIL TYPES (exit 10)
+
+src/App.tsx(9,9): error TS2322: Type 'number' is not assignable to type 'string'.
+
+log: /home/rrish/dev/shidi/.verify/types.log
+```
+
+Every step writes `.verify/<step>.log` (gitignored), and **the directory is wiped at the start of
+every run** — so a missing log is proof that step never ran: the failure above leaves `types.log`
+and nothing else.
+
+Two things worth knowing before you read a result:
+
+- **BUILD is `vite build`, not `npm run build`.** The npm script's `prebuild` would re-run tsc and
+  `content:build`, so a content failure would resurface as `FAIL BUILD` long after CONTENT passed.
+  The harness runs each thing once, under its own name.
+- **CONTENT judges the exit code, never the output.** A strict build correctly ships nothing today
+  (see the gate table below) and exits 0 — that is `CONTENT ok`, not an empty-output failure.
+
+The harness has its own tests (`scripts/verify.test.ts`): they run it in a tmp dir against fake
+`npm`/`npx` shims, because a test that really shelled out to `npm run test` would run vitest inside
+vitest.
+
 ### The content gate — why `dev` and `build` see different content
 
 `content:build` runs automatically as `predev` and `prebuild`, and it is the thing that
