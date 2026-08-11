@@ -26,7 +26,9 @@
  */
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
+import { applyMark, tickSession } from '../engine/leitner.ts';
 import { currentRungId, type LevelPlan, type ProgressionInput } from '../engine/progression.ts';
+import { planSession, type SessionPlan } from '../engine/session.ts';
 import { systemClock, type Clock } from './clock.ts';
 import { durableLocalStorage } from './durableStorage.ts';
 import {
@@ -36,6 +38,8 @@ import {
   type CourseState,
   type ModuleId,
   type SentenceId,
+  type SessionPhase,
+  type SessionSnapshot,
   type Settings,
 } from './types.ts';
 
@@ -134,6 +138,35 @@ export interface AppActions {
    */
   recordProduction: (courseId: CourseId, sentenceId: SentenceId) => void;
   /**
+   * One self-marked Review card, applied to the Leitner queue — the OTHER half of the routing
+   * contract above (PRD §8 F4). A got-it promotes a box and buys its interval, a miss goes back to
+   * box 1; `engine/leitner.ts` owns both rules and this action only carries the answer into state.
+   *
+   * **It never touches `production`.** Review measures what is being kept and production measures
+   * what is being built, and counting a review as production would open the exit ritual on a rung
+   * the learner has not produced at all. A `sentenceId` the queue does not hold changes nothing —
+   * a Produce mark misrouted here is a no-op rather than a silent write somewhere else.
+   */
+  recordReview: (courseId: CourseId, sentenceId: SentenceId, gotIt: boolean) => void;
+  /**
+   * Opens a FRESH session, and it is the one action that may: `sessionCount + 1`, the review queue
+   * ticked one session closer to due, and the per-course snapshot initialised at the first card.
+   * It answers with the plan (`engine/session.ts`) the session then serves.
+   *
+   * **Called ONCE per session** — see the comment block on the implementation for why resume (#99)
+   * depends on that.
+   */
+  startSession: (courseId: CourseId, moduleSentenceIds?: readonly SentenceId[]) => SessionPlan;
+  /**
+   * Writes the in-flight session's position, or clears it with `null` at the summary (PRD §8 F7 —
+   * `session`, the per-course snapshot that makes resume lossless). Called on every card advance
+   * and every phase change; an unchanged snapshot is not a write.
+   *
+   * It moves a position and nothing else: it cannot start a session (no `sessionCount`, no tick)
+   * and cannot mark anything.
+   */
+  setSession: (courseId: CourseId, session: SessionSnapshot | null) => void;
+  /**
    * Passes a module — see the comment block on the implementation. THE ONLY WRITER OF `modules`
    * (Invariant 1), and it refuses anything but the current rung.
    */
@@ -201,6 +234,24 @@ export function persistedSlice({
  * app and has never held a v5 payload, so this path is a mechanism kept wired (a version bump
  * runs it) rather than a live upgrade route.
  */
+/**
+ * Whether two snapshots describe the same card. Position is written on every advance and a session
+ * re-renders far more often than it moves, so this is what keeps `setSession` from rebuilding the
+ * course subtree — and the persistence from writing localStorage — for a snapshot that has not
+ * changed. The queue is compared by its ids: a fresh array holding the same session is the same
+ * session.
+ */
+function sameSession(a: SessionSnapshot | null, b: SessionSnapshot | null): boolean {
+  if (a === null || b === null) return a === b;
+
+  return (
+    a.phase === b.phase &&
+    a.idx === b.idx &&
+    a.queue.length === b.queue.length &&
+    a.queue.every((sentenceId, index) => sentenceId === b.queue[index])
+  );
+}
+
 export function migrate(_persisted: unknown, fromVersion: number): AppState {
   console.warn(
     `${STORAGE_KEY}: found state v${fromVersion}, and no migration to v${STATE_VERSION} exists yet — starting fresh (the v5 → v6 wrap ships with export/import, PRD §8 F7)`,
@@ -289,6 +340,102 @@ export const useAppStore = create<AppStore>()(
               },
             },
           };
+        }),
+
+      /* ------------------------------------------------------------------------------------
+       * THE OTHER SIDE OF THE ROUTING CONTRACT — REVIEW MARKS GO TO THE QUEUE, AND ONLY THERE.
+       *
+       * `engine/leitner.ts` decides what a mark costs (got-it promotes a box and buys 1 / 3 / 7
+       * sessions; a miss returns to box 1); this action carries that answer into state and does
+       * nothing else. It writes `reviewQueue` and never a counter — the pair of writes the session
+       * machine keeps apart, one per phase, and the reason `recordProduction` says who may call it.
+       *
+       * An id the queue does not hold leaves the state object untouched, rather than rebuilding
+       * the queue with nothing changed in it. That is idempotence, not an optimisation: a Produce
+       * mark that arrived here by mistake must be a no-op, and "same object back" is how the tests
+       * can tell a no-op from a write that happened to land on the same values.
+       * ---------------------------------------------------------------------------------- */
+      recordReview: (courseId, sentenceId, gotIt) =>
+        set((state) => {
+          const course = state.courses[courseId];
+          if (course === undefined) return state;
+          if (!course.reviewQueue.some((entry) => entry.sentenceId === sentenceId)) return state;
+
+          return {
+            courses: {
+              ...state.courses,
+              [courseId]: {
+                ...course,
+                reviewQueue: applyMark(course.reviewQueue, sentenceId, gotIt),
+              },
+            },
+          };
+        }),
+
+      /* ------------------------------------------------------------------------------------
+       * ONE SESSION, COUNTED ONCE.
+       *
+       * `sessionCount` is the app's whole clock (Invariant 2: due in sessions, never in days), and
+       * `tickSession` spends it — every item comes one session closer to due, once. So this action
+       * is the only place either happens, and it happens on a FRESH session only:
+       *
+       *   • Resuming an interrupted session (#99) restores the snapshot and calls NOTHING here —
+       *     re-incrementing would charge a learner a session for closing their tab, and re-ticking
+       *     would bring the whole queue due a second time on the same day's work.
+       *   • The pause ✕ leaves the snapshot standing (`setSession` is what moves it), so coming
+       *     back is a resume, not a second start.
+       *
+       * Ticking BEFORE planning is what makes "due" mean due in the session about to run, and it
+       * is why the plan is taken here rather than by the screen: one tick, one plan, one write.
+       * The plan is returned rather than stored whole — state v6's snapshot is a position
+       * (`{phase, idx, queue}`, PRD §8 F7), and the Produce queue is derivable from content and
+       * the counters at any moment, so persisting a second copy of it would be a second thing to
+       * keep true.
+       *
+       * The opening phase is the first honest one: **Review when something is due, Read when
+       * nothing is** (PRD §8 F4 — "courses with an empty review queue start at Read"). An empty
+       * Review phase would be the app asking the learner to admire a queue with nothing in it.
+       * ---------------------------------------------------------------------------------- */
+      startSession: (courseId, moduleSentenceIds = []) => {
+        const course = get().courses[courseId] ?? emptyCourseState();
+        const reviewQueue = tickSession(course.reviewQueue);
+        const plan = planSession({
+          queue: reviewQueue,
+          moduleSentenceIds,
+          production: course.production,
+        });
+
+        const phase: SessionPhase = plan.reviewIds.length > 0 ? 'review' : 'read';
+        const session: SessionSnapshot = {
+          phase,
+          idx: 0,
+          queue: phase === 'review' ? [...plan.reviewIds] : [...moduleSentenceIds],
+        };
+
+        set((state) => {
+          const held = state.courses[courseId] ?? emptyCourseState();
+
+          return {
+            courses: {
+              ...state.courses,
+              [courseId]: { ...held, sessionCount: held.sessionCount + 1, reviewQueue, session },
+            },
+          };
+        });
+
+        return plan;
+      },
+
+      // The position, per course — written on every card advance and cleared at the summary. The
+      // snapshot is what survives an app kill and a course switch (#99); this action is only the
+      // pen. An unchanged position is not a write, so a session that re-renders without moving
+      // touches neither the store nor localStorage.
+      setSession: (courseId, session) =>
+        set((state) => {
+          const course = state.courses[courseId];
+          if (course === undefined || sameSession(course.session, session)) return state;
+
+          return { courses: { ...state.courses, [courseId]: { ...course, session } } };
         }),
 
       /* ------------------------------------------------------------------------------------

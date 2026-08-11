@@ -29,7 +29,7 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 50 keys: the 21 of PRD §4, the 5 the frozen screens forced
+ * file it is complaining about). 67 keys: the 21 of PRD §4, the 5 the frozen screens forced
  * (PR #120) — `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and the four
  * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — the 3 the Ladder
  * forced (#86): the counts-only pending line, the ownership footer and the sealed-level toast,
@@ -39,10 +39,14 @@
  * -trap note on an expanded card — the 4 Sentence Detail forced (#89): the trap callout's
  * heading, the mnemonic's "pocket it" label, and the two pager buttons — the 4 the reveal
  * card forced (#93): the two self-mark segments [D11], the question the card asks above them, and
- * the Next that does not exist until one of them is chosen — and the 3 the "why" panel forced
- * (#94): its toggle's two labels and the "open full" that leaves the session.
+ * the Next that does not exist until one of them is chosen — the 3 the "why" panel forced
+ * (#94): its toggle's two labels and the "open full" that leaves the session — and the 17 the
+ * session machine forced (#96): the Practice hub's title, its three phase lines and the line that
+ * says the phases never gate, the two Begin labels, the three phase names the soft chips wear, the
+ * honest answer to a Review chip with nothing due, and the summary's title, four count lines and
+ * its way back to the Ladder.
  *
- * Those twenty-four are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
+ * Those forty-one are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
  * as PR #120's were. The alternative each time was hardcoding learner-facing lines in the shell,
  * which is the one thing this list exists to prevent.
  */
@@ -92,6 +96,23 @@ export const STRINGS_KEYS = [
   'why.show',
   'why.hide',
   'why.openFull',
+  'practice.hubTitle',
+  'practice.hubReview',
+  'practice.hubRead',
+  'practice.hubProduce',
+  'practice.guideLine',
+  'practice.beginReview',
+  'practice.beginRead',
+  'practice.phase.review',
+  'practice.phase.read',
+  'practice.phase.produce',
+  'practice.nothingDue',
+  'practice.summaryTitle',
+  'practice.summaryReviewed',
+  'practice.summaryGotIt',
+  'practice.summaryProduced',
+  'practice.summaryAtTwo',
+  'practice.backToLadder',
   'pendingAuthoring',
   'verdict.line',
   'switchToast',
@@ -217,6 +238,48 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'why.show': [],
   'why.hide': [],
   'why.openFull': [],
+  /**
+   * The session (#96) — the Practice hub, the phase chips and the summary (PRD §8 F4, PRD-design
+   * §6.3). Seventeen keys, and the rule that put every one of them here is the same as the module
+   * list's: the prototype writes this screen in English for every course, which is what a
+   * prototype does and what a product cannot.
+   *
+   * **The counts interpolate; nothing else does.** `{count}` is the only new placeholder in the
+   * canonical set, and it appears in the three hub lines and the four summary lines because a
+   * number's place in a sentence is the language's business, not the shell's — a right-aligned
+   * value column beside a label (the prototype's summary rows) would fix it at the end of every
+   * line in every course. **They are counts, never time** (Invariant 2): the summary says how many
+   * cards were seen, never how long they took, and the gentle elapsed tick — the one sanctioned
+   * time affordance, numberless by construction — is #98's and has no string at all.
+   *
+   * `practice.phase.*` are the three soft chips AND the hub's three rows: one name per phase, used
+   * wherever the phase is named, because they are the same three things.
+   */
+  'practice.hubTitle': [],
+  /** How many due reviews this session will serve — 0 on the first rung. */
+  'practice.hubReview': ['{count}'],
+  /** How many sentences the rung holds. */
+  'practice.hubRead': ['{count}'],
+  /** How many sentences the Produce phase will serve — the rung's, least-produced first. */
+  'practice.hubProduce': ['{count}'],
+  'practice.guideLine': [],
+  'practice.beginReview': [],
+  'practice.beginRead': [],
+  'practice.phase.review': [],
+  'practice.phase.read': [],
+  'practice.phase.produce': [],
+  /** The Review chip's honest answer when nothing is due — the empty state, not an error. */
+  'practice.nothingDue': [],
+  'practice.summaryTitle': [],
+  /** Review cards self-marked this session. */
+  'practice.summaryReviewed': ['{count}'],
+  /** How many of those were a got-it. */
+  'practice.summaryGotIt': ['{count}'],
+  /** Produce got-its counted this session — the number that reached the counters. */
+  'practice.summaryProduced': ['{count}'],
+  /** How many of the rung's sentences now stand at ≥ 2×, out of how many there are. */
+  'practice.summaryAtTwo': ['{count}', '{total}'],
+  'practice.backToLadder': [],
   pendingAuthoring: [],
   /** The rung that just opened. */
   'verdict.line': ['{nextModule}'],

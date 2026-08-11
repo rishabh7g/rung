@@ -9,6 +9,13 @@
   gap: var(--space-1);
 }
 
+/* Along the baseline instead — the Practice card's header row, where the prototype draws the pair
+   beside the `PRODUCE · SENTENCE 03` kicker (#96). */
+.dotsRow {
+  composes: dots;
+  flex-direction: row;
+}
+
 /* 6px squares — radius 0 like every blueprint object (design/tokens.md §3, §4). */
 .dot {
   width: var(--dot-size);

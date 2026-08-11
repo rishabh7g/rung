@@ -332,6 +332,60 @@ export function useModule(moduleId: string): AsyncContent<ModuleContent> {
   );
 }
 
+/** Shared, so a render with nothing loaded is reference-equal to the last one. */
+const NO_MODULES: ReadonlyMap<string, ModuleContent> = new Map();
+
+/**
+ * Several modules at once, and the ones that arrived — the loader for surfaces built out of more
+ * than one file (#94's "why" rows, #96's Review queue, whose five cards routinely come from five
+ * different rungs).
+ *
+ * It is deliberately NOT `useModule` several times over, and the difference is the failure policy:
+ * a module that will not load is simply **absent from the answer**, silently. `useModule`'s error
+ * screen is the right answer for a screen whose whole content is missing and the wrong one for a
+ * panel that expands beside a sentence or a review card mid-session — the session serves what it
+ * has and says nothing about what it does not. Everything else is `loadModule`'s: one request per
+ * file per page load, shared with whoever else asked.
+ *
+ * The dependency is the ids as a sorted string rather than the array, so a re-render resolving to
+ * the same set does not re-enter the effect; and the answer is tagged with the key it answers for,
+ * so a course switch never renders the previous course's modules.
+ */
+export function useModules(moduleIds: readonly string[]): ReadonlyMap<string, ModuleContent> {
+  const { course } = useCourse();
+  const key = [...new Set(moduleIds)].sort().join(' ');
+  const [loaded, setLoaded] = useState<{
+    key: string;
+    modules: ReadonlyMap<string, ModuleContent>;
+  } | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    const wanted = key === '' ? [] : key.split(' ');
+
+    void Promise.all(
+      wanted.map((moduleId) =>
+        loadModule(course.id, moduleId).then(
+          (module) => [moduleId, module] as const,
+          () => null,
+        ),
+      ),
+    ).then((entries) => {
+      if (cancelled) return;
+      setLoaded({
+        key: `${course.id} ${key}`,
+        modules: new Map(entries.filter((e) => e !== null)),
+      });
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [course.id, key]);
+
+  return loaded !== null && loaded.key === `${course.id} ${key}` ? loaded.modules : NO_MODULES;
+}
+
 /** One module's cumulative word index, for the "why" row. */
 export function useIndex(moduleId: string): AsyncContent<WordIndex> {
   const { course } = useCourse();

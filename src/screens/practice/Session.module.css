@@ -1,0 +1,50 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   Geometry follows design/Rung App v3.3.dc.html → Practice → the live session: the chip row, then
+   one card filling the rest of the column. */
+
+/* The session is the whole column: the chips at the top, the card below taking what is left, so
+   the reveal button and the self-mark sit at the BOTTOM of the screen the way they do in the
+   prototype. `min-height: 100%` is what makes that true — the shell's `<main>` is the scroll area
+   and a plain block, so a card that only asked for `flex: 1` would bunch at the top (#84).
+   `--space-6` is the prototype's 22px gutter, the same one every screen here uses. */
+.session {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 0 var(--space-6) var(--space-4);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  gap: var(--space-3);
+  padding-top: var(--space-2);
+}
+
+/* Kicker · dots · position, on one baseline — the prototype's card header row. */
+.head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+/* English shell furniture, in the register of the nav's tab labels — raised on #71. */
+.kicker {
+  margin: 0;
+  font: var(--text-kicker);
+  letter-spacing: var(--kicker-tracking);
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--color-accent-700);
+}
+
+/* The count, pushed to the end of the row: `3 / 10`, never `3 of 10` — the shell owns no
+   learner-facing word (#88's call, kept). */
+.position {
+  margin: 0 0 0 auto;
+  font: var(--text-caption);
+  white-space: nowrap;
+  color: var(--ink-45);
+}
