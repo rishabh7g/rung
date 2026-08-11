@@ -207,7 +207,7 @@ Unchanged: the app neither validates nor helps validate. Per-course native gate 
 - First load ≤ 2 s mid-range Android over 4G; text-only content.
 - **Design tokens:** build styling exclusively against `design/tokens.css` (reference: `design/tokens.md`) — base Industry layer + rung semantic layer; no hard-coded hex/px/font names in components.
 - **Fonts [D15]:** bundle Mukta (Devanagari incl. ळ, conjuncts, matras at ≥ 18 px / 1.6) + Barlow / Barlow Condensed; subset per course at build time. If en-ar ships: bundle a Naskh face for the quiet script lines (system fallback acceptable for the dev fixture only); ʾ/ḥ/ī diacritics of the romanization must render in Barlow — verify glyph coverage, fall back to a diacritic-complete face if needed.
-- Browser targets: Chrome Android + Safari iOS current-1.
+- Browser targets: Chrome Android + Safari iOS current-1. Mobile/PWA build requirements + resources: **`design/pwa-checklist.md`** (manifest, precache-everything service worker, safe areas, 100dvh, self-hosted fonts, storage persistence, offline release gate).
 - **Brand [P1]:** app name "rung" in PWA manifest, header wordmark + rails mark (SVG in repo), ratified — keep the name in one config constant.
 
 ## 11. Delivery phases

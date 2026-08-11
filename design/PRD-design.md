@@ -172,4 +172,4 @@ Any translation/checking UI [D18]; any text input; grading or storage of learner
 - **scriptMode:** per-course flag — `native` (script transfers; e.g. Devanagari for Hindi speakers) or `romanized` (romanization primary, script as quiet recognition line).
 - **Level / rung / module / 11th sentence / exit ritual / "why" toggle / gentle elapsed tick / Pocket it:** unchanged from v3.2.
 - **Staged rung card:** the current rung's single-CTA action area (fresh → studied → exit-ready → pending).
-- **rung [P1]:** ratified brand [P1] — the checkpoint itself; mark = rails + solid middle rung ("you are here").
+- **rung [P1]:** proposed brand — the checkpoint itself; mark = rails + solid middle rung ("you are here").
