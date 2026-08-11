@@ -866,6 +866,54 @@ kicker reads `READ · M1` and the count `1 / 10`, because the shell owns no lear
 18px floor everywhere: 26px for the sentence, 18px for the cue, the nudge, the ghosts and both
 pager buttons.
 
+### The gentle elapsed tick — the only time affordance, and it has no numbers
+
+`src/screens/practice/Tick.tsx` is the 2px hairline under the phase chips (#98; PRD §2 boundary
+note, §8 F4, PRD-design §7, design/tokens.md §5): `--tick-track` under `--tick-fill`, filling once
+over ~25 minutes on a 1s linear width transition, and then stopping.
+
+| ~5 minutes in | capped, and it stays there | the setting off |
+|---|---|---|
+| [practice-tick-360.png](docs/images/practice-tick-360.png) | [practice-tick-full-360.png](docs/images/practice-tick-full-360.png) | [practice-tick-off-360.png](docs/images/practice-tick-off-360.png) |
+
+- **It is ambience, not a readout.** The node holds no text in any state, is `aria-hidden`, and has
+  no live region — nothing announces or displays how long has passed, how long is left, or how long
+  a session should be. A bar you can *read* is a session with a target, and a target is a calendar
+  with one day in it (Invariant 2). The test asserts `textContent === ''` after 13 and after 53
+  simulated minutes.
+- **`performance.now()`, and no date anywhere.** `src/state/clock.test.ts` fails on a date
+  constructed outside `clock.ts`, and this component keeps that guard whole rather than asking for
+  an exemption: it reads a **duration** off the monotonic timer — milliseconds since a moment
+  inside this session — which cannot answer what day it is and does not move for a clock change, a
+  timezone or a DST hop. The guard's own doc comment now carries that argument, and the scanner has
+  a test proving `performance.now()` is not a violation. Neither pattern was removed.
+- **Session-relative, never persisted.** The origin lives in a ref; state v6 carries no timestamp
+  but `passedAt`, and the export contract is unchanged. Closing the app does not resume a
+  stopwatch — the next session's bar starts empty, which is honest: the tick is about the sitting,
+  not the ladder.
+- **Active means a phase is on screen.** `Session` passes `!live.done`, so the summary stops it
+  exactly where the prototype removes it; leaving the route unmounts it; and a backgrounded tab
+  stops accruing (`visibilitychange`). A pause **banks** what it accrued rather than resetting or
+  fast-forwarding it — the hour a session spent in the background was not practice, and resuming
+  can never jump past the cap.
+- **Off is off.** `settings.elapsedTickEnabled: false` renders nothing at all — no track, no box,
+  zero layout trace — and accrues nothing behind the setting either, so switching it on mid-session
+  starts an honest empty bar. **The default is ON**, per the design recommendation; [Q3]/#70 owns
+  the final call.
+- **Coarse on purpose:** one sample every 15s (~100 wakeups in a full session, not ~90,000), each
+  landing under a 1s linear transition, so what the eye gets is drift rather than motion. Under
+  `prefers-reduced-motion` the transition goes and the width stays — the fill is the whole of what
+  the tick says.
+
+Fidelity: the prototype samples every 8s and hides the tick at `phase === 'done'`; both are matched
+in spirit (15s, and gone at the summary). The `1s linear` is the one value in `Tick.module.css`
+that is not a token — the design package states it in prose only (tokens.md §5) and `tokens.css`
+carries just `--motion-tick-cap: 25min` — so it is written once, commented, and recorded for #117.
+Verified at 360px in headless Chrome inside a real hi-mr session, driving `performance.now()`
+forward: 0% → 21% (5 min) → 98% (24 min) → 100% (31 min, capped), 2px tall, `rgb(231,231,234)`
+under `rgb(148,188,227)`, `textContent` empty at every step, and with reduced motion emulated the
+computed transition is `none` while the fill still reads 41%.
+
 ### The fonts — bundled, because offline is the product
 
 Mukta (all Devanagari), Barlow (body/UI) and Barlow Condensed (headings, kickers, wordmark) are

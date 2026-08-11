@@ -40,6 +40,21 @@ describe('systemClock', () => {
  * What it cannot see: `globalThis['Da' + 'te']`, an alias, or a date built inside a dependency.
  * That is not the failure mode it exists for — the ordinary, well-meant timestamp is — and
  * `ALLOWED` is one file long so the exemption stays an argument someone has to make.
+ *
+ * **`performance.now()` is not on this list, and that is deliberate (#98).** The scan bans DATES:
+ * a date is a position in a calendar, and the moment one reaches a screen or a stored record the
+ * product has calendar framing (Invariant 2) and a ladder that depends on what day it is. A read
+ * of the monotonic timer is a different measurement — the milliseconds since an arbitrary origin
+ * inside this page's life. It cannot answer what day it is, what time it is, or when the last
+ * session was; a clock change, a timezone or a DST hop moves it by nothing, because it is not a
+ * date and knows about none of them. The gentle elapsed tick (`screens/practice/Tick.tsx`) is
+ * built on exactly that distinction: it measures a DURATION it never persists, never exports and
+ * never renders as a number — the only sanctioned time affordance, PRD §2's boundary note.
+ *
+ * So the carve-out is a definition rather than a hole: adding `performance` to the patterns below
+ * would ban measuring how long something took, which the boundary note explicitly allows, and
+ * exempting a second FILE would be the real weakening. If a session ever wants to know a date, it
+ * still has one place to ask — and it is not this one.
  */
 const DATE_CONSTRUCTION = [
   { name: 'new Date', pattern: /\bnew\s+Date\b/ },
@@ -127,6 +142,10 @@ describe('the calendar-free discipline', () => {
   it('exempts clock.ts and nothing else', () => {
     expect(ALLOWED).toEqual(['src/state/clock.ts']);
   });
+
+  it('still bans both ways of constructing one — the guard is not softened, only explained', () => {
+    expect(DATE_CONSTRUCTION.map(({ name }) => name)).toEqual(['new Date', 'Date.now']);
+  });
 });
 
 describe('the scanner itself', () => {
@@ -148,6 +167,17 @@ describe('the scanner itself', () => {
 
   it('catches a call hidden in a comment — that is where one waits to become code', () => {
     expect(scanSource('src/Planted.ts', ' * cheaper than Date.now() here')).toHaveLength(1);
+  });
+
+  /**
+   * The elapsed tick's line, verbatim (#98). A duration off the monotonic timer is not a date, so
+   * it is not a violation — and this is the assertion that says so, rather than a habit that
+   * happens to hold because no pattern matches it today.
+   */
+  it('leaves a monotonic duration alone — performance.now() names no calendar', () => {
+    const fine = 'const elapsed = accrued.current + (performance.now() - from);';
+
+    expect(scanSource('src/Planted.ts', fine)).toEqual([]);
   });
 
   it('leaves the type and the prose alone — Date as a type is not a clock', () => {
