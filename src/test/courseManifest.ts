@@ -7,6 +7,7 @@
  * test and the boot tests cannot drift into disagreeing about the shape.
  */
 import { vi } from 'vitest';
+import { completeStrings } from './courseStrings.ts';
 
 export const DEV_MANIFEST = {
   devBuild: true,
@@ -47,13 +48,21 @@ export const DEV_MANIFEST = {
 export const STRICT_EMPTY_MANIFEST = { courses: [] } as const;
 
 /**
- * Installs a `fetch` that answers every request with `payload` as JSON, and returns the mock so
- * a test can count calls (the loader caches) or read the URL it asked for.
+ * Installs a `fetch` over the whole content tree and returns the mock, so a test can count calls
+ * (both loaders cache) or read the URLs it asked for.
+ *
+ * It routes rather than answering everything alike, because boot now reads two files (#80):
+ * `…/strings.json` gets the strings payload — a complete bundle for whichever course was asked
+ * for, unless a test supplies its own — and anything else gets the manifest.
  */
-export function mockManifestFetch(payload: unknown) {
-  const fetchMock = vi.fn(() =>
-    Promise.resolve(new Response(JSON.stringify(payload), { status: 200 })),
-  );
+export function mockContentFetch(manifest: unknown, strings?: unknown) {
+  const fetchMock = vi.fn((input: RequestInfo | URL) => {
+    const url = String(input);
+    const match = /content\/([^/]+)\/strings\.json$/.exec(url);
+    const payload = match === null ? manifest : (strings ?? completeStrings(match[1] as string));
+
+    return Promise.resolve(new Response(JSON.stringify(payload), { status: 200 }));
+  });
   vi.stubGlobal('fetch', fetchMock);
   return fetchMock;
 }

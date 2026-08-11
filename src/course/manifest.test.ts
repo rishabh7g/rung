@@ -7,7 +7,7 @@ import {
   resetManifestCache,
   resolveActiveCourse,
 } from './manifest.ts';
-import { DEV_MANIFEST, STRICT_EMPTY_MANIFEST, mockManifestFetch } from '../test/courseManifest.ts';
+import { DEV_MANIFEST, STRICT_EMPTY_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
 
 beforeEach(() => {
   resetManifestCache();
@@ -21,7 +21,7 @@ afterEach(() => {
 
 describe('loadCourses', () => {
   it('reads the courses out of the emitted envelope, extra course keys intact', async () => {
-    mockManifestFetch(DEV_MANIFEST);
+    mockContentFetch(DEV_MANIFEST);
 
     const courses = await loadCourses();
 
@@ -40,7 +40,7 @@ describe('loadCourses', () => {
   });
 
   it('fetches once however many callers ask — the cache is the promise', async () => {
-    const fetchMock = mockManifestFetch(DEV_MANIFEST);
+    const fetchMock = mockContentFetch(DEV_MANIFEST);
 
     const [first, second] = await Promise.all([loadCourses(), loadCourses()]);
     const third = await loadCourses();
@@ -66,7 +66,7 @@ describe('loadCourses', () => {
 describe('loadManifest', () => {
   it('asks for BASE_URL + content/courses.json, so a sub-path deploy still finds it', async () => {
     vi.stubEnv('BASE_URL', '/rung/');
-    const fetchMock = mockManifestFetch(DEV_MANIFEST);
+    const fetchMock = mockContentFetch(DEV_MANIFEST);
 
     await loadManifest();
 
@@ -74,13 +74,13 @@ describe('loadManifest', () => {
   });
 
   it('surfaces the dev-build marker the envelope exists to carry', async () => {
-    mockManifestFetch(DEV_MANIFEST);
+    mockContentFetch(DEV_MANIFEST);
 
     await expect(loadManifest()).resolves.toMatchObject({ devBuild: true });
   });
 
   it('reports devBuild false for a strict build, which carries no such key', async () => {
-    mockManifestFetch({ courses: DEV_MANIFEST.courses });
+    mockContentFetch({ courses: DEV_MANIFEST.courses });
 
     await expect(loadManifest()).resolves.toMatchObject({ devBuild: false });
   });

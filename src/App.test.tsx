@@ -3,10 +3,13 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App.tsx';
 import { BRAND } from './brand.ts';
 import { resetManifestCache } from './course/manifest.ts';
-import { DEV_MANIFEST, mockManifestFetch } from './test/courseManifest.ts';
+import { resetStringsCache } from './course/strings.ts';
+import { DEV_MANIFEST, mockContentFetch } from './test/courseManifest.ts';
+import { stringValue } from './test/courseStrings.ts';
 
 beforeEach(() => {
   resetManifestCache();
+  resetStringsCache();
 });
 
 afterEach(() => {
@@ -15,7 +18,7 @@ afterEach(() => {
 
 describe('App', () => {
   it('renders the wordmark from the single brand constant', async () => {
-    mockManifestFetch(DEV_MANIFEST);
+    mockContentFetch(DEV_MANIFEST);
 
     render(<App />);
 
@@ -23,7 +26,7 @@ describe('App', () => {
   });
 
   it('boots manifest → provider → screen: no screen renders before a course is resolved', async () => {
-    const fetchMock = mockManifestFetch(DEV_MANIFEST);
+    const fetchMock = mockContentFetch(DEV_MANIFEST);
 
     render(<App />);
 
@@ -36,10 +39,22 @@ describe('App', () => {
   });
 
   it('shows the content-error screen instead of the app when the manifest is broken', async () => {
-    mockManifestFetch({ courses: 'not an array' });
+    mockContentFetch({ courses: 'not an array' });
 
     render(<App />);
 
     expect(await screen.findByRole('alert')).toHaveTextContent(/no "courses" array/);
+  });
+
+  it("renders the active course's own microcopy, interpolated — the shell supplies none", async () => {
+    const fetchMock = mockContentFetch(DEV_MANIFEST);
+
+    render(<App />);
+
+    const ordinal = stringValue('hi-mr', 'ordinal').replace('{n}', '3');
+    expect(
+      await screen.findByText(`${stringValue('hi-mr', 'cueLabel')} · ${ordinal}`),
+    ).toBeInTheDocument();
+    expect(fetchMock).toHaveBeenCalledWith('/content/hi-mr/strings.json');
   });
 });

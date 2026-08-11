@@ -6,11 +6,16 @@
  * That is only safe because there is no fallback copy anywhere in the shell — a key the build
  * lets through missing is a blank screen for the learner, not an English word.
  *
+ * It lives HERE, in the course layer, and the build imports it (#80): the runtime is the side
+ * that must not break, so `Strings` derives from this list (`./strings.ts`) and
+ * `tools/strings-check.ts` validates authored files against the very same array. It moved out of
+ * `tools/` the moment the app needed it — a build-time module the bundle imports is the kind of
+ * dependency that grows a second copy of the list, which is the one thing this file forbids.
+ *
  * Two tables, welded together by the type system: `STRINGS_KEYS` is the list, and
  * `STRINGS_PLACEHOLDERS` is `Record<StringsKey, …>`, so a key added to one without the other
- * fails `tsc`. Nothing else in the repo may hold a second copy of either — the app's `Strings`
- * type derives from `STRINGS_KEYS` (#80) and `tools/strings-check.ts` is the only reader that
- * compares them against a file.
+ * fails `tsc`. Nothing else in the repo may hold a second copy of either —
+ * `stringsKeys.test.ts` proves there is exactly one declaration of each.
  *
  * Keys are DOT-PATHS into a nested object: `ritual.check.copy` is the path to
  * `{"ritual":{"check":{"copy":…}}}`, which is how the authored files are written. The checker

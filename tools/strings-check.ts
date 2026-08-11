@@ -8,7 +8,7 @@
  * ships or it renders nothing (PRD §4), which is exactly why this is a build failure and not a
  * warning.
  *
- * Four rules, all keyed off `tools/strings-keys.ts` (the only list in the repo):
+ * Four rules, all keyed off `src/course/stringsKeys.ts` (the only list in the repo):
  *   1. every canonical key is present — flattened on `.`, because the authored files are nested;
  *   2. every value is a non-empty string;
  *   3. no extra keys — the typo tripwire: `ritual.check.plate` is a key the app will never read,
@@ -21,7 +21,7 @@
  * Every message names the course and the key, because "a string is missing" is useless when three
  * courses ship 26 keys each.
  */
-import { STRINGS_KEYS, STRINGS_PLACEHOLDERS, type StringsKey } from './strings-keys.ts';
+import { STRINGS_KEYS, STRINGS_PLACEHOLDERS, type StringsKey } from '../src/course/stringsKeys.ts';
 
 /* ------------------------------------------------------------------ contract */
 
@@ -104,7 +104,7 @@ export function checkStrings(json: unknown, courseId: string): string[] {
   for (const key of flat.keys()) {
     if (canonical.includes(key)) continue;
     issues.push(
-      `${label}: unknown key "${key}" — not in the canonical list (tools/strings-keys.ts)`,
+      `${label}: unknown key "${key}" — not in the canonical list (src/course/stringsKeys.ts)`,
     );
   }
 

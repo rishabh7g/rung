@@ -109,7 +109,11 @@ rung/ (repo name: shidi — GitHub redirects; local dir may keep its name)
 - **courses.json / strings.json** — §4. strings.json has a FIXED key list
   (cue label, reveal labels, phase nudges, ritual arc copy incl. resource rows
   + hold label, retry copy, ordinal, pending-authoring note, verdict line,
-  course-switch toast) — validated at build; missing key = build failure.
+  course-switch toast) — validated at build; missing key = build failure. The
+  list is `src/course/stringsKeys.ts`, declared once: the app's `Strings` type
+  derives from it and `tools/strings-check.ts` validates against the same array.
+  Screens read microcopy with `useStrings()` and nothing else; the shell owns no
+  copy, and `src/shellPurity.test.ts` fails on any course script under `src/`.
 - **State v6** — §F7 verbatim (localStorage `rung:state`):
   `{ stateVersion: 6, activeCourse, courses: { <id>: { modules, production,
   reviewQueue, sessionCount, studied, session } }, settings }`. The per-course

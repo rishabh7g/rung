@@ -153,9 +153,14 @@ Two consequences worth knowing before you author content:
 
 Every course ships one `strings.json` carrying **all** the microcopy the shell renders, because
 the shell has none of its own (PRD §4). So the build validates it against the canonical key list
-in `tools/strings-keys.ts` — the only list in the repo, which the app's `Strings` type derives
+in `src/course/stringsKeys.ts` — the only list in the repo, which the app's `Strings` type derives
 from — and a bundle that fails takes the whole build down with it (PRD §6.5): a missing key is a
 blank screen for the learner, not an English word.
+
+The list lives in the **course layer** and the build imports it, not the other way round: the
+runtime is the side that must not break, and a `tools/` module the app bundle imports is how a
+second copy of the list gets born. `src/course/stringsKeys.test.ts` fails if either table is ever
+declared twice.
 
 `tools/strings-check.ts` runs per course, flattens the nested file onto dot-paths
 (`ritual.check.copy`), and reports four things, always naming course **and** key:
@@ -168,7 +173,7 @@ blank screen for the learner, not an English word.
   (`{sentenceCount} {maxWords} {ordinal} {n} {nextModule} {to} {from}`), so a translation cannot
   drop `{ordinal}` or invent `{name}`.
 
-Adding a key is one edit to `tools/strings-keys.ts` plus a line in each of the three bundles —
+Adding a key is one edit to `src/course/stringsKeys.ts` plus a line in each of the three bundles —
 in that order, because the build will tell you exactly which course you forgot.
 
 ### The course layer — what boots first
@@ -187,6 +192,13 @@ The app knows a manifest, not a language pair (PRD-engineering §8 F0). Boot ord
 - `src/course/CourseProvider.tsx` — resolves the active course and exposes
   `{course, courses, devBuild}` through `useCourse()`. It owns the loading and error screens
   (`BootScreens.tsx`), so everything below it already has a course.
+- `src/course/strings.ts` — `loadStrings(courseId)` fetches that course's bundle (once per
+  course; the cache is the promise again), reads the canonical dot-paths out of the nested file
+  and hands screens `useStrings()`. Access is **non-optional** — `strings['retry.title']` is a
+  `string` — because the build refuses to ship an incomplete bundle, so there is no fallback copy
+  to write. The provider loads it as part of boot: a screen that has mounted has its words.
+  `interpolate(value, {…})` fills `{placeholders}`; a name with no value is left verbatim and
+  warned rather than blanked, because a silent gap reads as finished copy.
 - `resolveActiveCourse(courses, persistedId?)` is a **pure function**: the persisted course when
   it is still in the manifest, else the first entry with a `console.warn`. It never writes, so a
   fallback does not erase the stored id (Invariant 8). The provider takes that id as a prop and
@@ -194,6 +206,19 @@ The app knows a manifest, not a language pair (PRD-engineering §8 F0). Boot ord
   seam in `CourseProvider.tsx` is the whole change.
 
 Adding a course stays "a folder plus a manifest row": nothing in the shell names a course id.
+
+### Shell purity — the guard that keeps that true
+
+`src/shellPurity.test.ts` scans every shipped file under `src/` for a course's script — Devanagari
+(hi-mr) or Arabic (en-ar) — and fails naming file and line. Copy that got hardcoded is copy no
+course can translate, so the rule is mechanical rather than a review habit, and it counts comments
+too: a doc comment is where a pasted string waits before it becomes code. Script examples belong
+in tests, which the scan skips along with `src/test/` fixtures.
+
+English shell furniture (the boot error copy, later a Settings header) stays permitted — the guard
+is about course scripts, not about English. The exemption list in that file is **empty**; the one
+entry anyone anticipates is the `/dev/type` font page (#85), and adding it will be a conscious
+line in that ticket's diff.
 
 Two rules the scaffold bakes in, before you write a component:
 

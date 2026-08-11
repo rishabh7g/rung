@@ -10,8 +10,9 @@
  *   1. **NFC.** Devanagari is authored composed (docs/01-plan.md §7); normalising anyway means a
  *      decomposed paste can never miss its own entry.
  *   2. **Strip edge punctuation, per token.** From L1-M2 on, `display` carries sentence
- *      punctuation — `तू कसा आहेस?`, `नमस्कार, मी रोहन आहे` (PR #119) — while the word rows that
- *      teach those words carry none. Edge-only: `al-Hind` and `don't` keep their insides.
+ *      punctuation — a question mark on a question, a comma after a greeting (PR #119) — while
+ *      the word rows that teach those words carry none. Edge-only: `al-Hind` and `don't` keep
+ *      their insides.
  *   3. **Collapse whitespace.** Surfaces may span tokens (`Me llamo`, `se llama` in en-es), so a
  *      surface is exactly its tokens joined by one space — `normalizeSurface(x)` is by
  *      construction `tokenizeSurface(x).join(' ')`, which is what keeps the emitter's keys and
@@ -26,12 +27,15 @@
  *   • **hyphen splitting** — `al-qahwa` stays one surface; whether to also index `al` + `qahwa` is
  *     #116's decision.
  * When #116 lands, change these functions and both sides move together. That is the point.
+ *
+ * Worked examples are in `surface.test.ts`, in the courses' own scripts: `src/` itself carries no
+ * course script at all, not even in a comment (#80, `src/shellPurity.test.ts`).
  */
 
 /**
  * Leading/trailing punctuation, minus the apostrophe class above. `\p{P}` covers what the content
- * actually carries (`? , . ! - — " " ¿ ¡` and the Devanagari danda `।`) without an ASCII allow-list
- * that a new course would immediately outgrow.
+ * actually carries (`? , . ! - — " " ¿ ¡` and the Devanagari danda, U+0964) without an ASCII
+ * allow-list that a new course would immediately outgrow.
  */
 const EDGE_PUNCTUATION = /^(?:(?!['’ʼ])\p{P})+|(?:(?!['’ʼ])\p{P})+$/gu;
 
@@ -61,7 +65,7 @@ export function normalizeSurface(text: string): string {
   return tokenizeSurface(text).join(' ');
 }
 
-/** How many tokens a surface spans: `आहे` → 1, `Me llamo` → 2. */
+/** How many tokens a surface spans: one Marathi word → 1, `Me llamo` → 2. */
 export function surfaceSpan(surface: string): number {
   return tokenizeSurface(surface).length;
 }
