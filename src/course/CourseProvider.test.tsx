@@ -5,6 +5,7 @@ import { resetManifestCache } from './manifest.ts';
 import { resetStringsCache, useStrings } from './strings.ts';
 import { DEV_MANIFEST, STRICT_EMPTY_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
 import { completeStrings, stringValue } from '../test/courseStrings.ts';
+import { useAppStore } from '../state/store.ts';
 
 /** Renders what the context holds, so a test can read the resolution the provider made. */
 function CourseProbe() {
@@ -25,9 +26,15 @@ function StringsProbe() {
   return <p>says {strings['retry.title']}</p>;
 }
 
+/** What a previous run left behind: the store IS the persisted course id (#82). */
+function persistCourse(courseId: string): void {
+  useAppStore.getState().setActiveCourse(courseId);
+}
+
 beforeEach(() => {
   resetManifestCache();
   resetStringsCache();
+  useAppStore.getState()._reset();
 });
 
 afterEach(() => {
@@ -50,9 +57,10 @@ describe('CourseProvider', () => {
 
   it('boots on the persisted course when it is still in the manifest', async () => {
     mockContentFetch(DEV_MANIFEST);
+    persistCourse('en-ar');
 
     render(
-      <CourseProvider persistedCourseId="en-ar">
+      <CourseProvider>
         <CourseProbe />
       </CourseProvider>,
     );
@@ -63,9 +71,10 @@ describe('CourseProvider', () => {
   it('falls back to the first entry, with a warn, when the persisted course is gone', async () => {
     const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
     mockContentFetch(DEV_MANIFEST);
+    persistCourse('fr-de');
 
     render(
-      <CourseProvider persistedCourseId="fr-de">
+      <CourseProvider>
         <CourseProbe />
       </CourseProvider>,
     );
@@ -155,9 +164,10 @@ describe('CourseProvider', () => {
       ],
     };
     mockContentFetch(withNewCourse);
+    persistCourse('en-fr');
 
     render(
-      <CourseProvider persistedCourseId="en-fr">
+      <CourseProvider>
         <CourseProbe />
       </CourseProvider>,
     );
@@ -167,9 +177,10 @@ describe('CourseProvider', () => {
 
   it("loads the active course's strings as part of boot, not after it", async () => {
     const fetchMock = mockContentFetch(DEV_MANIFEST);
+    persistCourse('en-ar');
 
     render(
-      <CourseProvider persistedCourseId="en-ar">
+      <CourseProvider>
         <StringsProbe />
       </CourseProvider>,
     );
@@ -214,5 +225,60 @@ describe('useCourse and useStrings', () => {
     } finally {
       window.removeEventListener('error', swallow);
     }
+  });
+});
+
+describe('the persistence seam (#82)', () => {
+  it('records the course it resolved on the first run, so the next boot restores it', async () => {
+    mockContentFetch(DEV_MANIFEST);
+
+    render(
+      <CourseProvider>
+        <CourseProbe />
+      </CourseProvider>,
+    );
+
+    expect(await screen.findByText(/active hi-mr of 3/)).toBeInTheDocument();
+    expect(useAppStore.getState().activeCourse).toBe('hi-mr');
+  });
+
+  it('gives the active course its per-course subtree, empty and idempotently', async () => {
+    mockContentFetch(DEV_MANIFEST);
+    persistCourse('en-ar');
+
+    render(
+      <CourseProvider>
+        <CourseProbe />
+      </CourseProvider>,
+    );
+
+    await screen.findByText(/active en-ar of 3/);
+    expect(useAppStore.getState().courses['en-ar']).toEqual({
+      modules: {},
+      production: {},
+      reviewQueue: [],
+      sessionCount: 0,
+      studied: {},
+      session: null,
+    });
+  });
+
+  it('never overwrites the stored id with a fallback — the missing course keeps its place', async () => {
+    vi.spyOn(console, 'warn').mockImplementation(() => {});
+    mockContentFetch(DEV_MANIFEST);
+    persistCourse('en-es');
+    useAppStore.getState().ensureCourse('en-es');
+    // A build without --with-fixtures: en-es is gone from the manifest, not from the learner.
+    mockContentFetch({ courses: [DEV_MANIFEST.courses[0]] });
+
+    render(
+      <CourseProvider>
+        <CourseProbe />
+      </CourseProvider>,
+    );
+
+    expect(await screen.findByText(/active hi-mr of 1/)).toBeInTheDocument();
+    expect(useAppStore.getState().activeCourse).toBe('en-es');
+    expect(useAppStore.getState().courses['en-es']).toBeDefined();
   });
 });
