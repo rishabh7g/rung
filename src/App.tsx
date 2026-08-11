@@ -1,5 +1,6 @@
 import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { CourseProvider } from './course/CourseProvider.tsx';
+import { devTypeRoute } from './dev/typeRoute.tsx';
 import { AppShell } from './shell/AppShell.tsx';
 import { ImmersiveProvider } from './shell/immersive.tsx';
 import { HOME_PATH, SHELL_ROUTES } from './shell/routes.tsx';
@@ -21,6 +22,10 @@ import { HOME_PATH, SHELL_ROUTES } from './shell/routes.tsx';
  * mounted across navigation — the frame does not blink between screens. The route table itself
  * is `src/shell/routes.tsx`; unknown paths land on the Ladder, replacing the bad entry rather
  * than trapping the back button behind it.
+ *
+ * `devTypeRoute` is the one route outside that layout, and it is `null` in a production build
+ * (#85): the font specimen is a dev instrument, not a screen, and it renders with no chrome.
+ * A static path outranks the `*` beside it, so ordering here decides nothing.
  */
 export default function App() {
   return (
@@ -34,6 +39,7 @@ export default function App() {
               ))}
               <Route path="*" element={<Navigate to={HOME_PATH} replace />} />
             </Route>
+            {devTypeRoute}
           </Routes>
         </HashRouter>
       </ImmersiveProvider>

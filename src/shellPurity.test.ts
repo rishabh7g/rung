@@ -44,12 +44,20 @@ const COURSE_SCRIPTS = [
 ] as const;
 
 /**
- * Files exempt from the scan, repo-relative — EMPTY, and that is the design. The one entry anyone
- * anticipates is the `/dev/type` font-test page (#85), whose whole job is rendering specimen text
- * in each course's script; adding it will be a conscious edit in that ticket's diff, reviewed as
- * such. An exemption nobody had to argue for is how a guard rots.
+ * Files exempt from the scan, repo-relative — ONE, the entry this guard was written expecting.
+ *
+ * `src/dev/TypeSpecimen.tsx` is the `/dev/type` font specimen (#85). Its whole job is rendering
+ * Devanagari — the conjuncts and the reph a bundled Mukta either draws at 18px or does not — so
+ * the scan and the page cannot both be right. What makes the exemption safe is not that the text
+ * is a specimen but that it never ships: the route is `import.meta.env.DEV ? … : null`
+ * (`src/dev/typeRoute.tsx`), so a production build tree-shakes the module out entirely, which
+ * `dist/` is grepped for in that ticket. The rule the guard protects — every learner-facing word
+ * ships in the course bundle — is untouched: nothing here is learner-facing.
+ *
+ * The pattern is not widened and the list stays exactly this long. An exemption nobody had to
+ * argue for is how a guard rots, so the next one is another conscious edit in another diff.
  */
-const ALLOWED: readonly string[] = [];
+const ALLOWED: readonly string[] = ['src/dev/TypeSpecimen.tsx'];
 
 /** Every TypeScript file under `src/`, keyed the way a failure should name it: `src/App.tsx`. */
 const SOURCES: Readonly<Record<string, string>> = Object.fromEntries(
@@ -130,8 +138,12 @@ describe('shell purity', () => {
     expect(files.some((file) => file.startsWith('src/test/'))).toBe(false);
   });
 
-  it('exempts nothing today — /dev/type (#85) is the one anticipated entry', () => {
-    expect(ALLOWED).toEqual([]);
+  it('exempts exactly one file — the /dev/type specimen (#85), which no build ships', () => {
+    expect(ALLOWED).toEqual(['src/dev/TypeSpecimen.tsx']);
+  });
+
+  it('exempts a file that exists — a renamed page would leave the hole open behind it', () => {
+    for (const file of ALLOWED) expect(Object.keys(SOURCES)).toContain(file);
   });
 });
 
