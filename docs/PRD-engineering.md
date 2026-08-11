@@ -1,4 +1,4 @@
-# PRD — Shidi (शिडी, "ladder") — Product Engineering
+# PRD — Rung (formerly Shidi / शिडी, "ladder") — Product Engineering
 
 - Version: 2.0
 - Date: 2026-08-10

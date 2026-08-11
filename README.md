@@ -1,13 +1,13 @@
-# Shidi (शिडी — "ladder")
+# Rung
 
 A ladder of checkpoints for learning a language — not a timeline. First pair:
 **Hindi (L1) → Marathi (L2)**. A fully offline, installable, mobile-first PWA:
 no backend, no accounts, no audio, no runtime AI. Built by one person, for one
 friend.
 
-*Shidi* (शिडी) is Marathi for "ladder" — the core metaphor: a fixed sequence of
-10 modules ("rungs"), each exited only by **writing** a novel "11th sentence"
-of the same complexity, verified by a human.
+*Rung* (formerly *Shidi*, शिडी — Marathi for "ladder") names the core metaphor: a
+fixed sequence of 10 modules ("rungs"), each exited only by **writing** a novel
+"11th sentence" of the same complexity, verified by a human.
 
 ## Start here
 

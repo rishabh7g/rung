@@ -1,4 +1,4 @@
-# Shidi — Implementation Plan
+# Rung — Implementation Plan
 
 **Audience:** a junior engineer new to this codebase — possibly new to
 Devanagari, PWAs, or frontend entirely. Read `PRD-engineering.md` first, then
@@ -79,7 +79,7 @@ discussing it first.**
 ## 5. Repo layout
 
 ```
-shidi/
+rung/
 ├── docs/                  # PRDs, this plan, findings docs
 ├── design/                # mockups, tokens, microcopy (added by Rishabh)
 ├── content/
@@ -143,7 +143,7 @@ export type DiffResult = { ops: DiffOp[]; exactMatch: boolean };
 
 ### 6.3 App state (engineering PRD §F8 is canonical; `stateVersion: 2`)
 
-localStorage key: `shidi:state`. Shape (also the export file shape):
+localStorage key: `rung:state`. Shape (also the export file shape):
 
 ```ts
 export interface AppState {
@@ -167,7 +167,7 @@ export interface AppState {
 
 Rules:
 - Engine functions are pure. **No `Date.now()`/`new Date()` inside `src/engine/`** —
-  Shidi lives in session-count time, not calendar time (Invariant 2). The only
+  Rung lives in session-count time, not calendar time (Invariant 2). The only
   timestamps in state are record-keeping (`passedAt`, `attestation.at`) and are
   produced at the store layer via `src/state/clock.ts` (injectable for tests).
 - Counters never decrement. Statuses never regress. The ONLY code path that
