@@ -1,246 +1,171 @@
-# rung — Implementation Plan
+# rung — Implementation Plan (v3.3)
 
-**Audience:** a junior engineer new to this codebase — possibly new to
-Devanagari, PWAs, or frontend entirely. Read `PRD-engineering.md` first, then
-`PRD-design.md`, then this. This document turns the PRDs into concrete,
-already-made engineering decisions so tickets never require guessing.
+**Audience:** a junior engineer new to this codebase. Read in this order:
+`design/PRD-engineering.md` (v3.3 — canonical), `design/PRD-design.md` (v3.3),
+`docs/design-contract.md`, `design/tokens.md`, `design/pwa-checklist.md`, then
+this plan. The clickable prototype `design/Rung App v3.3.dc.html` is the visual
+and interaction reference of record (its §17/§15 divergence lists tell you what
+NOT to copy).
 
-**Rule of precedence:** if this doc and a PRD disagree, the PRD wins — flag the
-conflict in your PR description.
+**Precedence:** design/PRD-*.md (v3.3) > this plan > docs/PRD-*.md (v2.0,
+historical — kept for context only). Flag conflicts in your PR.
 
 ---
 
 ## 1. What we're building, in one paragraph
 
-A fully offline, installable mobile web app (PWA) that teaches Marathi to one
-Hindi speaker as a **ladder of 10 modules**. Each module = 10 model sentences +
-a full deconstruction (word-by-word, rule-by-rule, tagged `free` / `delta` /
-`interference`) + an exit test in which the learner **writes** a novel "11th
-sentence". The app gives only deterministic, pre-authored feedback — diffs
-against model answers and mechanical checklists. What it cannot check (whether
-a novel sentence is *correct* Marathi) it hands to humans via a one-tap
-copyable request, and records the learner's **attestation** of how it was
-verified. No server, no database, no accounts, no audio, no runtime AI. The
-whole product is static files + client-side TypeScript.
+A fully offline, installable mobile PWA that teaches languages as a **ladder of
+checkpoints** — three levels × ten modules per **course** (an L1→L2 pair). The
+engine is course-agnostic; v1 ships one course, **hi-mr** (Hindi → Marathi).
+Each module: ~10 model sentences with deep, tagged deconstruction. The learner
+**produces in a physical notebook** — the app contains **no input fields**, no
+grading, no checking. Practice is reveal-based (cue → recall → reveal →
+colour self-mark). A module exits through a **ritual**: write the novel "11th
+sentence" on paper → check it yourself in the real world (the app only shows
+guidance) → press-and-hold to confirm → 2 comprehension items with self-marks
+and fresh-item retry. Everything is static content + client-side TypeScript;
+state lives in localStorage, keyed per course.
 
-## 2. The seven invariants (memorise; identical in both PRDs §2)
+## 2. The eight invariants (memorise; identical in both v3.3 PRDs §2)
 
-1. Progression happens **only** by passing the generative exit test.
-2. No calendar framing anywhere — no dates, deadlines, streaks, daily goals.
-3. Every session biases toward the learner **producing written Marathi**.
-4. **Scripted or nothing:** feedback only where a deterministic answer or
-   mechanical check exists. The app never guesses, never simulates judgment.
-5. What the app can't check is handed to humans, effortlessly and honestly.
-6. A module never exposes vocabulary/grammar beyond its bounds + prerequisites.
-7. Rishabh's weekly export-based review audits everything.
+1. Progression only through the generative exit ritual, learner-confirmed.
+2. No calendar framing anywhere.
+3. Every session pushes learner production; **the pen belongs to the learner**.
+4. **Read-only teaching:** never evaluates, grades, scores, or stores learner writing.
+5. Checking is the learner's own activity, fully outside the app.
+6. **No input fields.**
+7. Module bounds: declared vocabulary/grammar + prerequisites only.
+8. Invariants are course-agnostic; **course switching never destroys progress**.
+
+Boundary note: the gentle elapsed tick (numberless, capped, toggleable) is the
+only sanctioned time affordance.
 
 ## 3. Architecture
 
-```
- Rishabh's machine (build time)              Learner's phone (runtime)
-┌──────────────────────────────┐        ┌─────────────────────────────────┐
-│ content/modules/M*.json      │        │  React PWA (static hosting)     │
-│   authored w/ LLM assist     │        │  ┌───────────────────────────┐  │
-│   native-speaker verified    │ build  │  │ Screens: Ladder · Module  │  │
-│ tools/: validate, inventory, ├───────►│  │ Practice · ExitGenerate   │  │
-│   generate-prompt            │        │  │ ExitComprehend · Verdict  │  │
-│ → public/content/*.json      │        │  │ Onboarding·Settings·Audit │  │
-│   (only verified modules)    │        │  ├───────────────────────────┤  │
-└──────────────────────────────┘        │  │ src/engine (pure TS):     │  │
-                                        │  │ normalise · diff · checks │  │
-   No server. No API. No AI at runtime. │  │ leitner · progression     │  │
-   Service worker precaches app +       │  ├───────────────────────────┤  │
-   content → 100% offline after         │  │ zustand store → localStorage │
-   first load.                          │  │ export/import JSON (share) │  │
-                                        │  └───────────────────────────┘  │
-                                        └─────────────────────────────────┘
-```
+See design/PRD-engineering.md §4 for the diagram. Essentials:
 
-Key consequence: **all logic is client-side and testable as pure functions.**
-The "engine" (`src/engine/`) never touches React, the DOM, `Date.now()`, or
-storage — it takes values in and returns values out. UI and store are thin.
+- **Course layer:** `content/courses.json` (manifest) → active course →
+  that course's `levels.json`, `strings.json`, module files, word index. The
+  app shell contains ZERO course-specific strings — all learner-facing
+  microcopy ships in the course bundle.
+- **Engine** (`src/engine/`): pure TS — progression (levels + modules),
+  Leitner scheduler, word-index resolver. No React, no storage, no Date.
+- **State v6** (`src/state/`): zustand + persist, localStorage key `rung:state`,
+  shape keyed by courseId (PRD §F7 verbatim). Timestamps only via
+  `src/state/clock.ts`.
+- **Service worker:** precache everything; zero network after first load.
 
-## 4. Stack (decided — do not relitigate inside tickets)
+## 4. Stack (decided — do not relitigate)
 
 | Choice | Why |
 |---|---|
-| Vite + React 18 + TypeScript (`strict`) | Standard, fast, typed guardrails |
-| react-router (**HashRouter**) | Works on any static host and offline, zero rewrite rules |
-| zustand + `persist` middleware | Tiny API; built-in `version`/`migrate` matches F8's requirement |
-| CSS Modules + tokens in `src/styles/tokens.css` | Maps 1:1 to designer tokens; no framework to fight |
-| vite-plugin-pwa (Workbox) | Service worker + manifest + precache, minimal config |
-| vitest | Unit tests; engine code is test-first |
-| ajv (via `tsx` CLI scripts in `tools/`) | Content JSON Schema validation at build time |
-| @fontsource/noto-sans-devanagari | Bundled Devanagari font (designer may switch to Mukta — one-line change) |
+| Vite + React 18 + TypeScript strict | unchanged |
+| react-router (HashRouter) | works on any static host + offline |
+| zustand + persist (version 6, migrate stub) | matches state-v6 contract |
+| **design/tokens.css** loaded globally; CSS Modules for layout | tokens are the single styling source — no hard-coded hex/px/font names (docs/design-contract.md) |
+| vite-plugin-pwa (or ~20-line vanilla SW) | precache-everything per design/pwa-checklist.md |
+| vitest + @testing-library | engine is test-first |
+| ajv via tsx CLIs in tools/ | schema v5 + strings validation |
+| **Mukta + Barlow + Barlow Condensed, self-hosted** [D15] | per tokens.md; subset per course at build |
+| lucide-react | the only icon set (tokens.md §4), stroke 1.5 |
 
-Node ≥ 20, npm (no yarn/pnpm). **No other runtime dependency without an issue
-discussing it first.**
+Node ≥ 20, npm. No other runtime dependency without an issue first.
+There is NO text-input component, NO diff/normalisation engine, NO clipboard
+integration — if a ticket seems to need one, re-read Invariants 4–6 and stop.
 
 ## 5. Repo layout
 
 ```
-rung/
-├── docs/                  # PRDs, this plan, findings docs
-├── design/                # mockups, tokens, microcopy (added by Rishabh)
+rung/ (repo name: shidi — GitHub redirects; local dir may keep its name)
+├── docs/                     # plan, design-contract, findings; historical v2 PRDs
+├── design/                   # DESIGN PACKAGE — read-only, re-copied wholesale from
+│                             # Rishabh's tooling; never add or edit files here
 ├── content/
-│   ├── modules/M1.json …  # SOURCE OF TRUTH content (native-verified)
-│   ├── schema/module.schema.json
-│   └── equivalences.json  # normalisation equivalence classes (tuned over time)
-├── tools/                 # tsx CLI: validate.ts, content-build.ts, generate-prompt.ts
-├── public/content/        # GENERATED by content-build (gitignored): verified modules, inventory/, index.json
+│   ├── courses.json          # course manifest (id, l1, l2, pairLabel, scriptMode, dir)
+│   └── hi-mr/
+│       ├── levels.json       # 3 levels × module lists (+ hasContent flags)
+│       ├── strings.json      # ALL hi-mr microcopy (fixed key list)
+│       └── modules/L1-M1.json …   # schema v5
+├── tools/                    # tsx CLIs: validate, index, strings-check, content-build, generate-prompt
+├── public/content/           # GENERATED per-course output (gitignored)
 ├── src/
-│   ├── engine/            # PURE TS: normalise, diff, checks/, leitner, progression, session, config
-│   ├── state/             # zustand store, types, serialize (export/import), clock
-│   ├── content/           # loader, TS types for module JSON
-│   ├── screens/           # Ladder, Module, Practice, ExitGenerate, ExitComprehend, Verdict, Onboarding, Settings, Audit
-│   ├── components/        # SentenceCard, DeconstructionPanel, TagChip, DevanagariInput, QuickInsertStrip, DiffView, RecallCard, Checklist, HandoffCard, AttestationChooser, PhaseChips, RungItem, ProductionDots, SelfMark, Text (Mr/Hi)
-│   └── styles/            # tokens.css, global.css
-└── scripts/               # verify.sh (terse build/test harness)
+│   ├── engine/               # pure TS: progression, leitner, word-index resolver
+│   ├── state/                # store (v6, per-course), clock, serialize
+│   ├── course/               # courses.json loader, strings access, content loader
+│   ├── screens/              # Ladder, ModuleList, SentenceDetail, Practice, Ritual, Comprehension, Verdict, Settings
+│   ├── components/           # RungCard, LevelStrip, RevealCard, SelfMark, WhyRow, Tick, HoldToConfirm, …
+│   └── styles/               # global.css (imports design/tokens.css), layout modules
+└── scripts/verify.sh         # terse harness
 ```
 
 ## 6. Core data contracts
 
-### 6.1 Module content (engineering PRD §7 is canonical)
+- **Module schema v5** — design/PRD-engineering.md §7: `display` (primary
+  string), optional `script` (quiet native line, romanized courses), `cue`
+  (L1), `glossEn`, `literal`, deconstruction words
+  `{display, cue, tag, forms, note}`, rules, enrichment (variations, mistake,
+  usage, mnemonic, sound) full for M1–M3. `schemaVersion: 5`.
+- **courses.json / strings.json** — §4. strings.json has a FIXED key list
+  (cue label, reveal labels, phase nudges, ritual arc copy incl. resource rows
+  + hold label, retry copy, ordinal, pending-authoring note, verdict line,
+  course-switch toast) — validated at build; missing key = build failure.
+- **State v6** — §F7 verbatim (localStorage `rung:state`):
+  `{ stateVersion: 6, activeCourse, courses: { <id>: { modules, production,
+  reviewQueue, sessionCount, studied, session } }, settings }`. The per-course
+  `session` snapshot is what makes resume lossless — including across course
+  switches.
+- Rules: engine pure; the ONLY unlock path is the module-pass action
+  (Invariant 1, asserted in tests); counters never decrement; timestamps only
+  at the store layer via clock.ts (`passedAt` is the only date in state).
 
-TypeScript mirror (lives at `src/content/types.ts`):
+## 7. Devanagari for engineers (rendering primer)
 
-```ts
-export type Tag = 'free' | 'delta' | 'interference';
-
-export interface WordRow { mr: string; hi: string; tag: Tag; forms: string[]; note?: string; }
-export interface Rule { id: string; text: string; tag: Tag; }
-export interface Sentence {
-  id: string;            // "M1-S01"
-  hi: string; mr: string; glossEn: string;
-  deconstruction: { words: WordRow[]; rules: Rule[]; interferenceTraps: string[] };
-}
-export interface ComprehensionItem { id: string; mr: string; answerHi: string; }
-export interface ModuleContent {
-  schemaVersion: 2;
-  id: string;            // "M1".."M10"
-  title: string; job: string;
-  prerequisites: string[];
-  verified: boolean; verifiedBy?: string; verifiedAt?: string;
-  complexity: { maxWordsPerSentence: number; allowedTenses: string[]; allowedPatterns: string[]; newWordCap: number };
-  sentences: Sentence[];             // exactly 10
-  comprehensionPool: ComprehensionItem[]; // ≥ 6
-  exitTest: { generateCount: number; comprehendCount: number }; // 1 and 2 in v1
-}
-```
-
-### 6.2 Diff output (freezes at Sync-2 — designer builds the diff card on this)
-
-```ts
-export type CharSpan = { text: string; status: 'same' | 'changed' }; // text = one or more grapheme clusters
-export type DiffOp =
-  | { type: 'match';      word: string }                       // model word, matched
-  | { type: 'substitute'; expected: string; actual: string;    // learner wrote something else
-      charDiff: { expected: CharSpan[]; actual: CharSpan[] } }
-  | { type: 'insert';     word: string }                       // extra word the learner typed
-  | { type: 'delete';     word: string };                      // model word the learner missed
-export type DiffResult = { ops: DiffOp[]; exactMatch: boolean };
-```
-
-### 6.3 App state (engineering PRD §F8 is canonical; `stateVersion: 2`)
-
-localStorage key: `rung:state`. Shape (also the export file shape):
-
-```ts
-export interface AppState {
-  stateVersion: 2;
-  currentModule: string;                       // "M1"
-  modules: Record<string, { status: 'passed'; attempts: number; passedAt: string }>;
-  production: Record<string, number>;          // sentenceId -> got-it count (Produce phase only)
-  reviewQueue: Array<{ sentenceId: string; box: 1|2|3; dueInSessions: number }>;
-  sessionCount: number;
-  attempts: Array<{
-    module: string; type: 'generate' | 'comprehend';
-    sentence?: string;                         // generate: the 11th sentence
-    checks?: { novel: boolean; scope: boolean; bounds: boolean };
-    attestation?: { method: 'friend' | 'internet' | 'rishabh'; at: string };
-    items?: Array<{ id: string; learnerAnswer: string; selfMark: 'correct' | 'incorrect' }>; // comprehend
-    result: 'passed' | 'failed';
-  }>;
-  settings: { quickInsertEnabled: boolean; onboarded: boolean };
-}
-```
-
-Rules:
-- Engine functions are pure. **No `Date.now()`/`new Date()` inside `src/engine/`** —
-  rung lives in session-count time, not calendar time (Invariant 2). The only
-  timestamps in state are record-keeping (`passedAt`, `attestation.at`) and are
-  produced at the store layer via `src/state/clock.ts` (injectable for tests).
-- Counters never decrement. Statuses never regress. The ONLY code path that
-  unlocks a module is `passExitTest()` (Invariant 1 — asserted in tests).
-
-## 7. Devanagari for engineers (10-minute primer)
-
-Hindi and Marathi share the Devanagari script (Unicode block U+0900–U+097F).
-What you must know to not corrupt comparisons:
-
-- A visible "character" (**grapheme**) is often several code points:
-  मा = म (MA) + ा (vowel sign AA). **Never** index/slice by code unit.
-  Use `Intl.Segmenter('mr', { granularity: 'grapheme' })` for character work.
-- **Matras** are vowel signs attached above/below/beside consonants (ि ी ु ू े ै ो ौ).
-- **Conjuncts** join consonants with the invisible **virama** (्):
-  क्या = क + ् + य + ा.
-- **Anusvara** (ं) marks nasalisation. Typed input varies between anusvara and
-  explicit nasal consonants — this is why `content/equivalences.json` exists.
-- **ZWJ / ZWNJ** (U+200D / U+200C) are invisible characters that change conjunct
-  rendering. Strip them before comparing, or identical-looking strings won't be equal.
-- **ळ** (retroflex LA) is common in Marathi but absent/awkward on many Hindi
-  keyboard layouts — hence the quick-insert strip.
-- Always `String.prototype.normalize('NFC')` first. Two visually identical
-  strings can differ (composed vs decomposed forms) until NFC-normalised.
+You will render Devanagari, never parse learner input (there is none). What
+still matters: graphemes are multi-code-point (मा = म + ा); conjuncts use
+virama (क्या = क + ् + य + ा); ळ is common in Marathi; body floor is 18px /
+line-height 1.6 in Mukta, no italics (tokens.md §2); NFC-normalise content at
+build time; the word-index resolver matches surface forms verbatim from
+content (edge cases live in romanized courses: apostrophes/ʾ, hyphens, case).
 
 ## 8. Working agreement
 
-1. Pick a ticket (rule in README) → assign yourself → branch `issue-<n>-<slug>`.
-2. Implement exactly the ticket. Anything extra you notice → file a new issue,
-   don't fold it in.
-3. Tests: run only what your change touches — `npx vitest run <file>` — plus
-   `scripts/verify.sh` once before opening the PR.
-4. PR body starts with `Fixes #<n>`. Squash-merge. Delete the branch.
-5. If the ticket touches learner-visible UX, verify its acceptance criteria on
-   the deployed URL (or `npm run preview`) on a phone-sized viewport before
-   closing.
-6. Never add dates/streaks/time-remaining to any UI. If a ticket seems to need
-   audio, AI, or a server, stop — re-read PRD §3 Out of scope — and comment on
-   the issue instead.
+1. Pick a ticket: lowest active milestone, no assignee, deps closed → assign
+   yourself → branch `issue-<n>-<slug>`.
+2. Build EXACTLY the ticket; extras become new issues.
+3. Style only via `var(--*)` from design/tokens.css. The prototype is the
+   verifier: match it state-for-state where your screen exists in it
+   (docs/design-contract.md).
+4. Scoped tests while iterating (`npx vitest run <file>`); `scripts/verify.sh`
+   before the PR. PR body starts `Fixes #<n>`; squash-merge.
+5. Learner-visible tickets: verify acceptance criteria on a phone-sized
+   viewport (or the deployed URL) before closing.
+6. Every PR keeps the invariant guard true: no time framing, no inputs, no
+   grading/storing, no course-specific strings in the shell, no new colors.
 
 ## 9. Milestones
 
-| Milestone | Contents | Exit criterion |
-|---|---|---|
-| D — Design track | Flows, wireframes, prototype, component specs, tokens, microcopy, Q1–Q6 (Rishabh) | Assets exported into `design/` |
-| P0 — Content first | M1+M2 JSON handwritten, native-verified | M1 run manually with P1 over WhatsApp |
-| P1 — Shell | Scaffold, content tooling, loader, offline SW, Ladder + Module viewer, hosting | P1 studies M1 in-app in airplane mode |
-| P2 — Practice loop | Session machine, Leitner, cover-and-recall, normalise+diff engines | One full 25-min session end-to-end |
-| P3 — Exit tests | Mechanical checks, hand-off, attestation, comprehend, verdict, unlock | P1 passes M1 for real, verified by a friend |
-| P4 — Persistence + audit | Export/import, attempt history, audit screen, settings | One weekly audit from a single export file |
-| P5 — Hardening + scale | Fonts, input edge cases, equivalence tuning, perf, M3–M10 content, design alignment | Full ladder live, hardened on P1's device |
+P0 content-first → P1 shell → P2 practice → P3 exit ritual → P4 settings +
+data → P5 hardening + content scale → P6 course #2 (gated). Exit criteria live
+in the milestone descriptions and design/PRD-engineering.md §11. Design
+follow-ups run parallel (Rishabh).
 
-## 10. Design assets contract
+## 10. The design package
 
-`design/` is filled by Rishabh as milestone D completes. Until then, UI tickets
-build **functional-first**: semantic DOM, componentised, styled only via
-placeholder values in `src/styles/tokens.css` (every token documented with its
-semantic meaning). Do not invent visual design in a functional ticket. When
-design assets land, the "Design alignment pass" ticket (P5) swaps token values,
-applies final microcopy (marked `TODO-D6` in code), and trues up each screen
-against its mockup. If a mockup already exists for your screen when you pick a
-ticket, follow it.
+`design/` is the delivered design system: tokens.css/md, the v3.3 prototype,
+PRDs, pwa-checklist, vendored `_ds/`. It is READ-ONLY and gets wiped on
+re-copy — engineering notes go in `docs/` (see docs/design-contract.md). The
+prototype's divergence lists (eng §17, design §15) name what must NOT be
+copied into the product.
 
 ## 11. Glossary
 
-- **Module / checkpoint / rung** — one step of the ladder: ~10 sentences +
-  deconstruction + exit test.
-- **The 11th sentence** — the novel, self-constructed written sentence that exits a module.
-- **Cover-and-recall** — Hindi cue shown, Marathi hidden; write first, check against the model.
-- **Delta learning** — teaching only the Hindi→Marathi difference (`free`/`delta`/`interference`).
-- **Interference** — where Hindi actively misleads (e.g. Marathi's third gender); the only "loud" UI.
-- **Scripted check** — deterministic feedback from pre-authored answers or mechanical rules.
-- **Hand-off** — the one-tap copyable request that moves verification of a novel sentence to a human.
-- **Attestation** — the learner's explicit record of how a sentence was verified (friend / internet / Rishabh).
-- **P1** — the one real learner (persona). Not to be confused with milestone P1.
-- **Leitner boxes** — spaced repetition by session count (box 1 → due next session, box 2 → ~3, box 3 → ~7).
+- **Course / courseId** — one L1→L2 pair with its own content, strings, progress (`hi-mr`; `en-es`/`en-ar` are dev fixtures).
+- **scriptMode** — `native` | `romanized`; romanized courses show romanization primary + quiet script line.
+- **Level / seal** — 10 modules per level; a level unlocks when the previous level is fully passed.
+- **Staged rung card** — the current rung's single CTA: fresh → studied → exit-ready → pending-authoring [D22].
+- **Reveal practice** — cue → recall (head/mouth/paper) → reveal → colour self-mark; **Next hidden until marked** [D11].
+- **Exit ritual** — notebook 11th sentence → guidance-only जांचो → press-and-hold ~900ms [D14] → comprehension (fresh-item retry).
+- **"Why" resolver** — per-course word index answering "why" on any reveal.
+- **Gentle elapsed tick** — 2px numberless fill over ~25min; the only time affordance.
+- **strings.json** — per-course microcopy bundle; the shell ships none.
+- **P1 (person)** — the one real learner. Distinct from milestone P1.

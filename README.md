@@ -23,8 +23,8 @@ fixed sequence of 10 modules ("rungs"), each exited only by **writing** a novel
 
 - Every change is a **GitHub issue**; one PR per issue; PR title references the
   issue; **squash-merge**; `main` is always deployable.
-- Issues live in milestones: **D** (design track, Rishabh) and **P0–P5**
-  (engineering, in order).
+- Issues live in milestones **P0–P5** (+ **Design follow-ups**, Rishabh). Labels:
+  one `epic:*` + `type:*` + `phase:*` per issue (see design/github-issues-checklist.md).
 - **Picking your next ticket:** open issues in the lowest unfinished milestone
   → no assignee → every issue linked under "Depends on" is closed → assign
   yourself, branch, go.
