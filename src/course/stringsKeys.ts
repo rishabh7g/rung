@@ -29,7 +29,7 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 67 keys: the 21 of PRD §4, the 5 the frozen screens forced
+ * file it is complaining about). 72 keys: the 21 of PRD §4, the 5 the frozen screens forced
  * (PR #120) — `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and the four
  * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — the 3 the Ladder
  * forced (#86): the counts-only pending line, the ownership footer and the sealed-level toast,
@@ -40,13 +40,14 @@
  * heading, the mnemonic's "pocket it" label, and the two pager buttons — the 4 the reveal
  * card forced (#93): the two self-mark segments [D11], the question the card asks above them, and
  * the Next that does not exist until one of them is chosen — the 3 the "why" panel forced
- * (#94): its toggle's two labels and the "open full" that leaves the session — and the 17 the
+ * (#94): its toggle's two labels and the "open full" that leaves the session — the 17 the
  * session machine forced (#96): the Practice hub's title, its three phase lines and the line that
  * says the phases never gate, the two Begin labels, the three phase names the soft chips wear, the
  * honest answer to a Review chip with nothing due, and the summary's title, four count lines and
- * its way back to the Ladder.
+ * its way back to the Ladder — and the 5 the Read phase forced (#97): the cue toggle's two labels
+ * and its pager's three, the last of which names where the rung's last sentence goes.
  *
- * Those forty-one are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
+ * Those forty-six are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
  * as PR #120's were. The alternative each time was hardcoding learner-facing lines in the shell,
  * which is the one thing this list exists to prevent.
  */
@@ -96,6 +97,11 @@ export const STRINGS_KEYS = [
   'why.show',
   'why.hide',
   'why.openFull',
+  'read.showCue',
+  'read.hideCue',
+  'read.prev',
+  'read.next',
+  'read.toProduce',
   'practice.hubTitle',
   'practice.hubReview',
   'practice.hubRead',
@@ -238,6 +244,29 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'why.show': [],
   'why.hide': [],
   'why.openFull': [],
+  /**
+   * The Read phase (#97) — the five words that phase says in its own right: the cue toggle's two
+   * labels, and the three on its pager. They are `read.*` rather than `practice.*` for the reason
+   * `mark.*` and `why.*` are their own groups — they travel with the surface, not with the screen
+   * that hosts it — and the toggle carries two labels for `why.*`'s reason: it names what it will
+   * DO, so a course words "show cue" and "hide cue" itself while `aria-expanded` says the same
+   * thing to a screen reader.
+   *
+   * `read.prev`/`read.next` are deliberately NOT `sentence.prev`/`sentence.next`: that pager walks
+   * a module while browsing, this one walks a rung mid-session and its last step leaves the phase
+   * (`read.toProduce` — "on to producing", the prototype's own label for it). A course may well
+   * word the first two the same; sharing the key would mean it never could word them differently
+   * — the call #93 made for `mark.next` and #94 for `why.openFull`.
+   *
+   * None of them interpolates: the position is the `3 / 10` count the shell renders, not a
+   * sentence, and the read-aloud nudge the phase opens with is `nudge.read`, which PRD §4 has
+   * carried since the first bundle.
+   */
+  'read.showCue': [],
+  'read.hideCue': [],
+  'read.prev': [],
+  'read.next': [],
+  'read.toProduce': [],
   /**
    * The session (#96) — the Practice hub, the phase chips and the summary (PRD §8 F4, PRD-design
    * §6.3). Seventeen keys, and the rule that put every one of them here is the same as the module

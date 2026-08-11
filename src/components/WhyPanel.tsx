@@ -29,7 +29,7 @@
  * no module (a Produce card built from something else later) expands to nothing, the same as an
  * unresolvable sentence.
  */
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useIndex, useModules } from '../course/content.ts';
@@ -50,11 +50,18 @@ interface WhyPanelProps {
    * (PRD §8 F4, PRD-design §6.3) — the phase is the session's knowledge, not this panel's.
    */
   openFull?: boolean;
+  /**
+   * A control that belongs in the SAME ghost row, rendered before the toggle — the Read phase's
+   * "show cue" (#97), which the prototype draws beside "why" and "open full" rather than above
+   * them. The slot exists so the rows still expand under all three; every other surface leaves it
+   * empty, and an empty one renders nothing.
+   */
+  leading?: ReactNode;
   /** The course's writing direction — every line here is its content or its copy. */
   dir?: string;
 }
 
-export function WhyPanel({ sentenceId, display, openFull = false, dir }: WhyPanelProps) {
+export function WhyPanel({ sentenceId, display, openFull = false, leading, dir }: WhyPanelProps) {
   const strings = useStrings();
   const [open, setOpen] = useState(false);
   const moduleId = moduleIdOf(sentenceId);
@@ -63,6 +70,7 @@ export function WhyPanel({ sentenceId, display, openFull = false, dir }: WhyPane
   return (
     <div className={styles.why}>
       <div className={styles.controls}>
+        {leading}
         <button
           type="button"
           className={styles.toggle}

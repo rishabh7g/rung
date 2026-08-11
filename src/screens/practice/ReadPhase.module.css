@@ -1,0 +1,217 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   Geometry follows design/Rung App v3.3.dc.html → Practice → Read: the kicker row, one plate
+   holding the sentence and its controls, the nudge, and the pager at the foot of the column.
+   Every length is the nearest token on the Industry scale (design/tokens.md §3, §4). */
+
+/* The phase owns the session's column below the chips, so the pager sits at the BOTTOM of the
+   screen the way the prototype draws it — `margin-top: auto` on `.pager` is what spends the slack,
+   and `flex: 1` here is what there is slack to spend. */
+.read {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  gap: var(--space-4);
+  padding-top: var(--space-2);
+}
+
+/* Kicker · position, on one baseline — the same card header row the session's other phases wear
+   (`Session.module.css`), repeated here rather than shared, as every screen in this repo repeats
+   its own kicker rule. */
+.head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+/* English shell furniture, in the register of the nav's tab labels — raised on #71. */
+.kicker {
+  margin: 0;
+  font: var(--text-kicker);
+  letter-spacing: var(--kicker-tracking);
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--color-accent-700);
+}
+
+/* `3 / 10`, never `3 of 10` — the shell owns no learner-facing word (#88's call, kept). */
+.position {
+  margin: 0 0 0 auto;
+  font: var(--text-caption);
+  white-space: nowrap;
+  color: var(--ink-45);
+}
+
+/* -------------------------------------------------------------------- the sentence */
+
+/* A blueprint object: radius 0, a hairline, no surface fill, and the four registration marks —
+   which is the `position: relative` (design/tokens.md §3). */
+.plate {
+  position: relative;
+  padding: var(--space-6) var(--space-4);
+  background: var(--color-bg);
+  border: var(--border-hairline);
+}
+
+/**
+ * The sentence, and the loudest thing in the phase: `--text-l2-card` is 600 26px/1.6 Mukta, the
+ * ramp's slot named for exactly this card ("reveal/read/comp cards"). The prototype writes 28px
+ * inline here; the ramp has no 28px step and the reveal card two phases away is the same object,
+ * so the token wins and the 2px is recorded for #117 with the rest.
+ */
+.display {
+  margin: 0;
+  font: var(--text-l2-card);
+}
+
+/* The quiet native-script line, romanized courses only (design/tokens.md §1, §2): 15px in
+   `--ink-40`, in `--font-script-fallback` because Barlow draws no Arabic and Mukta is
+   Devanagari. Same treatment as the reveal card's and the module list's (#88, #93). */
+.script {
+  margin: var(--space-1) 0 0;
+  font: var(--text-body);
+  font-family: var(--font-script-fallback);
+  color: var(--ink-40);
+}
+
+/**
+ * The L1 cue, once asked for: course prose, so Mukta at the `--devanagari-min-size` floor, where
+ * the prototype writes 15px. Below the L2 line and quieter than it — the phase reads L2 first,
+ * and the cue is what the learner checks themselves against. It appears in place, over the same
+ * 250ms in-place expand the "why" rows use (design/tokens.md §5).
+ */
+.cue {
+  margin: var(--space-2) 0 0;
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  color: var(--ink-55);
+  animation: expand-in var(--motion-expand) both;
+}
+
+@keyframes expand-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-2));
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/**
+ * The cue toggle — a ghost, rendered inside `WhyPanel`'s controls row so the prototype's three
+ * ghosts share one line. Same recipe as that panel's and the rung card's (#87, #94): no border,
+ * no fill, accent ink, `--ghost-height` (36px), and `white-space: nowrap`, which
+ * design/tokens.md §4 does not make optional. Its words are the course's, so it is Mukta at the
+ * Devanagari floor where the prototype writes 12px Barlow — the type wall, flagged on #117.
+ */
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--ghost-height);
+  padding-inline: var(--space-1);
+  background: none;
+  border: 0;
+  color: var(--color-accent);
+  font: var(--text-l2-card);
+  font-size: var(--devanagari-min-size);
+  text-align: start;
+  white-space: nowrap;
+  cursor: pointer;
+  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.toggle:active {
+  background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+}
+
+/* ----------------------------------------------------------------------- the nudge */
+
+/* The course's read-aloud line, shown once when the phase opens (see the component header). It is
+   prose, not a plate: the recall card's dashed border means "outside the app", and reading the
+   sentence in front of you is not that. */
+.nudge {
+  margin: 0;
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  color: var(--ink-50);
+}
+
+/* ----------------------------------------------------------------------- the pager */
+
+/* The prototype's 1 : 2 split — Back quiet and Next the filled object, because moving forward is
+   what the phase is for. `margin-top: auto` keeps the pair at the foot of the column whatever the
+   sentence's length, the way the self-mark row sits on a reveal card. */
+.pager {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: auto;
+}
+
+/* The shape both controls share. Transparent border by default so a variant colours it without
+   moving anything (`RungCard`'s recipe, #87). */
+.step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--btn-secondary-height);
+  padding: var(--space-2) var(--space-3);
+  border: var(--border-hairline);
+  border-color: transparent;
+  color: inherit;
+  font: var(--text-l2-card);
+  font-size: var(--devanagari-min-size);
+  text-align: center;
+  cursor: pointer;
+  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.back {
+  composes: step;
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border-color: var(--color-divider);
+}
+
+.back:active {
+  background: color-mix(in srgb, var(--color-text) 14%, transparent);
+}
+
+/* The rung's first sentence has nothing before it. Dimmed rather than removed: the pair is a
+   fixed shape at the foot of the card, and a Back that comes and goes moves Next under the
+   learner's thumb mid-phase. */
+.back:disabled {
+  color: var(--ink-40);
+  cursor: default;
+}
+
+/* THE filled object on this card (design/tokens.md §3), twice Back's width — the prototype's
+   `flex:2` against `flex:1`. */
+.next {
+  composes: step;
+  flex: 2;
+  min-width: 0;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.next:active {
+  background: var(--color-accent-700);
+  border-color: var(--color-accent-700);
+}
+
+/* design/tokens.md §5: reduced motion collapses every movement in the product. */
+@media (prefers-reduced-motion: reduce) {
+  .cue {
+    animation: none;
+  }
+}

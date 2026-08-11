@@ -43,15 +43,15 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the three shipped bundles carry — 67 keys, nested, identical', () => {
+  it('is exactly what the three shipped bundles carry — 72 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(67);
+      expect(keys.length, courseId).toBe(72);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(67);
-    expect(new Set(STRINGS_KEYS).size).toBe(67);
+    expect(STRINGS_KEYS.length).toBe(72);
+    expect(new Set(STRINGS_KEYS).size).toBe(72);
   });
 
   it('carries the five keys PR #120 added beyond the issue text', () => {
@@ -169,6 +169,28 @@ describe('the canonical key list', () => {
     ];
 
     for (const key of added) expect(STRINGS_KEYS).toContain(key);
+  });
+
+  /**
+   * The Read phase's five (#97). PRD-design §6.3's read-through says five things in its own right
+   * — the cue toggle's two labels and its pager's three — and the prototype writes all of them in
+   * English for every course. `read.prev`/`read.next` are deliberately not `sentence.prev`/`.next`:
+   * that pager browses a module, this one walks a rung mid-session and its last step leaves the
+   * phase (`read.toProduce`). The read-aloud line itself is `nudge.read`, which PRD §4 has carried
+   * since the first bundle. Draft values in all three bundles, flagged on #71.
+   */
+  it('carries the five keys the Read phase forced (#97)', () => {
+    const added: StringsKey[] = [
+      'read.showCue',
+      'read.hideCue',
+      'read.prev',
+      'read.next',
+      'read.toProduce',
+    ];
+
+    for (const key of added) expect(STRINGS_KEYS).toContain(key);
+    expect(STRINGS_KEYS).toContain('nudge.read');
+    expect(STRINGS_KEYS).toContain('sentence.next');
   });
 
   /**
