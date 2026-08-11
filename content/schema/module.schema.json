@@ -1,0 +1,346 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/rishabh7g/rung/blob/main/content/schema/module.schema.json",
+  "title": "rung module — schema v5",
+  "description": "Shape of one module file (content/<course>/modules/<id>.json). Frozen against the two authored hi-mr modules (L1-M1, L1-M2) and design/PRD-engineering.md §7. Counts, cross-file uniqueness and the M1-M3 enrichment rule live in tools/validate.ts, not here.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "title",
+    "job",
+    "prerequisites",
+    "verified",
+    "complexity",
+    "rules",
+    "sentences",
+    "comprehensionPool",
+    "exitTest"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 5
+    },
+    "id": {
+      "$ref": "#/$defs/moduleId"
+    },
+    "title": {
+      "$ref": "#/$defs/text"
+    },
+    "job": {
+      "$ref": "#/$defs/text"
+    },
+    "prerequisites": {
+      "description": "Module ids that must be passed first. tools/validate.ts additionally requires each one to sit earlier in the same level sequence.",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/moduleId"
+      }
+    },
+    "verified": {
+      "description": "Native-speaker gate. Never authored as true — only the reviewer flips it (with verifiedBy + verifiedAt).",
+      "type": "boolean"
+    },
+    "verifiedBy": {
+      "description": "Explicit null slot until the native gate signs off.",
+      "type": ["string", "null"],
+      "minLength": 1
+    },
+    "verifiedAt": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "fixture": {
+      "description": "Dev-only sample module (en-es / en-ar, PRD §17). Relaxes the 10-sentence / pool >= 6 budget in tools/validate.ts; fixtures may never ship in a learner build.",
+      "type": "boolean"
+    },
+    "complexity": {
+      "$ref": "#/$defs/complexity"
+    },
+    "rules": {
+      "description": "Module-level grammar rules, ORDERED — deconstruction.rules holds integer indices into this array, so the order is contractual.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/rule"
+      }
+    },
+    "sentences": {
+      "$comment": "Exactly 10 (relaxed for fixtures) is enforced by tools/validate.ts so the rule and its fixture relaxation have one message and one owner.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/sentence"
+      }
+    },
+    "comprehensionPool": {
+      "$comment": "Minimum 6 (relaxed for fixtures) is enforced by tools/validate.ts, for the same reason as sentences.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/poolItem"
+      }
+    },
+    "exitTest": {
+      "$ref": "#/$defs/exitTest"
+    }
+  },
+  "$defs": {
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "moduleId": {
+      "type": "string",
+      "pattern": "^L[1-3]-M([1-9]|10)$"
+    },
+    "sentenceId": {
+      "type": "string",
+      "pattern": "^L[1-3]-M([1-9]|10)-S[0-9]{2}$"
+    },
+    "poolItemId": {
+      "type": "string",
+      "pattern": "^L[1-3]-M([1-9]|10)-C[0-9]{2}$"
+    },
+    "tag": {
+      "description": "Delta-learning tag, pair-specific by definition (PRD §1).",
+      "enum": ["free", "delta", "interference"]
+    },
+    "positiveInteger": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "complexity": {
+      "description": "The module's declared bounds (Invariant 7).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "minWordsPerSentence",
+        "maxWordsPerSentence",
+        "allowedTenses",
+        "allowedPatterns",
+        "newWordCap"
+      ],
+      "properties": {
+        "minWordsPerSentence": {
+          "$ref": "#/$defs/positiveInteger"
+        },
+        "maxWordsPerSentence": {
+          "$ref": "#/$defs/positiveInteger"
+        },
+        "allowedTenses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "allowedPatterns": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "newWordCap": {
+          "$ref": "#/$defs/positiveInteger"
+        }
+      }
+    },
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tag", "text"],
+      "properties": {
+        "tag": {
+          "$ref": "#/$defs/tag"
+        },
+        "text": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "word": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["display", "cue", "tag", "forms"],
+      "properties": {
+        "display": {
+          "$ref": "#/$defs/text"
+        },
+        "script": {
+          "$ref": "#/$defs/text"
+        },
+        "cue": {
+          "$ref": "#/$defs/text"
+        },
+        "tag": {
+          "$ref": "#/$defs/tag"
+        },
+        "forms": {
+          "description": "The full taught paradigm as discrete surfaces, INCLUDING the word's own display; [] when the word has no taught alternates. The word index (#75) treats every entry as a surface.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "note": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "deconstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["words", "rules"],
+      "properties": {
+        "words": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/word"
+          }
+        },
+        "rules": {
+          "description": "Integer indices into the module-level rules array. tools/validate.ts checks that each one is in range.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "variation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["display", "cue", "changed"],
+      "properties": {
+        "display": {
+          "$ref": "#/$defs/text"
+        },
+        "script": {
+          "$ref": "#/$defs/text"
+        },
+        "cue": {
+          "$ref": "#/$defs/text"
+        },
+        "changed": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "mistake": {
+      "description": "One callout per sentence — a single object, not an array.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["display", "why"],
+      "properties": {
+        "display": {
+          "$ref": "#/$defs/text"
+        },
+        "script": {
+          "$ref": "#/$defs/text"
+        },
+        "why": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "sentence": {
+      "description": "Keys are authored in the frozen Sentence Detail order [D10]: hero, gloss, words, rules, trap, sound, variations, mistake, usage, mnemonic.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "display", "cue", "glossEn", "deconstruction"],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/sentenceId"
+        },
+        "display": {
+          "description": "Primary L2 string — the native text in native-script courses, the romanization in romanized ones (PRD §7).",
+          "$ref": "#/$defs/text"
+        },
+        "script": {
+          "description": "Optional quiet native-script line; wanted in romanized courses. The course build, which knows scriptMode, is what enforces its presence.",
+          "$ref": "#/$defs/text"
+        },
+        "cue": {
+          "$ref": "#/$defs/text"
+        },
+        "glossEn": {
+          "$ref": "#/$defs/text"
+        },
+        "literal": {
+          "$ref": "#/$defs/text"
+        },
+        "deconstruction": {
+          "$ref": "#/$defs/deconstruction"
+        },
+        "trap": {
+          "description": "L1-interference warning, on the sentence. Optional — the section vanishes when a sentence honestly has no trap.",
+          "$ref": "#/$defs/text"
+        },
+        "sound": {
+          "$ref": "#/$defs/text"
+        },
+        "variations": {
+          "$comment": "An empty list is the same as omitting it; tools/validate.ts is what demands a non-empty one on M1-M3.",
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/variation"
+          }
+        },
+        "mistake": {
+          "$ref": "#/$defs/mistake"
+        },
+        "usage": {
+          "$ref": "#/$defs/text"
+        },
+        "register": {
+          "$comment": "Rendered as the chip beside WHEN TO USE IT. Widen this enum when a module genuinely needs another register.",
+          "enum": ["neutral", "informal"]
+        },
+        "mnemonic": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "poolItem": {
+      "description": "Comprehension item — exactly {id, display, cue} (+ optional script). No embedded words: the 'why' row resolves through the build-time word index (#75).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "display", "cue"],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/poolItemId"
+        },
+        "display": {
+          "$ref": "#/$defs/text"
+        },
+        "script": {
+          "$ref": "#/$defs/text"
+        },
+        "cue": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "exitTest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generateCount", "comprehendCount"],
+      "properties": {
+        "generateCount": {
+          "$ref": "#/$defs/positiveInteger"
+        },
+        "comprehendCount": {
+          "$ref": "#/$defs/positiveInteger"
+        }
+      }
+    }
+  }
+}

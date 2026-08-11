@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M4",
+  "title": "Who I am",
+  "job": "Introduce yourself and state what you like",
+  "prerequisites": ["L1-M3"],
+  "verified": false,
+  "verifiedBy": null,
+  "verifiedAt": null,
+  "fixture": true,
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 4,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": ["ismī + name", "anā min + place", "uḥibb + al- + N"],
+    "newWordCap": 25
+  },
+  "rules": [
+    { "tag": "free", "text": "Subject–Verb–Object order works, just like English." },
+    {
+      "tag": "delta",
+      "text": "\"To be\" vanishes in the present: ismī Rohān (\"my-name Rohan\") — no is/am."
+    },
+    {
+      "tag": "delta",
+      "text": "The subject usually lives inside the verb: uḥibb = I-like, urīd = I-want."
+    },
+    {
+      "tag": "interference",
+      "text": "General statements keep the article: English \"I like coffee\" → Arabic \"I like THE coffee\" (al-qahwa)."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M4-S01",
+      "display": "ismī Rohān",
+      "script": "اسمي روهان",
+      "cue": "My name is Rohan",
+      "glossEn": "lit. \"my-name Rohan\"",
+      "literal": "name-my Rohan",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ismī",
+            "cue": "my name",
+            "tag": "delta",
+            "forms": ["ismī", "ismuka", "ismuki", "ismuhu"],
+            "note": "ism (name) + the attached -ī = \"my\". Possession is a suffix, not a word."
+          },
+          { "display": "Rohān", "cue": "Rohan", "tag": "free", "forms": [], "note": "Names carry over." }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "No \"is\" — Arabic drops the verb \"to be\" in the present. \"ismī huwa Rohān\" sounds stilted.",
+      "sound": "Say it ISS-mee ro-HAAN — crisp double s, long final vowels.",
+      "variations": [
+        {
+          "display": "ismī Priya",
+          "cue": "My name is Priya",
+          "changed": "swap the name — ismī stays"
+        },
+        {
+          "display": "mā ismuka?",
+          "cue": "What is your name? (to a man)",
+          "changed": "mā + -ka (your) asks it back"
+        }
+      ],
+      "mistake": {
+        "display": "ismī huwa Rohān",
+        "why": "The present-tense \"to be\" (huwa) is dropped — ismī Rohān is complete."
+      },
+      "usage": "First introductions, any register.",
+      "register": "neutral",
+      "mnemonic": "ismī = \"name-my\" — the owner hangs off the end of the word."
+    },
+    {
+      "id": "L1-M4-S02",
+      "display": "anā min al-Hind",
+      "script": "أنا من الهند",
+      "cue": "I am from India",
+      "glossEn": "lit. \"I from the-India\"",
+      "literal": "I from the-India",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "anā",
+            "cue": "I",
+            "tag": "delta",
+            "forms": [],
+            "note": "Pronoun \"I\" — needed here since there's no verb."
+          },
+          {
+            "display": "min",
+            "cue": "from",
+            "tag": "free",
+            "forms": [],
+            "note": "Works like English \"from\"."
+          },
+          {
+            "display": "al-Hind",
+            "cue": "India",
+            "tag": "delta",
+            "forms": ["al-Hind", "Hind"],
+            "note": "Country names usually take al- (\"the India\")."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "sound": "Run it together: a-NAA min al-HIND."
+    },
+    {
+      "id": "L1-M4-S03",
+      "display": "uḥibb al-qahwa",
+      "script": "أحب القهوة",
+      "cue": "I like coffee",
+      "glossEn": "lit. \"I-love the-coffee\"",
+      "literal": "I-love the-coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "uḥibb",
+            "cue": "I like/love",
+            "tag": "delta",
+            "forms": ["uḥibb", "tuḥibb", "yuḥibb"],
+            "note": "One verb covers like and love; the subject \"I\" lives inside the verb."
+          },
+          {
+            "display": "al-qahwa",
+            "cue": "coffee",
+            "tag": "interference",
+            "forms": ["al-qahwa", "qahwa"],
+            "note": "General statements take al- — English drops \"the\", Arabic keeps it."
+          }
+        ],
+        "rules": [0, 2, 3]
+      },
+      "trap": "\"uḥibb qahwa\" (no al-) sounds like \"I like a coffee\". Liking coffee in general needs al-qahwa.",
+      "sound": "The q of qahwa is a deep k from the back of the throat — u-HIBB al-QAH-wa.",
+      "variations": [
+        {
+          "display": "uḥibb ash-shāy",
+          "cue": "I like tea",
+          "changed": "qahwa→shāy — and al- melts into ash- before sh"
+        },
+        {
+          "display": "uḥibb al-kutub",
+          "cue": "I like books",
+          "changed": "plural thing — the verb stays uḥibb"
+        }
+      ],
+      "mistake": {
+        "display": "anā uḥibb qahwa",
+        "why": "Drop the extra anā (it's already inside the verb) and keep al-: uḥibb al-qahwa."
+      },
+      "usage": "Likes of every kind — food, people, places.",
+      "register": "neutral",
+      "mnemonic": "ḥubb = love — Arabic \"likes\" by loving; the same root as ḥabībī."
+    },
+    {
+      "id": "L1-M4-S04",
+      "display": "urīd māʾ",
+      "script": "أريد ماء",
+      "cue": "I want water",
+      "glossEn": "lit. \"I-want water\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "urīd",
+            "cue": "I want",
+            "tag": "delta",
+            "forms": ["urīd", "turīd", "yurīd"],
+            "note": "The everyday wanting verb; \"I\" is inside it."
+          },
+          {
+            "display": "māʾ",
+            "cue": "water",
+            "tag": "free",
+            "forms": [],
+            "note": "The ʾ is a tiny catch in the throat."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "sound": "u-REED maaʾ — end on the little throat-catch, not a long aah."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M4-C01",
+      "display": "mā ismuka?",
+      "script": "ما اسمك؟",
+      "cue": "What is your name?"
+    },
+    {
+      "id": "L1-M4-C02",
+      "display": "uḥibb ash-shāy",
+      "script": "أحب الشاي",
+      "cue": "I like tea"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}
