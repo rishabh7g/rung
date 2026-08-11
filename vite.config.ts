@@ -46,10 +46,22 @@ function woff2Only(): Plugin {
   };
 }
 
+/**
+ * Where the build will be served from (#91).
+ *
+ * `/` everywhere by default — `npm run dev`, `npm run preview` and every test read exactly what
+ * they read before. The Pages deploy is a PROJECT site, so it serves from a sub-path and the
+ * workflow says so explicitly: `VITE_BASE=/rung/ npm run build`. Nothing else in the repo may
+ * hard-code that string; the app reads `import.meta.env.BASE_URL` and the manifest, the icons and
+ * the precache all derive from this one value (`tools/pwa.ts`).
+ */
+const base = process.env.VITE_BASE ?? '/';
+
 // https://vite.dev/config/
 export default defineConfig({
+  base,
   // VitePWA runs after woff2Only so the precache manifest sees the fonts that actually shipped.
-  plugins: [react(), htmlValues(), woff2Only(), VitePWA(pwaOptions())],
+  plugins: [react(), htmlValues(), woff2Only(), VitePWA(pwaOptions(base))],
   test: {
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],

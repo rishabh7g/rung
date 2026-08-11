@@ -208,12 +208,40 @@ Nothing below is claimed by this ticket:
 - **The later phases of the gate** — "run a session, complete a ritual, export backup"
   (checklist §3.6) — those screens do not exist yet (#95, #103, F7).
 
-## 9. Reproducing
+## 9. The sub-path audit (#91)
+
+The Pages deploy is a **project site**, so the build runs `VITE_BASE=/rung/` and every URL the PWA
+owns has to land under it. Four mechanisms, and only one of them was wrong:
+
+| What | Who resolves the base | Verdict |
+|---|---|---|
+| `content/*.json` fetches | the app, per call: `` `${import.meta.env.BASE_URL}${path}` `` | already right (#79/#81) |
+| `index.html` — favicon, apple-touch-icon, the bundles | Vite, at build: source stays `/icons/…`, `dist/` reads `/rung/icons/…` | already right |
+| Worker registration + precache | vite-plugin-pwa: registers `/rung/sw.js` with `{ scope: '/rung/' }`; every precache URL is **relative** (`index.html`, `assets/…`), so it resolves against the worker's own directory — as does `navigateFallback: 'index.html'` | already right |
+| **`manifest.webmanifest`** | **nobody** — it is JSON the plugin copies through | **was wrong** |
+
+The manifest is the silent one. `id`, `start_url` and all three icon `src`s were typed as `/…`,
+which on a sub-path resolves against the **origin root**: an installed app whose launch icon 404s
+and whose `start_url` opens `https://rishabh7g.github.io/` — somebody else's page, with no worker.
+So `tools/pwa.ts` now takes the base and builds every path from it (`pwaManifest(base)`), and
+`tools/pwa.test.ts` asserts the sub-path manifest is the checklist with `/rung` in front of each
+path, that `id`/`start_url` are the base, and that no icon points above it. `scope` is still
+deleted, and still correct: the browser derives it from `start_url`'s directory, which is now
+`/rung/` — the same scope the worker registers with.
+
+What `VITE_BASE=/rung/ npm run build` emits:
+
+```json
+{"start_url":"/rung/","id":"/rung/","icons":[{"src":"/rung/icons/icon-192.png", …}]}
+```
+
+## 10. Reproducing
 
 ```bash
 npm run icons:build                                    # regenerate public/icons from the header mark
 npm run content:build -- --with-unverified --with-fixtures
 npx vite build && npx vite preview --port 4173         # a worker only exists in a build
+VITE_BASE=/rung/ npm run build                         # what the deploy builds (strict, sub-path)
 ```
 
 Then: load once online, kill the preview server, cold-start the browser against the same profile

@@ -4,8 +4,13 @@
  * They live in `tools/` rather than inline in `vite.config.ts` for one reason: the manifest is a
  * **contract with a document**, not a config detail. `design/pwa-checklist.md` §3.1 prints the
  * exact JSON this product must ship, so `tools/pwa.test.ts` parses that block out of the
- * checklist and deep-equals it against `PWA_MANIFEST` — the checklist changing and the build not
+ * checklist and deep-equals it against `pwaManifest()` — the checklist changing and the build not
  * is a red test, in a repo where nothing else would ever notice.
+ *
+ * Everything here takes the build's `base` (#91): the checklist prints the manifest for a site at
+ * `/`, and the Pages deploy serves it from `/rung/`. A manifest is the one file no bundler
+ * rewrites for you, so a path typed with a leading slash would point at the origin root and break
+ * install and offline precaching on the sub-path — silently, which is the worst way.
  *
  * Two values are never written here: the product name comes from `src/brand.ts` and the colours
  * from `design/tokens.css` (`--color-bg`), so the manifest cannot drift from the app's own paper
@@ -23,8 +28,28 @@ import { token } from './tokens.ts';
 /** Where the generated icons live, under `public/`, so Vite copies them to `dist/` verbatim. */
 export const ICONS_DIR = 'icons';
 
+/**
+ * The path the build is served from — `/` unless `VITE_BASE` says otherwise (`vite.config.ts`).
+ *
+ * The default is what every caller but the deploy uses: `npm run dev`, `npm run preview` and the
+ * tests all read `/`. The Pages deploy is a PROJECT site (`https://rishabh7g.github.io/rung/`, #91)
+ * and builds with `VITE_BASE=/rung/`. Vite guarantees a base ends in a slash.
+ */
+export const DEFAULT_BASE = '/';
+
+/**
+ * A URL for a file `public/` ships verbatim, under the base the build is served from.
+ *
+ * Vite rewrites the `href`s in `index.html` itself, and the app reads `import.meta.env.BASE_URL`
+ * — but the manifest is JSON the plugin copies through untouched, so a `src` written as `/icons/…`
+ * is a request to the origin ROOT. On a sub-path that is a 404 for every icon and an installed app
+ * whose `start_url` opens somebody else's page. Hence: no leading slash is ever typed here.
+ */
+export const publicUrl = (base: string, path: string): string => `${base}${path}`;
+
 /** The `apple-touch-icon` iOS reads for Add to Home Screen (checklist §3.3). */
-export const APPLE_TOUCH_ICON = `/${ICONS_DIR}/apple-touch-icon-180.png`;
+export const appleTouchIcon = (base = DEFAULT_BASE): string =>
+  publicUrl(base, `${ICONS_DIR}/apple-touch-icon-180.png`);
 
 /**
  * The tab icon — declared, so the browser stops guessing.
@@ -33,42 +58,47 @@ export const APPLE_TOUCH_ICON = `/${ICONS_DIR}/apple-touch-icon-180.png`;
  * precaches that path, so offline it is a failed request on every screen; naming a file that IS
  * precached is what makes the airplane-mode walkthrough read zero failures (checklist §3.6).
  */
-export const FAVICON = `/${ICONS_DIR}/favicon-32.png`;
+export const favicon = (base = DEFAULT_BASE): string =>
+  publicUrl(base, `${ICONS_DIR}/favicon-32.png`);
 
 /**
- * The manifest, exactly as `design/pwa-checklist.md` §3.1 prints it.
+ * The manifest, exactly as `design/pwa-checklist.md` §3.1 prints it — at the base it prints it for.
  *
- * `id` and `start_url` are `/` and not `/#/`: HashRouter puts every route in the fragment, so the
- * document is always `/` and the app resolves its own first screen (`src/App.tsx`).
+ * `id` and `start_url` are the base itself and not `${base}#/`: HashRouter puts every route in the
+ * fragment, so the document is always the base and the app resolves its own first screen
+ * (`src/App.tsx`). At `/` this is the checklist key for key, which is what `tools/pwa.test.ts`
+ * asserts; at `/rung/` every path in it moves with the deploy, which is the whole point — a
+ * manifest is the one file no bundler rewrites for you.
  */
-export const PWA_MANIFEST: Partial<ManifestOptions> = {
+export const pwaManifest = (base = DEFAULT_BASE): Partial<ManifestOptions> => ({
   name: BRAND,
   short_name: BRAND,
-  id: '/',
-  start_url: '/',
+  id: base,
+  start_url: base,
   display: 'standalone',
   orientation: 'portrait',
   background_color: token('--color-bg'),
   theme_color: token('--color-bg'),
   description: 'Climb a language, one checkpoint at a time.',
   icons: [
-    { src: `/${ICONS_DIR}/icon-192.png`, sizes: '192x192', type: 'image/png' },
-    { src: `/${ICONS_DIR}/icon-512.png`, sizes: '512x512', type: 'image/png' },
+    { src: publicUrl(base, `${ICONS_DIR}/icon-192.png`), sizes: '192x192', type: 'image/png' },
+    { src: publicUrl(base, `${ICONS_DIR}/icon-512.png`), sizes: '512x512', type: 'image/png' },
     {
-      src: `/${ICONS_DIR}/maskable-512.png`,
+      src: publicUrl(base, `${ICONS_DIR}/maskable-512.png`),
       sizes: '512x512',
       type: 'image/png',
       purpose: 'maskable',
     },
   ],
-};
+});
 
 /**
  * vite-plugin-pwa merges its own defaults *under* the manifest it is handed, and two of them —
  * `lang: 'en'` and `scope` — are keys `design/pwa-checklist.md` §3.1 does not print. Setting them
  * to `undefined` deletes them from the emitted JSON (the plugin `JSON.stringify`s the merged
  * object), so what ships is the checklist and nothing else. Neither is lost: `scope` defaults to
- * the `start_url`'s directory, which is `/`, and the document already declares `lang="en"`.
+ * the `start_url`'s directory — `/` at the default base, `/rung/` on the deploy, which is exactly
+ * the scope the worker registers with — and the document already declares `lang="en"`.
  */
 const PLUGIN_DEFAULTS_DROPPED = { lang: undefined, scope: undefined };
 
@@ -96,15 +126,21 @@ export const PRECACHE_GLOBS = [
  */
 const MAX_PRECACHED_FILE_BYTES = 5 * 1024 * 1024;
 
-/** `VitePWA(pwaOptions())` — the whole plugin configuration, and the reason for every line. */
-export function pwaOptions(): Partial<VitePWAOptions> {
+/**
+ * `VitePWA(pwaOptions(base))` — the whole plugin configuration, and the reason for every line.
+ *
+ * `base` is the path the build is served from; the plugin already prefixes the precache URLs and
+ * the worker's own registration scope with it, so the only thing it must be handed by name is the
+ * manifest (see `pwaManifest`).
+ */
+export function pwaOptions(base = DEFAULT_BASE): Partial<VitePWAOptions> {
   return {
     // A shipped build never negotiates an update with the learner: the new worker takes over and
     // the page reloads itself. There is no "refresh to update" toast in this product.
     registerType: 'autoUpdate',
     // The registration is source, not an injected script tag: `src/pwa/registerServiceWorker.ts`.
     injectRegister: null,
-    manifest: { ...PWA_MANIFEST, ...PLUGIN_DEFAULTS_DROPPED },
+    manifest: { ...pwaManifest(base), ...PLUGIN_DEFAULTS_DROPPED },
     // No `includeAssets`, and the plugin's own icon sweep off: `public/` reaches `dist/` on its
     // own and `icons/*.png` below already takes all four (the apple-touch-icon among them, which
     // the manifest does not name). Left on, each manifest icon lands in the precache list twice.
