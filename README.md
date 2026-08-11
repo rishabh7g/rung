@@ -199,6 +199,21 @@ The app knows a manifest, not a language pair (PRD-engineering §8 F0). Boot ord
   to write. The provider loads it as part of boot: a screen that has mounted has its words.
   `interpolate(value, {…})` fills `{placeholders}`; a name with no value is left verbatim and
   warned rather than blanked, because a silent gap reads as finished copy.
+- `src/course/content.ts` — the rest of the course's files: `loadLevels(courseId)`,
+  `loadModule(courseId, moduleId)`, `loadIndex(courseId, moduleId)`, and the hooks
+  `useLevels()` / `useModule(id)` / `useIndex(id)` that read them for the active course and
+  return `{data, loading, error}`. Same rules as the two loaders above — the cache is the
+  promise, keyed by URL (so course scoping is free and a failure is never cached), `BASE_URL`
+  read per call — and the same tripwire posture: `schemaVersion: 5`, the expected arrays are
+  arrays, and the file's own ids match what was asked for, because a wrong-file-served is
+  exactly what a build cannot catch. Everything throws `ContentError {url, reason}`, which the
+  screens hand to the same `ContentErrorScreen` the provider uses.
+- `src/course/types.ts` — schema v5 as TypeScript: `ModuleContent`, `Levels`, `WordIndex`.
+  Derived from `content/schema/module.schema.json` and the four modules that exist, not from a
+  sketch — including the enrichment fields (`literal`, `trap`, `sound`, `variations`, `mistake`,
+  `usage`, `register`, `mnemonic`), module-level `rules` with `deconstruction.rules` as indices
+  into them, `complexity`, `exitTest` and `fixture`. `types.test.ts` reads every authored module
+  and ladder off disk and fails naming any key no type declares, so the mirror cannot rot.
 - `resolveActiveCourse(courses, persistedId?)` is a **pure function**: the persisted course when
   it is still in the manifest, else the first entry with a `console.warn`. It never writes, so a
   fallback does not erase the stored id (Invariant 8). The provider takes that id as a prop and

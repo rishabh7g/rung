@@ -1,6 +1,8 @@
 import { BRAND } from './brand.ts';
 import { CourseProvider, useCourse } from './course/CourseProvider.tsx';
 import { interpolate, useStrings } from './course/strings.ts';
+import { useLevels } from './course/content.ts';
+import { ContentErrorScreen } from './course/BootScreens.tsx';
 import styles from './App.module.css';
 
 /**
@@ -29,6 +31,15 @@ export default function App() {
 function ScaffoldScreen() {
   const { course, courses } = useCourse();
   const strings = useStrings();
+  // SMOKE (#81) — replaced by Ladder (#86). The ladder is what levels.json is for; listing L1's
+  // rungs here proves the loader reads the active course's file and the hook hands over a value.
+  const levels = useLevels();
+
+  // The content layer failing is one screen, wherever it fails: the provider shows this when the
+  // manifest or the strings bundle is broken, and a missing ladder is the same answer (#79).
+  if (levels.error !== null) return <ContentErrorScreen detail={levels.error.message} />;
+
+  const first = levels.data?.levels[0];
 
   return (
     <main className={styles.screen}>
@@ -40,6 +51,19 @@ function ScaffoldScreen() {
       <p className={styles.caption}>
         active course: {course.pairLabel} ({course.id}) · {courses.length} in this build
       </p>
+      {first !== undefined && (
+        <>
+          <p className={styles.caption}>
+            {first.name} · {first.modules.filter((module) => module.hasContent).length} of{' '}
+            {first.modules.length} rungs have content
+          </p>
+          <ol className={styles.rungs} dir={course.dir}>
+            {first.modules.map((module) => (
+              <li key={module.id}>{module.title}</li>
+            ))}
+          </ol>
+        </>
+      )}
     </main>
   );
 }
