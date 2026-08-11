@@ -17,7 +17,7 @@
  * got-it, one `passRitual` per climbed rung. A fixture that wrote `production` directly would be
  * testing a state the app cannot reach.
  */
-import { render, screen, waitFor, within } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from '../App.tsx';
 import { resetContentCache } from '../course/content.ts';
@@ -28,6 +28,7 @@ import { useAppStore } from '../state/store.ts';
 import { DEV_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
 import { levelsFixture, moduleFixture } from '../test/courseContent.ts';
 import { stringValue } from '../test/courseStrings.ts';
+import holdSource from '../components/HoldToConfirm.tsx?raw';
 import ritualCss from './RitualScreen.module.css?raw';
 import ritualSource from './RitualScreen.tsx?raw';
 
@@ -36,6 +37,8 @@ const COURSE = 'hi-mr';
 const CURRENT = 'L1-M1';
 /** Injected, so nothing here touches the wall clock — `passedAt` is a receipt, not a schedule. */
 const STAMP = () => '2026-02-03T09:00:00.000Z';
+/** `--motion-hold-total` [D14] — the whole press-and-hold, in milliseconds (#101). */
+const HOLD_MS = 900;
 
 /** What the fixture bundle says for a key — the self-identifying value an assertion reads. */
 function strings(key: string, courseId = COURSE): string {
@@ -297,31 +300,49 @@ describe('the learner’s sentence never enters the app', () => {
    * The source scan — the same shape as `shellPurity.test.ts` and `styleContract.test.ts`, and for
    * the same reason: prose cannot keep an invariant, a scan can.
    *
-   * Two claims about this flow's own file. **Nothing can arrive**: no field, no change or paste
+   * Two claims about this flow's files. **Nothing can arrive**: no field, no change or paste
    * handler, no clipboard read, no form. **Nothing can be kept**: no state cell of any kind — the
    * arc is a pure function of the course's strings and the rung's module, so there is no variable
-   * anywhere in it for a sentence to live in, not even for one render. #101 adds the hold
-   * control's own progress state in its own file, so that is a conscious edit in that diff rather
-   * than a hole this one leaves open.
+   * anywhere in it for a sentence to live in, not even for one render.
+   *
+   * The second claim has exactly ONE exemption, and it is named rather than left implicit: the
+   * hold control (#101) keeps how full its bar is, so `HoldToConfirm.tsx` is scanned for
+   * everything above EXCEPT the state cell (`ARRIVAL`, below). That is safe for a reason that can
+   * be checked rather than trusted — the cell holds a number between 0 and 1 produced by a timer,
+   * there is still nothing on this screen to type into and no handler that could carry text into
+   * it, and the file may not grow one without reddening this file. A hold's progress is not
+   * learner content; the ban is on the sentence having somewhere to live, not on arithmetic.
    */
-  const BANNED = [
+  const ARRIVAL = [
     { what: 'a text field', pattern: /<(input|textarea|select)\b/ },
     { what: 'an editable node', pattern: /contentEditable/ },
     { what: 'an input handler', pattern: /\bon(Change|Input|Paste|Drop|Submit)\b/ },
     { what: 'a clipboard read', pattern: /clipboard|execCommand/ },
     { what: 'a form', pattern: /<form\b|FormData/ },
-    { what: 'a place to keep it', pattern: /\buse(State|Reducer|Ref)\b/ },
     { what: 'a write to storage', pattern: /(local|session)Storage/ },
   ] as const;
 
-  function scan(file: string, source: string): string[] {
+  /** The arc's own extra promise: no variable at all, so not even a render can hold a sentence. */
+  const KEEPING = { what: 'a place to keep it', pattern: /\buse(State|Reducer|Ref)\b/ } as const;
+
+  const BANNED = [...ARRIVAL, KEEPING] as const;
+
+  function scanWith(
+    rules: readonly { what: string; pattern: RegExp }[],
+    file: string,
+    source: string,
+  ): string[] {
     return source
       .split('\n')
       .flatMap((line, index) =>
-        BANNED.filter(({ pattern }) => pattern.test(line)).map(
-          ({ what }) => `${file}:${index + 1} carries ${what}`,
-        ),
+        rules
+          .filter(({ pattern }) => pattern.test(line))
+          .map(({ what }) => `${file}:${index + 1} carries ${what}`),
       );
+  }
+
+  function scan(file: string, source: string): string[] {
+    return scanWith(BANNED, file, source);
   }
 
   it('has no way to receive the sentence, and no variable to hold it', () => {
@@ -337,6 +358,22 @@ describe('the learner’s sentence never enters the app', () => {
     ).toEqual([]);
   });
 
+  it('gives the hold control nowhere to receive one either — its state is a number', () => {
+    const violations = scanWith(ARRIVAL, 'src/components/HoldToConfirm.tsx', holdSource);
+
+    expect(
+      violations,
+      violations
+        .join('\n')
+        .concat(
+          '\nThe hold keeps how full its bar is and nothing else: no field, no handler and no storage may appear beside it (Invariants 4 and 6).',
+        ),
+    ).toEqual([]);
+    // The exemption is exactly one cell, and it is the progress: nothing is stored beside it.
+    expect(holdSource.match(/=\s*useState\(/g)).toHaveLength(1);
+    expect(holdSource).not.toMatch(/useReducer\(/);
+  });
+
   it('catches a planted field, a planted handler and a planted state cell', () => {
     const planted = [
       '<input value={sentence} />',
@@ -345,6 +382,8 @@ describe('the learner’s sentence never enters the app', () => {
     ].join('\n');
 
     expect(scan('src/screens/Planted.tsx', planted)).toHaveLength(3);
+    // The hold's exemption is the state cell and only the state cell.
+    expect(scanWith(ARRIVAL, 'src/components/Planted.tsx', planted)).toHaveLength(2);
   });
 
   it('leaves the screen’s own prose alone — the guard is about code, not about words', () => {
@@ -396,15 +435,65 @@ describe('every word is the course’s, and the numbers are this rung’s', () =
     );
   });
 
-  it('leaves step 3 to #101: its title, and no control standing in for the hold', async () => {
-    produceRung();
-    await renderRitual();
+  it('stands the hold under step 3’s title, labelled with the head’s own ordinal', async () => {
+    produceRung(3);
+    await renderRitual(ritualModule(3, 7));
     const [, , confirm] = await findSteps();
 
     expect(within(confirm!).getByRole('heading').textContent).toBe(
       strings('ritual.stepTitle.confirm'),
     );
-    expect(within(confirm!).queryAllByRole('button', { hidden: true })).toEqual([]);
+
+    // The same ordinal the head renders — "the 4th" for a three-sentence rung — inside the
+    // course's own hold label. The screen owns the number; the control owns the hold (#101).
+    const label = interpolate(strings('ritual.confirm.holdLabel'), {
+      ordinal: interpolate(strings('ordinal'), { n: 4 }),
+    });
+
+    expect(within(confirm!).getByRole('button', { name: label })).toBeVisible();
+    // One control in the whole step, and nowhere to go yet: the way on appears once it is held.
+    expect(within(confirm!).getAllByRole('button')).toHaveLength(1);
+    expect(within(confirm!).queryAllByRole('link')).toEqual([]);
+  });
+
+  /**
+   * The arc's own end-to-end: the weight is paid on the real screen, through the real route, and
+   * what it opens is the way to part 2. The hold's own promises — release resets, no tap-through,
+   * reduced motion keeps the duration — are `HoldToConfirm.test.tsx`'s, at the step level.
+   */
+  it('opens the way to Comprehension only after the whole ~900ms is held', async () => {
+    vi.useFakeTimers({ shouldAdvanceTime: true });
+    try {
+      produceRung();
+      await renderRitual();
+      const [, , confirm] = await findSteps();
+      const hold = within(confirm!).getByRole('button');
+
+      // A tap: nothing at all, which is the acceptance criterion in one line.
+      fireEvent.pointerDown(hold);
+      fireEvent.pointerUp(hold);
+      act(() => vi.advanceTimersByTime(HOLD_MS));
+      expect(within(confirm!).queryAllByRole('link')).toEqual([]);
+
+      fireEvent.pointerDown(hold);
+      act(() => vi.advanceTimersByTime(HOLD_MS));
+
+      expect(within(confirm!).getByText(strings('ritual.confirm.done'))).toBeVisible();
+      expect(
+        within(confirm!).getByRole('link', { name: strings('ritual.confirm.toComprehension') }),
+      ).toHaveAttribute('href', '#/comprehension');
+
+      // The badge fills off the DOM, not off a variable: the ✓ state marks itself, and the arc's
+      // stylesheet reads that mark (the prototype's `s3Bg`). The screen still holds no state.
+      expect(
+        within(confirm!).getByText(strings('ritual.confirm.done')).closest('[data-hold]'),
+      ).not.toBeNull();
+      expect(ritualCss.replace(/\/\*[\s\S]*?\*\//g, '')).toMatch(
+        /\.step:has\(\[data-hold='signed'\]\) \.stepNumber/,
+      );
+    } finally {
+      vi.useRealTimers();
+    }
   });
 
   it('renders under the shell’s back header, as a child of the rung', async () => {

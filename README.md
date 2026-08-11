@@ -152,7 +152,7 @@ Two consequences worth knowing before you author content:
   emitter imports it, and so does the runtime resolver (`src/engine/wordIndex.ts`, #94). Never
   copy it: a second copy is a word that silently has no "why".
 
-### The strings contract — 75 keys, no fallback copy
+### The strings contract — 77 keys, no fallback copy
 
 Every course ships one `strings.json` carrying **all** the microcopy the shell renders, because
 the shell has none of its own (PRD §4). So the build validates it against the canonical key list
@@ -168,7 +168,7 @@ declared twice.
 `tools/strings-check.ts` runs per course, flattens the nested file onto dot-paths
 (`ritual.check.copy`), and reports four things, always naming course **and** key:
 
-- **missing key** — the 75 canonical paths must all be there;
+- **missing key** — the 77 canonical paths must all be there;
 - **empty or non-string value** — a present-but-blank key is a missing key with extra steps;
 - **unknown key** — the typo tripwire; `ritual.check.plate` would otherwise sit quietly beside a
   missing `plateLabel`;
@@ -196,7 +196,10 @@ chip with nothing due, and the summary's title, four count lines and its way bac
 Read phase forced (#97 — `read.showCue`, `.hideCue`, `.prev`, `.next`, `.toProduce`: the cue
 toggle's two labels and the pager's three, the last of which names where the rung's last sentence
 goes) and three lossless resume forced (#99 — `practice.resumeLine`, `.resumeContinue`,
-`.resumeNew`: where the open session stopped, and the two ways out of it). All forty-nine are
+`.resumeNew`: where the open session stopped, and the two ways out of it) and two the
+press-and-hold forced (#101 — `ritual.confirm.done`, `.toComprehension`: what the control says
+once it is signed, and the way on to part 2 — the prototype writes both in English for every
+course, which is the shell owning a learner-facing sentence). All fifty-one are
 **draft values pending the Sync-3 freeze** (#71). The alternative each time was a
 learner-facing line hardcoded in the shell, which is the one thing this list exists to prevent.
 
@@ -972,18 +975,22 @@ session.
 
 ### The exit ritual's arc — the app says where to go, and does nothing else
 
-`/ritual` is the product's honesty moment (#100; PRD §8 F5 [D18], PRD-design §6.5 flow 5
+`/ritual` is the product's honesty moment (#100, #101; PRD §8 F5 [D18, D14], PRD-design §6.5 flow 5
 [Q2 answered]): three steps on one screen — **write** the 11th sentence in the notebook, **check**
-it yourself, **confirm**. Steps 1 and 2 are here; the press-and-hold confirmation is #101's, and
-step 3 renders its title over an empty slot until then.
+it yourself, **confirm** by holding a control down for ~900ms.
 
 | file | what it is |
 |---|---|
 | `src/screens/RitualScreen.tsx` | the guard, the head, and the three-step arc |
 | `src/screens/RitualScreen.module.css` | the rail, the numbered badges, and the one dashed plate in the app |
+| `src/components/HoldToConfirm.tsx` | step 3: the press-and-hold, the ✓ state and the way on to part 2 |
+| `src/components/HoldToConfirm.module.css` | the 56px control, the fill that grows from its left edge |
 
 [ritual-arc-360.png](docs/images/ritual-arc-360.png) · [ritual-check-360.png](docs/images/ritual-check-360.png)
-— the arc at 360px, and the same screen scrolled to step 3's slot.
+· [ritual-hold-360.png](docs/images/ritual-hold-360.png) ·
+[ritual-hold-mid-360.png](docs/images/ritual-hold-mid-360.png) ·
+[ritual-hold-signed-360.png](docs/images/ritual-hold-signed-360.png)
+— the arc at 360px, the same screen scrolled to step 3, and the hold at rest, mid-fill and signed.
 
 - **Step 2 contains zero interactive elements** — no button, no link, no copy action, no field
   [D18]. Checking is the learner's own activity, fully outside the app (Invariant 5), so a control
@@ -996,7 +1003,10 @@ step 3 renders its title over an empty slot until then.
   either: a source scan over the flow fails on a field, a change/paste handler, a clipboard read, a
   form — and on `useState`/`useReducer`/`useRef`, because the arc is a pure function of the
   course's strings and the rung's module and has no variable for a sentence to live in, not even
-  for one render.
+  for one render. The hold control has **one** exemption from the last of those, and it is named
+  in the test rather than left implicit: `HoldToConfirm.tsx` keeps how full its bar is, and is
+  scanned for everything else — no field, no handler, no storage — plus a check that the exemption
+  is exactly one `useState` and no more. A number between 0 and 1 is not learner writing.
 - **The guard is `exit_available`, and it is the Ladder's own predicate.** `/ritual` is a real deep
   link (HashRouter, an installable PWA), so the route is reachable with the ladder anywhere: a rung
   that is not produced out lands on `/module/:current` — where the work is — and a finished ladder
@@ -1013,11 +1023,31 @@ step 3 renders its title over an empty slot until then.
   reserved meaning: outside the app's solid hairline world (design/tokens.md §3). It wears no
   registration marks — they are the blueprint grammar of the app's *own* objects, and the prototype
   draws none here either. Its two rows are static text with a decorative Lucide icon each.
+- **Step 3 costs ~900ms of held finger, and the cost is the feature** [D14]. `pointerdown` starts
+  a linear fill from the control's left edge; `pointerup`, `pointerleave` and `pointercancel`
+  before the end put it back to 0, and the next press starts from empty — half a hold is never
+  banked. **The duration is a JavaScript timer, not a CSS transition**, and that is the security
+  of it: `prefers-reduced-motion` collapses every animation in this product to nothing
+  (design/tokens.md §5), so a fill that finished when the browser said it finished would pass a
+  tap instantly under reduced motion. Here reduced motion drops the glide between the 30 steps and
+  the ✓'s entrance — the hold still takes the full ~900ms, and there is no tap-through (PRD §8 F5's
+  acceptance criterion), which is asserted with reduced motion reported both in jsdom and live.
+- **`touch-action: none` on the control**, alone in the app: every other control sets
+  `manipulation` because they are taps, and this one has to keep a drag from becoming a scroll on
+  a screen that scrolls (design/pwa-checklist.md §1). One Pointer Events code path covers mouse,
+  touch and pen.
+- **Completion emits once and hands over.** The ✓ plate replaces the control (there is nothing
+  left to press twice), the arc's step-3 badge fills, and the primary CTA goes to
+  `/comprehension` — part 2 (#102). The badge fills through a `:has([data-hold='signed'])` rule
+  rather than a prop, so the screen above still holds no state at all.
 
 Verified live at 360px in headless Chrome against `npm run dev` (hi-mr), with the ten L1-M1
-counters seeded to 2 through the store: `#/ritual` opens on the arc (it redirects to
-`#/module/L1-M1` without them), the plate holds two rows and no control, and the whole screen
-answers zero interactive roles below the head.
+counters seeded to 2 through the store and **real CDP touch input** rather than synthetic clicks:
+`#/ritual` opens on the arc (it redirects to `#/module/L1-M1` without them), the plate holds two
+rows and no control, and the hold reads `touch-action: none`, fills to 0.43 at 450ms, returns to 0
+on release, is still unsigned at 860ms, and signs at 900ms — then the same run with
+`prefers-reduced-motion: reduce` emulated (fill transition 0s) passes nothing on a tap, is still
+unsigned at 700ms, and signs only on the full hold. Tapping the CTA lands on `#/comprehension`.
 
 ### The fonts — bundled, because offline is the product
 

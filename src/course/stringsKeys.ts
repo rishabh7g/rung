@@ -29,7 +29,7 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 75 keys: the 21 of PRD §4, the 5 the frozen screens forced
+ * file it is complaining about). 77 keys: the 21 of PRD §4, the 5 the frozen screens forced
  * (PR #120) — `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and the four
  * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — the 3 the Ladder
  * forced (#86): the counts-only pending line, the ownership footer and the sealed-level toast,
@@ -45,11 +45,14 @@
  * says the phases never gate, the two Begin labels, the three phase names the soft chips wear, the
  * honest answer to a Review chip with nothing due, and the summary's title, four count lines and
  * its way back to the Ladder — the 5 the Read phase forced (#97): the cue toggle's two labels
- * and its pager's three, the last of which names where the rung's last sentence goes — and the 3
+ * and its pager's three, the last of which names where the rung's last sentence goes — the 3
  * lossless resume forced (#99): the line that says a session is still open and where it stopped,
- * and the two ways out of it (pick it up, or leave it and start a new one).
+ * and the two ways out of it (pick it up, or leave it and start a new one) — and the 2 the
+ * press-and-hold forced (#101): what the held control says once it is signed, and the way on to
+ * part 2 (the prototype writes both in English for every course, which is the shell owning a
+ * learner-facing sentence).
  *
- * Those forty-nine are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
+ * Those fifty-one are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
  * as PR #120's were. The alternative each time was hardcoding learner-facing lines in the shell,
  * which is the one thing this list exists to prevent.
  */
@@ -71,6 +74,8 @@ export const STRINGS_KEYS = [
   'ritual.check.resourceInternet',
   'ritual.check.caption',
   'ritual.confirm.holdLabel',
+  'ritual.confirm.done',
+  'ritual.confirm.toComprehension',
   'retry.title',
   'retry.body',
   'retry.cta',
@@ -165,6 +170,8 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'ritual.check.caption': [],
   /** The rendered `ordinal` value — "my 3rd sentence" — not a bare number. */
   'ritual.confirm.holdLabel': ['{ordinal}'],
+  'ritual.confirm.done': [],
+  'ritual.confirm.toComprehension': [],
   'retry.title': [],
   'retry.body': [],
   'retry.cta': [],
