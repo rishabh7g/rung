@@ -8,14 +8,20 @@
  *
  * `chrome` is the whole of that decision, and it comes straight from the IA: the Ladder,
  * Practice and Settings are the three tabs and wear the brand header; Module, Sentence Detail
- * and the exit ritual's screens are children of the active rung and wear a back header to the
- * Ladder. Immersion overrides both — see `AppShell`.
+ * and the exit ritual's screens are children of the active rung and wear a back header.
+ * Immersion overrides both — see `AppShell`.
+ *
+ * **Where "back" goes is IA too**, so it is in the table rather than in the header that draws the
+ * chevron: every child of a rung returns to the Ladder except Sentence Detail, which returns to
+ * the module it was opened from — with that module's scroll offset and open cards intact (#88,
+ * #89). `backTarget()` is the whole of that decision, and `AppShell` only renders it.
  *
  * `label` is English shell furniture (the back header's title), not course copy: nothing here
  * is a learner-facing word, and every word that is ships in the course bundle (PRD §4, #80).
  */
 import type { ReactElement } from 'react';
 import { matchPath } from 'react-router-dom';
+import { moduleIdOf } from '../screens/sentence/sentenceId.ts';
 import LadderScreen from '../screens/LadderScreen.tsx';
 import ModuleScreen from '../screens/ModuleScreen.tsx';
 import SentenceScreen from '../screens/SentenceScreen.tsx';
@@ -71,4 +77,32 @@ export const SHELL_ROUTES: readonly ShellRoute[] = [
  */
 export function matchShellRoute(pathname: string): ShellRoute | undefined {
   return SHELL_ROUTES.find((route) => matchPath(route.path, pathname) !== null);
+}
+
+/** Where a back header goes, and what its control is called. Both are shell furniture. */
+export interface BackTarget {
+  path: string;
+  /** The chevron's accessible name — English, like every `label` in the table. */
+  label: string;
+}
+
+const TO_LADDER: BackTarget = { path: HOME_PATH, label: 'Back to the ladder' };
+
+/**
+ * Where the back chevron goes from `pathname`.
+ *
+ * The Ladder, for every child of a rung — **except Sentence Detail**, which came from its module
+ * and returns to it: the module list restores the offset and the open cards the learner left
+ * behind (`screens/module/moduleView.ts`, #88), so "back" is genuinely where they were rather
+ * than the top of the ladder. The module is read out of the sentence id, which is all the URL
+ * carries; an id that names no module (`/sentence/S1` — a deep link can carry anything) falls
+ * back to the Ladder, exactly as the screen itself does.
+ */
+export function backTarget(pathname: string): BackTarget {
+  const sentence = matchPath('/sentence/:id', pathname);
+  const moduleId = sentence === null ? null : moduleIdOf(sentence.params.id ?? '');
+
+  if (moduleId === null) return TO_LADDER;
+
+  return { path: `/module/${moduleId}`, label: 'Back to the module' };
 }

@@ -43,15 +43,15 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the three shipped bundles carry — 39 keys, nested, identical', () => {
+  it('is exactly what the three shipped bundles carry — 43 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(39);
+      expect(keys.length, courseId).toBe(43);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(39);
-    expect(new Set(STRINGS_KEYS).size).toBe(39);
+    expect(STRINGS_KEYS.length).toBe(43);
+    expect(new Set(STRINGS_KEYS).size).toBe(43);
   });
 
   it('carries the five keys PR #120 added beyond the issue text', () => {
@@ -105,6 +105,24 @@ describe('the canonical key list', () => {
    */
   it('carries the three keys the module list forced (#88)', () => {
     const added: StringsKey[] = ['module.helper', 'module.openFull', 'module.trapNote'];
+
+    for (const key of added) expect(STRINGS_KEYS).toContain(key);
+  });
+
+  /**
+   * Sentence Detail's four (#89). Its ten section labels stay English furniture, in the register
+   * of the `M1 · SENTENCE 02` kicker — these four are not: the trap callout's heading is a
+   * sentence about the learner's own first language, PRD §8 F3 names the mnemonic's label as
+   * course copy ("labelled 'Pocket it'"), and the pager's two buttons are controls the learner
+   * reads. Draft values in all three bundles, flagged on #71.
+   */
+  it('carries the four keys Sentence Detail forced (#89)', () => {
+    const added: StringsKey[] = [
+      'sentence.trapHead',
+      'sentence.pocketIt',
+      'sentence.prev',
+      'sentence.next',
+    ];
 
     for (const key of added) expect(STRINGS_KEYS).toContain(key);
   });

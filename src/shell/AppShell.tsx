@@ -9,8 +9,10 @@
  *      ALWAYS there while the flag is up: an immersive screen with no way out is the failure
  *      this shell exists to make impossible. Tapping it ends the session and lands on the
  *      Practice hub.
- *   2. **A child of the rung** (Module, Sentence Detail, the ritual screens) → a back chevron to
- *      the Ladder plus the screen's name.
+ *   2. **A child of the rung** (Module, Sentence Detail, the ritual screens) → a back chevron
+ *      plus the screen's name. Where the chevron goes is the route table's answer
+ *      (`backTarget`), not this file's: the Ladder for all of them but Sentence Detail, which
+ *      returns to the module it was opened from, offset and open cards intact (#88, #89).
  *   3. **A tab** (Ladder, Practice, Settings) → the brand: rails mark + the lowercase wordmark
  *      from `src/brand.ts`, the one place the product name lives.
  *
@@ -29,7 +31,7 @@ import { BRAND } from '../brand.ts';
 import { BottomNav } from './BottomNav.tsx';
 import { RailsMark } from './RailsMark.tsx';
 import { useImmersive } from './immersive.tsx';
-import { HOME_PATH, PRACTICE_PATH, matchShellRoute } from './routes.tsx';
+import { PRACTICE_PATH, backTarget, matchShellRoute } from './routes.tsx';
 import { ScrollAreaContext } from './scrollArea.tsx';
 import styles from './AppShell.module.css';
 
@@ -38,6 +40,7 @@ export function AppShell() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const route = matchShellRoute(pathname);
+  const back = backTarget(pathname);
   // Published to the screens through `ScrollAreaContext`: the frame owns the only scroll area,
   // and a screen that restores a position (#88) asks for it rather than hunting for it. State
   // rather than a ref, so a screen can depend on it arriving.
@@ -73,8 +76,8 @@ export function AppShell() {
             <button
               type="button"
               className={styles.back}
-              onClick={() => void navigate(HOME_PATH)}
-              aria-label="Back to the ladder"
+              onClick={() => void navigate(back.path)}
+              aria-label={back.label}
             >
               <ChevronLeft className={styles.icon} />
             </button>

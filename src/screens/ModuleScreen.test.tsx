@@ -332,7 +332,8 @@ describe('leaving for Sentence Detail and coming back', () => {
     scrollTo(240);
 
     fireEvent.click(screen.getByRole('link', { name: strings('module.openFull') }));
-    await screen.findByText(/Sentence L1-M1-S02/);
+    // Sentence Detail (#89): its kicker names the sentence the card opened.
+    await screen.findByText('M1 · SENTENCE 02');
     // The offset is remembered on the way out, under its own sessionStorage key — never in the
     // store, whose shape is the export contract (#82).
     expect(readModuleView(moduleViewKey(COURSE, CURRENT))).toEqual({
