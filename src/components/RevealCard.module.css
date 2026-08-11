@@ -1,0 +1,239 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   Geometry follows design/Rung App v3.3.dc.html → Practice → the reveal card in all three states;
+   every length is the nearest token on the Industry scale (design/tokens.md §3, §4). */
+
+/* The card fills the session's column and lets the mark row sit at the bottom of it — the
+   prototype's `flex:1` phase area. In a parent that is not a flex column this is inert, which is
+   how the tests and the screenshot harness render it. */
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  gap: var(--space-4);
+}
+
+/* --------------------------------------------------------------------- the cue */
+
+/* The one rule on the card, and the accent's only appearance until the reveal button:
+   `--tick-height` is the design package's only 2px length, the same stand-in the level strip's
+   bar takes (#86, flagged on #117). */
+.cue {
+  padding-left: var(--space-4);
+  border-left: var(--tick-height) solid var(--color-accent-300);
+}
+
+/**
+ * Course copy, every line of it, so both lines are Mukta: `--text-l2-cue` is the ramp's practice
+ * cue slot (400 20px/1.6) and the label above it is the same slot at the `--devanagari-min-size`
+ * floor, where the prototype writes a 10px uppercase Barlow Condensed kicker.
+ *
+ * The uppercasing goes with it, deliberately: `cueLabel` is authored per course, Devanagari has
+ * no case to raise, and a kicker that shouts in the English courses and whispers in the Hindi one
+ * is not one component. Sixth recurrence of the type wall (#86–#89) — flagged on #117, no token
+ * invented.
+ */
+.cueLabel {
+  margin: 0;
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  color: var(--ink-45);
+}
+
+.cueText {
+  margin: var(--space-1) 0 0;
+  font: var(--text-l2-cue);
+}
+
+/* ------------------------------------------------------------- the cue state */
+
+/* Centred in what is left of the card: in the prototype the recall prompt is the middle of the
+   screen, because recalling is the whole of what is being asked. */
+.recall {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+/* Dashed = outside the app (design/tokens.md §3): the recall happens in the learner's head, mouth
+   or notebook, and the app has nowhere to put it. `--border-dashed-world` is the same border the
+   ritual's guidance plate wears, and it appears in the product nowhere else. */
+.plate {
+  padding: var(--space-6) var(--space-4);
+  border: var(--border-dashed-world);
+  text-align: center;
+}
+
+.nudge {
+  margin: 0;
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  color: var(--ink-65);
+}
+
+/* The registration marks frame the reveal CTA rather than a border — the prototype's `blueprint`
+   wrapper with a transparent border and its four corners. */
+.revealFrame {
+  position: relative;
+}
+
+/* THE filled object on this card (design/tokens.md §3), at the reveal button's own height:
+   `--cta-height-lg` is 52px, the one control in the app taller than a primary CTA. */
+.reveal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: var(--cta-height-lg);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-accent);
+  border: var(--border-hairline);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+  font: var(--text-l2-card);
+  font-size: var(--devanagari-min-size);
+  text-align: center;
+  cursor: pointer;
+  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.reveal:active {
+  background: var(--color-accent-700);
+  border-color: var(--color-accent-700);
+}
+
+/* -------------------------------------------------------- the revealed state */
+
+/* The reveal itself (design/tokens.md §5): fade + a 7px rise over `--motion-reveal`, which is
+   `--space-2` (6.8px) on the scale — the same rise the module list's expansion uses. */
+.answer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--space-4);
+  animation: reveal-in var(--motion-reveal) both;
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-2));
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* A blueprint object: radius 0, a hairline, no surface fill, and the four registration marks —
+   which is the `position: relative`. */
+.answerPlate {
+  position: relative;
+  padding: var(--space-4);
+  background: var(--color-bg);
+  border: var(--border-hairline);
+}
+
+/* The answer, and the loudest text in the session: `--text-l2-card` is 600 26px/1.6 Mukta, the
+   ramp's slot named for exactly this card. */
+.display {
+  margin: 0;
+  font: var(--text-l2-card);
+}
+
+/* The quiet native-script line, romanized courses only (design/tokens.md §1, §2): 15px in
+   `--ink-40`, in `--font-script-fallback` because Barlow draws no Arabic and Mukta is
+   Devanagari. Same treatment as the module list's third line (#88). */
+.script {
+  margin: var(--space-1) 0 0;
+  font: var(--text-body);
+  font-family: var(--font-script-fallback);
+  color: var(--ink-40);
+}
+
+/* The seam #94 fills: its ghost toggle and the word rows it expands. Empty here by design. */
+.why {
+  margin-top: var(--space-3);
+}
+
+/* "Against your notebook — did you have it?" — the course's question, so course prose. */
+.prompt {
+  margin: 0;
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  color: var(--ink-55);
+}
+
+/* ---------------------------------------------------------- the marked state */
+
+/* Bottom of the card: the mark is the last thing the learner does, and `margin-top: auto` is what
+   keeps it there whatever the sentence's length. */
+.marks {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: auto;
+}
+
+/**
+ * With a Next in it the row is **2:1**, where the prototype splits it 1:1 — the type wall again,
+ * this time as geometry. Its segments say "Got it" / "Missed" in 13px Barlow; hi-mr's say the
+ * same thing in Devanagari at the `--devanagari-min-size` floor, and half of a 360px row is not
+ * enough for that: at 1:1 the second segment wraps inside its own 44px. The marks get the room
+ * because the mark is what the state is for; Next stays a full 46px target beside it. Recorded
+ * with the rest of the type items on #117.
+ */
+.marksMarked {
+  composes: marks;
+  grid-template-columns: 2fr 1fr;
+}
+
+/**
+ * Next — which exists only once a mark does [D11]. It enters over `--motion-next-appear` (200ms,
+ * "Next appears in 200ms after a self-mark", design/tokens.md §5) the instant the mark lands: the
+ * 200ms is the entrance, not a delay, exactly as the prototype's `rowIn .2s` is.
+ *
+ * `--btn-secondary-height` (46px) is the prototype's own height for it, and it shares the row
+ * with the 44px segments.
+ */
+.next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+  min-height: var(--btn-secondary-height);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-accent);
+  border: var(--border-hairline);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+  font: var(--text-l2-card);
+  font-size: var(--devanagari-min-size);
+  text-align: center;
+  cursor: pointer;
+  animation: reveal-in var(--motion-next-appear) both;
+  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.next:active {
+  background: var(--color-accent-700);
+  border-color: var(--color-accent-700);
+}
+
+/* design/tokens.md §5: reduced motion collapses every movement in the product — including the
+   one it is built around. The answer and the Next appear; they do not travel. */
+@media (prefers-reduced-motion: reduce) {
+  .answer,
+  .next {
+    animation: none;
+  }
+}
