@@ -17,6 +17,7 @@ fixed sequence of 10 modules ("rungs"), each exited only by **writing** a novel
 | [`docs/PRD-design.md`](docs/PRD-design.md) | Canonical design PRD — flows, screens, components, tone |
 | [`docs/01-plan.md`](docs/01-plan.md) | Implementation plan: stack, layout, data contracts, Devanagari primer. **Read before your first ticket.** |
 | [`design/`](design/) | Design mockups + tokens (added by Rishabh as milestone D completes) |
+| [`docs/design-contract.md`](docs/design-contract.md) | How to build UI against the design package — tokens, prototype fidelity, mobile rules |
 
 ## How work happens
 
