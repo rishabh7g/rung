@@ -152,7 +152,7 @@ Two consequences worth knowing before you author content:
   emitter imports it; the runtime resolver will too. Never copy it: a second copy is a word
   that silently has no "why".
 
-### The strings contract — 43 keys, no fallback copy
+### The strings contract — 47 keys, no fallback copy
 
 Every course ships one `strings.json` carrying **all** the microcopy the shell renders, because
 the shell has none of its own (PRD §4). So the build validates it against the canonical key list
@@ -168,7 +168,7 @@ declared twice.
 `tools/strings-check.ts` runs per course, flattens the nested file onto dot-paths
 (`ritual.check.copy`), and reports four things, always naming course **and** key:
 
-- **missing key** — the 43 canonical paths must all be there;
+- **missing key** — the 47 canonical paths must all be there;
 - **empty or non-string value** — a present-but-blank key is a missing key with extra steps;
 - **unknown key** — the typo tripwire; `ritual.check.plate` would otherwise sit quietly beside a
   missing `plateLabel`;
@@ -183,9 +183,11 @@ way five times: five keys the frozen screens forced (PR #120), three the Ladder 
 `ladder.pendingLine`, `ladder.ownership`, `ladder.sealedToast`), seven the staged rung card forced
 (#87 — `rungCard.startModule`, `.freshNote`, `.practice`, `.revisitModule`, `.exitRitual`,
 `.module`, `.practiceEarlier`: a label for every control across the four [D22] stages), three
-the module list forced (#88 — `module.helper`, `module.openFull`, `module.trapNote`) and four
+the module list forced (#88 — `module.helper`, `module.openFull`, `module.trapNote`), four
 Sentence Detail forced (#89 — `sentence.trapHead`, `.pocketIt`, `.prev`, `.next`: the trap
-callout's heading, the mnemonic's label and the two pager buttons). All seventeen
+callout's heading, the mnemonic's label and the two pager buttons) and four the reveal card forced
+(#93 — `mark.gotIt`, `.missed`, `.prompt`, `.next`: the two self-mark segments [D11], the question
+above them and the Next that does not exist until one is chosen). All twenty-one
 are **draft values pending the Sync-3 freeze** (#71). The alternative each time was a
 learner-facing line hardcoded in the shell, which is the one thing this list exists to prevent.
 
@@ -590,6 +592,64 @@ Divergences from the prototype, on top of the module list's:
   first row for the same reason the module list's is (#84, #117).
 - **The position reads `3 / 10`**, not the prototype's "3 of 10": counts, never a sentence the
   shell would have to own an English word for.
+
+### The reveal card — the gate is a hidden Next, not a disabled one
+
+`src/components/RevealCard.tsx` (#93; PRD §8 F4 [D11], PRD-design §6.3, §7) is the interaction the
+whole product is built around, and it runs in one direction:
+
+| state | on screen | screenshot |
+|---|---|---|
+| `cue` | the L1 cue, the course's recall nudge inside the dashed plate, the 52px reveal button | [cue](docs/images/reveal-cue-360.png) |
+| `revealed` | the L2 `display` (+ the quiet `script` line in romanized courses), the "why" slot, the question, and the self-mark — **no Next** | [revealed](docs/images/reveal-revealed-360.png) · [romanized](docs/images/reveal-romanized-360.png) |
+| `marked` | Next, entering over `--motion-next-appear` the moment a mark exists | [marked](docs/images/reveal-marked-360.png) |
+
+Four things it promises, and each is a test (`RevealCard.test.tsx`, `SelfMark.test.tsx`):
+
+- **Next is HIDDEN, not disabled** [D11]. A disabled Next is the app telling the learner what it
+  is waiting for; an absent one leaves the mark as the only thing on screen to do. It is not in
+  the DOM at all — the assertion is `queryByRole('button', { name: next })` **is null**, and a
+  second one proves no control is sitting there `disabled` instead.
+- **Nothing is preselected.** `src/components/SelfMark.tsx` takes `Mark | null` and has no
+  default: the mark is the learner's honest act, and lighting a segment before they touched it
+  would be the app answering for them. Unselected is transparent with inherited ink; selected
+  fills `--mark-got-bg` / `--mark-miss-bg` with `--mark-fg` (design/tokens.md §6) — green and red
+  exist here and in no other component, which the stylesheet test enforces selector by selector.
+- **No input element anywhere in the tree**, in any of the three states (Invariant 6). The recall
+  happens in the learner's head, mouth or notebook — the dashed `--border-dashed-world` plate is
+  the app saying exactly that — so the design system's own segmented control (a `<label>` around a
+  hidden `<input type="radio">`) could not be used: the segments are `<button aria-pressed>` in a
+  `role="group"` named by the course's own question.
+- **The card writes nothing** (Invariant 4). It emits `onResult({ sentenceId, gotIt })` on Next and
+  the parent decides what that costs — Leitner for a Review mark, the production counters for a
+  Produce one (#95, #96). The mark commits on Next, not on the tap, so a learner who marks
+  "missed", thinks again and marks "got it" sends one result: the one they meant. A test reads both
+  source files and fails on `useAppStore`, `localStorage` or `sessionStorage`.
+
+The card holds its state keyed by `sentenceId`, so a new sentence is a new card whatever the
+parent does about keys — the one failure worth ruling out is the next cue arriving with the last
+answer already revealed under it. `mode` (`review` | `produce`) picks the nudge and nothing else;
+the `why` panel is a **slot** #94 fills with the word-index rows and its own toggle, and an unfilled
+slot draws nothing. Comprehension (#101) shares the `SelfMark` and the gate rather than this
+layout: the prototype puts its prompt in a plate and labels the reveal "model answer", which is why
+`revealLabelComprehend` is still unused here.
+
+Four divergences from the prototype, three of them the same wall:
+
+- **The self-mark labels are Mukta at the 18px floor** (fifth recurrence of #86's type wall),
+  where the prototype writes 13px Barlow — and the row that carries them is therefore **2:1**
+  rather than the prototype's 1:1, because half a 360px row wraps hi-mr's "not yet" inside its own
+  44px segment. Flagged with the rest on **#117**; no token invented.
+- **The cue label is course prose, not a kicker.** `cueLabel` is the course's own words for its L1,
+  so it renders at the floor in `--ink-45` where the prototype writes a 10px uppercase kicker — and
+  the uppercasing goes with it, the same call Sentence Detail's two course-copy labels made (#89).
+- **The 2px cue rule is `var(--tick-height)`**, the design package's only 2px length — the stand-in
+  the level strip's bar already takes (#86).
+- **The kicker row, the phase chips and the position count are not on the card.** They belong to
+  the session that renders it (#96), which is also what keeps the card usable in the ritual.
+
+`prefers-reduced-motion` collapses both movements (the 300ms reveal, the 200ms Next), asserted off
+the stylesheet — and the 200ms is the entrance, not a delay: Next exists the instant the mark does.
 
 ### The fonts — bundled, because offline is the product
 

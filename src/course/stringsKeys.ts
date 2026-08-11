@@ -29,17 +29,19 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 43 keys: the 21 of PRD §4, the 5 the frozen screens forced
+ * file it is complaining about). 47 keys: the 21 of PRD §4, the 5 the frozen screens forced
  * (PR #120) — `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and the four
  * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — the 3 the Ladder
  * forced (#86): the counts-only pending line, the ownership footer and the sealed-level toast,
  * which PRD-design §5 prints as copy but PRD §4's inventory never listed — the 7 the staged rung
  * card forced (#87): a label per CTA across the four [D22] stages, plus the fresh-rung note — the
  * 3 the module list forced (#88): its helper line, the "open full" label and the interference
- * -trap note on an expanded card — and the 4 Sentence Detail forced (#89): the trap callout's
- * heading, the mnemonic's "pocket it" label, and the two pager buttons.
+ * -trap note on an expanded card — the 4 Sentence Detail forced (#89): the trap callout's
+ * heading, the mnemonic's "pocket it" label, and the two pager buttons — and the 4 the reveal
+ * card forced (#93): the two self-mark segments [D11], the question the card asks above them, and
+ * the Next that does not exist until one of them is chosen.
  *
- * Those seventeen are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
+ * Those twenty-one are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
  * as PR #120's were. The alternative each time was hardcoding learner-facing lines in the shell,
  * which is the one thing this list exists to prevent.
  */
@@ -82,6 +84,10 @@ export const STRINGS_KEYS = [
   'sentence.pocketIt',
   'sentence.prev',
   'sentence.next',
+  'mark.gotIt',
+  'mark.missed',
+  'mark.prompt',
+  'mark.next',
   'pendingAuthoring',
   'verdict.line',
   'switchToast',
@@ -172,6 +178,22 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'sentence.pocketIt': [],
   'sentence.prev': [],
   'sentence.next': [],
+  /**
+   * The gated self-mark [D11] (#93) — the four words the reveal card owns. `gotIt` and `missed`
+   * are the two segments, `prompt` is the question above them ("against your notebook — did you
+   * have it?") and `next` is the control that only exists once one segment is chosen. They are a
+   * group of their own rather than `practice.*` because the same four travel with the mark: the
+   * Comprehension test asks its own question of its own pair ("same meaning" / "not quite"), and
+   * that pair is #101's to add here beside these.
+   *
+   * `mark.next` is deliberately NOT `sentence.next`: the pager on Sentence Detail moves through a
+   * module, this commits a self-mark and asks for the next card. A course may well word them the
+   * same; sharing the key would mean it could never word them differently.
+   */
+  'mark.gotIt': [],
+  'mark.missed': [],
+  'mark.prompt': [],
+  'mark.next': [],
   pendingAuthoring: [],
   /** The rung that just opened. */
   'verdict.line': ['{nextModule}'],

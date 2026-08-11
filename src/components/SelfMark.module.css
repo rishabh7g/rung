@@ -1,0 +1,76 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   The recipe is design/tokens.md §6 verbatim — "Self-mark seg: unselected = transparent bg,
+   inherited text; selected = --mark-got-bg/--mark-miss-bg + --mark-fg" — at the geometry the
+   prototype draws (design/Rung App v3.3.dc.html → Practice → revealed card → the seg). */
+
+/* The Industry segmented control, radius 0 like every blueprint object: one hairline round the
+   pair, one between them. */
+.group {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  border: var(--border-hairline);
+}
+
+/**
+ * One segment, UNSELECTED — and this is the state the design package specifies, not a fallback:
+ * transparent, inherited ink, nothing lit. `--seg-opt-height` is 44px, the `--tap-min` floor
+ * (design/tokens.md §4).
+ *
+ * The labels are the course's words — Devanagari for hi-mr — so they take the ramp's Mukta label
+ * slot pulled to the `--devanagari-min-size` floor, where the prototype writes 13px Barlow. Fifth
+ * recurrence of the same wall (#86, #87, #88, #89): §2 forbids Devanagari below the floor and a
+ * caption token sets it in Barlow, which draws none. Flagged again on #117; no token invented.
+ */
+.option {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--seg-opt-height);
+  padding: var(--space-2) var(--space-3);
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: var(--text-l2-card);
+  font-size: var(--devanagari-min-size);
+  text-align: center;
+  cursor: pointer;
+  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* The divider between the two, whichever of them is lit. */
+.option + .option {
+  border-left: var(--border-hairline);
+}
+
+.option:active {
+  background: color-mix(in srgb, var(--color-text) 7%, transparent);
+}
+
+/* The two sanctioned loud moments in the whole product are this pair and the unlock beat
+   (PRD-design §3.6, design/tokens.md §7 rule 2). Green and red exist here and nowhere else. */
+.optionGot {
+  composes: option;
+  background: var(--mark-got-bg);
+  color: var(--mark-fg);
+}
+
+.optionMiss {
+  composes: option;
+  background: var(--mark-miss-bg);
+  color: var(--mark-fg);
+}
+
+/* A lit segment does not tint under the finger — the fill IS the state, and `.option:active`
+   above would otherwise mix grey into it. */
+.optionGot:active {
+  background: var(--mark-got-bg);
+}
+
+.optionMiss:active {
+  background: var(--mark-miss-bg);
+}

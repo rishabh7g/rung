@@ -1,0 +1,188 @@
+/**
+ * The reveal card (#93; PRD §8 F4 [D11], PRD-design §6.3, §7) — the interaction the whole product
+ * is built around, in three states and one direction:
+ *
+ * | state | what is on screen |
+ * |---|---|
+ * | `cue` | the L1 cue, the course's recall nudge inside the dashed "outside the app" plate, and the 52px reveal button |
+ * | `revealed` | the L2 `display` (+ the quiet `script` line in romanized courses), the "why" slot, the question, and the self-mark — **no Next** |
+ * | `marked` | Next, appearing over `--motion-next-appear` the moment a mark exists |
+ *
+ * **The recall happens outside the app.** Between the cue and the reveal the learner says it,
+ * thinks it, or writes it in their notebook — the app never sees it and offers nowhere to put it
+ * (Invariant 6: there is no input element anywhere in this tree, asserted in the tests). That is
+ * what the dashed plate means: `--border-dashed-world` is reserved for "outside the app's solid
+ * hairline world" (design/tokens.md §3), the same border the ritual's check-it-yourself plate
+ * wears.
+ *
+ * **Next is HIDDEN, not disabled, until a mark exists** [D11]. A disabled Next is the app telling
+ * the learner what it is waiting for; an absent one leaves the mark as the only thing on screen
+ * to do. It is literally not in the DOM — `queryByRole('button', { name: next })` is null — and
+ * that, rather than an attribute, is what the test asserts.
+ *
+ * **The card writes nothing** (Invariant 4). It emits `onResult({ sentenceId, gotIt })` when the
+ * learner takes Next, and the parent decides what that means: a Review mark feeds the Leitner
+ * queue, a Produce mark the production counters (#95, #96). Nothing here imports the store, and
+ * the mark is only committed on Next — so a learner who taps "missed", thinks again and taps "got
+ * it" sends one result, the one they meant.
+ *
+ * **The "why" panel is a slot, not a feature here** — #94 fills it with the word-index resolver's
+ * rows and its own ghost toggle. It renders inside the answer plate, under the display, which is
+ * where the prototype puts it; an unfilled slot renders nothing at all.
+ *
+ * Comprehension (#101) shares the `SelfMark` and the gate, not this card: the prototype's
+ * comprehension screen puts its prompt in a plate and labels the reveal "model answer", so it
+ * reads the L1 out of `revealLabelComprehend` and `nudge.comprehend` in its own layout. Adding a
+ * third `mode` here would be inventing a screen nobody has designed.
+ */
+import { useState, type ReactNode } from 'react';
+import { useStrings } from '../course/strings.ts';
+import type { StringsKey } from '../course/stringsKeys.ts';
+import { RegistrationMarks } from '../screens/RegistrationMarks.tsx';
+import { SelfMark, type Mark } from './SelfMark.tsx';
+import styles from './RevealCard.module.css';
+
+/** Which practice phase the card is serving — it picks the nudge, and nothing else. */
+export type RevealMode = 'review' | 'produce';
+
+/** What the learner said about their own recall. The parent decides what it costs. */
+export interface RevealResult {
+  sentenceId: string;
+  gotIt: boolean;
+}
+
+/** The course's own words for "recall it first" (PRD §4) — one per phase, no shell copy. */
+const NUDGE: Readonly<Record<RevealMode, StringsKey>> = {
+  review: 'nudge.review',
+  produce: 'nudge.produce',
+};
+
+interface RevealCardProps {
+  /** Identifies the card to the parent; it is the only thing `onResult` carries besides the mark. */
+  sentenceId: string;
+  /** The prompt: the L1 cue, which stays on screen through all three states. */
+  cue: string;
+  /** What the reveal shows: the L2 sentence. */
+  display: string;
+  /** Romanized courses only (`scriptMode`, PRD §4) — the native script as the quietest line. */
+  script?: string;
+  mode: RevealMode;
+  /** #94's word rows and their toggle. Nothing renders when the slot is empty. */
+  why?: ReactNode;
+  /** Called once, on Next, with the mark the learner settled on. The card stores nothing. */
+  onResult: (result: RevealResult) => void;
+  /** The course's writing direction — every line on the card is its content or its copy. */
+  dir?: string;
+}
+
+/** The card's whole state, tied to the sentence it belongs to. */
+interface CardState {
+  sentenceId: string;
+  revealed: boolean;
+  mark: Mark | null;
+}
+
+function fresh(sentenceId: string): CardState {
+  return { sentenceId, revealed: false, mark: null };
+}
+
+export function RevealCard({
+  sentenceId,
+  cue,
+  display,
+  script,
+  mode,
+  why,
+  onResult,
+  dir,
+}: RevealCardProps) {
+  const strings = useStrings();
+  // `setCard`, never `setState`: `src/state/unlockPath.test.ts` scans the shell for that call and
+  // the store's actions are the only place allowed to make it (Invariant 1).
+  const [held, setCard] = useState<CardState>(() => fresh(sentenceId));
+
+  /**
+   * A new sentence is a new card, whatever the parent did with keys: state belonging to the
+   * previous id is ignored rather than shown. The one failure this rules out is the worst one the
+   * component has — the next cue arriving with the last answer already revealed under it.
+   */
+  const card = held.sentenceId === sentenceId ? held : fresh(sentenceId);
+  const promptId = `reveal-prompt-${sentenceId}`;
+
+  return (
+    <section className={styles.card}>
+      <div className={styles.cue}>
+        {/* The course names its own L1 ("<language> cue"), so this label is its copy too. */}
+        <p className={styles.cueLabel} dir={dir}>
+          {strings.cueLabel}
+        </p>
+        <p className={styles.cueText} dir={dir}>
+          {cue}
+        </p>
+      </div>
+
+      {!card.revealed && (
+        <div className={styles.recall}>
+          {/* Dashed, because the work it asks for happens outside the app (tokens.md §3). */}
+          <div className={styles.plate}>
+            <p className={styles.nudge} dir={dir}>
+              {strings[NUDGE[mode]]}
+            </p>
+          </div>
+
+          <div className={styles.revealFrame}>
+            <RegistrationMarks />
+            <button
+              type="button"
+              className={styles.reveal}
+              onClick={() => setCard({ ...card, revealed: true })}
+              dir={dir}
+            >
+              {strings.revealLabel}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {card.revealed && (
+        <div className={styles.answer}>
+          <div className={styles.answerPlate}>
+            <RegistrationMarks />
+            <p className={styles.display} dir={dir}>
+              {display}
+            </p>
+            {/* Romanized courses only: recognition, never something to produce (§9 [D20]). */}
+            {script !== undefined && <p className={styles.script}>{script}</p>}
+            {/* ─── the "why" seam (#94): word rows land here, inside the answer plate ─── */}
+            {why !== undefined && <div className={styles.why}>{why}</div>}
+          </div>
+
+          <p id={promptId} className={styles.prompt} dir={dir}>
+            {strings['mark.prompt']}
+          </p>
+
+          <div className={card.mark === null ? styles.marks : styles.marksMarked}>
+            <SelfMark
+              mark={card.mark}
+              onMark={(mark) => setCard({ ...card, mark })}
+              labelledBy={promptId}
+              dir={dir}
+            />
+
+            {/* [D11]: hidden, not disabled — there is no Next in the DOM until there is a mark. */}
+            {card.mark !== null && (
+              <button
+                type="button"
+                className={styles.next}
+                onClick={() => onResult({ sentenceId, gotIt: card.mark === 'got' })}
+                dir={dir}
+              >
+                {strings['mark.next']}
+              </button>
+            )}
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
