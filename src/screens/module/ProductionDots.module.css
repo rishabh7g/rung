@@ -1,0 +1,24 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   Geometry follows design/Rung App v3.3.dc.html → Module list → the dot pair on every card. */
+
+/* Stacked, not side by side: the pair sits in the card's top-right corner beside the chevron. */
+.dots {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+/* 6px squares — radius 0 like every blueprint object (design/tokens.md §3, §4). */
+.dot {
+  width: var(--dot-size);
+  height: var(--dot-size);
+}
+
+.dot[data-state='done'] {
+  background: var(--dot-done);
+}
+
+.dot[data-state='pending'] {
+  background: var(--dot-pending);
+}

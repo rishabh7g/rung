@@ -12,7 +12,7 @@
  * The scan reads `src/**` only. `design/tokens.css` is the source of the values and obviously
  * full of them; it is imported in place and never copied (`main.tsx`).
  *
- * Three things are deliberately allowed:
+ * Four things are deliberately allowed:
  *
  *   • **Comments.** They are stripped before the scan: the rules quote token values
  *     ("48px", "the design's 30px gap") to say what a var resolves to, which is the opposite of
@@ -21,6 +21,10 @@
  *     there is no token for "as tall as the viewport" and there should not be.
  *   • **`0` and `calc()` on tokens.** `border: 0`, `margin-left: calc(-1 * var(--space-3))`: no
  *     magic number enters either one.
+ *   • **`font-family: var(--…)`.** The ban is on a face written by NAME; a token is the opposite
+ *     of one. The `--text-*` shorthands carry a family each, so the only way to keep a size and
+ *     swap the face is a second declaration — which is what the romanized courses' quiet script
+ *     line does with `--font-script-fallback` (design/tokens.md §2), and the one place that does.
  *
  * The sibling guards are `shellPurity.test.ts` (no course script in the shell) and
  * `state/clock.test.ts` (no wall clock outside `clock.ts`) — same shape, same reason.
@@ -38,7 +42,7 @@ const STYLESHEETS: Readonly<Record<string, string>> = Object.fromEntries(
 const BANNED = [
   { what: 'a hex colour', pattern: /#[0-9a-fA-F]{3,8}\b/ },
   { what: 'a px length', pattern: /\b\d+(\.\d+)?px\b/ },
-  { what: 'a font family by name', pattern: /font-family\s*:/ },
+  { what: 'a font family by name', pattern: /font-family\s*:(?!\s*var\(--)/ },
 ] as const;
 
 interface Violation {
@@ -115,6 +119,8 @@ describe('the scanner itself', () => {
       '.b { height: 100dvh; width: 100%; border: 0; }',
       '.c { font: var(--text-body); margin-left: calc(-1 * var(--space-3)); }',
       '.d { padding-bottom: max(var(--space-8), env(safe-area-inset-bottom)); }',
+      // A face from a token is the opposite of a face by name — the quiet script line (#88).
+      '.e { font-family: var(--font-script-fallback); }',
     ].join('\n');
 
     expect(scanStylesheet('src/Planted.css', fine)).toEqual([]);

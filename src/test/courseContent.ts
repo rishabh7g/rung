@@ -88,7 +88,7 @@ export function moduleFixture(moduleId = 'L1-M1') {
         id: `${moduleId}-S01`,
         display: 'Me llamo Rohan',
         cue: 'My name is Rohan',
-        glossEn: 'My name is Rohan',
+        glossEn: 'lit. "I call myself Rohan"',
         literal: 'Myself I-call Rohan',
         deconstruction: {
           words: [
@@ -121,7 +121,7 @@ export function moduleFixture(moduleId = 'L1-M1') {
         id: `${moduleId}-S02`,
         display: 'Soy de India',
         cue: 'I am from India',
-        glossEn: 'I am from India',
+        glossEn: 'lit. "I-am from India"',
         literal: 'I-am from India',
         deconstruction: {
           words: [
@@ -139,6 +139,28 @@ export function moduleFixture(moduleId = 'L1-M1') {
       { id: `${moduleId}-C02`, display: 'Soy de India', cue: 'I am from India' },
     ],
     exitTest: { generateCount: 1, comprehendCount: 2 },
+  };
+}
+
+/**
+ * The same module as a **romanized** course ships it (`scriptMode: 'romanized'`, PRD §4): the
+ * romanization is `display`, and every sentence carries the native script as a quiet second
+ * string. Trimmed from the real en-ar L1-M1, so the pair is a true one rather than a placeholder
+ * — which is what makes it worth asserting on: a native course's sentences have no `script` key
+ * at all, and that difference is the whole of the quiet third line (#88).
+ */
+export function romanizedModuleFixture(moduleId = 'L1-M1') {
+  const base = moduleFixture(moduleId);
+  const script = ['اسمي روهان', 'أنا من الهند'];
+
+  return {
+    ...base,
+    sentences: base.sentences.map((sentence, index) => ({
+      ...sentence,
+      display: index === 0 ? 'ismī Rohān' : 'anā min al-Hind',
+      glossEn: index === 0 ? 'lit. "my-name Rohan"' : 'lit. "I from the-India"',
+      script: script[index],
+    })),
   };
 }
 
