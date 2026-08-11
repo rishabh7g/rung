@@ -319,6 +319,33 @@ the map (the call table is asserted to cover the store's whole action surface, s
 cannot skip the check by being new); and it scans every shipped file for a `setState` call, because
 an action list is not a gate if a screen can write past it.
 
+### The Leitner scheduler — due in sessions, never in days
+
+`src/engine/leitner.ts` (#92) is the review queue's whole brain: three boxes, intervals **1 → 3 → 7
+sessions** (`BOX_INTERVALS`), and no calendar anywhere in it (PRD-engineering §8 F4; Invariant 2).
+An item's countdown falls by one when a session *starts* and by nothing in between, so three weeks
+away costs the learner nothing — the queue is exactly where they left it.
+
+| | |
+|---|---|
+| `tickSession(queue)` | one session closer to due for every item, **floored at 0** — a long absence is not a forty-item backlog |
+| `dueItems(queue, max = 5)` | what Review serves: `dueInSessions <= 0`, most urgent first, capped |
+| `applyMark(queue, id, gotIt)` | got it → up one box (3 is the ceiling), due in that box's interval; missed → **box 1, due 1** |
+| `enrol(queue, ids)` | absent ids in at box 1 / due 1; idempotent, so a replayed pass never resets a box |
+
+The order is PRD F4's, "strictly by due-ness then module recency": most overdue first, then the
+**newest module first**, then the module's own sentence order. Recency is read **numerically** —
+`'L1-M10-S01' < 'L1-M9-S01'` as text, so a raw string sort would file the module the learner just
+passed behind the one before it, for the rest of the course. It is a total order over distinct ids,
+which is why the same queue serves the same list whichever order it happens to be stored in (50
+seeded permutations assert it).
+
+**Enrolment policy: a sentence enters review when its module is PASSED** — production ends,
+maintenance begins. Until then the sentences are the current rung's Produce work (the ≥ 2×
+counters), and scheduling them for review too would be the same work twice under two names. The
+call site is the exit ritual's pass action (#103); this module states the policy and stays pure —
+no React, no storage, no clock, every function returning a new array.
+
 ### The app shell — one frame, three headers, one flag
 
 `src/shell/` is the chrome every screen renders inside (#84; PRD-design §4 [D8, D21]), and
