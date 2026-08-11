@@ -1,0 +1,32 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1). No viewport-height units —
+   the html/body/#root chain in styles/global.css is what this sizes against. */
+
+.screen {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-8);
+  text-align: center;
+}
+
+.wordmark {
+  margin: 0;
+  font: var(--text-brand);
+  color: var(--color-accent);
+}
+
+.message {
+  margin: 0;
+  font: var(--text-body);
+}
+
+.detail {
+  margin: 0;
+  font: var(--text-caption);
+  color: var(--ink-55);
+  /* a failing URL or parser message is one long unbreakable token on a phone */
+  overflow-wrap: anywhere;
+}
