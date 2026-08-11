@@ -156,7 +156,8 @@
   color: var(--ink-40);
 }
 
-/* The seam #94 fills: its ghost toggle and the word rows it expands. Empty here by design. */
+/* The seam `WhyPanel` fills (#94): its ghost toggle and the word rows it expands in place. The
+   card only spaces it — everything inside is the panel's own stylesheet. */
 .why {
   margin-top: var(--space-3);
 }

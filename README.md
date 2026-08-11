@@ -149,10 +149,10 @@ Two consequences worth knowing before you author content:
   deliberately outside the rule — a mistake is wrong L2 *by design*.
 - **`normalizeSurface` is the one definition of "same word"** — `src/engine/surface.ts`, NFC
   + edge punctuation stripped (`आहात?` → `आहात`), case and apostrophes untouched (#116). The
-  emitter imports it; the runtime resolver will too. Never copy it: a second copy is a word
-  that silently has no "why".
+  emitter imports it, and so does the runtime resolver (`src/engine/wordIndex.ts`, #94). Never
+  copy it: a second copy is a word that silently has no "why".
 
-### The strings contract — 47 keys, no fallback copy
+### The strings contract — 50 keys, no fallback copy
 
 Every course ships one `strings.json` carrying **all** the microcopy the shell renders, because
 the shell has none of its own (PRD §4). So the build validates it against the canonical key list
@@ -168,7 +168,7 @@ declared twice.
 `tools/strings-check.ts` runs per course, flattens the nested file onto dot-paths
 (`ritual.check.copy`), and reports four things, always naming course **and** key:
 
-- **missing key** — the 47 canonical paths must all be there;
+- **missing key** — the 50 canonical paths must all be there;
 - **empty or non-string value** — a present-but-blank key is a missing key with extra steps;
 - **unknown key** — the typo tripwire; `ritual.check.plate` would otherwise sit quietly beside a
   missing `plateLabel`;
@@ -185,11 +185,18 @@ way five times: five keys the frozen screens forced (PR #120), three the Ladder 
 `.module`, `.practiceEarlier`: a label for every control across the four [D22] stages), three
 the module list forced (#88 — `module.helper`, `module.openFull`, `module.trapNote`), four
 Sentence Detail forced (#89 — `sentence.trapHead`, `.pocketIt`, `.prev`, `.next`: the trap
-callout's heading, the mnemonic's label and the two pager buttons) and four the reveal card forced
+callout's heading, the mnemonic's label and the two pager buttons), four the reveal card forced
 (#93 — `mark.gotIt`, `.missed`, `.prompt`, `.next`: the two self-mark segments [D11], the question
-above them and the Next that does not exist until one is chosen). All twenty-one
+above them and the Next that does not exist until one is chosen) and three the "why" panel forced
+(#94 — `why.show`, `.hide`, `.openFull`: the toggle's two labels, because it names what it will
+do, and the link that leaves a running session). All twenty-four
 are **draft values pending the Sync-3 freeze** (#71). The alternative each time was a
 learner-facing line hardcoded in the shell, which is the one thing this list exists to prevent.
+
+`why.openFull` is deliberately **not** `module.openFull`: one opens a sentence from a browsing
+list, the other leaves a running session for it. A course may well word them the same; sharing the
+key would mean it could never word them differently — the call #93 made for `mark.next` against
+`sentence.next`.
 
 ### The course layer — what boots first
 
@@ -570,8 +577,8 @@ Four more things it owes:
 "interference" only in amber says nothing to a screen reader, to a greyscale screenshot or to
 anyone who cannot separate amber from steel. It is the one chip in the app at the design's own
 size (`--text-micro`, inside §6's 9.5–11px band) because its label is English furniture and no
-Devanagari can land in it. The word rows and the rules both wear it, and Practice's "why" rows
-(#93) are the next caller.
+Devanagari can land in it. The word rows and the rules both wear it, and so does Practice's "why"
+row (`src/components/WhyRow.tsx`, #94).
 
 Divergences from the prototype, on top of the module list's:
 
@@ -629,10 +636,10 @@ Four things it promises, and each is a test (`RevealCard.test.tsx`, `SelfMark.te
 The card holds its state keyed by `sentenceId`, so a new sentence is a new card whatever the
 parent does about keys — the one failure worth ruling out is the next cue arriving with the last
 answer already revealed under it. `mode` (`review` | `produce`) picks the nudge and nothing else;
-the `why` panel is a **slot** #94 fills with the word-index rows and its own toggle, and an unfilled
-slot draws nothing. Comprehension (#101) shares the `SelfMark` and the gate rather than this
-layout: the prototype puts its prompt in a plate and labels the reveal "model answer", which is why
-`revealLabelComprehend` is still unused here.
+the `why` panel is a **slot**, filled by passing `<WhyPanel>` (#94, below) and drawing nothing at
+all when the parent passes nothing. Comprehension (#101) shares the `SelfMark` and the gate rather
+than this layout: the prototype puts its prompt in a plate and labels the reveal "model answer",
+which is why `revealLabelComprehend` is still unused here.
 
 Four divergences from the prototype, three of them the same wall:
 
@@ -650,6 +657,47 @@ Four divergences from the prototype, three of them the same wall:
 
 `prefers-reduced-motion` collapses both movements (the 300ms reveal, the 200ms Next), asserted off
 the stylesheet — and the 200ms is the entrance, not a delay: Next exists the instant the mark does.
+
+### The "why" panel — depth on demand, and it fails silent
+
+`src/components/WhyPanel.tsx` fills the slot the reveal card left it (#94; PRD §8 F4, §6.3;
+PRD-design §7): a ghost toggle under the revealed answer that expands **in place** over
+`--motion-expand` (250ms) into one `WhyRow` per resolvable span of the sentence — word, cue,
+`TagChip`, note — plus the "open full" link Produce cards offer. Three pieces:
+
+| file | what it is |
+|---|---|
+| `src/engine/wordIndex.ts` | pure: `resolve(surface, index)` → the `{moduleId, sentenceId, wordIdx}` that teaches it, or `null`; `resolveSentence(display, index)` → the sentence's resolvable spans |
+| `src/components/WhyRow.tsx` | the shared word row — the same four parts Sentence Detail prints |
+| `src/components/WhyPanel.tsx` | the toggle, the fetching, and the "open full" |
+
+| open on a hi-mr sentence | the multi-word surface, en-es |
+|---|---|
+| [why-open-360.png](docs/images/why-open-360.png) — L1-M2's greeting, whose rows are taught in L1-M1 | [why-multiword-360.png](docs/images/why-multiword-360.png) — `Me llamo` as ONE row, and "open full" |
+
+- **Longest span first.** en-es teaches `Me llamo` as ONE surface, which is what the index's
+  `maxSpan` is for: `Me llamo Rohan` is two rows, never three unknown tokens. The walk itself is
+  `matchSurfaces` in `surface.ts` — the emitter's own — so the build's comprehension-token rule and
+  the learner's "why" agree by construction.
+- **`normalizeSurface`, imported, never copied** — the one definition of "same word" (#75, #116).
+  A resolver that normalised differently would be asking a different question of the same table,
+  and the failure would be silent: a word with no "why" and no error anywhere.
+- **An unresolvable span renders nothing at all.** No error, no placeholder, no gap: the learner is
+  mid-flow, and content legitimately carries tokens no word row teaches — proper nouns (#61) and
+  the deliberate wrong-language `mistake` lines the emitter never indexes. A sentence where nothing
+  resolves opens to an empty panel, which `.rows:empty` draws as nothing.
+- **Cross-module rows are loaded, not skipped.** The index is cumulative, so most refs on L1-M2
+  name L1-M1; dropping them would empty the panel exactly where it teaches most. The panel loads
+  whichever modules its refs name through the content layer's cached `loadModule`, and a module
+  that will not load costs **its own rows and nothing else** — the error screen is right for a
+  screen whose whole content is missing and wrong for an optional expansion mid-session.
+- **Nothing is fetched until the learner asks.** The rows mount on the toggle, so a reveal that is
+  never questioned costs no index file at all.
+
+Fidelity: the rows are the 18px Mukta floor again (seventh recurrence, #117) where the prototype
+writes 11.5–15px, and the prototype's 52px/40px alignment columns are dropped — there is no token
+for either, and a wrapping Devanagari word needs the width more than the rows need a shared left
+edge. `TagChip` keeps the design's own 9.5–11px band, because its label is English furniture.
 
 ### The fonts — bundled, because offline is the product
 

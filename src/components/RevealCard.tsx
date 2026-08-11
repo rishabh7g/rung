@@ -26,9 +26,10 @@
  * the mark is only committed on Next — so a learner who taps "missed", thinks again and taps "got
  * it" sends one result, the one they meant.
  *
- * **The "why" panel is a slot, not a feature here** — #94 fills it with the word-index resolver's
- * rows and its own ghost toggle. It renders inside the answer plate, under the display, which is
- * where the prototype puts it; an unfilled slot renders nothing at all.
+ * **The "why" panel is a slot, not a feature here** — `WhyPanel` (#94) fills it with the
+ * word-index resolver's rows and its own ghost toggle, and the parent passes it in. It renders
+ * inside the answer plate, under the display, which is where the prototype puts it; an unfilled
+ * slot renders nothing at all.
  *
  * Comprehension (#101) shares the `SelfMark` and the gate, not this card: the prototype's
  * comprehension screen puts its prompt in a plate and labels the reveal "model answer", so it
@@ -67,7 +68,7 @@ interface RevealCardProps {
   /** Romanized courses only (`scriptMode`, PRD §4) — the native script as the quietest line. */
   script?: string;
   mode: RevealMode;
-  /** #94's word rows and their toggle. Nothing renders when the slot is empty. */
+  /** `WhyPanel` (#94) — its word rows and toggle. Nothing renders when the slot is empty. */
   why?: ReactNode;
   /** Called once, on Next, with the mark the learner settled on. The card stores nothing. */
   onResult: (result: RevealResult) => void;

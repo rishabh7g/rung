@@ -1,0 +1,111 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   Geometry follows design/Rung App v3.3.dc.html → Practice → revealed card → why: a ghost row
+   under the answer, then a hairline and the rows. Every length is the nearest token on the
+   Industry scale (design/tokens.md §3, §4, §5). */
+
+.why {
+  display: flex;
+  flex-direction: column;
+}
+
+/* The prototype's two ghosts, side by side under the answer. They wrap rather than shrink: a
+   ghost is `white-space: nowrap` by rule (design/tokens.md §4), and at the Devanagari floor the
+   pair does not always fit a 360px card. */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* The label is the COURSE's word for "why" — course prose, so Mukta at
+   `--devanagari-min-size` (design/tokens.md §2), where the prototype writes 12px in the body
+   face. Same wall, same standing answer (see WhyRow.module.css); flagged on #117. */
+.courseProse {
+  font: var(--text-l2-card);
+  font-size: var(--devanagari-min-size);
+}
+
+/* A ghost is text that acts: no border, no fill, accent ink, `--ghost-height` (36px) and
+   `white-space: nowrap`, which §4 does not make optional. Same recipe as the rung card's (#87). */
+.ghost {
+  composes: courseProse;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--ghost-height);
+  padding-inline: var(--space-1);
+  background: none;
+  border: 0;
+  color: var(--color-accent);
+  text-align: start;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ghost:active {
+  background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+}
+
+.toggle {
+  composes: ghost;
+}
+
+/* Produce cards only (PRD §8 F4): the one control here that leaves the session. */
+.openFull {
+  composes: ghost;
+}
+
+.openFullIcon {
+  flex: none;
+  width: var(--icon-inline);
+  height: var(--icon-inline);
+  stroke-width: var(--icon-stroke);
+}
+
+/* ----------------------------------------------------------------- the expansion */
+
+/* 250ms, in place: the card grows where it stands (design/tokens.md §5 "Expand"), separated from
+   the answer by the prototype's single hairline. */
+.rows {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: var(--space-2) 0 0;
+  padding: var(--space-3) 0 0;
+  border-top: var(--border-hairline);
+  animation: expand-in var(--motion-expand) both;
+}
+
+/**
+ * A sentence whose spans do not resolve — proper nouns, a mistake line, a module still loading —
+ * expands to NOTHING: no rule, no padding, no empty box. The learner is mid-flow and an empty
+ * plate would read as a broken app. `:empty` is exact here because the list's children are rows
+ * or nothing at all.
+ */
+.rows:empty {
+  display: none;
+}
+
+@keyframes expand-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-2));
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* design/tokens.md §5: reduced motion collapses every movement in the product. */
+@media (prefers-reduced-motion: reduce) {
+  .rows {
+    animation: none;
+  }
+}
