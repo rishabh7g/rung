@@ -39,7 +39,7 @@ import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { interpolate, useStrings } from '../course/strings.ts';
-import { COMPREHENSION_PATH } from '../shell/routes.tsx';
+import { COMPREHENSION_PATH, handover } from '../shell/routes.tsx';
 import styles from './HoldToConfirm.module.css';
 
 /**
@@ -134,8 +134,13 @@ export function HoldToConfirm({ ordinal, onConfirm, dir }: HoldToConfirmProps) {
           <span>{strings['ritual.confirm.done']}</span>
         </p>
         {/* The arc's hand-over: part 2 is Comprehension (#102). A `<Link>` rather than a button
-            for the same reason every rung-card CTA is one (#87) — it goes somewhere. */}
-        <Link className={styles.cta} to={COMPREHENSION_PATH} dir={dir}>
+            for the same reason every rung-card CTA is one (#87) — it goes somewhere.
+
+            `state` is the hand-over token, and it is the whole of #102's guard: part 2 is only
+            reachable from a hold that was actually paid, and the proof travels in the history
+            entry rather than in a flag someone has to remember to clear (`shell/routes.tsx`).
+            It is a literal, so this file still keeps nothing about the learner. */}
+        <Link className={styles.cta} to={COMPREHENSION_PATH} state={handover('hold')} dir={dir}>
           {strings['ritual.confirm.toComprehension']}
         </Link>
       </div>

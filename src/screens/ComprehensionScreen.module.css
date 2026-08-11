@@ -1,0 +1,56 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   Geometry follows design/Rung App v3.3.dc.html → Exit ritual → Comprehend: the same head row the
+   arc wears (#100), then one column that the item or the interstitial fills. Every length is the
+   nearest token on the Industry scale (design/tokens.md §3). */
+
+/* The test is the whole column: the head at the top, the item or the interstitial taking what is
+   left — so the self-mark sits at the BOTTOM of the screen and the retry's copy centres in it, the
+   way the prototype draws both. `min-height: 100%` is what makes that true: the shell's `<main>`
+   is the scroll area and a plain block, so a child that only asked for `flex: 1` would bunch at
+   the top (#84, and the session's own column makes the same call, #96). */
+.comprehension {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-6) var(--space-8);
+}
+
+/* ------------------------------------------------------------------- the head row */
+
+/* The prototype's header row, minus the chevron and the screen name the shell owns (#84, #117):
+   the kicker on the left, the counts hard right. Identical to the arc's, deliberately — part 1
+   and part 2 are one ritual. */
+.head {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: var(--border-hairline);
+}
+
+.kicker {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font: var(--text-kicker);
+  letter-spacing: var(--kicker-tracking);
+  text-transform: uppercase;
+  color: var(--color-accent-700);
+}
+
+/* "part 2 of 2 · 1 of 2" as counts — the same call the module list's `n / total` makes (#88). */
+.part {
+  flex: none;
+  margin: 0;
+  font: var(--text-caption);
+  white-space: nowrap;
+  color: var(--ink-45);
+}
+
+/* The item's position inside the attempt. It is one shade quieter than the part it sits beside,
+   because the part is where the learner is in the ritual and this is where they are in a page of
+   it — and it is absent entirely on the interstitial, which is not an item. */
+.position {
+  color: var(--ink-40);
+}
