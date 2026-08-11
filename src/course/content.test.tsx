@@ -275,15 +275,42 @@ function wrapper({ children }: { children: ReactNode }) {
   return <CourseProvider>{children}</CourseProvider>;
 }
 
+/**
+ * Holds one file open until the test says otherwise. Asserting on "loading" has to be about a
+ * request that is genuinely still in flight, not about being quicker than the event loop — under
+ * a loaded suite a mocked fetch settles before the first assertion runs, and the test that races
+ * it fails for a reason that is nobody's bug.
+ */
+function gateFetch(match: string) {
+  const base = mockContentFetch(DEV_MANIFEST);
+  let open: () => void = () => undefined;
+  const gate = new Promise<void>((resolve) => {
+    open = resolve;
+  });
+
+  vi.stubGlobal(
+    'fetch',
+    vi.fn(async (input: RequestInfo | URL) => {
+      if (String(input).includes(match)) await gate;
+      return base(input);
+    }),
+  );
+
+  return { open };
+}
+
 describe('useLevels', () => {
   it("reports loading, then the active course's ladder — never a half-loaded value", async () => {
-    mockContentFetch(DEV_MANIFEST);
+    const ladder = gateFetch('/levels.json');
 
     const { result } = renderHook(() => useLevels(), { wrapper });
 
-    // The provider gates on the manifest, so the first render a screen ever sees is loading.
-    await waitFor(() => expect(result.current).toBeDefined());
+    // The provider gates on the manifest, so nothing below it renders until there is a course;
+    // `result.current` is null until this hook has run at all.
+    await waitFor(() => expect(result.current).not.toBeNull());
     expect(result.current).toMatchObject({ data: null, loading: true, error: null });
+
+    ladder.open();
 
     await waitFor(() => expect(result.current.loading).toBe(false));
     expect(result.current.data?.courseId).toBe('hi-mr');
