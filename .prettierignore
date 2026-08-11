@@ -1,0 +1,12 @@
+# Prettier owns the source tree only.
+# design/ is read-only and re-copied wholesale; content/ is authored JSON; the
+# markdown (README, docs/, issue templates) is hand-formatted prose — leave it be.
+# (docs/design-contract.md, docs/01-plan.md §5)
+design/
+content/
+docs/
+.github/
+*.md
+dist/
+node_modules/
+package-lock.json

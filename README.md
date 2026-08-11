@@ -19,6 +19,35 @@ fixed sequence of 10 modules ("rungs"), each exited only by **writing** a novel
 | [`design/`](design/) | Design mockups + tokens (added by Rishabh as milestone D completes) |
 | [`docs/design-contract.md`](docs/design-contract.md) | How to build UI against the design package — tokens, prototype fidelity, mobile rules |
 
+## Development
+
+**Prerequisites:** Node **≥ 20** (enforced by `engines.node`) and npm. No other
+runtime, no backend, no env vars.
+
+```bash
+npm install
+npm run dev     # http://localhost:5173
+```
+
+| Script | What it does |
+|---|---|
+| `npm run dev` | Vite dev server with HMR |
+| `npm run build` | Typecheck (`tsc -b`) then production build into `dist/` |
+| `npm run preview` | Serve the built `dist/` locally |
+| `npm run typecheck` | TypeScript only — strict + `noUncheckedIndexedAccess` |
+| `npm run test` | Vitest (jsdom + Testing Library), single run |
+| `npm run lint` | ESLint (flat config), Prettier-compatible |
+| `npm run format` | Prettier write across the source tree |
+
+Two rules the scaffold bakes in, before you write a component:
+
+- **Tokens only.** `src/main.tsx` imports `design/tokens.css` *in place* — `design/`
+  is read-only and re-copied wholesale, so importing it directly means token updates
+  land with zero copy step. Style with `var(--*)`; no hard-coded hex, px or font names
+  anywhere in `src/` (`docs/design-contract.md`).
+- **One brand constant.** `src/brand.ts` exports `BRAND` — the only place the product
+  name lives. Page title, manifest and export filenames all read from it.
+
 ## How work happens
 
 - Every change is a **GitHub issue**; one PR per issue; PR title references the
