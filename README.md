@@ -970,6 +970,55 @@ card, `sessionCount` still 1 → active course swapped to en-ar and rebooted (it
 Begin, hi-mr's snapshot untouched) → swapped back → the same banner, the same card, still one
 session.
 
+### The exit ritual's arc — the app says where to go, and does nothing else
+
+`/ritual` is the product's honesty moment (#100; PRD §8 F5 [D18], PRD-design §6.5 flow 5
+[Q2 answered]): three steps on one screen — **write** the 11th sentence in the notebook, **check**
+it yourself, **confirm**. Steps 1 and 2 are here; the press-and-hold confirmation is #101's, and
+step 3 renders its title over an empty slot until then.
+
+| file | what it is |
+|---|---|
+| `src/screens/RitualScreen.tsx` | the guard, the head, and the three-step arc |
+| `src/screens/RitualScreen.module.css` | the rail, the numbered badges, and the one dashed plate in the app |
+
+[ritual-arc-360.png](docs/images/ritual-arc-360.png) · [ritual-check-360.png](docs/images/ritual-check-360.png)
+— the arc at 360px, and the same screen scrolled to step 3's slot.
+
+- **Step 2 contains zero interactive elements** — no button, no link, no copy action, no field
+  [D18]. Checking is the learner's own activity, fully outside the app (Invariant 5), so a control
+  here would be the app taking the job back; the plate's caption says in the course's own words
+  that the missing buttons are deliberate. The test is mechanical: it queries **every** interactive
+  ARIA role inside the step and asserts nothing answers, then asks the DOM the same question
+  (`a[href]`, `button`, `[tabindex]`, `[contenteditable]`, …). Planting a single link reddens both.
+- **The learner's sentence never enters the app** (Invariant 4) and **there are no input fields**
+  (Invariant 6). There is nothing on this screen to type into, and nothing behind it to type into
+  either: a source scan over the flow fails on a field, a change/paste handler, a clipboard read, a
+  form — and on `useState`/`useReducer`/`useRef`, because the arc is a pure function of the
+  course's strings and the rung's module and has no variable for a sentence to live in, not even
+  for one render.
+- **The guard is `exit_available`, and it is the Ladder's own predicate.** `/ritual` is a real deep
+  link (HashRouter, an installable PWA), so the route is reachable with the ladder anywhere: a rung
+  that is not produced out lands on `/module/:current` — where the work is — and a finished ladder
+  lands on the Ladder. It reads `deriveStatuses` off `useProgression` (#95), so the card that
+  offers the ritual and the route that runs it cannot disagree. Deliberately the **status** and not
+  `rungStage`: a learner who produced the whole rung without ever opening its module has still
+  produced the whole rung.
+- **The numbers are the rung's own.** `ritual.constraint` interpolates `{sentenceCount}` (how many
+  sentences this module teaches — the ones the new one may not be) and `{maxWords}` (its declared
+  `complexity.maxWordsPerSentence`), and the head's ordinal is that count plus one through the
+  course's own `ordinal` template. hi-mr L1-M1 renders "इन 10 में से नहीं … 5 शब्द तक" and
+  "11वाँ"; a module of three sentences would say 3, 7 and "4th" with no code change.
+- **The dashed plate is the one place `--border-dashed-world` is used**, and that is the token's
+  reserved meaning: outside the app's solid hairline world (design/tokens.md §3). It wears no
+  registration marks — they are the blueprint grammar of the app's *own* objects, and the prototype
+  draws none here either. Its two rows are static text with a decorative Lucide icon each.
+
+Verified live at 360px in headless Chrome against `npm run dev` (hi-mr), with the ten L1-M1
+counters seeded to 2 through the store: `#/ritual` opens on the arc (it redirects to
+`#/module/L1-M1` without them), the plate holds two rows and no control, and the whole screen
+answers zero interactive roles below the head.
+
 ### The fonts — bundled, because offline is the product
 
 Mukta (all Devanagari), Barlow (body/UI) and Barlow Condensed (headings, kickers, wordmark) are

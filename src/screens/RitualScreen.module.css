@@ -1,0 +1,194 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   Geometry follows design/Rung App v3.3.dc.html → Exit ritual → the three-step arc: a vertical
+   rule down the left of the column, a numbered badge per step straddling it, and step 2's dashed
+   plate. Every length is the nearest token on the Industry scale (design/tokens.md §3). */
+
+.ritual {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-6) var(--space-8);
+}
+
+/* ------------------------------------------------------------------- the head row */
+
+/* The prototype's header row, minus the chevron and the screen name the shell owns (#84, #117):
+   kicker and the ordinal on the left, the part count hard right. */
+.head {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: var(--border-hairline);
+}
+
+.headText {
+  flex: 1;
+  min-width: 0;
+}
+
+.kicker {
+  margin: 0;
+  font: var(--text-kicker);
+  letter-spacing: var(--kicker-tracking);
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--color-accent-700);
+}
+
+/**
+ * The ordinal is the course's own word for "the 11th" — Devanagari for hi-mr, so Mukta at the
+ * floor (design/tokens.md §2) where the prototype writes 18px Barlow Condensed 600. Eighth
+ * recurrence of the wall #86 opened (#87 CTA labels, #88 chips, #89 a whole screen, #93 the
+ * self-mark, #94 the "why" rows): the ramp has no course-prose slot and this file invents none.
+ * Flagged on #117 with the rest.
+ */
+.title {
+  margin: var(--space-1) 0 0;
+  font: var(--text-l2-card);
+  font-size: var(--devanagari-min-size);
+}
+
+/* "part 1 of 2" as a count — the same call the module list's `n / total` makes (#88). */
+.part {
+  flex: none;
+  margin: 0;
+  font: var(--text-caption);
+  white-space: nowrap;
+  color: var(--ink-45);
+}
+
+/* --------------------------------------------------------------------- the arc */
+
+/**
+ * The rail: one hairline down the column, drawn behind the badges rather than between them, so
+ * three steps of wildly different heights still read as one arc. It stops short of the first and
+ * last badge exactly as the prototype's does (`top:16px;bottom:16px`).
+ */
+.steps {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.steps::before {
+  content: '';
+  position: absolute;
+  top: var(--space-4);
+  bottom: var(--space-4);
+  /* Centred on the badge: half of --space-8 (27.2px), the badge's own width. */
+  left: calc(var(--space-8) / 2);
+  /* A hairline drawn as a border, because the token IS the hairline (the Ladder's rung rule does
+     the same) — a `width` here would be a bare px. */
+  border-left: var(--border-hairline);
+}
+
+.step {
+  position: relative;
+  /* The badge's width plus the prototype's gap to the text. */
+  padding-left: calc(var(--space-8) + var(--space-4));
+}
+
+/**
+ * The step's number: a square badge on the rail, ground-filled so the rule appears to pass behind
+ * it. A count and structural furniture — `aria-hidden`, because the step's name is its heading
+ * and a screen reader already reads the list's order.
+ */
+.stepNumber {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-8);
+  height: var(--space-8);
+  background: var(--color-bg);
+  border: var(--border-hairline);
+  border-color: var(--color-accent);
+  font: var(--text-kicker);
+  color: var(--color-accent-700);
+}
+
+/* The step's own name, in the course's words — Mukta 600 at the floor, where the prototype
+   writes 19px. Same wall, same standing answer as `.title`. */
+.stepTitle {
+  margin: 0;
+  font: var(--text-l2-card);
+  font-size: var(--devanagari-min-size);
+}
+
+/* The constraint and the check step's copy: course prose, so the floor again (prototype 13.5px). */
+.stepCopy {
+  margin: var(--space-2) 0 0;
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  color: var(--ink-75);
+}
+
+/* ------------------------------------------------------------- the check plate */
+
+/**
+ * The one dashed object in the app. `--border-dashed-world` is reserved for "outside the app"
+ * (design/tokens.md §3), and this plate is what the reservation was made for: everything inside
+ * it happens in the learner's world, not in this one.
+ *
+ * It wears no registration marks, deliberately — they are the blueprint grammar of the app's own
+ * objects, and the whole point of the dashed border is that this plate is not one of them. The
+ * prototype draws none here either. Recorded on #117 so the QA pass reads it as sanctioned.
+ */
+.plate {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+  padding: var(--space-4);
+  border: var(--border-dashed-world);
+}
+
+/**
+ * The plate's label is the course's own line ("OUTSIDE THE APP — YOUR WORLD"), so it cannot be
+ * the prototype's 10px tracked uppercase kicker: Devanagari has no case to raise and the floor
+ * forbids the size (design/tokens.md §2). Same call #89 made for `sentence.trapHead` /
+ * `sentence.pocketIt`, and #93 for the cue label; flagged on #117.
+ */
+.plateLabel {
+  margin: 0;
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  color: var(--ink-50);
+}
+
+/* A resource row: an icon that opens nothing, and a line of text. No control, by design [D18]. */
+.resource {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin: 0;
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+}
+
+/* Lucide, sized and stroked from tokens like every other icon in the app (design/tokens.md §4). */
+.resourceIcon {
+  flex: none;
+  width: var(--icon-ui);
+  height: var(--icon-ui);
+  /* Optical: the icon sits with the first line of a 1.6 line-height row. */
+  margin-top: var(--space-1);
+  stroke-width: var(--icon-stroke);
+  color: var(--color-accent-700);
+}
+
+/* The line that says the missing buttons are the design — the quietest thing on the screen, and
+   the most important sentence on it. Course prose, so the floor (prototype 11px). */
+.caption {
+  margin: var(--space-2) 0 0;
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  color: var(--ink-45);
+}
