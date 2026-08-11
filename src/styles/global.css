@@ -1,0 +1,36 @@
+/* Global base. Styling comes exclusively from design/tokens.css var(--*) —
+   no hard-coded hex, px or font names anywhere (docs/design-contract.md).
+   Layout rules follow design/pwa-checklist.md §2: never viewport-height units (mobile
+   URL bars break them) — the html/body/#root chain is 100% tall and screens size
+   against that, reaching for dvh only where a fixed viewport box is unavoidable. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  /* stop iOS inflating text in landscape */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: var(--text-body);
+  /* keep pull-to-refresh and scroll chaining out of sessions (pwa-checklist §1) */
+  overscroll-behavior: contain;
+}
+
+#root {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
