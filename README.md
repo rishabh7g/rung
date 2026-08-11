@@ -150,7 +150,7 @@ Two consequences worth knowing before you author content:
   emitter imports it; the runtime resolver will too. Never copy it: a second copy is a word
   that silently has no "why".
 
-### The strings contract — 36 keys, no fallback copy
+### The strings contract — 39 keys, no fallback copy
 
 Every course ships one `strings.json` carrying **all** the microcopy the shell renders, because
 the shell has none of its own (PRD §4). So the build validates it against the canonical key list
@@ -166,7 +166,7 @@ declared twice.
 `tools/strings-check.ts` runs per course, flattens the nested file onto dot-paths
 (`ritual.check.copy`), and reports four things, always naming course **and** key:
 
-- **missing key** — the 36 canonical paths must all be there;
+- **missing key** — the 39 canonical paths must all be there;
 - **empty or non-string value** — a present-but-blank key is a missing key with extra steps;
 - **unknown key** — the typo tripwire; `ritual.check.plate` would otherwise sit quietly beside a
   missing `plateLabel`;
@@ -177,10 +177,11 @@ declared twice.
 
 Adding a key is one edit to `src/course/stringsKeys.ts` plus a line in each of the three bundles —
 in that order, because the build will tell you exactly which course you forgot. The list grew that
-way three times: five keys the frozen screens forced (PR #120), three the Ladder forced (#86 —
-`ladder.pendingLine`, `ladder.ownership`, `ladder.sealedToast`) and seven the staged rung card
-forced (#87 — `rungCard.startModule`, `.freshNote`, `.practice`, `.revisitModule`, `.exitRitual`,
-`.module`, `.practiceEarlier`: a label for every control across the four [D22] stages). All ten
+way four times: five keys the frozen screens forced (PR #120), three the Ladder forced (#86 —
+`ladder.pendingLine`, `ladder.ownership`, `ladder.sealedToast`), seven the staged rung card forced
+(#87 — `rungCard.startModule`, `.freshNote`, `.practice`, `.revisitModule`, `.exitRitual`,
+`.module`, `.practiceEarlier`: a label for every control across the four [D22] stages) and three
+the module list forced (#88 — `module.helper`, `module.openFull`, `module.trapNote`). All thirteen
 are **draft values pending the Sync-3 freeze** (#71). The alternative each time was a
 learner-facing line hardcoded in the shell, which is the one thing this list exists to prevent.
 
@@ -393,9 +394,13 @@ Three things it is responsible for keeping true:
 - **Counts, never time.** No `%`, no date, no streak, no "due" — asserted over the rendered screen
   in both a fresh and a mid-journey state.
 
-It is also the one place the course layer's ladder reaches the store: an effect calls `setLadder`
-when `levels.json` resolves, which is what gives `passRitual` a rung to check against. The screen
-waits (`aria-busy`, nothing drawn) until it has — an empty input would render a *finished* ladder.
+Loading that ladder and handing it to the store is `src/screens/useProgression.ts`, which the
+Ladder and the module list both start with: it fetches `levels.json`, calls `setLadder` from an
+effect when it resolves — which is what gives `passRitual` a rung to check against — and returns
+the assembled `progressionInput` plus a `ready` flag. Screens draw nothing until that flag is up
+(`aria-busy`), because an empty input would render a *finished* ladder. It is a hook rather than
+a line in the Ladder because a deep link (`#/module/L1-M1`) reaches a guarded screen with the
+Ladder never having mounted.
 
 Two deliberate divergences from the prototype, both recorded in the code that makes them:
 
@@ -445,6 +450,51 @@ Two more divergences from the prototype, on top of the Ladder's:
   course copy too, and hi-mr's is Devanagari. Raised with the rest for #117.
 - **The two `exit_ready` secondaries are `--btn-secondary-height` (46px)**, where the prototype
   writes 44 inline; design/tokens.md §4 is the rule of record and both clear `--tap-min`.
+
+### The module list — read the rung, and nothing else
+
+`src/screens/ModuleScreen.tsx` (#88; PRD-design §6.4, PRD §8 F2) is a rung's ten sentences,
+browsable and quiet: nothing to answer, nothing to get wrong, no control that judges anything.
+Four things it owes, and each is a test:
+
+- **A guard.** `/module/:id` is a real deep link — HashRouter, installable PWA — so any id can
+  arrive. A locked rung, an id the ladder does not list, and a rung whose module this build never
+  shipped all land back on the Ladder (`replace`, so the bad entry leaves no back-stack trace).
+  That is the same answer the rung card gives by having no link to offer.
+- **`markStudied`, once, on first open.** The `studied` flag is what flips the rung card behind it
+  from "Start with the module" to "Practice" [D22], so *opening this screen* is what moves the
+  Ladder. It is idempotent in the store, which is what lets an effect fire it; the test proves the
+  call count is 1 across re-renders, and that reading a rung passes nothing (Invariant 1).
+- **Cards that expand in place, independently.** Collapsed is the L2 `display` + its `cue` (+ the
+  quiet `script` line in romanized courses); expanded adds the English `glossEn`, the word-for-word
+  `literal`, the word rows as tag chips, the interference-trap note when there is one, and
+  "open full" → `/sentence/:id` — 250ms, `--motion-expand`, collapsed under `prefers-reduced-motion`.
+  The open set lives in the screen, not in the cards, which is why one card opening never closes
+  another. `module/ProductionDots.tsx` draws each sentence's two 6px dots off
+  `production[sentenceId]` (0 / 1 / ≥2), **read-only** until Practice writes the counters (#95).
+- **Where the learner was.** Scroll offset *and* open cards survive a detour into Sentence Detail,
+  in **`sessionStorage`** (`module/moduleView.ts`, `rung:module-view:<course>:<module>`) and never
+  in the store: `src/state/` is the export contract (#82), and which cards were open is this
+  visit's UI, not something the learner earned. The two are one record because an offset restored
+  into a differently expanded list is not where the learner was. The shell publishes its one
+  scroll area through `src/shell/scrollArea.tsx` — the screen asks the frame for it rather than
+  hunting the DOM for something that scrolls.
+
+Three divergences from the prototype, on top of the Ladder's and the card's:
+
+- **The screen's head row is the kicker, the title and the count**, not a header: the shell owns
+  the back chevron and the screen's name (#84), and the prototype's own list is its scroll area
+  where here the shell's `<main>` is the app's only one. #117 reconciles both.
+- **Course prose is Mukta at the 18px floor** — the helper line, the cue, the literal, the trap
+  note, the "open full" label and, third recurrence, **the word chips** (design/tokens.md §6 writes
+  9.5–11px). Same wall as #86 and #87: §2 forbids Devanagari below `--devanagari-min-size` and a
+  caption token sets it in Barlow, which draws none. Flagged again on #117; no token invented.
+- **"Open full" is `--btn-secondary-height` (46px)** where the prototype writes 42 inline, the same
+  call PR #139 made for the rung card's pair.
+
+The one place the app overrides a font shorthand's family is the quiet script line, which takes
+`--font-script-fallback` (design/tokens.md §2) — so `src/styleContract.test.ts` bans a face by
+*name* and allows `font-family: var(--…)`, which is the opposite of one.
 
 ### The fonts — bundled, because offline is the product
 

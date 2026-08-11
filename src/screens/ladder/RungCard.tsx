@@ -35,6 +35,7 @@ import { Link } from 'react-router-dom';
 import { useStrings } from '../../course/strings.ts';
 import type { RungStage } from '../../engine/progression.ts';
 import { PRACTICE_PATH, RITUAL_PATH } from '../../shell/routes.tsx';
+import { RegistrationMarks } from '../RegistrationMarks.tsx';
 import { rungLabel } from './rungLabel.ts';
 import styles from './RungCard.module.css';
 
@@ -124,35 +125,5 @@ export function RungCard({ stage, moduleId, title, job, dir }: RungCardProps) {
         </>
       )}
     </div>
-  );
-}
-
-/**
- * The four `+` registration marks (design/tokens.md §3) — the blueprint grammar's signature, and
- * "never dropped" (§7 rule 3). Each is the same crosshair the current-rung marker draws, centred
- * on a corner of the card so it straddles the hairline.
- *
- * `aria-hidden`, and drawn rather than bordered: they are decoration in the strictest sense —
- * nothing about the rung's state is in them, and the size and ink come from tokens in the
- * stylesheet rather than from attributes here (docs/design-contract.md rule 1).
- */
-function RegistrationMarks() {
-  return (
-    <>
-      {[styles.markTopLeft, styles.markTopRight, styles.markBottomLeft, styles.markBottomRight].map(
-        (corner) => (
-          <svg
-            key={corner}
-            className={corner}
-            viewBox="0 0 16 16"
-            aria-hidden="true"
-            focusable="false"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path className={styles.markLine} d="M8 0v16M0 8h16" />
-          </svg>
-        ),
-      )}
-    </>
   );
 }

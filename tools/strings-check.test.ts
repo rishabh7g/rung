@@ -8,7 +8,7 @@ import { DEFAULT_CONTENT_ROOT } from './validate.ts';
 
 /**
  * The three shipped bundles are the source of truth for what the canonical list must say — the
- * issue text predates four PRs and lists 21 keys; the files carry 36 (PR #120, verified across
+ * issue text predates five PRs and lists 21 keys; the files carry 39 (PR #120, verified across
  * courses by PR #124, plus the Ladder's three in #86 and the staged rung card's seven in #87).
  * Where they disagree, the files win, so the suite checks the list AGAINST the files rather than
  * the other way round.
@@ -43,15 +43,15 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the three shipped bundles carry — 36 keys, nested, identical', () => {
+  it('is exactly what the three shipped bundles carry — 39 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(36);
+      expect(keys.length, courseId).toBe(39);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(36);
-    expect(new Set(STRINGS_KEYS).size).toBe(36);
+    expect(STRINGS_KEYS.length).toBe(39);
+    expect(new Set(STRINGS_KEYS).size).toBe(39);
   });
 
   it('carries the five keys PR #120 added beyond the issue text', () => {
@@ -93,6 +93,18 @@ describe('the canonical key list', () => {
       'rungCard.module',
       'rungCard.practiceEarlier',
     ];
+
+    for (const key of added) expect(STRINGS_KEYS).toContain(key);
+  });
+
+  /**
+   * The module list's three (#88). PRD-design §6.4's screen says three things in its own right —
+   * the helper above the cards, the "open full" label, and the note that a sentence carries an
+   * interference trap — and the prototype writes all three in English for every course. Draft
+   * values in all three bundles, flagged on #71.
+   */
+  it('carries the three keys the module list forced (#88)', () => {
+    const added: StringsKey[] = ['module.helper', 'module.openFull', 'module.trapNote'];
 
     for (const key of added) expect(STRINGS_KEYS).toContain(key);
   });

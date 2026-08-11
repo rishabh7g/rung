@@ -27,35 +27,25 @@
  * `passRitual` guards with. A count rendered here and a rule enforced there cannot disagree,
  * because they are the same derivation.
  */
-import { useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Lock } from 'lucide-react';
 import { useCourse } from '../course/CourseProvider.tsx';
 import { interpolate, useStrings } from '../course/strings.ts';
-import { useLevels } from '../course/content.ts';
 import { ContentErrorScreen } from '../course/BootScreens.tsx';
 import {
   currentRungId,
   deriveStatuses,
-  ladderFromLevels,
   levelSealed,
   rungStage,
   type RungStage,
 } from '../engine/progression.ts';
-import { progressionInput, useAppStore } from '../state/store.ts';
 import { Toast, useToast } from '../shell/Toast.tsx';
 import { LevelStrip, type LevelCell, type SquareState } from './ladder/LevelStrip.tsx';
 import { RungCard } from './ladder/RungCard.tsx';
 import { RungMarker } from './ladder/RungMarker.tsx';
 import { rungLabel } from './ladder/rungLabel.ts';
+import { NOTHING_EXIT_READY, useProgression } from './useProgression.ts';
 import styles from './LadderScreen.module.css';
-
-/**
- * Nothing is exit-ready until the production counters exist (**#95**). The engine takes the fact
- * as an injected predicate, so this is the honest answer rather than a placeholder — and it is a
- * module constant so the memo below has a stable dependency.
- */
-const NOTHING_EXIT_READY = () => false;
 
 interface LadderScreenProps {
   /**
@@ -69,29 +59,10 @@ interface LadderScreenProps {
 export default function LadderScreen({ exitAvailable = NOTHING_EXIT_READY }: LadderScreenProps) {
   const { course } = useCourse();
   const strings = useStrings();
-  const levels = useLevels();
   const toast = useToast();
-  const setLadder = useAppStore((store) => store.setLadder);
-  const state = useAppStore();
-
-  /** `levels.json` in the engine's shape. Memoised so the effect below writes once per load. */
-  const ladder = useMemo(
-    () => (levels.data === null ? null : ladderFromLevels(levels.data.levels)),
-    [levels.data],
-  );
-
-  // The store holds a course's ladder as CONTENT, never persisted, and until it has been handed
-  // one, `passRitual` has no rung to check against and nothing can pass (`store.ts`). This screen
-  // is where the course layer's ladder meets the store — an effect, because it is a write.
-  useEffect(() => {
-    if (ladder !== null) setLadder(course.id, ladder);
-  }, [course.id, ladder, setLadder]);
-
-  // The same input the store guards writes with — assembled from what this course actually holds.
-  const input = useMemo(
-    () => progressionInput(state, course.id, exitAvailable),
-    [state, course.id, exitAvailable],
-  );
+  // Loads the ladder, hands it to the store, and assembles the engine's input — the same input
+  // `passRitual` guards writes with (`./useProgression.ts`).
+  const { levels, input, ready } = useProgression(exitAvailable);
 
   // A broken ladder is the content layer failing, which is one screen wherever it fails (#79).
   if (levels.error !== null) return <ContentErrorScreen detail={levels.error.message} />;
@@ -100,7 +71,7 @@ export default function LadderScreen({ exitAvailable = NOTHING_EXIT_READY }: Lad
   // count on this screen is derived from it, and an empty input would render a finished ladder.
   // The shell's frame is already up, so the screen waits rather than inventing a state.
   const plan = levels.data?.levels;
-  if (plan === undefined || input.levels.length === 0) {
+  if (plan === undefined || !ready) {
     return <section className={styles.ladder} aria-busy="true" />;
   }
 

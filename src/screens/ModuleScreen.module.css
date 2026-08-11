@@ -1,0 +1,103 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   Geometry follows design/Rung App v3.3.dc.html → Module list; every length is the nearest token
+   on the Industry scale (design/tokens.md §3). */
+
+.module {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6) var(--space-8);
+}
+
+/* ------------------------------------------------------------------- the head row */
+
+/* The prototype's header row, minus the chevron the shell owns (#84): kicker and title on the
+   left, the count hard right, a hairline under both. */
+.head {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: var(--border-hairline);
+}
+
+.headText {
+  flex: 1;
+  min-width: 0;
+}
+
+.kicker {
+  margin: 0;
+  font: var(--text-kicker);
+  letter-spacing: var(--kicker-tracking);
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--color-accent-700);
+}
+
+/* The module's own title, from its content file — the course's words, so the L2 face and size. */
+.title {
+  margin: var(--space-1) 0 0;
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+}
+
+.count {
+  flex: none;
+  margin: 0;
+  font: var(--text-caption);
+  white-space: nowrap;
+  color: var(--ink-55);
+}
+
+/* ---------------------------------------------------------------------- the list */
+
+/**
+ * The helper line is the course's prose, which for hi-mr is Devanagari — Mukta, never below
+ * `--devanagari-min-size` (design/tokens.md §2), where the prototype writes 12.5px in the body
+ * face. The Ladder (#86) and the rung card (#87) made the same call for the same reason; the
+ * design package still owes the ramp a course-prose slot, and #117 carries it.
+ */
+.helper {
+  margin: 0;
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  color: var(--ink-55);
+}
+
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ------------------------------------------------------------------- the practice */
+
+/* The one filled object on the screen (design/tokens.md §3): solid accent, ground-coloured text,
+   full width, --cta-height (48px). The label is a course string, so it is set like one. */
+.practice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--cta-height);
+  margin-top: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-accent);
+  border: var(--border-hairline);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+  font: var(--text-l2-card);
+  font-size: var(--devanagari-min-size);
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.practice:active {
+  background: var(--color-accent-700);
+  border-color: var(--color-accent-700);
+}

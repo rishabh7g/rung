@@ -22,7 +22,7 @@
  * `overflow-x: hidden` and `overscroll-behavior: contain` so a session can't be pulled to
  * refresh. Safe areas are `max(token, env(...))` everywhere — see the CSS.
  */
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { ChevronLeft, X } from 'lucide-react';
 import { BRAND } from '../brand.ts';
@@ -30,6 +30,7 @@ import { BottomNav } from './BottomNav.tsx';
 import { RailsMark } from './RailsMark.tsx';
 import { useImmersive } from './immersive.tsx';
 import { HOME_PATH, PRACTICE_PATH, matchShellRoute } from './routes.tsx';
+import { ScrollAreaContext } from './scrollArea.tsx';
 import styles from './AppShell.module.css';
 
 export function AppShell() {
@@ -37,6 +38,10 @@ export function AppShell() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const route = matchShellRoute(pathname);
+  // Published to the screens through `ScrollAreaContext`: the frame owns the only scroll area,
+  // and a screen that restores a position (#88) asks for it rather than hunting for it. State
+  // rather than a ref, so a screen can depend on it arriving.
+  const [screen, setScreen] = useState<HTMLElement | null>(null);
 
   // A session belongs to the route it runs on, so leaving that route ends it — otherwise the
   // Android back button walks out of Practice and leaves the nav hidden with no ✕ to bring it
@@ -83,8 +88,10 @@ export function AppShell() {
         )}
       </header>
 
-      <main className={styles.screen}>
-        <Outlet />
+      <main className={styles.screen} ref={setScreen}>
+        <ScrollAreaContext.Provider value={screen}>
+          <Outlet />
+        </ScrollAreaContext.Provider>
       </main>
 
       {!immersive && <BottomNav />}

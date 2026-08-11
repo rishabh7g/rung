@@ -1,0 +1,39 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1). */
+
+/* A + centred on each corner of the parent, straddling its hairline. --space-3 (10.2px) is the
+   scale's stand-in for the design system's 11px mark; the arms come out at ~1px because
+   --icon-stroke is 1.5 in a 16-unit viewBox scaled down to it. */
+.mark {
+  position: absolute;
+  width: var(--space-3);
+  height: var(--space-3);
+}
+
+.markLine {
+  stroke: var(--ink-55);
+  stroke-width: var(--icon-stroke);
+}
+
+.markTopLeft {
+  composes: mark;
+  top: calc(var(--space-3) / -2);
+  left: calc(var(--space-3) / -2);
+}
+
+.markTopRight {
+  composes: mark;
+  top: calc(var(--space-3) / -2);
+  right: calc(var(--space-3) / -2);
+}
+
+.markBottomLeft {
+  composes: mark;
+  bottom: calc(var(--space-3) / -2);
+  left: calc(var(--space-3) / -2);
+}
+
+.markBottomRight {
+  composes: mark;
+  bottom: calc(var(--space-3) / -2);
+  right: calc(var(--space-3) / -2);
+}

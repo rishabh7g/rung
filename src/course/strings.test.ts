@@ -151,7 +151,7 @@ describe('interpolate', () => {
     expect(interpolate('all done', { n: 3 })).toBe('all done');
   });
 
-  it('fills every placeholder the contract declares, across all 36 keys', () => {
+  it('fills every placeholder the contract declares, across all 39 keys', () => {
     const values = {
       sentenceCount: 10,
       maxWords: 12,

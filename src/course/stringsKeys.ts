@@ -29,15 +29,17 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 36 keys: the 21 of PRD §4, the 5 the frozen screens forced
+ * file it is complaining about). 39 keys: the 21 of PRD §4, the 5 the frozen screens forced
  * (PR #120) — `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and the four
  * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — the 3 the Ladder
  * forced (#86): the counts-only pending line, the ownership footer and the sealed-level toast,
- * which PRD-design §5 prints as copy but PRD §4's inventory never listed — and the 7 the staged
- * rung card forced (#87): a label per CTA across the four [D22] stages, plus the fresh-rung note.
+ * which PRD-design §5 prints as copy but PRD §4's inventory never listed — the 7 the staged rung
+ * card forced (#87): a label per CTA across the four [D22] stages, plus the fresh-rung note — and
+ * the 3 the module list forced (#88): its helper line, the "open full" label and the interference
+ * -trap note on an expanded card.
  *
- * Those ten are DRAFT values in all three bundles, flagged on #71 for ratification, exactly as
- * PR #120's were. The alternative each time was hardcoding learner-facing lines in the shell,
+ * Those thirteen are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
+ * as PR #120's were. The alternative each time was hardcoding learner-facing lines in the shell,
  * which is the one thing this list exists to prevent.
  */
 export const STRINGS_KEYS = [
@@ -72,6 +74,9 @@ export const STRINGS_KEYS = [
   'rungCard.exitRitual',
   'rungCard.module',
   'rungCard.practiceEarlier',
+  'module.helper',
+  'module.openFull',
+  'module.trapNote',
   'pendingAuthoring',
   'verdict.line',
   'switchToast',
@@ -140,6 +145,15 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'rungCard.exitRitual': [],
   'rungCard.module': [],
   'rungCard.practiceEarlier': [],
+  /**
+   * The module list (#88) — the three lines the screen says in its own right: the helper above
+   * the cards, the label on the control that opens a sentence in full, and the one-line warning
+   * that a sentence carries an interference trap. None of them interpolates; the numbers on that
+   * screen are counts the shell renders, not sentences.
+   */
+  'module.helper': [],
+  'module.openFull': [],
+  'module.trapNote': [],
   pendingAuthoring: [],
   /** The rung that just opened. */
   'verdict.line': ['{nextModule}'],
