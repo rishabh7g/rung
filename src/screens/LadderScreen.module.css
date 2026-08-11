@@ -149,47 +149,12 @@
   gap: var(--space-3);
 }
 
-/* Blueprint object: square corners, hairline, --shadow-sm, no surface fill (tokens.md §3).
-   The four registration marks belong to the staged card component — #87. */
-.card {
-  flex: 1;
-  min-width: 0;
-  padding: var(--space-4);
-  background: var(--color-bg);
-  border: var(--border-hairline);
-  box-shadow: var(--shadow-sm);
-}
+/* The card itself is ./ladder/RungCard.module.css — blueprint frame, registration marks and the
+   four [D22] CTA sets (#87). What stays here is the row that hosts it. */
 
 /* Lines the crosshair up with the kicker inside the card rather than with the card's top edge. */
 .currentItem > svg {
   margin-top: var(--space-4);
-}
-
-.cardKicker {
-  margin: 0;
-  font: var(--text-kicker);
-  letter-spacing: var(--kicker-tracking);
-  text-transform: uppercase;
-  white-space: nowrap;
-  color: var(--color-accent-700);
-}
-
-.cardTitle {
-  margin: var(--space-1) 0 0;
-  font: var(--text-rung-title);
-}
-
-.cardLink {
-  color: inherit;
-  text-decoration: none;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.cardJob {
-  margin: var(--space-1) 0 0;
-  font: var(--text-secondary);
-  color: var(--ink-65);
 }
 
 /* ---------------------------------------------------------------- the footer */

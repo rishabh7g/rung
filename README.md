@@ -150,7 +150,7 @@ Two consequences worth knowing before you author content:
   emitter imports it; the runtime resolver will too. Never copy it: a second copy is a word
   that silently has no "why".
 
-### The strings contract — 29 keys, no fallback copy
+### The strings contract — 36 keys, no fallback copy
 
 Every course ships one `strings.json` carrying **all** the microcopy the shell renders, because
 the shell has none of its own (PRD §4). So the build validates it against the canonical key list
@@ -166,7 +166,7 @@ declared twice.
 `tools/strings-check.ts` runs per course, flattens the nested file onto dot-paths
 (`ritual.check.copy`), and reports four things, always naming course **and** key:
 
-- **missing key** — the 29 canonical paths must all be there;
+- **missing key** — the 36 canonical paths must all be there;
 - **empty or non-string value** — a present-but-blank key is a missing key with extra steps;
 - **unknown key** — the typo tripwire; `ritual.check.plate` would otherwise sit quietly beside a
   missing `plateLabel`;
@@ -177,10 +177,12 @@ declared twice.
 
 Adding a key is one edit to `src/course/stringsKeys.ts` plus a line in each of the three bundles —
 in that order, because the build will tell you exactly which course you forgot. The list grew that
-way twice: five keys the frozen screens forced (PR #120) and three the Ladder forced (#86 —
-`ladder.pendingLine`, `ladder.ownership`, `ladder.sealedToast`, all **draft values pending the
-Sync-3 freeze**, #71). The alternative each time was a learner-facing line hardcoded in the shell,
-which is the one thing this list exists to prevent.
+way three times: five keys the frozen screens forced (PR #120), three the Ladder forced (#86 —
+`ladder.pendingLine`, `ladder.ownership`, `ladder.sealedToast`) and seven the staged rung card
+forced (#87 — `rungCard.startModule`, `.freshNote`, `.practice`, `.revisitModule`, `.exitRitual`,
+`.module`, `.practiceEarlier`: a label for every control across the four [D22] stages). All ten
+are **draft values pending the Sync-3 freeze** (#71). The alternative each time was a
+learner-facing line hardcoded in the shell, which is the one thing this list exists to prevent.
 
 ### The course layer — what boots first
 
@@ -395,11 +397,6 @@ It is also the one place the course layer's ladder reaches the store: an effect 
 when `levels.json` resolves, which is what gives `passRitual` a rung to check against. The screen
 waits (`aria-busy`, nothing drawn) until it has — an empty input would render a *finished* ladder.
 
-The current rung is a blueprint card holding a kicker, the rung title at `--text-rung-title` and
-its job; **the staged CTA [D22] mounts inside it and is #87** (the seam is commented at
-`CurrentRung`). Until then the card's title is the link into the module, so the rung is reachable
-from its own row.
-
 Two deliberate divergences from the prototype, both recorded in the code that makes them:
 
 - **Course prose is 18px Mukta, not an 11.5px caption.** The prototype renders the pending line,
@@ -409,6 +406,45 @@ Two deliberate divergences from the prototype, both recorded in the code that ma
   caption-sized Devanagari slot and cannot have one below the floor.
 - **The position line is the screen's first row**, not part of the header: the shell's brand header
   is screen-agnostic (#84). #117 reconciles both.
+
+### The staged rung card — one clear action, and never a gate
+
+`src/screens/ladder/RungCard.tsx` (#87; PRD-design §6.2 [D22], PRD §8 F1) is the current rung as a
+blueprint object — radius 0, a hairline, `--shadow-sm`, the four `+` registration marks — holding
+the kicker, the title at `--text-rung-title`, the job, and **one CTA set, chosen by the stage**:
+
+| `rungStage()` | primary | beside it |
+|---|---|---|
+| `fresh` | "Start with the module" → `/module/:id` | the note: read it once, Practice picks up from there |
+| `studied` | "Practice" → `/practice` | ghost "revisit the module" → `/module/:id` |
+| `exit_ready` | "Exit ritual — open" → `/ritual` | Practice and Module drop to secondary |
+| `pending` | — (nothing to open) | the `pendingAuthoring` note + ghost "practice earlier rungs" |
+
+The stage is `rungStage(input, id)` off the same `progressionInput` every other number on the
+screen derives from — so it moves when the facts do: `markStudied` on first module open flips
+`fresh` → `studied` (#88), the production counters flip `studied` → `exit_ready` (#95). Nothing
+about the card is stored, and it holds no state of its own.
+
+**The stage guides; it never gates** (the invariant, PRD-design §6.2). The bottom nav's Practice
+tab is untouched at every stage — asserted per stage in `LadderScreen.test.tsx` — three of the
+four stages offer Practice from the card itself, and no stage locks a route. The primary is the
+one **filled** object in the whole view (`--cta-height` 48px, solid accent); secondaries are
+`--btn-secondary-height`, ghosts `--ghost-height` and always `white-space: nowrap`
+(design/tokens.md §3, §4).
+
+Every label is the course's (`strings.json` — the seven `rungCard.*` keys above), so the card
+carries no learner-facing English of its own; `ladder/RungCard.test.tsx` renders all four stages
+and fails if the prototype's wording reaches the screen. The card's title is deliberately **not**
+a link any more: the primary CTA is the way into a rung, and a `pending` rung has no module to
+open at all.
+
+Two more divergences from the prototype, on top of the Ladder's:
+
+- **The card's copy and its button labels are Mukta at the 18px floor**, not 11–12px Barlow and
+  14px Barlow Condensed. Same reason as the Ladder's prose, one step further: a CTA label is
+  course copy too, and hi-mr's is Devanagari. Raised with the rest for #117.
+- **The two `exit_ready` secondaries are `--btn-secondary-height` (46px)**, where the prototype
+  writes 44 inline; design/tokens.md §4 is the rule of record and both clear `--tap-min`.
 
 ### The fonts — bundled, because offline is the product
 

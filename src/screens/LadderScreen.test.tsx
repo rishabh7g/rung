@@ -16,9 +16,12 @@
  * The ladder itself is ten rungs per level (the product's shape) rather than the trimmed
  * `levelsFixture`, because "M2–M10 are locked" is the assertion.
  */
-import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
+import { HashRouter } from 'react-router-dom';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from '../App.tsx';
+import LadderScreen from './LadderScreen.tsx';
+import { CourseProvider } from '../course/CourseProvider.tsx';
 import { resetContentCache } from '../course/content.ts';
 import { resetManifestCache } from '../course/manifest.ts';
 import { resetStringsCache } from '../course/strings.ts';
@@ -146,7 +149,8 @@ describe('a fresh install', () => {
     // The only heading below the shell's wordmark: the rung the learner is on.
     expect(screen.getByRole('heading', { level: 2 }).textContent).toBe('L1 rung 1');
     expect(screen.getByText('what L1 rung 1 does')).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'L1 rung 1' })).toHaveAttribute(
+    // The card's primary CTA is the way into the rung — the title stopped being a link with #87.
+    expect(screen.getByRole('link', { name: strings('rungCard.startModule') })).toHaveAttribute(
       'href',
       '#/module/L1-M1',
     );
@@ -156,7 +160,7 @@ describe('a fresh install', () => {
     await renderLadder();
 
     expect(rows()).toHaveLength(10);
-    expect(openRungs()).toEqual(['L1 rung 1']);
+    expect(openRungs()).toEqual([strings('rungCard.startModule')]);
 
     for (let rung = 2; rung <= 10; rung += 1) {
       const title = `L1 rung ${rung}`;
@@ -232,11 +236,13 @@ describe('mid-journey — three rungs climbed', () => {
     await renderLadder();
 
     expect(screen.getByText('M4 · CURRENT RUNG')).toBeInTheDocument();
+    // M4's module is not authored in this ladder, so its card is the pending stage: a note, and
+    // the one ghost back to the rungs that do exist [D22].
     expect(openRungs()).toEqual([
       'M1 · L1 rung 1what L1 rung 1 doesPASSED',
       'M2 · L1 rung 2what L1 rung 2 doesPASSED',
       'M3 · L1 rung 3what L1 rung 3 doesPASSED',
-      'L1 rung 4',
+      strings('rungCard.practiceEarlier'),
     ]);
     expect(screen.getByRole('link', { name: /L1 rung 2/ })).toHaveAttribute(
       'href',
@@ -278,6 +284,120 @@ describe('mid-journey — three rungs climbed', () => {
     expect(await screen.findByRole('status')).toHaveTextContent(
       strings('ladder.sealedToast').replace('{level}', '2').replace('{remaining}', '7'),
     );
+  });
+});
+
+/* --------------------------------------------------------- the staged rung card */
+
+/**
+ * [D22] on the real screen (#87): which stage the card is in, and the promise under all four —
+ * **the stage guides, it never gates**. The Practice tab is asserted per stage, because a card
+ * that made Practice unreachable would be a phase gate wearing a CTA's clothes.
+ *
+ * `exit_ready` cannot be reached through `<App />`: the route table renders `<LadderScreen />`
+ * with the honest `exitAvailable = () => false` until the production counters land (#95). That
+ * one case injects the predicate instead — which is exactly the seam #86 left for #95, exercised.
+ * The card's own four-stage table is `ladder/RungCard.test.tsx`.
+ */
+describe('the staged rung card [D22]', () => {
+  /** The tab that must survive every stage. */
+  function practiceTab(): HTMLElement {
+    return within(screen.getByRole('navigation')).getByRole('link', { name: 'Practice' });
+  }
+
+  it('opens fresh: one action into the module, under the note that says nothing is locked', async () => {
+    await renderLadder();
+
+    expect(screen.getByRole('link', { name: strings('rungCard.startModule') })).toHaveAttribute(
+      'href',
+      '#/module/L1-M1',
+    );
+    expect(screen.getByText(strings('rungCard.freshNote'))).toBeInTheDocument();
+    expect(screen.queryByText(strings('rungCard.practice'))).not.toBeInTheDocument();
+    expect(screen.queryByText(strings('rungCard.exitRitual'))).not.toBeInTheDocument();
+  });
+
+  it('flips to Practice the moment the module is opened — markStudied, no reload', async () => {
+    await renderLadder();
+    expect(screen.getByText(strings('rungCard.startModule'))).toBeInTheDocument();
+
+    // What #88's module screen fires on first open. Nothing about the card is stored, so the
+    // stage moves with the flag the engine reads.
+    act(() => {
+      useAppStore.getState().markStudied(COURSE, 'L1-M1');
+    });
+
+    expect(screen.getByRole('link', { name: strings('rungCard.practice') })).toHaveAttribute(
+      'href',
+      '#/practice',
+    );
+    expect(screen.getByRole('link', { name: strings('rungCard.revisitModule') })).toHaveAttribute(
+      'href',
+      '#/module/L1-M1',
+    );
+    expect(screen.queryByText(strings('rungCard.startModule'))).not.toBeInTheDocument();
+    expect(screen.queryByText(strings('rungCard.freshNote'))).not.toBeInTheDocument();
+  });
+
+  it('offers the exit ritual once the rung is produced out — #95’s predicate, injected', async () => {
+    useAppStore.getState().markStudied(COURSE, 'L1-M1');
+    mockContentFetch(DEV_MANIFEST, undefined, { levels: tenRungLadder() });
+
+    render(
+      <CourseProvider>
+        <HashRouter>
+          <LadderScreen exitAvailable={() => true} />
+        </HashRouter>
+      </CourseProvider>,
+    );
+    await screen.findByRole('list');
+
+    expect(screen.getByRole('link', { name: strings('rungCard.exitRitual') })).toHaveAttribute(
+      'href',
+      '#/ritual',
+    );
+    // Practice and Module drop to secondary — quieter, never gone.
+    expect(screen.getByRole('link', { name: strings('rungCard.practice') })).toHaveAttribute(
+      'href',
+      '#/practice',
+    );
+    expect(screen.getByRole('link', { name: strings('rungCard.module') })).toHaveAttribute(
+      'href',
+      '#/module/L1-M1',
+    );
+  });
+
+  it('answers a rung with no module yet with a note and a way back to practice', async () => {
+    climb('L1-M1', 'L1-M2');
+    await renderLadder();
+
+    expect(screen.getByText('M3 · CURRENT RUNG')).toBeInTheDocument();
+    expect(screen.getByText(strings('pendingAuthoring'))).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: strings('rungCard.practiceEarlier') })).toHaveAttribute(
+      'href',
+      '#/practice',
+    );
+    // There is nothing behind this rung to open, so nothing offers to open it.
+    expect(screen.queryAllByRole('link').map((link) => link.getAttribute('href'))).not.toContain(
+      '#/module/L1-M3',
+    );
+  });
+
+  /** The invariant, per stage: phases guide, never gate. */
+  it.each([
+    ['fresh', [] as string[], false],
+    ['studied', [] as string[], true],
+    ['pending', ['L1-M1', 'L1-M2'], false],
+  ])('leaves the Practice tab exactly where it was — %s', async (_stage, climbed, studied) => {
+    if (climbed.length > 0) climb(...climbed);
+    await renderLadder();
+    if (studied) {
+      act(() => {
+        useAppStore.getState().markStudied(COURSE, 'L1-M1');
+      });
+    }
+
+    expect(practiceTab()).toHaveAttribute('href', '#/practice');
   });
 });
 

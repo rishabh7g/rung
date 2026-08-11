@@ -8,9 +8,10 @@
  *   2. **The level strip** — three cells, ten squares each, sealed levels muted behind a lock.
  *      Tapping a sealed cell answers with an honest toast naming what is left below it.
  *   3. **The rungs of the active level**, with the [D16] markers: a passed rung is a filled accent
- *      circle with a check and a link to its module; the current rung is a crosshair and the card
- *      the screen is built around; a locked rung is a hollow circle at half opacity and **is not a
- *      control** — no link, no button, nothing for a screen reader to offer or a thumb to find.
+ *      circle with a check and a link to its module; the current rung is a crosshair beside the
+ *      staged card the screen is built around (`ladder/RungCard.tsx`, #87 — one CTA per stage,
+ *      never a gate); a locked rung is a hollow circle at half opacity and **is not a control** —
+ *      no link, no button, nothing for a screen reader to offer or a thumb to find.
  *      "The ladder is visible; the rungs are sealed" (PRD-design §3.2) is a DOM fact here.
  *   4. **The pending line and the ownership footer** — the recurring "yours to pace" copy.
  *
@@ -38,11 +39,15 @@ import {
   deriveStatuses,
   ladderFromLevels,
   levelSealed,
+  rungStage,
+  type RungStage,
 } from '../engine/progression.ts';
 import { progressionInput, useAppStore } from '../state/store.ts';
 import { Toast, useToast } from '../shell/Toast.tsx';
 import { LevelStrip, type LevelCell, type SquareState } from './ladder/LevelStrip.tsx';
+import { RungCard } from './ladder/RungCard.tsx';
 import { RungMarker } from './ladder/RungMarker.tsx';
+import { rungLabel } from './ladder/rungLabel.ts';
 import styles from './LadderScreen.module.css';
 
 /**
@@ -178,6 +183,7 @@ export default function LadderScreen({ exitAvailable = NOTHING_EXIT_READY }: Lad
             module.id === current ? (
               <CurrentRung
                 key={module.id}
+                stage={rungStage(input, module.id)}
                 moduleId={module.id}
                 title={module.title}
                 job={module.job}
@@ -222,36 +228,25 @@ interface RungProps {
   dir?: string;
 }
 
+interface CurrentRungProps extends RungProps {
+  stage: RungStage;
+}
+
 /**
- * The current rung — the dominant object on the screen: a blueprint card (square corners, a
- * hairline, `--shadow-sm`) with the rung's title at `--text-rung-title`.
+ * The current rung — the crosshair marker, and beside it the dominant object on the screen: the
+ * staged card [D22], which is `./ladder/RungCard.tsx` (#87). The row owns the marker and the rail
+ * it masks; the card owns its own frame, its registration marks and its one CTA per stage.
  *
- * ┌───────────────────────────────────────────────────────────────────────────────────────┐
- * │ THE STAGED RUNG CARD [D22] MOUNTS INSIDE THIS CARD — **#87**.                          │
- * │ Its four stages (fresh → "Start with the module", studied → Practice + "revisit the    │
- * │ module", exit_ready → "Exit ritual — open", pending → the `pendingAuthoring` note) come │
- * │ from `rungStage(input, id)`, which this screen already has an input for, and they land  │
- * │ directly below the job line. Nothing else on this screen changes when they do.          │
- * └───────────────────────────────────────────────────────────────────────────────────────┘
- *
- * Until then the title is the link into the module, so the rung is reachable from its own row —
- * the issue's "passed/current → /module/:id". #87's primary CTA is the permanent way in.
+ * The stage comes from `rungStage(input, id)` at the call site, off the very input the store
+ * guards `passRitual` with — so the card is as derived as every other number on this screen, and
+ * the title is no longer a link: the card's primary CTA is the permanent way into the module, and
+ * a `pending` rung has no module to link to at all.
  */
-function CurrentRung({ moduleId, title, job, dir }: RungProps) {
+function CurrentRung({ stage, moduleId, title, job, dir }: CurrentRungProps) {
   return (
     <li className={styles.currentItem}>
       <RungMarker state="current" />
-      <div className={styles.card}>
-        <p className={styles.cardKicker}>{rungLabel(moduleId)} · CURRENT RUNG</p>
-        <h2 className={styles.cardTitle}>
-          <Link className={styles.cardLink} to={`/module/${moduleId}`} dir={dir}>
-            {title}
-          </Link>
-        </h2>
-        <p className={styles.cardJob} dir={dir}>
-          {job}
-        </p>
-      </div>
+      <RungCard stage={stage} moduleId={moduleId} title={title} job={job} dir={dir} />
     </li>
   );
 }
@@ -302,13 +297,4 @@ function LockedRung({ moduleId, title, job, dir }: RungProps) {
       <Lock className={styles.rowLock} aria-hidden="true" />
     </li>
   );
-}
-
-/**
- * How a row prints a module id: `L1-M3` → `M3`, the way the prototype labels its rungs.
- * **Display only.** Nothing derives meaning from the shape of an id — a rung's position is the
- * ladder's order, which is the engine's whole answer (`progression.ts`).
- */
-function rungLabel(moduleId: string): string {
-  return moduleId.split('-').at(-1) ?? moduleId;
 }

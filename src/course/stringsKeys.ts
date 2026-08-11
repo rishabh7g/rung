@@ -29,15 +29,16 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 29 keys: the 21 of PRD §4, the 5 the frozen screens forced
+ * file it is complaining about). 36 keys: the 21 of PRD §4, the 5 the frozen screens forced
  * (PR #120) — `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and the four
- * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — and the 3 the
- * Ladder forced (#86): the counts-only pending line, the ownership footer and the sealed-level
- * toast, which PRD-design §5 prints as copy but PRD §4's inventory never listed.
+ * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — the 3 the Ladder
+ * forced (#86): the counts-only pending line, the ownership footer and the sealed-level toast,
+ * which PRD-design §5 prints as copy but PRD §4's inventory never listed — and the 7 the staged
+ * rung card forced (#87): a label per CTA across the four [D22] stages, plus the fresh-rung note.
  *
- * Those three are DRAFT values in all three bundles, flagged on #71 for ratification, exactly as
- * PR #120's were. The alternative was hardcoding three learner-facing lines in the shell, which
- * is the one thing this list exists to prevent.
+ * Those ten are DRAFT values in all three bundles, flagged on #71 for ratification, exactly as
+ * PR #120's were. The alternative each time was hardcoding learner-facing lines in the shell,
+ * which is the one thing this list exists to prevent.
  */
 export const STRINGS_KEYS = [
   'cueLabel',
@@ -64,6 +65,13 @@ export const STRINGS_KEYS = [
   'ladder.pendingLine',
   'ladder.ownership',
   'ladder.sealedToast',
+  'rungCard.startModule',
+  'rungCard.freshNote',
+  'rungCard.practice',
+  'rungCard.revisitModule',
+  'rungCard.exitRitual',
+  'rungCard.module',
+  'rungCard.practiceEarlier',
   'pendingAuthoring',
   'verdict.line',
   'switchToast',
@@ -118,6 +126,20 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'ladder.ownership': [],
   /** The sealed level, and how many rungs below it are left — the honest half of the seal rule. */
   'ladder.sealedToast': ['{level}', '{remaining}'],
+  /**
+   * The staged rung card [D22] — one CTA set per stage, and a label for every control in it.
+   * None of them interpolates: a button label that needed a runtime value would be a sentence.
+   * `rungCard.practice` is deliberately shared by the `studied` primary and the `exit_ready`
+   * secondary, because it is the same tab either way.
+   */
+  'rungCard.startModule': [],
+  /** The fresh rung's note — "nothing is locked; the tab stays open", the invariant in prose. */
+  'rungCard.freshNote': [],
+  'rungCard.practice': [],
+  'rungCard.revisitModule': [],
+  'rungCard.exitRitual': [],
+  'rungCard.module': [],
+  'rungCard.practiceEarlier': [],
   pendingAuthoring: [],
   /** The rung that just opened. */
   'verdict.line': ['{nextModule}'],
