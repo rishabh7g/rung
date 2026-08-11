@@ -48,6 +48,7 @@ import { moduleIdOf } from '../sentence/sentenceId.ts';
 import { PhaseChips } from './PhaseChips.tsx';
 import { ReadPhase } from './ReadPhase.tsx';
 import { SessionSummary } from './SessionSummary.tsx';
+import { Tick } from './Tick.tsx';
 import styles from './Session.module.css';
 
 /** Shared, so a course with no counters yet reads the same map every render. */
@@ -231,8 +232,12 @@ export function Session({ courseId, moduleId, sentenceIds, plan, dir }: SessionP
           still a session, and going back for one more card is the learner's call. */}
       <PhaseChips phase={live.phase} onJump={onJump} dir={dir} />
 
-      {/* The gentle elapsed tick sits here in the prototype, under the chips — numberless, 2px,
-          and #98's. There is no time string anywhere in this session (Invariant 2). */}
+      {/* The gentle elapsed tick (#98): numberless, 2px, under the chips as the prototype draws
+          it, and the only time affordance in the app (PRD §2 boundary note). It runs while a
+          PHASE is on screen — `!live.done`, so a finished session stops accruing and the bar
+          leaves with it — and it is a duration, never a clock: there is no time string anywhere
+          in this session (Invariant 2). */}
+      <Tick active={!live.done} />
 
       {live.done && (
         <SessionSummary

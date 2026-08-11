@@ -494,6 +494,57 @@ describe('the Read phase', () => {
   });
 });
 
+/* ------------------------------------------------------------- the gentle elapsed tick */
+
+/**
+ * The tick (#98) inside a real session: where it sits, that it says nothing, and that switching
+ * it off leaves the layout exactly as it was. Its arithmetic — the fill, the cap, the pause — is
+ * its own component's (`practice/Tick.test.tsx`); what belongs here is its PLACE.
+ */
+describe('the gentle elapsed tick', () => {
+  function tick(): HTMLElement | null {
+    return document.querySelector<HTMLElement>('[data-slot="elapsedTick"]');
+  }
+
+  it('sits under the phase chips, and says nothing at all', async () => {
+    await renderHub();
+    await begin();
+
+    const node = tick();
+    expect(node).not.toBeNull();
+    // The prototype's placement: the chip row, then the hairline directly beneath it.
+    expect(chip('read').parentElement?.nextElementSibling).toBe(node);
+    // Numberless, and not narrated — ambience, not a readout (Invariant 2).
+    expect(node?.textContent).toBe('');
+    expect(node).toHaveAttribute('aria-hidden', 'true');
+    expect(node?.getAttribute('aria-live')).toBeNull();
+  });
+
+  it('is the session’s ONLY time affordance — no clock, no duration, no percentage', async () => {
+    await renderHub();
+    await begin();
+
+    const text = screen.getByRole('main').textContent ?? '';
+
+    expect(text).not.toMatch(/%/);
+    expect(text).not.toMatch(/\b(second|seconds|minute|minutes|min|hour|hours|elapsed|left)\b/i);
+    expect(text).not.toMatch(/\d{4}-\d{2}-\d{2}|\d{1,2}:\d{2}/);
+  });
+
+  it('leaves zero trace when the setting is off', async () => {
+    useAppStore.getState().setSetting('elapsedTickEnabled', false);
+    await renderHub();
+
+    await begin();
+
+    expect(tick()).toBeNull();
+    // …and the chips are still the last thing before the card: nothing empty took its place.
+    expect(chip('read').parentElement?.nextElementSibling?.getAttribute('data-slot')).not.toBe(
+      'elapsedTick',
+    );
+  });
+});
+
 /* ------------------------------------------------------------- the chips never gate */
 
 describe('the chips', () => {
@@ -589,6 +640,14 @@ describe('the summary', () => {
       /\b(streak|second|seconds|minute|minutes|min|hour|hours|day|days|week|weeks|month|months|goal)\b/i,
     );
     expect(text).not.toMatch(/\d{4}-\d{2}-\d{2}|\d{1,2}:\d{2}/);
+  });
+
+  it('takes the elapsed tick with it — a finished session is not still running (#98)', async () => {
+    await runSession();
+
+    expect(document.querySelector('[data-slot="elapsedTick"]')).toBeNull();
+    // The chips stay up, so the tick's absence is the session's state and not the screen's.
+    expect(chip('produce')).toBeInTheDocument();
   });
 
   it('clears the snapshot: a session that reached its end is not one to resume', async () => {
