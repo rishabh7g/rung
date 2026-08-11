@@ -256,15 +256,55 @@ date in the whole document is `passedAt` on a passed module.
   mechanical guard as shell purity, for the same reason.
 - `src/state/store.ts` — `useAppStore`, persisted with `version: 6` and a wired `migrate` stub
   (its doc comment is the contract for the real v5 → v6 wrap, which ships with export/import in
-  P4). It is deliberately **thin**: `ensureCourse` (idempotent — an existing course returns the
-  same object, so no write can blank a ladder), `setActiveCourse` (a bare pointer swap; the
-  learner-facing switch flow with its toast is #106), `setSetting`, and `_reset()` for dev and
-  tests. Progression (#83), production and the review queue (#95) and the session snapshot (#96)
-  bring their own actions; the store holds no domain rules.
+  P4). It stays **thin, and free of rules**: `ensureCourse` (idempotent — an existing course
+  returns the same object, so no write can blank a ladder), `setActiveCourse` (a bare pointer swap;
+  the learner-facing switch flow with its toast is #106), `setSetting`, `setLadder` /`markStudied` /
+  `passRitual` (progression, below — every rule they obey is derived in the engine), and `_reset()`
+  for dev and tests. Production and the review queue (#95) and the session snapshot (#96) bring
+  their own actions.
 
 `store.test.ts` pins the initial shape against the literal the PRD prints, so drift is a red test
 rather than a discovery; the rest of it proves per-course isolation, a round trip through storage,
 and that a v5 payload reaches `migrate`.
+
+### The progression engine — every ladder truth, derived
+
+`src/engine/progression.ts` (pure TypeScript: no React, no storage, no clock) answers the four
+questions the Ladder asks, and stores none of the answers — a stored level status is a second source
+of truth waiting to disagree with the modules it summarises (PRD-engineering §8 F1: "level status
+derived, never stored"):
+
+| | |
+|---|---|
+| `deriveStatuses(input)` | every module by status — `locked` · `unlocked` · `in_progress` · `exit_available` · `passed` |
+| `levelSealed(input, level)` | the **seal rule** (PRD-design §5): a level unlocks only when *every* module of the previous level is passed |
+| `currentRungId(input)` | the first non-passed rung of the first unsealed, incomplete level — `null` on a finished ladder |
+| `rungStage(input, id)` | the staged rung card [D22]: `!hasContent` → `pending`, `!studied` → `fresh`, `exitAvailable` → `exit_ready`, else `studied` |
+
+`ladderFromLevels(levels)` turns a course's `levels.json` into the engine's ladder; the two live
+facts arrive as **injected predicates** — `studied(id)` (the per-course flag) and `exitAvailable(id)`
+(every sentence produced ≥ 2×, whose real implementation lands with the production counters in #95;
+call sites pass `() => false` until then, which is what "no counters yet" honestly means).
+`progressionInput(state, courseId)` in the store assembles one from what a course actually holds, and
+the screens derive from the same input the store guards with.
+
+Sealing counts a rung whose module has not been authored yet — hi-mr ships 2 of L1's 10 today, so L2
+stays sealed until the other 8 exist and are passed. That is the rule working: there is nothing to
+climb through a rung with no module.
+
+**One unlock path (Invariant 1).** `passRitual(courseId, moduleId, clock?)` is the only action in the
+app that writes `modules`. It throws unless the module *is* that course's current rung — a rung
+further up, a module already passed, a sealed level, or a course whose ladder the store has not been
+handed all refuse and write nothing — and it stamps `passedAt` from the injected `Clock`.
+`markStudied` marks, and cannot unlock: reading every module in the ladder leaves every status
+exactly where it was.
+
+`src/state/unlockPath.test.ts` is that promise's mechanical half, in three parts: it slices every
+action out of `store.ts` **by name** and fails if more than one contains a write to `modules`; it
+*calls* every action against a course with a passed rung and fails if any but `passRitual` changes
+the map (the call table is asserted to cover the store's whole action surface, so a new action
+cannot skip the check by being new); and it scans every shipped file for a `setState` call, because
+an action list is not a gate if a screen can write past it.
 
 Two rules the scaffold bakes in, before you write a component:
 

@@ -6,8 +6,11 @@ import {
   initialState,
   migrate,
   persistedSlice,
+  progressionInput,
   useAppStore,
 } from './store.ts';
+import { currentRungId, deriveStatuses, ladderFromLevels } from '../engine/progression.ts';
+import { levelsFixture } from '../test/courseContent.ts';
 import type { CourseState } from './types.ts';
 
 /**
@@ -134,6 +137,234 @@ describe('ensureCourse', () => {
     ensureCourse('hi-mr');
 
     expect(useAppStore.getState().courses['hi-mr']?.sessionCount).toBe(14);
+  });
+});
+
+/* ------------------------------------------------------------------ progression */
+
+/** The emitted ladder, as the course layer would hand it over: L1's third rung is unauthored. */
+function hiMrLadder() {
+  return ladderFromLevels(levelsFixture('hi-mr').levels);
+}
+
+/** A clock the test owns, so `passedAt` is an assertion rather than a timestamp. */
+const AT = '2026-02-02T02:40:00.000Z';
+const fixedClock = () => AT;
+
+/** hi-mr, with its ladder registered and nothing passed. */
+function bootHiMr(ladder = hiMrLadder()) {
+  const { ensureCourse, setLadder } = useAppStore.getState();
+  ensureCourse('hi-mr');
+  setLadder('hi-mr', ladder);
+}
+
+describe('setLadder', () => {
+  it('gives a course its ladder, and that ladder never reaches storage', () => {
+    bootHiMr();
+
+    expect(useAppStore.getState().ladders['hi-mr']?.[0]?.moduleIds).toEqual([
+      'L1-M1',
+      'L1-M2',
+      'L1-M3',
+    ]);
+    expect(Object.keys(stored().state as object)).not.toContain('ladders');
+  });
+
+  it('is not a write when the ladder is the one already registered', () => {
+    const ladder = hiMrLadder();
+    bootHiMr(ladder);
+    const before = useAppStore.getState().ladders;
+
+    useAppStore.getState().setLadder('hi-mr', ladder);
+
+    expect(useAppStore.getState().ladders).toBe(before);
+  });
+
+  it('keeps a ladder per course — hi-mr cannot answer questions about en-ar', () => {
+    bootHiMr();
+
+    expect(currentRungId(progressionInput(useAppStore.getState(), 'hi-mr'))).toBe('L1-M1');
+    expect(currentRungId(progressionInput(useAppStore.getState(), 'en-ar'))).toBeNull();
+  });
+});
+
+describe('markStudied', () => {
+  it('records the first open of a module, and is idempotent after that', () => {
+    bootHiMr();
+    const { markStudied } = useAppStore.getState();
+
+    markStudied('hi-mr', 'L1-M1');
+    const studied = useAppStore.getState().courses['hi-mr']?.studied;
+    markStudied('hi-mr', 'L1-M1');
+
+    expect(studied).toEqual({ 'L1-M1': true });
+    // Same object back: a second open is not a write, so it cannot re-render the ladder either.
+    expect(useAppStore.getState().courses['hi-mr']?.studied).toBe(studied);
+  });
+
+  it('marks without unlocking — reading every module leaves every status where it was', () => {
+    bootHiMr();
+    const before = deriveStatuses(progressionInput(useAppStore.getState(), 'hi-mr'));
+
+    for (const moduleId of ['L1-M1', 'L1-M2', 'L1-M3', 'L2-M1']) {
+      useAppStore.getState().markStudied('hi-mr', moduleId);
+    }
+
+    const after = deriveStatuses(progressionInput(useAppStore.getState(), 'hi-mr'));
+    expect(useAppStore.getState().courses['hi-mr']?.modules).toEqual({});
+    // Only the current rung notices at all, and only by moving unlocked → in_progress.
+    expect(before['L1-M1']).toBe('unlocked');
+    expect(after['L1-M1']).toBe('in_progress');
+    expect(after['L1-M2']).toBe('locked');
+    expect(after['L2-M1']).toBe('locked');
+  });
+
+  it('stays inside its course', () => {
+    bootHiMr();
+    useAppStore.getState().ensureCourse('en-ar');
+    const enAr = useAppStore.getState().courses['en-ar'];
+
+    useAppStore.getState().markStudied('hi-mr', 'L1-M1');
+
+    expect(useAppStore.getState().courses['en-ar']).toBe(enAr);
+  });
+});
+
+describe('passRitual (Invariant 1 — the only unlock path)', () => {
+  it('passes the current rung and stamps it from the clock it was given', () => {
+    bootHiMr();
+
+    useAppStore.getState().passRitual('hi-mr', 'L1-M1', fixedClock);
+
+    expect(useAppStore.getState().courses['hi-mr']?.modules).toEqual({
+      'L1-M1': { status: 'passed', passedAt: AT },
+    });
+    expect(
+      (stored().state as { courses: Record<string, CourseState> }).courses['hi-mr']?.modules,
+    ).toEqual({ 'L1-M1': { status: 'passed', passedAt: AT } });
+  });
+
+  it('defaults to the system clock — the app calls it with two arguments', () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(1_770_000_000_000);
+    bootHiMr();
+
+    useAppStore.getState().passRitual('hi-mr', 'L1-M1');
+
+    expect(useAppStore.getState().courses['hi-mr']?.modules['L1-M1']?.passedAt).toBe(
+      '2026-02-02T02:40:00.000Z',
+    );
+    vi.useRealTimers();
+  });
+
+  it('moves the ladder on: the next rung becomes current, fresh again', () => {
+    bootHiMr();
+
+    useAppStore.getState().passRitual('hi-mr', 'L1-M1', fixedClock);
+
+    const statuses = deriveStatuses(progressionInput(useAppStore.getState(), 'hi-mr'));
+    expect(currentRungId(progressionInput(useAppStore.getState(), 'hi-mr'))).toBe('L1-M2');
+    expect(statuses['L1-M1']).toBe('passed');
+    expect(statuses['L1-M2']).toBe('unlocked');
+  });
+
+  it('refuses a rung further up the ladder, and writes nothing on the way out', () => {
+    bootHiMr();
+    const before = useAppStore.getState().courses;
+
+    expect(() => useAppStore.getState().passRitual('hi-mr', 'L1-M2', fixedClock)).toThrow(
+      /not hi-mr's current rung \(L1-M1\)/,
+    );
+    // The whole course map, by reference: a refusal is not a write.
+    expect(useAppStore.getState().courses).toBe(before);
+    expect(useAppStore.getState().courses['hi-mr']?.modules).toEqual({});
+  });
+
+  it('refuses a module the learner already passed — the ritual has moved on', () => {
+    bootHiMr();
+    useAppStore.getState().passRitual('hi-mr', 'L1-M1', fixedClock);
+    const passed = useAppStore.getState().courses['hi-mr']?.modules;
+
+    expect(() =>
+      useAppStore.getState().passRitual('hi-mr', 'L1-M1', () => '2026-09-09T09:09:09.000Z'),
+    ).toThrow(/current rung \(L1-M2\)/);
+    expect(useAppStore.getState().courses['hi-mr']?.modules).toBe(passed);
+  });
+
+  it('refuses everything when the store has no ladder for that course', () => {
+    useAppStore.getState().ensureCourse('hi-mr');
+
+    expect(() => useAppStore.getState().passRitual('hi-mr', 'L1-M1', fixedClock)).toThrow(
+      /no rung is current/,
+    );
+    expect(useAppStore.getState().courses['hi-mr']?.modules).toEqual({});
+  });
+
+  it('opens a sealed level only when the level below it is complete (PRD-design §5)', () => {
+    const ladder = ladderFromLevels([
+      {
+        modules: [
+          { id: 'L1-M1', hasContent: true },
+          { id: 'L1-M2', hasContent: true },
+        ],
+      },
+      { modules: [{ id: 'L2-M1', hasContent: true }] },
+    ]);
+    bootHiMr(ladder);
+    const { passRitual } = useAppStore.getState();
+
+    passRitual('hi-mr', 'L1-M1', fixedClock);
+    expect(() => passRitual('hi-mr', 'L2-M1', fixedClock)).toThrow(/current rung \(L1-M2\)/);
+    passRitual('hi-mr', 'L1-M2', fixedClock);
+
+    expect(currentRungId(progressionInput(useAppStore.getState(), 'hi-mr'))).toBe('L2-M1');
+  });
+
+  it('passes in one course only — the other ladders do not move (Invariant 8)', () => {
+    bootHiMr();
+    const { ensureCourse, setLadder, passRitual } = useAppStore.getState();
+    ensureCourse('en-ar');
+    setLadder('en-ar', ladderFromLevels(levelsFixture('en-ar').levels));
+    const enAr = useAppStore.getState().courses['en-ar'];
+
+    passRitual('hi-mr', 'L1-M1', fixedClock);
+
+    expect(useAppStore.getState().courses['en-ar']).toBe(enAr);
+    expect(useAppStore.getState().courses['en-ar']).toEqual(emptyCourseState());
+    expect(currentRungId(progressionInput(useAppStore.getState(), 'en-ar'))).toBe('L1-M1');
+  });
+});
+
+describe('progressionInput', () => {
+  it('reads the passed set off the modules map and the flags off studied', () => {
+    bootHiMr();
+    useAppStore.getState().markStudied('hi-mr', 'L1-M1');
+    useAppStore.getState().passRitual('hi-mr', 'L1-M1', fixedClock);
+
+    const input = progressionInput(useAppStore.getState(), 'hi-mr');
+
+    expect([...input.passed]).toEqual(['L1-M1']);
+    expect(input.studied('L1-M1')).toBe(true);
+    expect(input.studied('L1-M2')).toBe(false);
+  });
+
+  it('reports nothing exit-ready until #95 injects the real predicate', () => {
+    bootHiMr();
+
+    expect(progressionInput(useAppStore.getState(), 'hi-mr').exitAvailable('L1-M1')).toBe(false);
+    expect(
+      progressionInput(useAppStore.getState(), 'hi-mr', (id) => id === 'L1-M1').exitAvailable(
+        'L1-M1',
+      ),
+    ).toBe(true);
+  });
+
+  it('answers for a course the store has never seen without creating it', () => {
+    const input = progressionInput(useAppStore.getState(), 'fr-de');
+
+    expect(input.levels).toEqual([]);
+    expect(input.studied('L1-M1')).toBe(false);
+    expect(useAppStore.getState().courses['fr-de']).toBeUndefined();
   });
 });
 

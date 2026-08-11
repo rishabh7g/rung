@@ -2,29 +2,35 @@
  * The state store (#82) — zustand + persist over one localStorage document, `rung:state`
  * (docs/01-plan.md §4, §6; PRD §8 F7).
  *
- * It is deliberately THIN. It owns the two things that are nobody else's job — which course is
- * active, and the per-course subtree existing at all — plus settings, and nothing more. The
- * domain actions land in their own tickets and write through this same shape: progression
- * (#83), production + review queue (#95), the session snapshot (#96), the full course-switch
- * flow with its toast (#106). Adding them here early would make those tickets conflict, and
- * would put rules in the store that belong in the pure engine.
+ * It stays THIN, and the rules stay out of it. It owns which course is active, the per-course
+ * subtree existing at all, settings, and the two writes progression needs (#83) — and every rule
+ * those two obey is derived in `src/engine/progression.ts`, which the store asks rather than
+ * reimplements. The remaining domain actions land in their own tickets and write through this same
+ * shape: production + review queue (#95), the session snapshot (#96), the full course-switch flow
+ * with its toast (#106).
  *
- * Two properties this module is responsible for keeping true:
+ * Three properties this module is responsible for keeping true:
  *
  *   • **Switching never destroys progress (Invariant 8).** `setActiveCourse` writes one string.
  *     Nothing in this file deletes or rewrites a course subtree, and `ensureCourse` returns the
  *     state untouched when the course is already there — so a re-boot, a switch, and a
  *     course that has temporarily vanished from a build all leave the stored ladders alone.
+ *   • **One unlock path (Invariant 1).** `passRitual` is the only action that writes `modules`,
+ *     and it refuses any module that is not the current rung. `unlockPath.test.ts` proves both —
+ *     mechanically over this file's source, and behaviourally over every action the store exposes.
  *   • **No dates.** Nothing here stamps a time; when an action needs one it takes a `Clock`
- *     (`clock.ts`). `passedAt` will be the only date in the document.
+ *     (`clock.ts`). `passedAt` is the only date in the document.
  */
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
+import { currentRungId, type LevelPlan, type ProgressionInput } from '../engine/progression.ts';
+import { systemClock, type Clock } from './clock.ts';
 import {
   STATE_VERSION,
   type AppState,
   type CourseId,
   type CourseState,
+  type ModuleId,
   type Settings,
 } from './types.ts';
 
@@ -61,7 +67,21 @@ export function initialState(): AppState {
   };
 }
 
-/** What the store does, on top of what it holds. Four actions, and one of them is for tests. */
+/**
+ * The ladder the course layer has loaded, per course — content, not progress.
+ *
+ * It is held here and **never persisted** (`persistedSlice` takes the four state keys and nothing
+ * else) because a build's ladder is derived from what that build shipped: a stored copy would
+ * outlive its content and answer questions about rungs that no longer exist. The course layer sets
+ * it from `levels.json` when it resolves (`ladderFromLevels`), and until it does, `passRitual` has
+ * no ladder to check a rung against — so nothing can pass. A ladder the store has not been given is
+ * not a ladder anyone can climb.
+ */
+export interface LoadedContent {
+  ladders: Record<CourseId, readonly LevelPlan[]>;
+}
+
+/** What the store does, on top of what it holds. One of these is for tests. */
 export interface AppActions {
   /**
    * Creates the empty subtree for a course, once. Idempotent by identity: an existing course
@@ -75,11 +95,56 @@ export interface AppActions {
    */
   setActiveCourse: (courseId: CourseId) => void;
   setSetting: <K extends keyof Settings>(key: K, value: Settings[K]) => void;
+  /**
+   * Hands the store a course's ladder, as loaded from `levels.json` (`ladderFromLevels`). Call it
+   * from an effect when the levels resolve, not during a render — it writes. Passing the same array
+   * back is not a write, so a re-render that re-resolves the same content changes nothing.
+   */
+  setLadder: (courseId: CourseId, ladder: readonly LevelPlan[]) => void;
+  /**
+   * Records that the learner has opened a module — the `studied` flag [D22] reads off this, and it
+   * is the only thing that flips a fresh rung card to "Practice". Idempotent: marking a module the
+   * learner has already read is not a write.
+   *
+   * It marks; it does not unlock. Studying every module in the ladder leaves every status exactly
+   * where it was (Invariant 1).
+   */
+  markStudied: (courseId: CourseId, moduleId: ModuleId) => void;
+  /**
+   * Passes a module — see the comment block on the implementation. THE ONLY WRITER OF `modules`
+   * (Invariant 1), and it refuses anything but the current rung.
+   */
+  passRitual: (courseId: CourseId, moduleId: ModuleId, clock?: Clock) => void;
   /** Dev + tests only: back to first-run state. No screen may call this — there is no Erase. */
   _reset: () => void;
 }
 
-export type AppStore = AppState & AppActions;
+export type AppStore = AppState & LoadedContent & AppActions;
+
+/**
+ * The pure engine's input, assembled for one course out of what the store holds: that course's
+ * ladder, its passed set (`modules`' keys — the map holds passed modules and nothing else) and its
+ * `studied` flags. Exported because the screens derive from the same input the store guards with:
+ * the Ladder (#86) and the rung card (#87) read `deriveStatuses`/`rungStage` off this.
+ *
+ * `exitAvailable` defaults to `() => false` — the real predicate (every sentence self-marked
+ * got-it ≥ 2×) arrives with the production counters in **#95**, and until the counters exist,
+ * "nothing is exit-ready" is the honest answer rather than a placeholder.
+ */
+export function progressionInput(
+  state: AppState & LoadedContent,
+  courseId: CourseId,
+  exitAvailable: (moduleId: ModuleId) => boolean = () => false,
+): ProgressionInput {
+  const course = state.courses[courseId];
+
+  return {
+    levels: state.ladders[courseId] ?? [],
+    passed: new Set(Object.keys(course?.modules ?? {})),
+    studied: (moduleId) => course?.studied[moduleId] === true,
+    exitAvailable,
+  };
+}
 
 /**
  * What actually goes to storage: the state, never the actions. Exported so the drift guard
@@ -119,8 +184,11 @@ export function migrate(_persisted: unknown, fromVersion: number): AppState {
 
 export const useAppStore = create<AppStore>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       ...initialState(),
+      // Content the course layer hands over at runtime, and the one part of the store that a
+      // reload rebuilds rather than restores.
+      ladders: {},
 
       ensureCourse: (courseId) =>
         set((state) =>
@@ -136,7 +204,76 @@ export const useAppStore = create<AppStore>()(
       setSetting: (key, value) =>
         set((state) => ({ settings: { ...state.settings, [key]: value } })),
 
-      _reset: () => set(initialState()),
+      setLadder: (courseId, ladder) =>
+        set((state) =>
+          state.ladders[courseId] === ladder
+            ? state
+            : { ladders: { ...state.ladders, [courseId]: ladder } },
+        ),
+
+      markStudied: (courseId, moduleId) =>
+        set((state) => {
+          const course = state.courses[courseId] ?? emptyCourseState();
+          if (course.studied[moduleId] === true) return state;
+
+          return {
+            courses: {
+              ...state.courses,
+              [courseId]: { ...course, studied: { ...course.studied, [moduleId]: true } },
+            },
+          };
+        }),
+
+      /* ------------------------------------------------------------------------------------
+       * INVARIANT 1 — THE SINGLE UNLOCK PATH.
+       *
+       * This action is the ONLY writer of `modules` in the app. Nothing else marks a module
+       * passed: not a screen, not a migration, not a debug helper. "Progression only through the
+       * generative exit ritual, learner-confirmed" (PRD §2 Invariant 1) is a product promise, and
+       * a promise with two implementations is a promise with none — so it has one, here, and
+       * `unlockPath.test.ts` fails if a second one is ever written.
+       *
+       * The rule it enforces: the module must BE the course's current rung, as
+       * `src/engine/progression.ts` derives it from the ladder and the passed set. Anything else
+       * throws and writes nothing — a module further up (there is no skipping a rung), a module
+       * already passed (the ritual has moved on), a module of a sealed level, or any module at all
+       * when the store has not been handed that course's ladder yet.
+       *
+       * What it writes is one entry: `{status: 'passed', passedAt}`. `passedAt` comes from the
+       * injected `Clock` (`clock.ts`, the app's only date-construction site) — a receipt for the
+       * module list, never a schedule (Invariant 2), and injectable so a test pins it without
+       * touching global time.
+       *
+       * #103 wraps this: `completeRitual` will enrol the module's sentences into the review queue
+       * in the same write. It must call through here rather than beside it.
+       * ---------------------------------------------------------------------------------- */
+      passRitual: (courseId, moduleId, clock = systemClock) => {
+        const current = currentRungId(progressionInput(get(), courseId));
+        if (current !== moduleId) {
+          throw new Error(
+            `passRitual: ${moduleId} is not ${courseId}'s current rung (${current ?? 'no rung is current'}) — the exit ritual is the only unlock path (Invariant 1)`,
+          );
+        }
+
+        const passedAt = clock();
+        set((state) => {
+          const course = state.courses[courseId] ?? emptyCourseState();
+
+          return {
+            courses: {
+              ...state.courses,
+              [courseId]: {
+                ...course,
+                modules: { ...course.modules, [moduleId]: { status: 'passed', passedAt } },
+              },
+            },
+          };
+        });
+      },
+
+      // Back to first-run state, ladders included: the course layer re-registers them on boot, and
+      // a ladder left behind would outlive the state it describes.
+      _reset: () => set({ ...initialState(), ladders: {} }),
     }),
     {
       name: STORAGE_KEY,
