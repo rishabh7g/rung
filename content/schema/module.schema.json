@@ -40,17 +40,18 @@
       }
     },
     "verified": {
-      "description": "Native-speaker gate. Never authored as true — only the reviewer flips it (with verifiedBy + verifiedAt).",
+      "description": "Ship gate: true means this module has been reviewed and cleared to reach a learner, and tools/content-build.ts puts it in a strict (learner) build. It is not authored as true by the writing pass — it is flipped by whoever signs off the review, and verifiedBy records who or what performed that review (a native speaker, an LLM pass, an owner decision — the record must name it, not imply it).",
       "type": "boolean"
     },
     "verifiedBy": {
-      "description": "Explicit null slot until the native gate signs off.",
+      "description": "Who or what cleared this module to ship, named plainly (e.g. \"Asha K. — native Marathi speaker\" or \"Claude Opus 5 — LLM review, authorised by repo owner\"). Null until it ships; tools/validate.ts requires a non-empty value whenever verified is true.",
       "type": ["string", "null"],
       "minLength": 1
     },
     "verifiedAt": {
+      "description": "Date of that review, YYYY-MM-DD. Null until it ships; tools/validate.ts requires it whenever verified is true.",
       "type": ["string", "null"],
-      "format": "date-time"
+      "format": "date"
     },
     "fixture": {
       "description": "Dev-only sample module (en-es / en-ar, PRD §17). Relaxes the 10-sentence / pool >= 6 budget in tools/validate.ts; fixtures may never ship in a learner build.",

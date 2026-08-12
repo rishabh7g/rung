@@ -54,8 +54,8 @@ jobs:
       # precache through `tools/pwa.ts`. Default `/` is untouched for dev.
       #
       # `npm run build`, not `vite build`: prebuild runs content:build STRICT, so
-      # what deploys carries only native-verified content — an empty ladder until
-      # #64 verifies L1-M1/M2, which is the honest state of this product.
+      # what deploys carries only content the gate cleared — hi-mr L1-M1..M10 since
+      # 2026-08-13 (#110/#111), and nothing that has not been reviewed and signed.
       - name: Build
         run: VITE_BASE=/rung/ npm run build
 

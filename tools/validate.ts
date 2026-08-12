@@ -300,18 +300,20 @@ export function validateModule(
     });
   }
 
-  // the native gate leaves its signature
+  // A shipped module names its reviewer. This is the guard that keeps the record honest: the
+  // flag alone says "cleared to reach a learner" and says nothing about who cleared it, so
+  // verified: true without a signature is a claim with no author and is rejected here.
   if (module.verified) {
     if (typeof module.verifiedBy !== 'string' || module.verifiedBy.trim() === '') {
       issues.push({
         path: '/verifiedBy',
-        message: 'verified: true requires verifiedBy (who ran the native gate)',
+        message: 'verified: true requires verifiedBy (who or what reviewed this module)',
       });
     }
     if (typeof module.verifiedAt !== 'string' || module.verifiedAt.trim() === '') {
       issues.push({
         path: '/verifiedAt',
-        message: 'verified: true requires verifiedAt (when the native gate ran)',
+        message: 'verified: true requires verifiedAt (when that review ran)',
       });
     }
   }

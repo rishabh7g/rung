@@ -1,5 +1,27 @@
 # LLM linguistic review — hi-mr L1-M1…L1-M5
 
+> ## 2026-08-13 — the flags were flipped, on the owner's authority
+>
+> All ten hi-mr L1 modules now carry `verified: true`, with
+> `verifiedBy: "Fable (Claude Fable 5) — LLM review, authorised by repo owner"` and
+> `verifiedAt: "2026-08-13"`. The strict/production build ships them, and the live app at
+> https://rishabh7g.github.io/rung/ now serves this content to a learner.
+>
+> **What that flag now attests, and what it does not.** The repo owner (Rishabh) explicitly and
+> repeatedly authorised the flip, with the consequence stated to him each time: the review behind
+> these ten modules is **this LLM pass** — not a native speaker. `verifiedBy` says so in the
+> content files themselves, `content/schema/module.schema.json` now describes `verified` as the
+> ship gate it actually is (content cleared to reach a learner) rather than as a native-speaker
+> gate, and `tools/validate.ts` refuses any `verified: true` that does not name its reviewer and
+> date. The record claims exactly the check that was run and no more.
+>
+> **The native gate is still unmet.** #64, #110 and #111 stay OPEN. The ~18 open questions listed
+> in these two documents (9 here, 9 in the other half) are still outstanding and still need a
+> native Marathi speaker; nothing below was answered by flipping a flag. Everything this pass
+> could not hear — the sound notes, the register chips, the naturalness calls — remains exactly as
+> uncertain as it was on 2026-08-12.
+
+
 **This is NOT the native-speaker gate.** It is a rigorous LLM pass over the five authored hi-mr
 modules, run at the owner's explicit request as a *pre-pass* so that the eventual native walkthrough
 (#64 for M1–M2, #110 for M3–M5) is a short confirmation rather than a from-scratch read.
@@ -11,6 +33,9 @@ The reviewer is Claude (Opus 5), which is **not a native Marathi speaker**. Acco
   (`content/schema/module.schema.json`: _"Native-speaker gate. Never authored as true — only the
   reviewer flips it"_), and `tools/content-build.ts` uses it to decide what reaches a learner. An
   LLM self-certifying LLM-drafted Marathi is exactly the thing that flag exists to prevent.
+  **[Superseded 2026-08-13 — the owner authorised the flip anyway; see the note at the top. The
+  flag is now flipped, `verifiedBy` names this LLM pass, and the schema wording quoted here has
+  been rewritten to match what the flag really gates.]**
 - The acceptance criteria of #64 and #110 that require a **named native speaker** remain unmet.
   Both issues stay open.
 
@@ -188,16 +213,22 @@ where guessing would be worse than asking.
   सोतो, गया, सोई, खाती) — none leaks into a word row, a `forms` entry or a pool item, so none is
   indexed as teachable Marathi.
 
-## What would change if the flag were flipped
+## What changed when the flag was flipped (2026-08-13)
 
-Recorded here so the native reviewer's PR is mechanical rather than exploratory. Flipping
-`verified: true` (+ `verifiedBy`, `verifiedAt`) on M1–M5 changes what the **strict** build ships —
-today it ships nothing for hi-mr. The one place that is pinned:
+This section predicted the mechanics; here is what the flip actually cost, all ten modules at once:
 
-- `tools/content-build.test.ts` (~line 1118) asserts the strict-build inventory line
-  `'hi-mr: 0 modules — L1-M1, …, L1-M10 unverified (native gate #64; --with-unverified ships them in
-  dev)'` and the accompanying skipped-id list (~line 1133). Both need updating to
-  `hi-mr: 5 modules (L1-M1..M5)` with M6–M10 as the remaining unverified set.
+- `tools/content-build.test.ts` — the strict-build test now asserts
+  `hi-mr: 10 modules (L1-M1..M10)` and a skipped list of the two fixture courses, and a second test
+  asserts every strictly-shipped module names a reviewer and a date.
+- `tools/validate.test.ts`, `src/course/types.test.ts` — the "never true in this repo" assertions
+  became "true only with a signature".
+- `content/schema/module.schema.json` — `verified` is described as the ship gate it is, `verifiedBy`
+  as who or what reviewed the module; `verifiedAt` is now a plain `date` (YYYY-MM-DD).
+- **Fonts and payload.** The Devanagari subsets are generated against shipped content, so they went
+  from ~4 KiB per weight to ~86–90 KiB: `BUDGET fonts` 99.1 → **361.2 KiB**, `BUDGET total` 204.4 →
+  **548.1 KiB gzip**. Both blew their limits exactly as docs/05-perf-notes.md §4 predicted; §4 now
+  records the rebalance (380 KiB / 580 KiB) and why the cheaper options did not apply.
+- The service worker precaches 43 files / 1173 KiB instead of 41 / 1073 KiB.
 
-Nothing else in the build is inventory-pinned; `content:validate` already accepts a verified module
-provided `verifiedBy` and `verifiedAt` are non-empty.
+`content:validate` needed no change: it already required `verifiedBy` and `verifiedAt` on a verified
+module, and that rule is now the guard that keeps this record honest.
