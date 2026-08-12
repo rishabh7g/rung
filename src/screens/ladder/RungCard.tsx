@@ -36,6 +36,7 @@ import { Link } from 'react-router-dom';
 import { useStrings } from '../../course/strings.ts';
 import type { RungStage } from '../../engine/progression.ts';
 import { PRACTICE_PATH, RITUAL_PATH } from '../../shell/routes.tsx';
+import { ProductionDots } from '../module/ProductionDots.tsx';
 import { RegistrationMarks } from '../RegistrationMarks.tsx';
 import { rungLabel } from './rungLabel.ts';
 import beat from './unlockBeat.module.css';
@@ -56,11 +57,30 @@ interface RungCardProps {
    * replay it: it is a prop, never a state, and a re-render never turns it on by itself.
    */
   unlocked?: boolean;
+  /**
+   * Per-sentence got-it counts, in authored order — the writes, drawn (design/tokens.md §6.1
+   * anatomy). Empty while the module's sentences have not loaded, and for a `pending` rung
+   * whose module is not authored: a count of sentences that do not exist yet is not a count,
+   * so the row is simply absent there (the prototype papers over it with the authored module's
+   * numbers).
+   */
+  production?: readonly number[];
 }
 
-export function RungCard({ stage, moduleId, title, job, dir, unlocked = false }: RungCardProps) {
+export function RungCard({
+  stage,
+  moduleId,
+  title,
+  job,
+  dir,
+  unlocked = false,
+  production = [],
+}: RungCardProps) {
   const strings = useStrings();
   const modulePath = `/module/${moduleId}`;
+  // Clamped at the two writes a pair can draw, so the count and the dots never disagree — a
+  // sentence produced five times has said everything it can say at 2 (PRD §8 F1).
+  const writes = production.reduce((sum, produced) => sum + Math.min(produced, 2), 0);
 
   return (
     <div
@@ -78,6 +98,19 @@ export function RungCard({ stage, moduleId, title, job, dir, unlocked = false }:
       <p className={styles.job} dir={dir}>
         {job}
       </p>
+
+      {production.length > 0 && (
+        <div className={styles.dotsRow}>
+          {/* The pairs are aria-hidden inside the component, like every dot drawing in the app;
+              the count beside them is the announcement. */}
+          {production.map((produced, index) => (
+            <ProductionDots key={index} produced={produced} />
+          ))}
+          <span className={styles.writes}>
+            {writes} / {production.length * 2}
+          </span>
+        </div>
+      )}
 
       {stage === 'fresh' && (
         <>

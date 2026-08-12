@@ -51,6 +51,7 @@ import { LevelStrip, type LevelCell, type SquareState } from './ladder/LevelStri
 import { RungCard } from './ladder/RungCard.tsx';
 import { RungMarker } from './ladder/RungMarker.tsx';
 import { rungLabel } from './ladder/rungLabel.ts';
+import { useRungProduction } from './useExitAvailable.ts';
 import { useProgression } from './useProgression.ts';
 import styles from './LadderScreen.module.css';
 
@@ -62,6 +63,10 @@ export default function LadderScreen() {
   // `passRitual` guards writes with (`./useProgression.ts`), production counters included, so the
   // rung card's `exit_ready` stage is read here rather than injected (#95).
   const { levels, input, ready } = useProgression();
+  // The current rung's per-sentence counters, for the card's dots row (§6.1). Asked here rather
+  // than inside the card because hooks may not live behind the early returns below — and the rung
+  // is the same derivation the stage reads, so the two cannot name different modules.
+  const rungProduction = useRungProduction(currentRungId(input));
   const justUnlocked = useUnlockBeat();
   // The import's confirmation (#108): when the navigation says a backup was just restored, the
   // one toast — in the words of the course the file made active, which is the course this render
@@ -185,6 +190,7 @@ export default function LadderScreen() {
                 job={module.job}
                 dir={course.dir}
                 unlocked={module.id === beatRung}
+                production={rungProduction}
               />
             ) : statuses[module.id] === 'passed' ? (
               <PassedRung
@@ -287,6 +293,8 @@ interface CurrentRungProps extends RungProps {
   stage: RungStage;
   /** The beat lands here: this rung is the one the pass just opened. */
   unlocked: boolean;
+  /** Per-sentence got-it counts for the card's dots row (§6.1) — empty until the module loads. */
+  production: readonly number[];
 }
 
 /**
@@ -299,7 +307,7 @@ interface CurrentRungProps extends RungProps {
  * the title is no longer a link: the card's primary CTA is the permanent way into the module, and
  * a `pending` rung has no module to link to at all.
  */
-function CurrentRung({ stage, moduleId, title, job, dir, unlocked }: CurrentRungProps) {
+function CurrentRung({ stage, moduleId, title, job, dir, unlocked, production }: CurrentRungProps) {
   return (
     <li className={styles.currentItem}>
       <RungMarker state="current" />
@@ -310,6 +318,7 @@ function CurrentRung({ stage, moduleId, title, job, dir, unlocked }: CurrentRung
         job={job}
         dir={dir}
         unlocked={unlocked}
+        production={production}
       />
     </li>
   );
