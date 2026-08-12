@@ -72,6 +72,10 @@ smaller mark for nothing.
 
 `favicon-32.png` is here for an offline reason, not a cosmetic one — see §4.
 
+> **#115 re-cut this set** from the ratified §6.4 construction grid after the header component
+> adopted it — same pipeline, same five files, and the iOS splash set beside them. The bytes
+> above are #90's receipt; §11 is the current one.
+
 ## 3. Precache everything, route nothing
 
 `registerType: 'autoUpdate'`, workbox `generateSW`, `cleanupOutdatedCaches` on, and
@@ -198,11 +202,9 @@ Nothing below is claimed by this ticket:
 
 - **A real Add-to-Home-Screen install**, and how the icons look on an actual launcher and iOS
   home screen — headless Chrome can report installability, not the install (#91, #115).
-- **iOS splash images** (`apple-touch-startup-image`, the full generated set) — checklist §3.3
-  calls them a P5 brand deliverable (#91/#115). The three iOS basics are here; the splash set is
-  not.
-- **`black-translucent` in practice** — the status bar only overlays the app once installed and
-  launched from the home screen.
+- **`black-translucent` in practice**, and the splash set on a real cold standalone launch —
+  the images ship (#115, §11), but the status bar only overlays the app and the splash only
+  shows once installed and launched from the home screen.
 - **Safari's own offline behaviour**, and the Chrome-Android/Safari-iOS current-1 test matrix
   (checklist §3.7, PRD-engineering §10). This gate is Chromium on a Pi.
 - **The later phases of the gate** — "run a session, complete a ritual, export backup"
@@ -247,3 +249,38 @@ VITE_BASE=/rung/ npm run build                         # what the deploy builds 
 Then: load once online, kill the preview server, cold-start the browser against the same profile
 with the network off, and walk Ladder → Module → Sentence Detail. Every response should report
 `fromServiceWorker`.
+
+## 11. The ratified mark, the final icons, the iOS splash set (#115)
+
+#69's formal spec landed the mark's construction grid in `design/tokens.md` §6.4 — a 22-unit
+square: rails at x 5.5/16.5 (y 1 → 21), outer rungs at y 4.5/17.5, hairline 1.5, and the middle
+rung the one solid object, a 3-unit accent bar. `src/shell/RailsMark.tsx` now carries that grid
+verbatim (it had shipped the interim 20-grid hairline version), so the header, the icons and the
+splash all changed together in the one place the mark lives. `npm run icons:build` re-cut the
+five icons from it — same sizes, same mark heights, ~2.8–3.2 KB apiece.
+
+The maskable arithmetic §2 explains moved with the geometry: the ink box is now 12.5 × 21.5 in a
+viewBox of 22, so at 50% height the box's half-diagonal is **0.289 × size** — still well inside
+the 0.4 safe radius, still asserted as a number in `tools/make-icons.test.ts`.
+
+**The splash set** (`npm run splash:build` → `tools/make-splash.ts`) is the checklist §3.3 item
+#90 deferred. iOS ignores the manifest's `background_color`, so a cold standalone launch flashes
+white unless an `apple-touch-startup-image` matches the device's EXACT size. Eleven portrait
+iPhone viewports (SE → 17 Pro Max, ~70 KiB in total, `public/icons/splash/`), each the header
+lockup at 5% of the screen height — mark read out of `RailsMark.tsx` by make-icons' parser, the
+wordmark `BRAND` set in the real Barlow Condensed 700 (converted woff2 → TTF at generation time
+because Pango reads no woff2), `--color-text` on exactly `--color-bg`. No iPad rows and no
+landscape: the product targets P1's phone and the manifest pins `orientation: portrait`.
+
+Three deliberate boundaries, each with a test in `tools/make-splash.test.ts`:
+
+- **`index.html` is cross-checked against the generator** — one `<link>` per device, exact media
+  query, exact filename; a device row added without its link (or vice versa) is a red test.
+- **The set is NOT precached.** The app never fetches a splash image — Safari does, once, at
+  Add-to-Home-Screen. The precache glob is `icons/*.png`, whose `*` does not cross into
+  `icons/splash/`; precaching would cost every Android first visit ~70 KiB it can never use.
+- **The budget follows the same truth** (`tools/payload-budget.ts`): `total` carves the splash
+  set out (it is not first-visit payload) and a new `splash` row meters it raw, ≤ 100 KiB.
+
+Not claimed here, as in §8: how the set looks on a physical iPhone. The install-and-cold-launch
+walkthrough on both platforms is the device-bound tail of #115.

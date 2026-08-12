@@ -166,24 +166,30 @@ CHROME_PATH=~/.cache/ms-playwright/chromium-1232/chrome-linux/chrome \
   --output=json --output-path=./lh.json --quiet
 ```
 
-## 6. The budget table after #114
+## 6. The budget table after #114 (and #115's splash row)
 
-`tools/payload-budget.ts` now carries three rows, still one line each on every full
+`tools/payload-budget.ts` now carries four rows, still one line each on every full
 `scripts/verify.sh`:
 
-| id    | meters                              | measure | limit   | at baseline |
-| ----- | ----------------------------------- | ------- | ------: | ----------: |
-| fonts | every `.woff2`                      | raw     | 150 KiB |    99.1 KiB |
-| js    | every `.js` (bundle + workbox + sw) | gzip    | 200 KiB |    92.9 KiB |
-| total | everything in `dist/`               | gzip    | 400 KiB |   204.4 KiB |
+| id     | meters                                   | measure | limit   | at baseline |
+| ------ | ---------------------------------------- | ------- | ------: | ----------: |
+| fonts  | every `.woff2`                           | raw     | 150 KiB |    99.1 KiB |
+| js     | every `.js` (bundle + workbox + sw)      | gzip    | 200 KiB |    92.9 KiB |
+| total  | everything in `dist/` but `icons/splash/`| gzip    | 400 KiB |   204.4 KiB |
+| splash | `icons/splash/` (#115's iOS startup set) | raw     | 100 KiB |    70.3 KiB |
 
 `gzip` meters transfer (GitHub Pages serves text assets gzip; `gzipSync` at the default level is
-the approximation), `raw` meters disk — right for woff2, which is already compressed. `total` is
-honest as "the first visit" because the SW precache is all of `dist/` (§1): 400 KiB is what Slow
-4G moves in ~2.2 s, so the whole walk-away-from-the-wifi moment stays cheap, not just the
-interactive slice TTI gates. **§4's tripwire now trips twice:** when hi-mr's content passes the
-native gate, the ~+260 KiB of Devanagari subsets send `fonts` AND `total` red together — same
-deliberate rebalance, same options, written down up there.
+the approximation), `raw` meters disk — right for woff2 and PNG, which are already compressed.
+`total` is honest as "the first visit" because the SW precache is all of `dist/` (§1) — with one
+carve-out #115 added deliberately: the iOS splash set is **not** precached and never fetched by
+the app (Safari pulls the single matching image at Add-to-Home-Screen, `docs/05-pwa-notes.md`
+§11), so counting all eleven images against the first visit would be metering bytes no visit
+transfers. They meter under their own `splash` row instead; `tools/payload-budget.test.ts`
+asserts the two rows split `dist/` without losing a file. 400 KiB is what Slow 4G moves in
+~2.2 s, so the whole walk-away-from-the-wifi moment stays cheap, not just the interactive slice
+TTI gates. **§4's tripwire still trips twice:** when hi-mr's content passes the native gate, the
+~+260 KiB of Devanagari subsets send `fonts` AND `total` red together — same deliberate
+rebalance, same options, written down up there.
 
 ## 7. Reproducing
 
