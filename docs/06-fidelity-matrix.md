@@ -58,6 +58,13 @@ phone; recorded on #117).
   the three trap/tag sheets, `--mark-*` only in `SelfMark`, unlock keyframes only in
   `unlockBeat`). Now **mechanised app-wide** in `src/colourLaw.test.ts` — the allowlists are the
   sanction record; `styleContract.test.ts` still closes the raw-value back door.
+- **Ink ramp vs the prototype (#185, re-checked after the change):** the prototype's quiet levels
+  (40–55% ink) measure 2.42–3.63 : 1 as text on the paper, under WCAG AA, so the app paints them
+  at 65–75% instead — a **sanctioned colour divergence**, app-wide and colour-only: no geometry,
+  copy, state, type or ordering moved, so every cell above still matches state-for-state (the
+  contrast column simply improves). Rung-by-rung ratios and the mapping are in `design/tokens.md`
+  §1; `src/colourLaw.test.ts` composites each `color-mix()` rung onto every ground and fails under
+  4.5 : 1. Same shape of divergence as the accent's half-step down (#184).
 - **Reduced motion:** all four motions (reveal, expand, hold, unlock beat — plus toast and tick)
   collapse under `prefers-reduced-motion`; verified live over emulated media on the module
   expand and the reveal, and mechanised in `src/colourLaw.test.ts` (any sheet declaring

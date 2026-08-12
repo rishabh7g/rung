@@ -39,7 +39,7 @@
   margin: 0 0 0 auto;
   font: var(--text-caption);
   white-space: nowrap;
-  color: var(--ink-45);
+  color: var(--ink-65);
 }
 
 /* -------------------------------------------------------------------- the sentence */
@@ -65,13 +65,13 @@
 }
 
 /* The quiet native-script line, romanized courses only (design/tokens.md §1, §2): 15px in
-   `--ink-40`, in `--font-script-fallback` because Barlow draws no Arabic and Mukta is
+   `--ink-65`, in `--font-script-fallback` because Barlow draws no Arabic and Mukta is
    Devanagari. Same treatment as the reveal card's and the module list's (#88, #93). */
 .script {
   margin: var(--space-1) 0 0;
   font: var(--text-body);
   font-family: var(--font-script-fallback);
-  color: var(--ink-40);
+  color: var(--ink-65);
 }
 
 /**
@@ -84,7 +84,7 @@
   margin: var(--space-2) 0 0;
   font: var(--text-l2-cue);
   font-size: var(--devanagari-min-size);
-  color: var(--ink-55);
+  color: var(--ink-70);
   animation: expand-in var(--motion-expand) both;
 }
 
@@ -139,7 +139,7 @@
   margin: 0;
   font: var(--text-l2-cue);
   font-size: var(--devanagari-min-size);
-  color: var(--ink-50);
+  color: var(--ink-70);
 }
 
 /* ----------------------------------------------------------------------- the pager */
@@ -187,9 +187,11 @@
 
 /* The rung's first sentence has nothing before it. Dimmed rather than removed: the pair is a
    fixed shape at the foot of the card, and a Back that comes and goes moves Next under the
-   learner's thumb mid-phase. */
+   learner's thumb mid-phase. Dimmed to the ramp's floor rung, not below it (#185): an inactive
+   control is exempt from AA, but पीछे still has to be readable — and against the enabled label's
+   full ink (14.79 : 1) the floor's 4.93 : 1 reads as "off" at a glance anyway. */
 .back:disabled {
-  color: var(--ink-40);
+  color: var(--ink-65);
   cursor: default;
 }
 

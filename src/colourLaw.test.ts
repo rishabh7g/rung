@@ -22,6 +22,11 @@
  * The fifth is contrast (#184): every filled object the product paints text on clears WCAG AA
  * (4.5:1) — computed from `design/tokens.css`, not eyeballed. The CTA shipped at 3.71:1 for a
  * whole phase because nothing here could tell.
+ *
+ * The sixth is the other half of that (#185): the muted ink ramp. Its rungs are `color-mix()`
+ * over `--color-text`, so they only exist once composited onto a ground — this clause does that
+ * composite, walks every `color: var(--ink-*)` in `src/`, and holds each to 4.5:1. Four rungs
+ * (55/50/45/40) drew text at 3.63 → 2.42:1 before it existed.
  */
 import { describe, expect, it } from 'vitest';
 import tokensCss from '../design/tokens.css?raw';
@@ -191,8 +196,8 @@ function contrast(foreground: string, background: string): number {
  * full 4.5:1 and not the large-text 3:1 because none of these labels is WCAG "large" (≥24px, or
  * ≥18.66px at weight 700) — the CTA's 18px/600 is the case that missed (#184).
  *
- * Text on the *ground* is a different question and a different ticket: the quiet ink ramp
- * (`--ink-55…40`) is #185's, and its `color-mix()` values do not resolve here anyway.
+ * Text on the *ground* is the ink ramp's clause below (#185) — same arithmetic, one extra step
+ * (compositing the `color-mix()` onto the ground first).
  */
 const FILLS = [
   // The one that shipped at 3.71:1 — six CTAs plus the lit phase chip, all this pair (#184).
@@ -230,5 +235,141 @@ describe('contrast — every fill clears WCAG AA (PRD-design §10, #184)', () =>
     expect(contrast(colour('--color-bg'), colour('--color-accent'))).toBeCloseTo(4.71, 2);
     // The green self-mark is the tightest oklch pair — proof the oklch path is not a stub.
     expect(contrast('#f2f2f3', 'oklch(0.52 0.10 150)')).toBeCloseTo(4.7, 1);
+  });
+});
+
+/* ------------------------------------------------- the ink ramp (#185, §1) */
+
+/** sRGB 0–255 for any colour the package speaks — `toLinear` run backwards over `linearRgb`. */
+function srgb255(value: string): readonly [number, number, number] {
+  const encode = (channel: number): number =>
+    channel <= 0.0031308 ? channel * 12.92 : 1.055 * channel ** (1 / 2.4) - 0.055;
+
+  return linearRgb(value).map((channel) => encode(channel) * 255) as unknown as readonly [
+    number,
+    number,
+    number,
+  ];
+}
+
+/**
+ * One ink rung painted on one ground: `color-mix(in srgb, var(--color-text) N%, transparent)` is
+ * the text colour at alpha N/100, and the browser composites that over whatever is behind it —
+ * a straight per-channel lerp in sRGB. Nothing in the ramp is a colour until this happens, which
+ * is why #184's fills-only table could not see it.
+ */
+function inkOn(percent: number, ground: string): string {
+  const alpha = percent / 100;
+  const [ink, paper] = [srgb255(colour('--color-text')), srgb255(ground)];
+
+  const channel = (index: number): string =>
+    Math.round(alpha * ink[index]! + (1 - alpha) * paper[index]!)
+      .toString(16)
+      .padStart(2, '0');
+
+  return `#${channel(0)}${channel(1)}${channel(2)}`;
+}
+
+/** The ramp as `design/tokens.css` declares it: `--ink-<name>` → the percentage it mixes. */
+const INK_RAMP: ReadonlyMap<number, number> = new Map(
+  [
+    ...tokensCss.matchAll(
+      /--ink-(\d+)\s*:\s*color-mix\(in srgb,\s*var\(--color-text\)\s*([\d.]+)%,\s*transparent\)/g,
+    ),
+  ].map(([, name, percent]) => [Number(name), Number(percent)] as const),
+);
+
+/**
+ * Every ground the product paints ink text on. `--color-bg` is the paper and the darkest of them;
+ * the plates are lighter, and are here so a future plate colour cannot quietly become the tightest
+ * pair in the app without this failing.
+ */
+const GROUNDS = ['--color-bg', '--color-surface', '--mistake-bg', '--interference-bg'] as const;
+
+/** Every `color: var(--ink-N)` in `src/`, by rung, with the sheets a failure should name. */
+function inkTextRungs(): Map<number, string[]> {
+  const rungs = new Map<number, string[]>();
+
+  for (const [file, source] of Object.entries(STYLESHEETS)) {
+    for (const [, rung] of stripComments(source).matchAll(/\bcolor:\s*var\(--ink-(\d+)\)/g)) {
+      const sheets = rungs.get(Number(rung)) ?? [];
+      rungs.set(Number(rung), [...sheets, file]);
+    }
+  }
+
+  return rungs;
+}
+
+/** The lowest rung the design package lets text stand on (design/tokens.md §1). */
+const INK_TEXT_FLOOR = 65;
+
+/** WCAG 1.4.11: non-text — hairlines, strokes, the registration marks — needs 3:1, not 4.5:1. */
+const NON_TEXT = 3;
+
+describe('the muted ink ramp clears AA wherever it draws text (#185)', () => {
+  it('is named for its recipe — `--ink-N` mixes N% of --color-text', () => {
+    expect(INK_RAMP.size).toBeGreaterThanOrEqual(4);
+
+    for (const [name, percent] of INK_RAMP) expect(percent).toBe(name);
+  });
+
+  it.each([...inkTextRungs()].sort(([a], [b]) => b - a))(
+    '--ink-%d as text clears 4.5:1 on every ground',
+    (rung, sheets) => {
+      const percent = INK_RAMP.get(rung);
+      expect(percent, `design/tokens.css defines no --ink-${rung}`).toBeDefined();
+
+      for (const ground of GROUNDS) {
+        const measured = contrast(inkOn(percent!, colour(ground)), colour(ground));
+
+        expect(
+          Number(measured.toFixed(2)),
+          `--ink-${rung} on ${ground} measures ${measured.toFixed(2)}:1 — AA is ${AA}:1. ` +
+            `Drawn by ${[...new Set(sheets)].join(', ')}. None of the ramp's text is WCAG-large ` +
+            `(largest is --devanagari-min-size, 18px/400), so 4.5:1 is the whole bar.`,
+        ).toBeGreaterThanOrEqual(AA);
+      }
+    },
+  );
+
+  it('keeps the rungs below the floor for non-text only, and above 3:1 there', () => {
+    const drawingText = [...inkTextRungs().keys()].filter((rung) => rung < INK_TEXT_FLOOR);
+    expect(
+      drawingText,
+      `--ink-${drawingText.join('/')} is below the ${INK_TEXT_FLOOR}% text floor (design/tokens.md §1)`,
+    ).toEqual([]);
+
+    // What is left below the floor is `--ink-55`, the registration marks' stroke — decoration, so
+    // strictly exempt, but it clears the 1.4.11 bar anyway and the ramp keeps no rung that cannot.
+    for (const [rung, percent] of INK_RAMP) {
+      if (rung >= INK_TEXT_FLOOR) continue;
+
+      expect(
+        contrast(inkOn(percent, colour('--color-bg')), colour('--color-bg')),
+        `--ink-${rung} is under ${NON_TEXT}:1 — too faint even for a hairline`,
+      ).toBeGreaterThanOrEqual(NON_TEXT);
+    }
+  });
+
+  it('measures what the browser paints — the #185 rungs, before and after', () => {
+    const onPaper = (percent: number): number =>
+      contrast(inkOn(percent, colour('--color-bg')), colour('--color-bg'));
+
+    // The four measurements on the record in the issue, sampled over CDP against the live build.
+    expect(onPaper(55)).toBeCloseTo(3.63, 1);
+    expect(onPaper(50)).toBeCloseTo(3.15, 1);
+    expect(onPaper(45)).toBeCloseTo(2.76, 1);
+    expect(onPaper(40)).toBeCloseTo(2.42, 1);
+
+    // And the ramp the design package now ships, quoted in design/tokens.md §1.
+    expect(onPaper(75)).toBeCloseTo(6.82, 1);
+    expect(onPaper(70)).toBeCloseTo(5.79, 1);
+    expect(onPaper(INK_TEXT_FLOOR)).toBeCloseTo(4.93, 1);
+
+    // Why 65 and not the arithmetic floor: 62% lands ON the line (4.4988 unrounded, 4.5005 once
+    // the channels quantise to 8 bits) and 61% misses. The floor rung is 65% so the quiet voice
+    // has margin over every ground, not a rounding coin-flip on one of them.
+    expect(onPaper(61)).toBeLessThan(AA);
+    expect(onPaper(62)).toBeCloseTo(AA, 2);
   });
 });

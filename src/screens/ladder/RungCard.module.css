@@ -36,7 +36,7 @@
 .job {
   margin: var(--space-1) 0 0;
   font: var(--text-secondary);
-  color: var(--ink-65);
+  color: var(--ink-75);
 }
 
 /* ------------------------------------------------------------------ the writes, drawn */
@@ -66,7 +66,7 @@
   margin: 0 0 0 var(--space-2);
   font: var(--text-caption);
   white-space: nowrap;
-  color: var(--ink-55);
+  color: var(--ink-70);
 }
 
 /* ------------------------------------------------------------------ course words */
@@ -97,14 +97,14 @@
 .note {
   composes: courseProse;
   margin: var(--space-2) 0 0;
-  color: var(--ink-50);
+  color: var(--ink-70);
 }
 
 /* The rung whose module is still being written — the note IS the state (strings: pendingAuthoring). */
 .pendingNote {
   composes: courseProse;
   margin: var(--space-3) 0 0;
-  color: var(--ink-55);
+  color: var(--ink-70);
 }
 
 /* ------------------------------------------------------------------- the actions */

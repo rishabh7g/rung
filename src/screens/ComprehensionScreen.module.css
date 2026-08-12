@@ -45,12 +45,13 @@
   margin: 0;
   font: var(--text-caption);
   white-space: nowrap;
-  color: var(--ink-45);
+  color: var(--ink-65);
 }
 
-/* The item's position inside the attempt. It is one shade quieter than the part it sits beside,
-   because the part is where the learner is in the ritual and this is where they are in a page of
-   it — and it is absent entirely on the interstitial, which is not an item. */
+/* The item's position inside the attempt: the part is where the learner is in the ritual, this is
+   where they are in a page of it — and it is absent entirely on the interstitial, which is not an
+   item. It used to sit one shade quieter than the part; since #185 both are the ramp's floor rung,
+   because the two shades below it (45/40%) were 2.75 : 1 and 2.42 : 1 and neither could stay. */
 .position {
-  color: var(--ink-40);
+  color: var(--ink-65);
 }
