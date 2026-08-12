@@ -122,9 +122,10 @@ L1-M1..M10 were flipped to `verified: true` on the repo owner's explicit authori
 backed by an **LLM linguistic review** (`docs/07-llm-review-L1-M1-M5.md`,
 `docs/07-llm-review-L1-M6-M10.md`, and the third pass that re-reviewed all ten blind,
 `docs/08-marathi-third-review.md`), so `npm run build` now ships the full L1 ladder.
-**The native-speaker gate is a separate, stricter bar and is still open** (#64, #110,
-#111): the **22 open questions in `docs/08-marathi-third-review.md`** — which supersede
-the two earlier lists — are still waiting on a native reviewer.
+**The native-speaker gate is a separate, stricter bar and is still unmet.** The three
+issues that tracked it (#64, #110, #111) were closed by the owner on 2026-08-13, so the
+**22 open questions in `docs/08-marathi-third-review.md`** — which supersede the two
+earlier lists — are the only remaining record of what a native reviewer still owes.
 `npm run dev` additionally relaxes the gate so the two fixture courses render.
 
 The two relaxations are independent (`--with-unverified`, `--with-fixtures`), and either

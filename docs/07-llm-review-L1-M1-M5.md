@@ -4,7 +4,9 @@
 > LLM pass re-reviewed all ten modules blind and then reconciled against this document. Its
 > corrections are applied, and **its open-questions list replaces the nine below** — work from
 > `docs/08-marathi-third-review.md`, not from here. This document stays as the record of what the
-> first pass found and changed.
+> first pass found and changed. One thing in it has since gone stale: where it says #64, #110 and
+> #111 **stay open**, they do not — the owner closed all three on 2026-08-13. The gate is still
+> unmet; it is simply untracked, which is why docs/08 is now its home.
 
 > ## 2026-08-13 — the flags were flipped, on the owner's authority
 >
