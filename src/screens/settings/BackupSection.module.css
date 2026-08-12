@@ -1,0 +1,132 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   Geometry follows design/Rung App v3.3.dc.html → Settings → Backup; every length is the
+   nearest token on the Industry scale (design/tokens.md §3, §4). */
+
+/* The explainer above the buttons — course copy, Mukta at the §2 floor like every course word
+   on this screen (the same missing-slot call `SettingsScreen.module.css` documents). */
+.note {
+  margin: 0;
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  color: var(--ink-50);
+}
+
+/* The prototype's two side-by-side secondary buttons, at --btn-secondary-height (46px) — the
+   token design/tokens.md §4 sets where the prototype writes 44 inline (the call PR #139/#140
+   made), clearing --tap-min either way. */
+.actions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.action {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--btn-secondary-height);
+  padding: var(--space-2) var(--space-3);
+  background: none;
+  border: var(--border-hairline);
+  color: inherit;
+  font: var(--text-body);
+  white-space: nowrap;
+  cursor: pointer;
+  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.action:active {
+  background: color-mix(in srgb, var(--color-text) 14%, transparent);
+}
+
+/* Lucide, sized and stroked from tokens — the prototype draws these two at the inline size. */
+.icon {
+  flex: none;
+  width: var(--icon-inline);
+  height: var(--icon-inline);
+  stroke-width: var(--icon-stroke);
+}
+
+/* ------------------------------------------------------------------- the two-sided confirm */
+
+.confirm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* The consequence line the confirm leads with — the course's own words, and the reason there
+   is no one-tap path. */
+.warning {
+  margin: 0;
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  color: var(--color-text);
+}
+
+.compare {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* One course's two sides — shell-rendered counts in the STORAGE rows' register. */
+.course {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-top: var(--space-2);
+  border-top: var(--border-hairline);
+}
+
+.courseLabel {
+  margin: 0;
+  font: var(--text-secondary);
+  font-weight: 600;
+}
+
+.side {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin: 0;
+  font: var(--text-secondary);
+  color: var(--ink-55);
+}
+
+.sideLabel {
+  min-width: 0;
+}
+
+/* The prototype bolds the value column of its Settings rows. */
+.sideCounts {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------------- the refusal */
+
+.failure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+/* The friendly half — the course's line: nothing was changed. */
+.failureLead {
+  margin: 0;
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  color: var(--ink-55);
+}
+
+/* The technical half — ImportError's path-naming reason, quiet English furniture. */
+.failureReason {
+  margin: 0;
+  font: var(--text-caption);
+  color: var(--ink-45);
+  overflow-wrap: anywhere;
+}

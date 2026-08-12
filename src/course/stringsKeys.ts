@@ -29,7 +29,7 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 88 keys: the 21 of PRD §4, the 5 the frozen screens forced
+ * file it is complaining about). 94 keys: the 21 of PRD §4, the 5 the frozen screens forced
  * (PR #120) — `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and the four
  * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — the 3 the Ladder
  * forced (#86): the counts-only pending line, the ownership footer and the sealed-level toast,
@@ -57,7 +57,11 @@
  * switching erases nothing (Invariant 8 in the course's own words), and the privacy line the
  * screen ends on — and the 2 the storage section forced (#107): the durability line's two
  * states, protected and best-effort, because what `navigator.storage.persist()` answered is a
- * promise about the learner's ladder and a promise is the course's to word.
+ * promise about the learner's ladder and a promise is the course's to word — and the 6
+ * export/import forced (#108): the backup explainer (what the one file holds, and that none of
+ * the learner's writing is in it — Invariant 4 in the course's own words), the import confirm's
+ * replace warning and its two decisions, the friendly refusal when a file cannot be read, and
+ * the toast the Ladder raises when a restore lands.
  *
  * Those sixty are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
  * as PR #120's were. The alternative each time was hardcoding learner-facing lines in the shell,
@@ -148,8 +152,14 @@ export const STRINGS_KEYS = [
   'settings.switchNote',
   'settings.storageProtected',
   'settings.storageBestEffort',
+  'settings.backupNote',
+  'settings.importReplace',
+  'settings.importConfirm',
+  'settings.importCancel',
+  'settings.importFailed',
   'settings.privacy',
   'switchToast',
+  'importToast',
   'storageNote',
   'notebookInvitation',
 ] as const;
@@ -412,9 +422,28 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    */
   'settings.storageProtected': [],
   'settings.storageBestEffort': [],
+  /**
+   * The Backup section's five (#108, PRD §8 F6/F7) — everything the learner reads around the one
+   * export file and the one door back in. `backupNote` is the honest explainer above the buttons:
+   * what the file holds (every course's ladder positions, counters, review queues, session
+   * positions) and what it cannot hold — the learner's writing, because the app never has it
+   * (Invariant 4). `importReplace` is the confirm's consequence line — the current progress goes,
+   * an open session's place with it — and `importConfirm`/`importCancel` are its two decisions,
+   * separate keys because they are two different promises (the call `practice.resumeContinue`/
+   * `resumeNew` made). `importFailed` is the friendly half of a refusal; the path-naming reason
+   * under it is `ImportError`'s and stays English, like every technical detail. None interpolates:
+   * the per-course counts in the confirm are rows the shell renders, not sentences.
+   */
+  'settings.backupNote': [],
+  'settings.importReplace': [],
+  'settings.importConfirm': [],
+  'settings.importCancel': [],
+  'settings.importFailed': [],
   'settings.privacy': [],
   /** Course pair labels, both directions. */
   switchToast: ['{to}', '{from}'],
+  /** The Ladder's arrival toast after a restore (#108) — a landing, so no number and no name. */
+  importToast: [],
   storageNote: [],
   notebookInvitation: [],
 };

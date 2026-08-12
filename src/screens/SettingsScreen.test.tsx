@@ -121,12 +121,13 @@ describe('the frozen section order (F6)', () => {
     expect(follows).toBeTruthy();
   });
 
-  it('holds #108’s slot without its scope — a stub that names it, and no other stub', async () => {
+  it('carries no stub — every section F6 names has its real body now (#107, #108)', async () => {
     await renderSettings();
 
-    expect(screen.getByText('Section stub — built in #108.')).toBeInTheDocument();
-    // #107's slot is filled — the STORAGE section is real now.
-    expect(screen.queryByText(/built in #107/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Section stub/)).not.toBeInTheDocument();
+    // #108's body stands in the slot: the two Backup controls under the explainer.
+    expect(screen.getByRole('button', { name: 'Export' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Import' })).toBeInTheDocument();
   });
 });
 

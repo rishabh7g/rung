@@ -232,6 +232,25 @@ const CALLS: Record<string, (store: AppStore) => void> = {
   // by refusing a rung that is not current.
   completeRitual: (store) =>
     store.completeRitual('hi-mr', 'L1-M2', ['L1-M2-S01'], () => '2026-02-02T02:40:00.000Z'),
+  // The F7 restore (#108) — the import's one write, and the second exemption below: it replaces
+  // the whole document with one `importState` has validated, so what it can put in `modules` is
+  // exactly what some device's `passRitual` already wrote there. Checked on its own below.
+  restoreBackup: (store) =>
+    store.restoreBackup({
+      stateVersion: 6,
+      activeCourse: 'hi-mr',
+      courses: {
+        'hi-mr': {
+          modules: { 'L1-M1': { status: 'passed', passedAt: '2026-02-02T02:40:00.000Z' } },
+          production: {},
+          reviewQueue: [],
+          sessionCount: 3,
+          studied: {},
+          session: null,
+        },
+      },
+      settings: { elapsedTickEnabled: true },
+    }),
   // Dev + tests only, and it can only erase: `_reset` blanks the whole document back to first run.
   // It cannot mark anything passed, which is what Invariant 1 is about. Checked on its own below.
   _reset: (store) => store._reset(),
@@ -271,7 +290,11 @@ describe('no other action can change what the learner has passed', () => {
 
   it.each(
     Object.keys(CALLS).filter(
-      (name) => name !== 'passRitual' && name !== 'completeRitual' && name !== '_reset',
+      (name) =>
+        name !== 'passRitual' &&
+        name !== 'completeRitual' &&
+        name !== 'restoreBackup' &&
+        name !== '_reset',
     ),
   )('%s leaves the modules map exactly as it found it', (name) => {
     seedHiMr();
@@ -304,6 +327,36 @@ describe('no other action can change what the learner has passed', () => {
 
     expect(useAppStore.getState().courses).toEqual({});
     expect(useAppStore.getState().ladders).toEqual({});
+  });
+});
+
+/**
+ * `restoreBackup` (#108) is the F7 import's one write, and its exemption above is an argument,
+ * not a hole: it REPLACES the document with one `importState` has already validated field by
+ * field, so every `modules` entry it can land is one a `passRitual` somewhere already wrote and
+ * exported — it carries passes, it cannot author one (the same posture as `migrate`, which the
+ * rehydrate path has always been allowed). The source scan stays honest about it too: the
+ * action's body holds no `modules` write of its own shape — the whole spread is the write.
+ */
+describe('restoreBackup replaces a validated document, and only whole', () => {
+  it('lands the document exactly — modules, activeCourse and all — and leaves ladders alone', () => {
+    seedHiMr();
+    const ladders = useAppStore.getState().ladders;
+
+    CALLS['restoreBackup']?.(useAppStore.getState());
+
+    expect(useAppStore.getState().activeCourse).toBe('hi-mr');
+    expect(modulesOf('hi-mr')).toEqual({
+      'L1-M1': { status: 'passed', passedAt: '2026-02-02T02:40:00.000Z' },
+    });
+    // A replace, not a merge: the seeded en-ar subtree is gone with the rest of the old document.
+    expect(useAppStore.getState().courses['en-ar']).toBeUndefined();
+    // Content is not progress: the loaded ladders are the very object they were.
+    expect(useAppStore.getState().ladders).toBe(ladders);
+  });
+
+  it('holds no modules write of its own — the source scan still names passRitual alone', () => {
+    expect(modulesWriters(SOURCES[STORE_FILE] ?? '', actionNames())).toEqual(['passRitual']);
   });
 });
 

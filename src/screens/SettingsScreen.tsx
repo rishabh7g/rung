@@ -5,9 +5,9 @@
  * F6 fixes the order and this screen renders exactly it: **COURSE** → **PRACTICE** →
  * **STORAGE** → **Backup** → the privacy line. STORAGE's body is #107's
  * (`./settings/StorageSection.tsx` — the quota meter, the computed rows, the durability and
- * honesty lines); Backup's export/import buttons are #108's and ship here as a slot — because
- * the ORDER is this ticket's contract and a section that appears later must appear where F6
- * already said it would.
+ * honesty lines); Backup's is #108's (`./settings/BackupSection.tsx` — the F7 export via the
+ * share sheet, and the import behind its two-sided confirm) — the ORDER stayed this ticket's
+ * contract, and each section's body arrived in the slot F6 already reserved for it.
  *
  * The COURSE section is the reason the screen exists (F0): a native `<select>` over the
  * manifest's courses — it ships even with one course, because the seam is the product promise —
@@ -39,6 +39,7 @@ import { useAppStore } from '../state/store.ts';
 import { Toast, useToast } from '../shell/Toast.tsx';
 import { rungLabel } from './ladder/rungLabel.ts';
 import { RegistrationMarks } from './RegistrationMarks.tsx';
+import BackupSection from './settings/BackupSection.tsx';
 import StorageSection from './settings/StorageSection.tsx';
 import { useProgression } from './useProgression.ts';
 import styles from './SettingsScreen.module.css';
@@ -164,11 +165,11 @@ export default function SettingsScreen() {
         <StorageSection />
       </section>
 
-      {/* -------------------------------------------------- Backup — #108's slot (F6 order) */}
+      {/* --------------------------------------- Backup — export / import (#108, F6, F7) */}
       <section className={styles.card}>
         <RegistrationMarks />
         <h3 className={styles.backupTitle}>Backup</h3>
-        <p className={styles.stubNote}>Section stub — built in #108.</p>
+        <BackupSection />
       </section>
 
       {/* The privacy line the screen (and the IA) ends on. The frame is shell furniture in the

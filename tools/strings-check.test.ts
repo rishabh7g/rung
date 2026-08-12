@@ -43,15 +43,15 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the three shipped bundles carry — 88 keys, nested, identical', () => {
+  it('is exactly what the three shipped bundles carry — 94 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(88);
+      expect(keys.length, courseId).toBe(94);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(88);
-    expect(new Set(STRINGS_KEYS).size).toBe(88);
+    expect(STRINGS_KEYS.length).toBe(94);
+    expect(new Set(STRINGS_KEYS).size).toBe(94);
   });
 
   it('carries the five keys PR #120 added beyond the issue text', () => {
@@ -216,6 +216,29 @@ describe('the canonical key list', () => {
     for (const key of added) expect(STRINGS_KEYS).toContain(key);
     // The honesty line the ritual has always ended on, which names the rung that just opened.
     expect(STRINGS_KEYS).toContain('verdict.line');
+  });
+
+  /**
+   * The Backup section's six (#108, PRD §8 F6/F7). The explainer, the confirm's replace warning
+   * and its two decisions, the friendly refusal and the Ladder's arrival toast are all promises
+   * about the learner's own history — the last things they read before handing it to a share
+   * sheet or replacing it with a file's — and the prototype writes every one in English for
+   * every course, which is what a prototype does and what this product cannot. The technical
+   * refusal reason under `settings.importFailed` stays English on purpose: it is `ImportError`'s
+   * path-naming line, shell furniture like every stack-adjacent detail. Draft values in all
+   * three bundles, flagged on #71.
+   */
+  it('carries the six keys export/import forced (#108)', () => {
+    const added: StringsKey[] = [
+      'settings.backupNote',
+      'settings.importReplace',
+      'settings.importConfirm',
+      'settings.importCancel',
+      'settings.importFailed',
+      'importToast',
+    ];
+
+    for (const key of added) expect(STRINGS_KEYS).toContain(key);
   });
 
   /**

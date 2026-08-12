@@ -127,6 +127,29 @@ export function justPassed(state: unknown): string | null {
 }
 
 /**
+ * **The import's arrival flag** (#108) — written by the Backup section's confirm as it lands the
+ * learner on the Ladder of the imported `activeCourse`, read by the Ladder to raise the one
+ * confirmation toast. The same one-shot mechanism as `passedRung` above, for the same reason:
+ * "a backup was just restored" is a fact about THIS navigation, not about the state — the
+ * restored document and a document restored last week are indistinguishable, and a flag in
+ * `rung:state` would be one more thing the import had to write and some screen had to clean up.
+ * The Ladder consumes it exactly as it consumes the beat's: read once, entry replaced stateless.
+ */
+export function restoredBackup(): { restoredBackup: true } {
+  return { restoredBackup: true };
+}
+
+/** Did this navigation come from the import's confirm? Anything else answers false. */
+export function justRestored(state: unknown): boolean {
+  return (
+    typeof state === 'object' &&
+    state !== null &&
+    'restoredBackup' in state &&
+    (state as { restoredBackup: unknown }).restoredBackup === true
+  );
+}
+
+/**
  * Which header a screen gets. `brand` = the rails mark + wordmark (the three tabs);
  * `back` = a chevron to the Ladder plus the screen's name (the children of a rung).
  */
