@@ -31,13 +31,13 @@
 }
 
 /* The quiet native-script line, romanized courses only (design/tokens.md §1, §2): 15px in
-   `--ink-40`, in `--font-script-fallback` because Barlow draws no Arabic and Mukta is
+   `--ink-65`, in `--font-script-fallback` because Barlow draws no Arabic and Mukta is
    Devanagari. Same treatment as the reveal card's third line (#93) and the module list's (#88). */
 .script {
   margin: var(--space-1) 0 0;
   font: var(--text-body);
   font-family: var(--font-script-fallback);
-  color: var(--ink-40);
+  color: var(--ink-65);
 }
 
 /* ---------------------------------------------------------------- before the reveal */
@@ -64,7 +64,7 @@
   margin: 0;
   font: var(--text-l2-cue);
   font-size: var(--devanagari-min-size);
-  color: var(--ink-65);
+  color: var(--ink-75);
 }
 
 /* The registration marks frame the reveal CTA rather than a border — the prototype's `blueprint`
@@ -141,7 +141,7 @@
   margin: 0;
   font: var(--text-l2-cue);
   font-size: var(--devanagari-min-size);
-  color: var(--ink-45);
+  color: var(--ink-65);
 }
 
 /* The scripted answer itself — course prose, one step below the line under test. */
@@ -155,7 +155,7 @@
   margin: 0;
   font: var(--text-l2-cue);
   font-size: var(--devanagari-min-size);
-  color: var(--ink-55);
+  color: var(--ink-70);
 }
 
 /* ------------------------------------------------------------------ the mark row */

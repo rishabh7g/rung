@@ -66,12 +66,12 @@
 .cue {
   composes: courseProse;
   margin-top: var(--space-1);
-  color: var(--ink-55);
+  color: var(--ink-70);
 }
 
 /**
  * The quiet native-script line, romanized courses only (design/tokens.md §1, §2): 15px in
- * `--ink-40`, set in `--font-script-fallback` because Barlow draws no Arabic and Mukta is
+ * `--ink-65`, set in `--font-script-fallback` because Barlow draws no Arabic and Mukta is
  * Devanagari — the design package's note is "bundle a Naskh face if Arabic ships". This is the
  * one place in the app that overrides a font shorthand's family, and it does it with the token.
  */
@@ -79,7 +79,7 @@
   margin-top: var(--space-1);
   font: var(--text-body);
   font-family: var(--font-script-fallback);
-  color: var(--ink-40);
+  color: var(--ink-65);
 }
 
 /* The chevron turns rather than swapping icon — one drawing, two states. */
@@ -141,14 +141,14 @@
   padding-top: var(--space-3);
   border-top: var(--border-hairline);
   font: var(--text-secondary);
-  color: var(--ink-55);
+  color: var(--ink-70);
 }
 
 /* Word-for-word, in the course's own words — course prose, so the same Mukta floor as the cue. */
 .literal {
   composes: courseProse;
   margin: 0;
-  color: var(--ink-50);
+  color: var(--ink-70);
 }
 
 /* ------------------------------------------------------------------ the word rows */

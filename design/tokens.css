@@ -62,13 +62,17 @@
   --toast-bg: var(--color-neutral-900);
   --toast-fg: var(--color-neutral-100);
 
-  /* Muted ink steps (used instead of extra grays — always color-mix on text) */
+  /* Muted ink steps (used instead of extra grays — always color-mix on text).
+     TEXT rungs 75/70/65 — 6.82 : 1 / 5.79 : 1 / 4.93 : 1 on --color-bg, so every one clears
+     WCAG AA at any size. 65% is the FLOOR: 62% lands exactly ON 4.5 : 1 and 61% misses, so no
+     rung the eye would call quiet survives below it — which is why the ramp lost 50/45/40 rather
+     than nudging them (#185).
+     NON-TEXT rung 55 — hairlines, strokes and marks ONLY, never `color:` (3.64 : 1, above the
+     3 : 1 WCAG 1.4.11 asks of non-text). src/colourLaw.test.ts enforces both halves. */
   --ink-75: color-mix(in srgb, var(--color-text) 75%, transparent);
+  --ink-70: color-mix(in srgb, var(--color-text) 70%, transparent);
   --ink-65: color-mix(in srgb, var(--color-text) 65%, transparent);
-  --ink-55: color-mix(in srgb, var(--color-text) 55%, transparent);
-  --ink-50: color-mix(in srgb, var(--color-text) 50%, transparent);
-  --ink-45: color-mix(in srgb, var(--color-text) 45%, transparent);
-  --ink-40: color-mix(in srgb, var(--color-text) 40%, transparent);  /* quiet script line */
+  --ink-55: color-mix(in srgb, var(--color-text) 55%, transparent);  /* non-text only */
 
   /* ── 3. Type ───────────────────────────────────────────────────────── */
   --font-heading: "Barlow Condensed", system-ui, sans-serif;   /* + weight 600 */

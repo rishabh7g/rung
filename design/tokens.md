@@ -24,13 +24,26 @@ Machine-usable file: **`design/tokens.css`** — load it and style against `var(
 | `--mistake-border/bg` | neutral-400/100 | struck-text mistake plate (never amber, never red) |
 | `--toast-bg/fg` | neutral-900/100 | toasts |
 
-**Muted ink:** never invent grays — use `--ink-75/65/55/50/45/40` (color-mix on `--color-text`). `--ink-40` is the quiet native-script line in romanized courses.
+**Muted ink:** never invent grays — use `--ink-75/70/65` for **text** and `--ink-55` for **non-text** (color-mix on `--color-text`). The quiet native-script line in romanized courses is `--ink-65`, the floor rung.
+
+**The ramp is three rungs deep, and it starts at 65% (#185).** The six-rung ramp (75/65/55/50/45/40) drew text at every level and the bottom four were below WCAG AA on the paper: 3.63 : 1 · 3.15 : 1 · 2.76 : 1 · 2.42 : 1, the last of them the practice pager's disabled पीछे. None of the ramp's text is WCAG "large" (the biggest is `--devanagari-min-size`, 18px/400; large starts at 24px, or 18.66px at 700), so the bar is the full 4.5 : 1 everywhere it is read.
+
+| rung | on `--color-bg` | on `--color-surface` | reads as | was |
+| --- | --- | --- | --- | --- |
+| `--ink-75` | **6.81 : 1** | 6.48 : 1 | strong secondary — word notes, the verdict's send-off, rung job lines | 75 and 65 |
+| `--ink-70` | **5.81 : 1** | 5.54 : 1 | the quiet workhorse — nav labels, phase bodies, notes, reassurance | 55 and 50 |
+| `--ink-65` | **4.92 : 1** | 4.76 : 1 | the floor — counters, captions, the native-script line, disabled labels | 45 and 40 |
+| `--ink-55` | 3.64 : 1 | — | **non-text only**: the registration marks' stroke (WCAG 1.4.11 asks 3 : 1) | unchanged |
+
+Why raise rather than re-space: **62% lands exactly on 4.5 : 1 and 61% misses**, so there is no room below the floor for a rung the eye would still call quiet. Six ordered text levels cannot all clear AA on this paper — three can, at ~4.4 L\* apart, which is a step you can actually see. So the ramp merged along its role seams (strong / quiet / faintest) instead of pretending to keep six. The merge costs 14 same-screen distinctions, and they are recorded here rather than lost — every one of them a **one-step neighbour** (55↔50 or 45↔40; e.g. the module card's *cue* and *literal*, the comprehension item's *part* and *position*, the read phase's *cue* and *nudge*). No two-step distinction went, and no pair inverted: what was quieter is still quieter or equal. `--color-text` itself (14.79 : 1) is still the loud end; disabled controls sit at the floor, not below it — an inactive control is AA-exempt, but 4.92 : 1 against an enabled label's full ink already reads as "off".
+
+`src/colourLaw.test.ts` composites each `color-mix()` rung onto every ground the product paints text on and fails under 4.5 : 1, and fails again if any sheet sets a `color:` to a rung below 65% — so the floor is enforced, not remembered.
 
 ## 2. Type
 
 - `--font-heading` Barlow Condensed 600 — headings, kickers, wordmark. `--font-body` Barlow — prose, UI copy.
 - `--font-devanagari` Mukta 400–700 — **all** Devanagari, body-role floor `--devanagari-min-size: 18px`, line-height 1.6, **no italics ever**.
-- Romanized-course primary strings use the L2 slots below (same sizes); the native-script secondary line renders at 15–16px in `--ink-40` (`--font-script-fallback`; bundle a Naskh face if Arabic ships).
+- Romanized-course primary strings use the L2 slots below (same sizes); the native-script secondary line renders at 15–16px in `--ink-65` (`--font-script-fallback`; bundle a Naskh face if Arabic ships).
 - Ramp (font shorthand tokens in tokens.css): brand 23 · verdict title 34 · rung title 26 · screen title 24 · L2 hero 32 · L2 card 26 · L2 list row 22 · L2 cue 20 · body 15 · secondary 13 · caption 11.5 · micro 10.5 · kickers 10–11 uppercase with `--kicker-tracking: .12em`.
 
 ## 3. Space, radius, elevation, borders
@@ -68,17 +81,17 @@ Only four movements exist; everything else is static. All durations in tokens.cs
 **Anatomy (identical in all four stages).** The current rung hangs off the ladder spine (1 px `--color-divider` vertical); the card indents 32 px, its marker a 19 px accent crosshair (`--color-accent`, stroke 1.2) on a `--color-bg` backing square, top-aligned with the card head. Container: blueprint object — `--border-hairline`, radius 0, `--color-bg` fill, four registration corners, padding 16px 16px 14px, and `--shadow-sm` (**the Ladder's only elevated object**).
 
 - **Kicker** "M3 · CURRENT RUNG": `--text-kicker` + `--kicker-tracking`, uppercase, `--color-accent-700`, nowrap — shell furniture, English in every course (raised on the copy freeze). While the one-shot just-unlocked flag is being consumed, a 10 px `unlocked` chip (accent-100 bg / accent-800 text) sits beside it — gone on the next visit.
-- **Title** `--text-rung-title`; **job line** `--text-secondary` in `--ink-65`.
-- **Production dots** (margin-top 12px): one stacked pair of `--dot-size` squares per sentence (write 1 above write 2; 3 px gap in the pair, 5 px between pairs) — a square fills `--dot-done` when its write exists, else `--dot-pending`. Writes line beside at 11 px `--ink-55`, **counts only** ("16 of 20 — …").
+- **Title** `--text-rung-title`; **job line** `--text-secondary` in `--ink-75`.
+- **Production dots** (margin-top 12px): one stacked pair of `--dot-size` squares per sentence (write 1 above write 2; 3 px gap in the pair, 5 px between pairs) — a square fills `--dot-done` when its write exists, else `--dot-pending`. Writes line beside at 11 px `--ink-70`, **counts only** ("16 of 20 — …").
 
 **The four stages — one loud action each; the stage guides, never gates** (the Practice tab stays reachable in every one):
 
 | stage | primary CTA | quieter row |
 | --- | --- | --- |
-| **fresh** (not studied) | "Start with the module" | note below, `--ink-50` (margin-top 7px): "Read it through once — Practice picks up from there. Nothing is locked; the tab stays open." |
+| **fresh** (not studied) | "Start with the module" | note below, `--ink-70` (margin-top 7px): "Read it through once — Practice picks up from there. Nothing is locked; the tab stays open." |
 | **studied** | "Practice" | centered ghost "revisit the module" (margin-top 4px) |
 | **production-complete** | "Exit ritual — open" | secondary pair "Practice" · "Module" — flex row, gap 8px, margin-top 8px |
-| **pending-authoring** | **none — the note IS the state**, `--ink-55` (margin-top 12px): "Sentences arrive once authored and native-verified. The rung waits." | centered ghost "practice earlier rungs" |
+| **pending-authoring** | **none — the note IS the state**, `--ink-70` (margin-top 12px): "Sentences arrive once authored and native-verified. The rung waits." | centered ghost "practice earlier rungs" |
 
 **Recipes.**
 - *Primary:* the card's ONE filled object — `--color-accent` fill, `--color-bg` text, full width, `min-height: var(--cta-height)`, margin-top 14px, radius 0; `:active` → `--color-accent-700`.
@@ -96,8 +109,8 @@ Only four movements exist; everything else is static. All durations in tokens.cs
 1. **Kicker** `COURSE` — `--text-kicker-sm` + tracking, `--color-accent-700`, margin-bottom 10px.
 2. **Label** "Active course" — 14px/600 `--font-body`, `<label for>` wired to the select.
 3. **The select is the platform's** — a native `<select>` on the `.input` recipe (`--color-surface` fill, hairline border, radius 0, padding 6px 10px) with two load-bearing overrides: **`min-height: var(--tap-min)`** (44 px target) and **`font-size ≥ 16px`** — below 16 px, iOS Safari zooms the page when the select focuses; never shrink it back (pwa-checklist §1). Shared `:focus-visible` outline. One `<option>` per installed course, lowercase pair name ("hindi → marathi").
-4. **Status line** — `--text-caption` in `--ink-55`, **counts only**: "Level 1 · 2 of 10 passed · M3 in progress" (or "· next rung pending authoring").
-5. **Reassurance footer** — 11px/1.55 `--ink-50` under a `--color-divider` hairline (padding-top 9px, margin-top 6px); copy frozen (§8): "Switching never erases anything — each course keeps its own ladder, review queue and counters. Come back anytime; it's exactly where you left it."
+4. **Status line** — `--text-caption` in `--ink-70`, **counts only**: "Level 1 · 2 of 10 passed · M3 in progress" (or "· next rung pending authoring").
+5. **Reassurance footer** — 11px/1.55 `--ink-70` under a `--color-divider` hairline (padding-top 9px, margin-top 6px); copy frozen (§8): "Switching never erases anything — each course keeps its own ladder, review queue and counters. Come back anytime; it's exactly where you left it."
 
 **States.**
 - **Closed** (rest): the card above; the selected option is the active course.
@@ -115,7 +128,7 @@ Only four movements exist; everything else is static. All durations in tokens.cs
 1. **Kicker** — `--text-kicker` + tracking, `--color-accent-700`: "COMPREHEND · फिर से" / "COMPREHEND · AGAIN".
 2. **Title** — `--text-rung-title`: "नए वाक्य, फिर से." / "Fresh sentences, once more."
 3. **Body** — course prose (Mukta floor; prototype 13.5px/1.65), the calm framing frozen: "एक जवाब अलग निकला — कोई बात नहीं, यही तो information है. pool से दो नए वाक्य लो, आराम से मिलाओ." — different is *information*, never *failure*.
-4. **Reassurance** — quieter, `--ink-50`: "Unlimited retries. The rung waits; nothing is counted against you."
+4. **Reassurance** — quieter, `--ink-70`: "Unlimited retries. The rung waits; nothing is counted against you."
 5. **CTA "Fresh sentences"** — primary block, `min-height: var(--cta-height)`, inside a **border-transparent blueprint wrapper** (registration corners, no box — the frame grammar at its quietest), margin-top 8px. Deals two fresh pool items, no repeats within a test.
 
 **The absences are the spec.** No attempt or failure counter anywhere — not "attempt 3", not "2 of ∞"; nothing about a failed round is stored (Invariant 4), so there is nothing to count with. No red — red belongs only to the self-mark the learner chose (§7 rule 2). No "wrong"/"failed" vocabulary, no shame state, no cooling-off, no alternate exit CTA (the back chevron is the shell's). Motion: `rowIn` only; reduced-motion static.

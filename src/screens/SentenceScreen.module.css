@@ -111,17 +111,17 @@
 .cue {
   composes: prose;
   margin-top: var(--space-1);
-  color: var(--ink-55);
+  color: var(--ink-70);
 }
 
-/* Romanized courses only: 15px in `--ink-40`, set in `--font-script-fallback` because Barlow
+/* Romanized courses only: 15px in `--ink-65`, set in `--font-script-fallback` because Barlow
    draws no Arabic and Mukta is Devanagari (design/tokens.md §2). Same recipe as the module
    list's quiet line — the app's only two font-family overrides, and both take the token. */
 .script {
   margin: var(--space-2) 0 0;
   font: var(--text-body);
   font-family: var(--font-script-fallback);
-  color: var(--ink-40);
+  color: var(--ink-65);
 }
 
 /* --------------------------------------------------------------------- 2 · gloss */
@@ -131,7 +131,7 @@
 .gloss {
   margin: 0;
   font: var(--text-secondary);
-  color: var(--ink-45);
+  color: var(--ink-65);
 }
 
 /* The word-for-word plate: an accent rule down the start edge, no fill (design/tokens.md §3 —
@@ -187,7 +187,7 @@
 
 .wordCue {
   composes: courseProse;
-  color: var(--ink-50);
+  color: var(--ink-70);
 }
 
 /* The chip is pushed to the row's end — `margin-inline-start: auto` so an RTL course flips it. */
@@ -204,7 +204,7 @@
 .forms {
   composes: prose;
   margin-top: var(--space-1);
-  color: var(--ink-50);
+  color: var(--ink-70);
 }
 
 /* --------------------------------------------------------------------- 4 · rules */
@@ -291,7 +291,7 @@
 .variationCue {
   composes: prose;
   margin-top: var(--space-1);
-  color: var(--ink-50);
+  color: var(--ink-70);
 }
 
 .variationChanged {
@@ -424,5 +424,5 @@
   margin: 0;
   font: var(--text-caption);
   white-space: nowrap;
-  color: var(--ink-50);
+  color: var(--ink-70);
 }

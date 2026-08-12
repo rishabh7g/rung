@@ -45,7 +45,7 @@
 
 .cue {
   composes: courseProse;
-  color: var(--ink-50);
+  color: var(--ink-70);
 }
 
 /* The chip ends the row — `margin-inline-start: auto`, so an RTL course flips it. */
@@ -53,9 +53,11 @@
   margin-inline-start: auto;
 }
 
-/* The note sits under the head as its second line, at `--ink-65` for the prototype's 60% ink. */
+/* The note sits under the head as its second line. The prototype's 60% ink; `--ink-75` since
+   #185, the top text rung — the quiet ramp starts at 65% now, and the note is a step above the
+   cue above it, not level with it. */
 .note {
   composes: courseProse;
   margin: var(--space-1) 0 0;
-  color: var(--ink-65);
+  color: var(--ink-75);
 }
