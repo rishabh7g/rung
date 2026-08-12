@@ -7,9 +7,9 @@
     "node": "^22.22.2 || >=24.15.0"
   },
   "scripts": {
-    "predev": "npm run content:build -- --with-unverified --with-fixtures",
+    "predev": "npm run content:build -- --with-unverified --with-fixtures && npm run fonts:build",
     "dev": "vite",
-    "prebuild": "npm run content:build",
+    "prebuild": "npm run content:build && npm run fonts:build",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "typecheck": "tsc -b",
@@ -17,6 +17,8 @@
     "lint": "eslint .",
     "content:validate": "tsx tools/validate.ts",
     "content:build": "tsx tools/content-build.ts",
+    "fonts:build": "tsx tools/font-subset.ts",
+    "budget": "tsx tools/payload-budget.ts",
     "content:prompt": "tsx tools/generate-prompt.ts",
     "icons:build": "tsx tools/make-icons.ts",
     "format": "prettier --write ."
@@ -39,6 +41,7 @@
     "@types/node": "^24.13.3",
     "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",
+    "@types/subset-font": "^2.3.0",
     "@vitejs/plugin-react": "^6.0.5",
     "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1",
@@ -49,6 +52,7 @@
     "jsdom": "^30.0.1",
     "prettier": "^3.9.6",
     "sharp": "^0.35.3",
+    "subset-font": "^2.5.0",
     "tsx": "^4.23.12",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.67.0",

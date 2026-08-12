@@ -62,6 +62,10 @@ export default defineConfig({
   base,
   // VitePWA runs after woff2Only so the precache manifest sees the fonts that actually shipped.
   plugins: [react(), htmlValues(), woff2Only(), VitePWA(pwaOptions(base))],
+  // Never inline assets as base64. The per-course Mukta subsets (#113) can drop under Vite's
+  // 4 KB default, and inlining one would hide it from the precache glob, the payload budget
+  // (`tools/payload-budget.ts`) and the byte accounting — while inflating it by a third.
+  build: { assetsInlineLimit: 0 },
   test: {
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],

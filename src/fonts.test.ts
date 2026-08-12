@@ -1,26 +1,34 @@
 /**
- * The fonts are bundled, and they are the fonts the tokens ask for (#85, [D15]).
+ * The fonts are bundled, and they are the fonts the tokens ask for (#85, [D15]) — and no more
+ * than them (#113).
  *
  * `--font-devanagari: "Mukta", system-ui, sans-serif` is a *request*. If Mukta 700 is not in the
  * bundle the browser does not fail, it substitutes: it synthesises a bold from 400, or drops to
  * `system-ui`, and on a device with no Devanagari installed that is a screen of boxes. Nothing
  * errors, no test goes red, and the first person to find out is the learner — which is why the
- * link between the ramp in `design/tokens.css` and the imports in `main.tsx` is checked
- * mechanically here, the same shape as the shell-purity and clock guards.
+ * link between the ramp in `design/tokens.css` and the bundle is checked mechanically here, the
+ * same shape as the shell-purity and clock guards.
  *
  * The ramp is the source of the requirement: every `--text-*` shorthand names a weight and a
  * family, so the set of (family, weight) pairs the product renders is derivable, and a new ramp
- * entry — or a weight changed from 600 to 700 — turns this red until the face is bundled. What a
- * scan cannot do is prove a glyph exists inside the face: that is `/dev/type` in a browser, and
- * the result is recorded in `docs/04-font-notes.md`.
+ * entry — or a weight changed from 600 to 700 — turns this red until the face is bundled. Since
+ * #113 the bundle is also held to the ramp in the OTHER direction: the app is offline-first and
+ * precaches every shipped byte, so a face nothing renders is not headroom, it is dead payload
+ * (`tools/payload-budget.ts` meters the total). What a scan cannot do is prove a glyph exists
+ * inside a face: that is `/dev/type` in a browser, recorded in docs/04-font-notes.md and
+ * docs/05-perf-notes.md.
+ *
+ * The bundle has two parts since #113: Barlow and Barlow Condensed come from @fontsource `latin`
+ * subset imports in `main.tsx`, and Mukta from `src/fonts/mukta.css`, whose woff2 payloads
+ * `tools/font-subset.ts` generates per course at build time.
  */
 import { describe, expect, it } from 'vitest';
 import tokensCss from '../design/tokens.css?raw';
 import indexHtml from '../index.html?raw';
 import mainSource from './main.tsx?raw';
-import muktaCss from '@fontsource/mukta/400.css?raw';
-import barlowCss from '@fontsource/barlow/400.css?raw';
-import barlowCondensedCss from '@fontsource/barlow-condensed/600.css?raw';
+import muktaCss from './fonts/mukta.css?raw';
+import barlowCss from '@fontsource/barlow/latin-400.css?raw';
+import barlowCondensedCss from '@fontsource/barlow-condensed/latin-600.css?raw';
 
 /* ------------------------------------------------------------ the tokens */
 
@@ -77,22 +85,41 @@ function familyOf(pkg: string): string {
     .join(' ');
 }
 
-/** Every face `main.tsx` imports: `@fontsource/mukta/700.css` → `Mukta 700`. */
+/**
+ * Every face the production graph carries: the `latin` subset imports in `main.tsx`
+ * (`@fontsource/barlow/latin-400.css` → `Barlow 400` — the dev-only `latin-ext` dynamic imports
+ * do not match and do not add faces), plus the weights `src/fonts/mukta.css` declares.
+ */
 function bundledFaces(): string[] {
-  return [...mainSource.matchAll(/@fontsource\/([a-z-]+)\/(\d{3})\.css/g)]
-    .map((match) => `${familyOf(match[1]!)} ${match[2]!}`)
-    .sort();
+  const faces = new Set<string>(
+    [...mainSource.matchAll(/@fontsource\/([a-z-]+)\/latin-(\d{3})\.css/g)].map(
+      (match) => `${familyOf(match[1]!)} ${match[2]!}`,
+    ),
+  );
+  for (const [, weight] of muktaCss.matchAll(/font-weight:\s*(\d{3})/g)) {
+    faces.add(`Mukta ${weight!}`);
+  }
+  return [...faces].sort();
 }
 
 /* -------------------------------------------------------------- the guard */
 
-describe('the bundle covers the ramp', () => {
+describe('the bundle covers the ramp — and only the ramp (#113)', () => {
   it('bundles every weight of every family design/tokens.css renders', () => {
     const missing = rampFaces().filter((face) => !bundledFaces().includes(face));
 
     expect(
       missing,
-      `${missing.join(', ')} — the ramp in design/tokens.css renders these and main.tsx does not import them.\nA missing weight is not an error: the browser synthesises the face and nobody is told [D15].`,
+      `${missing.join(', ')} — the ramp in design/tokens.css renders these and the bundle lacks them.\nA missing weight is not an error: the browser synthesises the face and nobody is told [D15].`,
+    ).toEqual([]);
+  });
+
+  it('bundles nothing the ramp does not render', () => {
+    const surplus = bundledFaces().filter((face) => !rampFaces().includes(face));
+
+    expect(
+      surplus,
+      `${surplus.join(', ')} — bundled, but no --text-* token renders them. The precache ships every byte (#90), so unused headroom is pure payload; #113 trimmed Mukta 500, Barlow 500/600 and Barlow Condensed 500 on exactly this ground.`,
     ).toEqual([]);
   });
 
@@ -107,13 +134,26 @@ describe('the bundle covers the ramp', () => {
     expect(faces).toContain('Barlow Condensed 600');
   });
 
-  it('imports the four Devanagari weights tokens.md §2 puts Mukta at', () => {
-    expect(bundledFaces().filter((face) => face.startsWith('Mukta'))).toEqual([
-      'Mukta 400',
-      'Mukta 500',
-      'Mukta 600',
-      'Mukta 700',
-    ]);
+  it('ships script subsets, never a whole family (#113)', () => {
+    // `@fontsource/mukta/400.css` bundles devanagari + latin + latin-ext + vietnamese; the
+    // subset-file imports (`latin-400.css`) and src/fonts/mukta.css carry only what renders.
+    const whole = [...mainSource.matchAll(/@fontsource\/[a-z-]+\/\d{3}\.css/g)].map((m) => m[0]);
+
+    expect(
+      whole,
+      `${whole.join(', ')} — a whole-family import ships every script subset; import the subset files instead (docs/05-perf-notes.md).`,
+    ).toEqual([]);
+  });
+
+  it('keeps latin-ext out of the production graph — dev builds only (#113)', () => {
+    // The static imports are the production bundle; latin-ext (the ī ā ū of romanized fixtures
+    // and /dev/type) may appear only as a dynamic import inside the `import.meta.env.DEV` branch.
+    const statics = [...mainSource.matchAll(/^import '([^']*latin-ext[^']*)';$/gm)].map(
+      (m) => m[1],
+    );
+
+    expect(statics).toEqual([]);
+    expect(mainSource).toContain("void import('@fontsource/barlow/latin-ext-400.css');");
   });
 });
 
@@ -138,7 +178,7 @@ describe('what the bundled stylesheets promise', () => {
   });
 
   it('serves woff2', () => {
-    for (const { css } of faces) expect(css).toMatch(/url\([^)]+\.woff2\)\s*format\('woff2'\)/);
+    for (const { css } of faces) expect(css).toMatch(/\.woff2'?\)\s*format\('woff2'\)/);
   });
 });
 

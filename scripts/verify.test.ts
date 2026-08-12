@@ -20,14 +20,14 @@ const VITEST_OUT = ['', ' Test Files  5 passed (5)', '      Tests  120 passed (1
   '\n',
 );
 
-type Step = 'TYPECHECK' | 'LINT' | 'PRETTIER' | 'TEST' | 'CONTENT' | 'BUILD';
+type Step = 'TYPECHECK' | 'LINT' | 'PRETTIER' | 'TEST' | 'CONTENT' | 'FONTS' | 'BUILD' | 'BUDGET';
 
 interface Scenario {
   /** Exit code per step; anything unset exits 0. */
   exits?: Partial<Record<Step, number>>;
   /** stdout per step; TEST defaults to a realistic vitest summary. */
   out?: Partial<Record<Step, string>>;
-  /** Drop `tools/content-build.ts` to exercise the CONTENT skip. */
+  /** Drop the `tools/` CLIs to exercise the CONTENT / FONTS / BUDGET skips. */
   withTools?: boolean;
   args?: string[];
 }
@@ -52,6 +52,8 @@ case "$(basename "$0") $*" in
   "npm run lint") key=LINT ;;
   "npm run test") key=TEST ;;
   "npm run content:build") key=CONTENT ;;
+  "npm run fonts:build") key=FONTS ;;
+  "npm run budget") key=BUDGET ;;
   "npx prettier --check .") key=PRETTIER ;;
   "npx vite build") key=BUILD ;;
   *) printf 'fake: unexpected invocation\\n' >&2; exit 99 ;;
@@ -62,8 +64,17 @@ exit_var="FAKE_\${key}_EXIT"
 exit "\${!exit_var-0}"
 `;
 
-const STEPS: Step[] = ['TYPECHECK', 'LINT', 'PRETTIER', 'TEST', 'CONTENT', 'BUILD'];
-const LOG_NAMES = ['types', 'lint', 'test', 'content', 'build'];
+const STEPS: Step[] = [
+  'TYPECHECK',
+  'LINT',
+  'PRETTIER',
+  'TEST',
+  'CONTENT',
+  'FONTS',
+  'BUILD',
+  'BUDGET',
+];
+const LOG_NAMES = ['types', 'lint', 'test', 'content', 'fonts', 'build', 'budget'];
 
 const sandboxes: string[] = [];
 
@@ -79,7 +90,9 @@ function verify(scenario: Scenario = {}): Run {
   writeFileSync(path.join(dir, 'scripts', 'verify.sh'), readFileSync(VERIFY_SH));
   if (scenario.withTools !== false) {
     mkdirSync(path.join(dir, 'tools'));
-    writeFileSync(path.join(dir, 'tools', 'content-build.ts'), '// stand-in for the real CLI\n');
+    for (const cli of ['content-build.ts', 'font-subset.ts', 'payload-budget.ts']) {
+      writeFileSync(path.join(dir, 'tools', cli), '// stand-in for the real CLI\n');
+    }
   }
 
   const bin = path.join(dir, 'bin');
@@ -127,23 +140,27 @@ describe('a green run', () => {
     const run = verify();
 
     expect(run.status).toBe(0);
-    expect(run.stdout).toBe('TYPES ok | LINT ok | TEST 120/120 ok | CONTENT ok | BUILD ok\n');
+    expect(run.stdout).toBe(
+      'TYPES ok | LINT ok | TEST 120/120 ok | CONTENT ok | FONTS ok | BUILD ok | BUDGET ok\n',
+    );
     expect(run.stderr).toBe('');
   });
 
-  it('runs the five steps in order, prettier inside LINT', () => {
+  it('runs the seven steps in order, prettier inside LINT', () => {
     expect(verify().calls).toEqual([
       'npm run typecheck',
       'npm run lint',
       'npx prettier --check .',
       'npm run test',
       'npm run content:build',
+      'npm run fonts:build',
       'npx vite build',
+      'npm run budget',
     ]);
   });
 
   it('leaves one log per step in .verify/', () => {
-    expect(verify().logs).toEqual(['types', 'lint', 'test', 'content', 'build']);
+    expect(verify().logs).toEqual(['types', 'lint', 'test', 'content', 'fonts', 'build', 'budget']);
   });
 
   it('reads the count off vitest, including when tests are skipped', () => {
@@ -157,7 +174,9 @@ describe('a green run', () => {
   it('falls back to a bare TEST ok if the reporter stops printing a count', () => {
     const run = verify({ out: { TEST: 'all good, trust me' } });
 
-    expect(run.stdout).toBe('TYPES ok | LINT ok | TEST ok | CONTENT ok | BUILD ok\n');
+    expect(run.stdout).toBe(
+      'TYPES ok | LINT ok | TEST ok | CONTENT ok | FONTS ok | BUILD ok | BUDGET ok\n',
+    );
   });
 
   it('counts a strict content build that ships nothing as ok', () => {
@@ -193,7 +212,9 @@ describe('the first failure stops the run', () => {
     ['LINT', 'PRETTIER', 20],
     ['TEST', 'TEST', 30],
     ['CONTENT', 'CONTENT', 40],
+    ['FONTS', 'FONTS', 45],
     ['BUILD', 'BUILD', 50],
+    ['BUDGET', 'BUDGET', 60],
   ] as [string, Step, number][])('%s failing (%s) exits %i', (label, step, code) => {
     const run = verify({ exits: { [step]: 1 } });
 
@@ -253,21 +274,27 @@ describe('the first failure stops the run', () => {
 });
 
 describe('flags', () => {
-  it('--fast drops the BUILD segment and never invokes vite', () => {
+  it('--fast drops BUILD and the BUDGET that reads its dist, and never invokes either', () => {
     const run = verify({ args: ['--fast'] });
 
     expect(run.status).toBe(0);
-    expect(run.stdout).toBe('TYPES ok | LINT ok | TEST 120/120 ok | CONTENT ok\n');
+    expect(run.stdout).toBe('TYPES ok | LINT ok | TEST 120/120 ok | CONTENT ok | FONTS ok\n');
     expect(run.calls).not.toContain('npx vite build');
+    expect(run.calls).not.toContain('npm run budget');
     expect(run.logs).not.toContain('build');
+    expect(run.logs).not.toContain('budget');
   });
 
-  it('reports CONTENT skip when the content tools are absent', () => {
+  it('reports CONTENT, FONTS and BUDGET skips when the tools are absent', () => {
     const run = verify({ withTools: false });
 
     expect(run.status).toBe(0);
     expect(run.stdout).toContain('CONTENT skip');
+    expect(run.stdout).toContain('FONTS skip');
+    expect(run.stdout).toContain('BUDGET skip');
     expect(run.calls).not.toContain('npm run content:build');
+    expect(run.calls).not.toContain('npm run fonts:build');
+    expect(run.calls).not.toContain('npm run budget');
   });
 
   it('rejects an unknown argument with usage on stderr', () => {
