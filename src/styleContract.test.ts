@@ -12,11 +12,15 @@
  * The scan reads `src/**` only. `design/tokens.css` is the source of the values and obviously
  * full of them; it is imported in place and never copied (`main.tsx`).
  *
- * Four things are deliberately allowed:
+ * Five things are deliberately allowed:
  *
  *   • **Comments.** They are stripped before the scan: the rules quote token values
  *     ("48px", "the design's 30px gap") to say what a var resolves to, which is the opposite of
  *     the habit this guards against.
+ *   • **`@font-face` blocks.** They are stripped too (#113): `font-family: 'Mukta'` inside one
+ *     DEFINES the face that `--font-devanagari` names — the opposite of styling an element with
+ *     a face by name, which is what the ban is about. `src/fonts/mukta.css` is the one such
+ *     sheet, and `src/fonts.test.ts` holds its faces to the ramp.
  *   • **`100dvh` and percentages.** Viewport and relative units are layout, not design values —
  *     there is no token for "as tall as the viewport" and there should not be.
  *   • **`0` and `calc()` on tokens.** `border: 0`, `margin-left: calc(-1 * var(--space-3))`: no
@@ -58,10 +62,16 @@ function stripComments(source: string): string {
   return source.replace(/\/\*[\s\S]*?\*\//g, (comment) => comment.replace(/[^\n]/g, ' '));
 }
 
+/** `@font-face` defines a face for the tokens to name; only styling WITH one is banned (#113). */
+function stripFontFaces(source: string): string {
+  // Same newline-preserving collapse as comments. @font-face bodies have no nested braces.
+  return source.replace(/@font-face\s*\{[^}]*\}/g, (block) => block.replace(/[^\n]/g, ' '));
+}
+
 function scanStylesheet(file: string, source: string): Violation[] {
   const violations: Violation[] = [];
 
-  stripComments(source)
+  stripFontFaces(stripComments(source))
     .split('\n')
     .forEach((line, index) => {
       for (const { what, pattern } of BANNED) {
@@ -130,5 +140,19 @@ describe('the scanner itself', () => {
     const commented = '/* --nav-item-height is 48px, #5980a6 is the accent */\n.a { color: red; }';
 
     expect(scanStylesheet('src/Planted.css', commented)).toEqual([]);
+  });
+
+  it('reads past an @font-face — defining a face is not styling with one (#113)', () => {
+    const declared = [
+      '@font-face {',
+      "  font-family: 'Mukta';",
+      "  src: url('./generated/mukta-devanagari-400.woff2') format('woff2');",
+      '}',
+      '.a { font-family: Mukta; }', // …but USING the name directly is still caught.
+    ].join('\n');
+
+    expect(scanStylesheet('src/Planted.css', declared).map((violation) => violation.line)).toEqual([
+      5,
+    ]);
   });
 });

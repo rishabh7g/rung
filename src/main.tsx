@@ -1,28 +1,30 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-// The three product faces, self-hosted [D15]. The prototype pulls Mukta off Google Fonts and an
-// offline PWA cannot: the first load with no network would fall back to a system face, and on a
-// device with no Devanagari installed that means boxes (design/pwa-checklist.md §2).
+// The three product faces, self-hosted [D15] and right-sized (#113). The prototype pulls Mukta
+// off Google Fonts and an offline PWA cannot: the first load with no network would fall back to
+// a system face, and on a device with no Devanagari installed that means boxes
+// (design/pwa-checklist.md §2).
 //
-// One import per (family, weight) — @fontsource ships woff2 with `font-display: swap`, and
-// `vite.config.ts` drops the .woff fallback it writes beside each one so only woff2 reaches
-// dist. Every weight the ramp in tokens.css asks for is here, and `src/fonts.test.ts` fails
-// naming any that goes missing: a weight the ramp names and the bundle lacks is not an error
-// anywhere, it is a browser silently synthesising the face.
-//
-// Mukta 500 and Barlow 400–600 are wider than today's ramp (tokens.md §2 puts Mukta at 400–700
-// and Barlow across the UI); the whole bundle is unsubset, which is #113's ticket — the byte
-// count and the first cuts to make are in docs/04-font-notes.md.
-import '@fontsource/mukta/400.css';
-import '@fontsource/mukta/500.css';
-import '@fontsource/mukta/600.css';
-import '@fontsource/mukta/700.css';
-import '@fontsource/barlow/400.css';
-import '@fontsource/barlow/500.css';
-import '@fontsource/barlow/600.css';
-import '@fontsource/barlow-condensed/500.css';
-import '@fontsource/barlow-condensed/600.css';
-import '@fontsource/barlow-condensed/700.css';
+// Only what the ramp renders ships, and only the script subsets it needs — `src/fonts.test.ts`
+// holds these imports to the (family, weight) pairs `design/tokens.css` asks for, in both
+// directions. Mukta is subset per course at build time (`tools/font-subset.ts` — its css below
+// is committed, its woff2 generated from the content build's output); Barlow and Barlow
+// Condensed carry open-ended UI English, so their @fontsource `latin` files ship whole while
+// latin-ext and vietnamese stay out of the graph. `vite.config.ts` drops @fontsource's `.woff`
+// fallbacks so only woff2 reaches dist. Byte accounting: docs/05-perf-notes.md.
+import './fonts/mukta.css';
+import '@fontsource/barlow/latin-400.css';
+import '@fontsource/barlow-condensed/latin-600.css';
+import '@fontsource/barlow-condensed/latin-700.css';
+
+if (import.meta.env.DEV) {
+  // latin-ext, for the surfaces only a dev build has: the en-* fixture courses and `/dev/type`'s
+  // diacritic rows (ī ā ū — docs/04-font-notes.md §4). Dynamic imports inside a DEV branch never
+  // enter a production graph — the same pattern as `src/dev/typeRoute.tsx`.
+  void import('@fontsource/barlow/latin-ext-400.css');
+  void import('@fontsource/barlow-condensed/latin-ext-600.css');
+  void import('@fontsource/barlow-condensed/latin-ext-700.css');
+}
 // design/ is read-only and re-copied wholesale from the design tooling, so tokens are
 // imported IN PLACE — token updates flow with zero copy step (docs/design-contract.md).
 import '../design/tokens.css';

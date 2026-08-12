@@ -3,7 +3,7 @@
 #
 # One line when everything passes, one failure block when it doesn't:
 #
-#   TYPES ok | LINT ok | TEST 120/120 ok | CONTENT ok | BUILD ok
+#   TYPES ok | LINT ok | TEST 120/120 ok | CONTENT ok | FONTS ok | BUILD ok | BUDGET ok
 #
 # Steps run in order and the FIRST failure stops the run, so a red run names
 # exactly one thing. Every step's stdout+stderr goes to .verify/<step>.log
@@ -15,7 +15,9 @@
 #   LINT      20   npm run lint, then npx prettier --check .
 #   TEST      30   npm run test            (segment carries the vitest count)
 #   CONTENT   40   npm run content:build   ("CONTENT skip" when tools/ is absent)
+#   FONTS     45   npm run fonts:build     (per-course subsets, #113; skip like CONTENT)
 #   BUILD     50   npx vite build          (omitted entirely with --fast)
+#   BUDGET    60   npm run budget          (payload gate over dist/, #113; omitted with --fast)
 #
 # usage: scripts/verify.sh [--fast]
 
@@ -111,12 +113,30 @@ else
   segments+=('CONTENT skip')
 fi
 
+# The subsets are derived from what CONTENT just emitted, so FONTS always runs
+# after it — a build against stale fonts is a build against stale content.
+if [ -f "$repo_root/tools/font-subset.ts" ]; then
+  run FONTS 45 "$log_dir/fonts.log" npm run fonts:build
+  segments+=('FONTS ok')
+else
+  segments+=('FONTS skip')
+fi
+
 if [ "$fast" -eq 0 ]; then
   # vite build directly, not `npm run build`: that would re-run tsc and
   # content:build via prebuild, so a content failure would resurface as
   # FAIL BUILD long after CONTENT had passed.
   run BUILD 50 "$log_dir/build.log" npx vite build
   segments+=('BUILD ok')
+
+  # The payload gate (#113) reads the dist/ BUILD just wrote, so it lives and
+  # dies with BUILD: --fast skips both.
+  if [ -f "$repo_root/tools/payload-budget.ts" ]; then
+    run BUDGET 60 "$log_dir/budget.log" npm run budget
+    segments+=('BUDGET ok')
+  else
+    segments+=('BUDGET skip')
+  fi
 fi
 
 line=''

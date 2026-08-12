@@ -18,9 +18,9 @@ import { DEV_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
 import { SHELL_ROUTES } from '../shell/routes.tsx';
 import { DEV_TYPE_PATH, devTypeRoute } from './typeRoute.tsx';
 
-/** The ramp's four Devanagari steps and the four weights tokens.md §2 puts Mukta at. */
+/** The ramp's four Devanagari steps and the three Mukta weights it renders (#113 trimmed 500). */
 const SIZES = [18, 22, 26, 32];
-const WEIGHTS = [400, 500, 600, 700];
+const WEIGHTS = [400, 600, 700];
 
 /** Built at runtime so this file's own source carries no Devanagari (`shellPurity.test.ts`). */
 const LLA = String.fromCodePoint(0x933);
@@ -121,7 +121,7 @@ describe('the Latin specimens', () => {
     }
   });
 
-  it('renders them in Barlow at both prose weights the UI uses', async () => {
+  it('renders them in Barlow at the one weight the ramp gives prose (#113)', async () => {
     await renderSpecimen();
 
     const weights = screen
@@ -129,7 +129,7 @@ describe('the Latin specimens', () => {
       .filter((list) => list.dataset.face === 'body')
       .map((list) => Number(list.dataset.weight));
 
-    expect(new Set(weights)).toEqual(new Set([400, 500, 600]));
+    expect(new Set(weights)).toEqual(new Set([400]));
   });
 
   it('shows the Barlow Condensed kickers and the wordmark weight', async () => {

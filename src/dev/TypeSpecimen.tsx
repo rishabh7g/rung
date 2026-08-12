@@ -5,9 +5,9 @@
  * Bundling a face is not the same as the face rendering. Mukta can be in `dist/`, `--font-devanagari`
  * can name it, and a conjunct can still come out as a box because the weight was never bundled,
  * the subset was wrong, or the token resolved to `system-ui` behind everyone's back. This page is
- * where that is looked at: the ramp's four Devanagari sizes × the four weights tokens.md §2 puts
- * the family at, the romanization diacritics the PRD singles out for Barlow [D15], and the
- * uppercase kickers with their tracking.
+ * where that is looked at: the ramp's four Devanagari sizes × the three weights the ramp renders
+ * (#113 trimmed the rest), the romanization diacritics the PRD singles out for Barlow [D15], and
+ * the uppercase kickers with their tracking.
  *
  * Three rules it keeps:
  *
@@ -58,10 +58,11 @@ const SIZES = [
   { px: 32, className: styles.s32, token: '--text-l2-hero' },
 ] as const;
 
-/** tokens.md §2: Mukta ships 400–700, and the ramp uses 400 (cue), 600 (card/list) and 700 (hero). */
+/** The ramp's Mukta weights — 400 (cue), 600 (card/list), 700 (hero). 500 was headroom no token
+    ever asked for and #113 trimmed it from the bundle; a row for it here would only show a
+    synthesised face. */
 const WEIGHTS = [
   { weight: 400, className: styles.w400 },
-  { weight: 500, className: styles.w500 },
   { weight: 600, className: styles.w600 },
   { weight: 700, className: styles.w700 },
 ] as const;
@@ -80,11 +81,9 @@ const BODY_STEPS = [
   { className: styles.secondary, token: '--text-secondary (13px)' },
 ] as const;
 
-const BODY_WEIGHTS = [
-  { weight: 400, className: styles.w400 },
-  { weight: 500, className: styles.w500 },
-  { weight: 600, className: styles.w600 },
-] as const;
+/** Barlow ships at 400 only — the ramp's four prose roles all ask for it and nothing asks for
+    500/600 (#113 trimmed that headroom too). */
+const BODY_WEIGHTS = [{ weight: 400, className: styles.w400 }] as const;
 
 /** Barlow Condensed: the kickers, their tracking, and the wordmark's own 700. */
 const HEADING_STEPS = [
