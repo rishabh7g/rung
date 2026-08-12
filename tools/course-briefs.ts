@@ -99,9 +99,14 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
       id: 'L1-M5',
       title: 'Yesterday',
       job: 'Past tense — the big gender zone',
-      patterns: ['मी काल + N + V-लो/-ले/-लं', 'तू काल + V-लास/-लीस', '<past statement> + का'],
+      patterns: [
+        'मी काल + N + V-ला/-ली/-लं',
+        'मी काल + V-लो/-ले',
+        'तू काल + V-लास/-लीस',
+        '<past statement> + का',
+      ],
       notes: [
-        'THE richest interference zone of the whole course: the past-tense ending agrees in gender and number, and with a transitive verb it follows the OBJECT (मी चहा प्यायलो vs मी कॉफी प्यायली) — Hindi "मैंने … पिया/पी" agrees too, but the ने-construction is gone: Marathi says मी, never *मीने. Tag these interference and spend the mistakes here.',
+        'THE richest interference zone of the whole course: with a transitive verb the past ending follows the OBJECT, never the speaker — मी भात खाल्ला (m) · मी कॉफी प्यायली (f) · मी पाणी प्यायलं (n). Hindi "मैंने … खाया/पी" agrees too, but the ने-construction is gone: मी and तू never take ने, so *मीने does not exist. Tag these interference and spend the mistakes here.',
         'Intransitive past agrees with the subject: मी गेलो (m) · मी गेले (f).',
         "काल anchors every sentence in yesterday; recycle M4's daily-routine verbs in the past.",
       ],
