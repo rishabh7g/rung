@@ -33,6 +33,7 @@ import { useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useIndex, useModules } from '../course/content.ts';
+import type { L2Lang } from '../course/manifest.ts';
 import { useStrings } from '../course/strings.ts';
 import type { ModuleContent, Word } from '../course/types.ts';
 import { resolveSentence, type WordRef } from '../engine/wordIndex.ts';
@@ -59,9 +60,18 @@ interface WhyPanelProps {
   leading?: ReactNode;
   /** The course's writing direction — every line here is its content or its copy. */
   dir?: string;
+  /** The tags the L2 word rows are written in (#186). */
+  l2?: L2Lang;
 }
 
-export function WhyPanel({ sentenceId, display, openFull = false, leading, dir }: WhyPanelProps) {
+export function WhyPanel({
+  sentenceId,
+  display,
+  openFull = false,
+  leading,
+  dir,
+  l2,
+}: WhyPanelProps) {
   const strings = useStrings();
   const [open, setOpen] = useState(false);
   const moduleId = moduleIdOf(sentenceId);
@@ -100,7 +110,7 @@ export function WhyPanel({ sentenceId, display, openFull = false, leading, dir }
           file on the way. */}
       {open && (
         <ul id={panelId} className={styles.rows}>
-          {moduleId !== null && <WhyRows moduleId={moduleId} display={display} dir={dir} />}
+          {moduleId !== null && <WhyRows moduleId={moduleId} display={display} dir={dir} l2={l2} />}
         </ul>
       )}
     </div>
@@ -111,6 +121,7 @@ interface WhyRowsProps {
   moduleId: string;
   display: string;
   dir?: string;
+  l2?: L2Lang;
 }
 
 /**
@@ -118,7 +129,7 @@ interface WhyRowsProps {
  * the learner asks "why", not on every reveal. While it is in flight there are no rows, which the
  * stylesheet draws as nothing: no spinner, no reserved space, no jump when they land.
  */
-function WhyRows({ moduleId, display, dir }: WhyRowsProps) {
+function WhyRows({ moduleId, display, dir, l2 }: WhyRowsProps) {
   const index = useIndex(moduleId);
   const spans = index.data === null ? [] : resolveSentence(display, index.data);
   const modules = useModules(spans.map((span) => span.ref.moduleId));
@@ -129,7 +140,7 @@ function WhyRows({ moduleId, display, dir }: WhyRowsProps) {
         const word = wordOf(modules, span.ref);
         // A ref whose module has not arrived (or never will) is simply not a row yet.
         if (word === undefined) return null;
-        return <WhyRow key={`${span.start}-${span.surface}`} word={word} dir={dir} />;
+        return <WhyRow key={`${span.start}-${span.surface}`} word={word} dir={dir} l2={l2} />;
       })}
     </>
   );

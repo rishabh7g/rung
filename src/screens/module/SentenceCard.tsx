@@ -23,6 +23,7 @@
  */
 import { Link } from 'react-router-dom';
 import { ChevronDown, ArrowRight, TriangleAlert } from 'lucide-react';
+import type { L2Lang } from '../../course/manifest.ts';
 import { useStrings } from '../../course/strings.ts';
 import type { Sentence, Tag } from '../../course/types.ts';
 import { RegistrationMarks } from '../RegistrationMarks.tsx';
@@ -45,9 +46,18 @@ interface SentenceCardProps {
   onToggle: (sentenceId: string) => void;
   /** The course's writing direction — every line on the card is its content. */
   dir?: string;
+  /** The tags the L2 lines are written in (#186); the L1 ones inherit the document's. */
+  l2?: L2Lang;
 }
 
-export function SentenceCard({ sentence, produced, expanded, onToggle, dir }: SentenceCardProps) {
+export function SentenceCard({
+  sentence,
+  produced,
+  expanded,
+  onToggle,
+  dir,
+  l2,
+}: SentenceCardProps) {
   const strings = useStrings();
   const panelId = `sentence-panel-${sentence.id}`;
 
@@ -65,7 +75,7 @@ export function SentenceCard({ sentence, produced, expanded, onToggle, dir }: Se
         onClick={() => onToggle(sentence.id)}
       >
         <span className={styles.lines}>
-          <span className={styles.display} dir={dir}>
+          <span className={styles.display} dir={dir} lang={l2?.display}>
             {sentence.display}
           </span>
           <span className={styles.cue} dir={dir}>
@@ -75,7 +85,9 @@ export function SentenceCard({ sentence, produced, expanded, onToggle, dir }: Se
               as something to produce — so it is the quietest line on the card. A native course's
               sentences carry no `script` at all, which is why the content is the condition. */}
           {sentence.script !== undefined && (
-            <span className={styles.script}>{sentence.script}</span>
+            <span className={styles.script} lang={l2?.script}>
+              {sentence.script}
+            </span>
           )}
         </span>
 
@@ -91,7 +103,9 @@ export function SentenceCard({ sentence, produced, expanded, onToggle, dir }: Se
         <div id={panelId} className={styles.panel}>
           {/* The gloss is English in every course by definition (`glossEn`), so it is the one
               line here set in the body face rather than the L2 one. */}
-          <p className={styles.gloss}>{sentence.glossEn}</p>
+          <p className={styles.gloss} lang="en">
+            {sentence.glossEn}
+          </p>
 
           {sentence.literal !== undefined && (
             <p className={styles.literal} dir={dir}>
@@ -103,7 +117,12 @@ export function SentenceCard({ sentence, produced, expanded, onToggle, dir }: Se
               The full rows — cue, note, accepted forms — are what "open full" leads to [D10]. */}
           <ul className={styles.words}>
             {sentence.deconstruction.words.map((word, index) => (
-              <li key={`${word.display}-${index}`} className={CHIP_CLASS[word.tag]} dir={dir}>
+              <li
+                key={`${word.display}-${index}`}
+                className={CHIP_CLASS[word.tag]}
+                dir={dir}
+                lang={l2?.display}
+              >
                 {word.display}
               </li>
             ))}

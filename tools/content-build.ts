@@ -52,12 +52,22 @@ const SCRIPT_MODES: readonly string[] = ['native', 'romanized'];
 const DIRECTIONS: readonly string[] = ['ltr', 'rtl'];
 /** Course ids name a folder and a URL segment; keep them boring. */
 const COURSE_ID = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+/**
+ * A BCP-47 tag, conservatively: language, optional script, optional region (#186). The same
+ * shape the app's runtime tripwire enforces (`src/course/manifest.ts`) — a manifest that boots
+ * in the browser must have passed here first, so the two patterns are one rule written twice.
+ */
+const LANGUAGE_TAG = /^[a-z]{2,3}(-[A-Z][a-z]{3})?(-([A-Z]{2}|\d{3}))?$/;
 
 /** A row of `content/courses.json` (PRD §4). Extra course keys (en-ar's `romanizationNote`) ride along. */
 export interface CourseRow {
   id: string;
   l1: string;
   l2: string;
+  /** The L1 as a BCP-47 tag — what the document declares itself to be (#186). */
+  l1Tag: string;
+  /** The L2 as a BCP-47 tag — the language taught, before `scriptMode` says how it is written. */
+  l2Tag: string;
   pairLabel: string;
   scriptMode: ScriptMode;
   dir: Direction;
@@ -175,8 +185,8 @@ function isNonEmptyString(value: unknown): value is string {
 
 /**
  * Validates the shape of `content/courses.json` (PRD §4): an array of
- * `{id, l1, l2, pairLabel, scriptMode, dir}` with unique ids. Unknown keys are kept, not
- * rejected — a course may carry its own metadata (en-ar declares its `romanizationNote` here).
+ * `{id, l1, l2, l1Tag, l2Tag, pairLabel, scriptMode, dir}` with unique ids. Unknown keys are kept,
+ * not rejected — a course may carry its own metadata (en-ar declares its `romanizationNote` here).
  */
 export function validateManifest(json: unknown): { courses: CourseRow[]; errors: string[] } {
   const errors: string[] = [];
@@ -199,6 +209,16 @@ export function validateManifest(json: unknown): { courses: CourseRow[]; errors:
     for (const field of ['id', 'l1', 'l2', 'pairLabel'] as const) {
       if (!isNonEmptyString(row[field])) {
         errors.push(`${at}.${field}: required, must be a non-empty string`);
+        ok = false;
+      }
+    }
+    // A name is for the learner, a tag is for the browser; a course needs both (#186).
+    for (const field of ['l1Tag', 'l2Tag'] as const) {
+      const tag = row[field];
+      if (typeof tag !== 'string' || !LANGUAGE_TAG.test(tag)) {
+        errors.push(
+          `${at}.${field}: required, must be a BCP-47 language tag like "hi" or "ar-Latn"`,
+        );
         ok = false;
       }
     }

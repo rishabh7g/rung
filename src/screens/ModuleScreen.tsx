@@ -36,6 +36,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { useCourse } from '../course/CourseProvider.tsx';
+import { l2Lang } from '../course/manifest.ts';
 import { useStrings } from '../course/strings.ts';
 import { useModule } from '../course/content.ts';
 import { ContentErrorScreen } from '../course/BootScreens.tsx';
@@ -72,6 +73,7 @@ interface ModuleListProps {
 
 function ModuleList({ moduleId }: ModuleListProps) {
   const { course } = useCourse();
+  const l2 = l2Lang(course);
   const strings = useStrings();
   const module = useModule(moduleId);
   const { input, ready } = useProgression();
@@ -197,6 +199,7 @@ function ModuleList({ moduleId }: ModuleListProps) {
             expanded={expanded.has(sentence.id)}
             onToggle={toggle}
             dir={course.dir}
+            l2={l2}
           />
         ))}
       </ol>

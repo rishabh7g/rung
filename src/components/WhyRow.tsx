@@ -16,6 +16,7 @@
  * furniture in every course (`TagChip`, #89) because it names the model rather than teaches the
  * language.
  */
+import type { L2Lang } from '../course/manifest.ts';
 import type { Word } from '../course/types.ts';
 import { TagChip } from '../screens/TagChip.tsx';
 import styles from './WhyRow.module.css';
@@ -24,13 +25,15 @@ interface WhyRowProps {
   word: Word;
   /** The course's writing direction — every line here is its content. */
   dir?: string;
+  /** The tags the L2 lines are written in (#186); the cue and note are L1 and inherit. */
+  l2?: L2Lang;
 }
 
-export function WhyRow({ word, dir }: WhyRowProps) {
+export function WhyRow({ word, dir, l2 }: WhyRowProps) {
   return (
     <li className={styles.row}>
       <p className={styles.head}>
-        <span className={styles.display} dir={dir}>
+        <span className={styles.display} dir={dir} lang={l2?.display}>
           {word.display}
         </span>
         <span className={styles.cue} dir={dir}>

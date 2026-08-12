@@ -30,11 +30,13 @@ describe('loadCourses', () => {
       id: 'hi-mr',
       l1: 'Hindi',
       l2: 'Marathi',
+      l1Tag: 'hi',
+      l2Tag: 'mr',
       pairLabel: 'hindi → marathi',
       scriptMode: 'native',
       dir: 'ltr',
     });
-    // en-ar carries more than the six required fields; the loader keeps them, never rejects them.
+    // en-ar carries more than the eight required fields; the loader keeps them, never rejects them.
     expect(courses[2]?.romanizationNote).toMatch(/Modern Standard Arabic/);
     expect(courses[1]?.fixture).toBe(true);
   });
@@ -132,7 +134,41 @@ describe('parseManifest (the tripwire)', () => {
       'an unknown scriptMode',
       {
         courses: [
-          { id: 'x', l1: 'A', l2: 'B', pairLabel: 'a → b', scriptMode: 'cyrillic', dir: 'ltr' },
+          {
+            id: 'x',
+            l1: 'A',
+            l2: 'B',
+            l1Tag: 'hi',
+            l2Tag: 'mr',
+            pairLabel: 'a → b',
+            scriptMode: 'cyrillic',
+            dir: 'ltr',
+          },
+        ],
+      },
+    ],
+    [
+      'a course with no language tags',
+      {
+        courses: [
+          { id: 'x', l1: 'A', l2: 'B', pairLabel: 'a → b', scriptMode: 'native', dir: 'ltr' },
+        ],
+      },
+    ],
+    [
+      'a language tag that is a language NAME',
+      {
+        courses: [
+          {
+            id: 'x',
+            l1: 'A',
+            l2: 'B',
+            l1Tag: 'hi',
+            l2Tag: 'Marathi',
+            pairLabel: 'a → b',
+            scriptMode: 'native',
+            dir: 'ltr',
+          },
         ],
       },
     ],
@@ -140,7 +176,16 @@ describe('parseManifest (the tripwire)', () => {
       'an unknown dir',
       {
         courses: [
-          { id: 'x', l1: 'A', l2: 'B', pairLabel: 'a → b', scriptMode: 'native', dir: 'sideways' },
+          {
+            id: 'x',
+            l1: 'A',
+            l2: 'B',
+            l1Tag: 'hi',
+            l2Tag: 'mr',
+            pairLabel: 'a → b',
+            scriptMode: 'native',
+            dir: 'sideways',
+          },
         ],
       },
     ],

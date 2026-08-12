@@ -43,6 +43,20 @@ function checklistManifest(): Record<string, unknown> {
   return JSON.parse(fence[1]!) as Record<string, unknown>;
 }
 
+/**
+ * The checklist plus the ONE key the product declares that §3.1 does not print: `lang` (#186).
+ *
+ * `design/` is read-only and gets wiped on re-copy (docs/01-plan.md §10), so a sanctioned
+ * divergence is recorded here and in `docs/05-pwa-notes.md` rather than edited into the package.
+ * The divergence is small and one-directional: the manifest's own strings (`name`,
+ * `description`) are English in every course, and the document can no longer speak for them —
+ * `CourseProvider` sets `documentElement.lang` to the ACTIVE COURSE's L1, so a hi-mr install
+ * serves a `lang="hi"` document. Everything else is still the checklist, key for key.
+ */
+function expectedManifest(): Record<string, unknown> {
+  return { ...checklistManifest(), lang: 'en' };
+}
+
 /** PNG dimensions off the IHDR header — no decoder, and no dependency on sharp to read one. */
 function pngSize(file: string): { width: number; height: number } {
   const header = readFileSync(file).subarray(0, 24);
@@ -54,8 +68,8 @@ function pngSize(file: string): { width: number; height: number } {
 /* -------------------------------------------------------------------------------- the manifest */
 
 describe('the manifest is the checklist', () => {
-  it('matches design/pwa-checklist.md §3.1 key for key', () => {
-    expect(pwaManifest()).toEqual(checklistManifest());
+  it('matches design/pwa-checklist.md §3.1 key for key, plus its own lang', () => {
+    expect(pwaManifest()).toEqual(expectedManifest());
   });
 
   it('takes the name from src/brand.ts, not from a string typed twice', () => {
@@ -75,16 +89,19 @@ describe('the manifest is the checklist', () => {
     expect(pwaManifest().theme_color).toBe(paper);
   });
 
-  it('deletes the two keys the plugin would otherwise add', () => {
+  it('deletes the one key the plugin would otherwise add, and declares its own lang', () => {
     const manifest = pwaOptions().manifest as Record<string, unknown>;
     const deleted = Object.entries(manifest)
       .filter(([, value]) => value === undefined)
       .map(([key]) => key)
       .sort();
 
-    // `undefined` is how a key is removed from the emitted JSON; the checklist prints neither.
-    expect(deleted).toEqual(['lang', 'scope']);
-    expect(JSON.parse(JSON.stringify(manifest))).toEqual(checklistManifest());
+    // `undefined` is how a key is removed from the emitted JSON; the checklist prints no scope.
+    expect(deleted).toEqual(['scope']);
+    // `lang` is no longer dropped with it: it is the manifest's OWN language (#186), stated
+    // rather than left to a document that now declares the active course's L1 instead.
+    expect(pwaManifest().lang).toBe('en');
+    expect(JSON.parse(JSON.stringify(manifest))).toEqual(expectedManifest());
   });
 });
 
@@ -104,7 +121,7 @@ describe('the manifest follows the base the build is served from', () => {
     // Mechanical: the checklist prints the manifest for a site at `/`, so the sub-path build is
     // that same document with `/rung` in front of each root-absolute path, and nothing else
     // changed. Only a value can start with `"/` — no key in it does.
-    const subPath = JSON.stringify(checklistManifest()).replaceAll('"/', `"${BASE}`);
+    const subPath = JSON.stringify(expectedManifest()).replaceAll('"/', `"${BASE}`);
 
     expect(pwaManifest(BASE)).toEqual(JSON.parse(subPath));
   });

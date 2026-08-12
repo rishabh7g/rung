@@ -26,6 +26,7 @@
  * `src/silence.test.ts`.
  */
 import { useState } from 'react';
+import type { L2Lang } from '../../course/manifest.ts';
 import { useStrings } from '../../course/strings.ts';
 import type { Sentence } from '../../course/types.ts';
 import { WhyPanel } from '../../components/WhyPanel.tsx';
@@ -48,9 +49,20 @@ interface ReadPhaseProps {
   onNext: () => void;
   /** The course's writing direction — every word on this card is its content or its copy. */
   dir?: string;
+  /** The tags the L2 lines are written in (#186); the cue and the nudge are L1 and inherit. */
+  l2?: L2Lang;
 }
 
-export function ReadPhase({ moduleId, sentence, at, total, onPrev, onNext, dir }: ReadPhaseProps) {
+export function ReadPhase({
+  moduleId,
+  sentence,
+  at,
+  total,
+  onPrev,
+  onNext,
+  dir,
+  l2,
+}: ReadPhaseProps) {
   const strings = useStrings();
   // `setCue` / `setNudge`, never `setState`: `src/state/unlockPath.test.ts` scans the shell for
   // that call and the store's actions are the only place allowed to make it (Invariant 1).
@@ -85,11 +97,15 @@ export function ReadPhase({ moduleId, sentence, at, total, onPrev, onNext, dir }
           which is the `position: relative` (design/tokens.md §3). */}
       <div className={styles.plate}>
         <RegistrationMarks />
-        <p className={styles.display} dir={dir}>
+        <p className={styles.display} dir={dir} lang={l2?.display}>
           {sentence.display}
         </p>
         {/* Romanized courses only (PRD §4, [D20]): recognition, never something to produce. */}
-        {sentence.script !== undefined && <p className={styles.script}>{sentence.script}</p>}
+        {sentence.script !== undefined && (
+          <p className={styles.script} lang={l2?.script}>
+            {sentence.script}
+          </p>
+        )}
         {/* The L1, on demand — see the divergence note in this file's header. */}
         {cueOpen && (
           <p id={cueId} className={styles.cue} dir={dir}>
@@ -110,6 +126,7 @@ export function ReadPhase({ moduleId, sentence, at, total, onPrev, onNext, dir }
           // sentence is the same move the module list makes (PRD §8 F4).
           openFull
           dir={dir}
+          l2={l2}
           leading={
             <button
               type="button"
