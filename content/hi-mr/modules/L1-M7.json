@@ -1,0 +1,526 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M7",
+  "title": "Where things are",
+  "job": "Locations and postpositions",
+  "prerequisites": ["L1-M6"],
+  "verified": false,
+  "verifiedBy": null,
+  "verifiedAt": null,
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": ["N + N-त/-वर/-खाली/-जवळ + आहे", "N कुठे आहे", "N-त/-वर + N + आहे"],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Location GLUES onto the noun, and the noun bends to take it (the oblique): घर → घरात, टेबल → टेबलावर. Hindi keeps में/पर as separate words; Marathi makes one word — the fused shape is the whole lesson."
+    },
+    {
+      "tag": "delta",
+      "text": "The core set: -त (in, में) · -वर (on, पर) · -खाली (under, के नीचे) · -जवळ (near, के पास) · -समोर (in front of, के सामने)."
+    },
+    {
+      "tag": "delta",
+      "text": "कुठे asks \"where\" and sits where the answer will sit — exactly as काय did in M2."
+    },
+    {
+      "tag": "delta",
+      "text": "To say something IS somewhere, the place can lead: बाटलीत पाणी आहे — \"बोतल में पानी है\", same order, one fused word."
+    },
+    {
+      "tag": "interference",
+      "text": "घरी (M5) and घरात are different words: घरी = at/to home (घर पर/घर को), घरात = inside the house (घर में). Hindi's घर पर vs घर में split, carried inside the ending."
+    },
+    {
+      "tag": "free",
+      "text": "आहे still closes the sentence, agreeing with person as always (M1–M2)."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M7-S01",
+      "display": "माझा फोन टेबलावर आहे",
+      "cue": "मेरा फ़ोन मेज़ पर है",
+      "glossEn": "My phone is on the table",
+      "literal": "मेरा फ़ोन मेज़-पर है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "फोन",
+            "cue": "फ़ोन",
+            "tag": "free",
+            "forms": [],
+            "note": "Same word, same masculine gender as Hindi — nothing to relearn; माझा agrees with it as in M1."
+          },
+          {
+            "display": "टेबलावर",
+            "cue": "मेज़ पर / टेबल पर",
+            "tag": "delta",
+            "forms": ["टेबल", "टेबलावर", "टेबलाखाली", "टेबलाजवळ", "टेबलासमोर"],
+            "note": "टेबल + -वर, fused — and the noun bends first: टेबल → टेबला- (the oblique), then the ending lands. One word where Hindi writes two."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "हिंदी की आदत 'टेबल पर' दो शब्द लिखवाती है — मराठी में जोड़कर एक: टेबलावर. और जोड़ने से पहले शब्द झुकता है: टेबल → टेबला-. अलग लिखा तो मराठी टूट गई.",
+      "sound": "टेबलावर = टे‑ब‑ला‑वर; बीच का 'ला' ज़रूरी है, 'टेबलवर' नहीं.",
+      "variations": [
+        {
+          "display": "माझा फोन टेबलाखाली आहे",
+          "cue": "मेरा फ़ोन मेज़ के नीचे है",
+          "changed": "-वर → -खाली — वही झुका हुआ टेबला-, नई जगह."
+        },
+        {
+          "display": "तुझा फोन टेबलावर आहे का?",
+          "cue": "क्या तुम्हारा फ़ोन मेज़ पर है?",
+          "changed": "सवाल — माझा → तुझा (M2), अंत में का."
+        }
+      ],
+      "mistake": {
+        "display": "माझा फोन टेबल वर आहे",
+        "why": "टेबल और वर अलग-अलग — यही हिंदी की छाया है. मराठी में जुड़कर एक शब्द: टेबलावर, बीच में झुकी हुई 'ला'."
+      },
+      "usage": "चीज़ें कहाँ रखी हैं — घर की सबसे रोज़ वाली बात.",
+      "register": "neutral",
+      "mnemonic": "झुको, फिर जुड़ो: टेबल → टेबला- → टेबलावर."
+    },
+    {
+      "id": "L1-M7-S02",
+      "display": "माझं पुस्तक कुठे आहे?",
+      "cue": "मेरी किताब कहाँ है?",
+      "glossEn": "Where is my book?",
+      "literal": "मेरी पुस्तक कहाँ है — पर मराठी में नपुंसक",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "पुस्तक",
+            "cue": "किताब / पुस्तक",
+            "tag": "interference",
+            "forms": [],
+            "note": "\"Book\" — neuter in Marathi where Hindi पुस्तक/किताब is feminine: माझं पुस्तक, not *माझी. The gender-flip zone from M3/M5, on a new noun."
+          },
+          {
+            "display": "कुठे",
+            "cue": "कहाँ",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Where\" — a question word like काय (M2): it sits in the sentence exactly where the answer will sit."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "हिंदी 'मेरी किताब' कहती है — मराठी में पुस्तक नपुंसक है: माझं पुस्तक. लिंग की पलटी फिर हाज़िर, और कुठे जवाब की कुर्सी पर बैठा है — जहाँ 'टेबलावर' आएगा, वहीं.",
+      "sound": "कुठे = कु‑ठे; 'ठ' पूरा खुला. पुस्तक = पुस्‑तक, छोटा और सधा.",
+      "variations": [
+        {
+          "display": "माझं पुस्तक टेबलावर आहे",
+          "cue": "मेरी किताब मेज़ पर है",
+          "changed": "जवाब — कुठे की कुर्सी पर टेबलावर बैठ गया."
+        },
+        {
+          "display": "तुझं पुस्तक कुठे आहे?",
+          "cue": "तुम्हारी किताब कहाँ है?",
+          "changed": "माझं → तुझं — पुस्तक(नपुं.) के पीछे दोनों 'ं' वाले."
+        }
+      ],
+      "mistake": {
+        "display": "माझी पुस्तक कुठे आहे?",
+        "why": "किताब(स्त्री.) की नक़ल — मराठी में पुस्तक नपुंसक: माझं पुस्तक. लिंग शब्द के साथ नया सीखो, हिंदी से मत उठाओ."
+      },
+      "usage": "खोई चीज़ ढूँढना — कुठे की पहली और सबसे काम की लाइन.",
+      "register": "neutral",
+      "mnemonic": "काय की तरह कुठे — सवाल-शब्द जवाब की जगह घेरता है."
+    },
+    {
+      "id": "L1-M7-S03",
+      "display": "तुझं पुस्तक घरात आहे",
+      "cue": "तुम्हारी किताब घर में है",
+      "glossEn": "Your book is in the house",
+      "literal": "तेरी पुस्तक घर-में है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "घरात",
+            "cue": "घर में",
+            "tag": "delta",
+            "forms": ["घर", "घरात", "घरी", "घराजवळ", "घरासमोर"],
+            "note": "घर + -त, through the oblique घरा-: घरात \"in the house\". Different from M5's घरी (at/to home) — the ending picks the meaning."
+          }
+        ],
+        "rules": [0, 1, 4]
+      },
+      "trap": "घरी और घरात जुड़वाँ नहीं हैं: घरी = घर पर/घर को (M5 का मी घरी गेलो), घरात = घर के अंदर. हिंदी में फ़र्क़ दो शब्दों (पर/में) में है — मराठी में एक अक्षर में.",
+      "sound": "घरात = घ‑रा‑त; अंत की 'त' हल्की, बिना झटके.",
+      "variations": [
+        {
+          "display": "माझं पुस्तक घरात आहे",
+          "cue": "मेरी किताब घर में है",
+          "changed": "तुझं → माझं — घरात वैसा ही."
+        },
+        {
+          "display": "तुझं पुस्तक घरात आहे का?",
+          "cue": "क्या तुम्हारी किताब घर में है?",
+          "changed": "सवाल — अंत में का (M2)."
+        }
+      ],
+      "mistake": {
+        "display": "तुझं पुस्तक घर मध्ये आहे",
+        "why": "'घर में' की सीधी नक़ल — मराठी बोलचाल में जगह जुड़कर आती है: घरात. अलग शब्द ढूँढने की ज़रूरत ही नहीं."
+      },
+      "usage": "चीज़ कहाँ छूट गई — घर-बाहर का पहला जवाब.",
+      "register": "neutral",
+      "mnemonic": "घरी गया था, घरात रखा है — -ई ले जाती है, -आत अंदर रखती है."
+    },
+    {
+      "id": "L1-M7-S04",
+      "display": "मी आता खोलीत आहे",
+      "cue": "मैं अभी कमरे में हूँ",
+      "glossEn": "I am in the room right now",
+      "literal": "मैं अभी कमरे-में हूँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "खोलीत",
+            "cue": "कमरे में",
+            "tag": "interference",
+            "forms": ["खोली", "खोलीत"],
+            "note": "खोली \"room\" — feminine, where Hindi कमरा is masculine: another gender flip. -ईकारान्त nouns bend gently: खोली → खोलीत."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "कमरा(पु.) की जगह खोली(स्त्री.) — शब्द भी नया, लिंग भी उलटा. और 'कमरे में' के दो शब्द यहाँ एक: खोलीत.",
+      "sound": "खोलीत = खो‑ली‑त; 'ली' लंबी, 'त' हल्की.",
+      "variations": [
+        {
+          "display": "मी आता घरात आहे",
+          "cue": "मैं अभी घर में हूँ",
+          "changed": "खोली → घर — घरात: वही -त, दूसरा ठिकाना."
+        },
+        {
+          "display": "तू आता खोलीत आहेस का?",
+          "cue": "क्या तुम अभी कमरे में हो?",
+          "changed": "सवाल — तू + आहेस + का, जगह वैसी ही."
+        }
+      ],
+      "mistake": {
+        "display": "मी आता खोलामध्ये आहे",
+        "why": "खोली स्त्रीलिंग है और सीधे झुकती है: खोलीत. कमरा(पु.) की छाया में गढ़ा 'खोला' मराठी में है ही नहीं."
+      },
+      "usage": "फ़ोन पर 'कहाँ हो?' का जवाब — अपनी जगह बताना.",
+      "register": "neutral",
+      "mnemonic": "खोली खुली, मैं खोलीत — जगह का नाम झुका, मैं अंदर."
+    },
+    {
+      "id": "L1-M7-S05",
+      "display": "माझी पिशवी टेबलाखाली आहे",
+      "cue": "मेरा थैला मेज़ के नीचे है",
+      "glossEn": "My bag is under the table",
+      "literal": "मेरी थैली मेज़-के-नीचे है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "पिशवी",
+            "cue": "थैला / बैग",
+            "tag": "delta",
+            "forms": ["पिशवी", "पिशवीत"],
+            "note": "\"Bag\" — an everyday Marathi word with no Hindi twin; feminine, so माझी पिशवी. Bends like खोली: पिशवीत \"in the bag\"."
+          },
+          {
+            "display": "टेबलाखाली",
+            "cue": "मेज़ के नीचे",
+            "tag": "delta",
+            "forms": [],
+            "note": "S01's टेबला- with -खाली: \"under the table\". Hindi's three words (मेज़ के नीचे) fuse into one."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "'के नीचे' तीन शब्दों का पुल है — मराठी सीधे -खाली जोड़ती है: टेबलाखाली. का/के/की वाला पूरा तामझाम ग़ायब.",
+      "sound": "टेबलाखाली लंबा है — टे‑ब‑ला‑खा‑ली, आराम से; पिशवी = पि‑श‑वी.",
+      "variations": [
+        {
+          "display": "माझी पिशवी टेबलावर आहे",
+          "cue": "मेरा थैला मेज़ पर है",
+          "changed": "-खाली → -वर — एक अक्षर-जोड़ी बदली, जगह पलट गई."
+        },
+        {
+          "display": "पिशवीत पुस्तक आहे",
+          "cue": "थैले में किताब है",
+          "changed": "पिशवी ख़ुद झुक गई — पिशवीत: अब वह जगह है, चीज़ नहीं."
+        }
+      ],
+      "mistake": {
+        "display": "माझा पिशवी टेबलाखाली आहे",
+        "why": "पिशवी स्त्रीलिंग है — माझी पिशवी. बैग(पु.) की आदत से माझा निकलता है, पर लिंग मराठी शब्द का चलता है."
+      },
+      "usage": "सामान ढूँढना-बताना — बाज़ार से घर तक की बात.",
+      "register": "neutral",
+      "mnemonic": "-वर ऊपर, -खाली नीचे — टेबला- वही, दिशा तुम्हारे हाथ."
+    },
+    {
+      "id": "L1-M7-S06",
+      "display": "दुकान घराजवळ आहे",
+      "cue": "दुकान घर के पास है",
+      "glossEn": "The shop is near the house",
+      "literal": "दुकान घर-के-पास है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "दुकान",
+            "cue": "दुकान",
+            "tag": "interference",
+            "forms": ["दुकान", "दुकानात"],
+            "note": "Same word as Hindi — but neuter in Marathi where Hindi दुकान is feminine. The flip zone again; दुकानात = \"in the shop\"."
+          },
+          {
+            "display": "घराजवळ",
+            "cue": "घर के पास",
+            "tag": "delta",
+            "forms": [],
+            "note": "S03's घरा- with -जवळ: \"near the house\". के पास → -जवळ, fused like the rest."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "शब्द जुड़वाँ, लिंग विपरीत: हिंदी दुकान(स्त्री.), मराठी दुकान(नपुं.) — 'ती दुकान' नहीं, 'ते दुकान'. और 'के पास' फिर एक ही जोड़ में: घराजवळ.",
+      "sound": "घराजवळ = घ‑रा‑ज‑वळ; अंत का 'ळ' जीभ मोड़कर — मराठी की अपनी आवाज़.",
+      "variations": [
+        {
+          "display": "दुकान घरासमोर आहे",
+          "cue": "दुकान घर के सामने है",
+          "changed": "-जवळ → -समोर — पास से सामने; घरा- वही."
+        },
+        {
+          "display": "मी आता दुकानात आहे",
+          "cue": "मैं अभी दुकान में हूँ",
+          "changed": "दुकान झुककर दुकानात — अब मैं उसके अंदर हूँ."
+        }
+      ],
+      "mistake": {
+        "display": "दुकान घर जवळ आहे",
+        "why": "जवळ को अलग छोड़ा — हिंदी 'के पास' की छाया. मराठी में झुके हुए घरा- से जुड़कर एक शब्द: घराजवळ."
+      },
+      "usage": "पता-ठिकाना बताना — 'कहाँ है?' का मोहल्ले वाला जवाब.",
+      "register": "neutral",
+      "mnemonic": "जो पास है, वह जुड़ा है — -जवळ शब्द से चिपककर ही बैठता है."
+    },
+    {
+      "id": "L1-M7-S07",
+      "display": "बाग घरासमोर आहे",
+      "cue": "बाग़ घर के सामने है",
+      "glossEn": "The garden is in front of the house",
+      "literal": "बाग़ घर-के-सामने है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "बाग",
+            "cue": "बाग़",
+            "tag": "interference",
+            "forms": ["बाग", "बागेत"],
+            "note": "\"Garden\" — feminine in Marathi where Hindi बाग़ is masculine: the flip in the other direction. Bends with -ए-: बागेत \"in the garden\"."
+          },
+          {
+            "display": "घरासमोर",
+            "cue": "घर के सामने",
+            "tag": "delta",
+            "forms": [],
+            "note": "घरा- + -समोर: \"in front of the house\". The fifth and last of the core set."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "इस बार पलटी उलटी दिशा में: हिंदी बाग़(पु.), मराठी बाग(स्त्री.). और झुकने का तीसरा ढंग दिखा — बाग → बागे-: बागेत. हर संज्ञा अपने ढंग से झुकती है, पर जुड़ती सब हैं.",
+      "sound": "घरासमोर = घ‑रा‑स‑मो‑र; समोर का 'स' साफ़. बाग छोटा — 'ग़' नहीं, सादा 'ग'.",
+      "variations": [
+        {
+          "display": "बाग घराजवळ आहे",
+          "cue": "बाग़ घर के पास है",
+          "changed": "-समोर → -जवळ — सामने से पास."
+        },
+        {
+          "display": "मी आता बागेत आहे",
+          "cue": "मैं अभी बाग़ में हूँ",
+          "changed": "बाग झुककर बागे- — बागेत: स्त्रीलिंग का -ए- वाला झुकाव."
+        }
+      ],
+      "mistake": {
+        "display": "बाग घरासमोर आहे, तो खूप छान आहे",
+        "why": "बाग स्त्रीलिंग है — 'तो' (वह, पु.) नहीं. हिंदी बाग़(पु.) की आदत सर्वनाम तक घुस जाती है; अभी के लिए वाक्य सादा रखो: बाग घरासमोर आहे."
+      },
+      "usage": "आस-पड़ोस बयान करना — घर, दुकान, बाग़ की जगहें.",
+      "register": "neutral",
+      "mnemonic": "-त, -वर, -खाली, -जवळ, -समोर — पाँचों उँगलियाँ गिन लो, जगह पूरी."
+    },
+    {
+      "id": "L1-M7-S08",
+      "display": "तुझं घर कुठे आहे?",
+      "cue": "तुम्हारा घर कहाँ है?",
+      "glossEn": "Where is your house?",
+      "literal": "तेरा घर कहाँ है?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "घर",
+            "cue": "घर",
+            "tag": "free",
+            "forms": [],
+            "note": "Same word, and neuter in Marathi (तुझं घर) — Hindi घर is masculine, but the possessive shape is the only visible difference here. The bent forms (घरात, घराजवळ…) come from S03."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "घर शब्द मुफ़्त मिला, पर जोड़ नपुंसक का: तुझं घर, माझं घर — 'तुझा घर' नहीं. M1 की माझा/माझी/माझं तिकड़ी यहाँ रोज़ काम देती है.",
+      "sound": "तुझं घर — दोनों छोटे, 'ं' नाक से; कुठे ऊपर उठाकर पूछो.",
+      "variations": [
+        {
+          "display": "तुझं दुकान कुठे आहे?",
+          "cue": "तुम्हारी दुकान कहाँ है?",
+          "changed": "घर → दुकान — दोनों नपुंसक, तुझं दोनों पर."
+        },
+        {
+          "display": "माझं घर दुकानाजवळ आहे",
+          "cue": "मेरा घर दुकान के पास है",
+          "changed": "जवाब — दुकान झुककर दुकाना-: दुकानाजवळ."
+        }
+      ],
+      "mistake": {
+        "display": "तुझा घर कुठे आहे?",
+        "why": "हिंदी 'तुम्हारा घर'(पु.) की नक़ल — मराठी में घर नपुंसक: तुझं घर."
+      },
+      "usage": "पहली मुलाक़ात का सवाल — पता पूछना.",
+      "register": "informal",
+      "mnemonic": "घर वही, चश्मा नया: शब्द हिंदी का, लिंग मराठी का."
+    },
+    {
+      "id": "L1-M7-S09",
+      "display": "बाटलीत पाणी आहे",
+      "cue": "बोतल में पानी है",
+      "glossEn": "There is water in the bottle",
+      "literal": "बोतल-में पानी है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "बाटलीत",
+            "cue": "बोतल में",
+            "tag": "delta",
+            "forms": ["बाटली", "बाटलीत"],
+            "note": "बाटली \"bottle\" (बोतल — same feminine gender, new shape) + -त: बाटलीत. Place first, thing after — the \"there is\" order."
+          }
+        ],
+        "rules": [0, 1, 3]
+      },
+      "trap": "'बोतल में पानी है' — शब्द-क्रम हूबहू वही, बस 'में' चिपक गया: बाटलीत पाणी आहे. जगह पहले आए तो वाक्य 'वहाँ क्या है' बताता है.",
+      "sound": "बाटली = बा‑ट‑ली; 'ट' कड़ा. बाटलीत में अंत की 'त' हल्की.",
+      "variations": [
+        {
+          "display": "बाटलीत दूध आहे",
+          "cue": "बोतल में दूध है",
+          "changed": "पाणी → दूध — जगह वही, चीज़ बदली."
+        },
+        {
+          "display": "पिशवीत पाणी आहे का?",
+          "cue": "क्या थैले में पानी है?",
+          "changed": "बाटली → पिशवी, और सवाल — का अंत में."
+        }
+      ],
+      "mistake": {
+        "display": "बाटली मध्ये पाणी आहे",
+        "why": "'में' का अलग शब्द ढूँढना ही हिंदी की आदत है — मराठी में जगह झुककर जुड़ती है: बाटलीत."
+      },
+      "usage": "'उसमें क्या है?' का जवाब — रसोई-मेज़ की रोज़ की लाइन.",
+      "register": "neutral",
+      "mnemonic": "पहले ठिकाना, फिर चीज़: बाटलीत पाणी — डिब्बे पर लिखा लेबल जैसा."
+    },
+    {
+      "id": "L1-M7-S10",
+      "display": "तुम्ही आता कुठे आहात?",
+      "cue": "आप अभी कहाँ हैं?",
+      "glossEn": "Where are you right now?",
+      "literal": "आप अभी कहाँ हैं?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "कुठे",
+            "cue": "कहाँ",
+            "tag": "delta",
+            "forms": [],
+            "note": "S02's कुठे, now aimed at a person — the answer slots straight in: मी घरात आहे, मी दुकानात आहे. आहात carries the politeness (M2)."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "फ़ोन का पहला सवाल: तुम्ही आता कुठे आहात? जवाब में कुठे की कुर्सी पर अपनी जगह रखो — घरात, खोलीत, दुकानात, बागेत. सवाल-जवाब एक ही साँचे में.",
+      "sound": "कुठे आहात एक बहाव में — कु‑ठे‑आ‑हात.",
+      "variations": [
+        {
+          "display": "तू आता कुठे आहेस?",
+          "cue": "तुम अभी कहाँ हो?",
+          "changed": "तुम्ही → तू — आहात → आहेस; दोस्ताना सुर."
+        },
+        {
+          "display": "मी आता घरात आहे",
+          "cue": "मैं अभी घर में हूँ",
+          "changed": "जवाब — कुठे हटा, जगह बैठी: घरात."
+        }
+      ],
+      "mistake": {
+        "display": "तुम्ही आता कुठे आहे?",
+        "why": "तुम्ही के साथ आहात (M2) — आहे अकेले 'वह' की बात है. सवाल-शब्द बदलने से क्रिया का व्यक्ति नहीं बदलता."
+      },
+      "usage": "फ़ोन-संदेश की सबसे आम लाइन — 'कहाँ हो अभी?'",
+      "register": "neutral",
+      "mnemonic": "कुठे पूछो, जगह रखो — सवाल की कुर्सी जवाब की कुर्सी है."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M7-C01",
+      "display": "माझं पुस्तक टेबलावर आहे",
+      "cue": "मेरी किताब मेज़ पर है"
+    },
+    {
+      "id": "L1-M7-C02",
+      "display": "तुझा फोन कुठे आहे?",
+      "cue": "तुम्हारा फ़ोन कहाँ है?"
+    },
+    {
+      "id": "L1-M7-C03",
+      "display": "बाटलीत दूध आहे",
+      "cue": "बोतल में दूध है"
+    },
+    {
+      "id": "L1-M7-C04",
+      "display": "माझी पिशवी घरात आहे",
+      "cue": "मेरा थैला घर में है"
+    },
+    {
+      "id": "L1-M7-C05",
+      "display": "मी आता दुकानात आहे",
+      "cue": "मैं अभी दुकान में हूँ"
+    },
+    {
+      "id": "L1-M7-C06",
+      "display": "तू आता कुठे आहेस?",
+      "cue": "तुम अभी कहाँ हो?"
+    },
+    {
+      "id": "L1-M7-C07",
+      "display": "मी आता बागेत आहे",
+      "cue": "मैं अभी बाग़ में हूँ"
+    },
+    {
+      "id": "L1-M7-C08",
+      "display": "फोन टेबलाखाली आहे",
+      "cue": "फ़ोन मेज़ के नीचे है"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
