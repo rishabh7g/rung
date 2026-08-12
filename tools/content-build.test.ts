@@ -30,6 +30,7 @@ import {
   type WordIndexFile,
 } from './content-build.ts';
 import { completeStrings } from './fixtures/strings.ts';
+import { matchSurfaces, tokenizeSurface, type SurfaceLookup } from '../src/engine/surface.ts';
 import { DEFAULT_CONTENT_ROOT, REPO_ROOT, type Module } from './validate.ts';
 
 /**
@@ -956,8 +957,8 @@ describe('the comprehension-pool rule', () => {
 });
 
 /**
- * #116 will fold case and the apostrophe class. The only way that lands safely is if there is
- * exactly ONE normalisation to change — so this suite guards the seam, not the behaviour.
+ * #116 folded case, the apostrophe classes and hyphens into the rule. That only stays safe while
+ * there is exactly ONE normalisation to change — so this suite guards the seam, not the behaviour.
  */
 describe('the shared normaliser', () => {
   const SOURCE_ROOTS = ['src', 'tools'];
@@ -983,11 +984,16 @@ describe('the shared normaliser', () => {
     expect(emitter).toContain("from '../src/engine/surface.ts'");
   });
 
-  it('is the only place NFC and edge punctuation are decided', () => {
+  it('is the only place NFC, edge punctuation and the #116 folds are decided', () => {
     const owners = sourceFiles().filter((file) => {
       if (file.endsWith('.test.ts')) return false;
       const source = readFileSync(path.join(REPO_ROOT, file), 'utf8');
-      return source.includes("normalize('NFC')") || source.includes('\\p{P}');
+      return (
+        source.includes("normalize('NFC')") ||
+        source.includes('\\p{P}') ||
+        source.includes("['’ʼ]") || // the hamza-class fold
+        source.includes('[‘ʻ]') // the ʿayn-class fold
+      );
     });
 
     expect(owners).toEqual([OWNER]);
@@ -1070,9 +1076,65 @@ describe('the authored content', () => {
     const module = readFileSync(path.join(outRoot, 'en-ar', 'modules', 'L1-M1.json'), 'utf8');
 
     expect(Object.keys(index.surfaces)).toContain('ismī');
-    expect(Object.keys(index.surfaces)).toContain('al-qahwa');
+    expect(Object.keys(index.surfaces)).toContain('al qahwa');
     expect(Object.keys(index.surfaces).filter((surface) => arabic.test(surface))).toEqual([]);
     expect(arabic.test(module)).toBe(true); // the script lines are there — they are just not index keys
+  });
+
+  it('indexes a hyphenated surface joined AND as parts, pointing at the same row (#116)', () => {
+    const { outRoot } = build(DEFAULT_CONTENT_ROOT, DEV);
+    const index = readIndex(outRoot, 'en-ar', 'L1-M1');
+
+    // `al-Hind` teaches three keys; the parts share the compound's ref, so the article prefix
+    // has a "why" even under a noun no row teaches.
+    expect(index.maxSpan).toBe(2); // `al hind` is a two-token surface, like en-es's `Me llamo`
+    for (const key of ['al hind', 'al', 'hind']) {
+      expect(index.surfaces[key]).toEqual({
+        moduleId: 'L1-M1',
+        sentenceId: 'L1-M1-S02',
+        wordIdx: 2,
+      });
+    }
+    // A spaced multi-token surface contributes NO parts: `llamo` alone is not taught (en-es).
+    const spanish = readIndex(outRoot, 'en-es', 'L1-M1');
+    expect(spanish.surfaces['me llamo']).toBeDefined();
+    expect(spanish.surfaces['llamo']).toBeUndefined();
+  });
+
+  it('folds case into the keys, so `Soy` mid-sentence and `soy` are one surface (#116)', () => {
+    const { outRoot } = build(DEFAULT_CONTENT_ROOT, DEV);
+    const keys = Object.keys(readIndex(outRoot, 'en-es', 'L1-M1').surfaces);
+
+    expect(keys).toContain('soy');
+    expect(keys).toContain('me gusta');
+    expect(keys.filter((key) => key !== key.toLowerCase())).toEqual([]);
+  });
+
+  it('resolves every practice-visible token in both fixture courses — the [Q3] sweep (#116)', () => {
+    // Sentences, variations and pool items — everything a "why" tap can land on. The one
+    // documented gap is the proper noun `Priya`, which no word row teaches (#61).
+    for (const courseId of ['en-es', 'en-ar']) {
+      const module = authored(courseId, 'L1-M1');
+      const [index] = buildWordIndex(courseId, [{ id: 'L1-M1', module }]);
+      if (index === undefined) throw new Error('expected an index');
+      const lookup: SurfaceLookup = {
+        maxSpan: index.maxSpan,
+        has: (surface) => Object.hasOwn(index.surfaces, surface),
+      };
+      const displays = module.sentences.flatMap((sentence) => [
+        sentence.display,
+        ...(sentence.variations ?? []).map((variation) => variation.display),
+      ]);
+      displays.push(...module.comprehensionPool.map((item) => item.display));
+
+      const misses = displays.flatMap((display) =>
+        matchSurfaces(tokenizeSurface(display), lookup)
+          .filter((match) => !match.resolved)
+          .map((match) => match.surface),
+      );
+
+      expect([...new Set(misses)]).toEqual(['priya']);
+    }
   });
 
   it('handles a multi-token surface: en-es indexes `Me llamo` as one surface', () => {

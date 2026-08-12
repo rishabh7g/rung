@@ -103,8 +103,9 @@ function scriptSection(course: CourseRow): string {
       `This course is **romanized**: every \`display\` string — sentences, deconstruction words,`,
       `\`forms\` entries, variations, mistakes and pool items alike — is written in Latin letters`,
       `following the scheme below, and the native-script line goes in \`script\` on every surface`,
-      `(optional in the schema, required here). Use ONE scheme throughout: the word index matches`,
-      `\`display\` surfaces verbatim, so a second spelling of the same word breaks resolution.`,
+      `(optional in the schema, required here). Use ONE scheme throughout: the word index folds`,
+      `only case, apostrophe marks and hyphens (#116) — any other second spelling of the same`,
+      `word (a different diacritic, a doubled letter) breaks resolution.`,
       ``,
       `> Romanization scheme: ${scheme}`,
     ].join('\n');

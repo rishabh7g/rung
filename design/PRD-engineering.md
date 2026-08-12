@@ -240,7 +240,7 @@ Unchanged: the app neither validates nor helps validate. Per-course native gate 
 
 - **[Q1]** ~~L2/L3 module lists + level names~~ **closed** — ratified **as drafted** (2026-08-12, Rishabh, adopting the design recommendation as-is). Names stay the shared §5 defaults; the L2/L3 lists in `content/hi-mr/levels.json` are the confirmed sequence (`draft` flags cleared, #112). Briefing + authoring L2/L3 stays a future content project; the per-module native gate applies then, as it does to L1.
 - **[Q2 → engineer]** `navigator.storage.estimate()` on P1's device; fallback presentation.
-- **[Q3 → engineer]** Word-index edge cases for romanized text (apostrophes/ʾ, hyphens in al-, case).
+- **[Q3]** ~~Word-index edge cases for romanized text (apostrophes/ʾ, hyphens in al-, case)~~ **closed** — normalisation ratified (2026-08-12, #116), one shared rule in `src/engine/surface.ts` imported by both the index emitter and the "why" resolver: (a) **case is folded** — keys are lowercase, `Soy`/`soy` are one surface; (b) **apostrophe classes fold onto the modifier letters** — `'` U+0027 / `’` U+2019 / `ʼ` U+02BC → hamza `ʾ` U+02BE, and `‘` U+2018 / `ʻ` U+02BB → ʿayn `ʿ` U+02BF; the two classes never merge (distinct consonants); (c) **a hyphen is a token boundary** — `al-Hind` ≡ `al hind`; the emitter indexes the joined surface AND its hyphen parts (each pointing at the compound's row), and the resolver's longest-match-first walk prefers the whole over the parts. Proven by a sweep over the en-es/en-ar fixture pools: every practice-visible token resolves except the documented proper-noun gap (`Priya`, #61).
 - **[Q4]** ~~Brand sign-off~~ **closed** — rung ratified [P1]; proceed with PWA manifest, icons, export filenames.
 
 ## 15. Sync points with the design track

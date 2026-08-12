@@ -45,11 +45,12 @@ describe('resolve', () => {
   });
 
   it('normalises the way the emitter did — the same rule, imported, never copied', () => {
-    // NFC and edge punctuation are `normalizeSurface`'s (#75, #116): a raw sentence token resolves.
+    // NFC, edge punctuation and case are `normalizeSurface`'s (#75, #116): a raw sentence token
+    // resolves however the sentence spells it.
     expect(resolve('¿Soy?', INDEX)).toEqual(resolve('Soy', INDEX));
     expect(resolve('  Me   llamo ', INDEX)).toEqual(resolve('Me llamo', INDEX));
-    // …and case is NOT folded, because #116 has not ruled on it yet.
-    expect(resolve('soy', INDEX)).toBeNull();
+    expect(resolve('soy', INDEX)).toEqual(resolve('Soy', INDEX)); // case folded, [Q3] closed
+    expect(resolve('soy', INDEX)).not.toBeNull();
   });
 
   it('is null for a string with nothing indexable in it', () => {
@@ -71,13 +72,13 @@ describe('resolveSentence', () => {
 
     expect(spans).toEqual([
       {
-        surface: 'Me llamo',
+        surface: 'me llamo',
         start: 0,
         span: 2,
         ref: { moduleId: 'L1-M1', sentenceId: 'L1-M1-S01', wordIdx: 0 },
       },
       {
-        surface: 'Rohan',
+        surface: 'rohan',
         start: 2,
         span: 1,
         ref: { moduleId: 'L1-M1', sentenceId: 'L1-M1-S01', wordIdx: 1 },
@@ -88,14 +89,14 @@ describe('resolveSentence', () => {
   it('drops what it cannot resolve and keeps walking — a proper noun costs one row, not the panel', () => {
     const spans = resolveSentence('Me llamo Priya', INDEX);
 
-    expect(spans.map((span) => span.surface)).toEqual(['Me llamo']);
+    expect(spans.map((span) => span.surface)).toEqual(['me llamo']);
   });
 
   it('finds only what was taught in a wrong-L2 line — a mistake is never indexed (#75)', () => {
     // The fixture's own `mistake.display`: the name is a word row, `Mi nombre es` is not — the
     // emitter indexes neither mistakes nor variations, because they are wrong L2 by design.
     expect(resolveSentence('Mi nombre es Rohan', INDEX).map((span) => span.surface)).toEqual([
-      'Rohan',
+      'rohan',
     ]);
   });
 
@@ -110,7 +111,26 @@ describe('resolveSentence', () => {
     const single: WordIndex = { maxSpan: 1, surfaces: INDEX.surfaces };
 
     expect(resolveSentence('Me llamo Rohan', single).map((span) => span.surface)).toEqual([
-      'Rohan',
+      'rohan',
+    ]);
+  });
+
+  it('resolves a hyphenated compound whole — and its taught parts when the whole is unknown (#116)', () => {
+    // The shape the emitter writes for en-ar's `al-Hind` row: joined surface AND hyphen parts.
+    const at = { moduleId: 'L1-M1', sentenceId: 'L1-M1-S02', wordIdx: 2 };
+    const romanized: WordIndex = {
+      maxSpan: 2,
+      surfaces: { 'al hind': at, al: at, hind: at, min: { ...at, wordIdx: 1 } },
+    };
+
+    expect(resolveSentence('min al-Hind', romanized).map((span) => span.surface)).toEqual([
+      'min',
+      'al hind',
+    ]);
+    // An untaught compound: the article prefix still has its "why"; the noun is dropped, not guessed.
+    expect(resolveSentence('min al-bayt', romanized).map((span) => span.surface)).toEqual([
+      'min',
+      'al',
     ]);
   });
 

@@ -167,7 +167,8 @@ export function romanizedModuleFixture(moduleId = 'L1-M1') {
 /**
  * One module's cumulative word index. Trimmed from the real en-es L1-M1 file, `Me llamo` and its
  * paradigm kept: they are the multi-word surfaces that make `maxSpan` 2 rather than 1, which is
- * the whole reason the emitter writes that number.
+ * the whole reason the emitter writes that number. Keys are `normalizeSurface`d, so lowercase
+ * (#116) — the emitter writes `me llamo` even though the sentence displays `Me llamo`.
  */
 export function indexFixture(courseId: string, moduleId = 'L1-M1') {
   return {
@@ -177,10 +178,10 @@ export function indexFixture(courseId: string, moduleId = 'L1-M1') {
     surfaceCount: 5,
     maxSpan: 2,
     surfaces: {
-      India: { moduleId, sentenceId: `${moduleId}-S02`, wordIdx: 2 },
-      'Me llamo': { moduleId, sentenceId: `${moduleId}-S01`, wordIdx: 0 },
-      Rohan: { moduleId, sentenceId: `${moduleId}-S01`, wordIdx: 1 },
-      Soy: { moduleId, sentenceId: `${moduleId}-S02`, wordIdx: 0 },
+      india: { moduleId, sentenceId: `${moduleId}-S02`, wordIdx: 2 },
+      'me llamo': { moduleId, sentenceId: `${moduleId}-S01`, wordIdx: 0 },
+      rohan: { moduleId, sentenceId: `${moduleId}-S01`, wordIdx: 1 },
+      soy: { moduleId, sentenceId: `${moduleId}-S02`, wordIdx: 0 },
       'se llama': { moduleId, sentenceId: `${moduleId}-S01`, wordIdx: 0 },
     },
   };

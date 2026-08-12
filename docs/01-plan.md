@@ -129,8 +129,10 @@ You will render Devanagari, never parse learner input (there is none). What
 still matters: graphemes are multi-code-point (मा = म + ा); conjuncts use
 virama (क्या = क + ् + य + ा); ळ is common in Marathi; body floor is 18px /
 line-height 1.6 in Mukta, no italics (tokens.md §2); NFC-normalise content at
-build time; the word-index resolver matches surface forms verbatim from
-content (edge cases live in romanized courses: apostrophes/ʾ, hyphens, case).
+build time; the word-index resolver matches surface forms through one shared
+normalisation (`src/engine/surface.ts`): NFC, edge punctuation stripped, case
+folded, apostrophe classes folded onto ʾ/ʿ, hyphens as token boundaries
+([Q3] closed, #116).
 
 ## 8. Working agreement
 

@@ -43,7 +43,7 @@ import { useModule } from '../course/content.ts';
 import { useStrings } from '../course/strings.ts';
 import type { Rule, Sentence } from '../course/types.ts';
 import { deriveStatuses, rungStage } from '../engine/progression.ts';
-import { normalizeSurface, tokenizeSurface } from '../engine/surface.ts';
+import { tokenizeSurface } from '../engine/surface.ts';
 import { HOME_PATH } from '../shell/routes.tsx';
 import { setScrollOffset, useScrollArea } from '../shell/scrollArea.tsx';
 import { useAppStore } from '../state/store.ts';
@@ -371,10 +371,12 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
  * A variation's tokens, each marked as changed or not: "same pattern, swapped parts" only reads
  * as a pattern if the swapped part is the one thing filled (`--variation-highlight`, [D10]).
  *
- * "Same word" is `normalizeSurface`'s definition and nobody else's (`src/engine/surface.ts`, #116)
+ * "Same word" is `tokenizeSurface`'s definition and nobody else's (`src/engine/surface.ts`, #116)
  * — the same one the word index is built with, so a token that differs only by a trailing
- * question mark is not a swapped part here either. The token's own text is what renders: the
- * comparison is normalised, the screen is not.
+ * question mark or its case is not a swapped part here either. A visual chunk may normalise to
+ * SEVERAL tokens (`al-Hind` splits at the hyphen, #116), so a chunk is changed when ANY of its
+ * tokens is new. The chunk's own text is what renders: the comparison is normalised, the screen
+ * is not.
  */
 function changedTokens(base: string, variation: string): { text: string; changed: boolean }[] {
   const original = new Set(tokenizeSurface(base));
@@ -383,7 +385,7 @@ function changedTokens(base: string, variation: string): { text: string; changed
     .split(/\s+/)
     .filter((text) => text !== '')
     .map((text) => {
-      const surface = normalizeSurface(text);
-      return { text, changed: surface !== '' && !original.has(surface) };
+      const tokens = tokenizeSurface(text);
+      return { text, changed: tokens.length > 0 && tokens.some((token) => !original.has(token)) };
     });
 }
