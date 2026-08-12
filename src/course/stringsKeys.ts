@@ -29,7 +29,7 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 82 keys: the 21 of PRD §4, the 5 the frozen screens forced
+ * file it is complaining about). 86 keys: the 21 of PRD §4, the 5 the frozen screens forced
  * (PR #120) — `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and the four
  * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — the 3 the Ladder
  * forced (#86): the counts-only pending line, the ownership footer and the sealed-level toast,
@@ -51,9 +51,13 @@
  * press-and-hold forced (#101): what the held control says once it is signed, and the way on to
  * part 2 (the prototype writes both in English for every course, which is the shell owning a
  * learner-facing sentence) — and the 5 the Verdict forced (#103): the three checklist lines the
- * ritual ends on, the honesty line under them, and the CTA that climbs back to the ladder.
+ * ritual ends on, the honesty line under them, and the CTA that climbs back to the ladder — and
+ * the 4 the Settings screen forced (#105): the course dropdown's status line in its two shapes
+ * (mid-journey and pending-authoring, counts only — Invariant 2), the reassurance note that
+ * switching erases nothing (Invariant 8 in the course's own words), and the privacy line the
+ * screen ends on.
  *
- * Those fifty-six are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
+ * Those sixty are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
  * as PR #120's were. The alternative each time was hardcoding learner-facing lines in the shell,
  * which is the one thing this list exists to prevent.
  */
@@ -137,6 +141,10 @@ export const STRINGS_KEYS = [
   'verdict.honesty',
   'verdict.line',
   'verdict.toLadder',
+  'settings.statusLine',
+  'settings.statusPending',
+  'settings.switchNote',
+  'settings.privacy',
   'switchToast',
   'storageNote',
   'notebookInvitation',
@@ -372,6 +380,26 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   /** The rung that just opened. */
   'verdict.line': ['{nextModule}'],
   'verdict.toLadder': [],
+  /**
+   * The Settings screen (#105, PRD §8 F0, F6) — the status line under the course dropdown, the
+   * reassurance note beneath it, and the privacy line the screen ends on.
+   *
+   * The status line comes in two shapes because the current rung does: `statusLine` names the
+   * rung in progress ("Level 1 · 2 of 10 passed · M3 in progress"), and `statusPending` is the
+   * honest variant when that rung's sentences are not authored yet — it names no rung, because
+   * there is nothing in progress to name. Both are **counts, never time** (Invariant 2), and the
+   * counts are the SAME derivation the Ladder renders (`engine/progression.ts`), interpolated
+   * into the course's own sentence: `{rung}` is the shell-rendered rung label ("M3"), not an id
+   * the course must parse.
+   *
+   * `switchNote` is Invariant 8 in the course's own words — switching never erases anything —
+   * and `privacy` is F6's closing promise: after install the app never talks to the internet.
+   * Neither interpolates: they are promises, not counts.
+   */
+  'settings.statusLine': ['{level}', '{passed}', '{total}', '{rung}'],
+  'settings.statusPending': ['{level}', '{passed}', '{total}'],
+  'settings.switchNote': [],
+  'settings.privacy': [],
   /** Course pair labels, both directions. */
   switchToast: ['{to}', '{from}'],
   storageNote: [],
