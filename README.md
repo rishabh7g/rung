@@ -128,6 +128,12 @@ issues that tracked it (#64, #110, #111) were closed by the owner on 2026-08-13,
 earlier lists — are the only remaining record of what a native reviewer still owes.
 `npm run dev` additionally relaxes the gate so the two fixture courses render.
 
+**en-es has started.** `L1-M1` and `L1-M2` are authored in full and carry `verified: true` on the
+same LLM-review-plus-owner-authority basis (`docs/07-llm-review-en-es-L1-M1-M2.md`, whose 15 open
+questions are what a native Spanish reviewer still owes — dialect first). They reach nobody yet:
+the en-es row in `content/courses.json` is still `fixture: true`, so only `npm run dev` renders
+them.
+
 The two relaxations are independent (`--with-unverified`, `--with-fixtures`), and either
 one makes the output a **dev build**, which says so twice over: the run prints
 `CONTENT ⚠ DEV BUILD — includes … content; NOT shippable` as its first and last line, and
