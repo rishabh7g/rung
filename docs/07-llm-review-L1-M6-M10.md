@@ -1,5 +1,12 @@
 # LLM linguistic review — hi-mr L1-M6…L1-M10
 
+> **2026-08-13 — superseded in part by `docs/08-marathi-third-review.md`.** A third, independent
+> LLM pass re-reviewed all ten modules blind and then reconciled against this document. Its
+> corrections are applied, and **its open-questions list replaces the nine below** — work from
+> `docs/08-marathi-third-review.md`, not from here. That pass also confirmed all nine corrections
+> below landed, and fixed one pointer that correction M6-2 introduced ("येईल is his (S10)"; येईल
+> occurs nowhere — S10 teaches खाईन vs खाईल).
+
 > ## 2026-08-13 — the flags were flipped, on the owner's authority
 >
 > All ten hi-mr L1 modules now carry `verified: true`, with
