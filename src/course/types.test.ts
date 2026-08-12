@@ -282,6 +282,6 @@ describe('WordIndex against the emitted index', () => {
       ),
     ).toEqual([]);
     expect(index.maxSpan).toBeGreaterThanOrEqual(1);
-    expect(index.surfaces['Me llamo']?.wordIdx).toBe(0);
+    expect(index.surfaces['me llamo']?.wordIdx).toBe(0);
   });
 });

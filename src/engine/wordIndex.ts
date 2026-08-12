@@ -15,10 +15,11 @@
  *   1. **`normalizeSurface` decides what "same word" means, here and in the emitter** — one
  *      definition, imported by both sides (`src/engine/surface.ts`). A lookup that normalised
  *      differently would be asking a different question of the same table, and a word would
- *      silently lose its "why"; `tools/content-build.test.ts` guards the seam, so NFC and edge
- *      punctuation are decided in exactly one file. Romanized case / apostrophe / hyphen folding
- *      (`Soy` vs `soy`, `al-qahwa`) is **#116's** call, deliberately not pre-solved here: when it
- *      lands, both sides move together because there is only one rule to change.
+ *      silently lose its "why"; `tools/content-build.test.ts` guards the seam, so NFC, edge
+ *      punctuation, case-folding and the apostrophe classes (#116, [Q3]) are decided in exactly
+ *      one file. Hyphens are the emitter's half of the same ruling: `al-qahwa` is one token and
+ *      so one lookup, and the index also carries its parts (`surfaceIndexKeys`), so a bare
+ *      `qahwa` in later content resolves without this side doing anything at all.
  *   2. **Longest span first.** en-es teaches `Me llamo` as ONE surface (`maxSpan: 2`), so
  *      `Me llamo Rohan` is two rows — `Me llamo` + `Rohan` — and never three unknown tokens.
  *      `matchSurfaces` walks that; this module only decides which matches are worth rendering.

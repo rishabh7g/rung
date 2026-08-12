@@ -249,8 +249,8 @@ describe('a word taught in another module', () => {
   const CROSS_MODULE = {
     ...indexFixture(COURSE, MODULE),
     surfaces: {
-      'Me llamo': { moduleId: ELSEWHERE, sentenceId: `${ELSEWHERE}-S01`, wordIdx: 0 },
-      Rohan: { moduleId: MODULE, sentenceId: `${MODULE}-S01`, wordIdx: 1 },
+      'me llamo': { moduleId: ELSEWHERE, sentenceId: `${ELSEWHERE}-S01`, wordIdx: 0 },
+      rohan: { moduleId: MODULE, sentenceId: `${MODULE}-S01`, wordIdx: 1 },
     },
   };
 

@@ -240,7 +240,7 @@ Unchanged: the app neither validates nor helps validate. Per-course native gate 
 
 - **[Q1]** ~~L2/L3 module lists + level names~~ **closed** — ratified **as drafted** (2026-08-12, Rishabh, adopting the design recommendation as-is). Names stay the shared §5 defaults; the L2/L3 lists in `content/hi-mr/levels.json` are the confirmed sequence (`draft` flags cleared, #112). Briefing + authoring L2/L3 stays a future content project; the per-module native gate applies then, as it does to L1.
 - **[Q2 → engineer]** `navigator.storage.estimate()` on P1's device; fallback presentation.
-- **[Q3 → engineer]** Word-index edge cases for romanized text (apostrophes/ʾ, hyphens in al-, case).
+- **[Q3]** ~~Word-index edge cases for romanized text (apostrophes/ʾ, hyphens in al-, case)~~ **closed** — answered by #116 (2026-08-12). The one normalisation rule lives in `src/engine/surface.ts` (`normalizeSurface`), imported by both the index emitter and the "why" resolver: (a) **case-folds to lowercase** (locale-independent; diacritics untouched, so `sí` ≠ `si`); (b) **folds the apostrophe classes** — `’` U+2019 / `ʼ` U+02BC / `ʾ` U+02BE → `'` U+0027 and `‘` U+2018 → `ʿ` U+02BF, never merging the two classes (hamza ≠ ʿayn); (c) **hyphens**: `al-qahwa` stays one surface (the primary key), and the emitter additionally indexes each hyphen part (`al`, `qahwa`) toward the same word entry via `surfaceIndexKeys` — first occurrence wins, longest match first at resolve time. Proven by a sweep over every sentence + comprehension token of en-ar, en-es and hi-mr (`tools/content-build.test.ts`).
 - **[Q4]** ~~Brand sign-off~~ **closed** — rung ratified [P1]; proceed with PWA manifest, icons, export filenames.
 
 ## 15. Sync points with the design track

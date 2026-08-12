@@ -177,11 +177,11 @@ export function indexFixture(courseId: string, moduleId = 'L1-M1') {
     surfaceCount: 5,
     maxSpan: 2,
     surfaces: {
-      India: { moduleId, sentenceId: `${moduleId}-S02`, wordIdx: 2 },
-      'Me llamo': { moduleId, sentenceId: `${moduleId}-S01`, wordIdx: 0 },
-      Rohan: { moduleId, sentenceId: `${moduleId}-S01`, wordIdx: 1 },
-      Soy: { moduleId, sentenceId: `${moduleId}-S02`, wordIdx: 0 },
+      india: { moduleId, sentenceId: `${moduleId}-S02`, wordIdx: 2 },
+      'me llamo': { moduleId, sentenceId: `${moduleId}-S01`, wordIdx: 0 },
+      rohan: { moduleId, sentenceId: `${moduleId}-S01`, wordIdx: 1 },
       'se llama': { moduleId, sentenceId: `${moduleId}-S01`, wordIdx: 0 },
+      soy: { moduleId, sentenceId: `${moduleId}-S02`, wordIdx: 0 },
     },
   };
 }
