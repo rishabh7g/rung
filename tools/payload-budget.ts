@@ -9,9 +9,10 @@
  * `scripts/verify.sh` runs it right after BUILD (`BUDGET ok` in the summary line), reading the
  * `dist/` that build just wrote.
  *
- * Three budgets — fonts (raw woff2 bytes, ≤ 150 KiB from #113) and #114's two: `js` (gzip,
+ * Four budgets — fonts (raw woff2 bytes, ≤ 150 KiB from #113), #114's two: `js` (gzip,
  * ≤ 200 KiB — the issue's number) and `total` (gzip, ≤ 400 KiB — everything a first visit
- * transfers, which on this product is all of dist/: the SW precaches the lot). `raw` meters bytes
+ * transfers, which on this product is all of dist/ minus the un-precached iOS splash set:
+ * the SW precaches the lot), and #115's `splash` (raw, ≤ 100 KiB). `raw` meters bytes
  * on disk (right for woff2/png, which are already compressed); `gzip` meters what the wire
  * carries (GitHub Pages serves text assets Content-Encoding: gzip — zlib's default level is the
  * approximation). The fonts budget holds while the native gate (#64) keeps modules out of the
@@ -62,10 +63,24 @@ export const BUDGETS: readonly Budget[] = [
     // globs), so dist/ IS the first-visit payload. 400 KiB ≈ what Slow 4G (~180 KiB/s effective)
     // moves in ~2.2 s — the whole "walk away from the wifi" moment stays cheap, not just the
     // interactive part the 2 s TTI gate covers. Baseline: 204.4 KiB (perf-notes §6).
+    //
+    // The one carve-out is the iOS splash set (#115): deliberately NOT precached (tools/pwa.ts),
+    // never fetched by the app — Safari pulls the single matching image at Add-to-Home-Screen —
+    // so it is not first-visit payload and it meters under its own `splash` row instead.
     id: 'total',
-    matches: () => true,
+    matches: (file) => !file.startsWith('icons/splash/'),
     limitBytes: 400 * 1024,
     measure: 'gzip',
+  },
+  {
+    // #115 — the iOS splash set: one already-compressed PNG per iPhone viewport, of which a
+    // device ever downloads ONE. Raw bytes (PNG, like woff2, does not gzip further); the ceiling
+    // is repo hygiene — a splash set that grows past ~9 KiB per image is a drawing bug, not a
+    // brand decision. Baseline: 70.3 KiB across 11 images.
+    id: 'splash',
+    matches: (file) => file.startsWith('icons/splash/'),
+    limitBytes: 100 * 1024,
+    measure: 'raw',
   },
 ];
 

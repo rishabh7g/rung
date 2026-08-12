@@ -17,6 +17,7 @@ import { BUDGETS, evaluate, formatResult, walkDist, type Budget } from './payloa
 const FONTS: Budget = BUDGETS.find((budget) => budget.id === 'fonts')!;
 const JS: Budget = BUDGETS.find((budget) => budget.id === 'js')!;
 const TOTAL: Budget = BUDGETS.find((budget) => budget.id === 'total')!;
+const SPLASH: Budget = BUDGETS.find((budget) => budget.id === 'splash')!;
 
 /** Synthetic shipped file — gzip defaults smaller than raw, the way real text assets behave. */
 const shipped = (p: string, bytes: number, gzipBytes = Math.ceil(bytes / 3)) => ({
@@ -79,6 +80,28 @@ describe('the total budget (#114: everything a first visit transfers — the SW 
     expect(TOTAL.limitBytes).toBe(400 * 1024);
     expect(TOTAL.measure).toBe('gzip');
     expect(TOTAL.matches('anything/at/all.xyz')).toBe(true);
+  });
+
+  it('carves out the iOS splash set — never precached, never fetched by the app (#115)', () => {
+    expect(TOTAL.matches('icons/splash/splash-1170x2532.png')).toBe(false);
+    // …but the icons themselves ARE first-visit payload: the precache takes `icons/*.png`.
+    expect(TOTAL.matches('icons/icon-192.png')).toBe(true);
+  });
+});
+
+describe("the splash budget (#115's iOS startup images)", () => {
+  it('meters exactly the carve-out, as raw bytes — PNG is already compressed', () => {
+    expect(SPLASH.limitBytes).toBe(100 * 1024);
+    expect(SPLASH.measure).toBe('raw');
+    expect(SPLASH.matches('icons/splash/splash-750x1334.png')).toBe(true);
+    expect(SPLASH.matches('icons/icon-192.png')).toBe(false);
+    expect(SPLASH.matches('assets/index-abc123.js')).toBe(false);
+  });
+
+  it('splits dist/ with total, losing nothing: every file meters under exactly one of the two', () => {
+    for (const file of ['icons/splash/splash-828x1792.png', 'icons/maskable-512.png', 'sw.js']) {
+      expect(TOTAL.matches(file)).not.toBe(SPLASH.matches(file));
+    }
   });
 });
 

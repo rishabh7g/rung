@@ -16,9 +16,9 @@
  * — are resolved from `design/tokens.css` (`tools/tokens.ts`), because a PNG cannot hold a
  * `var()` and a hand-typed hex here is the drift `src/styleContract.test.ts` exists to stop.
  *
- * These are placeholders in the product's sense, not in the code's: the ratified brand mark and
- * the full iOS splash set are #69 / #115 / #91. What ships today is honest — the same mark the
- * header draws, at the same proportions.
+ * Since #115 the component carries the RATIFIED construction grid (design/tokens.md §6.4, the
+ * formal spec #69 delivered), so these icons are the final brand set, not placeholders. The iOS
+ * splash images are cut from the same source by `tools/make-splash.ts`.
  */
 import { mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
@@ -134,8 +134,11 @@ function resolveColour(value: string): string {
   return variable === null ? value : token(variable[1]!);
 }
 
-/** The attributes the raster needs: presentation names, resolved colours, no React leftovers. */
-function shapeMarkup({ tag, attrs }: MarkShape): string {
+/**
+ * The attributes the raster needs: presentation names, resolved colours, no React leftovers.
+ * Exported for `tools/make-splash.ts`, which draws the same shapes on a transparent ground.
+ */
+export function shapeMarkup({ tag, attrs }: MarkShape): string {
   const drawn = Object.entries(attrs)
     .filter(([name]) => name !== 'className')
     .map(([name, value]) => `${svgAttrName(name)}="${resolveColour(value)}"`)
@@ -175,7 +178,7 @@ export function iconSvg(source: string, size: number, markHeight: number): strin
  * `MARK_HEIGHT` leaves the icon room to breathe at 192px in a launcher. `MASKABLE_HEIGHT` is the
  * safe-zone answer: a mask may crop to a circle of 80% of the icon's width, so every corner of
  * the mark's box has to sit inside a radius of 0.4 × size. At half the height the box's own
- * half-diagonal is ≈ 0.284 × size — comfortably inside, with the margin a *shape* needs rather
+ * half-diagonal is ≈ 0.289 × size — comfortably inside, with the margin a *shape* needs rather
  * than the margin a square would (`tools/make-icons.test.ts` does that arithmetic).
  */
 const MARK_HEIGHT = 0.64;

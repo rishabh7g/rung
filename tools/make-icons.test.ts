@@ -35,19 +35,20 @@ describe('the mark, read out of the component', () => {
     // The first rail: a full-height vertical line. A parse that lost `x1`/`y2` still returns a
     // shape, and its ink box would be the accent bar alone.
     expect(markShapes(source)[0]?.attrs).toMatchObject({
-      x1: '6',
-      y1: '2',
-      x2: '6',
-      y2: '18',
+      x1: '5.5',
+      y1: '1',
+      x2: '5.5',
+      y2: '21',
       strokeWidth: '1.5',
     });
   });
 
   it('measures the ink box as the geometry plus half a stroke', () => {
-    // Rails at x 6 and 14, running y 2 → 18, hairline 1.5: the drawn box is 9.5 × 17.5 in a
-    // viewBox of 20. The mark is tall and narrow, which is why the icons scale by height.
-    expect(markViewBox(source)).toBe(20);
-    expect(inkBox(markShapes(source))).toEqual({ x: 5.25, y: 1.25, width: 9.5, height: 17.5 });
+    // The ratified grid (design/tokens.md §6.4): rails at x 5.5 and 16.5, running y 1 → 21,
+    // hairline 1.5 — the drawn box is 12.5 × 21.5 in a viewBox of 22. The mark is tall and
+    // narrow, which is why the icons scale by height.
+    expect(markViewBox(source)).toBe(22);
+    expect(inkBox(markShapes(source))).toEqual({ x: 4.75, y: 0.25, width: 12.5, height: 21.5 });
   });
 });
 

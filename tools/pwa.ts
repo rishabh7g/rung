@@ -111,6 +111,11 @@ const PLUGIN_DEFAULTS_DROPPED = { lang: undefined, scope: undefined };
  * `.woff` fallback), the whole of `public/content/` as the build emitted it (`courses.json` plus
  * each course's `levels.json`, `strings.json`, `modules/*.json` and `index/*.json`), and the
  * icons. `tools/pwa.test.ts` asserts the content and font lines are still here.
+ *
+ * The icons line is `*`, not `**`, ON PURPOSE: `*` does not cross `/`, so the iOS splash set in
+ * `icons/splash/` (#115, `tools/make-splash.ts`) stays out of the precache. The app never
+ * fetches a splash image — Safari itself does, once, at Add-to-Home-Screen — so precaching the
+ * set would make every first visit download ~70 KiB it can never use.
  */
 export const PRECACHE_GLOBS = [
   '**/*.{html,css,js}',
