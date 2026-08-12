@@ -9,7 +9,12 @@
   --color-bg: #f2f2f3;
   --color-surface: #e9e9ea;
   --color-text: #1d1f20;
-  --color-accent: #5980a6;               /* the one steel accent (mono scheme) */
+  /* The one steel accent (mono scheme). Industry ships #5980a6 (OKLCH L .586); rung takes it
+     half a ramp step down to L .530 — same hue (248.5) and chroma (.073) — because the primary
+     CTA paints --color-bg ON this fill at 18px/600, and #f2f2f3 on #5980a6 is 3.71:1, under the
+     4.5:1 PRD-design §10 asks of fills (18px/600 is not WCAG "large"). #496f94 is 4.71:1 (#184).
+     Pressed stays --color-accent-700 (L .481), still a visible step below rest. */
+  --color-accent: #496f94;
   --color-divider: color-mix(in srgb, #1d1f20 16%, transparent);
 
   /* Tonal ramps — OKLCH-generated, shared lightness scale.
