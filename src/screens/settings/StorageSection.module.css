@@ -1,0 +1,77 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   Geometry follows design/Rung App v3.3.dc.html → Settings → Storage; every length is the
+   nearest token on the Industry scale (design/tokens.md §3, §4). */
+
+/* ------------------------------------------------------------------------------ the meter */
+
+.meterBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* The prototype's 8px hairline-bordered bar, at the nearest token. The fill's fraction arrives
+   as a custom property the way the tick's and the hold's do (`practice/Tick.tsx`,
+   `components/HoldToConfirm.tsx`) — a runtime number has no place in a stylesheet. */
+.meter {
+  display: flex;
+  height: var(--space-2);
+  border: var(--border-hairline);
+}
+
+.meterFill {
+  width: calc(var(--storage-fraction, 0) * 100%);
+  background: var(--color-accent-400);
+}
+
+/* The two computed numbers under the bar — shell furniture, counts only. */
+.meterLine {
+  margin: 0;
+  font: var(--text-caption);
+  color: var(--ink-50);
+}
+
+/* ------------------------------------------------------------------------------- the rows */
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin: 0;
+  font: var(--text-secondary);
+}
+
+.rowLabel {
+  min-width: 0;
+}
+
+/* The prototype bolds the byte column. */
+.rowBytes {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------------- the two promises */
+
+/* Course copy — Mukta at the §2 floor, like every course word on this screen (the same
+   missing-slot call `SettingsScreen.module.css` documents on `.status`). */
+.durability {
+  margin: 0;
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  color: var(--ink-55);
+}
+
+/* The honesty line the section ends on, at the prototype's quietest step. */
+.honesty {
+  margin: 0;
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  color: var(--ink-45);
+}

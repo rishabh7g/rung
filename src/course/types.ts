@@ -217,3 +217,19 @@ export interface WordIndex {
   /** Surface → the word row that teaches it. `noUncheckedIndexedAccess` makes a miss explicit. */
   surfaces: Record<string, WordIndexEntry>;
 }
+
+/* -------------------------------------------------------------------- sizes */
+
+/**
+ * A course's shipped weight: `public/content/<courseId>/sizes.json` (#107, PRD §17: "storage
+ * figures are illustrative; compute them"). Emitted by `tools/content-build.ts` as it writes the
+ * course — `bytes` sums every other emitted file (modules, indexes, levels.json, strings.json),
+ * never itself — so Settings' STORAGE rows render what the build actually put on the device
+ * rather than a guess, and without a single runtime network request beyond the precached file.
+ */
+export interface CourseSizes {
+  courseId: string;
+  /** How many files the sum covers — everything the course ships except sizes.json itself. */
+  files: number;
+  bytes: number;
+}

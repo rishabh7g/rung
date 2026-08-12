@@ -29,7 +29,7 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 86 keys: the 21 of PRD §4, the 5 the frozen screens forced
+ * file it is complaining about). 88 keys: the 21 of PRD §4, the 5 the frozen screens forced
  * (PR #120) — `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and the four
  * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — the 3 the Ladder
  * forced (#86): the counts-only pending line, the ownership footer and the sealed-level toast,
@@ -55,7 +55,9 @@
  * the 4 the Settings screen forced (#105): the course dropdown's status line in its two shapes
  * (mid-journey and pending-authoring, counts only — Invariant 2), the reassurance note that
  * switching erases nothing (Invariant 8 in the course's own words), and the privacy line the
- * screen ends on.
+ * screen ends on — and the 2 the storage section forced (#107): the durability line's two
+ * states, protected and best-effort, because what `navigator.storage.persist()` answered is a
+ * promise about the learner's ladder and a promise is the course's to word.
  *
  * Those sixty are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
  * as PR #120's were. The alternative each time was hardcoding learner-facing lines in the shell,
@@ -144,6 +146,8 @@ export const STRINGS_KEYS = [
   'settings.statusLine',
   'settings.statusPending',
   'settings.switchNote',
+  'settings.storageProtected',
+  'settings.storageBestEffort',
   'settings.privacy',
   'switchToast',
   'storageNote',
@@ -399,6 +403,15 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'settings.statusLine': ['{level}', '{passed}', '{total}', '{rung}'],
   'settings.statusPending': ['{level}', '{passed}', '{total}'],
   'settings.switchNote': [],
+  /**
+   * The storage section's durability line (#107) — the quiet report of what the one
+   * `navigator.storage.persist()` ask (#90, first persisted write) actually got. Two keys
+   * because they are two different promises: `storageProtected` says the browser agreed to keep
+   * the ladder, `storageBestEffort` is the honest state everywhere else — evictable, with F7's
+   * export as the real backup. Neither interpolates: the browser's answer has no number in it.
+   */
+  'settings.storageProtected': [],
+  'settings.storageBestEffort': [],
   'settings.privacy': [],
   /** Course pair labels, both directions. */
   switchToast: ['{to}', '{from}'],

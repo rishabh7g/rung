@@ -3,10 +3,11 @@
  * multi-course seam visible (PRD §8 F6, F0; PRD-design §4, §6.8; the prototype's Settings).
  *
  * F6 fixes the order and this screen renders exactly it: **COURSE** → **PRACTICE** →
- * **STORAGE** → **Backup** → the privacy line. Two of those are other tickets' sections and
- * ship here as slots — STORAGE's meter and rows are #107's, Backup's export/import buttons are
- * #108's — because the ORDER is this ticket's contract and a section that appears later must
- * appear where F6 already said it would.
+ * **STORAGE** → **Backup** → the privacy line. STORAGE's body is #107's
+ * (`./settings/StorageSection.tsx` — the quota meter, the computed rows, the durability and
+ * honesty lines); Backup's export/import buttons are #108's and ship here as a slot — because
+ * the ORDER is this ticket's contract and a section that appears later must appear where F6
+ * already said it would.
  *
  * The COURSE section is the reason the screen exists (F0): a native `<select>` over the
  * manifest's courses — it ships even with one course, because the seam is the product promise —
@@ -38,6 +39,7 @@ import { useAppStore } from '../state/store.ts';
 import { Toast, useToast } from '../shell/Toast.tsx';
 import { rungLabel } from './ladder/rungLabel.ts';
 import { RegistrationMarks } from './RegistrationMarks.tsx';
+import StorageSection from './settings/StorageSection.tsx';
 import { useProgression } from './useProgression.ts';
 import styles from './SettingsScreen.module.css';
 
@@ -155,11 +157,11 @@ export default function SettingsScreen() {
         </div>
       </section>
 
-      {/* -------------------------------------------------- STORAGE — #107's slot (F6 order) */}
+      {/* ------------------------------------------- STORAGE — computed, honest (#107, F6) */}
       <section className={styles.card}>
         <RegistrationMarks />
         <h3 className={styles.kicker}>STORAGE</h3>
-        <p className={styles.stubNote}>Section stub — built in #107.</p>
+        <StorageSection />
       </section>
 
       {/* -------------------------------------------------- Backup — #108's slot (F6 order) */}
