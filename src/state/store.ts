@@ -257,22 +257,6 @@ export function persistedSlice({
 }
 
 /**
- * Migration — a wired stub, and the contract for whoever writes the real one (P4, with F7
- * export/import).
- *
- * v5 → v6 is a wrap: v5 knew one course, so its `{modules, production, reviewQueue,
- * sessionCount, studied, session}` becomes `courses['hi-mr']`, `activeCourse` becomes `'hi-mr'`,
- * and `settings` stays at the top level (PRD §8 F7). Two rules bind any version of this
- * function: it must never drop a course subtree it does not recognise, and it must return a
- * COMPLETE v6 document — a half-filled shape is worse than a fresh one, because every screen
- * below trusts the shape and none of them re-check it.
- *
- * Until that lands the stub refuses to guess: it warns, naming the version it found, and boots
- * first-run state. That is honest rather than lossy in practice — `rung:state` is new in this
- * app and has never held a v5 payload, so this path is a mechanism kept wired (a version bump
- * runs it) rather than a live upgrade route.
- */
-/**
  * Whether two snapshots describe the same card. Position is written on every advance and a session
  * re-renders far more often than it moves, so this is what keeps `setSession` from rebuilding the
  * course subtree — and the persistence from writing localStorage — for a snapshot that has not
@@ -290,11 +274,71 @@ function sameSession(a: SessionSnapshot | null, b: SessionSnapshot | null): bool
   );
 }
 
-export function migrate(_persisted: unknown, fromVersion: number): AppState {
-  console.warn(
-    `${STORAGE_KEY}: found state v${fromVersion}, and no migration to v${STATE_VERSION} exists yet — starting fresh (the v5 → v6 wrap ships with export/import, PRD §8 F7)`,
-  );
-  return initialState();
+/**
+ * The oldest state version `migrate` has a route for. v5 is where the routes begin because v5
+ * is the oldest shape this app ever wrote to `rung:state`; anything older reaching `migrate`
+ * was written by something else, and guessing at it would be a silent, partial restore. Both
+ * readers of a versioned document — the store's rehydrate below and `serialize.ts`'s import —
+ * take the answer from this one constant, so a file and a reload can never disagree about
+ * which versions have a way in.
+ */
+export const OLDEST_MIGRATABLE_VERSION = 5;
+
+/**
+ * The migration — one route today, v5 → v6, and it is a WRAP (PRD §8 F7). v5 knew one course,
+ * so its `{modules, production, reviewQueue, sessionCount, studied, session}` becomes
+ * `courses['hi-mr']`, `activeCourse` becomes `'hi-mr'`, and `settings` stays at the top level.
+ * A v5 field that is absent gets the empty-course value, because the six keys arrived across
+ * several v5 builds and an early document legitimately lacks the late ones.
+ *
+ * Two rules bind any version of this function: it never drops a subtree it does not recognise
+ * (v5 has exactly one, and the wrap keeps it whole), and it returns a COMPLETE v6 document —
+ * a half-filled shape is worse than a fresh one, because every screen below trusts the shape
+ * and none of them re-check it.
+ *
+ * It wraps; it does not bless. The values are carried as they were found, not validated —
+ * this function serves two callers with different trust: the rehydrate path below reads what
+ * this app itself wrote, and `serialize.ts`'s import path runs the RESULT through the same
+ * field-by-field validation a native v6 file gets (#104). Validating here would be a second
+ * validator waiting to disagree with that one.
+ *
+ * A version older than any route gets a warning and first-run state — on the rehydrate path
+ * that is the only honest boot (there is nothing to read), and the import path never lets such
+ * a document reach this function at all (`importState` refuses it with a reason first).
+ */
+export function migrate(persisted: unknown, fromVersion: number): AppState {
+  if (
+    fromVersion < OLDEST_MIGRATABLE_VERSION ||
+    typeof persisted !== 'object' ||
+    persisted === null
+  ) {
+    console.warn(
+      `${STORAGE_KEY}: found state v${fromVersion}, and the oldest this app knows how to upgrade is v${OLDEST_MIGRATABLE_VERSION} — starting fresh (PRD §8 F7)`,
+    );
+    return initialState();
+  }
+
+  const v5 = persisted as Record<string, unknown>;
+  const empty = emptyCourseState();
+  const fresh = initialState();
+
+  return {
+    stateVersion: STATE_VERSION,
+    activeCourse: 'hi-mr',
+    courses: {
+      // The wrap, verbatim: `as` rather than checks, because carrying the values through
+      // unjudged is this function's contract (see above — the import path validates the result).
+      'hi-mr': {
+        modules: (v5['modules'] ?? empty.modules) as CourseState['modules'],
+        production: (v5['production'] ?? empty.production) as CourseState['production'],
+        reviewQueue: (v5['reviewQueue'] ?? empty.reviewQueue) as CourseState['reviewQueue'],
+        sessionCount: (v5['sessionCount'] ?? empty.sessionCount) as CourseState['sessionCount'],
+        studied: (v5['studied'] ?? empty.studied) as CourseState['studied'],
+        session: (v5['session'] ?? empty.session) as CourseState['session'],
+      },
+    },
+    settings: (v5['settings'] ?? fresh.settings) as Settings,
+  };
 }
 
 export const useAppStore = create<AppStore>()(

@@ -654,7 +654,7 @@ describe('rehydration', () => {
 });
 
 describe('migration', () => {
-  it('runs migrate for a v5 payload, naming the version it found', async () => {
+  it('wraps a v5 payload under courses["hi-mr"] on rehydrate — the ladder survives the upgrade', async () => {
     const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
     storage.items.set(
       STORAGE_KEY,
@@ -664,40 +664,47 @@ describe('migration', () => {
           stateVersion: 5,
           modules: { 'L1-M1': { status: 'passed', passedAt: '2026-02-02T02:40:00.000Z' } },
           production: { 'L1-M3-S01': 2 },
-          settings: { elapsedTickEnabled: true },
+          settings: { elapsedTickEnabled: false },
         },
       }),
     );
 
     await useAppStore.persist.rehydrate();
 
-    expect(warn).toHaveBeenCalledWith(expect.stringContaining('v5'));
-    expect(warn).toHaveBeenCalledWith(expect.stringContaining(STORAGE_KEY));
+    const state = useAppStore.getState();
+    expect(warn).not.toHaveBeenCalled();
+    expect(state.stateVersion).toBe(6);
+    expect(state.activeCourse).toBe('hi-mr');
+    expect(state.courses['hi-mr']).toEqual({
+      ...emptyCourseState(),
+      modules: { 'L1-M1': { status: 'passed', passedAt: '2026-02-02T02:40:00.000Z' } },
+      production: { 'L1-M3-S01': 2 },
+    });
+    // Settings stay at the top level — the wrap moves the course keys and nothing else.
+    expect(state.settings).toEqual({ elapsedTickEnabled: false });
   });
 
-  it('never reads an older payload as if it were v6 — a half shape is worse than a fresh one', async () => {
-    vi.spyOn(console, 'warn').mockImplementation(() => {});
+  it('answers a COMPLETE v6 document even for a sparse v5 payload — a half shape is worse than a fresh one', () => {
+    expect(migrate({ stateVersion: 5, modules: {} }, 5)).toEqual({
+      stateVersion: 6,
+      activeCourse: 'hi-mr',
+      courses: { 'hi-mr': emptyCourseState() },
+      settings: { elapsedTickEnabled: true },
+    });
+  });
+
+  it('starts fresh for a version older than any route, naming what it found', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
     storage.items.set(
       STORAGE_KEY,
-      JSON.stringify({ version: 5, state: { stateVersion: 5, modules: {} } }),
+      JSON.stringify({ version: 4, state: { stateVersion: 4, modules: {} } }),
     );
 
     await useAppStore.persist.rehydrate();
 
+    expect(warn).toHaveBeenCalledWith(expect.stringContaining('v4'));
+    expect(warn).toHaveBeenCalledWith(expect.stringContaining(STORAGE_KEY));
     expect(persistedSlice(useAppStore.getState())).toEqual(initialState());
-    expect(useAppStore.getState().stateVersion).toBe(6);
-  });
-
-  it('answers a complete v6 document, whatever it was handed', () => {
-    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
-
-    expect(migrate({ stateVersion: 5, modules: {} }, 5)).toEqual({
-      stateVersion: 6,
-      activeCourse: '',
-      courses: {},
-      settings: { elapsedTickEnabled: true },
-    });
-    expect(warn).toHaveBeenCalledOnce();
   });
 
   it('does not run for a v6 payload — the version it is already at', async () => {
