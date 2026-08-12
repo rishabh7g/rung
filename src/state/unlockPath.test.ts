@@ -237,7 +237,7 @@ const CALLS: Record<string, (store: AppStore) => void> = {
   // exactly what some device's `passRitual` already wrote there. Checked on its own below.
   restoreBackup: (store) =>
     store.restoreBackup({
-      stateVersion: 6,
+      stateVersion: 7,
       activeCourse: 'hi-mr',
       courses: {
         'hi-mr': {
@@ -249,7 +249,7 @@ const CALLS: Record<string, (store: AppStore) => void> = {
           session: null,
         },
       },
-      settings: { elapsedTickEnabled: true },
+      settings: { elapsedTickEnabled: true, notebookInvitationDismissed: false },
     }),
   // Dev + tests only, and it can only erase: `_reset` blanks the whole document back to first run.
   // It cannot mark anything passed, which is what Invariant 1 is about. Checked on its own below.

@@ -1,5 +1,5 @@
 /**
- * The export contract (#104) — state v6 as one file, and the only door back in (PRD §8 F7,
+ * The export contract (#104) — state v7 as one file, and the only door back in (PRD §8 F7,
  * docs/01-plan.md §6).
  *
  * There is no backend and no account, so this file IS the learner's history: every ladder, every
@@ -15,7 +15,7 @@
  *     small, the reasons have to name a path a person can find, and a validator that ships as data
  *     is a second declaration of the shape waiting to disagree with `types.ts`.
  *
- * **The migration is the store's, not a copy of it.** A document older than v6 is routed through
+ * **The migration is the store's, not a copy of it.** A document older than v7 is routed through
  * `migrate` from `store.ts` — the same function `persist` runs on rehydrate — so a file and a
  * reload can never disagree about what a v5 document means. What this module adds is the
  * validation of the RESULT: the rehydrate path reads what this app itself wrote, the import path
@@ -66,7 +66,7 @@ const DOCUMENT = 'state';
 /* ------------------------------------------------------------------------ the vocabulary */
 
 /**
- * A kind of string state v6 may hold, and the test of whether a given string is one.
+ * A kind of string state v7 may hold, and the test of whether a given string is one.
  *
  * **This list is Invariant 4's surface.** Every string in the document is an id the CONTENT
  * authored, a member of a closed enum, or the one timestamp — none of which can express a
@@ -288,7 +288,7 @@ function record<T>(keys: Vocabulary, value: Shape<T>): Shape<Record<string, T>> 
   };
 }
 
-/** `null`, or the shape — the per-course session snapshot, and nothing else in v6. */
+/** `null`, or the shape — the per-course session snapshot, and nothing else in v7. */
 function nullable<T>(shape: Shape<T>): Shape<T | null> {
   return {
     expected: `${shape.expected} or null`,
@@ -303,7 +303,7 @@ type Fields<T> = { readonly [K in keyof T]-?: Shape<T[K]> };
 /**
  * A fixed set of named fields — every one of them required, **and no others**: an unknown key is
  * rejected rather than dropped, because a key this app does not understand means the file was
- * written by something that understood more than v6 does, and importing the parts we recognise
+ * written by something that understood more than v7 does, and importing the parts we recognise
  * would be a silent, partial restore of somebody's entire history.
  *
  * Typed `Fields<T>`, which is the compile-time half of the contract: `object<CourseState>` will
@@ -322,7 +322,7 @@ function object<T extends object>(expected: string, fields: Fields<T>): Shape<T>
       for (const key of Object.keys(found)) {
         if (!keys.includes(key as keyof T & string)) {
           throw new ImportError(
-            `${path}.${key}: unknown key — state v6 has no such field, and a file this app cannot read whole it does not read in part`,
+            `${path}.${key}: unknown key — state v${STATE_VERSION} has no such field, and a file this app cannot read whole it does not read in part`,
           );
         }
       }
@@ -362,7 +362,7 @@ function writeField<T extends object, K extends keyof T & string>(
   return fields[key].write(value[key]);
 }
 
-/* ---------------------------------------------------------------------------- state v6 */
+/* ---------------------------------------------------------------------------- state v7 */
 
 /** `{status: 'passed', passedAt}`. There is no failure to record — a module is passed or absent. */
 const MODULE_PROGRESS = object<ModuleProgress>('a passed module', {
@@ -393,14 +393,17 @@ const COURSE = object<CourseState>('a course subtree', {
   session: nullable(SESSION_SNAPSHOT),
 });
 
-const SETTINGS = object<Settings>('the settings', { elapsedTickEnabled: FLAG });
+const SETTINGS = object<Settings>('the settings', {
+  elapsedTickEnabled: FLAG,
+  notebookInvitationDismissed: FLAG,
+});
 
 /**
  * The document, top to bottom — PRD §8 F7 prints exactly this, and this is the order it is
  * written in. Exported so `serialize.test.ts` can walk the shape itself: the vocabularies below
  * are Invariant 4's assertion, and a test that re-declared them would be asserting its own list.
  */
-export const STATE_V6 = object<AppState>('the exported rung state', {
+export const STATE_V7 = object<AppState>('the exported rung state', {
   stateVersion: literal(STATE_VERSION),
   activeCourse: id(ACTIVE_COURSE),
   courses: record(VOCABULARY.courseId, COURSE),
@@ -418,7 +421,7 @@ export const STATE_V6 = object<AppState>('the exported rung state', {
  * same bytes — so a diff between yesterday's file and today's shows what the learner DID.
  */
 export function exportState(state: AppState): string {
-  return JSON.stringify(STATE_V6.write(state), null, 2);
+  return JSON.stringify(STATE_V7.write(state), null, 2);
 }
 
 /* ------------------------------------------------------------------------------ import */
@@ -430,14 +433,14 @@ export function exportState(state: AppState): string {
  *
  * Four routes out of `stateVersion`, and only one of them restores anything:
  *
- *   • **v6** — validated field by field, and answered as a freshly built document.
+ *   • **v7** — validated field by field, and answered as a freshly built document.
  *   • **older, and upgradable** — through `migrate` (the store's own, #82), then validated exactly
- *     as a v6 file is. The migration is trusted to WRAP, never to bless: what comes back out of it
+ *     as a v7 file is. The migration is trusted to WRAP, never to bless: what comes back out of it
  *     is read with the same suspicion as what went in.
  *   • **older than any route** — refused. Answering first-run state would tell the learner their
  *     history was restored while handing them an empty ladder.
- *   • **newer** — refused, and it says so: a v7 file knows things this build does not, and reading
- *     the v6-shaped parts of it would quietly drop the rest.
+ *   • **newer** — refused, and it says so: a v8 file knows things this build does not, and reading
+ *     the v7-shaped parts of it would quietly drop the rest.
  */
 export function importState(json: string): AppState {
   let parsed: unknown;
@@ -451,7 +454,7 @@ export function importState(json: string): AppState {
 
   const version = versionOf(parsed);
 
-  if (version === STATE_VERSION) return STATE_V6.read(parsed, DOCUMENT);
+  if (version === STATE_VERSION) return STATE_V7.read(parsed, DOCUMENT);
 
   if (version > STATE_VERSION) {
     throw new ImportError(
@@ -467,12 +470,12 @@ export function importState(json: string): AppState {
 
   // The store's migration, not a second one: a file and a rehydrate must never disagree about
   // what a v5 document means (#82's contract, and `serialize.test.ts` proves there is one of it).
-  return STATE_V6.read(migrate(parsed, version), DOCUMENT);
+  return STATE_V7.read(migrate(parsed, version), DOCUMENT);
 }
 
 /** The version the file was written at — the one field read before anything else is trusted. */
 function versionOf(parsed: unknown): number {
-  if (!isRecord(parsed)) return fail(DOCUMENT, STATE_V6.expected, parsed);
+  if (!isRecord(parsed)) return fail(DOCUMENT, STATE_V7.expected, parsed);
 
   const version = parsed['stateVersion'];
   if (typeof version !== 'number' || !Number.isInteger(version)) {
