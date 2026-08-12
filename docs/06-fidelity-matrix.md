@@ -46,7 +46,8 @@ phone; recorded on #117).
 | Practice · read / produce / tick / resume / summary | match | committed baselines (`practice-*.png`, #96/#102) + phase tests; tick numberless, default ON |
 | Ritual · arc (write / check / confirm) | match | #100 record: bare-ordinal title, `1 / 2` counts, dashed plate zero-interactive (mechanised), no marks on the dashed plate (sanctioned) |
 | Ritual · hold | match | ~900ms fill, release resets, reduced-motion static (`HoldToConfirm` tests + `ritual-hold-*.png`) |
-| Comprehension · items / marked / retry | match | §6.3 all five retry layers, no counter, no red outside marks; deep link without the hold's handover lands on the ritual arc (guarded route, sanctioned) |
+| Comprehension · items / marked | match | no counter, no red outside marks; deep link without the hold's handover lands on the ritual arc (guarded route, sanctioned) |
+| Comprehension · retry interstitial | **fixed** | §6.3's five layers render, but the kicker (`retry.kicker`, course copy minted at Sync-3 AFTER #102's screenshot pass) was set in the `--text-kicker` Barlow recipe — literal notdef boxes for "COMPREHEND · फिर से" on the hi-mr screen. Re-set in the standing course-label treatment (#89 `trapHead`, #93 `cueLabel`, #100 plate label); a stylesheet test in `ComprehensionScreen.test.tsx` now keeps Barlow faces and `text-transform` out of the interstitial; baseline `docs/images/comprehension-retry-360.png` refreshed (PR #179) |
 | Verdict · pass + unlock handover | match | checklist + both honesty lines (#71 ratification), one-shot flag consumed on the Ladder; deep link without a pass redirects (guarded, sanctioned) |
 | Settings · course / tick / storage / backup | match | §6.2 recipe: native select ≥16px at 44px, counts-only status line, frozen reassurance footer; storage computed rows; switch toast in the NEW course's words |
 | Boot / offline / error | match | `offline-*.png` receipts (#91, docs/05-pwa-notes.md); content-error screen #79 |
@@ -68,11 +69,14 @@ phone; recorded on #117).
 ## Deltas
 
 1. **Fixed here:** the staged rung card's production-dots row + writes count (§6.1 anatomy,
-   prototype draws it in all four stages) — was absent in every stage.
-2. **Filed:** the notebook invitation (PRD-design §8.1, decided on #67) is still an empty slot on
+   prototype draws it in all four stages) — was absent in every stage (PR #178).
+2. **Fixed here:** the retry interstitial's kicker set course copy ("COMPREHEND · फिर से") in
+   the Barlow `--text-kicker` recipe — notdef boxes since the #113 subsetting; re-set in the
+   standing course-label treatment, stylesheet-guarded (PR #179).
+3. **Filed:** the notebook invitation (PRD-design §8.1, decided on #67) is still an empty slot on
    the Practice hub — needs a persisted dismissal bit (state-shape change), so it is an issue,
    not a QA-pass fix.
-3. **Device cells** (cannot be honestly produced on this headless host): real-phone walk — iOS
+4. **Device cells** (cannot be honestly produced on this headless host): real-phone walk — iOS
    Add-to-Home-Screen + splash, Android WebAPK, safe-area insets on a notched device, native
    select feel, press-and-hold on touch. Recorded on #117; the headless halves (installability,
    manifest, splash set, offline) carry receipts in docs/05-pwa-notes.md.
