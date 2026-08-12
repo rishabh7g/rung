@@ -151,7 +151,7 @@ describe('interpolate', () => {
     expect(interpolate('all done', { n: 3 })).toBe('all done');
   });
 
-  it('fills every placeholder the contract declares, across all 77 keys', () => {
+  it(`fills every placeholder the contract declares, across all ${STRINGS_KEYS.length} keys`, () => {
     const values = {
       sentenceCount: 10,
       maxWords: 12,
@@ -162,9 +162,11 @@ describe('interpolate', () => {
       from: 'hindi → marathi',
       level: 1,
       remaining: 8,
+      passed: 2,
       total: 10,
       count: 5,
       phase: 'produce',
+      rung: 'M3',
     };
 
     for (const key of STRINGS_KEYS) {

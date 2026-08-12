@@ -1,0 +1,195 @@
+/* Layout only, tokens only (docs/design-contract.md rule 1).
+   Geometry follows design/Rung App v3.3.dc.html → Settings; every length is the nearest token
+   on the Industry scale (design/tokens.md §3, §4). */
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-6) var(--space-6);
+}
+
+/* English shell furniture — the header README's purity note anticipates. The prototype's 24px. */
+.title {
+  margin: 0;
+  font: var(--text-screen-title);
+}
+
+/* The blueprint object every section is (design/tokens.md §3): radius 0, a hairline,
+   --shadow-sm, no surface fill — wearing the four registration marks
+   (`./RegistrationMarks.tsx`), which is why it is `position: relative`. */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--color-bg);
+  border: var(--border-hairline);
+  box-shadow: var(--shadow-sm);
+}
+
+/* The section kickers — the register of the nav's tab labels and the Ladder's LEVEL line. */
+.kicker {
+  margin: 0;
+  font: var(--text-kicker);
+  letter-spacing: var(--kicker-tracking);
+  text-transform: uppercase;
+  color: var(--color-accent-700);
+}
+
+/* The one section the prototype heads with a bold body word rather than a kicker. */
+.backupTitle {
+  margin: 0;
+  font: var(--text-body);
+  font-weight: 600;
+}
+
+/* ------------------------------------------------------------------------------- COURSE */
+
+.courseField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.fieldLabel {
+  font: var(--text-body);
+  font-weight: 600;
+}
+
+/**
+ * The native select, on the design's input geometry: 44px target (`--tap-min`), a hairline,
+ * radius 0 like every blueprint object.
+ *
+ * The type size is the iOS zoom guard (design/pwa-checklist.md §1: below 16px, Safari zooms the
+ * page when a select focuses — keep ≥16px on any future select). The ramp has no 16px slot —
+ * `--text-body` is 15px, which would zoom — so the size is pulled UP to the nearest token above
+ * the floor, `--devanagari-min-size` (18px). Sixth recurrence of the missing-slot wall
+ * (#86, #87, #88, #89, #93); flagged for #117, no token invented.
+ */
+.select {
+  min-height: var(--tap-min);
+  padding: var(--space-2) var(--space-3);
+  font: var(--text-body);
+  font-size: var(--devanagari-min-size);
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: var(--border-hairline);
+  border-radius: 0;
+  cursor: pointer;
+  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* The status line — course copy, so the smallest Mukta slot pulled to the §2 floor, muted the
+   way the prototype mutes it. Same wall and same flag as the select above. */
+.status {
+  margin: 0;
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  color: var(--ink-55);
+}
+
+/* The reassurance note, under its own hairline as the prototype draws it. */
+.switchNote {
+  margin: 0;
+  padding-top: var(--space-3);
+  border-top: var(--border-hairline);
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  color: var(--ink-50);
+}
+
+/* ----------------------------------------------------------------------------- PRACTICE */
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.rowText {
+  flex: 1;
+  min-width: 0;
+}
+
+.rowTitle {
+  margin: 0;
+  font: var(--text-body);
+  font-weight: 600;
+}
+
+.rowNote {
+  margin: 0;
+  font: var(--text-secondary);
+  color: var(--ink-55);
+}
+
+/* The Industry seg, as the self-mark draws it (`../components/SelfMark.module.css`): one
+   hairline round the pair, one between them, radius 0. */
+.seg {
+  display: flex;
+  border: var(--border-hairline);
+}
+
+.segOption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--seg-opt-height);
+  padding: var(--space-2) var(--space-4);
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: var(--text-body);
+  cursor: pointer;
+  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.segOption + .segOption,
+.segOption + .segSelected,
+.segSelected + .segOption {
+  border-left: var(--border-hairline);
+}
+
+.segOption:active {
+  background: color-mix(in srgb, var(--color-text) 7%, transparent);
+}
+
+/* Selected = a tinted accent fill with dark accent ink (design/tokens.md §1: 100–300 for
+   tinted fills, 700–900 for text on tints). Not the mark colours — those two fills are the
+   product's one sanctioned loud pair and live in the self-mark alone (§7 rule 2). */
+.segSelected {
+  composes: segOption;
+  background: var(--color-accent-200);
+  color: var(--color-accent-900);
+}
+
+/* --------------------------------------------------------------------- the tickets' slots */
+
+/* The ScreenStub's register (#84): honest scaffolding that names its ticket. */
+.stubNote {
+  margin: 0;
+  font: var(--text-secondary);
+  color: var(--ink-50);
+}
+
+/* ------------------------------------------------------------------------- the privacy line */
+
+.privacy {
+  margin: 0;
+  font: var(--text-caption);
+  color: var(--ink-45);
+}
+
+/* The course's sentence inside the shell's frame — Mukta at the §2 floor, like every course
+   word on this screen. */
+.privacyPromise {
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  color: var(--ink-45);
+}

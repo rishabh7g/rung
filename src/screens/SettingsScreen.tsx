@@ -1,9 +1,190 @@
 /**
- * Settings — course dropdown, the practice toggle, storage, backup, the privacy line. The
- * screen is #105; the course switch flow #106, storage #107, export/import #108.
+ * Settings (#105) — the frozen section order, led by the COURSE dropdown that makes the
+ * multi-course seam visible (PRD §8 F6, F0; PRD-design §4, §6.8; the prototype's Settings).
+ *
+ * F6 fixes the order and this screen renders exactly it: **COURSE** → **PRACTICE** →
+ * **STORAGE** → **Backup** → the privacy line. Two of those are other tickets' sections and
+ * ship here as slots — STORAGE's meter and rows are #107's, Backup's export/import buttons are
+ * #108's — because the ORDER is this ticket's contract and a section that appears later must
+ * appear where F6 already said it would.
+ *
+ * The COURSE section is the reason the screen exists (F0): a native `<select>` over the
+ * manifest's courses — it ships even with one course, because the seam is the product promise —
+ * with the ACTIVE course's status line beneath it, derived from the very progression input the
+ * Ladder renders and `passRitual` guards with (`useProgression`), counts only, never time
+ * (Invariant 2). Under that, the reassurance note: switching never erases anything
+ * (Invariant 8), in the course's own words.
+ *
+ * Selection change calls the bare `setActiveCourse` — the store's one-string swap — which
+ * re-boots `CourseProvider` into the chosen course's strings and content. The full switch FLOW
+ * (the confirmation toast naming both courses, `switchToast`) is #106's, and lands on top of
+ * this same write.
+ *
+ * What the learner reads here is the course's (`settings.*` strings); the section kickers, the
+ * dropdown's label and the tick toggle's rows are English shell furniture in the register of
+ * the nav's tab labels — the same call the Ladder's kickers made (#86), flagged on #71/#117
+ * with them. **No checking or translation control exists here or anywhere** (F6's AC — [D18],
+ * Invariant 4): there is nothing to configure about features the product does not have, and
+ * the test sweeps this screen's controls to prove none crept in.
  */
-import { ScreenStub } from './ScreenStub.tsx';
+import { useId } from 'react';
+import { BRAND } from '../brand.ts';
+import { useCourse } from '../course/CourseProvider.tsx';
+import { interpolate, useStrings, type Strings } from '../course/strings.ts';
+import { currentRungId, rungStage, type ProgressionInput } from '../engine/progression.ts';
+import { useAppStore } from '../state/store.ts';
+import { rungLabel } from './ladder/rungLabel.ts';
+import { RegistrationMarks } from './RegistrationMarks.tsx';
+import { useProgression } from './useProgression.ts';
+import styles from './SettingsScreen.module.css';
 
 export default function SettingsScreen() {
-  return <ScreenStub title="Settings" ticket="#105" />;
+  const { course, courses } = useCourse();
+  const strings = useStrings();
+  const setActiveCourse = useAppStore((store) => store.setActiveCourse);
+  const setSetting = useAppStore((store) => store.setSetting);
+  const tickEnabled = useAppStore((store) => store.settings.elapsedTickEnabled);
+  // The active course's ladder, loaded and derived — the same lines the Ladder starts with, so
+  // the status here and the rungs there cannot disagree: they are one derivation.
+  const { levels, input, ready } = useProgression();
+
+  const selectId = useId();
+  const tickLabelId = useId();
+
+  // No ladder, no status: before the levels resolve (or when the content layer is broken —
+  // that failure belongs to the screens that render the ladder, not to Settings) the slot is
+  // simply absent. Every count in the line would be dishonest without the ladder behind it.
+  const status = ready && levels.error === null ? statusLine(input, strings) : null;
+
+  return (
+    <section className={styles.settings}>
+      <h2 className={styles.title}>Settings</h2>
+
+      {/* ------------------------------------------------------------------ COURSE (F0) */}
+      <section className={styles.card}>
+        <RegistrationMarks />
+        <h3 className={styles.kicker}>COURSE</h3>
+        <div className={styles.courseField}>
+          <label className={styles.fieldLabel} htmlFor={selectId}>
+            Active course
+          </label>
+          {/* Native on purpose (PRD-design §7): the platform's own picker scales to many
+              courses and owes this screen nothing. ≥16px type is the iOS zoom guard
+              (design/pwa-checklist.md §1); the target is the 44px floor. */}
+          <select
+            id={selectId}
+            className={styles.select}
+            value={course.id}
+            onChange={(event) => setActiveCourse(event.target.value)}
+          >
+            {courses.map((row) => (
+              <option key={row.id} value={row.id}>
+                {row.pairLabel}
+              </option>
+            ))}
+          </select>
+          {status !== null && (
+            <p className={styles.status} dir={course.dir}>
+              {status}
+            </p>
+          )}
+        </div>
+        <p className={styles.switchNote} dir={course.dir}>
+          {strings['settings.switchNote']}
+        </p>
+      </section>
+
+      {/* ------------------------------------------------------------------ PRACTICE */}
+      <section className={styles.card}>
+        <RegistrationMarks />
+        <h3 className={styles.kicker}>PRACTICE</h3>
+        <div className={styles.row}>
+          <div className={styles.rowText}>
+            <p className={styles.rowTitle} id={tickLabelId}>
+              Gentle elapsed tick
+            </p>
+            <p className={styles.rowNote}>
+              A thin, numberless line during sessions — fills once, never counts down.
+            </p>
+          </div>
+          {/* The same seg the self-mark draws, for the same reason it is buttons rather than
+              radios there (`components/SelfMark`, Invariant 6): no input element anywhere.
+              Unlike a mark it always has a state — the setting is never null — and its live
+              effect is #98's Tick reading the store. */}
+          <div className={styles.seg} role="group" aria-labelledby={tickLabelId}>
+            <button
+              type="button"
+              className={tickEnabled ? styles.segSelected : styles.segOption}
+              aria-pressed={tickEnabled}
+              onClick={() => setSetting('elapsedTickEnabled', true)}
+            >
+              On
+            </button>
+            <button
+              type="button"
+              className={tickEnabled ? styles.segOption : styles.segSelected}
+              aria-pressed={!tickEnabled}
+              onClick={() => setSetting('elapsedTickEnabled', false)}
+            >
+              Off
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* -------------------------------------------------- STORAGE — #107's slot (F6 order) */}
+      <section className={styles.card}>
+        <RegistrationMarks />
+        <h3 className={styles.kicker}>STORAGE</h3>
+        <p className={styles.stubNote}>Section stub — built in #107.</p>
+      </section>
+
+      {/* -------------------------------------------------- Backup — #108's slot (F6 order) */}
+      <section className={styles.card}>
+        <RegistrationMarks />
+        <h3 className={styles.backupTitle}>Backup</h3>
+        <p className={styles.stubNote}>Section stub — built in #108.</p>
+      </section>
+
+      {/* The privacy line the screen (and the IA) ends on. The frame is shell furniture in the
+          prototype's own words; the promise itself is the course's (`settings.privacy`). */}
+      <p className={styles.privacy}>
+        {BRAND} — read-only teaching · zero inputs · zero network.{' '}
+        <span className={styles.privacyPromise} dir={course.dir}>
+          {strings['settings.privacy']}
+        </span>{' '}
+        Built by Rishabh, for one learner.
+      </p>
+    </section>
+  );
+}
+
+/**
+ * The status line, in the shape the ladder is actually in — the Ladder's own derivation
+ * (level, passed-of-total, current rung), rendered through the course's template:
+ *
+ *   • a current rung with content   → `settings.statusLine` ("Level 1 · 2 of 10 passed ·
+ *     M3 in progress"), `{rung}` printed the way the Ladder prints it (`rungLabel`);
+ *   • a current rung still unauthored → `settings.statusPending`, which names no rung —
+ *     nothing is in progress through sentences that do not exist;
+ *   • no current rung at all — the whole ladder passed — → no line. The completion state is
+ *     quiet everywhere (PRD-design §3.6), and a count with nothing in progress says nothing
+ *     a dropdown's silence does not.
+ */
+function statusLine(input: ProgressionInput, strings: Strings): string | null {
+  const current = currentRungId(input);
+  if (current === null) return null;
+
+  const plan = input.levels.find((entry) => entry.moduleIds.includes(current));
+  if (plan === undefined) return null;
+
+  const counts = {
+    level: plan.level,
+    passed: plan.moduleIds.filter((moduleId) => input.passed.has(moduleId)).length,
+    total: plan.moduleIds.length,
+  };
+
+  return rungStage(input, current) === 'pending'
+    ? interpolate(strings['settings.statusPending'], counts)
+    : interpolate(strings['settings.statusLine'], { ...counts, rung: rungLabel(current) });
 }

@@ -124,7 +124,7 @@ describe('bottom nav', () => {
     expect(screen.getByRole('link', { name: 'Ladder' })).not.toHaveAttribute('aria-current');
 
     fireEvent.click(screen.getByRole('link', { name: 'Settings' }));
-    expect(await screen.findByText('Screen stub — built in #105.')).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: 'Settings' })).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
     expect(await screen.findByRole('heading', { level: 1, name: BRAND })).toBeInTheDocument();
