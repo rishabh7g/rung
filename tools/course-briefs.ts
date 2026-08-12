@@ -8,10 +8,12 @@
  * levels.json stays the single source of the ladder, and a brief only adds the authoring
  * guidance on top.
  *
- * Only hi-mr L1 is briefed. L2/L3 module lists are drafts pending [Q1] (PRD §5) — briefing
- * an unratified list would bake in titles that will change — and the fixture courses' real
- * lists are a future content project gated on hi-mr L1 results (PRD §5). The CLI says
- * exactly this when asked for a course or module without a brief.
+ * Only hi-mr L1 is briefed. The L2/L3 module lists are RATIFIED (#112 closed [Q1] — titles,
+ * jobs and sequence in levels.json are final), but their briefs are written when the L2/L3
+ * authoring project starts: a brief encodes pattern-and-interference pedagogy that should be
+ * planned against the verified L1 ladder, not ahead of it. The fixture courses' real lists
+ * remain a future content project gated on hi-mr L1 results (PRD §5). The CLI says exactly
+ * this when asked for a course or module without a brief.
  */
 
 /** PRD §5 module budget: at most 25 new words per module, every course, every level. */

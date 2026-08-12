@@ -13,8 +13,8 @@
  */
 /**
  * A course's ladder: three levels, with L1's list cut to three rungs. `hasContent` is the
- * build-recomputed flag — true only for what shipped — and L2/L3 carry the draft note hi-mr's
- * unratified lists carry.
+ * build-recomputed flag — true only for what shipped. All three levels are ratified
+ * (`draft: false`), as hi-mr's are since #112 closed [Q1].
  */
 export function levelsFixture(courseId: string) {
   return {
@@ -36,8 +36,8 @@ export function levelsFixture(courseId: string) {
         id: 'L2',
         name: 'Conversations',
         tagline: 'hold your own',
-        draft: true,
-        draftNote: 'Draft list, pending [Q1] — nothing here is authored.',
+        draft: false,
+        draftNote: null,
         modules: [
           { id: 'L2-M1', title: 'Asking politely', job: 'Requests and thanks', hasContent: false },
         ],
@@ -46,8 +46,8 @@ export function levelsFixture(courseId: string) {
         id: 'L3',
         name: 'Fluency',
         tagline: 'stories & opinions',
-        draft: true,
-        draftNote: 'Draft list, pending [Q1] — nothing here is authored.',
+        draft: false,
+        draftNote: null,
         modules: [
           { id: 'L3-M1', title: 'Your day, in detail', job: 'Longer narration', hasContent: false },
         ],

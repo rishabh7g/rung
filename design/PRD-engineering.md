@@ -94,10 +94,10 @@ Any translation/checking feature [D18]; text input; audio; runtime AI or network
 
 ## 5. Content plan
 
-**Level names [Q1 pending]:** L1 "Foundations" · L2 "Conversations" · L3 "Fluency" — shared across courses unless a course overrides in its levels.json.
+**Level names [Q1 closed]:** L1 "Foundations" · L2 "Conversations" · L3 "Fluency" — shared across courses unless a course overrides in its levels.json. hi-mr keeps the shared defaults.
 
 ### hi-mr (ships)
-Level 1 module list unchanged from v3.2 (M1 Who I am … M10 Connected talk); L2/L3 draft lists unchanged, pending [Q1].
+Level 1 module list unchanged from v3.2 (M1 Who I am … M10 Connected talk); L2/L3 lists ratified as drafted [Q1 closed] — the twenty titles + jobs in `content/hi-mr/levels.json` are the confirmed sequence.
 
 ### en-es, en-ar (dev fixtures)
 M1 sample sets exist in the prototype (4 sentences each) demonstrating schema coverage incl. `scriptMode: romanized` (en-ar: `ismī Rohān` primary + اسمي روهان secondary). Real module lists and content are a future content project gated on hi-mr L1 results.
@@ -217,7 +217,7 @@ Unchanged: the app neither validates nor helps validate. Per-course native gate 
 - **P2 — Practice.** Session machine (per-course snapshot), Leitner scheduler, reveal cards, gated hidden-Next marks, "why" resolver, tick, counters. Exit: full session interrupted + resumed.
 - **P3 — Exit ritual.** Arc + hold + comprehension with retry; unlock beat. Exit: P1 passes L1-M1 for real.
 - **P4 — Settings + data.** Course dropdown (single course present — dropdown still ships), tick toggle, storage, export/import, state v6 + migration. Exit: export→import across devices.
-- **P5 — Hardening + scale content.** Font subsetting; hi-mr L1-M3…M10 authored + verified; L2/L3 lists confirmed [Q1].
+- **P5 — Hardening + scale content.** Font subsetting; hi-mr L1-M3…M10 authored + verified; L2/L3 lists confirmed [Q1 closed].
 - **P6 — (only if greenlit) Course #2.** Content project: generate → native gate → strings.json in the new L1 → RTL spec if Arabic.
 
 ## 12. Suggested issue seeds
@@ -238,7 +238,7 @@ Unchanged: the app neither validates nor helps validate. Per-course native gate 
 
 ## 14. Open questions
 
-- **[Q1 → Rishabh + native speaker]** L2/L3 module lists + level names (per course).
+- **[Q1]** ~~L2/L3 module lists + level names~~ **closed** — ratified **as drafted** (2026-08-12, Rishabh, adopting the design recommendation as-is). Names stay the shared §5 defaults; the L2/L3 lists in `content/hi-mr/levels.json` are the confirmed sequence (`draft` flags cleared, #112). Briefing + authoring L2/L3 stays a future content project; the per-module native gate applies then, as it does to L1.
 - **[Q2 → engineer]** `navigator.storage.estimate()` on P1's device; fallback presentation.
 - **[Q3 → engineer]** Word-index edge cases for romanized text (apostrophes/ʾ, hyphens in al-, case).
 - **[Q4]** ~~Brand sign-off~~ **closed** — rung ratified [P1]; proceed with PWA manifest, icons, export filenames.

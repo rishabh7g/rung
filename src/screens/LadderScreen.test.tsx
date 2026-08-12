@@ -42,7 +42,7 @@ function level(id: string, name: string, tagline: string, authored: number) {
     name,
     tagline,
     draft: id !== 'L1',
-    draftNote: id === 'L1' ? null : 'Draft list, pending [Q1].',
+    draftNote: id === 'L1' ? null : 'Draft list — nothing here is authored.',
     modules: Array.from({ length: 10 }, (_, index) => ({
       id: `${id}-M${index + 1}`,
       title: `${id} rung ${index + 1}`,
