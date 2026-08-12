@@ -129,7 +129,24 @@ Onboarding's removal [D21] left the "your notebook is your workbook" moment with
 - **Copy (frozen):** "तुम्हारी notebook ही तुम्हारी workbook है — app में कुछ नहीं लिखा जाता." Honest per Invariant 4 — the line itself states that nothing is written in the app. Microcopy is course content (§8): the line ships in each course bundle in its L1, English-L1 courses mirroring it 1:1; it joins the Sync-3 key list via the strings-freeze ticket.
 - **Dismissal:** "one-time" means shown-until-dismissed, not one render — the line persists across hub visits until the learner taps ✕, then never returns. The flag is a one-shot app-level bit (the notebook habit is learned once, not per course), so switching courses does not resurrect it. No animation on dismiss beyond removal.
 
-## 9. Visual language and brand [D15, D16, P1]
+### 8.2 Sync-3 microcopy freeze [delivered] *(§12.6 deliverable; §14 Sync-3)*
+
+Frozen 2026-08-12. Both language sets are complete and frozen at **96 keys**:
+
+- **The published key list is `src/course/stringsKeys.ts`** (`STRINGS_KEYS` + `STRINGS_PLACEHOLDERS`) — the one copy in the repo, by that file's own rule, so this PRD points rather than duplicates. A new key after this freeze is a design change, not a code change.
+- **The frozen per-course tables are the bundles themselves:** `content/hi-mr/strings.json` (the Hindi set) and `content/en-es` / `content/en-ar` `strings.json` (the English mirror, 1:1). The build validator (`tools/strings-check.ts`, engineering PRD §6.5) enforces exactly this list — missing key, extra key, or placeholder drift is a build failure.
+- **Coverage:** the full inventory — reveal nudges, read nudge, जांचो guidance, hold label, retry (all five §6.3 layers), ordinal, pending-authoring note, verdict honesty line, course-switch toast, storage note, notebook invitation (§8.1) — plus every key the built screens forced (`ladder.*`, `rungCard.*`, `module.*`, `sentence.*`, `mark.*`, `why.*`, `read.*`, `practice.*`, `verdict.*`, `settings.*` — including #108's backup/import set and its `importToast`), all flagged on the freeze ticket as drafts and ratified there.
+
+Ratification decisions (drafts frozen as shipped unless noted):
+
+1. **Register:** hi-mr controls speak in **imperatives** (`Practice करो`, `पूरा खोलो`, `दोहराओ / पढ़ो / लिखो`) — the तुम-voice of the whole Hindi set; the English mirror keeps the prototype's bare forms (`Practice`, `Open full`, `Review / Read / Produce`). One decision, all four flagged sets.
+2. **Retry interstitial completed:** `retry.kicker` and `retry.reassure` minted (the two keys tokens.md §6.3 routed here); `retry.body` and the English `retry.cta` restored to the prototype's frozen wording ("…from the pool…" / "Fresh sentences").
+3. **Shared keys stay shared** (`rungCard.practice`, `practice.phase.*` across chip and hub row); deliberately split keys stay split (`mark.next` ≠ `sentence.next` ≠ `read.next`, `why.openFull` ≠ `module.openFull`).
+4. **The verdict keeps both honesty lines** — the plate's `verdict.honesty` (Principle §3.4 verbatim) and the closing `verdict.line` — as the prototype does: the receipt states it, the send-off echoes it.
+5. **"आज"/"today"** (practice hub + summary) and the scheduler's **"due"** (counts sessions, never days) are ratified as non-calendar vocabulary.
+6. **Banned-vocabulary sweep: clean, and now mechanical** — `tools/strings-check.test.ts` scans every value in every bundle for `%`, streaks and time units (was: `practice.*` only). Numbers are counts, never time.
+
+Loose ends deliberately left open: the hi-mr drafts still want a native read ([Q1]'s reviewer can sweep them); English shell furniture (kickers, `PASSED`, section labels) stays furniture, recorded on the polish ticket #117.
 
 - **Brand [P1 — ratified]: "rung"** — lowercase wordmark in Barlow Condensed. Rationale: the unit the whole product is built on (one checkpoint, one step); शिडी was Marathi-bound and the name must now outlive any one language; four letters, plain-English meaningful.
 - **Mark:** two vertical rails + three rungs, the **middle rung solid accent — "you are here"**. Drawn in the blueprint grammar: hairline 1.5, square corners, no rounding. Renders at 20 px in the app header beside the wordmark. Construction grid + icon-scale rules: `tokens.md` §6.4.
@@ -159,7 +176,7 @@ Any translation/checking UI [D18]; any text input; grading or storage of learner
 3. ~~Level-strip edge states~~ **done** — level just-completed, next-level unseal, all-three-complete specced in §5.1; [Q4] closed (rung beat reused on the level cell + its first rung, same duration, reduced-motion safe).
 4. ~~Brand sign-off~~ **done** — rung ratified; remaining: app-icon + PWA splash from the mark (still worth an informal रंग-homophone check with P1).
 5. RTL mirroring spec if/when an Arabic course is greenlit.
-6. Microcopy freeze at Sync-3: Hindi set + English mirror set (per-course tables).
+6. ~~Microcopy freeze at Sync-3~~ **done** — both sets frozen at 96 keys, key list published, retry interstitial completed, bundle-wide banned-vocabulary sweep mechanical (§8.2).
 
 ## 13. Open questions
 
@@ -174,7 +191,7 @@ Any translation/checking UI [D18]; any text input; grading or storage of learner
 
 - **Sync-1:** schema v5 + state v6 freeze — course manifest, scriptMode, per-course progress, staged rung card states.
 - **Sync-2:** ~~Sentence Detail order~~ closed [D10].
-- **Sync-3:** copy freeze — both language sets + notebook-invitation line + course-switch toast.
+- **Sync-3:** ~~copy freeze~~ **delivered** — both language sets + notebook-invitation line + course-switch toast frozen at 96 keys (§8.2).
 
 ## 15. Prototype divergences — reference for look and feel, never for these
 

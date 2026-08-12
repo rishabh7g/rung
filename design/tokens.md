@@ -108,7 +108,7 @@ Only four movements exist; everything else is static. All durations in tokens.cs
 
 **Placement.** Replaces the Comprehend body **inside the same screen** — the ritual header, its kicker and the "part 2 of 2" position line stay put, so the screen is never unlabelled. A vertically centered column (`flex: 1`, justify-center), gap 14px, side padding 22px, arriving with the reveal motion (`rowIn`, `--motion-reveal`).
 
-**Layers, top to bottom** — all five are course copy; they ship in the bundle and join the strings freeze as `retry.kicker / title / body / reassure / cta` (the shipped build renders title, body and CTA and awaits keys for the other two — the freeze closes that gap):
+**Layers, top to bottom** — all five are course copy; they ship in the bundle as `retry.kicker / title / body / reassure / cta` (gap closed at the Sync-3 freeze, PRD-design §8.2: the kicker and reassurance keys were minted, all five render):
 
 1. **Kicker** — `--text-kicker` + tracking, `--color-accent-700`: "COMPREHEND · फिर से" / "COMPREHEND · AGAIN".
 2. **Title** — `--text-rung-title`: "नए वाक्य, फिर से." / "Fresh sentences, once more."
