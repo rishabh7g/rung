@@ -69,13 +69,13 @@ afterEach(() => {
   vi.restoreAllMocks();
 });
 
-describe('state v6', () => {
+describe('state v7', () => {
   it('starts as the shape the PRD prints — the drift guard (§8 F7)', () => {
     expect(persistedSlice(useAppStore.getState())).toEqual({
-      stateVersion: 6,
+      stateVersion: 7,
       activeCourse: '',
       courses: {},
-      settings: { elapsedTickEnabled: true },
+      settings: { elapsedTickEnabled: true, notebookInvitationDismissed: false },
     });
   });
 
@@ -103,14 +103,17 @@ describe('state v6', () => {
     ]);
   });
 
-  it('defaults the elapsed tick ON pending [Q3] (#70) — the one setting v6 has', () => {
-    expect(useAppStore.getState().settings).toEqual({ elapsedTickEnabled: true });
+  it('defaults the tick ON pending [Q3] (#70) and the notebook invitation UNDISMISSED (#177)', () => {
+    expect(useAppStore.getState().settings).toEqual({
+      elapsedTickEnabled: true,
+      notebookInvitationDismissed: false,
+    });
   });
 
-  it('persists under rung:state, versioned 6', () => {
+  it('persists under rung:state, versioned 7', () => {
     useAppStore.getState().ensureCourse('hi-mr');
 
-    expect(stored().version).toBe(6);
+    expect(stored().version).toBe(7);
     expect(storage.items.has('rung:state')).toBe(true);
   });
 
@@ -695,12 +698,23 @@ describe('switchCourse (#106 — swap, and nothing erased)', () => {
 });
 
 describe('setSetting', () => {
-  it('writes one setting and persists it', () => {
+  it('writes one setting and persists it, leaving the others alone', () => {
     useAppStore.getState().setSetting('elapsedTickEnabled', false);
 
     expect(useAppStore.getState().settings.elapsedTickEnabled).toBe(false);
     expect((stored().state as { settings: unknown }).settings).toEqual({
       elapsedTickEnabled: false,
+      notebookInvitationDismissed: false,
+    });
+  });
+
+  it('sets the notebook invitation dismissal — the one-shot app-level bit (#177)', () => {
+    useAppStore.getState().setSetting('notebookInvitationDismissed', true);
+
+    expect(useAppStore.getState().settings.notebookInvitationDismissed).toBe(true);
+    expect((stored().state as { settings: unknown }).settings).toEqual({
+      elapsedTickEnabled: true,
+      notebookInvitationDismissed: true,
     });
   });
 });
@@ -764,23 +778,61 @@ describe('migration', () => {
 
     const state = useAppStore.getState();
     expect(warn).not.toHaveBeenCalled();
-    expect(state.stateVersion).toBe(6);
+    expect(state.stateVersion).toBe(7);
     expect(state.activeCourse).toBe('hi-mr');
     expect(state.courses['hi-mr']).toEqual({
       ...emptyCourseState(),
       modules: { 'L1-M1': { status: 'passed', passedAt: '2026-02-02T02:40:00.000Z' } },
       production: { 'L1-M3-S01': 2 },
     });
-    // Settings stay at the top level — the wrap moves the course keys and nothing else.
-    expect(state.settings).toEqual({ elapsedTickEnabled: false });
+    // Settings stay at the top level, carried — and completed with v7's bit, unset: a learner
+    // who never saw the invitation has certainly not dismissed it.
+    expect(state.settings).toEqual({
+      elapsedTickEnabled: false,
+      notebookInvitationDismissed: false,
+    });
   });
 
-  it('answers a COMPLETE v6 document even for a sparse v5 payload — a half shape is worse than a fresh one', () => {
+  it('carries a v6 document whole and completes its settings with the notebook bit (#177)', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const midClimb = {
+      ...emptyCourseState(),
+      sessionCount: 14,
+      modules: { 'L1-M1': { status: 'passed', passedAt: '2026-02-02T02:40:00.000Z' } },
+    };
+    storage.items.set(
+      STORAGE_KEY,
+      JSON.stringify({
+        version: 6,
+        state: {
+          stateVersion: 6,
+          activeCourse: 'hi-mr',
+          courses: { 'hi-mr': midClimb },
+          settings: { elapsedTickEnabled: false },
+        },
+      }),
+    );
+
+    await useAppStore.persist.rehydrate();
+
+    const state = useAppStore.getState();
+    expect(warn).not.toHaveBeenCalled();
+    expect(state.stateVersion).toBe(7);
+    expect(state.activeCourse).toBe('hi-mr');
+    // The ladder position survives the upgrade untouched (Invariant 8).
+    expect(state.courses['hi-mr']).toEqual(midClimb);
+    expect(state.settings).toEqual({
+      elapsedTickEnabled: false,
+      notebookInvitationDismissed: false,
+    });
+  });
+
+  it('answers a COMPLETE v7 document even for a sparse v5 payload — a half shape is worse than a fresh one', () => {
     expect(migrate({ stateVersion: 5, modules: {} }, 5)).toEqual({
-      stateVersion: 6,
+      stateVersion: 7,
       activeCourse: 'hi-mr',
       courses: { 'hi-mr': emptyCourseState() },
-      settings: { elapsedTickEnabled: true },
+      settings: { elapsedTickEnabled: true, notebookInvitationDismissed: false },
     });
   });
 
@@ -798,7 +850,7 @@ describe('migration', () => {
     expect(persistedSlice(useAppStore.getState())).toEqual(initialState());
   });
 
-  it('does not run for a v6 payload — the version it is already at', async () => {
+  it('does not run for a v7 payload — the version it is already at', async () => {
     const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
     useAppStore.getState().ensureCourse('hi-mr');
     const document_ = storage.items.get(STORAGE_KEY) ?? '';

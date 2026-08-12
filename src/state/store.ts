@@ -76,6 +76,9 @@ export function initialState(): AppState {
       // Design recommends ON: numberless, calm, one tap to off. The first-run default is still
       // open as [Q3] (#70) — when Rishabh decides, this line and the drift guard change together.
       elapsedTickEnabled: true,
+      // The notebook invitation starts shown (#177, PRD-design §8.1): every learner meets the
+      // line once, on the first Practice hub, until they dismiss it.
+      notebookInvitationDismissed: false,
     },
   };
 }
@@ -328,21 +331,27 @@ function sameSession(a: SessionSnapshot | null, b: SessionSnapshot | null): bool
 export const OLDEST_MIGRATABLE_VERSION = 5;
 
 /**
- * The migration — one route today, v5 → v6, and it is a WRAP (PRD §8 F7). v5 knew one course,
- * so its `{modules, production, reviewQueue, sessionCount, studied, session}` becomes
- * `courses['hi-mr']`, `activeCourse` becomes `'hi-mr'`, and `settings` stays at the top level.
- * A v5 field that is absent gets the empty-course value, because the six keys arrived across
- * several v5 builds and an early document legitimately lacks the late ones.
+ * The migration — two routes today, each one step, chained oldest-first (PRD §8 F7):
+ *
+ *   • **v5 → v6 is a WRAP.** v5 knew one course, so its `{modules, production, reviewQueue,
+ *     sessionCount, studied, session}` becomes `courses['hi-mr']`, `activeCourse` becomes
+ *     `'hi-mr'`, and `settings` stays at the top level. A v5 field that is absent gets the
+ *     empty-course value, because the six keys arrived across several v5 builds and an early
+ *     document legitimately lacks the late ones.
+ *   • **v6 → v7 completes `settings`.** v7 added the notebook invitation's one-shot dismissal
+ *     bit (#177), so a settings key the older document does not carry gets the first-run
+ *     default — for `notebookInvitationDismissed` that is `false`, because a learner who never
+ *     saw the line has certainly not dismissed it.
  *
  * Two rules bind any version of this function: it never drops a subtree it does not recognise
- * (v5 has exactly one, and the wrap keeps it whole), and it returns a COMPLETE v6 document —
+ * (v5 has exactly one, and the wrap keeps it whole), and it returns a COMPLETE v7 document —
  * a half-filled shape is worse than a fresh one, because every screen below trusts the shape
  * and none of them re-check it.
  *
- * It wraps; it does not bless. The values are carried as they were found, not validated —
+ * It carries; it does not bless. The values are taken as they were found, not validated —
  * this function serves two callers with different trust: the rehydrate path below reads what
  * this app itself wrote, and `serialize.ts`'s import path runs the RESULT through the same
- * field-by-field validation a native v6 file gets (#104). Validating here would be a second
+ * field-by-field validation a native v7 file gets (#104). Validating here would be a second
  * validator waiting to disagree with that one.
  *
  * A version older than any route gets a warning and first-run state — on the rehydrate path
@@ -361,16 +370,30 @@ export function migrate(persisted: unknown, fromVersion: number): AppState {
     return initialState();
   }
 
-  const v5 = persisted as Record<string, unknown>;
-  const empty = emptyCourseState();
+  const found = persisted as Record<string, unknown>;
   const fresh = initialState();
 
+  // v5 → v6: the wrap. Verbatim `as` rather than checks, because carrying the values through
+  // unjudged is this function's contract (see above — the import path validates the result).
+  const v6 = fromVersion === 5 ? wrapV5(found) : found;
+
+  // v6 → v7: `settings` completed with the first-run defaults underneath whatever the document
+  // carries — a native v7 file passes through unchanged, an older one gains the new bit unset.
   return {
     stateVersion: STATE_VERSION,
+    activeCourse: (v6['activeCourse'] ?? fresh.activeCourse) as CourseId,
+    courses: (v6['courses'] ?? fresh.courses) as AppState['courses'],
+    settings: { ...fresh.settings, ...(v6['settings'] as Partial<Settings> | undefined) },
+  };
+}
+
+/** The v5 → v6 wrap, as a v6-shaped record the v6 → v7 step above reads like any other. */
+function wrapV5(v5: Record<string, unknown>): Record<string, unknown> {
+  const empty = emptyCourseState();
+
+  return {
     activeCourse: 'hi-mr',
     courses: {
-      // The wrap, verbatim: `as` rather than checks, because carrying the values through
-      // unjudged is this function's contract (see above — the import path validates the result).
       'hi-mr': {
         modules: (v5['modules'] ?? empty.modules) as CourseState['modules'],
         production: (v5['production'] ?? empty.production) as CourseState['production'],
@@ -380,7 +403,7 @@ export function migrate(persisted: unknown, fromVersion: number): AppState {
         session: (v5['session'] ?? empty.session) as CourseState['session'],
       },
     },
-    settings: (v5['settings'] ?? fresh.settings) as Settings,
+    settings: v5['settings'],
   };
 }
 

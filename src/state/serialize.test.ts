@@ -14,11 +14,11 @@
  *   4. **Older documents go through the store's `migrate`, and Invariant 4 holds.** A v5
  *      payload imports as the same wrap the rehydrate path would produce (one migration, not a
  *      copy — asserted over `serialize.ts`'s source too), and no string vocabulary in the
- *      shape accepts learner-authored text — walked off `STATE_V6` itself, so a field added to
+ *      shape accepts learner-authored text — walked off `STATE_V7` itself, so a field added to
  *      the shape is a field added to this assertion.
  */
 import { describe, expect, it } from 'vitest';
-import { ImportError, STATE_V6, exportState, importState } from './serialize.ts';
+import { ImportError, STATE_V7, exportState, importState } from './serialize.ts';
 import { emptyCourseState, migrate } from './store.ts';
 import type { AppState, CourseState, LeitnerBox, SessionPhase } from './types.ts';
 
@@ -31,7 +31,7 @@ import type { AppState, CourseState, LeitnerBox, SessionPhase } from './types.ts
  */
 function richState(): AppState {
   return {
-    stateVersion: 6,
+    stateVersion: 7,
     activeCourse: 'hi-mr',
     courses: {
       'hi-mr': {
@@ -50,7 +50,7 @@ function richState(): AppState {
       },
       'en-ar': emptyCourseState(),
     },
-    settings: { elapsedTickEnabled: true },
+    settings: { elapsedTickEnabled: true, notebookInvitationDismissed: true },
   };
 }
 
@@ -60,7 +60,7 @@ function richState(): AppState {
  * requires.
  */
 const F7_EXAMPLE = `{
-  "stateVersion": 6,
+  "stateVersion": 7,
   "activeCourse": "hi-mr",
   "courses": {
     "hi-mr": {
@@ -72,7 +72,7 @@ const F7_EXAMPLE = `{
     },
     "en-ar": { "modules": {}, "production": {}, "reviewQueue": [], "sessionCount": 0, "studied": {}, "session": null }
   },
-  "settings": { "elapsedTickEnabled": true }
+  "settings": { "elapsedTickEnabled": true, "notebookInvitationDismissed": false }
 }`;
 
 /** The rich fixture as a parsed document — the base every malformed fixture below mutates. */
@@ -163,10 +163,10 @@ function generateState(rand: () => number): AppState {
   for (const courseId of courseIds.slice(0, int(3))) courses[courseId] = course();
 
   return {
-    stateVersion: 6,
+    stateVersion: 7,
     activeCourse: rand() < 0.2 ? '' : pick(courseIds),
     courses,
-    settings: { elapsedTickEnabled: rand() < 0.5 },
+    settings: { elapsedTickEnabled: rand() < 0.5, notebookInvitationDismissed: rand() < 0.5 },
   };
 }
 
@@ -208,7 +208,7 @@ describe('the exported file', () => {
     const file = exportState(richState());
     const parsed = JSON.parse(file) as Record<string, unknown>;
 
-    expect(file.startsWith('{\n  "stateVersion": 6,\n  "activeCourse"')).toBe(true);
+    expect(file.startsWith('{\n  "stateVersion": 7,\n  "activeCourse"')).toBe(true);
     expect(Object.keys(parsed)).toEqual(['stateVersion', 'activeCourse', 'courses', 'settings']);
     expect(Object.keys(hiMr(parsed))).toEqual([
       'modules',
@@ -266,10 +266,10 @@ describe('a bad file is refused with a reason that names a path', () => {
     );
   });
 
-  it('a newer document — v7 says update rung, not import less', () => {
-    const error = refusal((parsed) => (parsed['stateVersion'] = 7));
+  it('a newer document — v8 says update rung, not import less', () => {
+    const error = refusal((parsed) => (parsed['stateVersion'] = 8));
 
-    expect(error.reason).toContain('v7');
+    expect(error.reason).toContain('v8');
     expect(error.reason).toContain('update rung');
   });
 
@@ -345,7 +345,29 @@ describe('older documents route through the store migration', () => {
       modules: { 'L1-M1': { status: 'passed', passedAt: '2026-02-02T02:40:00.000Z' } },
       production: { 'L1-M3-S01': 2 },
     });
-    expect(state.settings).toEqual({ elapsedTickEnabled: false });
+    expect(state.settings).toEqual({
+      elapsedTickEnabled: false,
+      notebookInvitationDismissed: false,
+    });
+  });
+
+  it('imports a v6 backup written before the notebook bit existed — an export outlives the app that wrote it', () => {
+    const v6 = {
+      stateVersion: 6,
+      activeCourse: 'hi-mr',
+      courses: { 'hi-mr': emptyCourseState() },
+      settings: { elapsedTickEnabled: false },
+    };
+
+    const state = importState(JSON.stringify(v6));
+
+    expect(state).toEqual(migrate(v6, 6));
+    expect(state.stateVersion).toBe(7);
+    // The bit arrives unset: a learner whose file predates the invitation has not dismissed it.
+    expect(state.settings).toEqual({
+      elapsedTickEnabled: false,
+      notebookInvitationDismissed: false,
+    });
   });
 
   it('validates what the migration answers — the wrap is trusted to wrap, never to bless', () => {
@@ -383,10 +405,10 @@ describe('Invariant 4 — no field can hold learner-authored text', () => {
 
   it('every string vocabulary in the shape rejects learner text', () => {
     // Walked off the shape itself: a field added to `types.ts` reaches the export only through
-    // `STATE_V6`, and its vocabulary lands in this list without this test changing.
-    expect(STATE_V6.strings.length).toBeGreaterThan(0);
+    // `STATE_V7`, and its vocabulary lands in this list without this test changing.
+    expect(STATE_V7.strings.length).toBeGreaterThan(0);
 
-    for (const vocabulary of STATE_V6.strings) {
+    for (const vocabulary of STATE_V7.strings) {
       for (const text of learnerText) {
         expect(
           vocabulary.accepts(text),

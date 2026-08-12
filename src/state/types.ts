@@ -1,5 +1,6 @@
 /**
- * State v6 — the persisted shape (#82, PRD §8 F7 verbatim, docs/01-plan.md §6).
+ * State v7 — the persisted shape (#82, PRD §8 F7, docs/01-plan.md §6; v7 adds the one-shot
+ * notebook-invitation bit to `settings`, #177).
  *
  * One localStorage document, keyed by course. That keying is the whole point: everything a
  * learner earns hangs under `courses[<courseId>]`, so switching the active course moves a
@@ -30,7 +31,7 @@ export type ModuleId = string;
 export type SentenceId = string;
 
 /** The persisted state's version. The store and the migration read it from here. */
-export const STATE_VERSION = 6;
+export const STATE_VERSION = 7;
 
 /**
  * A passed module. `status` is a one-member union on purpose: a module is in this map because
@@ -92,6 +93,12 @@ export interface Settings {
    * affordance in the app (Invariant 2's boundary note, PRD §8 F4).
    */
   elapsedTickEnabled: boolean;
+  /**
+   * The notebook invitation's one-shot dismissal (#177, PRD-design §8.1). App-level on purpose:
+   * the notebook habit is learned once, not per course, so switching courses never resurrects
+   * the line. `false` means the Practice hub still shows it; ✕ sets it `true`, forever.
+   */
+  notebookInvitationDismissed: boolean;
 }
 
 /** The persisted document, top to bottom. PRD §8 F7 prints exactly this. */
