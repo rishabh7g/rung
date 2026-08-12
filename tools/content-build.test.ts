@@ -1006,25 +1006,25 @@ describe('the authored content', () => {
     expect(report.shipped.size).toBe(0);
     expect(readManifest(outRoot)).toEqual({ courses: [] });
     expect(report.lines).toEqual([
-      'hi-mr: 0 modules — L1-M1, L1-M2 unverified (native gate #64; --with-unverified ships them in dev)',
+      'hi-mr: 0 modules — L1-M1, L1-M2, L1-M3, L1-M4, L1-M5 unverified (native gate #64; --with-unverified ships them in dev)',
       'en-es: 0 modules — fixture course, excluded by the gate (--with-fixtures ships it in dev)',
       'en-ar: 0 modules — fixture course, excluded by the gate (--with-fixtures ships it in dev)',
       expect.stringContaining('CONTENT ⚠ STRICT BUILD SHIPPED NO CONTENT'),
-      'CONTENT build: nothing shipped | skipped: hi-mr (2 unverified), en-es (fixture course), en-ar (fixture course)',
+      'CONTENT build: nothing shipped | skipped: hi-mr (5 unverified), en-es (fixture course), en-ar (fixture course)',
     ]);
   });
 
-  it('ships hi-mr L1-M1..M2 and both fixture courses on a dev build', () => {
+  it('ships hi-mr L1-M1..M5 and both fixture courses on a dev build', () => {
     const { report, outRoot } = build(DEFAULT_CONTENT_ROOT, DEV);
 
     expect(report.exitCode).toBe(0);
     expect([...report.shipped]).toEqual([
-      ['hi-mr', ['L1-M1', 'L1-M2']],
+      ['hi-mr', ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5']],
       ['en-es', ['L1-M1']],
       ['en-ar', ['L1-M1']],
     ]);
     expect(report.lines).toContain(
-      'CONTENT build: hi-mr 2 modules (L1-M1..M2), en-es 1 module (L1-M1), en-ar 1 module (L1-M1)',
+      'CONTENT build: hi-mr 5 modules (L1-M1..M5), en-es 1 module (L1-M1), en-ar 1 module (L1-M1)',
     );
     expect(readManifest(outRoot).devBuild).toBe(true);
     for (const file of [
@@ -1032,6 +1032,9 @@ describe('the authored content', () => {
       'hi-mr/strings.json',
       'hi-mr/modules/L1-M1.json',
       'hi-mr/modules/L1-M2.json',
+      'hi-mr/modules/L1-M3.json',
+      'hi-mr/modules/L1-M4.json',
+      'hi-mr/modules/L1-M5.json',
       'en-es/modules/L1-M1.json',
       'en-ar/modules/L1-M1.json',
     ]) {
@@ -1085,6 +1088,6 @@ describe('the authored content', () => {
       level.modules.filter((entry) => entry.hasContent === true).map((entry) => entry.id),
     );
 
-    expect(withContent).toEqual(['L1-M1', 'L1-M2']);
+    expect(withContent).toEqual(['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5']);
   });
 });
