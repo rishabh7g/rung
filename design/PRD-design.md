@@ -77,6 +77,14 @@ Every word and rule carries one of three tags: **free** (transfers from L1; quie
 - **Seal rule:** a level unlocks only when every module of the previous level is passed. Sealed cells toast honestly when tapped.
 - Ladder footer (recurring ownership copy): "Yours to pace. Practice any rung you've passed, anytime — keep the app or delete it. The ladder stays where you left it."
 
+### 5.1 Level-strip edge states [Q4 closed] *(spec — §12.3 deliverable)*
+
+The prototype shows the strip mid-Level-1 only; these three states complete it. Ground rule (§3.6, calm mastery): the unlock beat is the **only** sanctioned celebration — no badges, confetti, modals, or new loud copy in any of these states.
+
+1. **Level just-completed.** The completed level's cell is its own mark: all 10 mini squares filled `accent-600`, label stays `accent-700`. The accent top bar — the strip's single "you are here", echoing the brand mark's one solid rung — **moves to the now-current level's cell**; the completed cell keeps a quiet `1px divider` top edge like a resting cell. Tap: no-op (its rungs are reachable from the rung list; the footer already says so). No checkmark, no "COMPLETE" tag, no copy line. **No motion of its own** — the moment is carried entirely by state 2.
+2. **Next-level unseal moment.** On the Ladder arrival from the pass that seals a level (10 of 10), the shared unlock beat (`unlockBeat`: `accent-200` flash + 10 px settle → transparent, **1000 ms**, `cubic-bezier(.2,.7,.3,1)`) plays on **both the newly unsealed level cell and its first rung's card** — same keyframes, same duration, simultaneous, **once**. The beat rides the one-shot just-unlocked flag handed over by the Verdict and is consumed on arrival: reloads and revisits are silent. At rest the unsealed cell simply wears open-level styling (label `accent-700`, accent top bar, squares `neutral-300` with the first `accent-300` current); the first rung card keeps its existing small "unlocked" tag — no additional copy on the cell. Header and pending line move to the new level, counts only: "LEVEL 2 · 0 OF 10"; "10 rungs left in Level 2 …". **Reduced motion: `animation: none`** — the resting unsealed state is the entire message.
+3. **All three levels complete.** **No beat fires** — there is nothing left to unseal, and completion is not an unlock. All three cells sit filled per state 1; no cell carries the accent top bar (nowhere left to be); header reads "LEVEL 3 · 10 OF 10". The pending line and current-rung crosshair disappear — nothing is pending — and **no replacement copy line is added**: the ownership footer ("… keep the app or delete it. The ladder stays where you left it.") is deliberately the last word. No motion, so nothing to reduce.
+
 ## 6. User flows
 
 1. **First run.** Ladder directly; L1-M1 current with the fresh-rung stage ("Start with the module"). *(Notebook invitation home: see §12.1.)*
@@ -140,7 +148,7 @@ Any translation/checking UI [D18]; any text input; grading or storage of learner
 
 1. **Notebook invitation's new home** [D21 consequence]: recommend a one-time dismissible line on the first Practice hub ("तुम्हारी notebook ही तुम्हारी workbook है — app में कुछ नहीं लिखा जाता."). Decide and freeze at Sync-3.
 2. ~~Exported design tokens~~ **done** — `design/tokens.css` (machine-usable) + `design/tokens.md` (usage rules). Remaining: formal component specs for the staged rung card, course dropdown, retry interstitial, brand mark.
-3. Level-strip edge states: level just-completed, next-level unseal, all-three-complete ([Q4] recommendation: reuse the rung beat on the level cell + its first rung, same duration).
+3. ~~Level-strip edge states~~ **done** — level just-completed, next-level unseal, all-three-complete specced in §5.1; [Q4] closed (rung beat reused on the level cell + its first rung, same duration, reduced-motion safe).
 4. ~~Brand sign-off~~ **done** — rung ratified; remaining: app-icon + PWA splash from the mark (still worth an informal रंग-homophone check with P1).
 5. RTL mirroring spec if/when an Arabic course is greenlit.
 6. Microcopy freeze at Sync-3: Hindi set + English mirror set (per-course tables).
@@ -150,7 +158,7 @@ Any translation/checking UI [D18]; any text input; grading or storage of learner
 - **[Q1 → Rishabh + native speaker]** Level names and L2/L3 module lists (per course).
 - **[Q2]** ~~जांचो weight without a control~~ **closed** — dashed-plate design ratified in prototype.
 - **[Q3 → Rishabh]** Elapsed tick default at first run — design recommends **ON** (numberless, calm, one tap to off).
-- **[Q4 → Rishabh]** Unseal moment — design recommends the shared beat (§12.3).
+- **[Q4]** ~~Unseal moment~~ **closed** — shared beat ratified; edge states specced in §5.1.
 - **[Q5]** ~~Brand~~ **closed** — rung ratified [P1].
 - **[Q6 → Rishabh]** Notebook invitation home (§12.1).
 
