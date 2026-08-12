@@ -19,7 +19,7 @@
  * module report the content failure properly (#79) — an error screen thrown from the Ladder because
  * a card's CTA could not be decided would be the wrong answer in the wrong place.
  */
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useCourse } from '../course/CourseProvider.tsx';
 import { loadModule } from '../course/content.ts';
 import { exitAvailable } from '../engine/exit.ts';
@@ -46,6 +46,28 @@ export function useExitAvailable(moduleId: string | null): (moduleId: string) =>
     (id: string) => id === moduleId && exitAvailable(sentenceIds, production ?? NO_COUNTERS),
     [moduleId, sentenceIds, production],
   );
+}
+
+/** Shared empty answer, reference-equal across renders like the two above. */
+const NO_PRODUCTION: readonly number[] = [];
+
+/**
+ * The current rung's per-sentence got-it counts, in authored order — what the staged rung card
+ * draws as its dots row (design/tokens.md §6.1; the #117 walk found it missing). Same two halves
+ * as `useExitAvailable` — the module's sentence ids are content, the counters are state — read
+ * through the same loader and the same store selector, so the dots and the `exit_ready` stage can
+ * never disagree about what has been produced. Empty while the module has not loaded (or never
+ * will: a `pending` rung has no sentences to count), which the card renders as no row at all.
+ */
+export function useRungProduction(moduleId: string | null): readonly number[] {
+  const { course } = useCourse();
+  const production = useAppStore((store) => store.courses[course.id]?.production);
+  const sentenceIds = useRungSentences(course.id, moduleId);
+
+  return useMemo(() => {
+    if (sentenceIds.length === 0) return NO_PRODUCTION;
+    return sentenceIds.map((id) => (production ?? NO_COUNTERS)[id] ?? 0);
+  }, [sentenceIds, production]);
 }
 
 /**

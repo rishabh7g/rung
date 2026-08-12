@@ -47,11 +47,17 @@ const EVERY_LABEL = [
   'pendingAuthoring',
 ] as const;
 
-function renderCard(stage: RungStage) {
+function renderCard(stage: RungStage, production?: readonly number[]) {
   return render(
     <MemoryRouter>
       <StringsContext.Provider value={STRINGS}>
-        <RungCard stage={stage} moduleId={MODULE} title="Needs and wants" job="Say what you want" />
+        <RungCard
+          stage={stage}
+          moduleId={MODULE}
+          title="Needs and wants"
+          job="Say what you want"
+          production={production}
+        />
       </StringsContext.Provider>
     </MemoryRouter>,
   );
@@ -146,6 +152,39 @@ describe.each(STAGES)('the $stage stage', ({ stage, ctas: expected, notes }) => 
     ).toBe(true);
     // Four different corner classes — one mark drawn four times in the same place is not a frame.
     expect(new Set(marks.map((mark) => mark.getAttribute('class'))).size).toBe(4);
+  });
+});
+
+/* ------------------------------------------------------------- the writes, drawn (§6.1) */
+
+describe('the production dots row', () => {
+  it('draws one stacked pair per sentence off the counters, and a counts-only line', () => {
+    const { container } = renderCard('studied', [2, 2, 1, 0, 5]);
+
+    // Five pairs = ten squares; a count above two draws the same two full dots (#88's component).
+    const squares = [...container.querySelectorAll('[data-state]')];
+    expect(squares).toHaveLength(10);
+    expect(squares.filter((square) => square.getAttribute('data-state') === 'done')).toHaveLength(
+      7,
+    );
+
+    // Counts only — clamped, so the line and the dots never disagree; no note, no English.
+    expect(screen.getByText('7 / 10')).toBeInTheDocument();
+  });
+
+  it('is a drawing, not an announcement: every pair is aria-hidden', () => {
+    const { container } = renderCard('studied', [1, 0]);
+
+    for (const pair of container.querySelectorAll('[data-state]')) {
+      expect(pair.parentElement?.getAttribute('aria-hidden')).toBe('true');
+    }
+  });
+
+  it('is absent while the sentences are unknown — a pending rung has nothing to count', () => {
+    const { container } = renderCard('pending');
+
+    expect(container.querySelector('[data-state]')).toBeNull();
+    expect(container.textContent).not.toContain(' / ');
   });
 });
 
