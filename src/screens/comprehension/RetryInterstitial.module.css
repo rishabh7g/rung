@@ -25,13 +25,20 @@
   }
 }
 
-/* Layer 1 of tokens.md §6.3 — the course's own `COMPREHEND · फिर से`, in the kicker recipe the
-   spec names for it (`--text-kicker` + tracking, `--color-accent-700`). */
+/* Layer 1 of tokens.md §6.3 — the course's own `COMPREHEND · फिर से`. §6.3 recipes it as a
+   `--text-kicker` kicker, but that is the prototype's *English* rendering: the string is course
+   copy (Sync-3 minted it per course precisely because "again" is the course's own word), and
+   tokens.md §4's course-type ruling + §2 forbid Devanagari in Barlow at kicker size — set as a
+   kicker it literally drew notdef boxes on the real screen (caught in #117's walk). So it takes
+   the standing course-label treatment (#89 `trapHead`, #93 `cueLabel`, #100 plate label): the
+   smallest Mukta slot pulled to the floor, label-weighted, in the kicker's ink — and the
+   uppercasing and tracking go with it, since Devanagari has no case to raise and a kicker that
+   shouts in the English courses and whispers in the Hindi one is not one component. */
 .kicker {
   margin: 0;
-  font: var(--text-kicker);
-  letter-spacing: var(--kicker-tracking);
-  text-transform: uppercase;
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  font-weight: var(--font-heading-weight);
   color: var(--color-accent-700);
 }
 

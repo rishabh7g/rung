@@ -38,6 +38,7 @@ import { DEV_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
 import { moduleFixture } from '../test/courseContent.ts';
 import { stringValue } from '../test/courseStrings.ts';
 import itemSource from './comprehension/ComprehensionItem.tsx?raw';
+import retryCss from './comprehension/RetryInterstitial.module.css?raw';
 import retrySource from './comprehension/RetryInterstitial.tsx?raw';
 import screenSource from './ComprehensionScreen.tsx?raw';
 
@@ -368,6 +369,22 @@ describe('any "not quite" deals fresh sentences, calmly and forever', () => {
     // No item is on screen, so nothing counts one: the head keeps the ritual's part and drops the
     // position (`2 / 2`, and no `1 / 2` beside it).
     expect(screen.queryByText(/\d \/ 2 · /)).toBeNull();
+  });
+
+  /**
+   * All five of the interstitial's layers are course copy (tokens.md §6.3 ships them as
+   * `retry.*` in the bundle), so none of them may take a Barlow face or be uppercased:
+   * design/tokens.md §2 puts all Devanagari in Mukta at ≥ `--devanagari-min-size`, and §4's
+   * course-type ruling says the prototype's kicker recipe is its *English* rendering, not a
+   * license. The kicker set as a `--text-kicker` kicker drew literal notdef boxes for
+   * "COMPREHEND · फिर से" on the real screen — caught in #117's walk, same wall as #89's
+   * `trapHead` and #93's `cueLabel`. This reads the stylesheet so it cannot come back.
+   */
+  it('sets no layer of the interstitial in a kicker face — every line is course copy', () => {
+    const declarations = retryCss.replace(/\/\*[\s\S]*?\*\//g, '');
+    expect(declarations).not.toMatch(/--text-kicker/);
+    expect(declarations).not.toMatch(/text-transform/);
+    expect(declarations).not.toMatch(/--kicker-tracking/);
   });
 
   it('deals two NEW sentences, and never one the attempt just used', async () => {
