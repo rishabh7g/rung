@@ -8,7 +8,7 @@
  */
 import { vi } from 'vitest';
 import { completeStrings } from './courseStrings.ts';
-import { indexFixture, levelsFixture, moduleFixture } from './courseContent.ts';
+import { indexFixture, levelsFixture, moduleFixture, sizesFixture } from './courseContent.ts';
 
 export const DEV_MANIFEST = {
   devBuild: true,
@@ -56,16 +56,17 @@ export interface ContentOverrides {
   levels?: unknown;
   module?: unknown;
   index?: unknown;
+  sizes?: unknown;
 }
 
 /**
  * Installs a `fetch` over the whole content tree and returns the mock, so a test can count calls
  * (every loader caches) or read the URLs it asked for.
  *
- * It routes rather than answering everything alike, because the app reads five kinds of file
- * (#80, #81): the manifest, then per course a strings bundle, a ladder, a module and its word
- * index. Each route answers with that file's fixture for the course and module in the URL —
- * so a test only supplies a payload when the payload is the point.
+ * It routes rather than answering everything alike, because the app reads six kinds of file
+ * (#80, #81, #107): the manifest, then per course a strings bundle, a ladder, a module, its word
+ * index and its sizes file. Each route answers with that file's fixture for the course and
+ * module in the URL — so a test only supplies a payload when the payload is the point.
  */
 export function mockContentFetch(
   manifest: unknown,
@@ -92,6 +93,9 @@ export function mockContentFetch(
     if (index !== null) {
       return content.index ?? indexFixture(index[1] as string, index[2] as string);
     }
+
+    const sizes = /content\/([^/]+)\/sizes\.json$/.exec(url);
+    if (sizes !== null) return content.sizes ?? sizesFixture(sizes[1] as string);
 
     return manifest;
   }

@@ -5,6 +5,7 @@ import {
   readFileSync,
   readdirSync,
   rmSync,
+  statSync,
   writeFileSync,
 } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -23,6 +24,7 @@ import {
   type BuildFlags,
   type BuildReport,
   type CourseRow,
+  type CourseSizesFile,
   type EmittedManifest,
   type Levels,
   type WordIndexFile,
@@ -513,6 +515,40 @@ describe('the output tree', () => {
     expect(report.exitCode).toBe(0);
     expect(report.lines).toContain('fr-de: 0 modules — nothing authored yet');
     expect(readManifest(outRoot).courses.map((course) => course.id)).toEqual(['hi-mr']);
+  });
+
+  it('emits sizes.json per shipped course — the sum of every other emitted byte (#107)', () => {
+    const tree = scaffold([
+      {
+        row: courseRow('hi-mr'),
+        modules: [
+          { id: 'L1-M1', verified: true },
+          { id: 'L1-M2', verified: true },
+        ],
+      },
+    ]);
+
+    const { outRoot } = build(tree, STRICT);
+    const courseOut = path.join(outRoot, 'hi-mr');
+    const sizes = JSON.parse(
+      readFileSync(path.join(courseOut, 'sizes.json'), 'utf8'),
+    ) as CourseSizesFile;
+
+    // Recount from the emitted tree itself: every file except sizes.json, which cannot carry
+    // its own length. modules + indexes + levels.json + strings.json = 2 + 2 + 1 + 1.
+    const emitted = [
+      ...readdirSync(path.join(courseOut, 'modules')).map((f) => path.join('modules', f)),
+      ...readdirSync(path.join(courseOut, 'index')).map((f) => path.join('index', f)),
+      'levels.json',
+      'strings.json',
+    ];
+    const bytes = emitted.reduce((sum, file) => sum + statSync(path.join(courseOut, file)).size, 0);
+
+    expect(sizes.courseId).toBe('hi-mr');
+    expect(sizes.files).toBe(6);
+    expect(emitted).toHaveLength(6);
+    expect(sizes.bytes).toBe(bytes);
+    expect(sizes.bytes).toBeGreaterThan(0);
   });
 });
 

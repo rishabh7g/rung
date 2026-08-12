@@ -185,3 +185,13 @@ export function indexFixture(courseId: string, moduleId = 'L1-M1') {
     },
   };
 }
+
+/**
+ * One course's `sizes.json` — the build-computed weight `tools/content-build.ts` emits (#107).
+ * Deterministic AND distinct per course (the id's code points, in KiB), so a test rendering two
+ * courses' rows can tell them apart without this file hand-maintaining a table of byte counts.
+ */
+export function sizesFixture(courseId: string) {
+  const bytes = [...courseId].reduce((sum, ch) => sum + (ch.codePointAt(0) ?? 0), 0) * 1024;
+  return { courseId, files: 4, bytes };
+}

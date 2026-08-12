@@ -1,11 +1,12 @@
 /**
  * Per-course content — the read path every screen uses (#81, PRD §4, §7, §8 F0).
  *
- * Three files, three loaders, one cache:
+ * Four files, four loaders, one cache:
  *
  *   loadLevels(courseId)             → content/<courseId>/levels.json
  *   loadModule(courseId, moduleId)   → content/<courseId>/modules/<moduleId>.json
  *   loadIndex(courseId, moduleId)    → content/<courseId>/index/<moduleId>.json
+ *   loadSizes(courseId)              → content/<courseId>/sizes.json
  *
  * Same shape as the two loaders that boot before it (`manifest.ts`, `strings.ts`), because they
  * are the same problem: static files, fetched once, that must either be trustworthy or loudly
@@ -30,7 +31,7 @@
  */
 import { useCallback, useEffect, useState } from 'react';
 import { useCourse } from './CourseProvider.tsx';
-import type { Levels, ModuleContent, WordIndex } from './types.ts';
+import type { CourseSizes, Levels, ModuleContent, WordIndex } from './types.ts';
 
 /**
  * Every way a content file can fail to become a usable value — offline, 404, not JSON, wrong
@@ -65,6 +66,10 @@ export function modulePath(courseId: string, moduleId: string): string {
 
 export function indexPath(courseId: string, moduleId: string): string {
   return `content/${courseId}/index/${moduleId}.json`;
+}
+
+export function sizesPath(courseId: string): string {
+  return `content/${courseId}/sizes.json`;
 }
 
 /* ------------------------------------------------------------------ loaders */
@@ -112,6 +117,20 @@ export function loadIndex(courseId: string, moduleId: string): Promise<WordIndex
       );
     }
     return index;
+  });
+}
+
+/** Loads (once) a course's shipped weight — Settings' STORAGE rows (#107). Rejects with `ContentError`. */
+export function loadSizes(courseId: string): Promise<CourseSizes> {
+  return loadContent(sizesPath(courseId), (payload, url) => {
+    const sizes = parseSizes(payload, url);
+    if (sizes.courseId !== courseId) {
+      throw new ContentError(
+        url,
+        `declares courseId "${sizes.courseId}", not "${courseId}" — the wrong file was served`,
+      );
+    }
+    return sizes;
   });
 }
 
@@ -268,6 +287,20 @@ export function parseIndex(payload: unknown, source = 'index.json'): WordIndex {
   }
 
   return payload as WordIndex;
+}
+
+/** `sizes.json`: the course's build-computed weight (#107). Counts must be whole and ≥ 0. */
+export function parseSizes(payload: unknown, source = 'sizes.json'): CourseSizes {
+  const root = object(payload, source, '', 'must be {"courseId": …, "files": …, "bytes": …}');
+
+  text(root.courseId, source, 'courseId');
+  for (const field of ['files', 'bytes'] as const) {
+    if (!Number.isInteger(root[field]) || (root[field] as number) < 0) {
+      throw new ContentError(source, `${field}: must be a whole number ≥ 0`);
+    }
+  }
+
+  return payload as CourseSizes;
 }
 
 /**

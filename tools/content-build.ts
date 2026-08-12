@@ -91,6 +91,25 @@ export interface EmittedManifest {
   courses: CourseRow[];
 }
 
+/**
+ * The emitted `public/content/<courseId>/sizes.json` (#107) — how many bytes this course's
+ * shipped content actually weighs, computed here because only the build knows what shipped.
+ * PRD §17: "storage figures are illustrative; compute them" — Settings' STORAGE rows read this
+ * file rather than guessing, and a HEAD request per precached file at runtime would be a
+ * network conversation the privacy line promises never happens.
+ *
+ * `bytes` sums every other file the course ships — modules, indexes, levels.json, strings.json —
+ * and not this file itself: a file cannot carry its own length, and its ~60 bytes are noise
+ * against the smallest course. Same emit discipline as `hasContent`: recomputed from what was
+ * actually written, never authored.
+ */
+export interface CourseSizesFile {
+  courseId: string;
+  /** How many files the sum covers — everything the course ships except sizes.json itself. */
+  files: number;
+  bytes: number;
+}
+
 export interface BuildFlags {
   /** Ship modules that have not passed the native gate (#64). Dev only. */
   withUnverified: boolean;
@@ -560,8 +579,11 @@ function emitLevels(levels: Levels, shipped: ReadonlySet<string>): Levels {
   };
 }
 
-function writeJson(file: string, value: unknown): void {
-  writeFileSync(file, `${JSON.stringify(value, null, 2)}\n`, 'utf8');
+/** Returns the bytes written, so the emit loop can sum a course's weight as it writes it. */
+function writeJson(file: string, value: unknown): number {
+  const text = `${JSON.stringify(value, null, 2)}\n`;
+  writeFileSync(file, text, 'utf8');
+  return Buffer.byteLength(text, 'utf8');
 }
 
 /**
@@ -711,17 +733,34 @@ export function buildContent(options: BuildOptions): BuildReport {
 
   for (const plan of shipping) {
     const courseOut = path.join(outRoot, plan.row.id);
+    // The course's weight, counted AS it is emitted (#107): a copy adds the source's size (same
+    // bytes by `copies module files byte for byte`), a write adds what writeJson reports.
+    let files = 0;
+    let bytes = 0;
+    const copy = (from: string, to: string): void => {
+      copyFileSync(from, to);
+      files += 1;
+      bytes += statSync(from).size;
+    };
+    const write = (file: string, value: unknown): void => {
+      files += 1;
+      bytes += writeJson(file, value);
+    };
+
     mkdirSync(path.join(courseOut, 'modules'), { recursive: true });
     for (const module of plan.shipped) {
-      copyFileSync(module.file, path.join(courseOut, 'modules', `${module.id}.json`));
+      copy(module.file, path.join(courseOut, 'modules', `${module.id}.json`));
     }
     mkdirSync(path.join(courseOut, 'index'), { recursive: true });
     for (const index of plan.indexes) {
-      writeJson(path.join(courseOut, 'index', `${index.moduleId}.json`), index);
+      write(path.join(courseOut, 'index', `${index.moduleId}.json`), index);
     }
     const ids = plan.shipped.map((module) => module.id);
-    writeJson(path.join(courseOut, 'levels.json'), emitLevels(plan.levels, new Set(ids)));
-    copyFileSync(plan.stringsFile, path.join(courseOut, 'strings.json'));
+    write(path.join(courseOut, 'levels.json'), emitLevels(plan.levels, new Set(ids)));
+    copy(plan.stringsFile, path.join(courseOut, 'strings.json'));
+
+    const sizes: CourseSizesFile = { courseId: plan.row.id, files, bytes };
+    writeJson(path.join(courseOut, 'sizes.json'), sizes);
     shipped.set(plan.row.id, ids);
   }
 

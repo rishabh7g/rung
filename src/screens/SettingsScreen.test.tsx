@@ -7,6 +7,9 @@
  *   • the status line is the ladder's own derivation in the course's template — mid-journey,
  *     fresh and pending-authoring each say exactly what is true, counts only,
  *   • the tick toggle reads and writes `settings.elapsedTickEnabled`,
+ *   • the STORAGE section (#107) computes every figure it shows — the meter from a mocked
+ *     `estimate()`, the rows from the build's sizes files and the serialized state, the
+ *     durability line from `persisted()` — and degrades honestly when the API is missing,
  *   • and no checking or translation control exists anywhere on it (F6's AC, [D18]).
  *
  * Everything renders the real `<App />` over a mocked `fetch`, reached through the app's own
@@ -25,9 +28,12 @@ import { resetContentCache } from '../course/content.ts';
 import { resetManifestCache } from '../course/manifest.ts';
 import { resetStringsCache } from '../course/strings.ts';
 import { ladderFromLevels } from '../engine/progression.ts';
-import { useAppStore } from '../state/store.ts';
+import { exportState } from '../state/serialize.ts';
+import { persistedSlice, useAppStore } from '../state/store.ts';
 import { DEV_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
+import { sizesFixture } from '../test/courseContent.ts';
 import { stringValue } from '../test/courseStrings.ts';
+import { formatBytes } from './settings/formatBytes.ts';
 import settingsCss from './SettingsScreen.module.css?raw';
 
 /* ------------------------------------------------------------------ the fixtures */
@@ -115,11 +121,12 @@ describe('the frozen section order (F6)', () => {
     expect(follows).toBeTruthy();
   });
 
-  it('holds the two sibling tickets’ slots without their scope — stubs that name them', async () => {
+  it('holds #108’s slot without its scope — a stub that names it, and no other stub', async () => {
     await renderSettings();
 
-    expect(screen.getByText('Section stub — built in #107.')).toBeInTheDocument();
     expect(screen.getByText('Section stub — built in #108.')).toBeInTheDocument();
+    // #107's slot is filled — the STORAGE section is real now.
+    expect(screen.queryByText(/built in #107/)).not.toBeInTheDocument();
   });
 });
 
@@ -285,6 +292,97 @@ describe('the elapsed-tick toggle', () => {
 
     fireEvent.click(screen.getByRole('button', { name: 'On' }));
     expect(useAppStore.getState().settings.elapsedTickEnabled).toBe(true);
+  });
+});
+
+/* ------------------------------------------------------------------ the STORAGE section */
+
+describe('the STORAGE section (#107)', () => {
+  /** jsdom has no `navigator.storage`; a test that needs one installs exactly what it mocks. */
+  function stubNavigatorStorage(storage: unknown): void {
+    Object.defineProperty(window.navigator, 'storage', { value: storage, configurable: true });
+  }
+
+  afterEach(() => {
+    delete (window.navigator as { storage?: unknown }).storage;
+  });
+
+  /** The state's real weight, measured the way the section measures it. */
+  function progressBytes(): number {
+    return new Blob([exportState(persistedSlice(useAppStore.getState()))]).size;
+  }
+
+  it('renders the quota meter from a mocked estimate(), counts only — never a percent', async () => {
+    stubNavigatorStorage({
+      estimate: () => Promise.resolve({ usage: 12 * 1024 * 1024, quota: 1024 ** 3 }),
+    });
+
+    await renderSettings();
+
+    const meter = await screen.findByRole('meter', { name: 'Storage used on this device' });
+    expect(meter).toHaveAttribute('aria-valuenow', String(12 * 1024 * 1024));
+    expect(meter).toHaveAttribute('aria-valuemax', String(1024 ** 3));
+    expect(screen.getByText('12 MB used of 1 GB the browser offers')).toBeInTheDocument();
+  });
+
+  it('renders one computed content row per manifest course, from the build’s sizes files', async () => {
+    await renderSettings();
+
+    for (const course of DEV_MANIFEST.courses) {
+      const row = await screen.findByText(`${course.pairLabel} course (offline)`);
+      expect(row.parentElement?.textContent).toContain(formatBytes(sizesFixture(course.id).bytes));
+    }
+  });
+
+  it('renders the one progress row at the serialized state’s real size', async () => {
+    await renderSettings();
+
+    const row = screen.getByText('Your saved progress — all courses');
+    expect(row.parentElement?.textContent).toContain(formatBytes(progressBytes()));
+  });
+
+  it('grows the progress row with the state it measures — a passed rung weighs something', async () => {
+    const before = progressBytes();
+    const ladder = tenRungLadder(3);
+    climb(ladder, 'L1-M1', 'L1-M2');
+
+    await renderSettings(ladder);
+
+    const after = progressBytes();
+    expect(after).toBeGreaterThan(before);
+    const row = screen.getByText('Your saved progress — all courses');
+    expect(row.parentElement?.textContent).toContain(formatBytes(after));
+  });
+
+  it('omits the meter when estimate() is unavailable — rows and honesty line unchanged ([Q2])', async () => {
+    await renderSettings(); // jsdom: no navigator.storage at all
+
+    await screen.findByText('hindi → marathi course (offline)');
+    expect(screen.queryByRole('meter')).not.toBeInTheDocument();
+    expect(screen.getByText(strings('storageNote'))).toBeInTheDocument();
+  });
+
+  it('reports protected storage in the course’s words when the browser granted it (#90)', async () => {
+    stubNavigatorStorage({ persisted: () => Promise.resolve(true) });
+
+    await renderSettings();
+
+    expect(await screen.findByText(strings('settings.storageProtected'))).toBeInTheDocument();
+    expect(screen.queryByText(strings('settings.storageBestEffort'))).not.toBeInTheDocument();
+  });
+
+  it('reports best-effort when the browser said no — and when it cannot be asked at all', async () => {
+    stubNavigatorStorage({ persisted: () => Promise.resolve(false) });
+    await renderSettings();
+    expect(await screen.findByText(strings('settings.storageBestEffort'))).toBeInTheDocument();
+
+    // No StorageManager (Safari before 15.2, non-secure contexts): the same honest line.
+    delete (window.navigator as { storage?: unknown }).storage;
+    useAppStore.getState()._reset();
+    document.body.innerHTML = '';
+    await renderSettings();
+    expect(await screen.findByText(strings('settings.storageBestEffort'))).toBeInTheDocument();
+    expect(screen.queryByText(strings('settings.storageProtected'))).not.toBeInTheDocument();
   });
 });
 

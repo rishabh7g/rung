@@ -43,15 +43,15 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the three shipped bundles carry — 82 keys, nested, identical', () => {
+  it('is exactly what the three shipped bundles carry — 88 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(82);
+      expect(keys.length, courseId).toBe(88);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(82);
-    expect(new Set(STRINGS_KEYS).size).toBe(82);
+    expect(STRINGS_KEYS.length).toBe(88);
+    expect(new Set(STRINGS_KEYS).size).toBe(88);
   });
 
   it('carries the five keys PR #120 added beyond the issue text', () => {
@@ -258,6 +258,8 @@ describe('the canonical key list', () => {
       'practice.summaryProduced': ['{count}'],
       'practice.summaryAtTwo': ['{count}', '{total}'],
       'practice.resumeLine': ['{phase}', '{count}', '{total}'],
+      'settings.statusLine': ['{level}', '{passed}', '{total}', '{rung}'],
+      'settings.statusPending': ['{level}', '{passed}', '{total}'],
     });
   });
 });
