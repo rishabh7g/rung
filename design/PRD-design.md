@@ -87,7 +87,7 @@ The prototype shows the strip mid-Level-1 only; these three states complete it. 
 
 ## 6. User flows
 
-1. **First run.** Ladder directly; L1-M1 current with the fresh-rung stage ("Start with the module"). *(Notebook invitation home: see §12.1.)*
+1. **First run.** Ladder directly; L1-M1 current with the fresh-rung stage ("Start with the module"). *(Notebook invitation: first Practice hub, §8.1.)*
 2. **The rung card — staged CTA [D22].**
    - *Fresh rung (not studied):* primary **"Start with the module"** + note: "Read it through once — Practice picks up from there. Nothing is locked; the tab stays open."
    - *Studied:* primary **"Practice"**; ghost link "revisit the module". Opening the module flips the stage automatically.
@@ -121,7 +121,13 @@ The prototype shows the strip mid-Level-1 only; these three states complete it. 
 - Course-switch toast promise: "…saved exactly where it was." Settings note: "Switching never erases anything — each course keeps its own ladder, review queue and counters."
 - Never use: "streak", "daily goal", "you're behind", "hurry", "days left", "% fluent", or anything implying the app checked, translated, or verified. Numbers are counts, never time.
 
-## 9. Visual language and brand [D15, D16, P1]
+### 8.1 Notebook invitation [Q6 closed] *(decision — §12.1 deliverable)*
+
+Onboarding's removal [D21] left the "your notebook is your workbook" moment without a home. Decided 2026-08-12 (Rishabh, adopting the design recommendation as-is):
+
+- **Home:** a **one-time dismissible line on the first Practice hub** — a quiet note card at the top of the hub, above the Review/Read/Produce phase list. No modal, no beat, no motion (§3.6, calm mastery): a hairline card in the blueprint grammar, one line of body text plus a single quiet ✕.
+- **Copy (frozen):** "तुम्हारी notebook ही तुम्हारी workbook है — app में कुछ नहीं लिखा जाता." Honest per Invariant 4 — the line itself states that nothing is written in the app. Microcopy is course content (§8): the line ships in each course bundle in its L1, English-L1 courses mirroring it 1:1; it joins the Sync-3 key list via the strings-freeze ticket.
+- **Dismissal:** "one-time" means shown-until-dismissed, not one render — the line persists across hub visits until the learner taps ✕, then never returns. The flag is a one-shot app-level bit (the notebook habit is learned once, not per course), so switching courses does not resurrect it. No animation on dismiss beyond removal.
 
 - **Brand [P1 — ratified]: "rung"** — lowercase wordmark in Barlow Condensed. Rationale: the unit the whole product is built on (one checkpoint, one step); शिडी was Marathi-bound and the name must now outlive any one language; four letters, plain-English meaningful.
 - **Mark:** two vertical rails + three rungs, the **middle rung solid accent — "you are here"**. Drawn in the blueprint grammar: hairline 1.5, square corners, no rounding. Renders at 20 px in the app header beside the wordmark.
@@ -146,7 +152,7 @@ Any translation/checking UI [D18]; any text input; grading or storage of learner
 
 ## 12. Remaining deliverables (these become GitHub issues)
 
-1. **Notebook invitation's new home** [D21 consequence]: recommend a one-time dismissible line on the first Practice hub ("तुम्हारी notebook ही तुम्हारी workbook है — app में कुछ नहीं लिखा जाता."). Decide and freeze at Sync-3.
+1. ~~Notebook invitation's new home~~ **done** — one-time dismissible line on the first Practice hub, copy frozen (§8.1); [Q6] closed. The strings-freeze ticket adds the line to the Sync-3 key list.
 2. ~~Exported design tokens~~ **done** — `design/tokens.css` (machine-usable) + `design/tokens.md` (usage rules). Remaining: formal component specs for the staged rung card, course dropdown, retry interstitial, brand mark.
 3. ~~Level-strip edge states~~ **done** — level just-completed, next-level unseal, all-three-complete specced in §5.1; [Q4] closed (rung beat reused on the level cell + its first rung, same duration, reduced-motion safe).
 4. ~~Brand sign-off~~ **done** — rung ratified; remaining: app-icon + PWA splash from the mark (still worth an informal रंग-homophone check with P1).
@@ -160,7 +166,7 @@ Any translation/checking UI [D18]; any text input; grading or storage of learner
 - **[Q3 → Rishabh]** Elapsed tick default at first run — design recommends **ON** (numberless, calm, one tap to off).
 - **[Q4]** ~~Unseal moment~~ **closed** — shared beat ratified; edge states specced in §5.1.
 - **[Q5]** ~~Brand~~ **closed** — rung ratified [P1].
-- **[Q6 → Rishabh]** Notebook invitation home (§12.1).
+- **[Q6]** ~~Notebook invitation home~~ **closed** — first Practice hub, one-time dismissible line, copy frozen (§8.1).
 
 ## 14. Sync points with the engineering track
 
