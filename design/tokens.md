@@ -4,7 +4,9 @@ Machine-usable file: **`design/tokens.css`** — load it and style against `var(
 
 ## 1. Color
 
-**Ground & roles (Industry).** `--color-bg #f2f2f3` · `--color-surface #e9e9ea` · `--color-text #1d1f20` · `--color-accent #5980a6` (mono scheme — steel is the only decorative color) · `--color-divider` (16% ink). Two OKLCH ramps, `--color-neutral-100…900` and `--color-accent-100…900`: use 100–300 for tinted fills/hovers/subtle borders, 500 as base, 700–900 for text on tints and pressed states. Accent-on-ground is ~3:1 — fine for chrome and large text; paragraph-size accent text must use `--color-accent-700`.
+**Ground & roles (Industry).** `--color-bg #f2f2f3` · `--color-surface #e9e9ea` · `--color-text #1d1f20` · `--color-accent #496f94` (mono scheme — steel is the only decorative color) · `--color-divider` (16% ink). Two OKLCH ramps, `--color-neutral-100…900` and `--color-accent-100…900`: use 100–300 for tinted fills/hovers/subtle borders, 500 as base, 700–900 for text on tints and pressed states.
+
+**The accent is Industry's, taken half a ramp step down (#184).** Upstream ships `#5980a6` (OKLCH `0.586 0.073 248.5`); rung ships `#496f94` — the same hue and chroma at L `0.530`. The reason is the primary CTA: it paints `--color-bg` **on** the accent at 18px/600, which is not WCAG "large text" (large = ≥24px, or ≥18.66px at 700), so PRD-design §10's AA bar for fills is **4.5:1**. `#f2f2f3` on `#5980a6` is **3.71:1**; on `#496f94` it is **4.71:1**. Pressed stays `--color-accent-700` (L `0.481`, 5.78:1) — still a visible step below rest, which is why the base was not simply collapsed onto the 700 step. Accent-on-ground is 4.71:1 too, so accent *text* now clears AA at any size; `--color-accent-700` (5.78:1) remains the choice for paragraph-size accent text and kickers. `src/colourLaw.test.ts` computes both numbers from `tokens.css` and fails under 4.5:1, so a future nudge to the steel cannot silently drop the CTA below AA.
 
 **rung semantic colors (the ONLY colors beyond steel):**
 
