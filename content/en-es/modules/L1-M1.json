@@ -4,39 +4,55 @@
   "title": "Who I am",
   "job": "Introduce yourself and state what you like",
   "prerequisites": [],
-  "verified": false,
-  "verifiedBy": null,
-  "verifiedAt": null,
-  "fixture": true,
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-13",
   "complexity": {
     "minWordsPerSentence": 2,
-    "maxWordsPerSentence": 4,
+    "maxWordsPerSentence": 5,
     "allowedTenses": ["simple_present"],
     "allowedPatterns": [
       "Me llamo + name",
       "Soy de + place",
+      "Soy + N/Adj",
       "Me gusta + el/la + N",
+      "Me gustan + los/las + N-pl",
       "Quiero + N"
     ],
     "newWordCap": 25
   },
   "rules": [
-    { "tag": "free", "text": "Word order mostly matches English (Subject–Verb–Object)." },
     {
-      "tag": "delta",
-      "text": "Reflexive introductions: me llamo / te llamas — your name is what you call yourself."
+      "tag": "free",
+      "text": "Word order is the English one — subject, verb, object — so a plain statement comes out in the order you already think in."
     },
     {
       "tag": "delta",
-      "text": "The subject pronoun is usually dropped — the ending already says who: soy = I-am, quiero = I-want."
+      "text": "A verb ending already names its subject, so a neutral statement carries no subject pronoun: soy = I am, quiero = I want. yo and tú are not wrong, they are marked — they come back to contrast or to disambiguate (Yo soy de India, ella es de México)."
     },
     {
       "tag": "delta",
-      "text": "Every noun carries a gender, and the article agrees with it — el (m) · la (f) · los / las (plural)."
+      "text": "You give your name with me llamo — literally \"I call myself\". The little pronoun says whose name it is: me llamo · te llamas · se llama."
+    },
+    {
+      "tag": "delta",
+      "text": "soy is ser, the \"to be\" of identity and origin: who you are and where you are from. The ending names the person — soy (I) · eres (you) · es (he, she, and the polite usted)."
+    },
+    {
+      "tag": "delta",
+      "text": "After ser a profession or a role stands bare: Soy estudiante, never Soy un estudiante. un comes back only when something describes the noun (Soy un buen estudiante)."
+    },
+    {
+      "tag": "delta",
+      "text": "Every noun has a gender and its article shows it: el (m) · la (f) · los (m pl) · las (f pl). Learn each noun with its article — the last letter is a hint, not a rule, since el día is masculine and la mano is feminine."
     },
     {
       "tag": "interference",
-      "text": "gustar works backwards: the thing liked is the grammatical subject — \"the coffee pleases me\"."
+      "text": "Liking runs on gustar, \"to please\": the thing liked is the SUBJECT, so the verb agrees with IT and never with you — Me gusta el café (one thing) · Me gustan los libros (more than one). me only says who is pleased, and it never changes."
+    },
+    {
+      "tag": "interference",
+      "text": "Spanish keeps the article where English drops it: Me gusta el café is \"I like coffee\", not \"I like the coffee\". A whole class of thing takes el or la."
     }
   ],
   "sentences": [
@@ -53,45 +69,45 @@
             "cue": "my name is",
             "tag": "delta",
             "forms": ["Me llamo", "te llamas", "se llama"],
-            "note": "Reflexive — literally \"I call myself\". This, not \"mi nombre\", is how a name is given."
+            "note": "llamarse, \"to call oneself\". The little pronoun says whose name it is: me llamo (mine) · te llamas (yours) · se llama (his or hers). This, and not mi nombre es, is how a name is given."
           },
           {
             "display": "Rohan",
             "cue": "Rohan",
             "tag": "free",
             "forms": [],
-            "note": "Names carry over."
+            "note": "Names carry over unchanged — swap in your own."
           }
         ],
-        "rules": [0, 1]
+        "rules": [1, 2]
       },
-      "trap": "\"Mi nombre es…\" is the English sentence translated word for word — grammatical, but nobody introduces themselves that way.",
-      "sound": "ll sounds like the y in \"yes\" — me YAH-mo.",
+      "trap": "Mi nombre es Rohan is the English sentence translated word for word. It is grammatical, and nobody introduces themselves that way.",
+      "sound": "ll sounds like the y in \"yes\" through most of the Spanish-speaking world: me YAH-mo. Both vowels are short and clean.",
       "variations": [
         {
-          "display": "Me llamo Priya",
-          "cue": "My name is Priya",
-          "changed": "swap the name — Me llamo never changes"
+          "display": "Me llamo Ana",
+          "cue": "My name is Ana",
+          "changed": "swap the name — Me llamo itself never changes"
         },
         {
-          "display": "se llama Rohan",
+          "display": "Se llama Rohan",
           "cue": "His name is Rohan",
           "changed": "me → se: the same verb, a different person"
         }
       ],
       "mistake": {
         "display": "Me llamo es Rohan",
-        "why": "No \"es\" — llamo is already the verb."
+        "why": "No es — llamo is already the verb. Me llamo Rohan is the whole sentence."
       },
-      "usage": "First introductions, any register.",
+      "usage": "First introductions, in any register.",
       "register": "neutral",
-      "mnemonic": "llamo = \"I call (myself)\" — your name is what you call yourself."
+      "mnemonic": "llamo = I call. Your name is what you call yourself, so me llamo."
     },
     {
       "id": "L1-M1-S02",
       "display": "Soy de India",
       "cue": "I am from India",
-      "glossEn": "lit. \"I-am from India\"",
+      "glossEn": "lit. \"Am from India\" — the \"I\" is inside soy",
       "literal": "I-am from India",
       "deconstruction": {
         "words": [
@@ -99,53 +115,100 @@
             "display": "Soy",
             "cue": "I am",
             "tag": "delta",
-            "forms": ["Soy", "eres", "es"],
-            "note": "ser — the lasting \"am\": origin and identity. The \"I\" sits inside the ending."
+            "forms": [],
+            "note": "ser — the \"to be\" of identity and origin: who you are, and where you are from. The ending names the person: soy (I) · eres (you) · es (he, she, and the polite usted). M2 brings in the other \"to be\", estar, for how you are."
           },
           {
             "display": "de",
-            "cue": "from",
+            "cue": "from · of",
             "tag": "free",
             "forms": [],
-            "note": "Works like English \"from\"."
+            "note": "One little word for both \"from\" and \"of\": soy de India (from), estudiante de español (of)."
           },
           {
             "display": "India",
             "cue": "India",
             "tag": "free",
             "forms": [],
-            "note": "Country names carry over."
+            "note": "Country names mostly carry over, capital letter and all."
           }
         ],
-        "rules": [0, 2]
+        "rules": [1, 3]
       },
-      "trap": "English has one \"am\"; Spanish has two. Where you are from is ser (soy), never estar.",
-      "sound": "Soy rhymes with English \"boy\"; India opens with EEN-, not EYE-.",
+      "trap": "English says the \"I\" out loud every time. Yo soy de India is not wrong, but it reads as insistence — I am from India, whatever you are. The neutral sentence is Soy de India.",
+      "sound": "Soy rhymes with English \"boy\". India starts EEN-, never EYE-, and every vowel stays short.",
       "variations": [
         {
-          "display": "eres de India",
-          "cue": "You are from India",
-          "changed": "soy → eres: the ending swaps the person"
+          "display": "Soy de México",
+          "cue": "I am from Mexico",
+          "changed": "swap the place — Soy de … is the frame"
         },
         {
-          "display": "es de India",
-          "cue": "He is from India",
-          "changed": "soy → es — and still no pronoun in front"
+          "display": "Es de India",
+          "cue": "She is from India",
+          "changed": "soy → es: the ending swaps the person, and still no pronoun"
         }
       ],
       "mistake": {
         "display": "Yo soy de India",
-        "why": "Drop the yo — soy already says \"I am\". Keep it only for contrast."
+        "why": "Drop the yo — soy already says \"I am\". It comes back only when you are drawing a contrast."
       },
       "usage": "Where you are from — the second or third line of any introduction.",
       "register": "neutral",
-      "mnemonic": "ser = who you are, lastingly. Soy de India, not estoy."
+      "mnemonic": "ser is the verb of who and of where from: soy de … — I am of that place."
     },
     {
       "id": "L1-M1-S03",
+      "display": "Soy estudiante de español",
+      "cue": "I am a student of Spanish",
+      "glossEn": "lit. \"Am student of Spanish\" — there is no word for \"a\"",
+      "literal": "I-am student of Spanish",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "estudiante",
+            "cue": "student",
+            "tag": "delta",
+            "forms": ["estudiante", "estudiantes"],
+            "note": "One shape for a man and for a woman — el estudiante · la estudiante — so only the article moves. Plural estudiantes."
+          },
+          {
+            "display": "español",
+            "cue": "Spanish",
+            "tag": "delta",
+            "forms": [],
+            "note": "The language, and also the adjective. Spanish writes languages and nationalities with a small letter: español, never Español."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "English needs the article — I am a student — and Spanish refuses it after ser. Soy un estudiante only works once something describes the noun: Soy un buen estudiante.",
+      "sound": "Spanish cannot begin a word with s plus a consonant, so \"student\" became estudiante and \"school\" is escuela. Say that opening e-. español ends on its stressed -ñol, and ñ is the ny of \"canyon\".",
+      "variations": [
+        {
+          "display": "Soy estudiante de música",
+          "cue": "I am a music student",
+          "changed": "swap what you study — de is what links the two nouns"
+        },
+        {
+          "display": "Soy profesor",
+          "cue": "I am a teacher",
+          "changed": "any profession fits the frame, and there is still no un"
+        }
+      ],
+      "mistake": {
+        "display": "Soy un estudiante de español",
+        "why": "Drop the un. After ser, a bare role is the everyday sentence: Soy estudiante de español."
+      },
+      "usage": "Saying what you do — work or study — when you meet someone.",
+      "register": "neutral",
+      "mnemonic": "Spanish states the role, not a count of it: Soy estudiante."
+    },
+    {
+      "id": "L1-M1-S04",
       "display": "Me gusta el café",
       "cue": "I like coffee",
-      "glossEn": "lit. \"the coffee pleases me\"",
+      "glossEn": "lit. \"The coffee pleases me\"",
       "literal": "To-me pleases the coffee",
       "deconstruction": {
         "words": [
@@ -153,50 +216,238 @@
             "display": "Me gusta",
             "cue": "I like",
             "tag": "interference",
-            "forms": ["Me gusta", "te gusta", "Me gustan"],
-            "note": "Backwards from English: the coffee does the pleasing, so the verb follows the coffee — not you."
+            "forms": [],
+            "note": "gustar means \"to please\", so the thing liked is the subject and gusta agrees with IT: one thing → gusta. me only says who is pleased. For more than one thing, S06 has me gustan."
           },
           {
             "display": "el",
             "cue": "the",
             "tag": "delta",
-            "forms": ["el", "la", "los", "las"],
-            "note": "The article carries the noun's gender and number: el (m) · la (f) · los / las (plural)."
+            "forms": [],
+            "note": "The masculine singular article, and the article is what shows a noun's gender: el (m) · la (f) · los (m pl) · las (f pl). Spanish also keeps it where English drops it — me gusta el café is \"I like coffee\"."
           },
           {
             "display": "café",
             "cue": "coffee",
             "tag": "free",
             "forms": ["café", "cafés"],
-            "note": "Cognate, and masculine — so el café."
+            "note": "Masculine, so el café. Plural cafés, and the written accent stays where it was."
           }
         ],
-        "rules": [3, 4]
+        "rules": [5, 6, 7]
       },
-      "trap": "\"Yo gusto el café\" copies the English shape — it says that you are the one doing the pleasing.",
-      "sound": "Stress lands on the last syllable — ka-FEH, with a clipped final e.",
+      "trap": "Yo gusto el café copies the English shape and ends up saying that you are the one doing the pleasing.",
+      "sound": "Stress lands on the last syllable — ka-FEH — which is exactly what the written accent is telling you.",
       "variations": [
         {
-          "display": "Me gusta el agua",
-          "cue": "I like water",
-          "changed": "café → agua — and it still takes el, though agua is feminine"
+          "display": "Te gusta el café",
+          "cue": "You like coffee",
+          "changed": "me → te: who is pleased changes, gusta does not"
         },
         {
-          "display": "te gusta el café",
-          "cue": "You like coffee",
-          "changed": "Me → te: who is pleased changes, gusta does not"
+          "display": "Me gusta el español",
+          "cue": "I like Spanish",
+          "changed": "swap the thing liked — still one thing, so still gusta"
         }
       ],
       "mistake": {
         "display": "Yo gusto el café",
-        "why": "gustar runs backwards — the thing liked is the subject: Me gusta el café."
+        "why": "gustar runs the other way: the coffee pleases you. Me gusta el café."
       },
-      "usage": "Likes of every kind — food, music, people.",
+      "usage": "Likes of every kind — food, music, places, people.",
       "register": "neutral",
-      "mnemonic": "gustar = \"to please\" — English likes, Spanish pleases."
+      "mnemonic": "Read it backwards and it clicks: to-me pleases the coffee."
     },
     {
-      "id": "L1-M1-S04",
+      "id": "L1-M1-S05",
+      "display": "Me gusta la música",
+      "cue": "I like music",
+      "glossEn": "lit. \"The music pleases me\"",
+      "literal": "To-me pleases the music",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "la",
+            "cue": "the",
+            "tag": "delta",
+            "forms": [],
+            "note": "The feminine singular article. Gender belongs to the noun and not to its last letter: el día ends in -a and is masculine, la mano ends in -o and is feminine. Learn each noun with its article."
+          },
+          {
+            "display": "música",
+            "cue": "music",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine, so la música. The written accent throws the stress three syllables back: MÚ-si-ca."
+          }
+        ],
+        "rules": [5, 6]
+      },
+      "trap": "It is still one thing being liked, so it is still gusta — music does not go plural just because there is a lot of it.",
+      "sound": "MÚ-si-ca. The u is the oo of \"moon\", cut short, and the accent marks the stressed syllable.",
+      "variations": [
+        {
+          "display": "Me gusta la música española",
+          "cue": "I like Spanish music",
+          "changed": "add an adjective and it agrees with música — española, not español"
+        },
+        {
+          "display": "Te gusta la música",
+          "cue": "You like music",
+          "changed": "me → te: the person pleased changes, gusta stays"
+        }
+      ],
+      "mistake": {
+        "display": "Me gusta música",
+        "why": "English says \"I like music\" with no \"the\"; Spanish needs the article for a whole class of thing: Me gusta la música."
+      },
+      "usage": "Talking about what you enjoy — usually the first thing anyone asks.",
+      "register": "neutral",
+      "mnemonic": "A whole class of thing carries its article: la música, el café."
+    },
+    {
+      "id": "L1-M1-S06",
+      "display": "Me gustan los libros",
+      "cue": "I like books",
+      "glossEn": "lit. \"The books please me\"",
+      "literal": "To-me please the books",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Me gustan",
+            "cue": "I like",
+            "tag": "interference",
+            "forms": [],
+            "note": "The plural partner of S04's me gusta. More than one thing does the pleasing, so the verb goes plural — gustan. The things decide, never you: me stays exactly as it is."
+          },
+          {
+            "display": "los",
+            "cue": "the",
+            "tag": "delta",
+            "forms": [],
+            "note": "Masculine plural. The noun takes -s and the article goes plural with it: el libro → los libros."
+          },
+          {
+            "display": "libros",
+            "cue": "books",
+            "tag": "free",
+            "forms": ["libro", "libros"],
+            "note": "Masculine: el libro (one) · los libros (more than one)."
+          }
+        ],
+        "rules": [5, 6]
+      },
+      "trap": "English keeps \"like\" flat — I like a book, I like books. Spanish moves the verb, because the books are its subject.",
+      "sound": "LI-bros, stressed on the first syllable, and the single r is one quick tap of the tongue — nothing like the English r.",
+      "variations": [
+        {
+          "display": "Me gusta el libro",
+          "cue": "I like the book",
+          "changed": "one book, so gusta and el come back"
+        },
+        {
+          "display": "Te gustan los libros",
+          "cue": "You like books",
+          "changed": "me → te: the person pleased changes, gustan does not"
+        }
+      ],
+      "mistake": {
+        "display": "Me gusta los libros",
+        "why": "Two or more things are doing the pleasing, so the verb is plural: Me gustan los libros."
+      },
+      "usage": "Saying what you like when there is more than one of it.",
+      "register": "neutral",
+      "mnemonic": "Count the things, not the people: one → gusta, many → gustan."
+    },
+    {
+      "id": "L1-M1-S07",
+      "display": "Me gustan las películas",
+      "cue": "I like films",
+      "glossEn": "lit. \"The films please me\"",
+      "literal": "To-me please the films",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "las",
+            "cue": "the",
+            "tag": "delta",
+            "forms": [],
+            "note": "Feminine plural: la película → las películas. Four articles in all — el · la · los · las — one for each pairing of gender and number."
+          },
+          {
+            "display": "películas",
+            "cue": "films",
+            "tag": "free",
+            "forms": ["película", "películas"],
+            "note": "Feminine: la película (one) · las películas (more than one). It is the everyday word for a film or a movie."
+          }
+        ],
+        "rules": [5, 6]
+      },
+      "trap": "The article is doing work English does with nothing at all: \"I like films\" is me gustan LAS películas.",
+      "sound": "pe-LÍ-cu-la. The accent is written because the stress falls back onto the third-from-last syllable.",
+      "variations": [
+        {
+          "display": "Me gusta la película",
+          "cue": "I like the film",
+          "changed": "one film: la, and gusta"
+        },
+        {
+          "display": "Me gustan mucho las películas",
+          "cue": "I really like films",
+          "changed": "mucho goes straight after the verb"
+        }
+      ],
+      "mistake": {
+        "display": "Me gustan los películas",
+        "why": "película is feminine, so its plural article is las: las películas."
+      },
+      "usage": "Films, food, music — anything you like in the plural.",
+      "register": "neutral",
+      "mnemonic": "las películas — the article and the noun end in -as together."
+    },
+    {
+      "id": "L1-M1-S08",
+      "display": "Quiero café",
+      "cue": "I want coffee",
+      "glossEn": "lit. \"I-want coffee\" — there is no word for \"some\"",
+      "literal": "I-want coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Quiero",
+            "cue": "I want",
+            "tag": "delta",
+            "forms": [],
+            "note": "querer — to want. The ending names the person: quiero (I) · quieres (you) · quiere (he or she). Aimed at a person it also means to love: te quiero."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English needs \"some coffee\" or \"a coffee\"; Spanish is content with the bare noun — Quiero café.",
+      "sound": "qu is simply a k: KYEH-ro. The u is silent, exactly as it is in queso.",
+      "variations": [
+        {
+          "display": "Quiero agua",
+          "cue": "I want water",
+          "changed": "swap what you want — Quiero + the thing"
+        },
+        {
+          "display": "Quieres café",
+          "cue": "You want coffee",
+          "changed": "the ending changes the person, and there is still no pronoun"
+        }
+      ],
+      "mistake": {
+        "display": "Yo quiero café",
+        "why": "Drop the yo — quiero already means \"I want\". Keep it only to contrast with someone else."
+      },
+      "usage": "Asking for something plainly. Softer ways of asking come later; this one is direct, not rude.",
+      "register": "neutral",
+      "mnemonic": "The -o ending is the \"I\": quiero."
+    },
+    {
+      "id": "L1-M1-S09",
       "display": "Quiero agua",
       "cue": "I want water",
       "glossEn": "lit. \"I-want water\"",
@@ -204,48 +455,87 @@
       "deconstruction": {
         "words": [
           {
-            "display": "Quiero",
-            "cue": "I want",
-            "tag": "delta",
-            "forms": ["Quiero", "quieres", "quiere"],
-            "note": "querer — wanting (and, later, loving). The \"I\" is inside the ending."
-          },
-          {
             "display": "agua",
             "cue": "water",
             "tag": "delta",
             "forms": [],
-            "note": "Feminine, yet it takes el in the singular — el agua. A famous quirk."
+            "note": "Feminine — but in the singular it borrows el, because it begins with a stressed a-: el agua, never la agua. M3 comes back to it."
           }
         ],
-        "rules": [0, 2]
+        "rules": [1]
       },
-      "trap": "\"Yo quiero agua\" is the English habit of always naming the subject; Spanish drops it unless it is drawing a contrast.",
-      "sound": "agua is AH-gwa — the u is a glide, not a syllable of its own.",
+      "trap": "Water is a mass noun in both languages, so no article is needed here. Add one in the singular, though, and it is el agua.",
+      "sound": "AH-gwa. gu before an a is a hard g with a w-glide, one syllable — not AH-goo-a.",
       "variations": [
         {
-          "display": "quieres agua",
-          "cue": "You want water",
-          "changed": "Quiero → quieres: the ending says who wants"
+          "display": "Quiero el agua",
+          "cue": "I want the water",
+          "changed": "that particular water — and the article is el, not la"
         },
         {
-          "display": "Quiero el café",
-          "cue": "I want the coffee",
-          "changed": "add el — that particular coffee, not coffee in general"
+          "display": "Quiere agua",
+          "cue": "She wants water",
+          "changed": "-o → -e: the ending names a different person"
         }
       ],
       "mistake": {
-        "display": "Yo quiero agua",
-        "why": "Drop the yo — quiero already means \"I want\"."
+        "display": "Quiero la agua",
+        "why": "In the singular agua takes el — el agua. The noun is still feminine; the article is only dodging two stressed a's in a row."
       },
-      "usage": "Asking for what you want — shops, tables, homes.",
+      "usage": "The most useful request in the language.",
       "register": "neutral",
-      "mnemonic": "querer → Quiero: the -o ending is the \"I\"."
+      "mnemonic": "Two stressed a's collide in la agua, so Spanish says el agua."
+    },
+    {
+      "id": "L1-M1-S10",
+      "display": "Me gusta mucho el español",
+      "cue": "I really like Spanish",
+      "glossEn": "lit. \"The Spanish pleases me a lot\"",
+      "literal": "To-me pleases a-lot the Spanish",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mucho",
+            "cue": "a lot",
+            "tag": "delta",
+            "forms": [],
+            "note": "a lot, and it sits right after the verb: me gusta mucho el español, never me gusta el español mucho. In front of a noun it turns into an adjective and agrees (mucho café · mucha agua); as the adverb here it never changes."
+          }
+        ],
+        "rules": [6, 7]
+      },
+      "trap": "English hangs \"a lot\" on the end of the sentence. Spanish presses it against the verb.",
+      "sound": "MU-cho. The ch is the ch of \"church\" and the final o is short.",
+      "variations": [
+        {
+          "display": "Me gustan mucho los libros",
+          "cue": "I really like books",
+          "changed": "plural things → gustan, and mucho stays put"
+        },
+        {
+          "display": "Me gusta mucho el café",
+          "cue": "I really like coffee",
+          "changed": "swap the thing liked; the frame holds"
+        }
+      ],
+      "mistake": {
+        "display": "Me gusta el español mucho",
+        "why": "mucho belongs right after the verb: Me gusta mucho el español."
+      },
+      "usage": "Turning a like up a notch without reaching for a new verb.",
+      "register": "neutral",
+      "mnemonic": "mucho hugs the verb."
     }
   ],
   "comprehensionPool": [
-    { "id": "L1-M1-C01", "display": "Quiero café", "cue": "I want coffee" },
-    { "id": "L1-M1-C02", "display": "se llama Rohan", "cue": "His name is Rohan" }
+    { "id": "L1-M1-C01", "display": "Se llama Rohan", "cue": "His name is Rohan" },
+    { "id": "L1-M1-C02", "display": "Soy estudiante", "cue": "I am a student" },
+    { "id": "L1-M1-C03", "display": "Soy estudiante de música", "cue": "I am a music student" },
+    { "id": "L1-M1-C04", "display": "Me gusta la película", "cue": "I like the film" },
+    { "id": "L1-M1-C05", "display": "Me gusta el español", "cue": "I like Spanish" },
+    { "id": "L1-M1-C06", "display": "Me gusta mucho el café", "cue": "I really like coffee" },
+    { "id": "L1-M1-C07", "display": "Me gustan mucho los libros", "cue": "I really like books" },
+    { "id": "L1-M1-C08", "display": "Quiero el café", "cue": "I want the coffee" }
   ],
   "exitTest": { "generateCount": 1, "comprehendCount": 2 }
 }

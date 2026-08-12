@@ -187,6 +187,7 @@ describe('ModuleContent against the modules that exist', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-es/modules/L1-M1.json',
+      'content/en-es/modules/L1-M2.json',
       'content/hi-mr/modules/L1-M1.json',
       'content/hi-mr/modules/L1-M10.json',
       'content/hi-mr/modules/L1-M2.json',
