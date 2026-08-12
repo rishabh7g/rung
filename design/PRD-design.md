@@ -103,15 +103,15 @@ The prototype shows the strip mid-Level-1 only; these three states complete it. 
 ## 7. Component inventory
 
 - Level strip; header position line; counts-only pending line.
-- **Staged rung-card CTA** (4 stages, §6.2).
+- **Staged rung-card CTA** (4 stages, §6.2; spec `tokens.md` §6.1).
 - Ladder rung markers [D16]: passed = filled circle + check, current = crosshair, locked = hollow circle; unlock = single beat.
 - Self-mark control [D11]: green `oklch(0.52 0.10 150)` / red `oklch(0.52 0.13 27)` fills, white text; **Next hidden until marked** — same control in Practice and Comprehension.
 - "Why" toggle → shared word-row component (word + cue + tag chip + note).
 - Gentle elapsed tick (2 px, numberless, toggleable; recommend default ON [Q3]).
 - Ritual arc: constraint step · guidance-only जांचो (dashed plate + static resource rows) · press-and-hold control.
-- Comprehension retry interstitial ("Fresh sentences").
-- Sentence card (collapse/expand/open-full); Detail section set (order frozen [D10], mnemonic last); tag chips; variation card (`accent-200` changed-part fill); mistake callout (struck on neutral plate); reveal card; phase chips; production dots; storage meter (per-course rows); settings rows; **course dropdown** (native select on `.input`, 44 px); **quiet script line** (romanized courses).
-- **Brand mark** (§9).
+- Comprehension retry interstitial ("Fresh sentences"; spec `tokens.md` §6.3).
+- Sentence card (collapse/expand/open-full); Detail section set (order frozen [D10], mnemonic last); tag chips; variation card (`accent-200` changed-part fill); mistake callout (struck on neutral plate); reveal card; phase chips; production dots; storage meter (per-course rows); settings rows; **course dropdown** (native select on `.input`, 44 px; spec `tokens.md` §6.2); **quiet script line** (romanized courses).
+- **Brand mark** (§9; spec `tokens.md` §6.4).
 
 ## 8. Content, tone, and microcopy
 
@@ -129,8 +129,10 @@ Onboarding's removal [D21] left the "your notebook is your workbook" moment with
 - **Copy (frozen):** "तुम्हारी notebook ही तुम्हारी workbook है — app में कुछ नहीं लिखा जाता." Honest per Invariant 4 — the line itself states that nothing is written in the app. Microcopy is course content (§8): the line ships in each course bundle in its L1, English-L1 courses mirroring it 1:1; it joins the Sync-3 key list via the strings-freeze ticket.
 - **Dismissal:** "one-time" means shown-until-dismissed, not one render — the line persists across hub visits until the learner taps ✕, then never returns. The flag is a one-shot app-level bit (the notebook habit is learned once, not per course), so switching courses does not resurrect it. No animation on dismiss beyond removal.
 
+## 9. Visual language and brand [D15, D16, P1]
+
 - **Brand [P1 — ratified]: "rung"** — lowercase wordmark in Barlow Condensed. Rationale: the unit the whole product is built on (one checkpoint, one step); शिडी was Marathi-bound and the name must now outlive any one language; four letters, plain-English meaningful.
-- **Mark:** two vertical rails + three rungs, the **middle rung solid accent — "you are here"**. Drawn in the blueprint grammar: hairline 1.5, square corners, no rounding. Renders at 20 px in the app header beside the wordmark.
+- **Mark:** two vertical rails + three rungs, the **middle rung solid accent — "you are here"**. Drawn in the blueprint grammar: hairline 1.5, square corners, no rounding. Renders at 20 px in the app header beside the wordmark. Construction grid + icon-scale rules: `tokens.md` §6.4.
 - **Alternates considered (not chosen):** *Paydan* (पायदान — Hindi for rung; warmer, but L1-tied again) · *Climb* (verb energy, more generic). Caution to test with P1: a Hindi ear may hear "rung" as रंग (colour).
 - **System: Industry** — steel-blue blueprint; square corners, hairline borders, registration marks. Prototype holds token values of record.
 - **Type:** Mukta for all Devanagari; Barlow / Barlow Condensed for UI. Devanagari body ≥ 18 px equivalent, line-height 1.6, no italics. Arabic script lines render via system fallback at quiet sizes (bundle a Naskh face if Arabic ships — engineering §10).
@@ -153,7 +155,7 @@ Any translation/checking UI [D18]; any text input; grading or storage of learner
 ## 12. Remaining deliverables (these become GitHub issues)
 
 1. ~~Notebook invitation's new home~~ **done** — one-time dismissible line on the first Practice hub, copy frozen (§8.1); [Q6] closed. The strings-freeze ticket adds the line to the Sync-3 key list.
-2. ~~Exported design tokens~~ **done** — `design/tokens.css` (machine-usable) + `design/tokens.md` (usage rules). Remaining: formal component specs for the staged rung card, course dropdown, retry interstitial, brand mark.
+2. ~~Exported design tokens~~ **done** — `design/tokens.css` (machine-usable) + `design/tokens.md` (usage rules). ~~Remaining: formal component specs for the staged rung card, course dropdown, retry interstitial, brand mark~~ **done** — all four specced with every state and exact token recipes in `tokens.md` §6.1–§6.4 (rung card's four [D22] stages, dropdown closed/open/switching + toast, retry's calm absences, brand-mark construction grid + icon scale); no new colors.
 3. ~~Level-strip edge states~~ **done** — level just-completed, next-level unseal, all-three-complete specced in §5.1; [Q4] closed (rung beat reused on the level cell + its first rung, same duration, reduced-motion safe).
 4. ~~Brand sign-off~~ **done** — rung ratified; remaining: app-icon + PWA splash from the mark (still worth an informal रंग-homophone check with P1).
 5. RTL mirroring spec if/when an Arabic course is greenlit.
