@@ -213,8 +213,13 @@ describe('ModuleContent against the modules that exist', () => {
     const modules = MODULE_FILES.map(([file, json]) => parseModule(json, file));
 
     for (const module of modules) {
-      // Never true in the repo: the native gate is a reviewer's signature (#64, [D4]).
-      expect(module.verified).toBe(false);
+      // `verified` is a ship gate, not a mood: whenever it is true the file names who or what
+      // cleared it and when (#110/#111 flipped hi-mr L1 on an owner-authorised LLM review; the
+      // native gate #64 is still open). An unsigned true never reaches a learner.
+      if (module.verified) {
+        expect(module.verifiedBy).toMatch(/\S/);
+        expect(module.verifiedAt).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      }
 
       for (const sentence of module.sentences) {
         for (const word of sentence.deconstruction.words) {

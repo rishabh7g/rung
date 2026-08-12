@@ -26,8 +26,10 @@ export function BootLoadingScreen() {
 
 /**
  * The content tripwire, made visible: the manifest is missing, malformed, or empty. A strict
- * build ships no courses until content is verified (#64), so this is what `npm run build`
- * renders today — correct, not a bug (README, "The content gate").
+ * build ships only modules cleared to reach a learner, so an empty manifest means the gate held
+ * everything back — this was the whole `npm run build` output until hi-mr L1-M1..M10 shipped
+ * (2026-08-13, #110/#111). Seeing it now means content genuinely failed to build (README, "The
+ * content gate").
  */
 export function ContentErrorScreen({ detail }: { detail: string }) {
   return (

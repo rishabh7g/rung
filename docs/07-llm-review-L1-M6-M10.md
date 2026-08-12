@@ -1,5 +1,27 @@
 # LLM linguistic review — hi-mr L1-M6…L1-M10
 
+> ## 2026-08-13 — the flags were flipped, on the owner's authority
+>
+> All ten hi-mr L1 modules now carry `verified: true`, with
+> `verifiedBy: "Fable (Claude Fable 5) — LLM review, authorised by repo owner"` and
+> `verifiedAt: "2026-08-13"`. The strict/production build ships them, and the live app at
+> https://rishabh7g.github.io/rung/ now serves this content to a learner.
+>
+> **What that flag now attests, and what it does not.** The repo owner (Rishabh) explicitly and
+> repeatedly authorised the flip, with the consequence stated to him each time: the review behind
+> these ten modules is **this LLM pass** — not a native speaker. `verifiedBy` says so in the
+> content files themselves, `content/schema/module.schema.json` now describes `verified` as the
+> ship gate it actually is (content cleared to reach a learner) rather than as a native-speaker
+> gate, and `tools/validate.ts` refuses any `verified: true` that does not name its reviewer and
+> date. The record claims exactly the check that was run and no more.
+>
+> **The native gate is still unmet.** #64, #110 and #111 stay OPEN. The ~18 open questions listed
+> in these two documents (9 here, 9 in the other half) are still outstanding and still need a
+> native Marathi speaker; nothing below was answered by flipping a flag. Everything this pass
+> could not hear — the sound notes, the register chips, the naturalness calls — remains exactly as
+> uncertain as it was on 2026-08-12.
+
+
 **This is NOT the native-speaker gate.** It is the back half of the pass whose front half is
 `docs/07-llm-review-L1-M1-M5.md` — same reviewer, same method, same standing: a rigorous LLM read of
 every element of the five remaining authored hi-mr modules, run so that the eventual native
@@ -12,6 +34,9 @@ The reviewer is Claude (Opus 5), which is **not a native Marathi speaker**. Acco
   (`content/schema/module.schema.json`: _"Native-speaker gate. Never authored as true — only the
   reviewer flips it"_). An LLM self-certifying LLM-drafted Marathi is exactly the thing that flag
   exists to prevent.
+  **[Superseded 2026-08-13 — the owner authorised the flip anyway; see the note at the top. The
+  flag is now flipped, `verifiedBy` names this LLM pass, and the schema wording quoted here has
+  been rewritten to match what the flag really gates.]**
 - #111's acceptance criteria that require a **named native speaker** — verification, the
   full-ladder smoke on real rungs, Invariants 1–8 on shipped content — remain unmet. #111 and #64
   stay open.

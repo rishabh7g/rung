@@ -19,10 +19,11 @@
  * the context for a later dev-banner ticket; absent on a strict build, so `=== true` is the
  * whole check.
  *
- * Empty is a failure, not a quiet nothing: `npm run build` ships zero courses today (every
- * module is `verified: false` until #64), and an app with no active course has nothing to
- * render. That path shows the content-error screen — which is the honest answer, and the
- * reason the tripwire exists.
+ * Empty is a failure, not a quiet nothing: `npm run build` shipped zero courses for as long as
+ * the gate held every module back, and an app with no active course has nothing to render. That
+ * path shows the content-error screen — which is the honest answer, and the reason the tripwire
+ * exists. hi-mr L1-M1..M10 have shipped since 2026-08-13 (#110/#111), so an empty manifest is now
+ * a build failure rather than the expected state.
  */
 
 /** How a course writes its L2: `native` shows the script, `romanized` shows Latin (PRD §7). */
@@ -226,7 +227,7 @@ export function parseManifest(payload: unknown, source = MANIFEST_PATH): Manifes
   }
   if (envelope.courses.length === 0) {
     throw new ManifestError(
-      `${source}: declares no courses — a strict build ships none until content is verified (#64)`,
+      `${source}: declares no courses — a strict build ships only modules cleared by the gate`,
     );
   }
 

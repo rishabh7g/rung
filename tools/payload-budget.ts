@@ -9,16 +9,20 @@
  * `scripts/verify.sh` runs it right after BUILD (`BUDGET ok` in the summary line), reading the
  * `dist/` that build just wrote.
  *
- * Four budgets — fonts (raw woff2 bytes, ≤ 150 KiB from #113), #114's two: `js` (gzip,
- * ≤ 200 KiB — the issue's number) and `total` (gzip, ≤ 400 KiB — everything a first visit
- * transfers, which on this product is all of dist/ minus the un-precached iOS splash set:
- * the SW precaches the lot), and #115's `splash` (raw, ≤ 100 KiB). `raw` meters bytes
- * on disk (right for woff2/png, which are already compressed); `gzip` meters what the wire
- * carries (GitHub Pages serves text assets Content-Encoding: gzip — zlib's default level is the
- * approximation). The fonts budget holds while the native gate (#64) keeps modules out of the
- * learner build; the day hi-mr's content ships, Mukta's Devanagari subsets grow ~260 KiB and
- * BOTH fonts and total go red ON PURPOSE — the rebalance options are written down in
- * docs/05-perf-notes.md §4.
+ * Four budgets — `fonts` (raw woff2 bytes), #114's two: `js` (gzip, ≤ 200 KiB — the issue's
+ * number) and `total` (gzip — everything a first visit transfers, which on this product is all of
+ * dist/ minus the un-precached iOS splash set: the SW precaches the lot), and #115's `splash`
+ * (raw, ≤ 100 KiB). `raw` meters bytes on disk (right for woff2/png, which are already
+ * compressed); `gzip` meters what the wire carries (GitHub Pages serves text assets
+ * Content-Encoding: gzip — zlib's default level is the approximation).
+ *
+ * The tripwire docs/05-perf-notes.md §4 predicted has now fired: hi-mr L1-M1..M10 ship in the
+ * learner build, so Mukta's Devanagari subsets went from near-empty to ~86-90 KiB per weight and
+ * `fonts` + `total` blew their #113/#114 limits together (361.2 KiB and 548.1 KiB). Taken in the
+ * order §4 wrote down: dropping a Mukta weight needs design sign-off nobody has given, and
+ * subsetting to the shipped word index saves nothing when every authored module ships — so the
+ * third option applies, "raise the limit with a written justification", and §4 carries it. The
+ * limits below are the measured payload plus ~5%: still tripwires, not ceilings.
  */
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import path from 'node:path';
@@ -44,10 +48,13 @@ export interface Budget {
 /** A new budget is one row and zero new plumbing. */
 export const BUDGETS: readonly Budget[] = [
   {
-    // #113 — woff2 is already compressed, so disk bytes ARE transfer bytes.
+    // #113 — woff2 is already compressed, so disk bytes ARE transfer bytes. 150 KiB while the
+    // learner build shipped no Devanagari; 380 KiB now that hi-mr L1 ships (361.2 KiB measured,
+    // perf-notes §4). Still tight enough to catch the regressions it was built for: a fourth
+    // Mukta weight (+~88 KiB) or an unsubset Mukta (557 KiB) trips it.
     id: 'fonts',
     matches: (file) => file.endsWith('.woff2'),
-    limitBytes: 150 * 1024,
+    limitBytes: 380 * 1024,
     measure: 'raw',
   },
   {
@@ -60,16 +67,17 @@ export const BUDGETS: readonly Budget[] = [
   },
   {
     // #114 — everything a first visit transfers: the SW precache is all of dist/ (tools/pwa.ts
-    // globs), so dist/ IS the first-visit payload. 400 KiB ≈ what Slow 4G (~180 KiB/s effective)
-    // moves in ~2.2 s — the whole "walk away from the wifi" moment stays cheap, not just the
-    // interactive part the 2 s TTI gate covers. Baseline: 204.4 KiB (perf-notes §6).
+    // globs), so dist/ IS the first-visit payload. Was 400 KiB ≈ what Slow 4G (~180 KiB/s
+    // effective) moves in ~2.2 s; 580 KiB now (548.1 KiB measured) — ~3.0 s to finish precaching
+    // once hi-mr's Devanagari ships. The 2 s TTI gate is unaffected: the fonts that grew load
+    // async and `js` is still 94.2 KiB gzip. perf-notes §4 carries the justification.
     //
     // The one carve-out is the iOS splash set (#115): deliberately NOT precached (tools/pwa.ts),
     // never fetched by the app — Safari pulls the single matching image at Add-to-Home-Screen —
     // so it is not first-visit payload and it meters under its own `splash` row instead.
     id: 'total',
     matches: (file) => !file.startsWith('icons/splash/'),
-    limitBytes: 400 * 1024,
+    limitBytes: 580 * 1024,
     measure: 'gzip',
   },
   {
@@ -131,7 +139,7 @@ export function evaluate(budget: Budget, shipped: readonly ShippedFile[]): Budge
 
 const kib = (bytes: number): string => `${(bytes / 1024).toFixed(1)} KiB`;
 
-/** `BUDGET fonts 98.3 KiB ≤ 150.0 KiB ok — 9 files` (gzip budgets say so: `92.9 KiB gzip ≤ …`) */
+/** `BUDGET fonts 361.2 KiB ≤ 380.0 KiB ok — 9 files` (gzip budgets say so: `94.2 KiB gzip ≤ …`) */
 export function formatResult(result: BudgetResult): string {
   const verdict = result.ok ? 'ok' : 'OVER';
   const gzip = result.budget.measure === 'gzip' ? ' gzip' : '';

@@ -104,9 +104,9 @@ segments+=("TEST${counts:+ $counts} ok")
 
 if [ -f "$repo_root/tools/content-build.ts" ]; then
   # content:build chains schema validation, the word index and the strings
-  # check. A strict build legitimately ships nothing today (every module is
-  # unverified — native gate #64) and exits 0, so the harness judges the exit
-  # code and never the output.
+  # check. A strict build that legitimately ships nothing (everything held back
+  # by the gate) still exits 0, so the harness judges the exit code and never
+  # the output.
   run CONTENT 40 "$log_dir/content.log" npm run content:build
   segments+=('CONTENT ok')
 else

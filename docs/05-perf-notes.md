@@ -9,6 +9,11 @@ bundle and named the cuts. #114 (first load ≤ 2s) extends the budget table thi
 every `scripts/verify.sh` run by `tools/payload-budget.ts` — and `/dev/type` renders the full
 matrix in the subset faces with zero tofu at the 18px floor.
 
+> **2026-08-13.** The 99.1 KiB figure was measured against a learner build that shipped **no
+> modules**, so the Devanagari subsets were near-empty. hi-mr L1-M1…M10 now ship and the same
+> build measures **361.2 KiB (9 files)**; §4 records the tripwire firing and the rebalanced
+> limits. The subsetting itself is unchanged — this is content arriving, not a regression.
+
 ---
 
 ## 1. Before / after
@@ -80,22 +85,47 @@ proof that HarfBuzz's GSUB closure kept the conjunct and matra forms the subset 
 Diacritics state, unchanged from #85: ī ā ū render in Barlow (dev builds; latin-ext), ʾ ʿ ḥ fall
 back to a system face because Barlow has no such glyphs (§2.3 above).
 
-## 4. The budget, and the tripwire ahead
+## 4. The budget, and the tripwire (fired 2026-08-13)
 
 `tools/payload-budget.ts` gates every full `verify.sh` run right after BUILD: one line
-(`BUDGET fonts 99.1 KiB ≤ 150.0 KiB ok — 9 files`), exit 60 with the files heaviest-first when
+(`BUDGET fonts 361.2 KiB ≤ 380.0 KiB ok — 9 files`), exit 60 with the files heaviest-first when
 blown. #114 adds rows to `BUDGETS` (JS, total precache) with zero new plumbing.
 
-**Known tripwire, on purpose:** the budget holds today partly because the native gate (#64)
-keeps every module out of the learner build, so the strict Devanagari subsets are near-empty.
-Measured ahead: hi-mr's full authored content is 55 distinct Devanagari characters, whose
-conjunct closure subsets to **~84–89 KiB per weight** (dev builds carry exactly this today,
-301 KiB of Mukta) — the day modules pass the gate, the learner build lands around ~360 KiB and
-BUDGET goes red. That red is the gate doing its job: the rebalance is a deliberate decision,
-not a silent regression. Options, in the order to try them: drop a Mukta weight with design
-sign-off (each is ~a third of the Devanagari payload); subset to the shipped modules' word
-index rather than all authored strings if content ships gradually; or raise the limit with a
-written justification here, which #113's acceptance explicitly allows.
+**The tripwire this section predicted has fired.** It read: the budget holds partly because the
+native gate (#64) keeps every module out of the learner build, so the strict Devanagari subsets
+are near-empty; hi-mr's authored content is 55 distinct Devanagari characters whose conjunct
+closure subsets to ~84–89 KiB per weight, so the day modules ship, `fonts` lands around ~360 KiB
+and BUDGET goes red — deliberately.
+
+On **2026-08-13** hi-mr L1-M1…M10 were flipped `verified: true` on the repo owner's explicit
+authority, backed by an LLM review rather than the native gate (#110, #111 — both still open,
+see docs/07-llm-review-\*). The learner build now ships all ten modules, the subsets grew with
+them, and both rows went over:
+
+| row     | before (empty learner build) |     now | old limit | new limit |
+| ------- | ---------------------------: | ------: | --------: | --------: |
+| `fonts` |                     99.1 KiB | 361.2 KiB |  150 KiB |   380 KiB |
+| `total` |                    204.4 KiB | 548.1 KiB |  400 KiB |   580 KiB |
+
+**The rebalance, taken in this section's own order:**
+
+1. _Drop a Mukta weight with design sign-off_ — not taken. 400/600/700 are exactly what the
+   `--text-*` ramp renders (§2), and no design sign-off exists to cut one; `src/fonts.test.ts`
+   would go red the moment the ramp asked for a weight the subsetter stopped emitting.
+2. _Subset to the shipped modules' word index rather than all authored strings_ — no saving.
+   Every authored hi-mr module now ships, so the two sets are identical.
+3. _Raise the limit with a written justification here, which #113's acceptance explicitly
+   allows_ — **taken.** New limits are the measured payload plus ~5%, so both rows stay
+   tripwires rather than ceilings: a fourth Mukta weight (+~88 KiB) or a regression to unsubset
+   Mukta (557 KiB) still trips `fonts`.
+
+**What it costs, honestly.** `total` meters the SW precache, i.e. everything a first visit
+eventually downloads: at 548.1 KiB gzip that is ~3.0 s on Slow 4G (~180 KiB/s) instead of
+~2.2 s. The **2 s TTI gate (§5) is unaffected** — `js` is unchanged at 94.2 KiB gzip, the CSS at
+8.5 KiB, and the fonts that grew are `font-display` async, not render-blocking; what got slower
+is finishing the offline precache, not first paint or first interaction. If that becomes the
+constraint, the next lever is loading Devanagari weights on demand (hero 700 first) rather than
+precaching all three.
 
 ## 5. First load ≤ 2 s on mid-range Android (#114)
 
@@ -171,12 +201,12 @@ CHROME_PATH=~/.cache/ms-playwright/chromium-1232/chrome-linux/chrome \
 `tools/payload-budget.ts` now carries four rows, still one line each on every full
 `scripts/verify.sh`:
 
-| id     | meters                                   | measure | limit   | at baseline |
-| ------ | ---------------------------------------- | ------- | ------: | ----------: |
-| fonts  | every `.woff2`                           | raw     | 150 KiB |    99.1 KiB |
-| js     | every `.js` (bundle + workbox + sw)      | gzip    | 200 KiB |    92.9 KiB |
-| total  | everything in `dist/` but `icons/splash/`| gzip    | 400 KiB |   204.4 KiB |
-| splash | `icons/splash/` (#115's iOS startup set) | raw     | 100 KiB |    70.3 KiB |
+| id     | meters                                   | measure | limit   | at baseline | with hi-mr L1 shipping |
+| ------ | ---------------------------------------- | ------- | ------: | ----------: | ---------------------: |
+| fonts  | every `.woff2`                           | raw     | 380 KiB |    99.1 KiB |              361.2 KiB |
+| js     | every `.js` (bundle + workbox + sw)      | gzip    | 200 KiB |    92.9 KiB |               94.2 KiB |
+| total  | everything in `dist/` but `icons/splash/`| gzip    | 580 KiB |   204.4 KiB |              548.1 KiB |
+| splash | `icons/splash/` (#115's iOS startup set) | raw     | 100 KiB |    70.3 KiB |               70.3 KiB |
 
 `gzip` meters transfer (GitHub Pages serves text assets gzip; `gzipSync` at the default level is
 the approximation), `raw` meters disk — right for woff2 and PNG, which are already compressed.
@@ -185,11 +215,11 @@ carve-out #115 added deliberately: the iOS splash set is **not** precached and n
 the app (Safari pulls the single matching image at Add-to-Home-Screen, `docs/05-pwa-notes.md`
 §11), so counting all eleven images against the first visit would be metering bytes no visit
 transfers. They meter under their own `splash` row instead; `tools/payload-budget.test.ts`
-asserts the two rows split `dist/` without losing a file. 400 KiB is what Slow 4G moves in
-~2.2 s, so the whole walk-away-from-the-wifi moment stays cheap, not just the interactive slice
-TTI gates. **§4's tripwire still trips twice:** when hi-mr's content passes the native gate, the
-~+260 KiB of Devanagari subsets send `fonts` AND `total` red together — same deliberate
-rebalance, same options, written down up there.
+asserts the two rows split `dist/` without losing a file. **§4's tripwire has now fired:** hi-mr
+L1-M1…M10 ship (2026-08-13, owner-authorised LLM review — #110/#111), the ~+260 KiB of Devanagari
+subsets sent `fonts` AND `total` red together, and §4 records the rebalance that raised the two
+limits to 380/580 KiB. `total` now buys ~3.0 s of Slow 4G rather than ~2.2 s to finish precaching;
+first paint and TTI are unchanged (§5).
 
 ## 7. Reproducing
 

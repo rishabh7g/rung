@@ -106,7 +106,7 @@ function moduleFrom(fixture: FixtureModule): Module {
   module.verified = fixture.verified ?? false;
   if (fixture.verified === true) {
     module.verifiedBy = 'a native speaker';
-    module.verifiedAt = '2026-01-01T00:00:00Z';
+    module.verifiedAt = '2026-01-01';
   }
   if (fixture.fixture === true) module.fixture = true;
   fixture.edit?.(module);
@@ -1125,23 +1125,49 @@ describe('the shared normaliser', () => {
 });
 
 /**
- * The repo's own content, built both ways. This is the test that would catch someone quietly
- * marking a module verified, or a fixture course leaking into a strict build.
+ * The repo's own content, built both ways. This is the test that would catch a fixture course
+ * leaking into a strict build, or a module shipping without a named reviewer.
  */
 describe('the authored content', () => {
-  it('ships nothing at all on a strict build, and says why', () => {
+  it('ships hi-mr L1-M1..M10 and no fixture course on a strict build', () => {
     const { report, outRoot } = build(DEFAULT_CONTENT_ROOT, STRICT);
 
     expect(report.exitCode).toBe(0);
-    expect(report.shipped.size).toBe(0);
-    expect(readManifest(outRoot)).toEqual({ courses: [] });
+    expect([...report.shipped]).toEqual([
+      [
+        'hi-mr',
+        ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5', 'L1-M6', 'L1-M7', 'L1-M8', 'L1-M9', 'L1-M10'],
+      ],
+    ]);
+    expect(readManifest(outRoot).courses.map((course) => course.id)).toEqual(['hi-mr']);
+    expect(readManifest(outRoot).devBuild).toBeUndefined();
     expect(report.lines).toEqual([
-      'hi-mr: 0 modules — L1-M1, L1-M2, L1-M3, L1-M4, L1-M5, L1-M6, L1-M7, L1-M8, L1-M9, L1-M10 unverified (native gate #64; --with-unverified ships them in dev)',
+      'hi-mr: 10 modules (L1-M1..M10)',
+      ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
       'en-es: 0 modules — fixture course, excluded by the gate (--with-fixtures ships it in dev)',
       'en-ar: 0 modules — fixture course, excluded by the gate (--with-fixtures ships it in dev)',
-      expect.stringContaining('CONTENT ⚠ STRICT BUILD SHIPPED NO CONTENT'),
-      'CONTENT build: nothing shipped | skipped: hi-mr (10 unverified), en-es (fixture course), en-ar (fixture course)',
+      'CONTENT build: hi-mr 10 modules (L1-M1..M10) | skipped: en-es (fixture course), en-ar (fixture course)',
     ]);
+  });
+
+  /**
+   * The ten hi-mr modules ship on an LLM review the owner authorised (#110, #111) — not on the
+   * native gate, which is still open. What the gate enforces is the signature: a module that
+   * reaches a learner names who cleared it and when (tools/validate.ts), so the record can never
+   * quietly claim a check nobody ran.
+   */
+  it('names a reviewer and a date on every module it ships strictly', () => {
+    const { outRoot } = build(DEFAULT_CONTENT_ROOT, STRICT);
+
+    for (let i = 1; i <= 10; i += 1) {
+      const module = JSON.parse(
+        readFileSync(path.join(outRoot, 'hi-mr', 'modules', `L1-M${i}.json`), 'utf8'),
+      ) as { verified: boolean; verifiedBy: string; verifiedAt: string };
+
+      expect(module.verified).toBe(true);
+      expect(module.verifiedBy).toMatch(/\S/);
+      expect(module.verifiedAt).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    }
   });
 
   it('ships hi-mr L1-M1..M10 and both fixture courses on a dev build', () => {

@@ -23,9 +23,10 @@
  *     source-scan idiom as `tools/make-icons.ts`, so the matrix stays tofu-free in the builds where
  *     the page exists. A learner build ships no specimen page and carries no specimen glyphs.
  *
- * The output is honest about the gate: a strict build that ships no modules (native gate #64) gets
- * near-empty Devanagari files, and the day hi-mr's modules pass the gate the subsets grow with
- * them — at which point `tools/payload-budget.ts` will say so out loud (docs/05-perf-notes.md §4).
+ * The output is honest about the gate: a strict build that ships no modules gets near-empty
+ * Devanagari files, and the subsets grow with the content that ships. That happened on 2026-08-13
+ * (hi-mr L1-M1..M10, #110/#111): ~4 KiB per Devanagari weight became ~86-90 KiB, and
+ * `tools/payload-budget.ts` said so out loud (docs/05-perf-notes.md §4).
  *
  * `src/fonts/mukta.css` (committed) declares the six `@font-face` blocks pointing at the generated
  * files; `tools/font-subset.test.ts` keeps the two in sync. The generated woff2 are gitignored —

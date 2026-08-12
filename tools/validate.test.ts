@@ -208,17 +208,33 @@ describe('negative fixtures — enrichment, ids and ordering', () => {
     );
   });
 
+  // The guard that keeps a shipped module's provenance honest: `verified: true` is a claim, and
+  // an unsigned claim is rejected — whoever cleared the module has to be named, with a date.
   it('rejects verified: true without verifiedBy and verifiedAt', () => {
     const module = authoredM1();
     module.verified = true;
+    module.verifiedBy = null;
+    module.verifiedAt = null;
 
     const result = validateModule(module, 'hi-mr/L1-M1.json');
 
     expect(messageAt(result, '/verifiedBy')).toBe(
-      'verified: true requires verifiedBy (who ran the native gate)',
+      'verified: true requires verifiedBy (who or what reviewed this module)',
     );
     expect(messageAt(result, '/verifiedAt')).toBe(
-      'verified: true requires verifiedAt (when the native gate ran)',
+      'verified: true requires verifiedAt (when that review ran)',
+    );
+  });
+
+  it('rejects a blank verifiedBy on a verified module — a signature has to say something', () => {
+    const module = authoredM1();
+    module.verified = true;
+    module.verifiedBy = '   ';
+
+    const result = validateModule(module, 'hi-mr/L1-M1.json');
+
+    expect(messageAt(result, '/verifiedBy')).toBe(
+      'verified: true requires verifiedBy (who or what reviewed this module)',
     );
   });
 

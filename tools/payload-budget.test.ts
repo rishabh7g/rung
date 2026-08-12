@@ -42,8 +42,10 @@ function fakeDist(files: Record<string, number>): string {
 }
 
 describe('the fonts budget', () => {
-  it("is #113's number: 150 KiB of DISK bytes over everything woff2, wherever it sits in dist", () => {
-    expect(FONTS.limitBytes).toBe(150 * 1024);
+  it('is 380 KiB of DISK bytes over everything woff2, wherever it sits in dist', () => {
+    // #113 set 150 KiB against a learner build with no Devanagari in it; hi-mr L1 shipping
+    // (#110/#111) put 361.2 KiB of subsets in dist and perf-notes §4 raised the row to 380.
+    expect(FONTS.limitBytes).toBe(380 * 1024);
     expect(FONTS.measure).toBe('raw');
     expect(FONTS.matches('assets/mukta-devanagari-400-BX2xmIGb.woff2')).toBe(true);
     expect(FONTS.matches('fonts/deep/nested.woff2')).toBe(true);
@@ -76,8 +78,9 @@ describe("the js budget (#114's 200 KB gzip)", () => {
 });
 
 describe('the total budget (#114: everything a first visit transfers — the SW precaches all of dist/)', () => {
-  it('meters every shipped file, as gzip transfer, under 400 KiB', () => {
-    expect(TOTAL.limitBytes).toBe(400 * 1024);
+  it('meters every shipped file, as gzip transfer, under 580 KiB', () => {
+    // 400 KiB until hi-mr L1 shipped; 580 KiB after (548.1 KiB measured, perf-notes §4).
+    expect(TOTAL.limitBytes).toBe(580 * 1024);
     expect(TOTAL.measure).toBe('gzip');
     expect(TOTAL.matches('anything/at/all.xyz')).toBe(true);
   });
@@ -152,7 +155,7 @@ describe('the one-line contract', () => {
   it('reads like the harness: id, total, limit, verdict, file count', () => {
     const result = evaluate(FONTS, [shipped('a.woff2', 100_000), shipped('b.woff2', 1480)]);
 
-    expect(formatResult(result)).toBe('BUDGET fonts 99.1 KiB ≤ 150.0 KiB ok — 2 files');
+    expect(formatResult(result)).toBe('BUDGET fonts 99.1 KiB ≤ 380.0 KiB ok — 2 files');
   });
 
   it('says gzip when that is what it metered, so 92.9 KiB is never mistaken for disk bytes', () => {
@@ -162,8 +165,8 @@ describe('the one-line contract', () => {
   });
 
   it('says OVER, loudly, when blown', () => {
-    const result = evaluate(FONTS, [shipped('a.woff2', 200 * 1024)]);
+    const result = evaluate(FONTS, [shipped('a.woff2', 400 * 1024)]);
 
-    expect(formatResult(result)).toBe('BUDGET fonts 200.0 KiB > 150.0 KiB OVER — 1 file');
+    expect(formatResult(result)).toBe('BUDGET fonts 400.0 KiB > 380.0 KiB OVER — 1 file');
   });
 });

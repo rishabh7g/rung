@@ -114,11 +114,16 @@ decides what a build is allowed to contain (PRD-engineering §3, §6.2, [D4]):
 | `npm run build` (`prebuild`, **strict — no flags**) | only `verified: true` **and** not `fixture: true`, from non-fixture courses |
 | `npm run dev` (`predev`, `--with-unverified --with-fixtures`) | everything that validates |
 
-**Strict is production truth: a learner build can never contain unverified or sample
-content.** Every module in `content/` is `verified: false` today (the native gate is a
-human's signature, not a flag to flip), so **`npm run build` currently ships an empty
-ladder — that is correct, not a bug.** `npm run dev` relaxes the gate so the app has
-hi-mr L1-M1..M2 and the two fixture courses to render.
+**Strict is production truth: a learner build can never contain unreviewed or sample
+content.** `verified: true` means a module has been reviewed and cleared to ship, and
+`verifiedBy`/`verifiedAt` name who or what reviewed it and when — `tools/validate.ts`
+rejects a verified module that carries no signature. On **2026-08-13** hi-mr
+L1-M1..M10 were flipped to `verified: true` on the repo owner's explicit authority,
+backed by an **LLM linguistic review** (`docs/07-llm-review-L1-M1-M5.md`,
+`docs/07-llm-review-L1-M6-M10.md`), so `npm run build` now ships the full L1 ladder.
+**The native-speaker gate is a separate, stricter bar and is still open** (#64, #110,
+#111): ~18 questions in those docs are still waiting on a native reviewer.
+`npm run dev` additionally relaxes the gate so the two fixture courses render.
 
 The two relaxations are independent (`--with-unverified`, `--with-fixtures`), and either
 one makes the output a **dev build**, which says so twice over: the run prints
@@ -1220,8 +1225,8 @@ The app installs a service worker that precaches **the entire build** and never 
 network again (#90, `design/pwa-checklist.md` §3). `tools/pwa.ts` holds the whole configuration —
 `vite.config.ts` is one line, `VitePWA(pwaOptions())` — and four globs say what "everything"
 means: `**/*.{html,css,js}`, `**/*.woff2`, `content/**/*.json`, `icons/*.png`. A strict build
-precaches **41 files / 1073 KiB**; a dev-content build 55 / 1197 KiB, the difference being the
-14 course JSONs the native gate keeps out of a shipped bundle.
+precaches **43 files / 1173 KiB** now that hi-mr L1-M1..M10 ship; a dev-content build adds the
+two fixture courses' JSONs on top.
 
 There is deliberately **no `runtimeCaching`**. Zero network after first load is the product
 (PRD-engineering §3, §10), so a request the precache does not answer is a bug in the app, not a
@@ -1270,10 +1275,12 @@ again.
   rewrite, and the manifest `id`/`start_url`/icons plus the worker's registration scope through
   `tools/pwa.ts`. Default is `/`, so `npm run dev` and `npm run preview` are unchanged. HashRouter
   keeps every route in the fragment, so there is no 404-rewrite to configure.
-- **The live site ships an empty ladder, and that is correct.** The deploy builds strict content,
-  and every module in `content/` is `verified: false` until native verification (#64) — so the URL
-  serves the honest "no course content" boot screen. Deploying dev content to make the demo look
-  fuller would be lying to the one person this is for.
+- **The live site ships hi-mr L1-M1..M10, and nothing that has not been reviewed.** The deploy
+  builds strict content; until 2026-08-13 that was an empty ladder and the honest "no course
+  content" boot screen, because no module had cleared the gate. The ten L1 modules now carry
+  `verified: true` on the owner's explicit authority, signed `verifiedBy` as an LLM review — the
+  native-speaker gate (#64, #110, #111) remains unmet and open. Deploying **dev** content to make
+  the demo look fuller would still be lying to the one person this is for.
 
 ## How work happens
 

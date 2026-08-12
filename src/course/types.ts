@@ -133,8 +133,10 @@ export interface ModuleContent {
   /** Module ids that must be passed first; earlier in the same level. */
   prerequisites: string[];
   /**
-   * The native gate (#64, [D4]). Never authored true — the reviewer flips it. A learner build
-   * ships nothing else, so anything the app sees in a strict bundle is verified by definition.
+   * The ship gate ([D4]): true means this module was reviewed and cleared to reach a learner, and
+   * `verifiedBy` names who or what reviewed it. Never authored true — whoever signs the review
+   * flips it. A learner build ships nothing else, so anything the app sees in a strict bundle
+   * carries a signature. (The native-speaker gate #64 is a stricter bar and is still open.)
    */
   verified: boolean;
   verifiedBy?: string | null;
