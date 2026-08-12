@@ -9,15 +9,20 @@
  * `scripts/verify.sh` runs it right after BUILD (`BUDGET ok` in the summary line), reading the
  * `dist/` that build just wrote.
  *
- * One budget today — fonts, the ≤ 150 KiB from #113. It holds while the native gate (#64) keeps
- * modules out of the learner build; the day hi-mr's content ships, Mukta's Devanagari subsets grow
- * with it and this gate goes red ON PURPOSE — the rebalance options are written down in
- * docs/05-perf-notes.md §4, and #114 (first load ≤ 2s) is expected to add budgets for the JS and
- * total-precache payloads to the same table.
+ * Three budgets — fonts (raw woff2 bytes, ≤ 150 KiB from #113) and #114's two: `js` (gzip,
+ * ≤ 200 KiB — the issue's number) and `total` (gzip, ≤ 400 KiB — everything a first visit
+ * transfers, which on this product is all of dist/: the SW precaches the lot). `raw` meters bytes
+ * on disk (right for woff2/png, which are already compressed); `gzip` meters what the wire
+ * carries (GitHub Pages serves text assets Content-Encoding: gzip — zlib's default level is the
+ * approximation). The fonts budget holds while the native gate (#64) keeps modules out of the
+ * learner build; the day hi-mr's content ships, Mukta's Devanagari subsets grow ~260 KiB and
+ * BOTH fonts and total go red ON PURPOSE — the rebalance options are written down in
+ * docs/05-perf-notes.md §4.
  */
-import { readdirSync, statSync } from 'node:fs';
+import { readFileSync, readdirSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { gzipSync } from 'node:zlib';
 
 // Not `new URL('..', import.meta.url)`: Vite rewrites that form (`tools/tokens.ts` says more).
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -31,14 +36,36 @@ export interface Budget {
   matches: (relativePath: string) => boolean;
   /** Hard ceiling, bytes. */
   limitBytes: number;
+  /** `raw` = bytes on disk; `gzip` = transfer bytes (what a throttled 4G link actually moves). */
+  measure: 'raw' | 'gzip';
 }
 
-/** #114 extends this table; a new budget is one row and zero new plumbing. */
+/** A new budget is one row and zero new plumbing. */
 export const BUDGETS: readonly Budget[] = [
   {
+    // #113 — woff2 is already compressed, so disk bytes ARE transfer bytes.
     id: 'fonts',
     matches: (file) => file.endsWith('.woff2'),
     limitBytes: 150 * 1024,
+    measure: 'raw',
+  },
+  {
+    // #114 — the issue's "JS ≤ 200 KB gzip": the app bundle plus the workbox runtime and sw.js,
+    // all of which a first visit downloads. Measured 92.9 KiB at the baseline (perf-notes §6).
+    id: 'js',
+    matches: (file) => file.endsWith('.js'),
+    limitBytes: 200 * 1024,
+    measure: 'gzip',
+  },
+  {
+    // #114 — everything a first visit transfers: the SW precache is all of dist/ (tools/pwa.ts
+    // globs), so dist/ IS the first-visit payload. 400 KiB ≈ what Slow 4G (~180 KiB/s effective)
+    // moves in ~2.2 s — the whole "walk away from the wifi" moment stays cheap, not just the
+    // interactive part the 2 s TTI gate covers. Baseline: 204.4 KiB (perf-notes §6).
+    id: 'total',
+    matches: () => true,
+    limitBytes: 400 * 1024,
+    measure: 'gzip',
   },
 ];
 
@@ -48,6 +75,8 @@ export interface ShippedFile {
   /** Relative to `dist/`, posix separators. */
   path: string;
   bytes: number;
+  /** `gzipSync` over the file's contents — the transfer-size approximation gzip budgets meter. */
+  gzipBytes: number;
 }
 
 /** Every file under `dir`, recursively — what a first visit downloads is what `dist/` holds. */
@@ -56,7 +85,14 @@ export function walkDist(dir: string, prefix = ''): ShippedFile[] {
     .flatMap((entry) => {
       const relative = prefix === '' ? entry.name : `${prefix}/${entry.name}`;
       if (entry.isDirectory()) return walkDist(path.join(dir, entry.name), relative);
-      return [{ path: relative, bytes: statSync(path.join(dir, entry.name)).size }];
+      const full = path.join(dir, entry.name);
+      return [
+        {
+          path: relative,
+          bytes: statSync(full).size,
+          gzipBytes: gzipSync(readFileSync(full)).length,
+        },
+      ];
     })
     .sort((a, b) => a.path.localeCompare(b.path));
 }
@@ -68,19 +104,24 @@ export interface BudgetResult {
   ok: boolean;
 }
 
+/** The bytes this budget meters for one file — disk size or gzip transfer size. */
+const metered = (budget: Budget, file: ShippedFile): number =>
+  budget.measure === 'gzip' ? file.gzipBytes : file.bytes;
+
 export function evaluate(budget: Budget, shipped: readonly ShippedFile[]): BudgetResult {
   const files = shipped.filter((file) => budget.matches(file.path));
-  const totalBytes = files.reduce((sum, file) => sum + file.bytes, 0);
+  const totalBytes = files.reduce((sum, file) => sum + metered(budget, file), 0);
   return { budget, files, totalBytes, ok: totalBytes <= budget.limitBytes };
 }
 
 const kib = (bytes: number): string => `${(bytes / 1024).toFixed(1)} KiB`;
 
-/** `BUDGET fonts 98.3 KiB ≤ 150.0 KiB ok — 9 files` */
+/** `BUDGET fonts 98.3 KiB ≤ 150.0 KiB ok — 9 files` (gzip budgets say so: `92.9 KiB gzip ≤ …`) */
 export function formatResult(result: BudgetResult): string {
   const verdict = result.ok ? 'ok' : 'OVER';
+  const gzip = result.budget.measure === 'gzip' ? ' gzip' : '';
   return (
-    `BUDGET ${result.budget.id} ${kib(result.totalBytes)} ` +
+    `BUDGET ${result.budget.id} ${kib(result.totalBytes)}${gzip} ` +
     `${result.ok ? '≤' : '>'} ${kib(result.budget.limitBytes)} ${verdict} — ` +
     `${result.files.length} file${result.files.length === 1 ? '' : 's'}`
   );
@@ -103,9 +144,11 @@ function main(): number {
     console.log(formatResult(result));
     if (!result.ok) {
       failed = true;
-      // The files, heaviest first — the failure block IS the diagnosis, no log spelunking.
-      for (const file of [...result.files].sort((a, b) => b.bytes - a.bytes)) {
-        console.log(`  ${file.bytes}  ${file.path}`);
+      // The files, heaviest first in the metered bytes — the failure block IS the diagnosis.
+      for (const file of [...result.files].sort(
+        (a, b) => metered(budget, b) - metered(budget, a),
+      )) {
+        console.log(`  ${metered(budget, file)}  ${file.path}`);
       }
     }
   }

@@ -1,18 +1,29 @@
 /**
- * The payload budget gate (#113) — `tools/payload-budget.ts`.
+ * The payload budget gate (#113, #114) — `tools/payload-budget.ts`.
  *
  * The gate's arithmetic and its one-line contract are what these tests hold still: which files a
- * budget meters, the ≤ comparison at the boundary, and the summary line's shape — `verify.sh`
- * prints it into the run summary, and a human reads it the way they read `SMOKE 14/14 ok`. The
- * walk runs against a temp dir standing in for `dist/`; nothing here builds the app.
+ * budget meters, WHICH bytes it meters (disk for fonts, gzip transfer for js/total), the ≤
+ * comparison at the boundary, and the summary line's shape — `verify.sh` prints it into the run
+ * summary, and a human reads it the way they read `SMOKE 14/14 ok`. The walk runs against a temp
+ * dir standing in for `dist/`; nothing here builds the app.
  */
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
+import { gzipSync } from 'node:zlib';
 import { afterAll, describe, expect, it } from 'vitest';
 import { BUDGETS, evaluate, formatResult, walkDist, type Budget } from './payload-budget.ts';
 
 const FONTS: Budget = BUDGETS.find((budget) => budget.id === 'fonts')!;
+const JS: Budget = BUDGETS.find((budget) => budget.id === 'js')!;
+const TOTAL: Budget = BUDGETS.find((budget) => budget.id === 'total')!;
+
+/** Synthetic shipped file — gzip defaults smaller than raw, the way real text assets behave. */
+const shipped = (p: string, bytes: number, gzipBytes = Math.ceil(bytes / 3)) => ({
+  path: p,
+  bytes,
+  gzipBytes,
+});
 
 const sandboxes: string[] = [];
 afterAll(() => {
@@ -30,12 +41,44 @@ function fakeDist(files: Record<string, number>): string {
 }
 
 describe('the fonts budget', () => {
-  it("is #113's number: 150 KiB over everything woff2, wherever it sits in dist", () => {
+  it("is #113's number: 150 KiB of DISK bytes over everything woff2, wherever it sits in dist", () => {
     expect(FONTS.limitBytes).toBe(150 * 1024);
+    expect(FONTS.measure).toBe('raw');
     expect(FONTS.matches('assets/mukta-devanagari-400-BX2xmIGb.woff2')).toBe(true);
     expect(FONTS.matches('fonts/deep/nested.woff2')).toBe(true);
     expect(FONTS.matches('assets/index-abc123.js')).toBe(false);
     expect(FONTS.matches('assets/index-abc123.css')).toBe(false);
+  });
+});
+
+describe("the js budget (#114's 200 KB gzip)", () => {
+  it('meters gzip transfer bytes over every shipped .js — the bundle AND the workbox runtime', () => {
+    expect(JS.limitBytes).toBe(200 * 1024);
+    expect(JS.measure).toBe('gzip');
+    expect(JS.matches('assets/index-abc123.js')).toBe(true);
+    expect(JS.matches('sw.js')).toBe(true);
+    expect(JS.matches('workbox-9c191d2f.js')).toBe(true);
+    expect(JS.matches('assets/index-abc123.css')).toBe(false);
+    expect(JS.matches('assets/mukta-latin-400.woff2')).toBe(false);
+  });
+
+  it('sums gzipBytes, not disk bytes', () => {
+    const result = evaluate(JS, [
+      shipped('assets/index.js', 275_000, 87_000),
+      shipped('sw.js', 2_138, 1_061),
+      shipped('assets/index.css', 55_000, 9_000), // not js — must not count
+    ]);
+
+    expect(result.totalBytes).toBe(88_061);
+    expect(result.ok).toBe(true);
+  });
+});
+
+describe('the total budget (#114: everything a first visit transfers — the SW precaches all of dist/)', () => {
+  it('meters every shipped file, as gzip transfer, under 400 KiB', () => {
+    expect(TOTAL.limitBytes).toBe(400 * 1024);
+    expect(TOTAL.measure).toBe('gzip');
+    expect(TOTAL.matches('anything/at/all.xyz')).toBe(true);
   });
 });
 
@@ -58,16 +101,24 @@ describe('the walk and the arithmetic', () => {
     expect(result.ok).toBe(true);
   });
 
+  it('the walk carries real gzip sizes, so gzip budgets read transfer bytes off disk', () => {
+    const dist = fakeDist({ 'assets/index.js': 90_000 });
+
+    const [file] = walkDist(dist);
+
+    expect(file!.gzipBytes).toBe(gzipSync(Buffer.alloc(90_000)).length);
+  });
+
   it('passes at exactly the limit and fails one byte over — a budget is a ceiling, not a target', () => {
-    const at = evaluate(FONTS, [{ path: 'a.woff2', bytes: FONTS.limitBytes }]);
-    const over = evaluate(FONTS, [{ path: 'a.woff2', bytes: FONTS.limitBytes + 1 }]);
+    const at = evaluate(FONTS, [shipped('a.woff2', FONTS.limitBytes)]);
+    const over = evaluate(FONTS, [shipped('a.woff2', FONTS.limitBytes + 1)]);
 
     expect(at.ok).toBe(true);
     expect(over.ok).toBe(false);
   });
 
   it('treats an empty match as 0 bytes and green — a budget over nothing cannot fail', () => {
-    const result = evaluate(FONTS, [{ path: 'assets/index.js', bytes: 1 }]);
+    const result = evaluate(FONTS, [shipped('assets/index.js', 1)]);
 
     expect(result.totalBytes).toBe(0);
     expect(result.ok).toBe(true);
@@ -76,16 +127,19 @@ describe('the walk and the arithmetic', () => {
 
 describe('the one-line contract', () => {
   it('reads like the harness: id, total, limit, verdict, file count', () => {
-    const result = evaluate(FONTS, [
-      { path: 'a.woff2', bytes: 100_000 },
-      { path: 'b.woff2', bytes: 1480 },
-    ]);
+    const result = evaluate(FONTS, [shipped('a.woff2', 100_000), shipped('b.woff2', 1480)]);
 
     expect(formatResult(result)).toBe('BUDGET fonts 99.1 KiB ≤ 150.0 KiB ok — 2 files');
   });
 
+  it('says gzip when that is what it metered, so 92.9 KiB is never mistaken for disk bytes', () => {
+    const result = evaluate(JS, [shipped('assets/index.js', 275_000, 95_129)]);
+
+    expect(formatResult(result)).toBe('BUDGET js 92.9 KiB gzip ≤ 200.0 KiB ok — 1 file');
+  });
+
   it('says OVER, loudly, when blown', () => {
-    const result = evaluate(FONTS, [{ path: 'a.woff2', bytes: 200 * 1024 }]);
+    const result = evaluate(FONTS, [shipped('a.woff2', 200 * 1024)]);
 
     expect(formatResult(result)).toBe('BUDGET fonts 200.0 KiB > 150.0 KiB OVER — 1 file');
   });
