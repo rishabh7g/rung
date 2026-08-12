@@ -27,6 +27,18 @@ const HI_MR: CourseRow = {
   dir: 'ltr',
 };
 
+const EN_ES: CourseRow = {
+  id: 'en-es',
+  l1: 'English',
+  l2: 'Spanish',
+  l1Tag: 'en',
+  l2Tag: 'es',
+  pairLabel: 'english → spanish',
+  scriptMode: 'native',
+  dir: 'ltr',
+  fixture: true,
+};
+
 const EN_AR: CourseRow = {
   id: 'en-ar',
   l1: 'English',
@@ -73,8 +85,9 @@ function temporaryDir(): string {
 
 /* ------------------------------------------------------------- course briefs */
 
-describe('COURSE_BRIEFS hi-mr', () => {
-  const briefs = COURSE_BRIEFS['hi-mr'];
+/** Every briefed course answers the same two structural questions, so they are asked once. */
+describe.each(['hi-mr', 'en-es'])('COURSE_BRIEFS %s', (courseId) => {
+  const briefs = COURSE_BRIEFS[courseId];
 
   it('covers L1 M1–M10, keyed by id, each with patterns, notes and the §5 cap', () => {
     expect(briefs).toBeDefined();
@@ -95,7 +108,7 @@ describe('COURSE_BRIEFS hi-mr', () => {
 
   it('mirrors the authored levels.json titles and jobs verbatim', () => {
     const levels = JSON.parse(
-      readFileSync(path.join(DEFAULT_CONTENT_ROOT, 'hi-mr', 'levels.json'), 'utf8'),
+      readFileSync(path.join(DEFAULT_CONTENT_ROOT, courseId, 'levels.json'), 'utf8'),
     ) as { levels: { id: string; modules: { id: string; title: string; job: string }[] }[] };
     const l1 = levels.levels.find((level) => level.id === 'L1');
     expect(l1).toBeDefined();
@@ -107,11 +120,59 @@ describe('COURSE_BRIEFS hi-mr', () => {
     }
   });
 
+  it('climbs its word bound across the level and never loosens it', () => {
+    if (briefs === undefined) return;
+    const bounds = Array.from(
+      { length: 10 },
+      (_, i) => briefs[`L1-M${i + 1}`]?.maxWordsPerSentence,
+    );
+    expect(bounds[0]).toBe(5);
+    expect(bounds[9]).toBe(8);
+    for (let i = 1; i < bounds.length; i += 1) {
+      expect(Number(bounds[i]), `L1-M${i + 1}`).toBeGreaterThanOrEqual(Number(bounds[i - 1]));
+    }
+  });
+});
+
+describe('COURSE_BRIEFS hi-mr', () => {
+  const briefs = COURSE_BRIEFS['hi-mr'];
+
   it('carries the PRD emphases: M5 gender interference, M9 कारण/म्हणून, M10 turns', () => {
     expect(briefs?.['L1-M5']?.notes.join(' ')).toMatch(/interference/i);
     expect(briefs?.['L1-M9']?.patterns.join(' ')).toContain('कारण');
     expect(briefs?.['L1-M9']?.patterns.join(' ')).toContain('म्हणून');
     expect(briefs?.['L1-M10']?.notes.join(' ')).toMatch(/2–3|turn/i);
+  });
+});
+
+describe('COURSE_BRIEFS en-es', () => {
+  const briefs = COURSE_BRIEFS['en-es'];
+
+  it('places each English→Spanish pressure point in the module that needs it', () => {
+    expect(briefs?.['L1-M1']?.notes.join(' ')).toMatch(/pro-drop/i);
+    expect(briefs?.['L1-M1']?.notes.join(' ')).toContain('gustar');
+    expect(briefs?.['L1-M2']?.notes.join(' ')).toMatch(/ser\/estar|ser vs estar/i);
+    expect(briefs?.['L1-M3']?.notes.join(' ')).toMatch(/gender/i);
+    expect(briefs?.['L1-M4']?.notes.join(' ')).toMatch(/personal a/i);
+    expect(briefs?.['L1-M5']?.notes.join(' ')).toMatch(/interference/i);
+    expect(briefs?.['L1-M5']?.notes.join(' ')).toMatch(/preterite/i);
+    expect(briefs?.['L1-M5']?.notes.join(' ')).toMatch(/imperfect/i);
+    expect(briefs?.['L1-M6']?.patterns.join(' ')).toContain('voy a + V-inf');
+    expect(briefs?.['L1-M7']?.patterns.join(' ')).toContain('Hay');
+    expect(briefs?.['L1-M7']?.notes.join(' ')).toContain('estar');
+    expect(briefs?.['L1-M9']?.patterns.join(' ')).toContain('porque');
+    expect(briefs?.['L1-M9']?.patterns.join(' ')).toContain('por eso');
+    expect(briefs?.['L1-M10']?.notes.join(' ')).toMatch(/2–3|turn/i);
+  });
+
+  it('names the index seam wherever a Spanish homograph is decided', () => {
+    // First occurrence wins, so the module that OWNS a colliding surface must say so:
+    // `a` (M4, answering for M6's plan a and M7's destination a) and `mañana` (M6, left
+    // unclaimed by M4's `por la mañana`) are the `का` bug's Spanish twins.
+    expect(briefs?.['L1-M4']?.notes.join(' ')).toContain('por la mañana');
+    expect(briefs?.['L1-M6']?.notes.join(' ')).toContain('mañana');
+    expect(briefs?.['L1-M8']?.notes.join(' ')).toContain('por favor');
+    expect(briefs?.['L1-M9']?.notes.join(' ')).toContain('porque');
   });
 });
 
@@ -177,6 +238,18 @@ describe('renderPrompt', () => {
     expect(prompt).toContain('native-script line goes in `script`');
     expect(prompt).toContain('expert Arabic teacher for native English speakers');
     expect(prompt).toContain('ismī');
+  });
+
+  it('en-es L1-M1 renders the Spanish brief: its patterns, its bounds and the pair', () => {
+    const brief = COURSE_BRIEFS['en-es']?.['L1-M1'] as ModuleBrief;
+    const prompt = renderPrompt({ course: EN_ES, brief, schemaText: SCHEMA_TEXT, index: null });
+    expect(prompt).toContain(SCHEMA_TEXT.trimEnd());
+    for (const pattern of brief.patterns) expect(prompt).toContain(pattern);
+    expect(prompt).toContain(`"maxWordsPerSentence": ${brief.maxWordsPerSentence}`);
+    expect(prompt).toContain(`"newWordCap": ${NEW_WORD_CAP}`);
+    expect(prompt).toContain('expert Spanish teacher for native English speakers');
+    expect(prompt).toContain('content/en-es/modules/L1-M1.json');
+    expect(prompt).toContain('native-script');
   });
 
   it('first module of a course renders the empty-inventory wording instead of a surface list', () => {

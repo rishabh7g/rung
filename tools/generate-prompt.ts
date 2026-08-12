@@ -299,9 +299,11 @@ export function generatePrompt(options: GenerateOptions): PromptReport {
   const briefs = COURSE_BRIEFS[courseId];
   if (briefs === undefined) {
     return fail([
-      `course "${courseId}" has no briefs yet (tools/course-briefs.ts) — only ${Object.keys(
+      `course "${courseId}" has no briefs yet (tools/course-briefs.ts) — briefed so far: ${Object.keys(
         COURSE_BRIEFS,
-      ).join(', ')} is briefed; L2/L3 and fixture-course lists are pending (PRD §5)`,
+      ).join(
+        ', ',
+      )} (L1 only); L2/L3 briefs and the remaining courses' module lists are pending (PRD §5)`,
     ]);
   }
   const brief = briefs[moduleId];
