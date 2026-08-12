@@ -1,0 +1,508 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M5",
+  "title": "Yesterday",
+  "job": "Past tense — the first big divergence",
+  "prerequisites": ["L1-M4"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-13",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": ["preterite", "imperfect"],
+    "allowedPatterns": [
+      "Ayer + V-é/-í + N",
+      "Ayer no + V-é/-í",
+      "¿Qué + V-aste/-iste + ayer?",
+      "Antes + V-aba/-ía + todos los días",
+      "Era/Estaba + Adj"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "English has one simple past and Spanish has two, and the choice is not \"finished\" against \"unfinished\" — both of them are finished. It is how the event is PRESENTED: the preterite presents it as one bounded whole (Ayer comí pan), the imperfect presents it as an open frame — a habit that used to run, or a state that was simply going on (Antes comía pan · Ayer estaba ocupado)."
+    },
+    {
+      "tag": "delta",
+      "text": "The preterite's \"I\" ending is -é for the -ar family and -í for the -er and -ir families: hablé, trabajé, estudié · comí, escribí. Both are stressed, and both are written with the accent that proves it."
+    },
+    {
+      "tag": "interference",
+      "text": "The accent IS the tense. hablo (I speak) · hablé (I spoke) · habló (he spoke) differ by nothing else at all. Leave the mark off hablé and you have written the present."
+    },
+    {
+      "tag": "delta",
+      "text": "The imperfect's \"I\" ending is -aba for the -ar family and -ía for the -er and -ir families: hablaba, trabajaba · comía, vivía. This is the form behind English's \"used to\"."
+    },
+    {
+      "tag": "delta",
+      "text": "ayer names one bounded day, so it usually pulls the preterite — Ayer comí pan. antes opens a stretch of time with no edges, so it pulls the imperfect — Antes comía pan. Usually, not always: Ayer estaba ocupado uses the imperfect for a state the whole day sat in."
+    },
+    {
+      "tag": "interference",
+      "text": "One word, two verbs: fui is the past of ir (\"I went\") and the past of ser (\"I was\"). Nothing inside it chooses — what follows does. Fui a México is went; Fui estudiante is was."
+    },
+    {
+      "tag": "delta",
+      "text": "The everyday irregular pasts are learned whole rather than by rule: hice (I did, I made) · hiciste (you did) · fui (I went, I was) · tuve (I had) · estuve (I was). None of them carries a written accent, which is itself the sign that they are irregular."
+    },
+    {
+      "tag": "delta",
+      "text": "M2's split survives into the past: era is ser (what someone WAS — Antes era estudiante) and estaba is estar (what state they were IN — Ayer estaba ocupado). Both are also \"he or she was\"; the sentence says which."
+    },
+    {
+      "tag": "delta",
+      "text": "An adjective in the past agrees with the SUBJECT exactly as it does in the present: Ayer estaba ocupado (a man about himself) · Ayer estaba ocupada (a woman) · ¿Estabas ocupada? (asked of a woman). The tense changes and the agreement does not."
+    },
+    {
+      "tag": "delta",
+      "text": "Negation does not move for the past. no still goes straight in front of the verb and the verb keeps the tense: Ayer no trabajé. English shifts the past onto a helper — \"did not work\" — and Spanish has no helper to shift it onto."
+    },
+    {
+      "tag": "interference",
+      "text": "\"I ate\" and \"I have eaten\" both come out as comí once ayer is in the sentence. Spanish does have a compound past, but a finished yesterday is not where it goes."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M5-S01",
+      "display": "Ayer comí pan",
+      "cue": "Yesterday I ate bread",
+      "glossEn": "lit. \"Yesterday I-ate bread\"",
+      "literal": "Yesterday I-ate bread",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Ayer",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [],
+            "note": "Yesterday. It usually opens the sentence, and it is what tells you the verb behind it has moved into the past."
+          },
+          {
+            "display": "comí",
+            "cue": "I ate",
+            "tag": "delta",
+            "forms": [],
+            "note": "comer in the preterite: one meal, presented as one finished event. The -í is the preterite \"I\" of the -er and -ir families and it takes the stress — co-MÍ, against M4's CO-mo."
+          }
+        ],
+        "rules": [0, 1, 2, 10]
+      },
+      "trap": "English can say \"I ate\" or \"I have eaten\" and mean the same afternoon. With ayer, Spanish takes the preterite and only the preterite: Ayer comí pan.",
+      "sound": "co-MÍ. The accent drags the stress to the end, and that is the entire difference from como.",
+      "variations": [
+        {
+          "display": "Ayer comí una manzana",
+          "cue": "Yesterday I ate an apple",
+          "changed": "swap what you ate"
+        },
+        {
+          "display": "Ayer no comí",
+          "cue": "Yesterday I didn't eat",
+          "changed": "no in front of the verb, as ever"
+        }
+      ],
+      "mistake": {
+        "display": "Ayer como pan",
+        "why": "como is the present. Yesterday needs comí — the accent is the tense."
+      },
+      "usage": "The first thing anyone asks about yesterday.",
+      "register": "neutral",
+      "mnemonic": "The accent walks to the end and the verb walks into the past."
+    },
+    {
+      "id": "L1-M5-S02",
+      "display": "Ayer hablé con mi hermana",
+      "cue": "Yesterday I spoke with my sister",
+      "glossEn": "lit. \"Yesterday I-spoke with my sister\"",
+      "literal": "Yesterday I-spoke with my sister",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hablé",
+            "cue": "I spoke",
+            "tag": "delta",
+            "forms": [],
+            "note": "hablar in the preterite. The -ar family takes -é for \"I\": hablé, trabajé, estudié. hablo, hablé and habló are three different words separated by one written mark."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "hablé and habló are one accent apart, and the accent decides who did the talking: hablé is I, habló is he or she.",
+      "sound": "a-BLÉ — silent h, and the stress on the last syllable where the accent puts it.",
+      "variations": [
+        {
+          "display": "Ayer hablé con Ana",
+          "cue": "Yesterday I spoke with Ana",
+          "changed": "swap who you spoke to"
+        },
+        {
+          "display": "Ayer hablé español",
+          "cue": "Yesterday I spoke Spanish",
+          "changed": "a language goes straight after hablar, with no con"
+        }
+      ],
+      "mistake": {
+        "display": "Ayer hablo con mi hermana",
+        "why": "Without the accent it is the present. Yesterday takes hablé."
+      },
+      "usage": "Reporting a conversation.",
+      "register": "neutral",
+      "mnemonic": "-ar goes to -é; -er and -ir go to -í."
+    },
+    {
+      "id": "L1-M5-S03",
+      "display": "Ayer no trabajé",
+      "cue": "Yesterday I didn't work",
+      "glossEn": "lit. \"Yesterday not I-worked\"",
+      "literal": "Yesterday not I-worked",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "trabajé",
+            "cue": "I worked",
+            "tag": "delta",
+            "forms": [],
+            "note": "trabajar in the preterite — the same -é ending as hablé, and the stress lands on it: tra-ba-JÉ."
+          }
+        ],
+        "rules": [1, 9]
+      },
+      "trap": "English moves the past onto a helper — did not work — and leaves the verb looking present. Spanish keeps the past on the verb and puts a bare no in front: Ayer no trabajé.",
+      "sound": "tra-ba-JÉ. The j rasps from the back of the throat and the é is the loudest syllable.",
+      "variations": [
+        {
+          "display": "Ayer trabajé por la mañana",
+          "cue": "Yesterday I worked in the morning",
+          "changed": "the affirmative, with a time phrase from M4"
+        },
+        {
+          "display": "Ayer no estudié",
+          "cue": "Yesterday I didn't study",
+          "changed": "swap the verb — the frame holds"
+        }
+      ],
+      "mistake": {
+        "display": "Ayer no trabajo",
+        "why": "trabajo is the present. Yesterday needs trabajé."
+      },
+      "usage": "Saying what did not happen.",
+      "register": "neutral",
+      "mnemonic": "no in front, the past on the verb."
+    },
+    {
+      "id": "L1-M5-S04",
+      "display": "Ayer no hice nada",
+      "cue": "Yesterday I did nothing",
+      "glossEn": "lit. \"Yesterday not I-did nothing\" — both negatives stay",
+      "literal": "Yesterday not I-did nothing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hice",
+            "cue": "I did · I made",
+            "tag": "delta",
+            "forms": [],
+            "note": "hacer, \"to do\" and \"to make\", in the preterite: hice (I did) · hiciste (you did). It is irregular, and like the other strong pasts it carries no written accent — the stress sits on the first syllable."
+          }
+        ],
+        "rules": [6, 9]
+      },
+      "trap": "M3's double negative, now in the past: No hice nada is \"I didn't do anything\", and neither half of it can be dropped.",
+      "sound": "I-ce. The h is silent, and the c before an e is an s across Latin America and a th in most of Spain.",
+      "variations": [
+        {
+          "display": "Ayer hice mucho",
+          "cue": "Yesterday I did a lot",
+          "changed": "the opposite answer, with M1's mucho"
+        },
+        {
+          "display": "No hice nada",
+          "cue": "I didn't do anything",
+          "changed": "drop ayer and it stretches to any day you like"
+        }
+      ],
+      "mistake": {
+        "display": "Ayer no hacé nada",
+        "why": "hacer does not take the regular ending: the past is hice."
+      },
+      "usage": "The honest answer to what you did yesterday.",
+      "register": "neutral",
+      "mnemonic": "hice is short because it is irregular — no accent, no rule."
+    },
+    {
+      "id": "L1-M5-S05",
+      "display": "¿Qué hiciste ayer?",
+      "cue": "What did you do yesterday?",
+      "glossEn": "lit. \"What did-you yesterday?\" — one word for \"did do\"",
+      "literal": "What did-you yesterday?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hiciste",
+            "cue": "you did · you made",
+            "tag": "delta",
+            "forms": [],
+            "note": "hacer in the preterite for tú: hice (I did) · hiciste (you did). No written accent on either of them, and the stress is in the middle: i-CIS-te."
+          }
+        ],
+        "rules": [2, 6]
+      },
+      "trap": "English needs \"did\" AND the plain verb. Spanish carries both in one word, and the question keeps the order a statement would have.",
+      "sound": "i-CIS-te — silent h again, and no accent to mark the stress because it falls where it is expected.",
+      "variations": [
+        {
+          "display": "¿Qué hiciste por la mañana?",
+          "cue": "What did you do in the morning?",
+          "changed": "narrow it to one part of the day"
+        },
+        {
+          "display": "¿Qué hiciste, Ana?",
+          "cue": "What did you do, Ana?",
+          "changed": "add the name after a comma"
+        }
+      ],
+      "mistake": {
+        "display": "¿Qué tú hiciste ayer?",
+        "why": "Drop the tú — hiciste already says \"you did\"."
+      },
+      "usage": "The question that starts the conversation.",
+      "register": "informal",
+      "mnemonic": "hice and hiciste — one pair, no accents."
+    },
+    {
+      "id": "L1-M5-S06",
+      "display": "Ayer fui a México",
+      "cue": "Yesterday I went to Mexico",
+      "glossEn": "lit. \"Yesterday I-went to Mexico\"",
+      "literal": "Yesterday I-went to Mexico",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fui",
+            "cue": "I went · I was",
+            "tag": "interference",
+            "forms": [],
+            "note": "One word doing the past of two verbs: ir (\"I went\") and ser (\"I was\"). What follows decides — Fui a México is went, Fui estudiante is was. Another strong past, so again no accent."
+          }
+        ],
+        "rules": [4, 5, 6]
+      },
+      "trap": "It reads as ambiguous and is not. A destination after fui makes it \"went\"; a role or a description makes it \"was\". This is also M4's a in its third seat — pointing at a place.",
+      "sound": "One syllable, FWEE: the u and the i run together and nothing is stressed apart from them.",
+      "variations": [
+        {
+          "display": "Ayer fui a India",
+          "cue": "Yesterday I went to India",
+          "changed": "swap the destination"
+        },
+        {
+          "display": "Fui estudiante de música",
+          "cue": "I was a music student",
+          "changed": "no destination, so the same word means \"I was\""
+        }
+      ],
+      "mistake": {
+        "display": "Ayer fui México",
+        "why": "A destination needs the a in front of it: fui a México."
+      },
+      "usage": "Saying where you went.",
+      "register": "neutral",
+      "mnemonic": "fui went and fui was — look at what comes after it."
+    },
+    {
+      "id": "L1-M5-S07",
+      "display": "Ayer estudié mucho",
+      "cue": "Yesterday I studied a lot",
+      "glossEn": "lit. \"Yesterday I-studied a-lot\"",
+      "literal": "Yesterday I-studied a-lot",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "estudié",
+            "cue": "I studied",
+            "tag": "delta",
+            "forms": [],
+            "note": "estudiar in the preterite — the fourth shape of one verb: estudiante (the person), estudiar (the plain verb), estudio (I study), estudié (I studied)."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "estudio and estudié are the same stem with one letter and one mark between them, and that mark is the day you are talking about.",
+      "sound": "es-tu-DIÉ, stressed on the last syllable — the accent is there to say so.",
+      "variations": [
+        {
+          "display": "Ayer estudié español",
+          "cue": "Yesterday I studied Spanish",
+          "changed": "name what you studied"
+        },
+        {
+          "display": "Ayer no estudié nada",
+          "cue": "Yesterday I didn't study anything",
+          "changed": "the double negative, in the past"
+        }
+      ],
+      "mistake": {
+        "display": "Ayer estudio mucho",
+        "why": "Without the accent it is the present. Yesterday is estudié."
+      },
+      "usage": "Reporting effort — the answer to ¿Qué hiciste ayer?",
+      "register": "neutral",
+      "mnemonic": "estudio today, estudié yesterday."
+    },
+    {
+      "id": "L1-M5-S08",
+      "display": "Antes comía pan todos los días",
+      "cue": "I used to eat bread every day",
+      "glossEn": "lit. \"Before I-was-eating bread all the days\"",
+      "literal": "Before I-was-eating bread all the days",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Antes",
+            "cue": "before · back then",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Before\", in the sense of \"in those days\". It opens a stretch of past time with no edges rather than pointing at one day, which is why the verb after it is usually the imperfect."
+          },
+          {
+            "display": "comía",
+            "cue": "I used to eat",
+            "tag": "delta",
+            "forms": [],
+            "note": "comer in the imperfect: \"I used to eat\", \"I was eating\". The -er and -ir families take -ía. Beside comí — one meal, closed — it presents the eating as an open frame."
+          }
+        ],
+        "rules": [0, 3, 4]
+      },
+      "trap": "Both sentences are about time that is over. Antes comía pan and Ayer comí pan differ in how the eating is presented, not in whether it has finished.",
+      "sound": "co-MÍ-a is three syllables: the accent splits the i from the a and keeps the stress on it.",
+      "variations": [
+        {
+          "display": "Antes comía mucho pan",
+          "cue": "I used to eat a lot of bread",
+          "changed": "add M1's mucho"
+        },
+        {
+          "display": "Ayer comí pan",
+          "cue": "Yesterday I ate bread",
+          "changed": "one day, one meal — so the preterite comes back"
+        }
+      ],
+      "mistake": {
+        "display": "Antes comí pan todos los días",
+        "why": "With antes the eating is a stretch of time rather than an event, so Spanish reaches for the imperfect: Antes comía pan todos los días."
+      },
+      "usage": "Talking about how things used to be.",
+      "register": "neutral",
+      "mnemonic": "-ía is the \"used to\" ending."
+    },
+    {
+      "id": "L1-M5-S09",
+      "display": "Antes era estudiante",
+      "cue": "I used to be a student",
+      "glossEn": "lit. \"Before I-was student\"",
+      "literal": "Before I-was student",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "era",
+            "cue": "I was · he was · she was",
+            "tag": "delta",
+            "forms": [],
+            "note": "ser in the imperfect — \"I used to be\", and equally \"he or she was\": one shape for both, and the sentence decides. It says what someone WAS, where estaba says what state they were in."
+          }
+        ],
+        "rules": [0, 3, 7]
+      },
+      "trap": "era and fui are both \"I was\". Fui estudiante packages the whole stretch as one closed chapter; Antes era estudiante leaves it open as the way things used to be.",
+      "sound": "E-ra, stressed on the first syllable, and the single r is one light tap.",
+      "variations": [
+        {
+          "display": "Antes era estudiante de música",
+          "cue": "I used to be a music student",
+          "changed": "say what of — de links the two nouns, as in M1"
+        },
+        {
+          "display": "Ana era estudiante",
+          "cue": "Ana was a student",
+          "changed": "the very same form, now about someone else"
+        }
+      ],
+      "mistake": {
+        "display": "Antes estaba estudiante",
+        "why": "Being a student is what you are, not a state you are in: Antes era estudiante."
+      },
+      "usage": "Saying what you used to be.",
+      "register": "neutral",
+      "mnemonic": "era for who you were, estaba for how you were."
+    },
+    {
+      "id": "L1-M5-S10",
+      "display": "Ayer estaba ocupado",
+      "cue": "Yesterday I was busy",
+      "glossEn": "lit. \"Yesterday I-was busy\" — said by a man",
+      "literal": "Yesterday I-was busy(m)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "estaba",
+            "cue": "I was · he was · she was",
+            "tag": "delta",
+            "forms": [],
+            "note": "estar in the imperfect — the past of M2's estoy, and the same shape for \"he or she was\". It takes the kind of word estoy took: estaba bien, estaba ocupado."
+          }
+        ],
+        "rules": [0, 4, 7, 8]
+      },
+      "trap": "ayer usually pulls the preterite, and here it does not: a state that simply held all day is presented as a frame. Ayer estuve ocupado is also said — that one packages the day as a single closed block.",
+      "sound": "es-TA-ba. The b between vowels is soft, nearer an English v than a b.",
+      "variations": [
+        {
+          "display": "Ayer estaba ocupada",
+          "cue": "Yesterday I was busy (a woman speaking)",
+          "changed": "-o → -a: the ending follows the subject in the past exactly as in the present"
+        },
+        {
+          "display": "Ayer no estaba ocupado",
+          "cue": "Yesterday I wasn't busy",
+          "changed": "no in front of the verb, and the tense stays put"
+        }
+      ],
+      "mistake": {
+        "display": "Ayer era ocupado",
+        "why": "Being busy is a state, so it takes estar: Ayer estaba ocupado. era would be saying it was what you were."
+      },
+      "usage": "Explaining yesterday's silence.",
+      "register": "neutral",
+      "mnemonic": "estoy today, estaba yesterday — same verb, same job."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M5-C01", "display": "Ayer comí una manzana", "cue": "Yesterday I ate an apple" },
+    { "id": "L1-M5-C02", "display": "Ayer no comí nada", "cue": "Yesterday I didn't eat anything" },
+    { "id": "L1-M5-C03", "display": "Ayer hablé con Ana", "cue": "Yesterday I spoke with Ana" },
+    { "id": "L1-M5-C04", "display": "Antes comía mucho pan", "cue": "I used to eat a lot of bread" },
+    {
+      "id": "L1-M5-C05",
+      "display": "Ayer estaba ocupada",
+      "cue": "Yesterday I was busy (a woman speaking)"
+    },
+    { "id": "L1-M5-C06", "display": "Ayer fui a India", "cue": "Yesterday I went to India" },
+    {
+      "id": "L1-M5-C07",
+      "display": "Antes era estudiante de música",
+      "cue": "I used to be a music student"
+    },
+    {
+      "id": "L1-M5-C08",
+      "display": "Ayer no trabajé por la mañana",
+      "cue": "Yesterday I didn't work in the morning"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

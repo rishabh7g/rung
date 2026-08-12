@@ -1,0 +1,549 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M4",
+  "title": "My day",
+  "job": "Daily habits and time words",
+  "prerequisites": ["L1-M3"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-13",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 6,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "(Yo) + V-o + todos los días",
+      "Me levanto a las + hour",
+      "Por la mañana/tarde/noche + V-o",
+      "Veo a + person",
+      "¿A qué hora + V-as/-es?"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A present-tense verb ends in a letter that names its subject, so the pronoun stays out: hablo (I speak) · hablas (you speak) · habla (he or she speaks). The -o for \"I\" is the same in all three families — hablo, como, vivo."
+    },
+    {
+      "tag": "delta",
+      "text": "The infinitive's ending sets the family, and the family decides the vowel in the other endings: hablar → hablas, hablamos; comer → comes; vivir → vives. -ar takes an a, -er and -ir take an e."
+    },
+    {
+      "tag": "delta",
+      "text": "A daily-routine verb often carries a little pronoun that belongs to the verb and changes with the person: me levanto (I get up) · te levantas (you get up) · se levanta (he or she gets up). English has no word there at all, so the me is the piece that goes missing."
+    },
+    {
+      "tag": "interference",
+      "text": "The a in front of a person is not \"to\". When the direct object of a verb is a specific person, Spanish puts a in front of them and English translates it as nothing at all: Veo a mi hermana is \"I see my sister\". A thing never takes it — Veo la casa."
+    },
+    {
+      "tag": "delta",
+      "text": "The same little a marks a time: a las ocho is \"at eight\". One word, pointing at whatever comes next — a time, a specific person, and from M6 a destination."
+    },
+    {
+      "tag": "delta",
+      "text": "Clock time is feminine and plural: las ocho is literally \"the eight (hours)\", so the article is there every time — a las ocho, never a ocho."
+    },
+    {
+      "tag": "delta",
+      "text": "A part of the day is a whole phrase built on por: por la mañana · por la tarde · por la noche. Three words, one meaning, and the la is not optional."
+    },
+    {
+      "tag": "delta",
+      "text": "todos los días — literally \"all the days\" — is how Spanish says \"every day\". It travels as one block and can open the sentence or close it."
+    },
+    {
+      "tag": "delta",
+      "text": "An accent can be the whole word: cómo asks \"how\" (M2) and como means \"I eat\". Same five letters, and only the mark tells them apart — as it does for qué, which asks, beside que, which joins."
+    },
+    {
+      "tag": "delta",
+      "text": "A question word goes to the front and takes its little preposition with it: ¿A qué hora te levantas? English is happy to leave it dangling — \"What time do you get up at?\" — and Spanish never is."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M4-S01",
+      "display": "Hablo español todos los días",
+      "cue": "I speak Spanish every day",
+      "glossEn": "lit. \"I-speak Spanish all the days\"",
+      "literal": "I-speak Spanish all the days",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Hablo",
+            "cue": "I speak",
+            "tag": "delta",
+            "forms": [],
+            "note": "hablar, to speak — the model -ar verb. The -o ending is the \"I\", so no pronoun is needed: hablo (I) · hablas (you) · habla (he, she and usted)."
+          },
+          {
+            "display": "todos los días",
+            "cue": "every day",
+            "tag": "delta",
+            "forms": [],
+            "note": "Literally \"all the days\" — three words for \"every day\", and the los cannot be dropped. The block moves as one thing, to the front of the sentence or to the end."
+          }
+        ],
+        "rules": [0, 7]
+      },
+      "trap": "English needs both words — I speak. Spanish packs the \"I\" into the ending, and putting yo back in front makes the sentence emphatic rather than neutral.",
+      "sound": "A-blo. The h is silent, as it is in hola, and the stress is on the first syllable.",
+      "variations": [
+        {
+          "display": "Hablo español",
+          "cue": "I speak Spanish",
+          "changed": "drop the time block — the sentence is still complete"
+        },
+        {
+          "display": "Todos los días hablo español",
+          "cue": "Every day I speak Spanish",
+          "changed": "the block moves to the front and nothing else changes"
+        }
+      ],
+      "mistake": {
+        "display": "Hablo español todos días",
+        "why": "The los is part of the phrase: todos los días."
+      },
+      "usage": "Saying what you do routinely.",
+      "register": "neutral",
+      "mnemonic": "-o is the \"I\" in every family: hablo, como, vivo."
+    },
+    {
+      "id": "L1-M4-S02",
+      "display": "Me levanto a las ocho",
+      "cue": "I get up at eight",
+      "glossEn": "lit. \"Myself I-raise at the eight\"",
+      "literal": "Myself I-raise at the eight",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Me levanto",
+            "cue": "I get up",
+            "tag": "delta",
+            "forms": ["Me levanto", "te levantas", "se levanta"],
+            "note": "levantarse, \"to raise oneself\". The little pronoun is part of the verb and changes with the person: me levanto (I get up) · te levantas (you get up) · se levanta (he or she gets up)."
+          },
+          {
+            "display": "a",
+            "cue": "at · to",
+            "tag": "delta",
+            "forms": [],
+            "note": "A one-letter signpost pointing at whatever comes next. In front of a clock time it is \"at\": a las ocho. In front of a specific person it marks that person as the object and is translated as nothing: Veo a mi hermana. From M6 it also points at a destination — voy a México, fui a India."
+          },
+          {
+            "display": "las ocho",
+            "cue": "eight o'clock",
+            "tag": "delta",
+            "forms": [],
+            "note": "Eight o'clock. Spanish counts the hours as feminine plurals — \"the eights\" — so the las never disappears: a las ocho. M8 teaches the numbers on their own."
+          }
+        ],
+        "rules": [2, 4, 5]
+      },
+      "trap": "\"I get up\" has nothing in it that answers to me, so the me is the piece an English speaker drops. Levanto a las ocho is not a sentence.",
+      "sound": "le-VAN-to. The v is soft — a Spanish v sits somewhere between an English b and v.",
+      "variations": [
+        {
+          "display": "Te levantas a las ocho",
+          "cue": "You get up at eight",
+          "changed": "the pronoun and the ending move together: me/-o → te/-as"
+        },
+        {
+          "display": "Me levanto temprano",
+          "cue": "I get up early",
+          "changed": "a plain time word instead of a clock time, and then no a"
+        }
+      ],
+      "mistake": {
+        "display": "Levanto a las ocho",
+        "why": "The verb needs its pronoun: Me levanto a las ocho."
+      },
+      "usage": "The first line of any description of your day.",
+      "register": "neutral",
+      "mnemonic": "me levanto — I raise myself."
+    },
+    {
+      "id": "L1-M4-S03",
+      "display": "Por la mañana como pan",
+      "cue": "In the morning I eat bread",
+      "glossEn": "lit. \"By the morning I-eat bread\"",
+      "literal": "By the morning I-eat bread",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "por la mañana",
+            "cue": "in the morning",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"In the morning\", and all three words are fixed: por, then la, then mañana. Its partners — por la tarde, por la noche — are separate phrases of the same shape rather than other forms of this one. Much of Latin America also says en la mañana; por la mañana is understood everywhere. On its own, mañana means \"tomorrow\", which M6 teaches."
+          },
+          {
+            "display": "como",
+            "cue": "I eat",
+            "tag": "interference",
+            "forms": [],
+            "note": "comer, to eat, in the \"I\" form: como (I) · comes (you) · come (he or she). Without an accent it is not M2's cómo — cómo asks \"how\", como eats, and the mark is the only difference."
+          }
+        ],
+        "rules": [0, 1, 6, 8]
+      },
+      "trap": "English says \"in the morning\". Spanish says por la mañana, with por where you expect \"in\" and with a la that English throws away.",
+      "sound": "ma-ÑA-na. The ñ is the ny of \"canyon\" — the double n of an English \"manana\" is not it.",
+      "variations": [
+        {
+          "display": "Por la tarde como pan",
+          "cue": "In the afternoon I eat bread",
+          "changed": "the same frame, a different part of the day"
+        },
+        {
+          "display": "Como pan por la mañana",
+          "cue": "I eat bread in the morning",
+          "changed": "the time phrase moves to the end"
+        }
+      ],
+      "mistake": {
+        "display": "Por la mañana cómo pan",
+        "why": "cómo with an accent is the question word \"how\". The verb is como."
+      },
+      "usage": "Describing the shape of your day.",
+      "register": "neutral",
+      "mnemonic": "The accent asks; the bare word eats."
+    },
+    {
+      "id": "L1-M4-S04",
+      "display": "Por la noche estudio español",
+      "cue": "At night I study Spanish",
+      "glossEn": "lit. \"By the night I-study Spanish\"",
+      "literal": "By the night I-study Spanish",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "por la noche",
+            "cue": "at night",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"At night\", built exactly like por la mañana and a separate phrase from it. Spanish's noche starts earlier than English's \"night\": dinner at nine is por la noche."
+          },
+          {
+            "display": "estudio",
+            "cue": "I study",
+            "tag": "delta",
+            "forms": [],
+            "note": "estudiar in the \"I\" form. That is three shapes of one verb now: un estudiante is the person, estudiar is the plain verb, estudio is what I do."
+          }
+        ],
+        "rules": [0, 6]
+      },
+      "trap": "Spanish has no separate word for the evening: la noche covers what English splits into evening and night, and la tarde runs until it gets dark.",
+      "sound": "NO-che, with the ch of \"church\" — never a k.",
+      "variations": [
+        {
+          "display": "Por la noche estudio",
+          "cue": "At night I study",
+          "changed": "drop the object; the verb carries the sentence on its own"
+        },
+        {
+          "display": "Estudio español por la mañana",
+          "cue": "I study Spanish in the morning",
+          "changed": "the same habit in a different slot of the day"
+        }
+      ],
+      "mistake": {
+        "display": "Por noche estudio español",
+        "why": "The la is part of the phrase: por la noche."
+      },
+      "usage": "Pairing a habit with a time of day.",
+      "register": "neutral",
+      "mnemonic": "por la + the part of the day, every time."
+    },
+    {
+      "id": "L1-M4-S05",
+      "display": "Vivo con mi hermana",
+      "cue": "I live with my sister",
+      "glossEn": "lit. \"I-live with my sister\"",
+      "literal": "I-live with my sister",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Vivo",
+            "cue": "I live",
+            "tag": "delta",
+            "forms": [],
+            "note": "vivir, to live — the -ir family. Its endings sit very close to the -er family's: vivo (I) · vives (you) · vive (he or she)."
+          },
+          {
+            "display": "mi",
+            "cue": "my",
+            "tag": "delta",
+            "forms": ["mi", "mis"],
+            "note": "\"My\". It ignores the gender of what is owned — mi hermana, mi libro — and goes plural only with the thing: mis libros. The owner never shows on it."
+          },
+          {
+            "display": "hermana",
+            "cue": "sister",
+            "tag": "delta",
+            "forms": ["hermana", "hermanas"],
+            "note": "Sister, feminine: la hermana. Its masculine partner hermano is a different word — brother — and not another ending of this one; the plural hermanos covers a mixed set, \"brothers and sisters\"."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "mis is the one place English's \"my\" would have to change: the ending follows the number of the thing owned, never the owner.",
+      "sound": "VI-vo, and both v's are soft — closer to a b than to an English v.",
+      "variations": [
+        {
+          "display": "Vivo con mi hermano",
+          "cue": "I live with my brother",
+          "changed": "a different person, not a different ending of the same word"
+        },
+        {
+          "display": "No vivo con mi hermana",
+          "cue": "I don't live with my sister",
+          "changed": "the no goes in front of the verb, exactly as in M3"
+        }
+      ],
+      "mistake": {
+        "display": "Vivo con mis hermana",
+        "why": "mis goes with a plural thing: mi hermana, mis hermanas."
+      },
+      "usage": "Saying who you live with.",
+      "register": "neutral",
+      "mnemonic": "mi for one thing, mis for more — the owner never shows."
+    },
+    {
+      "id": "L1-M4-S06",
+      "display": "Veo a mi hermana",
+      "cue": "I see my sister",
+      "glossEn": "lit. \"I-see [a] my sister\" — the a marks a person and is not translated",
+      "literal": "I-see [a] my sister",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Veo",
+            "cue": "I see",
+            "tag": "delta",
+            "forms": [],
+            "note": "ver, to see: veo (I) · ves (you) · ve (he or she). The \"I\" form keeps the e of the stem — veo, not vo."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "The a is not \"to\". Veo a mi hermana is plain \"I see my sister\", and leaving the a out is the mistake — not the tidier version.",
+      "sound": "VE-o, two syllables, and both vowels are sounded.",
+      "variations": [
+        {
+          "display": "Veo a Ana",
+          "cue": "I see Ana",
+          "changed": "any specific person takes the a"
+        },
+        {
+          "display": "Veo la casa",
+          "cue": "I see the house",
+          "changed": "a thing takes no a at all"
+        }
+      ],
+      "mistake": {
+        "display": "Veo mi hermana",
+        "why": "A specific person in the object seat takes a: Veo a mi hermana."
+      },
+      "usage": "Talking about the people in your day.",
+      "register": "neutral",
+      "mnemonic": "A person in the object seat wears an a."
+    },
+    {
+      "id": "L1-M4-S07",
+      "display": "¿A qué hora te levantas?",
+      "cue": "What time do you get up?",
+      "glossEn": "lit. \"At what hour yourself you-raise?\"",
+      "literal": "At what hour yourself you-raise?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "qué",
+            "cue": "what",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"What\", with the accent, because it is asking. Unaccented que is the joining word \"that\" — the mark is the whole difference, exactly as it is between cómo and como."
+          },
+          {
+            "display": "hora",
+            "cue": "hour · time",
+            "tag": "free",
+            "forms": ["hora", "horas"],
+            "note": "Hour, and \"time\" when the clock is what you are asking about: ¿A qué hora? is \"at what time\". Feminine: la hora."
+          }
+        ],
+        "rules": [4, 8, 9]
+      },
+      "trap": "English can leave the preposition dangling at the end — \"What time do you get up at?\". Spanish sends the a to the front with the question word and never leaves it behind.",
+      "sound": "The h of hora is silent, so the words run together: a-qué-O-ra.",
+      "variations": [
+        {
+          "display": "¿A qué hora te levantas, Ana?",
+          "cue": "What time do you get up, Ana?",
+          "changed": "add the name after a comma"
+        },
+        {
+          "display": "Me levanto a las ocho",
+          "cue": "I get up at eight",
+          "changed": "the answer, with the a and the hour back in place"
+        }
+      ],
+      "mistake": {
+        "display": "¿Qué hora te levantas?",
+        "why": "The a is part of the question: ¿A qué hora te levantas? Without it you have asked what the time is."
+      },
+      "usage": "Asking about someone else's routine.",
+      "register": "informal",
+      "mnemonic": "The a goes to the front with the question: ¿A qué hora…?"
+    },
+    {
+      "id": "L1-M4-S08",
+      "display": "Trabajo por la tarde",
+      "cue": "I work in the afternoon",
+      "glossEn": "lit. \"I-work by the afternoon\"",
+      "literal": "I-work by the afternoon",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Trabajo",
+            "cue": "I work · work",
+            "tag": "delta",
+            "forms": [],
+            "note": "trabajar, to work: trabajo (I) · trabajas (you) · trabaja (he or she). The same word is also the noun \"work\" or \"a job\" — el trabajo — and only the sentence around it decides which."
+          },
+          {
+            "display": "por la tarde",
+            "cue": "in the afternoon",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"In the afternoon\", the third of the three: por la mañana, por la tarde, por la noche. La tarde runs from lunch until dark, which is why buenas tardes lasts so long."
+          }
+        ],
+        "rules": [0, 6]
+      },
+      "trap": "trabajo is both \"I work\" and \"the job\". Nothing inside the word chooses; an article in front of it does — el trabajo is the noun.",
+      "sound": "tra-BA-jo. The j is a rasp from the back of the throat, like the ch of Scottish \"loch\".",
+      "variations": [
+        {
+          "display": "No trabajo por la tarde",
+          "cue": "I don't work in the afternoon",
+          "changed": "no in front of the verb, as M3 taught"
+        },
+        {
+          "display": "Trabajo todos los días",
+          "cue": "I work every day",
+          "changed": "swap the time phrase for the block"
+        }
+      ],
+      "mistake": {
+        "display": "Trabajo por tarde",
+        "why": "The la belongs to the phrase: por la tarde."
+      },
+      "usage": "Saying when you work.",
+      "register": "neutral",
+      "mnemonic": "Three parts of the day, one shape: por la ___."
+    },
+    {
+      "id": "L1-M4-S09",
+      "display": "¿Trabajas por la mañana?",
+      "cue": "Do you work in the morning?",
+      "glossEn": "lit. \"Work-you by the morning?\" — there is no \"do\" to translate",
+      "literal": "Work-you by the morning?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Trabajas",
+            "cue": "you work",
+            "tag": "delta",
+            "forms": [],
+            "note": "trabajar for tú. The -as ending is the \"you\" of the -ar family; -er and -ir verbs use -es instead — comes, vives."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "There is still no \"do\" anywhere. The question is the statement with the marks around it, exactly as M2 showed.",
+      "sound": "tra-BA-jas. The stress stays where it was when the ending changed.",
+      "variations": [
+        {
+          "display": "¿Trabajas todos los días?",
+          "cue": "Do you work every day?",
+          "changed": "swap the time phrase"
+        },
+        {
+          "display": "Trabajas por la mañana",
+          "cue": "You work in the morning",
+          "changed": "the same words as a statement — only the marks and the tune change"
+        }
+      ],
+      "mistake": {
+        "display": "¿Trabajes por la mañana?",
+        "why": "The tú ending of an -ar verb is -as: trabajas. The -es belongs to comer and vivir."
+      },
+      "usage": "Asking about someone's routine.",
+      "register": "informal",
+      "mnemonic": "-ar takes -as; -er and -ir take -es."
+    },
+    {
+      "id": "L1-M4-S10",
+      "display": "Todos los días me levanto temprano",
+      "cue": "Every day I get up early",
+      "glossEn": "lit. \"All the days myself I-raise early\"",
+      "literal": "All the days myself I-raise early",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "temprano",
+            "cue": "early",
+            "tag": "free",
+            "forms": [],
+            "note": "Early. Here it describes the getting-up rather than a person, so it has nothing to agree with and never changes shape. Its opposite is tarde, which is also the noun \"afternoon\"."
+          }
+        ],
+        "rules": [2, 7]
+      },
+      "trap": "The -o on the end of temprano is not an agreement waiting to happen: an adverb has no gender to copy.",
+      "sound": "tem-PRA-no. The r is a single tap, tucked inside the pr.",
+      "variations": [
+        {
+          "display": "Me levanto temprano",
+          "cue": "I get up early",
+          "changed": "drop the block; the habit survives"
+        },
+        {
+          "display": "Todos los días me levanto a las ocho",
+          "cue": "Every day I get up at eight",
+          "changed": "a clock time instead of a plain one"
+        }
+      ],
+      "mistake": {
+        "display": "Todos los días me levanto temprana",
+        "why": "temprano is not describing a person here, so there is nothing for it to agree with: me levanto temprano."
+      },
+      "usage": "The line that ends most descriptions of a routine.",
+      "register": "neutral",
+      "mnemonic": "todos los días fits at either end of the sentence."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M4-C01", "display": "Hablo español", "cue": "I speak Spanish" },
+    { "id": "L1-M4-C02", "display": "Como pan por la mañana", "cue": "I eat bread in the morning" },
+    { "id": "L1-M4-C03", "display": "Veo a mi hermana", "cue": "I see my sister" },
+    { "id": "L1-M4-C04", "display": "¿A qué hora trabajas?", "cue": "What time do you work?" },
+    { "id": "L1-M4-C05", "display": "Trabajo por la noche", "cue": "I work at night" },
+    {
+      "id": "L1-M4-C06",
+      "display": "Estudio español todos los días",
+      "cue": "I study Spanish every day"
+    },
+    {
+      "id": "L1-M4-C07",
+      "display": "No trabajo por la tarde",
+      "cue": "I don't work in the afternoon"
+    },
+    { "id": "L1-M4-C08", "display": "Quiero comer a las ocho", "cue": "I want to eat at eight" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}
