@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M3",
+  "title": "Needs and wants",
+  "job": "Say what you want and don't want",
+  "prerequisites": ["L1-M2"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-13",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 6,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "Quiero + un/una + N",
+      "No quiero + N",
+      "Quiero + V-inf",
+      "Necesito + N",
+      "¿Quieres + un/una + N?"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "un and una are the word for \"a\", and which one you write is decided by the noun, not by what you mean: un café · una manzana. The plurals unos and unas mean \"some\"."
+    },
+    {
+      "tag": "delta",
+      "text": "The article is doing different work in each language. Quiero café asks for coffee as a substance; Quiero un café asks for one cup. English needs a word in front either way — \"some coffee\", \"a coffee\" — and Spanish chooses between the bare noun and un."
+    },
+    {
+      "tag": "delta",
+      "text": "An adjective normally FOLLOWS its noun: una manzana roja, un café caliente. English puts it in front, always, and that is the order your hand will reach for."
+    },
+    {
+      "tag": "delta",
+      "text": "An adjective agrees with the noun it describes, in gender and in number: rojo · roja · rojos · rojas. An adjective ending in -e or in a consonant has one shape for both genders and only goes plural: un café caliente · una sopa caliente · unos cafés calientes."
+    },
+    {
+      "tag": "delta",
+      "text": "Gender belongs to the noun and not to its last letter. la leche ends in -e, el día ends in -a, la mano ends in -o, el problema ends in -a. Learn each noun with its article and the ending stops mattering."
+    },
+    {
+      "tag": "delta",
+      "text": "A feminine noun beginning with a stressed a- borrows el in the singular, so two stressed a's do not collide: el agua, never la agua. The noun stays feminine and the adjective proves it — el agua fría — and the plural is las aguas."
+    },
+    {
+      "tag": "delta",
+      "text": "Negation is one word in front of the verb, and nothing else moves: Quiero café → No quiero café. English has to fetch a \"do not\" from somewhere; Spanish has nothing to fetch."
+    },
+    {
+      "tag": "interference",
+      "text": "A second negative word does not cancel the first. No quiero nada is \"I don't want anything\": Spanish wants the no in front of the verb AND the nada after it, which is exactly the pairing English forbids."
+    },
+    {
+      "tag": "delta",
+      "text": "Wanting to do something is quiero plus the plain infinitive: Quiero comer. There is no word for \"to\" — Quiero a comer and Quiero que comer are both wrong."
+    },
+    {
+      "tag": "delta",
+      "text": "The infinitive is the verb's own name, and its ending sorts it into one of three families: -ar (estudiar) · -er (comer) · -ir (vivir). M4 hangs the person endings on those stems."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M3-S01",
+      "display": "Quiero un café",
+      "cue": "I want a coffee",
+      "glossEn": "lit. \"I-want a coffee\" — un is \"a\" and \"one\" at the same time",
+      "literal": "I-want a coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "un",
+            "cue": "a · one",
+            "tag": "delta",
+            "forms": [],
+            "note": "The masculine \"a\", and the same word as the number one: un café is a coffee and one coffee at once. The feminine is una, and the plurals unos and unas mean \"some\". The noun's gender picks it — never the meaning."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "M1's Quiero café asks for coffee as a substance. Add un and you have asked for one cup — and English cannot say either sentence without putting a word in front of the noun.",
+      "sound": "qu is a plain k and the u is silent: KYEH-ro. un is one short syllable, oon, and it runs straight into the word after it.",
+      "variations": [
+        {
+          "display": "Quiero café",
+          "cue": "I want coffee",
+          "changed": "drop un and it is coffee in general, not one cup"
+        },
+        {
+          "display": "¿Quieres un café?",
+          "cue": "Do you want a coffee?",
+          "changed": "the ending swaps the person — quiero → quieres"
+        }
+      ],
+      "mistake": {
+        "display": "Quiero una café",
+        "why": "café is masculine, so its article is un: Quiero un café."
+      },
+      "usage": "Ordering, or saying plainly what you want.",
+      "register": "neutral",
+      "mnemonic": "un is \"a\" and \"one\" in one word."
+    },
+    {
+      "id": "L1-M3-S02",
+      "display": "Quiero un café con leche",
+      "cue": "I want a coffee with milk",
+      "glossEn": "lit. \"I-want a coffee with milk\"",
+      "literal": "I-want a coffee with milk",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "con",
+            "cue": "with",
+            "tag": "free",
+            "forms": [],
+            "note": "\"With\", and it behaves exactly as the English word does — it sits in front of the thing and changes nothing."
+          },
+          {
+            "display": "leche",
+            "cue": "milk",
+            "tag": "delta",
+            "forms": [],
+            "note": "Milk, and feminine: la leche. Its -e tells you nothing about its gender, which is the whole reason a noun is learned with its article."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "The ending is no help at all here: leche is feminine and café is masculine, and neither one ends in -a or -o.",
+      "sound": "LE-che, with the ch of \"church\". Both e's are short and clean, and neither one glides.",
+      "variations": [
+        {
+          "display": "Quiero leche",
+          "cue": "I want milk",
+          "changed": "no article — milk in general, the way M1 wanted café"
+        },
+        {
+          "display": "¿Quieres un café con leche?",
+          "cue": "Do you want a coffee with milk?",
+          "changed": "the same words, asked instead of stated"
+        }
+      ],
+      "mistake": {
+        "display": "Quiero un café con la leche",
+        "why": "Milk as an ingredient takes no article: con leche."
+      },
+      "usage": "The commonest coffee order in the language.",
+      "register": "neutral",
+      "mnemonic": "café con leche — coffee, with, milk, and nothing in between."
+    },
+    {
+      "id": "L1-M3-S03",
+      "display": "No quiero pan",
+      "cue": "I don't want bread",
+      "glossEn": "lit. \"Not I-want bread\" — the no goes in front of the verb",
+      "literal": "Not I-want bread",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pan",
+            "cue": "bread",
+            "tag": "free",
+            "forms": [],
+            "note": "Bread, masculine: el pan. Like café it is usually taken as a substance, so it stands bare after a verb."
+          }
+        ],
+        "rules": [6]
+      },
+      "trap": "English builds the negative out of a helper verb — I do not want. Spanish has no helper to build with: put no in front of the verb and stop.",
+      "sound": "One short syllable, pahn. The a is the a of \"father\", cut short, and the n closes it cleanly.",
+      "variations": [
+        {
+          "display": "No quiero leche",
+          "cue": "I don't want milk",
+          "changed": "swap the thing refused — the frame is No quiero + the thing"
+        },
+        {
+          "display": "Quiero pan",
+          "cue": "I want bread",
+          "changed": "drop the no and it is a want again"
+        }
+      ],
+      "mistake": {
+        "display": "Quiero no pan",
+        "why": "no belongs in front of the verb, not in front of the noun: No quiero pan."
+      },
+      "usage": "Turning something down without explaining why.",
+      "register": "neutral",
+      "mnemonic": "One no, straight in front of the verb."
+    },
+    {
+      "id": "L1-M3-S04",
+      "display": "Quiero una manzana roja",
+      "cue": "I want a red apple",
+      "glossEn": "lit. \"I-want a apple red\" — the colour comes after the noun",
+      "literal": "I-want a apple red",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "una",
+            "cue": "a",
+            "tag": "delta",
+            "forms": [],
+            "note": "The feminine \"a\": una manzana, una casa, una sopa. un and una are one word wearing the noun's gender; the plurals are unos and unas."
+          },
+          {
+            "display": "manzana",
+            "cue": "apple",
+            "tag": "free",
+            "forms": ["manzana", "manzanas"],
+            "note": "Apple, feminine: la manzana (one) · las manzanas (more than one)."
+          },
+          {
+            "display": "roja",
+            "cue": "red",
+            "tag": "delta",
+            "forms": ["rojo", "roja", "rojos", "rojas"],
+            "note": "Red. It agrees with the noun it describes: un libro rojo · una manzana roja · unos libros rojos · unas manzanas rojas. The -a here belongs to the apple, not to whoever is speaking."
+          }
+        ],
+        "rules": [0, 2, 3]
+      },
+      "trap": "English says \"a red apple\" and can say it no other way. Spanish says una manzana roja — the adjective goes behind the noun and then copies its gender.",
+      "sound": "man-ZA-na. The z is an s across Latin America and a th in most of Spain, exactly as the c of gracias is.",
+      "variations": [
+        {
+          "display": "Quiero un libro rojo",
+          "cue": "I want a red book",
+          "changed": "masculine noun, so un and rojo"
+        },
+        {
+          "display": "Quiero manzanas rojas",
+          "cue": "I want red apples",
+          "changed": "no article, and both words go plural together"
+        }
+      ],
+      "mistake": {
+        "display": "Quiero una roja manzana",
+        "why": "The adjective goes after the noun: una manzana roja."
+      },
+      "usage": "Choosing between things — at a market, or off a menu.",
+      "register": "neutral",
+      "mnemonic": "Noun first, colour behind it, ending copied."
+    },
+    {
+      "id": "L1-M3-S05",
+      "display": "Necesito agua fría",
+      "cue": "I need cold water",
+      "glossEn": "lit. \"I-need water cold\"",
+      "literal": "I-need water cold",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Necesito",
+            "cue": "I need",
+            "tag": "delta",
+            "forms": [],
+            "note": "necesitar — to need. The -o ending is the \"I\", as it is in quiero: necesito (I) · necesitas (you) · necesita (he or she). It is the stronger word of the two: a need rather than a wish."
+          },
+          {
+            "display": "fría",
+            "cue": "cold",
+            "tag": "delta",
+            "forms": ["frío", "fría", "fríos", "frías"],
+            "note": "Cold, and it agrees with the noun it describes. Water is feminine, so fría — el agua fría. The article el is only dodging two stressed a's; the -a on the adjective is what tells you the noun's real gender."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "el agua looks masculine and is not. The article steps aside for the two stressed a's of la agua; the adjective goes on telling the truth — el agua fría.",
+      "sound": "FRÍ-a is two syllables, FREE-ah: the written accent splits the i from the a. The r is one light tap.",
+      "variations": [
+        {
+          "display": "Quiero el agua fría",
+          "cue": "I want the cold water",
+          "changed": "that particular water — the article is el, the adjective still fría"
+        },
+        {
+          "display": "Necesito un café",
+          "cue": "I need a coffee",
+          "changed": "necesito takes a noun exactly as quiero does"
+        }
+      ],
+      "mistake": {
+        "display": "Necesito agua frío",
+        "why": "agua is feminine, so the adjective is fría — el agua fría."
+      },
+      "usage": "Asking for what you actually need, in a shop or at a table.",
+      "register": "neutral",
+      "mnemonic": "el agua fría — the article borrows, the adjective does not."
+    },
+    {
+      "id": "L1-M3-S06",
+      "display": "Quiero una sopa caliente",
+      "cue": "I want a hot soup",
+      "glossEn": "lit. \"I-want a soup hot\"",
+      "literal": "I-want a soup hot",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sopa",
+            "cue": "soup",
+            "tag": "free",
+            "forms": ["sopa", "sopas"],
+            "note": "Soup, feminine: la sopa. A bowl of it is una sopa."
+          },
+          {
+            "display": "caliente",
+            "cue": "hot",
+            "tag": "delta",
+            "forms": ["caliente", "calientes"],
+            "note": "Hot. An adjective ending in -e has ONE shape for both genders — un café caliente · una sopa caliente — and only changes for number: calientes. Only the -o/-a adjectives split by gender."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "A large share of Spanish adjectives never show gender at all. caliente is one of them, so una sopa calienta is a word that does not exist.",
+      "sound": "ca-LIEN-te, three syllables. The ie is one glide, not two beats.",
+      "variations": [
+        {
+          "display": "Quiero un café caliente",
+          "cue": "I want a hot coffee",
+          "changed": "masculine noun, and caliente does not budge"
+        },
+        {
+          "display": "No quiero la sopa fría",
+          "cue": "I don't want the soup cold",
+          "changed": "refuse it instead — and fría, unlike caliente, does change"
+        }
+      ],
+      "mistake": {
+        "display": "Quiero una sopa calienta",
+        "why": "caliente has no feminine form to make: una sopa caliente."
+      },
+      "usage": "Ordering food, or sending it back.",
+      "register": "neutral",
+      "mnemonic": "-e adjectives sit still; -o adjectives change clothes."
+    },
+    {
+      "id": "L1-M3-S07",
+      "display": "Quiero comer",
+      "cue": "I want to eat",
+      "glossEn": "lit. \"I-want to-eat\" — the \"to\" is inside the verb",
+      "literal": "I-want to-eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "comer",
+            "cue": "to eat",
+            "tag": "delta",
+            "forms": [],
+            "note": "To eat — the infinitive, which is the verb's dictionary name, and the -er says which family it belongs to. Nothing stands between quiero and it. M4 puts the person endings on the stem: como, comes, come."
+          }
+        ],
+        "rules": [8, 9]
+      },
+      "trap": "English \"want to eat\" has a word for \"to\" and Spanish has none: the -r on the end of comer is already doing that job.",
+      "sound": "co-MER, stressed on the last syllable, and the final r is one quick tap.",
+      "variations": [
+        {
+          "display": "Quiero estudiar",
+          "cue": "I want to study",
+          "changed": "any infinitive fits — the frame is quiero + the plain verb"
+        },
+        {
+          "display": "No quiero comer",
+          "cue": "I don't want to eat",
+          "changed": "the no goes in front of the verb that carries the ending, not in front of the infinitive"
+        }
+      ],
+      "mistake": {
+        "display": "Quiero a comer",
+        "why": "No a. The infinitive follows quiero directly: Quiero comer."
+      },
+      "usage": "Saying what you want to do, not just what you want.",
+      "register": "neutral",
+      "mnemonic": "The -r on the end IS the \"to\"."
+    },
+    {
+      "id": "L1-M3-S08",
+      "display": "Quiero estudiar español",
+      "cue": "I want to study Spanish",
+      "glossEn": "lit. \"I-want to-study Spanish\"",
+      "literal": "I-want to-study Spanish",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "estudiar",
+            "cue": "to study",
+            "tag": "delta",
+            "forms": [],
+            "note": "To study — an -ar verb, the largest family. You already have the noun: un estudiante is a person who does this. M4 turns it into estudio, estudias, estudia."
+          }
+        ],
+        "rules": [8, 9]
+      },
+      "trap": "Quiero que estudiar copies English's \"want that\". Spanish wants nothing between the two verbs: Quiero estudiar.",
+      "sound": "es-tu-DIAR. The opening e- is the one Spanish always puts in front of s + consonant, exactly as in estudiante.",
+      "variations": [
+        {
+          "display": "Quiero estudiar música",
+          "cue": "I want to study music",
+          "changed": "swap what you study"
+        },
+        {
+          "display": "No quiero estudiar",
+          "cue": "I don't want to study",
+          "changed": "the no lands on quiero, the verb with the person in it"
+        }
+      ],
+      "mistake": {
+        "display": "Quiero que estudiar",
+        "why": "There is no que here. Quiero estudiar is the whole sentence."
+      },
+      "usage": "Plans and intentions, said plainly.",
+      "register": "neutral",
+      "mnemonic": "An estudiante does estudiar."
+    },
+    {
+      "id": "L1-M3-S09",
+      "display": "¿Quieres un café?",
+      "cue": "Do you want a coffee?",
+      "glossEn": "lit. \"Want-you a coffee?\" — there is no \"do\" to translate",
+      "literal": "Want-you a coffee?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quieres",
+            "cue": "you want",
+            "tag": "delta",
+            "forms": [],
+            "note": "querer for tú: quiero (I) · quieres (you) · quiere (he, she and usted). Offering something is this question and nothing else — there is no \"do\" to put in front of it."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English needs three words before the noun — do you want. Spanish needs one, and it is the verb itself.",
+      "sound": "KYEH-res, stressed on the first syllable, and the final s stays crisp.",
+      "variations": [
+        {
+          "display": "¿Quieres comer?",
+          "cue": "Do you want to eat?",
+          "changed": "an infinitive instead of a noun"
+        },
+        {
+          "display": "¿Quiere usted un café?",
+          "cue": "Do you want a coffee? (polite)",
+          "changed": "usted takes quiere, the he-or-she form"
+        }
+      ],
+      "mistake": {
+        "display": "¿Tú quieres un café?",
+        "why": "Drop the tú — quieres already says \"you want\". It comes back only to draw a contrast: ¿Y tú, quieres un café?"
+      },
+      "usage": "Offering something — the most useful question in the module.",
+      "register": "informal",
+      "mnemonic": "One word does the whole of \"do you want\": quieres."
+    },
+    {
+      "id": "L1-M3-S10",
+      "display": "No quiero nada",
+      "cue": "I don't want anything",
+      "glossEn": "lit. \"Not I-want nothing\" — Spanish keeps both negatives",
+      "literal": "Not I-want nothing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nada",
+            "cue": "nothing · anything",
+            "tag": "interference",
+            "forms": [],
+            "note": "Nothing — and \"anything\" once a no is already in the sentence. It does not cancel that no; the two work together: No quiero nada. On its own, as an answer, it is \"nothing\"."
+          }
+        ],
+        "rules": [6, 7]
+      },
+      "trap": "English forbids exactly what Spanish requires. \"I don't want nothing\" is a mistake in English; No quiero nada is the only way to say it in Spanish.",
+      "sound": "NA-da. The d between two vowels is soft, close to the th of \"this\".",
+      "variations": [
+        {
+          "display": "No quiero nada, gracias",
+          "cue": "I don't want anything, thanks",
+          "changed": "gracias closes a refusal politely"
+        },
+        {
+          "display": "Nada",
+          "cue": "Nothing",
+          "changed": "on its own it is a complete answer, and then the no is not needed"
+        }
+      ],
+      "mistake": {
+        "display": "Quiero nada",
+        "why": "The no cannot be dropped in front of the verb: No quiero nada."
+      },
+      "usage": "Turning everything down at once — a waiter, a seller, an offer.",
+      "register": "neutral",
+      "mnemonic": "Two negatives, one meaning: no … nada."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M3-C01", "display": "Quiero una manzana", "cue": "I want an apple" },
+    { "id": "L1-M3-C02", "display": "No quiero leche", "cue": "I don't want milk" },
+    { "id": "L1-M3-C03", "display": "Sí, quiero un café", "cue": "Yes, I want a coffee" },
+    { "id": "L1-M3-C04", "display": "Necesito un libro", "cue": "I need a book" },
+    { "id": "L1-M3-C05", "display": "¿Quieres comer?", "cue": "Do you want to eat?" },
+    { "id": "L1-M3-C06", "display": "Quiero estudiar mucho", "cue": "I want to study a lot" },
+    { "id": "L1-M3-C07", "display": "No quiero sopa fría", "cue": "I don't want cold soup" },
+    {
+      "id": "L1-M3-C08",
+      "display": "¿Quieres un café con leche?",
+      "cue": "Do you want a coffee with milk?"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}
