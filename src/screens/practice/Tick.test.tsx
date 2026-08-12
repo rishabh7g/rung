@@ -139,7 +139,7 @@ describe('the fill', () => {
 /* ------------------------------------------------------------------- off is off */
 
 describe('the setting', () => {
-  it('ships ON — the design recommendation, until [Q3]/#70 says otherwise', () => {
+  it('ships ON — the [Q3] decision, ratified in #70 (PRD §13)', () => {
     const { container } = renderTick();
 
     expect(useAppStore.getState().settings.elapsedTickEnabled).toBe(true);
