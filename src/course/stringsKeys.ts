@@ -65,7 +65,7 @@
  * the toast the Ladder raises when a restore lands.
  *
  * — and the 2 the retry interstitial's frozen spec forced (design/tokens.md §6.3, routed here by
- * #69): the `COMPREHEND · फिर से` kicker and the "unlimited retries" reassurance line the shipped
+ * #69): the per-course `COMPREHEND · AGAIN` kicker and the "unlimited retries" line the shipped
  * build awaited keys for. The alternative each time was hardcoding learner-facing lines in the
  * shell, which is the one thing this list exists to prevent.
  *

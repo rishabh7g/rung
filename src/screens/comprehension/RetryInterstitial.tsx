@@ -20,8 +20,8 @@
  *
  * The kicker and the reassurance shipped later than the other three: the build awaited course
  * keys for them (a shell-owned learner-facing sentence is the one thing PRD §4 forbids), and the
- * Sync-3 freeze (#71) minted `retry.kicker` / `retry.reassure` — per-course, because the kicker
- * says "फिर से" in the course that says फिर से. The head's `M1 · EXIT RITUAL` kicker stays up
+ * Sync-3 freeze (#71) minted `retry.kicker` / `retry.reassure` — per-course, because even the
+ * kicker says "again" in the course's own words. The head's `M1 · EXIT RITUAL` kicker stays up
  * throughout, so the screen is never unlabelled.
  */
 import { useStrings } from '../../course/strings.ts';
