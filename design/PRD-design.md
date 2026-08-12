@@ -107,7 +107,7 @@ The prototype shows the strip mid-Level-1 only; these three states complete it. 
 - Ladder rung markers [D16]: passed = filled circle + check, current = crosshair, locked = hollow circle; unlock = single beat.
 - Self-mark control [D11]: green `oklch(0.52 0.10 150)` / red `oklch(0.52 0.13 27)` fills, white text; **Next hidden until marked** — same control in Practice and Comprehension.
 - "Why" toggle → shared word-row component (word + cue + tag chip + note).
-- Gentle elapsed tick (2 px, numberless, toggleable; recommend default ON [Q3]).
+- Gentle elapsed tick (2 px, numberless, toggleable; **default ON at first run** [Q3 closed]).
 - Ritual arc: constraint step · guidance-only जांचो (dashed plate + static resource rows) · press-and-hold control.
 - Comprehension retry interstitial ("Fresh sentences"; spec `tokens.md` §6.3).
 - Sentence card (collapse/expand/open-full); Detail section set (order frozen [D10], mnemonic last); tag chips; variation card (`accent-200` changed-part fill); mistake callout (struck on neutral plate); reveal card; phase chips; production dots; storage meter (per-course rows); settings rows; **course dropdown** (native select on `.input`, 44 px; spec `tokens.md` §6.2); **quiet script line** (romanized courses).
@@ -165,7 +165,7 @@ Any translation/checking UI [D18]; any text input; grading or storage of learner
 
 - **[Q1 → Rishabh + native speaker]** Level names and L2/L3 module lists (per course).
 - **[Q2]** ~~जांचो weight without a control~~ **closed** — dashed-plate design ratified in prototype.
-- **[Q3 → Rishabh]** Elapsed tick default at first run — design recommends **ON** (numberless, calm, one tap to off).
+- **[Q3]** ~~Elapsed tick default at first run~~ **closed** — ships **ON**. Decided 2026-08-12 (Rishabh, adopting the design recommendation as-is: numberless, calm, one tap to off). Ratifies what #98 / PR #150 shipped provisionally — `settings.elapsedTickEnabled` defaults `true` in `initialState()`, and the Settings → Practice toggle (#105) is the one tap to off — so **no engineering follow-up is required**. The §2 boundary note stands: the tick remains the only sanctioned time affordance.
 - **[Q4]** ~~Unseal moment~~ **closed** — shared beat ratified; edge states specced in §5.1.
 - **[Q5]** ~~Brand~~ **closed** — rung ratified [P1].
 - **[Q6]** ~~Notebook invitation home~~ **closed** — first Practice hub, one-time dismissible line, copy frozen (§8.1).
