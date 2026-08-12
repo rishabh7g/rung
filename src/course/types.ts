@@ -171,7 +171,7 @@ export interface Level {
   name: string;
   tagline: string;
   modules: LevelModule[];
-  /** Unratified list — true on hi-mr's L2/L3 pending [Q1]. Absent means ratified. */
+  /** Unratified list — true on fixture-course levels. Absent/false means ratified (hi-mr's L2/L3 ratified by #112, closing [Q1]). */
   draft?: boolean;
   /** Why it is draft, in the course's own words; `null` on a ratified level. */
   draftNote?: string | null;

@@ -72,7 +72,7 @@ Every word and rule carries one of three tags: **free** (transfers from L1; quie
 
 ## 5. Levels (per course)
 
-- **3 levels × 10 modules.** Level 1 "Foundations — say what you need" · Level 2 "Conversations — hold your own" · Level 3 "Fluency — stories & opinions" (names pending [Q1]).
+- **3 levels × 10 modules.** Level 1 "Foundations — say what you need" · Level 2 "Conversations — hold your own" · Level 3 "Fluency — stories & opinions" (names ratified [Q1 closed]).
 - **Level strip:** one cell per level, 10 mini squares each; header reads "LEVEL 1 · 2 OF 10"; counts-only pending line closes with "the sequence is the system's, the pace is yours."
 - **Seal rule:** a level unlocks only when every module of the previous level is passed. Sealed cells toast honestly when tapped.
 - Ladder footer (recurring ownership copy): "Yours to pace. Practice any rung you've passed, anytime — keep the app or delete it. The ladder stays where you left it."
@@ -146,7 +146,7 @@ Ratification decisions (drafts frozen as shipped unless noted):
 5. **"आज"/"today"** (practice hub + summary) and the scheduler's **"due"** (counts sessions, never days) are ratified as non-calendar vocabulary.
 6. **Banned-vocabulary sweep: clean, and now mechanical** — `tools/strings-check.test.ts` scans every value in every bundle for `%`, streaks and time units (was: `practice.*` only). Numbers are counts, never time.
 
-Loose ends deliberately left open: the hi-mr drafts still want a native read ([Q1]'s reviewer can sweep them); English shell furniture (kickers, `PASSED`, section labels) stays furniture, recorded on the polish ticket #117.
+Loose ends deliberately left open: the hi-mr drafts still want a native read (the #64/#110/#111 native gate carries it — [Q1] closed without one); English shell furniture (kickers, `PASSED`, section labels) stays furniture, recorded on the polish ticket #117.
 
 - **Brand [P1 — ratified]: "rung"** — lowercase wordmark in Barlow Condensed. Rationale: the unit the whole product is built on (one checkpoint, one step); शिडी was Marathi-bound and the name must now outlive any one language; four letters, plain-English meaningful.
 - **Mark:** two vertical rails + three rungs, the **middle rung solid accent — "you are here"**. Drawn in the blueprint grammar: hairline 1.5, square corners, no rounding. Renders at 20 px in the app header beside the wordmark. Construction grid + icon-scale rules: `tokens.md` §6.4.
@@ -180,7 +180,7 @@ Any translation/checking UI [D18]; any text input; grading or storage of learner
 
 ## 13. Open questions
 
-- **[Q1 → Rishabh + native speaker]** Level names and L2/L3 module lists (per course).
+- **[Q1]** ~~Level names and L2/L3 module lists~~ **closed** — ratified **as drafted**. Decided 2026-08-12 (Rishabh, adopting the design recommendation as-is): level names keep the shared defaults — L1 "Foundations" · L2 "Conversations" · L3 "Fluency" — and the L2/L3 module lists ship exactly as the #63 drafts in `content/hi-mr/levels.json` (titles, jobs and sequence unchanged; `draft` flags cleared). No self-contradiction was found in the drafts against L1's authored trajectory (#110/#111 fallibility sweep). The native speaker was not consulted for the ratification — L2/L3 sentences don't exist yet, so the per-module native gate (#64 house rule, carried by #110/#111) remains the language-quality control when L2 authoring begins.
 - **[Q2]** ~~जांचो weight without a control~~ **closed** — dashed-plate design ratified in prototype.
 - **[Q3]** ~~Elapsed tick default at first run~~ **closed** — ships **ON**. Decided 2026-08-12 (Rishabh, adopting the design recommendation as-is: numberless, calm, one tap to off). Ratifies what #98 / PR #150 shipped provisionally — `settings.elapsedTickEnabled` defaults `true` in `initialState()`, and the Settings → Practice toggle (#105) is the one tap to off — so **no engineering follow-up is required**. The §2 boundary note stands: the tick remains the only sanctioned time affordance.
 - **[Q4]** ~~Unseal moment~~ **closed** — shared beat ratified; edge states specced in §5.1.

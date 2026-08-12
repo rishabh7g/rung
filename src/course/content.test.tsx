@@ -43,9 +43,9 @@ describe('loadLevels', () => {
     expect(levels.levels[0]?.name).toBe('Foundations');
     expect(levels.levels[0]?.modules[0]).toMatchObject({ id: 'L1-M1', hasContent: true });
     expect(levels.levels[0]?.modules[2]?.hasContent).toBe(false);
-    // The draft flag and its note ride along untouched — L2 is unratified, pending [Q1].
-    expect(levels.levels[1]?.draft).toBe(true);
-    expect(levels.levels[1]?.draftNote).toMatch(/pending \[Q1\]/);
+    // The draft flag and its note ride along untouched — L2 is ratified (#112 closed [Q1]).
+    expect(levels.levels[1]?.draft).toBe(false);
+    expect(levels.levels[1]?.draftNote).toBeNull();
   });
 
   it('fetches once however many callers ask — the cache is the promise', async () => {
