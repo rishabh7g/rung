@@ -170,7 +170,10 @@ describe('the section order [D10]', () => {
     expect(within(row).getByText(word.display)).toBeInTheDocument();
     expect(within(row).getByText(word.cue)).toBeInTheDocument();
     expect(within(row).getByText(word.note!)).toBeInTheDocument();
-    expect(within(row).getByText(`forms: ${word.forms.join(' · ')}`)).toBeInTheDocument();
+    // The paradigm is its own element inside the line, because it is L2 and the "forms:" label
+    // is not (#186) — so the assertion reads the surfaces, not the whole line's text.
+    expect(within(row).getByText(word.forms.join(' · '))).toBeInTheDocument();
+    expect(within(row).getByText(/forms:/u)).toBeInTheDocument();
   });
 
   it('fills the changed part of a variation, and only it', async () => {

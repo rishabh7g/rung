@@ -39,6 +39,7 @@
 import { useState } from 'react';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useCourse } from '../course/CourseProvider.tsx';
+import { l2Lang } from '../course/manifest.ts';
 import { useModule } from '../course/content.ts';
 import type { PoolItem } from '../course/types.ts';
 import { drawItems } from '../engine/comprehension.ts';
@@ -249,7 +250,13 @@ function ComprehensionRound({ moduleId, pool, count }: ComprehensionRoundProps) 
         item !== undefined && (
           // Keyed by the item, so a new sentence is a new card: the reveal, the mark and the
           // "why" belong to the line they were opened for and nothing survives into the next.
-          <ComprehensionItem key={item.id} item={item} onMark={mark} dir={course.dir} />
+          <ComprehensionItem
+            key={item.id}
+            item={item}
+            onMark={mark}
+            dir={course.dir}
+            l2={l2Lang(course)}
+          />
         )
       )}
     </section>

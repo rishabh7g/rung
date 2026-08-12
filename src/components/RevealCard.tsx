@@ -38,6 +38,7 @@
  * third `mode` here would be inventing a screen nobody has designed.
  */
 import { useState, type ReactNode } from 'react';
+import type { L2Lang } from '../course/manifest.ts';
 import { useStrings } from '../course/strings.ts';
 import type { StringsKey } from '../course/stringsKeys.ts';
 import { RegistrationMarks } from '../screens/RegistrationMarks.tsx';
@@ -75,6 +76,8 @@ interface RevealCardProps {
   onResult: (result: RevealResult) => void;
   /** The course's writing direction — every line on the card is its content or its copy. */
   dir?: string;
+  /** The tags the revealed L2 lines are written in (#186); the cue is L1 and inherits. */
+  l2?: L2Lang;
 }
 
 /** The card's whole state, tied to the sentence it belongs to. */
@@ -97,6 +100,7 @@ export function RevealCard({
   why,
   onResult,
   dir,
+  l2,
 }: RevealCardProps) {
   const strings = useStrings();
   // `setCard`, never `setState`: `src/state/unlockPath.test.ts` scans the shell for that call and
@@ -150,11 +154,15 @@ export function RevealCard({
         <div className={styles.answer}>
           <div className={styles.answerPlate}>
             <RegistrationMarks />
-            <p className={styles.display} dir={dir}>
+            <p className={styles.display} dir={dir} lang={l2?.display}>
               {display}
             </p>
             {/* Romanized courses only: recognition, never something to produce (§9 [D20]). */}
-            {script !== undefined && <p className={styles.script}>{script}</p>}
+            {script !== undefined && (
+              <p className={styles.script} lang={l2?.script}>
+                {script}
+              </p>
+            )}
             {/* ─── the "why" seam (#94): word rows land here, inside the answer plate ─── */}
             {why !== undefined && <div className={styles.why}>{why}</div>}
           </div>

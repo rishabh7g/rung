@@ -34,6 +34,7 @@
  */
 import { useState } from 'react';
 import { useCourse } from '../course/CourseProvider.tsx';
+import { l2Lang } from '../course/manifest.ts';
 import { useModules } from '../course/content.ts';
 import { interpolate, useStrings } from '../course/strings.ts';
 import { tickSession } from '../engine/leitner.ts';
@@ -74,6 +75,7 @@ interface Run {
 
 export default function PracticeScreen() {
   const { course } = useCourse();
+  const l2 = l2Lang(course);
   const strings = useStrings();
   const { immersive, enterSession } = useImmersive();
   const { input, ready } = useProgression();
@@ -137,6 +139,7 @@ export default function PracticeScreen() {
         plan={run.plan}
         resume={run.resume}
         dir={course.dir}
+        l2={l2}
       />
     );
   }

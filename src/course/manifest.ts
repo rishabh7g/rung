@@ -33,7 +33,15 @@ const SCRIPT_MODES: readonly string[] = ['native', 'romanized'];
 const DIRECTIONS: readonly string[] = ['ltr', 'rtl'];
 
 /**
- * One manifest row (PRD §4). The six fields are required; a course may carry its own extra
+ * A BCP-47 tag, conservatively: language, optional script, optional region — `hi`, `mr`,
+ * `ar-Latn`, `pt-BR`. Deliberately narrower than the RFC (no variants, no extensions): a course
+ * manifest names a language, and a tag this file cannot parse is a typo, not a use case.
+ * Kept in sync with `tools/content-build.ts`, which rejects the same shape at build time.
+ */
+const LANGUAGE_TAG = /^[a-z]{2,3}(-[A-Z][a-z]{3})?(-([A-Z]{2}|\d{3}))?$/;
+
+/**
+ * One manifest row (PRD §4). The eight fields are required; a course may carry its own extra
  * metadata and it rides along rather than being rejected — en-ar declares a `romanizationNote`,
  * and a dev build's fixture courses carry `fixture: true`. Unknown keys are kept as-is, the same
  * way the build-time validator keeps them (`tools/validate.ts` `validateManifest`).
@@ -42,6 +50,18 @@ export interface Course {
   id: string;
   l1: string;
   l2: string;
+  /**
+   * The L1 as a BCP-47 tag (#186). `l1` is a NAME, written for the learner's eye ("Hindi"); this
+   * is the machine's half of the same fact, and it is what the document declares — the chrome,
+   * the course's microcopy and every gloss it writes are in this language.
+   */
+  l1Tag: string;
+  /**
+   * The L2 as a BCP-47 tag (#186) — the language being taught, which is a DIFFERENT language
+   * from the one the app speaks in. What a romanized course actually renders is
+   * `l2Lang(course).display`, not this: this is the language, that is the language as written.
+   */
+  l2Tag: string;
   pairLabel: string;
   scriptMode: ScriptMode;
   dir: Direction;
@@ -129,6 +149,35 @@ export function resolveActiveCourse(courses: readonly Course[], persistedId?: st
   return first;
 }
 
+/**
+ * The two tags an L2 line can be written in (#186) — the pair a screen hands its content
+ * components beside `dir`, so nothing below has to know what a `scriptMode` is.
+ */
+export interface L2Lang {
+  /** What a `display` surface is written in: the language, in the script the course prints. */
+  display: string;
+  /** What the quiet native `script` line is written in: the language, in its own script. */
+  script: string;
+}
+
+/**
+ * The tags the course's L2 lines are actually WRITTEN in.
+ *
+ * A romanized course (en-ar, PRD §4) prints its L2 in Latin letters, so `ar` would be a lie to a
+ * screen reader — it would try to pronounce `ʾahlan` as Arabic script. `ar-Latn` is the same
+ * language in another script, which is exactly what BCP-47's script subtag is for, and it is also
+ * why such a course reads `dir: 'ltr'`: the letters run left to right whatever the language does.
+ * The quiet native line beside it (`script`, romanized courses only) is the other half of the
+ * pair and carries the plain tag — same language, its own script.
+ *
+ * The L1 has no entry here on purpose: the document declares it once (`CourseProvider`) and
+ * `lang` inherits, so L1 copy is labelled by saying nothing.
+ */
+export function l2Lang(course: Course): L2Lang {
+  const romanized = course.scriptMode === 'romanized';
+  return { display: romanized ? `${course.l2Tag}-Latn` : course.l2Tag, script: course.l2Tag };
+}
+
 async function fetchManifest(): Promise<Manifest> {
   // Read BASE_URL per call, not at module load: it is '/' in dev and tests and '/rung/' (or
   // whatever the host mounts) in a build, and the app must work under either.
@@ -198,6 +247,14 @@ function parseCourse(row: unknown, at: string): Course {
     const value = course[field];
     if (typeof value !== 'string' || value.trim() === '') {
       throw new ManifestError(`${at}.${field}: must be a non-empty string`);
+    }
+  }
+  for (const field of ['l1Tag', 'l2Tag'] as const) {
+    const value = course[field];
+    if (typeof value !== 'string' || !LANGUAGE_TAG.test(value)) {
+      throw new ManifestError(
+        `${at}.${field}: must be a BCP-47 language tag like "hi" or "ar-Latn"`,
+      );
     }
   }
   if (!SCRIPT_MODES.includes(course.scriptMode as string)) {

@@ -90,6 +90,31 @@ export function CourseProvider({ children }: CourseProviderProps) {
     };
   }, [storedCourseId]);
 
+  /**
+   * The document declares the course's own language (#186).
+   *
+   * `index.html` ships `lang="en"` because that is all a shell with no course yet can honestly
+   * say. The moment a course resolves, the page is not English any more: the chrome, the
+   * microcopy and every gloss are written in the course's L1 — so a screen reader given `en`
+   * reads Hindi in an English voice, and the browser applies English hyphenation, quotes and
+   * font fallback to Devanagari. Setting it HERE rather than on the screens means the default is
+   * right everywhere, including on a screen written after this one, and it follows a course
+   * switch because the boot state does. Only the L2 needs marking below (`displayLanguageTag`) —
+   * `lang` inherits, so the L1 is stated once and the exceptions are stated where they are.
+   *
+   * `dir` rides along for the same reason: the manifest's other half of "how this course is
+   * written" belongs on the same element. It is a no-op today (every shipped course is `ltr`),
+   * and it is what makes an rtl course flip the shell rather than the 36 elements that currently
+   * spread `dir={course.dir}` by hand — those stay as they are; unthreading them is not this fix.
+   */
+  const active = boot.status === 'ready' ? boot.value.course : undefined;
+  useEffect(() => {
+    if (active === undefined) return;
+    const root = document.documentElement;
+    root.lang = active.l1Tag;
+    root.dir = active.dir;
+  }, [active]);
+
   if (boot.status === 'loading') return <BootLoadingScreen />;
   if (boot.status === 'error') return <ContentErrorScreen detail={boot.detail} />;
 

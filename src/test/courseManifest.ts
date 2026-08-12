@@ -3,7 +3,7 @@
  *
  * A trimmed copy of what `npm run dev` actually writes to `public/content/courses.json` — the
  * envelope with its dev keys, hi-mr first, and en-ar carrying `romanizationNote` so the loader
- * is exercised against a row that has more than the six required fields. Shared, so the loader
+ * is exercised against a row that has more than the eight required fields. Shared, so the loader
  * test and the boot tests cannot drift into disagreeing about the shape.
  */
 import { vi } from 'vitest';
@@ -19,6 +19,8 @@ export const DEV_MANIFEST = {
       id: 'hi-mr',
       l1: 'Hindi',
       l2: 'Marathi',
+      l1Tag: 'hi',
+      l2Tag: 'mr',
       pairLabel: 'hindi → marathi',
       scriptMode: 'native',
       dir: 'ltr',
@@ -27,6 +29,8 @@ export const DEV_MANIFEST = {
       id: 'en-es',
       l1: 'English',
       l2: 'Spanish',
+      l1Tag: 'en',
+      l2Tag: 'es',
       pairLabel: 'english → spanish',
       scriptMode: 'native',
       dir: 'ltr',
@@ -36,6 +40,8 @@ export const DEV_MANIFEST = {
       id: 'en-ar',
       l1: 'English',
       l2: 'Arabic',
+      l1Tag: 'en',
+      l2Tag: 'ar',
       pairLabel: 'english → arabic',
       scriptMode: 'romanized',
       dir: 'ltr',

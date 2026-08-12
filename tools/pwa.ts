@@ -80,6 +80,10 @@ export const pwaManifest = (base = DEFAULT_BASE): Partial<ManifestOptions> => ({
   background_color: token('--color-bg'),
   theme_color: token('--color-bg'),
   description: 'Climb a language, one checkpoint at a time.',
+  // The language of THIS FILE's strings, not of the app: `name` and `description` are English
+  // in every course, and there is no active course at install time to ask (#186). Declared
+  // rather than inherited from the document, which now says whatever the course's L1 is.
+  lang: 'en',
   icons: [
     { src: publicUrl(base, `${ICONS_DIR}/icon-192.png`), sizes: '192x192', type: 'image/png' },
     { src: publicUrl(base, `${ICONS_DIR}/icon-512.png`), sizes: '512x512', type: 'image/png' },
@@ -93,14 +97,18 @@ export const pwaManifest = (base = DEFAULT_BASE): Partial<ManifestOptions> => ({
 });
 
 /**
- * vite-plugin-pwa merges its own defaults *under* the manifest it is handed, and two of them —
- * `lang: 'en'` and `scope` — are keys `design/pwa-checklist.md` §3.1 does not print. Setting them
- * to `undefined` deletes them from the emitted JSON (the plugin `JSON.stringify`s the merged
- * object), so what ships is the checklist and nothing else. Neither is lost: `scope` defaults to
- * the `start_url`'s directory — `/` at the default base, `/rung/` on the deploy, which is exactly
- * the scope the worker registers with — and the document already declares `lang="en"`.
+ * vite-plugin-pwa merges its own defaults *under* the manifest it is handed, and one of them —
+ * `scope` — is a key `design/pwa-checklist.md` §3.1 does not print. Setting it to `undefined`
+ * deletes it from the emitted JSON (the plugin `JSON.stringify`s the merged object), so what
+ * ships is the checklist and nothing else. Nothing is lost: `scope` defaults to the `start_url`'s
+ * directory — `/` at the default base, `/rung/` on the deploy, which is exactly the scope the
+ * worker registers with.
+ *
+ * `lang` used to be dropped here too, on the grounds that the document already declared
+ * `lang="en"`. It no longer does — the document declares the ACTIVE COURSE's L1 (#186) — so the
+ * manifest states its own language above, and the checklist prints it.
  */
-const PLUGIN_DEFAULTS_DROPPED = { lang: undefined, scope: undefined };
+const PLUGIN_DEFAULTS_DROPPED = { scope: undefined };
 
 /**
  * What the precache must contain, as globs over `dist/`.

@@ -34,6 +34,7 @@ out of the checklist** and deep-equals it against what the plugin is handed. Wha
 
 ```json
 {"name":"rung","short_name":"rung","description":"Climb a language, one checkpoint at a time.",
+ "lang":"en",
  "start_url":"/","display":"standalone","background_color":"#f2f2f3","theme_color":"#f2f2f3",
  "id":"/","orientation":"portrait","icons":[
   {"src":"/icons/icon-192.png","sizes":"192x192","type":"image/png"},
@@ -42,9 +43,20 @@ out of the checklist** and deep-equals it against what the plugin is handed. Wha
 ```
 
 Key for key, the checklist and nothing else. vite-plugin-pwa merges its own defaults *under* the
-manifest it is given, which adds `lang: "en"` and `scope`; both are set to `undefined` so they
-are deleted from the emitted JSON, and neither is lost — `scope` defaults to the `start_url`'s
-directory (`/`) and the document already declares `lang="en"`.
+manifest it is given, which adds `lang: "en"` and `scope`; `scope` is set to `undefined` so it is
+deleted from the emitted JSON, and nothing is lost — it defaults to the `start_url`'s directory
+(`/`), which is the scope the worker registers with anyway.
+
+`lang` was dropped the same way until #186, on the grounds that the document already declared
+`lang="en"`. It does not any more: `CourseProvider` sets `documentElement.lang` to the active
+course's L1, so a hi-mr install serves a `lang="hi"` document. The manifest therefore states its
+own language explicitly — `"en"`, because `name` and `description` are English in every course
+and there is no active course at install time to ask.
+
+That is a **sanctioned divergence from the checklist**, the only one: §3.1 does not print `lang`,
+and `design/` is read-only and wiped on re-copy (01-plan §10), so it is recorded here and encoded
+in `tools/pwa.test.ts` (`expectedManifest()` = the parsed block + `lang`) rather than edited into
+the package. Every other key is still the checklist, parsed and deep-equalled.
 
 ## 2. The icons are the header mark, read not redrawn
 

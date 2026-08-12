@@ -153,6 +153,8 @@ describe('the COURSE dropdown (F0)', () => {
           id: 'fr-de',
           l1: 'French',
           l2: 'German',
+          l1Tag: 'fr',
+          l2Tag: 'de',
           pairLabel: 'french → german',
           scriptMode: 'native',
           dir: 'ltr',

@@ -32,6 +32,7 @@
  * (PRD §4), so it is raised on the copy freeze (#71) with the rest and flagged on #117.
  */
 import { useState } from 'react';
+import type { L2Lang } from '../../course/manifest.ts';
 import { useStrings } from '../../course/strings.ts';
 import type { PoolItem } from '../../course/types.ts';
 import { SelfMark, type Mark } from '../../components/SelfMark.tsx';
@@ -46,9 +47,11 @@ interface ComprehensionItemProps {
   onMark: (mark: Mark) => void;
   /** The course's writing direction — every line on the card is its content or its copy. */
   dir?: string;
+  /** The tags the L2 lines are written in (#186); the cue and the prompt are L1 and inherit. */
+  l2?: L2Lang;
 }
 
-export function ComprehensionItem({ item, onMark, dir }: ComprehensionItemProps) {
+export function ComprehensionItem({ item, onMark, dir, l2 }: ComprehensionItemProps) {
   const strings = useStrings();
   // `setCard`, never `setState`: `src/state/unlockPath.test.ts` scans the shell for that call and
   // the store's actions are the only place allowed to make it (Invariant 1).
@@ -64,11 +67,15 @@ export function ComprehensionItem({ item, onMark, dir }: ComprehensionItemProps)
           own frame for the line under test. */}
       <div className={styles.plate}>
         <RegistrationMarks />
-        <p className={styles.display} dir={dir}>
+        <p className={styles.display} dir={dir} lang={l2?.display}>
           {item.display}
         </p>
         {/* Romanized courses only: recognition, never something to produce (PRD §9 [D20]). */}
-        {item.script !== undefined && <p className={styles.script}>{item.script}</p>}
+        {item.script !== undefined && (
+          <p className={styles.script} lang={l2?.script}>
+            {item.script}
+          </p>
+        )}
       </div>
 
       {!card.revealed && (
@@ -115,7 +122,7 @@ export function ComprehensionItem({ item, onMark, dir }: ComprehensionItemProps)
           {/* "Why" on every reveal (#94), this one included: the panel resolves the L2 line
               against its own module's word index — a pool item names its module in its id, like a
               sentence does. No "open full": a pool item has no Detail page to open. */}
-          <WhyPanel sentenceId={item.id} display={item.display} dir={dir} />
+          <WhyPanel sentenceId={item.id} display={item.display} dir={dir} l2={l2} />
 
           <p id={promptId} className={styles.prompt} dir={dir}>
             {strings['mark.prompt']}

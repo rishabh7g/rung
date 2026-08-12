@@ -82,7 +82,8 @@ rung/ (repo name: shidi — GitHub redirects; local dir may keep its name)
 ├── design/                   # DESIGN PACKAGE — read-only, re-copied wholesale from
 │                             # Rishabh's tooling; never add or edit files here
 ├── content/
-│   ├── courses.json          # course manifest (id, l1, l2, pairLabel, scriptMode, dir)
+│   ├── courses.json          # course manifest (id, l1, l2, l1Tag, l2Tag, pairLabel,
+│                             #                  scriptMode, dir)
 │   └── hi-mr/
 │       ├── levels.json       # 3 levels × module lists (+ hasContent flags)
 │       ├── strings.json      # ALL hi-mr microcopy (fixed key list)
@@ -106,6 +107,15 @@ rung/ (repo name: shidi — GitHub redirects; local dir may keep its name)
   (L1), `glossEn`, `literal`, deconstruction words
   `{display, cue, tag, forms, note}`, rules, enrichment (variations, mistake,
   usage, mnemonic, sound) full for M1–M3. `schemaVersion: 5`.
+- **Course language (#186)** — a manifest row names its pair twice: `l1`/`l2` are NAMES for the
+  learner's eye ("Hindi"), `l1Tag`/`l2Tag` are BCP-47 TAGS for the browser (`hi`, `mr`). Both
+  validators reject a missing or malformed tag. The app declares the L1 ONCE, on the document
+  (`CourseProvider` sets `documentElement.lang`/`dir` when the course resolves and on every
+  switch) and marks only the exceptions below it, because `lang` inherits: every L2 surface
+  carries `l2Lang(course).display` — `ar-Latn` in a romanized course, since the letters are
+  Latin — the quiet native `script` line carries `l2Tag`, and `glossEn` carries `en`. L1 copy
+  carries nothing and inherits the document. `src/langLaw.test.tsx` scans `src/` and fails on an
+  L2 surface rendered by an element that declares no language.
 - **courses.json / strings.json** — §4. strings.json has a FIXED key list
   (cue label, reveal labels, phase nudges, ritual arc copy incl. resource rows
   + hold label, retry copy, ordinal, pending-authoring note, verdict line,

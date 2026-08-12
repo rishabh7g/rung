@@ -48,6 +48,7 @@
  */
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useModules } from '../../course/content.ts';
+import type { L2Lang } from '../../course/manifest.ts';
 import { useStrings } from '../../course/strings.ts';
 import type { Sentence } from '../../course/types.ts';
 import { PRODUCTIONS_PER_SENTENCE } from '../../engine/exit.ts';
@@ -116,9 +117,11 @@ interface SessionProps {
   resume?: { phase: SessionPhase; idx: number };
   /** The course's writing direction — every word on screen is its content or its copy. */
   dir?: string;
+  /** The tags the L2 lines are written in (#186); everything else is L1 and inherits. */
+  l2?: L2Lang;
 }
 
-export function Session({ courseId, moduleId, sentenceIds, plan, resume, dir }: SessionProps) {
+export function Session({ courseId, moduleId, sentenceIds, plan, resume, dir, l2 }: SessionProps) {
   const strings = useStrings();
   const toast = useToast();
   const recordReview = useAppStore((store) => store.recordReview);
@@ -361,6 +364,7 @@ export function Session({ courseId, moduleId, sentenceIds, plan, resume, dir }: 
           onPrev={onReadPrev}
           onNext={onReadNext}
           dir={dir}
+          l2={l2}
         />
       )}
 
@@ -402,10 +406,12 @@ export function Session({ courseId, moduleId, sentenceIds, plan, resume, dir }: 
                   // review for a whole screen of answers is leaving the recall behind.
                   openFull={live.phase === 'produce'}
                   dir={dir}
+                  l2={l2}
                 />
               }
               onResult={live.phase === 'review' ? onReview : onProduce}
               dir={dir}
+              l2={l2}
             />
           </div>
         )}

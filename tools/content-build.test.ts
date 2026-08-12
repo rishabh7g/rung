@@ -90,6 +90,8 @@ function courseRow(id: string, overrides: Partial<CourseRow> = {}): CourseRow {
     id,
     l1: 'Hindi',
     l2: 'Marathi',
+    l1Tag: 'hi',
+    l2Tag: 'mr',
     pairLabel: 'hindi → marathi',
     scriptMode: 'native',
     dir: 'ltr',
@@ -591,6 +593,25 @@ describe('manifest validation', () => {
       'courses.json[4].id: "Hi_MR" must be lowercase letters, digits and single hyphens',
       'courses.json[5].fixture: must be a boolean when present',
     ]);
+  });
+
+  it('rejects a row whose language tags are missing or malformed (#186)', () => {
+    const noTag: Record<string, unknown> = { ...courseRow('hi-mr') };
+    delete noTag['l1Tag'];
+    const errors = errorsFor([
+      noTag,
+      { ...courseRow('en-es'), l2Tag: 'Spanish' },
+      { ...courseRow('en-ar'), l2Tag: 'ar_Latn' },
+    ]);
+
+    // A name is for the learner and a tag is for the browser; "Spanish" is neither.
+    expect(errors).toEqual([
+      'courses.json[0].l1Tag: required, must be a BCP-47 language tag like "hi" or "ar-Latn"',
+      'courses.json[1].l2Tag: required, must be a BCP-47 language tag like "hi" or "ar-Latn"',
+      'courses.json[2].l2Tag: required, must be a BCP-47 language tag like "hi" or "ar-Latn"',
+    ]);
+    // And the shape it does accept: a script subtag, which is what a romanized course needs.
+    expect(errorsFor([{ ...courseRow('en-ar'), l2Tag: 'ar' }])).toEqual([]);
   });
 
   it('fails the build, writing nothing, when a course has no folder', () => {
