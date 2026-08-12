@@ -1,10 +1,16 @@
 # Third linguistic review — hi-mr L1-M1…L1-M10
 
 **This is an LLM review, not a native pass.** The reviewer is Claude (Opus 5) and does not speak
-Marathi natively. Nothing here closes the native gate: #64, #110 and #111 stay open, and the
-consolidated open-questions list at the bottom of this document is the outstanding work — it
-**supersedes** the two lists in `docs/07-llm-review-L1-M1-M5.md` and
-`docs/07-llm-review-L1-M6-M10.md`, which are now historical.
+Marathi natively. **Nothing here closes the native gate**, and the consolidated open-questions list
+at the bottom of this document is the outstanding work — it **supersedes** the two lists in
+`docs/07-llm-review-L1-M1-M5.md` and `docs/07-llm-review-L1-M6-M10.md`, which are now historical.
+
+**Where the native gate is tracked: nowhere but here.** #64, #110 and #111 — the three issues both
+07 docs say "stay open" — were **closed by the repo owner on 2026-08-13**, minutes before the flip
+was recorded on them. That is the owner's call and this pass does not reopen them; it does mean the
+sentence "those issues stay open" is no longer true anywhere it appears, and that this document is
+the only remaining home for the questions a native speaker still has to answer. If they should be
+tracked again, one issue per question beats reopening three.
 
 The content is **live**. The ten modules were flipped to `verified: true` on the owner's authority
 on 2026-08-13 (PR #190), so the strict build ships them and https://rishabh7g.github.io/rung/ is

@@ -5,7 +5,9 @@
 > corrections are applied, and **its open-questions list replaces the nine below** — work from
 > `docs/08-marathi-third-review.md`, not from here. That pass also confirmed all nine corrections
 > below landed, and fixed one pointer that correction M6-2 introduced ("येईल is his (S10)"; येईल
-> occurs nowhere — S10 teaches खाईन vs खाईल).
+> occurs nowhere — S10 teaches खाईन vs खाईल). One thing here has since gone stale: where this
+> document says #64, #110 and #111 **stay open**, they do not — the owner closed all three on
+> 2026-08-13. The gate is still unmet; it is simply untracked, which is why docs/08 is now its home.
 
 > ## 2026-08-13 — the flags were flipped, on the owner's authority
 >
