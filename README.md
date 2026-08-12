@@ -43,6 +43,7 @@ npm run dev     # http://localhost:5173
 | `npm run format` | Prettier write across the source tree |
 | `npm run content:validate` | Schema v5 + cross-checks over `content/*/modules/*.json` |
 | `npm run content:build` | Builds `public/content/` from `content/` — strict by default |
+| `npm run content:prompt -- <courseId> <moduleId>` | Renders the authoring prompt for one module into `.prompts/` (gitignored). Needs the prior module's index — run a dev `content:build` first |
 | `npm run icons:build` | Regenerates `public/icons/*.png` from the header rails mark. Committed output; run it only when the mark changes |
 
 ### `scripts/verify.sh` — one line, or one failure
