@@ -353,13 +353,17 @@ describe('any "not quite" deals fresh sentences, calmly and forever', () => {
     expect(screen.queryByText(strings('retry.title'))).toBeNull();
   });
 
-  it('lands on the interstitial: the course’s three lines, one control, and no counter', async () => {
+  it('lands on the interstitial: the course’s five layers, one control, and no counter', async () => {
     const pool = poolOf(6);
     await walkIn(poolModule(6, pool));
     playAttempt(pool, ['miss', 'got']);
 
+    // All five layers of design/tokens.md §6.3, each the course's own words (Sync-3 freeze, #71):
+    // kicker, title, body, the quieter reassurance, and the CTA.
+    expect(screen.getByText(strings('retry.kicker'))).toBeVisible();
     expect(screen.getByText(strings('retry.title'))).toBeVisible();
     expect(screen.getByText(strings('retry.body'))).toBeVisible();
+    expect(screen.getByText(strings('retry.reassure'))).toBeVisible();
     expect(screen.getByRole('button', { name: strings('retry.cta') })).toBeVisible();
     // No item is on screen, so nothing counts one: the head keeps the ritual's part and drops the
     // position (`2 / 2`, and no `1 / 2` beside it).

@@ -25,6 +25,16 @@
   }
 }
 
+/* Layer 1 of tokens.md §6.3 — the course's own `COMPREHEND · फिर से`, in the kicker recipe the
+   spec names for it (`--text-kicker` + tracking, `--color-accent-700`). */
+.kicker {
+  margin: 0;
+  font: var(--text-kicker);
+  letter-spacing: var(--kicker-tracking);
+  text-transform: uppercase;
+  color: var(--color-accent-700);
+}
+
 /**
  * "नए वाक्य, फिर से." — the course's own line, and the biggest thing on the screen. The prototype
  * writes it at 26px in the heading face; hi-mr's is Devanagari, so it takes the ramp's 26px Mukta
@@ -43,6 +53,15 @@
   font: var(--text-l2-cue);
   font-size: var(--devanagari-min-size);
   color: var(--ink-75);
+}
+
+/* Layer 4 of tokens.md §6.3 — the reassurance, quieter than the body: unlimited retries, nothing
+   counted. Course prose, so the Devanagari floor holds here too. */
+.reassure {
+  margin: 0;
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  color: var(--ink-50);
 }
 
 /* The registration marks frame the CTA rather than a border — the prototype's `blueprint` wrapper

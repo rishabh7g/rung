@@ -43,15 +43,15 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the three shipped bundles carry — 94 keys, nested, identical', () => {
+  it('is exactly what the three shipped bundles carry — 96 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(94);
+      expect(keys.length, courseId).toBe(96);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(94);
-    expect(new Set(STRINGS_KEYS).size).toBe(94);
+    expect(STRINGS_KEYS.length).toBe(96);
+    expect(new Set(STRINGS_KEYS).size).toBe(96);
   });
 
   it('carries the five keys PR #120 added beyond the issue text', () => {
@@ -225,8 +225,8 @@ describe('the canonical key list', () => {
    * sheet or replacing it with a file's — and the prototype writes every one in English for
    * every course, which is what a prototype does and what this product cannot. The technical
    * refusal reason under `settings.importFailed` stays English on purpose: it is `ImportError`'s
-   * path-naming line, shell furniture like every stack-adjacent detail. Draft values in all
-   * three bundles, flagged on #71.
+   * path-naming line, shell furniture like every stack-adjacent detail. Ratified at the Sync-3
+   * freeze (#71) with the rest of the drafts.
    */
   it('carries the six keys export/import forced (#108)', () => {
     const added: StringsKey[] = [
@@ -242,11 +242,29 @@ describe('the canonical key list', () => {
   });
 
   /**
-   * The summary is COUNTS, never time (Invariant 2; #96's acceptance criterion). The shell holds
-   * no copy of its own, so the only place a duration or a percentage could enter that screen is an
-   * authored bundle — which is what this reads, in all three courses.
+   * The retry interstitial's missing two (#69 → the Sync-3 freeze, #71). design/tokens.md §6.3
+   * froze five layers of course copy and the shipped build rendered three — the kicker
+   * (`COMPREHEND · फिर से`, per-course because it says फिर से in the course that says फिर से) and
+   * the reassurance ("unlimited retries; nothing is counted against you") awaited keys. The
+   * freeze minted them, and with the count at 96 the canonical list is FROZEN: a new key after
+   * this point is a design change.
    */
-  it('has no time, duration or percentage in any course’s session copy', () => {
+  it('carries the two keys the retry interstitial’s frozen spec forced (#69 → #71)', () => {
+    const added: StringsKey[] = ['retry.kicker', 'retry.reassure'];
+
+    for (const key of added) expect(STRINGS_KEYS).toContain(key);
+  });
+
+  /**
+   * COUNTS, never time (Invariant 2) — the Sync-3 freeze's banned-vocabulary sweep (#71),
+   * widened from #96's session-only scan to EVERY value in every bundle. The shell holds no
+   * copy of its own, so the only door a streak, a duration or a percentage has into the product
+   * is an authored bundle — which is what this reads, in all three courses. ("Today" and hi-mr's
+   * "आज" pass by construction: the word-bounded scan bans the calendar's units, not every word
+   * that contains one — ratified at the freeze alongside the scheduler's "due", which counts
+   * sessions, never days.)
+   */
+  it('has no time, duration or percentage anywhere in any course’s copy', () => {
     const TIME =
       /%|\b(streak|second|seconds|minute|minutes|hour|hours|day|days|week|weeks|month|months|min|sec)\b/i;
 
@@ -254,7 +272,6 @@ describe('the canonical key list', () => {
       const flat = flattenStrings(authoredStrings(courseId));
 
       for (const [key, value] of flat) {
-        if (!key.startsWith('practice.')) continue;
         expect(String(value), `${courseId} ${key}`).not.toMatch(TIME);
       }
     }

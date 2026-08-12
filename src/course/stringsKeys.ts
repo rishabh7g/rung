@@ -21,15 +21,16 @@
  * `{"ritual":{"check":{"copy":…}}}`, which is how the authored files are written. The checker
  * flattens before comparing.
  *
- * Provisional until the Sync-3 copy freeze (#71) ratifies the list; this file mirrors the freeze,
- * it does not lead it.
+ * FROZEN at Sync-3 (#71): the 96 keys below are the published list PRD-design §8.2 points at, and
+ * the bundle values are the frozen per-course tables. This file mirrors the freeze; a new key
+ * after this point is a design change, not a code change.
  */
 
 /* ------------------------------------------------------------------ the list */
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 94 keys: the 21 of PRD §4, the 5 the frozen screens forced
+ * file it is complaining about). 96 keys: the 21 of PRD §4, the 5 the frozen screens forced
  * (PR #120) — `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and the four
  * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — the 3 the Ladder
  * forced (#86): the counts-only pending line, the ownership footer and the sealed-level toast,
@@ -63,9 +64,14 @@
  * replace warning and its two decisions, the friendly refusal when a file cannot be read, and
  * the toast the Ladder raises when a restore lands.
  *
- * Those sixty are DRAFT values in all three bundles, flagged on #71 for ratification, exactly
- * as PR #120's were. The alternative each time was hardcoding learner-facing lines in the shell,
- * which is the one thing this list exists to prevent.
+ * — and the 2 the retry interstitial's frozen spec forced (design/tokens.md §6.3, routed here by
+ * #69): the `COMPREHEND · फिर से` kicker and the "unlimited retries" reassurance line the shipped
+ * build awaited keys for. The alternative each time was hardcoding learner-facing lines in the
+ * shell, which is the one thing this list exists to prevent.
+ *
+ * Every draft above was RATIFIED as shipped at the Sync-3 freeze (#71) — see PRD-design §8.2 for
+ * the decisions (register, shared keys, the verdict's two honesty lines) — except `retry.body`
+ * and the en `retry.cta`, restored to the prototype's frozen wording per tokens.md §6.3.
  */
 export const STRINGS_KEYS = [
   'cueLabel',
@@ -87,8 +93,10 @@ export const STRINGS_KEYS = [
   'ritual.confirm.holdLabel',
   'ritual.confirm.done',
   'ritual.confirm.toComprehension',
+  'retry.kicker',
   'retry.title',
   'retry.body',
+  'retry.reassure',
   'retry.cta',
   'ordinal',
   'ladder.pendingLine',
@@ -200,8 +208,15 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'ritual.confirm.holdLabel': ['{ordinal}'],
   'ritual.confirm.done': [],
   'ritual.confirm.toComprehension': [],
+  /**
+   * The retry interstitial's five layers (tokens.md §6.3), top to bottom — kicker, title, body,
+   * reassurance, CTA — all course copy, all counterless by construction: none interpolates,
+   * because an attempt number is the one thing that screen must never render (Invariant 4).
+   */
+  'retry.kicker': [],
   'retry.title': [],
   'retry.body': [],
+  'retry.reassure': [],
   'retry.cta': [],
   /** The number to ordinalise. */
   ordinal: ['{n}'],
