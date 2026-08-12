@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M6",
+  "title": "Tomorrow",
+  "job": "Future and plans",
+  "prerequisites": ["L1-M5"],
+  "verified": false,
+  "verifiedBy": null,
+  "verifiedAt": null,
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": ["future"],
+    "allowedPatterns": ["मी उद्या + V-णार आहे", "मी + V-ईन", "तू + V-णार का"],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "उद्या anchors everything in tomorrow, and the everyday future is the plan form: verb + -णार + आहे — one word जाणार where Hindi builds जाने वाला."
+    },
+    {
+      "tag": "delta",
+      "text": "-णार itself NEVER changes: जाणार is the same word for every speaker — a rest point after M5. Only the आहे after it shifts with person (आहे · आहेस · आहात), exactly as in M1–M2."
+    },
+    {
+      "tag": "interference",
+      "text": "उद्या means only tomorrow. Hindi कल points both ways; Marathi split the word — काल = yesterday (M5), उद्या = tomorrow. Never let कल's double life leak in."
+    },
+    {
+      "tag": "delta",
+      "text": "The plain future -ईन (येईन, खाईन) is the promise form — no आहे after it, and it follows the speaker only: the object never bends it (unlike M5's past)."
+    },
+    {
+      "tag": "delta",
+      "text": "Refusing a plan: -णार + नाही, and the आहे drops — मी जाणार नाही, nothing else."
+    },
+    {
+      "tag": "free",
+      "text": "A future question is still the plain statement + का at the very end (M2)."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M6-S01",
+      "display": "मी उद्या घरी जाणार आहे",
+      "cue": "मैं कल घर जाने वाला हूँ",
+      "glossEn": "I am going to go home tomorrow",
+      "literal": "मैं आने-वाला-कल घर जाने-वाला हूँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "उद्या",
+            "cue": "कल (आने वाला)",
+            "tag": "interference",
+            "forms": [],
+            "note": "\"Tomorrow\" — only tomorrow. काल (M5) took yesterday; उद्या takes tomorrow. Hindi's one कल is two Marathi words, and they never swap."
+          },
+          {
+            "display": "जाणार",
+            "cue": "जाने वाला/वाली",
+            "tag": "delta",
+            "forms": [],
+            "note": "Future of जाणे — the plan form. One unchanging word: a man, a woman, anyone says जाणार. Hindi जाने वाला/वाली genders itself; -णार never does."
+          }
+        ],
+        "rules": [0, 1, 2]
+      },
+      "trap": "हिंदी की आदत 'जाने वाला/वाली' को लिंग देती है — मराठी का -णार अटल है: जाणार सबके लिए एक. M5 के बाद यह आराम की जगह है — यहाँ कुछ नहीं बदलता.",
+      "sound": "जाणार में 'ण' मूर्धन्य है — जीभ ऊपर मोड़कर: जा‑णा‑र.",
+      "variations": [
+        {
+          "display": "मी उद्या लवकर घरी जाणार आहे",
+          "cue": "मैं कल जल्दी घर जाने वाला हूँ",
+          "changed": "लवकर (M4) जोड़ा — जाणार जस का तस."
+        },
+        {
+          "display": "तू उद्या घरी जाणार आहेस का?",
+          "cue": "क्या तुम कल घर जाने वाले हो?",
+          "changed": "सवाल — तू के साथ आहेस (M2) और अंत में का; जाणार फिर भी वही."
+        }
+      ],
+      "mistake": {
+        "display": "मी उद्या घरी जाणारी आहे",
+        "why": "जाने वाली की नक़ल — -णार में लिंग घुसाया. मराठी में जाणार ही रहता है, बोलने वाला कोई भी हो."
+      },
+      "usage": "कल की योजना बताना — भविष्य की पहली और सबसे रोज़ वाली लाइन.",
+      "register": "neutral",
+      "mnemonic": "-णार अटल है: बोलने वाला बदले, जाणार न बदले."
+    },
+    {
+      "id": "L1-M6-S02",
+      "display": "मी उद्या काम करणार आहे",
+      "cue": "मैं कल काम करने वाला हूँ",
+      "glossEn": "I am going to work tomorrow",
+      "literal": "मैं आने-वाले-कल काम करने-वाला हूँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "करणार",
+            "cue": "करने वाला/वाली",
+            "tag": "delta",
+            "forms": [],
+            "note": "Future of करणे — the same -णार rides every verb: जाणार, करणार, उठणार… Learn the ending once, own every plan."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "M5 में केलं काम(नपुं.) से मिला था — यहाँ कुछ नहीं मिलता: करणार वैसा ही रहता है, काम हो या चहा. भविष्य में कर्म का लिंग खेल से बाहर है.",
+      "sound": "करणार = क‑र‑णा‑र; बीच का 'णा' साफ़ मूर्धन्य.",
+      "variations": [
+        {
+          "display": "मी उद्या थोडं काम करणार आहे",
+          "cue": "मैं कल थोड़ा काम करने वाला हूँ",
+          "changed": "थोडं (M3) जोड़ा — करणार अब भी वही."
+        },
+        {
+          "display": "मी उद्या काम करणार नाही",
+          "cue": "मैं कल काम नहीं करने वाला",
+          "changed": "नकार — आहे गिर गया, अंत में सिर्फ़ नाही (आगे S06 में पूरा)."
+        }
+      ],
+      "mistake": {
+        "display": "मी उद्या काम करूंगा",
+        "why": "-ऊंगा हिंदी का भविष्य है — मराठी योजना कहती है करणार आहे."
+      },
+      "usage": "कल के काम की योजना — दफ़्तर हो या घर.",
+      "register": "neutral",
+      "mnemonic": "एक -णार, हर क्रिया: जा-णार, कर-णार, उठ-णार — योजना का एक ही सिक्का."
+    },
+    {
+      "id": "L1-M6-S03",
+      "display": "मी उद्या लवकर उठणार आहे",
+      "cue": "मैं कल जल्दी उठने वाला हूँ",
+      "glossEn": "I am going to get up early tomorrow",
+      "literal": "मैं आने-वाले-कल जल्दी उठने-वाला हूँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "उठणार",
+            "cue": "उठने वाला/वाली",
+            "tag": "delta",
+            "forms": [],
+            "note": "उठणे across three modules now: उठतो (M4, habit), उठलो (M5, yesterday), उठणार (today's plan for tomorrow) — the stem stays, only the ending moves the time."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "तीन ज़माने, एक जड़: उठतो — उठलो — उठणार. M5 में लिंग हर जगह था; यहाँ कहीं नहीं है. यही -णार की राहत है.",
+      "sound": "उठणार = उठ‑णा‑र; 'ठ' पूरा फूटने दो.",
+      "variations": [
+        {
+          "display": "मी उद्या सकाळी लवकर उठणार आहे",
+          "cue": "मैं कल सुबह जल्दी उठने वाला हूँ",
+          "changed": "सकाळी (M4) जोड़ा — समय के शब्द भविष्य में भी वैसे ही बैठते हैं."
+        },
+        {
+          "display": "तू उद्या लवकर उठणार आहेस का?",
+          "cue": "क्या तुम कल जल्दी उठने वाले हो?",
+          "changed": "सवाल — आहेस + का; उठणार अटल."
+        }
+      ],
+      "mistake": {
+        "display": "मी उद्या लवकर उठलो",
+        "why": "उठलो बीता कल है (M5) — आने वाले कल के लिए उठणार आहे. काल/उद्या के साथ ज़माना भी बदलो."
+      },
+      "usage": "कल की दिनचर्या की योजना — M4 की आदतें, अब आगे की ओर.",
+      "register": "neutral",
+      "mnemonic": "जड़ पकड़ो, अंत बदलो: -तो आज, -लो काल, -णार उद्या."
+    },
+    {
+      "id": "L1-M6-S04",
+      "display": "तू उद्या येणार आहेस का?",
+      "cue": "क्या तुम कल आने वाले हो?",
+      "glossEn": "Are you going to come tomorrow?",
+      "literal": "तू आने-वाले-कल आने-वाला है(-स) — क्या?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "येणार",
+            "cue": "आने वाला/वाली",
+            "tag": "delta",
+            "forms": ["येणार", "येईन"],
+            "note": "येणे \"to come\" (आना) — a new verb, met straight in its future: येणार (the plan) and येईन (the promise, coming in S07). -णार as ever refuses gender."
+          }
+        ],
+        "rules": [0, 1, 5]
+      },
+      "trap": "'आओगे' पूरा सवाल अपने अंदर रखता है — मराठी में ढाँचा वही पुराना: कथन + का (M2). येणार आहेस का — तीन पुर्ज़े, कोई नया नियम नहीं.",
+      "sound": "येणार = ये‑णा‑र; 'ये' खुला और छोटा.",
+      "variations": [
+        {
+          "display": "तू उद्या घरी येणार आहेस का?",
+          "cue": "क्या तुम कल घर आने वाले हो?",
+          "changed": "घरी (M5) जोड़ा — 'घर को' वाली -ई यहाँ भी काम करती है."
+        },
+        {
+          "display": "तू उद्या येणार का?",
+          "cue": "तुम कल आओगे क्या?",
+          "changed": "बोलचाल — आहेस अक्सर गिर जाता है; येणार का काफ़ी है."
+        }
+      ],
+      "mistake": {
+        "display": "तू उद्या येणार आहे का?",
+        "why": "तू के साथ आहेस चाहिए (M2) — आहे तीसरे की बात है. -णार नहीं बदला, पर आहे अब भी व्यक्ति से बदलता है."
+      },
+      "usage": "किसी को कल के लिए पूछना — न्योते की पहली लाइन.",
+      "register": "informal",
+      "mnemonic": "-णार जमा हुआ, आहे चलता-फिरता: व्यक्ति की ख़बर आहे देता है, -णार नहीं."
+    },
+    {
+      "id": "L1-M6-S05",
+      "display": "तुम्ही उद्या काय करणार आहात?",
+      "cue": "आप कल क्या करने वाले हैं?",
+      "glossEn": "What are you going to do tomorrow?",
+      "literal": "आप आने-वाले-कल क्या करने-वाले हैं?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "करणार",
+            "cue": "करने वाले",
+            "tag": "delta",
+            "forms": [],
+            "note": "S02's करणार, untouched — with तुम्ही only the auxiliary moves: आहात (M2). The person lives in आहे/आहेस/आहात; -णार stays out of it."
+          }
+        ],
+        "rules": [0, 1, 5]
+      },
+      "trap": "हिंदी 'करने वाले हैं' में वाले भी बदला, हैं भी — मराठी में सिर्फ़ आहात बदला. काम का बँटवारा साफ़ है: व्यक्ति आहे-परिवार में, योजना -णार में.",
+      "sound": "करणार आहात — दो शब्द अलग-अलग साँस में: करणार · आहात.",
+      "variations": [
+        {
+          "display": "तुम्ही उद्या कधी येणार आहात?",
+          "cue": "आप कल कब आने वाले हैं?",
+          "changed": "काय → कधी (M4) — सवाल-शब्द बदला, ढाँचा वही."
+        },
+        {
+          "display": "तू उद्या काय करणार आहेस?",
+          "cue": "तुम कल क्या करने वाले हो?",
+          "changed": "तुम्ही → तू — आहात → आहेस; करणार को हाथ नहीं लगा."
+        }
+      ],
+      "mistake": {
+        "display": "तुम्ही उद्या काय करता?",
+        "why": "करता रोज़ की आदत है (M4: आप क्या करते हैं) — कल की योजना के लिए करणार आहात. ज़माना अंत में है, आदत में नहीं."
+      },
+      "usage": "बड़ों या अनजान से कल की योजना पूछना.",
+      "register": "neutral",
+      "mnemonic": "काय + करणार + आहात — सवाल-शब्द बीच में बैठता है, जहाँ जवाब बैठेगा."
+    },
+    {
+      "id": "L1-M6-S06",
+      "display": "मी उद्या चहा पिणार नाही",
+      "cue": "मैं कल चाय नहीं पीने वाला",
+      "glossEn": "I am not going to drink tea tomorrow",
+      "literal": "मैं आने-वाले-कल चाय पीने-वाला नहीं",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "पिणार",
+            "cue": "पीने वाला/वाली",
+            "tag": "delta",
+            "forms": [],
+            "note": "Future of पिणे — and the negative plan: -णार + नाही, the आहे drops. M5's प्यायली agreed with the drink; पिणार agrees with nothing."
+          }
+        ],
+        "rules": [0, 1, 4]
+      },
+      "trap": "नकार में आहे नहीं रहता: पिणार नाही — बस. हिंदी 'नहीं पीने वाला हूँ' का 'हूँ' मराठी में गिर जाता है. और M5 की आदत भी छोड़ो — भविष्य में चहा/कॉफी से रूप नहीं मिलता.",
+      "sound": "पिणार = पि‑णा‑र; छोटी 'इ', फिर मूर्धन्य 'णा'.",
+      "variations": [
+        {
+          "display": "मी उद्या कॉफी पिणार नाही",
+          "cue": "मैं कल कॉफ़ी नहीं पीने वाला",
+          "changed": "चहा → कॉफी — पिणार वैसा ही; M5 वाला लिंग-खेल यहाँ नहीं चलता."
+        },
+        {
+          "display": "मी उद्या घरी जाणार नाही",
+          "cue": "मैं कल घर नहीं जाने वाला",
+          "changed": "पीना → जाना — नकार का साँचा हर क्रिया पर एक: -णार नाही."
+        }
+      ],
+      "mistake": {
+        "display": "मी उद्या चहा पिणार नाही आहे",
+        "why": "नकार में आहे नहीं आता — पिणार नाही पूरा वाक्य है. आहे और नाही साथ नहीं बैठते (M2 की याद)."
+      },
+      "usage": "कल के लिए मना करना — योजना का 'नहीं'.",
+      "register": "neutral",
+      "mnemonic": "हाँ में आहे, ना में नाही — दोनों कभी एक साथ नहीं."
+    },
+    {
+      "id": "L1-M6-S07",
+      "display": "मी उद्या नक्की येईन",
+      "cue": "मैं कल ज़रूर आऊँगा",
+      "glossEn": "I will definitely come tomorrow",
+      "literal": "मैं आने-वाले-कल पक्का आऊँगा",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "नक्की",
+            "cue": "ज़रूर / पक्का",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Definitely\" — the everyday promise word. No Hindi twin in shape; it never inflects."
+          },
+          {
+            "display": "येईन",
+            "cue": "आऊँगा/आऊँगी",
+            "tag": "delta",
+            "forms": [],
+            "note": "The plain future of येणे (S04) — the promise form: no आहे after it, and one येईन for every speaker where Hindi splits आऊँगा/आऊँगी."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "दो भविष्य, दो काम: येणार आहे योजना है, येईन वादा. और आऊँगा/आऊँगी का लिंग-फ़र्क़ मराठी में नहीं — येईन एक ही.",
+      "sound": "येईन = ये‑ई‑न; बीच की 'ई' लंबी और साफ़.",
+      "variations": [
+        {
+          "display": "मी उद्या घरी येईन",
+          "cue": "मैं कल घर आऊँगा",
+          "changed": "नक्की हटा, घरी जोड़ा — वादा फिर भी वादा."
+        },
+        {
+          "display": "मी उद्या नक्की येणार आहे",
+          "cue": "मैं कल पक्का आने वाला हूँ",
+          "changed": "वादा → योजना — -ईन की जगह -णार आहे; मतलब क़रीब, रंग अलग."
+        }
+      ],
+      "mistake": {
+        "display": "मी उद्या नक्की येईन आहे",
+        "why": "-ईन अकेला चलता है — उसके पीछे आहे कभी नहीं. आहे सिर्फ़ -णार की योजना के साथ आता है."
+      },
+      "usage": "वादा करना — 'ज़रूर आऊँगा' वाली गर्मजोशी.",
+      "register": "neutral",
+      "mnemonic": "-णार आहे = नक़्शा, -ईन = हाथ मिलाकर वादा."
+    },
+    {
+      "id": "L1-M6-S08",
+      "display": "मी उद्या मराठी शिकणार आहे",
+      "cue": "मैं कल मराठी सीखने वाला हूँ",
+      "glossEn": "I am going to study Marathi tomorrow",
+      "literal": "मैं आने-वाले-कल मराठी सीखने-वाला हूँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "शिकणार",
+            "cue": "सीखने वाला/वाली",
+            "tag": "delta",
+            "forms": [],
+            "note": "शिकणे's future — the family grows: शिकतो (M4), शिकायचं (M3), शिकणार (now). Same stem शिक-, Hindi सीख- never appears."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "आधी हिंदी आधी मराठी सबसे पहले पकड़ी जाती है: 'सीखणार' कुछ नहीं है — जड़ मराठी की (शिक-), अंत मराठी का (-णार).",
+      "sound": "शिकणार = शि‑क‑णा‑र; 'शि' छोटा.",
+      "variations": [
+        {
+          "display": "मी आता मराठी शिकणार आहे",
+          "cue": "मैं अब मराठी सीखने वाला हूँ",
+          "changed": "उद्या → आता (M1) — योजना अभी से शुरू."
+        },
+        {
+          "display": "तू उद्या मराठी शिकणार का?",
+          "cue": "क्या तुम कल मराठी सीखोगे?",
+          "changed": "सवाल, बोलचाल के छोटे रूप में — शिकणार का."
+        }
+      ],
+      "mistake": {
+        "display": "मी उद्या मराठी सीखणार आहे",
+        "why": "सीखना हिंदी है — मराठी में शिकणे: शिकणार. जड़ बदलना भूले तो आधा वाक्य हिंदी रह जाता है."
+      },
+      "usage": "इरादे बताना — नई चीज़ शुरू करने की बात.",
+      "register": "neutral",
+      "mnemonic": "शिक- की टोली: शिकतो रोज़, शिकायचं मन, शिकणार कल."
+    },
+    {
+      "id": "L1-M6-S09",
+      "display": "तू उद्या कधी उठणार आहेस?",
+      "cue": "तुम कल कब उठने वाले हो?",
+      "glossEn": "When are you going to get up tomorrow?",
+      "literal": "तू आने-वाले-कल कब उठने-वाला है(-स)?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "उठणार",
+            "cue": "उठने वाला/वाली",
+            "tag": "delta",
+            "forms": [],
+            "note": "S03's उठणार in a कधी-question — the question word sits where the answer will (M2's काय rule), and तू brings आहेस, not a new verb shape."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "M5 में तू ने क्रिया बदली थी (उठलास) — यहाँ क्रिया को छुआ तक नहीं: उठणार वही, तू की ख़बर आहेस पर. '-स' अब सिर्फ़ आहेस में है.",
+      "sound": "कधी का 'ध' भारी है — क‑धी; उठणार आहेस एक बहाव में.",
+      "variations": [
+        {
+          "display": "तू उद्या कधी झोपणार आहेस?",
+          "cue": "तुम कल कब सोने वाले हो?",
+          "changed": "उठना → सोना — झोपणार: वही -णार, नई क्रिया."
+        },
+        {
+          "display": "तुम्ही उद्या कधी उठणार आहात?",
+          "cue": "आप कल कब उठने वाले हैं?",
+          "changed": "तू → तुम्ही — सिर्फ़ आहेस → आहात."
+        }
+      ],
+      "mistake": {
+        "display": "तू उद्या कधी उठतोस?",
+        "why": "उठतोस रोज़ की आदत पूछता है (M4) — कल के लिए उठणार आहेस. समय-शब्द (उद्या) और ज़माना साथ चलने चाहिए."
+      },
+      "usage": "कल की योजना का ब्यौरा पूछना — दोस्ताना.",
+      "register": "informal",
+      "mnemonic": "कधी जवाब की कुर्सी पर बैठता है — जहाँ 'सकाळी' आएगा, वहीं कधी."
+    },
+    {
+      "id": "L1-M6-S10",
+      "display": "मी उद्या भात खाईन",
+      "cue": "मैं कल चावल खाऊँगा",
+      "glossEn": "I will eat rice tomorrow",
+      "literal": "मैं आने-वाले-कल चावल खाऊँगा",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "खाईन",
+            "cue": "खाऊँगा/खाऊँगी",
+            "tag": "delta",
+            "forms": [],
+            "note": "Plain future of खाणे — and the mirror of M5: खाल्ला looked at the rice, खाईन never does. The future follows the speaker's person only, not the object, not the gender."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "M5 की आदत यहाँ उलटी पड़ती है: भात खाल्ला (कर्म से), पर भात खाईन (किसी से नहीं). भविष्य में कर्म की कुर्सी ख़ाली है — खाईन, पिईन, करीन सब सीधे.",
+      "sound": "खाईन = खा‑ई‑न; बीच की 'ई' को पूरा समय दो.",
+      "variations": [
+        {
+          "display": "मी उद्या थोडा भात खाईन",
+          "cue": "मैं कल थोड़ा चावल खाऊँगा",
+          "changed": "थोडा (M3) जोड़ा — खाईन अब भी वैसा ही."
+        },
+        {
+          "display": "मी उद्या घरी भात खाईन",
+          "cue": "मैं कल घर पर चावल खाऊँगा",
+          "changed": "घरी जोड़ा — जगह बदली, वादा वही."
+        }
+      ],
+      "mistake": {
+        "display": "मी उद्या भात खाईल",
+        "why": "खाईल 'वह खाएगा' है — अपने लिए खाईन. -ईन मैं का, -ईल उसका."
+      },
+      "usage": "कल के खाने की बात — M5 का साथी वाक्य, आईने में.",
+      "register": "neutral",
+      "mnemonic": "काल खाल्ला कर्म से, उद्या खाईन अपने से — बीता झुकता है, आने वाला नहीं."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M6-C01",
+      "display": "उद्या मी काम करणार आहे",
+      "cue": "कल मैं काम करने वाला हूँ"
+    },
+    {
+      "id": "L1-M6-C02",
+      "display": "तू उद्या चहा पिणार का?",
+      "cue": "क्या तुम कल चाय पीने वाले हो?"
+    },
+    {
+      "id": "L1-M6-C03",
+      "display": "मी उद्या सकाळी मराठी शिकणार आहे",
+      "cue": "मैं कल सुबह मराठी सीखने वाला हूँ"
+    },
+    {
+      "id": "L1-M6-C04",
+      "display": "तुम्ही उद्या कधी येणार आहात?",
+      "cue": "आप कल कब आने वाले हैं?"
+    },
+    {
+      "id": "L1-M6-C05",
+      "display": "मी उद्या घरी येईन",
+      "cue": "मैं कल घर आऊँगा"
+    },
+    {
+      "id": "L1-M6-C06",
+      "display": "मी उद्या काम करणार नाही",
+      "cue": "मैं कल काम नहीं करने वाला"
+    },
+    {
+      "id": "L1-M6-C07",
+      "display": "तू उद्या लवकर उठणार आहेस का?",
+      "cue": "क्या तुम कल जल्दी उठने वाले हो?"
+    },
+    {
+      "id": "L1-M6-C08",
+      "display": "उद्या मी थोडा भात खाईन",
+      "cue": "कल मैं थोड़ा चावल खाऊँगा"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
