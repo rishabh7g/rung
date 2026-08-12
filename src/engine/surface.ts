@@ -6,42 +6,61 @@
  * silently has no "why". So the rule lives here, in the pure engine, and BOTH sides import it —
  * never a copy. `src/engine/` is pure TypeScript: no DOM, no Node, no clock (docs/01-plan.md §3).
  *
- * What the rule is, today:
+ * What the rule is, today (#116 closed [Q3] — the romanized edge cases are decided here):
  *   1. **NFC.** Devanagari is authored composed (docs/01-plan.md §7); normalising anyway means a
  *      decomposed paste can never miss its own entry.
- *   2. **Strip edge punctuation, per token.** From L1-M2 on, `display` carries sentence
+ *   2. **Fold the apostrophe classes** — two classes, never each other (#116, [Q3]):
+ *      the hamza/apostrophe class `’` U+2019, `ʼ` U+02BC, `ʾ` U+02BE folds to `'` U+0027, and the
+ *      ʿayn class `‘` U+2018 folds to `ʿ` U+02BF. In romanization convention the right-side
+ *      apostrophes all write hamza (or a plain elision, `don't`) and the left quote writes ʿayn —
+ *      but hamza and ʿayn are DISTINCT consonants, so the two classes must never merge: folding
+ *      `saʾal` (asked) into `saʿal` (coughed) would be inventing a homograph.
+ *   3. **Strip edge punctuation, per token.** From L1-M2 on, `display` carries sentence
  *      punctuation — a question mark on a question, a comma after a greeting (PR #119) — while
  *      the word rows that teach those words carry none. Edge-only: `al-Hind` and `don't` keep
- *      their insides.
- *   3. **Collapse whitespace.** Surfaces may span tokens (`Me llamo`, `se llama` in en-es), so a
+ *      their insides. After the fold, `'` is the only apostrophe left to exempt; `ʿ` is a letter
+ *      (`\p{Lm}`) and was never at risk.
+ *   4. **Case-fold to lowercase** (#116, [Q3]): `Soy` and `soy` are one word — `display` carries
+ *      sentence case, the word rows carry citation case, and a learner's "why" tap must not care
+ *      which it hit. `toLowerCase()` without a locale is the Unicode default fold: a no-op for
+ *      Devanagari, and it never touches diacritics, so `sí` (yes) and `si` (if) stay distinct.
+ *   5. **Collapse whitespace.** Surfaces may span tokens (`Me llamo`, `se llama` in en-es), so a
  *      surface is exactly its tokens joined by one space — `normalizeSurface(x)` is by
  *      construction `tokenizeSurface(x).join(' ')`, which is what keeps the emitter's keys and
  *      the resolver's lookups the same strings.
  *
- * SEAM — #116 (romanized edge cases, [Q3]) owns everything else, deliberately not pre-solved:
- *   • **case** — `Soy`/`soy`, `Me gusta`/`me gusta` are distinct surfaces here. Case is preserved,
- *     not folded (#75 spec: "store verbatim otherwise").
- *   • **apostrophe class** — `'` U+0027, `’` U+2019, `ʼ` U+02BC are kept even at an edge, and the
- *     modifier letters `ʾ` U+02BE / `ʿ` U+02BF (hamza / ʿayn — letters, not punctuation) are never
- *     touched. Folding these together is #116's call; stripping them here would pre-empt it.
- *   • **hyphen splitting** — `al-qahwa` stays one surface; whether to also index `al` + `qahwa` is
- *     #116's decision.
- * When #116 lands, change these functions and both sides move together. That is the point.
+ * **Hyphens** (#116, [Q3]): `al-qahwa` stays ONE surface — a hyphenated token is one whitespace
+ * token, so the joined form is the primary key on both sides. But the emitter ALSO indexes each
+ * hyphen part (`al`, `qahwa`) via `surfaceIndexKeys` below, pointing at the same word entry, so a
+ * later module writing the bare part still resolves. First occurrence wins as ever: a part never
+ * steals a key an earlier surface already owns, and the resolver's longest-match-first walk means
+ * the joined key always beats its parts when both could apply.
  *
  * Worked examples are in `surface.test.ts`, in the courses' own scripts: `src/` itself carries no
  * course script at all, not even in a comment (#80, `src/shellPurity.test.ts`).
  */
 
-/**
- * Leading/trailing punctuation, minus the apostrophe class above. `\p{P}` covers what the content
- * actually carries (`? , . ! - — " " ¿ ¡` and the Devanagari danda, U+0964) without an ASCII
- * allow-list that a new course would immediately outgrow.
- */
-const EDGE_PUNCTUATION = /^(?:(?!['’ʼ])\p{P})+|(?:(?!['’ʼ])\p{P})+$/gu;
+/** The hamza/apostrophe class: `’` U+2019, `ʼ` U+02BC, `ʾ` U+02BE — every right-side apostrophe. */
+const APOSTROPHE_CLASS = /[’ʼʾ]/gu;
+/** The ʿayn class: `‘` U+2018, the typographic stand-in for `ʿ` U+02BF. */
+const AYN_CLASS = /‘/gu;
 
-/** One whitespace-separated chunk of a display string, punctuation trimmed off both ends. */
+/**
+ * Leading/trailing punctuation, minus `'` (kept: elision and folded hamza live at word edges,
+ * `māʾ` → `mā'`). `\p{P}` covers what the content actually carries (`? , . ! - — " " ¿ ¡` and the
+ * Devanagari danda, U+0964) without an ASCII allow-list that a new course would immediately
+ * outgrow.
+ */
+const EDGE_PUNCTUATION = /^(?:(?!')\p{P})+|(?:(?!')\p{P})+$/gu;
+
+/** One whitespace-separated chunk of a display string, folded, trimmed and lowercased. */
 function normalizeToken(token: string): string {
-  return token.normalize('NFC').replace(EDGE_PUNCTUATION, '');
+  return token
+    .normalize('NFC')
+    .replace(APOSTROPHE_CLASS, "'")
+    .replace(AYN_CLASS, 'ʿ')
+    .replace(EDGE_PUNCTUATION, '')
+    .toLowerCase();
 }
 
 /**
@@ -68,6 +87,24 @@ export function normalizeSurface(text: string): string {
 /** How many tokens a surface spans: one Marathi word → 1, `Me llamo` → 2. */
 export function surfaceSpan(surface: string): number {
   return tokenizeSurface(surface).length;
+}
+
+/**
+ * Every key a NORMALISED surface earns in the word index (#116, [Q3] hyphen rule): the surface
+ * itself first, then each hyphen part of each of its tokens, once. `al-qahwa` → `al-qahwa`, `al`,
+ * `qahwa`; a surface without a hyphen is just itself. The emitter maps them all to the same word
+ * entry (first occurrence wins), so this lives here — next to `normalizeSurface`, the single
+ * source of "same word" — rather than in the build, where the resolver could not see the rule.
+ */
+export function surfaceIndexKeys(surface: string): string[] {
+  const keys = [surface];
+  for (const token of surface.split(' ')) {
+    if (!token.includes('-')) continue;
+    for (const part of token.split('-')) {
+      if (part !== '' && !keys.includes(part)) keys.push(part);
+    }
+  }
+  return keys;
 }
 
 /** What `matchSurfaces` needs of an index — the emitter's map or the runtime's loaded JSON. */

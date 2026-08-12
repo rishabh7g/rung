@@ -29,6 +29,7 @@ import {
   type Levels,
   type WordIndexFile,
 } from './content-build.ts';
+import { matchSurfaces, tokenizeSurface } from '../src/engine/surface.ts';
 import { completeStrings } from './fixtures/strings.ts';
 import { DEFAULT_CONTENT_ROOT, REPO_ROOT, type Module } from './validate.ts';
 
@@ -876,6 +877,114 @@ describe('the word index', () => {
 
     expect(report.lines).toContain('  index L1-M1: 26 surfaces');
     expect(report.lines).toContain('  index L1-M2: 28 surfaces');
+  });
+});
+
+describe('the romanized edge cases (#116, [Q3])', () => {
+  /** A clone-edit that appends one word row to the module's first sentence. */
+  function teachesWord(display: string): (module: Module) => void {
+    return (module) => {
+      module.sentences[0]?.deconstruction.words.push({
+        display,
+        cue: 'नया',
+        tag: 'free',
+        forms: [],
+      });
+    };
+  }
+
+  /** A whole authored course, in ladder order — the real content, not a trimmed stand-in. */
+  function authoredCourse(courseId: string): { id: string; module: Module }[] {
+    const dir = path.join(DEFAULT_CONTENT_ROOT, courseId, 'modules');
+    return readdirSync(dir)
+      .filter((file) => file.endsWith('.json'))
+      .map((file) => file.replace('.json', ''))
+      .sort((a, b) => {
+        const rung = (id: string): number => Number(/M(\d+)/.exec(id)?.[1] ?? 0);
+        return rung(a) - rung(b);
+      })
+      .map((id) => ({ id, module: authored(courseId, id) }));
+  }
+
+  function lastIndex(courseId: string): WordIndexFile {
+    const indexes = buildWordIndex(courseId, authoredCourse(courseId));
+    const last = indexes[indexes.length - 1];
+    if (last === undefined) throw new Error(`${courseId} built no index`);
+    return last;
+  }
+
+  it('emits case-folded keys, so a mid-sentence `soy` finds the row taught as `Soy`', () => {
+    const index = lastIndex('en-es');
+
+    expect(index.surfaces['soy']).toBeDefined();
+    expect(index.surfaces['Soy']).toBeUndefined();
+    for (const key of Object.keys(index.surfaces)) {
+      expect(key).toBe(key.toLowerCase());
+    }
+  });
+
+  it("emits apostrophe-folded keys: `māʾ` is stored as `mā'`, the key any variant resolves to", () => {
+    const index = lastIndex('en-ar');
+
+    expect(index.surfaces["mā'"]).toBeDefined();
+    expect(index.surfaces['māʾ']).toBeUndefined();
+  });
+
+  it('indexes a hyphenated surface under its parts too, all pointing at the same entry', () => {
+    const index = lastIndex('en-ar');
+
+    expect(index.surfaces['al-hind']).toBeDefined();
+    expect(index.surfaces['hind']).toEqual(index.surfaces['al-hind']);
+    // `al` names the row where the learner first met an al- word — S02's al-Hind.
+    expect(index.surfaces['al']).toEqual(index.surfaces['al-hind']);
+    expect(index.surfaces['qahwa']).toEqual(index.surfaces['al-qahwa']);
+  });
+
+  it('never lets a hyphen part steal a key an earlier surface already owns', () => {
+    const { outRoot } = build(
+      scaffold([
+        {
+          row: courseRow('hi-mr'),
+          modules: [
+            { id: 'L1-M1', verified: true, edit: teachesWord('kot') },
+            { id: 'L1-M2', verified: true, edit: teachesWord('rain-kot') },
+          ],
+        },
+      ]),
+      STRICT,
+    );
+    const index = readIndex(outRoot, 'hi-mr', 'L1-M2');
+
+    // M2's rain-kot earns `rain-kot` and `rain`; `kot` still belongs to the module that taught it.
+    expect(index.surfaces['rain-kot']?.moduleId).toBe('L1-M2');
+    expect(index.surfaces['rain']?.moduleId).toBe('L1-M2');
+    expect(index.surfaces['kot']?.moduleId).toBe('L1-M1');
+  });
+
+  it('resolves every sentence and pool token of all three authored courses — the [Q3] sweep', () => {
+    // The "why" path is sentence displays; the exit ritual reads the pool. Variations are outside
+    // the sweep by design: they legitimately carry untaught tokens (proper nouns like Priya, and
+    // variation-only forms — the documented gap on #61) and the panel drops what cannot resolve.
+    for (const courseId of ['en-ar', 'en-es', 'hi-mr']) {
+      const modules = authoredCourse(courseId);
+      const index = lastIndex(courseId);
+      const lookup = {
+        maxSpan: index.maxSpan,
+        has: (surface: string) => Object.hasOwn(index.surfaces, surface),
+      };
+      const misses: string[] = [];
+      const sweep = (display: string, at: string): void => {
+        for (const match of matchSurfaces(tokenizeSurface(display), lookup)) {
+          if (!match.resolved) misses.push(`${courseId}/${at}: "${match.surface}"`);
+        }
+      };
+      for (const { id, module } of modules) {
+        for (const sentence of module.sentences) sweep(sentence.display, `${id}/${sentence.id}`);
+        for (const item of module.comprehensionPool) sweep(item.display, `${id}/${item.id}`);
+      }
+
+      expect(misses).toEqual([]);
+    }
   });
 });
 

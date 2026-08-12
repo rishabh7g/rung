@@ -28,6 +28,7 @@ import { fileURLToPath } from 'node:url';
 import {
   matchSurfaces,
   normalizeSurface,
+  surfaceIndexKeys,
   surfaceSpan,
   tokenizeSurface,
   type SurfaceLookup,
@@ -400,9 +401,11 @@ function sortedSurfaces(
  * (PRD §6.3) — a module does not re-teach what an earlier one taught, so a module-local index
  * would leave most of L1-M2's own sentences unexplainable (PR #119).
  *
- * Indexed: every word row's `display` and every entry of its `forms`. Nothing else — a variation
- * is a sentence, and a `mistake` is WRONG L2 by definition (deliberately-wrong Spanish, wrong-
- * language intrusions in hi-mr; PR #124), so indexing one would teach the error.
+ * Indexed: every word row's `display` and every entry of its `forms` — each under every key
+ * `surfaceIndexKeys` grants it (#116, [Q3]): the surface itself plus its hyphen parts, so
+ * `al-qahwa` also answers for a bare `qahwa`. Nothing else — a variation is a sentence, and a
+ * `mistake` is WRONG L2 by definition (deliberately-wrong Spanish, wrong-language intrusions in
+ * hi-mr; PR #124), so indexing one would teach the error.
  *
  * Romanized courses index themselves: `display`/`forms` ARE the romanization and the native line
  * lives in `script`, which is never read here — so en-ar indexes `ismī`, never اسمي.
@@ -428,9 +431,12 @@ export function buildWordIndex(
       sentence.deconstruction.words.forEach((word, wordIdx) => {
         for (const raw of [word.display, ...word.forms]) {
           const surface = normalizeSurface(raw);
-          if (surface === '' || surfaces.has(surface)) continue;
-          surfaces.set(surface, { moduleId: shipped.id, sentenceId: sentence.id, wordIdx });
-          maxSpan = Math.max(maxSpan, surfaceSpan(surface));
+          if (surface === '') continue;
+          for (const key of surfaceIndexKeys(surface)) {
+            if (surfaces.has(key)) continue;
+            surfaces.set(key, { moduleId: shipped.id, sentenceId: sentence.id, wordIdx });
+            maxSpan = Math.max(maxSpan, surfaceSpan(key));
+          }
         }
       });
     }

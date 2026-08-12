@@ -134,7 +134,7 @@ describe('loadIndex', () => {
     expect(index.cumulativeThrough).toEqual(['L1-M1']);
     // The reason maxSpan exists: `Me llamo` is one taught surface of two tokens.
     expect(index.maxSpan).toBe(2);
-    expect(index.surfaces['Me llamo']).toEqual({
+    expect(index.surfaces['me llamo']).toEqual({
       moduleId: 'L1-M1',
       sentenceId: 'L1-M1-S01',
       wordIdx: 0,
