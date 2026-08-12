@@ -282,6 +282,9 @@ const SENTENCE = 'L1-M2-S01';
 const CALLS: Record<string, (store: AppStore) => void> = {
   ensureCourse: (store) => store.ensureCourse(COURSE),
   setActiveCourse: (store) => store.setActiveCourse('en-ar'),
+  // The switch flow (#106): switching away from a course must leave its counters exactly where
+  // the learner's work put them — that is the ticket's whole promise (Invariant 8).
+  switchCourse: (store) => store.switchCourse('en-ar'),
   setSetting: (store) => store.setSetting('elapsedTickEnabled', false),
   setLadder: (store) => store.setLadder(COURSE, ladderFromLevels(levelsFixture(COURSE).levels)),
   markStudied: (store) => store.markStudied(COURSE, 'L1-M2'),

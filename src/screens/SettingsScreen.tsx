@@ -15,10 +15,12 @@
  * (Invariant 2). Under that, the reassurance note: switching never erases anything
  * (Invariant 8), in the course's own words.
  *
- * Selection change calls the bare `setActiveCourse` — the store's one-string swap — which
- * re-boots `CourseProvider` into the chosen course's strings and content. The full switch FLOW
- * (the confirmation toast naming both courses, `switchToast`) is #106's, and lands on top of
- * this same write.
+ * Selection change runs the switch flow (#106): `switchCourse` — the store action that ensures
+ * the target's subtree, moves the pointer and resets transient UI, touching no per-course
+ * persistent state (Invariant 8) — re-boots `CourseProvider` into the chosen course's strings
+ * and content, and when the target's bundle IS what this screen is rendering from, the toast
+ * confirms the switch in the TARGET course's own words (`switchToast`), naming both pairs:
+ * the course now active and the course whose ladder is saved exactly where it was.
  *
  * What the learner reads here is the course's (`settings.*` strings); the section kickers, the
  * dropdown's label and the tick toggle's rows are English shell furniture in the register of
@@ -27,12 +29,13 @@
  * Invariant 4): there is nothing to configure about features the product does not have, and
  * the test sweeps this screen's controls to prove none crept in.
  */
-import { useId } from 'react';
+import { useEffect, useId, useRef } from 'react';
 import { BRAND } from '../brand.ts';
 import { useCourse } from '../course/CourseProvider.tsx';
 import { interpolate, useStrings, type Strings } from '../course/strings.ts';
 import { currentRungId, rungStage, type ProgressionInput } from '../engine/progression.ts';
 import { useAppStore } from '../state/store.ts';
+import { Toast, useToast } from '../shell/Toast.tsx';
 import { rungLabel } from './ladder/rungLabel.ts';
 import { RegistrationMarks } from './RegistrationMarks.tsx';
 import { useProgression } from './useProgression.ts';
@@ -41,7 +44,7 @@ import styles from './SettingsScreen.module.css';
 export default function SettingsScreen() {
   const { course, courses } = useCourse();
   const strings = useStrings();
-  const setActiveCourse = useAppStore((store) => store.setActiveCourse);
+  const switchCourse = useAppStore((store) => store.switchCourse);
   const setSetting = useAppStore((store) => store.setSetting);
   const tickEnabled = useAppStore((store) => store.settings.elapsedTickEnabled);
   // The active course's ladder, loaded and derived — the same lines the Ladder starts with, so
@@ -50,6 +53,26 @@ export default function SettingsScreen() {
 
   const selectId = useId();
   const tickLabelId = useId();
+
+  const { message: toastMessage, show: showToast } = useToast();
+  // The course this screen rendered last — the toast's memory of whose ladder is being left.
+  // A ref rather than state: it is only ever read against the render's own `course`, and the
+  // one transition it detects is the provider re-booting into another course.
+  const renderedCourse = useRef(course);
+
+  // The toast waits for the switch to be TRUE, not merely requested: `switchCourse` moves the
+  // pointer synchronously, but the provider re-boots strings and content before this screen
+  // sees the target as `course` — and only then is `strings.switchToast` the target course's
+  // own template (#106: the whole voice changes with the course, the toast's included). So the
+  // trigger is the arrival, not the tap: when the course this render holds is not the one the
+  // last render held, the switch just completed, and both pair labels are at hand.
+  useEffect(() => {
+    const left = renderedCourse.current;
+    renderedCourse.current = course;
+    if (left.id === course.id) return;
+
+    showToast(interpolate(strings.switchToast, { to: course.pairLabel, from: left.pairLabel }));
+  }, [course, strings, showToast]);
 
   // No ladder, no status: before the levels resolve (or when the content layer is broken —
   // that failure belongs to the screens that render the ladder, not to Settings) the slot is
@@ -75,7 +98,7 @@ export default function SettingsScreen() {
             id={selectId}
             className={styles.select}
             value={course.id}
-            onChange={(event) => setActiveCourse(event.target.value)}
+            onChange={(event) => switchCourse(event.target.value)}
           >
             {courses.map((row) => (
               <option key={row.id} value={row.id}>
@@ -155,6 +178,11 @@ export default function SettingsScreen() {
         </span>{' '}
         Built by Rishabh, for one learner.
       </p>
+
+      {/* The switch confirmation (#106) — the shared transient line (#86), in the TARGET
+          course's words and direction: by the time a message is up, `course` is the course
+          switched to. */}
+      <Toast message={toastMessage} dir={course.dir} />
     </section>
   );
 }

@@ -61,6 +61,8 @@ beforeEach(() => {
   storage = memoryStorage();
   useAppStore.persist.setOptions({ storage: createJSONStorage(() => storage.api) });
   useAppStore.getState()._reset();
+  // The transient tier `switchCourse` sweeps — a leftover key must not leak between cases.
+  sessionStorage.clear();
 });
 
 afterEach(() => {
@@ -600,6 +602,95 @@ describe('per-course isolation (Invariant 8)', () => {
     setActiveCourse('hi-mr');
 
     expect(useAppStore.getState().courses['en-es']?.sessionCount).toBe(3);
+  });
+});
+
+/* --------------------------------------------------------------- the switch flow */
+
+describe('switchCourse (#106 — swap, and nothing erased)', () => {
+  /** A course mid-everything: ladder position, counters, queue, flags, and a resumable session. */
+  const MID_CLIMB: CourseState = {
+    modules: { 'L1-M1': { status: 'passed', passedAt: '2026-02-02T02:40:00.000Z' } },
+    production: { 'L1-M2-S01': 2, 'L1-M2-S02': 1 },
+    reviewQueue: [{ sentenceId: 'L1-M1-S01', box: 2, dueInSessions: 1 }],
+    sessionCount: 14,
+    studied: { 'L1-M1': true, 'L1-M2': true },
+    session: { phase: 'produce', idx: 1, queue: ['L1-M2-S01', 'L1-M2-S02'] },
+  };
+
+  it('round-trips hi-mr → en-ar → hi-mr with every per-course fact EXACTLY restored (F0 AC)', () => {
+    const store = useAppStore.getState();
+    store.ensureCourse('hi-mr');
+    store.setActiveCourse('hi-mr');
+    writeCourse('hi-mr', MID_CLIMB);
+    const before = useAppStore.getState().courses['hi-mr'];
+    const snapshot = structuredClone(before);
+
+    store.switchCourse('en-ar');
+    // Real work in the other course — the round trip must survive more than an idle visit.
+    writeCourse('en-ar', { sessionCount: 3, production: { 'L1-M1-S01': 1 } });
+    const enArSnapshot = structuredClone(useAppStore.getState().courses['en-ar']);
+    store.switchCourse('hi-mr');
+
+    expect(useAppStore.getState().activeCourse).toBe('hi-mr');
+    // The deep-equal: ladder position, production counters, review queue and the resumable
+    // session snapshot, exactly as they were left — and by identity, because no switch ever
+    // rebuilt the subtree at all.
+    expect(useAppStore.getState().courses['hi-mr']).toEqual(snapshot);
+    expect(useAppStore.getState().courses['hi-mr']).toBe(before);
+    // The course switched THROUGH kept its own work too.
+    expect(useAppStore.getState().courses['en-ar']).toEqual(enArSnapshot);
+  });
+
+  it('gives a first-visited course its empty subtree, and deletes nobody’s (Invariant 8)', () => {
+    const store = useAppStore.getState();
+    store.ensureCourse('hi-mr');
+    store.setActiveCourse('hi-mr');
+    writeCourse('hi-mr', MID_CLIMB);
+
+    store.switchCourse('en-es');
+
+    expect(useAppStore.getState().activeCourse).toBe('en-es');
+    expect(useAppStore.getState().courses['en-es']).toEqual(emptyCourseState());
+    expect(useAppStore.getState().courses['hi-mr']).toEqual(MID_CLIMB);
+  });
+
+  it('resets the transient UI tier — the rung: sessionStorage keys — and only that tier', () => {
+    const store = useAppStore.getState();
+    store.ensureCourse('hi-mr');
+    store.setActiveCourse('hi-mr');
+    writeCourse('hi-mr', MID_CLIMB);
+    // The module list's open cards and scroll offset (#88), the transient state a switch resets.
+    sessionStorage.setItem(
+      'rung:module-view:hi-mr:L1-M1',
+      JSON.stringify({ scrollTop: 120, expanded: ['L1-M1-S01'] }),
+    );
+    sessionStorage.setItem('someone-elses-key', 'not ours to sweep');
+
+    store.switchCourse('en-ar');
+
+    expect(sessionStorage.getItem('rung:module-view:hi-mr:L1-M1')).toBeNull();
+    expect(sessionStorage.getItem('someone-elses-key')).toBe('not ours to sweep');
+    // The persisted document is the other tier, and the sweep cannot reach it: what storage
+    // holds after the switch still carries hi-mr's whole subtree.
+    const persisted = stored().state as { courses: Record<string, unknown> };
+    expect(persisted.courses['hi-mr']).toEqual(MID_CLIMB);
+  });
+
+  it('is a no-op on the course already active — nothing swept, nothing written', () => {
+    const store = useAppStore.getState();
+    store.ensureCourse('hi-mr');
+    store.setActiveCourse('hi-mr');
+    const state = useAppStore.getState();
+    sessionStorage.setItem('rung:module-view:hi-mr:L1-M1', '{"scrollTop":80,"expanded":[]}');
+
+    store.switchCourse('hi-mr');
+
+    // Same state object: re-picking the active course moved nothing, so nothing reset either.
+    expect(useAppStore.getState()).toBe(state);
+    expect(sessionStorage.getItem('rung:module-view:hi-mr:L1-M1')).toBe(
+      '{"scrollTop":80,"expanded":[]}',
+    );
   });
 });
 

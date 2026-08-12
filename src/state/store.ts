@@ -6,8 +6,8 @@
  * subtree existing at all, settings, the two writes progression needs (#83), the production
  * counters (#95), the review queue and the session snapshot (#96, #103) — and every rule those
  * obey is derived in `src/engine/` (`progression.ts`, `exit.ts`, `leitner.ts`), which the store
- * asks rather than reimplements. The full course-switch flow with its toast (#106) lands in its
- * own ticket and writes through this same shape.
+ * asks rather than reimplements. The course-switch flow (#106) writes through this same shape:
+ * `switchCourse` below is its one store-side write, and the toast is the Settings screen's.
  *
  * Four properties this module is responsible for keeping true:
  *
@@ -103,10 +103,34 @@ export interface AppActions {
    */
   ensureCourse: (courseId: CourseId) => void;
   /**
-   * The bare swap: moves the pointer, touches no course data. The learner-facing switch flow
-   * (confirm, toast, re-boot of strings and content) is #106.
+   * The bare swap: moves the pointer, touches no course data. The boot path's write — the first
+   * run records the course the manifest resolved. A learner-made switch goes through
+   * `switchCourse` below, which calls this.
    */
   setActiveCourse: (courseId: CourseId) => void;
+  /**
+   * **The course switch, whole** (#106, PRD §8 F0 [D19]): make sure the target has a subtree
+   * (`ensureCourse`), move the pointer (`setActiveCourse`), and reset the transient UI tier —
+   * and NOTHING else. Every per-course persistent fact — the passed set, the counters, the
+   * review queue, the `studied` flags, the resumable `session` snapshot — is left exactly as it
+   * was, by construction: this action holds no write of its own, and neither call it delegates
+   * to touches course data (Invariant 8; eng §17 — the prototype resets session state on
+   * switch, and the product must not).
+   *
+   * "Transient UI" is a tier, not a list: everything this app keeps in **sessionStorage** under
+   * the `rung:` namespace (the module lists' open cards and scroll offsets, #88/#89, and
+   * whatever joins them) is the current visit's UI and nothing the learner earned — which is
+   * exactly why it lives outside the one persisted document. A switch starts the new course's
+   * screens fresh by sweeping that tier; the document (`rung:state`, localStorage) it cannot
+   * touch.
+   *
+   * Switching to the course already active is a no-op — nothing moved, so nothing resets.
+   *
+   * The provider re-boots into the target's strings and content on the pointer move
+   * (`CourseProvider` subscribes to `activeCourse`), and the toast naming both courses is the
+   * Settings screen's, from the TARGET course's bundle.
+   */
+  switchCourse: (courseId: CourseId) => void;
   setSetting: <K extends keyof Settings>(key: K, value: Settings[K]) => void;
   /**
    * Hands the store a course's ladder, as loaded from `levels.json` (`ladderFromLevels`). Call it
@@ -341,6 +365,30 @@ export function migrate(persisted: unknown, fromVersion: number): AppState {
   };
 }
 
+/**
+ * The transient UI tier, swept — `switchCourse`'s one side effect (#106).
+ *
+ * The tier is defined by where it lives, not by a list of keys: this app keeps exactly two kinds
+ * of client state, the persisted document (`rung:state`, **localStorage** — progress, the export
+ * contract) and the current visit's UI (**sessionStorage** under the same `rung:` namespace —
+ * `screens/module/moduleView.ts`'s open cards and scroll offsets today, and any one-shot flag
+ * that joins them). Sweeping the namespace rather than naming the keys means a screen that adds
+ * a transient record later is covered by the switch without an edit here.
+ *
+ * Wrapped, like every `sessionStorage` access in the app: a locked-down browser (Safari private
+ * mode, storage disabled) throws on touch, and a browser that could never remember a scroll
+ * offset has nothing to reset.
+ */
+function clearTransientUi(): void {
+  try {
+    for (const key of Object.keys(sessionStorage)) {
+      if (key.startsWith('rung:')) sessionStorage.removeItem(key);
+    }
+  } catch {
+    // Storage the browser refuses to open never held any transient UI to clear.
+  }
+}
+
 export const useAppStore = create<AppStore>()(
   persist(
     (set, get) => ({
@@ -359,6 +407,20 @@ export const useAppStore = create<AppStore>()(
         ),
 
       setActiveCourse: (courseId) => set({ activeCourse: courseId }),
+
+      // The switch flow's store half (#106) — see the interface. Three delegated moves and no
+      // write of its own: the target gets a subtree, the pointer moves, the transient tier
+      // resets. Per-course persistent state is untouched by construction (Invariant 8) — the
+      // scans in unlockPath.test.ts and productionCounters.test.ts read this body like any
+      // other action's and find nothing.
+      switchCourse: (courseId) => {
+        if (get().activeCourse === courseId) return;
+
+        const { ensureCourse, setActiveCourse } = get();
+        ensureCourse(courseId);
+        setActiveCourse(courseId);
+        clearTransientUi();
+      },
 
       setSetting: (key, value) =>
         set((state) => ({ settings: { ...state.settings, [key]: value } })),

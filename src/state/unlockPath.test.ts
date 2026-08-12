@@ -208,6 +208,10 @@ describe('the scanner itself', () => {
 const CALLS: Record<string, (store: AppStore) => void> = {
   ensureCourse: (store) => store.ensureCourse('hi-mr'),
   setActiveCourse: (store) => store.setActiveCourse('en-ar'),
+  // The switch flow (#106): a pointer move plus a transient-UI sweep. Per-course persistent
+  // state — the passed set first of all — is exactly what a switch must never touch
+  // (Invariant 8), which is why it delegates and holds no write of its own.
+  switchCourse: (store) => store.switchCourse('en-ar'),
   setSetting: (store) => store.setSetting('elapsedTickEnabled', false),
   setLadder: (store) => store.setLadder('hi-mr', ladderFromLevels(levelsFixture('hi-mr').levels)),
   markStudied: (store) => store.markStudied('hi-mr', 'L1-M2'),

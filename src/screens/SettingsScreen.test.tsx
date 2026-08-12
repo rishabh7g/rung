@@ -83,6 +83,7 @@ beforeEach(() => {
   resetManifestCache();
   resetStringsCache();
   useAppStore.getState()._reset();
+  sessionStorage.clear();
   window.location.hash = '';
 });
 
@@ -158,18 +159,51 @@ describe('the COURSE dropdown (F0)', () => {
     expect(within(select).getByRole('option', { name: 'french → german' })).toBeInTheDocument();
   });
 
-  it('writes the one string a switch may write, and re-boots into that course’s words', async () => {
+  it('runs the switch flow (#106): pointer moved, target ensured, re-boots into its words', async () => {
     const select = await renderSettings();
 
     fireEvent.change(select, { target: { value: 'en-es' } });
 
-    // The bare swap (#106 adds the toast on top): the pointer moved, and nothing else did.
+    // `switchCourse`: the pointer moved and the target's subtree exists, at once.
     expect(useAppStore.getState().activeCourse).toBe('en-es');
+    expect(useAppStore.getState().courses['en-es']).toBeDefined();
     // The provider re-boots into the chosen course's bundle — the note is en-es's now.
     expect(
       await screen.findByText(stringValue('en-es', 'settings.switchNote')),
     ).toBeInTheDocument();
     // Invariant 8: the switch created the new subtree and deleted nobody's.
+    expect(useAppStore.getState().courses[COURSE]).toBeDefined();
+  });
+
+  it('confirms with the toast in the TARGET course’s words, naming both pairs (#106)', async () => {
+    const ladder = tenRungLadder(3);
+    climb(ladder, 'L1-M1');
+    const before = useAppStore.getState().courses[COURSE];
+    const select = await renderSettings(ladder);
+
+    fireEvent.change(select, { target: { value: 'en-es' } });
+
+    // The template is en-es's own `switchToast` — the fixture value self-identifies its course —
+    // `{to}` filled with the target's pairLabel and `{from}` with the pair being left.
+    const toast = await screen.findByText('en-es switchToast english → spanish hindi → marathi');
+    // …delivered as the shared transient line (#86): a polite live region, no dismiss control.
+    expect(toast.closest('[role="status"]')).not.toBeNull();
+    // And the promise the toast speaks is true: the ladder left behind is the very object it was.
+    expect(useAppStore.getState().courses[COURSE]).toBe(before);
+  });
+
+  it('resets transient UI on switch — the module views’ open cards and offsets (#106)', async () => {
+    const select = await renderSettings();
+    sessionStorage.setItem(
+      'rung:module-view:hi-mr:L1-M1',
+      JSON.stringify({ scrollTop: 120, expanded: ['L1-M1-S01'] }),
+    );
+
+    fireEvent.change(select, { target: { value: 'en-es' } });
+
+    // The sweep is synchronous with the swap: the new course's screens start fresh.
+    expect(sessionStorage.getItem('rung:module-view:hi-mr:L1-M1')).toBeNull();
+    // Transient is ALL it reset — the persistent subtree is still there (Invariant 8).
     expect(useAppStore.getState().courses[COURSE]).toBeDefined();
   });
 
