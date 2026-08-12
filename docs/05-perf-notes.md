@@ -1,4 +1,4 @@
-# Perf notes — font subsetting per course + the payload budget (#113)
+# Perf notes — font subsetting per course, the payload budget, the first-load pass (#113, #114)
 
 Created by #113, per PRD-engineering §10 [D15] ("subset per course at build time") and
 design/pwa-checklist.md §2. Starting point: docs/04-font-notes.md §5, which measured the unsubset
@@ -97,7 +97,95 @@ sign-off (each is ~a third of the Devanagari payload); subset to the shipped mod
 index rather than all authored strings if content ships gradually; or raise the limit with a
 written justification here, which #113's acceptance explicitly allows.
 
-## 5. Reproducing
+## 5. First load ≤ 2 s on mid-range Android (#114)
+
+**Verdict in one line:** the deployed build passes the PRD §10 gate as it stands — Lighthouse
+mobile perf **98–100**, TTI **1.5–1.8 s** on the throttled profile — so this pass shipped **no
+app-code changes** (the issue's own rule: measurement-driven fixes only) and instead locked the
+result in as two new budget rows, `js` and `total` (§6).
+
+### 5.1 Baseline — and, with no fixes needed, also the "after"
+
+Three Lighthouse 12 runs (headless Chromium, this repo's Playwright cache) against the deployed
+URL `https://rishabh7g.github.io/rung/`, Lighthouse's default mobile profile — the issue's target
+device class: mid-range-Android CPU (4× slowdown), simulated Slow 4G (RTT 150 ms, 1.6 Mbps),
+412×823 viewport:
+
+| run | perf score | FCP     | LCP     | TTI     | TBT  | CLS    |
+| --- | ---------: | ------: | ------: | ------: | ---: | -----: |
+| 1   |         99 | 1.63 s  | 1.78 s  | 1.78 s  | 0 ms | 0.001  |
+| 2   |        100 | 1.38 s  | 1.53 s  | 1.53 s  | 0 ms | 0.002  |
+| 3   |         98 | 1.73 s  | 1.73 s  | 1.73 s  | 0 ms | 0.000  |
+
+Acceptance asks ≥ 90 and ≤ 2 s: worst run is 98 and 1.78 s. Zero blocking time — the bundle
+parses inside the paint budget even at 4× CPU.
+
+What the first paint actually transfers (run 1's network log, gzip on the wire):
+
+| resource                         | transfer | note                                          |
+| -------------------------------- | -------: | --------------------------------------------- |
+| index.html                       |  1.3 KiB |                                               |
+| assets/index-\*.js               | 85.6 KiB | the whole app — react-dom is 129 KiB raw of it |
+| assets/index-\*.css              |  8.9 KiB |                                               |
+| workbox-window                   |  2.3 KiB | SW registration shim                          |
+| barlow latin-400 + cond-700      | 44.1 KiB | the only fonts the first screen needs         |
+| manifest + courses.json + icons  |  2.3 KiB | courses.json is 20 bytes (native gate #64)    |
+
+### 5.2 The audit, point by point
+
+- **`font-display: swap`** — verified on all six Mukta faces (`src/fonts/mukta.css`) and every
+  @fontsource face; text paints in the fallback and swaps, never blocks.
+- **Preload the primary Mukta weight — measured, and declined.** The first screen is shell
+  English: `unicode-range` routing means the browser fetches **zero Mukta files** before first
+  paint (the network log above shows exactly two Barlow files). A preload would ADD Mukta bytes
+  to the critical path of a paint that renders no Devanagari — strictly negative at today's
+  numbers. Revisit only if a Devanagari-first screen ever becomes the boot route.
+- **No double-bundling** — one-off `vite build --sourcemap` + `source-map-explorer` (not
+  committed, per the issue): react-dom 129.0 KiB, app 89.6 KiB, react-router 37.5 KiB, react
+  8.3 KiB, scheduler 3.9 KiB, lucide-react 3.7 KiB (tree-shaken from ~30 MB), zustand 2.5 KiB —
+  raw, one copy of each, sums to the 275.7 KiB bundle.
+- **SW registration not blocking first paint** — `registerServiceWorker()` runs in the module
+  body, but `registerSW` only queues an async `navigator.serviceWorker.register`; TBT 0 ms is
+  the receipt. `immediate: true` stays: precaching must start on the first visit, the only
+  networked moment the product has.
+- **Content JSON lazy** — `courses.json` (20 bytes) is the only pre-paint fetch;
+  `levels/modules/words` load per screen through `src/course/content.ts`'s promise cache.
+- **No speculative code-splitting** — JS is 92.9 KiB gzip against the issue's 200 KB ceiling and
+  TTI is 1.5–1.8 s; the numbers do not demand a second chunk, so there isn't one.
+- **Installability + offline unchanged** — this pass touched `tools/`, tests and docs only; the
+  built artefact (bundle, sw.js, 20-entry precache) is byte-identical to the one the §3.6 gate
+  walked in docs/05-pwa-notes.md §4, so that evidence stands.
+
+### 5.3 Reproducing the measurement
+
+```bash
+CHROME_PATH=~/.cache/ms-playwright/chromium-1232/chrome-linux/chrome \
+  npx -y lighthouse@12 https://rishabh7g.github.io/rung/ \
+  --only-categories=performance \
+  --chrome-flags="--headless=new --no-sandbox --disable-gpu" \
+  --output=json --output-path=./lh.json --quiet
+```
+
+## 6. The budget table after #114
+
+`tools/payload-budget.ts` now carries three rows, still one line each on every full
+`scripts/verify.sh`:
+
+| id    | meters                              | measure | limit   | at baseline |
+| ----- | ----------------------------------- | ------- | ------: | ----------: |
+| fonts | every `.woff2`                      | raw     | 150 KiB |    99.1 KiB |
+| js    | every `.js` (bundle + workbox + sw) | gzip    | 200 KiB |    92.9 KiB |
+| total | everything in `dist/`               | gzip    | 400 KiB |   204.4 KiB |
+
+`gzip` meters transfer (GitHub Pages serves text assets gzip; `gzipSync` at the default level is
+the approximation), `raw` meters disk — right for woff2, which is already compressed. `total` is
+honest as "the first visit" because the SW precache is all of `dist/` (§1): 400 KiB is what Slow
+4G moves in ~2.2 s, so the whole walk-away-from-the-wifi moment stays cheap, not just the
+interactive slice TTI gates. **§4's tripwire now trips twice:** when hi-mr's content passes the
+native gate, the ~+260 KiB of Devanagari subsets send `fonts` AND `total` red together — same
+deliberate rebalance, same options, written down up there.
+
+## 7. Reproducing
 
 ```bash
 npm run content:build && npm run fonts:build   # strict content, then the subsets from it
