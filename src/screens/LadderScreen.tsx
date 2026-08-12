@@ -32,7 +32,7 @@
  * `passRitual` guards with. A count rendered here and a rule enforced there cannot disagree,
  * because they are the same derivation.
  */
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Lock } from 'lucide-react';
 import { useCourse } from '../course/CourseProvider.tsx';
@@ -45,7 +45,7 @@ import {
   rungStage,
   type RungStage,
 } from '../engine/progression.ts';
-import { HOME_PATH, justPassed } from '../shell/routes.tsx';
+import { HOME_PATH, justPassed, justRestored } from '../shell/routes.tsx';
 import { Toast, useToast } from '../shell/Toast.tsx';
 import { LevelStrip, type LevelCell, type SquareState } from './ladder/LevelStrip.tsx';
 import { RungCard } from './ladder/RungCard.tsx';
@@ -63,6 +63,10 @@ export default function LadderScreen() {
   // rung card's `exit_ready` stage is read here rather than injected (#95).
   const { levels, input, ready } = useProgression();
   const justUnlocked = useUnlockBeat();
+  // The import's confirmation (#108): when the navigation says a backup was just restored, the
+  // one toast — in the words of the course the file made active, which is the course this render
+  // already holds (the restore moved the pointer before the navigation happened).
+  useRestoredToast(toast.show, strings.importToast);
 
   // A broken ladder is the content layer failing, which is one screen wherever it fails (#79).
   if (levels.error !== null) return <ContentErrorScreen detail={levels.error.message} />;
@@ -243,6 +247,26 @@ function useUnlockBeat(): string | null {
   }, [justUnlocked, navigate]);
 
   return justUnlocked;
+}
+
+/**
+ * The import's arrival toast (#108) — `justRestored`'s consumer, in the unlock beat's shape:
+ * the flag is read once off the entry that carried it, the toast is raised once (the ref guards
+ * a re-run — a provider re-boot changes the strings' identity without changing the fact), and
+ * the entry is replaced stateless so a reload of it is a Ladder with nothing to announce.
+ */
+function useRestoredToast(show: (message: string) => void, message: string): void {
+  const { state } = useLocation();
+  const navigate = useNavigate();
+  const [restored] = useState(() => justRestored(state));
+  const announced = useRef(false);
+
+  useEffect(() => {
+    if (!restored || announced.current) return;
+    announced.current = true;
+    show(message);
+    navigate(HOME_PATH, { replace: true, state: null });
+  }, [restored, show, message, navigate]);
 }
 
 /** Which level of the ladder a module is on, 1-based — `0` for an id the ladder does not list. */

@@ -233,6 +233,25 @@ export interface AppActions {
     sentenceIds: readonly SentenceId[],
     clock?: Clock,
   ) => void;
+  /**
+   * **The import's one write (#108, PRD §8 F7): a backup document, restored whole.** Takes a
+   * document `importState` (serialize.ts) has already validated field by field — this action is
+   * the pen, never the judge — and replaces the persisted state with it: every course subtree,
+   * the active course, the settings. A replace, not a merge: a course the file does not hold is
+   * gone, because a restore that quietly kept pieces the file never promised would tell the
+   * learner their history is back while handing them something else.
+   *
+   * Like `migrate` above, it carries and never authors: nothing in it can mark a module passed
+   * that the document does not already hold, and the document can only hold what `importState`'s
+   * vocabularies admit (Invariant 4) — `unlockPath.test.ts` and `productionCounters.test.ts`
+   * carry its exemption from the no-other-writer sweeps on exactly that argument. The two-sided
+   * confirm before any call is the screen's (#108); this action trusts its caller showed it.
+   *
+   * It leaves `ladders` alone (content, not progress — this build's course layer owns it) and
+   * sweeps the transient sessionStorage tier exactly as `switchCourse` does: open cards, scroll
+   * offsets and the rest of the visit's UI belong to the state being replaced.
+   */
+  restoreBackup: (document: AppState) => void;
   /** Dev + tests only: back to first-run state. No screen may call this — there is no Erase. */
   _reset: () => void;
 }
@@ -653,6 +672,13 @@ export const useAppStore = create<AppStore>()(
         get().passRitual(courseId, moduleId, clock, (reviewQueue) =>
           enrol(reviewQueue, [...sentenceIds]),
         ),
+
+      // The F7 restore (#108) — see the interface. The whole validated document in one `set`
+      // (storage never holds half a restore), and the same transient sweep as `switchCourse`.
+      restoreBackup: (document) => {
+        set({ ...document });
+        clearTransientUi();
+      },
 
       // Back to first-run state, ladders included: the course layer re-registers them on boot, and
       // a ladder left behind would outlive the state it describes.

@@ -301,6 +301,26 @@ const CALLS: Record<string, (store: AppStore) => void> = {
   // to them.
   completeRitual: (store) =>
     store.completeRitual(COURSE, 'L1-M1', [SENTENCE], () => '2026-02-02T02:40:00.000Z'),
+  // The F7 restore (#108): the import's full-document replace. It carries a validated document's
+  // counters in whole — a restore of yesterday's file legitimately holds yesterday's numbers, so
+  // like `_reset` it sits outside the never-lower sweeps; unlike everything else it cannot EDIT a
+  // counter, only land a document some device's `recordProduction` already counted up.
+  restoreBackup: (store) =>
+    store.restoreBackup({
+      stateVersion: 6,
+      activeCourse: COURSE,
+      courses: {
+        [COURSE]: {
+          modules: {},
+          production: { [SENTENCE]: 2 },
+          reviewQueue: [],
+          sessionCount: 1,
+          studied: {},
+          session: null,
+        },
+      },
+      settings: { elapsedTickEnabled: true },
+    }),
   // Dev + tests only, and it can only erase: `_reset` blanks the whole document back to first run.
   // It cannot raise a counter, which is the direction this file is about. Checked on its own below.
   _reset: (store) => store._reset(),
@@ -339,19 +359,20 @@ describe('no other action can move what the learner has produced', () => {
     expect(Object.keys(CALLS).sort()).toEqual(actionNames());
   });
 
-  it.each(Object.keys(CALLS).filter((name) => name !== WRITER && name !== '_reset'))(
-    '%s leaves the counters exactly as it found them',
-    (name) => {
-      seedHiMr();
-      const before = productionOf(COURSE);
+  it.each(
+    Object.keys(CALLS).filter(
+      (name) => name !== WRITER && name !== 'restoreBackup' && name !== '_reset',
+    ),
+  )('%s leaves the counters exactly as it found them', (name) => {
+    seedHiMr();
+    const before = productionOf(COURSE);
 
-      CALLS[name]?.(useAppStore.getState());
+    CALLS[name]?.(useAppStore.getState());
 
-      // Same object, not merely equal: nothing rebuilt it, so nothing could have counted for it.
-      expect(productionOf(COURSE)).toBe(before);
-      expect(productionOf(COURSE)).toEqual({ [SENTENCE]: 2 });
-    },
-  );
+    // Same object, not merely equal: nothing rebuilt it, so nothing could have counted for it.
+    expect(productionOf(COURSE)).toBe(before);
+    expect(productionOf(COURSE)).toEqual({ [SENTENCE]: 2 });
+  });
 
   it('recordProduction does write — so the check above is not passing on an empty map', () => {
     seedHiMr();
@@ -391,9 +412,11 @@ describe('recordProduction counts up, and only up', () => {
 
     // Every action, twice through: the counter may only ever rise. The second pass makes
     // `passRitual` refuse (its rung has moved on), which is the other case worth pinning — an
-    // action that throws must not have moved a counter on its way out either.
+    // action that throws must not have moved a counter on its way out either. The two document
+    // movers sit outside the sweep: `_reset` erases and `restoreBackup` (#108) replaces — a
+    // restored file legitimately holds yesterday's numbers, which is not an edit to today's.
     for (const name of [...Object.keys(CALLS), ...Object.keys(CALLS)]) {
-      if (name === '_reset') continue;
+      if (name === '_reset' || name === 'restoreBackup') continue;
       try {
         CALLS[name]?.(useAppStore.getState());
       } catch {
