@@ -1,16 +1,21 @@
-# Font notes — bundling Mukta + Barlow (#85), and Noto Naskh Arabic (#197)
+# Font notes — Mukta + Barlow (#85), Noto Naskh Arabic (#197), Source Sans 3 (#222)
 
 Findings from self-hosting the product faces [D15]. This file is in `docs/`, not
 `design/`: `design/font-notes.md` is design-owned, and `design/` is re-copied wholesale from
 Rishabh's tooling, which wipes anything added to it (`docs/design-contract.md`).
 
-§1–§7 are #85's three faces. **§8 is the fourth**, added when Arabic shipped — and it is also
-where the one engineering override of a `design/tokens.css` value is written down.
+§1–§7 are #85's three faces. **§8 is the fourth**, added when Arabic shipped. **§9 is the fifth**,
+and is where the romanization's diacritics stop rendering in the device's system face. §8 and §9
+are also where the two engineering overrides of `design/tokens.css` values are written down.
 
-**Verdict in one line:** every Devanagari specimen renders in Mukta at every ramp size and
-weight, including the 18px floor; `ī ā ū` render in Barlow, but **`ʾ` (U+02BE), `ʿ` (U+02BF) and
-`ḥ` (U+1E25) are not in Barlow or Barlow Condensed** and fall back to a system face; the bundle
-ships **823,736 bytes (804 KiB) of woff2**, unsubset, for #113 to cut.
+**Verdict in one line, as of #85:** every Devanagari specimen renders in Mukta at every ramp size
+and weight, including the 18px floor; `ī ā ū` render in Barlow, but **`ʾ` (U+02BE), `ʿ` (U+02BF)
+and `ḥ` (U+1E25) are not in Barlow or Barlow Condensed** and fall back to a system face; the
+bundle ships **823,736 bytes (804 KiB) of woff2**, unsubset, for #113 to cut.
+
+**Where that ended up:** the second clause turned out to be measuring the wrong face — §4.1 — and
+§9 closes it for the face that actually draws the marks. Nothing in the product renders a
+romanization diacritic in a system face any more.
 
 ---
 
@@ -46,8 +51,14 @@ unused byte in `dist/` is a byte a phone downloads.
 
 `src/dev/TypeSpecimen.tsx`, reachable at `#/dev/type` **in development only**. It renders the
 Devanagari matrix (14 specimens × 18/22/26/32px × 400/500/600/700, every size from the ramp token
-that owns it), the romanization diacritics in Barlow at 15px and 13px × 400/500/600, and the
-Barlow Condensed kickers with `--kicker-tracking`.
+that owns it), the romanization diacritics — since #222, **twice**: in the L2 ramp
+(`--font-devanagari`, 18/22/26/32px × 400/600/700, which is where they actually render) and in
+Barlow at 15px and 13px, which is what [D15]'s original wording asked for — and the Barlow
+Condensed kickers with `--kicker-tracking`.
+
+**Showing them in Barlow alone is how the gap survived three tickets.** The specimen was answering
+a question the product does not ask; §4.1 measured the one it does. The L2 rows are the ones to
+look at now.
 
 Two things about it are deliberate:
 
@@ -123,40 +134,63 @@ cue — is a `--text-l2-*` token, and all four resolve to `--font-devanagari` (`
 shell English only. So the table above answers a question the product does not ask; the question
 it does ask is what **Mukta** covers.
 
-**Mukta covers less.** Its `latin` subset is @fontsource's own range — `U+0000-00FF` plus a
-handful of named codepoints — and Mukta ships no `latin-ext` at all, so it has no glyph to retain
-past U+00FF whatever `tools/font-subset.ts` asks for. The whole diacritic repertoire of the
-course therefore falls through to `system-ui`:
+**Mukta's `latin` subset covers less.** It is @fontsource's own range — `U+0000-00FF` plus a
+handful of named codepoints — so it has no glyph past U+00FF to retain whatever
+`tools/font-subset.ts` asks for. The whole diacritic repertoire of the course therefore fell
+through to `system-ui`:
 
 | character | in Mukta's `latin`? |
 |---|---|
-| `ā` U+0101, `ī` U+012B, `ū` U+016B | **no** — outside the range, and no `latin-ext` subset exists |
+| `ā` U+0101, `ī` U+012B, `ū` U+016B | **no** — outside the range |
 | `ḥ ṣ ḍ ṭ ẓ` U+1E25/1E63/1E0D/1E6D/1E93 | **no** |
-| `ʾ` U+02BE, `ʿ` U+02BF | **no** (`ʼ` U+02BC *is* in range) |
+| `ʾ` U+02BE, `ʿ` U+02BF | **no** (`ʼ` U+02BC is in the declared range, and Mukta has no glyph there either) |
 | `é` U+00E9 and the ASCII letters | **yes** — harvested from the content per course |
 
-So an en-ar sentence reads as Mukta for its plain letters and the system face for its marks — a
-mixed-face line, not tofu. It is the documented fall-through working as designed
-(`src/fonts/mukta.css`: "a range is routing, not a promise of coverage"), and it is the reason
-`main.tsx` keeps Barlow's `latin-ext` imports **dev-only** even now: pulling them into the
+So an en-ar sentence read as Mukta for its plain letters and the system face for its marks — a
+mixed-face line, not tofu. It was the documented fall-through working as designed
+(`src/fonts/mukta.css`: "a range is routing, not a promise of coverage"), and it is still the
+reason `main.tsx` keeps Barlow's `latin-ext` imports **dev-only**: pulling them into the
 production graph would add bytes every learner downloads and fix nothing, because Barlow is not in
-the stack that renders the marks.
+the stack that renders the marks — and Barlow's latin-ext has no `ḥ`, `ʾ` or `ʿ` to give it.
 
-Fixing it is a **face decision**, which is [D15]'s to make and not this ticket's — the options
-below stand unchanged, with option 3 now the only one that fully closes it.
+> **This paragraph's original claim was wrong, and finding out is what closed the ticket.** It
+> read "Mukta ships no `latin-ext` at all". Mukta ships seven `latin-ext` weights;
+> **this build had simply never asked for one** — `tools/font-subset.ts` had two Mukta targets,
+> `devanagari` and `latin`, so nothing in the graph pointed at the file. See §9.2.
 
-Options, in order of cost:
+### 4.1.1 Decided: 2026-08-13 — option 3, a diacritic-complete L2 face (#222)
 
-1. Accept the fallback and pin it in a token of its own, so the choice is deliberate rather than
-   a browser's guess — what ships today, unpinned.
-2. Author romanization with alternatives the L2 face does cover (`ʼ` U+02BC is in Mukta's range;
-   `h` with no dot loses the distinction, and the whole ALA-LC scheme in `courses.json` would have
-   to be reissued along with every surface in the word index).
-3. Swap the L2 face for a diacritic-complete one *for romanized courses*, which is what [D15]
-   authorises — a design decision, not an engineering one. The only option that closes the gap.
+**The romanization's marks are drawn by the bundle, in the face the letters beside them are drawn
+in wherever that face has a glyph.** `--font-devanagari` becomes a two-face stack —
+`"Mukta", "Source Sans 3", system-ui, sans-serif` — Mukta's own `latin-ext` cut joins the
+per-course subsetter, and Source Sans 3 is bundled at 400/600/700 with a `unicode-range` of
+exactly the four codepoints Mukta cannot draw. The full record, with the measurements it rests on,
+is **§9**.
 
-Subsetting (#113) shipped without this settled, which is why the marks land on the fall-through
-path rather than in a retained glyph set.
+Why not the other two, in the words the decision was made in:
+
+- **Option 1 (accept and pin the fall-through)** leaves a mixed-face line at a different weight
+  and a different advance in the LARGEST text on the screen — `--text-l2-hero` is 32px — on the
+  course that just shipped. Pinning names the second face; it does not stop there being one.
+- **Option 2 (re-author the romanization)** is expensive and lossy. It would reissue the ALA-LC
+  scheme across `content/courses.json` and every surface in the word index, and dotless `h`
+  destroys the `ḥ`/`h` distinction the Arabic content deliberately encodes. Three review passes
+  (#199, #200, #201) verified that romanization character by character; throwing it away is the
+  worst trade on the table.
+- **Option 3** is the only one that closes the gap, [D15] authorises it, and it fits:
+  `course:en-ar` was 96.6 KiB against a 360 KiB limit — 263 KiB of headroom for a change that
+  costs 8.4.
+
+**Two faces on one line, and why that is the honest answer to "one face or say why not".** Twelve
+of the sixteen marks en-ar ships come from Mukta itself, so `ṣabāḥ`, `ismī` and `ḥasan` are one
+face end to end. Four cannot be: `ʾ` U+02BE, `ʿ` U+02BF, `Ẓ` U+1E92 and `ẓ` U+1E93 exist in no
+weight of Mukta, and no amount of subsetting invents a glyph. Those four draw in **Source Sans 3**,
+chosen because its Latin is the closest fit to Mukta's of every candidate with the coverage
+(x-height 486/1000 em against Mukta's 468; §9.2 has the table). Two of the four — hamza and ʿayn —
+are ring marks with no Mukta counterpart to clash against; the third and fourth are a rare `ẓ`.
+
+Subsetting (#113) shipped before this was settled, which is why the marks spent three tickets on
+the fall-through path rather than in a retained glyph set.
 
 ## 5. Bytes shipped
 
@@ -184,7 +218,7 @@ Cuts for #113, cheapest first, with one caveat measured here:
 | cut | saves | note |
 |---|---:|---|
 | all `vietnamese` subsets | 46,008 | nothing in this product is Vietnamese |
-| Mukta `latin-ext` | 59,944 | Mukta's role is Devanagari; its Latin-ext is unreachable |
+| Mukta `latin-ext` | 59,944 | Mukta's role is Devanagari; its Latin-ext is unreachable — **wrong, and #222 says so: it is where twelve of the romanization's sixteen marks live. Three weights of it are subset back in, for 11,036 bytes** |
 | Mukta 500 (all subsets) | 142,236 | no ramp token renders Mukta 500 today |
 | Barlow Condensed `latin-ext` | 43,336 | only needed if a heading or kicker ever carries `ī`/`ā`/`ū` |
 | per-course subset of Mukta devanagari | up to ~380,000 | the big one: hi-mr's word index is a few hundred glyphs, not the whole block |
@@ -409,3 +443,181 @@ npm run dev                          # then Settings → english → arabic → 
 The attribution is a CDP session against the dev server: `CSS.getPlatformFontsForNode` on each
 `.script` node. A screenshot alone is not proof — DejaVu Sans draws Arabic, badly, without tofu —
 which is why the width comparison and the per-node attribution are both here.
+
+---
+
+## 9. The romanization's diacritics — decided 2026-08-13 (#222)
+
+**Verdict in one line:** the L2 face becomes a two-face stack, `"Mukta", "Source Sans 3",
+system-ui` — **twelve** of the sixteen marks en-ar ships come out of Mukta's own `latin-ext` cut,
+which this build had never asked for, and the four Mukta has no glyph for (`ʾ` U+02BE, `ʿ` U+02BF,
+`Ẓ` U+1E92, `ẓ` U+1E93) come out of a Source Sans 3 subset whose `unicode-range` claims those four
+codepoints and nothing else; `course:en-ar` goes **96.6 → 110.3 KiB gzip** against a 360 KiB limit,
+every other course's row is **unchanged to the decimal**, and the shell precache stays 17 files.
+
+This is §4's **option 3**, taken. §4.1.1 records the decision and why options 1 and 2 were not.
+
+### 9.1 What is bundled, and why it is allowed in the repo
+
+| | |
+|---|---|
+| new family | **Source Sans 3**, weights 400 · 600 · 700, `latin-ext` subset only |
+| package | `@fontsource/source-sans-3@5.3.0` (three source files, 98,684 bytes woff2 together) |
+| licence | **SIL Open Font License 1.1** — `node_modules/@fontsource/source-sans-3/LICENSE`, and `"license": "OFL-1.1"` in its `package.json` |
+| may we bundle it? | **Yes**, on exactly the terms §8.1 sets out for Noto Naskh Arabic: OFL §2 permits bundling and redistribution with software, the notice and licence travel with the package, and the family declares **no** Reserved Font Name — so the subsetting this build does, a Modified Version under OFL §1, needs no rename. |
+| new subset of an existing family | **Mukta `latin-ext`**, weights 400 · 600 · 700 — no new package, no new licence question |
+
+**Three weights, not one.** The marks are inside `--text-l2-cue` (400), `--text-l2-card` /
+`--text-l2-list` (600) and `--text-l2-hero` (700), so they render at every weight Mukta renders
+the letters at. One weight would have left the hero's `ʿ` as a browser-synthesised bold beside a
+real Mukta 700 `a` — the exact failure [D15] is about, and the argument that cut Mukta 500 in #113
+run in reverse. `src/fonts.test.ts` derives the requirement from the ramp rather than trusting
+this paragraph: since #222 it reads **every** named family in a `--font-*` stack, not just the
+head, so a face the product renders in second place is held to the ramp exactly as Mukta is.
+
+### 9.2 Why Source Sans 3 — coverage first, then fit, both measured
+
+**Coverage.** Every candidate was subset with HarfBuzz against the sixteen marks en-ar actually
+ships and the output's `cmap` read back, which answers "does this face **draw** it?" — a question
+a `unicode-range` can never answer:
+
+| face | `ā ī ū` | `ḍ ḥ ṣ ṭ` (+ caps) | `ʾ ʿ` | `Ẓ ẓ` |
+|---|---|---|---|---|
+| **Mukta** `latin-ext` (the L2 face) | ✅ | ✅ | ❌ | ❌ |
+| **Source Sans 3** | ✅ | ✅ | ✅ | ✅ |
+| Noto Sans | ✅ | ✅ | ✅ | ✅ |
+| Barlow / Barlow Condensed (the shell faces) | ✅ | ❌ | ❌ | ❌ |
+| IBM Plex Sans · Open Sans · Hind | ✅ | ❌ | ❌ | ❌ |
+| Noto Naskh Arabic's own `latin-ext` | ✅ | ❌ | ❌ | ❌ |
+
+Two faces cover the gap. The choice between them is **optical fit next to Mukta's Latin**, because
+the marks are not ornaments — they are the letters `a i u d h s t z` with a stroke added, standing
+inside a word whose other letters are Mukta's. A face 14 % taller in the x-height puts a visibly
+bigger letter in the middle of `ʿind`. Read from each font's `head` and `OS/2` tables, per 1000 em:
+
+| face | x-height | cap height | Δ x-height vs Mukta |
+|---|---:|---:|---:|
+| **Mukta** (what the marks stand beside) | 468 | 630 | — |
+| **Source Sans 3** | 486 | 660 | **+3.8 %** |
+| Barlow | 506 | 700 | +8.1 % |
+| IBM Plex Sans | 516 | 698 | +10.3 % |
+| Noto Sans | 536 | 714 | +14.5 % |
+
+Noto Sans is the obvious sibling of the bundled Noto Naskh Arabic and it loses on the only
+criterion that matters here. Source Sans 3 wins by measurement, not by taste.
+
+**And the correction that made all of this cheap.** §4.1 asserted "Mukta ships no `latin-ext` at
+all". It ships seven weights of one; `tools/font-subset.ts` had simply never had a target pointing
+at the file, and §5's cut table had written it off as "unreachable" on the same assumption. Asking
+the real file yields `ā ī ū ē ō ḍ Ḍ ḥ Ḥ ṛ ṣ Ṣ ṭ Ṭ` — a Devanagari face carrying the Indic
+transliteration set, which is exactly what a romanization needs. So the expensive half of the
+problem was already paid for and un-shipped, and the new family is left drawing four codepoints.
+
+### 9.3 The routing
+
+Two `ScriptTarget`s, both named `latin-ext`, on two faces:
+
+- **Mukta** — `U+0100-017F`, `U+1E00-1E9F`. Latin Extended-A for the long vowels (and the `ē ō` a
+  future scheme may want), Latin Extended Additional for the dot-below emphatics and their
+  capitals. Declared **after** the `latin` blocks in `src/fonts/mukta.css`: the two subsets are
+  disjoint in what they carry, but @fontsource's declared `latin` range names `U+0131` and
+  `U+0152-0153`, codepoints the `latin` cut has no glyph for and this one does — the later block
+  winning them is the browser choosing the file that can actually draw them.
+- **Source Sans 3** — `U+02BE-02BF`, `U+1E92-1E93`. Exactly the gap. A wider range would download
+  a second face to draw glyphs Mukta already has; the overlap with Mukta's `U+1E00-1E9F` at
+  `Ẓ ẓ` is deliberate and is how family order is meant to work — Mukta is named first, is asked
+  first, and has nothing to give.
+- **Baseline: none.** Every other target's baseline is punctuation a line carries whatever it
+  says. A diacritic cut is letters end to end, and letters are the one thing content decides — a
+  build with no romanized course emits an empty cut rather than ten marks nobody renders.
+
+**No range claims a character that carries no script**, and that is not an aesthetic point. #211
+found every course downloading the Arabic face because the offline warm sampled whitespace and
+format characters that several `unicode-range`s claim at once (`U+0020`, `U+200C-200E`). Both new
+ranges start at U+0100 and contain no space, joiner, digit or ASCII letter, so the class of bug
+cannot come back through them. `tools/font-subset.test.ts` asserts it twice: once against a string
+of the neutral characters, once against the **actual authored content of every course** —
+
+    coveredChars(courseText('hi-mr'), latinExt)      → ''
+    coveredChars(courseText('en-es'), diacritics)    → ''
+    coveredChars(courseText('en-ar'), latinExt)      → non-empty
+
+— so a hi-mr or en-es learner never paints a codepoint either range claims and never fetches a
+byte of either file. hi-mr's whole non-ASCII Latin repertoire is one character, `·` U+00B7;
+en-es's is `¿ á é í ñ ó ú` and their capitals, all below U+00FF and all already Mukta's.
+
+### 9.4 Bytes, exactly
+
+Measured from `dist/` after `npx vite build`, strict build (hi-mr, en-es, en-ar):
+
+| generated file | source | subset |
+|---|---:|---:|
+| `mukta-latin-ext-400.woff2` | 14,676 | **3,688** |
+| `mukta-latin-ext-600.woff2` | 14,972 | **3,636** |
+| `mukta-latin-ext-700.woff2` | 15,424 | **3,712** |
+| `source-sans-3-latin-ext-400.woff2` | 32,868 | **948** |
+| `source-sans-3-latin-ext-600.woff2` | 32,900 | **972** |
+| `source-sans-3-latin-ext-700.woff2` | 32,916 | **980** |
+| **total** | 143,756 | **13,936** |
+
+Against the rows `tools/payload-budget.ts` gates (`scripts/verify.sh`, strict build):
+
+| row | before #222 | after #222 | limit | |
+|---|---:|---:|---:|---|
+| `course:en-ar` | 96.6 KiB | **110.3 KiB** | 360 KiB | ok, +13.7 |
+| `course:hi-mr` | 337.9 KiB | **337.9 KiB** | 360 KiB | **unchanged** |
+| `course:en-es` | 71.3 KiB | **71.3 KiB** | 360 KiB | **unchanged** |
+| `shell` | 215.8 KiB | **215.9 KiB** | 230 KiB | +0.1 — the six `@font-face` blocks in the CSS |
+| `first-paint` | 174.7 KiB | **174.9 KiB** | 185 KiB | same 0.1 |
+| `precache` | 17 files, 207.3 KiB | **17 files, 207.5 KiB** | = `shell` | ok |
+
+**No limit was raised**, and the two rows that matter most are the ones that did not move. A
+diacritic cut is a `latin-ext` script in `tools/payload-budget.ts`'s owner table, and
+`coursesFromManifest` charges it to a course whose `scriptMode` is `romanized` — so it is
+`course:en-ar`'s alone, out of the shell precache by the same `PRECACHE_IGNORES` line that keeps
+Devanagari and Arabic out (`tools/pwa.ts`, derived from `COURSE_SCRIPTS`), and warmed onto a
+device only by the course that paints it (`src/pwa/offlineCourse.ts`).
+
+### 9.5 [D15], answered
+
+> *"…ʾ/ḥ/ī diacritics of the romanization must render in Barlow — verify glyph coverage, fall back
+> to a diacritic-complete face if needed."* — `design/PRD-engineering.md` §10 [D15]
+
+**Answer: they do not render in Barlow, they never did, and the fall-back clause is taken.** The
+premise was wrong in a way §4.1 measured — the romanization is `--font-devanagari`, not
+`--font-body`, so Barlow was never in its stack — and the coverage the clause asks to verify has
+now been verified per character against the real font files (§9.2). The diacritic-complete face
+the clause authorises is bundled: **Mukta's own `latin-ext` for twelve of the marks, Source Sans 3
+for the four Mukta cannot draw.** Nothing in the romanization renders in a system face any more.
+
+`design/` is read-only and re-copied wholesale (docs/design-contract.md), so the answer is
+recorded here and in `docs/PRD-engineering.md` §10 rather than written back into the clause —
+the same rule that puts the token change in `src/styles/tokenOverrides.css` instead of
+`design/tokens.css`. That token change is the second row of the override register:
+
+| token | `design/tokens.css` | the app | why |
+|---|---|---|---|
+| `--font-devanagari` | `"Mukta", system-ui, sans-serif` | `"Mukta", "Source Sans 3", system-ui, sans-serif` | Mukta has no glyph for four of the romanization's marks; the face behind it does. `system-ui` stays last — this adds a face to the stack, it does not remove a fall-through. |
+
+### 9.6 Reproducing
+
+```bash
+npm run build && npm run budget    # BUDGET course:en-ar 110.3 KiB gzip ≤ 360.0 KiB ok — 30 files
+find dist -name 'mukta-latin-ext-*' -o -name 'source-sans-3-*' | wc -l    # 6
+grep -c 'latin-ext' dist/sw.js                                           # 0 — never precached
+```
+
+On the deployed build, the same three facts read straight off the wire:
+
+```bash
+base=https://rishabh7g.github.io/rung
+css=$(curl -s $base/ | grep -o '/rung/assets/index-[^"]*\.css')
+curl -s $base${css#/rung} | grep -o 'unicode-range:U+2BE-2BF,U+1E92-1E93'   # the gap, routed
+curl -s $base${css#/rung} | grep -o 'unicode-range:U+100-17F,U+1E00-1E9F'   # Mukta's own marks
+curl -sI $base/assets/source-sans-3-latin-ext-400-*.woff2 | head -1         # 200, ~948 bytes
+```
+
+Glyph-level truth is a browser question and this host runs no browser: the evidence here is the
+`cmap` of the real subsets (`tools/font-subset.test.ts` reads it with HarfBuzz, in CI-visible
+assertions rather than a screenshot), the ranges in the served CSS, and the per-course byte rows
+above. `/dev/type` in a browser on another machine remains the way to see it.

@@ -121,6 +121,23 @@ describe('the Latin specimens', () => {
     }
   });
 
+  it('renders them in the L2 stack too, at every ramp weight — the face that actually draws them (#222)', async () => {
+    await renderSpecimen();
+
+    const rows = screen
+      .getAllByRole('list')
+      .filter((list) => list.dataset.face === 'l2-romanization');
+
+    // The gap this page hid until #222: the marks render in `--font-devanagari`, not Barlow, so
+    // a specimen that only showed them in Barlow could stay green while the product mixed faces.
+    expect(rows.length).toBeGreaterThan(0);
+    expect(new Set(rows.map((list) => Number(list.dataset.weight)))).toEqual(
+      new Set([400, 600, 700]),
+    );
+    // Including the two Mukta cannot draw — Source Sans 3's whole job.
+    expect(screen.getAllByText('ṣabāḥ · ẓuhr').length).toBeGreaterThan(0);
+  });
+
   it('renders them in Barlow at the one weight the ramp gives prose (#113)', async () => {
     await renderSpecimen();
 

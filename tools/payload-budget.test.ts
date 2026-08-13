@@ -80,6 +80,24 @@ describe('reading the shipped courses off the manifest', () => {
     ]);
   });
 
+  it('charges a ROMANIZED course for the diacritic cuts as well as its native script (#222)', () => {
+    const courses = coursesFromManifest({
+      courses: [
+        { id: 'hi-mr', l1Tag: 'hi', l2Tag: 'mr', scriptMode: 'native' },
+        { id: 'en-es', l1Tag: 'en', l2Tag: 'es', scriptMode: 'native' },
+        { id: 'en-ar', l1Tag: 'en', l2Tag: 'ar', scriptMode: 'romanized' },
+      ],
+    });
+
+    // `scriptMode`, not the tag: a Hindi course written in Devanagari prints no ā or ḥ, and a
+    // Hindi course written in Latin letters would print both.
+    expect(courses).toEqual([
+      { id: 'hi-mr', scripts: ['devanagari'] },
+      { id: 'en-es', scripts: [] },
+      { id: 'en-ar', scripts: ['arabic', 'latin-ext'] },
+    ]);
+  });
+
   it('survives a manifest with no courses — a strict build that ships nothing is not a crash', () => {
     expect(coursesFromManifest({})).toEqual([]);
     expect(coursesFromManifest({ courses: [] })).toEqual([]);
@@ -92,6 +110,14 @@ describe('the script a font file serves, read off its own name', () => {
     expect(fontScript('assets/noto-naskh-arabic-arabic-400-Ab12cdEf.woff2')).toBe('arabic');
     expect(fontScript('assets/mukta-latin-400-C8sBt92T.woff2')).toBe(null);
     expect(fontScript('assets/barlow-latin-400-normal-qiz4-Cze.woff2')).toBe(null);
+  });
+
+  it('tells the diacritic cuts apart from the shared latin one they sit beside (#222)', () => {
+    expect(fontScript('assets/mukta-latin-ext-600-Kd93nfQ1.woff2')).toBe('latin-ext');
+    expect(fontScript('assets/source-sans-3-latin-ext-700-Zx01pLm2.woff2')).toBe('latin-ext');
+    // The one that must not drift: `mukta-latin-*` is the shell's, and `-latin-` is a prefix of
+    // `-latin-ext-`. Reading `<face>-<script>-<weight>` with the dashes is what keeps them apart.
+    expect(fontScript('assets/mukta-latin-700-C8sBt92T.woff2')).toBe(null);
   });
 });
 
@@ -124,6 +150,19 @@ describe('attribution: every shipped file has exactly one owner', () => {
       kind: 'course',
       ids: ['en-ar'],
     });
+  });
+
+  it('charges the romanized course, and only it, for the diacritic cuts (#222)', () => {
+    // Both files serve `latin-ext`, which in this product means "the marks of a romanization" —
+    // so a hi-mr or en-es learner is billed for neither, and neither reaches the shell precache.
+    const romanized = [HI_MR, EN_ES, { id: 'en-ar', scripts: ['arabic', 'latin-ext'] as const }];
+
+    for (const file of [
+      'assets/mukta-latin-ext-400-Kd93nfQ1.woff2',
+      'assets/source-sans-3-latin-ext-700-Zx01pLm2.woff2',
+    ]) {
+      expect(attribute(file, romanized), file).toEqual({ kind: 'course', ids: ['en-ar'] });
+    }
   });
 
   it('leaves the course faces’ `latin` subset in the shell — it is subset over every course at once', () => {

@@ -72,8 +72,15 @@ const WEIGHTS = [
  * Latin Extended-A/Additional plus two modifier letters (ʾ U+02BE, ʿ U+02BF) — the corner of the
  * Latin range a display face is likeliest to have skipped, which is why §10 says verify coverage
  * and fall back to a diacritic-complete face if it fails.
+ *
+ * They are rendered TWICE, and #222 is why. This page used to show them in Barlow only, because
+ * the PRD names Barlow — and that is the reason a live gap survived three tickets: a romanized
+ * course's L2 line is `--font-devanagari`, so Barlow is not the face that draws it and the
+ * specimen was answering a question the product does not ask (docs/04-font-notes.md §4.1). The
+ * first block below is the ramp the marks actually render at; the Barlow block stays as the
+ * record of what [D15]'s original wording asked for.
  */
-const ROMANIZATION = ['ismī', 'ʾanā', 'ḥasan', 'ī ā ū ʿ ʾ'] as const;
+const ROMANIZATION = ['ismī', 'ʾanā', 'ḥasan', 'ī ā ū ʿ ʾ', 'ṣabāḥ · ẓuhr'] as const;
 
 /** Barlow carries the UI, and the romanization sits in its two prose sizes. */
 const BODY_STEPS = [
@@ -122,6 +129,35 @@ export default function TypeSpecimen() {
                 >
                   {DEVANAGARI.map((word) => (
                     <li key={word}>{word}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        ))}
+      </section>
+
+      <section className={styles.section}>
+        <h2 className={styles.sectionHead}>
+          Romanization · Mukta + Source Sans 3 · --font-devanagari
+        </h2>
+        {SIZES.map((size) => (
+          <div key={size.px} className={styles.block} data-size={size.px}>
+            <h3 className={styles.blockHead}>
+              {size.px}px — {size.token}
+            </h3>
+            {WEIGHTS.map((weight) => (
+              <div key={weight.weight} className={styles.row}>
+                <span className={styles.rowLabel}>{weight.weight}</span>
+                <ul
+                  className={`${styles.specimen} ${styles.devanagari} ${size.className} ${weight.className}`}
+                  lang="ar-Latn"
+                  data-face="l2-romanization"
+                  data-size={size.px}
+                  data-weight={weight.weight}
+                >
+                  {ROMANIZATION.map((sample) => (
+                    <li key={sample}>{sample}</li>
                   ))}
                 </ul>
               </div>

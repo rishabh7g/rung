@@ -14,6 +14,13 @@
  * glyph-subset: they carry the shell's open-ended English UI, so `main.tsx` imports their
  * `latin` subset files whole and drops the rest (latin-ext, vietnamese) instead.
  *
+ * Source Sans 3 joined on the narrowest terms of all (#222): the romanization's diacritics.
+ * `ā ī ū ḍ ḥ ṣ ṭ` and their capitals are in Mukta's OWN `latin-ext` file — a subset this build had
+ * never asked for — so they are cut here as a third Mukta target and draw in the same face as the
+ * letters around them. The four marks Mukta has no glyph for (`ʾ` U+02BE, `ʿ` U+02BF, `Ẓ ẓ`
+ * U+1E92-1E93) are Source Sans 3's, at the three ramp weights, routed by a `unicode-range` that
+ * claims those four codepoints and nothing else. docs/04-font-notes.md §9 carries the decision.
+ *
  * Noto Naskh Arabic joined on the same terms (#197): a romanized course prints its L2 in Latin
  * letters and sets the sentence again, quietly, in its own script (`--font-script-fallback`), and
  * until this face was bundled that line drew in whatever Arabic the device happened to own — or
@@ -32,6 +39,9 @@
  *     carries whatever the sentence says. Naskh's own `latin` subset is deliberately NOT bundled:
  *     a Latin character inside a script line routes out of the Arabic `unicode-range` to
  *     `system-ui`, which is what it did before this face existed (docs/04-font-notes.md §8).
+ *   • **No diacritic baseline at all** — the two `latin-ext` cuts are letters end to end, and
+ *     letters are exactly what content decides. A build with no romanized course in it emits an
+ *     empty cut rather than ten marks nobody renders.
  *   • **The `/dev/type` specimen, dev builds only.** The specimen words (ळ, the conjuncts, the
  *     candrabindu — `src/dev/TypeSpecimen.tsx`) are read out of the component's source, the same
  *     source-scan idiom as `tools/make-icons.ts`, so the matrix stays tofu-free in the builds where
@@ -44,9 +54,10 @@
  * curve: en-ar was a four-sentence fixture cut to ~2 KiB until #199-#201 authored the ladder and
  * #202 shipped it, at which point the Naskh subset became ~10 KiB of real content.
  *
- * `src/fonts/mukta.css` and `src/fonts/naskh.css` (both committed) declare the `@font-face` blocks
- * pointing at the generated files; `tools/font-subset.test.ts` keeps the two in sync. The
- * generated woff2 are gitignored — they are derived from content the same way `public/content/` is.
+ * `src/fonts/mukta.css`, `src/fonts/naskh.css` and `src/fonts/source-sans-3.css` (all committed)
+ * declare the `@font-face` blocks pointing at the generated files; `tools/font-subset.test.ts`
+ * keeps them in sync. The generated woff2 are gitignored — they are derived from content the same
+ * way `public/content/` is.
  */
 import { mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
@@ -74,16 +85,22 @@ export const MUKTA_WEIGHTS = [400, 600, 700] as const;
     line ever asks for a weight this list lacks. */
 export const NASKH_WEIGHTS = [400] as const;
 
+/** The Source Sans 3 weights the romanization renders (#222) — the L2 ramp's three, because the
+    marks sit inside `--text-l2-cue` (400), `--text-l2-card`/`--text-l2-list` (600) and
+    `--text-l2-hero` (700) exactly as the letters beside them do. One weight would leave the hero's
+    `ʿ` synthesised from 400 while its `a` came from Mukta 700 — the failure [D15] is about. */
+export const SOURCE_SANS_WEIGHTS = [400, 600, 700] as const;
+
 /**
  * A script target, mirroring @fontsource's own split — one source file, one output, one
  * `unicode-range` per script. A character no target claims falls through to the next family in
- * its stack — `system-ui` — by design, which is what happens to the romanization's ā ī ū ḥ ṣ ḍ ṭ
- * ẓ ʾ ʿ: Mukta draws every L2 line, its `latin` range stops at U+00FF, and Mukta has no glyph
- * beyond it to retain. That is a real, live gap now that en-ar ships (#202) and it is a face
- * decision, not a subsetting one — docs/04-font-notes.md §4 states it and names the options.
+ * its stack by design; before #222 that is what happened to the romanization's ā ī ū ḥ ṣ ḍ ṭ ẓ ʾ ʿ,
+ * which landed on `system-ui` because Mukta's `latin` range stops at U+00FF. Two targets close it
+ * now — Mukta's own `latin-ext` for the twelve marks it draws, Source Sans 3's for the four it
+ * does not (docs/04-font-notes.md §9).
  */
 export interface ScriptTarget {
-  subset: 'devanagari' | 'latin' | 'arabic';
+  subset: 'devanagari' | 'latin' | 'latin-ext' | 'arabic';
   /** Does this codepoint belong to this target's `unicode-range`? */
   covers: (codePoint: number) => boolean;
   /** Characters included no matter what the content build shipped. */
@@ -97,7 +114,7 @@ export interface ScriptTarget {
  * one row here, one committed `@font-face` sheet, and nothing else.
  */
 export interface SubsetFace {
-  slug: 'mukta' | 'noto-naskh-arabic';
+  slug: 'mukta' | 'noto-naskh-arabic' | 'source-sans-3';
   /** The committed sheet whose `url()`s must match this face's outputs exactly. */
   sheet: string;
   weights: readonly number[];
@@ -118,6 +135,12 @@ const DEVANAGARI_BASELINE = '।॥०१२३४५६७८९‌‍';
     are absent for the same reason Mukta's latin baseline has none: content decides those. */
 const ARABIC_BASELINE = ' ،؛؟٠١٢٣٤٥٦٧٨٩ـ‌‍';
 
+/** Nothing (#222). Every other baseline is punctuation a line carries whatever it says; a
+    diacritic subset is nothing BUT letters, and letters are the one thing content decides — a
+    build with no romanized course in it ships an empty cut of these files rather than ten marks
+    nobody renders. */
+const DIACRITIC_BASELINE = '';
+
 export const MUKTA_TARGETS: readonly ScriptTarget[] = [
   {
     subset: 'devanagari',
@@ -134,6 +157,17 @@ export const MUKTA_TARGETS: readonly ScriptTarget[] = [
     subset: 'latin',
     covers: (cp) => cp <= 0x00ff || (cp >= 0x2000 && cp <= 0x206f),
     baseline: LATIN_BASELINE,
+  },
+  /* #222 — the romanization's diacritics, in the face that draws the letters they belong to.
+     Latin Extended-A carries the long vowels (ā ī ū, and the ē ō a future scheme may want);
+     Latin Extended Additional carries the dot-below emphatics (ḍ ḥ ṣ ṭ) and their capitals. Both
+     ranges start past U+00FF, so nothing here can claim a character the `latin` target already
+     draws, and neither claims a space, a joiner or a digit — the overlap class #211 was bitten
+     by. Mukta has no glyph at U+02BE, U+02BF, U+1E92 or U+1E93: those four are Source Sans 3's. */
+  {
+    subset: 'latin-ext',
+    covers: (cp) => (cp >= 0x0100 && cp <= 0x017f) || (cp >= 0x1e00 && cp <= 0x1e9f),
+    baseline: DIACRITIC_BASELINE,
   },
 ];
 
@@ -156,6 +190,22 @@ export const NASKH_TARGETS: readonly ScriptTarget[] = [
   },
 ];
 
+/**
+ * The four codepoints Mukta's `latin-ext` has no glyph for, measured rather than assumed (#222):
+ * `ʾ` U+02BE and `ʿ` U+02BF — hamza and ʿayn, 698 of en-ar's marks between them — and `Ẓ ẓ`
+ * U+1E92-1E93. The range is exactly those four, not the whole of Latin-ext: Mukta is named first
+ * in `--font-devanagari`, so a broad range here would download a face to draw glyphs Mukta
+ * already has. It overlaps Mukta's `latin-ext` range at U+1E92-1E93 and that is how family order
+ * is supposed to work — Mukta is asked first and has nothing to give.
+ */
+export const SOURCE_SANS_TARGETS: readonly ScriptTarget[] = [
+  {
+    subset: 'latin-ext',
+    covers: (cp) => cp === 0x02be || cp === 0x02bf || cp === 0x1e92 || cp === 0x1e93,
+    baseline: DIACRITIC_BASELINE,
+  },
+];
+
 export const FACES: readonly SubsetFace[] = [
   { slug: 'mukta', sheet: 'mukta.css', weights: MUKTA_WEIGHTS, targets: MUKTA_TARGETS },
   {
@@ -163,6 +213,12 @@ export const FACES: readonly SubsetFace[] = [
     sheet: 'naskh.css',
     weights: NASKH_WEIGHTS,
     targets: NASKH_TARGETS,
+  },
+  {
+    slug: 'source-sans-3',
+    sheet: 'source-sans-3.css',
+    weights: SOURCE_SANS_WEIGHTS,
+    targets: SOURCE_SANS_TARGETS,
   },
 ];
 

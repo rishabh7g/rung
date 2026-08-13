@@ -292,6 +292,7 @@ No AI runs at runtime. There is nothing to prompt, no keys to protect, no proxy 
 - Performance: first load ≤ 2 s on mid-range Android over 4G; content bundle is text-only and tiny.
 - Privacy: nothing ever leaves the device except the explicit export the learner shares themselves. One-line in-app notice.
 - Fonts: bundle a Devanagari family with full Marathi coverage — **Mukta** or **Noto Sans Devanagari** — verified for ळ, conjuncts, and matras at small sizes, in both display and *input* contexts. Designer owns final choice; you own bundling/subsetting.
+  - **[D15]'s diacritic clause, answered 2026-08-13 (#222).** `design/PRD-engineering.md` §10 asks that the romanization's `ʾ ḥ ī` render in Barlow, "fall back to a diacritic-complete face if needed". They never rendered in Barlow — every L2 line is `--font-devanagari`, so Barlow was never in their stack — and the fall-back clause is now taken: **Mukta's own `latin-ext` cut draws twelve of the sixteen marks en-ar ships, and a Source Sans 3 subset (OFL 1.1, weights 400/600/700, `unicode-range: U+02BE-02BF, U+1E92-1E93`) draws the four Mukta has no glyph for.** No mark renders in a system face. The measurements, the alternatives rejected, and the per-course byte cost are in `docs/04-font-notes.md` §4.1.1 and §9; `design/` is read-only, so the answer lives here rather than in the clause.
 - Browser targets: Chrome Android + Safari iOS current-1. The riskiest platform detail is now keyboard/IME behaviour in text inputs, not media APIs. **[Q4: P1's exact device + keyboard app?]**
 
 ---
