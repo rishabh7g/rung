@@ -17,8 +17,8 @@
  * fails `tsc`. Nothing else in the repo may hold a second copy of either —
  * `stringsKeys.test.ts` proves there is exactly one declaration of each.
  *
- * Keys are DOT-PATHS into a nested object: `ritual.check.copy` is the path to
- * `{"ritual":{"check":{"copy":…}}}`, which is how the authored files are written. The checker
+ * Keys are DOT-PATHS into a nested object: `ritual.stepTitle.check` is the path to
+ * `{"ritual":{"stepTitle":{"check":…}}}`, which is how the authored files are written. The checker
  * flattens before comparing.
  *
  * FROZEN at Sync-3 (#71): the keys below are the published list PRD-design §8.2 points at, and
@@ -35,9 +35,11 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 83 keys: the 15 of PRD §4, the 5 the frozen screens forced
- * (PR #120) — `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and the four
- * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — the 2 the Ladder
+ * file it is complaining about). 78 keys: the 11 of PRD §4 that survive — its four `ritual.check.*`
+ * lines were read-once copy and went on #230 — the 4 of the 5 the frozen screens forced
+ * (PR #120) that survive: `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and
+ * the three design §6.5 ritual step titles (`ritual.stepTitle.*`); the fifth was
+ * `ritual.check.plateLabel`, which labelled the dashed plate #230 removed — the 2 the Ladder
  * forced (#86): the counts-only pending line and the sealed-level toast,
  * which PRD-design §5 prints as copy but PRD §4's inventory never listed — the 6 the staged rung
  * card forced (#87): a label per CTA across the four [D22] stages — the 4 Sentence Detail forced
@@ -84,11 +86,6 @@ export const STRINGS_KEYS = [
   'ritual.stepTitle.check',
   'ritual.stepTitle.confirm',
   'ritual.constraint',
-  'ritual.check.copy',
-  'ritual.check.plateLabel',
-  'ritual.check.resourcePerson',
-  'ritual.check.resourceInternet',
-  'ritual.check.caption',
   'ritual.confirm.holdLabel',
   'ritual.confirm.done',
   'ritual.confirm.toComprehension',
@@ -183,13 +180,12 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'ritual.stepTitle.write': [],
   'ritual.stepTitle.check': [],
   'ritual.stepTitle.confirm': [],
-  /** How many sentences the new one may not be, and the word cap it must fit. */
-  'ritual.constraint': ['{sentenceCount}', '{maxWords}'],
-  'ritual.check.copy': [],
-  'ritual.check.plateLabel': [],
-  'ritual.check.resourcePerson': [],
-  'ritual.check.resourceInternet': [],
-  'ritual.check.caption': [],
+  /**
+   * The word cap the new sentence must fit — this rung's own, off its module's complexity. It
+   * also named how many sentences the new one may not be (`{sentenceCount}`) until #230 trimmed
+   * the constraint to the bare task.
+   */
+  'ritual.constraint': ['{maxWords}'],
   /** The rendered `ordinal` value — "my 3rd sentence" — not a bare number. */
   'ritual.confirm.holdLabel': ['{ordinal}'],
   'ritual.confirm.done': [],

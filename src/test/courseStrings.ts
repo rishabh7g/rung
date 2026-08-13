@@ -6,7 +6,7 @@
  * about loading, caching and interpolation keep being about those and never about a fixture that
  * fell behind the contract.
  *
- * Values are English and self-identifying (`hi-mr ritual.constraint {sentenceCount} {maxWords}`)
+ * Values are English and self-identifying (`hi-mr ritual.constraint {maxWords}`)
  * — a test asserting on a rendered string should read as the assertion it is, and the shell-purity
  * guard is the thing that has opinions about script. Each value carries exactly that key's
  * canonical placeholders, so an interpolation test can pick any key and get the real shape.
