@@ -133,7 +133,6 @@ describe('the hub', () => {
     expect(screen.getByText(line('practice.hubReview', { count: 0 }))).toBeInTheDocument();
     expect(screen.getByText(line('practice.hubRead', { count: 2 }))).toBeInTheDocument();
     expect(screen.getByText(line('practice.hubProduce', { count: 2 }))).toBeInTheDocument();
-    expect(screen.getByText(strings('practice.guideLine'))).toBeInTheDocument();
     expect(screen.getByRole('button', { name: strings('practice.beginRead') })).toBeInTheDocument();
   });
 
@@ -202,7 +201,8 @@ describe('the hub', () => {
 
     expect(await screen.findByText(strings('pendingAuthoring'))).toBeInTheDocument();
     expect(screen.queryByRole('button', { name: /practice\.begin/ })).not.toBeInTheDocument();
-    expect(screen.queryByText(strings('practice.guideLine'))).not.toBeInTheDocument();
+    // The note replaces the phase list too, so the hub promises nothing it cannot serve.
+    expect(screen.queryByText(strings('practice.phase.read'))).not.toBeInTheDocument();
   });
 });
 
