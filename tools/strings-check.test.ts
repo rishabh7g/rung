@@ -43,15 +43,15 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the three shipped bundles carry — 68 keys, nested, identical', () => {
+  it('is exactly what the three shipped bundles carry — 67 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(68);
+      expect(keys.length, courseId).toBe(67);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(68);
-    expect(new Set(STRINGS_KEYS).size).toBe(68);
+    expect(STRINGS_KEYS.length).toBe(67);
+    expect(new Set(STRINGS_KEYS).size).toBe(67);
   });
 
   /**
@@ -82,19 +82,21 @@ describe('the canonical key list', () => {
   });
 
   /**
-   * The staged rung card's six (#87). Every control across the four [D22] stages is a label the
+   * The staged rung card's five (#87). Every control across the four [D22] stages is a label the
    * learner reads, and PRD-design §6.2 prints them all — in English, for every course, which is
-   * what a prototype does and what a product cannot. Draft values in all three bundles, on #71;
-   * the seventh was the fresh rung's note, read once and removed on #228.
+   * what a prototype does and what a product cannot. Draft values in all three bundles, on #71.
+   * Two of the seven are gone: the fresh rung's note was read once and went on #228, and
+   * `practiceEarlier` went with the pending branch the same PR removed — its link pointed at a
+   * Practice hub with nothing to serve for an unauthored rung. #228 left the orphaned key in
+   * place; #233 retired it.
    */
-  it('carries the six keys the staged rung card forced (#87, #228)', () => {
+  it('carries the five keys the staged rung card forced (#87, #228, #233)', () => {
     const added: StringsKey[] = [
       'rungCard.startModule',
       'rungCard.practice',
       'rungCard.revisitModule',
       'rungCard.exitRitual',
       'rungCard.module',
-      'rungCard.practiceEarlier',
     ];
 
     for (const key of added) expect(STRINGS_KEYS).toContain(key);
