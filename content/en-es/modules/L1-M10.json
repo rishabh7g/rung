@@ -1,0 +1,522 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M10",
+  "title": "Connected talk",
+  "job": "Short 2–3 sentence exchanges",
+  "prerequisites": ["L1-M9"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-13",
+  "complexity": {
+    "minWordsPerSentence": 1,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": ["present", "periphrastic_future"],
+    "allowedPatterns": [
+      "<M1–M9 pattern> + <M1–M9 pattern>",
+      "<question> → <answer + porque/pero + second half>",
+      "<statement> + y/pero + <statement>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Every item here is a TURN — two or three short sentences rather than one long one. No sentence inside a turn goes past the eight words the level allows, and some of them are a single word (Gracias.); what is new is holding the thread, so the person, the tense and the gender stay consistent from the first sentence to the last."
+    },
+    {
+      "tag": "interference",
+      "text": "A turn is where pro-drop is hardest to keep. Once everyone knows who is being talked about, Spanish goes on leaving the pronoun out — sentence after sentence. A yo at the head of each one is not neutral speech; it reads as insistence or as a contrast with someone else. When you really do want the contrast, two words do it: Estoy bien, ¿y tú?"
+    },
+    {
+      "tag": "delta",
+      "text": "y adds and pero contradicts: Quiero pan y café · Voy a trabajar, pero después voy a estudiar. Spanish writes a comma before pero and none before y — the comma is the little breath English also takes there."
+    },
+    {
+      "tag": "delta",
+      "text": "también is \"too\", and it can stand in front of the verb or at the end of the sentence: También quiero una manzana · Quiero una manzana también. It never needs a verb of its own, so \"me too\" as a whole reply is yo también."
+    },
+    {
+      "tag": "delta",
+      "text": "entonces is the conversation's \"so, then\": it moves the talk on to the next step. M9's por eso names the consequence of a reason just given; entonces takes what has been established and does something with it — Hay una tienda cerca. Entonces voy a la tienda."
+    },
+    {
+      "tag": "delta",
+      "text": "The courtesies are learned whole and none of them repays taking apart: gracias · de nada · por favor · perdón · hasta mañana · adiós. de nada is literally \"of nothing\" and is what answers a thank-you; English \"you're welcome\" has no word in common with it."
+    },
+    {
+      "tag": "free",
+      "text": "An answer reuses the question's own verb instead of inventing a new one: ¿Vas a comer? — Claro, vamos a comer. English does exactly the same thing, so this is the one part of a turn that costs nothing to learn — and it is what makes short exchanges easy to build."
+    },
+    {
+      "tag": "delta",
+      "text": "¿Y tú? is the whole of \"and what about you?\" — two words, after your own answer. Said to someone you address as usted it becomes ¿Y usted?, with the same shape and a different pronoun."
+    },
+    {
+      "tag": "delta",
+      "text": "un poco softens whatever follows it: Estoy un poco cansado, Estoy un poco triste. It stands in front of an adjective the way muy does (M8) and says less rather than more. In front of a noun it takes de — un poco de pan."
+    },
+    {
+      "tag": "delta",
+      "text": "perdón opens a request to a stranger and needs nothing after it but the question: Perdón, ¿dónde está la tienda? English builds \"excuse me, could you tell me…\"; Spanish uses one word and then asks."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M10-S01",
+      "display": "Hola, ¿cómo estás? Estoy bien, gracias, ¿y tú?",
+      "cue": "Hi, how are you? — I'm well, thanks, and you?",
+      "glossEn": "lit. \"Hello, how you-are? I-am well, thanks, and you?\"",
+      "literal": "Hello, how you-are? I-am well, thanks, and you?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "y tú",
+            "cue": "and you?",
+            "tag": "delta",
+            "forms": [],
+            "note": "The whole of \"and what about you?\" in two words, handed back after your own answer. To someone you call usted it is ¿Y usted? — and this is the one place a pronoun IS wanted, because the point is the contrast."
+          }
+        ],
+        "rules": [0, 1, 7]
+      },
+      "trap": "The first turn of the course, and both halves are M2's. Nothing here is new except that the question and the answer now live in one breath — and that the answer hands the question back.",
+      "sound": "The question rises and the answer falls; ¿y tú? rises again. Three little waves in one exchange.",
+      "variations": [
+        {
+          "display": "Hola, ¿cómo está usted? Estoy bien, gracias, ¿y usted?",
+          "cue": "Hello, how are you? — I'm well, thanks, and you? (polite)",
+          "changed": "the polite pair, both ends of the turn"
+        },
+        {
+          "display": "Hola, ¿cómo estás? Estoy un poco cansado.",
+          "cue": "Hi, how are you? — I'm a little tired.",
+          "changed": "an honest answer instead of the automatic one"
+        }
+      ],
+      "mistake": {
+        "display": "Hola, ¿cómo estás? Yo estoy bien, gracias.",
+        "why": "The yo is not needed and does not sound polite — it sounds like you are contrasting yourself with somebody. estoy already says who."
+      },
+      "usage": "Every conversation you will ever start.",
+      "register": "informal",
+      "mnemonic": "Answer, then hand it back: ¿y tú?"
+    },
+    {
+      "id": "L1-M10-S02",
+      "display": "¿Qué vas a hacer mañana? Voy a trabajar, pero después voy a estudiar.",
+      "cue": "What are you going to do tomorrow? — I'm going to work, but afterwards I'm going to study.",
+      "glossEn": "lit. \"What you-go to do tomorrow? I-go to work, but afterwards I-go to study.\"",
+      "literal": "What you-go to to-do tomorrow? I-go to to-work, but afterwards I-go to to-study.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pero",
+            "cue": "but",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"But\" — it contradicts or qualifies the half in front of it, and it takes a comma before it. Nothing else changes: both halves keep their own verb and their own tense."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "The second half repeats voy a rather than leaning on the first: Voy a trabajar, pero después voy a estudiar. English can say \"but then study\" and drop the rest; Spanish says the going again.",
+      "sound": "PE-ro, with one tap of the r. Two taps makes perro, which is a dog.",
+      "variations": [
+        {
+          "display": "¿Qué vas a hacer mañana? Voy a trabajar todo el día.",
+          "cue": "What are you going to do tomorrow? — I'm going to work all day.",
+          "changed": "one plan instead of two — no pero needed"
+        },
+        {
+          "display": "Voy a estudiar, pero no voy a trabajar.",
+          "cue": "I'm going to study, but I'm not going to work.",
+          "changed": "the contradiction is a negative this time"
+        }
+      ],
+      "mistake": {
+        "display": "Voy a trabajar, pero después estudiar.",
+        "why": "The second half needs its own verb: pero después voy a estudiar."
+      },
+      "usage": "Answering a question about your day with two plans in it.",
+      "register": "informal",
+      "mnemonic": "pero takes a comma and a full second sentence."
+    },
+    {
+      "id": "L1-M10-S03",
+      "display": "¿Qué quieres comer? Quiero pan y café. También quiero una manzana.",
+      "cue": "What do you want to eat? — I want bread and coffee. I also want an apple.",
+      "glossEn": "lit. \"What you-want to-eat? I-want bread and coffee. Also I-want an apple.\"",
+      "literal": "What you-want to-eat? I-want bread and coffee. Also I-want an apple.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "y",
+            "cue": "and",
+            "tag": "free",
+            "forms": [],
+            "note": "\"And\", joining two things or two sentences, with no comma in front of it. One letter, and it is the smallest word in the course."
+          },
+          {
+            "display": "También",
+            "cue": "also · too",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Too\". It can open the sentence or close it — También quiero una manzana, Quiero una manzana también — and it does not need a verb of its own: as a whole reply, \"me too\" is yo también."
+          }
+        ],
+        "rules": [0, 2, 3]
+      },
+      "trap": "Three sentences, one person, and not a single pronoun in any of them. quieres and quiero are doing all of the naming.",
+      "sound": "y is said \"ee\", like the vowel in English \"see\", and it leans on the word after it. tam-BIÉN takes its stress on the last syllable, where the accent is.",
+      "variations": [
+        {
+          "display": "¿Qué quieres comer? Quiero pan y una manzana también.",
+          "cue": "What do you want to eat? — I want bread and an apple too.",
+          "changed": "también at the end, and the turn shrinks to two sentences"
+        },
+        {
+          "display": "Quiero pan, pero no quiero café.",
+          "cue": "I want bread, but I don't want coffee.",
+          "changed": "pero instead of y — the second half now contradicts"
+        }
+      ],
+      "mistake": {
+        "display": "Quiero pan y café. También una manzana quiero.",
+        "why": "también goes in front of the verb or right at the end, not between the thing and the verb: También quiero una manzana."
+      },
+      "usage": "Adding to your own order without starting again.",
+      "register": "informal",
+      "mnemonic": "y adds a thing; también adds a whole idea."
+    },
+    {
+      "id": "L1-M10-S04",
+      "display": "Un café, por favor. Gracias. De nada.",
+      "cue": "A coffee, please. — Thank you. — You're welcome.",
+      "glossEn": "lit. \"A coffee, please. Thanks. Of nothing.\"",
+      "literal": "A coffee, please. Thanks. Of nothing.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "De nada",
+            "cue": "you're welcome",
+            "tag": "delta",
+            "forms": [],
+            "note": "Literally \"of nothing\", and it is what answers gracias everywhere Spanish is spoken. Two words that travel whole — taking them apart into M1's de and M3's nada explains nothing about how it is used."
+          }
+        ],
+        "rules": [5, 6]
+      },
+      "trap": "Three speakers' worth of Spanish and not one verb in the whole turn. A request can be a noun plus por favor, and both replies are fixed phrases.",
+      "sound": "de-NA-da: the two d's between vowels are soft, close to the th of English \"the\", and the stress is on the first NA.",
+      "variations": [
+        {
+          "display": "Dos cafés, por favor. Gracias. De nada.",
+          "cue": "Two coffees, please. — Thank you. — You're welcome.",
+          "changed": "M8's plural, and the courtesies do not move"
+        },
+        {
+          "display": "Una botella de agua, por favor. Gracias.",
+          "cue": "A bottle of water, please. — Thank you.",
+          "changed": "a two-sentence turn"
+        }
+      ],
+      "mistake": {
+        "display": "Un café, por favor. Gracias. Bienvenido.",
+        "why": "bienvenido is \"welcome to this place\", said to a guest arriving. The answer to gracias is de nada."
+      },
+      "usage": "The whole of a transaction at a counter.",
+      "register": "neutral",
+      "mnemonic": "gracias → de nada. Learn the pair, not the words."
+    },
+    {
+      "id": "L1-M10-S05",
+      "display": "¿Por qué estás triste? Estoy un poco triste porque hoy trabajo.",
+      "cue": "Why are you sad? — I'm a little sad because I'm working today.",
+      "glossEn": "lit. \"For what you-are sad? I-am a little sad because today I-work.\"",
+      "literal": "For what you-are sad? I-am a little sad because today I-work.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "un poco",
+            "cue": "a little · a bit",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"A little\", softening whatever comes next: un poco triste, un poco cansado. It stands where M8's muy stands and does the opposite job. In front of a noun it needs de — un poco de pan."
+          }
+        ],
+        "rules": [0, 8]
+      },
+      "trap": "un poco never changes for the person: un poco triste whoever is speaking, and un poco cansada if the adjective is the one that agrees. The softener is fixed and the adjective is not.",
+      "sound": "un PO-co, three little syllables run together, and the c is a k.",
+      "variations": [
+        {
+          "display": "¿Por qué estás triste? Estoy triste porque hoy trabajo todo el día.",
+          "cue": "Why are you sad? — I'm sad because I'm working all day today.",
+          "changed": "no softener, and M6's todo el día instead"
+        },
+        {
+          "display": "Estoy un poco cansada, pero estoy bien.",
+          "cue": "I'm a little tired, but I'm fine.",
+          "changed": "the softener with an agreeing adjective, and pero holding the turn together"
+        }
+      ],
+      "mistake": {
+        "display": "Estoy poco triste porque hoy trabajo.",
+        "why": "Without the un it means \"hardly sad at all\", which is not what you meant. The softener is un poco."
+      },
+      "usage": "Answering a question about your mood without making a scene of it.",
+      "register": "informal",
+      "mnemonic": "muy turns it up, un poco turns it down."
+    },
+    {
+      "id": "L1-M10-S06",
+      "display": "Hay una tienda cerca de aquí. Entonces voy a la tienda.",
+      "cue": "There's a shop near here. — Then I'm going to the shop.",
+      "glossEn": "lit. \"There-is a shop near of here. Then I-go to the shop.\"",
+      "literal": "There-is a shop near of here. Then I-go to the shop.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Entonces",
+            "cue": "then · so",
+            "tag": "delta",
+            "forms": [],
+            "note": "The conversation's \"so, then\" — it takes what has just been established and moves to the next step. M9's por eso names the consequence of a reason; entonces simply carries the talk forward, which is why it opens its own sentence."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "a la tienda, not al tienda: M7's contraction only happens in front of el. The shop is feminine, so the two words stay apart.",
+      "sound": "en-TON-ces. The stress is in the middle, and the final c before an e is an s across Latin America and a th in most of Spain.",
+      "variations": [
+        {
+          "display": "Hay un baño cerca de aquí. Entonces voy al baño.",
+          "cue": "There's a bathroom near here. — Then I'm going to the bathroom.",
+          "changed": "a masculine place, so a + el = al comes back"
+        },
+        {
+          "display": "Estoy cansado. Entonces no voy a estudiar.",
+          "cue": "I'm tired. — Then I'm not going to study.",
+          "changed": "the next step is a refusal"
+        }
+      ],
+      "mistake": {
+        "display": "Hay una tienda cerca de aquí. Entonces voy al tienda.",
+        "why": "al is only ever a + el. With a feminine noun it stays a la: voy a la tienda."
+      },
+      "usage": "Deciding out loud, on what somebody just told you.",
+      "register": "informal",
+      "mnemonic": "entonces takes the next step; por eso names the reason."
+    },
+    {
+      "id": "L1-M10-S07",
+      "display": "¿Vas a comer con Ana? Claro, vamos a comer a las ocho.",
+      "cue": "Are you going to eat with Ana? — Of course, we're going to eat at eight.",
+      "glossEn": "lit. \"You-go to eat with Ana? Of-course, we-go to eat at the eight.\"",
+      "literal": "You-go to to-eat with Ana? Of-course, we-go to to-eat at the eight.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Claro",
+            "cue": "of course · sure",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Of course\" — a whole yes on its own, warmer than sí and used constantly. Claro que sí is the emphatic version. It has nothing to do with the adjective claro (\"clear, light\"), which agrees like any other."
+          }
+        ],
+        "rules": [0, 6]
+      },
+      "trap": "The answer reuses the question's verb and only moves the person: vas a comer becomes vamos a comer. Nothing else has to be built.",
+      "sound": "CLA-ro, with one tap of the r — the same single tap that separates caro from carro in M8.",
+      "variations": [
+        {
+          "display": "¿Vas a comer con Ana? Claro, vamos a comer en la tienda.",
+          "cue": "Are you going to eat with Ana? — Of course, we're going to eat at the shop.",
+          "changed": "M7's en instead of a time"
+        },
+        {
+          "display": "¿Vas a comer con Ana? No, voy a comer con mi hermana.",
+          "cue": "Are you going to eat with Ana? — No, I'm going to eat with my sister.",
+          "changed": "the refusal, which also reuses the verb"
+        }
+      ],
+      "mistake": {
+        "display": "¿Vas a comer con Ana? Claro, vas a comer a las ocho.",
+        "why": "The answer is about you and Ana, so the person has to move: vamos a comer."
+      },
+      "usage": "Agreeing to something and pinning it to a time.",
+      "register": "informal",
+      "mnemonic": "Take the question's verb, change only the person."
+    },
+    {
+      "id": "L1-M10-S08",
+      "display": "Mañana voy a trabajar. Adiós, hasta mañana.",
+      "cue": "Tomorrow I'm going to work. — Bye, see you tomorrow.",
+      "glossEn": "lit. \"Tomorrow I-go to work. Goodbye, until tomorrow.\"",
+      "literal": "Tomorrow I-go to to-work. Goodbye, until tomorrow.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Adiós",
+            "cue": "goodbye",
+            "tag": "free",
+            "forms": [],
+            "note": "Goodbye. It carries a hint of finality in some places, which is why hasta mañana or hasta luego usually follows or replaces it when you will see the person again soon."
+          },
+          {
+            "display": "hasta mañana",
+            "cue": "see you tomorrow",
+            "tag": "delta",
+            "forms": [],
+            "note": "Literally \"until tomorrow\", and the pattern behind a whole family of goodbyes: hasta luego (until later), hasta el sábado (until Saturday). M6's mañana, doing its \"tomorrow\" job inside a fixed phrase."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "Spanish says goodbye by naming when you will meet again. \"See you\" has no verb in the Spanish version at all — hasta plus the time is the whole of it.",
+      "sound": "a-DIÓS, stressed on the last syllable where the accent is. AS-ta ma-ÑA-na — the h at the front of hasta is silent, like every Spanish h.",
+      "variations": [
+        {
+          "display": "Adiós, hasta el sábado.",
+          "cue": "Bye, see you on Saturday.",
+          "changed": "M6's day of the week, with its el"
+        },
+        {
+          "display": "Hasta mañana, Ana.",
+          "cue": "See you tomorrow, Ana.",
+          "changed": "the name after a comma, as in M2"
+        }
+      ],
+      "mistake": {
+        "display": "Mañana voy a trabajar. Adiós, hasta la mañana.",
+        "why": "hasta la mañana would be \"until the morning\". Tomorrow is bare mañana: hasta mañana."
+      },
+      "usage": "Ending a conversation with someone you will see again.",
+      "register": "informal",
+      "mnemonic": "hasta + when you will meet again."
+    },
+    {
+      "id": "L1-M10-S09",
+      "display": "Voy a la tienda. Nos vemos después.",
+      "cue": "I'm going to the shop. — See you later.",
+      "glossEn": "lit. \"I-go to the shop. We see-each-other later.\"",
+      "literal": "I-go to the shop. Us we-see later.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Nos vemos",
+            "cue": "see you",
+            "tag": "delta",
+            "forms": [],
+            "note": "Literally \"we see each other\" — the nos is the same kind of little pronoun as M1's me llamo and M4's me levanto, and it is what makes the seeing mutual. It is the everyday goodbye between people who will meet again."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "English says \"see YOU\" and Spanish says \"we see each other\". Nothing in the phrase points at the other person on their own — that is why it comes out as nos and not as te.",
+      "sound": "nos BE-mos: the v is soft, between an English b and v, and the stress is on the middle syllable.",
+      "variations": [
+        {
+          "display": "Voy a la tienda. Nos vemos mañana.",
+          "cue": "I'm going to the shop. — See you tomorrow.",
+          "changed": "name the day instead of leaving it open"
+        },
+        {
+          "display": "Nos vemos a las ocho.",
+          "cue": "See you at eight.",
+          "changed": "M4's clock time, as the meeting point"
+        }
+      ],
+      "mistake": {
+        "display": "Voy a la tienda. Te vemos después.",
+        "why": "The phrase is fixed and mutual: nos vemos."
+      },
+      "usage": "Leaving, when the parting is short.",
+      "register": "informal",
+      "mnemonic": "Not \"see you\" — \"we see each other\"."
+    },
+    {
+      "id": "L1-M10-S10",
+      "display": "Perdón, ¿hay un baño aquí? Sí, está al lado de la puerta.",
+      "cue": "Excuse me, is there a bathroom here? — Yes, it's next to the door.",
+      "glossEn": "lit. \"Pardon, there-is a bathroom here? Yes, it-is at-the side of the door.\"",
+      "literal": "Pardon, there-is a bathroom here? Yes, it-is at-the side of the door.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Perdón",
+            "cue": "excuse me · sorry",
+            "tag": "delta",
+            "forms": [],
+            "note": "One word to open a request to a stranger, and the same word for a small apology. Nothing needs to follow it but the question itself — English's \"excuse me, could you tell me whether…\" has no Spanish equivalent at this level, and does not need one."
+          }
+        ],
+        "rules": [0, 5, 9]
+      },
+      "trap": "The turn uses both of M7's \"there is\" words, correctly: hay to ask whether a bathroom exists at all, está to place the one that does. Swap them and the exchange stops making sense.",
+      "sound": "per-DÓN, stress on the last syllable, r tapped once. Said briskly it is almost one syllable.",
+      "variations": [
+        {
+          "display": "Perdón, ¿dónde está el baño?",
+          "cue": "Excuse me, where is the bathroom?",
+          "changed": "you already know it exists, so it is dónde está"
+        },
+        {
+          "display": "Perdón, ¿hay una tienda cerca de aquí?",
+          "cue": "Excuse me, is there a shop near here?",
+          "changed": "the same opening, looking for something else"
+        }
+      ],
+      "mistake": {
+        "display": "Perdón, ¿dónde hay el baño?",
+        "why": "hay never takes el. Either ¿Hay un baño aquí? or ¿Dónde está el baño?"
+      },
+      "usage": "Asking a stranger for something — the last thing this level teaches, and the first thing you will need.",
+      "register": "neutral",
+      "mnemonic": "Perdón, then just ask."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M10-C01",
+      "display": "Hola, ¿cómo estás? Estoy bien, gracias, ¿y tú?",
+      "cue": "Hi, how are you? — I'm well, thanks, and you?"
+    },
+    {
+      "id": "L1-M10-C02",
+      "display": "Voy a trabajar, pero después voy a estudiar",
+      "cue": "I'm going to work, but afterwards I'm going to study"
+    },
+    {
+      "id": "L1-M10-C03",
+      "display": "Quiero pan y café. También quiero una manzana.",
+      "cue": "I want bread and coffee. I also want an apple."
+    },
+    {
+      "id": "L1-M10-C04",
+      "display": "Un café, por favor. Gracias.",
+      "cue": "A coffee, please. Thank you."
+    },
+    {
+      "id": "L1-M10-C05",
+      "display": "Estoy un poco cansada, pero estoy bien",
+      "cue": "I'm a little tired, but I'm fine (a woman speaking)"
+    },
+    {
+      "id": "L1-M10-C06",
+      "display": "¿Vas a comer con Ana? Claro, vamos a comer a las ocho.",
+      "cue": "Are you going to eat with Ana? — Of course, we're going to eat at eight."
+    },
+    {
+      "id": "L1-M10-C07",
+      "display": "Mañana voy a trabajar. Adiós, hasta mañana.",
+      "cue": "Tomorrow I'm going to work. Bye, see you tomorrow."
+    },
+    {
+      "id": "L1-M10-C08",
+      "display": "Perdón, ¿hay un baño aquí? Sí, está al lado de la puerta.",
+      "cue": "Excuse me, is there a bathroom here? — Yes, it's next to the door."
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

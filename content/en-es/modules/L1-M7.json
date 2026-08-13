@@ -1,0 +1,530 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M7",
+  "title": "Where things are",
+  "job": "Locations and prepositions",
+  "prerequisites": ["L1-M6"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-13",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": ["present", "periphrastic_future"],
+    "allowedPatterns": [
+      "N + está + en + place",
+      "¿Dónde está + N?",
+      "Hay + un/una + N + en + place",
+      "N + está + debajo de/al lado de/cerca de + N",
+      "Voy a/al + place"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "Where something or someone IS always takes estar: El libro está en la mesa, never *es en la mesa. This is M2's split at its most mechanical — no judgement is needed, because a location is a location. (One thing does take ser: an event, La fiesta es en mi casa. That is a place where something HAPPENS rather than a thing that sits somewhere, and this level does not teach it.)"
+    },
+    {
+      "tag": "interference",
+      "text": "One Spanish word covers three English ones. en is \"on\" (en la mesa), \"in\" (en la casa) and \"at\" (en el trabajo), and nothing in the sentence chooses between them — English is the language doing extra work here, not Spanish."
+    },
+    {
+      "tag": "delta",
+      "text": "hay says that something EXISTS, and it never changes for number: Hay un libro en la mesa · Hay libros en la mesa. One shape for \"there is\" and \"there are\" both, and there is no plural of it — *hayn does not exist."
+    },
+    {
+      "tag": "interference",
+      "text": "hay and está are one English \"there is\" doing two jobs. hay brings something new into the conversation and is followed by un, una or a bare plural — Hay una tienda cerca de aquí. está places something both speakers already know about, so it follows el, la, mi or a name — La tienda está cerca de mi casa. hay never takes el or la after it."
+    },
+    {
+      "tag": "delta",
+      "text": "The compound prepositions all end in de, and the de is not optional: debajo de la mesa, al lado de la puerta, cerca de mi casa. English \"under the table\" has no \"of\" in it, which is exactly why the de is the piece that gets dropped."
+    },
+    {
+      "tag": "delta",
+      "text": "Two contractions are obligatory, and only in front of el: a + el = al (voy al parque) and de + el = del (cerca del parque). Never *a el, never *de el. Nothing contracts in front of la, los or las — a la tienda, cerca de la casa."
+    },
+    {
+      "tag": "delta",
+      "text": "dónde carries an accent for the same reason qué and cómo do: it is asking. The verb comes straight after it and nothing else may squeeze in — ¿Dónde está el baño?, not *¿Dónde el baño está?"
+    },
+    {
+      "tag": "delta",
+      "text": "The order is the thing, then está, then where it is: El libro está en la mesa. With hay it turns around — hay, then the thing, then where: Hay un libro en la mesa. Saying which one you mean puts it first; saying that it exists at all puts hay first."
+    },
+    {
+      "tag": "free",
+      "text": "aquí is \"here\" and needs nothing in front of it, but it still takes the de of a compound preposition when one is there: cerca de aquí is \"near here\"."
+    },
+    {
+      "tag": "delta",
+      "text": "estar answers two different questions with the same verb. With a place it answers \"where\" — Está en la mesa. With an adjective it answers \"how\" — Estoy bien (M2), Estoy cansado (M9). ser is not an option in either case."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M7-S01",
+      "display": "El libro está en la mesa",
+      "cue": "The book is on the table",
+      "glossEn": "lit. \"The book is-at in the table\"",
+      "literal": "The book is in/on the table",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "en",
+            "cue": "in · on · at",
+            "tag": "interference",
+            "forms": [],
+            "note": "The all-purpose place word. English chooses between in, on and at; Spanish uses en for all three and lets the noun make it obvious — en la mesa (on it), en la casa (in it), en el trabajo (at it)."
+          },
+          {
+            "display": "mesa",
+            "cue": "table",
+            "tag": "free",
+            "forms": ["mesa", "mesas"],
+            "note": "Table. Feminine: la mesa, las mesas."
+          }
+        ],
+        "rules": [0, 1, 7, 9]
+      },
+      "trap": "\"The book is on the table\" tempts es, because the book really is there and nothing about it feels temporary. Location is estar's, always: está en la mesa.",
+      "sound": "ME-sa, with a clean s — Spanish never buzzes it into a z. en is short and light, and the sentence leans on the two a's at the end.",
+      "variations": [
+        {
+          "display": "El libro está en la casa",
+          "cue": "The book is in the house",
+          "changed": "same en, now translated \"in\""
+        },
+        {
+          "display": "Los libros están en la mesa",
+          "cue": "The books are on the table",
+          "changed": "plural subject, so está becomes están"
+        }
+      ],
+      "mistake": {
+        "display": "El libro es en la mesa",
+        "why": "ser classifies what a thing is. Where it sits is estar: El libro está en la mesa."
+      },
+      "usage": "Telling someone where to find something.",
+      "register": "neutral",
+      "mnemonic": "Place = estar. No exceptions worth learning yet."
+    },
+    {
+      "id": "L1-M7-S02",
+      "display": "¿Dónde está mi libro?",
+      "cue": "Where is my book?",
+      "glossEn": "lit. \"Where is-at my book?\"",
+      "literal": "Where is my book?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Dónde",
+            "cue": "where",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Where\", with the accent because it is asking — the same mark that separates M2's cómo from como and M4's qué from que. Unaccented donde is the joining word: la casa donde vivo."
+          }
+        ],
+        "rules": [0, 6]
+      },
+      "trap": "The verb comes before the thing: ¿Dónde está mi libro? English can say \"where my book is\" inside a longer sentence; a Spanish question keeps está glued to dónde.",
+      "sound": "DÓN-de. The stress is on the first syllable, which is where it would fall anyway — the accent here is doing grammar, not pronunciation.",
+      "variations": [
+        {
+          "display": "¿Dónde está Ana?",
+          "cue": "Where is Ana?",
+          "changed": "a person instead of a thing — same question"
+        },
+        {
+          "display": "¿Dónde están mis libros?",
+          "cue": "Where are my books?",
+          "changed": "plural, so está becomes están"
+        }
+      ],
+      "mistake": {
+        "display": "¿Dónde es mi libro?",
+        "why": "Asking where something is is asking about its place, so it is estar: ¿Dónde está mi libro?"
+      },
+      "usage": "The question you will ask most often in a strange house.",
+      "register": "neutral",
+      "mnemonic": "dónde asks, donde joins — the mark is the question."
+    },
+    {
+      "id": "L1-M7-S03",
+      "display": "Hay un libro en la mesa",
+      "cue": "There is a book on the table",
+      "glossEn": "lit. \"There-is a book on the table\"",
+      "literal": "There-is a book on the table",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Hay",
+            "cue": "there is · there are",
+            "tag": "delta",
+            "forms": [],
+            "note": "One word for both English phrases, and it never moves: hay un libro, hay libros, hay veinte libros. It says that something exists somewhere rather than saying where a known thing is — that job belongs to está."
+          }
+        ],
+        "rules": [2, 3, 7]
+      },
+      "trap": "Two English \"there is\"es, two Spanish words. Use hay when you are announcing the book, and está when your listener already knows which book you mean.",
+      "sound": "One syllable, and it sounds like English \"eye\" — the h is silent, as every Spanish h is.",
+      "variations": [
+        {
+          "display": "Hay libros en la mesa",
+          "cue": "There are books on the table",
+          "changed": "plural — and hay does not change at all"
+        },
+        {
+          "display": "¿Hay una mesa en la casa?",
+          "cue": "Is there a table in the house?",
+          "changed": "as a question, with the marks doing the work"
+        }
+      ],
+      "mistake": {
+        "display": "Hay el libro en la mesa",
+        "why": "hay cannot take el or la. Say Hay un libro (announcing one) or El libro está en la mesa (placing the one you both mean)."
+      },
+      "usage": "Announcing what is in a room.",
+      "register": "neutral",
+      "mnemonic": "hay for that it exists, está for where it is."
+    },
+    {
+      "id": "L1-M7-S04",
+      "display": "El libro está debajo de la mesa",
+      "cue": "The book is under the table",
+      "glossEn": "lit. \"The book is-at underneath of the table\"",
+      "literal": "The book is underneath of the table",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "debajo de",
+            "cue": "under · underneath",
+            "tag": "interference",
+            "forms": ["debajo de", "debajo del"],
+            "note": "Two words that work as one preposition, and the de is not optional — English \"under the table\" has nothing there, so the de is what learners drop. In front of a masculine el it contracts: debajo del libro."
+          }
+        ],
+        "rules": [0, 4, 5]
+      },
+      "trap": "*Debajo la mesa is the mistake this rule exists for. Every compound preposition here ends in de, and it stays whether English shows anything or not.",
+      "sound": "de-BA-jo de. The j rasps from the back of the throat, like the ch in Scottish \"loch\", and the b between vowels is soft.",
+      "variations": [
+        {
+          "display": "El libro está debajo del pan",
+          "cue": "The book is under the bread",
+          "changed": "de + el = del in front of a masculine noun"
+        },
+        {
+          "display": "El pan está debajo de la mesa",
+          "cue": "The bread is under the table",
+          "changed": "swap what is hiding"
+        }
+      ],
+      "mistake": {
+        "display": "El libro está debajo la mesa",
+        "why": "The de is part of the preposition: debajo de la mesa."
+      },
+      "usage": "Where things go when you drop them.",
+      "register": "neutral",
+      "mnemonic": "Every one of them ends in de. Say the de."
+    },
+    {
+      "id": "L1-M7-S05",
+      "display": "Ana está al lado de la puerta",
+      "cue": "Ana is next to the door",
+      "glossEn": "lit. \"Ana is-at to-the side of the door\"",
+      "literal": "Ana is at-the side of the door",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al lado de",
+            "cue": "next to · beside",
+            "tag": "delta",
+            "forms": ["al lado de", "al lado del"],
+            "note": "Literally \"at the side of\", and all three words are fixed. The al inside it is already a + el, and the de at the end contracts the same way when a masculine el follows: al lado del baño."
+          },
+          {
+            "display": "puerta",
+            "cue": "door",
+            "tag": "free",
+            "forms": ["puerta", "puertas"],
+            "note": "Door. Feminine: la puerta. The ue in the middle is one glide, not two syllables."
+          }
+        ],
+        "rules": [0, 4, 5]
+      },
+      "trap": "English says \"next to\" in two words and Spanish takes four bits — a, el, lado, de — of which the first two are already fused into al. Nothing here can be shortened.",
+      "sound": "al LA-do de PUER-ta: the stress falls on LA and on PUER, and both r's are single taps rather than the English growl.",
+      "variations": [
+        {
+          "display": "Ana está al lado del baño",
+          "cue": "Ana is next to the bathroom",
+          "changed": "de + el = del, because baño is masculine"
+        },
+        {
+          "display": "La mesa está al lado de la puerta",
+          "cue": "The table is next to the door",
+          "changed": "swap what is beside it"
+        }
+      ],
+      "mistake": {
+        "display": "Ana está al lado la puerta",
+        "why": "The de holds the phrase to the noun: al lado de la puerta."
+      },
+      "usage": "Pointing someone at a person in a room.",
+      "register": "neutral",
+      "mnemonic": "al lado de — \"at the side of\", word for word."
+    },
+    {
+      "id": "L1-M7-S06",
+      "display": "La tienda está cerca de mi casa",
+      "cue": "The shop is near my house",
+      "glossEn": "lit. \"The shop is-at near of my house\"",
+      "literal": "The shop is near of my house",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tienda",
+            "cue": "shop · store",
+            "tag": "free",
+            "forms": ["tienda", "tiendas"],
+            "note": "The everyday word for a shop, understood everywhere Spanish is spoken. Feminine: la tienda."
+          },
+          {
+            "display": "cerca de",
+            "cue": "near · close to",
+            "tag": "delta",
+            "forms": ["cerca de", "cerca del"],
+            "note": "\"Near\", and again the de is compulsory: cerca de mi casa. In front of a masculine el it becomes cerca del. Bare cerca on its own means \"nearby\", with nothing named after it."
+          },
+          {
+            "display": "casa",
+            "cue": "house · home",
+            "tag": "free",
+            "forms": ["casa", "casas"],
+            "note": "House, and also home: en casa is \"at home\", with no article at all. Feminine: la casa."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "mi is enough on its own — mi casa, not *la mi casa. The possessive replaces the article rather than joining it.",
+      "sound": "CER-ca has both sounds of c in one word: the first is an s across Latin America and a th in most of Spain, the second is always a k.",
+      "variations": [
+        {
+          "display": "La tienda está cerca de aquí",
+          "cue": "The shop is near here",
+          "changed": "\"here\" instead of a named place"
+        },
+        {
+          "display": "Mi casa está cerca de la tienda",
+          "cue": "My house is near the shop",
+          "changed": "turn it around — the same de holds"
+        }
+      ],
+      "mistake": {
+        "display": "La tienda está cerca mi casa",
+        "why": "cerca needs its de before naming what it is near: cerca de mi casa."
+      },
+      "usage": "Answering how far something is.",
+      "register": "neutral",
+      "mnemonic": "cerca de — near OF, every time."
+    },
+    {
+      "id": "L1-M7-S07",
+      "display": "Hay una tienda cerca de aquí",
+      "cue": "There's a shop near here",
+      "glossEn": "lit. \"There-is a shop near of here\"",
+      "literal": "There-is a shop near of here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aquí",
+            "cue": "here",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Here\". It needs no preposition of its own — but a compound preposition keeps its de in front of it: cerca de aquí."
+          }
+        ],
+        "rules": [2, 3, 4, 8]
+      },
+      "trap": "hay, not está: you are telling someone a shop exists, not placing a shop they already know about. Swap in está and the sentence is asking to be finished with which shop.",
+      "sound": "a-QUÍ. The qu is a plain k — the u is silent — and the accent puts the stress on the last syllable.",
+      "variations": [
+        {
+          "display": "¿Hay una tienda cerca de aquí?",
+          "cue": "Is there a shop near here?",
+          "changed": "the question a traveller actually asks"
+        },
+        {
+          "display": "Hay un baño cerca de aquí",
+          "cue": "There's a bathroom near here",
+          "changed": "swap what you are looking for"
+        }
+      ],
+      "mistake": {
+        "display": "Hay la tienda cerca de aquí",
+        "why": "hay never takes la. Either Hay una tienda, or La tienda está cerca de aquí."
+      },
+      "usage": "Asking for, or giving, directions in the street.",
+      "register": "neutral",
+      "mnemonic": "aquí is here; allí is there — and both keep the de of cerca de."
+    },
+    {
+      "id": "L1-M7-S08",
+      "display": "¿Dónde está el baño?",
+      "cue": "Where is the bathroom?",
+      "glossEn": "lit. \"Where is-at the bathroom?\"",
+      "literal": "Where is the bathroom?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "baño",
+            "cue": "bathroom · toilet",
+            "tag": "free",
+            "forms": ["baño", "baños"],
+            "note": "The room, and the polite way to ask for it in any Spanish-speaking country. Masculine: el baño. The ñ is the ny of \"canyon\"."
+          }
+        ],
+        "rules": [0, 6]
+      },
+      "trap": "Both speakers know there is a bathroom, so this is está and not hay. ¿Hay un baño aquí? is a different question — it asks whether one exists at all.",
+      "sound": "BA-ño. Two syllables, and the ñ carries its own little y sound with it.",
+      "variations": [
+        {
+          "display": "¿Hay un baño aquí?",
+          "cue": "Is there a bathroom here?",
+          "changed": "hay, because you do not know that one exists"
+        },
+        {
+          "display": "El baño está al lado de la puerta",
+          "cue": "The bathroom is next to the door",
+          "changed": "the answer"
+        }
+      ],
+      "mistake": {
+        "display": "¿Dónde es el baño?",
+        "why": "The bathroom's place is estar: ¿Dónde está el baño?"
+      },
+      "usage": "The most useful sentence in the module, and possibly the level.",
+      "register": "neutral",
+      "mnemonic": "¿Dónde está el baño? Learn it whole."
+    },
+    {
+      "id": "L1-M7-S09",
+      "display": "Mi casa está cerca del parque",
+      "cue": "My house is near the park",
+      "glossEn": "lit. \"My house is-at near of-the park\"",
+      "literal": "My house is near of-the park",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "parque",
+            "cue": "park",
+            "tag": "free",
+            "forms": ["parque", "parques"],
+            "note": "Park. Masculine — el parque — which is exactly why the de in front of it turns into del."
+          }
+        ],
+        "rules": [4, 5]
+      },
+      "trap": "cerca de la casa but cerca del parque. Nothing changed except the gender of the noun: de + el is always del, and de + la is always two words.",
+      "sound": "PAR-que. The r is one tap, the qu is a k, and the final e is a clean short e — never the \"ay\" an English speaker expects.",
+      "variations": [
+        {
+          "display": "Mi casa está cerca de la tienda",
+          "cue": "My house is near the shop",
+          "changed": "feminine noun, so no contraction"
+        },
+        {
+          "display": "El parque está cerca de mi casa",
+          "cue": "The park is near my house",
+          "changed": "turn it around"
+        }
+      ],
+      "mistake": {
+        "display": "Mi casa está cerca de el parque",
+        "why": "de and el must fuse: cerca del parque."
+      },
+      "usage": "Describing where you live.",
+      "register": "neutral",
+      "mnemonic": "de + el = del. Only with el."
+    },
+    {
+      "id": "L1-M7-S10",
+      "display": "Mañana voy al parque",
+      "cue": "Tomorrow I'm going to the park",
+      "glossEn": "lit. \"Tomorrow I-go to-the park\"",
+      "literal": "Tomorrow I-go to-the park",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al",
+            "cue": "to the",
+            "tag": "delta",
+            "forms": [],
+            "note": "a + el, fused. It is not a new word, it is the only shape those two are allowed to take together: voy al parque, never *voy a el parque. In front of a feminine noun nothing happens — voy a la tienda."
+          }
+        ],
+        "rules": [5, 9]
+      },
+      "trap": "M6's plan a and this destination a are the same one-letter word. It fuses with el only when a real el follows: voy al parque, but voy a trabajar keeps the a alone because a verb has no article.",
+      "sound": "One syllable, AL, and it runs straight into the next word: voy-al-PAR-que.",
+      "variations": [
+        {
+          "display": "Mañana voy a la tienda",
+          "cue": "Tomorrow I'm going to the shop",
+          "changed": "feminine — a la, with nothing fused"
+        },
+        {
+          "display": "Voy al baño",
+          "cue": "I'm going to the bathroom",
+          "changed": "another masculine place"
+        }
+      ],
+      "mistake": {
+        "display": "Mañana voy a el parque",
+        "why": "a el is never written. It is al: voy al parque."
+      },
+      "usage": "Saying where you are heading.",
+      "register": "neutral",
+      "mnemonic": "a + el = al. One letter each, one word out."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M7-C01", "display": "El libro está en la mesa", "cue": "The book is on the table" },
+    { "id": "L1-M7-C02", "display": "¿Dónde está el baño?", "cue": "Where is the bathroom?" },
+    {
+      "id": "L1-M7-C03",
+      "display": "Hay una tienda cerca de aquí",
+      "cue": "There's a shop near here"
+    },
+    {
+      "id": "L1-M7-C04",
+      "display": "Mi libro está debajo de la mesa",
+      "cue": "My book is under the table"
+    },
+    {
+      "id": "L1-M7-C05",
+      "display": "Ana está al lado de la puerta",
+      "cue": "Ana is next to the door"
+    },
+    {
+      "id": "L1-M7-C06",
+      "display": "Mi casa está cerca del parque",
+      "cue": "My house is near the park"
+    },
+    {
+      "id": "L1-M7-C07",
+      "display": "Hay libros en la tienda",
+      "cue": "There are books in the shop"
+    },
+    {
+      "id": "L1-M7-C08",
+      "display": "Mañana voy al parque",
+      "cue": "Tomorrow I'm going to the park"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

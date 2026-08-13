@@ -1,0 +1,527 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M8",
+  "title": "Numbers & shopping",
+  "job": "Prices, quantities, buying",
+  "prerequisites": ["L1-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-13",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": ["present"],
+    "allowedPatterns": [
+      "¿Cuánto cuesta + el/la + N?",
+      "¿Cuánto cuestan + los/las + N-pl?",
+      "Quiero + num + N + , por favor",
+      "Un kilo/Una botella de + N",
+      "el/la + N + es + muy + Adj"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "The price question agrees with the THING, never with the person asking: ¿Cuánto cuesta el café? · ¿Cuánto cuestan los libros? This is M1's gustar all over again — what is bought is the subject of the verb, and the buyer is nowhere in the sentence. One thing takes cuesta, more than one takes cuestan."
+    },
+    {
+      "tag": "delta",
+      "text": "cuánto in front of cuesta or cuestan is \"how much\" and stays exactly as it is. Put it in front of a noun and it agrees with that noun like any adjective: ¿Cuántos libros? · ¿Cuántas manzanas?"
+    },
+    {
+      "tag": "delta",
+      "text": "One number has three shapes. uno stands alone when nothing follows it — Quiero uno — and shortens in front of a noun: un libro (m) · una mesa (f). *uno libro is the mistake, and it is the only number that does this."
+    },
+    {
+      "tag": "delta",
+      "text": "A quantity is tied to what it is a quantity OF by de, with no article in between: un kilo de manzanas, una botella de agua. English says \"a kilo of apples\" the same way and then drops the \"of\" in \"a water bottle\" — Spanish never drops it."
+    },
+    {
+      "tag": "delta",
+      "text": "por favor is a fixed two-word politeness that travels whole, and it sits at the edge of the request, usually at the end after a comma: Quiero dos cafés, por favor. Neither half means anything useful on its own here."
+    },
+    {
+      "tag": "interference",
+      "text": "muy and mucho are not interchangeable. muy goes in front of an adjective and never changes shape — muy caro, muy cara, muy caros. mucho goes with a noun or after a verb and does change — mucho pan, muchas manzanas, trabajo mucho. English \"very\" and \"a lot\" sort them out; *muy mucho and *trabajo muy are what happens when they are swapped."
+    },
+    {
+      "tag": "delta",
+      "text": "A price adjective agrees with the noun it describes, exactly as M3's colours did: el libro es caro · la manzana es cara · los libros son caros. The ending belongs to the thing being priced, not to whoever is complaining about it."
+    },
+    {
+      "tag": "interference",
+      "text": "Both es caro and está caro are real Spanish, and they say different things. El libro es caro classifies the book as an expensive thing; El libro está caro says it is pricey just now, this week, at this stall. This module says es, because it is talking about what things cost in general — not because estar is forbidden."
+    },
+    {
+      "tag": "free",
+      "text": "Numbers themselves do not change for gender or number: dos cafés, ocho manzanas, diez libros. Counting upwards is vocabulary rather than grammar — dos, tres, cuatro, cinco … diez, veinte, cien — and the only shape-shifter in the set is uno."
+    },
+    {
+      "tag": "free",
+      "text": "Buying is where M1's plural finally earns its keep: café → cafés, libro → libros, manzana → manzanas. Add -s to a vowel, -es to a consonant, and the article goes plural with it — los cafés, las manzanas."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M8-S01",
+      "display": "¿Cuánto cuesta el café?",
+      "cue": "How much does the coffee cost?",
+      "glossEn": "lit. \"How-much costs the coffee?\"",
+      "literal": "How-much costs the coffee?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Cuánto",
+            "cue": "how much",
+            "tag": "delta",
+            "forms": ["cuánto", "cuánta", "cuántos", "cuántas"],
+            "note": "\"How much\", accented because it is asking — like qué, cómo and dónde. In front of cuesta it never changes. In front of a noun it agrees with that noun: cuántos libros, cuántas manzanas."
+          },
+          {
+            "display": "cuesta",
+            "cue": "it costs",
+            "tag": "interference",
+            "forms": [],
+            "note": "\"It costs\" — the verb belongs to the thing being sold, not to you, so it is cuesta for one thing and cuestan for several. The answer names a number and the local money, and that word changes from country to country (euro, peso, sol, quetzal), so this course does not pick one for you."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English asks \"how much DOES IT cost\" and puts a doing-word in front of the buyer. Spanish asks how much the coffee costs — the coffee is doing the costing, and there is no word for \"does\".",
+      "sound": "CUÁN-to CUES-ta. The cu is a kw, and both words keep their stress on the first syllable.",
+      "variations": [
+        {
+          "display": "¿Cuánto cuesta la manzana?",
+          "cue": "How much does the apple cost?",
+          "changed": "a feminine noun — cuesta does not care"
+        },
+        {
+          "display": "¿Cuánto cuesta el libro?",
+          "cue": "How much does the book cost?",
+          "changed": "swap what you are pricing"
+        }
+      ],
+      "mistake": {
+        "display": "¿Cuánto cuesto el café?",
+        "why": "cuesto would be \"I cost\". The coffee is what costs: cuesta."
+      },
+      "usage": "The first thing you say at any counter.",
+      "register": "neutral",
+      "mnemonic": "The thing does the costing, so the thing picks the ending."
+    },
+    {
+      "id": "L1-M8-S02",
+      "display": "¿Cuánto cuestan los libros?",
+      "cue": "How much do the books cost?",
+      "glossEn": "lit. \"How-much cost the books?\"",
+      "literal": "How-much cost the books?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cuestan",
+            "cue": "they cost",
+            "tag": "interference",
+            "forms": [],
+            "note": "The plural of cuesta, and the -n is there because the BOOKS are plural. Exactly the shape of M1's me gusta → me gustan: the thing decides, every time."
+          }
+        ],
+        "rules": [0, 9]
+      },
+      "trap": "cuánto does not go plural with the books — only the verb does. ¿Cuántos libros hay? is a different question, about how many there are.",
+      "sound": "CUES-tan. Adding the syllable does not move the stress: it stays where cuesta had it.",
+      "variations": [
+        {
+          "display": "¿Cuánto cuestan las manzanas?",
+          "cue": "How much do the apples cost?",
+          "changed": "feminine plural — the verb is unchanged"
+        },
+        {
+          "display": "¿Cuánto cuestan dos cafés?",
+          "cue": "How much do two coffees cost?",
+          "changed": "price a quantity rather than the shelf"
+        }
+      ],
+      "mistake": {
+        "display": "¿Cuántos cuestan los libros?",
+        "why": "cuánto only agrees when it sits in front of a noun. Here it is \"how much\" and stays put: ¿Cuánto cuestan los libros?"
+      },
+      "usage": "Pricing more than one of something.",
+      "register": "neutral",
+      "mnemonic": "gustan, cuestan — the -n belongs to the things."
+    },
+    {
+      "id": "L1-M8-S03",
+      "display": "Quiero dos cafés, por favor",
+      "cue": "I'd like two coffees, please",
+      "glossEn": "lit. \"I-want two coffees, for favour\"",
+      "literal": "I-want two coffees, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dos",
+            "cue": "two",
+            "tag": "free",
+            "forms": [],
+            "note": "Two. Numbers from dos upwards never change shape for gender: dos cafés, dos manzanas."
+          },
+          {
+            "display": "por favor",
+            "cue": "please",
+            "tag": "delta",
+            "forms": [],
+            "note": "Two words, one politeness — literally \"for a favour\". It travels whole and lives at the edge of the request, most often at the end after a comma. Neither half is worth learning on its own."
+          }
+        ],
+        "rules": [4, 8, 9]
+      },
+      "trap": "Quiero is not rude in Spanish the way a flat \"I want\" is in English, and por favor is what keeps it courteous. Add the comma in writing — it is what marks the politeness off from the order.",
+      "sound": "por fa-VOR. Both r's are single taps, and the stress lands on the last syllable of favor.",
+      "variations": [
+        {
+          "display": "Quiero un café, por favor",
+          "cue": "I'd like one coffee, please",
+          "changed": "one, so un in front of the noun"
+        },
+        {
+          "display": "Por favor, quiero dos cafés",
+          "cue": "Please, I'd like two coffees",
+          "changed": "the other edge — it works at the front too"
+        }
+      ],
+      "mistake": {
+        "display": "Quiero dos café, por favor",
+        "why": "Two of them is a plural: dos cafés."
+      },
+      "usage": "Ordering, anywhere.",
+      "register": "neutral",
+      "mnemonic": "por favor rides at the edge, never in the middle."
+    },
+    {
+      "id": "L1-M8-S04",
+      "display": "Quiero un kilo de manzanas",
+      "cue": "I'd like a kilo of apples",
+      "glossEn": "lit. \"I-want a kilo of apples\"",
+      "literal": "I-want a kilo of apples",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kilo",
+            "cue": "kilo",
+            "tag": "free",
+            "forms": ["kilo", "kilos"],
+            "note": "A kilo. Masculine — un kilo — and one of the very few Spanish words with a k in it, because it was borrowed. What you are buying comes after de, with no article: un kilo de manzanas."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "No article after de. un kilo de manzanas, not *un kilo de las manzanas — that would be a kilo of those particular apples on that shelf.",
+      "sound": "KI-lo. The k is a plain k, and the single l is light — nothing like the English \"kill\".",
+      "variations": [
+        {
+          "display": "Quiero dos kilos de manzanas",
+          "cue": "I'd like two kilos of apples",
+          "changed": "the measure goes plural, de stays"
+        },
+        {
+          "display": "Quiero un kilo de pan",
+          "cue": "I'd like a kilo of bread",
+          "changed": "swap what is being weighed"
+        }
+      ],
+      "mistake": {
+        "display": "Quiero un kilo manzanas",
+        "why": "The de is what joins the measure to the goods: un kilo de manzanas."
+      },
+      "usage": "Buying anything sold by weight.",
+      "register": "neutral",
+      "mnemonic": "measure + de + goods. The de never goes missing."
+    },
+    {
+      "id": "L1-M8-S05",
+      "display": "Una botella de agua, por favor",
+      "cue": "A bottle of water, please",
+      "glossEn": "lit. \"A bottle of water, please\"",
+      "literal": "A bottle of water, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "botella",
+            "cue": "bottle",
+            "tag": "free",
+            "forms": ["botella", "botellas"],
+            "note": "Bottle. Feminine: una botella. The ll is a y sound across nearly all of the Spanish-speaking world, and a sh in and around Buenos Aires."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "A whole request with no verb in it. Naming what you want plus por favor is complete and polite — Spanish does not need \"can I have\" in front of it.",
+      "sound": "bo-TE-lla, stressed in the middle. The b at the start is a firm b; between vowels it would soften.",
+      "variations": [
+        {
+          "display": "Quiero una botella de agua",
+          "cue": "I'd like a bottle of water",
+          "changed": "the same request with the verb back in"
+        },
+        {
+          "display": "Dos botellas de agua, por favor",
+          "cue": "Two bottles of water, please",
+          "changed": "the measure goes plural"
+        }
+      ],
+      "mistake": {
+        "display": "Una botella agua, por favor",
+        "why": "de joins the container to what is in it: una botella de agua."
+      },
+      "usage": "The order you will place most often in a hot country.",
+      "register": "neutral",
+      "mnemonic": "botella de agua — bottle OF water, always the of."
+    },
+    {
+      "id": "L1-M8-S06",
+      "display": "Quiero uno, por favor",
+      "cue": "I'd like one, please",
+      "glossEn": "lit. \"I-want one, please\"",
+      "literal": "I-want one, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "uno",
+            "cue": "one",
+            "tag": "delta",
+            "forms": [],
+            "note": "The number standing on its own, with nothing after it. Put a noun behind it and it must shorten: un libro (m), una mesa (f). This is the same word as M3's un — uno is simply its full shape."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "Pointing at something and saying \"one\" is uno. The moment you name the thing, uno cannot survive: *Quiero uno libro is wrong — it is Quiero un libro.",
+      "sound": "U-no, two clean syllables. The Spanish u is always the oo of \"food\", never the English \"yoo\".",
+      "variations": [
+        {
+          "display": "Quiero dos, por favor",
+          "cue": "I'd like two, please",
+          "changed": "dos needs no shortening — only uno does"
+        },
+        {
+          "display": "Quiero un café, por favor",
+          "cue": "I'd like a coffee, please",
+          "changed": "name the thing and uno becomes un"
+        }
+      ],
+      "mistake": {
+        "display": "Quiero uno café, por favor",
+        "why": "In front of a noun it is un: Quiero un café."
+      },
+      "usage": "Buying while pointing.",
+      "register": "neutral",
+      "mnemonic": "uno alone, un before a noun."
+    },
+    {
+      "id": "L1-M8-S07",
+      "display": "Hay diez libros en la tienda",
+      "cue": "There are ten books in the shop",
+      "glossEn": "lit. \"There-is ten books in the shop\"",
+      "literal": "There-is ten books in the shop",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "diez",
+            "cue": "ten",
+            "tag": "free",
+            "forms": [],
+            "note": "Ten. The counting road from here is dos, tres, cuatro, cinco, seis, siete, ocho, nueve, diez, then veinte and cien — vocabulary rather than grammar, since none of them changes shape."
+          }
+        ],
+        "rules": [8, 9]
+      },
+      "trap": "M7's hay still does not go plural, even in front of ten books. Hay libros, hay diez libros, hay cien libros — one shape for all of them.",
+      "sound": "One syllable, DIEZ, with the ie run together. The final z is an s across Latin America and a th in most of Spain.",
+      "variations": [
+        {
+          "display": "Hay dos libros en la mesa",
+          "cue": "There are two books on the table",
+          "changed": "swap the number and the place"
+        },
+        {
+          "display": "¿Hay libros en la tienda?",
+          "cue": "Are there books in the shop?",
+          "changed": "the question, with no number at all"
+        }
+      ],
+      "mistake": {
+        "display": "Hayn diez libros en la tienda",
+        "why": "hay has no plural. It is hay whatever follows it."
+      },
+      "usage": "Counting stock, or anything else.",
+      "register": "neutral",
+      "mnemonic": "hay never counts — the number does that."
+    },
+    {
+      "id": "L1-M8-S08",
+      "display": "Quiero ocho manzanas, por favor",
+      "cue": "I'd like eight apples, please",
+      "glossEn": "lit. \"I-want eight apples, please\"",
+      "literal": "I-want eight apples, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ocho",
+            "cue": "eight",
+            "tag": "free",
+            "forms": [],
+            "note": "Eight — the number on its own. You have already met it inside M4's las ocho, where it was the hour; here it is a quantity, and it looks the same because numbers never change shape."
+          }
+        ],
+        "rules": [8, 4]
+      },
+      "trap": "las ocho is eight o'clock and ocho manzanas is eight apples. The number is identical; the las in front of it is what makes it a time.",
+      "sound": "O-cho. The ch is the ch of English \"church\", and the o's are short and pure.",
+      "variations": [
+        {
+          "display": "Quiero ocho, por favor",
+          "cue": "I'd like eight, please",
+          "changed": "drop the noun — numbers other than uno need no change"
+        },
+        {
+          "display": "Como a las ocho",
+          "cue": "I eat at eight",
+          "changed": "the same eight, back in its clock phrase from M4"
+        }
+      ],
+      "mistake": {
+        "display": "Quiero ocho manzana, por favor",
+        "why": "A number above one takes a plural noun: ocho manzanas."
+      },
+      "usage": "Buying loose fruit.",
+      "register": "neutral",
+      "mnemonic": "las ocho tells time; ocho counts things."
+    },
+    {
+      "id": "L1-M8-S09",
+      "display": "El libro es muy caro",
+      "cue": "The book is very expensive",
+      "glossEn": "lit. \"The book is very expensive\"",
+      "literal": "The book is very expensive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "muy",
+            "cue": "very",
+            "tag": "interference",
+            "forms": [],
+            "note": "\"Very\", and it only ever stands in front of an adjective: muy caro, muy fría, muy ocupado. It never changes shape and it never attaches to a verb — that job belongs to M1's mucho (trabajo mucho)."
+          },
+          {
+            "display": "caro",
+            "cue": "expensive",
+            "tag": "delta",
+            "forms": ["caro", "cara", "caros", "caras"],
+            "note": "Expensive, and it agrees with the thing priced: el libro es caro, la manzana es cara, los libros son caros. The opposite is barato."
+          }
+        ],
+        "rules": [5, 6, 7]
+      },
+      "trap": "es caro and está caro are both correct and mean different things: es caro is an expensive thing, está caro is dear at the moment. The general statement — the one you make about a shelf — is es.",
+      "sound": "CA-ro, with ONE tap of the r. Two taps makes carro, a different word altogether — the car, in much of Latin America.",
+      "variations": [
+        {
+          "display": "La manzana es muy cara",
+          "cue": "The apple is very expensive",
+          "changed": "feminine noun, so cara — muy does not move"
+        },
+        {
+          "display": "Los libros son muy caros",
+          "cue": "The books are very expensive",
+          "changed": "plural all the way through, and es becomes son"
+        }
+      ],
+      "mistake": {
+        "display": "El libro es mucho caro",
+        "why": "In front of an adjective it is muy: El libro es muy caro."
+      },
+      "usage": "The half of shopping that is not buying.",
+      "register": "neutral",
+      "mnemonic": "muy before an adjective, mucho with a noun or a verb."
+    },
+    {
+      "id": "L1-M8-S10",
+      "display": "¿Cuánto cuesta todo?",
+      "cue": "How much does everything cost?",
+      "glossEn": "lit. \"How-much costs everything?\"",
+      "literal": "How-much costs all?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "todo",
+            "cue": "everything · all of it",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Everything\", standing alone as one lump — which is why the verb stays singular: cuesta, not cuestan. In front of a noun it agrees with it instead: todo el día (M6), toda la casa."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Everything is a lot of things and still counts as one: ¿Cuánto cuesta todo? A learner reaching for cuestan is agreeing with the shopping bag rather than with the word in the sentence.",
+      "sound": "TO-do. The d between two vowels is soft, close to the th of English \"the\".",
+      "variations": [
+        {
+          "display": "¿Cuánto cuesta todo, por favor?",
+          "cue": "How much does everything cost, please?",
+          "changed": "the polite edge, inside the question marks"
+        },
+        {
+          "display": "Todo es muy caro",
+          "cue": "Everything is very expensive",
+          "changed": "the same todo as the subject of a statement"
+        }
+      ],
+      "mistake": {
+        "display": "¿Cuánto cuestan todo?",
+        "why": "todo is one word standing for one lump: ¿Cuánto cuesta todo?"
+      },
+      "usage": "The last question at the counter.",
+      "register": "neutral",
+      "mnemonic": "todo is singular, however much is in the bag."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M8-C01",
+      "display": "¿Cuánto cuesta el café?",
+      "cue": "How much does the coffee cost?"
+    },
+    {
+      "id": "L1-M8-C02",
+      "display": "¿Cuánto cuestan las manzanas?",
+      "cue": "How much do the apples cost?"
+    },
+    {
+      "id": "L1-M8-C03",
+      "display": "Quiero dos cafés, por favor",
+      "cue": "I'd like two coffees, please"
+    },
+    {
+      "id": "L1-M8-C04",
+      "display": "Quiero un kilo de manzanas, por favor",
+      "cue": "I'd like a kilo of apples, please"
+    },
+    {
+      "id": "L1-M8-C05",
+      "display": "Una botella de agua, por favor",
+      "cue": "A bottle of water, please"
+    },
+    { "id": "L1-M8-C06", "display": "El libro es muy caro", "cue": "The book is very expensive" },
+    {
+      "id": "L1-M8-C07",
+      "display": "Hay diez libros en la tienda",
+      "cue": "There are ten books in the shop"
+    },
+    {
+      "id": "L1-M8-C08",
+      "display": "¿Cuánto cuesta todo?",
+      "cue": "How much does everything cost?"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}
