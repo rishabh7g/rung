@@ -19,8 +19,14 @@
  *     the habit this guards against.
  *   • **`@font-face` blocks.** They are stripped too (#113): `font-family: 'Mukta'` inside one
  *     DEFINES the face that `--font-devanagari` names — the opposite of styling an element with
- *     a face by name, which is what the ban is about. `src/fonts/mukta.css` is the one such
- *     sheet, and `src/fonts.test.ts` holds its faces to the ramp.
+ *     a face by name, which is what the ban is about. `src/fonts/mukta.css` and (since #197)
+ *     `src/fonts/naskh.css` are the two such sheets, and `src/fonts.test.ts` holds their faces to
+ *     what the product renders.
+ *   • **A `--font-*` custom property in `src/styles/tokenOverrides.css`** (#197). `design/` is
+ *     read-only and re-copied wholesale, so an engineering decision that changes a token value
+ *     cannot be written where the token lives. That one file is where it goes — and defining a
+ *     token's value is the same category as an `@font-face`, not the styling-by-name the ban is
+ *     about. The last test below keeps the register one file long.
  *   • **`100dvh` and percentages.** Viewport and relative units are layout, not design values —
  *     there is no token for "as tall as the viewport" and there should not be.
  *   • **`0` and `calc()` on tokens.** `border: 0`, `margin-left: calc(-1 * var(--space-3))`: no
@@ -107,6 +113,20 @@ describe('style contract', () => {
     expect(files).toContain('src/styles/global.css');
     expect(files).toContain('src/shell/AppShell.module.css');
     expect(files).toContain('src/shell/BottomNav.module.css');
+  });
+
+  it('keeps the token-override register one file long (#197)', () => {
+    // Redefining a `design/tokens.css` value is legitimate — the package is read-only, so the
+    // override has to live in `src/`. It is legitimate in ONE place, with the reason in `docs/`;
+    // a second sheet quietly redefining a token is drift, and this is what catches it.
+    const redefiners = Object.entries(STYLESHEETS)
+      .filter(([, source]) => /^\s*--[a-z0-9-]+:/m.test(stripComments(source)))
+      .map(([file]) => file);
+
+    expect(
+      redefiners,
+      `${redefiners.join(', ')} — only src/styles/tokenOverrides.css may set a design token, and only with a docs/ entry saying why (docs/design-contract.md).`,
+    ).toEqual(['src/styles/tokenOverrides.css']);
   });
 });
 

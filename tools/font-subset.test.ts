@@ -1,13 +1,14 @@
 /**
- * The per-course subsetter (#113) — `tools/font-subset.ts`.
+ * The per-course subsetter (#113, #197) — `tools/font-subset.ts`.
  *
  * Three things are worth a guard here. The harvest: course text lives in JSON string VALUES
  * anywhere in the emitted tree, and a collector that missed a nesting level would quietly ship a
  * font without those glyphs — tofu with no error anywhere, the exact failure [D15] names. The
  * split: each script target must take precisely the characters its `unicode-range` routes to it.
- * And the wiring: `src/fonts/mukta.css` is committed while the woff2 are generated, so the css's
- * urls and the generator's output list are two copies of one fact — this file holds them equal,
- * the same shape as `tools/pwa.test.ts` holding the manifest to the checklist.
+ * And the wiring: `src/fonts/mukta.css` and `src/fonts/naskh.css` are committed while the woff2
+ * are generated, so each sheet's urls and its face's output list are two copies of one fact —
+ * this file holds them equal, the same shape as `tools/pwa.test.ts` holding the manifest to the
+ * checklist.
  *
  * One test runs the real subsetter (HarfBuzz wasm) against the real @fontsource file — not to
  * assert exact bytes, which would rot with every font release, but that the output is woff2 and
@@ -27,17 +28,23 @@ import {
   collectStrings,
   coveredChars,
   subsetText,
+  outputFiles,
+  FACES,
+  MUKTA_TARGETS,
   MUKTA_WEIGHTS,
+  NASKH_TARGETS,
+  NASKH_WEIGHTS,
   OUTPUT_FILES,
-  TARGETS,
 } from './font-subset.ts';
 
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const MUKTA_CSS = readFileSync(path.join(REPO_ROOT, 'src', 'fonts', 'mukta.css'), 'utf8');
+const sheet = (name: string) => readFileSync(path.join(REPO_ROOT, 'src', 'fonts', name), 'utf8');
+const MUKTA_CSS = sheet('mukta.css');
 const MAIN_TSX = readFileSync(path.join(REPO_ROOT, 'src', 'main.tsx'), 'utf8');
 
-const devanagari = TARGETS.find((target) => target.subset === 'devanagari')!;
-const latin = TARGETS.find((target) => target.subset === 'latin')!;
+const devanagari = MUKTA_TARGETS.find((target) => target.subset === 'devanagari')!;
+const latin = MUKTA_TARGETS.find((target) => target.subset === 'latin')!;
+const arabic = NASKH_TARGETS.find((target) => target.subset === 'arabic')!;
 
 describe('the harvest', () => {
   it('collects every string value at any depth, and nothing else', () => {
@@ -56,6 +63,19 @@ describe('the harvest', () => {
 
     expect(coveredChars(text, devanagari)).toBe('क।');
     expect(coveredChars(text, latin)).toBe('3a');
+  });
+
+  it('routes Arabic to the Naskh target and nothing else (#197)', () => {
+    // The quiet script line of en-ar's first sentence, with a Latin word beside it.
+    const text = 'اسمي Rohan';
+
+    // The space is the Naskh target's too (#197) — an Arabic line's word gaps belong to the
+    // Arabic face, not to whatever the device would otherwise set them in.
+    expect(coveredChars(text, arabic)).toBe(' اسمي');
+    expect(coveredChars(text, devanagari)).toBe('');
+    // Latin inside a script line routes OUT of the bundled Naskh to system-ui, by design — Mukta's
+    // latin target is Mukta's, not Naskh's (docs/04-font-notes.md §8).
+    expect(coveredChars(text, arabic)).not.toMatch(/[A-Za-z]/);
   });
 
   it('deduplicates and sorts, so the same content always yields the same subset input', () => {
@@ -84,6 +104,16 @@ describe('the subset text', () => {
   it('adds harvested course text in either build kind', () => {
     expect(subsetText(devanagari, 'साखर', specimen, false)).toContain('ख');
   });
+
+  it('carries the Arabic marks a script line needs whatever the sentence says (#197)', () => {
+    const ar = subsetText(arabic, '', specimen, false);
+
+    // Arabic comma, semicolon, question mark; the Arabic-Indic digits; tatweel; the joiners.
+    for (const char of '،؛؟٠٩ـ‌‍') expect(ar).toContain(char);
+    // No letters: content decides those, the same rule Mukta's latin baseline follows.
+    expect(ar).not.toContain('ا');
+    expect(subsetText(arabic, 'اسمي', specimen, false)).toContain('ا');
+  });
 });
 
 describe('the real subsetter', () => {
@@ -105,23 +135,56 @@ describe('the real subsetter', () => {
   });
 });
 
+describe('the real subsetter, Arabic (#197)', () => {
+  it("produces a woff2 a fraction of @fontsource's arabic file", async () => {
+    const source = readFileSync(
+      path.join(
+        REPO_ROOT,
+        'node_modules/@fontsource/noto-naskh-arabic/files/noto-naskh-arabic-arabic-400-normal.woff2',
+      ),
+    );
+
+    const subset = await subsetFont(source, subsetText(arabic, 'اسمي روهان', '', false), {
+      targetFormat: 'woff2',
+    });
+
+    expect(subset.subarray(0, 4).toString('latin1')).toBe('wOF2');
+    expect(subset.length).toBeGreaterThan(0);
+    expect(subset.length).toBeLessThan(source.length / 2);
+  });
+});
+
 describe('the wiring', () => {
-  it('src/fonts/mukta.css references exactly the files the generator writes', () => {
-    const referenced = [...MUKTA_CSS.matchAll(/url\('\.\/generated\/([^']+)'\)/g)]
+  it.each(FACES)('src/fonts/$sheet references exactly the files $slug writes', (face) => {
+    const referenced = [...sheet(face.sheet).matchAll(/url\('\.\/generated\/([^']+)'\)/g)]
       .map((match) => match[1]!)
       .sort();
 
-    expect(referenced).toEqual([...OUTPUT_FILES].sort());
+    expect(referenced).toEqual([...outputFiles(face)].sort());
   });
 
-  it('declares one face per (script, weight) with the shipped weights', () => {
+  it('every file the generator writes belongs to exactly one face', () => {
+    expect([...OUTPUT_FILES].sort()).toEqual([...new Set(OUTPUT_FILES)].sort());
+    expect(OUTPUT_FILES).toHaveLength(FACES.flatMap(outputFiles).length);
+  });
+
+  it('declares one Mukta face per (script, weight) with the shipped weights', () => {
     const weights = [...MUKTA_CSS.matchAll(/font-weight:\s*(\d{3})/g)].map((m) => Number(m[1]));
 
-    expect(weights).toHaveLength(MUKTA_WEIGHTS.length * TARGETS.length);
+    expect(weights).toHaveLength(MUKTA_WEIGHTS.length * MUKTA_TARGETS.length);
     expect([...new Set(weights)].sort()).toEqual([...MUKTA_WEIGHTS]);
   });
 
-  it('main.tsx imports the css, so the generated payloads are in the graph', () => {
+  it('declares the one Naskh weight the quiet script line renders (#197)', () => {
+    const weights = [...sheet('naskh.css').matchAll(/font-weight:\s*(\d{3})/g)].map((m) =>
+      Number(m[1]),
+    );
+
+    expect(weights).toEqual([...NASKH_WEIGHTS]);
+  });
+
+  it('main.tsx imports both sheets, so the generated payloads are in the graph', () => {
     expect(MAIN_TSX).toContain("import './fonts/mukta.css';");
+    expect(MAIN_TSX).toContain("import './fonts/naskh.css';");
   });
 });

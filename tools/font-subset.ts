@@ -1,7 +1,9 @@
 /**
- * Per-course font subsetting (#113) — PRD-engineering §10 [D15]: "subset per course at build time".
+ * Per-course font subsetting (#113, #197) — PRD-engineering §10 [D15]: "subset per course at
+ * build time".
  *
  *   npm run fonts:build     → src/fonts/generated/mukta-{devanagari,latin}-{400,600,700}.woff2
+ *                             src/fonts/generated/noto-naskh-arabic-arabic-400.woff2
  *
  * Mukta is the heavy face — 557 KB of the 804 KB the unsubset bundle shipped (docs/04-font-notes.md
  * §5) — and it renders COURSE text only (`--font-devanagari`), so what it must draw is knowable at
@@ -12,12 +14,24 @@
  * glyph-subset: they carry the shell's open-ended English UI, so `main.tsx` imports their
  * `latin` subset files whole and drops the rest (latin-ext, vietnamese) instead.
  *
- * Two baselines ride along regardless of content:
+ * Noto Naskh Arabic joined on the same terms (#197): a romanized course prints its L2 in Latin
+ * letters and sets the sentence again, quietly, in its own script (`--font-script-fallback`), and
+ * until this face was bundled that line drew in whatever Arabic the device happened to own — or
+ * tofu where it owned none. It is the same problem Mukta solves for Devanagari, so it takes the
+ * same shape: one `ScriptTarget`, cut against the content the build emitted. GSUB closure matters
+ * as much here as for conjuncts — Arabic's initial/medial/final forms are substitutions, not
+ * codepoints, so retaining a letter retains every joined shape of it.
+ *
+ * Baselines ride along regardless of content:
  *
  *   • **Latin digits + ASCII punctuation, always.** The Ladder's L2 line renders `3वाँ` — the digit
  *     comes from Mukta's latin subset, and course strings may carry ASCII punctuation mid-string
  *     (docs/04-font-notes.md §5's caveat). Letters are deliberately absent: Mukta never renders
  *     shell prose.
+ *   • **Arabic punctuation and the Arabic-Indic digits, always** — the marks a `script` line
+ *     carries whatever the sentence says. Naskh's own `latin` subset is deliberately NOT bundled:
+ *     a Latin character inside a script line routes out of the Arabic `unicode-range` to
+ *     `system-ui`, which is what it did before this face existed (docs/04-font-notes.md §8).
  *   • **The `/dev/type` specimen, dev builds only.** The specimen words (ळ, the conjuncts, the
  *     candrabindu — `src/dev/TypeSpecimen.tsx`) are read out of the component's source, the same
  *     source-scan idiom as `tools/make-icons.ts`, so the matrix stays tofu-free in the builds where
@@ -26,11 +40,13 @@
  * The output is honest about the gate: a strict build that ships no modules gets near-empty
  * Devanagari files, and the subsets grow with the content that ships. That happened on 2026-08-13
  * (hi-mr L1-M1..M10, #110/#111): ~4 KiB per Devanagari weight became ~86-90 KiB, and
- * `tools/payload-budget.ts` said so out loud (docs/05-perf-notes.md §4).
+ * `tools/payload-budget.ts` said so out loud (docs/05-perf-notes.md §4). Arabic is at the other
+ * end of that curve today — en-ar is a four-sentence fixture, so its subset is ~2 KiB and will
+ * grow with #199-#201 the same way.
  *
- * `src/fonts/mukta.css` (committed) declares the six `@font-face` blocks pointing at the generated
- * files; `tools/font-subset.test.ts` keeps the two in sync. The generated woff2 are gitignored —
- * they are derived from content the same way `public/content/` is.
+ * `src/fonts/mukta.css` and `src/fonts/naskh.css` (both committed) declare the `@font-face` blocks
+ * pointing at the generated files; `tools/font-subset.test.ts` keeps the two in sync. The
+ * generated woff2 are gitignored — they are derived from content the same way `public/content/` is.
  */
 import { mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
@@ -42,7 +58,7 @@ import subsetFont from 'subset-font';
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CONTENT_OUT = path.join(REPO_ROOT, 'public', 'content');
 const SPECIMEN = path.join(REPO_ROOT, 'src', 'dev', 'TypeSpecimen.tsx');
-const SOURCE_DIR = path.join(REPO_ROOT, 'node_modules', '@fontsource', 'mukta', 'files');
+const FONTSOURCE = path.join(REPO_ROOT, 'node_modules', '@fontsource');
 export const GENERATED_DIR = path.join(REPO_ROOT, 'src', 'fonts', 'generated');
 
 /* ----------------------------------------------------------------- the contract */
@@ -52,17 +68,37 @@ export const GENERATED_DIR = path.join(REPO_ROOT, 'src', 'fonts', 'generated');
     if the ramp starts asking for a weight this list lacks. */
 export const MUKTA_WEIGHTS = [400, 600, 700] as const;
 
+/** The Naskh weight the quiet script line renders. All five `.script` rules are
+    `font: var(--text-body)` (400 15px) with the family swapped to `--font-script-fallback`, so one
+    weight is the whole requirement — `src/fonts.test.ts` derives that pairing and goes red if the
+    line ever asks for a weight this list lacks. */
+export const NASKH_WEIGHTS = [400] as const;
+
 /**
- * The two script targets, mirroring @fontsource's own split — one source file, one output, one
- * `unicode-range` per script. A character outside both ranges is not Mukta's problem: romanized
+ * A script target, mirroring @fontsource's own split — one source file, one output, one
+ * `unicode-range` per script. A character no target claims is nobody's problem here: romanized
  * L2 is Barlow's (`--font-body`), and anything else falls through to `system-ui` by design.
  */
 export interface ScriptTarget {
-  subset: 'devanagari' | 'latin';
+  subset: 'devanagari' | 'latin' | 'arabic';
   /** Does this codepoint belong to this target's `unicode-range`? */
   covers: (codePoint: number) => boolean;
   /** Characters included no matter what the content build shipped. */
   baseline: string;
+}
+
+/**
+ * One bundled family and the script targets it is cut for. `slug` is both the @fontsource package
+ * name and the output prefix, so `node_modules/@fontsource/<slug>/files/<slug>-<subset>-<weight>-
+ * normal.woff2` in and `src/fonts/generated/<slug>-<subset>-<weight>.woff2` out — a new family is
+ * one row here, one committed `@font-face` sheet, and nothing else.
+ */
+export interface SubsetFace {
+  slug: 'mukta' | 'noto-naskh-arabic';
+  /** The committed sheet whose `url()`s must match this face's outputs exactly. */
+  sheet: string;
+  weights: readonly number[];
+  targets: readonly ScriptTarget[];
 }
 
 /** Space, digits, and ASCII punctuation — no letters (see the header). */
@@ -72,7 +108,14 @@ const LATIN_BASELINE = ' 0123456789!"#%&\'()*+,-./:;?@[]_{}';
     devanagari `unicode-range` (U+200C-200D) and control conjunct formation. */
 const DEVANAGARI_BASELINE = '।॥०१२३४५६७८९‌‍';
 
-export const TARGETS: readonly ScriptTarget[] = [
+/** The space, Arabic comma, semicolon and question mark, the Arabic-Indic digits, tatweel, and the
+    joiners — the marks a `script` line carries whatever the sentence says. The space earns its
+    place: without it a four-word Arabic line is set in two faces, Naskh for the words and the
+    system face for the gaps between them, at whatever advance that face happens to use. Letters
+    are absent for the same reason Mukta's latin baseline has none: content decides those. */
+const ARABIC_BASELINE = ' ،؛؟٠١٢٣٤٥٦٧٨٩ـ‌‍';
+
+export const MUKTA_TARGETS: readonly ScriptTarget[] = [
   {
     subset: 'devanagari',
     covers: (cp) =>
@@ -91,10 +134,44 @@ export const TARGETS: readonly ScriptTarget[] = [
   },
 ];
 
-/** Every file this tool writes — `tools/font-subset.test.ts` holds `src/fonts/mukta.css` to it. */
-export const OUTPUT_FILES = MUKTA_WEIGHTS.flatMap((weight) =>
-  TARGETS.map((target) => `mukta-${target.subset}-${weight}.woff2`),
-);
+/** @fontsource's `arabic` range, trimmed to what a course line can plausibly carry: the Arabic
+    block and its supplement/extended-A neighbours, the presentation forms a shaper may reach for,
+    and the joiners. The astral ranges (Arabic mathematical alphabetic symbols, Rumi numerals) are
+    not course text and buy nothing. */
+export const NASKH_TARGETS: readonly ScriptTarget[] = [
+  {
+    subset: 'arabic',
+    covers: (cp) =>
+      cp === 0x0020 ||
+      (cp >= 0x0600 && cp <= 0x06ff) ||
+      (cp >= 0x0750 && cp <= 0x077f) ||
+      (cp >= 0x0870 && cp <= 0x08ff) ||
+      (cp >= 0xfb50 && cp <= 0xfdff) ||
+      (cp >= 0xfe70 && cp <= 0xfefc) ||
+      (cp >= 0x200c && cp <= 0x200e),
+    baseline: ARABIC_BASELINE,
+  },
+];
+
+export const FACES: readonly SubsetFace[] = [
+  { slug: 'mukta', sheet: 'mukta.css', weights: MUKTA_WEIGHTS, targets: MUKTA_TARGETS },
+  {
+    slug: 'noto-naskh-arabic',
+    sheet: 'naskh.css',
+    weights: NASKH_WEIGHTS,
+    targets: NASKH_TARGETS,
+  },
+];
+
+/** The files one face's rows produce — `tools/font-subset.test.ts` holds its sheet to this list. */
+export function outputFiles(face: SubsetFace): string[] {
+  return face.weights.flatMap((weight) =>
+    face.targets.map((target) => `${face.slug}-${target.subset}-${weight}.woff2`),
+  );
+}
+
+/** Every file this tool writes. */
+export const OUTPUT_FILES = FACES.flatMap(outputFiles);
 
 /* ----------------------------------------------------------------- the harvest */
 
@@ -181,24 +258,33 @@ async function main(): Promise<number> {
   mkdirSync(GENERATED_DIR, { recursive: true });
 
   let written = 0;
-  let bytes = 0;
-  let was = 0;
-  for (const weight of MUKTA_WEIGHTS) {
-    for (const target of TARGETS) {
-      const source = path.join(SOURCE_DIR, `mukta-${target.subset}-${weight}-normal.woff2`);
-      const text = subsetText(target, harvest.text, specimenSource, harvest.devBuild);
-      const subset = await subsetFont(readFileSync(source), text, { targetFormat: 'woff2' });
-      const out = path.join(GENERATED_DIR, `mukta-${target.subset}-${weight}.woff2`);
-      writeFileSync(out, subset);
-      written += 1;
-      bytes += subset.length;
-      was += statSync(source).size;
+  const perFace: string[] = [];
+  for (const face of FACES) {
+    let bytes = 0;
+    let was = 0;
+    for (const weight of face.weights) {
+      for (const target of face.targets) {
+        const source = path.join(
+          FONTSOURCE,
+          face.slug,
+          'files',
+          `${face.slug}-${target.subset}-${weight}-normal.woff2`,
+        );
+        const text = subsetText(target, harvest.text, specimenSource, harvest.devBuild);
+        const subset = await subsetFont(readFileSync(source), text, { targetFormat: 'woff2' });
+        const out = path.join(GENERATED_DIR, `${face.slug}-${target.subset}-${weight}.woff2`);
+        writeFileSync(out, subset);
+        written += 1;
+        bytes += subset.length;
+        was += statSync(source).size;
+      }
     }
+    perFace.push(`${face.slug} ${bytes} bytes (from ${was})`);
   }
 
   const kind = harvest.devBuild ? 'dev build' : 'strict build';
   console.log(
-    `FONTS mukta ${written}/${OUTPUT_FILES.length} ok — ${bytes} bytes (from ${was}), ` +
+    `FONTS ${written}/${OUTPUT_FILES.length} ok — ${perFace.join(', ')}, ` +
       `${kind}, courses: ${harvest.courses.length === 0 ? 'none' : harvest.courses.join(', ')}`,
   );
   return 0;
