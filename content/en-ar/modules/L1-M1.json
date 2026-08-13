@@ -4,30 +4,58 @@
   "title": "Who I am",
   "job": "Introduce yourself and state what you like",
   "prerequisites": [],
-  "verified": false,
-  "verifiedBy": null,
-  "verifiedAt": null,
-  "fixture": true,
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-13",
   "complexity": {
     "minWordsPerSentence": 2,
-    "maxWordsPerSentence": 4,
+    "maxWordsPerSentence": 5,
     "allowedTenses": ["simple_present"],
-    "allowedPatterns": ["ismī + name", "anā min + place", "uḥibb + al- + N", "urīd + N"],
+    "allowedPatterns": [
+      "ismī + name",
+      "anā min + place",
+      "anā + N/Adj",
+      "uḥibb + al- + N",
+      "urīd + N"
+    ],
     "newWordCap": 25
   },
   "rules": [
-    { "tag": "free", "text": "Subject–Verb–Object order works, just like English." },
     {
-      "tag": "delta",
-      "text": "\"To be\" vanishes in the present: ismī Rohān (\"my-name Rohan\") — no is/am."
+      "tag": "free",
+      "text": "Nothing in this module moves out of the order you already think in: ismī Rohān, uḥibb al-qahwa. (Written Arabic can put the verb before a spelled-out subject noun; no sentence here has one.)"
     },
     {
       "tag": "delta",
-      "text": "The subject usually lives inside the verb: uḥibb = I-like, urīd = I-want."
+      "text": "In the present, a statement that starts with a noun or a pronoun has no \"to be\" at all: ismī Rohān is \"my-name Rohan\" and it is a whole sentence. This is the present affirmative only — the past has kāna (M5), and the present negative needs laysa, which L1 never teaches."
+    },
+    {
+      "tag": "delta",
+      "text": "The person lives inside the verb, on the front: u- is I (uḥibb, urīd), tu- is you or she (tuḥibb), ya- is he (yuḥibb). So a sentence with a verb needs no pronoun, and anā uḥibb reads as emphasis — \"I'm the one who likes it\" — rather than as neutral speech."
+    },
+    {
+      "tag": "delta",
+      "text": "Where there is no verb, the pronoun is obligatory: anā min al-Hind. Nothing else in that sentence can say who is being talked about."
+    },
+    {
+      "tag": "delta",
+      "text": "Possession is a suffix, not a word. ism (name) + -ī = ismī (my name); the same tail gives ismuka (your, to a man), ismuki (your, to a woman), ismuhu (his). M7 will hang the same endings on ʿind- to say \"I have\"."
+    },
+    {
+      "tag": "delta",
+      "text": "al- (\"the\") is written onto the front of its noun with a hyphen and is part of that word: al-Hind, al-qahwa. It is never a separate word the way English \"the\" is, and in M2 it changes shape before certain letters."
     },
     {
       "tag": "interference",
-      "text": "General statements keep the article: English \"I like coffee\" → Arabic \"I like THE coffee\" (al-qahwa)."
+      "text": "A general statement KEEPS al- where English drops it: uḥibb al-qahwa is \"I like coffee\" — coffee as a whole class of thing. uḥibb qahwa sounds like \"I like a coffee\", one cup."
+    },
+    {
+      "tag": "interference",
+      "text": "A request DROPS al- where English would keep it: urīd qahwa, urīd māʾ. Put al- back and you are pointing at one particular thing — urīd al-māʾ is \"I want THE water\", that glass on the table."
+    },
+    {
+      "tag": "delta",
+      "text": "A word that describes someone follows the SUBJECT of the sentence, not the person speaking: anā ṭālib from a man, anā ṭāliba from a woman — and Rohān ṭālib, Priyā ṭāliba, whoever says them. The -a marks the person being described as female."
     }
   ],
   "sentences": [
@@ -42,42 +70,47 @@
         "words": [
           {
             "display": "ismī",
+            "script": "اسمي",
             "cue": "my name",
             "tag": "delta",
             "forms": ["ismī", "ismuka", "ismuki", "ismuhu"],
-            "note": "ism (name) + the attached -ī = \"my\". Possession is a suffix, not a word."
+            "note": "ism is \"name\"; the -ī on the end is \"my\". Possession is a suffix, not a word: ismuka (your name, to a man) · ismuki (to a woman) · ismuhu (his name)."
           },
           {
             "display": "Rohān",
+            "script": "روهان",
             "cue": "Rohan",
             "tag": "free",
             "forms": [],
-            "note": "Names carry over."
+            "note": "Names carry over — Arabic spells them out by sound. Swap in your own."
           }
         ],
-        "rules": [1]
+        "rules": [1, 4]
       },
-      "trap": "No \"is\" — Arabic drops the verb \"to be\" in the present. \"ismī huwa Rohān\" sounds stilted.",
-      "sound": "Say it ISS-mee ro-HAAN — crisp double s, long final vowels.",
+      "trap": "English needs \"is\" and Arabic has nothing to put there. ismī Rohān is already the whole sentence.",
+      "sound": "ISS-mee ro-HAAN — hold the s, and the -ī is a long ee.",
       "variations": [
         {
-          "display": "ismī Priya",
+          "display": "ismī Priyā",
+          "script": "اسمي بريا",
           "cue": "My name is Priya",
-          "changed": "swap the name — ismī stays"
+          "changed": "swap the name — ismī itself never changes"
         },
         {
           "display": "ismuhu Rohān",
+          "script": "اسمه روهان",
           "cue": "His name is Rohan",
-          "changed": "-ī (my) → -hu (his) — the owner hangs off the end"
+          "changed": "-ī (my) → -uhu (his): the owner hangs off the end of the word"
         }
       ],
       "mistake": {
         "display": "ismī huwa Rohān",
-        "why": "The present-tense \"to be\" (huwa) is dropped — ismī Rohān is complete."
+        "script": "اسمي هو روهان",
+        "why": "huwa (\"he/it\") is the English \"is\" smuggled in. The present tense has no copula: ismī Rohān."
       },
-      "usage": "First introductions, any register.",
+      "usage": "First introductions, spoken or written, any register.",
       "register": "neutral",
-      "mnemonic": "ismī = \"name-my\" — the owner hangs off the end of the word."
+      "mnemonic": "ismī = \"name-my\". The owner comes last, stuck to the end."
     },
     {
       "id": "L1-M1-S02",
@@ -90,52 +123,142 @@
         "words": [
           {
             "display": "anā",
+            "script": "أنا",
             "cue": "I",
             "tag": "delta",
-            "forms": ["anā", "anta", "anti", "huwa"],
-            "note": "Pronoun \"I\" — needed here because there is no verb. The same slot takes anta / anti (you) or huwa (he)."
+            "forms": [],
+            "note": "\"I\" — obligatory here, because this sentence has no verb to carry the person. Beside a verb it would be emphasis instead (uḥibb, not anā uḥibb). M2 fills the same slot with anta and anti (\"you\", male and female)."
           },
           {
             "display": "min",
+            "script": "من",
             "cue": "from",
             "tag": "free",
             "forms": [],
-            "note": "Works like English \"from\"."
+            "note": "Works like English \"from\" and sits where English puts it."
           },
           {
             "display": "al-Hind",
+            "script": "الهند",
             "cue": "India",
-            "tag": "delta",
+            "tag": "interference",
             "forms": ["al-Hind", "Hind"],
-            "note": "Country names usually take al- (\"the India\")."
+            "note": "al- is the definite article, \"the\", written onto the front of its noun with a hyphen — al-Hind, al-qahwa, al-māʾ. It belongs to the word, not beside it. Country names carry it even where English drops it, so \"from India\" is min al-Hind. (Before some letters al- changes shape — that is M2.)"
           }
         ],
-        "rules": [1]
+        "rules": [1, 3, 5]
       },
-      "trap": "English says \"from India\"; Arabic keeps the article — min al-Hind, not min Hind.",
-      "sound": "Run it together: a-NAA min al-HIND.",
+      "trap": "English says \"from India\" bare. Arabic keeps the article: min al-Hind, never min Hind.",
+      "sound": "a-NAA min al-HIND — the al- runs straight onto the noun, said in one breath.",
       "variations": [
         {
-          "display": "anta min al-Hind",
-          "cue": "You are from India",
-          "changed": "anā → anta: the pronoun carries the person, since there is no verb"
+          "display": "anā min Miṣr",
+          "script": "أنا من مصر",
+          "cue": "I am from Egypt",
+          "changed": "swap the country — Miṣr is one of the few that takes no al-"
         },
         {
-          "display": "huwa min al-Hind",
-          "cue": "He is from India",
-          "changed": "anā → huwa — same frame, third person, still no verb"
+          "display": "Rohān min al-Hind",
+          "script": "روهان من الهند",
+          "cue": "Rohan is from India",
+          "changed": "a name instead of anā — still nothing where English puts \"is\""
         }
       ],
       "mistake": {
-        "display": "anā huwa min al-Hind",
-        "why": "No \"am\" to translate — anā min al-Hind is already the whole sentence."
+        "display": "anā min Hind",
+        "script": "أنا من هند",
+        "why": "The article is not optional on this noun. It is min al-Hind."
       },
-      "usage": "Where you are from — the second or third line of any introduction.",
+      "usage": "Where you are from — the second line of nearly every introduction.",
       "register": "neutral",
-      "mnemonic": "al-Hind carries its own \"the\" — Arabic says \"the India\"."
+      "mnemonic": "Arabic says \"the India\": the article is glued on, al-Hind."
     },
     {
       "id": "L1-M1-S03",
+      "display": "anā ṭālib",
+      "script": "أنا طالب",
+      "cue": "I am a student",
+      "glossEn": "lit. \"I student\"",
+      "literal": "I student",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ṭālib",
+            "script": "طالب",
+            "cue": "student",
+            "tag": "delta",
+            "forms": ["ṭālib", "ṭāliba"],
+            "note": "ṭālib describes a male student, ṭāliba a female one — the -a follows whoever the sentence is about, not whoever is speaking. Bare, with no word for \"a\" in front of it: Arabic has no indefinite article."
+          }
+        ],
+        "rules": [1, 8]
+      },
+      "trap": "There is no word for \"a\". \"I am a student\" is two words in Arabic, and both of them are already there.",
+      "sound": "ṭ is a heavy t said with the tongue low and the mouth wide: TAA-lib.",
+      "variations": [
+        {
+          "display": "anā ṭāliba",
+          "script": "أنا طالبة",
+          "cue": "I am a student (said by a woman)",
+          "changed": "add -a — the description follows the person described"
+        },
+        {
+          "display": "Rohān ṭālib",
+          "script": "روهان طالب",
+          "cue": "Rohan is a student",
+          "changed": "a name in the subject slot, and still no \"is\""
+        }
+      ],
+      "mistake": {
+        "display": "anā wāḥid ṭālib",
+        "script": "أنا واحد طالب",
+        "why": "wāḥid is the number one, not the English \"a\". Arabic has no indefinite article at all: anā ṭālib."
+      },
+      "usage": "Saying what you do or what you are — student, teacher, engineer.",
+      "register": "neutral",
+      "mnemonic": "ṭālib is one who seeks (ṭalab = to seek) — a student seeks knowledge."
+    },
+    {
+      "id": "L1-M1-S04",
+      "display": "anā saʿīd",
+      "script": "أنا سعيد",
+      "cue": "I am happy",
+      "glossEn": "lit. \"I happy\"",
+      "literal": "I happy",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "saʿīd",
+            "script": "سعيد",
+            "cue": "happy, glad",
+            "tag": "delta",
+            "forms": ["saʿīd", "saʿīda"],
+            "note": "saʿīd of a man, saʿīda of a woman — same -a as ṭālib/ṭāliba, and it tracks the subject of the sentence. An adjective needs no \"am\" in front of it either."
+          }
+        ],
+        "rules": [1, 8]
+      },
+      "trap": "\"I am happy\" has three words in English and two in Arabic. The \"am\" has nowhere to go.",
+      "sound": "sa-ʿEED — the ʿ is a tightening deep in the throat just before the long ee.",
+      "variations": [
+        {
+          "display": "anā saʿīda",
+          "script": "أنا سعيدة",
+          "cue": "I am happy (said by a woman)",
+          "changed": "add -a — the adjective follows the person it describes"
+        }
+      ],
+      "mistake": {
+        "display": "anā saʿīda",
+        "script": "أنا سعيدة",
+        "why": "Said by a man this is wrong: -a describes a female subject. A man says anā saʿīd."
+      },
+      "usage": "How you are, in the moment or in general. Also the polite \"pleased to meet you\" (anā saʿīd bi-liqāʾik) that L1 does not teach.",
+      "register": "neutral",
+      "mnemonic": "saʿīd is also a man's name — Said, \"the happy one\"."
+    },
+    {
+      "id": "L1-M1-S05",
       "display": "uḥibb al-qahwa",
       "script": "أحب القهوة",
       "cue": "I like coffee",
@@ -145,45 +268,140 @@
         "words": [
           {
             "display": "uḥibb",
-            "cue": "I like/love",
+            "script": "أحب",
+            "cue": "I like, I love",
             "tag": "delta",
             "forms": ["uḥibb", "tuḥibb", "yuḥibb"],
-            "note": "One verb covers like and love; the subject \"I\" lives inside the verb."
+            "note": "One verb does both like and love. The person is the prefix: u- = I, tu- = you (to a man) or she, ya- = he. So the \"I\" is already in the word and needs no anā beside it."
           },
           {
             "display": "al-qahwa",
+            "script": "القهوة",
             "cue": "coffee",
             "tag": "interference",
             "forms": ["al-qahwa", "qahwa"],
-            "note": "General statements take al- — English drops \"the\", Arabic keeps it."
+            "note": "qahwa is coffee; al-qahwa is coffee with the article on it. Liking a whole class of thing keeps the article — uḥibb al-qahwa — while asking for some drops it: urīd qahwa. Both shapes are this same word."
           }
         ],
-        "rules": [0, 2, 3]
+        "rules": [0, 2, 6]
       },
-      "trap": "\"uḥibb qahwa\" (no al-) sounds like \"I like a coffee\". Liking coffee in general needs al-qahwa.",
-      "sound": "The q of qahwa is a deep k from the back of the throat — u-HIBB al-QAH-wa.",
+      "trap": "English \"I like coffee\" has no \"the\" in it, and Arabic must have one. Leave al- off and you have asked about a single cup.",
+      "sound": "u-ḤIBB al-QAH-wa — ḥ is a hard breathy h from the throat, and q is a k made right at the back.",
       "variations": [
         {
           "display": "tuḥibb al-qahwa",
+          "script": "تحب القهوة",
           "cue": "You like coffee",
-          "changed": "u- → tu-: the person prefix swaps, al-qahwa stays"
+          "changed": "u- → tu-: the prefix is the whole change"
         },
         {
-          "display": "uḥibb al-Hind",
-          "cue": "I like India",
-          "changed": "swap the thing liked — al- rides along with it"
+          "display": "yuḥibb al-qahwa",
+          "script": "يحب القهوة",
+          "cue": "He likes coffee",
+          "changed": "u- → ya-: he, and still no pronoun in the sentence"
         }
       ],
       "mistake": {
-        "display": "anā uḥibb qahwa",
-        "why": "Drop the extra anā (it is already inside the verb) and keep al-: uḥibb al-qahwa."
+        "display": "uḥibb qahwa",
+        "script": "أحب قهوة",
+        "why": "Without al- this is \"I like a coffee\", one cup. Coffee in general is al-qahwa."
       },
-      "usage": "Likes of every kind — food, people, places.",
+      "usage": "Likes of every kind — drinks, music, people, places.",
       "register": "neutral",
-      "mnemonic": "ḥubb = love — Arabic \"likes\" by loving; the same root as ḥabībī."
+      "mnemonic": "ḥubb is love — the same root as ḥabībī, \"my love\"."
     },
     {
-      "id": "L1-M1-S04",
+      "id": "L1-M1-S06",
+      "display": "uḥibb al-mūsīqā",
+      "script": "أحب الموسيقى",
+      "cue": "I like music",
+      "glossEn": "lit. \"I-love the-music\"",
+      "literal": "I-love the-music",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-mūsīqā",
+            "script": "الموسيقى",
+            "cue": "music",
+            "tag": "interference",
+            "forms": ["al-mūsīqā", "mūsīqā"],
+            "note": "Borrowed from Greek, and it still takes the article like any other Arabic noun: liking music in general is uḥibb al-mūsīqā, exactly as with al-qahwa."
+          }
+        ],
+        "rules": [0, 2, 6]
+      },
+      "trap": "A word you already recognise still plays by Arabic rules: mūsīqā needs its al- in a general statement.",
+      "sound": "moo-SEE-qaa — the q again from the back of the throat, and the last vowel is long.",
+      "variations": [
+        {
+          "display": "uḥibb al-Hind",
+          "script": "أحب الهند",
+          "cue": "I like India",
+          "changed": "swap what is liked — the article rides along with it"
+        },
+        {
+          "display": "yuḥibb al-mūsīqā",
+          "script": "يحب الموسيقى",
+          "cue": "He likes music",
+          "changed": "u- → ya-: the person is the prefix, nothing else moves"
+        }
+      ],
+      "mistake": {
+        "display": "anā uḥibb al-mūsīqā",
+        "script": "أنا أحب الموسيقى",
+        "why": "The \"I\" is already the u- on the verb. Adding anā is emphasis — \"I'M the one who likes music\" — not the plain sentence."
+      },
+      "usage": "Everyday likes. The same frame carries any noun you know.",
+      "register": "neutral",
+      "mnemonic": "mūsīqā is the English word with an Arabic coat on: al-mūsīqā."
+    },
+    {
+      "id": "L1-M1-S07",
+      "display": "urīd qahwa",
+      "script": "أريد قهوة",
+      "cue": "I want a coffee",
+      "glossEn": "lit. \"I-want coffee\"",
+      "literal": "I-want coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "urīd",
+            "script": "أريد",
+            "cue": "I want",
+            "tag": "delta",
+            "forms": [],
+            "note": "The everyday verb for wanting, with the same u- prefix as uḥibb: the \"I\" is inside it. M3 adds the other persons (turīd, yurīd) and lā urīd for refusing."
+          }
+        ],
+        "rules": [0, 2, 7]
+      },
+      "trap": "This is the mirror of uḥibb al-qahwa: asking for something drops the article that liking it required.",
+      "sound": "u-REED QAH-wa. The final -a of qahwa is short and light.",
+      "variations": [
+        {
+          "display": "urīd al-qahwa",
+          "script": "أريد القهوة",
+          "cue": "I want the coffee",
+          "changed": "add al- — now it is that particular coffee, the one already talked about"
+        },
+        {
+          "display": "urīd mūsīqā",
+          "script": "أريد موسيقى",
+          "cue": "I want some music",
+          "changed": "swap what is wanted — still bare, because it is a request"
+        }
+      ],
+      "mistake": {
+        "display": "turīd qahwa",
+        "script": "تريد قهوة",
+        "why": "tu- is \"you\". For \"I want\", the prefix is u-: urīd qahwa."
+      },
+      "usage": "Ordering and asking, in a café or at home. Direct rather than rude; the polite frames come later.",
+      "register": "neutral",
+      "mnemonic": "urīd — \"you read\" it wrong: the u- at the front means I, not you."
+    },
+    {
+      "id": "L1-M1-S08",
       "display": "urīd māʾ",
       "script": "أريد ماء",
       "cue": "I want water",
@@ -192,58 +410,184 @@
       "deconstruction": {
         "words": [
           {
-            "display": "urīd",
-            "cue": "I want",
-            "tag": "delta",
-            "forms": ["urīd", "turīd", "yurīd"],
-            "note": "The everyday wanting verb; \"I\" is inside it."
-          },
-          {
             "display": "māʾ",
+            "script": "ماء",
             "cue": "water",
             "tag": "free",
             "forms": ["māʾ", "al-māʾ"],
-            "note": "The ʾ is a tiny catch in the throat. Plain māʾ is water in general; al-māʾ is that particular water."
+            "note": "The ʾ at the end is hamza, a catch in the throat — it is a consonant, so māʾ and mā are different words. Bare māʾ is water in general; al-māʾ is that particular water."
           }
         ],
-        "rules": [0, 2]
+        "rules": [0, 2, 7]
       },
-      "trap": "Asking for something is the one place al- drops off: urīd māʾ, not urīd al-māʾ — the opposite of uḥibb al-qahwa.",
-      "sound": "u-REED māʾ — end on the little throat-catch, not a long aah.",
+      "trap": "English \"I want water\" and \"I want the water\" are two sentences; in Arabic the difference is the three letters al-.",
+      "sound": "maa followed by a tiny stop, as in the middle of \"uh-oh\" — not a trailing aah.",
       "variations": [
         {
-          "display": "turīd māʾ",
-          "cue": "You want water",
-          "changed": "u- → tu-: the wanting is now yours"
+          "display": "urīd al-māʾ",
+          "script": "أريد الماء",
+          "cue": "I want the water",
+          "changed": "add al- — that glass, not water in general"
         },
         {
-          "display": "urīd al-māʾ",
-          "cue": "I want the water",
-          "changed": "add al- — that water on the table, not water in general"
+          "display": "uḥibb al-māʾ",
+          "script": "أحب الماء",
+          "cue": "I like water",
+          "changed": "want → like, and the article comes back with it"
         }
       ],
       "mistake": {
-        "display": "anā urīd māʾ",
-        "why": "Drop the anā — the \"I\" is already inside urīd."
+        "display": "urīd mā",
+        "script": "أريد ما",
+        "why": "Drop the final catch and the word is mā, \"what\". Water ends on the hamza: māʾ."
       },
-      "usage": "Asking for what you want — shops, tables, homes.",
+      "usage": "Asking for what you want — a table, a shop, someone's kitchen.",
       "register": "neutral",
-      "mnemonic": "urīd sounds like \"you read\" — but it is I-want; the u- at the front is the \"I\"."
+      "mnemonic": "māʾ ends the way \"uh-oh\" breaks in the middle: a little stop after the aa."
+    },
+    {
+      "id": "L1-M1-S09",
+      "display": "uḥibb al-Hind kathīran",
+      "script": "أحب الهند كثيرًا",
+      "cue": "I like India a lot",
+      "glossEn": "lit. \"I-love the-India much\"",
+      "literal": "I-love the-India much",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kathīran",
+            "script": "كثيرًا",
+            "cue": "a lot, very much",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Much\", turned into an adverb by the -an on the end, and it goes AFTER what you like: uḥibb al-qahwa kathīran. That -an is one of the few endings this course writes out."
+          }
+        ],
+        "rules": [0, 2, 6]
+      },
+      "trap": "English can put \"really\" in front of the verb. Arabic puts kathīran at the end of the sentence.",
+      "sound": "ka-THEE-ran, with the th of \"think\".",
+      "variations": [
+        {
+          "display": "uḥibb al-qahwa kathīran",
+          "script": "أحب القهوة كثيرًا",
+          "cue": "I like coffee a lot",
+          "changed": "swap what is liked — kathīran stays at the end"
+        },
+        {
+          "display": "yuḥibb al-mūsīqā kathīran",
+          "script": "يحب الموسيقى كثيرًا",
+          "cue": "He likes music a lot",
+          "changed": "u- → ya-, and the rest of the sentence holds still"
+        }
+      ],
+      "mistake": {
+        "display": "uḥibb kathīran al-Hind",
+        "script": "أحب كثيرًا الهند",
+        "why": "kathīran comes after the thing liked, not before it: uḥibb al-Hind kathīran."
+      },
+      "usage": "Warming up any liking — food, places, people.",
+      "register": "neutral",
+      "mnemonic": "kathīr = many; add the -an tail and \"many\" becomes \"a lot\"."
+    },
+    {
+      "id": "L1-M1-S10",
+      "display": "anā ṭālib wa uḥibb al-mūsīqā",
+      "script": "أنا طالب وأحب الموسيقى",
+      "cue": "I am a student and I like music",
+      "glossEn": "lit. \"I student and I-love the-music\"",
+      "literal": "I student and I-love the-music",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wa",
+            "script": "و",
+            "cue": "and",
+            "tag": "free",
+            "forms": [],
+            "note": "\"And\", joining two statements. In Arabic script it is written stuck to the next word (وأحب); this course spaces it out so that each word stays its own word."
+          }
+        ],
+        "rules": [0, 1, 2, 3]
+      },
+      "trap": "The second half needs no second \"I\": uḥibb already carries it, even after wa.",
+      "sound": "wa runs straight into whatever follows: wa-u-ḤIBB, with no pause.",
+      "variations": [
+        {
+          "display": "anā ṭālib wa uḥibb al-qahwa",
+          "script": "أنا طالب وأحب القهوة",
+          "cue": "I am a student and I like coffee",
+          "changed": "swap the second half — wa joins whatever comes next"
+        },
+        {
+          "display": "anā ṭāliba wa uḥibb al-mūsīqā",
+          "script": "أنا طالبة وأحب الموسيقى",
+          "cue": "I am a student and I like music (said by a woman)",
+          "changed": "ṭālib → ṭāliba: only the description of the subject changes"
+        }
+      ],
+      "mistake": {
+        "display": "anā ṭālib uḥibb al-mūsīqā",
+        "script": "أنا طالب أحب الموسيقى",
+        "why": "Two statements need wa between them. Without it the sentence reads as \"I am a student who likes music\"."
+      },
+      "usage": "The whole introduction in one line — who you are, then what you like.",
+      "register": "neutral",
+      "mnemonic": "wa is the smallest word in the language and it does the same job as \"and\"."
     }
   ],
   "comprehensionPool": [
     {
       "id": "L1-M1-C01",
-      "display": "urīd qahwa",
-      "script": "أريد قهوة",
-      "cue": "I want a coffee"
+      "display": "ismuhu Rohān",
+      "script": "اسمه روهان",
+      "cue": "His name is Rohan"
     },
     {
       "id": "L1-M1-C02",
       "display": "yuḥibb al-qahwa",
       "script": "يحب القهوة",
       "cue": "He likes coffee"
+    },
+    {
+      "id": "L1-M1-C03",
+      "display": "anā ṭāliba",
+      "script": "أنا طالبة",
+      "cue": "I am a student (said by a woman)"
+    },
+    {
+      "id": "L1-M1-C04",
+      "display": "uḥibb al-mūsīqā kathīran",
+      "script": "أحب الموسيقى كثيرًا",
+      "cue": "I like music a lot"
+    },
+    {
+      "id": "L1-M1-C05",
+      "display": "urīd al-māʾ",
+      "script": "أريد الماء",
+      "cue": "I want the water"
+    },
+    {
+      "id": "L1-M1-C06",
+      "display": "tuḥibb al-mūsīqā",
+      "script": "تحب الموسيقى",
+      "cue": "You like music"
+    },
+    {
+      "id": "L1-M1-C07",
+      "display": "Rohān min al-Hind",
+      "script": "روهان من الهند",
+      "cue": "Rohan is from India"
+    },
+    {
+      "id": "L1-M1-C08",
+      "display": "urīd qahwa wa māʾ",
+      "script": "أريد قهوة وماء",
+      "cue": "I want a coffee and water"
     }
   ],
-  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
 }

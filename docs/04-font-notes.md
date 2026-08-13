@@ -286,6 +286,22 @@ size of the whole `arabic` subset's letter repertoire, an order of magnitude bel
 ~86–90 KiB per weight (Devanagari pays for conjunct closure; Arabic's joining forms are far
 fewer). Expect low tens of KiB at full L1, on one weight rather than three.
 
+**Measured against that prediction (#199).** en-ar L1-M1 and L1-M2 authored in full — 20 sentences
+and every word row, variation, mistake and pool item carrying its Arabic original — take the subset
+from **2,348 to 10,228 raw bytes**. Twenty sentences cost ~8 KiB where four cost ~5 KiB, which is
+the per-distinct-character curve flattening exactly as predicted: most of M2's letters were already
+paid for by M1. On #207's per-course rows the whole course reads `course:en-ar 27.8 KiB gzip`
+against a 360 KiB limit (`precache:en-ar` 244.0 KiB against 590) — content, index and Naskh
+together. Eight more modules at this rate land nowhere near either limit.
+
+**Open, and not #197's or #199's to fix: the ROMANIZED line has no bundled face for its
+diacritics.** Probing a character at a time through `CSS.getPlatformFontsForNode` on the dev build:
+`ā ī ū ḥ ṣ ḍ ṭ ẓ ʾ ʿ` (U+0101, U+012B, U+016B, U+1E25, U+1E63, U+1E0D, U+1E6D, U+1E93, U+02BE,
+U+02BF) all fall out of Mukta to the system's DejaVu Sans, while the ASCII letters beside them stay
+Mukta. So `ṣabāḥ al-khayr, Rohān` paints in two faces at 32px. §2's `/dev/type` specimen renders the
+diacritics in **Barlow**, not Mukta, which is why the gap survived this long — the specimen is not
+the face the hero uses.
+
 ### 8.5 Rendering evidence
 
 Dev build (`npm run dev`, en-ar active), headless Chromium 151 over CDP at 390×844 dpr 2. The
