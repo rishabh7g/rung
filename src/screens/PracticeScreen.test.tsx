@@ -154,44 +154,13 @@ describe('the hub', () => {
     ).not.toBeInTheDocument();
   });
 
-  it('shows the notebook invitation in the course’s own words until it is dismissed (#177, §8.1)', async () => {
+  it('renders no notebook invitation and no ✕ to dismiss one (#227)', async () => {
     await renderHub();
 
-    const slot = document.querySelector('[data-slot="notebookInvitation"]');
-    expect(slot).not.toBeNull();
-    expect(screen.getByText(strings('notebookInvitation'))).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Dismiss this note' })).toBeInTheDocument();
-  });
-
-  it('✕ removes the line and sets the one-shot app-level bit — never per course', async () => {
-    await renderHub();
-
-    fireEvent.click(screen.getByRole('button', { name: 'Dismiss this note' }));
-
-    expect(screen.queryByText(strings('notebookInvitation'))).not.toBeInTheDocument();
+    // The line, its plate and its one-shot bit were retired together — the hub opens on the
+    // phases now, and there is nothing here for a learner to read once and dismiss forever.
     expect(document.querySelector('[data-slot="notebookInvitation"]')).toBeNull();
-    // The bit lands in `settings`, the app-level tier — not under any course subtree.
-    expect(useAppStore.getState().settings.notebookInvitationDismissed).toBe(true);
-  });
-
-  it('never shows the line again once the persisted bit is set — a reload cannot resurrect it', async () => {
-    useAppStore.getState().setSetting('notebookInvitationDismissed', true);
-
-    await renderHub();
-
-    expect(screen.queryByText(strings('notebookInvitation'))).not.toBeInTheDocument();
-    expect(document.querySelector('[data-slot="notebookInvitation"]')).toBeNull();
-  });
-
-  it('stays dismissed across a course switch — the notebook habit is learned once (§8.1)', async () => {
-    await renderHub();
-    fireEvent.click(screen.getByRole('button', { name: 'Dismiss this note' }));
-
-    useAppStore.getState().switchCourse('en-es');
-    await screen.findByText(strings('practice.hubTitle', 'en-es'));
-
-    expect(screen.queryByText(strings('notebookInvitation', 'en-es'))).not.toBeInTheDocument();
-    expect(document.querySelector('[data-slot="notebookInvitation"]')).toBeNull();
+    expect(screen.queryByRole('button', { name: 'Dismiss this note' })).not.toBeInTheDocument();
   });
 
   it('offers no session on a rung nobody has authored — the note, and no CTA', async () => {

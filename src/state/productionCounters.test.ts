@@ -307,7 +307,7 @@ const CALLS: Record<string, (store: AppStore) => void> = {
   // counter, only land a document some device's `recordProduction` already counted up.
   restoreBackup: (store) =>
     store.restoreBackup({
-      stateVersion: 7,
+      stateVersion: 8,
       activeCourse: COURSE,
       courses: {
         [COURSE]: {
@@ -319,7 +319,7 @@ const CALLS: Record<string, (store: AppStore) => void> = {
           session: null,
         },
       },
-      settings: { elapsedTickEnabled: true, notebookInvitationDismissed: false },
+      settings: { elapsedTickEnabled: true },
     }),
   // Dev + tests only, and it can only erase: `_reset` blanks the whole document back to first run.
   // It cannot raise a counter, which is the direction this file is about. Checked on its own below.

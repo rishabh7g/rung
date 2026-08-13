@@ -50,7 +50,7 @@ See design/PRD-engineering.md §4 for the diagram. Essentials:
   microcopy ships in the course bundle.
 - **Engine** (`src/engine/`): pure TS — progression (levels + modules),
   Leitner scheduler, word-index resolver. No React, no storage, no Date.
-- **State v7** (`src/state/`): zustand + persist, localStorage key `rung:state`,
+- **State v8** (`src/state/`): zustand + persist, localStorage key `rung:state`,
   shape keyed by courseId (PRD §F7 verbatim). Timestamps only via
   `src/state/clock.ts`.
 - **Service worker:** precache the shell, cache the active course (#211); zero network after first load.
@@ -61,7 +61,7 @@ See design/PRD-engineering.md §4 for the diagram. Essentials:
 |---|---|
 | Vite + React 18 + TypeScript strict | unchanged |
 | react-router (HashRouter) | works on any static host + offline |
-| zustand + persist (version 7, migrations v5→v6→v7) | matches state-v7 contract |
+| zustand + persist (version 8, migrations v5→v6→v7→v8) | matches state-v8 contract |
 | **design/tokens.css** loaded globally; CSS Modules for layout | tokens are the single styling source — no hard-coded hex/px/font names (docs/design-contract.md) |
 | vite-plugin-pwa (or ~20-line vanilla SW) | offline per design/pwa-checklist.md — shell precached, active course cache-first (#211) |
 | vitest + @testing-library | engine is test-first |
@@ -92,7 +92,7 @@ rung/ (repo name: shidi — GitHub redirects; local dir may keep its name)
 ├── public/content/           # GENERATED per-course output (gitignored)
 ├── src/
 │   ├── engine/               # pure TS: progression, leitner, word-index resolver
-│   ├── state/                # store (v7, per-course), clock, serialize
+│   ├── state/                # store (v8, per-course), clock, serialize
 │   ├── course/               # courses.json loader, strings access, content loader
 │   ├── screens/              # Ladder, ModuleList, SentenceDetail, Practice, Ritual, Comprehension, Verdict, Settings
 │   ├── components/           # RungCard, LevelStrip, RevealCard, SelfMark, WhyRow, Tick, HoldToConfirm, …
@@ -134,8 +134,8 @@ rung/ (repo name: shidi — GitHub redirects; local dir may keep its name)
   derives from it and `tools/strings-check.ts` validates against the same array.
   Screens read microcopy with `useStrings()` and nothing else; the shell owns no
   copy, and `src/shellPurity.test.ts` fails on any course script under `src/`.
-- **State v7** — §F7 verbatim (localStorage `rung:state`):
-  `{ stateVersion: 7, activeCourse, courses: { <id>: { modules, production,
+- **State v8** — §F7 verbatim (localStorage `rung:state`):
+  `{ stateVersion: 8, activeCourse, courses: { <id>: { modules, production,
   reviewQueue, sessionCount, studied, session } }, settings }`. The per-course
   `session` snapshot is what makes resume lossless — including across course
   switches.
