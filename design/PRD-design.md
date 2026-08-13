@@ -94,7 +94,7 @@ The prototype shows the strip mid-Level-1 only; these three states complete it. 
    - *Production complete:* primary **"Exit ritual — open"**; Practice and Module drop to secondary.
    - *Pending rung (unlocked, content not authored):* note only + ghost "practice earlier rungs".
 3. **Daily session.** Practice (immersive) → Review (L1 cue → recall → reveal → self-mark) → Read → Produce (cover-and-recall). Next appears **only after a self-mark (hidden, not disabled)**; every revealed card offers "why"; Produce cards offer "open full"; gentle elapsed tick under the phase chips. Courses with no passed rungs skip Review ("nothing due yet — first rung").
-4. **Browsing a module.** Collapsed cards → expand in place → "open full" → Detail. Expanded states + scroll restore on back. Romanized courses show the script as a quiet third line.
+4. **Browsing a module (#217).** Cards → tap any card → Detail. A card is a single link, not a disclosure: it shows the sentence, its cue, the two production dots and a chevron, and every detail (gloss, word rows, rules, traps, variations) lives in Detail and nowhere else — one tap, one destination, one place the details live. Scroll restore on back. Romanized courses show the script as a quiet third line.
 5. **Exit ritual — Generate.** Three-step arc, one screen: **लिखो/Write** (the constraint) → **जांचो/Check — guidance only [Q2 answered]:** verbatim copy plus a **dashed plate** ("APP के बाहर — तुम्हारी दुनिया" / "OUTSIDE THE APP — YOUR WORLD") holding two static resource rows (a person who knows the L2; the internet, yourself) — dashed border = outside the app's solid hairline world; zero interactive elements; caption states the absence of buttons is deliberate → **पक्का करो/Confirm:** press-and-hold ~900 ms [D14], fill progress, release resets; ✓ + CTA to Comprehension.
 6. **Exit ritual — Comprehend.** 2 random pool items (no repeats within a test) → reveal scripted answer → gated colour self-mark → Next/Finish. **Any "Not quite" → calm retry interstitial → "Fresh sentences"** (new random items; unlimited; nothing counted against you). "Why" available on the reveal.
 7. **Verdict — pass.** Checklist (11th sentence · checked by you · comprehension 2 of 2) + honesty line; "Climb to the ladder" → unlock beat on the next rung.
@@ -110,7 +110,7 @@ The prototype shows the strip mid-Level-1 only; these three states complete it. 
 - Gentle elapsed tick (2 px, numberless, toggleable; **default ON at first run** [Q3 closed]).
 - Ritual arc: constraint step · guidance-only जांचो (dashed plate + static resource rows) · press-and-hold control.
 - Comprehension retry interstitial ("Fresh sentences"; spec `tokens.md` §6.3).
-- Sentence card (collapse/expand/open-full); Detail section set (order frozen [D10], mnemonic last); tag chips; variation card (`accent-200` changed-part fill); mistake callout (struck on neutral plate); reveal card; phase chips; production dots; storage meter (per-course rows); settings rows; **course dropdown** (native select on `.input`, 44 px; spec `tokens.md` §6.2); **quiet script line** (romanized courses).
+- Sentence card (one link into Detail, #217); Detail section set (order frozen [D10], mnemonic last); tag chips; variation card (`accent-200` changed-part fill); mistake callout (struck on neutral plate); reveal card; phase chips; production dots; storage meter (per-course rows); settings rows; **course dropdown** (native select on `.input`, 44 px; spec `tokens.md` §6.2); **quiet script line** (romanized courses).
 - **Brand mark** (§9; spec `tokens.md` §6.4).
 
 ## 8. Content, tone, and microcopy
@@ -197,6 +197,7 @@ Any translation/checking UI [D18]; any text input; grading or storage of learner
 
 - en→es (4 sentences) and en→ar (4 sentences) are **illustrative samples** proving the course seam — not shippable content; all content pends the per-course native gate.
 - The prototype's course switch resets transient session state (by design) — product must persist and restore per-course session position too (engineering F1/F7).
+- The prototype's sentence card expands in place and offers "open full"; the product's card is **one link into Detail** — the expanded panel was a strictly smaller copy of Detail and cost a tap and a decision before anything appeared (#217). Look and feel are the prototype's; this interaction is not.
 - Storage figures are illustrative.
 
 ## 16. Glossary
