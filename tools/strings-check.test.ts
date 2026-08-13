@@ -43,15 +43,15 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the three shipped bundles carry — 96 keys, nested, identical', () => {
+  it('is exactly what the three shipped bundles carry — 91 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(96);
+      expect(keys.length, courseId).toBe(91);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(96);
-    expect(new Set(STRINGS_KEYS).size).toBe(96);
+    expect(STRINGS_KEYS.length).toBe(91);
+    expect(new Set(STRINGS_KEYS).size).toBe(91);
   });
 
   it('carries the five keys PR #120 added beyond the issue text', () => {
@@ -176,8 +176,7 @@ describe('the canonical key list', () => {
    * — the cue toggle's two labels and its pager's three — and the prototype writes all of them in
    * English for every course. `read.prev`/`read.next` are deliberately not `sentence.prev`/`.next`:
    * that pager browses a module, this one walks a rung mid-session and its last step leaves the
-   * phase (`read.toProduce`). The read-aloud line itself is `nudge.read`, which PRD §4 has carried
-   * since the first bundle. Draft values in all three bundles, flagged on #71.
+   * phase (`read.toProduce`). Draft values in all three bundles, flagged on #71.
    */
   it('carries the five keys the Read phase forced (#97)', () => {
     const added: StringsKey[] = [
@@ -189,7 +188,6 @@ describe('the canonical key list', () => {
     ];
 
     for (const key of added) expect(STRINGS_KEYS).toContain(key);
-    expect(STRINGS_KEYS).toContain('nudge.read');
     expect(STRINGS_KEYS).toContain('sentence.next');
   });
 
@@ -246,8 +244,9 @@ describe('the canonical key list', () => {
    * froze five layers of course copy and the shipped build rendered three — the kicker
    * (`COMPREHEND · फिर से`, per-course because it says फिर से in the course that says फिर से) and
    * the reassurance ("unlimited retries; nothing is counted against you") awaited keys. The
-   * freeze minted them, and with the count at 96 the canonical list is FROZEN: a new key after
-   * this point is a design change.
+   * freeze minted them at a count of 96, and the canonical list was FROZEN there: a new key after
+   * that point is a design change. #225 broke the freeze DOWNWARDS on owner instruction — the
+   * app's read-once copy is being stripped — so the count now falls below §8.2's published list.
    */
   it('carries the two keys the retry interstitial’s frozen spec forced (#69 → #71)', () => {
     const added: StringsKey[] = ['retry.kicker', 'retry.reassure'];

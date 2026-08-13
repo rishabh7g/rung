@@ -4,16 +4,16 @@
  *
  * | state | what is on screen |
  * |---|---|
- * | `cue` | the L1 cue, the course's recall nudge inside the dashed "outside the app" plate, and the 52px reveal button |
- * | `revealed` | the L2 `display` (+ the quiet `script` line in romanized courses), the "why" slot, the question, and the self-mark — **no Next** |
+ * | `cue` | the L1 cue and the 52px reveal button |
+ * | `revealed` | the L2 `display` (+ the quiet `script` line in romanized courses), the "why" slot, and the self-mark — **no Next** |
  * | `marked` | Next, appearing over `--motion-next-appear` the moment a mark exists |
  *
  * **The recall happens outside the app.** Between the cue and the reveal the learner says it,
  * thinks it, or writes it in their notebook — the app never sees it and offers nowhere to put it
- * (Invariant 6: there is no input element anywhere in this tree, asserted in the tests). That is
- * what the dashed plate means: `--border-dashed-world` is reserved for "outside the app's solid
- * hairline world" (design/tokens.md §3), the same border the ritual's check-it-yourself plate
- * wears.
+ * (Invariant 6: there is no input element anywhere in this tree, asserted in the tests). The card
+ * used to say so on every cue, in a dashed "outside the app" plate; #225 took the line and its
+ * plate away, because an instruction that never changes is read once and skimmed thirty times.
+ * The gap between the cue and the reveal says it now.
  *
  * **Next is HIDDEN, not disabled, until a mark exists** [D11]. A disabled Next is the app telling
  * the learner what it is waiting for; an absent one leaves the mark as the only thing on screen
@@ -32,33 +32,25 @@
  * inside the answer plate, under the display, which is where the prototype puts it; an unfilled
  * slot renders nothing at all.
  *
- * Comprehension (#101) shares the `SelfMark` and the gate, not this card: the prototype's
- * comprehension screen puts its prompt in a plate and labels the reveal "model answer", so it
- * reads the L1 out of `revealLabelComprehend` and `nudge.comprehend` in its own layout. Adding a
- * third `mode` here would be inventing a screen nobody has designed.
+ * Comprehension (#101) shares the `SelfMark` and the gate, not this card: it reveals the L1 rather
+ * than the L2 and labels its own reveal out of `revealLabelComprehend`, in its own layout.
+ *
+ * **No `mode` prop.** Review and Produce differ in what the parent DOES with the mark, never in
+ * what this card renders — the one thing the mode ever picked was the per-phase nudge, and #225
+ * removed the nudges. The session still knows which phase it is in; the card no longer needs to.
  */
 import { useState, type ReactNode } from 'react';
 import type { L2Written } from '../course/manifest.ts';
 import { useStrings } from '../course/strings.ts';
-import type { StringsKey } from '../course/stringsKeys.ts';
 import { RegistrationMarks } from '../screens/RegistrationMarks.tsx';
 import { SelfMark, type Mark } from './SelfMark.tsx';
 import styles from './RevealCard.module.css';
-
-/** Which practice phase the card is serving — it picks the nudge, and nothing else. */
-export type RevealMode = 'review' | 'produce';
 
 /** What the learner said about their own recall. The parent decides what it costs. */
 export interface RevealResult {
   sentenceId: string;
   gotIt: boolean;
 }
-
-/** The course's own words for "recall it first" (PRD §4) — one per phase, no shell copy. */
-const NUDGE: Readonly<Record<RevealMode, StringsKey>> = {
-  review: 'nudge.review',
-  produce: 'nudge.produce',
-};
 
 interface RevealCardProps {
   /** Identifies the card to the parent; it is the only thing `onResult` carries besides the mark. */
@@ -69,7 +61,6 @@ interface RevealCardProps {
   display: string;
   /** Romanized courses only (`scriptMode`, PRD §4) — the native script as the quietest line. */
   script?: string;
-  mode: RevealMode;
   /** `WhyPanel` (#94) — its word rows and toggle. Nothing renders when the slot is empty. */
   why?: ReactNode;
   /** Called once, on Next, with the mark the learner settled on. The card stores nothing. */
@@ -96,7 +87,6 @@ export function RevealCard({
   cue,
   display,
   script,
-  mode,
   why,
   onResult,
   dir,
@@ -113,7 +103,6 @@ export function RevealCard({
    * component has — the next cue arriving with the last answer already revealed under it.
    */
   const card = held.sentenceId === sentenceId ? held : fresh(sentenceId);
-  const promptId = `reveal-prompt-${sentenceId}`;
 
   return (
     <section className={styles.card}>
@@ -129,13 +118,6 @@ export function RevealCard({
 
       {!card.revealed && (
         <div className={styles.recall}>
-          {/* Dashed, because the work it asks for happens outside the app (tokens.md §3). */}
-          <div className={styles.plate}>
-            <p className={styles.nudge} dir={dir}>
-              {strings[NUDGE[mode]]}
-            </p>
-          </div>
-
           <div className={styles.revealFrame}>
             <RegistrationMarks />
             <button
@@ -167,17 +149,8 @@ export function RevealCard({
             {why !== undefined && <div className={styles.why}>{why}</div>}
           </div>
 
-          <p id={promptId} className={styles.prompt} dir={dir}>
-            {strings['mark.prompt']}
-          </p>
-
           <div className={card.mark === null ? styles.marks : styles.marksMarked}>
-            <SelfMark
-              mark={card.mark}
-              onMark={(mark) => setCard({ ...card, mark })}
-              labelledBy={promptId}
-              dir={dir}
-            />
+            <SelfMark mark={card.mark} onMark={(mark) => setCard({ ...card, mark })} dir={dir} />
 
             {/* [D11]: hidden, not disabled — there is no Next in the DOM until there is a mark. */}
             {card.mark !== null && (

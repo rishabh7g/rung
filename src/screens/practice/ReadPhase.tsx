@@ -15,15 +15,14 @@
  * makes the L2 line optional, which is the opposite of what the phase is for. Recorded as a
  * divergence for #117 rather than "fixed" back.
  *
- * **The nudge is shown ONCE, at phase start**, not on every card: it is an instruction for the
- * phase ("read aloud — and jot anything new into your notebook"), and a line that repeats under
- * every sentence stops being read by the third one. The prototype prints it per card, which is
- * what a prototype does with a line it wants photographed. Also #117's.
+ * **No read-aloud line.** The phase used to open with one, shown once and retired by the first
+ * pager tap; #225 removed it with the rest of the app's read-once copy. The phase is still a
+ * read-through — the learner learns that from the sentence in front of them, not from a sentence
+ * about it.
  *
- * **Invariant [D1]: the app plays nothing and records nothing.** The nudge asks the learner to
- * read aloud in their own voice; the app has no voice of its own — no audio element, no speech
- * API, no recorder, anywhere in `src/`. That is not a convention here, it is a scan:
- * `src/silence.test.ts`.
+ * **Invariant [D1]: the app plays nothing and records nothing.** The reading is the learner's own
+ * voice; the app has no voice of its own — no audio element, no speech API, no recorder, anywhere
+ * in `src/`. That is not a convention here, it is a scan: `src/silence.test.ts`.
  */
 import { useState } from 'react';
 import type { L2Written } from '../../course/manifest.ts';
@@ -49,7 +48,7 @@ interface ReadPhaseProps {
   onNext: () => void;
   /** The course's writing direction — every word on this card is its content or its copy. */
   dir?: string;
-  /** The tags the L2 lines are written in (#186); the cue and the nudge are L1 and inherit. */
+  /** The tags the L2 lines are written in (#186); the cue and the copy are L1 and inherit. */
   l2?: L2Written;
 }
 
@@ -64,23 +63,11 @@ export function ReadPhase({
   l2,
 }: ReadPhaseProps) {
   const strings = useStrings();
-  // `setCue` / `setNudge`, never `setState`: `src/state/unlockPath.test.ts` scans the shell for
-  // that call and the store's actions are the only place allowed to make it (Invariant 1).
+  // `setCue`, never `setState`: `src/state/unlockPath.test.ts` scans the shell for that call and
+  // the store's actions are the only place allowed to make it (Invariant 1).
   const [cueOpen, setCue] = useState(false);
-  /**
-   * Mounted with the phase, so this is per PHASE and not per sentence: the first move through the
-   * rung retires the line, and coming back to Read later (by chip, or by resuming) starts a phase
-   * and shows it again.
-   */
-  const [nudged, setNudge] = useState(true);
   const cueId = `read-cue-${sentence.id}`;
   const last = at + 1 >= total;
-
-  /** Both pager buttons retire the nudge: the learner has started, so the instruction is spent. */
-  const step = (move: () => void): void => {
-    setNudge(false);
-    move();
-  };
 
   return (
     <section className={styles.read}>
@@ -146,14 +133,6 @@ export function ReadPhase({
         />
       </div>
 
-      {/* The read-aloud nudge, in the course's own words (`nudge.read`) — the app's whole part in
-          the reading, and it stays silent itself [D1]. */}
-      {nudged && (
-        <p className={styles.nudge} dir={dir}>
-          {strings['nudge.read']}
-        </p>
-      )}
-
       {/* Bottom of the column, where the prototype puts the pair. */}
       <div className={styles.pager}>
         <button
@@ -162,21 +141,12 @@ export function ReadPhase({
           // The rung's first sentence has nothing before it — the same bound Sentence Detail's
           // pager takes (#89). Nothing about the PHASES is gated by it; the chips are still live.
           disabled={at === 0}
-          onClick={() => {
-            step(onPrev);
-          }}
+          onClick={onPrev}
           dir={dir}
         >
           {strings['read.prev']}
         </button>
-        <button
-          type="button"
-          className={styles.next}
-          onClick={() => {
-            step(onNext);
-          }}
-          dir={dir}
-        >
+        <button type="button" className={styles.next} onClick={onNext} dir={dir}>
           {/* The last sentence names where it goes, as the prototype's does: reading the rung
               through IS the hand-over to Produce. */}
           {last ? strings['read.toProduce'] : strings['read.next']}

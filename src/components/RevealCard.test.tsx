@@ -24,7 +24,7 @@ import { StringsContext, type Strings } from '../course/strings.ts';
 import { STRINGS_KEYS } from '../course/stringsKeys.ts';
 import { moduleFixture, romanizedModuleFixture } from '../test/courseContent.ts';
 import { stringValue } from '../test/courseStrings.ts';
-import { RevealCard, type RevealMode } from './RevealCard.tsx';
+import { RevealCard } from './RevealCard.tsx';
 import cardCss from './RevealCard.module.css?raw';
 import cardSource from './RevealCard.tsx?raw';
 import markSource from './SelfMark.tsx?raw';
@@ -46,13 +46,12 @@ function copy(key: string): string {
 }
 
 interface RenderOptions {
-  mode?: RevealMode;
   script?: string;
   why?: ReactNode;
   sentenceId?: string;
 }
 
-function renderCard({ mode = 'review', script, why, sentenceId }: RenderOptions = {}) {
+function renderCard({ script, why, sentenceId }: RenderOptions = {}) {
   const onResult = vi.fn();
   const view = render(
     <StringsContext.Provider value={STRINGS}>
@@ -61,7 +60,6 @@ function renderCard({ mode = 'review', script, why, sentenceId }: RenderOptions 
         cue={NATIVE.cue}
         display={NATIVE.display}
         script={script}
-        mode={mode}
         why={why}
         onResult={onResult}
       />
@@ -102,40 +100,31 @@ function rules(): [string, string][] {
 /* ------------------------------------------------------------------ the three states */
 
 describe('the cue state', () => {
-  it('asks for the recall first: the cue, the course’s nudge, and one way forward', () => {
+  it('asks for the recall first: the cue, and one way forward', () => {
     renderCard();
 
     expect(screen.getByText(copy('cueLabel'))).toBeInTheDocument();
     expect(screen.getByText(NATIVE.cue)).toBeInTheDocument();
-    expect(screen.getByText(copy('nudge.review'))).toBeInTheDocument();
     expect(screen.getAllByRole('button').map((button) => button.textContent)).toEqual([
       copy('revealLabel'),
     ]);
-  });
-
-  it('takes the nudge from the phase it is serving — Produce writes, Review recalls', () => {
-    renderCard({ mode: 'produce' });
-
-    expect(screen.getByText(copy('nudge.produce'))).toBeInTheDocument();
-    expect(screen.queryByText(copy('nudge.review'))).not.toBeInTheDocument();
   });
 
   it('shows nothing of the answer — that is the whole point of the state', () => {
     renderCard();
 
     expect(screen.queryByText(NATIVE.display)).not.toBeInTheDocument();
-    expect(screen.queryByText(copy('mark.prompt'))).not.toBeInTheDocument();
+    expect(screen.queryByText(copy('mark.gotIt'))).not.toBeInTheDocument();
     expect(next()).toBeNull();
   });
 });
 
 describe('the revealed state', () => {
-  it('shows the answer and asks the question, with neither mark chosen', () => {
+  it('shows the answer and offers the mark, with neither segment chosen', () => {
     renderCard();
     reveal();
 
     expect(screen.getByText(NATIVE.display)).toBeInTheDocument();
-    expect(screen.getByText(copy('mark.prompt'))).toBeInTheDocument();
     expect(
       screen
         .getAllByRole('button')
@@ -151,7 +140,7 @@ describe('the revealed state', () => {
     reveal();
 
     expect(screen.getByText(NATIVE.cue)).toBeInTheDocument();
-    expect(screen.queryByText(copy('nudge.review'))).not.toBeInTheDocument();
+    expect(screen.queryByText(copy('revealLabel'))).not.toBeInTheDocument();
   });
 
   /* [D11], the promise the whole ticket is about. */
@@ -291,13 +280,13 @@ describe('the card as a whole', () => {
           sentenceId="L1-M1-S02"
           cue="I am from India"
           display="Soy de India"
-          mode="review"
           onResult={onResult}
         />
       </StringsContext.Provider>,
     );
 
-    expect(screen.getByText(copy('nudge.review'))).toBeInTheDocument();
+    expect(screen.getByText('I am from India')).toBeInTheDocument();
+    expect(screen.getByText(copy('revealLabel'))).toBeInTheDocument();
     expect(screen.queryByText('Soy de India')).not.toBeInTheDocument();
     expect(next()).toBeNull();
   });

@@ -4,17 +4,16 @@
  *
  * | state | what is on screen |
  * |---|---|
- * | unrevealed | the pool item's L2 `display`, large, in a blueprint plate (+ the quiet `script` line in romanized courses); the course's comprehend nudge inside the dashed "outside the app" plate; the 52px reveal |
- * | revealed | the **scripted answer** — the item's own L1 `cue` — the "why" panel, the question, and the self-mark. **No Next** |
+ * | unrevealed | the pool item's L2 `display`, large, in a blueprint plate (+ the quiet `script` line in romanized courses); the 52px reveal |
+ * | revealed | the **scripted answer** — the item's own L1 `cue` — the "why" panel and the self-mark. **No Next** |
  * | marked | Next, appearing over `--motion-next-appear` the moment a mark exists [D11] |
  *
  * **The model answer is the content's, not the app's** (Invariant 4). It is the `cue` the pool
  * item was authored with, revealed on request and compared by the learner — nothing here reads,
  * scores or even sees what they thought it meant, and there is nowhere on the card to put it
  * (Invariant 6: no input element anywhere in this tree). Working the meaning out happens outside
- * the app, which is what the dashed plate means — `--border-dashed-world` is reserved for exactly
- * that (design/tokens.md §3), and it is the same border the ritual's check-it-yourself plate and
- * Practice's recall plate wear.
+ * the app; the card used to say so in a dashed "outside the app" plate above the reveal, and #225
+ * took the line and its plate away with the rest of the app's read-once copy.
  *
  * **Next is HIDDEN, not disabled, until a mark exists** [D11], for the reason `RevealCard` gives:
  * a disabled Next is the app telling the learner what it is waiting for. It is literally not in
@@ -47,7 +46,7 @@ interface ComprehensionItemProps {
   onMark: (mark: Mark) => void;
   /** The course's writing direction — every line on the card is its content or its copy. */
   dir?: string;
-  /** The tags the L2 lines are written in (#186); the cue and the prompt are L1 and inherit. */
+  /** The tags the L2 lines are written in (#186); the cue and the copy are L1 and inherit. */
   l2?: L2Written;
 }
 
@@ -59,7 +58,6 @@ export function ComprehensionItem({ item, onMark, dir, l2 }: ComprehensionItemPr
     revealed: false,
     mark: null,
   });
-  const promptId = `comprehend-prompt-${item.id}`;
 
   return (
     <section className={styles.item}>
@@ -80,13 +78,6 @@ export function ComprehensionItem({ item, onMark, dir, l2 }: ComprehensionItemPr
 
       {!card.revealed && (
         <div className={styles.work}>
-          {/* Dashed, because the work it asks for happens outside the app (tokens.md §3). */}
-          <div className={styles.nudgePlate}>
-            <p className={styles.nudge} dir={dir}>
-              {strings['nudge.comprehend']}
-            </p>
-          </div>
-
           <div className={styles.revealFrame}>
             <RegistrationMarks />
             <button
@@ -124,17 +115,12 @@ export function ComprehensionItem({ item, onMark, dir, l2 }: ComprehensionItemPr
               sentence does. No "open full": a pool item has no Detail page to open. */}
           <WhyPanel sentenceId={item.id} display={item.display} dir={dir} l2={l2} />
 
-          <p id={promptId} className={styles.prompt} dir={dir}>
-            {strings['mark.prompt']}
-          </p>
-
           <div className={card.mark === null ? styles.marks : styles.marksMarked}>
             <SelfMark
               mark={card.mark}
               onMark={(mark) => {
                 setCard({ ...card, mark });
               }}
-              labelledBy={promptId}
               dir={dir}
             />
 

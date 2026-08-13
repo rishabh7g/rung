@@ -1,6 +1,6 @@
 /* Layout only, tokens only (docs/design-contract.md rule 1).
    Geometry follows design/Rung App v3.3.dc.html → Practice → Read: the kicker row, one plate
-   holding the sentence and its controls, the nudge, and the pager at the foot of the column.
+   holding the sentence and its controls, and the pager at the foot of the column.
    Every length is the nearest token on the Industry scale (design/tokens.md §3, §4). */
 
 /* The phase owns the session's column below the chips, so the pager sits at the BOTTOM of the
@@ -128,18 +128,6 @@
 
 .toggle:active {
   background: color-mix(in srgb, var(--color-accent) 18%, transparent);
-}
-
-/* ----------------------------------------------------------------------- the nudge */
-
-/* The course's read-aloud line, shown once when the phase opens (see the component header). It is
-   prose, not a plate: the recall card's dashed border means "outside the app", and reading the
-   sentence in front of you is not that. */
-.nudge {
-  margin: 0;
-  font: var(--text-l2-cue);
-  font-size: var(--devanagari-min-size);
-  color: var(--ink-70);
 }
 
 /* ----------------------------------------------------------------------- the pager */

@@ -243,13 +243,13 @@ describe('part 2 is where part 1 leaves you', () => {
 /* -------------------------------------------------------------------------- the item */
 
 describe('the item: read it, then ask for the answer', () => {
-  it('shows the line under test and the course’s comprehend nudge, and no answer yet', async () => {
+  it('shows the line under test and the way to the answer, and no answer yet', async () => {
     const pool = poolOf(6);
     await walkIn(poolModule(6, pool));
     const item = onScreen(pool);
 
     expect(screen.getByText(item.display)).toBeVisible();
-    expect(screen.getByText(strings('nudge.comprehend'))).toBeVisible();
+    expect(screen.getByText(strings('revealLabelComprehend'))).toBeVisible();
     // The model answer is not merely hidden — it is not in the document at all.
     for (const each of pool) expect(screen.queryByText(each.cue)).toBeNull();
   });

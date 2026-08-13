@@ -21,7 +21,9 @@
  * buttons rather than a `radiogroup` deliberately: a radio group owes arrow-key selection and a
  * roving tabindex, and an unmarked group (the state this control spends most of its life in) has
  * no checked radio for the roving focus to land on. Buttons are complete as they stand, and
- * exclusivity is a fact of the single `mark` value rather than of the markup.
+ * exclusivity is a fact of the single `mark` value rather than of the markup. The group carries no
+ * accessible name of its own since #225: the question it used to be labelled by (`mark.prompt`)
+ * went with the app's read-once copy, and its two segments say what it is on their own.
  *
  * Both labels are the course's (`mark.gotIt` / `mark.missed`). Comprehension asks the same
  * question with a different pair — "same meaning" / "not quite" (PRD-design §7) — which is #101's
@@ -38,17 +40,15 @@ interface SelfMarkProps {
   /** The mark so far — `null` until the learner makes one, which is where every card starts. */
   mark: Mark | null;
   onMark: (mark: Mark) => void;
-  /** Id of the line that asks the question, so the group is named by the course's own words. */
-  labelledBy?: string;
   /** The course's writing direction — the labels are its words. */
   dir?: string;
 }
 
-export function SelfMark({ mark, onMark, labelledBy, dir }: SelfMarkProps) {
+export function SelfMark({ mark, onMark, dir }: SelfMarkProps) {
   const strings = useStrings();
 
   return (
-    <div className={styles.group} role="group" aria-labelledby={labelledBy}>
+    <div className={styles.group} role="group">
       <button
         type="button"
         className={mark === 'got' ? styles.optionGot : styles.option}

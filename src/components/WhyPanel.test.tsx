@@ -306,7 +306,6 @@ describe('the reveal card’s slot', () => {
             sentenceId={SENTENCE.id}
             cue={SENTENCE.cue}
             display={SENTENCE.display}
-            mode="review"
             why={<WhyPanel sentenceId={SENTENCE.id} display={SENTENCE.display} />}
             onResult={vi.fn()}
           />

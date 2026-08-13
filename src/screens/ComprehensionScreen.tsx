@@ -31,8 +31,8 @@
  *     Practice reveals the L2 for an L1 cue, Comprehension reveals the L1 for an L2 line
  *     (`revealLabelComprehend`, and `RevealCard`'s header says why it is not a third mode there).
  *
- * Every learner-facing word is the course's (`nudge.comprehend`, `revealLabelComprehend`,
- * `cueLabel`, `mark.*`, `retry.*`). The English on screen is structural furniture in the register
+ * Every learner-facing word is the course's (`revealLabelComprehend`, `cueLabel`, `mark.*`,
+ * `retry.*`). The English on screen is structural furniture in the register
  * of the module list's `M1 · MODULE` kicker, and the two `n / m` are counts — the prototype's
  * "part 2 of 2 · 1 of 2" would be a shell-owned sentence, the call #100 made for part 1.
  */
