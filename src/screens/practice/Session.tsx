@@ -48,7 +48,7 @@
  */
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useModules } from '../../course/content.ts';
-import type { L2Lang } from '../../course/manifest.ts';
+import type { L2Written } from '../../course/manifest.ts';
 import { useStrings } from '../../course/strings.ts';
 import type { Sentence } from '../../course/types.ts';
 import { PRODUCTIONS_PER_SENTENCE } from '../../engine/exit.ts';
@@ -118,7 +118,7 @@ interface SessionProps {
   /** The course's writing direction — every word on screen is its content or its copy. */
   dir?: string;
   /** The tags the L2 lines are written in (#186); everything else is L1 and inherits. */
-  l2?: L2Lang;
+  l2?: L2Written;
 }
 
 export function Session({ courseId, moduleId, sentenceIds, plan, resume, dir, l2 }: SessionProps) {
