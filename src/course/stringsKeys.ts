@@ -35,7 +35,7 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 78 keys: the 11 of PRD §4 that survive — its four `ritual.check.*`
+ * file it is complaining about). 74 keys: the 11 of PRD §4 that survive — its four `ritual.check.*`
  * lines were read-once copy and went on #230 — the 4 of the 5 the frozen screens forced
  * (PR #120) that survive: `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and
  * the three design §6.5 ritual step titles (`ritual.stepTitle.*`); the fifth was
@@ -56,8 +56,9 @@
  * and the two ways out of it (pick it up, or leave it and start a new one) — and the 2 the
  * press-and-hold forced (#101): what the held control says once it is signed, and the way on to
  * part 2 (the prototype writes both in English for every course, which is the shell owning a
- * learner-facing sentence) — and the 5 the Verdict forced (#103): the three checklist lines the
- * ritual ends on, the honesty line under them, and the CTA that climbs back to the ladder — and
+ * learner-facing sentence) — and the 3 of the 5 the Verdict forced (#103) that survive: the two
+ * checklist lines the ritual ends on and the CTA that climbs back to the ladder; the third
+ * checklist line and the paragraph under the list were read-once copy and went on #231 — and
  * the 4 the Settings screen forced (#105): the course dropdown's status line in its two shapes
  * (mid-journey and pending-authoring, counts only — Invariant 2), the reassurance note that
  * switching erases nothing (Invariant 8 in the course's own words), and the privacy line the
@@ -69,14 +70,15 @@
  * replace warning and its two decisions, the friendly refusal when a file cannot be read, and
  * the toast the Ladder raises when a restore lands.
  *
- * — and the 2 the retry interstitial's frozen spec forced (design/tokens.md §6.3, routed here by
- * #69): the per-course `COMPREHEND · AGAIN` kicker and the "unlimited retries" line the shipped
- * build awaited keys for. The alternative each time was hardcoding learner-facing lines in the
- * shell, which is the one thing this list exists to prevent.
+ * — and the 1 of the 2 the retry interstitial's frozen spec forced (design/tokens.md §6.3, routed
+ * here by #69) that survives: the per-course `COMPREHEND · AGAIN` kicker the shipped build awaited
+ * a key for; the other was the reassurance under it, read once and gone on #231. The alternative
+ * each time was hardcoding learner-facing lines in the shell, which is the one thing this list
+ * exists to prevent.
  *
  * Every draft above was RATIFIED as shipped at the Sync-3 freeze (#71) — see PRD-design §8.2 for
- * the decisions (register, shared keys, the verdict's two honesty lines) — except `retry.body`
- * and the en `retry.cta`, restored to the prototype's frozen wording per tokens.md §6.3.
+ * the decisions (register, shared keys) — except the en `retry.cta`, restored to the prototype's
+ * frozen wording per tokens.md §6.3.
  */
 export const STRINGS_KEYS = [
   'cueLabel',
@@ -91,8 +93,6 @@ export const STRINGS_KEYS = [
   'ritual.confirm.toComprehension',
   'retry.kicker',
   'retry.title',
-  'retry.body',
-  'retry.reassure',
   'retry.cta',
   'ordinal',
   'ladder.pendingLine',
@@ -138,9 +138,7 @@ export const STRINGS_KEYS = [
   'practice.resumeContinue',
   'practice.resumeNew',
   'verdict.checkSentence',
-  'verdict.checkChecked',
   'verdict.checkComprehension',
-  'verdict.honesty',
   'verdict.line',
   'verdict.toLadder',
   'settings.statusLine',
@@ -191,14 +189,13 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'ritual.confirm.done': [],
   'ritual.confirm.toComprehension': [],
   /**
-   * The retry interstitial's five layers (tokens.md §6.3), top to bottom — kicker, title, body,
-   * reassurance, CTA — all course copy, all counterless by construction: none interpolates,
-   * because an attempt number is the one thing that screen must never render (Invariant 4).
+   * What is left of the retry interstitial's five layers (tokens.md §6.3), top to bottom — kicker,
+   * title, CTA; the body and the reassurance were read-once prose and went on #231. All course
+   * copy, all counterless by construction: none interpolates, because an attempt number is the one
+   * thing that screen must never render (Invariant 4).
    */
   'retry.kicker': [],
   'retry.title': [],
-  'retry.body': [],
-  'retry.reassure': [],
   'retry.cta': [],
   /** The number to ordinalise. */
   ordinal: ['{n}'],
@@ -351,30 +348,25 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'practice.resumeContinue': [],
   'practice.resumeNew': [],
   /**
-   * The Verdict (#103) — the pass checklist, the honesty line under it, and the way back to the
-   * ladder (PRD-design §6.7 flow 7). The prototype writes all five in English for every course,
-   * which is what a prototype does and what this product cannot: they are the last words of the
-   * ritual, and the ritual is the course's.
+   * The Verdict (#103) — the pass checklist and the way back to the ladder (PRD-design §6.7
+   * flow 7). The prototype writes them in English for every course, which is what a prototype does
+   * and what this product cannot: they are the last words of the ritual, and the ritual is the
+   * course's.
    *
-   * The three checklist lines are the receipt for what the learner actually did, in the PRD's own
-   * order — wrote the sentence, checked it themselves, self-marked the comprehension — and two of
-   * them carry a number, because a number's place in a sentence is the language's business:
-   * `{ordinal}` is the course's own word for "the 11th" (`ordinal`, rendered by the caller, as
-   * `ritual.confirm.holdLabel` does), and `{count}` of `{total}` is the comprehension, both from
-   * the module's own `exitTest.comprehendCount` — every item was marked "same meaning", because
-   * anything else is a retry rather than a verdict — so a module that asked for three items reads
-   * "3 of 3" with no code change. Two names rather than one repeated, so a course can put them in
-   * its own order — Hindi says "of {total}, {count}" — the way `practice.summaryAtTwo` already
-   * does.
+   * The two checklist lines are the receipt for what the learner actually did, in the PRD's own
+   * order — wrote the sentence, self-marked the comprehension — and both carry a number, because a
+   * number's place in a sentence is the language's business: `{ordinal}` is the course's own word
+   * for "the 11th" (`ordinal`, rendered by the caller, as `ritual.confirm.holdLabel` does), and
+   * `{count}` of `{total}` is the comprehension, both from the module's own
+   * `exitTest.comprehendCount` — every item was marked "same meaning", because anything else is a
+   * retry rather than a verdict — so a module that asked for three items reads "3 of 3" with no
+   * code change. Two names rather than one repeated, so a course can put them in its own order —
+   * Hindi says "of {total}, {count}" — the way `practice.summaryAtTwo` already does.
    *
-   * `verdict.honesty` is Principle §3.4 verbatim — "the app graded nothing; it saved nothing you
-   * wrote" — and it is the one line on the screen that is about the app rather than the learner.
    * `verdict.toLadder` is the CTA that fires the unlock beat.
    */
   'verdict.checkSentence': ['{ordinal}'],
-  'verdict.checkChecked': [],
   'verdict.checkComprehension': ['{count}', '{total}'],
-  'verdict.honesty': [],
   /** The rung that just opened. */
   'verdict.line': ['{nextModule}'],
   'verdict.toLadder': [],

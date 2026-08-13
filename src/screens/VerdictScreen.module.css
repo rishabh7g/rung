@@ -1,6 +1,6 @@
 /* Layout only, tokens only (docs/design-contract.md rule 1).
    Geometry follows design/Rung App v3.3.dc.html → Verdict: the kicker and the 34px title, the
-   receipt plate with its three checks and the honesty line under a divider, the course's closing
+   receipt plate with its checks, the course's closing
    sentence, and the one filled CTA held at the bottom of the screen. Every length is the nearest
    token on the Industry scale (design/tokens.md §3). */
 
@@ -78,7 +78,7 @@
 }
 
 /**
- * The checks, the honesty line and the closing sentence are all the COURSE's copy — for hi-mr that
+ * The checks and the closing sentence are both the COURSE's copy — for hi-mr that
  * is Devanagari, and design/tokens.md §2 is absolute about it: Mukta, never below
  * `--devanagari-min-size`, line-height 1.6. The prototype's 13.5px and 11.5px lines are
  * English-for-every-course, which the product is not — the same divergence the rung card and the
@@ -88,16 +88,6 @@
 .checkText {
   font: var(--text-l2-cue);
   font-size: var(--devanagari-min-size);
-}
-
-/* "The app graded nothing. It saved nothing you wrote." — the app's own line about itself, under
-   the divider the prototype draws, and one shade quieter than the receipt above it. */
-.honesty {
-  composes: checkText;
-  margin: var(--space-3) 0 0;
-  padding-top: var(--space-2);
-  border-top: var(--border-hairline);
-  color: var(--ink-70);
 }
 
 /* The course's closing sentence — it names the rung that just opened. */

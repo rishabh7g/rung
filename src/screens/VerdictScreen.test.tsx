@@ -3,8 +3,8 @@
  *
  *   • **the guard**: the verdict is where Comprehension leaves you, and the entry is spent on
  *     arrival, so a reload cannot mint a second one,
- *   • **the receipt**: three checklist lines, the honesty line and the closing sentence, every one
- *     of them the course's own words,
+ *   • **the receipt**: two checklist lines and the closing sentence, every one of them the
+ *     course's own words,
  *   • **the write**: arriving passes the rung AND enrols its sentences — the ritual's one write,
  *     recorded on entry rather than on the button, because the comprehension is what earned it,
  *   • **the way out**: "climb to the ladder" carries the one-shot unlock flag,
@@ -14,8 +14,8 @@
  *
  * Everything renders the real `<App />` over a mocked `fetch`, the way every screen test in this
  * repo does. The strings fixture is built FROM the canonical key list, so an assertion reads
- * `hi-mr verdict.honesty` — asserting the prototype's English would pass on a hardcoded shell
- * string, which is the one thing the strings contract exists to prevent.
+ * `hi-mr verdict.checkComprehension` — asserting the prototype's English would pass on a hardcoded
+ * shell string, which is the one thing the strings contract exists to prevent.
  */
 import { StrictMode } from 'react';
 import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
@@ -81,9 +81,17 @@ async function renderAt(hash: string, state?: unknown, module: unknown = moduleF
   await screen.findByRole('main');
 }
 
-/** The verdict, once it has drawn: found by the title the ritual ends on. */
+/**
+ * The receipt's last line, in the course's own words — the module's own `exitTest.comprehendCount`
+ * on both sides of it, which is "2 of 2" for the fixture. The anchor that says the verdict is up.
+ */
+function comprehensionCheck(): string {
+  return strings('verdict.checkComprehension').replace('{count}', '2').replace('{total}', '2');
+}
+
+/** The verdict, once it has drawn: found by the last line of the receipt it ends on. */
 async function verdict(): Promise<HTMLElement> {
-  await screen.findByText(strings('verdict.honesty'));
+  await screen.findByText(comprehensionCheck());
   return screen.getByRole('main');
 }
 
@@ -123,7 +131,7 @@ describe('the verdict is where the comprehension leaves you', () => {
     produceRung();
     await renderAt('#/verdict', handover('comprehension'));
 
-    expect(await screen.findByText(strings('verdict.honesty'))).toBeVisible();
+    expect(await screen.findByText(comprehensionCheck())).toBeVisible();
     expect(window.location.hash).toBe('#/verdict');
   });
 
@@ -143,7 +151,7 @@ describe('the verdict is where the comprehension leaves you', () => {
     // The token is gone from the entry the screen is standing on — and the screen is still up.
     const usr = (window.history.state as { usr?: unknown } | null)?.usr;
     expect(usr).toBeNull();
-    expect(screen.getByText(strings('verdict.honesty'))).toBeVisible();
+    expect(screen.getByText(comprehensionCheck())).toBeVisible();
   });
 
   it('has nothing to show for a rung that was never produced out', async () => {
@@ -167,7 +175,7 @@ describe('the verdict is where the comprehension leaves you', () => {
 /* ----------------------------------------------------------------------- the receipt */
 
 describe('the checklist is the learner’s receipt, in the course’s own words', () => {
-  it('renders all three checks, the honesty line and the closing line from strings', async () => {
+  it('renders both checks and the closing line from strings', async () => {
     produceRung();
     await renderAt('#/verdict', handover('comprehension'));
     const main = await verdict();
@@ -177,14 +185,10 @@ describe('the checklist is the learner’s receipt, in the course’s own words'
     expect(
       within(main).getByText(strings('verdict.checkSentence').replace('{ordinal}', ordinal)),
     ).toBeVisible();
-    expect(within(main).getByText(strings('verdict.checkChecked'))).toBeVisible();
     // The module's own `exitTest.comprehendCount` — 2 of 2, from the file rather than the shell.
-    expect(
-      within(main).getByText(
-        strings('verdict.checkComprehension').replace('{count}', '2').replace('{total}', '2'),
-      ),
-    ).toBeVisible();
-    expect(within(main).getByText(strings('verdict.honesty'))).toBeVisible();
+    expect(within(main).getByText(comprehensionCheck())).toBeVisible();
+    // Two lines and no more: the receipt is what the learner did, and nothing about the app.
+    expect(within(main).getAllByRole('listitem')).toHaveLength(2);
     // And the course's closing sentence, naming the rung that just opened by its own title.
     expect(
       within(main).getByText(strings('verdict.line').replace('{nextModule}', 'First exchange')),
@@ -228,7 +232,7 @@ describe('the checklist is the learner’s receipt, in the course’s own words'
     );
     const main = await verdict();
 
-    expect(within(main).getByText(strings('verdict.honesty'))).toBeVisible();
+    expect(within(main).getByText(comprehensionCheck())).toBeVisible();
     expect(within(main).queryByText(/verdict\.line/)).toBeNull();
     // The pass still happened: a last rung is a rung.
     await waitFor(() => expect(modules()?.[CURRENT]?.status).toBe('passed'));
@@ -267,7 +271,7 @@ describe('arriving is what records the ritual', () => {
     act(() => useAppStore.getState().markStudied(COURSE, 'L1-M2'));
 
     expect(modules()).toBe(passed);
-    expect(screen.getByText(strings('verdict.honesty'))).toBeVisible();
+    expect(screen.getByText(comprehensionCheck())).toBeVisible();
   });
 
   it('moves the ladder on: the next rung is current the moment the verdict is up', async () => {

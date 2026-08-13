@@ -53,24 +53,6 @@
   font: var(--text-l2-card);
 }
 
-/* The body: the sentence that says a different answer is information, not a failure. Course
-   prose, so the `--devanagari-min-size` floor (the prototype writes 13.5px). */
-.body {
-  margin: 0;
-  font: var(--text-l2-cue);
-  font-size: var(--devanagari-min-size);
-  color: var(--ink-75);
-}
-
-/* Layer 4 of tokens.md §6.3 — the reassurance, quieter than the body: unlimited retries, nothing
-   counted. Course prose, so the Devanagari floor holds here too. */
-.reassure {
-  margin: 0;
-  font: var(--text-l2-cue);
-  font-size: var(--devanagari-min-size);
-  color: var(--ink-70);
-}
-
 /* The registration marks frame the CTA rather than a border — the prototype's `blueprint` wrapper
    with a transparent border and its four corners. */
 .ctaFrame {
