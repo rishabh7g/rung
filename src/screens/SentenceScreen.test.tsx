@@ -335,7 +335,9 @@ describe('back', () => {
     await renderSentence(FULL);
     fireEvent.click(screen.getByRole('button', { name: 'Back to the module' }));
 
-    await screen.findByText(strings('module.helper'));
+    // The module list's own kicker — Detail's reads `M1 · SENTENCE 01`, so this is the landmark
+    // that says which screen we came back to (the helper line it used to be went on #229).
+    await screen.findByText('M1 · MODULE');
     expect(window.location.hash).toBe(`#/module/${MODULE}`);
     expect(screen.getByRole('main').scrollTop).toBe(240);
     expect(screen.getByRole('main').querySelectorAll('[aria-expanded]')).toHaveLength(0);
@@ -351,7 +353,7 @@ describe('back', () => {
   it('sends an id this module does not teach back to the module', async () => {
     await renderAt(`#/sentence/${MODULE}-S09`);
 
-    expect(await screen.findByText(strings('module.helper'))).toBeInTheDocument();
+    expect(await screen.findByText('M1 · MODULE')).toBeInTheDocument();
     expect(window.location.hash).toBe(`#/module/${MODULE}`);
   });
 });

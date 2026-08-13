@@ -43,15 +43,15 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the three shipped bundles carry — 86 keys, nested, identical', () => {
+  it('is exactly what the three shipped bundles carry — 83 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(86);
+      expect(keys.length, courseId).toBe(83);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(86);
-    expect(new Set(STRINGS_KEYS).size).toBe(86);
+    expect(STRINGS_KEYS.length).toBe(83);
+    expect(new Set(STRINGS_KEYS).size).toBe(83);
   });
 
   it('carries the five keys PR #120 added beyond the issue text', () => {
@@ -98,18 +98,6 @@ describe('the canonical key list', () => {
   });
 
   /**
-   * The module list's three (#88). PRD-design §6.4's screen says three things in its own right —
-   * the helper above the cards, the "open full" label, and the note that a sentence carries an
-   * interference trap — and the prototype writes all three in English for every course. Draft
-   * values in all three bundles, flagged on #71.
-   */
-  it('carries the three keys the module list forced (#88)', () => {
-    const added: StringsKey[] = ['module.helper', 'module.openFull', 'module.trapNote'];
-
-    for (const key of added) expect(STRINGS_KEYS).toContain(key);
-  });
-
-  /**
    * Sentence Detail's four (#89). Its ten section labels stay English furniture, in the register
    * of the `M1 · SENTENCE 02` kicker — these four are not: the trap callout's heading is a
    * sentence about the learner's own first language, PRD §8 F3 names the mnemonic's label as
@@ -129,17 +117,17 @@ describe('the canonical key list', () => {
 
   /**
    * The "why" panel's three (#94). The toggle carries two labels because the prototype's does
-   * ("why" / "hide why") and it names what it will do; `why.openFull` is deliberately not
-   * `module.openFull` — one opens a sentence from a browsing list, the other leaves a running
-   * session for it, and a shared key would mean a course could never word them differently (the
-   * call #93 made for `mark.next` against `sentence.next`). Draft values in all three bundles,
-   * flagged on #71.
+   * ("why" / "hide why") and it names what it will do; `why.openFull` was deliberately never
+   * shared with the module list's own "open full" label — one opened a sentence from a browsing
+   * list, the other leaves a running session for it, and a shared key would mean a course could
+   * never word them differently (the call #93 made for `mark.next` against `sentence.next`). The
+   * list's twin rendered nowhere in the end and went on #229; these three stayed. Draft values in
+   * all three bundles, flagged on #71.
    */
   it('carries the three keys the "why" panel forced (#94)', () => {
     const added: StringsKey[] = ['why.show', 'why.hide', 'why.openFull'];
 
     for (const key of added) expect(STRINGS_KEYS).toContain(key);
-    expect(STRINGS_KEYS).toContain('module.openFull');
   });
 
   /**

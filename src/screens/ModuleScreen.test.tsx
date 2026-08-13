@@ -11,7 +11,7 @@
  * Everything renders the real `<App />` over a mocked `fetch`, the way every screen test in this
  * repo does: this screen is a guarded route, and a guard that works in a hand-wired router while
  * the app's table says something else is exactly the bug worth catching. The strings fixture is
- * built FROM the canonical key list, so a label reads `hi-mr module.helper` — an assertion
+ * built FROM the canonical key list, so a label reads `hi-mr rungCard.practice` — an assertion
  * against the prototype's English would pass on a hardcoded shell string, which is the one thing
  * the strings contract exists to prevent.
  */
@@ -123,8 +123,16 @@ describe('the guard', () => {
 
     expect(screen.getByText('M1 · MODULE')).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 2 }).textContent).toBe(moduleFixture().title);
-    expect(screen.getByText(strings('module.helper'))).toBeInTheDocument();
     expect(cards()).toHaveLength(moduleFixture().sentences.length);
+  });
+
+  it('says nothing of its own above the cards — the head row, then the list (#229)', async () => {
+    await renderModule();
+
+    // The helper line went on #229: read-once copy, and stale since #217 took expand-in-place
+    // away. What sits immediately before the list is the head row itself, title and all.
+    const list = cards()[0]!.closest('ol')!;
+    expect(list.previousElementSibling).toContainElement(screen.getByRole('heading', { level: 2 }));
   });
 
   it('closes the list with Practice — reading a rung never gates practising it', async () => {
@@ -219,12 +227,10 @@ describe('a card', () => {
     const sentence = moduleFixture().sentences[0]!;
     expect(screen.getByText(sentence.display)).toBeInTheDocument();
     expect(screen.getByText(sentence.cue)).toBeInTheDocument();
-    // The list is not a smaller second copy of Detail (#217): the gloss, the word-for-word line,
-    // the word rows and the trap note live in exactly one screen, and this is not it.
+    // The list is not a smaller second copy of Detail (#217): the gloss, the word-for-word line
+    // and the word rows live in exactly one screen, and this is not it.
     expect(screen.queryByText(sentence.glossEn)).not.toBeInTheDocument();
     expect(screen.queryByText(sentence.literal)).not.toBeInTheDocument();
-    expect(screen.queryByText(strings('module.trapNote'))).not.toBeInTheDocument();
-    expect(screen.queryByText(strings('module.openFull'))).not.toBeInTheDocument();
     for (const word of sentence.deconstruction.words) {
       expect(screen.queryByText(word.display)).not.toBeInTheDocument();
     }

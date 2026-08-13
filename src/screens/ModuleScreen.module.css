@@ -52,19 +52,6 @@
 
 /* ---------------------------------------------------------------------- the list */
 
-/**
- * The helper line is the course's prose, which for hi-mr is Devanagari — Mukta, never below
- * `--devanagari-min-size` (design/tokens.md §2), where the prototype writes 12.5px in the body
- * face. The Ladder (#86) and the rung card (#87) made the same call for the same reason; the
- * design package still owes the ramp a course-prose slot, and #117 carries it.
- */
-.helper {
-  margin: 0;
-  font: var(--text-l2-cue);
-  font-size: var(--devanagari-min-size);
-  color: var(--ink-70);
-}
-
 .cards {
   list-style: none;
   margin: 0;
