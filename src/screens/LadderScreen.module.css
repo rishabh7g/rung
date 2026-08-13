@@ -38,8 +38,8 @@
  * and off-brand either way. So course prose takes the smallest Mukta slot in the ramp
  * (`--text-l2-cue`, 20px/1.6) pulled down to the 18px floor.
  *
- * The consequence is deliberate and worth seeing: the Ladder's two course lines are 18px rather
- * than the prototype's 11.5px, because the prototype renders them in English. The ramp has no
+ * The consequence is deliberate and worth seeing: the Ladder's course line is 18px rather
+ * than the prototype's 11.5px, because the prototype renders it in English. The ramp has no
  * caption-sized Devanagari slot and cannot have one below the floor — flagged in #86's PR for
  * the design package (a `--text-course-prose` token, or a per-course face).
  */
@@ -48,7 +48,7 @@
   font-size: var(--devanagari-min-size);
 }
 
-/* Counts only, and it closes with "the pace is yours" — the line is the course's, not ours. */
+/* Counts only — how many rungs of the level are left, in the course's own words. */
 .pending {
   composes: courseProse;
   margin: 0 0 var(--space-4);
@@ -155,14 +155,4 @@
 /* Lines the crosshair up with the kicker inside the card rather than with the card's top edge. */
 .currentItem > svg {
   margin-top: var(--space-4);
-}
-
-/* ---------------------------------------------------------------- the footer */
-
-/* The recurring ownership copy (PRD-design §5) — the last word on the screen, and quiet. */
-.ownership {
-  composes: courseProse;
-  margin: var(--space-6) 0 0;
-  text-align: center;
-  color: var(--ink-65);
 }

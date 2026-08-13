@@ -38,13 +38,10 @@ function copy(key: string): string {
 /** Every label the four stages can offer, so each case can prove the other stages' are absent. */
 const EVERY_LABEL = [
   'rungCard.startModule',
-  'rungCard.freshNote',
   'rungCard.practice',
   'rungCard.revisitModule',
   'rungCard.exitRitual',
   'rungCard.module',
-  'rungCard.practiceEarlier',
-  'pendingAuthoring',
 ] as const;
 
 function renderCard(stage: RungStage, production?: readonly number[]) {
@@ -63,10 +60,10 @@ function renderCard(stage: RungStage, production?: readonly number[]) {
   );
 }
 
-/** The card's controls, in document order: label and where it goes. */
+/** The card's controls, in document order: label and where it goes — none, on a pending rung. */
 function ctas(): [string, string][] {
   return screen
-    .getAllByRole('link')
+    .queryAllByRole('link')
     .map((link) => [link.textContent ?? '', link.getAttribute('href') ?? '']);
 }
 
@@ -75,23 +72,16 @@ function ctas(): [string, string][] {
 interface StageCase {
   stage: RungStage;
   ctas: [string, string][];
-  /** The copy that is NOT a control: the note a stage renders, if it renders one. */
-  notes: string[];
 }
 
 const STAGES: StageCase[] = [
-  {
-    stage: 'fresh',
-    ctas: [['rungCard.startModule', MODULE_PATH]],
-    notes: ['rungCard.freshNote'],
-  },
+  { stage: 'fresh', ctas: [['rungCard.startModule', MODULE_PATH]] },
   {
     stage: 'studied',
     ctas: [
       ['rungCard.practice', '/practice'],
       ['rungCard.revisitModule', MODULE_PATH],
     ],
-    notes: [],
   },
   {
     stage: 'exit_ready',
@@ -100,16 +90,12 @@ const STAGES: StageCase[] = [
       ['rungCard.practice', '/practice'],
       ['rungCard.module', MODULE_PATH],
     ],
-    notes: [],
   },
-  {
-    stage: 'pending',
-    ctas: [['rungCard.practiceEarlier', '/practice']],
-    notes: ['pendingAuthoring'],
-  },
+  /* An unauthored rung offers nothing and explains nothing: the empty set is the assertion. */
+  { stage: 'pending', ctas: [] },
 ];
 
-describe.each(STAGES)('the $stage stage', ({ stage, ctas: expected, notes }) => {
+describe.each(STAGES)('the $stage stage', ({ stage, ctas: expected }) => {
   it('offers exactly its own CTA set, in order, each pointing where [D22] says', () => {
     renderCard(stage);
 
@@ -119,17 +105,11 @@ describe.each(STAGES)('the $stage stage', ({ stage, ctas: expected, notes }) => 
   it('renders none of the other stages’ copy', () => {
     renderCard(stage);
 
-    const mine = new Set([...expected.map(([key]) => key), ...notes]);
+    const mine = new Set(expected.map(([key]) => key));
     for (const key of EVERY_LABEL) {
       if (mine.has(key)) continue;
       expect(screen.queryByText(copy(key)), key).not.toBeInTheDocument();
     }
-  });
-
-  it('renders the note the stage carries, from the bundle', () => {
-    renderCard(stage);
-
-    for (const key of notes) expect(screen.getByText(copy(key))).toBeInTheDocument();
   });
 
   it('is still the rung’s card: kicker, title and job', () => {
@@ -192,10 +172,10 @@ describe('the production dots row', () => {
 
 describe('the labels', () => {
   it('every one of them comes from the course bundle', () => {
-    for (const { stage, ctas: expected, notes } of STAGES) {
+    for (const { stage, ctas: expected } of STAGES) {
       const { unmount } = renderCard(stage);
 
-      for (const key of [...expected.map(([key]) => key), ...notes]) {
+      for (const key of expected.map(([key]) => key)) {
         expect(screen.getByText(copy(key)), `${stage}: ${key}`).toBeInTheDocument();
       }
       unmount();
@@ -215,8 +195,6 @@ describe('the labels', () => {
 
       for (const label of [
         'Start with the module',
-        'Read it through once',
-        'Practice picks up from there',
         'revisit the module',
         'Exit ritual — open',
         'practice earlier rungs',

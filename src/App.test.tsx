@@ -73,9 +73,16 @@ describe('App', () => {
 
     render(<App />);
 
-    // The ownership footer is the Ladder's own line and the shell has no copy of its own to
-    // fall back on: what renders is whatever hi-mr's bundle ships, verbatim (PRD §4).
-    expect(await screen.findByText(stringValue('hi-mr', 'ladder.ownership'))).toBeInTheDocument();
+    // The pending line is the Ladder's own line and the shell has no copy of its own to fall back
+    // on: what renders is whatever hi-mr's bundle ships, with the counts filled in (PRD §4).
+    expect(
+      await screen.findByText(
+        stringValue('hi-mr', 'ladder.pendingLine')
+          .replace('{level}', '1')
+          .replace('{remaining}', '3')
+          .replace('{total}', '3'),
+      ),
+    ).toBeInTheDocument();
     expect(fetchMock).toHaveBeenCalledWith('/content/hi-mr/strings.json');
   });
 });

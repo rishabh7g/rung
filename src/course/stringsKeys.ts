@@ -35,12 +35,12 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 89 keys: the 17 of PRD §4, the 5 the frozen screens forced
+ * file it is complaining about). 86 keys: the 15 of PRD §4, the 5 the frozen screens forced
  * (PR #120) — `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and the four
- * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — the 3 the Ladder
- * forced (#86): the counts-only pending line, the ownership footer and the sealed-level toast,
- * which PRD-design §5 prints as copy but PRD §4's inventory never listed — the 7 the staged rung
- * card forced (#87): a label per CTA across the four [D22] stages, plus the fresh-rung note — the
+ * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — the 2 the Ladder
+ * forced (#86): the counts-only pending line and the sealed-level toast,
+ * which PRD-design §5 prints as copy but PRD §4's inventory never listed — the 6 the staged rung
+ * card forced (#87): a label per CTA across the four [D22] stages — the
  * 3 the module list forced (#88): its helper line, the "open full" label and the interference
  * -trap note on an expanded card — the 4 Sentence Detail forced (#89): the trap callout's
  * heading, the mnemonic's "pocket it" label, and the two pager buttons — the 3 the reveal
@@ -101,10 +101,8 @@ export const STRINGS_KEYS = [
   'retry.cta',
   'ordinal',
   'ladder.pendingLine',
-  'ladder.ownership',
   'ladder.sealedToast',
   'rungCard.startModule',
-  'rungCard.freshNote',
   'rungCard.practice',
   'rungCard.revisitModule',
   'rungCard.exitRitual',
@@ -147,7 +145,6 @@ export const STRINGS_KEYS = [
   'practice.resumeLine',
   'practice.resumeContinue',
   'practice.resumeNew',
-  'pendingAuthoring',
   'verdict.checkSentence',
   'verdict.checkChecked',
   'verdict.checkComprehension',
@@ -219,7 +216,6 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    * on, and how many of its rungs are still to climb.
    */
   'ladder.pendingLine': ['{level}', '{remaining}', '{total}'],
-  'ladder.ownership': [],
   /** The sealed level, and how many rungs below it are left — the honest half of the seal rule. */
   'ladder.sealedToast': ['{level}', '{remaining}'],
   /**
@@ -229,8 +225,6 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    * secondary, because it is the same tab either way.
    */
   'rungCard.startModule': [],
-  /** The fresh rung's note — "nothing is locked; the tab stays open", the invariant in prose. */
-  'rungCard.freshNote': [],
   'rungCard.practice': [],
   'rungCard.revisitModule': [],
   'rungCard.exitRitual': [],
@@ -372,7 +366,6 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'practice.resumeLine': ['{phase}', '{count}', '{total}'],
   'practice.resumeContinue': [],
   'practice.resumeNew': [],
-  pendingAuthoring: [],
   /**
    * The Verdict (#103) — the pass checklist, the honesty line under it, and the way back to the
    * ladder (PRD-design §6.7 flow 7). The prototype writes all five in English for every course,

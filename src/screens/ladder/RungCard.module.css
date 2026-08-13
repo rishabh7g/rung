@@ -76,35 +76,15 @@
  * design/tokens.md §2 is absolute about it: Mukta, never below `--devanagari-min-size`,
  * line-height 1.6. A caption token would set Hindi in Barlow, which draws no Devanagari at all.
  *
- * So the card's notes and its CTA labels take the smallest Mukta slots in the ramp pulled down to
- * the 18px floor — prose at weight 400 (`--text-l2-cue`), labels at 600 (`--text-l2-card`) — and
- * the consequence is deliberate: the prototype's 11–12px notes and its 14px Barlow Condensed
- * button labels are English-for-every-course, which the product is not. Same divergence the
- * Ladder's prose made in #138, same reason, and it wants the same answer from the design package
- * (a `--text-course-prose` slot, or a per-course face) — raised for #117.
+ * So the card's CTA labels take the smallest Mukta slot in the ramp pulled down to the 18px
+ * floor, at weight 600 (`--text-l2-card`) — and the consequence is deliberate: the prototype's
+ * 14px Barlow Condensed button labels are English-for-every-course, which the product is not.
+ * Same divergence the Ladder's prose made in #138, same reason, and it wants the same answer from
+ * the design package (a `--text-course-prose` slot, or a per-course face) — raised for #117.
  */
-.courseProse {
-  font: var(--text-l2-cue);
-  font-size: var(--devanagari-min-size);
-}
-
 .label {
   font: var(--text-l2-card);
   font-size: var(--devanagari-min-size);
-}
-
-/* "Read it through once — Practice picks up from there. Nothing is locked; the tab stays open." */
-.note {
-  composes: courseProse;
-  margin: var(--space-2) 0 0;
-  color: var(--ink-70);
-}
-
-/* The rung whose module is still being written — the note IS the state (strings: pendingAuthoring). */
-.pendingNote {
-  composes: courseProse;
-  margin: var(--space-3) 0 0;
-  color: var(--ink-70);
 }
 
 /* ------------------------------------------------------------------- the actions */

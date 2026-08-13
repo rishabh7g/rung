@@ -13,7 +13,7 @@
  *      never a gate); a locked rung is a hollow circle at half opacity and **is not a control** —
  *      no link, no button, nothing for a screen reader to offer or a thumb to find.
  *      "The ladder is visible; the rungs are sealed" (PRD-design §3.2) is a DOM fact here.
- *   4. **The pending line and the ownership footer** — the recurring "yours to pace" copy.
+ *   4. **The pending line** — how many rungs of the level are still to climb, counts only.
  *
  * And one thing that is not a state but a moment: **the unlock beat** (#103). A ritual that has
  * just passed hands this screen a one-shot flag naming the rung it climbed, and the newly current
@@ -21,8 +21,8 @@
  * celebration, once (`useUnlockBeat` below; PRD-design §3.6, §12.3 [Q4]).
  *
  * Everything the learner reads is the course's: rung titles and jobs and level names come from
- * that course's `levels.json`, the three sentences come from its `strings.json` (PRD §4, guarded
- * by `src/shellPurity.test.ts`). The only English in here is structural furniture — the `LEVEL`
+ * that course's `levels.json`, the pending line and the sealed toast from its `strings.json`
+ * (PRD §4, guarded by `src/shellPurity.test.ts`). The only English in here is structural furniture — the `LEVEL`
  * and `CURRENT RUNG` kickers and the `PASSED` status label — the same register as the nav's tab
  * labels. There is no `%`, no date, no streak, and there never will be (Invariant 2).
  *
@@ -211,10 +211,6 @@ export default function LadderScreen() {
             ),
           )}
         </ol>
-
-        <p className={styles.ownership} dir={course.dir}>
-          {strings['ladder.ownership']}
-        </p>
       </div>
 
       <Toast message={toast.message} dir={course.dir} />

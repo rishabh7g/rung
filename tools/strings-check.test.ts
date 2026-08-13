@@ -43,15 +43,15 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the three shipped bundles carry — 89 keys, nested, identical', () => {
+  it('is exactly what the three shipped bundles carry — 86 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(89);
+      expect(keys.length, courseId).toBe(86);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(89);
-    expect(new Set(STRINGS_KEYS).size).toBe(89);
+    expect(STRINGS_KEYS.length).toBe(86);
+    expect(new Set(STRINGS_KEYS).size).toBe(86);
   });
 
   it('carries the five keys PR #120 added beyond the issue text', () => {
@@ -67,26 +67,26 @@ describe('the canonical key list', () => {
   });
 
   /**
-   * The Ladder's three (#86). PRD-design §5 prints all three as copy — the counts-only pending
-   * line, the ownership footer, the sealed-cell toast — and PRD §4's inventory never listed them,
-   * so the screen would otherwise have had to hardcode them in the shell. Draft values in all
-   * three bundles, flagged on #71 for the Sync-3 freeze.
+   * The Ladder's two survivors (#86). PRD-design §5 prints three lines as copy — the counts-only
+   * pending line, the ownership footer, the sealed-cell toast — and PRD §4's inventory never
+   * listed them, so the screen would otherwise have had to hardcode them in the shell. The
+   * ownership footer was read-once copy and went on #228; these two stayed.
    */
-  it('carries the three keys the Ladder forced (#86)', () => {
-    const added: StringsKey[] = ['ladder.pendingLine', 'ladder.ownership', 'ladder.sealedToast'];
+  it('carries the two keys the Ladder forced that survive (#86, #228)', () => {
+    const added: StringsKey[] = ['ladder.pendingLine', 'ladder.sealedToast'];
 
     for (const key of added) expect(STRINGS_KEYS).toContain(key);
   });
 
   /**
-   * The staged rung card's seven (#87). Every control across the four [D22] stages is a label the
+   * The staged rung card's six (#87). Every control across the four [D22] stages is a label the
    * learner reads, and PRD-design §6.2 prints them all — in English, for every course, which is
-   * what a prototype does and what a product cannot. Draft values in all three bundles, on #71.
+   * what a prototype does and what a product cannot. Draft values in all three bundles, on #71;
+   * the seventh was the fresh rung's note, read once and removed on #228.
    */
-  it('carries the seven keys the staged rung card forced (#87)', () => {
+  it('carries the six keys the staged rung card forced (#87, #228)', () => {
     const added: StringsKey[] = [
       'rungCard.startModule',
-      'rungCard.freshNote',
       'rungCard.practice',
       'rungCard.revisitModule',
       'rungCard.exitRitual',
