@@ -6,13 +6,13 @@
  *
  * | stage | primary | beside it |
  * |---|---|---|
- * | `fresh` | "Start with the module" → `/module/:id` | the note: read it once, Practice picks up from there |
+ * | `fresh` | "Start with the module" → `/module/:id` | — |
  * | `studied` | "Practice" → `/practice` | ghost "revisit the module" → `/module/:id` |
  * | `exit_ready` | "Exit ritual — open" → `/ritual` | Practice and Module drop to secondary |
- * | `pending` | — | the `pendingAuthoring` note + ghost "practice earlier rungs" → `/practice` |
+ * | `pending` | — | — (an unauthored rung offers nothing, and says nothing about it) |
  *
  * **The stage guides; it never gates** (the product invariant, and the reason this is a card and
- * not a wizard). Every stage leaves the bottom nav's Practice tab exactly where it was, three of
+ * not a wizard). Every stage leaves the bottom nav's Practice tab exactly where it was, two of
  * the four offer Practice from the card itself, and nothing here can lock a route: the only thing
  * that changes between stages is which action is loud.
  *
@@ -113,16 +113,9 @@ export function RungCard({
       )}
 
       {stage === 'fresh' && (
-        <>
-          <Link className={styles.primary} to={modulePath} dir={dir}>
-            {strings['rungCard.startModule']}
-          </Link>
-          {/* "Nothing is locked; the tab stays open" — the note is the invariant, in the course's
-              own words, at the one moment the learner might read a sequence as a gate. */}
-          <p className={styles.note} dir={dir}>
-            {strings['rungCard.freshNote']}
-          </p>
-        </>
+        <Link className={styles.primary} to={modulePath} dir={dir}>
+          {strings['rungCard.startModule']}
+        </Link>
       )}
 
       {stage === 'studied' && (
@@ -155,21 +148,9 @@ export function RungCard({
         </>
       )}
 
-      {stage === 'pending' && (
-        <>
-          {/* A rung whose module has not been authored yet: there is nothing to open, so there is
-              no primary. The note says so in counts-free, calendar-free copy, and the one control
-              points at the rungs that DO exist. */}
-          <p className={styles.pendingNote} dir={dir}>
-            {strings['pendingAuthoring']}
-          </p>
-          <div className={styles.ghostRow}>
-            <Link className={styles.ghost} to={PRACTICE_PATH} dir={dir}>
-              {strings['rungCard.practiceEarlier']}
-            </Link>
-          </div>
-        </>
-      )}
+      {/* `pending` renders nothing here: a rung whose module has not been authored yet has nothing
+          to open and nothing to practise, so the card is its title and its job and no more. It
+          does not explain itself — the absence of an action IS the state. */}
     </div>
   );
 }

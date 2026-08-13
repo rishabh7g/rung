@@ -226,12 +226,6 @@ describe('a fresh install', () => {
       strings('ladder.sealedToast').replace('{level}', '2').replace('{remaining}', '10'),
     );
   });
-
-  it('shows the ownership footer, from the course bundle', async () => {
-    await renderLadder();
-
-    expect(screen.getByText(strings('ladder.ownership'))).toBeInTheDocument();
-  });
 });
 
 /* -------------------------------------------------------------- mid-journey */
@@ -245,13 +239,12 @@ describe('mid-journey — three rungs climbed', () => {
     await renderLadder();
 
     expect(screen.getByText('M4 · CURRENT RUNG')).toBeInTheDocument();
-    // M4's module is not authored in this ladder, so its card is the pending stage: a note, and
-    // the one ghost back to the rungs that do exist [D22].
+    // M4's module is not authored in this ladder, so its card is the pending stage: no CTA and
+    // no note, so the only links in the list are the rungs already passed [D22].
     expect(openRungs()).toEqual([
       'M1 · L1 rung 1what L1 rung 1 doesPASSED',
       'M2 · L1 rung 2what L1 rung 2 doesPASSED',
       'M3 · L1 rung 3what L1 rung 3 doesPASSED',
-      strings('rungCard.practiceEarlier'),
     ]);
     expect(screen.getByRole('link', { name: /L1 rung 2/ })).toHaveAttribute(
       'href',
@@ -314,14 +307,13 @@ describe('the staged rung card [D22]', () => {
     return within(screen.getByRole('navigation')).getByRole('link', { name: 'Practice' });
   }
 
-  it('opens fresh: one action into the module, under the note that says nothing is locked', async () => {
+  it('opens fresh: one action into the module, and nothing beside it', async () => {
     await renderLadder();
 
     expect(screen.getByRole('link', { name: strings('rungCard.startModule') })).toHaveAttribute(
       'href',
       '#/module/L1-M1',
     );
-    expect(screen.getByText(strings('rungCard.freshNote'))).toBeInTheDocument();
     expect(screen.queryByText(strings('rungCard.practice'))).not.toBeInTheDocument();
     expect(screen.queryByText(strings('rungCard.exitRitual'))).not.toBeInTheDocument();
   });
@@ -345,7 +337,6 @@ describe('the staged rung card [D22]', () => {
       '#/module/L1-M1',
     );
     expect(screen.queryByText(strings('rungCard.startModule'))).not.toBeInTheDocument();
-    expect(screen.queryByText(strings('rungCard.freshNote'))).not.toBeInTheDocument();
   });
 
   it('offers the exit ritual once every sentence is produced twice — the real counters', async () => {
@@ -387,16 +378,16 @@ describe('the staged rung card [D22]', () => {
     expect(screen.getByRole('link', { name: strings('rungCard.exitRitual') })).toBeInTheDocument();
   });
 
-  it('answers a rung with no module yet with a note and a way back to practice', async () => {
+  it('answers a rung with no module yet with the rung, and nothing else', async () => {
     climb('L1-M1', 'L1-M2');
     await renderLadder();
 
     expect(screen.getByText('M3 · CURRENT RUNG')).toBeInTheDocument();
-    expect(screen.getByText(strings('pendingAuthoring'))).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: strings('rungCard.practiceEarlier') })).toHaveAttribute(
-      'href',
-      '#/practice',
-    );
+    // The card offers no CTA and no explanation: the two links in the list are the passed rungs.
+    expect(openRungs()).toEqual([
+      'M1 · L1 rung 1what L1 rung 1 doesPASSED',
+      'M2 · L1 rung 2what L1 rung 2 doesPASSED',
+    ]);
     // There is nothing behind this rung to open, so nothing offers to open it.
     expect(screen.queryAllByRole('link').map((link) => link.getAttribute('href'))).not.toContain(
       '#/module/L1-M3',
@@ -573,8 +564,6 @@ describe('a finished ladder', () => {
     expect(markers()).toEqual(Array<string>(10).fill('passed'));
     expect(screen.queryByText(/CURRENT RUNG/)).not.toBeInTheDocument();
     expect(screen.queryByText(/ladder\.pendingLine/)).not.toBeInTheDocument();
-    // No celebration beyond the sanctioned beat (#68/#103) — the footer is the last word.
-    expect(screen.getByText(strings('ladder.ownership'))).toBeInTheDocument();
   });
 
   it('unseals every level: no cell is a control any more', async () => {

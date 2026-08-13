@@ -163,14 +163,15 @@ describe('the hub', () => {
     expect(screen.queryByRole('button', { name: 'Dismiss this note' })).not.toBeInTheDocument();
   });
 
-  it('offers no session on a rung nobody has authored — the note, and no CTA', async () => {
+  it('offers no session on a rung nobody has authored — no CTA, and no explanation', async () => {
     // L1-M3 is listed with `hasContent: false`, so passing the two below it makes it the rung.
     pass(M1, M2);
     await renderHub();
 
-    expect(await screen.findByText(strings('pendingAuthoring'))).toBeInTheDocument();
+    // The hub's title is still the screen; everything under it goes, so the hub promises nothing
+    // it cannot serve and says nothing about why.
+    expect(await screen.findByText(strings('practice.hubTitle'))).toBeInTheDocument();
     expect(screen.queryByRole('button', { name: /practice\.begin/ })).not.toBeInTheDocument();
-    // The note replaces the phase list too, so the hub promises nothing it cannot serve.
     expect(screen.queryByText(strings('practice.phase.read'))).not.toBeInTheDocument();
   });
 });

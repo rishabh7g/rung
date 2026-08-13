@@ -207,61 +207,53 @@ export default function PracticeScreen() {
         </h2>
       </div>
 
-      {stage === 'pending' ? (
-        // A rung whose sentences are not authored yet: there is nothing to practise on it, and the
-        // note says so in the course's own words — the same line the rung card shows [D22].
-        <div className={styles.pending}>
-          <RegistrationMarks />
-          <p className={styles.pendingNote} dir={course.dir}>
-            {strings.pendingAuthoring}
-          </p>
-        </div>
-      ) : (
-        rung !== null && (
-          <>
-            <ol className={styles.phases}>
-              {PHASES.map((phase, index) => (
-                <li key={phase} className={styles.phase}>
-                  <RegistrationMarks />
-                  {/* The prototype's 01 / 02 / 03 — a count, and shell furniture. */}
-                  <p className={styles.phaseNumber}>{String(index + 1).padStart(2, '0')}</p>
-                  <div className={styles.phaseText}>
-                    <p className={styles.phaseName} dir={course.dir}>
-                      {strings[`practice.phase.${phase}`]}
-                    </p>
-                    <p className={styles.phaseLine} dir={course.dir}>
-                      {interpolate(strings[HUB_LINE[phase]], { count: counts[phase] })}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-
-            {/* One entry into the session, at the bottom of the column where the prototype puts
-                it — and an open session replaces it rather than sitting beside it (#99): two CTAs
-                on one screen is the learner deciding which of them means "practise". */}
-            {startable &&
-              (isResumable(snapshot) ? (
-                <ResumeBanner
-                  snapshot={snapshot}
-                  onContinue={carryOn}
-                  onFresh={beginFresh}
-                  dir={course.dir}
-                />
-              ) : (
-                <div className={styles.beginFrame}>
-                  <RegistrationMarks />
-                  <button type="button" className={styles.begin} onClick={begin} dir={course.dir}>
-                    {/* The CTA names where the session opens, because that is what it does: Review
-                        when something is due, Read when nothing is (PRD §8 F4). */}
-                    {preview.reviewIds.length > 0
-                      ? strings['practice.beginReview']
-                      : strings['practice.beginRead']}
-                  </button>
+      {/* A rung whose sentences are not authored yet has no session to offer, so the hub offers
+          nothing: no phases, no CTA, and no paragraph explaining the absence — the empty column
+          is the state, the same silence the rung card keeps [D22]. */}
+      {stage !== 'pending' && rung !== null && (
+        <>
+          <ol className={styles.phases}>
+            {PHASES.map((phase, index) => (
+              <li key={phase} className={styles.phase}>
+                <RegistrationMarks />
+                {/* The prototype's 01 / 02 / 03 — a count, and shell furniture. */}
+                <p className={styles.phaseNumber}>{String(index + 1).padStart(2, '0')}</p>
+                <div className={styles.phaseText}>
+                  <p className={styles.phaseName} dir={course.dir}>
+                    {strings[`practice.phase.${phase}`]}
+                  </p>
+                  <p className={styles.phaseLine} dir={course.dir}>
+                    {interpolate(strings[HUB_LINE[phase]], { count: counts[phase] })}
+                  </p>
                 </div>
-              ))}
-          </>
-        )
+              </li>
+            ))}
+          </ol>
+
+          {/* One entry into the session, at the bottom of the column where the prototype puts
+              it — and an open session replaces it rather than sitting beside it (#99): two CTAs
+              on one screen is the learner deciding which of them means "practise". */}
+          {startable &&
+            (isResumable(snapshot) ? (
+              <ResumeBanner
+                snapshot={snapshot}
+                onContinue={carryOn}
+                onFresh={beginFresh}
+                dir={course.dir}
+              />
+            ) : (
+              <div className={styles.beginFrame}>
+                <RegistrationMarks />
+                <button type="button" className={styles.begin} onClick={begin} dir={course.dir}>
+                  {/* The CTA names where the session opens, because that is what it does: Review
+                      when something is due, Read when nothing is (PRD §8 F4). */}
+                  {preview.reviewIds.length > 0
+                    ? strings['practice.beginReview']
+                    : strings['practice.beginRead']}
+                </button>
+              </div>
+            ))}
+        </>
       )}
     </section>
   );
