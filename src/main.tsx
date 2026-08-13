@@ -21,9 +21,12 @@ import '@fontsource/barlow-condensed/latin-600.css';
 import '@fontsource/barlow-condensed/latin-700.css';
 
 if (import.meta.env.DEV) {
-  // latin-ext, for the surfaces only a dev build has: the en-ar fixture course and `/dev/type`'s
-  // diacritic rows (ī ā ū — docs/04-font-notes.md §4). Dynamic imports inside a DEV branch never
-  // enter a production graph — the same pattern as `src/dev/typeRoute.tsx`.
+  // latin-ext, for the one surface only a dev build has: `/dev/type`'s diacritic rows (ī ā ū —
+  // docs/04-font-notes.md §4). en-ar ships now (#202) and this is still dev-only, because Barlow
+  // never draws its romanization: every L2 line in the product is `--font-devanagari` (Mukta), and
+  // the marks Mukta's `unicode-range` drops fall through to `system-ui`, not to Barlow. Dynamic
+  // imports inside a DEV branch never enter a production graph — the `src/dev/typeRoute.tsx`
+  // pattern.
   void import('@fontsource/barlow/latin-ext-400.css');
   void import('@fontsource/barlow-condensed/latin-ext-600.css');
   void import('@fontsource/barlow-condensed/latin-ext-700.css');

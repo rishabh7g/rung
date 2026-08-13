@@ -39,9 +39,23 @@ describe('loadCourses', () => {
     });
     // en-ar carries more than the nine required fields; the loader keeps them, never rejects them.
     expect(courses[2]?.romanizationNote).toMatch(/Modern Standard Arabic/);
-    expect(courses[2]?.fixture).toBe(true);
-    // en-es shipped for real in #195 — a graduated course carries no fixture key at all.
-    expect(courses[1]?.fixture).toBeUndefined();
+    // en-es graduated in #195 and en-ar in #202 — a shipping course carries no fixture key at all,
+    // and the repo has no other kind of course left.
+    expect(courses.some((course) => course.fixture !== undefined)).toBe(false);
+  });
+
+  /**
+   * There is no fixture course in the repo today (#202), but `--with-fixtures` and the `fixture`
+   * key are still the seam a course #4 is authored behind (PRD §17). The loader keeps the key
+   * rather than validating it away, so the day one comes back it reaches the app intact.
+   */
+  it('keeps a fixture row intact, for the day a new course is authored behind the gate', () => {
+    const row = { ...DEV_MANIFEST.courses[2], fixture: true };
+
+    const manifest = parseManifest({ devBuild: true, courses: [row] });
+
+    expect(manifest.courses[0]?.fixture).toBe(true);
+    expect(manifest.devBuild).toBe(true);
   });
 
   it('fetches once however many callers ask — the cache is the promise', async () => {

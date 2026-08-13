@@ -230,8 +230,10 @@ describe('the bundle covers what the product renders — and only that (#113, #1
   });
 
   it('keeps latin-ext out of the production graph — dev builds only (#113)', () => {
-    // The static imports are the production bundle; latin-ext (the ī ā ū of the romanized fixture
-    // and /dev/type) may appear only as a dynamic import inside the `import.meta.env.DEV` branch.
+    // The static imports are the production bundle; latin-ext (the ī ā ū of /dev/type's diacritic
+    // rows) may appear only as a dynamic import inside the `import.meta.env.DEV` branch. Shipping
+    // en-ar (#202) did not change that: Barlow draws shell English, never a course's L2, so the
+    // romanization's marks are Mukta's fall-through, not Barlow's (docs/04-font-notes.md §4).
     const statics = [...mainSource.matchAll(/^import '([^']*latin-ext[^']*)';$/gm)].map(
       (m) => m[1],
     );

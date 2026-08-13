@@ -60,13 +60,15 @@ files behind them shrank).
    `@fontsource/<pkg>/latin-<weight>.css` instead of `<weight>.css`, which kills every
    `vietnamese` subset (nothing in this product is Vietnamese) and every `latin-ext` in the
    production graph.
-3. **latin-ext is dev-only** — the romanization diacritics (ī ā ū) belong to the en-ar fixture
-   course and `/dev/type`, and fixtures only ship in dev builds — so `main.tsx` pulls the three
-   `latin-ext` files via dynamic import inside an `import.meta.env.DEV` branch (the
-   `typeRoute.tsx` pattern; never in a production graph). The PRD's other named marks (ʾ U+02BE,
-   ʿ U+02BF, ḥ U+1E25) have **no glyph in Barlow at all** — that gap and its three options are
-   docs/04-font-notes.md §4, and the decision stays with the en-ar course ticket. Subsetting
-   changes nothing about it.
+3. **latin-ext is dev-only, and stays dev-only now that en-ar ships (#202)** — the only surface
+   that renders the diacritics *in Barlow* is `/dev/type`'s specimen, so `main.tsx` pulls the
+   three `latin-ext` files via dynamic import inside an `import.meta.env.DEV` branch (the
+   `typeRoute.tsx` pattern; never in a production graph). The course's own ī ā ū ḥ ṣ ḍ ṭ ẓ ʾ ʿ are
+   **not Barlow's problem**: every L2 line is `--font-devanagari` (Mukta), whose `latin`
+   `unicode-range` stops at U+00FF, so the marks fall through to `system-ui` and importing
+   Barlow's latin-ext into production would cost every learner bytes and fix nothing. The gap and
+   its options are docs/04-font-notes.md §4/§4.1 — a face decision [D15], which subsetting neither
+   causes nor can close.
 4. **Mukta glyph-subset per course at build time** — `tools/font-subset.ts` (HarfBuzz via
    `subset-font`), chained after `content:build` in `predev`, `prebuild` and `verify.sh`. It
    harvests every JSON string value the content build emitted per course, unions the per-course
@@ -149,29 +151,32 @@ it did not move (94.9 KiB).
 
 ### 4.3 The numbers, and where the limits came from
 
-Measured on a `--with-fixtures` dev build carrying all three courses (hi-mr L1×10, en-es L1×10,
-en-ar L1×1) — the biggest build the repo can produce today. Limits are measured + ~5%, rounded to
+Measured on a `--with-fixtures --with-unverified` dev build carrying all three courses, each with
+a full L1×10 — the biggest build the repo can produce today. Limits are measured + ~5%, rounded to
 a round number, the same rule the 380/580 rebalance used: every row stays a tripwire, not a
 ceiling.
 
 | row              | measure | measured |   limit | headroom |
 | ---------------- | ------- | -------: | ------: | -------: |
-| `first-paint`    | gzip    | 173.7 KiB | 185 KiB |  11.3 KiB |
-| `js`             | gzip    |  94.9 KiB | 200 KiB | 105.1 KiB |
+| `first-paint`    | gzip    | 173.6 KiB | 185 KiB |  11.4 KiB |
+| `js`             | gzip    |  95.0 KiB | 200 KiB | 105.0 KiB |
 | `shell`          | gzip    | 216.0 KiB | 230 KiB |  14.0 KiB |
 | `course:hi-mr`   | gzip    | 340.3 KiB | 360 KiB |  19.7 KiB |
 | `course:en-es`   | gzip    |  71.3 KiB | 360 KiB | 288.7 KiB |
-| `course:en-ar`   | gzip    |   7.0 KiB | 360 KiB | 353.0 KiB |
-| `precache:hi-mr` | gzip    | 556.4 KiB | 590 KiB |  33.6 KiB |
+| `course:en-ar`   | gzip    |  96.6 KiB | 360 KiB | 263.4 KiB |
+| `precache:hi-mr` | gzip    | 556.3 KiB | 590 KiB |  33.7 KiB |
 | `precache:en-es` | gzip    | 287.3 KiB | 590 KiB | 302.7 KiB |
-| `precache:en-ar` | gzip    | 223.0 KiB | 590 KiB | 367.0 KiB |
+| `precache:en-ar` | gzip    | 312.6 KiB | 590 KiB | 277.4 KiB |
 | `splash`         | raw     |  70.3 KiB | 100 KiB |  29.7 KiB |
 | `unmetered`      | files   |  0 files  | 0 files |         — |
 
-The strict learner build (hi-mr and en-es; only the en-ar fixture held back, since #195) reads
-`first-paint` 173.1, `js` 94.7, `shell` 214.2, `course:hi-mr` 337.9, `course:en-es` 71.3,
-`precache:hi-mr` 552.0 and `precache:en-es` 285.4 KiB gzip — the same rows, smaller, which is why
-the limits are set from the dev build.
+Since #202 the repo holds **no fixture course and no unverified module**, so the two builds carry
+the same three courses and differ only in `/dev/type`: the specimen's glyphs are harvested into
+Mukta on a dev build and not on a strict one. That is the whole gap — the strict learner build
+reads `first-paint` 173.5, `js` 94.9, `shell` **214.6**, `course:hi-mr` 337.9, `course:en-es` 71.3,
+`course:en-ar` 96.6, `precache:hi-mr` 552.5, `precache:en-es` 285.9 and `precache:en-ar` 311.2 KiB
+gzip. The limits stay keyed to the dev build: it is the larger of the two, and it is the one a
+future fixture course would grow.
 
 ### 4.4 What graduating a course actually cost (#195, en-es)
 
@@ -200,6 +205,39 @@ no `latin-ext`, no new face, no second script. `first-paint` and `js` move only 
 A third course written in Latin costs about the same again; one in a new script costs its own
 `course:` row instead, which is the arrangement §4.2 was built for.
 
+### 4.5 What the second graduation cost — and gave back (#202, en-ar)
+
+en-ar is the case §4.4 predicted: a course in a **new script**, with a bundled face of its own
+(Noto Naskh Arabic, #197). Strict build, before → after:
+
+| row              | before | after | Δ |
+| ---------------- | -----: | ----: | -: |
+| `first-paint`    | 172.6 KiB | 173.5 KiB | **+0.9** |
+| `js`             |  94.4 KiB |  94.9 KiB | **+0.5** |
+| `shell`          | 216.0 KiB | 214.6 KiB | **−1.4** |
+| `course:hi-mr`   | 337.9 KiB | 337.9 KiB | **0.0** |
+| `course:en-es`   |  71.3 KiB |  71.3 KiB | **0.0** |
+| `precache:hi-mr` | 553.9 KiB | 552.5 KiB | **−1.4** |
+| `precache:en-es` | 287.3 KiB | 285.9 KiB | **−1.4** |
+| `course:en-ar`   | — | **96.6 KiB** / 360 | new row |
+| `precache:en-ar` | — | **311.2 KiB** / 590 | new row |
+
+**`shell` went down**, and that is the finding. Noto Naskh Arabic was bundled by #197 while en-ar
+was still a fixture, so no *shipping* course claimed it and `tools/payload-budget.ts` charged it to
+`shell` — the row every learner pays. Graduating the course gave the face an owner: **−1.4 KiB off
+every learner's shell**, and the Arabic subset now meters inside `course:en-ar` where it belongs.
+An asset that arrives before its course is over-charged, not under-charged, which is the safe
+direction for a tripwire to be wrong in.
+
+**Neither existing course moved a byte** (`course:hi-mr` and `course:en-es` both 0.0). Unlike
+en-es, Arabic adds nothing to Mukta's shared `latin` cut: its romanization's marks are outside
+Mukta's `unicode-range` entirely (docs/04-font-notes.md §4.1), so there is no union to grow.
+`first-paint` and `js` move only because `courses.json` grew a row and the bundle a course.
+
+`course:en-ar` at 96.6 KiB is 25 KiB above en-es's 71.3 for the same ten rungs: the course carries
+both a romanized `display` and a native `script` line in every sentence and pool item, so its JSON
+is roughly a third larger, plus ~10 KiB of Naskh.
+
 **One ceiling for every course** (360 KiB), not a table of per-course numbers: a limit keyed by
 course id would be logic about a course, and every course is entitled to the same room. It is
 hi-mr's measured payload + ~5%, i.e. "one course may cost a learner about what the heaviest course
@@ -215,7 +253,7 @@ asset class (an `.mp3`, a `.wasm`, a second content root) must be given a budget
 rather than riding along inside a bigger row. It is a file-count gate, so a 0-byte newcomer trips
 it too.
 
-### 4.5 When a row goes red — in this order
+### 4.6 When a row goes red — in this order
 
 1. **Read which row it is.** `course:<id>` — only that course's learners pay, and the fix belongs
    in that course's bytes. `shell` — every learner in every course pays, so it is worth several
@@ -239,7 +277,7 @@ it too.
    it was under `total`: the catalogue no longer inflates any row, so a red row now means one
    course, or the shell, genuinely got heavier — a regression, not arithmetic.
 
-### 4.6 Known gap: the precache is not scoped per course yet
+### 4.7 Known gap: the precache is not scoped per course yet
 
 `tools/pwa.ts`'s `PRECACHE_GLOBS` still take `content/**/*.json` and `**/*.woff2`, so the service
 worker precaches **every** course's JSON and **every** font subset on first visit. Until that is

@@ -40,9 +40,9 @@
  * The output is honest about the gate: a strict build that ships no modules gets near-empty
  * Devanagari files, and the subsets grow with the content that ships. That happened on 2026-08-13
  * (hi-mr L1-M1..M10, #110/#111): ~4 KiB per Devanagari weight became ~86-90 KiB, and
- * `tools/payload-budget.ts` said so out loud (docs/05-perf-notes.md §4). Arabic is at the other
- * end of that curve today — en-ar is a four-sentence fixture, so its subset is ~2 KiB and will
- * grow with #199-#201 the same way.
+ * `tools/payload-budget.ts` said so out loud (docs/05-perf-notes.md §4). Arabic walked the same
+ * curve: en-ar was a four-sentence fixture cut to ~2 KiB until #199-#201 authored the ladder and
+ * #202 shipped it, at which point the Naskh subset became ~10 KiB of real content.
  *
  * `src/fonts/mukta.css` and `src/fonts/naskh.css` (both committed) declare the `@font-face` blocks
  * pointing at the generated files; `tools/font-subset.test.ts` keeps the two in sync. The
@@ -76,8 +76,11 @@ export const NASKH_WEIGHTS = [400] as const;
 
 /**
  * A script target, mirroring @fontsource's own split — one source file, one output, one
- * `unicode-range` per script. A character no target claims is nobody's problem here: romanized
- * L2 is Barlow's (`--font-body`), and anything else falls through to `system-ui` by design.
+ * `unicode-range` per script. A character no target claims falls through to the next family in
+ * its stack — `system-ui` — by design, which is what happens to the romanization's ā ī ū ḥ ṣ ḍ ṭ
+ * ẓ ʾ ʿ: Mukta draws every L2 line, its `latin` range stops at U+00FF, and Mukta has no glyph
+ * beyond it to retain. That is a real, live gap now that en-ar ships (#202) and it is a face
+ * decision, not a subsetting one — docs/04-font-notes.md §4 states it and names the options.
  */
 export interface ScriptTarget {
   subset: 'devanagari' | 'latin' | 'arabic';

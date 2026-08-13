@@ -151,9 +151,10 @@
  * the dual (except M8's counted "two"), the passive, `lam`/`laysa` negation, the full case system,
  * and broken plurals as a system — plurals appear only as vocabulary the sentences need.
  *
- * en-ar's own `content/en-ar/modules/L1-M1.json` is a four-sentence `fixture: true` seam proof
- * (#118), not a first draft: M1 is re-authored fresh to the full ten sentences against the brief
- * below, and the fixture's four frames are the only part that survives.
+ * en-ar's own `content/en-ar/modules/L1-M1.json` started as a four-sentence `fixture: true` seam
+ * proof (#118), not a first draft: #199 re-authored M1 fresh to the full ten sentences against the
+ * brief below — the seam proof's four frames are the only part that survived — and #202 graduated
+ * the course out of `fixture: true` altogether.
  */
 
 /** PRD §5 module budget: at most 25 new words per module, every course, every level. */

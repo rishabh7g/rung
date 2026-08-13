@@ -126,7 +126,12 @@ backed by an **LLM linguistic review** (`docs/07-llm-review-L1-M1-M5.md`,
 issues that tracked it (#64, #110, #111) were closed by the owner on 2026-08-13, so the
 **22 open questions in `docs/08-marathi-third-review.md`** — which supersede the two
 earlier lists — are the only remaining record of what a native reviewer still owes.
-`npm run dev` additionally relaxes the gate so the en-ar fixture course renders.
+
+**There is no fixture course left (#202, 2026-08-13).** All three courses ship, and no module in
+the repo is unverified, so `npm run dev` and `npm run build` now contain the same content — the
+two relaxations are still enforced and still tested (`tools/content-build.test.ts` builds
+synthetic fixture rows and unverified modules and watches them be dropped), they simply have
+nothing in this repo to relax.
 
 **en-es ships (#195, 2026-08-13) — the product has two courses.** All ten L1 rungs —
 `L1-M1`…`L1-M10` — are authored and carry `verified: true` on the same
@@ -143,12 +148,29 @@ owner's authority, exactly hi-mr's, and the **67 open questions** across
 `docs/07-llm-review-en-es-L1-M6-M10.md` are what a native reviewer still owes — dialect first.
 Graduating the course ships LLM-reviewed Spanish to learners; it does not close that gap.
 
+**en-ar ships (#202, 2026-08-13) — the product has three courses, and one of them is a new
+script.** Ten L1 rungs authored against ten briefs (#198–#201), reviewed in `docs/07-llm-review-
+en-ar-L1-M1-M2.md`, `docs/09-llm-review-en-ar-L1-M3-M5.md` and
+`docs/10-llm-review-en-ar-L1-M6-M10.md`, and shipping on the same LLM-review-plus-owner-authority
+bar. **No native Arabic speaker has read a word of it either.** It is **Modern Standard Arabic**,
+register pinned to spoken-simple MSA (pause forms, no case endings, no dialect substitutions), and
+`scriptMode: romanized`: every sentence prints in ALA-LC-flavoured Latin with the Arabic script
+beneath it as recognition only. That quiet line is `dir="rtl"` and `lang="ar"` (#196) and draws in
+bundled Noto Naskh Arabic (#197). Its L2/L3 ladders stay `draft: true`.
+
+One honest defect ships with it: the romanization's **ā ī ū ḥ ṣ ḍ ṭ ẓ ʾ ʿ render in the system
+face, not Mukta** — Mukta's `unicode-range` stops at U+00FF and it has no glyph past it, so the
+marks fall through by design. Mixed-face, not tofu; the options are a face decision
+(docs/04-font-notes.md §4.1).
+
 The payload budget holds, because #207 made it per learner: `course:en-es` **71.3 KiB** gzip
-against 360, `precache:en-es` **285.4 KiB** against 590, `course:hi-mr` **byte-identical** at
-337.9 KiB — a Spanish learner is never charged for hi-mr's Devanagari and vice versa. The one
-shared cost is `shell` 210.4 → **214.2 KiB**: Mukta's `latin` subsets are cut over the union of
-shipped courses, so Spanish's accented glyphs are in the bytes every learner downloads
-(docs/05-perf-notes.md §4).
+against 360 and `course:en-ar` **96.6 KiB** against 360, with `course:hi-mr` **byte-identical**
+at 337.9 KiB across both graduations — a Spanish learner is never charged for hi-mr's Devanagari
+or for Arabic, and vice versa. en-es's one shared cost was `shell` 210.4 → **214.2 KiB**: Mukta's
+`latin` subsets are cut over the union of shipped courses, so Spanish's accented glyphs are in the
+bytes every learner downloads. en-ar's shared cost was **negative** — `shell` **214.6 KiB**, down
+1.4, because Naskh had been charged to `shell` while en-ar was a fixture and now has an owner
+(docs/05-perf-notes.md §4.4, §4.5).
 
 The two relaxations are independent (`--with-unverified`, `--with-fixtures`), and either
 one makes the output a **dev build**, which says so twice over: the run prints
@@ -1241,8 +1263,9 @@ romanization diacritics, the kickers. It is **development only** — `src/dev/ty
 imports it dynamically inside an `import.meta.env.DEV` branch, so no chunk, no CSS and no
 Devanagari reaches `dist/` — and it is the single entry in `shellPurity.test.ts`'s allowlist.
 
-Findings, screenshots, the shipped byte count and the one real gap (`ʾ`, `ʿ` and `ḥ` are not in
-Barlow) are in [`docs/04-font-notes.md`](docs/04-font-notes.md).
+Findings, screenshots, the shipped byte count and the one real gap — the romanization's `ā ī ū ḥ
+ṣ ḍ ṭ ẓ ʾ ʿ` are outside Mukta's `unicode-range` and fall through to the system face, now that
+en-ar ships (#202) — are in [`docs/04-font-notes.md`](docs/04-font-notes.md) §4/§4.1.
 
 ### The PWA — precache everything, route nothing
 
@@ -1250,10 +1273,10 @@ The app installs a service worker that precaches **the entire build** and never 
 network again (#90, `design/pwa-checklist.md` §3). `tools/pwa.ts` holds the whole configuration —
 `vite.config.ts` is one line, `VitePWA(pwaOptions())` — and four globs say what "everything"
 means: `**/*.{html,css,js}`, `**/*.woff2`, `content/**/*.json`, `icons/*.png`. A strict build
-precaches **66 files / 1526 KiB** now that hi-mr and en-es L1-M1..M10 both ship (#195); a
-dev-content build adds the en-ar fixture's JSONs on top. No learner downloads all of it: the
-budget's `precache:<id>` rows meter what one course's device actually keeps
-(docs/05-perf-notes.md §4).
+precaches **90 files / 1964 KiB** now that hi-mr, en-es and en-ar all ship L1-M1..M10 (#195,
+#202), and a dev-content build precaches the same list — there is no fixture content left to add
+to it. No learner downloads all of it: the budget's `precache:<id>` rows meter what one course's
+device actually keeps (docs/05-perf-notes.md §4).
 
 There is deliberately **no `runtimeCaching`**. Zero network after first load is the product
 (PRD-engineering §3, §10), so a request the precache does not answer is a bug in the app, not a

@@ -13,8 +13,8 @@
  * `data-section`), not left to the reading order of this file.
  *
  * **A section with nothing in it renders NOTHING** — no heading, no empty plate, no "not
- * available". Enrichment is optional in the schema past M3 (`src/course/types.ts`), the two
- * fixture courses are thinner than hi-mr, and a screen of empty headings would teach the learner
+ * available". Enrichment is optional in the schema past M3 (`src/course/types.ts`), en-es and
+ * en-ar are thinner than hi-mr, and a screen of empty headings would teach the learner
  * that the content is broken rather than that this sentence is simple.
  *
  * **Amber appears once.** The interference trap is the only loud object here (design/tokens.md §7

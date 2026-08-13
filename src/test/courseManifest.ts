@@ -6,8 +6,11 @@
  * is exercised against a row that has more than the nine required fields. Shared, so the loader
  * test and the boot tests cannot drift into disagreeing about the shape.
  *
- * en-ar is the only row that still carries `fixture: true`: en-es graduated to a shipping course
- * in #195, so a dev build now emits it exactly as a strict build does.
+ * **No row carries `fixture` any more.** en-es graduated in #195 and en-ar in #202, so the repo
+ * holds no fixture course and a dev build emits the same three rows a strict build does — the
+ * envelope's `devBuild` keys come from the flags `npm run dev` passes, not from anything the
+ * content still is. The loader's tolerance of a `fixture` row is covered where it belongs, on
+ * `parseManifest` in `src/course/manifest.test.ts`.
  */
 import { vi } from 'vitest';
 import { completeStrings } from './courseStrings.ts';
@@ -50,7 +53,6 @@ export const DEV_MANIFEST = {
       pairLabel: 'english → arabic',
       scriptMode: 'romanized',
       dir: 'ltr',
-      fixture: true,
       romanizationNote: 'ALA-LC-flavoured Modern Standard Arabic in Latin letters.',
     },
   ],

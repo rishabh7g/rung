@@ -184,7 +184,7 @@ copied into the product.
 
 ## 11. Glossary
 
-- **Course / courseId** — one L1→L2 pair with its own content, strings, progress (`hi-mr` and `en-es` ship; `en-ar` is still a dev fixture).
+- **Course / courseId** — one L1→L2 pair with its own content, strings, progress (`hi-mr`, `en-es` and `en-ar` all ship; the `fixture: true` seam stays for a course #4 authored behind the gate).
 - **scriptMode** — `native` | `romanized`; romanized courses show romanization primary + quiet script line.
 - **Level / seal** — 10 modules per level; a level unlocks when the previous level is fully passed.
 - **Staged rung card** — the current rung's single CTA: fresh → studied → exit-ready → pending-authoring [D22].

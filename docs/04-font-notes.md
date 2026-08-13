@@ -110,20 +110,53 @@ heavier.
 
 **So: two of the three characters the PRD names by hand are missing.** It is not tofu — every
 platform we target (iOS, Android, this Debian box) has a system face that covers them, so it
-degrades to a *mismatched* glyph rather than a missing one. It also does not bite v1: the ticket
-this gap belongs to is the romanized course (en-ar), and v1 ships hi-mr, whose L2 is Devanagari.
+degrades to a *mismatched* glyph rather than a missing one.
 
-Options when it does bite, in order of cost:
+### 4.1 It bites now — and Barlow was never the face it bites in (#202)
 
-1. Accept the fallback for the three marks and pin it in `--font-script-fallback` so the choice
-   is deliberate rather than a browser's guess.
-2. Author romanization with alternatives Barlow does cover (`ʼ` U+02BC is present; `h` with no
-   dot loses the distinction).
-3. Swap the body face for a diacritic-complete one, which is what [D15] authorises — a design
-   decision, not an engineering one.
+en-ar graduated to a shipping course on 2026-08-13 (#202), so this gap reaches learners. Two
+corrections to the framing above, both found by measuring rather than reading:
 
-Whichever is chosen, it should be settled **before** #113 subsets, because subsetting is where
-"which glyphs must survive" gets written down.
+**The romanization does not render in Barlow.** Every L2 line in the product — hero, card, list,
+cue — is a `--text-l2-*` token, and all four resolve to `--font-devanagari` (`design/tokens.css`
+§ ramp): **Mukta**, with `system-ui, sans-serif` behind it. Barlow is `--font-body`, and it draws
+shell English only. So the table above answers a question the product does not ask; the question
+it does ask is what **Mukta** covers.
+
+**Mukta covers less.** Its `latin` subset is @fontsource's own range — `U+0000-00FF` plus a
+handful of named codepoints — and Mukta ships no `latin-ext` at all, so it has no glyph to retain
+past U+00FF whatever `tools/font-subset.ts` asks for. The whole diacritic repertoire of the
+course therefore falls through to `system-ui`:
+
+| character | in Mukta's `latin`? |
+|---|---|
+| `ā` U+0101, `ī` U+012B, `ū` U+016B | **no** — outside the range, and no `latin-ext` subset exists |
+| `ḥ ṣ ḍ ṭ ẓ` U+1E25/1E63/1E0D/1E6D/1E93 | **no** |
+| `ʾ` U+02BE, `ʿ` U+02BF | **no** (`ʼ` U+02BC *is* in range) |
+| `é` U+00E9 and the ASCII letters | **yes** — harvested from the content per course |
+
+So an en-ar sentence reads as Mukta for its plain letters and the system face for its marks — a
+mixed-face line, not tofu. It is the documented fall-through working as designed
+(`src/fonts/mukta.css`: "a range is routing, not a promise of coverage"), and it is the reason
+`main.tsx` keeps Barlow's `latin-ext` imports **dev-only** even now: pulling them into the
+production graph would add bytes every learner downloads and fix nothing, because Barlow is not in
+the stack that renders the marks.
+
+Fixing it is a **face decision**, which is [D15]'s to make and not this ticket's — the options
+below stand unchanged, with option 3 now the only one that fully closes it.
+
+Options, in order of cost:
+
+1. Accept the fallback and pin it in a token of its own, so the choice is deliberate rather than
+   a browser's guess — what ships today, unpinned.
+2. Author romanization with alternatives the L2 face does cover (`ʼ` U+02BC is in Mukta's range;
+   `h` with no dot loses the distinction, and the whole ALA-LC scheme in `courses.json` would have
+   to be reissued along with every surface in the word index).
+3. Swap the L2 face for a diacritic-complete one *for romanized courses*, which is what [D15]
+   authorises — a design decision, not an engineering one. The only option that closes the gap.
+
+Subsetting (#113) shipped without this settled, which is why the marks land on the fall-through
+path rather than in a retained glyph set.
 
 ## 5. Bytes shipped
 
