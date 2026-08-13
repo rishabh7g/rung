@@ -420,7 +420,7 @@ describe('the strings gate', () => {
         row: courseRow('en-es', { fixture: true }),
         modules: [{ id: 'L1-M1', verified: false, fixture: true }],
         strings: tamper((bundle) => {
-          bundle.storageNote = '';
+          bundle.importToast = '';
         }),
       },
     ]);
@@ -429,7 +429,7 @@ describe('the strings gate', () => {
 
     expect(report.exitCode).toBe(1);
     expect(report.lines).toContain(
-      '  en-es/strings.json: "storageNote" must be a non-empty string — got an empty string',
+      '  en-es/strings.json: "importToast" must be a non-empty string — got an empty string',
     );
   });
 

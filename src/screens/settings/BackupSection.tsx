@@ -9,9 +9,10 @@
  * record-keeping stamp for a folder of backups, never a date the UI frames anything with
  * (Invariant 2). Where the platform offers a share sheet for files (`navigator.canShare` with
  * them), the sheet is the whole UX; everywhere else an anchor download is the honest fallback.
- * The explainer above the buttons is the course's (`settings.backupNote`), and every claim in it
- * is a field of the real file — including the claim about what is NOT in it, which
- * `serialize.test.ts` enforces mechanically (Invariant 4).
+ * The buttons used to stand under a course explainer of what the one file holds and what it
+ * cannot (`settings.backupNote`); it was read once and went on #232. Every claim it made is still
+ * true and still mechanically enforced — `serialize.test.ts` is what holds the file to its
+ * contents, including the claim about what is NOT in it (Invariant 4) — a test, not a sentence.
  *
  * **Import** trusts nothing and touches nothing until the learner has seen the consequence:
  *
@@ -23,8 +24,9 @@
  *     (`settings.importFailed`), state untouched;
  *   • a readable file opens the two-sided confirm IN PLACE of the buttons — no one-tap path:
  *     both sides summarised per course (passed rungs and sessions, counts the shell renders the
- *     way the STORAGE rows are), under the course's replace warning (`settings.importReplace`),
- *     which also says an open session's place goes with the rest;
+ *     way the STORAGE rows are), under the course's replace warning (`settings.importReplace`) —
+ *     the one sentence #232's sweep of read-once copy deliberately kept, because a destructive
+ *     confirm that does not name what it destroys is a bug, not breathing room;
  *   • only the confirm calls `restoreBackup` (the store's one full-document write, #108), then
  *     lands on the Ladder of the imported `activeCourse` carrying `restoredBackup()` — the
  *     one-shot flag the Ladder answers with the course's `importToast`.
@@ -160,9 +162,6 @@ export default function BackupSection() {
 
   return (
     <>
-      <p className={styles.note} dir={course.dir}>
-        {strings['settings.backupNote']}
-      </p>
       <div className={styles.actions}>
         {/* English shell furniture with the prototype's two arrows — the register of the tick
             toggle's On/Off (#105); the promises around them are the course's. */}

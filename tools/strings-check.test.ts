@@ -43,15 +43,15 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the three shipped bundles carry — 74 keys, nested, identical', () => {
+  it('is exactly what the three shipped bundles carry — 68 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(74);
+      expect(keys.length, courseId).toBe(68);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(74);
-    expect(new Set(STRINGS_KEYS).size).toBe(74);
+    expect(STRINGS_KEYS.length).toBe(68);
+    expect(new Set(STRINGS_KEYS).size).toBe(68);
   });
 
   /**
@@ -206,18 +206,20 @@ describe('the canonical key list', () => {
   });
 
   /**
-   * The Backup section's six (#108, PRD §8 F6/F7). The explainer, the confirm's replace warning
-   * and its two decisions, the friendly refusal and the Ladder's arrival toast are all promises
-   * about the learner's own history — the last things they read before handing it to a share
-   * sheet or replacing it with a file's — and the prototype writes every one in English for
-   * every course, which is what a prototype does and what this product cannot. The technical
-   * refusal reason under `settings.importFailed` stays English on purpose: it is `ImportError`'s
-   * path-naming line, shell furniture like every stack-adjacent detail. Ratified at the Sync-3
-   * freeze (#71) with the rest of the drafts.
+   * The five of the six export/import forced (#108, PRD §8 F6/F7) that survive. The confirm's
+   * replace warning and its two decisions, the friendly refusal and the Ladder's arrival toast
+   * are all promises about the learner's own history — the last things they read before handing
+   * it to a share sheet or replacing it with a file's — and the prototype writes every one in
+   * English for every course, which is what a prototype does and what this product cannot. The
+   * technical refusal reason under `settings.importFailed` stays English on purpose: it is
+   * `ImportError`'s path-naming line, shell furniture like every stack-adjacent detail. Ratified
+   * at the Sync-3 freeze (#71) with the rest of the drafts. The sixth was the explainer above the
+   * export/import buttons, read-once copy that went on #232; `settings.importReplace` was cut to
+   * one clause on the same ticket but kept, because it is the warning in front of a destructive
+   * action.
    */
-  it('carries the six keys export/import forced (#108)', () => {
+  it('carries the five keys export/import forced (#108) that survive', () => {
     const added: StringsKey[] = [
-      'settings.backupNote',
       'settings.importReplace',
       'settings.importConfirm',
       'settings.importCancel',

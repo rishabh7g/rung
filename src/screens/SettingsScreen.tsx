@@ -3,18 +3,20 @@
  * multi-course seam visible (PRD §8 F6, F0; PRD-design §4, §6.8; the prototype's Settings).
  *
  * F6 fixes the order and this screen renders exactly it: **COURSE** → **PRACTICE** →
- * **STORAGE** → **Backup** → the privacy line. STORAGE's body is #107's
- * (`./settings/StorageSection.tsx` — the quota meter, the computed rows, the durability and
- * honesty lines); Backup's is #108's (`./settings/BackupSection.tsx` — the F7 export via the
- * share sheet, and the import behind its two-sided confirm) — the ORDER stayed this ticket's
- * contract, and each section's body arrived in the slot F6 already reserved for it.
+ * **STORAGE** → **Backup**. STORAGE's body is #107's (`./settings/StorageSection.tsx` — the
+ * quota meter and the computed rows); Backup's is #108's (`./settings/BackupSection.tsx` — the
+ * F7 export via the share sheet, and the import behind its two-sided confirm) — the ORDER stayed
+ * this ticket's contract, and each section's body arrived in the slot F6 already reserved for it.
+ * The screen used to close on a privacy line, half the course's promise and half the shell's
+ * ("read-only teaching · zero inputs · zero network"); #232 removed both halves as read-once
+ * copy. The app goes on behaving that way — it simply stops saying so on screen.
  *
  * The COURSE section is the reason the screen exists (F0): a native `<select>` over the
  * manifest's courses — it ships even with one course, because the seam is the product promise —
  * with the ACTIVE course's status line beneath it, derived from the very progression input the
  * Ladder renders and `passRitual` guards with (`useProgression`), counts only, never time
- * (Invariant 2). Under that, the reassurance note: switching never erases anything
- * (Invariant 8), in the course's own words.
+ * (Invariant 2). The reassurance note that switching erases nothing went with the explainers on
+ * #232; the switch still touches no per-course state (Invariant 8), it just no longer says so.
  *
  * Selection change runs the switch flow (#106): `switchCourse` — the store action that ensures
  * the target's subtree, moves the pointer and resets transient UI, touching no per-course
@@ -31,7 +33,6 @@
  * the test sweeps this screen's controls to prove none crept in.
  */
 import { useEffect, useId, useRef } from 'react';
-import { BRAND } from '../brand.ts';
 import { useCourse } from '../course/CourseProvider.tsx';
 import { interpolate, useStrings, type Strings } from '../course/strings.ts';
 import { currentRungId, rungStage, type ProgressionInput } from '../engine/progression.ts';
@@ -115,9 +116,6 @@ export default function SettingsScreen() {
             </p>
           )}
         </div>
-        <p className={styles.switchNote} dir={course.dir}>
-          {strings['settings.switchNote']}
-        </p>
       </section>
 
       {/* ------------------------------------------------------------------ PRACTICE */}
@@ -171,16 +169,6 @@ export default function SettingsScreen() {
         <h3 className={styles.backupTitle}>Backup</h3>
         <BackupSection />
       </section>
-
-      {/* The privacy line the screen (and the IA) ends on. The frame is shell furniture in the
-          prototype's own words; the promise itself is the course's (`settings.privacy`). */}
-      <p className={styles.privacy}>
-        {BRAND} — read-only teaching · zero inputs · zero network.{' '}
-        <span className={styles.privacyPromise} dir={course.dir}>
-          {strings['settings.privacy']}
-        </span>{' '}
-        Built by Rishabh, for one learner.
-      </p>
 
       {/* The switch confirmation (#106) — the shared transient line (#86), in the TARGET
           course's words and direction: by the time a message is up, `course` is the course

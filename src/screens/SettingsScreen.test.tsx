@@ -1,15 +1,16 @@
 /**
  * Settings (#105) — the screen's five promises, one describe each:
  *
- *   • the sections stand in F6's frozen order, the privacy line last,
+ *   • the sections stand in F6's frozen order, and the screen ends with the last of them: the
+ *     closing privacy line went on #232 with the screen's other read-once copy,
  *   • the COURSE dropdown is the manifest, verbatim — a course added to the manifest is a row
  *     added here with zero shell changes — and switching writes the one string it may,
  *   • the status line is the ladder's own derivation in the course's template — mid-journey,
  *     fresh and pending-authoring each say exactly what is true, counts only,
  *   • the tick toggle reads and writes `settings.elapsedTickEnabled`,
  *   • the STORAGE section (#107) computes every figure it shows — the meter from a mocked
- *     `estimate()`, the rows from the build's sizes files and the serialized state, the
- *     durability line from `persisted()` — and degrades honestly when the API is missing,
+ *     `estimate()`, the rows from the build's sizes files and the serialized state — degrades
+ *     honestly when the API is missing, and since #232 asks the browser nothing else,
  *   • and no checking or translation control exists anywhere on it (F6's AC, [D18]).
  *
  * Everything renders the real `<App />` over a mocked `fetch`, reached through the app's own
@@ -32,7 +33,6 @@ import { exportState } from '../state/serialize.ts';
 import { persistedSlice, useAppStore } from '../state/store.ts';
 import { DEV_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
 import { sizesFixture } from '../test/courseContent.ts';
-import { stringValue } from '../test/courseStrings.ts';
 import { formatBytes } from './settings/formatBytes.ts';
 import settingsCss from './SettingsScreen.module.css?raw';
 
@@ -80,10 +80,6 @@ async function renderSettings(ladder = tenRungLadder(2), manifest: unknown = DEV
   return await screen.findByRole('combobox', { name: 'Active course' });
 }
 
-function strings(key: string): string {
-  return stringValue(COURSE, key);
-}
-
 beforeEach(() => {
   resetContentCache();
   resetManifestCache();
@@ -112,20 +108,22 @@ describe('the frozen section order (F6)', () => {
     expect(headings).toEqual(['Settings', 'COURSE', 'PRACTICE', 'STORAGE', 'Backup']);
   });
 
-  it('ends on the privacy line — the course’s own promise, after every section', async () => {
+  it('ends on the Backup section — no closing promise, in either voice (#232)', async () => {
     await renderSettings();
 
-    const promise = screen.getByText(strings('settings.privacy'));
-    const backup = screen.getByRole('heading', { name: 'Backup' });
-    const follows = backup.compareDocumentPosition(promise) & Node.DOCUMENT_POSITION_FOLLOWING;
-    expect(follows).toBeTruthy();
+    // The screen used to close on a privacy line: the shell's frame around the course's promise.
+    // Both halves went as read-once copy — the app still behaves that way, it just stops saying so.
+    expect(screen.queryByText(/zero inputs/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/zero network/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Built by Rishabh/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/never talks to the internet/)).not.toBeInTheDocument();
   });
 
   it('carries no stub — every section F6 names has its real body now (#107, #108)', async () => {
     await renderSettings();
 
     expect(screen.queryByText(/Section stub/)).not.toBeInTheDocument();
-    // #108's body stands in the slot: the two Backup controls under the explainer.
+    // #108's body stands in the slot: the two Backup controls.
     expect(screen.getByRole('button', { name: 'Export' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Import' })).toBeInTheDocument();
   });
@@ -178,10 +176,10 @@ describe('the COURSE dropdown (F0)', () => {
     // `switchCourse`: the pointer moved and the target's subtree exists, at once.
     expect(useAppStore.getState().activeCourse).toBe('en-es');
     expect(useAppStore.getState().courses['en-es']).toBeDefined();
-    // The provider re-boots into the chosen course's bundle — the note is en-es's now.
-    expect(
-      await screen.findByText(stringValue('en-es', 'settings.switchNote')),
-    ).toBeInTheDocument();
+    // The provider re-boots into the chosen course's bundle: the words on screen are en-es's
+    // own. The anchor was the reassurance note under the dropdown until #232 removed it, so it
+    // is now the arrival toast — whose two pair labels the next case pins.
+    expect(await screen.findByText(/^en-es switchToast/)).toBeInTheDocument();
     // Invariant 8: the switch created the new subtree and deleted nobody's.
     expect(useAppStore.getState().courses[COURSE]).toBeDefined();
   });
@@ -358,35 +356,32 @@ describe('the STORAGE section (#107)', () => {
     expect(row.parentElement?.textContent).toContain(formatBytes(after));
   });
 
-  it('omits the meter when estimate() is unavailable — rows and honesty line unchanged ([Q2])', async () => {
+  it('omits the meter when estimate() is unavailable — the rows are unchanged ([Q2])', async () => {
     await renderSettings(); // jsdom: no navigator.storage at all
 
     await screen.findByText('hindi → marathi course (offline)');
     expect(screen.queryByRole('meter')).not.toBeInTheDocument();
-    expect(screen.getByText(strings('storageNote'))).toBeInTheDocument();
+    expect(screen.getByText('Your saved progress — all courses')).toBeInTheDocument();
   });
 
-  it('reports protected storage in the course’s words when the browser granted it (#90)', async () => {
-    stubNavigatorStorage({ persisted: () => Promise.resolve(true) });
+  /**
+   * The section is numbers now. Its two closing sentences — the durability report and the
+   * honesty line under it — were read-once copy and went on #232, and `persisted()` went with
+   * them: it was read for the line and nothing else. The one ask still happens where it always
+   * did, at the first persisted write (#90, `state/durableStorage.ts`), which is where
+   * `durableStorage.test.ts` holds it.
+   */
+  it('asks the browser nothing about durability — the section is live numbers only (#232)', async () => {
+    const persisted = vi.fn(() => Promise.resolve(true));
+    stubNavigatorStorage({ persisted });
 
     await renderSettings();
+    await screen.findByText('hindi → marathi course (offline)');
 
-    expect(await screen.findByText(strings('settings.storageProtected'))).toBeInTheDocument();
-    expect(screen.queryByText(strings('settings.storageBestEffort'))).not.toBeInTheDocument();
-  });
-
-  it('reports best-effort when the browser said no — and when it cannot be asked at all', async () => {
-    stubNavigatorStorage({ persisted: () => Promise.resolve(false) });
-    await renderSettings();
-    expect(await screen.findByText(strings('settings.storageBestEffort'))).toBeInTheDocument();
-
-    // No StorageManager (Safari before 15.2, non-secure contexts): the same honest line.
-    delete (window.navigator as { storage?: unknown }).storage;
-    useAppStore.getState()._reset();
-    document.body.innerHTML = '';
-    await renderSettings();
-    expect(await screen.findByText(strings('settings.storageBestEffort'))).toBeInTheDocument();
-    expect(screen.queryByText(strings('settings.storageProtected'))).not.toBeInTheDocument();
+    expect(persisted).not.toHaveBeenCalled();
+    // No course sentence survives under the kicker — every line in the section is a number.
+    const section = screen.getByRole('heading', { name: 'STORAGE' }).closest('section');
+    expect(within(section as HTMLElement).queryByText(/^hi-mr /)).not.toBeInTheDocument();
   });
 });
 

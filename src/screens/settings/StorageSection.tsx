@@ -2,7 +2,7 @@
  * The STORAGE section's body (#107) — real browser numbers where the prototype drew illustrative
  * ones (PRD §8 F6, §17; the prototype's Settings → Storage is layout reference only).
  *
- * Four things, in the prototype's order, each from the source that actually knows it:
+ * Three things, in the prototype's order, each from the source that actually knows it:
  *
  *   • **The quota meter** — `navigator.storage.estimate()`, the origin's usage over what the
  *     browser offers, as one quiet fill with the two numbers under it. When the API is missing
@@ -16,20 +16,21 @@
  *   • **One progress row, all courses** — the serialized state's real size, `exportState` over the
  *     same projection the persistence writes (`persistedSlice`), measured as the file F7 would
  *     export. It re-derives on every state change, so passing a rung visibly weighs something.
- *   • **The durability line** — what the one `navigator.storage.persist()` ask (#90, at the first
- *     persisted write) actually got, read back through `persisted()` so this section adds no
- *     second ask: protected in the course's words when the browser agreed, best-effort everywhere
- *     else — with the honesty line (`storageNote`) closing the section: nothing the learner wrote
- *     is in any of these numbers, because the app never keeps it (Invariant 4).
+ *
+ * The section used to close on two course sentences: the durability line (what the one
+ * `navigator.storage.persist()` ask of #90 actually got, read back through `persisted()`) and the
+ * honesty line under it (`storageNote` — nothing the learner wrote is in any of these numbers).
+ * Both were read once and skimmed past forever, and both went on #232, taking the `persisted()`
+ * read with them: the line was its only consumer. Nothing they described changed — the ask still
+ * happens at the first write, and the app still keeps none of the learner's writing (Invariant 4);
+ * this section simply stops saying so and shows the numbers it exists for.
  *
  * The row labels and the meter's caption are English shell furniture in the kickers' register —
- * the call #105 made for the tick toggle's rows — and the two promises (durability, honesty) are
- * the course's own strings, because a promise about the learner's ladder is the course's to word.
+ * the call #105 made for the tick toggle's rows.
  */
 import { useEffect, useMemo, useState, type CSSProperties } from 'react';
 import { useCourse } from '../../course/CourseProvider.tsx';
 import { loadSizes } from '../../course/content.ts';
-import { useStrings } from '../../course/strings.ts';
 import type { CourseSizes } from '../../course/types.ts';
 import { exportState } from '../../state/serialize.ts';
 import { useAppStore } from '../../state/store.ts';
@@ -37,10 +38,8 @@ import { formatBytes } from './formatBytes.ts';
 import styles from './StorageSection.module.css';
 
 export default function StorageSection() {
-  const { course, courses } = useCourse();
-  const strings = useStrings();
+  const { courses } = useCourse();
   const estimate = useStorageEstimate();
-  const durable = useDurability();
   const sizes = useCourseSizes(courses.map((row) => row.id));
   const progressBytes = useProgressBytes();
 
@@ -85,15 +84,6 @@ export default function StorageSection() {
           <span className={styles.rowBytes}>{formatBytes(progressBytes)}</span>
         </p>
       </div>
-
-      {durable !== null && (
-        <p className={styles.durability} dir={course.dir}>
-          {durable ? strings['settings.storageProtected'] : strings['settings.storageBestEffort']}
-        </p>
-      )}
-      <p className={styles.honesty} dir={course.dir}>
-        {strings.storageNote}
-      </p>
     </>
   );
 }
@@ -135,43 +125,6 @@ function useStorageEstimate(): QuotaEstimate | null {
   }, []);
 
   return estimate;
-}
-
-/**
- * Whether the origin's storage IS durable — `persisted()`, the read-only twin of the persist()
- * ask #90 makes at the first write, so surfacing the outcome adds no second permission-shaped
- * call. `null` only while the answer is in flight (nothing renders — a wrong promise flashed is
- * worse than a late one); every failure path is best-effort, which is the honest default.
- */
-function useDurability(): boolean | null {
-  // No StorageManager (Safari before 15.2, non-secure contexts) is known at mount: best-effort,
-  // no ask in flight — so it is the INITIAL state rather than a set-inside-the-effect.
-  const [durable, setDurable] = useState<boolean | null>(() =>
-    typeof (navigator.storage as StorageManager | undefined)?.persisted === 'function'
-      ? null
-      : false,
-  );
-
-  useEffect(() => {
-    const storage = navigator.storage as StorageManager | undefined;
-    if (typeof storage?.persisted !== 'function') return;
-    let cancelled = false;
-
-    storage.persisted().then(
-      (granted) => {
-        if (!cancelled) setDurable(granted);
-      },
-      () => {
-        if (!cancelled) setDurable(false);
-      },
-    );
-
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  return durable;
 }
 
 /* ------------------------------------------------------------------------ the computed rows */
