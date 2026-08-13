@@ -183,10 +183,13 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all twenty-two of them — hi-mr L1-M1..M10, en-es L1-M1..M10, en-ar L1-M1..M2', () => {
+  it('finds all twenty-five of them — hi-mr L1-M1..M10, en-es L1-M1..M10, en-ar L1-M1..M5', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M2.json',
+      'content/en-ar/modules/L1-M3.json',
+      'content/en-ar/modules/L1-M4.json',
+      'content/en-ar/modules/L1-M5.json',
       'content/en-es/modules/L1-M1.json',
       'content/en-es/modules/L1-M10.json',
       'content/en-es/modules/L1-M2.json',
@@ -267,7 +270,7 @@ describe('ModuleContent against the modules that exist', () => {
   it('keeps the romanized course readable: display is the romanization, script the native line', () => {
     const romanized = MODULE_FILES.filter(([name]) => name.includes('en-ar'));
 
-    expect(romanized.length, 'the en-ar modules this rule is written for').toBe(2);
+    expect(romanized.length, 'the en-ar modules this rule is written for').toBe(5);
     for (const [file, json] of romanized) {
       const module = parseModule(json, file);
 
