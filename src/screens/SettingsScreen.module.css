@@ -92,16 +92,6 @@
   color: var(--ink-70);
 }
 
-/* The reassurance note, under its own hairline as the prototype draws it. */
-.switchNote {
-  margin: 0;
-  padding-top: var(--space-3);
-  border-top: var(--border-hairline);
-  font: var(--text-l2-cue);
-  font-size: var(--devanagari-min-size);
-  color: var(--ink-70);
-}
-
 /* ----------------------------------------------------------------------------- PRACTICE */
 
 .row {
@@ -167,20 +157,4 @@
   composes: segOption;
   background: var(--color-accent-200);
   color: var(--color-accent-900);
-}
-
-/* ------------------------------------------------------------------------- the privacy line */
-
-.privacy {
-  margin: 0;
-  font: var(--text-caption);
-  color: var(--ink-65);
-}
-
-/* The course's sentence inside the shell's frame — Mukta at the §2 floor, like every course
-   word on this screen. */
-.privacyPromise {
-  font: var(--text-l2-cue);
-  font-size: var(--devanagari-min-size);
-  color: var(--ink-65);
 }

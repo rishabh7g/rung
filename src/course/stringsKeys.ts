@@ -35,7 +35,7 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 74 keys: the 11 of PRD §4 that survive — its four `ritual.check.*`
+ * file it is complaining about). 68 keys: the 11 of PRD §4 that survive — its four `ritual.check.*`
  * lines were read-once copy and went on #230 — the 4 of the 5 the frozen screens forced
  * (PR #120) that survive: `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and
  * the three design §6.5 ritual step titles (`ritual.stepTitle.*`); the fifth was
@@ -59,16 +59,14 @@
  * learner-facing sentence) — and the 3 of the 5 the Verdict forced (#103) that survive: the two
  * checklist lines the ritual ends on and the CTA that climbs back to the ladder; the third
  * checklist line and the paragraph under the list were read-once copy and went on #231 — and
- * the 4 the Settings screen forced (#105): the course dropdown's status line in its two shapes
- * (mid-journey and pending-authoring, counts only — Invariant 2), the reassurance note that
- * switching erases nothing (Invariant 8 in the course's own words), and the privacy line the
- * screen ends on — and the 2 the storage section forced (#107): the durability line's two
- * states, protected and best-effort, because what `navigator.storage.persist()` answered is a
- * promise about the learner's ladder and a promise is the course's to word — and the 6
- * export/import forced (#108): the backup explainer (what the one file holds, and that none of
- * the learner's writing is in it — Invariant 4 in the course's own words), the import confirm's
- * replace warning and its two decisions, the friendly refusal when a file cannot be read, and
- * the toast the Ladder raises when a restore lands.
+ * the 2 of the 4 the Settings screen forced (#105) that survive: the course dropdown's status
+ * line in its two shapes (mid-journey and pending-authoring, counts only — Invariant 2); the
+ * reassurance note about switching and the privacy line the screen ended on were read-once copy
+ * and went on #232, which took the storage section's 2 (#107) — the durability line's protected
+ * and best-effort states — with them — and the 5 of the 6 export/import forced (#108) that
+ * survive: the import confirm's replace warning and its two decisions, the friendly refusal when
+ * a file cannot be read, and the toast the Ladder raises when a restore lands; the backup
+ * explainer above the buttons went on #232 too.
  *
  * — and the 1 of the 2 the retry interstitial's frozen spec forced (design/tokens.md §6.3, routed
  * here by #69) that survives: the per-course `COMPREHEND · AGAIN` kicker the shipped build awaited
@@ -143,18 +141,12 @@ export const STRINGS_KEYS = [
   'verdict.toLadder',
   'settings.statusLine',
   'settings.statusPending',
-  'settings.switchNote',
-  'settings.storageProtected',
-  'settings.storageBestEffort',
-  'settings.backupNote',
   'settings.importReplace',
   'settings.importConfirm',
   'settings.importCancel',
   'settings.importFailed',
-  'settings.privacy',
   'switchToast',
   'importToast',
-  'storageNote',
 ] as const;
 
 /** A dot-path into strings.json — the union of the canonical list. */
@@ -371,54 +363,37 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'verdict.line': ['{nextModule}'],
   'verdict.toLadder': [],
   /**
-   * The Settings screen (#105, PRD §8 F0, F6) — the status line under the course dropdown, the
-   * reassurance note beneath it, and the privacy line the screen ends on.
+   * The Settings screen (#105, PRD §8 F0, F6) — the status line under the course dropdown, in the
+   * two shapes the current rung comes in: `statusLine` names the rung in progress ("Level 1 · 2
+   * of 10 passed · M3 in progress"), and `statusPending` is the honest variant when that rung's
+   * sentences are not authored yet — it names no rung, because there is nothing in progress to
+   * name. Both are **counts, never time** (Invariant 2), and the counts are the SAME derivation
+   * the Ladder renders (`engine/progression.ts`), interpolated into the course's own sentence:
+   * `{rung}` is the shell-rendered rung label ("M3"), not an id the course must parse.
    *
-   * The status line comes in two shapes because the current rung does: `statusLine` names the
-   * rung in progress ("Level 1 · 2 of 10 passed · M3 in progress"), and `statusPending` is the
-   * honest variant when that rung's sentences are not authored yet — it names no rung, because
-   * there is nothing in progress to name. Both are **counts, never time** (Invariant 2), and the
-   * counts are the SAME derivation the Ladder renders (`engine/progression.ts`), interpolated
-   * into the course's own sentence: `{rung}` is the shell-rendered rung label ("M3"), not an id
-   * the course must parse.
-   *
-   * `switchNote` is Invariant 8 in the course's own words — switching never erases anything —
-   * and `privacy` is F6's closing promise: after install the app never talks to the internet.
-   * Neither interpolates: they are promises, not counts.
+   * The reassurance note under the dropdown, the storage section's two durability lines (#107)
+   * and the privacy line the screen ended on were read once and skimmed past forever; they went
+   * on #232 with the screen's other explainers.
    */
   'settings.statusLine': ['{level}', '{passed}', '{total}', '{rung}'],
   'settings.statusPending': ['{level}', '{passed}', '{total}'],
-  'settings.switchNote': [],
   /**
-   * The storage section's durability line (#107) — the quiet report of what the one
-   * `navigator.storage.persist()` ask (#90, first persisted write) actually got. Two keys
-   * because they are two different promises: `storageProtected` says the browser agreed to keep
-   * the ladder, `storageBestEffort` is the honest state everywhere else — evictable, with F7's
-   * export as the real backup. Neither interpolates: the browser's answer has no number in it.
+   * The Backup section's four (#108, PRD §8 F6/F7) — what the learner reads around the one door
+   * back in. `importReplace` is the confirm's consequence line, kept when the explainer above the
+   * buttons went (#232) because a destructive confirm that does not say what it destroys is a
+   * bug: it states that progress in every course is replaced by the file's, and
+   * `importConfirm`/`importCancel` are its two decisions, separate keys because they are two
+   * different promises (the call `practice.resumeContinue`/`resumeNew` made). `importFailed` is
+   * the friendly half of a refusal; the path-naming reason under it is `ImportError`'s and stays
+   * English, like every technical detail. None interpolates: the per-course counts in the confirm
+   * are rows the shell renders, not sentences.
    */
-  'settings.storageProtected': [],
-  'settings.storageBestEffort': [],
-  /**
-   * The Backup section's five (#108, PRD §8 F6/F7) — everything the learner reads around the one
-   * export file and the one door back in. `backupNote` is the honest explainer above the buttons:
-   * what the file holds (every course's ladder positions, counters, review queues, session
-   * positions) and what it cannot hold — the learner's writing, because the app never has it
-   * (Invariant 4). `importReplace` is the confirm's consequence line — the current progress goes,
-   * an open session's place with it — and `importConfirm`/`importCancel` are its two decisions,
-   * separate keys because they are two different promises (the call `practice.resumeContinue`/
-   * `resumeNew` made). `importFailed` is the friendly half of a refusal; the path-naming reason
-   * under it is `ImportError`'s and stays English, like every technical detail. None interpolates:
-   * the per-course counts in the confirm are rows the shell renders, not sentences.
-   */
-  'settings.backupNote': [],
   'settings.importReplace': [],
   'settings.importConfirm': [],
   'settings.importCancel': [],
   'settings.importFailed': [],
-  'settings.privacy': [],
   /** Course pair labels, both directions. */
   switchToast: ['{to}', '{from}'],
   /** The Ladder's arrival toast after a restore (#108) — a landing, so no number and no name. */
   importToast: [],
-  storageNote: [],
 };
