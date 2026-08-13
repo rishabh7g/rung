@@ -201,12 +201,12 @@ CHROME_PATH=~/.cache/ms-playwright/chromium-1232/chrome-linux/chrome \
 `tools/payload-budget.ts` now carries four rows, still one line each on every full
 `scripts/verify.sh`:
 
-| id     | meters                                   | measure | limit   | at baseline | with hi-mr L1 shipping |
-| ------ | ---------------------------------------- | ------- | ------: | ----------: | ---------------------: |
-| fonts  | every `.woff2`                           | raw     | 380 KiB |    99.1 KiB |              361.2 KiB |
-| js     | every `.js` (bundle + workbox + sw)      | gzip    | 200 KiB |    92.9 KiB |               94.2 KiB |
-| total  | everything in `dist/` but `icons/splash/`| gzip    | 580 KiB |   204.4 KiB |              548.1 KiB |
-| splash | `icons/splash/` (#115's iOS startup set) | raw     | 100 KiB |    70.3 KiB |               70.3 KiB |
+| id     | meters                                   | measure | limit   | at baseline | with hi-mr L1 shipping | + Naskh (#197) |
+| ------ | ---------------------------------------- | ------- | ------: | ----------: | ---------------------: | -------------: |
+| fonts  | every `.woff2`                           | raw     | 380 KiB |    99.1 KiB |              361.2 KiB |      363.5 KiB |
+| js     | every `.js` (bundle + workbox + sw)      | gzip    | 200 KiB |    92.9 KiB |               94.2 KiB |       94.3 KiB |
+| total  | everything in `dist/` but `icons/splash/`| gzip    | 580 KiB |   204.4 KiB |              548.1 KiB |      550.8 KiB |
+| splash | `icons/splash/` (#115's iOS startup set) | raw     | 100 KiB |    70.3 KiB |               70.3 KiB |       70.3 KiB |
 
 `gzip` meters transfer (GitHub Pages serves text assets gzip; `gzipSync` at the default level is
 the approximation), `raw` meters disk — right for woff2 and PNG, which are already compressed.
@@ -220,6 +220,21 @@ L1-M1…M10 ship (2026-08-13, owner-authorised LLM review — #110/#111), the ~+
 subsets sent `fonts` AND `total` red together, and §4 records the rebalance that raised the two
 limits to 380/580 KiB. `total` now buys ~3.0 s of Slow 4G rather than ~2.2 s to finish precaching;
 first paint and TTI are unchanged (§5).
+
+**#197 added a fourth face and did not move a limit.** Noto Naskh Arabic, subset per course the
+same way Mukta is, costs the strict build **2,348 raw bytes** (+2.3 KiB `fonts`, +2.7 KiB gzip
+`total`) — the baseline marks only, because en-ar is a fixture course the learner gate excludes.
+A learner on hi-mr downloads **none** of it (`unicode-range` never matches) and precaches all of
+it; an Arabic learner downloads 7,544 bytes for the four-sentence L1-M1 fixture. Full accounting,
+including how it scales with #199–#201: docs/04-font-notes.md §8.4.
+
+**What this table does not meter is now the interesting number.** `npm run budget` reads the
+`dist/` that `npm run build` wrote, and `prebuild` runs the STRICT content build — one course.
+The dev build (`--with-fixtures`: hi-mr + en-es + en-ar) is a different payload and it is already
+over: **605.2 KiB** gzip `total` after #197, of which 597.7 KiB predates it (Spanish M3–M5). That
+is the measurement #207 exists to fix — three courses' content metered against a budget written
+for one — and raising the limit to cover courses no single learner downloads would delete the
+tripwire instead of reading it.
 
 ## 7. Reproducing
 

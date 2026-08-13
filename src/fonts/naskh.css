@@ -1,0 +1,39 @@
+/**
+ * Noto Naskh Arabic, subset per course (#197) — the `@font-face` block for the file
+ * `tools/font-subset.ts` generates into `./generated/` from the content build's output (run
+ * `npm run fonts:build`; `predev`/`prebuild` both chain it after `content:build`).
+ *
+ * Why a second bundled face at all: a romanized course prints its L2 in Latin letters and repeats
+ * the sentence quietly underneath in its own script (design/tokens.md §2). Before this face that
+ * line was `--font-script-fallback: system-ui` — whatever Arabic the device happened to own, or
+ * tofu where it owned none. The face is SIL OFL 1.1 (`node_modules/@fontsource/noto-naskh-arabic/
+ * LICENSE`), which permits bundling and redistribution; docs/04-font-notes.md §8 carries the
+ * licence note, the byte accounting, and the rendering evidence.
+ *
+ * ONE weight, 400: all five `.script` rules are `font: var(--text-body)` with the family swapped,
+ * and `src/fonts.test.ts` derives that pairing from the tokens rather than trusting this comment.
+ *
+ * `src/styles/tokenOverrides.css` is what points `--font-script-fallback` at this family —
+ * `design/` is read-only and re-copied wholesale, so the override lives in `src/` and the reason
+ * lives in `docs/` (docs/design-contract.md).
+ *
+ * The `unicode-range` is @fontsource's own `arabic` range trimmed to what course text carries: a
+ * range is routing, not a promise of coverage, so a codepoint the subset dropped falls through to
+ * the next family in the stack (`system-ui`) instead of tofu — and Latin characters inside an
+ * Arabic line route out of here entirely, which is deliberate (Naskh's `latin` subset is not
+ * bundled; §8 says why).
+ */
+
+/* noto-naskh-arabic-arabic-400 */
+@font-face {
+  font-family: 'Noto Naskh Arabic';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./generated/noto-naskh-arabic-arabic-400.woff2') format('woff2');
+  /* U+0020 is deliberate: the gaps between Arabic words belong to the Arabic face, not to
+     whatever the device would otherwise set them in. It only ever applies where this family is
+     named — the five `.script` rules — so no shell text is touched. */
+  unicode-range:
+    U+0020, U+0600-06FF, U+0750-077F, U+0870-08FF, U+200C-200E, U+FB50-FDFF, U+FE70-FEFC;
+}
