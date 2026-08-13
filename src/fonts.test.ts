@@ -13,7 +13,8 @@
  * family, so the set of (family, weight) pairs the product renders is derivable, and a new ramp
  * entry — or a weight changed from 600 to 700 — turns this red until the face is bundled. Since
  * #113 the bundle is also held to the ramp in the OTHER direction: the app is offline-first and
- * precaches every shipped byte, so a face nothing renders is not headroom, it is dead payload
+ * every shipped face ends up on a device — in the precache if it is a shell face, in the active
+ * course's cache if it is a script subset (#211) — so a face nothing renders is dead payload
  * (`tools/payload-budget.ts` meters the total). What a scan cannot do is prove a glyph exists
  * inside a face: that is `/dev/type` in a browser, recorded in docs/04-font-notes.md and
  * docs/05-perf-notes.md.
@@ -203,7 +204,7 @@ describe('the bundle covers what the product renders — and only that (#113, #1
 
     expect(
       surplus,
-      `${surplus.join(', ')} — bundled, but nothing renders them. The precache ships every byte (#90), so unused headroom is pure payload; #113 trimmed Mukta 500, Barlow 500/600 and Barlow Condensed 500 on exactly this ground.`,
+      `${surplus.join(', ')} — bundled, but nothing renders them. Every shipped face ends up on a device (#90, #211), so unused headroom is pure payload; #113 trimmed Mukta 500, Barlow 500/600 and Barlow Condensed 500 on exactly this ground.`,
     ).toEqual([]);
   });
 

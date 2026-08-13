@@ -296,8 +296,14 @@ Measured from `dist/` after `npx vite build`, source file 52,668 bytes:
 **Downloaded = 0 for a non-Arabic course is not an estimate.** `unicode-range` means the browser
 fetches a face only when the page paints a codepoint the range claims; a CDP request log over
 hi-mr and en-es shows zero requests for the Naskh woff2, and one for en-ar (§8.5). What a
-non-Arabic learner does pay is the **service-worker precache**, which takes all of `dist/`
+non-Arabic learner did pay was the **service-worker precache**, which took all of `dist/`
 (#90/#92): **2,348 bytes**, 0.6 % of the font budget.
+
+> **Since #211, that last sentence is 0 too.** The precache is the shell — the Barlow faces and
+> the shared `latin` cuts — and every script subset, Naskh included, reaches the device only
+> through the runtime route the active course warms (`docs/05-pwa-notes.md` §3). The "precached"
+> column above is the #197 record, not today's build: a non-Arabic learner now downloads **and**
+> stores zero bytes of Naskh.
 
 Against the two budget rows `tools/payload-budget.ts` gates (`scripts/verify.sh`, strict build):
 

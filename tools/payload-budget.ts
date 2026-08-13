@@ -222,6 +222,13 @@ const COURSE_LIMIT = 360 * 1024;
  * gates above by construction — it goes red exactly when one of its halves does — but it is
  * printed and gated because it is the number the learner's device actually stores, and the one
  * "100% works with no network after first load" is paid for in.
+ *
+ * **Since #211 this row describes the device rather than an intention.** The service worker used
+ * to precache the whole catalogue, so every learner's phone held every course and this row was
+ * what a learner *should* pay. Now the precache is the `shell` files and the runtime caches hold
+ * the one course that was opened (`tools/pwa.ts`, `src/pwa/offlineCourse.ts`) — which is exactly
+ * `shell` + `course:<id>`, and `precacheAudit()` below proves the shell half against the worker
+ * the build actually emitted rather than trusting this comment.
  */
 const PRECACHE_LIMIT = SHELL_LIMIT + COURSE_LIMIT;
 
@@ -273,7 +280,8 @@ export function budgets(courses: readonly ShippedCourse[]): Budget[] {
         measure: 'gzip',
       },
       {
-        // #207 — what this learner's device downloads and keeps: shell + their one course.
+        // #207, #211 — what this learner's device downloads and keeps: the precached shell plus
+        // the one course the worker warmed into its runtime cache when they opened it.
         id: `precache:${course.id}`,
         matches: (file) => isShell(file) || ownedBy(file, course.id),
         limitBytes: PRECACHE_LIMIT,
@@ -365,6 +373,81 @@ export function formatResult(result: BudgetResult): string {
   );
 }
 
+/* ------------------------------------------------- the precache, measured not asserted (#211) */
+
+/**
+ * The worker's own two scripts. They are `shell` bytes — every learner downloads them — but they
+ * are never IN the precache: workbox does not precache itself, and the browser keeps a service
+ * worker's script (and what it `importScripts`) in the registration rather than in a cache the
+ * app can see. So they are the one sanctioned difference between the shell row and the precache
+ * list, and naming them here is what lets the audit below be an equality.
+ */
+const isWorkerScript = (file: string): boolean =>
+  file === 'sw.js' || /^workbox-[0-9a-f]+\.js$/.test(file);
+
+/**
+ * The URLs `dist/sw.js` precaches, read out of the emitted worker.
+ *
+ * The generated worker is minified, so the manifest reads `{url:"index.html",revision:"…"}` —
+ * one regex over the whole file, which is enough because nothing else in a workbox worker writes
+ * a `url:"…"` property. Zero matches means the shape changed, and the audit says so rather than
+ * quietly passing an empty comparison.
+ */
+export function precachedUrls(workerSource: string): string[] {
+  return [...workerSource.matchAll(/url:"([^"]+)"/g)].map((match) => match[1]!);
+}
+
+export interface PrecacheAudit {
+  precached: readonly string[];
+  /** In the precache and owned by a course — the regression #211 exists to prevent. */
+  extra: readonly string[];
+  /** Shell, and not precached — a shell file that would 404 on a plane. */
+  missing: readonly string[];
+  gzipBytes: number;
+  ok: boolean;
+}
+
+/**
+ * **The precache must be exactly the `shell` row** (#211), minus the worker's own scripts.
+ *
+ * This is what makes `precache:<id>` a measurement rather than an intention. The globs live in
+ * `tools/pwa.ts` and the attribution lives here; before this check the two could disagree for a
+ * whole release and the only symptom would be a phone quietly downloading another course's
+ * language, or — far worse — a shell file missing offline. Now the build compares the worker it
+ * just emitted against the owner table, file by file.
+ */
+export function precacheAudit(
+  precached: readonly string[],
+  shipped: readonly ShippedFile[],
+  courses: readonly ShippedCourse[],
+): PrecacheAudit {
+  const expected = shipped
+    .filter((file) => attribute(file.path, courses).kind === 'shell' && !isWorkerScript(file.path))
+    .map((file) => file.path);
+
+  const extra = precached.filter((url) => !expected.includes(url));
+  const missing = expected.filter((file) => !precached.includes(file));
+  const gzipBytes = shipped
+    .filter((file) => precached.includes(file.path))
+    .reduce((sum, file) => sum + file.gzipBytes, 0);
+
+  return {
+    precached,
+    extra,
+    missing,
+    gzipBytes,
+    ok: precached.length > 0 && extra.length === 0 && missing.length === 0,
+  };
+}
+
+/** `BUDGET precache 17 files 207.4 KiB gzip = shell ok` — the shell, on the device. */
+export function formatPrecacheAudit(audit: PrecacheAudit): string {
+  return (
+    `BUDGET precache ${audit.precached.length} files ${kib(audit.gzipBytes)} gzip ` +
+    `= shell ${audit.ok ? 'ok' : 'MISMATCH'}`
+  );
+}
+
 /* ----------------------------------------------------------------- the gate */
 
 /** The shipped courses, or `[]` when the build emitted no manifest (nothing to attribute to). */
@@ -386,8 +469,9 @@ function main(): number {
     return 2;
   }
 
+  const courses = shippedCourses();
   let failed = false;
-  for (const budget of budgets(shippedCourses())) {
+  for (const budget of budgets(courses)) {
     const result = evaluate(budget, shipped);
     console.log(formatResult(result));
     if (!result.ok) {
@@ -400,6 +484,30 @@ function main(): number {
       }
     }
   }
+
+  // #211 — and then the one row that is read off the artefact rather than computed from the
+  // owner table: what the worker this build emitted actually precaches.
+  const worker = path.join(DIST, 'sw.js');
+  let workerSource: string;
+  try {
+    workerSource = readFileSync(worker, 'utf8');
+  } catch {
+    console.error(`BUDGET error: no ${worker} — the PWA plugin emits it; run \`npx vite build\``);
+    return 2;
+  }
+
+  const audit = precacheAudit(precachedUrls(workerSource), shipped, courses);
+  console.log(formatPrecacheAudit(audit));
+  if (!audit.ok) {
+    failed = true;
+    if (audit.precached.length === 0) {
+      console.log('  sw.js lists no precached url — the worker’s manifest shape changed');
+    }
+    // Each line is one file on the wrong side of the shell/course line, which is the diagnosis.
+    for (const file of audit.extra) console.log(`  precached, not shell:  ${file}`);
+    for (const file of audit.missing) console.log(`  shell, not precached:  ${file}`);
+  }
+
   return failed ? 1 : 0;
 }
 

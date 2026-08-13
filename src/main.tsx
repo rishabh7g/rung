@@ -46,7 +46,8 @@ const root = document.getElementById('root');
 if (!root) throw new Error('Root element #root is missing from index.html');
 
 // Offline is the product (design/pwa-checklist.md §3): the first visit installs a worker that
-// precaches the shell, every face and every course JSON, and no visit after it needs a network.
+// precaches the shell and cache-first-routes the active course, which `CourseProvider` warms as
+// soon as it resolves one (#211) — after that no visit needs a network.
 // A no-op in `vite dev` — the worker is built and served in `build`/`preview` only.
 registerServiceWorker();
 

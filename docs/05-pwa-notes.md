@@ -1,15 +1,21 @@
-# PWA notes — manifest, precache-everything worker, offline gate (#90)
+# PWA notes — manifest, the worker, offline gate (#90, rescoped #211)
 
 What making `rung` a real PWA proved, and the evidence for the release gate in
 `design/pwa-checklist.md` §3.6. This file is in `docs/`, not `design/`: `design/` is re-copied
 wholesale from Rishabh's tooling, which wipes anything added to it
 (`docs/design-contract.md`).
 
-**Verdict in one line:** a cold start with the origin server **killed** and the browser put
-offline renders Ladder → Module → Sentence Detail with **57 requests, 57 of them served by the
-service worker, 0 from the network and 0 failed**; the strict build precaches **41 files
-(1,098,926 bytes / 1073.2 KiB)** and a dev-content build **55 files (1,225,818 bytes /
+**Verdict in one line (#90, one fixture course):** a cold start with the origin server **killed**
+and the browser put offline renders Ladder → Module → Sentence Detail with **57 requests, 57 of
+them served by the service worker, 0 from the network and 0 failed**; the strict build precaches
+**41 files (1,098,926 bytes / 1073.2 KiB)** and a dev-content build **55 files (1,225,818 bytes /
 1197.1 KiB)**; Chrome reports **zero manifest errors and zero installability errors**.
+
+**What #211 changed:** that worker precached the whole CATALOGUE, which was defensible when there
+was one course and became a Spanish learner downloading Devanagari when there were three. The
+worker now precaches the **shell** and caches the **active course** at runtime — §3 below is the
+current shape, with the measurement; §4's walk is the record of the old worker and is dated as
+such.
 
 ---
 
@@ -88,36 +94,108 @@ smaller mark for nothing.
 > adopted it — same pipeline, same five files, and the iOS splash set beside them. The bytes
 > above are #90's receipt; §11 is the current one.
 
-## 3. Precache everything, route nothing
+## 3. Precache the shell, cache the active course (#211)
 
-`registerType: 'autoUpdate'`, workbox `generateSW`, `cleanupOutdatedCaches` on, and
-**`runtimeCaching: []`**. There is no runtime network to fall back to (PRD-engineering §3/§10),
-so a request the precache does not answer is a bug in the app, not a case for a network route.
+`registerType: 'autoUpdate'`, workbox `generateSW`, `cleanupOutdatedCaches` on — and, since #211,
+**two runtime routes** where there used to be none.
 
-Globs (`tools/pwa.ts`), each one a thing that breaks offline by being absent:
-`**/*.{html,css,js}` · `**/*.woff2` · `content/**/*.json` · `icons/*.png`.
+### 3.1 Why the invariant moved, and what it still promises
 
-    strict build (npm run build)              dev-content build (--with-unverified --with-fixtures)
-    html            1       2,014 B           html            1       2,014 B
-    js              2     231,298 B           js              2     231,298 B
-    css             1      33,345 B           css             1      33,345 B
-    woff2          30     823,736 B           woff2          30     823,736 B
-    json            1          20 B           json           15     126,912 B
-    png             5       8,055 B           png             5       8,055 B
-    webmanifest     1         458 B           webmanifest     1         458 B
-    TOTAL          41   1,098,926 B           TOTAL          55   1,225,818 B
+`tools/pwa.ts` used to say "precache everything, route nothing", and the reasoning was sound:
+PRD-engineering §3/§10 is zero network after first load, so a request the precache cannot answer
+is a bug in the app rather than a case for a network fallback. The flaw is not in the promise, it
+is in the word *everything*. A precache manifest is baked at **build** time; the learner picks
+their course at **run** time. "Everything" therefore meant the whole catalogue, and with three
+courses that is a Spanish learner's phone holding hi-mr's 258 KiB of Devanagari for ever
+(`docs/05-perf-notes.md` §4.5 recorded exactly this gap).
 
-All 30 woff2 (#85's whole bundle — `docs/04-font-notes.md` §5) and every content JSON the build
-emitted: `courses.json`, and per course `levels.json`, `strings.json`, `modules/*.json` and
-`index/*.json`. The one CSS entry is the bundle `design/tokens.css` compiles into.
+So the split is now:
 
-**A strict build precaches one content file, `courses.json`, and it says `{"courses": []}`.**
-That is the native gate (#64), not a precache bug: every module in `content/` is
-`verified: false`, so `npm run build` ships an empty ladder (README, "The content gate"). The
-offline walkthrough below therefore runs against a **dev-content build**, which is the only build
-that has a module to browse.
+| Layer | What it holds | Handler |
+|---|---|---|
+| **Precache** | the shell — document, bundles, CSS, the Barlow + Mukta **latin** faces, `content/courses.json`, `icons/*.png`, the manifest | workbox precache |
+| **Runtime, course content** | `content/<id>/**.json` — the active course's ladder, strings, sizes, modules and indexes | `CacheFirst` |
+| **Runtime, course faces** | that course's script subsets (`*-devanagari-*`, `*-arabic-*`) | `CacheFirst` |
+
+**Cache-first, never network-first, and never stale-while-revalidate.** Both of those put a
+request on the wire on every launch, which is the thing §10 forbids. After the warm there is
+still zero runtime network for the active course — the same promise, kept for the course the
+learner actually chose. Freshness is the cache **name**'s job, not a revalidation's: the content
+cache is `rung-course-content-<hash of the emitted content tree>` (`contentRevision()` in
+`tools/pwa.ts`, handed to both the worker and the app by `vite.config.ts`), so a build that
+changes a course's bytes writes a new cache and drops the old one, and a build that does not
+re-downloads nothing. The font subsets need no revision — Vite hashes their filenames.
+
+**The warm** is `src/pwa/offlineCourse.ts`, called from `CourseProvider` the moment a course
+resolves — which is also the course-**switch** path. It fetches every file the course ships (all
+of them, not the screens the learner opened, so the ladder is browsable offline from the first
+online visit), then asks `document.fonts.load()` for every declared face using the characters
+that content actually carries. `unicode-range` does the scoping, so nothing here branches on a
+course id (Invariant 1). One subtlety worth writing down: the sample **drops whitespace and
+format characters**, because those are in more than one face's range by design — the Naskh face
+declares `U+0020` deliberately (`src/fonts/naskh.css`) and both Mukta Devanagari and Naskh claim
+`U+200C-200E`. Sample raw and every course "proves" it is written in Arabic. With the filter, the
+courses ask for exactly their own script:
+
+    hi-mr → mukta-devanagari (+ the precached latin)   en-es → nothing but the precached latin
+    en-ar → noto-naskh-arabic (+ the precached latin)
+
+**What this trades away, plainly.** The offline promise moves from "everything, the moment the
+worker installs" to "the learner's own course, from the first time it is opened online". Install
+the app, switch to a course you have never opened, and go offline before the warm finishes, and
+that course has no content — where the old worker would have had it. The learner's own course is
+warmed on every launch and re-warmed after every content change.
+
+### 3.2 What the emitted worker precaches, measured
+
+`dist/sw.js` after `scripts/verify.sh`, three real courses (hi-mr, en-es, en-ar), no fixtures:
+
+    before #211 (whole catalogue)         after #211 (shell only)
+    html            1       5,178 B       html            1       5,178 B
+    js              2     281,915 B       js              2     283,539 B
+    css             1      54,137 B       css             1      54,137 B
+    woff2          10     383,584 B       woff2           6     108,928 B
+    json           70   1,278,659 B       json            1       1,265 B
+    png             5       8,034 B       png             5       8,034 B
+    webmanifest     1         470 B       webmanifest     1         470 B
+    TOTAL          90   2,011,977 B       TOTAL          17     461,551 B
+
+**90 entries → 17.** The four woff2 that left are the three Mukta Devanagari weights and the Noto
+Naskh Arabic face; the 69 JSON that left are the three courses' ladders, strings, sizes, modules
+and indexes. `content/courses.json` stays: it is the manifest every learner in every course boots
+from, so it is shell, and the content route is written to *exclude* it (answering it out of a
+course's cache would hand a learner the catalogue of whichever course they opened last).
+
+What each course then pulls at runtime, on open:
+
+    hi-mr   23 json  479,594 B  +  3 woff2  264,168 B  =  26 files  743,762 B
+    en-es   23 json  356,551 B  +  0 woff2        0 B  =  23 files  356,551 B
+    en-ar   23 json  441,249 B  +  1 woff2   10,488 B  =  24 files  451,737 B
+
+`sw.js` and `workbox-*.js` are shell bytes and are the one thing in the shell row that is never
+*in* the precache — workbox does not precache itself; the browser keeps a worker's script in the
+registration. `tools/payload-budget.ts`'s `precacheAudit()` names them and then asserts the rest
+as an equality, so the `BUDGET precache 17 files 207.3 KiB gzip = shell ok` line at the end of
+every `scripts/verify.sh` is read off the emitted worker rather than off this table.
+
+**A strict build precaches one content file, `courses.json`.** With three verified courses it now
+lists all three; when every module in `content/` was `verified: false` it said `{"courses": []}`
+(the native gate, #64 — README, "The content gate"). The §4 walkthrough below was run in that era
+and therefore against a **dev-content build**, the only build that then had a module to browse.
 
 ## 4. The offline gate (checklist §3.6)
+
+> **Dated: this is the #90 record, run against the precache-everything worker and one fixture
+> course.** #211 rescoped the worker (§3), and the walk has **not** been re-run: browser
+> automation is banned on the machine that hosts this repo, so re-running it needs the LAN
+> (`http://<pi>:<port>`) or a phone — the same bucket as §8's deferred items. What can be said
+> without a browser is said in §3.2 and is machine-checked: the emitted worker precaches exactly
+> the shell (`BUDGET precache … = shell ok`, gated in `scripts/verify.sh`), the two runtime routes
+> are both `CacheFirst` with no network preference (`tools/pwa.test.ts`), and the warm fetches
+> every file a course ships and only its own script's faces (`src/pwa/offlineCourse.test.ts`).
+> The step of the walk this cannot stand in for is the one that matters most — a **cold** start,
+> server dead, on a course that has been opened once before. That is the acceptance test to run
+> on the next device pass.
 
 No phone is attached to this machine, so the gate was run headlessly against Chromium 151 over
 CDP. It is stricter than airplane mode in one way that matters: **the origin server is killed

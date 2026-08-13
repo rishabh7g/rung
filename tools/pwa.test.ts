@@ -8,23 +8,39 @@
  * is a red test; nothing else in the repo would ever notice.
  *
  * The rest of the file guards the things that break offline silently: a precache glob quietly
- * dropped (the fonts, the course JSON), a runtime network route appearing where the product has
- * none, an icon the manifest names and `public/` does not have.
+ * dropped, a course's bytes creeping back INTO the precache (#211 took them out), a runtime route
+ * that prefers the network, an icon the manifest names and `public/` does not have.
+ *
+ * What it does NOT do is check the emitted worker against the shipped files — that is
+ * `tools/payload-budget.ts`'s `precacheAudit()`, which reads `dist/sw.js` after the build and
+ * proves the precache is exactly the `shell` row. This file pins the intent; the gate measures it.
  */
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import { BRAND } from '../src/brand.ts';
+import { contentCacheName, COURSE_FONT_CACHE } from '../src/pwa/cacheNames.ts';
+import { COURSE_SCRIPTS, fontScript } from './payload-budget.ts';
 import {
   appleTouchIcon,
+  contentRevision,
+  COURSE_CONTENT_ROUTE,
+  COURSE_FONT_ROUTE,
   favicon,
+  ICONS_DIR,
   PRECACHE_GLOBS,
+  PRECACHE_IGNORES,
   pwaManifest,
   pwaOptions,
   publicUrl,
+  runtimeCaching,
 } from './pwa.ts';
 import { token } from './tokens.ts';
+
+/** A stand-in for the hash of an emitted content tree — the shape, not a real build's value. */
+const REVISION = 'c0ffee123456';
 
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const repoFile = (name: string) => path.join(REPO_ROOT, name);
@@ -187,20 +203,115 @@ describe('the icons the manifest names', () => {
 
 /* ------------------------------------------------------------------------- the precache and iOS */
 
-describe('the precache', () => {
-  const { workbox, registerType, devOptions } = pwaOptions();
+describe('the precache is the shell, and only the shell (#211)', () => {
+  const { workbox } = pwaOptions('/', REVISION);
 
-  it('takes the app shell, every face and every course JSON', () => {
+  it('takes the document, the bundles, the shell faces, the manifest and the icons', () => {
     expect(workbox?.globPatterns).toEqual(PRECACHE_GLOBS);
-    // Each of these is a thing that breaks offline by being absent, not a file type.
+    // Each of these is a thing that breaks offline in EVERY course by being absent.
     expect(PRECACHE_GLOBS).toContain('**/*.{html,css,js}');
     expect(PRECACHE_GLOBS).toContain('**/*.woff2');
-    expect(PRECACHE_GLOBS).toContain('content/**/*.json');
+    expect(PRECACHE_GLOBS).toContain(`${ICONS_DIR}/*.png`);
   });
 
-  it('routes nothing at runtime — there is no network to fall back to', () => {
-    expect(workbox?.runtimeCaching).toEqual([]);
+  it('takes `courses.json` and no other content — the manifest is shell, a course is not', () => {
+    expect(PRECACHE_GLOBS).toContain('content/courses.json');
+    // The line #211 narrowed. `content/**/*.json` swept every course's ladder, strings, modules
+    // and indexes onto every device, whichever course the learner had picked.
+    expect(PRECACHE_GLOBS).not.toContain('content/**/*.json');
   });
+
+  it('leaves every course script subset out — hi-mr’s Devanagari is not a Spanish learner’s', () => {
+    expect(workbox?.globIgnores).toEqual(PRECACHE_IGNORES);
+    for (const script of COURSE_SCRIPTS) {
+      expect(PRECACHE_IGNORES.some((glob) => glob.includes(script))).toBe(true);
+    }
+    // Written from the budget's own script table, so a new script is excluded by the same fact
+    // that gives it a `course:` row rather than by a second list somebody has to remember.
+    expect(PRECACHE_IGNORES).toEqual([`**/*-{${COURSE_SCRIPTS.join(',')}}-*.woff2`]);
+  });
+});
+
+describe('the runtime routes carry the active course (#211)', () => {
+  const routes = runtimeCaching(REVISION);
+
+  it('is exactly two, both cache-first — never a network fallback, never a revalidation', () => {
+    expect(routes).toHaveLength(2);
+    for (const route of routes) expect(route.handler).toBe('CacheFirst');
+  });
+
+  it('routes a course’s content and NOT the shell’s `courses.json`', () => {
+    const at = (url: string) => COURSE_CONTENT_ROUTE.test(url);
+
+    expect(at('https://rishabh7g.github.io/rung/content/hi-mr/levels.json')).toBe(true);
+    expect(at('https://rishabh7g.github.io/rung/content/hi-mr/modules/L1-M1.json')).toBe(true);
+    expect(at('https://rishabh7g.github.io/rung/content/en-es/index/L1-M1.json')).toBe(true);
+    expect(at('http://127.0.0.1:4173/content/en-es/sizes.json')).toBe(true);
+    // The manifest every course boots from is precached; answering it from a course's cache
+    // would hand a learner the catalogue of whichever course they opened last.
+    expect(at('https://rishabh7g.github.io/rung/content/courses.json')).toBe(false);
+    expect(at('http://127.0.0.1:4173/content/courses.json')).toBe(false);
+  });
+
+  it('routes exactly the faces the budget charges to a course, and no shell face', () => {
+    // Not a list of expected answers: the route must agree, file by file, with the attribution
+    // that decides whose bytes these are (`fontScript()`), or the precache and the budget would
+    // be describing two different devices — which is the bug #211 closed.
+    const shipped = [
+      'mukta-devanagari-400-Ds4rvQo0.woff2',
+      'mukta-devanagari-700-CyvOqMpp.woff2',
+      'noto-naskh-arabic-arabic-700-BqQRendX.woff2',
+      'mukta-latin-400-DkrLMHu6.woff2',
+      'barlow-latin-400-normal-qiz4-Cze.woff2',
+      'barlow-condensed-latin-600-normal-DepVgxBB.woff2',
+    ];
+
+    for (const file of shipped) {
+      expect(COURSE_FONT_ROUTE.test(`/rung/assets/${file}`), file).toBe(fontScript(file) !== null);
+    }
+  });
+
+  it('names the content cache after the content revision, so new content is never stale', () => {
+    const [content, fonts] = routes;
+
+    expect(content?.options?.cacheName).toBe(contentCacheName(REVISION));
+    expect(content?.options?.cacheName).toContain(REVISION);
+    // The subsets are content-hashed by Vite, so their cache needs no revision — only a ceiling,
+    // or a year of deploys would leave a phone holding every subset it ever fetched.
+    expect(fonts?.options?.cacheName).toBe(COURSE_FONT_CACHE);
+    expect(fonts?.options?.expiration?.maxEntries).toBeGreaterThan(0);
+  });
+
+  it('caches a real 200 and nothing else — an opaque failure must never look like content', () => {
+    for (const route of routes) {
+      expect(route.options?.cacheableResponse?.statuses).toEqual([200]);
+    }
+  });
+});
+
+describe('the content revision', () => {
+  it('changes when a content file changes, and only then', () => {
+    const dir = mkdtempSync(path.join(tmpdir(), 'rung-content-'));
+    mkdirSync(path.join(dir, 'hi-mr'), { recursive: true });
+    const file = path.join(dir, 'hi-mr', 'levels.json');
+
+    writeFileSync(file, '{"courseId":"hi-mr"}');
+    const first = contentRevision(dir);
+    expect(contentRevision(dir)).toBe(first);
+
+    writeFileSync(file, '{"courseId":"hi-mr","levels":[]}');
+    expect(contentRevision(dir)).not.toBe(first);
+
+    rmSync(dir, { recursive: true, force: true });
+  });
+
+  it('is `dev` when there is no emitted content — `npm test` runs before the content build', () => {
+    expect(contentRevision(path.join(tmpdir(), 'rung-no-such-content'))).toBe('dev');
+  });
+});
+
+describe('the worker', () => {
+  const { workbox, registerType, devOptions } = pwaOptions();
 
   it('cleans up the caches of the builds before it', () => {
     expect(workbox?.cleanupOutdatedCaches).toBe(true);
