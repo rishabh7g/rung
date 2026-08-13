@@ -43,15 +43,15 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the three shipped bundles carry — 78 keys, nested, identical', () => {
+  it('is exactly what the three shipped bundles carry — 74 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(78);
+      expect(keys.length, courseId).toBe(74);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(78);
-    expect(new Set(STRINGS_KEYS).size).toBe(78);
+    expect(STRINGS_KEYS.length).toBe(74);
+    expect(new Set(STRINGS_KEYS).size).toBe(74);
   });
 
   /**
@@ -182,27 +182,26 @@ describe('the canonical key list', () => {
   });
 
   /**
-   * The Verdict's five (#103). PRD-design §6.7 prints the whole screen — the three checklist
-   * lines, the honesty line under them and the CTA that climbs back — in English for every
-   * course, and it is the last thing the learner reads at the end of their own ritual, which
-   * makes it the last place the shell could be allowed to speak for them.
+   * The Verdict's surviving three (#103, of the five it forced). PRD-design §6.7 prints the whole
+   * screen in English for every course, and it is the last thing the learner reads at the end of
+   * their own ritual, which makes it the last place the shell could be allowed to speak for them.
+   * The other two — the third checklist line and the paragraph under the list — were read-once
+   * copy and went on #231.
    *
-   * Two carry a number, and both are the module's own: `{ordinal}` is the course's word for "the
-   * 11th" (rendered through `ordinal`, as `ritual.confirm.holdLabel` does) and `{count}` is
-   * `exitTest.comprehendCount`, twice — "2 of 2" today, "3 of 3" for a module that asks for
+   * Both survivors carry a number, and both are the module's own: `{ordinal}` is the course's word
+   * for "the 11th" (rendered through `ordinal`, as `ritual.confirm.holdLabel` does) and `{count}`
+   * is `exitTest.comprehendCount`, twice — "2 of 2" today, "3 of 3" for a module that asks for
    * three. Draft values in all three bundles, flagged on #71.
    */
-  it('carries the five keys the Verdict forced (#103)', () => {
+  it('carries the three keys the Verdict forced (#103) that survive', () => {
     const added: StringsKey[] = [
       'verdict.checkSentence',
-      'verdict.checkChecked',
       'verdict.checkComprehension',
-      'verdict.honesty',
       'verdict.toLadder',
     ];
 
     for (const key of added) expect(STRINGS_KEYS).toContain(key);
-    // The honesty line the ritual has always ended on, which names the rung that just opened.
+    // The closing line the ritual ends on, which names the rung that just opened.
     expect(STRINGS_KEYS).toContain('verdict.line');
   });
 
@@ -230,16 +229,17 @@ describe('the canonical key list', () => {
   });
 
   /**
-   * The retry interstitial's missing two (#69 → the Sync-3 freeze, #71). design/tokens.md §6.3
-   * froze five layers of course copy and the shipped build rendered three — the kicker
-   * (`COMPREHEND · फिर से`, per-course because it says फिर से in the course that says फिर से) and
-   * the reassurance ("unlimited retries; nothing is counted against you") awaited keys. The
-   * freeze minted them at a count of 96, and the canonical list was FROZEN there: a new key after
-   * that point is a design change. #225 broke the freeze DOWNWARDS on owner instruction — the
-   * app's read-once copy is being stripped — so the count now falls below §8.2's published list.
+   * The retry interstitial's missing two (#69 → the Sync-3 freeze, #71), of which one survives.
+   * design/tokens.md §6.3 froze five layers of course copy and the shipped build rendered three —
+   * the kicker (`COMPREHEND · फिर से`, per-course because it says फिर से in the course that says
+   * फिर से) and the reassurance under the body awaited keys. The freeze minted them at a count of
+   * 96, and the canonical list was FROZEN there: a new key after that point is a design change.
+   * #225 broke the freeze DOWNWARDS on owner instruction — the app's read-once copy is being
+   * stripped — so the count now falls below §8.2's published list, and #231 took the reassurance
+   * with the body it sat under. The kicker stays: without it the screen is unlabelled.
    */
-  it('carries the two keys the retry interstitial’s frozen spec forced (#69 → #71)', () => {
-    const added: StringsKey[] = ['retry.kicker', 'retry.reassure'];
+  it('carries the one key the retry interstitial’s frozen spec forced (#69 → #71) that survives', () => {
+    const added: StringsKey[] = ['retry.kicker'];
 
     for (const key of added) expect(STRINGS_KEYS).toContain(key);
   });

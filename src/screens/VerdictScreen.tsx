@@ -20,11 +20,9 @@
  *     learner who closes the app on this screen has still climbed the rung — a pass that waited
  *     for a button would be a rung lost to a locked phone. The button's job is the celebration,
  *     not the record.
- *   • **The checklist is a receipt, not a score** — the three things the learner actually did, in
- *     the PRD's order: wrote the 11th sentence in their notebook, checked it themselves, marked
- *     the comprehension. Every line is the course's (`verdict.*`), and the honesty line under them
- *     is the product's first principle in the course's own words: the app graded nothing, and
- *     saved nothing they wrote (PRD-design §3.4, Invariant 4).
+ *   • **The checklist is a receipt, not a score** — the things the learner actually did, in the
+ *     PRD's order: wrote the 11th sentence in their notebook, marked the comprehension. Every line
+ *     is the course's (`verdict.*`), and the screen makes no claim of its own about either.
  *   • **The way out carries the beat.** "Climb to the ladder" is a `<Link>` to the Ladder carrying
  *     the one-shot flag that plays the unlock beat on the rung this pass opened (`passedRung`,
  *     consumed there) — the product's single celebration, once, and never on a revisit.
@@ -195,14 +193,13 @@ function RungVerdict({ input, plan, moduleId }: RungVerdictProps) {
         <h2 className={styles.title}>{rungLabel(moduleId)} · Passed</h2>
       </div>
 
-      {/* The receipt: a blueprint plate, and the app's own honesty under a divider. */}
+      {/* The receipt: a blueprint plate, and the two lines the learner earned on it. */}
       <div className={styles.receipt}>
         <RegistrationMarks />
 
         <ul className={styles.checks}>
           {[
             interpolate(strings['verdict.checkSentence'], { ordinal }),
-            strings['verdict.checkChecked'],
             interpolate(strings['verdict.checkComprehension'], {
               // The module's own number, like the arc's constraint: `2` today, and a module that
               // asked for three would read "3 of 3" with no code change (PRD §7 `exitTest`). Both
@@ -220,15 +217,10 @@ function RungVerdict({ input, plan, moduleId }: RungVerdictProps) {
             </li>
           ))}
         </ul>
-
-        <p className={styles.honesty} dir={course.dir}>
-          {strings['verdict.honesty']}
-        </p>
       </div>
 
       {/* The course's closing line names the rung that just opened, so a ladder with nothing above
-          it has no line to say — the completion state is quiet (PRD-design §3.6), and the receipt
-          above has already said the honest half in the course's own words. */}
+          it has no line to say — the completion state is quiet (PRD-design §3.6). */}
       {next !== null && (
         <p className={styles.line} dir={course.dir}>
           {interpolate(strings['verdict.line'], { nextModule: next })}
