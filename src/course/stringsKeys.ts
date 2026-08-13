@@ -35,7 +35,7 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 90 keys: the 17 of PRD §4, the 5 the frozen screens forced
+ * file it is complaining about). 89 keys: the 17 of PRD §4, the 5 the frozen screens forced
  * (PR #120) — `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and the four
  * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — the 3 the Ladder
  * forced (#86): the counts-only pending line, the ownership footer and the sealed-level toast,
@@ -168,7 +168,6 @@ export const STRINGS_KEYS = [
   'switchToast',
   'importToast',
   'storageNote',
-  'notebookInvitation',
 ] as const;
 
 /** A dot-path into strings.json — the union of the canonical list. */
@@ -453,5 +452,4 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   /** The Ladder's arrival toast after a restore (#108) — a landing, so no number and no name. */
   importToast: [],
   storageNote: [],
-  notebookInvitation: [],
 };

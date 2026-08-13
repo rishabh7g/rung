@@ -39,50 +39,6 @@
   font: var(--text-l2-card);
 }
 
-/* ------------------------------------------------------------ the notebook invitation */
-
-/* [Q6] closed (PRD-design §8.1, #177): a quiet hairline note card in the blueprint grammar —
-   same plate as the pending rung's, one line of course prose beside a single quiet ✕. No fill,
-   no motion; dismissal is removal. */
-.invitation {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-2) var(--space-2) var(--space-2) var(--space-4);
-  background: var(--color-bg);
-  border: var(--border-hairline);
-}
-
-/* Course prose, so Mukta at the 18px floor (design/tokens.md §2) — quiet, like the phase lines. */
-.invitationLine {
-  margin: 0;
-  flex: 1;
-  min-width: 0;
-  font: var(--text-l2-cue);
-  font-size: var(--devanagari-min-size);
-  color: var(--ink-70);
-}
-
-/* The one control: a quiet ✕ at the WCAG floor, in the register of the header's pause ✕. */
-.invitationDismiss {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: none;
-  min-width: var(--tap-min);
-  min-height: var(--tap-min);
-  padding: 0;
-  background: none;
-  border: 0;
-  color: var(--ink-70);
-  font: var(--text-kicker);
-  cursor: pointer;
-  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-}
-
 /* --------------------------------------------------------------------- the phases */
 
 .phases {

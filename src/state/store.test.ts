@@ -69,13 +69,13 @@ afterEach(() => {
   vi.restoreAllMocks();
 });
 
-describe('state v7', () => {
+describe('state v8', () => {
   it('starts as the shape the PRD prints — the drift guard (§8 F7)', () => {
     expect(persistedSlice(useAppStore.getState())).toEqual({
-      stateVersion: 7,
+      stateVersion: 8,
       activeCourse: '',
       courses: {},
-      settings: { elapsedTickEnabled: true, notebookInvitationDismissed: false },
+      settings: { elapsedTickEnabled: true },
     });
   });
 
@@ -103,17 +103,14 @@ describe('state v7', () => {
     ]);
   });
 
-  it('defaults the tick ON pending [Q3] (#70) and the notebook invitation UNDISMISSED (#177)', () => {
-    expect(useAppStore.getState().settings).toEqual({
-      elapsedTickEnabled: true,
-      notebookInvitationDismissed: false,
-    });
+  it('defaults the tick ON pending [Q3] (#70), and holds nothing else — v8 settings is one key', () => {
+    expect(useAppStore.getState().settings).toEqual({ elapsedTickEnabled: true });
   });
 
-  it('persists under rung:state, versioned 7', () => {
+  it('persists under rung:state, versioned 8', () => {
     useAppStore.getState().ensureCourse('hi-mr');
 
-    expect(stored().version).toBe(7);
+    expect(stored().version).toBe(8);
     expect(storage.items.has('rung:state')).toBe(true);
   });
 
@@ -704,17 +701,6 @@ describe('setSetting', () => {
     expect(useAppStore.getState().settings.elapsedTickEnabled).toBe(false);
     expect((stored().state as { settings: unknown }).settings).toEqual({
       elapsedTickEnabled: false,
-      notebookInvitationDismissed: false,
-    });
-  });
-
-  it('sets the notebook invitation dismissal — the one-shot app-level bit (#177)', () => {
-    useAppStore.getState().setSetting('notebookInvitationDismissed', true);
-
-    expect(useAppStore.getState().settings.notebookInvitationDismissed).toBe(true);
-    expect((stored().state as { settings: unknown }).settings).toEqual({
-      elapsedTickEnabled: true,
-      notebookInvitationDismissed: true,
     });
   });
 });
@@ -778,22 +764,19 @@ describe('migration', () => {
 
     const state = useAppStore.getState();
     expect(warn).not.toHaveBeenCalled();
-    expect(state.stateVersion).toBe(7);
+    expect(state.stateVersion).toBe(8);
     expect(state.activeCourse).toBe('hi-mr');
     expect(state.courses['hi-mr']).toEqual({
       ...emptyCourseState(),
       modules: { 'L1-M1': { status: 'passed', passedAt: '2026-02-02T02:40:00.000Z' } },
       production: { 'L1-M3-S01': 2 },
     });
-    // Settings stay at the top level, carried — and completed with v7's bit, unset: a learner
-    // who never saw the invitation has certainly not dismissed it.
-    expect(state.settings).toEqual({
-      elapsedTickEnabled: false,
-      notebookInvitationDismissed: false,
-    });
+    // Settings stay at the top level, carried — and rebuilt to the v8 shape, which is the tick
+    // and nothing else.
+    expect(state.settings).toEqual({ elapsedTickEnabled: false });
   });
 
-  it('carries a v6 document whole and completes its settings with the notebook bit (#177)', async () => {
+  it('carries a v6 document whole and answers the v8 settings shape', async () => {
     const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
     const midClimb = {
       ...emptyCourseState(),
@@ -817,22 +800,37 @@ describe('migration', () => {
 
     const state = useAppStore.getState();
     expect(warn).not.toHaveBeenCalled();
-    expect(state.stateVersion).toBe(7);
+    expect(state.stateVersion).toBe(8);
     expect(state.activeCourse).toBe('hi-mr');
     // The ladder position survives the upgrade untouched (Invariant 8).
     expect(state.courses['hi-mr']).toEqual(midClimb);
-    expect(state.settings).toEqual({
-      elapsedTickEnabled: false,
-      notebookInvitationDismissed: false,
-    });
+    expect(state.settings).toEqual({ elapsedTickEnabled: false });
   });
 
-  it('answers a COMPLETE v7 document even for a sparse v5 payload — a half shape is worse than a fresh one', () => {
-    expect(migrate({ stateVersion: 5, modules: {} }, 5)).toEqual({
+  it('drops the retired invitation bit a v7 document still carries (#227)', () => {
+    const v7 = {
       stateVersion: 7,
       activeCourse: 'hi-mr',
       courses: { 'hi-mr': emptyCourseState() },
-      settings: { elapsedTickEnabled: true, notebookInvitationDismissed: false },
+      settings: { elapsedTickEnabled: false, notebookInvitationDismissed: true },
+    };
+
+    const state = migrate(v7, 7);
+
+    // Named field by field, not spread: the key v8 retired is not carried forward, which is what
+    // lets a v7 backup through `serialize.ts`'s unknown-key refusal (#227).
+    expect(state.settings).toEqual({ elapsedTickEnabled: false });
+    expect(Object.keys(state.settings)).toEqual(['elapsedTickEnabled']);
+    expect(state.stateVersion).toBe(8);
+    expect(state.courses['hi-mr']).toEqual(emptyCourseState());
+  });
+
+  it('answers a COMPLETE v8 document even for a sparse v5 payload — a half shape is worse than a fresh one', () => {
+    expect(migrate({ stateVersion: 5, modules: {} }, 5)).toEqual({
+      stateVersion: 8,
+      activeCourse: 'hi-mr',
+      courses: { 'hi-mr': emptyCourseState() },
+      settings: { elapsedTickEnabled: true },
     });
   });
 
@@ -850,7 +848,7 @@ describe('migration', () => {
     expect(persistedSlice(useAppStore.getState())).toEqual(initialState());
   });
 
-  it('does not run for a v7 payload — the version it is already at', async () => {
+  it('does not run for a v8 payload — the version it is already at', async () => {
     const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
     useAppStore.getState().ensureCourse('hi-mr');
     const document_ = storage.items.get(STORAGE_KEY) ?? '';

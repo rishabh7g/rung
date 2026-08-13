@@ -81,13 +81,6 @@ export default function PracticeScreen() {
   const { input, ready } = useProgression();
   const startSession = useAppStore((store) => store.startSession);
   const setSession = useAppStore((store) => store.setSession);
-  const setSetting = useAppStore((store) => store.setSetting);
-  /**
-   * The notebook invitation's one-shot bit (#177, PRD-design §8.1) — read APP-level, never per
-   * course: the notebook habit is learned once, so a dismissal in one course is a dismissal in
-   * all of them, and switching courses cannot resurrect the line.
-   */
-  const invitationDismissed = useAppStore((store) => store.settings.notebookInvitationDismissed);
   const reviewQueue = useAppStore((store) => store.courses[course.id]?.reviewQueue) ?? NO_QUEUE;
   const production = useAppStore((store) => store.courses[course.id]?.production) ?? NO_COUNTERS;
   /**
@@ -213,31 +206,6 @@ export default function PracticeScreen() {
           {strings['practice.hubTitle']}
         </h2>
       </div>
-
-      {/* ─────────────────────────── the notebook invitation (#67 → #177) ───────────────────────────
-          [Q6] closed (PRD-design §8.1): a quiet hairline note card at the top of the hub, above
-          the phase list — one line of course prose and a single quiet ✕. Shown until dismissed,
-          then never again: the bit is app-level and persisted, so it survives reloads and course
-          switches alike, and there is no motion on dismiss beyond removal. The line itself is
-          honest per Invariant 4 — nothing is written in the app, and it says so. */}
-      {!invitationDismissed && (
-        <aside className={styles.invitation} data-slot="notebookInvitation">
-          <RegistrationMarks />
-          <p className={styles.invitationLine} dir={course.dir}>
-            {strings['notebookInvitation']}
-          </p>
-          {/* Shell furniture in the register of the header's pause ✕ — the name says what it
-              does, and what it does is permanent. */}
-          <button
-            type="button"
-            className={styles.invitationDismiss}
-            aria-label="Dismiss this note"
-            onClick={() => setSetting('notebookInvitationDismissed', true)}
-          >
-            ✕
-          </button>
-        </aside>
-      )}
 
       {stage === 'pending' ? (
         // A rung whose sentences are not authored yet: there is nothing to practise on it, and the
