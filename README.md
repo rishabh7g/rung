@@ -135,8 +135,10 @@ earlier lists — are the only remaining record of what a native reviewer still 
 still owes — dialect first). The course is written **pan-Hispanic**: no `vosotros`, no region-only
 vocabulary, both norms named where they differ, and no currency word picked. They reach nobody
 yet: the en-es row in `content/courses.json` is still `fixture: true`, so only `npm run dev`
-renders them — and that dev build now sits **well over** the 580 KiB `total` budget (the strict
-build, which skips the course, is unchanged at 548.3 KiB; per-course measurement is #207's job).
+renders them. The payload budget no longer objects: #207 replaced the catalogue-wide `total` row
+(which the three-course dev build blew at 634.8 KiB) with per-course rows, so en-es meters as
+`course:en-es` 71.5 KiB and `precache:en-es` 287.5 KiB — the bytes a Spanish learner actually
+downloads — instead of being charged for hi-mr's Devanagari (docs/05-perf-notes.md §4).
 
 The two relaxations are independent (`--with-unverified`, `--with-fixtures`), and either
 one makes the output a **dev build**, which says so twice over: the run prints

@@ -291,8 +291,10 @@ Three deliberate boundaries, each with a test in `tools/make-splash.test.ts`:
 - **The set is NOT precached.** The app never fetches a splash image — Safari does, once, at
   Add-to-Home-Screen. The precache glob is `icons/*.png`, whose `*` does not cross into
   `icons/splash/`; precaching would cost every Android first visit ~70 KiB it can never use.
-- **The budget follows the same truth** (`tools/payload-budget.ts`): `total` carves the splash
-  set out (it is not first-visit payload) and a new `splash` row meters it raw, ≤ 100 KiB.
+- **The budget follows the same truth** (`tools/payload-budget.ts`): the splash set is its own
+  owner, so no learner-facing row counts it (it is not first-visit payload and it is not
+  precached), and a `splash` row meters it raw, ≤ 100 KiB. #207 replaced the catalogue-wide
+  `total` row with per-course rows and kept that carve-out exactly as it was.
 
 Not claimed here, as in §8: how the set looks on a physical iPhone. The install-and-cold-launch
 walkthrough on both platforms is the device-bound tail of #115.
