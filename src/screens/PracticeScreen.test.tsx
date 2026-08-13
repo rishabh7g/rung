@@ -370,9 +370,9 @@ describe('a Produce got-it reaches the counters and never the queue', () => {
 
 /**
  * Read (#97) — the phase that costs nothing: one sentence at a time, the cue behind a toggle, and
- * a pager whose last step is Produce. The two rules under the assertions are that the CUE STARTS
- * HIDDEN (recall before recognition — the prototype opens with it showing, and this is the
- * deliberate divergence) and that the read-aloud nudge belongs to the PHASE, not to the sentence.
+ * a pager whose last step is Produce. The rule under the assertions is that the CUE STARTS HIDDEN
+ * (recall before recognition — the prototype opens with it showing, and this is the deliberate
+ * divergence).
  */
 describe('the Read phase', () => {
   /** The rung's sentences, in the module's own order — Read's material and its count. */
@@ -462,22 +462,17 @@ describe('the Read phase', () => {
     expect(screen.getByText(sentence(1).cue)).toBeInTheDocument();
   });
 
-  it('shows the read-aloud nudge ONCE, at the start of the phase — not under every sentence', async () => {
+  /* #225 took the read-aloud line away: the phase is the sentence and its pager, and nothing else
+     survives a walk out to Produce and back in by chip. */
+  it('comes back to the sentence and the pager when the phase is re-entered by chip', async () => {
     await read();
 
-    expect(screen.getByText(strings('nudge.read'))).toBeInTheDocument();
-
-    fireEvent.click(pager('read.next'));
-
-    await screen.findByText(sentence(1).display);
-    expect(screen.queryByText(strings('nudge.read'))).not.toBeInTheDocument();
-
-    // Coming back to Read is a phase start, so the instruction is worth saying again.
     fireEvent.click(chip('produce'));
     await cardFor('L1-M1-S01');
     fireEvent.click(chip('read'));
 
-    expect(await screen.findByText(strings('nudge.read'))).toBeInTheDocument();
+    expect(await screen.findByText(sentence(0).display)).toBeInTheDocument();
+    expect(pager('read.next')).toBeInTheDocument();
   });
 
   it('hands over to Produce when the rung has been read through', async () => {

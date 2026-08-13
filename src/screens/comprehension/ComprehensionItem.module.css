@@ -42,29 +42,13 @@
 
 /* ---------------------------------------------------------------- before the reveal */
 
-/* Centred in what is left of the screen: in the prototype the nudge and the reveal are the middle
-   of the page, because working the meaning out is the whole of what is being asked. */
+/* Centred in what is left of the screen: the reveal is the middle of the page, because working the
+   meaning out before it is the whole of what is being asked. */
 .work {
   display: flex;
   flex-direction: column;
   flex: 1;
   justify-content: center;
-  gap: var(--space-4);
-}
-
-/* Dashed = outside the app (design/tokens.md §3): the meaning is worked out in the learner's head,
-   mouth or notebook, and the app has nowhere to put it. */
-.nudgePlate {
-  padding: var(--space-6) var(--space-4);
-  border: var(--border-dashed-world);
-  text-align: center;
-}
-
-.nudge {
-  margin: 0;
-  font: var(--text-l2-cue);
-  font-size: var(--devanagari-min-size);
-  color: var(--ink-75);
 }
 
 /* The registration marks frame the reveal CTA rather than a border — the prototype's `blueprint`
@@ -148,14 +132,6 @@
 .modelText {
   margin: var(--space-1) 0 0;
   font: var(--text-l2-cue);
-}
-
-/* The course's question above the marks. */
-.prompt {
-  margin: 0;
-  font: var(--text-l2-cue);
-  font-size: var(--devanagari-min-size);
-  color: var(--ink-70);
 }
 
 /* ------------------------------------------------------------------ the mark row */

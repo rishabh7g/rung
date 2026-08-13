@@ -97,15 +97,18 @@ describe('the self-mark', () => {
     ]);
   });
 
-  it('names the group with the course’s own question when the card gives it one', () => {
+  /* #225 took the question away: the group is unnamed, and its two segments say what it is. */
+  it('is a group of two, and takes no accessible name from a question above it', () => {
     render(
       <StringsContext.Provider value={STRINGS}>
-        <p id="question">{copy('mark.prompt')}</p>
-        <SelfMark mark={null} onMark={vi.fn()} labelledBy="question" />
+        <SelfMark mark={null} onMark={vi.fn()} />
       </StringsContext.Provider>,
     );
 
-    expect(screen.getByRole('group', { name: copy('mark.prompt') })).toBeInTheDocument();
+    const group = screen.getByRole('group');
+
+    expect(group).not.toHaveAttribute('aria-labelledby');
+    expect(group).not.toHaveAccessibleName();
   });
 
   /* Invariant 6: the design system's own seg wraps a radio input; this control may not. */

@@ -21,16 +21,21 @@
  * `{"ritual":{"check":{"copy":…}}}`, which is how the authored files are written. The checker
  * flattens before comparing.
  *
- * FROZEN at Sync-3 (#71): the 96 keys below are the published list PRD-design §8.2 points at, and
+ * FROZEN at Sync-3 (#71): the keys below are the published list PRD-design §8.2 points at, and
  * the bundle values are the frozen per-course tables. This file mirrors the freeze; a new key
  * after this point is a design change, not a code change.
+ *
+ * The freeze is deliberately BROKEN downwards from #225 on owner instruction (2026-08-13): the
+ * app's read-once copy — lines a learner reads on the first card and skims past on the next
+ * thirty — is being stripped, so the list now sits BELOW PRD-design §8.2 rather than mirroring it.
+ * `design/` is read-only and stays as published; the divergence is recorded in `docs/`.
  */
 
 /* ------------------------------------------------------------------ the list */
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 96 keys: the 21 of PRD §4, the 5 the frozen screens forced
+ * file it is complaining about). 91 keys: the 17 of PRD §4, the 5 the frozen screens forced
  * (PR #120) — `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and the four
  * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — the 3 the Ladder
  * forced (#86): the counts-only pending line, the ownership footer and the sealed-level toast,
@@ -38,9 +43,9 @@
  * card forced (#87): a label per CTA across the four [D22] stages, plus the fresh-rung note — the
  * 3 the module list forced (#88): its helper line, the "open full" label and the interference
  * -trap note on an expanded card — the 4 Sentence Detail forced (#89): the trap callout's
- * heading, the mnemonic's "pocket it" label, and the two pager buttons — the 4 the reveal
- * card forced (#93): the two self-mark segments [D11], the question the card asks above them, and
- * the Next that does not exist until one of them is chosen — the 3 the "why" panel forced
+ * heading, the mnemonic's "pocket it" label, and the two pager buttons — the 3 the reveal
+ * card forced (#93): the two self-mark segments [D11] and the Next that does not exist until one
+ * of them is chosen — the 3 the "why" panel forced
  * (#94): its toggle's two labels and the "open full" that leaves the session — the 17 the
  * session machine forced (#96): the Practice hub's title, its three phase lines and the line that
  * says the phases never gate, the two Begin labels, the three phase names the soft chips wear, the
@@ -77,10 +82,6 @@ export const STRINGS_KEYS = [
   'cueLabel',
   'revealLabel',
   'revealLabelComprehend',
-  'nudge.review',
-  'nudge.read',
-  'nudge.produce',
-  'nudge.comprehend',
   'ritual.stepTitle.write',
   'ritual.stepTitle.check',
   'ritual.stepTitle.confirm',
@@ -118,7 +119,6 @@ export const STRINGS_KEYS = [
   'sentence.next',
   'mark.gotIt',
   'mark.missed',
-  'mark.prompt',
   'mark.next',
   'why.show',
   'why.hide',
@@ -190,10 +190,6 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   cueLabel: [],
   revealLabel: [],
   revealLabelComprehend: [],
-  'nudge.review': [],
-  'nudge.read': [],
-  'nudge.produce': [],
-  'nudge.comprehend': [],
   'ritual.stepTitle.write': [],
   'ritual.stepTitle.check': [],
   'ritual.stepTitle.confirm': [],
@@ -265,10 +261,11 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'sentence.prev': [],
   'sentence.next': [],
   /**
-   * The gated self-mark [D11] (#93) — the four words the reveal card owns. `gotIt` and `missed`
-   * are the two segments, `prompt` is the question above them ("against your notebook — did you
-   * have it?") and `next` is the control that only exists once one segment is chosen. They are a
-   * group of their own rather than `practice.*` because the same four travel with the mark: the
+   * The gated self-mark [D11] (#93) — the three words the reveal card owns. `gotIt` and `missed`
+   * are the two segments, and `next` is the control that only exists once one segment is chosen.
+   * The question that used to sit above them (`mark.prompt`) went with the read-once copy on
+   * #225. They are a group of their own rather than `practice.*` because the same words travel
+   * with the mark: the
    * Comprehension test asks its own question of its own pair ("same meaning" / "not quite"), and
    * that pair is #101's to add here beside these.
    *
@@ -278,7 +275,6 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    */
   'mark.gotIt': [],
   'mark.missed': [],
-  'mark.prompt': [],
   'mark.next': [],
   /**
    * The "why" panel (#94) — the three words the shared expansion says in its own right, on every
@@ -314,8 +310,7 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    * — the call #93 made for `mark.next` and #94 for `why.openFull`.
    *
    * None of them interpolates: the position is the `3 / 10` count the shell renders, not a
-   * sentence, and the read-aloud nudge the phase opens with is `nudge.read`, which PRD §4 has
-   * carried since the first bundle.
+   * sentence.
    */
   'read.showCue': [],
   'read.hideCue': [],

@@ -7,8 +7,7 @@
  * voice for a Marathi sentence, or a recorder to compare yourself against. Both are the product
  * saying the line for the learner, which is the one thing the pen-belongs-to-the-learner rule
  * (Invariant 3) rules out, and neither could ever be right offline, unverified, for a course whose
- * pronunciation nobody has signed off. The nudge encourages the learner's own voice; the app has
- * none.
+ * pronunciation nobody has signed off. The reading is the learner's own voice; the app has none.
  *
  * So the rule is mechanical rather than remembered, in the same shape as #80's shell-purity scan
  * and #82's calendar-free one: no shipped file under `src/` may name a sound API. Same three

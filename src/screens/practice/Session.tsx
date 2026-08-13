@@ -353,8 +353,8 @@ export function Session({ courseId, moduleId, sentenceIds, plan, resume, dir, l2
       )}
 
       {/* Read (#97): one sentence, its cue behind a toggle, and a pager that ends in Produce.
-          It is keyed by nothing on purpose — the nudge is shown once per PHASE, and a key per
-          sentence would remount it (and the cue toggle) under every card. */}
+          It is keyed by nothing on purpose — a key per sentence would remount the phase (and its
+          cue toggle) under every card. */}
       {!live.done && live.phase === 'read' && sentence !== undefined && (
         <ReadPhase
           moduleId={moduleId}
@@ -397,7 +397,6 @@ export function Session({ courseId, moduleId, sentenceIds, plan, resume, dir, l2
               cue={sentence.cue}
               display={sentence.display}
               script={sentence.script ?? undefined}
-              mode={live.phase === 'review' ? 'review' : 'produce'}
               why={
                 <WhyPanel
                   sentenceId={sentenceId}
