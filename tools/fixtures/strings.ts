@@ -23,7 +23,7 @@ function setPath(root: Record<string, unknown>, key: string, value: string): voi
 
 /**
  * Every canonical key, nested as the authored files are, with a recognisable value that carries
- * exactly that key's placeholders — `hi-mr ritual.constraint {sentenceCount} {maxWords}`.
+ * exactly that key's placeholders — `hi-mr ritual.constraint {maxWords}`.
  */
 export function completeStrings(courseId: string): Record<string, unknown> {
   const bundle: Record<string, unknown> = {};

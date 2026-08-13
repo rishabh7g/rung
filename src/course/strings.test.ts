@@ -33,7 +33,7 @@ describe('loadStrings', () => {
     const strings = await loadStrings('hi-mr');
 
     expect(fetchMock).toHaveBeenCalledWith('/content/hi-mr/strings.json');
-    expect(strings['ritual.check.copy']).toBe(stringValue('hi-mr', 'ritual.check.copy'));
+    expect(strings['ritual.stepTitle.check']).toBe(stringValue('hi-mr', 'ritual.stepTitle.check'));
     expect(Object.keys(strings).sort()).toEqual([...STRINGS_KEYS].sort());
   });
 
@@ -125,10 +125,10 @@ describe('interpolate', () => {
   });
 
   it('fills every placeholder of a value, including repeats', () => {
-    const constraint = 'not one of these {sentenceCount}, at most {maxWords} — {maxWords}';
+    const constraint = 'one of these {count}, at most {maxWords} — {maxWords}';
 
-    expect(interpolate(constraint, { sentenceCount: 10, maxWords: 12 })).toBe(
-      'not one of these 10, at most 12 — 12',
+    expect(interpolate(constraint, { count: 10, maxWords: 12 })).toBe(
+      'one of these 10, at most 12 — 12',
     );
   });
 
@@ -153,7 +153,6 @@ describe('interpolate', () => {
 
   it(`fills every placeholder the contract declares, across all ${STRINGS_KEYS.length} keys`, () => {
     const values = {
-      sentenceCount: 10,
       maxWords: 12,
       ordinal: '3rd',
       n: 3,

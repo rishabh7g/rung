@@ -2,7 +2,8 @@
  * The exit ritual's arc (#100) — four promises, one describe each:
  *
  *   • **the guard**: the ritual belongs to a rung that is produced out, and to no other state,
- *   • **step 2 is guidance only**: zero interactive elements inside it, of any kind [D18],
+ *   • **step 2 says nothing and offers nothing**: a title, and zero interactive elements inside
+ *     it, of any kind [D18],
  *   • **the learner's sentence has nowhere to arrive and nowhere to live** (Invariants 4 and 6),
  *   • **every word is the course's**, and the two numbers in it are this rung's own.
  *
@@ -10,7 +11,7 @@
  * repo does: `/ritual` is a guarded route reached through the app's own table, and a guard that
  * works in a hand-wired router while the table says something else is exactly the bug worth
  * catching. The strings fixture is built FROM the canonical key list, so a line reads
- * `hi-mr ritual.check.caption` — an assertion against the prototype's English would pass on a
+ * `hi-mr ritual.stepTitle.check` — an assertion against the prototype's English would pass on a
  * hardcoded shell string, which is the one thing the strings contract exists to prevent.
  *
  * Progress is seeded the only way the app can make it: one `recordProduction` per Produce-phase
@@ -181,7 +182,7 @@ describe('the ritual belongs to a rung that is produced out', () => {
 
 /* ------------------------------------------------- step 2: the honesty design [D18] */
 
-describe('step 2 is guidance, and guidance is all it is', () => {
+describe('step 2 is a title, and a title is all it is', () => {
   /**
    * Every ARIA role a learner can act on — the widget roles, plus the composites a control hides
    * inside. The assertion is the absence of ALL of them: [D18] is not "no buttons", it is
@@ -248,40 +249,16 @@ describe('step 2 is guidance, and guidance is all it is', () => {
     expect([...checkStep().querySelectorAll(FOCUSABLE)].map((node) => node.outerHTML)).toEqual([]);
   });
 
-  it('says so in the course’s own words: the missing buttons are the design', async () => {
-    await renderRitual();
-    await findSteps();
-
-    expect(within(checkStep()).getByText(strings('ritual.check.caption'))).toBeVisible();
-  });
-
-  it('carries the जांचो copy, the plate’s label and its two static resource rows', async () => {
+  it('is its number and its जांचो title, with nothing under them', async () => {
     await renderRitual();
     await findSteps();
     const step = checkStep();
 
-    for (const key of [
-      'ritual.check.copy',
-      'ritual.check.plateLabel',
-      'ritual.check.resourcePerson',
-      'ritual.check.resourceInternet',
-    ]) {
-      expect(within(step).getByText(strings(key)), key).toBeVisible();
-    }
-  });
-
-  it('draws the plate with the one border token reserved for "outside the app"', async () => {
-    await renderRitual();
-    await findSteps();
-
-    // Read off the stylesheet: jsdom resolves neither CSS modules nor custom properties, and the
-    // token is the assertion — dashed is a meaning here, not a decoration (design/tokens.md §3).
-    // Comments are stripped the way `styleContract.test.ts` strips them: they quote the token to
-    // explain it, which is the opposite of a second use of it.
-    const declarations = ritualCss.replace(/\/\*[\s\S]*?\*\//g, '');
-
-    expect(declarations).toMatch(/\.plate\s*\{[^}]*--border-dashed-world/);
-    expect(declarations.match(/--border-dashed-world/g)).toHaveLength(1);
+    // #230 took the copy, the dashed plate and the caption. What is left must be the two things
+    // every step wears and no hollow container behind them — an empty box is an object, and this
+    // screen draws objects only where something happens.
+    expect([...step.children].map((node) => node.tagName)).toEqual(['SPAN', 'H3']);
+    expect(within(step).getByRole('heading').textContent).toBe(strings('ritual.stepTitle.check'));
   });
 });
 
@@ -409,19 +386,16 @@ describe('every word is the course’s, and the numbers are this rung’s', () =
     ]);
   });
 
-  it('interpolates the constraint from the module: how many sentences, and the word cap', async () => {
+  it('interpolates the constraint from the module: this rung’s own word cap', async () => {
     produceRung(3);
     await renderRitual(ritualModule(3, 7));
     await findSteps();
 
-    const constraint = interpolate(strings('ritual.constraint'), {
-      sentenceCount: 3,
-      maxWords: 7,
-    });
+    const constraint = interpolate(strings('ritual.constraint'), { maxWords: 7 });
 
     expect(screen.getByText(constraint)).toBeVisible();
-    // The fixture's own placeholders never reach the screen.
-    expect(screen.queryByText(/\{sentenceCount\}|\{maxWords\}/)).toBeNull();
+    // The fixture's own placeholder never reaches the screen.
+    expect(screen.queryByText(/\{maxWords\}/)).toBeNull();
   });
 
   it('names the sentence after the rung’s own, through the course’s ordinal', async () => {

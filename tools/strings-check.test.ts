@@ -43,24 +43,27 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the three shipped bundles carry — 83 keys, nested, identical', () => {
+  it('is exactly what the three shipped bundles carry — 78 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(83);
+      expect(keys.length, courseId).toBe(78);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(83);
-    expect(new Set(STRINGS_KEYS).size).toBe(83);
+    expect(STRINGS_KEYS.length).toBe(78);
+    expect(new Set(STRINGS_KEYS).size).toBe(78);
   });
 
-  it('carries the five keys PR #120 added beyond the issue text', () => {
+  /**
+   * The fifth was `ritual.check.plateLabel`, the label on the ritual's dashed resource plate. It
+   * was read-once copy and went with the plate on #230; these four stayed.
+   */
+  it('carries the four keys PR #120 added beyond the issue text that survive (#230)', () => {
     const added: StringsKey[] = [
       'revealLabelComprehend',
       'ritual.stepTitle.write',
       'ritual.stepTitle.check',
       'ritual.stepTitle.confirm',
-      'ritual.check.plateLabel',
     ];
 
     for (const key of added) expect(STRINGS_KEYS).toContain(key);
@@ -267,7 +270,7 @@ describe('the canonical key list', () => {
     const templated = Object.entries(STRINGS_PLACEHOLDERS).filter(([, names]) => names.length > 0);
 
     expect(Object.fromEntries(templated)).toEqual({
-      'ritual.constraint': ['{sentenceCount}', '{maxWords}'],
+      'ritual.constraint': ['{maxWords}'],
       'ritual.confirm.holdLabel': ['{ordinal}'],
       ordinal: ['{n}'],
       'ladder.pendingLine': ['{level}', '{remaining}', '{total}'],
@@ -308,11 +311,13 @@ describe('the three shipped bundles', () => {
 });
 
 describe('flattening', () => {
-  it('joins nested objects on "." — ritual.check.copy is a path, not a key', () => {
-    const flat = flattenStrings({ ritual: { check: { copy: 'check it' }, constraint: 'one' } });
+  it('joins nested objects on "." — ritual.stepTitle.check is a path, not a key', () => {
+    const flat = flattenStrings({
+      ritual: { stepTitle: { check: 'Check' }, constraint: 'one' },
+    });
 
     expect([...flat]).toEqual([
-      ['ritual.check.copy', 'check it'],
+      ['ritual.stepTitle.check', 'Check'],
       ['ritual.constraint', 'one'],
     ]);
   });
@@ -333,25 +338,25 @@ describe('the four rules', () => {
 
   it('fails a missing key, naming course and key', () => {
     const issues = checkStrings(
-      bundle((flat) => flat.delete('ritual.check.caption')),
+      bundle((flat) => flat.delete('ritual.confirm.done')),
       'hi-mr',
     );
 
-    expect(issues).toEqual(['hi-mr/strings.json: missing key "ritual.check.caption"']);
+    expect(issues).toEqual(['hi-mr/strings.json: missing key "ritual.confirm.done"']);
   });
 
   it('fails an extra key as a typo tripwire, naming course and key', () => {
     const issues = checkStrings(
       bundle((flat) => {
-        flat.delete('ritual.check.plateLabel');
-        flat.set('ritual.check.plate', 'OUTSIDE THE APP');
+        flat.delete('ritual.stepTitle.check');
+        flat.set('ritual.stepTitle.checked', 'Check');
       }),
       'en-es',
     );
 
     expect(issues).toEqual([
-      'en-es/strings.json: missing key "ritual.check.plateLabel"',
-      'en-es/strings.json: unknown key "ritual.check.plate" — not in the canonical list (src/course/stringsKeys.ts)',
+      'en-es/strings.json: missing key "ritual.stepTitle.check"',
+      'en-es/strings.json: unknown key "ritual.stepTitle.checked" — not in the canonical list (src/course/stringsKeys.ts)',
     ]);
   });
 

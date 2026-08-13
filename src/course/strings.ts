@@ -9,8 +9,8 @@
  * `strings['retry.title']` is a `string`, never `string | undefined`, because a bundle that could
  * not supply it never got built.
  *
- * Shape: the file is authored nested (`{"ritual":{"check":{"copy":…}}}`) and read flat
- * (`strings['ritual.check.copy']`), because the canonical list is dot-paths and the app should
+ * Shape: the file is authored nested (`{"ritual":{"stepTitle":{"check":…}}}`) and read flat
+ * (`strings['ritual.stepTitle.check']`), because the canonical list is dot-paths and the app should
  * index it with exactly the key the contract names. `parseStrings` walks the canonical list, not
  * the file: keys the app will never read are the build's business (`unknown key`, #76), not a
  * reason to fail a learner's boot.
@@ -135,7 +135,7 @@ export function parseStrings(payload: unknown, source = 'strings.json'): Strings
   return bundle as Strings;
 }
 
-/** Reads a canonical dot-path out of the nested file: `ritual.check.copy` → `{ritual:{check:…}}`. */
+/** Reads a dot-path out of the nested file: `ritual.stepTitle.check` → `{ritual:{stepTitle:…}}`. */
 function readPath(root: Record<string, unknown>, key: string): unknown {
   let node: unknown = root;
   for (const part of key.split('.')) {
@@ -147,7 +147,7 @@ function readPath(root: Record<string, unknown>, key: string): unknown {
 
 /* ------------------------------------------------------------- interpolation */
 
-/** `{sentenceCount}` and friends. Non-greedy by construction: braces cannot nest. */
+/** `{maxWords}` and friends. Non-greedy by construction: braces cannot nest. */
 const PLACEHOLDER = /\{([^{}]*)\}/g;
 
 /**

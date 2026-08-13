@@ -11,8 +11,8 @@
  * Four rules, all keyed off `src/course/stringsKeys.ts` (the only list in the repo):
  *   1. every canonical key is present — flattened on `.`, because the authored files are nested;
  *   2. every value is a non-empty string;
- *   3. no extra keys — the typo tripwire: `ritual.check.plate` is a key the app will never read,
- *      and without this rule it would sit beside a "missing" `plateLabel` looking harmless;
+ *   3. no extra keys — the typo tripwire: `ritual.stepTitle.checked` is a key the app will never
+ *      read, and without this rule it would sit beside a "missing" `check` looking harmless;
  *   4. placeholder parity — a value carries exactly its canonical `{placeholders}`, so a
  *      translation cannot silently drop `{ordinal}` (the learner loses the sentence number) or
  *      invent `{name}` (the braces render verbatim). PR #124 checked this by hand across three
@@ -25,7 +25,7 @@ import { STRINGS_KEYS, STRINGS_PLACEHOLDERS, type StringsKey } from '../src/cour
 
 /* ------------------------------------------------------------------ contract */
 
-/** `{sentenceCount}` and friends. Non-greedy by construction: braces cannot nest. */
+/** `{maxWords}` and friends. Non-greedy by construction: braces cannot nest. */
 const PLACEHOLDER = /\{[^{}]*\}/g;
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -33,7 +33,8 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 }
 
 /**
- * Nested object -> dot-paths: `{"ritual":{"check":{"copy":"…"}}}` becomes `ritual.check.copy`.
+ * Nested object -> dot-paths: `{"ritual":{"stepTitle":{"check":"…"}}}` becomes
+ * `ritual.stepTitle.check`.
  *
  * Only non-empty plain objects are containers. An empty one (`"ritual": {}`) and an array are
  * kept as leaf values, so they surface as "must be a non-empty string" or "unknown key" instead

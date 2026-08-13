@@ -1,7 +1,8 @@
 /* Layout only, tokens only (docs/design-contract.md rule 1).
    Geometry follows design/Rung App v3.3.dc.html → Exit ritual → the three-step arc: a vertical
-   rule down the left of the column, a numbered badge per step straddling it, and step 2's dashed
-   plate. Every length is the nearest token on the Industry scale (design/tokens.md §3). */
+   rule down the left of the column and a numbered badge per step straddling it. (The prototype
+   also draws a dashed plate under step 2; #230 removed it with the copy it held.) Every length is
+   the nearest token on the Industry scale (design/tokens.md §3). */
 
 .ritual {
   display: flex;
@@ -122,7 +123,8 @@
   font-size: var(--devanagari-min-size);
 }
 
-/* The constraint and the check step's copy: course prose, so the floor again (prototype 13.5px). */
+/* The Write step's constraint — the arc's one line of prose, so the floor again (prototype
+   13.5px). */
 .stepCopy {
   margin: var(--space-2) 0 0;
   font: var(--text-l2-cue);
@@ -150,65 +152,6 @@
   color: var(--color-bg);
 }
 
-/* ------------------------------------------------------------- the check plate */
-
-/**
- * The one dashed object in the app. `--border-dashed-world` is reserved for "outside the app"
- * (design/tokens.md §3), and this plate is what the reservation was made for: everything inside
- * it happens in the learner's world, not in this one.
- *
- * It wears no registration marks, deliberately — they are the blueprint grammar of the app's own
- * objects, and the whole point of the dashed border is that this plate is not one of them. The
- * prototype draws none here either. Recorded on #117 so the QA pass reads it as sanctioned.
- */
-.plate {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  margin-top: var(--space-3);
-  padding: var(--space-4);
-  border: var(--border-dashed-world);
-}
-
-/**
- * The plate's label is the course's own line ("OUTSIDE THE APP — YOUR WORLD"), so it cannot be
- * the prototype's 10px tracked uppercase kicker: Devanagari has no case to raise and the floor
- * forbids the size (design/tokens.md §2). Same call #89 made for `sentence.trapHead` /
- * `sentence.pocketIt`, and #93 for the cue label; flagged on #117.
- */
-.plateLabel {
-  margin: 0;
-  font: var(--text-l2-cue);
-  font-size: var(--devanagari-min-size);
-  color: var(--ink-70);
-}
-
-/* A resource row: an icon that opens nothing, and a line of text. No control, by design [D18]. */
-.resource {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-3);
-  margin: 0;
-  font: var(--text-l2-cue);
-  font-size: var(--devanagari-min-size);
-}
-
-/* Lucide, sized and stroked from tokens like every other icon in the app (design/tokens.md §4). */
-.resourceIcon {
-  flex: none;
-  width: var(--icon-ui);
-  height: var(--icon-ui);
-  /* Optical: the icon sits with the first line of a 1.6 line-height row. */
-  margin-top: var(--space-1);
-  stroke-width: var(--icon-stroke);
-  color: var(--color-accent-700);
-}
-
-/* The line that says the missing buttons are the design — the quietest thing on the screen, and
-   the most important sentence on it. Course prose, so the floor (prototype 11px). */
-.caption {
-  margin: var(--space-2) 0 0;
-  font: var(--text-l2-cue);
-  font-size: var(--devanagari-min-size);
-  color: var(--ink-65);
-}
+/* The check step has no rules of its own: #230 took its copy, its dashed `--border-dashed-world`
+   plate (label, two resource rows, their icons) and its caption, and what is left is the number
+   and the title every step already wears. */

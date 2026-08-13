@@ -1,26 +1,27 @@
 /**
- * The exit ritual's arc, steps 1 and 2 (#100) — the constraint, and the check step that is
- * guidance and nothing else (PRD §8 F5 [D18]; PRD-design §6.5 flow 5 [Q2 answered]).
+ * The exit ritual's arc, steps 1 and 2 (#100) — the constraint, and the check step that is a
+ * title and nothing else (PRD §8 F5 [D18]; PRD-design §6.5 flow 5 [Q2 answered]).
  *
  * This is the product's honesty moment, and two invariants are the whole design of it:
  *
  *   • **Step 2 contains zero interactive elements** — no button, no link, no copy action, no
- *     field. The app says in words where to go and does nothing else, and its own caption says
- *     the absence of controls is deliberate (`ritual.check.caption`). Checking is the learner's
- *     activity, fully outside the app (Invariant 5), so a control here — even a helpful one, even
- *     a dictionary link — would be the app taking the job back. `RitualScreen.test.tsx` queries
- *     every interactive ARIA role inside the plate's step and asserts nothing answers.
+ *     field. It is now its number and its title and nothing under them: #230 stripped the copy,
+ *     the dashed resource plate and the caption that said the missing buttons were deliberate,
+ *     because the absence is the statement and the paragraph explaining it was read once.
+ *     Checking is the learner's activity, fully outside the app (Invariant 5), so a control
+ *     here — even a helpful one, even a dictionary link — would be the app taking the job back.
+ *     `RitualScreen.test.tsx` queries every interactive ARIA role inside the step and asserts
+ *     nothing answers.
  *   • **The learner's sentence never enters the app** (Invariant 4, Invariant 6 "no input
  *     fields"). Nothing in this flow holds what they wrote: no state, no ref, no prop, no
  *     storage. The same test scans this file for the constructs a sentence could arrive or live
  *     in, because the way that invariant breaks is a "small" convenience, not a decision.
  *
- * What the screen actually knows is two numbers and its own course's words. The numbers come from
- * the rung's own module file — how many sentences it teaches (`{sentenceCount}`, which the new
- * one may not be one of) and the word cap its complexity declares (`{maxWords}`) — so the
- * constraint is this rung's, never a hardcoded "5 words". The ordinal in the head is the same
- * count plus one, rendered through the course's own `ordinal` template — its word for "the 11th",
- * the sentence after the ten this rung taught.
+ * What the screen actually knows is two numbers and its own course's words, both off the rung's
+ * own module file: the word cap its complexity declares (`{maxWords}`), so the constraint is this
+ * rung's and never a hardcoded "5 words", and how many sentences it teaches. The ordinal in the
+ * head is that count plus one, rendered through the course's own `ordinal` template — its word
+ * for "the 11th", the sentence after the ten this rung taught.
  *
  * **The guard is `exit_available`** (#95): a rung is not ready for its ritual until every sentence
  * in it has been self-marked got-it twice, and this route is a real deep link (HashRouter, an
@@ -39,7 +40,6 @@
  * furniture in the register of the module list's `M1 · MODULE` kicker, and the `1 / 2` is a
  * count — the prototype writes "part 1 of 2", which would be a shell-owned sentence.
  */
-import { Globe, Users } from 'lucide-react';
 import { Navigate } from 'react-router-dom';
 import { HoldToConfirm } from '../components/HoldToConfirm.tsx';
 import { useCourse } from '../course/CourseProvider.tsx';
@@ -115,7 +115,7 @@ function RitualArc({ moduleId, open }: RitualArcProps) {
    */
   if (!open || module.data === null) return <Navigate to={`/module/${moduleId}`} replace />;
 
-  /** How many sentences this rung taught — the ones the new sentence may not be one of. */
+  /** How many sentences this rung taught — the ones the new one comes after. */
   const sentenceCount = module.data.sentences.length;
   /** The next one after them, in the course's own ordinal — its word for "the 11th". */
   const ordinal = interpolate(strings.ordinal, { n: sentenceCount + 1 });
@@ -142,19 +142,21 @@ function RitualArc({ moduleId, open }: RitualArcProps) {
           <h3 className={styles.stepTitle} dir={course.dir}>
             {strings['ritual.stepTitle.write']}
           </h3>
-          {/* This rung's own constraint: not one of ITS sentences, inside ITS word cap. */}
+          {/* This rung's own constraint: one new sentence, inside ITS word cap. */}
           <p className={styles.stepCopy} dir={course.dir}>
             {interpolate(strings['ritual.constraint'], {
-              sentenceCount,
               maxWords: module.data.complexity.maxWordsPerSentence,
             })}
           </p>
         </li>
 
         {/**
-         * Step 2 — the check step. Everything below this comment is text, and that is the
-         * feature [D18]. `data-step="check"` is what the zero-interactive-elements test scopes
-         * itself to; it is not a hook for behaviour, because there is none to hook.
+         * Step 2 — the check step: a number, a title, and nothing under them. The emptiness IS
+         * the feature [D18], and since #230 it is the whole of it — the copy, the dashed resource
+         * plate and the caption that explained the missing buttons were read-once prose. The step
+         * keeps its place in the arc because the arc is what says checking happens.
+         * `data-step="check"` is what the zero-interactive-elements test scopes itself to; it is
+         * not a hook for behaviour, because there is none to hook.
          */}
         <li className={styles.step} data-step="check">
           <span className={styles.stepNumber} aria-hidden="true">
@@ -163,31 +165,6 @@ function RitualArc({ moduleId, open }: RitualArcProps) {
           <h3 className={styles.stepTitle} dir={course.dir}>
             {strings['ritual.stepTitle.check']}
           </h3>
-          <p className={styles.stepCopy} dir={course.dir}>
-            {strings['ritual.check.copy']}
-          </p>
-
-          {/* The dashed plate: `--border-dashed-world` is reserved for exactly this meaning —
-              outside the app's solid hairline world (design/tokens.md §3). Two static rows, and
-              the icons are decoration: a globe that opens nothing, beside a line of text. */}
-          <div className={styles.plate}>
-            <p className={styles.plateLabel} dir={course.dir}>
-              {strings['ritual.check.plateLabel']}
-            </p>
-            <p className={styles.resource} dir={course.dir}>
-              <Users className={styles.resourceIcon} aria-hidden="true" />
-              <span>{strings['ritual.check.resourcePerson']}</span>
-            </p>
-            <p className={styles.resource} dir={course.dir}>
-              <Globe className={styles.resourceIcon} aria-hidden="true" />
-              <span>{strings['ritual.check.resourceInternet']}</span>
-            </p>
-          </div>
-
-          {/* The course saying, in its own words, that the missing buttons are the design. */}
-          <p className={styles.caption} dir={course.dir}>
-            {strings['ritual.check.caption']}
-          </p>
         </li>
 
         <li className={styles.step}>
