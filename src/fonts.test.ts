@@ -146,7 +146,7 @@ describe('the bundle covers the ramp — and only the ramp (#113)', () => {
   });
 
   it('keeps latin-ext out of the production graph — dev builds only (#113)', () => {
-    // The static imports are the production bundle; latin-ext (the ī ā ū of romanized fixtures
+    // The static imports are the production bundle; latin-ext (the ī ā ū of the romanized fixture
     // and /dev/type) may appear only as a dynamic import inside the `import.meta.env.DEV` branch.
     const statics = [...mainSource.matchAll(/^import '([^']*latin-ext[^']*)';$/gm)].map(
       (m) => m[1],

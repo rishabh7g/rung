@@ -18,7 +18,7 @@ import '@fontsource/barlow-condensed/latin-600.css';
 import '@fontsource/barlow-condensed/latin-700.css';
 
 if (import.meta.env.DEV) {
-  // latin-ext, for the surfaces only a dev build has: the en-* fixture courses and `/dev/type`'s
+  // latin-ext, for the surfaces only a dev build has: the en-ar fixture course and `/dev/type`'s
   // diacritic rows (ī ā ū — docs/04-font-notes.md §4). Dynamic imports inside a DEV branch never
   // enter a production graph — the same pattern as `src/dev/typeRoute.tsx`.
   void import('@fontsource/barlow/latin-ext-400.css');

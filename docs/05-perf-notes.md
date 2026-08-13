@@ -60,8 +60,8 @@ files behind them shrank).
    `@fontsource/<pkg>/latin-<weight>.css` instead of `<weight>.css`, which kills every
    `vietnamese` subset (nothing in this product is Vietnamese) and every `latin-ext` in the
    production graph.
-3. **latin-ext is dev-only** — the romanization diacritics (ī ā ū) belong to the en-\* fixture
-   courses and `/dev/type`, and fixtures only ship in dev builds — so `main.tsx` pulls the three
+3. **latin-ext is dev-only** — the romanization diacritics (ī ā ū) belong to the en-ar fixture
+   course and `/dev/type`, and fixtures only ship in dev builds — so `main.tsx` pulls the three
    `latin-ext` files via dynamic import inside an `import.meta.env.DEV` branch (the
    `typeRoute.tsx` pattern; never in a production graph). The PRD's other named marks (ʾ U+02BE,
    ʿ U+02BF, ḥ U+1E25) have **no glyph in Barlow at all** — that gap and its three options are
@@ -160,17 +160,45 @@ ceiling.
 | `js`             | gzip    |  94.9 KiB | 200 KiB | 105.1 KiB |
 | `shell`          | gzip    | 216.0 KiB | 230 KiB |  14.0 KiB |
 | `course:hi-mr`   | gzip    | 340.3 KiB | 360 KiB |  19.7 KiB |
-| `course:en-es`   | gzip    |  71.5 KiB | 360 KiB | 288.5 KiB |
+| `course:en-es`   | gzip    |  71.3 KiB | 360 KiB | 288.7 KiB |
 | `course:en-ar`   | gzip    |   7.0 KiB | 360 KiB | 353.0 KiB |
 | `precache:hi-mr` | gzip    | 556.4 KiB | 590 KiB |  33.6 KiB |
-| `precache:en-es` | gzip    | 287.5 KiB | 590 KiB | 302.5 KiB |
+| `precache:en-es` | gzip    | 287.3 KiB | 590 KiB | 302.7 KiB |
 | `precache:en-ar` | gzip    | 223.0 KiB | 590 KiB | 367.0 KiB |
 | `splash`         | raw     |  70.3 KiB | 100 KiB |  29.7 KiB |
 | `unmetered`      | files   |  0 files  | 0 files |         — |
 
-The strict learner build (hi-mr only, both fixtures held back) reads `first-paint` 172.5,
-`js` 94.2, `shell` 210.4, `course:hi-mr` 337.9, `precache:hi-mr` 548.3 KiB gzip — the same rows,
-smaller, which is why the limits are set from the dev build.
+The strict learner build (hi-mr and en-es; only the en-ar fixture held back, since #195) reads
+`first-paint` 173.1, `js` 94.7, `shell` 214.2, `course:hi-mr` 337.9, `course:en-es` 71.3,
+`precache:hi-mr` 552.0 and `precache:en-es` 285.4 KiB gzip — the same rows, smaller, which is why
+the limits are set from the dev build.
+
+### 4.4 What graduating a course actually cost (#195, en-es)
+
+The first test of the model: en-es dropped `fixture: true` and joined the learner build. Strict
+build, before → after:
+
+| row              | before | after | Δ |
+| ---------------- | -----: | ----: | -: |
+| `first-paint`    | 172.5 KiB | 173.1 KiB | **+0.6** |
+| `js`             |  94.2 KiB |  94.7 KiB | **+0.5** |
+| `shell`          | 210.4 KiB | 214.2 KiB | **+3.8** |
+| `course:hi-mr`   | 337.9 KiB | 337.9 KiB | **0.0** |
+| `precache:hi-mr` | 548.3 KiB | 552.0 KiB | **+3.7** |
+| `course:en-es`   | — | 71.3 KiB | new row |
+| `precache:en-es` | — | 285.4 KiB | new row |
+
+**`course:hi-mr` did not move by a single byte** — which is the whole point of §4.2's attribution,
+measured rather than asserted, on the row with the least headroom in the product (19.7 KiB in the
+dev build). What a Hindi learner does pay is `shell` **+3.8 KiB**, and the reason is real and
+shared: `tools/font-subset.ts` cuts Mukta's `latin` faces over the **union** of shipped courses
+(§4.2), so Spanish's accented glyphs land in the subset everyone downloads. Spanish L2 text renders
+in `--font-devanagari` (Mukta) like every L2 line, and Latin-1 accents are all the language needs —
+no `latin-ext`, no new face, no second script. `first-paint` and `js` move only because
+`courses.json` grew a row and the bundle a course.
+
+A third course written in Latin costs about the same again; one in a new script costs its own
+`course:` row instead, which is the arrangement §4.2 was built for.
 
 **One ceiling for every course** (360 KiB), not a table of per-course numbers: a limit keyed by
 course id would be logic about a course, and every course is entitled to the same room. It is
@@ -187,7 +215,7 @@ asset class (an `.mp3`, a `.wasm`, a second content root) must be given a budget
 rather than riding along inside a bigger row. It is a file-count gate, so a 0-byte newcomer trips
 it too.
 
-### 4.4 When a row goes red — in this order
+### 4.5 When a row goes red — in this order
 
 1. **Read which row it is.** `course:<id>` — only that course's learners pay, and the fix belongs
    in that course's bytes. `shell` — every learner in every course pays, so it is worth several
@@ -211,13 +239,14 @@ it too.
    it was under `total`: the catalogue no longer inflates any row, so a red row now means one
    course, or the shell, genuinely got heavier — a regression, not arithmetic.
 
-### 4.5 Known gap: the precache is not scoped per course yet
+### 4.6 Known gap: the precache is not scoped per course yet
 
 `tools/pwa.ts`'s `PRECACHE_GLOBS` still take `content/**/*.json` and `**/*.woff2`, so the service
 worker precaches **every** course's JSON and **every** font subset on first visit. Until that is
 scoped to the active course, `precache:<id>` is what a learner *should* pay, not what today's
 device actually pulls in the background — the honest figure for a Spanish learner's device today is
-still the full 634.8 KiB. `first-paint`, `shell` and `course:<id>` are exact as measured: they
+the whole strict build, **616.1 KiB gzip across 66 files** (#195 made that number two real courses
+rather than one course plus held-back fixtures). `first-paint`, `shell` and `course:<id>` are exact as measured: they
 describe what the browser fetches on the wire, which `unicode-range` and the per-screen content
 loader already scope correctly. Scoping the precache is **#211**, filed by this ticket and
 deliberately out of its scope.
