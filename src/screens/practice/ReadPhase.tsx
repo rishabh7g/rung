@@ -26,7 +26,7 @@
  * `src/silence.test.ts`.
  */
 import { useState } from 'react';
-import type { L2Lang } from '../../course/manifest.ts';
+import type { L2Written } from '../../course/manifest.ts';
 import { useStrings } from '../../course/strings.ts';
 import type { Sentence } from '../../course/types.ts';
 import { WhyPanel } from '../../components/WhyPanel.tsx';
@@ -50,7 +50,7 @@ interface ReadPhaseProps {
   /** The course's writing direction — every word on this card is its content or its copy. */
   dir?: string;
   /** The tags the L2 lines are written in (#186); the cue and the nudge are L1 and inherit. */
-  l2?: L2Lang;
+  l2?: L2Written;
 }
 
 export function ReadPhase({
@@ -97,12 +97,12 @@ export function ReadPhase({
           which is the `position: relative` (design/tokens.md §3). */}
       <div className={styles.plate}>
         <RegistrationMarks />
-        <p className={styles.display} dir={dir} lang={l2?.display}>
+        <p className={styles.display} dir={l2?.display.dir} lang={l2?.display.lang}>
           {sentence.display}
         </p>
         {/* Romanized courses only (PRD §4, [D20]): recognition, never something to produce. */}
         {sentence.script !== undefined && (
-          <p className={styles.script} lang={l2?.script}>
+          <p className={styles.script} dir={l2?.script.dir} lang={l2?.script.lang}>
             {sentence.script}
           </p>
         )}

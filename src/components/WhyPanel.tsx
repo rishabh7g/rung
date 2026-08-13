@@ -33,7 +33,7 @@ import { useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useIndex, useModules } from '../course/content.ts';
-import type { L2Lang } from '../course/manifest.ts';
+import type { L2Written } from '../course/manifest.ts';
 import { useStrings } from '../course/strings.ts';
 import type { ModuleContent, Word } from '../course/types.ts';
 import { resolveSentence, type WordRef } from '../engine/wordIndex.ts';
@@ -61,7 +61,7 @@ interface WhyPanelProps {
   /** The course's writing direction — every line here is its content or its copy. */
   dir?: string;
   /** The tags the L2 word rows are written in (#186). */
-  l2?: L2Lang;
+  l2?: L2Written;
 }
 
 export function WhyPanel({
@@ -121,7 +121,7 @@ interface WhyRowsProps {
   moduleId: string;
   display: string;
   dir?: string;
-  l2?: L2Lang;
+  l2?: L2Written;
 }
 
 /**

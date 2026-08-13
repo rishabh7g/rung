@@ -92,6 +92,7 @@ function courseRow(id: string, overrides: Partial<CourseRow> = {}): CourseRow {
     l2: 'Marathi',
     l1Tag: 'hi',
     l2Tag: 'mr',
+    l2Dir: 'ltr',
     pairLabel: 'hindi → marathi',
     scriptMode: 'native',
     dir: 'ltr',
@@ -593,6 +594,19 @@ describe('manifest validation', () => {
       'courses.json[4].id: "Hi_MR" must be lowercase letters, digits and single hyphens',
       'courses.json[5].fixture: must be a boolean when present',
     ]);
+  });
+
+  it('rejects a row that never says which way its L2 runs (#196)', () => {
+    const noL2Dir: Record<string, unknown> = { ...courseRow('hi-mr') };
+    delete noL2Dir['l2Dir'];
+
+    // `dir` is the course as the learner meets it; `l2Dir` is the language in its own script.
+    // en-ar differs on the two, so a row that declares only the first has not said enough.
+    expect(errorsFor([noL2Dir, { ...courseRow('en-ar'), l2Dir: 'sideways' }])).toEqual([
+      'courses.json[0].l2Dir: must be one of: ltr, rtl',
+      'courses.json[1].l2Dir: must be one of: ltr, rtl',
+    ]);
+    expect(errorsFor([{ ...courseRow('en-ar'), dir: 'ltr', l2Dir: 'rtl' }])).toEqual([]);
   });
 
   it('rejects a row whose language tags are missing or malformed (#186)', () => {
