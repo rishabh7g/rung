@@ -53,7 +53,7 @@ See design/PRD-engineering.md §4 for the diagram. Essentials:
 - **State v7** (`src/state/`): zustand + persist, localStorage key `rung:state`,
   shape keyed by courseId (PRD §F7 verbatim). Timestamps only via
   `src/state/clock.ts`.
-- **Service worker:** precache everything; zero network after first load.
+- **Service worker:** precache the shell, cache the active course (#211); zero network after first load.
 
 ## 4. Stack (decided — do not relitigate)
 
@@ -63,7 +63,7 @@ See design/PRD-engineering.md §4 for the diagram. Essentials:
 | react-router (HashRouter) | works on any static host + offline |
 | zustand + persist (version 7, migrations v5→v6→v7) | matches state-v7 contract |
 | **design/tokens.css** loaded globally; CSS Modules for layout | tokens are the single styling source — no hard-coded hex/px/font names (docs/design-contract.md) |
-| vite-plugin-pwa (or ~20-line vanilla SW) | precache-everything per design/pwa-checklist.md |
+| vite-plugin-pwa (or ~20-line vanilla SW) | offline per design/pwa-checklist.md — shell precached, active course cache-first (#211) |
 | vitest + @testing-library | engine is test-first |
 | ajv via tsx CLIs in tools/ | schema v5 + strings validation |
 | **Mukta + Barlow + Barlow Condensed, self-hosted** [D15] | per tokens.md; subset per course at build |

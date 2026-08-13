@@ -41,8 +41,9 @@ export class StringsError extends Error {
   }
 }
 
-/** Relative to `BASE_URL`, which Vite guarantees ends in a slash. */
-function stringsPath(courseId: string): string {
+/** Relative to `BASE_URL`, which Vite guarantees ends in a slash. Exported for the offline warm
+    (#211), which lists a course's files and must not spell one of them a second time. */
+export function stringsPath(courseId: string): string {
   return `content/${courseId}/strings.json`;
 }
 

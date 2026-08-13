@@ -22,7 +22,10 @@ import {
   coursesFromManifest,
   evaluate,
   fontScript,
+  formatPrecacheAudit,
   formatResult,
+  precacheAudit,
+  precachedUrls,
   walkDist,
   type Budget,
   type ShippedCourse,
@@ -384,5 +387,96 @@ describe('the one-line contract', () => {
     const result = evaluate(row(CATALOGUE, 'unmetered'), [shipped('media/ping.mp3', 0, 0)]);
 
     expect(formatResult(result)).toBe('BUDGET unmetered 0.0 KiB ≤ 0.0 KiB OVER — 1 file');
+  });
+});
+
+/* ------------------------------------------------------- the precache, measured (#211) */
+
+/**
+ * The one row that is read off the artefact instead of computed from the owner table. Before
+ * #211 the worker precached the whole catalogue and `precache:<id>` described a device that did
+ * not exist; the audit is what keeps the two from drifting apart again, in either direction —
+ * a course's bytes creeping back into the precache, or a shell file dropping out of it.
+ */
+describe('the precache audit: the worker must precache exactly the shell', () => {
+  const SHIPPED = [
+    shipped('index.html', 2_000),
+    shipped('manifest.webmanifest', 460),
+    shipped('assets/index-abc.js', 279_000, 89_000),
+    shipped('assets/index-abc.css', 55_000, 8_600),
+    shipped('assets/mukta-latin-400-x.woff2', 20_000, 20_000),
+    shipped('assets/mukta-devanagari-400-x.woff2', 86_000, 86_000),
+    shipped('content/courses.json', 600),
+    shipped('content/hi-mr/levels.json', 4_000),
+    shipped('icons/icon-192.png', 900),
+    shipped('icons/splash/splash-750x1334.png', 6_000, 6_000),
+    shipped('sw.js', 5_000, 1_800),
+    shipped('workbox-1b18e67d.js', 20_000, 6_000),
+  ];
+  const SHELL = [
+    'index.html',
+    'manifest.webmanifest',
+    'assets/index-abc.js',
+    'assets/index-abc.css',
+    'assets/mukta-latin-400-x.woff2',
+    'content/courses.json',
+    'icons/icon-192.png',
+  ];
+
+  it('reads the urls out of the minified worker the plugin emitted', () => {
+    const worker =
+      'e.precacheAndRoute([{url:"index.html",revision:"93"},' +
+      '{url:"assets/index-abc.js",revision:null}],{})';
+
+    expect(precachedUrls(worker)).toEqual(['index.html', 'assets/index-abc.js']);
+  });
+
+  it('passes when the precache is the shell — the worker’s own two scripts excepted', () => {
+    const audit = precacheAudit(SHELL, SHIPPED, CATALOGUE);
+
+    // `sw.js` and `workbox-*.js` are shell bytes every learner downloads, and workbox never
+    // precaches itself: the browser keeps a worker's script in the registration instead.
+    expect(audit).toMatchObject({ ok: true, extra: [], missing: [] });
+    expect(audit.gzipBytes).toBe(
+      SHIPPED.filter((f) => SHELL.includes(f.path)).reduce((sum, file) => sum + file.gzipBytes, 0),
+    );
+  });
+
+  it('fails on a course’s bytes in the precache — the regression #211 closed', () => {
+    const audit = precacheAudit(
+      [...SHELL, 'content/hi-mr/levels.json', 'assets/mukta-devanagari-400-x.woff2'],
+      SHIPPED,
+      CATALOGUE,
+    );
+
+    expect(audit.ok).toBe(false);
+    expect(audit.extra).toEqual([
+      'content/hi-mr/levels.json',
+      'assets/mukta-devanagari-400-x.woff2',
+    ]);
+  });
+
+  it('fails on a shell file the precache dropped — that one is a 404 on a plane', () => {
+    const audit = precacheAudit(
+      SHELL.filter((file) => file !== 'assets/index-abc.css'),
+      SHIPPED,
+      CATALOGUE,
+    );
+
+    expect(audit.ok).toBe(false);
+    expect(audit.missing).toEqual(['assets/index-abc.css']);
+  });
+
+  it('fails on a worker that lists nothing — an empty comparison must never read green', () => {
+    expect(precacheAudit([], SHIPPED, CATALOGUE).ok).toBe(false);
+  });
+
+  it('reads like the harness — one line, files, bytes, verdict', () => {
+    expect(formatPrecacheAudit(precacheAudit(SHELL, SHIPPED, CATALOGUE))).toBe(
+      'BUDGET precache 7 files 116.1 KiB gzip = shell ok',
+    );
+    expect(formatPrecacheAudit(precacheAudit([], SHIPPED, CATALOGUE))).toBe(
+      'BUDGET precache 0 files 0.0 KiB gzip = shell MISMATCH',
+    );
   });
 });

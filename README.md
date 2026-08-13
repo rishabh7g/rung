@@ -1267,22 +1267,36 @@ Findings, screenshots, the shipped byte count and the one real gap — the roman
 ṣ ḍ ṭ ẓ ʾ ʿ` are outside Mukta's `unicode-range` and fall through to the system face, now that
 en-ar ships (#202) — are in [`docs/04-font-notes.md`](docs/04-font-notes.md) §4/§4.1.
 
-### The PWA — precache everything, route nothing
+### The PWA — precache the shell, cache the active course
 
-The app installs a service worker that precaches **the entire build** and never touches the
-network again (#90, `design/pwa-checklist.md` §3). `tools/pwa.ts` holds the whole configuration —
-`vite.config.ts` is one line, `VitePWA(pwaOptions())` — and four globs say what "everything"
-means: `**/*.{html,css,js}`, `**/*.woff2`, `content/**/*.json`, `icons/*.png`. A strict build
-precaches **90 files / 1964 KiB** now that hi-mr, en-es and en-ar all ship L1-M1..M10 (#195,
-#202), and a dev-content build precaches the same list — there is no fixture content left to add
-to it. No learner downloads all of it: the budget's `precache:<id>` rows meter what one course's
-device actually keeps (docs/05-perf-notes.md §4).
+The app installs a service worker that puts everything the learner needs on the device and then
+never touches the network again (#90, `design/pwa-checklist.md` §3). `tools/pwa.ts` holds the
+whole configuration — `vite.config.ts` hands it the base and the content revision — and it is
+split in two (#211):
 
-There is deliberately **no `runtimeCaching`**. Zero network after first load is the product
-(PRD-engineering §3, §10), so a request the precache does not answer is a bug in the app, not a
-case for a network fallback. `registerType: 'autoUpdate'`: a new build's worker skips waiting,
-claims the page and reloads it — this product never asks a learner to think about versions —
-and `cleanupOutdatedCaches` deletes the previous build's cache on activate.
+- **Precached, at install: the shell.** `**/*.{html,css,js}`, `**/*.woff2` minus the course
+  script subsets, `content/courses.json`, `icons/*.png`. **17 files / 451 KiB** with hi-mr, en-es
+  and en-ar all shipping L1-M1..M10.
+- **Runtime, cache-first, warmed when a course is opened: that course.** `content/<id>/**.json`
+  and the course's own script subsets — 26 files for hi-mr, 23 for en-es, 24 for en-ar.
+  `src/pwa/offlineCourse.ts` fetches them the moment a course resolves (which is also the
+  course-switch path), so the ladder is browsable offline from the first online visit.
+
+It used to precache the entire build — 90 files — which was defensible with one course and became
+a Spanish learner's phone storing hi-mr's Devanagari with three. `tools/payload-budget.ts`'s
+`precacheAudit()` now reads the URL list out of the emitted `dist/sw.js` and requires it to equal
+the budget's `shell` row file for file, so every `scripts/verify.sh` ends with
+`BUDGET precache 17 files 207.3 KiB gzip = shell ok`.
+
+Both runtime routes are **`CacheFirst`** and there is deliberately no `NetworkFirst` and no
+`StaleWhileRevalidate` anywhere: zero network after first load is the product (PRD-engineering §3,
+§10), so after the warm the active course costs nothing on the wire, and a *shell* request the
+precache cannot answer is still a bug in the app rather than a case for a fallback. Freshness is
+the cache **name**'s job — it carries a hash of the emitted content tree, so new content means a
+new cache and unchanged content re-downloads nothing. `registerType: 'autoUpdate'`: a new build's
+worker skips waiting, claims the page and reloads it — this product never asks a learner to think
+about versions — and `cleanupOutdatedCaches` deletes the previous build's precache on activate
+(the course caches are not precaches and survive it, which is the point).
 
 - **The manifest is the checklist.** `design/pwa-checklist.md` §3.1 prints the exact JSON, and
   `tools/pwa.test.ts` **parses that block out of the checklist** and deep-equals it against what

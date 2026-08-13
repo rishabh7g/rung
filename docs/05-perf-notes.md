@@ -47,7 +47,8 @@ After, per file, a strict learner build (`npx vite build` after the strict `cont
 
 The service worker precache lists exactly these nine woff2 and nothing else — no `.woff`, no
 `latin-ext`, no `vietnamese` anywhere in `dist/` (#90; the precache globs are unchanged, the
-files behind them shrank).
+files behind them shrank). *Since #211 it lists **six**: the three script subsets moved to the
+runtime route the active course warms (§4.7).*
 
 ## 2. The cuts, and who authorised each
 
@@ -277,20 +278,40 @@ it too.
    it was under `total`: the catalogue no longer inflates any row, so a red row now means one
    course, or the shell, genuinely got heavier — a regression, not arithmetic.
 
-### 4.7 Known gap: the precache is not scoped per course yet
+### 4.7 Closed: `precache:<id>` now describes the device (#211, 2026-08-13)
 
-`tools/pwa.ts`'s `PRECACHE_GLOBS` still take `content/**/*.json` and `**/*.woff2`, so the service
-worker precaches **every** course's JSON and **every** font subset on first visit. Until that is
-scoped to the active course, `precache:<id>` is what a learner *should* pay, not what today's
-device actually pulls in the background — the honest figure for a Spanish learner's device today is
-the whole strict build, **616.1 KiB gzip across 66 files** (#195 made that number two real courses
-rather than one course plus held-back fixtures). `first-paint`, `shell` and `course:<id>` are exact as measured: they
-describe what the browser fetches on the wire, which `unicode-range` and the per-screen content
-loader already scope correctly. Scoping the precache is **#211**, filed by this ticket and
-deliberately out of its scope.
+This section used to record a gap. `tools/pwa.ts`'s `PRECACHE_GLOBS` took `content/**/*.json` and
+`**/*.woff2`, so the worker precached **every** course's JSON and **every** font subset on first
+visit, and `precache:<id>` was what a learner *should* pay rather than what the device pulled. With
+three shipping courses the honest figure for a Spanish learner was the whole strict build —
+**90 precached entries, 1.92 MiB raw**, against the 285.9 KiB gzip her row claimed.
 
-A second, smaller gap in the same direction: `tools/font-subset.ts` unions the repertoires of every
-shipped course into one set of subset files per script, so if two Devanagari courses ever ship,
+**#211 closed it.** The precache is the **shell** and nothing else, and the active course reaches
+the device through two `CacheFirst` runtime routes warmed when the course is opened
+(`docs/05-pwa-notes.md` §3). The emitted worker went **90 entries → 17**; the four woff2 and 69
+JSON that left are exactly the bytes `attribute()` charges to a course. So `precache:<id>` is now
+what it always claimed to be: `shell` + the one course, on the device, for real.
+
+It is a **measurement, not an intention**. `tools/payload-budget.ts`'s `precacheAudit()` reads the
+URL list out of the `dist/sw.js` the build just emitted and requires it to equal the `shell` row
+file for file — minus `sw.js` and `workbox-*.js`, which are shell bytes that workbox never
+precaches because the browser keeps a worker's script in its registration. Every
+`scripts/verify.sh` therefore ends with a line off the artefact:
+
+    BUDGET precache 17 files 207.3 KiB gzip = shell ok
+
+It goes red in both directions — a course's bytes creeping back into the precache, and a shell file
+dropping out of it (the second is a 404 on a plane, and is the more dangerous of the two).
+
+The rows themselves did not move except by the weight of the code that does this: `shell` 214.6 →
+**215.8 KiB** gzip and `first-paint` 173.5 → **174.7 KiB** (+1.2 KiB each — `src/pwa/offlineCourse.ts`
+and the warm in the bundle), so every `precache:<id>` is +1.2 KiB. `course:hi-mr`,
+`course:en-es` and `course:en-ar` are unchanged to the tenth of a KiB. That is the trade: about a
+kilobyte on the wire for every learner, against 258 KiB of Devanagari a Spanish learner's phone no
+longer stores.
+
+**What is still not scoped**, a smaller gap in the same direction: `tools/font-subset.ts` unions
+the repertoires of every shipped course into one set of subset files per script, so if two Devanagari courses ever ship,
 each will carry the other's glyphs and both `course:` rows will charge for the union. Today exactly
 one course reads each script, so the numbers above are exact; `attribute()` charges a shared subset
 to every course that reads its script, which keeps the arithmetic honest when that changes.

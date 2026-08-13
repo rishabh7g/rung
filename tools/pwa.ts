@@ -16,13 +16,41 @@
  * from `design/tokens.css` (`--color-bg`), so the manifest cannot drift from the app's own paper
  * ground. The icons are generated from the header rails mark by `tools/make-icons.ts`.
  *
- * The service worker precaches EVERYTHING and routes nothing at runtime. That is not a
- * performance choice: PRD-engineering §3/§10 is zero network after first load, so a request the
- * precache does not answer is a bug in the app rather than a case for a network fallback. There
- * is deliberately no `runtimeCaching`.
+ * **The worker precaches the SHELL and runtime-caches the ACTIVE COURSE (#211).** It used to
+ * precache everything and route nothing, on the reasoning that PRD-engineering §3/§10 is zero
+ * network after first load — but "everything" is the whole CATALOGUE, and a manifest baked at
+ * build time cannot know which course the learner will pick at runtime. So a Spanish learner's
+ * phone downloaded hi-mr's ~262 KiB of Devanagari in the background, for ever, and #207's
+ * `precache:<id>` budget row described a device that did not exist.
+ *
+ * What replaces it keeps the promise and drops the waste. The precache is exactly the files the
+ * payload budget attributes to `shell` (`tools/payload-budget.ts`) — the document, the bundle,
+ * the CSS, the Barlow UI faces, `courses.json`, the icons — and two **cache-first** runtime
+ * routes hold what only one course's learner pays for: `content/<id>/**` and that course's own
+ * script subsets. `src/pwa/offlineCourse.ts` warms them the moment a course resolves, so the
+ * offline promise moves from "everything, at install" to "the learner's own course, from the
+ * first time it is opened online" (`docs/05-pwa-notes.md` §3.1 states the tradeoff plainly).
+ *
+ * Cache-first, never network-first: after the warm there is still zero runtime network for the
+ * active course, which is the invariant §10 is actually about. Staleness is handled the way the
+ * precache handles it — by revision. The content cache's NAME carries a hash of the emitted
+ * content tree (`contentRevision()`), so a build that changes a course's bytes writes a new cache
+ * and `src/pwa/offlineCourse.ts` drops the old one; a build that does not, re-uses it and
+ * re-downloads nothing. The font subsets need no revision: Vite hashes their filenames.
  */
+import { createHash } from 'node:crypto';
+import { readdirSync, readFileSync, statSync } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import type { ManifestOptions, VitePWAOptions } from 'vite-plugin-pwa';
 import { BRAND } from '../src/brand.ts';
+// The names the worker writes and the app reads, declared once in `src/` (like `BRAND`): a cache
+// named by one half and looked for by the other is offline breakage with no error anywhere.
+import { contentCacheName, COURSE_FONT_CACHE } from '../src/pwa/cacheNames.ts';
+// The budget's owner table decides what the precache leaves out, so the two cannot drift: a
+// script listed there is a script whose subsets are charged to a course, and a file charged to a
+// course is a file the shell precache must not carry. One-way — the gate never imports this.
+import { COURSE_SCRIPTS } from './payload-budget.ts';
 import { token } from './tokens.ts';
 
 /** Where the generated icons live, under `public/`, so Vite copies them to `dist/` verbatim. */
@@ -111,26 +139,153 @@ export const pwaManifest = (base = DEFAULT_BASE): Partial<ManifestOptions> => ({
 const PLUGIN_DEFAULTS_DROPPED = { scope: undefined };
 
 /**
- * What the precache must contain, as globs over `dist/`.
+ * What the precache must contain, as globs over `dist/` — the SHELL, and only the shell (#211).
  *
- * Each line is a thing that breaks offline by being absent, not a file type someone thought to
- * list: the shell (`index.html` + the hashed JS/CSS bundles, which is where `design/tokens.css`
- * ends up), every bundled face (#85 ships woff2 only — `vite.config.ts` strips @fontsource's
- * `.woff` fallback), the whole of `public/content/` as the build emitted it (`courses.json` plus
- * each course's `levels.json`, `strings.json`, `modules/*.json` and `index/*.json`), and the
- * icons. `tools/pwa.test.ts` asserts the content and font lines are still here.
+ * Each line is a thing that breaks offline for EVERY course by being absent, not a file type
+ * someone thought to list: the shell itself (`index.html` + the hashed JS/CSS bundles, which is
+ * where `design/tokens.css` ends up), the bundled faces (#85 ships woff2 only — `vite.config.ts`
+ * strips @fontsource's `.woff` fallback), the course manifest the app boots from, and the icons.
+ *
+ * Two lines used to be wider and are now deliberately narrow:
+ *
+ *   • `content/courses.json`, not `content/**\/*.json`. The manifest is the one content file
+ *     every learner in every course reads — the boot gate resolves the active course out of it
+ *     before anything else can happen — so it is shell. A course's own `levels.json`,
+ *     `strings.json`, `modules/*.json`, `index/*.json` and `sizes.json` are that course's bytes
+ *     and reach the device through `COURSE_CONTENT_ROUTE` when the course is opened.
+ *   • `**\/*.woff2` MINUS `PRECACHE_IGNORES`. The Barlow faces and the course faces' shared
+ *     `latin` subsets render the shell in every course, so they are shell; a script subset
+ *     (`mukta-devanagari-*`) is read by the courses written in that script and by nobody else.
  *
  * The icons line is `*`, not `**`, ON PURPOSE: `*` does not cross `/`, so the iOS splash set in
  * `icons/splash/` (#115, `tools/make-splash.ts`) stays out of the precache. The app never
  * fetches a splash image — Safari itself does, once, at Add-to-Home-Screen — so precaching the
  * set would make every first visit download ~70 KiB it can never use.
+ *
+ * `tools/pwa.test.ts` holds this list to the budget's attribution file by file: what these globs
+ * select over a `dist/` listing must be exactly what `tools/payload-budget.ts` calls `shell`.
  */
 export const PRECACHE_GLOBS = [
   '**/*.{html,css,js}',
   '**/*.woff2',
-  'content/**/*.json',
+  'content/courses.json',
   `${ICONS_DIR}/*.png`,
 ];
+
+/**
+ * The files the `**\/*.woff2` line would otherwise sweep in: every generated script subset, named
+ * `<face>-<script>-<weight>-<hash>.woff2` by `tools/font-subset.ts` (the hash is Vite's). Written
+ * from `COURSE_SCRIPTS` rather than typed out, so a course in a new script is excluded from the
+ * shell precache by the same table that gives it a `course:` budget row.
+ */
+export const PRECACHE_IGNORES = [`**/*-{${COURSE_SCRIPTS.join(',')}}-*.woff2`];
+
+/** How many script subsets the font cache keeps — today's build ships 3, so this is several
+    builds' worth of history before the least recently used one is dropped. */
+const COURSE_FONT_CACHE_ENTRIES = 32;
+
+/** Where the content build emits what `dist/content/` will contain. */
+const EMITTED_CONTENT_DIR = path.join(
+  path.dirname(fileURLToPath(import.meta.url)),
+  '..',
+  'public',
+  'content',
+);
+
+/**
+ * A hash of the content this build is about to ship — the runtime cache's revision (#211).
+ *
+ * The precache versions itself: workbox stores a revision per file and a new build re-downloads
+ * only what changed. A runtime cache has no such thing, and course content is served from URLs
+ * that never change (`content/hi-mr/levels.json`), so a cache-first route with a fixed cache name
+ * would freeze a learner on the content they first downloaded — new rungs would ship and never
+ * arrive, silently, which is the worst way. Hashing the emitted tree into the cache's NAME gives
+ * the same guarantee the precache has: content changed → new cache → warmed fresh, old one
+ * dropped; content unchanged → same cache → not one byte re-downloaded.
+ *
+ * `dev` when there is nothing to hash: `npm test` runs before `npm run content:build` in
+ * `scripts/verify.sh`, and a name is still needed for the constant the app compiles against.
+ */
+export function contentRevision(dir = EMITTED_CONTENT_DIR): string {
+  const hash = createHash('sha256');
+  let files: string[];
+  try {
+    files = contentFiles(dir).sort();
+  } catch {
+    return 'dev';
+  }
+  if (files.length === 0) return 'dev';
+
+  for (const file of files) {
+    hash.update(path.relative(dir, file).split(path.sep).join('/'));
+    hash.update(readFileSync(file));
+  }
+  return hash.digest('hex').slice(0, 12);
+}
+
+/** Every file under `dir`, recursively. Throws when the directory is not there at all. */
+function contentFiles(dir: string): string[] {
+  return readdirSync(dir).flatMap((entry) => {
+    const full = path.join(dir, entry);
+    return statSync(full).isDirectory() ? contentFiles(full) : [full];
+  });
+}
+
+/**
+ * `content/<id>/…` for any course id, and NOT `content/courses.json` — the manifest is shell and
+ * is precached, so it must never be answered from a course's cache. A RegExp rather than a
+ * string: the base moves with the deploy (`/content/…` at `/`, `/rung/content/…` on Pages) and
+ * these routes are same-origin, where workbox matches a RegExp anywhere in the URL.
+ */
+export const COURSE_CONTENT_ROUTE = /\/content\/[^/]+\/[^?#]+\.json$/;
+
+/**
+ * One workbox route, as vite-plugin-pwa takes it. Read off the plugin's own option type rather
+ * than imported from `workbox-build`: that package is a transitive dependency the repo has never
+ * declared, and a type import is exactly how an undeclared one becomes load-bearing.
+ */
+type RuntimeCachingRule = NonNullable<
+  NonNullable<VitePWAOptions['workbox']>['runtimeCaching']
+>[number];
+
+/** The generated script subsets, the same set `PRECACHE_IGNORES` keeps out of the precache. */
+export const COURSE_FONT_ROUTE = new RegExp(`-(${COURSE_SCRIPTS.join('|')})-\\d{3}[^/]*\\.woff2$`);
+
+/**
+ * The two runtime routes, both **cache-first** (#211).
+ *
+ * Cache-first is the whole point: after the warm, an active course costs zero network for as long
+ * as the build lives — the same promise the precache made, kept for the course the learner
+ * actually chose. Nothing here is a network fallback for a missing precache entry; a shell
+ * request the precache cannot answer is still a bug in the app.
+ *
+ * There is deliberately no `NetworkFirst` and no `StaleWhileRevalidate` anywhere: both would put
+ * a request on the wire on every launch, which is exactly what PRD-engineering §3/§10 forbids.
+ * Freshness is the cache NAME's job (`contentRevision`), not a revalidation's.
+ */
+export function runtimeCaching(revision: string): RuntimeCachingRule[] {
+  return [
+    {
+      urlPattern: COURSE_CONTENT_ROUTE,
+      handler: 'CacheFirst',
+      options: {
+        cacheName: contentCacheName(revision),
+        // Nothing but a real 200 is worth keeping offline; an opaque response would cache a
+        // failure that the app could never tell from content.
+        cacheableResponse: { statuses: [200] },
+      },
+    },
+    {
+      urlPattern: COURSE_FONT_ROUTE,
+      handler: 'CacheFirst',
+      options: {
+        cacheName: COURSE_FONT_CACHE,
+        expiration: { maxEntries: COURSE_FONT_CACHE_ENTRIES, purgeOnQuotaError: true },
+        cacheableResponse: { statuses: [200] },
+      },
+    },
+  ];
+}
 
 /**
  * The precache refuses files over 2 MiB by default and only warns — offline would break quietly,
@@ -145,8 +300,15 @@ const MAX_PRECACHED_FILE_BYTES = 5 * 1024 * 1024;
  * `base` is the path the build is served from; the plugin already prefixes the precache URLs and
  * the worker's own registration scope with it, so the only thing it must be handed by name is the
  * manifest (see `pwaManifest`).
+ *
+ * `revision` is the content hash the runtime cache is named after (#211). It is a parameter so
+ * `vite.config.ts` can hand the SAME value to the app (`__RUNG_CONTENT_CACHE__`), which is what
+ * lets the page drop the caches of older content builds.
  */
-export function pwaOptions(base = DEFAULT_BASE): Partial<VitePWAOptions> {
+export function pwaOptions(
+  base = DEFAULT_BASE,
+  revision = contentRevision(),
+): Partial<VitePWAOptions> {
   return {
     // A shipped build never negotiates an update with the learner: the new worker takes over and
     // the page reloads itself. There is no "refresh to update" toast in this product.
@@ -160,17 +322,21 @@ export function pwaOptions(base = DEFAULT_BASE): Partial<VitePWAOptions> {
     includeManifestIcons: false,
     workbox: {
       globPatterns: PRECACHE_GLOBS,
+      globIgnores: PRECACHE_IGNORES,
       maximumFileSizeToCacheInBytes: MAX_PRECACHED_FILE_BYTES,
       // Every build hashes its own precache; activating one deletes the caches of the ones
-      // before it, so a phone never carries two ladders' worth of content.
+      // before it, so a phone never carries two shells' worth of assets. The course caches are
+      // NOT workbox precaches and survive this, which is the point: an update that does not
+      // change a course's content leaves that course's offline copy exactly where it is.
       cleanupOutdatedCaches: true,
       clientsClaim: true,
       skipWaiting: true,
       // A deep link typed by hand still lands on the shell; HashRouter reads the route out of
       // the fragment, which never reaches the network.
       navigateFallback: 'index.html',
-      // Nothing. There is no runtime network to cache (Invariant: zero network after first load).
-      runtimeCaching: [],
+      // The active course, cache-first — see `runtimeCaching` above for why these two exist and
+      // why neither of them ever prefers the network.
+      runtimeCaching: runtimeCaching(revision),
     },
     // `vite dev` serves no worker at all, so HMR is never fighting a cache and `npm run dev` is
     // exactly what it was before this ticket. The worker exists in `build` and `preview`.

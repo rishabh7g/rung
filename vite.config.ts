@@ -3,7 +3,7 @@ import { defineConfig, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 import { BRAND } from './src/brand.ts';
-import { pwaOptions } from './tools/pwa.ts';
+import { contentRevision, pwaOptions } from './tools/pwa.ts';
 import { token } from './tools/tokens.ts';
 
 /**
@@ -57,11 +57,21 @@ function woff2Only(): Plugin {
  */
 const base = process.env.VITE_BASE ?? '/';
 
+/**
+ * The revision of the content this build ships (#211), computed once and told to both halves of
+ * the offline story: the service worker names its course-content cache after it
+ * (`tools/pwa.ts`), and the app compiles it in so it can compose the same name
+ * (`src/pwa/cacheNames.ts`), warm that cache and drop the caches of older content builds. One
+ * value, so the page and the worker cannot disagree about which cache is current.
+ */
+const contentRev = contentRevision();
+
 // https://vite.dev/config/
 export default defineConfig({
   base,
+  define: { __RUNG_CONTENT_REVISION__: JSON.stringify(contentRev) },
   // VitePWA runs after woff2Only so the precache manifest sees the fonts that actually shipped.
-  plugins: [react(), htmlValues(), woff2Only(), VitePWA(pwaOptions(base))],
+  plugins: [react(), htmlValues(), woff2Only(), VitePWA(pwaOptions(base, contentRev))],
   // Never inline assets as base64. The per-course Mukta subsets (#113) can drop under Vite's
   // 4 KB default, and inlining one would hide it from the precache glob, the payload budget
   // (`tools/payload-budget.ts`) and the byte accounting — while inflating it by a third.

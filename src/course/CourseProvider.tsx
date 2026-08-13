@@ -15,6 +15,7 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from '
 import { loadManifest, resolveActiveCourse, type Course } from './manifest.ts';
 import { loadStrings, StringsContext, type Strings } from './strings.ts';
 import { BootLoadingScreen, ContentErrorScreen } from './BootScreens.tsx';
+import { warmActiveCourse } from '../pwa/offlineCourse.ts';
 import { useAppStore } from '../state/store.ts';
 
 export interface CourseContextValue {
@@ -114,6 +115,26 @@ export function CourseProvider({ children }: CourseProviderProps) {
     root.lang = active.l1Tag;
     root.dir = active.dir;
   }, [active]);
+
+  /**
+   * The course's offline copy, warmed behind the first screen (#211).
+   *
+   * The service worker precaches the shell only — a manifest baked at build time cannot know
+   * which course a learner will pick — so the course's own content and faces reach the device
+   * here, through the worker's cache-first routes, the first time the course is opened online.
+   * This is also the SWITCH path: the provider re-boots into the chosen course, so the new
+   * course is warmed while the learner is still looking at the toast that confirmed it.
+   *
+   * Fire and forget, and deliberately not cancelled on unmount: the fetches are for the cache,
+   * not for this render, and an abandoned warm is a course that is missing files offline. It is
+   * a no-op wherever there is no worker to warm into (`npm run dev`, jsdom, a first visit before
+   * the worker claims the page) — `src/pwa/offlineCourse.ts` says how.
+   */
+  const activeCourseId = active?.id;
+  useEffect(() => {
+    if (activeCourseId === undefined) return;
+    void warmActiveCourse(activeCourseId);
+  }, [activeCourseId]);
 
   if (boot.status === 'loading') return <BootLoadingScreen />;
   if (boot.status === 'error') return <ContentErrorScreen detail={boot.detail} />;
