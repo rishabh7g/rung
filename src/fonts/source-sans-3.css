@@ -1,0 +1,65 @@
+/**
+ * Source Sans 3, subset per course (#222) — the four marks of the romanization that Mukta cannot
+ * draw. `tools/font-subset.ts` generates the files into `./generated/` from the content build's
+ * output (`npm run fonts:build`; `predev`/`prebuild` both chain it after `content:build`).
+ *
+ * Why a fifth bundled face, for four codepoints: every L2 line in the product is
+ * `--text-l2-*` → `--font-devanagari`, and a romanized course sets its L2 in Latin letters with
+ * ALA-LC diacritics. Mukta's own `latin-ext` cut (`src/fonts/mukta.css`, added by the same ticket)
+ * draws twelve of the sixteen marks en-ar ships — ā ī ū, ḍ Ḍ ḥ Ḥ ṣ Ṣ ṭ Ṭ — in the same face as the
+ * letters beside them. It has no glyph at U+02BE (`ʾ`, hamza), U+02BF (`ʿ`, ʿayn), U+1E92 or
+ * U+1E93 (`Ẓ ẓ`), and those four fell through to `system-ui`: a different face, at a different
+ * weight and advance, inside the largest text on the screen (docs/04-font-notes.md §4.1).
+ *
+ * WHY THIS FACE. It is chosen on measured fit next to Mukta's Latin, not on taste — §9.2 has the
+ * table. Mukta's x-height is 468/1000 em and its cap height 630; Source Sans 3's are 486 and 660
+ * (+3.8 % and +4.8 %), the closest of every candidate with the coverage. Noto Sans, the obvious
+ * sibling of the bundled Noto Naskh Arabic, is 536 and 714 — 14 % taller in the x-height, which
+ * at `--text-l2-hero`'s 32px is a visibly bigger glyph in the middle of a word. Both are SIL OFL
+ * 1.1 (`node_modules/@fontsource/source-sans-3/LICENSE`), which permits bundling and subsetting;
+ * §9.1 carries the licence note.
+ *
+ * THREE weights, 400/600/700: the marks sit inside `--text-l2-cue`, `--text-l2-card` /
+ * `--text-l2-list` and `--text-l2-hero`, so they render at every weight Mukta does.
+ * `src/fonts.test.ts` derives that from the ramp rather than trusting this comment, and holds
+ * this face to it exactly as it holds Mukta and Noto Naskh Arabic.
+ *
+ * `src/styles/tokenOverrides.css` is what puts this family into `--font-devanagari`, behind Mukta
+ * — `design/` is read-only and re-copied wholesale, so the override lives in `src/` and the reason
+ * lives in `docs/` (docs/design-contract.md).
+ */
+
+/* source-sans-3-latin-ext-400 */
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./generated/source-sans-3-latin-ext-400.woff2') format('woff2');
+  /* Exactly the gap, and nothing else. A wider range would download this face to draw glyphs
+     Mukta already has; a range with a space, a joiner or a digit in it would download it for
+     every course in the catalogue, which is the bug #211 closed in the precache and must not come
+     back through the font system. U+1E92-1E93 overlaps Mukta's own latin-ext range on purpose:
+     Mukta is named first in --font-devanagari and has nothing to give there. */
+  unicode-range: U+02BE-02BF, U+1E92-1E93;
+}
+
+/* source-sans-3-latin-ext-600 */
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./generated/source-sans-3-latin-ext-600.woff2') format('woff2');
+  unicode-range: U+02BE-02BF, U+1E92-1E93;
+}
+
+/* source-sans-3-latin-ext-700 */
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('./generated/source-sans-3-latin-ext-700.woff2') format('woff2');
+  unicode-range: U+02BE-02BF, U+1E92-1E93;
+}

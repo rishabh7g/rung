@@ -261,6 +261,10 @@ describe('the runtime routes carry the active course (#211)', () => {
       'mukta-devanagari-400-Ds4rvQo0.woff2',
       'mukta-devanagari-700-CyvOqMpp.woff2',
       'noto-naskh-arabic-arabic-700-BqQRendX.woff2',
+      // #222 — the romanization's diacritics: a course face, not a shell one, and the file name
+      // it is told apart by shares a prefix with the shell's `mukta-latin-*`.
+      'mukta-latin-ext-600-Kd93nfQ1.woff2',
+      'source-sans-3-latin-ext-700-Zx01pLm2.woff2',
       'mukta-latin-400-DkrLMHu6.woff2',
       'barlow-latin-400-normal-qiz4-Cze.woff2',
       'barlow-condensed-latin-600-normal-DepVgxBB.woff2',

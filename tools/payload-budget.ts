@@ -20,7 +20,8 @@
  *   • `shell`   — what every course pays for: the document, the bundle, the CSS, the Latin UI
  *                 faces, the manifest, the icons, `courses.json`.
  *   • `course:<id>` — what only that course's learner pays for: `content/<id>/**` plus the font
- *                 subsets its script needs (Mukta Devanagari is hi-mr's; #197's Naskh is en-ar's).
+ *                 subsets its script needs (Mukta Devanagari is hi-mr's; #197's Naskh and #222's
+ *                 two diacritic cuts are en-ar's).
  *   • `splash`  — the iOS startup set, never precached and never fetched by the app (#115).
  *
  * — and the rows are unions of owners, so **adding a course cannot move another course's row**.
@@ -65,11 +66,21 @@ const DIST = path.join(REPO_ROOT, 'dist');
 /* --------------------------------------------------------- courses, as far as bytes go */
 
 /**
- * The non-Latin scripts a course brings its own font subsets for. Latin is deliberately absent:
- * the shell renders it in every course, so its faces are `shell` bytes, not a course's.
+ * The scripts a course brings its own font subsets for. Plain Latin is deliberately absent: the
+ * shell renders it in every course, so its faces are `shell` bytes, not a course's.
+ *
+ * `latin-ext` is Latin and is here anyway (#222), because it is not the shell's: it is the
+ * diacritics of a ROMANIZED course's L2 — ā ī ū ḍ ḥ ṣ ṭ from Mukta's own latin-ext cut, ʾ ʿ Ẓ ẓ
+ * from Source Sans 3. No shell string carries one, and a course that writes its L2 in its native
+ * script never prints one, so charging them to the shell would bill every learner for a face only
+ * romanized courses paint.
  */
-export const COURSE_SCRIPTS = ['devanagari', 'arabic'] as const;
+export const COURSE_SCRIPTS = ['devanagari', 'arabic', 'latin-ext'] as const;
 export type CourseScript = (typeof COURSE_SCRIPTS)[number];
+
+/** The script a romanized course's L2 line is written in whatever its native script is (#222) —
+    Latin letters plus the transliteration marks. `scriptMode`, not a tag, decides it. */
+const ROMANIZATION_SCRIPT: CourseScript = 'latin-ext';
 
 /**
  * Which script a language tag is written in — **data, not logic** (Invariant 1: nothing in this
@@ -88,11 +99,12 @@ export const SCRIPT_BY_LANGUAGE_TAG: Readonly<Record<string, CourseScript>> = {
 };
 
 /**
- * The faces `tools/font-subset.ts` generates for course text — Mukta for Devanagari, Noto Naskh
- * Arabic for the quiet native line (#197). A slug list, not course ids: the shell's own faces
+ * The faces `tools/font-subset.ts` generates for course text — Mukta for Devanagari and for the
+ * romanization's diacritics (#222), Noto Naskh Arabic for the quiet native line (#197), Source
+ * Sans 3 for the four marks Mukta lacks (#222). A slug list, not course ids: the shell's own faces
  * (Barlow, Barlow Condensed) are everything else, and they are the ones a first paint fetches.
  */
-export const COURSE_FACE_SLUGS = ['mukta', 'noto-naskh-arabic'] as const;
+export const COURSE_FACE_SLUGS = ['mukta', 'noto-naskh-arabic', 'source-sans-3'] as const;
 
 /** One row of the emitted `dist/content/courses.json`, reduced to what the budget needs. */
 export interface ShippedCourse {
@@ -108,12 +120,18 @@ export interface ShippedCourse {
 export function coursesFromManifest(manifest: unknown): ShippedCourse[] {
   const rows = (manifest as { courses?: unknown }).courses;
   if (!Array.isArray(rows)) return [];
-  return rows.map((row: { id?: unknown; l1Tag?: unknown; l2Tag?: unknown }) => {
-    const scripts = [row.l1Tag, row.l2Tag]
-      .map((tag) => (typeof tag === 'string' ? SCRIPT_BY_LANGUAGE_TAG[tag] : undefined))
-      .filter((script): script is CourseScript => script !== undefined);
-    return { id: String(row.id), scripts: [...new Set(scripts)] };
-  });
+  return rows.map(
+    (row: { id?: unknown; l1Tag?: unknown; l2Tag?: unknown; scriptMode?: unknown }) => {
+      const scripts = [row.l1Tag, row.l2Tag]
+        .map((tag) => (typeof tag === 'string' ? SCRIPT_BY_LANGUAGE_TAG[tag] : undefined))
+        .filter((script): script is CourseScript => script !== undefined);
+      // A romanized course prints its L2 in Latin letters with transliteration marks, so it pays
+      // for the diacritic cuts on top of its native script's face (#222). `scriptMode` is the
+      // manifest's own word for it — a native-script course never prints a mark.
+      if (row.scriptMode === 'romanized') scripts.push(ROMANIZATION_SCRIPT);
+      return { id: String(row.id), scripts: [...new Set(scripts)] };
+    },
+  );
 }
 
 /** Is this a face that only course text renders (as opposed to the shell's Barlow chrome)? */

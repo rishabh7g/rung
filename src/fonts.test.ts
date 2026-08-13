@@ -20,9 +20,14 @@
  * docs/05-perf-notes.md.
  *
  * The bundle has three parts since #197: Barlow and Barlow Condensed come from @fontsource `latin`
- * subset imports in `main.tsx`, Mukta from `src/fonts/mukta.css` and Noto Naskh Arabic from
- * `src/fonts/naskh.css`, whose woff2 payloads `tools/font-subset.ts` generates per course at
- * build time.
+ * subset imports in `main.tsx`; Mukta from `src/fonts/mukta.css`, Noto Naskh Arabic from
+ * `src/fonts/naskh.css` and — since #222 — Source Sans 3 from `src/fonts/source-sans-3.css`, whose
+ * woff2 payloads `tools/font-subset.ts` generates per course at build time.
+ *
+ * #222 also changed what "the ramp names a face" means. `--font-devanagari` is a STACK now
+ * (`"Mukta", "Source Sans 3", system-ui`), because Mukta has no glyph for four of the
+ * romanization's marks; every named family in a stack is read, not just the head, so a face the
+ * product renders in second place is bundled at every weight the ramp asks for.
  *
  * The ramp is not the whole requirement, and #197 is why. The romanized courses' quiet native
  * line keeps a `--text-*` size and swaps only the family (`font-family: var(--font-script-
@@ -39,6 +44,7 @@ import indexHtml from '../index.html?raw';
 import mainSource from './main.tsx?raw';
 import muktaCss from './fonts/mukta.css?raw';
 import naskhCss from './fonts/naskh.css?raw';
+import sourceSansCss from './fonts/source-sans-3.css?raw';
 import overridesCss from './styles/tokenOverrides.css?raw';
 import fontNotes from '../docs/04-font-notes.md?raw';
 import barlowCss from '@fontsource/barlow/latin-400.css?raw';
@@ -55,18 +61,25 @@ const STYLESHEETS: Readonly<Record<string, string>> = Object.fromEntries(
 );
 
 /**
- * `--font-heading: "Barlow Condensed", …` → `{ heading: 'Barlow Condensed', … }`, read from
+ * `--font-heading: "Barlow Condensed", …` → `{ heading: ['Barlow Condensed'], … }`, read from
  * `design/tokens.css` and then from the override sheet, which wins the way it wins in the
  * cascade: `main.tsx` imports it straight after the tokens, so its `:root` rule is later.
+ *
+ * EVERY named family in a stack, not just the first (#222). `--font-devanagari` is
+ * `"Mukta", "Source Sans 3", system-ui, sans-serif`: Mukta draws the letters and the diacritics it
+ * has, Source Sans 3 draws the four it does not, and a face the product renders in second place
+ * is a face the bundle owes exactly as much as one it renders in first. Reading only the head
+ * would let the diacritic face ship at one weight, or not ship at all, with every test green.
  *
  * A stack with no quoted family (`system-ui, sans-serif`) contributes no face — nothing to bundle
  * and nothing to check, which is exactly what `--font-script-fallback` was before #197.
  */
-function familiesByRole(): Record<string, string> {
-  const roles: Record<string, string> = {};
+function familiesByRole(): Record<string, string[]> {
+  const roles: Record<string, string[]> = {};
   for (const css of [tokensCss, overridesCss]) {
-    for (const match of css.matchAll(/--font-([a-z-]+):\s*['"]([^'"]+)['"]/g)) {
-      roles[match[1]!] = match[2]!;
+    for (const match of css.matchAll(/--font-([a-z-]+):([^;]+);/g)) {
+      const families = [...match[2]!.matchAll(/['"]([^'"]+)['"]/g)].map((quoted) => quoted[1]!);
+      if (families.length > 0) roles[match[1]!] = families;
     }
   }
   return roles;
@@ -105,13 +118,13 @@ function rampFaces(): string[] {
 
   for (const value of Object.values(rampShorthands())) {
     const role = value.match(/var\(--font-([a-z-]+)\)/)?.[1];
-    const family = role === undefined ? undefined : families[role];
-    if (family === undefined) continue;
+    const stack = role === undefined ? undefined : families[role];
+    if (stack === undefined) continue;
 
     const weight = weightOf(value);
     if (weight === undefined) continue;
 
-    faces.add(`${family} ${weight}`);
+    for (const family of stack) faces.add(`${family} ${weight}`);
   }
 
   return [...faces].sort();
@@ -135,11 +148,11 @@ function overriddenFaces(): { file: string; family: string; weight: string }[] {
       const size = body!.match(/font:\s*var\(--(text-[a-z0-9-]+)\)/)?.[1];
       if (role === undefined || size === undefined) continue;
 
-      const family = families[role];
+      const stack = families[role];
       const weight = weightOf(shorthands[size] ?? '');
-      if (family === undefined || weight === undefined) continue;
+      if (stack === undefined || weight === undefined) continue;
 
-      found.push({ file, family, weight });
+      for (const family of stack) found.push({ file, family, weight });
     }
   }
   return found;
@@ -175,7 +188,7 @@ function facesIn(css: string): string[] {
 /**
  * Every face the production graph carries: the `latin` subset imports in `main.tsx`
  * (`@fontsource/barlow/latin-400.css` → `Barlow 400` — the dev-only `latin-ext` dynamic imports
- * do not match and do not add faces), plus the faces the committed subset sheets declare.
+ * do not match and do not add faces), plus the faces the three committed subset sheets declare.
  */
 function bundledFaces(): string[] {
   const faces = new Set<string>(
@@ -183,7 +196,9 @@ function bundledFaces(): string[] {
       (match) => `${familyOf(match[1]!)} ${match[2]!}`,
     ),
   );
-  for (const face of [...facesIn(muktaCss), ...facesIn(naskhCss)]) faces.add(face);
+  for (const face of [...facesIn(muktaCss), ...facesIn(naskhCss), ...facesIn(sourceSansCss)]) {
+    faces.add(face);
+  }
   return [...faces].sort();
 }
 
@@ -231,10 +246,12 @@ describe('the bundle covers what the product renders — and only that (#113, #1
   });
 
   it('keeps latin-ext out of the production graph — dev builds only (#113)', () => {
-    // The static imports are the production bundle; latin-ext (the ī ā ū of /dev/type's diacritic
-    // rows) may appear only as a dynamic import inside the `import.meta.env.DEV` branch. Shipping
-    // en-ar (#202) did not change that: Barlow draws shell English, never a course's L2, so the
-    // romanization's marks are Mukta's fall-through, not Barlow's (docs/04-font-notes.md §4).
+    // The static imports are the production bundle; @fontsource's latin-ext files (the ī ā ū of
+    // /dev/type's diacritic rows) may appear only as a dynamic import inside the
+    // `import.meta.env.DEV` branch. #222 did not change that, and sharpened the reason: the
+    // romanization is drawn by `--font-devanagari`, so its latin-ext comes from Mukta's own cut
+    // and Source Sans 3's — both subset per course into `src/fonts/generated/`, neither a whole
+    // @fontsource file, and Barlow's latin-ext has no ḥ, ʾ or ʿ to offer either way (§4).
     const statics = [...mainSource.matchAll(/^import '([^']*latin-ext[^']*)';$/gm)].map(
       (m) => m[1],
     );
@@ -300,7 +317,7 @@ describe('the quiet native script line has a bundled face, not a guess (#197)', 
   });
 
   it('is written down where a divergence has to be written down', () => {
-    const family = familiesByRole()['script-fallback'];
+    const family = familiesByRole()['script-fallback']?.[0];
 
     expect(family).toBeDefined();
     expect(overridesCss).toContain('04-font-notes');
@@ -310,16 +327,93 @@ describe('the quiet native script line has a bundled face, not a guess (#197)', 
   });
 });
 
+describe("the romanization's diacritics have a bundled face, not a system one (#222)", () => {
+  /** The ten marks PRD-engineering [D15] and issue #222 name, plus the capitals en-ar ships. */
+  const MARKS = 'āīūḥṣḍṭẓʾʿḤṢḌṬẒ';
+
+  /** Every `unicode-range` in a sheet, flattened to `[from, to]` pairs. `U+1E00-1E9F` → one pair;
+      `U+02BE-02BF, U+1E92-1E93` → two; a bare `U+0304` → a pair of itself. */
+  function ranges(css: string): [number, number][] {
+    return [...css.matchAll(/unicode-range:([^;]+);/g)].flatMap((declaration) =>
+      [...declaration[1]!.matchAll(/U\+([0-9A-F]+)(?:-([0-9A-F]+))?/gi)].map(
+        (part): [number, number] => [parseInt(part[1]!, 16), parseInt(part[2] ?? part[1]!, 16)],
+      ),
+    );
+  }
+
+  const claims = (css: string, codePoint: number): boolean =>
+    ranges(css).some(([from, to]) => codePoint >= from && codePoint <= to);
+
+  it('routes every mark to Mukta or to the face behind it — none is left on system-ui', () => {
+    const orphans = [...MARKS].filter(
+      (mark) =>
+        !claims(muktaCss, mark.codePointAt(0)!) && !claims(sourceSansCss, mark.codePointAt(0)!),
+    );
+
+    expect(
+      orphans,
+      `${orphans.join(' ')} — no bundled face's unicode-range claims these, so they render in whatever the phone owns, beside letters that render in Mukta (docs/04-font-notes.md §4.1).`,
+    ).toEqual([]);
+  });
+
+  it('gives the second face exactly the gap: the four codepoints Mukta has no glyph for', () => {
+    // Measured in #222 against the real @fontsource files, not assumed — `tools/font-subset.test.
+    // ts` re-measures it with HarfBuzz so this list cannot rot silently. Every weight's block
+    // carries the same range, so the distinct set is the whole claim.
+    const distinct = [...new Set(ranges(sourceSansCss).map(([from, to]) => `${from}-${to}`))];
+
+    expect(distinct).toEqual([`${0x02be}-${0x02bf}`, `${0x1e92}-${0x1e93}`]);
+    // ā ī ū and the dot-below emphatics are Mukta's own, so the common case is ONE face on the
+    // line: `ṣabāḥ` is Mukta end to end.
+    for (const mark of 'āīūḥṣḍṭ') expect(claims(muktaCss, mark.codePointAt(0)!)).toBe(true);
+  });
+
+  it('claims no character that carries no script — the overlap #211 was bitten by', () => {
+    // A space, a joiner or a BOM inside a range makes every course in the catalogue "use" the
+    // face: `src/pwa/offlineCourse.ts` samples the course's own text to decide what to warm, and
+    // those characters are in every course's text. It strips them; the ranges must not need it to.
+    for (const neutral of [0x0020, 0x00a0, 0x0009, 0x000a, 0x200c, 0x200d, 0x200e, 0xfeff]) {
+      expect(claims(sourceSansCss, neutral), `U+${neutral.toString(16)}`).toBe(false);
+    }
+    // And nothing below U+0100: the diacritic cuts must never claim ASCII or Latin-1, which is
+    // every course's shell English and en-es's whole accented repertoire.
+    for (const [from] of ranges(sourceSansCss)) expect(from).toBeGreaterThanOrEqual(0x0100);
+  });
+
+  it('bundles the second face at the three weights the L2 ramp renders', () => {
+    for (const weight of ['400', '600', '700']) {
+      expect(bundledFaces()).toContain(`Source Sans 3 ${weight}`);
+    }
+  });
+
+  it('names it behind Mukta in --font-devanagari, and keeps system-ui behind both', () => {
+    const stack = [...[tokensCss, overridesCss].join('\n').matchAll(/--font-devanagari:([^;]+);/g)]
+      .at(-1)?.[1]
+      ?.trim();
+
+    expect(stack).toBe("'Mukta', 'Source Sans 3', system-ui, sans-serif");
+  });
+
+  it('is written down, with the face and its licence', () => {
+    expect(overridesCss).toContain('04-font-notes');
+    expect(fontNotes).toContain('Source Sans 3');
+    expect(fontNotes).toMatch(/SIL Open Font License|OFL/);
+    // §4.1 is where the issue asked for the decision, and a decision with no date is a draft.
+    expect(fontNotes).toMatch(/2026-08-13/);
+  });
+});
+
 describe('what the bundled stylesheets promise', () => {
   const faces = [
     { family: 'Mukta', css: muktaCss },
     { family: 'Noto Naskh Arabic', css: naskhCss },
+    { family: 'Source Sans 3', css: sourceSansCss },
     { family: 'Barlow', css: barlowCss },
     { family: 'Barlow Condensed', css: barlowCondensedCss },
   ];
 
   it('declares the family name the token asks for, exactly', () => {
-    const families = Object.values(familiesByRole());
+    const families = Object.values(familiesByRole()).flat();
 
     for (const { family, css } of faces) {
       expect(families).toContain(family);

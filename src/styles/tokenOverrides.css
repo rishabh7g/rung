@@ -14,6 +14,7 @@
  * ─────────────────────────────────────────────────────────────────────────────────────────────
  *  token                     design value            here                        recorded in
  *  --font-script-fallback    system-ui, sans-serif   "Noto Naskh Arabic", …      04-font-notes §8
+ *  --font-devanagari         "Mukta", system-ui, …   "Mukta", "Source Sans 3", … 04-font-notes §9
  * ─────────────────────────────────────────────────────────────────────────────────────────────
  *
  * A face named here is a DEFINITION of a token's value, not an element styled by name — the same
@@ -28,4 +29,12 @@
      the subset does not claim (Latin letters, digits mid-sentence) still resolves the way it did
      before, and a device that somehow fails to load the face degrades to what it owns. */
   --font-script-fallback: 'Noto Naskh Arabic', system-ui, sans-serif;
+
+  /* The L2 face, with the romanization's diacritics finished (#222). Mukta stays FIRST and draws
+     everything it can — including, since this ticket, the ā ī ū ḍ ḥ ṣ ṭ of its own latin-ext cut.
+     Source Sans 3 sits behind it for the four marks Mukta has no glyph for (ʾ ʿ Ẓ ẓ), routed by a
+     unicode-range that claims those four codepoints and nothing else, so no learner on a course
+     that never prints them downloads a byte of it. system-ui stays last, where it was: this is a
+     face added to the stack, not a fall-through removed from it. docs/04-font-notes.md §9. */
+  --font-devanagari: 'Mukta', 'Source Sans 3', system-ui, sans-serif;
 }

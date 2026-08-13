@@ -6,9 +6,15 @@
  * This file is committed and hand-written so the build graph is inspectable — only the woff2
  * payloads are derived. The `unicode-range`s are @fontsource's own for the same two script
  * subsets: a range is routing, not a promise of coverage, so a codepoint the subset dropped
- * falls through to the next family in `--font-devanagari` (`system-ui`) instead of tofu.
- * `src/fonts.test.ts` checks these faces against the ramp, and `tools/font-subset.test.ts`
- * holds the urls here to the generator's output list.
+ * falls through to the next family in `--font-devanagari` (`Source Sans 3`, then `system-ui`)
+ * instead of tofu. `src/fonts.test.ts` checks these faces against the ramp, and
+ * `tools/font-subset.test.ts` holds the urls here to the generator's output list.
+ *
+ * **`latin-ext` joined in #222** — the romanization's diacritics. Every L2 line in the product is
+ * `--font-devanagari`, so `ṣabāḥ` was drawing its letters in Mukta and its marks in whatever the
+ * device owned; Mukta's own `latin-ext` file, which this build had simply never asked for, has
+ * twelve of the sixteen marks en-ar ships. They now come from the same face as the letters they
+ * belong to. The four it lacks (`ʾ ʿ Ẓ ẓ`) are `src/fonts/source-sans-3.css`'s.
  */
 
 /* mukta-devanagari-400 */
@@ -81,4 +87,39 @@
   unicode-range:
     U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
     U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* The romanization's diacritics (#222). Declared after the `latin` blocks on purpose: the two
+   ranges are disjoint in what the SUBSETS carry, but @fontsource's declared `latin` range names
+   U+0131 and U+0152-0153 — codepoints the `latin` cut has no glyph for and this one does — so the
+   later block winning them is the browser choosing the file that can actually draw them. */
+
+/* mukta-latin-ext-400 */
+@font-face {
+  font-family: 'Mukta';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./generated/mukta-latin-ext-400.woff2') format('woff2');
+  unicode-range: U+0100-017F, U+1E00-1E9F;
+}
+
+/* mukta-latin-ext-600 */
+@font-face {
+  font-family: 'Mukta';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./generated/mukta-latin-ext-600.woff2') format('woff2');
+  unicode-range: U+0100-017F, U+1E00-1E9F;
+}
+
+/* mukta-latin-ext-700 */
+@font-face {
+  font-family: 'Mukta';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('./generated/mukta-latin-ext-700.woff2') format('woff2');
+  unicode-range: U+0100-017F, U+1E00-1E9F;
 }
