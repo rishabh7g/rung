@@ -39,7 +39,7 @@
 import { useState } from 'react';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useCourse } from '../course/CourseProvider.tsx';
-import { l2Lang } from '../course/manifest.ts';
+import { l2Written } from '../course/manifest.ts';
 import { useModule } from '../course/content.ts';
 import type { PoolItem } from '../course/types.ts';
 import { drawItems } from '../engine/comprehension.ts';
@@ -255,7 +255,7 @@ function ComprehensionRound({ moduleId, pool, count }: ComprehensionRoundProps) 
             item={item}
             onMark={mark}
             dir={course.dir}
-            l2={l2Lang(course)}
+            l2={l2Written(course)}
           />
         )
       )}

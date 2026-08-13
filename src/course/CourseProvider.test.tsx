@@ -159,6 +159,7 @@ describe('CourseProvider', () => {
           l2: 'French',
           l1Tag: 'en',
           l2Tag: 'fr',
+          l2Dir: 'ltr',
           pairLabel: 'english → french',
           scriptMode: 'native',
           dir: 'ltr',

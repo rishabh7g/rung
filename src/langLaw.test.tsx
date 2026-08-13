@@ -1,6 +1,7 @@
 /**
- * The language law (#186) — two languages are on screen at once, and the markup has to say which
- * is which (PRD §4; WCAG 3.1.1 Language of Page, 3.1.2 Language of Parts).
+ * The language law (#186, #196) — two languages are on screen at once, and the markup has to say
+ * which is which AND which way each of them runs (PRD §4; WCAG 3.1.1 Language of Page, 3.1.2
+ * Language of Parts, 1.3.2 Meaningful Sequence).
  *
  * A course is a PAIR. hi-mr speaks to the learner in Hindi (its L1: the chrome, the cues, the
  * traps, the mnemonics) about sentences written in Marathi (its L2). Before this ticket the app
@@ -14,20 +15,29 @@
  *   • every line written in the L2 declares the L2, because it is the exception to that;
  *   • the one line that is neither — `glossEn`, English by definition in every course — says so.
  *
- * This file is the mechanical half of that, in four clauses: the manifest carries the tags, the
- * document tracks the active course, the taught language is marked as itself on a real screen,
- * and — the clause that makes the next screen inherit all of it — **no L2 surface may be rendered
- * on an element that does not declare a language**, scanned out of the source the way
- * `shellPurity.test.ts` and `colourLaw.test.ts` scan theirs.
+ * A tag alone is not enough for a course whose L2 is written the other way round (#196). en-ar
+ * prints its Arabic romanized, so the course runs `ltr` — and the quiet native line beneath every
+ * sentence is Arabic, running `rtl` inside it. An rtl string in an ltr paragraph is not merely
+ * unlabelled: the bidi algorithm puts its terminal punctuation on the wrong end. So the L2's
+ * direction is declared beside its tag (`l2Dir`), the pair is handed out together
+ * (`l2Written(course)`), and neither half may be rendered without the other.
+ *
+ * This file is the mechanical half of that, in four clauses: the manifest carries the tags and the
+ * directions, the document tracks the active course, the taught language is marked as itself (and
+ * pointed the right way) on a real screen, and — the clause that makes the next screen inherit all
+ * of it — **no L2 surface may be rendered on an element that does not declare a language and a
+ * direction**, scanned out of the source the way `shellPurity.test.ts` and `colourLaw.test.ts`
+ * scan theirs.
  */
 import { act, render, screen, waitFor } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App.tsx';
 import { resetContentCache } from './course/content.ts';
-import { l2Lang, resetManifestCache, type Course } from './course/manifest.ts';
+import { l2Written, resetManifestCache, type Course } from './course/manifest.ts';
 import { resetStringsCache } from './course/strings.ts';
 import { useAppStore } from './state/store.ts';
-import { DEV_MANIFEST, mockContentFetch } from './test/courseManifest.ts';
+import { romanizedModuleFixture } from './test/courseContent.ts';
+import { DEV_MANIFEST, mockContentFetch, type ContentOverrides } from './test/courseManifest.ts';
 
 /* ------------------------------------------------------------------ the tags */
 
@@ -62,14 +72,33 @@ describe('every course names its two languages in tags, not just in words', () =
 
   it('romanizes the tag exactly when it romanizes the script', () => {
     for (const course of AUTHORED) {
-      const written = l2Lang(course);
+      const written = l2Written(course);
 
       // `ar` printed in Latin letters is `ar-Latn` — same language, another script, which is why
       // en-ar reads `dir: 'ltr'`. The quiet native line beside it stays the plain tag.
-      expect(written.display).toBe(
+      expect(written.display.lang).toBe(
         course.scriptMode === 'romanized' ? `${course.l2Tag}-Latn` : course.l2Tag,
       );
-      expect(written.script).toBe(course.l2Tag);
+      expect(written.script.lang).toBe(course.l2Tag);
+    }
+  });
+
+  it('says which way its L2 runs, as data rather than as a guess about the script (#196)', () => {
+    for (const course of AUTHORED) {
+      expect(['ltr', 'rtl'], `${course.id}.l2Dir`).toContain(course.l2Dir);
+    }
+  });
+
+  it('points the printed line and the native line each their own way', () => {
+    for (const course of AUTHORED) {
+      const written = l2Written(course);
+
+      // Latin letters run left to right whatever the language does, so a romanized display line
+      // is `ltr` however the language is written. The native line always runs the language's way.
+      expect(written.display.dir, `${course.id} display`).toBe(
+        course.scriptMode === 'romanized' ? 'ltr' : course.l2Dir,
+      );
+      expect(written.script.dir, `${course.id} script`).toBe(course.l2Dir);
     }
   });
 
@@ -79,14 +108,23 @@ describe('every course names its two languages in tags, not just in words', () =
     expect(hiMr?.l1Tag).toBe('hi');
     expect(hiMr?.l2Tag).toBe('mr');
   });
+
+  it('is an ltr course with an rtl second line for the pair that needs both (#196)', () => {
+    const enAr = AUTHORED.find((course) => course.id === 'en-ar');
+
+    // The two are DIFFERENT facts and this row is the proof: everything the learner reads runs
+    // left to right, and the quiet Arabic line under each sentence runs right to left.
+    expect(enAr?.dir).toBe('ltr');
+    expect(enAr?.l2Dir).toBe('rtl');
+  });
 });
 
 /* -------------------------------------------------------------- the document */
 
 /** Renders the app at a hash over the mocked content tree and waits for the frame. */
-async function renderAt(hash: string) {
+async function renderAt(hash: string, content: ContentOverrides = {}) {
   window.location.hash = hash;
-  mockContentFetch(DEV_MANIFEST);
+  mockContentFetch(DEV_MANIFEST, undefined, content);
   render(<App />);
   await screen.findByRole('main');
 }
@@ -192,6 +230,54 @@ describe('L2 lines say they are L2, and L1 lines say nothing (they inherit)', ()
   it('marks the gloss English, because `glossEn` is English in every course', () => {
     expect(labelled('en')).toContain('lit. "I call myself Rohan"');
   });
+
+  it('gives the hero the direction its own script runs, not just its tag (#196)', () => {
+    // hi-mr is ltr on both counts; the assertion that matters is that the hero takes its
+    // direction from the L2 at all, which is what makes the en-ar case below possible.
+    expect(screen.getByRole('heading', { level: 2 })).toHaveAttribute('dir', 'ltr');
+  });
+});
+
+/* ------------------------------- the taught direction (the romanized course) */
+
+describe('a romanized course points its two L2 lines opposite ways (#196)', () => {
+  /**
+   * en-ar is the row that needs this: `dir: 'ltr'` (the chrome is English, the sentence is printed
+   * in Latin letters) and `l2Dir: 'rtl'` (the quiet native line is Arabic). The fixture module is
+   * the real en-ar pair — `ismī Rohān` over `اسمي روهان` — so both lines are on screen at once.
+   */
+  beforeEach(async () => {
+    act(() => {
+      useAppStore.getState().setActiveCourse('en-ar');
+    });
+    await renderAt('#/sentence/L1-M1-S01', { module: romanizedModuleFixture('L1-M1') });
+    await screen.findByRole('heading', { level: 2 });
+  });
+
+  it('prints the romanized line ltr and the native line rtl, each with its own tag', () => {
+    const display = screen.getByRole('heading', { level: 2 });
+    const script = screen.getByText('اسمي روهان');
+
+    expect(display).toHaveAttribute('lang', 'ar-Latn');
+    expect(display).toHaveAttribute('dir', 'ltr');
+    // The bug this ticket exists for: without this the Arabic sits in an ltr paragraph and its
+    // terminal punctuation lands on the wrong end of the line.
+    expect(script).toHaveAttribute('lang', 'ar');
+    expect(script).toHaveAttribute('dir', 'rtl');
+  });
+
+  it('leaves the document itself ltr — the interface language did not change', () => {
+    expect(document.documentElement.lang).toBe('en');
+    expect(document.documentElement.dir).toBe('ltr');
+  });
+
+  it('never resolves an L2 direction with `auto` — the course declares it, the browser guesses', () => {
+    const directed = [...screen.getByRole('main').querySelectorAll('[dir]')];
+
+    // `dir="auto"` reads the first strong character, so an Arabic line opening with a Latin
+    // brand name or a digit would resolve ltr — the very failure this pairing removes.
+    expect(directed.map((element) => element.getAttribute('dir'))).not.toContain('auto');
+  });
 });
 
 /* ------------------------------------------------------------- the guard rail */
@@ -223,41 +309,63 @@ function stripComments(source: string): string {
 /**
  * An L2 surface rendered as JSX TEXT: `{sentence.display}`, `{word.display}`, `{item.script}`,
  * `{display}`. The lookbehind is what keeps everything that is not text out of it — `display={…}`,
- * `className={styles.display}` and `lang={l2.display}` sit behind an `=`, a `key` interpolates
- * behind a `$`, and `changedTokens(a.display, b.display)` behind a `(` or a `,`.
+ * `className={styles.display}` and `lang={l2.display.lang}` sit behind an `=`, a `key`
+ * interpolates behind a `$`, and `changedTokens(a.display, b.display)` behind a `(` or a `,`.
  */
 const L2_SURFACE = /(?<![=($,])\{\s*(?:[A-Za-z_$][\w$]*\.)*(?:display|script)\s*\}/gu;
 
 /** The two files allowed to name a language in the source — both for `glossEn`, both English. */
 const GLOSS_FILES = ['./screens/SentenceScreen.tsx', './screens/module/SentenceCard.tsx'];
 
-describe('a language-less L2 line is a failure, not a review comment', () => {
-  it('renders no taught surface on an element that does not declare a language', () => {
-    const unlabelled: string[] = [];
+/** The opening tag an L2 surface is rendered inside, as source text. */
+function enclosingTag(source: string, at: number): string {
+  // JSX children follow their own tag, and no attribute value in this tree contains a `<`, so
+  // the last one before the expression opens it.
+  return source.slice(source.lastIndexOf('<', at), at);
+}
 
-    for (const [path, source] of SOURCES) {
-      for (const match of source.matchAll(L2_SURFACE)) {
-        const at = match.index;
-        // The enclosing opening tag: JSX children follow their own tag, and no attribute value
-        // in this tree contains a `<`, so the last one before the expression opens it.
-        const tag = source.slice(source.lastIndexOf('<', at), at);
-        if (!/\slang=/u.test(tag)) {
-          const line = source.slice(0, at).split('\n').length;
-          unlabelled.push(`${path}:${line} ${match[0]}`);
-        }
+/** Every L2 surface in `src/` whose opening tag does not carry `attribute`, as `path:line`. */
+function surfacesMissing(attribute: 'lang' | 'dir'): string[] {
+  const declared = new RegExp(`\\s${attribute}=`, 'u');
+  const missing: string[] = [];
+
+  for (const [path, source] of SOURCES) {
+    for (const match of source.matchAll(L2_SURFACE)) {
+      const at = match.index;
+      if (!declared.test(enclosingTag(source, at))) {
+        missing.push(`${path}:${source.slice(0, at).split('\n').length} ${match[0]}`);
       }
     }
+  }
+  return missing;
+}
 
-    expect(unlabelled).toEqual([]);
+describe('an L2 line with no language, or no direction, is a failure, not a review comment', () => {
+  it('renders no taught surface on an element that does not declare a language', () => {
+    expect(surfacesMissing('lang')).toEqual([]);
   });
 
-  it('exercises the rule it scans for — a planted surface with no lang is caught', () => {
-    const planted = '<p className={styles.display} dir={dir}>\n  {sentence.display}\n</p>';
-    const [match, ...rest] = [...planted.matchAll(L2_SURFACE)];
+  it('renders no taught surface on an element that does not declare a direction (#196)', () => {
+    // The other half of the same fact. A line marked `lang="ar"` and left to inherit `dir="ltr"`
+    // is still rendered wrong — the quiet native line under every en-ar sentence was exactly
+    // that until this ticket, and `l2Written()` hands the two out together so it cannot recur.
+    expect(surfacesMissing('dir')).toEqual([]);
+  });
 
-    expect(rest).toEqual([]);
-    expect(match?.[0]).toBe('{sentence.display}');
-    expect(/\slang=/u.test(planted.slice(0, match?.index))).toBe(false);
+  it('exercises the rule it scans for — a planted surface missing either half is caught', () => {
+    const planted = {
+      lang: '<p className={styles.display} dir={dir}>\n  {sentence.display}\n</p>',
+      dir: '<p className={styles.script} lang={l2?.script.lang}>\n  {sentence.script}\n</p>',
+    };
+
+    for (const [attribute, source] of Object.entries(planted)) {
+      const [match, ...rest] = [...source.matchAll(L2_SURFACE)];
+
+      expect(rest).toEqual([]);
+      expect(
+        new RegExp(`\\s${attribute}=`, 'u').test(enclosingTag(source, match?.index ?? 0)),
+      ).toBe(false);
+    }
   });
 
   it('takes every language it declares from the manifest, never from the source', () => {
@@ -266,8 +374,19 @@ describe('a language-less L2 line is a failure, not a review comment', () => {
     );
 
     // `glossEn` is the one line whose language is a fact about the SCHEMA rather than about the
-    // course, so it is the one literal. Every other `lang` resolves through `l2Lang(course)` or
-    // the document, and a course id may never appear in `src/` (PRD §4, `shellPurity.test.ts`).
+    // course, so it is the one literal. Every other `lang` resolves through `l2Written(course)`
+    // or the document, and a course id may never appear in `src/` (PRD §4, `shellPurity.test.ts`).
     expect(hardcoded.sort()).toEqual(GLOSS_FILES.map((path) => `${path} lang="en"`).sort());
+  });
+
+  it('takes every direction from the manifest too — no literal, and never `auto` (#196)', () => {
+    const hardcoded = SOURCES.flatMap(([path, source]) =>
+      [...source.matchAll(/\sdir="([^"]*)"/gu)].map(([, value]) => `${path} dir="${value ?? ''}"`),
+    );
+
+    // `dir="auto"` is the browser guessing from the first strong character in the string. It is
+    // the right answer for text whose language nobody declared — and every line here is content
+    // whose language the manifest names, so there is nothing to guess about.
+    expect(hardcoded).toEqual([]);
   });
 });

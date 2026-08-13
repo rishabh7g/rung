@@ -32,11 +32,12 @@ describe('loadCourses', () => {
       l2: 'Marathi',
       l1Tag: 'hi',
       l2Tag: 'mr',
+      l2Dir: 'ltr',
       pairLabel: 'hindi → marathi',
       scriptMode: 'native',
       dir: 'ltr',
     });
-    // en-ar carries more than the eight required fields; the loader keeps them, never rejects them.
+    // en-ar carries more than the nine required fields; the loader keeps them, never rejects them.
     expect(courses[2]?.romanizationNote).toMatch(/Modern Standard Arabic/);
     expect(courses[2]?.fixture).toBe(true);
     // en-es shipped for real in #195 — a graduated course carries no fixture key at all.
@@ -187,6 +188,23 @@ describe('parseManifest (the tripwire)', () => {
             pairLabel: 'a → b',
             scriptMode: 'native',
             dir: 'sideways',
+          },
+        ],
+      },
+    ],
+    [
+      'a course that never says which way its L2 runs (#196)',
+      {
+        courses: [
+          {
+            id: 'x',
+            l1: 'A',
+            l2: 'B',
+            l1Tag: 'en',
+            l2Tag: 'ar',
+            pairLabel: 'a → b',
+            scriptMode: 'romanized',
+            dir: 'ltr',
           },
         ],
       },

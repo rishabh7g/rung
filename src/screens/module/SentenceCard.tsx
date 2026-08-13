@@ -23,7 +23,7 @@
  */
 import { Link } from 'react-router-dom';
 import { ChevronDown, ArrowRight, TriangleAlert } from 'lucide-react';
-import type { L2Lang } from '../../course/manifest.ts';
+import type { L2Written } from '../../course/manifest.ts';
 import { useStrings } from '../../course/strings.ts';
 import type { Sentence, Tag } from '../../course/types.ts';
 import { RegistrationMarks } from '../RegistrationMarks.tsx';
@@ -47,7 +47,7 @@ interface SentenceCardProps {
   /** The course's writing direction — every line on the card is its content. */
   dir?: string;
   /** The tags the L2 lines are written in (#186); the L1 ones inherit the document's. */
-  l2?: L2Lang;
+  l2?: L2Written;
 }
 
 export function SentenceCard({
@@ -75,7 +75,7 @@ export function SentenceCard({
         onClick={() => onToggle(sentence.id)}
       >
         <span className={styles.lines}>
-          <span className={styles.display} dir={dir} lang={l2?.display}>
+          <span className={styles.display} dir={l2?.display.dir} lang={l2?.display.lang}>
             {sentence.display}
           </span>
           <span className={styles.cue} dir={dir}>
@@ -85,7 +85,7 @@ export function SentenceCard({
               as something to produce — so it is the quietest line on the card. A native course's
               sentences carry no `script` at all, which is why the content is the condition. */}
           {sentence.script !== undefined && (
-            <span className={styles.script} lang={l2?.script}>
+            <span className={styles.script} dir={l2?.script.dir} lang={l2?.script.lang}>
               {sentence.script}
             </span>
           )}
@@ -120,8 +120,8 @@ export function SentenceCard({
               <li
                 key={`${word.display}-${index}`}
                 className={CHIP_CLASS[word.tag]}
-                dir={dir}
-                lang={l2?.display}
+                dir={l2?.display.dir}
+                lang={l2?.display.lang}
               >
                 {word.display}
               </li>
