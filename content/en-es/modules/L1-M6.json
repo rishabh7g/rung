@@ -1,0 +1,524 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M6",
+  "title": "Tomorrow",
+  "job": "Future and plans",
+  "prerequisites": ["L1-M5"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-13",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": ["present", "periphrastic_future", "simple_future"],
+    "allowedPatterns": [
+      "Mañana + voy a + V-inf",
+      "¿Vas a + V-inf?",
+      "Voy a + V-inf + time",
+      "Mañana + V-o",
+      "Mañana + V-ré"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "Spanish has three ways of talking about tomorrow, and the one-word -ré future is the one people reach for least. The everyday future is voy a + the plain verb — Mañana voy a trabajar. The plain present does the job too once a time word is there (Mañana trabajo). trabajaré is real Spanish, but it belongs to writing, to promises and to predictions rather than to what you are doing after breakfast."
+    },
+    {
+      "tag": "interference",
+      "text": "The a in voy a trabajar is obligatory and means nothing on its own — it is the glue between the going and the doing. English hides it inside \"going to\", so the commonest slip is to leave it out: *Voy trabajar is not a sentence."
+    },
+    {
+      "tag": "delta",
+      "text": "ir (\"to go\") keeps almost nothing of itself when it conjugates: voy · vas · va · vamos · van. There is no stem to learn — the five shapes are learned whole, the way hice and fui were in M5."
+    },
+    {
+      "tag": "delta",
+      "text": "After voy a the second verb never takes an ending: Voy a comer, never *Voy a como. Only the ir half moves for the person — voy a comer, vas a comer, vamos a comer — and the plain infinitive sits there unchanged."
+    },
+    {
+      "tag": "interference",
+      "text": "What follows the a decides what voy a is saying. A plain verb makes it a plan: Voy a trabajar, \"I'm going to work\". A place makes it real movement: Voy a México, \"I'm going to Mexico\". The same two words do both jobs, exactly as M5's fui did for ir and ser."
+    },
+    {
+      "tag": "free",
+      "text": "The plain present is already a future once a time word says so: Mañana trabajo is \"I work tomorrow\". English does this too, so nothing new has to be learned — the only difference is that Spanish needs no \"am\" and no \"-ing\" to do it."
+    },
+    {
+      "tag": "delta",
+      "text": "The one-word future is built on the WHOLE infinitive plus an ending: trabajar + é = trabajaré, hablar + é = hablaré. Nothing is cut off first, which is why the r is still in there — and it is what keeps M5's hablé (I spoke) apart from hablaré (I will speak)."
+    },
+    {
+      "tag": "interference",
+      "text": "mañana does two jobs and the words around it choose: alone it is \"tomorrow\" (Mañana trabajo), and inside por la mañana it is the morning (Trabajo por la mañana). One sentence can hold both — Mañana trabajo por la mañana. English has two separate words here and Spanish has one."
+    },
+    {
+      "tag": "delta",
+      "text": "no goes in front of the going, not in front of the doing: Mañana no voy a trabajar. *Voy a no trabajar hangs the negative on the wrong verb, which is not how the plan is refused."
+    },
+    {
+      "tag": "delta",
+      "text": "vamos a + a plain verb is two things at once: \"we are going to …\" and \"let's …\". Vamos a comer is a plan or an invitation, and only the situation tells them apart."
+    },
+    {
+      "tag": "delta",
+      "text": "A day of the week takes el and no word for \"on\": El sábado voy a México — literally \"the Saturday\". Make it plural and it becomes a habit: los sábados is \"on Saturdays\"."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M6-S01",
+      "display": "Mañana voy a trabajar",
+      "cue": "Tomorrow I'm going to work",
+      "glossEn": "lit. \"Tomorrow I-go to work\"",
+      "literal": "Tomorrow I-go to to-work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Mañana",
+            "cue": "tomorrow",
+            "tag": "delta",
+            "forms": [],
+            "note": "On its own it is \"tomorrow\". The same word inside M4's por la mañana is the morning — one word, two jobs, and the phrase around it decides which. It usually opens the sentence, the way Ayer does."
+          },
+          {
+            "display": "voy",
+            "cue": "I go · I'm going",
+            "tag": "delta",
+            "forms": [],
+            "note": "ir (\"to go\") in the \"I\" form. Nothing of the infinitive survives in it, and it is the engine of the whole module: voy a + a plain verb is how a plan is said."
+          },
+          {
+            "display": "trabajar",
+            "cue": "to work",
+            "tag": "free",
+            "forms": [],
+            "note": "The dictionary form of the verb behind M4's trabajo and M5's trabajé. After voy a it stays exactly like this — the person is already carried by voy."
+          }
+        ],
+        "rules": [0, 1, 2, 3]
+      },
+      "trap": "English says \"going to work\" and hears one word where Spanish writes two: voy and a. The a carries no meaning and cannot be dropped.",
+      "sound": "ma-ÑA-na. The ñ is the ny of \"canyon\", and the stress sits in the middle. voy rhymes with English \"boy\", with a v that is softer than an English one.",
+      "variations": [
+        {
+          "display": "Mañana voy a estudiar",
+          "cue": "Tomorrow I'm going to study",
+          "changed": "swap the plain verb — the frame never moves"
+        },
+        {
+          "display": "Voy a trabajar por la mañana",
+          "cue": "I'm going to work in the morning",
+          "changed": "the other mañana, back inside its three-word phrase"
+        }
+      ],
+      "mistake": {
+        "display": "Mañana voy trabajar",
+        "why": "The a is not optional. voy a trabajar — the going, the a, then the doing."
+      },
+      "usage": "The plainest way to say what tomorrow holds.",
+      "register": "neutral",
+      "mnemonic": "voy · a · the plain verb. Three pieces, always three."
+    },
+    {
+      "id": "L1-M6-S02",
+      "display": "¿Vas a comer con Ana?",
+      "cue": "Are you going to eat with Ana?",
+      "glossEn": "lit. \"You-go to eat with Ana?\"",
+      "literal": "You-go to to-eat with Ana?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Vas",
+            "cue": "you go · you're going",
+            "tag": "delta",
+            "forms": [],
+            "note": "ir for tú. voy and vas are the same verb and share no letters with it: voy · vas · va · vamos · van. As ever, no tú in front — vas already says who."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "English needs three words to ask this — \"are you going\" — and Spanish needs one. The question is the statement with the two marks around it; nothing moves.",
+      "sound": "One syllable, BAS, with the s clear at the end. Spanish has no buzzing z sound here.",
+      "variations": [
+        {
+          "display": "¿Vas a comer con Rohan?",
+          "cue": "Are you going to eat with Rohan?",
+          "changed": "swap who you are eating with"
+        },
+        {
+          "display": "¿Vas a trabajar mañana?",
+          "cue": "Are you going to work tomorrow?",
+          "changed": "another plan, same question shape"
+        }
+      ],
+      "mistake": {
+        "display": "¿Tú vas a comer con Ana?",
+        "why": "Drop the tú. vas already names the person, and putting it back sounds like you are picking that person out from someone else."
+      },
+      "usage": "Checking someone else's plan.",
+      "register": "informal",
+      "mnemonic": "voy for me, vas for you — one letter's worth of family resemblance."
+    },
+    {
+      "id": "L1-M6-S03",
+      "display": "Voy a estudiar después",
+      "cue": "I'm going to study later",
+      "glossEn": "lit. \"I-go to study afterwards\"",
+      "literal": "I-go to to-study afterwards",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "después",
+            "cue": "later · afterwards",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Later on\", with no clock attached — it points at a time after now rather than at an hour. It sits at the end of the sentence, where English also puts \"later\"."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "A plan does not need a day on it. voy a + a plain verb covers anything from five minutes away to next year; después just says \"after this\".",
+      "sound": "des-PUÉS. The accent puts the stress on the last syllable and keeps the u and the e running together as one glide.",
+      "variations": [
+        {
+          "display": "Después voy a estudiar",
+          "cue": "Later I'm going to study",
+          "changed": "the time word moves to the front — both orders are normal"
+        },
+        {
+          "display": "Voy a comer después",
+          "cue": "I'm going to eat later",
+          "changed": "swap the plain verb"
+        }
+      ],
+      "mistake": {
+        "display": "Voy a estudio después",
+        "why": "estudio is \"I study\". After voy a the verb keeps its dictionary shape: voy a estudiar."
+      },
+      "usage": "Putting something off without naming a time.",
+      "register": "neutral",
+      "mnemonic": "después = after this — and it comes after the verb."
+    },
+    {
+      "id": "L1-M6-S04",
+      "display": "Mañana no voy a hacer nada",
+      "cue": "Tomorrow I'm not going to do anything",
+      "glossEn": "lit. \"Tomorrow not I-go to do nothing\" — both negatives stay",
+      "literal": "Tomorrow not I-go to to-do nothing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hacer",
+            "cue": "to do · to make",
+            "tag": "delta",
+            "forms": [],
+            "note": "The dictionary form of M5's hice and hiciste. One verb for both English words: hacer la comida is making it, hacer el trabajo is doing it."
+          }
+        ],
+        "rules": [3, 8]
+      },
+      "trap": "The negative goes on the going: no voy a hacer. English can say \"I'm going to do nothing\", and Spanish still puts no in front of the verb and keeps nada as well.",
+      "sound": "a-CER. The h is silent, as it always is, and the c before an e is an s across Latin America and a th in most of Spain.",
+      "variations": [
+        {
+          "display": "Mañana voy a hacer mucho",
+          "cue": "Tomorrow I'm going to do a lot",
+          "changed": "the opposite plan, with M1's mucho"
+        },
+        {
+          "display": "¿Qué vas a hacer mañana?",
+          "cue": "What are you going to do tomorrow?",
+          "changed": "the question this sentence answers"
+        }
+      ],
+      "mistake": {
+        "display": "Mañana voy a no hacer nada",
+        "why": "no belongs in front of voy, not in front of hacer: Mañana no voy a hacer nada."
+      },
+      "usage": "The best plan there is.",
+      "register": "neutral",
+      "mnemonic": "hice yesterday, hacer tomorrow — same verb, two ends of the week."
+    },
+    {
+      "id": "L1-M6-S05",
+      "display": "¿Vas a estudiar esta noche?",
+      "cue": "Are you going to study tonight?",
+      "glossEn": "lit. \"You-go to study this night?\"",
+      "literal": "You-go to to-study this night?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "esta noche",
+            "cue": "tonight",
+            "tag": "delta",
+            "forms": [],
+            "note": "Two words where English has one: \"this night\". It is a different thing from M4's por la noche, which is \"at night\" in general — esta noche is the one that is coming."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "esta noche is a plan, por la noche is a habit. Trabajo por la noche says what your nights are usually like; Voy a trabajar esta noche says what tonight holds.",
+      "sound": "ES-ta NO-che. The ch is the ch of English \"church\", and neither word carries an accent because both are stressed where Spanish expects.",
+      "variations": [
+        {
+          "display": "Esta noche voy a estudiar",
+          "cue": "Tonight I'm going to study",
+          "changed": "the answer, with the time word in front"
+        },
+        {
+          "display": "¿Vas a comer esta noche?",
+          "cue": "Are you going to eat tonight?",
+          "changed": "swap the plain verb"
+        }
+      ],
+      "mistake": {
+        "display": "¿Vas a estudiar por la noche?",
+        "why": "That asks about your nights in general. For the night ahead, say esta noche."
+      },
+      "usage": "Making a plan for the evening.",
+      "register": "informal",
+      "mnemonic": "esta noche is THIS night; por la noche is any night."
+    },
+    {
+      "id": "L1-M6-S06",
+      "display": "Mañana trabajo todo el día",
+      "cue": "Tomorrow I work all day",
+      "glossEn": "lit. \"Tomorrow I-work all the day\"",
+      "literal": "Tomorrow I-work all the day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "todo el día",
+            "cue": "all day",
+            "tag": "interference",
+            "forms": [],
+            "note": "Three words that travel as one, and one letter apart from M4's todos los días: todo el día is a single day from end to end, todos los días is every day of the week. Singular for the stretch, plural for the habit."
+          }
+        ],
+        "rules": [5, 7]
+      },
+      "trap": "M4's trabajo has not changed at all; the future is coming entirely from mañana. Take the time word away and the same sentence is about today.",
+      "sound": "TO-do el DÍ-a, run together into three beats. día carries its accent to split the i from the a and keep the stress on it.",
+      "variations": [
+        {
+          "display": "Mañana trabajo por la mañana",
+          "cue": "Tomorrow I work in the morning",
+          "changed": "both jobs of mañana in one sentence"
+        },
+        {
+          "display": "Trabajo todos los días",
+          "cue": "I work every day",
+          "changed": "the plural — a habit rather than one long day"
+        }
+      ],
+      "mistake": {
+        "display": "Mañana trabajo todos los días",
+        "why": "todos los días is every day, so it cannot be pinned to tomorrow. One day from end to end is todo el día."
+      },
+      "usage": "Warning someone you will be busy.",
+      "register": "neutral",
+      "mnemonic": "todo el día — one day, whole. todos los días — all the days."
+    },
+    {
+      "id": "L1-M6-S07",
+      "display": "Mañana hablaré con Ana",
+      "cue": "Tomorrow I'll speak with Ana",
+      "glossEn": "lit. \"Tomorrow I-will-speak with Ana\"",
+      "literal": "Tomorrow I-will-speak with Ana",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hablaré",
+            "cue": "I will speak",
+            "tag": "delta",
+            "forms": [],
+            "note": "The one-word future: the whole infinitive hablar with -é stuck on the end. That is why the r is still there, and it is the only thing keeping it apart from M5's hablé (I spoke). Spoken Spanish would more often say voy a hablar; this form leans towards a promise or a prediction."
+          }
+        ],
+        "rules": [0, 6]
+      },
+      "trap": "hablé and hablaré are one syllable apart and two tenses apart — one is yesterday, the other is tomorrow. The r is the whole difference, and it is the r of the infinitive.",
+      "sound": "a-bla-RÉ, three syllables with the stress on the last. Beside M5's a-BLÉ, which has two.",
+      "variations": [
+        {
+          "display": "Mañana voy a hablar con Ana",
+          "cue": "Tomorrow I'm going to speak with Ana",
+          "changed": "the everyday way of saying the same plan"
+        },
+        {
+          "display": "Mañana trabajaré mucho",
+          "cue": "Tomorrow I'll work a lot",
+          "changed": "the same ending on another -ar verb"
+        }
+      ],
+      "mistake": {
+        "display": "Mañana hablé con Ana",
+        "why": "hablé is the past. Tomorrow needs the r of the infinitive underneath the ending: hablaré."
+      },
+      "usage": "A promise rather than a plan.",
+      "register": "neutral",
+      "mnemonic": "Keep the whole infinitive, then add the ending: hablar + é."
+    },
+    {
+      "id": "L1-M6-S08",
+      "display": "Vamos a comer a las ocho",
+      "cue": "We're going to eat at eight",
+      "glossEn": "lit. \"We-go to eat at the eight\"",
+      "literal": "We-go to to-eat at the eight",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Vamos",
+            "cue": "we go · we're going · let's",
+            "tag": "interference",
+            "forms": [],
+            "note": "ir for \"we\", and the only shape of it that also works as an invitation: Vamos a comer is both \"we are going to eat\" and \"let's eat\". English keeps those two apart with different words; Spanish leaves it to the moment."
+          }
+        ],
+        "rules": [2, 3, 9]
+      },
+      "trap": "Both a's in this sentence are M4's one-letter signpost, in two of its seats: the first glues the plan together, the second points at a clock time.",
+      "sound": "VA-mos, stressed on the first syllable — not va-MOS.",
+      "variations": [
+        {
+          "display": "Vamos a estudiar esta noche",
+          "cue": "Let's study tonight",
+          "changed": "read as an invitation rather than a plan"
+        },
+        {
+          "display": "Vamos a comer temprano",
+          "cue": "We're going to eat early",
+          "changed": "M4's temprano instead of an hour"
+        }
+      ],
+      "mistake": {
+        "display": "Vamos comer a las ocho",
+        "why": "The plan a is missing. vamos a comer, exactly as voy a comer."
+      },
+      "usage": "Settling a time with someone.",
+      "register": "neutral",
+      "mnemonic": "Vamos a … is half plan, half invitation."
+    },
+    {
+      "id": "L1-M6-S09",
+      "display": "El sábado voy a México",
+      "cue": "On Saturday I'm going to Mexico",
+      "glossEn": "lit. \"The Saturday I-go to Mexico\" — no word for \"on\"",
+      "literal": "The Saturday I-go to Mexico",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sábado",
+            "cue": "Saturday",
+            "tag": "delta",
+            "forms": ["sábado", "sábados"],
+            "note": "Saturday, masculine and written with a small s — the days of the week are not capitalised in Spanish. el sábado is \"on Saturday\"; los sábados is \"on Saturdays\", every week. The accent marks the stress on the first of its three syllables."
+          }
+        ],
+        "rules": [4, 10]
+      },
+      "trap": "Here voy a is not a plan at all — a place after the a makes it real movement. Voy a trabajar is what I will do; Voy a México is where I am going.",
+      "sound": "SÁ-ba-do. Three syllables, the first one loudest, and the b in the middle is soft — nearer an English v than a b.",
+      "variations": [
+        {
+          "display": "El sábado voy a India",
+          "cue": "On Saturday I'm going to India",
+          "changed": "swap the destination"
+        },
+        {
+          "display": "Los sábados no trabajo",
+          "cue": "On Saturdays I don't work",
+          "changed": "the plural turns one day into every week"
+        }
+      ],
+      "mistake": {
+        "display": "En sábado voy a México",
+        "why": "Spanish has no word for \"on\" with a day. The article does it: el sábado."
+      },
+      "usage": "Naming the day something happens.",
+      "register": "neutral",
+      "mnemonic": "el sábado — the article is the \"on\"."
+    },
+    {
+      "id": "L1-M6-S10",
+      "display": "Mañana voy a ver una película",
+      "cue": "Tomorrow I'm going to see a film",
+      "glossEn": "lit. \"Tomorrow I-go to see a film\"",
+      "literal": "Tomorrow I-go to to-see a film",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ver",
+            "cue": "to see · to watch",
+            "tag": "free",
+            "forms": [],
+            "note": "The dictionary form of M4's veo. It covers watching as well as seeing — ver una película is what English calls watching a film."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "No personal a here. M4's a in front of a person marks a person; a film is a thing, so nothing stands in front of it — the only a in this sentence is the plan a after voy.",
+      "sound": "One syllable, BER, and the r at the end is one light tap of the tongue.",
+      "variations": [
+        {
+          "display": "Mañana voy a ver a mi hermana",
+          "cue": "Tomorrow I'm going to see my sister",
+          "changed": "a person, so M4's personal a comes back — two a's in a row"
+        },
+        {
+          "display": "Esta noche voy a ver una película",
+          "cue": "Tonight I'm going to see a film",
+          "changed": "swap the time word"
+        }
+      ],
+      "mistake": {
+        "display": "Mañana voy ver una película",
+        "why": "The plan needs its a: voy a ver."
+      },
+      "usage": "The evening plan almost everyone has.",
+      "register": "neutral",
+      "mnemonic": "veo today, voy a ver tomorrow."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M6-C01", "display": "Mañana voy a estudiar", "cue": "Tomorrow I'm going to study" },
+    {
+      "id": "L1-M6-C02",
+      "display": "¿Vas a trabajar mañana?",
+      "cue": "Are you going to work tomorrow?"
+    },
+    {
+      "id": "L1-M6-C03",
+      "display": "Voy a comer con mi hermana",
+      "cue": "I'm going to eat with my sister"
+    },
+    {
+      "id": "L1-M6-C04",
+      "display": "Mañana no voy a hacer nada",
+      "cue": "Tomorrow I'm not going to do anything"
+    },
+    {
+      "id": "L1-M6-C05",
+      "display": "Vamos a comer a las ocho",
+      "cue": "We're going to eat at eight"
+    },
+    {
+      "id": "L1-M6-C06",
+      "display": "El sábado voy a ver una película",
+      "cue": "On Saturday I'm going to see a film"
+    },
+    {
+      "id": "L1-M6-C07",
+      "display": "Mañana hablaré con Ana",
+      "cue": "Tomorrow I'll speak with Ana"
+    },
+    {
+      "id": "L1-M6-C08",
+      "display": "Esta noche voy a estudiar español",
+      "cue": "Tonight I'm going to study Spanish"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}
