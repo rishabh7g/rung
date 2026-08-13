@@ -1,0 +1,602 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M4",
+  "title": "My day",
+  "job": "Daily habits and time words",
+  "prerequisites": ["L1-M3"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-13",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 6,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "V-imperfect + kull yawm",
+      "fī aṣ-ṣabāḥ + V-imperfect",
+      "adhhab ilā + al- + N",
+      "matā + V-imperfect"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "adhhab ilā al-madrasa runs in the order English expects: verb (with its person inside), \"to\", place. ilā sits exactly where \"to\" sits."
+    },
+    {
+      "tag": "delta",
+      "text": "The verb of this module is the NON-PAST, and the person is a prefix: a- is I (adhhab, ashrab), ta- is you-m or she (tadhhab), ya- is he (yadhhab), na- is we (nadhhab). One form covers \"I drink\", \"I am drinking\" and \"I do drink\" — it is unmarked for time, which is why M6 can point it at tomorrow. One honest note: M1's uḥibb and urīd wear u- instead of a- because of their verb pattern, so your first two verbs are the exception, not the rule."
+    },
+    {
+      "tag": "interference",
+      "text": "English needs \"do\" for the question and \"-s\" for he; Arabic has neither. hal tadhhab? is the question, and the prefix already did the person — nothing is added anywhere."
+    },
+    {
+      "tag": "delta",
+      "text": "A habit is marked by a TIME word, never on the verb: kull yawm (every day), dāʾiman (always), aḥyānan (sometimes). The verb itself never changes for habit — ashrab al-qahwa kull yawm."
+    },
+    {
+      "tag": "delta",
+      "text": "The time-of-day phrases are learned whole and written in full: fī aṣ-ṣabāḥ (in the morning), fī al-masāʾ (in the evening), fī al-layl (at night). Speech runs them together — fi ṣ-ṣabāḥ — but this course writes every letter. And ṣ is a sun letter, so it swallows the l of al-: aṣ-ṣabāḥ, the same law as M2's ash-shāy; m is a moon letter, so al-masāʾ keeps its l."
+    },
+    {
+      "tag": "interference",
+      "text": "tashrab is BOTH \"you drink\" (to a man) AND \"she drinks\" — the same double duty M3's turīd had, on every ta- verb in the language."
+    },
+    {
+      "tag": "delta",
+      "text": "yawm alone is \"day\"; with the article it becomes \"today\": al-yawm. It takes no preposition — al-yawm adhhab, not \"fī al-yawm\"."
+    },
+    {
+      "tag": "delta",
+      "text": "matā (\"when\") fronts the question the way kayfa did in M2, and the statement behind it does not move: matā tashrab al-qahwa? It replaces hal — a question can carry one question word, not two."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M4-S01",
+      "display": "adhhab ilā al-madrasa kull yawm",
+      "script": "أذهب إلى المدرسة كل يوم",
+      "cue": "I go to school every day",
+      "glossEn": "lit. \"I-go to the-school every day\"",
+      "literal": "I-go to the-school every day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "adhhab",
+            "script": "أذهب",
+            "cue": "I go",
+            "tag": "delta",
+            "forms": ["adhhab", "tadhhab", "yadhhab", "nadhhab"],
+            "note": "\"Go\", and the person is the prefix: adhhab (I), tadhhab (you-m / she), yadhhab (he), nadhhab (we). The a- is the regular first-person prefix that M1's u- verbs made you wait for. The dh is the th of \"this\"."
+          },
+          {
+            "display": "ilā",
+            "script": "إلى",
+            "cue": "to, towards",
+            "tag": "free",
+            "forms": [],
+            "note": "\"To\", a separate little word sitting exactly where English puts it: adhhab ilā al-madrasa. It never glues onto the noun the way al- does."
+          },
+          {
+            "display": "al-madrasa",
+            "script": "المدرسة",
+            "cue": "school",
+            "tag": "free",
+            "forms": ["al-madrasa", "madrasa"],
+            "note": "madrasa is a school — the place of darasa, to study, and the same building M2's mudarris teaches in. Going to school in general keeps the article: ilā al-madrasa."
+          },
+          {
+            "display": "kull yawm",
+            "script": "كل يوم",
+            "cue": "every day",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Every day\", learned as one piece, and it is what makes the sentence a habit — the verb itself never changes for that. kull is \"every\"; yawm is \"day\", a word al-yawm (\"today\") will bring back on its own."
+          }
+        ],
+        "rules": [0, 1, 3]
+      },
+      "trap": "\"I go\" and \"I am going\" are the same Arabic word. The non-past is unmarked for time; kull yawm is what says this is a habit.",
+      "sound": "ADH-hab i-LAA al-MAD-ra-sa kull YAWM — dh as in \"this\".",
+      "variations": [
+        {
+          "display": "tadhhab ilā al-madrasa kull yawm",
+          "script": "تذهب إلى المدرسة كل يوم",
+          "cue": "You go to school every day (to a man)",
+          "changed": "a- → ta-: the prefix is the whole change"
+        },
+        {
+          "display": "yadhhab ilā al-madrasa kull yawm",
+          "script": "يذهب إلى المدرسة كل يوم",
+          "cue": "He goes to school every day",
+          "changed": "a- → ya-: he, and no pronoun anywhere"
+        }
+      ],
+      "mistake": {
+        "display": "adhhab ilā madrasa kull yawm",
+        "script": "أذهب إلى مدرسة كل يوم",
+        "why": "English \"I go to school\" is bare, so the article is easy to drop. Arabic keeps it: ilā al-madrasa. Bare madrasa is \"a school\", some school or other."
+      },
+      "usage": "The daily-routine sentence — swap the place and it carries your whole week.",
+      "register": "neutral",
+      "mnemonic": "madrasa — where darasa (study) happens; the mudarris from M2 works there."
+    },
+    {
+      "id": "L1-M4-S02",
+      "display": "ashrab al-qahwa fī aṣ-ṣabāḥ",
+      "script": "أشرب القهوة في الصباح",
+      "cue": "I drink coffee in the morning",
+      "glossEn": "lit. \"I-drink the-coffee in the-morning\"",
+      "literal": "I-drink the-coffee in the-morning",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fī aṣ-ṣabāḥ",
+            "script": "في الصباح",
+            "cue": "in the morning",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"In the morning\", learned whole. Inside it: ṣabāḥ is the morning of M2's ṣabāḥ al-khayr, and aṣ- is the article al- with its l swallowed by the sun letter ṣ — written as said, like ash-shāy. Speech elides the vowel — fi ṣ-ṣabāḥ — but the writing keeps every letter."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "The habit keeps M1's article: coffee in general is al-qahwa, even inside a morning routine.",
+      "sound": "ASH-rab al-QAH-wa fi ṣ-ṣa-BAAḤ — said, the fī melts into the article.",
+      "variations": [
+        {
+          "display": "ashrab ash-shāy fī aṣ-ṣabāḥ",
+          "script": "أشرب الشاي في الصباح",
+          "cue": "I drink tea in the morning",
+          "changed": "swap the drink — the frame holds still"
+        },
+        {
+          "display": "nashrab al-qahwa fī aṣ-ṣabāḥ",
+          "script": "نشرب القهوة في الصباح",
+          "cue": "We drink coffee in the morning",
+          "changed": "a- → na-: we — the prefix does it all"
+        }
+      ],
+      "mistake": {
+        "display": "ashrab al-qahwa fī al-ṣabāḥ",
+        "script": "أشرب القهوة في الصباح",
+        "why": "ṣ is a sun letter, so the l of al- never survives in front of it. It is aṣ-ṣabāḥ — said that way and, in this course, written that way."
+      },
+      "usage": "Morning routines. The evening twin is fī al-masāʾ, at the end of the module.",
+      "register": "neutral",
+      "mnemonic": "ṣabāḥ you already greet with — ṣabāḥ al-khayr is this word plus goodness."
+    },
+    {
+      "id": "L1-M4-S03",
+      "display": "ākul al-fākiha kull yawm",
+      "script": "آكل الفاكهة كل يوم",
+      "cue": "I eat fruit every day",
+      "glossEn": "lit. \"I-eat the-fruit every day\"",
+      "literal": "I-eat the-fruit every day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ākul",
+            "script": "آكل",
+            "cue": "I eat",
+            "tag": "delta",
+            "forms": ["ākul", "taʾkul", "yaʾkul"],
+            "note": "\"Eat\": ākul (I), taʾkul (you-m / she), yaʾkul (he). The long ā at the front is the a- prefix fused onto a verb that itself starts with a catch in the throat — which is also why the other persons carry a written ʾ in the middle."
+          },
+          {
+            "display": "al-fākiha",
+            "script": "الفاكهة",
+            "cue": "fruit",
+            "tag": "interference",
+            "forms": ["al-fākiha", "fākiha"],
+            "note": "fākiha is fruit; eating fruit in general keeps the article — ākul al-fākiha — exactly as uḥibb al-qahwa did in M1. English \"I eat fruit\" is bare; the Arabic habit is not."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "A habit is a statement about the whole class of thing, so M1's law applies: al-fākiha, article on.",
+      "sound": "AA-kul al-FAA-ki-ha — the first syllable is long, aa.",
+      "variations": [
+        {
+          "display": "taʾkul al-fākiha kull yawm",
+          "script": "تأكل الفاكهة كل يوم",
+          "cue": "You eat fruit every day (to a man)",
+          "changed": "ā- → taʾ-: you, with the little catch written"
+        },
+        {
+          "display": "ākul al-fākiha fī aṣ-ṣabāḥ",
+          "script": "آكل الفاكهة في الصباح",
+          "cue": "I eat fruit in the morning",
+          "changed": "every day → in the morning: swap one time word for another"
+        }
+      ],
+      "mistake": {
+        "display": "ākul fākiha kull yawm",
+        "script": "آكل فاكهة كل يوم",
+        "why": "Bare fākiha is \"a piece of fruit\". The habit — fruit as a class — keeps the article English drops: ākul al-fākiha."
+      },
+      "usage": "Food habits. The verb will meet its past self (akaltu) in M5.",
+      "register": "neutral",
+      "mnemonic": "fākiha — fruit; the fruit bowl is the fākiha bowl."
+    },
+    {
+      "id": "L1-M4-S04",
+      "display": "yashrab ash-shāy dāʾiman",
+      "script": "يشرب الشاي دائمًا",
+      "cue": "He always drinks tea",
+      "glossEn": "lit. \"he-drinks the-tea always\"",
+      "literal": "he-drinks the-tea always",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yashrab",
+            "script": "يشرب",
+            "cue": "he drinks",
+            "tag": "delta",
+            "forms": ["yashrab", "tashrab", "nashrab"],
+            "note": "M3's ashrab with the person changed: ya- is he, ta- is you-m or she, na- is we. Same stem, different front — the whole non-past paradigm in one word family."
+          },
+          {
+            "display": "dāʾiman",
+            "script": "دائمًا",
+            "cue": "always",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Always\", with the adverb tail -an written out (like shukran, kathīran) and a written ʾ in its middle. Its everyday seat is the end of the sentence: yashrab ash-shāy dāʾiman."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "English tucks \"always\" before the verb; the Arabic adverb's everyday seat is the end of the sentence.",
+      "sound": "YASH-rab ash-SHAAY DAA-ʾi-man — a tiny catch in the middle of dāʾiman.",
+      "variations": [
+        {
+          "display": "tashrab ash-shāy dāʾiman",
+          "script": "تشرب الشاي دائمًا",
+          "cue": "You always drink tea (to a man)",
+          "changed": "ya- → ta-: you (or she — the double duty below)"
+        },
+        {
+          "display": "yashrab al-qahwa dāʾiman",
+          "script": "يشرب القهوة دائمًا",
+          "cue": "He always drinks coffee",
+          "changed": "swap the drink — dāʾiman keeps its seat"
+        }
+      ],
+      "mistake": {
+        "display": "yashrab dāʾiman ash-shāy",
+        "script": "يشرب دائمًا الشاي",
+        "why": "The English order — \"always drinks tea\" — imported whole. The everyday seat of dāʾiman is after the object, at the end: yashrab ash-shāy dāʾiman."
+      },
+      "usage": "Talking about someone else's habits — no pronoun needed, the ya- carries him.",
+      "register": "neutral",
+      "mnemonic": "dāʾim is \"lasting\"; dāʾiman — lastingly, always."
+    },
+    {
+      "id": "L1-M4-S05",
+      "display": "tashrab al-ḥalīb aḥyānan",
+      "script": "تشرب الحليب أحيانًا",
+      "cue": "She sometimes drinks milk",
+      "glossEn": "lit. \"she-drinks the-milk sometimes\"",
+      "literal": "she-drinks the-milk sometimes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aḥyānan",
+            "script": "أحيانًا",
+            "cue": "sometimes",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Sometimes\" — literally \"at times\", plural of ḥīn (a time) — wearing the same written -an tail as dāʾiman, and sitting in the same end-of-sentence seat."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "tashrab here is SHE — the same shape that asks a man \"do you drink?\". Only the situation says which; M3's turīd taught the same collision.",
+      "sound": "TASH-rab al-ḥa-LEEB aḥ-YAA-nan.",
+      "variations": [
+        {
+          "display": "tashrab al-ḥalīb kull yawm",
+          "script": "تشرب الحليب كل يوم",
+          "cue": "She drinks milk every day",
+          "changed": "sometimes → every day"
+        },
+        {
+          "display": "ashrab al-ḥalīb aḥyānan",
+          "script": "أشرب الحليب أحيانًا",
+          "cue": "I sometimes drink milk",
+          "changed": "ta- → a-: back to I"
+        }
+      ],
+      "mistake": {
+        "display": "yashrab al-ḥalīb aḥyānan",
+        "script": "يشرب الحليب أحيانًا",
+        "why": "For \"she drinks\", the prefix is ta-, not ya-: tashrab al-ḥalīb. yashrab says \"he\" — the ya-/ta- split is exactly where English \"he/she drinks\" splits, but on the front of the verb."
+      },
+      "usage": "Halfway habits — aḥyānan softens any routine sentence.",
+      "register": "neutral",
+      "mnemonic": "aḥyānan — \"at times\": ḥīn is a time, aḥyān is times."
+    },
+    {
+      "id": "L1-M4-S06",
+      "display": "adhhab ilā al-ʿamal fī aṣ-ṣabāḥ",
+      "script": "أذهب إلى العمل في الصباح",
+      "cue": "I go to work in the morning",
+      "glossEn": "lit. \"I-go to the-work in the-morning\"",
+      "literal": "I-go to the-work in the-morning",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-ʿamal",
+            "script": "العمل",
+            "cue": "work",
+            "tag": "free",
+            "forms": ["al-ʿamal", "ʿamal"],
+            "note": "ʿamal is work — the thing and the place you go to. Going to work in general keeps the article, like al-madrasa: ilā al-ʿamal. The ʿ opens the word from deep in the throat."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "Same trap as school: English \"go to work\" is bare, Arabic keeps the article — ilā al-ʿamal.",
+      "sound": "ADH-hab i-LAA al-ʿA-mal fi ṣ-ṣa-BAAḤ.",
+      "variations": [
+        {
+          "display": "tadhhab ilā al-ʿamal fī aṣ-ṣabāḥ",
+          "script": "تذهب إلى العمل في الصباح",
+          "cue": "You go to work in the morning (to a man)",
+          "changed": "a- → ta-: you"
+        },
+        {
+          "display": "adhhab ilā al-ʿamal kull yawm",
+          "script": "أذهب إلى العمل كل يوم",
+          "cue": "I go to work every day",
+          "changed": "in the morning → every day"
+        }
+      ],
+      "mistake": {
+        "display": "adhhab ilā ʿamal fī aṣ-ṣabāḥ",
+        "script": "أذهب إلى عمل في الصباح",
+        "why": "English \"go to work\" carries no article, so it is the easiest one to drop. Arabic keeps it: ilā al-ʿamal."
+      },
+      "usage": "The commute sentence. Work or school — the frame is one frame.",
+      "register": "neutral",
+      "mnemonic": "ʿamal is work — and ʿamila, he worked, is where M5's suffix game will not go: this one stays daily."
+    },
+    {
+      "id": "L1-M4-S07",
+      "display": "matā tashrab al-qahwa?",
+      "script": "متى تشرب القهوة؟",
+      "cue": "When do you drink coffee? (to a man)",
+      "glossEn": "lit. \"when you-drink the-coffee\"",
+      "literal": "when you-drink the-coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "matā",
+            "script": "متى",
+            "cue": "when",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"When\", and it fronts the question the way kayfa did in M2: matā tashrab? Nothing behind it moves, and there is no \"do\" — the ta- already holds the you. It replaces hal: one question word per question."
+          }
+        ],
+        "rules": [2, 7]
+      },
+      "trap": "English builds \"when DO you…\"; Arabic puts matā in front of the plain statement and is done.",
+      "sound": "MA-taa TASH-rab al-QAH-wa — the voice falls at the end; matā already marked the question.",
+      "variations": [
+        {
+          "display": "matā tashrab ash-shāy?",
+          "script": "متى تشرب الشاي؟",
+          "cue": "When do you drink tea? (to a man)",
+          "changed": "swap the drink"
+        },
+        {
+          "display": "matā yashrab al-qahwa?",
+          "script": "متى يشرب القهوة؟",
+          "cue": "When does he drink coffee?",
+          "changed": "ta- → ya-: he, and matā stays put"
+        }
+      ],
+      "mistake": {
+        "display": "matā hal tashrab al-qahwa?",
+        "script": "متى هل تشرب القهوة؟",
+        "why": "An English \"when do you…\" has two question pieces, so both get imported. Arabic takes one: matā does the whole job, and hal only ever marks yes/no questions."
+      },
+      "usage": "Asking about anyone's routine. The answer is a time word: fī aṣ-ṣabāḥ.",
+      "register": "neutral",
+      "mnemonic": "matā — when; \"ma-TA time is it?\""
+    },
+    {
+      "id": "L1-M4-S08",
+      "display": "al-yawm adhhab ilā al-ʿamal",
+      "script": "اليوم أذهب إلى العمل",
+      "cue": "Today I am going to work",
+      "glossEn": "lit. \"the-day I-go to the-work\"",
+      "literal": "the-day I-go to the-work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-yawm",
+            "script": "اليوم",
+            "cue": "today",
+            "tag": "delta",
+            "forms": ["al-yawm"],
+            "note": "Two jobs in one row: yawm alone is \"day\" (kull yawm, every day), and with its article it is \"today\" — al-yawm, literally \"the day\". It needs no preposition: al-yawm adhhab, never fī al-yawm."
+          }
+        ],
+        "rules": [1, 6]
+      },
+      "trap": "The same verb that said \"I go (every day)\" says \"I am going (today)\". The non-past is unmarked; the time word decides.",
+      "sound": "al-YAWM ADH-hab i-LAA al-ʿA-mal.",
+      "variations": [
+        {
+          "display": "al-yawm adhhab ilā al-madrasa",
+          "script": "اليوم أذهب إلى المدرسة",
+          "cue": "Today I am going to school",
+          "changed": "work → school"
+        },
+        {
+          "display": "al-yawm tadhhab ilā al-ʿamal",
+          "script": "اليوم تذهب إلى العمل",
+          "cue": "Today you are going to work (to a man)",
+          "changed": "a- → ta-: you"
+        }
+      ],
+      "mistake": {
+        "display": "fī al-yawm adhhab ilā al-ʿamal",
+        "script": "في اليوم أذهب إلى العمل",
+        "why": "English says \"ON this day\", so a preposition wants in. al-yawm stands alone: al-yawm adhhab."
+      },
+      "usage": "Today's plan, said in the plain non-past — no special tense needed.",
+      "register": "neutral",
+      "mnemonic": "al-yawm — THE day, the one you are standing in: today."
+    },
+    {
+      "id": "L1-M4-S09",
+      "display": "hal tashrab al-qahwa fī al-layl?",
+      "script": "هل تشرب القهوة في الليل؟",
+      "cue": "Do you drink coffee at night? (to a man)",
+      "glossEn": "lit. \"question you-drink the-coffee in the-night\"",
+      "literal": "Q you-drink the-coffee in the-night",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fī al-layl",
+            "script": "في الليل",
+            "cue": "at night",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"At night\", learned whole like its daytime siblings. layl is night; and because the article stands before a word that itself begins with l, the assimilation M2 taught changes nothing you can see — al-layl looks regular and is said with one long doubled l."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "hal + the plain statement, exactly as in M2 — English's \"do\" still has nowhere to go.",
+      "sound": "hal TASH-rab al-QAH-wa fi l-LAYL — one long l where the article meets the night.",
+      "variations": [
+        {
+          "display": "hal tashrab ash-shāy fī al-masāʾ?",
+          "script": "هل تشرب الشاي في المساء؟",
+          "cue": "Do you drink tea in the evening? (to a man)",
+          "changed": "night → evening, coffee → tea"
+        },
+        {
+          "display": "lā, ashrab al-māʾ fī al-layl",
+          "script": "لا، أشرب الماء في الليل",
+          "cue": "No, I drink water at night",
+          "changed": "the answer: lā, then the true habit"
+        }
+      ],
+      "mistake": {
+        "display": "hal tashrab al-qahwa fī layl?",
+        "script": "هل تشرب القهوة في ليل؟",
+        "why": "English \"at night\" is bare, so the article slips off. The phrase keeps it: fī al-layl."
+      },
+      "usage": "Habits by time of day — and a genuinely useful question about caffeine.",
+      "register": "neutral",
+      "mnemonic": "layl — night; Laylā is the night-born name the famous love story is about."
+    },
+    {
+      "id": "L1-M4-S10",
+      "display": "nashrab ash-shāy fī al-masāʾ",
+      "script": "نشرب الشاي في المساء",
+      "cue": "We drink tea in the evening",
+      "glossEn": "lit. \"we-drink the-tea in the-evening\"",
+      "literal": "we-drink the-tea in the-evening",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fī al-masāʾ",
+            "script": "في المساء",
+            "cue": "in the evening",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"In the evening\", learned whole. masāʾ is the evening of masāʾ al-khayr (M2's variation), ending on a written hamza like māʾ. m is a moon letter, so al- keeps its l — no assimilation here."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "nashrab — the na- is \"we\", the last prefix of the paradigm, and still no pronoun anywhere in the sentence.",
+      "sound": "NASH-rab ash-SHAAY fi l-ma-SAAʾ — the evening ends on the little catch.",
+      "variations": [
+        {
+          "display": "ashrab ash-shāy fī al-masāʾ",
+          "script": "أشرب الشاي في المساء",
+          "cue": "I drink tea in the evening",
+          "changed": "na- → a-: back to I"
+        },
+        {
+          "display": "nashrab al-qahwa fī aṣ-ṣabāḥ",
+          "script": "نشرب القهوة في الصباح",
+          "cue": "We drink coffee in the morning",
+          "changed": "evening tea → morning coffee: both slots swap"
+        }
+      ],
+      "mistake": {
+        "display": "nashrab ash-shāy fī al-masāʾ dāʾiman kull yawm",
+        "script": "نشرب الشاي في المساء دائمًا كل يوم",
+        "why": "English can stack \"always, every day\" for emphasis. Arabic picks one time expression per plain sentence — fī al-masāʾ already carries this one."
+      },
+      "usage": "The family habit — na- is the household's prefix.",
+      "register": "neutral",
+      "mnemonic": "masāʾ — evening; you already wish people masāʾ al-khayr with it."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M4-C01",
+      "display": "yadhhab ilā al-madrasa",
+      "script": "يذهب إلى المدرسة",
+      "cue": "He goes to school"
+    },
+    {
+      "id": "L1-M4-C02",
+      "display": "matā tashrab al-ḥalīb?",
+      "script": "متى تشرب الحليب؟",
+      "cue": "When do you drink milk? (to a man)"
+    },
+    {
+      "id": "L1-M4-C03",
+      "display": "ākul al-fākiha dāʾiman",
+      "script": "آكل الفاكهة دائمًا",
+      "cue": "I always eat fruit"
+    },
+    {
+      "id": "L1-M4-C04",
+      "display": "nashrab al-qahwa fī aṣ-ṣabāḥ",
+      "script": "نشرب القهوة في الصباح",
+      "cue": "We drink coffee in the morning"
+    },
+    {
+      "id": "L1-M4-C05",
+      "display": "al-yawm adhhab ilā al-madrasa",
+      "script": "اليوم أذهب إلى المدرسة",
+      "cue": "Today I am going to school"
+    },
+    {
+      "id": "L1-M4-C06",
+      "display": "hal tadhhab ilā al-ʿamal kull yawm?",
+      "script": "هل تذهب إلى العمل كل يوم؟",
+      "cue": "Do you go to work every day? (to a man)"
+    },
+    {
+      "id": "L1-M4-C07",
+      "display": "taʾkul al-fākiha fī al-masāʾ",
+      "script": "تأكل الفاكهة في المساء",
+      "cue": "She eats fruit in the evening"
+    },
+    {
+      "id": "L1-M4-C08",
+      "display": "ashrab al-māʾ kull yawm",
+      "script": "أشرب الماء كل يوم",
+      "cue": "I drink water every day"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
