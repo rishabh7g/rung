@@ -35,17 +35,15 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 86 keys: the 15 of PRD §4, the 5 the frozen screens forced
+ * file it is complaining about). 83 keys: the 15 of PRD §4, the 5 the frozen screens forced
  * (PR #120) — `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and the four
  * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — the 2 the Ladder
  * forced (#86): the counts-only pending line and the sealed-level toast,
  * which PRD-design §5 prints as copy but PRD §4's inventory never listed — the 6 the staged rung
- * card forced (#87): a label per CTA across the four [D22] stages — the
- * 3 the module list forced (#88): its helper line, the "open full" label and the interference
- * -trap note on an expanded card — the 4 Sentence Detail forced (#89): the trap callout's
- * heading, the mnemonic's "pocket it" label, and the two pager buttons — the 3 the reveal
- * card forced (#93): the two self-mark segments [D11] and the Next that does not exist until one
- * of them is chosen — the 3 the "why" panel forced
+ * card forced (#87): a label per CTA across the four [D22] stages — the 4 Sentence Detail forced
+ * (#89): the trap callout's heading, the mnemonic's "pocket it" label, and the two pager buttons
+ * — the 3 the reveal card forced (#93): the two self-mark segments [D11] and the Next that does
+ * not exist until one of them is chosen — the 3 the "why" panel forced
  * (#94): its toggle's two labels and the "open full" that leaves the session — the 16 the
  * session machine forced (#96): the Practice hub's title, its three phase lines,
  * the two Begin labels, the three phase names the soft chips wear, the
@@ -108,9 +106,6 @@ export const STRINGS_KEYS = [
   'rungCard.exitRitual',
   'rungCard.module',
   'rungCard.practiceEarlier',
-  'module.helper',
-  'module.openFull',
-  'module.trapNote',
   'sentence.trapHead',
   'sentence.pocketIt',
   'sentence.prev',
@@ -231,15 +226,6 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'rungCard.module': [],
   'rungCard.practiceEarlier': [],
   /**
-   * The module list (#88) — the three lines the screen says in its own right: the helper above
-   * the cards, the label on the control that opens a sentence in full, and the one-line warning
-   * that a sentence carries an interference trap. None of them interpolates; the numbers on that
-   * screen are counts the shell renders, not sentences.
-   */
-  'module.helper': [],
-  'module.openFull': [],
-  'module.trapNote': [],
-  /**
    * Sentence Detail (#89) — the four things the screen says in its own right. Its ten section
    * labels stay English furniture (`WORD BY WORD`, `RULES USED` …), in the register of the
    * `M1 · SENTENCE 02` kicker; these four are not. The trap's heading is a sentence about the
@@ -275,10 +261,12 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    * states the same thing to a screen reader, which is why the words may differ per course
    * without the control changing meaning.
    *
-   * `why.openFull` is deliberately NOT `module.openFull`: the module list's control opens a
-   * sentence from a browsing list, this one leaves a running session for it. A course may well
-   * word them the same; sharing the key would mean it could never word them differently — the
-   * call #93 made for `mark.next` against `sentence.next`.
+   * `why.openFull` was deliberately never shared with the module list's own "open full" label:
+   * that one opened a sentence from a browsing list, this one leaves a running session for it. A
+   * course may well word them the same; sharing the key would mean it could never word them
+   * differently — the call #93 made for `mark.next` against `sentence.next`. The list's twin
+   * rendered nowhere in the end and went on #229; this one is the survivor, on the surface that
+   * shows it.
    *
    * None of them interpolates: they are labels, not sentences. The delta-learning tag inside the
    * rows stays English furniture (`TagChip`, #89) — it names the model, it does not teach the

@@ -23,10 +23,11 @@
  *   4. **Where the learner was.** The scroll offset survives a detour into Sentence Detail, in
  *      `sessionStorage` and never in the store (`module/moduleView.ts`).
  *
- * Every learner-facing word is the course's: the sentences are its content and the helper line is
- * its `strings.json` — the cards themselves add no label at all. The English here is structural
- * furniture in the register of the nav's tab labels — the `M1 · MODULE` kicker — and the counter
- * is a count.
+ * Every learner-facing word is the course's: the sentences are its content and the closing
+ * Practice link is its `strings.json` — the cards themselves add no label at all. The helper line
+ * that used to sit above them went on #229: it was read-once copy, and stale since #217 took
+ * expand-in-place away. The English here is structural furniture in the register of the nav's tab
+ * labels — the `M1 · MODULE` kicker — and the counter is a count.
  *
  * **Two divergences from the prototype**, both the shell's shape rather than this screen's:
  * the prototype draws its own header row (chevron + kicker + title + counter) where the shell
@@ -171,10 +172,6 @@ function ModuleList({ moduleId }: ModuleListProps) {
           {produced} / {sentences.length * PRODUCTIONS_PER_SENTENCE}
         </p>
       </div>
-
-      <p className={styles.helper} dir={course.dir}>
-        {strings['module.helper']}
-      </p>
 
       <ol className={styles.cards}>
         {sentences.map((sentence) => (
