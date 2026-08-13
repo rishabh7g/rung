@@ -1197,7 +1197,7 @@ describe('the authored content', () => {
     }
   });
 
-  it('ships hi-mr and en-es L1-M1..M10 and the five authored en-ar modules on a dev build', () => {
+  it('ships hi-mr, en-es and en-ar L1-M1..M10 on a dev build', () => {
     const { report, outRoot } = build(DEFAULT_CONTENT_ROOT, DEV);
 
     expect(report.exitCode).toBe(0);
@@ -1210,10 +1210,13 @@ describe('the authored content', () => {
         'en-es',
         ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5', 'L1-M6', 'L1-M7', 'L1-M8', 'L1-M9', 'L1-M10'],
       ],
-      ['en-ar', ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5']],
+      [
+        'en-ar',
+        ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5', 'L1-M6', 'L1-M7', 'L1-M8', 'L1-M9', 'L1-M10'],
+      ],
     ]);
     expect(report.lines).toContain(
-      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 5 modules (L1-M1..M5)',
+      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10)',
     );
     expect(readManifest(outRoot).devBuild).toBe(true);
     for (const file of [
@@ -1244,6 +1247,11 @@ describe('the authored content', () => {
       'en-ar/modules/L1-M3.json',
       'en-ar/modules/L1-M4.json',
       'en-ar/modules/L1-M5.json',
+      'en-ar/modules/L1-M6.json',
+      'en-ar/modules/L1-M7.json',
+      'en-ar/modules/L1-M8.json',
+      'en-ar/modules/L1-M9.json',
+      'en-ar/modules/L1-M10.json',
     ]) {
       expect(existsSync(path.join(outRoot, ...file.split('/')))).toBe(true);
     }
