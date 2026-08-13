@@ -21,62 +21,27 @@
  * `{"ritual":{"stepTitle":{"check":…}}}`, which is how the authored files are written. The checker
  * flattens before comparing.
  *
- * FROZEN at Sync-3 (#71): the keys below are the published list PRD-design §8.2 points at, and
- * the bundle values are the frozen per-course tables. This file mirrors the freeze; a new key
- * after this point is a design change, not a code change.
- *
- * The freeze is deliberately BROKEN downwards from #225 on owner instruction (2026-08-13): the
- * app's read-once copy — lines a learner reads on the first card and skims past on the next
- * thirty — is being stripped, so the list now sits BELOW PRD-design §8.2 rather than mirroring it.
- * `design/` is read-only and stays as published; the divergence is recorded in `docs/`.
+ * NOT FROZEN. The Sync-3 freeze (#71) — which held this list identical to PRD-design §8.2 — was
+ * lifted by owner decision on 2026-08-13 for the read-once copy removal (#225–#233). The list is
+ * now smaller than §8.2, which stands as the historical v3.3 design package rather than the
+ * shipped key list. `design/` is read-only; `docs/design-contract.md` records what diverged and
+ * why. Do not restate that history here — a per-key narrative in this comment is what made it
+ * unmaintainable.
  */
 
 /* ------------------------------------------------------------------ the list */
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 68 keys: the 11 of PRD §4 that survive — its four `ritual.check.*`
- * lines were read-once copy and went on #230 — the 4 of the 5 the frozen screens forced
- * (PR #120) that survive: `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and
- * the three design §6.5 ritual step titles (`ritual.stepTitle.*`); the fifth was
- * `ritual.check.plateLabel`, which labelled the dashed plate #230 removed — the 2 the Ladder
- * forced (#86): the counts-only pending line and the sealed-level toast,
- * which PRD-design §5 prints as copy but PRD §4's inventory never listed — the 6 the staged rung
- * card forced (#87): a label per CTA across the four [D22] stages — the 4 Sentence Detail forced
- * (#89): the trap callout's heading, the mnemonic's "pocket it" label, and the two pager buttons
- * — the 3 the reveal card forced (#93): the two self-mark segments [D11] and the Next that does
- * not exist until one of them is chosen — the 3 the "why" panel forced
- * (#94): its toggle's two labels and the "open full" that leaves the session — the 16 the
- * session machine forced (#96): the Practice hub's title, its three phase lines,
- * the two Begin labels, the three phase names the soft chips wear, the
- * honest answer to a Review chip with nothing due, and the summary's title, four count lines and
- * its way back to the Ladder — the 5 the Read phase forced (#97): the cue toggle's two labels
- * and its pager's three, the last of which names where the rung's last sentence goes — the 3
- * lossless resume forced (#99): the line that says a session is still open and where it stopped,
- * and the two ways out of it (pick it up, or leave it and start a new one) — and the 2 the
- * press-and-hold forced (#101): what the held control says once it is signed, and the way on to
- * part 2 (the prototype writes both in English for every course, which is the shell owning a
- * learner-facing sentence) — and the 3 of the 5 the Verdict forced (#103) that survive: the two
- * checklist lines the ritual ends on and the CTA that climbs back to the ladder; the third
- * checklist line and the paragraph under the list were read-once copy and went on #231 — and
- * the 2 of the 4 the Settings screen forced (#105) that survive: the course dropdown's status
- * line in its two shapes (mid-journey and pending-authoring, counts only — Invariant 2); the
- * reassurance note about switching and the privacy line the screen ended on were read-once copy
- * and went on #232, which took the storage section's 2 (#107) — the durability line's protected
- * and best-effort states — with them — and the 5 of the 6 export/import forced (#108) that
- * survive: the import confirm's replace warning and its two decisions, the friendly refusal when
- * a file cannot be read, and the toast the Ladder raises when a restore lands; the backup
- * explainer above the buttons went on #232 too.
+ * file it is complaining about).
  *
- * — and the 1 of the 2 the retry interstitial's frozen spec forced (design/tokens.md §6.3, routed
- * here by #69) that survives: the per-course `COMPREHEND · AGAIN` kicker the shipped build awaited
- * a key for; the other was the reassurance under it, read once and gone on #231. The alternative
- * each time was hardcoding learner-facing lines in the shell, which is the one thing this list
- * exists to prevent.
+ * A key earns its place here on ONE test: the shell would otherwise have to hardcode a
+ * learner-facing sentence, which is the one thing this list exists to prevent. Everything that is
+ * furniture — section labels, kickers, technical detail — stays English in the shell and never
+ * appears below.
  *
- * Every draft above was RATIFIED as shipped at the Sync-3 freeze (#71) — see PRD-design §8.2 for
- * the decisions (register, shared keys) — except the en `retry.cta`, restored to the prototype's
- * frozen wording per tokens.md §6.3.
+ * The per-key grouping and reasoning live in `STRINGS_PLACEHOLDERS` below, beside the rows they
+ * are about; the removals live in `docs/design-contract.md`.
  */
 export const STRINGS_KEYS = [
   'cueLabel',
@@ -100,7 +65,6 @@ export const STRINGS_KEYS = [
   'rungCard.revisitModule',
   'rungCard.exitRitual',
   'rungCard.module',
-  'rungCard.practiceEarlier',
   'sentence.trapHead',
   'sentence.pocketIt',
   'sentence.prev',
@@ -203,13 +167,17 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    * None of them interpolates: a button label that needed a runtime value would be a sentence.
    * `rungCard.practice` is deliberately shared by the `studied` primary and the `exit_ready`
    * secondary, because it is the same tab either way.
+   *
+   * Five, not the seven #87 minted: the fresh rung's note went with the read-once copy on #228,
+   * and `practiceEarlier` — the pending stage's "practice earlier rungs" link — went with the
+   * pending branch itself, which #228 removed because the Practice hub has nothing to serve for
+   * an unauthored rung. The key outlived its only render site by five PRs and went on #233.
    */
   'rungCard.startModule': [],
   'rungCard.practice': [],
   'rungCard.revisitModule': [],
   'rungCard.exitRitual': [],
   'rungCard.module': [],
-  'rungCard.practiceEarlier': [],
   /**
    * Sentence Detail (#89) — the four things the screen says in its own right. Its ten section
    * labels stay English furniture (`WORD BY WORD`, `RULES USED` …), in the register of the
