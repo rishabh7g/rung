@@ -32,7 +32,7 @@
  * (PRD §4), so it is raised on the copy freeze (#71) with the rest and flagged on #117.
  */
 import { useState } from 'react';
-import type { L2Lang } from '../../course/manifest.ts';
+import type { L2Written } from '../../course/manifest.ts';
 import { useStrings } from '../../course/strings.ts';
 import type { PoolItem } from '../../course/types.ts';
 import { SelfMark, type Mark } from '../../components/SelfMark.tsx';
@@ -48,7 +48,7 @@ interface ComprehensionItemProps {
   /** The course's writing direction — every line on the card is its content or its copy. */
   dir?: string;
   /** The tags the L2 lines are written in (#186); the cue and the prompt are L1 and inherit. */
-  l2?: L2Lang;
+  l2?: L2Written;
 }
 
 export function ComprehensionItem({ item, onMark, dir, l2 }: ComprehensionItemProps) {
@@ -67,12 +67,12 @@ export function ComprehensionItem({ item, onMark, dir, l2 }: ComprehensionItemPr
           own frame for the line under test. */}
       <div className={styles.plate}>
         <RegistrationMarks />
-        <p className={styles.display} dir={dir} lang={l2?.display}>
+        <p className={styles.display} dir={l2?.display.dir} lang={l2?.display.lang}>
           {item.display}
         </p>
         {/* Romanized courses only: recognition, never something to produce (PRD §9 [D20]). */}
         {item.script !== undefined && (
-          <p className={styles.script} lang={l2?.script}>
+          <p className={styles.script} dir={l2?.script.dir} lang={l2?.script.lang}>
             {item.script}
           </p>
         )}
