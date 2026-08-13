@@ -358,6 +358,14 @@ to 380/580 KiB, and en-es L1 (#192–#194) blew the 580 anyway at 634.8 KiB. #20
 `total` for the per-course rows above (§4) — not because the limits were wrong, but because summing
 the catalogue measures a payload no learner has ever downloaded.
 
+**#197 added a fourth face and did not move a limit.** Noto Naskh Arabic, subset per course the
+same way Mukta is, costs the strict build **2,348 raw bytes** — the shell marks only, because
+en-ar is a fixture course the learner gate excludes. A learner on hi-mr downloads **none** of it
+(`unicode-range` never matches) and precaches all of it; an Arabic learner downloads 7,544 bytes
+for the four-sentence L1-M1 fixture. This is exactly what the per-course rows are for: the Naskh
+subset lands in `course:en-ar`, not in a catalogue-wide `fonts` row that would bill every learner
+for it. Full accounting, including how it scales with #199-#201: docs/04-font-notes.md §8.4.
+
 ## 7. Reproducing
 
 ```bash

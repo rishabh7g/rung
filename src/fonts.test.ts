@@ -18,28 +18,57 @@
  * inside a face: that is `/dev/type` in a browser, recorded in docs/04-font-notes.md and
  * docs/05-perf-notes.md.
  *
- * The bundle has two parts since #113: Barlow and Barlow Condensed come from @fontsource `latin`
- * subset imports in `main.tsx`, and Mukta from `src/fonts/mukta.css`, whose woff2 payloads
- * `tools/font-subset.ts` generates per course at build time.
+ * The bundle has three parts since #197: Barlow and Barlow Condensed come from @fontsource `latin`
+ * subset imports in `main.tsx`, Mukta from `src/fonts/mukta.css` and Noto Naskh Arabic from
+ * `src/fonts/naskh.css`, whose woff2 payloads `tools/font-subset.ts` generates per course at
+ * build time.
+ *
+ * The ramp is not the whole requirement, and #197 is why. The romanized courses' quiet native
+ * line keeps a `--text-*` size and swaps only the family (`font-family: var(--font-script-
+ * fallback)`), so its face appears in no `--text-*` shorthand at all — an Arabic line that
+ * regressed to `system-ui` would render in whatever the phone owned, or in tofu, and every test
+ * here would stay green. So the requirement is read off the *stylesheets*: any rule that pairs a
+ * `--text-*` shorthand with a `font-family: var(--font-*)` override contributes that (family,
+ * weight) pair too, and the family is resolved through `src/styles/tokenOverrides.css` — the one
+ * file allowed to change a value in the read-only `design/` package.
  */
 import { describe, expect, it } from 'vitest';
 import tokensCss from '../design/tokens.css?raw';
 import indexHtml from '../index.html?raw';
 import mainSource from './main.tsx?raw';
 import muktaCss from './fonts/mukta.css?raw';
+import naskhCss from './fonts/naskh.css?raw';
+import overridesCss from './styles/tokenOverrides.css?raw';
+import fontNotes from '../docs/04-font-notes.md?raw';
 import barlowCss from '@fontsource/barlow/latin-400.css?raw';
 import barlowCondensedCss from '@fontsource/barlow-condensed/latin-600.css?raw';
 
 /* ------------------------------------------------------------ the tokens */
 
-/** `--font-heading: "Barlow Condensed", …` → `{ heading: 'Barlow Condensed', … }`. */
+/** Every stylesheet under `src/`, keyed the way a failure should name it — the same glob
+    `styleContract.test.ts` scans, because the same files are the source of truth for both. */
+const STYLESHEETS: Readonly<Record<string, string>> = Object.fromEntries(
+  Object.entries(
+    import.meta.glob<string>('./**/*.css', { query: '?raw', import: 'default', eager: true }),
+  ).map(([file, source]) => [file.replace('./', 'src/'), source]),
+);
+
+/**
+ * `--font-heading: "Barlow Condensed", …` → `{ heading: 'Barlow Condensed', … }`, read from
+ * `design/tokens.css` and then from the override sheet, which wins the way it wins in the
+ * cascade: `main.tsx` imports it straight after the tokens, so its `:root` rule is later.
+ *
+ * A stack with no quoted family (`system-ui, sans-serif`) contributes no face — nothing to bundle
+ * and nothing to check, which is exactly what `--font-script-fallback` was before #197.
+ */
 function familiesByRole(): Record<string, string> {
-  return Object.fromEntries(
-    [...tokensCss.matchAll(/--font-([a-z-]+):\s*"([^"]+)"/g)].map((match) => [
-      match[1]!,
-      match[2]!,
-    ]),
-  );
+  const roles: Record<string, string> = {};
+  for (const css of [tokensCss, overridesCss]) {
+    for (const match of css.matchAll(/--font-([a-z-]+):\s*['"]([^'"]+)['"]/g)) {
+      roles[match[1]!] = match[2]!;
+    }
+  }
+  return roles;
 }
 
 /** The plain numeric custom properties, so `var(--font-heading-weight)` resolves to `600`. */
@@ -49,30 +78,77 @@ function numericVars(): Record<string, string> {
   );
 }
 
+/** The `--text-*` shorthands, keyed by token name: `l2-hero` → `700 32px/1.55 var(…)`. */
+function rampShorthands(): Record<string, string> {
+  return Object.fromEntries(
+    [...tokensCss.matchAll(/--(text-[a-z0-9-]+):\s*([^;]+);/g)].map((match) => [
+      match[1]!,
+      match[2]!,
+    ]),
+  );
+}
+
+/** The weight a `--text-*` shorthand renders at, `var(--font-heading-weight)` resolved. */
+function weightOf(shorthand: string): string | undefined {
+  const head = shorthand.trim().split(/\s+/)[0] ?? '';
+  return /^\d+$/.test(head) ? head : numericVars()[head.match(/var\(--([a-z0-9-]+)\)/)?.[1] ?? ''];
+}
+
 /**
  * Every (family, weight) the ramp renders, read off the `--text-*` font shorthands:
  * `700 23px/1 var(--font-heading)` → `Barlow Condensed 700`.
  */
 function rampFaces(): string[] {
   const families = familiesByRole();
-  const numbers = numericVars();
   const faces = new Set<string>();
 
-  for (const [, value] of tokensCss.matchAll(/--text-[a-z0-9-]+:\s*([^;]+);/g)) {
-    const role = value!.match(/var\(--font-([a-z-]+)\)/)?.[1];
+  for (const value of Object.values(rampShorthands())) {
+    const role = value.match(/var\(--font-([a-z-]+)\)/)?.[1];
     const family = role === undefined ? undefined : families[role];
     if (family === undefined) continue;
 
-    const head = value!.trim().split(/\s+/)[0] ?? '';
-    const weight = /^\d+$/.test(head)
-      ? head
-      : numbers[head.match(/var\(--([a-z0-9-]+)\)/)?.[1] ?? ''];
+    const weight = weightOf(value);
     if (weight === undefined) continue;
 
     faces.add(`${family} ${weight}`);
   }
 
   return [...faces].sort();
+}
+
+/**
+ * The faces the ramp CANNOT name: a rule that takes a `--text-*` shorthand for its size and then
+ * swaps the family (`font-family: var(--font-script-fallback)`) renders a pair no token spells out
+ * (#197). The five `.script` rules are the whole population today — `styleContract.test.ts` calls
+ * that override "the one place that does" — and this reads them out of the stylesheets rather than
+ * trusting the count, so a sixth at another size joins the requirement automatically.
+ */
+function overriddenFaces(): { file: string; family: string; weight: string }[] {
+  const families = familiesByRole();
+  const shorthands = rampShorthands();
+  const found: { file: string; family: string; weight: string }[] = [];
+
+  for (const [file, source] of Object.entries(STYLESHEETS)) {
+    for (const [, body] of source.matchAll(/\{([^}]*)\}/g)) {
+      const role = body!.match(/font-family:\s*var\(--font-([a-z-]+)\)/)?.[1];
+      const size = body!.match(/font:\s*var\(--(text-[a-z0-9-]+)\)/)?.[1];
+      if (role === undefined || size === undefined) continue;
+
+      const family = families[role];
+      const weight = weightOf(shorthands[size] ?? '');
+      if (family === undefined || weight === undefined) continue;
+
+      found.push({ file, family, weight });
+    }
+  }
+  return found;
+}
+
+/** Everything the product renders: the ramp, plus the family-swapped rules the ramp cannot see. */
+function requiredFaces(): string[] {
+  return [
+    ...new Set([...rampFaces(), ...overriddenFaces().map((o) => `${o.family} ${o.weight}`)]),
+  ].sort();
 }
 
 /* ------------------------------------------------------------ the bundle */
@@ -85,10 +161,20 @@ function familyOf(pkg: string): string {
     .join(' ');
 }
 
+/** Every `@font-face` family + weight a committed sheet declares: `Mukta 400`, `Noto Naskh
+    Arabic 400`. One regex over both sheets — the family is read, never assumed. */
+function facesIn(css: string): string[] {
+  return [...css.matchAll(/@font-face\s*\{[^}]*\}/g)].flatMap((block) => {
+    const family = block[0].match(/font-family:\s*['"]([^'"]+)['"]/)?.[1];
+    const weight = block[0].match(/font-weight:\s*(\d{3})/)?.[1];
+    return family !== undefined && weight !== undefined ? [`${family} ${weight}`] : [];
+  });
+}
+
 /**
  * Every face the production graph carries: the `latin` subset imports in `main.tsx`
  * (`@fontsource/barlow/latin-400.css` → `Barlow 400` — the dev-only `latin-ext` dynamic imports
- * do not match and do not add faces), plus the weights `src/fonts/mukta.css` declares.
+ * do not match and do not add faces), plus the faces the committed subset sheets declare.
  */
 function bundledFaces(): string[] {
   const faces = new Set<string>(
@@ -96,30 +182,28 @@ function bundledFaces(): string[] {
       (match) => `${familyOf(match[1]!)} ${match[2]!}`,
     ),
   );
-  for (const [, weight] of muktaCss.matchAll(/font-weight:\s*(\d{3})/g)) {
-    faces.add(`Mukta ${weight!}`);
-  }
+  for (const face of [...facesIn(muktaCss), ...facesIn(naskhCss)]) faces.add(face);
   return [...faces].sort();
 }
 
 /* -------------------------------------------------------------- the guard */
 
-describe('the bundle covers the ramp — and only the ramp (#113)', () => {
-  it('bundles every weight of every family design/tokens.css renders', () => {
-    const missing = rampFaces().filter((face) => !bundledFaces().includes(face));
+describe('the bundle covers what the product renders — and only that (#113, #197)', () => {
+  it('bundles every weight of every family the product renders', () => {
+    const missing = requiredFaces().filter((face) => !bundledFaces().includes(face));
 
     expect(
       missing,
-      `${missing.join(', ')} — the ramp in design/tokens.css renders these and the bundle lacks them.\nA missing weight is not an error: the browser synthesises the face and nobody is told [D15].`,
+      `${missing.join(', ')} — the product renders these and the bundle lacks them.\nA missing weight is not an error: the browser synthesises the face and nobody is told [D15].`,
     ).toEqual([]);
   });
 
-  it('bundles nothing the ramp does not render', () => {
-    const surplus = bundledFaces().filter((face) => !rampFaces().includes(face));
+  it('bundles nothing the product does not render', () => {
+    const surplus = bundledFaces().filter((face) => !requiredFaces().includes(face));
 
     expect(
       surplus,
-      `${surplus.join(', ')} — bundled, but no --text-* token renders them. The precache ships every byte (#90), so unused headroom is pure payload; #113 trimmed Mukta 500, Barlow 500/600 and Barlow Condensed 500 on exactly this ground.`,
+      `${surplus.join(', ')} — bundled, but nothing renders them. The precache ships every byte (#90), so unused headroom is pure payload; #113 trimmed Mukta 500, Barlow 500/600 and Barlow Condensed 500 on exactly this ground.`,
     ).toEqual([]);
   });
 
@@ -157,9 +241,76 @@ describe('the bundle covers the ramp — and only the ramp (#113)', () => {
   });
 });
 
+describe('the quiet native script line has a bundled face, not a guess (#197)', () => {
+  /** The stack `--font-script-fallback` actually resolves to once the override has been applied. */
+  const stack = [
+    ...[tokensCss, overridesCss].join('\n').matchAll(/--font-script-fallback:([^;]+);/g),
+  ]
+    .at(-1)?.[1]
+    ?.trim();
+
+  it('names a face before it names system-ui — the five .script rules are the only Arabic on screen', () => {
+    expect(
+      stack,
+      'design/tokens.css declares --font-script-fallback; something has to.',
+    ).toBeDefined();
+    expect(
+      stack,
+      `--font-script-fallback resolves to "${stack}" — a bare system-ui stack means the Arabic line renders in whatever the device owns, or in tofu where it owns nothing (docs/04-font-notes.md §8). Name the bundled face first.`,
+    ).toMatch(/^['"][^'"]+['"]\s*,/);
+  });
+
+  it('names a face the bundle actually carries, at the weight the line renders', () => {
+    const overrides = overriddenFaces();
+
+    expect(overrides.length, 'no rule swaps the family off a --text-* shorthand any more').toBe(5);
+    for (const { file, family, weight } of overrides) {
+      expect(
+        bundledFaces(),
+        `${file} renders ${family} ${weight} and the bundle has no such face.`,
+      ).toContain(`${family} ${weight}`);
+    }
+  });
+
+  it('routes the Arabic block to that face — a range that misses it is the same as no face', () => {
+    const range = naskhCss.match(/unicode-range:([^;]+);/)?.[1] ?? '';
+
+    expect(range).toContain('U+0600-06FF');
+    // The presentation forms a shaper may reach for, and the joiners that control ligation.
+    expect(range).toContain('U+FE70-FEFC');
+    expect(range).toContain('U+200C-200E');
+  });
+
+  it('keeps the override in src/ and imported after the read-only tokens (docs/design-contract.md)', () => {
+    const tokens = mainSource.indexOf("import '../design/tokens.css';");
+    const override = mainSource.indexOf("import './styles/tokenOverrides.css';");
+
+    expect(tokens).toBeGreaterThan(-1);
+    expect(
+      override,
+      'the override sheet is not imported — --font-script-fallback falls back to the design value',
+    ).toBeGreaterThan(tokens);
+    // design/ is wiped on re-copy: the face must never be written INTO the design package. The
+    // token there still resolves to the system stack — its comment asks for a Naskh, the override
+    // is the answer, and the day design ships one itself this line says the override is redundant.
+    expect(tokensCss).not.toMatch(/--font-script-fallback:\s*['"]/);
+  });
+
+  it('is written down where a divergence has to be written down', () => {
+    const family = familiesByRole()['script-fallback'];
+
+    expect(family).toBeDefined();
+    expect(overridesCss).toContain('04-font-notes');
+    // The doc names the face and its licence — a bundled font with neither is the real failure.
+    expect(fontNotes).toContain(family!);
+    expect(fontNotes).toMatch(/SIL Open Font License|OFL/);
+  });
+});
+
 describe('what the bundled stylesheets promise', () => {
   const faces = [
     { family: 'Mukta', css: muktaCss },
+    { family: 'Noto Naskh Arabic', css: naskhCss },
     { family: 'Barlow', css: barlowCss },
     { family: 'Barlow Condensed', css: barlowCondensedCss },
   ];

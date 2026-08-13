@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-// The three product faces, self-hosted [D15] and right-sized (#113). The prototype pulls Mukta
+// The four product faces, self-hosted [D15] and right-sized (#113, #197). The prototype pulls Mukta
 // off Google Fonts and an offline PWA cannot: the first load with no network would fall back to
 // a system face, and on a device with no Devanagari installed that means boxes
 // (design/pwa-checklist.md §2).
@@ -10,9 +10,12 @@ import { createRoot } from 'react-dom/client';
 // directions. Mukta is subset per course at build time (`tools/font-subset.ts` — its css below
 // is committed, its woff2 generated from the content build's output); Barlow and Barlow
 // Condensed carry open-ended UI English, so their @fontsource `latin` files ship whole while
-// latin-ext and vietnamese stay out of the graph. `vite.config.ts` drops @fontsource's `.woff`
-// fallbacks so only woff2 reaches dist. Byte accounting: docs/05-perf-notes.md.
+// latin-ext and vietnamese stay out of the graph. Noto Naskh Arabic is cut the same way as Mukta
+// and for the same reason (#197): the romanized courses' quiet native line has no other face that
+// draws Arabic. `vite.config.ts` drops @fontsource's `.woff` fallbacks so only woff2 reaches dist.
+// Byte accounting: docs/05-perf-notes.md.
 import './fonts/mukta.css';
+import './fonts/naskh.css';
 import '@fontsource/barlow/latin-400.css';
 import '@fontsource/barlow-condensed/latin-600.css';
 import '@fontsource/barlow-condensed/latin-700.css';
@@ -28,6 +31,10 @@ if (import.meta.env.DEV) {
 // design/ is read-only and re-copied wholesale from the design tooling, so tokens are
 // imported IN PLACE — token updates flow with zero copy step (docs/design-contract.md).
 import '../design/tokens.css';
+// …and the one file allowed to change a token value, imported straight after it so it wins on
+// order alone (#197). Every row in it is a written-down engineering divergence from the design
+// package; adding one without the `docs/` entry is the failure it exists to prevent.
+import './styles/tokenOverrides.css';
 import './styles/global.css';
 import App from './App.tsx';
 import { registerServiceWorker } from './pwa/registerServiceWorker.ts';
