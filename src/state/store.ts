@@ -413,7 +413,7 @@ function wrapV5(v5: Record<string, unknown>): Record<string, unknown> {
  * The tier is defined by where it lives, not by a list of keys: this app keeps exactly two kinds
  * of client state, the persisted document (`rung:state`, **localStorage** — progress, the export
  * contract) and the current visit's UI (**sessionStorage** under the same `rung:` namespace —
- * `screens/module/moduleView.ts`'s open cards and scroll offsets today, and any one-shot flag
+ * `screens/module/moduleView.ts`'s scroll offsets today, and any one-shot flag
  * that joins them). Sweeping the namespace rather than naming the keys means a screen that adds
  * a transient record later is covered by the switch without an edit here.
  *

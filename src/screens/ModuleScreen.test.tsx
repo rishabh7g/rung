@@ -1,17 +1,17 @@
 /**
- * The module list (#88) — the five promises the screen makes, one describe each:
+ * The module list (#88, #217) — the five promises the screen makes, one describe each:
  *
  *   • a rung the ladder has not opened is not browsable, however it is asked for,
  *   • opening one **marks it studied, exactly once** — the write that moves the rung card [D22],
- *   • cards expand in place and **independently**: one open card is one open card,
+ *   • a card is one link into Sentence Detail and holds nothing back: no toggle, no panel, and
+ *     none of Detail's text hiding in the list,
  *   • the production dots read the counters and nothing else (0 / 1 / ≥2),
- *   • and a detour into Sentence Detail comes back to the same scroll offset and the same open
- *     cards (PRD-design §6.4).
+ *   • and a detour into Sentence Detail comes back to the same scroll offset (PRD-design §6.4).
  *
  * Everything renders the real `<App />` over a mocked `fetch`, the way every screen test in this
  * repo does: this screen is a guarded route, and a guard that works in a hand-wired router while
  * the app's table says something else is exactly the bug worth catching. The strings fixture is
- * built FROM the canonical key list, so a label reads `hi-mr module.openFull` — an assertion
+ * built FROM the canonical key list, so a label reads `hi-mr module.helper` — an assertion
  * against the prototype's English would pass on a hardcoded shell string, which is the one thing
  * the strings contract exists to prevent.
  */
@@ -53,24 +53,19 @@ async function renderModule(moduleId = CURRENT) {
 }
 
 /**
- * The cards, in module order. A card is a list item with a toggle in it — which is also how it is
- * told apart from the word chips an expanded card lists inside itself.
+ * The card links, in module order — since #217 a card IS its link, so the thing a learner touches
+ * and the thing a test looks for are the same element. The href is the filter, because the screen
+ * also closes with a link (Practice) and the shell draws its own.
  */
-function cards(): HTMLElement[] {
+function cardLinks(): HTMLElement[] {
   return screen
-    .getAllByRole('listitem')
-    .filter((item) => within(item).queryAllByRole('button').length > 0);
+    .getAllByRole('link')
+    .filter((link) => link.getAttribute('href')?.startsWith('#/sentence/') === true);
 }
 
-/** Which cards are open, read off the toggles' `aria-expanded` rather than off a class name. */
-function openState(): boolean[] {
-  return cards().map(
-    (card) => within(card).getByRole('button').getAttribute('aria-expanded') === 'true',
-  );
-}
-
-function toggle(index: number): void {
-  fireEvent.click(within(cards()[index]!).getByRole('button'));
+/** The cards themselves — the list items the links sit in, which is what carries the dots. */
+function cards(): HTMLElement[] {
+  return cardLinks().map((link) => link.closest('li')!);
 }
 
 /** A card's two production dots, as the states they are drawn in. */
@@ -181,9 +176,14 @@ describe('markStudied', () => {
     const markStudied = spyOnMarkStudied();
 
     await renderModule();
-    // Two re-renders that must not look like a second open.
-    toggle(0);
-    toggle(0);
+    // Two re-renders that must not look like a second open: got-its land through the store while
+    // the list is on screen, and the dots redraw.
+    act(() => {
+      const { ensureCourse, recordProduction } = useAppStore.getState();
+      ensureCourse(COURSE);
+      recordProduction(COURSE, `${CURRENT}-S01`);
+      recordProduction(COURSE, `${CURRENT}-S01`);
+    });
 
     expect(markStudied).toHaveBeenCalledTimes(1);
     expect(markStudied).toHaveBeenCalledWith(COURSE, CURRENT);
@@ -210,61 +210,63 @@ describe('markStudied', () => {
   });
 });
 
-/* ------------------------------------------------------------------ expansion */
+/* --------------------------------------------------------------------- the card */
 
 describe('a card', () => {
-  it('shows the L2 line and its cue while collapsed, and nothing else', async () => {
+  it('shows the L2 line and its cue, and nothing Sentence Detail owns', async () => {
     await renderModule();
 
     const sentence = moduleFixture().sentences[0]!;
     expect(screen.getByText(sentence.display)).toBeInTheDocument();
     expect(screen.getByText(sentence.cue)).toBeInTheDocument();
-    // Nothing the expansion owns: not the word-for-word line, not the trap, not the way out.
+    // The list is not a smaller second copy of Detail (#217): the gloss, the word-for-word line,
+    // the word rows and the trap note live in exactly one screen, and this is not it.
+    expect(screen.queryByText(sentence.glossEn)).not.toBeInTheDocument();
     expect(screen.queryByText(sentence.literal)).not.toBeInTheDocument();
     expect(screen.queryByText(strings('module.trapNote'))).not.toBeInTheDocument();
     expect(screen.queryByText(strings('module.openFull'))).not.toBeInTheDocument();
-    expect(openState()).toEqual([false, false]);
-  });
-
-  it('expands in place into the gloss, the literal, its word rows and "open full"', async () => {
-    await renderModule();
-    toggle(0);
-
-    const sentence = moduleFixture().sentences[0]!;
-    const card = within(cards()[0]!);
-
-    expect(card.getByText(sentence.glossEn)).toBeInTheDocument();
-    expect(card.getByText(sentence.literal)).toBeInTheDocument();
     for (const word of sentence.deconstruction.words) {
-      expect(card.getByText(word.display)).toBeInTheDocument();
+      expect(screen.queryByText(word.display)).not.toBeInTheDocument();
     }
-    expect(card.getByText(strings('module.trapNote'))).toBeInTheDocument();
-    expect(card.getByRole('link', { name: strings('module.openFull') })).toHaveAttribute(
-      'href',
-      `#/sentence/${sentence.id}`,
-    );
   });
 
-  it('leaves out what the sentence has not got — no trap note without a trap', async () => {
+  it('is one link per sentence, named by the sentence it opens', async () => {
     await renderModule();
-    // The fixture's second sentence carries no `trap`, and a section vanishes when a sentence
-    // honestly has nothing to put in it (PRD §8 F3, the same rule Detail's [D10] order obeys).
-    toggle(1);
 
-    expect(within(cards()[1]!).queryByText(strings('module.trapNote'))).not.toBeInTheDocument();
+    const sentences = moduleFixture().sentences;
+    expect(cardLinks()).toHaveLength(sentences.length);
+
+    sentences.forEach((sentence, index) => {
+      const link = cardLinks()[index]!;
+      expect(link).toHaveAttribute('href', `#/sentence/${sentence.id}`);
+      // The accessible name is the lines the card draws, so it announces the sentence it opens;
+      // the dots and the chevron are `aria-hidden` drawings of things already said.
+      expect(link).toHaveAccessibleName(new RegExp(sentence.display));
+      // An anchor with an href is what makes Enter the browser's job and puts the card in the
+      // tab order — one focusable control per card, and nothing to opt out of it.
+      expect(link.tagName).toBe('A');
+      expect(link).not.toHaveAttribute('tabindex');
+    });
   });
 
-  it('opens and closes independently of every other card', async () => {
+  it('opens Sentence Detail on a tap anywhere on it', async () => {
     await renderModule();
 
-    toggle(0);
-    expect(openState()).toEqual([true, false]);
+    fireEvent.click(cardLinks()[1]!);
 
-    toggle(1);
-    expect(openState()).toEqual([true, true]);
+    // Sentence Detail (#89): its kicker names the sentence the card opened.
+    expect(await screen.findByText('M1 · SENTENCE 02')).toBeInTheDocument();
+    expect(window.location.hash).toBe(`#/sentence/${CURRENT}-S02`);
+  });
 
-    toggle(0);
-    expect(openState()).toEqual([false, true]);
+  it('has no disclosure left in it — no toggle, and no `aria-expanded` anywhere', async () => {
+    await renderModule();
+
+    expect(scrollArea().querySelectorAll('[aria-expanded]')).toHaveLength(0);
+    for (const card of cards()) {
+      expect(within(card).queryAllByRole('button')).toHaveLength(0);
+      expect(within(card).getAllByRole('link')).toHaveLength(1);
+    }
   });
 });
 
@@ -328,9 +330,9 @@ describe('the quiet script line', () => {
   it('does not exist in a native course — there is no second script to show', async () => {
     await renderModule();
 
-    // Every string the first card renders while collapsed: the L2 line and its cue, full stop.
+    // Every string the first card renders: the L2 line and its cue, full stop.
     const sentence = moduleFixture().sentences[0]!;
-    const lines = within(cards()[0]!).getByRole('button').textContent?.trim();
+    const lines = cardLinks()[0]!.textContent?.trim();
 
     expect(lines).toBe(`${sentence.display}${sentence.cue}`);
   });
@@ -339,21 +341,18 @@ describe('the quiet script line', () => {
 /* ------------------------------------------------------------- scroll restore */
 
 describe('leaving for Sentence Detail and coming back', () => {
-  it('restores the scroll offset and the cards that were open', async () => {
+  it('restores the scroll offset the learner left', async () => {
     await renderModule();
 
-    toggle(1);
     scrollTo(240);
+    fireEvent.click(cardLinks()[1]!);
 
-    fireEvent.click(screen.getByRole('link', { name: strings('module.openFull') }));
     // Sentence Detail (#89): its kicker names the sentence the card opened.
     await screen.findByText('M1 · SENTENCE 02');
     // The offset is remembered on the way out, under its own sessionStorage key — never in the
-    // store, whose shape is the export contract (#82).
-    expect(readModuleView(moduleViewKey(COURSE, CURRENT))).toEqual({
-      scrollTop: 240,
-      expanded: [`${CURRENT}-S02`],
-    });
+    // store, whose shape is the export contract (#82). It is the whole record: since #217 there
+    // are no open cards to remember alongside it.
+    expect(readModuleView(moduleViewKey(COURSE, CURRENT))).toEqual({ scrollTop: 240 });
     expect(localStorage.getItem('rung:state')).not.toContain('scrollTop');
 
     // Back to the list — the browser's back button under a HashRouter is a hash change.
@@ -363,13 +362,27 @@ describe('leaving for Sentence Detail and coming back', () => {
     await screen.findByText(moduleFixture().sentences[0]!.display);
 
     expect(scrollArea().scrollTop).toBe(240);
-    expect(openState()).toEqual([false, true]);
   });
 
-  it('opens a module nobody has visited this session at the top, collapsed', async () => {
+  it('opens a module nobody has visited this session at the top', async () => {
     await renderModule();
 
     expect(scrollArea().scrollTop).toBe(0);
-    expect(openState()).toEqual([false, false]);
+  });
+
+  it('reads a record written before #217, `expanded` and all, without a word about it', async () => {
+    // Exactly what the old build wrote: a session already open when this one loaded still has
+    // these in it, and an offset is still an offset.
+    sessionStorage.setItem(
+      moduleViewKey(COURSE, CURRENT),
+      JSON.stringify({ scrollTop: 180, expanded: [`${CURRENT}-S02`] }),
+    );
+
+    expect(readModuleView(moduleViewKey(COURSE, CURRENT))).toEqual({ scrollTop: 180 });
+
+    await renderModule();
+
+    expect(scrollArea().scrollTop).toBe(180);
+    expect(scrollArea().querySelectorAll('[aria-expanded]')).toHaveLength(0);
   });
 });

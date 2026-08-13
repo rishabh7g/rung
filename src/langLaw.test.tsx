@@ -314,8 +314,11 @@ function stripComments(source: string): string {
  */
 const L2_SURFACE = /(?<![=($,])\{\s*(?:[A-Za-z_$][\w$]*\.)*(?:display|script)\s*\}/gu;
 
-/** The two files allowed to name a language in the source — both for `glossEn`, both English. */
-const GLOSS_FILES = ['./screens/SentenceScreen.tsx', './screens/module/SentenceCard.tsx'];
+/**
+ * The one file allowed to name a language in the source: Sentence Detail, for `glossEn`, in
+ * English. The module list's card carried the second `lang="en"` until #217 took the gloss off it.
+ */
+const GLOSS_FILES = ['./screens/SentenceScreen.tsx'];
 
 /** The opening tag an L2 surface is rendered inside, as source text. */
 function enclosingTag(source: string, at: number): string {

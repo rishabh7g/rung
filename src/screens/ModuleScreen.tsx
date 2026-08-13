@@ -1,7 +1,6 @@
 /**
- * The module list (#88) — a rung's ten sentences, browsable and nothing more
- * (PRD §8 F2; PRD-design §6.4, flow 4: "collapsed cards → expand in place → open full → Detail.
- * Expanded states + scroll restore on back").
+ * The module list (#88, #217) — a rung's ten sentences, browsable and nothing more
+ * (PRD §8 F2; PRD-design §6.4, flow 4: "a card → Detail. Scroll restore on back").
  *
  * It is the **read** half of the product, and it is deliberately quiet: there is nothing to
  * answer here, nothing to get wrong, and no control that judges anything. Four things it owes:
@@ -15,17 +14,19 @@
  *      from "Start with the module" into "Practice" [D22] — so opening this screen is what moves
  *      the Ladder, and it is idempotent in the store, which is what lets an effect fire it.
  *      It marks; it cannot unlock (`state/store.ts`).
- *   3. **The cards**, expanding in place and independently (`module/SentenceCard.tsx`), each with
- *      its two production dots — live off `courses[<id>].production`, which the Produce phase
- *      writes through the store's one counter action (`recordProduction`, #95). This screen only
- *      reads them: two full dots on every card is the rung's exit ritual open, drawn one sentence
- *      at a time.
- *   4. **Where the learner was.** Scroll offset and open cards survive a detour into Sentence
- *      Detail, in `sessionStorage` and never in the store (`module/moduleView.ts`).
+ *   3. **The cards**, each one a link into Sentence Detail (`module/SentenceCard.tsx`) and
+ *      nothing more since #217 — the details live in exactly one screen, so the list neither
+ *      expands nor holds any per-card state. Each carries its two production dots, which live off
+ *      `courses[<id>].production`, written by the Produce phase through the store's one counter
+ *      action (`recordProduction`, #95). This screen only reads them: two full dots on every card
+ *      is the rung's exit ritual open, drawn one sentence at a time.
+ *   4. **Where the learner was.** The scroll offset survives a detour into Sentence Detail, in
+ *      `sessionStorage` and never in the store (`module/moduleView.ts`).
  *
- * Every learner-facing word is the course's: the sentences are its content, the helper line and
- * the cards' two labels are its `strings.json`. The English here is structural furniture in the
- * register of the nav's tab labels — the `M1 · MODULE` kicker — and the counter is a count.
+ * Every learner-facing word is the course's: the sentences are its content and the helper line is
+ * its `strings.json` — the cards themselves add no label at all. The English here is structural
+ * furniture in the register of the nav's tab labels — the `M1 · MODULE` kicker — and the counter
+ * is a count.
  *
  * **Two divergences from the prototype**, both the shell's shape rather than this screen's:
  * the prototype draws its own header row (chevron + kicker + title + counter) where the shell
@@ -33,7 +34,7 @@
  * screen's first row; and the prototype's own list is the scroll area, where here the shell's
  * `<main>` is the one scroll area in the app. Both are #117's to reconcile.
  */
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { useCourse } from '../course/CourseProvider.tsx';
 import { l2Written } from '../course/manifest.ts';
@@ -58,8 +59,8 @@ import styles from './ModuleScreen.module.css';
 
 /**
  * The route's component. It reads the id and hands it to a **keyed** list, so opening a different
- * rung is a fresh screen rather than the same one with new content: which cards were open and how
- * far down the learner had scrolled belong to one module, and React would otherwise keep them.
+ * rung is a fresh screen rather than the same one with new content: how far down the learner had
+ * scrolled belongs to one module, and React would otherwise keep it.
  */
 export default function ModuleScreen() {
   const { id = '' } = useParams();
@@ -93,7 +94,7 @@ function ModuleList({ moduleId }: ModuleListProps) {
 
   // Opening a rung is what marks it studied [D22] — the one thing this screen writes, and the
   // only reason the rung card behind it changes. Idempotent in the store, so the effect fires it
-  // once per open and a re-render (an expanded card, a scroll) never fires it again.
+  // once per open and a re-render (a got-it landing, a scroll) never fires it again.
   useEffect(() => {
     if (openable) markStudied(course.id, moduleId);
   }, [openable, course.id, moduleId, markStudied]);
@@ -103,29 +104,14 @@ function ModuleList({ moduleId }: ModuleListProps) {
   const viewKey = moduleViewKey(course.id, moduleId);
   /** What this module was left at. Read once, on mount: it is where the screen starts, not state. */
   const [left] = useState<ModuleView>(() => readModuleView(viewKey));
-  const [expanded, setExpanded] = useState<ReadonlySet<string>>(() => new Set(left.expanded));
   /** The live scroll offset, kept out of state: nothing re-renders because a list moved. */
   const offset = useRef(left.scrollTop);
   const restored = useRef(false);
 
-  const toggle = useCallback((sentenceId: string) => {
-    setExpanded((open) => {
-      const next = new Set(open);
-      if (!next.delete(sentenceId)) next.add(sentenceId);
-      return next;
-    });
-  }, []);
-
-  // One effect keeps the whole record, because the two halves are one answer to "where was I":
-  // an offset restored into a differently expanded list is not where the learner was. It writes
-  // when a card opens or closes, and again on the way out with the final scroll offset.
-  //
   // Scrolling itself only moves a ref — a sessionStorage write per scroll event is a write per
   // frame of a fling, and the number has to be true exactly once: when the learner leaves for
   // Sentence Detail (or anywhere), which is when this effect is cleaned up.
   useEffect(() => {
-    const open = [...expanded];
-    writeModuleView(viewKey, { scrollTop: offset.current, expanded: open });
     if (scrollArea === null) return;
 
     const onScroll = () => {
@@ -135,9 +121,9 @@ function ModuleList({ moduleId }: ModuleListProps) {
 
     return () => {
       scrollArea.removeEventListener('scroll', onScroll);
-      writeModuleView(viewKey, { scrollTop: offset.current, expanded: open });
+      writeModuleView(viewKey, { scrollTop: offset.current });
     };
-  }, [scrollArea, viewKey, expanded]);
+  }, [scrollArea, viewKey]);
 
   // And back in, once the sentences are on screen — a layout effect, before the browser paints,
   // so returning from Detail lands where the learner left rather than at the top for a frame.
@@ -196,8 +182,6 @@ function ModuleList({ moduleId }: ModuleListProps) {
             key={sentence.id}
             sentence={sentence}
             produced={production?.[sentence.id] ?? 0}
-            expanded={expanded.has(sentence.id)}
-            onToggle={toggle}
             dir={course.dir}
             l2={l2}
           />
