@@ -38,7 +38,9 @@ describe('loadCourses', () => {
     });
     // en-ar carries more than the eight required fields; the loader keeps them, never rejects them.
     expect(courses[2]?.romanizationNote).toMatch(/Modern Standard Arabic/);
-    expect(courses[1]?.fixture).toBe(true);
+    expect(courses[2]?.fixture).toBe(true);
+    // en-es shipped for real in #195 — a graduated course carries no fixture key at all.
+    expect(courses[1]?.fixture).toBeUndefined();
   });
 
   it('fetches once however many callers ask — the cache is the promise', async () => {

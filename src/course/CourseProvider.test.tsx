@@ -270,7 +270,7 @@ describe('the persistence seam (#82)', () => {
     mockContentFetch(DEV_MANIFEST);
     persistCourse('en-es');
     useAppStore.getState().ensureCourse('en-es');
-    // A build without --with-fixtures: en-es is gone from the manifest, not from the learner.
+    // A build that ships one course: en-es is gone from the manifest, not from the learner.
     mockContentFetch({ courses: [DEV_MANIFEST.courses[0]] });
 
     render(

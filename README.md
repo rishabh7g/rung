@@ -126,19 +126,29 @@ backed by an **LLM linguistic review** (`docs/07-llm-review-L1-M1-M5.md`,
 issues that tracked it (#64, #110, #111) were closed by the owner on 2026-08-13, so the
 **22 open questions in `docs/08-marathi-third-review.md`** — which supersede the two
 earlier lists — are the only remaining record of what a native reviewer still owes.
-`npm run dev` additionally relaxes the gate so the two fixture courses render.
+`npm run dev` additionally relaxes the gate so the en-ar fixture course renders.
 
-**en-es L1 is complete.** All ten rungs — `L1-M1`…`L1-M10` — are authored and carry
-`verified: true` on the same LLM-review-plus-owner-authority basis
-(`docs/07-llm-review-en-es-L1-M1-M2.md`, `docs/07-llm-review-en-es-L1-M3-M5.md` and
-`docs/07-llm-review-en-es-L1-M6-M10.md`, whose open questions are what a native Spanish reviewer
-still owes — dialect first). The course is written **pan-Hispanic**: no `vosotros`, no region-only
-vocabulary, both norms named where they differ, and no currency word picked. They reach nobody
-yet: the en-es row in `content/courses.json` is still `fixture: true`, so only `npm run dev`
-renders them. The payload budget no longer objects: #207 replaced the catalogue-wide `total` row
-(which the three-course dev build blew at 634.8 KiB) with per-course rows, so en-es meters as
-`course:en-es` 71.5 KiB and `precache:en-es` 287.5 KiB — the bytes a Spanish learner actually
-downloads — instead of being charged for hi-mr's Devanagari (docs/05-perf-notes.md §4).
+**en-es ships (#195, 2026-08-13) — the product has two courses.** All ten L1 rungs —
+`L1-M1`…`L1-M10` — are authored and carry `verified: true` on the same
+LLM-review-plus-owner-authority basis as hi-mr's, so dropping `fixture: true` from the en-es row
+in `content/courses.json` was the whole change: a strict `npm run build` now emits
+`public/content/en-es/` with levels, strings, ten modules and ten cumulative indexes, and the
+emitted `courses.json` lists **hi-mr and en-es**. The course is written **pan-Hispanic**: no
+`vosotros`, no region-only vocabulary, both norms named where they differ, and no currency word
+picked. Its L2/L3 ladders stay `draft: true` — placeholder lists, nothing authored.
+
+**No native Spanish speaker has read a word of it.** The bar en-es clears is LLM review plus the
+owner's authority, exactly hi-mr's, and the **67 open questions** across
+`docs/07-llm-review-en-es-L1-M1-M2.md`, `docs/07-llm-review-en-es-L1-M3-M5.md` and
+`docs/07-llm-review-en-es-L1-M6-M10.md` are what a native reviewer still owes — dialect first.
+Graduating the course ships LLM-reviewed Spanish to learners; it does not close that gap.
+
+The payload budget holds, because #207 made it per learner: `course:en-es` **71.3 KiB** gzip
+against 360, `precache:en-es` **285.4 KiB** against 590, `course:hi-mr` **byte-identical** at
+337.9 KiB — a Spanish learner is never charged for hi-mr's Devanagari and vice versa. The one
+shared cost is `shell` 210.4 → **214.2 KiB**: Mukta's `latin` subsets are cut over the union of
+shipped courses, so Spanish's accented glyphs are in the bytes every learner downloads
+(docs/05-perf-notes.md §4).
 
 The two relaxations are independent (`--with-unverified`, `--with-fixtures`), and either
 one makes the output a **dev build**, which says so twice over: the run prints
@@ -1240,8 +1250,10 @@ The app installs a service worker that precaches **the entire build** and never 
 network again (#90, `design/pwa-checklist.md` §3). `tools/pwa.ts` holds the whole configuration —
 `vite.config.ts` is one line, `VitePWA(pwaOptions())` — and four globs say what "everything"
 means: `**/*.{html,css,js}`, `**/*.woff2`, `content/**/*.json`, `icons/*.png`. A strict build
-precaches **43 files / 1173 KiB** now that hi-mr L1-M1..M10 ship; a dev-content build adds the
-two fixture courses' JSONs on top.
+precaches **66 files / 1526 KiB** now that hi-mr and en-es L1-M1..M10 both ship (#195); a
+dev-content build adds the en-ar fixture's JSONs on top. No learner downloads all of it: the
+budget's `precache:<id>` rows meter what one course's device actually keeps
+(docs/05-perf-notes.md §4).
 
 There is deliberately **no `runtimeCaching`**. Zero network after first load is the product
 (PRD-engineering §3, §10), so a request the precache does not answer is a bug in the app, not a

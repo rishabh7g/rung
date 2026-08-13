@@ -57,8 +57,9 @@
  * and the subjunctive are deliberately OUT of L1: neither is needed by any of these ten jobs,
  * and importing them would spend the word budget on a contrast the learner cannot yet frame.
  *
- * en-es's own `content/en-es/modules/L1-M1.json` is a four-sentence `fixture: true` seam proof,
- * not a first draft: M1 is authored fresh to the full ten sentences against the brief below.
+ * en-es's own `content/en-es/modules/L1-M1.json` started as a four-sentence `fixture: true` seam
+ * proof, and was replaced rather than extended: #206 authored M1 fresh to the full ten sentences
+ * against the brief below, and #195 graduated the course out of `fixture: true` altogether.
  */
 
 /** PRD §5 module budget: at most 25 new words per module, every course, every level. */

@@ -5,6 +5,9 @@
  * envelope with its dev keys, hi-mr first, and en-ar carrying `romanizationNote` so the loader
  * is exercised against a row that has more than the eight required fields. Shared, so the loader
  * test and the boot tests cannot drift into disagreeing about the shape.
+ *
+ * en-ar is the only row that still carries `fixture: true`: en-es graduated to a shipping course
+ * in #195, so a dev build now emits it exactly as a strict build does.
  */
 import { vi } from 'vitest';
 import { completeStrings } from './courseStrings.ts';
@@ -34,7 +37,6 @@ export const DEV_MANIFEST = {
       pairLabel: 'english → spanish',
       scriptMode: 'native',
       dir: 'ltr',
-      fixture: true,
     },
     {
       id: 'en-ar',
