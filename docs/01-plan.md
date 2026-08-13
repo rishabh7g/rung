@@ -112,10 +112,20 @@ rung/ (repo name: shidi — GitHub redirects; local dir may keep its name)
   validators reject a missing or malformed tag. The app declares the L1 ONCE, on the document
   (`CourseProvider` sets `documentElement.lang`/`dir` when the course resolves and on every
   switch) and marks only the exceptions below it, because `lang` inherits: every L2 surface
-  carries `l2Lang(course).display` — `ar-Latn` in a romanized course, since the letters are
-  Latin — the quiet native `script` line carries `l2Tag`, and `glossEn` carries `en`. L1 copy
+  carries `l2Written(course).display.lang` — `ar-Latn` in a romanized course, since the letters
+  are Latin — the quiet native `script` line carries `l2Tag`, and `glossEn` carries `en`. L1 copy
   carries nothing and inherits the document. `src/langLaw.test.tsx` scans `src/` and fails on an
   L2 surface rendered by an element that declares no language.
+- **L2 direction (#196)** — a row also declares `l2Dir`, which way the L2 runs IN ITS OWN SCRIPT
+  (`rtl` for `ar`, `ltr` for `mr`/`es`). It is NOT `dir`: `dir` is the course as the learner meets
+  it, and en-ar is `dir: 'ltr'` (English chrome, romanized sentence) with `l2Dir: 'rtl'` (the quiet
+  Arabic line beneath each one). One course, two directions. `l2Written(course)` hands out the two
+  L2 lines as `{lang, dir}` pairs — the display line is `ltr` whenever the course romanizes,
+  because Latin letters are — so no render site can take the tag without the direction. Declared,
+  never `dir="auto"`: the browser's first-strong-character guess resolves an Arabic sentence that
+  opens with a Latin word or a digit as `ltr` and throws its terminal punctuation to the far end.
+  Both validators reject a missing or malformed `l2Dir`, and `src/langLaw.test.tsx` scans for a
+  taught surface rendered without a direction the same way it scans for one without a language.
 - **courses.json / strings.json** — §4. strings.json has a FIXED key list
   (cue label, reveal labels, phase nudges, ritual arc copy incl. resource rows
   + hold label, retry copy, ordinal, pending-authoring note, verdict line,
@@ -174,7 +184,7 @@ copied into the product.
 
 ## 11. Glossary
 
-- **Course / courseId** — one L1→L2 pair with its own content, strings, progress (`hi-mr` and `en-es` ship; `en-ar` is still a dev fixture).
+- **Course / courseId** — one L1→L2 pair with its own content, strings, progress (`hi-mr`, `en-es` and `en-ar` all ship; the `fixture: true` seam stays for a course #4 authored behind the gate).
 - **scriptMode** — `native` | `romanized`; romanized courses show romanization primary + quiet script line.
 - **Level / seal** — 10 modules per level; a level unlocks when the previous level is fully passed.
 - **Staged rung card** — the current rung's single CTA: fresh → studied → exit-ready → pending-authoring [D22].

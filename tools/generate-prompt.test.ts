@@ -22,6 +22,7 @@ const HI_MR: CourseRow = {
   l2: 'Marathi',
   l1Tag: 'hi',
   l2Tag: 'mr',
+  l2Dir: 'ltr',
   pairLabel: 'hindi → marathi',
   scriptMode: 'native',
   dir: 'ltr',
@@ -33,6 +34,7 @@ const EN_ES: CourseRow = {
   l2: 'Spanish',
   l1Tag: 'en',
   l2Tag: 'es',
+  l2Dir: 'ltr',
   pairLabel: 'english → spanish',
   scriptMode: 'native',
   dir: 'ltr',
@@ -45,11 +47,26 @@ const EN_AR: CourseRow = {
   l2: 'Arabic',
   l1Tag: 'en',
   l2Tag: 'ar',
+  l2Dir: 'rtl',
   pairLabel: 'english → arabic',
   scriptMode: 'romanized',
   dir: 'ltr',
   fixture: true,
   romanizationNote: 'ALA-LC-flavoured: long vowels ā ī ū; al- assimilates before sun letters',
+};
+
+/** A row for a course with no brief at all — the CLI's "briefed so far" branch needs one. */
+const UNBRIEFED: CourseRow = {
+  id: 'en-ja',
+  l1: 'English',
+  l2: 'Japanese',
+  l1Tag: 'en',
+  l2Tag: 'ja',
+  l2Dir: 'ltr',
+  pairLabel: 'english → japanese',
+  scriptMode: 'native',
+  dir: 'ltr',
+  fixture: true,
 };
 
 function indexThrough(moduleId: string, surfaces: readonly string[]): WordIndexFile {
@@ -86,7 +103,7 @@ function temporaryDir(): string {
 /* ------------------------------------------------------------- course briefs */
 
 /** Every briefed course answers the same two structural questions, so they are asked once. */
-describe.each(['hi-mr', 'en-es'])('COURSE_BRIEFS %s', (courseId) => {
+describe.each(['hi-mr', 'en-es', 'en-ar'])('COURSE_BRIEFS %s', (courseId) => {
   const briefs = COURSE_BRIEFS[courseId];
 
   it('covers L1 M1–M10, keyed by id, each with patterns, notes and the §5 cap', () => {
@@ -173,6 +190,68 @@ describe('COURSE_BRIEFS en-es', () => {
     expect(briefs?.['L1-M6']?.notes.join(' ')).toContain('mañana');
     expect(briefs?.['L1-M8']?.notes.join(' ')).toContain('por favor');
     expect(briefs?.['L1-M9']?.notes.join(' ')).toContain('porque');
+  });
+});
+
+describe('COURSE_BRIEFS en-ar', () => {
+  const briefs = COURSE_BRIEFS['en-ar'];
+  const allText = Object.values(briefs ?? {})
+    .map((brief) => [...brief.patterns, ...brief.notes].join(' '))
+    .join(' ');
+
+  it('places each English→Arabic pressure point in the module that needs it', () => {
+    expect(briefs?.['L1-M1']?.notes.join(' ')).toMatch(/present affirmative/i);
+    expect(briefs?.['L1-M1']?.notes.join(' ')).toContain('uḥibb al-qahwa');
+    expect(briefs?.['L1-M1']?.notes.join(' ')).toContain('urīd māʾ');
+    expect(briefs?.['L1-M2']?.patterns.join(' ')).toContain('hal');
+    expect(briefs?.['L1-M2']?.notes.join(' ')).toMatch(/sun letters/i);
+    expect(briefs?.['L1-M3']?.notes.join(' ')).toMatch(/definiteness/i);
+    expect(briefs?.['L1-M3']?.patterns.join(' ')).toContain('lā urīd');
+    expect(briefs?.['L1-M4']?.notes.join(' ')).toMatch(/imperfect/i);
+    expect(briefs?.['L1-M5']?.notes.join(' ')).toMatch(/interference/i);
+    expect(briefs?.['L1-M5']?.notes.join(' ')).toContain('kāna');
+    expect(briefs?.['L1-M5']?.notes.join(' ')).toContain('dhahabtu');
+    expect(briefs?.['L1-M6']?.patterns.join(' ')).toContain('sa- + V-imperfect');
+    expect(briefs?.['L1-M6']?.notes.join(' ')).toContain('sawfa');
+    expect(briefs?.['L1-M7']?.notes.join(' ')).toMatch(/iḍāfa/i);
+    expect(briefs?.['L1-M7']?.patterns.join(' ')).toContain('ʿind-');
+    expect(briefs?.['L1-M8']?.notes.join(' ')).toMatch(/polarity/i);
+    expect(briefs?.['L1-M9']?.patterns.join(' ')).toContain('li-ʾanna');
+    expect(briefs?.['L1-M9']?.patterns.join(' ')).toContain('li-dhālika');
+    expect(briefs?.['L1-M9']?.notes.join(' ')).toMatch(/SUBJECT/);
+    expect(briefs?.['L1-M10']?.notes.join(' ')).toMatch(/2–3|turn/i);
+  });
+
+  it('names the index seam wherever a romanized Arabic surface is decided', () => {
+    // A hyphenated surface also indexes each of its parts (`surfaceIndexKeys`), so the module
+    // that teaches the first `al-` / `bi-` / `sa-` / `li-` word owns that clitic's bare key —
+    // the `का` bug's Arabic twin — and a multi-token idiom is what keeps a bare word free.
+    expect(briefs?.['L1-M1']?.notes.join(' ')).toContain('al-Hind');
+    expect(briefs?.['L1-M2']?.notes.join(' ')).toContain('ṣabāḥ al-khayr');
+    expect(briefs?.['L1-M2']?.notes.join(' ')).toContain('bi-khayr');
+    expect(briefs?.['L1-M4']?.notes.join(' ')).toContain('al-yawm');
+    expect(briefs?.['L1-M6']?.notes.join(' ')).toContain('sa-adhhab');
+    expect(briefs?.['L1-M8']?.notes.join(' ')).toContain('min faḍlika');
+    expect(briefs?.['L1-M9']?.notes.join(' ')).toContain('li-dhālika');
+  });
+
+  it('settles the variety in a NOTE, since a prompt only ever shows an author the notes', () => {
+    expect(briefs?.['L1-M1']?.notes.join(' ')).toContain('Modern Standard Arabic');
+    expect(briefs?.['L1-M1']?.notes.join(' ')).toMatch(/not a dialect/i);
+    expect(briefs?.['L1-M10']?.notes.join(' ')).toMatch(/MSA/);
+  });
+
+  it('writes one romanization scheme: sun letters assimilated, hamza and ʿayn distinct', () => {
+    // The briefs seed every prompt, so a sloppy example becomes sloppy content (#198). `al-`
+    // before a sun letter must be written assimilated — lām excepted, where the assimilated
+    // spelling IS `al-` (al-layl), and a `*`-starred form excepted, which is deliberately wrong.
+    expect(allText).not.toMatch(/(?<!\*)\bal-(?:th|dh|sh|[tdrzsṣḍṭẓn])/);
+    // Typographic quotes fold into the hamza and ʿayn classes (`src/engine/surface.ts`), so a
+    // stray `’` or `‘` in an example is indistinguishable from a real consonant.
+    expect(allText).not.toMatch(/[’‘ʼ]/);
+    // Both letters are actually used, and neither is spelled with a plain apostrophe.
+    expect(allText).toContain('māʾ');
+    expect(allText).toContain('ʿalā');
   });
 });
 
@@ -273,7 +352,10 @@ describe('generatePrompt (CLI shape)', () => {
     const contentRoot = path.join(dir, 'content');
     const builtRoot = path.join(dir, 'public', 'content');
     mkdirSync(contentRoot, { recursive: true });
-    writeFileSync(path.join(contentRoot, 'courses.json'), JSON.stringify([HI_MR, EN_AR]));
+    writeFileSync(
+      path.join(contentRoot, 'courses.json'),
+      JSON.stringify([HI_MR, EN_AR, UNBRIEFED]),
+    );
     return { contentRoot, builtRoot, promptsDir: path.join(dir, '.prompts') };
   }
 
@@ -302,6 +384,21 @@ describe('generatePrompt (CLI shape)', () => {
     expect(report.lines.join('\n')).toContain('first module — empty inventory');
   });
 
+  it('renders en-ar L1-M1 from its own brief, romanization scheme included', () => {
+    const roots = tree();
+    const report = generatePrompt({ courseId: 'en-ar', moduleId: 'L1-M1', ...roots });
+    expect(report.exitCode).toBe(0);
+    expect(report.outFile).toBe(path.join(roots.promptsDir, 'en-ar-L1-M1.md'));
+    const written = readFileSync(report.outFile ?? '', 'utf8');
+    const brief = COURSE_BRIEFS['en-ar']?.['L1-M1'] as ModuleBrief;
+    for (const pattern of brief.patterns) expect(written).toContain(pattern);
+    expect(written).toContain(`Romanization scheme: ${String(EN_AR.romanizationNote)}`);
+    expect(written).toContain('Modern Standard Arabic');
+    expect(written).toContain(`"maxWordsPerSentence": ${brief.maxWordsPerSentence}`);
+    expect(written).toContain('content/en-ar/modules/L1-M1.json');
+    expect(written).toContain(SCHEMA_TEXT.trimEnd());
+  });
+
   it('fails with the content:build hint when the prior index is missing', () => {
     const roots = tree();
     const report = generatePrompt({ courseId: 'hi-mr', moduleId: 'L1-M3', ...roots });
@@ -318,9 +415,9 @@ describe('generatePrompt (CLI shape)', () => {
     const unknown = generatePrompt({ courseId: 'xx-yy', moduleId: 'L1-M1', ...roots });
     expect(unknown.exitCode).toBe(1);
     expect(unknown.lines.join('\n')).toContain('unknown course "xx-yy"');
-    expect(unknown.lines.join('\n')).toContain('hi-mr, en-ar');
+    expect(unknown.lines.join('\n')).toContain('hi-mr, en-ar, en-ja');
 
-    const unbriefedCourse = generatePrompt({ courseId: 'en-ar', moduleId: 'L1-M1', ...roots });
+    const unbriefedCourse = generatePrompt({ courseId: 'en-ja', moduleId: 'L1-M1', ...roots });
     expect(unbriefedCourse.exitCode).toBe(1);
     expect(unbriefedCourse.lines.join('\n')).toContain('no briefs yet');
 

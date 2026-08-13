@@ -42,7 +42,7 @@ const DIRECTIONS: readonly string[] = ['ltr', 'rtl'];
 const LANGUAGE_TAG = /^[a-z]{2,3}(-[A-Z][a-z]{3})?(-([A-Z]{2}|\d{3}))?$/;
 
 /**
- * One manifest row (PRD §4). The eight fields are required; a course may carry its own extra
+ * One manifest row (PRD §4). The nine fields are required; a course may carry its own extra
  * metadata and it rides along rather than being rejected — en-ar declares a `romanizationNote`,
  * and a dev build's fixture courses carry `fixture: true`. Unknown keys are kept as-is, the same
  * way the build-time validator keeps them (`tools/validate.ts` `validateManifest`).
@@ -60,11 +60,22 @@ export interface Course {
   /**
    * The L2 as a BCP-47 tag (#186) — the language being taught, which is a DIFFERENT language
    * from the one the app speaks in. What a romanized course actually renders is
-   * `l2Lang(course).display`, not this: this is the language, that is the language as written.
+   * `l2Written(course).display.lang`, not this: this is the language, that is the language as
+   * written.
    */
   l2Tag: string;
+  /**
+   * Which way the L2 runs IN ITS OWN SCRIPT (#196) — `rtl` for `ar`, `ltr` for `mr` and `es`.
+   *
+   * A fact about the language, declared beside its tag, and NOT the same fact as `dir`: en-ar
+   * reads `dir: 'ltr'` because everything the learner sees on that course — the English chrome
+   * and the romanized L2 — runs left to right, while its quiet native line is Arabic and runs
+   * right to left. One course, two directions; the row has to be able to say both.
+   */
+  l2Dir: Direction;
   pairLabel: string;
   scriptMode: ScriptMode;
+  /** The direction of the course as the learner meets it: the chrome, and the L2 as printed. */
   dir: Direction;
   /** en-ar's romanization scheme, in the course's own words. Absent on native courses. */
   romanizationNote?: string;
@@ -151,32 +162,53 @@ export function resolveActiveCourse(courses: readonly Course[], persistedId?: st
 }
 
 /**
- * The two tags an L2 line can be written in (#186) — the pair a screen hands its content
- * components beside `dir`, so nothing below has to know what a `scriptMode` is.
+ * How ONE L2 line is written: the language it declares itself to be, and the way it runs.
+ *
+ * The two travel together because they are one fact — a line of Arabic that says `lang="ar"` and
+ * nothing about direction is still mis-rendered (#196) — and a shape that hands out the tag
+ * without the direction is a shape a render site can take half of.
  */
-export interface L2Lang {
-  /** What a `display` surface is written in: the language, in the script the course prints. */
-  display: string;
-  /** What the quiet native `script` line is written in: the language, in its own script. */
-  script: string;
+export interface WrittenIn {
+  /** The BCP-47 tag this line declares (`lang`). */
+  lang: string;
+  /** The direction this line runs (`dir`). */
+  dir: Direction;
 }
 
 /**
- * The tags the course's L2 lines are actually WRITTEN in.
+ * The two L2 lines a course can put on screen (#186, #196) — the pair a screen hands its content
+ * components, so nothing below has to know what a `scriptMode` is.
+ */
+export interface L2Written {
+  /** The line the course prints: romanized letters, or the native script itself. */
+  display: WrittenIn;
+  /** The quiet native line beneath it (romanized courses only): the script, as itself. */
+  script: WrittenIn;
+}
+
+/**
+ * How the course's L2 lines are actually WRITTEN — the language of each, and its direction.
  *
  * A romanized course (en-ar, PRD §4) prints its L2 in Latin letters, so `ar` would be a lie to a
  * screen reader — it would try to pronounce `ʾahlan` as Arabic script. `ar-Latn` is the same
- * language in another script, which is exactly what BCP-47's script subtag is for, and it is also
- * why such a course reads `dir: 'ltr'`: the letters run left to right whatever the language does.
- * The quiet native line beside it (`script`, romanized courses only) is the other half of the
- * pair and carries the plain tag — same language, its own script.
+ * language in another script, which is exactly what BCP-47's script subtag is for, and Latin
+ * letters run left to right whatever the language does — which is why that half is `ltr` from the
+ * script, not from the row. The quiet native line beside it is the other half of the pair: the
+ * plain tag, and the direction the language runs in its own script (`l2Dir`).
  *
- * The L1 has no entry here on purpose: the document declares it once (`CourseProvider`) and
- * `lang` inherits, so L1 copy is labelled by saying nothing.
+ * Declared, never sniffed. `dir="auto"` would decide from the first strong character in the
+ * string, which is exactly wrong for the line this pair exists for: an Arabic sentence opening
+ * with a Latin brand name or a digit would resolve `ltr` and throw its terminal punctuation to
+ * the far end. The course knows the language; a heuristic is only for text whose language nobody
+ * declared.
+ *
+ * The L1 has no entry here on purpose: the document declares it once (`CourseProvider`) and both
+ * `lang` and `dir` inherit, so L1 copy is labelled by saying nothing.
  */
-export function l2Lang(course: Course): L2Lang {
+export function l2Written(course: Course): L2Written {
+  const script: WrittenIn = { lang: course.l2Tag, dir: course.l2Dir };
   const romanized = course.scriptMode === 'romanized';
-  return { display: romanized ? `${course.l2Tag}-Latn` : course.l2Tag, script: course.l2Tag };
+  return { display: romanized ? { lang: `${course.l2Tag}-Latn`, dir: 'ltr' } : script, script };
 }
 
 async function fetchManifest(): Promise<Manifest> {
@@ -261,8 +293,10 @@ function parseCourse(row: unknown, at: string): Course {
   if (!SCRIPT_MODES.includes(course.scriptMode as string)) {
     throw new ManifestError(`${at}.scriptMode: must be one of: ${SCRIPT_MODES.join(', ')}`);
   }
-  if (!DIRECTIONS.includes(course.dir as string)) {
-    throw new ManifestError(`${at}.dir: must be one of: ${DIRECTIONS.join(', ')}`);
+  for (const field of ['dir', 'l2Dir'] as const) {
+    if (!DIRECTIONS.includes(course[field] as string)) {
+      throw new ManifestError(`${at}.${field}: must be one of: ${DIRECTIONS.join(', ')}`);
+    }
   }
 
   // The row itself, extras intact (romanizationNote, fixture) — validated, not rebuilt.

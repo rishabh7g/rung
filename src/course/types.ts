@@ -9,8 +9,8 @@
  *   content/<courseId>/index/<id>.json       → `WordIndex`     (surface → the word that teaches it)
  *
  * They are DERIVED FROM THE CONTENT, not from a sketch: `content/schema/module.schema.json`
- * (the frozen v5 contract, #73) plus the modules that actually exist — hi-mr L1-M1..M10, en-es
- * L1-M1..M10 and the en-ar fixture. `src/course/types.test.ts` reads those real files and fails if any
+ * (the frozen v5 contract, #73) plus the modules that actually exist — hi-mr, en-es and en-ar,
+ * L1-M1..M10 apiece. `src/course/types.test.ts` reads those real files and fails if any
  * of them carries a key no type here declares, so "the type mirrors the content" is mechanical
  * rather than a promise. Optional means optional in the schema, and the comments say which
  * optional fields today's content actually uses.
@@ -141,7 +141,8 @@ export interface ModuleContent {
   verified: boolean;
   verifiedBy?: string | null;
   verifiedAt?: string | null;
-  /** Dev-only sample module (en-ar's seam proof). Never present in a learner build. */
+  /** Dev-only sample module. No module in the repo carries it since #202; the flag stays because
+      `--with-fixtures` is how a course #4 is authored before it ships. Never in a learner build. */
   fixture?: boolean;
   complexity: Complexity;
   rules: Rule[];
@@ -163,7 +164,8 @@ export interface LevelModule {
    * rung state, not an error.
    */
   hasContent: boolean;
-  /** Placeholder row in a fixture course. Absent means a real, listed module. */
+  /** Placeholder row in an unauthored ladder (en-es and en-ar L2/L3). Absent means a real,
+      listed module. */
   draft?: boolean;
 }
 
@@ -173,7 +175,8 @@ export interface Level {
   name: string;
   tagline: string;
   modules: LevelModule[];
-  /** Unratified list — true on fixture-course levels. Absent/false means ratified (hi-mr's L2/L3 ratified by #112, closing [Q1]). */
+  /** Unratified list — true on a ladder nobody has authored (en-es and en-ar L2/L3). Absent/false
+      means ratified (hi-mr's L2/L3 ratified by #112, closing [Q1]). */
   draft?: boolean;
   /** Why it is draft, in the course's own words; `null` on a ratified level. */
   draftNote?: string | null;

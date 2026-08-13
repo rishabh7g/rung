@@ -13,8 +13,8 @@
  * `data-section`), not left to the reading order of this file.
  *
  * **A section with nothing in it renders NOTHING** — no heading, no empty plate, no "not
- * available". Enrichment is optional in the schema past M3 (`src/course/types.ts`), the two
- * fixture courses are thinner than hi-mr, and a screen of empty headings would teach the learner
+ * available". Enrichment is optional in the schema past M3 (`src/course/types.ts`), en-es and
+ * en-ar are thinner than hi-mr, and a screen of empty headings would teach the learner
  * that the content is broken rather than that this sentence is simple.
  *
  * **Amber appears once.** The interference trap is the only loud object here (design/tokens.md §7
@@ -40,7 +40,7 @@ import { ArrowLeft, ArrowRight, TriangleAlert } from 'lucide-react';
 import { ContentErrorScreen } from '../course/BootScreens.tsx';
 import { useCourse } from '../course/CourseProvider.tsx';
 import { useModule } from '../course/content.ts';
-import { l2Lang } from '../course/manifest.ts';
+import { l2Written } from '../course/manifest.ts';
 import { useStrings } from '../course/strings.ts';
 import type { Rule, Sentence } from '../course/types.ts';
 import { deriveStatuses, rungStage } from '../engine/progression.ts';
@@ -82,7 +82,7 @@ interface SentenceDetailProps {
 function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
   const { course } = useCourse();
   // The taught language, which is NOT the one the document declares (#186).
-  const l2 = l2Lang(course);
+  const l2 = l2Written(course);
   const strings = useStrings();
   const module = useModule(moduleId);
   const { input, ready } = useProgression();
@@ -158,7 +158,7 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
 
       {/* 1 · hero — the sentence itself, at the one hero size in the ramp. */}
       <section data-section="hero" className={styles.hero}>
-        <h2 className={styles.display} dir={course.dir} lang={l2.display}>
+        <h2 className={styles.display} dir={l2.display.dir} lang={l2.display.lang}>
           {sentence.display}
         </h2>
         <p className={styles.cue} dir={course.dir}>
@@ -167,7 +167,7 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
         {/* Romanized courses only (PRD §4): the native script as recognition, never as something
             to produce — so it is the quietest line in the hero. */}
         {sentence.script !== undefined && (
-          <p className={styles.script} lang={l2.script}>
+          <p className={styles.script} dir={l2.script.dir} lang={l2.script.lang}>
             {sentence.script}
           </p>
         )}
@@ -197,7 +197,7 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
             {sentence.deconstruction.words.map((word, index) => (
               <li key={`${word.display}-${index}`} className={styles.word}>
                 <p className={styles.wordHead}>
-                  <span className={styles.wordDisplay} dir={course.dir} lang={l2.display}>
+                  <span className={styles.wordDisplay} dir={l2.display.dir} lang={l2.display.lang}>
                     {word.display}
                   </span>
                   <span className={styles.wordCue} dir={course.dir}>
@@ -213,7 +213,10 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
                 {/* The taught paradigm, `display` included — the surfaces the word index maps. */}
                 {word.forms.length > 0 && (
                   <p className={styles.forms} dir={course.dir}>
-                    forms: <span lang={l2.display}>{word.forms.join(' · ')}</span>
+                    forms:{' '}
+                    <span dir={l2.display.dir} lang={l2.display.lang}>
+                      {word.forms.join(' · ')}
+                    </span>
                   </p>
                 )}
               </li>
@@ -273,7 +276,7 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
           <ul className={styles.rows}>
             {variations.map((variation, index) => (
               <li key={`${variation.display}-${index}`} className={styles.variation}>
-                <p className={styles.variationLine} dir={course.dir} lang={l2.display}>
+                <p className={styles.variationLine} dir={l2.display.dir} lang={l2.display.lang}>
                   {changedTokens(sentence.display, variation.display).map((token, position) => (
                     <span
                       key={`${token.text}-${position}`}
@@ -300,7 +303,7 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
         <section data-section="mistake" className={styles.section}>
           <h3 className={styles.sectionLabel}>COMMON MISTAKE</h3>
           <div className={styles.mistake}>
-            <p className={styles.mistakeDisplay} dir={course.dir} lang={l2.display}>
+            <p className={styles.mistakeDisplay} dir={l2.display.dir} lang={l2.display.lang}>
               {sentence.mistake.display}
             </p>
             <p className={styles.prose} dir={course.dir}>

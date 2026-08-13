@@ -38,7 +38,7 @@
  * third `mode` here would be inventing a screen nobody has designed.
  */
 import { useState, type ReactNode } from 'react';
-import type { L2Lang } from '../course/manifest.ts';
+import type { L2Written } from '../course/manifest.ts';
 import { useStrings } from '../course/strings.ts';
 import type { StringsKey } from '../course/stringsKeys.ts';
 import { RegistrationMarks } from '../screens/RegistrationMarks.tsx';
@@ -77,7 +77,7 @@ interface RevealCardProps {
   /** The course's writing direction — every line on the card is its content or its copy. */
   dir?: string;
   /** The tags the revealed L2 lines are written in (#186); the cue is L1 and inherits. */
-  l2?: L2Lang;
+  l2?: L2Written;
 }
 
 /** The card's whole state, tied to the sentence it belongs to. */
@@ -154,12 +154,12 @@ export function RevealCard({
         <div className={styles.answer}>
           <div className={styles.answerPlate}>
             <RegistrationMarks />
-            <p className={styles.display} dir={dir} lang={l2?.display}>
+            <p className={styles.display} dir={l2?.display.dir} lang={l2?.display.lang}>
               {display}
             </p>
             {/* Romanized courses only: recognition, never something to produce (§9 [D20]). */}
             {script !== undefined && (
-              <p className={styles.script} lang={l2?.script}>
+              <p className={styles.script} dir={l2?.script.dir} lang={l2?.script.lang}>
                 {script}
               </p>
             )}

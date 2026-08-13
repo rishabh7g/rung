@@ -68,6 +68,8 @@ export interface CourseRow {
   l1Tag: string;
   /** The L2 as a BCP-47 tag — the language taught, before `scriptMode` says how it is written. */
   l2Tag: string;
+  /** Which way the L2 runs in its own script (#196) — `rtl` for Arabic, whatever `dir` says. */
+  l2Dir: Direction;
   pairLabel: string;
   scriptMode: ScriptMode;
   dir: Direction;
@@ -185,8 +187,8 @@ function isNonEmptyString(value: unknown): value is string {
 
 /**
  * Validates the shape of `content/courses.json` (PRD §4): an array of
- * `{id, l1, l2, l1Tag, l2Tag, pairLabel, scriptMode, dir}` with unique ids. Unknown keys are kept,
- * not rejected — a course may carry its own metadata (en-ar declares its `romanizationNote` here).
+ * `{id, l1, l2, l1Tag, l2Tag, l2Dir, pairLabel, scriptMode, dir}` with unique ids. Unknown keys
+ * are kept, not rejected — a course may carry its own metadata (en-ar's `romanizationNote`).
  */
 export function validateManifest(json: unknown): { courses: CourseRow[]; errors: string[] } {
   const errors: string[] = [];
@@ -226,9 +228,13 @@ export function validateManifest(json: unknown): { courses: CourseRow[]; errors:
       errors.push(`${at}.scriptMode: must be one of: ${SCRIPT_MODES.join(', ')}`);
       ok = false;
     }
-    if (!DIRECTIONS.includes(row.dir as string)) {
-      errors.push(`${at}.dir: must be one of: ${DIRECTIONS.join(', ')}`);
-      ok = false;
+    // `dir` is the course as the learner meets it; `l2Dir` is the way the L2 runs in its own
+    // script (#196). en-ar differs on the two — ltr chrome, rtl native line — so both are asked.
+    for (const field of ['dir', 'l2Dir'] as const) {
+      if (!DIRECTIONS.includes(row[field] as string)) {
+        errors.push(`${at}.${field}: must be one of: ${DIRECTIONS.join(', ')}`);
+        ok = false;
+      }
     }
     if (row.fixture !== undefined && typeof row.fixture !== 'boolean') {
       errors.push(`${at}.fixture: must be a boolean when present`);

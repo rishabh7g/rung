@@ -1,0 +1,610 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M8",
+  "title": "Numbers & shopping",
+  "job": "Prices, quantities, buying",
+  "prerequisites": ["L1-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-13",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "bi-kam + hādhā",
+      "urīd + num + N-pl + , min faḍlika",
+      "kam + N-sg + ʿindaka",
+      "hādhā bi- + num + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The price question is still verbless: bi-kam hādhā? is literally \"for how much [is] this?\" — M2's bi- (\"with, in, for\") doing the price job, glued to kam, and no verb anywhere in the sentence."
+    },
+    {
+      "tag": "interference",
+      "text": "kam (\"how many\") takes a SINGULAR noun: kam kitāb ʿindaka?, never *kam kutub. English \"how many books\" makes the plural feel compulsory, and it is the commonest thing to get wrong here."
+    },
+    {
+      "tag": "delta",
+      "text": "One is not a number placed in front of the noun. The noun comes first and wāḥid follows it like an adjective, agreeing with it: kitāb wāḥid, sayyāra wāḥida. Often the bare noun already means one, and wāḥid is added only for emphasis."
+    },
+    {
+      "tag": "delta",
+      "text": "Two is not a word at all — it is a DUAL ending welded onto the noun itself: kitāb becomes kitābān, two books, with no number in sight. This is the dual's single appearance in L1: it never turns up on verbs or adjectives here."
+    },
+    {
+      "tag": "delta",
+      "text": "From three onwards the number finally does stand in front, and the noun goes PLURAL: thalātha kutub, khamsa riyālāt. So Arabic counts in three different shapes depending on how many — one, two, and three-or-more."
+    },
+    {
+      "tag": "delta",
+      "text": "Gender polarity, 3 to 10: the number takes the OPPOSITE marker from the noun's singular. kitāb is masculine, so the number wears -a — thalātha kutub. sayyāra is feminine, so the number goes bare — thalāth sayyārāt. Numbers are the one word class that disagrees on purpose."
+    },
+    {
+      "tag": "interference",
+      "text": "\"Numbers just go in front of the noun\" is the slogan that hides all of the above. Learn each count with the shape it takes — kitāb wāḥid, kitābān, thalātha kutub — not as a rule about where the number sits."
+    },
+    {
+      "tag": "free",
+      "text": "min faḍlika is one expression, learned whole: \"of your favour\", i.e. please. Its min is not M1's \"from\" and cannot be pulled out of it. Like every address since M2 it is gendered — min faḍlika to a man, min faḍliki to a woman."
+    },
+    {
+      "tag": "free",
+      "text": "hādhā points at a masculine thing and hādhihi at a feminine one, and the sentence around them stays verbless: hādhā ghālī, hādhihi as-sayyāra ghāliya. It is the pointing word every shop conversation runs on."
+    },
+    {
+      "tag": "delta",
+      "text": "ghālī is written the way it is said in pause. Full MSA spells this class of adjective ghālin, with an ending that carries only case — the thing this course drops everywhere — and in pause that ending is not pronounced at all: the word simply ends in a long ī."
+    },
+    {
+      "tag": "free",
+      "text": "Plurals here are vocabulary, not a system. kitāb becomes kutub by breaking apart inside; sayyāra becomes sayyārāt by adding a tail. Arabic does both, and which one a noun takes is learned with the noun."
+    },
+    {
+      "tag": "free",
+      "text": "Shopping reuses the verbs you already run. ashtarī (I buy) works exactly like M3's ashrab — a- for I, ta- for you-m or she, ya- for he — and M6's sa- puts it in tomorrow: sa-ashtarī."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M8-S01",
+      "display": "kam kitāb ʿindaka?",
+      "script": "كم كتاب عندكَ؟",
+      "cue": "How many books do you have? (to a man)",
+      "glossEn": "lit. \"how-many book at-you\"",
+      "literal": "how-many book at-you",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kam",
+            "script": "كم",
+            "cue": "how many, how much",
+            "tag": "interference",
+            "forms": [],
+            "note": "\"How many\" — and the noun after it is SINGULAR, always: kam kitāb, kam sayyāra. English puts the plural there and Arabic never does. It also asks \"how much\" of a price once bi- is glued to its front (bi-kam)."
+          }
+        ],
+        "rules": [1, 6]
+      },
+      "trap": "kam kutub is the English shape and it is wrong. One kam, one singular noun — the number is what the question is asking for, so the noun does not pre-empt it.",
+      "sound": "KAM ki-TAAB ʿIN-da-ka — three short beats, and the question is carried by kam alone.",
+      "variations": [
+        {
+          "display": "kam sayyāra ʿindaka?",
+          "script": "كم سيارة عندكَ؟",
+          "cue": "How many cars do you have? (to a man)",
+          "changed": "any noun follows kam — and it stays singular"
+        },
+        {
+          "display": "kam kitāb ʿindaki?",
+          "script": "كم كتاب عندكِ؟",
+          "cue": "How many books do you have? (to a woman)",
+          "changed": "-aka → -aki: the question turns to a woman"
+        }
+      ],
+      "mistake": {
+        "display": "kam kutub ʿindaka?",
+        "script": "كم كتب عندكَ؟",
+        "why": "The English plural, imported. After kam the noun is singular whatever the answer turns out to be: kam kitāb ʿindaka?"
+      },
+      "usage": "Taking stock — of books, of cars, of anything countable.",
+      "register": "neutral",
+      "mnemonic": "kam takes one: the question asks for the number, so the noun stays alone."
+    },
+    {
+      "id": "L1-M8-S02",
+      "display": "bi-kam hādhā?",
+      "script": "بكم هذا؟",
+      "cue": "How much is this?",
+      "glossEn": "lit. \"for-how-much this\"",
+      "literal": "for-how-much this",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bi-kam",
+            "script": "بكم",
+            "cue": "how much (does it cost)",
+            "tag": "delta",
+            "forms": [],
+            "note": "M2's bi- (\"with, for\") glued to kam: \"for how much?\". It is the whole price question — there is no verb in it and none is missing. Two words on the page in English, one in Arabic."
+          },
+          {
+            "display": "hādhā",
+            "script": "هذا",
+            "cue": "this",
+            "tag": "free",
+            "forms": ["hādhā", "hādhihi"],
+            "note": "\"This\", pointing at a masculine thing; hādhihi points at a feminine one — hādhā al-kitāb, hādhihi as-sayyāra. The first ā is written in the romanization but not in the Arabic spelling, which is one of the language's oldest irregular spellings."
+          }
+        ],
+        "rules": [0, 8]
+      },
+      "trap": "No verb, and no \"is\": the whole question is two words. Reaching for a \"costs\" or a \"does\" is the English habit.",
+      "sound": "bi-KAM HAA-dhā — the dh is the soft one, as in English \"this\".",
+      "variations": [
+        {
+          "display": "bi-kam hādhihi?",
+          "script": "بكم هذه؟",
+          "cue": "How much is this one? (a feminine thing)",
+          "changed": "hādhā → hādhihi: pointing at something feminine"
+        },
+        {
+          "display": "bi-kam hādhā al-kitāb?",
+          "script": "بكم هذا الكتاب؟",
+          "cue": "How much is this book?",
+          "changed": "name the thing: hādhā goes in front and the noun keeps its al-"
+        }
+      ],
+      "mistake": {
+        "display": "kam hādhā?",
+        "script": "كم هذا؟",
+        "why": "Without bi- this asks \"how many is this?\", which is not a price question. The bi- is what turns the counting word into a cost: bi-kam hādhā?"
+      },
+      "usage": "The first thing anyone says in a shop.",
+      "register": "neutral",
+      "mnemonic": "bi-kam — \"by how much\": the b buys it."
+    },
+    {
+      "id": "L1-M8-S03",
+      "display": "urīd khubz, min faḍlika",
+      "script": "أريد خبز، من فضلكَ",
+      "cue": "I'd like some bread, please (to a man)",
+      "glossEn": "lit. \"I-want bread, of your-favour\"",
+      "literal": "want-I bread, from favour-your",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "min faḍlika",
+            "script": "من فضلكَ",
+            "cue": "please (to a man)",
+            "tag": "free",
+            "forms": ["min faḍlika", "min faḍliki"],
+            "note": "\"Of your favour\" — please. Learned as one expression: the min in it is not M1's \"from\" and cannot be lifted out. Gendered like every address since M2: min faḍlika to a man, min faḍliki to a woman."
+          }
+        ],
+        "rules": [7]
+      },
+      "trap": "A request drops al-, as it has since M1: urīd khubz asks for some bread; urīd al-khubz asks for that particular loaf, the one already on the counter.",
+      "sound": "u-REED KHUBZ, min FAḌ-li-ka — faḍl has the heavy ḍ in its middle.",
+      "variations": [
+        {
+          "display": "urīd qahwa, min faḍliki",
+          "script": "أريد قهوة، من فضلكِ",
+          "cue": "I'd like a coffee, please (to a woman)",
+          "changed": "-ka → -ki: the request turns to a woman"
+        },
+        {
+          "display": "min faḍlika, urīd khubz",
+          "script": "من فضلكَ، أريد خبز",
+          "cue": "Please, I'd like some bread",
+          "changed": "the courtesy can open the sentence instead of closing it"
+        }
+      ],
+      "mistake": {
+        "display": "urīd khubz, min faḍl",
+        "script": "أريد خبز، من فضل",
+        "why": "The expression cannot be said without a person on the end of it. There is no bare \"please\" here: it is min faḍlika to a man and min faḍliki to a woman, and the suffix is what makes it an address at all."
+      },
+      "usage": "Buying anything at all. The courtesy is not optional in a shop.",
+      "register": "neutral",
+      "mnemonic": "min faḍlika — \"from your favour\": the please that asks a favour outright."
+    },
+    {
+      "id": "L1-M8-S04",
+      "display": "ʿindī kitāb wāḥid",
+      "script": "عندي كتاب واحد",
+      "cue": "I have one book",
+      "glossEn": "lit. \"at-me book one\"",
+      "literal": "at-me book one",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wāḥid",
+            "script": "واحد",
+            "cue": "one",
+            "tag": "delta",
+            "forms": ["wāḥid", "wāḥida"],
+            "note": "\"One\" — and it does not go in front. It follows its noun like an adjective and agrees with it: kitāb wāḥid, sayyāra wāḥida. Since a bare noun already means one of a thing, wāḥid is what you add when the count matters."
+          }
+        ],
+        "rules": [2, 6]
+      },
+      "trap": "*wāḥid kitāb is the English order and no Arabic ever puts it that way. One is the only number that follows its noun.",
+      "sound": "ʿIN-dee ki-TAAB WAA-ḥid — the ḥ of wāḥid is the breathy one, from the throat.",
+      "variations": [
+        {
+          "display": "ʿindī sayyāra wāḥida",
+          "script": "عندي سيارة واحدة",
+          "cue": "I have one car",
+          "changed": "a feminine noun, so the number takes -a like any adjective"
+        },
+        {
+          "display": "ʿindī kitāb",
+          "script": "عندي كتاب",
+          "cue": "I have a book",
+          "changed": "drop wāḥid — the bare noun already means one"
+        }
+      ],
+      "mistake": {
+        "display": "ʿindī wāḥid kitāb",
+        "script": "عندي واحد كتاب",
+        "why": "English word order. One is the number that FOLLOWS its noun, agreeing with it like an adjective: kitāb wāḥid. Only three and up go in front."
+      },
+      "usage": "Correcting an assumption — no, just the one.",
+      "register": "neutral",
+      "mnemonic": "wāḥid comes after, because one is what a noun already was."
+    },
+    {
+      "id": "L1-M8-S05",
+      "display": "ʿindī kitābān",
+      "script": "عندي كتابان",
+      "cue": "I have two books",
+      "glossEn": "lit. \"at-me two-books\"",
+      "literal": "at-me book-pair",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kitābān",
+            "script": "كتابان",
+            "cue": "two books",
+            "tag": "delta",
+            "forms": [],
+            "note": "Two books, in one word: kitāb plus the DUAL ending -ān. There is no number word at all — Arabic marks two on the noun itself, and every noun can do it (sayyāratān, two cars). Full MSA also has a second dual spelling that carries only case; this course writes the -ān form throughout, as it drops every other case ending."
+          }
+        ],
+        "rules": [3, 6]
+      },
+      "trap": "Do not look for the word \"two\". It is inside the noun, and a sentence with a number word in it would be saying something else.",
+      "sound": "ʿIN-dee ki-taa-BAAN — the ending is long and takes the stress.",
+      "variations": [
+        {
+          "display": "ʿindī sayyāratān",
+          "script": "عندي سيارتان",
+          "cue": "I have two cars",
+          "changed": "the same ending on a feminine noun — and its hidden t wakes up, as in sayyāratī"
+        },
+        {
+          "display": "ʿindahu kitābān",
+          "script": "عنده كتابان",
+          "cue": "He has two books",
+          "changed": "-ī → -ahu: whose books they are"
+        }
+      ],
+      "mistake": {
+        "display": "ʿindī ithnān kutub",
+        "script": "عندي اثنان كتب",
+        "why": "The number \"two\" exists, but it is not how you count two things: the noun carries the dual by itself. ʿindī kitābān — one word, two books."
+      },
+      "usage": "Counting the small numbers that come up every day.",
+      "register": "neutral",
+      "mnemonic": "kitāb-ān — the ān is the pair; no number needed."
+    },
+    {
+      "id": "L1-M8-S06",
+      "display": "urīd thalātha kutub, min faḍlika",
+      "script": "أريد ثلاثة كتب، من فضلكَ",
+      "cue": "I'd like three books, please (to a man)",
+      "glossEn": "lit. \"I-want three books, of your-favour\"",
+      "literal": "want-I three books, from favour-your",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "thalātha",
+            "script": "ثلاثة",
+            "cue": "three",
+            "tag": "delta",
+            "forms": ["thalātha", "thalāth"],
+            "note": "Three — and from three onwards the number finally stands in FRONT of the noun. It wears the marker opposite to the noun's gender: thalātha before a masculine noun (kitāb), bare thalāth before a feminine one (sayyāra). The number disagrees on purpose."
+          },
+          {
+            "display": "kutub",
+            "script": "كتب",
+            "cue": "books",
+            "tag": "free",
+            "forms": ["kutub", "al-kutub"],
+            "note": "The plural of kitāb, made by breaking the word open from inside rather than adding anything to the end. Arabic does this to many of its nouns and there is no rule to derive it from — kutub is learned with kitāb, as a pair."
+          }
+        ],
+        "rules": [4, 5, 10]
+      },
+      "trap": "Three counts differently from two, which counts differently from one. Three shapes, not one rule about placement.",
+      "sound": "u-REED tha-LAA-tha KU-tub, min FAḌ-li-ka — the th is the soft one, as in English \"think\".",
+      "variations": [
+        {
+          "display": "urīd khamsa kutub, min faḍlika",
+          "script": "أريد خمسة كتب، من فضلكَ",
+          "cue": "I'd like five books, please (to a man)",
+          "changed": "any number from three to ten behaves the same way"
+        },
+        {
+          "display": "ʿindī thalātha kutub",
+          "script": "عندي ثلاثة كتب",
+          "cue": "I have three books",
+          "changed": "from asking to owning — the count does not change"
+        }
+      ],
+      "mistake": {
+        "display": "urīd thalāth kutub, min faḍlika",
+        "script": "أريد ثلاث كتب، من فضلكَ",
+        "why": "kitāb is masculine, so the number takes the -a: thalātha kutub. The bare thalāth is for feminine nouns — thalāth sayyārāt. The number wears the marker its noun does not."
+      },
+      "usage": "Buying more than a couple of anything.",
+      "register": "neutral",
+      "mnemonic": "thalātha kutub, thalāth sayyārāt: the -a goes where the noun's -a is not."
+    },
+    {
+      "id": "L1-M8-S07",
+      "display": "ʿindahu thalāth sayyārāt",
+      "script": "عنده ثلاث سيارات",
+      "cue": "He has three cars",
+      "glossEn": "lit. \"at-him three cars\"",
+      "literal": "at-him three cars",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sayyārāt",
+            "script": "سيارات",
+            "cue": "cars",
+            "tag": "free",
+            "forms": [],
+            "note": "The plural of sayyāra, made the other way — by adding -āt to the end instead of breaking the word open, and the silent -a of sayyāra drops away to make room for it. Many nouns ending that way take this tail, but not all of them do, so a plural is still learned with its noun."
+          }
+        ],
+        "rules": [5, 10]
+      },
+      "trap": "sayyāra is feminine, so the number goes BARE: thalāth sayyārāt. The -a that looks feminine belongs on the number only when the noun is masculine.",
+      "sound": "ʿIN-da-hu tha-LAATH say-yaa-RAAT — the plural tail takes the stress.",
+      "variations": [
+        {
+          "display": "ʿindī thalāth sayyārāt",
+          "script": "عندي ثلاث سيارات",
+          "cue": "I have three cars",
+          "changed": "-ahu → -ī: whose cars they are"
+        },
+        {
+          "display": "ʿindahu thalātha kutub",
+          "script": "عنده ثلاثة كتب",
+          "cue": "He has three books",
+          "changed": "a masculine noun, so the number puts its -a back on"
+        }
+      ],
+      "mistake": {
+        "display": "ʿindahu thalātha sayyārāt",
+        "script": "عنده ثلاثة سيارات",
+        "why": "sayyāra is feminine, so its number goes bare: thalāth sayyārāt. Putting the -a on both is agreement — and numbers from three to ten are the one class that refuses to agree."
+      },
+      "usage": "Talking about what someone else owns.",
+      "register": "neutral",
+      "mnemonic": "sayyārāt — the -āt tail is the everyday plural of an -a noun."
+    },
+    {
+      "id": "L1-M8-S08",
+      "display": "hādhā bi-khamsa riyālāt",
+      "script": "هذا بخمسة ريالات",
+      "cue": "This is five riyals",
+      "glossEn": "lit. \"this for-five riyals\"",
+      "literal": "this for-five riyals",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bi-khamsa",
+            "script": "بخمسة",
+            "cue": "for five",
+            "tag": "delta",
+            "forms": ["bi-khamsa", "khamsa", "khams"],
+            "note": "The same bi- as in bi-kam and M2's bi-khayr, now answering the question instead of asking it: bi-khamsa, \"for five\". khamsa is the number on its own — khamsa before a masculine noun, bare khams before a feminine one, exactly like thalātha."
+          },
+          {
+            "display": "riyālāt",
+            "script": "ريالات",
+            "cue": "riyals",
+            "tag": "free",
+            "forms": ["riyālāt", "riyāl"],
+            "note": "riyāl is the currency this course prices things in — one riyāl, five riyālāt, with the same -āt tail as sayyārāt. It is masculine, which is why the number in front of it wears its -a: khamsa riyālāt."
+          }
+        ],
+        "rules": [0, 8, 4]
+      },
+      "trap": "The answer to bi-kam? starts with the same bi-. Question and answer share the preposition, which is what makes the exchange feel like one sentence cut in half.",
+      "sound": "HAA-dhā bi-KHAM-sa ri-yaa-LAAT — the kh is the Scottish-loch sound, as in al-khubz.",
+      "variations": [
+        {
+          "display": "hādhihi bi-khamsa riyālāt",
+          "script": "هذه بخمسة ريالات",
+          "cue": "This one is five riyals (a feminine thing)",
+          "changed": "hādhā → hādhihi: pointing at something feminine"
+        },
+        {
+          "display": "hādhā bi-riyāl wāḥid",
+          "script": "هذا بريال واحد",
+          "cue": "This is one riyal",
+          "changed": "one riyal, and the number goes back behind its noun"
+        }
+      ],
+      "mistake": {
+        "display": "hādhā khamsa riyālāt",
+        "script": "هذا خمسة ريالات",
+        "why": "Without bi- this says \"this is five riyals\" in the sense of being them, not costing them. A price takes the preposition: hādhā bi-khamsa riyālāt."
+      },
+      "usage": "The shopkeeper's half of the exchange.",
+      "register": "neutral",
+      "mnemonic": "bi- asks the price and bi- answers it."
+    },
+    {
+      "id": "L1-M8-S09",
+      "display": "hādhā ghālī wa hādhā rakhīṣ",
+      "script": "هذا غالي وهذا رخيص",
+      "cue": "This one is expensive and this one is cheap",
+      "glossEn": "lit. \"this expensive and this cheap\"",
+      "literal": "this expensive and this cheap",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ghālī",
+            "script": "غالي",
+            "cue": "expensive",
+            "tag": "delta",
+            "forms": ["ghālī", "ghāliya"],
+            "note": "\"Expensive\" — ghālī of a masculine thing, ghāliya of a feminine one. Written the way it is said when the sentence stops on it: full MSA spells this class with an ending that carries only case, and in pause that ending vanishes and the word simply ends in a long ī."
+          },
+          {
+            "display": "rakhīṣ",
+            "script": "رخيص",
+            "cue": "cheap",
+            "tag": "free",
+            "forms": ["rakhīṣ", "rakhīṣa"],
+            "note": "\"Cheap\", and the plain opposite of ghālī with none of its spelling trouble: rakhīṣ of a masculine thing, rakhīṣa of a feminine one. The ṣ at the end is the heavy s, as in aṣ-ṣabāḥ."
+          }
+        ],
+        "rules": [8, 9]
+      },
+      "trap": "Two verbless sentences joined by wa, and neither of them has an \"is\". The whole comparison is four words.",
+      "sound": "HAA-dhā GHAA-lee wa HAA-dhā ra-KHEEṢ — ghālī opens with the gargled gh of ghadan.",
+      "variations": [
+        {
+          "display": "hādhihi ghāliya wa hādhihi rakhīṣa",
+          "script": "هذه غالية وهذه رخيصة",
+          "cue": "This one is expensive and this one is cheap (feminine things)",
+          "changed": "both point at feminine things, so both adjectives take -a"
+        },
+        {
+          "display": "as-sayyāra ghāliya jiddan",
+          "script": "السيارة غالية جدًا",
+          "cue": "The car is very expensive",
+          "changed": "name the thing, and M3's jiddan turns it up"
+        }
+      ],
+      "mistake": {
+        "display": "hādhā ghāliya wa hādhā rakhīṣ",
+        "script": "هذا غالية وهذا رخيص",
+        "why": "hādhā points at a masculine thing, so its adjective stays bare: hādhā ghālī. The -a belongs with hādhihi — the agreement law from M1, running inside a price."
+      },
+      "usage": "Choosing between two of the same thing, out loud, in front of the person selling them.",
+      "register": "neutral",
+      "mnemonic": "ghālī is dear and rakhīṣ is a bargain — the two words a market runs on."
+    },
+    {
+      "id": "L1-M8-S10",
+      "display": "ashtarī al-fākiha min as-sūq",
+      "script": "أشتري الفاكهة من السوق",
+      "cue": "I buy the fruit from the market",
+      "glossEn": "lit. \"I-buy the-fruit from the-market\"",
+      "literal": "buy-I the-fruit from the-market",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ashtarī",
+            "script": "أشتري",
+            "cue": "I buy",
+            "tag": "free",
+            "forms": ["ashtarī", "tashtarī", "yashtarī"],
+            "note": "\"I buy\" — the same non-past machine as M4's ashrab: a- for I, ta- for you-m or she, ya- for he. Its long final ī is part of the verb, not an ending that can be trimmed. With M6's sa- in front it becomes sa-ashtarī, \"I will buy\"."
+          }
+        ],
+        "rules": [7, 11]
+      },
+      "trap": "This min is M1's \"from\", standing free and meaning exactly what it says — nothing like the min locked inside min faḍlika.",
+      "sound": "ash-ta-REE al-FAA-ki-ha min as-SOOQ — the final ī is long and holds.",
+      "variations": [
+        {
+          "display": "ashtarī al-khubz min as-sūq kull yawm",
+          "script": "أشتري الخبز من السوق كل يوم",
+          "cue": "I buy the bread from the market every day",
+          "changed": "M4's kull yawm makes it a habit"
+        },
+        {
+          "display": "sa-ashtarī al-fākiha ghadan",
+          "script": "سأشتري الفاكهة غدًا",
+          "cue": "I will buy the fruit tomorrow",
+          "changed": "M6's sa- moves the shopping to tomorrow"
+        }
+      ],
+      "mistake": {
+        "display": "ashtarī al-fākiha min faḍlika as-sūq",
+        "script": "أشتري الفاكهة من فضلكَ السوق",
+        "why": "min faḍlika is one frozen expression meaning please, and its min cannot be borrowed to mean \"from\". Buying from a place takes the plain preposition: min as-sūq."
+      },
+      "usage": "Where you shop, said as a habit rather than a plan.",
+      "register": "neutral",
+      "mnemonic": "ashtarī — the shopping verb; sūq is where it happens."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M8-C01",
+      "display": "bi-kam hādhā al-kitāb?",
+      "script": "بكم هذا الكتاب؟",
+      "cue": "How much is this book?"
+    },
+    {
+      "id": "L1-M8-C02",
+      "display": "ʿindī thalātha kutub",
+      "script": "عندي ثلاثة كتب",
+      "cue": "I have three books"
+    },
+    {
+      "id": "L1-M8-C03",
+      "display": "urīd qahwa, min faḍliki",
+      "script": "أريد قهوة، من فضلكِ",
+      "cue": "I'd like a coffee, please (to a woman)"
+    },
+    {
+      "id": "L1-M8-C04",
+      "display": "kam sayyāra ʿindahu?",
+      "script": "كم سيارة عنده؟",
+      "cue": "How many cars does he have?"
+    },
+    {
+      "id": "L1-M8-C05",
+      "display": "hādhihi as-sayyāra ghāliya",
+      "script": "هذه السيارة غالية",
+      "cue": "This car is expensive"
+    },
+    {
+      "id": "L1-M8-C06",
+      "display": "hādhā rakhīṣ jiddan",
+      "script": "هذا رخيص جدًا",
+      "cue": "This one is very cheap"
+    },
+    {
+      "id": "L1-M8-C07",
+      "display": "ashtarī al-khubz min as-sūq kull yawm",
+      "script": "أشتري الخبز من السوق كل يوم",
+      "cue": "I buy the bread from the market every day"
+    },
+    {
+      "id": "L1-M8-C08",
+      "display": "al-khubz rakhīṣ wa al-ḥalīb ghālī",
+      "script": "الخبز رخيص والحليب غالي",
+      "cue": "The bread is cheap and the milk is expensive"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

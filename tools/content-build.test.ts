@@ -92,6 +92,7 @@ function courseRow(id: string, overrides: Partial<CourseRow> = {}): CourseRow {
     l2: 'Marathi',
     l1Tag: 'hi',
     l2Tag: 'mr',
+    l2Dir: 'ltr',
     pairLabel: 'hindi → marathi',
     scriptMode: 'native',
     dir: 'ltr',
@@ -593,6 +594,19 @@ describe('manifest validation', () => {
       'courses.json[4].id: "Hi_MR" must be lowercase letters, digits and single hyphens',
       'courses.json[5].fixture: must be a boolean when present',
     ]);
+  });
+
+  it('rejects a row that never says which way its L2 runs (#196)', () => {
+    const noL2Dir: Record<string, unknown> = { ...courseRow('hi-mr') };
+    delete noL2Dir['l2Dir'];
+
+    // `dir` is the course as the learner meets it; `l2Dir` is the language in its own script.
+    // en-ar differs on the two, so a row that declares only the first has not said enough.
+    expect(errorsFor([noL2Dir, { ...courseRow('en-ar'), l2Dir: 'sideways' }])).toEqual([
+      'courses.json[0].l2Dir: must be one of: ltr, rtl',
+      'courses.json[1].l2Dir: must be one of: ltr, rtl',
+    ]);
+    expect(errorsFor([{ ...courseRow('en-ar'), dir: 'ltr', l2Dir: 'rtl' }])).toEqual([]);
   });
 
   it('rejects a row whose language tags are missing or malformed (#186)', () => {
@@ -1127,9 +1141,15 @@ describe('the shared normaliser', () => {
 /**
  * The repo's own content, built both ways. This is the test that would catch a fixture course
  * leaking into a strict build, or a module shipping without a named reviewer.
+ *
+ * Since #202 the repo holds no fixture course at all — hi-mr, en-es and en-ar all ship — so the
+ * two builds differ in nothing but the banner and the `devBuild` key. The gate is still enforced:
+ * `tools/content-build.test.ts`'s synthetic roots above build fixture rows and unverified modules
+ * and watch them be dropped, which is where that coverage belongs. What *this* block asserts is
+ * that the repo's real content needs no relaxation to reach a learner.
  */
 describe('the authored content', () => {
-  it('ships hi-mr and en-es L1-M1..M10, and no fixture course, on a strict build', () => {
+  it('ships hi-mr, en-es and en-ar L1-M1..M10 on a strict build', () => {
     const { report, outRoot } = build(DEFAULT_CONTENT_ROOT, STRICT);
     const L1 = [
       'L1-M1',
@@ -1148,29 +1168,38 @@ describe('the authored content', () => {
     expect([...report.shipped]).toEqual([
       ['hi-mr', L1],
       ['en-es', L1],
+      ['en-ar', L1],
     ]);
-    expect(readManifest(outRoot).courses.map((course) => course.id)).toEqual(['hi-mr', 'en-es']);
+    expect(readManifest(outRoot).courses.map((course) => course.id)).toEqual([
+      'hi-mr',
+      'en-es',
+      'en-ar',
+    ]);
+    // Not one row carries `fixture` any more, and the envelope carries no dev key.
+    expect(readManifest(outRoot).courses.some((course) => 'fixture' in course)).toBe(false);
     expect(readManifest(outRoot).devBuild).toBeUndefined();
     expect(report.lines).toEqual([
       'hi-mr: 10 modules (L1-M1..M10)',
       ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
       'en-es: 10 modules (L1-M1..M10)',
       ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
-      'en-ar: 0 modules — fixture course, excluded by the gate (--with-fixtures ships it in dev)',
-      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10) | skipped: en-ar (fixture course)',
+      'en-ar: 10 modules (L1-M1..M10)',
+      ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
+      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10)',
     ]);
   });
 
   /**
-   * The twenty shipping modules — hi-mr's ten (#110, #111) and en-es's ten (#192–#195) — ship on
-   * an LLM review the owner authorised, not on the native gate, which is open for both languages.
-   * What the gate enforces is the signature: a module that reaches a learner names who cleared it
-   * and when (tools/validate.ts), so the record can never quietly claim a check nobody ran.
+   * The thirty shipping modules — hi-mr's ten (#110, #111), en-es's ten (#192–#195) and en-ar's
+   * ten (#199–#202) — ship on an LLM review the owner authorised, not on the native gate, which is
+   * open for all three languages. What the gate enforces is the signature: a module that reaches a
+   * learner names who cleared it and when (tools/validate.ts), so the record can never quietly
+   * claim a check nobody ran.
    */
   it('names a reviewer and a date on every module it ships strictly', () => {
     const { outRoot } = build(DEFAULT_CONTENT_ROOT, STRICT);
 
-    for (const courseId of ['hi-mr', 'en-es']) {
+    for (const courseId of ['hi-mr', 'en-es', 'en-ar']) {
       for (let i = 1; i <= 10; i += 1) {
         const module = JSON.parse(
           readFileSync(path.join(outRoot, courseId, 'modules', `L1-M${i}.json`), 'utf8'),
@@ -1183,7 +1212,7 @@ describe('the authored content', () => {
     }
   });
 
-  it('ships hi-mr and en-es L1-M1..M10 and the en-ar fixture on a dev build', () => {
+  it('ships hi-mr, en-es and en-ar L1-M1..M10 on a dev build', () => {
     const { report, outRoot } = build(DEFAULT_CONTENT_ROOT, DEV);
 
     expect(report.exitCode).toBe(0);
@@ -1196,10 +1225,13 @@ describe('the authored content', () => {
         'en-es',
         ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5', 'L1-M6', 'L1-M7', 'L1-M8', 'L1-M9', 'L1-M10'],
       ],
-      ['en-ar', ['L1-M1']],
+      [
+        'en-ar',
+        ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5', 'L1-M6', 'L1-M7', 'L1-M8', 'L1-M9', 'L1-M10'],
+      ],
     ]);
     expect(report.lines).toContain(
-      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 1 module (L1-M1)',
+      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10)',
     );
     expect(readManifest(outRoot).devBuild).toBe(true);
     for (const file of [
@@ -1226,6 +1258,15 @@ describe('the authored content', () => {
       'en-es/modules/L1-M9.json',
       'en-es/modules/L1-M10.json',
       'en-ar/modules/L1-M1.json',
+      'en-ar/modules/L1-M2.json',
+      'en-ar/modules/L1-M3.json',
+      'en-ar/modules/L1-M4.json',
+      'en-ar/modules/L1-M5.json',
+      'en-ar/modules/L1-M6.json',
+      'en-ar/modules/L1-M7.json',
+      'en-ar/modules/L1-M8.json',
+      'en-ar/modules/L1-M9.json',
+      'en-ar/modules/L1-M10.json',
     ]) {
       expect(existsSync(path.join(outRoot, ...file.split('/')))).toBe(true);
     }

@@ -20,10 +20,14 @@
  * **Every word in it is the course's.** `display`, `cue` and `script` are that sentence's own
  * content; the card adds no label of its own, in any language. This file contains no
  * learner-facing English.
+ *
+ * **The two L2 lines carry their own language AND direction** (#186, #196): `l2Written(course)`
+ * says that a romanized course's `display` is `ar-Latn`/`ltr` while its quiet `script` line is
+ * `ar`/`rtl`, so an Arabic sentence runs right to left inside a card that does not.
  */
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
-import type { L2Lang } from '../../course/manifest.ts';
+import type { L2Written } from '../../course/manifest.ts';
 import type { Sentence } from '../../course/types.ts';
 import { RegistrationMarks } from '../RegistrationMarks.tsx';
 import { ProductionDots } from './ProductionDots.tsx';
@@ -36,7 +40,7 @@ interface SentenceCardProps {
   /** The course's writing direction — every line on the card is its content. */
   dir?: string;
   /** The tags the L2 lines are written in (#186); the L1 ones inherit the document's. */
-  l2?: L2Lang;
+  l2?: L2Written;
 }
 
 export function SentenceCard({ sentence, produced, dir, l2 }: SentenceCardProps) {
@@ -46,7 +50,7 @@ export function SentenceCard({ sentence, produced, dir, l2 }: SentenceCardProps)
 
       <Link className={styles.open} to={`/sentence/${sentence.id}`} dir={dir}>
         <span className={styles.lines}>
-          <span className={styles.display} lang={l2?.display}>
+          <span className={styles.display} dir={l2?.display.dir} lang={l2?.display.lang}>
             {sentence.display}
           </span>
           <span className={styles.cue}>{sentence.cue}</span>
@@ -54,7 +58,7 @@ export function SentenceCard({ sentence, produced, dir, l2 }: SentenceCardProps)
               as something to produce — so it is the quietest line on the card. A native course's
               sentences carry no `script` at all, which is why the content is the condition. */}
           {sentence.script !== undefined && (
-            <span className={styles.script} lang={l2?.script}>
+            <span className={styles.script} dir={l2?.script.dir} lang={l2?.script.lang}>
               {sentence.script}
             </span>
           )}

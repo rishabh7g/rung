@@ -1,0 +1,574 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M2",
+  "title": "First exchange",
+  "job": "Greetings, wellbeing, yes/no questions",
+  "prerequisites": ["L1-M1"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-13",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 5,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "as-salāmu ʿalaykum",
+      "ṣabāḥ al-khayr + , + name",
+      "kayfa + ḥāl- + -uka/-uki",
+      "anā bi-khayr",
+      "hal + <statement>",
+      "naʿam/lā + , + <statement>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A yes/no question is the statement, unchanged, with hal in front: anta min al-Hind → hal anta min al-Hind? Nothing moves and nothing is added at the end. English fronts an auxiliary (\"are you\", \"do you\") that Arabic simply does not have."
+    },
+    {
+      "tag": "interference",
+      "text": "There are two words for \"you\", and they split by GENDER, not by politeness: anta to a man, anti to a woman. English has one word for both, so every question you ask now forces a choice English never made you make. (The plural antum is out of L1.)"
+    },
+    {
+      "tag": "delta",
+      "text": "\"How are you?\" is kayfa ḥāluka — \"how (is) your state\". No verb, exactly as in M1, and the \"your\" is the same kind of suffix as the -ī of ismī: ḥāluka to a man, ḥāluki to a woman."
+    },
+    {
+      "tag": "delta",
+      "text": "al- changes shape before about half the letters of the alphabet — the sun letters — and this course WRITES the change: as-salām (not al-salām), ash-shāy (not al-shāy). Before the other half it stays plain: al-khayr, al-qahwa, al-Hind. The l is what disappears; the following letter doubles."
+    },
+    {
+      "tag": "delta",
+      "text": "bi- is a small word glued onto the front of a noun, \"with\" or \"in\": bi-khayr is literally \"in goodness\", which is how Arabic says \"fine\". M8 uses the same bi- to ask a price."
+    },
+    {
+      "tag": "delta",
+      "text": "The greetings come in fixed pairs — as-salāmu ʿalaykum is answered with wa ʿalaykum as-salām, and ṣabāḥ al-khayr with ṣabāḥ an-nūr. The reply is not a translation of the greeting; it is its own set phrase."
+    },
+    {
+      "tag": "interference",
+      "text": "naʿam and lā stand alone and then the whole statement follows: naʿam, anā min al-Hind. English can stop at \"Yes, I am\" because \"am\" is a word; Arabic has no such word to stop on, so the answer repeats the sentence."
+    },
+    {
+      "tag": "delta",
+      "text": "The -a that marks something as feminine follows the SUBJECT — the person the sentence is about, never the person saying it: hal anti ṭāliba? is asked OF a woman, whoever is asking. A man answering the same question says anā ṭālib."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M2-S01",
+      "display": "as-salāmu ʿalaykum",
+      "script": "السلام عليكم",
+      "cue": "Hello (peace be upon you)",
+      "glossEn": "lit. \"the-peace (be) upon you\"",
+      "literal": "the-peace upon-you",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "as-salāmu ʿalaykum",
+            "script": "السلام عليكم",
+            "cue": "hello, peace be upon you",
+            "tag": "delta",
+            "forms": [],
+            "note": "The greeting of the whole Arabic-speaking world, learned as one piece. Inside it: salām is peace, and as- is the article al- with its l swallowed by the s that follows — a sun letter, written the way it is said. The -u on salāmu is a frozen ending this phrase keeps and nothing else in L1 does."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "It is not \"peace upon you\" as a sentence you could build words into. It is one fixed greeting, and it has one fixed answer.",
+      "sound": "as-sa-LAA-mu ʿa-LAY-kum. The ʿ is a squeeze deep in the throat, not a vowel.",
+      "variations": [
+        {
+          "display": "marḥaban",
+          "script": "مرحبًا",
+          "cue": "Hello",
+          "changed": "a plain hello — shorter, and no fixed reply is attached to it"
+        }
+      ],
+      "mistake": {
+        "display": "ʿalaykum as-salāmu",
+        "script": "عليكم السلام",
+        "why": "That is the shape of the REPLY, and the reply also needs wa in front: wa ʿalaykum as-salām. The greeting itself is as-salāmu ʿalaykum."
+      },
+      "usage": "Any first meeting, spoken or written, formal or not. It is the safest greeting there is.",
+      "register": "neutral",
+      "mnemonic": "salām is the same word as the Hebrew shalom, and it means peace."
+    },
+    {
+      "id": "L1-M2-S02",
+      "display": "wa ʿalaykum as-salām",
+      "script": "وعليكم السلام",
+      "cue": "And upon you, peace (the reply)",
+      "glossEn": "lit. \"and upon-you the-peace\"",
+      "literal": "and upon-you the-peace",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ʿalaykum",
+            "script": "عليكم",
+            "cue": "upon you",
+            "tag": "delta",
+            "forms": [],
+            "note": "ʿalā (\"upon\") with the ending -kum (\"you\", plural) welded on — a preposition carrying its pronoun inside it, the way M1's ismī carried \"my\". The plural is used to one person here out of courtesy."
+          },
+          {
+            "display": "as-salām",
+            "script": "السلام",
+            "cue": "the peace",
+            "tag": "delta",
+            "forms": [],
+            "note": "salām (peace) with the article. Written as- and not al- because s is a sun letter: the l assimilates, and this course writes what is said."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "The two halves swap places in the reply — and the wa is not optional.",
+      "sound": "wa-ʿa-LAY-kum as-sa-LAAM — one run, no pause after wa.",
+      "variations": [
+        {
+          "display": "wa ʿalaykum",
+          "script": "وعليكم",
+          "cue": "And upon you (the short reply)",
+          "changed": "drop as-salām — the everyday shortcut between people who know each other"
+        }
+      ],
+      "mistake": {
+        "display": "ʿalaykum as-salām",
+        "script": "عليكم السلام",
+        "why": "The reply starts with wa, \"and\" — \"and upon YOU, peace\". Without it, it sounds like a greeting said backwards."
+      },
+      "usage": "The answer to as-salāmu ʿalaykum, and the only answer. Never left unsaid.",
+      "register": "neutral",
+      "mnemonic": "The greeting gives peace; the reply gives it back — with an \"and\" on the front."
+    },
+    {
+      "id": "L1-M2-S03",
+      "display": "ṣabāḥ al-khayr, Rohān",
+      "script": "صباح الخير، روهان",
+      "cue": "Good morning, Rohan",
+      "glossEn": "lit. \"morning of the-good, Rohan\"",
+      "literal": "morning the-good Rohan",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ṣabāḥ al-khayr",
+            "script": "صباح الخير",
+            "cue": "good morning",
+            "tag": "delta",
+            "forms": [],
+            "note": "Two nouns stacked, not an adjective on a noun: ṣabāḥ is morning and khayr is goodness, so it says \"morning of the goodness\". Here al- keeps its l, because kh is a moon letter — compare as-salām, where s swallowed it."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "\"Good\" is not an adjective here. You cannot swap another adjective in: the phrase is fixed.",
+      "sound": "ṣa-BAAḤ al-KHAYR. ṣ is a heavy s with the tongue low, and kh is the ch of Scottish \"loch\".",
+      "variations": [
+        {
+          "display": "masāʾ al-khayr, Rohān",
+          "script": "مساء الخير، روهان",
+          "cue": "Good evening, Rohan",
+          "changed": "morning → evening; al-khayr never changes"
+        },
+        {
+          "display": "ṣabāḥ an-nūr",
+          "script": "صباح النور",
+          "cue": "Good morning (the reply)",
+          "changed": "the fixed answer — \"morning of light\", and n is another sun letter"
+        }
+      ],
+      "mistake": {
+        "display": "ṣabāḥ khayr",
+        "script": "صباح خير",
+        "why": "The article is part of the phrase: ṣabāḥ al-khayr. Without it the words are just \"morning\" and \"goodness\" side by side."
+      },
+      "usage": "Until about noon; masāʾ al-khayr takes over for the rest of the day. In speech the name usually gets a yā in front of it — ṣabāḥ al-khayr yā Rohān — and the bare name is what writing looks like.",
+      "register": "neutral",
+      "mnemonic": "You are not wishing a good morning, you are handing over \"the morning of goodness\"."
+    },
+    {
+      "id": "L1-M2-S04",
+      "display": "kayfa ḥāluka?",
+      "script": "كيف حالك؟",
+      "cue": "How are you? (to a man)",
+      "glossEn": "lit. \"how (is) your-state\"",
+      "literal": "how state-your",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kayfa",
+            "script": "كيف",
+            "cue": "how",
+            "tag": "free",
+            "forms": [],
+            "note": "\"How\", and it goes first, exactly where English puts it."
+          },
+          {
+            "display": "ḥāluka",
+            "script": "حالك",
+            "cue": "your state",
+            "tag": "delta",
+            "forms": ["ḥāluka", "ḥāluki"],
+            "note": "ḥāl is a state or condition; -ka is \"your\" to a man and -ki \"your\" to a woman — the same suffix machinery as M1's ismī / ismuka / ismuki. There is no verb in the question at all."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "English asks with a verb (\"how ARE you\"). Arabic asks with two nouns and no verb, and the \"you\" is not even a word — it is the tail of ḥāl.",
+      "sound": "KAY-fa ḤAA-lu-ka — ḥ is the hard breathy h, as in uḥibb.",
+      "variations": [
+        {
+          "display": "kayfa ḥāluki?",
+          "script": "كيف حالكِ؟",
+          "cue": "How are you? (to a woman)",
+          "changed": "-ka → -ki: the ending picks the person you are speaking to"
+        }
+      ],
+      "mistake": {
+        "display": "kayfa ḥāl?",
+        "script": "كيف حال؟",
+        "why": "ḥāl on its own is just \"state\". The question needs the \"your\" welded on: kayfa ḥāluka / kayfa ḥāluki."
+      },
+      "usage": "Understood everywhere and slightly bookish out loud — Cairo says izzayyak, Damascus kīfak. This course stays with the written standard.",
+      "register": "neutral",
+      "mnemonic": "ḥāl is your state of affairs — asking \"how is your ḥāl\" is asking how things stand."
+    },
+    {
+      "id": "L1-M2-S05",
+      "display": "anā bi-khayr, shukran",
+      "script": "أنا بخير، شكرًا",
+      "cue": "I am fine, thank you",
+      "glossEn": "lit. \"I in-goodness, thanks\"",
+      "literal": "I in-goodness thanks",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bi-khayr",
+            "script": "بخير",
+            "cue": "fine, well",
+            "tag": "delta",
+            "forms": [],
+            "note": "bi- is a one-letter word for \"with\" or \"in\", written onto the front of its noun: bi-khayr = \"in goodness\" = fine. The same bi- turns up in M8's bi-kam (\"for how much\"). And again there is no verb: anā bi-khayr is the whole answer."
+          },
+          {
+            "display": "shukran",
+            "script": "شكرًا",
+            "cue": "thank you",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Thanks\", with the same -an tail as M1's kathīran. One word, any situation."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "There is no \"am\" to translate, and no \"you\" in the thanks — both are one word shorter than English.",
+      "sound": "bi-KHAYR runs as one word. shukran ends -an: SHUK-ran.",
+      "variations": [
+        {
+          "display": "anā bi-khayr",
+          "script": "أنا بخير",
+          "cue": "I am fine",
+          "changed": "drop shukran — the answer alone is complete"
+        },
+        {
+          "display": "Rohān bi-khayr",
+          "script": "روهان بخير",
+          "cue": "Rohan is fine",
+          "changed": "a name instead of anā, and still nothing where \"is\" would be"
+        }
+      ],
+      "mistake": {
+        "display": "anā khayr",
+        "script": "أنا خير",
+        "why": "Without bi- this says \"I am goodness\". The little bi- is what makes it \"in good shape\": anā bi-khayr."
+      },
+      "usage": "The standard answer to kayfa ḥāluka, whether or not it is true.",
+      "register": "neutral",
+      "mnemonic": "bi-khayr = \"in good\" — you are inside the goodness."
+    },
+    {
+      "id": "L1-M2-S06",
+      "display": "hal anta min al-Hind?",
+      "script": "هل أنتَ من الهند؟",
+      "cue": "Are you from India? (to a man)",
+      "glossEn": "lit. \"question you from the-India\"",
+      "literal": "Q you from the-India",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hal",
+            "script": "هل",
+            "cue": "(marks a yes/no question)",
+            "tag": "delta",
+            "forms": [],
+            "note": "A question word with no English translation: put it in front of any statement and the statement becomes a yes/no question. It never changes, and nothing else in the sentence moves. In speech people often just raise the voice instead; hal is what gets written."
+          },
+          {
+            "display": "anta",
+            "script": "أنتَ",
+            "cue": "you (to a man)",
+            "tag": "interference",
+            "forms": [],
+            "note": "\"You\" said to a man. A woman is anti — Arabic has no single word covering both, so every \"you\" is a choice. Like anā, it is obligatory here because the sentence has no verb."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English turns the sentence around to ask (\"you are\" → \"are you\"). Arabic leaves it exactly as it stands and puts hal in front.",
+      "sound": "hal is short, flat and unstressed: hal AN-ta min al-HIND.",
+      "variations": [
+        {
+          "display": "hal anta ṭālib?",
+          "script": "هل أنتَ طالب؟",
+          "cue": "Are you a student? (to a man)",
+          "changed": "swap what is being asked about — hal anta holds still"
+        },
+        {
+          "display": "anta min al-Hind",
+          "script": "أنتَ من الهند",
+          "cue": "You are from India",
+          "changed": "drop hal and it is a plain statement again"
+        }
+      ],
+      "mistake": {
+        "display": "hal takūn min al-Hind?",
+        "script": "هل تكون من الهند؟",
+        "why": "English \"are you…\" wants a verb, so learners reach for one. The present has none: hal + the plain statement, hal anta min al-Hind?"
+      },
+      "usage": "Everyday asking. hal fronts any statement you can already make.",
+      "register": "neutral",
+      "mnemonic": "hal is a question mark you say out loud, and it goes at the front."
+    },
+    {
+      "id": "L1-M2-S07",
+      "display": "naʿam, anā min al-Hind",
+      "script": "نعم، أنا من الهند",
+      "cue": "Yes, I am from India",
+      "glossEn": "lit. \"yes, I from the-India\"",
+      "literal": "yes I from the-India",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "naʿam",
+            "script": "نعم",
+            "cue": "yes",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Yes\", standing on its own before the answer. The ʿ in the middle is the throat-squeeze, so it is na-ʿam, two beats."
+          }
+        ],
+        "rules": [6]
+      },
+      "trap": "\"Yes, I am\" cannot be translated — there is no \"am\" to end on. The answer says the whole thing again.",
+      "sound": "na-ʿAM, with the throat catch between the two syllables.",
+      "variations": [
+        {
+          "display": "naʿam, anā ṭālib",
+          "script": "نعم، أنا طالب",
+          "cue": "Yes, I am a student",
+          "changed": "same yes, a different statement behind it"
+        }
+      ],
+      "mistake": {
+        "display": "naʿam, anā",
+        "script": "نعم، أنا",
+        "why": "This is just \"yes, I\". With no verb \"to be\" to lean on, the answer has to repeat the statement: naʿam, anā min al-Hind."
+      },
+      "usage": "Answering any hal question. Short, and then the fact.",
+      "register": "neutral",
+      "mnemonic": "naʿam has the ʿayn in it — say yes from the throat."
+    },
+    {
+      "id": "L1-M2-S08",
+      "display": "hal anti ṭāliba?",
+      "script": "هل أنتِ طالبة؟",
+      "cue": "Are you a student? (to a woman)",
+      "glossEn": "lit. \"question you-f student-f\"",
+      "literal": "Q you-f student-f",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "anti",
+            "script": "أنتِ",
+            "cue": "you (to a woman)",
+            "tag": "interference",
+            "forms": [],
+            "note": "\"You\" said to a woman — one letter away from anta and never interchangeable with it. In Arabic script the two look identical unless the vowel is marked, so the choice is heard rather than seen."
+          }
+        ],
+        "rules": [0, 1, 7]
+      },
+      "trap": "Both halves move together: anti brings ṭāliba with it. Mixing them — anti ṭālib — is the commonest beginner slip.",
+      "sound": "AN-ti TAA-li-ba. The final -a of ṭāliba is short and light.",
+      "variations": [
+        {
+          "display": "hal anta ṭālib?",
+          "script": "هل أنتَ طالب؟",
+          "cue": "Are you a student? (to a man)",
+          "changed": "anti → anta, and ṭāliba loses its -a to match"
+        }
+      ],
+      "mistake": {
+        "display": "hal anti ṭālib?",
+        "script": "هل أنتِ طالب؟",
+        "why": "ṭālib describes a man. Asked of a woman, the word for student is ṭāliba — the ending follows the person the question is about."
+      },
+      "usage": "Asking someone what they do. The gender is in the question whether you meant it or not.",
+      "register": "neutral",
+      "mnemonic": "anti and ṭāliba both end in the light vowel — they travel together."
+    },
+    {
+      "id": "L1-M2-S09",
+      "display": "lā, anā mudarrisa",
+      "script": "لا، أنا مدرسة",
+      "cue": "No, I am a teacher (said by a woman)",
+      "glossEn": "lit. \"no, I teacher-f\"",
+      "literal": "no I teacher-f",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lā",
+            "script": "لا",
+            "cue": "no; not",
+            "tag": "delta",
+            "forms": [],
+            "note": "Two jobs in one word. On its own it is the answer \"no\", as here. In front of a verb it is \"not\" — lā urīd, \"I do not want\" — which is how M3 will negate; Arabic needs no extra \"do\" to do it."
+          },
+          {
+            "display": "mudarrisa",
+            "script": "مدرسة",
+            "cue": "teacher",
+            "tag": "delta",
+            "forms": ["mudarris", "mudarrisa"],
+            "note": "mudarris is a male teacher, mudarrisa a female one — the -a again follows whoever is being described. Literally \"one who teaches\", from darasa, to study."
+          }
+        ],
+        "rules": [6, 7]
+      },
+      "trap": "\"No, I'm not\" has nothing to translate to. Say no, then say what IS true.",
+      "sound": "laa is a long open vowel. mu-DAR-ri-sa doubles the r.",
+      "variations": [
+        {
+          "display": "lā, anā ṭāliba",
+          "script": "لا، أنا طالبة",
+          "cue": "No, I am a student (said by a woman)",
+          "changed": "the same no, a different fact after it"
+        },
+        {
+          "display": "lā, anā mudarris",
+          "script": "لا، أنا مدرس",
+          "cue": "No, I am a teacher (said by a man)",
+          "changed": "drop the -a: a man describes himself as mudarris"
+        }
+      ],
+      "mistake": {
+        "display": "lā, anā mudarris",
+        "script": "لا، أنا مدرس",
+        "why": "Said by a woman this is wrong: mudarris is the male teacher. She says anā mudarrisa."
+      },
+      "usage": "Correcting a wrong guess: no, and here is the right answer.",
+      "register": "neutral",
+      "mnemonic": "madrasa is a school and mudarris is the one who teaches in it."
+    },
+    {
+      "id": "L1-M2-S10",
+      "display": "hal tuḥibb ash-shāy?",
+      "script": "هل تحب الشاي؟",
+      "cue": "Do you like tea? (to a man)",
+      "glossEn": "lit. \"question you-like the-tea\"",
+      "literal": "Q you-like the-tea",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ash-shāy",
+            "script": "الشاي",
+            "cue": "tea",
+            "tag": "interference",
+            "forms": ["ash-shāy", "shāy"],
+            "note": "shāy is tea. The article in front of it is al-, but sh is a sun letter, so the l is swallowed and the sh doubles: ash-shāy. This course spells it the way it is said — al-shāy is not another spelling of this word, it is no word at all. Liking tea in general keeps the article, exactly as al-qahwa did."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "English needs \"do\" to ask this. Arabic needs hal — and the verb keeps its tu- prefix, which is where the \"you\" lives.",
+      "sound": "hal tu-ḤIBB ash-SHAAY — you can hear the doubled sh, and no l anywhere.",
+      "variations": [
+        {
+          "display": "hal tuḥibb al-qahwa?",
+          "script": "هل تحب القهوة؟",
+          "cue": "Do you like coffee? (to a man)",
+          "changed": "tea → coffee, and al- comes back in one piece: q is a moon letter"
+        },
+        {
+          "display": "uḥibb ash-shāy",
+          "script": "أحب الشاي",
+          "cue": "I like tea",
+          "changed": "drop hal and change the prefix — the answer to the question"
+        }
+      ],
+      "mistake": {
+        "display": "hal tuḥibb al-shāy?",
+        "script": "هل تحب الشاي؟",
+        "why": "The l of al- never survives in front of sh. It is ash-shāy — said that way, and in this course written that way too."
+      },
+      "usage": "Offering and asking about likes. Tea is the default offer nearly everywhere Arabic is spoken.",
+      "register": "neutral",
+      "mnemonic": "shāy is chai with the same leaves in it — and al- disappears into the sh."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M2-C01",
+      "display": "kayfa ḥāluki?",
+      "script": "كيف حالكِ؟",
+      "cue": "How are you? (to a woman)"
+    },
+    {
+      "id": "L1-M2-C02",
+      "display": "anā bi-khayr",
+      "script": "أنا بخير",
+      "cue": "I am fine"
+    },
+    {
+      "id": "L1-M2-C03",
+      "display": "hal anta ṭālib?",
+      "script": "هل أنتَ طالب؟",
+      "cue": "Are you a student? (to a man)"
+    },
+    {
+      "id": "L1-M2-C04",
+      "display": "naʿam, uḥibb ash-shāy",
+      "script": "نعم، أحب الشاي",
+      "cue": "Yes, I like tea"
+    },
+    {
+      "id": "L1-M2-C05",
+      "display": "lā, anā ṭālib",
+      "script": "لا، أنا طالب",
+      "cue": "No, I am a student"
+    },
+    {
+      "id": "L1-M2-C06",
+      "display": "hal anti min al-Hind?",
+      "script": "هل أنتِ من الهند؟",
+      "cue": "Are you from India? (to a woman)"
+    },
+    {
+      "id": "L1-M2-C07",
+      "display": "shukran, anā bi-khayr",
+      "script": "شكرًا، أنا بخير",
+      "cue": "Thank you, I am fine"
+    },
+    {
+      "id": "L1-M2-C08",
+      "display": "hal tuḥibb al-mūsīqā?",
+      "script": "هل تحب الموسيقى؟",
+      "cue": "Do you like music? (to a man)"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

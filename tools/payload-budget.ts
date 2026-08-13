@@ -202,12 +202,12 @@ export interface Budget {
 
 /**
  * The shell bytes a first visit fetches before it paints — the number PRD-engineering §10's
- * "≤ 2 s on mid-range Android" is actually about. Measured 173.7 KiB gzip (docs/05-perf-notes.md
- * §4); ~1.0 s of Slow 4G at ~180 KiB/s, against a measured TTI of 1.5–1.8 s.
+ * "≤ 2 s on mid-range Android" is actually about. Measured 173.6 KiB gzip (docs/05-perf-notes.md
+ * §4.3); ~1.0 s of Slow 4G at ~180 KiB/s, against a measured TTI of 1.5–1.8 s.
  */
 const FIRST_PAINT_LIMIT = 185 * 1024;
 
-/** What every course pays for. Measured 216.0 KiB gzip on the `--with-fixtures` build (§4). */
+/** What every course pays for. Measured 216.0 KiB gzip on the dev build, 214.6 strict (§4.3). */
 const SHELL_LIMIT = 230 * 1024;
 
 /**

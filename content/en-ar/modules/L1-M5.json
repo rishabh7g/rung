@@ -1,0 +1,586 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M5",
+  "title": "Yesterday",
+  "job": "Past tense — the first big divergence",
+  "prerequisites": ["L1-M4"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-13",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": ["simple_past"],
+    "allowedPatterns": [
+      "ams + V-perfect",
+      "V-perfect + al- + N",
+      "kuntu + Adj",
+      "hal + V-perfect-ta + ams"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE divergence of the level, and it is about WHERE the person sits, not about time: the past marks the person with a SUFFIX where M4's non-past marked it with a prefix. dhahabtu (I went) · dhahabta (you went, to a man) · dhahabti (you went, to a woman) · dhahaba (he went) — same stem, opposite end of the word."
+    },
+    {
+      "tag": "delta",
+      "text": "Those suffix vowels are written in full because they ARE the person — dhahabtu and dhahabta differ by one vowel and one whole meaning. This never contradicts the no-case-endings rule: what is dropped elsewhere (al-baytu) carries only case; what is written here carries who."
+    },
+    {
+      "tag": "interference",
+      "text": "English marks the past on the verb but never the person — \"I went\", \"you went\", \"he went\" are one form. So a learner reaching for anā dhahabtu is translating a pronoun Arabic already put inside the suffix. M1's law, at the other end of the word."
+    },
+    {
+      "tag": "delta",
+      "text": "kāna is the verb M1 said was missing, and it was missing only in the present: the past cannot do without it. kuntu fī al-bayt (I was at home) · kuntu taʿbān (I was tired) · kāna al-jaww bārid (the weather was cold). Beside them, the present stays verbless: anā taʿbān."
+    },
+    {
+      "tag": "delta",
+      "text": "Full MSA puts kāna's predicate in the accusative — kāna al-jaww bāridan. This course's pause forms hide that ending, deliberately: it carries only case, and the course writes no case endings anywhere. Said aloud so nobody \"fixes\" it halfway."
+    },
+    {
+      "tag": "free",
+      "text": "ams works like \"yesterday\": start or end, your choice — ams dhahabtu ilā as-sūq · dhahabtu ilā as-sūq ams. Nothing else moves either way."
+    },
+    {
+      "tag": "delta",
+      "text": "hal + the perfect asks \"did you…?\": hal dhahabta ilā as-sūq ams? English has to bring in \"did\"; Arabic reuses M2's hal, and the -ta already says you."
+    },
+    {
+      "tag": "delta",
+      "text": "Bounded on purpose: no past negation in L1 — MSA needs lam plus a verb shape this level does not teach — so this module stays affirmative, questions aside. (Keeping mā out also keeps it clear of māʾ, one throat-catch away.)"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M5-S01",
+      "display": "ams dhahabtu ilā al-madrasa",
+      "script": "أمس ذهبت إلى المدرسة",
+      "cue": "Yesterday I went to school",
+      "glossEn": "lit. \"yesterday I-went to the-school\"",
+      "literal": "yesterday went-I to the-school",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ams",
+            "script": "أمس",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Yesterday\", standing alone like al-yawm — no preposition. It anchors nearly every sentence in this module, from either end."
+          },
+          {
+            "display": "dhahabtu",
+            "script": "ذهبت",
+            "cue": "I went",
+            "tag": "delta",
+            "forms": ["dhahabtu", "dhahabta", "dhahabti", "dhahaba"],
+            "note": "M4's adhhab in the past — and the person has moved to the END: dhahab-tu (I), dhahab-ta (you, to a man), dhahab-ti (you, to a woman), dhahaba (he). Same stem as adhhab, opposite end of the word. The final vowel is written because it IS the person."
+          }
+        ],
+        "rules": [0, 1, 2, 5]
+      },
+      "trap": "The person changed ends of the word: a-dhhab (I go) but dhahab-tu (I went). Prefix in the non-past, suffix in the past.",
+      "sound": "AMS dha-HAB-tu i-LAA al-MAD-ra-sa — the -tu is short but never dropped.",
+      "variations": [
+        {
+          "display": "dhahabtu ilā al-madrasa ams",
+          "script": "ذهبت إلى المدرسة أمس",
+          "cue": "I went to school yesterday",
+          "changed": "ams moves to the end — either seat is fine"
+        },
+        {
+          "display": "ams dhahabtu ilā al-ʿamal",
+          "script": "أمس ذهبت إلى العمل",
+          "cue": "Yesterday I went to work",
+          "changed": "school → work"
+        }
+      ],
+      "mistake": {
+        "display": "ams anā dhahabtu ilā al-madrasa",
+        "script": "أمس أنا ذهبت إلى المدرسة",
+        "why": "English needs its \"I\", so it sneaks in. The -tu at the end of dhahabtu already says I — anā on top reads as emphasis, not as plain speech."
+      },
+      "usage": "The opening line of any account of your day — where you went.",
+      "register": "neutral",
+      "mnemonic": "dhahab-TU: the I went to the tail of the word."
+    },
+    {
+      "id": "L1-M5-S02",
+      "display": "sharibtu qahwa ams",
+      "script": "شربت قهوة أمس",
+      "cue": "I drank a coffee yesterday",
+      "glossEn": "lit. \"I-drank coffee yesterday\"",
+      "literal": "drank-I coffee yesterday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sharibtu",
+            "script": "شربت",
+            "cue": "I drank",
+            "tag": "delta",
+            "forms": ["sharibtu", "sharibta", "sharibti", "shariba"],
+            "note": "ashrab's past: sharib-tu (I), sharib-ta (you-m), sharib-ti (you-f), shariba (he). The same -tu/-ta/-ti/-a tails as dhahabtu — one suffix set serves every verb in the language."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "One past event, one cup: bare qahwa. Put al- back on and it becomes that particular coffee — M1's contrast, alive in the past.",
+      "sound": "sha-RIB-tu QAH-wa AMS.",
+      "variations": [
+        {
+          "display": "sharibtu al-qahwa",
+          "script": "شربت القهوة",
+          "cue": "I drank the coffee",
+          "changed": "add al- — that coffee, the one that was there"
+        },
+        {
+          "display": "ams sharibtu māʾ",
+          "script": "أمس شربت ماء",
+          "cue": "Yesterday I drank some water",
+          "changed": "swap the drink, and ams takes the front seat"
+        }
+      ],
+      "mistake": {
+        "display": "ams ashrab qahwa",
+        "script": "أمس أشرب قهوة",
+        "why": "The English-shaped \"yesterday I drink\". ams needs the perfect: sharibtu — the person moves to the end of the word, and the prefix form stays in the present."
+      },
+      "usage": "What you ate and drank — the small change of any day retold.",
+      "register": "neutral",
+      "mnemonic": "sharibtu rhymes with dhahabtu — every past-I ends in -tu."
+    },
+    {
+      "id": "L1-M5-S03",
+      "display": "akaltu al-fākiha ams",
+      "script": "أكلت الفاكهة أمس",
+      "cue": "I ate the fruit yesterday",
+      "glossEn": "lit. \"I-ate the-fruit yesterday\"",
+      "literal": "ate-I the-fruit yesterday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "akaltu",
+            "script": "أكلت",
+            "cue": "I ate",
+            "tag": "delta",
+            "forms": ["akaltu", "akalta", "akalti", "akala"],
+            "note": "ākul's past: akal-tu, akal-ta, akal-ti, akala. Notice the front of the word relaxed — the long ā of ākul was the I-prefix, and in the past the person left the front for the tail."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "ākul and akaltu are the same verb with the person at opposite ends — front for the non-past, tail for the past.",
+      "sound": "a-KAL-tu al-FAA-ki-ha AMS.",
+      "variations": [
+        {
+          "display": "akalti al-fākiha",
+          "script": "أكلت الفاكهة",
+          "cue": "You ate the fruit (to a woman)",
+          "changed": "-tu → -ti: you, to a woman — one vowel, new owner"
+        },
+        {
+          "display": "akala al-fākiha",
+          "script": "أكل الفاكهة",
+          "cue": "He ate the fruit",
+          "changed": "-tu → -a: he"
+        }
+      ],
+      "mistake": {
+        "display": "akala al-fākiha ams",
+        "script": "أكل الفاكهة أمس",
+        "why": "Meant as \"I ate\", this says \"HE ate\": akala is the he-form. The I is the -tu: akaltu al-fākiha."
+      },
+      "usage": "Retelling meals — with the fruit already on the table, the article points at it.",
+      "register": "neutral",
+      "mnemonic": "akaltu — \"I kult(ivated) my appetite\": -tu is always I."
+    },
+    {
+      "id": "L1-M5-S04",
+      "display": "hal dhahabta ilā as-sūq ams?",
+      "script": "هل ذهبت إلى السوق أمس؟",
+      "cue": "Did you go to the market yesterday? (to a man)",
+      "glossEn": "lit. \"question you-went to the-market yesterday\"",
+      "literal": "Q went-you to the-market yesterday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "as-sūq",
+            "script": "السوق",
+            "cue": "the market",
+            "tag": "free",
+            "forms": ["as-sūq", "sūq"],
+            "note": "sūq is the market — the word English borrowed as \"souk\". s is a sun letter, so the article assimilates: as-sūq, like as-salām. M8 will do its shopping here."
+          }
+        ],
+        "rules": [5, 6, 7]
+      },
+      "trap": "\"Did\" has no Arabic counterpart: hal + the perfect does it all, and the -ta of dhahabta is the \"you\".",
+      "sound": "hal dha-HAB-ta i-LAA as-SOOQ AMS — the q of sūq from the very back of the throat.",
+      "variations": [
+        {
+          "display": "hal dhahabti ilā as-sūq ams?",
+          "script": "هل ذهبت إلى السوق أمس؟",
+          "cue": "Did you go to the market yesterday? (to a woman)",
+          "changed": "-ta → -ti: the question turns to a woman"
+        },
+        {
+          "display": "naʿam, dhahabtu ilā as-sūq",
+          "script": "نعم، ذهبت إلى السوق",
+          "cue": "Yes, I went to the market",
+          "changed": "the answer: -ta turns back to -tu, I"
+        }
+      ],
+      "mistake": {
+        "display": "hal dhahabti ilā as-sūq ams?",
+        "script": "هل ذهبت إلى السوق أمس؟",
+        "why": "Asked of a man, this is wrong: -ti is \"you\" to a woman. To a man the suffix is -ta: dhahabta. In bare script the two look alike — in this course's spelling, the vowel is the person."
+      },
+      "usage": "Catching up on someone's day. The market is where M8's numbers will spend themselves.",
+      "register": "neutral",
+      "mnemonic": "sūq — souk: English already knows this market."
+    },
+    {
+      "id": "L1-M5-S05",
+      "display": "kuntu fī al-bayt ams",
+      "script": "كنت في البيت أمس",
+      "cue": "I was at home yesterday",
+      "glossEn": "lit. \"I-was in the-house yesterday\"",
+      "literal": "was-I in the-house yesterday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kuntu",
+            "script": "كنت",
+            "cue": "I was",
+            "tag": "delta",
+            "forms": ["kuntu", "kunta", "kunti", "kāna"],
+            "note": "The verb \"to be\" exists after all — in the past. kun-tu (I was), kun-ta (you-m), kun-ti (you-f), kāna (he/it was), with the same suffixes as every other perfect. The present never uses it: anā fī al-bayt has no verb, kuntu fī al-bayt must have one."
+          },
+          {
+            "display": "fī al-bayt",
+            "script": "في البيت",
+            "cue": "at home",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"At home\", learned whole like M4's time phrases: fī (\"in\") + M3's al-bayt. Written in full — speech says fi l-bayt — and M7 will set fī free as a word of its own, for saying where anything is."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "\"Arabic has no verb to be\" was only ever true of the present. The past needs kāna, and this is where the slogan dies.",
+      "sound": "KUN-tu fi l-BAYT AMS — said, the fī melts into the article.",
+      "variations": [
+        {
+          "display": "kunta fī al-bayt",
+          "script": "كنت في البيت",
+          "cue": "You were at home (to a man)",
+          "changed": "-tu → -ta: you"
+        },
+        {
+          "display": "hal kunti fī al-bayt ams?",
+          "script": "هل كنت في البيت أمس؟",
+          "cue": "Were you at home yesterday? (to a woman)",
+          "changed": "hal in front and -ti: the question, to a woman"
+        }
+      ],
+      "mistake": {
+        "display": "anā fī al-bayt ams",
+        "script": "أنا في البيت أمس",
+        "why": "M1's law overextended. The verbless sentence is the PRESENT — \"I am at home\". Yesterday needs the verb the present does without: kuntu fī al-bayt ams."
+      },
+      "usage": "The plainest alibi in the language — where you were.",
+      "register": "neutral",
+      "mnemonic": "kuntu — \"I was\": the missing verb turns up one tense late."
+    },
+    {
+      "id": "L1-M5-S06",
+      "display": "kuntu taʿbān ams",
+      "script": "كنت تعبان أمس",
+      "cue": "I was tired yesterday (said by a man)",
+      "glossEn": "lit. \"I-was tired yesterday\"",
+      "literal": "was-I tired yesterday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "taʿbān",
+            "script": "تعبان",
+            "cue": "tired",
+            "tag": "delta",
+            "forms": ["taʿbān", "taʿbāna"],
+            "note": "\"Tired\" — taʿbān of a man, taʿbāna of a woman, the -a following the SUBJECT like every adjective since ṭālib/ṭāliba. The ʿ in its middle is ʿayn. M9 will build feelings on this word in the present, verbless: anā taʿbān."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "Present and past are two different machines: anā taʿbān (no verb) · kuntu taʿbān (verb required). Same adjective, opposite rules.",
+      "sound": "KUN-tu taʿ-BAAN — the ʿ squeezes the middle of taʿbān.",
+      "variations": [
+        {
+          "display": "kuntu taʿbāna ams",
+          "script": "كنت تعبانة أمس",
+          "cue": "I was tired yesterday (said by a woman)",
+          "changed": "add -a: the adjective follows the speaker being described"
+        },
+        {
+          "display": "anā taʿbān al-yawm",
+          "script": "أنا تعبان اليوم",
+          "cue": "I am tired today (said by a man)",
+          "changed": "back to the present — and the verb vanishes again"
+        }
+      ],
+      "mistake": {
+        "display": "kuntu taʿbāna ams",
+        "script": "كنت تعبانة أمس",
+        "why": "Said by a man this is wrong: -a describes a female subject. He says kuntu taʿbān — the agreement law from M1, riding on kāna."
+      },
+      "usage": "How yesterday felt. The everyday word — grammars prefer mutʿab, the street says taʿbān.",
+      "register": "neutral",
+      "mnemonic": "taʿbān — tired; taʿab is toil, and taʿbān is what toil leaves you."
+    },
+    {
+      "id": "L1-M5-S07",
+      "display": "kāna al-jaww bārid ams",
+      "script": "كان الجو بارد أمس",
+      "cue": "The weather was cold yesterday",
+      "glossEn": "lit. \"was the-weather cold yesterday\"",
+      "literal": "was the-weather cold yesterday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-jaww",
+            "script": "الجو",
+            "cue": "the weather",
+            "tag": "free",
+            "forms": ["al-jaww", "jaww"],
+            "note": "jaww is the weather (and the air); talking about it takes the article, al-jaww, as English does with none. A masculine noun, so its adjectives stay bare: bārid."
+          },
+          {
+            "display": "bārid",
+            "script": "بارد",
+            "cue": "cold",
+            "tag": "delta",
+            "forms": ["bārid", "bārida"],
+            "note": "\"Cold\", the winter twin of M3's sākhin, agreeing the same way: bārid with a masculine noun, bārida with a feminine one. Full MSA would write bāridan after kāna — the accusative this course's pause forms deliberately drop."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "kāna in front, and the verbless present sentence (al-jaww bārid) becomes a past one — the verb slots in without reordering anything.",
+      "sound": "KAA-na al-JAWW BAA-rid AMS — jaww with a held doubled w.",
+      "variations": [
+        {
+          "display": "al-jaww bārid al-yawm",
+          "script": "الجو بارد اليوم",
+          "cue": "The weather is cold today",
+          "changed": "drop kāna and it is the present again — no verb at all"
+        },
+        {
+          "display": "kāna ash-shāy sākhin",
+          "script": "كان الشاي ساخن",
+          "cue": "The tea was hot",
+          "changed": "weather → tea: kāna pushes any verbless sentence into the past"
+        }
+      ],
+      "mistake": {
+        "display": "kāna al-jaww bārida ams",
+        "script": "كان الجو باردة أمس",
+        "why": "al-jaww is masculine, so its adjective stays bare: bārid. The -a belongs to feminine subjects — gender is the noun's own, not the sentence's mood."
+      },
+      "usage": "Small talk about yesterday — weather is where kāna earns its keep.",
+      "register": "neutral",
+      "mnemonic": "bārid — brrr-id: the cold one."
+    },
+    {
+      "id": "L1-M5-S08",
+      "display": "ams dhahabtu ilā al-maṭʿam",
+      "script": "أمس ذهبت إلى المطعم",
+      "cue": "Yesterday I went to the restaurant",
+      "glossEn": "lit. \"yesterday I-went to the-restaurant\"",
+      "literal": "yesterday went-I to the-restaurant",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-maṭʿam",
+            "script": "المطعم",
+            "cue": "the restaurant",
+            "tag": "free",
+            "forms": ["al-maṭʿam", "maṭʿam"],
+            "note": "maṭʿam is a restaurant — the place of ṭaʿām, food, built the way madrasa was built from studying. m is a moon letter, so al- keeps its l."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "kuntu is not an auxiliary: the past lives in dhahabtu alone. There is no Arabic \"I did go\" or \"I was gone\" to assemble.",
+      "sound": "AMS dha-HAB-tu i-LAA al-MAṬ-ʿam — the ṭ heavy, the ʿ right after it.",
+      "variations": [
+        {
+          "display": "ams dhahabtu ilā as-sūq",
+          "script": "أمس ذهبت إلى السوق",
+          "cue": "Yesterday I went to the market",
+          "changed": "restaurant → market"
+        },
+        {
+          "display": "hal dhahabta ilā al-maṭʿam ams?",
+          "script": "هل ذهبت إلى المطعم أمس؟",
+          "cue": "Did you go to the restaurant yesterday? (to a man)",
+          "changed": "hal in front, -tu → -ta: the question"
+        }
+      ],
+      "mistake": {
+        "display": "ams kuntu dhahabtu ilā al-maṭʿam",
+        "script": "أمس كنت ذهبت إلى المطعم",
+        "why": "English \"did / was\" wants an auxiliary, so kuntu gets drafted. The perfect needs no helper: ams dhahabtu — one verb, person on its tail."
+      },
+      "usage": "Recounting an evening out — the sentence every \"how was yesterday?\" answer starts with.",
+      "register": "neutral",
+      "mnemonic": "maṭʿam — the ṭaʿām (food) place, as madrasa is the studying place."
+    },
+    {
+      "id": "L1-M5-S09",
+      "display": "ams dhahabtu ilā as-sūq maʿa Rohān",
+      "script": "أمس ذهبت إلى السوق مع روهان",
+      "cue": "Yesterday I went to the market with Rohan",
+      "glossEn": "lit. \"yesterday I-went to the-market with Rohan\"",
+      "literal": "yesterday went-I to the-market with Rohan",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "maʿa",
+            "script": "مع",
+            "cue": "with (someone)",
+            "tag": "free",
+            "forms": [],
+            "note": "\"With\", for company: maʿa Rohān, maʿa Priyā. A separate word, sitting where English puts it. (The bi- of bi-khayr is the other \"with\" — the one for tools and manner, glued on; maʿa walks beside people.)"
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "Company is maʿa, never wa: \"Rohan and I went\" translates the and, but going along WITH someone needs maʿa.",
+      "sound": "ma-ʿa — two light syllables around the throat-squeeze; ma-ʿa ro-HAAN.",
+      "variations": [
+        {
+          "display": "dhahabtu ilā al-maṭʿam maʿa Priyā",
+          "script": "ذهبت إلى المطعم مع بريا",
+          "cue": "I went to the restaurant with Priya",
+          "changed": "swap place and companion — maʿa holds"
+        },
+        {
+          "display": "kuntu maʿa Rohān ams",
+          "script": "كنت مع روهان أمس",
+          "cue": "I was with Rohan yesterday",
+          "changed": "kāna + maʿa: where you were becomes who you were with"
+        }
+      ],
+      "mistake": {
+        "display": "ams dhahabtu ilā as-sūq wa Rohān",
+        "script": "أمس ذهبت إلى السوق وروهان",
+        "why": "English \"me and Rohan went\" makes wa (\"and\") look right. wa joins two sentences or two nouns doing the same job; company takes maʿa: maʿa Rohān."
+      },
+      "usage": "Adding people to the story — every outing has a maʿa in it.",
+      "register": "neutral",
+      "mnemonic": "maʿa — \"ma\" + \"ah\": who you went with."
+    },
+    {
+      "id": "L1-M5-S10",
+      "display": "ams akaltu al-khubz wa sharibtu al-ḥalīb",
+      "script": "أمس أكلت الخبز وشربت الحليب",
+      "cue": "Yesterday I ate the bread and drank the milk",
+      "glossEn": "lit. \"yesterday I-ate the-bread and I-drank the-milk\"",
+      "literal": "yesterday ate-I the-bread and drank-I the-milk",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-khubz",
+            "script": "الخبز",
+            "cue": "the bread",
+            "tag": "free",
+            "forms": ["al-khubz", "khubz"],
+            "note": "khubz is bread — kh as in Scottish loch, and a moon letter, so al- keeps its l. Here it is the bread of the house, pointed at with its article."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "Each verb carries its own person: akal-tu … sharib-tu. The suffix does not carry over the wa — it is said twice, once per verb.",
+      "sound": "AMS a-KAL-tu al-KHUBZ wa sha-RIB-tu al-ḥa-LEEB — one breath, two -tu tails.",
+      "variations": [
+        {
+          "display": "ams akaltu al-fākiha wa sharibtu al-māʾ",
+          "script": "أمس أكلت الفاكهة وشربت الماء",
+          "cue": "Yesterday I ate the fruit and drank the water",
+          "changed": "swap both halves — the frame is the story-telling frame"
+        },
+        {
+          "display": "akaltu al-khubz fī aṣ-ṣabāḥ",
+          "script": "أكلت الخبز في الصباح",
+          "cue": "I ate the bread in the morning",
+          "changed": "ams → fī aṣ-ṣabāḥ: M4's time phrases work in the past too"
+        }
+      ],
+      "mistake": {
+        "display": "ams akaltu al-khubz wa sharibta al-ḥalīb",
+        "script": "أمس أكلت الخبز وشربت الحليب",
+        "why": "Meant all as \"I\", but the second suffix slipped to -ta, \"you\". Each verb owns its person, and both here are I: akaltu … sharibtu — M3's agreement lesson, moved to the tail of the word."
+      },
+      "usage": "Two-verb accounts — the shape every \"what did you do?\" answer grows into (M10 makes turns of it).",
+      "register": "neutral",
+      "mnemonic": "khubz — bread; the kh is the crust."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M5-C01",
+      "display": "hal dhahabta ilā al-madrasa ams?",
+      "script": "هل ذهبت إلى المدرسة أمس؟",
+      "cue": "Did you go to school yesterday? (to a man)"
+    },
+    {
+      "id": "L1-M5-C02",
+      "display": "sharibtu al-ḥalīb fī aṣ-ṣabāḥ",
+      "script": "شربت الحليب في الصباح",
+      "cue": "I drank the milk in the morning"
+    },
+    {
+      "id": "L1-M5-C03",
+      "display": "kāna al-jaww bārid",
+      "script": "كان الجو بارد",
+      "cue": "The weather was cold"
+    },
+    {
+      "id": "L1-M5-C04",
+      "display": "kuntu fī al-bayt",
+      "script": "كنت في البيت",
+      "cue": "I was at home"
+    },
+    {
+      "id": "L1-M5-C05",
+      "display": "ams akaltu al-fākiha",
+      "script": "أمس أكلت الفاكهة",
+      "cue": "Yesterday I ate the fruit"
+    },
+    {
+      "id": "L1-M5-C06",
+      "display": "dhahaba ilā as-sūq maʿa Rohān",
+      "script": "ذهب إلى السوق مع روهان",
+      "cue": "He went to the market with Rohan"
+    },
+    {
+      "id": "L1-M5-C07",
+      "display": "hal kunti taʿbāna ams?",
+      "script": "هل كنت تعبانة أمس؟",
+      "cue": "Were you tired yesterday? (to a woman)"
+    },
+    {
+      "id": "L1-M5-C08",
+      "display": "sharibtu qahwa wa akaltu al-khubz",
+      "script": "شربت قهوة وأكلت الخبز",
+      "cue": "I drank a coffee and ate the bread"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

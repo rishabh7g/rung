@@ -1,0 +1,31 @@
+/**
+ * The token overrides — the one sanctioned way to change a value in `design/tokens.css` (#197).
+ *
+ * `design/` is READ-ONLY: it is re-copied wholesale from Rishabh's design tooling, which wipes
+ * anything edited into it (docs/design-contract.md, docs/01-plan.md §10). So an engineering
+ * decision that changes a token cannot be written where the token lives. It is written here, in
+ * `src/`, imported IMMEDIATELY AFTER `design/tokens.css` in `main.tsx` — same specificity, later
+ * wins — and the reason is recorded in `docs/`, the way PR #189 recorded the web-app-manifest
+ * `lang` divergence in docs/05-pwa-notes.md §3.
+ *
+ * The bar for a row here is high: a divergence nobody wrote down is indistinguishable from drift.
+ * Each one names the token, the design value it replaces, and the doc section that argues for it.
+ *
+ * ─────────────────────────────────────────────────────────────────────────────────────────────
+ *  token                     design value            here                        recorded in
+ *  --font-script-fallback    system-ui, sans-serif   "Noto Naskh Arabic", …      04-font-notes §8
+ * ─────────────────────────────────────────────────────────────────────────────────────────────
+ *
+ * A face named here is a DEFINITION of a token's value, not an element styled by name — the same
+ * category as the `@font-face` blocks `src/styleContract.test.ts` exempts, and the only file in
+ * `src/` allowed to spell a family out (`src/fonts.test.ts` holds it to the bundle).
+ */
+
+:root {
+  /* Arabic quiet native line: the design package left the instruction "bundle a Naskh face if ar
+     ships" on this token (design/tokens.md §2), and #197 shipped one — subset per course by
+     tools/font-subset.ts, declared in src/fonts/naskh.css. system-ui stays behind it: the range
+     the subset does not claim (Latin letters, digits mid-sentence) still resolves the way it did
+     before, and a device that somehow fails to load the face degrades to what it owns. */
+  --font-script-fallback: 'Noto Naskh Arabic', system-ui, sans-serif;
+}
