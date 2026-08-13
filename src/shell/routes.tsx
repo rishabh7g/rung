@@ -202,9 +202,9 @@ const TO_LADDER: BackTarget = { path: HOME_PATH, label: 'Back to the ladder' };
  * Where the back chevron goes from `pathname`.
  *
  * The Ladder, for every child of a rung — **except Sentence Detail**, which came from its module
- * and returns to it: the module list restores the offset and the open cards the learner left
- * behind (`screens/module/moduleView.ts`, #88), so "back" is genuinely where they were rather
- * than the top of the ladder. The module is read out of the sentence id, which is all the URL
+ * and returns to it: the module list restores the scroll offset the learner left behind
+ * (`screens/module/moduleView.ts`, #88), so "back" is genuinely where they were rather than the
+ * top of the ladder. The module is read out of the sentence id, which is all the URL
  * carries; an id that names no module (`/sentence/S1` — a deep link can carry anything) falls
  * back to the Ladder, exactly as the screen itself does.
  */

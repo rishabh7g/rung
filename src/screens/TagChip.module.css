@@ -6,8 +6,8 @@
  * The chip's label is English furniture (`free` · `delta` · `interference`), never a course
  * string — which is why this is the one chip in the app that sits at the design's own size:
  * `--text-micro` (10.5px) is inside §6's 9.5–11px band, and no Devanagari can land in it, so
- * the `--devanagari-min-size` floor that pushed the module list's WORD chips to 18px
- * (`module/SentenceCard.module.css`, #117) has nothing to hold up here.
+ * the `--devanagari-min-size` floor that pushed the module list's WORD chips to 18px (#117,
+ * until #217 took the chips off the card altogether) has nothing to hold up here.
  */
 .chip {
   display: inline-flex;

@@ -147,7 +147,7 @@ Course manifest and strings.json as in §4. `schemaVersion: 5`. Field rules: `di
 
 ### F2 — Module list
 
-Unchanged from v3.2 (expand/collapse, dots, scroll restore) + romanized courses render `display` primary, `cue` secondary, `script` as a quiet third line.
+Dots + scroll restore as v3.2, and **each card is one link into Sentence Detail** (#217 — expand/collapse retired: the panel duplicated Detail) + romanized courses render `display` primary, `cue` secondary, `script` as a quiet third line.
 
 ### F3 — Sentence Detail
 

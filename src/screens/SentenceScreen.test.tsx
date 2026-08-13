@@ -327,9 +327,10 @@ describe('prev and next', () => {
 /* --------------------------------------------------------------------- the back */
 
 describe('back', () => {
-  it('returns to the module, at the offset and with the cards the learner left', async () => {
-    // What #88 wrote on the way out: an offset, and the card that was open.
-    writeModuleView(moduleViewKey(COURSE, MODULE), { scrollTop: 240, expanded: [SPARSE] });
+  it('returns to the module, at the offset the learner left', async () => {
+    // What the module list wrote on the way out — since #217 that is the offset and nothing else:
+    // its cards are links into this screen, so there is no open card to come back to (#88).
+    writeModuleView(moduleViewKey(COURSE, MODULE), { scrollTop: 240 });
 
     await renderSentence(FULL);
     fireEvent.click(screen.getByRole('button', { name: 'Back to the module' }));
@@ -337,12 +338,7 @@ describe('back', () => {
     await screen.findByText(strings('module.helper'));
     expect(window.location.hash).toBe(`#/module/${MODULE}`);
     expect(screen.getByRole('main').scrollTop).toBe(240);
-
-    const open = screen
-      .getAllByRole('button')
-      .filter((button) => button.getAttribute('aria-expanded') !== null)
-      .map((button) => button.getAttribute('aria-expanded'));
-    expect(open).toEqual(['false', 'true']);
+    expect(screen.getByRole('main').querySelectorAll('[aria-expanded]')).toHaveLength(0);
   });
 
   it('sends a locked rung’s sentence back to the Ladder instead of reading it out', async () => {

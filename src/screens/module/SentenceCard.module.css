@@ -1,6 +1,9 @@
 /* Layout only, tokens only (docs/design-contract.md rule 1).
-   Geometry follows design/Rung App v3.3.dc.html → Module list → one sentence card, collapsed and
-   expanded; every length is the nearest token on the Industry scale (design/tokens.md §3, §4). */
+   Geometry follows design/Rung App v3.3.dc.html → Module list → one sentence card; every length is
+   the nearest token on the Industry scale (design/tokens.md §3, §4). The prototype's expanded
+   state has no stylesheet here any more — the card opens Sentence Detail instead of itself (#217),
+   so the panel, its gloss/literal/word chips/trap plate and the "open full" button are gone with
+   the markup that drew them. */
 
 /* A blueprint object like the rung card, minus the elevation: radius 0, a hairline, no surface
    fill, and the four registration marks (`../RegistrationMarks.tsx`) — which is the
@@ -11,28 +14,26 @@
   border: var(--border-hairline);
 }
 
-/* --------------------------------------------------------------- the collapsed row */
+/* ------------------------------------------------------------------ the whole card */
 
-/* The whole row toggles, so the whole row is the button — 44px of it at minimum
+/* The whole card is the way in, so the whole card is the link — 44px of it at minimum
    (design/tokens.md §4), which the L2 line clears on its own. */
-.summary {
+.open {
   display: flex;
   align-items: flex-start;
   gap: var(--space-3);
   width: 100%;
   min-height: var(--tap-min);
   padding: var(--space-4);
-  background: none;
-  border: 0;
   color: inherit;
   text-align: start;
-  cursor: pointer;
+  text-decoration: none;
   /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
 
-.summary:active {
+.open:active {
   background: color-mix(in srgb, var(--color-text) 6%, transparent);
 }
 
@@ -82,167 +83,19 @@
   color: var(--ink-65);
 }
 
-/* The chevron turns rather than swapping icon — one drawing, two states. */
-.chevron {
+/* The direction affordance: one chevron, pointing where the tap goes. It says "there is more of
+   this, elsewhere" rather than "this opens here", which is the whole difference #217 made. */
+.go {
   flex: none;
   width: var(--icon-inline);
   height: var(--icon-inline);
   margin-top: var(--space-2);
   color: var(--color-neutral-600);
   stroke-width: var(--icon-stroke);
-  transition: transform var(--motion-expand);
 }
 
-.chevronOpen {
-  composes: chevron;
-  transform: rotate(180deg);
-}
-
-/* ----------------------------------------------------------------- the expansion */
-
-/* 250ms, in place: the card grows where it stands and the list moves under it
-   (design/tokens.md §5 "Expand"). */
-.panel {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  padding: 0 var(--space-4) var(--space-4);
-  animation: expand-in var(--motion-expand) both;
-}
-
-@keyframes expand-in {
-  from {
-    opacity: 0;
-    transform: translateY(var(--space-2));
-  }
-
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* design/tokens.md §5: reduced motion collapses every movement in the product. */
-@media (prefers-reduced-motion: reduce) {
-  .panel {
-    animation: none;
-  }
-
-  .chevron,
-  .chevronOpen {
-    transition: none;
-  }
-}
-
-/* English in every course by name (`glossEn`), so the body face is right here and the 18px floor
-   above does not apply — it is the hairline under the collapsed row that opens the summary. */
-.gloss {
-  margin: 0;
-  padding-top: var(--space-3);
-  border-top: var(--border-hairline);
-  font: var(--text-secondary);
-  color: var(--ink-70);
-}
-
-/* Word-for-word, in the course's own words — course prose, so the same Mukta floor as the cue. */
-.literal {
-  composes: courseProse;
-  margin: 0;
-  color: var(--ink-70);
-}
-
-/* ------------------------------------------------------------------ the word rows */
-
-.words {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
-
-/**
- * A tag chip carries an L2 word, so it is course prose too and lands on the 18px Mukta floor
- * where design/tokens.md §6 writes 9.5–11px. Third recurrence of the same tension, same
- * precedent: build to §2's floor, flag it on #117, invent nothing.
- */
-.chip {
-  composes: courseProse;
-  padding: var(--space-1) var(--space-2);
-}
-
-.chipFree {
-  composes: chip;
-  background: var(--tag-free-bg);
-  color: var(--tag-free-fg);
-}
-
-.chipDelta {
-  composes: chip;
-  background: var(--tag-delta-bg);
-  color: var(--tag-delta-fg);
-}
-
-.chipInterference {
-  composes: chip;
-  background: var(--interference-tag-bg);
-  color: var(--interference-tag-fg);
-}
-
-/* ---------------------------------------------------------------------- the trap */
-
-/* Amber, and only here: interference is the one thing in the product that colour means
-   (design/tokens.md §7 rule 2). The words are the course's (`module.trapNote`). */
-.trap {
-  composes: courseProse;
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  margin: 0;
-  padding: var(--space-2) var(--space-3);
-  background: var(--interference-bg);
-  border: var(--border-hairline);
-  border-color: var(--interference-border);
-  color: var(--interference-text);
-}
-
-.trapIcon {
-  flex: none;
-  width: var(--icon-inline);
-  height: var(--icon-inline);
-  color: var(--interference-icon);
-  stroke-width: var(--icon-stroke);
-}
-
-/* ------------------------------------------------------------------- open full */
-
-/* The one control that leaves the list: a secondary at --btn-secondary-height (46px), where the
-   prototype writes 42 inline — the token is the rule of record (design/tokens.md §4) and clears
-   --tap-min, the same call PR #139 made for the rung card's pair. */
-.openFull {
-  composes: courseProse;
-  display: inline-flex;
-  align-items: center;
-  align-self: flex-start;
-  gap: var(--space-2);
-  min-height: var(--btn-secondary-height);
-  padding: var(--space-2) var(--space-3);
-  border: var(--border-hairline);
-  color: inherit;
-  text-decoration: none;
-  white-space: nowrap;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.openFull:active {
-  background: color-mix(in srgb, var(--color-text) 14%, transparent);
-}
-
-.openFullIcon {
-  flex: none;
-  width: var(--icon-inline);
-  height: var(--icon-inline);
-  stroke-width: var(--icon-stroke);
+/* A course that reads right to left reads its way out too: the card carries the course's `dir`,
+   so the one drawing mirrors rather than a second icon shipping. */
+[dir='rtl'] .go {
+  transform: scaleX(-1);
 }

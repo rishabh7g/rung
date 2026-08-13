@@ -52,9 +52,9 @@ const LAWS = [
     what: 'amber — interference only',
     pattern: /--interference-[a-z-]*\b/,
     sanctioned: [
-      // The trap callout + tag pair on the module list's expanded card (#88).
-      'src/screens/module/SentenceCard.module.css',
-      // Detail's trap plate — its own test walks the selectors carrying these (#89).
+      // Detail's trap plate — its own test walks the selectors carrying these (#89). The module
+      // list's card drew a trap callout too until #217 made the card a plain link into Detail:
+      // the amber lives where the trap is explained, and nowhere else.
       'src/screens/SentenceScreen.module.css',
       // The one amber chip (design/tokens.md §1: "interference traps + interference tag ONLY").
       'src/screens/TagChip.module.css',
