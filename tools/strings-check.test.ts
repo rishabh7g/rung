@@ -43,15 +43,15 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the three shipped bundles carry — 91 keys, nested, identical', () => {
+  it('is exactly what the three shipped bundles carry — 90 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(91);
+      expect(keys.length, courseId).toBe(90);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(91);
-    expect(new Set(STRINGS_KEYS).size).toBe(91);
+    expect(STRINGS_KEYS.length).toBe(90);
+    expect(new Set(STRINGS_KEYS).size).toBe(90);
   });
 
   it('carries the five keys PR #120 added beyond the issue text', () => {
@@ -143,17 +143,16 @@ describe('the canonical key list', () => {
   });
 
   /**
-   * The session machine's seventeen (#96). PRD-design §6.3's hub, its soft phase chips and its
+   * The session machine's sixteen (#96). PRD-design §6.3's hub, its soft phase chips and its
    * counts-only summary are learner-facing top to bottom, and the prototype writes every line of
    * them in English for every course. Draft values in all three bundles, flagged on #71.
    */
-  it('carries the seventeen keys the session machine forced (#96)', () => {
+  it('carries the sixteen keys the session machine forced (#96)', () => {
     const added: StringsKey[] = [
       'practice.hubTitle',
       'practice.hubReview',
       'practice.hubRead',
       'practice.hubProduce',
-      'practice.guideLine',
       'practice.beginReview',
       'practice.beginRead',
       'practice.phase.review',

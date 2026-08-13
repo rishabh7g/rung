@@ -1,6 +1,6 @@
 /* Layout only, tokens only (docs/design-contract.md rule 1).
    Geometry follows design/Rung App v3.3.dc.html → Practice → the hub (`phStart`): kicker, title,
-   three numbered phase rows, the guide line, and the CTA held at the bottom of the column. */
+   three numbered phase rows, and the CTA held at the bottom of the column. */
 
 /* The whole column, so the CTA can sit at the bottom of the screen as it does in the prototype:
    the shell's `<main>` is a plain scrolling block, so `min-height: 100%` is what gives
@@ -54,7 +54,7 @@
   border: var(--border-hairline);
 }
 
-/* Course prose, so Mukta at the 18px floor (design/tokens.md §2) — quiet, like the guide line. */
+/* Course prose, so Mukta at the 18px floor (design/tokens.md §2) — quiet, like the phase lines. */
 .invitationLine {
   margin: 0;
   flex: 1;
@@ -131,14 +131,6 @@
 }
 
 .phaseLine {
-  margin: 0;
-  font: var(--text-l2-cue);
-  font-size: var(--devanagari-min-size);
-  color: var(--ink-70);
-}
-
-/* "The phases guide, they never gate" — the invariant, in the course's own prose. */
-.guide {
   margin: 0;
   font: var(--text-l2-cue);
   font-size: var(--devanagari-min-size);

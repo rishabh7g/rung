@@ -269,12 +269,6 @@ export default function PracticeScreen() {
               ))}
             </ol>
 
-            {/* The invariant, in the course's own words, on the screen where a sequence of three
-                phases might otherwise read as a sequence of three gates. */}
-            <p className={styles.guide} dir={course.dir}>
-              {strings['practice.guideLine']}
-            </p>
-
             {/* One entry into the session, at the bottom of the column where the prototype puts
                 it — and an open session replaces it rather than sitting beside it (#99): two CTAs
                 on one screen is the learner deciding which of them means "practise". */}

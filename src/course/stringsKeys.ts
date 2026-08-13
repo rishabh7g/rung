@@ -35,7 +35,7 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about). 91 keys: the 17 of PRD §4, the 5 the frozen screens forced
+ * file it is complaining about). 90 keys: the 17 of PRD §4, the 5 the frozen screens forced
  * (PR #120) — `revealLabelComprehend` (Comprehension reveals the L1, not the L2) and the four
  * design §6.5 ritual keys (`ritual.stepTitle.*`, `ritual.check.plateLabel`) — the 3 the Ladder
  * forced (#86): the counts-only pending line, the ownership footer and the sealed-level toast,
@@ -46,9 +46,9 @@
  * heading, the mnemonic's "pocket it" label, and the two pager buttons — the 3 the reveal
  * card forced (#93): the two self-mark segments [D11] and the Next that does not exist until one
  * of them is chosen — the 3 the "why" panel forced
- * (#94): its toggle's two labels and the "open full" that leaves the session — the 17 the
- * session machine forced (#96): the Practice hub's title, its three phase lines and the line that
- * says the phases never gate, the two Begin labels, the three phase names the soft chips wear, the
+ * (#94): its toggle's two labels and the "open full" that leaves the session — the 16 the
+ * session machine forced (#96): the Practice hub's title, its three phase lines,
+ * the two Begin labels, the three phase names the soft chips wear, the
  * honest answer to a Review chip with nothing due, and the summary's title, four count lines and
  * its way back to the Ladder — the 5 the Read phase forced (#97): the cue toggle's two labels
  * and its pager's three, the last of which names where the rung's last sentence goes — the 3
@@ -132,7 +132,6 @@ export const STRINGS_KEYS = [
   'practice.hubReview',
   'practice.hubRead',
   'practice.hubProduce',
-  'practice.guideLine',
   'practice.beginReview',
   'practice.beginRead',
   'practice.phase.review',
@@ -319,7 +318,7 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'read.toProduce': [],
   /**
    * The session (#96) — the Practice hub, the phase chips and the summary (PRD §8 F4, PRD-design
-   * §6.3). Seventeen keys, and the rule that put every one of them here is the same as the module
+   * §6.3). Sixteen keys, and the rule that put every one of them here is the same as the module
    * list's: the prototype writes this screen in English for every course, which is what a
    * prototype does and what a product cannot.
    *
@@ -341,7 +340,6 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'practice.hubRead': ['{count}'],
   /** How many sentences the Produce phase will serve — the rung's, least-produced first. */
   'practice.hubProduce': ['{count}'],
-  'practice.guideLine': [],
   'practice.beginReview': [],
   'practice.beginRead': [],
   'practice.phase.review': [],
