@@ -157,10 +157,14 @@ const PLUGIN_DEFAULTS_DROPPED = { scope: undefined };
  *     `latin` subsets render the shell in every course, so they are shell; a script subset
  *     (`mukta-devanagari-*`) is read by the courses written in that script and by nobody else.
  *
- * The icons line is `*`, not `**`, ON PURPOSE: `*` does not cross `/`, so the iOS splash set in
- * `icons/splash/` (#115, `tools/make-splash.ts`) stays out of the precache. The app never
- * fetches a splash image — Safari itself does, once, at Add-to-Home-Screen — so precaching the
- * set would make every first visit download ~70 KiB it can never use.
+ * The icons line is `*.png`, not `*` or `**`, ON PURPOSE: `*` does not cross `/`, so the iOS
+ * splash set in `icons/splash/` (#115, `tools/make-splash.ts`) stays out of the precache — the
+ * app never fetches a splash image, Safari itself does, once, at Add-to-Home-Screen, so
+ * precaching the set would make every first visit download ~70 KiB it can never use. The `.png`
+ * narrows it further and deliberately excludes `icons/icon.svg` (#251): the app never fetches
+ * that file either — it is the generator's source, read by `tools/make-icons.ts` at build time
+ * and by nobody at runtime (every `<link>`/manifest entry names a PNG) — so precaching it would
+ * be the same wasted download for the same reason the splash set is out.
  *
  * `tools/pwa.test.ts` holds this list to the budget's attribution file by file: what these globs
  * select over a `dist/` listing must be exactly what `tools/payload-budget.ts` calls `shell`.
