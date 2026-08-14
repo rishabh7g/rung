@@ -15,7 +15,8 @@
 .item {
   flex: 1;
   min-width: 0;
-  /* 48px — above the --tap-min floor, because a bottom nav is thumb territory. */
+  /* 56px (src/styles/tokenOverrides.css, #244) — above the --tap-min floor, because a bottom
+     nav is thumb territory, and comfortable around the 26px icon (#246). */
   min-height: var(--nav-item-height);
   display: flex;
   flex-direction: column;

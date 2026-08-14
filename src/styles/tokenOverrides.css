@@ -15,7 +15,14 @@
  *  token                     design value            here                        recorded in
  *  --font-script-fallback    system-ui, sans-serif   "Noto Naskh Arabic", …      04-font-notes §8
  *  --font-devanagari         "Mukta", system-ui, …   "Mukta", "Source Sans 3", … 04-font-notes §9
+ *  --nav-item-height         48px                    56px                        design-contract
+ *                                                                                 "Bottom-nav item
+ *                                                                                 height" (#244)
  * ─────────────────────────────────────────────────────────────────────────────────────────────
+ *
+ * A `px` literal in one of these definitions is a sanctioned exemption from the style-contract
+ * scan's px ban (#243) — this file is the one place a token's length can be changed, and changing
+ * a length means writing a length.
  *
  * A face named here is a DEFINITION of a token's value, not an element styled by name — the same
  * category as the `@font-face` blocks `src/styleContract.test.ts` exempts, and the only file in
@@ -37,4 +44,9 @@
      that never prints them downloads a byte of it. system-ui stays last, where it was: this is a
      face added to the stack, not a fall-through removed from it. docs/04-font-notes.md §9. */
   --font-devanagari: 'Mukta', 'Source Sans 3', system-ui, sans-serif;
+
+  /* Bottom-nav item height: the house UI standard fixes it at 56px, up from the design package's
+     48px — comfortable around the 26px icon the standard also gives the bar (#246), and still
+     clear of the 44px --tap-min floor. docs/design-contract.md "Bottom-nav item height" (#244). */
+  --nav-item-height: 56px;
 }
