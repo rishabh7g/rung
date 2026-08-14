@@ -24,6 +24,9 @@
  *  --gutter-sm/-md/-lg/       (not in design pkg)     16px/24px/32px              design-contract
  *  --gutter                                                                       "Screen gutter"
  *                                                                                 (#247)
+ *  --content-max               (not in design pkg)     720px                       design-contract
+ *                                                                                 "Content column
+ *                                                                                 measure" (#248)
  * ─────────────────────────────────────────────────────────────────────────────────────────────
  *
  * A `px` literal in one of these definitions is a sanctioned exemption from the style-contract
@@ -80,4 +83,12 @@
   :root {
     --gutter: var(--gutter-lg);
   }
+}
+
+:root {
+  /* Content column measure: the house UI standard caps the content column at a 720px reading
+     measure from 1024px up, centred — roughly 75 characters at 16px. Below 1024px the content
+     stays fluid; the cap applies only inside the min-width: 1024px query where it is used
+     (AppShell.module.css `.screen > *`). docs/design-contract.md "Content column measure" (#248). */
+  --content-max: 720px;
 }
