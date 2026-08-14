@@ -89,6 +89,23 @@
   stroke-width: var(--icon-stroke);
 }
 
+/* Below the header: the scroll area and, at >=768px, the rail beside it (#249). Column on
+   mobile — same visual order as before the wrapper existed, `<main>` above the bottom bar.
+   `row-reverse` at >=768px puts the SECOND DOM child (the nav) at the main-start (the left),
+   without reordering `<main>` and `<BottomNav>` in the markup. */
+.body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+@media (min-width: 768px) {
+  .body {
+    flex-direction: row-reverse;
+  }
+}
+
 /* The one scroll area: every screen scrolls its own column (design/pwa-checklist.md §1). */
 .screen {
   flex: 1;

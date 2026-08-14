@@ -27,6 +27,9 @@
  *  --content-max               (not in design pkg)     720px                       design-contract
  *                                                                                 "Content column
  *                                                                                 measure" (#248)
+ *  --rail-width                (not in design pkg)     232px                       design-contract
+ *                                                                                 "Left rail"
+ *                                                                                 (#249)
  * ─────────────────────────────────────────────────────────────────────────────────────────────
  *
  * A `px` literal in one of these definitions is a sanctioned exemption from the style-contract
@@ -91,4 +94,9 @@
      stays fluid; the cap applies only inside the min-width: 1024px query where it is used
      (AppShell.module.css `.screen > *`). docs/design-contract.md "Content column measure" (#248). */
   --content-max: 720px;
+
+  /* Left rail: the width the bottom bar becomes at >=768px, icon + label, in place of the
+     56px-tall bar (BottomNav.module.css's tablet-and-up rail block).
+     docs/design-contract.md "Left rail" (#249). */
+  --rail-width: 232px;
 }
