@@ -47,6 +47,41 @@ documents. The `design/` pair is v3.3 and further ahead — for example
 `design/PRD-engineering.md` has a §17 that `docs/PRD-engineering.md` does not.
 Prefer the `design/` pair until the two are reconciled.
 
+## Divergence — the bottom bar's safe area is ADDED, not substituted (2026-08-15, #265)
+
+`design/pwa-checklist.md` §2 says only that "the frame's 56px top / 30px bottom paddings become
+`env(safe-area-inset-top)` / `env(safe-area-inset-bottom)` (with fallbacks)". Read as
+`max(token, env(...))` — which is how both edges were built — that makes the two platforms take
+different branches of the same expression. On a real iPhone 13 the bottom bar's icons rode high
+with a dead strip beneath them:
+
+| | top padding | bottom padding | designed bar |
+|---|---|---|---|
+| Android / desktop (inset 0) | `--space-2` 6.8px | `--space-8` 27.2px | 6.8 + 56 + 27.2 + 1px border = **91px** |
+| iPhone (inset 34px) | `--space-2` 6.8px | 34px — the token discarded | 6.8 + 56 + 34 + 1px border = **97.8px** |
+
+**The rule:** a bottom inset is an OS-owned strip **added below** a fixed designed bar, never a
+substitute for the bar's own padding. That is how both native platforms build it — iOS `UITabBar`
+is 49pt of content plus a 34pt safe area beneath it, Android Material is a 56dp bar plus the
+gesture inset. So `BottomNav.module.css` pads symmetrically and sums:
+
+```css
+padding: var(--space-1) var(--space-3);
+padding-bottom: calc(var(--space-1) + env(safe-area-inset-bottom, 0px));
+```
+
+One designed bar on every device — 3.4 + 56 + 3.4 + 1px border = **63.8px** — with the device's
+own inset added underneath. The house UI standard's figure is a 65px bar; `--space-1` is 3.4px in
+`design/tokens.css`, so it computes ~1px under. Immaterial, and rule 1 above decides it: **use
+the token, never a raw px.**
+
+**The header is the other case and does not change.** `AppShell.module.css` keeps
+`padding-top: max(var(--space-3), env(safe-area-inset-top))`: nothing sits above the header, so
+the notch's strip genuinely does substitute for its top padding.
+
+The `0px` inside the `env()` fallback is the one place a `px` literal is not a design decision —
+`src/styleContract.test.ts` exempts a zero length, and only a zero, for that reason.
+
 ## Divergence — body-text floor (2026-08-14, #252)
 
 `design/tokens.css` sets four body-role sizes below the house UI standard's floor:

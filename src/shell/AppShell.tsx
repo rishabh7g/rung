@@ -22,7 +22,9 @@
  *
  * Layout: the column is `100dvh` and never scrolls; `<main>` is the one scroll area, per screen,
  * `overflow-x: hidden` and `overscroll-behavior: contain` so a session can't be pulled to
- * refresh. Safe areas are `max(token, env(...))` everywhere — see the CSS.
+ * refresh. Safe areas: the header's top inset is `max(token, env(...))` — nothing sits above it,
+ * so the larger of the two is the padding — while the bottom bar ADDS its inset,
+ * `calc(token + env(...))` (#265). See the CSS.
  */
 import { useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
