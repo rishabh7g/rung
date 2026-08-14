@@ -8,9 +8,16 @@
  * the home indicator), run against the built app and pasted into the PR.
  *
  * What a scan CAN pin is that the rules exist and are written the one way that survives both
- * ends of the range: `max(token, env(...))`, so a phone gets its real inset and a desktop
- * browser — where every inset is 0 — still gets the design's padding
- * (design/pwa-checklist.md §2).
+ * ends of the range — an inset never standing alone, always beside a designed term, so a phone
+ * gets its real inset and a desktop browser, where every inset is 0, still gets the design's
+ * padding (design/pwa-checklist.md §2). Which term, and which function, differs by edge (#265):
+ *
+ *   header, top     max(token, env(...))    nothing sits above it, so the notch's strip
+ *                                           SUBSTITUTES for the header's own top padding
+ *   bottom bar      calc(token + env(...))  the home indicator's strip is an OS-owned band
+ *                                           ADDED below a fixed designed bar — max() let a 34px
+ *                                           iPhone inset discard the token and gave the bar a
+ *                                           different, lopsided height on every platform
  */
 import { describe, expect, it } from 'vitest';
 import tokenOverrides from '../styles/tokenOverrides.css?raw';
@@ -36,13 +43,27 @@ const APP_SHELL = declarations('AppShell.module.css');
 const BOTTOM_NAV = declarations('BottomNav.module.css');
 
 describe('safe areas', () => {
-  it('pads the nav past the home indicator, with the design gap as the floor', () => {
+  it('adds the home indicator BELOW the bar — calc, never max, so the token always applies', () => {
     expect(BOTTOM_NAV).toMatch(
-      /padding-bottom:\s*max\(var\(--space-\d\),\s*env\(safe-area-inset-bottom\)\)/,
+      /padding-bottom:\s*calc\(var\(--space-1\)\s*\+\s*env\(safe-area-inset-bottom,\s*0px\)\)/,
+    );
+    // The whole point of the ticket: max() there took the larger branch and threw the design
+    // token away on any device with a real inset.
+    expect(BOTTOM_NAV).not.toMatch(/max\([^;]*env\(safe-area-inset-bottom/);
+  });
+
+  it('pads the bar symmetrically, so the icons sit centred rather than riding high', () => {
+    const bar = BOTTOM_NAV.slice(0, BOTTOM_NAV.indexOf('@media (min-width: 768px)'));
+    const shorthand = /\.nav\s*\{[^}]*padding:\s*var\(--space-(\d)\)\s+var\(--space-\d\)/.exec(bar);
+
+    expect(shorthand).not.toBeNull();
+    // The same token on both edges: the shorthand's vertical value is the one the calc() adds to.
+    expect(BOTTOM_NAV).toContain(
+      `padding-bottom: calc(var(--space-${shorthand?.[1]}) + env(safe-area-inset-bottom, 0px))`,
     );
   });
 
-  it('pads the header past the notch, same shape', () => {
+  it('substitutes for the header’s top padding — nothing sits above it to cushion', () => {
     expect(APP_SHELL).toMatch(
       /padding-top:\s*max\(var\(--space-\d\),\s*env\(safe-area-inset-top\)\)/,
     );
@@ -50,8 +71,10 @@ describe('safe areas', () => {
 
   it('never uses a bare env() — a desktop inset is 0 and the padding would vanish', () => {
     for (const source of [APP_SHELL, BOTTOM_NAV]) {
-      const insets = source.match(/env\(safe-area-inset-[a-z]+\)/g) ?? [];
-      const guarded = source.match(/max\([^;]*env\(safe-area-inset-[a-z]+\)/g) ?? [];
+      const insets = source.match(/env\(safe-area-inset-[a-z]+/g) ?? [];
+      // Either function is a guard, because either one keeps a designed term beside the inset;
+      // an inset standing on its own is what this forbids.
+      const guarded = source.match(/(?:max|calc)\([^;]*env\(safe-area-inset-[a-z]+/g) ?? [];
       expect(insets).toHaveLength(guarded.length);
     }
   });

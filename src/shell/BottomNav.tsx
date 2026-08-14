@@ -4,9 +4,10 @@
  *
  * Three rules it exists to keep, all of them in `BottomNav.module.css` rather than here, because
  * they are layout facts and the design contract is "tokens only, no hard-coded px" (rule 1):
- * items are `--nav-item-height` (56px, src/styles/tokenOverrides.css #244) tall and clear the
- * home indicator by
- * `max(--space-8, env(safe-area-inset-bottom))`; `touch-action: manipulation` kills the 300ms
+ * items are `--nav-item-height` (56px, src/styles/tokenOverrides.css #244) tall inside a bar
+ * padded symmetrically by `--space-1`, with the home indicator's strip ADDED beneath it —
+ * `calc(--space-1 + env(safe-area-inset-bottom, 0px))`, never `max` (#265);
+ * `touch-action: manipulation` kills the 300ms
  * double-tap-zoom delay (pwa-checklist §1); the active tab is an accent token, and it is
  * `NavLink`'s own `aria-current="page"` that selects it — the state a screen reader announces
  * and the state the learner sees are then the same state.

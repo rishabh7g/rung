@@ -1,7 +1,9 @@
 /* Layout only, tokens only (docs/design-contract.md rule 1).
-   Safe areas are written as max(token, env(...)): a phone gets its real inset, and a desktop
-   browser — where every inset resolves to 0 — still gets the design's padding
-   (design/pwa-checklist.md §2). */
+   The TOP inset is written as max(token, env(...)): nothing sits above the header, so the notch's
+   strip substitutes for the header's own top padding — a phone gets its real inset, and a desktop
+   browser, where every inset resolves to 0, still gets the design's padding
+   (design/pwa-checklist.md §2). The bottom bar is the other case and adds its inset instead
+   (BottomNav.module.css, #265) — max there discarded the design token on iOS. */
 
 .app {
   /* 100dvh, never 100vh: a mobile URL bar shrinks the viewport and 100vh does not notice

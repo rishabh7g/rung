@@ -39,7 +39,11 @@
  *   • **`100dvh` and percentages.** Viewport and relative units are layout, not design values —
  *     there is no token for "as tall as the viewport" and there should not be.
  *   • **`0` and `calc()` on tokens.** `border: 0`, `margin-left: calc(-1 * var(--space-3))`: no
- *     magic number enters either one.
+ *     magic number enters either one. A ZERO length spelled with its unit — `0px` — counts as the
+ *     same zero (#265): it is written that way only where the syntax needs a length rather than a
+ *     bare number, as in an `env()` fallback, `env(safe-area-inset-bottom, 0px)`. Nothing was
+ *     decided by writing it; "no inset" is not a design value and has no token. Every other px
+ *     literal is still banned, `0.5px` and `10px` alike.
  *   • **`font-family: var(--…)`.** The ban is on a face written by NAME; a token is the opposite
  *     of one. The `--text-*` shorthands carry a family each, so the only way to keep a size and
  *     swap the face is a second declaration — which is what the romanized courses' quiet script
@@ -60,7 +64,9 @@ const STYLESHEETS: Readonly<Record<string, string>> = Object.fromEntries(
 /** The values that must come from a token instead. */
 const BANNED = [
   { what: 'a hex colour', pattern: /#[0-9a-fA-F]{3,8}\b/ },
-  { what: 'a px length', pattern: /\b\d+(\.\d+)?px\b/ },
+  // The lookahead lets `0px` through and nothing else: zero is zero whether or not it carries a
+  // unit, and it needs one inside an `env()` fallback (#265).
+  { what: 'a px length', pattern: /\b(?!0px\b)\d+(\.\d+)?px\b/ },
   { what: 'a font family by name', pattern: /font-family\s*:(?!\s*var\(--)/ },
 ] as const;
 
@@ -174,10 +180,14 @@ describe('the scanner itself', () => {
       '.a { color: #5980a6; }',
       '.b { padding: 12px; }',
       '.c { font-family: Barlow; }',
+      // The zero exemption is a zero exemption: a sub-pixel length is still a design value (#265).
+      '.d { padding-bottom: calc(var(--space-1) + env(safe-area-inset-bottom, 0.5px)); }',
+      // …and a length that merely ENDS in "0px" is not zero either.
+      '.e { padding: 10px; }',
     ].join('\n');
 
     expect(scanStylesheet('src/Planted.css', planted).map((violation) => violation.line)).toEqual([
-      1, 2, 3,
+      1, 2, 3, 4, 5,
     ]);
   });
 
@@ -186,7 +196,9 @@ describe('the scanner itself', () => {
       '.a { color: var(--color-accent); }',
       '.b { height: 100dvh; width: 100%; border: 0; }',
       '.c { font: var(--text-body); margin-left: calc(-1 * var(--space-3)); }',
-      '.d { padding-bottom: max(var(--space-8), env(safe-area-inset-bottom)); }',
+      '.d { padding-top: max(var(--space-3), env(safe-area-inset-top)); }',
+      // A zero with a unit is still a zero — the shape the bottom bar's inset needs (#265).
+      '.d2 { padding-bottom: calc(var(--space-1) + env(safe-area-inset-bottom, 0px)); }',
       // A face from a token is the opposite of a face by name — the quiet script line (#88).
       '.e { font-family: var(--font-script-fallback); }',
     ].join('\n');
