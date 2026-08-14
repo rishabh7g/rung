@@ -11,9 +11,13 @@
  * may crop an icon to a circle of 80% of its width, so every corner of the mark's box has to sit
  * inside a radius of 0.4 × size — that is a number, and it is asserted as one.
  */
+import { existsSync } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import {
   ICON_SET,
+  ICON_SVG_FILE,
   iconSvg,
   inkBox,
   markShapes,
@@ -23,6 +27,12 @@ import {
 import { token } from './tokens.ts';
 
 const source = readMarkSource();
+const ICONS_DIR = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  '..',
+  'public',
+  'icons',
+);
 
 describe('the mark, read out of the component', () => {
   it('finds every drawn shape — two rails, three rungs', () => {
@@ -70,6 +80,16 @@ describe('the rendered SVG', () => {
   it('writes SVG attribute names, not React ones', () => {
     expect(svg).toContain('stroke-width=');
     expect(svg).not.toContain('strokeWidth=');
+  });
+});
+
+describe('the required set, committed under public/icons/', () => {
+  // The house UI standard's six required files (#251): the vector source plus the five PNGs the
+  // manifest and index.html name. `npm run icons:build` writes all six; this asserts the
+  // committed tree still has them, the way `tools/pwa.test.ts` holds the manifest's PNGs to
+  // `public/` — a stale or partially-regenerated icon set fails here, not as a blank app icon.
+  it.each([ICON_SVG_FILE, ...ICON_SET.map((icon) => icon.file)])('ships icons/%s', (file) => {
+    expect(existsSync(path.join(ICONS_DIR, file)), `${file} — npm run icons:build`).toBe(true);
   });
 });
 

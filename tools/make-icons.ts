@@ -1,9 +1,16 @@
 /**
  * The app icons (#90) — the header rails mark, rasterised onto the paper ground.
  *
- *   npm run icons:build     → public/icons/{icon-192,icon-512,maskable-512,apple-touch-icon-180}.png
+ *   npm run icons:build
+ *     → public/icons/icon.svg (the vector source)
+ *     → public/icons/{icon-192,icon-512,maskable-512,apple-touch-icon-180,favicon-32}.png
  *
- * The PNGs are committed and this script is the receipt for how they were made. It does not run
+ * `icon.svg` is the source entry of the house standard's required set (#251): the same
+ * `iconSvg()` string that becomes `icon-512.png` — the largest, least-cropped target — written
+ * to disk instead of only handed to sharp, so there is exactly one vector and every PNG is a
+ * raster of it or of a smaller/maskable variant of the same shapes.
+ *
+ * The files are committed and this script is the receipt for how they were made. It does not run
  * in `build`: an icon set that regenerated on every build would be a binary diff nobody reads.
  *
  * **The mark is not redrawn here.** `src/shell/RailsMark.tsx` says its geometry is the ticket's
@@ -200,6 +207,9 @@ export const ICON_SET = [
   { file: 'favicon-32.png', size: 32, markHeight: MARK_HEIGHT },
 ] as const;
 
+/** The vector source's filename — the sixth of the required set, alongside the five PNGs. */
+export const ICON_SVG_FILE = 'icon.svg';
+
 async function main(): Promise<number> {
   // Imported here, not at the top: sharp is a native module, and everything above it is plain
   // string work that `tools/make-icons.test.ts` exercises without ever loading a binary.
@@ -207,15 +217,25 @@ async function main(): Promise<number> {
   const source = readMarkSource();
   mkdirSync(ICONS_DIR, { recursive: true });
 
+  // The source, written before the PNGs it is rasterised into: `icon-512.png`'s own input, the
+  // largest and least-cropped target, so the vector any future size gets cut from is exactly the
+  // one a viewer already sees at 512px.
+  const svgSource = ICON_SET.find((icon) => icon.file === 'icon-512.png');
+  if (svgSource === undefined) throw new Error('make-icons: ICON_SET has no icon-512.png entry');
+  const svg = iconSvg(source, svgSource.size, svgSource.markHeight);
+  const svgTarget = path.join(ICONS_DIR, ICON_SVG_FILE);
+  writeFileSync(svgTarget, svg);
+  console.log(`  icons/${ICON_SVG_FILE}  vector  ${statSync(svgTarget).size} bytes`);
+
   for (const { file, size, markHeight } of ICON_SET) {
-    const svg = iconSvg(source, size, markHeight);
-    const png = await sharp(Buffer.from(svg)).png({ compressionLevel: 9 }).toBuffer();
+    const pngSvg = iconSvg(source, size, markHeight);
+    const png = await sharp(Buffer.from(pngSvg)).png({ compressionLevel: 9 }).toBuffer();
     const target = path.join(ICONS_DIR, file);
     writeFileSync(target, png);
     console.log(`  icons/${file}  ${size}×${size}  ${statSync(target).size} bytes`);
   }
 
-  console.log(`ICONS ${ICON_SET.length}/${ICON_SET.length} ok`);
+  console.log(`ICONS ${ICON_SET.length + 1}/${ICON_SET.length + 1} ok`);
   return 0;
 }
 
