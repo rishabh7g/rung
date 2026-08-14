@@ -129,6 +129,15 @@ describe('bottom nav', () => {
     fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
     expect(await screen.findByRole('heading', { level: 1, name: BRAND })).toBeInTheDocument();
   });
+
+  it('is icon-only, but every tab is still reachable by its accessible name and carries a title (#245)', async () => {
+    await renderAt('#/');
+
+    for (const label of ['Ladder', 'Practice', 'Settings']) {
+      const link = screen.getByRole('link', { name: label });
+      expect(link).toHaveAttribute('title', label);
+    }
+  });
 });
 
 describe('routes', () => {

@@ -42,7 +42,11 @@
   stroke-width: var(--icon-stroke);
 }
 
+/* Icon-only bar (house UI standard §5, #245): the span stays in the DOM, the aria-label/title on
+   the NavLink carry the accessible name — hiding it here is a purely visual change, never an a11y
+   regression. Restored in the >=768px rail (#249). */
 .label {
+  display: none;
   font: var(--text-kicker-sm);
   letter-spacing: var(--kicker-tracking);
   text-transform: uppercase;
