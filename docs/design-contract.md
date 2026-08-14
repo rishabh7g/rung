@@ -22,7 +22,14 @@ it. Keep engineering-owned notes here.
 ## Rules
 
 1. **Style exclusively against `design/tokens.css`.** Load it and use `var(--*)`
-   only. No hard-coded hex, px, or font names in components.
+   only. No hard-coded hex, px, or font names in components. `src/styleContract.test.ts`
+   enforces this mechanically, with two narrow exemptions where a token is impossible rather
+   than merely unused (#243): a `px` literal in a media-query PRELUDE (`@media (min-width:
+   768px)` — CSS forbids `var(--*)` in a media condition), and a `px` literal in a
+   custom-property DEFINITION inside `src/styles/tokenOverrides.css` (that file is the one
+   sanctioned place to change a `design/tokens.css` value, and changing a length means writing
+   a length). Everything else — a `px` in an ordinary declaration, anywhere, including inside a
+   media-query body or inside `tokenOverrides.css` itself — is still banned.
 2. **The prototype is the verifier.** If a screen you are building exists in it,
    match it state-for-state. Where the build must deliberately diverge,
    `design/PRD-engineering.md` §17 ("Prototype divergences — do NOT copy into the
