@@ -21,6 +21,9 @@
  *  --icon-nav-bar             (not in design pkg)     26px                        design-contract
  *                                                                                 "Bottom-nav icon
  *                                                                                 size" (#246)
+ *  --gutter-sm/-md/-lg/       (not in design pkg)     16px/24px/32px              design-contract
+ *  --gutter                                                                       "Screen gutter"
+ *                                                                                 (#247)
  * ─────────────────────────────────────────────────────────────────────────────────────────────
  *
  * A `px` literal in one of these definitions is a sanctioned exemption from the style-contract
@@ -57,4 +60,24 @@
      glyph, bigger than --icon-ui (20px) because it carries the tab on its own with no label
      beside it. docs/design-contract.md "Bottom-nav icon size" (#246). */
   --icon-nav-bar: 26px;
+
+  /* Screen gutter: the house UI standard steps the horizontal screen padding across the three
+     breakpoints instead of the one fixed value (--space-6, 20.4px) the design package uses at
+     every width. docs/design-contract.md "Screen gutter" (#247). */
+  --gutter-sm: 16px;
+  --gutter-md: 24px;
+  --gutter-lg: 32px;
+  --gutter: var(--gutter-sm);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --gutter: var(--gutter-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --gutter: var(--gutter-lg);
+  }
 }
