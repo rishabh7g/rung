@@ -23,6 +23,9 @@
  *                 subsets its script needs (Mukta Devanagari is hi-mr's; #197's Naskh and #222's
  *                 two diacritic cuts are en-ar's).
  *   • `splash`  — the iOS startup set, never precached and never fetched by the app (#115).
+ *   • `icon-svg` — `icons/icon.svg`, the vector the PNGs are cut from: shipped (it is committed
+ *                 under `public/`, which Vite copies verbatim), but deliberately not precached
+ *                 and never fetched by the app either (#251) — same shape as `splash`, one file.
  *
  * — and the rows are unions of owners, so **adding a course cannot move another course's row**.
  *
@@ -36,6 +39,7 @@
  *   | `course:<id>`    | one course's own content + its own script subsets     | per-course headroom  |
  *   | `precache:<id>`  | `shell` + `course:<id>` — one learner's offline copy   | PRD §10's offline    |
  *   | `splash`         | `icons/splash/` (#115)                                | repo hygiene         |
+ *   | `icon-svg`       | `icons/icon.svg` (#251)                               | repo hygiene         |
  *   | `unmetered`      | anything owned by nothing — must be zero files         | the gate's honesty   |
  *
  * **`first-paint` and `precache:<id>` are two different questions and the old `total` row
@@ -155,6 +159,7 @@ export function fontScript(file: string): CourseScript | null {
 export type Owner =
   | { kind: 'shell' }
   | { kind: 'splash' }
+  | { kind: 'icon-svg' }
   | { kind: 'course'; ids: readonly string[] }
   | { kind: 'unmetered' };
 
@@ -179,6 +184,10 @@ const isShellFile = (file: string): boolean =>
  */
 export function attribute(file: string, courses: readonly ShippedCourse[]): Owner {
   if (file.startsWith('icons/splash/')) return { kind: 'splash' };
+  // The vector source, not a shell citizen: `tools/pwa.ts`'s PRECACHE_GLOBS is `icons/*.png`
+  // deliberately, so a `shell` attribution here would fail `precacheAudit()` below — shell means
+  // precached, and this one file is shipped but never precached, same shape as splash (#251).
+  if (file === 'icons/icon.svg') return { kind: 'icon-svg' };
 
   if (file.startsWith('content/') && file !== 'content/courses.json') {
     const id = file.slice('content/'.length).split('/')[0] ?? '';
@@ -316,6 +325,14 @@ export function budgets(courses: readonly ShippedCourse[]): Budget[] {
       id: 'splash',
       matches: (file) => file.startsWith('icons/splash/'),
       limitBytes: 100 * 1024,
+      measure: 'raw',
+    },
+    {
+      // #251 — the vector the PNGs are cut from. One file, a few hundred bytes; the ceiling is
+      // repo hygiene the same way `splash`'s is, not a real constraint.
+      id: 'icon-svg',
+      matches: (file) => file === 'icons/icon.svg',
+      limitBytes: 2 * 1024,
       measure: 'raw',
     },
     {
