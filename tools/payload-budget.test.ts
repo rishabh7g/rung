@@ -335,6 +335,21 @@ describe("the splash budget (#115's iOS startup images)", () => {
   });
 });
 
+describe("the icon-svg budget (#251's vector source)", () => {
+  const ICON_SVG = row(CATALOGUE, 'icon-svg');
+
+  it('carves out exactly icons/icon.svg — shipped, never precached, never shell', () => {
+    expect(attribute('icons/icon.svg', CATALOGUE)).toEqual({ kind: 'icon-svg' });
+    expect(ICON_SVG.matches('icons/icon.svg')).toBe(true);
+    expect(ICON_SVG.matches('icons/icon-192.png')).toBe(false);
+    expect(ICON_SVG.measure).toBe('raw');
+  });
+
+  it('is not shell — the precache globs are icons/*.png, and a shell attribution here would fail precacheAudit()', () => {
+    expect(attribute('icons/icon.svg', CATALOGUE)).not.toEqual({ kind: 'shell' });
+  });
+});
+
 describe('the unmetered row (#207: no byte ships unbudgeted)', () => {
   const UNMETERED = row(CATALOGUE, 'unmetered');
 
