@@ -1,6 +1,7 @@
 import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { CourseProvider } from './course/CourseProvider.tsx';
 import { devTypeRoute } from './dev/typeRoute.tsx';
+import { StandaloneZoomLock } from './pwa/StandaloneZoomLock.tsx';
 import { AppShell } from './shell/AppShell.tsx';
 import { ImmersiveProvider } from './shell/immersive.tsx';
 import { HOME_PATH, SHELL_ROUTES } from './shell/routes.tsx';
@@ -29,20 +30,26 @@ import { HOME_PATH, SHELL_ROUTES } from './shell/routes.tsx';
  */
 export default function App() {
   return (
-    <CourseProvider>
-      <ImmersiveProvider>
-        <HashRouter>
-          <Routes>
-            <Route element={<AppShell />}>
-              {SHELL_ROUTES.map(({ path, element }) => (
-                <Route key={path} path={path} element={element} />
-              ))}
-              <Route path="*" element={<Navigate to={HOME_PATH} replace />} />
-            </Route>
-            {devTypeRoute}
-          </Routes>
-        </HashRouter>
-      </ImmersiveProvider>
-    </CourseProvider>
+    <>
+      {/* Renders null. Above CourseProvider so the lock is live through the boot screens too,
+          not just once a course has resolved — an installed launch is zoom-locked from the
+          first frame. */}
+      <StandaloneZoomLock />
+      <CourseProvider>
+        <ImmersiveProvider>
+          <HashRouter>
+            <Routes>
+              <Route element={<AppShell />}>
+                {SHELL_ROUTES.map(({ path, element }) => (
+                  <Route key={path} path={path} element={element} />
+                ))}
+                <Route path="*" element={<Navigate to={HOME_PATH} replace />} />
+              </Route>
+              {devTypeRoute}
+            </Routes>
+          </HashRouter>
+        </ImmersiveProvider>
+      </CourseProvider>
+    </>
   );
 }
