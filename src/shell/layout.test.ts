@@ -83,8 +83,13 @@ describe('touch', () => {
 
   it('sizes and strokes icons from the icon tokens, not from px props', () => {
     for (const source of [APP_SHELL, BOTTOM_NAV]) {
-      expect(source).toMatch(/width:\s*var\(--icon-ui\)/);
       expect(source).toMatch(/stroke-width:\s*var\(--icon-stroke\)/);
     }
+    // The shell's own icons (header chevron, pause button) stay at --icon-ui; the bottom nav is
+    // icon-only and gets its own larger size, --icon-nav-bar, so it carries the tab on its own
+    // with no label beside it (#246).
+    expect(APP_SHELL).toMatch(/width:\s*var\(--icon-ui\)/);
+    expect(BOTTOM_NAV).toMatch(/width:\s*var\(--icon-nav-bar\)/);
+    expect(BOTTOM_NAV).not.toMatch(/var\(--icon-ui\)/);
   });
 });

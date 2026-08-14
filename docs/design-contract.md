@@ -47,6 +47,17 @@ documents. The `design/` pair is v3.3 and further ahead — for example
 `design/PRD-engineering.md` has a §17 that `docs/PRD-engineering.md` does not.
 Prefer the `design/` pair until the two are reconciled.
 
+## Divergence — bottom-nav icon size (2026-08-14, #246)
+
+The house UI standard gives the icon-only bottom bar (#245) its own icon size, larger than the
+`--icon-ui` (20px) the rest of the shell uses: "Larger on the bar to carry the tab on its own,"
+because with the label hidden the glyph alone has to identify the tab. `design/tokens.css` has no
+token for this — `--icon-nav-bar` did not exist in the design package before this issue.
+
+`src/styles/tokenOverrides.css` defines `--icon-nav-bar: 26px`, and `BottomNav.module.css`'s
+`.icon` reads it instead of `--icon-ui`. `--icon-ui` is unchanged and stays in use everywhere else
+(the shell header's chevron and pause button).
+
 ## Divergence — bottom-nav item height (2026-08-14, #244)
 
 `design/tokens.css` sets `--nav-item-height: 48px`. The house UI standard

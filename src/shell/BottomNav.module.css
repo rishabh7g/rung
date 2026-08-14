@@ -37,8 +37,10 @@
 }
 
 .icon {
-  width: var(--icon-ui);
-  height: var(--icon-ui);
+  /* --icon-nav-bar (26px, src/styles/tokenOverrides.css #246), not --icon-ui: the bar is
+     icon-only, so the glyph carries the tab on its own with no label beside it. */
+  width: var(--icon-nav-bar);
+  height: var(--icon-nav-bar);
   stroke-width: var(--icon-stroke);
 }
 
