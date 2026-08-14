@@ -104,3 +104,15 @@ describe('gutter', () => {
     expect(breakpoints).toEqual(['min-width: 768px', 'min-width: 1024px']);
   });
 });
+
+describe('content measure', () => {
+  it('caps the content column at --content-max, centred, inside a min-width: 1024px query (#248)', () => {
+    expect(APP_SHELL).toMatch(
+      /@media\s*\(min-width:\s*1024px\)\s*\{[^}]*max-width:\s*var\(--content-max\)[^}]*margin-inline:\s*auto[^}]*\}/,
+    );
+  });
+
+  it('writes no max-width media query around 1024 — one direction per value', () => {
+    expect(APP_SHELL).not.toMatch(/@media\s*\(max-width:\s*1024px\)/);
+  });
+});

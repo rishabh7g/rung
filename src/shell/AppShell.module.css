@@ -98,3 +98,13 @@
   /* no pull-to-refresh, no scroll chaining out of a session */
   overscroll-behavior: contain;
 }
+
+/* From 1024px up, cap the content column at the reading measure and centre it — the scroll area
+   itself (.screen, above) stays full width, so the scrollbar sits at the window edge. Below
+   1024px the content stays fluid; the cap applies only in this query, one direction. */
+@media (min-width: 1024px) {
+  .screen > * {
+    max-width: var(--content-max);
+    margin-inline: auto;
+  }
+}

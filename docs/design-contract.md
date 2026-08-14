@@ -47,6 +47,19 @@ documents. The `design/` pair is v3.3 and further ahead — for example
 `design/PRD-engineering.md` has a §17 that `docs/PRD-engineering.md` does not.
 Prefer the `design/` pair until the two are reconciled.
 
+## Divergence — content column measure (2026-08-14, #248)
+
+`design/tokens.css` has no cap on content width — above 1024px the app's content stretches to the
+full window, a line of body text running the whole width of a laptop screen. The house UI standard
+(`rrish-learning-base/playbooks/ui-baseline.md` §3, §11, §16) caps it at a 720px reading measure,
+centred, from 1024px up; below that the content stays fluid.
+
+`src/styles/tokenOverrides.css` defines `--content-max: 720px`. `src/shell/AppShell.module.css`
+applies it inside `@media (min-width: 1024px) { .screen > * { max-width: var(--content-max);
+margin-inline: auto; } }` — one direction, and on the content INSIDE the scroll area (`.screen`),
+not on `.screen` itself, so the scroll area stays full width and the scrollbar sits at the window
+edge.
+
 ## Divergence — screen gutter (2026-08-14, #247)
 
 `design/tokens.css` has one fixed value for the horizontal screen padding —
