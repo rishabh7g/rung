@@ -47,6 +47,21 @@ documents. The `design/` pair is v3.3 and further ahead — for example
 `design/PRD-engineering.md` has a §17 that `docs/PRD-engineering.md` does not.
 Prefer the `design/` pair until the two are reconciled.
 
+## Divergence — bottom-nav item height (2026-08-14, #244)
+
+`design/tokens.css` sets `--nav-item-height: 48px`. The house UI standard
+(`rrish-learning-base/playbooks/ui-baseline.md` §5, §16) fixes the bottom nav at
+**56px**: "Nav height stays 56px. Dropping the label did not shrink it: it is
+above the 44px tap floor and sits comfortably around a 26px icon." The bar is
+icon-only from #245 and its icon is 26px from #246 — 56px is the height that
+sits comfortably around that glyph.
+
+`design/` is read-only and re-copied wholesale, so the override goes in
+`src/styles/tokenOverrides.css` rather than in the design package itself, per
+the rule this file already states. The token NAME stays `--nav-item-height`
+(the standard calls it `--nav-height`, but renaming it would mean editing the
+read-only package) — only the value changes, from 48px to 56px.
+
 ## Divergence from PRD-design §8.2 — read-once copy removal (2026-08-13)
 
 **`design/PRD-design.md` §8.2 is now a historical record of the v3.3 design
