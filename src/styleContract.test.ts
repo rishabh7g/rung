@@ -27,6 +27,15 @@
  *     cannot be written where the token lives. That one file is where it goes — and defining a
  *     token's value is the same category as an `@font-face`, not the styling-by-name the ban is
  *     about. The last test below keeps the register one file long.
+ *   • **A `px` literal inside a media-query prelude** (#243), e.g. `@media (min-width: 768px)`.
+ *     CSS forbids `var(--*)` in a media condition, so a breakpoint value has to be a literal —
+ *     there is no other way to write one. Only the prelude (`@media` up to the opening `{`) is
+ *     exempt; a `px` inside the block's own declarations is still banned.
+ *   • **A `px` literal in a custom-property declaration in `src/styles/tokenOverrides.css`**
+ *     (#243), e.g. `--nav-item-height: 56px;`. Same reasoning as the `--font-*` exemption above:
+ *     that file is the one sanctioned place to change a `design/tokens.css` value, and changing a
+ *     length means writing a length. An ordinary declaration (`padding: 12px`) in that same file
+ *     is still banned — only the act of DEFINING a custom property is exempt.
  *   • **`100dvh` and percentages.** Viewport and relative units are layout, not design values —
  *     there is no token for "as tall as the viewport" and there should not be.
  *   • **`0` and `calc()` on tokens.** `border: 0`, `margin-left: calc(-1 * var(--space-3))`: no
@@ -74,18 +83,47 @@ function stripFontFaces(source: string): string {
   return source.replace(/@font-face\s*\{[^}]*\}/g, (block) => block.replace(/[^\n]/g, ' '));
 }
 
+/**
+ * A media-query PRELUDE (`@media` up to the opening `{`) is the one place CSS forbids
+ * `var(--*)`, so a breakpoint has to be a literal (#243). Only the prelude is blanked — the
+ * block's own declarations are scanned like any other and a `px` inside them is still banned.
+ */
+function stripMediaPreludes(source: string): string {
+  return source.replace(/@media[^{]*\{/g, (prelude) => prelude.replace(/[^\n{]/g, ' '));
+}
+
+/** The one file where a `px` custom-property DEFINITION is a sanctioned token override (#243). */
+const TOKEN_OVERRIDES_FILE = 'src/styles/tokenOverrides.css';
+
+/**
+ * `src/styles/tokenOverrides.css` is the one sanctioned place to change a `design/tokens.css`
+ * value, and changing a length means writing a length. Only a custom-property DEFINITION
+ * (`--name: value;`) is exempt — an ordinary declaration in the same file (`padding: 12px`) is
+ * still banned, so this blanks just the value half of a `--*:` declaration.
+ */
+function stripTokenOverridePxDefinitions(source: string): string {
+  return source.replace(
+    /(--[a-z0-9-]+\s*:\s*)([^;]*)(;)/gi,
+    (_declaration, before: string, value: string, after: string) =>
+      before + value.replace(/\d+(\.\d+)?px/g, (px) => ' '.repeat(px.length)) + after,
+  );
+}
+
 function scanStylesheet(file: string, source: string): Violation[] {
   const violations: Violation[] = [];
 
-  stripFontFaces(stripComments(source))
-    .split('\n')
-    .forEach((line, index) => {
-      for (const { what, pattern } of BANNED) {
-        if (pattern.test(line)) {
-          violations.push({ file, line: index + 1, what, text: line.trim() });
-        }
+  let stripped = stripMediaPreludes(stripFontFaces(stripComments(source)));
+  if (file === TOKEN_OVERRIDES_FILE) {
+    stripped = stripTokenOverridePxDefinitions(stripped);
+  }
+
+  stripped.split('\n').forEach((line, index) => {
+    for (const { what, pattern } of BANNED) {
+      if (pattern.test(line)) {
+        violations.push({ file, line: index + 1, what, text: line.trim() });
       }
-    });
+    }
+  });
 
   return violations;
 }
@@ -174,5 +212,41 @@ describe('the scanner itself', () => {
     expect(scanStylesheet('src/Planted.css', declared).map((violation) => violation.line)).toEqual([
       5,
     ]);
+  });
+
+  it('reads past a px literal in a media-query prelude, in any stylesheet (#243)', () => {
+    const media = '@media (min-width: 768px) {\n  .a { color: var(--color-accent); }\n}';
+
+    expect(scanStylesheet('src/Planted.css', media)).toEqual([]);
+  });
+
+  it('still catches a px literal inside a media-query BODY — only the prelude is exempt (#243)', () => {
+    const media = '@media (min-width: 768px) {\n  .a { padding: 12px; }\n}';
+
+    expect(scanStylesheet('src/Planted.css', media).map((violation) => violation.line)).toEqual([
+      2,
+    ]);
+  });
+
+  it('reads past a px literal in a custom-property definition in tokenOverrides.css (#243)', () => {
+    const override = ':root {\n  --nav-item-height: 56px;\n}';
+
+    expect(scanStylesheet('src/styles/tokenOverrides.css', override)).toEqual([]);
+  });
+
+  it('still catches the same custom-property definition in any OTHER stylesheet (#243)', () => {
+    const override = ':root {\n  --nav-item-height: 56px;\n}';
+
+    expect(scanStylesheet('src/Planted.css', override).map((violation) => violation.line)).toEqual([
+      2,
+    ]);
+  });
+
+  it('still catches an ordinary px declaration in tokenOverrides.css itself (#243)', () => {
+    const ordinary = '.a { padding: 12px; }';
+
+    expect(
+      scanStylesheet('src/styles/tokenOverrides.css', ordinary).map((violation) => violation.line),
+    ).toEqual([1]);
   });
 });
