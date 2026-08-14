@@ -18,6 +18,9 @@
  *  --nav-item-height         48px                    56px                        design-contract
  *                                                                                 "Bottom-nav item
  *                                                                                 height" (#244)
+ *  --icon-nav-bar             (not in design pkg)     26px                        design-contract
+ *                                                                                 "Bottom-nav icon
+ *                                                                                 size" (#246)
  * ─────────────────────────────────────────────────────────────────────────────────────────────
  *
  * A `px` literal in one of these definitions is a sanctioned exemption from the style-contract
@@ -49,4 +52,9 @@
      48px — comfortable around the 26px icon the standard also gives the bar (#246), and still
      clear of the 44px --tap-min floor. docs/design-contract.md "Bottom-nav item height" (#244). */
   --nav-item-height: 56px;
+
+  /* Bottom-nav icon size: the house UI standard gives the icon-only bar (#245) its own larger
+     glyph, bigger than --icon-ui (20px) because it carries the tab on its own with no label
+     beside it. docs/design-contract.md "Bottom-nav icon size" (#246). */
+  --icon-nav-bar: 26px;
 }
