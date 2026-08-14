@@ -47,6 +47,24 @@ documents. The `design/` pair is v3.3 and further ahead — for example
 `design/PRD-engineering.md` has a §17 that `docs/PRD-engineering.md` does not.
 Prefer the `design/` pair until the two are reconciled.
 
+## Divergence — screen gutter (2026-08-14, #247)
+
+`design/tokens.css` has one fixed value for the horizontal screen padding —
+`--space-6` (20.4px) — used at every viewport. The house UI standard
+(`rrish-learning-base/playbooks/ui-baseline.md` §3, §11, §16) steps it across
+the three breakpoints instead: 16px below 768px, 24px from 768px, 32px from
+1024px. `design/tokens.css` has no token for this — `--gutter` did not exist
+in the design package before this issue.
+
+`src/styles/tokenOverrides.css` defines `--gutter-sm: 16px`, `--gutter-md:
+24px`, `--gutter-lg: 32px` and `--gutter: var(--gutter-sm)`, then steps
+`--gutter` to `--gutter-md` at `@media (min-width: 768px)` and to
+`--gutter-lg` at `@media (min-width: 1024px)` — one direction per rule, per
+the standard's §3 ("write them `min-width: 768px` / `min-width: 1024px`
+upward"). The eight screen modules and the shell header now read
+`var(--gutter)` for their horizontal padding instead of `var(--space-6)`;
+`--space-6` is unchanged and stays in use everywhere else.
+
 ## Divergence — bottom-nav icon size (2026-08-14, #246)
 
 The house UI standard gives the icon-only bottom bar (#245) its own icon size, larger than the

@@ -13,6 +13,7 @@
  * (design/pwa-checklist.md §2).
  */
 import { describe, expect, it } from 'vitest';
+import tokenOverrides from '../styles/tokenOverrides.css?raw';
 
 const SHELL_CSS = import.meta.glob<string>('./*.module.css', {
   query: '?raw',
@@ -91,5 +92,15 @@ describe('touch', () => {
     expect(APP_SHELL).toMatch(/width:\s*var\(--icon-ui\)/);
     expect(BOTTOM_NAV).toMatch(/width:\s*var\(--icon-nav-bar\)/);
     expect(BOTTOM_NAV).not.toMatch(/var\(--icon-ui\)/);
+  });
+});
+
+describe('gutter', () => {
+  it('steps at exactly 768 and 1024, both written min-width (#247)', () => {
+    const breakpoints = [...tokenOverrides.matchAll(/@media\s*\(([^)]*)\)/g)].map(
+      (match) => match[1],
+    );
+
+    expect(breakpoints).toEqual(['min-width: 768px', 'min-width: 1024px']);
   });
 });
