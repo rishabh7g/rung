@@ -53,3 +53,35 @@
   letter-spacing: var(--kicker-tracking);
   text-transform: uppercase;
 }
+
+/* Tablet and up: the nav is the left rail, not a bar — and there is room to label (#249). */
+@media (min-width: 768px) {
+  .label {
+    display: block;
+  }
+
+  .icon {
+    /* --icon-ui (20px), not the bar's larger --icon-nav-bar: on the rail the label carries the
+       tab beside the icon, the way it does everywhere else in the shell. */
+    width: var(--icon-ui);
+    height: var(--icon-ui);
+  }
+
+  .nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: var(--rail-width);
+    padding: var(--space-4) var(--space-2);
+    border-top: none;
+    border-right: var(--border-hairline);
+  }
+
+  .item {
+    flex: none;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: var(--space-3);
+    min-height: var(--tap-min);
+    padding: 0 var(--space-3);
+  }
+}

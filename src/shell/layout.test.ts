@@ -86,12 +86,15 @@ describe('touch', () => {
     for (const source of [APP_SHELL, BOTTOM_NAV]) {
       expect(source).toMatch(/stroke-width:\s*var\(--icon-stroke\)/);
     }
-    // The shell's own icons (header chevron, pause button) stay at --icon-ui; the bottom nav is
+    // The shell's own icons (header chevron, pause button) stay at --icon-ui; the bottom BAR is
     // icon-only and gets its own larger size, --icon-nav-bar, so it carries the tab on its own
-    // with no label beside it (#246).
+    // with no label beside it (#246). The rail brings --icon-ui back at >=768px (#249) — this
+    // checks the bar only, the CSS above its rail media query.
+    const bar = BOTTOM_NAV.slice(0, BOTTOM_NAV.indexOf('@media (min-width: 768px)'));
+
     expect(APP_SHELL).toMatch(/width:\s*var\(--icon-ui\)/);
-    expect(BOTTOM_NAV).toMatch(/width:\s*var\(--icon-nav-bar\)/);
-    expect(BOTTOM_NAV).not.toMatch(/var\(--icon-ui\)/);
+    expect(bar).toMatch(/width:\s*var\(--icon-nav-bar\)/);
+    expect(bar).not.toMatch(/var\(--icon-ui\)/);
   });
 });
 
@@ -114,5 +117,39 @@ describe('content measure', () => {
 
   it('writes no max-width media query around 1024 — one direction per value', () => {
     expect(APP_SHELL).not.toMatch(/@media\s*\(max-width:\s*1024px\)/);
+  });
+});
+
+describe('left rail (#249)', () => {
+  it('puts the header full width above a row holding the rail and the scroll area, at >=768px', () => {
+    expect(APP_SHELL).toMatch(
+      /@media\s*\(min-width:\s*768px\)\s*\{\s*\.body\s*\{[^}]*flex-direction:\s*row-reverse[^}]*\}\s*\}/,
+    );
+  });
+
+  it('lays the nav out as a column, var(--rail-width) wide, bordered on its right not its top', () => {
+    expect(BOTTOM_NAV).toMatch(
+      /\.nav\s*\{[^}]*flex-direction:\s*column[^}]*width:\s*var\(--rail-width\)[^}]*border-top:\s*none[^}]*border-right:\s*var\(--border-hairline\)[^}]*\}/,
+    );
+  });
+
+  it('shows the label again and shrinks the icon back to --icon-ui', () => {
+    const railBlock = BOTTOM_NAV.slice(BOTTOM_NAV.indexOf('@media (min-width: 768px)'));
+
+    expect(railBlock).toMatch(/\.label\s*\{\s*display:\s*block;\s*\}/);
+    expect(railBlock).toMatch(/\.icon\s*\{[^}]*width:\s*var\(--icon-ui\)[^}]*\}/);
+  });
+
+  it('lays each item out as a row, icon beside label, clearing the tap floor', () => {
+    expect(BOTTOM_NAV).toMatch(
+      /\.item\s*\{[^}]*flex-direction:\s*row[^}]*min-height:\s*var\(--tap-min\)[^}]*\}/,
+    );
+  });
+
+  it('writes only min-width around 768 — never a max-width around the same value', () => {
+    for (const source of [APP_SHELL, BOTTOM_NAV]) {
+      expect(source).not.toMatch(/@media\s*\(max-width:\s*768px\)/);
+      expect(source).not.toMatch(/@media\s*\(max-width:\s*767px\)/);
+    }
   });
 });

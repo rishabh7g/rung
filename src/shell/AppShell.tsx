@@ -91,13 +91,18 @@ export function AppShell() {
         )}
       </header>
 
-      <main className={styles.screen} ref={setScreen}>
-        <ScrollAreaContext.Provider value={screen}>
-          <Outlet />
-        </ScrollAreaContext.Provider>
-      </main>
+      {/* Below the header: the scroll area and, at >=768px, the rail beside it (#249). `<main>`
+          stays exactly where it was — this only gives it and the nav a shared flex parent so the
+          two can lay out as a row at >=768px; ScrollAreaContext still publishes the same element. */}
+      <div className={styles.body}>
+        <main className={styles.screen} ref={setScreen}>
+          <ScrollAreaContext.Provider value={screen}>
+            <Outlet />
+          </ScrollAreaContext.Provider>
+        </main>
 
-      {!immersive && <BottomNav />}
+        {!immersive && <BottomNav />}
+      </div>
     </div>
   );
 }

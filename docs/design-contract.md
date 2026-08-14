@@ -47,6 +47,25 @@ documents. The `design/` pair is v3.3 and further ahead — for example
 `design/PRD-engineering.md` has a §17 that `docs/PRD-engineering.md` does not.
 Prefer the `design/` pair until the two are reconciled.
 
+## Divergence — left rail (2026-08-14, #249)
+
+`design/tokens.css` gives the bottom nav one shape: a bar, icon-only, at every viewport. The house
+UI standard (`rrish-learning-base/playbooks/ui-baseline.md` §4, §5, §16) turns it into a **left
+rail** — icon + label, `--rail-width` (232px) wide, bordered on its right — from 768px up, with the
+header full width across the top and the rail and the scroll area sitting side by side beneath it.
+`design/tokens.css` has no token for the rail's width — `--rail-width` did not exist in the design
+package before this issue.
+
+`src/styles/tokenOverrides.css` defines `--rail-width: 232px`. `src/shell/AppShell.tsx` wraps
+`<main>` and `<BottomNav>` in a new `.body` flex container — `<main>` itself does not move, and
+`ScrollAreaContext` still publishes the same element (#88). `.body` is a column on mobile (matching
+the layout before the wrapper existed) and `row-reverse` at `@media (min-width: 768px)`, which puts
+the nav — second in DOM order — at the main-start (the left) without reordering the markup.
+`src/shell/BottomNav.module.css` gains the matching `@media (min-width: 768px)` block: the nav lays
+out as a column `var(--rail-width)` wide with `border-right` instead of `border-top`, the label
+goes back to `display: block`, the icon shrinks back to `--icon-ui` (20px, from the bar's 26px
+`--icon-nav-bar`, #246), and each item becomes a row — icon beside label.
+
 ## Divergence — content column measure (2026-08-14, #248)
 
 `design/tokens.css` has no cap on content width — above 1024px the app's content stretches to the
