@@ -30,6 +30,10 @@
  *  --rail-width                (not in design pkg)     232px                       design-contract
  *                                                                                 "Left rail"
  *                                                                                 (#249)
+ *  --text-body                15px/1.55                16px/1.55                   design-contract
+ *  --text-secondary           13px/1.55                16px/1.55                   "Body-text
+ *  --text-caption              11.5px/1.5               16px/1.5                    floor" (#252)
+ *  --text-micro                10.5px/1.5               16px/1.5
  * ─────────────────────────────────────────────────────────────────────────────────────────────
  *
  * A `px` literal in one of these definitions is a sanctioned exemption from the style-contract
@@ -99,4 +103,17 @@
      56px-tall bar (BottomNav.module.css's tablet-and-up rail block).
      docs/design-contract.md "Left rail" (#249). */
   --rail-width: 232px;
+
+  /* Body-text floor: the house UI standard puts it at 16px with no exception for captions —
+     "Body text may not go below 16px. No exceptions, including captions inside cards." The
+     design package's ramp sits below it on all four body-role slots (15/13/11.5/10.5px); every
+     one is raised to the floor here. Line-heights are unchanged — only the size moves.
+     `--text-kicker` and `--text-kicker-sm` are deliberately NOT in this list: they are uppercase
+     tracked labels (nav tabs, section headers), not a body text role, and the standard's floor
+     is about prose a learner reads, not a badge. docs/design-contract.md "Body-text floor"
+     (#252). */
+  --text-body: 400 16px/1.55 var(--font-body);
+  --text-secondary: 400 16px/1.55 var(--font-body);
+  --text-caption: 400 16px/1.5 var(--font-body);
+  --text-micro: 400 16px/1.5 var(--font-body);
 }

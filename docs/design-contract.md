@@ -47,6 +47,34 @@ documents. The `design/` pair is v3.3 and further ahead — for example
 `design/PRD-engineering.md` has a §17 that `docs/PRD-engineering.md` does not.
 Prefer the `design/` pair until the two are reconciled.
 
+## Divergence — body-text floor (2026-08-14, #252)
+
+`design/tokens.css` sets four body-role sizes below the house UI standard's floor:
+`--text-body` 15px, `--text-secondary` 13px, `--text-caption` 11.5px, `--text-micro` 10.5px. The
+standard (`rrish-learning-base/playbooks/ui-baseline.md` §7, §16) puts the floor at 16px with no
+exception for captions: "Body text may not go below 16px. No exceptions, including captions
+inside cards." It becomes load-bearing with the standalone zoom lock (#250): below 16px the text
+is small AND unzoomable in the installed app, the exact combination §7 exists to prevent.
+
+`src/styles/tokenOverrides.css` raises all four to 16px, keeping each role's own line-height
+(1.55 for body/secondary, 1.5 for caption/micro) — only the size moves. `--text-kicker` and
+`--text-kicker-sm` are deliberately excluded: they are uppercase tracked labels (nav tabs,
+section headers), not a body text role the standard's floor is arguing about. Hierarchy between
+the four raised roles survives on colour, not size — they were already differentiated by the
+`--ink-*` tint each one is painted at (`design/tokens.md` §1), never by weight, so four roles
+landing on one size is not a new dependency, it makes an existing one load-bearing.
+
+`src/fonts.test.ts` asserts every non-kicker `--text-*` token — the design package's plus the
+override's — resolves to at least 16px, so a future ramp entry added below the floor fails the
+same way. Walked the six stylesheets that consume the four raised tokens
+(`LadderScreen.module.css`, `ComprehensionScreen.module.css`, `RitualScreen.module.css`,
+`ModuleScreen.module.css`, `SentenceScreen.module.css`, `BootScreens.module.css`) for the layout
+consequence: every caption/micro/secondary use is either a short closed-vocabulary count/label
+(`"part 1 of 2"`, `"2 of 10"`, `neutral`/`informal`) in a `flex: none` slot beside a `flex: 1,
+min-width: 0` sibling that absorbs the space, or wraps freely in a column (`rowJob` in
+`LadderScreen.module.css`) — none is a `white-space: nowrap` label sized to the OLD, narrower
+text, so none clips or forces horizontal overflow at 375px.
+
 ## Divergence — left rail (2026-08-14, #249)
 
 `design/tokens.css` gives the bottom nav one shape: a bar, icon-only, at every viewport. The house
