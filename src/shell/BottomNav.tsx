@@ -34,7 +34,15 @@ export function BottomNav() {
   return (
     <nav className={styles.nav} aria-label="Primary">
       {TABS.map(({ to, label, Icon }) => (
-        <NavLink key={to} to={to} end className={styles.item}>
+        <NavLink
+          key={to}
+          to={to}
+          end
+          className={styles.item}
+          // Mandatory, and set at EVERY viewport — the bar hides the span below (#245).
+          aria-label={label}
+          title={label}
+        >
           <Icon className={styles.icon} />
           <span className={styles.label}>{label}</span>
         </NavLink>
