@@ -102,6 +102,20 @@ function rampShorthands(): Record<string, string> {
   );
 }
 
+/**
+ * The ramp the app actually renders: `design/tokens.css`'s shorthands, with any
+ * `src/styles/tokenOverrides.css` redefinition winning — the same later-import-wins cascade
+ * `main.tsx` sets up (#197, #252). `--text-body`/`-secondary`/`-caption`/`-micro` are redefined
+ * there; everything else in the ramp still comes from the read-only package.
+ */
+function effectiveRampShorthands(): Record<string, string> {
+  const effective = { ...rampShorthands() };
+  for (const match of overridesCss.matchAll(/--(text-[a-z0-9-]+):\s*([^;]+);/g)) {
+    effective[match[1]!] = match[2]!.trim();
+  }
+  return effective;
+}
+
 /** The weight a `--text-*` shorthand renders at, `var(--font-heading-weight)` resolved. */
 function weightOf(shorthand: string): string | undefined {
   const head = shorthand.trim().split(/\s+/)[0] ?? '';
@@ -258,6 +272,27 @@ describe('the bundle covers what the product renders — and only that (#113, #1
 
     expect(statics).toEqual([]);
     expect(mainSource).toContain("void import('@fontsource/barlow/latin-ext-400.css');");
+  });
+});
+
+describe('the body-text floor — no text role renders below 16px (#252)', () => {
+  it('keeps every non-kicker --text-* token at or above the floor', () => {
+    // --text-kicker and --text-kicker-sm are uppercase tracked labels, not a body text role —
+    // the house UI standard's floor is about prose a learner reads, not a badge, and #252 says
+    // so explicitly in src/styles/tokenOverrides.css.
+    const KICKERS = new Set(['text-kicker', 'text-kicker-sm']);
+
+    const violations = Object.entries(effectiveRampShorthands())
+      .filter(([name]) => !KICKERS.has(name))
+      .flatMap(([name, shorthand]) => {
+        const size = Number(shorthand.match(/(\d+(?:\.\d+)?)px/)?.[1]);
+        return Number.isFinite(size) && size < 16 ? [`--${name}: ${size}px`] : [];
+      });
+
+    expect(
+      violations,
+      `${violations.join(', ')} — below the 16px body-text floor (design/PRD-engineering.md §17 / rrish-learning-base ui-baseline.md §7). Raise it in src/styles/tokenOverrides.css.`,
+    ).toEqual([]);
   });
 });
 

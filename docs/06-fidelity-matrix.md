@@ -65,6 +65,14 @@ phone; recorded on #117).
   contrast column simply improves). Rung-by-rung ratios and the mapping are in `design/tokens.md`
   §1; `src/colourLaw.test.ts` composites each `color-mix()` rung onto every ground and fails under
   4.5 : 1. Same shape of divergence as the accent's half-step down (#184).
+- **Body-text floor vs the prototype (#252):** the design package's four smallest body-role
+  sizes (`--text-body` 15px, `--text-secondary` 13px, `--text-caption` 11.5px, `--text-micro`
+  10.5px) sit below the house UI standard's 16px floor, which has no caption exception. Raised to
+  16px in `src/styles/tokenOverrides.css` — a **sanctioned type-ramp divergence**, size-only:
+  the same shape as the ink-ramp divergence below (copy, state, geometry and ordering untouched;
+  hierarchy between the four still reads on the `--ink-*` colour tint each is painted at, not on
+  size), so every cell above still matches state-for-state. `--text-kicker`/`-kicker-sm` are
+  unchanged — they are labels, not the body prose the standard's floor addresses.
 - **Reduced motion:** all four motions (reveal, expand, hold, unlock beat — plus toast and tick)
   collapse under `prefers-reduced-motion`; verified live over emulated media on the module
   expand and the reveal, and mechanised in `src/colourLaw.test.ts` (any sheet declaring
