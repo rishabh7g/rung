@@ -8,12 +8,12 @@
  * levels.json stays the single source of the ladder, and a brief only adds the authoring
  * guidance on top.
  *
- * Three courses are briefed, L1 only: hi-mr, en-es and en-ar. The L2/L3 module lists are RATIFIED
+ * Four courses are briefed, L1 only: hi-mr, en-es, en-ar and hi-en. The L2/L3 module lists are RATIFIED
  * (#112 closed [Q1] — titles, jobs and sequence in levels.json are final), but their briefs are
  * written when the L2/L3 authoring project starts: a brief encodes pattern-and-interference
- * pedagogy that should be planned against the verified L1 ladder, not ahead of it. en-ar's own
- * L2/L3 lists are still placeholder text (PRD §5) and are not briefed either. The CLI says exactly
- * this when asked for a course or module without a brief.
+ * pedagogy that should be planned against the verified L1 ladder, not ahead of it. en-ar's and
+ * hi-en's own L2/L3 lists are still placeholder text (PRD §5) and are not briefed either. The CLI
+ * says exactly this when asked for a course or module without a brief.
  *
  * ## Three rules these briefs are written to, learned the hard way on hi-mr
  *
@@ -42,7 +42,9 @@
  *    below, and a multi-token surface (`Me llamo`, `por la mañana`, `por favor`) is the tool for
  *    keeping the bare word free for whoever should own it. Romanized Arabic is exposed on two
  *    further seams that Spanish is not — hyphen parts and the apostrophe classes — so en-ar's
- *    index rules get their own section below.
+ *    index rules get their own section below. English has two of its own — contractions, which
+ *    survive normalisation as ONE token (`don't`), and a stock of tiny homographs (`to`, `do`,
+ *    `have`, `that`, `it`) — so hi-en's get theirs.
  *
  * ## Why the en-es ladder teaches what it teaches
  *
@@ -155,6 +157,126 @@
  * proof (#118), not a first draft: #199 re-authored M1 fresh to the full ten sentences against the
  * brief below — the seam proof's four frames are the only part that survived — and #202 graduated
  * the course out of `fixture: true` altogether.
+ *
+ * ## hi-en: the four decisions a brief must settle before any English is written
+ *
+ * hi-en (#267–#273) is the first course whose L2 is the language these briefs — and hi-mr's own
+ * module notes — are written in. That inverts one habit and exposes two index seams the other three
+ * courses never met, so the decisions are stated once here and repeated in the notes, because a
+ * prompt only ever shows an author the notes.
+ *
+ * ### 1. The language of every field — Hindi teaches, English is the thing taught
+ *
+ * The language law (#186/#196, `src/langLaw.test.tsx`): the document speaks the course's L1 (`hi`),
+ * every L2 line declares `en`, and unlabelled prose inherits the L1. So in hi-en **every teaching
+ * field is Hindi, in Devanagari** — `rules[].text`, word `note`, `trap`, `sound`,
+ * `variations[].changed`, `mistake.why`, `usage`, `mnemonic` and `cue` — and English appears ONLY in
+ * the L2 slots: sentence / word / variation / mistake / pool `display`, and word `forms`. A Hindi
+ * field may quote the English word it is explaining (`like` का मतलब पसंद करना); quoting is not
+ * switching.
+ *
+ * hi-mr's modules write `rules[].text` and word `note` in English (`content/hi-mr/modules/L1-M1.json`,
+ * `rules[0]`: "Word order is Subject–Object–Verb, exactly as in Hindi…") — a quirk tolerated for one
+ * bilingual learner — and **hi-en must NOT copy it**: here an English note about an English word is
+ * the lesson explaining itself in the language the learner does not yet have, and on screen that
+ * note inherits `lang="hi"` and is read in a Hindi voice. M1's first note and M10's last say so.
+ *
+ * Two field rules follow from the L2 being English:
+ *
+ * - **`glossEn` is OMITTED on every hi-en sentence.** #268 made it optional where `l2Tag` is `en`
+ *   and the build (`checkGlossEn`) still requires it for every other L2; an English gloss of an
+ *   English line is the hero line twice, and Sentence Detail drops the paragraph when the key is
+ *   absent.
+ * - **`literal` is the Hindi words in ENGLISH order** — `मेरा नाम है रोहन` under `My name is Rohan`,
+ *   `किताब है पर मेज़` under `The book is on the table` — the same device as hi-mr's
+ *   `मेरा(नपुं.) नाम रोहन है` and en-es's `I call-myself Rohan` (the L1's words in the L2's order),
+ *   pointed the other way. It is the most useful line this course has, because the whole delta of
+ *   Hindi→English is ORDER: the verb moves to the middle and every postposition becomes a
+ *   preposition. Carry it on every M1–M3 sentence; from M4 it is optional and still the right tool
+ *   wherever the order moves (M7's prepositions, M9's one-connector rule). Hyphenate a multi-word
+ *   Hindi gloss of one English word (`मैं पसंद-करता-हूँ चाय`), as en-es hyphenates `call-myself`.
+ *
+ * The prompt's own Script section already says the other half — `display` is English, `cue` is
+ * Hindi, `script` unused — so a brief need not repeat it.
+ *
+ * ### 2. Contractions are single index surfaces — one policy for the whole course
+ *
+ * `src/engine/surface.ts` strips EDGE punctuation only, folds `’` to `'` and lowercases, so `don't`,
+ * `I'm`, `isn't`, `it's` are each ONE token and ONE index key — `I'm` never lands on `I` or on `am`.
+ * The policy, ratified here and repeated in the notes:
+ *
+ * - **`display` uses the contraction a fluent speaker would say** — `I'm fine`, `I don't want tea`,
+ *   `He doesn't get up early`, `I didn't go`, `It's on the table` — and writes the full form only
+ *   where a contraction is impossible (`Yes, I am`: sentence-final `am` never contracts) or where the
+ *   uncontracted word IS the module's lesson (M1's `I am a student`, because `am` is what M1 teaches;
+ *   M6's `I will go`, because `will` is; M5's `was not`, because `was` is).
+ * - **A contraction is its own word row, in the module that introduces it, and that row's `forms`
+ *   lists BOTH shapes** — `don't` · `do not`; `I'm` · `I am` — so either spelling resolves to one
+ *   true note (a two-word form is a two-token key, and the longest-match walk takes `do not` whole),
+ *   and the note is written true of both shapes. Owners: `I'm` (M2), `don't` (M3), `doesn't` (M4),
+ *   `didn't` (M5), `it's` (M7), `I'll` (M6, one variation at most). A row never pre-lists a sibling:
+ *   M3's `don't` row does not carry `doesn't`, or M4's 3sg lesson becomes unreachable.
+ * - **Straight `'` only** in authored text (the curly quote folds on the index, but `display` must be
+ *   one spelling), and **no possessive `'s` in L1**: `Rohan's` would be a fresh surface needing its
+ *   own row, and no L1 job needs one (`His name is Rohan`, not `My brother's name`).
+ *
+ * ### 3. Multi-token surfaces keep bare words free — and capture what is inside them
+ *
+ * As in en-es (`Me llamo`, `por favor`) and en-ar (`ṣabāḥ al-khayr`), a surface may span tokens and
+ * the resolver takes the longest match first. Two consequences, both planning tools: a multi-token
+ * surface claims NO bare part (`thank you` leaves `you` to M2's pronoun row), and it captures every
+ * bare part wherever the phrase appears (`there is` swallows the `is` inside it, so a tap opens the
+ * existential note, not `be`'s). The course's multi-token surfaces and their owners: `good morning` ·
+ * `thank you` (M2); `get up` · `wake up` (M4); `going to` (M6); `there is` · `there are` · `next to` ·
+ * `in front of` (M7); `how much` · `how many` · `Can I have` (M8). Each is named in its module's INDEX
+ * SEAM note with the word it protects: `how` stays M2's (`How are you?`), `have` stays M4's
+ * possession row (`Can I have` never touches it), `go` and `to` stay M4's and M3's — and because
+ * `going to` is claimed as the PLAN marker, no display after M6 may write `going to` + a place;
+ * movement is `go to` / `went to` / `will go to`.
+ *
+ * ### 4. Homographs — first occurrence wins, so every colliding surface has an owner
+ *
+ * English's commonest words are its worst homographs, and the index is cumulative with FIRST
+ * OCCURRENCE WINS (`tools/content-build.ts`), so the earliest module to write a surface owns the note
+ * every later learner sees. The owners, each stated again in that module's notes:
+ *
+ * - **`be`** — ONE row, opened by M1's first `is` (`My name is Rohan`) with `forms` `am · is · are`;
+ *   later sentences' `am` / `are` are not re-deconstructed. M5 EXTENDS that row — `forms` gains
+ *   `was · were`, the note gains the past — rather than opening a second `be` row the index could
+ *   never reach for `is`.
+ * - **`to`** — M3 (`want to` + verb), as a bare row; its note is written true of M4's `go to school`
+ *   and M7's `to the shop` (को / तक) as well, since those inherit the key.
+ * - **`do`** — M3, do-support; the note defines the helper AND the main verb करना. `does` / `doesn't`
+ *   are M4's rows and `did` / `didn't` M5's — each again both jobs.
+ * - **`like`** — M1's verb only; `like` = "similar to" stays out of L1.
+ * - **`have`** — M4, possession only (`I have two brothers`, the state verb the `*I am having` trap
+ *   needs); auxiliary `have` stays out of L1, `have tea` is written `drink tea`, and M8's request
+ *   rides `Can I have` whole.
+ * - **`a` / `an`** — M1, one row with both in `forms`; **`the`** — M3; a kind of thing in general, mass
+ *   or plural, takes nothing (M1's `I like tea`).
+ * - **`in` / `on` / `at`** — M4 (time), and M7's place uses inherit those rows, so M4's notes are
+ *   written true of both seats (`on Monday` · `on the table`).
+ * - **`it`** — M7 (the thing-pronoun, with `it's`); **`that`** — M9 (the conjunction of `I think
+ *   that …`, with the pointing word defined in the same note); M7 and M8 point with `this` so the
+ *   key is free. **`her`** — M6's object pronoun (`I'm meeting her tomorrow`), note true of the
+ *   possessive too. **`so`** — M9's consequence word; the intensifier (`so tired`) stays out (`very`).
+ * - **`he` / `she`** — M4 (the 3sg subject), with M10 returning to the split; **`and` / `but` /
+ *   `also` / `then`** — M10's spend, so earlier modules keep one clause per sentence.
+ *
+ * ### Why the hi-en ladder teaches what it teaches
+ *
+ * The jobs are levels.json's, mirrored verbatim; the brief adds which Hindi→English delta each job
+ * carries. SVO and the article land in M1 (the first sentence a learner writes puts `is` in the
+ * middle and an `a` before `student`), inversion and the one `you` in M2, do-support and `want to`
+ * in M3, third-person `-s` and the simple/continuous split in M4, the one-form past and `did` in M5,
+ * the three futures in M6, prepositions-before-the-noun and `there is` in M7, `how much` / `how many`
+ * and counting in M8, the one-connector rule in M9, and the never-dropped subject pronoun plus
+ * `he` / `she` in M10. Kept deliberately OUT of L1: the present perfect and auxiliary `have`, `can`
+ * outside the fixed `Can I have`, the possessive `'s`, the passive, comparatives (L2-M9), conditionals
+ * (L3-M4), and `-ing` anywhere except M6's arrangements and a starred `*I am knowing`.
+ *
+ * There is no seam-proof fixture to replace: `content/hi-en/modules/` does not exist until #270
+ * authors L1-M1 against the brief below.
  */
 
 /** PRD §5 module budget: at most 25 new words per module, every course, every level. */
@@ -718,6 +840,215 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         'The slogan this module attracts is "Arabic is VSO", and it would make an author reorder perfectly natural sentences. The law: both orders are normal Arabic, and L1 has been writing the noun-first one all along — ismī Rohān, anā min al-Hind, al-kitāb ʿalā aṭ-ṭāwila. Verb-first happens by itself whenever the verb carries its own subject (dhahabtu ilā al-madrasa ams). VSO describes formal narrative prose, not a rule a conversational turn must obey.',
         "wa is written as a separate word here (the header's one deliberate departure from Arabic's own joining), so a turn full of wa still costs the index one key. The script line joins it as Arabic does; keep the two consistent across every turn.",
         'A turn is where the register is most tempting to break: keep every sentence in the same spoken-simple MSA the course has used since M1, and put "in Cairo you would hear something else" in usage, never in display.',
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+  },
+  'hi-en': {
+    'L1-M1': {
+      id: 'L1-M1',
+      title: 'Who I am',
+      job: 'Introduce yourself and state what you like',
+      patterns: ['My name is + name', 'I am from + place', 'I am + a/an + N', 'I like + N'],
+      notes: [
+        'LANGUAGE OF EVERY FIELD, decided for the whole course and repeated here because the prompt only ever shows an author the notes: every teaching field is Hindi in Devanagari — rules[].text, word note, trap, sound, variations[].changed, mistake.why, usage, mnemonic and cue — and English appears ONLY in display (sentence, word, variation, mistake, pool) and in word forms. A Hindi field may quote the English word it explains; it never switches into English prose. hi-mr writes its rules[].text and word notes in English (content/hi-mr/modules/L1-M1.json, rules[0]) — a quirk for one bilingual learner — and hi-en must NOT copy it: here the English IS the thing being taught, and a note inherits lang="hi" on screen. No glossEn on any sentence (#268 — an English gloss of an English line is the hero line twice); literal on EVERY sentence of M1–M3, the Hindi words in English order: मेरा नाम है रोहन under My name is Rohan.',
+        'The whole delta of this course is word ORDER, and M1 states it on its first line: the verb comes SECOND, right after its subject, and what stood before है in Hindi now stands after the verb — My name is Rohan beside मेरा नाम रोहन है; I like tea beside मुझे चाय पसंद है. Write that law, not the slogan "English is SVO" (true, and it tells a Hindi speaker nothing about what to move); literal is where the learner watches है jump. The subject word is never dropped, even where Hindi would drop it — M10 spends on that; say it here once.',
+        'be is am / is / are by PERSON and number — I am · you are · he / she / it is · we / they are — exactly as होना is (हूँ · है · हैं), and never by gender: है serves a man and a woman alike, and so does is. The forms are new and the habit is old, so tag the be row delta, not interference. The slogan this module attracts is "English has no gender", and it is half true in a way that bites later: nouns and verbs carry none, but a PERSON must be he or she (M4, M10) — so state the law about the verb only.',
+        'The article before a countable singular noun is THE interference of the module and the mistake to spend on: I am a student, never *I am student — Hindi has no article and मैं विद्यार्थी हूँ needs none. a before a consonant sound, an before a vowel sound (a student · an engineer — the sound, not the letter), and ONE row teaches both: display a, forms a · an. Pair it with its absence in the same module so the learner sees the line: I am a teacher (one countable person → a) · I like tea (a kind of thing in general → nothing; I like the tea would mean that particular tea). "the = specific, a = any" is the slogan, and M3 kills it; M1 teaches only these two cases.',
+        'Liking takes a plain subject: मुझे चाय पसंद है is dative in Hindi (the liker is मुझे, चाय is the grammatical subject and पसंद है agrees with it) and nominative in English — I like tea: the liker is the subject, like is an ordinary verb, the thing liked is its object. The Hindi shape produces *Me tea likes, and that is the mistake block. No article on the generic object (I like tea · I like books), and like here is the verb only: like = "similar to" (like my brother) stays out of L1, because this row owns the key for the course.',
+        "from stands BEFORE the place — I am from Delhi · I am from India: Hindi's postposition दिल्ली से becomes a preposition, and so will every में / पर / को in M4 and M7. State it once, here, as the law (the Hindi से / में / पर word comes FIRST in English) and let literal show it: मैं हूँ से दिल्ली. Capital I always — the index folds case (I and i are one key), so the capital is for the reader, not the resolver, and I is how English is written.",
+        "INDEX SEAM, decided here because this module opens the course's word index (first occurrence wins): deconstruct is ONCE, in My name is Rohan, with forms am · is · are — the one be row of the whole course, which M5 will extend with was · were; am and are in later sentences are not new words. Deconstruct a with forms a · an; I, my, name, from, like and each noun get one row each. No contractions yet — I am a student is written whole because am is the lesson, and I'm arrives in M2 as its own row (straight apostrophe, one surface). There is no fixture to replace: content/hi-en/modules/ does not exist until this module is authored.",
+      ],
+      maxWordsPerSentence: 5,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M2': {
+      id: 'L1-M2',
+      title: 'First exchange',
+      job: 'Greetings, wellbeing, yes/no questions',
+      patterns: [
+        'Hello / Good morning + , + name',
+        'How are you?',
+        "I'm + Adj + , thank you",
+        'Are you + a/an + N / from + place?',
+        'What is your name?',
+        "Yes, I am / No, I'm not",
+      ],
+      notes: [
+        "The question law, and the delta of the module: a yes/no question MOVES be in front of the subject — Are you a teacher? beside You are a teacher — where Hindi puts क्या at the front and moves nothing (क्या आप शिक्षक हैं?). Write the pair so the learner sees the swap, and give the wh-question the same shape with its word first: How are you? · What is your name? (M1's My name is … answered). *You are a teacher? with only the mark changed is the Hindi habit and the mistake to show; every question ends in ? in display (the index strips edge punctuation, so you? indexes as you).",
+        "Short answers keep the verb and drop the rest: Yes, I am · No, I'm not — Hindi answers with हाँ / नहीं alone or repeats the whole sentence, and both are possible in English, but the short answer is the idiom. The contraction policy starts here: I'm is the display form wherever speech contracts (I'm fine · No, I'm not), it is ONE index surface (surface.ts keeps the inner apostrophe), and it gets its own row with forms I'm · I am — a note true of both shapes, because sentence-final am never contracts: Yes, I am, never *Yes, I'm. Straight apostrophe only. not is its own row here (No, I'm not); M3's don't row will not re-teach it.",
+        'One you for तू / तुम / आप, and it takes are for one person or many: the politeness Hindi puts into the pronoun and its verb (आप हैं) moves into WORDS — thank you, Good morning, a name, please (M8). Tag you delta, not interference: a Hindi speaker is used to a plural-shaped verb on a polite you (आप हैं), so you are is familiar ground; what is new is that there is no other choice to make. Keep the module in the first and second person — I and you — and hold he / she for M4, where the third person earns its -s.',
+        "Adjectives never agree: fine, tired, happy are one form for a man, a woman, two people — I'm fine · you are fine · (from M4) she is fine — where Hindi's ठीक stays put but थका / थकी changes. This is delta and a rest point; say so. Feelings in depth are M9's: M2 needs the wellbeing pair fine / tired (and well, if used), and the be row from M1 answers am / are here, so do not re-deconstruct them.",
+        "INDEX SEAM: teach good morning (and good night, if used) as a WHOLE two-token surface — the good inside it greets, it does not describe the morning — which keeps the bare good free for the adjective a later module writes (the tea is good) and morning free for M4's in the morning. thank you is whole too: it is a formula, and it leaves you to this module's pronoun row (a multi-token surface claims no bare part). The complexity floor is 3 words a sentence, so Thank you rides inside a longer line: I'm fine, thank you.",
+      ],
+      maxWordsPerSentence: 5,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M3': {
+      id: 'L1-M3',
+      title: 'Needs and wants',
+      job: "Say what you want and don't want",
+      patterns: [
+        'I want + a/an/the + N',
+        "I don't want + N",
+        'I want to + V',
+        'I need + N',
+        'Do you want + N?',
+        'I want + num + N-s',
+      ],
+      notes: [
+        "Two shapes of wanting and one word between them: want + noun (I want tea · I want a book) and want TO + verb (I want to eat — मैं खाना चाहता हूँ). Hindi's infinitive खाना is one word, so *I want eat is the shape the Hindi habit produces and the mistake to show; to is obligatory and means nothing by itself. need works the same way (I need a pen · I need to go). INDEX SEAM: to is taught here as a BARE row, not inside a want to surface, so its note must already be true of the seats that will inherit the key — M4's go to school and M7's to the shop (को / तक): to is a verb-joiner before a verb and a direction word before a place. (M6's going to is a whole surface, so the to inside it never reaches this row — but the note should not contradict it either.)",
+        "Negation needs a helper: I don't want tea — Hindi's one नहीं (मैं चाय नहीं चाहता) becomes do + not, and the main verb stays in its base form. *I not want tea and *I no want tea are the Hindi-shaped attempts; spend the mistake here. Contraction policy: don't is the display form (speech contracts it), ONE index surface, its own row with forms don't · do not — and it does NOT carry doesn't, which is M4's row and M4's lesson (the -s moves onto does). Negating be needs no do: I'm not a teacher (M2's not).",
+        "Questions with an ordinary verb take the same helper in front: Do you want tea? — beside M2's Are you a teacher?, which moved be and borrowed nothing. That contrast is the module's comprehension work: be moves, every other verb borrows do. INDEX SEAM: this first bare do owns the key for the course, and do is also the main verb करना (What do you do? in M4 · I did my homework in M5), so the row's note defines BOTH — the helper that carries a question or a negative and means nothing, and the verb that means करना. does / doesn't and did / didn't are later modules' own rows.",
+        'a / an vs the vs nothing, and the slogan to kill is "the = specific, a = any": the article answers one question — can the listener already tell WHICH one? Yes → the (I need the key: the one we both know). No, and it is one countable thing → a / an (I want a book: any book). A kind of thing in general, mass or plural → NOTHING (I want tea · I like books; I want the tea means a particular tea). the is first taught here and owns its key; a / an is M1\'s row. Write the three in one module so the learner sees them side by side, and make the pool test the choice.',
+        "Plural -s after a number, and the noun must carry it: I want two books — Hindi can say दो किताब and mean the plural, English cannot (*two book), so that is the mistake. Nouns whose plural the module uses are rows with forms book · books. This is one of the two -s endings of the level — the NOUN's, met again after numbers in M8 — and M4 adds the other, the verb's he gets; say which one this is.",
+      ],
+      maxWordsPerSentence: 6,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M4': {
+      id: 'L1-M4',
+      title: 'My day',
+      job: 'Daily habits and time words',
+      patterns: [
+        'I + V + at + time',
+        'He/She + V-s + at + time',
+        'I + V + in the morning / on Monday',
+        'I + always/usually/never + V',
+        "Does he/she + V? / He/She doesn't + V",
+        'I have + N',
+      ],
+      notes: [
+        'The spine is the present simple across persons, and the law is about where the -s goes: ONE letter marks the third person singular — I get up · you get up · he gets up · she gets up · we get up · they get up — and nothing else changes. It is the most-missed letter in Indian English, because Hindi marks the GENDER on a habit verb (उठता / उठती) and English marks the PERSON: a woman and a man both get up, and only he / she / it takes -s. Tag the -s interference and spend a mistake on *he get up. The slogan "English verbs don\'t change" is the one this module attracts, and it is exactly wrong about the one change that matters: one form for I / you / we / they, -s for he / she / it.',
+        "Time words sit IN FRONT of the time: at 7 (सात बजे), in the morning (सुबह), on Monday (सोमवार को), every day (हर रोज़) — Hindi's postposition becomes a preposition, the slot M1 opened with from. Core set: at for a clock time, in for a part of the day, on for a day. INDEX SEAM: in / on / at are first taught here, and M7 will write them for PLACE (in the box · on the table · at home) and inherit these rows — so write each note true of both seats now: on = पर for a surface (on the table) and को for a day (on Monday); in = में for a place (in the box) and the part-of-day word Hindi leaves bare (in the morning = सुबह); at = a point, in time (at 7) or in space (at home). in the morning is in + the + morning with no phrase row (the is M3's), and morning is free because M2 taught good morning whole. Frequency words (always · usually · sometimes · never) go between subject and verb — I usually drink tea — and never carries its own negation: I never drink coffee, not *I don't never.",
+        "get up and wake up are WHOLE two-token surfaces (the meaning is not the sum of the parts; forms get up · gets up), which keeps up unclaimed and, more usefully, keeps get free of a meaning it does not have here. The verbs of the day are rows with PRESENT forms only — go · goes, eat · eats, drink · drinks, work · works, sleep · sleeps — because their pasts are M5's new surfaces and M5's rows. Write I eat breakfast, never I have breakfast: have is taught in this module as possession, and a have-breakfast display would land a learner on a note that is false of it.",
+        "Simple vs continuous, and the slogan \"-ing means now\" is the trap: a habit takes the simple present even while it is happening (I drink tea every day), and a STATE takes the simple present always — I know Rohan · I have two brothers · I like tea — so *I am knowing and *I am having two brothers are the classic Indian-English errors and this module's mistake plates. Keep the continuous OUT of M4's displays except inside a starred mistake: its one L1 job is M6's arrangements. have enters here as the state verb that trap needs, and it is POSSESSION only (मेरे दो भाई हैं → I have two brothers): its row owns the key, so auxiliary have stays out of L1 and M8 requests with Can I have as a whole surface. he / she arrive here as the third-person subjects the -s needs; say once that वह is both, and that picking the wrong one is the tell M10 returns to.",
+        "Questions and negatives carry the person on the helper, not the verb: Do you get up early? · Does he get up early? · He doesn't get up early — the -s moves onto does and the main verb goes back to its base form. *Does he gets up is the double marking a Hindi speaker makes and the mistake to show. does and doesn't are this module's rows (doesn't lists doesn't · does not); M3's do row answers the bare do. Keep every sentence a daily habit — no past, no future, no requests; those are M5, M6 and M3.",
+      ],
+      maxWordsPerSentence: 6,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M5': {
+      id: 'L1-M5',
+      title: 'Yesterday',
+      job: 'Past tense — went, ate, did',
+      patterns: [
+        'Yesterday + I + V-ed / went / ate',
+        "I didn't + V",
+        'Did you + V + yesterday?',
+        'What did you + V?',
+        'I was / We were + Adj',
+      ],
+      notes: [
+        'THE structural rest point of the level, said as a delta: the past has ONE form for every person and every gender — I ate · she ate · they ate; I went · he went — where Hindi\'s past agrees (खाया / खाई, गया / गई) and, with a transitive verb, agrees with the OBJECT through ने (मैंने चाय पी · मैंने खाना खाया: पी follows चाय, खाया follows खाना). English never agrees in the past at all, so the learner has less to do, not more. The slogan "English verbs don\'t change" is false here in the other direction: the form changes for TENSE (eat → ate), never for person — say both halves.',
+        "Regular pasts take -ed (work → worked, cook → cooked) and the verbs a day actually needs are irregular: went, ate, had, saw, did, drank, got up, was / were. Spend the irregular budget on the ones the sentences use and no more. INDEX SEAM: M4's verb rows list present forms only, so every past form is a NEW surface with its own row here (went: go का past, one form for every person) — EXCEPT be. was / were are added to M1's be row (forms am · is · are · was · were, note extended to the past) rather than opened as a second be row, because first occurrence wins and only M1's row will ever answer is: make that edit in M1's file when this module is authored, and let the note say that was / were split by number — I / he / she / it was · you / we / they were — where the present split by person.",
+        "Negatives and questions take did + the BASE verb, and the tense lives on did alone: I didn't go · Did you eat? · What did you eat yesterday? — so *I didn't went and *Did you ate? are the double-marked shapes the learner produces (Hindi marks the past on the main verb and has nothing else to carry it) and THE interference of the module: spend the mistakes here. did / didn't are this module's rows (didn't lists didn't · did not), and the did row, like M3's do, defines the helper AND the main verb (What did you do? — one did that carries the tense, one do that means करना).",
+        "yesterday anchors every sentence, and it is a delta worth one line: Hindi's कल is yesterday AND tomorrow and the verb decides; English has two words and the verb does not decide — yesterday and tomorrow (M6) carry the time the Hindi verb used to. Recycle M4's daily verbs into the past (I get up at 7 → Yesterday I got up at 8; got up is a new two-token surface, M4's get up row stays as it is) and keep the module bounded: no past continuous, no present perfect (auxiliary have stays out of L1), no used to.",
+        "was / were carry states back into the past with no agreement and no did — I was tired · We were happy · Were you tired? (be still moves on its own, M2's law). was is the lesson, so a negative be is written whole here, I was not tired, rather than spending a row on wasn't; the module's budget is the verbs.",
+      ],
+      maxWordsPerSentence: 7,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M6': {
+      id: 'L1-M6',
+      title: 'Tomorrow',
+      job: 'Future and plans',
+      patterns: [
+        'I will + V + tomorrow',
+        'Will you + V?',
+        "I'm going to + V",
+        "I'm + V-ing + tomorrow / next week",
+      ],
+      notes: [
+        "will + base verb is the plain future, and it is a rest after M4–M5: I will go · she will go · they will go — no -s, no agreement, no gender (जाऊँगा / जाऊँगी → will go, one form). The two Hindi-shaped mistakes are *I will to go (M3's to misapplied: to follows want, never will) and *I will going; spend the mistake on *I will to go. will is written WHOLE in this module's statements and questions (I will go to Delhi tomorrow · Will you come?) because the auxiliary IS the lesson and the learner must be able to tap it; I'll may appear once, as a variation, with its own row (I'll · I will). won't stays out of L1 — M3's don't and M5's didn't have taught negation, and the module's spend is the three futures.",
+        "Three ways to talk about tomorrow, and the slogan \"will is the future\" is the one to refuse — it is the tense-book answer and the least used of the three in speech. The law: will for a decision or a prediction (I will call you), going to for a PLAN already made (I'm going to visit my aunt), the present continuous for an ARRANGEMENT fixed with someone (I'm meeting her tomorrow). Lead with will (it does the module's work and has no agreement), give going to two or three sentences, and the arrangement one or two — the continuous's only L1 job, and the reason M4 kept -ing out of its displays. A time word (tomorrow, next week, on Monday) sits with every one of them, the way yesterday anchored M5.",
+        "INDEX SEAM: teach going to as ONE two-token surface meaning the plan marker (forms going to only), so the to inside it never opens M3's row and go stays M4's. The cost is real and binds the rest of the course: the resolver takes the longest match first, so after this module no display may write going to + a PLACE — I'm going to the market would open the plan note, which is false of it. Movement is go to / went to / will go to (I will go to Delhi tomorrow), and the going to row's note says so in one clause. tomorrow is the module's word and M5's twin (कल both ways); if the module writes next week, next is its row (अगला) and M7's next to is a separate whole surface, so the two never touch.",
+        "The arrangement sentence is the learner's first -ing, so say what it is made of: be (M1's row — I'm, she is) + verb-ing, and the -ing verb is a new surface with its own row (meeting = meet + -ing). Bound it: one or two sentences, always with a future time word, never for a habit or a state (M4's *I am knowing is still wrong); *I am meet (no -ing) and *I meeting her (no be) are the shapes to show if a mistake is spent here. her in I'm meeting her tomorrow is the object pronoun — and if it is the course's first her, its note also covers the possessive (her book = उसकी किताब), because one key answers both.",
+      ],
+      maxWordsPerSentence: 7,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M7': {
+      id: 'L1-M7',
+      title: 'Where things are',
+      job: 'Locations and prepositions',
+      patterns: [
+        'The + N + is/are + in/on/under + the + N',
+        'Where is / are + the + N?',
+        "It's + next to / near / behind + the + N",
+        'There is + a/an + N + in/on + the + N',
+        'There are + num + N-s + in/on + the + N',
+      ],
+      notes: [
+        "Place words come BEFORE the noun — on the table (मेज़ पर), in the box (डिब्बे में), under the chair (कुर्सी के नीचे), next to the bank, near the school, behind the door — M1's from law at full stretch, and literal is the tool again: किताब है पर मेज़ under The book is on the table. *The book is table on is the Hindi shape and a mistake block. The article rides along: on THE table, the one we can both see (M3's law) — *on table is the Hindi habit dropping it.",
+        "there is / there are is the dummy subject Hindi does not have: मेज़ पर एक किताब है starts with the place and has no subject word at all, so the Hindi speaker writes *On the table is a book — and that is the module's mistake. English must put SOMETHING before the verb, and there is that something: There is a book on the table · There are two cups in the box — is / are by the number of the thing (a book · two cups), the way M1's be split by person. Beside it, the plain sentence says where a KNOWN thing is — The book is on the table — so the pair is a book (new → there is) vs the book (known → the book is): M3's article law doing M7's work. Make the pool test the choice.",
+        "Where is the shop? is M2's inversion with a question word: where first, is second, the thing third — Hindi's दुकान कहाँ है? keeps the verb last; Where are the cups? by number. it enters here as the pronoun for a THING (Where is it? · It's on the table): वह covers he, she and it, English splits people (he / she, M4) from things (it), and this row owns the key. it's is the module's contraction row (it's · it is) — It's on the table is the display, It is only where speech would say it whole. Point with this (This is my book), never that: that is M9's key (the conjunction), and a pointing that written here would hand M9's I think that … a note about pointing.",
+        "INDEX SEAM: teach there is and there are as WHOLE two-token surfaces (one row, forms there is · there are), so the is inside them opens the existential note and not M1's be row — the longest match wins — and the bare there is claimed by nothing (L1 never writes it alone). next to and in front of are whole surfaces too (forms next to; in front of), which keeps next M6's (next week) and leaves of free for M8's a kilo of. in / on / at resolve to M4's rows, whose notes were written for this: nothing here may make them false. The new keys this module owns are under, near, behind, where, it / it's, there is / there are, next to, in front of — and the furniture the sentences name.",
+        "Bounded: no possessive 's (my book · your book, never Rohan's book, a fresh surface L1 does not teach), no prepositional phrase inside a subject (The book on the table is … blows the bound), and having things is still M4's have (I have a car), not a lesson here — Hindi's मेरे पास एक गाड़ी है is where a learner reaches for there is, and the pair is worth one comprehension item, not a new rule.",
+      ],
+      maxWordsPerSentence: 7,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M8': {
+      id: 'L1-M8',
+      title: 'Numbers & shopping',
+      job: 'Prices, quantities, buying',
+      patterns: [
+        'How much is this?',
+        'How much does it cost?',
+        "It's + num + rupees",
+        'Can I have + a/an / num + N(-s) + , please?',
+        'a kilo / a bottle of + N',
+        'How many + N-s + do you want?',
+      ],
+      notes: [
+        "Two price questions and the helper each takes: How much is this? (be moves — M2's law) and How much does it cost? (an ordinary verb borrows does — M4's law, and cost stays base: *How much does it costs is the double marking again). It's fifty rupees answers both; rupees (रुपये) is the currency throughout — the course is for a Hindi speaker in India, so name it once and keep it — and the plural -s is on it. Hindi puts the price word last (यह कितने का है?); literal shows the jump.",
+        "how much vs how many, and the law is COUNTABILITY, not size: how much for a mass noun and for money (How much rice? · How much is it?), how many for a countable plural (How many bananas? — with the -s). Hindi's कितना / कितनी / कितने split by gender and number, never by countability, so the Hindi speaker reaches for how much everywhere (*How much bananas?) — tag it interference and show it. INDEX SEAM: both are WHOLE two-token surfaces (forms how much; how many), which is what keeps how as M2's (How are you?) and leaves much / many unclaimed — L1 never writes them bare.",
+        "Numbers are vocabulary the sentences use (two, five, ten, twenty, fifty, hundred), not a counting drill, and after a number the noun takes -s: two bananas · five rupees — M3's rule under pressure, because Hindi can say पाँच रुपये and, colloquially, पाँच रुपया, and English has no such latitude (*five rupee is the mistake). Quantities take of: a kilo of rice · a bottle of water · two kilos of sugar — a is M1's row doing the unit's work, and of is first taught here and owns its key (M7 kept in front of whole so that it would). one is the number and a is the unstressed one: I want one banana insists, I want a banana does not.",
+        "Requests: Can I have two bananas, please? and the bare Two kilos of rice, please. please sits at the edge after a comma and is its own row — the politeness Hindi carries in दीजिए and आप lives in this one word (M2's law). INDEX SEAM: teach Can I have as ONE three-token surface, the request formula, so the have inside it never lands on M4's possession row (whose note is false of a request) and can stays unclaimed — L1 teaches no other can. The bound is 7 words, so requests stay short: Can I have a bottle of water? is exactly 7.",
+        "this is the pointing word (How much is this? · This is fifty rupees) and it stays this: that is M9's key, and until M9 has claimed it the pointing that stays out of display. Keep the shopping simple — no comparatives (cheaper, more: L2-M9), no change / discount idioms — and make the pool test how much vs how many and the -s after a number.",
+      ],
+      maxWordsPerSentence: 7,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M9': {
+      id: 'L1-M9',
+      title: 'Feelings & opinions',
+      job: 'Why — because and so',
+      patterns: [
+        '<statement> + because + <statement>',
+        '<statement> + , so + <statement>',
+        'Why + are you / do you + …?',
+        "I'm + Adj",
+        'I think (that) + <statement>',
+      ],
+      notes: [
+        "The pair that carries the module: because introduces the REASON and so introduces the CONSEQUENCE — I don't want coffee because I'm tired · I'm tired, so I don't want coffee — the same two facts in opposite order, so author them in pairs and make the pool test the choice. THE interference of the module is that Hindi uses BOTH in one sentence (क्योंकि मैं थका हूँ, इसलिए मुझे कॉफ़ी नहीं चाहिए is ordinary Hindi) and English takes exactly ONE: *Because I'm tired, so I don't want coffee is the classic Indian-English sentence and this module's mistake plate. Say it as the law — one connector for two clauses, either word, never both — and let literal show it once: मैं नहीं चाहता कॉफ़ी क्योंकि मैं हूँ थका.",
+        "Why …? takes M2's inversion or M4's helper: Why are you sad? (be moves) · Why do you like tea? (an ordinary verb borrows do) — and the answer opens with Because (Because I'm tired: a fragment that is normal in speech; say so in usage and keep full sentences in display). Hindi's क्यों sits before the verb (तुम उदास क्यों हो?); literal shows why jumping to the front.",
+        "Feelings ride be + adjective, and the adjective never agrees — I'm tired · she is tired · they are tired (थका / थकी / थके → tired) — M2's rest point at full stretch: tag delta, and do not re-deconstruct am / is / are. Hindi's dative feelings (मुझे गुस्सा आ रहा है) come out as be + adjective with the feeler as the SUBJECT — I'm angry — M1's like law again, and *Me anger is coming is the shape to show if a mistake is spent on it. Spend the new words on the feelings themselves (tired, happy, sad, angry, hungry, busy) and on very (very tired); so as an intensifier (so tired) stays OUT, because so is this module's consequence word and owns the key.",
+        "Opinions: I think (that) the tea is good — that is optional and usually dropped in speech; write it in at least one display so it is taught, and make that row's note true of BOTH jobs of the word, because this is the course's first that and it owns the key: the conjunction कि (I think that …) and the pointing word वह (That is my book) — one spelling, one row, two uses. M7 and M8 pointed with this precisely so this module would get the key. I think takes no helper in a statement and the usual do in a question (Do you think …?).",
+        "Bounded: no if (L3-M4), no comparatives, no too / enough; because and so are each ONE row (so = इसलिए, the consequence word, never the intensifier), and the bound is 8 words — I'm tired, so I don't want coffee is 7, which is the shape every pair should stay inside.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M10': {
+      id: 'L1-M10',
+      title: 'Connected talk',
+      job: 'Short 2–3 sentence exchanges',
+      patterns: [
+        '<M1–M9 pattern> + <M1–M9 pattern>',
+        '<question> → <answer + because + reason>',
+        '<statement> + and / but + <statement>',
+        '<statement> + . + Then + <statement>',
+      ],
+      notes: [
+        'Each item is a TURN of 2–3 short sentences, not one long one — a question and its answer, or a statement, a reason and a follow-up. The per-sentence bound applies to each sentence inside the turn.',
+        "Recombination is the lesson: nearly everything comes from M1–M9. The honest new spend is the joiners that hold a turn together — and, but, also, then — and little else. Keep the turns everyday and symmetric: greeting → wellbeing → plan (Good morning, Rohan. · How are you? · I'm fine, thank you. I will go to Delhi tomorrow.); want → reason → buy.",
+        "The slogan this module attracts is the Hindi speaker's own ear: थक गया is a whole sentence, so *Am tired and *Went to the market yesterday come out once the person is established in a turn. The law: an English sentence always has a subject word, even when the context has made it obvious — I'm tired · It's very good — and the second sentence of a turn repeats the pronoun Hindi would drop. This is the mirror image of en-es's pro-drop rule and the one loud thing of the module: tag it interference and spend the mistakes here (*Am tired · *Is a good shop · *Went to the market yesterday).",
+        'he vs she, at last: वह is one word for a man and a woman, and a Hindi speaker who learned he first says he for everyone — mixing them inside one turn (My sister is a teacher. *He works in Delhi.) is the tell and a mistake plate here. State it as the law M1\'s "no gender" slogan hid: nouns and verbs carry no gender, but the pronoun for a PERSON must be chosen — he for a man, she for a woman, it for a thing (M7) — and once chosen it holds for the turn. Articles in running text: the second mention of a thing takes the (I have a book. The book is on the table.) — M3\'s law across a sentence boundary, and worth one turn.',
+        "Language of the fields holds to the last turn: Hindi (Devanagari) in every teaching field — rules[].text, note, trap, sound, changed, why, usage, mnemonic, cue — English only in display and forms; no glossEn on any sentence; literal wherever a turn's order moves. A turn is where an author is most tempted to slip an English aside into a note because the English is right there; do not — the note is read in a Hindi voice on screen, and hi-mr's English notes are the quirk this course does not copy.",
       ],
       maxWordsPerSentence: 8,
       newWordCap: NEW_WORD_CAP,
