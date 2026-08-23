@@ -32,7 +32,8 @@ import {
   type ShippedFile,
 } from './payload-budget.ts';
 
-/** The three courses `content/courses.json` declares, as the emitted manifest carries them. */
+/** The three courses a strict build emits, as the manifest carries them — hi-en (#267) is a
+    fixture row the gate drops, so it reaches no emitted manifest and no budget row yet. */
 const HI_MR: ShippedCourse = { id: 'hi-mr', scripts: ['devanagari'] };
 const EN_ES: ShippedCourse = { id: 'en-es', scripts: [] };
 const EN_AR: ShippedCourse = { id: 'en-ar', scripts: ['arabic'] };
@@ -70,6 +71,7 @@ describe('reading the shipped courses off the manifest', () => {
         { id: 'hi-mr', l1Tag: 'hi', l2Tag: 'mr' },
         { id: 'en-es', l1Tag: 'en', l2Tag: 'es' },
         { id: 'en-ar', l1Tag: 'en', l2Tag: 'ar' },
+        { id: 'hi-en', l1Tag: 'hi', l2Tag: 'en', fixture: true },
       ],
     });
 
@@ -77,6 +79,7 @@ describe('reading the shipped courses off the manifest', () => {
       { id: 'hi-mr', scripts: ['devanagari'] }, // both tags, deduped to one subset
       { id: 'en-es', scripts: [] }, // Latin: no font subsets of its own
       { id: 'en-ar', scripts: ['arabic'] }, // romanized still ships the native line's face (#197)
+      { id: 'hi-en', scripts: ['devanagari'] }, // Hindi chrome over English sentences (#267): the L1 pays for the face
     ]);
   });
 

@@ -25,7 +25,7 @@ describe('loadCourses', () => {
 
     const courses = await loadCourses();
 
-    expect(courses.map((course) => course.id)).toEqual(['hi-mr', 'en-es', 'en-ar']);
+    expect(courses.map((course) => course.id)).toEqual(['hi-mr', 'en-es', 'en-ar', 'hi-en']);
     expect(courses[0]).toMatchObject({
       id: 'hi-mr',
       l1: 'Hindi',
@@ -39,18 +39,20 @@ describe('loadCourses', () => {
     });
     // en-ar carries more than the nine required fields; the loader keeps them, never rejects them.
     expect(courses[2]?.romanizationNote).toMatch(/Modern Standard Arabic/);
-    // en-es graduated in #195 and en-ar in #202 — a shipping course carries no fixture key at all,
-    // and the repo has no other kind of course left.
-    expect(courses.some((course) => course.fixture !== undefined)).toBe(false);
+    // en-es graduated in #195 and en-ar in #202 — a shipping course carries no fixture key at all.
+    // hi-en (#267) is the one course authored behind the gate today, and the key says so.
+    expect(courses.slice(0, 3).some((course) => course.fixture !== undefined)).toBe(false);
+    expect(courses[3]).toMatchObject({ id: 'hi-en', l1Tag: 'hi', l2Tag: 'en', fixture: true });
   });
 
   /**
-   * There is no fixture course in the repo today (#202), but `--with-fixtures` and the `fixture`
-   * key are still the seam a course #4 is authored behind (PRD §17). The loader keeps the key
-   * rather than validating it away, so the day one comes back it reaches the app intact.
+   * `--with-fixtures` and the `fixture` key are the seam a course #4 is authored behind (PRD §17):
+   * hi-en is that course since #267. The loader keeps the key rather than validating it away, so
+   * the row reaches the app intact — the key is what `resolveActiveCourse` and the Settings
+   * switcher never branch on, and what graduation (#273) deletes.
    */
-  it('keeps a fixture row intact, for the day a new course is authored behind the gate', () => {
-    const row = { ...DEV_MANIFEST.courses[2], fixture: true };
+  it('keeps a fixture row intact — the course authored behind the gate reaches the app as one', () => {
+    const row = DEV_MANIFEST.courses[3];
 
     const manifest = parseManifest({ devBuild: true, courses: [row] });
 
@@ -77,7 +79,7 @@ describe('loadCourses', () => {
     vi.stubGlobal('fetch', fetchMock);
 
     await expect(loadCourses()).rejects.toThrow(ManifestError);
-    await expect(loadCourses()).resolves.toHaveLength(3);
+    await expect(loadCourses()).resolves.toHaveLength(4);
     expect(fetchMock).toHaveBeenCalledTimes(2);
   });
 });

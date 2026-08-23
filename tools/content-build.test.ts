@@ -566,8 +566,10 @@ describe('manifest validation', () => {
     const { courses, errors } = validateManifest(json);
 
     expect(errors).toEqual([]);
-    expect(courses.map((course) => course.id)).toEqual(['hi-mr', 'en-es', 'en-ar']);
+    expect(courses.map((course) => course.id)).toEqual(['hi-mr', 'en-es', 'en-ar', 'hi-en']);
     expect(courses[2]?.romanizationNote).toMatch(/^ALA-LC/);
+    // hi-en (#267) is authored behind the gate: the row validates like any other and says so.
+    expect(courses[3]?.fixture).toBe(true);
   });
 
   it('rejects a manifest that is not a non-empty array of objects', () => {
@@ -1142,11 +1144,15 @@ describe('the shared normaliser', () => {
  * The repo's own content, built both ways. This is the test that would catch a fixture course
  * leaking into a strict build, or a module shipping without a named reviewer.
  *
- * Since #202 the repo holds no fixture course at all — hi-mr, en-es and en-ar all ship — so the
- * two builds differ in nothing but the banner and the `devBuild` key. The gate is still enforced:
- * `tools/content-build.test.ts`'s synthetic roots above build fixture rows and unverified modules
- * and watch them be dropped, which is where that coverage belongs. What *this* block asserts is
- * that the repo's real content needs no relaxation to reach a learner.
+ * hi-mr, en-es and en-ar all ship, and since #267 the repo carries a fixture course again: hi-en,
+ * Hindi → English, a manifest row with `fixture: true`, a ladder and a strings bundle, and no
+ * `modules/` folder at all until #270 authors the first one. So the two builds differ in the
+ * banner, the `devBuild` key, and ONE report line — strict drops hi-en as a fixture course, dev
+ * admits it and finds nothing authored — and in neither build does hi-en reach the emitted
+ * manifest, which lists only courses that shipped ≥ 1 module. The synthetic roots above build
+ * fixture rows and unverified modules and watch them be dropped; what *this* block asserts is
+ * that the repo's real content needs no relaxation to reach a learner, and that the fourth course
+ * cannot.
  */
 describe('the authored content', () => {
   it('ships hi-mr, en-es and en-ar L1-M1..M10 on a strict build', () => {
@@ -1175,7 +1181,8 @@ describe('the authored content', () => {
       'en-es',
       'en-ar',
     ]);
-    // Not one row carries `fixture` any more, and the envelope carries no dev key.
+    // No EMITTED row carries `fixture` — hi-en's authored row does (#267) and is exactly what the
+    // gate dropped — and the envelope carries no dev key.
     expect(readManifest(outRoot).courses.some((course) => 'fixture' in course)).toBe(false);
     expect(readManifest(outRoot).devBuild).toBeUndefined();
     expect(report.lines).toEqual([
@@ -1185,8 +1192,11 @@ describe('the authored content', () => {
       ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
       'en-ar: 10 modules (L1-M1..M10)',
       ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
-      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10)',
+      'hi-en: 0 modules — fixture course, excluded by the gate (--with-fixtures ships it in dev)',
+      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10) | skipped: hi-en (fixture course)',
     ]);
+    // The gate, on the real tree: the fixture course's folder is not even created.
+    expect(existsSync(path.join(outRoot, 'hi-en'))).toBe(false);
   });
 
   /**
@@ -1230,10 +1240,20 @@ describe('the authored content', () => {
         ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5', 'L1-M6', 'L1-M7', 'L1-M8', 'L1-M9', 'L1-M10'],
       ],
     ]);
+    // hi-en (#267): `--with-fixtures` admits the course, and it has nothing to ship yet — a state,
+    // not an error, and the absent `content/hi-en/modules/` is exactly zero modules.
+    expect(report.lines).toContain('hi-en: 0 modules — nothing authored yet');
     expect(report.lines).toContain(
-      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10)',
+      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10) | skipped: hi-en (no modules)',
     );
     expect(readManifest(outRoot).devBuild).toBe(true);
+    // The manifest lists what shipped: three courses, until #270 lands hi-en's first module.
+    expect(readManifest(outRoot).courses.map((course) => course.id)).toEqual([
+      'hi-mr',
+      'en-es',
+      'en-ar',
+    ]);
+    expect(existsSync(path.join(outRoot, 'hi-en'))).toBe(false);
     for (const file of [
       'hi-mr/levels.json',
       'hi-mr/strings.json',
