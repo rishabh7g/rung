@@ -1,0 +1,481 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M3",
+  "title": "Needs and wants",
+  "job": "Say what you want and don't want",
+  "prerequisites": ["L1-M2"],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-23",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 6,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "I want + (a/an/the) + N",
+      "I don't want + N",
+      "I want to + V",
+      "I need + N",
+      "Do you want + N?",
+      "I want + num + N-s"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "चाहना और ज़रूरत — हिंदी का एक चाहिए दोनों काम करता है (मुझे चाय चाहिए · मुझे पानी चाहिए), अंग्रेज़ी के दो शब्द: want = इच्छा, need = ज़रूरत. दोनों साधारण क्रियाएँ हैं, like (M1) की तरह — चाहने वाला कर्ता है, क्रिया उसके ठीक बाद, चीज़ उसके बाद: मुझे चाय चाहिए → I want tea; मुझे पानी की ज़रूरत है → I need water. न मुझे के लिए कोई शब्द, न चाहिए के लिए am: *I am want tea नहीं."
+    },
+    {
+      "tag": "interference",
+      "text": "चीज़ की जगह काम चाहिए हो, तो want / need और क्रिया के बीच to आता है — I want to learn English · I need to read. हिंदी का एक शब्द (सीखना, पढ़ना) अंग्रेज़ी में दो है: to + learn, to + read; to का अपना कोई मतलब नहीं, पर छूटता नहीं — *I want learn English इस module की सबसे बड़ी फिसलन है. to के बाद क्रिया मूल रूप में रहती है, कर्ता कोई भी हो. यही to जगह से पहले दिशा का शब्द भी है (go to school — M4, to the shop — M7): क्रिया से पहले जोड़ने वाला, जगह से पहले को / तक."
+    },
+    {
+      "tag": "interference",
+      "text": "साधारण क्रिया के साथ नहीं कहने को सहारा चाहिए — do + not, क्रिया से पहले, और क्रिया मूल रूप में: I don't want coffee. हिंदी का एक नहीं (मैं कॉफ़ी नहीं चाहता) यहाँ दो टुकड़े — do not — और बोलचाल में एक शब्द don't (सीधा apostrophe). *I not want coffee और *I no want coffee हिंदी के साँचे हैं. be के साथ यह सहारा नहीं चाहिए — I'm not a teacher (M2 का not). he / she के साथ doesn't — M4 में."
+    },
+    {
+      "tag": "interference",
+      "text": "सवाल भी वही सहारा लेता है — do सबसे आगे, फिर कर्ता, फिर क्रिया मूल रूप में: Do you want tea? M2 में be ख़ुद आगे आया था (Are you a doctor?); बाक़ी हर क्रिया do उधार लेती है — यही इस module का असली फ़र्क़ है: be हिलता है, बाक़ी क्रियाएँ do माँगती हैं. हिंदी आगे क्या जोड़ती है और कुछ नहीं हिलाती — do क्या का अनुवाद नहीं है (इसका अपना कोई मतलब नहीं), पर बैठता वहीं है जहाँ क्या बैठता है. *You want tea? (सिर्फ़ ?) और *Are you want tea? (be की खींच) दोनों ग़लत. और do असली क्रिया भी है — करना (What do you do? — आप क्या करते हैं?; M5 में What did you do yesterday?)."
+    },
+    {
+      "tag": "interference",
+      "text": "a / an, the, या कुछ नहीं — article एक ही सवाल का जवाब है: क्या सुनने वाला पहले से बता सकता है कि कौन-सी? हाँ → the (I need the key: घर की चाबी, जो हम दोनों जानते हैं). नहीं, और गिनने-लायक एक चीज़ → a / an (I want a pen: कोई भी पेन — M1 का नियम). चीज़ आम तौर पर, या न गिनी जाने वाली (tea, water, sugar), या बहुवचन → कुछ नहीं (I want tea · I like books); I want the tea का मतलब होगा वही ख़ास चाय. हिंदी में ऐसा कोई शब्द नहीं, इसलिए हाथ इसे छोड़ता है (*I want pen) या ग़लत जगह लगाता है (*I want a water)."
+    },
+    {
+      "tag": "delta",
+      "text": "अंक के बाद संज्ञा बहुवचन — और -s ज़रूरी: I want two books · two pens · two keys. हिंदी दो किताब कह सकती है और बहुवचन समझ लेती है; अंग्रेज़ी नहीं: *two book ग़लत. यह संज्ञा का -s है (किताबें का ें), M1 के books वाला — M8 में अंकों के साथ फिर मिलेगा; क्रिया का -s (he gets up) अलग चीज़ है, वह M4 में."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M3-S01",
+      "display": "I want tea",
+      "cue": "मुझे चाय चाहिए",
+      "literal": "मैं चाहता-हूँ चाय",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "want",
+            "cue": "चाहना · (मुझे) चाहिए",
+            "tag": "delta",
+            "forms": [],
+            "note": "चाहना — इच्छा का शब्द, और एक साधारण क्रिया: कर्ता + want + चीज़ (I want tea · I want a pen), या + to + क्रिया (I want to learn). हिंदी मुझे चाय चाहिए कहती है — चाहने वाला मुझे में छिपा है; अंग्रेज़ी में वह हर बार कर्ता है, I, और am नहीं चाहिए: I want, *I am want नहीं. चाहिए का दूसरा काम, ज़रूरत, need करता है."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "मुझे चाय चाहिए सुनकर हाथ Me लिखता है या चाहिए के लिए am ढूँढता है — *I am want tea. like की तरह want भी अकेली क्रिया है: I want tea, तीन शब्द.",
+      "sound": "want = वॉन्ट — w होंठ गोल करके, व नहीं; आख़िर का t हल्का. tea = टी. पूरा: आइ-वॉन्ट-टी.",
+      "variations": [
+        {
+          "display": "I want coffee",
+          "cue": "मुझे कॉफ़ी चाहिए",
+          "changed": "चीज़ बदली — कॉफ़ी भी न गिनी जाने वाली, तो आगे कुछ नहीं."
+        },
+        {
+          "display": "I want water",
+          "cue": "मुझे पानी चाहिए",
+          "changed": "पानी — साँचा वही: I want + चीज़."
+        }
+      ],
+      "mistake": {
+        "display": "I am want tea",
+        "why": "चाहिए में कोई है नहीं छिपा था, और want को am की ज़रूरत नहीं — want ख़ुद क्रिया है. कर्ता + want + चीज़."
+      },
+      "usage": "कुछ माँगना — घर में, दुकान पर, किसी के पूछने पर. सीधा और साफ़; please (M8) इसे नरम करेगा.",
+      "register": "neutral",
+      "mnemonic": "चाहिए नहीं, चाहता हूँ: जो चाहता है वही आगे — I want tea."
+    },
+    {
+      "id": "L1-M3-S02",
+      "display": "I want a pen",
+      "cue": "मुझे एक पेन चाहिए",
+      "literal": "मैं चाहता-हूँ एक पेन",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pen",
+            "cue": "पेन · कलम",
+            "tag": "free",
+            "forms": ["pen", "pens"],
+            "note": "पेन — हिंदी में भी पेन. गिनने-लायक चीज़, इसलिए अकेली हो तो आगे a ज़रूरी (a pen), कई हों तो -s (two pens). सिर्फ़ pen अधूरा है."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "मुझे पेन चाहिए में कोई एक नहीं — हाथ I want pen लिखता है. गिनने-लायक अकेली चीज़ बिना a के अधूरी है (M1 का नियम, यहाँ फिर).",
+      "sound": "pen = पेन — छोटा 'ए', पैन नहीं. a यहाँ भी हल्का 'अ': आइ-वॉन्ट-अ-पेन.",
+      "variations": [
+        {
+          "display": "I want a book",
+          "cue": "मुझे एक किताब चाहिए",
+          "changed": "चीज़ बदली — कोई एक किताब, तो a वही."
+        },
+        {
+          "display": "I need a pen",
+          "cue": "मुझे एक पेन की ज़रूरत है",
+          "changed": "want की जगह need — इच्छा नहीं, ज़रूरत; साँचा वही."
+        }
+      ],
+      "mistake": {
+        "display": "I want pen",
+        "why": "गिनने-लायक अकेली संज्ञा के आगे a या an चाहिए — कोई भी एक पेन: a pen. हिंदी में ऐसा शब्द नहीं, इसलिए छूटता है."
+      },
+      "usage": "कोई एक चीज़ माँगना — कौन-सी, यह मायने नहीं रखता: a pen, a book, a cup.",
+      "register": "neutral",
+      "mnemonic": "एक चीज़, एक a — pen अकेला नहीं, a pen."
+    },
+    {
+      "id": "L1-M3-S03",
+      "display": "I want to learn English",
+      "cue": "मैं अंग्रेज़ी सीखना चाहता हूँ",
+      "literal": "मैं चाहता-हूँ सीखना अंग्रेज़ी",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "to",
+            "cue": "(क्रिया से पहले) -ना · (जगह से पहले) को / तक",
+            "tag": "interference",
+            "forms": [],
+            "note": "अकेले इसका कोई मतलब नहीं, पर छूटता नहीं. दो सीटें: क्रिया से पहले यह जोड़ने वाला है — want to learn, need to read: हिंदी का एक शब्द सीखना यहाँ दो, to + learn, और to के बाद क्रिया मूल रूप में; *I want learn नहीं. और जगह से पहले यह दिशा का शब्द है — go to school (M4), to the shop (M7) = स्कूल (को), दुकान तक — को / तक, जो हिंदी में जगह के बाद आता है, अंग्रेज़ी में पहले. इस सीढ़ी पर यह want / need / like के बाद क्रिया से पहले, या जगह से पहले आता है; will के बाद नहीं (M6: *I will to go नहीं)."
+          },
+          {
+            "display": "learn",
+            "cue": "सीखना",
+            "tag": "free",
+            "forms": [],
+            "note": "सीखना — to के बाद मूल रूप, कर्ता कोई भी हो: I want to learn · you want to learn. सीखना के -ना का काम अंग्रेज़ी में to करता है."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "सीखना एक शब्द है, इसलिए हाथ I want learn English लिखता है — to छूट जाता है. अंग्रेज़ी में want और क्रिया के बीच to हमेशा: want to learn.",
+      "sound": "to यहाँ हल्का है — टु, टू नहीं; पूरा वॉन्ट-टु-लर्न, to पर कोई ज़ोर नहीं. learn = लर्न. English = इंग्लिश.",
+      "variations": [
+        {
+          "display": "I want to speak English",
+          "cue": "मैं अंग्रेज़ी बोलना चाहता हूँ",
+          "changed": "क्रिया बदली — बोलना; to वहीं है, क्रिया मूल रूप में."
+        },
+        {
+          "display": "I need to learn English",
+          "cue": "मुझे अंग्रेज़ी सीखनी है",
+          "changed": "want की जगह need — ज़रूरत; need to + क्रिया, साँचा वही."
+        }
+      ],
+      "mistake": {
+        "display": "I want learn English",
+        "why": "सीखना का -ना अंग्रेज़ी में अलग शब्द है — to. want और learn के बीच to ज़रूरी: I want to learn English."
+      },
+      "usage": "अपना इरादा या मक़सद बताना — जो काम करना चाहते हो: learn, read, speak.",
+      "register": "neutral",
+      "mnemonic": "-ना = to: सीखना दो टुकड़े में — to learn. to छोटा है, पर छूटता नहीं."
+    },
+    {
+      "id": "L1-M3-S04",
+      "display": "I want to read a book",
+      "cue": "मैं एक किताब पढ़ना चाहता हूँ",
+      "literal": "मैं चाहता-हूँ पढ़ना एक किताब",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "read",
+            "cue": "पढ़ना",
+            "tag": "free",
+            "forms": [],
+            "note": "पढ़ना — to के बाद मूल रूप: to read. हिंदी का पढ़ना दो काम करता है — किताब पढ़ना (read) और स्कूल में पढ़ना (study); यहाँ किताब पढ़ना. कर्ता बदले तो भी to read वही."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "एक किताब का एक गिनती नहीं है, 'कोई एक' है — हाथ one book लिखता है, अंग्रेज़ी a book कहती है. one तभी, जब सचमुच गिन रहे हो.",
+      "sound": "read = रीड — लंबा 'ई'. to फिर हल्का: टु-रीड. book = बुक, छोटा 'उ'.",
+      "variations": [
+        {
+          "display": "I want to read",
+          "cue": "मैं पढ़ना चाहता हूँ",
+          "changed": "चीज़ छोड़ दी — बस काम: want to + क्रिया, उतना ही पूरा वाक्य."
+        },
+        {
+          "display": "I want to read the book",
+          "cue": "मैं वह किताब पढ़ना चाहता हूँ",
+          "changed": "a की जगह the — वही किताब, जो हम दोनों जानते हैं."
+        }
+      ],
+      "mistake": {
+        "display": "I want to read one book",
+        "why": "एक यहाँ अंक नहीं, 'कोई एक' है — वह a है: a book. one तब, जब गिन रहे हो (एक किताब, दो नहीं)."
+      },
+      "usage": "फ़ुरसत में क्या करना है — पढ़ना, सुनना, सीखना; दो-टूक इच्छा.",
+      "register": "neutral",
+      "mnemonic": "कोई एक = a, गिनती वाला एक = one. किताब कोई भी — a book."
+    },
+    {
+      "id": "L1-M3-S05",
+      "display": "I don't want coffee",
+      "cue": "मुझे कॉफ़ी नहीं चाहिए",
+      "literal": "मैं नहीं चाहता कॉफ़ी",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "don't",
+            "cue": "नहीं (do + not)",
+            "tag": "interference",
+            "forms": ["don't", "do not"],
+            "note": "साधारण क्रिया का नहीं — do + not, बोलचाल में एक शब्द don't (सीधा apostrophe). क्रिया से पहले बैठता है और क्रिया मूल रूप में रहती है: I don't want coffee · I don't like coffee. हिंदी का एक नहीं यहाँ दो टुकड़े — do not — जिसमें do का अपना कोई मतलब नहीं, वह बस नहीं को उठाए रखता है; लिखने में भी don't वहीं जहाँ बोलने में, do not पूरा तब जब ज़ोर देना हो. *I not want और *I no want नहीं चलते. be के साथ यह नहीं चाहिए — I'm not (M2); he / she का doesn't M4 में."
+          },
+          {
+            "display": "coffee",
+            "cue": "कॉफ़ी",
+            "tag": "free",
+            "forms": [],
+            "note": "कॉफ़ी — tea की तरह न गिनी जाने वाली चीज़: आगे a नहीं, आख़िर में -s नहीं. I want coffee · I don't want coffee."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "मैं कॉफ़ी नहीं चाहता में एक नहीं है — हाथ I not want coffee लिखता है. अंग्रेज़ी का नहीं यहाँ दो टुकड़े है, do + not, और want वैसा ही रहता है.",
+      "sound": "don't = डोन्ट — o लंबा 'ओ' (go जैसा), apostrophe कुछ नहीं बोलता, आख़िर का t हल्का. coffee = कॉफ़ी.",
+      "variations": [
+        {
+          "display": "I don't want tea",
+          "cue": "मुझे चाय नहीं चाहिए",
+          "changed": "चीज़ बदली — don't want वही."
+        },
+        {
+          "display": "I do not want coffee",
+          "cue": "मुझे कॉफ़ी नहीं चाहिए",
+          "changed": "पूरा रूप do not — वही मतलब, ज़ोर देने में या लिखावट में; बोलचाल don't."
+        }
+      ],
+      "mistake": {
+        "display": "I not want coffee",
+        "why": "not अकेला साधारण क्रिया से नहीं चिपकता — उसे do चाहिए: do not, बोलचाल में don't. be के साथ ही not अकेला चलता था (I'm not)."
+      },
+      "usage": "मना करना — खाने-पीने की चीज़, कोई पेशकश; नरमी के लिए आगे thank you जोड़ो: No, thank you.",
+      "register": "neutral",
+      "mnemonic": "नहीं के दो टुकड़े: do + not = don't. नहीं से पहले एक do."
+    },
+    {
+      "id": "L1-M3-S06",
+      "display": "I need water",
+      "cue": "मुझे पानी की ज़रूरत है",
+      "literal": "मैं ज़रूरत-रखता-हूँ पानी",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "need",
+            "cue": "ज़रूरत होना",
+            "tag": "delta",
+            "forms": [],
+            "note": "ज़रूरत — want की तरह एक साधारण क्रिया, वही साँचा: कर्ता + need + चीज़ (I need water) या + to + क्रिया (I need to read). हिंदी का मुझे पानी चाहिए / की ज़रूरत है यहाँ I need water — ज़रूरत रखने वाला कर्ता है. चाहिए के दो काम, अंग्रेज़ी के दो शब्द: want इच्छा, need ज़रूरत."
+          },
+          {
+            "display": "water",
+            "cue": "पानी",
+            "tag": "free",
+            "forms": [],
+            "note": "पानी — न गिनी जाने वाली: I need water, I want water; a water नहीं, waters नहीं. गिनना हो तो बर्तन गिना जाता है (a bottle of water — M8)."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "मुझे पानी चाहिए में वही चाहिए है जो मुझे चाय चाहिए में था — पर यहाँ ज़रूरत है, इच्छा नहीं: need. और मुझे फिर Me खींचेगा — ज़रूरत वाला भी कर्ता है, I.",
+      "sound": "need = नीड — लंबा 'ई', आख़िर का d साफ़. water = वॉटर — w होंठ गोल करके.",
+      "variations": [
+        {
+          "display": "I need tea",
+          "cue": "मुझे चाय की ज़रूरत है",
+          "changed": "चीज़ बदली — need + चीज़, आगे कुछ नहीं."
+        },
+        {
+          "display": "I need a pen",
+          "cue": "मुझे एक पेन की ज़रूरत है",
+          "changed": "गिनने-लायक चीज़ — a वापस आया: need a pen."
+        }
+      ],
+      "mistake": {
+        "display": "Me need water",
+        "why": "मुझे का Me यहाँ नहीं चलता — अंग्रेज़ी में ज़रूरत रखने वाला कर्ता है: I need water (M1 का like वाला नियम)."
+      },
+      "usage": "ज़रूरत बताना — प्यास, सामान, मदद; want से ज़्यादा ज़ोर: चाहिए ही चाहिए.",
+      "register": "neutral",
+      "mnemonic": "इच्छा want, ज़रूरत need — चाहिए का बँटवारा."
+    },
+    {
+      "id": "L1-M3-S07",
+      "display": "I need the key",
+      "cue": "मुझे वह चाबी चाहिए",
+      "literal": "मैं ज़रूरत-रखता-हूँ वह चाबी",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "the",
+            "cue": "वह / वही (जो पता है)",
+            "tag": "interference",
+            "forms": [],
+            "note": "हिंदी में ऐसा कोई शब्द नहीं. article एक ही सवाल का जवाब है — क्या सुनने वाला पहले से बता सकता है कि कौन-सी? हाँ → the: I need the key (घर की चाबी, हम दोनों जानते हैं कौन-सी) · I want the book (वही किताब). नहीं, और गिनने-लायक एक → a / an (M1). आम तौर पर या न गिनी जाने वाली → कुछ नहीं (I want tea; I want the tea = वही ख़ास चाय). एक ही the सबके लिए — एक, कई, आदमी, औरत: the key · the keys · the pen · the books. यह उँगली उठाकर दिखाने वाला वह नहीं है (that — M9); the सिर्फ़ यह कहता है कि कौन-सी, यह दोनों को पता है."
+          },
+          {
+            "display": "key",
+            "cue": "चाबी",
+            "tag": "free",
+            "forms": ["key", "keys"],
+            "note": "चाबी — गिनने-लायक: a key (कोई एक), the key (वही), two keys (-s). अकेला key अधूरा है."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "हिंदी में the के लिए कोई शब्द नहीं, इसलिए हाथ I need key लिखता है. जो चाबी हम दोनों जानते हैं, उसके आगे the — और कोई एक चाबी होती तो a key.",
+      "sound": "the = द — जीभ दाँतों के बीच, हल्का, 'थ' नहीं 'द' के पास; स्वर की आवाज़ से पहले दि (the engineer). key = की — लंबा 'ई'.",
+      "variations": [
+        {
+          "display": "I need the pen",
+          "cue": "मुझे वह पेन चाहिए",
+          "changed": "चीज़ बदली — the वही: जो पेन पता है."
+        },
+        {
+          "display": "I want the key",
+          "cue": "मुझे वह चाबी चाहिए",
+          "changed": "need की जगह want — इच्छा; the वही."
+        }
+      ],
+      "mistake": {
+        "display": "I need key",
+        "why": "गिनने-लायक अकेली संज्ञा अकेली नहीं चलती — कौन-सी, यह पता है तो the, नहीं तो a: I need the key / I need a key."
+      },
+      "usage": "कोई ख़ास चीज़ माँगना — जो दोनों जानते हैं: the key, the book, the pen. दूसरी बार नाम लेने पर भी the (M10).",
+      "register": "neutral",
+      "mnemonic": "पता है कौन-सी? the. कोई भी? a. पूरी क़िस्म? कुछ नहीं."
+    },
+    {
+      "id": "L1-M3-S08",
+      "display": "Do you want tea?",
+      "cue": "क्या आपको चाय चाहिए?",
+      "literal": "क्या आप चाहते चाय?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "do",
+            "cue": "(सवाल / नहीं का सहारा) · करना",
+            "tag": "interference",
+            "forms": [],
+            "note": "एक शब्द, दो काम. पहला — सहारा: साधारण क्रिया का सवाल या नहीं ख़ुद नहीं बनता; do आगे आकर सवाल बनाता है (Do you want tea? — फिर कर्ता, फिर क्रिया मूल रूप में) और do + not नहीं बनाता (don't). इस do का अपना कोई मतलब नहीं, क्या का अनुवाद भी नहीं — पर बैठता वहीं है जहाँ हिंदी का क्या: सबसे आगे. be को यह सहारा नहीं चाहिए (Are you a doctor? — M2). दूसरा — असली क्रिया, करना: What do you do? (आप क्या करते हैं? — पहला do सहारा, दूसरा करना) · What did you do yesterday? (M5). he / she के साथ does, बीते कल में did — वे अपनी जगह (M4, M5) सीखेंगे."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "क्या आपको चाय चाहिए? में क्या आगे जुड़ा और कुछ नहीं हिला — हाथ You want tea? लिखता है, सिर्फ़ ? बदलकर. अंग्रेज़ी में do आगे आता है: Do you want tea? और M2 की आदत से Are you want tea? — be यहाँ नहीं, want साधारण क्रिया है.",
+      "sound": "do = डू — लंबा 'ऊ'. हाँ / ना के सवाल की तरह आख़िर में आवाज़ ऊपर उठती है: डू-यू-वॉन्ट-टी. want यहाँ भी वॉन्ट.",
+      "variations": [
+        {
+          "display": "Do you want coffee?",
+          "cue": "क्या आपको कॉफ़ी चाहिए?",
+          "changed": "चीज़ बदली — Do you want वही."
+        },
+        {
+          "display": "Do you want a pen?",
+          "cue": "क्या आपको पेन चाहिए?",
+          "changed": "गिनने-लायक चीज़ — a वापस; सवाल का साँचा वही."
+        }
+      ],
+      "mistake": {
+        "display": "You want tea?",
+        "why": "सिर्फ़ ? लगाना हिंदी की आदत है (क्या … ?) — अंग्रेज़ी में do आगे आता है: Do you want tea? (be वाला सवाल be ख़ुद आगे लाता था: Are you …?)."
+      },
+      "usage": "पेशकश करना या पूछना — मेहमान से, दोस्त से. जवाब: Yes / No, thank you.",
+      "register": "neutral",
+      "mnemonic": "be ख़ुद हिलता है, बाक़ी do माँगते हैं: Are you …? पर Do you want …?"
+    },
+    {
+      "id": "L1-M3-S09",
+      "display": "Do you want sugar?",
+      "cue": "क्या आपको चीनी चाहिए?",
+      "literal": "क्या आप चाहते चीनी?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sugar",
+            "cue": "चीनी",
+            "tag": "free",
+            "forms": [],
+            "note": "चीनी — न गिनी जाने वाली: आगे a नहीं, -s नहीं; Do you want sugar? चाय-कॉफ़ी में चीनी पूछने की लाइन."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "क्या आप चीनी चाहते हैं? के हैं से हाथ Are you want sugar? लिखता है — हैं यहाँ be नहीं, वह सिर्फ़ हिंदी की क्रिया का पुछल्ला है. want साधारण क्रिया है, सहारा do.",
+      "sound": "sugar = शुगर — s यहाँ 'श' है, 'स' नहीं; ज़ोर पहले हिस्से पर: शु-गर. पूरा सवाल ऊपर उठकर ख़त्म: डू-यू-वॉन्ट-शुगर.",
+      "variations": [
+        {
+          "display": "Do you need sugar?",
+          "cue": "क्या आपको चीनी की ज़रूरत है?",
+          "changed": "want की जगह need — साँचा वही: Do you + क्रिया?"
+        },
+        {
+          "display": "Do you want milk?",
+          "cue": "क्या आपको दूध चाहिए?",
+          "changed": "चीज़ बदली — दूध भी न गिनी जाने वाली."
+        }
+      ],
+      "mistake": {
+        "display": "Are you want sugar?",
+        "why": "हैं दिखा तो are — पर want be नहीं है. be सिर्फ़ am · is · are वाले वाक्य में आगे आता है; बाक़ी क्रिया का सवाल do बनाता है: Do you want sugar?"
+      },
+      "usage": "चाय-कॉफ़ी बनाते हुए पूछना — घर में, दफ़्तर में. जवाब: Yes / No, thank you.",
+      "register": "neutral",
+      "mnemonic": "हैं से are मत बनाओ — want के आगे do: Do you want sugar?"
+    },
+    {
+      "id": "L1-M3-S10",
+      "display": "I want two books",
+      "cue": "मुझे दो किताबें चाहिए",
+      "literal": "मैं चाहता-हूँ दो किताबें",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "two",
+            "cue": "दो",
+            "tag": "free",
+            "forms": [],
+            "note": "दो — अंक शब्द वैसे ही चलता है, फ़र्क़ उसके बाद की संज्ञा में है: two के बाद संज्ञा बहुवचन, -s के साथ — two books · two pens · two keys; *two book नहीं. और अंक M8 में."
+          }
+        ],
+        "rules": [5, 4]
+      },
+      "trap": "दो किताब चल जाता है हिंदी में — हाथ two book लिखता है. अंग्रेज़ी में अंक के बाद -s ज़रूरी: two books.",
+      "sound": "two = टू — w चुप है, सिर्फ़ 'टू'. books = बुक्स, आख़िर का s 'स'.",
+      "variations": [
+        {
+          "display": "I want two pens",
+          "cue": "मुझे दो पेन चाहिए",
+          "changed": "संज्ञा बदली — -s वही: pens."
+        },
+        {
+          "display": "I want three books",
+          "cue": "मुझे तीन किताबें चाहिए",
+          "changed": "अंक बदला — three; संज्ञा बहुवचन ही रहती है."
+        }
+      ],
+      "mistake": {
+        "display": "I want two book",
+        "why": "अंक के बाद संज्ञा बहुवचन — और -s ज़रूरी: two books. हिंदी दो किताब कह लेती है, अंग्रेज़ी नहीं."
+      },
+      "usage": "गिनकर माँगना — दुकान, दफ़्तर, घर: two books, two pens. M8 में दाम और मात्रा.",
+      "register": "neutral",
+      "mnemonic": "दो = two, किताबें = books — अंक और -s साथ चलते हैं."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M3-C01", "display": "I want a book", "cue": "मुझे एक किताब चाहिए" },
+    { "id": "L1-M3-C02", "display": "I want the pen", "cue": "मुझे वह पेन चाहिए" },
+    { "id": "L1-M3-C03", "display": "I don't want tea", "cue": "मुझे चाय नहीं चाहिए" },
+    { "id": "L1-M3-C04", "display": "Do you want coffee?", "cue": "क्या आपको कॉफ़ी चाहिए?" },
+    { "id": "L1-M3-C05", "display": "Do you need a pen?", "cue": "क्या आपको पेन चाहिए?" },
+    { "id": "L1-M3-C06", "display": "I need two keys", "cue": "मुझे दो चाबियाँ चाहिए" },
+    { "id": "L1-M3-C07", "display": "I want to read", "cue": "मैं पढ़ना चाहता हूँ" },
+    { "id": "L1-M3-C08", "display": "Do you want the book?", "cue": "क्या आपको वह किताब चाहिए?" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

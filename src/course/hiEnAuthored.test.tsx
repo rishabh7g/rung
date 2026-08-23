@@ -13,7 +13,11 @@
  *   • Sentence Detail renders the hero in English and the chrome in Hindi, with NO gloss paragraph
  *     (#268: the L2 is English, so `glossEn` is omitted) and the WORD-FOR-WORD plate present,
  *   • the Why panel, tapped on a comprehension item, answers with the rows the briefs assigned —
- *     a contraction as ONE row, `a` / `an` as one row, the cross-module rows loaded.
+ *     a contraction as ONE row, `a` / `an` as one row, the cross-module rows loaded,
+ *   • and, since #271, the same walk over L1-M3..M5 — module list, Sentence Detail with the
+ *     contraction rows (`don't`, `does`, `didn't`), and the Why panel landing `the` / `do` on
+ *     M3's rows, `has` on M4's possession-only `have`, and `was` on M1's one `be` row, which M5
+ *     extended in M1's file rather than opening a second.
  *
  * The word index has no authored twin (`public/content/` is generated and gitignored, and
  * `verify.sh` runs TEST before CONTENT), so the one served here is folded in-test over the
@@ -39,8 +43,8 @@ import type { Levels, ModuleContent, WordIndex, WordIndexEntry } from './types.t
 /* ------------------------------------------------------------------ the authored tree */
 
 const COURSE = 'hi-en';
-/** The rungs #270 authored, in ladder order — the fold below is cumulative over this list. */
-const AUTHORED = ['L1-M1', 'L1-M2'] as const;
+/** The rungs #270 and #271 authored, in ladder order — the fold below is cumulative over this list. */
+const AUTHORED = ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5'] as const;
 
 const FILES = import.meta.glob<string>('../../content/hi-en/**/*.json', {
   query: '?raw',
@@ -136,9 +140,33 @@ function activateHiEn(): void {
 
 /** Passes L1-M1 the only way a rung can be passed (Invariant 1), so L1-M2 opens. */
 function passFirstRung(): void {
+  passRungsBefore('L1-M2');
+}
+
+/** Passes every authored rung before `moduleId`, in ladder order, so that rung opens. */
+function passRungsBefore(moduleId: string): void {
   const store = useAppStore.getState();
   store.setLadder(COURSE, ladderFromLevels(levels().levels));
-  store.passRitual(COURSE, 'L1-M1', STAMP);
+  for (const id of AUTHORED) {
+    if (id === moduleId) break;
+    store.passRitual(COURSE, id, STAMP);
+  }
+}
+
+/** Renders the Why panel under the real provider, as a session would, and waits for boot. */
+async function renderPanel(sentenceId: string, display: string) {
+  serveAuthoredHiEn();
+  activateHiEn();
+  render(
+    <CourseProvider>
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<WhyPanel sentenceId={sentenceId} display={display} />} />
+        </Routes>
+      </HashRouter>
+    </CourseProvider>,
+  );
+  await screen.findByRole('button', { name: 'क्यों?' });
 }
 
 /** Renders the app at a hash over the authored tree and waits for the frame. */
@@ -277,22 +305,6 @@ describe('Sentence Detail over the authored rungs', () => {
 /* ------------------------------------------------------------------- the Why panel */
 
 describe('the Why panel over a hi-en comprehension item', () => {
-  /** Renders the panel under the real provider, as a session would, and waits for boot. */
-  async function renderPanel(sentenceId: string, display: string) {
-    serveAuthoredHiEn();
-    activateHiEn();
-    render(
-      <CourseProvider>
-        <HashRouter>
-          <Routes>
-            <Route path="/" element={<WhyPanel sentenceId={sentenceId} display={display} />} />
-          </Routes>
-        </HashRouter>
-      </CourseProvider>,
-    );
-    await screen.findByRole('button', { name: 'क्यों?' });
-  }
-
   it("answers `No, I'm a teacher` with four rows — the contraction whole, the M1 rows loaded", async () => {
     await renderPanel('L1-M2-C05', "No, I'm a teacher");
     fireEvent.click(screen.getByRole('button', { name: 'क्यों?' }));
@@ -327,5 +339,139 @@ describe('the Why panel over a hi-en comprehension item', () => {
       expect.stringContaining('doctor'),
     ]);
     expect(within(rows[2]!).getByText(/व्यंजन की आवाज़ से पहले a/)).toBeInTheDocument();
+  });
+});
+
+/* ------------------------------------------------------- the next three rungs (#271) */
+
+describe('the module list over L1-M3, L1-M4 and L1-M5', () => {
+  it.each(['L1-M3', 'L1-M4', 'L1-M5'] as const)(
+    'renders the ten authored sentences of %s as ten cards once the rungs before it are passed',
+    async (moduleId) => {
+      serveAuthoredHiEn();
+      activateHiEn();
+      passRungsBefore(moduleId);
+      window.location.hash = `#/module/${moduleId}`;
+      render(<App />);
+      await screen.findByRole('main');
+      const authored = module(moduleId);
+
+      expect(await screen.findByText(authored.sentences[0]!.display)).toBeInTheDocument();
+      expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent(authored.title);
+      const cards = screen
+        .getAllByRole('link')
+        .filter((link) => link.getAttribute('href')?.startsWith('#/sentence/') === true);
+      expect(cards).toHaveLength(10);
+      expect(cards.map((card) => card.getAttribute('href'))).toEqual(
+        authored.sentences.map((sentence) => `#/sentence/${sentence.id}`),
+      );
+    },
+  );
+});
+
+describe('Sentence Detail over L1-M3, L1-M4 and L1-M5', () => {
+  it.each([
+    {
+      sentenceId: 'L1-M3-S05',
+      hero: "I don't want coffee",
+      literal: 'मैं नहीं चाहता कॉफ़ी',
+      word: "don't",
+      cue: 'नहीं (do + not)',
+      mistake: 'I not want coffee',
+    },
+    {
+      sentenceId: 'L1-M4-S08',
+      hero: 'Does he get up early?',
+      literal: 'क्या वह उठता जल्दी?',
+      word: 'does',
+      cue: '(he / she का सवाल-सहारा) · करता / करती है',
+      mistake: 'Does he gets up early?',
+    },
+    {
+      sentenceId: 'L1-M5-S06',
+      hero: "I didn't go to school yesterday",
+      literal: 'मैं नहीं गया को स्कूल कल',
+      word: "didn't",
+      cue: 'नहीं (did + not)',
+      mistake: "I didn't went to school yesterday",
+    },
+  ])(
+    'shows $sentenceId — English hero, no gloss, the WORD-FOR-WORD plate, the helper as one row',
+    async ({ sentenceId, hero, literal, word, cue, mistake }) => {
+      serveAuthoredHiEn();
+      activateHiEn();
+      passRungsBefore(sentenceId.slice(0, 5));
+      window.location.hash = `#/sentence/${sentenceId}`;
+      render(<App />);
+      await screen.findByRole('main');
+
+      const heading = await screen.findByRole('heading', { level: 2 });
+      expect(heading).toHaveTextContent(hero);
+      expect(heading).toHaveAttribute('lang', 'en');
+      expect(document.documentElement.lang).toBe('hi');
+      // #268 still holds past M2: no gloss paragraph, and the literal plate is there.
+      expect(section('gloss').querySelector('p[lang]')).toBeNull();
+      expect(within(section('gloss')).getByText('WORD-FOR-WORD')).toBeInTheDocument();
+      expect(within(section('gloss')).getByText(literal)).toBeInTheDocument();
+      // The contraction is ONE word row with its Hindi cue (the briefs' course-wide policy).
+      const words = section('words');
+      expect(within(words).getByText(word)).toBeInTheDocument();
+      expect(within(words).getByText(cue)).toBeInTheDocument();
+      expect(within(section('mistake')).getByText(mistake)).toBeInTheDocument();
+    },
+  );
+});
+
+describe('the Why panel over the M3–M5 comprehension items', () => {
+  it("answers `Do you want the book?` with five rows — `do` the helper, `the` the article, `book` on M1's `books` row", async () => {
+    await renderPanel('L1-M3-C08', 'Do you want the book?');
+    fireEvent.click(screen.getByRole('button', { name: 'क्यों?' }));
+
+    const theRow = await screen.findByText('वह / वही (जो पता है)');
+    const rows = within(theRow.closest('ul')!).getAllByRole('listitem');
+    expect(rows.map((row) => row.textContent)).toEqual([
+      expect.stringContaining('do'),
+      expect.stringContaining('you'),
+      expect.stringContaining('want'),
+      expect.stringContaining('the'),
+      expect.stringContaining('books'),
+    ]);
+    // `do` opens the note that defines BOTH jobs; `the` the article law; `book` the M1 row.
+    expect(within(rows[0]!).getByText(/एक शब्द, दो काम/)).toBeInTheDocument();
+    expect(within(rows[3]!).getByText(/हिंदी में ऐसा कोई शब्द नहीं/)).toBeInTheDocument();
+    expect(within(rows[4]!).getByText('किताबें')).toBeInTheDocument();
+  });
+
+  it('answers `He has two brothers` with `has` on the possession-only `have` row', async () => {
+    await renderPanel('L1-M4-C06', 'He has two brothers');
+    fireEvent.click(screen.getByRole('button', { name: 'क्यों?' }));
+
+    const haveRow = await screen.findByText('के पास होना · (मेरे) हैं');
+    const rows = within(haveRow.closest('ul')!).getAllByRole('listitem');
+    expect(rows.map((row) => row.textContent)).toEqual([
+      expect.stringContaining('he'),
+      expect.stringContaining('have'),
+      expect.stringContaining('two'),
+      expect.stringContaining('brothers'),
+    ]);
+    expect(within(rows[1]!).getByText(/I am having two brothers नहीं/)).toBeInTheDocument();
+  });
+
+  it("answers `I was at home yesterday` with `was` on M1's one `be` row, as M5 extended it", async () => {
+    await renderPanel('L1-M5-C08', 'I was at home yesterday');
+    fireEvent.click(screen.getByRole('button', { name: 'क्यों?' }));
+
+    const beRow = await screen.findByText('हूँ · है · हैं');
+    const rows = within(beRow.closest('ul')!).getAllByRole('listitem');
+    expect(rows.map((row) => row.textContent)).toEqual([
+      expect.stringContaining('I'),
+      expect.stringContaining('is'),
+      expect.stringContaining('at'),
+      expect.stringContaining('home'),
+      expect.stringContaining('Yesterday'),
+    ]);
+    // The note M5 wrote into M1's file — true of all five shapes — and M4's `at` in its place seat.
+    expect(within(rows[1]!).getByText(/बँटवारा वचन से, लिंग से नहीं/)).toBeInTheDocument();
+    expect(within(rows[2]!).getByText(/at home = घर पर/)).toBeInTheDocument();
   });
 });
