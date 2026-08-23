@@ -15,6 +15,7 @@ import {
   buildContent,
   buildWordIndex,
   checkComprehensionPool,
+  checkGlossEn,
   checkScriptMode,
   devBanner,
   gateModule,
@@ -771,6 +772,66 @@ describe('the scriptMode cross-check', () => {
     expect(report.lines.filter((line) => line.includes('warn'))).toEqual([
       expect.stringContaining('romanized surfaces carry no script line'),
     ]);
+  });
+});
+
+describe('the glossEn cross-check (#268)', () => {
+  /** The hi-mr clone with the gloss taken off one sentence and blanked on another. */
+  function withoutGloss(module: Module): Module {
+    delete module.sentences[3]!.glossEn;
+    module.sentences[5]!.glossEn = '   ';
+    return module;
+  }
+
+  /** The same edit, as a fixture would author it: the fourth sentence simply has no gloss. */
+  function dropGloss(module: Module): void {
+    delete module.sentences[3]!.glossEn;
+  }
+
+  it('accepts the authored clone — every sentence carries its gloss', () => {
+    expect(checkGlossEn(moduleFrom({ id: 'L1-M1' }), 'mr')).toEqual([]);
+  });
+
+  it('requires a non-empty gloss on every sentence of a course whose L2 is not English', () => {
+    expect(checkGlossEn(withoutGloss(moduleFrom({ id: 'L1-M1' })), 'mr')).toEqual([
+      '/sentences/3/glossEn: required unless the course\'s l2Tag is "en" (this row: "mr")',
+      '/sentences/5/glossEn: required unless the course\'s l2Tag is "en" (this row: "mr")',
+    ]);
+  });
+
+  it('has nothing to say where the L2 is English — the gloss would only repeat the hero', () => {
+    expect(checkGlossEn(withoutGloss(moduleFrom({ id: 'L1-M1' })), 'en')).toEqual([]);
+  });
+
+  it('fails the build under any other l2Tag, naming the module and the sentence', () => {
+    const tree = scaffold([
+      {
+        row: courseRow('en-es', { l1: 'English', l2: 'Spanish', l1Tag: 'en', l2Tag: 'es' }),
+        modules: [{ id: 'L1-M1', verified: true, edit: dropGloss }],
+      },
+    ]);
+
+    const { report } = build(tree, STRICT);
+
+    expect(report.exitCode).toBe(1);
+    expect(report.lines).toContain(
+      '  en-es/L1-M1.json: /sentences/3/glossEn: required unless the course\'s l2Tag is "en" (this row: "es")',
+    );
+  });
+
+  it('builds the same module under an l2Tag of en', () => {
+    const tree = scaffold([
+      {
+        row: courseRow('hi-en', { l1Tag: 'hi', l2Tag: 'en', l1: 'Hindi', l2: 'English' }),
+        modules: [{ id: 'L1-M1', verified: true, edit: dropGloss }],
+      },
+    ]);
+
+    const { report } = build(tree, STRICT);
+
+    expect(report.exitCode).toBe(0);
+    expect(shippedIds(report, 'hi-en')).toEqual(['L1-M1']);
+    expect(report.lines).toContain('CONTENT build: hi-en 1 module (L1-M1)');
   });
 });
 

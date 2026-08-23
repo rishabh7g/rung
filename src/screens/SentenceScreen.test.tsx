@@ -152,7 +152,7 @@ describe('the section order [D10]', () => {
     const sentence = fixture().sentences[0]!;
     expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent(sentence.display);
     expect(within(section('hero')).getByText(sentence.cue)).toBeInTheDocument();
-    expect(within(section('gloss')).getByText(sentence.glossEn)).toBeInTheDocument();
+    expect(within(section('gloss')).getByText(sentence.glossEn!)).toBeInTheDocument();
     expect(within(section('gloss')).getByText(sentence.literal!)).toBeInTheDocument();
 
     // The mnemonic's label is the course's, not the prototype's English (PRD §8 F3).
@@ -238,6 +238,55 @@ describe('a section with nothing in it', () => {
     // The sparse fixture carries `register: 'informal'` and no `usage`: the register is an
     // ornament on that section, never a reason for it to exist.
     expect(screen.queryByText('informal')).not.toBeInTheDocument();
+  });
+});
+
+/* ------------------------------------------------------------------- the gloss */
+
+describe('the gloss, where the sentence has none (#268)', () => {
+  /**
+   * `glossEn` is optional in the schema: the build requires it wherever the L2 is not English,
+   * and a course whose L2 IS English authors none, because it would print the hero twice. The
+   * screen knows nothing of that rule — it renders what is present. An `undefined` in the patch
+   * is a key the JSON answer simply does not carry.
+   */
+  it('renders no English paragraph, and still draws the word-for-word plate', async () => {
+    await renderSentence(FULL, { module: moduleWithSentence(FULL, { glossEn: undefined }) });
+
+    const sentence = fixture().sentences[0]!;
+    const gloss = section('gloss');
+    expect(gloss.querySelector('[lang]')).toBeNull();
+    expect(screen.queryByText(sentence.glossEn!)).not.toBeInTheDocument();
+    expect(gloss.children).toHaveLength(1);
+    expect(within(gloss).getByText('WORD-FOR-WORD')).toBeInTheDocument();
+    expect(within(gloss).getByText(sentence.literal!)).toBeInTheDocument();
+  });
+
+  it('drops the whole section when neither the gloss nor the literal is authored', async () => {
+    await renderSentence(FULL, {
+      module: moduleWithSentence(FULL, { glossEn: undefined, literal: undefined }),
+    });
+
+    expect(sections()).toEqual([
+      'hero',
+      'words',
+      'rules',
+      'trap',
+      'sound',
+      'variations',
+      'mistake',
+      'usage',
+      'mnemonic',
+    ]);
+    expect(screen.queryByText('WORD-FOR-WORD')).not.toBeInTheDocument();
+  });
+
+  it('still marks the gloss English where a course authors one', async () => {
+    await renderSentence(FULL);
+
+    const paragraph = section('gloss').querySelector('p[lang]');
+    expect(paragraph).toHaveAttribute('lang', 'en');
+    expect(paragraph).toHaveTextContent(fixture().sentences[0]!.glossEn!);
   });
 });
 

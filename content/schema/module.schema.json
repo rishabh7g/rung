@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/rishabh7g/rung/blob/main/content/schema/module.schema.json",
   "title": "rung module — schema v5",
-  "description": "Shape of one module file (content/<course>/modules/<id>.json). Frozen against the two authored hi-mr modules (L1-M1, L1-M2) and design/PRD-engineering.md §7. Counts, cross-file uniqueness and the M1-M3 enrichment rule live in tools/validate.ts, not here.",
+  "description": "Shape of one module file (content/<course>/modules/<id>.json). Frozen against the two authored hi-mr modules (L1-M1, L1-M2) and design/PRD-engineering.md §7, with one recorded relaxation since (#268, docs/design-contract.md): glossEn is no longer required here — tools/content-build.ts requires it on every sentence unless the course's l2Tag is en, where the gloss would only repeat the English hero line. Counts, cross-file uniqueness and the M1-M3 enrichment rule live in tools/validate.ts, not here.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -256,7 +256,7 @@
       "description": "Keys are authored in the frozen Sentence Detail order [D10]: hero, gloss, words, rules, trap, sound, variations, mistake, usage, mnemonic.",
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "display", "cue", "glossEn", "deconstruction"],
+      "required": ["id", "display", "cue", "deconstruction"],
       "properties": {
         "id": {
           "$ref": "#/$defs/sentenceId"
@@ -273,6 +273,7 @@
           "$ref": "#/$defs/text"
         },
         "glossEn": {
+          "description": "English gloss of the L2 line — required unless the course's L2 is English (`l2Tag: en`), where it would only repeat `display`; the course build enforces that.",
           "$ref": "#/$defs/text"
         },
         "literal": {

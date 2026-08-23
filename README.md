@@ -692,7 +692,11 @@ Four more things it owes:
 - **A section with nothing in it renders nothing.** No heading, no empty plate, no "not available".
   Enrichment is optional in the schema past M3, so an M4+ module may ship as hero + gloss + words +
   rules and nothing else — and that is a simple sentence, not a broken screen (asserted against a
-  sparse fixture).
+  sparse fixture). The gloss obeys the same rule since #268: `glossEn` is optional in the schema
+  and required by the build only where the course's L2 is not English (`checkGlossEn`, beside the
+  `scriptMode` cross-check), so a course whose L2 *is* English (hi-en) authors none — it would
+  print the hero twice — and its gloss section draws the `literal` alone, or nothing. The screen
+  branches on presence, never on a course id (`docs/design-contract.md`).
 - **Amber exactly once.** The interference trap is the only loud object on the screen
   (design/tokens.md §7 rule 2); the mistake plate is deliberately **neutral** — `--mistake-border`
   / `--mistake-bg`, struck text — because a common mistake is information about the language, not

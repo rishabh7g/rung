@@ -18,9 +18,9 @@
  *
  * Module validation is NOT reimplemented here — `validateModule` (#73) owns it, and `checkStrings`
  * (#76) owns the strings.json key list. This tool adds only what it alone knows: the manifest
- * shape, the course's `scriptMode`, the gate, and the per-module word index (#75) — which only a
- * whole-course build can compute, because a surface is taught once and stays taught for every
- * later module.
+ * shape, the course's `scriptMode` and `l2Tag` (the English gloss is optional only where the L2 is
+ * English, #268), the gate, and the per-module word index (#75) — which only a whole-course build
+ * can compute, because a surface is taught once and stays taught for every later module.
  */
 import { copyFileSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
@@ -303,6 +303,31 @@ export function checkScriptMode(module: Module, scriptMode: ScriptMode): ScriptM
   module.comprehensionPool.forEach((item, i) => visit(item, `/comprehensionPool/${i}`));
 
   return report;
+}
+
+/* ------------------------------------------------------------------- glossEn */
+
+/**
+ * The English gloss is optional in the schema (#268) and mandatory here for every course whose L2
+ * is not English: it is a THIRD language on hi-mr's screen and the learner's own on en-es and
+ * en-ar, and only where the L2 IS English (`l2Tag: en`, hi-en) would it print the hero line twice.
+ * The build is the one place that knows the course row, so this is where the rule lives — the same
+ * home as `checkScriptMode`. Nothing in the shell branches on it: Sentence Detail renders the gloss
+ * when it is present and nothing when it is not. `en` exactly — every row carries a bare language
+ * tag, and a regional English course would be a decision to take here, not to guess at.
+ */
+export function checkGlossEn(module: Module, l2Tag: string): string[] {
+  const errors: string[] = [];
+  if (l2Tag === 'en') return errors;
+
+  module.sentences.forEach((sentence, i) => {
+    if (!isNonEmptyString(sentence.glossEn)) {
+      errors.push(
+        `/sentences/${i}/glossEn: required unless the course's l2Tag is "en" (this row: "${l2Tag}")`,
+      );
+    }
+  });
+  return errors;
 }
 
 /* ---------------------------------------------------------------------- gate */
@@ -700,6 +725,7 @@ export function buildContent(options: BuildOptions): BuildReport {
 
       const scriptMode = checkScriptMode(module, row.scriptMode);
       for (const issue of scriptMode.errors) errors.push(`${name}: ${issue}`);
+      for (const issue of checkGlossEn(module, row.l2Tag)) errors.push(`${name}: ${issue}`);
 
       if (levels !== null && !known.has(module.id)) {
         errors.push(`${name}: "${module.id}" is not listed in ${row.id}/levels.json`);

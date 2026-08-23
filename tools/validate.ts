@@ -68,7 +68,8 @@ export interface ModuleSentence {
   display: string;
   script?: string;
   cue: string;
-  glossEn: string;
+  /** Optional in the schema (#268); the course build requires it unless the L2 is English. */
+  glossEn?: string;
   literal?: string;
   deconstruction: {
     words: ModuleWord[];

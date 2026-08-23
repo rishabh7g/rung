@@ -173,21 +173,30 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
         )}
       </section>
 
-      {/* 2 · gloss — English by definition (`glossEn`), then the word-for-word line. */}
-      <section data-section="gloss" className={styles.section}>
-        {/* `glossEn` is English by name — in hi-mr that is a THIRD language on the screen. */}
-        <p className={styles.gloss} lang="en">
-          {sentence.glossEn}
-        </p>
-        {sentence.literal !== undefined && (
-          <div className={styles.plateAccent}>
-            <h3 className={styles.sectionLabel}>WORD-FOR-WORD</h3>
-            <p className={styles.prose} dir={course.dir}>
-              {sentence.literal}
+      {/* 2 · gloss — the English gloss, then the word-for-word line. Both are optional: the build
+          requires the gloss wherever the L2 is not English (#268), and where the L2 IS English the
+          sentence carries none, because it would print the hero twice. So the section obeys the
+          rule every other optional section does — nothing to show, nothing rendered. */}
+      {(sentence.glossEn !== undefined || sentence.literal !== undefined) && (
+        <section data-section="gloss" className={styles.section}>
+          {/* The gloss is English wherever it exists — in hi-mr that is a THIRD language on the
+              screen — so it is the one line that declares its language as a literal rather than
+              through the manifest (`langLaw.test.tsx`). */}
+          {sentence.glossEn !== undefined && (
+            <p className={styles.gloss} lang="en">
+              {sentence.glossEn}
             </p>
-          </div>
-        )}
-      </section>
+          )}
+          {sentence.literal !== undefined && (
+            <div className={styles.plateAccent}>
+              <h3 className={styles.sectionLabel}>WORD-FOR-WORD</h3>
+              <p className={styles.prose} dir={course.dir}>
+                {sentence.literal}
+              </p>
+            </div>
+          )}
+        </section>
+      )}
 
       {/* 3 · words — the rows the "why" resolver lands on (PRD §6.3): word, cue, tag, note, forms. */}
       {sentence.deconstruction.words.length > 0 && (
