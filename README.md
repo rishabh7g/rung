@@ -127,14 +127,15 @@ issues that tracked it (#64, #110, #111) were closed by the owner on 2026-08-13,
 **22 open questions in `docs/08-marathi-third-review.md`** — which supersede the two
 earlier lists — are the only remaining record of what a native reviewer still owes.
 
-**One fixture course again: hi-en (#267, 2026-08-23).** All three courses ship and no module in
-the repo is unverified, so `npm run dev` and `npm run build` contain the same modules — the two
+**No fixture course again (#273, 2026-08-24).** All four courses ship and no module in the repo
+is unverified, so `npm run dev` and `npm run build` contain the same modules — the two
 relaxations are still enforced and still tested (`tools/content-build.test.ts` builds synthetic
-fixture rows and unverified modules and watches them be dropped). What they now relax is the
-fourth course: **hi-en — Hindi (L1) → English (L2)** — a manifest row with `fixture: true`, a
-3 × 10 ladder (`content/hi-en/levels.json`) and a Hindi strings bundle. A strict build reports
-`hi-en: 0 modules — fixture course, excluded by the gate` and does not emit the course; a dev
-build admits it (`--with-fixtures`) and ships whatever is authored. The ten L1 briefs landed with
+fixture rows and unverified modules and watches them be dropped), they simply have nothing in
+this repo to relax. The fourth course was authored behind them: **hi-en — Hindi (L1) → English
+(L2)** entered as #267's manifest row with `fixture: true`, a 3 × 10 ladder
+(`content/hi-en/levels.json`) and a Hindi strings bundle, so until #273 a strict build reported
+`hi-en: 0 modules — fixture course, excluded by the gate` and did not emit the course, while a
+dev build admitted it (`--with-fixtures`) and shipped whatever was authored. The ten L1 briefs landed with
 #269 (`tools/course-briefs.ts`, header section "hi-en: the four decisions a brief must settle" —
 Hindi in every teaching field, no `glossEn`, `literal` in English order, contractions as single
 index surfaces). **#270 authored L1-M1 and L1-M2** (`content/hi-en/modules/`, 17 + 15 word rows,
@@ -156,8 +157,7 @@ all five — **all ten L1 rungs are authored** — and reviewed them in
 each; `it` / `it's`, `where`, `this` (M8), `that` (M9), the joiners `and` / `but` / `also` / `then`;
 M10's turns are 2–3 sentences in one `display` (`minWordsPerSentence: 2`, no schema change). The one
 recorded deviation from the contraction policy: `I'll` (M6) lists only itself, so `I will` still opens
-the `will` row the brief wants tappable. The course is still a `fixture: true` row — graduation (#273)
-follows the en-es/en-ar path.
+the `will` row the brief wants tappable. Graduation (#273) followed the en-es/en-ar path — below.
 
 **en-es ships (#195, 2026-08-13) — the product has two courses.** All ten L1 rungs —
 `L1-M1`…`L1-M10` — are authored and carry `verified: true` on the same
@@ -189,6 +189,27 @@ face, not Mukta** — Mukta's `unicode-range` stops at U+00FF and it has no glyp
 marks fall through by design. Mixed-face, not tofu; the options are a face decision
 (docs/04-font-notes.md §4.1).
 
+**hi-en ships (#273, 2026-08-24) — the product has four courses, and the fourth is the first
+whose L2 is English.** Ten L1 rungs authored against ten briefs (#269 — `tools/course-briefs.ts`,
+"hi-en: the four decisions a brief must settle": Hindi in every teaching field, no `glossEn`,
+`literal` in English order, contractions as single index surfaces), reviewed in
+`docs/11-llm-review-hi-en-L1-M1-M2.md`, `docs/12-llm-review-hi-en-L1-M3-M5.md` and
+`docs/13-llm-review-hi-en-L1-M6-M10.md`, and shipping on the same LLM-review-plus-owner-authority
+bar as the other three. Dropping `fixture: true` from the hi-en row in `content/courses.json` —
+plus the L1 `draftNote` that called the ladder a fixture — was the whole change: a strict
+`npm run build` now emits `public/content/hi-en/` with levels, strings, ten modules and ten
+cumulative indexes, and the emitted `courses.json` lists **hi-mr, en-es, en-ar and hi-en**. No
+sentence carries a `glossEn`, by decision rather than omission: #268 made the gloss optional where
+`l2Tag` is `en`, because an English gloss of an English hero line would print the line twice. The
+chrome is Hindi (`revealLabel` = अंग्रेज़ी दिखाओ) and the Settings switcher offers the pair as
+`hindi → english`. Its L2/L3 ladders stay `draft: true` — placeholder lists, nothing authored.
+
+**No native or fluent-English reviewer has read a word of it.** The bar hi-en clears is LLM review
+plus the owner's authority, exactly the other three courses', and the **88 open questions** (20 +
+30 + 38) across the three review docs are what a fluent-English pass still owes — register and
+naturalness first. Graduating the course ships LLM-reviewed English to Hindi speakers; it does not
+close that gap.
+
 The payload budget holds, because #207 made it per learner: `course:en-es` **71.3 KiB** gzip
 against 360 and `course:en-ar` **96.6 KiB** against 360, with `course:hi-mr` **byte-identical**
 at 337.9 KiB across both graduations — a Spanish learner is never charged for hi-mr's Devanagari
@@ -197,6 +218,16 @@ or for Arabic, and vice versa. en-es's one shared cost was `shell` 210.4 → **2
 bytes every learner downloads. en-ar's shared cost was **negative** — `shell` **214.6 KiB**, down
 1.4, because Naskh had been charged to `shell` while en-ar was a fixture and now has an owner
 (docs/05-perf-notes.md §4.4, §4.5).
+
+hi-en is the heaviest row in the product, and it holds: `course:hi-en` **346.5 KiB** gzip against
+360 (13.5 KiB of headroom), `precache:hi-en` **561.1 KiB** against 590. A Hindi-chrome course is
+charged the Mukta Devanagari subset exactly as hi-mr is (`SCRIPT_BY_LANGUAGE_TAG`: `hi` →
+`devanagari`) — ≈ 85 KiB of JSON plus ≈ 261 KiB of face — and its Hindi teaching prose, three
+UTF-8 bytes a character, makes its JSON ≈ 8 KiB heavier than hi-mr's. hi-en's shared cost lands
+on hi-mr, not on `shell`: `tools/font-subset.ts` cuts the Devanagari faces over the union of
+shipped courses, so hi-en's repertoire grew the subset both Hindi courses download —
+`course:hi-mr` 336.3 → **338.7 KiB** (+2.4, its first move across three graduations), `shell`
+214.5 → 214.6, `course:en-es` and `course:en-ar` unchanged (docs/05-perf-notes.md §4.6).
 
 The two relaxations are independent (`--with-unverified`, `--with-fixtures`), and either
 one makes the output a **dev build**, which says so twice over: the run prints

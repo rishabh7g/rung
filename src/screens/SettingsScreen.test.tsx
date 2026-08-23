@@ -43,9 +43,8 @@ const COURSE = 'hi-mr';
 /**
  * The fourth course's AUTHORED files, not fixtures (#267): `content/hi-en/levels.json` and
  * `content/hi-en/strings.json`, read off disk the way `langLaw.test.tsx` reads the manifest. hi-en
- * is a fixture course with no module yet, so no build emits it and no browser on this host may
- * open it — this is the smoke that proves the skeleton boots: the row in the switcher, the
- * ten-rung ladder, the Hindi chrome.
+ * ships since #273, and no browser on this host may open it — this is the smoke that proves the
+ * course boots: the row in the switcher, the ten-rung ladder, the Hindi chrome.
  */
 const HI_EN_FILES = import.meta.glob<string>('../../content/hi-en/*.json', {
   query: '?raw',
@@ -252,11 +251,12 @@ describe('the COURSE dropdown (F0)', () => {
 
 /* ----------------------------------------------------- the fourth course, hi-en (#267) */
 
-describe('the fourth course — hi-en, authored behind the fixture gate (#267)', () => {
+describe('the fourth course — hi-en (#267, shipping since #273)', () => {
   /**
    * The switch flow above, run against the REAL hi-en files: the manifest row is in `DEV_MANIFEST`
-   * with `fixture: true`, and the fetch for hi-en's ladder and bundle answers with what
-   * `content/hi-en/` holds today — ten L1 rungs, all ten authored (#270–#272), Hindi chrome.
+   * (no `fixture` key since #273 graduated the course), and the fetch for hi-en's ladder and bundle
+   * answers with what `content/hi-en/` holds today — ten L1 rungs, all ten authored (#270–#272)
+   * and verified, Hindi chrome.
    * hi-mr keeps the test's own ten-rung ladder and its self-identifying fixture bundle, so the two
    * courses cannot be confused on screen. The authored rungs themselves — module list, Sentence
    * Detail, the Why panel — are walked in `src/course/hiEnAuthored.test.tsx`.
@@ -288,8 +288,8 @@ describe('the fourth course — hi-en, authored behind the fixture gate (#267)',
       .getAllByRole('option')
       .map((option) => option.textContent);
     expect(labels.at(-1)).toBe('hindi → english');
-    // The row reaches the app fixture key and all (`manifest.test.ts`); the switcher reads
-    // `pairLabel` and never the flag — a fixture course is offered like any other on a dev build.
+    // The switcher reads `pairLabel` and nothing else about the row (`manifest.test.ts`) — the
+    // fourth course is offered exactly like the first three, on a strict build as on a dev one.
     expect(within(select).getByRole('option', { name: 'hindi → english' })).toHaveValue('hi-en');
   });
 

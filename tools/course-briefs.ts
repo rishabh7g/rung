@@ -275,8 +275,9 @@
  * outside the fixed `Can I have`, the possessive `'s`, the passive, comparatives (L2-M9), conditionals
  * (L3-M4), and `-ing` anywhere except M6's arrangements and a starred `*I am knowing`.
  *
- * There is no seam-proof fixture to replace: `content/hi-en/modules/` does not exist until #270
- * authors L1-M1 against the brief below.
+ * There was no seam-proof fixture to replace: `content/hi-en/modules/` did not exist until #270
+ * authored L1-M1 against the brief below, and #273 graduated the course out of `fixture: true`
+ * — the fourth course shipping, all four courses briefed here.
  */
 
 /** PRD §5 module budget: at most 25 new words per module, every course, every level. */

@@ -48,7 +48,7 @@ After, per file, a strict learner build (`npx vite build` after the strict `cont
 The service worker precache lists exactly these nine woff2 and nothing else — no `.woff`, no
 `latin-ext`, no `vietnamese` anywhere in `dist/` (#90; the precache globs are unchanged, the
 files behind them shrank). *Since #211 it lists **six**: the three script subsets moved to the
-runtime route the active course warms (§4.7).*
+runtime route the active course warms (§4.8).*
 
 ## 2. The cuts, and who authorised each
 
@@ -171,13 +171,14 @@ ceiling.
 | `splash`         | raw     |  70.3 KiB | 100 KiB |  29.7 KiB |
 | `unmetered`      | files   |  0 files  | 0 files |         — |
 
-Since #202 the repo holds **no fixture course and no unverified module**, so the two builds carry
-the same three courses and differ only in `/dev/type`: the specimen's glyphs are harvested into
-Mukta on a dev build and not on a strict one. That is the whole gap — the strict learner build
-reads `first-paint` 173.5, `js` 94.9, `shell` **214.6**, `course:hi-mr` 337.9, `course:en-es` 71.3,
-`course:en-ar` 96.6, `precache:hi-mr` 552.5, `precache:en-es` 285.9 and `precache:en-ar` 311.2 KiB
-gzip. The limits stay keyed to the dev build: it is the larger of the two, and it is the one a
-future fixture course would grow.
+Since #273 the repo again holds **no fixture course and no unverified module** (hi-en was one
+from #267 to #273), so the two builds carry the same four courses and differ only in `/dev/type`:
+the specimen's glyphs are harvested into Mukta on a dev build and not on a strict one. That is the
+whole gap — the strict learner build of 2026-08-24 reads `first-paint` 173.5, `js` 94.9, `shell`
+**214.6**, `course:hi-mr` 338.7, `course:en-es` 69.9, `course:en-ar` 109.0, `course:hi-en`
+**346.5**, `precache:hi-mr` 553.3, `precache:en-es` 284.5, `precache:en-ar` 323.5 and
+`precache:hi-en` 561.1 KiB gzip (§4.6). The limits stay keyed to the dev build: it is the larger
+of the two, and it is the one a future fixture course would grow.
 
 ### 4.4 What graduating a course actually cost (#195, en-es)
 
@@ -239,6 +240,50 @@ Mukta's `unicode-range` entirely (docs/04-font-notes.md §4.1), so there is no u
 both a romanized `display` and a native `script` line in every sentence and pool item, so its JSON
 is roughly a third larger, plus ~10 KiB of Naskh.
 
+### 4.6 What the third graduation cost — the first shared script (#273, hi-en, 2026-08-24)
+
+hi-en is the case §4.8's last paragraph was waiting for: a **second Devanagari course**. Hindi is
+its L1, so `SCRIPT_BY_LANGUAGE_TAG` charges it the Mukta Devanagari subset exactly as it charges
+hi-mr, and `tools/font-subset.ts` cuts that subset over the union of both courses' repertoires.
+Strict build, before → after:
+
+| row              | before | after | Δ |
+| ---------------- | -----: | ----: | -: |
+| `first-paint`    | 173.5 KiB | 173.5 KiB | **0.0** |
+| `js`             |  94.9 KiB |  94.9 KiB | **0.0** |
+| `shell`          | 214.5 KiB | 214.6 KiB | **+0.1** |
+| `course:hi-mr`   | 336.3 KiB | 338.7 KiB | **+2.4** |
+| `course:en-es`   |  69.9 KiB |  69.9 KiB | **0.0** |
+| `course:en-ar`   | 109.0 KiB | 109.0 KiB | **0.0** |
+| `precache:hi-mr` | 550.8 KiB | 553.3 KiB | **+2.5** |
+| `precache:en-es` | 284.5 KiB | 284.5 KiB | **0.0** |
+| `precache:en-ar` | 323.5 KiB | 323.5 KiB | **0.0** |
+| `course:hi-en`   | — | **346.5 KiB** / 360 | new row |
+| `precache:hi-en` | — | **561.1 KiB** / 590 | new row |
+
+**`course:hi-mr` moved for the first time — +2.4 KiB — and the reason is the union.** The Mukta
+subsets grew 317,184 → 319,792 bytes raw: hi-en's Hindi teaching prose brings glyphs hi-mr's
+content never used — one new character (the vowel sign ृ) and some thirty conjuncts hi-mr never
+writes (ग्र, स्व, स्ट, क्ट, …) that the GSUB closure pulls into the cut — and a shared subset is
+charged to every course that reads its script, so both Hindi courses pay for both repertoires.
+That is the arrangement §4.2 chose and §4.8 named as the remaining gap; now it is a measured
+number rather than a prediction, and it is small. The alternative — one subset per course — would
+cost a learner who switches between hi-mr and hi-en a second ~260 KiB download of nearly the same
+face, which is worse than 2.4 KiB for everyone on either.
+
+**`course:hi-en` at 346.5 KiB is the heaviest row in the product**, 7.8 KiB above hi-mr for the
+same ten rungs and the same three woff2: ≈ 261 KiB of Devanagari face that both rows carry, plus
+≈ 85 KiB of JSON against hi-mr's ≈ 77. The JSON is heavier because every teaching field —
+`rules[].text`, mnemonics, notes, `literal` — is Hindi in Devanagari (the language law,
+`tools/course-briefs.ts` "hi-en: the four decisions"), three UTF-8 bytes a character where hi-mr's
+notes are ASCII. Headroom is **13.5 KiB** against the 360 KiB ceiling, which is tighter than
+hi-mr's 21.3 and the row to watch if L1 is ever re-authored longer; the levers are §4.7's, in order,
+and the ceiling was not touched.
+
+Everything else is noise: `shell` +0.1 because `courses.json` grew a row, `first-paint` and `js`
+unchanged to the tenth, en-es and en-ar untouched — a Spanish or Arabic learner is never charged
+for Devanagari, and the fourth course proved it again on the row with the least headroom.
+
 **One ceiling for every course** (360 KiB), not a table of per-course numbers: a limit keyed by
 course id would be logic about a course, and every course is entitled to the same room. It is
 hi-mr's measured payload + ~5%, i.e. "one course may cost a learner about what the heaviest course
@@ -254,7 +299,7 @@ asset class (an `.mp3`, a `.wasm`, a second content root) must be given a budget
 rather than riding along inside a bigger row. It is a file-count gate, so a 0-byte newcomer trips
 it too.
 
-### 4.6 When a row goes red — in this order
+### 4.7 When a row goes red — in this order
 
 1. **Read which row it is.** `course:<id>` — only that course's learners pay, and the fix belongs
    in that course's bytes. `shell` — every learner in every course pays, so it is worth several
@@ -278,7 +323,7 @@ it too.
    it was under `total`: the catalogue no longer inflates any row, so a red row now means one
    course, or the shell, genuinely got heavier — a regression, not arithmetic.
 
-### 4.7 Closed: `precache:<id>` now describes the device (#211, 2026-08-13)
+### 4.8 Closed: `precache:<id>` now describes the device (#211, 2026-08-13)
 
 This section used to record a gap. `tools/pwa.ts`'s `PRECACHE_GLOBS` took `content/**/*.json` and
 `**/*.woff2`, so the worker precached **every** course's JSON and **every** font subset on first
@@ -311,10 +356,11 @@ kilobyte on the wire for every learner, against 258 KiB of Devanagari a Spanish 
 longer stores.
 
 **What is still not scoped**, a smaller gap in the same direction: `tools/font-subset.ts` unions
-the repertoires of every shipped course into one set of subset files per script, so if two Devanagari courses ever ship,
-each will carry the other's glyphs and both `course:` rows will charge for the union. Today exactly
-one course reads each script, so the numbers above are exact; `attribute()` charges a shared subset
-to every course that reads its script, which keeps the arithmetic honest when that changes.
+the repertoires of every shipped course into one set of subset files per script, so two courses
+in one script each carry the other's glyphs and both `course:` rows charge for the union. Since
+#273 that is the case for Devanagari — hi-mr and hi-en — and §4.6 measured it: +2.4 KiB on
+`course:hi-mr`. `attribute()` charges a shared subset to every course that reads its script, which
+is what keeps the arithmetic honest; the numbers above are exact for the catalogue of their date.
 
 ## 5. First load ≤ 2 s on mid-range Android (#114)
 

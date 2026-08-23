@@ -32,8 +32,9 @@ import {
   type ShippedFile,
 } from './payload-budget.ts';
 
-/** The three courses a strict build emits, as the manifest carries them — hi-en (#267) is a
-    fixture row the gate drops, so it reaches no emitted manifest and no budget row yet. */
+/** Three of the four courses a strict build emits, as the manifest carries them — one per
+    attribution shape (a script, no script, a romanized script). hi-en (#273) maps like hi-mr,
+    `['devanagari']`, and shares its subset; the manifest test below pins that mapping. */
 const HI_MR: ShippedCourse = { id: 'hi-mr', scripts: ['devanagari'] };
 const EN_ES: ShippedCourse = { id: 'en-es', scripts: [] };
 const EN_AR: ShippedCourse = { id: 'en-ar', scripts: ['arabic'] };
@@ -71,7 +72,7 @@ describe('reading the shipped courses off the manifest', () => {
         { id: 'hi-mr', l1Tag: 'hi', l2Tag: 'mr' },
         { id: 'en-es', l1Tag: 'en', l2Tag: 'es' },
         { id: 'en-ar', l1Tag: 'en', l2Tag: 'ar' },
-        { id: 'hi-en', l1Tag: 'hi', l2Tag: 'en', fixture: true },
+        { id: 'hi-en', l1Tag: 'hi', l2Tag: 'en' },
       ],
     });
 
@@ -79,7 +80,7 @@ describe('reading the shipped courses off the manifest', () => {
       { id: 'hi-mr', scripts: ['devanagari'] }, // both tags, deduped to one subset
       { id: 'en-es', scripts: [] }, // Latin: no font subsets of its own
       { id: 'en-ar', scripts: ['arabic'] }, // romanized still ships the native line's face (#197)
-      { id: 'hi-en', scripts: ['devanagari'] }, // Hindi chrome over English sentences (#267): the L1 pays for the face
+      { id: 'hi-en', scripts: ['devanagari'] }, // Hindi chrome over English sentences (#267, shipping since #273): the L1 pays for the face
     ]);
   });
 
