@@ -1,20 +1,17 @@
 /**
  * Test fixture for the emitted course manifest (#79).
  *
- * A trimmed copy of what `npm run dev` writes to `public/content/courses.json` once hi-en ships a
- * module — the envelope with its dev keys, hi-mr first, en-ar carrying `romanizationNote` so the
- * loader is exercised against a row that has more than the nine required fields, and hi-en
- * carrying `fixture: true`. Shared, so the loader test and the boot tests cannot drift into
- * disagreeing about the shape.
+ * A trimmed copy of what `npm run dev` writes to `public/content/courses.json` — the envelope
+ * with its dev keys, hi-mr first, en-ar carrying `romanizationNote` so the loader is exercised
+ * against a row that has more than the nine required fields, and hi-en last. Shared, so the loader
+ * test and the boot tests cannot drift into disagreeing about the shape.
  *
- * **One row carries `fixture` again.** en-es graduated in #195 and en-ar in #202, and #267 added
- * hi-en — Hindi (L1) → English (L2) — behind the same gate: `content/courses.json` lists it with
- * `fixture: true`, so a strict build drops the whole course and only `--with-fixtures` can emit
- * it. Since #270 authored L1-M1 and L1-M2 the dev build emits the row exactly like this (the
- * build filters the manifest to courses that shipped ≥ 1, and hi-en now ships ten), which is how
- * the Settings smoke (`src/screens/SettingsScreen.test.tsx`) and the authored-rung walk
- * (`src/course/hiEnAuthored.test.tsx`) reach the fourth course without a browser. The row
- * graduates with #273, as the other two did.
+ * **No row carries `fixture`.** en-es graduated in #195, en-ar in #202 and hi-en — Hindi (L1) →
+ * English (L2), added behind the gate in #267 and authored in #270–#272 — in #273, so all four
+ * courses ship and a strict build emits the same four rows (minus the dev keys). The Settings
+ * smoke (`src/screens/SettingsScreen.test.tsx`) and the authored-rung walk
+ * (`src/course/hiEnAuthored.test.tsx`) reach the fourth course through this copy, without a
+ * browser. The `fixture` seam itself is still tested — the loader test flags a row of its own.
  */
 import { vi } from 'vitest';
 import { completeStrings } from './courseStrings.ts';
@@ -69,7 +66,6 @@ export const DEV_MANIFEST = {
       pairLabel: 'hindi → english',
       scriptMode: 'native',
       dir: 'ltr',
-      fixture: true,
     },
   ],
 } as const;

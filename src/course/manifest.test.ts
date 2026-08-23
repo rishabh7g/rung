@@ -39,20 +39,21 @@ describe('loadCourses', () => {
     });
     // en-ar carries more than the nine required fields; the loader keeps them, never rejects them.
     expect(courses[2]?.romanizationNote).toMatch(/Modern Standard Arabic/);
-    // en-es graduated in #195 and en-ar in #202 — a shipping course carries no fixture key at all.
-    // hi-en (#267) is the one course authored behind the gate today, and the key says so.
-    expect(courses.slice(0, 3).some((course) => course.fixture !== undefined)).toBe(false);
-    expect(courses[3]).toMatchObject({ id: 'hi-en', l1Tag: 'hi', l2Tag: 'en', fixture: true });
+    // en-es graduated in #195, en-ar in #202 and hi-en in #273 — a shipping course carries no
+    // fixture key at all, and today every course ships.
+    expect(courses.some((course) => course.fixture !== undefined)).toBe(false);
+    expect(courses[3]).toMatchObject({ id: 'hi-en', l1Tag: 'hi', l2Tag: 'en' });
   });
 
   /**
-   * `--with-fixtures` and the `fixture` key are the seam a course #4 is authored behind (PRD §17):
-   * hi-en is that course since #267. The loader keeps the key rather than validating it away, so
-   * the row reaches the app intact — the key is what `resolveActiveCourse` and the Settings
-   * switcher never branch on, and what graduation (#273) deletes.
+   * `--with-fixtures` and the `fixture` key are the seam a course is authored behind (PRD §17):
+   * hi-en was that course from #267 until #273 graduated it, and a course #5 will be. The loader
+   * keeps the key rather than validating it away, so the row reaches the app intact — the key is
+   * what `resolveActiveCourse` and the Settings switcher never branch on, and what graduation
+   * deletes. No authored row carries it today, so the test flags one of its own.
    */
-  it('keeps a fixture row intact — the course authored behind the gate reaches the app as one', () => {
-    const row = DEV_MANIFEST.courses[3];
+  it('keeps a fixture row intact — a course authored behind the gate reaches the app as one', () => {
+    const row = { ...DEV_MANIFEST.courses[3], fixture: true };
 
     const manifest = parseManifest({ devBuild: true, courses: [row] });
 

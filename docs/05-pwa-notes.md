@@ -107,7 +107,7 @@ is a bug in the app rather than a case for a network fallback. The flaw is not i
 is in the word *everything*. A precache manifest is baked at **build** time; the learner picks
 their course at **run** time. "Everything" therefore meant the whole catalogue, and with three
 courses that is a Spanish learner's phone holding hi-mr's 258 KiB of Devanagari for ever
-(`docs/05-perf-notes.md` §4.5 recorded exactly this gap).
+(`docs/05-perf-notes.md` §4.8 recorded exactly this gap).
 
 So the split is now:
 
