@@ -1,0 +1,487 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M2",
+  "title": "First exchange",
+  "job": "Greetings, wellbeing, yes/no questions",
+  "prerequisites": ["L1-M1"],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-23",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 5,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "Hello / Good morning + , + name",
+      "How are you?",
+      "I'm + Adj + , thank you",
+      "Are you + a/an + N / Adj / from + place?",
+      "What is your name?",
+      "Yes, I am / No, I'm not"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "हाँ/ना का सवाल be को कर्ता के आगे ले आता है — You are a doctor → Are you a doctor? — जबकि हिंदी आगे क्या जोड़ती है और कुछ नहीं हिलाती (क्या आप डॉक्टर हैं?). अंग्रेज़ी में क्या के लिए कोई शब्द नहीं है: are ख़ुद आगे आता है. सवाल के शब्द वाला सवाल भी उसी साँचे में — शब्द सबसे पहले, be उसके ठीक बाद: How are you? · What is your name? सिर्फ़ ? लगा देना (You are a doctor?) हिंदी की आदत है, सवाल नहीं; और हर सवाल ? पर ख़त्म होता है."
+    },
+    {
+      "tag": "delta",
+      "text": "छोटा जवाब क्रिया रखता है, बाक़ी छोड़ देता है: Yes, I am · No, I'm not. हिंदी हाँ / नहीं अकेले कहती है या पूरा वाक्य दोहराती है — अंग्रेज़ी में दोनों चल जाते हैं, पर छोटा जवाब ही मुहावरा है. वाक्य के आख़िर का am कभी सिकुड़ता नहीं: Yes, I am — *Yes, I'm नहीं."
+    },
+    {
+      "tag": "delta",
+      "text": "बोलचाल शब्दों को जोड़ देती है: I am → I'm, एक शब्द, बीच में सीधा apostrophe (') — और लिखने में भी वहीं I'm आता है जहाँ बोलने में आता है: I'm fine · No, I'm not. I am पूरा तब, जब am ही सबक़ हो (M1 का I am a student) या वाक्य वहीं ख़त्म हो (Yes, I am). दोनों रूप एक ही शब्द हैं, एक ही मतलब."
+    },
+    {
+      "tag": "delta",
+      "text": "तू · तुम · आप — तीनों के लिए एक you, और एक हो या कई, हमेशा are: you are. आप हैं की बहुवचन-सी क्रिया की आदत यहाँ काम आती है; नया सिर्फ़ यह है कि चुनने को कुछ नहीं — जो आदर हिंदी सर्वनाम और क्रिया में रखती है, अंग्रेज़ी शब्दों में रखती है: thank you, Good morning, नाम लेकर बुलाना, please (M8)."
+    },
+    {
+      "tag": "delta",
+      "text": "विशेषण कभी नहीं बदलता: fine, tired — आदमी, औरत, एक, कई, सबके लिए एक रूप: I'm fine · you are fine · Rohan is fine · Priya is tired. हिंदी का ठीक भी नहीं बदलता, पर थका / थकी / थके बदलता है — अंग्रेज़ी में वह फ़र्क़ है ही नहीं. यह आराम की जगह है."
+    },
+    {
+      "tag": "free",
+      "text": "अभिवादन और जवाब के शब्दों में सीखने को कोई व्याकरण नहीं — Hello, Good morning, thank you, Yes, No जमी हुई बातें हैं, जैसे हिंदी में नमस्ते और धन्यवाद: पूरी की पूरी याद करो, अंदर के शब्दों को मत तोड़ो. इनके साथ comma आता है — Hello, Rohan · Yes, I am · I'm fine, thank you."
+    },
+    {
+      "tag": "delta",
+      "text": "be के साथ नहीं कहने को बस not चाहिए, और वह be के बाद आता है: I'm not · Rohan is not a doctor · you are not tired. हिंदी का नहीं क्रिया से पहले बैठता है (नहीं हूँ), अंग्रेज़ी का not उसके बाद. जवाब वाला No और वाक्य के अंदर वाला not दो अलग शब्द हैं — हिंदी में दोनों नहीं. बाक़ी क्रियाओं का नहीं (don't) M3 में आएगा."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M2-S01",
+      "display": "Hello, my name is Rohan",
+      "cue": "नमस्ते, मेरा नाम रोहन है",
+      "literal": "नमस्ते, मेरा नाम है रोहन",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Hello",
+            "cue": "नमस्ते",
+            "tag": "free",
+            "forms": [],
+            "note": "नमस्ते / हेलो — दिन के किसी भी वक़्त, किसी से भी; फ़ोन पर भी यही. अंग्रेज़ी की सबसे आम शुरुआत. इसके बाद comma, फिर नाम या बात: Hello, Rohan · Hello, my name is Rohan."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "हिंदी की आदत Hello के बाद 'जी' जोड़ने की है — अंग्रेज़ी में Hello अकेला काफ़ी है; आगे सीधे नाम या बात. और M1 का वाक्य यहाँ वैसे का वैसा चलता है: comma के बाद my name is Rohan.",
+      "sound": "Hello = हलो / हेलो — दूसरे हिस्से पर ज़ोर: ह-लो. comma पर ज़रा रुको, फिर my name is Rohan एक साँस में.",
+      "variations": [
+        {
+          "display": "Hello, my name is Priya",
+          "cue": "नमस्ते, मेरा नाम प्रिया है",
+          "changed": "नाम बदला — Hello, फिर M1 का साँचा वैसा ही."
+        },
+        {
+          "display": "Hello, I am Rohan",
+          "cue": "नमस्ते, मैं रोहन हूँ",
+          "changed": "my name is → I am: छोटा रास्ता, वही मतलब — I am + नाम भी चलता है."
+        }
+      ],
+      "mistake": {
+        "display": "Hello, I Rohan",
+        "why": "हिंदी में बोलचाल का 'मैं रोहन' चल जाता है, अंग्रेज़ी में क्रिया कभी नहीं छूटती — I am Rohan, या my name is Rohan."
+      },
+      "usage": "पहली मुलाक़ात या फ़ोन की पहली लाइन — Hello, फिर अपना नाम.",
+      "register": "neutral",
+      "mnemonic": "Hello दरवाज़ा खोलता है, my name is … अंदर आता है — पहले खटखटाओ, फिर बताओ कौन हो."
+    },
+    {
+      "id": "L1-M2-S02",
+      "display": "Good morning, Rohan",
+      "cue": "सुप्रभात, रोहन",
+      "literal": "अच्छी सुबह, रोहन",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Good morning",
+            "cue": "सुप्रभात",
+            "tag": "delta",
+            "forms": [],
+            "note": "दो शब्द, एक अभिवादन — पूरा का पूरा याद करो. अंदर का good कुछ बयान नहीं कर रहा, सुबह की तारीफ़ नहीं है; यह बस सुबह का नमस्ते है, और सुबह तक ही: दोपहर के बाद Good afternoon, शाम को Good evening. नमस्ते की तरह हर वक़्त नहीं चलता — यही नया है."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "नमस्ते घड़ी नहीं देखता, Good morning देखता है — दोपहर के बाद Good morning कहना ग़लत लगता है. और इसे तोड़कर मत पढ़ो: यह 'अच्छी सुबह' नहीं, एक जमी हुई बात है.",
+      "sound": "Good morning = गुड मॉर्निंग — good में oo छोटा 'उ'; morning में r हल्का, ज़ोर पहले हिस्से पर: मॉर-निंग.",
+      "variations": [
+        {
+          "display": "Good morning, Priya",
+          "cue": "सुप्रभात, प्रिया",
+          "changed": "नाम बदला — Good morning वैसे का वैसा."
+        },
+        {
+          "display": "Good morning, teacher",
+          "cue": "सुप्रभात, शिक्षक जी",
+          "changed": "नाम की जगह teacher — कक्षा का अभिवादन, भारत में बहुत आम."
+        }
+      ],
+      "mistake": {
+        "display": "Good night, Rohan",
+        "why": "Good night मिलने का नहीं, विदा लेने का शब्द है — सोने जाते वक़्त. शाम को मिलो तो Good evening; सुबह Good morning."
+      },
+      "usage": "सुबह, दोपहर से पहले — दफ़्तर, कक्षा, दुकान, कहीं भी; नाम के साथ या बिना.",
+      "register": "neutral",
+      "mnemonic": "सूरज के साथ उठता है, दोपहर को सो जाता है — Good morning सिर्फ़ सुबह का."
+    },
+    {
+      "id": "L1-M2-S03",
+      "display": "How are you?",
+      "cue": "आप कैसे हैं?",
+      "literal": "कैसे हैं आप?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "How",
+            "cue": "कैसे",
+            "tag": "delta",
+            "forms": [],
+            "note": "कैसे — और सवाल का शब्द अंग्रेज़ी में सबसे पहले आता है, उसके ठीक बाद क्रिया: How are you? हिंदी का कैसे बीच में बैठता है (आप कैसे हैं?), अंग्रेज़ी का How सबसे आगे. सिर्फ़ 'कैसे' — 'कितना' (how much) M8 में."
+          },
+          {
+            "display": "you",
+            "cue": "तुम · आप",
+            "tag": "delta",
+            "forms": [],
+            "note": "तू · तुम · आप — तीनों के लिए एक ही you, और एक हो या कई, हमेशा are के साथ: you are. आप हैं की बहुवचन-सी क्रिया की आदत यहाँ काम आती है; नया यह है कि चुनने को कुछ नहीं — आदर शब्दों में जाता है (thank you, Good morning, नाम), सर्वनाम में नहीं."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "हाथ 'आप कैसे हैं' के क्रम में You how are? लिखता है — सवाल का शब्द पहले, फिर are, फिर you. और आप के लिए कोई ख़ास you नहीं: एक ही you सबके लिए.",
+      "sound": "How = हाउ. are = आर. you = यू. तीनों एक साँस में, बीच में रुके बिना — और आख़िर में ? की चढ़ान नहीं, यह हाँ/ना का सवाल नहीं है.",
+      "variations": [
+        {
+          "display": "How are you, Rohan?",
+          "cue": "आप कैसे हैं, रोहन?",
+          "changed": "नाम जुड़ा — comma के बाद, सवाल वही."
+        },
+        {
+          "display": "How is Rohan?",
+          "cue": "रोहन कैसा है?",
+          "changed": "you → Rohan: are → is — be का रूप कर्ता के साथ बदला, How अपनी जगह."
+        }
+      ],
+      "mistake": {
+        "display": "You are how?",
+        "why": "हिंदी का क्रम — आप कैसे हैं. अंग्रेज़ी में सवाल का शब्द सबसे आगे और क्रिया उसके ठीक बाद: How are you?"
+      },
+      "usage": "Hello के बाद की दूसरी लाइन — हर माहौल में, हर किसी से. जवाब: I'm fine, thank you.",
+      "register": "neutral",
+      "mnemonic": "सवाल का शब्द सबसे आगे चलता है — जैसे झंडा: How पहले, बाक़ी पीछे."
+    },
+    {
+      "id": "L1-M2-S04",
+      "display": "I'm fine, thank you",
+      "cue": "मैं ठीक हूँ, धन्यवाद",
+      "literal": "मैं-हूँ ठीक, धन्यवाद",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "I'm",
+            "cue": "मैं हूँ",
+            "tag": "delta",
+            "forms": ["I'm", "I am"],
+            "note": "I am का बोलचाल वाला रूप — I'm, एक शब्द, बीच में सीधा apostrophe ('). बोलने में लगभग हमेशा I'm, और लिखने में भी जहाँ बात बोलने जैसी हो: I'm fine · I'm from Delhi · No, I'm not. दोनों का मतलब एक — I am वही है, बस पूरा. सिर्फ़ वाक्य के आख़िर में छोटा रूप नहीं चलता: Yes, I am — *Yes, I'm नहीं."
+          },
+          {
+            "display": "fine",
+            "cue": "ठीक",
+            "tag": "delta",
+            "forms": [],
+            "note": "ठीक — और अंग्रेज़ी का विशेषण कभी नहीं बदलता: आदमी, औरत, एक, कई — I'm fine · you are fine · Rohan is fine. ठीक वैसे ही रहता है, पर थका / थकी बदलता है; fine, tired नहीं बदलते."
+          },
+          {
+            "display": "thank you",
+            "cue": "धन्यवाद",
+            "tag": "free",
+            "forms": [],
+            "note": "दो शब्द, एक बात — धन्यवाद / शुक्रिया. पूरा का पूरा याद करो; अंदर का you वही तुम / आप है, पर जोड़ा पूरा का पूरा चलता है — तोड़कर नहीं. छोटा रूप thanks भी चलता है. आप वाली विनम्रता अंग्रेज़ी में ऐसे ही शब्दों से आती है."
+          }
+        ],
+        "rules": [2, 4, 5]
+      },
+      "trap": "'मैं ठीक हूँ' सुनकर हाथ I am fine लिखेगा — ग़लत नहीं, पर बोलचाल में I'm fine कहते हैं. और thank you को 'धन्यवाद आपको' की तरह मत तोड़ो — यह एक जमा हुआ जोड़ा है.",
+      "sound": "I'm = आइम — एक ही साँस, apostrophe कुछ नहीं बोलता. fine = फ़ाइन. thank you = थैंक यू — th में जीभ दाँतों के बीच, 'ट' नहीं, 'थ' के पास.",
+      "variations": [
+        {
+          "display": "I'm fine, Rohan",
+          "cue": "मैं ठीक हूँ, रोहन",
+          "changed": "thank you की जगह नाम — I'm fine वही."
+        },
+        {
+          "display": "I am fine, thank you",
+          "cue": "मैं ठीक हूँ, धन्यवाद",
+          "changed": "पूरा रूप I am — वही मतलब, बस ज़्यादा लिखा हुआ लगता है; बोलचाल I'm."
+        }
+      ],
+      "mistake": {
+        "display": "Im fine, thank you",
+        "why": "apostrophe ज़रूरी है — I'm = I + am, और Im कोई शब्द नहीं. देवनागरी में ऐसा निशान नहीं होता, इसलिए हाथ इसे छोड़ देता है."
+      },
+      "usage": "How are you? का जवाब — हर माहौल में. thank you जवाब को विनम्र बनाता है.",
+      "register": "neutral",
+      "mnemonic": "I am दौड़ा तो I'm रह गया — a गिर गया, उसकी जगह ' खड़ा है."
+    },
+    {
+      "id": "L1-M2-S05",
+      "display": "What is your name?",
+      "cue": "आपका नाम क्या है?",
+      "literal": "क्या है आपका नाम?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "What",
+            "cue": "क्या",
+            "tag": "delta",
+            "forms": [],
+            "note": "क्या — पर सिर्फ़ 'कौन-सी चीज़' वाला क्या, और सबसे आगे: What is your name? हिंदी का क्या दो काम करता है — नाम क्या है (क्या = what) और क्या आप डॉक्टर हैं? (हाँ/ना का सवाल); अंग्रेज़ी में दूसरे काम के लिए कोई शब्द नहीं — वहाँ be आगे आता है (Are you a doctor?)."
+          },
+          {
+            "display": "your",
+            "cue": "तुम्हारा · आपका",
+            "tag": "delta",
+            "forms": [],
+            "note": "तुम्हारा · तुम्हारी · तुम्हारे · आपका · आपकी · आपके — सबके लिए एक your; my की तरह चीज़ के लिंग-वचन से नहीं बदलता, और तुम / आप के फ़र्क़ से भी नहीं."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "आपका नाम क्या है का क्रम What को बीच में रखवाता है — Your name what is? नहीं: What सबसे आगे, फिर is, फिर your name. और M1 का जवाब तैयार है: My name is …",
+      "sound": "What = वॉट — h लगभग चुप. your = योर. What is जुड़कर अक्सर 'वॉट्स' सुनाई देता है — लिखो पूरा, सुनो जुड़ा हुआ.",
+      "variations": [
+        {
+          "display": "Is your name Rohan?",
+          "cue": "क्या आपका नाम रोहन है?",
+          "changed": "What हटा — हाँ/ना का सवाल: अब is सबसे आगे, your name उसके बाद."
+        }
+      ],
+      "mistake": {
+        "display": "Your name what is?",
+        "why": "हिंदी का क्रम. अंग्रेज़ी में सवाल का शब्द सबसे पहले और क्रिया उसके ठीक बाद: What is your name?"
+      },
+      "usage": "नाम पूछना — Hello के बाद. जवाब M1 का: My name is Rohan.",
+      "register": "neutral",
+      "mnemonic": "What सबसे आगे, is उसके पीछे, नाम सबसे पीछे — हिंदी का उल्टा: क्या है आपका नाम."
+    },
+    {
+      "id": "L1-M2-S06",
+      "display": "Are you a doctor?",
+      "cue": "क्या आप डॉक्टर हैं?",
+      "literal": "हैं आप एक डॉक्टर?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "doctor",
+            "cue": "डॉक्टर",
+            "tag": "free",
+            "forms": [],
+            "note": "डॉक्टर — अंग्रेज़ी से आया शब्द, आदमी-औरत दोनों के लिए एक. गिनने-लायक, इसलिए a doctor."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "क्या आप डॉक्टर हैं? में क्या आगे जुड़ता है और कुछ नहीं हिलता; अंग्रेज़ी में क्या के लिए शब्द नहीं — are ख़ुद कर्ता के आगे आ जाता है. सिर्फ़ ? लगा देना (You are a doctor?) हिंदी की आदत है.",
+      "sound": "Are you एक साथ: आर-यू. doctor = डॉक्टर, ज़ोर पहले हिस्से पर. सवाल के आख़िर में आवाज़ ऊपर चढ़ती है — हाँ/ना के सवाल की पहचान.",
+      "variations": [
+        {
+          "display": "Are you a student?",
+          "cue": "क्या आप विद्यार्थी हैं?",
+          "changed": "संज्ञा बदली — Are you a … का साँचा वही."
+        },
+        {
+          "display": "Is Rohan a doctor?",
+          "cue": "क्या रोहन डॉक्टर है?",
+          "changed": "कर्ता बदला — you → Rohan, are → is; क्रिया वैसे ही आगे."
+        }
+      ],
+      "mistake": {
+        "display": "You are a doctor?",
+        "why": "सिर्फ़ ? लगाने से सवाल नहीं बनता — are को you के आगे लाओ: Are you a doctor? (बोलने में You are a doctor? हैरानी जताता है, पूछता नहीं.)"
+      },
+      "usage": "किसी के बारे में पक्का करना — पेशा, पढ़ाई. जवाब: Yes, I am / No, I'm not.",
+      "register": "neutral",
+      "mnemonic": "सवाल में are आगे कूदता है — जैसे क्या को हटाकर उसकी कुर्सी पर are बैठ गया."
+    },
+    {
+      "id": "L1-M2-S07",
+      "display": "Are you from Mumbai?",
+      "cue": "क्या आप मुंबई से हैं?",
+      "literal": "हैं आप से मुंबई?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Mumbai",
+            "cue": "मुंबई",
+            "tag": "free",
+            "forms": [],
+            "note": "मुंबई का अंग्रेज़ी नाम — शहर का नाम, बड़ा अक्षर. पुराना नाम Bombay अब भी सुनाई देता है."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "दो हिंदी आदतें एक साथ — मुंबई से का से पीछे, और क्या आगे: Are you Mumbai from? नहीं; are आगे, from मुंबई से पहले.",
+      "sound": "from Mumbai = फ़्रॉम मुंबई — दोनों m साफ़. सवाल के आख़िर में आवाज़ ऊपर.",
+      "variations": [
+        {
+          "display": "Are you from India?",
+          "cue": "क्या आप भारत से हैं?",
+          "changed": "जगह बदली — Are you from … का साँचा वही."
+        },
+        {
+          "display": "Is Priya from Mumbai?",
+          "cue": "क्या प्रिया मुंबई से है?",
+          "changed": "कर्ता बदला — is आगे, from Mumbai वैसे का वैसा."
+        }
+      ],
+      "mistake": {
+        "display": "Are you Mumbai from?",
+        "why": "से का from जगह से पहले — from Mumbai. सवाल में are आगे जाता है, from अपनी जगह (जगह से पहले) ही रहता है."
+      },
+      "usage": "'कहाँ से हो' का हाँ/ना वाला रूप — जब अंदाज़ा हो. खुला सवाल (Where are you from?) M7 में.",
+      "register": "neutral",
+      "mnemonic": "are आगे, from बीच में, जगह आख़िर में — Are you from Mumbai?"
+    },
+    {
+      "id": "L1-M2-S08",
+      "display": "Yes, I am",
+      "cue": "हाँ, मैं हूँ",
+      "literal": "हाँ, मैं हूँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Yes",
+            "cue": "हाँ",
+            "tag": "free",
+            "forms": [],
+            "note": "हाँ — जवाब का शब्द, और उसके बाद comma. हिंदी में 'हाँ' अकेला या 'हाँ, मैं डॉक्टर हूँ' पूरा दोहराना; अंग्रेज़ी की आदत बीच की है: Yes, I am — क्रिया रखो, बाक़ी छोड़ो."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "हिंदी 'हाँ' पर रुक जाती है या पूरा वाक्य दोहराती है (हाँ, मैं डॉक्टर हूँ) — अंग्रेज़ी में छोटा जवाब है: Yes, I am. और यहाँ I am कभी I'm नहीं होता — वाक्य के आख़िर में am पूरा बोला जाता है.",
+      "sound": "Yes = यस. I am यहाँ दो साफ़ शब्द — आइ ऐम — am पर ज़ोर, क्योंकि वही जवाब है.",
+      "variations": [
+        {
+          "display": "Yes, I am a doctor",
+          "cue": "हाँ, मैं डॉक्टर हूँ",
+          "changed": "पूरा जवाब — चल जाता है, पर छोटा ही आम है."
+        },
+        {
+          "display": "Yes, Rohan is",
+          "cue": "हाँ, रोहन है",
+          "changed": "कर्ता बदला — is के साथ वही छोटा जवाब."
+        }
+      ],
+      "mistake": {
+        "display": "Yes, I'm",
+        "why": "वाक्य के आख़िर में am छोटा नहीं होता — Yes, I am. I'm के बाद कुछ आना चाहिए (I'm fine, I'm not)."
+      },
+      "usage": "Are you …? का हाँ वाला जवाब — पेशा हो, जगह हो, हाल हो: Yes, I am.",
+      "register": "neutral",
+      "mnemonic": "छोटा जवाब, पूरा am: Yes, I am — आख़िरी शब्द कभी सिकुड़ता नहीं."
+    },
+    {
+      "id": "L1-M2-S09",
+      "display": "No, I'm not",
+      "cue": "नहीं, मैं नहीं हूँ",
+      "literal": "नहीं, मैं-हूँ नहीं",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "No",
+            "cue": "नहीं",
+            "tag": "free",
+            "forms": [],
+            "note": "नहीं — जवाब का शब्द, comma के साथ: No, I'm not. अंग्रेज़ी नहीं को दो शब्दों में बाँटती है: जवाब वाला No, और वाक्य के अंदर वाला not."
+          },
+          {
+            "display": "not",
+            "cue": "नहीं",
+            "tag": "delta",
+            "forms": [],
+            "note": "वाक्य के अंदर का नहीं — और be के बाद आता है: I'm not · Rohan is not · you are not. हिंदी का नहीं क्रिया से पहले बैठता है (नहीं हूँ), अंग्रेज़ी का not उसके बाद. be के साथ बस not काफ़ी है; बाक़ी क्रियाओं का नहीं (don't) M3 में."
+          }
+        ],
+        "rules": [1, 2, 6]
+      },
+      "trap": "नहीं हूँ का क्रम I not am बनवाता है — अंग्रेज़ी में पहले be, फिर not: I'm not. और जवाब का No अलग शब्द है, not अलग.",
+      "sound": "No = नो — होंठ गोल, खींचो मत. I'm not = आइम नॉट — not पर ज़ोर; t साफ़.",
+      "variations": [
+        {
+          "display": "No, I'm not a doctor",
+          "cue": "नहीं, मैं डॉक्टर नहीं हूँ",
+          "changed": "पूरा जवाब — not के बाद बाक़ी वाक्य."
+        },
+        {
+          "display": "No, I am not",
+          "cue": "नहीं, मैं नहीं हूँ",
+          "changed": "पूरा रूप I am not — चलता है, पर I'm not ही आम है."
+        }
+      ],
+      "mistake": {
+        "display": "No, I not am",
+        "why": "not be के बाद आता है, पहले नहीं — I'm not / I am not. नहीं हूँ का क्रम यहाँ उल्टा है."
+      },
+      "usage": "Are you …? का ना वाला जवाब — छोटा और काफ़ी: No, I'm not.",
+      "register": "neutral",
+      "mnemonic": "पहले हूँ, फिर नहीं — I'm not: be पहले, not पीछे."
+    },
+    {
+      "id": "L1-M2-S10",
+      "display": "Are you tired?",
+      "cue": "क्या आप थके हैं?",
+      "literal": "हैं आप थके?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tired",
+            "cue": "थका · थकी · थके",
+            "tag": "delta",
+            "forms": [],
+            "note": "थका हुआ — और एक ही रूप सबके लिए: I'm tired · you are tired · Priya is tired; थका / थकी / थके का फ़र्क़ अंग्रेज़ी में है ही नहीं. fine की तरह विशेषण कभी नहीं बदलता — आराम की बात है."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "थका / थकी की आदत tired को बदलना चाहेगी — यह नहीं बदलता. और सवाल में be आगे, जैसे हर हाँ/ना के सवाल में: Are you tired?",
+      "sound": "tired = टायर्ड — 'टायर' + हल्का d, एक ही साँस. Are you tired? में आवाज़ आख़िर में ऊपर.",
+      "variations": [
+        {
+          "display": "Yes, I'm tired",
+          "cue": "हाँ, मैं थका हूँ",
+          "changed": "लंबा जवाब — I'm + विशेषण; छोटा जवाब Yes, I am."
+        },
+        {
+          "display": "Is Rohan tired?",
+          "cue": "क्या रोहन थका है?",
+          "changed": "कर्ता बदला — is आगे, tired वैसे का वैसा."
+        }
+      ],
+      "mistake": {
+        "display": "Are you a tired?",
+        "why": "a सिर्फ़ गिनने-लायक संज्ञा के आगे आता है — tired विशेषण है, उसके आगे कुछ नहीं: Are you tired?"
+      },
+      "usage": "हाल पूछना — किसी को थका देखकर. जवाब: Yes, I am / No, I'm not.",
+      "register": "neutral",
+      "mnemonic": "tired का आख़िर जमा हुआ है — थका-थकी-थके सब पर tired का एक ही -ed."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M2-C01", "display": "Hello, how are you?", "cue": "नमस्ते, आप कैसे हैं?" },
+    { "id": "L1-M2-C02", "display": "Are you a student?", "cue": "क्या आप विद्यार्थी हैं?" },
+    { "id": "L1-M2-C03", "display": "Are you from India?", "cue": "क्या आप भारत से हैं?" },
+    { "id": "L1-M2-C04", "display": "Yes, I am a doctor", "cue": "हाँ, मैं डॉक्टर हूँ" },
+    { "id": "L1-M2-C05", "display": "No, I'm a teacher", "cue": "नहीं, मैं शिक्षक हूँ" },
+    { "id": "L1-M2-C06", "display": "I'm from Delhi", "cue": "मैं दिल्ली से हूँ" },
+    { "id": "L1-M2-C07", "display": "Is your name Rohan?", "cue": "क्या आपका नाम रोहन है?" },
+    { "id": "L1-M2-C08", "display": "I'm not tired", "cue": "मैं थका नहीं हूँ" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

@@ -1283,7 +1283,7 @@ describe('the authored content', () => {
     }
   });
 
-  it('ships hi-mr, en-es and en-ar L1-M1..M10 on a dev build', () => {
+  it('ships hi-mr, en-es and en-ar L1-M1..M10 and hi-en L1-M1..M2 on a dev build', () => {
     const { report, outRoot } = build(DEFAULT_CONTENT_ROOT, DEV);
 
     expect(report.exitCode).toBe(0);
@@ -1300,21 +1300,24 @@ describe('the authored content', () => {
         'en-ar',
         ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5', 'L1-M6', 'L1-M7', 'L1-M8', 'L1-M9', 'L1-M10'],
       ],
+      ['hi-en', ['L1-M1', 'L1-M2']],
     ]);
-    // hi-en (#267): `--with-fixtures` admits the course, and it has nothing to ship yet — a state,
-    // not an error, and the absent `content/hi-en/modules/` is exactly zero modules.
-    expect(report.lines).toContain('hi-en: 0 modules — nothing authored yet');
+    // hi-en (#267): `--with-fixtures` admits the fixture course, and since #270 it has rungs to
+    // ship — the first two of the L1 ladder, each verified on the owner-authorised LLM review.
+    expect(report.lines).toContain('hi-en: 2 modules (L1-M1..M2)');
     expect(report.lines).toContain(
-      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10) | skipped: hi-en (no modules)',
+      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 2 modules (L1-M1..M2)',
     );
     expect(readManifest(outRoot).devBuild).toBe(true);
-    // The manifest lists what shipped: three courses, until #270 lands hi-en's first module.
+    // The manifest lists what shipped: all four courses — hi-en's row still carries `fixture`,
+    // which is what the strict build above drops it for.
     expect(readManifest(outRoot).courses.map((course) => course.id)).toEqual([
       'hi-mr',
       'en-es',
       'en-ar',
+      'hi-en',
     ]);
-    expect(existsSync(path.join(outRoot, 'hi-en'))).toBe(false);
+    expect(readManifest(outRoot).courses.at(-1)).toMatchObject({ id: 'hi-en', fixture: true });
     for (const file of [
       'hi-mr/levels.json',
       'hi-mr/strings.json',
@@ -1348,9 +1351,63 @@ describe('the authored content', () => {
       'en-ar/modules/L1-M8.json',
       'en-ar/modules/L1-M9.json',
       'en-ar/modules/L1-M10.json',
+      'hi-en/levels.json',
+      'hi-en/strings.json',
+      'hi-en/modules/L1-M1.json',
+      'hi-en/modules/L1-M2.json',
+      'hi-en/index/L1-M1.json',
+      'hi-en/index/L1-M2.json',
     ]) {
       expect(existsSync(path.join(outRoot, ...file.split('/')))).toBe(true);
     }
+  });
+
+  /**
+   * hi-en's index seams (#270, `tools/course-briefs.ts` "hi-en: the four decisions"): the build
+   * only proves that every pool token RESOLVES (PRD §6.3); this pins that each one resolves to
+   * the row the briefs assigned, which is what the Why panel actually answers with. hi-mr shipped
+   * four rows whose `forms` had swallowed a different word (docs/07-llm-review-L1-M6-M10.md), so
+   * the landings are asserted by row, not by existence.
+   */
+  it('lands hi-en on the rows the briefs assigned — one be row, contractions whole, formulas whole', () => {
+    const { outRoot } = build(DEFAULT_CONTENT_ROOT, DEV);
+    const index = readIndex(outRoot, 'hi-en', 'L1-M2');
+    const be = { moduleId: 'L1-M1', sentenceId: 'L1-M1-S01', wordIdx: 2 };
+    const article = { moduleId: 'L1-M1', sentenceId: 'L1-M1-S04', wordIdx: 0 };
+    const im = { moduleId: 'L1-M2', sentenceId: 'L1-M2-S04', wordIdx: 0 };
+
+    expect(index.cumulativeThrough).toEqual(['L1-M1', 'L1-M2']);
+    // `I'm` is ONE token (the inner apostrophe survives normalisation) and its row lists both
+    // shapes, so `I am` — a two-token key — opens the same note; `Good morning` and `thank you`
+    // are two-token surfaces, hence the span.
+    expect(index.maxSpan).toBe(2);
+    // M1's `is` opened the course's one `be` row; `am` / `are` are its forms, never new rows.
+    expect(index.surfaces['is']).toEqual(be);
+    expect(index.surfaces['am']).toEqual(be);
+    expect(index.surfaces['are']).toEqual(be);
+    // `a` · `an`: one row, both shapes.
+    expect(index.surfaces['a']).toEqual(article);
+    expect(index.surfaces['an']).toEqual(article);
+    // The contraction is its own row (M2), and the full form resolves to it too.
+    expect(index.surfaces["i'm"]).toEqual(im);
+    expect(index.surfaces['i am']).toEqual(im);
+    // Multi-token formulas claim no bare part: `you` stays the pronoun row, `good` and `morning`
+    // are unclaimed (M4's `in the morning` needs `morning` free), `thank` is nothing on its own.
+    expect(index.surfaces['good morning']).toMatchObject({ sentenceId: 'L1-M2-S02', wordIdx: 0 });
+    expect(index.surfaces['thank you']).toMatchObject({ sentenceId: 'L1-M2-S04', wordIdx: 2 });
+    expect(index.surfaces['you']).toMatchObject({ sentenceId: 'L1-M2-S03', wordIdx: 1 });
+    for (const unclaimed of ['good', 'morning', 'thank']) {
+      expect(index.surfaces[unclaimed], `${unclaimed} must stay unclaimed`).toBeUndefined();
+    }
+    // `No` (the answer) and `not` (the negator) are two rows; `not` is M2's so M3's `don't` need
+    // not re-teach it.
+    expect(index.surfaces['no']).toMatchObject({ sentenceId: 'L1-M2-S09', wordIdx: 0 });
+    expect(index.surfaces['not']).toMatchObject({ sentenceId: 'L1-M2-S09', wordIdx: 1 });
+    // Keys the briefs reserve for later modules are still free after M2.
+    for (const reserved of ['to', 'do', 'the', 'likes', 'does', "don't", 'he', 'she', 'it']) {
+      expect(index.surfaces[reserved], `${reserved} is a later module's`).toBeUndefined();
+    }
+    expect(Object.keys(index.surfaces)).toHaveLength(index.surfaceCount);
   });
 
   it('indexes hi-mr cumulatively — L1-M2 is L1-M1 plus what M2 teaches', () => {

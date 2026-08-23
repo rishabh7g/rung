@@ -256,9 +256,10 @@ describe('the fourth course — hi-en, authored behind the fixture gate (#267)',
   /**
    * The switch flow above, run against the REAL hi-en files: the manifest row is in `DEV_MANIFEST`
    * with `fixture: true`, and the fetch for hi-en's ladder and bundle answers with what
-   * `content/hi-en/` holds today — ten L1 rungs, none authored, Hindi chrome. hi-mr keeps the
-   * test's own ten-rung ladder and its self-identifying fixture bundle, so the two courses cannot
-   * be confused on screen.
+   * `content/hi-en/` holds today — ten L1 rungs, the first two authored (#270), Hindi chrome.
+   * hi-mr keeps the test's own ten-rung ladder and its self-identifying fixture bundle, so the two
+   * courses cannot be confused on screen. The authored rungs themselves — module list, Sentence
+   * Detail, the Why panel — are walked in `src/course/hiEnAuthored.test.tsx`.
    */
   function serveAuthoredHiEn(): void {
     const base = globalThis.fetch;
@@ -333,10 +334,14 @@ describe('the fourth course — hi-en, authored behind the fixture gate (#267)',
     ]) {
       expect(screen.getByText(title)).toBeInTheDocument();
     }
-    // All pending: M1 is the current rung with nothing authored behind it — the pending stage,
-    // no CTA [D22] — and M2–M10 are locked, so the list holds no link at all.
+    // Nothing passed: M1 is the current rung, and since #270 it has content behind it, so the
+    // card carries the one CTA a fresh rung gets [D22] — in hi-en's own words — and M2–M10 are
+    // locked, so that CTA is the only link in the list.
     expect(screen.getByText('M1 · CURRENT RUNG')).toBeInTheDocument();
-    expect(within(screen.getByRole('list')).queryAllByRole('link')).toEqual([]);
+    const rungLinks = within(screen.getByRole('list')).getAllByRole('link');
+    expect(rungLinks).toHaveLength(1);
+    expect(rungLinks[0]).toHaveTextContent('Module से शुरू करो');
+    expect(rungLinks[0]).toHaveAttribute('href', '#/module/L1-M1');
     // …and the pending line is hi-en's Hindi, counting all ten (Invariant 2: counts only).
     expect(screen.getByText('Level 1 · 10 में से 10 rungs अभी बाकी.')).toBeInTheDocument();
 

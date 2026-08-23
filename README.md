@@ -132,14 +132,17 @@ the repo is unverified, so `npm run dev` and `npm run build` contain the same mo
 relaxations are still enforced and still tested (`tools/content-build.test.ts` builds synthetic
 fixture rows and unverified modules and watches them be dropped). What they now relax is the
 fourth course: **hi-en — Hindi (L1) → English (L2)** — a manifest row with `fixture: true`, a
-3 × 10 ladder (`content/hi-en/levels.json`, every module `hasContent: false` + `draft: true`)
-and a Hindi strings bundle, and **no `modules/` folder** until #270 authors the first rung. A
-strict build reports `hi-en: 0 modules — fixture course, excluded by the gate`; a dev build
-admits it and reports `0 modules — nothing authored yet`; neither emits it, because the emitted
-`courses.json` lists only courses that shipped ≥ 1 module. The ten L1 briefs landed with #269
-(`tools/course-briefs.ts`, header section "hi-en: the four decisions a brief must settle" —
+3 × 10 ladder (`content/hi-en/levels.json`) and a Hindi strings bundle. A strict build reports
+`hi-en: 0 modules — fixture course, excluded by the gate` and does not emit the course; a dev
+build admits it (`--with-fixtures`) and ships whatever is authored. The ten L1 briefs landed with
+#269 (`tools/course-briefs.ts`, header section "hi-en: the four decisions a brief must settle" —
 Hindi in every teaching field, no `glossEn`, `literal` in English order, contractions as single
-index surfaces); the authoring chain (#270–#272) and graduation (#273) follow the en-es/en-ar path.
+index surfaces). **#270 authored L1-M1 and L1-M2** (`content/hi-en/modules/`, 17 + 15 word rows,
+index 21 → 37 surfaces, `maxSpan` 2 for `I'm` · `I am` / `Good morning` / `thank you`), flipped
+both rungs to `hasContent: true`, and reviewed them in `docs/11-llm-review-hi-en-L1-M1-M2.md` —
+an LLM review on the owner's authority, with its open questions for a fluent-English pass listed
+at the end; `src/course/hiEnAuthored.test.tsx` is the dev-build smoke (no browser runs on this
+host). M3–M10 (#271, #272) and graduation (#273) follow the en-es/en-ar path.
 
 **en-es ships (#195, 2026-08-13) — the product has two courses.** All ten L1 rungs —
 `L1-M1`…`L1-M10` — are authored and carry `verified: true` on the same
