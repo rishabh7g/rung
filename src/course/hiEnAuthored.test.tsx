@@ -14,10 +14,16 @@
  *     (#268: the L2 is English, so `glossEn` is omitted) and the WORD-FOR-WORD plate present,
  *   • the Why panel, tapped on a comprehension item, answers with the rows the briefs assigned —
  *     a contraction as ONE row, `a` / `an` as one row, the cross-module rows loaded,
- *   • and, since #271, the same walk over L1-M3..M5 — module list, Sentence Detail with the
+ *   • since #271, the same walk over L1-M3..M5 — module list, Sentence Detail with the
  *     contraction rows (`don't`, `does`, `didn't`), and the Why panel landing `the` / `do` on
  *     M3's rows, `has` on M4's possession-only `have`, and `was` on M1's one `be` row, which M5
- *     extended in M1's file rather than opening a second.
+ *     extended in M1's file rather than opening a second,
+ *   • and, since #272, the last five rungs L1-M6..M10 — the module list of each (M10's turns
+ *     render whole, 2–3 sentences to a card), Sentence Detail with the whole-surface rows (`will`,
+ *     `There is`, `Can I have`, `because`, a turn's `sister`), and the Why panel answering `I will`
+ *     with `I` then `will` (never an `I'll` row), `There are` with the `There is` row, `Can I have`
+ *     whole (never M4's `have`), `that` with the one M9 row, and a turn's `See you` across its
+ *     sentence boundary.
  *
  * The word index has no authored twin (`public/content/` is generated and gitignored, and
  * `verify.sh` runs TEST before CONTENT), so the one served here is folded in-test over the
@@ -43,8 +49,19 @@ import type { Levels, ModuleContent, WordIndex, WordIndexEntry } from './types.t
 /* ------------------------------------------------------------------ the authored tree */
 
 const COURSE = 'hi-en';
-/** The rungs #270 and #271 authored, in ladder order — the fold below is cumulative over this list. */
-const AUTHORED = ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5'] as const;
+/** The ten rungs #270, #271 and #272 authored, in ladder order — the fold below is cumulative over this list. */
+const AUTHORED = [
+  'L1-M1',
+  'L1-M2',
+  'L1-M3',
+  'L1-M4',
+  'L1-M5',
+  'L1-M6',
+  'L1-M7',
+  'L1-M8',
+  'L1-M9',
+  'L1-M10',
+] as const;
 
 const FILES = import.meta.glob<string>('../../content/hi-en/**/*.json', {
   query: '?raw',
@@ -473,5 +490,195 @@ describe('the Why panel over the M3–M5 comprehension items', () => {
     // The note M5 wrote into M1's file — true of all five shapes — and M4's `at` in its place seat.
     expect(within(rows[1]!).getByText(/बँटवारा वचन से, लिंग से नहीं/)).toBeInTheDocument();
     expect(within(rows[2]!).getByText(/at home = घर पर/)).toBeInTheDocument();
+  });
+});
+
+/* ------------------------------------------------------- the last five rungs (#272) */
+
+describe('the module list over L1-M6 … L1-M10', () => {
+  it.each(['L1-M6', 'L1-M7', 'L1-M8', 'L1-M9', 'L1-M10'] as const)(
+    'renders the ten authored sentences of %s as ten cards once the rungs before it are passed',
+    async (moduleId) => {
+      serveAuthoredHiEn();
+      activateHiEn();
+      passRungsBefore(moduleId);
+      window.location.hash = `#/module/${moduleId}`;
+      render(<App />);
+      await screen.findByRole('main');
+      const authored = module(moduleId);
+
+      // M10's items are turns — 2–3 sentences in one display — and each renders whole in one card.
+      expect(await screen.findByText(authored.sentences[0]!.display)).toBeInTheDocument();
+      expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent(authored.title);
+      const cards = screen
+        .getAllByRole('link')
+        .filter((link) => link.getAttribute('href')?.startsWith('#/sentence/') === true);
+      expect(cards).toHaveLength(10);
+      expect(cards.map((card) => card.getAttribute('href'))).toEqual(
+        authored.sentences.map((sentence) => `#/sentence/${sentence.id}`),
+      );
+      for (const sentence of authored.sentences) {
+        expect(screen.getByText(sentence.display)).toBeInTheDocument();
+      }
+    },
+  );
+});
+
+describe('Sentence Detail over L1-M6 … L1-M10', () => {
+  it.each([
+    {
+      moduleId: 'L1-M6',
+      sentenceId: 'L1-M6-S01',
+      hero: 'I will go to Delhi tomorrow',
+      literal: 'मैं जाऊँगा को दिल्ली कल',
+      word: 'will',
+      cue: '-ऊँगा · -एगा · -एँगे (आने वाले कल का सहारा)',
+      mistake: 'I will to go to Delhi tomorrow',
+    },
+    {
+      moduleId: 'L1-M7',
+      sentenceId: 'L1-M7-S09',
+      hero: 'There is a book on the table',
+      literal: 'वहाँ-है एक किताब पर वह मेज़',
+      word: 'There is',
+      cue: '… है (किसी जगह पर कुछ होना)',
+      mistake: 'On the table is a book',
+    },
+    {
+      moduleId: 'L1-M8',
+      sentenceId: 'L1-M8-S05',
+      hero: 'Can I have two bananas, please?',
+      literal: 'क्या-मुझे-मिलेंगे दो केले, प्लीज़?',
+      word: 'Can I have',
+      cue: 'क्या मुझे … मिलेगा · … दीजिए (माँगने का साँचा)',
+      mistake: 'Give me two bananas',
+    },
+    {
+      moduleId: 'L1-M9',
+      sentenceId: 'L1-M9-S01',
+      hero: "I don't want coffee because I'm tired",
+      literal: 'मैं नहीं चाहता कॉफ़ी क्योंकि मैं-हूँ थका',
+      word: 'because',
+      cue: 'क्योंकि',
+      mistake: "Because I'm tired, so I don't want coffee",
+    },
+    {
+      // A turn: two sentences in one hero, one literal for both, the he/she plate.
+      moduleId: 'L1-M10',
+      sentenceId: 'L1-M10-S05',
+      hero: 'My sister is a teacher. She works in Delhi.',
+      literal: 'मेरी बहन है एक शिक्षिका. वह काम-करती-है में दिल्ली.',
+      word: 'sister',
+      cue: 'बहन',
+      mistake: 'My sister is a teacher. He works in Delhi.',
+    },
+  ])(
+    'shows $sentenceId — English hero, no gloss, the WORD-FOR-WORD plate, the whole-surface row',
+    async ({ moduleId, sentenceId, hero, literal, word, cue, mistake }) => {
+      serveAuthoredHiEn();
+      activateHiEn();
+      passRungsBefore(moduleId);
+      window.location.hash = `#/sentence/${sentenceId}`;
+      render(<App />);
+      await screen.findByRole('main');
+
+      const heading = await screen.findByRole('heading', { level: 2 });
+      expect(heading).toHaveTextContent(hero);
+      expect(heading).toHaveAttribute('lang', 'en');
+      expect(document.documentElement.lang).toBe('hi');
+      expect(section('gloss').querySelector('p[lang]')).toBeNull();
+      expect(within(section('gloss')).getByText('WORD-FOR-WORD')).toBeInTheDocument();
+      expect(within(section('gloss')).getByText(literal)).toBeInTheDocument();
+      const words = section('words');
+      expect(within(words).getByText(word)).toBeInTheDocument();
+      expect(within(words).getByText(cue)).toBeInTheDocument();
+      expect(within(section('mistake')).getByText(mistake)).toBeInTheDocument();
+    },
+  );
+});
+
+describe('the Why panel over the M6–M10 comprehension items', () => {
+  it("answers `I will go to Mumbai tomorrow` with `I` then `will` — no `I'll` row swallows the pair", async () => {
+    await renderPanel('L1-M6-C01', 'I will go to Mumbai tomorrow');
+    fireEvent.click(screen.getByRole('button', { name: 'क्यों?' }));
+
+    const tomorrowRow = await screen.findByText('कल (आने वाला)');
+    const rows = within(tomorrowRow.closest('ul')!).getAllByRole('listitem');
+    expect(rows.map((row) => row.textContent)).toEqual([
+      expect.stringContaining('I'),
+      expect.stringContaining('will'),
+      expect.stringContaining('go'),
+      expect.stringContaining('to'),
+      expect.stringContaining('Mumbai'),
+      expect.stringContaining('tomorrow'),
+    ]);
+    // The auxiliary's own note — one form for every subject — and M3's `to` in its direction seat.
+    expect(within(rows[1]!).getByText(/एक ही रूप सबके लिए/)).toBeInTheDocument();
+    expect(within(rows[3]!).getByText(/जगह से पहले यह दिशा का शब्द है/)).toBeInTheDocument();
+  });
+
+  it("answers `There are two books on the table` with the one `There is` row, never M1's `be`", async () => {
+    await renderPanel('L1-M7-C06', 'There are two books on the table');
+    fireEvent.click(screen.getByRole('button', { name: 'क्यों?' }));
+
+    const thereRow = await screen.findByText('… है (किसी जगह पर कुछ होना)');
+    const rows = within(thereRow.closest('ul')!).getAllByRole('listitem');
+    expect(rows.map((row) => row.textContent)).toEqual([
+      expect.stringContaining('There is'),
+      expect.stringContaining('two'),
+      expect.stringContaining('books'),
+      expect.stringContaining('on'),
+      expect.stringContaining('the'),
+      expect.stringContaining('table'),
+    ]);
+    expect(within(rows[0]!).getByText(/बस सीट भरता है/)).toBeInTheDocument();
+  });
+
+  it("answers `Can I have a kilo of sugar?` with the formula whole and `of` on M8's row", async () => {
+    await renderPanel('L1-M8-C04', 'Can I have a kilo of sugar?');
+    fireEvent.click(screen.getByRole('button', { name: 'क्यों?' }));
+
+    const formulaRow = await screen.findByText('क्या मुझे … मिलेगा · … दीजिए (माँगने का साँचा)');
+    const rows = within(formulaRow.closest('ul')!).getAllByRole('listitem');
+    expect(rows.map((row) => row.textContent)).toEqual([
+      expect.stringContaining('Can I have'),
+      expect.stringContaining('a'),
+      expect.stringContaining('kilo'),
+      expect.stringContaining('of'),
+      expect.stringContaining('sugar'),
+    ]);
+    // The request note says in words that its `have` is NOT M4's possession row.
+    expect(within(rows[0]!).getByText(/के पास होना नहीं है/)).toBeInTheDocument();
+    expect(within(rows[3]!).getByText(/मात्रा और चीज़ के बीच का जोड़/)).toBeInTheDocument();
+  });
+
+  it('answers `Do you think that the tea is good?` with `that` on the one M9 row — both jobs in one note', async () => {
+    await renderPanel('L1-M9-C07', 'Do you think that the tea is good?');
+    fireEvent.click(screen.getByRole('button', { name: 'क्यों?' }));
+
+    const thatRow = await screen.findByText('कि (जोड़) · वह (दूर की चीज़)');
+    const rows = within(thatRow.closest('ul')!).getAllByRole('listitem');
+    expect(rows).toHaveLength(8);
+    expect(rows[3]).toHaveTextContent('that');
+    expect(within(rows[3]!).getByText(/एक शब्द, दो काम/)).toBeInTheDocument();
+  });
+
+  it('answers a turn — `Okay, thank you. See you tomorrow.` — token by token across its sentence boundary', async () => {
+    await renderPanel('L1-M10-C08', 'Okay, thank you. See you tomorrow.');
+    fireEvent.click(screen.getByRole('button', { name: 'क्यों?' }));
+
+    const seeYouRow = await screen.findByText('फिर मिलते हैं');
+    const rows = within(seeYouRow.closest('ul')!).getAllByRole('listitem');
+    expect(rows.map((row) => row.textContent)).toEqual([
+      expect.stringContaining('Okay'),
+      expect.stringContaining('thank you'),
+      expect.stringContaining('See you'),
+      expect.stringContaining('tomorrow'),
+    ]);
+    // `thank you` is M2's whole surface, `See you` M10's — M5's `see` (देखना) is never opened.
+    expect(within(rows[1]!).getByText('धन्यवाद')).toBeInTheDocument();
+    expect(
+      within(rows[2]!).getByText(/देखना वाला see यहाँ अपने मतलब में नहीं/),
+    ).toBeInTheDocument();
   });
 });

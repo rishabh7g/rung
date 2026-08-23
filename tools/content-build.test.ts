@@ -1283,31 +1283,35 @@ describe('the authored content', () => {
     }
   });
 
-  it('ships hi-mr, en-es and en-ar L1-M1..M10 and hi-en L1-M1..M5 on a dev build', () => {
+  it('ships hi-mr, en-es, en-ar and hi-en L1-M1..M10 on a dev build', () => {
     const { report, outRoot } = build(DEFAULT_CONTENT_ROOT, DEV);
+    const L1 = [
+      'L1-M1',
+      'L1-M2',
+      'L1-M3',
+      'L1-M4',
+      'L1-M5',
+      'L1-M6',
+      'L1-M7',
+      'L1-M8',
+      'L1-M9',
+      'L1-M10',
+    ];
 
     expect(report.exitCode).toBe(0);
     expect([...report.shipped]).toEqual([
-      [
-        'hi-mr',
-        ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5', 'L1-M6', 'L1-M7', 'L1-M8', 'L1-M9', 'L1-M10'],
-      ],
-      [
-        'en-es',
-        ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5', 'L1-M6', 'L1-M7', 'L1-M8', 'L1-M9', 'L1-M10'],
-      ],
-      [
-        'en-ar',
-        ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5', 'L1-M6', 'L1-M7', 'L1-M8', 'L1-M9', 'L1-M10'],
-      ],
-      ['hi-en', ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5']],
+      ['hi-mr', L1],
+      ['en-es', L1],
+      ['en-ar', L1],
+      ['hi-en', L1],
     ]);
-    // hi-en (#267): `--with-fixtures` admits the fixture course, and since #270 / #271 it has
-    // rungs to ship — the first five of the L1 ladder, each verified on the owner-authorised LLM
-    // review.
-    expect(report.lines).toContain('hi-en: 5 modules (L1-M1..M5)');
+    // hi-en (#267): `--with-fixtures` admits the fixture course, and since #270 / #271 / #272 it
+    // has the whole L1 ladder to ship — ten rungs, each verified on the owner-authorised LLM
+    // review — while the strict build above still drops the course for its `fixture` row (#273).
+    expect(report.lines).toContain('hi-en: 10 modules (L1-M1..M10)');
+    expect(report.lines).toContain('  index L1-M10: 202 surfaces');
     expect(report.lines).toContain(
-      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 5 modules (L1-M1..M5)',
+      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10)',
     );
     expect(readManifest(outRoot).devBuild).toBe(true);
     // The manifest lists what shipped: all four courses — hi-en's row still carries `fixture`,
@@ -1359,11 +1363,21 @@ describe('the authored content', () => {
       'hi-en/modules/L1-M3.json',
       'hi-en/modules/L1-M4.json',
       'hi-en/modules/L1-M5.json',
+      'hi-en/modules/L1-M6.json',
+      'hi-en/modules/L1-M7.json',
+      'hi-en/modules/L1-M8.json',
+      'hi-en/modules/L1-M9.json',
+      'hi-en/modules/L1-M10.json',
       'hi-en/index/L1-M1.json',
       'hi-en/index/L1-M2.json',
       'hi-en/index/L1-M3.json',
       'hi-en/index/L1-M4.json',
       'hi-en/index/L1-M5.json',
+      'hi-en/index/L1-M6.json',
+      'hi-en/index/L1-M7.json',
+      'hi-en/index/L1-M8.json',
+      'hi-en/index/L1-M9.json',
+      'hi-en/index/L1-M10.json',
     ]) {
       expect(existsSync(path.join(outRoot, ...file.split('/')))).toBe(true);
     }
@@ -1520,6 +1534,109 @@ describe('the authored content', () => {
       'one',
     ]) {
       expect(index.surfaces[reserved], `${reserved} is a later module's`).toBeUndefined();
+    }
+    expect(Object.keys(index.surfaces)).toHaveLength(index.surfaceCount);
+  });
+
+  /**
+   * The last five rungs (#272): the multi-token surfaces the briefs reserved are whole keys that
+   * claim no bare part (`going to` never opens M3's `to`; `there is` swallows its `is`; `Can I have`
+   * never reaches M4's possession row; `in front of` leaves `of` to M8), each homograph has the
+   * owner the briefs named (`it` / `it's` M7, `this` M8, `that` M9, `so` the consequence word),
+   * and the one recorded deviation holds: M6's `I'll` row lists only itself, so `I will` resolves
+   * to `I` + `will` and the auxiliary the brief wants tappable stays tappable
+   * (docs/13-llm-review-hi-en-L1-M6-M10.md has the token-by-token tables).
+   */
+  it('lands hi-en M6–M10 on the rows the briefs assigned — formulas whole, homographs owned, I will still two rows', () => {
+    const { outRoot } = build(DEFAULT_CONTENT_ROOT, DEV);
+    const index = readIndex(outRoot, 'hi-en', 'L1-M10');
+    const row = (moduleId: string, sentence: number, wordIdx: number) => ({
+      moduleId,
+      sentenceId: `${moduleId}-S${String(sentence).padStart(2, '0')}`,
+      wordIdx,
+    });
+
+    expect(index.cumulativeThrough).toEqual([
+      'L1-M1',
+      'L1-M2',
+      'L1-M3',
+      'L1-M4',
+      'L1-M5',
+      'L1-M6',
+      'L1-M7',
+      'L1-M8',
+      'L1-M9',
+      'L1-M10',
+    ]);
+    // `in front of` and `Can I have` are three-token keys.
+    expect(index.maxSpan).toBe(3);
+    expect(index.surfaceCount).toBe(202);
+    // M6: `will` bare (the lesson), `I'll` its own row listing ONLY itself — `i will` is no key, so
+    // `I will go` opens `I` then `will`; `going to` whole (bare `going` unclaimed) and `to` still M3's.
+    expect(index.surfaces['will']).toEqual(row('L1-M6', 1, 0));
+    expect(index.surfaces['tomorrow']).toEqual(row('L1-M6', 1, 1));
+    expect(index.surfaces["i'll"]).toEqual(row('L1-M6', 10, 1));
+    expect(index.surfaces['i will']).toBeUndefined();
+    expect(index.surfaces['going to']).toEqual(row('L1-M6', 5, 0));
+    expect(index.surfaces['going']).toBeUndefined();
+    expect(index.surfaces['to']).toEqual(row('L1-M3', 3, 0));
+    expect(index.surfaces['her']).toEqual(row('L1-M6', 8, 1));
+    expect(index.surfaces['meeting']).toEqual(row('L1-M6', 8, 0));
+    expect(index.surfaces['they']).toEqual(row('L1-M6', 4, 0));
+    expect(index.surfaces['next']).toEqual(row('L1-M6', 7, 0));
+    // M7: `there is` / `there are` one row (bare `there` unclaimed; the `is` inside never reaches
+    // M1's be row), `it` and `it's · it is` two rows, the place words, `next to` / `in front of`
+    // whole — `next` stays M6's and `of` lands on M8's row.
+    expect(index.surfaces['there is']).toEqual(row('L1-M7', 9, 0));
+    expect(index.surfaces['there are']).toEqual(row('L1-M7', 9, 0));
+    expect(index.surfaces['there']).toBeUndefined();
+    expect(index.surfaces['is']).toEqual(row('L1-M1', 1, 2));
+    expect(index.surfaces['it']).toEqual(row('L1-M7', 6, 0));
+    expect(index.surfaces["it's"]).toEqual(row('L1-M7', 5, 0));
+    expect(index.surfaces['it is']).toEqual(row('L1-M7', 5, 0));
+    expect(index.surfaces['where']).toEqual(row('L1-M7', 4, 0));
+    expect(index.surfaces['under']).toEqual(row('L1-M7', 3, 0));
+    expect(index.surfaces['behind']).toEqual(row('L1-M7', 5, 1));
+    expect(index.surfaces['near']).toEqual(row('L1-M7', 6, 1));
+    expect(index.surfaces['next to']).toEqual(row('L1-M7', 7, 0));
+    expect(index.surfaces['in front of']).toEqual(row('L1-M7', 8, 0));
+    expect(index.surfaces['front']).toBeUndefined();
+    // M8: `how much` / `how many` whole (`how` stays M2's, `much` / `many` unclaimed), `Can I have`
+    // whole (`can` unclaimed, `have` still M4's possession row), `this`, `please`, `of`, the money.
+    expect(index.surfaces['how much']).toEqual(row('L1-M8', 1, 0));
+    expect(index.surfaces['how many']).toEqual(row('L1-M8', 8, 0));
+    expect(index.surfaces['how']).toEqual(row('L1-M2', 3, 0));
+    for (const unclaimed of ['much', 'many', 'can']) {
+      expect(index.surfaces[unclaimed], `${unclaimed} must stay unclaimed`).toBeUndefined();
+    }
+    expect(index.surfaces['can i have']).toEqual(row('L1-M8', 5, 0));
+    expect(index.surfaces['have']).toEqual(row('L1-M4', 10, 0));
+    expect(index.surfaces['this']).toEqual(row('L1-M8', 1, 1));
+    expect(index.surfaces['please']).toEqual(row('L1-M8', 5, 2));
+    expect(index.surfaces['of']).toEqual(row('L1-M8', 6, 1));
+    expect(index.surfaces['rupees']).toEqual(row('L1-M8', 2, 1));
+    expect(index.surfaces['rupee']).toEqual(row('L1-M8', 2, 1));
+    expect(index.surfaces['cost']).toEqual(row('L1-M8', 3, 0));
+    expect(index.surfaces['costs']).toEqual(row('L1-M8', 3, 0));
+    expect(index.surfaces['one']).toEqual(row('L1-M8', 9, 0));
+    // M9: `because` and `so` one row each, `why`, `that` (both jobs, one row), `very`, `think`.
+    expect(index.surfaces['because']).toEqual(row('L1-M9', 1, 0));
+    expect(index.surfaces['so']).toEqual(row('L1-M9', 2, 0));
+    expect(index.surfaces['why']).toEqual(row('L1-M9', 3, 0));
+    expect(index.surfaces['that']).toEqual(row('L1-M9', 9, 1));
+    expect(index.surfaces['think']).toEqual(row('L1-M9', 9, 0));
+    expect(index.surfaces['very']).toEqual(row('L1-M9', 6, 0));
+    // M10: the joiners and the fixed courtesies, `See you` whole (M5's `see` untouched).
+    expect(index.surfaces['and']).toEqual(row('L1-M10', 2, 0));
+    expect(index.surfaces['but']).toEqual(row('L1-M10', 3, 0));
+    expect(index.surfaces['also']).toEqual(row('L1-M10', 8, 0));
+    expect(index.surfaces['then']).toEqual(row('L1-M10', 7, 0));
+    expect(index.surfaces['see you']).toEqual(row('L1-M10', 10, 2));
+    expect(index.surfaces['see']).toEqual(row('L1-M5', 8, 0));
+    expect(index.surfaces['today']).toEqual(row('L1-M10', 1, 0));
+    // Still nobody's after the whole ladder — the keys the briefs kept out of L1.
+    for (const unclaimed of ['likes', 'him', 'his', 'too', 'meet', "won't", 'hundred']) {
+      expect(index.surfaces[unclaimed], `${unclaimed} is outside L1`).toBeUndefined();
     }
     expect(Object.keys(index.surfaces)).toHaveLength(index.surfaceCount);
   });

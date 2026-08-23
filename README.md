@@ -147,8 +147,17 @@ L1-M3, L1-M4 and L1-M5** (14 + 25 + 15 word rows; the cumulative index now runs 
 each ending in its open questions for a fluent-English pass; `src/course/hiEnAuthored.test.tsx`
 is the dev-build smoke over all five rungs (no browser runs on this host), and
 `tools/content-build.test.ts` pins which row every seam key (`be`, `to`, `do`, `the`, `have`,
-`in` / `on` / `at`, `get up`, `did`, …) lands on. M6–M10 (#272) and graduation (#273) follow
-the en-es/en-ar path.
+`in` / `on` / `at`, `get up`, `did`, …) lands on. **#272 authored L1-M6…M10** (Tomorrow, Where things are, Numbers & shopping,
+Feelings & opinions, Connected talk — 16 + 17 + 17 + 16 + 13 word rows; the cumulative index now runs
+108 → 126 → 148 → 171 → 188 → **202** surfaces, `maxSpan` 3 for `in front of` / `Can I have`), flipped
+all five — **all ten L1 rungs are authored** — and reviewed them in
+`docs/13-llm-review-hi-en-L1-M6-M10.md`. Whole surfaces: `going to`, `there is` / `there are`,
+`next to`, `in front of`, `how much` / `how many`, `Can I have`, `See you`; `because` / `so` one row
+each; `it` / `it's`, `where`, `this` (M8), `that` (M9), the joiners `and` / `but` / `also` / `then`;
+M10's turns are 2–3 sentences in one `display` (`minWordsPerSentence: 2`, no schema change). The one
+recorded deviation from the contraction policy: `I'll` (M6) lists only itself, so `I will` still opens
+the `will` row the brief wants tappable. The course is still a `fixture: true` row — graduation (#273)
+follows the en-es/en-ar path.
 
 **en-es ships (#195, 2026-08-13) — the product has two courses.** All ten L1 rungs —
 `L1-M1`…`L1-M10` — are authored and carry `verified: true` on the same

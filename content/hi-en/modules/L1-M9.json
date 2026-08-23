@@ -1,0 +1,569 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M9",
+  "title": "Feelings & opinions",
+  "job": "Why — because and so",
+  "prerequisites": [
+    "L1-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-23",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "<statement> + because + <statement>",
+      "<statement> + , so + <statement>",
+      "Why + are you / do you + …?",
+      "I'm + Adj",
+      "I think (that) + <statement>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "because वजह जोड़ता है, so नतीजा — वही दो बातें, उल्टा क्रम: I don't want coffee because I'm tired · I'm tired, so I don't want coffee. इस module की असली फिसलन: हिंदी दोनों एक साथ रखती है — क्योंकि मैं थका हूँ, इसलिए मुझे कॉफ़ी नहीं चाहिए — यह ठीक हिंदी है; अंग्रेज़ी ठीक एक लेती है: *Because I'm tired, so I don't want coffee भारत की अंग्रेज़ी का सबसे जाना-पहचाना वाक्य है, और ग़लत है. नियम: दो वाक्य, एक जोड़ने वाला — या because, या so, दोनों कभी नहीं."
+    },
+    {
+      "tag": "delta",
+      "text": "Why …? M2 का साँचा या M4 का सहारा लेता है — Why are you sad? (be ख़ुद आगे) · Why do you sleep late? (साधारण क्रिया do / does उधार लेती है) — और क्यों सबसे आगे; हिंदी का क्यों क्रिया से पहले बीच में बैठता है (आप उदास क्यों हैं?). जवाब Because से शुरू: Because I'm tired — बोलचाल में अधूरा वाक्य चलता है; यहाँ display में पूरे वाक्य हैं."
+    },
+    {
+      "tag": "interference",
+      "text": "भावनाएँ be + विशेषण पर चलती हैं, और विशेषण कभी नहीं बदलता — I'm tired · she is tired · they are tired (थका / थकी / थके → एक tired): M2 की आराम की जगह, पूरे ज़ोर पर; am / is / are फिर से नहीं सीखने. हिंदी की मुझे वाली भावनाएँ (मुझे भूख लगी है · उसे गुस्सा आ रहा है · मुझे लगता है) अंग्रेज़ी में be + विशेषण, और महसूस करने वाला कर्ता — I'm hungry · she is angry · I think (M1 का like वाला नियम): *Me hunger, *Her anger is coming, *I have hunger हिंदी के साँचे हैं."
+    },
+    {
+      "tag": "delta",
+      "text": "बहुत = very, विशेषण से ठीक पहले: very tired · very busy · very good — अकेला very, बिना much (*very much busy नहीं; very much क्रिया के बाद आता है: I like it very much). 'इतना' वाला so (so tired) इस सीढ़ी पर नहीं — so यहाँ इसलिए है, नतीजे का शब्द, और बस वही."
+    },
+    {
+      "tag": "delta",
+      "text": "राय: I think (that) the tea is good — मुझे लगता है कि …; that कि है और अक्सर बोलचाल में छूट जाता है (I think the tea is good — दोनों सही). यह that इस course का पहला that है और दो काम करता है: कि (जोड़) और वह (दूर की चीज़ — That is my book; पास की this, M8). बयान में think बिना सहारे, सवाल में do (Do you think …?); हालत की क्रिया है — -ing नहीं (*I am thinking that नहीं, M4 का नियम)."
+    },
+    {
+      "tag": "delta",
+      "text": "इस module की हदें: if (L3), तुलना (cheaper — L2), too / enough — कोई नहीं; because और so एक-एक शब्द, एक-एक काम; वाक्य 8 शब्द तक — I'm tired, so I don't want coffee सात का है, और हर जोड़ी इसी नाप में."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M9-S01",
+      "display": "I don't want coffee because I'm tired",
+      "cue": "मुझे कॉफ़ी नहीं चाहिए क्योंकि मैं थका हूँ",
+      "literal": "मैं नहीं चाहता कॉफ़ी क्योंकि मैं-हूँ थका",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "because",
+            "cue": "क्योंकि",
+            "tag": "interference",
+            "forms": [],
+            "note": "वजह जोड़ने वाला — पहले बात, फिर because, फिर वजह: I don't want coffee because I'm tired; सवाल का जवाब Because से शुरू हो सकता है (Because I'm tired — बोलचाल का अधूरा वाक्य, चलता है). हिंदी क्योंकि और इसलिए दोनों एक साथ रखती है (क्योंकि मैं थका हूँ, इसलिए …) — अंग्रेज़ी में दो वाक्यों के बीच एक ही जोड़ने वाला: या because, या so, दोनों कभी नहीं (*Because I'm tired, so I don't want coffee). because के बाद पूरा वाक्य (कर्ता + क्रिया); because of के बाद सिर्फ़ चीज़ (because of the rain) — यहाँ नहीं."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "क्योंकि मैं थका हूँ, इसलिए … का हाथ Because … so … लिखता है — दोनों एक साथ; अंग्रेज़ी में एक चुनो. और क्योंकि के बाद मैं-हूँ पूरा: because I'm tired, *because tired नहीं.",
+      "sound": "because = बिकॉज़ — ज़ोर दूसरे हिस्से पर, आख़िर में ज़; बोलचाल में अक्सर 'कज़'. I'm tired = आइम-टायर्ड.",
+      "variations": [
+        {
+          "display": "I want tea because I'm tired",
+          "cue": "मुझे चाय चाहिए क्योंकि मैं थका हूँ",
+          "changed": "पहली बात बदली — I want tea; because वही, वजह वही."
+        },
+        {
+          "display": "She doesn't want coffee because she is tired",
+          "cue": "उसे कॉफ़ी नहीं चाहिए क्योंकि वह थकी है",
+          "changed": "कर्ता she — doesn't (M4), she is tired; because वहीं बीच में."
+        }
+      ],
+      "mistake": {
+        "display": "Because I'm tired, so I don't want coffee",
+        "why": "दो जोड़ने वाले एक साथ — because भी, so भी; अंग्रेज़ी में एक: I don't want coffee because I'm tired, या I'm tired, so I don't want coffee. हिंदी का क्योंकि … इसलिए यहाँ आधा ही उतरता है."
+      },
+      "usage": "मना करने की वजह देना — खाने-पीने, काम, मुलाक़ात: बात + because + वजह.",
+      "register": "neutral",
+      "mnemonic": "क्योंकि = because, और इसलिए घर छोड़ आओ — एक जोड़, दो वाक्य."
+    },
+    {
+      "id": "L1-M9-S02",
+      "display": "I'm tired, so I don't want coffee",
+      "cue": "मैं थका हूँ, इसलिए मुझे कॉफ़ी नहीं चाहिए",
+      "literal": "मैं-हूँ थका, इसलिए मैं नहीं चाहता कॉफ़ी",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "so",
+            "cue": "इसलिए · तो (नतीजा)",
+            "tag": "interference",
+            "forms": [],
+            "note": "नतीजा जोड़ने वाला — पहले वजह, comma, फिर so, फिर नतीजा: I'm tired, so I don't want coffee. because का उल्टा क्रम, वही दो बातें; और वही नियम — एक जोड़ने वाला, दो नहीं (*Because …, so … नहीं). सिर्फ़ इसलिए: 'इतना' वाला so (so tired) इस सीढ़ी पर नहीं — बहुत के लिए very (S06); so that (ताकि) भी नहीं."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "इसलिए के आगे हिंदी का क्योंकि पीछे से खिंचा आता है — *Because I'm tired, so …; so अकेला काफ़ी है. और comma so से पहले, बाद में नहीं.",
+      "sound": "so = सो — लंबा 'ओ', होंठ गोल. comma पर ज़रा रुको: आइम-टायर्ड · सो-आइ-डोन्ट-वॉन्ट-कॉफ़ी.",
+      "variations": [
+        {
+          "display": "I'm tired, so I don't want tea",
+          "cue": "मैं थका हूँ, इसलिए मुझे चाय नहीं चाहिए",
+          "changed": "नतीजा बदला — tea; so वही."
+        },
+        {
+          "display": "She is tired, so she doesn't want coffee",
+          "cue": "वह थकी है, इसलिए उसे कॉफ़ी नहीं चाहिए",
+          "changed": "कर्ता she — she is, she doesn't; so वहीं."
+        }
+      ],
+      "mistake": {
+        "display": "I'm tired, so that I don't want coffee",
+        "why": "so that का मतलब ताकि (मक़सद) है, इसलिए नहीं; नतीजे के लिए बस so, comma के बाद: I'm tired, so I don't want coffee."
+      },
+      "usage": "वजह पहले, नतीजा बाद में — बात सुनाते हुए: वजह + , so + नतीजा.",
+      "register": "neutral",
+      "mnemonic": "इसलिए = so — वजह आगे, comma, फिर so; और because को छुट्टी."
+    },
+    {
+      "id": "L1-M9-S03",
+      "display": "Why are you sad?",
+      "cue": "आप उदास क्यों हैं?",
+      "literal": "क्यों हैं आप उदास?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Why",
+            "cue": "क्यों",
+            "tag": "delta",
+            "forms": [],
+            "note": "क्यों — सवाल का शब्द सबसे आगे, फिर सहारा: be ख़ुद (Why are you sad? — M2 का साँचा) या do / does (Why do you sleep late? — M3, M4 का). हिंदी का क्यों क्रिया से पहले बीच में (आप उदास क्यों हैं?); अंग्रेज़ी का Why सबसे आगे. जवाब Because से."
+          },
+          {
+            "display": "sad",
+            "cue": "उदास",
+            "tag": "free",
+            "forms": [],
+            "note": "उदास — be + विशेषण, और विशेषण बदलता नहीं (M2): I'm sad · she is sad · they are sad. उल्टा happy (M5)."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "आप उदास क्यों हैं? का क्रम हाथ से Why you are sad? लिखवाता है — Why के ठीक बाद are, फिर you (M2 का नियम, सवाल के शब्द के साथ).",
+      "sound": "why = वाइ — wh 'व'. sad = सैड — a 'ऐ', आख़िर का d साफ़. सवाल के शब्द वाला सवाल आख़िर में नीचे उतरता है.",
+      "variations": [
+        {
+          "display": "Why are you tired?",
+          "cue": "आप थके क्यों हैं?",
+          "changed": "विशेषण बदला — tired; Why are you वही."
+        },
+        {
+          "display": "Why is she sad?",
+          "cue": "वह उदास क्यों है?",
+          "changed": "कर्ता she — is; Why वहीं आगे."
+        }
+      ],
+      "mistake": {
+        "display": "Why you are sad?",
+        "why": "सवाल के शब्द के ठीक बाद be, फिर कर्ता — Why are you sad? हिंदी का क्रम (आप … क्यों हैं) यहाँ उल्टा पड़ता है."
+      },
+      "usage": "किसी का हाल देखकर वजह पूछना — दोस्त, बच्चा: Why are you + विशेषण?",
+      "register": "neutral",
+      "mnemonic": "क्यों झंडे की तरह आगे, are उसके पीछे — Why are you …?"
+    },
+    {
+      "id": "L1-M9-S04",
+      "display": "I'm sad because my friend is not here",
+      "cue": "मैं उदास हूँ क्योंकि मेरा दोस्त यहाँ नहीं है",
+      "literal": "मैं-हूँ उदास क्योंकि मेरा दोस्त है नहीं यहाँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "friend",
+            "cue": "दोस्त",
+            "tag": "free",
+            "forms": [
+              "friend",
+              "friends"
+            ],
+            "note": "दोस्त — my friend, a friend, two friends (-s); आदमी-औरत दोनों के लिए एक."
+          },
+          {
+            "display": "here",
+            "cue": "यहाँ",
+            "tag": "free",
+            "forms": [],
+            "note": "यहाँ — is here, is not here; जगह का शब्द, अकेला: बिना in / at (*in here नहीं). वहाँ = there — M7 का there is अलग है, वह सीट भरने वाला था."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "यहाँ नहीं है में नहीं क्रिया से पहले — अंग्रेज़ी में is not (M2); और because के बाद पूरा वाक्य — my friend is not here, *because my friend not here नहीं.",
+      "sound": "friend = फ़्रेंड — i चुप, d हल्का. here = हियर. is not = इज़-नॉट; बोलचाल में isn't — इस सीढ़ी पर नहीं लिखा.",
+      "variations": [
+        {
+          "display": "I'm happy because my friend is here",
+          "cue": "मैं ख़ुश हूँ क्योंकि मेरा दोस्त यहाँ है",
+          "changed": "उल्टा — happy, is here; because वही."
+        },
+        {
+          "display": "I'm sad because I'm not at home",
+          "cue": "मैं उदास हूँ क्योंकि मैं घर पर नहीं हूँ",
+          "changed": "वजह बदली — not at home (M4 का at); साँचा वही."
+        }
+      ],
+      "mistake": {
+        "display": "I'm sad because of my friend is not here",
+        "why": "because के बाद पूरा वाक्य (कर्ता + क्रिया); because of के बाद सिर्फ़ संज्ञा (because of the rain) — हिंदी की वजह से के चक्कर में of जुड़ जाता है. यहाँ because, बस."
+      },
+      "usage": "उदासी की वजह — दोस्त, घर, काम: I'm sad because + पूरा वाक्य.",
+      "register": "neutral",
+      "mnemonic": "because के बाद पूरा वाक्य — कर्ता, क्रिया, सब; of को छुट्टी."
+    },
+    {
+      "id": "L1-M9-S05",
+      "display": "Why do you sleep late?",
+      "cue": "आप देर से क्यों सोते हैं?",
+      "literal": "क्यों क्या आप सोते देर-से?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sleep",
+            "cue": "सोना",
+            "tag": "free",
+            "forms": [],
+            "note": "सोना — I sleep, she sleeps (-s, M4); sleep early / late. बीता कल slept — इस सीढ़ी पर नहीं."
+          },
+          {
+            "display": "late",
+            "cue": "देर से · लेट",
+            "tag": "delta",
+            "forms": [],
+            "note": "देर से — क्रिया के बाद: sleep late, get up late; और be के साथ देर हो जाना: I'm late (मुझे देर हो गई / मैं लेट हूँ) — be + late, हिंदी के मुझे के बिना. उल्टा early (M4). literal में do की सीट पर क्या है — अनुवाद नहीं (M3)."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "आप देर से क्यों सोते हैं? में न do है, न क्यों आगे — हाथ Why you sleep late? लिखता है; साधारण क्रिया का सवाल do माँगता है (M3), और Why सबसे आगे.",
+      "sound": "sleep = स्लीप — s से सीधे, आगे इ- नहीं (इस्लीप नहीं). late = लेट — a 'ए'. Why do you एक साँस: वाइ-डु-यू.",
+      "variations": [
+        {
+          "display": "Why do you get up early?",
+          "cue": "आप जल्दी क्यों उठते हैं?",
+          "changed": "क्रिया बदली — get up early (M4); Why do you वही."
+        },
+        {
+          "display": "Why does she sleep late?",
+          "cue": "वह देर से क्यों सोती है?",
+          "changed": "कर्ता she — does (M4), sleep मूल रूप में."
+        }
+      ],
+      "mistake": {
+        "display": "Why you sleep late?",
+        "why": "साधारण क्रिया का सवाल do माँगता है — Why do you sleep late? (M3 का नियम, क्यों के साथ); हिंदी में कोई सहारा नहीं था, इसलिए छूटता है."
+      },
+      "usage": "आदत की वजह पूछना — नींद, खाना, काम: Why do you + क्रिया?",
+      "register": "neutral",
+      "mnemonic": "क्यों आगे, do उसके पीछे — Why do you …? be हो तो Why are you …?"
+    },
+    {
+      "id": "L1-M9-S06",
+      "display": "I sleep late because I'm very busy",
+      "cue": "मैं देर से सोता हूँ क्योंकि मैं बहुत व्यस्त हूँ",
+      "literal": "मैं सोता देर-से क्योंकि मैं-हूँ बहुत व्यस्त",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "very",
+            "cue": "बहुत",
+            "tag": "delta",
+            "forms": [],
+            "note": "बहुत — विशेषण से ठीक पहले: very tired, very busy, very good; अकेला very, बिना much (*very much busy नहीं — very much क्रिया के साथ आता है: I like it very much). 'इतना' वाला so (so tired) इस सीढ़ी पर नहीं — so यहाँ इसलिए है (S02)."
+          },
+          {
+            "display": "busy",
+            "cue": "व्यस्त",
+            "tag": "free",
+            "forms": [],
+            "note": "व्यस्त — I'm busy, she is busy, very busy; विशेषण, बदलता नहीं (M2)."
+          }
+        ],
+        "rules": [
+          3,
+          0
+        ]
+      },
+      "trap": "बहुत ज़्यादा व्यस्त का हाथ very much busy लिखता है — विशेषण से पहले अकेला very. और because के बाद I'm पूरा.",
+      "sound": "very = वेरी — v दाँत होंठ पर, 'भेरी' नहीं. busy = बिज़ी — u 'इ', s ज़. I'm very busy = आइम-वेरी-बिज़ी.",
+      "variations": [
+        {
+          "display": "I'm very tired",
+          "cue": "मैं बहुत थका हूँ",
+          "changed": "छोटा वाक्य — be + very + विशेषण; बस इतना."
+        },
+        {
+          "display": "She is very busy on Monday",
+          "cue": "वह सोमवार को बहुत व्यस्त है",
+          "changed": "कर्ता she, दिन on Monday (M4); very busy वही."
+        }
+      ],
+      "mistake": {
+        "display": "I sleep late because I'm very much busy",
+        "why": "विशेषण से पहले very अकेला — very busy; very much क्रिया के बाद आता है (I like it very much). भारत की अंग्रेज़ी की जानी-पहचानी फिसलन."
+      },
+      "usage": "आदत की वजह बताना — काम, थकान: बात + because + I'm very + विशेषण.",
+      "register": "neutral",
+      "mnemonic": "बहुत = very, विशेषण के ठीक आगे — very busy; much को छुट्टी."
+    },
+    {
+      "id": "L1-M9-S07",
+      "display": "I'm hungry, so I want rice",
+      "cue": "मुझे भूख लगी है, इसलिए मुझे चावल चाहिए",
+      "literal": "मैं-हूँ भूखा, इसलिए मैं चाहता-हूँ चावल",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hungry",
+            "cue": "भूखा · (मुझे) भूख लगी",
+            "tag": "interference",
+            "forms": [],
+            "note": "भूख लगना = be + hungry — भूख महसूस करने वाला कर्ता है: I'm hungry (मुझे भूख लगी है), she is hungry; *I have hunger नहीं, *Me hunger नहीं (M1 का like वाला नियम: महसूस करने वाला कर्ता, और हालत be से). प्यास = thirsty — इस सीढ़ी पर नहीं."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "मुझे भूख लगी है में मुझे और लगी है — हाथ Me hungry या I have hunger लिखता है; अंग्रेज़ी में I'm hungry: कर्ता I, be, विशेषण. और इसलिए = so, comma के बाद.",
+      "sound": "hungry = हंग्री — ng के बाद ग. so I want = सो-आइ-वॉन्ट.",
+      "variations": [
+        {
+          "display": "I'm hungry, so I'm going to eat",
+          "cue": "मुझे भूख लगी है, इसलिए मैं खाने वाला हूँ",
+          "changed": "नतीजा बदला — going to eat (M6); so वही."
+        },
+        {
+          "display": "She is hungry, so she will eat",
+          "cue": "उसे भूख लगी है, इसलिए वह खाएगी",
+          "changed": "कर्ता she — she is hungry, she will eat (M6); so वहीं."
+        }
+      ],
+      "mistake": {
+        "display": "I have hunger, so I want rice",
+        "why": "भूख लगना अंग्रेज़ी में be + विशेषण है — I'm hungry; have के पास होना है (M4), भूख रखी नहीं जाती. महसूस करने वाला कर्ता, हालत be से."
+      },
+      "usage": "भूख और उसका नतीजा — खाना माँगना: I'm hungry, so + क्या चाहिए.",
+      "register": "neutral",
+      "mnemonic": "भूख लगी = I'm hungry — मुझे नहीं, मैं; have नहीं, am."
+    },
+    {
+      "id": "L1-M9-S08",
+      "display": "She is angry because I'm late",
+      "cue": "वह गुस्सा है क्योंकि मुझे देर हो गई",
+      "literal": "वह है गुस्सा क्योंकि मैं-हूँ देर-से",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "angry",
+            "cue": "गुस्सा (में) · नाराज़",
+            "tag": "interference",
+            "forms": [],
+            "note": "गुस्सा आना = be + angry — She is angry (उसे गुस्सा आ रहा है / वह गुस्सा है): गुस्सा करने वाला कर्ता, हिंदी का उसे नहीं (*Her anger is coming नहीं). I'm angry, they are angry — विशेषण बदलता नहीं. किस पर — angry with + आदमी — इस सीढ़ी पर नहीं."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "उसे गुस्सा आ रहा है का उसे और आ रहा है — हाथ Her anger is coming या To her anger लिखता है; अंग्रेज़ी में She is angry: कर्ता she, be, विशेषण. और मुझे देर हो गई = I'm late (S05 का late, be के साथ).",
+      "sound": "angry = ऐंग्री — ng के बाद ग. I'm late = आइम-लेट.",
+      "variations": [
+        {
+          "display": "He is angry because I'm late",
+          "cue": "वह गुस्सा है क्योंकि मुझे देर हो गई",
+          "changed": "कर्ता he — He is angry; वजह वही."
+        },
+        {
+          "display": "Why is she angry?",
+          "cue": "वह गुस्सा क्यों है?",
+          "changed": "सवाल — Why is she …? (S03 का साँचा); angry वही."
+        }
+      ],
+      "mistake": {
+        "display": "Her anger is coming because I'm late",
+        "why": "गुस्सा आना अंग्रेज़ी में be + angry है — She is angry; गुस्सा करने वाला कर्ता, उसे / her कर्ता नहीं बनता (M1 का like वाला नियम, भावनाओं पर)."
+      },
+      "usage": "किसी के गुस्से की वजह — देर, काम: She / He is angry because + वजह.",
+      "register": "neutral",
+      "mnemonic": "गुस्सा आया = is angry — गुस्सा कहीं से आता नहीं, वह बस है."
+    },
+    {
+      "id": "L1-M9-S09",
+      "display": "I think that the tea is good",
+      "cue": "मुझे लगता है कि चाय अच्छी है",
+      "literal": "मैं सोचता-हूँ कि वह चाय है अच्छी",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "think",
+            "cue": "सोचना · (मुझे) लगता है",
+            "tag": "delta",
+            "forms": [],
+            "note": "राय देना — I think (that) … = मुझे लगता है कि …: कर्ता I, क्रिया think, फिर पूरा वाक्य; हिंदी का मुझे यहाँ I है (M1 का like वाला नियम). बयान में बिना सहारे, सवाल में do: Do you think …? (S10). हालत की क्रिया — -ing नहीं (*I am thinking that नहीं — M4 का नियम); he / she के साथ thinks."
+          },
+          {
+            "display": "that",
+            "cue": "कि (जोड़) · वह (दूर की चीज़)",
+            "tag": "delta",
+            "forms": [],
+            "note": "एक शब्द, दो काम. पहला — कि: I think that the tea is good (मुझे लगता है कि चाय अच्छी है); बोलचाल में अक्सर छूट जाता है — I think the tea is good (S10) — दोनों सही. दूसरा — वह, उँगली उठाकर दूर की चीज़: That is my book (वह मेरी किताब है), that bag; पास की चीज़ this (M8). the (M3) दिखाने का शब्द नहीं है — that है. एक that, लिंग-वचन से नहीं बदलता."
+          },
+          {
+            "display": "good",
+            "cue": "अच्छा · अच्छी · अच्छे",
+            "tag": "free",
+            "forms": [],
+            "note": "अच्छा — एक good, लिंग-वचन से नहीं बदलता (M2 का नियम): good tea, good food, the film is good. Good morning (M2) जमी हुई बात है — उसका good अलग नहीं गिना जाता."
+          }
+        ],
+        "rules": [
+          4,
+          2
+        ]
+      },
+      "trap": "मुझे लगता है का मुझे Me खींचता है और लगता है -ing की तरफ़ (*I am thinking) — I think, बस; और कि = that, पूरे वाक्य से पहले. चाय अच्छी है → the tea is good, is बीच में (M1).",
+      "sound": "think = थिंक — th में जीभ दाँतों के बीच, बिना आवाज़; 'टिंक' नहीं. that = दैट — th 'द' के पास. good = गुड.",
+      "variations": [
+        {
+          "display": "I think the tea is good",
+          "cue": "मुझे लगता है चाय अच्छी है",
+          "changed": "that छूटा — बोलचाल का रूप, वही मतलब."
+        },
+        {
+          "display": "I think that Rohan is a good teacher",
+          "cue": "मुझे लगता है कि रोहन अच्छा शिक्षक है",
+          "changed": "राय बदली — Rohan is a good teacher; good संज्ञा से पहले."
+        }
+      ],
+      "mistake": {
+        "display": "I am thinking that the tea is good",
+        "why": "think यहाँ राय है — हालत, चलता हुआ काम नहीं — इसलिए -ing नहीं: I think (M4 का *I am knowing वाला नियम). I am thinking सोच-विचार कर रहा हूँ — अलग बात."
+      },
+      "usage": "राय देना — खाना, फ़िल्म, आदमी: I think (that) + पूरा वाक्य.",
+      "register": "neutral",
+      "mnemonic": "मुझे लगता है = I think — मैं सोचता हूँ; कि = that, और वह भी that."
+    },
+    {
+      "id": "L1-M9-S10",
+      "display": "Do you think the food is good?",
+      "cue": "क्या आपको लगता है कि खाना अच्छा है?",
+      "literal": "क्या आप सोचते वह खाना है अच्छा?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "food",
+            "cue": "खाना (चीज़)",
+            "tag": "free",
+            "forms": [],
+            "note": "खाना — खाने की चीज़, न गिनी जाने वाली (M3): the food is good, good food; बिना a. खाना (क्रिया) eat (M4) — दो अलग शब्द."
+          }
+        ],
+        "rules": [
+          4,
+          1
+        ]
+      },
+      "trap": "क्या आपको लगता है के हैं / है से हाथ Are you think लिखता है — think साधारण क्रिया है, सवाल do से (M3); और that यहाँ छूटा है, दोनों चलते हैं.",
+      "sound": "food = फ़ूड — लंबा 'ऊ'. Do you think = डू-यू-थिंक. हाँ / ना का सवाल — आख़िर में ऊपर.",
+      "variations": [
+        {
+          "display": "Do you think the film is good?",
+          "cue": "क्या आपको लगता है कि फ़िल्म अच्छी है?",
+          "changed": "चीज़ बदली — the film (M5); साँचा वही."
+        },
+        {
+          "display": "Do you think that the tea is good?",
+          "cue": "क्या आपको लगता है कि चाय अच्छी है?",
+          "changed": "that साथ — पूरा रूप; वही मतलब."
+        }
+      ],
+      "mistake": {
+        "display": "Are you think the food is good?",
+        "why": "think साधारण क्रिया है, be नहीं — सवाल do से: Do you think …? (M3 का *Are you want वाला नियम). आपको लगता है का है यहाँ are नहीं बनता."
+      },
+      "usage": "किसी की राय पूछना — खाना, फ़िल्म, जगह: Do you think (that) + पूरा वाक्य?",
+      "register": "neutral",
+      "mnemonic": "राय पूछो तो do आगे — Do you think …? be को छुट्टी."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M9-C01",
+      "display": "I'm happy because I'm at home",
+      "cue": "मैं ख़ुश हूँ क्योंकि मैं घर पर हूँ"
+    },
+    {
+      "id": "L1-M9-C02",
+      "display": "I'm very busy, so I sleep late",
+      "cue": "मैं बहुत व्यस्त हूँ, इसलिए मैं देर से सोता हूँ"
+    },
+    {
+      "id": "L1-M9-C03",
+      "display": "Why are you angry?",
+      "cue": "आप गुस्सा क्यों हैं?"
+    },
+    {
+      "id": "L1-M9-C04",
+      "display": "Why do you want rice?",
+      "cue": "आपको चावल क्यों चाहिए?"
+    },
+    {
+      "id": "L1-M9-C05",
+      "display": "I'm sad because my friend is late",
+      "cue": "मैं उदास हूँ क्योंकि मेरे दोस्त को देर हो गई"
+    },
+    {
+      "id": "L1-M9-C06",
+      "display": "I think the film is very good",
+      "cue": "मुझे लगता है फ़िल्म बहुत अच्छी है"
+    },
+    {
+      "id": "L1-M9-C07",
+      "display": "Do you think that the tea is good?",
+      "cue": "क्या आपको लगता है कि चाय अच्छी है?"
+    },
+    {
+      "id": "L1-M9-C08",
+      "display": "She is hungry, so she will eat",
+      "cue": "उसे भूख लगी है, इसलिए वह खाएगी"
+    },
+    {
+      "id": "L1-M9-C09",
+      "display": "He is very tired because he works late",
+      "cue": "वह बहुत थका है क्योंकि वह देर तक काम करता है"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

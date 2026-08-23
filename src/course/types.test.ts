@@ -183,7 +183,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all thirty-five of them — hi-mr, en-es and en-ar L1-M1..M10, hi-en L1-M1..M5', () => {
+  it('finds all forty of them — hi-mr, en-es, en-ar and hi-en L1-M1..M10', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -206,10 +206,15 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-es/modules/L1-M8.json',
       'content/en-es/modules/L1-M9.json',
       'content/hi-en/modules/L1-M1.json',
+      'content/hi-en/modules/L1-M10.json',
       'content/hi-en/modules/L1-M2.json',
       'content/hi-en/modules/L1-M3.json',
       'content/hi-en/modules/L1-M4.json',
       'content/hi-en/modules/L1-M5.json',
+      'content/hi-en/modules/L1-M6.json',
+      'content/hi-en/modules/L1-M7.json',
+      'content/hi-en/modules/L1-M8.json',
+      'content/hi-en/modules/L1-M9.json',
       'content/hi-mr/modules/L1-M1.json',
       'content/hi-mr/modules/L1-M10.json',
       'content/hi-mr/modules/L1-M2.json',
@@ -297,11 +302,13 @@ describe('ModuleContent against the modules that exist', () => {
    * decisions"): English appears ONLY in the L2 slots — sentence / word / variation / mistake /
    * pool `display` and word `forms` — and every teaching field is Hindi in Devanagari, which may
    * quote the English word it explains but never switches into English prose. No sentence carries
-   * `glossEn` (#268 — it would be the English hero line twice) and every sentence authored so far
-   * carries `literal`, the Hindi words in English order (M1–M3 by the briefs' rule, M4–M5 by
-   * choice — #271 kept it wherever the order moves, which in this pair is everywhere). Contractions are single surfaces with a straight
-   * apostrophe (`src/engine/surface.ts` folds the curly one on the index, but `display` is one
-   * spelling), and no L1 module writes a possessive `'s`.
+   * `glossEn` (#268 — it would be the English hero line twice) and every sentence of the ten
+   * carries `literal`, the Hindi words in English order (M1–M3 by the briefs' rule, M4–M10 by
+   * choice — #271 and #272 kept it wherever the order moves, which in this pair is everywhere;
+   * M10's turns carry one literal for the whole turn). Contractions are single surfaces with a
+   * straight apostrophe (`src/engine/surface.ts` folds the curly one on the index, but `display`
+   * is one spelling), `it's` (M7) is the only `'s` any display writes, and no L1 module writes a
+   * possessive `'s`.
    */
   it('keeps the English course the other way round: display is English, every teaching field Hindi (#270)', () => {
     const hiEn = MODULE_FILES.filter(([name]) => name.includes('hi-en'));
@@ -310,8 +317,8 @@ describe('ModuleContent against the modules that exist', () => {
 
     expect(
       hiEn.length,
-      'the hi-en modules authored so far (#270: L1-M1..M2; #271: L1-M3..M5)',
-    ).toBe(5);
+      'the ten hi-en L1 modules (#270: L1-M1..M2; #271: L1-M3..M5; #272: L1-M6..M10)',
+    ).toBe(10);
     for (const [file, json] of hiEn) {
       const module = parseModule(json, file);
 
@@ -323,7 +330,10 @@ describe('ModuleContent against the modules that exist', () => {
       for (const sentence of module.sentences) {
         const at = sentence.id;
         expect(sentence.display, at).toMatch(latinOnly);
-        expect(sentence.display, `${at} straight apostrophe, no possessive`).not.toMatch(/’|'s\b/);
+        // `it's` (M7's contraction row) is the one sanctioned `'s`; a possessive `'s` never is.
+        expect(sentence.display, `${at} straight apostrophe, no possessive`).not.toMatch(
+          /’|(?<![Ii]t)'s\b/,
+        );
         expect(sentence.glossEn, `${at} glossEn`).toBeUndefined();
         expect(sentence.literal, `${at} literal`).toMatch(devanagari);
         for (const field of ['cue', 'sound', 'usage', 'mnemonic'] as const) {

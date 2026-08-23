@@ -1,0 +1,586 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M7",
+  "title": "Where things are",
+  "job": "Locations and prepositions",
+  "prerequisites": [
+    "L1-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-23",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "The + N + is/are + in/on/under + the + N",
+      "Where is / are + the + N?",
+      "It's + next to / near / behind + the + N",
+      "There is + a/an + N + in/on + the + N",
+      "There are + num + N-s + in/on + the + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "जगह का शब्द संज्ञा से पहले आता है — on the table (मेज़ पर), in the box (डिब्बे में), under the chair (कुर्सी के नीचे), behind the door (दरवाज़े के पीछे), near the school (स्कूल के पास), next to the bank (बैंक की बग़ल में), in front of the shop (दुकान के सामने): M1 का from वाला नियम पूरे ज़ोर पर. हिंदी का पर / में / के नीचे शब्द के बाद, अंग्रेज़ी का हर ऐसा शब्द पहले — और के का कोई शब्द नहीं (*under of नहीं). in / on / at वही हैं जो M4 ने समय के लिए सिखाए (in the morning · on Monday · at nine) — यहाँ जगह की सीट पर: in the box · on the table · at home. article साथ चलता है — on THE table, वह मेज़ जो हम दोनों देख रहे हैं (M3 का नियम); *on table हिंदी की आदत है, *The book is table on हिंदी का क्रम."
+    },
+    {
+      "tag": "interference",
+      "text": "there is / there are — वह कर्ता जो हिंदी में है ही नहीं: मेज़ पर एक किताब है जगह से शुरू होती है और उसमें कोई कर्ता शब्द नहीं, इसलिए हाथ *On the table is a book लिखता है — यही इस module की असली फिसलन है. अंग्रेज़ी का वाक्य क्रिया से पहले कुछ माँगता है, और वह कुछ there है: There is a book on the table · There are two cups in the box — is / are चीज़ के वचन से (a book → is, two cups → are), जैसे M1 का be पुरुष से. यह there वहाँ नहीं दिखाता, बस सीट भरता है. और जोड़ी: नई चीज़ (a book) → There is a book on the table; जानी-पहचानी चीज़ (the book) → The book is on the table — M3 का article नियम M7 का काम कर रहा है."
+    },
+    {
+      "tag": "delta",
+      "text": "Where is the shop? — M2 का सवाल वाला साँचा, सवाल के शब्द के साथ: where सबसे आगे, be उसके ठीक बाद, चीज़ आख़िर में; हिंदी का दुकान कहाँ है? क्रिया आख़िर में रखता है और कहाँ बीच में. कई चीज़ें हों तो are: Where are the cups? और M2 का वादा — Where are you from? (आप कहाँ से हैं?). जवाब में चीज़ का नाम दोबारा नहीं — it: Where is my bag? It's behind the door."
+    },
+    {
+      "tag": "delta",
+      "text": "it — चीज़ (और जानवर) के लिए वह: हिंदी का एक वह आदमी, औरत और चीज़ तीनों को ढँकता है, अंग्रेज़ी बाँटती है — he आदमी (M4), she औरत (M4), it चीज़, they कई (M6). कर्ता की जगह भी it, कर्म की जगह भी it (Where is it? · I like it). it is बोलचाल में सिकुड़कर it's (एक शब्द, सीधा apostrophe): It's on the table — जहाँ बोलने में पूरा हो वहीं it is (Yes, it is). उँगली उठाकर दिखाना this से (M8: This is …); that M9 में."
+    },
+    {
+      "tag": "delta",
+      "text": "इस module की हदें: किसी का होना अब भी M4 का have है — मेरे पास एक गाड़ी है = I have a car, *There is a car with me नहीं; there is सिर्फ़ 'किसी जगह पर कुछ है' के लिए. स्कूल की इमारत = the school (M4 का नियम: go to school पढ़ने जाना, the school इमारत). अपना-पराया my / your से (M1, M2), 's से नहीं — Rohan's book इस सीढ़ी पर नहीं. कर्ता के अंदर जगह का जोड़ा नहीं (*The book on the table is …) — एक वाक्य, एक जगह."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M7-S01",
+      "display": "The book is on the table",
+      "cue": "किताब मेज़ पर है",
+      "literal": "वह किताब है पर वह मेज़",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "table",
+            "cue": "मेज़",
+            "tag": "free",
+            "forms": [],
+            "note": "मेज़ — on the table = मेज़ पर (M4 का on, सतह वाली सीट); a table (M1), the table (M3 — जो मेज़ हम दोनों जानते हैं), two tables (-s)."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "मेज़ पर — हाथ पर को मेज़ के बाद रखता है (*table on) और the छोड़ देता है (*on table). अंग्रेज़ी में on पहले, the साथ: on the table. literal में the को वह लिखा है — वह मेज़, जो पता है.",
+      "sound": "table = टेबल — a 'ए', आख़िर का -le हल्का 'ल'. on the = ऑन द — the में जीभ दाँतों के बीच.",
+      "variations": [
+        {
+          "display": "The pen is on the table",
+          "cue": "पेन मेज़ पर है",
+          "changed": "चीज़ बदली — the pen; on the table वही."
+        },
+        {
+          "display": "The books are on the table",
+          "cue": "किताबें मेज़ पर हैं",
+          "changed": "बहुवचन — books, इसलिए are (M1 का be वचन से); जगह वही."
+        }
+      ],
+      "mistake": {
+        "display": "The book is table on",
+        "why": "मेज़ पर का पर अंग्रेज़ी में मेज़ से पहले — on the table (M1 का from वाला नियम, M4 का on). जगह का शब्द पहले, जगह बाद में."
+      },
+      "usage": "किसी जानी-पहचानी चीज़ की जगह बताना — The + चीज़ + is + on / in / under + the + जगह.",
+      "register": "neutral",
+      "mnemonic": "पर आगे, मेज़ पीछे — on the table; और दोनों के आगे the."
+    },
+    {
+      "id": "L1-M7-S02",
+      "display": "The pen is in the box",
+      "cue": "पेन डिब्बे में है",
+      "literal": "वह पेन है में वह डिब्बा",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "box",
+            "cue": "डिब्बा",
+            "tag": "free",
+            "forms": [],
+            "note": "डिब्बा — in the box = डिब्बे में (M4 का in, अंदर वाली सीट: किसी चीज़ के अंदर); a box, the box; two boxes."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "डिब्बे में — हाथ in को बाद में रखता है (*box in) या the छोड़ता है (*in box). in पहले, the साथ: in the box.",
+      "sound": "box = बॉक्स — x 'क्स'. in the = इन द.",
+      "variations": [
+        {
+          "display": "The key is in the box",
+          "cue": "चाबी डिब्बे में है",
+          "changed": "चीज़ बदली — the key; in the box वही."
+        },
+        {
+          "display": "The pens are in the box",
+          "cue": "पेन डिब्बे में हैं",
+          "changed": "बहुवचन — pens, are; जगह वही."
+        }
+      ],
+      "mistake": {
+        "display": "The pen is in box",
+        "why": "the छूट गया — जो डिब्बा हम दोनों जानते हैं, उसके आगे the (M3); हिंदी में ऐसा शब्द नहीं, इसलिए हाथ छोड़ता है: in the box."
+      },
+      "usage": "अंदर की जगह — डिब्बा, बैग, गाड़ी: in the + जगह.",
+      "register": "neutral",
+      "mnemonic": "में = in, और आगे — in the box."
+    },
+    {
+      "id": "L1-M7-S03",
+      "display": "The keys are under the chair",
+      "cue": "चाबियाँ कुर्सी के नीचे हैं",
+      "literal": "वह चाबियाँ हैं नीचे वह कुर्सी",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "under",
+            "cue": "के नीचे",
+            "tag": "delta",
+            "forms": [],
+            "note": "के नीचे — एक शब्द, संज्ञा से पहले: under the chair (कुर्सी के नीचे), under the table; के का कोई शब्द नहीं (*under of नहीं). नीचे का दूसरा अंग्रेज़ी शब्द down (नीचे जाना, नीचे की तरफ़) यहाँ नहीं — किसी चीज़ के नीचे हमेशा under."
+          },
+          {
+            "display": "chair",
+            "cue": "कुर्सी",
+            "tag": "free",
+            "forms": [
+              "chair",
+              "chairs"
+            ],
+            "note": "कुर्सी — a chair, the chair, two chairs (-s)."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "कुर्सी के नीचे — के और नीचे दोनों कुर्सी के बाद; अंग्रेज़ी में एक under, कुर्सी से पहले. और नीचे सुनकर हाथ down लिखता है — चीज़ के नीचे = under. keys बहुवचन → are.",
+      "sound": "under = अंडर — ज़ोर पहले हिस्से पर. chair = चेयर. keys are = कीज़-आर, एक साँस.",
+      "variations": [
+        {
+          "display": "The book is under the chair",
+          "cue": "किताब कुर्सी के नीचे है",
+          "changed": "एक चीज़ — the book, is; under वही."
+        },
+        {
+          "display": "The keys are under the table",
+          "cue": "चाबियाँ मेज़ के नीचे हैं",
+          "changed": "जगह बदली — under the table."
+        }
+      ],
+      "mistake": {
+        "display": "The keys are down the chair",
+        "why": "नीचे के दो अंग्रेज़ी शब्द हैं: किसी चीज़ के नीचे = under; down नीचे की तरफ़ जाने का शब्द है. कुर्सी के नीचे = under the chair."
+      },
+      "usage": "कई चीज़ें कहाँ हैं — The + चीज़ें + are + under / in / on + the + जगह.",
+      "register": "neutral",
+      "mnemonic": "के नीचे = under — एक शब्द, आगे; के को छोड़ दो."
+    },
+    {
+      "id": "L1-M7-S04",
+      "display": "Where is my bag?",
+      "cue": "मेरा बैग कहाँ है?",
+      "literal": "कहाँ है मेरा बैग?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Where",
+            "cue": "कहाँ",
+            "tag": "delta",
+            "forms": [],
+            "note": "कहाँ — सवाल का शब्द सबसे आगे, be उसके ठीक बाद, फिर चीज़: Where is my bag? · Where are the cups? (वचन से is / are). हिंदी का कहाँ क्रिया से पहले बीच में बैठता है (बैग कहाँ है?); अंग्रेज़ी का Where सबसे आगे — M2 का How / What वाला साँचा. Where are you from? = आप कहाँ से हैं? (M2 का वादा)."
+          },
+          {
+            "display": "bag",
+            "cue": "बैग · थैला",
+            "tag": "free",
+            "forms": [],
+            "note": "बैग — my bag, the bag, a bag; two bags (-s)."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "मेरा बैग कहाँ है? का क्रम हाथ से Where my bag is? या My bag where is? लिखवाता है — Where सबसे आगे, is उसके ठीक बाद, my bag आख़िर में.",
+      "sound": "where = वेयर — wh 'व', h चुप. bag = बैग. सवाल के शब्द वाला सवाल आख़िर में ऊपर नहीं उठता.",
+      "variations": [
+        {
+          "display": "Where are the keys?",
+          "cue": "चाबियाँ कहाँ हैं?",
+          "changed": "बहुवचन — the keys, are; Where वहीं आगे."
+        },
+        {
+          "display": "Where are you from?",
+          "cue": "आप कहाँ से हैं?",
+          "changed": "जगह का खुला सवाल — M2 का from, आख़िर में; Where आगे, are बीच में."
+        }
+      ],
+      "mistake": {
+        "display": "Where my bag is?",
+        "why": "सवाल के शब्द के ठीक बाद be — Where is my bag? हिंदी में है आख़िर में था; अंग्रेज़ी में is कहाँ के ठीक पीछे बैठता है (M2 का नियम)."
+      },
+      "usage": "कोई चीज़ ढूँढना — बैग, चाबी, फ़ोन: Where is / are + the / my + चीज़?",
+      "register": "neutral",
+      "mnemonic": "कहाँ झंडे की तरह आगे, है उसके ठीक पीछे — Where is …?"
+    },
+    {
+      "id": "L1-M7-S05",
+      "display": "It's behind the door",
+      "cue": "यह दरवाज़े के पीछे है",
+      "literal": "यह-है पीछे वह दरवाज़ा",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "It's",
+            "cue": "यह / वह है (it is)",
+            "tag": "delta",
+            "forms": [
+              "It's",
+              "It is"
+            ],
+            "note": "it is का बोलचाल वाला रूप — एक शब्द, सीधा apostrophe ('): It's behind the door · It's on the table. चीज़ की बात जारी रखने का शब्द — Where is my bag? It's behind the door: दोबारा bag नहीं, it. पूरा it is तब, जब ज़ोर देना हो या वाक्य वहीं ख़त्म हो (Yes, it is). दोनों एक ही शब्द, एक ही मतलब. (its बिना apostrophe अलग शब्द है — उसका — यहाँ नहीं.)"
+          },
+          {
+            "display": "behind",
+            "cue": "के पीछे",
+            "tag": "delta",
+            "forms": [],
+            "note": "के पीछे — एक शब्द, संज्ञा से पहले: behind the door (दरवाज़े के पीछे), behind the car; के का कोई शब्द नहीं. उल्टा in front of (S08)."
+          },
+          {
+            "display": "door",
+            "cue": "दरवाज़ा",
+            "tag": "free",
+            "forms": [],
+            "note": "दरवाज़ा — the door, a door; two doors (-s)."
+          }
+        ],
+        "rules": [
+          3,
+          0
+        ]
+      },
+      "trap": "यह दरवाज़े के पीछे है — वह सुनकर हाथ He is behind लिखता है; चीज़ के लिए it. और के पीछे = behind, दरवाज़े से पहले — के का कोई शब्द नहीं.",
+      "sound": "it's = इट्स — एक साँस, apostrophe चुप. behind = बिहाइंड — ज़ोर दूसरे हिस्से पर. door = डोर.",
+      "variations": [
+        {
+          "display": "It's on the table",
+          "cue": "यह मेज़ पर है",
+          "changed": "जगह बदली — on the table; It's वही."
+        },
+        {
+          "display": "It is behind the door",
+          "cue": "यह दरवाज़े के पीछे है",
+          "changed": "पूरा रूप it is — वही मतलब, ज़ोर देने में; बोलचाल It's."
+        }
+      ],
+      "mistake": {
+        "display": "He is behind the door",
+        "why": "चीज़ (बैग) के लिए he नहीं — it: वह का बँटवारा he (आदमी), she (औरत), it (चीज़) — M4 का वादा. It's behind the door."
+      },
+      "usage": "Where is …? का जवाब — चीज़ दोबारा नाम लिए बिना: It's + जगह का शब्द + the + जगह.",
+      "register": "neutral",
+      "mnemonic": "चीज़ = it, और it is सिकुड़कर it's — It's behind the door."
+    },
+    {
+      "id": "L1-M7-S06",
+      "display": "Is it near the school?",
+      "cue": "क्या यह स्कूल के पास है?",
+      "literal": "है यह पास वह स्कूल?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "it",
+            "cue": "यह · वह (चीज़ के लिए)",
+            "tag": "delta",
+            "forms": [],
+            "note": "चीज़ (या जानवर) के लिए वह / यह — he आदमी, she औरत, it चीज़: Where is it? · Is it near the school? · It costs ten rupees (M8) · I like it. हिंदी का एक वह तीनों को ढँकता है; अंग्रेज़ी में चुनना पड़ता है (M4 का he / she; M10 में फिर). कर्ता की जगह भी it, कर्म की जगह भी it — बदलता नहीं. be के साथ is: it is → बोलचाल में it's (S05)."
+          },
+          {
+            "display": "near",
+            "cue": "के पास · नज़दीक",
+            "tag": "interference",
+            "forms": [],
+            "note": "के पास — एक शब्द, संज्ञा से पहले: near the school, near the bank; to नहीं (*near to नहीं — भारत की अंग्रेज़ी की जानी-पहचानी फिसलन) और के का कोई शब्द नहीं. M4 का at घर के बिंदु के लिए था (at home); पास होने के लिए near."
+          }
+        ],
+        "rules": [
+          3,
+          2,
+          0
+        ]
+      },
+      "trap": "के पास — हाथ near to the school लिखता है; near अकेला पूरा है. और सवाल में be आगे: Is it …? (M2 का नियम), और चीज़ के लिए it — he नहीं.",
+      "sound": "near = नियर — r हल्का. Is it एक साँस में: इज़-इट. हाँ / ना का सवाल — आख़िर में आवाज़ ऊपर.",
+      "variations": [
+        {
+          "display": "Is it near the door?",
+          "cue": "क्या यह दरवाज़े के पास है?",
+          "changed": "जगह बदली — near the door; Is it वही."
+        },
+        {
+          "display": "It is near the school",
+          "cue": "यह स्कूल के पास है",
+          "changed": "सवाल नहीं, बयान — it पहले, is बाद में; near वही."
+        }
+      ],
+      "mistake": {
+        "display": "Is it near to the school?",
+        "why": "के पास = near — एक शब्द, और उसके बाद सीधे the school; to नहीं. to वहाँ है जहाँ जाना हो (go to school — M3, M4), पास होने में नहीं."
+      },
+      "usage": "किसी जगह के बारे में पक्का करना — दुकान, बैंक, स्कूल: Is it + near / behind / next to + the + जगह?",
+      "register": "neutral",
+      "mnemonic": "पास = near, अकेला और आगे — near the school; to को छुट्टी."
+    },
+    {
+      "id": "L1-M7-S07",
+      "display": "The bank is next to the shop",
+      "cue": "बैंक दुकान की बग़ल में है",
+      "literal": "वह बैंक है बग़ल-में वह दुकान",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "next to",
+            "cue": "की बग़ल में · के बाजू में",
+            "tag": "delta",
+            "forms": [],
+            "note": "दो शब्द, एक साथ — की बग़ल में: next to the shop, next to the bank; to इसका हिस्सा है, छूटता नहीं. M6 का next (अगला — next week) अलग शब्द है; यह पूरा जोड़ा next to है, और दोनों को मिलाओ मत."
+          },
+          {
+            "display": "bank",
+            "cue": "बैंक",
+            "tag": "free",
+            "forms": [],
+            "note": "बैंक — अंग्रेज़ी से आया शब्द; the bank, a bank."
+          },
+          {
+            "display": "shop",
+            "cue": "दुकान",
+            "tag": "free",
+            "forms": [
+              "shop",
+              "shops"
+            ],
+            "note": "दुकान — the shop, a shop, two shops (-s); दुकान जाना = go to the shop (M3 का to, दिशा वाला — और the, क्योंकि इमारत की बात है)."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "बग़ल में का में हाथ को in की तरफ़ खींचता है, और next सुनकर M6 का अगला याद आता है — यहाँ पूरा next to, एक साथ: next to the shop.",
+      "sound": "next to = नेक्स्ट-टु, एक साँस; to हल्का. bank = बैंक. shop = शॉप.",
+      "variations": [
+        {
+          "display": "The shop is next to the bank",
+          "cue": "दुकान बैंक की बग़ल में है",
+          "changed": "उल्टा — दुकान कर्ता, बैंक जगह; next to वही."
+        },
+        {
+          "display": "My school is next to the shop",
+          "cue": "मेरा स्कूल दुकान की बग़ल में है",
+          "changed": "कर्ता बदला — my school; साँचा वही."
+        }
+      ],
+      "mistake": {
+        "display": "The bank is next the shop",
+        "why": "next अकेला अगला है (M6: next week); बग़ल में पूरा next to है — दो शब्द, to छूटता नहीं: next to the shop."
+      },
+      "usage": "दो जगहों का रिश्ता — बैंक, दुकान, स्कूल: The + जगह + is + next to / near / behind + the + जगह.",
+      "register": "neutral",
+      "mnemonic": "बग़ल में = next to — दो शब्द, एक साथ; next अकेला = अगला."
+    },
+    {
+      "id": "L1-M7-S08",
+      "display": "It's in front of the shop",
+      "cue": "यह दुकान के सामने है",
+      "literal": "यह-है सामने वह दुकान",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "in front of",
+            "cue": "के सामने",
+            "tag": "delta",
+            "forms": [],
+            "note": "तीन शब्द, एक साथ — के सामने: in front of the shop, in front of the school; अंदर के in, front, of अलग-अलग कुछ नहीं कहते, जोड़ा पूरा का पूरा याद करो. उल्टा behind (S05). of अकेला M8 में अपने काम पर आएगा (a kilo of rice) — यहाँ वह इस जोड़े का हिस्सा है."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "दुकान के सामने — के का हाथ of को कहीं भी रख देता है या छोड़ देता है (*in front the shop, *front of the shop); पूरा तीन शब्द, इसी क्रम में: in front of the shop. और गाड़ी / बैग की बात जारी है, तो It's.",
+      "sound": "in front of = इन-फ़्रंट-ऑव, एक साँस; of = ऑव — आख़िर में व, फ़ नहीं. It's = इट्स.",
+      "variations": [
+        {
+          "display": "It's in front of the bank",
+          "cue": "यह बैंक के सामने है",
+          "changed": "जगह बदली — the bank; in front of वही."
+        },
+        {
+          "display": "My bag is in front of the door",
+          "cue": "मेरा बैग दरवाज़े के सामने है",
+          "changed": "It's की जगह चीज़ का नाम — my bag; जगह the door."
+        }
+      ],
+      "mistake": {
+        "display": "It's in front the shop",
+        "why": "जोड़ा तीन शब्द का है — in front of; of छूटा तो जोड़ा टूटा. के सामने = in front of, पूरा."
+      },
+      "usage": "सामने की जगह — गाड़ी, बैग, दुकान: in front of the + जगह.",
+      "register": "neutral",
+      "mnemonic": "के सामने = in front of — तीन शब्द, एक साँस; पीछे = behind."
+    },
+    {
+      "id": "L1-M7-S09",
+      "display": "There is a book on the table",
+      "cue": "मेज़ पर एक किताब है",
+      "literal": "वहाँ-है एक किताब पर वह मेज़",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "There is",
+            "cue": "… है (किसी जगह पर कुछ होना)",
+            "tag": "interference",
+            "forms": [
+              "There is",
+              "There are"
+            ],
+            "note": "अंग्रेज़ी का वह कर्ता जो हिंदी में है ही नहीं: मेज़ पर एक किताब है जगह से शुरू होती है और उसमें कोई कर्ता शब्द नहीं; अंग्रेज़ी में क्रिया से पहले कुछ चाहिए, और वह कुछ there है — There is a book on the table · There are two cups in the box. दो शब्द, एक साथ: there is / there are — चीज़ के वचन से (a book → is, two cups → are), जैसे M1 का be पुरुष से. यह there वहाँ नहीं दिखाता, बस सीट भरता है (literal में इसे वहाँ-है लिखा है). नई चीज़ (a book) → There is a book …; जानी-पहचानी चीज़ (the book) → The book is on the table (S01) — M3 का article नियम. मेरे पास एक गाड़ी है = I have a car (M4), there is नहीं."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "मेज़ पर एक किताब है — हिंदी जगह से शुरू होती है और हाथ On the table is a book लिखता है; अंग्रेज़ी में पहले There is, फिर चीज़, फिर जगह. और यह है नई चीज़ का है — a book; The book is … जानी-पहचानी चीज़ का.",
+      "sound": "there is = देयर-इज़ — th में जीभ दाँतों के बीच; बोलचाल में अक्सर 'देयर्ज़'. a book = अ बुक.",
+      "variations": [
+        {
+          "display": "There is a pen in the bag",
+          "cue": "बैग में एक पेन है",
+          "changed": "चीज़ और जगह बदले — a pen, in the bag; There is वही."
+        },
+        {
+          "display": "There is a shop near the school",
+          "cue": "स्कूल के पास एक दुकान है",
+          "changed": "जगह की बात — a shop, near the school; साँचा वही."
+        }
+      ],
+      "mistake": {
+        "display": "On the table is a book",
+        "why": "अंग्रेज़ी का वाक्य जगह से शुरू नहीं होता, कर्ता चाहिए — और कर्ता की सीट पर there: There is a book on the table. हिंदी का साँचा यहाँ सीधा नहीं उतरता."
+      },
+      "usage": "किसी जगह पर क्या है, बताना — नई चीज़, पहली बार: There is a / an + चीज़ + जगह.",
+      "register": "neutral",
+      "mnemonic": "हिंदी जगह से शुरू, अंग्रेज़ी there से — There is a book on the table."
+    },
+    {
+      "id": "L1-M7-S10",
+      "display": "There are two cups in the box",
+      "cue": "डिब्बे में दो कप हैं",
+      "literal": "वहाँ-हैं दो कप में वह डिब्बा",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cups",
+            "cue": "कप",
+            "tag": "free",
+            "forms": [
+              "cup",
+              "cups"
+            ],
+            "note": "कप — गिनने-लायक: a cup, two cups (-s, M3 का अंक वाला नियम); a cup of tea (M8 का of)."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "दो कप — हिंदी में कप वही रहा; अंग्रेज़ी में cups. और दो चीज़ें → there are; there is हाथ में जम जाता है (*There is two cups).",
+      "sound": "there are = देयर-आर — बोलचाल में 'देयरार'. cups = कप्स. in the box = इन द बॉक्स.",
+      "variations": [
+        {
+          "display": "There are two books on the table",
+          "cue": "मेज़ पर दो किताबें हैं",
+          "changed": "चीज़ और जगह बदले — two books, on the table; There are वही."
+        },
+        {
+          "display": "There are two keys in the bag",
+          "cue": "बैग में दो चाबियाँ हैं",
+          "changed": "चीज़ बदली — two keys; are वही."
+        }
+      ],
+      "mistake": {
+        "display": "There is two cups in the box",
+        "why": "there is / there are चीज़ के वचन से — two cups → there are; there is सिर्फ़ एक चीज़ के लिए (a book). M1 का be नियम, कर्ता पीछे खड़ा होने पर भी."
+      },
+      "usage": "कई चीज़ें कहाँ हैं — गिनकर: There are + अंक + चीज़ें-s + जगह.",
+      "register": "neutral",
+      "mnemonic": "एक → there is, कई → there are — be गिनती देखता है, यहाँ भी."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M7-C01",
+      "display": "The bag is on the chair",
+      "cue": "बैग कुर्सी पर है"
+    },
+    {
+      "id": "L1-M7-C02",
+      "display": "Where are the keys?",
+      "cue": "चाबियाँ कहाँ हैं?"
+    },
+    {
+      "id": "L1-M7-C03",
+      "display": "They are under the table",
+      "cue": "वे मेज़ के नीचे हैं"
+    },
+    {
+      "id": "L1-M7-C04",
+      "display": "It's in the box",
+      "cue": "यह डिब्बे में है"
+    },
+    {
+      "id": "L1-M7-C05",
+      "display": "There is a pen in the bag",
+      "cue": "बैग में एक पेन है"
+    },
+    {
+      "id": "L1-M7-C06",
+      "display": "There are two books on the table",
+      "cue": "मेज़ पर दो किताबें हैं"
+    },
+    {
+      "id": "L1-M7-C07",
+      "display": "Is the shop near the bank?",
+      "cue": "क्या दुकान बैंक के पास है?"
+    },
+    {
+      "id": "L1-M7-C08",
+      "display": "The school is next to the bank",
+      "cue": "स्कूल बैंक की बग़ल में है"
+    },
+    {
+      "id": "L1-M7-C09",
+      "display": "Is it in front of the door?",
+      "cue": "क्या यह दरवाज़े के सामने है?"
+    },
+    {
+      "id": "L1-M7-C10",
+      "display": "The cups are behind the box",
+      "cue": "कप डिब्बे के पीछे हैं"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
