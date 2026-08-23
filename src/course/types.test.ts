@@ -183,7 +183,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all thirty of them — hi-mr L1-M1..M10, en-es L1-M1..M10, en-ar L1-M1..M10', () => {
+  it('finds all thirty-two of them — hi-mr, en-es and en-ar L1-M1..M10, hi-en L1-M1..M2', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -205,6 +205,8 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-es/modules/L1-M7.json',
       'content/en-es/modules/L1-M8.json',
       'content/en-es/modules/L1-M9.json',
+      'content/hi-en/modules/L1-M1.json',
+      'content/hi-en/modules/L1-M2.json',
       'content/hi-mr/modules/L1-M1.json',
       'content/hi-mr/modules/L1-M10.json',
       'content/hi-mr/modules/L1-M2.json',
@@ -282,6 +284,59 @@ describe('ModuleContent against the modules that exist', () => {
       for (const sentence of module.sentences) {
         expect(sentence.display).toMatch(/^[^\p{Script=Arabic}]+$/u);
         if (sentence.script !== undefined) expect(sentence.script).toMatch(/\p{Script=Arabic}/u);
+      }
+    }
+  });
+
+  /**
+   * hi-en (#267–#273) is the first course whose L2 is the language the other three teach IN, so
+   * the language law runs the other way round (#270, `tools/course-briefs.ts` "hi-en: the four
+   * decisions"): English appears ONLY in the L2 slots — sentence / word / variation / mistake /
+   * pool `display` and word `forms` — and every teaching field is Hindi in Devanagari, which may
+   * quote the English word it explains but never switches into English prose. No sentence carries
+   * `glossEn` (#268 — it would be the English hero line twice) and every M1–M3 sentence carries
+   * `literal`, the Hindi words in English order. Contractions are single surfaces with a straight
+   * apostrophe (`src/engine/surface.ts` folds the curly one on the index, but `display` is one
+   * spelling), and no L1 module writes a possessive `'s`.
+   */
+  it('keeps the English course the other way round: display is English, every teaching field Hindi (#270)', () => {
+    const hiEn = MODULE_FILES.filter(([name]) => name.includes('hi-en'));
+    const devanagari = /\p{Script=Devanagari}/u;
+    const latinOnly = /^[^\p{Script=Devanagari}]+$/u;
+
+    expect(hiEn.length, 'the hi-en modules authored so far (#270: L1-M1, L1-M2)').toBe(2);
+    for (const [file, json] of hiEn) {
+      const module = parseModule(json, file);
+
+      for (const rule of module.rules) expect(rule.text, `${file} rule`).toMatch(devanagari);
+      for (const item of module.comprehensionPool) {
+        expect(item.display, item.id).toMatch(latinOnly);
+        expect(item.cue, item.id).toMatch(devanagari);
+      }
+      for (const sentence of module.sentences) {
+        const at = sentence.id;
+        expect(sentence.display, at).toMatch(latinOnly);
+        expect(sentence.display, `${at} straight apostrophe, no possessive`).not.toMatch(/’|'s\b/);
+        expect(sentence.glossEn, `${at} glossEn`).toBeUndefined();
+        expect(sentence.literal, `${at} literal`).toMatch(devanagari);
+        for (const field of ['cue', 'sound', 'usage', 'mnemonic'] as const) {
+          expect(sentence[field], `${at} ${field}`).toMatch(devanagari);
+        }
+        if (sentence.trap !== undefined) expect(sentence.trap, `${at} trap`).toMatch(devanagari);
+        expect(sentence.mistake?.display, `${at} mistake`).toMatch(latinOnly);
+        expect(sentence.mistake?.why, `${at} mistake.why`).toMatch(devanagari);
+        for (const variation of sentence.variations ?? []) {
+          expect(variation.display, `${at} variation`).toMatch(latinOnly);
+          expect(variation.cue, `${at} variation cue`).toMatch(devanagari);
+          expect(variation.changed, `${at} variation changed`).toMatch(devanagari);
+        }
+        for (const word of sentence.deconstruction.words) {
+          expect(word.display, `${at} word`).toMatch(latinOnly);
+          for (const form of word.forms)
+            expect(form, `${at} form of ${word.display}`).toMatch(latinOnly);
+          expect(word.cue, `${at} cue of ${word.display}`).toMatch(devanagari);
+          expect(word.note, `${at} note of ${word.display}`).toMatch(devanagari);
+        }
       }
     }
   });

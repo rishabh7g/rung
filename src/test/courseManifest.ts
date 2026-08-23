@@ -10,11 +10,11 @@
  * **One row carries `fixture` again.** en-es graduated in #195 and en-ar in #202, and #267 added
  * hi-en — Hindi (L1) → English (L2) — behind the same gate: `content/courses.json` lists it with
  * `fixture: true`, so a strict build drops the whole course and only `--with-fixtures` can emit
- * it. Today the dev build does not emit it either (the course has no authored module yet and the
- * build filters the manifest to courses that shipped ≥ 1), so this fixture is AHEAD of the
- * emitted file on purpose: it is what the app will be handed the day #270 lands the first module,
- * and it is how the Settings smoke (`src/screens/SettingsScreen.test.tsx`) reaches the fourth
- * course without a browser. The row graduates with #273, as the other two did.
+ * it. Since #270 authored L1-M1 and L1-M2 the dev build emits the row exactly like this (the
+ * build filters the manifest to courses that shipped ≥ 1, and hi-en now ships two), which is how
+ * the Settings smoke (`src/screens/SettingsScreen.test.tsx`) and the authored-rung walk
+ * (`src/course/hiEnAuthored.test.tsx`) reach the fourth course without a browser. The row
+ * graduates with #273, as the other two did.
  */
 import { vi } from 'vitest';
 import { completeStrings } from './courseStrings.ts';
