@@ -109,6 +109,17 @@ describe('every course names its two languages in tags, not just in words', () =
     expect(hiMr?.l2Tag).toBe('mr');
   });
 
+  it('is Hindi about English for the pair authored behind the gate (#267)', () => {
+    const hiEn = AUTHORED.find((course) => course.id === 'hi-en');
+
+    // The chrome of this course is Hindi and the sentences are English, and the shell knows
+    // nothing of that: it reads `l1Tag` for the document and `l2Tag` for the taught line. The
+    // fixture flag is what keeps the row out of a learner build until #273.
+    expect(hiEn?.l1Tag).toBe('hi');
+    expect(hiEn?.l2Tag).toBe('en');
+    expect(hiEn?.fixture).toBe(true);
+  });
+
   it('is an ltr course with an rtl second line for the pair that needs both (#196)', () => {
     const enAr = AUTHORED.find((course) => course.id === 'en-ar');
 

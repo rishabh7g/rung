@@ -127,11 +127,17 @@ issues that tracked it (#64, #110, #111) were closed by the owner on 2026-08-13,
 **22 open questions in `docs/08-marathi-third-review.md`** — which supersede the two
 earlier lists — are the only remaining record of what a native reviewer still owes.
 
-**There is no fixture course left (#202, 2026-08-13).** All three courses ship, and no module in
-the repo is unverified, so `npm run dev` and `npm run build` now contain the same content — the
-two relaxations are still enforced and still tested (`tools/content-build.test.ts` builds
-synthetic fixture rows and unverified modules and watches them be dropped), they simply have
-nothing in this repo to relax.
+**One fixture course again: hi-en (#267, 2026-08-23).** All three courses ship and no module in
+the repo is unverified, so `npm run dev` and `npm run build` contain the same modules — the two
+relaxations are still enforced and still tested (`tools/content-build.test.ts` builds synthetic
+fixture rows and unverified modules and watches them be dropped). What they now relax is the
+fourth course: **hi-en — Hindi (L1) → English (L2)** — a manifest row with `fixture: true`, a
+3 × 10 ladder (`content/hi-en/levels.json`, every module `hasContent: false` + `draft: true`)
+and a Hindi strings bundle, and **no `modules/` folder** until #270 authors the first rung. A
+strict build reports `hi-en: 0 modules — fixture course, excluded by the gate`; a dev build
+admits it and reports `0 modules — nothing authored yet`; neither emits it, because the emitted
+`courses.json` lists only courses that shipped ≥ 1 module. The briefs (#269), the authoring
+chain (#270–#272) and graduation (#273) follow the en-es/en-ar path.
 
 **en-es ships (#195, 2026-08-13) — the product has two courses.** All ten L1 rungs —
 `L1-M1`…`L1-M10` — are authored and carry `verified: true` on the same

@@ -1,16 +1,20 @@
 /**
  * Test fixture for the emitted course manifest (#79).
  *
- * A trimmed copy of what `npm run dev` actually writes to `public/content/courses.json` — the
- * envelope with its dev keys, hi-mr first, and en-ar carrying `romanizationNote` so the loader
- * is exercised against a row that has more than the nine required fields. Shared, so the loader
- * test and the boot tests cannot drift into disagreeing about the shape.
+ * A trimmed copy of what `npm run dev` writes to `public/content/courses.json` once hi-en ships a
+ * module — the envelope with its dev keys, hi-mr first, en-ar carrying `romanizationNote` so the
+ * loader is exercised against a row that has more than the nine required fields, and hi-en
+ * carrying `fixture: true`. Shared, so the loader test and the boot tests cannot drift into
+ * disagreeing about the shape.
  *
- * **No row carries `fixture` any more.** en-es graduated in #195 and en-ar in #202, so the repo
- * holds no fixture course and a dev build emits the same three rows a strict build does — the
- * envelope's `devBuild` keys come from the flags `npm run dev` passes, not from anything the
- * content still is. The loader's tolerance of a `fixture` row is covered where it belongs, on
- * `parseManifest` in `src/course/manifest.test.ts`.
+ * **One row carries `fixture` again.** en-es graduated in #195 and en-ar in #202, and #267 added
+ * hi-en — Hindi (L1) → English (L2) — behind the same gate: `content/courses.json` lists it with
+ * `fixture: true`, so a strict build drops the whole course and only `--with-fixtures` can emit
+ * it. Today the dev build does not emit it either (the course has no authored module yet and the
+ * build filters the manifest to courses that shipped ≥ 1), so this fixture is AHEAD of the
+ * emitted file on purpose: it is what the app will be handed the day #270 lands the first module,
+ * and it is how the Settings smoke (`src/screens/SettingsScreen.test.tsx`) reaches the fourth
+ * course without a browser. The row graduates with #273, as the other two did.
  */
 import { vi } from 'vitest';
 import { completeStrings } from './courseStrings.ts';
@@ -54,6 +58,18 @@ export const DEV_MANIFEST = {
       scriptMode: 'romanized',
       dir: 'ltr',
       romanizationNote: 'ALA-LC-flavoured Modern Standard Arabic in Latin letters.',
+    },
+    {
+      id: 'hi-en',
+      l1: 'Hindi',
+      l2: 'English',
+      l1Tag: 'hi',
+      l2Tag: 'en',
+      l2Dir: 'ltr',
+      pairLabel: 'hindi → english',
+      scriptMode: 'native',
+      dir: 'ltr',
+      fixture: true,
     },
   ],
 } as const;

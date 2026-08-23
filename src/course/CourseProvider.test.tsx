@@ -52,7 +52,7 @@ describe('CourseProvider', () => {
       </CourseProvider>,
     );
 
-    expect(await screen.findByText(/active hi-mr of 3/)).toBeInTheDocument();
+    expect(await screen.findByText(/active hi-mr of 4/)).toBeInTheDocument();
   });
 
   it('boots on the persisted course when it is still in the manifest', async () => {
@@ -65,7 +65,7 @@ describe('CourseProvider', () => {
       </CourseProvider>,
     );
 
-    expect(await screen.findByText(/active en-ar of 3/)).toBeInTheDocument();
+    expect(await screen.findByText(/active en-ar of 4/)).toBeInTheDocument();
   });
 
   it('falls back to the first entry, with a warn, when the persisted course is gone', async () => {
@@ -79,7 +79,7 @@ describe('CourseProvider', () => {
       </CourseProvider>,
     );
 
-    expect(await screen.findByText(/active hi-mr of 3/)).toBeInTheDocument();
+    expect(await screen.findByText(/active hi-mr of 4/)).toBeInTheDocument();
     expect(warn).toHaveBeenCalledWith(expect.stringMatching(/"fr-de"/));
   });
 
@@ -104,7 +104,7 @@ describe('CourseProvider', () => {
       </CourseProvider>,
     );
 
-    expect(await screen.findByText(/active hi-mr of 3$/)).toBeInTheDocument();
+    expect(await screen.findByText(/active hi-mr of 4$/)).toBeInTheDocument();
   });
 
   it('shows the wordmark and nothing else while the manifest is in flight', () => {
@@ -175,7 +175,7 @@ describe('CourseProvider', () => {
       </CourseProvider>,
     );
 
-    expect(await screen.findByText(/active en-fr of 4/)).toBeInTheDocument();
+    expect(await screen.findByText(/active en-fr of 5/)).toBeInTheDocument();
   });
 
   it("loads the active course's strings as part of boot, not after it", async () => {
@@ -241,7 +241,7 @@ describe('the persistence seam (#82)', () => {
       </CourseProvider>,
     );
 
-    expect(await screen.findByText(/active hi-mr of 3/)).toBeInTheDocument();
+    expect(await screen.findByText(/active hi-mr of 4/)).toBeInTheDocument();
     expect(useAppStore.getState().activeCourse).toBe('hi-mr');
   });
 
@@ -255,7 +255,7 @@ describe('the persistence seam (#82)', () => {
       </CourseProvider>,
     );
 
-    await screen.findByText(/active en-ar of 3/);
+    await screen.findByText(/active en-ar of 4/);
     expect(useAppStore.getState().courses['en-ar']).toEqual({
       modules: {},
       production: {},

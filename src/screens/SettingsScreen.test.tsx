@@ -21,7 +21,7 @@
  * focus below that — design/pwa-checklist.md §1) and its target is ≥44px, asserted against the
  * stylesheet and the tokens it resolves to, the same way `styleContract.test.ts` reads CSS.
  */
-import { fireEvent, render, screen, within } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import tokensCss from '../../design/tokens.css?raw';
 import App from '../App.tsx';
@@ -39,6 +39,25 @@ import settingsCss from './SettingsScreen.module.css?raw';
 /* ------------------------------------------------------------------ the fixtures */
 
 const COURSE = 'hi-mr';
+
+/**
+ * The fourth course's AUTHORED files, not fixtures (#267): `content/hi-en/levels.json` and
+ * `content/hi-en/strings.json`, read off disk the way `langLaw.test.tsx` reads the manifest. hi-en
+ * is a fixture course with no module yet, so no build emits it and no browser on this host may
+ * open it — this is the smoke that proves the skeleton boots: the row in the switcher, the
+ * ten-rung ladder, the Hindi chrome.
+ */
+const HI_EN_FILES = import.meta.glob<string>('../../content/hi-en/*.json', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+});
+
+function authored(file: 'levels.json' | 'strings.json'): unknown {
+  const text = HI_EN_FILES[`../../content/hi-en/${file}`];
+  if (text === undefined) throw new Error(`content/hi-en/${file} is not authored`);
+  return JSON.parse(text);
+}
 /** Injected, so nothing here touches the wall clock — `passedAt` is a receipt, not a schedule. */
 const STAMP = () => '2026-02-03T09:00:00.000Z';
 
@@ -164,7 +183,7 @@ describe('the COURSE dropdown (F0)', () => {
 
     const select = await renderSettings(tenRungLadder(2), manifest);
 
-    expect(within(select).getAllByRole('option')).toHaveLength(4);
+    expect(within(select).getAllByRole('option')).toHaveLength(DEV_MANIFEST.courses.length + 1);
     expect(within(select).getByRole('option', { name: 'french → german' })).toBeInTheDocument();
   });
 
@@ -228,6 +247,112 @@ describe('the COURSE dropdown (F0)', () => {
     const target = /--tap-min:\s*([\d.]+)px/.exec(tokensCss)?.[1];
     expect(Number(floor)).toBeGreaterThanOrEqual(16);
     expect(Number(target)).toBeGreaterThanOrEqual(44);
+  });
+});
+
+/* ----------------------------------------------------- the fourth course, hi-en (#267) */
+
+describe('the fourth course — hi-en, authored behind the fixture gate (#267)', () => {
+  /**
+   * The switch flow above, run against the REAL hi-en files: the manifest row is in `DEV_MANIFEST`
+   * with `fixture: true`, and the fetch for hi-en's ladder and bundle answers with what
+   * `content/hi-en/` holds today — ten L1 rungs, none authored, Hindi chrome. hi-mr keeps the
+   * test's own ten-rung ladder and its self-identifying fixture bundle, so the two courses cannot
+   * be confused on screen.
+   */
+  function serveAuthoredHiEn(): void {
+    const base = globalThis.fetch;
+    const json = (value: unknown) =>
+      Promise.resolve(new Response(JSON.stringify(value), { status: 200 }));
+    vi.stubGlobal(
+      'fetch',
+      vi.fn((input: RequestInfo | URL) => {
+        const url = String(input);
+        if (url.endsWith('/content/hi-en/levels.json')) return json(authored('levels.json'));
+        if (url.endsWith('/content/hi-en/strings.json')) return json(authored('strings.json'));
+        return base(input);
+      }),
+    );
+  }
+
+  /** The rung rows of the one list the Ladder renders, in ladder order. */
+  function rungs(): HTMLElement[] {
+    return within(screen.getByRole('list')).getAllByRole('listitem');
+  }
+
+  it('is offered as the last pair, and is nothing the shell was told about', async () => {
+    const select = await renderSettings();
+
+    const labels = within(select)
+      .getAllByRole('option')
+      .map((option) => option.textContent);
+    expect(labels.at(-1)).toBe('hindi → english');
+    // The row reaches the app fixture key and all (`manifest.test.ts`); the switcher reads
+    // `pairLabel` and never the flag — a fixture course is offered like any other on a dev build.
+    expect(within(select).getByRole('option', { name: 'hindi → english' })).toHaveValue('hi-en');
+  });
+
+  it('boots a ladder of ten pending rungs in Hindi chrome, and leaves hi-mr exactly where it was', async () => {
+    const ladder = tenRungLadder(3);
+    climb(ladder, 'L1-M1');
+    const before = useAppStore.getState().courses[COURSE];
+    const select = await renderSettings(ladder);
+    serveAuthoredHiEn();
+
+    fireEvent.change(select, { target: { value: 'hi-en' } });
+
+    // The arrival toast is hi-en's own `switchToast` — the authored Hindi, `{to}` and `{from}`
+    // filled with the two pair labels — so the bundle that booted is the one on disk.
+    expect(
+      await screen.findByText(
+        'अब hindi → english चल रहा है. तुम्हारी hindi → marathi सीढ़ी जहाँ थी, ठीक वहीं सुरक्षित है.',
+      ),
+    ).toBeInTheDocument();
+    // The document speaks the course's L1 (#186): Hindi, from the row's `l1Tag`, not from its id.
+    await waitFor(() => {
+      expect(document.documentElement.lang).toBe('hi');
+    });
+    expect(document.documentElement.dir).toBe('ltr');
+
+    // On to the Ladder, through the app's own nav — the ten rungs of the authored L1.
+    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
+    expect(await screen.findByText(/LEVEL 1 · 0 OF 10/)).toBeInTheDocument();
+    expect(screen.getByText('Foundations — say what you need')).toBeInTheDocument();
+    expect(rungs()).toHaveLength(10);
+    for (const title of [
+      'Who I am',
+      'First exchange',
+      'Needs and wants',
+      'My day',
+      'Yesterday',
+      'Tomorrow',
+      'Where things are',
+      'Numbers & shopping',
+      'Feelings & opinions',
+      'Connected talk',
+    ]) {
+      expect(screen.getByText(title)).toBeInTheDocument();
+    }
+    // All pending: M1 is the current rung with nothing authored behind it — the pending stage,
+    // no CTA [D22] — and M2–M10 are locked, so the list holds no link at all.
+    expect(screen.getByText('M1 · CURRENT RUNG')).toBeInTheDocument();
+    expect(within(screen.getByRole('list')).queryAllByRole('link')).toEqual([]);
+    // …and the pending line is hi-en's Hindi, counting all ten (Invariant 2: counts only).
+    expect(screen.getByText('Level 1 · 10 में से 10 rungs अभी बाकी.')).toBeInTheDocument();
+
+    // Invariant 8: the switch created hi-en's subtree and touched nobody else's.
+    expect(useAppStore.getState().courses[COURSE]).toBe(before);
+    expect(useAppStore.getState().courses['hi-en']).toBeDefined();
+
+    // Back to hi-mr: its ladder is where the climb left it — one rung passed, M2 current.
+    fireEvent.click(screen.getByRole('link', { name: 'Settings' }));
+    fireEvent.change(await screen.findByRole('combobox', { name: 'Active course' }), {
+      target: { value: COURSE },
+    });
+    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
+    expect(await screen.findByText(/LEVEL 1 · 1 OF 10/)).toBeInTheDocument();
+    expect(screen.getByText('M2 · CURRENT RUNG')).toBeInTheDocument();
+    expect(useAppStore.getState().courses[COURSE]).toBe(before);
   });
 });
 
