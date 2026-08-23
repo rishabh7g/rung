@@ -82,7 +82,12 @@ export interface Sentence {
   /** Quiet native-script line — wanted in romanized courses (en-ar), absent in native ones. */
   script?: string;
   cue: string;
-  glossEn: string;
+  /**
+   * English gloss of the line. Optional in the schema (#268): the build requires it wherever the
+   * L2 is not English, and a course whose L2 IS English authors none — it would repeat `display`.
+   * The screen renders it when present, and branches on nothing else.
+   */
+  glossEn?: string;
   /** Word-for-word rendering, under the gloss. */
   literal?: string;
   deconstruction: Deconstruction;

@@ -47,6 +47,26 @@ documents. The `design/` pair is v3.3 and further ahead — for example
 `design/PRD-engineering.md` has a §17 that `docs/PRD-engineering.md` does not.
 Prefer the `design/` pair until the two are reconciled.
 
+## Divergence — `glossEn` is optional in schema v5 where the L2 is English (2026-08-23, #268)
+
+`design/PRD-engineering.md` §7 lists `glossEn` among a sentence's required fields
+(`display/cue/glossEn/deconstruction required`), and `content/schema/module.schema.json`
+described itself as frozen against the two authored hi-mr modules. Since #268 the schema
+**no longer requires `glossEn`** — it stays a declared, described property — and the
+requirement moved to the one place that knows the course row: `tools/content-build.ts`
+`checkGlossEn`, beside the `scriptMode` cross-check, fails the build for every sentence
+without a non-empty gloss **unless the course's `l2Tag` is `en`**. Why: hi-en's L2 *is*
+English, so a mandatory English gloss would print the hero line twice on every sentence —
+exactly the read-once repetition the 2026-08-13 copy removal stripped. The three shipping
+courses (hi-mr, en-es, en-ar) are byte-unchanged and still carry a gloss on every sentence,
+which the build now enforces for them; `tools/validate.ts` (which has no course row) and
+`src/course/types.ts` type it `glossEn?: string`; Sentence Detail renders the English
+paragraph only when the gloss is present, and the gloss section vanishes when neither the
+gloss nor `literal` exists — the same rule every other optional section obeys. No shell code
+branches on a course id or a language tag to decide this; the rule lives in the build. A
+deliberate, recorded relaxation, not drift — `design/` is read-only, so this paragraph is
+the record.
+
 ## Divergence — the bottom bar's safe area is ADDED, not substituted (2026-08-15, #265)
 
 `design/pwa-checklist.md` §2 says only that "the frame's 56px top / 30px bottom paddings become
