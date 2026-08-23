@@ -1,0 +1,593 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M8",
+  "title": "Numbers & shopping",
+  "job": "Prices, quantities, buying",
+  "prerequisites": [
+    "L1-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-23",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "How much is this?",
+      "How much does it cost?",
+      "It's + num + rupees",
+      "Can I have + a/an / num + N(-s) + , please?",
+      "a kilo / a bottle of + N",
+      "How many + N-s + do you want?"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "दाम के दो सवाल, और हर एक का अपना सहारा — How much is this? (be ख़ुद आगे आता है — M2 का नियम) · How much does it cost? (साधारण क्रिया does उधार लेती है — M4 का नियम, और cost मूल रूप में: *does it costs दोहरा निशान है). जवाब दोनों का एक: It's fifty rupees / It costs fifty rupees. हिंदी दाम का शब्द आख़िर में रखती है (यह कितने का है?); अंग्रेज़ी में सवाल का जोड़ा सबसे आगे, be / does उसके ठीक बाद."
+    },
+    {
+      "tag": "interference",
+      "text": "how much बनाम how many — फ़र्क़ गिनने का है, आकार या लिंग का नहीं: न गिनी जाने वाली चीज़ और दाम → how much (How much rice? · How much is it?); गिनने-लायक कई चीज़ें → how many, और संज्ञा -s के साथ (How many bananas?). हिंदी का कितना / कितनी / कितने लिंग-वचन से बँटता है, गिनने से कभी नहीं — इसलिए हाथ हर जगह how much लगाता है (*How much bananas?) — यही इस module की फिसलन है. दोनों पूरे जोड़े हैं — दो शब्द, एक साथ; M2 का how (कैसे) अकेला अलग रहता है."
+    },
+    {
+      "tag": "delta",
+      "text": "अंक के बाद संज्ञा बहुवचन — और -s ज़रूरी: two bananas · five apples · fifty rupees (M3 का नियम दाम पर: हिंदी पाँच रुपये और बोलचाल में पाँच रुपया दोनों सह लेती है, अंग्रेज़ी सिर्फ़ rupees — *five rupee ग़लत). मात्रा of से जुड़ती है: a kilo of rice · a bottle of water · two kilos of sugar — a M1 का, मात्रा के शब्द पर; of पहली बार यहाँ, और हिंदी में इसकी कोई सीट नहीं (एक किलो चावल — तीन शब्द; a kilo of rice — चार). one गिनती वाला एक है (I want one apple, not two), a बस कोई एक (I want an apple)."
+    },
+    {
+      "tag": "delta",
+      "text": "माँगना: Can I have two bananas, please? और छोटी माँग A kilo of rice, please. Can I have तीन शब्द का एक साँचा है — पूरा का पूरा: अंदर का have M4 का के पास होना नहीं है, और can इस सीढ़ी पर सिर्फ़ इसी साँचे में आता है. please वाक्य के किनारे, comma के बाद — जो आदर हिंदी दीजिए और आप में रखती है, अंग्रेज़ी इस एक शब्द में (M2 का नियम: आदर शब्दों में). Give me two bananas ग़लत व्याकरण नहीं, रूखा सुर है."
+    },
+    {
+      "tag": "free",
+      "text": "this = यह — उँगली उठाकर पास की चीज़ दिखाने का शब्द, अकेला (How much is this?) या संज्ञा से पहले (this bag); the (M3) दिखाने का शब्द नहीं था, this है. दूर की चीज़ वह = that, M9 में. चीज़ की बात जारी रखने को it (M7): It's fifty rupees · It costs ten rupees. दुकान की बात सादी रखो — सस्ता / महँगा की तुलना (cheaper) L2 में."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M8-S01",
+      "display": "How much is this?",
+      "cue": "यह कितने का है?",
+      "literal": "कितने-का है यह?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "How much",
+            "cue": "कितना · कितने का (दाम · मात्रा)",
+            "tag": "interference",
+            "forms": [],
+            "note": "दो शब्द, एक साथ — दाम के लिए और न गिनी जाने वाली चीज़ के लिए: How much is this? (यह कितने का है?) · How much rice? (कितना चावल?). गिनने-लायक कई चीज़ों के लिए how many (S08). हिंदी का कितना / कितनी / कितने लिंग-वचन से बँटता है, गिनने से नहीं — इसलिए हाथ हर जगह how much लगाता है (*How much bananas?). M2 का how (कैसे — How are you?) अकेला अलग रहता है; यह पूरा जोड़ा how much है. सवाल के शब्द की तरह सबसे आगे, be ठीक बाद (M2 का नियम)."
+          },
+          {
+            "display": "this",
+            "cue": "यह",
+            "tag": "free",
+            "forms": [],
+            "note": "यह — उँगली उठाकर पास की चीज़ दिखाने का शब्द: How much is this? (अकेला) · This is fifty rupees · this bag (संज्ञा से पहले). दूर की चीज़ वह = that (M9). the (M3) दिखाने का शब्द नहीं था; this है. एक this — लिंग-वचन से नहीं बदलता."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "यह कितने का है? में क्रिया आख़िर में — हाथ How much this is? या This is how much? लिखता है; सवाल का जोड़ा आगे, is ठीक बाद, this आख़िर में. और का के लिए अंग्रेज़ी में कुछ नहीं.",
+      "sound": "how much = हाउ-मच, एक साँस; much में u 'अ'. this = दिस — th में जीभ दाँतों के बीच, 'द' के पास. सवाल के शब्द वाला सवाल आख़िर में ऊपर नहीं उठता.",
+      "variations": [
+        {
+          "display": "How much is this bag?",
+          "cue": "यह बैग कितने का है?",
+          "changed": "this संज्ञा से पहले — this bag; सवाल का साँचा वही."
+        },
+        {
+          "display": "How much is the rice?",
+          "cue": "चावल कितने का है?",
+          "changed": "the — वही चावल जो सामने है; न गिनी जाने वाली चीज़, how much वही."
+        }
+      ],
+      "mistake": {
+        "display": "How much this is?",
+        "why": "सवाल के जोड़े के ठीक बाद be — How much is this? हिंदी में है आख़िर में था (M2, M7 का वही नियम: सवाल का शब्द आगे, be ठीक बाद)."
+      },
+      "usage": "दुकान पर दाम पूछना — कोई भी चीज़ हाथ में लेकर: How much is this?",
+      "register": "neutral",
+      "mnemonic": "कितने का = how much, और आगे; है उसके पीछे, यह आख़िर में."
+    },
+    {
+      "id": "L1-M8-S02",
+      "display": "It's fifty rupees",
+      "cue": "यह पचास रुपये का है",
+      "literal": "यह-है पचास रुपये",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fifty",
+            "cue": "पचास",
+            "tag": "free",
+            "forms": [],
+            "note": "पचास — अंक वैसे ही; दाम में अंक + rupees: fifty rupees. इस module के और अंक: ten (S04), one (S09), five और twenty (S10); hundred इस सीढ़ी पर नहीं."
+          },
+          {
+            "display": "rupees",
+            "cue": "रुपये",
+            "tag": "interference",
+            "forms": [
+              "rupee",
+              "rupees"
+            ],
+            "note": "रुपया — और अंक के बाद -s ज़रूरी: fifty rupees, ten rupees; सिर्फ़ one rupee. हिंदी पचास रुपये भी कहती है और बोलचाल में पचास रुपया भी — अंग्रेज़ी में यह छूट नहीं: *fifty rupee ग़लत. दाम बताने का साँचा: It's + अंक + rupees (यह … रुपये का है) — का के लिए कोई शब्द नहीं. पूरे course की एक ही मुद्रा: rupees."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "पचास रुपया का हाथ fifty rupee लिखता है — अंक के बाद -s (M3 का नियम, दाम पर). और का के लिए कुछ नहीं: It's fifty rupees, बस.",
+      "sound": "fifty = फ़िफ़्टी. rupees = रुपीज़ — आख़िर में ज़. It's fifty rupees एक साँस में.",
+      "variations": [
+        {
+          "display": "This is fifty rupees",
+          "cue": "यह पचास रुपये का है",
+          "changed": "It's की जगह This is — चीज़ दिखाते हुए; दाम वही."
+        },
+        {
+          "display": "The book is fifty rupees",
+          "cue": "किताब पचास रुपये की है",
+          "changed": "चीज़ का नाम — the book is; साँचा वही."
+        }
+      ],
+      "mistake": {
+        "display": "It's fifty rupee",
+        "why": "अंक के बाद -s — fifty rupees; हिंदी पचास रुपया कह लेती है, अंग्रेज़ी नहीं. सिर्फ़ one rupee अकेला."
+      },
+      "usage": "दाम बताना — How much is this? का जवाब: It's + अंक + rupees.",
+      "register": "neutral",
+      "mnemonic": "रुपया अकेला सिर्फ़ एक का — बाक़ी सब rupees, -s के साथ."
+    },
+    {
+      "id": "L1-M8-S03",
+      "display": "How much does it cost?",
+      "cue": "इसका दाम कितना है?",
+      "literal": "कितना क्या यह लगता?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cost",
+            "cue": "दाम होना · (पैसे) लगना",
+            "tag": "delta",
+            "forms": [
+              "cost",
+              "costs"
+            ],
+            "note": "दाम होना — एक साधारण क्रिया, इसलिए सवाल में does (M4 का नियम) और cost मूल रूप में: How much does it cost? (*does it costs नहीं — दोहरा निशान). बयान में it के साथ -s: It costs ten rupees (S04); कई चीज़ें कर्ता हों तो बिना -s: Five bananas cost twenty rupees (S10). How much is this? (be) और How much does it cost? (cost) — दोनों का जवाब एक: It's ten rupees / It costs ten rupees. literal में does की सीट पर क्या है — वह अनुवाद नहीं (M3)."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "इसका दाम कितना है? का है हाथ को is की तरफ़ खींचता है — *How much is it cost? नहीं: cost साधारण क्रिया है, सहारा does (M3, M4 का नियम); और -s एक बार — does पर, cost नंगा.",
+      "sound": "does = डज़. cost = कॉस्ट — st एक साथ, t हल्का. पूरा: हाउ-मच-डज़-इट-कॉस्ट.",
+      "variations": [
+        {
+          "display": "How much does the bag cost?",
+          "cue": "बैग का दाम कितना है?",
+          "changed": "it की जगह चीज़ का नाम — the bag; does, cost वही."
+        },
+        {
+          "display": "How much do the books cost?",
+          "cue": "किताबों का दाम कितना है?",
+          "changed": "बहुवचन — the books, इसलिए do (M3); cost वही, मूल रूप में."
+        }
+      ],
+      "mistake": {
+        "display": "How much does it costs?",
+        "why": "-s एक बार, सहारे पर — does; क्रिया मूल रूप में: does it cost (M4 का *Does he gets up वाला नियम, दाम पर)."
+      },
+      "usage": "दाम पूछने का दूसरा रास्ता — ख़ासकर जब चीज़ हाथ में न हो: How much does it / the + चीज़ + cost?",
+      "register": "neutral",
+      "mnemonic": "cost क्रिया है, be नहीं — सवाल में does, और -s does ले गया."
+    },
+    {
+      "id": "L1-M8-S04",
+      "display": "It costs ten rupees",
+      "cue": "इसका दाम दस रुपये है",
+      "literal": "यह लगता दस रुपये",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ten",
+            "cue": "दस",
+            "tag": "free",
+            "forms": [],
+            "note": "दस — अंक वैसे ही; ten rupees, ten bananas (-s)."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "दस रुपये है का है यहाँ is नहीं — costs: It costs ten rupees (या It's ten rupees — दोनों सही, पर मिलाओ मत: *It is costs नहीं). it के साथ -s: costs (M4 का he / she / it वाला नियम).",
+      "sound": "costs = कॉस्ट्स — sts एक साथ, मुश्किल पर साफ़. ten = टेन.",
+      "variations": [
+        {
+          "display": "It costs fifty rupees",
+          "cue": "इसका दाम पचास रुपये है",
+          "changed": "अंक बदला — fifty; costs वही."
+        },
+        {
+          "display": "The bag costs ten rupees",
+          "cue": "बैग का दाम दस रुपये है",
+          "changed": "it की जगह चीज़ का नाम — the bag; costs वही, एक चीज़."
+        }
+      ],
+      "mistake": {
+        "display": "It cost ten rupees",
+        "why": "it के साथ -s — costs (M4 का he / she / it वाला नियम); बिना -s cost सिर्फ़ कई चीज़ों के साथ (S10) या does के बाद."
+      },
+      "usage": "दाम बताना, क्रिया के साथ: It costs + अंक + rupees.",
+      "register": "neutral",
+      "mnemonic": "it + costs — -s it का निशान; is की ज़रूरत नहीं."
+    },
+    {
+      "id": "L1-M8-S05",
+      "display": "Can I have two bananas, please?",
+      "cue": "क्या मुझे दो केले मिलेंगे, प्लीज़?",
+      "literal": "क्या-मुझे-मिलेंगे दो केले, प्लीज़?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Can I have",
+            "cue": "क्या मुझे … मिलेगा · … दीजिए (माँगने का साँचा)",
+            "tag": "delta",
+            "forms": [],
+            "note": "तीन शब्द, एक साँचा — पूरा का पूरा: Can I have + चीज़ = माँगने का विनम्र रास्ता, हिंदी का … दीजिए / क्या मुझे … मिलेगा: Can I have two bananas, please? · Can I have a bottle of water? अंदर का have M4 का के पास होना नहीं है, और can इस सीढ़ी पर सिर्फ़ इसी साँचे में आता है — तोड़कर मत पढ़ो. सवाल है, इसलिए can आगे (M2 का साँचा) और आख़िर में ?; please से और नरम."
+          },
+          {
+            "display": "bananas",
+            "cue": "केला · केले",
+            "tag": "free",
+            "forms": [
+              "banana",
+              "bananas"
+            ],
+            "note": "केला — a banana, two bananas (-s); अंक के बाद -s, M3 का नियम."
+          },
+          {
+            "display": "please",
+            "cue": "कृपया · (दीजिए की विनम्रता)",
+            "tag": "delta",
+            "forms": [],
+            "note": "विनम्रता का शब्द — वाक्य के किनारे, comma के बाद: Can I have two bananas, please? · A kilo of rice, please. हिंदी जो आदर दीजिए और आप में रखती है, अंग्रेज़ी इस एक शब्द में (M2 का नियम: आदर शब्दों में, सर्वनाम में नहीं). बिना please का Give me … रूखा लगता है."
+          }
+        ],
+        "rules": [
+          3,
+          2
+        ]
+      },
+      "trap": "दीजिए का हाथ Give me two bananas लिखता है — सही अंग्रेज़ी, पर रूखी; विनम्र माँग Can I have … please है. और केले बहुवचन: bananas, -s के साथ.",
+      "sound": "Can I have = कैन-आइ-हैव, एक साँस; बोलचाल में can हल्का 'कन'. please = प्लीज़ — आख़िर में ज़. सवाल ऊपर उठकर ख़त्म.",
+      "variations": [
+        {
+          "display": "Can I have a banana, please?",
+          "cue": "क्या मुझे एक केला मिलेगा, प्लीज़?",
+          "changed": "एक — a banana (M1 का a); साँचा वही."
+        },
+        {
+          "display": "Can I have the book, please?",
+          "cue": "क्या मुझे वह किताब मिलेगी, प्लीज़?",
+          "changed": "the — वही किताब जो हम दोनों जानते हैं (M3); Can I have वही."
+        }
+      ],
+      "mistake": {
+        "display": "Give me two bananas",
+        "why": "दीजिए की विनम्रता अंग्रेज़ी में Can I have … please से आती है; सीधा Give me हुक्म जैसा लगता है. ग़लत व्याकरण नहीं — ग़लत सुर."
+      },
+      "usage": "दुकान, ढाबा, घर — कुछ माँगना: Can I have + a / अंक + चीज़ + , please?",
+      "register": "neutral",
+      "mnemonic": "दीजिए = Can I have … please — तीन शब्द आगे, please पीछे."
+    },
+    {
+      "id": "L1-M8-S06",
+      "display": "A kilo of rice, please",
+      "cue": "एक किलो चावल, प्लीज़",
+      "literal": "एक किलो चावल, प्लीज़",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kilo",
+            "cue": "किलो",
+            "tag": "free",
+            "forms": [
+              "kilo",
+              "kilos"
+            ],
+            "note": "किलो — a kilo of rice, two kilos of sugar (-s); मात्रा का शब्द + of + चीज़."
+          },
+          {
+            "display": "of",
+            "cue": "(मात्रा का जोड़) — हिंदी में कोई शब्द नहीं",
+            "tag": "interference",
+            "forms": [],
+            "note": "मात्रा और चीज़ के बीच का जोड़: a kilo of rice (एक किलो चावल), a bottle of water, a cup of tea, two kilos of sugar — हिंदी में यहाँ कोई शब्द नहीं, इसलिए हाथ *a kilo rice लिखता है. क्रम: a / अंक + मात्रा + of + चीज़. M7 का in front of अलग पूरा जोड़ा था (तीन शब्द एक साथ); यह of अपने काम पर है. literal में इसकी सीट ख़ाली है — हिंदी के पास इसके लिए शब्द ही नहीं."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "एक किलो चावल — तीन शब्द हिंदी में, चार अंग्रेज़ी में: of छूटता है. और माँग के आख़िर में please, comma के बाद.",
+      "sound": "kilo = किलो. of = ऑव — आख़िर में व. a kilo of एक साँस में: अ-किलो-ऑव.",
+      "variations": [
+        {
+          "display": "Two kilos of rice, please",
+          "cue": "दो किलो चावल, प्लीज़",
+          "changed": "अंक — two kilos, -s के साथ; of वही."
+        },
+        {
+          "display": "A kilo of sugar, please",
+          "cue": "एक किलो चीनी, प्लीज़",
+          "changed": "चीज़ बदली — sugar (M3); साँचा वही."
+        }
+      ],
+      "mistake": {
+        "display": "A kilo rice, please",
+        "why": "मात्रा और चीज़ के बीच of — a kilo of rice; हिंदी में यहाँ कुछ नहीं, इसलिए छूटता है."
+      },
+      "usage": "दुकान पर छोटी माँग — पूरे वाक्य के बिना, please के साथ: मात्रा + of + चीज़, please.",
+      "register": "neutral",
+      "mnemonic": "किलो और चावल के बीच एक of — a kilo of rice."
+    },
+    {
+      "id": "L1-M8-S07",
+      "display": "Can I have a bottle of water?",
+      "cue": "क्या मुझे पानी की एक बोतल मिलेगी?",
+      "literal": "क्या-मुझे-मिलेगी एक बोतल पानी?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bottle",
+            "cue": "बोतल",
+            "tag": "free",
+            "forms": [
+              "bottle",
+              "bottles"
+            ],
+            "note": "बोतल — a bottle of water; two bottles (-s). पानी न गिनी जाने वाली चीज़ है (M3), इसलिए बर्तन गिना जाता है: a bottle of water, two bottles of water, a cup of tea."
+          }
+        ],
+        "rules": [
+          3,
+          2
+        ]
+      },
+      "trap": "पानी की बोतल में की पानी के बाद है — अंग्रेज़ी में of बोतल के बाद, पानी से पहले: a bottle of water. और माँग Can I have से, सवाल के क्रम में.",
+      "sound": "bottle = बॉटल — tt हल्का, आख़िर का -le 'ल'. a bottle of water = अ-बॉटल-ऑव-वॉटर, एक साँस.",
+      "variations": [
+        {
+          "display": "Can I have a cup of tea?",
+          "cue": "क्या मुझे एक कप चाय मिलेगी?",
+          "changed": "बर्तन बदला — a cup of tea (M7 का cup); of वही."
+        },
+        {
+          "display": "Can I have two bottles of water?",
+          "cue": "क्या मुझे पानी की दो बोतलें मिलेंगी?",
+          "changed": "अंक — two bottles, -s के साथ; साँचा वही."
+        }
+      ],
+      "mistake": {
+        "display": "I can have a bottle of water?",
+        "why": "सवाल में can आगे — Can I have …? सिर्फ़ ? लगाना (M2, M3 की आदत) सवाल नहीं बनाता; और Can I have पूरा साँचा है, इसी क्रम में."
+      },
+      "usage": "पीने की चीज़ माँगना — दुकान, ढाबा, ट्रेन: Can I have a bottle of water?",
+      "register": "neutral",
+      "mnemonic": "पानी की बोतल उल्टी — a bottle of water: बर्तन पहले, of, फिर चीज़."
+    },
+    {
+      "id": "L1-M8-S08",
+      "display": "How many apples do you want?",
+      "cue": "आपको कितने सेब चाहिए?",
+      "literal": "कितने सेब क्या आप चाहते?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "How many",
+            "cue": "कितने (गिनने-लायक)",
+            "tag": "interference",
+            "forms": [],
+            "note": "दो शब्द, एक साथ — गिनने-लायक कई चीज़ों के लिए, और संज्ञा -s के साथ: How many apples? · How many bananas do you want? (*How many apple नहीं). न गिनी जाने वाली चीज़ और दाम के लिए how much (S01): How much rice? · How much is this? हिंदी का कितने लिंग-वचन से है, गिनने से नहीं — इसलिए यह चुनाव नया है. M2 का how अकेला अलग."
+          },
+          {
+            "display": "apples",
+            "cue": "सेब",
+            "tag": "free",
+            "forms": [
+              "apple",
+              "apples"
+            ],
+            "note": "सेब — an apple (स्वर की आवाज़ से शुरू, इसलिए an — M1), two apples, five apples (-s)."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "कितने सेब — हाथ How much apples लिखता है (कितना / कितने का एक ही how much); गिनने-लायक कई → how many, और -s. सवाल में do (M3), और चाहिए के लिए want.",
+      "sound": "how many = हाउ-मेनी, एक साँस. apples = ऐपल्स. do you want = डू-यू-वॉन्ट.",
+      "variations": [
+        {
+          "display": "How many bananas do you want?",
+          "cue": "आपको कितने केले चाहिए?",
+          "changed": "चीज़ बदली — bananas; how many वही."
+        },
+        {
+          "display": "How many books do you have?",
+          "cue": "आपके पास कितनी किताबें हैं?",
+          "changed": "क्रिया बदली — have (M4, के पास होना); how many + -s वही."
+        }
+      ],
+      "mistake": {
+        "display": "How much apples do you want?",
+        "why": "सेब गिने जाते हैं — how many apples (और -s); how much सिर्फ़ न गिनी जाने वाली चीज़ और दाम के लिए. हिंदी का कितने दोनों को एक बना देता है."
+      },
+      "usage": "दुकानदार का सवाल — गिनती वाली चीज़ों के लिए: How many + चीज़ें-s + do you want?",
+      "register": "neutral",
+      "mnemonic": "गिन सकते हो? how many + -s. नहीं गिन सकते, या दाम? how much."
+    },
+    {
+      "id": "L1-M8-S09",
+      "display": "I want one apple, not two",
+      "cue": "मुझे एक सेब चाहिए, दो नहीं",
+      "literal": "मैं चाहता-हूँ एक सेब, नहीं दो",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "one",
+            "cue": "एक (गिनती वाला)",
+            "tag": "free",
+            "forms": [],
+            "note": "एक — पर गिनती वाला एक, ज़ोर के साथ: I want one apple, not two (एक सेब, दो नहीं). कोई एक = a / an (M1, M3): I want an apple = कोई भी एक सेब. हिंदी का एक दोनों है; अंग्रेज़ी में गिन रहे हो तो one, वरना a. one के बाद संज्ञा एकवचन: one apple, one rupee."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "एक सुनते ही हाथ हर जगह one लिखता है (M3 का *I want to read one book) — या हर जगह a. गिनती हो (एक, दो नहीं) तो one; बस 'कोई एक' हो तो a.",
+      "sound": "one = वन — w की आवाज़ से शुरू, 'ओने' नहीं. not two = नॉट-टू; not पर ज़ोर.",
+      "variations": [
+        {
+          "display": "I want one banana, not two",
+          "cue": "मुझे एक केला चाहिए, दो नहीं",
+          "changed": "चीज़ बदली — one banana; गिनती वही."
+        },
+        {
+          "display": "I want an apple",
+          "cue": "मुझे एक सेब चाहिए",
+          "changed": "कोई भी एक — an (M1); गिनती नहीं, इसलिए one नहीं."
+        }
+      ],
+      "mistake": {
+        "display": "I want one apple, no two",
+        "why": "वाक्य के अंदर का नहीं not है — not two; No सिर्फ़ जवाब के शुरू में (M2 का बँटवारा: No अलग, not अलग)."
+      },
+      "usage": "गिनती पक्की करना — दुकान पर, मेज़ पर: one + चीज़, not + अंक.",
+      "register": "neutral",
+      "mnemonic": "गिनती = one, कोई एक = a — एक सेब दो तरह का."
+    },
+    {
+      "id": "L1-M8-S10",
+      "display": "Five bananas cost twenty rupees",
+      "cue": "पाँच केले बीस रुपये के हैं",
+      "literal": "पाँच केले लगते बीस रुपये",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Five",
+            "cue": "पाँच",
+            "tag": "free",
+            "forms": [],
+            "note": "पाँच — five bananas, five rupees (-s)."
+          },
+          {
+            "display": "twenty",
+            "cue": "बीस",
+            "tag": "free",
+            "forms": [],
+            "note": "बीस — twenty rupees; इस module के दाम के अंक: ten, twenty, fifty."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "पाँच केला / पाँच केले — हिंदी दोनों सह लेती है; अंग्रेज़ी में five bananas, -s ज़रूरी. और कई चीज़ें कर्ता हों तो cost बिना -s (they की तरह); costs सिर्फ़ it / एक चीज़ के साथ (S04).",
+      "sound": "five = फ़ाइव — आख़िर में व. twenty = ट्वेंटी — बोलचाल में अक्सर 'ट्वेनी'. cost = कॉस्ट.",
+      "variations": [
+        {
+          "display": "Two apples cost ten rupees",
+          "cue": "दो सेब दस रुपये के हैं",
+          "changed": "अंक और चीज़ बदले — two apples, ten; cost वही, बिना -s."
+        },
+        {
+          "display": "Five bananas are twenty rupees",
+          "cue": "पाँच केले बीस रुपये के हैं",
+          "changed": "cost की जगह be — are (बहुवचन से); वही मतलब."
+        }
+      ],
+      "mistake": {
+        "display": "Five banana cost twenty rupees",
+        "why": "अंक के बाद -s — five bananas (M3 का नियम); हिंदी पाँच केला कह लेती है, अंग्रेज़ी नहीं."
+      },
+      "usage": "कई चीज़ों का दाम एक साथ — अंक + चीज़ें-s + cost + अंक + rupees.",
+      "register": "neutral",
+      "mnemonic": "पाँच केले, बीस रुपये — दोनों पर -s; और cost नंगा, क्योंकि कर्ता कई हैं."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M8-C01",
+      "display": "How much is this bag?",
+      "cue": "यह बैग कितने का है?"
+    },
+    {
+      "id": "L1-M8-C02",
+      "display": "It's twenty rupees",
+      "cue": "यह बीस रुपये का है"
+    },
+    {
+      "id": "L1-M8-C03",
+      "display": "How much does the book cost?",
+      "cue": "किताब का दाम कितना है?"
+    },
+    {
+      "id": "L1-M8-C04",
+      "display": "Can I have a kilo of sugar?",
+      "cue": "क्या मुझे एक किलो चीनी मिलेगी?"
+    },
+    {
+      "id": "L1-M8-C05",
+      "display": "How many books do you want?",
+      "cue": "आपको कितनी किताबें चाहिए?"
+    },
+    {
+      "id": "L1-M8-C06",
+      "display": "I want ten bananas",
+      "cue": "मुझे दस केले चाहिए"
+    },
+    {
+      "id": "L1-M8-C07",
+      "display": "It costs five rupees",
+      "cue": "इसका दाम पाँच रुपये है"
+    },
+    {
+      "id": "L1-M8-C08",
+      "display": "A bottle of water, please",
+      "cue": "पानी की एक बोतल, प्लीज़"
+    },
+    {
+      "id": "L1-M8-C09",
+      "display": "How much rice do you want?",
+      "cue": "आपको कितना चावल चाहिए?"
+    },
+    {
+      "id": "L1-M8-C10",
+      "display": "Two kilos of rice, please",
+      "cue": "दो किलो चावल, प्लीज़"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

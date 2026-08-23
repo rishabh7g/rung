@@ -1,0 +1,572 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M6",
+  "title": "Tomorrow",
+  "job": "Future and plans",
+  "prerequisites": [
+    "L1-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-23",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": [
+      "future",
+      "present_continuous"
+    ],
+    "allowedPatterns": [
+      "I will + V + tomorrow",
+      "Will you + V?",
+      "I'm going to + V",
+      "I'm + V-ing + tomorrow / next week"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "will + क्रिया का मूल रूप = आने वाला कल, और एक रूप सबके लिए — I will go · she will go · they will go: न -s, न लिंग, न वचन (जाऊँगा / जाऊँगी / जाएँगे → एक will go). M4–M5 के बाद यह आराम की जगह है. will के बाद to नहीं (*I will to go — M3 का to want / need के बाद आता है, will के बाद कभी नहीं) और -ing नहीं (*I will going). नहीं कहना हो तो will not; बोलचाल का won't इस सीढ़ी पर नहीं."
+    },
+    {
+      "tag": "delta",
+      "text": "आने वाले कल के तीन रास्ते हैं, और 'will = भविष्य' का सूत्र अधूरा है — किताबी जवाब है, बोलचाल में तीनों में सबसे कम. will = अभी लिया फ़ैसला या अंदाज़ा (I will call you tomorrow); going to = पहले से बना हुआ इरादा, हिंदी का -ने वाला हूँ (I'm going to visit my brother); be + क्रिया-ing = किसी के साथ तय की हुई बात (I'm meeting her tomorrow). हिंदी एक -ऊँगा / वाला हूँ / रहा हूँ से काम चला लेती है और फ़र्क़ सुनने वाला समझ लेता है; अंग्रेज़ी में चुनाव शब्द में है. तीनों के साथ समय का शब्द — tomorrow, next week, on Monday — जैसे M5 में हर वाक्य के साथ yesterday."
+    },
+    {
+      "tag": "delta",
+      "text": "सवाल में will be की तरह ख़ुद कर्ता के आगे आता है — Will you come tomorrow? · Will she come? — do नहीं (M3 का do साधारण क्रिया का सहारा था; will ख़ुद सहारा है, उसे दूसरा सहारा नहीं चाहिए). हिंदी क्या आगे जोड़ती है और आएँगे आख़िर में रहता है; अंग्रेज़ी में will आगे कूदता है और क्रिया अपनी जगह. सिर्फ़ ? लगाना (You will come?) यहाँ भी सवाल नहीं है."
+    },
+    {
+      "tag": "delta",
+      "text": "going to एक निशान है — दो शब्द, एक साथ, पूरा का पूरा — और उसके अंदर का going जाना नहीं है: I'm going to visit my brother = मिलने वाला हूँ, जाने की बात नहीं; to भी M3 का to नहीं. इसीलिए इस सीढ़ी पर जगह से पहले going to नहीं लिखा जाता — जाना हमेशा go to / went to / will go to (I will go to Delhi tomorrow). साँचा: be + going to + क्रिया का मूल रूप — I'm going to, we are going to, he is going to."
+    },
+    {
+      "tag": "delta",
+      "text": "पहला -ing: be + क्रिया-ing (meeting, coming) सिर्फ़ किसी के साथ तय की हुई बात के लिए, हमेशा आने वाले कल के शब्द के साथ — I'm meeting her tomorrow · She is coming to Delhi next week. आदत या हालत के लिए नहीं (M4 का नियम वहीं का वहीं: I drink tea, *I am knowing नहीं). दो फिसलनें: be छोड़ना (*I meeting her) और -ing छोड़ना (*I am meet her) — दोनों हिस्से ज़रूरी हैं."
+    },
+    {
+      "tag": "delta",
+      "text": "समय के शब्द: tomorrow = आने वाला कल (M5 का yesterday बीता कल — हिंदी का एक कल, अंग्रेज़ी के दो, और शब्द ख़ुद बता देता है); next = अगला, समय के शब्द से पहले, और उसके आगे in / on नहीं — next week, next Monday (*in next week नहीं); on Monday, at nine वैसे ही जैसे M4 में. वाक्य के शुरू में या आख़िर में: Tomorrow I will go · I will go tomorrow."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M6-S01",
+      "display": "I will go to Delhi tomorrow",
+      "cue": "मैं कल दिल्ली जाऊँगा",
+      "literal": "मैं जाऊँगा को दिल्ली कल",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "will",
+            "cue": "-ऊँगा · -एगा · -एँगे (आने वाले कल का सहारा)",
+            "tag": "delta",
+            "forms": [],
+            "note": "आने वाले कल का सहारा — कर्ता के बाद, क्रिया के मूल रूप से पहले, और एक ही रूप सबके लिए: I will go · she will go · they will go (जाऊँगा / जाएगी / जाएँगे → एक will go); न -s, न लिंग. अपना मतलब कुछ नहीं — बस 'कल' का निशान. will के बाद सीधे क्रिया: to नहीं (*I will to go), -ing नहीं. सवाल में ख़ुद आगे (Will you come?), नहीं में will not. अभी लिया फ़ैसला या अंदाज़ा will से; बना हुआ इरादा going to से, तय की हुई बात be + -ing से. बोलचाल में I will सिकुड़कर I'll (S10)."
+          },
+          {
+            "display": "tomorrow",
+            "cue": "कल (आने वाला)",
+            "tag": "delta",
+            "forms": [],
+            "note": "कल — पर सिर्फ़ आने वाला कल; बीता हुआ कल yesterday (M5). हिंदी का एक कल दोनों है और क्रिया बताती है कौन-सा; अंग्रेज़ी में शब्द ख़ुद बताता है. वाक्य के आख़िर में या शुरू में: I will go tomorrow · Tomorrow I will go."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          5
+        ]
+      },
+      "trap": "जाऊँगा एक शब्द है — हाथ will भूलकर I go to Delhi tomorrow लिखता है (वह आदत बन जाता है), या M3 के to की आदत से I will to go. will + नंगी क्रिया: I will go. और कल सुनकर yesterday न निकले — आने वाला कल tomorrow.",
+      "sound": "will = विल — w होंठ गोल करके, व नहीं; l हल्का. go = गो. tomorrow = टुमॉरो — ज़ोर बीच में: टु-मॉ-रो, आख़िर का w चुप.",
+      "variations": [
+        {
+          "display": "Tomorrow I will go to Delhi",
+          "cue": "कल मैं दिल्ली जाऊँगा",
+          "changed": "tomorrow आगे — वही मतलब; समय का शब्द शुरू में भी बैठता है."
+        },
+        {
+          "display": "She will go to Mumbai tomorrow",
+          "cue": "वह कल मुंबई जाएगी",
+          "changed": "कर्ता she — will go वही: न -s, न जाएगी का ई."
+        }
+      ],
+      "mistake": {
+        "display": "I will to go to Delhi tomorrow",
+        "why": "will के बाद सीधे क्रिया का मूल रूप — to नहीं. to want / need के बाद क्रिया से पहले आता था (M3); will ख़ुद सहारा है, उसके बाद नंगी क्रिया: I will go."
+      },
+      "usage": "कल का फ़ैसला या इरादा बताना — कहाँ जाओगे, क्या करोगे; tomorrow से बाँधो.",
+      "register": "neutral",
+      "mnemonic": "जाऊँगा = will go — एक will सबके लिए, और क्रिया नंगी: I will go, she will go."
+    },
+    {
+      "id": "L1-M6-S02",
+      "display": "Will you come tomorrow?",
+      "cue": "क्या आप कल आएँगे?",
+      "literal": "आएँगे आप कल?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "come",
+            "cue": "आना",
+            "tag": "free",
+            "forms": [],
+            "note": "आना — जगह से पहले to: come to Delhi, come to my school (M3 का दिशा वाला to); घर अपवाद — come home, बिना to (go home की तरह, M5). will के बाद मूल रूप: will come. बीता कल came — इस सीढ़ी पर नहीं."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "क्या आप कल आएँगे? में क्या आगे और आएँगे आख़िर में — हाथ You will come tomorrow? (सिर्फ़ ?) या Do you will come? लिखता है. will be की तरह ख़ुद कर्ता के आगे आता है (M2 का नियम), do नहीं माँगता: Will you come?",
+      "sound": "Will you एक साँस में: विल-यू. come = कम — o यहाँ 'अ' है, 'कोम' नहीं. हाँ / ना का सवाल — आख़िर में आवाज़ ऊपर.",
+      "variations": [
+        {
+          "display": "Will she come tomorrow?",
+          "cue": "क्या वह कल आएगी?",
+          "changed": "कर्ता she — will वही, come वही; आएगी का ई कहीं नहीं."
+        },
+        {
+          "display": "Will you come on Monday?",
+          "cue": "क्या आप सोमवार को आएँगे?",
+          "changed": "समय बदला — on Monday (M4 का on); साँचा वही."
+        }
+      ],
+      "mistake": {
+        "display": "You will come tomorrow?",
+        "why": "सिर्फ़ ? लगाने से सवाल नहीं बनता (M2, M3 की वही आदत) — will कर्ता के आगे आता है: Will you come tomorrow?"
+      },
+      "usage": "किसी को बुलाना या पूछना कि आएगा या नहीं — घर, दफ़्तर, मुलाक़ात. जवाब: Yes, I will · No, I will not.",
+      "register": "neutral",
+      "mnemonic": "will be की तरह कूदता है — Are you …? की जगह Will you …?; do को छुट्टी."
+    },
+    {
+      "id": "L1-M6-S03",
+      "display": "She will buy a car tomorrow",
+      "cue": "वह कल गाड़ी ख़रीदेगी",
+      "literal": "वह ख़रीदेगी एक गाड़ी कल",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "buy",
+            "cue": "ख़रीदना",
+            "tag": "free",
+            "forms": [],
+            "note": "ख़रीदना — buy a car, buy two bananas (M8): क्रिया + चीज़. will / going to के बाद मूल रूप, she के साथ भी -s नहीं — -s सिर्फ़ आदत के सादे वर्तमान में (she buys — M4 का नियम). बीता कल bought — इस सीढ़ी पर नहीं."
+          },
+          {
+            "display": "car",
+            "cue": "गाड़ी (कार)",
+            "tag": "free",
+            "forms": [
+              "car",
+              "cars"
+            ],
+            "note": "कार — गिनने-लायक: a car (M1 का a), the car, two cars (-s). हिंदी की गाड़ी के अंग्रेज़ी में कई शब्द हैं (car, bus, train); यहाँ car."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "ख़रीदेगी का ई औरत बता रहा था, और M4 का हाथ she देखकर -s लगाना चाहता है — will के बाद कुछ नहीं: she will buy. न ई, न -s. और गाड़ी गिनने-लायक है: a car.",
+      "sound": "buy = बाइ — u चुप, by जैसा. car = कार — r हल्का. she will एक साँस में: शी-विल.",
+      "variations": [
+        {
+          "display": "I will buy a book tomorrow",
+          "cue": "मैं कल एक किताब ख़रीदूँगा",
+          "changed": "कर्ता I, चीज़ book — will buy वही; ख़रीदूँगा / ख़रीदेगी का फ़र्क़ अंग्रेज़ी में नहीं."
+        },
+        {
+          "display": "She will buy a car on Monday",
+          "cue": "वह सोमवार को गाड़ी ख़रीदेगी",
+          "changed": "समय बदला — on Monday (M4 का on); साँचा वही."
+        }
+      ],
+      "mistake": {
+        "display": "She will buys a car tomorrow",
+        "why": "-s आदत के वर्तमान का निशान है (she buys — M4); will के बाद क्रिया मूल रूप में, हर कर्ता के लिए: she will buy."
+      },
+      "usage": "किसी और का कल — ख़रीदना, जाना, बनाना: he / she + will + क्रिया.",
+      "register": "neutral",
+      "mnemonic": "will के आगे सब बराबर — I will buy, she will buy: न -s, न लिंग."
+    },
+    {
+      "id": "L1-M6-S04",
+      "display": "They will eat at home tomorrow",
+      "cue": "वे कल घर पर खाएँगे",
+      "literal": "वे खाएँगे पर घर कल",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "They",
+            "cue": "वे · वो (कई)",
+            "tag": "free",
+            "forms": [],
+            "note": "वे — कई लोग, या कई चीज़ें (the books → they, M7): they are · they were · they will eat. अभी की आदत में बिना -s (they eat — M4 का नियम). हिंदी की तरह छूटता नहीं (खाएँगे → they will eat, they ज़रूरी). he, she, it — तीनों का बहुवचन एक they."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "वे कल घर पर खाएँगे — हाथ they के बाद will eats या are will ढूँढता है; will + मूल रूप, बस. और घर पर = at home (M4 का at, M5 की सीट).",
+      "sound": "they = दे — th में जीभ दाँतों के बीच, 'द' के पास, 'थे' नहीं. eat = ईट. at home = अट-होम, एक साँस.",
+      "variations": [
+        {
+          "display": "We will eat at home tomorrow",
+          "cue": "हम कल घर पर खाएँगे",
+          "changed": "कर्ता we — will eat वही."
+        },
+        {
+          "display": "They will eat rice at nine",
+          "cue": "वे नौ बजे चावल खाएँगे",
+          "changed": "चीज़ और समय बदले — rice, at nine; will वही."
+        }
+      ],
+      "mistake": {
+        "display": "They will eating at home tomorrow",
+        "why": "will के बाद -ing नहीं — मूल रूप: will eat. -ing इस module में सिर्फ़ be के साथ, तय की हुई बात के लिए (S08)."
+      },
+      "usage": "कई लोगों का कल — परिवार, दोस्त, मेहमान: They will + क्रिया.",
+      "register": "neutral",
+      "mnemonic": "he, she, it — सब मिलकर they; और will सबका एक."
+    },
+    {
+      "id": "L1-M6-S05",
+      "display": "I'm going to visit my brother tomorrow",
+      "cue": "मैं कल अपने भाई से मिलने वाला हूँ",
+      "literal": "मैं-हूँ वाला मिलना मेरे भाई कल",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "going to",
+            "cue": "-ने वाला हूँ (बना हुआ इरादा)",
+            "tag": "delta",
+            "forms": [],
+            "note": "दो शब्द, एक निशान — पूरा का पूरा: be + going to + क्रिया का मूल रूप = पहले से बना हुआ इरादा, हिंदी का -ने वाला हूँ: I'm going to visit (मिलने वाला हूँ), we are going to buy (ख़रीदने वाले हैं), he is going to learn. अंदर का going जाना नहीं है और to M3 का to नहीं — इसीलिए इस सीढ़ी पर जगह से पहले going to नहीं लिखा जाता: जाना go to / will go to / went to (I will go to Delhi — S01). will से फ़र्क़: will = अभी का फ़ैसला या अंदाज़ा, going to = तय किया हुआ इरादा. literal में इसकी जगह 'वाला' लिखा है."
+          },
+          {
+            "display": "visit",
+            "cue": "से मिलने जाना · घूमने जाना",
+            "tag": "delta",
+            "forms": [],
+            "note": "किसी से मिलने या कहीं घूमने जाना — और सीधे आदमी / जगह: visit my brother, visit Delhi; बीच में to या with नहीं (*visit to my brother नहीं). हिंदी का से / के पास यहाँ कुछ नहीं. going to / will के बाद मूल रूप."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "मिलने वाला हूँ का हूँ I'm है — छूटना नहीं चाहिए (*I going to); और भाई से का से हाथ को to या with बनवाता है — visit अकेला पूरा है.",
+      "sound": "going to = गोइंग टु — बोलचाल में अक्सर 'गॉना' सुनाई देता है; लिखो पूरा. visit = विज़िट — s यहाँ ज़. I'm = आइम.",
+      "variations": [
+        {
+          "display": "I'm going to visit my brother on Monday",
+          "cue": "मैं सोमवार को अपने भाई से मिलने वाला हूँ",
+          "changed": "समय बदला — on Monday; going to visit वही."
+        },
+        {
+          "display": "She is going to visit Mumbai tomorrow",
+          "cue": "वह कल मुंबई घूमने वाली है",
+          "changed": "कर्ता she — is going to; visit + जगह, बिना to."
+        }
+      ],
+      "mistake": {
+        "display": "I'm going to visit to my brother tomorrow",
+        "why": "visit सीधे आदमी या जगह लेता है — visit my brother, visit Delhi; से / के पास का to यहाँ नहीं आता."
+      },
+      "usage": "तय किया हुआ इरादा बताना — मिलना, घूमना, ख़रीदना: be + going to + क्रिया, कल / अगले हफ़्ते के साथ.",
+      "register": "neutral",
+      "mnemonic": "वाला हूँ = going to — इरादा बन चुका है; जाना है तो go to."
+    },
+    {
+      "id": "L1-M6-S06",
+      "display": "We are going to cook rice tomorrow",
+      "cue": "हम कल चावल बनाने वाले हैं",
+      "literal": "हम हैं वाले बनाना चावल कल",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cook",
+            "cue": "पकाना · (खाना) बनाना",
+            "tag": "free",
+            "forms": [],
+            "note": "पकाना / बनाना — cook rice, cook at home; अकेला cook भी पूरा है (We are going to cook = हम खाना बनाने वाले हैं). going to / will के बाद मूल रूप; आदत में she cooks (M4 का -s), पर यहाँ नहीं."
+          }
+        ],
+        "rules": [
+          3,
+          1
+        ]
+      },
+      "trap": "बनाने वाले हैं का हैं we are है — छोड़ो मत (*We going to); और चावल न गिनी जाने वाली चीज़ है — बिना a, बिना -s (M5 का rice).",
+      "sound": "cook = कुक — oo छोटा 'उ'. rice = राइस. We are going to एक साँस में: वी-आर-गोइंग-टु.",
+      "variations": [
+        {
+          "display": "I'm going to cook tomorrow",
+          "cue": "मैं कल खाना बनाने वाला हूँ",
+          "changed": "कर्ता I — I'm going to; चीज़ छोड़ी, अकेला cook पूरा."
+        },
+        {
+          "display": "We are going to cook rice on Monday",
+          "cue": "हम सोमवार को चावल बनाने वाले हैं",
+          "changed": "समय बदला — on Monday; साँचा वही."
+        }
+      ],
+      "mistake": {
+        "display": "We going to cook rice tomorrow",
+        "why": "going to अकेला नहीं चलता — आगे be चाहिए: we are going to; बनाने वाले हैं का हैं यहाँ are है, और छूटता नहीं."
+      },
+      "usage": "साथ मिलकर तय किया हुआ इरादा — बनाना, ख़रीदना, जाना: We are going to + क्रिया.",
+      "register": "neutral",
+      "mnemonic": "we are going to = हम वाले हैं — be पहले, फिर going to, फिर क्रिया."
+    },
+    {
+      "id": "L1-M6-S07",
+      "display": "I'm going to learn English next week",
+      "cue": "मैं अगले हफ़्ते अंग्रेज़ी सीखने वाला हूँ",
+      "literal": "मैं-हूँ वाला सीखना अंग्रेज़ी अगले हफ़्ते",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "next",
+            "cue": "अगला · अगली · अगले",
+            "tag": "delta",
+            "forms": [],
+            "note": "अगला — समय के शब्द से पहले: next week (अगले हफ़्ते), next Monday; एक next, लिंग-वचन से नहीं बदलता. और इसके आगे in / on नहीं — next अपने आप समय बाँधता है (*in next week नहीं, *on next Monday नहीं). M7 का next to (बग़ल में) अलग पूरा जोड़ा है — यह नहीं."
+          },
+          {
+            "display": "week",
+            "cue": "हफ़्ता · सप्ताह",
+            "tag": "free",
+            "forms": [
+              "week",
+              "weeks"
+            ],
+            "note": "हफ़्ता — next week, two weeks (-s). सात दिन; दिनों के नाम (Monday) बड़े अक्षर से, week नहीं."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "अगले हफ़्ते में सुनकर हाथ in next week लिखता है — next के आगे कुछ नहीं. और सीखने वाला हूँ का हूँ I'm है, छूटे नहीं.",
+      "sound": "next = नेक्स्ट — xt एक साथ, t हल्का. week = वीक — लंबा 'ई', w होंठ गोल. I'm going to एक साँस: आइम-गोइंग-टु.",
+      "variations": [
+        {
+          "display": "He is going to learn English",
+          "cue": "वह अंग्रेज़ी सीखने वाला है",
+          "changed": "कर्ता he — is going to; समय का शब्द छोड़ा, इरादा वही."
+        },
+        {
+          "display": "I'm going to read a book next week",
+          "cue": "मैं अगले हफ़्ते एक किताब पढ़ने वाला हूँ",
+          "changed": "क्रिया बदली — read a book; next week वही."
+        }
+      ],
+      "mistake": {
+        "display": "I'm going to learn English in next week",
+        "why": "next अपने आप समय बाँधता है — next week, next Monday; हिंदी का में यहाँ in नहीं बनता (in the morning हाँ — M4; in next week नहीं)."
+      },
+      "usage": "आने वाले हफ़्ते का इरादा — सीखना, शुरू करना, जाना: next week के साथ.",
+      "register": "neutral",
+      "mnemonic": "next = अगला, और अकेला — उसके आगे in / on की कुर्सी नहीं."
+    },
+    {
+      "id": "L1-M6-S08",
+      "display": "I'm meeting her tomorrow",
+      "cue": "मैं कल उससे मिल रहा हूँ",
+      "literal": "मैं-हूँ मिल-रहा उससे कल",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "meeting",
+            "cue": "मिल रहा / रही (तय मुलाक़ात)",
+            "tag": "delta",
+            "forms": [],
+            "note": "meet + -ing — मिलना, और यह इस सीढ़ी का पहला -ing है: be (M1 का शब्द — I'm, she is, we are) + क्रिया-ing = किसी के साथ तय की हुई मुलाक़ात या काम, हमेशा आने वाले कल के शब्द के साथ: I'm meeting her tomorrow · We are meeting her next week. आदत या हालत के लिए नहीं (M4: *I am knowing नहीं) — सिर्फ़ तय किए हुए काम के लिए. meeting का दूसरा मतलब बैठक (a meeting) अलग बात है, यहाँ नहीं."
+          },
+          {
+            "display": "her",
+            "cue": "उसे · उससे (औरत) · उसकी",
+            "tag": "delta",
+            "forms": [],
+            "note": "औरत / लड़की के लिए, क्रिया के बाद: I'm meeting her (उससे), I will call her (उसे); she कर्ता की जगह, her कर्म की जगह — हिंदी का वह यहाँ उसे / उससे बनता है, अंग्रेज़ी का she → her. और 'उसकी' भी यही शब्द: her book = उसकी किताब, her name = उसका नाम — एक her, दो काम. आदमी के लिए him / his — इस सीढ़ी पर नहीं."
+          }
+        ],
+        "rules": [
+          4,
+          1
+        ]
+      },
+      "trap": "मिल रहा हूँ सुनकर दो फिसलनें — be छोड़ना (*I meeting her) या -ing छोड़ना (*I am meet her); और उससे के लिए she नहीं, her — क्रिया के बाद वाला रूप.",
+      "sound": "meeting = मीटिंग — लंबा 'ई', ng हल्का. her = हर — r हल्का; बोलचाल में अक्सर 'अर'. I'm meeting एक साँस: आइम-मीटिंग.",
+      "variations": [
+        {
+          "display": "I'm meeting her on Monday",
+          "cue": "मैं सोमवार को उससे मिल रहा हूँ",
+          "changed": "समय बदला — on Monday; be + meeting वही."
+        },
+        {
+          "display": "We are meeting her next week",
+          "cue": "हम अगले हफ़्ते उससे मिल रहे हैं",
+          "changed": "कर्ता we — are meeting; तय बात वही, -ing वही."
+        }
+      ],
+      "mistake": {
+        "display": "I am meet her tomorrow",
+        "why": "तय मुलाक़ात be + क्रिया-ing है — meeting; be के बाद नंगी क्रिया नहीं बैठती. I am meeting her, बोलचाल में I'm meeting her."
+      },
+      "usage": "तय की हुई मुलाक़ात बताना — दोस्त, डॉक्टर, दफ़्तर: be + -ing + कल / अगले हफ़्ते.",
+      "register": "neutral",
+      "mnemonic": "रहा हूँ = am -ing: मिल रहा हूँ → I'm meeting — पर सिर्फ़ तब, जब बात तय हो."
+    },
+    {
+      "id": "L1-M6-S09",
+      "display": "She is coming to Delhi next week",
+      "cue": "वह अगले हफ़्ते दिल्ली आ रही है",
+      "literal": "वह है आ-रही को दिल्ली अगले हफ़्ते",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "coming",
+            "cue": "आ रहा / रही (तय बात)",
+            "tag": "delta",
+            "forms": [],
+            "note": "come + -ing — S08 का वही साँचा: be + क्रिया-ing, तय की हुई बात, आने वाले कल के शब्द के साथ: She is coming next week · They are coming tomorrow. (अभी-अभी चल रहे काम के लिए भी अंग्रेज़ी यही -ing रखती है — she is coming = वह आ रही है, इसी वक़्त — पर इस module में सिर्फ़ तय बात.) आदत: she comes, बिना -ing (M4)."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "आ रही है की ई और है — हाथ She coming (be छूटा) या She is come (-ing छूटा) लिखता है. be + -ing, दोनों ज़रूरी; और दिल्ली आना = come to Delhi, to छूटे नहीं.",
+      "sound": "coming = कमिंग — o 'अ', ng हल्का. to Delhi = टु डेली, to हल्का. next week = नेक्स्ट वीक.",
+      "variations": [
+        {
+          "display": "She is coming on Monday",
+          "cue": "वह सोमवार को आ रही है",
+          "changed": "समय बदला — on Monday; जगह छोड़ी, is coming वही."
+        },
+        {
+          "display": "They are coming to Delhi tomorrow",
+          "cue": "वे कल दिल्ली आ रहे हैं",
+          "changed": "कर्ता they — are coming; बाक़ी वही."
+        }
+      ],
+      "mistake": {
+        "display": "She is coming Delhi next week",
+        "why": "दिल्ली आ रही है में को नहीं दिखता, पर अंग्रेज़ी में जगह से पहले to ज़रूरी — come to Delhi (go to school की तरह, M4). घर अपवाद: come home."
+      },
+      "usage": "किसी के आने की तय बात — मेहमान, दोस्त, रिश्तेदार: be + coming + समय.",
+      "register": "neutral",
+      "mnemonic": "आ रही है = is coming — तय है तो -ing, और दिल्ली से पहले to."
+    },
+    {
+      "id": "L1-M6-S10",
+      "display": "I will call you tomorrow",
+      "cue": "मैं कल आपको फ़ोन करूँगा",
+      "literal": "मैं फ़ोन-करूँगा आपको कल",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "call",
+            "cue": "फ़ोन करना · बुलाना",
+            "tag": "interference",
+            "forms": [],
+            "note": "फ़ोन करना — और सीधे आदमी: call you, call her, call my brother; आपको का को अंग्रेज़ी में कुछ नहीं (*call to you नहीं — भारत की अंग्रेज़ी की जानी-पहचानी फिसलन). बुलाना भी call (call the doctor). will के बाद मूल रूप."
+          },
+          {
+            "display": "I'll",
+            "cue": "मैं … -ऊँगा (I will का छोटा रूप)",
+            "tag": "delta",
+            "forms": [],
+            "note": "I will का बोलचाल वाला रूप — एक शब्द, सीधा apostrophe ('): I'll call you, I'll go. बोलने में यही आम है; इस module के हर वाक्य ने will पूरा लिखा, क्योंकि will ही सबक़ है और उसे अलग से छूकर देखना है. पूरा I will दो शब्द ही रहेंगे — I और will की अपनी-अपनी सूची; यह सूची सिर्फ़ I'll की है. she'll, they'll इस सीढ़ी पर नहीं."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "आपको फ़ोन करूँगा का को हाथ से call to you लिखवाता है — call सीधे आदमी लेता है. और करूँगा का will पूरा लिखो: I will call; बोलने में I'll.",
+      "sound": "call = कॉल — l साफ़. I'll = आइल — एक साँस, I will का छोटा रूप. you = यू.",
+      "variations": [
+        {
+          "display": "I'll call you tomorrow",
+          "cue": "मैं कल आपको फ़ोन करूँगा",
+          "changed": "I will → I'll: बोलचाल का छोटा रूप, वही मतलब."
+        },
+        {
+          "display": "She will call you on Monday",
+          "cue": "वह सोमवार को आपको फ़ोन करेगी",
+          "changed": "कर्ता she — will call वही, -s नहीं; समय on Monday."
+        }
+      ],
+      "mistake": {
+        "display": "I will call to you tomorrow",
+        "why": "call सीधे आदमी लेता है — call you; आपको का को यहाँ to नहीं बनता (M3 का to क्रिया से पहले या जगह से पहले है, आदमी से पहले नहीं)."
+      },
+      "usage": "फ़ोन का वादा — दोस्त, दफ़्तर, दुकान: I will / I'll call you + कब.",
+      "register": "neutral",
+      "mnemonic": "call के बाद सीधे तुम — call you; और I will सिकुड़कर I'll."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M6-C01",
+      "display": "I will go to Mumbai tomorrow",
+      "cue": "मैं कल मुंबई जाऊँगा"
+    },
+    {
+      "id": "L1-M6-C02",
+      "display": "Will you come to Delhi tomorrow?",
+      "cue": "क्या आप कल दिल्ली आएँगे?"
+    },
+    {
+      "id": "L1-M6-C03",
+      "display": "She will call you tomorrow",
+      "cue": "वह कल आपको फ़ोन करेगी"
+    },
+    {
+      "id": "L1-M6-C04",
+      "display": "She is going to cook rice tomorrow",
+      "cue": "वह कल चावल बनाने वाली है"
+    },
+    {
+      "id": "L1-M6-C05",
+      "display": "We will buy a car next week",
+      "cue": "हम अगले हफ़्ते गाड़ी ख़रीदेंगे"
+    },
+    {
+      "id": "L1-M6-C06",
+      "display": "They will eat rice at home tomorrow",
+      "cue": "वे कल घर पर चावल खाएँगे"
+    },
+    {
+      "id": "L1-M6-C07",
+      "display": "I'm meeting her next week",
+      "cue": "मैं अगले हफ़्ते उससे मिल रहा हूँ"
+    },
+    {
+      "id": "L1-M6-C08",
+      "display": "He is going to visit Delhi tomorrow",
+      "cue": "वह कल दिल्ली घूमने वाला है"
+    },
+    {
+      "id": "L1-M6-C09",
+      "display": "Will she come on Monday?",
+      "cue": "क्या वह सोमवार को आएगी?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

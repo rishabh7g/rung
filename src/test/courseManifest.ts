@@ -11,7 +11,7 @@
  * hi-en — Hindi (L1) → English (L2) — behind the same gate: `content/courses.json` lists it with
  * `fixture: true`, so a strict build drops the whole course and only `--with-fixtures` can emit
  * it. Since #270 authored L1-M1 and L1-M2 the dev build emits the row exactly like this (the
- * build filters the manifest to courses that shipped ≥ 1, and hi-en now ships two), which is how
+ * build filters the manifest to courses that shipped ≥ 1, and hi-en now ships ten), which is how
  * the Settings smoke (`src/screens/SettingsScreen.test.tsx`) and the authored-rung walk
  * (`src/course/hiEnAuthored.test.tsx`) reach the fourth course without a browser. The row
  * graduates with #273, as the other two did.
