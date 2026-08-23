@@ -1,0 +1,571 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M4",
+  "title": "My day",
+  "job": "Daily habits and time words",
+  "prerequisites": ["L1-M3"],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-23",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 6,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "I + V + at + time",
+      "He/She + V-s + at + time",
+      "I + V + in the morning / on Monday",
+      "I + always/usually/never + V",
+      "Does he/she + V? / He/She doesn't + V",
+      "I have + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "आदत की क्रिया का एक ही अक्षर बदलता है — और वह कर्ता का पुरुष बताता है, लिंग नहीं: I get up · you get up · we get up · they get up, पर he gets up · she gets up — सिर्फ़ he / she / it के साथ -s, और कुछ नहीं बदलता. हिंदी उठता / उठती में लिंग रखती है; अंग्रेज़ी में आदमी और औरत दोनों get up, और -s सिर्फ़ इस बात का निशान है कि कर्ता 'वह' है. 'अंग्रेज़ी की क्रिया नहीं बदलती' — यह बात इसी एक अक्षर पर ग़लत है, और यही अक्षर सबसे ज़्यादा छूटता है: *he get up नहीं, he gets up."
+    },
+    {
+      "tag": "delta",
+      "text": "समय का शब्द समय से पहले आता है — at seven (सात बजे), in the morning (सुबह), on Monday (सोमवार को) — हिंदी का बजे / को / में शब्द के बाद, अंग्रेज़ी का at / in / on पहले (M1 का from वाला नियम, समय पर). बँटवारा: घड़ी का समय at, दिन का हिस्सा in, दिन on. तीनों जगह के लिए भी यही हैं — at home, in the box, on the table (M5, M7) — एक ही शब्द, वही जगह: संज्ञा से पहले."
+    },
+    {
+      "tag": "delta",
+      "text": "कितनी बार — always (हमेशा), usually (आम तौर पर), never (कभी नहीं) — कर्ता और क्रिया के बीच बैठता है: I always wake up early · I usually drink tea · I never drink coffee. हिंदी में ये शब्द वाक्य में कहीं भी बैठ जाते हैं, अंग्रेज़ी में इनकी जगह तय है. never में नहीं पहले से है — don't साथ नहीं: *I don't never drink coffee नहीं."
+    },
+    {
+      "tag": "interference",
+      "text": "आदत और हालत दोनों सादे वर्तमान में — -ing के बिना — तब भी जब काम अभी चल रहा हो: I drink tea in the morning (रोज़ की बात), I have two brothers · I like tea (हालत — हमेशा की बात). '-ing का मतलब अभी' वाली आदत से *I am having two brothers और *I am knowing Rohan निकलते हैं — भारत की अंग्रेज़ी की सबसे जानी-पहचानी ग़लती. -ing इस सीढ़ी पर M6 में आएगा, सिर्फ़ तय किए हुए कल के काम के लिए."
+    },
+    {
+      "tag": "interference",
+      "text": "have = के पास होना: मेरे दो भाई हैं → I have two brothers; मेरे पास एक पेन है → I have a pen. जिसके पास है, वह कर्ता है — मेरे / मेरे पास के लिए कोई शब्द नहीं, और हैं के लिए am नहीं: *I am have नहीं. he / she के साथ has. यह हालत की क्रिया है, -ing कभी नहीं. खाने-पीने के लिए यहाँ eat / drink — eat breakfast, drink tea."
+    },
+    {
+      "tag": "interference",
+      "text": "सवाल और नहीं में पुरुष सहारे पर चढ़ जाता है, क्रिया पर नहीं: Do you get up early? · Does he get up early? · He doesn't eat breakfast — -s does पर आ गया, क्रिया मूल रूप में लौट आई. *Does he gets up और *He doesn't eats दोहरा निशान है — हिंदी का हाथ दोनों जगह लगाता है. does · doesn't he / she के; I / you / we / they के लिए M3 के do · don't."
+    },
+    {
+      "tag": "delta",
+      "text": "वह के दो शब्द: he आदमी या लड़के के लिए, she औरत या लड़की के लिए (चीज़ के लिए it — M7). हिंदी का एक वह दोनों को ढँक लेता है, अंग्रेज़ी में चुनना पड़ता है — और क्रिया पर -s दोनों के साथ एक-सा: he works · she works (करता / करती → एक works). ग़लत चुनाव (बहन के लिए he) अंग्रेज़ी की सबसे बड़ी पहचान वाली ग़लती है — M10 इस पर लौटेगा."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M4-S01",
+      "display": "I always wake up early",
+      "cue": "मैं हमेशा जल्दी जागता हूँ",
+      "literal": "मैं हमेशा जागता-हूँ जल्दी",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "always",
+            "cue": "हमेशा",
+            "tag": "delta",
+            "forms": [],
+            "note": "हमेशा — कर्ता और क्रिया के बीच: I always wake up early. हिंदी में हमेशा कहीं भी बैठ जाता है; अंग्रेज़ी में कितनी-बार वाले शब्द (always, usually, never) की जगह तय है — कर्ता के बाद, क्रिया से पहले."
+          },
+          {
+            "display": "wake up",
+            "cue": "जागना",
+            "tag": "delta",
+            "forms": ["wake up", "wakes up"],
+            "note": "दो शब्द, एक क्रिया — पूरा का पूरा याद करो: wake up = नींद खुलना, जागना; बिस्तर छोड़ना get up. अंदर का up अलग से कुछ नहीं कहता. I wake up · you wake up · he wakes up, she wakes up (-s wakes पर) · we wake up."
+          },
+          {
+            "display": "early",
+            "cue": "जल्दी (समय से पहले)",
+            "tag": "free",
+            "forms": [],
+            "note": "जल्दी — समय वाला, सुबह-सुबह; क्रिया के बाद: wake up early, get up early. 'जल्दी करो' वाला जल्दी नहीं, 'समय से पहले' वाला."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "मैं जल्दी जागता हूँ के हूँ से am चिपकता है — *I am wake up early. आदत की क्रिया में be नहीं: I wake up, बस. और हमेशा की जगह — कर्ता और क्रिया के बीच.",
+      "sound": "always = ऑलवेज़ — आख़िर में ज़. wake up = वेक अप, एक साँस में. early = अर्ली — शुरू का ea यहाँ 'अ' है.",
+      "variations": [
+        {
+          "display": "I wake up at six",
+          "cue": "मैं छह बजे जागता हूँ",
+          "changed": "हमेशा की जगह समय — at six; साँचा वही."
+        },
+        {
+          "display": "She wakes up early",
+          "cue": "वह जल्दी जागती है",
+          "changed": "कर्ता she — wakes up, -s के साथ; जागती का ती नहीं, पुरुष का -s."
+        }
+      ],
+      "mistake": {
+        "display": "I am wake up early",
+        "why": "जागता हूँ का हूँ यहाँ am नहीं बनता — आदत की क्रिया अकेली चलती है: I wake up. am सिर्फ़ be के वाक्य में (I am a student)."
+      },
+      "usage": "अपनी दिनचर्या की पहली लाइन — कब जागते हो; always / usually के साथ आदत.",
+      "register": "neutral",
+      "mnemonic": "हमेशा बीच में बैठता है: I — always — wake up. और हूँ का am कहीं नहीं."
+    },
+    {
+      "id": "L1-M4-S02",
+      "display": "I get up at seven",
+      "cue": "मैं सात बजे उठता हूँ",
+      "literal": "मैं उठता-हूँ बजे सात",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "get up",
+            "cue": "उठना",
+            "tag": "delta",
+            "forms": ["get up", "gets up"],
+            "note": "दो शब्द, एक क्रिया: get up = (बिस्तर से) उठना — पूरा का पूरा; up अलग से कुछ नहीं, और get यहाँ 'पाना / लेना' नहीं. I get up · you get up · he gets up, she gets up (एक -s, gets पर) · we get up · they get up. जागना wake up."
+          },
+          {
+            "display": "at",
+            "cue": "(समय में) बजे · (जगह में) पर",
+            "tag": "delta",
+            "forms": [],
+            "note": "एक बिंदु — समय का या जगह का — और शब्द उस बिंदु से पहले: at seven = सात बजे (हिंदी का बजे बाद में, at पहले); at home = घर पर (M5, M7). घड़ी का समय हमेशा at: at seven, at nine."
+          },
+          {
+            "display": "seven",
+            "cue": "सात",
+            "tag": "free",
+            "forms": [],
+            "note": "सात — अंक वैसे ही; घड़ी के समय में at के बाद: at seven = सात बजे. और अंक M8 में."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "सात बजे में बजे सात के बाद है — हाथ seven at या सिर्फ़ seven लिखता है. अंग्रेज़ी में समय का शब्द पहले: at seven.",
+      "sound": "get up = गेट अप — एक साँस में, t हल्का. at यहाँ हल्का 'अट'. seven = सेवन.",
+      "variations": [
+        {
+          "display": "I get up at six",
+          "cue": "मैं छह बजे उठता हूँ",
+          "changed": "समय बदला — at वही, अंक बदला."
+        },
+        {
+          "display": "He gets up at seven",
+          "cue": "वह सात बजे उठता है",
+          "changed": "कर्ता he — gets up, -s के साथ; बाक़ी वैसा ही."
+        }
+      ],
+      "mistake": {
+        "display": "I get up seven",
+        "why": "बजे का शब्द छूट गया — अंग्रेज़ी में घड़ी का समय at के साथ, और at समय से पहले: at seven."
+      },
+      "usage": "दिनचर्या — घड़ी के समय के साथ कोई भी आदत: get up, eat, go, at + समय.",
+      "register": "neutral",
+      "mnemonic": "बजे पलटकर आगे आ गया — at seven. समय का शब्द पहले, समय बाद में."
+    },
+    {
+      "id": "L1-M4-S03",
+      "display": "He goes to school at nine",
+      "cue": "वह नौ बजे स्कूल जाता है",
+      "literal": "वह जाता-है को स्कूल बजे नौ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "he",
+            "cue": "वह (आदमी / लड़का)",
+            "tag": "delta",
+            "forms": [],
+            "note": "वह — पर सिर्फ़ आदमी या लड़के के लिए; औरत के लिए she, चीज़ के लिए it (M7). हिंदी का एक वह अंग्रेज़ी में बँटता है, और चुनना पड़ता है — यह चुनाव ही M10 का सबक़ है. he के साथ क्रिया पर -s: he goes · he gets up; be के साथ is: he is."
+          },
+          {
+            "display": "go",
+            "cue": "जाना",
+            "tag": "delta",
+            "forms": ["go", "goes"],
+            "note": "जाना — I go · you go · he goes, she goes (-s, यहाँ -es) · we go · they go. जगह से पहले to: go to school (M3 का to, दिशा वाला). सिर्फ़ अभी का रूप; बीते कल का रूप M5 में."
+          },
+          {
+            "display": "school",
+            "cue": "स्कूल",
+            "tag": "free",
+            "forms": [],
+            "note": "स्कूल — go to school (पढ़ने जाना): बिना a / the, क्योंकि बात इमारत की नहीं, रोज़ के काम की है. इमारत की बात हो तो the school (M7: near the school)."
+          },
+          {
+            "display": "nine",
+            "cue": "नौ",
+            "tag": "free",
+            "forms": [],
+            "note": "नौ — at nine = नौ बजे."
+          }
+        ],
+        "rules": [0, 6, 1]
+      },
+      "trap": "जाता है का ता लिंग बता रहा था; अंग्रेज़ी में goes का -s पुरुष बताता है — वह (he या she), दोनों के लिए goes. और स्कूल जाता है में को नहीं दिखता; अंग्रेज़ी में to ज़रूरी: goes to school.",
+      "sound": "he = ही. goes = गोज़ — आख़िर में ज़. school = स्कूल — शुरू में इ- मत जोड़ो (इस्कूल नहीं). nine = नाइन.",
+      "variations": [
+        {
+          "display": "She goes to school at nine",
+          "cue": "वह नौ बजे स्कूल जाती है",
+          "changed": "he की जगह she — goes वही रहा; जाती का ती अंग्रेज़ी में कहीं नहीं."
+        },
+        {
+          "display": "I go to school at nine",
+          "cue": "मैं नौ बजे स्कूल जाता हूँ",
+          "changed": "कर्ता I — go, बिना -s."
+        }
+      ],
+      "mistake": {
+        "display": "He go to school at nine",
+        "why": "he के साथ क्रिया पर -s चाहिए — goes. यही एक अक्षर इस module का सबसे ज़्यादा छूटने वाला अक्षर है."
+      },
+      "usage": "किसी और की दिनचर्या बताना — भाई, दोस्त, बच्चा: he / she + क्रिया-s.",
+      "register": "neutral",
+      "mnemonic": "वह आया तो -s आया: he goes, she goes. मैं-तुम-हम-वे के साथ कुछ नहीं."
+    },
+    {
+      "id": "L1-M4-S04",
+      "display": "I eat breakfast in the morning",
+      "cue": "मैं सुबह नाश्ता करता हूँ",
+      "literal": "मैं खाता-हूँ नाश्ता में सुबह",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eat",
+            "cue": "खाना (क्रिया)",
+            "tag": "delta",
+            "forms": ["eat", "eats"],
+            "note": "खाना — क्रिया: I eat · he eats, she eats · they eat. नाश्ता करना भी eat से: eat breakfast (*do breakfast नहीं). बीते कल का रूप M5 में."
+          },
+          {
+            "display": "breakfast",
+            "cue": "नाश्ता",
+            "tag": "free",
+            "forms": [],
+            "note": "नाश्ता — सुबह का खाना; बिना a: eat breakfast. नाश्ता करना = eat breakfast — करना का do यहाँ नहीं."
+          },
+          {
+            "display": "in",
+            "cue": "(समय में) में · (जगह में) में",
+            "tag": "delta",
+            "forms": [],
+            "note": "में — दिन के हिस्से से पहले (in the morning = सुबह; हिंदी जहाँ कुछ नहीं लगाती, अंग्रेज़ी in + the लगाती है) और किसी चीज़ के अंदर (in the box = डिब्बे में — M7). हिंदी का में शब्द के बाद, अंग्रेज़ी का in पहले."
+          },
+          {
+            "display": "morning",
+            "cue": "सुबह",
+            "tag": "free",
+            "forms": [],
+            "note": "सुबह — in the morning: in + the + morning, तीन शब्द, पूरा साँचा (the M3 का — सुबह जो हम दोनों जानते हैं, दिन की). Good morning (M2) अलग जमी हुई बात है — वह अभिवादन, यह समय."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "सुबह नाश्ता करता हूँ में न में है, न the — हाथ in morning या सिर्फ़ morning लिखता है; अंग्रेज़ी का साँचा तीन शब्द का है: in the morning. और करता हूँ का करना do नहीं — नाश्ता खाया जाता है: eat breakfast.",
+      "sound": "eat = ईट — लंबा 'ई'. breakfast = ब्रेकफ़स्ट — ea यहाँ 'ए', और -fast हल्का 'फ़स्ट'. morning = मॉर्निंग.",
+      "variations": [
+        {
+          "display": "I drink tea in the morning",
+          "cue": "मैं सुबह चाय पीता हूँ",
+          "changed": "क्रिया और चीज़ बदली — in the morning वही."
+        },
+        {
+          "display": "He eats breakfast at seven",
+          "cue": "वह सात बजे नाश्ता करता है",
+          "changed": "कर्ता he — eats; समय घड़ी का, तो at."
+        }
+      ],
+      "mistake": {
+        "display": "I do breakfast in the morning",
+        "why": "नाश्ता करना का करना यहाँ do नहीं होता — खाने की चीज़ के साथ eat: eat breakfast."
+      },
+      "usage": "दिन के हिस्से के साथ आदत — in the morning; सुबह का खाना breakfast.",
+      "register": "neutral",
+      "mnemonic": "सुबह = in the morning — तीन शब्द, एक साथ; नाश्ता खाया जाता है: eat breakfast."
+    },
+    {
+      "id": "L1-M4-S05",
+      "display": "I usually drink tea",
+      "cue": "मैं आम तौर पर चाय पीता हूँ",
+      "literal": "मैं आम-तौर-पर पीता-हूँ चाय",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "usually",
+            "cue": "आम तौर पर · अक्सर",
+            "tag": "delta",
+            "forms": [],
+            "note": "आम तौर पर — कर्ता और क्रिया के बीच: I usually drink tea. always (हमेशा) और never (कभी नहीं) भी वहीं बैठते हैं; हिंदी में ये शब्द कहीं भी, अंग्रेज़ी में बीच में."
+          },
+          {
+            "display": "drink",
+            "cue": "पीना",
+            "tag": "delta",
+            "forms": ["drink", "drinks"],
+            "note": "पीना — I drink · he drinks, she drinks. चाय पीना = drink tea; यहाँ take या have नहीं. बीते कल का रूप M5 में."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "चाय पीता हूँ — रोज़ की बात, तो सादा वर्तमान; हाथ -ing की तरफ़ जाता है (*I am drinking tea) जैसे 'पी रहा हूँ'. आदत के लिए drink, बस. और आम तौर पर बीच में.",
+      "sound": "usually = यूज़ुअली — ज़ु हल्का, 'यूज़्वली' जैसा. drink = ड्रिंक.",
+      "variations": [
+        {
+          "display": "I always drink tea",
+          "cue": "मैं हमेशा चाय पीता हूँ",
+          "changed": "usually की जगह always — जगह वही, बीच में."
+        },
+        {
+          "display": "She usually drinks coffee",
+          "cue": "वह आम तौर पर कॉफ़ी पीती है",
+          "changed": "कर्ता she — drinks; usually वहीं."
+        }
+      ],
+      "mistake": {
+        "display": "I drink usually tea",
+        "why": "आम तौर पर की जगह तय है — कर्ता के बाद, क्रिया से पहले: I usually drink tea."
+      },
+      "usage": "आदत बताना — कितनी बार: usually, always; खाने-पीने की रोज़ की बातें.",
+      "register": "neutral",
+      "mnemonic": "कर्ता — कितनी बार — क्रिया: I usually drink."
+    },
+    {
+      "id": "L1-M4-S06",
+      "display": "She works on Monday",
+      "cue": "वह सोमवार को काम करती है",
+      "literal": "वह काम-करती-है को सोमवार",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "she",
+            "cue": "वह (औरत / लड़की)",
+            "tag": "delta",
+            "forms": [],
+            "note": "वह — औरत या लड़की के लिए; आदमी के लिए he. दोनों के साथ क्रिया पर वही -s: she works · he works — लिंग से क्रिया नहीं बदलती (करता / करती → एक works), सर्वनाम बदलता है. be के साथ is: she is."
+          },
+          {
+            "display": "work",
+            "cue": "काम करना",
+            "tag": "delta",
+            "forms": ["work", "works"],
+            "note": "काम करना — क्रिया: I work · she works, he works. हिंदी के दो शब्द (काम + करना) अंग्रेज़ी का एक. सिर्फ़ अभी का रूप; M5 में worked."
+          },
+          {
+            "display": "on",
+            "cue": "(दिन) को · (सतह) पर",
+            "tag": "delta",
+            "forms": [],
+            "note": "दिन से पहले — on Monday = सोमवार को (हिंदी का को दिन के बाद, on पहले); और सतह पर — on the table = मेज़ पर (M7). एक ही on, दो सीटें, हमेशा संज्ञा से पहले."
+          },
+          {
+            "display": "Monday",
+            "cue": "सोमवार",
+            "tag": "free",
+            "forms": [],
+            "note": "सोमवार — हमेशा बड़े अक्षर से (दिनों के नाम capital में); दिन से पहले on: on Monday = सोमवार को."
+          }
+        ],
+        "rules": [0, 6, 1]
+      },
+      "trap": "करती है — ती औरत बता रहा था और है आदत; अंग्रेज़ी में ती कहीं नहीं जाता (works वही जो he के साथ) और है is नहीं बनता: *She is works नहीं. और को — सोमवार के बाद नहीं, पहले: on Monday.",
+      "sound": "she = शी. works = वर्क्स — आख़िर का s 'स'. Monday = मंडे.",
+      "variations": [
+        {
+          "display": "He works on Monday",
+          "cue": "वह सोमवार को काम करता है",
+          "changed": "she की जगह he — works वही; करता / करती का फ़र्क़ सिर्फ़ सर्वनाम में."
+        },
+        {
+          "display": "She works in the morning",
+          "cue": "वह सुबह काम करती है",
+          "changed": "दिन की जगह दिन का हिस्सा — on Monday → in the morning."
+        }
+      ],
+      "mistake": {
+        "display": "She is work on Monday",
+        "why": "करती है का है यहाँ is नहीं बनता — -s ही पूरा है: works. is सिर्फ़ be के वाक्य में (She is a teacher)."
+      },
+      "usage": "किसी का हफ़्ते का काम — दिन के साथ: on Monday; हर हफ़्ते की आदत.",
+      "register": "neutral",
+      "mnemonic": "करता / करती, दोनों works — लिंग सर्वनाम में गया (he / she), क्रिया में नहीं."
+    },
+    {
+      "id": "L1-M4-S07",
+      "display": "I never drink coffee",
+      "cue": "मैं कभी कॉफ़ी नहीं पीता",
+      "literal": "मैं कभी-नहीं पीता कॉफ़ी",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "never",
+            "cue": "कभी नहीं",
+            "tag": "interference",
+            "forms": [],
+            "note": "कभी नहीं — एक शब्द, कर्ता और क्रिया के बीच, और इसमें नहीं पहले से है: I never drink coffee. हिंदी का कभी … नहीं दो टुकड़ों में क्रिया को घेरता है (कभी कॉफ़ी नहीं पीता); अंग्रेज़ी में never अकेला काफ़ी — don't साथ नहीं: *I don't never नहीं."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "कभी … नहीं के दो टुकड़े हाथ से दो शब्द बनवाते हैं — *I don't never drink coffee. अंग्रेज़ी में never में नहीं समाया है; एक शब्द, बीच में.",
+      "sound": "never = नेवर — n-e छोटा 'ए'. coffee = कॉफ़ी.",
+      "variations": [
+        {
+          "display": "I never drink tea",
+          "cue": "मैं कभी चाय नहीं पीता",
+          "changed": "चीज़ बदली — never वहीं."
+        },
+        {
+          "display": "He never eats breakfast",
+          "cue": "वह कभी नाश्ता नहीं करता",
+          "changed": "कर्ता he — eats, -s के साथ; never बीच में, doesn't नहीं चाहिए."
+        }
+      ],
+      "mistake": {
+        "display": "I don't never drink coffee",
+        "why": "never में नहीं पहले से है — don't के साथ दो नहीं हो गए. या never, या don't: I never drink coffee / I don't drink coffee."
+      },
+      "usage": "जो कभी नहीं करते — खाने-पीने की बात, आदत; साफ़ मना नहीं, आदत का बयान.",
+      "register": "neutral",
+      "mnemonic": "never अकेला नहीं है — नहीं उसके अंदर है. don't को छुट्टी."
+    },
+    {
+      "id": "L1-M4-S08",
+      "display": "Does he get up early?",
+      "cue": "क्या वह जल्दी उठता है?",
+      "literal": "क्या वह उठता जल्दी?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "does",
+            "cue": "(he / she का सवाल-सहारा) · करता / करती है",
+            "tag": "interference",
+            "forms": [],
+            "note": "do का he / she वाला रूप — -s यहाँ आ बैठा: Does he get up early? — और क्रिया मूल रूप में (get up, gets up नहीं). सवाल का सहारा, अपना मतलब कुछ नहीं (M3 का do); और असली क्रिया भी — What does he do? (वह क्या करता है?). I / you / we / they के साथ do."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "उठता है का -s gets पर था; सवाल में वह does पर चला जाता है और get up मूल रूप में लौट आता है — हाथ दोनों जगह लगाता है: *Does he gets up. एक -s, सहारे पर.",
+      "sound": "does = डज़ — 'डोज़' नहीं; आख़िर में ज़. सवाल ऊपर उठकर ख़त्म: डज़-ही-गेट-अप-अर्ली.",
+      "variations": [
+        {
+          "display": "Does she get up early?",
+          "cue": "क्या वह जल्दी उठती है?",
+          "changed": "he की जगह she — does वही, get up वही."
+        },
+        {
+          "display": "Do you get up early?",
+          "cue": "क्या आप जल्दी उठते हैं?",
+          "changed": "कर्ता you — सहारा do (M3), does नहीं."
+        }
+      ],
+      "mistake": {
+        "display": "Does he gets up early?",
+        "why": "-s एक बार — does पर चढ़ गया, तो क्रिया मूल रूप में: Does he get up …? दोहरा निशान नहीं."
+      },
+      "usage": "किसी और की आदत पूछना — भाई, दोस्त, बच्चा: Does he / she + क्रिया?",
+      "register": "neutral",
+      "mnemonic": "-s ने छलाँग लगाई — gets से does पर. एक जगह, दो नहीं."
+    },
+    {
+      "id": "L1-M4-S09",
+      "display": "He doesn't eat breakfast",
+      "cue": "वह नाश्ता नहीं करता",
+      "literal": "वह नहीं खाता नाश्ता",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "doesn't",
+            "cue": "नहीं (does + not)",
+            "tag": "interference",
+            "forms": ["doesn't", "does not"],
+            "note": "he / she का नहीं — does + not, बोलचाल में doesn't (सीधा apostrophe); -s इस पर है, क्रिया मूल रूप में: He doesn't eat breakfast (*doesn't eats नहीं). I / you / we / they: don't (M3). पूरा रूप does not ज़ोर देने में."
+          }
+        ],
+        "rules": [5, 0]
+      },
+      "trap": "नहीं करता का एक नहीं — हाथ He not eat या He don't eat लिखता है. he / she के साथ सहारा does है, और -s उसी पर: doesn't eat.",
+      "sound": "doesn't = डज़न्ट — एक साँस में, apostrophe चुप, आख़िर का t हल्का.",
+      "variations": [
+        {
+          "display": "She doesn't eat breakfast",
+          "cue": "वह नाश्ता नहीं करती",
+          "changed": "he की जगह she — doesn't वही."
+        },
+        {
+          "display": "He does not eat breakfast",
+          "cue": "वह नाश्ता नहीं करता",
+          "changed": "पूरा रूप does not — वही मतलब, ज़ोर देने में."
+        }
+      ],
+      "mistake": {
+        "display": "He don't eat breakfast",
+        "why": "he के साथ सहारा does है — -s वहाँ जाता है: doesn't. don't I / you / we / they का है."
+      },
+      "usage": "किसी और की आदत में नहीं — he / she + doesn't + क्रिया.",
+      "register": "neutral",
+      "mnemonic": "वह = -s, नहीं = does + not — मिलकर doesn't; क्रिया आराम से, मूल रूप में."
+    },
+    {
+      "id": "L1-M4-S10",
+      "display": "I have two brothers",
+      "cue": "मेरे दो भाई हैं",
+      "literal": "मैं रखता-हूँ दो भाई",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "have",
+            "cue": "के पास होना · (मेरे) हैं",
+            "tag": "interference",
+            "forms": ["have", "has"],
+            "note": "के पास होना — मेरे दो भाई हैं → I have two brothers; मेरे पास एक पेन है → I have a pen: जिसके पास है, वह कर्ता; have साधारण क्रिया, am नहीं. he / she के साथ has. सिर्फ़ 'होना / रखना' वाले मतलब में — और यह हालत है, इसलिए कभी -ing नहीं: *I am having two brothers नहीं. खाने-पीने के लिए यहाँ eat / drink लिखो — eat breakfast, drink tea; बोलचाल का have tea (चाय पीना) इस सीढ़ी पर नहीं सिखाया गया."
+          },
+          {
+            "display": "brothers",
+            "cue": "भाई",
+            "tag": "free",
+            "forms": ["brother", "brothers"],
+            "note": "भाई → brother, दो भाई → two brothers: अंक के बाद -s (M3 का नियम). a brother = एक भाई."
+          }
+        ],
+        "rules": [4, 3]
+      },
+      "trap": "मेरे दो भाई हैं में न मैं है, न कोई क्रिया जो have जैसी लगे — हाथ My two brothers are लिखता है, या हैं से *I am having. अंग्रेज़ी में जिसके पास है वह कर्ता: I have two brothers.",
+      "sound": "have = हैव — आख़िर में व. brothers = ब्रदर्स — th यहाँ 'द' के पास, जीभ दाँतों के बीच.",
+      "variations": [
+        {
+          "display": "I have a pen",
+          "cue": "मेरे पास एक पेन है",
+          "changed": "चीज़ बदली — के पास है भी have: I have a pen."
+        },
+        {
+          "display": "She has two brothers",
+          "cue": "उसके दो भाई हैं",
+          "changed": "कर्ता she — has (have का -s रूप, अक्षर बदलकर)."
+        }
+      ],
+      "mistake": {
+        "display": "I am having two brothers",
+        "why": "have हालत की क्रिया है — भाई होना कोई चलता हुआ काम नहीं, इसलिए -ing नहीं: I have two brothers."
+      },
+      "usage": "अपना परिवार, अपनी चीज़ें बताना — I have + चीज़; हमेशा सादा वर्तमान.",
+      "register": "neutral",
+      "mnemonic": "मेरे पास है = I have — पास वाला कर्ता बन गया, और -ing की कोई जगह नहीं."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M4-C01", "display": "She gets up at seven", "cue": "वह सात बजे उठती है" },
+    { "id": "L1-M4-C02", "display": "He drinks tea in the morning", "cue": "वह सुबह चाय पीता है" },
+    { "id": "L1-M4-C03", "display": "I go to school at nine", "cue": "मैं नौ बजे स्कूल जाता हूँ" },
+    {
+      "id": "L1-M4-C04",
+      "display": "Does she work on Monday?",
+      "cue": "क्या वह सोमवार को काम करती है?"
+    },
+    { "id": "L1-M4-C05", "display": "She doesn't drink coffee", "cue": "वह कॉफ़ी नहीं पीती" },
+    { "id": "L1-M4-C06", "display": "He has two brothers", "cue": "उसके दो भाई हैं" },
+    { "id": "L1-M4-C07", "display": "I never eat breakfast", "cue": "मैं कभी नाश्ता नहीं करता" },
+    { "id": "L1-M4-C08", "display": "Do you get up early?", "cue": "क्या आप जल्दी उठते हैं?" },
+    {
+      "id": "L1-M4-C09",
+      "display": "I usually wake up at seven",
+      "cue": "मैं आम तौर पर सात बजे जागता हूँ"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

@@ -138,11 +138,17 @@ build admits it (`--with-fixtures`) and ships whatever is authored. The ten L1 b
 #269 (`tools/course-briefs.ts`, header section "hi-en: the four decisions a brief must settle" —
 Hindi in every teaching field, no `glossEn`, `literal` in English order, contractions as single
 index surfaces). **#270 authored L1-M1 and L1-M2** (`content/hi-en/modules/`, 17 + 15 word rows,
-index 21 → 37 surfaces, `maxSpan` 2 for `I'm` · `I am` / `Good morning` / `thank you`), flipped
-both rungs to `hasContent: true`, and reviewed them in `docs/11-llm-review-hi-en-L1-M1-M2.md` —
-an LLM review on the owner's authority, with its open questions for a fluent-English pass listed
-at the end; `src/course/hiEnAuthored.test.tsx` is the dev-build smoke (no browser runs on this
-host). M3–M10 (#271, #272) and graduation (#273) follow the en-es/en-ar path.
+`maxSpan` 2 for `I'm` · `I am` / `Good morning` / `thank you`), flipped both rungs to
+`hasContent: true`, and reviewed them in `docs/11-llm-review-hi-en-L1-M1-M2.md`. **#271 authored
+L1-M3, L1-M4 and L1-M5** (14 + 25 + 15 word rows; the cumulative index now runs 23 → 39 → 56 → 90
+→ 108 surfaces, M1–M2's counts having moved by two because M5 extended M1's one `be` row with
+`was · were` in M1's own file, as the briefs require), flipped all three, and reviewed them in
+`docs/12-llm-review-hi-en-L1-M3-M5.md`. Both reviews are LLM reviews on the owner's authority,
+each ending in its open questions for a fluent-English pass; `src/course/hiEnAuthored.test.tsx`
+is the dev-build smoke over all five rungs (no browser runs on this host), and
+`tools/content-build.test.ts` pins which row every seam key (`be`, `to`, `do`, `the`, `have`,
+`in` / `on` / `at`, `get up`, `did`, …) lands on. M6–M10 (#272) and graduation (#273) follow
+the en-es/en-ar path.
 
 **en-es ships (#195, 2026-08-13) — the product has two courses.** All ten L1 rungs —
 `L1-M1`…`L1-M10` — are authored and carry `verified: true` on the same

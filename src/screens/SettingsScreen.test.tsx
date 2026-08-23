@@ -256,7 +256,7 @@ describe('the fourth course — hi-en, authored behind the fixture gate (#267)',
   /**
    * The switch flow above, run against the REAL hi-en files: the manifest row is in `DEV_MANIFEST`
    * with `fixture: true`, and the fetch for hi-en's ladder and bundle answers with what
-   * `content/hi-en/` holds today — ten L1 rungs, the first two authored (#270), Hindi chrome.
+   * `content/hi-en/` holds today — ten L1 rungs, the first five authored (#270, #271), Hindi chrome.
    * hi-mr keeps the test's own ten-rung ladder and its self-identifying fixture bundle, so the two
    * courses cannot be confused on screen. The authored rungs themselves — module list, Sentence
    * Detail, the Why panel — are walked in `src/course/hiEnAuthored.test.tsx`.

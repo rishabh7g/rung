@@ -1,0 +1,492 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M5",
+  "title": "Yesterday",
+  "job": "Past tense — went, ate, did",
+  "prerequisites": ["L1-M4"],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-23",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": ["simple_past"],
+    "allowedPatterns": [
+      "Yesterday + I + V-ed / went / ate",
+      "I didn't + V",
+      "Did you + V + yesterday?",
+      "What did you + V?",
+      "I was / We were + Adj"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "बीते कल में क्रिया का एक ही रूप है — हर पुरुष, हर लिंग, हर वचन के लिए: I ate · she ate · they ate; I went · he went · we went. हिंदी का बीता कल कर्ता से मिलता है (गया / गई / गए) और ने वाले वाक्य में कर्म से (मैंने चाय पी · मैंने चावल खाए — पी चाय से, खाए चावल से); अंग्रेज़ी का बीता कल किसी से नहीं मिलता — सीखने वाले के लिए काम कम है, ज़्यादा नहीं. 'अंग्रेज़ी की क्रिया नहीं बदलती' यहाँ उल्टी तरफ़ से ग़लत है: रूप काल से बदलता है (eat → ate, go → went), पुरुष से कभी नहीं — दोनों बातें साथ याद रखो."
+    },
+    {
+      "tag": "delta",
+      "text": "नियम वाला बीता कल मूल रूप + -ed है (work → worked); पर रोज़ की क्रियाएँ अपना अलग शब्द रखती हैं और उन्हें पूरा याद करना है: go → went, eat → ate, drink → drank, get up → got up, see → saw, do → did, be → was / were. बीते कल में -s कहीं नहीं — she ate, he went, it worked — क्योंकि पुरुष का निशान ही नहीं है."
+    },
+    {
+      "tag": "interference",
+      "text": "बीते कल का सवाल और नहीं did से बनता है, और बीता कल सिर्फ़ did पर रहता है — क्रिया मूल रूप में लौट आती है: I didn't go · Did you eat? · What did you eat yesterday? हिंदी में बीता कल मुख्य क्रिया पर है (नहीं गया · खाया?) और उठाने को और कुछ नहीं, इसलिए हाथ दोनों जगह लगाता है — *I didn't went, *Did you ate? — यही इस module की असली फिसलन है. didn't = did + not (हर कर्ता के लिए एक); और did असली क्रिया भी है — करना का बीता कल: What did you do? में पहला did सहारा, दूसरा do करना."
+    },
+    {
+      "tag": "delta",
+      "text": "yesterday हर वाक्य में कल को बाँधता है — हिंदी का एक कल बीता हुआ भी है और आने वाला भी, और क्रिया बताती है कौन-सा (कल गया · कल जाऊँगा); अंग्रेज़ी के दो शब्द हैं — yesterday और tomorrow (M6) — और शब्द ख़ुद बता देता है. वाक्य के शुरू में या आख़िर में: Yesterday I got up at eight · I went to school yesterday. M4 की रोज़ की क्रियाएँ यहीं बीते कल में लौटती हैं: I get up at seven → Yesterday I got up at eight."
+    },
+    {
+      "tag": "delta",
+      "text": "was / were — be का बीता कल, बिना did और बिना लिंग: I / he / she / it was · you / we / they were — बँटवारा वचन से, जहाँ अभी का बँटवारा (am / is / are) पुरुष से था; था / थी / थे → बस दो शब्द. सवाल में be अब भी ख़ुद आगे आता है (Were you tired?) और नहीं में बस not (I was not tired) — M2 का नियम, बीते कल में. M1 के is वाले शब्द की सूची अब पाँच रूप रखती है: am · is · are · was · were."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M5-S01",
+      "display": "Yesterday I got up at eight",
+      "cue": "कल मैं आठ बजे उठा",
+      "literal": "कल मैं उठा बजे आठ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Yesterday",
+            "cue": "कल (बीता हुआ)",
+            "tag": "delta",
+            "forms": [],
+            "note": "कल — पर सिर्फ़ बीता हुआ कल; आने वाला कल tomorrow (M6). हिंदी का एक कल दोनों है और क्रिया बताती है कौन-सा; अंग्रेज़ी में शब्द ख़ुद बताता है. वाक्य के शुरू में या आख़िर में: Yesterday I got up at eight · I went to school yesterday."
+          },
+          {
+            "display": "got up",
+            "cue": "उठा / उठी / उठे",
+            "tag": "delta",
+            "forms": [],
+            "note": "get up का बीता कल — एक रूप, हर कर्ता के लिए: I got up · she got up · we got up (उठा / उठी / उठे → एक got up). दो शब्द, एक क्रिया, M4 के get up की तरह पूरा का पूरा; सवाल और नहीं में did के बाद फिर get up."
+          },
+          {
+            "display": "eight",
+            "cue": "आठ",
+            "tag": "free",
+            "forms": [],
+            "note": "आठ — at eight = आठ बजे."
+          }
+        ],
+        "rules": [0, 1, 3]
+      },
+      "trap": "उठा / उठी — हिंदी में कल का रूप कर्ता से मिला था; अंग्रेज़ी में got up एक ही है, आदमी हो या औरत. और कल सुनकर हाथ कभी-कभी tomorrow लिखता है — बीता हुआ कल yesterday.",
+      "sound": "yesterday = येस्टर्डे — ज़ोर शुरू में. got up = गॉट अप, एक साँस में. eight = एट — gh चुप.",
+      "variations": [
+        {
+          "display": "Yesterday I got up at seven",
+          "cue": "कल मैं सात बजे उठा",
+          "changed": "समय बदला — at seven; got up वही."
+        },
+        {
+          "display": "She got up at eight yesterday",
+          "cue": "वह कल आठ बजे उठी",
+          "changed": "कर्ता she, yesterday आख़िर में — got up वही रहा, उठी का ई कहीं नहीं."
+        }
+      ],
+      "mistake": {
+        "display": "Yesterday I get up at eight",
+        "why": "कल के साथ क्रिया बीते कल के रूप में — got up. get up अभी की आदत है, कल की बात नहीं."
+      },
+      "usage": "बीते कल की कहानी की पहली लाइन — कब उठे; yesterday आगे रखकर पूरा दिन सुनाना शुरू करो.",
+      "register": "neutral",
+      "mnemonic": "कल = yesterday, और क्रिया ने कपड़े बदले: get up → got up. बस एक रूप, सबके लिए."
+    },
+    {
+      "id": "L1-M5-S02",
+      "display": "I went to school yesterday",
+      "cue": "मैं कल स्कूल गया",
+      "literal": "मैं गया को स्कूल कल",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "went",
+            "cue": "गया / गई / गए",
+            "tag": "delta",
+            "forms": [],
+            "note": "go का बीता कल — बिल्कुल अलग शब्द, और एक ही रूप सबके लिए: I went · he went · she went · we went (गया / गई / गए → went). जगह से पहले to वही: went to school, went to Delhi. *goed नहीं; सवाल और नहीं में did के बाद फिर go."
+          }
+        ],
+        "rules": [0, 1, 3]
+      },
+      "trap": "गया था सुनकर हाथ था का was जोड़ता है — *I was went. बीता कल went में ही है; was सिर्फ़ be का बीता कल है, किसी और क्रिया का सहारा नहीं.",
+      "sound": "went = वेंट — w होंठ गोल करके. school = स्कूल, बिना इ- के.",
+      "variations": [
+        {
+          "display": "I went to Delhi yesterday",
+          "cue": "मैं कल दिल्ली गया",
+          "changed": "जगह बदली — went to वही."
+        },
+        {
+          "display": "He went to school yesterday",
+          "cue": "वह कल स्कूल गया",
+          "changed": "कर्ता he — went वही; बीते कल में -s नहीं."
+        }
+      ],
+      "mistake": {
+        "display": "I was went to school yesterday",
+        "why": "गया था का था यहाँ was नहीं बनता — बीता कल went में है, और be किसी और क्रिया का सहारा नहीं. I went, बस."
+      },
+      "usage": "कल कहाँ गए — स्कूल, दफ़्तर, बाज़ार, किसी शहर: went to + जगह.",
+      "register": "neutral",
+      "mnemonic": "गया / गई / गए — तीनों went. और था को घर छोड़ आओ: I went."
+    },
+    {
+      "id": "L1-M5-S03",
+      "display": "I ate rice yesterday",
+      "cue": "मैंने कल चावल खाए",
+      "literal": "मैंने खाए चावल कल",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ate",
+            "cue": "खाया / खाई / खाए",
+            "tag": "delta",
+            "forms": [],
+            "note": "eat का बीता कल — एक रूप सबके लिए: I ate · she ate · they ate. हिंदी में मैंने चावल खाए, उसने चावल खाए — खाए चावल से मिलता है (ने वाला साँचा), और कर्ता पर ने चढ़ता है; अंग्रेज़ी का ate किसी से नहीं मिलता और ने के लिए कोई शब्द नहीं: I ate rice, बस."
+          },
+          {
+            "display": "rice",
+            "cue": "चावल",
+            "tag": "free",
+            "forms": [],
+            "note": "चावल — न गिनी जाने वाली की तरह: बिना a, बिना -s: I ate rice (M8 में a kilo of rice)."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "मैंने का ने अंग्रेज़ी में कुछ नहीं — कर्ता I ही रहता है; और खाए का ए, जो चावल से मिला था, ate में कहीं नहीं. उसने चावल खाए और मैंने चावल खाए — दोनों का ate एक.",
+      "sound": "ate = एट — eight जैसा ही बोला जाता है. rice = राइस — आख़िर में 'स'.",
+      "variations": [
+        {
+          "display": "She ate rice yesterday",
+          "cue": "उसने कल चावल खाए",
+          "changed": "कर्ता she — ate वही; हिंदी में भी खाए वही रहा (चावल से मिला), अंग्रेज़ी में किसी से नहीं मिला."
+        },
+        {
+          "display": "I ate breakfast at nine",
+          "cue": "मैंने नौ बजे नाश्ता किया",
+          "changed": "चीज़ और समय बदले — ate वही."
+        }
+      ],
+      "mistake": {
+        "display": "Me ate rice yesterday",
+        "why": "मैंने का ने हाथ को Me की तरफ़ खींचता है — अंग्रेज़ी में कर्ता I ही है, ने के लिए कुछ नहीं: I ate rice."
+      },
+      "usage": "कल क्या खाया — खाने की बात, ने वाले वाक्यों का अंग्रेज़ी रूप.",
+      "register": "neutral",
+      "mnemonic": "ने गायब, मिलना गायब: मैंने खाए → I ate — छोटा, सीधा."
+    },
+    {
+      "id": "L1-M5-S04",
+      "display": "She drank tea yesterday morning",
+      "cue": "उसने कल सुबह चाय पी",
+      "literal": "उसने पी चाय कल सुबह",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "drank",
+            "cue": "पिया / पी / पिए",
+            "tag": "delta",
+            "forms": [],
+            "note": "drink का बीता कल — एक रूप: I drank · she drank · he drank. उसने चाय पी में पी चाय से मिली थी; she drank tea में कुछ किसी से नहीं मिलता — और she के बाद भी -s नहीं: बीते कल में -s होता ही नहीं."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "she देखकर M4 का हाथ -s लगाना चाहता है — बीते कल में -s है ही नहीं: she drank, he drank, I drank. और पी का ई (चाय से) अंग्रेज़ी में कहीं नहीं.",
+      "sound": "drank = ड्रैंक. yesterday morning = येस्टर्डे मॉर्निंग — दो शब्द, बिना in के.",
+      "variations": [
+        {
+          "display": "I drank coffee yesterday",
+          "cue": "मैंने कल कॉफ़ी पी",
+          "changed": "कर्ता I, चीज़ coffee — drank वही."
+        },
+        {
+          "display": "He drank tea in the morning",
+          "cue": "उसने सुबह चाय पी",
+          "changed": "कर्ता he, और in the morning — बिना yesterday के भी बीता कल drank से साफ़."
+        }
+      ],
+      "mistake": {
+        "display": "She drinks tea yesterday morning",
+        "why": "कल के साथ बीता कल — drank; drinks अभी की आदत है, और बीते कल में -s आता ही नहीं."
+      },
+      "usage": "किसी और का बीता कल — उसने क्या खाया-पिया; yesterday morning / yesterday से समय बाँधो.",
+      "register": "neutral",
+      "mnemonic": "बीते कल में -s की छुट्टी: she drinks आज, she drank कल."
+    },
+    {
+      "id": "L1-M5-S05",
+      "display": "He worked at home yesterday",
+      "cue": "उसने कल घर पर काम किया",
+      "literal": "उसने काम-किया पर घर कल",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "worked",
+            "cue": "काम किया",
+            "tag": "delta",
+            "forms": [],
+            "note": "work का बीता कल — नियम वाला: मूल रूप + -ed, और एक रूप सबके लिए: I worked · he worked · she worked (किया / की → worked). ज़्यादातर क्रियाएँ ऐसे ही -ed लेती हैं; रोज़ की कुछ (go, eat, drink, get up, see, do) अपना अलग शब्द रखती हैं."
+          },
+          {
+            "display": "home",
+            "cue": "घर",
+            "tag": "free",
+            "forms": [],
+            "note": "घर — at home = घर पर (M4 का at, जगह वाली सीट): worked at home, I was at home. 'घर में' भी at home — in home नहीं. घर जाना = go home, बिना to — एक जमा हुआ जोड़ा, अपवाद."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "घर पर / घर में सुनकर हाथ on home या in home लिखता है — अंग्रेज़ी में घर एक बिंदु है: at home. और -ed का उच्चारण यहाँ सिर्फ़ 't' जैसा है — वर्क्ट.",
+      "sound": "worked = वर्क्ट — -ed यहाँ 'ट', 'एड' नहीं. home = होम.",
+      "variations": [
+        {
+          "display": "I worked at home yesterday",
+          "cue": "मैंने कल घर पर काम किया",
+          "changed": "कर्ता I — worked वही; किया / की का फ़र्क़ अंग्रेज़ी में नहीं."
+        },
+        {
+          "display": "She worked on Monday",
+          "cue": "उसने सोमवार को काम किया",
+          "changed": "कर्ता she, दिन on Monday — worked वही, बिना -s."
+        }
+      ],
+      "mistake": {
+        "display": "He worked in home yesterday",
+        "why": "घर पर / घर में → at home — जमा हुआ जोड़ा, M4 का at (जगह का बिंदु); in home नहीं."
+      },
+      "usage": "कल कहाँ काम किया — घर, दफ़्तर, दुकान: worked at + जगह.",
+      "register": "neutral",
+      "mnemonic": "नियम वाला कल: work + ed = worked — आदमी, औरत, एक, कई, सबका worked."
+    },
+    {
+      "id": "L1-M5-S06",
+      "display": "I didn't go to school yesterday",
+      "cue": "मैं कल स्कूल नहीं गया",
+      "literal": "मैं नहीं गया को स्कूल कल",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "didn't",
+            "cue": "नहीं (did + not)",
+            "tag": "interference",
+            "forms": ["didn't", "did not"],
+            "note": "बीते कल का नहीं — did + not, बोलचाल में didn't (सीधा apostrophe); हर कर्ता के लिए एक. बीता कल did पर है, इसलिए क्रिया मूल रूप में लौट आती है: I didn't go (*didn't went नहीं) · she didn't eat. don't / doesn't (M3, M4) अभी के; didn't बीते कल का. पूरा रूप did not ज़ोर देने में."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "नहीं गया में बीता कल गया पर है — हाथ didn't के बाद भी went लिखता है: *I didn't went. अंग्रेज़ी में बीता कल एक बार, did पर; go मूल रूप में.",
+      "sound": "didn't = डिडन्ट — एक साँस, apostrophe चुप, आख़िर का t हल्का. go = गो.",
+      "variations": [
+        {
+          "display": "She didn't eat breakfast yesterday",
+          "cue": "उसने कल नाश्ता नहीं किया",
+          "changed": "कर्ता she, क्रिया eat — didn't वही, eat मूल रूप में (ate नहीं)."
+        },
+        {
+          "display": "I did not go to school yesterday",
+          "cue": "मैं कल स्कूल नहीं गया",
+          "changed": "पूरा रूप did not — वही मतलब, ज़ोर देने में."
+        }
+      ],
+      "mistake": {
+        "display": "I didn't went to school yesterday",
+        "why": "बीता कल दो बार लग गया — didn't पर भी, went पर भी. एक बार काफ़ी, सहारे पर: I didn't go."
+      },
+      "usage": "कल जो नहीं किया — स्कूल, काम, खाना: didn't + क्रिया का मूल रूप.",
+      "register": "neutral",
+      "mnemonic": "बीता कल did ने उठा लिया — go हल्का होकर लौट आया: didn't go."
+    },
+    {
+      "id": "L1-M5-S07",
+      "display": "What did you do yesterday?",
+      "cue": "आपने कल क्या किया?",
+      "literal": "क्या किया आप करना कल?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "did",
+            "cue": "(बीते कल का सवाल-सहारा) · किया",
+            "tag": "interference",
+            "forms": [],
+            "note": "do का बीता कल — दो काम, M3 के do की तरह. सहारा: बीते कल का सवाल और नहीं did से बनता है — Did you eat? · What did you do yesterday? · I didn't go — बीता कल did पर, क्रिया मूल रूप में; अपना मतलब कुछ नहीं, हर कर्ता के लिए एक. और असली क्रिया — किया: What did you do yesterday? का दूसरा do वही करना है (M3 का do), और I did my homework (मैंने अपना काम किया) में did = किया."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "आपने कल क्या किया? में क्रिया आख़िर में और कोई सहारा नहीं — हाथ What you did yesterday? लिखता है. अंग्रेज़ी में सवाल का सहारा कर्ता से पहले: What did you do? — did सहारा, do करना.",
+      "sound": "did = डिड. do = डू. पूरा सवाल: वॉट-डिड-यू-डू-येस्टर्डे — what वाला सवाल आख़िर में ऊपर नहीं उठता.",
+      "variations": [
+        {
+          "display": "What did you eat yesterday?",
+          "cue": "आपने कल क्या खाया?",
+          "changed": "क्रिया बदली — eat, मूल रूप में; did वही."
+        },
+        {
+          "display": "What did you do on Monday?",
+          "cue": "आपने सोमवार को क्या किया?",
+          "changed": "समय बदला — on Monday; साँचा वही."
+        }
+      ],
+      "mistake": {
+        "display": "What you did yesterday?",
+        "why": "सवाल में सहारा कर्ता से पहले आता है — What did you do? (M3 का नियम, बीते कल में); बीता कल did पर, और do मूल रूप में."
+      },
+      "usage": "कल के बारे में पूछना — दोस्त से, बच्चे से; जवाब पूरी कहानी में: I went …, I ate ….",
+      "register": "neutral",
+      "mnemonic": "एक did सहारा, एक do करना — What did you do? दो do, दो काम."
+    },
+    {
+      "id": "L1-M5-S08",
+      "display": "Did you see the film yesterday?",
+      "cue": "क्या आपने कल वह फ़िल्म देखी?",
+      "literal": "क्या आपने देखी वह फ़िल्म कल?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "see",
+            "cue": "देखना",
+            "tag": "delta",
+            "forms": ["see", "saw"],
+            "note": "देखना — see; बीता कल saw, एक रूप सबके लिए (देखा / देखी → saw). सवाल और नहीं में did के बाद मूल रूप: Did you see the film? (*Did you saw नहीं) — और बयान में saw: I saw the film. फ़िल्म देखना = see a film (watch भी चलता है)."
+          },
+          {
+            "display": "film",
+            "cue": "फ़िल्म",
+            "tag": "free",
+            "forms": ["film", "films"],
+            "note": "फ़िल्म — गिनने-लायक: a film, the film (वही फ़िल्म जो हम दोनों जानते हैं — M3 का the), two films. movie भी वही."
+          }
+        ],
+        "rules": [2, 1]
+      },
+      "trap": "देखी में बीता कल है, और हाथ did के बाद भी saw रखना चाहता है — *Did you saw. बीता कल did पर है; see मूल रूप में. और वह फ़िल्म = the film, जो हम दोनों जानते हैं.",
+      "sound": "see = सी — लंबा 'ई'. film = फ़िल्म — l और m साथ, 'फ़िलम' नहीं. सवाल ऊपर उठकर ख़त्म.",
+      "variations": [
+        {
+          "display": "Did you eat rice yesterday?",
+          "cue": "क्या आपने कल चावल खाए?",
+          "changed": "क्रिया बदली — eat, मूल रूप में; Did you वही."
+        },
+        {
+          "display": "I saw the film yesterday",
+          "cue": "मैंने कल वह फ़िल्म देखी",
+          "changed": "सवाल नहीं, बयान — अब बीता कल क्रिया पर: saw."
+        }
+      ],
+      "mistake": {
+        "display": "Did you saw the film yesterday?",
+        "why": "बीता कल दो बार — did पर भी, saw पर भी. सवाल में did के बाद मूल रूप: Did you see …?"
+      },
+      "usage": "हाँ / ना का सवाल बीते कल के बारे में — फ़िल्म, खाना, स्कूल: Did you + क्रिया?",
+      "register": "neutral",
+      "mnemonic": "सवाल में did ने बीता कल ले लिया — see वापस अपने मूल रूप में: Did you see?"
+    },
+    {
+      "id": "L1-M5-S09",
+      "display": "I was happy yesterday",
+      "cue": "मैं कल ख़ुश था",
+      "literal": "मैं था ख़ुश कल",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "happy",
+            "cue": "ख़ुश",
+            "tag": "free",
+            "forms": [],
+            "note": "ख़ुश — विशेषण, कभी नहीं बदलता (M2 का नियम): I was happy · she was happy · we were happy. be के साथ आता है — अभी am / is / are, बीते कल में was / were (M1 का is वाला शब्द, अब पाँच रूपों के साथ)."
+          }
+        ],
+        "rules": [4, 3]
+      },
+      "trap": "था / थी / थे तीन, और हाथ did ढूँढता है — be को बीते कल में did नहीं चाहिए: I was happy, बस; और लिंग नहीं — था और थी दोनों was. नहीं कहना हो तो बस not: I was not happy.",
+      "sound": "was = वॉज़ — आख़िर में ज़. happy = हैपी.",
+      "variations": [
+        {
+          "display": "I was not happy yesterday",
+          "cue": "मैं कल ख़ुश नहीं था",
+          "changed": "नहीं — was के बाद बस not (M2 का नियम बीते कल में), did नहीं."
+        },
+        {
+          "display": "I was at home yesterday",
+          "cue": "मैं कल घर पर था",
+          "changed": "ख़ुश की जगह जगह — at home; was वही."
+        }
+      ],
+      "mistake": {
+        "display": "Yesterday I am happy",
+        "why": "कल के साथ be भी बीते कल में — was; am अभी का है. हर क्रिया की तरह be का भी कल अलग है: am → was."
+      },
+      "usage": "कल कैसा लगा — ख़ुश, थके, घर पर: I was + विशेषण / जगह.",
+      "register": "neutral",
+      "mnemonic": "था = was: am ने कल के कपड़े पहने, और did को छुट्टी."
+    },
+    {
+      "id": "L1-M5-S10",
+      "display": "We were tired yesterday",
+      "cue": "हम कल थके थे",
+      "literal": "हम थे थके कल",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "We",
+            "cue": "हम",
+            "tag": "free",
+            "forms": [],
+            "note": "हम = we — हमेशा के साथ are (अभी) / were (बीते कल): we are · we were. हिंदी की तरह छूटता नहीं (थके थे → we were tired, we ज़रूरी)."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "थे सुनकर हाथ था का was ही लिखता है — *We was tired. बीते कल में be वचन से बँटता है: I / he / she / it was, you / we / they were.",
+      "sound": "we = वी. were = वर — छोटा, was से अलग; आख़िर का r हल्का. tired = टायर्ड.",
+      "variations": [
+        {
+          "display": "Were you tired yesterday?",
+          "cue": "क्या आप कल थके थे?",
+          "changed": "सवाल — be ख़ुद आगे आया (M2 का नियम), did नहीं; you के साथ were."
+        },
+        {
+          "display": "We were at home yesterday",
+          "cue": "हम कल घर पर थे",
+          "changed": "थके की जगह जगह — at home; were वही."
+        }
+      ],
+      "mistake": {
+        "display": "We was tired yesterday",
+        "why": "we / you / they के साथ were; was सिर्फ़ I / he / she / it के साथ — बीते कल का be वचन से बँटता है."
+      },
+      "usage": "हम सबका कल — थके, ख़ुश, घर पर: We were + विशेषण / जगह.",
+      "register": "neutral",
+      "mnemonic": "एक था, कई थे: I was, we were — बीते कल में be गिनती देखता है, लिंग नहीं."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M5-C01", "display": "I went to Delhi yesterday", "cue": "मैं कल दिल्ली गया" },
+    {
+      "id": "L1-M5-C02",
+      "display": "She ate breakfast at eight",
+      "cue": "उसने आठ बजे नाश्ता किया"
+    },
+    { "id": "L1-M5-C03", "display": "He didn't drink tea yesterday", "cue": "उसने कल चाय नहीं पी" },
+    {
+      "id": "L1-M5-C04",
+      "display": "Did you go to school yesterday?",
+      "cue": "क्या आप कल स्कूल गए?"
+    },
+    { "id": "L1-M5-C05", "display": "What did you eat yesterday?", "cue": "आपने कल क्या खाया?" },
+    { "id": "L1-M5-C06", "display": "I saw the film yesterday", "cue": "मैंने कल वह फ़िल्म देखी" },
+    { "id": "L1-M5-C07", "display": "We were happy yesterday", "cue": "हम कल ख़ुश थे" },
+    { "id": "L1-M5-C08", "display": "I was at home yesterday", "cue": "मैं कल घर पर था" },
+    { "id": "L1-M5-C09", "display": "Were you tired yesterday?", "cue": "क्या आप कल थके थे?" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

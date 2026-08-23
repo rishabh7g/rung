@@ -183,7 +183,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all thirty-two of them — hi-mr, en-es and en-ar L1-M1..M10, hi-en L1-M1..M2', () => {
+  it('finds all thirty-five of them — hi-mr, en-es and en-ar L1-M1..M10, hi-en L1-M1..M5', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -207,6 +207,9 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-es/modules/L1-M9.json',
       'content/hi-en/modules/L1-M1.json',
       'content/hi-en/modules/L1-M2.json',
+      'content/hi-en/modules/L1-M3.json',
+      'content/hi-en/modules/L1-M4.json',
+      'content/hi-en/modules/L1-M5.json',
       'content/hi-mr/modules/L1-M1.json',
       'content/hi-mr/modules/L1-M10.json',
       'content/hi-mr/modules/L1-M2.json',
@@ -294,8 +297,9 @@ describe('ModuleContent against the modules that exist', () => {
    * decisions"): English appears ONLY in the L2 slots — sentence / word / variation / mistake /
    * pool `display` and word `forms` — and every teaching field is Hindi in Devanagari, which may
    * quote the English word it explains but never switches into English prose. No sentence carries
-   * `glossEn` (#268 — it would be the English hero line twice) and every M1–M3 sentence carries
-   * `literal`, the Hindi words in English order. Contractions are single surfaces with a straight
+   * `glossEn` (#268 — it would be the English hero line twice) and every sentence authored so far
+   * carries `literal`, the Hindi words in English order (M1–M3 by the briefs' rule, M4–M5 by
+   * choice — #271 kept it wherever the order moves, which in this pair is everywhere). Contractions are single surfaces with a straight
    * apostrophe (`src/engine/surface.ts` folds the curly one on the index, but `display` is one
    * spelling), and no L1 module writes a possessive `'s`.
    */
@@ -304,7 +308,10 @@ describe('ModuleContent against the modules that exist', () => {
     const devanagari = /\p{Script=Devanagari}/u;
     const latinOnly = /^[^\p{Script=Devanagari}]+$/u;
 
-    expect(hiEn.length, 'the hi-en modules authored so far (#270: L1-M1, L1-M2)').toBe(2);
+    expect(
+      hiEn.length,
+      'the hi-en modules authored so far (#270: L1-M1..M2; #271: L1-M3..M5)',
+    ).toBe(5);
     for (const [file, json] of hiEn) {
       const module = parseModule(json, file);
 

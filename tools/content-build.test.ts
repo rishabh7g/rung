@@ -1283,7 +1283,7 @@ describe('the authored content', () => {
     }
   });
 
-  it('ships hi-mr, en-es and en-ar L1-M1..M10 and hi-en L1-M1..M2 on a dev build', () => {
+  it('ships hi-mr, en-es and en-ar L1-M1..M10 and hi-en L1-M1..M5 on a dev build', () => {
     const { report, outRoot } = build(DEFAULT_CONTENT_ROOT, DEV);
 
     expect(report.exitCode).toBe(0);
@@ -1300,13 +1300,14 @@ describe('the authored content', () => {
         'en-ar',
         ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5', 'L1-M6', 'L1-M7', 'L1-M8', 'L1-M9', 'L1-M10'],
       ],
-      ['hi-en', ['L1-M1', 'L1-M2']],
+      ['hi-en', ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5']],
     ]);
-    // hi-en (#267): `--with-fixtures` admits the fixture course, and since #270 it has rungs to
-    // ship — the first two of the L1 ladder, each verified on the owner-authorised LLM review.
-    expect(report.lines).toContain('hi-en: 2 modules (L1-M1..M2)');
+    // hi-en (#267): `--with-fixtures` admits the fixture course, and since #270 / #271 it has
+    // rungs to ship — the first five of the L1 ladder, each verified on the owner-authorised LLM
+    // review.
+    expect(report.lines).toContain('hi-en: 5 modules (L1-M1..M5)');
     expect(report.lines).toContain(
-      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 2 modules (L1-M1..M2)',
+      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 5 modules (L1-M1..M5)',
     );
     expect(readManifest(outRoot).devBuild).toBe(true);
     // The manifest lists what shipped: all four courses — hi-en's row still carries `fixture`,
@@ -1355,8 +1356,14 @@ describe('the authored content', () => {
       'hi-en/strings.json',
       'hi-en/modules/L1-M1.json',
       'hi-en/modules/L1-M2.json',
+      'hi-en/modules/L1-M3.json',
+      'hi-en/modules/L1-M4.json',
+      'hi-en/modules/L1-M5.json',
       'hi-en/index/L1-M1.json',
       'hi-en/index/L1-M2.json',
+      'hi-en/index/L1-M3.json',
+      'hi-en/index/L1-M4.json',
+      'hi-en/index/L1-M5.json',
     ]) {
       expect(existsSync(path.join(outRoot, ...file.split('/')))).toBe(true);
     }
@@ -1405,6 +1412,113 @@ describe('the authored content', () => {
     expect(index.surfaces['not']).toMatchObject({ sentenceId: 'L1-M2-S09', wordIdx: 1 });
     // Keys the briefs reserve for later modules are still free after M2.
     for (const reserved of ['to', 'do', 'the', 'likes', 'does', "don't", 'he', 'she', 'it']) {
+      expect(index.surfaces[reserved], `${reserved} is a later module's`).toBeUndefined();
+    }
+    expect(Object.keys(index.surfaces)).toHaveLength(index.surfaceCount);
+  });
+
+  /**
+   * The same audit over the next three rungs (#271): M3 opened `to` / `do` / `the` / `don't`, M4
+   * `he` / `she` / `have` / `in` / `on` / `at` / `does` / `doesn't` and the two-token `get up` /
+   * `wake up`, M5 `did` / `didn't` and the irregular pasts — and M5 EXTENDED M1's one `be` row with
+   * `was · were` in M1's own file instead of opening a second row the index could never reach for
+   * `is`. Every later module inherits these keys, so the landings are pinned by row, not by
+   * existence (docs/12-llm-review-hi-en-L1-M3-M5.md has the full token-by-token tables).
+   */
+  it('lands hi-en M3–M5 on the rows the briefs assigned — be extended in M1, helpers and pasts their own rows', () => {
+    const { outRoot } = build(DEFAULT_CONTENT_ROOT, DEV);
+    const index = readIndex(outRoot, 'hi-en', 'L1-M5');
+    const row = (moduleId: string, sentence: number, wordIdx: number) => ({
+      moduleId,
+      sentenceId: `${moduleId}-S${String(sentence).padStart(2, '0')}`,
+      wordIdx,
+    });
+    const be = row('L1-M1', 1, 2);
+
+    expect(index.cumulativeThrough).toEqual(['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5']);
+    expect(index.maxSpan).toBe(2);
+    // ONE be row, now five shapes: M5's `was` / `were` open M1's note, never a second row.
+    for (const shape of ['am', 'is', 'are', 'was', 'were']) {
+      expect(index.surfaces[shape], shape).toEqual(be);
+    }
+    // M3: `to` bare (M4's `go to school` and M7's `to the shop` inherit it), `do` the helper AND
+    // करना, `the` the article, `don't` one surface listing both shapes — and `doesn't` NOT on it.
+    expect(index.surfaces['to']).toEqual(row('L1-M3', 3, 0));
+    expect(index.surfaces['do']).toEqual(row('L1-M3', 8, 0));
+    expect(index.surfaces['the']).toEqual(row('L1-M3', 7, 0));
+    expect(index.surfaces["don't"]).toEqual(row('L1-M3', 5, 0));
+    expect(index.surfaces['do not']).toEqual(row('L1-M3', 5, 0));
+    expect(index.surfaces['want']).toEqual(row('L1-M3', 1, 0));
+    expect(index.surfaces['need']).toEqual(row('L1-M3', 6, 0));
+    // `book` still lands on M1's `books` row (forms `book · books`): M3 opened no second row.
+    expect(index.surfaces['book']).toEqual(row('L1-M1', 9, 0));
+    // M4: the pronouns, possession-only `have` (with `has`), the three time/place words, the
+    // two-token verbs (bare `up` / `get` / `wake` unclaimed), `does` / `doesn't` their own rows.
+    expect(index.surfaces['he']).toEqual(row('L1-M4', 3, 0));
+    expect(index.surfaces['she']).toEqual(row('L1-M4', 6, 0));
+    expect(index.surfaces['have']).toEqual(row('L1-M4', 10, 0));
+    expect(index.surfaces['has']).toEqual(row('L1-M4', 10, 0));
+    expect(index.surfaces['at']).toEqual(row('L1-M4', 2, 1));
+    expect(index.surfaces['in']).toEqual(row('L1-M4', 4, 2));
+    expect(index.surfaces['on']).toEqual(row('L1-M4', 6, 2));
+    expect(index.surfaces['get up']).toEqual(row('L1-M4', 2, 0));
+    expect(index.surfaces['gets up']).toEqual(row('L1-M4', 2, 0));
+    expect(index.surfaces['wake up']).toEqual(row('L1-M4', 1, 1));
+    expect(index.surfaces['does']).toEqual(row('L1-M4', 8, 0));
+    expect(index.surfaces["doesn't"]).toEqual(row('L1-M4', 9, 0));
+    expect(index.surfaces['does not']).toEqual(row('L1-M4', 9, 0));
+    expect(index.surfaces['go']).toEqual(row('L1-M4', 3, 1));
+    expect(index.surfaces['goes']).toEqual(row('L1-M4', 3, 1));
+    // `morning` was free for M4 because M2 kept `good morning` whole.
+    expect(index.surfaces['morning']).toEqual(row('L1-M4', 4, 3));
+    // M5: `did` / `didn't` their own rows, every past form a NEW surface (M4's rows list present
+    // forms only), `got up` a fresh two-token surface beside M4's `get up`, `saw` on the `see` row.
+    expect(index.surfaces['did']).toEqual(row('L1-M5', 7, 0));
+    expect(index.surfaces["didn't"]).toEqual(row('L1-M5', 6, 0));
+    expect(index.surfaces['did not']).toEqual(row('L1-M5', 6, 0));
+    expect(index.surfaces['went']).toEqual(row('L1-M5', 2, 0));
+    expect(index.surfaces['ate']).toEqual(row('L1-M5', 3, 0));
+    expect(index.surfaces['drank']).toEqual(row('L1-M5', 4, 0));
+    expect(index.surfaces['worked']).toEqual(row('L1-M5', 5, 0));
+    expect(index.surfaces['got up']).toEqual(row('L1-M5', 1, 1));
+    expect(index.surfaces['see']).toEqual(row('L1-M5', 8, 0));
+    expect(index.surfaces['saw']).toEqual(row('L1-M5', 8, 0));
+    expect(index.surfaces['yesterday']).toEqual(row('L1-M5', 1, 0));
+    expect(index.surfaces['we']).toEqual(row('L1-M5', 10, 0));
+    expect(index.surfaces['home']).toEqual(row('L1-M5', 5, 1));
+    // Multi-token surfaces claim no bare part, and the briefs' later keys are still free.
+    for (const unclaimed of ['up', 'get', 'wake', 'got', 'good', 'thank']) {
+      expect(index.surfaces[unclaimed], `${unclaimed} must stay unclaimed`).toBeUndefined();
+    }
+    for (const reserved of [
+      'it',
+      "it's",
+      'will',
+      "i'll",
+      'going to',
+      'tomorrow',
+      'her',
+      'there is',
+      'there are',
+      'where',
+      'under',
+      'near',
+      'next to',
+      'how much',
+      'how many',
+      'please',
+      'of',
+      'because',
+      'so',
+      'that',
+      'very',
+      'and',
+      'but',
+      'also',
+      'then',
+      'likes',
+      'one',
+    ]) {
       expect(index.surfaces[reserved], `${reserved} is a later module's`).toBeUndefined();
     }
     expect(Object.keys(index.surfaces)).toHaveLength(index.surfaceCount);
