@@ -5,8 +5,8 @@
   "job": "Say what you want and don't want",
   "prerequisites": ["L1-M2"],
   "verified": true,
-  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
-  "verifiedAt": "2026-08-13",
+  "verifiedBy": "Fable (Claude Fable 5) — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 2,
     "maxWordsPerSentence": 6,
@@ -93,6 +93,12 @@
           "script": "أريد ماء",
           "cue": "I want water",
           "changed": "swap the drink — the request stays bare"
+        },
+        {
+          "display": "hal turīd ʿaṣīr?",
+          "script": "هل تريد عصير؟",
+          "cue": "Do you want a juice? (to a man)",
+          "changed": "the request turned into the offer — hal in front, and tu- for you"
         }
       ],
       "mistake": {
@@ -138,6 +144,12 @@
           "script": "لا أحب الحليب",
           "cue": "I don't like milk",
           "changed": "want → like: the same lā sits in front of any verb"
+        },
+        {
+          "display": "urīd ḥalīb",
+          "script": "أريد حليب",
+          "cue": "I want some milk",
+          "changed": "the refusal undone — and the request drops the al- the refusal kept"
         }
       ],
       "mistake": {
@@ -191,6 +203,12 @@
           "script": "لا أريد أن أشرب القهوة",
           "cue": "I don't want to drink coffee",
           "changed": "lā in front of urīd — the first verb is the one negated"
+        },
+        {
+          "display": "urīd an ashrab qahwa sākhina",
+          "script": "أريد أن أشرب قهوة ساخنة",
+          "cue": "I want to drink a hot coffee",
+          "changed": "the an-frame carries a whole request — bare qahwa, and sākhina agreeing behind it"
         }
       ],
       "mistake": {
@@ -236,6 +254,12 @@
           "script": "يريد قهوة",
           "cue": "He wants a coffee",
           "changed": "tu- → yu-: he, and it is a statement again"
+        },
+        {
+          "display": "turīd qahwa",
+          "script": "تريد قهوة",
+          "cue": "She wants a coffee",
+          "changed": "drop hal and nothing else: the same turīd now reads \"she wants\" — the double duty the row warns about"
         }
       ],
       "mistake": {
@@ -281,6 +305,12 @@
           "script": "أريد قهوة فقط",
           "cue": "I just want a coffee",
           "changed": "swap what is limited — faqaṭ stays at the end"
+        },
+        {
+          "display": "naʿam, urīd māʾ faqaṭ",
+          "script": "نعم، أريد ماء فقط",
+          "cue": "Yes, I just want water",
+          "changed": "the refusal becomes an acceptance — naʿam, and faqaṭ still closes it"
         }
       ],
       "mistake": {
@@ -326,6 +356,12 @@
           "script": "هل تريد قهوة؟",
           "cue": "Do you want a coffee? (to a man)",
           "changed": "asked of a man — the tail goes"
+        },
+        {
+          "display": "naʿam, urīd shāy",
+          "script": "نعم، أريد شاي",
+          "cue": "Yes, I want some tea",
+          "changed": "her answer: the -īn was the asking shape — the I-form urīd has no tail"
         }
       ],
       "mistake": {
@@ -371,6 +407,12 @@
           "script": "نعم، أريد قهوة",
           "cue": "Yes, I want a coffee",
           "changed": "drop the adjective — the plain acceptance"
+        },
+        {
+          "display": "hal turīdīn qahwa sākhina?",
+          "script": "هل تريدين قهوة ساخنة؟",
+          "cue": "Do you want a hot coffee? (to a woman)",
+          "changed": "the acceptance turned back into the offer — and sākhina still follows qahwa, not the woman asked"
         }
       ],
       "mistake": {
@@ -416,6 +458,12 @@
           "script": "القهوة ساخنة",
           "cue": "The coffee is hot",
           "changed": "drop jiddan — the plain statement"
+        },
+        {
+          "display": "hal al-qahwa sākhina?",
+          "script": "هل القهوة ساخنة؟",
+          "cue": "Is the coffee hot?",
+          "changed": "hal in front of the verbless sentence: a question with no verb to lean on"
         }
       ],
       "mistake": {
@@ -469,6 +517,12 @@
           "script": "السيارة كبيرة",
           "cue": "The car is big",
           "changed": "add the article to the noun only — now it is a whole sentence"
+        },
+        {
+          "display": "urīd bayt kabīr",
+          "script": "أريد بيت كبير",
+          "cue": "I want a big house",
+          "changed": "a masculine noun in the same want — and the adjective drops its -a to follow it"
         }
       ],
       "mistake": {
@@ -514,6 +568,12 @@
           "script": "أريد السيارة الكبيرة",
           "cue": "I want the big car",
           "changed": "house → car: the whole phrase agrees, feminine and definite"
+        },
+        {
+          "display": "hal turīd al-bayt al-kabīr?",
+          "script": "هل تريد البيت الكبير؟",
+          "cue": "Do you want the big house? (to a man)",
+          "changed": "the choice offered instead of stated — hal, tu-, and both al- stay on"
         }
       ],
       "mistake": {
