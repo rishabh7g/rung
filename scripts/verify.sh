@@ -17,7 +17,7 @@
 #   CONTENT   40   npm run content:build   ("CONTENT skip" when tools/ is absent)
 #   FONTS     45   npm run fonts:build     (per-course subsets, #113; skip like CONTENT)
 #   BUILD     50   npx vite build          (omitted entirely with --fast)
-#   BUDGET    60   npm run budget          (payload gate over dist/, #113; omitted with --fast)
+#   BUDGET    60   npm run budget          (payload report + audits over dist/, #113/#304; omitted with --fast)
 #
 # usage: scripts/verify.sh [--fast]
 
@@ -129,8 +129,9 @@ if [ "$fast" -eq 0 ]; then
   run BUILD 50 "$log_dir/build.log" npx vite build
   segments+=('BUILD ok')
 
-  # The payload gate (#113) reads the dist/ BUILD just wrote, so it lives and
-  # dies with BUILD: --fast skips both.
+  # The payload report (#113; sizes informational since #304 — only the unmetered
+  # and precache audits fail it) reads the dist/ BUILD just wrote, so it lives
+  # and dies with BUILD: --fast skips both.
   if [ -f "$repo_root/tools/payload-budget.ts" ]; then
     run BUDGET 60 "$log_dir/budget.log" npm run budget
     segments+=('BUDGET ok')

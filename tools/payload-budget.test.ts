@@ -3,7 +3,8 @@
  *
  * The gate's arithmetic and its one-line contract are what these tests hold still: which files a
  * budget meters, WHICH bytes it meters (disk for splash, gzip transfer for everything a wire
- * carries), the ≤ comparison at the boundary, and the summary line's shape — `verify.sh` prints it
+ * carries), the no-size-ceilings rule (#304: a size is printed, never gated — only `unmetered`'s
+ * file count and the precache audit fail), and the summary line's shape — `verify.sh` prints it
  * into the run summary, and a human reads it the way they read `SMOKE 14/14 ok`. The walk runs
  * against a temp dir standing in for `dist/`; nothing here builds the app.
  *
@@ -201,11 +202,10 @@ describe('attribution: every shipped file has exactly one owner', () => {
   });
 });
 
-describe("the js budget (#114's 200 KB gzip, unchanged by #207)", () => {
+describe("the js budget (#114's row, unchanged by #207; its ceiling removed by #304)", () => {
   const JS = row(CATALOGUE, 'js');
 
   it('meters gzip transfer bytes over every shipped .js — the bundle AND the workbox runtime', () => {
-    expect(JS.limitBytes).toBe(200 * 1024);
     expect(JS.measure).toBe('gzip');
     expect(JS.matches('assets/index-abc123.js')).toBe(true);
     expect(JS.matches('sw.js')).toBe(true);
@@ -230,7 +230,6 @@ describe('the first-paint budget (#207: what the 2 s gate is actually about)', (
   const FIRST_PAINT = row(CATALOGUE, 'first-paint');
 
   it('meters the render path: document, bundle, CSS, the Barlow UI faces, the metadata', () => {
-    expect(FIRST_PAINT.limitBytes).toBe(185 * 1024);
     expect(FIRST_PAINT.measure).toBe('gzip');
     for (const file of [
       'index.html',
@@ -261,7 +260,6 @@ describe('the shell budget (#207: the floor every course pays)', () => {
   const SHELL = row(CATALOGUE, 'shell');
 
   it('is first-paint plus the course faces’ shared latin subsets, as gzip', () => {
-    expect(SHELL.limitBytes).toBe(230 * 1024);
     expect(SHELL.measure).toBe('gzip');
     expect(SHELL.matches('assets/mukta-latin-400-C8sBt92T.woff2')).toBe(true);
     expect(SHELL.matches('index.html')).toBe(true);
@@ -271,10 +269,10 @@ describe('the shell budget (#207: the floor every course pays)', () => {
 });
 
 describe('the per-course budgets (#207: one learner, one course)', () => {
-  it('gives every course the SAME ceiling and its own row — a limit per course id would be logic about a course', () => {
+  it('gives every course its own row and its own precache row — and no size ceiling on either (#304)', () => {
     for (const course of CATALOGUE) {
-      expect(row(CATALOGUE, `course:${course.id}`).limitBytes).toBe(360 * 1024);
-      expect(row(CATALOGUE, `precache:${course.id}`).limitBytes).toBe((230 + 360) * 1024);
+      expect(row(CATALOGUE, `course:${course.id}`).measure).toBe('gzip');
+      expect(row(CATALOGUE, `precache:${course.id}`).measure).toBe('gzip');
     }
   });
 
@@ -327,11 +325,29 @@ describe('the per-course budgets (#207: one learner, one course)', () => {
   });
 });
 
+describe('no size ceilings (#304)', () => {
+  it('no row carries a byte limit, and only unmetered gates at all — by file count', () => {
+    for (const budget of budgets(CATALOGUE)) {
+      expect('limitBytes' in budget, budget.id).toBe(false);
+      if (budget.id !== 'unmetered') expect(budget.maxFiles, budget.id).toBeUndefined();
+    }
+  });
+
+  it('a row past every retired ceiling still evaluates ok — a size is reported, never gated', () => {
+    const result = evaluate(row(CATALOGUE, 'course:hi-mr'), [
+      // ~3.8 MiB gzip — an order of magnitude past the 360 KiB the row gated before #304.
+      shipped('content/hi-mr/modules/L1-M1.json', 8_000_000, 4_000_000),
+    ]);
+
+    expect(result.ok).toBe(true);
+    expect(result.totalBytes).toBe(4_000_000);
+  });
+});
+
 describe("the splash budget (#115's iOS startup images)", () => {
   const SPLASH = row(CATALOGUE, 'splash');
 
   it('meters exactly the carve-out, as raw bytes — PNG is already compressed', () => {
-    expect(SPLASH.limitBytes).toBe(100 * 1024);
     expect(SPLASH.measure).toBe('raw');
     expect(SPLASH.matches('icons/splash/splash-750x1334.png')).toBe(true);
     expect(SPLASH.matches('icons/icon-192.png')).toBe(false);
@@ -398,15 +414,6 @@ describe('the walk and the arithmetic', () => {
     expect(file!.gzipBytes).toBe(gzipSync(Buffer.alloc(90_000)).length);
   });
 
-  it('passes at exactly the limit and fails one byte over — a budget is a ceiling, not a target', () => {
-    const limit = FONTS_OF_HI_MR.limitBytes;
-    const at = evaluate(FONTS_OF_HI_MR, [shipped('content/hi-mr/x.json', limit * 3, limit)]);
-    const over = evaluate(FONTS_OF_HI_MR, [shipped('content/hi-mr/x.json', limit * 3, limit + 1)]);
-
-    expect(at.ok).toBe(true);
-    expect(over.ok).toBe(false);
-  });
-
   it('treats an empty match as 0 bytes and green — a budget over nothing cannot fail', () => {
     const result = evaluate(FONTS_OF_HI_MR, [shipped('assets/index.js', 1)]);
 
@@ -422,29 +429,27 @@ describe('the one-line contract', () => {
       shipped('icons/splash/b.png', 1480),
     ]);
 
-    expect(formatResult(result)).toBe('BUDGET splash 99.1 KiB ≤ 100.0 KiB ok — 2 files');
+    expect(formatResult(result)).toBe('BUDGET splash 99.1 KiB — 2 files');
   });
 
   it('says gzip when that is what it metered, so 92.9 KiB is never mistaken for disk bytes', () => {
     const result = evaluate(row(CATALOGUE, 'js'), [shipped('assets/index.js', 275_000, 95_129)]);
 
-    expect(formatResult(result)).toBe('BUDGET js 92.9 KiB gzip ≤ 200.0 KiB ok — 1 file');
+    expect(formatResult(result)).toBe('BUDGET js 92.9 KiB gzip — 1 file');
   });
 
-  it('carries the course in its own id, so a red line names the course that blew it', () => {
+  it('carries the course in its own id — a size past the old ceiling prints with no verdict (#304)', () => {
     const result = evaluate(row(CATALOGUE, 'course:hi-mr'), [
       shipped('content/hi-mr/modules/L1-M1.json', 1_200_000, 400 * 1024),
     ]);
 
-    expect(formatResult(result)).toBe(
-      'BUDGET course:hi-mr 400.0 KiB gzip > 360.0 KiB OVER — 1 file',
-    );
+    expect(formatResult(result)).toBe('BUDGET course:hi-mr 400.0 KiB gzip — 1 file');
   });
 
-  it('says OVER on a file-count row even though the bytes are within the limit', () => {
+  it('says OVER on a file-count row — the only failing verdict left (#304)', () => {
     const result = evaluate(row(CATALOGUE, 'unmetered'), [shipped('media/ping.mp3', 0, 0)]);
 
-    expect(formatResult(result)).toBe('BUDGET unmetered 0.0 KiB ≤ 0.0 KiB OVER — 1 file');
+    expect(formatResult(result)).toBe('BUDGET unmetered 0.0 KiB — 1 file OVER');
   });
 });
 

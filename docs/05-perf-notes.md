@@ -96,9 +96,12 @@ back to a system face because Barlow has no such glyphs (§2.3 above).
 
 ## 4. The budget: per course, not per catalogue (#207, 2026-08-13)
 
-`tools/payload-budget.ts` gates every full `verify.sh` run right after BUILD: one line per row
-(`BUDGET course:hi-mr 340.3 KiB gzip ≤ 360.0 KiB ok — 26 files`), exit 60 with the files
-heaviest-first when blown.
+`tools/payload-budget.ts` runs on every full `verify.sh` right after BUILD: one line per row
+(`BUDGET course:hi-mr 340.3 KiB gzip — 26 files`). **Since #304 every size is informational** —
+the ceilings (first-paint 185, js 200, shell 230, course 360, precache 590, splash 100,
+icon-svg 2 KiB) are gone, and the stage fails (exit 60, files heaviest-first) only on the two
+checks that are about correctness rather than size: a file no owner claims (`unmetered`) and a
+precache list that disagrees with the `shell` row (§4.8).
 
 ### 4.1 Why the old rows were retired
 
@@ -140,8 +143,9 @@ Two of the rows answer the two questions `total` conflated:
   §5 network log). This is what PRD-engineering §10's "first load ≤ 2 s on mid-range Android"
   is actually about, and it is course-independent because the boot route is the course picker.
 - **`precache:<id>`** — `shell` + the one course, i.e. what that learner's device downloads and
-  keeps so that "100% works with no network after first load" holds. It is the sum of two gated
-  rows by construction, and it is printed because it is the number the learner actually pays.
+  keeps so that "100% works with no network after first load" holds. It is the sum of the
+  `shell` and `course:<id>` rows by construction, and it is printed because it is the number the
+  learner actually pays.
 
 **The per-course number is the better proxy for §10** for one reason: it is the only one a real
 device ever transfers. The old `total` charged every learner for every language in the product, so
@@ -153,9 +157,10 @@ it did not move (94.9 KiB).
 ### 4.3 The numbers, and where the limits came from
 
 Measured on a `--with-fixtures --with-unverified` dev build carrying all three courses, each with
-a full L1×10 — the biggest build the repo can produce today. Limits are measured + ~5%, rounded to
-a round number, the same rule the 380/580 rebalance used: every row stays a tripwire, not a
-ceiling.
+a full L1×10 — the biggest build the repo can produce today. Limits were measured + ~5%, rounded
+to a round number, the same rule the 380/580 rebalance used — until **#304 removed every size
+ceiling** (2026-08-24): the `limit` and `headroom` columns below are the record of what was
+enforced, not a live rule, and the measurements themselves still print on every build.
 
 | row              | measure | measured |   limit | headroom |
 | ---------------- | ------- | -------: | ------: | -------: |
@@ -284,10 +289,12 @@ Everything else is noise: `shell` +0.1 because `courses.json` grew a row, `first
 unchanged to the tenth, en-es and en-ar untouched — a Spanish or Arabic learner is never charged
 for Devanagari, and the fourth course proved it again on the row with the least headroom.
 
-**One ceiling for every course** (360 KiB), not a table of per-course numbers: a limit keyed by
-course id would be logic about a course, and every course is entitled to the same room. It is
-hi-mr's measured payload + ~5%, i.e. "one course may cost a learner about what the heaviest course
-costs today". `precache` is `shell` + `course`, so it goes red exactly when one of its halves does.
+**One ceiling for every course** (360 KiB) was the rule while the ceilings stood, not a table of
+per-course numbers: a limit keyed by course id would be logic about a course, and every course is
+entitled to the same room. **#304 removed that ceiling — and every other size ceiling — on
+2026-08-24**: every row is still measured and printed, but no size fails the gate. What remains
+enforced is `unmetered` (attribution) and §4.8's precache audit; `precache` is still `shell` +
+`course` by construction.
 
 `first-paint` at 173.7 KiB gzip is ~1.0 s of Slow 4G (~180 KiB/s effective) against a measured TTI
 of 1.5–1.8 s (§5) — the 2 s gate has real room, and `first-paint` is the row that will notice if
@@ -299,7 +306,11 @@ asset class (an `.mp3`, a `.wasm`, a second content root) must be given a budget
 rather than riding along inside a bigger row. It is a file-count gate, so a 0-byte newcomer trips
 it too.
 
-### 4.7 When a row goes red — in this order
+### 4.7 When a number grows — in this order
+
+Since #304 no size row can go red — the ceilings are gone; only `unmetered` and §4.8's precache
+audit fail the stage. The economics did not change, so this list survives as the remedy order
+for a printed size that grew:
 
 1. **Read which row it is.** `course:<id>` — only that course's learners pay, and the fix belongs
    in that course's bytes. `shell` — every learner in every course pays, so it is worth several
@@ -318,10 +329,11 @@ it too.
 5. **Fix the attribution — only if it is wrong.** A file charged to `shell` that exactly one course
    reads belongs to that course, and vice versa. This needs a comment and a test, and it is not a
    way to make a number smaller.
-6. **Raise a limit — last, and only for a cost a learner actually pays.** Say here what got bigger,
-   what it buys, and what it costs in Slow-4G seconds. This is no longer the standing escape hatch
-   it was under `total`: the catalogue no longer inflates any row, so a red row now means one
-   course, or the shell, genuinely got heavier — a regression, not arithmetic.
+6. **Accept the growth — last, and only for a cost a learner actually pays.** Say here what got
+   bigger, what it buys, and what it costs in Slow-4G seconds. (Until #304 this step was "raise
+   the limit"; the limits are gone, and writing the cost down here is what replaced them.) The
+   catalogue no longer inflates any row, so a grown number means one course, or the shell,
+   genuinely got heavier — a regression, not arithmetic.
 
 ### 4.8 Closed: `precache:<id>` now describes the device (#211, 2026-08-13)
 
@@ -435,18 +447,19 @@ CHROME_PATH=~/.cache/ms-playwright/chromium-1232/chrome-linux/chrome \
 
 ## 6. The budget rows, and what each one is for
 
-`tools/payload-budget.ts` prints one line per row on every full `scripts/verify.sh`. The rows and
-their limits are §4.3; this is what each one _means_:
+`tools/payload-budget.ts` prints one line per row on every full `scripts/verify.sh`. The rows are
+§4.3's; #304 removed every size limit, so the sizes are informational. This is what each one
+_means_:
 
-| id               | meters                                                    | measure | limit                     |
+| id               | meters                                                    | measure | gate (#304)               |
 | ---------------- | --------------------------------------------------------- | ------- | ------------------------: |
-| `first-paint`    | the shell bytes fetched before paint (no course faces)      | gzip    |                   185 KiB |
-| `js`             | every `.js` (bundle + workbox + sw) — #114's number         | gzip    |                   200 KiB |
-| `shell`          | everything every course pays for                            | gzip    |                   230 KiB |
-| `course:<id>`    | one course's content + the subsets its scripts need         | gzip    |         360 KiB, per course |
-| `precache:<id>`  | `shell` + that one course — the learner's offline copy      | gzip    |                   590 KiB |
-| `splash`         | `icons/splash/` (#115's iOS startup set)                    | raw     |                   100 KiB |
-| `unmetered`      | files no owner claims — a new asset class must be budgeted  | files   |                   0 files |
+| `first-paint`    | the shell bytes fetched before paint (no course faces)      | gzip    |             informational |
+| `js`             | every `.js` (bundle + workbox + sw) — #114's number         | gzip    |             informational |
+| `shell`          | everything every course pays for                            | gzip    |             informational |
+| `course:<id>`    | one course's content + the subsets its scripts need         | gzip    |             informational |
+| `precache:<id>`  | `shell` + that one course — the learner's offline copy      | gzip    |             informational |
+| `splash`         | `icons/splash/` (#115's iOS startup set)                    | raw     |             informational |
+| `unmetered`      | files no owner claims — a new asset class must be budgeted  | files   |        0 files (enforced) |
 
 `gzip` meters transfer (GitHub Pages serves text assets gzip; `gzipSync` at the default level is
 the approximation), `raw` meters disk — right for woff2 and PNG, which are already compressed.
@@ -475,7 +488,7 @@ for it. Full accounting, including how it scales with #199-#201: docs/04-font-no
 
 ```bash
 npm run content:build && npm run fonts:build   # strict content, then the subsets from it
-npx vite build && npm run budget               # BUDGET first-paint … | shell … | course:hi-mr … ok
+npx vite build && npm run budget               # one line per row — sizes informational since #304
 bash scripts/verify.sh                         # TYPES ok | … | FONTS ok | BUILD ok | BUDGET ok
 find dist -name '*.woff2' -printf '%s %p\n'    # the nine files of §1
 npm run dev                                    # http://localhost:5173/#/dev/type — §3's matrix
