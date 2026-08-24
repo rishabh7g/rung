@@ -6,7 +6,7 @@
   "prerequisites": ["L1-M9"],
   "verified": true,
   "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
-  "verifiedAt": "2026-08-13",
+  "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 1,
     "maxWordsPerSentence": 8,
@@ -73,7 +73,7 @@
             "display": "y tú",
             "cue": "and you?",
             "tag": "delta",
-            "forms": [],
+            "forms": ["y tú", "y usted"],
             "note": "The whole of \"and what about you?\" in two words, handed back after your own answer. To someone you call usted it is ¿Y usted? — and this is the one place a pronoun IS wanted, because the point is the contrast."
           }
         ],
@@ -240,7 +240,7 @@
             "display": "un poco",
             "cue": "a little · a bit",
             "tag": "delta",
-            "forms": [],
+            "forms": ["un poco", "un poco de"],
             "note": "\"A little\", softening whatever comes next: un poco triste, un poco cansado. It stands where M8's muy stands and does the opposite job. In front of a noun it needs de — un poco de pan."
           }
         ],
@@ -365,10 +365,10 @@
           },
           {
             "display": "hasta mañana",
-            "cue": "see you tomorrow",
+            "cue": "see you tomorrow · until then",
             "tag": "delta",
-            "forms": [],
-            "note": "Literally \"until tomorrow\", and the pattern behind a whole family of goodbyes: hasta luego (until later), hasta el sábado (until Saturday). M6's mañana, doing its \"tomorrow\" job inside a fixed phrase."
+            "forms": ["hasta mañana", "hasta luego", "hasta el sábado"],
+            "note": "Literally \"until tomorrow\", and the pattern behind a whole family of goodbyes: hasta luego (until later), hasta el sábado (until Saturday). Whatever follows hasta is when you will meet again. M6's mañana, doing its \"tomorrow\" job inside a fixed phrase."
           }
         ],
         "rules": [0, 5]

@@ -6,7 +6,7 @@
   "prerequisites": [],
   "verified": true,
   "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
-  "verifiedAt": "2026-08-13",
+  "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 2,
     "maxWordsPerSentence": 5,
@@ -176,8 +176,8 @@
             "display": "español",
             "cue": "Spanish",
             "tag": "delta",
-            "forms": [],
-            "note": "The language, and also the adjective. Spanish writes languages and nationalities with a small letter: español, never Español."
+            "forms": ["español", "española"],
+            "note": "The language, and also the adjective. As an adjective it agrees with what it describes: español for a masculine noun, española for a feminine one — la música española. Spanish writes languages and nationalities with a small letter: español, never Español."
           }
         ],
         "rules": [3, 4]
@@ -216,8 +216,8 @@
             "display": "Me gusta",
             "cue": "I like",
             "tag": "interference",
-            "forms": [],
-            "note": "gustar means \"to please\", so the thing liked is the subject and gusta agrees with IT: one thing → gusta. me only says who is pleased. For more than one thing, S06 has me gustan."
+            "forms": ["Me gusta", "te gusta", "le gusta"],
+            "note": "gustar means \"to please\", so the thing liked is the subject and gusta agrees with IT: one thing → gusta. The little pronoun in front says who is pleased, and nothing else moves: me gusta (me) · te gusta (you) · le gusta (him, her, usted). For more than one thing, S06 has me gustan."
           },
           {
             "display": "el",
@@ -317,8 +317,8 @@
             "display": "Me gustan",
             "cue": "I like",
             "tag": "interference",
-            "forms": [],
-            "note": "The plural partner of S04's me gusta. More than one thing does the pleasing, so the verb goes plural — gustan. The things decide, never you: me stays exactly as it is."
+            "forms": ["Me gustan", "te gustan", "le gustan"],
+            "note": "The plural partner of S04's me gusta. More than one thing does the pleasing, so the verb goes plural — gustan. The things decide, never you: only the little pronoun swaps for the person pleased — me gustan · te gustan · le gustan — and gustan itself never moves."
           },
           {
             "display": "los",
@@ -418,8 +418,8 @@
             "display": "Quiero",
             "cue": "I want",
             "tag": "delta",
-            "forms": [],
-            "note": "querer — to want. The ending names the person: quiero (I) · quieres (you) · quiere (he or she). Aimed at a person it also means to love: te quiero."
+            "forms": ["Quiero", "quiere"],
+            "note": "querer — to want. The ending names the person: quiero (I) · quieres (you, which M3 teaches as a row of its own) · quiere (he or she, and usted). Aimed at a person it also means to love: te quiero."
           }
         ],
         "rules": [0, 1]

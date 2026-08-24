@@ -6,7 +6,7 @@
   "prerequisites": ["L1-M4"],
   "verified": true,
   "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
-  "verifiedAt": "2026-08-13",
+  "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 7,
@@ -86,8 +86,8 @@
             "display": "comí",
             "cue": "I ate",
             "tag": "delta",
-            "forms": [],
-            "note": "comer in the preterite: one meal, presented as one finished event. The -í is the preterite \"I\" of the -er and -ir families and it takes the stress — co-MÍ, against M4's CO-mo."
+            "forms": ["comí", "comiste", "comió"],
+            "note": "comer in the preterite: one meal, presented as one finished event. The -í is the preterite \"I\" of the -er and -ir families and it takes the stress — co-MÍ, against M4's CO-mo. The other two persons are comiste (you) and comió (he, she, usted)."
           }
         ],
         "rules": [0, 1, 2, 10]
@@ -126,8 +126,8 @@
             "display": "hablé",
             "cue": "I spoke",
             "tag": "delta",
-            "forms": [],
-            "note": "hablar in the preterite. The -ar family takes -é for \"I\": hablé, trabajé, estudié. hablo, hablé and habló are three different words separated by one written mark."
+            "forms": ["hablé", "hablaste", "habló"],
+            "note": "hablar in the preterite. The -ar family takes -é for \"I\": hablé, trabajé, estudié. Its other two persons are hablaste (you) and habló (he, she, usted) — and hablo, hablé and habló are three different words separated by one written mark."
           }
         ],
         "rules": [1, 2]
@@ -166,8 +166,8 @@
             "display": "trabajé",
             "cue": "I worked",
             "tag": "delta",
-            "forms": [],
-            "note": "trabajar in the preterite — the same -é ending as hablé, and the stress lands on it: tra-ba-JÉ."
+            "forms": ["trabajé", "trabajaste", "trabajó"],
+            "note": "trabajar in the preterite — the same -é ending as hablé, and the stress lands on it: tra-ba-JÉ. The rest of the family runs the same way: trabajaste (you) · trabajó (he, she, usted)."
           }
         ],
         "rules": [1, 9]
@@ -206,8 +206,8 @@
             "display": "hice",
             "cue": "I did · I made",
             "tag": "delta",
-            "forms": [],
-            "note": "hacer, \"to do\" and \"to make\", in the preterite: hice (I did) · hiciste (you did). It is irregular, and like the other strong pasts it carries no written accent — the stress sits on the first syllable."
+            "forms": ["hice", "hizo"],
+            "note": "hacer, \"to do\" and \"to make\", in the preterite: hice (I did) · hiciste (you did, S05's own row) · hizo (he, she, usted did). It is irregular, and like the other strong pasts it carries no written accent — the stress sits on the first syllable."
           }
         ],
         "rules": [6, 9]
@@ -286,8 +286,8 @@
             "display": "fui",
             "cue": "I went · I was",
             "tag": "interference",
-            "forms": [],
-            "note": "One word doing the past of two verbs: ir (\"I went\") and ser (\"I was\"). What follows decides — Fui a México is went, Fui estudiante is was. Another strong past, so again no accent."
+            "forms": ["fui", "fuiste", "fue"],
+            "note": "One word doing the past of two verbs: ir (\"I went\") and ser (\"I was\"). What follows decides — Fui a México is went, Fui estudiante is was. Another strong past, so again no accent, and its persons are fui · fuiste · fue, each of them doing both verbs."
           }
         ],
         "rules": [4, 5, 6]
@@ -326,8 +326,8 @@
             "display": "estudié",
             "cue": "I studied",
             "tag": "delta",
-            "forms": [],
-            "note": "estudiar in the preterite — the fourth shape of one verb: estudiante (the person), estudiar (the plain verb), estudio (I study), estudié (I studied)."
+            "forms": ["estudié", "estudiaste", "estudió"],
+            "note": "estudiar in the preterite — the fourth shape of one verb: estudiante (the person), estudiar (the plain verb), estudio (I study), estudié (I studied). Its other persons follow hablé's: estudiaste (you) · estudió (he, she, usted)."
           }
         ],
         "rules": [1, 2]
@@ -373,8 +373,8 @@
             "display": "comía",
             "cue": "I used to eat",
             "tag": "delta",
-            "forms": [],
-            "note": "comer in the imperfect: \"I used to eat\", \"I was eating\". The -er and -ir families take -ía. Beside comí — one meal, closed — it presents the eating as an open frame."
+            "forms": ["comía", "comías"],
+            "note": "comer in the imperfect: \"I used to eat\", \"I was eating\". The -er and -ir families take -ía. Beside comí — one meal, closed — it presents the eating as an open frame. \"I\" and \"he or she\" are the same shape here, comía for both; only tú moves it — comías."
           }
         ],
         "rules": [0, 3, 4]
@@ -413,8 +413,8 @@
             "display": "era",
             "cue": "I was · he was · she was",
             "tag": "delta",
-            "forms": [],
-            "note": "ser in the imperfect — \"I used to be\", and equally \"he or she was\": one shape for both, and the sentence decides. It says what someone WAS, where estaba says what state they were in."
+            "forms": ["era", "eras"],
+            "note": "ser in the imperfect — \"I used to be\", and equally \"he or she was\": one shape for both, and the sentence decides. tú takes eras. It says what someone WAS, where estaba says what state they were in."
           }
         ],
         "rules": [0, 3, 7]
@@ -453,8 +453,8 @@
             "display": "estaba",
             "cue": "I was · he was · she was",
             "tag": "delta",
-            "forms": [],
-            "note": "estar in the imperfect — the past of M2's estoy, and the same shape for \"he or she was\". It takes the kind of word estoy took: estaba bien, estaba ocupado."
+            "forms": ["estaba", "estabas"],
+            "note": "estar in the imperfect — the past of M2's estoy, and the same shape for \"he or she was\", with estabas for tú. It takes the kind of word estoy took: estaba bien, estaba ocupado."
           }
         ],
         "rules": [0, 4, 7, 8]
