@@ -5,7 +5,7 @@
   "job": "Short 2–3 sentence exchanges",
   "prerequisites": ["L1-M9"],
   "verified": true,
-  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 1,
@@ -91,6 +91,11 @@
           "display": "Hola, ¿cómo estás? Estoy un poco cansado.",
           "cue": "Hi, how are you? — I'm a little tired.",
           "changed": "an honest answer instead of the automatic one"
+        },
+        {
+          "display": "¿Cómo estás? Bien, gracias, ¿y tú?",
+          "cue": "How are you? — Fine, thanks, and you?",
+          "changed": "the short version — bien answers on its own, y tú hands it back"
         }
       ],
       "mistake": {
@@ -131,6 +136,11 @@
           "display": "Voy a estudiar, pero no voy a trabajar.",
           "cue": "I'm going to study, but I'm not going to work.",
           "changed": "the contradiction is a negative this time"
+        },
+        {
+          "display": "Voy a trabajar. También voy a estudiar.",
+          "cue": "I'm going to work. I'm also going to study.",
+          "changed": "no contrast to draw — también simply adds the second plan"
         }
       ],
       "mistake": {
@@ -178,6 +188,11 @@
           "display": "Quiero pan, pero no quiero café.",
           "cue": "I want bread, but I don't want coffee.",
           "changed": "pero instead of y — the second half now contradicts"
+        },
+        {
+          "display": "Quiero pan, café y una manzana",
+          "cue": "I want bread, coffee and an apple",
+          "changed": "a list — y joins only the last two, the comma does the rest"
         }
       ],
       "mistake": {
@@ -218,6 +233,11 @@
           "display": "Una botella de agua, por favor. Gracias.",
           "cue": "A bottle of water, please. — Thank you.",
           "changed": "a two-sentence turn"
+        },
+        {
+          "display": "Perdón, un café, por favor. Gracias.",
+          "cue": "Excuse me, a coffee, please. — Thank you.",
+          "changed": "perdón opens it — the whole courtesy chain in one breath"
         }
       ],
       "mistake": {
@@ -258,6 +278,11 @@
           "display": "Estoy un poco cansada, pero estoy bien.",
           "cue": "I'm a little tired, but I'm fine.",
           "changed": "the softener with an agreeing adjective, and pero holding the turn together"
+        },
+        {
+          "display": "Quiero un poco de agua, por favor",
+          "cue": "I'd like a little water, please",
+          "changed": "in front of a noun the softener needs de — un poco de agua"
         }
       ],
       "mistake": {
@@ -298,6 +323,11 @@
           "display": "Estoy cansado. Entonces no voy a estudiar.",
           "cue": "I'm tired. — Then I'm not going to study.",
           "changed": "the next step is a refusal"
+        },
+        {
+          "display": "Mañana no trabajo. Entonces vamos al parque.",
+          "cue": "Tomorrow I don't work. — Then let's go to the park.",
+          "changed": "entonces turns the fact into a shared plan — vamos"
         }
       ],
       "mistake": {
@@ -338,6 +368,11 @@
           "display": "¿Vas a comer con Ana? No, voy a comer con mi hermana.",
           "cue": "Are you going to eat with Ana? — No, I'm going to eat with my sister.",
           "changed": "the refusal, which also reuses the verb"
+        },
+        {
+          "display": "¿Vamos al parque mañana? Claro, nos vemos a las ocho.",
+          "cue": "Shall we go to the park tomorrow? — Of course, see you at eight.",
+          "changed": "the shared proposal — vamos asks, claro accepts, nos vemos seals it"
         }
       ],
       "mistake": {
@@ -385,6 +420,11 @@
           "display": "Hasta mañana, Ana.",
           "cue": "See you tomorrow, Ana.",
           "changed": "the name after a comma, as in M2"
+        },
+        {
+          "display": "Adiós, hasta luego.",
+          "cue": "Bye, see you later.",
+          "changed": "hasta luego — the open goodbye, for when no day is named"
         }
       ],
       "mistake": {
@@ -425,6 +465,11 @@
           "display": "Nos vemos a las ocho.",
           "cue": "See you at eight.",
           "changed": "M4's clock time, as the meeting point"
+        },
+        {
+          "display": "Nos vemos en el parque",
+          "cue": "See you at the park",
+          "changed": "meet at a place — en, where the clock time used a"
         }
       ],
       "mistake": {
@@ -465,6 +510,11 @@
           "display": "Perdón, ¿hay una tienda cerca de aquí?",
           "cue": "Excuse me, is there a shop near here?",
           "changed": "the same opening, looking for something else"
+        },
+        {
+          "display": "Perdón, ¿hay una tienda aquí? No, pero hay una tienda cerca del parque.",
+          "cue": "Excuse me, is there a shop here? — No, but there's a shop near the park.",
+          "changed": "the no answer — and pero hands you the alternative"
         }
       ],
       "mistake": {

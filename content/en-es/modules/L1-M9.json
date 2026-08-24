@@ -5,8 +5,8 @@
   "job": "Why — because and so",
   "prerequisites": ["L1-M8"],
   "verified": true,
-  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
-  "verifiedAt": "2026-08-13",
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 8,
@@ -99,6 +99,11 @@
           "display": "Hoy estoy bien",
           "cue": "Today I'm well",
           "changed": "M2's bien, which never changes for anyone"
+        },
+        {
+          "display": "Ana está cansada hoy",
+          "cue": "Ana is tired today",
+          "changed": "está for her — and cansada agrees with Ana, not with you"
         }
       ],
       "mistake": {
@@ -139,6 +144,11 @@
           "display": "No voy a trabajar porque estoy cansado",
           "cue": "I'm not going to work because I'm tired",
           "changed": "M6's plan as the thing being explained"
+        },
+        {
+          "display": "No quiero comer porque comí mucho",
+          "cue": "I don't want to eat because I ate a lot",
+          "changed": "the reason can sit in the past — M5's comí"
         }
       ],
       "mistake": {
@@ -179,6 +189,11 @@
           "display": "Estoy cansado, por eso voy a comer temprano",
           "cue": "I'm tired, so I'm going to eat early",
           "changed": "another consequence"
+        },
+        {
+          "display": "Estoy cansado, por eso necesito café",
+          "cue": "I'm tired, so I need coffee",
+          "changed": "the same state argues the other way — necesito, not no quiero"
         }
       ],
       "mistake": {
@@ -219,6 +234,11 @@
           "display": "¿Por qué no vas a trabajar?",
           "cue": "Why aren't you going to work?",
           "changed": "M6's plan, questioned"
+        },
+        {
+          "display": "Porque estoy enfermo",
+          "cue": "Because I'm ill",
+          "changed": "the answer — porque and the reason, with nothing in front of it"
         }
       ],
       "mistake": {
@@ -259,6 +279,11 @@
           "display": "Estoy contento porque hoy no trabajo",
           "cue": "I'm happy because today I don't work",
           "changed": "the reason moves to today"
+        },
+        {
+          "display": "¿Por qué estás contento?",
+          "cue": "Why are you happy? (asked of a man)",
+          "changed": "the question that fishes for the reason — and -o for the man asked"
         }
       ],
       "mistake": {
@@ -299,6 +324,11 @@
           "display": "Estoy triste porque mañana trabajo",
           "cue": "I'm sad because tomorrow I work",
           "changed": "the answer, with its reason"
+        },
+        {
+          "display": "¿Por qué está usted triste?",
+          "cue": "Why are you sad? (polite)",
+          "changed": "usted takes está — the same concern, in the polite register"
         }
       ],
       "mistake": {
@@ -339,6 +369,11 @@
           "display": "No voy a trabajar porque estoy enfermo",
           "cue": "I'm not going to work because I'm ill",
           "changed": "the same two facts with porque, in the other order"
+        },
+        {
+          "display": "Hoy estoy enfermo, por eso no trabajo",
+          "cue": "Today I'm ill, so I'm not working",
+          "changed": "hoy pins it to today, and the plain present does the rest"
         }
       ],
       "mistake": {
@@ -379,6 +414,11 @@
           "display": "Me gusta la sopa porque está caliente",
           "cue": "I like the soup because it's hot",
           "changed": "a temperature right now, so estar rather than ser"
+        },
+        {
+          "display": "Me gustan las sopas porque están calientes",
+          "cue": "I like the soups because they're hot",
+          "changed": "the whole line pivots plural — gustan, las sopas, están, calientes"
         }
       ],
       "mistake": {
@@ -419,6 +459,11 @@
           "display": "Estoy bien, por eso voy a estudiar",
           "cue": "I'm well, so I'm going to study",
           "changed": "the opposite state, the opposite consequence"
+        },
+        {
+          "display": "Ana está mal hoy",
+          "cue": "Ana is unwell today",
+          "changed": "mal for her too — it never agrees with anyone"
         }
       ],
       "mistake": {
@@ -459,6 +504,11 @@
           "display": "¿Estás nerviosa?",
           "cue": "Are you nervous? (asked of a woman)",
           "changed": "now the ending follows the person being asked"
+        },
+        {
+          "display": "Mañana trabajo, por eso estoy nerviosa",
+          "cue": "Tomorrow I work, so I'm nervous",
+          "changed": "the same two facts welded the other way — the reason first, por eso in the middle"
         }
       ],
       "mistake": {

@@ -5,7 +5,7 @@
   "job": "Introduce yourself and state what you like",
   "prerequisites": [],
   "verified": true,
-  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 2,
@@ -93,6 +93,11 @@
           "display": "Se llama Rohan",
           "cue": "His name is Rohan",
           "changed": "me → se: the same verb, a different person"
+        },
+        {
+          "display": "El estudiante se llama Rohan",
+          "cue": "The student is called Rohan",
+          "changed": "a full noun can be the subject — el estudiante, and se llama gives his name"
         }
       ],
       "mistake": {
@@ -147,6 +152,11 @@
           "display": "Es de India",
           "cue": "She is from India",
           "changed": "soy → es: the ending swaps the person, and still no pronoun"
+        },
+        {
+          "display": "Soy Rohan, de India",
+          "cue": "I'm Rohan, from India",
+          "changed": "soy takes your name too — and the origin tags along after a comma"
         }
       ],
       "mistake": {
@@ -194,6 +204,11 @@
           "display": "Soy profesor",
           "cue": "I am a teacher",
           "changed": "any profession fits the frame, and there is still no un"
+        },
+        {
+          "display": "Soy estudiante de música española",
+          "cue": "I am a student of Spanish music",
+          "changed": "the adjective agrees inside the de phrase — española follows música"
         }
       ],
       "mistake": {
@@ -248,6 +263,11 @@
           "display": "Me gusta el español",
           "cue": "I like Spanish",
           "changed": "swap the thing liked — still one thing, so still gusta"
+        },
+        {
+          "display": "Le gusta el café",
+          "cue": "She likes coffee",
+          "changed": "me → le: now she is the one pleased — gusta still does not move"
         }
       ],
       "mistake": {
@@ -295,6 +315,11 @@
           "display": "Te gusta la música",
           "cue": "You like music",
           "changed": "me → te: the person pleased changes, gusta stays"
+        },
+        {
+          "display": "Le gusta la música",
+          "cue": "She likes music",
+          "changed": "me → le: her liking now — the pronoun set is me · te · le, and gusta stays put"
         }
       ],
       "mistake": {
@@ -349,6 +374,11 @@
           "display": "Te gustan los libros",
           "cue": "You like books",
           "changed": "me → te: the person pleased changes, gustan does not"
+        },
+        {
+          "display": "Le gustan los libros",
+          "cue": "He likes books",
+          "changed": "me → le: a third person is pleased, and gustan still agrees with the books"
         }
       ],
       "mistake": {
@@ -396,6 +426,11 @@
           "display": "Me gustan mucho las películas",
           "cue": "I really like films",
           "changed": "mucho goes straight after the verb"
+        },
+        {
+          "display": "Te gustan las películas",
+          "cue": "You like films",
+          "changed": "me → te: the person pleased changes, and gustan stays with the films"
         }
       ],
       "mistake": {
@@ -436,6 +471,11 @@
           "display": "Quieres café",
           "cue": "You want coffee",
           "changed": "the ending changes the person, and there is still no pronoun"
+        },
+        {
+          "display": "Quiere café",
+          "cue": "She wants coffee",
+          "changed": "-o → -e: a third person wants, and there is still no pronoun"
         }
       ],
       "mistake": {
@@ -476,6 +516,11 @@
           "display": "Quiere agua",
           "cue": "She wants water",
           "changed": "-o → -e: the ending names a different person"
+        },
+        {
+          "display": "Me gusta el agua",
+          "cue": "I like water",
+          "changed": "the other frame — liking runs on me gusta, and the article comes back with it"
         }
       ],
       "mistake": {
@@ -516,6 +561,11 @@
           "display": "Me gusta mucho el café",
           "cue": "I really like coffee",
           "changed": "swap the thing liked; the frame holds"
+        },
+        {
+          "display": "El español me gusta mucho",
+          "cue": "I really like Spanish",
+          "changed": "the liked thing is the real subject, so it can stand in front — and mucho stays glued to gusta"
         }
       ],
       "mistake": {

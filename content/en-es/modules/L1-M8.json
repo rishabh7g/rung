@@ -5,8 +5,8 @@
   "job": "Prices, quantities, buying",
   "prerequisites": ["L1-M7"],
   "verified": true,
-  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
-  "verifiedAt": "2026-08-13",
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 7,
@@ -100,6 +100,11 @@
           "display": "¿Cuánto cuesta el libro?",
           "cue": "How much does the book cost?",
           "changed": "swap what you are pricing"
+        },
+        {
+          "display": "¿Cuánto cuestan los cafés?",
+          "cue": "How much do the coffees cost?",
+          "changed": "one → many, and cuesta pivots to cuestan with the noun"
         }
       ],
       "mistake": {
@@ -140,6 +145,11 @@
           "display": "¿Cuánto cuestan dos cafés?",
           "cue": "How much do two coffees cost?",
           "changed": "price a quantity rather than the shelf"
+        },
+        {
+          "display": "Los libros cuestan mucho",
+          "cue": "The books cost a lot",
+          "changed": "cuestan in a statement — with mucho when nobody names a price"
         }
       ],
       "mistake": {
@@ -187,6 +197,11 @@
           "display": "Por favor, quiero dos cafés",
           "cue": "Please, I'd like two coffees",
           "changed": "the other edge — it works at the front too"
+        },
+        {
+          "display": "Quiero dos cafés con leche, por favor",
+          "cue": "I'd like two coffees with milk, please",
+          "changed": "M3's con phrase rides along inside the order"
         }
       ],
       "mistake": {
@@ -227,6 +242,11 @@
           "display": "Quiero un kilo de pan",
           "cue": "I'd like a kilo of bread",
           "changed": "swap what is being weighed"
+        },
+        {
+          "display": "¿Cuánto cuesta un kilo de manzanas?",
+          "cue": "How much does a kilo of apples cost?",
+          "changed": "price the measure — cuesta asks about the kilo, not the apples"
         }
       ],
       "mistake": {
@@ -267,6 +287,11 @@
           "display": "Dos botellas de agua, por favor",
           "cue": "Two bottles of water, please",
           "changed": "the measure goes plural"
+        },
+        {
+          "display": "¿Cuántas botellas hay?",
+          "cue": "How many bottles are there?",
+          "changed": "cuántas counts the bottles — the counting word agrees, hay does not"
         }
       ],
       "mistake": {
@@ -307,6 +332,11 @@
           "display": "Quiero un café, por favor",
           "cue": "I'd like a coffee, please",
           "changed": "name the thing and uno becomes un"
+        },
+        {
+          "display": "¿Cuántos quieres?",
+          "cue": "How many do you want?",
+          "changed": "the question this answers — cuántos standing alone, exactly like uno"
         }
       ],
       "mistake": {
@@ -347,6 +377,11 @@
           "display": "¿Hay libros en la tienda?",
           "cue": "Are there books in the shop?",
           "changed": "the question, with no number at all"
+        },
+        {
+          "display": "¿Cuántos libros hay en la tienda?",
+          "cue": "How many books are there in the shop?",
+          "changed": "the counting question — cuántos in front, hay unchanged"
         }
       ],
       "mistake": {
@@ -387,6 +422,11 @@
           "display": "Como a las ocho",
           "cue": "I eat at eight",
           "changed": "the same eight, back in its clock phrase from M4"
+        },
+        {
+          "display": "¿Cuántas manzanas quieres?",
+          "cue": "How many apples do you want?",
+          "changed": "the shopkeeper's question — cuántas agrees with manzanas"
         }
       ],
       "mistake": {
@@ -434,6 +474,11 @@
           "display": "Los libros son muy caros",
           "cue": "The books are very expensive",
           "changed": "plural all the way through, and es becomes son"
+        },
+        {
+          "display": "El libro no es muy caro",
+          "cue": "The book isn't very expensive",
+          "changed": "no before es — the polite disagreement"
         }
       ],
       "mistake": {
@@ -474,6 +519,11 @@
           "display": "Todo es muy caro",
           "cue": "Everything is very expensive",
           "changed": "the same todo as the subject of a statement"
+        },
+        {
+          "display": "Quiero todo, por favor",
+          "cue": "I'd like everything, please",
+          "changed": "todo as the thing you order — the same word, now the object"
         }
       ],
       "mistake": {

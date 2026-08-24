@@ -5,8 +5,8 @@
   "job": "Daily habits and time words",
   "prerequisites": ["L1-M3"],
   "verified": true,
-  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
-  "verifiedAt": "2026-08-13",
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 4,
     "maxWordsPerSentence": 6,
@@ -100,6 +100,11 @@
           "display": "Todos los días hablo español",
           "cue": "Every day I speak Spanish",
           "changed": "the block moves to the front and nothing else changes"
+        },
+        {
+          "display": "Hablo español por la mañana",
+          "cue": "I speak Spanish in the morning",
+          "changed": "swap the every-day block for one slot of the day"
         }
       ],
       "mistake": {
@@ -154,6 +159,11 @@
           "display": "Me levanto temprano",
           "cue": "I get up early",
           "changed": "a plain time word instead of a clock time, and then no a"
+        },
+        {
+          "display": "Ana se levanta a las ocho",
+          "cue": "Ana gets up at eight",
+          "changed": "a named subject takes se levanta — the pronoun and the ending both move to her"
         }
       ],
       "mistake": {
@@ -201,6 +211,11 @@
           "display": "Como pan por la mañana",
           "cue": "I eat bread in the morning",
           "changed": "the time phrase moves to the end"
+        },
+        {
+          "display": "Por la mañana no como nada",
+          "cue": "In the morning I don't eat anything",
+          "changed": "the negative habit — no in front of como, and M3's nada closes it"
         }
       ],
       "mistake": {
@@ -248,6 +263,11 @@
           "display": "Estudio español por la mañana",
           "cue": "I study Spanish in the morning",
           "changed": "the same habit in a different slot of the day"
+        },
+        {
+          "display": "Por la noche no estudio",
+          "cue": "At night I don't study",
+          "changed": "no slots in front of the verb and the habit flips"
         }
       ],
       "mistake": {
@@ -302,6 +322,11 @@
           "display": "No vivo con mi hermana",
           "cue": "I don't live with my sister",
           "changed": "the no goes in front of the verb, exactly as in M3"
+        },
+        {
+          "display": "Vivo con mis hermanas",
+          "cue": "I live with my sisters",
+          "changed": "mi → mis: the possessive goes plural with the noun"
         }
       ],
       "mistake": {
@@ -342,6 +367,11 @@
           "display": "Veo la casa",
           "cue": "I see the house",
           "changed": "a thing takes no a at all"
+        },
+        {
+          "display": "Veo a mis hermanas",
+          "cue": "I see my sisters",
+          "changed": "people keep the a in the plural — mis hermanas"
         }
       ],
       "mistake": {
@@ -389,6 +419,11 @@
           "display": "Me levanto a las ocho",
           "cue": "I get up at eight",
           "changed": "the answer, with the a and the hour back in place"
+        },
+        {
+          "display": "¿A qué hora se levanta Ana?",
+          "cue": "What time does Ana get up?",
+          "changed": "asked about her — se levanta, with the name at the end"
         }
       ],
       "mistake": {
@@ -436,6 +471,11 @@
           "display": "Trabajo todos los días",
           "cue": "I work every day",
           "changed": "swap the time phrase for the block"
+        },
+        {
+          "display": "Por la tarde trabajo",
+          "cue": "In the afternoon I work",
+          "changed": "the time phrase moves to the front and nothing else changes"
         }
       ],
       "mistake": {
@@ -476,6 +516,11 @@
           "display": "Trabajas por la mañana",
           "cue": "You work in the morning",
           "changed": "the same words as a statement — only the marks and the tune change"
+        },
+        {
+          "display": "No, trabajo por la tarde",
+          "cue": "No, I work in the afternoon",
+          "changed": "the answer that corrects — no, then the true slot"
         }
       ],
       "mistake": {
@@ -516,6 +561,11 @@
           "display": "Todos los días me levanto a las ocho",
           "cue": "Every day I get up at eight",
           "changed": "a clock time instead of a plain one"
+        },
+        {
+          "display": "No me levanto temprano",
+          "cue": "I don't get up early",
+          "changed": "no goes in front of the whole me levanto — never between me and the verb"
         }
       ],
       "mistake": {

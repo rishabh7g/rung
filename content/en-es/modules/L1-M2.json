@@ -5,7 +5,7 @@
   "job": "Greetings, wellbeing, yes/no questions",
   "prerequisites": ["L1-M1"],
   "verified": true,
-  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 2,
@@ -81,6 +81,11 @@
           "display": "Hola, buenos días",
           "cue": "Hello, good morning",
           "changed": "the two stack — hola softens the greeting that follows"
+        },
+        {
+          "display": "Hola, ¿cómo estás?",
+          "cue": "Hi, how are you?",
+          "changed": "hola opens and the question rides straight after it — one breath"
         }
       ],
       "mistake": {
@@ -128,6 +133,11 @@
           "display": "Buenas tardes, Ana",
           "cue": "Good afternoon, Ana",
           "changed": "after lunch the whole phrase changes — feminine now, buenas tardes"
+        },
+        {
+          "display": "Buenos días, ¿cómo está usted?",
+          "cue": "Good morning, how are you? (polite)",
+          "changed": "the greeting stacks with the polite question — a whole opening"
         }
       ],
       "mistake": {
@@ -175,6 +185,11 @@
           "display": "¿Cómo está usted?",
           "cue": "How are you? (polite)",
           "changed": "usted takes está, the he-or-she form"
+        },
+        {
+          "display": "¿Estás bien?",
+          "cue": "Are you all right?",
+          "changed": "swap the question word for the state itself — a yes-or-no question now"
         }
       ],
       "mistake": {
@@ -229,6 +244,11 @@
           "display": "Bien, gracias",
           "cue": "Fine, thanks",
           "changed": "drop the verb — the short answer people actually give"
+        },
+        {
+          "display": "No estoy bien",
+          "cue": "I'm not well",
+          "changed": "no in front of the verb flips the answer — the honest version"
         }
       ],
       "mistake": {
@@ -269,6 +289,11 @@
           "display": "¿Estás ocupada?",
           "cue": "Are you busy? (asked of a woman)",
           "changed": "the ending follows the person asked, not the person asking"
+        },
+        {
+          "display": "¿Está usted ocupado?",
+          "cue": "Are you busy? (polite, asked of a man)",
+          "changed": "usted takes está — and the ending still follows the person asked"
         }
       ],
       "mistake": {
@@ -316,6 +341,11 @@
           "display": "¿Cómo está Ana?",
           "cue": "How is Ana?",
           "changed": "the same form, now genuinely about someone else"
+        },
+        {
+          "display": "¿Cómo están los estudiantes?",
+          "cue": "How are the students?",
+          "changed": "a plural subject takes están — the same question about more than one"
         }
       ],
       "mistake": {
@@ -359,6 +389,11 @@
           "display": "Eres de México",
           "cue": "You are from Mexico",
           "changed": "the same words as a statement — only the marks and the tune change"
+        },
+        {
+          "display": "¿Ana es de México?",
+          "cue": "Is Ana from Mexico?",
+          "changed": "the question about someone else — her statement, unchanged, said with the marks"
         }
       ],
       "mistake": {
@@ -399,6 +434,11 @@
           "display": "Sí",
           "cue": "Yes",
           "changed": "on its own it is a complete answer"
+        },
+        {
+          "display": "Sí, es de México",
+          "cue": "Yes, she is from Mexico",
+          "changed": "the same yes, answering for someone else — es carries her"
         }
       ],
       "mistake": {
@@ -439,6 +479,11 @@
           "display": "Es de India",
           "cue": "He is from India",
           "changed": "drop usted and the same verb is about someone else"
+        },
+        {
+          "display": "Sí, soy de India",
+          "cue": "Yes, I am from India",
+          "changed": "the answer — a polite usted question gets a plain soy answer"
         }
       ],
       "mistake": {
@@ -479,6 +524,11 @@
           "display": "No, no soy de México",
           "cue": "No, I'm not from Mexico",
           "changed": "the second no is the one negating the verb (M3)"
+        },
+        {
+          "display": "No, soy estudiante",
+          "cue": "No, I'm a student",
+          "changed": "the same correction about who you are, not where you are from"
         }
       ],
       "mistake": {
