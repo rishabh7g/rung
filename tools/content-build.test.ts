@@ -1250,6 +1250,97 @@ describe('the romanized edge cases (#116, [Q3])', () => {
     expect(row('आम्ही')).toBe('L1-M10/L1-M10-S09#0');
     expect(row('भेटू')).toBe('L1-M10/L1-M10-S09#1');
   });
+
+  /**
+   * #283's seam — the sweep, for en-ar: every variation line against the index of the module that
+   * shows it. Every remaining miss is a *decided* miss, and
+   * `docs/16-llm-review-en-ar-surfaces.md` says which kind per line:
+   *
+   *   - a proper noun (`priyā`, `miṣr`) — never a word row in any course (#61);
+   *   - a recorded exemption (`marḥaban`, a sibling greeting of as-salāmu ʿalaykum, not a shape of
+   *     it — the en-es `buenas tardes` ruling; and `ṣabāḥ` + `an-nūr`, the greeting reply the
+   *     additions-only invariant locks out: any M2 surface containing `an-nūr` would hand its
+   *     hyphen part `an` to M2 and steal M3-S03's own key, and bare `ṣabāḥ` belongs to M4's
+   *     `fī aṣ-ṣabāḥ` row — a forward reference that resolves from M4 on).
+   *
+   * A new variation that resolves nowhere fails here, so #287's third-variation pass has to
+   * decide about a new surface rather than discover it later.
+   */
+  it('sweeps every en-ar variation line down to six decided misses (#283)', () => {
+    const modules = authoredCourse('en-ar');
+    const indexes = buildWordIndex('en-ar', modules);
+    const misses: string[] = [];
+
+    modules.forEach(({ id, module }, at) => {
+      const index = indexes[at];
+      if (index === undefined) throw new Error(`${id} built no index`);
+      const lookup = {
+        maxSpan: index.maxSpan,
+        has: (surface: string) => Object.hasOwn(index.surfaces, surface),
+      };
+      for (const sentence of module.sentences) {
+        for (const variation of sentence.variations ?? []) {
+          for (const match of matchSurfaces(tokenizeSurface(variation.display), lookup)) {
+            if (!match.resolved) misses.push(`${id}/${sentence.id}: "${match.surface}"`);
+          }
+        }
+      }
+    });
+
+    expect(misses).toEqual([
+      'L1-M1/L1-M1-S01: "priyā"',
+      'L1-M1/L1-M1-S02: "miṣr"',
+      'L1-M2/L1-M2-S01: "marḥaban"',
+      'L1-M2/L1-M2-S03: "ṣabāḥ"',
+      'L1-M2/L1-M2-S03: "an-nūr"',
+      'L1-M5/L1-M5-S09: "priyā"',
+    ]);
+  });
+
+  /**
+   * The en-ar paradigm seams (#283) — the feminine -īn cluster and the price/dual/future forms,
+   * pinned to the row that owns each. The load-bearing ones: the plain and sa- futures of dhahaba
+   * stay sibling rows (tadhhabīn on M4's adhhab, sa-tadhhabīn on M6's sa-adhhab), M3's turīdīn
+   * keeps the row that first taught the -īn ending, and the M2 greeting frame takes only the
+   * two-token `masāʾ al-khayr` — bare `masā'` and `ṣabāḥ` still belong to M4's time-phrase rows,
+   * and `an` to M3's own row, which is why `an-nūr` stays out of the index entirely.
+   */
+  it('keeps en-ar paradigm seams on the row that owns them (#283)', () => {
+    const index = lastIndex('en-ar');
+    const row = (surface: string): string =>
+      `${index.surfaces[surface]?.moduleId}/${index.surfaces[surface]?.sentenceId}#${index.surfaces[surface]?.wordIdx}`;
+
+    // dhahaba: the feminine joins each future's own row; the two rows stay siblings.
+    expect(row('tadhhab')).toBe('L1-M4/L1-M4-S01#0');
+    expect(row('tadhhabīn')).toBe('L1-M4/L1-M4-S01#0');
+    expect(row('sa-tadhhab')).toBe('L1-M6/L1-M6-S01#0');
+    expect(row('sa-tadhhabīn')).toBe('L1-M6/L1-M6-S01#0');
+    // The -īn precedent row is untouched: turīdīn is still M3's own row, not a form of turīd.
+    expect(row('turīd')).toBe('L1-M3/L1-M3-S04#0');
+    expect(row('turīdīn')).toBe('L1-M3/L1-M3-S06#0');
+    // The other two feminine cells land on the row that owns each verb.
+    expect(row('tuḥibbīn')).toBe('L1-M1/L1-M1-S05#0');
+    expect(row('tatakallamīn')).toBe('L1-M10/L1-M10-S07#0');
+    // The greeting frame: the two-token twin joins M2's row; the bare pieces stay where the
+    // ladder first teaches them, and the reply's `an-` never enters the index.
+    expect(row("masā' al-khayr")).toBe('L1-M2/L1-M2-S03#0');
+    expect(row("masā'")).toBe('L1-M4/L1-M4-S10#0');
+    expect(row('ṣabāḥ')).toBe('L1-M4/L1-M4-S02#0');
+    expect(row('an')).toBe('L1-M3/L1-M3-S03#0');
+    for (const locked of ['an-nūr', 'nūr', 'ṣabāḥ an-nūr', 'marḥaban']) {
+      expect(Object.hasOwn(index.surfaces, locked)).toBe(false);
+    }
+    // The dual rides the noun's own plural row; singular and possessive keep their rows.
+    expect(row('sayyāratān')).toBe('L1-M8/L1-M8-S07#0');
+    expect(row('sayyāra')).toBe('L1-M3/L1-M3-S09#0');
+    expect(row('sayyāratī')).toBe('L1-M7/L1-M7-S09#0');
+    // bi-riyāl joins riyāl's row without touching bi's own key; sa-ashtarī likewise leaves
+    // `sa` with M6.
+    expect(row('bi-riyāl')).toBe('L1-M8/L1-M8-S08#1');
+    expect(row('bi')).toBe('L1-M2/L1-M2-S05#0');
+    expect(row('sa-ashtarī')).toBe('L1-M8/L1-M8-S10#0');
+    expect(row('sa')).toBe('L1-M6/L1-M6-S01#0');
+  });
 });
 
 describe('the comprehension-pool rule', () => {
