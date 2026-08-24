@@ -169,10 +169,25 @@ emitted `courses.json` lists **hi-mr and en-es**. The course is written **pan-Hi
 picked. Its L2/L3 ladders stay `draft: true` — placeholder lists, nothing authored.
 
 **No native Spanish speaker has read a word of it.** The bar en-es clears is LLM review plus the
-owner's authority, exactly hi-mr's, and the **67 open questions** across
-`docs/07-llm-review-en-es-L1-M1-M2.md`, `docs/07-llm-review-en-es-L1-M3-M5.md` and
-`docs/07-llm-review-en-es-L1-M6-M10.md` are what a native reviewer still owes — dialect first.
-Graduating the course ships LLM-reviewed Spanish to learners; it does not close that gap.
+owner's authority, exactly hi-mr's, and the **79 open questions** across
+`docs/07-llm-review-en-es-L1-M1-M2.md`, `docs/07-llm-review-en-es-L1-M3-M5.md`,
+`docs/07-llm-review-en-es-L1-M6-M10.md` and `docs/14-llm-review-en-es-surfaces.md` are what a native
+reviewer still owes — dialect first. Graduating the course ships LLM-reviewed Spanish to learners;
+it does not close that gap.
+
+**The surface pass (#281, 2026-08-24) closed the gap between what en-es teaches and what it
+shows.** Thirteen surfaces appeared in variation lines and were taught by no word row, and two
+modules — L1-M5, the past tense, and L1-M10 — shipped `forms: []` on every row. Ten of the thirteen
+now resolve (`te gusta`/`le gusta`, `te gustan`/`le gustan`, `quiere`, `española`, `están`, `son`,
+`trabajaré`, `hablar`, the `hasta …` goodbyes), three are recorded exemptions that would only
+resolve by landing on a row headed by a different word (`profesor`, `buenas tardes`, `hermano`), and
+M5's nine verb rows plus M10's three now carry their taught paradigms. **Additions only**: the
+en-es index grew 197 → **227** surfaces with 0 keys lost and 0 keys moved — every pre-existing
+surface still resolves to the same `{moduleId, sentenceId, wordIdx}`. `tools/content-build.test.ts`
+now sweeps every en-es variation line against its own module's index and pins the ten remaining
+misses (two proper nouns, four forward references, the four tokens of the three exemptions), so a
+new variation that resolves nowhere fails the suite. The reasoning, row by row, is
+`docs/14-llm-review-en-es-surfaces.md`.
 
 **en-ar ships (#202, 2026-08-13) — the product has three courses, and one of them is a new
 script.** Ten L1 rungs authored against ten briefs (#198–#201), reviewed in `docs/07-llm-review-

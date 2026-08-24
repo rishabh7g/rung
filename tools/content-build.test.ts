@@ -1085,6 +1085,92 @@ describe('the romanized edge cases (#116, [Q3])', () => {
       expect(misses).toEqual([]);
     }
   });
+
+  /**
+   * #281's seam — the surfaces en-es SHOWS in its variation lines, swept against the index of the
+   * module that shows them (not the last one), because a variation a learner reads in M1 has only
+   * M1's cumulative index behind it.
+   *
+   * Variations are outside the [Q3] sweep above by design, and they stay outside the build's own
+   * rules: a variation may legitimately carry an untaught token. What this pins is that the list of
+   * such tokens is a *decided* list rather than a drifting one. Every entry below is one of three
+   * things, and `docs/14-llm-review-en-es-surfaces.md` says which is which per line:
+   *
+   *   - a proper noun (`ana`, `méxico`) — never a word row in any course (#61);
+   *   - a forward reference to a later module's own row (`es` → M2, `quieres` → M3, `muy` → M8,
+   *     `casa` → M7) — the learner meets it on schedule;
+   *   - a recorded exemption (`profesor`, `buenas`/`tardes`, `hermano`) — a surface that would only
+   *     resolve by landing on a row headed by a DIFFERENT word, which is the forms-hit bug the
+   *     reviews have caught four times.
+   *
+   * A new variation that resolves nowhere fails here, so #285's third-variation pass has to decide
+   * about it rather than discover it later.
+   */
+  it('sweeps every en-es variation line down to ten decided misses (#281)', () => {
+    const modules = authoredCourse('en-es');
+    const indexes = buildWordIndex('en-es', modules);
+    const misses: string[] = [];
+
+    modules.forEach(({ id, module }, at) => {
+      const index = indexes[at];
+      if (index === undefined) throw new Error(`${id} built no index`);
+      const lookup = {
+        maxSpan: index.maxSpan,
+        has: (surface: string) => Object.hasOwn(index.surfaces, surface),
+      };
+      for (const sentence of module.sentences) {
+        for (const variation of sentence.variations ?? []) {
+          for (const match of matchSurfaces(tokenizeSurface(variation.display), lookup)) {
+            if (!match.resolved) misses.push(`${id}/${sentence.id}: "${match.surface}"`);
+          }
+        }
+      }
+    });
+
+    expect(misses).toEqual([
+      'L1-M1/L1-M1-S01: "ana"',
+      'L1-M1/L1-M1-S02: "méxico"',
+      'L1-M1/L1-M1-S02: "es"',
+      'L1-M1/L1-M1-S03: "profesor"',
+      'L1-M1/L1-M1-S08: "quieres"',
+      'L1-M2/L1-M2-S02: "buenas"',
+      'L1-M2/L1-M2-S02: "tardes"',
+      'L1-M2/L1-M2-S04: "muy"',
+      'L1-M4/L1-M4-S05: "hermano"',
+      'L1-M4/L1-M4-S06: "casa"',
+    ]);
+  });
+
+  /**
+   * The other half of #281: the additions-only invariant, stated as a test rather than as a
+   * before/after diff done by hand. Every surface a word row teaches lands on the row that FIRST
+   * teaches it, so a paradigm swept into an early module's `forms` can silently move a later
+   * module's own row out of the index. These are the en-es seams that pass deliberately close to
+   * that edge.
+   */
+  it('keeps en-es paradigm seams on the row that owns them (#281)', () => {
+    const index = lastIndex('en-es');
+    const row = (surface: string): string =>
+      `${index.surfaces[surface]?.moduleId}/${index.surfaces[surface]?.sentenceId}#${index.surfaces[surface]?.wordIdx}`;
+
+    // querer: M1 keeps `quiere`, M3 keeps its own `quieres` row.
+    expect(row('quiere')).toBe('L1-M1/L1-M1-S08#0');
+    expect(row('quieres')).toBe('L1-M3/L1-M3-S09#0');
+    // hacer: `hizo` rides with `hice`, and `hiciste` stays the row a learner taps in ¿Qué hiciste?
+    expect(row('hizo')).toBe('L1-M5/L1-M5-S04#0');
+    expect(row('hiciste')).toBe('L1-M5/L1-M5-S05#0');
+    // The gustar frame is multi-token, so bare `te`, `gusta` and `gustan` stay unclaimed.
+    expect(row('te gusta')).toBe('L1-M1/L1-M1-S04#0');
+    expect(row('te gustan')).toBe('L1-M1/L1-M1-S06#0');
+    for (const bare of ['te', 'gusta', 'gustan']) {
+      expect(Object.hasOwn(index.surfaces, bare)).toBe(false);
+    }
+    // estar/ser stay sibling rows: the plurals join the third-person row, nothing merges.
+    expect(row('están')).toBe('L1-M2/L1-M2-S06#0');
+    expect(row('son')).toBe('L1-M2/L1-M2-S09#0');
+    expect(row('estoy')).toBe('L1-M2/L1-M2-S04#0');
+    expect(row('estás')).toBe('L1-M2/L1-M2-S03#1');
+  });
 });
 
 describe('the comprehension-pool rule', () => {
