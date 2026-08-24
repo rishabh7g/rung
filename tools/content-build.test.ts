@@ -1087,6 +1087,34 @@ describe('the romanized edge cases (#116, [Q3])', () => {
   });
 
   /**
+   * #289's contract — the en-es comprehension pools serve FRESH sentences. 26 of the 80 pool
+   * items used to be byte-identical (case-insensitively) to a hero sentence of their own module,
+   * so the exit test's comprehension half re-served what the learner had just produced — recall
+   * of the lesson, not comprehension. The rebuild replaced every duplicate with a recombination
+   * of taught surfaces and grew each pool from 8 to 12 (at comprehendCount 2, pool size is retry
+   * freshness — `src/engine/comprehension.ts`). This pins both halves so a later edit can neither
+   * hand a hero back to the pool nor shrink the retry budget;
+   * `docs/22-llm-review-en-es-comprehension.md` is the item-by-item review.
+   */
+  it('keeps every en-es pool item fresh — 12 per module, none equal to any hero sentence (#289)', () => {
+    const modules = authoredCourse('en-es');
+    const heroes = new Set(
+      modules.flatMap(({ module }) =>
+        module.sentences.map((sentence) => sentence.display.toLowerCase()),
+      ),
+    );
+
+    for (const { id, module } of modules) {
+      expect(module.comprehensionPool.length, `${id} pool size`).toBeGreaterThanOrEqual(12);
+      for (const item of module.comprehensionPool) {
+        expect(heroes.has(item.display.toLowerCase()), `${item.id} re-serves a hero sentence`).toBe(
+          false,
+        );
+      }
+    }
+  });
+
+  /**
    * #281's seam — the surfaces en-es SHOWS in its variation lines, swept against the index of the
    * module that shows them (not the last one), because a variation a learner reads in M1 has only
    * M1's cumulative index behind it.
