@@ -1371,6 +1371,38 @@ describe('the romanized edge cases (#116, [Q3])', () => {
   });
 
   /**
+   * #291's contract — the en-ar pools grew from 8 to 12 items per module, so at comprehendCount 2
+   * a retry has six fresh deals before recycling (`src/engine/comprehension.ts`: pool size IS
+   * retry freshness). The count is pinned exactly, so the next growth pass moves it deliberately;
+   * the other two clauses are the issue's own acceptance criteria: every item carries BOTH the
+   * romanized `display` and the Arabic `script` line, and no pool item is a hero sentence retold —
+   * compared case-insensitively through the one shared normaliser, because `Rohān` vs `rohān` or a
+   * dropped `?` must not disguise a duplicate. Resolution is not re-proved here: the [Q3] sweep
+   * above and `checkComprehensionPool` in the build already gate every token.
+   */
+  it('grows every en-ar pool to exactly 12 items, scripted, and none a hero sentence (#291)', () => {
+    const modules = authoredCourse('en-ar');
+    const heroes = new Set(
+      modules.flatMap(({ module }) =>
+        module.sentences.map((sentence) => tokenizeSurface(sentence.display).join(' ')),
+      ),
+    );
+
+    expect(modules).toHaveLength(10);
+    for (const { id, module } of modules) {
+      expect(module.comprehensionPool, `${id} pool count`).toHaveLength(12);
+      for (const item of module.comprehensionPool) {
+        expect(item.display, `${item.id} display`).not.toBe('');
+        expect(item.script ?? '', `${item.id} carries an Arabic script line`).not.toBe('');
+        expect(
+          heroes.has(tokenizeSurface(item.display).join(' ')),
+          `${item.id} must not equal a hero sentence: "${item.display}"`,
+        ).toBe(false);
+      }
+    }
+  });
+
+  /**
    * #284's seam — the sweep, for hi-en: every variation line against the index of the module that
    * shows it. Every remaining miss is a *decided* miss, and
    * `docs/17-llm-review-hi-en-surfaces.md` says which kind per line:
