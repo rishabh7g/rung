@@ -8,12 +8,15 @@
  * levels.json stays the single source of the ladder, and a brief only adds the authoring
  * guidance on top.
  *
- * Four courses are briefed, L1 only: hi-mr, en-es, en-ar and hi-en. The L2/L3 module lists are RATIFIED
- * (#112 closed [Q1] — titles, jobs and sequence in levels.json are final), but their briefs are
- * written when the L2/L3 authoring project starts: a brief encodes pattern-and-interference
- * pedagogy that should be planned against the verified L1 ladder, not ahead of it. en-ar's and
- * hi-en's own L2/L3 lists are still placeholder text (PRD §5) and are not briefed either. The CLI
- * says exactly this when asked for a course or module without a brief.
+ * Four courses are briefed: hi-mr through L2, and en-es, en-ar and hi-en L1 only. The L2/L3
+ * module lists are RATIFIED (#112 closed [Q1] — titles, jobs and sequence in levels.json are
+ * final), and a level's briefs are written when its authoring project starts: a brief encodes
+ * pattern-and-interference pedagogy that should be planned against the verified ladder below it,
+ * not ahead of it. hi-mr's L2 briefs (#295) are the first written to that rule — planned against
+ * the finished L1 index (215 surfaces through L1-M10) and the L1 review chain; hi-mr's L3 waits
+ * for a verified L2. en-ar's and hi-en's own L2/L3 lists are still placeholder text (PRD §5) and
+ * are not briefed either. The CLI says exactly this when asked for a course or module without a
+ * brief.
  *
  * ## Three rules these briefs are written to, learned the hard way on hi-mr
  *
@@ -278,6 +281,88 @@
  * There was no seam-proof fixture to replace: `content/hi-en/modules/` did not exist until #270
  * authored L1-M1 against the brief below, and #273 graduated the course out of `fixture: true`
  * — the fourth course shipping, all four courses briefed here.
+ *
+ * ## hi-mr L2: the four decisions, taken against the finished L1 (#295)
+ *
+ * The first L2 briefed anywhere: ten modules planned against the REAL cumulative L1 index —
+ * 215 surfaces through L1-M10, maxSpan 1, rebuilt and read rather than remembered — and against
+ * the L1 review chain (docs/08 open questions 1–22, docs/15 23–30, docs/19 31–40, docs/23
+ * 41–48). The four decisions below are hi-mr L2's equivalents of hi-en's four, recorded in
+ * `docs/26-hi-mr-L2-brief-decisions.md` and repeated in the notes, because a prompt only ever
+ * shows an author the notes.
+ *
+ * ### 1. Language of fields — L2 keeps L1's split, field for field
+ *
+ * hi-mr writes `rules[].text` and word `note` in English, and every learner-facing line —
+ * `cue`, `literal`, `trap`, `sound`, `usage`, `mistake.why`, `variations[].changed`, `mnemonic`
+ * — in Hindi (Devanagari), with `glossEn` required on every sentence (the L2 is not English, so
+ * #268's exemption does not apply). The English is the tolerated quirk of a course with one
+ * bilingual learner (the hi-en section above forbids copying it INTO hi-en) — and mid-course is
+ * the wrong place to fix a voice: an L2 module whose notes suddenly spoke Hindi would fork the
+ * course's own conventions for zero pedagogy. L2 copies `content/hi-mr/modules/L1-M1.json`'s
+ * split exactly.
+ *
+ * ### 2. Register — L1 taught तू as the default; L2 finally teaches WHEN
+ *
+ * docs/08 Q16 recorded the choice; L2-M1 is the module that pays for it: तू for a friend or
+ * family your own age or younger, तुम्ही for elders, strangers and counters — and every L2
+ * brief states which register its frames speak (M4, M7 and M8 talk to strangers: तुम्ही; M6's
+ * plans are among friends: तू). Marathi has no दीजिए tier — the imperative stops at
+ * तुम्ही + -आ, and politeness above it goes into words (जरा, कृपया) or the future question
+ * (द्याल का?). The schema's register chip has exactly two values, `neutral` and `informal` — so
+ * तू frames chip informal, and the formal end (कृपया, आभारी आहे) is carried by the `usage` line
+ * in words. आपण stays the course's "we" (L1-M10's row): the very-formal "you" job (docs/08 Q17)
+ * is named in prose, never a display subject.
+ *
+ * ### 3. Forms — L2 never edits an L1 file
+ *
+ * The additions-only invariant, made structural: a new SHAPE of an L1 lexeme (माझ्या, घरं,
+ * जायचं, बोला…) is deconstructed in the L2 module that first shows it — its own row, its note
+ * pointing back to the first-teach row — because the bare word's key is L1's forever (first
+ * occurrence wins) and re-verifying shipped L1 files from every L2 issue would churn what the
+ * gate froze. (docs/15 put दुकानाजवळ on दुकान's own L1 row; that was L1 repairing L1 — across
+ * levels the rule flips.) Within L2 the docs/15 discipline continues: a first-teach row lists
+ * the shapes its LEVEL shows (plan the wave, not the module), `[]` stays honest for invariables
+ * and re-teaches, and a spoken contraction and its full form share one row — बोलतोय · बोलतेय ·
+ * बोलतंय · बोलत — the hi-en `don't · do not` precedent. The participle -त is listed as a
+ * single-token form of its verb's row, so the two-word spellings (बोलत आहे, चालत नाही) resolve
+ * word by word — the -त form to the verb's row, आहे/नाही to M1's/M2's — and negation never
+ * needs a new row.
+ *
+ * ### 4. Seams — hi-mr stays single-token, and the owners are decided up front
+ *
+ * maxSpan is 1 and stays 1: Devanagari GLUES what other courses span — postpositions
+ * (स्टेशनला, चहापेक्षा, सगळ्यात), the continuous (बोलतोय), the purpose infinitive (जेवायला) —
+ * so every fused form is a fresh single-token key owned by the module that first shows it, and
+ * the multi-token tool (en-es's `Me llamo`) stays unused. The collisions, each named again in
+ * its module's notes: बसा's row must NOT list the bare stem बस in `forms`, or M4's bus lands on
+ * "sit"; प्यायला-as-purpose is spelled exactly like L1-M5's past प्यायला, whose row owns the
+ * key, so the -आयला frame is shown on जेवायला/खायला and writes around it; या (M1) carries two
+ * jobs in one note — "come (polite)" and the invite particle after -ऊ (जाऊ या, M6) — the hi-en
+ * do-row precedent; कोण (M2) and कोणता (M9) are sibling keys whose notes cross-reference;
+ * proper nouns (रोहन, पुणे, पुण्याला) never index (#61), so every direction anchors on a common
+ * noun. L2 also pays L1's three recorded debts — दे (docs/15's M10 note) in M1, the counting
+ * set (open question 28) across M5's table and M6's clock, and बोलणे (open question 29) in M7 —
+ * while the three pinned L1 sweep misses (प्रिया, पाच, बोललो) STAND, because a module's index
+ * is cumulative through itself and no L2 row reaches back into an L1 reader's screen. And what
+ * first-occurrence-wins takes away, it also settles: आम्ही can never get a row of its own
+ * (open question 23) — the आपण row keeps teaching the split.
+ *
+ * ### Why the hi-mr L2 ladder teaches what it teaches
+ *
+ * The jobs are levels.json's, mirrored verbatim; the brief adds which Hindi→Marathi delta each
+ * job carries, sequenced so each pressure point lands in the module whose job cannot be done
+ * without it: the two-step imperative and the आप→आपण trap in M1 (a request is addressed, and
+ * must pick a register); तो/ती/ते and आहेत in M2 (describing a person forks Hindi's one वह by
+ * gender); the full agreement paradigm — plurals at last — in M3; the place -ला and the
+ * instrumental -ने in M4; मिळेल and the guest script in M5; the -ऊ या suggestion and
+ * जमेल/चालेल in M6; the continuous -तोय in M7 (a phone call happens NOW); the -त नाही negative
+ * and the मिळणे/सापडणे split in M8; -पेक्षा, सगळ्यात and की/किंवा in M9; and the third-person
+ * ergative — त्याने/तिने, the ने withheld since L1-M5 — in M10, where a past-tense account
+ * cannot dodge it. Kept deliberately OUT of L2: the genitive as a system (M2 shows one -चं
+ * frame; L3 owns the rest), conditionals and reported speech (L3-M4/M5 per levels.json), the
+ * passive, and the -ऊन converb — none of the ten jobs needs them. Bounds climb 8 → 10; pools
+ * are authored to 12, the course's shipped size (#305).
  */
 
 /** PRD §5 module budget: at most 25 new words per module, every course, every level. */
@@ -444,6 +529,223 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         'Keep turns everyday and symmetric: greeting → wellbeing → plan; want → reason → buy.',
       ],
       maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M1': {
+      id: 'L2-M1',
+      title: 'Asking politely',
+      job: 'Requests, thanks, apologies in the right register',
+      patterns: [
+        'जरा/कृपया + N + द्या/करा',
+        'मला + N + द्याल का?',
+        'तू: दे · कर · ये — तुम्ही: द्या · करा · या',
+        'माफ करा, <statement>',
+        'धन्यवाद · आभारी आहे',
+      ],
+      notes: [
+        "REGISTER, decided for the whole level and repeated here because the prompt only ever shows an author the notes (the full decision record is docs/26-hi-mr-L2-brief-decisions.md; language of fields is unchanged from L1 — rules[].text and word note in English, every learner-facing line in Hindi in Devanagari, glossEn on every sentence): L1 taught तू as the everyday default (docs/08 Q16); this module teaches WHEN. The law: तू for a friend or family your own age or younger, तुम्ही for elders, strangers and counters. Author the same request in both registers side by side, chip the तू lines informal (the schema's only non-neutral register value), and carry the formal end — कृपया, आभारी आहे — in the usage line, because there is no formal chip.",
+        "The imperative pair is the grammar of the module: informal = the bare stem (दे · कर · ये — L1 never taught दे: docs/15 recorded that debt on M10's द्या row, and it is paid here), polite = stem + -आ (द्या · करा · या · बसा; vowel stems contract, देणे → द्या). Hindi climbs three steps — दे → दो → दीजिए — and Marathi has TWO: there is no -इए tier, and reaching for one (*द्याजी, *करिये) is the Hindi habit to star. Politeness above तुम्ही + -आ goes into words (जरा, कृपया) or the future question, never into a new verb form.",
+        'THE interference of the module, and the course\'s best false friend: Hindi आप does not map to आपण. आपण looks like आप and is the course\'s "we" — L1-M10\'s row, whose note teaches the inclusive/exclusive split — so *आपण द्या meant as "आप दीजिए" misfires twice. The polite "you" is तुम्ही (M2\'s row, आहात and all). आपण as a very formal "you" (आपण कुठे राहता?) is real Marathi — docs/08 open question 17 — but stays OUT of L2 displays; a usage line may name it. Tag the reach interference and spend a mistake on it.',
+        'The softeners: जरा ("just / a moment\'s worth" — जरा पाणी द्या is the everyday please), कृपया (formal please — notice-board and announcement register; say so in usage), and the polite-future question मला … द्याल का? ("will you give?" — the तुम्ही cell of देणे\'s future, Hindi देंगे क्या?). A request shaped as a question is a move Hindi and Marathi share — transfer — so the work is the new cell द्याल, not the idea.',
+        'Apology and thanks: माफ करा ("sorry / excuse me" — माफ is the new word, करा is this module\'s polite imperative doing real work: write the करा row\'s note true of माफ करा and of कृपया मदत करा — M8\'s help line — alike); धन्यवाद recycled from L1-M2; आभारी आहे ("[I] am grateful" — the formal Pune thanks, आहे recycled from L1-M1) as the register step above it.',
+        "INDEX SEAM: दे, करा, या, बसा, द्याल, माफ, जरा, कृपया, आभारी are fresh keys; द्या stays L1-M8's row (a re-teach here — its note is already polite). या is taught as \"come (polite)\" AND as the invite particle a verb's -ऊ cell takes — जाऊ या, M6's frame — ONE row, note true of both jobs now (the hi-en do-row precedent), or M6's suggestions land on a \"come\" note that is false of them. बसा's row lists no informal partner: the bare stem बस is spelled exactly like the vehicle M4 teaches, and forms entries become index keys — the बस key stays the vehicle's.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M2': {
+      id: 'L2-M2',
+      title: 'Describing people',
+      job: 'Appearance, character, relationships',
+      patterns: [
+        'तो/ती/ते + Adj/N + आहे/आहेत',
+        'ती कोण आहे? — ती माझी + N + आहे',
+        'हा/ही माझा/माझी + N + आहे',
+        'माझ्या + N-oblique-चं + नाव + <name> + आहे',
+      ],
+      notes: [
+        'तो · ती · ते — the he/she split Hindi\'s one वह never makes, and THE interference of the module: वह serves a man and a woman alike, Marathi forks तो (he / that-m) · ती (she / that-f) · ते (it / that-n), and picking तो for a woman is the mistake to spend on. L1 dodged pronouns entirely — docs/19 open question 40 shows रोहन repeated because L1 taught no तो; the debt is paid here. The same three words also POINT — ते पुस्तक "that book" — the far twins of L1-M8\'s हा/ही/हे, and M3 will lean on that job: write each note true of both.',
+        "आहेत — the plural and respect copula L1 kept out (docs/19 call 4): ते माझे आईवडील आहेत. The respect-plural is Hindi's own habit (पिताजी हैं → वडील … आहेत): transfer, a rest point — say so. In real family speech वडील rides the respect-plural (ते) while आई stays singular-intimate (ती माझी आई) — an honest asymmetry worth one usage line, not a rule.",
+        "The family set carries the module: भाऊ, बहीण, आई, वडील, मुलगा, मुलगी, मित्र, मैत्रीण — and मोठा/लहान do double duty exactly as Hindi's बड़ा/छोटा: elder AND big (मोठा भाऊ = बड़ा भाई). One row each, the note true of both jobs, because M3 inherits these keys for size.",
+        'Person-adjectives split by ending, previewing M3\'s law: उंच, लहान, हुशार end in a consonant and never bend; चांगला bends (चांगला मुलगा · चांगली मुलगी). And the one genuinely Hindi-less person: मूल ("child") is NEUTER — हे मूल हुशार आहे — a person in the gender Hindi does not have, L1-M1\'s माझं interference with a face. Tag it.',
+        "The genitive, ONE frame only: माझ्या भावाचं नाव रोहन आहे — Hindi's का/की/के fused onto the owner (भाई का → भावाचं), agreeing with the thing OWNED exactly as का does: the rule transfers; the fusion and the oblique bend (भाऊ → भावा-, माझा → माझ्या) are the delta, the same bend the learner met in घरात/टेबलावर (L1-M7). Keep it to this frame — the genitive as a system is L3's — and note that a proper-noun owner (रोहनचं) never indexes (#61), so the taught row is the common-noun one (भावाचं).",
+        "INDEX SEAM: तो, ती, ते, आहेत, कोण, माझ्या, भावाचं and the family nouns are fresh keys. कोण asks who and sits where the answer sits (ती कोण आहे? — the काय/कुठे law of L1-M2/M7); M7's phone opener recycles it, and M9's कोणता (\"which\") is its sibling key — cross-reference, do not merge. माझ्या and भावाचं are new SHAPES of L1 words: per the level's forms policy (docs/26) they are deconstructed here, their notes pointing back to L1-M1's माझा and this module's भाऊ — no L1 file is edited.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M3': {
+      id: 'L2-M3',
+      title: 'Describing things',
+      job: 'Size, colour, quality — adjective agreement at length',
+      patterns: [
+        'हा/ही/हे + N + Adj + आहे',
+        'ते/ती + N-pl + Adj-pl + आहेत',
+        'मला + Adj + N + हवा/हवी/हवं',
+        'हा N + Adj आहे, तो + Adj आहे',
+      ],
+      notes: [
+        'The law, and it is Hindi\'s own law: adjectives ending in -आ bend, everything else stands still — मोठा bends, लाल / स्वस्त / सुंदर / उंच never do, exactly as बड़ा bends and लाल does not. TRANSFER; say so, a rest point. Then the delta — WHICH endings. Singular: -ा (m) · -ी (f) · -ं (n, the spoken house style: मोठं, not मोठे — docs/08 Q15). Plural: -े (m) · -्या (f) · -ी (n). "At length" is the job: this module walks the whole grid where L1 only flashed corners of it (बरा/बरी, अर्धा/अर्धी/अर्धं).',
+        "THE interference, spend the mistakes here: the feminine plural. Hindi's -ी serves one and many (बड़ी पिशवी, बड़ी पिशवियाँ); Marathi bends it to -्या — मोठी पिशवी but मोठ्या पिशव्या — so *मोठी पिशव्या is the Hindi-shaped error. And the neuter plural -ी looks exactly like the feminine singular: मोठी खोली (one big room, f) beside मोठी घरं (big houses, n-pl) — the same मोठी, two jobs. Show the pair.",
+        "Noun plurals ride the same seam, and L1-M8 already seeded both precedents in its forms lists: रुपया → रुपये (m) and केळं → केळी (n). The new plural shapes of L1 nouns — घरं, खोल्या, पिशव्या, पुस्तकं, बाटल्या — are deconstructed HERE, each row pointing back to its L1 first-teach (forms policy, docs/26): the bare word's key stays where L1 put it.",
+        'Colours are the vocabulary spend, and they rehearse the split: काळा, पांढरा, निळा, हिरवा, नवा, जुना bend; लाल stands still (Hindi agrees with itself here — लाल is invariable in both languages). स्वस्त ("cheap", invariable) arrives as महाग\'s partner — L1-M8\'s महाग recycled into contrast pairs: ही भाजी स्वस्त आहे, ती महाग आहे.',
+        "Quality verdicts recycle the course's own words attributively — छान (L1-M9), महाग (L1-M8), बरा (L1-M2) — and the want-frame from L1-M3 turns description into choosing: मला मोठी पिशवी हवी. The comprehension pool's job is the grid: same noun, wrong ending, which line is right.",
+        "INDEX SEAM: every bent shape is a fresh single-token key. Within the level, a first-teach adjective row lists the shapes the LEVEL shows (मोठा's row was opened by M2 — its forms carry the six cells this module needs; the paradigm has ONE home, docs/15's discipline). हा/ही/हे stay L1-M8's rows and तो/ती/ते stay M2's — this module re-teaches the pointing pair and owns neither.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M4': {
+      id: 'L2-M4',
+      title: 'Getting around',
+      job: 'Directions, transport, asking the way',
+      patterns: [
+        'N-ला कसं जायचं?',
+        'डावीकडे/उजवीकडे वळा · सरळ जा',
+        'मी N-ने जातो/जाते',
+        'N कुठे आहे? — इथे/तिथे आहे',
+        'जरा सांगा, …?',
+      ],
+      notes: [
+        'The place -ला, glued: स्टेशनला जा, दुकानाला जा — going TO a place takes -ला on the noun, with the same oblique bend the learner owns from L1-M7 (दुकान → दुकाना-, the घरात/दुकानात law pointed at a new suffix). THE interference: Hindi goes bare (स्टेशन जाओ), so *स्टेशन जा is the Hindi-shaped miss — star it and spend a mistake. घरी (L1-M5) is the one exception already taught: home takes -ई, not -ला.',
+        'The instrumental -ने: बसने, रिक्षाने, गाडीने — "by bus", Hindi\'s free-standing से glued on (बस से → बसने), so *बससे is the shape to star. Tag delta, and keep the note to "by/with": -ने has a second job in the past that M10 owns — do not open it here.',
+        'Directions are the vocabulary spend: डावीकडे / उजवीकडे (the -कडे "toward" side-words), सरळ ("straight" — an invariable doing adverb work), पुढे / मागे, इथे / तिथे (Hindi यहाँ/वहाँ), and the imperative pair from M1 on the road verbs: वळा ("turn", वळणे), थांबा ("stop/wait", थांबणे), जा (everyday Marathi says जा to तू and तुम्ही alike — the one road verb where the registers share a shape; say so). This module talks to strangers: तुम्ही frames throughout, the register law of M1 in the field.',
+        "कसं जायचं? — \"how does one get there\": the -आयचं frame from L1-M3 (प्यायचा's family) pointed at a new job, impersonal and everyday, neuter default कसं (L1-M2's कसा row lists it). जायचं is a new shape of an L1 lexeme — its row points back to जाणे's family (L1-M6's जाणार, docs/26 forms policy). Asking is M1's kit recycled: जरा सांगा, स्टेशनला कसं जायचं? — सांगणे (\"tell\") opens here as the ask-the-way verb; M7 reuses it for messages.",
+        "Transport nouns: बस, रिक्षा, गाडी (the everyday word for a car and a train alike — the cue says which the sentence means), स्टेशन. INDEX SEAM: the बस key stays the vehicle's — Marathi's own \"sit!\" (the informal of M1's बसा) is spelled the same, which is exactly why M1's बसा row lists no bare stem; a usage line may name the coincidence, display never shows sit-बस. Proper place-names (पुणे, पुण्याला, मुंबई) ride as unindexed proper nouns (#61, the प्रिया precedent) — anchor every indexed direction on a common noun (स्टेशनला, दुकानाला, बागेत).",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M5': {
+      id: 'L2-M5',
+      title: 'Food and hosting',
+      job: 'Ordering, offering, refusing without offence',
+      patterns: [
+        'मला + N + मिळेल का?',
+        'आणखी + N + घ्या',
+        'तुम्हाला + N + हवा/हवी/हवं का?',
+        'नको, धन्यवाद · पुरे',
+        'जेवायला या',
+        'num + N-pl + द्या',
+      ],
+      notes: [
+        'Ordering without ordering anyone around: चहा मिळेल का? — मिळणे ("get / be available") in its -ईल cell (L1-M6\'s खाईल family), the Hindi मिलेगा? frame — transfer of the move, so the work is the verb. Write मिळणे\'s note true of its HALF of Hindi\'s मिलना only: get/receive/be-available. The other half — find-after-searching — is सापडणे, M8\'s row; a note here that claims "find" poisons that seam (docs/26).',
+        'The host\'s script: घ्या ("take / have some" — घेणे\'s polite imperative by M1\'s law, Hindi लीजिए), आणखी ("more" — आणखी भात घ्या; Hindi और → आणखी, and Hindi\'s other और, "and", is L1-M2\'s आणि: one Hindi word, two Marathi ones, the reverse of the usual trap), बसा recycled from M1, and the offer question in the तुम्ही register: तुम्हाला आणखी पोळी हवी का? — तुम्हाला is the तुम्ही dative the मला/तुला family lacked (new shape, row points back to L1-M2\'s तुम्ही).',
+        'Refusing without offence IS the job title: नको does the heavy lifting (L1-M3\'s row — "नहीं चाहिए in one word"), softened by the words around it: नको, धन्यवाद · आता नको ("not now", आता from L1-M3) · पुरे ("enough, I\'m done" — the table word; Hindi\'s बस्स → पुरे, and a Hindi speaker\'s "बस!" at a Marathi table is the sit/vehicle homograph, not "enough": one usage line, gently). पोट भरलं ("[my] stomach is full" — the idiom that ends the refusal dance: भरलं agrees with पोट, L1-M5\'s law in one polite sentence).',
+        'The Marathi table: जेवणे — ONE verb for "eat a meal" where Hindi says खाना खाना: मी जेवलो/जेवले, and जेवलात का? ("have you eaten?" — the polite past -त cell from L1-M5\'s केलंत, THE Maharashtrian care-question). जेवण (the meal), पोळी (the everyday word where Hindi says रोटी — the word swap that marks a Pune table; delta), गोड ("sweet", invariable by M3\'s law — गोड आहे is the compliment). The invitation: जेवायला या — the purpose infinitive -आयला (Hindi खाने के लिए in one glued word) with M1\'s या doing its come-job.',
+        "Counting the order pays docs/15 open question 28's debt: तीन, चार, पाच enter as rows (L1-M8 taught only the shop set — दोन, दहा, वीस, पन्नास, शंभर — and पाच stayed a pinned miss); चार पोळ्या द्या puts M3's feminine plural to work (पोळी → पोळ्या on one row). M6's clock takes the next instalment.",
+        'INDEX SEAM: the -आयला frame is shown on जेवायला and खायला ONLY — प्यायला-as-purpose is spelled exactly like L1-M5\'s past प्यायला (मी चहा प्यायला), whose row owns the key forever: a purpose-प्यायला display would land the learner on "drank (m)", so write around it. मिळेल, घ्या, आणखी, पुरे, जेवायला, खायला, तुम्हाला, the जेवलो family, जेवण, पोळी, पोळ्या, गोड, पोट, भरलं, तीन, चार, पाच are fresh keys; द्या and नको stay L1\'s rows.',
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M6': {
+      id: 'L2-M6',
+      title: 'Making plans together',
+      job: 'Invitations, suggestions, settling a time',
+      patterns: [
+        'V-ऊ या! (जाऊ या · भेटू या · करू या)',
+        'तुला उद्या जमेल का?',
+        'किती वाजता? — सात वाजता',
+        'उद्या चालेल का? — चालेल!',
+        'येणार का? / येशील का?',
+      ],
+      notes: [
+        'The suggestion frame is the one loud thing: verb -ऊ + या = "let\'s —" (जाऊ या · भेटू या · करू या). The learner owns every piece — the -ऊ cells from L1 (जाऊ, येऊ, भेटू) and M1\'s या, whose note already carries this second job — so the lesson is assembly, not new forms. The pair to show: bare -ऊ का? asks (जाऊ का? — "shall we?"), -ऊ या proposes (जाऊ या — "let\'s"). Hindi folds both into चलें/करें; the two-word Marathi split is the delta, and करू (करणे\'s -ऊ cell) is the one new key the frame needs.',
+        "जमणे — the can-make-it verb Hindi does not quite have: तुला उद्या जमेल का? · मला जमणार नाही, माफ करा — the dative frame the course has run on since L1-M1 (मला/तुला) with -ईल/-णार cells. Tag delta and let it carry the polite refusal: जमणार नाही is how a plan is declined without offence (M5's art, applied to time).",
+        "चालेल — \"that works\": उद्या चालेल का? — चालेल! Hindi's चलेगा, twin for once — transfer — and the settling word of the module. Write चालणे's note true of the VERB, not just the idiom: M8 negates the same lexeme for things that do not work (चालत नाही), and that use inherits this row's story (docs/26 seam).",
+        "The clock: किती वाजता? — सात वाजता (Hindi सात बजे → सात वाजता, the same वाज्/बज् root: delta of shape, not of idea; किती recycled from L1-M8). The clock numbers सहा, सात, आठ, नऊ join the counting set — docs/15 open question 28's second instalment, after M5's table — and दहा was L1-M8's. परवा (\"day after tomorrow\") joins उद्या if a sentence needs it.",
+        "This module speaks तू — plans are among friends, the first sustained informal module after M1's law: येशील का? (the तू future cell L1-M6's forms listed but never showed — docs/15 open question 25 asked whether showing it helps or floods; here it earns its display), तुला जमेल का?, and the negative future -णार नाही, which L1 never wrote: नाही simply follows the -णार form, nothing new to conjugate — a rest point, say so. Chip the तू lines informal, honestly.",
+        "INDEX SEAM: करू, जमेल, जमणार, चालेल, वाजता, सहा, सात, आठ, नऊ, परवा are fresh keys. जाऊ, येऊ, भेटू stay L1's rows (M6/M10) — the -ऊ या frame ADDS no key for या (M1's row answers, its note already true of the invite job) and re-teaches the cells it borrows. भेटू या is two taught words doing the module's title; the pool should test -ऊ का? against -ऊ या.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M7': {
+      id: 'L2-M7',
+      title: 'On the phone',
+      job: 'Calls and messages — openings, closings, taking a message',
+      patterns: [
+        'हॅलो, कोण बोलतंय? — मी + <name> + बोलतोय/बोलतेय',
+        'N + आहे का? — नाही, तो/ती + V-तोय/-तेय',
+        'निरोप सांगू का?',
+        'मी नंतर फोन करतो/करते',
+        'मी फोन ठेवतो/ठेवते',
+      ],
+      notes: [
+        'THE grammar of the module: the continuous -तोय / -तेय / -तंय — बोलत आहे said as one word (बोलतोय m · बोलतेय f · बोलतंय n), Marathi\'s "right now" tense, which L1-M4 deliberately fenced off ("keep every sentence a daily habit"). Hindi बोल रहा हूँ / रही हूँ → one glued form: the gender rides the ending exactly as रहा/रही carried it — transfer of the idea, delta of the shape. Display writes the spoken contraction (the house style that writes माझं, docs/08 Q15) and the row\'s forms list the full family INCLUDING the bare participle: बोलतोय · बोलतेय · बोलतंय · बोलत — so the formal two-word spelling बोलत आहे resolves word by word, बोलत to this row and आहे to L1-M1\'s (docs/26 forms policy; the hi-en don\'t · do not precedent).',
+        "The opening script: हॅलो, कोण बोलतंय? — the unknown speaker gets the NEUTER (कोण recycled from M2): not rude, just unknown — say so, because Hindi's कौन बोल रहा है has no ungendered cell to reach for, and the Hindi speaker otherwise guesses a gender at a stranger. The answer names yourself: मी रोहन बोलतोय (the proper noun rides unindexed, #61). This module talks to strangers and elders: तुम्ही register, M1's law.",
+        "Taking a message is the continuous at work: आई जेवतेय (\"she's eating\" — M5's जेवणे in the new tense) · वडील बोलतायत (the respect-plural cell; M2's आहेत logic on a verb) — and the offer rides M6's frame: निरोप सांगू का? (\"shall I pass on a message?\" — सांगणे from M4 in its -ऊ cell, निरोप the new noun). निरोप द्या recycles L1-M8's द्या.",
+        'Closings are the habitual doing promise work: मी नंतर फोन करतो ("I\'ll call later") · मी फोन ठेवतो ("I\'m hanging up") — Marathi, like Hindi (रखता हूँ, करता हूँ), uses the present for the about-to: the -तो the learner has owned since L1-M4 in a new JOB, no new form. Delta of use, not of shape — say exactly that, it is the cheapest lesson in the level. ठेवणे ("put/keep") is the one new verb; फोन and नंतर are L1-M7/M4\'s rows.',
+        "बोलणे itself is the debt this module pays: docs/15 open question 29 recorded that L1-M9's variation leaned on बोललो with the verb taught nowhere — one of the three pinned sweep misses. The lexeme's first rows open here. The pinned miss STANDS: a module's index is cumulative through itself, so L1-M9's reader still meets बोललो unresolved (the content-build test keeps pinning exactly that); what changes is that from this rung upward, बोल- surfaces resolve. State it precisely — additions-only, across levels.",
+        "INDEX SEAM: हॅलो (one token — the ॅ is the English-vowel sign; hi-mr stays single-token even on the phone), बोलतोय-family, बोलत, निरोप, ठेवतो-family, सांगू, जेवतेय/जेवतोय, बोलतायत are fresh keys. कोण stays M2's row; फोन stays L1-M7's (its note is already the telephone). This is the level's rest module for vocabulary — the tense is the spend; say so and keep the word count low.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M8': {
+      id: 'L2-M8',
+      title: 'When something goes wrong',
+      job: 'Problems, asking for help, complaining calmly',
+      patterns: [
+        'माझा/माझी/माझं + N + हरवला/हरवली/हरवलं',
+        'N + चालत नाही',
+        'मला + N + सापडत नाही',
+        'जरा मदत करा · हळू बोला · पुन्हा सांगा',
+        'काम झालं नाही',
+      ],
+      notes: [
+        "THE interference of the module — Hindi's one मिलना is two Marathi verbs, and the wrong one sounds fine to a Hindi ear: मिळणे is get/receive (M5's मिळेल), सापडणे is find-after-looking — मला चावी सापडत नाही (\"can't find my key\"), where Hindi says चाबी नहीं मिल रही. *मला चावी मिळत नाही says the shop is out of keys. Tag interference, spend the mistake here, and keep each verb's note true of its half (M5's mirror seam, docs/26).",
+        "The -त नाही frame — the negation L1 never taught (docs/19 call 4 re-planned around the वाचत/करत stems): verb-त + नाही = \"doesn't / isn't —ing\": फोन चालत नाही (\"doesn't work\" — चालणे, M6's चालेल lexeme, its row's promise kept), पाणी येत नाही, मला सापडत नाही. Two taught pieces — the participle -त as a form on the verb's row (M7's policy) and L1-M2's नाही — and NO agreement to compute in this frame: a rest point inside a stressful module, say so.",
+        "Lost, forgot, ran out — L1-M5's crown recycled as the three calm complaints: माझा फोन हरवला · माझी पिशवी हरवली · माझं पुस्तक हरवलं (हरवणे — the past agrees with the lost thing, the exact gender law of L1-M5 with M1's possessive in front; Hindi खो गया/गई agrees the same way — transfer of law, delta of verb); पैसे संपले · चहा संपला · दूध संपलं (संपणे \"run out\" — the kitchen's word, same law; पैसे is docs/19 call 4's last re-planned word, landed at last); मी विसरलो/विसरले (\"I forgot\" — subject agreement, गेलो's class). Keep विसरणे to the bare and infinitive frames (मी सांगायला विसरलो) — whether its object version agrees like M5's transitives is flagged for the native pass in docs/26, not asserted.",
+        'Asking for help is M1\'s register kit at the moment it exists for: जरा मदत करा ("please help" — मदत the new noun, करा M1\'s row), माफ करा for interrupting, हळू बोला ("speak slowly") and पुन्हा सांगा ("say it again") — the learner\'s own survival lines, the sentences this app exists to hand over; say so. बोला is the polite cell of M7\'s बोलणे by M1\'s law — a new shape, its own row pointing at M7\'s family (docs/26); हळू and पुन्हा are the new adverbs. This module speaks तुम्ही: counters, strangers, offices.',
+        "काय झालं? — \"what happened / what's wrong\": zero new words (L1-M2's काय + L1-M9's झालं), the module's opener. The calm complaint is the negated past: काम झालं नाही (\"the work didn't happen\") — the frame L1-M9's own variation previewed (बोललो नाही, the pinned exemption), now taught properly: नाही after the past form, nothing else moves. अडचण (\"difficulty\", f) rides L1-M9's feeling-frame: अडचण आली — the trouble COMES to you, कंटाळा आला's twin.",
+        "INDEX SEAM: हरवला/हरवली/हरवलं/हरवले, संपला/संपली/संपलं/संपले, विसरलो/विसरले, सापडत, चालत, येत, मदत, हळू, पुन्हा, बोला, चावी, पैसे, अडचण, सांगायला are fresh keys — the -त participles land as forms on their L2 verbs' rows (सापडणे's, चालणे's via M6, येणे's pointing at L1-M6's family). चालत's row-of-origin is M6's चालेल: same level, one row, forms चालेल · चालत (docs/26). काम, काय, झालं, नाही all stay L1's rows.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M9': {
+      id: 'L2-M9',
+      title: 'Comparing and choosing',
+      job: 'More, less, better — stating a preference',
+      patterns: [
+        'N-पेक्षा + N + जास्त/कमी + Adj + आहे',
+        'मला + N-पेक्षा + N + जास्त + आवडतो/आवडते/आवडतं',
+        'चहा की कॉफी?',
+        'सगळ्यात + Adj + N',
+        'कोणता/कोणती/कोणतं + N + हवा/हवी/हवं?',
+      ],
+      notes: [
+        'THE delta: -पेक्षा, "than", glued: चहापेक्षा कॉफी मला जास्त आवडते — Hindi\'s free-standing से becomes a suffix on the compared thing (चाय से ज़्यादा → चहापेक्षा जास्त), L1-M7\'s glue-law (घरात, टेबलावर) doing comparison, oblique bend included (दूध → दुधापेक्षा). *चहा से / *चहासे is the Hindi shape to star. The sentence\'s architecture transfers — both languages say "X-than Y more" — so the fusion is the whole lesson.',
+        "जास्त and कमी — more/less, ज़्यादा/कम's twins, invariable by M3's law (no -आ, no bending). Neither language has an -er/-est: comparison is these words plus -पेक्षा, so once the suffix lands the system is TRANSFER — a rest-point module before M10, say so. \"Better\" is built, not a word: X-पेक्षा चांगला (M2's चांगला, agreeing by M3's grid), X-पेक्षा छान (L1-M9's छान, invariable).",
+        "सगळ्यात — the superlative: \"in all\" = -est: सगळ्यात छान, सगळ्यात स्वस्त भाजी, सगळ्यात मोठं दुकान — Hindi सबसे → सगळ्या + त, L1-M7's own -त doing superlative duty: the learner can PARSE the word they are handed; point it out. Recycles M3's grid and M8-L1's shop.",
+        "की — the choosing question's \"or\": चहा की कॉफी? — and in a STATEMENT \"or\" is किंवा (चहा किंवा कॉफी चालेल — M6's चालेल). Hindi's one या is two Marathi words split by sentence TYPE: the module's pair-lesson, L1-M9's कारण/म्हणून device reborn at the same rung — build the pairs, make the pool test the choice. SEAM: की will later also report speech (तो म्हणाला की… — L3-M5's job); write की's note as the question-or WITHOUT fencing that future job out (no \"only\").",
+        'कोणता / कोणती / कोणतं — "which one", agreeing like Hindi\'s कौन-सा/-सी (transfer of agreement, delta of shape): कोणता चहा हवा? कोणती भाजी हवी? — M2\'s कोण ("who") is its sibling key: cross-reference the notes, never merge the rows. The answer points with L1-M8\'s हा/ही/हे — recycled, no new key.',
+        "INDEX SEAM: hi-mr stays single-token, so every -पेक्षा form is its own fresh key (चहापेक्षा, कॉफीपेक्षा, दुधापेक्षा…) — each deconstructed in this module with its note pointing back to the base noun's L1 row (bare पेक्षा never stands free in the course and gets no key). जास्त, कमी, सगळ्यात, की, किंवा, दोन्ही (if a sentence needs \"both\") and the कोणता set are the module's other keys; the preference verdicts recycle the course's oldest frames — आवडतो (L1-M1), हवा (L1-M3), चालेल (M6) — which keeps the new-word spend small before M10.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M10': {
+      id: 'L2-M10',
+      title: 'Telling what happened',
+      job: 'A four-sentence account in the past',
+      patterns: [
+        'आधी + <past>. मग + <past>. शेवटी + <past>.',
+        'त्याने/तिने + N + V-ला/-ली/-लं',
+        'मी + N-ला + भेटलो/भेटले',
+        '<account> → मग काय झालं?',
+      ],
+      notes: [
+        'The format: each item is an ACCOUNT of four short sentences — levels.json\'s job, L1-M10\'s 2–3-sentence turns grown up into the level\'s written exit — and the per-sentence bound applies to each sentence inside it. The account runs on the sequencers: आधी ("first"), मग ("then" — Hindi फिर; L1-M4\'s नंतर is its twin and stays honest, but मग is what speech says), शेवटी ("in the end"). मग काय झालं? — the listener\'s question that keeps a turn alive — is zero new words by M8\'s precedent.',
+        'The grammar debt of the whole course comes due — ने. L1-M5 said only that मी and तू never take it, and docs/08 open question 20 asked when the course would admit the rest; the answer is here: the third-person past-transitive takes -ने — तो → त्याने, ती → तिने, ते → त्यांनी — and the verb STILL agrees with the object, the law unchanged since L1-M5: त्याने चहा प्यायला · तिने भाजी केली · त्यांनी काम केलं. For once the Hindi habit HELPS — उसने/उन्होंने is the same architecture: transfer — and the ने the learner has been suppressing since M5 finally lands where Marathi wants it. The delta is only the shapes (त्या-, ति-), and M4\'s -ने ("by bus") may now be named as the same ending\'s other job.',
+        "Meeting people: मी रोहनला भेटलो (\"I met Rohan\") — भेटणे takes -ला on the person met (M4's place -ला extended to people; Hindi's से मिला makes *रोहनसे the shape to star) and its past agrees with the MEETER, not the met: मी भेटलो · ती भेटली — भेटणे sits in गेलो's subject-agreeing class even with a -ला complement. The भेटलो family's row points at L1-M10's भेटू (docs/26 forms policy).",
+        'सांगितलं — सांगणे\'s past ("he told me": त्याने मला सांगितलं — ergative + dative + neuter default in one everyday line); the participle is irregular (सांगितलं, never *सांगलं) — its row says so and points at M4\'s सांगा.',
+        "New-word spend is the smallest of the level, the M10 tradition: the त्याने/तिने/त्यांनी set, the three sequencers, the भेटलो family, सांगितलं — everything else must come from L1 and L2-M1…M9 (हरवलं and संपले from M8, जेवलो from M5, गेलो/आलो/झालं from L1). A fourth sentence that needs a new noun probably wants rewriting; say so. Past tense only — L1-M5's envelope at full width: transitive object-agreement, intransitive subject-agreement, ergative third person.",
+        "Register closes where M1 opened (docs/26): an account speaks the register its listener earns — a friend hears तू-frames and the informal chip, an elder's version swaps them out — and a good final item shows the SAME event told both ways, the level's two lessons (register and the past) in one pool entry.",
+      ],
+      maxWordsPerSentence: 10,
       newWordCap: NEW_WORD_CAP,
     },
   },

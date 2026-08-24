@@ -303,7 +303,7 @@ export function generatePrompt(options: GenerateOptions): PromptReport {
         COURSE_BRIEFS,
       ).join(
         ', ',
-      )} (L1 only); L2/L3 briefs and the remaining courses' module lists are pending (PRD §5)`,
+      )}; a level's briefs are written when its authoring project starts, and the remaining courses' L2/L3 module lists are pending (PRD §5)`,
     ]);
   }
   const brief = briefs[moduleId];
