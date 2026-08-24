@@ -220,6 +220,26 @@ face, not Mukta** — Mukta's `unicode-range` stops at U+00FF and it has no glyp
 marks fall through by design. Mixed-face, not tofu; the options are a face decision
 (docs/04-font-notes.md §4.1).
 
+**The surface pass (#283, 2026-08-24) closed the gap between what en-ar teaches and what it
+shows** — the third of the family, after en-es's #281 and hi-mr's #282, and the only one with no
+paradigm half: no en-ar module ships `forms: []` across the board, so only the gap list moved.
+Eleven surfaces appeared in variation lines and were taught by no word row — above all the
+**feminine second-person …-īn cluster** every "to a woman" line displays. Eight now resolve, each
+on a row of the same word (`tuḥibbīn` on M1's uḥibb, `tadhhabīn` on M4's adhhab, `sa-tadhhabīn` on
+M6's sa-adhhab, `tatakallamīn` on M10's atakallam, `masāʾ al-khayr` whole on M2's greeting row,
+`sayyāratān` on M8's sayyārāt, `bi-riyāl` and `sa-ashtarī` on their M8 rows), and two are recorded
+exemptions: `marḥaban` (a sibling greeting sharing no word with its row — the en-es
+`buenas tardes` ruling) and `ṣabāḥ an-nūr`, the reply the **additions-only invariant itself locks
+out** — indexing it would hand its hyphen part `an` to M2 and steal M3-S03's own key, so it stays
+prose (module rule 5), with bare `ṣabāḥ` a forward reference that resolves from M4 on.
+**Additions only**: the en-ar index grew 275 → **283** surfaces with 0 keys lost and 0 keys moved.
+`tools/content-build.test.ts` now sweeps every en-ar variation line against its own module's index
+and pins the six remaining misses (two proper nouns, the two exemptions' four tokens), so a new
+variation that resolves nowhere fails the suite — which is what #287's third-variation pass
+inherits, with the four …-īn keys it wants already in the index. The reasoning, row by row, is
+`docs/16-llm-review-en-ar-surfaces.md`, and its 8 open questions join the 61 across the three
+earlier en-ar reviews.
+
 **hi-en ships (#273, 2026-08-24) — the product has four courses, and the fourth is the first
 whose L2 is English.** Ten L1 rungs authored against ten briefs (#269 — `tools/course-briefs.ts`,
 "hi-en: the four decisions a brief must settle": Hindi in every teaching field, no `glossEn`,
