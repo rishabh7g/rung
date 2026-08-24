@@ -125,7 +125,23 @@ backed by an **LLM linguistic review** (`docs/07-llm-review-L1-M1-M5.md`,
 **The native-speaker gate is a separate, stricter bar and is still unmet.** The three
 issues that tracked it (#64, #110, #111) were closed by the owner on 2026-08-13, so the
 **22 open questions in `docs/08-marathi-third-review.md`** — which supersede the two
-earlier lists — are the only remaining record of what a native reviewer still owes.
+earlier lists — plus the **8 added by `docs/15-llm-review-hi-mr-surfaces.md`** (30 in
+all) are the only remaining record of what a native reviewer still owes.
+
+**The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
+shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
+no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on
+M6's जाणार row, `येऊ` with the plain-future persons on M6's येईन row, `आम्ही` beside `आपण` on
+M10's row — the M2 तू/तुम्ही precedent), and two are recorded exemptions that would only resolve by
+landing on a row headed by a different word (`पाच`, a sibling number; `बोललो`, a verb L1 never
+teaches). M6 and M10 got their honest paradigm answer: three M6 rows now carry shape lists, and
+every `[]` left behind is a per-row decision on the record — M6's own rule says -णार never
+changes, and M10's re-teach rows leave each paradigm on the first-teach row that owns its index
+key. **Additions only**: the hi-mr index grew 206 → **215** surfaces with 0 keys lost and 0 keys
+moved. `tools/content-build.test.ts` now sweeps every hi-mr variation line against its own
+module's index and pins the three remaining misses (the proper noun `प्रिया` and the two
+exemptions), so a new variation that resolves nowhere fails the suite. The reasoning, row by row,
+is `docs/15-llm-review-hi-mr-surfaces.md`.
 
 **No fixture course again (#273, 2026-08-24).** All four courses ship and no module in the repo
 is unverified, so `npm run dev` and `npm run build` contain the same modules — the two

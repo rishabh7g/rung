@@ -1171,6 +1171,85 @@ describe('the romanized edge cases (#116, [Q3])', () => {
     expect(row('estoy')).toBe('L1-M2/L1-M2-S04#0');
     expect(row('estás')).toBe('L1-M2/L1-M2-S03#1');
   });
+
+  /**
+   * #282's seam — #281's sweep, for hi-mr: every variation line against the index of the module
+   * that shows it. Every remaining miss is a *decided* miss, and
+   * `docs/15-llm-review-hi-mr-surfaces.md` says which kind per line:
+   *
+   *   - a proper noun (`प्रिया`) — never a word row in any course (#61);
+   *   - a recorded exemption (`पाच`, a sibling number of `दोन`, not a shape of it; `बोललो`, a verb
+   *     — बोलणे — L1 never teaches) — each would only resolve by landing on a row headed by a
+   *     DIFFERENT word, the forms-hit bug, and neither appears in any sentence display to hang a
+   *     row of its own on.
+   *
+   * A new variation that resolves nowhere fails here, so #286's third-variation pass has to
+   * decide about a new surface rather than discover it later.
+   */
+  it('sweeps every hi-mr variation line down to three decided misses (#282)', () => {
+    const modules = authoredCourse('hi-mr');
+    const indexes = buildWordIndex('hi-mr', modules);
+    const misses: string[] = [];
+
+    modules.forEach(({ id, module }, at) => {
+      const index = indexes[at];
+      if (index === undefined) throw new Error(`${id} built no index`);
+      const lookup = {
+        maxSpan: index.maxSpan,
+        has: (surface: string) => Object.hasOwn(index.surfaces, surface),
+      };
+      for (const sentence of module.sentences) {
+        for (const variation of sentence.variations ?? []) {
+          for (const match of matchSurfaces(tokenizeSurface(variation.display), lookup)) {
+            if (!match.resolved) misses.push(`${id}/${sentence.id}: "${match.surface}"`);
+          }
+        }
+      }
+    });
+
+    expect(misses).toEqual([
+      'L1-M1/L1-M1-S01: "प्रिया"',
+      'L1-M8/L1-M8-S07: "पाच"',
+      'L1-M9/L1-M9-S04: "बोललो"',
+    ]);
+  });
+
+  /**
+   * The hi-mr paradigm seams (#282) — the additions that pass closest to first-occurrence-wins,
+   * pinned to the row that owns each. The load-bearing ones: जाणे's let's-form rides M6-S01's
+   * जाणार (the verb's only row), while येणे keeps its two futures as sibling rows — S04's own note
+   * rules येईन "a different form, not a shape of येणार", so the -ईन/-ऊ family lives on S07 and
+   * येणार stays alone.
+   */
+  it('keeps hi-mr paradigm seams on the row that owns them (#282)', () => {
+    const index = lastIndex('hi-mr');
+    const row = (surface: string): string =>
+      `${index.surfaces[surface]?.moduleId}/${index.surfaces[surface]?.sentenceId}#${index.surfaces[surface]?.wordIdx}`;
+
+    // झोपणे: the future joins M4's own row; M5's past row is untouched.
+    expect(row('झोपणार')).toBe('L1-M4/L1-M4-S06#2');
+    expect(row('झोपले')).toBe('L1-M5/L1-M5-S05#0');
+    // जाणे: जाऊ rides the M6 first-teach row — M10-S10's re-teach row steals neither key.
+    expect(row('जाणार')).toBe('L1-M6/L1-M6-S01#1');
+    expect(row('जाऊ')).toBe('L1-M6/L1-M6-S01#1');
+    // येणे: the -णार plan and the -ईन promise stay sibling rows; the persons join the promise.
+    expect(row('येणार')).toBe('L1-M6/L1-M6-S04#0');
+    for (const person of ['येईन', 'येशील', 'येईल', 'येऊ']) {
+      expect(row(person)).toBe('L1-M6/L1-M6-S07#1');
+    }
+    // खाणे: the promise row carries its persons — and खाऊ stays out: as a bare surface it is
+    // the everyday noun ("treat"), and inventing that homograph would gloss it "will eat".
+    expect(row('खाशील')).toBe('L1-M6/L1-M6-S10#0');
+    expect(row('खाईल')).toBe('L1-M6/L1-M6-S10#0');
+    expect(Object.hasOwn(index.surfaces, 'खाऊ')).toBe(false);
+    // दुकान: the bent दुकानाजवळ joins दुकान's row; घराजवळ keeps its own.
+    expect(row('दुकानाजवळ')).toBe('L1-M7/L1-M7-S06#0');
+    expect(row('घराजवळ')).toBe('L1-M7/L1-M7-S06#1');
+    // The two "we"s share M10's row (the M2 तू/तुम्ही precedent); भेटू keeps its own.
+    expect(row('आपण')).toBe('L1-M10/L1-M10-S09#0');
+    expect(row('आम्ही')).toBe('L1-M10/L1-M10-S09#0');
+    expect(row('भेटू')).toBe('L1-M10/L1-M10-S09#1');
+  });
 });
 
 describe('the comprehension-pool rule', () => {
