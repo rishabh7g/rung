@@ -1543,6 +1543,28 @@ describe('the comprehension-pool rule', () => {
     expect(Object.keys(index.surfaces)).not.toContain('नमस्ते'); // never indexed …
     expect(checkComprehensionPool(second, index)).toEqual([]); // … and never a build failure
   });
+
+  /**
+   * #290 — hi-mr's retry freshness. Pool size IS the retry budget (`src/engine/comprehension.ts`:
+   * a retry excludes everything already used until the pool exhausts), so 12 items at 2 an
+   * attempt is 6 fresh attempts. And none of them may be a hero sentence wearing a pool id — a
+   * pool that echoes its heroes tests recall of the module, not comprehension of new text.
+   */
+  it('keeps every hi-mr pool at 12+ items, none echoing a hero sentence (#290)', () => {
+    const modules = Array.from({ length: 10 }, (_, i) => authored('hi-mr', `L1-M${i + 1}`));
+    const heroes = new Set(
+      modules.flatMap((module) => module.sentences.map((s) => s.display.trim().toLowerCase())),
+    );
+
+    for (const module of modules) {
+      expect(module.comprehensionPool.length, module.id).toBeGreaterThanOrEqual(12);
+      for (const item of module.comprehensionPool) {
+        expect(heroes.has(item.display.trim().toLowerCase()), `${item.id} echoes a hero`).toBe(
+          false,
+        );
+      }
+    }
+  });
 });
 
 /**
