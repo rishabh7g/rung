@@ -1416,12 +1416,15 @@ describe('the romanized edge cases (#116, [Q3])', () => {
    *     `actor`, `cricket`, `dogs`, `hindi`, `speak`, `milk` — each would only resolve by landing
    *     on a row headed by a DIFFERENT word, the forms-hit bug), the M10 trio its own changed
    *     lines declare untaught (`well`, `now`, `bus` — इस सीढ़ी पर नहीं सिखाया), and the numbers
-   *     docs/13 reserves for later authoring (`three`, `six`).
+   *     docs/13 reserves for later authoring (`three`, `six`);
+   *   - the informal greeting #294 shows whole (`How's it going?`, M2-S03): its own changed-note
+   *     says टुकड़े बाद में — `it` is M7's on schedule, `how's` and bare `going` stay unclaimed
+   *     (docs/13's seam keeps `going` free), so all three tokens are decided misses.
    *
    * A new variation that resolves nowhere fails here, so #288's third-variation pass has to
    * decide about a new surface rather than discover it later.
    */
-  it('sweeps every hi-en variation line down to twenty-seven decided misses (#284)', () => {
+  it('sweeps every hi-en variation line down to thirty decided misses (#284, #294)', () => {
     const modules = authoredCourse('hi-en');
     const indexes = buildWordIndex('hi-en', modules);
     const misses: string[] = [];
@@ -1459,6 +1462,9 @@ describe('the romanized edge cases (#116, [Q3])', () => {
       'L1-M1/L1-M1-S10: "hindi"',
       'L1-M2/L1-M2-S01: "priya"',
       'L1-M2/L1-M2-S02: "priya"',
+      'L1-M2/L1-M2-S03: "how\'s"',
+      'L1-M2/L1-M2-S03: "it"',
+      'L1-M2/L1-M2-S03: "going"',
       'L1-M2/L1-M2-S07: "priya"',
       'L1-M3/L1-M3-S03: "speak"',
       'L1-M3/L1-M3-S09: "milk"',
@@ -1820,7 +1826,7 @@ describe('the authored content', () => {
     // build now ships exactly what the strict build above does — the same ten rungs, the same
     // report line — and differs only in the banner and the `devBuild` key.
     expect(report.lines).toContain('hi-en: 10 modules (L1-M1..M10)');
-    expect(report.lines).toContain('  index L1-M10: 203 surfaces');
+    expect(report.lines).toContain('  index L1-M10: 207 surfaces');
     expect(report.lines).toContain(
       'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10)',
     );
@@ -2086,7 +2092,9 @@ describe('the authored content', () => {
     ]);
     // `in front of` and `Can I have` are three-token keys.
     expect(index.maxSpan).toBe(3);
-    expect(index.surfaceCount).toBe(203);
+    // 203 after #284; #294 added the four informal alternates as forms on their own rows —
+    // `hi` (Hello), `not bad` (fine), `bye` (Goodbye), `see ya` (See you) — and nothing else.
+    expect(index.surfaceCount).toBe(207);
     // M6: `will` bare (the lesson), `I'll` its own row listing ONLY itself — `i will` is no key, so
     // `I will go` opens `I` then `will`; `going to` whole (bare `going` unclaimed) and `to` still M3's.
     expect(index.surfaces['will']).toEqual(row('L1-M6', 1, 0));
