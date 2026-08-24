@@ -8,7 +8,7 @@
   ],
   "verified": true,
   "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
-  "verifiedAt": "2026-08-23",
+  "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 7,
@@ -78,6 +78,11 @@
           "display": "The books are on the table",
           "cue": "किताबें मेज़ पर हैं",
           "changed": "बहुवचन — books, इसलिए are (M1 का be वचन से); जगह वही."
+        },
+        {
+          "display": "Is the book on the table?",
+          "cue": "क्या किताब मेज़ पर है?",
+          "changed": "जगह का सवाल — is आगे कूदता है, on the table आख़िर में ही रहता है."
         }
       ],
       "mistake": {
@@ -119,6 +124,11 @@
           "display": "The pens are in the box",
           "cue": "पेन डिब्बे में हैं",
           "changed": "बहुवचन — pens, are; जगह वही."
+        },
+        {
+          "display": "Where is the pen?",
+          "cue": "पेन कहाँ है?",
+          "changed": "जवाब से सवाल — जगह वाले टुकड़े की सीट पर Where आगे आ बैठता है."
         }
       ],
       "mistake": {
@@ -170,6 +180,11 @@
           "display": "The keys are under the table",
           "cue": "चाबियाँ मेज़ के नीचे हैं",
           "changed": "जगह बदली — under the table."
+        },
+        {
+          "display": "The keys are not under the chair",
+          "cue": "चाबियाँ कुर्सी के नीचे नहीं हैं",
+          "changed": "जगह की नकार — are के बाद not, बाक़ी वाक्य वैसा ही; कोई don't नहीं."
         }
       ],
       "mistake": {
@@ -218,6 +233,11 @@
           "display": "Where are you from?",
           "cue": "आप कहाँ से हैं?",
           "changed": "जगह का खुला सवाल — M2 का from, आख़िर में; Where आगे, are बीच में."
+        },
+        {
+          "display": "It's under the chair",
+          "cue": "यह कुर्सी के नीचे है",
+          "changed": "सवाल का जवाब — पूछी हुई चीज़ दोबारा नहीं आती, उसकी जगह it."
         }
       ],
       "mistake": {
@@ -277,6 +297,11 @@
           "display": "It is behind the door",
           "cue": "यह दरवाज़े के पीछे है",
           "changed": "पूरा रूप it is — वही मतलब, ज़ोर देने में; बोलचाल It's."
+        },
+        {
+          "display": "Is it behind the door?",
+          "cue": "क्या यह दरवाज़े के पीछे है?",
+          "changed": "It's सवाल में खुलकर Is it — सिकुड़ा रूप पलट नहीं सकता."
         }
       ],
       "mistake": {
@@ -327,6 +352,11 @@
           "display": "It is near the school",
           "cue": "यह स्कूल के पास है",
           "changed": "सवाल नहीं, बयान — it पहले, is बाद में; near वही."
+        },
+        {
+          "display": "No, it is not near the school",
+          "cue": "नहीं, यह स्कूल के पास नहीं है",
+          "changed": "नकार वाला जवाब — it is के बाद not; near की जोड़ी बनी रहती है."
         }
       ],
       "mistake": {
@@ -386,6 +416,11 @@
           "display": "My school is next to the shop",
           "cue": "मेरा स्कूल दुकान की बग़ल में है",
           "changed": "कर्ता बदला — my school; साँचा वही."
+        },
+        {
+          "display": "There is a bank near the shop",
+          "cue": "दुकान के पास एक बैंक है",
+          "changed": "साँचा बदला: The bank is … बताता है वह कहाँ है; There is … बताता है वहाँ क्या है."
         }
       ],
       "mistake": {
@@ -427,6 +462,11 @@
           "display": "My bag is in front of the door",
           "cue": "मेरा बैग दरवाज़े के सामने है",
           "changed": "It's की जगह चीज़ का नाम — my bag; जगह the door."
+        },
+        {
+          "display": "It's not in front of the shop",
+          "cue": "यह दुकान के सामने नहीं है",
+          "changed": "सिकुड़े It's के बाद not — तीन शब्दों वाला in front of साबुत रहता है."
         }
       ],
       "mistake": {
@@ -472,6 +512,11 @@
           "display": "There is a shop near the school",
           "cue": "स्कूल के पास एक दुकान है",
           "changed": "जगह की बात — a shop, near the school; साँचा वही."
+        },
+        {
+          "display": "There are books on the table",
+          "cue": "मेज़ पर किताबें हैं",
+          "changed": "गिनती के बिना बहुवचन — There are books; a सिर्फ़ एक का है, बहुवचन अकेला चल सकता है."
         }
       ],
       "mistake": {
@@ -516,6 +561,11 @@
           "display": "There are two keys in the bag",
           "cue": "बैग में दो चाबियाँ हैं",
           "changed": "चीज़ बदली — two keys; are वही."
+        },
+        {
+          "display": "There is a cup in the box",
+          "cue": "डिब्बे में एक कप है",
+          "changed": "दो → एक: are पलटकर is, cups पलटकर a cup — गिनती के साथ क्रिया भी मुड़ती है."
         }
       ],
       "mistake": {

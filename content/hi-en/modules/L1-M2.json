@@ -6,7 +6,7 @@
   "prerequisites": ["L1-M1"],
   "verified": true,
   "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
-  "verifiedAt": "2026-08-23",
+  "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 5,
@@ -81,6 +81,11 @@
           "display": "Hello, I am Rohan",
           "cue": "नमस्ते, मैं रोहन हूँ",
           "changed": "my name is → I am: छोटा रास्ता, वही मतलब — I am + नाम भी चलता है."
+        },
+        {
+          "display": "Hello, what is your name?",
+          "cue": "नमस्ते, आपका नाम क्या है?",
+          "changed": "अपना नाम बताने की जगह सामने वाले का पूछा — अभिवादन के बाद सवाल भी जुड़ सकता है."
         }
       ],
       "mistake": {
@@ -120,6 +125,11 @@
           "display": "Good morning, teacher",
           "cue": "सुप्रभात, शिक्षक जी",
           "changed": "नाम की जगह teacher — कक्षा का अभिवादन, भारत में बहुत आम."
+        },
+        {
+          "display": "Good morning. How are you?",
+          "cue": "सुप्रभात. आप कैसे हैं?",
+          "changed": "अभिवादन के बाद हालचाल — दो वाक्य मिलकर बातचीत की पूरी शुरुआत बनते हैं."
         }
       ],
       "mistake": {
@@ -166,6 +176,11 @@
           "display": "How is Rohan?",
           "cue": "रोहन कैसा है?",
           "changed": "you → Rohan: are → is — be का रूप कर्ता के साथ बदला, How अपनी जगह."
+        },
+        {
+          "display": "How is Mumbai?",
+          "cue": "मुंबई कैसी है?",
+          "changed": "How सिर्फ़ इंसान का हाल नहीं पूछता — जगह का भी; कर्ता बदला, is वही."
         }
       ],
       "mistake": {
@@ -219,6 +234,11 @@
           "display": "I am fine, thank you",
           "cue": "मैं ठीक हूँ, धन्यवाद",
           "changed": "पूरा रूप I am — वही मतलब, बस ज़्यादा लिखा हुआ लगता है; बोलचाल I'm."
+        },
+        {
+          "display": "I'm not fine",
+          "cue": "मैं ठीक नहीं हूँ",
+          "changed": "रटा जवाब पलटा — not की नकार fine से पहले; सच बोलना भी इसी साँचे से."
         }
       ],
       "mistake": {
@@ -260,6 +280,16 @@
           "display": "Is your name Rohan?",
           "cue": "क्या आपका नाम रोहन है?",
           "changed": "What हटा — हाँ/ना का सवाल: अब is सबसे आगे, your name उसके बाद."
+        },
+        {
+          "display": "Are you Rohan?",
+          "cue": "क्या आप रोहन हैं?",
+          "changed": "नाम पूछने का दूसरा रास्ता — Are you + नाम: be आगे कूदता है, हिंदी का क्या ग़ायब."
+        },
+        {
+          "display": "What is your name? I'm Rohan.",
+          "cue": "आपका नाम क्या है? मैं रोहन हूँ.",
+          "changed": "सवाल के साथ जवाब — और जवाब में My name is ज़रूरी नहीं: I'm + नाम काफ़ी है."
         }
       ],
       "mistake": {
@@ -299,6 +329,11 @@
           "display": "Is Rohan a doctor?",
           "cue": "क्या रोहन डॉक्टर है?",
           "changed": "कर्ता बदला — you → Rohan, are → is; क्रिया वैसे ही आगे."
+        },
+        {
+          "display": "No, I am a teacher",
+          "cue": "नहीं, मैं शिक्षक हूँ",
+          "changed": "जवाब में सुधार — पहले No, फिर सही बात; not के बिना भी नकार का काम No कर देता है."
         }
       ],
       "mistake": {
@@ -338,6 +373,11 @@
           "display": "Is Priya from Mumbai?",
           "cue": "क्या प्रिया मुंबई से है?",
           "changed": "कर्ता बदला — is आगे, from Mumbai वैसे का वैसा."
+        },
+        {
+          "display": "No, I'm not from Mumbai",
+          "cue": "नहीं, मैं मुंबई से नहीं हूँ",
+          "changed": "नकार वाले जवाब में from की जोड़ी बनी रहती है — I'm not from + जगह."
         }
       ],
       "mistake": {
@@ -377,6 +417,11 @@
           "display": "Yes, Rohan is",
           "cue": "हाँ, रोहन है",
           "changed": "कर्ता बदला — is के साथ वही छोटा जवाब."
+        },
+        {
+          "display": "Yes, I am from India",
+          "cue": "हाँ, मैं भारत से हूँ",
+          "changed": "छोटे जवाब के बाद पूरी बात — a doctor की तरह from वाला हिस्सा भी जुड़ सकता है."
         }
       ],
       "mistake": {
@@ -423,6 +468,11 @@
           "display": "No, I am not",
           "cue": "नहीं, मैं नहीं हूँ",
           "changed": "पूरा रूप I am not — चलता है, पर I'm not ही आम है."
+        },
+        {
+          "display": "No, I'm not tired",
+          "cue": "नहीं, मैं थका नहीं हूँ",
+          "changed": "not के बाद विशेषण — संज्ञा (a doctor) की जगह हालत (tired); साँचा वही."
         }
       ],
       "mistake": {
@@ -462,6 +512,11 @@
           "display": "Is Rohan tired?",
           "cue": "क्या रोहन थका है?",
           "changed": "कर्ता बदला — is आगे, tired वैसे का वैसा."
+        },
+        {
+          "display": "How are you? I'm tired.",
+          "cue": "आप कैसे हैं? मैं थका हूँ.",
+          "changed": "सवाल वही, जवाब सच्चा — fine रटा हुआ नहीं है, जो हाल हो वही कहा जाता है."
         }
       ],
       "mistake": {

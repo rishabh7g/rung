@@ -8,7 +8,7 @@
   ],
   "verified": true,
   "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
-  "verifiedAt": "2026-08-23",
+  "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 7,
@@ -91,6 +91,11 @@
           "display": "She will go to Mumbai tomorrow",
           "cue": "वह कल मुंबई जाएगी",
           "changed": "कर्ता she — will go वही: न -s, न जाएगी का ई."
+        },
+        {
+          "display": "I'll go to Delhi tomorrow",
+          "cue": "मैं कल दिल्ली जाऊँगा",
+          "changed": "I will सिकुड़कर I'll — बोलचाल का रूप, मतलब वही; बाक़ी वाक्य अछूता."
         }
       ],
       "mistake": {
@@ -133,6 +138,11 @@
           "display": "Will you come on Monday?",
           "cue": "क्या आप सोमवार को आएँगे?",
           "changed": "समय बदला — on Monday (M4 का on); साँचा वही."
+        },
+        {
+          "display": "Yes, I will come tomorrow",
+          "cue": "हाँ, मैं कल आऊँगा",
+          "changed": "जवाब में will अपनी सीट पर लौट आता है — सवाल में आगे था, जवाब में कर्ता के बाद."
         }
       ],
       "mistake": {
@@ -184,6 +194,11 @@
           "display": "She will buy a car on Monday",
           "cue": "वह सोमवार को गाड़ी ख़रीदेगी",
           "changed": "समय बदला — on Monday (M4 का on); साँचा वही."
+        },
+        {
+          "display": "She is going to buy a car",
+          "cue": "वह गाड़ी ख़रीदने वाली है",
+          "changed": "will → going to: पहले से बना इरादा — ख़रीदेगी नहीं, ख़रीदने वाली है."
         }
       ],
       "mistake": {
@@ -225,6 +240,11 @@
           "display": "They will eat rice at nine",
           "cue": "वे नौ बजे चावल खाएँगे",
           "changed": "चीज़ और समय बदले — rice, at nine; will वही."
+        },
+        {
+          "display": "Will they eat at home tomorrow?",
+          "cue": "क्या वे कल घर पर खाएँगे?",
+          "changed": "सवाल में Will कर्ता they के आगे — do नहीं; बाक़ी वाक्य अपनी जगह."
         }
       ],
       "mistake": {
@@ -274,6 +294,11 @@
           "display": "She is going to visit Mumbai tomorrow",
           "cue": "वह कल मुंबई घूमने वाली है",
           "changed": "कर्ता she — is going to; visit + जगह, बिना to."
+        },
+        {
+          "display": "Are you going to visit your brother?",
+          "cue": "क्या आप अपने भाई से मिलने वाले हैं?",
+          "changed": "इरादे का सवाल be से बनता है — Are आगे कूदता है, going to visit साथ रहता है."
         }
       ],
       "mistake": {
@@ -316,6 +341,11 @@
           "display": "We are going to cook rice on Monday",
           "cue": "हम सोमवार को चावल बनाने वाले हैं",
           "changed": "समय बदला — on Monday; साँचा वही."
+        },
+        {
+          "display": "What are you going to cook?",
+          "cue": "आप क्या बनाने वाले हैं?",
+          "changed": "योजना का what-सवाल — What आगे, फिर are you, फिर going to cook."
         }
       ],
       "mistake": {
@@ -368,6 +398,11 @@
           "display": "I'm going to read a book next week",
           "cue": "मैं अगले हफ़्ते एक किताब पढ़ने वाला हूँ",
           "changed": "क्रिया बदली — read a book; next week वही."
+        },
+        {
+          "display": "I will learn English next week",
+          "cue": "मैं अगले हफ़्ते अंग्रेज़ी सीखूँगा",
+          "changed": "going to → will: पहले से बने इरादे की जगह फ़ैसला — रास्ता बदला, समय वही."
         }
       ],
       "mistake": {
@@ -417,6 +452,11 @@
           "display": "We are meeting her next week",
           "cue": "हम अगले हफ़्ते उससे मिल रहे हैं",
           "changed": "कर्ता we — are meeting; तय बात वही, -ing वही."
+        },
+        {
+          "display": "Are you meeting her tomorrow?",
+          "cue": "क्या आप कल उससे मिल रहे हैं?",
+          "changed": "तय की हुई बात का सवाल — be आगे: Are you meeting …?; -ing वैसा ही."
         }
       ],
       "mistake": {
@@ -458,6 +498,11 @@
           "display": "They are coming to Delhi tomorrow",
           "cue": "वे कल दिल्ली आ रहे हैं",
           "changed": "कर्ता they — are coming; बाक़ी वही."
+        },
+        {
+          "display": "She is not coming next week",
+          "cue": "वह अगले हफ़्ते नहीं आ रही",
+          "changed": "तय बात टली — be के बाद not: is not coming; M2 की नकार यहाँ भी वही."
         }
       ],
       "mistake": {
@@ -507,6 +552,11 @@
           "display": "She will call you on Monday",
           "cue": "वह सोमवार को आपको फ़ोन करेगी",
           "changed": "कर्ता she — will call वही, -s नहीं; समय on Monday."
+        },
+        {
+          "display": "I will call her tomorrow",
+          "cue": "मैं कल उसे फ़ोन करूँगा",
+          "changed": "you → her — कर्म वाला रूप: उसे के लिए her, she नहीं."
         }
       ],
       "mistake": {

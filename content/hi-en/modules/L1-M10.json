@@ -8,7 +8,7 @@
   ],
   "verified": true,
   "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
-  "verifiedAt": "2026-08-23",
+  "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 2,
     "maxWordsPerSentence": 8,
@@ -84,6 +84,11 @@
           "display": "Good morning, Priya. Are you busy today?",
           "cue": "सुप्रभात, प्रिया. क्या आप आज व्यस्त हैं?",
           "changed": "नाम बदला, सवाल हाँ / ना का — Are you busy today? (M2 का साँचा, M9 का busy)."
+        },
+        {
+          "display": "Good morning. I'm fine, and you?",
+          "cue": "सुप्रभात. मैं ठीक हूँ, और आप?",
+          "changed": "जवाब वाला पहलू — अभिवादन लौटाया, हाल बताया, and you? से गेंद वापस."
         }
       ],
       "mistake": {
@@ -126,6 +131,11 @@
           "display": "I'm very well, thank you. And you?",
           "cue": "मैं बहुत अच्छा हूँ, धन्यवाद. और आप?",
           "changed": "fine की जगह very well — हाल का दूसरा जवाब (well इस सीढ़ी पर नहीं सिखाया, सुनने में आएगा)."
+        },
+        {
+          "display": "I'm tired today, but I'm okay. And you?",
+          "cue": "मैं आज थका हूँ, पर ठीक हूँ. और आप?",
+          "changed": "रटा fine टूटा — सच्ची बात but से सँभली: थका हूँ, पर ठीक हूँ."
         }
       ],
       "mistake": {
@@ -169,6 +179,11 @@
           "display": "She is very busy today, but she is happy.",
           "cue": "वह आज बहुत व्यस्त है, पर ख़ुश है.",
           "changed": "कर्ता she — दोनों तरफ़ she is; but वहीं बीच में."
+        },
+        {
+          "display": "I was tired yesterday, but today I'm happy.",
+          "cue": "मैं कल थका था, पर आज ख़ुश हूँ.",
+          "changed": "but दो कालों को जोड़ता है — कल was, आज I'm; पुल के दो सिरे दो वक़्तों में."
         }
       ],
       "mistake": {
@@ -211,6 +226,11 @@
           "display": "I want two bananas, please. I'm hungry.",
           "cue": "मुझे दो केले चाहिए, प्लीज़. मुझे भूख लगी है.",
           "changed": "माँग पहले, वजह बाद में — अलग वाक्य, बिना because; please वहीं."
+        },
+        {
+          "display": "I will cook tonight, so I need rice.",
+          "cue": "मैं आज रात खाना बनाऊँगा, इसलिए मुझे चावल चाहिए.",
+          "changed": "because → so: वजह पहले आ गई, ज़रूरत बाद में — वही बात, पुल दूसरा."
         }
       ],
       "mistake": {
@@ -256,6 +276,11 @@
           "display": "My sister is a student. She is in Delhi.",
           "cue": "मेरी बहन विद्यार्थी है. वह दिल्ली में है.",
           "changed": "दूसरा वाक्य be से — She is in Delhi; she वही."
+        },
+        {
+          "display": "Is your sister a teacher? Does she work in Delhi?",
+          "cue": "क्या आपकी बहन शिक्षिका है? क्या वह दिल्ली में काम करती है?",
+          "changed": "बयान से पूछताछ — पहला सवाल be से (Is), दूसरा क्रिया से (Does): दो सहारे, दो वाक्य."
         }
       ],
       "mistake": {
@@ -298,6 +323,11 @@
           "display": "She has a new car. The car is very good.",
           "cue": "उसके पास नई गाड़ी है. गाड़ी बहुत अच्छी है.",
           "changed": "कर्ता she — has (M4); a new car, फिर the car."
+        },
+        {
+          "display": "I have two new books. The books are very good.",
+          "cue": "मेरे पास दो नई किताबें हैं. किताबें बहुत अच्छी हैं.",
+          "changed": "वही सीढ़ी बहुवचन में — पहली बार two new books, दूसरी बार the books; are गिनती के साथ."
         }
       ],
       "mistake": {
@@ -348,6 +378,11 @@
           "display": "She got up at eight. Then she ate breakfast.",
           "cue": "वह आठ बजे उठी. फिर उसने नाश्ता किया.",
           "changed": "कर्ता she — got up, ate (M5); Then के बाद फिर she."
+        },
+        {
+          "display": "I will go to the market tomorrow. Then I will cook.",
+          "cue": "मैं कल बाज़ार जाऊँगा. फिर मैं खाना बनाऊँगा.",
+          "changed": "Then आने वाले कल में भी क्रम बाँधता है — कल की दो बातें, आगे-पीछे."
         }
       ],
       "mistake": {
@@ -390,6 +425,11 @@
           "display": "I like tea and coffee. I also like music.",
           "cue": "मुझे चाय और कॉफ़ी पसंद है. मुझे संगीत भी पसंद है.",
           "changed": "and दो चीज़ें जोड़ता है — tea and coffee; also बीच में, वही सीट."
+        },
+        {
+          "display": "Do you also like coffee? Yes, I do.",
+          "cue": "क्या आपको कॉफ़ी भी पसंद है? हाँ.",
+          "changed": "also सवाल के अंदर — भी पूछते वक़्त भी क्रिया से पहले ही बैठता है."
         }
       ],
       "mistake": {
@@ -432,6 +472,11 @@
           "display": "Sorry, I'm late. I'm very busy today.",
           "cue": "माफ़ कीजिए, मुझे देर हो गई. मैं आज बहुत व्यस्त हूँ.",
           "changed": "सवाल नहीं — सीधे माफ़ी और वजह, बिना because के दो वाक्यों में."
+        },
+        {
+          "display": "Sorry, I'm late because I worked late.",
+          "cue": "माफ़ कीजिए, मुझे देर हो गई क्योंकि मैंने देर तक काम किया.",
+          "changed": "late के दो काम एक लाइन में — I'm late हालत है, worked late देर तक: शब्द एक, सीटें दो."
         }
       ],
       "mistake": {
@@ -489,6 +534,11 @@
           "display": "Goodbye, Priya. I will call you tomorrow.",
           "cue": "अलविदा, प्रिया. मैं कल आपको फ़ोन करूँगा.",
           "changed": "विदा के बाद वादा — I will call you (M6): पूरा वाक्य, कर्ता के साथ."
+        },
+        {
+          "display": "Okay, thank you. I will call you tonight.",
+          "cue": "ठीक है, धन्यवाद. मैं आज रात आपको फ़ोन करूँगा.",
+          "changed": "विदा वादे से — Goodbye की जगह आगे की बात: will call तय करके बात पूरी."
         }
       ],
       "mistake": {

@@ -6,7 +6,7 @@
   "prerequisites": ["L1-M2"],
   "verified": true,
   "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
-  "verifiedAt": "2026-08-23",
+  "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 6,
@@ -77,6 +77,11 @@
           "display": "I want water",
           "cue": "मुझे पानी चाहिए",
           "changed": "पानी — साँचा वही: I want + चीज़."
+        },
+        {
+          "display": "I want the tea",
+          "cue": "मुझे वह चाय चाहिए",
+          "changed": "बिना जोड़ के tea आम चाय थी — the tea यानी वही सामने वाली; ढेर वाली चीज़ पर a नहीं आता, the आ सकता है."
         }
       ],
       "mistake": {
@@ -116,6 +121,11 @@
           "display": "I need a pen",
           "cue": "मुझे एक पेन की ज़रूरत है",
           "changed": "want की जगह need — इच्छा नहीं, ज़रूरत; साँचा वही."
+        },
+        {
+          "display": "I don't want a pen",
+          "cue": "मुझे पेन नहीं चाहिए",
+          "changed": "नकार में भी a बना रहता है — हिंदी एक गिरा देती है, अंग्रेज़ी नहीं."
         }
       ],
       "mistake": {
@@ -162,6 +172,11 @@
           "display": "I need to learn English",
           "cue": "मुझे अंग्रेज़ी सीखनी है",
           "changed": "want की जगह need — ज़रूरत; need to + क्रिया, साँचा वही."
+        },
+        {
+          "display": "Do you want to learn English?",
+          "cue": "क्या आप अंग्रेज़ी सीखना चाहते हैं?",
+          "changed": "want to वाला साँचा सवाल में — Do आगे, बाक़ी वाक्य अपनी जगह."
         }
       ],
       "mistake": {
@@ -201,6 +216,11 @@
           "display": "I want to read the book",
           "cue": "मैं वह किताब पढ़ना चाहता हूँ",
           "changed": "a की जगह the — वही किताब, जो हम दोनों जानते हैं."
+        },
+        {
+          "display": "I don't want to read",
+          "cue": "मैं पढ़ना नहीं चाहता",
+          "changed": "नकार want पर बैठती है, read अछूता — don't want to read."
         }
       ],
       "mistake": {
@@ -247,6 +267,11 @@
           "display": "I do not want coffee",
           "cue": "मुझे कॉफ़ी नहीं चाहिए",
           "changed": "पूरा रूप do not — वही मतलब, ज़ोर देने में या लिखावट में; बोलचाल don't."
+        },
+        {
+          "display": "No, I don't want coffee",
+          "cue": "नहीं, मुझे कॉफ़ी नहीं चाहिए",
+          "changed": "इनकार जवाब की शक्ल में — पहले No, फिर don't वाला पूरा वाक्य."
         }
       ],
       "mistake": {
@@ -293,6 +318,11 @@
           "display": "I need a pen",
           "cue": "मुझे एक पेन की ज़रूरत है",
           "changed": "गिनने-लायक चीज़ — a वापस आया: need a pen."
+        },
+        {
+          "display": "I don't need water",
+          "cue": "मुझे पानी की ज़रूरत नहीं है",
+          "changed": "need भी don't से ही पलटता है — want की तरह; ज़रूरत नहीं = don't need."
         }
       ],
       "mistake": {
@@ -339,6 +369,11 @@
           "display": "I want the key",
           "cue": "मुझे वह चाबी चाहिए",
           "changed": "need की जगह want — इच्छा; the वही."
+        },
+        {
+          "display": "I need the keys",
+          "cue": "मुझे वे चाबियाँ चाहिए",
+          "changed": "the बहुवचन पर भी वैसा ही बैठता है — the keys; a यह नहीं कर सकता."
         }
       ],
       "mistake": {
@@ -378,6 +413,11 @@
           "display": "Do you want a pen?",
           "cue": "क्या आपको पेन चाहिए?",
           "changed": "गिनने-लायक चीज़ — a वापस; सवाल का साँचा वही."
+        },
+        {
+          "display": "No, thank you",
+          "cue": "नहीं, धन्यवाद",
+          "changed": "पेशकश ठुकराने का विनम्र रास्ता — No के साथ thank you; पूरा वाक्य दोहराना ज़रूरी नहीं."
         }
       ],
       "mistake": {
@@ -417,6 +457,11 @@
           "display": "Do you want milk?",
           "cue": "क्या आपको दूध चाहिए?",
           "changed": "चीज़ बदली — दूध भी न गिनी जाने वाली."
+        },
+        {
+          "display": "Yes, I want sugar",
+          "cue": "हाँ, मुझे चीनी चाहिए",
+          "changed": "हामी के बाद पूरा वाक्य — Do you want …? का जवाब want से ही बनता है."
         }
       ],
       "mistake": {
@@ -456,6 +501,11 @@
           "display": "I want three books",
           "cue": "मुझे तीन किताबें चाहिए",
           "changed": "अंक बदला — three; संज्ञा बहुवचन ही रहती है."
+        },
+        {
+          "display": "I want a book, not two",
+          "cue": "मुझे एक किताब चाहिए, दो नहीं",
+          "changed": "गिनती का विरोध एक लाइन में — a = एक; not के बाद सिर्फ़ two, वाक्य दोहराए बिना."
         }
       ],
       "mistake": {
