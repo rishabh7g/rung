@@ -8,7 +8,7 @@
   ],
   "verified": true,
   "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
-  "verifiedAt": "2026-08-23",
+  "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 7,
@@ -87,6 +87,11 @@
           "display": "How much is the rice?",
           "cue": "चावल कितने का है?",
           "changed": "the — वही चावल जो सामने है; न गिनी जाने वाली चीज़, how much वही."
+        },
+        {
+          "display": "How much is this? It's ten rupees.",
+          "cue": "यह कितने का है? यह दस रुपये का है.",
+          "changed": "सवाल के साथ जवाब — दाम पूछा, it से बताया; दुकान की पूरी अदला-बदली."
         }
       ],
       "mistake": {
@@ -139,6 +144,11 @@
           "display": "The book is fifty rupees",
           "cue": "किताब पचास रुपये की है",
           "changed": "चीज़ का नाम — the book is; साँचा वही."
+        },
+        {
+          "display": "It's one rupee",
+          "cue": "यह एक रुपये का है",
+          "changed": "one पर -s गिर जाता है — one rupee; दो से rupees शुरू."
         }
       ],
       "mistake": {
@@ -183,6 +193,11 @@
           "display": "How much do the books cost?",
           "cue": "किताबों का दाम कितना है?",
           "changed": "बहुवचन — the books, इसलिए do (M3); cost वही, मूल रूप में."
+        },
+        {
+          "display": "How much does it cost? Ten rupees.",
+          "cue": "इसका दाम कितना है? दस रुपये.",
+          "changed": "जवाब में सिर्फ़ दाम काफ़ी है — Ten rupees; पूरा वाक्य दोहराना ज़रूरी नहीं."
         }
       ],
       "mistake": {
@@ -225,6 +240,11 @@
           "display": "The bag costs ten rupees",
           "cue": "बैग का दाम दस रुपये है",
           "changed": "it की जगह चीज़ का नाम — the bag; costs वही, एक चीज़."
+        },
+        {
+          "display": "Does it cost ten rupees?",
+          "cue": "क्या इसका दाम दस रुपये है?",
+          "changed": "दाम का हाँ-नहीं सवाल — Does it cost …?; costs का -s फिर does में चला गया."
         }
       ],
       "mistake": {
@@ -284,6 +304,11 @@
           "display": "Can I have the book, please?",
           "cue": "क्या मुझे वह किताब मिलेगी, प्लीज़?",
           "changed": "the — वही किताब जो हम दोनों जानते हैं (M3); Can I have वही."
+        },
+        {
+          "display": "Can I have this, please?",
+          "cue": "क्या मुझे यह मिलेगा, प्लीज़?",
+          "changed": "चीज़ का नाम लिए बिना — this अकेला खड़ा होकर सामने की चीज़ माँग लेता है."
         }
       ],
       "mistake": {
@@ -336,6 +361,11 @@
           "display": "A kilo of sugar, please",
           "cue": "एक किलो चीनी, प्लीज़",
           "changed": "चीज़ बदली — sugar (M3); साँचा वही."
+        },
+        {
+          "display": "A kilo of apples, please",
+          "cue": "एक किलो सेब, प्लीज़",
+          "changed": "of के बाद गिनने वाली चीज़ बहुवचन में — a kilo of apples; rice जैसी ढेर वाली वैसी ही."
         }
       ],
       "mistake": {
@@ -381,6 +411,11 @@
           "display": "Can I have two bottles of water?",
           "cue": "क्या मुझे पानी की दो बोतलें मिलेंगी?",
           "changed": "अंक — two bottles, -s के साथ; साँचा वही."
+        },
+        {
+          "display": "How much is a bottle of water?",
+          "cue": "पानी की एक बोतल कितने की है?",
+          "changed": "माँग की जगह दाम का सवाल — How much is + वही नाप वाला टुकड़ा."
         }
       ],
       "mistake": {
@@ -433,6 +468,11 @@
           "display": "How many books do you have?",
           "cue": "आपके पास कितनी किताबें हैं?",
           "changed": "क्रिया बदली — have (M4, के पास होना); how many + -s वही."
+        },
+        {
+          "display": "I want five, please",
+          "cue": "मुझे पाँच चाहिए, प्लीज़",
+          "changed": "जवाब में संज्ञा दोहराना ज़रूरी नहीं — five अकेला काफ़ी: कौन-सी चीज़, सवाल बता चुका."
         }
       ],
       "mistake": {
@@ -474,6 +514,11 @@
           "display": "I want an apple",
           "cue": "मुझे एक सेब चाहिए",
           "changed": "कोई भी एक — an (M1); गिनती नहीं, इसलिए one नहीं."
+        },
+        {
+          "display": "I want two apples, not one",
+          "cue": "मुझे दो सेब चाहिए, एक नहीं",
+          "changed": "विरोध पलटा — बहुवचन चाहिए, एक नहीं; -s इस बार two की तरफ़."
         }
       ],
       "mistake": {
@@ -523,6 +568,11 @@
           "display": "Five bananas are twenty rupees",
           "cue": "पाँच केले बीस रुपये के हैं",
           "changed": "cost की जगह be — are (बहुवचन से); वही मतलब."
+        },
+        {
+          "display": "How much do five bananas cost?",
+          "cue": "पाँच केले कितने के हैं?",
+          "changed": "दाम वाले वाक्य का सवाल — बहुवचन कर्ता पर do, cost मूल रूप में."
         }
       ],
       "mistake": {

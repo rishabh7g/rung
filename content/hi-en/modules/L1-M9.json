@@ -8,7 +8,7 @@
   ],
   "verified": true,
   "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
-  "verifiedAt": "2026-08-23",
+  "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 8,
@@ -82,6 +82,11 @@
           "display": "She doesn't want coffee because she is tired",
           "cue": "उसे कॉफ़ी नहीं चाहिए क्योंकि वह थकी है",
           "changed": "कर्ता she — doesn't (M4), she is tired; because वहीं बीच में."
+        },
+        {
+          "display": "Why don't you want coffee?",
+          "cue": "आपको कॉफ़ी क्यों नहीं चाहिए?",
+          "changed": "वजह पूछी — Why के बाद don't वाली नकार भी बैठती है; जवाब because से आएगा."
         }
       ],
       "mistake": {
@@ -124,6 +129,11 @@
           "display": "She is tired, so she doesn't want coffee",
           "cue": "वह थकी है, इसलिए उसे कॉफ़ी नहीं चाहिए",
           "changed": "कर्ता she — she is, she doesn't; so वहीं."
+        },
+        {
+          "display": "I'm tired, so I will sleep early",
+          "cue": "मैं थका हूँ, इसलिए मैं जल्दी सोऊँगा",
+          "changed": "so के बाद आने वाला कल भी — नतीजा आगे का फ़ैसला: will sleep."
         }
       ],
       "mistake": {
@@ -173,6 +183,11 @@
           "display": "Why is she sad?",
           "cue": "वह उदास क्यों है?",
           "changed": "कर्ता she — is; Why वहीं आगे."
+        },
+        {
+          "display": "I'm not sad. I'm tired.",
+          "cue": "मैं उदास नहीं हूँ. मैं थका हूँ.",
+          "changed": "सवाल की बात कटी — पहले नकार, फिर सही हालत; जवाब हमेशा because से नहीं आता."
         }
       ],
       "mistake": {
@@ -225,6 +240,11 @@
           "display": "I'm sad because I'm not at home",
           "cue": "मैं उदास हूँ क्योंकि मैं घर पर नहीं हूँ",
           "changed": "वजह बदली — not at home (M4 का at); साँचा वही."
+        },
+        {
+          "display": "Why is your friend not here?",
+          "cue": "आपका दोस्त यहाँ क्यों नहीं है?",
+          "changed": "वजह के अंदर वाली बात ख़ुद सवाल बन गई — Why is … not here?"
         }
       ],
       "mistake": {
@@ -273,6 +293,11 @@
           "display": "Why does she sleep late?",
           "cue": "वह देर से क्यों सोती है?",
           "changed": "कर्ता she — does (M4), sleep मूल रूप में."
+        },
+        {
+          "display": "I don't sleep late",
+          "cue": "मैं देर से नहीं सोता",
+          "changed": "सवाल की नींव ही नकारी — why का जवाब कभी-कभी यह भी होता है."
         }
       ],
       "mistake": {
@@ -322,6 +347,11 @@
           "display": "She is very busy on Monday",
           "cue": "वह सोमवार को बहुत व्यस्त है",
           "changed": "कर्ता she, दिन on Monday (M4); very busy वही."
+        },
+        {
+          "display": "I'm very busy, so I sleep late",
+          "cue": "मैं बहुत व्यस्त हूँ, इसलिए देर से सोता हूँ",
+          "changed": "because → so: वही दो बातें, क्रम पलटा — वजह पहले, नतीजा बाद."
         }
       ],
       "mistake": {
@@ -364,6 +394,11 @@
           "display": "She is hungry, so she will eat",
           "cue": "उसे भूख लगी है, इसलिए वह खाएगी",
           "changed": "कर्ता she — she is hungry, she will eat (M6); so वहीं."
+        },
+        {
+          "display": "I want rice because I'm hungry",
+          "cue": "मुझे चावल चाहिए क्योंकि मुझे भूख लगी है",
+          "changed": "so → because: नतीजा पहले, वजह बाद — जोड़ने वाला शब्द बताता है कौन-सा आधा कौन है."
         }
       ],
       "mistake": {
@@ -406,6 +441,11 @@
           "display": "Why is she angry?",
           "cue": "वह गुस्सा क्यों है?",
           "changed": "सवाल — Why is she …? (S03 का साँचा); angry वही."
+        },
+        {
+          "display": "Is she angry?",
+          "cue": "क्या वह गुस्सा है?",
+          "changed": "why से पहले का सवाल — पहले हाँ-नहीं, वजह उसके बाद पूछी जाती है."
         }
       ],
       "mistake": {
@@ -462,6 +502,11 @@
           "display": "I think that Rohan is a good teacher",
           "cue": "मुझे लगता है कि रोहन अच्छा शिक्षक है",
           "changed": "राय बदली — Rohan is a good teacher; good संज्ञा से पहले."
+        },
+        {
+          "display": "I don't think that the tea is good",
+          "cue": "मुझे नहीं लगता कि चाय अच्छी है",
+          "changed": "नकार think पर चढ़ जाती है — अंग्रेज़ी I don't think कहती है, I think … not नहीं."
         }
       ],
       "mistake": {
@@ -504,6 +549,11 @@
           "display": "Do you think that the tea is good?",
           "cue": "क्या आपको लगता है कि चाय अच्छी है?",
           "changed": "that साथ — पूरा रूप; वही मतलब."
+        },
+        {
+          "display": "What do you think?",
+          "cue": "आपको क्या लगता है?",
+          "changed": "हाँ-नहीं की जगह खुला सवाल — राय माँगने की सबसे छोटी लाइन."
         }
       ],
       "mistake": {

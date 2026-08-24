@@ -6,7 +6,7 @@
   "prerequisites": ["L1-M3"],
   "verified": true,
   "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
-  "verifiedAt": "2026-08-23",
+  "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 6,
@@ -95,6 +95,11 @@
           "display": "She wakes up early",
           "cue": "वह जल्दी जागती है",
           "changed": "कर्ता she — wakes up, -s के साथ; जागती का ती नहीं, पुरुष का -s."
+        },
+        {
+          "display": "I never wake up early",
+          "cue": "मैं कभी जल्दी नहीं जागता",
+          "changed": "always का उलटा — never; नकार उसके अंदर है, not नहीं लगता."
         }
       ],
       "mistake": {
@@ -148,6 +153,11 @@
           "display": "He gets up at seven",
           "cue": "वह सात बजे उठता है",
           "changed": "कर्ता he — gets up, -s के साथ; बाक़ी वैसा ही."
+        },
+        {
+          "display": "Does she get up at seven?",
+          "cue": "क्या वह सात बजे उठती है?",
+          "changed": "आदत का सवाल — Does आगे, get up मूल रूप में: -s को does उठा ले जाता है."
         }
       ],
       "mistake": {
@@ -208,6 +218,11 @@
           "display": "I go to school at nine",
           "cue": "मैं नौ बजे स्कूल जाता हूँ",
           "changed": "कर्ता I — go, बिना -s."
+        },
+        {
+          "display": "He doesn't go to school",
+          "cue": "वह स्कूल नहीं जाता",
+          "changed": "नकार में -s उतर जाता है — goes → doesn't go; s का काम doesn't कर चुका."
         }
       ],
       "mistake": {
@@ -268,6 +283,11 @@
           "display": "He eats breakfast at seven",
           "cue": "वह सात बजे नाश्ता करता है",
           "changed": "कर्ता he — eats; समय घड़ी का, तो at."
+        },
+        {
+          "display": "Do you eat breakfast?",
+          "cue": "क्या आप नाश्ता करते हैं?",
+          "changed": "आदत से सवाल — Do आगे; आप के लिए do, he / she के लिए does."
         }
       ],
       "mistake": {
@@ -314,6 +334,11 @@
           "display": "She usually drinks coffee",
           "cue": "वह आम तौर पर कॉफ़ी पीती है",
           "changed": "कर्ता she — drinks; usually वहीं."
+        },
+        {
+          "display": "I don't usually drink tea",
+          "cue": "मैं आम तौर पर चाय नहीं पीता",
+          "changed": "don't और क्रिया के बीच usually की सीट — don't usually drink; क्रम यही."
         }
       ],
       "mistake": {
@@ -374,6 +399,11 @@
           "display": "She works in the morning",
           "cue": "वह सुबह काम करती है",
           "changed": "दिन की जगह दिन का हिस्सा — on Monday → in the morning."
+        },
+        {
+          "display": "Does she work on Monday?",
+          "cue": "क्या वह सोमवार को काम करती है?",
+          "changed": "कथन से सवाल — works का -s निकलकर Does बना; on Monday वैसा ही."
         }
       ],
       "mistake": {
@@ -413,6 +443,11 @@
           "display": "He never eats breakfast",
           "cue": "वह कभी नाश्ता नहीं करता",
           "changed": "कर्ता he — eats, -s के साथ; never बीच में, doesn't नहीं चाहिए."
+        },
+        {
+          "display": "I don't drink coffee",
+          "cue": "मैं कॉफ़ी नहीं पीता",
+          "changed": "never के बिना सादी नकार — don't; कभी नहीं की बात हो तो never, वरना यही."
         }
       ],
       "mistake": {
@@ -452,6 +487,11 @@
           "display": "Do you get up early?",
           "cue": "क्या आप जल्दी उठते हैं?",
           "changed": "कर्ता you — सहारा do (M3), does नहीं."
+        },
+        {
+          "display": "Yes, he gets up early",
+          "cue": "हाँ, वह जल्दी उठता है",
+          "changed": "जवाब में -s लौट आता है — सवाल का does गया, gets up वापस."
         }
       ],
       "mistake": {
@@ -491,6 +531,11 @@
           "display": "He does not eat breakfast",
           "cue": "वह नाश्ता नहीं करता",
           "changed": "पूरा रूप does not — वही मतलब, ज़ोर देने में."
+        },
+        {
+          "display": "Does he eat breakfast?",
+          "cue": "क्या वह नाश्ता करता है?",
+          "changed": "एक does के दो काम — नकार doesn't में, सवाल Does में; दोनों में eat मूल रूप."
         }
       ],
       "mistake": {
@@ -537,6 +582,11 @@
           "display": "She has two brothers",
           "cue": "उसके दो भाई हैं",
           "changed": "कर्ता she — has (have का -s रूप, अक्षर बदलकर)."
+        },
+        {
+          "display": "Do you have two brothers?",
+          "cue": "क्या आपके दो भाई हैं?",
+          "changed": "have का सवाल भी do से — Do you have …?; have ख़ुद आगे नहीं कूदता."
         }
       ],
       "mistake": {

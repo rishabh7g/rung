@@ -6,7 +6,7 @@
   "prerequisites": ["L1-M4"],
   "verified": true,
   "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
-  "verifiedAt": "2026-08-23",
+  "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 7,
@@ -86,6 +86,11 @@
           "display": "She got up at eight yesterday",
           "cue": "वह कल आठ बजे उठी",
           "changed": "कर्ता she, yesterday आख़िर में — got up वही रहा, उठी का ई कहीं नहीं."
+        },
+        {
+          "display": "Did you get up at eight?",
+          "cue": "क्या आप आठ बजे उठे?",
+          "changed": "बीते कल का सवाल — Did आगे, got up वापस get up: बीते का निशान एक बार, Did पर."
         }
       ],
       "mistake": {
@@ -125,6 +130,11 @@
           "display": "He went to school yesterday",
           "cue": "वह कल स्कूल गया",
           "changed": "कर्ता he — went वही; बीते कल में -s नहीं."
+        },
+        {
+          "display": "Did you go to school yesterday?",
+          "cue": "क्या आप कल स्कूल गए?",
+          "changed": "went का सवाल — Did + go; गए का बीता निशान Did उठा ले गया."
         }
       ],
       "mistake": {
@@ -171,6 +181,11 @@
           "display": "I ate breakfast at nine",
           "cue": "मैंने नौ बजे नाश्ता किया",
           "changed": "चीज़ और समय बदले — ate वही."
+        },
+        {
+          "display": "I didn't eat rice yesterday",
+          "cue": "मैंने कल चावल नहीं खाए",
+          "changed": "नकार में ate वापस eat — बीते का निशान didn't पर, क्रिया मूल रूप में."
         }
       ],
       "mistake": {
@@ -210,6 +225,11 @@
           "display": "He drank tea in the morning",
           "cue": "उसने सुबह चाय पी",
           "changed": "कर्ता he, और in the morning — बिना yesterday के भी बीता कल drank से साफ़."
+        },
+        {
+          "display": "Did she drink tea yesterday?",
+          "cue": "क्या उसने कल चाय पी?",
+          "changed": "drank का सवाल — Did she drink; she पर भी did वही, कोई -s नहीं."
         }
       ],
       "mistake": {
@@ -256,6 +276,11 @@
           "display": "She worked on Monday",
           "cue": "उसने सोमवार को काम किया",
           "changed": "कर्ता she, दिन on Monday — worked वही, बिना -s."
+        },
+        {
+          "display": "He didn't work yesterday",
+          "cue": "उसने कल काम नहीं किया",
+          "changed": "worked → didn't work — -ed और didn't साथ नहीं रहते; निशान एक ही काफ़ी."
         }
       ],
       "mistake": {
@@ -295,6 +320,11 @@
           "display": "I did not go to school yesterday",
           "cue": "मैं कल स्कूल नहीं गया",
           "changed": "पूरा रूप did not — वही मतलब, ज़ोर देने में."
+        },
+        {
+          "display": "We didn't go to school yesterday",
+          "cue": "हम कल स्कूल नहीं गए",
+          "changed": "कर्ता we — didn't सबके लिए एक: मैं, हम, वह, वे."
         }
       ],
       "mistake": {
@@ -334,6 +364,11 @@
           "display": "What did you do on Monday?",
           "cue": "आपने सोमवार को क्या किया?",
           "changed": "समय बदला — on Monday; साँचा वही."
+        },
+        {
+          "display": "I saw a film",
+          "cue": "मैंने एक फ़िल्म देखी",
+          "changed": "सवाल का जवाब — What did you do? के आगे बीते कल का कोई भी वाक्य बैठता है."
         }
       ],
       "mistake": {
@@ -380,6 +415,11 @@
           "display": "I saw the film yesterday",
           "cue": "मैंने कल वह फ़िल्म देखी",
           "changed": "सवाल नहीं, बयान — अब बीता कल क्रिया पर: saw."
+        },
+        {
+          "display": "No, I didn't see the film",
+          "cue": "नहीं, मैंने वह फ़िल्म नहीं देखी",
+          "changed": "नकार वाला जवाब — सवाल में see था, जवाब की नकार में भी see ही रहता है."
         }
       ],
       "mistake": {
@@ -419,6 +459,11 @@
           "display": "I was at home yesterday",
           "cue": "मैं कल घर पर था",
           "changed": "ख़ुश की जगह जगह — at home; was वही."
+        },
+        {
+          "display": "Were you happy yesterday?",
+          "cue": "क्या आप कल ख़ुश थे?",
+          "changed": "be का सवाल बिना did — was / were ख़ुद कर्ता के आगे कूदता है."
         }
       ],
       "mistake": {
@@ -458,6 +503,11 @@
           "display": "We were at home yesterday",
           "cue": "हम कल घर पर थे",
           "changed": "थके की जगह जगह — at home; were वही."
+        },
+        {
+          "display": "We were not tired yesterday",
+          "cue": "हम कल थके नहीं थे",
+          "changed": "be की नकार भी बिना did — were के बाद सीधा not; कोई didn't नहीं."
         }
       ],
       "mistake": {
