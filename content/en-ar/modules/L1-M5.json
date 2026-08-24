@@ -5,8 +5,8 @@
   "job": "Past tense — the first big divergence",
   "prerequisites": ["L1-M4"],
   "verified": true,
-  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
-  "verifiedAt": "2026-08-13",
+  "verifiedBy": "Fable (Claude Fable 5) — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 7,
@@ -96,6 +96,12 @@
           "script": "أمس ذهبت إلى العمل",
           "cue": "Yesterday I went to work",
           "changed": "school → work"
+        },
+        {
+          "display": "dhahaba ilā al-madrasa ams",
+          "script": "ذهب إلى المدرسة أمس",
+          "cue": "He went to school yesterday",
+          "changed": "-tu → -a: he — the shortest suffix in the set, and no pronoun anywhere"
         }
       ],
       "mistake": {
@@ -141,6 +147,12 @@
           "script": "أمس شربت ماء",
           "cue": "Yesterday I drank some water",
           "changed": "swap the drink, and ams takes the front seat"
+        },
+        {
+          "display": "hal sharibta al-qahwa?",
+          "script": "هل شربت القهوة؟",
+          "cue": "Did you drink the coffee? (to a man)",
+          "changed": "hal + -ta: did you — no \"did\" anywhere, the suffix asks"
         }
       ],
       "mistake": {
@@ -186,6 +198,12 @@
           "script": "أكل الفاكهة",
           "cue": "He ate the fruit",
           "changed": "-tu → -a: he"
+        },
+        {
+          "display": "hal akalta al-fākiha ams?",
+          "script": "هل أكلت الفاكهة أمس؟",
+          "cue": "Did you eat the fruit yesterday? (to a man)",
+          "changed": "-tu → -ta with hal in front: the question, to a man"
         }
       ],
       "mistake": {
@@ -231,6 +249,12 @@
           "script": "نعم، ذهبت إلى السوق",
           "cue": "Yes, I went to the market",
           "changed": "the answer: -ta turns back to -tu, I"
+        },
+        {
+          "display": "hal dhahabta maʿa Rohān?",
+          "script": "هل ذهبت مع روهان؟",
+          "cue": "Did you go with Rohan? (to a man)",
+          "changed": "the follow-up: maʿa asks about the company, and ams is already understood"
         }
       ],
       "mistake": {
@@ -284,6 +308,12 @@
           "script": "هل كنت في البيت أمس؟",
           "cue": "Were you at home yesterday? (to a woman)",
           "changed": "hal in front and -ti: the question, to a woman"
+        },
+        {
+          "display": "kāna fī al-bayt ams",
+          "script": "كان في البيت أمس",
+          "cue": "He was at home yesterday",
+          "changed": "kuntu → kāna: he — the fourth cell of the row, with nothing else moving"
         }
       ],
       "mistake": {
@@ -329,6 +359,12 @@
           "script": "أنا تعبان اليوم",
           "cue": "I am tired today (said by a man)",
           "changed": "back to the present — and the verb vanishes again"
+        },
+        {
+          "display": "hal kunta taʿbān ams?",
+          "script": "هل كنت تعبان أمس؟",
+          "cue": "Were you tired yesterday? (to a man)",
+          "changed": "hal + kunta: the question — and the adjective stays bare for a man"
         }
       ],
       "mistake": {
@@ -382,6 +418,12 @@
           "script": "كان الشاي ساخن",
           "cue": "The tea was hot",
           "changed": "weather → tea: kāna pushes any verbless sentence into the past"
+        },
+        {
+          "display": "hal kāna al-jaww bārid ams?",
+          "script": "هل كان الجو بارد أمس؟",
+          "cue": "Was the weather cold yesterday?",
+          "changed": "hal in front of the kāna sentence: was it — nothing behind it moves"
         }
       ],
       "mistake": {
@@ -427,6 +469,12 @@
           "script": "هل ذهبت إلى المطعم أمس؟",
           "cue": "Did you go to the restaurant yesterday? (to a man)",
           "changed": "hal in front, -tu → -ta: the question"
+        },
+        {
+          "display": "dhahabtu ilā al-maṭʿam wa akaltu",
+          "script": "ذهبت إلى المطعم وأكلت",
+          "cue": "I went to the restaurant and ate",
+          "changed": "two verbs, two -tu: the outing and the meal in one breath"
         }
       ],
       "mistake": {
@@ -472,6 +520,12 @@
           "script": "كنت مع روهان أمس",
           "cue": "I was with Rohan yesterday",
           "changed": "kāna + maʿa: where you were becomes who you were with"
+        },
+        {
+          "display": "hal kunta maʿa Rohān ams?",
+          "script": "هل كنت مع روهان أمس؟",
+          "cue": "Were you with Rohan yesterday? (to a man)",
+          "changed": "hal + kunta + maʿa: where you were becomes who you were with, asked"
         }
       ],
       "mistake": {
@@ -517,6 +571,12 @@
           "script": "أكلت الخبز في الصباح",
           "cue": "I ate the bread in the morning",
           "changed": "ams → fī aṣ-ṣabāḥ: M4's time phrases work in the past too"
+        },
+        {
+          "display": "akala al-khubz wa shariba al-ḥalīb",
+          "script": "أكل الخبز وشرب الحليب",
+          "cue": "He ate the bread and drank the milk",
+          "changed": "both tails turn to -a: he — each verb still owns its person"
         }
       ],
       "mistake": {

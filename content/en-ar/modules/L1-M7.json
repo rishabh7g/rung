@@ -5,8 +5,8 @@
   "job": "Locations and prepositions",
   "prerequisites": ["L1-M6"],
   "verified": true,
-  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
-  "verifiedAt": "2026-08-13",
+  "verifiedBy": "Fable (Claude Fable 5) — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 2,
     "maxWordsPerSentence": 7,
@@ -117,6 +117,12 @@
           "script": "كتاب على الطاولة",
           "cue": "A book is on the table",
           "changed": "drop al- and the book stops being a known one"
+        },
+        {
+          "display": "hal al-kitāb ʿalā aṭ-ṭāwila?",
+          "script": "هل الكتاب على الطاولة؟",
+          "cue": "Is the book on the table?",
+          "changed": "hal in front of the location sentence: is it there — and still no verb"
         }
       ],
       "mistake": {
@@ -170,6 +176,12 @@
           "script": "الكتاب تحت المفتاح",
           "cue": "The book is under the key",
           "changed": "swap the two nouns and the sentence swaps with them"
+        },
+        {
+          "display": "ayna al-miftāḥ?",
+          "script": "أين المفتاح؟",
+          "cue": "Where is the key?",
+          "changed": "the question the sentence answers — ayna, and the location comes back word for word"
         }
       ],
       "mistake": {
@@ -215,6 +227,12 @@
           "script": "أين أنتَ؟",
           "cue": "Where are you? (to a man)",
           "changed": "a person instead of a thing — still no verb"
+        },
+        {
+          "display": "taḥt aṭ-ṭāwila",
+          "script": "تحت الطاولة",
+          "cue": "Under the table (the answer)",
+          "changed": "the known subject drops and the place alone answers — two words, whole"
         }
       ],
       "mistake": {
@@ -260,6 +278,12 @@
           "script": "هناك مدرسة أمام البيت",
           "cue": "There is a school in front of the house",
           "changed": "the same announcement about a different thing"
+        },
+        {
+          "display": "hal hunāka kitāb ʿalā aṭ-ṭāwila?",
+          "script": "هل هناك كتاب على الطاولة؟",
+          "cue": "Is there a book on the table?",
+          "changed": "hal asks after the existence itself — and the noun stays bare"
         }
       ],
       "mistake": {
@@ -305,6 +329,12 @@
           "script": "هناك سيارة أمام البيت",
           "cue": "There is a car in front of the house",
           "changed": "hunāka and a bare noun: announcing instead of locating"
+        },
+        {
+          "display": "sayyāratī amām al-bayt",
+          "script": "سيارتي أمام البيت",
+          "cue": "My car is in front of the house",
+          "changed": "the article traded for -ī: my car — a suffixed noun never also wears al-"
         }
       ],
       "mistake": {
@@ -350,6 +380,12 @@
           "script": "أنا في البيت اليوم",
           "cue": "I am at home today",
           "changed": "a person instead of a name — and the sentence still has no verb"
+        },
+        {
+          "display": "ayna Rohān?",
+          "script": "أين روهان؟",
+          "cue": "Where is Rohan?",
+          "changed": "the question this sentence answers — ayna takes a name as readily as a noun"
         }
       ],
       "mistake": {
@@ -395,6 +431,12 @@
           "script": "باب السيارة كبير",
           "cue": "The car door is big",
           "changed": "English drops \"of\" here too; Arabic writes exactly the same two nouns"
+        },
+        {
+          "display": "ayna bāb al-bayt?",
+          "script": "أين باب البيت؟",
+          "cue": "Where is the door of the house?",
+          "changed": "the iḍāfa rides into the question whole — still one al-, on the last noun only"
         }
       ],
       "mistake": {
@@ -440,6 +482,12 @@
           "script": "عنده كتاب",
           "cue": "He has a book",
           "changed": "-ahu: his, and a different thing owned"
+        },
+        {
+          "display": "ʿindaki sayyāra kabīra",
+          "script": "عندكِ سيارة كبيرة",
+          "cue": "You have a big car (to a woman)",
+          "changed": "-aka → -aki: the owner is a woman — the suffix picks her, as with ismuki"
         }
       ],
       "mistake": {
@@ -485,6 +533,12 @@
           "script": "السيارة أمام المدرسة",
           "cue": "The car is in front of the school",
           "changed": "the article instead of the suffix — a car, not my car"
+        },
+        {
+          "display": "ayna sayyāratuki?",
+          "script": "أين سيارتكِ؟",
+          "cue": "Where is your car? (to a woman)",
+          "changed": "ayna + -uki: the question, to a woman — and the hidden t stays awake"
         }
       ],
       "mistake": {
@@ -538,6 +592,12 @@
           "script": "سيارتي قريبة من البيت",
           "cue": "My car is near the house",
           "changed": "a feminine subject, so the adjective takes -a"
+        },
+        {
+          "display": "hal baytuka qarīb min as-sūq?",
+          "script": "هل بيتكَ قريب من السوق؟",
+          "cue": "Is your house near the market? (to a man)",
+          "changed": "hal + baytuka: the suffix turns onto the listener, and qarīb stays bare for bayt"
         }
       ],
       "mistake": {
