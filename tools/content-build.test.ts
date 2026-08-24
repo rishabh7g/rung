@@ -1467,6 +1467,28 @@ describe('the romanized edge cases (#116, [Q3])', () => {
     expect(row('films')).toBe('L1-M5/L1-M5-S08#1');
     expect(row('film')).toBe('L1-M5/L1-M5-S08#1');
   });
+
+  /**
+   * #292 — the hi-en comprehension pools, grown to twelve per module. Pool size is retry
+   * freshness (`src/engine/comprehension.ts`: at comprehendCount 2, twelve items are six fresh
+   * attempts before recycling), so a shrink is a regression this pins against. The second half
+   * pins the course's standing property that no pool item duplicates a hero sentence — a pool
+   * item is what the exit ritual asks the learner to READ fresh, and a hero copy would hand the
+   * answer to memory instead of comprehension (`docs/25-llm-review-hi-en-comprehension.md`).
+   */
+  it('ships twelve comprehension items per hi-en module, none of them a hero sentence (#292)', () => {
+    const modules = authoredCourse('hi-en');
+    const heroes = new Set(
+      modules.flatMap(({ module }) => module.sentences.map((s) => s.display.toLowerCase())),
+    );
+
+    for (const { id, module } of modules) {
+      expect(module.comprehensionPool, `${id} pool size`).toHaveLength(12);
+      for (const item of module.comprehensionPool) {
+        expect(heroes.has(item.display.toLowerCase()), `${item.id} duplicates a hero`).toBe(false);
+      }
+    }
+  });
 });
 
 describe('the comprehension-pool rule', () => {
