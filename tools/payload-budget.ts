@@ -1,14 +1,18 @@
 /**
- * Payload budgets over `dist/` (#113, #114, #207) — the enforcement half of "subset per course at
- * build time".
+ * Payload budgets over `dist/` (#113, #114, #207; sizes informational since #304) — the
+ * measurement half of "subset per course at build time".
  *
- *   npm run budget      → one line per budget, exit 1 naming the files when one is blown
+ *   npm run budget      → one line per row; exit 1 only when a file has no owner or the
+ *                         precache list disagrees with the shell row (#304)
  *
  * A subset that regresses is silent: nothing errors when a build ships 800 KB of fonts again, the
  * app just gets slower on the phones PRD-engineering §10 targets, and the offline precache (#90)
- * downloads every byte of it on first visit. So the budget is a build gate, not a doc:
- * `scripts/verify.sh` runs it right after BUILD (`BUDGET ok` in the summary line), reading the
- * `dist/` that build just wrote.
+ * downloads every byte of it on first visit. So the payload is measured on every build:
+ * `scripts/verify.sh` runs this right after BUILD (`BUDGET ok` in the summary line), reading the
+ * `dist/` that build just wrote. **Since #304 every size is informational** — each row is
+ * measured and printed, and no size can fail the gate. What still fails it is attribution
+ * honesty (`unmetered` must hold zero files) and the precache audit (#211: the emitted worker's
+ * precache list must equal the `shell` row) — correctness checks, not ceilings.
  *
  * **What changed in #207: the budget stopped metering the catalogue and started metering a
  * learner.** The old `fonts` and `total` rows summed all of `dist/`, so every course ever added
@@ -31,7 +35,7 @@
  *
  * The rows, and why each one exists:
  *
- *   | row              | measures                                            | defends              |
+ *   | row              | measures                                            | watches              |
  *   | ---------------- | --------------------------------------------------- | -------------------- |
  *   | `first-paint`    | the shell bytes a first visit fetches BEFORE paint    | PRD §10's ≤ 2 s      |
  *   | `js`             | every `.js` (#114's ≤ 200 KiB gzip, unchanged)        | parse/exec on 4× CPU |
@@ -48,15 +52,14 @@
  * script, because `unicode-range` routes them away on a boot route that renders shell English.
  * So `total` never metered first load at all; it metered the service-worker precache, which
  * finishes in the background minutes after the learner is already reading. Each now has its own
- * row and its own ceiling: `first-paint` is the one that defends the 2 s gate, `precache:<id>` is
- * the one that defends "works with no network after first load" without charging one learner for
+ * row: `first-paint` is the one that watches the 2 s gate, `precache:<id>` is
+ * the one that watches "works with no network after first load" without charging one learner for
  * another learner's language.
  *
  * `raw` meters bytes on disk (right for woff2/png, which are already compressed); `gzip` meters
  * what the wire carries (GitHub Pages serves text assets Content-Encoding: gzip — zlib's default
- * level is the approximation). Limits are the measured payload plus ~5%, so every row stays a
- * tripwire rather than a ceiling; docs/05-perf-notes.md §4 carries the measurements and the
- * ordered remedy list for when one goes red.
+ * level is the approximation). docs/05-perf-notes.md §4 carries the measurements, the record of
+ * the ceilings #304 retired, and the ordered remedy list for when a number grows.
  */
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import path from 'node:path';
@@ -219,45 +222,22 @@ export interface Budget {
   id: string;
   /** Which shipped files this budget meters, by path relative to `dist/`. */
   matches: (relativePath: string) => boolean;
-  /** Hard ceiling, bytes. */
-  limitBytes: number;
   /** `raw` = bytes on disk; `gzip` = transfer bytes (what a throttled 4G link actually moves). */
   measure: 'raw' | 'gzip';
-  /** Hard ceiling on the FILE COUNT, where bytes are not the point (`unmetered` wants zero). */
+  /** Hard ceiling on the FILE COUNT — the one ceiling #304 kept (`unmetered` wants zero). */
   maxFiles?: number;
 }
 
-/**
- * The shell bytes a first visit fetches before it paints — the number PRD-engineering §10's
- * "≤ 2 s on mid-range Android" is actually about. Measured 173.6 KiB gzip (docs/05-perf-notes.md
- * §4.3); ~1.0 s of Slow 4G at ~180 KiB/s, against a measured TTI of 1.5–1.8 s.
+/*
+ * No size ceilings live here any more (#304). #113/#114/#207 gated these rows — first-paint
+ * 185 KiB, js 200, shell 230, course:<id> 360, precache:<id> 590, splash 100, icon-svg 2 — and
+ * #304 removed the enforcement: a size regression should be visible, not blocking. Every row is
+ * still measured and printed on every build (docs/05-perf-notes.md §4 keeps the numbers and the
+ * remedy order), and the two checks that are about correctness rather than size still gate:
+ * `unmetered` (every shipped file must have an owner, by count) and `precacheAudit()` below
+ * (#211 — the emitted worker's precache list must equal the `shell` row, which is what keeps
+ * `precache:<id>` a measurement of the device rather than an intention).
  */
-const FIRST_PAINT_LIMIT = 185 * 1024;
-
-/** What every course pays for. Measured 216.0 KiB gzip on the dev build, 214.6 strict (§4.3). */
-const SHELL_LIMIT = 230 * 1024;
-
-/**
- * What ONE course may cost the learner who picks it. One number for every course rather than a
- * table of per-course ceilings: a limit keyed by course id would special-case a course id, and
- * every course is entitled to the same room. Measured heaviest: hi-mr at 340.3 KiB gzip (§4).
- */
-const COURSE_LIMIT = 360 * 1024;
-
-/**
- * One learner's offline copy: the shell plus the single course they chose. The sum of the two
- * gates above by construction — it goes red exactly when one of its halves does — but it is
- * printed and gated because it is the number the learner's device actually stores, and the one
- * "100% works with no network after first load" is paid for in.
- *
- * **Since #211 this row describes the device rather than an intention.** The service worker used
- * to precache the whole catalogue, so every learner's phone held every course and this row was
- * what a learner *should* pay. Now the precache is the `shell` files and the runtime caches hold
- * the one course that was opened (`tools/pwa.ts`, `src/pwa/offlineCourse.ts`) — which is exactly
- * `shell` + `course:<id>`, and `precacheAudit()` below proves the shell half against the worker
- * the build actually emitted rather than trusting this comment.
- */
-const PRECACHE_LIMIT = SHELL_LIMIT + COURSE_LIMIT;
 
 /** A new budget is one row and zero new plumbing. */
 export function budgets(courses: readonly ShippedCourse[]): Budget[] {
@@ -276,7 +256,6 @@ export function budgets(courses: readonly ShippedCourse[]): Budget[] {
       // from a boot route that renders shell English, which the §5 network log measured directly.
       id: 'first-paint',
       matches: (file) => isShell(file) && !(file.endsWith('.woff2') && isCourseFace(file)),
-      limitBytes: FIRST_PAINT_LIMIT,
       measure: 'gzip',
     },
     {
@@ -285,7 +264,6 @@ export function budgets(courses: readonly ShippedCourse[]): Budget[] {
       // this row is the one PRD-engineering §10 names by number. 94.9 KiB measured.
       id: 'js',
       matches: (file) => file.endsWith('.js'),
-      limitBytes: 200 * 1024,
       measure: 'gzip',
     },
     {
@@ -294,7 +272,6 @@ export function budgets(courses: readonly ShippedCourse[]): Budget[] {
       // paid once, by the people who chose that course.
       id: 'shell',
       matches: isShell,
-      limitBytes: SHELL_LIMIT,
       measure: 'gzip',
     },
     ...courses.flatMap((course): Budget[] => [
@@ -303,7 +280,6 @@ export function budgets(courses: readonly ShippedCourse[]): Budget[] {
         // cannot spend this course's headroom, and this course cannot spend theirs.
         id: `course:${course.id}`,
         matches: (file) => ownedBy(file, course.id),
-        limitBytes: COURSE_LIMIT,
         measure: 'gzip',
       },
       {
@@ -311,7 +287,6 @@ export function budgets(courses: readonly ShippedCourse[]): Budget[] {
         // the one course the worker warmed into its runtime cache when they opened it.
         id: `precache:${course.id}`,
         matches: (file) => isShell(file) || ownedBy(file, course.id),
-        limitBytes: PRECACHE_LIMIT,
         measure: 'gzip',
       },
     ]),
@@ -320,28 +295,26 @@ export function budgets(courses: readonly ShippedCourse[]): Budget[] {
       // device ever downloads ONE. Deliberately NOT precached (tools/pwa.ts) and never fetched by
       // the app — Safari pulls the single matching image at Add-to-Home-Screen — so it is neither
       // first-paint nor precache payload. Raw bytes (PNG, like woff2, does not gzip further); the
-      // ceiling is repo hygiene — a splash set that grows past ~9 KiB per image is a drawing bug,
+      // row is repo hygiene — a splash set that grows past ~9 KiB per image is a drawing bug,
       // not a brand decision. Baseline: 70.3 KiB across 11 images.
       id: 'splash',
       matches: (file) => file.startsWith('icons/splash/'),
-      limitBytes: 100 * 1024,
       measure: 'raw',
     },
     {
-      // #251 — the vector the PNGs are cut from. One file, a few hundred bytes; the ceiling is
-      // repo hygiene the same way `splash`'s is, not a real constraint.
+      // #251 — the vector the PNGs are cut from. One file, a few hundred bytes; the row is
+      // repo hygiene the same way `splash`'s is.
       id: 'icon-svg',
       matches: (file) => file === 'icons/icon.svg',
-      limitBytes: 2 * 1024,
       measure: 'raw',
     },
     {
       // #207 — the gate's honesty check. Every row above is a named owner, so a file that matches
       // none of them is a new asset class nobody has budgeted: it fails HERE, by count, rather
-      // than riding along invisibly inside a bigger row. Zero files, always.
+      // than riding along invisibly inside a bigger row. Zero files, always — with the precache
+      // audit, the only gate #304 kept.
       id: 'unmetered',
       matches: (file) => owner(file).kind === 'unmetered',
-      limitBytes: 0,
       measure: 'raw',
       maxFiles: 0,
     },
@@ -390,22 +363,20 @@ const metered = (budget: Budget, file: ShippedFile): number =>
 export function evaluate(budget: Budget, shipped: readonly ShippedFile[]): BudgetResult {
   const files = shipped.filter((file) => budget.matches(file.path));
   const totalBytes = files.reduce((sum, file) => sum + metered(budget, file), 0);
-  const withinFiles = budget.maxFiles === undefined || files.length <= budget.maxFiles;
-  return { budget, files, totalBytes, ok: totalBytes <= budget.limitBytes && withinFiles };
+  // #304: a size cannot fail a row — the file count (`unmetered`'s zero) is the only ceiling left.
+  const ok = budget.maxFiles === undefined || files.length <= budget.maxFiles;
+  return { budget, files, totalBytes, ok };
 }
 
 const kib = (bytes: number): string => `${(bytes / 1024).toFixed(1)} KiB`;
 
-/** `BUDGET shell 216.0 KiB gzip ≤ 230.0 KiB ok — 19 files` (raw budgets drop the ` gzip`). */
+/** `BUDGET shell 216.0 KiB gzip — 19 files` (raw budgets drop the ` gzip`). Sizes carry no
+    verdict since #304; the one row that can still fail (`unmetered`, by count) appends ` OVER`. */
 export function formatResult(result: BudgetResult): string {
-  const verdict = result.ok ? 'ok' : 'OVER';
   const gzip = result.budget.measure === 'gzip' ? ' gzip' : '';
-  const within = result.totalBytes <= result.budget.limitBytes;
-  return (
-    `BUDGET ${result.budget.id} ${kib(result.totalBytes)}${gzip} ` +
-    `${within ? '≤' : '>'} ${kib(result.budget.limitBytes)} ${verdict} — ` +
-    `${result.files.length} file${result.files.length === 1 ? '' : 's'}`
-  );
+  const files = `${result.files.length} file${result.files.length === 1 ? '' : 's'}`;
+  const verdict = result.ok ? '' : ' OVER';
+  return `BUDGET ${result.budget.id} ${kib(result.totalBytes)}${gzip} — ${files}${verdict}`;
 }
 
 /* ------------------------------------------------- the precache, measured not asserted (#211) */
