@@ -116,14 +116,33 @@ function temporaryDir(): string {
 
 /* ------------------------------------------------------------- course briefs */
 
-/** Every briefed course answers the same two structural questions, so they are asked once. */
-describe.each(['hi-mr', 'en-es', 'en-ar', 'hi-en'])('COURSE_BRIEFS %s', (courseId) => {
-  const briefs = COURSE_BRIEFS[courseId];
+/**
+ * Which levels each course has briefs for, with the level's word-bound rails. L1 runs 5 → 8
+ * everywhere; hi-mr's L2 (#295, the first L2 briefed) continues the climb, 8 → 10.
+ */
+const BRIEFED_LEVELS: Readonly<
+  Record<string, readonly { level: string; firstBound: number; lastBound: number }[]>
+> = {
+  'hi-mr': [
+    { level: 'L1', firstBound: 5, lastBound: 8 },
+    { level: 'L2', firstBound: 8, lastBound: 10 },
+  ],
+  'en-es': [{ level: 'L1', firstBound: 5, lastBound: 8 }],
+  'en-ar': [{ level: 'L1', firstBound: 5, lastBound: 8 }],
+  'hi-en': [{ level: 'L1', firstBound: 5, lastBound: 8 }],
+};
 
-  it('covers L1 M1–M10, keyed by id, each with patterns, notes and the §5 cap', () => {
+/** Every briefed course answers the same two structural questions, so they are asked once. */
+describe.each(Object.keys(BRIEFED_LEVELS))('COURSE_BRIEFS %s', (courseId) => {
+  const briefs = COURSE_BRIEFS[courseId];
+  const briefedLevels = BRIEFED_LEVELS[courseId] ?? [];
+
+  it('covers every briefed level M1–M10, keyed by id, each with patterns, notes and the §5 cap', () => {
     expect(briefs).toBeDefined();
     if (briefs === undefined) return;
-    const expected = Array.from({ length: 10 }, (_, i) => `L1-M${i + 1}`);
+    const expected = briefedLevels.flatMap(({ level }) =>
+      Array.from({ length: 10 }, (_, i) => `${level}-M${i + 1}`),
+    );
     expect(Object.keys(briefs).sort()).toEqual([...expected].sort());
     for (const id of expected) {
       const brief = briefs[id];
@@ -137,30 +156,36 @@ describe.each(['hi-mr', 'en-es', 'en-ar', 'hi-en'])('COURSE_BRIEFS %s', (courseI
     }
   });
 
-  it('mirrors the authored levels.json titles and jobs verbatim', () => {
+  it('mirrors the authored levels.json titles and jobs verbatim, for every briefed level', () => {
     const levels = JSON.parse(
       readFileSync(path.join(DEFAULT_CONTENT_ROOT, courseId, 'levels.json'), 'utf8'),
     ) as { levels: { id: string; modules: { id: string; title: string; job: string }[] }[] };
-    const l1 = levels.levels.find((level) => level.id === 'L1');
-    expect(l1).toBeDefined();
-    for (const entry of l1?.modules ?? []) {
-      const brief = briefs?.[entry.id];
-      expect(brief, entry.id).toBeDefined();
-      expect(brief?.title).toBe(entry.title);
-      expect(brief?.job).toBe(entry.job);
+    for (const { level } of briefedLevels) {
+      const authored = levels.levels.find((entry) => entry.id === level);
+      expect(authored, level).toBeDefined();
+      for (const entry of authored?.modules ?? []) {
+        const brief = briefs?.[entry.id];
+        expect(brief, entry.id).toBeDefined();
+        expect(brief?.title).toBe(entry.title);
+        expect(brief?.job).toBe(entry.job);
+      }
     }
   });
 
-  it('climbs its word bound across the level and never loosens it', () => {
+  it('climbs its word bound across each level and never loosens it', () => {
     if (briefs === undefined) return;
-    const bounds = Array.from(
-      { length: 10 },
-      (_, i) => briefs[`L1-M${i + 1}`]?.maxWordsPerSentence,
-    );
-    expect(bounds[0]).toBe(5);
-    expect(bounds[9]).toBe(8);
-    for (let i = 1; i < bounds.length; i += 1) {
-      expect(Number(bounds[i]), `L1-M${i + 1}`).toBeGreaterThanOrEqual(Number(bounds[i - 1]));
+    for (const { level, firstBound, lastBound } of briefedLevels) {
+      const bounds = Array.from(
+        { length: 10 },
+        (_, i) => briefs[`${level}-M${i + 1}`]?.maxWordsPerSentence,
+      );
+      expect(bounds[0], `${level}-M1`).toBe(firstBound);
+      expect(bounds[9], `${level}-M10`).toBe(lastBound);
+      for (let i = 1; i < bounds.length; i += 1) {
+        expect(Number(bounds[i]), `${level}-M${i + 1}`).toBeGreaterThanOrEqual(
+          Number(bounds[i - 1]),
+        );
+      }
     }
   });
 });
@@ -173,6 +198,118 @@ describe('COURSE_BRIEFS hi-mr', () => {
     expect(briefs?.['L1-M9']?.patterns.join(' ')).toContain('कारण');
     expect(briefs?.['L1-M9']?.patterns.join(' ')).toContain('म्हणून');
     expect(briefs?.['L1-M10']?.notes.join(' ')).toMatch(/2–3|turn/i);
+  });
+});
+
+describe('COURSE_BRIEFS hi-mr L2', () => {
+  const briefs = COURSE_BRIEFS['hi-mr'];
+  const notes = (id: string): string => briefs?.[id]?.notes.join(' ') ?? '';
+  const patterns = (id: string): string => briefs?.[id]?.patterns.join(' ') ?? '';
+
+  it('places each Hindi→Marathi pressure point in the module that needs it', () => {
+    // M1: the two-step imperative, the softeners, the आप→आपण false friend.
+    expect(notes('L2-M1')).toMatch(/register/i);
+    expect(notes('L2-M1')).toContain('दे · कर · ये');
+    expect(notes('L2-M1')).toContain('द्याल का');
+    expect(notes('L2-M1')).toContain('माफ करा');
+    expect(notes('L2-M1')).toContain('आपण');
+    expect(notes('L2-M1')).toMatch(/interference/i);
+    // M2: he/she from one वह, the plural/respect copula, the neuter person.
+    expect(notes('L2-M2')).toContain('वह');
+    expect(notes('L2-M2')).toContain('आहेत');
+    expect(notes('L2-M2')).toContain('कोण');
+    expect(notes('L2-M2')).toContain('मूल');
+    // M3: the agreement grid at length, the feminine-plural interference, M8's precedents.
+    expect(notes('L2-M3')).toContain('मोठ्या पिशव्या');
+    expect(notes('L2-M3')).toContain('रुपया → रुपये');
+    expect(notes('L2-M3')).toContain('केळं → केळी');
+    // M4: the place -ला and the instrumental -ने, directions.
+    expect(notes('L2-M4')).toContain('स्टेशनला');
+    expect(notes('L2-M4')).toContain('बसने');
+    expect(patterns('L2-M4')).toContain('डावीकडे');
+    expect(patterns('L2-M4')).toContain('उजवीकडे');
+    // M5: ordering with मिळेल, the host's घ्या, refusing with नको/पुरे, the Marathi table.
+    expect(patterns('L2-M5')).toContain('मिळेल का');
+    expect(notes('L2-M5')).toContain('घ्या');
+    expect(notes('L2-M5')).toContain('पुरे');
+    expect(notes('L2-M5')).toContain('पोळी');
+    expect(notes('L2-M5')).toContain('जेवलात का');
+    // M6: the -ऊ या suggestion, जमेल/चालेल, the clock.
+    expect(notes('L2-M6')).toContain('जाऊ या');
+    expect(notes('L2-M6')).toContain('जमणे');
+    expect(notes('L2-M6')).toContain('चालेल');
+    expect(notes('L2-M6')).toContain('वाजता');
+    // M7: the continuous, contracted in display with both shapes on the row.
+    expect(notes('L2-M7')).toContain('बोलतोय');
+    expect(notes('L2-M7')).toContain('बोलत आहे');
+    expect(notes('L2-M7')).toContain('कोण बोलतंय');
+    expect(notes('L2-M7')).toContain('निरोप');
+    // M8: the मिळणे/सापडणे split, the -त नाही frame, M5's law recycled on हरवणे.
+    expect(notes('L2-M8')).toContain('मिळणे');
+    expect(notes('L2-M8')).toContain('सापडणे');
+    expect(notes('L2-M8')).toContain('चालत नाही');
+    expect(notes('L2-M8')).toContain('हरवला');
+    expect(notes('L2-M8')).toMatch(/interference/i);
+    // M9: -पेक्षा glued, the superlative, one Hindi या split into की/किंवा.
+    expect(notes('L2-M9')).toContain('चहापेक्षा');
+    expect(notes('L2-M9')).toContain('जास्त');
+    expect(notes('L2-M9')).toContain('सगळ्यात');
+    expect(notes('L2-M9')).toContain('किंवा');
+    expect(patterns('L2-M9')).toContain('चहा की कॉफी?');
+    // M10: the third-person ergative, the sequencers, the four-sentence account.
+    expect(notes('L2-M10')).toContain('त्याने');
+    expect(notes('L2-M10')).toContain('तिने');
+    expect(notes('L2-M10')).toContain('मग');
+    expect(notes('L2-M10')).toContain('भेटलो');
+    expect(notes('L2-M10')).toMatch(/four (short )?sentences/i);
+  });
+
+  it('pays the debts the L1 reviews recorded, and says where each was recorded', () => {
+    // दे (docs/15's M10 note), the counting set (OQ 28), बोलणे (OQ 29), the ने question (Q20).
+    expect(notes('L2-M1')).toContain('docs/15');
+    expect(notes('L2-M5')).toContain('open question 28');
+    expect(notes('L2-M7')).toContain('open question 29');
+    expect(notes('L2-M10')).toContain('open question 20');
+    // The pinned L1 sweep misses stand: a module's index is cumulative through itself.
+    expect(notes('L2-M7')).toContain('बोललो');
+    expect(notes('L2-M7')).toMatch(/pinned|STANDS/);
+    // आम्ही can never get its own row (OQ 23) — the header says so; M1 restates the आपण seam.
+    expect(notes('L2-M1')).toContain('L1-M10');
+  });
+
+  it('names the index seam wherever a Devanagari surface is decided', () => {
+    // Forms entries become keys, so बसा's row must not list the bare stem बस (M4's bus)…
+    expect(notes('L2-M1')).toContain('बसा');
+    expect(notes('L2-M4')).toContain("the बस key stays the vehicle's");
+    // …प्यायला-as-purpose is L1-M5's past key, so the -आयला frame writes around it…
+    expect(notes('L2-M5')).toContain('प्यायला');
+    expect(notes('L2-M5')).toContain('जेवायला');
+    // …या carries two jobs in one note (come-polite and the -ऊ या invite)…
+    expect(notes('L2-M1')).toContain('जाऊ या');
+    // …कोण (M2) and कोणता (M9) are sibling keys, cross-referenced, never merged…
+    expect(notes('L2-M9')).toContain('कोणता');
+    expect(notes('L2-M9')).toContain('कोण');
+    // …the course stays single-token (no multi-token surface, -पेक्षा and friends glue on)…
+    expect(notes('L2-M9')).toContain('single-token');
+    // …and proper nouns never index, so directions anchor on common nouns.
+    expect(notes('L2-M4')).toContain('#61');
+  });
+
+  it('settles the register and forms policy in NOTES, since a prompt only shows the notes', () => {
+    // The four-decision record is docs/26; M1 opens with it and M10 closes with it.
+    expect(notes('L2-M1')).toContain('docs/26');
+    expect(notes('L2-M10')).toContain('docs/26');
+    // Language of fields unchanged from L1: English rules/notes, Hindi learner-facing lines.
+    expect(notes('L2-M1')).toContain('rules[].text');
+    expect(notes('L2-M1')).toContain('Devanagari');
+    expect(notes('L2-M1')).toContain('glossEn');
+    // The register chip has no formal value, so तू lines chip informal and usage carries formal.
+    expect(notes('L2-M1')).toContain('informal');
+    expect(notes('L2-M6')).toContain('informal');
+    // L2 never edits an L1 file: new shapes of L1 lexemes point back instead.
+    expect(notes('L2-M2')).toContain('no L1 file is edited');
+    // A contraction and its full form share one row, participle -त listed as its own form.
+    expect(notes('L2-M7')).toContain('बोलतोय · बोलतेय · बोलतंय · बोलत');
   });
 });
 
@@ -533,6 +670,39 @@ describe('generatePrompt (CLI shape)', () => {
     expect(report.lines.join('\n')).toContain('first module — empty inventory');
   });
 
+  it('renders hi-mr L2-M1 from the built L1-M10 index — the ladder crosses levels (#295)', () => {
+    const roots = tree();
+    const index = indexThrough('L1-M10', ['मला', 'चहा', 'आवडतो', 'द्या']);
+    mkdirSync(path.join(roots.builtRoot, 'hi-mr', 'index'), { recursive: true });
+    writeFileSync(
+      path.join(roots.builtRoot, 'hi-mr', 'index', 'L1-M10.json'),
+      JSON.stringify(index),
+    );
+
+    const report = generatePrompt({ courseId: 'hi-mr', moduleId: 'L2-M1', ...roots });
+    expect(report.exitCode).toBe(0);
+    expect(report.lines.join('\n')).toContain('4 surfaces through L1-M10');
+    expect(report.outFile).toBe(path.join(roots.promptsDir, 'hi-mr-L2-M1.md'));
+    const written = readFileSync(report.outFile ?? '', 'utf8');
+    const brief = COURSE_BRIEFS['hi-mr']?.['L2-M1'] as ModuleBrief;
+    expect(written).toContain('Asking politely');
+    expect(written).toContain('cumulative through L1-M10');
+    for (const pattern of brief.patterns) expect(written).toContain(pattern);
+    expect(written).toContain(`"maxWordsPerSentence": ${brief.maxWordsPerSentence}`);
+    expect(written).toContain('content/hi-mr/modules/L2-M1.json');
+    expect(written).toContain(SCHEMA_TEXT.trimEnd());
+  });
+
+  it('fails for hi-mr L2-M1 with the content:build hint when L1-M10 was never built', () => {
+    const roots = tree();
+    const report = generatePrompt({ courseId: 'hi-mr', moduleId: 'L2-M1', ...roots });
+    expect(report.exitCode).toBe(1);
+    expect(report.outFile).toBeNull();
+    const text = report.lines.join('\n');
+    expect(text).toContain('L1-M10');
+    expect(text).toContain('npm run content:build -- --with-unverified');
+  });
+
   it('renders en-ar L1-M1 from its own brief, romanization scheme included', () => {
     const roots = tree();
     const report = generatePrompt({ courseId: 'en-ar', moduleId: 'L1-M1', ...roots });
@@ -585,9 +755,10 @@ describe('generatePrompt (CLI shape)', () => {
     expect(unbriefedCourse.exitCode).toBe(1);
     expect(unbriefedCourse.lines.join('\n')).toContain('no briefs yet');
 
-    const unbriefedModule = generatePrompt({ courseId: 'hi-mr', moduleId: 'L2-M1', ...roots });
+    // hi-mr L2 is briefed (#295); L3 is the course's unbriefed rung now.
+    const unbriefedModule = generatePrompt({ courseId: 'hi-mr', moduleId: 'L3-M1', ...roots });
     expect(unbriefedModule.exitCode).toBe(1);
-    expect(unbriefedModule.lines.join('\n')).toContain('no brief for "hi-mr L2-M1"');
+    expect(unbriefedModule.lines.join('\n')).toContain('no brief for "hi-mr L3-M1"');
     expect(unbriefedModule.lines.join('\n')).toContain('L1-M1');
   });
 
