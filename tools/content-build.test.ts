@@ -1060,11 +1060,11 @@ describe('the romanized edge cases (#116, [Q3])', () => {
     expect(index.surfaces['kot']?.moduleId).toBe('L1-M1');
   });
 
-  it('resolves every sentence and pool token of all three authored courses — the [Q3] sweep', () => {
+  it('resolves every sentence and pool token of all four authored courses — the [Q3] sweep', () => {
     // The "why" path is sentence displays; the exit ritual reads the pool. Variations are outside
     // the sweep by design: they legitimately carry untaught tokens (proper nouns like Priya, and
     // variation-only forms — the documented gap on #61) and the panel drops what cannot resolve.
-    for (const courseId of ['en-ar', 'en-es', 'hi-mr']) {
+    for (const courseId of ['en-ar', 'en-es', 'hi-en', 'hi-mr']) {
       const modules = authoredCourse(courseId);
       const index = lastIndex(courseId);
       const lookup = {
@@ -1341,6 +1341,132 @@ describe('the romanized edge cases (#116, [Q3])', () => {
     expect(row('sa-ashtarī')).toBe('L1-M8/L1-M8-S10#0');
     expect(row('sa')).toBe('L1-M6/L1-M6-S01#0');
   });
+
+  /**
+   * #284's seam — the sweep, for hi-en: every variation line against the index of the module that
+   * shows it. Every remaining miss is a *decided* miss, and
+   * `docs/17-llm-review-hi-en-surfaces.md` says which kind per line:
+   *
+   *   - a name or place shown only in variation lines (`priya` eight times, `jaipur`) — hi-en
+   *     teaches the proper nouns its displays carry (Rohan, Delhi, Mumbai), and a name shown only
+   *     in a variation has no display to hang a row on;
+   *   - a forward reference to a later module's own row (`mumbai` → M2, `doctor` → M2,
+   *     `coffee` → M3, `water` → M3, `films` → M5) — the learner meets it on schedule;
+   *   - a recorded exemption: the sibling words the changed lines gloss in prose (`farmer`,
+   *     `actor`, `cricket`, `dogs`, `hindi`, `speak`, `milk` — each would only resolve by landing
+   *     on a row headed by a DIFFERENT word, the forms-hit bug), the M10 trio its own changed
+   *     lines declare untaught (`well`, `now`, `bus` — इस सीढ़ी पर नहीं सिखाया), and the numbers
+   *     docs/13 reserves for later authoring (`three`, `six`).
+   *
+   * A new variation that resolves nowhere fails here, so #288's third-variation pass has to
+   * decide about a new surface rather than discover it later.
+   */
+  it('sweeps every hi-en variation line down to twenty-seven decided misses (#284)', () => {
+    const modules = authoredCourse('hi-en');
+    const indexes = buildWordIndex('hi-en', modules);
+    const misses: string[] = [];
+
+    modules.forEach(({ id, module }, at) => {
+      const index = indexes[at];
+      if (index === undefined) throw new Error(`${id} built no index`);
+      const lookup = {
+        maxSpan: index.maxSpan,
+        has: (surface: string) => Object.hasOwn(index.surfaces, surface),
+      };
+      for (const sentence of module.sentences) {
+        for (const variation of sentence.variations ?? []) {
+          for (const match of matchSurfaces(tokenizeSurface(variation.display), lookup)) {
+            if (!match.resolved) misses.push(`${id}/${sentence.id}: "${match.surface}"`);
+          }
+        }
+      }
+    });
+
+    expect(misses).toEqual([
+      'L1-M1/L1-M1-S01: "priya"',
+      'L1-M1/L1-M1-S02: "mumbai"',
+      'L1-M1/L1-M1-S03: "jaipur"',
+      'L1-M1/L1-M1-S03: "priya"',
+      'L1-M1/L1-M1-S04: "doctor"',
+      'L1-M1/L1-M1-S05: "priya"',
+      'L1-M1/L1-M1-S05: "farmer"',
+      'L1-M1/L1-M1-S06: "actor"',
+      'L1-M1/L1-M1-S07: "coffee"',
+      'L1-M1/L1-M1-S07: "water"',
+      'L1-M1/L1-M1-S08: "cricket"',
+      'L1-M1/L1-M1-S08: "films"',
+      'L1-M1/L1-M1-S09: "dogs"',
+      'L1-M1/L1-M1-S10: "hindi"',
+      'L1-M2/L1-M2-S01: "priya"',
+      'L1-M2/L1-M2-S02: "priya"',
+      'L1-M2/L1-M2-S07: "priya"',
+      'L1-M3/L1-M3-S03: "speak"',
+      'L1-M3/L1-M3-S09: "milk"',
+      'L1-M3/L1-M3-S10: "three"',
+      'L1-M4/L1-M4-S01: "six"',
+      'L1-M4/L1-M4-S02: "six"',
+      'L1-M10/L1-M10-S01: "priya"',
+      'L1-M10/L1-M10-S02: "well"',
+      'L1-M10/L1-M10-S03: "now"',
+      'L1-M10/L1-M10-S09: "bus"',
+      'L1-M10/L1-M10-S10: "priya"',
+    ]);
+  });
+
+  /**
+   * The hi-en surface-pass seams (#284) — the one addition and the refusals around it, pinned to
+   * the row that owns each. The load-bearing ones: the full name `Rohan Sharma` is a two-token
+   * surface on the name's own row, and a multi-token surface grants no bare-word key
+   * (`surfaceIndexKeys`), so `sharma` alone stays out and `rohan` is untouched; every sibling row
+   * an exempted variation word could have squatted on still heads its own word; and the reserved
+   * numbers of docs/13 (`three`, `six`, `hundred`) plus M10's declared-untaught trio
+   * (`well`, `now`, `bus`) stay free for later authoring.
+   */
+  it('keeps hi-en surface-pass seams on the row that owns them (#284)', () => {
+    const index = lastIndex('hi-en');
+    const row = (surface: string): string =>
+      `${index.surfaces[surface]?.moduleId}/${index.surfaces[surface]?.sentenceId}#${index.surfaces[surface]?.wordIdx}`;
+
+    // The full name rides the name row; the surname alone is no key, the first name unmoved.
+    expect(row('rohan sharma')).toBe('L1-M1/L1-M1-S01#3');
+    expect(row('rohan')).toBe('L1-M1/L1-M1-S01#3');
+    expect(Object.hasOwn(index.surfaces, 'sharma')).toBe(false);
+    // The sibling rows keep their own word — no exempted variation word landed on any of them.
+    expect(row('teacher')).toBe('L1-M1/L1-M1-S05#0');
+    expect(row('engineer')).toBe('L1-M1/L1-M1-S06#0');
+    expect(row('music')).toBe('L1-M1/L1-M1-S08#0');
+    expect(row('books')).toBe('L1-M1/L1-M1-S09#0');
+    expect(row('english')).toBe('L1-M1/L1-M1-S10#0');
+    expect(row('learn')).toBe('L1-M3/L1-M3-S03#1');
+    expect(row('sugar')).toBe('L1-M3/L1-M3-S09#0');
+    expect(row('fine')).toBe('L1-M2/L1-M2-S04#1');
+    // The exempted words themselves stay out of the index entirely.
+    for (const exempted of [
+      'farmer',
+      'actor',
+      'cricket',
+      'dog',
+      'dogs',
+      'hindi',
+      'speak',
+      'milk',
+      'priya',
+      'jaipur',
+    ]) {
+      expect(Object.hasOwn(index.surfaces, exempted), `${exempted} stays unclaimed`).toBe(false);
+    }
+    // Reserved for later authoring: docs/13's numbers, and the trio M10's changed lines refuse.
+    for (const reserved of ['three', 'six', 'hundred', 'well', 'now', 'bus']) {
+      expect(Object.hasOwn(index.surfaces, reserved), `${reserved} stays reserved`).toBe(false);
+    }
+    // The forward references resolve on schedule, each on the later module's own row.
+    expect(row('mumbai')).toBe('L1-M2/L1-M2-S07#0');
+    expect(row('doctor')).toBe('L1-M2/L1-M2-S06#0');
+    expect(row('coffee')).toBe('L1-M3/L1-M3-S05#1');
+    expect(row('water')).toBe('L1-M3/L1-M3-S06#1');
+    expect(row('films')).toBe('L1-M5/L1-M5-S08#1');
+    expect(row('film')).toBe('L1-M5/L1-M5-S08#1');
+  });
 });
 
 describe('the comprehension-pool rule', () => {
@@ -1590,7 +1716,7 @@ describe('the authored content', () => {
     // build now ships exactly what the strict build above does — the same ten rungs, the same
     // report line — and differs only in the banner and the `devBuild` key.
     expect(report.lines).toContain('hi-en: 10 modules (L1-M1..M10)');
-    expect(report.lines).toContain('  index L1-M10: 202 surfaces');
+    expect(report.lines).toContain('  index L1-M10: 203 surfaces');
     expect(report.lines).toContain(
       'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10)',
     );
@@ -1856,7 +1982,7 @@ describe('the authored content', () => {
     ]);
     // `in front of` and `Can I have` are three-token keys.
     expect(index.maxSpan).toBe(3);
-    expect(index.surfaceCount).toBe(202);
+    expect(index.surfaceCount).toBe(203);
     // M6: `will` bare (the lesson), `I'll` its own row listing ONLY itself — `i will` is no key, so
     // `I will go` opens `I` then `will`; `going to` whole (bare `going` unclaimed) and `to` still M3's.
     expect(index.surfaces['will']).toEqual(row('L1-M6', 1, 0));
