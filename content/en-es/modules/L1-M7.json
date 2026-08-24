@@ -5,8 +5,8 @@
   "job": "Locations and prepositions",
   "prerequisites": ["L1-M6"],
   "verified": true,
-  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
-  "verifiedAt": "2026-08-13",
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 7,
@@ -100,6 +100,11 @@
           "display": "Los libros están en la mesa",
           "cue": "The books are on the table",
           "changed": "plural subject, so está becomes están"
+        },
+        {
+          "display": "El libro no está en la mesa",
+          "cue": "The book is not on the table",
+          "changed": "no in front of está — where it is not"
         }
       ],
       "mistake": {
@@ -140,6 +145,11 @@
           "display": "¿Dónde están mis libros?",
           "cue": "Where are my books?",
           "changed": "plural, so está becomes están"
+        },
+        {
+          "display": "Está debajo de la mesa",
+          "cue": "It's under the table",
+          "changed": "the answer — the book is known, so only está and the place remain"
         }
       ],
       "mistake": {
@@ -180,6 +190,11 @@
           "display": "¿Hay una mesa en la casa?",
           "cue": "Is there a table in the house?",
           "changed": "as a question, with the marks doing the work"
+        },
+        {
+          "display": "No hay libros en la mesa",
+          "cue": "There are no books on the table",
+          "changed": "no hay — and the noun stands bare in the negative too"
         }
       ],
       "mistake": {
@@ -220,6 +235,11 @@
           "display": "El pan está debajo de la mesa",
           "cue": "The bread is under the table",
           "changed": "swap what is hiding"
+        },
+        {
+          "display": "¿Qué hay debajo de la mesa?",
+          "cue": "What is under the table?",
+          "changed": "ask with hay — what exists down there, not where a known thing is"
         }
       ],
       "mistake": {
@@ -267,6 +287,11 @@
           "display": "La mesa está al lado de la puerta",
           "cue": "The table is next to the door",
           "changed": "swap what is beside it"
+        },
+        {
+          "display": "¿Ana está al lado de la puerta?",
+          "cue": "Is Ana next to the door?",
+          "changed": "the yes-or-no check — her statement, unchanged, inside the marks"
         }
       ],
       "mistake": {
@@ -321,6 +346,11 @@
           "display": "Mi casa está cerca de la tienda",
           "cue": "My house is near the shop",
           "changed": "turn it around — the same de holds"
+        },
+        {
+          "display": "La tienda está cerca del parque",
+          "cue": "The shop is near the park",
+          "changed": "a masculine landmark — de + el fuses to del"
         }
       ],
       "mistake": {
@@ -361,6 +391,11 @@
           "display": "Hay un baño cerca de aquí",
           "cue": "There's a bathroom near here",
           "changed": "swap what you are looking for"
+        },
+        {
+          "display": "Hay una tienda al lado del parque",
+          "cue": "There's a shop next to the park",
+          "changed": "swap the where — al lado del, with its fused del"
         }
       ],
       "mistake": {
@@ -401,6 +436,11 @@
           "display": "El baño está al lado de la puerta",
           "cue": "The bathroom is next to the door",
           "changed": "the answer"
+        },
+        {
+          "display": "Está aquí",
+          "cue": "It's here",
+          "changed": "the shortest answer — está and the place, nothing else survives"
         }
       ],
       "mistake": {
@@ -441,6 +481,11 @@
           "display": "El parque está cerca de mi casa",
           "cue": "The park is near my house",
           "changed": "turn it around"
+        },
+        {
+          "display": "Hay un parque cerca de mi casa",
+          "cue": "There's a park near my house",
+          "changed": "flip the frame — hay introduces the park, está would place it"
         }
       ],
       "mistake": {
@@ -481,6 +526,11 @@
           "display": "Voy al baño",
           "cue": "I'm going to the bathroom",
           "changed": "another masculine place"
+        },
+        {
+          "display": "¿Vas al parque mañana?",
+          "cue": "Are you going to the park tomorrow?",
+          "changed": "voy → vas — someone else's plan, with al intact"
         }
       ],
       "mistake": {

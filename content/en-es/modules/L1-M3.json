@@ -5,8 +5,8 @@
   "job": "Say what you want and don't want",
   "prerequisites": ["L1-M2"],
   "verified": true,
-  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
-  "verifiedAt": "2026-08-13",
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 2,
     "maxWordsPerSentence": 6,
@@ -93,6 +93,11 @@
           "display": "¿Quieres un café?",
           "cue": "Do you want a coffee?",
           "changed": "the ending swaps the person — quiero → quieres"
+        },
+        {
+          "display": "¿No quieres un café?",
+          "cue": "Don't you want a coffee?",
+          "changed": "no inside the question — the offer that expects a yes"
         }
       ],
       "mistake": {
@@ -140,6 +145,11 @@
           "display": "¿Quieres un café con leche?",
           "cue": "Do you want a coffee with milk?",
           "changed": "the same words, asked instead of stated"
+        },
+        {
+          "display": "Quiero una sopa con pan",
+          "cue": "I want a soup with bread",
+          "changed": "con joins any two — soup with bread this time"
         }
       ],
       "mistake": {
@@ -180,6 +190,11 @@
           "display": "Quiero pan",
           "cue": "I want bread",
           "changed": "drop the no and it is a want again"
+        },
+        {
+          "display": "No necesito pan",
+          "cue": "I don't need bread",
+          "changed": "swap the verb — no sits in front of whichever verb carries the person"
         }
       ],
       "mistake": {
@@ -234,6 +249,11 @@
           "display": "Quiero manzanas rojas",
           "cue": "I want red apples",
           "changed": "no article, and both words go plural together"
+        },
+        {
+          "display": "No quiero la manzana roja",
+          "cue": "I don't want the red apple",
+          "changed": "point at that one — la — and refuse it; roja still agrees"
         }
       ],
       "mistake": {
@@ -281,6 +301,11 @@
           "display": "Necesito un café",
           "cue": "I need a coffee",
           "changed": "necesito takes a noun exactly as quiero does"
+        },
+        {
+          "display": "No necesito agua",
+          "cue": "I don't need water",
+          "changed": "no in front of necesito — refusing a need works exactly like refusing a want"
         }
       ],
       "mistake": {
@@ -328,6 +353,11 @@
           "display": "No quiero la sopa fría",
           "cue": "I don't want the soup cold",
           "changed": "refuse it instead — and fría, unlike caliente, does change"
+        },
+        {
+          "display": "¿Quieres una sopa caliente?",
+          "cue": "Do you want a hot soup?",
+          "changed": "the offer — same words, and the marks with the tune do the asking"
         }
       ],
       "mistake": {
@@ -368,6 +398,11 @@
           "display": "No quiero comer",
           "cue": "I don't want to eat",
           "changed": "the no goes in front of the verb that carries the ending, not in front of the infinitive"
+        },
+        {
+          "display": "Necesito comer",
+          "cue": "I need to eat",
+          "changed": "necesito takes the infinitive too — need to eat, want to eat, one frame"
         }
       ],
       "mistake": {
@@ -408,6 +443,11 @@
           "display": "No quiero estudiar",
           "cue": "I don't want to study",
           "changed": "the no lands on quiero, the verb with the person in it"
+        },
+        {
+          "display": "¿Quieres estudiar español?",
+          "cue": "Do you want to study Spanish?",
+          "changed": "asked of you — the ending flips to -es and the marks do the rest"
         }
       ],
       "mistake": {
@@ -448,6 +488,11 @@
           "display": "¿Quiere usted un café?",
           "cue": "Do you want a coffee? (polite)",
           "changed": "usted takes quiere, the he-or-she form"
+        },
+        {
+          "display": "No, gracias",
+          "cue": "No, thanks",
+          "changed": "the polite refusal — two words close the offer"
         }
       ],
       "mistake": {
@@ -488,6 +533,11 @@
           "display": "Nada",
           "cue": "Nothing",
           "changed": "on its own it is a complete answer, and then the no is not needed"
+        },
+        {
+          "display": "No necesito nada",
+          "cue": "I don't need anything",
+          "changed": "swap the verb under the double negative — the frame holds for any verb"
         }
       ],
       "mistake": {

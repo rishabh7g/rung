@@ -5,7 +5,7 @@
   "job": "Future and plans",
   "prerequisites": ["L1-M5"],
   "verified": true,
-  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
@@ -111,6 +111,11 @@
           "display": "Voy a trabajar por la mañana",
           "cue": "I'm going to work in the morning",
           "changed": "the other mañana, back inside its three-word phrase"
+        },
+        {
+          "display": "Mañana no voy a trabajar",
+          "cue": "Tomorrow I'm not going to work",
+          "changed": "no in front of voy — never inside the voy a block"
         }
       ],
       "mistake": {
@@ -151,6 +156,11 @@
           "display": "¿Vas a trabajar mañana?",
           "cue": "Are you going to work tomorrow?",
           "changed": "another plan, same question shape"
+        },
+        {
+          "display": "Sí, voy a comer con Ana",
+          "cue": "Yes, I'm going to eat with Ana",
+          "changed": "the answer — vas turns back to voy"
         }
       ],
       "mistake": {
@@ -191,6 +201,11 @@
           "display": "Voy a comer después",
           "cue": "I'm going to eat later",
           "changed": "swap the plain verb"
+        },
+        {
+          "display": "¿Vas a estudiar después?",
+          "cue": "Are you going to study later?",
+          "changed": "voy → vas and the marks — the plan, asked of you"
         }
       ],
       "mistake": {
@@ -231,6 +246,11 @@
           "display": "¿Qué vas a hacer mañana?",
           "cue": "What are you going to do tomorrow?",
           "changed": "the question this sentence answers"
+        },
+        {
+          "display": "Mañana no vamos a hacer nada",
+          "cue": "Tomorrow we're not going to do anything",
+          "changed": "voy → vamos: the empty day is now shared"
         }
       ],
       "mistake": {
@@ -271,6 +291,11 @@
           "display": "¿Vas a comer esta noche?",
           "cue": "Are you going to eat tonight?",
           "changed": "swap the plain verb"
+        },
+        {
+          "display": "No, esta noche no voy a estudiar",
+          "cue": "No, tonight I'm not going to study",
+          "changed": "the refusal — the first no answers, the second negates the verb"
         }
       ],
       "mistake": {
@@ -311,6 +336,11 @@
           "display": "Trabajo todos los días",
           "cue": "I work every day",
           "changed": "the plural — a habit rather than one long day"
+        },
+        {
+          "display": "Mañana trabajaré todo el día",
+          "cue": "Tomorrow I'll work all day",
+          "changed": "the same plan in the -é future — the present, voy a and -é all point at tomorrow"
         }
       ],
       "mistake": {
@@ -351,6 +381,11 @@
           "display": "Mañana trabajaré mucho",
           "cue": "Tomorrow I'll work a lot",
           "changed": "the same ending on another -ar verb"
+        },
+        {
+          "display": "¿Hablarás con Ana mañana?",
+          "cue": "Will you speak with Ana tomorrow?",
+          "changed": "-é → -ás: the promise, asked of you"
         }
       ],
       "mistake": {
@@ -391,6 +426,11 @@
           "display": "Vamos a comer temprano",
           "cue": "We're going to eat early",
           "changed": "M4's temprano instead of an hour"
+        },
+        {
+          "display": "¿Vamos a comer a las ocho?",
+          "cue": "Shall we eat at eight?",
+          "changed": "asked, it is a proposal — shall we?"
         }
       ],
       "mistake": {
@@ -431,6 +471,11 @@
           "display": "Los sábados no trabajo",
           "cue": "On Saturdays I don't work",
           "changed": "the plural turns one day into every week"
+        },
+        {
+          "display": "El sábado vamos a México",
+          "cue": "On Saturday we're going to Mexico",
+          "changed": "vamos with a place — this a is the direction word, not the plan glue"
         }
       ],
       "mistake": {
@@ -471,6 +516,11 @@
           "display": "Esta noche voy a ver una película",
           "cue": "Tonight I'm going to see a film",
           "changed": "swap the time word"
+        },
+        {
+          "display": "Mañana veo una película",
+          "cue": "Tomorrow I'm seeing a film",
+          "changed": "the plain present does the job — mañana already says when, as S06 taught"
         }
       ],
       "mistake": {
