@@ -58,15 +58,29 @@
   border-color: var(--color-accent-700);
 }
 
-/* Starting over is the quieter of the two: a wireframe at the secondary height (46px,
-   design/tokens.md §4), clearing --tap-min either way. */
+/**
+ * Starting over is the quieter of the two, and since #320 it is a GHOST rather than a wireframe —
+ * the app's own idiom for "the other thing you could do here" (`RungCard`'s `.ghost`, #87): no
+ * border, no fill, accent ink.
+ *
+ * The two controls were already a primary and a secondary; what the audit found is that a
+ * bordered 46px block reads as the second half of a pair of buttons, so returning to an open
+ * session presented itself as a choice to make every time — when the answer is Continue almost
+ * every time, and New session is the exception that spends a fresh count and re-ticks the queue.
+ * Demoting it does not hide it: it says which one is the ordinary way back.
+ *
+ * `--btn-secondary-height` is kept rather than `--ghost-height` (36px): this ghost is a real
+ * destination in thumb reach at the bottom of the column, not an inline aside, and 46px clears
+ * `--tap-min` where the 36px ghost the design package specifies does not (the reconciliation
+ * design/tokens.md §4 owes, noted on #117 and unchanged here).
+ */
 .fresh {
   composes: action;
   min-height: var(--btn-secondary-height);
   margin-top: var(--space-2);
-  border-color: var(--color-divider);
+  color: var(--color-accent);
 }
 
 .fresh:active {
-  background: color-mix(in srgb, var(--color-text) 14%, transparent);
+  background: color-mix(in srgb, var(--color-accent) 18%, transparent);
 }

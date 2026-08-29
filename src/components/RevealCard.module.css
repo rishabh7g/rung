@@ -158,58 +158,34 @@
 }
 
 /**
- * With a Next in it the row is **2:1**, where the prototype splits it 1:1 — the type wall again,
- * this time as geometry. Its segments say "Got it" / "Missed" in 13px Barlow; hi-mr's say the
- * same thing in Devanagari at the `--devanagari-min-size` floor, and half of a 360px row is not
- * enough for that: at 1:1 the second segment wraps inside its own 44px. The marks get the room
- * because the mark is what the state is for; Next stays a full 46px target beside it. Recorded
- * with the rest of the type items on #117.
+ * Marked. The row used to split **2:1** to seat the Next beside the segments; #313 removed that
+ * button, so the segments keep the whole width they always wanted — the type wall the 2:1 was
+ * working around (hi-mr's segments are Devanagari at the `--devanagari-min-size` floor, and half
+ * a 360px row wraps them) simply stops being a constraint when nothing shares the row.
  */
 .marksMarked {
   composes: marks;
-  grid-template-columns: 2fr 1fr;
-}
-
-/**
- * Next — which exists only once a mark does [D11]. It enters over `--motion-next-appear` (200ms,
- * "Next appears in 200ms after a self-mark", design/tokens.md §5) the instant the mark lands: the
- * 200ms is the entrance, not a delay, exactly as the prototype's `rowIn .2s` is.
- *
- * `--btn-secondary-height` (46px) is the prototype's own height for it, and it shares the row
- * with the 44px segments.
- */
-.next {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  min-width: 0;
-  min-height: var(--btn-secondary-height);
-  padding: var(--space-2) var(--space-3);
-  background: var(--color-accent);
-  border: var(--border-hairline);
-  border-color: var(--color-accent);
-  color: var(--color-bg);
-  font: var(--text-l2-card);
-  font-size: var(--devanagari-min-size);
-  text-align: center;
-  cursor: pointer;
-  animation: reveal-in var(--motion-next-appear) both;
-  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.next:active {
-  background: var(--color-accent-700);
-  border-color: var(--color-accent-700);
 }
 
 /* design/tokens.md §5: reduced motion collapses every movement in the product — including the
-   one it is built around. The answer and the Next appear; they do not travel. */
+   one it is built around. The answer appears; it does not travel.
+
+   The commit window is NOT collapsed here, and cannot be: it is a JavaScript gate
+   (`useCommitWindow`), not an animation, for the reason the hold's timer is one [D14] — an
+   `animationend` commit under this very rule would fire in 0.01ms, rushing exactly the learners
+   this rule exists to protect. */
 @media (prefers-reduced-motion: reduce) {
-  .answer,
-  .next {
+  .answer {
     animation: none;
   }
+}
+
+/* The show-once recall hint (#319). Quiet, above the reveal, and gone from the second card
+   onwards — it is the one sentence the card says about itself, not a plate it wears. The dashed
+   "outside the app" frame #225 removed is deliberately not back: this is a line, once. */
+.hint {
+  margin: 0 0 var(--space-3);
+  font: var(--text-caption);
+  color: var(--ink-65);
+  text-align: center;
 }

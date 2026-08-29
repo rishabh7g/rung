@@ -37,7 +37,7 @@
  */
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Check } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { interpolate, useStrings } from '../course/strings.ts';
 import { COMPREHENSION_PATH, handover } from '../shell/routes.tsx';
 import styles from './HoldToConfirm.module.css';
@@ -51,6 +51,19 @@ const HOLD_TOTAL_MS = 900;
 
 /** `--motion-hold-step` — the design package's sampling cadence for the fill. */
 const HOLD_STEP_MS = 30;
+
+/**
+ * How long the ✓ stands before the hold carries the learner into part 2 (#314).
+ *
+ * The hold used to end on a second control — a ✓, and a link to tap. But the hold IS the
+ * intentional act: ~900ms of held finger with no tap-through is the most deliberate thing in the
+ * product, and asking for a tap to confirm it is asking the learner to agree with themselves. So
+ * the ✓ lands, is read, and the arc moves.
+ *
+ * It is a beat, not a delay to sit through: long enough that the signature registers as having
+ * been paid rather than the screen jumping out from under the finger that paid it.
+ */
+const SIGNED_BEAT_MS = 700;
 
 /**
  * 30 steps. design/tokens.md §5 says "0.04 per 30ms step" *and* "~900ms total", which cannot both
@@ -79,6 +92,7 @@ interface HoldToConfirmProps {
 
 export function HoldToConfirm({ ordinal, onConfirm, dir }: HoldToConfirmProps) {
   const strings = useStrings();
+  const navigate = useNavigate();
   /**
    * How full the bar is, 0 → 1 — and 1 IS the confirmation. One cell rather than a `progress` and
    * a `confirmed` that could drift apart: the control is signed exactly when the bar is full.
@@ -96,6 +110,29 @@ export function HoldToConfirm({ ordinal, onConfirm, dir }: HoldToConfirmProps) {
   // A hold does not survive the screen: leaving mid-press clears the timer rather than letting it
   // tick on against an unmounted component.
   useEffect(() => stop, []);
+
+  /**
+   * **The signed hold carries the learner into part 2** (#314) — the arc's hand-over, made by the
+   * hold itself rather than by a link the learner must also find and tap.
+   *
+   * `state` is the hand-over token, and it is the whole of #102's guard: part 2 is only reachable
+   * from a hold that was actually paid, and the proof travels in the history entry rather than in
+   * a flag someone has to remember to clear (`shell/routes.tsx`). It is a literal, so this file
+   * still keeps nothing about the learner — the navigation carries no more than the `<Link>` it
+   * replaced.
+   *
+   * `replace` is deliberately NOT used: the arc is where a learner who backs out of Comprehension
+   * belongs, and part 2's own guard sends a token-less arrival there anyway.
+   */
+  useEffect(() => {
+    if (progress !== 1) return;
+
+    const beat = setTimeout(() => {
+      void navigate(COMPREHENSION_PATH, { state: handover('hold') });
+    }, SIGNED_BEAT_MS);
+
+    return () => clearTimeout(beat);
+  }, [navigate, progress]);
 
   function start(): void {
     // Ignore a second pointer landing on a hold that is already running: two fingers are not
@@ -128,21 +165,14 @@ export function HoldToConfirm({ ordinal, onConfirm, dir }: HoldToConfirmProps) {
       // switches step 3's number to solid accent). It is read by a `:has()` rule in
       // `RitualScreen.module.css` rather than by a variable, so the screen still knows nothing —
       // the DOM says it, which is the only place the fact lives.
+      //
+      // The ✓ is the whole of the signed state since #314: the effect above is what goes on to
+      // part 2, so there is nothing here to tap and nothing to decide.
       <div className={styles.signed} data-hold="signed">
         <p className={styles.signedRow} dir={dir}>
           <Check className={styles.signedIcon} aria-hidden="true" />
           <span>{strings['ritual.confirm.done']}</span>
         </p>
-        {/* The arc's hand-over: part 2 is Comprehension (#102). A `<Link>` rather than a button
-            for the same reason every rung-card CTA is one (#87) — it goes somewhere.
-
-            `state` is the hand-over token, and it is the whole of #102's guard: part 2 is only
-            reachable from a hold that was actually paid, and the proof travels in the history
-            entry rather than in a flag someone has to remember to clear (`shell/routes.tsx`).
-            It is a literal, so this file still keeps nothing about the learner. */}
-        <Link className={styles.cta} to={COMPREHENSION_PATH} state={handover('hold')} dir={dir}>
-          {strings['ritual.confirm.toComprehension']}
-        </Link>
       </div>
     );
   }

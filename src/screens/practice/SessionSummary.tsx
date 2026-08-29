@@ -15,14 +15,22 @@
  * course writes its own sentence around `{count}` instead — the call #86 made for the Ladder's
  * pending line, for the same reason.
  *
- * The exit ritual's own block ("Every sentence produced ×2 — begin the exit ritual") is in the
- * prototype's summary and is deliberately NOT here: the ritual is the Ladder's loud action once
- * the rung is ready (`RungCard`'s `exit_ready` stage, #87/#95), and offering the same unlock from
- * two places is how one of them ends up out of step with the rule.
+ * **The ritual is offered here when the learner has just earned it** (#315), and this is a change
+ * of mind about the prototype's block, not a return to it. The old argument was that the ritual is
+ * the Ladder's loud action once the rung is ready (`RungCard`'s `exit_ready` stage, #87/#95), and
+ * that offering the same unlock from two places is how one of them ends up out of step with the
+ * rule. The first half stands; the second turned out to be about the RULE, not the link. So the
+ * rule still lives in exactly one derivation (`engine/progression.ts`, re-asked by `/ritual`'s own
+ * guard, which sends a wrong arrival to the module) — and the summary stops going silent at the
+ * one moment the next step opens, which is what a learner who just produced the whole rung is
+ * looking at.
+ *
+ * It appears only when `atTwo === total`: not as a nudge, not as a count with a button beside it,
+ * but at the moment the line above it reads "every sentence stands at two".
  */
 import { Link } from 'react-router-dom';
 import { interpolate, useStrings } from '../../course/strings.ts';
-import { HOME_PATH } from '../../shell/routes.tsx';
+import { HOME_PATH, RITUAL_PATH } from '../../shell/routes.tsx';
 import { RegistrationMarks } from '../RegistrationMarks.tsx';
 import styles from './SessionSummary.module.css';
 
@@ -73,6 +81,15 @@ export function SessionSummary({
           {interpolate(strings['practice.summaryAtTwo'], { count: atTwo, total })}
         </p>
       </div>
+
+      {/* The rung is produced out (#315): the exit ritual is what comes next, and this is the
+          moment the learner earned it. The route's own guard still decides whether it opens —
+          this is a way there, never a second gate. */}
+      {total > 0 && atTwo === total && (
+        <Link className={styles.toRitual} to={RITUAL_PATH} dir={dir}>
+          {strings['practice.summaryToRitual']}
+        </Link>
+      )}
 
       {/* Leaving the route is what ends the session (`AppShell`), so the way out is a link. */}
       <Link className={styles.back} to={HOME_PATH} dir={dir}>

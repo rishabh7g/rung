@@ -8,6 +8,14 @@
  * session is about to tick — the same pure function `startSession` uses, so the hub cannot promise
  * a Review phase the session then does not serve.
  *
+ * **It is no longer on the way to a session** (#316). It stood between the learner's intent and
+ * their first card on the common path — tap Practice on the rung card, read three phase lines, tap
+ * Begin — which is a whole screen spent describing what the next tap was going to do anyway. The
+ * Ladder's CTA now asks for the session outright (`startPractice`, `shell/routes.tsx`) and the
+ * effect below honours it. The hub keeps the two jobs that are its own: the Practice TAB, where a
+ * learner who wants the preview goes, and the resume offer, which is a decision (#99) and outranks
+ * any ask to start.
+ *
  * **Starting is one call, and it happens once.** `startSession` increments `sessionCount`, ticks
  * the review queue and writes the opening snapshot in a single write, and answers with the plan
  * the session then runs on. Nothing else in the app may do any of that — and RESUMING (#99) calls
@@ -32,7 +40,8 @@
  * furniture in the register of the nav's tab labels — the `M1 · WHO I AM` kicker and the phase
  * numbers — and the numbers are counts.
  */
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useCourse } from '../course/CourseProvider.tsx';
 import { l2Written } from '../course/manifest.ts';
 import { useModules } from '../course/content.ts';
@@ -42,6 +51,7 @@ import { currentRungId, rungStage } from '../engine/progression.ts';
 import { planSession, type SessionPlan } from '../engine/session.ts';
 import { useAppStore } from '../state/store.ts';
 import { useImmersive } from '../shell/immersive.tsx';
+import { PRACTICE_PATH, wantsSession } from '../shell/routes.tsx';
 import { RegistrationMarks } from './RegistrationMarks.tsx';
 import { rungLabel } from './ladder/rungLabel.ts';
 import { PHASES } from './practice/PhaseChips.tsx';
@@ -77,6 +87,8 @@ export default function PracticeScreen() {
   const { course } = useCourse();
   const l2 = l2Written(course);
   const strings = useStrings();
+  const location = useLocation();
+  const navigate = useNavigate();
   const { immersive, enterSession } = useImmersive();
   const { input, ready } = useProgression();
   const startSession = useAppStore((store) => store.startSession);
@@ -122,6 +134,58 @@ export default function PracticeScreen() {
    * state — the whole of what #99 resumes from.
    */
   const [run, setRun] = useState<Run | null>(null);
+
+  /**
+   * ───────────────────── the rung card's start, honoured once (#316) ─────────────────────
+   *
+   * The Ladder's Practice CTA asks for a SESSION, not for the screen about one, and this is where
+   * that ask is spent. Three things make it safe to start a session from a navigation:
+   *
+   *   • **The flag is spent on arrival.** `history.state` survives a reload, so a flag left in it
+   *     would start a second session on every refresh of this entry — the very failure the Verdict
+   *     guards against with the same move (#103). It is replaced with a stateless entry the moment
+   *     it is read, before anything is written.
+   *   • **The ref, not the flag, is what stops a double start.** Under `StrictMode` the effect is
+   *     invoked twice against one render's values, and the replace above has not landed by the
+   *     second — so `honoured` is what makes `startSession` (a write: it spends a count and ticks
+   *     the review queue) happen exactly once.
+   *   • **It waits for the rung's module.** A session cannot be planned before the sentences are
+   *     there, and `startable` is false until they land; the flag simply stays unspent for that
+   *     render rather than opening an empty session.
+   *
+   * **An open session is never overridden.** A snapshot means there is a resume to offer, and
+   * "continue or start fresh" is a decision only the learner can make (#99) — so the flag is spent
+   * and the hub renders its resume plate, which is the one case where the hub is what was wanted.
+   */
+  const honoured = useRef(false);
+
+  useEffect(() => {
+    if (honoured.current || !wantsSession(location.state)) return;
+    // Not ready to decide yet: the ladder or the rung's module is still in flight. The flag keeps
+    // until the render that can answer.
+    if (!ready || rung === null || stage === 'pending' || sentenceIds.length === 0) return;
+
+    honoured.current = true;
+    void navigate(PRACTICE_PATH, { replace: true, state: null });
+
+    // An open session outranks the ask: the hub offers the resume instead (`ResumeBanner`).
+    if (isResumable(snapshot)) return;
+
+    const plan = startSession(course.id, sentenceIds);
+    setRun({ moduleId: rung, sentenceIds, plan });
+    enterSession();
+  }, [
+    course.id,
+    enterSession,
+    location.state,
+    navigate,
+    ready,
+    rung,
+    sentenceIds,
+    snapshot,
+    stage,
+    startSession,
+  ]);
 
   if (immersive && run !== null) {
     return (

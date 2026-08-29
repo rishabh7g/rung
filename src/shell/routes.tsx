@@ -139,6 +139,40 @@ export function restoredBackup(): { restoredBackup: true } {
   return { restoredBackup: true };
 }
 
+/**
+ * **The rung card's start flag** (#316) — written by the Ladder's Practice CTA, read once by the
+ * Practice hub, which opens the session rather than the screen about it.
+ *
+ * The hub is the one screen entirely about what is *about to* happen, and on the common path it
+ * stood between the learner's intent and the first card: tap Practice, read three phase lines, tap
+ * Begin. The card's CTA now says what it means — so this flag is "the learner asked for a session,
+ * not for a preview".
+ *
+ * It rides in the history entry for the reasons `handover` gives above, and one more that is its
+ * own: **starting a session is a WRITE** (`startSession` spends a count and ticks the review
+ * queue), so what triggers it must be a fact about this navigation and nothing else. A flag in the
+ * store would survive a reload and start a second session on the way past; a prop would need the
+ * two screens to be one. The entry dies with the tap, and the hub replaces it stateless the moment
+ * it reads it — so a refresh of the hub is a hub, never another session.
+ *
+ * The hub still decides whether to honour it: an open snapshot is a resume offer, and a resume is
+ * a decision only the learner can make (#99).
+ */
+export function startPractice(): { startPractice: true } {
+  return { startPractice: true };
+}
+
+/** Did this navigation ask for a session outright? Anything else — the tab, a deep link, a back
+ * tap onto an entry that never held one — answers false, and the hub renders as the hub. */
+export function wantsSession(state: unknown): boolean {
+  return (
+    typeof state === 'object' &&
+    state !== null &&
+    'startPractice' in state &&
+    (state as { startPractice: unknown }).startPractice === true
+  );
+}
+
 /** Did this navigation come from the import's confirm? Anything else answers false. */
 export function justRestored(state: unknown): boolean {
   return (

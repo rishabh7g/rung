@@ -49,7 +49,7 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useModules } from '../../course/content.ts';
 import type { L2Written } from '../../course/manifest.ts';
-import { useStrings } from '../../course/strings.ts';
+import { interpolate, useStrings } from '../../course/strings.ts';
 import type { Sentence } from '../../course/types.ts';
 import { PRODUCTIONS_PER_SENTENCE } from '../../engine/exit.ts';
 import type { SessionPlan } from '../../engine/session.ts';
@@ -389,6 +389,24 @@ export function Session({ courseId, moduleId, sentenceIds, plan, resume, dir, l2
                 {live.idx + 1} / {queue.length}
               </p>
             </div>
+
+            {/**
+             * Where this card's mark goes (#317) — named on the last one of the phase, because
+             * that is the tap that leaves it.
+             *
+             * The hand-over was silent: Review's last mark dropped the learner into Read with no
+             * word about it, which is the session's shape being legible to the code and not to the
+             * person in it. Read's pager already says its own (`read.toProduce`), so this is the
+             * Review card's line and the two hand-overs are now both spoken for. Produce's last
+             * card ends the session, and the summary is its own announcement.
+             */}
+            {live.phase === 'review' && live.idx + 1 === queue.length && (
+              <p className={styles.upNext} dir={dir}>
+                {interpolate(strings['practice.upNext'], {
+                  phase: strings['practice.phase.read'],
+                })}
+              </p>
+            )}
 
             <RevealCard
               // Keyed by the card, so the next cue can never arrive with the last answer under it.
