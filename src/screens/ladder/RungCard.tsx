@@ -7,7 +7,7 @@
  * | stage | primary | beside it |
  * |---|---|---|
  * | `fresh` | "Start with the module" → `/module/:id` | — |
- * | `studied` | "Practice" → a session (#316) | ghost "revisit the module" → `/module/:id` |
+ * | `studied` | "Practice" → `/practice` | ghost "revisit the module" → `/module/:id` |
  * | `exit_ready` | "Exit ritual — open" → `/ritual` | Practice and Module drop to secondary |
  * | `pending` | — | — (an unauthored rung offers nothing, and says nothing about it) |
  *
@@ -35,7 +35,7 @@
 import { Link } from 'react-router-dom';
 import { useStrings } from '../../course/strings.ts';
 import type { RungStage } from '../../engine/progression.ts';
-import { PRACTICE_PATH, RITUAL_PATH, startPractice } from '../../shell/routes.tsx';
+import { PRACTICE_PATH, RITUAL_PATH } from '../../shell/routes.tsx';
 import { HintLine } from '../../shell/useHint.tsx';
 import { ProductionDots } from '../module/ProductionDots.tsx';
 import { RegistrationMarks } from '../RegistrationMarks.tsx';
@@ -130,9 +130,7 @@ export function RungCard({
 
       {stage === 'studied' && (
         <>
-          {/* The CTA opens a SESSION, not the screen about one (#316): the flag says the learner
-              asked to practise, and the hub honours it unless there is a resume to offer. */}
-          <Link className={styles.primary} to={PRACTICE_PATH} state={startPractice()} dir={dir}>
+          <Link className={styles.primary} to={PRACTICE_PATH} dir={dir}>
             {strings['rungCard.practice']}
           </Link>
           <div className={styles.ghostRow}>
@@ -148,17 +146,9 @@ export function RungCard({
           <Link className={styles.primary} to={RITUAL_PATH} dir={dir}>
             {strings['rungCard.exitRitual']}
           </Link>
-          {/* Neither drops away — the ritual is the loud action, not the only one. Practice
-              carries the same start flag it does at `studied` (#316): it is the same word for the
-              same thing, and a label that meant "open a session" in one stage and "open the hub"
-              in the next would be the card teaching the learner an exception. */}
+          {/* Neither drops away — the ritual is the loud action, not the only one. */}
           <div className={styles.secondaryRow}>
-            <Link
-              className={styles.secondary}
-              to={PRACTICE_PATH}
-              state={startPractice()}
-              dir={dir}
-            >
+            <Link className={styles.secondary} to={PRACTICE_PATH} dir={dir}>
               {strings['rungCard.practice']}
             </Link>
             <Link className={styles.secondary} to={modulePath} dir={dir}>

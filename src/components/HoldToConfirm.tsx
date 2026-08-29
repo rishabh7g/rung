@@ -63,7 +63,7 @@ const HOLD_STEP_MS = 30;
  * It is a beat, not a delay to sit through: long enough that the signature registers as having
  * been paid rather than the screen jumping out from under the finger that paid it.
  */
-const SIGNED_BEAT_MS = 700;
+export const SIGNED_BEAT_MS = 700;
 
 /**
  * 30 steps. design/tokens.md §5 says "0.04 per 30ms step" *and* "~900ms total", which cannot both

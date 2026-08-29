@@ -20,12 +20,13 @@
  * pass on a hardcoded shell string, which is the one thing the strings contract exists to prevent.
  */
 import { act, fireEvent, render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter, useLocation } from 'react-router-dom';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { StringsContext, interpolate, type Strings } from '../course/strings.ts';
+import { cameFrom } from '../shell/routes.tsx';
 import { STRINGS_KEYS } from '../course/stringsKeys.ts';
 import { stringValue } from '../test/courseStrings.ts';
-import { HoldToConfirm } from './HoldToConfirm.tsx';
+import { HoldToConfirm, SIGNED_BEAT_MS } from './HoldToConfirm.tsx';
 import holdCss from './HoldToConfirm.module.css?raw';
 
 const COURSE = 'hi-mr';
@@ -46,17 +47,37 @@ const HOLD_MS = 900;
 /** `--motion-hold-step`: one sampling step of the fill. */
 const STEP_MS = 30;
 
+/**
+ * Where the router is, rendered into the tree — the paid hold navigates itself since #314, so
+ * "did it go to part 2" is a question about the location rather than about a link's href.
+ */
+function Where() {
+  const { pathname, state } = useLocation();
+
+  return (
+    <p data-testid="where" data-handover={cameFrom('hold', state) ? 'hold' : ''}>
+      {pathname}
+    </p>
+  );
+}
+
 function renderHold() {
   const onConfirm = vi.fn();
   const view = render(
     <MemoryRouter>
       <StringsContext.Provider value={STRINGS}>
         <HoldToConfirm ordinal={ORDINAL} onConfirm={onConfirm} />
+        <Where />
       </StringsContext.Provider>
     </MemoryRouter>,
   );
 
   return { ...view, onConfirm };
+}
+
+/** The router's current path. */
+function where(): HTMLElement {
+  return screen.getByTestId('where');
 }
 
 /** The control — found by the course's own label, with the ordinal already in it. */
@@ -92,9 +113,11 @@ function signed(): HTMLElement | null {
   return screen.queryByText(copy('ritual.confirm.done'));
 }
 
-/** The way on to part 2 — Comprehension (#102). */
-function cta(): HTMLElement | null {
-  return screen.queryByRole('link', { name: copy('ritual.confirm.toComprehension') });
+/** Let the ✓ stand its beat, after which the arc carries the learner into part 2 (#314). */
+function beat(): void {
+  act(() => {
+    vi.advanceTimersByTime(SIGNED_BEAT_MS);
+  });
 }
 
 beforeEach(() => {
@@ -117,9 +140,42 @@ describe('a full hold, and exactly one of it', () => {
 
     expect(onConfirm).toHaveBeenCalledTimes(1);
     expect(signed()).toBeVisible();
-    expect(cta()).toHaveAttribute('href', '/comprehension');
     // The control is gone: there is nothing left to press, so there is nothing to press twice.
     expect(control()).toBeNull();
+    // And nothing to tap either — the ✓ is the whole of the signed state since #314.
+    expect(screen.queryByRole('link')).toBeNull();
+    expect(where()).toHaveTextContent('/');
+  });
+
+  /**
+   * #314: the paid hold IS the intentional act, so it carries the learner into part 2 itself
+   * rather than revealing a second control that asks them to agree with themselves.
+   */
+  it('carries the learner into part 2 once the ✓ has stood its beat', () => {
+    renderHold();
+
+    press();
+    hold(HOLD_MS);
+
+    // Not instantly: the signature registers before the screen moves.
+    expect(where()).toHaveTextContent('/');
+
+    beat();
+
+    expect(where()).toHaveTextContent('/comprehension');
+    // Carrying the hand-over token, which is the whole of part 2's guard (#102).
+    expect(where()).toHaveAttribute('data-handover', 'hold');
+  });
+
+  /* A hold that leaves the screen mid-beat must not navigate out from under whatever replaced it. */
+  it('does not navigate if the screen goes away inside the beat', () => {
+    const { unmount } = renderHold();
+
+    press();
+    hold(HOLD_MS);
+    unmount();
+
+    expect(() => beat()).not.toThrow();
   });
 
   it('never emits a second time, however long the finger stays down', () => {

@@ -26,6 +26,7 @@
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from '../../App.tsx';
+import { COMMIT_WINDOW_MS } from '../../components/useCommitWindow.ts';
 import { resetContentCache } from '../../course/content.ts';
 import { resetManifestCache } from '../../course/manifest.ts';
 import { resetStringsCache } from '../../course/strings.ts';
@@ -113,11 +114,16 @@ function chip(phase: 'review' | 'read' | 'produce', courseId = COURSE): HTMLElem
   return screen.getByRole('button', { name: strings(`practice.phase.${phase}`, courseId) });
 }
 
-/** Reveal → mark → Next: one card, answered the way a learner answers it. */
+/**
+ * Reveal → mark: one card, answered the way a learner answers it. The Next went on #313, so the
+ * commit is the window elapsing.
+ */
 function answer(mark: 'mark.gotIt' | 'mark.missed', courseId = COURSE): void {
   fireEvent.click(screen.getByRole('button', { name: strings('revealLabel', courseId) }));
   fireEvent.click(screen.getByRole('button', { name: strings(mark, courseId) }));
-  fireEvent.click(screen.getByRole('button', { name: strings('mark.next', courseId) }));
+  act(() => {
+    vi.advanceTimersByTime(COMMIT_WINDOW_MS);
+  });
 }
 
 /** The banner's two controls, by the course's own labels. */
@@ -160,9 +166,17 @@ beforeEach(() => {
   useAppStore.getState()._reset();
   window.localStorage.clear();
   window.location.hash = '';
+  // The self-mark commits on a timer since #313, so every card answered here needs one.
+  vi.useFakeTimers({ shouldAdvanceTime: true });
+  // Seeded AFTER the clear above: the show-once hints (#319) live in localStorage too, and this
+  // file is about the snapshot, not about which visit a learner is on.
+  for (const hint of ['recall', 'production', 'check']) {
+    window.localStorage.setItem(`rung:hint:${hint}`, '1');
+  }
 });
 
 afterEach(() => {
+  vi.useRealTimers();
   visibility('visible');
   vi.unstubAllGlobals();
   vi.restoreAllMocks();

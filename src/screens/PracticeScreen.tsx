@@ -8,13 +8,22 @@
  * session is about to tick — the same pure function `startSession` uses, so the hub cannot promise
  * a Review phase the session then does not serve.
  *
- * **It is no longer on the way to a session** (#316). It stood between the learner's intent and
- * their first card on the common path — tap Practice on the rung card, read three phase lines, tap
- * Begin — which is a whole screen spent describing what the next tap was going to do anyway. The
- * Ladder's CTA now asks for the session outright (`startPractice`, `shell/routes.tsx`) and the
- * effect below honours it. The hub keeps the two jobs that are its own: the Practice TAB, where a
- * learner who wants the preview goes, and the resume offer, which is a decision (#99) and outranks
- * any ask to start.
+ * **It is one screen, not a page to read** (#316). It stood between the learner's intent and their
+ * first card on the common path — tap Practice on the rung card, read three tall numbered phase
+ * blocks, tap Begin — which is a lot of screen spent describing what the next tap was going to do
+ * anyway. The three counts still earn their place (they are the promise the session then keeps),
+ * so what went is the WEIGHT: the prototype's `01 / 02 / 03` numerals and the stacked blocks, for
+ * one compact row. Begin sits in thumb reach without scrolling, and the hub reads as the single
+ * action it is.
+ *
+ * The structural version of #316 — the rung card's CTA starting a session outright, skipping this
+ * screen — was built and backed out. Honouring a "start now" flag on arrival means calling
+ * `startSession` (a WRITE: it spends a count and ticks the review queue) from an effect, and the
+ * local state that the resulting plan has to live in makes it a `setState` inside an effect, which
+ * this repo's lint forbids and which has no `eslint-disable` precedent anywhere in `src/`. The
+ * alternatives were worse: a ref cannot be read during render, and deriving the run from the
+ * snapshot instead would have re-created the plan through the resume path, where a fresh session's
+ * queue is deliberately ticked and a resumed one's is not. Recorded rather than retried.
  *
  * **Starting is one call, and it happens once.** `startSession` increments `sessionCount`, ticks
  * the review queue and writes the opening snapshot in a single write, and answers with the plan
@@ -40,8 +49,7 @@
  * furniture in the register of the nav's tab labels — the `M1 · WHO I AM` kicker and the phase
  * numbers — and the numbers are counts.
  */
-import { useEffect, useRef, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import { useCourse } from '../course/CourseProvider.tsx';
 import { l2Written } from '../course/manifest.ts';
 import { useModules } from '../course/content.ts';
@@ -51,7 +59,6 @@ import { currentRungId, rungStage } from '../engine/progression.ts';
 import { planSession, type SessionPlan } from '../engine/session.ts';
 import { useAppStore } from '../state/store.ts';
 import { useImmersive } from '../shell/immersive.tsx';
-import { PRACTICE_PATH, wantsSession } from '../shell/routes.tsx';
 import { RegistrationMarks } from './RegistrationMarks.tsx';
 import { rungLabel } from './ladder/rungLabel.ts';
 import { PHASES } from './practice/PhaseChips.tsx';
@@ -87,8 +94,6 @@ export default function PracticeScreen() {
   const { course } = useCourse();
   const l2 = l2Written(course);
   const strings = useStrings();
-  const location = useLocation();
-  const navigate = useNavigate();
   const { immersive, enterSession } = useImmersive();
   const { input, ready } = useProgression();
   const startSession = useAppStore((store) => store.startSession);
@@ -134,58 +139,6 @@ export default function PracticeScreen() {
    * state — the whole of what #99 resumes from.
    */
   const [run, setRun] = useState<Run | null>(null);
-
-  /**
-   * ───────────────────── the rung card's start, honoured once (#316) ─────────────────────
-   *
-   * The Ladder's Practice CTA asks for a SESSION, not for the screen about one, and this is where
-   * that ask is spent. Three things make it safe to start a session from a navigation:
-   *
-   *   • **The flag is spent on arrival.** `history.state` survives a reload, so a flag left in it
-   *     would start a second session on every refresh of this entry — the very failure the Verdict
-   *     guards against with the same move (#103). It is replaced with a stateless entry the moment
-   *     it is read, before anything is written.
-   *   • **The ref, not the flag, is what stops a double start.** Under `StrictMode` the effect is
-   *     invoked twice against one render's values, and the replace above has not landed by the
-   *     second — so `honoured` is what makes `startSession` (a write: it spends a count and ticks
-   *     the review queue) happen exactly once.
-   *   • **It waits for the rung's module.** A session cannot be planned before the sentences are
-   *     there, and `startable` is false until they land; the flag simply stays unspent for that
-   *     render rather than opening an empty session.
-   *
-   * **An open session is never overridden.** A snapshot means there is a resume to offer, and
-   * "continue or start fresh" is a decision only the learner can make (#99) — so the flag is spent
-   * and the hub renders its resume plate, which is the one case where the hub is what was wanted.
-   */
-  const honoured = useRef(false);
-
-  useEffect(() => {
-    if (honoured.current || !wantsSession(location.state)) return;
-    // Not ready to decide yet: the ladder or the rung's module is still in flight. The flag keeps
-    // until the render that can answer.
-    if (!ready || rung === null || stage === 'pending' || sentenceIds.length === 0) return;
-
-    honoured.current = true;
-    void navigate(PRACTICE_PATH, { replace: true, state: null });
-
-    // An open session outranks the ask: the hub offers the resume instead (`ResumeBanner`).
-    if (isResumable(snapshot)) return;
-
-    const plan = startSession(course.id, sentenceIds);
-    setRun({ moduleId: rung, sentenceIds, plan });
-    enterSession();
-  }, [
-    course.id,
-    enterSession,
-    location.state,
-    navigate,
-    ready,
-    rung,
-    sentenceIds,
-    snapshot,
-    stage,
-    startSession,
-  ]);
 
   if (immersive && run !== null) {
     return (
@@ -276,20 +229,26 @@ export default function PracticeScreen() {
           is the state, the same silence the rung card keeps [D22]. */}
       {stage !== 'pending' && rung !== null && (
         <>
+          {/**
+           * The three phases as ONE compact row (#316), where the prototype stacks three tall
+           * numbered blocks.
+           *
+           * The counts stay — they are the promise the session then keeps, and the whole reason
+           * this screen exists — but the weight around them goes: the `01 / 02 / 03` numerals were
+           * shell furniture narrating an order the row already reads in, and a blueprint plate per
+           * phase made three objects out of one fact. What is left is the phase's name over its
+           * count, three across, so the Begin CTA below is in thumb reach without scrolling and
+           * the hub reads as the single action it is.
+           */}
           <ol className={styles.phases}>
-            {PHASES.map((phase, index) => (
+            {PHASES.map((phase) => (
               <li key={phase} className={styles.phase}>
-                <RegistrationMarks />
-                {/* The prototype's 01 / 02 / 03 — a count, and shell furniture. */}
-                <p className={styles.phaseNumber}>{String(index + 1).padStart(2, '0')}</p>
-                <div className={styles.phaseText}>
-                  <p className={styles.phaseName} dir={course.dir}>
-                    {strings[`practice.phase.${phase}`]}
-                  </p>
-                  <p className={styles.phaseLine} dir={course.dir}>
-                    {interpolate(strings[HUB_LINE[phase]], { count: counts[phase] })}
-                  </p>
-                </div>
+                <p className={styles.phaseName} dir={course.dir}>
+                  {strings[`practice.phase.${phase}`]}
+                </p>
+                <p className={styles.phaseLine} dir={course.dir}>
+                  {interpolate(strings[HUB_LINE[phase]], { count: counts[phase] })}
+                </p>
               </li>
             ))}
           </ol>

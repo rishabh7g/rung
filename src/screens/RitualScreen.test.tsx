@@ -18,9 +18,10 @@
  * got-it, one `passRitual` per climbed rung. A fixture that wrote `production` directly would be
  * testing a state the app cannot reach.
  */
-import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
+import { act, cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from '../App.tsx';
+import { SIGNED_BEAT_MS } from '../components/HoldToConfirm.tsx';
 import { resetContentCache } from '../course/content.ts';
 import { resetManifestCache } from '../course/manifest.ts';
 import { interpolate, resetStringsCache } from '../course/strings.ts';
@@ -113,11 +114,18 @@ beforeEach(() => {
   resetStringsCache();
   useAppStore.getState()._reset();
   window.location.hash = '';
+  /**
+   * The show-once check hint (#319) is seeded as ALREADY SEEN for this file's default, because
+   * the steady state — what the arc looks like on every visit after the first — is what these
+   * assertions are about. The first visit has its own case, below, which clears it.
+   */
+  localStorage.setItem('rung:hint:check', '1');
 });
 
 afterEach(() => {
   vi.unstubAllGlobals();
   vi.restoreAllMocks();
+  localStorage.clear();
   window.location.hash = '';
 });
 
@@ -259,6 +267,35 @@ describe('step 2 is a title, and a title is all it is', () => {
     // screen draws objects only where something happens.
     expect([...step.children].map((node) => node.tagName)).toEqual(['SPAN', 'H3']);
     expect(within(step).getByRole('heading').textContent).toBe(strings('ritual.stepTitle.check'));
+  });
+
+  /**
+   * The one exception, and the reason it is not a reversal of #230 (#319): on the FIRST ritual of
+   * an install the step says once that the checking is the learner's own, because nothing else in
+   * the app ever says it — there is no onboarding ([D21]) and #230 removed the paragraph that used
+   * to. It is a sentence, never a control, so the step keeps its zero interactive elements; and it
+   * is gone from the second ritual onwards, which is the shape the test above describes.
+   */
+  it('says once, on the first ritual of an install, that the checking is the learner’s', async () => {
+    localStorage.removeItem('rung:hint:check');
+    await renderRitual();
+    await findSteps();
+
+    const first = checkStep();
+    expect([...first.children].map((node) => node.tagName)).toEqual(['SPAN', 'H3', 'P']);
+    expect(within(first).getByText(strings('hint.check'))).toBeVisible();
+    // Still nothing to interact with: the hint says the app cannot check, so it offers no way to.
+    expect([...first.querySelectorAll(FOCUSABLE)]).toEqual([]);
+
+    // A second visit is the steady state again — the hint is spent, not repeated.
+    cleanup();
+    resetContentCache();
+    resetManifestCache();
+    resetStringsCache();
+    await renderRitual();
+    await findSteps();
+
+    expect([...checkStep().children].map((node) => node.tagName)).toEqual(['SPAN', 'H3']);
   });
 });
 
@@ -425,17 +462,18 @@ describe('every word is the course’s, and the numbers are this rung’s', () =
     });
 
     expect(within(confirm!).getByRole('button', { name: label })).toBeVisible();
-    // One control in the whole step, and nowhere to go yet: the way on appears once it is held.
+    // One control in the whole step, and nowhere to go yet: holding it is what moves the arc.
     expect(within(confirm!).getAllByRole('button')).toHaveLength(1);
     expect(within(confirm!).queryAllByRole('link')).toEqual([]);
   });
 
   /**
    * The arc's own end-to-end: the weight is paid on the real screen, through the real route, and
-   * what it opens is the way to part 2. The hold's own promises — release resets, no tap-through,
-   * reduced motion keeps the duration — are `HoldToConfirm.test.tsx`'s, at the step level.
+   * what it opens is part 2 itself — since #314 the paid hold navigates rather than revealing a
+   * link to tap. The hold's own promises — release resets, no tap-through, reduced motion keeps
+   * the duration — are `HoldToConfirm.test.tsx`'s, at the step level.
    */
-  it('opens the way to Comprehension only after the whole ~900ms is held', async () => {
+  it('opens Comprehension only after the whole ~900ms is held', async () => {
     vi.useFakeTimers({ shouldAdvanceTime: true });
     try {
       produceRung();
@@ -453,9 +491,9 @@ describe('every word is the course’s, and the numbers are this rung’s', () =
       act(() => vi.advanceTimersByTime(HOLD_MS));
 
       expect(within(confirm!).getByText(strings('ritual.confirm.done'))).toBeVisible();
-      expect(
-        within(confirm!).getByRole('link', { name: strings('ritual.confirm.toComprehension') }),
-      ).toHaveAttribute('href', '#/comprehension');
+      // The ✓ is the whole of the signed state: nothing to tap, and the arc has not moved yet.
+      expect(within(confirm!).queryAllByRole('link')).toEqual([]);
+      expect(window.location.hash).toBe('#/ritual');
 
       // The badge fills off the DOM, not off a variable: the ✓ state marks itself, and the arc's
       // stylesheet reads that mark (the prototype's `s3Bg`). The screen still holds no state.
@@ -465,6 +503,10 @@ describe('every word is the course’s, and the numbers are this rung’s', () =
       expect(ritualCss.replace(/\/\*[\s\S]*?\*\//g, '')).toMatch(
         /\.step:has\(\[data-hold='signed'\]\) \.stepNumber/,
       );
+
+      // And then the beat carries the learner into part 2, with no second tap (#314).
+      act(() => vi.advanceTimersByTime(SIGNED_BEAT_MS));
+      await waitFor(() => expect(window.location.hash).toBe('#/comprehension'));
     } finally {
       vi.useRealTimers();
     }
