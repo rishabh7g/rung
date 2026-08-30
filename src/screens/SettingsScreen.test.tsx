@@ -57,6 +57,24 @@ function authored(file: 'levels.json' | 'strings.json'): unknown {
   if (text === undefined) throw new Error(`content/hi-en/${file} is not authored`);
   return JSON.parse(text);
 }
+
+/**
+ * The sixth course's ladder and bundle (#332), read off disk the same way. en-it is still a dev
+ * FIXTURE — `content/courses.json` carries `fixture: true` and a strict build drops the whole
+ * course — so what boots here is the ratified ladder with nothing authored behind it: ten pending
+ * rungs, in English chrome, from `content/en-it/`.
+ */
+const EN_IT_FILES = import.meta.glob<string>('../../content/en-it/*.json', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+});
+
+function authoredEnIt(file: 'levels.json' | 'strings.json'): unknown {
+  const text = EN_IT_FILES[`../../content/en-it/${file}`];
+  if (text === undefined) throw new Error(`content/en-it/${file} is not authored`);
+  return JSON.parse(text);
+}
 /** Injected, so nothing here touches the wall clock — `passedAt` is a receipt, not a schedule. */
 const STAMP = () => '2026-02-03T09:00:00.000Z';
 
@@ -287,7 +305,7 @@ describe('the fourth course — hi-en (#267, shipping since #273)', () => {
     const labels = within(select)
       .getAllByRole('option')
       .map((option) => option.textContent);
-    expect(labels.at(-1)).toBe('hindi → english');
+    expect(labels[3]).toBe('hindi → english');
     // The switcher reads `pairLabel` and nothing else about the row (`manifest.test.ts`) — the
     // fourth course is offered exactly like the first three, on a strict build as on a dev one.
     expect(within(select).getByRole('option', { name: 'hindi → english' })).toHaveValue('hi-en');
@@ -348,6 +366,115 @@ describe('the fourth course — hi-en (#267, shipping since #273)', () => {
     // Invariant 8: the switch created hi-en's subtree and touched nobody else's.
     expect(useAppStore.getState().courses[COURSE]).toBe(before);
     expect(useAppStore.getState().courses['hi-en']).toBeDefined();
+
+    // Back to hi-mr: its ladder is where the climb left it — one rung passed, M2 current.
+    fireEvent.click(screen.getByRole('link', { name: 'Settings' }));
+    fireEvent.change(await screen.findByRole('combobox', { name: 'Active course' }), {
+      target: { value: COURSE },
+    });
+    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
+    expect(await screen.findByText(/LEVEL 1 · 1 OF 10/)).toBeInTheDocument();
+    expect(screen.getByText('M2 · CURRENT RUNG')).toBeInTheDocument();
+    expect(useAppStore.getState().courses[COURSE]).toBe(before);
+  });
+});
+
+/* ------------------------------------------ the sixth course, en-it (#332, dev fixture) */
+
+describe('the sixth course — en-it (#332, still behind the fixture gate)', () => {
+  /**
+   * The same switch flow, run against the REAL en-it files: the manifest row lives in
+   * `DEV_MANIFEST` WITH `fixture: true` (a dev build is the only build that carries it), and the
+   * fetch for en-it's ladder and bundle answers with what `content/en-it/` holds today — the
+   * ratified ten-rung L1 with nothing authored behind it, and the English strings.
+   *
+   * This is the skeleton issue's smoke, and no browser on this host may open it (no Playwright,
+   * no Chromium on the Pi): the row in the switcher, the ten pending rungs, the English chrome,
+   * and hi-mr's ladder left exactly where it was (Invariant 8).
+   */
+  function serveAuthoredEnIt(): void {
+    const base = globalThis.fetch;
+    const json = (value: unknown) =>
+      Promise.resolve(new Response(JSON.stringify(value), { status: 200 }));
+    vi.stubGlobal(
+      'fetch',
+      vi.fn((input: RequestInfo | URL) => {
+        const url = String(input);
+        if (url.endsWith('/content/en-it/levels.json')) return json(authoredEnIt('levels.json'));
+        if (url.endsWith('/content/en-it/strings.json')) return json(authoredEnIt('strings.json'));
+        return base(input);
+      }),
+    );
+  }
+
+  /** The rung rows of the one list the Ladder renders, in ladder order. */
+  function rungs(): HTMLElement[] {
+    return within(screen.getByRole('list')).getAllByRole('listitem');
+  }
+
+  it('is offered as the last pair — a fixture row reaches the switcher like any other', async () => {
+    const select = await renderSettings();
+
+    const labels = within(select)
+      .getAllByRole('option')
+      .map((option) => option.textContent);
+    // The switcher reads `pairLabel` and nothing else about the row: `fixture` is not something
+    // the shell branches on, so a course authored behind the gate is offered exactly like the
+    // five before it.
+    expect(labels.at(-1)).toBe('english → italian');
+    expect(within(select).getByRole('option', { name: 'english → italian' })).toHaveValue('en-it');
+  });
+
+  it('boots a ladder of ten pending rungs in English chrome, and leaves hi-mr where it was', async () => {
+    const ladder = tenRungLadder(3);
+    climb(ladder, 'L1-M1');
+    const before = useAppStore.getState().courses[COURSE];
+    const select = await renderSettings(ladder);
+    serveAuthoredEnIt();
+
+    fireEvent.change(select, { target: { value: 'en-it' } });
+
+    // The arrival toast is en-it's own `switchToast` — English, its L1 — with `{to}` and `{from}`
+    // filled from the two pair labels, so the bundle that booted is the one on disk.
+    expect(
+      await screen.findByText(
+        'You’re on english → italian now. Your hindi → marathi ladder is saved exactly where it was.',
+      ),
+    ).toBeInTheDocument();
+    // The document speaks the course's L1 (#186): English, from the row's `l1Tag`, not its id.
+    await waitFor(() => {
+      expect(document.documentElement.lang).toBe('en');
+    });
+    expect(document.documentElement.dir).toBe('ltr');
+
+    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
+    expect(await screen.findByText(/LEVEL 1 · 0 OF 10/)).toBeInTheDocument();
+    expect(screen.getByText('Foundations — say what you need')).toBeInTheDocument();
+    expect(rungs()).toHaveLength(10);
+    for (const title of [
+      'Who I am',
+      'First exchange',
+      'Needs and wants',
+      'My day',
+      'Yesterday',
+      'Tomorrow',
+      'Where things are',
+      'Numbers & shopping',
+      'Feelings & opinions',
+      'Connected talk',
+    ]) {
+      expect(screen.getByText(title)).toBeInTheDocument();
+    }
+    // Nothing is authored yet, so M1 is the current rung with no content behind it — no CTA
+    // anywhere in the list, which is the honest rendering of a course that is all ladder.
+    expect(screen.getByText('M1 · CURRENT RUNG')).toBeInTheDocument();
+    expect(within(screen.getByRole('list')).queryAllByRole('link')).toHaveLength(0);
+    // …and the pending line is en-it's English, counting all ten (Invariant 2: counts only).
+    expect(screen.getByText('Level 1 · 10 of 10 rungs still to climb.')).toBeInTheDocument();
+
+    // Invariant 8: the switch created en-it's subtree and touched nobody else's.
+    expect(useAppStore.getState().courses[COURSE]).toBe(before);
+    expect(useAppStore.getState().courses['en-it']).toBeDefined();
 
     // Back to hi-mr: its ladder is where the climb left it — one rung passed, M2 current.
     fireEvent.click(screen.getByRole('link', { name: 'Settings' }));

@@ -74,6 +74,7 @@ describe('reading the shipped courses off the manifest', () => {
         { id: 'en-es', l1Tag: 'en', l2Tag: 'es' },
         { id: 'en-ar', l1Tag: 'en', l2Tag: 'ar' },
         { id: 'hi-en', l1Tag: 'hi', l2Tag: 'en' },
+        { id: 'en-it', l1Tag: 'en', l2Tag: 'it' },
       ],
     });
 
@@ -82,6 +83,7 @@ describe('reading the shipped courses off the manifest', () => {
       { id: 'en-es', scripts: [] }, // Latin: no font subsets of its own
       { id: 'en-ar', scripts: ['arabic'] }, // romanized still ships the native line's face (#197)
       { id: 'hi-en', scripts: ['devanagari'] }, // Hindi chrome over English sentences (#267, shipping since #273): the L1 pays for the face
+      { id: 'en-it', scripts: [] }, // neither `en` nor `it` maps to a course face (#332): content only, like en-es
     ]);
   });
 

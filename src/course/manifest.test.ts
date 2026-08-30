@@ -25,7 +25,13 @@ describe('loadCourses', () => {
 
     const courses = await loadCourses();
 
-    expect(courses.map((course) => course.id)).toEqual(['hi-mr', 'en-es', 'en-ar', 'hi-en']);
+    expect(courses.map((course) => course.id)).toEqual([
+      'hi-mr',
+      'en-es',
+      'en-ar',
+      'hi-en',
+      'en-it',
+    ]);
     expect(courses[0]).toMatchObject({
       id: 'hi-mr',
       l1: 'Hindi',
@@ -40,17 +46,21 @@ describe('loadCourses', () => {
     // en-ar carries more than the nine required fields; the loader keeps them, never rejects them.
     expect(courses[2]?.romanizationNote).toMatch(/Modern Standard Arabic/);
     // en-es graduated in #195, en-ar in #202 and hi-en in #273 — a shipping course carries no
-    // fixture key at all, and today every course ships.
-    expect(courses.some((course) => course.fixture !== undefined)).toBe(false);
+    // fixture key at all. en-it (#332) is still behind the gate, so it is the one row that does.
+    expect(
+      courses.filter((course) => course.fixture !== undefined).map((course) => course.id),
+    ).toEqual(['en-it']);
     expect(courses[3]).toMatchObject({ id: 'hi-en', l1Tag: 'hi', l2Tag: 'en' });
+    expect(courses[4]).toMatchObject({ id: 'en-it', l1Tag: 'en', l2Tag: 'it', fixture: true });
   });
 
   /**
    * `--with-fixtures` and the `fixture` key are the seam a course is authored behind (PRD §17):
-   * hi-en was that course from #267 until #273 graduated it, and a course #5 will be. The loader
-   * keeps the key rather than validating it away, so the row reaches the app intact — the key is
-   * what `resolveActiveCourse` and the Settings switcher never branch on, and what graduation
-   * deletes. No authored row carries it today, so the test flags one of its own.
+   * hi-en was that course from #267 until #273 graduated it, and en-it is that course now (#332,
+   * graduated by #337). The loader keeps the key rather than validating it away, so the row
+   * reaches the app intact — the key is what `resolveActiveCourse` and the Settings switcher
+   * never branch on, and what graduation deletes. The test flags a row of its own rather than
+   * leaning on whichever course happens to be mid-authoring.
    */
   it('keeps a fixture row intact — a course authored behind the gate reaches the app as one', () => {
     const row = { ...DEV_MANIFEST.courses[3], fixture: true };
@@ -80,7 +90,7 @@ describe('loadCourses', () => {
     vi.stubGlobal('fetch', fetchMock);
 
     await expect(loadCourses()).rejects.toThrow(ManifestError);
-    await expect(loadCourses()).resolves.toHaveLength(4);
+    await expect(loadCourses()).resolves.toHaveLength(5);
     expect(fetchMock).toHaveBeenCalledTimes(2);
   });
 });
