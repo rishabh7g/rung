@@ -20,10 +20,10 @@
  * (PRD §5) and are not briefed either. The CLI says exactly this when asked for a course or
  * module without a brief.
  *
- * Being briefed is not being shipped, and en-de is the proof in both directions: its row was
- * `fixture: true` with no `content/en-de/modules/` at all when this brief was written (#356,
- * #361), and the ten L1 modules were authored against it afterwards (#362–#364) and let out of
- * the gate in #365. A brief is what the FIRST authoring issue is written against, so it comes
+ * Being briefed is not being shipped, and en-de and en-ko are the proof in both directions: each
+ * row was `fixture: true` with no `content/<id>/modules/` at all when its brief was written (#356
+ * and #361; #374 and #376), and the ten L1 modules were authored against it afterwards
+ * (#362–#364; #377–#379) and let out of the gate (#365; #380). A brief is what the FIRST authoring issue is written against, so it comes
  * before the content, not after it.
  *
  * ## Three rules these briefs are written to, learned the hard way on hi-mr

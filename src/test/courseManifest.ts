@@ -6,10 +6,14 @@
  * against a row that has more than the nine required fields, and the newest course last. Shared,
  * so the loader test and the boot tests cannot drift into disagreeing about the shape.
  *
- * **Eight of the nine rows ship; en-ko carries `fixture: true`.** en-es graduated in #195, en-ar in
- * #202, hi-en in #273, en-fr in #331, en-it in #337, en-ru in #343 and en-de in #365. Every one was
- * authored behind the gate and let out of it, which is the whole shape of PRD §17, and en-ko —
- * English (L1) → Korean (L2), added as a dev fixture in #374 — is walking the same road.
+ * **All nine rows ship, and none carries a `fixture` key.** en-es graduated in #195, en-ar in #202,
+ * hi-en in #273, en-fr in #331, en-it in #337, en-ru in #343, en-de in #365 and en-ko — English
+ * (L1) → Korean (L2), added as a dev fixture in #374 — in #380. Every one was authored behind the
+ * gate and let out of it, which is the whole shape of PRD §17.
+ *
+ * So the catalogue is fully graduated again and NO real row exercises the `fixture` seam, which is
+ * exactly the condition `manifest.test.ts`'s synthetic `en-ja` row was written for — a test that
+ * borrowed whichever row happened to carry the key would go quiet precisely when nothing does.
  *
  * en-ko is also the first course **born** conforming to `docs/design-contract.md`'s "rung teaches
  * speech, not script" (#353): its row is `scriptMode: "romanized"` from its first commit, so it
@@ -127,7 +131,6 @@ export const DEV_MANIFEST = {
         'Revised Romanization of Korean, transcribing pronunciation; pure ASCII, with a particle ' +
         'or the copula joined to its host by a hyphen (chaek-eul, jeo-neun, haksaeng-ieyo).',
       dir: 'ltr',
-      fixture: true,
     },
   ],
 } as const;
