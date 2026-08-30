@@ -337,52 +337,57 @@ describe('Sentence Detail over L1-M3, L1-M4 and L1-M5', () => {
   it('shows M3’s first case ending — the noun’s two shapes on ONE row', async () => {
     await renderSentence('L1-M3', 'L1-M3-S02');
 
-    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent('Я хочу воду.');
-    // вода and воду are the same word, so they share a row and a note — a second row for the
-    // bent shape would be a second note the index could never reach.
+    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent('Ya khochú vódu.');
+    // vodá and vódu are the same word, so they share a row and a note — a second row for the
+    // bent shape would be a second note the index could never reach. Since #358 the row is a
+    // STRESS list as well as an ending list: the acute moves with the ending, so an author who
+    // wrote `vodu` would have produced a surface the index has never met.
     const words = section('words');
-    expect(within(words).getAllByText('вода').length).toBeGreaterThan(0);
-    expect(within(words).getByText('вода · воду')).toBeInTheDocument();
-    expect(within(section('mistake')).getByText('Я хочу вода.')).toBeInTheDocument();
+    expect(within(words).getAllByText('vodá').length).toBeGreaterThan(0);
+    expect(within(words).getByText('vodá · vódu')).toBeInTheDocument();
+    expect(within(section('mistake')).getByText('Ya khochú vodá.')).toBeInTheDocument();
   });
 
   it('shows M4’s clock hour with all three number-driven shapes on one row', async () => {
     await renderSentence('L1-M4', 'L1-M4-S02');
 
     expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
-      'Я встаю в семь часов.',
+      "Ya vstayú v sem' chasóv.",
     );
     const words = section('words');
-    expect(within(words).getByText('час · часа · часов')).toBeInTheDocument();
-    // The в row is M4's, and its note has to answer for M7's place seat as well.
+    expect(within(words).getByText('chas · chasá · chasóv')).toBeInTheDocument();
+    // The v row is M4's, and its note has to answer for M7's place seat as well.
     expect(within(words).getByText('at · in')).toBeInTheDocument();
   });
 
-  it('shows M5’s past with the gender pair and the one быть row', async () => {
+  it('shows M5’s past with the gender pair and the one byt’ row', async () => {
     await renderSentence('L1-M5', 'L1-M5-S01');
 
-    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent('Вчера я был дома.');
+    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
+      'Vcherá ya byl dóma.',
+    );
     const words = section('words');
     // The verb that had no present tense at all now has seven shapes, all on ONE row: M5 opened
-    // it with the past and M6 extended it with the future, rather than forking the lexeme.
+    // it with the past and M6 extended it with the future, rather than forking the lexeme. Note
+    // `byl` bare beside three acutes: the #355 monosyllable rule, visible in one row.
     expect(
-      within(words).getByText('был · была · было · были · буду · будете · будет'),
+      within(words).getByText('byl · bylá · býlo · býli · búdu · búdete · búdet'),
     ).toBeInTheDocument();
     expect(within(words).getByText('was')).toBeInTheDocument();
-    expect(within(section('mistake')).getByText('Вчера я есть дома.')).toBeInTheDocument();
+    expect(within(section('mistake')).getByText("Vcherá ya yest' dóma.")).toBeInTheDocument();
   });
 
   it('shows M5’s two endings answering to two different masters', async () => {
     await renderSentence('L1-M5', 'L1-M5-S03');
 
     expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
-      'Вчера я купила газету.',
+      'Vcherá ya kupíla gazétu.',
     );
-    // купила follows the speaker; газету follows its job in the sentence. The trap says so.
+    // kupíla follows the speaker; gazétu follows its job in the sentence. The trap says so.
     expect(
-      within(section('trap')).getByText(/Two -а endings, two different reasons/),
+      within(section('trap')).getByText(/Two endings moving at once, for two different reasons/),
     ).toBeInTheDocument();
-    expect(within(section('words')).getByText('газета · газету')).toBeInTheDocument();
+    expect(within(section('words')).getByText('gazéta · gazétu')).toBeInTheDocument();
   });
 });
 
