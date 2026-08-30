@@ -109,7 +109,7 @@ particle is invisible to the index.
 `al-qahwa` is one surface, and the emitter *also* indexes `al` and `qahwa` against the same entry.
 
 **Decision: every particle and the copula are written hyphenated onto their host.**
-`jeo-neun`, `chaek-eul`, `hakgyo-e`, `hakgyo-eseo`, `hakseng-ieyo`, `chingu-hago`.
+`jeo-neun`, `chaek-eul`, `hakgyo-e`, `hakgyo-eseo`, `haksaeng-ieyo`, `chingu-hago`.
 
 ### 2.1 Verified, not assumed
 
@@ -117,7 +117,7 @@ Run against the real functions (`src/engine/surface.ts`), 2026-08-30:
 
 | input | `normalizeSurface` | `surfaceIndexKeys` |
 | --- | --- | --- |
-| `Jeo-neun hakseng-ieyo.` | `jeo-neun hakseng-ieyo` | `["jeo-neun hakseng-ieyo","jeo","neun","hakseng","ieyo"]` |
+| `Jeo-neun haksaeng-ieyo.` | `jeo-neun haksaeng-ieyo` | `["jeo-neun haksaeng-ieyo","jeo","neun","haksaeng","ieyo"]` |
 | `chaek-eul` | `chaek-eul` | `["chaek-eul","chaek","eul"]` |
 | `-neun` | `neun` | `["neun"]` |
 | `jal jinaeseyo?` | `jal jinaeseyo` | `["jal jinaeseyo"]` |
@@ -125,14 +125,19 @@ Run against the real functions (`src/engine/surface.ts`), 2026-08-30:
 Four things follow, and all four are load-bearing:
 
 1. **A one-token hyphenated surface donates its parts.** `chaek-eul` earns `chaek-eul`, `chaek` and
-   `eul`. One authored string, three useful keys.
-2. **A leading hyphen is stripped as edge punctuation**, so a word row written `-neun` claims
-   exactly the key `neun`. **That is how the particles get honest rows of their own**: M1's word
-   rows teach `-neun`/`-eun`, `-i`/`-ga` and `-eul`/`-reul` as words, and because the emitter walks
-   *sentence → word → forms* in order and first occurrence wins, the row that appears first in the
-   first sentence that teaches it owns the key. The authoring rule is therefore: **in L1-M1, the
-   particle row is listed in the deconstruction before any other row that would donate the same
-   part.**
+   `eul`. One authored string, three useful keys — and the one that matters is `chaek`, because a
+   row's own `display` is read before any of its longer forms, so a bare noun always resolves to
+   the row that taught it. That is what the hyphen was chosen for.
+2. **A leading hyphen is stripped as edge punctuation**, so a word row written `-neun` claims the
+   key `neun` — *if it gets there first*. It does not, and the emitted index is what said so.
+   L1-M1's index gives `neun` to the `jeo` row (via the form `jeo-neun`) and `ieyo` to the
+   `haksaeng` row (via `haksaeng-ieyo`), because the emitter walks *sentence → word → forms* and
+   the host row is written in sentence order, ahead of the ending it carries. **The plan changed
+   rather than the module** (#377 says to do exactly that): putting the endings before the words
+   they attach to would fix index entries nobody can reach, and would leave the breakdown panel no
+   longer reading in sentence order. It is safe because Korean never writes a bare particle as its
+   own whitespace token — pinned by a test, not assumed — and the particle rows still do their real
+   job, which is being read in the deconstruction panel, directly, never through the index.
 3. **A multi-token surface does NOT donate its individual tokens** — only hyphen parts. `jal
    jinaeseyo` earns one key. So a fixed phrase stays whole, which is what we want for greetings.
 4. **The question mark is stripped**, so a question and its statement twin are the **same index
@@ -284,7 +289,7 @@ The string below is what `content/courses.json`'s en-ko row carries. It is paste
 > written as they are said (hakgyo, silla, joayo). It is pure ASCII — no diacritic, no apostrophe —
 > so nothing here needs a font cut of its own. One deliberate deviation from the standard: a
 > particle or the copula is joined to its host with a hyphen and the host keeps its isolation shape
-> (chaek-eul, jeo-neun, hakseng-ieyo), with the liaison given in the sound line, so that the bare
+> (chaek-eul, jeo-neun, haksaeng-ieyo), with the liaison given in the sound line, so that the bare
 > noun and the bare particle each keep an index key of their own; the standard's
 > syllable-disambiguation hyphen is never used. Every display string in this course follows this one
 > scheme — the word index matches surfaces verbatim, so a second scheme would break resolution.

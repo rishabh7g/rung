@@ -125,7 +125,7 @@ export const DEV_MANIFEST = {
       scriptMode: 'romanized',
       romanizationNote:
         'Revised Romanization of Korean, transcribing pronunciation; pure ASCII, with a particle ' +
-        'or the copula joined to its host by a hyphen (chaek-eul, jeo-neun, hakseng-ieyo).',
+        'or the copula joined to its host by a hyphen (chaek-eul, jeo-neun, haksaeng-ieyo).',
       dir: 'ltr',
       fixture: true,
     },

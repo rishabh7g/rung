@@ -135,8 +135,10 @@ describe('en-ko: the decisions its briefs settle (#373, #376)', () => {
   it('settles the particle hyphen and names the index seam it protects', () => {
     const notes = briefs.flatMap((brief) => brief.notes).join('\n');
     expect(notes).toMatch(/INDEX SEAM/);
-    expect(notes).toMatch(/particle rows come FIRST/);
-    expect(notes).toMatch(/first occurrence wins/);
+    expect(notes).toMatch(/checked against the EMITTED index/);
+    expect(notes).toMatch(/first occurrence winning/);
+    // The guarantee the hyphen was chosen for, and the one the index actually delivers.
+    expect(notes).toMatch(/the bare key chaek belongs to the chaek row/);
     // The hyphen is the scheme's one deviation from the standard, so every particle in a pattern
     // carries it — a pattern writing a bare particle would be teaching the other scheme.
     expect(everything).toMatch(/-neun/);

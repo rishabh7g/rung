@@ -1,0 +1,780 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M2",
+  "title": "First exchange",
+  "job": "Greetings, wellbeing, yes/no questions",
+  "prerequisites": [
+    "L1-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 1,
+    "maxWordsPerSentence": 3,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "annyeonghaseyo",
+      "<M1 statement> + ? (intonation only)",
+      "ne / aniyo + , + <statement>",
+      "jal jinaeseyo + ?",
+      "mannaseo bangapseumnida",
+      "annyeonghi gaseyo / gyeseyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "annyeonghaseyo is the whole greeting system. One word, any hour, anybody — there is no morning, afternoon or evening version to choose between, and it is used both for meeting somebody and for arriving somewhere."
+    },
+    {
+      "tag": "delta",
+      "text": "A yes/no question is made with the VOICE and nothing else. The words do not move, no word is inserted, and the ending does not change: haksaeng-ieyo is 'is a student' and haksaeng-ieyo? is 'is a student?'. There is no equivalent of English 'do', and nothing is turned around the way it is in German or French."
+    },
+    {
+      "tag": "interference",
+      "text": "ne and aniyo answer the QUESTION, not the fact. ne means 'what you said is right', so if you are asked haksaeng-i anieyo? ('aren't you a student?') then ne means 'right — I am not'. English answers the fact and would say 'no' there. This one takes real practice to hear."
+    },
+    {
+      "tag": "delta",
+      "text": "Korean has two goodbyes and the choice is about who moves. annyeonghi gaseyo is said to the person LEAVING; annyeonghi gyeseyo to the person STAYING. Both mean 'go / stay in peace', and getting them the wrong way round is the most common visitor's slip in the language."
+    },
+    {
+      "tag": "free",
+      "text": "An answer leaves out everything both of you already know. Ne, haksaeng-ieyo is a complete reply with no subject at all — putting one in would be like answering 'Is he a student?' with 'Yes, he is a student, that student, the one we are talking about'."
+    },
+    {
+      "tag": "interference",
+      "text": "jal jinaeseyo? is not the automatic second half of a greeting the way 'how are you' is in English. It asks a real question and expects a real answer, and it is for somebody you have not seen for a while. Say it to the same shopkeeper every morning and you will sound odd."
+    },
+    {
+      "tag": "delta",
+      "text": "The -se- sitting inside jinaeseyo, gaseyo and gyeseyo raises the person the sentence is about, not the person you are talking to. That is why you ask jal jinaeseyo? and answer jal jinaeyo without it: you lift the other person, never yourself."
+    },
+    {
+      "tag": "delta",
+      "text": "gamsahamnida and mannaseo bangapseumnida end in -mnida, which belongs to a more formal style than the -yo this course speaks. They are kept because they are what is actually said at a first meeting and when thanking a stranger. Learn them whole; the style they come from is a later level's work."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M2-S01",
+      "display": "Annyeonghaseyo.",
+      "script": "안녕하세요.",
+      "cue": "Hello.",
+      "glossEn": "Hello.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "annyeonghaseyo",
+            "script": "안녕하세요",
+            "cue": "hello",
+            "tag": "delta",
+            "forms": [
+              "annyeonghaseyo"
+            ],
+            "note": "'Hello' — and it is the only one you need. It works at any hour, with anyone, and it is a question in origin ('are you at peace?'), which is why it ends the way a question does. The bare annyeong is the version friends use with each other and is not taught here."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "There is no time-of-day greeting to reach for. A learner who goes looking for 'good morning' will find that Korean simply does not divide the day up this way.",
+      "sound": "an-nyung-ha-SE-yo, five even beats. The ny in the middle is one sound, as in English 'canyon'. Nothing is stressed — an English speaker will want to lean on the last syllable, and flattening that out is most of what makes it sound right.",
+      "variations": [
+        {
+          "display": "Annyeonghaseyo, Minsu.",
+          "script": "안녕하세요, 민수.",
+          "cue": "Hello, Minsu.",
+          "changed": "a name after a comma, exactly as in English"
+        },
+        {
+          "display": "Annyeonghaseyo. Oraenmanieyo.",
+          "script": "안녕하세요. 오랜만이에요.",
+          "cue": "Hello. It has been a long time.",
+          "changed": "the greeting plus the line that often follows it"
+        },
+        {
+          "display": "Annyeonghaseyo. Jal jinaeseyo?",
+          "script": "안녕하세요. 잘 지내세요?",
+          "cue": "Hello. Are you well?",
+          "changed": "the greeting and the question, in the order they come"
+        }
+      ],
+      "mistake": {
+        "display": "Annyeong haseyo.",
+        "script": "안녕 하세요.",
+        "why": "Split in two, annyeong is the casual hello friends say to each other and haseyo is a bare verb with nothing to do. The greeting is one word; the space changes what you have said."
+      },
+      "usage": "Meeting anyone, at any hour, in any place.",
+      "register": "neutral",
+      "mnemonic": "One greeting, all day, everybody."
+    },
+    {
+      "id": "L1-M2-S02",
+      "display": "Jal jinaeseyo?",
+      "script": "잘 지내세요?",
+      "cue": "Are you well?",
+      "glossEn": "Are you doing well?",
+      "literal": "well get-along-(you)?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jal",
+            "script": "잘",
+            "cue": "well",
+            "tag": "free",
+            "forms": [
+              "jal"
+            ],
+            "note": "'Well'. It goes in front of the verb it describes, which is where Korean puts every adverb — and since the verb is at the end, jal is usually the second-to-last word in the sentence."
+          },
+          {
+            "display": "jinaeyo",
+            "script": "지내요",
+            "cue": "get along · am doing",
+            "tag": "delta",
+            "forms": [
+              "jinaeyo",
+              "jinaeseyo"
+            ],
+            "note": "'To get by, to be doing'. Two shapes, one word: jinaeyo is what you say about yourself, and jinaeseyo is the same verb with a piece inside it that raises the person you are asking about. That extra piece is how Korean shows respect for the SUBJECT of the sentence, which is why you ask jal jinaeseyo? and answer jal jinaeyo — lifting yourself would be strange."
+          }
+        ],
+        "rules": [
+          1,
+          5,
+          6
+        ]
+      },
+      "trap": "This is not the English reflex 'how are you'. It is a real question about how life has been going, and it is asked of somebody you have not seen for a while — not of the person who serves you coffee every day.",
+      "sound": "jal ji-nae-SE-yo, and the voice RISES on the last syllable. That rise is the only thing making this a question, so it has to be real: say the same words flat and you have told somebody they are doing well.",
+      "variations": [
+        {
+          "display": "Jal jinaeyo.",
+          "script": "잘 지내요.",
+          "cue": "I am doing well.",
+          "changed": "the answer — the raised -se- comes out, because you do not lift yourself"
+        },
+        {
+          "display": "Minsu-neun jal jinaeyo.",
+          "script": "민수는 잘 지내요.",
+          "cue": "Minsu is doing well.",
+          "changed": "about somebody else, and still no rise at the end"
+        },
+        {
+          "display": "Jal jinaeseyo. Annyeonghi gaseyo.",
+          "script": "잘 지내세요. 안녕히 가세요.",
+          "cue": "Keep well. Goodbye.",
+          "changed": "said flat it is not a question at all — it is a wish, and a normal way to part"
+        }
+      ],
+      "mistake": {
+        "display": "Jal jinaeseyo-kka?",
+        "script": "잘 지내세요까?",
+        "why": "Something has been added to build the question, and there was nothing to build. Korean question-making is done entirely by the voice at this level; a syllable stuck on the end is a word that does not exist."
+      },
+      "usage": "Meeting somebody you have not seen for weeks or months.",
+      "register": "neutral",
+      "mnemonic": "The question mark is in your voice, not in the sentence."
+    },
+    {
+      "id": "L1-M2-S03",
+      "display": "Ne, jal jinaeyo.",
+      "script": "네, 잘 지내요.",
+      "cue": "Yes, I am doing well.",
+      "glossEn": "Yes, I am doing well.",
+      "literal": "yes, well get-along",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ne",
+            "script": "네",
+            "cue": "yes · that is right",
+            "tag": "interference",
+            "forms": [
+              "ne"
+            ],
+            "note": "'Yes' — but read it as 'that is right'. It agrees with the question that was asked, not with the fact underneath it, so after a negative question ne means 'right, it is not'. English does the opposite, and this is the single most confusing word in an early conversation."
+          },
+          {
+            "display": "jal",
+            "script": "잘",
+            "cue": "well",
+            "tag": "free",
+            "forms": [
+              "jal"
+            ],
+            "note": "'Well'. It goes in front of the verb it describes, which is where Korean puts every adverb — and since the verb is at the end, jal is usually the second-to-last word in the sentence."
+          },
+          {
+            "display": "jinaeyo",
+            "script": "지내요",
+            "cue": "get along · am doing",
+            "tag": "delta",
+            "forms": [
+              "jinaeyo",
+              "jinaeseyo"
+            ],
+            "note": "'To get by, to be doing'. Two shapes, one word: jinaeyo is what you say about yourself, and jinaeseyo is the same verb with a piece inside it that raises the person you are asking about. That extra piece is how Korean shows respect for the SUBJECT of the sentence, which is why you ask jal jinaeseyo? and answer jal jinaeyo — lifting yourself would be strange."
+          }
+        ],
+        "rules": [
+          2,
+          4,
+          6
+        ]
+      },
+      "trap": "Nothing here says 'I'. The answer to a question about you is simply the verb, and adding jeo-neun would push the sentence towards 'as for ME, I'm fine' — a contrast nobody asked for.",
+      "sound": "ne, jal ji-NAE-yo. ne is short and light, closer to English 'neh' than to 'nay'. The whole answer falls at the end, which is what tells the listener it is an answer and not another question.",
+      "variations": [
+        {
+          "display": "Ne, jal jinaeseyo?",
+          "script": "네, 잘 지내세요?",
+          "cue": "Yes — and are you well?",
+          "changed": "the same words handed back, with the raised -se- and a rise, to return the question"
+        },
+        {
+          "display": "Aniyo, jal mothaeyo.",
+          "script": "아니요, 잘 못해요.",
+          "cue": "No, not so well.",
+          "changed": "the other answer — and a hint of the 'cannot' that a later level teaches properly"
+        },
+        {
+          "display": "Ne, gamsahamnida.",
+          "script": "네, 감사합니다.",
+          "cue": "Yes, thank you.",
+          "changed": "the reply that closes the exchange rather than continuing it"
+        }
+      ],
+      "mistake": {
+        "display": "Ne, jeo-neun jal jinaeyo jeo-neun.",
+        "script": "네, 저는 잘 지내요 저는.",
+        "why": "The subject has been put in twice, once at each end, which is what happens when you translate word by word and then check yourself. Korean drops it entirely: the answer is the verb."
+      },
+      "usage": "Replying when somebody asks how you have been.",
+      "register": "neutral",
+      "mnemonic": "Answer with the verb; everything else is already understood."
+    },
+    {
+      "id": "L1-M2-S04",
+      "display": "Minsu-neun haksaeng-ieyo?",
+      "script": "민수는 학생이에요?",
+      "cue": "Is Minsu a student?",
+      "glossEn": "Is Minsu a student?",
+      "literal": "Minsu-topic student-is?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Minsu",
+            "script": "민수",
+            "cue": "Minsu (a name)",
+            "tag": "free",
+            "forms": [
+              "Minsu",
+              "Minsu-neun"
+            ],
+            "note": "A man's given name, and here it is the topic of a question. A name is asked about exactly as any other noun is: put the topic marker on it and let the intonation do the questioning."
+          },
+          {
+            "display": "haksaeng",
+            "script": "학생",
+            "cue": "student",
+            "tag": "free",
+            "forms": [
+              "haksaeng",
+              "haksaeng-ieyo"
+            ],
+            "note": "'Student', from the last module. In a question the word does not change at all — haksaeng-ieyo is both 'is a student' and 'is a student?', and only the voice tells them apart."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Nothing moves. In English the question turns the sentence around — 'Minsu is' becomes 'is Minsu' — and in German the verb jumps to the front. Korean does neither, and a learner who reorders the words has written a sentence that no longer parses.",
+      "sound": "MIN-soo-nun HAK-ssaeng-ee-eh-yo, with the whole last syllable lifting. Everything before the rise is said exactly as the statement was said in the last module — which is the point.",
+      "variations": [
+        {
+          "display": "Yuna-neun haksaeng-ieyo?",
+          "script": "유나는 학생이에요?",
+          "cue": "Is Yuna a student?",
+          "changed": "a different person under the same question"
+        },
+        {
+          "display": "Minsu-neun uisa-yeyo?",
+          "script": "민수는 의사예요?",
+          "cue": "Is Minsu a doctor?",
+          "changed": "a different guess, and -yeyo after the vowel"
+        },
+        {
+          "display": "Minsu-neun haksaeng-ieyo.",
+          "script": "민수는 학생이에요.",
+          "cue": "Minsu is a student.",
+          "changed": "the same words said flat — a statement again"
+        }
+      ],
+      "mistake": {
+        "display": "Ieyo Minsu-neun haksaeng?",
+        "script": "이에요 민수는 학생?",
+        "why": "The verb has been dragged to the front the way English and German build a question. Korean questions leave the sentence exactly where it was."
+      },
+      "usage": "Checking something you half know about somebody.",
+      "register": "neutral",
+      "mnemonic": "Same sentence, higher ending."
+    },
+    {
+      "id": "L1-M2-S05",
+      "display": "Ne, haksaeng-ieyo.",
+      "script": "네, 학생이에요.",
+      "cue": "Yes, he is a student.",
+      "glossEn": "Yes, he is a student.",
+      "literal": "yes, student-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ne",
+            "script": "네",
+            "cue": "yes · that is right",
+            "tag": "interference",
+            "forms": [
+              "ne"
+            ],
+            "note": "'Yes' — but read it as 'that is right'. It agrees with the question that was asked, not with the fact underneath it, so after a negative question ne means 'right, it is not'. English does the opposite, and this is the single most confusing word in an early conversation."
+          },
+          {
+            "display": "haksaeng",
+            "script": "학생",
+            "cue": "student",
+            "tag": "free",
+            "forms": [
+              "haksaeng",
+              "haksaeng-ieyo"
+            ],
+            "note": "'Student', from the last module. In a question the word does not change at all — haksaeng-ieyo is both 'is a student' and 'is a student?', and only the voice tells them apart."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "The reply has no word for 'he'. English cannot leave the subject out and so reaches for a pronoun; Korean leaves out what is obvious, and reaching for a pronoun here is the clearest sign of an English speaker.",
+      "sound": "ne, HAK-ssaeng-ee-eh-yo, falling at the end. The k of haksaeng tenses the s that follows it into a double ss — that is automatic in Korean and it is why this course spells the word the way it does.",
+      "variations": [
+        {
+          "display": "Ne, uisa-yeyo.",
+          "script": "네, 의사예요.",
+          "cue": "Yes, he is a doctor.",
+          "changed": "a different answer to a different question"
+        },
+        {
+          "display": "Aniyo, haksaeng-i anieyo.",
+          "script": "아니요, 학생이 아니에요.",
+          "cue": "No, he is not a student.",
+          "changed": "the denial, with -i on the noun and anieyo at the end"
+        },
+        {
+          "display": "Ne, je chingu-yeyo.",
+          "script": "네, 제 친구예요.",
+          "cue": "Yes, he is my friend.",
+          "changed": "an answer that adds something instead of repeating the question"
+        }
+      ],
+      "mistake": {
+        "display": "Ne, geu-neun haksaeng-ieyo.",
+        "script": "네, 그는 학생이에요.",
+        "why": "A word for 'he' has been supplied. It exists, and it is used in writing, but in a spoken answer like this it lands as heavy and pointed — as if you were distinguishing him from somebody else."
+      },
+      "usage": "Confirming what somebody has just asked.",
+      "register": "neutral",
+      "mnemonic": "If they already know who, do not say who."
+    },
+    {
+      "id": "L1-M2-S06",
+      "display": "Aniyo, uisa-yeyo.",
+      "script": "아니요, 의사예요.",
+      "cue": "No, he is a doctor.",
+      "glossEn": "No, he is a doctor.",
+      "literal": "no, doctor-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aniyo",
+            "script": "아니요",
+            "cue": "no · that is not right",
+            "tag": "interference",
+            "forms": [
+              "aniyo"
+            ],
+            "note": "'No' — again, read it as 'that is not right'. It contradicts the question. It is a relative of anieyo ('is not') from the last module, and the family resemblance is real: both are about denying."
+          },
+          {
+            "display": "uisa",
+            "script": "의사",
+            "cue": "doctor",
+            "tag": "free",
+            "forms": [
+              "uisa",
+              "uisa-yeyo"
+            ],
+            "note": "'Doctor', from the last module, answering the question this time. Notice that the answer says only uisa-yeyo — no subject at all, because everybody already knows who is being talked about."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "aniyo denies the QUESTION. Asked 'is Minsu a student?', it says 'that is not right', and then the sentence supplies what is right. It is not the English 'no' attached to a fact.",
+      "sound": "a-ni-YO, oo-ee-sa-YEH-yo. aniyo has three light beats and no stress; the ui of uisa is that quick oo-to-ee slide again, and it rewards being said slowly until it settles.",
+      "variations": [
+        {
+          "display": "Aniyo, haksaeng-ieyo.",
+          "script": "아니요, 학생이에요.",
+          "cue": "No, he is a student.",
+          "changed": "the same denial with the other answer behind it"
+        },
+        {
+          "display": "Aniyo, je chingu-neun uisa-yeyo.",
+          "script": "아니요, 제 친구는 의사예요.",
+          "cue": "No, my friend is a doctor.",
+          "changed": "the correction says who, because this time it is not obvious"
+        },
+        {
+          "display": "Ne, uisa-yeyo.",
+          "script": "네, 의사예요.",
+          "cue": "Yes, he is a doctor.",
+          "changed": "the same answer after agreement instead of denial"
+        }
+      ],
+      "mistake": {
+        "display": "Aniyo, uisa anieyo.",
+        "script": "아니요, 의사 아니에요.",
+        "why": "The marker has been dropped from uisa. A denial needs -ga on the thing being denied — uisa-ga anieyo — and without it the two words sit side by side with nothing joining them."
+      },
+      "usage": "Correcting a wrong guess.",
+      "register": "neutral",
+      "mnemonic": "First say the guess was wrong, then say what is right."
+    },
+    {
+      "id": "L1-M2-S07",
+      "display": "Oraenmanieyo.",
+      "script": "오랜만이에요.",
+      "cue": "It has been a long time.",
+      "glossEn": "It has been a long time.",
+      "literal": "long-interval-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "oraenmanieyo",
+            "script": "오랜만이에요",
+            "cue": "it has been a long time",
+            "tag": "free",
+            "forms": [
+              "oraenmanieyo"
+            ],
+            "note": "'It has been a while' — said when you meet somebody you have not seen for months. Look at the end of it: -ieyo, the copula you already know, sitting on a noun meaning 'a long interval'. Korean says 'it is a long interval', where English says 'long time no see'."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "English says 'long time no see' and puts the seeing in it. Korean says only that a long interval IS — no seeing, no you, no me. Look for a verb of meeting in it and you will not find one.",
+      "sound": "o-raen-ma-NEE-eh-yo. The n at the end of oraenman links straight into the -ieyo, so the join is heard as ma-ni-e-yo — the same running-together that happens every time a word ending in a consonant takes this ending.",
+      "variations": [
+        {
+          "display": "Annyeonghaseyo. Oraenmanieyo.",
+          "script": "안녕하세요. 오랜만이에요.",
+          "cue": "Hello. It has been a long time.",
+          "changed": "the pair as they are actually said, greeting first"
+        },
+        {
+          "display": "Oraenmanieyo. Jal jinaeseyo?",
+          "script": "오랜만이에요. 잘 지내세요?",
+          "cue": "It has been a long time. Are you well?",
+          "changed": "and this is where jal jinaeseyo? properly belongs"
+        },
+        {
+          "display": "Oraenmanieyo?",
+          "script": "오랜만이에요?",
+          "cue": "Has it been a long time?",
+          "changed": "the same words with a rise — asking rather than saying"
+        }
+      ],
+      "mistake": {
+        "display": "Oraenman.",
+        "script": "오랜만.",
+        "why": "The ending has been cut off. What is left is the bare noun, which is what close friends say to each other; in the style this course speaks the sentence needs its -ieyo."
+      },
+      "usage": "Meeting somebody after months apart.",
+      "register": "neutral",
+      "mnemonic": "It is not 'long time no see' — it is 'it is a long while'."
+    },
+    {
+      "id": "L1-M2-S08",
+      "display": "Mannaseo bangapseumnida.",
+      "script": "만나서 반갑습니다.",
+      "cue": "Pleased to meet you.",
+      "glossEn": "Pleased to meet you.",
+      "literal": "having-met (I am) glad",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mannaseo bangapseumnida",
+            "script": "만나서 반갑습니다",
+            "cue": "pleased to meet you",
+            "tag": "free",
+            "forms": [
+              "mannaseo bangapseumnida"
+            ],
+            "note": "'Pleased to meet you', learned whole. It is in a more formal style than the rest of this course — the -mnida ending belongs to the way you speak in a meeting or on stage — and it is kept because it is exactly what is said at a first introduction. Do not take it apart; take it as one move."
+          }
+        ],
+        "rules": [
+          7
+        ]
+      },
+      "trap": "Do not take this apart to translate it. The first word means 'having met' and the second 'I am glad', and the whole thing is a set move at a first introduction — the sort of phrase you learn as one gesture rather than as grammar.",
+      "sound": "man-na-SUH ban-gap-sseum-ni-da. It is long, and it is meant to be: the length is part of the courtesy. The p in bangapseumnida turns into an m before the n that follows, so it comes out ban-gam-seum-ni-da when said quickly.",
+      "variations": [
+        {
+          "display": "Annyeonghaseyo. Mannaseo bangapseumnida.",
+          "script": "안녕하세요. 만나서 반갑습니다.",
+          "cue": "Hello. Pleased to meet you.",
+          "changed": "the full opening of a first meeting, both halves"
+        },
+        {
+          "display": "Mannaseo bangapseumnida. Je ireum-eun Minsu-yeyo.",
+          "script": "만나서 반갑습니다. 제 이름은 민수예요.",
+          "cue": "Pleased to meet you. My name is Minsu.",
+          "changed": "the phrase and then the introduction it makes room for"
+        },
+        {
+          "display": "Ne, mannaseo bangapseumnida.",
+          "script": "네, 만나서 반갑습니다.",
+          "cue": "Yes, pleased to meet you.",
+          "changed": "the same phrase handed back after somebody else has said it"
+        }
+      ],
+      "mistake": {
+        "display": "Mannaseo bangapseumnida-yo.",
+        "script": "만나서 반갑습니다요.",
+        "why": "Two politeness styles have been stacked on one phrase. The -mnida ending is already the formal one; adding -yo on top of it is like signing a letter twice. Say the phrase exactly as it is, or say nothing after it."
+      },
+      "usage": "Said once, at a first introduction, and not again.",
+      "register": "neutral",
+      "mnemonic": "One gesture, one phrase, learned whole."
+    },
+    {
+      "id": "L1-M2-S09",
+      "display": "Gamsahamnida.",
+      "script": "감사합니다.",
+      "cue": "Thank you.",
+      "glossEn": "Thank you.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gamsahamnida",
+            "script": "감사합니다",
+            "cue": "thank you",
+            "tag": "free",
+            "forms": [
+              "gamsahamnida"
+            ],
+            "note": "'Thank you', and the other frozen phrase in the formal -mnida style. It is what you say to a stranger, a shopkeeper or a colleague. There is a -yo-style thank you as well, and it is warmer and less safe; this is the one to start with."
+          }
+        ],
+        "rules": [
+          7
+        ]
+      },
+      "trap": "This ends in -mnida, not -yo, and that is deliberate. It is the polite thank-you a stranger expects; the -yo version exists and is warmer, and warmth with a stranger is the thing a learner cannot yet judge.",
+      "sound": "gam-sa-HAM-ni-da. The h in the middle is barely there — most speakers say gam-sa-am-ni-da at speed. As always, no syllable is stressed, and the phrase is said as one even run.",
+      "variations": [
+        {
+          "display": "Ne, gamsahamnida.",
+          "script": "네, 감사합니다.",
+          "cue": "Yes, thank you.",
+          "changed": "accepting something and thanking for it in one breath"
+        },
+        {
+          "display": "Gamsahamnida. Annyeonghi gyeseyo.",
+          "script": "감사합니다. 안녕히 계세요.",
+          "cue": "Thank you. Goodbye.",
+          "changed": "how you leave a shop — you are the one going, so they are the ones staying"
+        },
+        {
+          "display": "Annyeonghaseyo. Gamsahamnida.",
+          "script": "안녕하세요. 감사합니다.",
+          "cue": "Hello. Thank you.",
+          "changed": "the two phrases that will carry a whole first day"
+        }
+      ],
+      "mistake": {
+        "display": "Gamsa.",
+        "script": "감사.",
+        "why": "The ending has been cut off, leaving the bare noun 'gratitude'. It is not a word anybody says on its own — the thanks lives in the ending, and without it you have named a feeling rather than expressed one."
+      },
+      "usage": "Thanking anyone you are not close to, which at this stage is everyone.",
+      "register": "neutral",
+      "mnemonic": "The long one is the safe one."
+    },
+    {
+      "id": "L1-M2-S10",
+      "display": "Annyeonghi gaseyo.",
+      "script": "안녕히 가세요.",
+      "cue": "Goodbye.",
+      "glossEn": "Go in peace.",
+      "literal": "peacefully go-(you)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "annyeonghi",
+            "script": "안녕히",
+            "cue": "peacefully",
+            "tag": "free",
+            "forms": [
+              "annyeonghi"
+            ],
+            "note": "'Peacefully' — the word that starts both goodbyes. On its own it is never said; it waits for the verb that follows it, exactly as jal does."
+          },
+          {
+            "display": "gaseyo",
+            "script": "가세요",
+            "cue": "go (please)",
+            "tag": "delta",
+            "forms": [
+              "gaseyo",
+              "gyeseyo"
+            ],
+            "note": "Two verbs, one row, because they are the pair that makes the Korean goodbye: gaseyo is 'go' and gyeseyo is 'stay'. You say annyeonghi gaseyo to whoever is LEAVING and annyeonghi gyeseyo to whoever is STAYING — so in a shop the customer says gyeseyo and the shopkeeper says gaseyo. Both carry the same respectful -se- as jinaeseyo."
+          }
+        ],
+        "rules": [
+          3,
+          6
+        ]
+      },
+      "trap": "There are two goodbyes and this is only one of them. Say it to somebody who is staying put and you have told them to leave — which is why the pair has to be learned together, as one decision about who is moving.",
+      "sound": "an-nyung-hee GA-se-yo. The first word is the greeting's first two syllables plus -hi, which is a real family resemblance and worth noticing. gaseyo carries the same raised -se- as jinaeseyo.",
+      "variations": [
+        {
+          "display": "Annyeonghi gyeseyo.",
+          "script": "안녕히 계세요.",
+          "cue": "Goodbye.",
+          "changed": "the other one — said to whoever is staying, so this is what you say on your way out of a shop"
+        },
+        {
+          "display": "Ne, annyeonghi gaseyo.",
+          "script": "네, 안녕히 가세요.",
+          "cue": "Yes, goodbye.",
+          "changed": "the parting agreed and returned"
+        },
+        {
+          "display": "Gamsahamnida. Annyeonghi gaseyo.",
+          "script": "감사합니다. 안녕히 가세요.",
+          "cue": "Thank you. Goodbye.",
+          "changed": "the two-line close of almost any transaction"
+        }
+      ],
+      "mistake": {
+        "display": "Annyeonghi gaseyo.",
+        "script": "안녕히 가세요.",
+        "why": "Said by a customer on the way out of a shop, this is the wrong half of the pair: the shopkeeper is staying, so it has to be annyeonghi gyeseyo. The sentence is perfect Korean and the situation is wrong, which is the harder kind of mistake to notice."
+      },
+      "usage": "Parting from somebody who is leaving while you stay.",
+      "register": "neutral",
+      "mnemonic": "Whoever moves gets gaseyo; whoever stays gets gyeseyo."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M2-C01",
+      "display": "Annyeonghaseyo. Jal jinaeseyo?",
+      "script": "안녕하세요. 잘 지내세요?",
+      "cue": "Hello. Are you well?"
+    },
+    {
+      "id": "L1-M2-C02",
+      "display": "Ne, jal jinaeyo. Gamsahamnida.",
+      "script": "네, 잘 지내요. 감사합니다.",
+      "cue": "Yes, I am well. Thank you."
+    },
+    {
+      "id": "L1-M2-C03",
+      "display": "Yuna-neun uisa-yeyo?",
+      "script": "유나는 의사예요?",
+      "cue": "Is Yuna a doctor?"
+    },
+    {
+      "id": "L1-M2-C04",
+      "display": "Aniyo, haksaeng-ieyo.",
+      "script": "아니요, 학생이에요.",
+      "cue": "No, she is a student."
+    },
+    {
+      "id": "L1-M2-C05",
+      "display": "Minsu-neun jal jinaeyo.",
+      "script": "민수는 잘 지내요.",
+      "cue": "Minsu is doing well."
+    },
+    {
+      "id": "L1-M2-C06",
+      "display": "Oraenmanieyo. Annyeonghaseyo.",
+      "script": "오랜만이에요. 안녕하세요.",
+      "cue": "It has been a long time. Hello."
+    },
+    {
+      "id": "L1-M2-C07",
+      "display": "Ne, je chingu-yeyo.",
+      "script": "네, 제 친구예요.",
+      "cue": "Yes, he is my friend."
+    },
+    {
+      "id": "L1-M2-C08",
+      "display": "Annyeonghi gyeseyo.",
+      "script": "안녕히 계세요.",
+      "cue": "Goodbye."
+    },
+    {
+      "id": "L1-M2-C09",
+      "display": "Mannaseo bangapseumnida. Je ireum-eun Yuna-yeyo.",
+      "script": "만나서 반갑습니다. 제 이름은 유나예요.",
+      "cue": "Pleased to meet you. My name is Yuna."
+    },
+    {
+      "id": "L1-M2-C10",
+      "display": "Je chingu-neun jal jinaeyo.",
+      "script": "제 친구는 잘 지내요.",
+      "cue": "My friend is doing well."
+    },
+    {
+      "id": "L1-M2-C11",
+      "display": "Yuna-neun hanguk saram-ieyo?",
+      "script": "유나는 한국 사람이에요?",
+      "cue": "Is Yuna Korean?"
+    },
+    {
+      "id": "L1-M2-C12",
+      "display": "Ne, hanguk saram-ieyo.",
+      "script": "네, 한국 사람이에요.",
+      "cue": "Yes, she is Korean."
+    },
+    {
+      "id": "L1-M2-C13",
+      "display": "Aniyo, uisa-ga anieyo.",
+      "script": "아니요, 의사가 아니에요.",
+      "cue": "No, she is not a doctor."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

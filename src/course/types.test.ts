@@ -194,7 +194,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 80 of them — eight full L1 ladders, en-de included (#362–#364)', () => {
+  it('finds all 83 of them — eight full L1 ladders, and en-ko being authored (#377–#379)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -249,6 +249,9 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-it/modules/L1-M7.json',
       'content/en-it/modules/L1-M8.json',
       'content/en-it/modules/L1-M9.json',
+      'content/en-ko/modules/L1-M1.json',
+      'content/en-ko/modules/L1-M2.json',
+      'content/en-ko/modules/L1-M3.json',
       'content/en-ru/modules/L1-M1.json',
       'content/en-ru/modules/L1-M10.json',
       'content/en-ru/modules/L1-M2.json',
@@ -602,6 +605,152 @@ describe('ModuleContent against the modules that exist', () => {
       // …and stress is actually MARKED rather than merely permitted: a module of nothing but
       // monosyllables is not a thing Russian has, so an unmarked file is a file that forgot.
       expect(JSON.stringify(module), `${file} marks no stress at all`).toMatch(stressed);
+    }
+  });
+
+  /**
+   * en-ko (#373–#380) is the third romanized course, and the first that was BORN one. en-ar had
+   * `scriptMode: "romanized"` from the start by luck of its authoring order; en-ru had to be
+   * dragged into it across #353–#360, 959 Cyrillic `display` strings at a time. This course was
+   * settled before its manifest row existed (`docs/34-en-ko-romanization-decisions.md`), and this
+   * case is where that decision is held against the shipped files rather than against the briefs
+   * that produced them:
+   *
+   *   • **Not one Hangul character outside `script`.** `tools/content-build.ts` `checkScriptMode`
+   *     already fails a build on a Hangul `display` or `forms` entry; what it does NOT check is
+   *     the English teaching prose, and a `note` quoting Hangul would be asking the learner to
+   *     decode exactly what #353 says they must never be asked to decode.
+   *   • **The romanization is ASCII.** Not a style rule: en-ar and en-ru are each charged a
+   *     `latin-ext` font cut for their diacritics (`tools/payload-budget.ts`), and this course is
+   *     charged none. A stray `ŏ` or an acute would quietly cost that, and would also fork a word
+   *     into two index surfaces.
+   *   • **The particle hyphen, and the invariant the index decision rests on.** #373 writes a
+   *     particle or the copula joined to its host by a hyphen (`chaek-eul`, `jeo-neun`), which is
+   *     what gives the bare noun an index key of its own. The emitted index gives the bare
+   *     PARTICLE keys to the first host row that carries them, and that was accepted rather than
+   *     worked around — on the ground that Korean never writes a bare particle as its own
+   *     whitespace token. That ground is asserted here rather than assumed.
+   *   • **The speech level.** The course speaks the `-yo` style, so no L2 slot anywhere writes the
+   *     plain-style pronoun `na` or its possessive `nae`. The formal `-mnida` style appears in
+   *     exactly the two frozen phrases M2 names, and nowhere else — a third one would mean a
+   *     module had started teaching a style this course does not teach.
+   */
+  it('keeps en-ko to the decisions #373 settled: romanized, ASCII, hyphenated, one speech level', () => {
+    const enKo = MODULE_FILES.filter(([name]) => name.includes('en-ko'));
+    const hangul = /\p{Script=Hangul}/u;
+    const noHangul = /^\P{Script=Hangul}+$/u;
+    const latin = /[A-Za-z]/;
+    /** The romanization's whole alphabet: ASCII letters, the particle hyphen, and punctuation. */
+    const asciiOnly = /^[\x20-\x7E]+$/u;
+    /** Plain-style shapes the speech-level decision keeps out of every L2 slot (#376). */
+    const PLAIN_STYLE = new Set(['na', 'na-neun', 'nan', 'nae', 'neo', 'neo-neun', 'neo-reul']);
+    /** The two frozen formal phrases M2 teaches whole. Any other -mnida is a style slip. */
+    const FROZEN_FORMAL = new Set(['gamsahamnida', 'mannaseo bangapseumnida']);
+    /**
+     * Every particle this course writes. A bare one as its own whitespace token would break the
+     * ground the index decision stands on — see the case comment.
+     */
+    const BARE_PARTICLES = new Set([
+      'neun',
+      'eun',
+      'i',
+      'ga',
+      'eul',
+      'reul',
+      'do',
+      'e',
+      'eseo',
+      'ieyo',
+      'yeyo',
+      'hago',
+    ]);
+
+    expect(enKo.length, 'the en-ko L1 modules authored so far').toBeGreaterThan(0);
+    for (const [file, json] of enKo) {
+      const module = parseModule(json, file);
+
+      /**
+       * One L2 surface: romanized ASCII display, Hangul script line, neither in the other.
+       *
+       * `indexed` is false for a `mistake` plate, and only the bare-particle check is relaxed by
+       * it. A plate is deliberately WRONG Korean — M1's is the copula torn off the noun it belongs
+       * to, which is exactly a bare particle standing as its own token — and `buildWordIndex`
+       * never reads a mistake, so the invariant it protects is not at risk there. Everything else
+       * still holds on a plate: no Hangul, ASCII only, no plain-style pronoun, a Hangul `script`
+       * line of its own.
+       */
+      const surface = (
+        target: { display: string; script?: string | null },
+        at: string,
+        indexed = true,
+      ): void => {
+        expect(target.display, `${at} display carries Hangul`).toMatch(noHangul);
+        expect(target.display, `${at} display is Latin`).toMatch(latin);
+        expect(target.display, `${at} display is pure ASCII`).toMatch(asciiOnly);
+        expect(target.script, `${at} carries the Hangul on its script line`).toMatch(hangul);
+        for (const token of tokenizeSurface(target.display)) {
+          if (indexed) {
+            expect(
+              BARE_PARTICLES.has(token),
+              `${at} writes the bare particle "${token}" as its own token`,
+            ).toBe(false);
+          }
+          expect(PLAIN_STYLE.has(token), `${at} writes the plain-style "${token}"`).toBe(false);
+          if (token.endsWith('mnida')) {
+            const phrase = normalizeSurface(target.display);
+            expect(
+              [...FROZEN_FORMAL].some((frozen) => phrase.includes(frozen)),
+              `${at} writes a -mnida form outside the two frozen phrases`,
+            ).toBe(true);
+          }
+        }
+      };
+
+      // Teaching prose is English — and unlike en-ar and en-ru, it may not even QUOTE the native
+      // script: there is nothing in this course a learner is asked to read in Hangul.
+      for (const rule of module.rules) {
+        expect(rule.text, `${file} rule`).toMatch(latin);
+        expect(rule.text, `${file} rule quotes Hangul`).toMatch(noHangul);
+      }
+      for (const item of module.comprehensionPool) {
+        surface(item, item.id);
+        expect(item.cue, `${item.id} cue is English only`).toMatch(noHangul);
+      }
+      for (const sentence of module.sentences) {
+        const at = sentence.id;
+        surface(sentence, at);
+        expect(sentence.cue, `${at} cue is English only`).toMatch(noHangul);
+        // The L2 is not English, so #268's exemption does not reach this course.
+        expect(sentence.glossEn, `${at} glossEn`).toMatch(latin);
+        expect(sentence.glossEn, `${at} glossEn quotes Hangul`).toMatch(noHangul);
+        for (const field of ['sound', 'usage', 'mnemonic', 'trap', 'literal'] as const) {
+          const value = sentence[field];
+          if (value !== undefined) expect(value, `${at} ${field}`).toMatch(noHangul);
+        }
+        if (sentence.mistake !== undefined) {
+          surface(sentence.mistake, `${at} mistake`, false);
+          expect(sentence.mistake.why, `${at} mistake.why`).toMatch(noHangul);
+        }
+        for (const variation of sentence.variations ?? []) {
+          surface(variation, `${at} variation`);
+          expect(variation.cue, `${at} variation cue`).toMatch(noHangul);
+          expect(variation.changed, `${at} variation changed`).toMatch(noHangul);
+        }
+        for (const word of sentence.deconstruction.words) {
+          // A word row may be a bare particle — that is what teaches the particle — so it is the
+          // one place BARE_PARTICLES is allowed, and the row writes it with its leading hyphen.
+          expect(word.display, `${at} word display carries Hangul`).toMatch(noHangul);
+          expect(word.display, `${at} word display is pure ASCII`).toMatch(asciiOnly);
+          expect(word.script, `${at} word ${word.display} carries Hangul`).toMatch(hangul);
+          expect(word.cue, `${at} cue of ${word.display}`).toMatch(noHangul);
+          expect(word.note, `${at} note of ${word.display}`).toMatch(noHangul);
+          expect(word.note, `${at} note of ${word.display}`).toMatch(latin);
+          for (const form of word.forms) {
+            expect(form, `${at} form of ${word.display} carries Hangul`).toMatch(noHangul);
+            expect(form, `${at} form of ${word.display} is pure ASCII`).toMatch(asciiOnly);
+          }
+        }
+      }
     }
   });
 
