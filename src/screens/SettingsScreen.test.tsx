@@ -498,13 +498,15 @@ describe('the fourth course — hi-en (#267, shipping since #273)', () => {
 
 /* ------------------------------------------------- the fifth course, en-ru (#338) */
 
-describe('the fifth course — en-ru (#338, still a dev fixture)', () => {
+describe('the fifth course — en-ru (#343, shipping)', () => {
   /**
-   * The same switch flow, run against the REAL en-ru files. The row is in `DEV_MANIFEST` carrying
-   * `fixture: true`, exactly as hi-en's did between #267 and #273: a dev build offers the pair, a
-   * strict build never emits it, and #343 deletes the flag. Nothing is authored yet, so every one
-   * of the ten rungs is pending and the chrome is en-ru's English bundle — the L1 of this course
-   * is English, so `lang` stays `en` and the ladder reads exactly as en-es's does.
+   * The same switch flow, run against the REAL en-ru files. The row shipped in #343, so it carries
+   * no `fixture` key and a strict build emits it. The chrome is en-ru's English bundle — the L1 of
+   * this course is English, so `lang` stays `en` and the ladder reads exactly as en-es's does.
+   *
+   * **Reaching it is a two-step journey since #324**, and that is the point rather than an
+   * inconvenience: the course field offers only what the learner can READ, so an English course
+   * appears once the language above it says English. A Hindi reader is never shown Russian.
    */
   function serveEnRu(): void {
     const base = globalThis.fetch;
@@ -521,26 +523,47 @@ describe('the fifth course — en-ru (#338, still a dev fixture)', () => {
     );
   }
 
-  it('is offered in the switcher as english → russian', async () => {
+  /** The language field, by the course's own label for it. */
+  function langSelect(): HTMLElement {
+    return screen.getByRole('combobox', { name: stringValue(COURSE, 'settings.yourLanguage') });
+  }
+
+  it('is offered to an English reader as Russian, and to a Hindi reader not at all', async () => {
     const select = await renderSettings();
 
-    expect(within(select).getByRole('option', { name: 'english → russian' })).toHaveValue('en-ru');
+    // A Hindi reader sees the Hindi-L1 courses only: en-ru is not among them, in any form.
+    expect(within(select).queryByRole('option', { name: 'Russian' })).toBeNull();
+    expect(select.textContent ?? '').not.toContain('russian');
+
+    // Say you read English, and the field offers what there is to learn in it (#324).
+    fireEvent.change(langSelect(), { target: { value: 'en' } });
+
+    const inEnglish = await screen.findByRole('combobox', { name: 'Active course' });
+    await waitFor(() => {
+      expect(within(inEnglish).getByRole('option', { name: 'Russian' })).toHaveValue('en-ru');
+    });
   });
 
   it('boots a ladder of ten pending rungs in English chrome, and leaves hi-mr where it was', async () => {
     const ladder = tenRungLadder(3);
     climb(ladder, 'L1-M1');
     const before = useAppStore.getState().courses[COURSE];
-    const select = await renderSettings(ladder);
+    await renderSettings(ladder);
     serveEnRu();
 
+    // English first, then Russian — the journey #324 made explicit.
+    fireEvent.change(langSelect(), { target: { value: 'en' } });
+    const select = await screen.findByRole('combobox', { name: 'Active course' });
+    await waitFor(() => {
+      expect(within(select).queryByRole('option', { name: 'Russian' })).not.toBeNull();
+    });
     fireEvent.change(select, { target: { value: 'en-ru' } });
 
-    // The arrival toast is en-ru's own `switchToast` — English, the L1 of this course.
+    // The arrival toast is en-ru's own `switchToast` — English, the L1 of this course. It names
+    // the pair being LEFT, which after the language step above is the first English-L1 course
+    // rather than hi-mr: the toast reports what actually happened, not what the test set up.
     expect(
-      await screen.findByText(
-        'You’re on english → russian now. Your hindi → marathi ladder is saved exactly where it was.',
-      ),
+      await screen.findByText(/You’re on english → russian now\. Your .+ ladder is saved/),
     ).toBeInTheDocument();
     // The document declares the course's L1 (#186): `en`, off the row's `l1Tag`. Russian is what
     // this course TEACHES, and not one Cyrillic line exists yet — the skeleton carries none.

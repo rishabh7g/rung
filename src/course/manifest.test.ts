@@ -46,25 +46,27 @@ describe('loadCourses', () => {
     });
     // en-ar carries more than the nine required fields; the loader keeps them, never rejects them.
     expect(courses[2]?.romanizationNote).toMatch(/Modern Standard Arabic/);
-    // en-es graduated in #195, en-ar in #202 and hi-en in #273 — a shipping course carries no
-    // fixture key at all. en-ru (#338) is still being authored behind the gate, so it is the
-    // only row that carries one, and #343 deletes it.
-    expect(courses.filter((course) => course.fixture !== undefined).map((c) => c.id)).toEqual([
-      'en-ru',
-    ]);
+    // en-es graduated in #195, en-ar in #202, hi-en in #273 and en-ru in #343 — a shipping
+    // course carries no fixture key at all, and with en-ru graduated no row carries one.
+    expect(courses.filter((course) => course.fixture !== undefined).map((c) => c.id)).toEqual([]);
     expect(courses[3]).toMatchObject({ id: 'hi-en', l1Tag: 'hi', l2Tag: 'en' });
-    expect(courses[4]).toMatchObject({ id: 'en-ru', l1Tag: 'en', l2Tag: 'ru', fixture: true });
+    expect(courses[4]).toMatchObject({ id: 'en-ru', l1Tag: 'en', l2Tag: 'ru' });
   });
 
   /**
    * `--with-fixtures` and the `fixture` key are the seam a course is authored behind (PRD §17):
-   * hi-en was that course from #267 until #273 graduated it, and en-ru is that course now (#338,
-   * graduating in #343). The loader keeps the key rather than validating it away, so the row
-   * reaches the app intact — the key is what `resolveActiveCourse` and the Settings switcher never
-   * branch on, and what graduation deletes.
+   * hi-en was that course from #267 until #273 graduated it, and en-ru from #338 until #343.
+   * The loader keeps the key rather than validating it away, so the row reaches the app intact —
+   * the key is what `resolveActiveCourse` and the Settings switcher never branch on, and what
+   * graduation deletes.
+   *
+   * The row is SYNTHETIC now, and deliberately so: with en-ru graduated, no shipped course is
+   * behind the gate, and the seam still has to work for the next course that is. A test that
+   * borrowed whichever manifest row happened to carry the key would go quiet exactly when the
+   * catalogue is fully graduated — which is when nothing else is watching it either.
    */
   it('keeps a fixture row intact — a course authored behind the gate reaches the app as one', () => {
-    const row = DEV_MANIFEST.courses[4];
+    const row = { ...DEV_MANIFEST.courses[4], id: 'en-ja', fixture: true };
 
     const manifest = parseManifest({ devBuild: true, courses: [row] });
 

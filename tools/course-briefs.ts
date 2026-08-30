@@ -285,7 +285,8 @@
  *
  * There was no seam-proof fixture to replace: `content/hi-en/modules/` did not exist until #270
  * authored L1-M1 against the brief below, and #273 graduated the course out of `fixture: true`
- * — the fourth course shipping, all four courses briefed here.
+ * — the fourth course shipping. en-ru followed the same path (#338 → #343) and is the fifth; all
+ * five shipping courses are briefed here.
  *
  * ## hi-mr L2: the four decisions, taken against the finished L1 (#295)
  *

@@ -575,12 +575,10 @@ describe('manifest validation', () => {
       'en-ru',
     ]);
     expect(courses[2]?.romanizationNote).toMatch(/^ALA-LC/);
-    // hi-en graduated in #273, as en-es (#195) and en-ar (#202) did before it. en-ru (#338) is
-    // course #5, still being authored behind the seam, so it is the one row carrying `fixture`
-    // — #343 deletes it.
-    expect(courses.filter((course) => 'fixture' in course).map((course) => course.id)).toEqual([
-      'en-ru',
-    ]);
+    // hi-en graduated in #273, as en-es (#195) and en-ar (#202) did before it, and en-ru in #343
+    // — so no authored row carries `fixture` any more. The seam itself is still proved, on a
+    // synthetic row, in `src/course/manifest.test.ts`.
+    expect(courses.filter((course) => 'fixture' in course).map((course) => course.id)).toEqual([]);
   });
 
   it('rejects a manifest that is not a non-empty array of objects', () => {
@@ -1814,7 +1812,7 @@ describe('the authored content', () => {
     ...Array.from({ length: 10 }, (_, i) => `hi-en/index/L1-M${i + 1}.json`),
   ];
 
-  it('ships hi-mr, en-es, en-ar and hi-en L1-M1..M10 on a strict build', () => {
+  it('ships hi-mr, en-es, en-ar, hi-en and en-ru L1-M1..M10 on a strict build', () => {
     const { report, outRoot } = build(DEFAULT_CONTENT_ROOT, STRICT);
     const L1 = [
       'L1-M1',
@@ -1835,21 +1833,23 @@ describe('the authored content', () => {
       ['en-es', L1],
       ['en-ar', L1],
       ['hi-en', L1],
+      ['en-ru', L1],
     ]);
-    // Four courses SHIP, in manifest order — hi-mr first and default, hi-en last (#273). en-ru
-    // (#338) is authored behind the fixture gate and never reaches the emitted manifest until
-    // #343 deletes its flag.
+    // FIVE courses ship, in manifest order — hi-mr first and default, en-ru last. It was authored
+    // behind the fixture gate from #338 and reaches the strict manifest now that #343 has deleted
+    // its flag; a strict build needs no `--with-fixtures` to see it.
     expect(readManifest(outRoot).courses.map((course) => course.id)).toEqual([
       'hi-mr',
       'en-es',
       'en-ar',
       'hi-en',
+      'en-ru',
     ]);
-    // No EMITTED row carries `fixture`: the four that ship never did, and the one that does is
-    // not emitted at all. The envelope carries no dev key.
+    // No EMITTED row carries `fixture` — and since #343 that is because none of the five HAS one,
+    // rather than because the one that did was dropped. The envelope carries no dev key.
     expect(readManifest(outRoot).courses.some((course) => 'fixture' in course)).toBe(false);
     expect(readManifest(outRoot).devBuild).toBeUndefined();
-    // en-ru is the one skipped row, so the summary line carries a `| skipped:` tail naming it.
+    // Nothing is skipped any more, so the summary line has no `| skipped:` tail at all.
     expect(report.lines).toEqual([
       'hi-mr: 10 modules (L1-M1..M10)',
       ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
@@ -1859,8 +1859,9 @@ describe('the authored content', () => {
       ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
       'hi-en: 10 modules (L1-M1..M10)',
       ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
-      'en-ru: 0 modules — fixture course, excluded by the gate (--with-fixtures ships it in dev)',
-      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10) | skipped: en-ru (fixture course)',
+      'en-ru: 10 modules (L1-M1..M10)',
+      ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
+      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10), en-ru 10 modules (L1-M1..M10)',
     ]);
     // The strict tree carries the fourth course whole — the files a learner's device fetches
     // (AC 2 of #273), and the emitted ladder says all ten L1 rungs have content.
@@ -1937,8 +1938,8 @@ describe('the authored content', () => {
         `en-ru ${EN_RU_AUTHORED.length} modules (${EN_RU_RANGE})`,
     );
     expect(readManifest(outRoot).devBuild).toBe(true);
-    // The manifest lists what SHIPPED, so a dev build carries five courses and the fifth is the
-    // fixture one — which is exactly the seam a strict build must drop.
+    // The manifest lists what SHIPPED, and since #343 that is five graduated courses — no row
+    // is behind the fixture seam any more, on a dev build or a strict one.
     expect(readManifest(outRoot).courses.map((course) => course.id)).toEqual([
       'hi-mr',
       'en-es',
@@ -1950,13 +1951,12 @@ describe('the authored content', () => {
       id: 'en-ru',
       l1Tag: 'en',
       l2Tag: 'ru',
-      fixture: true,
     });
     expect(
       readManifest(outRoot)
         .courses.filter((course) => 'fixture' in course)
         .map((course) => course.id),
-    ).toEqual(['en-ru']);
+    ).toEqual([]);
     for (const file of [
       'hi-mr/levels.json',
       'hi-mr/strings.json',
@@ -2012,6 +2012,11 @@ describe('the authored content', () => {
       'hi-en/index/L1-M8.json',
       'hi-en/index/L1-M9.json',
       'hi-en/index/L1-M10.json',
+      // en-ru ships on a STRICT build since #343 — no `--with-fixtures` anywhere.
+      'en-ru/levels.json',
+      'en-ru/strings.json',
+      ...Array.from({ length: 10 }, (_, i) => `en-ru/modules/L1-M${i + 1}.json`),
+      ...Array.from({ length: 10 }, (_, i) => `en-ru/index/L1-M${i + 1}.json`),
     ]) {
       expect(existsSync(path.join(outRoot, ...file.split('/')))).toBe(true);
     }
