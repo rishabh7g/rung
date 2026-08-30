@@ -1722,8 +1722,8 @@ describe('the authored content', () => {
    * what finally lets a strict build see it. Pinned, never derived: the point of the block is
    * to know what the repo really holds.
    */
-  const EN_RU_AUTHORED = ['L1-M1', 'L1-M2'];
-  const EN_RU_RANGE = 'L1-M1..M2';
+  const EN_RU_AUTHORED = ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5'];
+  const EN_RU_RANGE = 'L1-M1..M5';
 
   /** Everything a strict build must emit for the fourth course (#273): the ladder, the Hindi
    *  bundle, the ten rungs and their ten cumulative indexes. */

@@ -1,0 +1,544 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M5",
+  "title": "Yesterday",
+  "job": "Past tense — the first big divergence",
+  "prerequisites": ["L1-M4"],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": ["past"],
+    "allowedPatterns": [
+      "Вчера я + V-л / V-ла",
+      "Вчера я + V-л + N (acc.)",
+      "Вчера я не + V-л / V-ла",
+      "Вы + V-ли + ?",
+      "Вчера я был / была + дома"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "The past tense does not care who you are talking about — it cares about GENDER and NUMBER. The endings are -л for a man, -ла for a woman, -ло for a thing that is neuter, and -ли for more than one. So the same speaker writes Я купил or Я купила depending on who they are, and the verb says nothing about \"I\" at all. English marks none of this and gives you no habit to fall back on."
+    },
+    {
+      "tag": "delta",
+      "text": "Because the past names a gender and not a person, вы always takes -ли — Вы купили билет? — even when it means one man. It is the same rule as M2's Вы устали?: вы takes the plural, always."
+    },
+    {
+      "tag": "delta",
+      "text": "\"To be\" comes back. The present had no word at all, and the past has был (m) · была (f) · было (n) · были (pl). This is the whole shape of Russian's \"be\": a real word in the past, a real word in the future (M6), and nothing in the present. \"Russian has no verb to be\" was never true — only its present tense is empty."
+    },
+    {
+      "tag": "interference",
+      "text": "Russian verbs come in pairs, and yesterday's single finished events take the other half of the pair from the one M4 used: пить becomes выпил, читать becomes прочитал, and покупать — which this course never writes — is the everyday partner of купил. They are separate words with separate dictionary entries, not endings on one verb. What decides which you use is whether you are reporting one completed event (these) or a habit or an unfinished stretch of time (a second past this level does not teach)."
+    },
+    {
+      "tag": "delta",
+      "text": "There is no did. Negation is still M3's one word in one place, now in front of the past verb: Вчера я не купил хлеб. Nothing is added, nothing moves, and the verb keeps the ending it had."
+    },
+    {
+      "tag": "free",
+      "text": "дома means \"at home\" and домой means \"to home\" — both are single words that take no preposition and no ending, which is why this level uses them: they say where and where-to without opening anything new."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M5-S01",
+      "display": "Вчера я был дома.",
+      "cue": "Yesterday I was at home (said by a man)",
+      "glossEn": "lit. \"yesterday I was at-home\"",
+      "literal": "Yesterday I was at-home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Вчера",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": ["Вчера"],
+            "note": "Yesterday. It usually opens the sentence, and every sentence on this rung is anchored by it. Never changes shape."
+          },
+          {
+            "display": "был",
+            "cue": "was",
+            "tag": "interference",
+            "forms": ["был", "была", "было", "были"],
+            "note": "The past of \"to be\" — the verb that had no present-tense word at all. был for a man, была for a woman, было for a neuter thing, были for more than one and for вы. This one row is the whole story of Russian \"be\": nothing in the present, был behind you, буду ahead of you (M6)."
+          },
+          {
+            "display": "дома",
+            "cue": "at home",
+            "tag": "delta",
+            "forms": ["дома"],
+            "note": "\"At home\", in one word — no preposition, no ending, nothing to build. Its partner домой means \"homewards\", and the pair covers being somewhere and going there without touching the case system at all."
+          }
+        ],
+        "rules": [0, 2, 5]
+      },
+      "trap": "M1 said the present of \"to be\" is simply not written, and that was true — of the present. This sentence has a real word in it, and if you are a woman it is a different real word.",
+      "sound": "fchee-RA ya byl DO-ma. был is one tight syllable with the hard ы vowel; the в of вчера is said as an f.",
+      "variations": [
+        {
+          "display": "Вчера я была дома.",
+          "cue": "Yesterday I was at home (said by a woman)",
+          "changed": "был → была: the same sentence, said by a woman"
+        },
+        {
+          "display": "Вы были дома вчера?",
+          "cue": "Were you at home yesterday?",
+          "changed": "вы takes были, the plural shape, even for one person — and the question moves nothing"
+        },
+        {
+          "display": "Вчера я не был дома.",
+          "cue": "Yesterday I was not at home",
+          "changed": "не in front of the verb — the same one word as in M3"
+        }
+      ],
+      "mistake": {
+        "display": "Вчера я есть дома.",
+        "why": "есть is not a past tense, and Russian's present \"be\" is written as nothing anyway. Yesterday needs был — or была, depending on who is speaking."
+      },
+      "usage": "Saying where you were — and the first sentence in the course whose shape depends on your own gender.",
+      "register": "neutral",
+      "mnemonic": "The present is empty; the past is not. был is a real word that had no present-tense twin."
+    },
+    {
+      "id": "L1-M5-S02",
+      "display": "Вчера я купил хлеб.",
+      "cue": "Yesterday I bought bread (said by a man)",
+      "glossEn": "lit. \"yesterday I bought bread\"",
+      "literal": "Yesterday I bought bread",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "купил",
+            "cue": "bought",
+            "tag": "interference",
+            "forms": ["купил", "купила", "купили"],
+            "note": "\"Bought\", from купить — the half of the pair Russian uses for one finished purchase. The ending follows the buyer's gender: купил (m), купила (f), купили (more than one, and вы). The other half of the pair, покупать, is for buying as a habit and this level does not write it."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "хлеб is unchanged, exactly as it was in M3 — a masculine thing keeps its shape as the object, in the past as in the present. The tense never touches the noun.",
+      "sound": "fchee-RA ya koo-PEEL khlyep. The stress on купил is on the ending, and it stays there in купила too.",
+      "variations": [
+        {
+          "display": "Вчера я купила хлеб.",
+          "cue": "Yesterday I bought bread (said by a woman)",
+          "changed": "купил → купила: the ending follows who is speaking, not what was bought"
+        },
+        {
+          "display": "Вчера я купил молоко.",
+          "cue": "Yesterday I bought milk",
+          "changed": "swap the thing bought — the verb ending does not notice"
+        },
+        {
+          "display": "Вы купили хлеб?",
+          "cue": "Did you buy bread?",
+          "changed": "вы takes купили, and the question adds nothing — there is no did"
+        }
+      ],
+      "mistake": {
+        "display": "Вчера я купил хлеба.",
+        "why": "The \"some of it\" shape again, which this level does not teach. The plain object is хлеб, past or present."
+      },
+      "usage": "Reporting what you did — the frame most of this rung is built on.",
+      "register": "neutral",
+      "mnemonic": "The ending looks at the person speaking, never at the thing bought."
+    },
+    {
+      "id": "L1-M5-S03",
+      "display": "Вчера я купила газету.",
+      "cue": "Yesterday I bought a newspaper (said by a woman)",
+      "glossEn": "lit. \"yesterday I bought newspaper\"",
+      "literal": "Yesterday I bought newspaper-OBJECT",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "газета",
+            "cue": "newspaper",
+            "tag": "delta",
+            "forms": ["газета", "газету"],
+            "note": "Newspaper. Feminine, so it takes M3's -у ending as the object: газету. Two endings are moving in this sentence and they are answering to different things — купила to the speaker, газету to its job in the sentence."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "Two -а endings, two different reasons. купила ends that way because a woman is speaking; газету bends because it is the thing bought. Neither has anything to do with the other, and reading one as agreeing with the other is the mistake this sentence exists to prevent.",
+      "sound": "fchee-RA ya koo-PEE-la ga-ZYE-too. Four unstressed vowels flatten and two land hard — the ordinary Russian rhythm.",
+      "variations": [
+        {
+          "display": "Вчера я купил газету.",
+          "cue": "Yesterday I bought a newspaper (said by a man)",
+          "changed": "купила → купил: the speaker changed, and газету did not"
+        },
+        {
+          "display": "Вчера я купила книгу.",
+          "cue": "Yesterday I bought a book",
+          "changed": "swap the thing bought — the new noun is feminine too, so it bends the same way"
+        },
+        {
+          "display": "Анна купила газету.",
+          "cue": "Anna bought a newspaper",
+          "changed": "a name instead of я — and the ending still follows the woman, not the newspaper"
+        }
+      ],
+      "mistake": {
+        "display": "Вчера я купила газета.",
+        "why": "газета is the subject shape. As the thing bought it is газету — M3's rule, still running underneath the new tense."
+      },
+      "usage": "The everyday errand sentence — and the clearest case of two endings answering to two different masters.",
+      "register": "neutral",
+      "mnemonic": "One ending looks at the speaker; the other looks at the job. They never consult each other."
+    },
+    {
+      "id": "L1-M5-S04",
+      "display": "Вчера я пошёл домой.",
+      "cue": "Yesterday I went home (said by a man)",
+      "glossEn": "lit. \"yesterday I went home-wards\"",
+      "literal": "Yesterday I went homewards",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "пошёл",
+            "cue": "went · set off",
+            "tag": "interference",
+            "forms": ["пошёл", "пошла", "пошли"],
+            "note": "\"Went\", in the sense of setting off — from пойти. Look at what happens to the ё: пошёл for a man, but пошла for a woman, with the vowel gone altogether. This course always writes the two dots on ё; most Russian books leave them off and let you work it out."
+          },
+          {
+            "display": "домой",
+            "cue": "home · homewards",
+            "tag": "delta",
+            "forms": ["домой"],
+            "note": "\"To home\". English uses one word — \"home\" — for both being there and going there; Russian splits them: дома is where you are, домой is where you are heading. Neither takes a preposition or an ending."
+          }
+        ],
+        "rules": [0, 3, 5]
+      },
+      "trap": "дома and домой are one English word and two Russian ones, and swapping them says the opposite of what you mean. Вчера я пошёл дома would be \"yesterday I set off at home\".",
+      "sound": "fchee-RA ya pa-SHOL da-MOY. The ё is always stressed in Russian, wherever it appears — so the dots also tell you where the weight lands.",
+      "variations": [
+        {
+          "display": "Вчера я пошла домой.",
+          "cue": "Yesterday I went home (said by a woman)",
+          "changed": "пошёл → пошла: the ё disappears completely when the ending changes"
+        },
+        {
+          "display": "Вчера я пошёл домой рано.",
+          "cue": "Yesterday I went home early",
+          "changed": "M4's time word hangs off the end without disturbing anything"
+        },
+        {
+          "display": "Вы пошли домой?",
+          "cue": "Did you go home?",
+          "changed": "вы takes пошли — and again the question adds no word"
+        }
+      ],
+      "mistake": {
+        "display": "Вчера я пошёл дома.",
+        "why": "дома is where you are, not where you go. Setting off for home is домой."
+      },
+      "usage": "Telling somebody how your evening ended — and the sentence that makes the ё policy worth having.",
+      "register": "neutral",
+      "mnemonic": "ё is always the stressed vowel. When the stress moves, the ё goes with it."
+    },
+    {
+      "id": "L1-M5-S05",
+      "display": "Вчера я выпил кофе.",
+      "cue": "Yesterday I drank coffee (said by a man)",
+      "glossEn": "lit. \"yesterday I drank-up coffee\"",
+      "literal": "Yesterday I drank-up coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "выпил",
+            "cue": "drank",
+            "tag": "interference",
+            "forms": ["выпил", "выпила", "выпили"],
+            "note": "\"Drank\" — one cup, finished. It is a different word from M4's пить, not a past tense of it: the вы- on the front is what makes it a single completed act. пить is what you do every morning; выпить is what you did once yesterday."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "M4's пью has no past tense of its own on this rung. Reporting yesterday's coffee means reaching for a different word, and that is the single hardest habit in Russian for an English speaker to build.",
+      "sound": "fchee-RA ya VY-peel KO-fye. The stress jumps to the front on выпил — the вы- prefix pulls it there, which is unusual and worth noticing.",
+      "variations": [
+        {
+          "display": "Вчера я выпила кофе.",
+          "cue": "Yesterday I drank coffee (said by a woman)",
+          "changed": "выпил → выпила: the speaker's gender, once again"
+        },
+        {
+          "display": "Вчера я выпил чай.",
+          "cue": "Yesterday I drank tea",
+          "changed": "swap the drink — the object is masculine either way, so nothing bends"
+        },
+        {
+          "display": "Утром я пью кофе.",
+          "cue": "In the morning I drink coffee",
+          "changed": "the habit version, with M4's verb — a different word for a different kind of drinking"
+        }
+      ],
+      "mistake": {
+        "display": "Вчера я пил кофе.",
+        "why": "Not wrong Russian — a different meaning. пил is \"was drinking\" or \"used to drink\", the unfinished kind; one finished cup yesterday is выпил."
+      },
+      "usage": "Reporting one particular thing you drank — and the module's clearest look at the verb pairs.",
+      "register": "neutral",
+      "mnemonic": "пить is the habit, выпить is the cup. Two words, not two tenses."
+    },
+    {
+      "id": "L1-M5-S06",
+      "display": "Вчера я прочитал книгу.",
+      "cue": "Yesterday I read a book (said by a man)",
+      "glossEn": "lit. \"yesterday I read-through book\"",
+      "literal": "Yesterday I read-through book-OBJECT",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "прочитал",
+            "cue": "read (all of it)",
+            "tag": "interference",
+            "forms": ["прочитал", "прочитала", "прочитали"],
+            "note": "\"Read\", and finished it — from прочитать, M4's читать with про- on the front. The prefix is what turns reading into having-read: with it the book is done, without it you were simply reading. Same gender endings as every other past verb."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "The English \"I read a book yesterday\" leaves it open whether you finished. Russian does not: прочитал says you got to the end, and читал would say you were at it.",
+      "sound": "fchee-RA ya pra-chee-TAL KNEE-goo. Three unstressed syllables before the stress lands — say them light and quick.",
+      "variations": [
+        {
+          "display": "Вчера я прочитала книгу.",
+          "cue": "Yesterday I read a book (said by a woman)",
+          "changed": "прочитал → прочитала, following the reader"
+        },
+        {
+          "display": "Вчера я прочитал газету.",
+          "cue": "Yesterday I read a newspaper",
+          "changed": "swap what was read — and it bends, being feminine"
+        },
+        {
+          "display": "Вы прочитали книгу?",
+          "cue": "Did you read the book?",
+          "changed": "вы takes прочитали, and the question is made by the mark alone"
+        }
+      ],
+      "mistake": {
+        "display": "Вчера я читал книгу.",
+        "why": "Correct Russian for a different fact: that says you were reading, not that you finished. For a book you got through, прочитал."
+      },
+      "usage": "Reporting something you completed — and the same про- trick works on a good many verbs.",
+      "register": "neutral",
+      "mnemonic": "The prefix is the finishing line. про- means you crossed it."
+    },
+    {
+      "id": "L1-M5-S07",
+      "display": "Вчера я не купил сахар.",
+      "cue": "Yesterday I didn't buy sugar (said by a man)",
+      "glossEn": "lit. \"yesterday I not bought sugar\"",
+      "literal": "Yesterday I not bought sugar",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "сахар",
+            "cue": "sugar",
+            "tag": "free",
+            "forms": ["сахар"],
+            "note": "Sugar. Masculine, ends in a consonant, and never changes as the object — the same free ride as хлеб and сок."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "English builds a whole new verb shape for this — \"did not buy\", with the past moving onto \"did\" and \"buy\" going back to its plain form. Russian changes nothing at all: не goes in front of купил and the sentence is finished.",
+      "sound": "fchee-RA ya nye koo-PEEL SA-khar. The final р of сахар is a light tap, not the English r.",
+      "variations": [
+        {
+          "display": "Вчера я не купила сахар.",
+          "cue": "Yesterday I didn't buy sugar (said by a woman)",
+          "changed": "не does not protect the verb from its ending — купила still follows the speaker"
+        },
+        {
+          "display": "Вчера я купил сахар.",
+          "cue": "Yesterday I bought sugar",
+          "changed": "drop не and nothing else has to move back"
+        },
+        {
+          "display": "Вы не купили сахар?",
+          "cue": "Didn't you buy sugar?",
+          "changed": "вы takes купили, and не sits in the same place it always sits"
+        }
+      ],
+      "mistake": {
+        "display": "Вчера я не покупать сахар.",
+        "why": "The English shape, where the past moves onto a helper and the main verb goes back to its dictionary form. Russian keeps the past on the verb: не купил."
+      },
+      "usage": "Saying what you failed to do — and the cleanest proof that Russian has no did.",
+      "register": "neutral",
+      "mnemonic": "No helper, no reset. не купил is the whole of \"did not buy\"."
+    },
+    {
+      "id": "L1-M5-S08",
+      "display": "Вчера я купил билет.",
+      "cue": "Yesterday I bought a ticket (said by a man)",
+      "glossEn": "lit. \"yesterday I bought ticket\"",
+      "literal": "Yesterday I bought ticket",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "билет",
+            "cue": "ticket",
+            "tag": "free",
+            "forms": ["билет"],
+            "note": "Ticket — for a train, a plane, a museum, a concert. Masculine, so it does not change as the object, and it is one of the words a traveller uses most."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "There is still no word for \"a\". Вчера я купил билет is \"a ticket\" and \"the ticket\" alike, and M10 will show how word order settles it when it matters.",
+      "sound": "fchee-RA ya koo-PEEL bee-LYET. The е after л softens it, so the ending is \"lyet\", not \"let\".",
+      "variations": [
+        {
+          "display": "Вчера я купила билет.",
+          "cue": "Yesterday I bought a ticket (said by a woman)",
+          "changed": "the speaker's ending again — the ticket has nothing to do with it"
+        },
+        {
+          "display": "Вы купили билет?",
+          "cue": "Did you buy a ticket?",
+          "changed": "вы takes купили, and the question adds no word at all"
+        },
+        {
+          "display": "Я хочу купить билет.",
+          "cue": "I want to buy a ticket",
+          "changed": "back to M3's frame — after хочу the verb stands in its dictionary shape, купить"
+        }
+      ],
+      "mistake": {
+        "display": "Вчера я купил один билет.",
+        "why": "Not wrong, but it says \"one ticket\" as a count rather than \"a ticket\". Russian has no article, so the bare noun is the ordinary sentence."
+      },
+      "usage": "Travel, museums, concerts — and the third variation is the sentence you will actually need at the counter.",
+      "register": "neutral",
+      "mnemonic": "Still no articles. The bare noun does both jobs."
+    },
+    {
+      "id": "L1-M5-S09",
+      "display": "Вчера был дождь.",
+      "cue": "Yesterday it rained",
+      "glossEn": "lit. \"yesterday was rain\"",
+      "literal": "Yesterday was rain",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "дождь",
+            "cue": "rain",
+            "tag": "delta",
+            "forms": ["дождь"],
+            "note": "Rain — and here it is the SUBJECT of the sentence, which is why был takes the masculine ending. дождь ends in -ь, and M1 warned that -ь nouns can be either gender: this one is masculine, and there is no way to tell from the spelling. Learn each -ь noun with its gender."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "There is no \"it\" anywhere. English needs a subject that means nothing — \"it rained\" — and Russian makes the rain itself the subject, so был agrees with дождь. The verb follows whatever noun the sentence is about: if it had been about снег (snow), also masculine, был would still be right, and a feminine subject would take была.",
+      "sound": "fchee-RA byl dozhd'. The final -ждь is a single squeezed sound ending soft; it is the hardest word on this rung to say.",
+      "variations": [
+        {
+          "display": "Вчера был дождь вечером.",
+          "cue": "Yesterday it rained in the evening",
+          "changed": "M4's time word at the end — nothing else moves"
+        },
+        {
+          "display": "Вчера не было дождя.",
+          "cue": "Yesterday there was no rain",
+          "changed": "saying it did not happen takes a different shape of both words — не было, and дождя. This level does not teach that shape; it is here so you recognise it"
+        },
+        {
+          "display": "Утром был дождь.",
+          "cue": "It rained in the morning",
+          "changed": "swap the time — and был still agrees with дождь, not with anybody speaking"
+        }
+      ],
+      "mistake": {
+        "display": "Вчера это был дождь.",
+        "why": "The English \"it\" smuggled in. Russian has no dummy subject: the rain is the subject, and был agrees with it."
+      },
+      "usage": "Weather — the most-used small talk in the language, and the sentence where the gender rule stops being about people.",
+      "register": "neutral",
+      "mnemonic": "The verb agrees with whatever the sentence is about. Sometimes that is the rain."
+    },
+    {
+      "id": "L1-M5-S10",
+      "display": "Вы прочитали письмо?",
+      "cue": "Did you read the letter?",
+      "glossEn": "lit. \"you read-through letter?\"",
+      "literal": "You read-through letter?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "письмо",
+            "cue": "letter",
+            "tag": "free",
+            "forms": ["письмо"],
+            "note": "Letter — the kind you write, and also a letter of an alphabet in the plural. Neuter, ending in -о, so it does not change as the object: neuter nouns never do."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "прочитали is plural because вы is always plural — not because more than one person read it. The past tense never names a person, only a gender and a number, and вы hands it the number.",
+      "sound": "vy pra-chee-TA-lee pees'-MO. The ь inside письмо softens the с; the stress is on the last syllable, which is where most neuter -о nouns keep it.",
+      "variations": [
+        {
+          "display": "Вы прочитали книгу?",
+          "cue": "Did you read the book?",
+          "changed": "swap the thing read — and this one bends, being feminine"
+        },
+        {
+          "display": "Я прочитал письмо.",
+          "cue": "I read the letter",
+          "changed": "the answer, from a man — прочитал, the singular masculine ending"
+        },
+        {
+          "display": "Вы не прочитали письмо?",
+          "cue": "Didn't you read the letter?",
+          "changed": "не in front of the verb — a perfectly ordinary question, not a reproach"
+        }
+      ],
+      "mistake": {
+        "display": "Вы прочитал письмо?",
+        "why": "вы takes the plural ending in the past, always: прочитали, however few people you mean."
+      },
+      "usage": "Checking whether somebody has done something — and the last of the module's four gender endings.",
+      "register": "neutral",
+      "mnemonic": "вы is plural in every tense. The past is no exception."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M5-C01",
+      "display": "Вчера я была дома.",
+      "cue": "Yesterday I was at home (a woman speaking)"
+    },
+    { "id": "L1-M5-C02", "display": "Анна купила газету.", "cue": "Anna bought a newspaper" },
+    { "id": "L1-M5-C03", "display": "Иван пошёл домой.", "cue": "Ivan went home" },
+    { "id": "L1-M5-C04", "display": "Вчера я прочитал газету.", "cue": "Yesterday I read a newspaper" },
+    { "id": "L1-M5-C05", "display": "Вы были дома вчера?", "cue": "Were you at home yesterday?" },
+    { "id": "L1-M5-C06", "display": "Вчера Анна выпила кофе.", "cue": "Yesterday Anna drank coffee" },
+    { "id": "L1-M5-C07", "display": "Я не купил хлеб.", "cue": "I didn't buy bread" },
+    { "id": "L1-M5-C08", "display": "Вчера я купил молоко.", "cue": "Yesterday I bought milk" },
+    { "id": "L1-M5-C09", "display": "Анна пошла домой рано.", "cue": "Anna went home early" },
+    { "id": "L1-M5-C10", "display": "Вчера был дождь утром.", "cue": "Yesterday it rained in the morning" },
+    { "id": "L1-M5-C11", "display": "Вы купили билет?", "cue": "Did you buy a ticket?" },
+    { "id": "L1-M5-C12", "display": "Вчера я прочитал письмо.", "cue": "Yesterday I read the letter" }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

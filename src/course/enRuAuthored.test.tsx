@@ -41,7 +41,7 @@ import type { Levels, ModuleContent, WordIndex, WordIndexEntry } from './types.t
 
 const COURSE = 'en-ru';
 /** The rungs authored so far, in ladder order — the fold below is cumulative over this list. */
-const AUTHORED = ['L1-M1', 'L1-M2'] as const;
+const AUTHORED = ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5'] as const;
 
 const FILES = import.meta.glob<string>('../../content/en-ru/**/*.json', {
   query: '?raw',
@@ -307,6 +307,68 @@ describe('Sentence Detail over the authored rungs', () => {
     const words = section('words');
     expect(within(words).getByText('устал')).toBeInTheDocument();
     expect(within(words).getByText('устал · устала · устали')).toBeInTheDocument();
+  });
+});
+
+/* ------------------------------------------------- the middle rungs (#341) */
+
+describe('Sentence Detail over L1-M3, L1-M4 and L1-M5', () => {
+  /** Renders one sentence of an authored rung, with every rung before it passed. */
+  async function renderSentence(moduleId: string, sentenceId: string) {
+    serveAuthoredEnRu();
+    activateEnRu();
+    passRungsBefore(moduleId);
+    window.location.hash = `#/sentence/${sentenceId}`;
+    render(<App />);
+    await screen.findByRole('main');
+  }
+
+  it('shows M3’s first case ending — the noun’s two shapes on ONE row', async () => {
+    await renderSentence('L1-M3', 'L1-M3-S02');
+
+    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent('Я хочу воду.');
+    // вода and воду are the same word, so they share a row and a note — a second row for the
+    // bent shape would be a second note the index could never reach.
+    const words = section('words');
+    expect(within(words).getAllByText('вода').length).toBeGreaterThan(0);
+    expect(within(words).getByText('вода · воду')).toBeInTheDocument();
+    expect(within(section('mistake')).getByText('Я хочу вода.')).toBeInTheDocument();
+  });
+
+  it('shows M4’s clock hour with all three number-driven shapes on one row', async () => {
+    await renderSentence('L1-M4', 'L1-M4-S02');
+
+    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
+      'Я встаю в семь часов.',
+    );
+    const words = section('words');
+    expect(within(words).getByText('час · часа · часов')).toBeInTheDocument();
+    // The в row is M4's, and its note has to answer for M7's place seat as well.
+    expect(within(words).getByText('at · in')).toBeInTheDocument();
+  });
+
+  it('shows M5’s past with the gender pair and the one быть row', async () => {
+    await renderSentence('L1-M5', 'L1-M5-S01');
+
+    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent('Вчера я был дома.');
+    const words = section('words');
+    // The verb that had no present tense at all now has four shapes, all on one row.
+    expect(within(words).getByText('был · была · было · были')).toBeInTheDocument();
+    expect(within(words).getByText('was')).toBeInTheDocument();
+    expect(within(section('mistake')).getByText('Вчера я есть дома.')).toBeInTheDocument();
+  });
+
+  it('shows M5’s two endings answering to two different masters', async () => {
+    await renderSentence('L1-M5', 'L1-M5-S03');
+
+    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
+      'Вчера я купила газету.',
+    );
+    // купила follows the speaker; газету follows its job in the sentence. The trap says so.
+    expect(
+      within(section('trap')).getByText(/Two -а endings, two different reasons/),
+    ).toBeInTheDocument();
+    expect(within(section('words')).getByText('газета · газету')).toBeInTheDocument();
   });
 });
 
