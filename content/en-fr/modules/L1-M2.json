@@ -1,0 +1,535 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M2",
+  "title": "First exchange",
+  "job": "Greetings, wellbeing, yes/no questions",
+  "prerequisites": ["L1-M1"],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 5,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "Bonjour + , + name",
+      "Ça va ?",
+      "Comment ça va ?",
+      "Ça va + bien + , merci",
+      "Vous êtes + Adj/N + ?",
+      "Oui/Non + , + <statement>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "French makes a choice English does not: vous for anyone you are not close to, and for more than one person; tu for family and close friends. This course writes vous throughout, so vous êtes is the second person you learn — and bonjour, not the friendly salut, is its greeting."
+    },
+    {
+      "tag": "delta",
+      "text": "A yes/no question is the statement, unchanged, said with a rising voice and written with a question mark: Vous êtes anglais ? beside Vous êtes anglais. Nothing moves and nothing is added."
+    },
+    {
+      "tag": "interference",
+      "text": "English builds a question out of \"do\", or by hauling \"are\" to the front. French has no word standing in for \"do\" at all, and moving the verb (Êtes-vous anglais ?) is a formal written register this course does not use. Reaching for either is the English habit, not a French option."
+    },
+    {
+      "tag": "delta",
+      "text": "A question word never drags the verb with it. It can stand in front — Comment ça va ? — or stay where the answer would go — Vous vous appelez comment ? Either way the rest of the sentence keeps the order it had."
+    },
+    {
+      "tag": "delta",
+      "text": "ça va has no word for \"you\" inside it — literally \"it goes\" — so it is the question and the answer both, and it is safe with anyone whatever the register."
+    },
+    {
+      "tag": "delta",
+      "text": "An adjective agrees with the SUBJECT — whoever or whatever the sentence is about, not whoever is speaking: Je suis fatigué (a man about himself) · Vous êtes fatiguée ? (asked of a woman). Here the -e is silent, so the two spellings are one sound: the ear cannot check what the eye must."
+    },
+    {
+      "tag": "free",
+      "text": "Oui and Non are one-word answers, exactly as in English, and the sentence behind them is the plain statement with nothing removed."
+    },
+    {
+      "tag": "delta",
+      "text": "French puts a space in front of ? and !, so the mark stands a little clear of the last word: Ça va ? The mark is the only thing a question adds in writing."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M2-S01",
+      "display": "Bonjour, Marc",
+      "cue": "Hello Marc",
+      "glossEn": "lit. \"Good day Marc\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Bonjour",
+            "cue": "hello · good day",
+            "tag": "delta",
+            "forms": [],
+            "note": "One greeting for the whole day until the evening, and safe with anyone — which is why it is this course's greeting. salut is the friendly one and belongs with tu, the register this course does not write; you will hear it constantly and will not need it here."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English picks a greeting by the clock — good morning, good afternoon, good evening. French does not: bonjour covers all of it, and there is no separate \"good morning\" to translate.",
+      "sound": "bohn-ZHOOR. The on is nasal — the air goes through the nose and the n itself is never sounded — and the j is the soft sound in the middle of \"measure\".",
+      "variations": [
+        {
+          "display": "Bonjour, Anne",
+          "cue": "Hello Anne",
+          "changed": "swap the name — bonjour itself never changes"
+        },
+        {
+          "display": "Bonjour, ça va ?",
+          "cue": "Hello, how are you?",
+          "changed": "the greeting carries straight on into the question"
+        },
+        {
+          "display": "Bonjour, je m'appelle Marc",
+          "cue": "Hello, my name is Marc",
+          "changed": "greeting first, then M1's introduction — two sentences in one breath"
+        }
+      ],
+      "mistake": {
+        "display": "Bon matin, Marc",
+        "why": "There is no French \"good morning\": bonjour covers the day until evening. Bon matin is the English shape translated word for word — Quebec says it, France does not."
+      },
+      "usage": "The opening of any exchange, with anyone at all.",
+      "register": "neutral",
+      "mnemonic": "bon + jour — a good day, whatever hour of it you are in."
+    },
+    {
+      "id": "L1-M2-S02",
+      "display": "Bonjour, ça va ?",
+      "cue": "Hello, how are you?",
+      "glossEn": "lit. \"Good day, it goes?\"",
+      "literal": "Good-day, it goes ?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Ça va",
+            "cue": "how are you? · I'm fine",
+            "tag": "delta",
+            "forms": [],
+            "note": "Literally \"it goes\". There is no word for \"you\" anywhere in it, which is why it works as the question and as the answer, and why it costs the tu/vous choice nothing. A rising voice makes it the question; a flat one makes it the answer."
+          }
+        ],
+        "rules": [1, 4, 7]
+      },
+      "trap": "\"How are you?\" does not survive being translated word for word. Comment êtes-vous ? is real French and asks what sort of person you are, not how you are doing. The wellbeing question is ça va ? or comment ça va ?",
+      "sound": "sa VA — the ç is a plain s, never a k, and both a's are open. The question is carried entirely by the voice rising at the end.",
+      "variations": [
+        {
+          "display": "Ça va ?",
+          "cue": "How are you?",
+          "changed": "drop the greeting — the question stands on its own"
+        },
+        {
+          "display": "Comment ça va ?",
+          "cue": "How are you?",
+          "changed": "a question word in front makes the fuller version; nothing else moves"
+        },
+        {
+          "display": "Ça va bien, merci",
+          "cue": "I'm fine, thank you",
+          "changed": "the same two words as the answer — only the voice stops rising"
+        }
+      ],
+      "mistake": {
+        "display": "Bonjour, comment êtes-vous ?",
+        "why": "That asks what sort of person you are, not how you are doing. Wellbeing runs on ça va — Bonjour, ça va ?"
+      },
+      "usage": "The second line of almost every exchange, said to anyone.",
+      "register": "neutral",
+      "mnemonic": "\"It goes?\" — French asks how things are going, not how you are."
+    },
+    {
+      "id": "L1-M2-S03",
+      "display": "Ça va bien, merci",
+      "cue": "I'm fine, thank you",
+      "glossEn": "lit. \"It goes well, thank you\"",
+      "literal": "It goes well, thank-you",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bien",
+            "cue": "well",
+            "tag": "delta",
+            "forms": [],
+            "note": "well — the word that goes with a verb. Its neighbour bon means \"good\" and goes with a noun, so ça va bien is right and ça va bon is not: English blurs the two and French does not."
+          },
+          {
+            "display": "merci",
+            "cue": "thank you",
+            "tag": "free",
+            "forms": [],
+            "note": "thank you — one word for both of English's, and it needs no \"you\" after it."
+          }
+        ],
+        "rules": [4, 6]
+      },
+      "trap": "English answers \"How are you?\" with a word about itself — \"I'm fine\". French answers about how things are going: ça va bien. There is no I in the answer at all.",
+      "sound": "bien is one syllable, byan, with the vowel nasal and the n never sounded. merci is mair-SEE, the stress falling on the last syllable as it does on almost every French word.",
+      "variations": [
+        {
+          "display": "Ça va, merci",
+          "cue": "I'm fine, thank you",
+          "changed": "drop bien — ça va alone is already the answer"
+        },
+        {
+          "display": "Merci, ça va bien",
+          "cue": "Thank you, I'm fine",
+          "changed": "the thanks first — the two halves are independent"
+        },
+        {
+          "display": "Ça va bien, et je suis fatigué",
+          "cue": "I'm fine, and I'm tired",
+          "changed": "a second clause behind the answer, with the speaker back in it"
+        }
+      ],
+      "mistake": {
+        "display": "Ça va bon, merci",
+        "why": "bon is the adjective \"good\" and goes with a noun; bien is the adverb \"well\" and goes with a verb. va is a verb, so it takes bien."
+      },
+      "usage": "The everyday answer, to anyone.",
+      "register": "neutral",
+      "mnemonic": "A verb keeps company with bien; a noun keeps company with bon."
+    },
+    {
+      "id": "L1-M2-S04",
+      "display": "Comment ça va ?",
+      "cue": "How are you?",
+      "glossEn": "lit. \"How it goes?\"",
+      "literal": "How it goes ?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Comment",
+            "cue": "how",
+            "tag": "delta",
+            "forms": [],
+            "note": "how. Bolting it on moves nothing else: Comment ça va ? is Ça va ? with comment in front. In speech it can also stay where the answer would go — Vous vous appelez comment ? — and the verb still does not move. The final -t is silent."
+          }
+        ],
+        "rules": [3, 7]
+      },
+      "trap": "English moves the verb after \"how\" — \"how ARE you\". French leaves the sentence exactly as it was and puts the question word where it likes: in front, or where the answer would go.",
+      "sound": "ko-MAHN — the ent is nasal and the final -t is silent, so nothing sounds at the end at all.",
+      "variations": [
+        {
+          "display": "Ça va ?",
+          "cue": "How are you?",
+          "changed": "drop the question word — the short form asks the same thing"
+        },
+        {
+          "display": "Comment ça va, Marc ?",
+          "cue": "How are you, Marc?",
+          "changed": "the name comes after, marked off by a comma"
+        },
+        {
+          "display": "Vous vous appelez comment ?",
+          "cue": "What is your name?",
+          "changed": "the same question word on M1's naming verb — this time left where the answer would go, and still nothing inverted"
+        }
+      ],
+      "mistake": {
+        "display": "Comment vous êtes ?",
+        "why": "comment with être asks what someone is LIKE, not how they are doing. Wellbeing runs on ça va: Comment ça va ?"
+      },
+      "usage": "A slightly fuller \"how are you\" — a shade more attentive than ça va ? on its own.",
+      "register": "neutral",
+      "mnemonic": "Put comment in front and change nothing else."
+    },
+    {
+      "id": "L1-M2-S05",
+      "display": "Je suis fatigué",
+      "cue": "I am tired",
+      "glossEn": "lit. \"I am tired\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fatigué",
+            "cue": "tired (m · f)",
+            "tag": "delta",
+            "forms": ["fatigué", "fatiguée"],
+            "note": "tired. It agrees with the subject: fatigué for a man, fatiguée for a woman. Here the extra -e is genuinely silent — the two are one sound, which makes this the one agreement the ear cannot check for you. The accent is not decoration: fatigue without it is a noun, \"tiredness\"."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "English tiredness is a fact about you and nothing on the word shows it. French writes who you are into the word itself, and gets no help from the sound while doing it.",
+      "sound": "fa-tee-GAY. The gu is a hard g, never a j sound, and the final é is the clean \"ay\" the accent marks.",
+      "variations": [
+        {
+          "display": "Je suis fatiguée",
+          "cue": "I am tired (a woman speaking)",
+          "changed": "the -e for a woman — written, and not heard at all"
+        },
+        {
+          "display": "Anne est fatiguée",
+          "cue": "Anne is tired",
+          "changed": "est for a third person, and the ending follows Anne"
+        },
+        {
+          "display": "Vous êtes fatiguée ?",
+          "cue": "Are you tired?",
+          "changed": "êtes for the person spoken to, and a rising voice makes it a question"
+        }
+      ],
+      "mistake": {
+        "display": "Je suis fatigue",
+        "why": "The accent is a letter. fatigue without it is the noun \"tiredness\", so this says \"I am tiredness\". Write fatigué."
+      },
+      "usage": "How you are, when ça va bien would not be true.",
+      "register": "neutral",
+      "mnemonic": "The accent is what turns the tiredness into the tired person."
+    },
+    {
+      "id": "L1-M2-S06",
+      "display": "Vous êtes fatiguée ?",
+      "cue": "Are you tired?",
+      "glossEn": "lit. \"You are tired?\" — asked of a woman",
+      "literal": "You are tired ?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Vous",
+            "cue": "you",
+            "tag": "delta",
+            "forms": [],
+            "note": "you. French forces a choice English never makes: vous for anyone you are not close to — a stranger, a shopkeeper, a colleague — and for more than one person at once; tu for family and close friends. This course writes vous everywhere, because vous is never rude and tu to the wrong person can be. vous always takes êtes, never est."
+          }
+        ],
+        "rules": [0, 1, 5, 7]
+      },
+      "trap": "English has one \"you\" and never has to decide. French decides every time you open your mouth, and the safe answer with someone you have just met is always vous.",
+      "sound": "voo-ZET. The -s of vous is silent on its own, but in front of a vowel it wakes up as a z and links straight into êtes — that link is what makes the pair sound like one word.",
+      "variations": [
+        {
+          "display": "Vous êtes fatigué ?",
+          "cue": "Are you tired?",
+          "changed": "asked of a man — the -e goes, and nothing changes in the sound"
+        },
+        {
+          "display": "Vous êtes fatiguée",
+          "cue": "You are tired",
+          "changed": "the same words as a statement — only the mark and the voice change"
+        },
+        {
+          "display": "Vous êtes étudiante ?",
+          "cue": "Are you a student?",
+          "changed": "swap the adjective for a job — and after être the job still stands bare"
+        }
+      ],
+      "mistake": {
+        "display": "Vous est fatiguée ?",
+        "why": "vous takes êtes, always. est belongs to il and elle, never to the person you are speaking to."
+      },
+      "usage": "Asking after someone you are not close to — which, in this course, is everyone.",
+      "register": "neutral",
+      "mnemonic": "vous êtes travel together: voo-ZET, one sound, one pair."
+    },
+    {
+      "id": "L1-M2-S07",
+      "display": "Vous êtes anglais ?",
+      "cue": "Are you English?",
+      "glossEn": "lit. \"You are English?\"",
+      "literal": "You are English ?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "anglais",
+            "cue": "English (m · f)",
+            "tag": "delta",
+            "forms": ["anglais", "anglaise"],
+            "note": "English, the adjective — anglais for a man, anglaise for a woman, and the -e wakes the silent final -s into a z. Lowercase, like français: only the noun for the person, un Anglais, takes a capital."
+          }
+        ],
+        "rules": [0, 1, 2, 7]
+      },
+      "trap": "English asks by moving the verb — \"ARE you English?\". French asks by leaving everything exactly where it is and letting the voice rise. Êtes-vous anglais ? exists, needs its hyphen, and belongs to formal writing.",
+      "sound": "ahn-GLEH, with the an nasal and the final -s silent. vous êtes still links: voo-ZET ahn-GLEH.",
+      "variations": [
+        {
+          "display": "Vous êtes anglaise ?",
+          "cue": "Are you English?",
+          "changed": "asked of a woman — and the -e turns the final -s into a z"
+        },
+        {
+          "display": "Vous êtes français ?",
+          "cue": "Are you French?",
+          "changed": "swap the nationality — the question shape is untouched"
+        },
+        {
+          "display": "Marc est anglais",
+          "cue": "Marc is English",
+          "changed": "a statement about someone else — est, and no question mark"
+        }
+      ],
+      "mistake": {
+        "display": "Êtes vous anglais ?",
+        "why": "Inversion needs its hyphen — Êtes-vous anglais ? — and it is the formal written question. The everyday one is the plain statement with a rising voice: Vous êtes anglais ?"
+      },
+      "usage": "A yes/no question, asked of anyone.",
+      "register": "neutral",
+      "mnemonic": "Move nothing. Let the voice do the asking."
+    },
+    {
+      "id": "L1-M2-S08",
+      "display": "Oui, je suis anglais",
+      "cue": "Yes, I am English",
+      "glossEn": "lit. \"Yes, I am English\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Oui",
+            "cue": "yes",
+            "tag": "free",
+            "forms": [],
+            "note": "yes. It answers on its own, and the full sentence behind it is the plain statement with nothing taken out."
+          }
+        ],
+        "rules": [6]
+      },
+      "trap": "English can answer with a shrunken echo — \"Yes, I am\". French does not echo: it either says oui alone, or says the whole sentence.",
+      "sound": "wee — two letters, one sound, and nothing at all like the English \"oui\" people say as a joke.",
+      "variations": [
+        {
+          "display": "Oui",
+          "cue": "Yes",
+          "changed": "the answer on its own — the sentence behind it is optional"
+        },
+        {
+          "display": "Oui, je suis anglaise",
+          "cue": "Yes, I am English (a woman speaking)",
+          "changed": "the -e because of who is speaking about herself"
+        },
+        {
+          "display": "Oui, je suis de Paris",
+          "cue": "Yes, I am from Paris",
+          "changed": "swap what is being confirmed — M1's origin frame behind the same oui"
+        }
+      ],
+      "mistake": {
+        "display": "Oui, je suis un anglais",
+        "why": "No un after être in front of a nationality: je suis anglais. The capitalised noun un Anglais is a person, not a description."
+      },
+      "usage": "Confirming, to anyone.",
+      "register": "neutral",
+      "mnemonic": "oui, then the whole sentence or nothing."
+    },
+    {
+      "id": "L1-M2-S09",
+      "display": "Non, je suis français",
+      "cue": "No, I am French",
+      "glossEn": "lit. \"No, I am French\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Non",
+            "cue": "no",
+            "tag": "free",
+            "forms": [],
+            "note": "no. Like oui it answers on its own, and the sentence behind it is a plain positive statement — the two-word negation ne … pas is a separate machine, and it arrives in L1-M3."
+          }
+        ],
+        "rules": [6]
+      },
+      "trap": "Answering non does not make the sentence behind it negative. Non, je suis français is a No followed by something perfectly positive: the correction, not the denial.",
+      "sound": "The on is nasal and the n is never sounded — nohn, with the sound finishing in the nose rather than on the tongue.",
+      "variations": [
+        {
+          "display": "Non",
+          "cue": "No",
+          "changed": "the answer alone, with no sentence behind it"
+        },
+        {
+          "display": "Non, je suis étudiant",
+          "cue": "No, I am a student",
+          "changed": "a job instead of a nationality behind the same non"
+        },
+        {
+          "display": "Non, Anne est française",
+          "cue": "No, Anne is French",
+          "changed": "the correction is about someone else — est, and the feminine ending"
+        }
+      ],
+      "mistake": {
+        "display": "Non, je français",
+        "why": "non answers the question; the sentence behind it still needs its verb. Non, je suis français."
+      },
+      "usage": "Correcting, to anyone.",
+      "register": "neutral",
+      "mnemonic": "non is the answer; the sentence after it is untouched."
+    },
+    {
+      "id": "L1-M2-S10",
+      "display": "Au revoir, Marc",
+      "cue": "Goodbye, Marc",
+      "glossEn": "lit. \"Until the seeing-again, Marc\"",
+      "literal": "Until-the seeing-again, Marc",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Au revoir",
+            "cue": "goodbye",
+            "tag": "delta",
+            "forms": [],
+            "note": "goodbye — two words that are always written apart and always said together. Inside it, au is à welded onto le, and revoir is \"to see again\": the phrase is \"until the seeing again\". It is the closing that matches bonjour, and it is safe with anyone."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English closes with a word about going — \"goodbye\", \"see you\". French closes with a word about the next meeting, and it is fixed: nothing inside au revoir can be swapped.",
+      "sound": "oh ruh-VWAR. The r's are made at the back of the throat, and the -oir ending is a wa sound with the r after it.",
+      "variations": [
+        {
+          "display": "Au revoir, Anne",
+          "cue": "Goodbye, Anne",
+          "changed": "swap the name — au revoir itself never changes"
+        },
+        {
+          "display": "Au revoir",
+          "cue": "Goodbye",
+          "changed": "no name at all — the closing stands alone"
+        },
+        {
+          "display": "Merci, au revoir",
+          "cue": "Thank you, goodbye",
+          "changed": "the thanks first, then the closing — the ordinary end of a counter exchange"
+        }
+      ],
+      "mistake": {
+        "display": "À revoir, Marc",
+        "why": "à and le are welded into au here, and the phrase is fixed: au revoir. À revoir is not French."
+      },
+      "usage": "Closing any exchange, with anyone.",
+      "register": "neutral",
+      "mnemonic": "Not \"goodbye\" but \"until we see each other again\"."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M2-C01", "display": "Bonjour, Anne", "cue": "Hello Anne" },
+    { "id": "L1-M2-C02", "display": "Ça va bien", "cue": "I'm fine" },
+    { "id": "L1-M2-C03", "display": "Comment ça va, Marc ?", "cue": "How are you, Marc?" },
+    { "id": "L1-M2-C04", "display": "Vous êtes français ?", "cue": "Are you French?" },
+    { "id": "L1-M2-C05", "display": "Oui, je suis étudiant", "cue": "Yes, I am a student" },
+    { "id": "L1-M2-C06", "display": "Non, je suis journaliste", "cue": "No, I am a journalist" },
+    {
+      "id": "L1-M2-C07",
+      "display": "Je suis fatiguée",
+      "cue": "I am tired (a woman speaking)"
+    },
+    { "id": "L1-M2-C08", "display": "Anne est fatiguée", "cue": "Anne is tired" },
+    { "id": "L1-M2-C09", "display": "Marc est anglais", "cue": "Marc is English" },
+    { "id": "L1-M2-C10", "display": "Au revoir, Anne", "cue": "Goodbye, Anne" },
+    { "id": "L1-M2-C11", "display": "Vous êtes journaliste ?", "cue": "Are you a journalist?" },
+    { "id": "L1-M2-C12", "display": "Merci, ça va bien", "cue": "Thank you, I'm fine" }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -183,7 +183,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all forty of them — hi-mr, en-es, en-ar and hi-en L1-M1..M10', () => {
+  it('finds all forty-two — hi-mr, en-es, en-ar and hi-en L1-M1..M10, and en-fr as far as it is authored', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -205,6 +205,8 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-es/modules/L1-M7.json',
       'content/en-es/modules/L1-M8.json',
       'content/en-es/modules/L1-M9.json',
+      'content/en-fr/modules/L1-M1.json',
+      'content/en-fr/modules/L1-M2.json',
       'content/hi-en/modules/L1-M1.json',
       'content/hi-en/modules/L1-M10.json',
       'content/hi-en/modules/L1-M2.json',
@@ -353,6 +355,61 @@ describe('ModuleContent against the modules that exist', () => {
             expect(form, `${at} form of ${word.display}`).toMatch(latinOnly);
           expect(word.cue, `${at} cue of ${word.display}`).toMatch(devanagari);
           expect(word.note, `${at} note of ${word.display}`).toMatch(devanagari);
+        }
+      }
+    }
+  });
+
+  /**
+   * en-fr (#326–#331) is en-es's sibling: English L1, French L2, both in Latin letters — so a
+   * script regex cannot separate the two sides the way it can for hi-en. What CAN be asserted
+   * mechanically is everything the briefs (#327) settled as a rule rather than as taste, and it
+   * is asserted on the shipped files rather than on the briefs that produced them:
+   *
+   *   • `glossEn` on every sentence — the L2 is not English, so #268's exemption does not apply,
+   *   • the apostrophe policy: a straight `'` in every L2 slot, so an elided fusion is ONE
+   *     spelling and the index key it earns is the one the resolver reproduces,
+   *   • the REGISTER decision, held on the content: this course speaks `vous`, so no L2 slot
+   *     anywhere — display, form, variation, mistake or pool item — writes a `tu`-register word.
+   *     A brief that settles a register and content that quietly breaks it would be worse than
+   *     never having decided, so the decision is pinned where the learner would meet it.
+   *   • and the register chip, which the schema allows two values for: every sentence is
+   *     `neutral`, because politeness above neutral rides `s'il vous plaît` and the `usage` line.
+   */
+  it('keeps en-fr to the decisions its briefs settled: glossEn, straight apostrophes, vous (#327)', () => {
+    const enFr = MODULE_FILES.filter(([name]) => name.includes('en-fr'));
+    /** The `tu`-register words the course names in prose and never writes (#327 decision 1). */
+    const TU_REGISTER = new Set(['tu', 'te', 'toi', 'ton', 'ta', 'tes', 'salut']);
+
+    expect(enFr.length, 'the en-fr L1 modules authored so far').toBeGreaterThan(0);
+    for (const [file, json] of enFr) {
+      const module = parseModule(json, file);
+
+      const l2Slots: [where: string, text: string][] = [];
+      for (const item of module.comprehensionPool) l2Slots.push([item.id, item.display]);
+      for (const sentence of module.sentences) {
+        const at = sentence.id;
+        expect(sentence.glossEn, `${at} glossEn`).toMatch(/\S/);
+        expect(sentence.register, `${at} register`).toBe('neutral');
+        l2Slots.push([at, sentence.display]);
+        for (const variation of sentence.variations ?? []) {
+          l2Slots.push([`${at} variation`, variation.display]);
+        }
+        if (sentence.mistake !== undefined) {
+          l2Slots.push([`${at} mistake`, sentence.mistake.display]);
+        }
+        for (const word of sentence.deconstruction.words) {
+          l2Slots.push([`${at} word`, word.display]);
+          for (const form of word.forms) l2Slots.push([`${at} form`, form]);
+        }
+      }
+
+      for (const [where, text] of l2Slots) {
+        // A curly apostrophe folds to the straight one on the index, but `display` must be one
+        // spelling — the briefs' elision policy, held on the file.
+        expect(text, `${where}: straight apostrophe only`).not.toMatch(/[’‘]/);
+        for (const token of text.toLowerCase().split(/[\s,.?!]+/)) {
+          expect(TU_REGISTER.has(token), `${where}: "${token}" is tu-register`).toBe(false);
         }
       }
     }

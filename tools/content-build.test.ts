@@ -1070,11 +1070,11 @@ describe('the romanized edge cases (#116, [Q3])', () => {
     expect(index.surfaces['kot']?.moduleId).toBe('L1-M1');
   });
 
-  it('resolves every sentence and pool token of all four authored courses — the [Q3] sweep', () => {
+  it('resolves every sentence and pool token of all five authored courses — the [Q3] sweep', () => {
     // The "why" path is sentence displays; the exit ritual reads the pool. Variations are outside
     // the sweep by design: they legitimately carry untaught tokens (proper nouns like Priya, and
     // variation-only forms — the documented gap on #61) and the panel drops what cannot resolve.
-    for (const courseId of ['en-ar', 'en-es', 'hi-en', 'hi-mr']) {
+    for (const courseId of ['en-ar', 'en-es', 'en-fr', 'hi-en', 'hi-mr']) {
       const modules = authoredCourse(courseId);
       const index = lastIndex(courseId);
       const lookup = {
@@ -1565,6 +1565,88 @@ describe('the romanized edge cases (#116, [Q3])', () => {
       }
     }
   });
+
+  /**
+   * en-fr (#328–#330) is the first course authored to the two standards the others had
+   * retrofitted onto them: three variations on every sentence (#288's bar) and twelve
+   * comprehension items per module (#292's). Both are pinned from the first rung, so the course
+   * can never arrive at the retrofit the others needed — and the pool half also pins the
+   * freshness property, no item being a hero sentence handed back.
+   */
+  it('ships en-fr to the retrofitted standards from the first rung: 3 variations, 12 pool items', () => {
+    const modules = authoredCourse('en-fr');
+    const heroes = new Set(
+      modules.flatMap(({ module }) => module.sentences.map((s) => s.display.toLowerCase())),
+    );
+
+    expect(modules.length, 'the en-fr rungs authored so far').toBeGreaterThan(0);
+    for (const { id, module } of modules) {
+      expect(module.sentences, `${id} sentence count`).toHaveLength(10);
+      for (const sentence of module.sentences) {
+        expect(sentence.variations ?? [], `${sentence.id} variations`).toHaveLength(3);
+      }
+      expect(module.comprehensionPool, `${id} pool size`).toHaveLength(12);
+      for (const item of module.comprehensionPool) {
+        expect(heroes.has(item.display.toLowerCase()), `${item.id} duplicates a hero`).toBe(false);
+      }
+    }
+  });
+
+  /**
+   * The en-fr index seams the briefs decided (#327, `tools/course-briefs.ts` "en-fr: decisions a
+   * brief must settle"), checked on the REAL index rather than on the prose that planned them.
+   * The build only proves that a pool token resolves (PRD §6.3); what is pinned here is that it
+   * resolves to the row the briefs assigned, which is the note the Why panel actually answers
+   * with — the hi-mr `forms`-swallowing lesson (docs/07-llm-review-L1-M6-M10.md) in French dress.
+   */
+  it('lands en-fr on the rows the briefs assigned — elision whole, one être row, idioms unsplit', () => {
+    const index = lastIndex('en-fr');
+    const row = (surface: string): string | undefined => {
+      const entry = index.surfaces[surface];
+      return entry === undefined ? undefined : `${entry.sentenceId}#${entry.wordIdx}`;
+    };
+
+    // Elision: an inner apostrophe stays inside its token, so the fusion is ONE surface and its
+    // own row — and the bare stem is NOT on it, so `aime` keeps a row of its own for a name
+    // subject. That separation is the whole of the elision policy.
+    expect(row("j'aime")).toBe('L1-M1-S05#0');
+    expect(row('aime')).toBe('L1-M1-S10#0');
+    expect(row("je m'appelle")).toBe('L1-M1-S01#0');
+    expect(row('je')).toBe('L1-M1-S02#0');
+    // ONE être row, opened by M1's `suis`, answering for every person the course writes. `es` is
+    // tu's and was never written, so the index does not carry it.
+    for (const shape of ['suis', 'est', 'êtes']) {
+      expect(row(shape), shape).toBe('L1-M1-S02#1');
+    }
+    expect(Object.hasOwn(index.surfaces, 'es'), 'es is tu-register and stays unwritten').toBe(
+      false,
+    );
+    // Accents are letters: the unaccented rivals the briefs kept out of L1 are simply absent.
+    for (const rival of ['a', 'ou', 'là', 'ca']) {
+      expect(Object.hasOwn(index.surfaces, rival), `${rival} stays out of L1`).toBe(false);
+    }
+    // Multi-token idioms claim no bare part, which is what keeps `ça` free for L1-M8's price
+    // question and `au` free for L1-M7's contraction.
+    expect(row('ça va')).toBe('L1-M2-S02#0');
+    expect(row('au revoir')).toBe('L1-M2-S10#0');
+    for (const unclaimed of ['ça', 'va', 'au', 'revoir', 'vous vous']) {
+      expect(Object.hasOwn(index.surfaces, unclaimed), `${unclaimed} must stay unclaimed`).toBe(
+        false,
+      );
+    }
+    // The paradigms that ARE forms of one word land on that word's single row.
+    expect(row('étudiante')).toBe(row('étudiant'));
+    expect(row('française')).toBe(row('français'));
+    expect(row('livre')).toBe(row('livres'));
+    expect(row('fatiguée')).toBe(row('fatigué'));
+    // Keys the briefs reserve for later modules are still free after M2.
+    for (const reserved of ["c'est", 'combien', 'pas', 'ne', 'du', 'il', 'elle', 'où', 'demain']) {
+      expect(Object.hasOwn(index.surfaces, reserved), `${reserved} is a later module's`).toBe(
+        false,
+      );
+    }
+    expect(Object.keys(index.surfaces)).toHaveLength(index.surfaceCount);
+  });
 });
 
 describe('the comprehension-pool rule', () => {
@@ -1816,7 +1898,7 @@ describe('the authored content', () => {
     }
   });
 
-  it('ships hi-mr, en-es, en-ar and hi-en L1-M1..M10 on a dev build', () => {
+  it('ships hi-mr, en-es, en-ar and hi-en L1-M1..M10 plus en-fr behind the gate on a dev build', () => {
     const { report, outRoot } = build(DEFAULT_CONTENT_ROOT, DEV);
     const L1 = [
       'L1-M1',
@@ -1830,6 +1912,8 @@ describe('the authored content', () => {
       'L1-M9',
       'L1-M10',
     ];
+    /** en-fr's rungs, as far as they are authored — the list grows with #329 and #330. */
+    const EN_FR = ['L1-M1', 'L1-M2'];
 
     expect(report.exitCode).toBe(0);
     expect([...report.shipped]).toEqual([
@@ -1837,36 +1921,54 @@ describe('the authored content', () => {
       ['en-es', L1],
       ['en-ar', L1],
       ['hi-en', L1],
+      ['en-fr', EN_FR],
     ]);
     // hi-en was authored behind this relaxation (#267, #270–#272) and graduated in #273, so a dev
     // build now ships exactly what the strict build above does — the same ten rungs, the same
     // report line — and differs only in the banner and the `devBuild` key.
     expect(report.lines).toContain('hi-en: 10 modules (L1-M1..M10)');
     expect(report.lines).toContain('  index L1-M10: 207 surfaces');
-    // en-fr's row is admitted by `--with-fixtures` and then finds nothing to ship: the course
-    // directory carries a ladder and a bundle but no `modules/` at all (#326), and the walker
-    // treats an absent folder as zero modules rather than an error.
-    expect(report.lines).toContain('en-fr: 0 modules — nothing authored yet');
+    // en-fr's row is admitted by `--with-fixtures`, and since #328 it has rungs to ship: the
+    // course is still a fixture in `content/courses.json`, so this relaxation is the ONLY way
+    // its modules reach a build at all until the graduation issue deletes the flag.
+    expect(report.lines).toContain('en-fr: 2 modules (L1-M1..M2)');
     expect(report.lines).toContain(
-      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10) | skipped: en-fr (no modules)',
+      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10), en-fr 2 modules (L1-M1..M2)',
     );
+    // The dev tree carries the fifth course's authored rungs and their cumulative indexes.
+    for (const file of [
+      'en-fr/levels.json',
+      'en-fr/strings.json',
+      'en-fr/modules/L1-M1.json',
+      'en-fr/modules/L1-M2.json',
+      'en-fr/index/L1-M1.json',
+      'en-fr/index/L1-M2.json',
+    ]) {
+      expect(existsSync(path.join(outRoot, ...file.split('/'))), file).toBe(true);
+    }
     expect(readManifest(outRoot).devBuild).toBe(true);
-    // The manifest lists what shipped: the four authored courses. en-fr's row is admitted by the
-    // relaxation and still does not appear — a course with nothing authored ships nothing, so no
-    // `public/content/en-fr/` is written and no row is emitted for it either.
+    // The manifest lists what shipped, so en-fr appears here and NOT in the strict build above —
+    // and it appears carrying its `fixture` flag, because the emitted row is the authored row and
+    // this build is the one that admits it (#326). A dev manifest saying otherwise would let a
+    // fixture course look shippable.
     expect(readManifest(outRoot).courses.map((course) => course.id)).toEqual([
       'hi-mr',
       'en-es',
       'en-ar',
       'hi-en',
+      'en-fr',
     ]);
-    expect(existsSync(path.join(outRoot, 'en-fr'))).toBe(false);
     expect(readManifest(outRoot).courses.at(-1)).toMatchObject({
-      id: 'hi-en',
-      l1Tag: 'hi',
-      l2Tag: 'en',
+      id: 'en-fr',
+      l1Tag: 'en',
+      l2Tag: 'fr',
+      fixture: true,
     });
-    expect(readManifest(outRoot).courses.some((course) => 'fixture' in course)).toBe(false);
+    expect(
+      readManifest(outRoot)
+        .courses.filter((course) => 'fixture' in course)
+        .map((course) => course.id),
+    ).toEqual(['en-fr']);
     for (const file of [
       'hi-mr/levels.json',
       'hi-mr/strings.json',
