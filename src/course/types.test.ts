@@ -194,7 +194,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 72 — seven courses at L1-M1..M10, plus en-de\u2019s authored L1-M1..M2', () => {
+  it('finds all 75 of them — seven full L1 ladders, plus en-de’s authored L1-M1..M5', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -206,8 +206,14 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ar/modules/L1-M7.json',
       'content/en-ar/modules/L1-M8.json',
       'content/en-ar/modules/L1-M9.json',
+      // en-de is being authored a rung at a time (#362 M1-M2, #363 M3-M5), so its row here is
+      // deliberately PARTIAL — the eighth course is the first one this list has ever seen
+      // half-written, and the gap is the point rather than an oversight. M6..M10 join on #364.
       'content/en-de/modules/L1-M1.json',
       'content/en-de/modules/L1-M2.json',
+      'content/en-de/modules/L1-M3.json',
+      'content/en-de/modules/L1-M4.json',
+      'content/en-de/modules/L1-M5.json',
       'content/en-es/modules/L1-M1.json',
       'content/en-es/modules/L1-M10.json',
       'content/en-es/modules/L1-M2.json',
