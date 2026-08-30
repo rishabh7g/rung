@@ -83,6 +83,31 @@ describe('every course names its two languages in tags, not just in words', () =
     }
   });
 
+  /**
+   * en-ru, spelled out rather than left to the loop above (#360).
+   *
+   * `l2Written()` did not change when the course flipped to `romanized` — it already branched on
+   * `scriptMode`, so the flip alone moved en-ru's display line from `ru` to `ru-Latn`. That is
+   * the whole point and it is worth one explicit case: the generic assertions above would pass
+   * just as well if `scriptMode` had never flipped, because they check the branch against the
+   * row rather than checking the row.
+   *
+   * **`ru-Latn` is what stops a screen reader reading `menyá zovút` as Cyrillic Russian** — the
+   * tag says "this language, written in Latin letters", and a bare `ru` on a Latin string is a
+   * promise the text does not keep.
+   */
+  it('gives en-ru a ru-Latn display line and a ru script line, with no code change (#360)', () => {
+    const enRu = AUTHORED.find((course) => course.id === 'en-ru');
+    expect(enRu, 'en-ru is in the manifest').toBeDefined();
+    expect(enRu?.scriptMode, 'en-ru is romanized since #353').toBe('romanized');
+    expect(enRu?.romanizationNote, 'and says which scheme').toMatch(/one scheme/);
+
+    expect(l2Written(enRu!)).toEqual({
+      display: { lang: 'ru-Latn', dir: 'ltr' },
+      script: { lang: 'ru', dir: 'ltr' },
+    });
+  });
+
   it('says which way its L2 runs, as data rather than as a guess about the script (#196)', () => {
     for (const course of AUTHORED) {
       expect(['ltr', 'rtl'], `${course.id}.l2Dir`).toContain(course.l2Dir);

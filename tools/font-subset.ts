@@ -105,6 +105,18 @@ export interface ScriptTarget {
   covers: (codePoint: number) => boolean;
   /** Characters included no matter what the content build shipped. */
   baseline: string;
+  /**
+   * Cut at these weights instead of the face's (#360). Absent means the face's, which is the
+   * usual case and the one to prefer.
+   *
+   * It exists because **weight is a property of the ROLE a target plays, not of the family it is
+   * cut from**, and one family can play two roles. Source Sans 3 carries both en-ar's hero
+   * diacritics — `ʾ` U+02BE, `ʿ` U+02BF, `Ẓ ẓ` — which need the whole 400/600/700 ramp, and
+   * en-ru's Cyrillic, which since #353 is a quiet `script` line and needs one weight like Naskh's.
+   * Dropping `SOURCE_SANS_WEIGHTS` to `[400]` would have taken en-ar's hero down with it; giving
+   * the Cyrillic target its own override leaves that face alone.
+   */
+  weights?: readonly number[];
 }
 
 /**
@@ -227,12 +239,17 @@ export const SOURCE_SANS_TARGETS: readonly ScriptTarget[] = [
     baseline: DIACRITIC_BASELINE,
   },
   /**
-   * Cyrillic (#325) — en-ru's HERO text, not a quiet secondary line.
+   * Cyrillic (#325) — a quiet `script` line since #353, and cut at ONE weight because of it.
    *
-   * Mukta bundles no Cyrillic at all, so without this every letter of every en-ru sentence, word,
-   * variation, mistake and pool item is whatever the device happens to own, or tofu where it owns
-   * nothing. A course whose display line can be tofu does not ship, which is why en-ru's
-   * graduation depends on this target existing.
+   * It was en-ru's hero text when #325 bundled it, and three weights were the right call then:
+   * every letter of every sentence, word, variation, mistake and pool item was Cyrillic, so the
+   * whole L2 ramp ran through this target. **#353 moved all of that to the romanization** — rung
+   * teaches speech, not script, so an English speaker is never asked to decode Cyrillic — and what
+   * is left is the quiet native line under the hero. That is exactly Naskh's job, and Naskh ships
+   * `NASKH_WEIGHTS = [400]`; this target now matches it.
+   *
+   * Mukta bundles no Cyrillic at all, so the target still has to exist: without it the `script`
+   * line is whatever the device happens to own, or tofu where it owns nothing.
    *
    * The face is PROVISIONAL by the ticket's own terms — Source Sans 3 is the zero-new-dependency
    * candidate (it is already a `SubsetFace` from #222, already second in `--font-devanagari`, and
@@ -249,6 +266,8 @@ export const SOURCE_SANS_TARGETS: readonly ScriptTarget[] = [
     subset: 'cyrillic',
     covers: (cp) => (cp >= 0x0400 && cp <= 0x04ff) || cp === 0x2116,
     baseline: CYRILLIC_BASELINE,
+    // Not `SOURCE_SANS_WEIGHTS`: that ramp is en-ar's hero's, and this is a secondary line (#360).
+    weights: [400],
   },
 ];
 
@@ -268,10 +287,15 @@ export const FACES: readonly SubsetFace[] = [
   },
 ];
 
+/** The weights a target is actually cut at — its own override, or the face's (#360). */
+export function weightsFor(face: SubsetFace, target: ScriptTarget): readonly number[] {
+  return target.weights ?? face.weights;
+}
+
 /** The files one face's rows produce — `tools/font-subset.test.ts` holds its sheet to this list. */
 export function outputFiles(face: SubsetFace): string[] {
-  return face.weights.flatMap((weight) =>
-    face.targets.map((target) => `${face.slug}-${target.subset}-${weight}.woff2`),
+  return face.targets.flatMap((target) =>
+    weightsFor(face, target).map((weight) => `${face.slug}-${target.subset}-${weight}.woff2`),
   );
 }
 
@@ -367,8 +391,9 @@ async function main(): Promise<number> {
   for (const face of FACES) {
     let bytes = 0;
     let was = 0;
-    for (const weight of face.weights) {
-      for (const target of face.targets) {
+    // Target-first, because the weight list is now the TARGET's (#360) and not the face's.
+    for (const target of face.targets) {
+      for (const weight of weightsFor(face, target)) {
         const source = path.join(
           FONTSOURCE,
           face.slug,
