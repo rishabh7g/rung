@@ -1,0 +1,1007 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M4",
+  "title": "My day",
+  "job": "Daily habits and time words",
+  "prerequisites": [
+    "L1-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 5,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "jeo-neun + N-eul/reul + V-ayo/-eoyo",
+      "<time>-e + V-ayo/-eoyo",
+      "maeil + V-ayo/-eoyo",
+      "<day> + V-ayo/-eoyo",
+      "N + haeyo (noun-plus-do verbs)",
+      "N + an haeyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The -yo ending picks its shape from the last vowel of the stem: a stem with a or o in it takes -ayo, everything else takes -eoyo, and a verb built on haeyo simply becomes haeyo. Written in Latin letters the choice is visible on the page — meogeoyo, masyeoyo, jayo — which is one real advantage of learning this course's spelling."
+    },
+    {
+      "tag": "delta",
+      "text": "One Korean present does the work of both English presents. bap-eul meogeoyo is 'I eat' and 'I am eating' alike, and nothing in the sentence chooses between them. Korean does have a way of saying that something is going on right now; it is a later level's, and reaching for it here is unnecessary."
+    },
+    {
+      "tag": "delta",
+      "text": "Leave the subject out whenever the situation supplies it. Achim-e bap-eul meogeoyo is a complete sentence about yourself. Putting jeo-neun in front of every sentence is grammatical and it is the clearest sign of an English speaker — it reads as 'as for ME', as if somebody else were being compared."
+    },
+    {
+      "tag": "delta",
+      "text": "-e marks a point in time and goes on the time word: achim-e, jeonyeok-e, bam-e. It is not a word of its own and it never stands alone."
+    },
+    {
+      "tag": "interference",
+      "text": "Some time words take NO marker at all: oneul, maeil, eoje, naeil. There is no -e on any of them, ever. They can take the topic marker if you want to set that day apart — oneul-eun — but never the point-in-time one."
+    },
+    {
+      "tag": "delta",
+      "text": "A noun plus haeyo makes a verb, and Korean makes hundreds of them this way: gongbu ('study') plus haeyo gives gongbuhaeyo, il ('work') gives ilhaeyo. Learn the noun and you have most of the verb."
+    },
+    {
+      "tag": "interference",
+      "text": "Negating one of those verbs SPLITS it: gongbu an haeyo, never an gongbuhaeyo. The an goes in front of haeyo, which means it lands in the middle of what looked like a single word. This is the one place where the two halves have to be written apart."
+    },
+    {
+      "tag": "free",
+      "text": "Time words come early — before the object, usually right after the subject if there is one. Maeil achim-e keopi-reul masyeoyo puts the when first, the what second and the verb last, which is the ordinary shape of a Korean sentence about a habit."
+    },
+    {
+      "tag": "free",
+      "text": "The verb never changes for the person. meogeoyo is 'I eat', 'you eat', 'he eats' and 'they eat' — there is no ending to add for a third person and nothing to agree with."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M4-S01",
+      "display": "Jeo-neun achim-e ireonayo.",
+      "script": "저는 아침에 일어나요.",
+      "cue": "I get up in the morning.",
+      "glossEn": "I get up in the morning.",
+      "literal": "I-topic morning-at get-up",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeo",
+            "script": "저",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [
+              "jeo",
+              "jeo-neun"
+            ],
+            "note": "'I', from M1, and in this module it is mostly absent: a habit you are describing about yourself needs no subject once the conversation is about you."
+          },
+          {
+            "display": "achim",
+            "script": "아침",
+            "cue": "morning · breakfast",
+            "tag": "free",
+            "forms": [
+              "achim",
+              "achim-e"
+            ],
+            "note": "'Morning', and also 'breakfast' — the meal is named after the time of day, so achim-e bap-eul meogeoyo is what you say for having breakfast."
+          },
+          {
+            "display": "-e",
+            "script": "-에",
+            "cue": "at · in (a time)",
+            "tag": "delta",
+            "forms": [
+              "-e"
+            ],
+            "note": "The point-in-time marker: achim-e, 'in the morning'; jeonyeok-e, 'in the evening'. It attaches to the time word and says when. The same ending marks a place later on, and it is the same ending doing the same job — it puts something at a point, in time or in space."
+          },
+          {
+            "display": "ireonayo",
+            "script": "일어나요",
+            "cue": "get up",
+            "tag": "free",
+            "forms": [
+              "ireonayo"
+            ],
+            "note": "'Get up, rise'. The stem is ireona-, which already ends in the a that the ending wants, so the two merge and nothing is added — ireonayo, not ireona-ayo."
+          }
+        ],
+        "rules": [
+          3,
+          7
+        ]
+      },
+      "trap": "English says 'in the morning' with a word in front. Korean marks the time word behind, and there is nothing corresponding to 'in' standing on its own — looking for one will only produce a word that does not belong.",
+      "sound": "juh-nun A-chim-e i-ruh-NA-yo. The m of achim runs into the -e, so it is heard as a-chi-me. ireonayo has four light beats; the r in it is a soft tap, closer to the middle of English 'better' than to an English r.",
+      "variations": [
+        {
+          "display": "Jeo-neun jeonyeok-e ireonayo.",
+          "script": "저는 저녁에 일어나요.",
+          "cue": "I get up in the evening.",
+          "changed": "a different time word, same marker"
+        },
+        {
+          "display": "Achim-e ireonayo.",
+          "script": "아침에 일어나요.",
+          "cue": "I get up in the morning.",
+          "changed": "the subject dropped, which is how this is usually said"
+        },
+        {
+          "display": "Maeil achim-e ireonayo.",
+          "script": "매일 아침에 일어나요.",
+          "cue": "I get up every morning.",
+          "changed": "maeil in front — and note it takes no marker of its own"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun-e achim ireonayo.",
+        "script": "저는에 아침 일어나요.",
+        "why": "The time marker has been put on the person and the time word left bare. -e belongs to the word that says WHEN, and only to that word."
+      },
+      "usage": "Describing your ordinary day.",
+      "register": "neutral",
+      "mnemonic": "The time wears the marker; the verb waits at the end."
+    },
+    {
+      "id": "L1-M4-S02",
+      "display": "Achim-e bap-eul meogeoyo.",
+      "script": "아침에 밥을 먹어요.",
+      "cue": "I eat breakfast.",
+      "glossEn": "I eat a meal in the morning.",
+      "literal": "morning-at meal-object eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "achim",
+            "script": "아침",
+            "cue": "morning · breakfast",
+            "tag": "free",
+            "forms": [
+              "achim",
+              "achim-e"
+            ],
+            "note": "'Morning', and also 'breakfast' — the meal is named after the time of day, so achim-e bap-eul meogeoyo is what you say for having breakfast."
+          },
+          {
+            "display": "-e",
+            "script": "-에",
+            "cue": "at · in (a time)",
+            "tag": "delta",
+            "forms": [
+              "-e"
+            ],
+            "note": "The point-in-time marker: achim-e, 'in the morning'; jeonyeok-e, 'in the evening'. It attaches to the time word and says when. The same ending marks a place later on, and it is the same ending doing the same job — it puts something at a point, in time or in space."
+          },
+          {
+            "display": "bap",
+            "script": "밥",
+            "cue": "rice · a meal",
+            "tag": "free",
+            "forms": [
+              "bap",
+              "bap-eul"
+            ],
+            "note": "'A meal', from M3 — with achim-e in front of it, the morning one."
+          },
+          {
+            "display": "meogeoyo",
+            "script": "먹어요",
+            "cue": "eat",
+            "tag": "free",
+            "forms": [
+              "meogeoyo",
+              "meokgo"
+            ],
+            "note": "'Eat', from M3, now in its plain -yo shape. The stem meok- ends in a consonant and the vowel in it is neither a nor o, so the ending is -eoyo."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          7
+        ]
+      },
+      "trap": "There is no word here for 'breakfast'. Korean names the meal by the time of day it happens, so 'morning meal' is the whole of it — and a learner hunting for a separate breakfast word is hunting for something the language does without.",
+      "sound": "A-chi-me BA-bul MUH-guh-yo. Two liaisons in a row: achim runs into -e and bap runs into -eul, so the middle of the sentence flows as a-chi-me ba-bul. That linking is automatic and is what makes Korean sound smooth rather than clipped.",
+      "variations": [
+        {
+          "display": "Jeonyeok-e bap-eul meogeoyo.",
+          "script": "저녁에 밥을 먹어요.",
+          "cue": "I eat dinner.",
+          "changed": "the evening meal, by the same logic"
+        },
+        {
+          "display": "Achim-e keopi-reul masyeoyo.",
+          "script": "아침에 커피를 마셔요.",
+          "cue": "I drink coffee in the morning.",
+          "changed": "a different habit at the same hour"
+        },
+        {
+          "display": "Achim-e bap-eul an meogeoyo.",
+          "script": "아침에 밥을 안 먹어요.",
+          "cue": "I do not eat breakfast.",
+          "changed": "the negative, with an in front of the verb"
+        }
+      ],
+      "mistake": {
+        "display": "Achim bap-eul meogeoyo.",
+        "script": "아침 밥을 먹어요.",
+        "why": "Without -e, achim is not a time any more — the two nouns sit together and it reads as 'morning-meal' as a thing rather than as when you eat. The marker is what turns a noun into a time."
+      },
+      "usage": "Talking about your daily routine.",
+      "register": "neutral",
+      "mnemonic": "Korean eats the morning, not breakfast."
+    },
+    {
+      "id": "L1-M4-S03",
+      "display": "Jeo-neun maeil gongbuhaeyo.",
+      "script": "저는 매일 공부해요.",
+      "cue": "I study every day.",
+      "glossEn": "I study every day.",
+      "literal": "I-topic every-day study-do",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeo",
+            "script": "저",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [
+              "jeo",
+              "jeo-neun"
+            ],
+            "note": "'I', from M1, and in this module it is mostly absent: a habit you are describing about yourself needs no subject once the conversation is about you."
+          },
+          {
+            "display": "maeil",
+            "script": "매일",
+            "cue": "every day",
+            "tag": "free",
+            "forms": [
+              "maeil"
+            ],
+            "note": "'Every day'. It takes NO marker — it is one of the time words that stand bare, and putting -e on it is the commonest early mistake."
+          },
+          {
+            "display": "gongbuhaeyo",
+            "script": "공부해요",
+            "cue": "study",
+            "tag": "free",
+            "forms": [
+              "gongbuhaeyo",
+              "gongbuhaesseoyo"
+            ],
+            "note": "'Study', the noun and the verb written as one word, which is how it is said when nothing separates them. Break it apart and you get gongbu haeyo, which means the same thing and is what you must write once a negative slips between the halves."
+          }
+        ],
+        "rules": [
+          5,
+          7
+        ]
+      },
+      "trap": "maeil takes no marker. Every other time word in this module wears -e, and this one does not — there is no rule you can hear, so it is learned as a small list.",
+      "sound": "juh-nun MAE-il gong-boo-HAE-yo. maeil is two beats, mae and il, not one. gongbuhaeyo is four, and the whole thing is said evenly with no stressed syllable anywhere.",
+      "variations": [
+        {
+          "display": "Minsu-neun maeil gongbuhaeyo.",
+          "script": "민수는 매일 공부해요.",
+          "cue": "Minsu studies every day.",
+          "changed": "a different person and an identical verb"
+        },
+        {
+          "display": "Maeil gongbuhaeyo.",
+          "script": "매일 공부해요.",
+          "cue": "I study every day.",
+          "changed": "the subject dropped"
+        },
+        {
+          "display": "Jeo-neun maeil ilhaeyo.",
+          "script": "저는 매일 일해요.",
+          "cue": "I work every day.",
+          "changed": "another noun-plus-haeyo verb, built the same way"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun maeil-e gongbuhaeyo.",
+        "script": "저는 매일에 공부해요.",
+        "why": "-e has been put on maeil, by analogy with achim-e. It does not take one, and there is no version of this sentence in which it does."
+      },
+      "usage": "Saying what you do regularly.",
+      "register": "neutral",
+      "mnemonic": "Some time words wear the marker; maeil never does."
+    },
+    {
+      "id": "L1-M4-S04",
+      "display": "Oneul-eun ilhaeyo.",
+      "script": "오늘은 일해요.",
+      "cue": "Today I am working.",
+      "glossEn": "As for today, I am working.",
+      "literal": "today-topic work-do",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "oneul",
+            "script": "오늘",
+            "cue": "today",
+            "tag": "free",
+            "forms": [
+              "oneul",
+              "oneul-eun"
+            ],
+            "note": "'Today', and like maeil it takes no -e. It can take the topic marker, oneul-eun, and then it means 'as for today' — setting today apart from other days."
+          },
+          {
+            "display": "ilhaeyo",
+            "script": "일해요",
+            "cue": "work",
+            "tag": "free",
+            "forms": [
+              "ilhaeyo"
+            ],
+            "note": "'Work', built the same way as gongbuhaeyo: the noun il ('work') plus haeyo. Same pattern, same behaviour, including what happens to it in a negative."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          4
+        ]
+      },
+      "trap": "The topic marker on a time word sets that day apart — 'today, as opposed to other days'. It is not the same as the -e marker, and it is not decoration: it is why this sentence implies a contrast that plain oneul ilhaeyo would not.",
+      "sound": "o-neu-run IL-hae-yo. The l of oneul links into the -eun, so it is heard as o-neu-run. ilhaeyo's h softens almost to nothing between the l and the vowel, so many speakers say i-rae-yo at speed.",
+      "variations": [
+        {
+          "display": "Oneul-eun gongbuhaeyo.",
+          "script": "오늘은 공부해요.",
+          "cue": "Today I am studying.",
+          "changed": "a different verb under the same contrast"
+        },
+        {
+          "display": "Oneul ilhaeyo.",
+          "script": "오늘 일해요.",
+          "cue": "I am working today.",
+          "changed": "without the topic marker — a plain statement, with no sense of comparing days"
+        },
+        {
+          "display": "Oneul-eun an ilhaeyo.",
+          "script": "오늘은 안 일해요.",
+          "cue": "Today I am not working.",
+          "changed": "the negative, and the contrast is now the point of the sentence"
+        }
+      ],
+      "mistake": {
+        "display": "Oneul-e ilhaeyo.",
+        "script": "오늘에 일해요.",
+        "why": "The point-in-time marker has been used on a word that refuses it. oneul stands bare, or takes the topic marker; -e is not available to it."
+      },
+      "usage": "Saying what today in particular holds.",
+      "register": "neutral",
+      "mnemonic": "-eun on a day means: this day, unlike the others."
+    },
+    {
+      "id": "L1-M4-S05",
+      "display": "Jeo-neun hangungmal-eul maeil baewoyo.",
+      "script": "저는 한국말을 매일 배워요.",
+      "cue": "I learn Korean every day.",
+      "glossEn": "I learn Korean every day.",
+      "literal": "I-topic Korean-object every-day learn",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeo",
+            "script": "저",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [
+              "jeo",
+              "jeo-neun"
+            ],
+            "note": "'I', from M1, and in this module it is mostly absent: a habit you are describing about yourself needs no subject once the conversation is about you."
+          },
+          {
+            "display": "hangungmal",
+            "script": "한국말",
+            "cue": "the Korean language",
+            "tag": "free",
+            "forms": [
+              "hangungmal",
+              "hangungmal-eul"
+            ],
+            "note": "'Korean', the language, from M1 — the thing being learned, so it takes -eul."
+          },
+          {
+            "display": "maeil",
+            "script": "매일",
+            "cue": "every day",
+            "tag": "free",
+            "forms": [
+              "maeil"
+            ],
+            "note": "'Every day'. It takes NO marker — it is one of the time words that stand bare, and putting -e on it is the commonest early mistake."
+          },
+          {
+            "display": "baewoyo",
+            "script": "배워요",
+            "cue": "learn",
+            "tag": "free",
+            "forms": [
+              "baewoyo",
+              "baeugo"
+            ],
+            "note": "'Learn', from M3. The stem baeu- ends in u, and u plus the ending contract into -wo, giving baewoyo. Every one of these contractions is the same rule making the word easier to say."
+          }
+        ],
+        "rules": [
+          0,
+          7,
+          8
+        ]
+      },
+      "trap": "The time word has slipped in behind the object here rather than in front of it. Korean lets it sit either side, because the markers say what each word is doing — the one place nothing may move is the verb, which stays last.",
+      "sound": "juh-nun han-GOONG-ma-rul MAE-il BAE-wuh-yo. baewoyo is the stem baeu- with the ending pulled onto it, which is why the u turns into a w sound. Three beats, evenly said.",
+      "variations": [
+        {
+          "display": "Jeo-neun maeil hangungmal-eul baewoyo.",
+          "script": "저는 매일 한국말을 배워요.",
+          "cue": "I learn Korean every day.",
+          "changed": "the time word moved in front of the object — the sentence means exactly the same thing"
+        },
+        {
+          "display": "Hangungmal-eul baewoyo.",
+          "script": "한국말을 배워요.",
+          "cue": "I learn Korean.",
+          "changed": "subject and time dropped, down to the bare habit"
+        },
+        {
+          "display": "Minsu-neun hangungmal-eul maeil baewoyo.",
+          "script": "민수는 한국말을 매일 배워요.",
+          "cue": "Minsu learns Korean every day.",
+          "changed": "a different learner, an unchanged verb"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun hangungmal-eul baewoyo maeil.",
+        "script": "저는 한국말을 배워요 매일.",
+        "why": "The time word has been put after the verb, where English happily puts it. Nothing may follow the verb in a Korean sentence — that is the one fixed rule of the word order."
+      },
+      "usage": "Describing a routine that includes a study habit.",
+      "register": "neutral",
+      "mnemonic": "Move anything you like in front of the verb; move nothing behind it."
+    },
+    {
+      "id": "L1-M4-S06",
+      "display": "Jeonyeok-e cha-reul masyeoyo.",
+      "script": "저녁에 차를 마셔요.",
+      "cue": "I drink tea in the evening.",
+      "glossEn": "I drink tea in the evening.",
+      "literal": "evening-at tea-object drink",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeonyeok",
+            "script": "저녁",
+            "cue": "evening · dinner",
+            "tag": "free",
+            "forms": [
+              "jeonyeok",
+              "jeonyeok-e"
+            ],
+            "note": "'Evening', and the evening meal, exactly as achim covers both morning and breakfast. The k at the end softens to a g when -e follows, but the word itself is jeonyeok and that is how it is written here."
+          },
+          {
+            "display": "-e",
+            "script": "-에",
+            "cue": "at · in (a time)",
+            "tag": "delta",
+            "forms": [
+              "-e"
+            ],
+            "note": "The point-in-time marker: achim-e, 'in the morning'; jeonyeok-e, 'in the evening'. It attaches to the time word and says when. The same ending marks a place later on, and it is the same ending doing the same job — it puts something at a point, in time or in space."
+          },
+          {
+            "display": "cha",
+            "script": "차",
+            "cue": "tea",
+            "tag": "free",
+            "forms": [
+              "cha",
+              "cha-reul"
+            ],
+            "note": "'Tea', from M1, as the thing drunk."
+          },
+          {
+            "display": "masyeoyo",
+            "script": "마셔요",
+            "cue": "drink",
+            "tag": "free",
+            "forms": [
+              "masyeoyo",
+              "masigo"
+            ],
+            "note": "'Drink', from M3. The stem masi- ends in i, and i plus the -eoyo ending contract into -yeoyo, which is why the word comes out as masyeoyo rather than masieoyo."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "masyeoyo does not look like the stem it comes from. The stem is masi-, and the i has merged with the ending — so a learner looking for masi inside the word will find only the sh sound it turned into.",
+      "sound": "juh-NYUH-ge CHA-rul ma-SHUH-yo. The k of jeonyeok softens to a g in front of the -e, so it is heard as juh-nyuh-ge. The word is still jeonyeok, which is why it is spelled that way here and the softening is described rather than written.",
+      "variations": [
+        {
+          "display": "Achim-e cha-reul masyeoyo.",
+          "script": "아침에 차를 마셔요.",
+          "cue": "I drink tea in the morning.",
+          "changed": "the other end of the day"
+        },
+        {
+          "display": "Jeonyeok-e bap-eul meogeoyo.",
+          "script": "저녁에 밥을 먹어요.",
+          "cue": "I eat dinner.",
+          "changed": "the evening meal instead of the drink"
+        },
+        {
+          "display": "Jeonyeok-e cha-reul an masyeoyo.",
+          "script": "저녁에 차를 안 마셔요.",
+          "cue": "I do not drink tea in the evening.",
+          "changed": "the negative, with an immediately in front of the verb"
+        }
+      ],
+      "mistake": {
+        "display": "Jeonyeok cha-reul masyeoyo.",
+        "script": "저녁 차를 마셔요.",
+        "why": "Without -e the time word has become part of the thing drunk — 'evening tea' as a kind of tea. The marker is what makes it a time."
+      },
+      "usage": "Describing an evening habit.",
+      "register": "neutral",
+      "mnemonic": "No marker, no time — just two nouns next to each other."
+    },
+    {
+      "id": "L1-M4-S07",
+      "display": "Bam-e jayo.",
+      "script": "밤에 자요.",
+      "cue": "I sleep at night.",
+      "glossEn": "I sleep at night.",
+      "literal": "night-at sleep",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bam",
+            "script": "밤",
+            "cue": "night",
+            "tag": "free",
+            "forms": [
+              "bam",
+              "bam-e"
+            ],
+            "note": "'Night' — the dark part, after jeonyeok. There is another word spelled the same way meaning 'chestnut'; it is not taught in this course, so bam here is always the night."
+          },
+          {
+            "display": "-e",
+            "script": "-에",
+            "cue": "at · in (a time)",
+            "tag": "delta",
+            "forms": [
+              "-e"
+            ],
+            "note": "The point-in-time marker: achim-e, 'in the morning'; jeonyeok-e, 'in the evening'. It attaches to the time word and says when. The same ending marks a place later on, and it is the same ending doing the same job — it puts something at a point, in time or in space."
+          },
+          {
+            "display": "jayo",
+            "script": "자요",
+            "cue": "sleep",
+            "tag": "free",
+            "forms": [
+              "jayo"
+            ],
+            "note": "'Sleep'. The stem is ja-, and because it already ends in a, the ending's own a disappears into it: there is no ja-ayo, only jayo. Short verbs are where that merging is easiest to see."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "Two words is a whole sentence. There is no subject and none is missing, and an English speaker will feel the gap where 'I' should be — that feeling is the thing to get over.",
+      "sound": "BA-me JA-yo. The stem of jayo is ja-, and because it already ends in a, the ending's own a disappears into it: there is no ja-ayo, only jayo. That merging happens with every stem ending in the same vowel as its ending.",
+      "variations": [
+        {
+          "display": "Bam-e an jayo.",
+          "script": "밤에 안 자요.",
+          "cue": "I do not sleep at night.",
+          "changed": "the negative — an in front of a two-letter verb is still an in front of the verb"
+        },
+        {
+          "display": "Jeo-neun bam-e jayo.",
+          "script": "저는 밤에 자요.",
+          "cue": "I sleep at night.",
+          "changed": "the subject supplied, which now reads as a contrast with somebody who does not"
+        },
+        {
+          "display": "Jeonyeok-e jayo.",
+          "script": "저녁에 자요.",
+          "cue": "I sleep in the evening.",
+          "changed": "an earlier hour, same shape"
+        }
+      ],
+      "mistake": {
+        "display": "Bam jayo.",
+        "script": "밤 자요.",
+        "why": "The time marker has been dropped. bam on its own is the noun 'night' sitting in front of a verb with no relationship to it, and the sentence loses the one word that told you when."
+      },
+      "usage": "Talking about when you sleep.",
+      "register": "neutral",
+      "mnemonic": "Two words, one whole sentence, and nothing missing."
+    },
+    {
+      "id": "L1-M4-S08",
+      "display": "Minsu-neun maeil ilhaeyo.",
+      "script": "민수는 매일 일해요.",
+      "cue": "Minsu works every day.",
+      "glossEn": "Minsu works every day.",
+      "literal": "Minsu-topic every-day work-do",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Minsu",
+            "script": "민수",
+            "cue": "Minsu (a name)",
+            "tag": "free",
+            "forms": [
+              "Minsu",
+              "Minsu-neun"
+            ],
+            "note": "A man's given name, from M1."
+          },
+          {
+            "display": "maeil",
+            "script": "매일",
+            "cue": "every day",
+            "tag": "free",
+            "forms": [
+              "maeil"
+            ],
+            "note": "'Every day'. It takes NO marker — it is one of the time words that stand bare, and putting -e on it is the commonest early mistake."
+          },
+          {
+            "display": "ilhaeyo",
+            "script": "일해요",
+            "cue": "work",
+            "tag": "free",
+            "forms": [
+              "ilhaeyo"
+            ],
+            "note": "'Work', built the same way as gongbuhaeyo: the noun il ('work') plus haeyo. Same pattern, same behaviour, including what happens to it in a negative."
+          }
+        ],
+        "rules": [
+          5,
+          8
+        ]
+      },
+      "trap": "The verb is the same one you use about yourself. English marks the third person with an -s and Korean marks nothing at all, so a learner adding something for 'he' is adding something the language has no room for.",
+      "sound": "MIN-soo-nun MAE-il IL-hae-yo. Every syllable is even. English wants to lean on the first syllable of Minsu and the language does not lean anywhere.",
+      "variations": [
+        {
+          "display": "Minsu-neun maeil gongbuhaeyo.",
+          "script": "민수는 매일 공부해요.",
+          "cue": "Minsu studies every day.",
+          "changed": "the other noun-plus-haeyo verb"
+        },
+        {
+          "display": "Minsu-neun oneul-eun ilhaeyo.",
+          "script": "민수는 오늘은 일해요.",
+          "cue": "Minsu is working today.",
+          "changed": "today set apart from other days"
+        },
+        {
+          "display": "Minsu-neun maeil ilhaeyo?",
+          "script": "민수는 매일 일해요?",
+          "cue": "Does Minsu work every day?",
+          "changed": "the same sentence lifted into a question"
+        }
+      ],
+      "mistake": {
+        "display": "Minsu-neun maeil ilhaeyoyo.",
+        "script": "민수는 매일 일해요요.",
+        "why": "An extra ending has been stuck on, as if the third person needed one. There is no such ending: -yo is already the whole of the politeness and the whole of the verb's ending."
+      },
+      "usage": "Talking about somebody else's routine.",
+      "register": "neutral",
+      "mnemonic": "No agreement, no endings, nothing to add."
+    },
+    {
+      "id": "L1-M4-S09",
+      "display": "Jeo-neun oneul gongbu an haeyo.",
+      "script": "저는 오늘 공부 안 해요.",
+      "cue": "I am not studying today.",
+      "glossEn": "I am not studying today.",
+      "literal": "I-topic today study not do",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeo",
+            "script": "저",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [
+              "jeo",
+              "jeo-neun"
+            ],
+            "note": "'I', from M1, and in this module it is mostly absent: a habit you are describing about yourself needs no subject once the conversation is about you."
+          },
+          {
+            "display": "oneul",
+            "script": "오늘",
+            "cue": "today",
+            "tag": "free",
+            "forms": [
+              "oneul",
+              "oneul-eun"
+            ],
+            "note": "'Today', and like maeil it takes no -e. It can take the topic marker, oneul-eun, and then it means 'as for today' — setting today apart from other days."
+          },
+          {
+            "display": "gongbu",
+            "script": "공부",
+            "cue": "study",
+            "tag": "free",
+            "forms": [
+              "gongbu"
+            ],
+            "note": "'Study' as a NOUN — the activity itself. Put haeyo behind it and you have the verb: gongbuhaeyo. Korean builds dozens of verbs this way, which is why the noun is worth knowing on its own: it is half of a verb you can make."
+          },
+          {
+            "display": "an",
+            "script": "안",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [
+              "an"
+            ],
+            "note": "'Not', in front of the verb, from the last module. With a made-from-a-noun verb like gongbuhaeyo it wedges INTO the word: gongbu an haeyo. That is not a variant spelling — it is the only way to negate this kind of verb."
+          },
+          {
+            "display": "haeyo",
+            "script": "해요",
+            "cue": "do",
+            "tag": "free",
+            "forms": [
+              "haeyo"
+            ],
+            "note": "'Do'. It is the most useful verb in the language because it turns a noun into a verb: gongbu haeyo, il haeyo. Written together as one word when nothing comes between them, and apart when something does — which is exactly what happens in a negative."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "You cannot put an in front of gongbuhaeyo. The verb is a noun with haeyo behind it, and the negative goes between them — which means the word you learned as one piece has to be written as two the moment you negate it.",
+      "sound": "juh-nun O-neul GONG-boo an HAE-yo. There is a small break after gongbu, and an leans onto haeyo so the last two words come out almost as one: an-hae-yo. That grouping is the audible proof that an belongs to the verb, not to the noun.",
+      "variations": [
+        {
+          "display": "Oneul gongbu an haeyo.",
+          "script": "오늘 공부 안 해요.",
+          "cue": "I am not studying today.",
+          "changed": "the subject dropped"
+        },
+        {
+          "display": "Jeo-neun oneul il an haeyo.",
+          "script": "저는 오늘 일 안 해요.",
+          "cue": "I am not working today.",
+          "changed": "the same split on the other noun-plus-haeyo verb"
+        },
+        {
+          "display": "Jeo-neun oneul gongbuhaeyo.",
+          "script": "저는 오늘 공부해요.",
+          "cue": "I am studying today.",
+          "changed": "the positive — and the verb closes back up into one word"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun oneul an gongbuhaeyo.",
+        "script": "저는 오늘 안 공부해요.",
+        "why": "an has been put in front of the whole verb, which is where it goes for every OTHER verb in this course. A verb made from a noun is the exception: the negative wedges into it, and this sentence is the one shape that is wrong."
+      },
+      "usage": "Saying what you are not doing today.",
+      "register": "neutral",
+      "mnemonic": "A verb made of two pieces gets its 'not' between them."
+    },
+    {
+      "id": "L1-M4-S10",
+      "display": "Maeil achim-e keopi-reul masyeoyo.",
+      "script": "매일 아침에 커피를 마셔요.",
+      "cue": "I drink coffee every morning.",
+      "glossEn": "I drink coffee every morning.",
+      "literal": "every-day morning-at coffee-object drink",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "maeil",
+            "script": "매일",
+            "cue": "every day",
+            "tag": "free",
+            "forms": [
+              "maeil"
+            ],
+            "note": "'Every day'. It takes NO marker — it is one of the time words that stand bare, and putting -e on it is the commonest early mistake."
+          },
+          {
+            "display": "achim",
+            "script": "아침",
+            "cue": "morning · breakfast",
+            "tag": "free",
+            "forms": [
+              "achim",
+              "achim-e"
+            ],
+            "note": "'Morning', and also 'breakfast' — the meal is named after the time of day, so achim-e bap-eul meogeoyo is what you say for having breakfast."
+          },
+          {
+            "display": "-e",
+            "script": "-에",
+            "cue": "at · in (a time)",
+            "tag": "delta",
+            "forms": [
+              "-e"
+            ],
+            "note": "The point-in-time marker: achim-e, 'in the morning'; jeonyeok-e, 'in the evening'. It attaches to the time word and says when. The same ending marks a place later on, and it is the same ending doing the same job — it puts something at a point, in time or in space."
+          },
+          {
+            "display": "keopi",
+            "script": "커피",
+            "cue": "coffee",
+            "tag": "free",
+            "forms": [
+              "keopi",
+              "keopi-reul"
+            ],
+            "note": "'Coffee', from M1, as the thing drunk."
+          },
+          {
+            "display": "masyeoyo",
+            "script": "마셔요",
+            "cue": "drink",
+            "tag": "free",
+            "forms": [
+              "masyeoyo",
+              "masigo"
+            ],
+            "note": "'Drink', from M3. The stem masi- ends in i, and i plus the -eoyo ending contract into -yeoyo, which is why the word comes out as masyeoyo rather than masieoyo."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          4,
+          7
+        ]
+      },
+      "trap": "Two time words stack, and only the second one takes the marker: maeil achim-e, not maeil-e achim-e. The pair is read as one span of time, and one marker covers it.",
+      "sound": "MAE-il A-chi-me KUH-pee-rul ma-SHUH-yo. Four words, ten beats, no stress on any of them — this is as long as a sentence gets in this module, and it is a good one to practise flattening.",
+      "variations": [
+        {
+          "display": "Maeil jeonyeok-e keopi-reul masyeoyo.",
+          "script": "매일 저녁에 커피를 마셔요.",
+          "cue": "I drink coffee every evening.",
+          "changed": "the other end of the day, same stacking"
+        },
+        {
+          "display": "Achim-e keopi-reul masyeoyo.",
+          "script": "아침에 커피를 마셔요.",
+          "cue": "I drink coffee in the morning.",
+          "changed": "one time word instead of two"
+        },
+        {
+          "display": "Maeil achim-e cha-reul masyeoyo.",
+          "script": "매일 아침에 차를 마셔요.",
+          "cue": "I drink tea every morning.",
+          "changed": "a different drink in the same routine"
+        }
+      ],
+      "mistake": {
+        "display": "Maeil-e achim-e keopi-reul masyeoyo.",
+        "script": "매일에 아침에 커피를 마셔요.",
+        "why": "Both time words have been marked. maeil never takes -e in the first place, and even with a word that does, a stacked pair takes one marker at the end and not one apiece."
+      },
+      "usage": "Describing a habit precisely.",
+      "register": "neutral",
+      "mnemonic": "Stack the times, mark the last one."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M4-C01",
+      "display": "Achim-e keopi-reul masyeoyo.",
+      "script": "아침에 커피를 마셔요.",
+      "cue": "I drink coffee in the morning."
+    },
+    {
+      "id": "L1-M4-C02",
+      "display": "Jeo-neun bam-e gongbuhaeyo.",
+      "script": "저는 밤에 공부해요.",
+      "cue": "I study at night."
+    },
+    {
+      "id": "L1-M4-C03",
+      "display": "Minsu-neun maeil ireonayo.",
+      "script": "민수는 매일 일어나요.",
+      "cue": "Minsu gets up every day."
+    },
+    {
+      "id": "L1-M4-C04",
+      "display": "Jeonyeok-e bap-eul meogeoyo.",
+      "script": "저녁에 밥을 먹어요.",
+      "cue": "I eat dinner."
+    },
+    {
+      "id": "L1-M4-C05",
+      "display": "Oneul-eun gongbu an haeyo.",
+      "script": "오늘은 공부 안 해요.",
+      "cue": "Today I am not studying."
+    },
+    {
+      "id": "L1-M4-C06",
+      "display": "Maeil hangungmal-eul baewoyo.",
+      "script": "매일 한국말을 배워요.",
+      "cue": "I learn Korean every day."
+    },
+    {
+      "id": "L1-M4-C07",
+      "display": "Bam-e cha-reul masyeoyo.",
+      "script": "밤에 차를 마셔요.",
+      "cue": "I drink tea at night."
+    },
+    {
+      "id": "L1-M4-C08",
+      "display": "Minsu-neun oneul ilhaeyo?",
+      "script": "민수는 오늘 일해요?",
+      "cue": "Is Minsu working today?"
+    },
+    {
+      "id": "L1-M4-C09",
+      "display": "Achim-e an ireonayo.",
+      "script": "아침에 안 일어나요.",
+      "cue": "I do not get up in the morning."
+    },
+    {
+      "id": "L1-M4-C10",
+      "display": "Jeo-neun jeonyeok-e jayo.",
+      "script": "저는 저녁에 자요.",
+      "cue": "I sleep in the evening."
+    },
+    {
+      "id": "L1-M4-C11",
+      "display": "Maeil achim-e bap-eul meogeoyo.",
+      "script": "매일 아침에 밥을 먹어요.",
+      "cue": "I eat breakfast every morning."
+    },
+    {
+      "id": "L1-M4-C12",
+      "display": "Oneul-eun cha-reul masyeoyo.",
+      "script": "오늘은 차를 마셔요.",
+      "cue": "Today I am drinking tea."
+    },
+    {
+      "id": "L1-M4-C13",
+      "display": "Minsu-neun maeil bam-e gongbuhaeyo.",
+      "script": "민수는 매일 밤에 공부해요.",
+      "cue": "Minsu studies every night."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

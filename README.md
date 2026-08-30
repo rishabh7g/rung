@@ -450,6 +450,64 @@ copied verbatim, `levels.json` re-emitted with `hasContent` **derived from what 
 shipped** (the authored flag is never trusted), and `courses.json` filtered to courses that
 shipped at least one module.
 
+
+**en-ko ships (#380, 2026-08-30) — the product has nine courses, and this is the first one that
+was BORN conforming to the no-reading rule.** English (L1) → Korean (L2). Ten L1 rungs authored
+against ten briefs (#376 — `tools/course-briefs.ts`, "en-ko: the decisions a brief must settle"),
+across three authoring issues (#377 L1-M1–M2, #378 L1-M3–M5, #379 L1-M6–M10) and reviewed in
+[`docs/35-llm-review-en-ko-L1-M1-M2.md`](docs/35-llm-review-en-ko-L1-M1-M2.md),
+[`docs/36-llm-review-en-ko-L1-M3-M5.md`](docs/36-llm-review-en-ko-L1-M3-M5.md) and
+[`docs/37-llm-review-en-ko-L1-M6-M10.md`](docs/37-llm-review-en-ko-L1-M6-M10.md), on the same
+LLM-review-plus-owner-authority bar as the other eight. Dropping `fixture: true` from the en-ko
+row and the L1 `draftNote` was the whole change: a strict `npm run build` emits
+`public/content/en-ko/` with levels, strings, ten modules and ten cumulative indexes, and the
+emitted `courses.json` lists all nine courses. The chrome is English (`revealLabel` = "Reveal the
+Korean") and the switcher offers the pair as `english → korean`. Its L2/L3 ladders stay
+`draft: true`.
+
+**Hangul never reaches a learner-facing surface, and it never had to be taken back out.**
+`docs/design-contract.md`'s "rung teaches speech, not script" (#353) ends with a forward rule — a
+new non-Latin course is romanized from its first commit, never retrofitted — and en-ru is what the
+rule was written against: it shipped `scriptMode: "native"` and cost six issues (#353–#360) and
+959 Cyrillic `display` strings to undo. en-ko settled its romanization BEFORE its manifest row
+existed ([`docs/34-en-ko-romanization-decisions.md`](docs/34-en-ko-romanization-decisions.md),
+#373), so the row's `romanizationNote` was true the moment it landed. `checkScriptMode` reports
+**zero errors across all ten modules**; `src/course/types.test.ts` extends that to what the build
+cannot see, failing on Hangul inside an English `note`, `rule` or `sound` line. The scheme is
+Revised Romanization, transcribing pronunciation, with one named deviation: a particle or the
+copula is joined to its host by a hyphen and the host keeps its isolation shape — `chaek-eul`,
+`jeo-neun`, `haksaeng-ieyo` — so `surfaceIndexKeys` gives the bare noun an index key of its own.
+Without it, an agglutinative language would have left `chaek` ("book") with no row a learner could
+ever tap.
+
+**The honest defect, found before authoring rather than after (#375): the quiet Hangul `script`
+line renders from a system font.** `@fontsource/noto-sans-kr` splits Korean across ~120 numbered
+range files per weight and `tools/font-subset.ts` is built on one source file per target, so
+bundling a Hangul cut is a pipeline change and not a target addition. It was not made. Measured on
+the shipped build: the course's `script` fields carry **126 distinct Hangul syllables** and
+**0 of 126** appear in any generated cut, so `--font-script-fallback` falls through to `system-ui`.
+On a phone that is a real Korean face; on a stripped Linux it is tofu. This is the same shape of
+defect en-ar has carried since #202, with the difference that it was measured and recorded before
+the first module was written.
+
+Budget, reported and not gated — `COURSE_LIMIT` has not existed in `tools/payload-budget.ts` since
+#304, and `npm run budget` fails only on attribution (`unmetered` must hold zero files) and the
+precache audit. Three older paragraphs above still quote it; they are the record of what was
+believed then. `course:en-ko` **103.9 KiB** gzip (29 files), `precache:en-ko` **322.8 KiB** (48
+files). `course:hi-mr` stays **345.9 KiB** — adding a ninth course moved no other course's row.
+The shared cost is `shell` 217.4 → **218.9 KiB** (+1.5), which is the emitted manifest gaining a
+row and that row's `romanizationNote`. `SCRIPT_BY_LANGUAGE_TAG` is **unchanged**: unlike `ar` and
+`ru`, whose romanizations are charged a `latin-ext` cut for their diacritics, this one is pure
+ASCII and is charged nothing. Verified by reading the generated cmaps rather than inferring from
+`unicode-range`: every ASCII character the course's `display` strings use, the particle hyphen
+included, is present in `mukta-latin` at 400, 600 and 700.
+
+**No native or fluent-Korean reviewer has read a word of it.** The bar en-ko clears is LLM review
+plus the owner's authority, exactly the other eight courses'. The **20 open questions** (6 + 7 + 7)
+across the three review docs are what a fluent-Korean pass still owes — naturalness of the
+comprehension turns first, then the speech-level judgements, then the pronunciation lines, since
+nobody has heard any of them.
+
 ### The word index — and the rule it enforces
 
 Every shipped module also gets `public/content/<courseId>/index/<moduleId>.json`: each L2

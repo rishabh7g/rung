@@ -1,0 +1,956 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M9",
+  "title": "Feelings & opinions",
+  "job": "Why — because and so",
+  "prerequisites": [
+    "L1-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": [
+      "simple_present",
+      "simple_future"
+    ],
+    "allowedPatterns": [
+      "N-i/ga + joayo / masisseoyo",
+      "N-eun/neun + bappayo / pigonhaeyo",
+      "wae + V-ayo/-eoyo + ?",
+      "<stem>-aseo/-eoseo + <clause>",
+      "<sentence> + . + geuraeseo + <sentence>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "KOREAN DESCRIBING WORDS ARE VERBS. joayo ('is good'), masisseoyo ('is delicious'), bappayo ('is busy') each conjugate on their own and take NO copula in front of them. keopi-ga joayo is a whole sentence. Reaching for -ieyo here — keopi-ga joeun-ieyo — produces something that is not Korean at all, and it is the mistake an English speaker makes first."
+    },
+    {
+      "tag": "interference",
+      "text": "joayo and joahaeyo are not the same word doing two jobs. joayo describes a thing: keopi-ga joayo, 'coffee is good'. joahaeyo says somebody likes something and takes an object: jeo-neun keopi-reul joahaeyo. The thing described takes -i/-ga; the thing liked takes -eul/-reul."
+    },
+    {
+      "tag": "delta",
+      "text": "'Because' is an ending on the verb of the REASON, and the reason comes first: bappaseo jip-e gayo, 'being busy, I go home'. English can put its because-clause on either side; Korean puts the reason in front and the result behind, always."
+    },
+    {
+      "tag": "delta",
+      "text": "The -aseo ending carries no tense. Whatever tense the sentence is in sits on the LAST verb, and the reason clause stays in its plain shape — which is one fewer thing to conjugate, not one more."
+    },
+    {
+      "tag": "free",
+      "text": "geuraeseo does the same job as -aseo but starts a new sentence: Pigonhaeyo. Geuraeseo jip-e isseoyo. Use the ending when you want one sentence and the connector when you want two."
+    },
+    {
+      "tag": "free",
+      "text": "wae ('why') stays in place like every other question word, and the answer normally comes back with -aseo on it. Question and answer end up the same shape, which makes the pair easy to practise."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M9-S01",
+      "display": "Keopi-ga joayo.",
+      "script": "커피가 좋아요.",
+      "cue": "The coffee is good.",
+      "glossEn": "The coffee is good.",
+      "literal": "coffee-subject is-good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "keopi",
+            "script": "커피",
+            "cue": "coffee",
+            "tag": "free",
+            "forms": [
+              "keopi",
+              "keopi-ga",
+              "keopi-reul"
+            ],
+            "note": "'Coffee', from M1 — here as the thing being described, so it takes -ga."
+          },
+          {
+            "display": "joayo",
+            "script": "좋아요",
+            "cue": "is good",
+            "tag": "interference",
+            "forms": [
+              "joayo"
+            ],
+            "note": "'Is good' — one word, and it is a VERB. Korean's describing words conjugate exactly like action verbs and take no copula in front of them: keopi-ga joayo is a complete sentence. Do not confuse it with M1's joahaeyo, which means 'like' and takes an object."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "There is no 'is' in this sentence and none is missing. joayo already contains it, because in Korean a describing word IS a verb — and adding the copula gives you a sentence with two verbs and no grammar.",
+      "sound": "KUH-pee-ga JO-ah-yo. The h inside the written word is silent, so it runs as jo-a-yo — the same silent h you met in joahaeyo, and the reason both words are spelled the way they are here.",
+      "variations": [
+        {
+          "display": "Cha-ga joayo.",
+          "script": "차가 좋아요.",
+          "cue": "The tea is good.",
+          "changed": "a different thing described"
+        },
+        {
+          "display": "Keopi-ga masisseoyo.",
+          "script": "커피가 맛있어요.",
+          "cue": "The coffee is delicious.",
+          "changed": "a different describing verb"
+        },
+        {
+          "display": "Keopi-ga an joayo.",
+          "script": "커피가 안 좋아요.",
+          "cue": "The coffee is not good.",
+          "changed": "the negative — an in front, exactly as with any other verb"
+        }
+      ],
+      "mistake": {
+        "display": "Keopi-ga joeun-ieyo.",
+        "script": "커피가 좋은이에요.",
+        "why": "The copula has been added to a word that is already a verb. joayo is the whole predicate; nothing follows it."
+      },
+      "usage": "Saying what you think of something.",
+      "register": "neutral",
+      "mnemonic": "A describing word in Korean is already a verb."
+    },
+    {
+      "id": "L1-M9-S02",
+      "display": "I-geo-neun masisseoyo.",
+      "script": "이거는 맛있어요.",
+      "cue": "This is delicious.",
+      "glossEn": "This is delicious.",
+      "literal": "this-topic is-delicious",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "i-geo",
+            "script": "이거",
+            "cue": "this · this thing",
+            "tag": "free",
+            "forms": [
+              "i-geo",
+              "i-geo-neun"
+            ],
+            "note": "'This one', from M1."
+          },
+          {
+            "display": "masisseoyo",
+            "script": "맛있어요",
+            "cue": "is delicious",
+            "tag": "free",
+            "forms": [
+              "masisseoyo"
+            ],
+            "note": "'Is tasty'. Another describing verb, and you can hear isseoyo inside it — it was built long ago from 'taste' plus 'exists'. Learn it whole; the pieces are not taught separately here."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "You can hear isseoyo inside masisseoyo, and it is genuinely in there — but the word is learned whole. Trying to build it out of 'taste' plus 'exists' will give you something nobody says.",
+      "sound": "EE-guh-nun ma-SI-ssuh-yo. The double ss in the middle is tense, pressed harder than an English s; it is the same tense sound as in isseoyo.",
+      "variations": [
+        {
+          "display": "I-geo-neun an masisseoyo.",
+          "script": "이거는 안 맛있어요.",
+          "cue": "This is not delicious.",
+          "changed": "the negative"
+        },
+        {
+          "display": "Cha-ga masisseoyo.",
+          "script": "차가 맛있어요.",
+          "cue": "The tea is delicious.",
+          "changed": "a named thing rather than one you point at"
+        },
+        {
+          "display": "I-geo-neun joayo.",
+          "script": "이거는 좋아요.",
+          "cue": "This is good.",
+          "changed": "the other describing verb, and a milder judgement"
+        }
+      ],
+      "mistake": {
+        "display": "I-geo-neun masisseoyo-yeyo.",
+        "script": "이거는 맛있어요예요.",
+        "why": "The copula has been stuck onto a finished verb. masisseoyo is already the whole of 'is delicious'."
+      },
+      "usage": "Saying what something tastes like, at a table.",
+      "register": "neutral",
+      "mnemonic": "Verbs describe; nothing needs to be added."
+    },
+    {
+      "id": "L1-M9-S03",
+      "display": "Jeo-neun oneul bappayo.",
+      "script": "저는 오늘 바빠요.",
+      "cue": "I am busy today.",
+      "glossEn": "I am busy today.",
+      "literal": "I-topic today is-busy",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeo",
+            "script": "저",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [
+              "jeo",
+              "jeo-neun"
+            ],
+            "note": "'I', from M1."
+          },
+          {
+            "display": "oneul",
+            "script": "오늘",
+            "cue": "today",
+            "tag": "free",
+            "forms": [
+              "oneul",
+              "oneul-eun"
+            ],
+            "note": "'Today', from M4."
+          },
+          {
+            "display": "bappayo",
+            "script": "바빠요",
+            "cue": "is busy",
+            "tag": "free",
+            "forms": [
+              "bappayo",
+              "bappaseo"
+            ],
+            "note": "'Is busy'. It describes a person, and like every describing word in Korean it is a verb — there is no 'am' in front of it. bappaseo is the same word wearing the 'because' ending."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "'I am busy' has three words in English and two in Korean, because bappayo is doing the work of both 'am' and 'busy'. Looking for the 'am' is looking for a word the sentence has no room for.",
+      "sound": "juh-nun O-neul BA-ppa-yo. The pp in the middle is tense — the lips press harder and no air escapes — and it is what separates bappayo from a soft b.",
+      "variations": [
+        {
+          "display": "Oneul bappayo.",
+          "script": "오늘 바빠요.",
+          "cue": "I am busy today.",
+          "changed": "the subject dropped"
+        },
+        {
+          "display": "Jeo-neun oneul an bappayo.",
+          "script": "저는 오늘 안 바빠요.",
+          "cue": "I am not busy today.",
+          "changed": "the negative"
+        },
+        {
+          "display": "Jeo-neun oneul pigonhaeyo.",
+          "script": "저는 오늘 피곤해요.",
+          "cue": "I am tired today.",
+          "changed": "another describing verb about a person"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun oneul bappa-ieyo.",
+        "script": "저는 오늘 바빠이에요.",
+        "why": "The copula again on a word that is already a verb. This is the same mistake three sentences running, and it is the one worth making three times."
+      },
+      "usage": "Explaining why you cannot do something.",
+      "register": "neutral",
+      "mnemonic": "Being busy is something you DO in Korean."
+    },
+    {
+      "id": "L1-M9-S04",
+      "display": "Wae bappayo?",
+      "script": "왜 바빠요?",
+      "cue": "Why are you busy?",
+      "glossEn": "Why are you busy?",
+      "literal": "why is-busy?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wae",
+            "script": "왜",
+            "cue": "why",
+            "tag": "free",
+            "forms": [
+              "wae"
+            ],
+            "note": "'Why'. Like eodi and myeot it stays where it is and lets the voice ask the question — wae bappayo? — and the answer usually comes back with -aseo on it."
+          },
+          {
+            "display": "bappayo",
+            "script": "바빠요",
+            "cue": "is busy",
+            "tag": "free",
+            "forms": [
+              "bappayo",
+              "bappaseo"
+            ],
+            "note": "'Is busy'. It describes a person, and like every describing word in Korean it is a verb — there is no 'am' in front of it. bappaseo is the same word wearing the 'because' ending."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "wae sits at the front here because that is where it belongs in the sentence's own order, not because question words move. Put a subject in and wae stays exactly where it is, after it.",
+      "sound": "WAE BA-ppa-yo, rising at the end. wae is one beat, close to English 'weh'.",
+      "variations": [
+        {
+          "display": "Wae pigonhaeyo?",
+          "script": "왜 피곤해요?",
+          "cue": "Why are you tired?",
+          "changed": "a different state asked about"
+        },
+        {
+          "display": "Minsu-neun wae bappayo?",
+          "script": "민수는 왜 바빠요?",
+          "cue": "Why is Minsu busy?",
+          "changed": "a subject added — and wae does not move to the front"
+        },
+        {
+          "display": "Wae hakgyo-e gayo?",
+          "script": "왜 학교에 가요?",
+          "cue": "Why are you going to school?",
+          "changed": "an action rather than a state"
+        }
+      ],
+      "mistake": {
+        "display": "Bappayo wae?",
+        "script": "바빠요 왜?",
+        "why": "wae has been put after the verb. Nothing follows the verb in a Korean sentence, question words included."
+      },
+      "usage": "Asking for a reason.",
+      "register": "neutral",
+      "mnemonic": "Question words stay put; the voice does the asking."
+    },
+    {
+      "id": "L1-M9-S05",
+      "display": "Ilhaeseo bappayo.",
+      "script": "일해서 바빠요.",
+      "cue": "I am busy because I am working.",
+      "glossEn": "Working, I am busy.",
+      "literal": "work-because is-busy",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ilhaeyo",
+            "script": "일해요",
+            "cue": "work",
+            "tag": "free",
+            "forms": [
+              "ilhaeyo",
+              "ilhaeseo"
+            ],
+            "note": "'Work', from M4, and here in its 'because' shape: ilhaeseo, 'because I work'. Every verb built on haeyo makes the shape the same way."
+          },
+          {
+            "display": "-aseo",
+            "script": "-아서",
+            "cue": "because",
+            "tag": "delta",
+            "forms": [
+              "-aseo",
+              "-eoseo"
+            ],
+            "note": "The 'because' ending. It goes on the verb STEM of the reason, and the reason comes FIRST: bappaseo jip-e gayo, 'being busy, I go home'. It carries no tense of its own — the tense sits on the final verb — and there is no word order in which it follows the result."
+          },
+          {
+            "display": "bappayo",
+            "script": "바빠요",
+            "cue": "is busy",
+            "tag": "free",
+            "forms": [
+              "bappayo",
+              "bappaseo"
+            ],
+            "note": "'Is busy'. It describes a person, and like every describing word in Korean it is a verb — there is no 'am' in front of it. bappaseo is the same word wearing the 'because' ending."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "The reason comes FIRST. English can say 'I'm busy because I'm working' or 'because I'm working, I'm busy'; Korean has only the second order, and the ending is what marks the reason rather than a word at the front.",
+      "sound": "il-HAE-suh BA-ppa-yo. The -seo at the end of ilhaeseo is unstressed and light — it is easy to swallow, and swallowing it removes the reason from the sentence.",
+      "variations": [
+        {
+          "display": "Pigonhaeseo jip-e gayo.",
+          "script": "피곤해서 집에 가요.",
+          "cue": "I am going home because I am tired.",
+          "changed": "a different reason and a different result"
+        },
+        {
+          "display": "Bappaseo an gayo.",
+          "script": "바빠서 안 가요.",
+          "cue": "I am not going because I am busy.",
+          "changed": "the result negated, and the reason clause untouched"
+        },
+        {
+          "display": "Ilhaeseo pigonhaeyo.",
+          "script": "일해서 피곤해요.",
+          "cue": "I am tired because I work.",
+          "changed": "the same reason with a different result"
+        }
+      ],
+      "mistake": {
+        "display": "Bappayo ilhaeseo.",
+        "script": "바빠요 일해서.",
+        "why": "The reason has been moved behind the result, English-style. The reason clause always comes first, and nothing at all follows the final verb."
+      },
+      "usage": "Explaining yourself in one sentence.",
+      "register": "neutral",
+      "mnemonic": "Reason first, result second, verb last."
+    },
+    {
+      "id": "L1-M9-S06",
+      "display": "Bappaseo jip-e gayo.",
+      "script": "바빠서 집에 가요.",
+      "cue": "I am going home because I am busy.",
+      "glossEn": "Being busy, I go home.",
+      "literal": "busy-because home-to go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bappayo",
+            "script": "바빠요",
+            "cue": "is busy",
+            "tag": "free",
+            "forms": [
+              "bappayo",
+              "bappaseo"
+            ],
+            "note": "'Is busy'. It describes a person, and like every describing word in Korean it is a verb — there is no 'am' in front of it. bappaseo is the same word wearing the 'because' ending."
+          },
+          {
+            "display": "-aseo",
+            "script": "-아서",
+            "cue": "because",
+            "tag": "delta",
+            "forms": [
+              "-aseo",
+              "-eoseo"
+            ],
+            "note": "The 'because' ending. It goes on the verb STEM of the reason, and the reason comes FIRST: bappaseo jip-e gayo, 'being busy, I go home'. It carries no tense of its own — the tense sits on the final verb — and there is no word order in which it follows the result."
+          },
+          {
+            "display": "jip",
+            "script": "집",
+            "cue": "house · home",
+            "tag": "free",
+            "forms": [
+              "jip",
+              "jip-e"
+            ],
+            "note": "'Home', from M7 — where you go when you are busy, or stay when you are tired."
+          },
+          {
+            "display": "gayo",
+            "script": "가요",
+            "cue": "go",
+            "tag": "free",
+            "forms": [
+              "gayo",
+              "gal"
+            ],
+            "note": "'Go', from M6."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "bappaseo has no tense in it. If the sentence were about yesterday, only the last verb would change — the reason clause would stay exactly as it is, which is one fewer thing to conjugate than English needs.",
+      "sound": "BA-ppa-suh JI-be GA-yo. The tense pp is still there in the -aseo shape, and the ending is simply -seo after the stem's own a.",
+      "variations": [
+        {
+          "display": "Bappaseo an gayo.",
+          "script": "바빠서 안 가요.",
+          "cue": "I am not going because I am busy.",
+          "changed": "the result negated"
+        },
+        {
+          "display": "Pigonhaeseo jip-e isseoyo.",
+          "script": "피곤해서 집에 있어요.",
+          "cue": "I am staying home because I am tired.",
+          "changed": "a different reason, and existence rather than going"
+        },
+        {
+          "display": "Bappaseo jip-e gal geoyeyo.",
+          "script": "바빠서 집에 갈 거예요.",
+          "cue": "I will go home because I am busy.",
+          "changed": "the future on the last verb only — the reason clause does not change"
+        }
+      ],
+      "mistake": {
+        "display": "Bappasseoseo jip-e gayo.",
+        "script": "바빴어서 집에 가요.",
+        "why": "The past has been put into the reason clause. -aseo carries no tense: whatever tense the sentence has sits on the final verb."
+      },
+      "usage": "Giving a reason for what you are doing.",
+      "register": "neutral",
+      "mnemonic": "Only the last verb carries the tense."
+    },
+    {
+      "id": "L1-M9-S07",
+      "display": "Pigonhaeyo. Geuraeseo jip-e isseoyo.",
+      "script": "피곤해요. 그래서 집에 있어요.",
+      "cue": "I am tired. So I am staying home.",
+      "glossEn": "I am tired. That is why I am at home.",
+      "literal": "is-tired. so home-at exist",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pigonhaeyo",
+            "script": "피곤해요",
+            "cue": "is tired",
+            "tag": "free",
+            "forms": [
+              "pigonhaeyo",
+              "pigonhaeseo"
+            ],
+            "note": "'Is tired'. It ends in -haeyo, so it is built on the same 'do' verb as gongbuhaeyo — and its 'because' shape is pigonhaeseo, made the same way as every other."
+          },
+          {
+            "display": "geuraeseo",
+            "script": "그래서",
+            "cue": "so · that is why",
+            "tag": "free",
+            "forms": [
+              "geuraeseo"
+            ],
+            "note": "'So, that is why'. It is the sentence-starting partner of -aseo: same relationship, but it begins a new sentence instead of joining a clause. It is built from the same piece, which is why the two look alike."
+          },
+          {
+            "display": "jip",
+            "script": "집",
+            "cue": "house · home",
+            "tag": "free",
+            "forms": [
+              "jip",
+              "jip-e"
+            ],
+            "note": "'Home', from M7 — where you go when you are busy, or stay when you are tired."
+          },
+          {
+            "display": "isseoyo",
+            "script": "있어요",
+            "cue": "is (somewhere)",
+            "tag": "delta",
+            "forms": [
+              "isseoyo"
+            ],
+            "note": "'Is somewhere', from M7."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "geuraeseo starts a sentence; -aseo joins a clause. They say the same thing, and choosing between them is choosing whether you want one sentence or two — not a difference in meaning.",
+      "sound": "pee-gon-HAE-yo. gu-RAE-suh JI-be i-SSUH-yo. There is a full stop in the middle and it should be heard: the first sentence falls, then geuraeseo starts the second.",
+      "variations": [
+        {
+          "display": "Pigonhaeseo jip-e isseoyo.",
+          "script": "피곤해서 집에 있어요.",
+          "cue": "I am staying home because I am tired.",
+          "changed": "the same thing said as one sentence with the ending"
+        },
+        {
+          "display": "Bappayo. Geuraeseo an gayo.",
+          "script": "바빠요. 그래서 안 가요.",
+          "cue": "I am busy. So I am not going.",
+          "changed": "a different reason and a negated result"
+        },
+        {
+          "display": "Pigonhaeyo. Geuraeseo jip-e gal geoyeyo.",
+          "script": "피곤해요. 그래서 집에 갈 거예요.",
+          "cue": "I am tired. So I will go home.",
+          "changed": "the future on the second sentence"
+        }
+      ],
+      "mistake": {
+        "display": "Pigonhaeyo geuraeseo jip-e isseoyo.",
+        "script": "피곤해요 그래서 집에 있어요.",
+        "why": "The two sentences have been run together without a stop. geuraeseo begins a new sentence — if you want one sentence, the ending -aseo is what joins the clauses."
+      },
+      "usage": "Explaining yourself in two short sentences.",
+      "register": "neutral",
+      "mnemonic": "One connector for two sentences, one ending for one."
+    },
+    {
+      "id": "L1-M9-S08",
+      "display": "Keopi-ga masisseoyo. Geuraeseo maeil masyeoyo.",
+      "script": "커피가 맛있어요. 그래서 매일 마셔요.",
+      "cue": "The coffee is delicious. So I drink it every day.",
+      "glossEn": "The coffee is delicious. That is why I drink it every day.",
+      "literal": "coffee-subject is-delicious. so every-day drink",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "keopi",
+            "script": "커피",
+            "cue": "coffee",
+            "tag": "free",
+            "forms": [
+              "keopi",
+              "keopi-ga",
+              "keopi-reul"
+            ],
+            "note": "'Coffee', from M1 — here as the thing being described, so it takes -ga."
+          },
+          {
+            "display": "masisseoyo",
+            "script": "맛있어요",
+            "cue": "is delicious",
+            "tag": "free",
+            "forms": [
+              "masisseoyo"
+            ],
+            "note": "'Is tasty'. Another describing verb, and you can hear isseoyo inside it — it was built long ago from 'taste' plus 'exists'. Learn it whole; the pieces are not taught separately here."
+          },
+          {
+            "display": "geuraeseo",
+            "script": "그래서",
+            "cue": "so · that is why",
+            "tag": "free",
+            "forms": [
+              "geuraeseo"
+            ],
+            "note": "'So, that is why'. It is the sentence-starting partner of -aseo: same relationship, but it begins a new sentence instead of joining a clause. It is built from the same piece, which is why the two look alike."
+          },
+          {
+            "display": "maeil",
+            "script": "매일",
+            "cue": "every day",
+            "tag": "free",
+            "forms": [
+              "maeil"
+            ],
+            "note": "'Every day', from M4, still taking no marker."
+          },
+          {
+            "display": "masyeoyo",
+            "script": "마셔요",
+            "cue": "drink",
+            "tag": "free",
+            "forms": [
+              "masyeoyo"
+            ],
+            "note": "'Drink', from M3."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "The second sentence has no object at all. English needs 'it'; Korean has just said what the coffee is, so repeating it — or supplying a pronoun — would be heavier than the sentence wants.",
+      "sound": "KUH-pee-ga ma-SI-ssuh-yo. gu-RAE-suh MAE-il ma-SHUH-yo. Two even sentences with a real pause between them.",
+      "variations": [
+        {
+          "display": "Cha-ga masisseoyo. Geuraeseo maeil masyeoyo.",
+          "script": "차가 맛있어요. 그래서 매일 마셔요.",
+          "cue": "The tea is delicious. So I drink it every day.",
+          "changed": "a different drink"
+        },
+        {
+          "display": "Keopi-ga masisseoyo. Geuraeseo joahaeyo.",
+          "script": "커피가 맛있어요. 그래서 좋아해요.",
+          "cue": "The coffee is delicious. So I like it.",
+          "changed": "the liking verb from M1 in the second sentence"
+        },
+        {
+          "display": "Keopi-ga an masisseoyo. Geuraeseo an masyeoyo.",
+          "script": "커피가 안 맛있어요. 그래서 안 마셔요.",
+          "cue": "The coffee is not good. So I do not drink it.",
+          "changed": "both halves negated"
+        }
+      ],
+      "mistake": {
+        "display": "Keopi-ga masisseoyo. Geuraeseo i-geo-reul maeil masyeoyo.",
+        "script": "커피가 맛있어요. 그래서 이거를 매일 마셔요.",
+        "why": "A word for 'it' has been supplied in the second sentence. The coffee was named a moment ago, so Korean drops it — putting it back makes the sentence point at something rather than continue smoothly."
+      },
+      "usage": "Giving an opinion and what follows from it.",
+      "register": "neutral",
+      "mnemonic": "Say it once; the second sentence remembers."
+    },
+    {
+      "id": "L1-M9-S09",
+      "display": "Wae hangungmal-eul baewoyo?",
+      "script": "왜 한국말을 배워요?",
+      "cue": "Why do you study Korean?",
+      "glossEn": "Why are you learning Korean?",
+      "literal": "why Korean-object learn?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wae",
+            "script": "왜",
+            "cue": "why",
+            "tag": "free",
+            "forms": [
+              "wae"
+            ],
+            "note": "'Why'. Like eodi and myeot it stays where it is and lets the voice ask the question — wae bappayo? — and the answer usually comes back with -aseo on it."
+          },
+          {
+            "display": "hangungmal",
+            "script": "한국말",
+            "cue": "the Korean language",
+            "tag": "free",
+            "forms": [
+              "hangungmal",
+              "hangungmal-eul"
+            ],
+            "note": "'Korean', the language, from M1."
+          },
+          {
+            "display": "baewoyo",
+            "script": "배워요",
+            "cue": "learn",
+            "tag": "free",
+            "forms": [
+              "baewoyo",
+              "baeul"
+            ],
+            "note": "'Learn', from M3."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "wae comes before the object here and after the subject when there is one. Its seat is at the front of what is being asked about, not at the front of the sentence — and it never drags anything with it.",
+      "sound": "WAE han-GOONG-ma-rul BAE-wuh-yo, rising at the end. Two beats for wae and the object, then the verb.",
+      "variations": [
+        {
+          "display": "Wae hangungmal-eul baeul geoyeyo?",
+          "script": "왜 한국말을 배울 거예요?",
+          "cue": "Why will you study Korean?",
+          "changed": "the future, and wae does not move"
+        },
+        {
+          "display": "Minsu-neun wae hangungmal-eul baewoyo?",
+          "script": "민수는 왜 한국말을 배워요?",
+          "cue": "Why does Minsu study Korean?",
+          "changed": "a subject in front, and wae sits behind it"
+        },
+        {
+          "display": "Wae hanguk-e gayo?",
+          "script": "왜 한국에 가요?",
+          "cue": "Why are you going to Korea?",
+          "changed": "a different question with the same shape"
+        }
+      ],
+      "mistake": {
+        "display": "Hangungmal-eul wae baewoyo geuraeseo?",
+        "script": "한국말을 왜 배워요 그래서?",
+        "why": "A connector has been added at the end as if it were English's 'then'. geuraeseo begins a sentence and never ends one, and nothing follows the verb."
+      },
+      "usage": "Asking somebody about their reasons.",
+      "register": "neutral",
+      "mnemonic": "Ask in the shape the answer will take."
+    },
+    {
+      "id": "L1-M9-S10",
+      "display": "Hanguk-e gal geoyeyo. Geuraeseo hangungmal-eul baewoyo.",
+      "script": "한국에 갈 거예요. 그래서 한국말을 배워요.",
+      "cue": "I will go to Korea. So I am studying Korean.",
+      "glossEn": "I am going to go to Korea. That is why I am studying Korean.",
+      "literal": "Korea-to go-thing-is. so Korean-object learn",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hanguk",
+            "script": "한국",
+            "cue": "Korea",
+            "tag": "free",
+            "forms": [
+              "hanguk",
+              "hanguk-e"
+            ],
+            "note": "'Korea', from M1."
+          },
+          {
+            "display": "gayo",
+            "script": "가요",
+            "cue": "go",
+            "tag": "free",
+            "forms": [
+              "gayo",
+              "gal"
+            ],
+            "note": "'Go', from M6."
+          },
+          {
+            "display": "geoyeyo",
+            "script": "거예요",
+            "cue": "will · am going to",
+            "tag": "delta",
+            "forms": [
+              "geoyeyo"
+            ],
+            "note": "The future's second half, from M6."
+          },
+          {
+            "display": "geuraeseo",
+            "script": "그래서",
+            "cue": "so · that is why",
+            "tag": "free",
+            "forms": [
+              "geuraeseo"
+            ],
+            "note": "'So, that is why'. It is the sentence-starting partner of -aseo: same relationship, but it begins a new sentence instead of joining a clause. It is built from the same piece, which is why the two look alike."
+          },
+          {
+            "display": "hangungmal",
+            "script": "한국말",
+            "cue": "the Korean language",
+            "tag": "free",
+            "forms": [
+              "hangungmal",
+              "hangungmal-eul"
+            ],
+            "note": "'Korean', the language, from M1."
+          },
+          {
+            "display": "baewoyo",
+            "script": "배워요",
+            "cue": "learn",
+            "tag": "free",
+            "forms": [
+              "baewoyo",
+              "baeul"
+            ],
+            "note": "'Learn', from M3."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "The reason here is in the future and the result in the present, and nothing has to be matched up between them. Each sentence carries its own tense, and geuraeseo simply joins the two.",
+      "sound": "HAN-goo-ge gal GUH-ye-yo. gu-RAE-suh han-GOONG-ma-rul BAE-wuh-yo. Two full sentences, and the pause between them is where the connector gets its footing.",
+      "variations": [
+        {
+          "display": "Hanguk-e gal geoyeyo. Geuraeseo maeil gongbuhaeyo.",
+          "script": "한국에 갈 거예요. 그래서 매일 공부해요.",
+          "cue": "I will go to Korea. So I study every day.",
+          "changed": "a different result"
+        },
+        {
+          "display": "Hanguk-e gal geoyeyo. Geuraeseo bappayo.",
+          "script": "한국에 갈 거예요. 그래서 바빠요.",
+          "cue": "I will go to Korea. So I am busy.",
+          "changed": "a describing verb as the result"
+        },
+        {
+          "display": "Hangungmal-eul baewoyo. Hanguk-e gal geoyeyo.",
+          "script": "한국말을 배워요. 한국에 갈 거예요.",
+          "cue": "I am studying Korean. I will go to Korea.",
+          "changed": "the same two facts with no connector at all — and the link is left for the listener to make"
+        }
+      ],
+      "mistake": {
+        "display": "Hanguk-e gal geoyeyo-seo hangungmal-eul baewoyo.",
+        "script": "한국에 갈 거예요서 한국말을 배워요.",
+        "why": "The clause ending has been stuck onto a finished sentence. -aseo goes on a verb STEM; after a complete sentence you need geuraeseo and a full stop."
+      },
+      "usage": "Explaining a plan and what it has you doing.",
+      "register": "neutral",
+      "mnemonic": "Two sentences, two tenses, one connector."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M9-C01",
+      "display": "Cha-ga masisseoyo.",
+      "script": "차가 맛있어요.",
+      "cue": "The tea is delicious."
+    },
+    {
+      "id": "L1-M9-C02",
+      "display": "Oneul-eun an bappayo.",
+      "script": "오늘은 안 바빠요.",
+      "cue": "Today I am not busy."
+    },
+    {
+      "id": "L1-M9-C03",
+      "display": "Wae pigonhaeyo?",
+      "script": "왜 피곤해요?",
+      "cue": "Why are you tired?"
+    },
+    {
+      "id": "L1-M9-C04",
+      "display": "Ilhaeseo pigonhaeyo.",
+      "script": "일해서 피곤해요.",
+      "cue": "I am tired because I work."
+    },
+    {
+      "id": "L1-M9-C05",
+      "display": "Keopi-ga joayo. Geuraeseo maeil masyeoyo.",
+      "script": "커피가 좋아요. 그래서 매일 마셔요.",
+      "cue": "The coffee is good. So I drink it every day."
+    },
+    {
+      "id": "L1-M9-C06",
+      "display": "Bappaseo jip-e gal geoyeyo.",
+      "script": "바빠서 집에 갈 거예요.",
+      "cue": "I will go home because I am busy."
+    },
+    {
+      "id": "L1-M9-C07",
+      "display": "I-geo-neun an masisseoyo.",
+      "script": "이거는 안 맛있어요.",
+      "cue": "This is not delicious."
+    },
+    {
+      "id": "L1-M9-C08",
+      "display": "Minsu-neun wae hangungmal-eul baewoyo?",
+      "script": "민수는 왜 한국말을 배워요?",
+      "cue": "Why does Minsu study Korean?"
+    },
+    {
+      "id": "L1-M9-C09",
+      "display": "Pigonhaeyo. Geuraeseo jip-e isseoyo.",
+      "script": "피곤해요. 그래서 집에 있어요.",
+      "cue": "I am tired. So I am at home."
+    },
+    {
+      "id": "L1-M9-C10",
+      "display": "Cha-ga joayo.",
+      "script": "차가 좋아요.",
+      "cue": "The tea is good."
+    },
+    {
+      "id": "L1-M9-C11",
+      "display": "Bappayo. Geuraeseo an gayo.",
+      "script": "바빠요. 그래서 안 가요.",
+      "cue": "I am busy. So I am not going."
+    },
+    {
+      "id": "L1-M9-C12",
+      "display": "Wae hanguk-e gal geoyeyo?",
+      "script": "왜 한국에 갈 거예요?",
+      "cue": "Why will you go to Korea?"
+    },
+    {
+      "id": "L1-M9-C13",
+      "display": "Keopi-ga masisseoyo. Geuraeseo joahaeyo.",
+      "script": "커피가 맛있어요. 그래서 좋아해요.",
+      "cue": "The coffee is delicious. So I like it."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

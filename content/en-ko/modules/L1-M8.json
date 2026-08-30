@@ -1,0 +1,959 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M8",
+  "title": "Numbers & shopping",
+  "job": "Prices, quantities, buying",
+  "prerequisites": [
+    "L1-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 6,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "N-eul/reul + <number> + <counter> + juseyo",
+      "N-eun/neun + eolmayeyo + ?",
+      "N-eun/neun + <price> won-ieyo",
+      "N-i/ga + myeot + <counter> + isseoyo + ?",
+      "N-i/ga + <number> + <counter> + isseoyo",
+      "N-eul/reul + <number> + <counter> + V-ayo/-eoyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Korean has TWO complete sets of numbers and the job decides which one you use. The Sino-Korean set (il, i, sam, sa, o …) counts money, minutes and dates. The native Korean set (hana, dul, set, net …) counts things and hours. Nothing in English prepares you for this, and there is no way to get by with one of them."
+    },
+    {
+      "tag": "delta",
+      "text": "A counter is not optional. Korean cannot say 'two coffees' — it says keopi du jan, 'coffee two cups'. The order is noun, then number, then counter, and every countable thing needs one: -gae for objects, -myeong for people, -jan for cupfuls."
+    },
+    {
+      "tag": "interference",
+      "text": "The first four native numbers SHRINK in front of a counter: hana becomes han, dul becomes du, set becomes se, net becomes ne. It is not a casual variant — han gae is the only way to say 'one thing', and hana gae is simply wrong."
+    },
+    {
+      "tag": "delta",
+      "text": "Prices are Sino-Korean and won never takes a plural: samcheon won, ocheon won. The numbers are built by stacking pieces — sam plus cheon is three-thousand — and they are written and said as one word."
+    },
+    {
+      "tag": "free",
+      "text": "myeot ('how many') goes exactly where a number goes, in front of the counter: sagwa-ga myeot gae isseoyo? Like eodi it does not move to the front of the sentence, and the question is still made by the voice."
+    },
+    {
+      "tag": "free",
+      "text": "The counted phrase sits where the plain noun sat, and the noun keeps its marker: keopi-reul du jan juseyo. The number and counter follow the marked noun rather than replacing anything."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M8-S01",
+      "display": "Keopi-reul du jan juseyo.",
+      "script": "커피를 두 잔 주세요.",
+      "cue": "Two coffees, please.",
+      "glossEn": "Please give me two cups of coffee.",
+      "literal": "coffee-object two cup give-please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "keopi",
+            "script": "커피",
+            "cue": "coffee",
+            "tag": "free",
+            "forms": [
+              "keopi",
+              "keopi-reul",
+              "keopi-neun",
+              "keopi-ga"
+            ],
+            "note": "'Coffee', from M1 — counted here in cups."
+          },
+          {
+            "display": "dul",
+            "script": "둘",
+            "cue": "two",
+            "tag": "delta",
+            "forms": [
+              "dul",
+              "du"
+            ],
+            "note": "'Two', native Korean, and it shortens the same way: dul alone, du in front of a counter. The first four numbers all do this, and nothing else in the set does."
+          },
+          {
+            "display": "jan",
+            "script": "잔",
+            "cue": "(counter for cups)",
+            "tag": "delta",
+            "forms": [
+              "jan"
+            ],
+            "note": "The counter for a cupful — coffee, tea, water. keopi du jan is 'two coffees'. It is the word for a cup as well, which is why it counts them."
+          },
+          {
+            "display": "juseyo",
+            "script": "주세요",
+            "cue": "please give me",
+            "tag": "delta",
+            "forms": [
+              "juseyo"
+            ],
+            "note": "'Please give me', from M3. In an order the counted phrase comes before it, exactly where the plain object stood: keopi-reul du jan juseyo."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          5
+        ]
+      },
+      "trap": "English puts the number in front of the thing and pluralises it. Korean puts the noun first with its marker, then the number, then a word saying what KIND of thing is being counted — three pieces where English has two.",
+      "sound": "KUH-pee-rul du jan JOO-se-yo. du is one short beat and jan another; do not run them together, because the pair is doing two different jobs.",
+      "variations": [
+        {
+          "display": "Keopi-reul han jan juseyo.",
+          "script": "커피를 한 잔 주세요.",
+          "cue": "One coffee, please.",
+          "changed": "one instead of two, and hana has shrunk to han"
+        },
+        {
+          "display": "Cha-reul du jan juseyo.",
+          "script": "차를 두 잔 주세요.",
+          "cue": "Two teas, please.",
+          "changed": "a different drink in the same cups"
+        },
+        {
+          "display": "Keopi-reul se jan juseyo.",
+          "script": "커피를 세 잔 주세요.",
+          "cue": "Three coffees, please.",
+          "changed": "three, and set has shrunk to se"
+        }
+      ],
+      "mistake": {
+        "display": "Keopi-reul dul juseyo.",
+        "script": "커피를 둘 주세요.",
+        "why": "The counter has been left out and the full form of the number used. Both halves are wrong together: a counted thing needs its counter, and in front of one the number shrinks."
+      },
+      "usage": "Ordering in a cafe.",
+      "register": "neutral",
+      "mnemonic": "Noun, number, counter — in that order, every time."
+    },
+    {
+      "id": "L1-M8-S02",
+      "display": "I-geo-neun eolmayeyo?",
+      "script": "이거는 얼마예요?",
+      "cue": "How much is this?",
+      "glossEn": "How much is this?",
+      "literal": "this-topic how-much-is?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "i-geo",
+            "script": "이거",
+            "cue": "this · this thing",
+            "tag": "free",
+            "forms": [
+              "i-geo",
+              "i-geo-neun"
+            ],
+            "note": "'This one', from M1 — what you are pointing at in a shop."
+          },
+          {
+            "display": "eolmayeyo",
+            "script": "얼마예요",
+            "cue": "how much is it",
+            "tag": "free",
+            "forms": [
+              "eolmayeyo"
+            ],
+            "note": "'How much is it?'. Look at the end of it: -yeyo, M1's copula on a noun meaning 'how much'. Korean asks 'it is how much?' and the whole question is one word plus a rise."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "This is M1's copula doing shopping. eolmayeyo is a noun meaning 'how much' with -yeyo on the end, so the question is literally 'this is how much?' — there is no verb here meaning 'to cost'.",
+      "sound": "EE-guh-nun UL-ma-yeh-yo, rising at the end. Four beats in eolmayeyo, all light; the eo at the front is the same vowel as in jeo.",
+      "variations": [
+        {
+          "display": "Sagwa-neun eolmayeyo?",
+          "script": "사과는 얼마예요?",
+          "cue": "How much are the apples?",
+          "changed": "a named thing rather than one you are pointing at"
+        },
+        {
+          "display": "Cha-neun eolmayeyo?",
+          "script": "차는 얼마예요?",
+          "cue": "How much is the tea?",
+          "changed": "the same question about a drink"
+        },
+        {
+          "display": "I-geo-neun samcheon won-ieyo.",
+          "script": "이거는 삼천 원이에요.",
+          "cue": "This is three thousand won.",
+          "changed": "the answer, with a price where eolma stood"
+        }
+      ],
+      "mistake": {
+        "display": "I-geo-neun eolma isseoyo?",
+        "script": "이거는 얼마 있어요?",
+        "why": "The existence verb has been used to ask a price. eolma takes the copula, because you are asking what the thing IS, not whether it is there."
+      },
+      "usage": "Asking a price for anything at all.",
+      "register": "neutral",
+      "mnemonic": "A price is something a thing IS."
+    },
+    {
+      "id": "L1-M8-S03",
+      "display": "Samcheon won-ieyo.",
+      "script": "삼천 원이에요.",
+      "cue": "It is three thousand won.",
+      "glossEn": "It is three thousand won.",
+      "literal": "three-thousand won-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "samcheon",
+            "script": "삼천",
+            "cue": "three thousand",
+            "tag": "delta",
+            "forms": [
+              "samcheon"
+            ],
+            "note": "'Three thousand', built from the Sino-Korean numbers: sam ('three') plus cheon ('thousand'). Money is always counted with this set, and the pieces are written together as one word, which is how they are said."
+          },
+          {
+            "display": "won",
+            "script": "원",
+            "cue": "won (the currency)",
+            "tag": "free",
+            "forms": [
+              "won",
+              "won-ieyo"
+            ],
+            "note": "The Korean currency. It never takes a plural — samcheon won, not 'thousands of wons' — and prices are always said with the Sino-Korean numbers, never the native ones."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "won never becomes plural. English says 'three thousand wons' by reflex and Korean has no plural to reach for — the number does all the counting there is.",
+      "sound": "SAM-chun WUH-nee-eh-yo. The n of won links into the -ieyo, so it is heard as wuh-ni-e-yo. samcheon is two beats and is said as one word, because it is one.",
+      "variations": [
+        {
+          "display": "Ocheon won-ieyo.",
+          "script": "오천 원이에요.",
+          "cue": "It is five thousand won.",
+          "changed": "a different price from the same set"
+        },
+        {
+          "display": "Sagwa-neun samcheon won-ieyo.",
+          "script": "사과는 삼천 원이에요.",
+          "cue": "The apples are three thousand won.",
+          "changed": "the thing named as well as the price"
+        },
+        {
+          "display": "Samcheon won-ieyo?",
+          "script": "삼천 원이에요?",
+          "cue": "Is it three thousand won?",
+          "changed": "the same words with a rise — checking the price"
+        }
+      ],
+      "mistake": {
+        "display": "Set cheon won-ieyo.",
+        "script": "셋천 원이에요.",
+        "why": "The native number has been used for money. Prices are Sino-Korean: samcheon, not set-cheon, and the two sets never mix inside one number."
+      },
+      "usage": "Hearing or giving a price.",
+      "register": "neutral",
+      "mnemonic": "Money counts in the other set, and never in the plural."
+    },
+    {
+      "id": "L1-M8-S04",
+      "display": "Sagwa-reul se gae juseyo.",
+      "script": "사과를 세 개 주세요.",
+      "cue": "Three apples, please.",
+      "glossEn": "Please give me three apples.",
+      "literal": "apple-object three thing give-please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sagwa",
+            "script": "사과",
+            "cue": "apple",
+            "tag": "free",
+            "forms": [
+              "sagwa",
+              "sagwa-reul",
+              "sagwa-ga",
+              "sagwa-neun"
+            ],
+            "note": "'Apple'. It is the module's countable thing, so it appears with gae in most of these sentences."
+          },
+          {
+            "display": "set",
+            "script": "셋",
+            "cue": "three",
+            "tag": "delta",
+            "forms": [
+              "set",
+              "se"
+            ],
+            "note": "'Three', native Korean, shortening to se in front of a counter. Learn the pair together — set for counting, se for counting things."
+          },
+          {
+            "display": "gae",
+            "script": "개",
+            "cue": "(counter for things)",
+            "tag": "delta",
+            "forms": [
+              "gae"
+            ],
+            "note": "The all-purpose counter for objects. Korean cannot say 'three apples': it says 'apples three gae', and gae is what you use for anything that has no counter of its own."
+          },
+          {
+            "display": "juseyo",
+            "script": "주세요",
+            "cue": "please give me",
+            "tag": "delta",
+            "forms": [
+              "juseyo"
+            ],
+            "note": "'Please give me', from M3. In an order the counted phrase comes before it, exactly where the plain object stood: keopi-reul du jan juseyo."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          5
+        ]
+      },
+      "trap": "gae is the counter you use when a thing has no counter of its own, and most things do not. It is the safe one — but it is never right for people.",
+      "sound": "SA-gwa-rul se gae JOO-se-yo. se and gae are two short, separate beats. sagwa's gwa is one syllable, a g followed by the wa glide.",
+      "variations": [
+        {
+          "display": "Sagwa-reul han gae juseyo.",
+          "script": "사과를 한 개 주세요.",
+          "cue": "One apple, please.",
+          "changed": "one, with hana shrunk to han"
+        },
+        {
+          "display": "Sagwa-reul du gae juseyo.",
+          "script": "사과를 두 개 주세요.",
+          "cue": "Two apples, please.",
+          "changed": "two, with dul shrunk to du"
+        },
+        {
+          "display": "Chaek-eul se gae juseyo.",
+          "script": "책을 세 개 주세요.",
+          "cue": "Three books, please.",
+          "changed": "a different object taking the same all-purpose counter"
+        }
+      ],
+      "mistake": {
+        "display": "Sagwa se-reul juseyo.",
+        "script": "사과 세를 주세요.",
+        "why": "The marker has been moved onto the number. It belongs to the noun — sagwa-reul — and the number and counter follow the marked noun without markers of their own."
+      },
+      "usage": "Buying a countable number of anything.",
+      "register": "neutral",
+      "mnemonic": "gae counts things, and most things are things."
+    },
+    {
+      "id": "L1-M8-S05",
+      "display": "Chingu-ga du myeong isseoyo.",
+      "script": "친구가 두 명 있어요.",
+      "cue": "I have two friends.",
+      "glossEn": "There are two friends. · I have two friends.",
+      "literal": "friend-subject two person exists",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chingu",
+            "script": "친구",
+            "cue": "friend",
+            "tag": "free",
+            "forms": [
+              "chingu",
+              "chingu-ga"
+            ],
+            "note": "'Friend', from M1 — counted here with the counter for people."
+          },
+          {
+            "display": "dul",
+            "script": "둘",
+            "cue": "two",
+            "tag": "delta",
+            "forms": [
+              "dul",
+              "du"
+            ],
+            "note": "'Two', native Korean, and it shortens the same way: dul alone, du in front of a counter. The first four numbers all do this, and nothing else in the set does."
+          },
+          {
+            "display": "myeong",
+            "script": "명",
+            "cue": "(counter for people)",
+            "tag": "delta",
+            "forms": [
+              "myeong"
+            ],
+            "note": "The counter for people. chingu du myeong is 'two friends'. Using gae for a person is not merely wrong, it is rude — people have their own counter and it is this one."
+          },
+          {
+            "display": "isseoyo",
+            "script": "있어요",
+            "cue": "there is · have",
+            "tag": "delta",
+            "forms": [
+              "isseoyo"
+            ],
+            "note": "'There is', from M3, counting here rather than merely existing."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          5
+        ]
+      },
+      "trap": "People have their own counter. Using gae for a person is not a small error — it counts them as objects — so myeong is worth learning as a separate fact rather than as one item in a list.",
+      "sound": "CHIN-goo-ga du MYUNG i-SSUH-yo. myeong is one beat with the eo vowel and a held ng at the end.",
+      "variations": [
+        {
+          "display": "Chingu-ga han myeong isseoyo.",
+          "script": "친구가 한 명 있어요.",
+          "cue": "I have one friend.",
+          "changed": "one person"
+        },
+        {
+          "display": "Chingu-ga se myeong isseoyo.",
+          "script": "친구가 세 명 있어요.",
+          "cue": "I have three friends.",
+          "changed": "three people"
+        },
+        {
+          "display": "Chingu-ga myeot myeong isseoyo?",
+          "script": "친구가 몇 명 있어요?",
+          "cue": "How many friends do you have?",
+          "changed": "the question, with myeot where the number stood"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-ga du gae isseoyo.",
+        "script": "친구가 두 개 있어요.",
+        "why": "People have been counted with the counter for objects. It is grammatical and it is rude — myeong exists precisely so that people are not counted as things."
+      },
+      "usage": "Saying how many people there are.",
+      "register": "neutral",
+      "mnemonic": "People are never gae."
+    },
+    {
+      "id": "L1-M8-S06",
+      "display": "Sagwa-ga myeot gae isseoyo?",
+      "script": "사과가 몇 개 있어요?",
+      "cue": "How many apples are there?",
+      "glossEn": "How many apples are there?",
+      "literal": "apple-subject how-many thing exists?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sagwa",
+            "script": "사과",
+            "cue": "apple",
+            "tag": "free",
+            "forms": [
+              "sagwa",
+              "sagwa-reul",
+              "sagwa-ga",
+              "sagwa-neun"
+            ],
+            "note": "'Apple'. It is the module's countable thing, so it appears with gae in most of these sentences."
+          },
+          {
+            "display": "myeot",
+            "script": "몇",
+            "cue": "how many",
+            "tag": "free",
+            "forms": [
+              "myeot"
+            ],
+            "note": "'How many'. It goes where a number would go, in front of the counter: myeot gae, 'how many things'. Like eodi, it does not move to the front of the sentence — the voice does the asking."
+          },
+          {
+            "display": "gae",
+            "script": "개",
+            "cue": "(counter for things)",
+            "tag": "delta",
+            "forms": [
+              "gae"
+            ],
+            "note": "The all-purpose counter for objects. Korean cannot say 'three apples': it says 'apples three gae', and gae is what you use for anything that has no counter of its own."
+          },
+          {
+            "display": "isseoyo",
+            "script": "있어요",
+            "cue": "there is · have",
+            "tag": "delta",
+            "forms": [
+              "isseoyo"
+            ],
+            "note": "'There is', from M3, counting here rather than merely existing."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "myeot does not move to the front. English has to lead with 'how many'; Korean leaves it exactly where the number would be, and the rise at the end does the asking.",
+      "sound": "SA-gwa-ga myut GAE i-SSUH-yo, rising at the end. myeot ends in an unreleased t that runs straight into the g of gae, so the pair comes out as myut-kae.",
+      "variations": [
+        {
+          "display": "Chingu-ga myeot myeong isseoyo?",
+          "script": "친구가 몇 명 있어요?",
+          "cue": "How many friends are there?",
+          "changed": "people, so the counter changes"
+        },
+        {
+          "display": "Sagwa-ga se gae isseoyo.",
+          "script": "사과가 세 개 있어요.",
+          "cue": "There are three apples.",
+          "changed": "the answer, with a number where myeot stood"
+        },
+        {
+          "display": "Keopi-ga myeot jan isseoyo?",
+          "script": "커피가 몇 잔 있어요?",
+          "cue": "How many cups of coffee are there?",
+          "changed": "cups, so the counter changes again"
+        }
+      ],
+      "mistake": {
+        "display": "Myeot sagwa-ga isseoyo?",
+        "script": "몇 사과가 있어요?",
+        "why": "myeot has been fronted the way English fronts 'how many', and the counter dropped. It goes in the number's seat, in front of the counter, and the counter has to be there."
+      },
+      "usage": "Asking how many of something there are.",
+      "register": "neutral",
+      "mnemonic": "Ask where the answer will be."
+    },
+    {
+      "id": "L1-M8-S07",
+      "display": "Cha-neun ocheon won-ieyo.",
+      "script": "차는 오천 원이에요.",
+      "cue": "The tea is five thousand won.",
+      "glossEn": "As for the tea, it is five thousand won.",
+      "literal": "tea-topic five-thousand won-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cha",
+            "script": "차",
+            "cue": "tea",
+            "tag": "free",
+            "forms": [
+              "cha",
+              "cha-neun"
+            ],
+            "note": "'Tea', from M1, priced here rather than drunk."
+          },
+          {
+            "display": "ocheon",
+            "script": "오천",
+            "cue": "five thousand",
+            "tag": "delta",
+            "forms": [
+              "ocheon"
+            ],
+            "note": "'Five thousand' — o ('five') plus cheon ('thousand'), from the same Sino-Korean set as samcheon. Once you have the pieces, every price between them is built the same way."
+          },
+          {
+            "display": "won",
+            "script": "원",
+            "cue": "won (the currency)",
+            "tag": "free",
+            "forms": [
+              "won",
+              "won-ieyo"
+            ],
+            "note": "The Korean currency. It never takes a plural — samcheon won, not 'thousands of wons' — and prices are always said with the Sino-Korean numbers, never the native ones."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The topic marker here does what it always does — sets the tea apart from the other things on the menu. In a shop that is exactly what you want: this one, as opposed to the others.",
+      "sound": "CHA-nun O-chun WUH-nee-eh-yo. ocheon is two beats, o and cheon, and the whole price runs into the copula as one flow.",
+      "variations": [
+        {
+          "display": "Keopi-neun samcheon won-ieyo.",
+          "script": "커피는 삼천 원이에요.",
+          "cue": "The coffee is three thousand won.",
+          "changed": "a different item and a different price"
+        },
+        {
+          "display": "Cha-neun eolmayeyo?",
+          "script": "차는 얼마예요?",
+          "cue": "How much is the tea?",
+          "changed": "the question this sentence answers"
+        },
+        {
+          "display": "Sagwa-neun ocheon won-ieyo.",
+          "script": "사과는 오천 원이에요.",
+          "cue": "The apples are five thousand won.",
+          "changed": "a different thing at the same price"
+        }
+      ],
+      "mistake": {
+        "display": "Cha-neun ocheon won isseoyo.",
+        "script": "차는 오천 원 있어요.",
+        "why": "The existence verb again where the copula belongs. A price is what a thing IS: won-ieyo, not won isseoyo, which would say the tea has five thousand won on it."
+      },
+      "usage": "Answering a price question about one item.",
+      "register": "neutral",
+      "mnemonic": "-neun picks this one out; the copula says what it is."
+    },
+    {
+      "id": "L1-M8-S08",
+      "display": "Keopi-reul han jan juseyo.",
+      "script": "커피를 한 잔 주세요.",
+      "cue": "One coffee, please.",
+      "glossEn": "Please give me one cup of coffee.",
+      "literal": "coffee-object one cup give-please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "keopi",
+            "script": "커피",
+            "cue": "coffee",
+            "tag": "free",
+            "forms": [
+              "keopi",
+              "keopi-reul",
+              "keopi-neun",
+              "keopi-ga"
+            ],
+            "note": "'Coffee', from M1 — counted here in cups."
+          },
+          {
+            "display": "hana",
+            "script": "하나",
+            "cue": "one",
+            "tag": "delta",
+            "forms": [
+              "hana",
+              "han"
+            ],
+            "note": "'One', in the native Korean numbers — the set used for counting things. It has two shapes: hana when you count on its own, han when a counter follows. The short shape is not optional."
+          },
+          {
+            "display": "jan",
+            "script": "잔",
+            "cue": "(counter for cups)",
+            "tag": "delta",
+            "forms": [
+              "jan"
+            ],
+            "note": "The counter for a cupful — coffee, tea, water. keopi du jan is 'two coffees'. It is the word for a cup as well, which is why it counts them."
+          },
+          {
+            "display": "juseyo",
+            "script": "주세요",
+            "cue": "please give me",
+            "tag": "delta",
+            "forms": [
+              "juseyo"
+            ],
+            "note": "'Please give me', from M3. In an order the counted phrase comes before it, exactly where the plain object stood: keopi-reul du jan juseyo."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "hana becomes han and there is no choice about it. This is the shrinking rule at its sharpest, because hana is the number a learner knows best and the one they will reach for first.",
+      "sound": "KUH-pee-rul han jan JOO-se-yo. han and jan rhyme and are said as two even beats; the n of han is fully pronounced before the j.",
+      "variations": [
+        {
+          "display": "Keopi-reul du jan juseyo.",
+          "script": "커피를 두 잔 주세요.",
+          "cue": "Two coffees, please.",
+          "changed": "two, and dul shrinks the same way"
+        },
+        {
+          "display": "Cha-reul han jan juseyo.",
+          "script": "차를 한 잔 주세요.",
+          "cue": "One tea, please.",
+          "changed": "a different drink"
+        },
+        {
+          "display": "Mul-eul han jan juseyo.",
+          "script": "물을 한 잔 주세요.",
+          "cue": "A glass of water, please.",
+          "changed": "water takes the same cup counter"
+        }
+      ],
+      "mistake": {
+        "display": "Keopi-reul hana jan juseyo.",
+        "script": "커피를 하나 잔 주세요.",
+        "why": "The full form of the number has been used in front of a counter. hana counts on its own; han counts things, and there is no sentence in which the long form appears before a counter."
+      },
+      "usage": "Ordering one of something.",
+      "register": "neutral",
+      "mnemonic": "In front of a counter, the number gets shorter."
+    },
+    {
+      "id": "L1-M8-S09",
+      "display": "Sagwa-neun eolmayeyo?",
+      "script": "사과는 얼마예요?",
+      "cue": "How much are the apples?",
+      "glossEn": "How much are the apples?",
+      "literal": "apple-topic how-much-is?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sagwa",
+            "script": "사과",
+            "cue": "apple",
+            "tag": "free",
+            "forms": [
+              "sagwa",
+              "sagwa-reul",
+              "sagwa-ga",
+              "sagwa-neun"
+            ],
+            "note": "'Apple'. It is the module's countable thing, so it appears with gae in most of these sentences."
+          },
+          {
+            "display": "eolmayeyo",
+            "script": "얼마예요",
+            "cue": "how much is it",
+            "tag": "free",
+            "forms": [
+              "eolmayeyo"
+            ],
+            "note": "'How much is it?'. Look at the end of it: -yeyo, M1's copula on a noun meaning 'how much'. Korean asks 'it is how much?' and the whole question is one word plus a rise."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "There is no plural on sagwa and none is missing. Korean does not mark plurals in ordinary speech, so one apple and a whole crate of them are the same word.",
+      "sound": "SA-gwa-nun UL-ma-yeh-yo, rising. The topic marker is -neun because sagwa ends in a vowel; after a consonant it would be -eun, exactly as in M1.",
+      "variations": [
+        {
+          "display": "I-geo-neun eolmayeyo?",
+          "script": "이거는 얼마예요?",
+          "cue": "How much is this?",
+          "changed": "pointing rather than naming"
+        },
+        {
+          "display": "Sagwa-neun samcheon won-ieyo.",
+          "script": "사과는 삼천 원이에요.",
+          "cue": "The apples are three thousand won.",
+          "changed": "the answer"
+        },
+        {
+          "display": "Keopi-neun eolmayeyo?",
+          "script": "커피는 얼마예요?",
+          "cue": "How much is the coffee?",
+          "changed": "a different item on the same menu"
+        }
+      ],
+      "mistake": {
+        "display": "Sagwa-deul-eun eolmayeyo?",
+        "script": "사과들은 얼마예요?",
+        "why": "A plural ending has been added. Korean has one, and it is not used the way English uses its plural — a bare noun already covers one apple or twenty."
+      },
+      "usage": "Asking the price of a named item.",
+      "register": "neutral",
+      "mnemonic": "One word for one apple and for all of them."
+    },
+    {
+      "id": "L1-M8-S10",
+      "display": "Sagwa-reul han gae meogeoyo.",
+      "script": "사과를 한 개 먹어요.",
+      "cue": "I eat one apple.",
+      "glossEn": "I eat one apple.",
+      "literal": "apple-object one thing eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sagwa",
+            "script": "사과",
+            "cue": "apple",
+            "tag": "free",
+            "forms": [
+              "sagwa",
+              "sagwa-reul",
+              "sagwa-ga",
+              "sagwa-neun"
+            ],
+            "note": "'Apple'. It is the module's countable thing, so it appears with gae in most of these sentences."
+          },
+          {
+            "display": "hana",
+            "script": "하나",
+            "cue": "one",
+            "tag": "delta",
+            "forms": [
+              "hana",
+              "han"
+            ],
+            "note": "'One', in the native Korean numbers — the set used for counting things. It has two shapes: hana when you count on its own, han when a counter follows. The short shape is not optional."
+          },
+          {
+            "display": "gae",
+            "script": "개",
+            "cue": "(counter for things)",
+            "tag": "delta",
+            "forms": [
+              "gae"
+            ],
+            "note": "The all-purpose counter for objects. Korean cannot say 'three apples': it says 'apples three gae', and gae is what you use for anything that has no counter of its own."
+          },
+          {
+            "display": "meogeoyo",
+            "script": "먹어요",
+            "cue": "eat",
+            "tag": "free",
+            "forms": [
+              "meogeoyo"
+            ],
+            "note": "'Eat', from M3."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          5
+        ]
+      },
+      "trap": "The counted phrase is not only for shopping. It goes wherever a plain object went, with the same marker, and the verb at the end is whatever the sentence needed anyway.",
+      "sound": "SA-gwa-rul han GAE MUH-guh-yo. Five beats before the verb; keep han and gae separate and the count stays audible.",
+      "variations": [
+        {
+          "display": "Sagwa-reul du gae meogeoyo.",
+          "script": "사과를 두 개 먹어요.",
+          "cue": "I eat two apples.",
+          "changed": "two instead of one"
+        },
+        {
+          "display": "Sagwa-reul han gae meogeosseoyo.",
+          "script": "사과를 한 개 먹었어요.",
+          "cue": "I ate one apple.",
+          "changed": "the past, from M5"
+        },
+        {
+          "display": "Maeil sagwa-reul han gae meogeoyo.",
+          "script": "매일 사과를 한 개 먹어요.",
+          "cue": "I eat one apple every day.",
+          "changed": "a time word in front, from M4"
+        }
+      ],
+      "mistake": {
+        "display": "Sagwa han gae-reul meogeoyo.",
+        "script": "사과 한 개를 먹어요.",
+        "why": "The marker has been put on the counter instead of the noun. It belongs to sagwa, and the number and counter follow the marked noun."
+      },
+      "usage": "Talking about quantities in an ordinary sentence.",
+      "register": "neutral",
+      "mnemonic": "Count anywhere you would name a thing."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M8-C01",
+      "display": "Cha-reul du jan juseyo.",
+      "script": "차를 두 잔 주세요.",
+      "cue": "Two teas, please."
+    },
+    {
+      "id": "L1-M8-C02",
+      "display": "Sagwa-neun samcheon won-ieyo.",
+      "script": "사과는 삼천 원이에요.",
+      "cue": "The apples are three thousand won."
+    },
+    {
+      "id": "L1-M8-C03",
+      "display": "Keopi-neun eolmayeyo?",
+      "script": "커피는 얼마예요?",
+      "cue": "How much is the coffee?"
+    },
+    {
+      "id": "L1-M8-C04",
+      "display": "Chingu-ga se myeong isseoyo.",
+      "script": "친구가 세 명 있어요.",
+      "cue": "I have three friends."
+    },
+    {
+      "id": "L1-M8-C05",
+      "display": "Sagwa-reul du gae juseyo.",
+      "script": "사과를 두 개 주세요.",
+      "cue": "Two apples, please."
+    },
+    {
+      "id": "L1-M8-C06",
+      "display": "Keopi-ga myeot jan isseoyo?",
+      "script": "커피가 몇 잔 있어요?",
+      "cue": "How many cups of coffee are there?"
+    },
+    {
+      "id": "L1-M8-C07",
+      "display": "I-geo-neun ocheon won-ieyo.",
+      "script": "이거는 오천 원이에요.",
+      "cue": "This is five thousand won."
+    },
+    {
+      "id": "L1-M8-C08",
+      "display": "Sagwa-reul han gae meogeoyo.",
+      "script": "사과를 한 개 먹어요.",
+      "cue": "I eat one apple."
+    },
+    {
+      "id": "L1-M8-C09",
+      "display": "Chingu-ga myeot myeong isseoyo?",
+      "script": "친구가 몇 명 있어요?",
+      "cue": "How many friends do you have?"
+    },
+    {
+      "id": "L1-M8-C10",
+      "display": "Mul-eul han jan juseyo.",
+      "script": "물을 한 잔 주세요.",
+      "cue": "A glass of water, please."
+    },
+    {
+      "id": "L1-M8-C11",
+      "display": "Cha-neun ocheon won-ieyo?",
+      "script": "차는 오천 원이에요?",
+      "cue": "Is the tea five thousand won?"
+    },
+    {
+      "id": "L1-M8-C12",
+      "display": "Sagwa-ga se gae isseoyo.",
+      "script": "사과가 세 개 있어요.",
+      "cue": "There are three apples."
+    },
+    {
+      "id": "L1-M8-C13",
+      "display": "Keopi-reul han jan masyeoyo.",
+      "script": "커피를 한 잔 마셔요.",
+      "cue": "I drink one cup of coffee."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

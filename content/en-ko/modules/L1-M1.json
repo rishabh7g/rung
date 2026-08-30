@@ -1,0 +1,1181 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M1",
+  "title": "Who I am",
+  "job": "Introduce yourself and state what you like",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 4,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "jeo-neun + N + -ieyo/-yeyo",
+      "je ireum-eun + name + -ieyo/-yeyo",
+      "jeo-neun + place saram-ieyo",
+      "jeo-neun + N-eul/reul + joahaeyo",
+      "i-geo-neun + N + -ieyo/-yeyo",
+      "N-eun/neun + N-i/ga + anieyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "A Korean sentence puts its verb LAST, every time. Jeo-neun haksaeng-ieyo is, piece by piece, 'I-topic student-am'. Nothing moves it and nothing follows it, so once you know the last word of a sentence you know what is being done."
+    },
+    {
+      "tag": "delta",
+      "text": "Small endings called particles mark what each word is DOING in the sentence — the topic, the subject, the object. Because the particle carries the job, the order of the words in front of the verb is about emphasis, not grammar. This course writes those endings with a hyphen — jeo-neun, keopi-reul — so you can see the seam. Korean itself writes them joined straight onto the word, with no hyphen and no space; the hyphen is a teaching mark, not part of the spelling."
+    },
+    {
+      "tag": "delta",
+      "text": "'Am', 'is' and 'are' are not a separate word. The copula attaches to the noun: -ieyo after a consonant (haksaeng-ieyo), -yeyo after a vowel (uisa-yeyo). One ending, both jobs, and it is the last thing in the sentence because it is the verb."
+    },
+    {
+      "tag": "delta",
+      "text": "-neun (after a vowel) and -eun (after a consonant) mark the TOPIC — what the sentence is about. Introductions take it: jeo-neun, je ireum-eun, je chingu-neun. It is one ending in two shapes, chosen by the sound in front of it, exactly like the copula."
+    },
+    {
+      "tag": "delta",
+      "text": "-i (after a consonant) and -ga (after a vowel) mark the SUBJECT — what is new, or singled out, or the thing being denied. The honest rule at this stage is that a topic is what you are talking about and a subject is what you are pointing at; the rest comes with hearing it."
+    },
+    {
+      "tag": "delta",
+      "text": "There are no articles at all. chaek is 'book', 'a book' and 'the book' — nothing on the page tells them apart, and nothing needs to. There is no plural marking either in ordinary speech: chaek is 'books' too when the situation says so."
+    },
+    {
+      "tag": "interference",
+      "text": "joahaeyo ('like') is a VERB and it takes an object, marked with -eul after a consonant and -reul after a vowel: keopi-reul joahaeyo, chaek-eul joahaeyo. English 'like' behaves the same way, so the only new thing is that the object wears its marker and the verb waits at the end."
+    },
+    {
+      "tag": "interference",
+      "text": "You cannot negate the copula by putting a word in front of it. 'Is not' is its own word, anieyo, and what it denies takes -i/-ga rather than the topic marker: jeo-neun seonsaengnim-i anieyo. There is no shape of -ieyo that means 'is not'."
+    },
+    {
+      "tag": "delta",
+      "text": "This course speaks the -yo style — what you use with anyone you have just met, a shopkeeper, a colleague, an official. That decides the word for 'I': jeo, and its possessive je. The other word for 'I' belongs to the style you use with close friends, and it is not taught here."
+    },
+    {
+      "tag": "free",
+      "text": "Possession needs no word at all when one noun simply sits in front of another: je chingu is 'my friend', je chingu ireum is 'my friend's name'. Stack them and read left to right, exactly as English does with 'my friend's name'."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M1-S01",
+      "display": "Jeo-neun haksaeng-ieyo.",
+      "script": "저는 학생이에요.",
+      "cue": "I am a student.",
+      "glossEn": "I am a student.",
+      "literal": "I-topic student-am",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeo",
+            "script": "저",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [
+              "jeo",
+              "jeo-neun"
+            ],
+            "note": "'I', in the polite style this course speaks — the one you use with anyone you have just met. Its possessive is je ('my'). The blunter word for 'I' belongs with the style you use with close friends and is not taught here, so jeo is simply 'I' for now."
+          },
+          {
+            "display": "-neun",
+            "script": "-는",
+            "cue": "topic marker — 'as for …'",
+            "tag": "delta",
+            "forms": [
+              "-neun",
+              "-eun"
+            ],
+            "note": "The topic marker, in its two shapes: -neun after a vowel (jeo-neun) and -eun after a consonant (ireum-eun). It says 'as for this, here is what I am telling you', which is why every introduction in this module carries it. It is written joined onto the word in Korean; the hyphen here is only so you can see where the word ends and the marker starts."
+          },
+          {
+            "display": "haksaeng",
+            "script": "학생",
+            "cue": "student",
+            "tag": "free",
+            "forms": [
+              "haksaeng",
+              "haksaeng-ieyo",
+              "haksaeng-i"
+            ],
+            "note": "'Student', at school or university alike. The two longer shapes are the same word wearing its endings: haksaeng-ieyo is 'is a student' and haksaeng-i is the same noun marked as the subject."
+          },
+          {
+            "display": "-ieyo",
+            "script": "-이에요",
+            "cue": "am · is · are",
+            "tag": "delta",
+            "forms": [
+              "-ieyo",
+              "-yeyo"
+            ],
+            "note": "The copula — 'am', 'is', 'are', all three — and it is an ending, not a word: -ieyo after a consonant, -yeyo after a vowel. It is the verb of the sentence, so it comes last, and there is nothing else in the sentence doing the job of 'to be'."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2,
+          3,
+          8
+        ]
+      },
+      "trap": "There is no word for 'a' to put in front of haksaeng, and no word for 'am' to put in the middle. If you are hunting for either one you are hunting for something Korean does not have.",
+      "sound": "juh-nun HAK-ssaeng-ee-eh-yo. The eo of jeo is the vowel in English 'nut', not the one in 'no' — that difference is real and it separates words. In haksaeng the s tenses after the k, so it comes out hak-ssaeng, and the whole thing runs on into -ieyo with no break: the ending is part of the word, and it is said that way.",
+      "variations": [
+        {
+          "display": "Jeo-neun uisa-yeyo.",
+          "script": "저는 의사예요.",
+          "cue": "I am a doctor.",
+          "changed": "a different job — and the ending changes with it, -yeyo after the vowel of uisa"
+        },
+        {
+          "display": "Minsu-neun haksaeng-ieyo.",
+          "script": "민수는 학생이에요.",
+          "cue": "Minsu is a student.",
+          "changed": "somebody else is the topic; nothing else in the sentence moves"
+        },
+        {
+          "display": "Jeo-neun haksaeng-i anieyo.",
+          "script": "저는 학생이 아니에요.",
+          "cue": "I am not a student.",
+          "changed": "the denial — the noun takes -i and anieyo replaces the copula"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun ieyo haksaeng.",
+        "script": "저는 이에요 학생.",
+        "why": "Two things are wrong and they are the same mistake: the verb has been moved out of last place, and the ending has been torn off the noun it belongs to. -ieyo is not a word that can stand anywhere; it is the tail of haksaeng-ieyo."
+      },
+      "usage": "The first thing you say about yourself, to anyone at all.",
+      "register": "neutral",
+      "mnemonic": "The sentence ends where the verb is, and the verb is glued to the noun in front of it."
+    },
+    {
+      "id": "L1-M1-S02",
+      "display": "Je ireum-eun Minsu-yeyo.",
+      "script": "제 이름은 민수예요.",
+      "cue": "My name is Minsu.",
+      "glossEn": "My name is Minsu.",
+      "literal": "my name-topic Minsu-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je",
+            "script": "제",
+            "cue": "my",
+            "tag": "free",
+            "forms": [
+              "je"
+            ],
+            "note": "'My'. It is jeo worn down in front of another noun, and it takes no marker of its own: je ireum, je chingu, je chaek. Put it in front and read straight on."
+          },
+          {
+            "display": "ireum",
+            "script": "이름",
+            "cue": "name",
+            "tag": "free",
+            "forms": [
+              "ireum",
+              "ireum-eun"
+            ],
+            "note": "'Name'. Korean gives a name with 'my name is …' far more readily than by saying 'I am …', so this is the sentence to reach for. The -eun on it is the topic marker: as for my name, it is this."
+          },
+          {
+            "display": "-neun",
+            "script": "-는",
+            "cue": "topic marker — 'as for …'",
+            "tag": "delta",
+            "forms": [
+              "-neun",
+              "-eun"
+            ],
+            "note": "The topic marker, in its two shapes: -neun after a vowel (jeo-neun) and -eun after a consonant (ireum-eun). It says 'as for this, here is what I am telling you', which is why every introduction in this module carries it. It is written joined onto the word in Korean; the hyphen here is only so you can see where the word ends and the marker starts."
+          },
+          {
+            "display": "Minsu",
+            "script": "민수",
+            "cue": "Minsu (a name)",
+            "tag": "free",
+            "forms": [
+              "Minsu",
+              "Minsu-neun",
+              "Minsu-yeyo"
+            ],
+            "note": "A man's given name. Names take the same markers every other noun takes — Minsu-neun for the topic, Minsu-yeyo for 'is Minsu' — and they never change shape themselves. Swap in your own."
+          },
+          {
+            "display": "-ieyo",
+            "script": "-이에요",
+            "cue": "am · is · are",
+            "tag": "delta",
+            "forms": [
+              "-ieyo",
+              "-yeyo"
+            ],
+            "note": "The copula — 'am', 'is', 'are', all three — and it is an ending, not a word: -ieyo after a consonant, -yeyo after a vowel. It is the verb of the sentence, so it comes last, and there is nothing else in the sentence doing the job of 'to be'."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2,
+          3,
+          9
+        ]
+      },
+      "trap": "English can introduce itself with 'I am Minsu', and so can Korean — but this is the sentence a Korean speaker reaches for first, and it puts the NAME, not the person, as the topic. Starting from 'I' every time is the tell.",
+      "sound": "jeh ee-RUM-un MIN-soo-yeh-yo. je is short and light. The -eun on ireum links straight onto the m in front of it, so ireum-eun comes out as one flowing i-reu-mun — that liaison is normal, and the hyphen in the writing is there to show you the pieces, not a pause to make.",
+      "variations": [
+        {
+          "display": "Je ireum-eun Yuna-yeyo.",
+          "script": "제 이름은 유나예요.",
+          "cue": "My name is Yuna.",
+          "changed": "another name, and -yeyo again because Yuna ends in a vowel"
+        },
+        {
+          "display": "Je chingu ireum-eun Minsu-yeyo.",
+          "script": "제 친구 이름은 민수예요.",
+          "cue": "My friend's name is Minsu.",
+          "changed": "one more noun in front — 'my friend name' — and no word joins them"
+        },
+        {
+          "display": "Jeo-neun Minsu-yeyo.",
+          "script": "저는 민수예요.",
+          "cue": "I am Minsu.",
+          "changed": "the shorter introduction, with the person as the topic instead of the name"
+        }
+      ],
+      "mistake": {
+        "display": "Je ireum-eun-ieyo Minsu.",
+        "script": "제 이름은이에요 민수.",
+        "why": "Two markers cannot sit on the same word, and the copula cannot leave the noun it belongs to. -eun marks ireum as the topic; -yeyo belongs on Minsu, at the end, where the verb goes."
+      },
+      "usage": "How a name is given in Korean, in an introduction or on the phone.",
+      "register": "neutral",
+      "mnemonic": "The name goes last because the name is the news, and the news is the verb's job."
+    },
+    {
+      "id": "L1-M1-S03",
+      "display": "Jeo-neun hanguk saram-ieyo.",
+      "script": "저는 한국 사람이에요.",
+      "cue": "I am Korean.",
+      "glossEn": "I am a Korean person.",
+      "literal": "I-topic Korea person-am",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeo",
+            "script": "저",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [
+              "jeo",
+              "jeo-neun"
+            ],
+            "note": "'I', in the polite style this course speaks — the one you use with anyone you have just met. Its possessive is je ('my'). The blunter word for 'I' belongs with the style you use with close friends and is not taught here, so jeo is simply 'I' for now."
+          },
+          {
+            "display": "-neun",
+            "script": "-는",
+            "cue": "topic marker — 'as for …'",
+            "tag": "delta",
+            "forms": [
+              "-neun",
+              "-eun"
+            ],
+            "note": "The topic marker, in its two shapes: -neun after a vowel (jeo-neun) and -eun after a consonant (ireum-eun). It says 'as for this, here is what I am telling you', which is why every introduction in this module carries it. It is written joined onto the word in Korean; the hyphen here is only so you can see where the word ends and the marker starts."
+          },
+          {
+            "display": "hanguk",
+            "script": "한국",
+            "cue": "Korea",
+            "tag": "free",
+            "forms": [
+              "hanguk"
+            ],
+            "note": "'Korea'. Put it in front of saram and you have 'Korean person' — Korean builds nationalities that way rather than with a separate adjective, so there is no word here that means 'Korean' on its own."
+          },
+          {
+            "display": "saram",
+            "script": "사람",
+            "cue": "person",
+            "tag": "free",
+            "forms": [
+              "saram",
+              "saram-ieyo"
+            ],
+            "note": "'Person'. hanguk saram is a Korean, hoju saram an Australian: the country sits in front and nothing joins them. It is the ordinary way to say where somebody is from."
+          },
+          {
+            "display": "-ieyo",
+            "script": "-이에요",
+            "cue": "am · is · are",
+            "tag": "delta",
+            "forms": [
+              "-ieyo",
+              "-yeyo"
+            ],
+            "note": "The copula — 'am', 'is', 'are', all three — and it is an ending, not a word: -ieyo after a consonant, -yeyo after a vowel. It is the verb of the sentence, so it comes last, and there is nothing else in the sentence doing the job of 'to be'."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2,
+          3,
+          5
+        ]
+      },
+      "trap": "There is no single word meaning 'Korean' to translate into. Korean says 'Korea person', two nouns side by side, and the country never changes shape to fit the person.",
+      "sound": "juh-nun HAN-gook SAH-ram-ee-eh-yo. The k at the end of hanguk is held, not released — the mouth closes on it and stops, and English speakers tend to add a little puff of air that is not there. saram has two even, light syllables; neither is stressed, because Korean does not stress one syllable over another the way English does.",
+      "variations": [
+        {
+          "display": "Minsu-neun hanguk saram-ieyo.",
+          "script": "민수는 한국 사람이에요.",
+          "cue": "Minsu is Korean.",
+          "changed": "the topic changes and the rest of the sentence stands still"
+        },
+        {
+          "display": "Jeo-neun hanguk saram-i anieyo.",
+          "script": "저는 한국 사람이 아니에요.",
+          "cue": "I am not Korean.",
+          "changed": "the denial, with -i on saram and anieyo at the end"
+        },
+        {
+          "display": "Je chingu-neun hanguk saram-ieyo.",
+          "script": "제 친구는 한국 사람이에요.",
+          "cue": "My friend is Korean.",
+          "changed": "two nouns as the topic — 'my friend' — and one marker for both"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun hanguk-ieyo.",
+        "script": "저는 한국이에요.",
+        "why": "That says 'I am Korea' — the country itself. The person needs saram: hanguk saram, a Korea-person. This is one of the few places where dropping a word changes the sentence into something absurd rather than merely wrong."
+      },
+      "usage": "Saying where you are from, at a first meeting.",
+      "register": "neutral",
+      "mnemonic": "Country first, person second: you are a Korea-person, and the words come in that order."
+    },
+    {
+      "id": "L1-M1-S04",
+      "display": "Jeo-neun keopi-reul joahaeyo.",
+      "script": "저는 커피를 좋아해요.",
+      "cue": "I like coffee.",
+      "glossEn": "I like coffee.",
+      "literal": "I-topic coffee-object like",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeo",
+            "script": "저",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [
+              "jeo",
+              "jeo-neun"
+            ],
+            "note": "'I', in the polite style this course speaks — the one you use with anyone you have just met. Its possessive is je ('my'). The blunter word for 'I' belongs with the style you use with close friends and is not taught here, so jeo is simply 'I' for now."
+          },
+          {
+            "display": "-neun",
+            "script": "-는",
+            "cue": "topic marker — 'as for …'",
+            "tag": "delta",
+            "forms": [
+              "-neun",
+              "-eun"
+            ],
+            "note": "The topic marker, in its two shapes: -neun after a vowel (jeo-neun) and -eun after a consonant (ireum-eun). It says 'as for this, here is what I am telling you', which is why every introduction in this module carries it. It is written joined onto the word in Korean; the hyphen here is only so you can see where the word ends and the marker starts."
+          },
+          {
+            "display": "keopi",
+            "script": "커피",
+            "cue": "coffee",
+            "tag": "free",
+            "forms": [
+              "keopi",
+              "keopi-reul",
+              "keopi-yeyo"
+            ],
+            "note": "'Coffee' — borrowed from English and reshaped to fit Korean sounds, which is why it has three syllables. With -reul it is the thing you like or drink; with -yeyo it is what something is."
+          },
+          {
+            "display": "-eul",
+            "script": "-을",
+            "cue": "object marker",
+            "tag": "delta",
+            "forms": [
+              "-eul",
+              "-reul"
+            ],
+            "note": "The object marker, in its two shapes: -eul after a consonant (chaek-eul) and -reul after a vowel (keopi-reul). It marks the thing the verb acts on, which English does with position alone. Because the marker does the work, the object can move and the sentence still means the same thing."
+          },
+          {
+            "display": "joahaeyo",
+            "script": "좋아해요",
+            "cue": "like",
+            "tag": "interference",
+            "forms": [
+              "joahaeyo"
+            ],
+            "note": "'Like', and it is a verb that takes an object: keopi-reul joahaeyo. Do not confuse it with joayo, which you meet later and which means 'is good' — that one describes the thing itself and takes no object at all. Same root, two different jobs."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          6,
+          8
+        ]
+      },
+      "trap": "English puts the verb in the middle, and everything in you will want to say 'I like — coffee'. Korean puts the object first, wearing its marker, and holds the verb to the end. The marker is what tells you coffee is the thing being liked, so nothing is lost by the wait.",
+      "sound": "juh-nun KUH-pee-rul jo-ah-HAE-yo. keopi has the same eo as jeo, so it is 'kuh', not 'ko'. joahaeyo has an h buried in the middle of the written word that nobody pronounces — it runs together as jo-a-hae-yo, which is exactly what this course writes, because this course spells words the way they are said.",
+      "variations": [
+        {
+          "display": "Jeo-neun cha-reul joahaeyo.",
+          "script": "저는 차를 좋아해요.",
+          "cue": "I like tea.",
+          "changed": "a different object — and -reul instead of -eul, chosen by the vowel at the end of cha"
+        },
+        {
+          "display": "Je chingu-neun keopi-reul joahaeyo.",
+          "script": "제 친구는 커피를 좋아해요.",
+          "cue": "My friend likes coffee.",
+          "changed": "somebody else does the liking; the verb does not change for the person"
+        },
+        {
+          "display": "Jeo-neun chaek-eul joahaeyo.",
+          "script": "저는 책을 좋아해요.",
+          "cue": "I like books.",
+          "changed": "an object ending in a consonant, so the marker is -eul — and chaek is 'books' here with nothing added"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun joahaeyo keopi.",
+        "script": "저는 좋아해요 커피.",
+        "why": "The verb has been dragged into the middle, English-style, and the object has been left bare at the end. Korean never does either: the object wears -reul and the verb finishes the sentence."
+      },
+      "usage": "Saying what you like, in an introduction or over a menu.",
+      "register": "neutral",
+      "mnemonic": "The thing you like wears a marker and goes in front; liking it is the last thing you say."
+    },
+    {
+      "id": "L1-M1-S05",
+      "display": "I-geo-neun cha-yeyo.",
+      "script": "이거는 차예요.",
+      "cue": "This is tea.",
+      "glossEn": "This is tea.",
+      "literal": "this-topic tea-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "i-geo",
+            "script": "이거",
+            "cue": "this · this thing",
+            "tag": "free",
+            "forms": [
+              "i-geo",
+              "i-geo-neun"
+            ],
+            "note": "'This one', pointing at something in front of you. It is written as one piece here because the bare i on its own is the subject marker, and keeping them apart is what lets each of them mean one thing."
+          },
+          {
+            "display": "-neun",
+            "script": "-는",
+            "cue": "topic marker — 'as for …'",
+            "tag": "delta",
+            "forms": [
+              "-neun",
+              "-eun"
+            ],
+            "note": "The topic marker, in its two shapes: -neun after a vowel (jeo-neun) and -eun after a consonant (ireum-eun). It says 'as for this, here is what I am telling you', which is why every introduction in this module carries it. It is written joined onto the word in Korean; the hyphen here is only so you can see where the word ends and the marker starts."
+          },
+          {
+            "display": "cha",
+            "script": "차",
+            "cue": "tea",
+            "tag": "free",
+            "forms": [
+              "cha",
+              "cha-yeyo",
+              "cha-reul"
+            ],
+            "note": "'Tea'. It is one syllable and it takes its markers like any other noun: cha-yeyo, 'it is tea'; cha-reul, tea as the object of a verb."
+          },
+          {
+            "display": "-ieyo",
+            "script": "-이에요",
+            "cue": "am · is · are",
+            "tag": "delta",
+            "forms": [
+              "-ieyo",
+              "-yeyo"
+            ],
+            "note": "The copula — 'am', 'is', 'are', all three — and it is an ending, not a word: -ieyo after a consonant, -yeyo after a vowel. It is the verb of the sentence, so it comes last, and there is nothing else in the sentence doing the job of 'to be'."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "trap": "In English 'this' can stand alone as a subject and the sentence needs 'is' as a separate word. Korean's i-geo also stands alone, but the 'is' has nowhere to be except attached to the tea.",
+      "sound": "EE-guh-nun CHA-yeh-yo. The geo of i-geo is the same eo again — 'guh', not 'go'. cha starts with an aspirated ch, a real puff of air, which is what keeps it apart from the softer j sound at the start of jeo.",
+      "variations": [
+        {
+          "display": "I-geo-neun keopi-yeyo.",
+          "script": "이거는 커피예요.",
+          "cue": "This is coffee.",
+          "changed": "a different thing, and -yeyo again after the vowel"
+        },
+        {
+          "display": "I-geo-neun chaek-ieyo.",
+          "script": "이거는 책이에요.",
+          "cue": "This is a book.",
+          "changed": "chaek ends in a consonant, so the copula is -ieyo"
+        },
+        {
+          "display": "I-geo-neun je chaek-ieyo.",
+          "script": "이거는 제 책이에요.",
+          "cue": "This is my book.",
+          "changed": "je in front of the noun makes it mine, and nothing else moves"
+        }
+      ],
+      "mistake": {
+        "display": "I-neun cha-yeyo.",
+        "script": "이는 차예요.",
+        "why": "The bare i is the subject marker, not the word for 'this'. Written alone it is an ending with nothing to attach to, and the sentence stops making sense. 'This one' is i-geo, kept whole for exactly that reason."
+      },
+      "usage": "Pointing at something on a table and naming it.",
+      "register": "neutral",
+      "mnemonic": "i-geo is one piece: the moment you break it in half you are left holding a marker."
+    },
+    {
+      "id": "L1-M1-S06",
+      "display": "Je chingu-neun uisa-yeyo.",
+      "script": "제 친구는 의사예요.",
+      "cue": "My friend is a doctor.",
+      "glossEn": "My friend is a doctor.",
+      "literal": "my friend-topic doctor-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je",
+            "script": "제",
+            "cue": "my",
+            "tag": "free",
+            "forms": [
+              "je"
+            ],
+            "note": "'My'. It is jeo worn down in front of another noun, and it takes no marker of its own: je ireum, je chingu, je chaek. Put it in front and read straight on."
+          },
+          {
+            "display": "chingu",
+            "script": "친구",
+            "cue": "friend",
+            "tag": "free",
+            "forms": [
+              "chingu",
+              "chingu-neun",
+              "chingu-yeyo"
+            ],
+            "note": "'Friend'. je chingu is 'my friend' — no marker between the two words, and none needed."
+          },
+          {
+            "display": "-neun",
+            "script": "-는",
+            "cue": "topic marker — 'as for …'",
+            "tag": "delta",
+            "forms": [
+              "-neun",
+              "-eun"
+            ],
+            "note": "The topic marker, in its two shapes: -neun after a vowel (jeo-neun) and -eun after a consonant (ireum-eun). It says 'as for this, here is what I am telling you', which is why every introduction in this module carries it. It is written joined onto the word in Korean; the hyphen here is only so you can see where the word ends and the marker starts."
+          },
+          {
+            "display": "uisa",
+            "script": "의사",
+            "cue": "doctor",
+            "tag": "free",
+            "forms": [
+              "uisa",
+              "uisa-yeyo",
+              "uisa-ga"
+            ],
+            "note": "'Doctor'. It ends in a vowel, so the copula on it is -yeyo and the subject marker is -ga — the same choice the endings always make, decided by the sound in front of them."
+          },
+          {
+            "display": "-ieyo",
+            "script": "-이에요",
+            "cue": "am · is · are",
+            "tag": "delta",
+            "forms": [
+              "-ieyo",
+              "-yeyo"
+            ],
+            "note": "The copula — 'am', 'is', 'are', all three — and it is an ending, not a word: -ieyo after a consonant, -yeyo after a vowel. It is the verb of the sentence, so it comes last, and there is nothing else in the sentence doing the job of 'to be'."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2,
+          3,
+          9
+        ]
+      },
+      "trap": "'My friend' is two words in Korean too, but nothing joins them — no 'of', no possessive ending. je simply sits in front, and the topic marker goes on the end of the whole phrase, not on je.",
+      "sound": "jeh CHIN-goo-nun OO-ee-sa-yeh-yo. uisa starts with the ui vowel, which is a quick oo sliding into ee — it is the hardest vowel in the language for an English speaker and it is worth slowing down for. chingu has the same aspirated ch as cha.",
+      "variations": [
+        {
+          "display": "Je chingu-neun haksaeng-ieyo.",
+          "script": "제 친구는 학생이에요.",
+          "cue": "My friend is a student.",
+          "changed": "a different job, and -ieyo after the consonant"
+        },
+        {
+          "display": "Je chingu-neun uisa-ga anieyo.",
+          "script": "제 친구는 의사가 아니에요.",
+          "cue": "My friend is not a doctor.",
+          "changed": "the denial — uisa ends in a vowel, so it takes -ga rather than -i"
+        },
+        {
+          "display": "Yuna-neun uisa-yeyo.",
+          "script": "유나는 의사예요.",
+          "cue": "Yuna is a doctor.",
+          "changed": "a name as the topic instead of a description"
+        }
+      ],
+      "mistake": {
+        "display": "Je-neun chingu uisa-yeyo.",
+        "script": "제는 친구 의사예요.",
+        "why": "The topic marker has been put on je, which is not a noun you can talk about — it means 'my'. The marker belongs at the end of the whole phrase: je chingu-neun."
+      },
+      "usage": "Telling somebody about a person you both know.",
+      "register": "neutral",
+      "mnemonic": "Everything that belongs together stands together, and the marker waits until the group is finished."
+    },
+    {
+      "id": "L1-M1-S07",
+      "display": "Jeo-neun seonsaengnim-i anieyo.",
+      "script": "저는 선생님이 아니에요.",
+      "cue": "I am not a teacher.",
+      "glossEn": "I am not a teacher.",
+      "literal": "I-topic teacher-subject is-not",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeo",
+            "script": "저",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [
+              "jeo",
+              "jeo-neun"
+            ],
+            "note": "'I', in the polite style this course speaks — the one you use with anyone you have just met. Its possessive is je ('my'). The blunter word for 'I' belongs with the style you use with close friends and is not taught here, so jeo is simply 'I' for now."
+          },
+          {
+            "display": "-neun",
+            "script": "-는",
+            "cue": "topic marker — 'as for …'",
+            "tag": "delta",
+            "forms": [
+              "-neun",
+              "-eun"
+            ],
+            "note": "The topic marker, in its two shapes: -neun after a vowel (jeo-neun) and -eun after a consonant (ireum-eun). It says 'as for this, here is what I am telling you', which is why every introduction in this module carries it. It is written joined onto the word in Korean; the hyphen here is only so you can see where the word ends and the marker starts."
+          },
+          {
+            "display": "seonsaengnim",
+            "script": "선생님",
+            "cue": "teacher",
+            "tag": "free",
+            "forms": [
+              "seonsaengnim",
+              "seonsaengnim-i",
+              "seonsaengnim-ieyo"
+            ],
+            "note": "'Teacher'. The -nim on the end is a mark of respect that is simply part of the word here: you do not call a teacher anything else. It ends in a consonant, so it takes -i and -ieyo."
+          },
+          {
+            "display": "-i",
+            "script": "-이",
+            "cue": "subject marker",
+            "tag": "delta",
+            "forms": [
+              "-i",
+              "-ga"
+            ],
+            "note": "The subject marker, in its two shapes: -i after a consonant (haksaeng-i) and -ga after a vowel (uisa-ga). It points at something rather than introducing it, and it is what a denial takes — seonsaengnim-i anieyo, 'it is not a teacher that I am'. Do not read it as a second way of saying -neun: the topic tells you what the sentence is about, this tells you what is being singled out."
+          },
+          {
+            "display": "anieyo",
+            "script": "아니에요",
+            "cue": "is not · am not",
+            "tag": "interference",
+            "forms": [
+              "anieyo"
+            ],
+            "note": "'Is not'. It is a word in its own right, not the copula with something added, and the thing being denied wears -i or -ga in front of it. There is no way to build this out of -ieyo, which is exactly why it has to be learned as its own word."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4,
+          7
+        ]
+      },
+      "trap": "There is nothing here that corresponds to English 'not'. You cannot put a word in front of the copula, because the copula is an ending; the whole 'is not' is one separate word, and it makes the noun in front of it take -i or -ga instead of the topic marker.",
+      "sound": "juh-nun sun-SAENG-nim-ee ah-nee-eh-yo. seonsaengnim is four beats and none of them is stressed — resist making a stressed syllable out of SAENG. The -i on the end links onto the m in front of it, so it is heard as ni-mi, and anieyo follows straight on.",
+      "variations": [
+        {
+          "display": "Jeo-neun uisa-ga anieyo.",
+          "script": "저는 의사가 아니에요.",
+          "cue": "I am not a doctor.",
+          "changed": "uisa ends in a vowel, so the marker is -ga"
+        },
+        {
+          "display": "Minsu-neun seonsaengnim-i anieyo.",
+          "script": "민수는 선생님이 아니에요.",
+          "cue": "Minsu is not a teacher.",
+          "changed": "a different person doing the denying"
+        },
+        {
+          "display": "Jeo-neun seonsaengnim-ieyo.",
+          "script": "저는 선생님이에요.",
+          "cue": "I am a teacher.",
+          "changed": "the plain statement, for comparison — the copula comes back and -i disappears"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun seonsaengnim-eun anieyo.",
+        "script": "저는 선생님은 아니에요.",
+        "why": "The topic marker cannot do this job. What is being denied is singled out, and singling out is what -i and -ga are for: seonsaengnim-i anieyo."
+      },
+      "usage": "Correcting somebody who has guessed wrong about you.",
+      "register": "neutral",
+      "mnemonic": "Denial has its own word, and the word in front of it changes its marker to point at what is denied."
+    },
+    {
+      "id": "L1-M1-S08",
+      "display": "Minsu-neun hangungmal-eul joahaeyo.",
+      "script": "민수는 한국말을 좋아해요.",
+      "cue": "Minsu likes Korean.",
+      "glossEn": "Minsu likes the Korean language.",
+      "literal": "Minsu-topic Korean-language-object likes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Minsu",
+            "script": "민수",
+            "cue": "Minsu (a name)",
+            "tag": "free",
+            "forms": [
+              "Minsu",
+              "Minsu-neun",
+              "Minsu-yeyo"
+            ],
+            "note": "A man's given name. Names take the same markers every other noun takes — Minsu-neun for the topic, Minsu-yeyo for 'is Minsu' — and they never change shape themselves. Swap in your own."
+          },
+          {
+            "display": "-neun",
+            "script": "-는",
+            "cue": "topic marker — 'as for …'",
+            "tag": "delta",
+            "forms": [
+              "-neun",
+              "-eun"
+            ],
+            "note": "The topic marker, in its two shapes: -neun after a vowel (jeo-neun) and -eun after a consonant (ireum-eun). It says 'as for this, here is what I am telling you', which is why every introduction in this module carries it. It is written joined onto the word in Korean; the hyphen here is only so you can see where the word ends and the marker starts."
+          },
+          {
+            "display": "hangungmal",
+            "script": "한국말",
+            "cue": "the Korean language",
+            "tag": "free",
+            "forms": [
+              "hangungmal",
+              "hangungmal-eul"
+            ],
+            "note": "'Korean', the language. It is hanguk plus mal ('speech'), and the k softens into ng when the two meet — which is why it is written hangungmal here: this course spells words the way they are said."
+          },
+          {
+            "display": "-eul",
+            "script": "-을",
+            "cue": "object marker",
+            "tag": "delta",
+            "forms": [
+              "-eul",
+              "-reul"
+            ],
+            "note": "The object marker, in its two shapes: -eul after a consonant (chaek-eul) and -reul after a vowel (keopi-reul). It marks the thing the verb acts on, which English does with position alone. Because the marker does the work, the object can move and the sentence still means the same thing."
+          },
+          {
+            "display": "joahaeyo",
+            "script": "좋아해요",
+            "cue": "like",
+            "tag": "interference",
+            "forms": [
+              "joahaeyo"
+            ],
+            "note": "'Like', and it is a verb that takes an object: keopi-reul joahaeyo. Do not confuse it with joayo, which you meet later and which means 'is good' — that one describes the thing itself and takes no object at all. Same root, two different jobs."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          6
+        ]
+      },
+      "trap": "The verb does not change for the person. joahaeyo is what you say for 'I like', 'he likes' and 'they like' alike — there is no third-person -s to add and nothing to agree with.",
+      "sound": "MIN-soo-nun han-GOONG-mal-ul jo-ah-HAE-yo. Look at what happened in the middle: hanguk plus mal is said hangungmal, with the k turning into ng before the m. That is a sound change Korean makes automatically, and this course writes words as they are said, so the spelling shows it.",
+      "variations": [
+        {
+          "display": "Yuna-neun hangungmal-eul joahaeyo.",
+          "script": "유나는 한국말을 좋아해요.",
+          "cue": "Yuna likes Korean.",
+          "changed": "a different person, and again nothing happens to the verb"
+        },
+        {
+          "display": "Minsu-neun cha-reul joahaeyo.",
+          "script": "민수는 차를 좋아해요.",
+          "cue": "Minsu likes tea.",
+          "changed": "a different object, and -reul after the vowel"
+        },
+        {
+          "display": "Jeo-neun hangungmal-eul joahaeyo.",
+          "script": "저는 한국말을 좋아해요.",
+          "cue": "I like Korean.",
+          "changed": "back to the first person — and still the same verb form"
+        }
+      ],
+      "mistake": {
+        "display": "Minsu-neun hanguk mal-eul joahaeyo.",
+        "script": "민수는 한국 말을 좋아해요.",
+        "why": "Written apart, hanguk and mal are two things — a country and speech — and the sound change that makes them one word has been undone. The language is one word, hangungmal, and it is said that way."
+      },
+      "usage": "Saying what somebody is studying or fond of.",
+      "register": "neutral",
+      "mnemonic": "Two words met, the k gave way to ng, and one word came out."
+    },
+    {
+      "id": "L1-M1-S09",
+      "display": "I-geo-neun je chaek-ieyo.",
+      "script": "이거는 제 책이에요.",
+      "cue": "This is my book.",
+      "glossEn": "This is my book.",
+      "literal": "this-topic my book-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "i-geo",
+            "script": "이거",
+            "cue": "this · this thing",
+            "tag": "free",
+            "forms": [
+              "i-geo",
+              "i-geo-neun"
+            ],
+            "note": "'This one', pointing at something in front of you. It is written as one piece here because the bare i on its own is the subject marker, and keeping them apart is what lets each of them mean one thing."
+          },
+          {
+            "display": "-neun",
+            "script": "-는",
+            "cue": "topic marker — 'as for …'",
+            "tag": "delta",
+            "forms": [
+              "-neun",
+              "-eun"
+            ],
+            "note": "The topic marker, in its two shapes: -neun after a vowel (jeo-neun) and -eun after a consonant (ireum-eun). It says 'as for this, here is what I am telling you', which is why every introduction in this module carries it. It is written joined onto the word in Korean; the hyphen here is only so you can see where the word ends and the marker starts."
+          },
+          {
+            "display": "je",
+            "script": "제",
+            "cue": "my",
+            "tag": "free",
+            "forms": [
+              "je"
+            ],
+            "note": "'My'. It is jeo worn down in front of another noun, and it takes no marker of its own: je ireum, je chingu, je chaek. Put it in front and read straight on."
+          },
+          {
+            "display": "chaek",
+            "script": "책",
+            "cue": "book",
+            "tag": "free",
+            "forms": [
+              "chaek",
+              "chaek-ieyo",
+              "chaek-eul"
+            ],
+            "note": "'Book', and 'books' — Korean does not mark the plural in ordinary speech. Say chaek-eul joahaeyo and you have said you like books, without touching the noun."
+          },
+          {
+            "display": "-ieyo",
+            "script": "-이에요",
+            "cue": "am · is · are",
+            "tag": "delta",
+            "forms": [
+              "-ieyo",
+              "-yeyo"
+            ],
+            "note": "The copula — 'am', 'is', 'are', all three — and it is an ending, not a word: -ieyo after a consonant, -yeyo after a vowel. It is the verb of the sentence, so it comes last, and there is nothing else in the sentence doing the job of 'to be'."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2,
+          5,
+          9
+        ]
+      },
+      "trap": "je takes nothing and joins to nothing: no ending, no apostrophe, no word for 'of'. It sits in front of the noun and that is the whole of possession at this level.",
+      "sound": "EE-guh-nun jeh CHAEG-ee-eh-yo. The final k of chaek softens to a g between the vowels when the ending is added, so it is heard as chae-gi-e-yo — but the book is still chaek, which is why this course keeps the word whole and lets this line tell you what happens to it.",
+      "variations": [
+        {
+          "display": "I-geo-neun je keopi-yeyo.",
+          "script": "이거는 제 커피예요.",
+          "cue": "This is my coffee.",
+          "changed": "a different possession, and -yeyo after the vowel"
+        },
+        {
+          "display": "I-geo-neun Minsu chaek-ieyo.",
+          "script": "이거는 민수 책이에요.",
+          "cue": "This is Minsu's book.",
+          "changed": "a name in the possessive slot — still nothing joins it to the noun"
+        },
+        {
+          "display": "I-geo-neun je chaek-i anieyo.",
+          "script": "이거는 제 책이 아니에요.",
+          "cue": "This is not my book.",
+          "changed": "the denial, with -i on chaek and anieyo at the end"
+        }
+      ],
+      "mistake": {
+        "display": "I-geo-neun chaek je-yeyo.",
+        "script": "이거는 책 제예요.",
+        "why": "The possessor has been put after the thing possessed, English-of-style. Korean has only one order here: the owner first, then what is owned, then the ending."
+      },
+      "usage": "Sorting out whose is whose.",
+      "register": "neutral",
+      "mnemonic": "Owner in front, thing behind, nothing in between."
+    },
+    {
+      "id": "L1-M1-S10",
+      "display": "Je chingu ireum-eun Yuna-yeyo.",
+      "script": "제 친구 이름은 유나예요.",
+      "cue": "My friend's name is Yuna.",
+      "glossEn": "My friend's name is Yuna.",
+      "literal": "my friend name-topic Yuna-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je",
+            "script": "제",
+            "cue": "my",
+            "tag": "free",
+            "forms": [
+              "je"
+            ],
+            "note": "'My'. It is jeo worn down in front of another noun, and it takes no marker of its own: je ireum, je chingu, je chaek. Put it in front and read straight on."
+          },
+          {
+            "display": "chingu",
+            "script": "친구",
+            "cue": "friend",
+            "tag": "free",
+            "forms": [
+              "chingu",
+              "chingu-neun",
+              "chingu-yeyo"
+            ],
+            "note": "'Friend'. je chingu is 'my friend' — no marker between the two words, and none needed."
+          },
+          {
+            "display": "ireum",
+            "script": "이름",
+            "cue": "name",
+            "tag": "free",
+            "forms": [
+              "ireum",
+              "ireum-eun"
+            ],
+            "note": "'Name'. Korean gives a name with 'my name is …' far more readily than by saying 'I am …', so this is the sentence to reach for. The -eun on it is the topic marker: as for my name, it is this."
+          },
+          {
+            "display": "-neun",
+            "script": "-는",
+            "cue": "topic marker — 'as for …'",
+            "tag": "delta",
+            "forms": [
+              "-neun",
+              "-eun"
+            ],
+            "note": "The topic marker, in its two shapes: -neun after a vowel (jeo-neun) and -eun after a consonant (ireum-eun). It says 'as for this, here is what I am telling you', which is why every introduction in this module carries it. It is written joined onto the word in Korean; the hyphen here is only so you can see where the word ends and the marker starts."
+          },
+          {
+            "display": "Yuna",
+            "script": "유나",
+            "cue": "Yuna (a name)",
+            "tag": "free",
+            "forms": [
+              "Yuna",
+              "Yuna-neun",
+              "Yuna-yeyo"
+            ],
+            "note": "A woman's given name, taking its markers exactly as Minsu does. It ends in a vowel, so 'is Yuna' is Yuna-yeyo."
+          },
+          {
+            "display": "-ieyo",
+            "script": "-이에요",
+            "cue": "am · is · are",
+            "tag": "delta",
+            "forms": [
+              "-ieyo",
+              "-yeyo"
+            ],
+            "note": "The copula — 'am', 'is', 'are', all three — and it is an ending, not a word: -ieyo after a consonant, -yeyo after a vowel. It is the verb of the sentence, so it comes last, and there is nothing else in the sentence doing the job of 'to be'."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2,
+          3,
+          9
+        ]
+      },
+      "trap": "Three nouns stacked with nothing between them — my, friend, name — where English needs an apostrophe and an s. Korean stacks and stops; the marker at the end covers the whole stack.",
+      "sound": "jeh CHIN-goo ee-RUM-un YOO-na-yeh-yo. Four words run together evenly, with the -eun linking onto ireum as it did before. Yuna's first syllable is a plain 'yoo' — no stress on it, and none on the second either.",
+      "variations": [
+        {
+          "display": "Je chingu ireum-eun Minsu-yeyo.",
+          "script": "제 친구 이름은 민수예요.",
+          "cue": "My friend's name is Minsu.",
+          "changed": "another name at the end of the same stack"
+        },
+        {
+          "display": "Je seonsaengnim ireum-eun Yuna-yeyo.",
+          "script": "제 선생님 이름은 유나예요.",
+          "cue": "My teacher's name is Yuna.",
+          "changed": "a different person owns the name; the shape of the sentence is untouched"
+        },
+        {
+          "display": "Je ireum-eun Yuna-yeyo.",
+          "script": "제 이름은 유나예요.",
+          "cue": "My name is Yuna.",
+          "changed": "one noun fewer in the stack, and the sentence still works the same way"
+        }
+      ],
+      "mistake": {
+        "display": "Je-ui chingu-ui ireum-eun Yuna-yeyo.",
+        "script": "제의 친구의 이름은 유나예요.",
+        "why": "A possessive ending has been added to every noun in the stack. It exists in Korean and it is used in writing, but in speech it is dropped and stacking alone does the job. Adding it here makes the sentence stiff rather than wrong, which is the harder mistake to hear."
+      },
+      "usage": "Introducing somebody who is not there.",
+      "register": "neutral",
+      "mnemonic": "Stack the nouns and let the last ending speak for all of them."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M1-C01",
+      "display": "Minsu-neun uisa-yeyo.",
+      "script": "민수는 의사예요.",
+      "cue": "Minsu is a doctor."
+    },
+    {
+      "id": "L1-M1-C02",
+      "display": "Je chingu-neun hanguk saram-ieyo.",
+      "script": "제 친구는 한국 사람이에요.",
+      "cue": "My friend is Korean."
+    },
+    {
+      "id": "L1-M1-C03",
+      "display": "Jeo-neun cha-reul joahaeyo.",
+      "script": "저는 차를 좋아해요.",
+      "cue": "I like tea."
+    },
+    {
+      "id": "L1-M1-C04",
+      "display": "I-geo-neun je keopi-yeyo.",
+      "script": "이거는 제 커피예요.",
+      "cue": "This is my coffee."
+    },
+    {
+      "id": "L1-M1-C05",
+      "display": "Yuna-neun haksaeng-ieyo.",
+      "script": "유나는 학생이에요.",
+      "cue": "Yuna is a student."
+    },
+    {
+      "id": "L1-M1-C06",
+      "display": "Je ireum-eun Yuna-yeyo.",
+      "script": "제 이름은 유나예요.",
+      "cue": "My name is Yuna."
+    },
+    {
+      "id": "L1-M1-C07",
+      "display": "Yuna-neun hangungmal-eul joahaeyo.",
+      "script": "유나는 한국말을 좋아해요.",
+      "cue": "Yuna likes Korean."
+    },
+    {
+      "id": "L1-M1-C08",
+      "display": "Jeo-neun uisa-ga anieyo.",
+      "script": "저는 의사가 아니에요.",
+      "cue": "I am not a doctor."
+    },
+    {
+      "id": "L1-M1-C09",
+      "display": "I-geo-neun chaek-ieyo.",
+      "script": "이거는 책이에요.",
+      "cue": "This is a book."
+    },
+    {
+      "id": "L1-M1-C10",
+      "display": "Je chingu-neun keopi-reul joahaeyo.",
+      "script": "제 친구는 커피를 좋아해요.",
+      "cue": "My friend likes coffee."
+    },
+    {
+      "id": "L1-M1-C11",
+      "display": "Jeo-neun Minsu-yeyo.",
+      "script": "저는 민수예요.",
+      "cue": "I am Minsu."
+    },
+    {
+      "id": "L1-M1-C12",
+      "display": "Yuna-neun haksaeng-i anieyo.",
+      "script": "유나는 학생이 아니에요.",
+      "cue": "Yuna is not a student."
+    },
+    {
+      "id": "L1-M1-C13",
+      "display": "Jeo-neun chaek-eul joahaeyo.",
+      "script": "저는 책을 좋아해요.",
+      "cue": "I like books."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -6,19 +6,19 @@
  * against a row that has more than the nine required fields, and the newest course last. Shared,
  * so the loader test and the boot tests cannot drift into disagreeing about the shape.
  *
- * **All eight rows ship, and none carries a `fixture` key.** en-es graduated in #195, en-ar in
- * #202, hi-en in #273, en-fr in #331, en-it in #337, en-ru in #343 and en-de — English (L1) →
- * German (L2), added as a dev fixture in #356 — in #365. Every one was authored behind the gate
- * and let out of it, which is the whole shape of PRD §17.
+ * **All nine rows ship, and none carries a `fixture` key.** en-es graduated in #195, en-ar in #202,
+ * hi-en in #273, en-fr in #331, en-it in #337, en-ru in #343, en-de in #365 and en-ko — English
+ * (L1) → Korean (L2), added as a dev fixture in #374 — in #380. Every one was authored behind the
+ * gate and let out of it, which is the whole shape of PRD §17.
  *
- * So the catalogue is fully graduated again, and NO real row exercises the `fixture` seam any
- * more. That is exactly the day `src/course/manifest.test.ts`'s synthetic `en-ja` row was written
- * for: a test that borrowed whichever row happened to carry the key would go quiet precisely when
- * nothing does, which is when nothing else is watching it either.
+ * So the catalogue is fully graduated again and NO real row exercises the `fixture` seam, which is
+ * exactly the condition `manifest.test.ts`'s synthetic `en-ja` row was written for — a test that
+ * borrowed whichever row happened to carry the key would go quiet precisely when nothing does.
  *
- * The Settings smoke (`src/screens/SettingsScreen.test.tsx`) and the authored-rung walks
- * (`hiEnAuthored`, `enRuAuthored`, `enItAuthored`, `enFrAuthored`) reach the later courses through
- * this copy, without a browser.
+ * en-ko is also the first course **born** conforming to `docs/design-contract.md`'s "rung teaches
+ * speech, not script" (#353): its row is `scriptMode: "romanized"` from its first commit, so it
+ * carries a `romanizationNote` the way en-ar and en-ru do, and nothing a learner reads is written
+ * in Hangul. en-ru had to be retrofitted into that shape across #353–#360; this one never will be.
  */
 import { vi } from 'vitest';
 import { completeStrings } from './courseStrings.ts';
@@ -116,6 +116,20 @@ export const DEV_MANIFEST = {
       l2Dir: 'ltr',
       pairLabel: 'english → german',
       scriptMode: 'native',
+      dir: 'ltr',
+    },
+    {
+      id: 'en-ko',
+      l1: 'English',
+      l2: 'Korean',
+      l1Tag: 'en',
+      l2Tag: 'ko',
+      l2Dir: 'ltr',
+      pairLabel: 'english → korean',
+      scriptMode: 'romanized',
+      romanizationNote:
+        'Revised Romanization of Korean, transcribing pronunciation; pure ASCII, with a particle ' +
+        'or the copula joined to its host by a hyphen (chaek-eul, jeo-neun, haksaeng-ieyo).',
       dir: 'ltr',
     },
   ],

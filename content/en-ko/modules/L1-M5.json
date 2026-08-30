@@ -1,0 +1,979 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M5",
+  "title": "Yesterday",
+  "job": "Past tense — the first big divergence",
+  "prerequisites": [
+    "L1-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 5,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "eoje + V-asseoyo/-eosseoyo",
+      "jeo-neun + V-asseoyo/-eosseoyo",
+      "N + -ieosseoyo/-yeosseoyo",
+      "an + V-asseoyo/-eosseoyo",
+      "N + an haesseoyo",
+      "N-i/ga + eopseosseoyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The past is made INSIDE the verb, not in front of it. meogeoyo becomes meogeosseoyo, jayo becomes jasseoyo, haeyo becomes haesseoyo. There is no word for 'did', no word for 'have', and nothing at all is added ahead of the verb — the whole change happens between the stem and the ending."
+    },
+    {
+      "tag": "delta",
+      "text": "It is the same choice you already know, made twice. The stem vowel that picked -ayo or -eoyo in the present picks -asseoyo or -eosseoyo in the past, and a verb built on haeyo goes to haesseoyo. If you can conjugate the present you can conjugate the past."
+    },
+    {
+      "tag": "free",
+      "text": "There is ONE past. Korean does not divide it into 'I ate', 'I have eaten' and 'I did eat' — one form covers all three, and nothing in the sentence has to choose. If you have come from French or German, there is no auxiliary to pick here and nothing to agree with."
+    },
+    {
+      "tag": "delta",
+      "text": "The copula has a past of its own, built the same way: haksaeng-ieyo becomes haksaeng-ieosseoyo, uisa-yeyo becomes uisa-yeosseoyo. It is still an ending on the noun, and it is still the last thing in the sentence."
+    },
+    {
+      "tag": "delta",
+      "text": "eopseoyo has a past too: eopseosseoyo, 'there was not'. Absence is a verb in Korean, so it takes tense exactly as every other verb does — which is another reason it cannot be built out of a negative."
+    },
+    {
+      "tag": "free",
+      "text": "an does not move. It stays immediately in front of the verb in the past as in the present, and it still wedges into a verb made from a noun: gongbu an haesseoyo."
+    },
+    {
+      "tag": "interference",
+      "text": "The time word does not do the work. Even with eoje sitting at the front of the sentence, the verb still has to carry the past — eoje bap-eul meogeoyo is not a past sentence, it is a broken one. That is the opposite of what the next module will show you about the future."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M5-S01",
+      "display": "Eoje bap-eul meogeosseoyo.",
+      "script": "어제 밥을 먹었어요.",
+      "cue": "I ate.",
+      "glossEn": "I ate a meal yesterday.",
+      "literal": "yesterday meal-object ate",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eoje",
+            "script": "어제",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [
+              "eoje",
+              "eoje-neun"
+            ],
+            "note": "'Yesterday'. Like oneul and maeil it takes NO point-in-time marker — never eoje-e. It can take the topic marker if you are setting yesterday apart from other days."
+          },
+          {
+            "display": "bap",
+            "script": "밥",
+            "cue": "rice · a meal",
+            "tag": "free",
+            "forms": [
+              "bap",
+              "bap-eul"
+            ],
+            "note": "'A meal', from M3."
+          },
+          {
+            "display": "meogeoyo",
+            "script": "먹어요",
+            "cue": "eat",
+            "tag": "free",
+            "forms": [
+              "meogeoyo",
+              "meokgo",
+              "meogeosseoyo"
+            ],
+            "note": "'Eat', and the past shape is the same word with the past piece pushed inside it: meogeosseoyo. Nothing has been added in front — no word for 'did', no word for 'have'."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          6
+        ]
+      },
+      "trap": "English builds a past with a helper — did, have — and Korean builds it with a piece INSIDE the verb. A learner reaching for a word to put in front of meogeoyo is reaching for something that has no seat in the sentence.",
+      "sound": "UH-je BA-bul muh-GUH-ssuh-yo. The extra syllable in the middle is the past: muh-guh-SSUH-yo against the present's muh-GUH-yo. The ss is tense — pressed harder than an English s — and it is the sound that marks the tense.",
+      "variations": [
+        {
+          "display": "Eoje bap-eul meogeoyo.",
+          "script": "어제 밥을 먹어요.",
+          "cue": "(wrong tense) I eat yesterday.",
+          "changed": "the present with a past time word — which is why the verb has to carry the tense"
+        },
+        {
+          "display": "Eoje cha-reul masyeosseoyo.",
+          "script": "어제 차를 마셨어요.",
+          "cue": "I drank tea yesterday.",
+          "changed": "a different verb in the same past shape"
+        },
+        {
+          "display": "Bap-eul meogeosseoyo.",
+          "script": "밥을 먹었어요.",
+          "cue": "I ate.",
+          "changed": "the time word dropped — the verb alone still says it is over"
+        }
+      ],
+      "mistake": {
+        "display": "Eoje bap-eul haesseoyo meogeoyo.",
+        "script": "어제 밥을 했어요 먹어요.",
+        "why": "A helper verb has been imported to carry the past, English-style, leaving two verbs in one clause. Korean puts the past inside the one verb it already has."
+      },
+      "usage": "Saying what you did, at any distance in the past.",
+      "register": "neutral",
+      "mnemonic": "Nothing goes in front; the past grows inside."
+    },
+    {
+      "id": "L1-M5-S02",
+      "display": "Jeo-neun eoje ilhaesseoyo.",
+      "script": "저는 어제 일했어요.",
+      "cue": "I worked yesterday.",
+      "glossEn": "I worked yesterday.",
+      "literal": "I-topic yesterday worked",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeo",
+            "script": "저",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [
+              "jeo",
+              "jeo-neun"
+            ],
+            "note": "'I', from M1 — used here only where the sentence needs to say whose day it was."
+          },
+          {
+            "display": "eoje",
+            "script": "어제",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [
+              "eoje",
+              "eoje-neun"
+            ],
+            "note": "'Yesterday'. Like oneul and maeil it takes NO point-in-time marker — never eoje-e. It can take the topic marker if you are setting yesterday apart from other days."
+          },
+          {
+            "display": "ilhaeyo",
+            "script": "일해요",
+            "cue": "work",
+            "tag": "free",
+            "forms": [
+              "ilhaeyo",
+              "ilhaesseoyo"
+            ],
+            "note": "'Work'. Its past, ilhaesseoyo, shows the pattern clearly: the -hae- of the present becomes -haess- and the ending follows. Every verb built on haeyo behaves this way."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "eoje takes no marker. It joins oneul, naeil and maeil in the small group of time words that stand bare, and putting -e on it is the mistake that follows straight on from learning achim-e.",
+      "sound": "juh-nun UH-je il-HAE-ssuh-yo. The present ilhaeyo has three beats and the past has four; the extra one is the tense. Say them one after the other and the difference is easy to keep.",
+      "variations": [
+        {
+          "display": "Jeo-neun eoje gongbuhaesseoyo.",
+          "script": "저는 어제 공부했어요.",
+          "cue": "I studied yesterday.",
+          "changed": "the other noun-plus-haeyo verb in the past"
+        },
+        {
+          "display": "Eoje ilhaesseoyo.",
+          "script": "어제 일했어요.",
+          "cue": "I worked yesterday.",
+          "changed": "the subject dropped"
+        },
+        {
+          "display": "Jeo-neun oneul ilhaeyo.",
+          "script": "저는 오늘 일해요.",
+          "cue": "I am working today.",
+          "changed": "today and the present, for comparison"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun eoje-e ilhaesseoyo.",
+        "script": "저는 어제에 일했어요.",
+        "why": "-e has been put on eoje. It is one of the bare time words, and there is no sentence in which it takes the point-in-time marker."
+      },
+      "usage": "Saying what you did yesterday.",
+      "register": "neutral",
+      "mnemonic": "Yesterday wears nothing; the verb wears everything."
+    },
+    {
+      "id": "L1-M5-S03",
+      "display": "Eoje cha-reul masyeosseoyo.",
+      "script": "어제 차를 마셨어요.",
+      "cue": "I drank tea yesterday.",
+      "glossEn": "I drank tea yesterday.",
+      "literal": "yesterday tea-object drank",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eoje",
+            "script": "어제",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [
+              "eoje",
+              "eoje-neun"
+            ],
+            "note": "'Yesterday'. Like oneul and maeil it takes NO point-in-time marker — never eoje-e. It can take the topic marker if you are setting yesterday apart from other days."
+          },
+          {
+            "display": "cha",
+            "script": "차",
+            "cue": "tea",
+            "tag": "free",
+            "forms": [
+              "cha",
+              "cha-reul"
+            ],
+            "note": "'Tea', from M1."
+          },
+          {
+            "display": "masyeoyo",
+            "script": "마셔요",
+            "cue": "drink",
+            "tag": "free",
+            "forms": [
+              "masyeoyo",
+              "masigo",
+              "masyeosseoyo"
+            ],
+            "note": "'Drink'. Present masyeoyo, past masyeosseoyo — the same contracted stem with the past piece inside it."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The contracted stem stays contracted. masyeoyo became what it is by squeezing the stem's i into the ending, and the past does the same thing again — so there is no masi- to be seen anywhere in masyeosseoyo.",
+      "sound": "UH-je CHA-rul ma-SHUH-ssuh-yo. Five beats, and the two ss syllables in a row at the end are what an English ear will slur; keep them separate and the tense stays audible.",
+      "variations": [
+        {
+          "display": "Eoje keopi-reul masyeosseoyo.",
+          "script": "어제 커피를 마셨어요.",
+          "cue": "I drank coffee yesterday.",
+          "changed": "a different drink"
+        },
+        {
+          "display": "Eoje cha-reul an masyeosseoyo.",
+          "script": "어제 차를 안 마셨어요.",
+          "cue": "I did not drink tea yesterday.",
+          "changed": "the negative — an is still immediately in front of the verb"
+        },
+        {
+          "display": "Cha-reul masyeoyo.",
+          "script": "차를 마셔요.",
+          "cue": "I drink tea.",
+          "changed": "the present, with the habit rather than the day"
+        }
+      ],
+      "mistake": {
+        "display": "Eoje cha-reul masi-eosseoyo.",
+        "script": "어제 차를 마시었어요.",
+        "why": "The stem has been written out in full with the ending stuck on behind it. It is not said that way — the i merges — and this course writes words as they are said."
+      },
+      "usage": "Saying what you had.",
+      "register": "neutral",
+      "mnemonic": "The contraction happens once and holds in every tense."
+    },
+    {
+      "id": "L1-M5-S04",
+      "display": "Yuna-neun haksaeng-ieosseoyo.",
+      "script": "유나는 학생이었어요.",
+      "cue": "Yuna was a student.",
+      "glossEn": "Yuna was a student.",
+      "literal": "Yuna-topic student-was",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Yuna",
+            "script": "유나",
+            "cue": "Yuna (a name)",
+            "tag": "free",
+            "forms": [
+              "Yuna",
+              "Yuna-neun"
+            ],
+            "note": "A woman's given name, from M1."
+          },
+          {
+            "display": "haksaeng",
+            "script": "학생",
+            "cue": "student",
+            "tag": "free",
+            "forms": [
+              "haksaeng",
+              "haksaeng-ieyo",
+              "haksaeng-ieosseoyo"
+            ],
+            "note": "'Student', from M1, and here in the past: haksaeng-ieosseoyo, 'was a student'."
+          },
+          {
+            "display": "-ieosseoyo",
+            "script": "-이었어요",
+            "cue": "was · were",
+            "tag": "delta",
+            "forms": [
+              "-ieosseoyo",
+              "-yeosseoyo"
+            ],
+            "note": "The past of the copula, in its two shapes: -ieosseoyo after a consonant and -yeosseoyo after a vowel. It is built exactly as the present was, with the past piece inside — so if you can say haksaeng-ieyo you can say haksaeng-ieosseoyo."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The copula's past is an ending, exactly as its present was. English changes 'is' to 'was' — a different word — and Korean adds the same past piece it adds to every other verb.",
+      "sound": "YOO-na-nun HAK-ssaeng-ee-uh-ssuh-yo. It is long: six beats after the name. Take it in two halves, haksaeng and ieosseoyo, and it stops being a mouthful.",
+      "variations": [
+        {
+          "display": "Yuna-neun uisa-yeosseoyo.",
+          "script": "유나는 의사였어요.",
+          "cue": "Yuna was a doctor.",
+          "changed": "after a vowel the ending is -yeosseoyo, exactly as the present was -yeyo"
+        },
+        {
+          "display": "Yuna-neun haksaeng-ieyo.",
+          "script": "유나는 학생이에요.",
+          "cue": "Yuna is a student.",
+          "changed": "the present, for comparison"
+        },
+        {
+          "display": "Yuna-neun haksaeng-i anieosseoyo.",
+          "script": "유나는 학생이 아니었어요.",
+          "cue": "Yuna was not a student.",
+          "changed": "the denial in the past — anieyo takes the same past piece"
+        }
+      ],
+      "mistake": {
+        "display": "Yuna-neun haksaeng-ieyo eoje.",
+        "script": "유나는 학생이에요 어제.",
+        "why": "The tense has been left in the present and a time word thrown in after the verb to carry it. Neither works: nothing follows the verb, and the verb itself must be the thing that says it is over."
+      },
+      "usage": "Talking about what somebody used to be.",
+      "register": "neutral",
+      "mnemonic": "The copula takes the past like everything else, because it is a verb."
+    },
+    {
+      "id": "L1-M5-S05",
+      "display": "Eoje jal jasseoyo.",
+      "script": "어제 잘 잤어요.",
+      "cue": "I slept well yesterday.",
+      "glossEn": "I slept well yesterday.",
+      "literal": "yesterday well slept",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eoje",
+            "script": "어제",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [
+              "eoje",
+              "eoje-neun"
+            ],
+            "note": "'Yesterday'. Like oneul and maeil it takes NO point-in-time marker — never eoje-e. It can take the topic marker if you are setting yesterday apart from other days."
+          },
+          {
+            "display": "jal",
+            "script": "잘",
+            "cue": "well",
+            "tag": "free",
+            "forms": [
+              "jal"
+            ],
+            "note": "'Well', from M2, still sitting immediately in front of the verb it describes."
+          },
+          {
+            "display": "jayo",
+            "script": "자요",
+            "cue": "sleep",
+            "tag": "free",
+            "forms": [
+              "jayo",
+              "jasseoyo"
+            ],
+            "note": "'Sleep'. The stem ja- swallowed the ending's vowel in the present and does the same in the past: jasseoyo, not ja-asseoyo. Short verbs are where this merging is most visible."
+          }
+        ],
+        "rules": [
+          1,
+          5
+        ]
+      },
+      "trap": "jal goes immediately in front of the verb, and the past does not move it. The order of a Korean sentence is fixed at the end — adverb, then verb — and tense changes nothing about it.",
+      "sound": "UH-je jal JA-ssuh-yo. The stem is ja-, so the past is jasseoyo with no extra vowel: exactly like the present jayo, one syllable longer.",
+      "variations": [
+        {
+          "display": "Eoje jal jinaesseoyo.",
+          "script": "어제 잘 지냈어요.",
+          "cue": "I had a good day yesterday.",
+          "changed": "a different verb after the same jal"
+        },
+        {
+          "display": "Eoje an jasseoyo.",
+          "script": "어제 안 잤어요.",
+          "cue": "I did not sleep yesterday.",
+          "changed": "the negative, and jal comes out because you cannot not-sleep well"
+        },
+        {
+          "display": "Bam-e jal jasseoyo.",
+          "script": "밤에 잘 잤어요.",
+          "cue": "I slept well at night.",
+          "changed": "a time word that does take -e"
+        }
+      ],
+      "mistake": {
+        "display": "Eoje jasseoyo jal.",
+        "script": "어제 잤어요 잘.",
+        "why": "jal has been moved behind the verb, where an English adverb can sit. Nothing follows the verb in Korean, adverbs included."
+      },
+      "usage": "Answering a question about how you slept.",
+      "register": "neutral",
+      "mnemonic": "Adverb, verb, full stop — and never in any other order."
+    },
+    {
+      "id": "L1-M5-S06",
+      "display": "Eoje gongbu an haesseoyo.",
+      "script": "어제 공부 안 했어요.",
+      "cue": "I did not study yesterday.",
+      "glossEn": "I did not study yesterday.",
+      "literal": "yesterday study not did",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eoje",
+            "script": "어제",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [
+              "eoje",
+              "eoje-neun"
+            ],
+            "note": "'Yesterday'. Like oneul and maeil it takes NO point-in-time marker — never eoje-e. It can take the topic marker if you are setting yesterday apart from other days."
+          },
+          {
+            "display": "gongbu",
+            "script": "공부",
+            "cue": "study",
+            "tag": "free",
+            "forms": [
+              "gongbu"
+            ],
+            "note": "'Study' as a noun, from M4 — and in a negative past it is still separated from the verb: gongbu an haesseoyo."
+          },
+          {
+            "display": "an",
+            "script": "안",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [
+              "an"
+            ],
+            "note": "'Not', still in front of the verb and still wedging into a verb built from a noun. The past changes the verb's shape but not where the negative goes."
+          },
+          {
+            "display": "haeyo",
+            "script": "해요",
+            "cue": "do",
+            "tag": "free",
+            "forms": [
+              "haeyo",
+              "haesseoyo"
+            ],
+            "note": "'Do'. Its past is haesseoyo, and because so many verbs are built on it, this one shape unlocks the past of all of them."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "Two things at once, and both are things the last module set up: the verb splits around an, and the past goes on the half that is the verb. gongbu takes no tense — it is a noun — so everything happens to haeyo.",
+      "sound": "UH-je GONG-boo an HAE-ssuh-yo. There is a small break after gongbu and then an leans onto haesseoyo, so the end of the sentence comes out as an-hae-ssuh-yo.",
+      "variations": [
+        {
+          "display": "Eoje il an haesseoyo.",
+          "script": "어제 일 안 했어요.",
+          "cue": "I did not work yesterday.",
+          "changed": "the same split on the other noun-plus-haeyo verb"
+        },
+        {
+          "display": "Eoje gongbuhaesseoyo.",
+          "script": "어제 공부했어요.",
+          "cue": "I studied yesterday.",
+          "changed": "the positive — the verb closes back into one word"
+        },
+        {
+          "display": "Oneul-eun gongbu an haeyo.",
+          "script": "오늘은 공부 안 해요.",
+          "cue": "Today I am not studying.",
+          "changed": "the same negative in the present"
+        }
+      ],
+      "mistake": {
+        "display": "Eoje an gongbuhaesseoyo.",
+        "script": "어제 안 공부했어요.",
+        "why": "an has been left in front of the whole verb. For a verb made from a noun it must go between the halves, in the past exactly as in the present."
+      },
+      "usage": "Saying what you did not get done.",
+      "register": "neutral",
+      "mnemonic": "The split survives the tense; only haeyo changes shape."
+    },
+    {
+      "id": "L1-M5-S07",
+      "display": "Jeo-neun eoje hangungmal-eul baewosseoyo.",
+      "script": "저는 어제 한국말을 배웠어요.",
+      "cue": "I learned Korean yesterday.",
+      "glossEn": "I studied Korean yesterday.",
+      "literal": "I-topic yesterday Korean-object learned",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeo",
+            "script": "저",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [
+              "jeo",
+              "jeo-neun"
+            ],
+            "note": "'I', from M1 — used here only where the sentence needs to say whose day it was."
+          },
+          {
+            "display": "eoje",
+            "script": "어제",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [
+              "eoje",
+              "eoje-neun"
+            ],
+            "note": "'Yesterday'. Like oneul and maeil it takes NO point-in-time marker — never eoje-e. It can take the topic marker if you are setting yesterday apart from other days."
+          },
+          {
+            "display": "hangungmal",
+            "script": "한국말",
+            "cue": "the Korean language",
+            "tag": "free",
+            "forms": [
+              "hangungmal",
+              "hangungmal-eul"
+            ],
+            "note": "'Korean', the language, from M1."
+          },
+          {
+            "display": "baewoyo",
+            "script": "배워요",
+            "cue": "learn",
+            "tag": "free",
+            "forms": [
+              "baewoyo",
+              "baeugo",
+              "baewosseoyo"
+            ],
+            "note": "'Learn'. Past baewosseoyo — the same contracted stem, the same past piece, the same ending."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "There is one past here, and it covers 'I learned', 'I have learned' and 'I did learn'. An English speaker will feel a choice being missed; there is none to make.",
+      "sound": "juh-nun UH-je han-GOONG-ma-rul bae-WUH-ssuh-yo. baewosseoyo keeps the w that the stem's u turned into, then adds the tense: bae-wuh-ssuh-yo, four beats.",
+      "variations": [
+        {
+          "display": "Eoje hangungmal-eul baewosseoyo.",
+          "script": "어제 한국말을 배웠어요.",
+          "cue": "I learned Korean yesterday.",
+          "changed": "the subject dropped"
+        },
+        {
+          "display": "Maeil hangungmal-eul baewoyo.",
+          "script": "매일 한국말을 배워요.",
+          "cue": "I learn Korean every day.",
+          "changed": "the habit in the present, beside the day in the past"
+        },
+        {
+          "display": "Yuna-neun eoje hangungmal-eul baewosseoyo.",
+          "script": "유나는 어제 한국말을 배웠어요.",
+          "cue": "Yuna learned Korean yesterday.",
+          "changed": "a different learner, an unchanged verb"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun eoje hangungmal-eul baewoyo-sseoyo.",
+        "script": "저는 어제 한국말을 배워요었어요.",
+        "why": "The past has been bolted onto the finished -yo form instead of being put inside the verb. The tense goes between the stem and the ending, and the ending is written once."
+      },
+      "usage": "Reporting what you did on a particular day.",
+      "register": "neutral",
+      "mnemonic": "One past, three English tenses, no choice to make."
+    },
+    {
+      "id": "L1-M5-S08",
+      "display": "Eoje keopi-ga eopseosseoyo.",
+      "script": "어제 커피가 없었어요.",
+      "cue": "There was no coffee yesterday.",
+      "glossEn": "There was no coffee yesterday.",
+      "literal": "yesterday coffee-subject was-not",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eoje",
+            "script": "어제",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [
+              "eoje",
+              "eoje-neun"
+            ],
+            "note": "'Yesterday'. Like oneul and maeil it takes NO point-in-time marker — never eoje-e. It can take the topic marker if you are setting yesterday apart from other days."
+          },
+          {
+            "display": "keopi",
+            "script": "커피",
+            "cue": "coffee",
+            "tag": "free",
+            "forms": [
+              "keopi",
+              "keopi-ga",
+              "keopi-reul"
+            ],
+            "note": "'Coffee', from M1 — here as the thing that was missing, so it takes -ga."
+          },
+          {
+            "display": "eopseoyo",
+            "script": "없어요",
+            "cue": "there is not · do not have",
+            "tag": "interference",
+            "forms": [
+              "eopseoyo",
+              "eopseosseoyo"
+            ],
+            "note": "'There is not', from M3, and it has a past of its own: eopseosseoyo, 'there was not'. Absence is a verb in Korean, so it takes tense like any other verb."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "eopseoyo is a verb, so it has a past. A learner who thinks of it as a negative word rather than a verb will not expect it to take a tense at all, and will look for some other way to say this.",
+      "sound": "UH-je KUH-pee-ga up-SUH-ssuh-yo. The unreleased p is still there in the past, and the tense syllable follows it: up-suh-ssuh-yo. Three ss-ish syllables in a row is normal here.",
+      "variations": [
+        {
+          "display": "Eoje cha-ga eopseosseoyo.",
+          "script": "어제 차가 없었어요.",
+          "cue": "There was no tea yesterday.",
+          "changed": "a different thing missing"
+        },
+        {
+          "display": "Oneul keopi-ga isseoyo.",
+          "script": "오늘 커피가 있어요.",
+          "cue": "There is coffee today.",
+          "changed": "the positive, in the present"
+        },
+        {
+          "display": "Eoje chingu-ga eopseosseoyo.",
+          "script": "어제 친구가 없었어요.",
+          "cue": "I had no friends yesterday.",
+          "changed": "the same verb doing the 'have' job rather than the 'there is' one"
+        }
+      ],
+      "mistake": {
+        "display": "Eoje keopi-ga an isseosseoyo.",
+        "script": "어제 커피가 안 있었어요.",
+        "why": "The absence has been built out of a negative again — an in front of the past of isseoyo. Korean has a separate verb for absence and it conjugates on its own."
+      },
+      "usage": "Saying that something was missing.",
+      "register": "neutral",
+      "mnemonic": "Absence is a verb, and verbs have tense."
+    },
+    {
+      "id": "L1-M5-S09",
+      "display": "Jeo-neun eoje bap-eul an meogeosseoyo.",
+      "script": "저는 어제 밥을 안 먹었어요.",
+      "cue": "I did not eat yesterday.",
+      "glossEn": "I did not eat a meal yesterday.",
+      "literal": "I-topic yesterday meal-object not ate",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeo",
+            "script": "저",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [
+              "jeo",
+              "jeo-neun"
+            ],
+            "note": "'I', from M1 — used here only where the sentence needs to say whose day it was."
+          },
+          {
+            "display": "eoje",
+            "script": "어제",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [
+              "eoje",
+              "eoje-neun"
+            ],
+            "note": "'Yesterday'. Like oneul and maeil it takes NO point-in-time marker — never eoje-e. It can take the topic marker if you are setting yesterday apart from other days."
+          },
+          {
+            "display": "bap",
+            "script": "밥",
+            "cue": "rice · a meal",
+            "tag": "free",
+            "forms": [
+              "bap",
+              "bap-eul"
+            ],
+            "note": "'A meal', from M3."
+          },
+          {
+            "display": "an",
+            "script": "안",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [
+              "an"
+            ],
+            "note": "'Not', still in front of the verb and still wedging into a verb built from a noun. The past changes the verb's shape but not where the negative goes."
+          },
+          {
+            "display": "meogeoyo",
+            "script": "먹어요",
+            "cue": "eat",
+            "tag": "free",
+            "forms": [
+              "meogeoyo",
+              "meokgo",
+              "meogeosseoyo"
+            ],
+            "note": "'Eat', and the past shape is the same word with the past piece pushed inside it: meogeosseoyo. Nothing has been added in front — no word for 'did', no word for 'have'."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "The negative and the past sit in different places and neither disturbs the other: an in front of the verb, the tense inside it. English fuses the two into 'did not', which is exactly why a learner expects one word to carry both.",
+      "sound": "juh-nun UH-je BA-bul an muh-GUH-ssuh-yo. an leans onto the verb as always, so the last part runs as an-muh-guh-ssuh-yo — but the two are still separate words and are written apart.",
+      "variations": [
+        {
+          "display": "Eoje bap-eul an meogeosseoyo.",
+          "script": "어제 밥을 안 먹었어요.",
+          "cue": "I did not eat yesterday.",
+          "changed": "the subject dropped"
+        },
+        {
+          "display": "Jeo-neun eoje bap-eul meogeosseoyo.",
+          "script": "저는 어제 밥을 먹었어요.",
+          "cue": "I ate yesterday.",
+          "changed": "the positive"
+        },
+        {
+          "display": "Jeo-neun oneul bap-eul an meogeoyo.",
+          "script": "저는 오늘 밥을 안 먹어요.",
+          "cue": "I am not eating today.",
+          "changed": "the same negative in the present"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun eoje bap-eul meogeosseoyo an.",
+        "script": "저는 어제 밥을 먹었어요 안.",
+        "why": "an has been put after the verb, following English's 'did not eat' order once the helper is stripped out. It has one seat and it is in front of the verb."
+      },
+      "usage": "Saying what you did not do on a given day.",
+      "register": "neutral",
+      "mnemonic": "One piece in front for the negative, one piece inside for the tense."
+    },
+    {
+      "id": "L1-M5-S10",
+      "display": "Eoje jal jinaesseoyo?",
+      "script": "어제 잘 지냈어요?",
+      "cue": "Did you have a good day yesterday?",
+      "glossEn": "Did you get on well yesterday?",
+      "literal": "yesterday well got-on?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eoje",
+            "script": "어제",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [
+              "eoje",
+              "eoje-neun"
+            ],
+            "note": "'Yesterday'. Like oneul and maeil it takes NO point-in-time marker — never eoje-e. It can take the topic marker if you are setting yesterday apart from other days."
+          },
+          {
+            "display": "jal",
+            "script": "잘",
+            "cue": "well",
+            "tag": "free",
+            "forms": [
+              "jal"
+            ],
+            "note": "'Well', from M2, still sitting immediately in front of the verb it describes."
+          },
+          {
+            "display": "jinaeyo",
+            "script": "지내요",
+            "cue": "get along · am doing",
+            "tag": "delta",
+            "forms": [
+              "jinaeyo",
+              "jinaeseyo",
+              "jinaesseoyo"
+            ],
+            "note": "'Get by, be doing', from M2. Its past jinaesseoyo is how you ask about a day that is over — jal jinaesseoyo? is 'did you have a good day?', where jal jinaeseyo? asks about life in general."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "This asks about a day that is over, where jal jinaeseyo? from M2 asks about life in general. They are the same verb, and choosing the wrong one turns a warm greeting into a question about last Tuesday.",
+      "sound": "UH-je jal ji-NAE-ssuh-yo, rising at the end. The question is made by the voice, exactly as in M2 — the past changes the verb, not the way a question is asked.",
+      "variations": [
+        {
+          "display": "Eoje jal jinaesseoyo.",
+          "script": "어제 잘 지냈어요.",
+          "cue": "I had a good day yesterday.",
+          "changed": "said flat, it is the answer"
+        },
+        {
+          "display": "Jal jinaeseyo?",
+          "script": "잘 지내세요?",
+          "cue": "Are you well?",
+          "changed": "the present, with the raised piece — asking about life rather than a day"
+        },
+        {
+          "display": "Eoje jal jasseoyo?",
+          "script": "어제 잘 잤어요?",
+          "cue": "Did you sleep well yesterday?",
+          "changed": "a different verb, the same question shape"
+        }
+      ],
+      "mistake": {
+        "display": "Eoje jal jinaeseyosseoyo?",
+        "script": "어제 잘 지내세요었어요?",
+        "why": "The raised piece and the past have been stacked on top of each other in the wrong order, producing a word that is neither. Ask about a finished day with the plain past: jinaesseoyo."
+      },
+      "usage": "Meeting somebody the day after something happened.",
+      "register": "neutral",
+      "mnemonic": "Same verb, same question mark in the voice, different tense."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M5-C01",
+      "display": "Eoje keopi-reul masyeosseoyo.",
+      "script": "어제 커피를 마셨어요.",
+      "cue": "I drank coffee yesterday."
+    },
+    {
+      "id": "L1-M5-C02",
+      "display": "Yuna-neun eoje ilhaesseoyo.",
+      "script": "유나는 어제 일했어요.",
+      "cue": "Yuna worked yesterday."
+    },
+    {
+      "id": "L1-M5-C03",
+      "display": "Eoje jal jasseoyo.",
+      "script": "어제 잘 잤어요.",
+      "cue": "I slept well yesterday."
+    },
+    {
+      "id": "L1-M5-C04",
+      "display": "Minsu-neun haksaeng-ieosseoyo.",
+      "script": "민수는 학생이었어요.",
+      "cue": "Minsu was a student."
+    },
+    {
+      "id": "L1-M5-C05",
+      "display": "Eoje bap-eul an meogeosseoyo.",
+      "script": "어제 밥을 안 먹었어요.",
+      "cue": "I did not eat yesterday."
+    },
+    {
+      "id": "L1-M5-C06",
+      "display": "Eoje cha-ga eopseosseoyo.",
+      "script": "어제 차가 없었어요.",
+      "cue": "There was no tea yesterday."
+    },
+    {
+      "id": "L1-M5-C07",
+      "display": "Jeo-neun eoje gongbu an haesseoyo.",
+      "script": "저는 어제 공부 안 했어요.",
+      "cue": "I did not study yesterday."
+    },
+    {
+      "id": "L1-M5-C08",
+      "display": "Eoje hangungmal-eul baewosseoyo.",
+      "script": "어제 한국말을 배웠어요.",
+      "cue": "I learned Korean yesterday."
+    },
+    {
+      "id": "L1-M5-C09",
+      "display": "Yuna-neun eoje jal jinaesseoyo.",
+      "script": "유나는 어제 잘 지냈어요.",
+      "cue": "Yuna had a good day yesterday."
+    },
+    {
+      "id": "L1-M5-C10",
+      "display": "Eoje bap-eul meogeosseoyo?",
+      "script": "어제 밥을 먹었어요?",
+      "cue": "Did you eat yesterday?"
+    },
+    {
+      "id": "L1-M5-C11",
+      "display": "Minsu-neun eoje an jasseoyo.",
+      "script": "민수는 어제 안 잤어요.",
+      "cue": "Minsu did not sleep yesterday."
+    },
+    {
+      "id": "L1-M5-C12",
+      "display": "Eoje-neun jal jinaesseoyo.",
+      "script": "어제는 잘 지냈어요.",
+      "cue": "Yesterday, I got on well."
+    },
+    {
+      "id": "L1-M5-C13",
+      "display": "Jeo-neun eoje cha-reul masyeosseoyo.",
+      "script": "저는 어제 차를 마셨어요.",
+      "cue": "I drank tea yesterday."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
