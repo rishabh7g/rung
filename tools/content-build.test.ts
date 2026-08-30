@@ -1625,15 +1625,18 @@ describe('the romanized edge cases (#116, [Q3])', () => {
     for (const rival of ['a', 'ou', 'là', 'ca']) {
       expect(Object.hasOwn(index.surfaces, rival), `${rival} stays out of L1`).toBe(false);
     }
-    // Multi-token idioms claim no bare part, which is what keeps `ça` free for L1-M8's price
-    // question and `au` free for L1-M7's contraction.
-    expect(row('ça va')).toBe('L1-M2-S02#0');
-    expect(row('au revoir')).toBe('L1-M2-S10#0');
-    for (const unclaimed of ['ça', 'va', 'au', 'revoir', 'vous vous']) {
+    // Multi-token idioms claim no bare part. That is what let M8 open `ça` for its price question
+    // and M7 open `au` for its contraction, both asserted below — and it leaves the pieces no
+    // module ever wanted permanently unclaimed, rather than quietly owned by an idiom.
+    for (const unclaimed of ['revoir', 'vous vous', 'quelle', 'kilo', 'parce']) {
       expect(Object.hasOwn(index.surfaces, unclaimed), `${unclaimed} must stay unclaimed`).toBe(
         false,
       );
     }
+    // `va` is the one piece a later module DID claim — as a third person of M6's aller row — and
+    // the two-token `ça va` still beats it wherever both words stand together, because the walk
+    // takes the longest match first. Both keys, two notes, and neither reachable by accident.
+    expect(row('va')).toBe(row('vais'));
     // The paradigms that ARE forms of one word land on that word's single row.
     expect(row('étudiante')).toBe(row('étudiant'));
     expect(row('française')).toBe(row('français'));
@@ -1660,16 +1663,42 @@ describe('the romanized edge cases (#116, [Q3])', () => {
     expect(row('pas')).toBe('L1-M3-S07#1');
     expect(row("n'ai")).toBe('L1-M5-S05#0');
     expect(row("n'ai")).not.toBe(row("j'ai"));
-    // The partitive rows M7 will inherit, and the à whose note was written for both its seats.
+    // The partitive rows M7 inherits, and the à whose note was written for both its seats.
     expect(row('du')).toBe('L1-M3-S02#0');
     expect(row('de la')).toBe('L1-M3-S03#0');
     expect(row('des')).toBe('L1-M3-S04#0');
     expect(row('à')).toBe('L1-M4-S01#1');
-    // Keys the briefs reserve for later modules are still free after M5.
-    for (const reserved of ["c'est", 'combien', 'il', 'elle', 'où', 'demain', 'vais', 'sur']) {
-      expect(Object.hasOwn(index.surfaces, reserved), `${reserved} is a later module's`).toBe(
-        false,
-      );
+    // M6–M10's own seams. The multi-token surfaces claim no bare part, which is the whole reason
+    // `ça`, `au`, `il` and `que` are still available to the modules the briefs promised them to.
+    expect(row('vais')).toBe('L1-M6-S01#1');
+    expect(row('allez')).toBe(row('vais'));
+    expect(row('il y a')).toBe('L1-M7-S04#0');
+    expect(row('il')).toBe('L1-M10-S04#0');
+    expect(row('elle')).toBe('L1-M10-S05#0');
+    expect(row('au revoir')).toBe('L1-M2-S10#0');
+    expect(row('au')).toBe('L1-M7-S09#0');
+    expect(row('ça va')).toBe('L1-M2-S02#0');
+    expect(row('ça')).toBe('L1-M8-S02#0');
+    expect(row("s'il vous plaît")).toBe('L1-M8-S05#1');
+    expect(row('vous')).toBe('L1-M2-S06#0');
+    expect(row('parce que')).toBe('L1-M9-S04#0');
+    expect(row('que')).toBe('L1-M9-S07#1');
+    expect(row('combien')).toBe('L1-M8-S01#1');
+    expect(row('combien de')).toBe('L1-M8-S04#0');
+    expect(row('à côté de')).toBe('L1-M7-S07#0');
+    // A compound preposition must match THROUGH its contraction, so its contracted shapes are
+    // forms of the same row — otherwise `à côté du lit` would strand `côté` with nothing to say.
+    expect(row('à côté du')).toBe(row('à côté de'));
+    expect(row('à côté de la')).toBe(row('à côté de'));
+    expect(row('près du')).toBe(row('près de'));
+    expect(Object.hasOwn(index.surfaces, 'côté'), 'côté is never a bare key').toBe(false);
+    // The accented pairs' unaccented rivals never enter L1 at all, so no accent has a competitor.
+    for (const rival of ['a', 'ou', 'là', 'ca']) {
+      expect(Object.hasOwn(index.surfaces, rival), `${rival} stays out of L1`).toBe(false);
+    }
+    // And the register decision holds all the way down: no tu-shape is in the index either.
+    for (const tuShape of ['tu', 'te', 'es', 'veux-tu']) {
+      expect(Object.hasOwn(index.surfaces, tuShape), `${tuShape} is tu-register`).toBe(false);
     }
     expect(Object.keys(index.surfaces)).toHaveLength(index.surfaceCount);
   });
@@ -1938,8 +1967,8 @@ describe('the authored content', () => {
       'L1-M9',
       'L1-M10',
     ];
-    /** en-fr's rungs, as far as they are authored — the list grows with #329 and #330. */
-    const EN_FR = ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5'];
+    /** en-fr's ten rungs, complete since #330 — the same shape as every other course's L1. */
+    const EN_FR = L1;
 
     expect(report.exitCode).toBe(0);
     expect([...report.shipped]).toEqual([
@@ -1957,9 +1986,9 @@ describe('the authored content', () => {
     // en-fr's row is admitted by `--with-fixtures`, and since #328 it has rungs to ship: the
     // course is still a fixture in `content/courses.json`, so this relaxation is the ONLY way
     // its modules reach a build at all until the graduation issue deletes the flag.
-    expect(report.lines).toContain('en-fr: 5 modules (L1-M1..M5)');
+    expect(report.lines).toContain('en-fr: 10 modules (L1-M1..M10)');
     expect(report.lines).toContain(
-      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10), en-fr 5 modules (L1-M1..M5)',
+      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10), en-fr 10 modules (L1-M1..M10)',
     );
     // The dev tree carries the fifth course's authored rungs and their cumulative indexes.
     for (const file of [

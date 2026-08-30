@@ -1,0 +1,575 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M8",
+  "title": "Numbers & shopping",
+  "job": "Prices, quantities, buying",
+  "prerequisites": ["L1-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "C'est combien ?",
+      "Ça coûte combien ?",
+      "Combien de + N + ?",
+      "Je veux + num + N + , s'il vous plaît",
+      "Un kilo de + N + , s'il vous plaît"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The price question puts the question word at the END, where the answer will go: C'est combien ? · Ça coûte combien ? Neither inverts, and neither needs anything English would call a helper."
+    },
+    {
+      "tag": "delta",
+      "text": "c'est is ce (\"this, that\") welded onto est, because ce cannot sit on its own vowel next to another one — the same shrinking that made j' out of je. It is the everyday way of pointing at a thing and saying what it is, or what it costs."
+    },
+    {
+      "tag": "delta",
+      "text": "ONE combien de covers both of English's questions: Combien de pommes ? is \"how many apples\" and Combien de pain ? is \"how much bread\". French makes no countable/uncountable split here — and no article stands between combien de and the noun."
+    },
+    {
+      "tag": "delta",
+      "text": "A quantity takes de and nothing after it: un kilo de pommes, une bouteille d'eau. L1-M3's partitive du would be wrong here — the quantity word has already said how much."
+    },
+    {
+      "tag": "delta",
+      "text": "s'il vous plaît goes at the edge of a request and is the vous shape of the phrase, matching the register this course speaks throughout. It is literally \"if it pleases you\"."
+    },
+    {
+      "tag": "delta",
+      "text": "un is \"a\" and \"one\" at once (L1-M3), so a number in front of a noun needs no article at all: trois pommes, dix euros — never les trois pommes unless you mean a particular three."
+    },
+    {
+      "tag": "free",
+      "text": "euro takes a written, silent plural -s: dix euros. What the ear does hear is the number reaching forward into it — dix on its own ends in an s sound, and dix euros ends in a z."
+    },
+    {
+      "tag": "delta",
+      "text": "trop always carries an excess: c'est trop cher is \"it's TOO expensive\", never \"it's very expensive\". English's \"too\" does the same thing, so the word transfers — but the temptation to use it as an intensifier does not."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M8-S01",
+      "display": "C'est combien ?",
+      "cue": "How much is it?",
+      "glossEn": "lit. \"It is how much?\"",
+      "literal": "It-is how-much ?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "C'est",
+            "cue": "it is · this is · that is",
+            "tag": "delta",
+            "forms": [],
+            "note": "ce welded onto est. ce means \"this\" or \"that\" and cannot stand next to est's vowel, so the two are written as one word — the same shrinking that gave j'aime its apostrophe. It points at a thing without naming it, which is why it does duty for \"it\", \"this\" and \"that\" all at once."
+          },
+          {
+            "display": "combien",
+            "cue": "how much · how many",
+            "tag": "delta",
+            "forms": [],
+            "note": "how much, and how many — one word for both, because French does not split countable from uncountable here. On its own it asks a price; in front of a noun it takes de (combien de pommes)."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English fronts the question — \"HOW MUCH is it?\" French leaves the sentence standing and puts combien where the answer will go, exactly as L1-M4's à quelle heure did.",
+      "sound": "say kohn-BYAN. combien has two nasal vowels and neither n is sounded on its own.",
+      "variations": [
+        {
+          "display": "C'est combien, le livre ?",
+          "cue": "How much is the book?",
+          "changed": "the thing named after a comma, which is how a speaker adds it in"
+        },
+        {
+          "display": "Ça coûte combien ?",
+          "cue": "How much does it cost?",
+          "changed": "a full verb instead of c'est — the question word does not move"
+        },
+        {
+          "display": "C'est dix euros",
+          "cue": "It's ten euros",
+          "changed": "the answer takes the seat combien was holding"
+        }
+      ],
+      "mistake": {
+        "display": "Combien c'est ?",
+        "why": "The question word belongs at the end here: C'est combien ? Fronting it is English's shape, and it is what makes the sentence sound translated."
+      },
+      "usage": "The plainest way to ask a price, anywhere.",
+      "register": "neutral",
+      "mnemonic": "Put the question where the answer goes."
+    },
+    {
+      "id": "L1-M8-S02",
+      "display": "Ça coûte combien ?",
+      "cue": "How much does it cost?",
+      "glossEn": "lit. \"That costs how much?\"",
+      "literal": "That costs how-much ?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Ça",
+            "cue": "that · it",
+            "tag": "delta",
+            "forms": [],
+            "note": "that, or it — the everyday pointing word, standing alone as a subject. It is the same ça that L1-M2 taught inside ça va, and this is the first time the course shows it on its own."
+          },
+          {
+            "display": "coûte",
+            "cue": "cost · costs",
+            "tag": "free",
+            "forms": ["coûte", "coûtez"],
+            "note": "coûter, to cost — a regular -er verb, so it behaves exactly like mange and travaille. Its circumflex is a historical mark and changes nothing you can hear; it is simply part of the spelling."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English cannot ask this without \"does\". French uses the verb it already has and adds nothing whatsoever — the same absence that made Vous voulez du café ? a question in L1-M3.",
+      "sound": "sa KOOT kohn-BYAN. The ç of ça is a plain s, and the -e of coûte is silent.",
+      "variations": [
+        {
+          "display": "Le café coûte combien ?",
+          "cue": "How much does the coffee cost?",
+          "changed": "a named subject instead of ça — the shape is otherwise identical"
+        },
+        {
+          "display": "Ça coûte dix euros",
+          "cue": "It costs ten euros",
+          "changed": "the answer, with the price where the question word stood"
+        },
+        {
+          "display": "Ça ne coûte pas cher",
+          "cue": "It isn't expensive",
+          "changed": "the brackets close round coûte; cher stays outside them"
+        }
+      ],
+      "mistake": {
+        "display": "Ça fait coûte combien ?",
+        "why": "One verb is enough: Ça coûte combien ? The extra verb is an English speaker reaching for a helper French has no room for."
+      },
+      "usage": "Asking a price with a little more weight than C'est combien ?",
+      "register": "neutral",
+      "mnemonic": "ça points, coûte costs, combien asks — and nothing moves."
+    },
+    {
+      "id": "L1-M8-S03",
+      "display": "C'est dix euros",
+      "cue": "It's ten euros",
+      "glossEn": "lit. \"It is ten euros\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dix",
+            "cue": "ten",
+            "tag": "delta",
+            "forms": [],
+            "note": "ten. Its ending moves with what follows: on its own it ends in an s sound (dees), in front of a vowel it ends in a z (dix euros is dee-ZUH-ro), and in front of a consonant it says nothing at all (dix livres is dee LEEVR)."
+          },
+          {
+            "display": "euros",
+            "cue": "euro · euros",
+            "tag": "free",
+            "forms": ["euro", "euros"],
+            "note": "euro — masculine, and its plural -s is written and silent, like every other. What you hear in dix euros is the number linking into it, not the noun's own ending."
+          }
+        ],
+        "rules": [1, 5, 6]
+      },
+      "trap": "The number in front of the noun is the whole article: C'est dix euros, never C'est les dix euros. English does the same, so this is a transfer — but the linking sound is not, and it is what makes the phrase hard to hear.",
+      "sound": "say dee-ZUH-ro. The -x of dix wakes into a z in front of the vowel of euros, and the two words run together.",
+      "variations": [
+        {
+          "display": "C'est vingt euros",
+          "cue": "It's twenty euros",
+          "changed": "a different number — and a different linking sound, a t rather than a z"
+        },
+        {
+          "display": "Ça coûte dix euros",
+          "cue": "It costs ten euros",
+          "changed": "a full verb instead of c'est"
+        },
+        {
+          "display": "C'est dix euros, s'il vous plaît",
+          "cue": "That's ten euros, please",
+          "changed": "the politeness phrase at the edge — what a shopkeeper adds"
+        }
+      ],
+      "mistake": {
+        "display": "C'est dix euro",
+        "why": "The plural -s is written even though it is silent: dix euros. The eye has to add what the ear never will."
+      },
+      "usage": "Giving or repeating a price.",
+      "register": "neutral",
+      "mnemonic": "The number reaches into the noun: dix euros is one sound, not two."
+    },
+    {
+      "id": "L1-M8-S04",
+      "display": "Combien de pommes ?",
+      "cue": "How many apples?",
+      "glossEn": "lit. \"How much of apples?\"",
+      "literal": "How-much of apples ?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "combien de",
+            "cue": "how much · how many",
+            "tag": "delta",
+            "forms": [],
+            "note": "In front of a noun, combien takes de and the two are said together. ONE phrase covers both of English's questions — combien de pommes (how many) and combien de pain (how much) — and no article stands between it and the noun: never combien des pommes."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "English chooses between \"how much\" and \"how many\" before it can finish the question, and gets it wrong with uncountables it has not classified. French asks one question and lets the noun speak for itself.",
+      "sound": "kohn-BYAN duh POM. The de is a light unstressed syllable, and it is easy to swallow — but it cannot be dropped in writing.",
+      "variations": [
+        {
+          "display": "Combien de pain ?",
+          "cue": "How much bread?",
+          "changed": "an uncountable noun — and not a letter of the question changes"
+        },
+        {
+          "display": "Combien de livres ?",
+          "cue": "How many books?",
+          "changed": "another countable plural behind the same phrase"
+        },
+        {
+          "display": "C'est combien ?",
+          "cue": "How much is it?",
+          "changed": "no noun at all, so combien stands bare and moves to the end"
+        }
+      ],
+      "mistake": {
+        "display": "Combien des pommes ?",
+        "why": "No article after combien de: combien de pommes. des would be L1-M3's partitive arriving where the quantity word has already done its job."
+      },
+      "usage": "Asking a quantity, of anything at all.",
+      "register": "neutral",
+      "mnemonic": "One question for much and for many, and nothing between it and the noun."
+    },
+    {
+      "id": "L1-M8-S05",
+      "display": "Je veux trois pommes, s'il vous plaît",
+      "cue": "I want three apples, please",
+      "glossEn": "lit. \"I want three apples, if it pleases you\"",
+      "literal": "I want three apples, if-it you pleases",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "trois",
+            "cue": "three",
+            "tag": "free",
+            "forms": [],
+            "note": "three. Its -s is silent on its own and wakes into a z in front of a vowel, exactly as dix does: trois euros is trwa-ZUH-ro."
+          },
+          {
+            "display": "s'il vous plaît",
+            "cue": "please",
+            "tag": "delta",
+            "forms": [],
+            "note": "please — three words taken whole, and literally \"if it pleases you\". The vous inside it is the register this course speaks throughout: the friendly shape, s'il te plaît, belongs with tu and is never written here. It goes at the edge of the request, at the end or after a comma."
+          }
+        ],
+        "rules": [4, 5]
+      },
+      "trap": "je veux is blunt on its own — a French speaker would soften it, and s'il vous plaît is exactly how. English's \"I want\" carries the same bluntness, so the fix transfers even though the words do not.",
+      "sound": "trwa POM, seel voo PLEH. The three words of the politeness phrase run together as one, and the final -t of plaît is silent.",
+      "variations": [
+        {
+          "display": "Je veux cinq pommes, s'il vous plaît",
+          "cue": "I want five apples, please",
+          "changed": "a different number; the phrase behind it never changes"
+        },
+        {
+          "display": "S'il vous plaît, je veux trois pommes",
+          "cue": "Please, I want three apples",
+          "changed": "the politeness at the front instead — either edge will do"
+        },
+        {
+          "display": "Trois pommes, s'il vous plaît",
+          "cue": "Three apples, please",
+          "changed": "no verb at all, which is what a speaker actually says across a counter"
+        }
+      ],
+      "mistake": {
+        "display": "Je veux trois des pommes, s'il vous plaît",
+        "why": "A number is already the article: trois pommes. des would be saying \"some\" inside a phrase that has counted them."
+      },
+      "usage": "Buying something, politely.",
+      "register": "neutral",
+      "mnemonic": "The number replaces the article, and the phrase at the edge does the softening."
+    },
+    {
+      "id": "L1-M8-S06",
+      "display": "Un kilo de pommes, s'il vous plaît",
+      "cue": "A kilo of apples, please",
+      "glossEn": "lit. \"A kilo of apples, if it pleases you\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Un kilo de",
+            "cue": "a kilo of",
+            "tag": "delta",
+            "forms": [],
+            "note": "a kilo of — the quantity phrase, taken whole. The de after it takes NOTHING: un kilo de pommes, never un kilo des pommes. A word that has already said how much leaves no work for the partitive."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "L1-M3 spent a whole module teaching that a noun cannot stand bare after de. A quantity word is the exception, and it is a large one: after un kilo de, une bouteille de and combien de, the noun takes nothing at all.",
+      "sound": "uhn kee-LO duh POM. The de is unstressed and light, and the whole phrase runs as one breath.",
+      "variations": [
+        {
+          "display": "Un kilo de pain, s'il vous plaît",
+          "cue": "A kilo of bread, please",
+          "changed": "an uncountable noun — and the phrase behaves identically"
+        },
+        {
+          "display": "Je veux un kilo de pommes",
+          "cue": "I want a kilo of apples",
+          "changed": "a verb in front of it; the quantity phrase is untouched"
+        },
+        {
+          "display": "Combien de pommes ?",
+          "cue": "How many apples?",
+          "changed": "the question this answers — and it uses the same bare de"
+        }
+      ],
+      "mistake": {
+        "display": "Un kilo des pommes, s'il vous plaît",
+        "why": "After a quantity word the noun stands bare: un kilo de pommes. des is the partitive doing a job the quantity has already done."
+      },
+      "usage": "Buying by weight.",
+      "register": "neutral",
+      "mnemonic": "Say how much, and the article stops being needed."
+    },
+    {
+      "id": "L1-M8-S07",
+      "display": "Ça coûte vingt euros",
+      "cue": "It costs twenty euros",
+      "glossEn": "lit. \"That costs twenty euros\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vingt",
+            "cue": "twenty",
+            "tag": "free",
+            "forms": [],
+            "note": "twenty. Its -gt says nothing on its own — van — but in front of a vowel the t comes back: vingt euros is van-TUH-ro. Numbers in French are full of these reachings-forward, and they are the hardest part of hearing a price."
+          }
+        ],
+        "rules": [0, 5, 6]
+      },
+      "trap": "The number you learn in isolation is not the number you will hear in a price. vingt on its own and vingt euros end differently, and a learner listening for the first will miss the second.",
+      "sound": "sa KOOT van-TUH-ro. The t of vingt wakes only because euros begins with a vowel.",
+      "variations": [
+        {
+          "display": "Ça coûte cinq euros",
+          "cue": "It costs five euros",
+          "changed": "a number whose final sound is always there — cinq needs no vowel to wake it"
+        },
+        {
+          "display": "C'est vingt euros",
+          "cue": "It's twenty euros",
+          "changed": "c'est instead of the full verb"
+        },
+        {
+          "display": "Ça coûte vingt euros ?",
+          "cue": "Does it cost twenty euros?",
+          "changed": "the same words as a question — only the voice and the mark change"
+        }
+      ],
+      "mistake": {
+        "display": "Ça coûte vingt euro",
+        "why": "The written plural again: vingt euros. Nothing in the sound will remind you, so the eye has to."
+      },
+      "usage": "Stating a price.",
+      "register": "neutral",
+      "mnemonic": "The number leans into the noun, and its last letter wakes up."
+    },
+    {
+      "id": "L1-M8-S08",
+      "display": "C'est cinq euros",
+      "cue": "It's five euros",
+      "glossEn": "lit. \"It is five euros\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cinq",
+            "cue": "five",
+            "tag": "free",
+            "forms": [],
+            "note": "five. Unlike dix and vingt it says its final consonant whatever follows — sank — so cinq euros and cinq livres end the same way. It is the number that behaves."
+          }
+        ],
+        "rules": [1, 5, 6]
+      },
+      "trap": "After dix and vingt a learner starts expecting every number to change shape. cinq does not, and neither do trois's neighbours in the same way — the reaching-forward is a property of particular numbers, not a rule about all of them.",
+      "sound": "sank, with the q fully sounded and the vowel nasal in front of it.",
+      "variations": [
+        {
+          "display": "C'est trois euros",
+          "cue": "It's three euros",
+          "changed": "a number whose -s does wake up in front of the vowel"
+        },
+        {
+          "display": "Ça coûte cinq euros",
+          "cue": "It costs five euros",
+          "changed": "the full verb instead of c'est"
+        },
+        {
+          "display": "C'est cinq euros, s'il vous plaît",
+          "cue": "That's five euros, please",
+          "changed": "the politeness phrase at the edge"
+        }
+      ],
+      "mistake": {
+        "display": "C'est cinque euros",
+        "why": "cinq has no -e: the q is the last letter, and it is sounded. The spelling with -e belongs to no French number."
+      },
+      "usage": "A small price, given plainly.",
+      "register": "neutral",
+      "mnemonic": "cinq is the number that never changes its mind."
+    },
+    {
+      "id": "L1-M8-S09",
+      "display": "Une bouteille d'eau, s'il vous plaît",
+      "cue": "A bottle of water, please",
+      "glossEn": "lit. \"A bottle of water, if it pleases you\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bouteille",
+            "cue": "bottle · bottles",
+            "tag": "free",
+            "forms": ["bouteille", "bouteilles"],
+            "note": "bottle — feminine, so une bouteille. Its -eille is the same y sound as in travaille, and its written plural is silent as always."
+          },
+          {
+            "display": "d'eau",
+            "cue": "of water",
+            "tag": "delta",
+            "forms": [],
+            "note": "de welded onto eau. The quantity's de cannot sit next to the noun's vowel, so it shortens to d' — the same shrinking that gave L1-M4 its l'eau. Note the difference between the two: l'eau is \"the water\", d'eau is \"of water\"."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "l'eau and d'eau look almost identical and mean different things — the article against the quantity's de. Both are one written word, and only the first letter says which is which.",
+      "sound": "ün boo-TAY doh. The final -e of bouteille is silent, and d'eau is one syllable.",
+      "variations": [
+        {
+          "display": "Deux bouteilles d'eau, s'il vous plaît",
+          "cue": "Two bottles of water, please",
+          "changed": "a number in front and a written plural behind — neither of them audible"
+        },
+        {
+          "display": "Je veux une bouteille d'eau",
+          "cue": "I want a bottle of water",
+          "changed": "a verb in front; the quantity phrase is untouched"
+        },
+        {
+          "display": "Je bois de l'eau",
+          "cue": "I drink water",
+          "changed": "the partitive rather than a quantity — so de l'eau, with the article back in it"
+        }
+      ],
+      "mistake": {
+        "display": "Une bouteille de l'eau, s'il vous plaît",
+        "why": "A quantity takes a bare de: une bouteille d'eau. de l'eau is the partitive, and it belongs where no quantity has been named."
+      },
+      "usage": "Buying a drink.",
+      "register": "neutral",
+      "mnemonic": "l' is the article, d' is the quantity's de. One letter apart, and a whole job."
+    },
+    {
+      "id": "L1-M8-S10",
+      "display": "C'est trop cher",
+      "cue": "It's too expensive",
+      "glossEn": "lit. \"It is too expensive\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "trop",
+            "cue": "too · too much",
+            "tag": "delta",
+            "forms": [],
+            "note": "too — and always an excess, never merely an intensifier. c'est trop cher is \"it is TOO expensive\", a complaint; \"it is very expensive\" would need a different word. Its -p is silent."
+          },
+          {
+            "display": "cher",
+            "cue": "expensive (m · f)",
+            "tag": "free",
+            "forms": ["cher", "chère"],
+            "note": "expensive. Like every adjective it agrees with the subject — cher, chère — but after c'est the masculine is what is written, because ce is not a thing with a gender."
+          }
+        ],
+        "rules": [1, 7]
+      },
+      "trap": "English uses \"too\" loosely in speech — \"that's too good\" meaning very good. French does not: trop is always an excess, and using it as an intensifier says something you did not mean.",
+      "sound": "say tro SHAIR. The -p of trop is silent, and cher rhymes with the English \"air\" with an r in the throat.",
+      "variations": [
+        {
+          "display": "C'est cher",
+          "cue": "It's expensive",
+          "changed": "trop taken away — a statement of fact rather than a complaint"
+        },
+        {
+          "display": "La voiture est trop chère",
+          "cue": "The car is too expensive",
+          "changed": "a named feminine subject, so the adjective takes its -e"
+        },
+        {
+          "display": "Ce n'est pas trop cher",
+          "cue": "It isn't too expensive",
+          "changed": "the brackets round est — and c'est comes apart into ce n'est, because the negation needs the room"
+        }
+      ],
+      "mistake": {
+        "display": "C'est très trop cher",
+        "why": "trop is already the excess; nothing intensifies it. Either c'est cher or c'est trop cher, and never both words together."
+      },
+      "usage": "Refusing a price — the politest complaint there is.",
+      "register": "neutral",
+      "mnemonic": "trop is a verdict, not a volume knob."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M8-C01", "display": "C'est vingt euros", "cue": "It's twenty euros" },
+    { "id": "L1-M8-C02", "display": "Ça coûte dix euros", "cue": "It costs ten euros" },
+    { "id": "L1-M8-C03", "display": "Combien de livres ?", "cue": "How many books?" },
+    {
+      "id": "L1-M8-C04",
+      "display": "Je veux cinq pommes, s'il vous plaît",
+      "cue": "I want five apples, please"
+    },
+    {
+      "id": "L1-M8-C05",
+      "display": "Un kilo de pain, s'il vous plaît",
+      "cue": "A kilo of bread, please"
+    },
+    { "id": "L1-M8-C06", "display": "Le livre est trop cher", "cue": "The book is too expensive" },
+    {
+      "id": "L1-M8-C07",
+      "display": "Deux bouteilles d'eau, s'il vous plaît",
+      "cue": "Two bottles of water, please"
+    },
+    { "id": "L1-M8-C08", "display": "Le café coûte combien ?", "cue": "How much does the coffee cost?" },
+    { "id": "L1-M8-C09", "display": "C'est trois euros", "cue": "It's three euros" },
+    { "id": "L1-M8-C10", "display": "Combien de pain ?", "cue": "How much bread?" },
+    { "id": "L1-M8-C11", "display": "Je veux un kilo de pommes", "cue": "I want a kilo of apples" },
+    { "id": "L1-M8-C12", "display": "C'est combien, le livre ?", "cue": "How much is the book?" }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

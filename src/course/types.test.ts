@@ -183,7 +183,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all forty-five — hi-mr, en-es, en-ar and hi-en L1-M1..M10, and en-fr as far as it is authored', () => {
+  it('finds all fifty — hi-mr, en-es, en-ar, hi-en and en-fr, L1-M1..M10 apiece', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -206,10 +206,15 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-es/modules/L1-M8.json',
       'content/en-es/modules/L1-M9.json',
       'content/en-fr/modules/L1-M1.json',
+      'content/en-fr/modules/L1-M10.json',
       'content/en-fr/modules/L1-M2.json',
       'content/en-fr/modules/L1-M3.json',
       'content/en-fr/modules/L1-M4.json',
       'content/en-fr/modules/L1-M5.json',
+      'content/en-fr/modules/L1-M6.json',
+      'content/en-fr/modules/L1-M7.json',
+      'content/en-fr/modules/L1-M8.json',
+      'content/en-fr/modules/L1-M9.json',
       'content/hi-en/modules/L1-M1.json',
       'content/hi-en/modules/L1-M10.json',
       'content/hi-en/modules/L1-M2.json',
@@ -388,29 +393,40 @@ describe('ModuleContent against the modules that exist', () => {
     for (const [file, json] of enFr) {
       const module = parseModule(json, file);
 
+      /** Every L2 slot; `taught` is the same minus the mistake plates, which are wrong by design. */
       const l2Slots: [where: string, text: string][] = [];
-      for (const item of module.comprehensionPool) l2Slots.push([item.id, item.display]);
+      const taught: [where: string, text: string][] = [];
+      const both = (where: string, text: string): void => {
+        l2Slots.push([where, text]);
+        taught.push([where, text]);
+      };
+      for (const item of module.comprehensionPool) both(item.id, item.display);
       for (const sentence of module.sentences) {
         const at = sentence.id;
         expect(sentence.glossEn, `${at} glossEn`).toMatch(/\S/);
         expect(sentence.register, `${at} register`).toBe('neutral');
-        l2Slots.push([at, sentence.display]);
+        both(at, sentence.display);
         for (const variation of sentence.variations ?? []) {
-          l2Slots.push([`${at} variation`, variation.display]);
+          both(`${at} variation`, variation.display);
         }
+        // A `mistake` is deliberately-wrong French — the build never indexes one for the same
+        // reason — so it is the one slot allowed to write the register the course refuses,
+        // which is exactly what L1-M10's plate does with `et tu ?`.
         if (sentence.mistake !== undefined) {
           l2Slots.push([`${at} mistake`, sentence.mistake.display]);
         }
         for (const word of sentence.deconstruction.words) {
-          l2Slots.push([`${at} word`, word.display]);
-          for (const form of word.forms) l2Slots.push([`${at} form`, form]);
+          both(`${at} word`, word.display);
+          for (const form of word.forms) both(`${at} form`, form);
         }
       }
 
+      // A curly apostrophe folds to the straight one on the index, but `display` must be one
+      // spelling — the briefs' elision policy, held on the file, mistakes included.
       for (const [where, text] of l2Slots) {
-        // A curly apostrophe folds to the straight one on the index, but `display` must be one
-        // spelling — the briefs' elision policy, held on the file.
         expect(text, `${where}: straight apostrophe only`).not.toMatch(/[’‘]/);
+      }
+      for (const [where, text] of taught) {
         for (const token of text.toLowerCase().split(/[\s,.?!]+/)) {
           expect(TU_REGISTER.has(token), `${where}: "${token}" is tu-register`).toBe(false);
         }

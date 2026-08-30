@@ -42,7 +42,18 @@ import type { Levels, ModuleContent, WordIndex, WordIndexEntry } from './types.t
 
 const COURSE = 'en-fr';
 /** The rungs authored so far, in ladder order — the fold below is cumulative over this list. */
-const AUTHORED = ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5'] as const;
+const AUTHORED = [
+  'L1-M1',
+  'L1-M2',
+  'L1-M3',
+  'L1-M4',
+  'L1-M5',
+  'L1-M6',
+  'L1-M7',
+  'L1-M8',
+  'L1-M9',
+  'L1-M10',
+] as const;
 
 const FILES = import.meta.glob<string>('../../content/en-fr/**/*.json', {
   query: '?raw',
@@ -478,5 +489,103 @@ describe('Sentence Detail over L1-M3, L1-M4 and L1-M5', () => {
     expect(within(words).getByText(expected.word)).toBeInTheDocument();
     expect(within(words).getByText(expected.cue)).toBeInTheDocument();
     expect(within(section('mistake')).getByText(expected.mistake)).toBeInTheDocument();
+  });
+});
+
+/* ---------------------------------------------------- the last five rungs (#330) */
+
+describe('Sentence Detail over L1-M6 … L1-M10', () => {
+  async function open(sentenceId: string) {
+    serveAuthoredEnFr();
+    activateEnFr();
+    passRungsBefore(sentenceId.slice(0, sentenceId.lastIndexOf('-')));
+    window.location.hash = `#/sentence/${sentenceId}`;
+    render(<App />);
+    await screen.findByRole('main');
+  }
+
+  it('renders L1-M6-S01 with the plan frame and the à it does NOT write', async () => {
+    await open('L1-M6-S01');
+
+    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
+      'Demain je vais travailler',
+    );
+    expect(within(section('gloss')).getByText('Tomorrow I go work')).toBeInTheDocument();
+    // One `vais` row, whose note was written for the plan AND for plain movement (M7's seat).
+    expect(within(section('words')).getByText('go · goes')).toBeInTheDocument();
+    expect(within(section('mistake')).getByText('Demain je vais à travailler')).toBeInTheDocument();
+  });
+
+  it('renders L1-M7-S04 with `Il y a` as ONE row, not three words', async () => {
+    await open('L1-M7-S04');
+
+    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
+      'Il y a un livre ici',
+    );
+    const words = section('words');
+    // Two rows for a five-word sentence: the existential taken whole, then `ici`. `un` and
+    // `livre` were taught earlier and are not re-deconstructed.
+    expect(within(words).getAllByRole('listitem')).toHaveLength(2);
+    expect(within(words).getByText('Il y a')).toBeInTheDocument();
+    expect(within(words).getByText('there is · there are')).toBeInTheDocument();
+    expect(within(section('mistake')).getByText('Il y ont deux livres ici')).toBeInTheDocument();
+  });
+
+  it("renders L1-M8-S05 with `s'il vous plaît` whole, in the register the course speaks", async () => {
+    await open('L1-M8-S05');
+
+    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
+      "Je veux trois pommes, s'il vous plaît",
+    );
+    const words = section('words');
+    expect(within(words).getByText("s'il vous plaît")).toBeInTheDocument();
+    expect(within(words).getByText(/is never written here/)).toBeInTheDocument();
+  });
+
+  it('renders L1-M9-S01 with faim tagged interference and the être mistake plated', async () => {
+    await open('L1-M9-S01');
+
+    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent("J'ai faim");
+    expect(within(section('gloss')).getByText('I-have hunger')).toBeInTheDocument();
+    expect(within(section('words')).getByText('hunger')).toBeInTheDocument();
+    expect(within(section('mistake')).getByText('Je suis faim')).toBeInTheDocument();
+  });
+
+  it('renders L1-M10-S05 as a TURN — two sentences in one hero, the gender crossing between them', async () => {
+    await open('L1-M10-S05');
+
+    // The turn renders whole: both sentences in the one hero line, as en-es's M10 does.
+    const hero = await screen.findByRole('heading', { level: 2 });
+    expect(hero).toHaveTextContent('La maison est près du marché. Elle est grande.');
+    expect(hero).toHaveAttribute('lang', 'fr');
+    expect(
+      within(section('gloss')).getByText('The house is near of-the market. She is big.'),
+    ).toBeInTheDocument();
+    const words = section('words');
+    expect(within(words).getByText('Elle')).toBeInTheDocument();
+    expect(within(words).getByText('she · it (feminine)')).toBeInTheDocument();
+    expect(within(words).getByText('big (m · f)')).toBeInTheDocument();
+    expect(
+      within(section('mistake')).getByText('La maison est près du marché. Il est grand.'),
+    ).toBeInTheDocument();
+  });
+
+  it('renders every L1-M10 turn as one card in the module list', async () => {
+    serveAuthoredEnFr();
+    activateEnFr();
+    passRungsBefore('L1-M10');
+    window.location.hash = '#/module/L1-M10';
+    render(<App />);
+    await screen.findByRole('main');
+    const turns = module('L1-M10');
+
+    // Ten cards for ten turns: a turn of two or three sentences is ONE rung item, not two.
+    const cards = screen
+      .getAllByRole('link')
+      .filter((link) => link.getAttribute('href')?.startsWith('#/sentence/') === true);
+    expect(cards).toHaveLength(10);
+    for (const turn of turns.sentences) {
+      expect(screen.getByText(turn.display)).toBeInTheDocument();
+    }
   });
 });
