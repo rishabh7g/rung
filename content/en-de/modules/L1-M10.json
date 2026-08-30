@@ -1,0 +1,609 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M10",
+  "title": "Connected talk",
+  "job": "Short 2–3 sentence exchanges",
+  "prerequisites": ["L1-M9"],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "<M1–M9 pattern> + <M1–M9 pattern>",
+      "<statement> + und/aber + <statement>",
+      "<question> → <answer + , weil + reason>",
+      "<statement> + . + Dann/Also + <statement>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A TURN IS TWO OR THREE SHORT SENTENCES, not one long one — a statement and its consequence, or a question and its answer. Each sentence is complete, with its own subject and its own verb, and the full stop is what joins them. German's clause bracket makes a sentence longer in words than the English equivalent, so three short sentences carry a turn better than two long ones do."
+    },
+    {
+      "tag": "interference",
+      "text": "THE RECOMBINATION LAW — three behaviours, one turn, and getting them straight is this module. und, aber, oder and denn are COORDINATING: they sit outside the clause they introduce, so the verb stays SECOND and the subject stays in front of it (Ich bin müde, aber ich möchte Tee). weil, dass and wenn are SUBORDINATING and send the finite verb LAST. dann and also are neither — they are ADVERBS, they OCCUPY the first position, and so they invert (Dann gehe ich nach Hause)."
+    },
+    {
+      "tag": "interference",
+      "text": "also IS A FALSE FRIEND AND auch IS THE WORD IT IS MISTAKEN FOR. German also means \"so, therefore\": Ich bin müde, also möchte ich Tee is \"so I would like tea\". English \"also\" is German auch. Both are named here in the same breath, because naming them apart is exactly what lets a learner keep the wrong pairing — and auch goes AFTER whatever it adds to (Ich möchte auch Tee), never at the head of a sentence."
+    },
+    {
+      "tag": "free",
+      "text": "GERMAN SUBJECT PRONOUNS ARE NEVER DROPPED, exactly as English's are not. Every clause of every turn keeps its subject, including the second and third sentences where the person is already obvious. There is nothing to unlearn here — this one is free, and it is worth saying so rather than spending a warning on it."
+    },
+    {
+      "tag": "interference",
+      "text": "er, sie AND es NAME THE GRAMMATICAL GENDER OF THE NOUN THEY STAND FOR, not the sex of anything. Der Tisch ist groß. Er ist auch alt. — \"the table … he\". Die Tür ist klein. Sie ist neu. — \"the door … she\". The slogan is \"er = he, sie = she, es = it\". The law is that the pronoun matches the noun's gender, so a table is er and a door is sie, and an English speaker with no German twin for \"it\" will reach for es and use it for everything."
+    },
+    {
+      "tag": "delta",
+      "text": "wenn JOINS AND wann ASKS — the pair M6 opened is complete here. wenn means \"when\" in a statement (and \"if\", which is the same word again): Ich gehe ins Kino, wenn ich Zeit habe. It is subordinating, so its verb goes last. wann only ever asks a question, and its verb stays second. English uses one word for all of it and German uses two, spelled differently and behaving differently."
+    },
+    {
+      "tag": "free",
+      "text": "AN ADJECTIVE AFTER sein STILL TAKES NO ENDING, however far back the noun was named: Die Tür ist klein. Sie ist neu. The pronoun carries the gender forward from the previous sentence, and the adjective is untouched by it — which is why describing a thing across two sentences costs nothing beyond choosing the right pronoun."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M10-S01",
+      "display": "Ich bin müde, aber ich möchte Tee",
+      "cue": "I'm tired, but I'd like tea",
+      "glossEn": "lit. \"I am tired, but I would-like tea\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aber",
+            "cue": "but",
+            "tag": "free",
+            "forms": [],
+            "note": "but. It joins two full clauses and sets them against each other, in the same place English would put it, and it is COORDINATING — it stands outside the clause it introduces, so the verb after it stays second and the subject stays in front of the verb. Nothing about the second clause changes because aber is there."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "The second clause keeps its ich even though the question of who is speaking was settled in the first. German never drops a subject pronoun, so *aber möchte Tee is not a shorter version of this sentence — it is a clause with a hole where its subject should be.",
+      "sound": "AH-ber, with a long open a and a final -er said as a weak uh. It is two clean syllables, and the b is fully voiced.",
+      "variations": [
+        {
+          "display": "Ich bin müde, aber ich arbeite",
+          "cue": "I'm tired, but I'm working",
+          "changed": "a different second clause; aber changes nothing inside it"
+        },
+        {
+          "display": "Ich möchte Tee, aber ich habe keinen Tee",
+          "cue": "I'd like tea, but I don't have any tea",
+          "changed": "M3's kein inside the second clause, and the verb still second"
+        },
+        {
+          "display": "Ich bin müde, weil ich arbeite",
+          "cue": "I'm tired because I'm working",
+          "changed": "weil instead of aber — now the second clause is subordinate and its verb goes last"
+        }
+      ],
+      "mistake": {
+        "display": "Ich bin müde, aber möchte ich Tee",
+        "why": "aber is not part of the clause it introduces, so it does not push the verb into second place — the subject already holds first position. Inverting after aber is what dann and also would do, and aber is not one of those."
+      },
+      "usage": "The commonest shape in real conversation: a qualified answer.",
+      "register": "neutral",
+      "mnemonic": "aber joins; it does not push."
+    },
+    {
+      "id": "L1-M10-S02",
+      "display": "Der Tisch ist groß. Er ist auch alt.",
+      "cue": "The table is big. It's old too.",
+      "glossEn": "lit. \"The table is big. He is also old.\"",
+      "literal": "The table is big. He is also old.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "er",
+            "cue": "he · it (masculine)",
+            "tag": "interference",
+            "forms": [],
+            "note": "he — and \"it\" for anything masculine, which is the point. er stands for a MASCULINE NOUN, and der Tisch is masculine, so a table is er. English has \"it\" for every object and German has nothing standing where \"it\" stands, so an English speaker has to look back at the noun's article and choose the pronoun from that. The feminine and neuter partners are sie and es, and sie is the word M2 already opened."
+          },
+          {
+            "display": "groß",
+            "cue": "big",
+            "tag": "free",
+            "forms": [],
+            "note": "big. An adjective after ist, so no ending. The ß is written because the o in front of it is long, and it is not interchangeable with ss — the word index treats the two spellings as different letters, so only this one is this word."
+          },
+          {
+            "display": "alt",
+            "cue": "old",
+            "tag": "free",
+            "forms": [],
+            "note": "old. It describes things and people alike, and after ist it takes no ending. Its opposite for a thing is neu; for a person German would reach for a different word, which is a later level's problem."
+          },
+          {
+            "display": "auch",
+            "cue": "too · also · as well",
+            "tag": "interference",
+            "forms": [],
+            "note": "too, also, as well — and it goes AFTER whatever it is adding to: Er ist auch alt, Ich möchte auch Tee. It is the word English \"also\" actually means, and it is not German also, which means \"therefore\". Keeping the two straight is a matter of remembering that the one that LOOKS like English is the one that is not."
+          }
+        ],
+        "rules": [4, 2, 6]
+      },
+      "trap": "A table is er. Not es, which is the default an English speaker reaches for because \"it\" has to become something — es belongs to NEUTER nouns and to nothing else. The article the noun was learned with is the only thing that decides, which is why M1 insisted on learning every noun with its article.",
+      "sound": "air, one syllable with a swallowed r. groß is GROHS, with a long o and a plain hissed s at the end — the ß is not a z sound. auch has the throaty ch of machen after the ow of \"how\".",
+      "variations": [
+        {
+          "display": "Der Stuhl ist groß. Er ist auch neu.",
+          "cue": "The chair is big. It's new too.",
+          "changed": "another masculine noun, so another er"
+        },
+        {
+          "display": "Der Tisch ist groß. Er ist alt.",
+          "cue": "The table is big. It's old.",
+          "changed": "auch dropped — the second sentence no longer adds, it just describes"
+        },
+        {
+          "display": "Der Park ist klein. Er ist auch neu.",
+          "cue": "The park is small. It's new too.",
+          "changed": "a place instead of a piece of furniture; the pronoun still comes from the article"
+        }
+      ],
+      "mistake": {
+        "display": "Der Tisch ist groß. Es ist auch alt.",
+        "why": "der Tisch is masculine, so the pronoun is er. es would be right only for a neuter noun such as das Buch. This is the mistake an English speaker makes by default, because \"it\" has to be translated into something and es looks like the safest choice."
+      },
+      "usage": "Describing a thing across two sentences, the way anybody actually would.",
+      "register": "neutral",
+      "mnemonic": "The article picks the pronoun: der → er, die → sie, das → es."
+    },
+    {
+      "id": "L1-M10-S03",
+      "display": "Die Tür ist klein. Sie ist neu.",
+      "cue": "The door is small. It's new.",
+      "glossEn": "lit. \"The door is small. She is new.\"",
+      "literal": "The door is small. She is new.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "klein",
+            "cue": "small",
+            "tag": "free",
+            "forms": [],
+            "note": "small. An adjective after ist, no ending. The ei is said like English \"eye\", so it rhymes with \"line\" and not with \"lean\" — which is worth pinning down, because a learner who reads it as \"kleen\" will also misread every other ei in the course."
+          },
+          {
+            "display": "neu",
+            "cue": "new",
+            "tag": "free",
+            "forms": [],
+            "note": "new. Said NOY, with the eu of \"boy\" — the same vowel as in Euro and teuer. It is the opposite of alt for a thing, and it takes no ending after ist."
+          }
+        ],
+        "rules": [4, 6]
+      },
+      "trap": "sie here is a DOOR. It is the same word, the same spelling and the same index row as the sie that means \"she\" and the Sie that means \"you\", and the row's note was written to cover all of it — nothing new has been introduced, and the reading comes from what the sentence is about, not from a different word.",
+      "sound": "kline, one syllable. Tür has the ü of pursed lips and a swallowed r: closer to TÜR than to \"toor\". neu is NOY.",
+      "variations": [
+        {
+          "display": "Die Straße ist klein. Sie ist alt.",
+          "cue": "The street is small. It's old.",
+          "changed": "another feminine noun, so another sie"
+        },
+        {
+          "display": "Die Tür ist klein, aber sie ist neu",
+          "cue": "The door is small, but it's new",
+          "changed": "one sentence instead of two, joined with aber and the verb still second"
+        },
+        {
+          "display": "Die Suppe ist gut. Sie ist auch billig.",
+          "cue": "The soup is good. It's cheap too.",
+          "changed": "a feminine noun that is not furniture, with auch added"
+        }
+      ],
+      "mistake": {
+        "display": "Die Tür ist klein. Es ist neu.",
+        "why": "die Tür is feminine, so the pronoun is sie. es is the neuter one and belongs to nouns like das Buch. The gender travels with the noun into the next sentence, and the pronoun has to travel with it."
+      },
+      "usage": "The second half of any description.",
+      "register": "neutral",
+      "mnemonic": "A door is she, and that is grammar, not poetry."
+    },
+    {
+      "id": "L1-M10-S04",
+      "display": "Ich habe Hunger. Also esse ich Brot.",
+      "cue": "I'm hungry. So I'm eating bread.",
+      "glossEn": "lit. \"I have hunger. So eat I bread.\"",
+      "literal": "I have hunger. So eat I bread.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "also",
+            "cue": "so · therefore",
+            "tag": "interference",
+            "forms": [],
+            "note": "so, therefore — and it is the sharpest false friend left in the level, because it is spelled exactly like an English word it does not mean. English \"also\" is German auch. German also draws a conclusion, and it is an ADVERB, so it takes the first position of its clause and the verb comes straight after it: Also esse ich Brot. That inversion is the second way to tell it apart from denn, which never inverts anything."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "also and auch are each the other's English translation, which is the worst possible arrangement for a learner. also = \"so\"; auch = \"also\". Reading them by shape gets both wrong at once, so they have to be learned as a pair rather than one at a time.",
+      "sound": "AL-zo — the s between vowels is a z, and the stress is on the first syllable. It does not sound like the English word, which is some help.",
+      "variations": [
+        {
+          "display": "Ich habe Durst. Also möchte ich Wasser.",
+          "cue": "I'm thirsty. So I'd like water.",
+          "changed": "a different state and a different conclusion; the inversion is fixed"
+        },
+        {
+          "display": "Ich bin müde. Also gehe ich nach Hause.",
+          "cue": "I'm tired. So I'm going home.",
+          "changed": "M9's state and M5's destination, joined by the same conclusion word"
+        },
+        {
+          "display": "Ich habe Hunger, denn ich arbeite",
+          "cue": "I'm hungry, because I'm working",
+          "changed": "denn instead of also — a reason instead of a conclusion, and no inversion at all"
+        }
+      ],
+      "mistake": {
+        "display": "Ich habe Hunger. Also ich esse Brot.",
+        "why": "also occupies the first position of its clause, so the verb must be second and the subject third: Also esse ich Brot. It behaves like a fronted time word, not like aber or denn."
+      },
+      "usage": "Drawing the obvious conclusion out loud.",
+      "register": "neutral",
+      "mnemonic": "also is so; auch is also."
+    },
+    {
+      "id": "L1-M10-S05",
+      "display": "Ich arbeite heute. Dann gehe ich nach Hause.",
+      "cue": "I'm working today. Then I'm going home.",
+      "glossEn": "lit. \"I work today. Then go I to house.\"",
+      "literal": "I work today. Then go I to-house.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dann",
+            "cue": "then · after that",
+            "tag": "delta",
+            "forms": [],
+            "note": "then, in the sense of \"after that\" — the sequencing word that turns two sentences into an order of events. Like also it is an ADVERB, so it takes the first position and inverts: Dann gehe ich nach Hause. English's \"then\" can sit almost anywhere in the sentence; German's takes the front and takes the consequences."
+          }
+        ],
+        "rules": [1, 0]
+      },
+      "trap": "dann inverts and und does not. Both can join two things that happen one after the other, but und leaves the clause exactly as it stood while dann takes first position and pushes the verb ahead of the subject.",
+      "sound": "dahn, one short syllable with a plain d and a clean n. It is not the English \"darn\" — there is no r in it at all.",
+      "variations": [
+        {
+          "display": "Ich arbeite heute. Dann esse ich Suppe.",
+          "cue": "I'm working today. Then I'm eating soup.",
+          "changed": "a different second event; the inversion does not move"
+        },
+        {
+          "display": "Ich gehe ins Kino. Dann gehe ich nach Hause.",
+          "cue": "I'm going to the cinema. Then I'm going home.",
+          "changed": "M7's destination in the first sentence, and the same sequencing word"
+        },
+        {
+          "display": "Ich arbeite heute und ich gehe nach Hause",
+          "cue": "I'm working today and I'm going home",
+          "changed": "und instead of dann, so the two clauses join with no inversion at all"
+        }
+      ],
+      "mistake": {
+        "display": "Ich arbeite heute. Dann ich gehe nach Hause.",
+        "why": "dann is the first element of its clause, so gehe is second and ich third. It is an adverb standing inside the sentence, not a joining word standing outside it — which is exactly what und and aber are."
+      },
+      "usage": "Laying out a day in order.",
+      "register": "neutral",
+      "mnemonic": "dann steps into the sentence; und stays outside it."
+    },
+    {
+      "id": "L1-M10-S06",
+      "display": "Möchten Sie Kaffee oder Tee?",
+      "cue": "Would you like coffee or tea?",
+      "glossEn": "lit. \"Would-like you coffee or tea?\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "oder",
+            "cue": "or",
+            "tag": "free",
+            "forms": [],
+            "note": "or. Coordinating, like und and aber, and here it is joining two nouns rather than two clauses — which it does with no ending and no article changing on either side. Said on its own at the end of a statement it turns it into a question expecting agreement, roughly English's \"…, right?\", which is worth recognising before somebody does it to you."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "Both nouns after oder stand bare. Kaffee oder Tee, not *einen Kaffee oder einen Tee — these are generics, which M1 established take no article in German where English and French both want one.",
+      "sound": "OH-der, with a long o and a weak final -er. The d is fully voiced and the word is two clean syllables.",
+      "variations": [
+        {
+          "display": "Möchten Sie Brot oder Suppe?",
+          "cue": "Would you like bread or soup?",
+          "changed": "a different pair offered"
+        },
+        {
+          "display": "Möchten Sie Kaffee oder möchten Sie Tee?",
+          "cue": "Would you like coffee, or would you like tea?",
+          "changed": "two full clauses instead of two nouns — and the verb after oder is still second"
+        },
+        {
+          "display": "Ich möchte Kaffee und Brot",
+          "cue": "I'd like coffee and bread",
+          "changed": "und instead of oder, and a statement instead of a question"
+        }
+      ],
+      "mistake": {
+        "display": "Möchten Sie einen Kaffee oder einen Tee?",
+        "why": "This is not ungrammatical — it asks for one particular cup of each — but it is not the offer. A drink offered as a kind of thing stands bare: Kaffee oder Tee."
+      },
+      "usage": "What you are asked at every table and every reception desk.",
+      "register": "neutral",
+      "mnemonic": "oder joins the two things it offers, and changes neither."
+    },
+    {
+      "id": "L1-M10-S07",
+      "display": "Ich gehe ins Kino, wenn ich Zeit habe",
+      "cue": "I'll go to the cinema if I have time",
+      "glossEn": "lit. \"I go into-the cinema, when I time have\"",
+      "literal": "I go into-the cinema, when I time have",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wenn",
+            "cue": "if · when (joining)",
+            "tag": "interference",
+            "forms": [],
+            "note": "if, and also \"when\" in a statement — one German word for both, where English splits them. It is SUBORDINATING, so its clause sends the finite verb to the end: wenn ich Zeit habe. And it is not M6's wann: wann only asks a question and keeps its verb second. Same English word, two German ones, two spellings and two word orders."
+          }
+        ],
+        "rules": [5, 1]
+      },
+      "trap": "habe is the last word of the sentence and it belongs to the wenn-clause, not to the main one. The main clause has already finished with gehe in second position — so one turn holds a verb in the second slot and a verb in the last slot, and which is which depends only on the conjunction.",
+      "sound": "ven, one syllable, with the w said as a v — so it sounds like English \"ven\". Zeit is TSYTE: the z is always ts, and the ei is \"eye\".",
+      "variations": [
+        {
+          "display": "Ich gehe nach Hause, wenn ich müde bin",
+          "cue": "I'll go home if I'm tired",
+          "changed": "a different condition; bin still travels to the end"
+        },
+        {
+          "display": "Ich habe Zeit. Dann gehe ich ins Kino.",
+          "cue": "I have time. Then I'll go to the cinema.",
+          "changed": "the same two facts as two sentences, with dann inverting the second one"
+        },
+        {
+          "display": "Wann gehen Sie ins Kino?",
+          "cue": "When are you going to the cinema?",
+          "changed": "M6's wann, which asks — and keeps its verb second, where wenn would have sent it last"
+        }
+      ],
+      "mistake": {
+        "display": "Ich gehe ins Kino, wann ich Zeit habe",
+        "why": "wann is only for questions. The joining word is wenn, and this sentence is a statement — so the spelling with e is the one that goes here, and it takes the verb to the end with it."
+      },
+      "usage": "Making a conditional plan, which is most plans.",
+      "register": "neutral",
+      "mnemonic": "wenn joins with an e; wann asks with an a."
+    },
+    {
+      "id": "L1-M10-S08",
+      "display": "Das Buch ist neu. Es ist gut.",
+      "cue": "The book is new. It's good.",
+      "glossEn": "lit. \"The book is new. It is good.\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "es",
+            "cue": "it (neuter)",
+            "tag": "delta",
+            "forms": [],
+            "note": "it — but only for a NEUTER noun. das Buch is neuter, so the book is es; der Tisch is er and die Tür is sie. English's \"it\" covers all three, so es is the narrowest of the three German pronouns and the one most often over-used. It is free to be its own word here because M2 took wie geht es as a whole three-word surface and M7 took es gibt as a two-word one, so neither of them claimed the bare word."
+          }
+        ],
+        "rules": [4, 6]
+      },
+      "trap": "es is right here for the same reason it was wrong for der Tisch: the noun is neuter. It is not the safe default that covers everything — it is one of three, and it is the one that matches das.",
+      "sound": "es, one short syllable, with a clipped e and a hissed s. It is said quickly and never stressed, which makes it easy to miss in speech.",
+      "variations": [
+        {
+          "display": "Das Buch ist neu. Es ist auch gut.",
+          "cue": "The book is new. It's good too.",
+          "changed": "auch added, sitting after the verb where it belongs"
+        },
+        {
+          "display": "Das Kino ist neu. Es ist groß.",
+          "cue": "The cinema is new. It's big.",
+          "changed": "another neuter noun, so another es"
+        },
+        {
+          "display": "Das Buch ist neu, aber es ist teuer",
+          "cue": "The book is new, but it's expensive",
+          "changed": "one sentence joined with aber, and the pronoun still carries the gender across"
+        }
+      ],
+      "mistake": {
+        "display": "Das Buch ist neu. Er ist gut.",
+        "why": "das Buch is neuter, so the pronoun is es. er belongs to masculine nouns like der Tisch. Getting this one wrong is rarer than the es-for-everything mistake, but it is the same rule read from the other end."
+      },
+      "usage": "Recommending something in two short sentences.",
+      "register": "neutral",
+      "mnemonic": "das → es. One of three, not the default."
+    },
+    {
+      "id": "L1-M10-S09",
+      "display": "Ich habe Durst. Ich möchte Wasser und Tee.",
+      "cue": "I'm thirsty. I'd like water and tea.",
+      "glossEn": "lit. \"I have thirst. I would-like water and tea.\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "und",
+            "cue": "and",
+            "tag": "free",
+            "forms": [],
+            "note": "and. It joins two things exactly as its English twin does, in the same position, and it is coordinating — so when it joins two clauses the verb after it stays second and the subject stays in front of it. It is also the und buried inside M8's einundzwanzig, welded into the middle of a number, where it is not a separate word at all."
+          }
+        ],
+        "rules": [1, 0]
+      },
+      "trap": "The second sentence keeps its own ich even though the first has just said who is speaking. German never leaves a subject out, and a turn made of two sentences needs two subjects — one for each verb.",
+      "sound": "oont — the u is the oo of \"book\" and the final d hardens to a t, as a final d always does in German.",
+      "variations": [
+        {
+          "display": "Ich habe Durst. Ich möchte Wasser.",
+          "cue": "I'm thirsty. I'd like water.",
+          "changed": "one thing wanted instead of two, so no und is needed"
+        },
+        {
+          "display": "Ich habe Hunger und ich habe Durst",
+          "cue": "I'm hungry and I'm thirsty",
+          "changed": "und joining two clauses instead of two nouns — the verb stays second in both"
+        },
+        {
+          "display": "Ich möchte Wasser und Tee, bitte",
+          "cue": "I'd like water and tea, please",
+          "changed": "M8's bitte on the end, turning the statement into an order"
+        }
+      ],
+      "mistake": {
+        "display": "Ich habe Durst. Möchte Wasser und Tee.",
+        "why": "The second sentence has lost its subject. German has no form of the verb that can carry the person on its own, so ich has to be written every time, however obvious it is."
+      },
+      "usage": "Two short sentences at a counter — the shape most orders actually take.",
+      "register": "neutral",
+      "mnemonic": "Every verb gets a subject. Every time."
+    },
+    {
+      "id": "L1-M10-S10",
+      "display": "Warum sind Sie müde? Weil ich immer arbeite.",
+      "cue": "Why are you tired? — Because I'm always working.",
+      "glossEn": "lit. \"Why are you tired? Because I always work.\"",
+      "literal": "Why are you tired? Because I always work.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "immer",
+            "cue": "always",
+            "tag": "free",
+            "forms": [],
+            "note": "always. It sits inside the clause, in front of the verb it describes, rather than at the head of the sentence — Ich arbeite immer, and inside a weil-clause weil ich immer arbeite. It is not a time word that fronts and inverts the way morgen and heute do; it stays where it is and lets the sentence build around it."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "The answer is a bare weil-clause with no main clause in front of it, and its verb is still at the end. That fragment is ordinary spoken German — the missing half is understood from the question — and it is not a licence to drop the verb-last order along with it.",
+      "sound": "IM-mer, with a short i and a weak final -er. The double m is one m held a fraction longer, not two separate sounds.",
+      "variations": [
+        {
+          "display": "Warum sind Sie müde? Weil ich arbeite.",
+          "cue": "Why are you tired? — Because I'm working.",
+          "changed": "immer dropped; the fragment answer is shorter and behaves the same"
+        },
+        {
+          "display": "Warum sind Sie glücklich? Weil ich Kaffee habe.",
+          "cue": "Why are you happy? — Because I have coffee.",
+          "changed": "a different question and a different reason, with habe still last"
+        },
+        {
+          "display": "Ich bin müde, weil ich immer arbeite",
+          "cue": "I'm tired because I'm always working",
+          "changed": "the whole exchange said as one sentence by one speaker"
+        }
+      ],
+      "mistake": {
+        "display": "Warum sind Sie müde? Weil ich arbeite immer.",
+        "why": "weil sends the finite verb to the very end, so immer goes in front of arbeite: Weil ich immer arbeite. A fragment is still a weil-clause and still obeys the rule."
+      },
+      "usage": "A question and its answer — the smallest complete exchange there is.",
+      "register": "neutral",
+      "mnemonic": "Even a fragment sends its verb to the end."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M10-C01",
+      "display": "Ich bin müde, aber ich arbeite",
+      "cue": "I'm tired, but I'm working"
+    },
+    {
+      "id": "L1-M10-C02",
+      "display": "Der Stuhl ist klein. Er ist neu.",
+      "cue": "The chair is small. It's new."
+    },
+    {
+      "id": "L1-M10-C03",
+      "display": "Die Tür ist groß. Sie ist alt.",
+      "cue": "The door is big. It's old."
+    },
+    {
+      "id": "L1-M10-C04",
+      "display": "Ich habe Durst. Also möchte ich Wasser.",
+      "cue": "I'm thirsty. So I'd like water."
+    },
+    {
+      "id": "L1-M10-C05",
+      "display": "Ich arbeite morgen. Dann bin ich müde.",
+      "cue": "I'm working tomorrow. Then I'll be tired."
+    },
+    {
+      "id": "L1-M10-C06",
+      "display": "Möchten Sie Brot oder Suppe?",
+      "cue": "Would you like bread or soup?"
+    },
+    {
+      "id": "L1-M10-C07",
+      "display": "Ich gehe nach Hause, wenn ich müde bin",
+      "cue": "I'll go home if I'm tired"
+    },
+    {
+      "id": "L1-M10-C08",
+      "display": "Das Buch ist alt. Es ist gut.",
+      "cue": "The book is old. It's good."
+    },
+    {
+      "id": "L1-M10-C09",
+      "display": "Ich möchte Kaffee und Brot",
+      "cue": "I'd like coffee and bread"
+    },
+    {
+      "id": "L1-M10-C10",
+      "display": "Warum sind Sie glücklich? Weil ich Kaffee habe.",
+      "cue": "Why are you happy? — Because I have coffee."
+    },
+    {
+      "id": "L1-M10-C11",
+      "display": "Der Park ist groß. Er ist auch neu.",
+      "cue": "The park is big. It's new too."
+    },
+    {
+      "id": "L1-M10-C12",
+      "display": "Ich habe Zeit. Ich gehe ins Kino.",
+      "cue": "I have time. I'm going to the cinema."
+    },
+    {
+      "id": "L1-M10-C13",
+      "display": "Ich bin zu Hause, aber ich möchte gehen",
+      "cue": "I'm at home, but I'd like to go"
+    },
+    {
+      "id": "L1-M10-C14",
+      "display": "Die Suppe ist gut. Sie ist auch billig.",
+      "cue": "The soup is good. It's cheap too."
+    },
+    {
+      "id": "L1-M10-C15",
+      "display": "Ich arbeite immer am Montag",
+      "cue": "I always work on Monday"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

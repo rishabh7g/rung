@@ -1,0 +1,592 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M4",
+  "title": "My day",
+  "job": "Daily habits and time words",
+  "prerequisites": ["L1-M3"],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 6,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "Ich + V-e + jeden Tag",
+      "Ich stehe um + num + Uhr auf",
+      "Um + num + Uhr + V + ich + N",
+      "Morgens / Abends + V + ich + N",
+      "Am + weekday + V + ich (+ nicht)",
+      "Ich wasche mich + time"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "GERMAN HAS ONE PRESENT AND IT COVERS BOTH OF ENGLISH'S. Ich esse is \"I eat\" AND \"I am eating\" — the same two words, and which one it is comes from the sentence around them. There is no second form to build and none to choose between."
+    },
+    {
+      "tag": "interference",
+      "text": "The slogan is \"German has no continuous, so drop the -ing\", and it is memorable and backwards: it invites a learner to assemble the English shape out of German parts. Ich bin essen is not a near miss — it is two verbs with nothing joining them, and it means nothing at all."
+    },
+    {
+      "tag": "free",
+      "text": "The present endings this course writes are -e for ich and -en for Sie: ich arbeite · Sie arbeiten. (er, sie and es take -t — er arbeitet — which L1-M10 will need.) The Sie ending is the same -en the infinitive already has, so nothing new has to be memorised for it."
+    },
+    {
+      "tag": "delta",
+      "text": "SEPARABLE VERBS, the most alien mechanic in the level: the prefix detaches from its verb and flies to the END of the clause. aufstehen (\"to get up\") comes apart into stehe … auf, with everything the sentence says in between — Ich stehe um sieben Uhr auf. It is the same bracket L1-M3 opened, built from a different part."
+    },
+    {
+      "tag": "delta",
+      "text": "FRONTING INVERTS, and this is where verb-second becomes visible. Put the time first and the verb still has to be second, so the subject moves behind it: Um sieben Uhr stehe ich auf, Morgens trinke ich Kaffee. Precisely: the finite verb is the second ELEMENT, not the second WORD, and whatever is fronted counts as the first element however many words it contains — Um sieben Uhr is three words and one element."
+    },
+    {
+      "tag": "interference",
+      "text": "English fronts a time phrase and leaves the rest of the sentence alone (\"At seven o'clock I get up\"), so Um sieben Uhr ich stehe auf is the commonest slip in the module. German has three things in front of the verb there and allows only one."
+    },
+    {
+      "tag": "delta",
+      "text": "A reflexive verb carries a little pronoun that belongs to it and has no English twin standing anywhere: Ich wasche mich, \"I wash myself\". English can drop its \"myself\" and German cannot drop its mich."
+    },
+    {
+      "tag": "free",
+      "text": "The time words of the module and what each one is for: jeden Tag for a habit, morgens and abends for a habitual part of the day, am Montag for a named day, um sieben Uhr for a clock time, früh and spät for early and late."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M4-S01",
+      "display": "Ich arbeite jeden Tag",
+      "cue": "I work every day",
+      "glossEn": "I work every day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "arbeite",
+            "cue": "work",
+            "tag": "delta",
+            "forms": ["arbeite", "arbeiten"],
+            "note": "arbeiten, to work: ich arbeite · Sie arbeiten. The -en form is the infinitive and the Sie form at once, as essen and trinken were. This one word covers both English presents — Ich arbeite is \"I work\" and \"I am working\" — so there is nothing to add for the second reading and nothing to drop for the first."
+          },
+          {
+            "display": "jeden",
+            "cue": "every (masculine, accusative)",
+            "tag": "delta",
+            "forms": [],
+            "note": "every — and it is wearing the same accusative -en that einen and keinen wear, for a reason English has no twin for: a bare time phrase like \"every day\" goes into the ACCUSATIVE in German even though nothing is being done to it. Tag is masculine, so jeden Tag."
+          },
+          {
+            "display": "Tag",
+            "cue": "day",
+            "tag": "free",
+            "forms": [],
+            "note": "day — masculine, der Tag. It is the noun inside L1-M2's greeting Guten Tag, which the course took whole; here it stands on its own."
+          }
+        ],
+        "rules": [0, 2, 7]
+      },
+      "trap": "English marks a repeated action by choosing a tense (\"I work\" against \"I am working\"). German marks it by adding a time word and leaves the verb alone — jeden Tag is doing the work the English tense choice would do.",
+      "sound": "ei is the vowel of English \"eye\", so arbeite is AR-bye-tuh. The r after the a is barely a consonant: it colours the vowel and fades. Tag ends in a hard k, TAHK — a German g at the end of a word hardens.",
+      "variations": [
+        {
+          "display": "Ich esse jeden Tag Suppe",
+          "cue": "I eat soup every day",
+          "changed": "swap the verb and add an object — the time phrase keeps its place"
+        },
+        {
+          "display": "Jeden Tag arbeite ich",
+          "cue": "Every day I work",
+          "changed": "front the time phrase and the subject moves behind the verb"
+        },
+        {
+          "display": "Arbeiten Sie jeden Tag?",
+          "cue": "Do you work every day?",
+          "changed": "verb to the front for the question, and the Sie form takes -en"
+        }
+      ],
+      "mistake": {
+        "display": "Ich bin arbeite jeden Tag",
+        "why": "This is the English \"I am working\" built out of German parts, and it is two verbs with nothing joining them. German's one present already says both: Ich arbeite."
+      },
+      "usage": "Saying what your ordinary week looks like — the habit rather than today.",
+      "register": "neutral",
+      "mnemonic": "One present, two English meanings. Add a time word, never a helper verb."
+    },
+    {
+      "id": "L1-M4-S02",
+      "display": "Ich stehe um sieben Uhr auf",
+      "cue": "I get up at seven o'clock",
+      "glossEn": "I get up at seven o'clock",
+      "literal": "I stand at seven o'clock up",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "stehe",
+            "cue": "get up (first half of aufstehen)",
+            "tag": "delta",
+            "forms": ["stehe", "stehen", "aufgestanden"],
+            "note": "aufstehen, to get up — and in a main clause it comes apart. The stem stays in second position and carries the person (ich stehe · Sie stehen), while its prefix auf flies to the very end of the clause. Written together it is one word, aufstehen, which is how a dictionary lists it; written in a sentence it is two, with everything else in between. Its past participle keeps the halves together and puts the ge- INSIDE: aufgestanden, which L1-M5 will use."
+          },
+          {
+            "display": "auf",
+            "cue": "up (the prefix of aufstehen) · on",
+            "tag": "delta",
+            "forms": [],
+            "note": "One little word with two seats, and it is worth knowing both now. HERE it is the detached prefix of aufstehen: it carries no meaning of its own in this sentence, it belongs to the verb at the other end of the clause, and it is what turns \"stand\" into \"get up\". ELSEWHERE it is a plain preposition meaning \"on\" — auf dem Tisch, \"on the table\" — which is the job L1-M7 will use it for. What tells the two apart is the company it keeps: a bare auf at the END of a clause with a stranded verb in front of it is a prefix; an auf with a noun phrase after it is a preposition."
+          }
+        ],
+        "rules": [3, 7]
+      },
+      "trap": "English also has a two-part verb here (\"get UP\"), but it keeps the halves together or moves the second part only past a short object. German pushes auf past everything in the clause, however much of it there is.",
+      "sound": "st- at the START of a German word is SHT-: stehe is SHTAY-uh, not \"stay-uh\". auf is the vowel of English \"house\": OWF.",
+      "variations": [
+        {
+          "display": "Ich stehe früh auf",
+          "cue": "I get up early",
+          "changed": "a shorter middle — the two halves close in on each other"
+        },
+        {
+          "display": "Um sieben Uhr stehe ich auf",
+          "cue": "At seven o'clock I get up",
+          "changed": "front the time and the subject moves behind the verb; auf stays at the end regardless"
+        },
+        {
+          "display": "Stehen Sie um sieben Uhr auf?",
+          "cue": "Do you get up at seven o'clock?",
+          "changed": "the question moves the stem to the front — and auf still does not follow it"
+        }
+      ],
+      "mistake": {
+        "display": "Ich aufstehe um sieben Uhr",
+        "why": "In a main clause aufstehen never stays welded together. The stem takes second position and the prefix goes to the end: Ich stehe um sieben Uhr auf."
+      },
+      "usage": "The first sentence of anybody's day, and the one a language class asks for in week one.",
+      "register": "neutral",
+      "mnemonic": "The verb loses its head to the end of the sentence. Look for the little word waiting there before you decide what the verb meant."
+    },
+    {
+      "id": "L1-M4-S03",
+      "display": "Um sieben Uhr esse ich Brot",
+      "cue": "At seven o'clock I eat bread",
+      "glossEn": "At seven o'clock I eat bread",
+      "literal": "at seven o'clock eat I bread",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "um",
+            "cue": "at (a clock time)",
+            "tag": "delta",
+            "forms": [],
+            "note": "at, for a point on the clock and for nothing else in this level: um sieben Uhr, um acht Uhr. German uses a different preposition for a day (am Montag) and another again for a month, so \"at\" is not one word here the way it is in English."
+          },
+          {
+            "display": "sieben",
+            "cue": "seven",
+            "tag": "free",
+            "forms": [],
+            "note": "seven. Numbers arrive as vocabulary the sentences need rather than as a counting drill; L1-M8 does the rest of them, and the backwards two-digit numbers with it."
+          },
+          {
+            "display": "Uhr",
+            "cue": "o'clock · hour · clock",
+            "tag": "free",
+            "forms": [],
+            "note": "o'clock — feminine, die Uhr, and it is never left out. English can say \"at seven\"; German says um sieben Uhr, with the noun in place. The same word is the clock on the wall and the watch on your wrist."
+          }
+        ],
+        "rules": [4, 5, 7]
+      },
+      "trap": "English fronts the time and leaves the sentence alone: \"At seven o'clock I eat bread\". German allows exactly ONE thing in front of the finite verb, and Um sieben Uhr has already used it — so ich has to go behind esse.",
+      "sound": "ie is the long \"ee\" that ei is not, and a German s before a vowel buzzes like a z: sieben is ZEE-bn. Uhr is OO-uh, the h only lengthening the vowel; um has the short u of English \"put\".",
+      "variations": [
+        {
+          "display": "Um sieben Uhr trinke ich Kaffee",
+          "cue": "At seven o'clock I drink coffee",
+          "changed": "swap the verb and the object — the inversion does not move"
+        },
+        {
+          "display": "Ich esse um sieben Uhr Brot",
+          "cue": "I eat bread at seven o'clock",
+          "changed": "put the subject back in front and the verb is second again, with no inversion"
+        },
+        {
+          "display": "Um sieben Uhr stehe ich auf",
+          "cue": "At seven o'clock I get up",
+          "changed": "the same fronting over a separable verb, so both ends of the clause are busy"
+        }
+      ],
+      "mistake": {
+        "display": "Um sieben Uhr ich esse Brot",
+        "why": "The finite verb has to be the SECOND ELEMENT. Um sieben Uhr is the first element — three words, one element — so esse comes next and ich follows it."
+      },
+      "usage": "Fixing a time to something you do — a routine, an appointment, a habit.",
+      "register": "neutral",
+      "mnemonic": "One thing in front of the verb. Whatever you put there, the subject goes behind."
+    },
+    {
+      "id": "L1-M4-S04",
+      "display": "Morgens trinke ich Kaffee",
+      "cue": "In the mornings I drink coffee",
+      "glossEn": "In the mornings I drink coffee",
+      "literal": "mornings drink I coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "morgens",
+            "cue": "in the mornings",
+            "tag": "delta",
+            "forms": [],
+            "note": "One word for what English needs three or four for: \"in the mornings\", \"every morning\", \"of a morning\". The little -s on the end is what makes it habitual — it says this is what mornings are like, not what happened this morning. Its partners are abends for the evenings, and the noun phrase am Morgen when you mean one particular morning."
+          }
+        ],
+        "rules": [4, 0, 7]
+      },
+      "trap": "English needs a preposition and an article to say this (\"in the mornings\"), and German needs neither. morgens is a single adverb, and it is a different word from the noun it is built on.",
+      "sound": "The g in morgens is a hard g, never the j-sound of English \"George\", and the -ens is one quiet syllable: MOR-gns.",
+      "variations": [
+        {
+          "display": "Morgens esse ich Brot",
+          "cue": "In the mornings I eat bread",
+          "changed": "swap the verb and the object; the fronted adverb still inverts the pair behind it"
+        },
+        {
+          "display": "Ich trinke morgens Kaffee",
+          "cue": "I drink coffee in the mornings",
+          "changed": "subject in front again, so there is nothing to invert"
+        },
+        {
+          "display": "Morgens wasche ich mich",
+          "cue": "In the mornings I wash",
+          "changed": "the same frame over a reflexive verb, with mich after the inverted subject"
+        }
+      ],
+      "mistake": {
+        "display": "Morgens ich trinke Kaffee",
+        "why": "morgens is one word and one element, and it has taken the slot in front of the verb. trinke must come second, so ich follows it."
+      },
+      "usage": "Describing a routine — what you do of a morning, as opposed to what you did this morning.",
+      "register": "neutral",
+      "mnemonic": "The -s makes it a habit. morgens is every morning, not this one."
+    },
+    {
+      "id": "L1-M4-S05",
+      "display": "Abends esse ich Suppe",
+      "cue": "In the evenings I eat soup",
+      "glossEn": "In the evenings I eat soup",
+      "literal": "evenings eat I soup",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "abends",
+            "cue": "in the evenings",
+            "tag": "free",
+            "forms": [],
+            "note": "in the evenings — morgens' partner, built the same way and doing the same job. The pair covers most of a routine on its own, and neither needs a preposition or an article in front of it."
+          }
+        ],
+        "rules": [4, 0, 7]
+      },
+      "trap": "The two adverbs are so short that a learner treats them as bare nouns and forgets they are already a whole phrase. Nothing goes in front of abends and nothing goes after it.",
+      "sound": "abends is AH-bnts. The final -ds is said as ts, because a German d at the end of a word hardens to t — the same rule that turns the g of Tag into k.",
+      "variations": [
+        {
+          "display": "Abends trinke ich Tee",
+          "cue": "In the evenings I drink tea",
+          "changed": "another verb and another drink in the same inverted frame"
+        },
+        {
+          "display": "Abends arbeite ich nicht",
+          "cue": "In the evenings I don't work",
+          "changed": "L1-M3's nicht at the end, denying the verb across the whole clause"
+        },
+        {
+          "display": "Ich esse abends Suppe",
+          "cue": "I eat soup in the evenings",
+          "changed": "the un-fronted order, with the adverb inside the sentence and no inversion"
+        }
+      ],
+      "mistake": {
+        "display": "Abends ich esse Suppe",
+        "why": "Same law, second time: one element in front of the finite verb. Abends is that element, so esse is next and ich comes after it."
+      },
+      "usage": "The other half of a routine, and the natural answer to what your evenings look like.",
+      "register": "neutral",
+      "mnemonic": "morgens and abends: two words, two ends of a day, no prepositions."
+    },
+    {
+      "id": "L1-M4-S06",
+      "display": "Am Montag arbeite ich",
+      "cue": "On Monday I work",
+      "glossEn": "On Monday I work",
+      "literal": "on-the Monday work I",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "am",
+            "cue": "on the · at the",
+            "tag": "delta",
+            "forms": [],
+            "note": "Two words welded into one: an plus dem. German writes it this way as a matter of course, and in ordinary speech the long form is simply not said. It has a TIME seat and a PLACE seat, and the same word does both: am Montag is \"on Monday\", and am Tisch is \"at the table\" — the seat L1-M7 will use. Days of the week take am; a clock time takes um instead."
+          },
+          {
+            "display": "Montag",
+            "cue": "Monday",
+            "tag": "free",
+            "forms": [],
+            "note": "Monday — masculine, der Montag, and capitalised like every other German noun. Every weekday but one ends in -tag, which is the same Tag this module already taught."
+          }
+        ],
+        "rules": [4, 7]
+      },
+      "trap": "English uses \"on\" for a day and \"at\" for a time, and German splits the same ground differently: am for the day, um for the clock. Translating the English preposition rather than the German slot puts the wrong one in.",
+      "sound": "Montag is MOAN-tahk, with the final -g hardened to k. am has the short open a of English \"palm\", cut short, and is never stressed.",
+      "variations": [
+        {
+          "display": "Am Montag stehe ich früh auf",
+          "cue": "On Monday I get up early",
+          "changed": "the same fronting over a separable verb, so the prefix waits at the end"
+        },
+        {
+          "display": "Ich arbeite am Montag",
+          "cue": "I work on Monday",
+          "changed": "un-fronted, so the subject keeps its place and nothing inverts"
+        },
+        {
+          "display": "Arbeiten Sie am Montag?",
+          "cue": "Do you work on Monday?",
+          "changed": "the verb-first question, with the time phrase behind it"
+        }
+      ],
+      "mistake": {
+        "display": "Um Montag arbeite ich",
+        "why": "um is for the clock — um sieben Uhr. A named day takes am: am Montag."
+      },
+      "usage": "Pinning something to a day — a shift, a class, an appointment.",
+      "register": "neutral",
+      "mnemonic": "um for the clock, am for the day. Two little words, one each."
+    },
+    {
+      "id": "L1-M4-S07",
+      "display": "Ich wasche mich jeden Tag",
+      "cue": "I wash every day",
+      "glossEn": "I wash every day",
+      "literal": "I wash myself every day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wasche",
+            "cue": "wash",
+            "tag": "delta",
+            "forms": ["wasche", "waschen"],
+            "note": "waschen, to wash: ich wasche · Sie waschen. It is REFLEXIVE when you are washing yourself, which means it comes with a pronoun attached that is part of the verb rather than a real object."
+          },
+          {
+            "display": "mich",
+            "cue": "myself",
+            "tag": "interference",
+            "forms": [],
+            "note": "myself — and it cannot be left out. English drops its reflexive freely (\"I wash\", \"I get dressed\") and German never does: the pronoun belongs to the verb. With Sie the partner is sich — Sie waschen sich — which this level names and does not drill."
+          }
+        ],
+        "rules": [6, 7]
+      },
+      "trap": "English has nothing standing where mich stands, so the commonest slip is simply leaving it out. Ich wasche on its own asks \"you wash WHAT?\" and the sentence is left waiting.",
+      "sound": "sch is exactly English \"sh\", and w is a V: wasche is VA-shuh. mich ends in the soft ch of nicht, made with the tongue high and forward, never a k.",
+      "variations": [
+        {
+          "display": "Ich wasche mich morgens",
+          "cue": "I wash in the mornings",
+          "changed": "swap the time word — mich stays glued to the verb"
+        },
+        {
+          "display": "Morgens wasche ich mich",
+          "cue": "In the mornings I wash",
+          "changed": "front the time and the subject inverts, with mich landing behind it"
+        },
+        {
+          "display": "Ich wasche mich nicht",
+          "cue": "I don't wash",
+          "changed": "L1-M3's nicht at the end of the clause, after the reflexive pronoun"
+        }
+      ],
+      "mistake": {
+        "display": "Ich wasche jeden Tag",
+        "why": "waschen without its reflexive pronoun is left hanging — it now wants an object, and \"myself\" is exactly the object German insists on writing: Ich wasche mich jeden Tag."
+      },
+      "usage": "Everyday routine — the same shape covers getting dressed, getting ready, and the rest of a morning.",
+      "register": "neutral",
+      "mnemonic": "German says who is being washed even when it is obviously you."
+    },
+    {
+      "id": "L1-M4-S08",
+      "display": "Ich stehe spät auf",
+      "cue": "I get up late",
+      "glossEn": "I get up late",
+      "literal": "I stand late up",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "spät",
+            "cue": "late",
+            "tag": "free",
+            "forms": [],
+            "note": "late — an adverb here, standing on its own with nothing in front of it, and its opposite is früh. Note the umlaut: spat without it is a different word, and German never writes ae for ä."
+          }
+        ],
+        "rules": [3, 7]
+      },
+      "trap": "With only one word between them, the two halves of aufstehen look as if they could simply join up. They cannot: in a main clause the prefix is always at the end, however short the clause is.",
+      "sound": "sp- at the start of a word is SHP-, exactly as st- was SHT-: spät is SHPAYT. The ä is the vowel of English \"air\".",
+      "variations": [
+        {
+          "display": "Ich stehe früh auf",
+          "cue": "I get up early",
+          "changed": "the opposite adverb in the same slot"
+        },
+        {
+          "display": "Am Montag stehe ich spät auf",
+          "cue": "On Monday I get up late",
+          "changed": "front a day and the subject inverts, with the clause growing between the two halves"
+        },
+        {
+          "display": "Ich stehe nicht spät auf",
+          "cue": "I don't get up late",
+          "changed": "nicht in front of the adverb it denies, still inside the bracket"
+        }
+      ],
+      "mistake": {
+        "display": "Ich stehe auf spät",
+        "why": "auf is not a preposition here and takes nothing after it. It is the prefix of the verb, and the prefix is LAST: Ich stehe spät auf."
+      },
+      "usage": "Weekends, days off, and complaining about either.",
+      "register": "neutral",
+      "mnemonic": "The prefix has the last word. Always."
+    },
+    {
+      "id": "L1-M4-S09",
+      "display": "Ich esse früh",
+      "cue": "I eat early",
+      "glossEn": "I eat early",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "früh",
+            "cue": "early",
+            "tag": "free",
+            "forms": [],
+            "note": "early — spät's opposite. German writes an adverb and an adjective in the same bare shape here, so früh needs nothing added and takes no ending: it works after a verb (Ich esse früh) and after sein alike. Note the umlaut, which is not decoration: fruh without it is not this word."
+          }
+        ],
+        "rules": [0, 7]
+      },
+      "trap": "Nothing here is hard except the vowel, and the vowel is the point: ü is not u, and writing fruh would be a different word rather than a typo.",
+      "sound": "ü is the vowel of \"ee\" said with the lips rounded for \"oo\" — front tongue, round lips, both at once. früh is one syllable, the h only lengthening it, and the r is made at the back of the mouth.",
+      "variations": [
+        {
+          "display": "Ich esse spät",
+          "cue": "I eat late",
+          "changed": "the opposite adverb, same frame"
+        },
+        {
+          "display": "Morgens esse ich früh",
+          "cue": "In the mornings I eat early",
+          "changed": "front the habit word and the subject inverts behind the verb"
+        },
+        {
+          "display": "Ich esse nicht früh",
+          "cue": "I don't eat early",
+          "changed": "nicht in front of the adverb it denies"
+        }
+      ],
+      "mistake": {
+        "display": "Ich bin esse früh",
+        "why": "Again the English \"I am eating\" assembled out of German parts. German's one present says both readings: Ich esse früh."
+      },
+      "usage": "Describing a habit, and the polite way of declining a late invitation.",
+      "register": "neutral",
+      "mnemonic": "früh and spät both wear a dot-vowel a learner will want to drop. They are not optional."
+    },
+    {
+      "id": "L1-M4-S10",
+      "display": "Am Dienstag arbeite ich nicht",
+      "cue": "On Tuesday I don't work",
+      "glossEn": "On Tuesday I don't work",
+      "literal": "on-the Tuesday work I not",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Dienstag",
+            "cue": "Tuesday",
+            "tag": "free",
+            "forms": [],
+            "note": "Tuesday — masculine, der Dienstag, and it takes am like every other day. The -tag on the end is the same noun Tag, which is what makes the whole week readable once one day is known."
+          }
+        ],
+        "rules": [4, 7]
+      },
+      "trap": "Two rules land in one short sentence and they pull in opposite directions: the fronted day pushes ich behind the verb, and nicht has to end up after both. Getting one right and the other wrong is the usual outcome.",
+      "sound": "ie is \"ee\" again: DEENS-tahk, with the final -g hardened to k exactly as in Montag.",
+      "variations": [
+        {
+          "display": "Am Montag arbeite ich nicht",
+          "cue": "On Monday I don't work",
+          "changed": "swap the day; nothing else moves"
+        },
+        {
+          "display": "Ich arbeite am Dienstag nicht",
+          "cue": "I don't work on Tuesday",
+          "changed": "un-fronted, so the subject keeps its place and nicht still ends the clause"
+        },
+        {
+          "display": "Arbeiten Sie am Dienstag?",
+          "cue": "Do you work on Tuesday?",
+          "changed": "the verb-first question over the same day phrase"
+        }
+      ],
+      "mistake": {
+        "display": "Am Dienstag ich arbeite nicht",
+        "why": "Am Dienstag is the first element, so arbeite is the second and ich comes after it. The negation is right and the inversion is missing."
+      },
+      "usage": "Naming the day something does not happen — a day off, a closed shop, a class that is not on.",
+      "register": "neutral",
+      "mnemonic": "Front a day, flip the pair, and let nicht fall off the end."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M4-C01", "display": "Morgens esse ich Brot", "cue": "In the mornings I eat bread" },
+    { "id": "L1-M4-C02", "display": "Ich arbeite am Montag", "cue": "I work on Monday" },
+    {
+      "id": "L1-M4-C03",
+      "display": "Um sieben Uhr trinke ich Kaffee",
+      "cue": "At seven o'clock I drink coffee"
+    },
+    { "id": "L1-M4-C04", "display": "Abends trinke ich Tee", "cue": "In the evenings I drink tea" },
+    { "id": "L1-M4-C05", "display": "Stehen Sie früh auf?", "cue": "Do you get up early?" },
+    { "id": "L1-M4-C06", "display": "Ich wasche mich abends", "cue": "I wash in the evenings" },
+    {
+      "id": "L1-M4-C07",
+      "display": "Am Dienstag esse ich Suppe",
+      "cue": "On Tuesday I eat soup"
+    },
+    {
+      "id": "L1-M4-C08",
+      "display": "Ich arbeite nicht jeden Tag",
+      "cue": "I don't work every day"
+    },
+    {
+      "id": "L1-M4-C09",
+      "display": "Morgens stehe ich früh auf",
+      "cue": "In the mornings I get up early"
+    },
+    { "id": "L1-M4-C10", "display": "Arbeiten Sie jeden Tag?", "cue": "Do you work every day?" },
+    { "id": "L1-M4-C11", "display": "Ich esse spät", "cue": "I eat late" },
+    {
+      "id": "L1-M4-C12",
+      "display": "Ich möchte morgens Kaffee trinken",
+      "cue": "I would like to drink coffee in the mornings"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

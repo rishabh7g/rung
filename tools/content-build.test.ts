@@ -624,14 +624,12 @@ describe('manifest validation', () => {
     ]);
     expect(courses[2]?.romanizationNote).toMatch(/^ALA-LC/);
     // hi-en graduated in #273, as en-es (#195) and en-ar (#202) did before it, en-ru in #343,
-    // en-it in #337 and en-fr in #331 — so those seven are shipping rows with no `fixture` key at
-    // all. en-de (#356) is the eighth row and the one still behind the gate: it is the only
-    // authored row carrying the key, and the key survives validation untouched, because the
-    // validator REPORTS the manifest and the gate is what acts on it.
-    expect(courses.filter((course) => 'fixture' in course).map((course) => course.id)).toEqual([
-      'en-de',
-    ]);
-    expect(courses.at(-1)?.fixture).toBe(true);
+    // en-it in #337, en-fr in #331 and en-de in #365 — so all eight are shipping rows with no
+    // `fixture` key at all, and NO authored row exercises the seam any more. That is not a
+    // reason to stop asserting it: the assertion's job here is to catch a fixture row reaching
+    // the manifest by accident, which is a live risk precisely because nothing else would.
+    // The seam itself stays covered by the synthetic rows above, which is where it belongs.
+    expect(courses.filter((course) => 'fixture' in course)).toEqual([]);
   });
 
   it('rejects a manifest that is not a non-empty array of objects', () => {
@@ -2211,12 +2209,12 @@ describe('the authored content', () => {
       ['en-ru', L1],
       ['en-it', L1],
       ['en-fr', L1],
+      ['en-de', L1],
     ]);
-    // SEVEN courses ship, in manifest order — hi-mr first and default, en-fr last. en-ru was
-    // behind the fixture gate from #338 and en-it from #332; #343 and #337 deleted both flags, so
-    // a strict build needs no `--with-fixtures` to see either. en-de is an EIGHTH authored row
-    // (#356) and is not here at all: the gate drops the whole course, so the emitted manifest —
-    // which lists only courses that shipped ≥ 1 module — never names it.
+    // EIGHT courses ship, in manifest order — hi-mr first and default, en-de last. Every one of
+    // them was authored behind the fixture gate and let out of it by its own graduation issue:
+    // en-ru from #338 (#343), en-it from #332 (#337), en-de from #356 (#365). So a strict build
+    // needs no `--with-fixtures` to see any of them, and the catalogue is fully graduated.
     expect(readManifest(outRoot).courses.map((course) => course.id)).toEqual([
       'hi-mr',
       'en-es',
@@ -2225,13 +2223,17 @@ describe('the authored content', () => {
       'en-ru',
       'en-it',
       'en-fr',
+      'en-de',
     ]);
-    // No EMITTED row carries `fixture` — the one authored row that does, en-de's, never reaches
-    // the envelope, and the seven that ship never had the key. The envelope carries no dev key.
+    // No EMITTED row carries `fixture`, and since #365 no AUTHORED row does either. The
+    // assertion stays because its job is to catch a fixture row reaching a learner build by
+    // accident — a risk that is highest, not lowest, on the day nothing legitimately carries
+    // the key. The envelope carries no dev key.
     expect(readManifest(outRoot).courses.some((course) => 'fixture' in course)).toBe(false);
-    expect(existsSync(path.join(outRoot, 'en-de'))).toBe(false);
+    expect(existsSync(path.join(outRoot, 'en-de'))).toBe(true);
     expect(readManifest(outRoot).devBuild).toBeUndefined();
-    // One course is skipped — en-de, whole — so the summary line carries a `| skipped:` tail again.
+    // Nothing is skipped any more, so the summary line carries no `| skipped:` tail at all —
+    // the first strict build since #331 for which that is true.
     expect(report.lines).toEqual([
       'hi-mr: 10 modules (L1-M1..M10)',
       ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
@@ -2249,11 +2251,11 @@ describe('the authored content', () => {
       ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
       'en-fr: 10 modules (L1-M1..M10)',
       ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
-      // en-de (#356) is a dev fixture with nothing authored at all: the gate drops the course
-      // before a single module is considered, so the line names the gate rather than the content,
-      // and the summary names it in the skipped tail.
-      'en-de: 0 modules — fixture course, excluded by the gate (--with-fixtures ships it in dev)',
-      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10), en-ru 10 modules (L1-M1..M10), en-it 10 modules (L1-M1..M10), en-fr 10 modules (L1-M1..M10) | skipped: en-de (fixture course)',
+      // en-de was authored behind the gate (#356, #362–#364) and graduated in #365, so a strict
+      // build now ships it like any other course — ten rungs and ten cumulative indexes.
+      'en-de: 10 modules (L1-M1..M10)',
+      ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
+      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10), en-ru 10 modules (L1-M1..M10), en-it 10 modules (L1-M1..M10), en-fr 10 modules (L1-M1..M10), en-de 10 modules (L1-M1..M10)',
     ]);
     // The strict tree carries the fourth course whole — the files a learner's device fetches
     // (AC 2 of #273), and the emitted ladder says all ten L1 rungs have content.
@@ -2322,6 +2324,15 @@ describe('the authored content', () => {
     ];
     /** en-fr's ten rungs, complete since #330 — the same shape as every other course's L1. */
     const EN_FR = L1;
+    /**
+     * en-de's ten rungs, authored a batch at a time — #362 M1–M2, #363 M3–M5, #364 M6–M10. This
+     * assertion saw the course half-written twice on the way, which no course before it had ever
+     * done here: the dev build ships exactly what exists rather than what the ladder promises,
+     * and a fixture course is allowed to exist part-authored. The ladder is whole now, and the
+     * fixture flag comes off on #365.
+     */
+    const EN_DE_AUTHORED = L1;
+    const EN_DE_RANGE = 'L1-M1..M10';
 
     expect(report.exitCode).toBe(0);
     expect([...report.shipped]).toEqual([
@@ -2332,6 +2343,7 @@ describe('the authored content', () => {
       ['en-ru', EN_RU_AUTHORED],
       ['en-it', EN_IT_AUTHORED],
       ['en-fr', EN_FR],
+      ['en-de', EN_DE_AUTHORED],
     ]);
     // hi-en was authored behind this relaxation (#267, #270–#272) and graduated in #273, so a dev
     // build now ships exactly what the strict build above does — the same ten rungs, the same
@@ -2341,24 +2353,24 @@ describe('the authored content', () => {
     // en-ru (#338) is the course being authored behind the fixture flag right now, so THIS is the
     // build that carries it: `--with-fixtures` admits the course and its authored rungs ship.
     expect(report.lines).toContain(`en-ru: ${EN_RU_AUTHORED.length} modules (${EN_RU_RANGE})`);
-    // en-de (#356) is the course sitting behind the fixture flag right now, so THIS is the build
-    // that admits it — and it still ships nothing, because not one of its rungs is authored. The
-    // course directory carries a ladder and a bundle and no `modules/` folder at all, and the
-    // walker treats an absent directory as zero modules rather than as an error.
-    expect(report.lines).toContain('en-de: 0 modules — nothing authored yet');
+    // en-de is no longer behind the flag (#365), so this build ships it because it is a shipping
+    // course, not because of the relaxation. It used to ship nothing at all and be reported as
+    // `skipped: en-de (no modules)`; the walker still treats an absent `modules/` directory as
+    // zero modules rather than as an error, which is what that earlier line proved.
+    expect(report.lines).toContain(`en-de: ${EN_DE_AUTHORED.length} modules (${EN_DE_RANGE})`);
     expect(report.lines).toContain(
       'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10), ' +
-        `en-ru ${EN_RU_AUTHORED.length} modules (${EN_RU_RANGE}), en-it ${EN_IT_LINE}, en-fr 10 modules (L1-M1..M10)` +
-        ' | skipped: en-de (no modules)',
+        `en-ru ${EN_RU_AUTHORED.length} modules (${EN_RU_RANGE}), en-it ${EN_IT_LINE}, en-fr 10 modules (L1-M1..M10),` +
+        ` en-de ${EN_DE_AUTHORED.length} modules (${EN_DE_RANGE})`,
     );
     // en-it was authored behind the gate (#332, #334–#336) and graduated in #337, so a dev build
     // now ships exactly what the strict build above does.
     expect(report.lines).toContain(`en-it: ${EN_IT_LINE}`);
     expect(readManifest(outRoot).devBuild).toBe(true);
-    // The manifest lists what SHIPPED, which is the seven courses with modules. en-de's row is
-    // admitted by the relaxation and STILL does not appear: a course with nothing authored ships
-    // nothing, so no `public/content/en-de/` is written and no row is emitted for it either. That
-    // is why #356's Settings smoke is a render test over `DEV_MANIFEST` and not over a build.
+    // The manifest lists what SHIPPED, which is now eight courses. en-de needs none of the
+    // relaxation any more: #365 deleted its `fixture: true` the way #331 deleted en-fr's, so the
+    // dev build ships exactly the eight the strict build above does, differing only in the
+    // banner and the `devBuild` key.
     expect(readManifest(outRoot).courses.map((course) => course.id)).toEqual([
       'hi-mr',
       'en-es',
@@ -2367,18 +2379,15 @@ describe('the authored content', () => {
       'en-ru',
       'en-it',
       'en-fr',
+      'en-de',
     ]);
     expect(readManifest(outRoot).courses.at(-1)).toMatchObject({
-      id: 'en-fr',
+      id: 'en-de',
       l1Tag: 'en',
-      l2Tag: 'fr',
+      l2Tag: 'de',
     });
-    expect(existsSync(path.join(outRoot, 'en-de'))).toBe(false);
-    expect(
-      readManifest(outRoot)
-        .courses.filter((course) => 'fixture' in course)
-        .map((course) => course.id),
-    ).toEqual([]);
+    expect(existsSync(path.join(outRoot, 'en-de'))).toBe(true);
+    expect(readManifest(outRoot).courses.filter((course) => 'fixture' in course)).toEqual([]);
     for (const file of [
       'hi-mr/levels.json',
       'hi-mr/strings.json',

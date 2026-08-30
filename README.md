@@ -380,6 +380,44 @@ is not English and #268's exemption is hi-en's alone. The chrome is English (`re
 "Reveal the French") and the Settings switcher offers the pair as `english → french`. Its L2/L3
 ladders stay `draft: true` — placeholder lists, nothing authored.
 
+**en-de ships (#365, 2026-08-30) — the product has eight courses, and the catalogue is fully
+graduated: no row carries `fixture: true` any more.** Ten L1 rungs authored against ten briefs
+(#361 — `tools/course-briefs.ts`, "en-de: decisions a brief must settle"), across three parallel
+authoring issues (#362 L1-M1–M2, #363 L1-M3–M5, #364 L1-M6–M10) and reviewed in
+[`docs/31-llm-review-en-de-L1-M1-M2.md`](docs/31-llm-review-en-de-L1-M1-M2.md),
+[`docs/29-llm-review-en-de-L1-M3-M5.md`](docs/29-llm-review-en-de-L1-M3-M5.md) and
+[`docs/33-llm-review-en-de-L1-M6-M10.md`](docs/33-llm-review-en-de-L1-M6-M10.md), on the same
+LLM-review-plus-owner-authority bar as the other seven. Dropping `fixture: true` from the en-de row
+in `content/courses.json` — plus the L1 `draftNote` that called the ladder a fixture — was the
+whole change: a strict `npm run build` now emits `public/content/en-de/` with levels, strings, ten
+modules and ten cumulative indexes, and the emitted `courses.json` lists all eight courses. The
+chrome is English (`revealLabel` = "Reveal the German") and the switcher offers the pair as
+`english → german`. Its L2/L3 ladders stay `draft: true`.
+
+**German is the first course that had to plan around what the surface folder THROWS AWAY.** Every
+earlier course planned around what `src/engine/surface.ts` KEEPS — Spanish accents, Russian `ё`,
+the Italian elision apostrophe. Rule 4 lowercases every token, and German capitalises every noun,
+so `Sie`/`sie` and `Essen`/`essen` merge into one index key each. That is decision 2 of the brief
+and the reason en-de's brief section is the longest of the eight. The consequence is a handful of
+DELIBERATE duplicate rows — `nicht`, `dienstag` and `in` — pinned in `src/course/types.test.ts` as
+`FORCED_DUPLICATES` with an ownership map asserting one row per surface. `in` is the one worth
+naming: L1-M1 teaches it locative (`Ich wohne in Berlin`) and L1-M7 teaches it with motion and the
+accusative (`Ich gehe in den Park`), and the word index is first-occurrence-wins, so M1's note has
+to name both seats or M7's learners get a note that is false of the sentence in front of them.
+
+**No native or fluent-German reviewer has read a word of it.** The bar en-de clears is LLM review
+plus the owner's authority, exactly the other seven courses'.
+
+The payload holds: `course:en-de` **96.9 KiB** gzip against a 360 KiB `COURSE_LIMIT`,
+`precache:en-de` **315.3 KiB** against 590. German is Latin on both sides, so `de` maps to no
+course face in `SCRIPT_BY_LANGUAGE_TAG` — that table is unchanged by this graduation — and the
+course is charged content only. Its shared cost is `shell` 217.4 → **218.4 KiB** (+1.0): the
+emitted manifest gained a row, and Mukta's `latin` subsets are cut over the union of shipped
+courses, so `ä ö ü ß Ä Ö Ü` are now in the bytes every learner downloads. That coverage was
+verified by reading the generated cmaps rather than inferred from `unicode-range` — all seven
+glyphs present in `mukta-latin` at 400, 600 and 700. `course:hi-mr` stays **345.9 KiB**, unchanged
+by the graduation.
+
 Two standards the older courses had retrofitted onto them are baked into en-fr from L1-M1: **three
 variations on every sentence** (#288's bar) and **twelve comprehension items per module** (#292's).
 The payload below is therefore honest already — no retrofit growth is coming.

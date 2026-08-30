@@ -194,7 +194,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 70 of them — hi-mr, en-es, en-ar, hi-en, en-fr, en-it and en-ru L1-M1..M10', () => {
+  it('finds all 80 of them — eight full L1 ladders, en-de included (#362–#364)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -206,6 +206,19 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ar/modules/L1-M7.json',
       'content/en-ar/modules/L1-M8.json',
       'content/en-ar/modules/L1-M9.json',
+      // en-de was authored a rung at a time — #362 M1-M2, #363 M3-M5, #364 M6-M10 — and this
+      // list saw it half-written twice on the way. It is whole now: eight courses, ten rungs
+      // each, and the eighth still behind `fixture: true` until #365.
+      'content/en-de/modules/L1-M1.json',
+      'content/en-de/modules/L1-M10.json',
+      'content/en-de/modules/L1-M2.json',
+      'content/en-de/modules/L1-M3.json',
+      'content/en-de/modules/L1-M4.json',
+      'content/en-de/modules/L1-M5.json',
+      'content/en-de/modules/L1-M6.json',
+      'content/en-de/modules/L1-M7.json',
+      'content/en-de/modules/L1-M8.json',
+      'content/en-de/modules/L1-M9.json',
       'content/en-es/modules/L1-M1.json',
       'content/en-es/modules/L1-M10.json',
       'content/en-es/modules/L1-M2.json',
@@ -655,6 +668,189 @@ describe('ModuleContent against the modules that exist', () => {
           expect(TU_REGISTER.has(token), `${where}: "${token}" is tu-register`).toBe(false);
         }
       }
+    }
+  });
+
+  /**
+   * en-de (#356–#365) is en-fr's closest mirror — English L1, another Latin-script L2 — so the
+   * same limit applies: a script regex cannot tell the two sides apart, and "every teaching field
+   * is English" stays a review claim rather than an assertion. What CAN be pinned is everything
+   * the briefs (#361) settled as a RULE, asserted on the shipped files rather than on the briefs
+   * that produced them:
+   *
+   *   • `glossEn` on every sentence — the L2 is not English, so #268's exemption misses this
+   *     course entirely and the build would fail without it,
+   *   • the REGISTER decision, which for German is heavier than en-fr's `vous`: the course speaks
+   *     `Sie`, so no L2 slot ANYWHERE — display, form, variation, mistake or pool item — writes a
+   *     `du`-register word. Unlike en-fr, the mistake plates are held to it too: a `du` form on a
+   *     starred plate is still a `du` form on the learner's screen, and the whole point of the
+   *     decision is that the index never carries a shape the course does not teach,
+   *   • `Ihr` and `Ihnen` capitalised wherever they are written. `src/engine/surface.ts` folds
+   *     case, so the capital is invisible to the index and is the ONLY signal the reader gets;
+   *     a lowercase `ihr` / `ihnen` on the page would be a different word (`her` / `their` /
+   *     `to them`) landing on the same row,
+   *   • the `ß` spellings, never respelled with a double s: `normalizeSurface` does not fold `ß`
+   *     (checked in `surface.test.ts`), so `Maße` and `Masse` are two keys and a respelled word is
+   *     a word the index cannot reach,
+   *   • no ALL-CAPS display, the same seam pointing the other way: an upper-cased `Straße` folds
+   *     to a key that no row owns, so a shouted line would resolve to nothing at all,
+   *   • and the index seams themselves, which are what first-occurrence-wins makes irreversible:
+   *     ONE `sie` row for all three readings and it is L1-M2's, one `der` / `die` / `das` row
+   *     apiece and all three are L1-M1's. A rival row for any of them is unreachable by
+   *     construction — the earlier module keeps the key — so a second row is a note nobody will
+   *     ever be shown, and this is the assertion that catches it at the file level.
+   */
+  it('keeps en-de to the decisions its briefs settled: glossEn, Sie, umlauts, one sie row (#361)', () => {
+    const enDe = MODULE_FILES.filter(([name]) => name.includes('en-de'));
+    /** The `du`-register shapes the course names in prose and never writes (#361 decision 3). */
+    const DU_REGISTER = new Set([
+      'du',
+      'dich',
+      'dir',
+      'dein',
+      'deine',
+      'deinen',
+      'deinem',
+      'deiner',
+      'bist',
+      'hast',
+      'willst',
+      'möchtest',
+      'kommst',
+      'wohnst',
+      'sprichst',
+      'heißt',
+      'hallo',
+      'tschüss',
+    ]);
+    /** Surface → the rows that would open it. Every one of these must have exactly one owner. */
+    const owners = new Map<string, Set<string>>();
+    /**
+     * The umlauts and `ß` this course cannot do without. A blanket `/ae|oe|ue/` ban was tried
+     * first and REJECTED: `teuer`, `neue` and `Steuer` all carry a `ue` across a morpheme seam
+     * and are correctly spelled, so the regex flags real German. What is checkable, and what the
+     * decision actually claims, is that the orthography is WRITTEN rather than transcribed away —
+     * a module whose L2 slots hold no umlaut and no `ß` anywhere is a module that spelled around
+     * them, exactly as en-ru's stress check reads.
+     */
+    const UMLAUT_OR_ESZETT = /[äöüÄÖÜß]/;
+
+    expect(enDe.length, 'the en-de L1 modules authored so far').toBeGreaterThan(0);
+    for (const [file, json] of enDe) {
+      const module = parseModule(json, file);
+
+      /** Every L2 slot, mistake plates included — the register ban reaches all of them. */
+      const l2Slots: [where: string, text: string][] = [];
+      for (const item of module.comprehensionPool) l2Slots.push([item.id, item.display]);
+      for (const sentence of module.sentences) {
+        const at = sentence.id;
+        expect(sentence.glossEn, `${at} glossEn`).toMatch(/\S/);
+        expect(sentence.register, `${at} register`).toBe('neutral');
+        expect(sentence.sound, `${at} sound`).toMatch(/\S/);
+        l2Slots.push([at, sentence.display]);
+        for (const variation of sentence.variations ?? []) {
+          l2Slots.push([`${at} variation`, variation.display]);
+        }
+        if (sentence.mistake !== undefined) {
+          l2Slots.push([`${at} mistake`, sentence.mistake.display]);
+        }
+        sentence.deconstruction.words.forEach((word, wordIdx) => {
+          const row = `${module.id} ${at} w${wordIdx}`;
+          l2Slots.push([`${at} word`, word.display]);
+          for (const surface of [word.display, ...word.forms]) {
+            l2Slots.push([`${at} form`, surface]);
+            const key = normalizeSurface(surface);
+            const seats = owners.get(key) ?? new Set<string>();
+            seats.add(row);
+            owners.set(key, seats);
+          }
+        });
+      }
+
+      for (const [where, text] of l2Slots) {
+        for (const raw of text.split(/[\s,.?!]+/)) {
+          const token = raw.trim();
+          if (token === '') continue;
+          expect(
+            DU_REGISTER.has(token.toLowerCase()),
+            `${where}: "${token}" is du-register, and this course speaks Sie`,
+          ).toBe(false);
+          // The capital is the reader's only signal, because the index cannot see it.
+          expect(
+            ['ihr', 'ihre', 'ihnen'].includes(token),
+            `${where}: "${token}" lost its capital`,
+          ).toBe(false);
+          // An all-caps word folds to a key no row owns — decision 2, pointing the other way.
+          expect(
+            token.length > 1 && token === token.toUpperCase() && /\p{L}/u.test(token),
+            `${where}: "${token}" is all capitals`,
+          ).toBe(false);
+        }
+        expect(text, `${where}: ß is never respelled with a double s`).not.toMatch(
+          /heisse|heissen|strasse|gross|dreissig|weiss/i,
+        );
+      }
+
+      // The orthography is WRITTEN, not transcribed away. A blanket /ae|oe|ue/ ban was tried and
+      // REJECTED: `teuer`, `neue` and `Steuer` carry a `ue` across a morpheme seam and are
+      // correctly spelled, so it flagged real German. What is checkable is that a module's L2
+      // slots hold an umlaut or an ß SOMEWHERE — a module with none spelled around them.
+      expect(
+        l2Slots.some(([, text]) => UMLAUT_OR_ESZETT.test(text)),
+        `${file} writes no umlaut and no ß anywhere in its German`,
+      ).toBe(true);
+    }
+
+    /**
+     * **Every surface has ONE owning row, with two named exceptions.**
+     *
+     * First occurrence wins, so a second row for a surface is a note the word index can never
+     * reach — the `का` bug (docs/08-marathi-third-review.md correction 4) in its milder form:
+     * milder because both notes here are TRUE of the word, where that bug's second note was false
+     * of the sentence in front of the learner. Sentence Detail still renders each sentence's own
+     * `deconstruction`, so a duplicated row is read on its own page; it is the "why" tap during
+     * practice that resolves to the earlier one.
+     *
+     * The bar is en-es's and en-fr's, the two courses authored under this briefs discipline:
+     * ZERO duplicated surfaces. hi-mr, authored before it, has 13. en-de was written by three
+     * authors in parallel who each knew the briefs but not each other's rows, and it landed on
+     * six; four were redundant and were dropped.
+     *
+     * The two that remain are STRUCTURALLY forced, not oversights, and that is why they are
+     * listed rather than fixed: each is the only word row on its sentence, and the schema's
+     * `words: { minItems: 1 }` forbids a sentence with none. Both are the same word in both
+     * seats — `nicht` negating a verb, `Dienstag` naming a weekday — so the note that wins is
+     * true of the later use as well; M2's `nicht` note was sharpened at the merge for exactly
+     * that reason.
+     *
+     * `in` is the third and it is kept for the opposite reason: it is the one case where the two
+     * seats genuinely teach different things. M1's `Ich wohne in Berlin` is locative; M7's
+     * `Ich gehe in den Park` is motion, and the case is what carries the difference. Dropping
+     * M7's row was tried and reverted — it left the motion lesson with no row on its own page,
+     * and sent a learner tapping `in` to a note about standing still. Both rows stay, and M1's
+     * note (the one the index resolves to) now names both seats.
+     *
+     * A FOURTH entry appearing here is a real defect, which is what this list is for.
+     */
+    const FORCED_DUPLICATES = new Set(['nicht', 'dienstag', 'in']);
+    for (const [key, seats] of owners) {
+      if (FORCED_DUPLICATES.has(key)) continue;
+      expect(
+        [...seats].length,
+        `"${key}" is opened by more than one row: ${[...seats].join(' | ')}`,
+      ).toBe(1);
+    }
+
+    // The seams. One row apiece, on the module the briefs named, or the later note is unreachable.
+    for (const [key, module] of [
+      ['sie', 'L1-M2'],
+      ['der', 'L1-M1'],
+      ['die', 'L1-M1'],
+      ['das', 'L1-M1'],
+    ] as const) {
+      const seats = [...(owners.get(key) ?? new Set<string>())];
+      expect(seats.length, `"${key}" must have exactly one word row: ${seats.join(' | ')}`).toBe(1);
+      expect(seats[0], `"${key}" is ${module}'s`).toContain(module);
     }
   });
 });

@@ -49,13 +49,10 @@ describe('loadCourses', () => {
     });
     // en-ar carries more than the nine required fields; the loader keeps them, never rejects them.
     expect(courses[2]?.romanizationNote).toMatch(/Modern Standard Arabic/);
-    // en-es graduated in #195, en-ar in #202, hi-en in #273, en-ru in #343, en-it in #337 and
-    // en-fr in #331 — a shipping course carries no fixture key at all. en-de (#356) is the eighth
-    // row and the one still behind the gate, so it is the only row that carries the key, and the
-    // key SURVIVES the parse: the loader reports the manifest, it never edits it.
-    expect(courses.filter((course) => course.fixture !== undefined).map((c) => c.id)).toEqual([
-      'en-de',
-    ]);
+    // Every course has graduated — en-es #195, en-ar #202, hi-en #273, en-fr #331, en-it #337,
+    // en-ru #343, en-de #365 — and a shipping course carries no fixture key at all. The
+    // catalogue is fully graduated again, which is why the seam below is proved synthetically.
+    expect(courses.filter((course) => course.fixture !== undefined).map((c) => c.id)).toEqual([]);
     expect(courses[3]).toMatchObject({ id: 'hi-en', l1Tag: 'hi', l2Tag: 'en' });
     expect(courses[4]).toMatchObject({ id: 'en-ru', l1Tag: 'en', l2Tag: 'ru' });
     expect(courses[5]).toMatchObject({ id: 'en-it', l1Tag: 'en', l2Tag: 'it' });
@@ -65,7 +62,6 @@ describe('loadCourses', () => {
       l1Tag: 'en',
       l2Tag: 'de',
       pairLabel: 'english → german',
-      fixture: true,
     });
   });
 
@@ -91,9 +87,9 @@ describe('loadCourses', () => {
 
     expect(manifest.courses[0]?.fixture).toBe(true);
     expect(manifest.devBuild).toBe(true);
-    // And the same for the row the repo really carries behind the gate today.
-    const real = parseManifest({ devBuild: true, courses: [DEV_MANIFEST.courses[7]] });
-    expect(real.courses[0]).toMatchObject({ id: 'en-de', fixture: true });
+    // …and no REAL row carries the key today, which is the state this synthetic case exists for:
+    // en-de was the last one behind the gate and #365 let it out.
+    expect(DEV_MANIFEST.courses.filter((course) => 'fixture' in course)).toEqual([]);
   });
 
   it('fetches once however many callers ask — the cache is the promise', async () => {
