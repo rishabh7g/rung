@@ -148,8 +148,9 @@ describe('the revealed state', () => {
         .getAllByRole('button')
         .map((button) => [button.textContent, button.getAttribute('aria-pressed')]),
     ).toEqual([
-      [copy('mark.gotIt'), 'false'],
+      // Document order: the got-it segment sits second, under the thumb (`SelfMark`).
       [copy('mark.missed'), 'false'],
+      [copy('mark.gotIt'), 'false'],
     ]);
   });
 
@@ -171,8 +172,8 @@ describe('the revealed state', () => {
     reveal();
 
     expect(screen.getAllByRole('button').map((button) => button.textContent)).toEqual([
-      copy('mark.gotIt'),
       copy('mark.missed'),
+      copy('mark.gotIt'),
     ]);
     expect(container.querySelectorAll('button[disabled]')).toHaveLength(0);
   });

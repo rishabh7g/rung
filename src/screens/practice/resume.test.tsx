@@ -127,12 +127,12 @@ function answer(mark: 'mark.gotIt' | 'mark.missed', courseId = COURSE): void {
 }
 
 /**
- * Read's own self-mark (#349) — the gate, and the only writer of the counters since Produce went.
- * There is no reveal to click first and no commit window to wait out: the mark lands as it is
- * chosen, because it does not move the pager.
+ * Read's pager, which is what MARKS a sentence read (#368) — paging past it is the gate. The
+ * self-mark #349 briefly put on this card is gone: Read shows the sentence outright, so there is
+ * nothing to be right about, and going through the rung is what the gate wants to know.
  */
-function mark(kind: 'mark.gotIt' | 'mark.missed', courseId = COURSE): void {
-  fireEvent.click(screen.getByRole('button', { name: strings(kind, courseId) }));
+function readOn(control: 'read.next' | 'read.finish', courseId = COURSE): void {
+  fireEvent.click(screen.getByRole('button', { name: strings(control, courseId) }));
 }
 
 /** The banner's two controls, by the course's own labels. */
@@ -262,8 +262,7 @@ describe('an app kill', () => {
     const view = await renderHub();
     await begin();
     await screen.findByText(sentence(0).display);
-    mark('mark.gotIt');
-    fireEvent.click(screen.getByRole('button', { name: strings('read.next') }));
+    readOn('read.next');
     await screen.findByText(sentence(1).display);
     expect(courseState()?.session).toEqual({
       phase: 'read',
@@ -367,7 +366,8 @@ describe('a resume is not a session', () => {
     await renderHub();
     await begin();
     await screen.findByText(sentence(0, M2).display);
-    mark('mark.gotIt');
+    readOn('read.next');
+    await screen.findByText(sentence(1, M2).display);
     fireEvent.click(screen.getByRole('button', { name: strings('a11y.pauseSession') }));
     await screen.findByText(strings('practice.hubTitle'));
 
@@ -483,8 +483,7 @@ describe('across a course switch', () => {
     await renderHub();
     await begin();
     await screen.findByText(sentence(0).display);
-    mark('mark.gotIt');
-    fireEvent.click(screen.getByRole('button', { name: strings('read.next') }));
+    readOn('read.next');
     await screen.findByText(sentence(1).display);
     fireEvent.click(screen.getByRole('button', { name: strings('a11y.pauseSession') }));
     await screen.findByText(strings('practice.hubTitle'));

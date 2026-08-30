@@ -39,7 +39,15 @@ function renderMark(mark: Mark | null, onMark = vi.fn()) {
   return { ...view, onMark };
 }
 
-/** Both segments, in document order, as `[label, pressed]`. */
+/**
+ * Both segments, in DOCUMENT order, as `[label, pressed]` — which is also the visual order and
+ * the tab order, and the reason every expectation below reads `missed` first.
+ *
+ * The got-it segment sits SECOND on purpose: it is the mark a learner takes most often and the
+ * one their thumb should already be resting on, and it led until the ordering was measured
+ * against a one-handed phone rather than against reading order. Asserting document order rather
+ * than querying by name is what makes that a pinned decision instead of a coincidence.
+ */
 function segments(): [string, string | null][] {
   return screen
     .getAllByRole('button')
@@ -61,8 +69,8 @@ describe('the self-mark', () => {
     renderMark(null);
 
     expect(segments()).toEqual([
-      [copy('mark.gotIt'), 'false'],
       [copy('mark.missed'), 'false'],
+      [copy('mark.gotIt'), 'false'],
     ]);
   });
 
@@ -70,16 +78,16 @@ describe('the self-mark', () => {
     const { unmount } = renderMark('got');
 
     expect(segments()).toEqual([
-      [copy('mark.gotIt'), 'true'],
       [copy('mark.missed'), 'false'],
+      [copy('mark.gotIt'), 'true'],
     ]);
 
     unmount();
     renderMark('miss');
 
     expect(segments()).toEqual([
-      [copy('mark.gotIt'), 'false'],
       [copy('mark.missed'), 'true'],
+      [copy('mark.gotIt'), 'false'],
     ]);
   });
 
@@ -92,8 +100,8 @@ describe('the self-mark', () => {
     expect(onMark.mock.calls).toEqual([['got'], ['miss']]);
     // Nothing moved on screen: the parent owns the mark (that is what the [D11] gate hangs off).
     expect(segments()).toEqual([
-      [copy('mark.gotIt'), 'false'],
       [copy('mark.missed'), 'false'],
+      [copy('mark.gotIt'), 'false'],
     ]);
   });
 
