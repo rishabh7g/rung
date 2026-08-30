@@ -1,0 +1,542 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M2",
+  "title": "First exchange",
+  "job": "Greetings, wellbeing, yes/no questions",
+  "prerequisites": ["L1-M1"],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 5,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "Здравствуйте + , + name",
+      "Как вас зовут?",
+      "Как дела?",
+      "Вы + из + place (gen.) + ?",
+      "Да / Нет + , + <statement>",
+      "Я + Adj-short (устал / устала)"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A yes/no question moves nothing. Вы из Москвы? is the statement Вы из Москвы with a question mark on the end — no word is added, no word changes place, and there is no Russian equivalent of English do or are jumping to the front. Out loud the question is carried by a rise in pitch on the word being asked about; on the page the ? is all there is."
+    },
+    {
+      "tag": "interference",
+      "text": "This course speaks вы — the polite way of addressing somebody. Russian also has ты, for friends, family and children, and it takes its own set of verb endings; picking between them is a real social judgement, so this level makes it once and always chooses the safe one. The slogan to distrust is \"вы is just the plural of ты\": вы is BOTH the plural and the polite singular, and it always takes the plural verb form even when it means one person."
+    },
+    {
+      "tag": "delta",
+      "text": "вы has three written shapes and the job in the sentence picks one: вы does the acting (Вы студент?), вас is the one acted on (Как вас зовут? — \"how do they call YOU\"), вам is the one something is done to (M9). It is exactly the я / меня / мне pattern from M1, one person further along."
+    },
+    {
+      "tag": "interference",
+      "text": "A word describing how somebody is agrees with WHO IS BEING DESCRIBED: a man writes Я устал and a woman writes Я устала. It is the subject that decides, not the speaker — asking a woman gives Вы устали?, because вы always takes the plural shape. English marks none of this and an English speaker will forget it, which is why it is worth its own rule."
+    },
+    {
+      "tag": "free",
+      "text": "A short answer is Да or Нет followed by the whole statement: Нет, я из Индии. Russian does not have the English half-answer (\"No, I'm not\") that needs an auxiliary to lean on, so the full sentence is the normal reply and it is easier, not harder."
+    },
+    {
+      "tag": "delta",
+      "text": "Как дела? has no verb and no you in it — it is literally \"how [are the] affairs\", so it carries no ты/вы marking at all and is safe in either register. The fully polite version adds the person back: Как у вас дела? Learn Как дела? as one whole phrase; taking it apart is no use at this level."
+    },
+    {
+      "tag": "delta",
+      "text": "Greetings are picked by the time of day and by the register: Здравствуйте for anyone at any hour, Доброе утро before about noon. Привет exists and is the friend-and-family greeting that goes with ты — it is not a shorter Здравствуйте, and saying it to a stranger lands the way \"hey\" would land in a bank."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M2-S01",
+      "display": "Здравствуйте, Анна!",
+      "cue": "Hello, Anna!",
+      "glossEn": "lit. \"be-in-good-health, Anna\"",
+      "literal": "Be-healthy, Anna",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Здравствуйте",
+            "cue": "hello (polite)",
+            "tag": "delta",
+            "forms": ["Здравствуйте"],
+            "note": "The all-purpose polite greeting, good at any hour and to anybody. It is built from the old wish \"be in good health\", which is why it is so long — and it is the вы-form, so the -те on the end is the same -те that marks every polite verb in this course."
+          }
+        ],
+        "rules": [1, 6]
+      },
+      "trap": "It is long, and English speakers reach for привет because it is short. привет is the ты-greeting: warm with a friend, wrong with a stranger, and there is no polite short one — Здравствуйте is simply the price of the register.",
+      "sound": "ZDRAST-vooy-tye. The first в is not said at all, and in fast speech the whole word collapses to \"ZDRAS-tye\" — that shortening is normal, but it is never written.",
+      "variations": [
+        {
+          "display": "Здравствуйте, Иван!",
+          "cue": "Hello, Ivan!",
+          "changed": "swap the name — the greeting itself never changes for who it is aimed at"
+        },
+        {
+          "display": "Здравствуйте!",
+          "cue": "Hello!",
+          "changed": "on its own, with no name — perfectly complete"
+        },
+        {
+          "display": "Доброе утро, Анна!",
+          "cue": "Good morning, Anna!",
+          "changed": "swap the greeting for the morning one — same frame, different hour"
+        }
+      ],
+      "mistake": {
+        "display": "Привет, Анна!",
+        "why": "Not wrong Russian — wrong register. привет goes with ты, and this course addresses people as вы. Said to a stranger it is over-familiar."
+      },
+      "usage": "Meeting anybody you are not close to: a shop, an office, a first introduction.",
+      "register": "neutral",
+      "mnemonic": "The -те on the end is the polite ending you will meet on every вы-verb from here on."
+    },
+    {
+      "id": "L1-M2-S02",
+      "display": "Доброе утро!",
+      "cue": "Good morning!",
+      "glossEn": "lit. \"good morning\"",
+      "literal": "Good morning",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Доброе утро",
+            "cue": "good morning",
+            "tag": "free",
+            "forms": ["Доброе утро"],
+            "note": "Two words, learned as one greeting. доброе is \"good\" in the shape that goes with a neuter noun, and утро (\"morning\") is neuter because it ends in -о — so the two endings match. That agreement is a system M1 only hinted at; here it is enough to take the phrase whole."
+          }
+        ],
+        "rules": [6]
+      },
+      "trap": "It is a greeting, not a description of the morning, and it works only before about noon. After that Russian switches phrase entirely rather than stretching this one.",
+      "sound": "DO-bra-ye OO-tra. Both unstressed о letters flatten to \"a\", so only the first о of доброе and the first of утро keep their round sound.",
+      "variations": [
+        {
+          "display": "Доброе утро, Иван!",
+          "cue": "Good morning, Ivan!",
+          "changed": "a name after a comma, exactly as with Здравствуйте"
+        },
+        {
+          "display": "Доброе утро! Как дела?",
+          "cue": "Good morning! How are things?",
+          "changed": "the greeting plus the question that normally follows it"
+        },
+        {
+          "display": "Здравствуйте! Доброе утро!",
+          "cue": "Hello! Good morning!",
+          "changed": "both greetings together — common, and warmer than either alone"
+        }
+      ],
+      "mistake": {
+        "display": "Добрый утро!",
+        "why": "утро is neuter, so its describing word has to be neuter too: доброе утро. добрый is the masculine shape and belongs to other nouns."
+      },
+      "usage": "Any morning greeting, in any register — this one is not marked for ты or вы.",
+      "register": "neutral",
+      "mnemonic": "утро ends in -о and доброе ends in -ое: the endings rhyme because they have to."
+    },
+    {
+      "id": "L1-M2-S03",
+      "display": "Вы из Москвы?",
+      "cue": "Are you from Moscow?",
+      "glossEn": "lit. \"you from Moscow?\"",
+      "literal": "You from Moscow?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Вы",
+            "cue": "you (polite)",
+            "tag": "interference",
+            "forms": ["Вы", "вас", "вам"],
+            "note": "The polite \"you\", used for one person or several, and the only \"you\" this course writes. Three shapes, picked by the job: вы acts (Вы студент?), вас is acted on (Как вас зовут?), вам is what something is done to (M9's Вам холодно?). Russian also has ты for friends and family — a genuinely different word with different verb endings, and choosing it is a social decision this level does not ask you to make."
+          }
+        ],
+        "rules": [0, 1, 2]
+      },
+      "trap": "Nothing moved. English turns \"you are from Moscow\" into \"are you from Moscow\" by swapping two words; Russian leaves the sentence exactly as it was and lets the voice do the asking.",
+      "sound": "vy eez mask-VY. The pitch climbs on Москвы and falls away after it — that rise is the whole question, and it is what the ? stands in for.",
+      "variations": [
+        {
+          "display": "Вы студент?",
+          "cue": "Are you a student?",
+          "changed": "swap what is being asked about — the frame is just a statement with a question mark"
+        },
+        {
+          "display": "Вы из Индии?",
+          "cue": "Are you from India?",
+          "changed": "swap the place, and the из-shape changes with it: Москвы → Индии"
+        },
+        {
+          "display": "Анна из Москвы?",
+          "cue": "Is Anna from Moscow?",
+          "changed": "a name instead of вы — the question still moves nothing"
+        }
+      ],
+      "mistake": {
+        "display": "Из вы Москвы?",
+        "why": "The English swap, imported. Russian asks with the words exactly where the statement left them: Вы из Москвы?"
+      },
+      "usage": "Asking a stranger where they are from — the natural second line after a name.",
+      "register": "neutral",
+      "mnemonic": "The question mark does all the work. Nothing else has to."
+    },
+    {
+      "id": "L1-M2-S04",
+      "display": "Нет, я из Индии.",
+      "cue": "No, I am from India",
+      "glossEn": "lit. \"no, I from India\"",
+      "literal": "No, I from India",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Нет",
+            "cue": "no",
+            "tag": "free",
+            "forms": ["Нет"],
+            "note": "\"No\", and it stands alone or opens a full answer. It has a second job Russian uses constantly — \"there isn't any\", as in Здесь нет молока — but that job changes the ending of whatever is missing, so this level leaves it alone and keeps нет as the plain answer."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "English answers with a fragment — \"No, I'm not\" — leaning on an auxiliary. Russian has no auxiliary to lean on, so the answer is the whole sentence: Нет, я из Индии.",
+      "sound": "nyet ya eez EEN-dee-ee. The е after н softens it, which is what turns \"net\" into \"nyet\".",
+      "variations": [
+        {
+          "display": "Да, я из Москвы.",
+          "cue": "Yes, I am from Moscow",
+          "changed": "the other answer to the same question — Да, then the statement"
+        },
+        {
+          "display": "Нет, я из России.",
+          "cue": "No, I am from Russia",
+          "changed": "swap the place — the answer frame does not move"
+        },
+        {
+          "display": "Нет, Анна из Индии.",
+          "cue": "No, Anna is from India",
+          "changed": "answer about somebody else — still no verb anywhere in the sentence"
+        }
+      ],
+      "mistake": {
+        "display": "Нет, я не.",
+        "why": "There is nothing for не to hang on. Russian finishes the answer: Нет, я из Индии."
+      },
+      "usage": "Correcting a guess about you, politely and in full.",
+      "register": "neutral",
+      "mnemonic": "Russian cannot answer in half a sentence, so it answers in a whole one."
+    },
+    {
+      "id": "L1-M2-S05",
+      "display": "Как вас зовут?",
+      "cue": "What is your name?",
+      "glossEn": "lit. \"how you they-call?\"",
+      "literal": "How you they-call?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Как",
+            "cue": "how",
+            "tag": "delta",
+            "forms": ["Как"],
+            "note": "\"How\" — and Russian asks for a name with \"how\", not with \"what\": Как вас зовут? is \"how do they call you?\". The same word opens Как дела?, where it is asking after the state of things."
+          },
+          {
+            "display": "зовут",
+            "cue": "they call",
+            "tag": "delta",
+            "forms": ["зовут"],
+            "note": "\"They call\" — the verb inside M1's Меня зовут, here on its own. Nobody in particular is doing the calling; Russian uses this bare they-form the way English uses \"they say\" or a passive. Swap the person in front of it and the verb does not move: меня зовут, вас зовут."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "Что вас зовут? is the word-for-word English question and it is wrong. The Russian question word here is Как.",
+      "sound": "kak vas za-VOOT. The pitch rises on зовут — it is a question, and no word was added to make it one.",
+      "variations": [
+        {
+          "display": "Как её зовут?",
+          "cue": "What is her name?",
+          "changed": "вас → её: ask about a third person, and зовут still does not move"
+        },
+        {
+          "display": "Меня зовут Иван.",
+          "cue": "My name is Ivan",
+          "changed": "the answer to it — the same verb with меня in front"
+        },
+        {
+          "display": "Анна, как вас зовут?",
+          "cue": "Anna, what is your name?",
+          "changed": "a name in front, set off by a comma, exactly as English does it"
+        }
+      ],
+      "mistake": {
+        "display": "Что вас зовут?",
+        "why": "Russian asks how you are called, not what. Как вас зовут?"
+      },
+      "usage": "Asking a stranger's name — the polite form, and the only one this course writes.",
+      "register": "neutral",
+      "mnemonic": "Russian does not ask what your name is; it asks how people call you."
+    },
+    {
+      "id": "L1-M2-S06",
+      "display": "Как дела?",
+      "cue": "How are things?",
+      "glossEn": "lit. \"how [are the] affairs?\"",
+      "literal": "How affairs?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Как дела",
+            "cue": "how are things",
+            "tag": "delta",
+            "forms": ["Как дела"],
+            "note": "Two words taken whole. дела is \"affairs, matters\" and there is no verb and no \"you\" anywhere in the phrase — which is exactly why it is safe in either register: it never has to choose between ты and вы. The fuller, more careful version puts the person back in: Как у вас дела?"
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "It is not \"how are you\" and does not ask after your health. It asks how things are going, and the expected answer is a word about the state of affairs, not about your feelings.",
+      "sound": "kak dye-LA. The stress is on the last syllable, and the pitch rises there — the whole question is in that rise.",
+      "variations": [
+        {
+          "display": "Анна, как дела?",
+          "cue": "Anna, how are things?",
+          "changed": "a name in front of it, the usual way of aiming the question"
+        },
+        {
+          "display": "Как дела, Иван?",
+          "cue": "How are things, Ivan?",
+          "changed": "the name after instead of before — both orders are ordinary"
+        },
+        {
+          "display": "Здравствуйте! Как дела?",
+          "cue": "Hello! How are things?",
+          "changed": "the greeting and the question together, which is how they normally arrive"
+        }
+      ],
+      "mistake": {
+        "display": "Как вы дела?",
+        "why": "There is no room for вы in this phrase: it is Как дела?, or the fuller Как у вас дела?, and nothing in between."
+      },
+      "usage": "The standard follow-up to a greeting. With somebody you have only just met, Как у вас дела? is the safer choice.",
+      "register": "neutral",
+      "mnemonic": "No verb, no you — which is why nobody can say it at the wrong level of politeness."
+    },
+    {
+      "id": "L1-M2-S07",
+      "display": "Хорошо, спасибо.",
+      "cue": "Fine, thank you",
+      "glossEn": "lit. \"well, thanks\"",
+      "literal": "Well, thanks",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Хорошо",
+            "cue": "fine · well · good",
+            "tag": "free",
+            "forms": ["Хорошо"],
+            "note": "The all-purpose \"fine\". On its own it answers Как дела?; in front of a verb it means \"well\" (Я хорошо читаю, \"I read well\"); and as a reply on its own it can also mean \"all right, agreed\"."
+          },
+          {
+            "display": "спасибо",
+            "cue": "thank you",
+            "tag": "free",
+            "forms": ["спасибо"],
+            "note": "\"Thank you\", one word, and it never changes for who is being thanked. It comes from an old \"God save you\", which is why it looks nothing like anything else in the language."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "Russian answers Как дела? with a word about the state of things, not with an adjective about you. Я хороший would say that you are a good person.",
+      "sound": "kha-ra-SHO spa-SEE-ba. The х is a raspy h, made further back than the English one; two of хорошо's three о letters are unstressed and come out as \"a\".",
+      "variations": [
+        {
+          "display": "Хорошо.",
+          "cue": "Fine",
+          "changed": "the answer alone — complete, if a little brisk"
+        },
+        {
+          "display": "Спасибо, хорошо.",
+          "cue": "Thank you, fine",
+          "changed": "the two words the other way round — both orders are ordinary"
+        },
+        {
+          "display": "Спасибо, Анна.",
+          "cue": "Thank you, Anna",
+          "changed": "спасибо used on its own, thanking somebody by name"
+        }
+      ],
+      "mistake": {
+        "display": "Я хорошо.",
+        "why": "The answer needs no \"I\". Как дела? asks about things, and Хорошо answers about things."
+      },
+      "usage": "The standard answer to Как дела?, and the standard thanks for anything.",
+      "register": "neutral",
+      "mnemonic": "Things are fine, not you — so the answer has no \"I\" in it."
+    },
+    {
+      "id": "L1-M2-S08",
+      "display": "Я устал.",
+      "cue": "I am tired (said by a man)",
+      "glossEn": "lit. \"I got-tired\"",
+      "literal": "I got-tired",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "устал",
+            "cue": "tired",
+            "tag": "interference",
+            "forms": ["устал", "устала", "устали"],
+            "note": "\"Tired\", and the shape depends on who is being described: устал for a man, устала for a woman, устали for more than one person — and also for a single person addressed as вы, because вы always takes the plural. It is the subject that picks the shape, so Вы устали? is right even to one man. English says \"tired\" to everybody and gives you no habit to fall back on."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "The sentence changes with who is saying it. A woman writing Я устал has made a real mistake, not a stylistic one — and it is the mistake English speakers make for months, because nothing in their own language ever asks.",
+      "sound": "ya oo-STAL, ya oo-STA-la. The stress stays on the same syllable in both, so only the ending moves.",
+      "variations": [
+        {
+          "display": "Я устала.",
+          "cue": "I am tired (said by a woman)",
+          "changed": "устал → устала: the same sentence, said by a woman"
+        },
+        {
+          "display": "Вы устали?",
+          "cue": "Are you tired?",
+          "changed": "the polite you takes the plural shape устали, even about one person — and it is a question with nothing moved"
+        },
+        {
+          "display": "Анна устала.",
+          "cue": "Anna is tired",
+          "changed": "about somebody else — the shape follows Anna, not the speaker"
+        }
+      ],
+      "mistake": {
+        "display": "Вы устал?",
+        "why": "вы always takes the plural shape, however many people it means: Вы устали?"
+      },
+      "usage": "Said about yourself after a long day — and it is a normal, unremarkable thing to say in Russian.",
+      "register": "neutral",
+      "mnemonic": "The ending is a small label saying who the sentence is about. Check it before you speak."
+    },
+    {
+      "id": "L1-M2-S09",
+      "display": "Да, я студент.",
+      "cue": "Yes, I am a student",
+      "glossEn": "lit. \"yes, I student\"",
+      "literal": "Yes, I student",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Да",
+            "cue": "yes",
+            "tag": "free",
+            "forms": ["Да"],
+            "note": "\"Yes\". Like Нет it opens the full answer rather than replacing it, and in speech it also works as a filler at the front of a sentence, roughly \"well, …\"."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "\"Yes, I am\" cannot be translated: there is no am to end on. Russian says Да and then the sentence, and stopping after Да is abrupt rather than polite.",
+      "sound": "da ya stoo-DYENT. Да is short and flat — nothing like the drawn-out English \"yeah\".",
+      "variations": [
+        {
+          "display": "Да, я студентка.",
+          "cue": "Yes, I am a student (said by a woman)",
+          "changed": "the answer from a woman — a different word, not a different ending"
+        },
+        {
+          "display": "Нет, я студентка.",
+          "cue": "No, I am a student (a woman correcting the question)",
+          "changed": "Да → Нет, correcting the guess rather than confirming it"
+        },
+        {
+          "display": "Да, Анна студентка.",
+          "cue": "Yes, Anna is a student",
+          "changed": "answer about somebody else — the frame takes any statement after the comma"
+        }
+      ],
+      "mistake": {
+        "display": "Да, я есть.",
+        "why": "There is no verb to confirm with. The answer is Да plus the whole statement: Да, я студент."
+      },
+      "usage": "Confirming a guess about yourself, in full — the ordinary Russian answer.",
+      "register": "neutral",
+      "mnemonic": "Да opens the door; the sentence still has to walk through it."
+    },
+    {
+      "id": "L1-M2-S10",
+      "display": "До свидания, Анна!",
+      "cue": "Goodbye, Anna!",
+      "glossEn": "lit. \"until [the] meeting, Anna\"",
+      "literal": "Until meeting, Anna",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "До свидания",
+            "cue": "goodbye",
+            "tag": "delta",
+            "forms": ["До свидания"],
+            "note": "Two words that mean \"until we meet again\" — до is \"until\" and свидания is a bent shape of \"meeting\", bent because до, like из, changes the word after it. Learn it whole: it is the polite goodbye, and it fits wherever Здравствуйте fitted."
+          }
+        ],
+        "rules": [6]
+      },
+      "trap": "It is not a formal-only phrase, whatever its length suggests: this is the ordinary goodbye between people on вы terms, and there is no shorter polite one.",
+      "sound": "da svee-DA-nee-ya. The до is unstressed and flattens to \"da\" — it sounds exactly like Да, and only the sentence tells them apart.",
+      "variations": [
+        {
+          "display": "До свидания, Иван!",
+          "cue": "Goodbye, Ivan!",
+          "changed": "swap the name — the phrase never changes"
+        },
+        {
+          "display": "До свидания!",
+          "cue": "Goodbye!",
+          "changed": "on its own, with no name — complete"
+        },
+        {
+          "display": "Спасибо, до свидания!",
+          "cue": "Thank you, goodbye!",
+          "changed": "thanks and the goodbye together, which is how a shop or an office conversation ends"
+        }
+      ],
+      "mistake": {
+        "display": "До свидание, Анна!",
+        "why": "до bends the word after it, exactly as из does: свидание becomes свидания. The unbent form belongs in a dictionary, not in this phrase."
+      },
+      "usage": "Leaving anybody you are on вы terms with — a shop, an office, a first meeting.",
+      "register": "neutral",
+      "mnemonic": "Not \"goodbye\" but \"until the meeting\" — Russian says farewell by pointing at the next time."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M2-C01", "display": "Здравствуйте, Иван!", "cue": "Hello, Ivan!" },
+    { "id": "L1-M2-C02", "display": "Как дела, Анна?", "cue": "How are things, Anna?" },
+    { "id": "L1-M2-C03", "display": "Доброе утро, Анна!", "cue": "Good morning, Anna!" },
+    { "id": "L1-M2-C04", "display": "Вы студент?", "cue": "Are you a student?" },
+    {
+      "id": "L1-M2-C05",
+      "display": "Да, я студентка.",
+      "cue": "Yes, I am a student (a woman speaking)"
+    },
+    { "id": "L1-M2-C06", "display": "Нет, я из Москвы.", "cue": "No, I am from Moscow" },
+    { "id": "L1-M2-C07", "display": "Да, очень приятно.", "cue": "Yes, very nice to meet you" },
+    { "id": "L1-M2-C08", "display": "Спасибо, Иван.", "cue": "Thank you, Ivan" },
+    { "id": "L1-M2-C09", "display": "Я устала.", "cue": "I am tired (a woman speaking)" },
+    { "id": "L1-M2-C10", "display": "До свидания, Иван!", "cue": "Goodbye, Ivan!" },
+    { "id": "L1-M2-C11", "display": "Вы из Индии?", "cue": "Are you from India?" },
+    { "id": "L1-M2-C12", "display": "Хорошо, спасибо, Анна.", "cue": "Fine, thank you, Anna" }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

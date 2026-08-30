@@ -120,6 +120,17 @@ describe('every course names its two languages in tags, not just in words', () =
     expect(hiEn?.fixture).toBeUndefined();
   });
 
+  it('is English about Italian for the fifth course (#332, shipping since #337)', () => {
+    const enIt = AUTHORED.find((course) => course.id === 'en-it');
+
+    // The nearest sibling en-es has: same L1, a Latin-script L2 that also pro-drops. The shell
+    // knows nothing of that — it reads `l1Tag` for the document and `l2Tag` for the taught line.
+    // The row carries no fixture flag — #337 deleted it, so a learner build ships the course.
+    expect(enIt?.l1Tag).toBe('en');
+    expect(enIt?.l2Tag).toBe('it');
+    expect(enIt?.fixture).toBeUndefined();
+  });
+
   it('is English about French for the fifth course (#326, shipping since #331)', () => {
     const enFr = AUTHORED.find((course) => course.id === 'en-fr');
 

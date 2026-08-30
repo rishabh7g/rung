@@ -1,0 +1,550 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M8",
+  "title": "Numbers & shopping",
+  "job": "Prices, quantities, buying",
+  "prerequisites": ["L1-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": ["simple_present", "present_conditional", "passato_prossimo"],
+    "allowedPatterns": [
+      "Quanto costa + il/la + N?",
+      "Quanto costano + i/le + N-pl?",
+      "Voglio + num + N + , per favore",
+      "Un chilo di + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "The price question agrees with the THING, not with the buyer: Quanto costa il caffè? · Quanto costano i libri? It is piacere's reversal again — the thing is the subject and the verb follows it — and a learner who has met that once should be told it is the same shape twice."
+    },
+    {
+      "tag": "interference",
+      "text": "quanto agrees in gender AND number with what it counts: quanto pane · quanta acqua · quanti libri · quante case. English splits \"much\" from \"many\" by whether a thing can be counted; Italian makes no such split and asks for agreement instead. It is a trade, not a freebie."
+    },
+    {
+      "tag": "delta",
+      "text": "euro never changes in the plural: due euro, dieci euro, venti euro — never euri. So do caffè, città and every noun ending in a stressed vowel, and every foreign word Italian has borrowed whole (due bar, due film)."
+    },
+    {
+      "tag": "delta",
+      "text": "A quantity takes di: un chilo di riso, una bottiglia di vino, un po' di pane. The di never fuses with an article here, because none follows it."
+    },
+    {
+      "tag": "delta",
+      "text": "per favore is the everyday \"please\" and it sits at the edge of the request, after a comma: Voglio tre caffè, per favore. Together with M3's vorrei it is what carries politeness in a course that speaks tu throughout."
+    },
+    {
+      "tag": "free",
+      "text": "Numbers are just words and never change shape: uno, due, tre, dieci, venti, cento. Only uno bends, because in front of a noun it is also the article — un caffè, uno zaino, una pizza."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M8-S01",
+      "display": "Quanto costa il caffè?",
+      "cue": "How much does the coffee cost?",
+      "glossEn": "lit. \"How-much costs the coffee?\"",
+      "literal": "How-much costs the coffee?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Quanto costa",
+            "cue": "how much is",
+            "tag": "interference",
+            "forms": ["Quanto costa", "quanto costano"],
+            "note": "\"How much does it cost\" — and the verb agrees with the THING being priced, not with you: quanto costa il caffè (one thing) · quanto costano i libri (more than one). Learned whole, as the question it is."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English asks how much YOU will pay and puts \"does\" in front. Italian asks what the THING costs, and puts nothing in front at all.",
+      "sound": "KWAN-to KO-sta. qu is always \"kw\", and both o's are open and short.",
+      "variations": [
+        {
+          "display": "Quanto costa la pizza?",
+          "cue": "How much does the pizza cost?",
+          "changed": "swap the thing — still one of it, so still costa"
+        },
+        {
+          "display": "Quanto costano i libri?",
+          "cue": "How much do the books cost?",
+          "changed": "more than one thing, so the verb goes plural"
+        },
+        {
+          "display": "Quanto costa il caffè al bar?",
+          "cue": "How much does the coffee cost at the bar?",
+          "changed": "a place phrase on the end, and the question is untouched"
+        }
+      ],
+      "mistake": {
+        "display": "Quanto costo il caffè?",
+        "why": "costo would make YOU the one costing something. The coffee is the subject: Quanto costa il caffè?"
+      },
+      "usage": "At any counter, about anything.",
+      "register": "neutral",
+      "mnemonic": "Count the things, not the people — the same rule as piace and piacciono."
+    },
+    {
+      "id": "L1-M8-S02",
+      "display": "Quanto costa un chilo di pane?",
+      "cue": "How much does a kilo of bread cost?",
+      "glossEn": "lit. \"How-much costs a kilo of bread?\"",
+      "literal": "How-much costs a kilo of bread?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "un chilo di",
+            "cue": "a kilo of",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"A kilo of\", and the di is what links the amount to the thing — the same di as in un po' di. Italy weighs its shopping, so this is the question at every market stall."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "It is a kilo that costs, not the bread, and the verb agrees with the kilo — one of it, so costa. Change it to due chili and the verb goes plural.",
+      "sound": "KEE-lo. ch is a hard k, always — it is the spelling Italian uses to keep c hard in front of an i.",
+      "variations": [
+        {
+          "display": "Quanto costa un chilo di riso?",
+          "cue": "How much does a kilo of rice cost?",
+          "changed": "swap what is being weighed — di links them either way"
+        },
+        {
+          "display": "Vorrei un chilo di pane",
+          "cue": "I'd like a kilo of bread",
+          "changed": "the polite want in front of the same phrase"
+        },
+        {
+          "display": "Voglio un po' di pane",
+          "cue": "I want a bit of bread",
+          "changed": "an amount with no number in it — the di is doing the same job"
+        }
+      ],
+      "mistake": {
+        "display": "Quanto costa un chilo pane?",
+        "why": "The amount is linked to the thing by di: un chilo di pane."
+      },
+      "usage": "A market stall, a bakery, a greengrocer.",
+      "register": "neutral",
+      "mnemonic": "An amount always reaches its thing through di."
+    },
+    {
+      "id": "L1-M8-S03",
+      "display": "Voglio tre caffè, per favore",
+      "cue": "I want three coffees, please",
+      "glossEn": "lit. \"Want three coffees, please\" — caffè does not change for the plural",
+      "literal": "I-want three coffees, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tre",
+            "cue": "three",
+            "tag": "free",
+            "forms": [],
+            "note": "three. Like every Italian number above one, it has one shape and never agrees with anything."
+          },
+          {
+            "display": "per favore",
+            "cue": "please",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Please\" — literally \"as a favour\", and learned whole. It goes at the edge of the request, after a comma, and it is one of the two things that carry politeness in this course. per piacere means exactly the same."
+          }
+        ],
+        "rules": [2, 4, 5]
+      },
+      "trap": "caffè ends in a stressed vowel, so it cannot take a plural ending: tre caffè, not tre caffèi or tre caffè's. Italian simply lets the number do the counting.",
+      "sound": "TRE, one syllable with a close e and a tapped r. per favore runs together — per-fa-VO-re.",
+      "variations": [
+        {
+          "display": "Vorrei tre caffè, per favore",
+          "cue": "I'd like three coffees, please",
+          "changed": "voglio → vorrei: softer still, and per favore stays where it was"
+        },
+        {
+          "display": "Voglio due pizze, per favore",
+          "cue": "I want two pizzas, please",
+          "changed": "a noun that DOES take a plural ending — pizze"
+        },
+        {
+          "display": "Un caffè, per favore",
+          "cue": "A coffee, please",
+          "changed": "no verb at all — at a counter this is the whole order"
+        }
+      ],
+      "mistake": {
+        "display": "Voglio tre caffèi, per favore",
+        "why": "caffè ends in a stressed vowel and so has no separate plural: tre caffè."
+      },
+      "usage": "Ordering, at a bar or a counter.",
+      "register": "neutral",
+      "mnemonic": "A stressed final vowel refuses to change: un caffè, due caffè."
+    },
+    {
+      "id": "L1-M8-S04",
+      "display": "Il caffè costa un euro",
+      "cue": "The coffee costs one euro",
+      "glossEn": "lit. \"The coffee costs one euro\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "costa",
+            "cue": "it costs",
+            "tag": "free",
+            "forms": ["costa", "costano"],
+            "note": "costare — to cost. It only ever has a THING as its subject, so only these two shapes are needed: costa for one, costano for more than one."
+          },
+          {
+            "display": "euro",
+            "cue": "euro",
+            "tag": "delta",
+            "forms": [],
+            "note": "The currency, and it never changes: un euro, due euro, venti euro. Italian borrowed the word whole and did not give it a plural — euri is a joke, not a form."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "English says \"euros\" and Italian will not. It is not an exception to be memorised so much as a small class: nouns Italian has taken in whole never grow an ending.",
+      "sound": "EH-u-ro, with the eu as one glide, and KO-sta with an open o.",
+      "variations": [
+        {
+          "display": "Il caffè costa due euro",
+          "cue": "The coffee costs two euros",
+          "changed": "the number changes and euro does not"
+        },
+        {
+          "display": "I libri costano dieci euro",
+          "cue": "The books cost ten euros",
+          "changed": "more than one thing, so the verb goes plural — costano"
+        },
+        {
+          "display": "Quanto costa il caffè?",
+          "cue": "How much does the coffee cost?",
+          "changed": "the question this sentence answers"
+        }
+      ],
+      "mistake": {
+        "display": "Il caffè costa un euri",
+        "why": "euro has one shape: un euro, due euro, venti euro."
+      },
+      "usage": "Reading a price back, or being told one.",
+      "register": "neutral",
+      "mnemonic": "euro is a borrowed word, and borrowed words keep their shape."
+    },
+    {
+      "id": "L1-M8-S05",
+      "display": "Quanti libri vuoi?",
+      "cue": "How many books do you want?",
+      "glossEn": "lit. \"How-many books you-want?\"",
+      "literal": "How-many books you-want?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quanto",
+            "cue": "how much · how many",
+            "tag": "interference",
+            "forms": ["quanto", "quanta", "quanti", "quante"],
+            "note": "One word for both English questions, and it agrees with what it counts: quanto pane · quanta acqua · quanti libri · quante case. English chooses between much and many; Italian chooses an ending instead."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "There is no much/many split to make here, which sounds like a saving — but the ending has to agree instead, and getting that wrong is more visible than getting much/many wrong.",
+      "sound": "KWAN-ti. qu is \"kw\", and the final -i is a clean ee.",
+      "variations": [
+        {
+          "display": "Quante pizze vuoi?",
+          "cue": "How many pizzas do you want?",
+          "changed": "a feminine plural noun, so quante"
+        },
+        {
+          "display": "Quanto pane vuoi?",
+          "cue": "How much bread do you want?",
+          "changed": "a masculine noun you do not count — quanto, with no ending change of its own"
+        },
+        {
+          "display": "Quanti caffè vuoi?",
+          "cue": "How many coffees do you want?",
+          "changed": "caffè does not go plural, so quanti is the only thing showing the number"
+        }
+      ],
+      "mistake": {
+        "display": "Quanto libri vuoi?",
+        "why": "libri is masculine plural, so the question word is quanti: Quanti libri vuoi?"
+      },
+      "usage": "Taking an order, or checking one.",
+      "register": "informal",
+      "mnemonic": "quanto counts, and it dresses like whatever it is counting."
+    },
+    {
+      "id": "L1-M8-S06",
+      "display": "Quanta acqua vuoi?",
+      "cue": "How much water do you want?",
+      "glossEn": "lit. \"How-much water you-want?\"",
+      "literal": "How-much water you-want?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "acqua",
+            "cue": "water",
+            "tag": "free",
+            "forms": ["acqua", "l'acqua", "acque"],
+            "note": "Feminine: l'acqua, with the article elided onto the front because the word begins with a vowel. Bare acqua and l'acqua are the same word, and the apostrophe is written every time the article is there."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "Water is uncountable in both languages, so English reaches for \"how much\". Italian reaches for the feminine singular ending instead: quanta.",
+      "sound": "AK-kwa. The cq is a doubled k followed by \"kw\", and it is genuinely held — a single one would be a different word.",
+      "variations": [
+        {
+          "display": "Vorrei un po' di acqua",
+          "cue": "I'd like a bit of water",
+          "changed": "an amount instead of a question, and the article drops away with it"
+        },
+        {
+          "display": "Quanto costa l'acqua?",
+          "cue": "How much does the water cost?",
+          "changed": "the article elides onto the noun — l'acqua, one word on the page"
+        },
+        {
+          "display": "Quanta pizza vuoi?",
+          "cue": "How much pizza do you want?",
+          "changed": "another feminine noun taken by the slice rather than by the piece"
+        }
+      ],
+      "mistake": {
+        "display": "Quanto acqua vuoi?",
+        "why": "acqua is feminine, so the question word is quanta: Quanta acqua vuoi?"
+      },
+      "usage": "At a table, or filling a bottle.",
+      "register": "informal",
+      "mnemonic": "The article hides in the apostrophe: l'acqua."
+    },
+    {
+      "id": "L1-M8-S07",
+      "display": "Vorrei una bottiglia di vino",
+      "cue": "I'd like a bottle of wine",
+      "glossEn": "lit. \"Would-like a bottle of wine\"",
+      "literal": "I-would-like a bottle of wine",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bottiglia",
+            "cue": "bottle",
+            "tag": "free",
+            "forms": ["bottiglia", "bottiglie"],
+            "note": "Feminine: una bottiglia (one) · due bottiglie (more than one). Like every container word, it reaches its contents through di."
+          },
+          {
+            "display": "vino",
+            "cue": "wine",
+            "tag": "free",
+            "forms": ["vino", "vini"],
+            "note": "Masculine: il vino. The plural vini means kinds of wine rather than bottles of it."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "English can say \"a wine\" and mean a glass of it. Italian counts the container instead: una bottiglia di vino, un bicchiere di vino.",
+      "sound": "bot-TI-lya, with the double t held and the gli as one sound — the same sound as in voglio. VI-no has a close i.",
+      "variations": [
+        {
+          "display": "Vorrei una bottiglia di acqua",
+          "cue": "I'd like a bottle of water",
+          "changed": "swap the contents — di links them either way"
+        },
+        {
+          "display": "Quanto costa una bottiglia di vino?",
+          "cue": "How much does a bottle of wine cost?",
+          "changed": "the price question in front of the same phrase"
+        },
+        {
+          "display": "Vorrei due bottiglie di vino",
+          "cue": "I'd like two bottles of wine",
+          "changed": "the container goes plural and the contents do not"
+        }
+      ],
+      "mistake": {
+        "display": "Vorrei una bottiglia vino",
+        "why": "A container reaches its contents through di: una bottiglia di vino."
+      },
+      "usage": "A restaurant, or a shop with shelves.",
+      "register": "neutral",
+      "mnemonic": "The container is counted; the contents come after di."
+    },
+    {
+      "id": "L1-M8-S08",
+      "display": "Costano dieci euro",
+      "cue": "They cost ten euros",
+      "glossEn": "lit. \"They-cost ten euro\"",
+      "literal": "They-cost ten euro",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dieci",
+            "cue": "ten",
+            "tag": "free",
+            "forms": [],
+            "note": "ten. The counting set this course needs is uno, due, tre, dieci, venti, cento — enough to say a price and to count what is on a table."
+          }
+        ],
+        "rules": [0, 2, 5]
+      },
+      "trap": "There is no subject word here at all, and none is missing: costano already says that more than one thing is doing the costing, and Italian never writes an \"it\" or a \"they\" for a thing.",
+      "sound": "DYE-chi. The die- is one syllable, and the c before i is soft — the ch of \"church\".",
+      "variations": [
+        {
+          "display": "Costa dieci euro",
+          "cue": "It costs ten euros",
+          "changed": "one thing, so the verb goes back to costa"
+        },
+        {
+          "display": "Costano venti euro",
+          "cue": "They cost twenty euros",
+          "changed": "swap the number; euro does not move for it"
+        },
+        {
+          "display": "I libri costano dieci euro",
+          "cue": "The books cost ten euros",
+          "changed": "the subject written out — the verb was already carrying it"
+        }
+      ],
+      "mistake": {
+        "display": "Loro costano dieci euro",
+        "why": "loro is for people. A thing needs no subject pronoun at all in Italian: Costano dieci euro."
+      },
+      "usage": "Being told a price for more than one thing.",
+      "register": "neutral",
+      "mnemonic": "The ending counts the things, so nothing else has to."
+    },
+    {
+      "id": "L1-M8-S09",
+      "display": "Ho comprato un chilo di riso",
+      "cue": "I bought a kilo of rice",
+      "glossEn": "lit. \"I-have bought a kilo of rice\"",
+      "literal": "I-have bought a kilo of rice",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "riso",
+            "cue": "rice",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine: il riso. Like pane, it is not usually counted — you buy it by weight, so it lives with un chilo di."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "The shopping is done and the sentence is a past one, but nothing about the quantity changes: un chilo di riso is the same phrase whichever tense surrounds it.",
+      "sound": "RI-zo — the single s between two vowels again, said as a z through much of the north.",
+      "variations": [
+        {
+          "display": "Ho comprato un chilo di pane",
+          "cue": "I bought a kilo of bread",
+          "changed": "swap what was weighed"
+        },
+        {
+          "display": "Ieri ho comprato due bottiglie di vino",
+          "cue": "Yesterday I bought two bottles of wine",
+          "changed": "a time word in front and a counted container instead of a weight"
+        },
+        {
+          "display": "Non ho comprato il riso",
+          "cue": "I didn't buy the rice",
+          "changed": "non in front of the whole verb, and the amount dropped"
+        }
+      ],
+      "mistake": {
+        "display": "Ho comprato un chilo riso",
+        "why": "The weight reaches the thing through di: un chilo di riso."
+      },
+      "usage": "Reporting the shopping.",
+      "register": "informal",
+      "mnemonic": "Weight, di, thing — in that order, every time."
+    },
+    {
+      "id": "L1-M8-S10",
+      "display": "Il vino costa venti euro",
+      "cue": "The wine costs twenty euros",
+      "glossEn": "lit. \"The wine costs twenty euro\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "venti",
+            "cue": "twenty",
+            "tag": "free",
+            "forms": [],
+            "note": "twenty. It never changes shape — and it is one letter away from vento, \"wind\", which is a different word entirely."
+          }
+        ],
+        "rules": [0, 2, 5]
+      },
+      "trap": "One thing is costing, so the verb is singular even though the number behind it is large. It is the wine that agrees with costa, never the twenty.",
+      "sound": "VEN-ti, with a close e, and the final -i a clean ee.",
+      "variations": [
+        {
+          "display": "I vini costano venti euro",
+          "cue": "The wines cost twenty euros",
+          "changed": "more than one thing costing, so costano"
+        },
+        {
+          "display": "Quanto costa il vino?",
+          "cue": "How much does the wine cost?",
+          "changed": "the question this sentence answers"
+        },
+        {
+          "display": "Il vino non costa venti euro",
+          "cue": "The wine doesn't cost twenty euros",
+          "changed": "non in front of the verb; the price is untouched"
+        }
+      ],
+      "mistake": {
+        "display": "Il vino costano venti euro",
+        "why": "One thing is costing, so the verb is singular: Il vino costa venti euro. The number behind it changes nothing."
+      },
+      "usage": "Repeating a price back to check it.",
+      "register": "neutral",
+      "mnemonic": "The verb counts the things, not the euros."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M8-C01", "display": "Quanto costa la pizza?", "cue": "How much does the pizza cost?" },
+    {
+      "id": "L1-M8-C02",
+      "display": "Quanto costano i libri?",
+      "cue": "How much do the books cost?"
+    },
+    { "id": "L1-M8-C03", "display": "Vorrei un chilo di riso, per favore", "cue": "I'd like a kilo of rice, please" },
+    { "id": "L1-M8-C04", "display": "Quante pizze vuoi?", "cue": "How many pizzas do you want?" },
+    { "id": "L1-M8-C05", "display": "Quanto costa l'acqua?", "cue": "How much does the water cost?" },
+    { "id": "L1-M8-C06", "display": "Il pane costa due euro", "cue": "The bread costs two euros" },
+    {
+      "id": "L1-M8-C07",
+      "display": "Vorrei due bottiglie di vino",
+      "cue": "I'd like two bottles of wine"
+    },
+    { "id": "L1-M8-C08", "display": "Quanta acqua vuoi?", "cue": "How much water do you want?" },
+    { "id": "L1-M8-C09", "display": "Un caffè, per favore", "cue": "A coffee, please" },
+    {
+      "id": "L1-M8-C10",
+      "display": "Ho comprato tre bottiglie di acqua",
+      "cue": "I bought three bottles of water"
+    },
+    { "id": "L1-M8-C11", "display": "Costa venti euro", "cue": "It costs twenty euros" },
+    {
+      "id": "L1-M8-C12",
+      "display": "Quanto costa una bottiglia di vino?",
+      "cue": "How much does a bottle of wine cost?"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

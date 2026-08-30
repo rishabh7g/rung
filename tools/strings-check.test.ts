@@ -11,13 +11,12 @@ import { DEFAULT_CONTENT_ROOT } from './validate.ts';
  * issue text predates five PRs and lists 21 keys; the files carry 39 (PR #120, verified across
  * courses by PR #124, plus the Ladder's three in #86 and the staged rung card's seven in #87).
  * Where they disagree, the files win, so the suite checks the list AGAINST the files rather than
- * the other way round. Five bundles since #326 — hi-mr, en-es, en-ar, hi-en and en-fr, all five
- * shipping since #331 — and the content build checks every one exactly the same way. en-fr was
- * checked here from the moment its bundle existed, while its row still carried `fixture: true`: a
- * fixture course's strings are held to the same bar as a shipping course's, because the gate
- * decides whether a course ships and never whether it is correct.
+ * the other way round. Seven bundles now — hi-mr, en-es, en-ar, hi-en, en-ru, en-it and en-fr,
+ * all seven shipping (#273, #343, #337, #331) — and the content build checks every one exactly the
+ * same way. A bundle is checked whether or not its course ships: the gate decides what reaches a
+ * learner, never what has to be well formed.
  */
-const COURSES = ['hi-mr', 'en-es', 'en-ar', 'hi-en', 'en-fr'] as const;
+const COURSES = ['hi-mr', 'en-es', 'en-ar', 'hi-en', 'en-ru', 'en-it', 'en-fr'] as const;
 
 function authoredStrings(courseId: string): Record<string, unknown> {
   const file = path.join(DEFAULT_CONTENT_ROOT, courseId, 'strings.json');
@@ -47,15 +46,15 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the four authored bundles carry — 71 keys, nested, identical', () => {
+  it('is exactly what the six authored bundles carry — 72 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(71);
+      expect(keys.length, courseId).toBe(72);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(71);
-    expect(new Set(STRINGS_KEYS).size).toBe(71);
+    expect(STRINGS_KEYS.length).toBe(72);
+    expect(new Set(STRINGS_KEYS).size).toBe(72);
   });
 
   /**
@@ -256,7 +255,7 @@ describe('the canonical key list', () => {
    * COUNTS, never time (Invariant 2) — the Sync-3 freeze's banned-vocabulary sweep (#71),
    * widened from #96's session-only scan to EVERY value in every bundle. The shell holds no
    * copy of its own, so the only door a streak, a duration or a percentage has into the product
-   * is an authored bundle — which is what this reads, in all four courses. ("Today" and hi-mr's
+   * is an authored bundle — which is what this reads, in all five courses. ("Today" and hi-mr's
    * "आज" pass by construction: the word-bounded scan bans the calendar's units, not every word
    * that contains one — ratified at the freeze alongside the scheduler's "due", which counts
    * sessions, never days.)
@@ -302,12 +301,12 @@ describe('the canonical key list', () => {
   });
 });
 
-describe('the four authored bundles', () => {
+describe('the five authored bundles', () => {
   it.each(COURSES)('%s passes the check with no issues', (courseId) => {
     expect(checkStrings(authoredStrings(courseId), courseId)).toEqual([]);
   });
 
-  it('agrees on placeholders key for key across all four (PR #124, mechanised)', () => {
+  it('agrees on placeholders key for key across all five (PR #124, mechanised)', () => {
     const perCourse = COURSES.map((courseId) => flattenStrings(authoredStrings(courseId)));
 
     for (const key of STRINGS_KEYS) {

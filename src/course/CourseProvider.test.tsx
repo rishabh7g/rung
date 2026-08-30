@@ -162,6 +162,10 @@ describe('CourseProvider', () => {
       courses: [
         ...DEV_MANIFEST.courses,
         {
+          // An UNSHIPPED pair on purpose: the stand-in for "a course the shell was never told
+          // about" has to be one the catalogue does not contain, and en-fr — which this row used
+          // to be — is a real course now. `SettingsScreen.test.tsx` uses the same pair for the
+          // same job.
           id: 'fr-de',
           l1: 'French',
           l2: 'German',
@@ -184,8 +188,8 @@ describe('CourseProvider', () => {
     );
 
     // The row is a pair the repo has never authored — en-fr was that row until #326 made it a
-    // real course — and the count is read off the manifest, so a sixth course landing beside it
-    // does not make this case a lie.
+    // real course — and the count is read off the manifest this test builds, so a seventh course
+    // landing beside it does not make the case a lie.
     expect(
       await screen.findByText(new RegExp(`active fr-de of ${withNewCourse.courses.length}`)),
     ).toBeInTheDocument();

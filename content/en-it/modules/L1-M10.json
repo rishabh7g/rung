@@ -1,0 +1,586 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M10",
+  "title": "Connected talk",
+  "job": "Short 2–3 sentence exchanges",
+  "prerequisites": ["L1-M9"],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 1,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": ["simple_present", "passato_prossimo", "present_conditional"],
+    "allowedPatterns": [
+      "<M1–M9 pattern> + <M1–M9 pattern>",
+      "<question> → <answer + perché + reason>",
+      "<statement> + e/ma + <statement>",
+      "<statement> + . + Poi + <statement>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "A turn is where pro-drop is most tempting to break. Once the person is established, Italian keeps dropping the subject pronoun — and an io at the head of every sentence reads as insistence or contrast, not as neutral speech. The ending carries the person; a pronoun MARKS something."
+    },
+    {
+      "tag": "delta",
+      "text": "lui and lei are for PEOPLE, and they earn their place only where a turn switches person or draws a contrast: Anna è italiana: lei è di Roma. Rohan è indiano: lui è di Delhi. For a THING Italian reaches for no pronoun at all — it drops the subject and lets the verb and the agreeing adjective carry the gender."
+    },
+    {
+      "tag": "delta",
+      "text": "e (\"and\") is M1's è (\"is\") with the accent taken off, and both turn up inside the same turns. Write è on every copula and e bare — Il caffè è buono e caldo — because one missing accent turns a sentence into a list."
+    },
+    {
+      "tag": "free",
+      "text": "The joiners that hold a turn together are the module's whole new spend: e, ma, anche, poi, allora. Everything else comes from M1–M9."
+    },
+    {
+      "tag": "delta",
+      "text": "anche goes IN FRONT of what it adds to, not at the end of the sentence: Anche Anna vuole un caffè (\"Anna wants one too\"). English can hang \"too\" on the end; Italian puts anche beside the word it is about, and moving it moves the meaning."
+    },
+    {
+      "tag": "free",
+      "text": "Each item here is a TURN of two or three short sentences — a question and its answer, or a statement, a reason and a follow-up. The word bound applies to each sentence inside the turn, not to the turn."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M10-S01",
+      "display": "Come stai? Sto bene, grazie. E tu?",
+      "cue": "How are you? — I'm fine, thanks. And you?",
+      "glossEn": "lit. \"How you-are-doing? I-am-doing well, thanks. And you?\"",
+      "literal": "How you-are-doing? I-am-doing well, thanks. And you?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "e",
+            "cue": "and",
+            "tag": "interference",
+            "forms": [],
+            "note": "and — one bare letter, and it is M1's è with the accent taken off. è is the verb \"is\"; e joins two things. They are otherwise identical on the page, so the accent is the whole difference."
+          },
+          {
+            "display": "tu",
+            "cue": "you",
+            "tag": "delta",
+            "forms": [],
+            "note": "The subject pronoun for one person. It is not needed to say \"you\" — the verb ending does that — so writing it MARKS a contrast, which is exactly what E tu? is doing: turning the same question back."
+          }
+        ],
+        "rules": [0, 2, 3, 5]
+      },
+      "trap": "E tu? is the one place in this course where a subject pronoun is compulsory: there is no verb behind it for an ending to sit on, so the pronoun has to carry the whole question.",
+      "sound": "E is a single close vowel, said quickly and leaning onto the word after it. TU is short — the u is the oo of \"moon\", cut off.",
+      "variations": [
+        {
+          "display": "Come stai? Sto molto bene. E tu?",
+          "cue": "How are you? — I'm very well. And you?",
+          "changed": "molto turns the answer up; the turn is otherwise the same"
+        },
+        {
+          "display": "Come stai? Non sto bene oggi.",
+          "cue": "How are you? — I'm not well today.",
+          "changed": "an honest answer, with non in front of the verb and no question back"
+        },
+        {
+          "display": "Ciao, Anna! Come stai?",
+          "cue": "Hi, Anna! How are you?",
+          "changed": "a greeting in front, and the turn cut to two sentences"
+        }
+      ],
+      "mistake": {
+        "display": "Come stai? Io sto bene, grazie. E tu?",
+        "why": "Drop the io — sto already says who. The pronoun is right in E tu?, where nothing else can carry it, and wrong in the answer, where the ending already has."
+      },
+      "usage": "The first thirty seconds of any conversation.",
+      "register": "informal",
+      "mnemonic": "The pronoun comes back only where no ending can do its job."
+    },
+    {
+      "id": "L1-M10-S02",
+      "display": "Che cosa fai domani? Domani lavoro, ma di sera sono libero.",
+      "cue": "What are you doing tomorrow? — Tomorrow I'm working, but in the evening I'm free.",
+      "glossEn": "lit. \"What thing you-do tomorrow? Tomorrow I-work, but of evening I-am free.\"",
+      "literal": "What thing you-do tomorrow? Tomorrow I-work, but of-evening I-am free.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ma",
+            "cue": "but",
+            "tag": "free",
+            "forms": [],
+            "note": "but. It joins two whole sentences and always stands between them, exactly as in English."
+          },
+          {
+            "display": "libero",
+            "cue": "free",
+            "tag": "free",
+            "forms": ["libero", "libera", "liberi", "libere"],
+            "note": "free, in the sense of having no plans — and it agrees like any -o adjective: libero for a man, libera for a woman."
+          }
+        ],
+        "rules": [0, 3, 5]
+      },
+      "trap": "Neither half of this answer has a subject word, and neither needs one: lavoro and sono each name their own person. Adding io to the second half would say \"I, unlike you, am free\".",
+      "sound": "MA is one open syllable. LI-be-ro is stressed on the first of three, which is why it is not written with an accent.",
+      "variations": [
+        {
+          "display": "Che cosa fai domani? Domani non lavoro.",
+          "cue": "What are you doing tomorrow? — Tomorrow I'm not working.",
+          "changed": "one clause instead of two, with non in front of the verb"
+        },
+        {
+          "display": "Che cosa fai stasera? Stasera sono libera.",
+          "cue": "What are you doing tonight? — Tonight I'm free.",
+          "changed": "a woman answering, so the adjective goes to -a"
+        },
+        {
+          "display": "Domani lavoro, ma la settimana prossima sono libero.",
+          "cue": "Tomorrow I'm working, but next week I'm free.",
+          "changed": "a longer time phrase in the second half, joined by the same ma"
+        }
+      ],
+      "mistake": {
+        "display": "Che cosa fai domani? Io domani lavoro, ma io di sera sono libero.",
+        "why": "Two pronouns too many. Once the person is established, Italian keeps dropping it — Domani lavoro, ma di sera sono libero."
+      },
+      "usage": "Making a plan across two people's diaries.",
+      "register": "informal",
+      "mnemonic": "ma joins two sentences; it never starts one on its own here."
+    },
+    {
+      "id": "L1-M10-S03",
+      "display": "Voglio un caffè. Anche Anna vuole un caffè.",
+      "cue": "I want a coffee. Anna wants one too.",
+      "glossEn": "lit. \"I-want a coffee. Also Anna wants a coffee.\"",
+      "literal": "I-want a coffee. Also Anna wants a coffee.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Anche",
+            "cue": "also · too",
+            "tag": "interference",
+            "forms": [],
+            "note": "\"Also\", and it goes IN FRONT of whatever it adds to: Anche Anna vuole un caffè says Anna wants one as well as me; Anna vuole anche un caffè would say she wants a coffee as well as something else. Moving it moves the meaning."
+          }
+        ],
+        "rules": [3, 4, 5]
+      },
+      "trap": "English hangs \"too\" on the end of the sentence and lets the stress decide what it applies to. Italian cannot: anche has to stand beside the word it is about, and where it stands is the meaning.",
+      "sound": "AN-ke. The che is KE — a c before h is always hard.",
+      "variations": [
+        {
+          "display": "Voglio un caffè. Anche io voglio una pizza.",
+          "cue": "I want a coffee. I want a pizza too.",
+          "changed": "anche in front of a pronoun — one of the few places io belongs"
+        },
+        {
+          "display": "Voglio un caffè. Anna vuole anche una pizza.",
+          "cue": "I want a coffee. Anna wants a pizza as well.",
+          "changed": "anche moved in front of the pizza, so it is the pizza that is extra"
+        },
+        {
+          "display": "Anche Rohan vuole un caffè.",
+          "cue": "Rohan wants a coffee too.",
+          "changed": "one sentence on its own — anche is still in front of the person"
+        }
+      ],
+      "mistake": {
+        "display": "Voglio un caffè. Anna vuole un caffè anche.",
+        "why": "anche does not go on the end. In front of the person it adds: Anche Anna vuole un caffè."
+      },
+      "usage": "Ordering for two, and agreeing with someone.",
+      "register": "informal",
+      "mnemonic": "anche leans on the word behind it, so put it where you mean it."
+    },
+    {
+      "id": "L1-M10-S04",
+      "display": "Ho fame. Allora vado a mangiare.",
+      "cue": "I'm hungry. Well then, I'm off to eat.",
+      "glossEn": "lit. \"I-have hunger. Then I-go to eat.\"",
+      "literal": "I-have hunger. Then I-go to eat.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Allora",
+            "cue": "so · well then",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Well then\" — the word that turns a fact into a decision. It is looser than quindi: quindi states a consequence, allora announces what you are going to do about it. It also opens a sentence when you are gathering your thoughts."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "quindi and allora both come out as English \"so\", and they are not the same: quindi is a conclusion, allora is a decision. If you could put \"therefore\" there, it is quindi.",
+      "sound": "al-LO-ra, with the double l held and a tapped r.",
+      "variations": [
+        {
+          "display": "Ho fame. Allora mangiamo una pizza.",
+          "cue": "I'm hungry. Well then, let's eat a pizza.",
+          "changed": "the -iamo ending turns it into \"let's\" — the shape a decision for two takes"
+        },
+        {
+          "display": "Ho fame, quindi vado a mangiare.",
+          "cue": "I'm hungry, so I'm going to eat.",
+          "changed": "one sentence instead of two, and quindi states it as a consequence"
+        },
+        {
+          "display": "Piove. Allora prendo il treno.",
+          "cue": "It's raining. Well then, I'll take the train.",
+          "changed": "another fact and another decision, on the same hinge"
+        }
+      ],
+      "mistake": {
+        "display": "Ho fame allora vado a mangiare.",
+        "why": "allora opens its own sentence, so it needs the full stop in front of it — or a comma at the very least. Ho fame. Allora vado a mangiare."
+      },
+      "usage": "The moment a conversation turns into a plan.",
+      "register": "informal",
+      "mnemonic": "quindi concludes; allora decides."
+    },
+    {
+      "id": "L1-M10-S05",
+      "display": "Ieri sono andato a Roma. Poi sono tornato a casa.",
+      "cue": "Yesterday I went to Rome. Then I came back home.",
+      "glossEn": "lit. \"Yesterday I-am gone to Rome. Then I-am returned to home.\"",
+      "literal": "Yesterday I-am gone to Rome. Then I-am returned to home.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Poi",
+            "cue": "then · afterwards",
+            "tag": "free",
+            "forms": [],
+            "note": "then, in the sense of next. It opens the second sentence of a sequence and needs no comma behind it."
+          },
+          {
+            "display": "tornato",
+            "cue": "come back",
+            "tag": "delta",
+            "forms": ["tornato", "tornata", "tornare"],
+            "note": "The participle of tornare, \"to come back\" — and tornare is on the essere list with andare, so the past is sono tornato and the ending agrees: tornata for a woman."
+          }
+        ],
+        "rules": [0, 3, 5]
+      },
+      "trap": "Both halves take essere, so both participles agree with whoever is speaking. A woman writing this turn writes sono andata and sono tornata, and changing one without the other is the slip to watch for.",
+      "sound": "POI is one syllable — the o and the i glide together. tor-NA-to is stressed in the middle.",
+      "variations": [
+        {
+          "display": "Ieri sono andata a Roma. Poi sono tornata a casa.",
+          "cue": "Yesterday I went to Rome. Then I came back home.",
+          "changed": "a woman's turn — BOTH participles move to -a together"
+        },
+        {
+          "display": "Ieri sono andato a Milano. Poi ho mangiato una pizza.",
+          "cue": "Yesterday I went to Milan. Then I ate a pizza.",
+          "changed": "the second half swaps to avere, so its participle stops agreeing"
+        },
+        {
+          "display": "Sono andato a Roma e poi a Milano.",
+          "cue": "I went to Rome and then to Milan.",
+          "changed": "one sentence instead of two, joined by e — and the verb is not repeated"
+        }
+      ],
+      "mistake": {
+        "display": "Ieri sono andata a Roma. Poi sono tornato a casa.",
+        "why": "One speaker, two endings: pick one. Sono andata … sono tornata, or sono andato … sono tornato."
+      },
+      "usage": "Telling someone what you did with a day.",
+      "register": "informal",
+      "mnemonic": "One speaker, one ending, all the way through the turn."
+    },
+    {
+      "id": "L1-M10-S06",
+      "display": "Anna è italiana: lei è di Roma. Rohan è indiano: lui è di Delhi.",
+      "cue": "Anna is Italian: she's from Rome. Rohan is Indian: he's from Delhi.",
+      "glossEn": "lit. \"Anna is Italian: she is of Rome. Rohan is Indian: he is of Delhi.\"",
+      "literal": "Anna is Italian: she is of Rome. Rohan is Indian: he is of Delhi.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lei",
+            "cue": "she",
+            "tag": "delta",
+            "forms": [],
+            "note": "she — the subject pronoun for a woman. It is not needed to say \"she\": the ending of è already does. It earns its place here because the turn has TWO people in it and the sentence is switching between them. (Written with a capital L in the middle of a sentence, Lei is also the polite \"you\", which this course does not teach.)"
+          },
+          {
+            "display": "lui",
+            "cue": "he",
+            "tag": "delta",
+            "forms": [],
+            "note": "he — the partner of lei, and used the same way: only where a turn switches person or draws a contrast. For a THING Italian reaches for no pronoun at all."
+          }
+        ],
+        "rules": [0, 1, 3, 5]
+      },
+      "trap": "Two people in one turn is the situation these pronouns exist for. With only one person in play, Italian drops them again: Anna è italiana. È di Roma.",
+      "sound": "LEY and LU-i, each one syllable and a half. lei is sei without its s; lui rhymes with it.",
+      "variations": [
+        {
+          "display": "Anna è italiana. È di Roma.",
+          "cue": "Anna is Italian. She's from Rome.",
+          "changed": "one person only, so no pronoun at all — the ending is enough"
+        },
+        {
+          "display": "Anna è di Roma, ma lavora a Milano.",
+          "cue": "Anna is from Rome, but she works in Milan.",
+          "changed": "one sentence instead of two, and still only one mention of her"
+        },
+        {
+          "display": "Rohan è indiano. Lui è di Delhi.",
+          "cue": "Rohan is Indian. He's from Delhi.",
+          "changed": "half the turn on its own — lui opens the second sentence about him"
+        }
+      ],
+      "mistake": {
+        "display": "Anna è italiana: lei è di Roma, ma lei lavora a Milano.",
+        "why": "The second lei is one too many. The verb ending already says who, and repeating the pronoun reads as a contrast that is not there."
+      },
+      "usage": "Introducing someone who is not in the room.",
+      "register": "informal",
+      "mnemonic": "Name her once, then let the endings carry her."
+    },
+    {
+      "id": "L1-M10-S07",
+      "display": "Il caffè è buono e caldo. Ma è caro.",
+      "cue": "The coffee is good and hot. But it's expensive.",
+      "glossEn": "lit. \"The coffee is good and hot. But is expensive.\"",
+      "literal": "The coffee is good and hot. But is expensive.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "caro",
+            "cue": "expensive · dear",
+            "tag": "free",
+            "forms": ["caro", "cara", "cari", "care"],
+            "note": "expensive — and, of a person, dear. It agrees like any -o adjective: un caffè caro, una pizza cara."
+          }
+        ],
+        "rules": [1, 2, 3, 5]
+      },
+      "trap": "For a THING Italian writes no pronoun at all — not \"it\". The second sentence simply starts with the verb: È di Roma. esso exists and nobody says it.",
+      "sound": "The two little words are heard apart as well as written apart: è is open, like the e of \"bed\"; e is close, nearer the a of \"gate\" without the glide.",
+      "variations": [
+        {
+          "display": "La pizza è buona e calda.",
+          "cue": "The pizza is good and hot.",
+          "changed": "a feminine subject pulls BOTH adjectives with it"
+        },
+        {
+          "display": "Il caffè è buono, ma è freddo.",
+          "cue": "The coffee is good, but it's cold.",
+          "changed": "ma joining inside one sentence, with the verb repeated because the clause is new"
+        },
+        {
+          "display": "Il caffè e la pizza sono buoni.",
+          "cue": "The coffee and the pizza are good.",
+          "changed": "e joining two SUBJECTS, so the verb goes plural"
+        }
+      ],
+      "mistake": {
+        "display": "Il caffè e buono e caldo.",
+        "why": "The first e should be è. Without its accent the sentence has no verb at all — it is a list of three things."
+      },
+      "usage": "Saying what you think of what is in front of you.",
+      "register": "informal",
+      "mnemonic": "One accent is the difference between a sentence and a list."
+    },
+    {
+      "id": "L1-M10-S08",
+      "display": "Un caffè, per favore. Grazie. Prego.",
+      "cue": "A coffee, please. — Thank you. — You're welcome.",
+      "glossEn": "lit. \"A coffee, please. Thanks. You're welcome.\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Prego",
+            "cue": "you're welcome",
+            "tag": "delta",
+            "forms": [],
+            "note": "The answer to grazie — and it does more than one job: it is also \"after you\", \"go ahead\", and what a shopkeeper says to invite your order. Whenever an English speaker would say \"please\" out of politeness rather than to ask, Italian is often saying prego."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "prego is not \"please\" — that is per favore. It is what comes AFTER a thank you, or what invites you to speak.",
+      "sound": "PRE-go, with a close e and a hard g.",
+      "variations": [
+        {
+          "display": "Due caffè, per favore. Grazie.",
+          "cue": "Two coffees, please. — Thank you.",
+          "changed": "a number instead of an article; caffè does not go plural"
+        },
+        {
+          "display": "Vorrei un caffè, per favore.",
+          "cue": "I'd like a coffee, please.",
+          "changed": "the polite verb in front, for a counter where a bare noun feels blunt"
+        },
+        {
+          "display": "Grazie mille. Prego.",
+          "cue": "Thanks a lot. — You're welcome.",
+          "changed": "mille turns the thanks up — literally \"a thousand thanks\""
+        }
+      ],
+      "mistake": {
+        "display": "Un caffè, prego.",
+        "why": "prego is not \"please\": asking for something takes per favore. Un caffè, per favore."
+      },
+      "usage": "The whole transaction at an Italian bar, in three words each.",
+      "register": "neutral",
+      "mnemonic": "per favore asks; prego answers."
+    },
+    {
+      "id": "L1-M10-S09",
+      "display": "Che cosa fai stasera? Vado al cinema con Anna.",
+      "cue": "What are you doing tonight? — I'm going to the cinema with Anna.",
+      "glossEn": "lit. \"What thing you-do this-evening? I-go to-the cinema with Anna.\"",
+      "literal": "What thing you-do this-evening? I-go to-the cinema with Anna.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cinema",
+            "cue": "cinema",
+            "tag": "delta",
+            "forms": [],
+            "note": "Masculine, despite the -a: il cinema, al cinema. It is one of the counter-examples to \"-a is feminine\" — with il problema and il programma — and it never changes shape in the plural either."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "cinema ends in -a and is masculine, which is why the article is il and the fusion is al. The ending is a hint and never a rule.",
+      "sound": "CHI-ne-ma, stressed on the FIRST of three syllables, and the c before i is soft.",
+      "variations": [
+        {
+          "display": "Che cosa fai stasera? Vado al bar con Rohan.",
+          "cue": "What are you doing tonight? — I'm going to the bar with Rohan.",
+          "changed": "another place with the same fused article, and another person"
+        },
+        {
+          "display": "Che cosa fai stasera? Non esco.",
+          "cue": "What are you doing tonight? — I'm not going out.",
+          "changed": "a refusal instead of a plan, in one short verb"
+        },
+        {
+          "display": "Stasera vado al cinema. Poi vado a casa.",
+          "cue": "Tonight I'm going to the cinema. Then I'm going home.",
+          "changed": "two halves of a plan, sequenced with poi"
+        }
+      ],
+      "mistake": {
+        "display": "Vado alla cinema con Anna.",
+        "why": "cinema is masculine, so the fusion is al: vado al cinema."
+      },
+      "usage": "The evening plan, asked and answered.",
+      "register": "informal",
+      "mnemonic": "il cinema, il problema, il programma — three -a words that are masculine."
+    },
+    {
+      "id": "L1-M10-S10",
+      "display": "Buongiorno! Vorrei un chilo di pane, per favore. Grazie mille.",
+      "cue": "Good morning! I'd like a kilo of bread, please. Thanks very much.",
+      "glossEn": "lit. \"Good day! I-would-like a kilo of bread, please. Thanks thousand.\"",
+      "literal": "Good day! I-would-like a kilo of bread, please. Thanks thousand.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mille",
+            "cue": "a thousand",
+            "tag": "free",
+            "forms": [],
+            "note": "a thousand — and grazie mille is literally \"a thousand thanks\", the everyday way to turn a thank you up. It is the one number in this course that turns up outside a price."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "This whole turn is the register decision in three sentences: it is a stranger behind a counter, and there is not a single second-person verb in it. per favore and vorrei carry the politeness, so the tu / Lei question never has to be answered.",
+      "sound": "MIL-le, with the double l genuinely held. grazie mille runs together as GRA-tsye-MIL-le.",
+      "variations": [
+        {
+          "display": "Buongiorno! Vorrei due bottiglie di vino, per favore.",
+          "cue": "Good morning! I'd like two bottles of wine, please.",
+          "changed": "a counted container instead of a weight — the frame is the same"
+        },
+        {
+          "display": "Buongiorno! Quanto costa un chilo di pane?",
+          "cue": "Good morning! How much does a kilo of bread cost?",
+          "changed": "the price question instead of the order, and still no second person"
+        },
+        {
+          "display": "Vorrei un chilo di pane. Grazie mille. Arrivederci.",
+          "cue": "I'd like a kilo of bread. Thanks very much. Goodbye.",
+          "changed": "the whole transaction, closed with the neutral goodbye"
+        }
+      ],
+      "mistake": {
+        "display": "Buongiorno! Voglio un chilo di pane. Grazie mille.",
+        "why": "Not wrong, but blunt across a counter: vorrei is what softens it. Vorrei un chilo di pane, per favore."
+      },
+      "usage": "A bakery, a market stall, or any counter with a queue behind you.",
+      "register": "neutral",
+      "mnemonic": "vorrei and per favore do the politeness this course's tu cannot."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M10-C01",
+      "display": "Come stai? Sto molto bene, grazie.",
+      "cue": "How are you? — I'm very well, thanks."
+    },
+    {
+      "id": "L1-M10-C02",
+      "display": "Che cosa fai domani? Vado a Roma con Anna.",
+      "cue": "What are you doing tomorrow? — I'm going to Rome with Anna."
+    },
+    {
+      "id": "L1-M10-C03",
+      "display": "Voglio una pizza. Anche Rohan vuole una pizza.",
+      "cue": "I want a pizza. Rohan wants one too."
+    },
+    {
+      "id": "L1-M10-C04",
+      "display": "Ho sete. Allora bevo un po' di acqua.",
+      "cue": "I'm thirsty. Well then, I'll drink a bit of water."
+    },
+    {
+      "id": "L1-M10-C05",
+      "display": "Ieri sono andata a Milano. Poi sono tornata a casa.",
+      "cue": "Yesterday I went to Milan. Then I came back home."
+    },
+    {
+      "id": "L1-M10-C06",
+      "display": "Anna è italiana. Lei lavora a Milano.",
+      "cue": "Anna is Italian. She works in Milan."
+    },
+    {
+      "id": "L1-M10-C07",
+      "display": "La pizza è buona e calda.",
+      "cue": "The pizza is good and hot."
+    },
+    { "id": "L1-M10-C08", "display": "Due caffè, per favore. Grazie.", "cue": "Two coffees, please. — Thank you." },
+    {
+      "id": "L1-M10-C09",
+      "display": "Stasera vado al cinema. Poi vado a casa.",
+      "cue": "Tonight I'm going to the cinema. Then I'm going home."
+    },
+    {
+      "id": "L1-M10-C10",
+      "display": "Vorrei una bottiglia di vino, per favore. Grazie mille.",
+      "cue": "I'd like a bottle of wine, please. Thanks very much."
+    },
+    {
+      "id": "L1-M10-C11",
+      "display": "Non esco stasera perché ho sonno.",
+      "cue": "I'm not going out tonight because I'm sleepy."
+    },
+    {
+      "id": "L1-M10-C12",
+      "display": "Anna lavora a Milano, ma è di Roma.",
+      "cue": "Anna works in Milan, but she's from Rome."
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

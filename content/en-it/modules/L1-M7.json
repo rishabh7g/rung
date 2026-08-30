@@ -1,0 +1,579 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M7",
+  "title": "Where things are",
+  "job": "Locations and prepositions",
+  "prerequisites": ["L1-M6"],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "N + è + in/su + place",
+      "Dov'è + N?",
+      "C'è + un/una + N + in + place",
+      "Ci sono + num + N-pl",
+      "N + è + vicino a + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Saying that something EXISTS splits by number: c'è for one thing, ci sono for more than one — C'è un libro sul tavolo · Ci sono due libri sul tavolo. English makes the same split with \"there is\" and \"there are\", so the agreement itself is a free ride; what is new is the two Italian words."
+    },
+    {
+      "tag": "free",
+      "text": "Where a thing IS takes essere, plainly: Il libro è sul tavolo. Italian has one verb for identity, origin and location alike, so there is no second \"to be\" to choose between."
+    },
+    {
+      "tag": "delta",
+      "text": "A preposition fuses with a following definite article into ONE written word, and the fusion is compulsory: a + il = al, in + il = nel, su + il = sul, with the feminine partners alla, nella, sulla. There is no option to write them apart."
+    },
+    {
+      "tag": "delta",
+      "text": "Prepositions stand in front of the noun, as in English: sul tavolo, sotto il tavolo, in cucina. Some places take no article at all — in cucina, a casa, in bagno — and those are learned as whole phrases rather than derived."
+    },
+    {
+      "tag": "interference",
+      "text": "vicino keeps its a: vicino a casa, vicino a Roma. English \"near the house\" has no \"to\" in it at all, so the missing a is the commonest slip in this module."
+    },
+    {
+      "tag": "delta",
+      "text": "Ask where with dove — and in front of è it loses its own vowel and joins on: dov'è. The apostrophe is written every time, and dov'è is one word on the page."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M7-S01",
+      "display": "Il libro è sul tavolo",
+      "cue": "The book is on the table",
+      "glossEn": "lit. \"The book is on-the table\"",
+      "literal": "The book is on-the table",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sul",
+            "cue": "on the",
+            "tag": "delta",
+            "forms": [],
+            "note": "su + il, fused into one word — and the fusion is compulsory: there is no su il. The feminine partner is sulla (su + la), and the same law gives al, nel, alla and nella."
+          },
+          {
+            "display": "tavolo",
+            "cue": "table",
+            "tag": "free",
+            "forms": ["tavolo", "tavoli"],
+            "note": "Masculine: il tavolo (one) · i tavoli (more than one)."
+          }
+        ],
+        "rules": [1, 2, 3]
+      },
+      "trap": "English writes \"on the\" as two words and Italian writes one. It is not a contraction you may choose to expand — sul is the only spelling there is.",
+      "sound": "SOOL, one syllable, and TA-vo-lo stressed on the first of three.",
+      "variations": [
+        {
+          "display": "Il libro è sulla sedia",
+          "cue": "The book is on the chair",
+          "changed": "a feminine noun, so the fusion is sulla instead of sul"
+        },
+        {
+          "display": "I libri sono sul tavolo",
+          "cue": "The books are on the table",
+          "changed": "plural on both sides — i libri, and sono for \"they are\""
+        },
+        {
+          "display": "Il libro non è sul tavolo",
+          "cue": "The book isn't on the table",
+          "changed": "non in front of è; the place phrase is untouched"
+        }
+      ],
+      "mistake": {
+        "display": "Il libro è su il tavolo",
+        "why": "su and il cannot stand apart: they fuse into sul. Il libro è sul tavolo."
+      },
+      "usage": "Saying where a thing is, in the plainest sentence the language has.",
+      "register": "informal",
+      "mnemonic": "su + il squeezes down to sul, and it never comes apart again."
+    },
+    {
+      "id": "L1-M7-S02",
+      "display": "Dov'è il libro?",
+      "cue": "Where is the book?",
+      "glossEn": "lit. \"Where-is the book?\"",
+      "literal": "Where-is the book?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Dov'è",
+            "cue": "where is",
+            "tag": "delta",
+            "forms": ["dove", "dov'è"],
+            "note": "dove is \"where\", and in front of è it loses its own e and joins on: dov'è, one word with an apostrophe. Both spellings belong to this row — dove sono i libri? uses the bare one, because sono starts with a consonant."
+          }
+        ],
+        "rules": [1, 5]
+      },
+      "trap": "Nothing is inverted and nothing is added: the question word goes to the front and è follows it, welded on. English \"where is the book\" moves the verb; Italian was never going to.",
+      "sound": "do-VEH. The apostrophe is where dove's e used to be, and the accent on è survives the fusion.",
+      "variations": [
+        {
+          "display": "Dov'è la stazione?",
+          "cue": "Where is the station?",
+          "changed": "swap what you are looking for — dov'è is the frame"
+        },
+        {
+          "display": "Dove sono i libri?",
+          "cue": "Where are the books?",
+          "changed": "more than one, so sono — and dove keeps its e in front of a consonant"
+        },
+        {
+          "display": "Dov'è Anna?",
+          "cue": "Where is Anna?",
+          "changed": "a person instead of a thing; nothing else changes"
+        }
+      ],
+      "mistake": {
+        "display": "Dove è il libro?",
+        "why": "dove and è do not stand apart in front of each other: they elide into dov'è, apostrophe and all."
+      },
+      "usage": "Looking for something, or someone.",
+      "register": "informal",
+      "mnemonic": "The apostrophe is the vowel that dove gave up."
+    },
+    {
+      "id": "L1-M7-S03",
+      "display": "C'è un libro sul tavolo",
+      "cue": "There is a book on the table",
+      "glossEn": "lit. \"There-is a book on-the table\"",
+      "literal": "There-is a book on-the table",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "C'è",
+            "cue": "there is",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"There is\" — for ONE thing existing somewhere. It is written as one word with an apostrophe and is not built from anything the course teaches separately: learn it whole, beside its plural partner ci sono."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "c'è says something EXISTS; è says where a known thing is. C'è un libro sul tavolo introduces the book; Il libro è sul tavolo tells you where the book you already know about has got to.",
+      "sound": "CHEH. The c before an e is the ch of \"church\", and the apostrophe stands in for a swallowed i.",
+      "variations": [
+        {
+          "display": "C'è un gatto sul tavolo",
+          "cue": "There is a cat on the table",
+          "changed": "swap what exists — c'è does not move for it"
+        },
+        {
+          "display": "Non c'è un libro sul tavolo",
+          "cue": "There isn't a book on the table",
+          "changed": "non in front of the whole thing, apostrophe and all"
+        },
+        {
+          "display": "C'è una pizza in cucina",
+          "cue": "There is a pizza in the kitchen",
+          "changed": "a feminine noun and another place — c'è is unaffected by both"
+        }
+      ],
+      "mistake": {
+        "display": "Ce un libro sul tavolo",
+        "why": "The accent and the apostrophe are both part of the word: c'è. Without them it is not a verb at all."
+      },
+      "usage": "Pointing out that something is there — the first half of every set of directions.",
+      "register": "informal",
+      "mnemonic": "c'è has an apostrophe in front and an accent behind."
+    },
+    {
+      "id": "L1-M7-S04",
+      "display": "Ci sono due libri sul tavolo",
+      "cue": "There are two books on the table",
+      "glossEn": "lit. \"There are two books on-the table\"",
+      "literal": "There are two books on-the table",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Ci sono",
+            "cue": "there are",
+            "tag": "delta",
+            "forms": [],
+            "note": "The plural partner of c'è: more than one thing exists, so the verb goes plural. English does exactly the same thing with \"there is\" and \"there are\", so the choice itself is one you already make — it is only the words that are new."
+          },
+          {
+            "display": "due",
+            "cue": "two",
+            "tag": "free",
+            "forms": [],
+            "note": "two. Numbers never change shape for gender or number in Italian: due libri, due case, due caffè."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "Some languages leave the existential invariable however many things there are. Italian does not — c'è for one and ci sono for more, exactly as English splits \"there is\" from \"there are\".",
+      "sound": "chee-SO-no — ci is \"chee\", the same soft c as in c'è. due is two syllables, DOO-eh, never one.",
+      "variations": [
+        {
+          "display": "C'è un libro sul tavolo",
+          "cue": "There is a book on the table",
+          "changed": "one thing, so the singular comes back"
+        },
+        {
+          "display": "Ci sono due gatti in cucina",
+          "cue": "There are two cats in the kitchen",
+          "changed": "swap what exists and where — ci sono holds"
+        },
+        {
+          "display": "Non ci sono libri sul tavolo",
+          "cue": "There aren't any books on the table",
+          "changed": "non in front, and no article once the count is dropped"
+        }
+      ],
+      "mistake": {
+        "display": "C'è due libri sul tavolo",
+        "why": "Two things exist, so the verb is plural: Ci sono due libri sul tavolo."
+      },
+      "usage": "Counting what is in a room.",
+      "register": "informal",
+      "mnemonic": "One thing, c'è; more than one, ci sono — the same choice English makes."
+    },
+    {
+      "id": "L1-M7-S05",
+      "display": "La pizza è in cucina",
+      "cue": "The pizza is in the kitchen",
+      "glossEn": "lit. \"The pizza is in kitchen\" — no article after in here",
+      "literal": "The pizza is in kitchen",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "in",
+            "cue": "in",
+            "tag": "delta",
+            "forms": [],
+            "note": "in. It fuses with a following definite article — in + il = nel — but a handful of rooms and places take no article at all after it: in cucina, in bagno, in centro. Those are learned whole."
+          },
+          {
+            "display": "cucina",
+            "cue": "kitchen",
+            "tag": "free",
+            "forms": ["cucina", "cucine"],
+            "note": "Feminine: la cucina (one) · le cucine (more than one). It is also the verb \"she cooks\", and the sentence around it is what tells you which."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "English needs \"the kitchen\" and Italian does without: in cucina. It is not a rule about rooms in general — in salotto and nel salotto both occur — but a small set of phrases learned as they come.",
+      "sound": "ku-CHEE-na. The first c is hard because u follows it; the second is soft because i does. Same letter, two sounds, decided by the vowel behind it.",
+      "variations": [
+        {
+          "display": "Il gatto è in cucina",
+          "cue": "The cat is in the kitchen",
+          "changed": "swap what is there — the place phrase is fixed"
+        },
+        {
+          "display": "La pizza non è in cucina",
+          "cue": "The pizza isn't in the kitchen",
+          "changed": "non in front of è, and nothing else moves"
+        },
+        {
+          "display": "Dov'è la pizza?",
+          "cue": "Where is the pizza?",
+          "changed": "the question this sentence answers"
+        }
+      ],
+      "mistake": {
+        "display": "La pizza è in la cucina",
+        "why": "Two things at once: in and la would fuse into nella, and this particular phrase takes no article at all — in cucina."
+      },
+      "usage": "Answering \"where is it?\" about a room in a house.",
+      "register": "informal",
+      "mnemonic": "in cucina is one phrase, learned whole."
+    },
+    {
+      "id": "L1-M7-S06",
+      "display": "Il pane è nel piatto",
+      "cue": "The bread is on the plate",
+      "glossEn": "lit. \"The bread is in-the plate\"",
+      "literal": "The bread is in-the plate",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nel",
+            "cue": "in the",
+            "tag": "delta",
+            "forms": [],
+            "note": "in + il, fused. Its feminine partner is nella (in + la), and the same law that gives sul and al gives these."
+          },
+          {
+            "display": "piatto",
+            "cue": "plate · dish",
+            "tag": "delta",
+            "forms": ["piatto", "piatti"],
+            "note": "Masculine: il piatto (one) · i piatti (more than one). Italian puts food IN a plate rather than on it — nel piatto — and the same word means a dish on a menu."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "English puts food ON a plate; Italian puts it IN one. The preposition follows the language's picture of the thing, not a rule you can derive from English.",
+      "sound": "NEL, one syllable, and PYAT-to with the double t held — a single t would be a different word.",
+      "variations": [
+        {
+          "display": "La pizza è nel piatto",
+          "cue": "The pizza is on the plate",
+          "changed": "swap what is there — nel is untouched"
+        },
+        {
+          "display": "Il pane è nella cucina",
+          "cue": "The bread is in the kitchen",
+          "changed": "a feminine noun WITH its article, so the fusion is nella"
+        },
+        {
+          "display": "Il pane non è nel piatto",
+          "cue": "The bread isn't on the plate",
+          "changed": "non in front of è"
+        }
+      ],
+      "mistake": {
+        "display": "Il pane è in il piatto",
+        "why": "in and il fuse: nel. There is no spelling that keeps them apart."
+      },
+      "usage": "At a table, looking for something.",
+      "register": "informal",
+      "mnemonic": "in + il = nel, su + il = sul, a + il = al — one pattern, three prepositions."
+    },
+    {
+      "id": "L1-M7-S07",
+      "display": "Anna è al bar",
+      "cue": "Anna is at the bar",
+      "glossEn": "lit. \"Anna is at-the bar\"",
+      "literal": "Anna is at-the bar",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al",
+            "cue": "at the · to the",
+            "tag": "delta",
+            "forms": [],
+            "note": "a + il, fused — the third of the same family as sul and nel, and its feminine partner is alla. It is the same a that marks a destination in vado a Roma, meeting an article on the way."
+          },
+          {
+            "display": "bar",
+            "cue": "bar · café",
+            "tag": "interference",
+            "forms": [],
+            "note": "An Italian bar is where you get a coffee in the morning and a pastry with it. It is not a pub, and it is open all day. The word takes no plural ending: un bar, due bar."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "The word is the same and the place is not. Walking into an Italian bar at eight in the morning is what the word is FOR.",
+      "sound": "AL, one syllable. BAR has a single tapped r and a short open a — nothing like the long English \"bahr\".",
+      "variations": [
+        {
+          "display": "Anna è al bar con Rohan",
+          "cue": "Anna is at the bar with Rohan",
+          "changed": "con brings someone else in, behind the place"
+        },
+        {
+          "display": "Anna non è al bar",
+          "cue": "Anna isn't at the bar",
+          "changed": "non in front of è; the place phrase holds"
+        },
+        {
+          "display": "Dov'è il bar?",
+          "cue": "Where is the bar?",
+          "changed": "the question, with the article back to its bare il"
+        }
+      ],
+      "mistake": {
+        "display": "Anna è a il bar",
+        "why": "a and il fuse: al. Anna è al bar."
+      },
+      "usage": "Saying where someone is, in the place Italians most often are.",
+      "register": "informal",
+      "mnemonic": "a + il = al: the a swallows the i."
+    },
+    {
+      "id": "L1-M7-S08",
+      "display": "Il bar è vicino a casa",
+      "cue": "The bar is near home",
+      "glossEn": "lit. \"The bar is near to home\"",
+      "literal": "The bar is near to home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vicino a",
+            "cue": "near",
+            "tag": "interference",
+            "forms": [],
+            "note": "\"Near\", and the a is part of it: vicino a casa, vicino a Roma. English \"near\" carries no preposition at all, so the a is the piece most often dropped. When an article follows, the a fuses with it — vicino al bar, vicino alla stazione."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "English \"near the house\" has no \"to\" in it, so nothing in the learner's ear asks for the a. Italian will not do without it.",
+      "sound": "vi-CHEE-no — the c before i is soft, the same one as in cucina's second syllable and in c'è.",
+      "variations": [
+        {
+          "display": "La stazione è vicino a casa",
+          "cue": "The station is near home",
+          "changed": "swap what is near — the phrase is the frame"
+        },
+        {
+          "display": "Il bar è vicino a Roma",
+          "cue": "The bar is near Rome",
+          "changed": "a city instead of a place, and still no article"
+        },
+        {
+          "display": "Il bar non è vicino a casa",
+          "cue": "The bar isn't near home",
+          "changed": "non in front of è; vicino a is untouched"
+        }
+      ],
+      "mistake": {
+        "display": "Il bar è vicino casa",
+        "why": "vicino keeps its a: Il bar è vicino a casa."
+      },
+      "usage": "Directions, and the first thing anyone asks about a flat.",
+      "register": "informal",
+      "mnemonic": "vicino always brings its a."
+    },
+    {
+      "id": "L1-M7-S09",
+      "display": "Il gatto è sotto il tavolo",
+      "cue": "The cat is under the table",
+      "glossEn": "lit. \"The cat is under the table\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sotto",
+            "cue": "under",
+            "tag": "free",
+            "forms": [],
+            "note": "under, and unlike vicino it needs no a: sotto il tavolo. It does not fuse with the article either — the two words stay apart."
+          },
+          {
+            "display": "gatto",
+            "cue": "cat",
+            "tag": "free",
+            "forms": ["gatto", "gatta", "gatti"],
+            "note": "Masculine: il gatto (one) · i gatti (more than one), with gatta for a female cat when it matters."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "Two prepositions in this module, two different habits: vicino needs an a and sotto does not. There is no rule that predicts which; they are learned with the word.",
+      "sound": "SOT-to and GAT-to, both with a doubled consonant that is genuinely held longer. The g before a is hard.",
+      "variations": [
+        {
+          "display": "Il gatto è sotto la sedia",
+          "cue": "The cat is under the chair",
+          "changed": "a feminine noun, and sotto still does not fuse with its article"
+        },
+        {
+          "display": "I gatti sono sotto il tavolo",
+          "cue": "The cats are under the table",
+          "changed": "plural on both sides — i gatti, and sono"
+        },
+        {
+          "display": "Dov'è il gatto?",
+          "cue": "Where is the cat?",
+          "changed": "the question this sentence answers"
+        }
+      ],
+      "mistake": {
+        "display": "Il gatto è sotto al tavolo",
+        "why": "sotto takes the article on its own: sotto il tavolo. It is vicino that needs an a."
+      },
+      "usage": "Finding things, and cats.",
+      "register": "informal",
+      "mnemonic": "vicino a, but sotto il — each preposition keeps its own habit."
+    },
+    {
+      "id": "L1-M7-S10",
+      "display": "La stazione è qui",
+      "cue": "The station is here",
+      "glossEn": "lit. \"The station is here\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "stazione",
+            "cue": "station",
+            "tag": "free",
+            "forms": ["stazione", "stazioni"],
+            "note": "Feminine: la stazione (one) · le stazioni (more than one). Nearly every Italian noun ending in -zione is feminine, and nearly every one of them has an English twin ending in -tion."
+          },
+          {
+            "display": "qui",
+            "cue": "here",
+            "tag": "free",
+            "forms": [],
+            "note": "here. Its partner is lì, \"there\" — which carries an accent, because a bare li would be a different word altogether."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "qui and lì do the pointing in this course. There is another word for \"there\", là, and it is one accent away from la, the article — which is why this module leaves it alone.",
+      "sound": "sta-TSYO-ne — the zi is a \"ts\" with a glide, and the final -e is pronounced. qui is KWEE: qu is always \"kw\".",
+      "variations": [
+        {
+          "display": "La stazione è lì",
+          "cue": "The station is there",
+          "changed": "qui → lì: further away, and the accent is part of the word"
+        },
+        {
+          "display": "Il bar è qui",
+          "cue": "The bar is here",
+          "changed": "swap what is here — the frame is two words long"
+        },
+        {
+          "display": "La stazione non è qui",
+          "cue": "The station isn't here",
+          "changed": "non in front of è, and the pointing word holds"
+        }
+      ],
+      "mistake": {
+        "display": "La stazione è li",
+        "why": "\"There\" is lì, with its accent. A bare li is a different word, and the accent is what keeps them apart."
+      },
+      "usage": "Pointing, when the thing is close enough to point at.",
+      "register": "informal",
+      "mnemonic": "qui is near, lì is far — and lì wears an accent."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M7-C01", "display": "Dov'è il gatto?", "cue": "Where is the cat?" },
+    { "id": "L1-M7-C02", "display": "Il gatto è sul tavolo", "cue": "The cat is on the table" },
+    {
+      "id": "L1-M7-C03",
+      "display": "C'è un bar vicino a casa",
+      "cue": "There is a bar near home"
+    },
+    {
+      "id": "L1-M7-C04",
+      "display": "Ci sono due libri in cucina",
+      "cue": "There are two books in the kitchen"
+    },
+    { "id": "L1-M7-C05", "display": "Dove sono i libri?", "cue": "Where are the books?" },
+    { "id": "L1-M7-C06", "display": "La pizza è nel piatto", "cue": "The pizza is on the plate" },
+    {
+      "id": "L1-M7-C07",
+      "display": "La stazione è vicino a casa",
+      "cue": "The station is near home"
+    },
+    { "id": "L1-M7-C08", "display": "Anna è in cucina", "cue": "Anna is in the kitchen" },
+    { "id": "L1-M7-C09", "display": "Il caffè è al bar", "cue": "The coffee is at the bar" },
+    {
+      "id": "L1-M7-C10",
+      "display": "Ci sono due gatti sotto il tavolo",
+      "cue": "There are two cats under the table"
+    },
+    { "id": "L1-M7-C11", "display": "Dov'è la stazione?", "cue": "Where is the station?" },
+    { "id": "L1-M7-C12", "display": "Il treno è qui", "cue": "The train is here" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}
