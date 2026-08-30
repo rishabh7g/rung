@@ -1,0 +1,1214 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M10",
+  "title": "Connected talk",
+  "job": "Short 2–3 sentence exchanges",
+  "prerequisites": [
+    "L1-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past",
+      "simple_future"
+    ],
+    "allowedPatterns": [
+      "<sentence> + . + geurigo + <sentence>",
+      "<sentence> + . + hajiman + <sentence>",
+      "<sentence> + . + geuraeseo + <sentence>",
+      "<stem>-go + <clause>",
+      "<question> + ? + <answer with -aseo/-eoseo>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "A turn is two or three short sentences, not one long one. Korean packs a lot into few words, so the natural shape of a spoken turn is a statement, then another statement, then perhaps a question — each of them finishing with its own verb."
+    },
+    {
+      "tag": "delta",
+      "text": "Korean joins ideas in two different places. A CONNECTOR starts a new sentence: geurigo ('and'), hajiman ('but'), geuraeseo ('so'). An ENDING joins clauses inside one sentence: -go ('and then') on the verb stem, and M9's -aseo ('because'). Same relationships, two grammatical places, and choosing the wrong one is what makes a turn read as translated."
+    },
+    {
+      "tag": "interference",
+      "text": "Say the subject once at most, and usually not at all. Once a turn is about you, every following sentence leaves you out. Repeating jeo-neun in each sentence is grammatical and it is the clearest sign of an English speaker — it reads as 'as for ME' every time, as if you kept correcting somebody."
+    },
+    {
+      "tag": "free",
+      "text": "-go on a verb stem strings two actions in the order they happen: bap-eul meokgo cha-reul masyeoyo, 'I eat and then drink tea'. Only the LAST verb carries the tense and the politeness — the first one stays in its bare -go shape."
+    },
+    {
+      "tag": "delta",
+      "text": "The style has to hold across the whole turn. Every verb ends in -yo, and the only exceptions in this course are the two frozen phrases from M2. One slip into a different style inside a turn is audible in a way that a single odd sentence is not."
+    },
+    {
+      "tag": "free",
+      "text": "hajiman contrasts: this, but that. There is another word that means something closer to 'and by the way' and is used to change the subject gently; it is not taught here, and if you hear a 'but' that does not sound like a contrast, that is what it is."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M10-S01",
+      "display": "Annyeonghaseyo. Je ireum-eun Minsu-yeyo.",
+      "script": "안녕하세요. 제 이름은 민수예요.",
+      "cue": "Hello. My name is Minsu.",
+      "glossEn": "Hello. My name is Minsu.",
+      "literal": "hello. my name-topic Minsu-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "annyeonghaseyo",
+            "script": "안녕하세요",
+            "cue": "hello",
+            "tag": "delta",
+            "forms": [
+              "annyeonghaseyo"
+            ],
+            "note": "'Hello', from M2 — the opening of any turn."
+          },
+          {
+            "display": "je",
+            "script": "제",
+            "cue": "my",
+            "tag": "free",
+            "forms": [
+              "je"
+            ],
+            "note": "'My', from M1."
+          },
+          {
+            "display": "ireum",
+            "script": "이름",
+            "cue": "name",
+            "tag": "free",
+            "forms": [
+              "ireum",
+              "ireum-eun"
+            ],
+            "note": "'Name', from M1."
+          },
+          {
+            "display": "Minsu",
+            "script": "민수",
+            "cue": "Minsu (a name)",
+            "tag": "free",
+            "forms": [
+              "Minsu",
+              "Minsu-neun",
+              "Minsu-yeyo"
+            ],
+            "note": "A man's given name, from M1."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Two sentences and no connector. English would often join them — 'hello, my name is Minsu' — and Korean simply stops after the greeting and starts again, which is why the pause is worth making.",
+      "sound": "an-nyung-ha-SE-yo. jeh ee-RUM-un MIN-soo-yeh-yo. A real full stop between them: the greeting falls, then the introduction starts fresh.",
+      "variations": [
+        {
+          "display": "Annyeonghaseyo. Jeo-neun Minsu-yeyo.",
+          "script": "안녕하세요. 저는 민수예요.",
+          "cue": "Hello. I am Minsu.",
+          "changed": "the shorter introduction, with the person as the topic"
+        },
+        {
+          "display": "Annyeonghaseyo. Oraenmanieyo.",
+          "script": "안녕하세요. 오랜만이에요.",
+          "cue": "Hello. It has been a long time.",
+          "changed": "the greeting and the remark that often follows it"
+        },
+        {
+          "display": "Annyeonghaseyo. Je ireum-eun Yuna-yeyo.",
+          "script": "안녕하세요. 제 이름은 유나예요.",
+          "cue": "Hello. My name is Yuna.",
+          "changed": "a different name"
+        }
+      ],
+      "mistake": {
+        "display": "Annyeonghaseyo geurigo je ireum-eun Minsu-yeyo.",
+        "script": "안녕하세요 그리고 제 이름은 민수예요.",
+        "why": "A connector has been used to glue a greeting to an introduction. geurigo joins two statements; a greeting is not a statement, and nothing needs to join them."
+      },
+      "usage": "Opening any conversation with somebody new.",
+      "register": "neutral",
+      "mnemonic": "Greet, stop, then say who you are."
+    },
+    {
+      "id": "L1-M10-S02",
+      "display": "Jeo-neun haksaeng-ieyo. Geurigo hangungmal-eul baewoyo.",
+      "script": "저는 학생이에요. 그리고 한국말을 배워요.",
+      "cue": "I am a student. And I study Korean.",
+      "glossEn": "I am a student. And I am learning Korean.",
+      "literal": "I-topic student-is. and Korean-object learn",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeo",
+            "script": "저",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [
+              "jeo",
+              "jeo-neun"
+            ],
+            "note": "'I', from M1 — and this module is where you learn to stop saying it. Once a turn is about you, every sentence after the first leaves it out."
+          },
+          {
+            "display": "haksaeng",
+            "script": "학생",
+            "cue": "student",
+            "tag": "free",
+            "forms": [
+              "haksaeng",
+              "haksaeng-ieyo"
+            ],
+            "note": "'Student', from M1."
+          },
+          {
+            "display": "geurigo",
+            "script": "그리고",
+            "cue": "and",
+            "tag": "free",
+            "forms": [
+              "geurigo"
+            ],
+            "note": "'And', joining one whole sentence to the next. It starts the second sentence rather than sitting between two things — Korean does not use it the way English uses 'and' inside a list of nouns."
+          },
+          {
+            "display": "hangungmal",
+            "script": "한국말",
+            "cue": "the Korean language",
+            "tag": "free",
+            "forms": [
+              "hangungmal",
+              "hangungmal-eul"
+            ],
+            "note": "'Korean', the language, from M1."
+          },
+          {
+            "display": "baewoyo",
+            "script": "배워요",
+            "cue": "learn",
+            "tag": "free",
+            "forms": [
+              "baewoyo",
+              "baeul"
+            ],
+            "note": "'Learn', from M3."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "The second sentence has no subject, and that is the whole lesson of this module. The turn is already about you; saying jeo-neun again would read as if you were distinguishing yourself from somebody else.",
+      "sound": "juh-nun HAK-ssaeng-ee-eh-yo. gu-RI-go han-GOONG-ma-rul BAE-wuh-yo. geurigo is three light beats and starts the second sentence cleanly.",
+      "variations": [
+        {
+          "display": "Jeo-neun haksaeng-ieyo. Geurigo maeil gongbuhaeyo.",
+          "script": "저는 학생이에요. 그리고 매일 공부해요.",
+          "cue": "I am a student. And I study every day.",
+          "changed": "a different second half"
+        },
+        {
+          "display": "Jeo-neun haksaeng-ieyo. Hajiman oneul-eun an bappayo.",
+          "script": "저는 학생이에요. 하지만 오늘은 안 바빠요.",
+          "cue": "I am a student. But today I am not busy.",
+          "changed": "a contrast instead of an addition"
+        },
+        {
+          "display": "Haksaeng-ieyo. Geurigo hangungmal-eul baewoyo.",
+          "script": "학생이에요. 그리고 한국말을 배워요.",
+          "cue": "I am a student. And I study Korean.",
+          "changed": "the subject dropped from the first sentence too, which is what a Korean speaker would do in reply to a question"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun haksaeng-ieyo. Geurigo jeo-neun hangungmal-eul baewoyo.",
+        "script": "저는 학생이에요. 그리고 저는 한국말을 배워요.",
+        "why": "The subject has been repeated in the second sentence. It is grammatical and it is the anglophone tell — the turn is already about you, so the second jeo-neun reads as a correction."
+      },
+      "usage": "Saying two things about yourself in a row.",
+      "register": "neutral",
+      "mnemonic": "Name yourself once, then let the turn remember."
+    },
+    {
+      "id": "L1-M10-S03",
+      "display": "Oneul-eun bappayo. Hajiman naeil-eun an bappayo.",
+      "script": "오늘은 바빠요. 하지만 내일은 안 바빠요.",
+      "cue": "I am busy today. But tomorrow I am not.",
+      "glossEn": "Today I am busy. But tomorrow I am not busy.",
+      "literal": "today-topic is-busy. but tomorrow-topic not is-busy",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "oneul",
+            "script": "오늘",
+            "cue": "today",
+            "tag": "free",
+            "forms": [
+              "oneul",
+              "oneul-eun"
+            ],
+            "note": "'Today', from M4."
+          },
+          {
+            "display": "bappayo",
+            "script": "바빠요",
+            "cue": "is busy",
+            "tag": "free",
+            "forms": [
+              "bappayo",
+              "bappaseo"
+            ],
+            "note": "'Is busy', from M9 — a describing word, and so a verb."
+          },
+          {
+            "display": "hajiman",
+            "script": "하지만",
+            "cue": "but",
+            "tag": "free",
+            "forms": [
+              "hajiman"
+            ],
+            "note": "'But'. Like geurigo it begins a new sentence. There is another word for 'but' that softens into a change of subject rather than contrasting; this is the plain one, and it is the one to learn first."
+          },
+          {
+            "display": "naeil",
+            "script": "내일",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [
+              "naeil",
+              "naeil-eun"
+            ],
+            "note": "'Tomorrow', from M6."
+          },
+          {
+            "display": "an",
+            "script": "안",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [
+              "an"
+            ],
+            "note": "'Not', from M3, still immediately in front of the verb."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "The topic marker on both days is what makes the contrast work. Without it the two sentences are simply two facts; with it they are set against each other, which is exactly the job hajiman is doing.",
+      "sound": "O-neu-run BA-ppa-yo. ha-JI-man NAE-i-run an BA-ppa-yo. Both time words link into their markers — o-neu-run, nae-i-run — and hajiman starts the second sentence.",
+      "variations": [
+        {
+          "display": "Oneul-eun bappayo. Hajiman naeil-eun gal geoyeyo.",
+          "script": "오늘은 바빠요. 하지만 내일은 갈 거예요.",
+          "cue": "I am busy today. But tomorrow I will go.",
+          "changed": "a different contrast, in the future"
+        },
+        {
+          "display": "Oneul-eun an bappayo. Geurigo naeil-eun an bappayo.",
+          "script": "오늘은 안 바빠요. 그리고 내일은 안 바빠요.",
+          "cue": "I am not busy today. And I am not busy tomorrow.",
+          "changed": "addition rather than contrast"
+        },
+        {
+          "display": "Oneul-eun bappayo. Hajiman jip-e an gayo.",
+          "script": "오늘은 바빠요. 하지만 집에 안 가요.",
+          "cue": "I am busy today. But I am not going home.",
+          "changed": "a different pair of facts under the same contrast"
+        }
+      ],
+      "mistake": {
+        "display": "Oneul-eun bappayo hajiman naeil-eun an bappayo.",
+        "script": "오늘은 바빠요 하지만 내일은 안 바빠요.",
+        "why": "The two sentences have been run together with no stop. hajiman begins a sentence; to join clauses inside one sentence you need an ending on the verb, not a connector."
+      },
+      "usage": "Setting today against tomorrow.",
+      "register": "neutral",
+      "mnemonic": "Mark both days, then set them against each other."
+    },
+    {
+      "id": "L1-M10-S04",
+      "display": "Bap-eul meokgo cha-reul masyeoyo.",
+      "script": "밥을 먹고 차를 마셔요.",
+      "cue": "I eat and then drink tea.",
+      "glossEn": "I eat a meal and then drink tea.",
+      "literal": "meal-object eat-and tea-object drink",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bap",
+            "script": "밥",
+            "cue": "rice · a meal",
+            "tag": "free",
+            "forms": [
+              "bap",
+              "bap-eul"
+            ],
+            "note": "'A meal', from M3."
+          },
+          {
+            "display": "meogeoyo",
+            "script": "먹어요",
+            "cue": "eat",
+            "tag": "free",
+            "forms": [
+              "meogeoyo",
+              "meokgo"
+            ],
+            "note": "'Eat', from M3 — and meokgo is doing a new job here. In M3 it sat in front of sipeoyo; on its own it joins one clause to the next, so bap-eul meokgo cha-reul masyeoyo is 'I eat and then drink tea'."
+          },
+          {
+            "display": "cha",
+            "script": "차",
+            "cue": "tea",
+            "tag": "free",
+            "forms": [
+              "cha",
+              "cha-reul",
+              "cha-ga"
+            ],
+            "note": "'Tea', from M1."
+          },
+          {
+            "display": "masyeoyo",
+            "script": "마셔요",
+            "cue": "drink",
+            "tag": "free",
+            "forms": [
+              "masyeoyo",
+              "masigo"
+            ],
+            "note": "'Drink', from M3 — and masigo is its joining shape, built the same way as meokgo."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "meokgo is the same shape you learned in front of sipeoyo, doing a different job. On its own it means 'and then', and the first verb stays bare — it carries no tense and no -yo, because the last verb carries both for the whole sentence.",
+      "sound": "BA-bul MUK-go CHA-rul ma-SHUH-yo. There is no pause after meokgo: the two halves are one sentence, and running them together is what tells the listener so.",
+      "variations": [
+        {
+          "display": "Bap-eul meokgo hakgyo-e gayo.",
+          "script": "밥을 먹고 학교에 가요.",
+          "cue": "I eat and then go to school.",
+          "changed": "a different second action"
+        },
+        {
+          "display": "Bap-eul meokgo cha-reul masyeosseoyo.",
+          "script": "밥을 먹고 차를 마셨어요.",
+          "cue": "I ate and then drank tea.",
+          "changed": "the past — and only the last verb changes"
+        },
+        {
+          "display": "Cha-reul masigo gongbuhaeyo.",
+          "script": "차를 마시고 공부해요.",
+          "cue": "I drink tea and then study.",
+          "changed": "the other verb wearing -go this time"
+        }
+      ],
+      "mistake": {
+        "display": "Bap-eul meogeoyo-go cha-reul masyeoyo.",
+        "script": "밥을 먹어요고 차를 마셔요.",
+        "why": "The ending has been put on the finished -yo form. -go goes on the STEM: meokgo, exactly as it did in M3's meokgo sipeoyo."
+      },
+      "usage": "Describing two things you do in order.",
+      "register": "neutral",
+      "mnemonic": "The first verb waits bare; the last one carries the tense."
+    },
+    {
+      "id": "L1-M10-S05",
+      "display": "Jip-e keopi-ga eopseoyo. Geuraeseo hakgyo-eseo masyeoyo.",
+      "script": "집에 커피가 없어요. 그래서 학교에서 마셔요.",
+      "cue": "There is no coffee at home. So I drink it at school.",
+      "glossEn": "There is no coffee at home. That is why I drink it at school.",
+      "literal": "home-at coffee-subject does-not-exist. so school-at drink",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jip",
+            "script": "집",
+            "cue": "house · home",
+            "tag": "free",
+            "forms": [
+              "jip",
+              "jip-e"
+            ],
+            "note": "'Home', from M7."
+          },
+          {
+            "display": "-e",
+            "script": "-에",
+            "cue": "at · to",
+            "tag": "delta",
+            "forms": [
+              "-e"
+            ],
+            "note": "The point marker, from M4 and M7 — a time or a place."
+          },
+          {
+            "display": "keopi",
+            "script": "커피",
+            "cue": "coffee",
+            "tag": "free",
+            "forms": [
+              "keopi",
+              "keopi-ga",
+              "keopi-reul"
+            ],
+            "note": "'Coffee', from M1."
+          },
+          {
+            "display": "eopseoyo",
+            "script": "없어요",
+            "cue": "there is not",
+            "tag": "interference",
+            "forms": [
+              "eopseoyo"
+            ],
+            "note": "'There is not', from M3."
+          },
+          {
+            "display": "geuraeseo",
+            "script": "그래서",
+            "cue": "so · that is why",
+            "tag": "free",
+            "forms": [
+              "geuraeseo"
+            ],
+            "note": "'So', from M9 — the connector that gives a reason for what follows."
+          },
+          {
+            "display": "hakgyo",
+            "script": "학교",
+            "cue": "school",
+            "tag": "free",
+            "forms": [
+              "hakgyo",
+              "hakgyo-e",
+              "hakgyo-eseo"
+            ],
+            "note": "'School', from M7 — with -e for being or going there and -eseo for doing something there."
+          },
+          {
+            "display": "-eseo",
+            "script": "-에서",
+            "cue": "at (where something happens)",
+            "tag": "interference",
+            "forms": [
+              "-eseo"
+            ],
+            "note": "The action-place marker, from M7."
+          },
+          {
+            "display": "masyeoyo",
+            "script": "마셔요",
+            "cue": "drink",
+            "tag": "free",
+            "forms": [
+              "masyeoyo",
+              "masigo"
+            ],
+            "note": "'Drink', from M3 — and masigo is its joining shape, built the same way as meokgo."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "Both place markers appear in one turn and each is doing its own job: -e for where the coffee is not, -eseo for where the drinking happens. This is M7's split in the wild, and getting it right across two sentences is the test.",
+      "sound": "JI-be KUH-pee-ga UP-suh-yo. gu-RAE-suh HAK-gyo-e-suh ma-SHUH-yo. The two markers are a beat apart in the same turn, which makes the length difference easy to hear.",
+      "variations": [
+        {
+          "display": "Jip-e cha-ga eopseoyo. Geuraeseo hakgyo-eseo masyeoyo.",
+          "script": "집에 차가 없어요. 그래서 학교에서 마셔요.",
+          "cue": "There is no tea at home. So I drink it at school.",
+          "changed": "a different thing missing"
+        },
+        {
+          "display": "Jip-e keopi-ga eopseoyo. Hajiman hakgyo-e isseoyo.",
+          "script": "집에 커피가 없어요. 하지만 학교에 있어요.",
+          "cue": "There is no coffee at home. But there is at school.",
+          "changed": "a contrast, and existence at both ends so both places take -e"
+        },
+        {
+          "display": "Jip-e keopi-ga eopseoseo hakgyo-eseo masyeoyo.",
+          "script": "집에 커피가 없어서 학교에서 마셔요.",
+          "cue": "Because there is no coffee at home, I drink it at school.",
+          "changed": "the same turn as one sentence, with M9's ending instead of the connector"
+        }
+      ],
+      "mistake": {
+        "display": "Jip-eseo keopi-ga eopseoyo. Geuraeseo hakgyo-e masyeoyo.",
+        "script": "집에서 커피가 없어요. 그래서 학교에 마셔요.",
+        "why": "Both markers have been swapped. Nothing happens at the house — the coffee simply is not there, so -e — and the drinking does happen at school, so -eseo."
+      },
+      "usage": "Explaining a small habit and its reason.",
+      "register": "neutral",
+      "mnemonic": "One turn, two places, two different markers."
+    },
+    {
+      "id": "L1-M10-S06",
+      "display": "Eoje jal jasseoyo. Geurigo achim-e ireonasseoyo.",
+      "script": "어제 잘 잤어요. 그리고 아침에 일어났어요.",
+      "cue": "I slept well yesterday. And I got up in the morning.",
+      "glossEn": "I slept well yesterday. And I got up in the morning.",
+      "literal": "yesterday well slept. and morning-at got-up",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eoje",
+            "script": "어제",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [
+              "eoje"
+            ],
+            "note": "'Yesterday', from M5, still taking no marker."
+          },
+          {
+            "display": "jal",
+            "script": "잘",
+            "cue": "well",
+            "tag": "free",
+            "forms": [
+              "jal"
+            ],
+            "note": "'Well', from M2, in front of the verb it describes."
+          },
+          {
+            "display": "jayo",
+            "script": "자요",
+            "cue": "sleep",
+            "tag": "free",
+            "forms": [
+              "jayo",
+              "jasseoyo"
+            ],
+            "note": "'Sleep', from M4, with its past from M5."
+          },
+          {
+            "display": "geurigo",
+            "script": "그리고",
+            "cue": "and",
+            "tag": "free",
+            "forms": [
+              "geurigo"
+            ],
+            "note": "'And', joining one whole sentence to the next. It starts the second sentence rather than sitting between two things — Korean does not use it the way English uses 'and' inside a list of nouns."
+          },
+          {
+            "display": "achim",
+            "script": "아침",
+            "cue": "morning · breakfast",
+            "tag": "free",
+            "forms": [
+              "achim",
+              "achim-e"
+            ],
+            "note": "'Morning', from M4."
+          },
+          {
+            "display": "-e",
+            "script": "-에",
+            "cue": "at · to",
+            "tag": "delta",
+            "forms": [
+              "-e"
+            ],
+            "note": "The point marker, from M4 and M7 — a time or a place."
+          },
+          {
+            "display": "ireonayo",
+            "script": "일어나요",
+            "cue": "get up",
+            "tag": "free",
+            "forms": [
+              "ireonayo",
+              "ireonasseoyo",
+              "ireonago"
+            ],
+            "note": "'Get up', from M4, with its past shape here — ireonasseoyo — and the joining shape ireonago. The stem ireona- already ends in a, so nothing is added between it and the past piece."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Both verbs are in the past, and each carries it separately. Korean does not let one tense cover a whole turn the way an English narrative sometimes can — every sentence marks its own.",
+      "sound": "UH-je jal JA-ssuh-yo. gu-RI-go A-chi-me i-ruh-NA-ssuh-yo. ireonasseoyo is five beats and the longest word in the module; it is the same stem you met in M4 with the past inside it.",
+      "variations": [
+        {
+          "display": "Eoje jal jasseoyo. Geurigo oneul-eun bappayo.",
+          "script": "어제 잘 잤어요. 그리고 오늘은 바빠요.",
+          "cue": "I slept well yesterday. And today I am busy.",
+          "changed": "the second sentence in the present, which is fine — each carries its own tense"
+        },
+        {
+          "display": "Eoje an jasseoyo. Geuraeseo bappayo.",
+          "script": "어제 안 잤어요. 그래서 바빠요.",
+          "cue": "I did not sleep yesterday. So I am busy.",
+          "changed": "a reason and a result across the two sentences"
+        },
+        {
+          "display": "Eoje jal jasseoyo. Hajiman achim-e an ireonasseoyo.",
+          "script": "어제 잘 잤어요. 하지만 아침에 안 일어났어요.",
+          "cue": "I slept well yesterday. But I did not get up in the morning.",
+          "changed": "a contrast instead of an addition"
+        }
+      ],
+      "mistake": {
+        "display": "Eoje jal jasseoyo. Geurigo achim-e ireonayo.",
+        "script": "어제 잘 잤어요. 그리고 아침에 일어나요.",
+        "why": "The second sentence has been left in the present, as if the eoje at the start of the turn covered both. Each sentence carries its own tense in Korean."
+      },
+      "usage": "Telling somebody how your yesterday went.",
+      "register": "neutral",
+      "mnemonic": "Every sentence pays its own tense."
+    },
+    {
+      "id": "L1-M10-S07",
+      "display": "Wae hakgyo-e an gayo? Bappaseo an gayo.",
+      "script": "왜 학교에 안 가요? 바빠서 안 가요.",
+      "cue": "Why aren't you going to school? Because I am busy.",
+      "glossEn": "Why are you not going to school? Being busy, I am not going.",
+      "literal": "why school-to not go? busy-because not go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wae",
+            "script": "왜",
+            "cue": "why",
+            "tag": "free",
+            "forms": [
+              "wae"
+            ],
+            "note": "'Why', from M9 — in place, with the voice asking."
+          },
+          {
+            "display": "hakgyo",
+            "script": "학교",
+            "cue": "school",
+            "tag": "free",
+            "forms": [
+              "hakgyo",
+              "hakgyo-e",
+              "hakgyo-eseo"
+            ],
+            "note": "'School', from M7 — with -e for being or going there and -eseo for doing something there."
+          },
+          {
+            "display": "-e",
+            "script": "-에",
+            "cue": "at · to",
+            "tag": "delta",
+            "forms": [
+              "-e"
+            ],
+            "note": "The point marker, from M4 and M7 — a time or a place."
+          },
+          {
+            "display": "an",
+            "script": "안",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [
+              "an"
+            ],
+            "note": "'Not', from M3, still immediately in front of the verb."
+          },
+          {
+            "display": "gayo",
+            "script": "가요",
+            "cue": "go",
+            "tag": "free",
+            "forms": [
+              "gayo",
+              "gal"
+            ],
+            "note": "'Go', from M6."
+          },
+          {
+            "display": "bappayo",
+            "script": "바빠요",
+            "cue": "is busy",
+            "tag": "free",
+            "forms": [
+              "bappayo",
+              "bappaseo"
+            ],
+            "note": "'Is busy', from M9 — a describing word, and so a verb."
+          },
+          {
+            "display": "-aseo",
+            "script": "-아서",
+            "cue": "because",
+            "tag": "delta",
+            "forms": [
+              "-aseo",
+              "-eoseo"
+            ],
+            "note": "The 'because' ending, from M9 — on the stem of the reason, and the reason comes first."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "The answer repeats the verb rather than replacing it with a short 'because I'm busy'. Korean answers in the shape of the question, and the repeated an gayo is what makes it a real reply rather than a fragment.",
+      "sound": "WAE HAK-gyo-e an GA-yo, rising. BA-ppa-suh an GA-yo, falling. The question lifts and the answer drops, and the two halves are otherwise built the same way.",
+      "variations": [
+        {
+          "display": "Wae hakgyo-e an gayo? Bappaseo jip-e isseoyo.",
+          "script": "왜 학교에 안 가요? 바빠서 집에 있어요.",
+          "cue": "Why aren't you going to school? I am at home because I am busy.",
+          "changed": "an answer that adds where you are instead"
+        },
+        {
+          "display": "Wae hangungmal-eul baewoyo? Hanguk-e gal geoyeyo.",
+          "script": "왜 한국말을 배워요? 한국에 갈 거예요.",
+          "cue": "Why do you study Korean? I am going to go to Korea.",
+          "changed": "an answer with no because-ending at all — the reason is left implied"
+        },
+        {
+          "display": "Wae bappayo? Ilhaeseo bappayo.",
+          "script": "왜 바빠요? 일해서 바빠요.",
+          "cue": "Why are you busy? Because I work.",
+          "changed": "the same pair with a describing verb in both halves"
+        }
+      ],
+      "mistake": {
+        "display": "Wae hakgyo-e an gayo? Bappayo geuraeseo.",
+        "script": "왜 학교에 안 가요? 바빠요 그래서.",
+        "why": "The connector has been put at the end of the answer, where English can put 'so'. geuraeseo begins a sentence, and nothing follows a Korean verb."
+      },
+      "usage": "Asking and answering about a reason.",
+      "register": "neutral",
+      "mnemonic": "Answer in the shape of the question."
+    },
+    {
+      "id": "L1-M10-S08",
+      "display": "Cha-reul joahaeyo. Hajiman oneul-eun keopi-reul masyeoyo.",
+      "script": "차를 좋아해요. 하지만 오늘은 커피를 마셔요.",
+      "cue": "I like tea. But today I am drinking coffee.",
+      "glossEn": "I like tea. But today I am drinking coffee.",
+      "literal": "tea-object like. but today-topic coffee-object drink",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cha",
+            "script": "차",
+            "cue": "tea",
+            "tag": "free",
+            "forms": [
+              "cha",
+              "cha-reul",
+              "cha-ga"
+            ],
+            "note": "'Tea', from M1."
+          },
+          {
+            "display": "joahaeyo",
+            "script": "좋아해요",
+            "cue": "like",
+            "tag": "interference",
+            "forms": [
+              "joahaeyo"
+            ],
+            "note": "'Like', from M1 — a verb taking an object with -eul/-reul."
+          },
+          {
+            "display": "hajiman",
+            "script": "하지만",
+            "cue": "but",
+            "tag": "free",
+            "forms": [
+              "hajiman"
+            ],
+            "note": "'But'. Like geurigo it begins a new sentence. There is another word for 'but' that softens into a change of subject rather than contrasting; this is the plain one, and it is the one to learn first."
+          },
+          {
+            "display": "oneul",
+            "script": "오늘",
+            "cue": "today",
+            "tag": "free",
+            "forms": [
+              "oneul",
+              "oneul-eun"
+            ],
+            "note": "'Today', from M4."
+          },
+          {
+            "display": "keopi",
+            "script": "커피",
+            "cue": "coffee",
+            "tag": "free",
+            "forms": [
+              "keopi",
+              "keopi-ga",
+              "keopi-reul"
+            ],
+            "note": "'Coffee', from M1."
+          },
+          {
+            "display": "masyeoyo",
+            "script": "마셔요",
+            "cue": "drink",
+            "tag": "free",
+            "forms": [
+              "masyeoyo",
+              "masigo"
+            ],
+            "note": "'Drink', from M3 — and masigo is its joining shape, built the same way as meokgo."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "joahaeyo takes an object with -reul, and the contrast in the second sentence is carried by the topic marker on oneul. Two different markers, two different jobs, and neither can do the other's.",
+      "sound": "CHA-rul jo-ah-HAE-yo. ha-JI-man O-neu-run KUH-pee-rul ma-SHUH-yo. The h in joahaeyo is silent again, and the whole first sentence is three beats.",
+      "variations": [
+        {
+          "display": "Keopi-reul joahaeyo. Hajiman oneul-eun cha-reul masyeoyo.",
+          "script": "커피를 좋아해요. 하지만 오늘은 차를 마셔요.",
+          "cue": "I like coffee. But today I am drinking tea.",
+          "changed": "the two halves swapped"
+        },
+        {
+          "display": "Cha-reul joahaeyo. Geurigo maeil masyeoyo.",
+          "script": "차를 좋아해요. 그리고 매일 마셔요.",
+          "cue": "I like tea. And I drink it every day.",
+          "changed": "addition rather than contrast"
+        },
+        {
+          "display": "Cha-ga joayo. Hajiman oneul-eun keopi-reul masyeoyo.",
+          "script": "차가 좋아요. 하지만 오늘은 커피를 마셔요.",
+          "cue": "Tea is good. But today I am drinking coffee.",
+          "changed": "M9's describing verb in the first half, with -ga instead of -reul"
+        }
+      ],
+      "mistake": {
+        "display": "Cha-ga joahaeyo. Hajiman oneul-eun keopi-reul masyeoyo.",
+        "script": "차가 좋아해요. 하지만 오늘은 커피를 마셔요.",
+        "why": "The subject marker has been used with joahaeyo. That verb takes an OBJECT — cha-reul joahaeyo — and -ga belongs with joayo, the describing verb that says the tea itself is good."
+      },
+      "usage": "Saying what you usually like and what you are doing instead.",
+      "register": "neutral",
+      "mnemonic": "Liking takes an object; being good takes a subject."
+    },
+    {
+      "id": "L1-M10-S09",
+      "display": "Naeil hanguk-e gal geoyeyo. Geurigo hangungmal-eul baeul geoyeyo.",
+      "script": "내일 한국에 갈 거예요. 그리고 한국말을 배울 거예요.",
+      "cue": "I will go to Korea tomorrow. And I will study Korean.",
+      "glossEn": "I am going to go to Korea tomorrow. And I am going to study Korean.",
+      "literal": "tomorrow Korea-to go-thing-is. and Korean-object learn-thing-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "naeil",
+            "script": "내일",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [
+              "naeil",
+              "naeil-eun"
+            ],
+            "note": "'Tomorrow', from M6."
+          },
+          {
+            "display": "hanguk",
+            "script": "한국",
+            "cue": "Korea",
+            "tag": "free",
+            "forms": [
+              "hanguk",
+              "hanguk-e"
+            ],
+            "note": "'Korea', from M1."
+          },
+          {
+            "display": "-e",
+            "script": "-에",
+            "cue": "at · to",
+            "tag": "delta",
+            "forms": [
+              "-e"
+            ],
+            "note": "The point marker, from M4 and M7 — a time or a place."
+          },
+          {
+            "display": "gayo",
+            "script": "가요",
+            "cue": "go",
+            "tag": "free",
+            "forms": [
+              "gayo",
+              "gal"
+            ],
+            "note": "'Go', from M6."
+          },
+          {
+            "display": "geoyeyo",
+            "script": "거예요",
+            "cue": "will · am going to",
+            "tag": "delta",
+            "forms": [
+              "geoyeyo"
+            ],
+            "note": "The future's second half, from M6."
+          },
+          {
+            "display": "geurigo",
+            "script": "그리고",
+            "cue": "and",
+            "tag": "free",
+            "forms": [
+              "geurigo"
+            ],
+            "note": "'And', joining one whole sentence to the next. It starts the second sentence rather than sitting between two things — Korean does not use it the way English uses 'and' inside a list of nouns."
+          },
+          {
+            "display": "hangungmal",
+            "script": "한국말",
+            "cue": "the Korean language",
+            "tag": "free",
+            "forms": [
+              "hangungmal",
+              "hangungmal-eul"
+            ],
+            "note": "'Korean', the language, from M1."
+          },
+          {
+            "display": "baewoyo",
+            "script": "배워요",
+            "cue": "learn",
+            "tag": "free",
+            "forms": [
+              "baewoyo",
+              "baeul"
+            ],
+            "note": "'Learn', from M3."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "Both halves are in the future and both build it the same way, but the verb shapes differ — gal after a vowel-final stem, baeul after a consonant. It is the rule from M6 running twice in one turn.",
+      "sound": "NAE-il HAN-goo-ge gal GUH-ye-yo. gu-RI-go han-GOONG-ma-rul BAE-ul GUH-ye-yo. Two futures in a row, and the geoyeyo at the end of each is what closes the sentence.",
+      "variations": [
+        {
+          "display": "Naeil hanguk-e gayo. Geurigo hangungmal-eul baewoyo.",
+          "script": "내일 한국에 가요. 그리고 한국말을 배워요.",
+          "cue": "I am going to Korea tomorrow. And I am studying Korean.",
+          "changed": "the plain present doing the future's job in both halves"
+        },
+        {
+          "display": "Naeil hanguk-e gal geoyeyo. Hajiman hangungmal-eul an baeul geoyeyo.",
+          "script": "내일 한국에 갈 거예요. 하지만 한국말을 안 배울 거예요.",
+          "cue": "I will go to Korea tomorrow. But I will not study Korean.",
+          "changed": "a contrast, with the second half negated"
+        },
+        {
+          "display": "Hanguk-e gal geoyeyo. Geuraeseo hangungmal-eul baewoyo.",
+          "script": "한국에 갈 거예요. 그래서 한국말을 배워요.",
+          "cue": "I will go to Korea. So I am studying Korean.",
+          "changed": "the reason connector from M9, which changes what the two sentences are to each other"
+        }
+      ],
+      "mistake": {
+        "display": "Naeil hanguk-e gal geoyeyo geurigo hangungmal-eul baeul geoyeyo.",
+        "script": "내일 한국에 갈 거예요 그리고 한국말을 배울 거예요.",
+        "why": "No stop between the sentences. A connector needs one in front of it; without the stop you have one sentence with two verbs in it, which Korean does not allow."
+      },
+      "usage": "Laying out a plan with two parts.",
+      "register": "neutral",
+      "mnemonic": "Two futures, two sentences, one connector between them."
+    },
+    {
+      "id": "L1-M10-S10",
+      "display": "Oraenmanieyo. Jal jinaesseoyo?",
+      "script": "오랜만이에요. 잘 지냈어요?",
+      "cue": "It has been a long time. Have you been well?",
+      "glossEn": "It has been a while. Did you get on well?",
+      "literal": "long-interval-is. well got-on?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "oraenmanieyo",
+            "script": "오랜만이에요",
+            "cue": "it has been a long time",
+            "tag": "free",
+            "forms": [
+              "oraenmanieyo"
+            ],
+            "note": "'It has been a while', from M2."
+          },
+          {
+            "display": "jal",
+            "script": "잘",
+            "cue": "well",
+            "tag": "free",
+            "forms": [
+              "jal"
+            ],
+            "note": "'Well', from M2, in front of the verb it describes."
+          },
+          {
+            "display": "jinaeyo",
+            "script": "지내요",
+            "cue": "get along",
+            "tag": "delta",
+            "forms": [
+              "jinaeyo",
+              "jinaeseyo",
+              "jinaesseoyo"
+            ],
+            "note": "'Get by', from M2, in the past shape M5 built: jinaesseoyo."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "The past here asks about the stretch of time since you last met, not about yesterday. jal jinaeseyo? from M2 asks about life in general; this asks how the gap went, which is exactly why it follows oraenmanieyo.",
+      "sound": "o-raen-ma-NEE-eh-yo. jal ji-NAE-ssuh-yo, rising at the end. The first sentence falls and the second lifts — two sentences, two shapes, one turn.",
+      "variations": [
+        {
+          "display": "Oraenmanieyo. Jal jinaeseyo?",
+          "script": "오랜만이에요. 잘 지내세요?",
+          "cue": "It has been a long time. Are you well?",
+          "changed": "the present, asking about how things are now"
+        },
+        {
+          "display": "Annyeonghaseyo. Oraenmanieyo.",
+          "script": "안녕하세요. 오랜만이에요.",
+          "cue": "Hello. It has been a long time.",
+          "changed": "the greeting first, which is how the turn usually opens"
+        },
+        {
+          "display": "Oraenmanieyo. Jal jinaesseoyo.",
+          "script": "오랜만이에요. 잘 지냈어요.",
+          "cue": "It has been a long time. I have been well.",
+          "changed": "said flat, the second sentence answers rather than asks"
+        }
+      ],
+      "mistake": {
+        "display": "Oraenmanieyo geurigo jal jinaesseoyo?",
+        "script": "오랜만이에요 그리고 잘 지냈어요?",
+        "why": "A connector has been put between a remark and a question. geurigo joins statements; a question after a remark simply follows it, with a stop in between."
+      },
+      "usage": "Meeting somebody after a long gap.",
+      "register": "neutral",
+      "mnemonic": "Remark, stop, question — and the voice does the asking."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M10-C01",
+      "display": "Annyeonghaseyo. Jal jinaesseoyo?",
+      "script": "안녕하세요. 잘 지냈어요?",
+      "cue": "Hello. Have you been well?"
+    },
+    {
+      "id": "L1-M10-C02",
+      "display": "Jeo-neun haksaeng-ieyo. Geurigo maeil gongbuhaeyo.",
+      "script": "저는 학생이에요. 그리고 매일 공부해요.",
+      "cue": "I am a student. And I study every day."
+    },
+    {
+      "id": "L1-M10-C03",
+      "display": "Oneul-eun bappayo. Hajiman naeil-eun an bappayo.",
+      "script": "오늘은 바빠요. 하지만 내일은 안 바빠요.",
+      "cue": "I am busy today. But tomorrow I am not."
+    },
+    {
+      "id": "L1-M10-C04",
+      "display": "Bap-eul meokgo hakgyo-e gayo.",
+      "script": "밥을 먹고 학교에 가요.",
+      "cue": "I eat and then go to school."
+    },
+    {
+      "id": "L1-M10-C05",
+      "display": "Eoje an jasseoyo. Geuraeseo pigonhaeyo.",
+      "script": "어제 안 잤어요. 그래서 피곤해요.",
+      "cue": "I did not sleep yesterday. So I am tired."
+    },
+    {
+      "id": "L1-M10-C06",
+      "display": "Cha-reul joahaeyo. Geurigo maeil masyeoyo.",
+      "script": "차를 좋아해요. 그리고 매일 마셔요.",
+      "cue": "I like tea. And I drink it every day."
+    },
+    {
+      "id": "L1-M10-C07",
+      "display": "Wae bappayo? Ilhaeseo bappayo.",
+      "script": "왜 바빠요? 일해서 바빠요.",
+      "cue": "Why are you busy? Because I work."
+    },
+    {
+      "id": "L1-M10-C08",
+      "display": "Jip-e keopi-ga eopseoyo. Hajiman hakgyo-e isseoyo.",
+      "script": "집에 커피가 없어요. 하지만 학교에 있어요.",
+      "cue": "There is no coffee at home. But there is at school."
+    },
+    {
+      "id": "L1-M10-C09",
+      "display": "Naeil hanguk-e gal geoyeyo. Geurigo hangungmal-eul baeul geoyeyo.",
+      "script": "내일 한국에 갈 거예요. 그리고 한국말을 배울 거예요.",
+      "cue": "I will go to Korea tomorrow. And I will study Korean."
+    },
+    {
+      "id": "L1-M10-C10",
+      "display": "Cha-reul masigo gongbuhaeyo.",
+      "script": "차를 마시고 공부해요.",
+      "cue": "I drink tea and then study."
+    },
+    {
+      "id": "L1-M10-C11",
+      "display": "Oraenmanieyo. Jal jinaeseyo?",
+      "script": "오랜만이에요. 잘 지내세요?",
+      "cue": "It has been a long time. Are you well?"
+    },
+    {
+      "id": "L1-M10-C12",
+      "display": "Achim-e ireonago bap-eul meogeoyo.",
+      "script": "아침에 일어나고 밥을 먹어요.",
+      "cue": "I get up in the morning and then eat."
+    },
+    {
+      "id": "L1-M10-C13",
+      "display": "Minsu-neun bappayo. Geuraeseo jip-e gal geoyeyo.",
+      "script": "민수는 바빠요. 그래서 집에 갈 거예요.",
+      "cue": "Minsu is busy. So he will go home."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

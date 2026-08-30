@@ -1,0 +1,1040 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M6",
+  "title": "Tomorrow",
+  "job": "Future and plans",
+  "prerequisites": [
+    "L1-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 5,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past",
+      "simple_future"
+    ],
+    "allowedPatterns": [
+      "naeil + V-(eu)l geoyeyo",
+      "jeo-neun + <place>-e + gal geoyeyo",
+      "naeil + V-ayo/-eoyo",
+      "an + V-(eu)l geoyeyo",
+      "N + an hal geoyeyo",
+      "<place>-e + gayo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The plain present plus a time word IS a future: naeil gayo is 'I am going tomorrow' and nothing more is needed. It is what Korean says for a settled plan, and it costs you nothing you have not already learned."
+    },
+    {
+      "tag": "delta",
+      "text": "The fuller future is V-(eu)l geoyeyo, and it is not a modal. geo means 'thing' and -yeyo is the copula from M1, so gal geoyeyo says 'it is a thing that will be gone'. English 'will' is a word that sits in front of the verb; there is no Korean word doing that job, and looking for one is looking for something that does not exist."
+    },
+    {
+      "tag": "delta",
+      "text": "The shape in front of geoyeyo follows the same kind of rule you already know: -l after a stem ending in a vowel (gada gives gal), -eul after a stem ending in a consonant (meokda gives meogeul). It is the third time this course has chosen an ending by the sound in front of it."
+    },
+    {
+      "tag": "interference",
+      "text": "naeil takes NO marker, like oneul and eoje. There is no naeil-e. It can take the topic marker, naeil-eun, and then it sets tomorrow apart from other days."
+    },
+    {
+      "tag": "free",
+      "text": "an sits where it always sits, immediately in front of the verb — and with a verb built from a noun it still splits it: gongbu an hal geoyeyo. The future changes the verb's shape and nothing about where the negative goes."
+    },
+    {
+      "tag": "delta",
+      "text": "Korean has other futures. One is used for offering to do something and one for guessing about the weather; neither is taught here. If you hear a future that does not look like this one, that is what it is, and it belongs to a later level."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M6-S01",
+      "display": "Naeil hanguk-e gal geoyeyo.",
+      "script": "내일 한국에 갈 거예요.",
+      "cue": "I will go to Korea tomorrow.",
+      "glossEn": "I am going to go to Korea tomorrow.",
+      "literal": "tomorrow Korea-to go-thing-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "naeil",
+            "script": "내일",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [
+              "naeil",
+              "naeil-eun"
+            ],
+            "note": "'Tomorrow'. Like oneul, eoje and maeil it takes NO point-in-time marker. With the topic marker, naeil-eun, it sets tomorrow apart from the days around it."
+          },
+          {
+            "display": "hanguk",
+            "script": "한국",
+            "cue": "Korea",
+            "tag": "free",
+            "forms": [
+              "hanguk",
+              "hanguk-e"
+            ],
+            "note": "'Korea', from M1, and here it is where you are going, so it takes -e."
+          },
+          {
+            "display": "-e",
+            "script": "-에",
+            "cue": "to · at",
+            "tag": "delta",
+            "forms": [
+              "-e"
+            ],
+            "note": "The same marker M4 used for a point in time, now marking a destination: hanguk-e gayo, 'I go to Korea'. One ending, one job — putting something at a point — and the point can be an hour or a place."
+          },
+          {
+            "display": "gayo",
+            "script": "가요",
+            "cue": "go",
+            "tag": "free",
+            "forms": [
+              "gayo",
+              "gal"
+            ],
+            "note": "'Go'. The stem is ga-, so the -yo form is just gayo — the stem's own a swallows the ending's, exactly as jayo does. gal is the shape it takes in front of geoyeyo, and it is the same verb."
+          },
+          {
+            "display": "geoyeyo",
+            "script": "거예요",
+            "cue": "will · am going to",
+            "tag": "delta",
+            "forms": [
+              "geoyeyo"
+            ],
+            "note": "The second half of the future, and it is worth knowing what it is made of: geo means 'thing', and -yeyo is M1's copula. So gal geoyeyo is, piece by piece, 'it is a thing-that-will-be-gone'. That is why the future ends in the copula and why there is no word here corresponding to English 'will'."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          3
+        ]
+      },
+      "trap": "There is no word here meaning 'will'. The future is a noun phrase finished off with the copula you learned in M1, so the sentence ends the way haksaeng-ieyo ended — and a learner hunting for a helper verb will not find a seat for one.",
+      "sound": "NAE-il HAN-goo-ge gal GUH-ye-yo. The k of hanguk softens into a g before the -e, so it runs as han-goo-ge. gal is one short syllable with an unreleased l, and geoyeyo has the eo vowel — 'guh', not 'go'.",
+      "variations": [
+        {
+          "display": "Naeil hakgyo-e gal geoyeyo.",
+          "script": "내일 학교에 갈 거예요.",
+          "cue": "I will go to school tomorrow.",
+          "changed": "a different destination, same marker"
+        },
+        {
+          "display": "Naeil hanguk-e gayo.",
+          "script": "내일 한국에 가요.",
+          "cue": "I am going to Korea tomorrow.",
+          "changed": "the plain present, which already says the same thing"
+        },
+        {
+          "display": "Minsu-neun naeil hanguk-e gal geoyeyo.",
+          "script": "민수는 내일 한국에 갈 거예요.",
+          "cue": "Minsu will go to Korea tomorrow.",
+          "changed": "a different person, and the verb does not move"
+        }
+      ],
+      "mistake": {
+        "display": "Naeil hanguk-e geoyeyo gal.",
+        "script": "내일 한국에 거예요 갈.",
+        "why": "The two halves of the future have been swapped. The verb shape comes first and geoyeyo closes the sentence, because geoyeyo is the copula and the copula is always last."
+      },
+      "usage": "Talking about a plan you have already made.",
+      "register": "neutral",
+      "mnemonic": "The future is a thing that will be — and things end in the copula."
+    },
+    {
+      "id": "L1-M6-S02",
+      "display": "Naeil gongbuhal geoyeyo.",
+      "script": "내일 공부할 거예요.",
+      "cue": "I will study tomorrow.",
+      "glossEn": "I am going to study tomorrow.",
+      "literal": "tomorrow study-do-thing-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "naeil",
+            "script": "내일",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [
+              "naeil",
+              "naeil-eun"
+            ],
+            "note": "'Tomorrow'. Like oneul, eoje and maeil it takes NO point-in-time marker. With the topic marker, naeil-eun, it sets tomorrow apart from the days around it."
+          },
+          {
+            "display": "gongbuhaeyo",
+            "script": "공부해요",
+            "cue": "study",
+            "tag": "free",
+            "forms": [
+              "gongbuhaeyo",
+              "gongbuhal"
+            ],
+            "note": "'Study'. The future shape is gongbuhal, built on the ha- of haeyo — and when a negative splits the verb, it is hal that carries the shape: gongbu an hal geoyeyo."
+          },
+          {
+            "display": "geoyeyo",
+            "script": "거예요",
+            "cue": "will · am going to",
+            "tag": "delta",
+            "forms": [
+              "geoyeyo"
+            ],
+            "note": "The second half of the future, and it is worth knowing what it is made of: geo means 'thing', and -yeyo is M1's copula. So gal geoyeyo is, piece by piece, 'it is a thing-that-will-be-gone'. That is why the future ends in the copula and why there is no word here corresponding to English 'will'."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "gongbuhaeyo loses its -haeyo and takes -hal instead. The verb is still one word here because nothing has come between the halves — it is only the negative that splits it.",
+      "sound": "NAE-il gong-boo-HAL GUH-ye-yo. hal ends in an unreleased l and runs straight into geoyeyo, so the last two words come out almost joined: hal-guh-ye-yo.",
+      "variations": [
+        {
+          "display": "Naeil ilhal geoyeyo.",
+          "script": "내일 일할 거예요.",
+          "cue": "I will work tomorrow.",
+          "changed": "the other noun-plus-haeyo verb, the same shape"
+        },
+        {
+          "display": "Naeil gongbuhaeyo.",
+          "script": "내일 공부해요.",
+          "cue": "I am studying tomorrow.",
+          "changed": "the present doing the future's job"
+        },
+        {
+          "display": "Naeil-eun gongbuhal geoyeyo.",
+          "script": "내일은 공부할 거예요.",
+          "cue": "Tomorrow I will study.",
+          "changed": "the topic marker setting tomorrow apart from today"
+        }
+      ],
+      "mistake": {
+        "display": "Naeil gongbuhaeyo geoyeyo.",
+        "script": "내일 공부해요 거예요.",
+        "why": "The finished -yo form has been left in place and geoyeyo added behind it. The verb has to change shape first: gongbuhal, then geoyeyo."
+      },
+      "usage": "Saying what you intend to do tomorrow.",
+      "register": "neutral",
+      "mnemonic": "Change the verb's shape, then add the thing-that-will-be."
+    },
+    {
+      "id": "L1-M6-S03",
+      "display": "Jeo-neun naeil ilhal geoyeyo.",
+      "script": "저는 내일 일할 거예요.",
+      "cue": "I will work tomorrow.",
+      "glossEn": "I am going to work tomorrow.",
+      "literal": "I-topic tomorrow work-do-thing-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeo",
+            "script": "저",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [
+              "jeo",
+              "jeo-neun"
+            ],
+            "note": "'I', from M1."
+          },
+          {
+            "display": "naeil",
+            "script": "내일",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [
+              "naeil",
+              "naeil-eun"
+            ],
+            "note": "'Tomorrow'. Like oneul, eoje and maeil it takes NO point-in-time marker. With the topic marker, naeil-eun, it sets tomorrow apart from the days around it."
+          },
+          {
+            "display": "ilhaeyo",
+            "script": "일해요",
+            "cue": "work",
+            "tag": "free",
+            "forms": [
+              "ilhaeyo",
+              "ilhal"
+            ],
+            "note": "'Work', with the same ha- behind it, so the future shape is ilhal."
+          },
+          {
+            "display": "geoyeyo",
+            "script": "거예요",
+            "cue": "will · am going to",
+            "tag": "delta",
+            "forms": [
+              "geoyeyo"
+            ],
+            "note": "The second half of the future, and it is worth knowing what it is made of: geo means 'thing', and -yeyo is M1's copula. So gal geoyeyo is, piece by piece, 'it is a thing-that-will-be-gone'. That is why the future ends in the copula and why there is no word here corresponding to English 'will'."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "naeil takes no marker. This is the fourth time word in the course that refuses -e, and by now the pattern is clear: the words for particular days stand bare.",
+      "sound": "juh-nun NAE-il il-HAL GUH-ye-yo. ilhal is two beats with the h almost swallowed — many speakers say i-ral at speed, and it is still the same word.",
+      "variations": [
+        {
+          "display": "Naeil ilhal geoyeyo.",
+          "script": "내일 일할 거예요.",
+          "cue": "I will work tomorrow.",
+          "changed": "the subject dropped, which is the usual way"
+        },
+        {
+          "display": "Jeo-neun naeil an ilhal geoyeyo.",
+          "script": "저는 내일 안 일할 거예요.",
+          "cue": "I will not work tomorrow.",
+          "changed": "the negative, with an in front of the verb"
+        },
+        {
+          "display": "Jeo-neun oneul ilhaeyo.",
+          "script": "저는 오늘 일해요.",
+          "cue": "I am working today.",
+          "changed": "today in the present, next to tomorrow in the future"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun naeil-e ilhal geoyeyo.",
+        "script": "저는 내일에 일할 거예요.",
+        "why": "-e has been put on naeil. It is one of the bare time words and never takes it, in any tense."
+      },
+      "usage": "Saying what your tomorrow holds.",
+      "register": "neutral",
+      "mnemonic": "Days stand bare; hours wear the marker."
+    },
+    {
+      "id": "L1-M6-S04",
+      "display": "Naeil bap-eul meogeul geoyeyo.",
+      "script": "내일 밥을 먹을 거예요.",
+      "cue": "I will eat tomorrow.",
+      "glossEn": "I am going to eat a meal tomorrow.",
+      "literal": "tomorrow meal-object eat-thing-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "naeil",
+            "script": "내일",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [
+              "naeil",
+              "naeil-eun"
+            ],
+            "note": "'Tomorrow'. Like oneul, eoje and maeil it takes NO point-in-time marker. With the topic marker, naeil-eun, it sets tomorrow apart from the days around it."
+          },
+          {
+            "display": "bap",
+            "script": "밥",
+            "cue": "rice · a meal",
+            "tag": "free",
+            "forms": [
+              "bap",
+              "bap-eul"
+            ],
+            "note": "'A meal', from M3."
+          },
+          {
+            "display": "meogeoyo",
+            "script": "먹어요",
+            "cue": "eat",
+            "tag": "free",
+            "forms": [
+              "meogeoyo",
+              "meogeul"
+            ],
+            "note": "'Eat'. In front of geoyeyo the verb takes -eul because the stem ends in a consonant: meogeul geoyeyo. A stem ending in a vowel takes only -l, as gal does."
+          },
+          {
+            "display": "geoyeyo",
+            "script": "거예요",
+            "cue": "will · am going to",
+            "tag": "delta",
+            "forms": [
+              "geoyeyo"
+            ],
+            "note": "The second half of the future, and it is worth knowing what it is made of: geo means 'thing', and -yeyo is M1's copula. So gal geoyeyo is, piece by piece, 'it is a thing-that-will-be-gone'. That is why the future ends in the copula and why there is no word here corresponding to English 'will'."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "The verb takes -eul here and only -l in gal geoyeyo, and the difference is the same one that runs through the whole course: a consonant-final stem takes the longer shape, a vowel-final stem the shorter.",
+      "sound": "NAE-il BA-bul MUH-gul GUH-ye-yo. Two -eul-ish syllables in a row — bap-eul and meogeul — and they are doing completely different jobs: one is a marker on a noun, the other is part of the verb.",
+      "variations": [
+        {
+          "display": "Naeil cha-reul masil geoyeyo.",
+          "script": "내일 차를 마실 거예요.",
+          "cue": "I will drink tea tomorrow.",
+          "changed": "a vowel-final stem, so the shorter -l"
+        },
+        {
+          "display": "Naeil bap-eul meogeoyo.",
+          "script": "내일 밥을 먹어요.",
+          "cue": "I am eating tomorrow.",
+          "changed": "the present as a future again"
+        },
+        {
+          "display": "Naeil bap-eul an meogeul geoyeyo.",
+          "script": "내일 밥을 안 먹을 거예요.",
+          "cue": "I will not eat tomorrow.",
+          "changed": "the negative in front of the verb"
+        }
+      ],
+      "mistake": {
+        "display": "Naeil bap-eul meokgo geoyeyo.",
+        "script": "내일 밥을 먹고 거예요.",
+        "why": "The -go shape from M3's meokgo sipeoyo has been used instead. Each construction takes its own shape of the verb, and geoyeyo wants -(eu)l."
+      },
+      "usage": "Saying what you will eat, or that you will.",
+      "register": "neutral",
+      "mnemonic": "One rule, two shapes, chosen by the sound before it."
+    },
+    {
+      "id": "L1-M6-S05",
+      "display": "Naeil gayo.",
+      "script": "내일 가요.",
+      "cue": "I am going tomorrow.",
+      "glossEn": "I am going tomorrow.",
+      "literal": "tomorrow go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "naeil",
+            "script": "내일",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [
+              "naeil",
+              "naeil-eun"
+            ],
+            "note": "'Tomorrow'. Like oneul, eoje and maeil it takes NO point-in-time marker. With the topic marker, naeil-eun, it sets tomorrow apart from the days around it."
+          },
+          {
+            "display": "gayo",
+            "script": "가요",
+            "cue": "go",
+            "tag": "free",
+            "forms": [
+              "gayo",
+              "gal"
+            ],
+            "note": "'Go'. The stem is ga-, so the -yo form is just gayo — the stem's own a swallows the ending's, exactly as jayo does. gal is the shape it takes in front of geoyeyo, and it is the same verb."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Nothing here is future except the word naeil, and that is enough. English cannot do this — 'I go tomorrow' is stilted — so the temptation is to add machinery Korean does not want.",
+      "sound": "NAE-il GA-yo. Two words, three beats, and this is the shortest complete plan you can state in Korean.",
+      "variations": [
+        {
+          "display": "Naeil gal geoyeyo.",
+          "script": "내일 갈 거예요.",
+          "cue": "I will go tomorrow.",
+          "changed": "the fuller future — a little less settled, a little more of an intention"
+        },
+        {
+          "display": "Oneul gayo.",
+          "script": "오늘 가요.",
+          "cue": "I am going today.",
+          "changed": "the same sentence about today, where it is simply a present"
+        },
+        {
+          "display": "Naeil hanguk-e gayo.",
+          "script": "내일 한국에 가요.",
+          "cue": "I am going to Korea tomorrow.",
+          "changed": "a destination added, with -e"
+        }
+      ],
+      "mistake": {
+        "display": "Naeil gal-geoyeyo gayo.",
+        "script": "내일 갈거예요 가요.",
+        "why": "Both futures have been used at once. Either the time word carries it or geoyeyo does; using both leaves two verbs in one clause."
+      },
+      "usage": "Stating a plan that is already settled.",
+      "register": "neutral",
+      "mnemonic": "A time word is a tense, if you let it be one."
+    },
+    {
+      "id": "L1-M6-S06",
+      "display": "Naeil hangungmal-eul baeul geoyeyo.",
+      "script": "내일 한국말을 배울 거예요.",
+      "cue": "I will learn Korean tomorrow.",
+      "glossEn": "I am going to study Korean tomorrow.",
+      "literal": "tomorrow Korean-object learn-thing-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "naeil",
+            "script": "내일",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [
+              "naeil",
+              "naeil-eun"
+            ],
+            "note": "'Tomorrow'. Like oneul, eoje and maeil it takes NO point-in-time marker. With the topic marker, naeil-eun, it sets tomorrow apart from the days around it."
+          },
+          {
+            "display": "hangungmal",
+            "script": "한국말",
+            "cue": "the Korean language",
+            "tag": "free",
+            "forms": [
+              "hangungmal",
+              "hangungmal-eul"
+            ],
+            "note": "'Korean', the language, from M1."
+          },
+          {
+            "display": "baewoyo",
+            "script": "배워요",
+            "cue": "learn",
+            "tag": "free",
+            "forms": [
+              "baewoyo",
+              "baeul"
+            ],
+            "note": "'Learn'. Stem baeu-, vowel-final, so the future shape is baeul."
+          },
+          {
+            "display": "geoyeyo",
+            "script": "거예요",
+            "cue": "will · am going to",
+            "tag": "delta",
+            "forms": [
+              "geoyeyo"
+            ],
+            "note": "The second half of the future, and it is worth knowing what it is made of: geo means 'thing', and -yeyo is M1's copula. So gal geoyeyo is, piece by piece, 'it is a thing-that-will-be-gone'. That is why the future ends in the copula and why there is no word here corresponding to English 'will'."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "baeul, not baewol. The shape in front of geoyeyo is built on the plain stem baeu-, not on the contracted baewoyo — so the w that appeared in the -yo form is not there.",
+      "sound": "NAE-il han-GOONG-ma-rul BAE-ul GUH-ye-yo. baeul is two beats, bae and ul, and it is easy to slur into one; keeping them apart is what keeps the future audible.",
+      "variations": [
+        {
+          "display": "Naeil hangungmal-eul baewoyo.",
+          "script": "내일 한국말을 배워요.",
+          "cue": "I am learning Korean tomorrow.",
+          "changed": "the present as a future"
+        },
+        {
+          "display": "Naeil-eun hangungmal-eul baeul geoyeyo.",
+          "script": "내일은 한국말을 배울 거예요.",
+          "cue": "Tomorrow I will study Korean.",
+          "changed": "tomorrow set apart with the topic marker"
+        },
+        {
+          "display": "Minsu-neun naeil hangungmal-eul baeul geoyeyo.",
+          "script": "민수는 내일 한국말을 배울 거예요.",
+          "cue": "Minsu will study Korean tomorrow.",
+          "changed": "a different learner"
+        }
+      ],
+      "mistake": {
+        "display": "Naeil hangungmal-eul baewol geoyeyo.",
+        "script": "내일 한국말을 배월 거예요.",
+        "why": "The contracted -yo form has been used as the base. The future is built on the stem, so the w disappears: baeul."
+      },
+      "usage": "Talking about what you plan to study.",
+      "register": "neutral",
+      "mnemonic": "Build the future on the stem, not on the form you say most often."
+    },
+    {
+      "id": "L1-M6-S07",
+      "display": "Minsu-neun naeil an gal geoyeyo.",
+      "script": "민수는 내일 안 갈 거예요.",
+      "cue": "Minsu will not go tomorrow.",
+      "glossEn": "Minsu is not going to go tomorrow.",
+      "literal": "Minsu-topic tomorrow not go-thing-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Minsu",
+            "script": "민수",
+            "cue": "Minsu (a name)",
+            "tag": "free",
+            "forms": [
+              "Minsu",
+              "Minsu-neun"
+            ],
+            "note": "A man's given name, from M1."
+          },
+          {
+            "display": "naeil",
+            "script": "내일",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [
+              "naeil",
+              "naeil-eun"
+            ],
+            "note": "'Tomorrow'. Like oneul, eoje and maeil it takes NO point-in-time marker. With the topic marker, naeil-eun, it sets tomorrow apart from the days around it."
+          },
+          {
+            "display": "an",
+            "script": "안",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [
+              "an"
+            ],
+            "note": "'Not', from M3. In the future it still goes immediately in front of the verb, and with a verb built from a noun it still wedges between the halves: gongbu an hal geoyeyo."
+          },
+          {
+            "display": "gayo",
+            "script": "가요",
+            "cue": "go",
+            "tag": "free",
+            "forms": [
+              "gayo",
+              "gal"
+            ],
+            "note": "'Go'. The stem is ga-, so the -yo form is just gayo — the stem's own a swallows the ending's, exactly as jayo does. gal is the shape it takes in front of geoyeyo, and it is the same verb."
+          },
+          {
+            "display": "geoyeyo",
+            "script": "거예요",
+            "cue": "will · am going to",
+            "tag": "delta",
+            "forms": [
+              "geoyeyo"
+            ],
+            "note": "The second half of the future, and it is worth knowing what it is made of: geo means 'thing', and -yeyo is M1's copula. So gal geoyeyo is, piece by piece, 'it is a thing-that-will-be-gone'. That is why the future ends in the copula and why there is no word here corresponding to English 'will'."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "an goes in front of the verb SHAPE, not in front of geoyeyo. English fuses the negative into the future — 'will not' — and Korean keeps them in separate places: the negative belongs to the going, and geoyeyo only says that the going is a thing that will be.",
+      "sound": "MIN-soo-nun NAE-il an gal GUH-ye-yo. an leans onto gal so the two come out as an-gal, one beat each, and geoyeyo follows.",
+      "variations": [
+        {
+          "display": "Naeil an gal geoyeyo.",
+          "script": "내일 안 갈 거예요.",
+          "cue": "I will not go tomorrow.",
+          "changed": "the subject dropped"
+        },
+        {
+          "display": "Minsu-neun naeil gal geoyeyo.",
+          "script": "민수는 내일 갈 거예요.",
+          "cue": "Minsu will go tomorrow.",
+          "changed": "the positive"
+        },
+        {
+          "display": "Minsu-neun naeil an gayo.",
+          "script": "민수는 내일 안 가요.",
+          "cue": "Minsu is not going tomorrow.",
+          "changed": "the present as a future, negated the same way"
+        }
+      ],
+      "mistake": {
+        "display": "Minsu-neun naeil gal an geoyeyo.",
+        "script": "민수는 내일 갈 안 거예요.",
+        "why": "The negative has been put between the verb shape and geoyeyo, as if it belonged to the 'will'. It belongs to the verb, and nothing may separate gal from geoyeyo."
+      },
+      "usage": "Saying what somebody is not going to do.",
+      "register": "neutral",
+      "mnemonic": "Negate the going, not the will."
+    },
+    {
+      "id": "L1-M6-S08",
+      "display": "Naeil cha-reul masil geoyeyo?",
+      "script": "내일 차를 마실 거예요?",
+      "cue": "Will you drink tea tomorrow?",
+      "glossEn": "Are you going to drink tea tomorrow?",
+      "literal": "tomorrow tea-object drink-thing-is?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "naeil",
+            "script": "내일",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [
+              "naeil",
+              "naeil-eun"
+            ],
+            "note": "'Tomorrow'. Like oneul, eoje and maeil it takes NO point-in-time marker. With the topic marker, naeil-eun, it sets tomorrow apart from the days around it."
+          },
+          {
+            "display": "cha",
+            "script": "차",
+            "cue": "tea",
+            "tag": "free",
+            "forms": [
+              "cha",
+              "cha-reul"
+            ],
+            "note": "'Tea', from M1."
+          },
+          {
+            "display": "masyeoyo",
+            "script": "마셔요",
+            "cue": "drink",
+            "tag": "free",
+            "forms": [
+              "masyeoyo",
+              "masil"
+            ],
+            "note": "'Drink'. The stem masi- ends in a vowel, so the future shape is masil — one letter, not a syllable."
+          },
+          {
+            "display": "geoyeyo",
+            "script": "거예요",
+            "cue": "will · am going to",
+            "tag": "delta",
+            "forms": [
+              "geoyeyo"
+            ],
+            "note": "The second half of the future, and it is worth knowing what it is made of: geo means 'thing', and -yeyo is M1's copula. So gal geoyeyo is, piece by piece, 'it is a thing-that-will-be-gone'. That is why the future ends in the copula and why there is no word here corresponding to English 'will'."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "The question is made by the voice, as it has been since M2. The future does not change that — nothing is added and nothing is turned around, however long the verb has become.",
+      "sound": "NAE-il CHA-rul ma-SHIL GUH-ye-yo, rising on the last syllable. masil keeps the stem's i clearly, unlike the -yo form masyeoyo where it disappeared.",
+      "variations": [
+        {
+          "display": "Naeil cha-reul masil geoyeyo.",
+          "script": "내일 차를 마실 거예요.",
+          "cue": "I will drink tea tomorrow.",
+          "changed": "said flat, it is the answer"
+        },
+        {
+          "display": "Naeil keopi-reul masil geoyeyo?",
+          "script": "내일 커피를 마실 거예요?",
+          "cue": "Will you drink coffee tomorrow?",
+          "changed": "a different drink"
+        },
+        {
+          "display": "Oneul cha-reul masyeoyo?",
+          "script": "오늘 차를 마셔요?",
+          "cue": "Are you drinking tea today?",
+          "changed": "today, in the present"
+        }
+      ],
+      "mistake": {
+        "display": "Naeil cha-reul masil geoyeyo-kka?",
+        "script": "내일 차를 마실 거예요까?",
+        "why": "A syllable has been added to build the question. There is a real Korean question ending that looks a little like this, and it belongs to the formal style this course does not teach — here, the voice does the work."
+      },
+      "usage": "Asking about somebody's plans.",
+      "register": "neutral",
+      "mnemonic": "However long the verb gets, the question is still only a rise."
+    },
+    {
+      "id": "L1-M6-S09",
+      "display": "Naeil-eun gongbu an hal geoyeyo.",
+      "script": "내일은 공부 안 할 거예요.",
+      "cue": "Tomorrow I will not study.",
+      "glossEn": "As for tomorrow, I am not going to study.",
+      "literal": "tomorrow-topic study not do-thing-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "naeil",
+            "script": "내일",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [
+              "naeil",
+              "naeil-eun"
+            ],
+            "note": "'Tomorrow'. Like oneul, eoje and maeil it takes NO point-in-time marker. With the topic marker, naeil-eun, it sets tomorrow apart from the days around it."
+          },
+          {
+            "display": "gongbu",
+            "script": "공부",
+            "cue": "study",
+            "tag": "free",
+            "forms": [
+              "gongbu"
+            ],
+            "note": "'Study' as a noun, from M4 — still a noun, so it never takes a tense of its own. Everything happens to the verb behind it."
+          },
+          {
+            "display": "an",
+            "script": "안",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [
+              "an"
+            ],
+            "note": "'Not', from M3. In the future it still goes immediately in front of the verb, and with a verb built from a noun it still wedges between the halves: gongbu an hal geoyeyo."
+          },
+          {
+            "display": "haeyo",
+            "script": "해요",
+            "cue": "do",
+            "tag": "free",
+            "forms": [
+              "haeyo",
+              "hal"
+            ],
+            "note": "'Do', from M4. Its future shape is hal, and because so many verbs are built on this one, hal is the shape you will see most often in front of geoyeyo."
+          },
+          {
+            "display": "geoyeyo",
+            "script": "거예요",
+            "cue": "will · am going to",
+            "tag": "delta",
+            "forms": [
+              "geoyeyo"
+            ],
+            "note": "The second half of the future, and it is worth knowing what it is made of: geo means 'thing', and -yeyo is M1's copula. So gal geoyeyo is, piece by piece, 'it is a thing-that-will-be-gone'. That is why the future ends in the copula and why there is no word here corresponding to English 'will'."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "Three things stack here and each one you have already met: the topic marker setting tomorrow apart, the split of a verb built from a noun, and the future built on the verb half. Nothing new — but they have never been in one sentence before.",
+      "sound": "NAE-i-run GONG-boo an HAL GUH-ye-yo. The l of naeil links into -eun, giving nae-i-run, and then an leans onto hal. Five words, and only two real pauses.",
+      "variations": [
+        {
+          "display": "Naeil gongbu an hal geoyeyo.",
+          "script": "내일 공부 안 할 거예요.",
+          "cue": "Tomorrow I will not study.",
+          "changed": "without the topic marker — a plain statement rather than a contrast"
+        },
+        {
+          "display": "Naeil-eun il an hal geoyeyo.",
+          "script": "내일은 일 안 할 거예요.",
+          "cue": "Tomorrow I will not work.",
+          "changed": "the same split on the other noun-plus-haeyo verb"
+        },
+        {
+          "display": "Naeil-eun gongbuhal geoyeyo.",
+          "script": "내일은 공부할 거예요.",
+          "cue": "Tomorrow I will study.",
+          "changed": "the positive — and the verb closes back into one word"
+        }
+      ],
+      "mistake": {
+        "display": "Naeil-eun an gongbuhal geoyeyo.",
+        "script": "내일은 안 공부할 거예요.",
+        "why": "an has been put in front of the whole verb. A verb made from a noun takes it between the halves, in the future exactly as in the present and the past."
+      },
+      "usage": "Saying what tomorrow will not hold.",
+      "register": "neutral",
+      "mnemonic": "The split survives every tense this course teaches."
+    },
+    {
+      "id": "L1-M6-S10",
+      "display": "Jeo-neun naeil hanguk-e gayo.",
+      "script": "저는 내일 한국에 가요.",
+      "cue": "I am going to Korea tomorrow.",
+      "glossEn": "I am going to Korea tomorrow.",
+      "literal": "I-topic tomorrow Korea-to go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeo",
+            "script": "저",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [
+              "jeo",
+              "jeo-neun"
+            ],
+            "note": "'I', from M1."
+          },
+          {
+            "display": "naeil",
+            "script": "내일",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [
+              "naeil",
+              "naeil-eun"
+            ],
+            "note": "'Tomorrow'. Like oneul, eoje and maeil it takes NO point-in-time marker. With the topic marker, naeil-eun, it sets tomorrow apart from the days around it."
+          },
+          {
+            "display": "hanguk",
+            "script": "한국",
+            "cue": "Korea",
+            "tag": "free",
+            "forms": [
+              "hanguk",
+              "hanguk-e"
+            ],
+            "note": "'Korea', from M1, and here it is where you are going, so it takes -e."
+          },
+          {
+            "display": "-e",
+            "script": "-에",
+            "cue": "to · at",
+            "tag": "delta",
+            "forms": [
+              "-e"
+            ],
+            "note": "The same marker M4 used for a point in time, now marking a destination: hanguk-e gayo, 'I go to Korea'. One ending, one job — putting something at a point — and the point can be an hour or a place."
+          },
+          {
+            "display": "gayo",
+            "script": "가요",
+            "cue": "go",
+            "tag": "free",
+            "forms": [
+              "gayo",
+              "gal"
+            ],
+            "note": "'Go'. The stem is ga-, so the -yo form is just gayo — the stem's own a swallows the ending's, exactly as jayo does. gal is the shape it takes in front of geoyeyo, and it is the same verb."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "This is the same plan as the module's first sentence, said the shorter way. The plain present is warmer and more settled; gal geoyeyo is a shade more like an intention. Neither is wrong, and a learner should be able to say both.",
+      "sound": "juh-nun NAE-il HAN-goo-ge GA-yo. The whole thing is five beats after the subject and it is the shortest way to state a trip.",
+      "variations": [
+        {
+          "display": "Naeil hanguk-e gayo.",
+          "script": "내일 한국에 가요.",
+          "cue": "I am going to Korea tomorrow.",
+          "changed": "the subject dropped"
+        },
+        {
+          "display": "Jeo-neun naeil hanguk-e gal geoyeyo.",
+          "script": "저는 내일 한국에 갈 거예요.",
+          "cue": "I will go to Korea tomorrow.",
+          "changed": "the fuller future, for comparison"
+        },
+        {
+          "display": "Jeo-neun oneul hanguk-e gayo.",
+          "script": "저는 오늘 한국에 가요.",
+          "cue": "I am going to Korea today.",
+          "changed": "today, where the same words are simply a present"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun naeil hanguk gayo.",
+        "script": "저는 내일 한국 가요.",
+        "why": "The destination marker has been dropped. In quick speech Koreans do drop it, but while you are learning it is the only thing saying Korea is where you are going rather than something else about Korea."
+      },
+      "usage": "Telling somebody your travel plans.",
+      "register": "neutral",
+      "mnemonic": "Two futures, one plan, and the short one is the commoner."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M6-C01",
+      "display": "Naeil hanguk-e gal geoyeyo.",
+      "script": "내일 한국에 갈 거예요.",
+      "cue": "I will go to Korea tomorrow."
+    },
+    {
+      "id": "L1-M6-C02",
+      "display": "Naeil bap-eul meogeul geoyeyo.",
+      "script": "내일 밥을 먹을 거예요.",
+      "cue": "I will eat tomorrow."
+    },
+    {
+      "id": "L1-M6-C03",
+      "display": "Minsu-neun naeil ilhal geoyeyo.",
+      "script": "민수는 내일 일할 거예요.",
+      "cue": "Minsu will work tomorrow."
+    },
+    {
+      "id": "L1-M6-C04",
+      "display": "Naeil-eun gongbuhal geoyeyo.",
+      "script": "내일은 공부할 거예요.",
+      "cue": "Tomorrow I will study."
+    },
+    {
+      "id": "L1-M6-C05",
+      "display": "Naeil cha-reul masil geoyeyo.",
+      "script": "내일 차를 마실 거예요.",
+      "cue": "I will drink tea tomorrow."
+    },
+    {
+      "id": "L1-M6-C06",
+      "display": "Jeo-neun naeil an gal geoyeyo.",
+      "script": "저는 내일 안 갈 거예요.",
+      "cue": "I will not go tomorrow."
+    },
+    {
+      "id": "L1-M6-C07",
+      "display": "Naeil hangungmal-eul baeul geoyeyo?",
+      "script": "내일 한국말을 배울 거예요?",
+      "cue": "Will you study Korean tomorrow?"
+    },
+    {
+      "id": "L1-M6-C08",
+      "display": "Oneul-eun ilhaeyo. Naeil-eun an ilhal geoyeyo.",
+      "script": "오늘은 일해요. 내일은 안 일할 거예요.",
+      "cue": "Today I am working. Tomorrow I will not work."
+    },
+    {
+      "id": "L1-M6-C09",
+      "display": "Minsu-neun naeil hanguk-e gayo.",
+      "script": "민수는 내일 한국에 가요.",
+      "cue": "Minsu is going to Korea tomorrow."
+    },
+    {
+      "id": "L1-M6-C10",
+      "display": "Naeil gongbu an hal geoyeyo.",
+      "script": "내일 공부 안 할 거예요.",
+      "cue": "Tomorrow I will not study."
+    },
+    {
+      "id": "L1-M6-C11",
+      "display": "Naeil keopi-reul masil geoyeyo.",
+      "script": "내일 커피를 마실 거예요.",
+      "cue": "I will drink coffee tomorrow."
+    },
+    {
+      "id": "L1-M6-C12",
+      "display": "Oneul an gayo. Naeil gal geoyeyo.",
+      "script": "오늘 안 가요. 내일 갈 거예요.",
+      "cue": "I am not going today. I will go tomorrow."
+    },
+    {
+      "id": "L1-M6-C13",
+      "display": "Naeil bap-eul an meogeul geoyeyo.",
+      "script": "내일 밥을 안 먹을 거예요.",
+      "cue": "I will not eat tomorrow."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

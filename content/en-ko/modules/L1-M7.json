@@ -1,0 +1,1033 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M7",
+  "title": "Where things are",
+  "job": "Locations and prepositions",
+  "prerequisites": [
+    "L1-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 6,
+    "allowedTenses": [
+      "simple_present",
+      "simple_future"
+    ],
+    "allowedPatterns": [
+      "N-i/ga + <place>-e + isseoyo",
+      "N-eun/neun + eodi-e isseoyo + ?",
+      "<place>-eseo + V-ayo/-eoyo",
+      "N-i/ga + <N> wi-e / yeop-e + isseoyo",
+      "<place>-e + gal geoyeyo",
+      "<place>-e + N-i/ga + eopseoyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "-e and -eseo split one English word by what the sentence is DOING. -e marks where something is, or where it is going. -eseo marks where an action takes place. hakgyo-e isseoyo, 'I am at school'; hakgyo-eseo gongbuhaeyo, 'I study at school'. English uses 'at' for both, so nothing in your own language warns you which one is needed — look at the verb."
+    },
+    {
+      "tag": "delta",
+      "text": "A place you are going to takes -e, never -eseo: hakgyo-e gayo. Going is not an action that happens AT the school; the school is the point you end up at, and -e is the marker for a point."
+    },
+    {
+      "tag": "delta",
+      "text": "isseoyo does the work English splits between 'there is' and 'is at'. A thing at a place simply exists at that place, so the verb you learned for having and existing is the same one you use for location — and eopseoyo says the same thing about something absent."
+    },
+    {
+      "tag": "delta",
+      "text": "Position words are NOUNS. wi is 'the top', yeop is 'the side', and they follow the thing they belong to and then take their own marker: chaeksang wi-e, 'desk top-at'. English puts a preposition in front of the noun; Korean puts a noun behind it and marks the pair."
+    },
+    {
+      "tag": "free",
+      "text": "eodi ('where') behaves like any other place: it takes -e and it sits where a place sits. The question is still made by the voice alone — eodi-e isseoyo? — and nothing about the word order changes."
+    },
+    {
+      "tag": "free",
+      "text": "What exists takes -i or -ga, not the object marker. chaek-i chaeksang wi-e isseoyo. Nothing is being acted on in a sentence about location, so there is no object for -eul or -reul to mark."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M7-S01",
+      "display": "Jeo-neun jip-e isseoyo.",
+      "script": "저는 집에 있어요.",
+      "cue": "I am at home.",
+      "glossEn": "I am at home.",
+      "literal": "I-topic home-at exist",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeo",
+            "script": "저",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [
+              "jeo",
+              "jeo-neun"
+            ],
+            "note": "'I', from M1."
+          },
+          {
+            "display": "jip",
+            "script": "집",
+            "cue": "house · home",
+            "tag": "free",
+            "forms": [
+              "jip",
+              "jip-e",
+              "jip-eseo"
+            ],
+            "note": "'House', and 'home' — Korean does not separate the building from the idea of home, so jip-e gayo is 'I am going home'."
+          },
+          {
+            "display": "-e",
+            "script": "-에",
+            "cue": "at · in · to (a place)",
+            "tag": "delta",
+            "forms": [
+              "-e"
+            ],
+            "note": "The same marker again, now marking where something IS or where it is going: jip-e isseoyo, hakgyo-e gayo. One ending, one job — putting something at a point — whether the point is an hour or a house."
+          },
+          {
+            "display": "isseoyo",
+            "script": "있어요",
+            "cue": "there is · is (somewhere)",
+            "tag": "delta",
+            "forms": [
+              "isseoyo"
+            ],
+            "note": "'There is', from M3 — and it is also the verb of being somewhere. Korean does not have a separate verb for location: a thing that is at a place simply exists at that place, which is why the same word does both jobs."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "The verb here is the one you learned for 'there is' and 'I have'. English changes verb entirely for location — 'I am at home' — and Korean does not: being somewhere is existing at that point.",
+      "sound": "juh-nun JI-be i-SSUH-yo. The p of jip softens to a b in front of -e, so it is heard as ji-be. The word is still jip, which is why it is written that way here.",
+      "variations": [
+        {
+          "display": "Jeo-neun hakgyo-e isseoyo.",
+          "script": "저는 학교에 있어요.",
+          "cue": "I am at school.",
+          "changed": "a different place, same marker"
+        },
+        {
+          "display": "Minsu-neun jip-e isseoyo.",
+          "script": "민수는 집에 있어요.",
+          "cue": "Minsu is at home.",
+          "changed": "somebody else, same shape"
+        },
+        {
+          "display": "Jeo-neun jip-e eopseoyo.",
+          "script": "저는 집에 없어요.",
+          "cue": "I am not at home.",
+          "changed": "the absence verb doing the location job"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun jip-eseo isseoyo.",
+        "script": "저는 집에서 있어요.",
+        "why": "-eseo has been used for simply being somewhere. Existing is not an action, so it takes -e; -eseo waits for a verb that does something."
+      },
+      "usage": "Saying where you are.",
+      "register": "neutral",
+      "mnemonic": "Being somewhere is existing at a point."
+    },
+    {
+      "id": "L1-M7-S02",
+      "display": "Chingu-ga hakgyo-e isseoyo.",
+      "script": "친구가 학교에 있어요.",
+      "cue": "My friend is at school.",
+      "glossEn": "A friend is at school.",
+      "literal": "friend-subject school-at exists",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chingu",
+            "script": "친구",
+            "cue": "friend",
+            "tag": "free",
+            "forms": [
+              "chingu",
+              "chingu-ga"
+            ],
+            "note": "'Friend', from M1, as the one who is somewhere."
+          },
+          {
+            "display": "hakgyo",
+            "script": "학교",
+            "cue": "school",
+            "tag": "free",
+            "forms": [
+              "hakgyo",
+              "hakgyo-e",
+              "hakgyo-eseo"
+            ],
+            "note": "'School' — hak, the same piece that begins haksaeng, plus gyo. Written hakgyo because the g tenses after the k, which is how it is said."
+          },
+          {
+            "display": "-e",
+            "script": "-에",
+            "cue": "at · in · to (a place)",
+            "tag": "delta",
+            "forms": [
+              "-e"
+            ],
+            "note": "The same marker again, now marking where something IS or where it is going: jip-e isseoyo, hakgyo-e gayo. One ending, one job — putting something at a point — whether the point is an hour or a house."
+          },
+          {
+            "display": "isseoyo",
+            "script": "있어요",
+            "cue": "there is · is (somewhere)",
+            "tag": "delta",
+            "forms": [
+              "isseoyo"
+            ],
+            "note": "'There is', from M3 — and it is also the verb of being somewhere. Korean does not have a separate verb for location: a thing that is at a place simply exists at that place, which is why the same word does both jobs."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "The friend takes -ga, not -neun. What exists somewhere is being pointed at rather than talked about, and -i/-ga is the marker for pointing — this is the module where the subject marker finally does its own job.",
+      "sound": "CHIN-goo-ga HAK-gyo-e i-SSUH-yo. hakgyo has a tense g after the k, so it is hak-kyo rather than hak-gyo — the same tensing that turns haksaeng into hak-ssaeng.",
+      "variations": [
+        {
+          "display": "Chingu-ga jip-e isseoyo.",
+          "script": "친구가 집에 있어요.",
+          "cue": "My friend is at home.",
+          "changed": "a different place"
+        },
+        {
+          "display": "Chingu-ga hakgyo-e eopseoyo.",
+          "script": "친구가 학교에 없어요.",
+          "cue": "My friend is not at school.",
+          "changed": "the absence verb"
+        },
+        {
+          "display": "Minsu-ga hakgyo-e isseoyo.",
+          "script": "민수가 학교에 있어요.",
+          "cue": "Minsu is at school.",
+          "changed": "a name in the same slot, taking -ga after the vowel"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-reul hakgyo-e isseoyo.",
+        "script": "친구를 학교에 있어요.",
+        "why": "The object marker has been used again for something that is not an object. Nothing is being acted on; the friend simply is somewhere, so the marker is -ga."
+      },
+      "usage": "Saying where somebody is.",
+      "register": "neutral",
+      "mnemonic": "Whoever is there gets -i or -ga."
+    },
+    {
+      "id": "L1-M7-S03",
+      "display": "Hakgyo-eseo gongbuhaeyo.",
+      "script": "학교에서 공부해요.",
+      "cue": "I study at school.",
+      "glossEn": "I study at school.",
+      "literal": "school-at study-do",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hakgyo",
+            "script": "학교",
+            "cue": "school",
+            "tag": "free",
+            "forms": [
+              "hakgyo",
+              "hakgyo-e",
+              "hakgyo-eseo"
+            ],
+            "note": "'School' — hak, the same piece that begins haksaeng, plus gyo. Written hakgyo because the g tenses after the k, which is how it is said."
+          },
+          {
+            "display": "-eseo",
+            "script": "-에서",
+            "cue": "at (where something happens)",
+            "tag": "interference",
+            "forms": [
+              "-eseo"
+            ],
+            "note": "The other place marker, and the one English has no separate word for: -eseo marks where an ACTION happens. hakgyo-e isseoyo is 'I am at school'; hakgyo-eseo gongbuhaeyo is 'I study at school'. The test is the verb, not the place — existing takes -e, doing takes -eseo."
+          },
+          {
+            "display": "gongbuhaeyo",
+            "script": "공부해요",
+            "cue": "study",
+            "tag": "free",
+            "forms": [
+              "gongbuhaeyo",
+              "gongbuhal"
+            ],
+            "note": "'Study', from M4."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "This is the sentence that makes the split visible: the same school, one letter more on the marker, and the difference is that something is being DONE there. English gives you no warning at all, because it says 'at school' both times.",
+      "sound": "HAK-gyo-e-suh GONG-boo-HAE-yo. -eseo is two beats where -e was one, and that extra beat is the whole distinction — worth over-saying while it is new.",
+      "variations": [
+        {
+          "display": "Jip-eseo gongbuhaeyo.",
+          "script": "집에서 공부해요.",
+          "cue": "I study at home.",
+          "changed": "a different place for the same action"
+        },
+        {
+          "display": "Hakgyo-e isseoyo.",
+          "script": "학교에 있어요.",
+          "cue": "I am at school.",
+          "changed": "the other marker, with the verb that only exists"
+        },
+        {
+          "display": "Hakgyo-eseo bap-eul meogeoyo.",
+          "script": "학교에서 밥을 먹어요.",
+          "cue": "I eat at school.",
+          "changed": "another action, so -eseo again"
+        }
+      ],
+      "mistake": {
+        "display": "Hakgyo-e gongbuhaeyo.",
+        "script": "학교에 공부해요.",
+        "why": "-e has been used with an action verb. Studying happens AT the school, and that is exactly what -eseo is for."
+      },
+      "usage": "Saying where you do something.",
+      "register": "neutral",
+      "mnemonic": "If something is happening there, the marker grows."
+    },
+    {
+      "id": "L1-M7-S04",
+      "display": "Jip-eseo bap-eul meogeoyo.",
+      "script": "집에서 밥을 먹어요.",
+      "cue": "I eat at home.",
+      "glossEn": "I eat at home.",
+      "literal": "home-at meal-object eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jip",
+            "script": "집",
+            "cue": "house · home",
+            "tag": "free",
+            "forms": [
+              "jip",
+              "jip-e",
+              "jip-eseo"
+            ],
+            "note": "'House', and 'home' — Korean does not separate the building from the idea of home, so jip-e gayo is 'I am going home'."
+          },
+          {
+            "display": "-eseo",
+            "script": "-에서",
+            "cue": "at (where something happens)",
+            "tag": "interference",
+            "forms": [
+              "-eseo"
+            ],
+            "note": "The other place marker, and the one English has no separate word for: -eseo marks where an ACTION happens. hakgyo-e isseoyo is 'I am at school'; hakgyo-eseo gongbuhaeyo is 'I study at school'. The test is the verb, not the place — existing takes -e, doing takes -eseo."
+          },
+          {
+            "display": "bap",
+            "script": "밥",
+            "cue": "rice · a meal",
+            "tag": "free",
+            "forms": [
+              "bap",
+              "bap-eul"
+            ],
+            "note": "'A meal', from M3."
+          },
+          {
+            "display": "meogeoyo",
+            "script": "먹어요",
+            "cue": "eat",
+            "tag": "free",
+            "forms": [
+              "meogeoyo"
+            ],
+            "note": "'Eat', from M3."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "Two markers in one sentence doing two different jobs: -eseo on the place where it happens, -eul on the thing being eaten. Neither can stand in for the other, and both are needed.",
+      "sound": "JI-be-suh BA-bul MUH-guh-yo. The liaison happens twice more — jip runs into -eseo, bap into -eul — so the sentence flows as ji-be-suh ba-bul muh-guh-yo.",
+      "variations": [
+        {
+          "display": "Hakgyo-eseo bap-eul meogeoyo.",
+          "script": "학교에서 밥을 먹어요.",
+          "cue": "I eat at school.",
+          "changed": "a different place for the same meal"
+        },
+        {
+          "display": "Jip-eseo ilhaeyo.",
+          "script": "집에서 일해요.",
+          "cue": "I work at home.",
+          "changed": "a different action in the same place"
+        },
+        {
+          "display": "Jip-e bap-i isseoyo.",
+          "script": "집에 밥이 있어요.",
+          "cue": "There is food at home.",
+          "changed": "existence rather than action — so -e comes back"
+        }
+      ],
+      "mistake": {
+        "display": "Jip-e bap-eul meogeoyo.",
+        "script": "집에 밥을 먹어요.",
+        "why": "-e again with an action. The eating happens at home, and an action's place takes -eseo."
+      },
+      "usage": "Describing where your routine happens.",
+      "register": "neutral",
+      "mnemonic": "Existence takes the short marker, action the long one."
+    },
+    {
+      "id": "L1-M7-S05",
+      "display": "Chaek-i chaeksang wi-e isseoyo.",
+      "script": "책이 책상 위에 있어요.",
+      "cue": "The book is on the desk.",
+      "glossEn": "The book is on top of the desk.",
+      "literal": "book-subject desk top-at exists",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chaek",
+            "script": "책",
+            "cue": "book",
+            "tag": "free",
+            "forms": [
+              "chaek",
+              "chaek-i"
+            ],
+            "note": "'Book', from M1. Here it is the thing that exists, so it takes -i."
+          },
+          {
+            "display": "chaeksang",
+            "script": "책상",
+            "cue": "desk",
+            "tag": "free",
+            "forms": [
+              "chaeksang"
+            ],
+            "note": "'Desk' — chaek ('book') plus sang ('table'). Korean builds a great many nouns by stacking two like this, and knowing one half often gives you the meaning."
+          },
+          {
+            "display": "wi",
+            "script": "위",
+            "cue": "top · above",
+            "tag": "delta",
+            "forms": [
+              "wi",
+              "wi-e"
+            ],
+            "note": "'The top of something'. It is a NOUN, not a preposition: it follows the thing it is on top of and then takes its own marker, so chaeksang wi-e is 'desk top-at'. English puts 'on' in front; Korean puts a noun behind."
+          },
+          {
+            "display": "-e",
+            "script": "-에",
+            "cue": "at · in · to (a place)",
+            "tag": "delta",
+            "forms": [
+              "-e"
+            ],
+            "note": "The same marker again, now marking where something IS or where it is going: jip-e isseoyo, hakgyo-e gayo. One ending, one job — putting something at a point — whether the point is an hour or a house."
+          },
+          {
+            "display": "isseoyo",
+            "script": "있어요",
+            "cue": "there is · is (somewhere)",
+            "tag": "delta",
+            "forms": [
+              "isseoyo"
+            ],
+            "note": "'There is', from M3 — and it is also the verb of being somewhere. Korean does not have a separate verb for location: a thing that is at a place simply exists at that place, which is why the same word does both jobs."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "There is no word here meaning 'on'. wi is a noun — 'the top' — and it follows the desk and takes its own marker, so the whole thing reads as 'desk top-at'. An English speaker will look for a preposition and find a noun.",
+      "sound": "CHAE-gi CHAEK-sang WI-e i-SSUH-yo. chaek softens to chae-gi in front of -i, and chaeksang keeps its k hard because sang begins with a consonant. wi is a single beat, close to English 'we'.",
+      "variations": [
+        {
+          "display": "Chaek-i chaeksang yeop-e isseoyo.",
+          "script": "책이 책상 옆에 있어요.",
+          "cue": "The book is next to the desk.",
+          "changed": "a different position noun, the same shape"
+        },
+        {
+          "display": "Keopi-ga chaeksang wi-e isseoyo.",
+          "script": "커피가 책상 위에 있어요.",
+          "cue": "The coffee is on the desk.",
+          "changed": "a different thing on the same desk"
+        },
+        {
+          "display": "Chaek-i chaeksang wi-e eopseoyo.",
+          "script": "책이 책상 위에 없어요.",
+          "cue": "The book is not on the desk.",
+          "changed": "the absence verb"
+        }
+      ],
+      "mistake": {
+        "display": "Chaek-i wi chaeksang-e isseoyo.",
+        "script": "책이 위 책상에 있어요.",
+        "why": "The position noun has been put in front, English-style, as if it were a preposition. It follows what it belongs to: chaeksang wi-e, and the marker goes on wi."
+      },
+      "usage": "Saying where a thing is in a room.",
+      "register": "neutral",
+      "mnemonic": "Korean says desk-top-at, and means on the desk."
+    },
+    {
+      "id": "L1-M7-S06",
+      "display": "Keopi-ga eodi-e isseoyo?",
+      "script": "커피가 어디에 있어요?",
+      "cue": "Where is the coffee?",
+      "glossEn": "Where is the coffee?",
+      "literal": "coffee-subject where-at exists?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "keopi",
+            "script": "커피",
+            "cue": "coffee",
+            "tag": "free",
+            "forms": [
+              "keopi",
+              "keopi-ga"
+            ],
+            "note": "'Coffee', from M1, as the thing present or missing."
+          },
+          {
+            "display": "eodi",
+            "script": "어디",
+            "cue": "where",
+            "tag": "free",
+            "forms": [
+              "eodi",
+              "eodi-e"
+            ],
+            "note": "'Where'. It is a noun, so it takes the place marker exactly as a real place would: eodi-e isseoyo? — 'at where does it exist?'. There is no separate question word order to learn; the question is still made by the voice."
+          },
+          {
+            "display": "-e",
+            "script": "-에",
+            "cue": "at · in · to (a place)",
+            "tag": "delta",
+            "forms": [
+              "-e"
+            ],
+            "note": "The same marker again, now marking where something IS or where it is going: jip-e isseoyo, hakgyo-e gayo. One ending, one job — putting something at a point — whether the point is an hour or a house."
+          },
+          {
+            "display": "isseoyo",
+            "script": "있어요",
+            "cue": "there is · is (somewhere)",
+            "tag": "delta",
+            "forms": [
+              "isseoyo"
+            ],
+            "note": "'There is', from M3 — and it is also the verb of being somewhere. Korean does not have a separate verb for location: a thing that is at a place simply exists at that place, which is why the same word does both jobs."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "The question word does not move to the front. In English 'where' has to lead the sentence; in Korean eodi sits exactly where the answer's place would sit, and the voice does the asking.",
+      "sound": "KUH-pee-ga UH-di-e i-SSUH-yo, rising at the end. eodi has the eo vowel — 'uh-dee' — and it links into the -e, so it comes out as uh-di-e in three light beats.",
+      "variations": [
+        {
+          "display": "Chaek-i eodi-e isseoyo?",
+          "script": "책이 어디에 있어요?",
+          "cue": "Where is the book?",
+          "changed": "a different thing asked about"
+        },
+        {
+          "display": "Keopi-ga jip-e isseoyo.",
+          "script": "커피가 집에 있어요.",
+          "cue": "The coffee is at home.",
+          "changed": "the answer, with a real place where eodi stood"
+        },
+        {
+          "display": "Minsu-neun eodi-e isseoyo?",
+          "script": "민수는 어디에 있어요?",
+          "cue": "Where is Minsu?",
+          "changed": "a person rather than a thing, with the topic marker"
+        }
+      ],
+      "mistake": {
+        "display": "Eodi keopi-ga isseoyo?",
+        "script": "어디 커피가 있어요?",
+        "why": "The question word has been fronted the way English fronts it, and stripped of its marker on the way. eodi is a place like any other: it stays in the place slot and it takes -e."
+      },
+      "usage": "Asking where something is.",
+      "register": "neutral",
+      "mnemonic": "Ask in the same shape you expect the answer."
+    },
+    {
+      "id": "L1-M7-S07",
+      "display": "Jip-e keopi-ga eopseoyo.",
+      "script": "집에 커피가 없어요.",
+      "cue": "There is no coffee at home.",
+      "glossEn": "There is no coffee at home.",
+      "literal": "home-at coffee-subject does-not-exist",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jip",
+            "script": "집",
+            "cue": "house · home",
+            "tag": "free",
+            "forms": [
+              "jip",
+              "jip-e",
+              "jip-eseo"
+            ],
+            "note": "'House', and 'home' — Korean does not separate the building from the idea of home, so jip-e gayo is 'I am going home'."
+          },
+          {
+            "display": "-e",
+            "script": "-에",
+            "cue": "at · in · to (a place)",
+            "tag": "delta",
+            "forms": [
+              "-e"
+            ],
+            "note": "The same marker again, now marking where something IS or where it is going: jip-e isseoyo, hakgyo-e gayo. One ending, one job — putting something at a point — whether the point is an hour or a house."
+          },
+          {
+            "display": "keopi",
+            "script": "커피",
+            "cue": "coffee",
+            "tag": "free",
+            "forms": [
+              "keopi",
+              "keopi-ga"
+            ],
+            "note": "'Coffee', from M1, as the thing present or missing."
+          },
+          {
+            "display": "eopseoyo",
+            "script": "없어요",
+            "cue": "there is not",
+            "tag": "interference",
+            "forms": [
+              "eopseoyo"
+            ],
+            "note": "'There is not', from M3, doing the location job too: jip-e keopi-ga eopseoyo is 'there is no coffee at home'."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          5
+        ]
+      },
+      "trap": "The place comes first and the thing second, which is the reverse of the English sentence. Korean puts the frame before the thing inside it, and that ordering runs through the whole language.",
+      "sound": "JI-be KUH-pee-ga UP-suh-yo. The unreleased p in eopseoyo again: lips closed, no puff, straight into the next sound.",
+      "variations": [
+        {
+          "display": "Hakgyo-e keopi-ga eopseoyo.",
+          "script": "학교에 커피가 없어요.",
+          "cue": "There is no coffee at school.",
+          "changed": "a different place"
+        },
+        {
+          "display": "Jip-e keopi-ga isseoyo.",
+          "script": "집에 커피가 있어요.",
+          "cue": "There is coffee at home.",
+          "changed": "the positive"
+        },
+        {
+          "display": "Jip-e chaek-i eopseoyo.",
+          "script": "집에 책이 없어요.",
+          "cue": "There are no books at home.",
+          "changed": "a different thing missing, and -i after the consonant"
+        }
+      ],
+      "mistake": {
+        "display": "Jip-eseo keopi-ga eopseoyo.",
+        "script": "집에서 커피가 없어요.",
+        "why": "-eseo has been used with the absence verb. Nothing is happening at the house; the coffee simply is not there, so it is -e."
+      },
+      "usage": "Saying what a place does not have.",
+      "register": "neutral",
+      "mnemonic": "Frame first, thing second, verb last."
+    },
+    {
+      "id": "L1-M7-S08",
+      "display": "Minsu-neun hakgyo-eseo ilhaeyo.",
+      "script": "민수는 학교에서 일해요.",
+      "cue": "Minsu works at school.",
+      "glossEn": "Minsu works at school.",
+      "literal": "Minsu-topic school-at work-do",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Minsu",
+            "script": "민수",
+            "cue": "Minsu (a name)",
+            "tag": "free",
+            "forms": [
+              "Minsu",
+              "Minsu-neun"
+            ],
+            "note": "A man's given name, from M1."
+          },
+          {
+            "display": "hakgyo",
+            "script": "학교",
+            "cue": "school",
+            "tag": "free",
+            "forms": [
+              "hakgyo",
+              "hakgyo-e",
+              "hakgyo-eseo"
+            ],
+            "note": "'School' — hak, the same piece that begins haksaeng, plus gyo. Written hakgyo because the g tenses after the k, which is how it is said."
+          },
+          {
+            "display": "-eseo",
+            "script": "-에서",
+            "cue": "at (where something happens)",
+            "tag": "interference",
+            "forms": [
+              "-eseo"
+            ],
+            "note": "The other place marker, and the one English has no separate word for: -eseo marks where an ACTION happens. hakgyo-e isseoyo is 'I am at school'; hakgyo-eseo gongbuhaeyo is 'I study at school'. The test is the verb, not the place — existing takes -e, doing takes -eseo."
+          },
+          {
+            "display": "ilhaeyo",
+            "script": "일해요",
+            "cue": "work",
+            "tag": "free",
+            "forms": [
+              "ilhaeyo"
+            ],
+            "note": "'Work', from M4."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Working is something you do, so the place takes -eseo. The test never changes: ask what the verb is, and if it does something rather than merely being, the place wears the longer marker.",
+      "sound": "MIN-soo-nun HAK-gyo-e-suh IL-hae-yo. Six beats in the middle of the sentence and none of them stressed; the -eseo is the part an English speaker will rush.",
+      "variations": [
+        {
+          "display": "Minsu-neun jip-eseo ilhaeyo.",
+          "script": "민수는 집에서 일해요.",
+          "cue": "Minsu works at home.",
+          "changed": "a different workplace"
+        },
+        {
+          "display": "Minsu-neun hakgyo-e isseoyo.",
+          "script": "민수는 학교에 있어요.",
+          "cue": "Minsu is at school.",
+          "changed": "the other marker with the other verb"
+        },
+        {
+          "display": "Minsu-neun hakgyo-eseo gongbuhaeyo.",
+          "script": "민수는 학교에서 공부해요.",
+          "cue": "Minsu studies at school.",
+          "changed": "a different action in the same place"
+        }
+      ],
+      "mistake": {
+        "display": "Minsu-neun hakgyo-e ilhaeyo.",
+        "script": "민수는 학교에 일해요.",
+        "why": "-e with an action verb once more. It is the commonest mistake in this module and it is worth making twice: doing takes -eseo."
+      },
+      "usage": "Saying where somebody works or studies.",
+      "register": "neutral",
+      "mnemonic": "Ask what the verb does, then choose the marker."
+    },
+    {
+      "id": "L1-M7-S09",
+      "display": "Chaeksang yeop-e isseoyo.",
+      "script": "책상 옆에 있어요.",
+      "cue": "It is next to the desk.",
+      "glossEn": "It is beside the desk.",
+      "literal": "desk side-at exists",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chaeksang",
+            "script": "책상",
+            "cue": "desk",
+            "tag": "free",
+            "forms": [
+              "chaeksang"
+            ],
+            "note": "'Desk' — chaek ('book') plus sang ('table'). Korean builds a great many nouns by stacking two like this, and knowing one half often gives you the meaning."
+          },
+          {
+            "display": "yeop",
+            "script": "옆",
+            "cue": "side · next to",
+            "tag": "delta",
+            "forms": [
+              "yeop",
+              "yeop-e"
+            ],
+            "note": "'The side of something', and it works exactly as wi does: chaeksang yeop-e, 'desk side-at'. Every one of these position words is a noun with a marker on it."
+          },
+          {
+            "display": "-e",
+            "script": "-에",
+            "cue": "at · in · to (a place)",
+            "tag": "delta",
+            "forms": [
+              "-e"
+            ],
+            "note": "The same marker again, now marking where something IS or where it is going: jip-e isseoyo, hakgyo-e gayo. One ending, one job — putting something at a point — whether the point is an hour or a house."
+          },
+          {
+            "display": "isseoyo",
+            "script": "있어요",
+            "cue": "there is · is (somewhere)",
+            "tag": "delta",
+            "forms": [
+              "isseoyo"
+            ],
+            "note": "'There is', from M3 — and it is also the verb of being somewhere. Korean does not have a separate verb for location: a thing that is at a place simply exists at that place, which is why the same word does both jobs."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Nothing in this sentence says what 'it' is, and nothing needs to. The thing was named a moment ago in the conversation, so Korean leaves it out — an English answer would have to repeat it or supply a pronoun.",
+      "sound": "CHAEK-sang YUH-pe i-SSUH-yo. yeop has the eo vowel and an unreleased p that softens to a b in front of -e, so it is heard as yuh-pe.",
+      "variations": [
+        {
+          "display": "Chaeksang wi-e isseoyo.",
+          "script": "책상 위에 있어요.",
+          "cue": "It is on the desk.",
+          "changed": "the other position noun"
+        },
+        {
+          "display": "Chaek-i chaeksang yeop-e isseoyo.",
+          "script": "책이 책상 옆에 있어요.",
+          "cue": "The book is next to the desk.",
+          "changed": "the thing named, for a sentence that stands on its own"
+        },
+        {
+          "display": "Chaeksang yeop-e eopseoyo.",
+          "script": "책상 옆에 없어요.",
+          "cue": "It is not next to the desk.",
+          "changed": "the absence verb answering the same question"
+        }
+      ],
+      "mistake": {
+        "display": "Yeop chaeksang-e isseoyo.",
+        "script": "옆 책상에 있어요.",
+        "why": "The position noun in front again — and with the marker moved onto the desk, the sentence now says something like 'it is at the side desk'. Order is what makes this construction work."
+      },
+      "usage": "Answering a question about where something is.",
+      "register": "neutral",
+      "mnemonic": "Answer with the place; they already know the thing."
+    },
+    {
+      "id": "L1-M7-S10",
+      "display": "Naeil hakgyo-e gal geoyeyo.",
+      "script": "내일 학교에 갈 거예요.",
+      "cue": "I will go to school tomorrow.",
+      "glossEn": "I am going to go to school tomorrow.",
+      "literal": "tomorrow school-to go-thing-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "naeil",
+            "script": "내일",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [
+              "naeil"
+            ],
+            "note": "'Tomorrow', from M6."
+          },
+          {
+            "display": "hakgyo",
+            "script": "학교",
+            "cue": "school",
+            "tag": "free",
+            "forms": [
+              "hakgyo",
+              "hakgyo-e",
+              "hakgyo-eseo"
+            ],
+            "note": "'School' — hak, the same piece that begins haksaeng, plus gyo. Written hakgyo because the g tenses after the k, which is how it is said."
+          },
+          {
+            "display": "-e",
+            "script": "-에",
+            "cue": "at · in · to (a place)",
+            "tag": "delta",
+            "forms": [
+              "-e"
+            ],
+            "note": "The same marker again, now marking where something IS or where it is going: jip-e isseoyo, hakgyo-e gayo. One ending, one job — putting something at a point — whether the point is an hour or a house."
+          },
+          {
+            "display": "gayo",
+            "script": "가요",
+            "cue": "go",
+            "tag": "free",
+            "forms": [
+              "gayo",
+              "gal"
+            ],
+            "note": "'Go', from M6 — and its destination takes -e, never -eseo."
+          },
+          {
+            "display": "geoyeyo",
+            "script": "거예요",
+            "cue": "will · am going to",
+            "tag": "delta",
+            "forms": [
+              "geoyeyo"
+            ],
+            "note": "The future's second half, from M6."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "A destination takes -e even though going is very much an action. The rule is not about how active the verb is — it is about whether the place is where something happens or the point you end up at.",
+      "sound": "NAE-il HAK-gyo-e gal GUH-ye-yo. gal runs straight into geoyeyo as it did in M6; the destination marker is a single light beat before it.",
+      "variations": [
+        {
+          "display": "Naeil jip-e gal geoyeyo.",
+          "script": "내일 집에 갈 거예요.",
+          "cue": "I will go home tomorrow.",
+          "changed": "a different destination"
+        },
+        {
+          "display": "Naeil hakgyo-eseo gongbuhal geoyeyo.",
+          "script": "내일 학교에서 공부할 거예요.",
+          "cue": "I will study at school tomorrow.",
+          "changed": "an action at the school, so -eseo comes back"
+        },
+        {
+          "display": "Naeil hakgyo-e gayo.",
+          "script": "내일 학교에 가요.",
+          "cue": "I am going to school tomorrow.",
+          "changed": "the present as a future, from M6"
+        }
+      ],
+      "mistake": {
+        "display": "Naeil hakgyo-eseo gal geoyeyo.",
+        "script": "내일 학교에서 갈 거예요.",
+        "why": "-eseo on a destination. That would mean the going happens at the school — leaving FROM there — which is a real meaning and not the one intended."
+      },
+      "usage": "Talking about where you are going.",
+      "register": "neutral",
+      "mnemonic": "A destination is a point, and points take -e."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M7-C01",
+      "display": "Jip-e chingu-ga isseoyo.",
+      "script": "집에 친구가 있어요.",
+      "cue": "There is a friend at home."
+    },
+    {
+      "id": "L1-M7-C02",
+      "display": "Hakgyo-eseo bap-eul meogeoyo.",
+      "script": "학교에서 밥을 먹어요.",
+      "cue": "I eat at school."
+    },
+    {
+      "id": "L1-M7-C03",
+      "display": "Chaek-i chaeksang wi-e eopseoyo.",
+      "script": "책이 책상 위에 없어요.",
+      "cue": "The book is not on the desk."
+    },
+    {
+      "id": "L1-M7-C04",
+      "display": "Minsu-neun eodi-e isseoyo?",
+      "script": "민수는 어디에 있어요?",
+      "cue": "Where is Minsu?"
+    },
+    {
+      "id": "L1-M7-C05",
+      "display": "Jeo-neun jip-eseo gongbuhaeyo.",
+      "script": "저는 집에서 공부해요.",
+      "cue": "I study at home."
+    },
+    {
+      "id": "L1-M7-C06",
+      "display": "Keopi-ga chaeksang yeop-e isseoyo.",
+      "script": "커피가 책상 옆에 있어요.",
+      "cue": "The coffee is next to the desk."
+    },
+    {
+      "id": "L1-M7-C07",
+      "display": "Hakgyo-e keopi-ga eopseoyo.",
+      "script": "학교에 커피가 없어요.",
+      "cue": "There is no coffee at school."
+    },
+    {
+      "id": "L1-M7-C08",
+      "display": "Naeil jip-e isseoyo.",
+      "script": "내일 집에 있어요.",
+      "cue": "I will be at home tomorrow."
+    },
+    {
+      "id": "L1-M7-C09",
+      "display": "Chingu-ga hakgyo-eseo ilhaeyo.",
+      "script": "친구가 학교에서 일해요.",
+      "cue": "My friend works at school."
+    },
+    {
+      "id": "L1-M7-C10",
+      "display": "Chaek-i eodi-e isseoyo?",
+      "script": "책이 어디에 있어요?",
+      "cue": "Where is the book?"
+    },
+    {
+      "id": "L1-M7-C11",
+      "display": "Jip-eseo cha-reul masyeoyo.",
+      "script": "집에서 차를 마셔요.",
+      "cue": "I drink tea at home."
+    },
+    {
+      "id": "L1-M7-C12",
+      "display": "Minsu-neun naeil hakgyo-e gal geoyeyo.",
+      "script": "민수는 내일 학교에 갈 거예요.",
+      "cue": "Minsu will go to school tomorrow."
+    },
+    {
+      "id": "L1-M7-C13",
+      "display": "Chaeksang wi-e chaek-i isseoyo.",
+      "script": "책상 위에 책이 있어요.",
+      "cue": "There is a book on the desk."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
