@@ -188,9 +188,13 @@ function RungVerdict({ input, plan, moduleId }: RungVerdictProps) {
   return (
     <section className={styles.verdict}>
       <div className={styles.head}>
-        {/* Structural furniture, like the module list's `M1 · MODULE` — raised on #71. */}
-        <p className={styles.kicker}>EXIT RITUAL COMPLETE</p>
-        <h2 className={styles.title}>{rungLabel(moduleId)} · Passed</h2>
+        {/* The course's words, like everything else the ritual says (#351). */}
+        <p className={styles.kicker} dir={course.dir}>
+          {strings['verdict.ritualComplete']}
+        </p>
+        <h2 className={styles.title} dir={course.dir}>
+          {interpolate(strings['verdict.passedRung'], { rung: rungLabel(moduleId) })}
+        </h2>
       </div>
 
       {/* The receipt: a blueprint plate, and the two lines the learner earned on it. */}

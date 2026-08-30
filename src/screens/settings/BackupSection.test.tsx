@@ -22,7 +22,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from '../../App.tsx';
 import { resetContentCache } from '../../course/content.ts';
 import { resetManifestCache } from '../../course/manifest.ts';
-import { resetStringsCache } from '../../course/strings.ts';
+import { interpolate, resetStringsCache } from '../../course/strings.ts';
 import { ladderFromLevels } from '../../engine/progression.ts';
 import { exportState, importState } from '../../state/serialize.ts';
 import { STORAGE_KEY, persistedSlice, useAppStore } from '../../state/store.ts';
@@ -85,7 +85,7 @@ async function renderSettings(ladder = tenRungLadder(2)) {
   mockContentFetch(DEV_MANIFEST, undefined, { levels: ladder });
   window.location.hash = '#/settings';
   render(<App />);
-  return await screen.findByRole('button', { name: 'Export' });
+  return await screen.findByRole('button', { name: stringValue(COURSE, 'settings.backup.export') });
 }
 
 function strings(key: string): string {
@@ -134,7 +134,9 @@ function pickFile(file: File): void {
     return element;
   }) as typeof document.createElement);
 
-  fireEvent.click(screen.getByRole('button', { name: 'Import' }));
+  fireEvent.click(
+    screen.getByRole('button', { name: stringValue(COURSE, 'settings.backup.import') }),
+  );
   spy.mockRestore();
 
   const input = created.at(-1);
@@ -184,7 +186,9 @@ describe('the export (F7): one file, every course, via the share sheet', () => {
     liveIn(tenRungLadder(2));
     await renderSettings();
 
-    fireEvent.click(screen.getByRole('button', { name: 'Export' }));
+    fireEvent.click(
+      screen.getByRole('button', { name: stringValue(COURSE, 'settings.backup.export') }),
+    );
 
     expect(asked).toHaveLength(1);
     const files = asked[0]?.files ?? [];
@@ -211,7 +215,9 @@ describe('the export (F7): one file, every course, via the share sheet', () => {
     liveIn(tenRungLadder(2));
     await renderSettings();
 
-    fireEvent.click(screen.getByRole('button', { name: 'Export' }));
+    fireEvent.click(
+      screen.getByRole('button', { name: stringValue(COURSE, 'settings.backup.export') }),
+    );
     click.mockRestore();
 
     expect(clicked).toHaveLength(1);
@@ -289,13 +295,21 @@ describe('the import: the F7 AC, behind the two-sided confirm', () => {
     // …and the two sides, summarised per course in shell-rendered counts (scoped inside the
     // confirm — the dropdown's option carries the same pairLabel).
     const row = within(confirm).getByText('hindi → marathi').parentElement;
-    expect(row?.textContent).toContain('on this device');
-    expect(row?.textContent).toContain('1 passed · 1 sessions');
-    expect(row?.textContent).toContain('in the file');
-    expect(row?.textContent).toContain('3 passed · 30 sessions');
+    expect(row?.textContent).toContain(strings('settings.backup.onDevice'));
+    expect(row?.textContent).toContain(
+      interpolate(strings('settings.backup.counts'), { passed: 1, sessions: 1 }),
+    );
+    expect(row?.textContent).toContain(strings('settings.backup.inFile'));
+    expect(row?.textContent).toContain(
+      interpolate(strings('settings.backup.counts'), { passed: 3, sessions: 30 }),
+    );
     // The one-tap path is gone: no Export/Import while the decision is open.
-    expect(screen.queryByRole('button', { name: 'Export' })).not.toBeInTheDocument();
-    expect(screen.queryByRole('button', { name: 'Import' })).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: stringValue(COURSE, 'settings.backup.export') }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: stringValue(COURSE, 'settings.backup.import') }),
+    ).not.toBeInTheDocument();
     // And nothing moved: the store holds the very objects it held.
     expect(useAppStore.getState().courses).toBe(before.courses);
   });
@@ -310,7 +324,9 @@ describe('the import: the F7 AC, behind the two-sided confirm', () => {
 
     expect(useAppStore.getState().courses).toBe(before);
     expect(screen.queryByText(strings('settings.importReplace'))).not.toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Export' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: stringValue(COURSE, 'settings.backup.export') }),
+    ).toBeInTheDocument();
   });
 
   it('refuses a malformed file with the friendly line + the path-naming reason, state untouched', async () => {

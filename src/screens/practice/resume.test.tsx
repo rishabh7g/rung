@@ -236,7 +236,7 @@ describe('the flush', () => {
   it('is gone with the session: a hub in the background writes no position', async () => {
     await renderHub();
     await begin();
-    fireEvent.click(screen.getByRole('button', { name: 'Pause session' }));
+    fireEvent.click(screen.getByRole('button', { name: strings('a11y.pauseSession') }));
     await screen.findByText(strings('practice.hubTitle'));
     useAppStore.getState().setSession(COURSE, null);
 
@@ -382,7 +382,7 @@ describe('a resume is not a session', () => {
     fireEvent.click(chip('produce'));
     await screen.findByText(strings('revealLabel'));
     answer('mark.gotIt');
-    fireEvent.click(screen.getByRole('button', { name: 'Pause session' }));
+    fireEvent.click(screen.getByRole('button', { name: strings('a11y.pauseSession') }));
     await screen.findByText(strings('practice.hubTitle'));
 
     fireEvent.click(control('practice.resumeNew'));
@@ -414,7 +414,7 @@ describe('the pause ✕', () => {
     fireEvent.click(chip('produce'));
     await screen.findByText(strings('revealLabel'));
 
-    fireEvent.click(screen.getByRole('button', { name: 'Pause session' }));
+    fireEvent.click(screen.getByRole('button', { name: strings('a11y.pauseSession') }));
 
     expect(await screen.findByText(strings('practice.hubTitle'))).toBeInTheDocument();
     expect(courseState()?.session).toEqual({
@@ -449,7 +449,7 @@ describe('the resume banner', () => {
   it('replaces the Begin CTA rather than sitting beside it', async () => {
     await renderHub();
     await begin();
-    fireEvent.click(screen.getByRole('button', { name: 'Pause session' }));
+    fireEvent.click(screen.getByRole('button', { name: strings('a11y.pauseSession') }));
     await screen.findByText(strings('practice.hubTitle'));
 
     expect(control('practice.resumeContinue')).toBeInTheDocument();
@@ -468,7 +468,7 @@ describe('the resume banner', () => {
     await screen.findByText(sentence(0).display);
     fireEvent.click(screen.getByRole('button', { name: strings('read.next') }));
     await screen.findByText(sentence(1).display);
-    fireEvent.click(screen.getByRole('button', { name: 'Pause session' }));
+    fireEvent.click(screen.getByRole('button', { name: strings('a11y.pauseSession') }));
     await screen.findByText(strings('practice.hubTitle'));
 
     expect(screen.getByText(resumeLine('read', 2, 2))).toBeInTheDocument();
@@ -501,7 +501,7 @@ describe('across a course switch', () => {
     await screen.findByText(strings('revealLabel'));
     answer('mark.gotIt');
     await screen.findByText(sentence(1).cue);
-    fireEvent.click(screen.getByRole('button', { name: 'Pause session' }));
+    fireEvent.click(screen.getByRole('button', { name: strings('a11y.pauseSession') }));
     await screen.findByText(strings('practice.hubTitle'));
     const hiMr = { phase: 'produce', idx: 1, queue: [`${M1}-S01`, `${M1}-S02`] };
     expect(courseState()?.session).toEqual(hiMr);
@@ -517,7 +517,7 @@ describe('across a course switch', () => {
     await screen.findByText(sentence(0).display);
     fireEvent.click(screen.getByRole('button', { name: strings('read.next', OTHER) }));
     await screen.findByText(sentence(1).display);
-    fireEvent.click(screen.getByRole('button', { name: 'Pause session' }));
+    fireEvent.click(screen.getByRole('button', { name: strings('a11y.pauseSession', OTHER) }));
     await screen.findByText(strings('practice.hubTitle', OTHER));
     const enAr = { phase: 'read', idx: 1, queue: [`${M1}-S01`, `${M1}-S02`] };
     expect(courseState(OTHER)?.session).toEqual(enAr);
@@ -546,7 +546,7 @@ describe('across a course switch', () => {
     await screen.findByText(sentence(0).display);
     fireEvent.click(screen.getByRole('button', { name: strings('read.next') }));
     await screen.findByText(sentence(1).display);
-    fireEvent.click(screen.getByRole('button', { name: 'Pause session' }));
+    fireEvent.click(screen.getByRole('button', { name: strings('a11y.pauseSession') }));
     await screen.findByText(strings('practice.hubTitle'));
     await switchTo(OTHER);
 

@@ -25,15 +25,17 @@
  *
  * **Every label is the course's** (`strings.json`, PRD §4) — the shell has no copy of its own, so
  * a Marathi learner reads Hindi here and an Arabic learner reads English, without this file
- * knowing either. The one English string is the `M3 · CURRENT RUNG` kicker, which is structural
- * furniture in the register of the nav's tab labels (raised on #71 with the Ladder's).
+ * knowing either. The `M3 · CURRENT RUNG` kicker was the one exception, held back as structural
+ * furniture in the register of the nav's tab labels; #351 sent it the same way (`rungCard.
+ * currentRung`, `{rung}` being the shell-rendered label), because a kicker a Hindi learner cannot
+ * read is not furniture.
  *
  * **Every CTA is a `<Link>`, not a `<button>`.** They all navigate, and the prototype's `onClick`
  * buttons are a prototype's way of saying so: a link is the deep-linkable, middle-clickable,
  * screen-reader-honest control for going somewhere, and it is what the rest of the Ladder uses.
  */
 import { Link } from 'react-router-dom';
-import { useStrings } from '../../course/strings.ts';
+import { interpolate, useStrings } from '../../course/strings.ts';
 import type { RungStage } from '../../engine/progression.ts';
 import { PRACTICE_PATH, RITUAL_PATH } from '../../shell/routes.tsx';
 import { HintLine } from '../../shell/useHint.tsx';
@@ -92,7 +94,9 @@ export function RungCard({
     >
       <RegistrationMarks />
 
-      <p className={styles.kicker}>{rungLabel(moduleId)} · CURRENT RUNG</p>
+      <p className={styles.kicker} dir={dir}>
+        {interpolate(strings['rungCard.currentRung'], { rung: rungLabel(moduleId) })}
+      </p>
       <h2 className={styles.title} dir={dir}>
         {title}
       </h2>

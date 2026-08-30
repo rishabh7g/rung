@@ -46,15 +46,15 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the six authored bundles carry — 72 keys, nested, identical', () => {
+  it('is exactly what the seven authored bundles carry — 104 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(72);
+      expect(keys.length, courseId).toBe(104);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(72);
-    expect(new Set(STRINGS_KEYS).size).toBe(72);
+    expect(STRINGS_KEYS.length).toBe(104);
+    expect(new Set(STRINGS_KEYS).size).toBe(104);
   });
 
   /**
@@ -297,11 +297,18 @@ describe('the canonical key list', () => {
       'practice.resumeLine': ['{phase}', '{count}', '{total}'],
       'settings.statusLine': ['{level}', '{passed}', '{total}', '{rung}'],
       'settings.statusPending': ['{level}', '{passed}', '{total}'],
+      'ladder.positionLine': ['{level}', '{passed}', '{total}'],
+      'levelStrip.level': ['{level}'],
+      'rungCard.currentRung': ['{rung}'],
+      'verdict.passedRung': ['{rung}'],
+      'settings.storage.meter': ['{used}', '{quota}'],
+      'settings.storage.courseRow': ['{course}'],
+      'settings.backup.counts': ['{passed}', '{sessions}'],
     });
   });
 });
 
-describe('the five authored bundles', () => {
+describe('the seven authored bundles', () => {
   it.each(COURSES)('%s passes the check with no issues', (courseId) => {
     expect(checkStrings(authoredStrings(courseId), courseId)).toEqual([]);
   });

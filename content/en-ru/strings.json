@@ -23,14 +23,17 @@
   "ordinal": "{n}th",
   "ladder": {
     "pendingLine": "Level {level} · {remaining} of {total} rungs still to climb.",
-    "sealedToast": "Sealed — Level {level} opens when the rungs below it are climbed: {remaining} left."
+    "sealedToast": "Sealed — Level {level} opens when the rungs below it are climbed: {remaining} left.",
+    "positionLine": "LEVEL {level} · {passed} OF {total}",
+    "passed": "PASSED"
   },
   "rungCard": {
     "startModule": "Start with the module",
     "practice": "Practice",
     "revisitModule": "revisit the module",
     "exitRitual": "Exit ritual — open",
-    "module": "Module"
+    "module": "Module",
+    "currentRung": "{rung} · CURRENT RUNG"
   },
   "sentence": {
     "trapHead": "English will mislead you",
@@ -88,7 +91,9 @@
     "checkSentence": "The {ordinal} sentence — written in your notebook, new, at this level.",
     "checkComprehension": "Comprehension {count} of {total} — self-marked.",
     "line": "The next rung is open — {nextModule}.",
-    "toLadder": "Climb to the ladder"
+    "toLadder": "Climb to the ladder",
+    "ritualComplete": "EXIT RITUAL COMPLETE",
+    "passedRung": "{rung} · Passed"
   },
   "settings": {
     "yourLanguage": "Your language",
@@ -97,8 +102,49 @@
     "importReplace": "Importing replaces your progress in every course with what this file holds.",
     "importConfirm": "Replace my progress",
     "importCancel": "Keep what I have",
-    "importFailed": "This file could not be read, so nothing was changed."
+    "importFailed": "This file could not be read, so nothing was changed.",
+    "title": "Settings",
+    "kicker": {
+      "language": "LANGUAGE",
+      "course": "COURSE",
+      "practice": "PRACTICE",
+      "storage": "STORAGE"
+    },
+    "activeCourse": "Active course",
+    "tick": {
+      "title": "Gentle elapsed tick",
+      "note": "A thin, numberless line during sessions — fills once, never counts down.",
+      "on": "On",
+      "off": "Off"
+    },
+    "storage": {
+      "meter": "{used} used of {quota} the browser offers",
+      "courseRow": "{course} course (offline)",
+      "progressRow": "Your saved progress — all courses"
+    },
+    "backup": {
+      "title": "Backup",
+      "export": "Export",
+      "import": "Import",
+      "onDevice": "on this device",
+      "inFile": "in the file",
+      "counts": "{passed} passed · {sessions} sessions"
+    }
   },
   "switchToast": "You’re on {to} now. Your {from} ladder is saved exactly where it was.",
-  "importToast": "Backup restored — every ladder is exactly as the file held it."
+  "importToast": "Backup restored — every ladder is exactly as the file held it.",
+  "nav": {
+    "ladder": "Ladder",
+    "practice": "Practice",
+    "settings": "Settings"
+  },
+  "levelStrip": {
+    "level": "LEVEL {level}"
+  },
+  "a11y": {
+    "primaryNav": "Primary",
+    "pauseSession": "Pause session",
+    "storageMeter": "Storage used on this device",
+    "sentencePager": "Sentences in this module"
+  }
 }

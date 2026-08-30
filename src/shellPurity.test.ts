@@ -17,10 +17,13 @@
  *   • **Comments count.** A doc comment is where a pasted string waits before it becomes code, and
  *     a scan that skipped comments would teach exactly that habit. Worked examples in a course's
  *     script belong in tests, which is where they are already exercised (`engine/surface.test.ts`).
- *   • **English is not the target.** The boot error copy and, later, Settings section headers are
- *     shell furniture and stay permitted: this guard is about course scripts, not about English.
- *     What keeps English honest is review plus the fact that no learner-facing screen has a string
- *     of its own to render.
+ *   • **English is not the target.** This guard is about course scripts, not about English: the
+ *     boot error copy stays permitted, because `BootScreens` renders before any bundle is loaded
+ *     and has no key to read. The Settings section headers used to be permitted beside it, as
+ *     "shell furniture"; #351 sent them and the rest of the chrome — the nav's tabs, the Ladder's
+ *     kickers, the Verdict's, every label on Settings — into the bundles, on the ground that
+ *     furniture a Hindi-L1 learner cannot read is not furniture. What keeps the remainder honest
+ *     is review plus the fact that no learner-facing screen has a string of its own to render.
  *   • **Escapes are out of reach.** The scan reads source text, so a `'\u0936'` escape would slip
  *     past it. That is not the failure mode it exists for — accidental copy-paste is — and it is
  *     why this file names its scripts by Unicode property and builds its planted samples at

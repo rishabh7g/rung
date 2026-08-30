@@ -25,12 +25,16 @@
  * happens at the first write, and the app still keeps none of the learner's writing (Invariant 4);
  * this section simply stops saying so and shows the numbers it exists for.
  *
- * The row labels and the meter's caption are English shell furniture in the kickers' register —
- * the call #105 made for the tick toggle's rows.
+ * The row labels, the meter's caption and its accessible name are the course's
+ * (`settings.storage.*`, `a11y.storageMeter`, #351) — English furniture in the kickers' register
+ * until the kickers stopped being English. The NUMBERS in them are the shell's: `formatBytes`
+ * renders the unit and the course renders the sentence around it, so a course decides where a
+ * size sits in a line without deciding what a megabyte is called.
  */
 import { useEffect, useMemo, useState, type CSSProperties } from 'react';
 import { useCourse } from '../../course/CourseProvider.tsx';
 import { loadSizes } from '../../course/content.ts';
+import { interpolate, useStrings } from '../../course/strings.ts';
 import type { CourseSizes } from '../../course/types.ts';
 import { exportState } from '../../state/serialize.ts';
 import { useAppStore } from '../../state/store.ts';
@@ -38,7 +42,8 @@ import { formatBytes } from './formatBytes.ts';
 import styles from './StorageSection.module.css';
 
 export default function StorageSection() {
-  const { courses } = useCourse();
+  const { course, courses } = useCourse();
+  const strings = useStrings();
   const estimate = useStorageEstimate();
   const sizes = useCourseSizes(courses.map((row) => row.id));
   const progressBytes = useProgressBytes();
@@ -50,7 +55,7 @@ export default function StorageSection() {
           <div
             className={styles.meter}
             role="meter"
-            aria-label="Storage used on this device"
+            aria-label={strings['a11y.storageMeter']}
             aria-valuemin={0}
             aria-valuemax={estimate.quota}
             aria-valuenow={estimate.usage}
@@ -62,8 +67,11 @@ export default function StorageSection() {
           >
             <div className={styles.meterFill} />
           </div>
-          <p className={styles.meterLine}>
-            {formatBytes(estimate.usage)} used of {formatBytes(estimate.quota)} the browser offers
+          <p className={styles.meterLine} dir={course.dir}>
+            {interpolate(strings['settings.storage.meter'], {
+              used: formatBytes(estimate.usage),
+              quota: formatBytes(estimate.quota),
+            })}
           </p>
         </div>
       )}
@@ -74,13 +82,17 @@ export default function StorageSection() {
           if (size === undefined) return null;
           return (
             <p key={row.id} className={styles.row}>
-              <span className={styles.rowLabel}>{row.pairLabel} course (offline)</span>
+              <span className={styles.rowLabel} dir={course.dir}>
+                {interpolate(strings['settings.storage.courseRow'], { course: row.pairLabel })}
+              </span>
               <span className={styles.rowBytes}>{formatBytes(size.bytes)}</span>
             </p>
           );
         })}
         <p className={styles.row}>
-          <span className={styles.rowLabel}>Your saved progress — all courses</span>
+          <span className={styles.rowLabel} dir={course.dir}>
+            {strings['settings.storage.progressRow']}
+          </span>
           <span className={styles.rowBytes}>{formatBytes(progressBytes)}</span>
         </p>
       </div>

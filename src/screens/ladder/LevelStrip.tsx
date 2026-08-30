@@ -13,11 +13,13 @@
  * not, and nothing renders a control that does nothing.
  *
  * The component is presentational: every state on it is derived by the screen from
- * `src/engine/progression.ts` and handed over. It carries one word of its own — the English
- * "LEVEL" kicker, structural furniture the way the nav's tab labels are — and every learner-facing
- * word in it (the level's name and tagline) comes from the course's own `levels.json`.
+ * `src/engine/progression.ts` and handed over, and every word in it is the course's: the level's
+ * name and tagline out of `levels.json`, and the cell's own kicker out of `strings.json`
+ * (`levelStrip.level`, #351 — it was the English "LEVEL", held back as furniture in the register
+ * of the nav's tab labels until the nav's labels stopped being English too).
  */
 import { Lock } from 'lucide-react';
+import { interpolate, useStrings } from '../../course/strings.ts';
 import beat from './unlockBeat.module.css';
 import styles from './LevelStrip.module.css';
 
@@ -51,6 +53,8 @@ interface LevelStripProps {
 }
 
 export function LevelStrip({ cells, dir, onSealedTap }: LevelStripProps) {
+  const strings = useStrings();
+
   return (
     <div className={styles.strip}>
       {cells.map((cell) => {
@@ -58,8 +62,7 @@ export function LevelStrip({ cells, dir, onSealedTap }: LevelStripProps) {
           <>
             <span className={styles.head}>
               <span className={cell.sealed ? styles.labelSealed : styles.label}>
-                {/* Structural furniture, not copy: the level's own words are the line below. */}
-                LEVEL {cell.level}
+                {interpolate(strings['levelStrip.level'], { level: cell.level })}
               </span>
               {cell.sealed && <Lock className={styles.lock} aria-hidden="true" />}
             </span>

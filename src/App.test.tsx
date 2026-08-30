@@ -6,6 +6,7 @@ import { resetContentCache } from './course/content.ts';
 import { resetManifestCache } from './course/manifest.ts';
 import { resetStringsCache } from './course/strings.ts';
 import { DEV_MANIFEST, mockContentFetch } from './test/courseManifest.ts';
+import { interpolate } from './course/strings.ts';
 import { stringValue } from './test/courseStrings.ts';
 
 beforeEach(() => {
@@ -33,9 +34,18 @@ describe('App', () => {
     render(<App />);
 
     // Loading: the boot screen is up, the Ladder is not — no screen mounts without a course.
-    expect(screen.queryByText(/LEVEL/)).not.toBeInTheDocument();
-    // Then the Ladder, whose first line is the position kicker off the active course's ladder.
-    expect(await screen.findByText(/LEVEL 1 · 0 OF 3/)).toBeInTheDocument();
+    expect(screen.queryByText(/ladder\.positionLine/)).not.toBeInTheDocument();
+    // Then the Ladder, whose first line is the position kicker off the active course's ladder —
+    // the course's own words since #351, so the assertion reads the bundle rather than English.
+    expect(
+      await screen.findByText(
+        interpolate(stringValue('hi-mr', 'ladder.positionLine'), {
+          level: 1,
+          passed: 0,
+          total: 3,
+        }),
+      ),
+    ).toBeInTheDocument();
     expect(fetchMock).toHaveBeenCalledWith('/content/courses.json');
   });
 

@@ -24,7 +24,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from '../App.tsx';
 import { resetContentCache } from '../course/content.ts';
 import { resetManifestCache } from '../course/manifest.ts';
-import { resetStringsCache } from '../course/strings.ts';
+import { interpolate, resetStringsCache } from '../course/strings.ts';
 import { useAppStore } from '../state/store.ts';
 import { DEV_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
 import type { ModuleContent } from '../course/types.ts';
@@ -395,7 +395,9 @@ describe('back', () => {
   it('sends a locked rung’s sentence back to the Ladder instead of reading it out', async () => {
     await renderAt('#/sentence/L1-M2-S01');
 
-    expect(await screen.findByText('M1 · CURRENT RUNG')).toBeInTheDocument();
+    expect(
+      await screen.findByText(interpolate(strings('rungCard.currentRung'), { rung: 'M1' })),
+    ).toBeInTheDocument();
     expect(window.location.hash).toBe('#/');
   });
 

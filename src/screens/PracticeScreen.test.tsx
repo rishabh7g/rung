@@ -242,7 +242,7 @@ describe('starting a session', () => {
     await begin();
 
     expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Pause session' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: strings('a11y.pauseSession') })).toBeInTheDocument();
   });
 
   it('starts at Read when nothing is due — never an empty Review phase', async () => {
@@ -802,7 +802,9 @@ describe('the summary', () => {
     fireEvent.click(screen.getByRole('link', { name: strings('practice.backToLadder') }));
 
     await waitFor(() => {
-      expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument();
+      expect(
+        screen.getByRole('navigation', { name: strings('a11y.primaryNav') }),
+      ).toBeInTheDocument();
     });
     expect(window.location.hash).toBe('#/');
   });
@@ -838,7 +840,7 @@ describe('the snapshot', () => {
     fireEvent.click(chip('produce'));
     await cardFor('L1-M1-S01');
 
-    fireEvent.click(screen.getByRole('button', { name: 'Pause session' }));
+    fireEvent.click(screen.getByRole('button', { name: strings('a11y.pauseSession') }));
 
     expect(await screen.findByText(strings('practice.hubTitle'))).toBeInTheDocument();
     expect(courseState()?.session).toEqual({

@@ -224,13 +224,13 @@ describe('the Ladder over the authored hi-en tree', () => {
   it('offers L1-M1 as the current rung with its CTA in Hindi, and keeps the nine behind it locked', async () => {
     await renderAt('#/');
 
-    expect(await screen.findByText(/LEVEL 1 · 0 OF 10/)).toBeInTheDocument();
+    expect(await screen.findByText('Level 1 · 10 में से 0')).toBeInTheDocument();
     await waitFor(() => {
       expect(document.documentElement.lang).toBe('hi');
     });
     expect(screen.getByText('Who I am')).toBeInTheDocument();
     expect(screen.getByText('First exchange')).toBeInTheDocument();
-    expect(screen.getByText('M1 · CURRENT RUNG')).toBeInTheDocument();
+    expect(screen.getByText('M1 · अभी यही rung')).toBeInTheDocument();
 
     // Two rungs are authored, one is open: the fresh current rung's one CTA [D22], in the
     // course's own words, and nothing else in the list is a link.
