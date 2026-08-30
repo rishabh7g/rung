@@ -2322,8 +2322,15 @@ describe('the authored content', () => {
     ];
     /** en-fr's ten rungs, complete since #330 — the same shape as every other course's L1. */
     const EN_FR = L1;
-    /** en-de's authored prefix (#362). The rest of the ladder is titles in levels.json only. */
-    const EN_DE_AUTHORED = ['L1-M1', 'L1-M2'];
+    /**
+     * en-de's authored PREFIX — #362 wrote M1–M2 and #363 M3–M5, so the eighth course is the
+     * first this assertion has ever seen half-written. The gap is the point: a fixture course
+     * grows a rung at a time, and the dev build ships exactly what exists rather than what the
+     * ladder promises. M6–M10 join on #364, and the fixture flag goes on #365.
+     */
+    const EN_DE_AUTHORED = ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5'];
+    /** `moduleRanges` compacts a contiguous run, so the prefix reads as one span. */
+    const EN_DE_RANGE = 'L1-M1..M5';
 
     expect(report.exitCode).toBe(0);
     expect([...report.shipped]).toEqual([
@@ -2345,15 +2352,15 @@ describe('the authored content', () => {
     // build that carries it: `--with-fixtures` admits the course and its authored rungs ship.
     expect(report.lines).toContain(`en-ru: ${EN_RU_AUTHORED.length} modules (${EN_RU_RANGE})`);
     // en-de (#356) is the course sitting behind the fixture flag right now, so THIS is the build
-    // that admits it — and since #362 it ships the two rungs that are authored. It used to ship
-    // nothing at all and be reported as `skipped: en-de (no modules)`; the walker still treats an
-    // absent `modules/` directory as zero modules rather than as an error, which is what that
-    // earlier line proved, and the two authored files are what moved this course off it.
-    expect(report.lines).toContain(`en-de: ${EN_DE_AUTHORED.length} modules (L1-M1..M2)`);
+    // that admits it — and it ships the rungs that are authored, five of ten (#362, #363). It
+    // used to ship nothing at all and be reported as `skipped: en-de (no modules)`; the walker
+    // still treats an absent `modules/` directory as zero modules rather than as an error, which
+    // is what that earlier line proved, and the authored files are what moved it off that line.
+    expect(report.lines).toContain(`en-de: ${EN_DE_AUTHORED.length} modules (${EN_DE_RANGE})`);
     expect(report.lines).toContain(
       'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10), ' +
         `en-ru ${EN_RU_AUTHORED.length} modules (${EN_RU_RANGE}), en-it ${EN_IT_LINE}, en-fr 10 modules (L1-M1..M10),` +
-        ` en-de ${EN_DE_AUTHORED.length} modules (L1-M1..M2)`,
+        ` en-de ${EN_DE_AUTHORED.length} modules (${EN_DE_RANGE})`,
     );
     // en-it was authored behind the gate (#332, #334–#336) and graduated in #337, so a dev build
     // now ships exactly what the strict build above does.
