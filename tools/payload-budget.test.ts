@@ -33,9 +33,9 @@ import {
   type ShippedFile,
 } from './payload-budget.ts';
 
-/** Three of the five courses a strict build emits, as the manifest carries them — one per
+/** Three of the seven courses a strict build emits, as the manifest carries them — one per
     attribution shape (a script, no script, a romanized script). hi-en (#273) maps like hi-mr,
-    `['devanagari']`, and shares its subset; en-it, en-fr and en-ru's Latin siblings map like
+    `['devanagari']`, and shares its subset; en-it, en-fr and en-de's Latin siblings map like
     en-es — `[]`, because neither tag reaches a course face — while en-ru maps to `['cyrillic']`;
     the manifest test below pins every mapping. */
 const HI_MR: ShippedCourse = { id: 'hi-mr', scripts: ['devanagari'] };
@@ -79,6 +79,7 @@ describe('reading the shipped courses off the manifest', () => {
         { id: 'en-ru', l1Tag: 'en', l2Tag: 'ru' },
         { id: 'en-it', l1Tag: 'en', l2Tag: 'it' },
         { id: 'en-fr', l1Tag: 'en', l2Tag: 'fr' },
+        { id: 'en-de', l1Tag: 'en', l2Tag: 'de' },
       ],
     });
 
@@ -90,6 +91,10 @@ describe('reading the shipped courses off the manifest', () => {
       { id: 'en-ru', scripts: ['cyrillic'] }, // #325 — Mukta bundles no Cyrillic, so the L2 pays for its own letters
       { id: 'en-it', scripts: [] }, // neither `en` nor `it` maps to a course face (#332): content only, like en-es
       { id: 'en-fr', scripts: [] }, // French is Latin on both sides (#326): charged content only, like en-es
+      // German is Latin on both sides too (#356), umlauts and ß included — `ä ö ü ß Ä Ö Ü` all sit
+      // in U+0000-00FF, which Mukta's `latin` cut already claims, so `de` is deliberately absent
+      // from SCRIPT_BY_LANGUAGE_TAG. Adding it would charge en-de for a course face it never paints.
+      { id: 'en-de', scripts: [] },
     ]);
   });
 

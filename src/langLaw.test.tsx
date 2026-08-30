@@ -143,6 +143,19 @@ describe('every course names its two languages in tags, not just in words', () =
     expect(enFr?.fixture).toBeUndefined();
   });
 
+  it('is English about German for the eighth course, still behind the gate (#356)', () => {
+    const enDe = AUTHORED.find((course) => course.id === 'en-de');
+
+    // en-fr's closest sibling: the same English L1, another Latin-script L2. The shell reads
+    // `l1Tag` for the document and `l2Tag` for the taught line and knows neither language — which
+    // is why `ä ö ü ß` need no code anywhere, only a font cut that already claims U+0000-00FF.
+    // The row still carries `fixture: true`: nothing in this course reaches a learner build until
+    // its graduation issue deletes the flag, the way #331 deleted en-fr's.
+    expect(enDe?.l1Tag).toBe('en');
+    expect(enDe?.l2Tag).toBe('de');
+    expect(enDe?.fixture).toBe(true);
+  });
+
   it('is an ltr course with an rtl second line for the pair that needs both (#196)', () => {
     const enAr = AUTHORED.find((course) => course.id === 'en-ar');
 
