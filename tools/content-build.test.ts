@@ -1719,7 +1719,7 @@ describe('the authored content', () => {
   /** Everything a strict build must emit for the fourth course (#273): the ladder, the Hindi
    *  bundle, the ten rungs and their ten cumulative indexes. */
   /** The en-it rungs authored so far (#334 → #336), and the report line they produce. */
-  const EN_IT_AUTHORED = ['L1-M1', 'L1-M2'];
+  const EN_IT_AUTHORED = ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5'];
   const EN_IT_LINE = `${EN_IT_AUTHORED.length} modules (L1-M1..M${EN_IT_AUTHORED.length})`;
 
   const HI_EN_FILES = [

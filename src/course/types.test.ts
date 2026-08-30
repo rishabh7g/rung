@@ -19,6 +19,12 @@
  */
 import { describe, expect, it } from 'vitest';
 import { parseIndex, parseLevels, parseModule } from './content.ts';
+import {
+  matchSurfaces,
+  normalizeSurface,
+  surfaceSpan,
+  tokenizeSurface,
+} from '../engine/surface.ts';
 import type {
   Complexity,
   Deconstruction,
@@ -188,7 +194,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 32 of them — hi-mr, en-es, en-ar and hi-en L1-M1..M10, plus the 2 en-it modules authored so far', () => {
+  it('finds all 35 of them — hi-mr, en-es, en-ar and hi-en L1-M1..M10, plus the 5 en-it modules authored so far', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -212,6 +218,9 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-es/modules/L1-M9.json',
       'content/en-it/modules/L1-M1.json',
       'content/en-it/modules/L1-M2.json',
+      'content/en-it/modules/L1-M3.json',
+      'content/en-it/modules/L1-M4.json',
+      'content/en-it/modules/L1-M5.json',
       'content/hi-en/modules/L1-M1.json',
       'content/hi-en/modules/L1-M10.json',
       'content/hi-en/modules/L1-M2.json',
@@ -366,13 +375,19 @@ describe('ModuleContent against the modules that exist', () => {
       .map(([file, json]) => [file, parseModule(json, file)] as const)
       .sort(([, a], [, b]) => moduleNumber(a.id) - moduleNumber(b.id));
     const taught = new Set<string>();
+    let maxSpan = 1;
 
     expect(ladder.length, 'the en-it L1 modules authored so far').toBeGreaterThan(0);
     for (const [file, module] of ladder) {
       // First-occurrence-wins is cumulative, so a module's own rows count for its own displays.
       for (const sentence of module.sentences) {
         for (const word of sentence.deconstruction.words) {
-          for (const surface of [word.display, ...word.forms]) taught.add(surface.toLowerCase());
+          for (const raw of [word.display, ...word.forms]) {
+            const surface = normalizeSurface(raw);
+            if (surface === '') continue;
+            taught.add(surface);
+            maxSpan = Math.max(maxSpan, surfaceSpan(surface));
+          }
         }
       }
       const written = [
@@ -383,10 +398,15 @@ describe('ModuleContent against the modules that exist', () => {
         ...module.comprehensionPool.map((item) => item.display),
       ];
       for (const line of written) {
-        for (const token of line.split(/\s+/)) {
-          const surface = token.replace(/^[^\p{L}\p{N}']+|[^\p{L}\p{N}']+$/gu, '').toLowerCase();
-          if (!surface.includes("'")) continue;
-          expect(taught, `${file}: "${surface}" in "${line}" has no word row`).toContain(surface);
+        // The resolver's own walk, longest surface first — so a token inside a taught phrase
+        // (the po' of un po' di) is answered by the phrase and needs no key of its own.
+        const matches = matchSurfaces(tokenizeSurface(line), {
+          maxSpan,
+          has: (surface) => taught.has(surface),
+        });
+        for (const match of matches) {
+          if (match.resolved || !match.surface.includes("'")) continue;
+          expect.fail(`${file}: "${match.surface}" in "${line}" resolves to no word row`);
         }
       }
     }
