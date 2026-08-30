@@ -7,7 +7,13 @@ import prettier from 'eslint-config-prettier/flat';
 export default tseslint.config(
   {
     // design/ is read-only (vendored _ds bundle lives there); content/ is data.
-    ignores: ['dist', 'design', 'content', 'coverage'],
+    //
+    // `.claude/` holds the harness's scratch state, and `.claude/worktrees/` in particular holds
+    // full checkouts left behind by parallel agent runs. Those are entire copies of this repo, so
+    // without this entry ESLint lints the source roughly twenty times over — 1,886 of 1,982 files
+    // on the run that found this — including stale copies of files that have since been deleted.
+    // It was costing about two minutes a run and reporting on code that no longer exists.
+    ignores: ['dist', 'design', 'content', 'coverage', '.claude'],
   },
   {
     files: ['**/*.{ts,tsx}'],
