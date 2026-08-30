@@ -162,6 +162,24 @@ export function resolveActiveCourse(courses: readonly Course[], persistedId?: st
 }
 
 /**
+ * **The user's own language** (#322) — the persisted choice, or the active course's L1 when there
+ * is none.
+ *
+ * The app knew only an active course before, whose `l1` happened to be the language the learner
+ * reads. That conflation holds while someone learns one thing and breaks the moment selection is
+ * restructured as "pick your language, then pick what to learn": the language outlives any one
+ * course, so it is its own persisted fact — and this is the ONE place the unset case is answered,
+ * so the Settings screens that follow cannot resolve it two different ways.
+ *
+ * Pure, like `resolveActiveCourse` above, and for the same reason: it reads a persisted value and
+ * never writes one. An unset language is not a gap to fill in — it is "follow the course", which
+ * is what the app did before the field existed, so an existing learner sees no change at all.
+ */
+export function resolveUserLang(userLang: string, activeCourse: Course): string {
+  return userLang === '' ? activeCourse.l1Tag : userLang;
+}
+
+/**
  * How ONE L2 line is written: the language it declares itself to be, and the way it runs.
  *
  * The two travel together because they are one fact — a line of Arabic that says `lang="ar"` and

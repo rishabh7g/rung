@@ -6,6 +6,7 @@ import {
   parseManifest,
   resetManifestCache,
   resolveActiveCourse,
+  resolveUserLang,
 } from './manifest.ts';
 import { DEV_MANIFEST, STRICT_EMPTY_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
 
@@ -239,6 +240,39 @@ describe('parseManifest (the tripwire)', () => {
     const payload = { courses: [DEV_MANIFEST.courses[0], { id: 'broken' }] };
 
     expect(() => parseManifest(payload)).toThrow(/courses\[1\]\.l1/);
+  });
+});
+
+/**
+ * The user's own language (#322) — the persisted choice, or the active course's L1 when there is
+ * none. One helper, because the two Settings screens that read it must not resolve it two ways.
+ */
+describe('resolveUserLang', () => {
+  const courses = parseManifest(DEV_MANIFEST).courses;
+  const hiMr = courses.find((course) => course.id === 'hi-mr')!;
+  const enAr = courses.find((course) => course.id === 'en-ar')!;
+
+  it('follows the active course when nothing is persisted — the pre-#322 behaviour', () => {
+    expect(resolveUserLang('', hiMr)).toBe(hiMr.l1Tag);
+    expect(resolveUserLang('', enAr)).toBe(enAr.l1Tag);
+  });
+
+  /**
+   * And a chosen language OUTLIVES the course: someone who reads Hindi keeps reading Hindi while
+   * they study an English-chrome course, which is the whole reason the field exists apart from
+   * `activeCourse`.
+   */
+  it('keeps a chosen language even when the active course speaks another', () => {
+    expect(resolveUserLang('hi', enAr)).toBe('hi');
+    expect(resolveUserLang('en', hiMr)).toBe('en');
+  });
+
+  it('is pure — it answers, and never writes the choice back', () => {
+    const before = { ...hiMr };
+
+    resolveUserLang('en', hiMr);
+
+    expect(hiMr).toEqual(before);
   });
 });
 
