@@ -503,43 +503,58 @@ describe('ModuleContent against the modules that exist', () => {
    * en-ru (#338–#343) is the product's first Cyrillic course, and its language law runs the way
    * en-es's does rather than hi-en's: the document speaks ENGLISH (`l1Tag: en`), so every teaching
    * field is English prose — which may quote Cyrillic inside itself — and Russian appears only in
-   * the L2 slots: sentence / word / variation / mistake / pool `display`, and word `forms`. Two
-   * further rules the briefs settled (`tools/course-briefs.ts`, "en-ru: the six decisions"):
+   * the L2 slots.
    *
-   *   • `glossEn` is REQUIRED on every sentence — #268's exemption is for a course whose L2 IS
-   *     English, and Russian is not one; the build enforces it and this pins it in the tree,
-   *   • **no stress marks anywhere.** Normal Russian text carries none, and a combining acute
-   *     (U+0301) would be a codepoint the word index has to match forever — `кни́га` and `книга`
-   *     are two different surfaces. Stress is taught in `sound`, in English syllables.
+   * **What #353–#360 changed, and it is most of this case.** rung teaches speech, not script
+   * (docs/design-contract.md), so an English-L1 course may not ask its learner to decode a script
+   * they cannot read. en-ru is `scriptMode: "romanized"` now: `display` and word `forms` are the
+   * ROMANIZATION, and the Cyrillic moved to the quiet `script` line — the one place in the course
+   * it appears on a learner's screen. Three of this case's old assertions therefore inverted, and
+   * they are worth naming so a reader does not think the file drifted:
    *
-   * `scriptMode` is `native`, so `display` IS the Cyrillic and the `script` field is unused: a
-   * quiet native line exists for romanized courses, and a native course has nothing to put under
-   * itself. The keys walk above already prove no en-ru surface carries one.
+   *   • `display` was asserted to BE Cyrillic and to carry no Latin. It is now the reverse.
+   *   • `script` was asserted to be unused, on the argument that a native course has nothing to
+   *     put under itself. It is now required on every surface that has a `display`.
+   *   • **stress marks were BANNED and are now REQUIRED.** The old reasoning — that an acute is a
+   *     codepoint the word index has to match forever — is still true, and #355 took it as the
+   *     argument FOR marking: Russian vowel reduction is unintelligible without stress, so a
+   *     romanization that hides it teaches an English reader to say the word wrong. What survives
+   *     of the old rule is its sharp edge, asserted below: the acute must be PRECOMPOSED, because
+   *     `á` and `a` + U+0301 are two surfaces and only one of them has a "why" row.
+   *
+   * `glossEn` is REQUIRED on every sentence — #268's exemption is for a course whose L2 IS
+   * English, and Russian is not one; the build enforces it and this pins it in the tree.
    */
-  it('keeps the Cyrillic course in its lane: display is Russian, every teaching field English (#340)', () => {
+  it('keeps the romanized course in its lane: display is Latin, the Cyrillic is the script line (#353)', () => {
     const enRu = MODULE_FILES.filter(([name]) => name.includes('en-ru'));
     const cyrillic = /\p{Script=Cyrillic}/u;
     const latin = /[A-Za-z]/;
-    const noLatin = /^[^A-Za-z]+$/;
     const noCyrillic = /^\P{Script=Cyrillic}+$/u;
-    /** A combining acute — the one codepoint that would fork a word into two index surfaces. */
-    const stressMark = /́/u;
+    /** A COMBINING acute — the decomposed spelling, which would fork a word into two surfaces. */
+    const combiningAcute = /́/u;
+    /** The precomposed stressed vowels the #355 scheme writes. */
+    const stressed = /[áéíóúý]/u;
 
     expect(enRu.length, 'the en-ru L1 modules authored so far').toBeGreaterThan(0);
     for (const [file, json] of enRu) {
       const module = parseModule(json, file);
 
+      /** Every L2 surface: romanized display, Cyrillic script line, and neither in the other. */
+      const surface = (target: { display: string; script?: string | null }, at: string): void => {
+        expect(target.display, `${at} display is the romanization`).toMatch(noCyrillic);
+        expect(target.display, `${at} display is Latin`).toMatch(latin);
+        expect(target.script, `${at} carries the Cyrillic on its script line`).toMatch(cyrillic);
+      };
+
       // Teaching prose is English. It may QUOTE Cyrillic, so the test is that English is there.
       for (const rule of module.rules) expect(rule.text, `${file} rule`).toMatch(latin);
       for (const item of module.comprehensionPool) {
-        expect(item.display, item.id).toMatch(cyrillic);
-        expect(item.display, `${item.id} display is Russian only`).toMatch(noLatin);
+        surface(item, item.id);
         expect(item.cue, `${item.id} cue is English only`).toMatch(noCyrillic);
       }
       for (const sentence of module.sentences) {
         const at = sentence.id;
-        expect(sentence.display, at).toMatch(cyrillic);
-        expect(sentence.display, `${at} display is Russian only`).toMatch(noLatin);
+        surface(sentence, at);
         expect(sentence.cue, `${at} cue is English only`).toMatch(noCyrillic);
         // The gloss is mandatory here: the L2 is not English, so #268's exemption does not reach.
         expect(sentence.glossEn, `${at} glossEn`).toMatch(latin);
@@ -548,26 +563,32 @@ describe('ModuleContent against the modules that exist', () => {
           expect(sentence[field], `${at} ${field}`).toMatch(latin);
         }
         if (sentence.trap !== undefined) expect(sentence.trap, `${at} trap`).toMatch(latin);
-        expect(sentence.mistake?.display, `${at} mistake`).toMatch(noLatin);
+        if (sentence.mistake !== undefined) surface(sentence.mistake, `${at} mistake`);
         expect(sentence.mistake?.why, `${at} mistake.why`).toMatch(latin);
         for (const variation of sentence.variations ?? []) {
-          expect(variation.display, `${at} variation`).toMatch(noLatin);
+          surface(variation, `${at} variation`);
           expect(variation.cue, `${at} variation cue`).toMatch(noCyrillic);
           expect(variation.changed, `${at} variation changed`).toMatch(latin);
         }
         for (const word of sentence.deconstruction.words) {
-          expect(word.display, `${at} word`).toMatch(noLatin);
-          expect(word.display, `${at} word is Russian`).toMatch(cyrillic);
+          surface(word, `${at} word`);
           for (const form of word.forms) {
-            expect(form, `${at} form of ${word.display}`).toMatch(noLatin);
+            expect(form, `${at} form of ${word.display}`).toMatch(noCyrillic);
+            expect(form, `${at} form of ${word.display} is Latin`).toMatch(latin);
           }
           expect(word.cue, `${at} cue of ${word.display}`).toMatch(noCyrillic);
           expect(word.note, `${at} note of ${word.display}`).toMatch(latin);
         }
       }
 
-      // No stress mark anywhere in the file — display, forms, or a quotation inside English prose.
-      expect(JSON.stringify(module), `${file} carries a stress mark`).not.toMatch(stressMark);
+      // The acute is PRECOMPOSED everywhere — display, forms, or a quotation inside English
+      // prose. `á` and `a` + U+0301 fold to two different index keys, and only one has a note.
+      expect(JSON.stringify(module), `${file} writes a decomposed acute`).not.toMatch(
+        combiningAcute,
+      );
+      // …and stress is actually MARKED rather than merely permitted: a module of nothing but
+      // monosyllables is not a thing Russian has, so an unmarked file is a file that forgot.
+      expect(JSON.stringify(module), `${file} marks no stress at all`).toMatch(stressed);
     }
   });
 
