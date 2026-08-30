@@ -801,6 +801,46 @@ describe('ModuleContent against the modules that exist', () => {
       ).toBe(true);
     }
 
+    /**
+     * **Every surface has ONE owning row, with two named exceptions.**
+     *
+     * First occurrence wins, so a second row for a surface is a note the word index can never
+     * reach — the `का` bug (docs/08-marathi-third-review.md correction 4) in its milder form:
+     * milder because both notes here are TRUE of the word, where that bug's second note was false
+     * of the sentence in front of the learner. Sentence Detail still renders each sentence's own
+     * `deconstruction`, so a duplicated row is read on its own page; it is the "why" tap during
+     * practice that resolves to the earlier one.
+     *
+     * The bar is en-es's and en-fr's, the two courses authored under this briefs discipline:
+     * ZERO duplicated surfaces. hi-mr, authored before it, has 13. en-de was written by three
+     * authors in parallel who each knew the briefs but not each other's rows, and it landed on
+     * six; four were redundant and were dropped.
+     *
+     * The two that remain are STRUCTURALLY forced, not oversights, and that is why they are
+     * listed rather than fixed: each is the only word row on its sentence, and the schema's
+     * `words: { minItems: 1 }` forbids a sentence with none. Both are the same word in both
+     * seats — `nicht` negating a verb, `Dienstag` naming a weekday — so the note that wins is
+     * true of the later use as well; M2's `nicht` note was sharpened at the merge for exactly
+     * that reason.
+     *
+     * `in` is the third and it is kept for the opposite reason: it is the one case where the two
+     * seats genuinely teach different things. M1's `Ich wohne in Berlin` is locative; M7's
+     * `Ich gehe in den Park` is motion, and the case is what carries the difference. Dropping
+     * M7's row was tried and reverted — it left the motion lesson with no row on its own page,
+     * and sent a learner tapping `in` to a note about standing still. Both rows stay, and M1's
+     * note (the one the index resolves to) now names both seats.
+     *
+     * A FOURTH entry appearing here is a real defect, which is what this list is for.
+     */
+    const FORCED_DUPLICATES = new Set(['nicht', 'dienstag', 'in']);
+    for (const [key, seats] of owners) {
+      if (FORCED_DUPLICATES.has(key)) continue;
+      expect(
+        [...seats].length,
+        `"${key}" is opened by more than one row: ${[...seats].join(' | ')}`,
+      ).toBe(1);
+    }
+
     // The seams. One row apiece, on the module the briefs named, or the later note is unreachable.
     for (const [key, module] of [
       ['sie', 'L1-M2'],

@@ -3,18 +3,14 @@
   "id": "L1-M6",
   "title": "Tomorrow",
   "job": "Future and plans",
-  "prerequisites": [
-    "L1-M5"
-  ],
+  "prerequisites": ["L1-M5"],
   "verified": true,
-  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedBy": "LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-30",
   "complexity": {
     "minWordsPerSentence": 4,
     "maxWordsPerSentence": 7,
-    "allowedTenses": [
-      "simple_present"
-    ],
+    "allowedTenses": ["simple_present"],
     "allowedPatterns": [
       "Morgen + V + ich + N",
       "Morgen + V + ich + nach + place",
@@ -71,10 +67,7 @@
             "note": "tomorrow — and this one row carries a second reading the index cannot hold apart from it. Capitalised as a noun, Morgen is \"morning\"; lowercase as an adverb, morgen is \"tomorrow\". The word index folds case, so both readings live here, and the course was built around that: the morning is written only inside M2's greeting Guten Morgen and M4's am Morgen, with M4's morgens for \"in the mornings\", precisely so that the bare word could arrive here meaning \"tomorrow\". When it opens a sentence it is capitalised for position, not for meaning — Morgen esse ich Brot is \"tomorrow\", because the slot it is filling is the time slot."
           }
         ],
-        "rules": [
-          0,
-          1
-        ]
+        "rules": [0, 1]
       },
       "trap": "There is no future tense here to go looking for. The verb is the same esse the learner met in M4 for \"I eat\", and the only thing carrying \"will\" is the word morgen. Adding a helper verb to make it feel more like a future is what breaks it.",
       "sound": "MOR-gen, with a throaty r and a hard g at the back. ich is the soft hissed ch made at the front of the mouth — never the k of \"ick\". Brot rhymes with English \"boat\": a long o, and the final t is crisp.",
@@ -119,10 +112,7 @@
             "note": "the day after tomorrow, in ONE word: über (\"over\") stacked straight onto morgen. English needs four words for it and German needs none extra, which is worth noticing early — German builds this kind of meaning by welding words together rather than by stringing them out. It is written as one token, so it is one word row and one index key, with no claim on the morgen inside it."
           }
         ],
-        "rules": [
-          0,
-          1
-        ]
+        "rules": [0, 1]
       },
       "trap": "nach Hause is one fixed phrase meaning \"home\" as a destination, taken whole in M5's Ich bin nach Hause gegangen. It is not \"to the house\", it never takes an article, and the bare nach on its own is written nowhere in this level.",
       "sound": "ÜBER has the ü of pursed lips — say \"ee\" with your lips rounded. gehe is GEH-uh, two syllables, with the final -e voiced as a weak uh rather than swallowed. Hause is HOW-zuh: au is the ow of \"how\", and an s between vowels is a z.",
@@ -170,17 +160,11 @@
             "display": "machen",
             "cue": "to do · to make",
             "tag": "delta",
-            "forms": [
-              "machen",
-              "mache"
-            ],
+            "forms": ["machen", "mache"],
             "note": "to do, and also to make — German uses one verb where English splits two, and which one it is comes from what is being done. The Sie form is machen, spelled exactly like the infinitive, which is the register decision paying off again; the ich form is mache. M5's past participle gemacht is a separate word and a separate row."
           }
         ],
-        "rules": [
-          0,
-          6
-        ]
+        "rules": [0, 6]
       },
       "trap": "English builds this question out of two verbs — \"what DO you DO\" — and German builds it out of none: was, then the verb, then Sie. A learner hunting for the German \"do\" is hunting for a word that does not exist.",
       "sound": "vahs — the German w is an English v, every time. machen has the throaty ch made at the back of the mouth, the one in Scottish \"loch\", and that is a different sound from the soft front ch of ich.",
@@ -221,17 +205,11 @@
             "display": "lernen",
             "cue": "to learn",
             "tag": "free",
-            "forms": [
-              "lernen",
-              "lerne"
-            ],
+            "forms": ["lernen", "lerne"],
             "note": "to learn. Regular, and it takes -e for ich and -en for Sie, so lernen does duty as the infinitive and as the Sie form at once. English \"learn\" and German lernen came from the same place and still mean the same thing, so there is nothing to unlearn — only the position at the end of the clause to get used to."
           }
         ],
-        "rules": [
-          4,
-          0
-        ]
+        "rules": [4, 0]
       },
       "trap": "The infinitive is still last and there is still no word for \"to\" in front of it. The time word does not break the bracket — it goes inside it, between möchte and lernen, along with everything else the clause carries.",
       "sound": "MERSH-tuh, with the ö of möchte made by saying \"eh\" with rounded lips. lernen has an r that barely sounds after the vowel: LEHR-nen, closer to LEH-nen than an English speaker expects.",
@@ -276,10 +254,7 @@
             "note": "Tuesday. Every day name is a noun, so it is capitalised wherever it stands, and it takes am — am Dienstag — which is M4's contraction of an and dem doing its time job. The ie is one long ee and not two vowels: DEENS-tahk."
           }
         ],
-        "rules": [
-          1,
-          5
-        ]
+        "rules": [1, 5]
       },
       "trap": "am Dienstag is TWO words and ONE element, so the verb still comes straight after it. Counting words instead of counting elements is what produces *Am Dienstag ich arbeite nicht.",
       "sound": "DEENS-tahk — the ie is one long ee sound, and the final -g of Tag hardens to a k. arbeite is AR-by-tuh, with the ei said like English \"eye\".",
@@ -324,10 +299,7 @@
             "note": "weekend — literally the \"week-end\", Woche and Ende welded into one noun, which is why it is written as one capitalised word and counts as one token. Like a day name it takes am: am Wochenende. German makes compound nouns this way constantly, and the gender always comes from the LAST part, so this one is das Wochenende because Ende is neuter."
           }
         ],
-        "rules": [
-          1,
-          5
-        ]
+        "rules": [1, 5]
       },
       "trap": "Two things happen at once here and neither is new: the time phrase fronts and inverts the clause, and M4's separable prefix auf still flies to the very end. The prefix goes after spät, not before it — it is always the last thing in the clause.",
       "sound": "VO-khen-EN-duh, with the throaty ch of machen in the middle and a voiced final -e. stehe is SHTEH-uh: an initial st- is said sht- in German, always.",
@@ -372,10 +344,7 @@
             "note": "nothing — and it is one letter away from M3's nicht (\"not\"), which is the whole reason it is worth a row. nicht denies a verb or an adjective and never stands for a thing; nichts IS the thing, and it fills the object slot: Ich möchte nichts is \"I want nothing\". They are two different keys and two different jobs, and an English speaker who reads them as the same word will negate the wrong half of the sentence."
           }
         ],
-        "rules": [
-          1,
-          4
-        ]
+        "rules": [1, 4]
       },
       "trap": "nichts is an object, so it sits where an object sits — inside the bracket, before the infinitive. It does not behave like nicht, which chases the verb it is denying; the two words look alike and stand in different places for different reasons.",
       "sound": "NIKHTS with the soft front ch, the same sound as in ich, and a clean -ts on the end. That final s is the only audible difference from nicht, so it has to be said.",
@@ -423,17 +392,11 @@
             "display": "kaufen",
             "cue": "to buy",
             "tag": "free",
-            "forms": [
-              "kaufen",
-              "kaufe"
-            ],
+            "forms": ["kaufen", "kaufe"],
             "note": "to buy. Regular: kaufe for ich, kaufen for Sie, with the Sie form spelled like the infinitive as it is for essen, kommen and arbeiten. M5's participle gekauft is a separate word row; this one is the present."
           }
         ],
-        "rules": [
-          0,
-          1
-        ]
+        "rules": [0, 1]
       },
       "trap": "This sentence is the control: it is built exactly like Morgen esse ich Brot and it is not about the future at all. That is the module's whole point — the German present says both, and the time word is the only thing that decides which.",
       "sound": "HOY-tuh — the German eu is the oy of \"boy\", never \"ee-oo\". kaufe has the au of \"how\": KOW-fuh.",
@@ -485,10 +448,7 @@
             "note": "later. It is a time word like morgen and heute and can front and invert in the same way, but here it sits at the end, where a plain adverb of time lands when something else is already holding first position. It is \"later\" and not \"late\": M4's spät is the plain one, and später compares this time against some other time."
           }
         ],
-        "rules": [
-          1,
-          5
-        ]
+        "rules": [1, 5]
       },
       "trap": "später is a comparison and spät is a judgement. Ich komme später says only that it will be after the time first named; Ich komme spät says the hour itself is late. English blurs them and German does not.",
       "sound": "SHPAY-ter. An initial sp- is said shp-, the same rule that turns st- into sht-. The ä is the ay of \"bay\" with no glide at the end.",
@@ -533,10 +493,7 @@
             "note": "when — but only the ASKING one. English uses a single \"when\" for two jobs, the question (\"when do you come?\") and the joining word (\"I eat when I come home\"); German splits them, and wann only ever asks. The joining one is wenn, which M10 teaches, and it is a different spelling and a different key — the eye keeps them apart even though an English ear hears one word."
           }
         ],
-        "rules": [
-          6,
-          0
-        ]
+        "rules": [6, 0]
       },
       "trap": "wann is the question and wenn is the join. Reaching for wann inside a statement is the mistake this row exists to stop, and M10 is where the other half of the pair arrives.",
       "sound": "vahn — the w is a v, and the double n is one plain n. kommen has a short o and a clearly voiced final -en.",

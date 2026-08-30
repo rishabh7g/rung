@@ -2323,14 +2323,14 @@ describe('the authored content', () => {
     /** en-fr's ten rungs, complete since #330 — the same shape as every other course's L1. */
     const EN_FR = L1;
     /**
-     * en-de's authored PREFIX — #362 wrote M1–M2 and #363 M3–M5, so the eighth course is the
-     * first this assertion has ever seen half-written. The gap is the point: a fixture course
-     * grows a rung at a time, and the dev build ships exactly what exists rather than what the
-     * ladder promises. M6–M10 join on #364, and the fixture flag goes on #365.
+     * en-de's ten rungs, authored a batch at a time — #362 M1–M2, #363 M3–M5, #364 M6–M10. This
+     * assertion saw the course half-written twice on the way, which no course before it had ever
+     * done here: the dev build ships exactly what exists rather than what the ladder promises,
+     * and a fixture course is allowed to exist part-authored. The ladder is whole now, and the
+     * fixture flag comes off on #365.
      */
-    const EN_DE_AUTHORED = ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5'];
-    /** `moduleRanges` compacts a contiguous run, so the prefix reads as one span. */
-    const EN_DE_RANGE = 'L1-M1..M5';
+    const EN_DE_AUTHORED = L1;
+    const EN_DE_RANGE = 'L1-M1..M10';
 
     expect(report.exitCode).toBe(0);
     expect([...report.shipped]).toEqual([

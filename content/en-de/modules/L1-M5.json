@@ -5,7 +5,7 @@
   "job": "Past tense — the first big divergence",
   "prerequisites": ["L1-M4"],
   "verified": true,
-  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedBy": "LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-30",
   "complexity": {
     "minWordsPerSentence": 3,
@@ -229,8 +229,8 @@
             "display": "gegangen",
             "cue": "gone",
             "tag": "delta",
-            "forms": [],
-            "note": "The past participle of gehen, to go — strong, ge-…-en, and one of the small set of verbs that build the Perfekt with sein rather than haben because they are about MOVEMENT from one place to another. Ich bin gegangen, never Ich habe gegangen."
+            "forms": ["gegangen", "gehe", "gehen", "geht"],
+            "note": "The past participle of gehen, to go — strong, ge-…-en, and one of the small set of verbs that build the Perfekt with sein rather than haben because they are about MOVEMENT from one place to another. Ich bin gegangen, never Ich habe gegangen. One row carries the whole lexeme, participle and present alike — gehe, gehen, geht — because the index is first-occurrence-wins and a later module opening its own gehen row would be a second note for one word, unreachable behind this one."
           }
         ],
         "rules": [3, 4]
@@ -540,26 +540,69 @@
     }
   ],
   "comprehensionPool": [
-    { "id": "L1-M5-C01", "display": "Ich habe Suppe gegessen", "cue": "I ate soup" },
-    { "id": "L1-M5-C02", "display": "Gestern habe ich Brot gegessen", "cue": "Yesterday I ate bread" },
-    { "id": "L1-M5-C03", "display": "Ich habe Tee getrunken", "cue": "I drank tea" },
+    {
+      "id": "L1-M5-C01",
+      "display": "Ich habe Suppe gegessen",
+      "cue": "I ate soup"
+    },
+    {
+      "id": "L1-M5-C02",
+      "display": "Gestern habe ich Brot gegessen",
+      "cue": "Yesterday I ate bread"
+    },
+    {
+      "id": "L1-M5-C03",
+      "display": "Ich habe Tee getrunken",
+      "cue": "I drank tea"
+    },
     {
       "id": "L1-M5-C04",
       "display": "Gestern bin ich nach Hause gegangen",
       "cue": "Yesterday I went home"
     },
-    { "id": "L1-M5-C05", "display": "Ich bin früh aufgestanden", "cue": "I got up early" },
-    { "id": "L1-M5-C06", "display": "Ich war nicht müde", "cue": "I wasn't tired" },
-    { "id": "L1-M5-C07", "display": "Ich hatte keinen Kaffee", "cue": "I didn't have any coffee" },
-    { "id": "L1-M5-C08", "display": "Haben Sie gestern gearbeitet?", "cue": "Did you work yesterday?" },
-    { "id": "L1-M5-C09", "display": "Am Montag habe ich gearbeitet", "cue": "On Monday I worked" },
+    {
+      "id": "L1-M5-C05",
+      "display": "Ich bin früh aufgestanden",
+      "cue": "I got up early"
+    },
+    {
+      "id": "L1-M5-C06",
+      "display": "Ich war nicht müde",
+      "cue": "I wasn't tired"
+    },
+    {
+      "id": "L1-M5-C07",
+      "display": "Ich hatte keinen Kaffee",
+      "cue": "I didn't have any coffee"
+    },
+    {
+      "id": "L1-M5-C08",
+      "display": "Haben Sie gestern gearbeitet?",
+      "cue": "Did you work yesterday?"
+    },
+    {
+      "id": "L1-M5-C09",
+      "display": "Am Montag habe ich gearbeitet",
+      "cue": "On Monday I worked"
+    },
     {
       "id": "L1-M5-C10",
       "display": "Ich bin am Dienstag nach Hause gegangen",
       "cue": "I went home on Tuesday"
     },
-    { "id": "L1-M5-C11", "display": "Gestern Abend war ich müde", "cue": "Yesterday evening I was tired" },
-    { "id": "L1-M5-C12", "display": "Haben Sie Wasser getrunken?", "cue": "Did you drink water?" }
+    {
+      "id": "L1-M5-C11",
+      "display": "Gestern Abend war ich müde",
+      "cue": "Yesterday evening I was tired"
+    },
+    {
+      "id": "L1-M5-C12",
+      "display": "Haben Sie Wasser getrunken?",
+      "cue": "Did you drink water?"
+    }
   ],
-  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
 }

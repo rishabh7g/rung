@@ -5,7 +5,7 @@
   "job": "Say what you want and don't want",
   "prerequisites": ["L1-M2"],
   "verified": true,
-  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedBy": "LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-30",
   "complexity": {
     "minWordsPerSentence": 3,
@@ -85,13 +85,6 @@
             "tag": "delta",
             "forms": [],
             "note": "ein wearing the accusative -en, in front of a masculine noun that is the object of the sentence. This is the whole visible accusative in L1: eine and ein do not move, so einen is the only ending a learner can actually see arrive. It is a different written word from L1-M1's ein, so both stay reachable, and its negative twin is keinen."
-          },
-          {
-            "display": "Kaffee",
-            "cue": "coffee",
-            "tag": "free",
-            "forms": [],
-            "note": "coffee — masculine, der Kaffee, so einen Kaffee when it is what you want. Capitalised because every German noun is capitalised, in every position, which is orthography the learner has to PRODUCE and not merely recognise."
           }
         ],
         "rules": [0, 4]
@@ -544,28 +537,56 @@
     }
   ],
   "comprehensionPool": [
-    { "id": "L1-M3-C01", "display": "Ich möchte einen Tee", "cue": "I would like a tea" },
+    {
+      "id": "L1-M3-C01",
+      "display": "Ich möchte einen Tee",
+      "cue": "I would like a tea"
+    },
     {
       "id": "L1-M3-C02",
       "display": "Ich möchte eine Suppe essen",
       "cue": "I would like to eat a soup"
     },
-    { "id": "L1-M3-C03", "display": "Möchten Sie Wasser?", "cue": "Would you like water?" },
-    { "id": "L1-M3-C04", "display": "Ich möchte kein Wasser", "cue": "I don't want any water" },
+    {
+      "id": "L1-M3-C03",
+      "display": "Möchten Sie Wasser?",
+      "cue": "Would you like water?"
+    },
+    {
+      "id": "L1-M3-C04",
+      "display": "Ich möchte kein Wasser",
+      "cue": "I don't want any water"
+    },
     {
       "id": "L1-M3-C05",
       "display": "Ich möchte etwas trinken",
       "cue": "I would like something to drink"
     },
-    { "id": "L1-M3-C06", "display": "Ich möchte keinen Tee", "cue": "I don't want any tea" },
-    { "id": "L1-M3-C07", "display": "Ich esse nicht", "cue": "I don't eat" },
+    {
+      "id": "L1-M3-C06",
+      "display": "Ich möchte keinen Tee",
+      "cue": "I don't want any tea"
+    },
+    {
+      "id": "L1-M3-C07",
+      "display": "Ich esse nicht",
+      "cue": "I don't eat"
+    },
     {
       "id": "L1-M3-C08",
       "display": "Möchten Sie einen Kaffee trinken?",
       "cue": "Would you like to drink a coffee?"
     },
-    { "id": "L1-M3-C09", "display": "Ich möchte Brot essen", "cue": "I would like to eat bread" },
-    { "id": "L1-M3-C10", "display": "Der Kaffee ist nicht gut", "cue": "The coffee isn't good" },
+    {
+      "id": "L1-M3-C09",
+      "display": "Ich möchte Brot essen",
+      "cue": "I would like to eat bread"
+    },
+    {
+      "id": "L1-M3-C10",
+      "display": "Der Kaffee ist nicht gut",
+      "cue": "The coffee isn't good"
+    },
     {
       "id": "L1-M3-C11",
       "display": "Ich möchte keine Suppe essen",
@@ -577,5 +598,8 @@
       "cue": "Would you like something to eat?"
     }
   ],
-  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
 }
