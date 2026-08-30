@@ -6,15 +6,15 @@
  * against a row that has more than the nine required fields, and the newest course last. Shared,
  * so the loader test and the boot tests cannot drift into disagreeing about the shape.
  *
- * **Seven rows ship; the eighth is behind the gate.** en-es graduated in #195, en-ar in #202,
- * hi-en in #273, en-ru in #343, en-it in #337 and en-fr in #331 — every one of those seven courses
- * was authored behind the gate and let out of it. en-de — English (L1) → German (L2), added as a
- * dev fixture in #356 — is the one row still behind it, so it carries `fixture: true` until its
- * graduation issue deletes the key, exactly as hi-en's row did between #267 and #273. It is
- * therefore also the row that keeps the `fixture` seam exercised against a REAL manifest row
- * rather than only against the synthetic one in `src/course/manifest.test.ts` — that synthetic
- * case stays, because the seam has to keep working on the day the catalogue is fully graduated
- * again and nothing real carries the key.
+ * **All eight rows ship, and none carries a `fixture` key.** en-es graduated in #195, en-ar in
+ * #202, hi-en in #273, en-fr in #331, en-it in #337, en-ru in #343 and en-de — English (L1) →
+ * German (L2), added as a dev fixture in #356 — in #365. Every one was authored behind the gate
+ * and let out of it, which is the whole shape of PRD §17.
+ *
+ * So the catalogue is fully graduated again, and NO real row exercises the `fixture` seam any
+ * more. That is exactly the day `src/course/manifest.test.ts`'s synthetic `en-ja` row was written
+ * for: a test that borrowed whichever row happened to carry the key would go quiet precisely when
+ * nothing does, which is when nothing else is watching it either.
  *
  * The Settings smoke (`src/screens/SettingsScreen.test.tsx`) and the authored-rung walks
  * (`hiEnAuthored`, `enRuAuthored`, `enItAuthored`, `enFrAuthored`) reach the later courses through
@@ -108,10 +108,6 @@ export const DEV_MANIFEST = {
       dir: 'ltr',
     },
     {
-      // The one row still behind the gate (#356). `fixture: true` is carried here rather than
-      // stripped because the app has to meet the row exactly as the dev build emits it: the
-      // switcher, `resolveActiveCourse` and every screen below them must go on never branching
-      // on the key, and a fixture stripped of it could not prove that.
       id: 'en-de',
       l1: 'English',
       l2: 'German',
@@ -121,7 +117,6 @@ export const DEV_MANIFEST = {
       pairLabel: 'english → german',
       scriptMode: 'native',
       dir: 'ltr',
-      fixture: true,
     },
   ],
 } as const;
