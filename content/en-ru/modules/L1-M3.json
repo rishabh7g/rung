@@ -3,329 +3,406 @@
   "id": "L1-M3",
   "title": "Needs and wants",
   "job": "Say what you want and don't want",
-  "prerequisites": ["L1-M2"],
+  "prerequisites": [
+    "L1-M2"
+  ],
   "verified": true,
-  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedBy": "Claude Opus 5 — LLM review of the romanization, authorised by repo owner",
   "verifiedAt": "2026-08-30",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 6,
-    "allowedTenses": ["simple_present"],
+    "allowedTenses": [
+      "simple_present"
+    ],
     "allowedPatterns": [
-      "Я хочу + N (acc.)",
-      "Я не хочу + N (acc.)",
-      "Я хочу + V-inf",
-      "Вы хотите + N (acc.) + ?",
-      "Я не + V"
+      "Ya khochú + N (acc.)",
+      "Ya ne khochú + N (acc.)",
+      "Ya khochú + V-inf",
+      "Vy khotíte + N (acc.) + ?",
+      "Ya ne + V"
     ],
     "newWordCap": 25
   },
   "rules": [
     {
       "tag": "delta",
-      "text": "The first case ending you write yourself: a feminine noun ending in -а or -я swaps that ending for -у or -ю when it is the thing being wanted, liked or taken. вода → воду, книга → книгу, музыка → музыку. Nothing else in the sentence moves."
+      "text": "The first case ending you write yourself: a feminine noun ending in -a or -ya swaps that ending for -u or -yu when it is the thing being wanted, liked or taken. vodá → vódu, kníga → knígu, múzyka → múzyku. Nothing else in the sentence moves — but watch the acute as well as the ending: vodá → vódu takes the stress with it, kníga → knígu leaves it alone, and which of the two a word does is a fact about that word."
     },
     {
       "tag": "interference",
-      "text": "The object does NOT always change, and M1 showed you why before this rule existed: a masculine noun naming a thing rather than a living creature (чай, хлеб, сок) looks identical whether it is the subject or the object, a neuter noun (молоко) likewise, and кофе never changes at all. So \"the object case changes the ending\" is only true of the feminine -а/-я nouns at this level. Learn which nouns move rather than expecting all of them to."
+      "text": "The object does NOT always change, and M1 showed you why before this rule existed: a masculine noun naming a thing rather than a living creature (chay, khleb, sok) looks identical whether it is the subject or the object, a neuter noun (molokó) likewise, and kófe never changes at all. So \"the object case changes the ending\" is only true of the feminine -a/-ya nouns at this level. Learn which nouns move rather than expecting all of them to."
     },
     {
       "tag": "delta",
-      "text": "Negation is one word in one place: не goes immediately in front of the verb and nothing else happens. Я не хочу кофе. English has to fetch an auxiliary — do not, does not, did not — and Russian has nothing of the kind, in any tense. This one word will still be doing the whole job in M5's past and M6's future."
+      "text": "Negation is one word in one place: ne goes immediately in front of the verb and nothing else happens. Ya ne khochú kófe. English has to fetch an auxiliary — do not, does not, did not — and Russian has nothing of the kind, in any tense. This one word will still be doing the whole job in M5's past and M6's future."
     },
     {
       "tag": "delta",
-      "text": "Wanting to DO something is хочу plus the plain dictionary form of the verb, with no word for \"to\": Я хочу работать. English's \"to\" tempts a что or a чтобы into the gap, and neither belongs there."
+      "text": "Wanting to DO something is khochú plus the plain dictionary form of the verb, with no word for \"to\": Ya khochú rabótat'. English's \"to\" tempts a chto or a chtóby into the gap, and neither belongs there."
     },
     {
       "tag": "interference",
-      "text": "хотеть does not follow either of the ordinary ending patterns — it is one of a handful of Russian verbs that mix them: хочу (I), хочет (he, she), хотите (you, polite). Learn these three shapes as they come; M4 sorts out the verbs that DO behave."
+      "text": "khotét' does not follow either of the ordinary ending patterns — it is one of a handful of Russian verbs that mix them: khochú (I), khóchet (he, she), khotíte (you, polite). Learn these three shapes as they come; M4 sorts out the verbs that DO behave."
     },
     {
       "tag": "free",
-      "text": "A word borrowed whole from another language often refuses to change at all: кофе is the same in every position in every sentence. There are only a few such nouns, and they are a gift — nothing to learn."
+      "text": "A word borrowed whole from another language often refuses to change at all: kófe is the same in every position in every sentence. There are only a few such nouns, and they are a gift — nothing to learn."
     }
   ],
   "sentences": [
     {
       "id": "L1-M3-S01",
-      "display": "Я хочу чай.",
+      "display": "Ya khochú chay.",
+      "script": "Я хочу чай.",
       "cue": "I want tea",
       "glossEn": "lit. \"I want tea\"",
       "literal": "I want tea",
       "deconstruction": {
         "words": [
           {
-            "display": "хочу",
+            "display": "khochú",
+            "script": "хочу",
             "cue": "I want",
             "tag": "interference",
-            "forms": ["хочу", "хочет", "хотите"],
-            "note": "\"I want\", from хотеть. This verb mixes the two ending patterns and has to be learned shape by shape: хочу (I), хочет (he or she), хотите (you, polite). It is blunter in Russian than \"I want\" is in English only when it is bare — adding пожалуйста makes it a perfectly ordinary request."
+            "forms": [
+              "khochú",
+              "khóchet",
+              "khotíte"
+            ],
+            "note": "\"I want\", from khotét'. This verb mixes the two ending patterns and has to be learned shape by shape: khochú (I), khóchet (he or she), khotíte (you, polite). It is blunter in Russian than \"I want\" is in English only when it is bare — adding pozháluysta makes it a perfectly ordinary request."
           }
         ],
-        "rules": [1]
+        "rules": [
+          1
+        ]
       },
-      "trap": "Nothing happened to чай. After a whole module about endings it is easy to expect one here — but a masculine thing keeps its dictionary shape as the object, and that is the point of starting with this sentence.",
-      "sound": "ya kha-CHOO chai. The х is the raspy h from хорошо, and the о in front of the stress flattens to \"a\".",
+      "trap": "Nothing happened to chay. After a whole module about endings it is easy to expect one here — but a masculine thing keeps its dictionary shape as the object, and that is the point of starting with this sentence.",
+      "sound": "ya kha-CHOO chai. The kh is the raspy h from khoroshó, and the o in front of the stress flattens to \"a\".",
       "variations": [
         {
-          "display": "Я хочу сок.",
+          "display": "Ya khochú sok.",
+          "script": "Я хочу сок.",
           "cue": "I want juice",
           "changed": "swap the drink — another masculine thing, so still nothing moves"
         },
         {
-          "display": "Вы хотите чай?",
+          "display": "Vy khotíte chay?",
+          "script": "Вы хотите чай?",
           "cue": "Do you want tea?",
-          "changed": "хочу → хотите for the polite you, and the sentence becomes a question with nothing added"
+          "changed": "khochú → khotíte for the polite you, and the sentence becomes a question with nothing added"
         },
         {
-          "display": "Я хочу чай, пожалуйста.",
+          "display": "Ya khochú chay, pozháluysta.",
+          "script": "Я хочу чай, пожалуйста.",
           "cue": "I would like tea, please",
-          "changed": "пожалуйста turns the bare want into a request — the ordinary way to order something"
+          "changed": "pozháluysta turns the bare want into a request — the ordinary way to order something"
         }
       ],
       "mistake": {
-        "display": "Я хочу чаю.",
-        "why": "чаю is a real shape of чай, but it belongs to a different job (a partial amount — \"some tea\"), and this level does not teach it. Я хочу чай."
+        "display": "Ya khochú cháyu.",
+        "script": "Я хочу чаю.",
+        "why": "cháyu is a real shape of chay, but it belongs to a different job (a partial amount — \"some tea\"), and this level does not teach it. Ya khochú chay."
       },
-      "usage": "Ordering, asking, saying what you would like — add пожалуйста and it is polite anywhere.",
+      "usage": "Ordering, asking, saying what you would like — add pozháluysta and it is polite anywhere.",
       "register": "neutral",
       "mnemonic": "Masculine things that are not alive travel light: subject or object, same shape."
     },
     {
       "id": "L1-M3-S02",
-      "display": "Я хочу воду.",
+      "display": "Ya khochú vódu.",
+      "script": "Я хочу воду.",
       "cue": "I want water",
       "glossEn": "lit. \"I want water\"",
       "literal": "I want water-OBJECT",
       "deconstruction": {
         "words": [
           {
-            "display": "вода",
+            "display": "vodá",
+            "script": "вода",
             "cue": "water",
             "tag": "delta",
-            "forms": ["вода", "воду"],
-            "note": "Water. вода is the dictionary shape and the subject shape; воду is what it becomes as the object of a verb — the first ending in this course you will write on purpose. Note that the stress jumps as the ending changes: va-DA, but VO-doo."
+            "forms": [
+              "vodá",
+              "vódu"
+            ],
+            "note": "Water. vodá is the dictionary shape and the subject shape; vódu is what it becomes as the object of a verb — the first ending in this course you will write on purpose. Note that the stress jumps as the ending changes, and that the acute is where you can see it coming: vodá, but vódu — va-DA, but VO-doo."
           }
         ],
-        "rules": [0]
+        "rules": [
+          0
+        ]
       },
-      "trap": "Я хочу вода is the sentence an English speaker writes, because English objects never change. It is the module's whole lesson in one error: a feminine -а noun becomes -у when it is what you want.",
-      "sound": "ya kha-CHOO VO-doo. The stress moves from the ending to the front when вода becomes воду, which is why the two shapes barely sound alike.",
+      "trap": "Ya khochú vodá is the sentence an English speaker writes, because English objects never change. It is the module's whole lesson in one error: a feminine -a noun becomes -u when it is what you want.",
+      "sound": "ya kha-CHOO VO-doo. The stress moves from the ending to the front when vodá becomes vódu, which is why the two shapes barely sound alike.",
       "variations": [
         {
-          "display": "Я не хочу воду.",
+          "display": "Ya ne khochú vódu.",
+          "script": "Я не хочу воду.",
           "cue": "I don't want water",
-          "changed": "не in front of the verb — and the object keeps the ending it already had"
+          "changed": "ne in front of the verb — and the object keeps the ending it already had"
         },
         {
-          "display": "Вы хотите воду?",
+          "display": "Vy khotíte vódu?",
+          "script": "Вы хотите воду?",
           "cue": "Do you want water?",
           "changed": "the polite you-form as a question, with the object still bent"
         },
         {
-          "display": "Воду, пожалуйста.",
+          "display": "Vódu, pozháluysta.",
+          "script": "Воду, пожалуйста.",
           "cue": "Water, please",
           "changed": "the verb dropped entirely — and the object keeps its ending, because the verb is still understood"
         }
       ],
       "mistake": {
-        "display": "Я хочу вода.",
-        "why": "вода is the shape for the subject of a sentence. As the thing wanted it becomes воду."
+        "display": "Ya khochú vodá.",
+        "script": "Я хочу вода.",
+        "why": "vodá is the shape for the subject of a sentence. As the thing wanted it becomes vódu."
       },
       "usage": "Anywhere you would ask for water — a café, a shop, somebody's kitchen.",
       "register": "neutral",
-      "mnemonic": "-а is the shape that sits still; -у is the shape something is being done to."
+      "mnemonic": "-a is the shape that sits still; -u is the shape something is being done to."
     },
     {
       "id": "L1-M3-S03",
-      "display": "Я хочу книгу.",
+      "display": "Ya khochú knígu.",
+      "script": "Я хочу книгу.",
       "cue": "I want a book",
       "glossEn": "lit. \"I want book\"",
       "literal": "I want book-OBJECT",
       "deconstruction": {
         "words": [
           {
-            "display": "книга",
+            "display": "kníga",
+            "script": "книга",
             "cue": "book",
             "tag": "delta",
-            "forms": ["книга", "книгу", "книги"],
-            "note": "Book. The same swap as вода — feminine -а becomes -у as the object — but here the stress does not move: KNEE-ga, KNEE-goo. Whether the stress jumps is a fact about each word, not a rule, and it has to be picked up word by word. The third shape, книги, is the plural, and M8 counts with it."
+            "forms": [
+              "kníga",
+              "knígu",
+              "knígi"
+            ],
+            "note": "Book. The same swap as vodá — feminine -a becomes -u as the object — but here the stress does not move, and the acute sits still to prove it: kníga, knígu — KNEE-ga, KNEE-goo. Whether the stress jumps is a fact about each word, not a rule, and it has to be picked up word by word. The third shape, knígi, is the plural, and M8 counts with it."
           }
         ],
-        "rules": [0]
+        "rules": [
+          0
+        ]
       },
-      "trap": "Still no word for \"a\". Я хочу книгу covers \"I want a book\" and \"I want the book\" alike, and which one is meant comes from the conversation.",
-      "sound": "ya kha-CHOO KNEE-goo. Both к and н are said at the start — Russian is comfortable with the cluster English lost centuries ago.",
+      "trap": "Still no word for \"a\". Ya khochú knígu covers \"I want a book\" and \"I want the book\" alike, and which one is meant comes from the conversation.",
+      "sound": "ya kha-CHOO KNEE-goo. Both k and n are said at the start — Russian is comfortable with the cluster English lost centuries ago.",
       "variations": [
         {
-          "display": "Я хочу книгу, пожалуйста.",
+          "display": "Ya khochú knígu, pozháluysta.",
+          "script": "Я хочу книгу, пожалуйста.",
           "cue": "I would like a book, please",
-          "changed": "пожалуйста makes it a request rather than a demand"
+          "changed": "pozháluysta makes it a request rather than a demand"
         },
         {
-          "display": "Анна хочет книгу.",
+          "display": "Ánna khóchet knígu.",
+          "script": "Анна хочет книгу.",
           "cue": "Anna wants a book",
-          "changed": "хочу → хочет: the person changes and the object keeps its ending"
+          "changed": "khochú → khóchet: the person changes and the object keeps its ending"
         },
         {
-          "display": "Я не хочу книгу.",
+          "display": "Ya ne khochú knígu.",
+          "script": "Я не хочу книгу.",
           "cue": "I don't want the book",
-          "changed": "не in front of the verb, and nothing else moves"
+          "changed": "ne in front of the verb, and nothing else moves"
         }
       ],
       "mistake": {
-        "display": "Я хочу книга.",
-        "why": "The dictionary shape книга is for the subject. As the thing wanted it is книгу."
+        "display": "Ya khochú kníga.",
+        "script": "Я хочу книга.",
+        "why": "The dictionary shape kníga is for the subject. As the thing wanted it is knígu."
       },
       "usage": "In a shop or a library — and the same frame does duty for anything you are asking for.",
       "register": "neutral",
-      "mnemonic": "Every -а that gets wanted turns into -у."
+      "mnemonic": "Every -a that gets wanted turns into -u."
     },
     {
       "id": "L1-M3-S04",
-      "display": "Я не хочу кофе.",
+      "display": "Ya ne khochú kófe.",
+      "script": "Я не хочу кофе.",
       "cue": "I don't want coffee",
       "glossEn": "lit. \"I not want coffee\"",
       "literal": "I not want coffee",
       "deconstruction": {
         "words": [
           {
-            "display": "не",
+            "display": "ne",
+            "script": "не",
             "cue": "not",
             "tag": "delta",
-            "forms": ["не"],
+            "forms": [
+              "ne"
+            ],
             "note": "\"Not\", and it goes immediately in front of the word it denies — almost always the verb. Nothing else in the sentence changes and nothing is added: Russian has no do not, does not or did not, in any tense. This one small word will still be doing the whole job in M5's past and M6's future."
           },
           {
-            "display": "кофе",
+            "display": "kófe",
+            "script": "кофе",
             "cue": "coffee",
             "tag": "free",
-            "forms": ["кофе"],
-            "note": "Coffee — borrowed whole, and it refuses to change shape in any position in any sentence. It counts as masculine, in spite of the -е ending that usually means neuter; you will hear the neuter used too, and it is still argued about."
+            "forms": [
+              "kófe"
+            ],
+            "note": "Coffee — borrowed whole, and it refuses to change shape in any position in any sentence. It counts as masculine, in spite of the -e ending that usually means neuter; you will hear the neuter used too, and it is still argued about."
           }
         ],
-        "rules": [2, 5]
+        "rules": [
+          2,
+          5
+        ]
       },
-      "trap": "English needs \"do\" to say no to something — I don't want — and hunting for its Russian equivalent is wasted effort. There is none. не does the whole job on its own.",
-      "sound": "ya nye kha-CHOO KO-fye. не leans onto the verb and is barely a syllable of its own.",
+      "trap": "English needs \"do\" to say no to something — I don't want — and hunting for its Russian equivalent is wasted effort. There is none. ne does the whole job on its own.",
+      "sound": "ya nye kha-CHOO KO-fye. ne leans onto the verb and is barely a syllable of its own.",
       "variations": [
         {
-          "display": "Я не хочу чай.",
+          "display": "Ya ne khochú chay.",
+          "script": "Я не хочу чай.",
           "cue": "I don't want tea",
-          "changed": "swap the drink — не stays exactly where it was"
+          "changed": "swap the drink — ne stays exactly where it was"
         },
         {
-          "display": "Я хочу кофе.",
+          "display": "Ya khochú kófe.",
+          "script": "Я хочу кофе.",
           "cue": "I want coffee",
-          "changed": "drop не and the sentence flips: nothing else has to move back"
+          "changed": "drop ne and the sentence flips: nothing else has to move back"
         },
         {
-          "display": "Анна не хочет кофе.",
+          "display": "Ánna ne khóchet kófe.",
+          "script": "Анна не хочет кофе.",
           "cue": "Anna doesn't want coffee",
-          "changed": "the person changes; не still sits in front of the verb"
+          "changed": "the person changes; ne still sits in front of the verb"
         }
       ],
       "mistake": {
-        "display": "Я хочу не кофе.",
-        "why": "That says \"it is not coffee that I want\" — не denies whatever follows it, so putting it before the noun changes the meaning. To refuse, it goes in front of the verb: Я не хочу кофе."
+        "display": "Ya khochú ne kófe.",
+        "script": "Я хочу не кофе.",
+        "why": "That says \"it is not coffee that I want\" — ne denies whatever follows it, so putting it before the noun changes the meaning. To refuse, it goes in front of the verb: Ya ne khochú kófe."
       },
-      "usage": "Turning something down — and adding спасибо makes it polite rather than blunt.",
+      "usage": "Turning something down — and adding spasíbo makes it polite rather than blunt.",
       "register": "neutral",
-      "mnemonic": "не sticks to the front of the verb like a burr; move it and you have said something else."
+      "mnemonic": "ne sticks to the front of the verb like a burr; move it and you have said something else."
     },
     {
       "id": "L1-M3-S05",
-      "display": "Я хочу хлеб, пожалуйста.",
+      "display": "Ya khochú khleb, pozháluysta.",
+      "script": "Я хочу хлеб, пожалуйста.",
       "cue": "I would like bread, please",
       "glossEn": "lit. \"I want bread, please\"",
       "literal": "I want bread, please",
       "deconstruction": {
         "words": [
           {
-            "display": "хлеб",
+            "display": "khleb",
+            "script": "хлеб",
             "cue": "bread",
             "tag": "free",
-            "forms": ["хлеб"],
+            "forms": [
+              "khleb"
+            ],
             "note": "Bread. Masculine — it ends in a consonant — and a thing rather than a creature, so it never changes as the object. There is no word for \"some\" in front of it either."
           },
           {
-            "display": "пожалуйста",
+            "display": "pozháluysta",
+            "script": "пожалуйста",
             "cue": "please · you're welcome · here you are",
             "tag": "delta",
-            "forms": ["пожалуйста"],
-            "note": "One word doing three English jobs: \"please\" when you ask, \"you're welcome\" when you are thanked, and \"here you are\" when you hand something over. It is what turns a bare Я хочу … into an ordinary polite request, and it is written off by a comma."
+            "forms": [
+              "pozháluysta"
+            ],
+            "note": "One word doing three English jobs: \"please\" when you ask, \"you're welcome\" when you are thanked, and \"here you are\" when you hand something over. It is what turns a bare Ya khochú … into an ordinary polite request, and it is written off by a comma."
           }
         ],
-        "rules": [1]
+        "rules": [
+          1
+        ]
       },
-      "trap": "Я хочу on its own is blunt — closer to \"I want\" than to \"I'd like\". пожалуйста is what carries the politeness, so a request that leaves it out is a request that sounds abrupt.",
-      "sound": "ya kha-CHOO khlyep pa-ZHA-loo-sta. The final б of хлеб is said as a p — Russian hardens the last consonant of a word — and the й inside пожалуйста disappears in ordinary speech.",
+      "trap": "Ya khochú on its own is blunt — closer to \"I want\" than to \"I'd like\". pozháluysta is what carries the politeness, so a request that leaves it out is a request that sounds abrupt.",
+      "sound": "ya kha-CHOO khlyep pa-ZHA-loo-sta. The final b of khleb is said as a p — Russian hardens the last consonant of a word — and the y inside pozháluysta disappears in ordinary speech.",
       "variations": [
         {
-          "display": "Я хочу хлеб.",
+          "display": "Ya khochú khleb.",
+          "script": "Я хочу хлеб.",
           "cue": "I want bread",
-          "changed": "drop пожалуйста and the request becomes a bare statement of what you want"
+          "changed": "drop pozháluysta and the request becomes a bare statement of what you want"
         },
         {
-          "display": "Воду, пожалуйста.",
+          "display": "Vódu, pozháluysta.",
+          "script": "Воду, пожалуйста.",
           "cue": "Water, please",
           "changed": "the verb dropped entirely — and the object keeps its ending, because the verb is still understood"
         },
         {
-          "display": "Вы хотите хлеб?",
+          "display": "Vy khotíte khleb?",
+          "script": "Вы хотите хлеб?",
           "cue": "Do you want bread?",
           "changed": "the polite you-form, asked instead of told"
         }
       ],
       "mistake": {
-        "display": "Я хочу хлеба, пожалуйста.",
-        "why": "хлеба is a real shape and it belongs to the \"some of it\" job this level does not teach. The plain object is хлеб."
+        "display": "Ya khochú khléba, pozháluysta.",
+        "script": "Я хочу хлеба, пожалуйста.",
+        "why": "khléba is a real shape and it belongs to the \"some of it\" job this level does not teach. The plain object is khleb."
       },
       "usage": "The shop, the bakery, the table — the most ordinary request in the language.",
       "register": "neutral",
-      "mnemonic": "пожалуйста is the whole of Russian politeness in one word — and it goes at the end."
+      "mnemonic": "pozháluysta is the whole of Russian politeness in one word — and it goes at the end."
     },
     {
       "id": "L1-M3-S06",
-      "display": "Я люблю музыку.",
+      "display": "Ya lyublyú múzyku.",
+      "script": "Я люблю музыку.",
       "cue": "I like music",
       "glossEn": "lit. \"I love music\"",
       "literal": "I love music-OBJECT",
       "deconstruction": {
         "words": [
           {
-            "display": "музыка",
+            "display": "múzyka",
+            "script": "музыка",
             "cue": "music",
             "tag": "delta",
-            "forms": ["музыка", "музыку"],
-            "note": "Music. Feminine, so it takes the -у ending as the object, exactly like вода and книга. The stress stays on the first syllable throughout: MOO-zy-ka, MOO-zy-koo."
+            "forms": [
+              "múzyka",
+              "múzyku"
+            ],
+            "note": "Music. Feminine, so it takes the -u ending as the object, exactly like vodá and kníga. The stress stays on the first syllable throughout: MOO-zy-ka, MOO-zy-koo."
           }
         ],
-        "rules": [0]
+        "rules": [
+          0
+        ]
       },
-      "trap": "M1 taught люблю with objects that never moved — чай, молоко, русский язык. This is the same verb with a feminine object, and now the ending appears. The verb was never what decided it; the noun always was.",
-      "sound": "ya lyoo-BLYOO MOO-zy-koo. Two of Russian's harder sounds in one short sentence: the soft л of люблю and the back ы of музыку.",
+      "trap": "M1 taught lyublyú with objects that never moved — chay, molokó, rússkiy yazýk. This is the same verb with a feminine object, and now the ending appears. The verb was never what decided it; the noun always was.",
+      "sound": "ya lyoo-BLYOO MOO-zy-koo. Two of Russian's harder sounds in one short sentence: the soft l of lyublyú and the back y of múzyku.",
       "variations": [
         {
-          "display": "Я не люблю музыку.",
+          "display": "Ya ne lyublyú múzyku.",
+          "script": "Я не люблю музыку.",
           "cue": "I don't like music",
-          "changed": "не in front of the verb — the M3 lesson applied to an M1 verb"
+          "changed": "ne in front of the verb — the M3 lesson applied to an M1 verb"
         },
         {
-          "display": "Анна любит музыку.",
+          "display": "Ánna lyúbit múzyku.",
+          "script": "Анна любит музыку.",
           "cue": "Anna likes music",
-          "changed": "люблю → любит: the person changes and музыку keeps its ending"
+          "changed": "lyublyú → lyúbit: the person changes and múzyku keeps its ending"
         },
         {
-          "display": "Я люблю русскую музыку.",
+          "display": "Ya lyublyú rússkuyu múzyku.",
+          "script": "Я люблю русскую музыку.",
           "cue": "I like Russian music",
-          "changed": "the describing word bends with the noun it describes — русский → русскую"
+          "changed": "the describing word bends with the noun it describes — rússkiy → rússkuyu"
         }
       ],
       "mistake": {
-        "display": "Я люблю музыка.",
-        "why": "The ending belongs to the noun, not to the verb: any feminine -а noun in the object slot becomes -у, whichever verb put it there."
+        "display": "Ya lyublyú múzyka.",
+        "script": "Я люблю музыка.",
+        "why": "The ending belongs to the noun, not to the verb: any feminine -a noun in the object slot becomes -u, whichever verb put it there."
       },
       "usage": "Saying what you are fond of — the M1 frame, now with the endings it always needed.",
       "register": "neutral",
@@ -333,44 +410,57 @@
     },
     {
       "id": "L1-M3-S07",
-      "display": "Я хочу работать.",
+      "display": "Ya khochú rabótat'.",
+      "script": "Я хочу работать.",
       "cue": "I want to work",
       "glossEn": "lit. \"I want work-INFINITIVE\"",
       "literal": "I want to-work",
       "deconstruction": {
         "words": [
           {
-            "display": "работать",
+            "display": "rabótat'",
+            "script": "работать",
             "cue": "to work",
             "tag": "delta",
-            "forms": ["работать", "работаю", "работаете", "работает"],
-            "note": "The dictionary shape of \"work\" — the one that goes straight after хочу with nothing between. Its everyday shapes are работаю (I), работаете (you, polite) and работает (he or she); M4 explains where those endings come from. Almost every Russian verb's dictionary shape ends in -ть like this one."
+            "forms": [
+              "rabótat'",
+              "rabótayu",
+              "rabótayete",
+              "rabótayet"
+            ],
+            "note": "The dictionary shape of \"work\" — the one that goes straight after khochú with nothing between. Its everyday shapes are rabótayu (I), rabótayete (you, polite) and rabótayet (he or she); M4 explains where those endings come from. Almost every Russian verb's dictionary shape ends in -t' like this one."
           }
         ],
-        "rules": [3]
+        "rules": [
+          3
+        ]
       },
-      "trap": "There is no word for \"to\". English \"want to work\" has three words and Russian has two, and the missing one has no Russian stand-in — не что, не чтобы, nothing.",
-      "sound": "ya kha-CHOO ra-BO-tat'. The ь on the end of работать is not a sound: it softens the т, so the word ends in a light \"t\" rather than a hard one.",
+      "trap": "There is no word for \"to\". English \"want to work\" has three words and Russian has two, and the missing one has no Russian stand-in — not chto, not chtóby, nothing at all.",
+      "sound": "ya kha-CHOO ra-BO-tat'. The ' on the end of rabótat' is not a sound: it softens the t, so the word ends in a light \"t\" rather than a hard one.",
       "variations": [
         {
-          "display": "Я хочу читать.",
+          "display": "Ya khochú chitát'.",
+          "script": "Я хочу читать.",
           "cue": "I want to read",
           "changed": "swap the activity — any dictionary shape drops straight into the slot"
         },
         {
-          "display": "Анна хочет работать.",
+          "display": "Ánna khóchet rabótat'.",
+          "script": "Анна хочет работать.",
           "cue": "Anna wants to work",
-          "changed": "хочу → хочет, and работать does not move: only the first verb ever changes"
+          "changed": "khochú → khóchet, and rabótat' does not move: only the first verb ever changes"
         },
         {
-          "display": "Вы хотите работать?",
+          "display": "Vy khotíte rabótat'?",
+          "script": "Вы хотите работать?",
           "cue": "Do you want to work?",
           "changed": "the polite you-form, as a question"
         }
       ],
       "mistake": {
-        "display": "Я хочу что работать.",
-        "why": "The что is English's \"to\", smuggled in. Nothing goes between хочу and the dictionary shape: Я хочу работать."
+        "display": "Ya khochú chto rabótat'.",
+        "script": "Я хочу что работать.",
+        "why": "The chto is English's \"to\", smuggled in. Nothing goes between khochú and the dictionary shape: Ya khochú rabótat'."
       },
       "usage": "Plans, wishes and job conversations — the most productive frame on this rung.",
       "register": "neutral",
@@ -378,89 +468,117 @@
     },
     {
       "id": "L1-M3-S08",
-      "display": "Я не хочу спать.",
+      "display": "Ya ne khochú spat'.",
+      "script": "Я не хочу спать.",
       "cue": "I don't want to sleep",
       "glossEn": "lit. \"I not want sleep-INFINITIVE\"",
       "literal": "I not want to-sleep",
       "deconstruction": {
         "words": [
           {
-            "display": "спать",
+            "display": "spat'",
+            "script": "спать",
             "cue": "to sleep",
             "tag": "free",
-            "forms": ["спать", "сплю", "спите", "спит"],
-            "note": "To sleep. Its everyday shapes grow a л in the I-form only — сплю (I), спите (you, polite), спит (he or she) — the same quirk M1's люблю had. Russian says Я хочу спать where English says \"I'm sleepy\"."
+            "forms": [
+              "spat'",
+              "splyu",
+              "spíte",
+              "spit"
+            ],
+            "note": "To sleep. Its everyday shapes grow an l in the I-form only — splyu (I), spíte (you, polite), spit (he or she) — the same quirk M1's lyublyú had. Russian says Ya khochú spat' where English says \"I'm sleepy\"."
           }
         ],
-        "rules": [2, 3]
+        "rules": [
+          2,
+          3
+        ]
       },
-      "trap": "не lands in front of хочу, not in front of спать. It denies the wanting, and moving it would deny the sleeping instead.",
-      "sound": "ya nye kha-CHOO spat'. Three words lean together into what sounds like two; only хочу carries a real stress.",
+      "trap": "ne lands in front of khochú, not in front of spat'. It denies the wanting, and moving it would deny the sleeping instead.",
+      "sound": "ya nye kha-CHOO spat'. Three words lean together into what sounds like two; only khochú carries a real stress.",
       "variations": [
         {
-          "display": "Я хочу спать.",
+          "display": "Ya khochú spat'.",
+          "script": "Я хочу спать.",
           "cue": "I am sleepy",
-          "changed": "drop не — and note that this positive version is how Russian says \"I'm sleepy\""
+          "changed": "drop ne — and note that this positive version is how Russian says \"I'm sleepy\""
         },
         {
-          "display": "Анна не хочет спать.",
+          "display": "Ánna ne khóchet spat'.",
+          "script": "Анна не хочет спать.",
           "cue": "Anna doesn't want to sleep",
-          "changed": "the person changes and не stays in front of the first verb"
+          "changed": "the person changes and ne stays in front of the first verb"
         },
         {
-          "display": "Я не хочу читать.",
+          "display": "Ya ne khochú chitát'.",
+          "script": "Я не хочу читать.",
           "cue": "I don't want to read",
           "changed": "swap the second verb — the negation frame takes any of them"
         }
       ],
       "mistake": {
-        "display": "Я хочу не спать.",
-        "why": "That says you want to stay awake. не denies what comes next, so it belongs in front of хочу."
+        "display": "Ya khochú ne spat'.",
+        "script": "Я хочу не спать.",
+        "why": "That says you want to stay awake. ne denies what comes next, so it belongs in front of khochú."
       },
-      "usage": "Turning down a nap, or saying you are not tired — and the positive Я хочу спать is the everyday \"I'm sleepy\".",
+      "usage": "Turning down a nap, or saying you are not tired — and the positive Ya khochú spat' is the everyday \"I'm sleepy\".",
       "register": "neutral",
-      "mnemonic": "Whatever не touches is what gets denied. Put it where you mean it."
+      "mnemonic": "Whatever ne touches is what gets denied. Put it where you mean it."
     },
     {
       "id": "L1-M3-S09",
-      "display": "Я хочу читать книгу.",
+      "display": "Ya khochú chitát' knígu.",
+      "script": "Я хочу читать книгу.",
       "cue": "I want to read a book",
       "glossEn": "lit. \"I want read-INFINITIVE book\"",
       "literal": "I want to-read book-OBJECT",
       "deconstruction": {
         "words": [
           {
-            "display": "читать",
+            "display": "chitát'",
+            "script": "читать",
             "cue": "to read",
             "tag": "free",
-            "forms": ["читать", "читаю", "читаете", "читает"],
-            "note": "To read, and a very regular verb: читаю (I), читаете (you, polite), читает (he or she) — the endings simply hang off the -а of the stem. M4 uses it as the pattern all the well-behaved verbs follow."
+            "forms": [
+              "chitát'",
+              "chitáyu",
+              "chitáyete",
+              "chitáyet"
+            ],
+            "note": "To read, and a very regular verb: chitáyu (I), chitáyete (you, polite), chitáyet (he or she) — the endings simply hang off the -a of the stem. M4 uses it as the pattern all the well-behaved verbs follow."
           }
         ],
-        "rules": [0, 3]
+        "rules": [
+          0,
+          3
+        ]
       },
-      "trap": "Both lessons of the module are in this one sentence and they do not interfere: читать stands bare after хочу, and книгу still bends because it is the thing being read. The infinitive does not protect the noun behind it.",
+      "trap": "Both lessons of the module are in this one sentence and they do not interfere: chitát' stands bare after khochú, and knígu still bends because it is the thing being read. The infinitive does not protect the noun behind it.",
       "sound": "ya kha-CHOO chee-TAT' KNEE-goo. Four unstressed syllables and two stressed ones — Russian rhythm is a series of quick steps and heavy landings.",
       "variations": [
         {
-          "display": "Я хочу читать газету.",
+          "display": "Ya khochú chitát' gazétu.",
+          "script": "Я хочу читать газету.",
           "cue": "I want to read a newspaper",
           "changed": "swap the thing read — and the new noun bends the same way, because it is feminine too"
         },
         {
-          "display": "Я не хочу читать книгу.",
+          "display": "Ya ne khochú chitát' knígu.",
+          "script": "Я не хочу читать книгу.",
           "cue": "I don't want to read the book",
-          "changed": "не in front of the first verb; the other two words do not move"
+          "changed": "ne in front of the first verb; the other two words do not move"
         },
         {
-          "display": "Анна хочет читать книгу.",
+          "display": "Ánna khóchet chitát' knígu.",
+          "script": "Анна хочет читать книгу.",
           "cue": "Anna wants to read a book",
-          "changed": "only хочу changes for the person — the other two words are fixed"
+          "changed": "only khochú changes for the person — the other two words are fixed"
         }
       ],
       "mistake": {
-        "display": "Я хочу читать книга.",
-        "why": "книга is still the thing being read, so it still bends: книгу. Standing behind an infinitive changes nothing."
+        "display": "Ya khochú chitát' kníga.",
+        "script": "Я хочу читать книга.",
+        "why": "kníga is still the thing being read, so it still bends: knígu. Standing behind an infinitive changes nothing."
       },
       "usage": "Saying what you want to do, with what — the fullest sentence this rung can build.",
       "register": "neutral",
@@ -468,65 +586,132 @@
     },
     {
       "id": "L1-M3-S10",
-      "display": "Вы хотите сок?",
+      "display": "Vy khotíte sok?",
+      "script": "Вы хотите сок?",
       "cue": "Do you want juice?",
       "glossEn": "lit. \"you want juice?\"",
       "literal": "You want juice?",
       "deconstruction": {
         "words": [
           {
-            "display": "сок",
+            "display": "sok",
+            "script": "сок",
             "cue": "juice",
             "tag": "free",
-            "forms": ["сок"],
+            "forms": [
+              "sok"
+            ],
             "note": "Juice. Masculine, a thing rather than a creature, so it is the same shape everywhere — and short enough to be the easiest word on the rung."
           }
         ],
-        "rules": [1, 4]
+        "rules": [
+          1,
+          4
+        ]
       },
-      "trap": "хотите is the you-form because this course speaks вы — and вы takes the plural ending whether it means one person or a room full of them.",
-      "sound": "vy kha-TEE-tye sok. The pitch rises on сок, which is the whole question: nothing was added to make it one.",
+      "trap": "khotíte is the you-form because this course speaks vy — and vy takes the plural ending whether it means one person or a room full of them.",
+      "sound": "vy kha-TEE-tye sok. The pitch rises on sok, which is the whole question: nothing was added to make it one.",
       "variations": [
         {
-          "display": "Вы хотите воду?",
+          "display": "Vy khotíte vódu?",
+          "script": "Вы хотите воду?",
           "cue": "Do you want water?",
-          "changed": "swap the drink for a feminine one, and the ending appears: воду"
+          "changed": "swap the drink for a feminine one, and the ending appears: vódu"
         },
         {
-          "display": "Я хочу сок.",
+          "display": "Ya khochú sok.",
+          "script": "Я хочу сок.",
           "cue": "I want juice",
-          "changed": "хотите → хочу: the answer, with the same unchanged noun"
+          "changed": "khotíte → khochú: the answer, with the same unchanged noun"
         },
         {
-          "display": "Вы не хотите сок?",
+          "display": "Vy ne khotíte sok?",
+          "script": "Вы не хотите сок?",
           "cue": "Don't you want juice?",
-          "changed": "не in front of the verb — in Russian this is an ordinary offer, not a reproach"
+          "changed": "ne in front of the verb — in Russian this is an ordinary offer, not a reproach"
         }
       ],
       "mistake": {
-        "display": "Вы хочешь сок?",
-        "why": "хочешь is the ты-form, and this course speaks вы. With вы the verb is хотите, however few people you mean."
+        "display": "Vy khóchesh' sok?",
+        "script": "Вы хочешь сок?",
+        "why": "khóchesh' is the ty-form, and this course speaks vy. With vy the verb is khotíte, however few people you mean."
       },
       "usage": "Offering something — at a table, in a shop, in somebody's home.",
       "register": "neutral",
-      "mnemonic": "вы always takes the plural ending. One person, plural verb, every time."
+      "mnemonic": "vy always takes the plural ending. One person, plural verb, every time."
     }
   ],
   "comprehensionPool": [
-    { "id": "L1-M3-C01", "display": "Я хочу воду, пожалуйста.", "cue": "I would like water, please" },
-    { "id": "L1-M3-C02", "display": "Вы хотите книгу?", "cue": "Do you want the book?" },
-    { "id": "L1-M3-C03", "display": "Я не хочу чай.", "cue": "I don't want tea" },
-    { "id": "L1-M3-C04", "display": "Анна хочет читать.", "cue": "Anna wants to read" },
-    { "id": "L1-M3-C05", "display": "Иван хочет работать.", "cue": "Ivan wants to work" },
-    { "id": "L1-M3-C06", "display": "Я люблю кофе.", "cue": "I like coffee" },
-    { "id": "L1-M3-C07", "display": "Я хочу молоко.", "cue": "I want milk" },
-    { "id": "L1-M3-C08", "display": "Анна не хочет спать.", "cue": "Anna doesn't want to sleep" },
-    { "id": "L1-M3-C09", "display": "Вы хотите хлеб?", "cue": "Do you want bread?" },
-    { "id": "L1-M3-C10", "display": "Я хочу читать.", "cue": "I want to read" },
-    { "id": "L1-M3-C11", "display": "Иван любит музыку.", "cue": "Ivan likes music" },
+    {
+      "id": "L1-M3-C01",
+      "display": "Ya khochú vódu, pozháluysta.",
+      "script": "Я хочу воду, пожалуйста.",
+      "cue": "I would like water, please"
+    },
+    {
+      "id": "L1-M3-C02",
+      "display": "Vy khotíte knígu?",
+      "script": "Вы хотите книгу?",
+      "cue": "Do you want the book?"
+    },
+    {
+      "id": "L1-M3-C03",
+      "display": "Ya ne khochú chay.",
+      "script": "Я не хочу чай.",
+      "cue": "I don't want tea"
+    },
+    {
+      "id": "L1-M3-C04",
+      "display": "Ánna khóchet chitát'.",
+      "script": "Анна хочет читать.",
+      "cue": "Anna wants to read"
+    },
+    {
+      "id": "L1-M3-C05",
+      "display": "Iván khóchet rabótat'.",
+      "script": "Иван хочет работать.",
+      "cue": "Ivan wants to work"
+    },
+    {
+      "id": "L1-M3-C06",
+      "display": "Ya lyublyú kófe.",
+      "script": "Я люблю кофе.",
+      "cue": "I like coffee"
+    },
+    {
+      "id": "L1-M3-C07",
+      "display": "Ya khochú molokó.",
+      "script": "Я хочу молоко.",
+      "cue": "I want milk"
+    },
+    {
+      "id": "L1-M3-C08",
+      "display": "Ánna ne khóchet spat'.",
+      "script": "Анна не хочет спать.",
+      "cue": "Anna doesn't want to sleep"
+    },
+    {
+      "id": "L1-M3-C09",
+      "display": "Vy khotíte khleb?",
+      "script": "Вы хотите хлеб?",
+      "cue": "Do you want bread?"
+    },
+    {
+      "id": "L1-M3-C10",
+      "display": "Ya khochú chitát'.",
+      "script": "Я хочу читать.",
+      "cue": "I want to read"
+    },
+    {
+      "id": "L1-M3-C11",
+      "display": "Iván lyúbit múzyku.",
+      "script": "Иван любит музыку.",
+      "cue": "Ivan likes music"
+    },
     {
       "id": "L1-M3-C12",
-      "display": "Я не хочу работать, спасибо.",
+      "display": "Ya ne khochú rabótat', spasíbo.",
+      "script": "Я не хочу работать, спасибо.",
       "cue": "I don't want to work, thank you"
     }
   ],
