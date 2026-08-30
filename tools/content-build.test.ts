@@ -115,6 +115,51 @@ function moduleFrom(fixture: FixtureModule): Module {
   return module;
 }
 
+/**
+ * The hi-mr module every scaffold starts from, with its Devanagari surfaces TRANSLITERATED to
+ * Latin — what a course row saying `scriptMode: "romanized"` is actually promising.
+ *
+ * It exists because #354 taught `checkScriptMode` to prove the display IS a romanization rather
+ * than merely a non-empty string. A scaffold that declares a course romanized and then writes
+ * Devanagari into it is now a hard build error, which is correct — but the two cases that use
+ * this are about the MANIFEST and the missing-`script` WARNING, and neither wants to be blocked
+ * at the earlier gate.
+ *
+ * **It transliterates rather than replacing.** The first attempt wrote `romanized 1`, `romanized
+ * 2` over every surface, and the build rejected it for a better reason than the script: a
+ * comprehension pool item's every token must resolve in the cumulative word index (PRD §6.3), and
+ * meaningless text resolves to nothing. Mapping each non-Latin CODEPOINT to a distinct ASCII
+ * string keeps the mapping injective, so two surfaces that were equal stay equal, two that
+ * differed still differ, and every token that resolved before resolves now.
+ */
+function toLatin(value: string): string {
+  let out = '';
+  for (const character of value) {
+    // ASCII letters, digits, spaces and punctuation are already what the policy admits.
+    out += /[\p{Script=Latin}\p{P}\p{N}\p{S}\p{Z}]/u.test(character)
+      ? character
+      : `q${(character.codePointAt(0) ?? 0).toString(36)}`;
+  }
+  return out;
+}
+
+function romanize(module: Module): void {
+  const surface = (target: { display?: string }): void => {
+    if (target.display !== undefined) target.display = toLatin(target.display);
+  };
+
+  for (const sentence of module.sentences) {
+    surface(sentence);
+    for (const word of sentence.deconstruction.words) {
+      surface(word);
+      word.forms = word.forms.map(toLatin);
+    }
+    for (const variation of sentence.variations ?? []) surface(variation);
+    if (sentence.mistake !== undefined) surface(sentence.mistake);
+  }
+  for (const item of module.comprehensionPool) surface(item);
+}
+
 /** Every entry claims `hasContent: true` — the hand-flag the build must never trust. */
 function levelsFor(course: FixtureCourse): Levels {
   const ids = course.listed ?? course.modules.map((module) => module.id);
@@ -339,7 +384,7 @@ describe('the emitted manifest', () => {
       { row: courseRow('en-es'), modules: [{ id: 'L1-M1', verified: false }] },
       {
         row: courseRow('en-ar', { scriptMode: 'romanized', romanizationNote: 'ALA-LC' }),
-        modules: [{ id: 'L1-M1', verified: true }],
+        modules: [{ id: 'L1-M1', verified: true, edit: romanize }],
       },
     ]);
 
@@ -762,6 +807,108 @@ describe('the scriptMode cross-check', () => {
     ]);
   });
 
+  /**
+   * The regression guard for en-ar (#354), asserted as ZERO errors rather than "no Cyrillic
+   * error": the honest failure mode of a Latin-script check is that it is too strict, and a
+   * course whose every sentence carries `ʾ` and `ʿ` — modifier letters, NOT `Script=Latin` —
+   * is the one that would go dark first. The fixture is the real shipped module, so the
+   * characters under test are the ones en-ar actually writes.
+   */
+  it('passes the whole en-ar fixture — long vowels, an emphatic and hamza', () => {
+    const module = romanizedFixture();
+    const written = JSON.stringify(module);
+
+    // The guard is only a guard if the fixture really carries these; a fixture that quietly
+    // stopped using them would leave this test passing on nothing.
+    for (const character of ['ā', 'ī', 'ḥ', 'ʾ']) {
+      expect(written, `en-ar fixture no longer writes ${character}`).toContain(character);
+    }
+    expect(checkScriptMode(module, 'romanized').errors).toEqual([]);
+  });
+
+  /**
+   * The characters en-ar does not happen to use today but the policy admits: the remaining
+   * emphatics, the Romance courses' accents, and the typographic apostrophes `src/engine/
+   * surface.ts` folds. Written onto surfaces rather than asserted against the regex directly,
+   * because what has to hold is that the CHECK accepts them.
+   */
+  it('passes the rest of the policy: ū ḍ ṭ ẓ, é è ñ ç à ù î ô, and the folded apostrophes', () => {
+    const module = romanizedFixture();
+    module.sentences[0]!.display = 'ḍayf ẓarīf ūlā ṭarīq';
+    module.sentences[0]!.deconstruction.words[0]!.display = 'é è ñ ç à ù î ô';
+    module.comprehensionPool[0]!.display = 'l’homme ‘quoted’ — 12 €, 50%';
+
+    expect(checkScriptMode(module, 'romanized').errors).toEqual([]);
+  });
+
+  /**
+   * The case an allowlist of Unicode CATEGORIES would have missed and an allowlist of SCRIPTS
+   * catches: Devanagari digits are digits, so a `\p{N}` clause would wave them through.
+   */
+  it('rejects Devanagari — its digits included, which are digits and still unreadable', () => {
+    const module = romanizedFixture();
+    module.sentences[0]!.display = 'नमस्ते';
+    module.sentences[1]!.display = 'kitāb १२३';
+
+    const report = checkScriptMode(module, 'romanized');
+
+    expect(report.errors).toHaveLength(2);
+    expect(report.errors[0]).toContain('/sentences/0/display');
+    expect(report.errors[1]).toContain('/sentences/1/display');
+    // The digits are the point: they are `\p{N}`, and a category allowlist would pass them.
+    expect(report.errors[1]).toContain('"१"');
+  });
+
+  /**
+   * The guard that actually protects en-ar: the ten SHIPPED modules, not the trimmed fixture
+   * above. Zero errors, asserted as zero rather than as "no Cyrillic error" — the honest failure
+   * mode of a Latin-script check is that it is too strict, and this is the course that would go
+   * dark first (`ʿ` and `ʾ` are modifier letters, not `Script=Latin`).
+   */
+  it('passes all ten shipped en-ar modules — the course this check could most easily break', () => {
+    for (let n = 1; n <= 10; n += 1) {
+      const id = `L1-M${n}`;
+      expect(checkScriptMode(authored('en-ar', id), 'romanized').errors, id).toEqual([]);
+    }
+  });
+
+  it('rejects a Cyrillic display, naming the surface and the characters', () => {
+    const module = romanizedFixture();
+    module.sentences[1]!.display = 'Меня зовут Иван';
+
+    const report = checkScriptMode(module, 'romanized');
+
+    expect(report.errors).toHaveLength(1);
+    expect(report.errors[0]).toContain('/sentences/1/display');
+    expect(report.errors[0]).toContain('Latin-script romanization');
+    expect(report.errors[0]).toContain('"М"');
+  });
+
+  it('rejects an Arabic-script display — the native line has one home, and this is not it', () => {
+    const module = romanizedFixture();
+    module.comprehensionPool[1]!.display = 'اسمي روهان';
+
+    const report = checkScriptMode(module, 'romanized');
+
+    expect(report.errors).toHaveLength(1);
+    expect(report.errors[0]).toContain('/comprehensionPool/1/display');
+  });
+
+  /**
+   * `forms` was invisible to this check until #354: it is a plain array of strings rather than a
+   * surface with a `display`, so the walk never reached it — and `buildWordIndex` indexes it
+   * verbatim, so a native-script form is what a learner taps.
+   */
+  it('rejects a Cyrillic entry in a word’s forms, naming the forms index', () => {
+    const module = romanizedFixture();
+    module.sentences[0]!.deconstruction.words[0]!.forms = ['ismī', 'зовут'];
+
+    const report = checkScriptMode(module, 'romanized');
+
+    expect(report.errors).toHaveLength(1);
+    expect(report.errors[0]).toContain('/sentences/0/deconstruction/words/0/forms/1');
+  });
+
   it('has nothing to say about a native course — display IS the native text', () => {
     const module = romanizedFixture();
     module.sentences[0]!.display = '';
@@ -773,7 +920,7 @@ describe('the scriptMode cross-check', () => {
     const tree = scaffold([
       {
         row: courseRow('en-ar', { scriptMode: 'romanized' }),
-        modules: [{ id: 'L1-M1', verified: true }],
+        modules: [{ id: 'L1-M1', verified: true, edit: romanize }],
       },
     ]);
 
