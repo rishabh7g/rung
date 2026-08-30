@@ -69,13 +69,13 @@ afterEach(() => {
   vi.restoreAllMocks();
 });
 
-describe('state v8', () => {
+describe('state v9', () => {
   it('starts as the shape the PRD prints — the drift guard (§8 F7)', () => {
     expect(persistedSlice(useAppStore.getState())).toEqual({
-      stateVersion: 8,
+      stateVersion: 9,
       activeCourse: '',
       courses: {},
-      settings: { elapsedTickEnabled: true },
+      settings: { elapsedTickEnabled: true, userLang: '' },
     });
   });
 
@@ -103,14 +103,18 @@ describe('state v8', () => {
     ]);
   });
 
-  it('defaults the tick ON pending [Q3] (#70), and holds nothing else — v8 settings is one key', () => {
-    expect(useAppStore.getState().settings).toEqual({ elapsedTickEnabled: true });
+  /**
+   * v9 settings is two keys (#322): the tick, and the user's own language — unset at first run,
+   * which means "follow the active course's L1" and is why an existing learner sees no change.
+   */
+  it('defaults the tick ON pending [Q3] (#70), and the language unset — v9 settings is two keys', () => {
+    expect(useAppStore.getState().settings).toEqual({ elapsedTickEnabled: true, userLang: '' });
   });
 
-  it('persists under rung:state, versioned 8', () => {
+  it('persists under rung:state, versioned 9', () => {
     useAppStore.getState().ensureCourse('hi-mr');
 
-    expect(stored().version).toBe(8);
+    expect(stored().version).toBe(9);
     expect(storage.items.has('rung:state')).toBe(true);
   });
 
@@ -701,6 +705,7 @@ describe('setSetting', () => {
     expect(useAppStore.getState().settings.elapsedTickEnabled).toBe(false);
     expect((stored().state as { settings: unknown }).settings).toEqual({
       elapsedTickEnabled: false,
+      userLang: '',
     });
   });
 });
@@ -764,19 +769,21 @@ describe('migration', () => {
 
     const state = useAppStore.getState();
     expect(warn).not.toHaveBeenCalled();
-    expect(state.stateVersion).toBe(8);
+    expect(state.stateVersion).toBe(9);
     expect(state.activeCourse).toBe('hi-mr');
     expect(state.courses['hi-mr']).toEqual({
       ...emptyCourseState(),
       modules: { 'L1-M1': { status: 'passed', passedAt: '2026-02-02T02:40:00.000Z' } },
       production: { 'L1-M3-S01': 2 },
     });
-    // Settings stay at the top level, carried — and rebuilt to the v8 shape, which is the tick
+    // Settings stay at the top level, carried — and rebuilt to the v9 shape, which is the tick
     // and nothing else.
-    expect(state.settings).toEqual({ elapsedTickEnabled: false });
+    // The tick is carried; the language it predates arrives unset (#322), which means "follow
+    // the active course" — the pre-v9 behaviour, so the upgrade changes nothing the learner sees.
+    expect(state.settings).toEqual({ elapsedTickEnabled: false, userLang: '' });
   });
 
-  it('carries a v6 document whole and answers the v8 settings shape', async () => {
+  it('carries a v6 document whole and answers the v9 settings shape', async () => {
     const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
     const midClimb = {
       ...emptyCourseState(),
@@ -800,11 +807,11 @@ describe('migration', () => {
 
     const state = useAppStore.getState();
     expect(warn).not.toHaveBeenCalled();
-    expect(state.stateVersion).toBe(8);
+    expect(state.stateVersion).toBe(9);
     expect(state.activeCourse).toBe('hi-mr');
     // The ladder position survives the upgrade untouched (Invariant 8).
     expect(state.courses['hi-mr']).toEqual(midClimb);
-    expect(state.settings).toEqual({ elapsedTickEnabled: false });
+    expect(state.settings).toEqual({ elapsedTickEnabled: false, userLang: '' });
   });
 
   it('drops the retired invitation bit a v7 document still carries (#227)', () => {
@@ -819,18 +826,18 @@ describe('migration', () => {
 
     // Named field by field, not spread: the key v8 retired is not carried forward, which is what
     // lets a v7 backup through `serialize.ts`'s unknown-key refusal (#227).
-    expect(state.settings).toEqual({ elapsedTickEnabled: false });
-    expect(Object.keys(state.settings)).toEqual(['elapsedTickEnabled']);
-    expect(state.stateVersion).toBe(8);
+    expect(state.settings).toEqual({ elapsedTickEnabled: false, userLang: '' });
+    expect(Object.keys(state.settings).sort()).toEqual(['elapsedTickEnabled', 'userLang']);
+    expect(state.stateVersion).toBe(9);
     expect(state.courses['hi-mr']).toEqual(emptyCourseState());
   });
 
-  it('answers a COMPLETE v8 document even for a sparse v5 payload — a half shape is worse than a fresh one', () => {
+  it('answers a COMPLETE v9 document even for a sparse v5 payload — a half shape is worse than a fresh one', () => {
     expect(migrate({ stateVersion: 5, modules: {} }, 5)).toEqual({
-      stateVersion: 8,
+      stateVersion: 9,
       activeCourse: 'hi-mr',
       courses: { 'hi-mr': emptyCourseState() },
-      settings: { elapsedTickEnabled: true },
+      settings: { elapsedTickEnabled: true, userLang: '' },
     });
   });
 
@@ -848,7 +855,7 @@ describe('migration', () => {
     expect(persistedSlice(useAppStore.getState())).toEqual(initialState());
   });
 
-  it('does not run for a v8 payload — the version it is already at', async () => {
+  it('does not run for a v9 payload — the version it is already at', async () => {
     const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
     useAppStore.getState().ensureCourse('hi-mr');
     const document_ = storage.items.get(STORAGE_KEY) ?? '';

@@ -82,7 +82,7 @@ const DIST = path.join(REPO_ROOT, 'dist');
  * script never prints one, so charging them to the shell would bill every learner for a face only
  * romanized courses paint.
  */
-export const COURSE_SCRIPTS = ['devanagari', 'arabic', 'latin-ext'] as const;
+export const COURSE_SCRIPTS = ['devanagari', 'arabic', 'latin-ext', 'cyrillic'] as const;
 export type CourseScript = (typeof COURSE_SCRIPTS)[number];
 
 /** The script a romanized course's L2 line is written in whatever its native script is (#222) —
@@ -103,6 +103,9 @@ export const SCRIPT_BY_LANGUAGE_TAG: Readonly<Record<string, CourseScript>> = {
   ar: 'arabic',
   fa: 'arabic',
   ur: 'arabic',
+  // #325 — en-ru's display line. Cyrillic is charged to the course that paints it, exactly as
+  // Devanagari is: Mukta bundles none, so the letters come from Source Sans 3's own cut.
+  ru: 'cyrillic',
 };
 
 /**
@@ -164,6 +167,7 @@ export type Owner =
   | { kind: 'splash' }
   | { kind: 'icon-svg' }
   | { kind: 'course'; ids: readonly string[] }
+  | { kind: 'unread-script' }
   | { kind: 'unmetered' };
 
 const SHELL: Owner = { kind: 'shell' };
@@ -204,9 +208,25 @@ export function attribute(file: string, courses: readonly ShippedCourse[]): Owne
     const script = fontScript(file);
     if (script !== null) {
       const ids = courses.filter((c) => c.scripts.includes(script)).map((c) => c.id);
-      // A script no shipped course reads is dead weight every course carries — charge it to the
-      // shell, where its ceiling makes the waste red, rather than to nobody.
-      return ids.length > 0 ? { kind: 'course', ids } : SHELL;
+      if (ids.length > 0) return { kind: 'course', ids };
+
+      /**
+       * A script subset no shipped course reads yet (#325 — Cyrillic, bundled before en-ru is
+       * authored, the honest-gate curve #197 took for Naskh).
+       *
+       * It used to be charged to the SHELL, "where its ceiling makes the waste red". That reason
+       * has not survived: #304 made every size informational, so there is no ceiling left to make
+       * anything red — and `shell` now means precached, because the one gate #304 kept is the
+       * audit that the shell row EQUALS the emitted precache list. A course script is never
+       * precached (`PRECACHE_IGNORES`), so a shell attribution here fails that audit for a file
+       * no learner ever downloads: `unicode-range` routes it away from every course that cannot
+       * read it, which is the whole point of subsetting per script.
+       *
+       * So it takes its own row — shipped, deliberately not precached, never fetched — which is
+       * the same shape `splash` and `icons/icon.svg` already have (#115, #251), and the row makes
+       * the dead weight visible by NAME rather than by hiding it inside the shared floor.
+       */
+      return { kind: 'unread-script' };
     }
     // A course face's own `latin` subset (mukta-latin-*) is subset over the UNION of every
     // shipped course's strings, so it is genuinely shared: shell, not double-counted per course.
@@ -306,6 +326,14 @@ export function budgets(courses: readonly ShippedCourse[]): Budget[] {
       // repo hygiene the same way `splash`'s is.
       id: 'icon-svg',
       matches: (file) => file === 'icons/icon.svg',
+      measure: 'raw',
+    },
+    {
+      // #325 — script subsets bundled ahead of the course that reads them. Shipped, never
+      // precached, and fetched by nobody until that course graduates, at which point the files
+      // move into its `course:` row on their own. The row exists so the wait is VISIBLE.
+      id: 'unread-script',
+      matches: (file) => owner(file).kind === 'unread-script',
       measure: 'raw',
     },
     {
