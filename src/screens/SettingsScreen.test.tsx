@@ -452,10 +452,14 @@ describe('the fifth course — en-ru (#338, still a dev fixture)', () => {
     ]) {
       expect(screen.getByText(title)).toBeInTheDocument();
     }
-    // Nothing is authored, so M1 is the current rung with NO module CTA — the whole ladder is
-    // pending, and the pending line is en-ru's English, counting all ten (Invariant 2).
+    // Nothing is passed, so M1 is the current rung with the one CTA a fresh rung gets [D22] —
+    // in en-ru's own English words — and the rest of the ladder is locked, so that CTA is the
+    // only link in the list. The pending line counts all ten (Invariant 2: counts only).
     expect(screen.getByText('M1 · CURRENT RUNG')).toBeInTheDocument();
-    expect(within(screen.getByRole('list')).queryAllByRole('link')).toHaveLength(0);
+    const rungLinks = within(screen.getByRole('list')).getAllByRole('link');
+    expect(rungLinks).toHaveLength(1);
+    expect(rungLinks[0]).toHaveTextContent('Start with the module');
+    expect(rungLinks[0]).toHaveAttribute('href', '#/module/L1-M1');
     expect(screen.getByText('Level 1 · 10 of 10 rungs still to climb.')).toBeInTheDocument();
 
     // Invariant 8: the switch created en-ru's subtree and touched nobody else's.

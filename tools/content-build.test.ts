@@ -1716,6 +1716,15 @@ describe('the shared normaliser', () => {
  * content needs no relaxation to reach a learner — all four courses, forty rungs, on a strict build.
  */
 describe('the authored content', () => {
+  /**
+   * en-ru's authored rungs, in ladder order — the course is still behind `fixture: true`
+   * (#338), so this list grows one authoring issue at a time (#340, #341, #342) and #343 is
+   * what finally lets a strict build see it. Pinned, never derived: the point of the block is
+   * to know what the repo really holds.
+   */
+  const EN_RU_AUTHORED = ['L1-M1', 'L1-M2'];
+  const EN_RU_RANGE = 'L1-M1..M2';
+
   /** Everything a strict build must emit for the fourth course (#273): the ladder, the Hindi
    *  bundle, the ten rungs and their ten cumulative indexes. */
   const HI_EN_FILES = [
@@ -1812,7 +1821,7 @@ describe('the authored content', () => {
     }
   });
 
-  it('ships hi-mr, en-es, en-ar and hi-en L1-M1..M10 on a dev build', () => {
+  it('ships the four graduated courses plus en-ru’s authored rungs on a dev build', () => {
     const { report, outRoot } = build(DEFAULT_CONTENT_ROOT, DEV);
     const L1 = [
       'L1-M1',
@@ -1833,34 +1842,41 @@ describe('the authored content', () => {
       ['en-es', L1],
       ['en-ar', L1],
       ['hi-en', L1],
+      ['en-ru', EN_RU_AUTHORED],
     ]);
     // hi-en was authored behind this relaxation (#267, #270–#272) and graduated in #273, so a dev
     // build now ships exactly what the strict build above does — the same ten rungs, the same
     // report line — and differs only in the banner and the `devBuild` key.
     expect(report.lines).toContain('hi-en: 10 modules (L1-M1..M10)');
     expect(report.lines).toContain('  index L1-M10: 207 surfaces');
-    // en-ru (#338) is admitted by `--with-fixtures` but has nothing authored yet, so it reports
-    // zero modules and drops out of the emitted manifest — the tail of the summary says so.
-    expect(report.lines).toContain('en-ru: 0 modules — nothing authored yet');
+    // en-ru (#338) is the course being authored behind the fixture flag right now, so THIS is the
+    // build that carries it: `--with-fixtures` admits the course and its authored rungs ship.
+    expect(report.lines).toContain(`en-ru: ${EN_RU_AUTHORED.length} modules (${EN_RU_RANGE})`);
     expect(report.lines).toContain(
-      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10) | skipped: en-ru (no modules)',
+      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10), ' +
+        `en-ru ${EN_RU_AUTHORED.length} modules (${EN_RU_RANGE})`,
     );
     expect(readManifest(outRoot).devBuild).toBe(true);
-    // The manifest lists what SHIPPED: the four graduated courses. en-ru is admitted by the
-    // relaxation and still emits nothing, because the build filters the manifest to courses
-    // that shipped at least one module.
+    // The manifest lists what SHIPPED, so a dev build carries five courses and the fifth is the
+    // fixture one — which is exactly the seam a strict build must drop.
     expect(readManifest(outRoot).courses.map((course) => course.id)).toEqual([
       'hi-mr',
       'en-es',
       'en-ar',
       'hi-en',
+      'en-ru',
     ]);
     expect(readManifest(outRoot).courses.at(-1)).toMatchObject({
-      id: 'hi-en',
-      l1Tag: 'hi',
-      l2Tag: 'en',
+      id: 'en-ru',
+      l1Tag: 'en',
+      l2Tag: 'ru',
+      fixture: true,
     });
-    expect(readManifest(outRoot).courses.some((course) => 'fixture' in course)).toBe(false);
+    expect(
+      readManifest(outRoot)
+        .courses.filter((course) => 'fixture' in course)
+        .map((course) => course.id),
+    ).toEqual(['en-ru']);
     for (const file of [
       'hi-mr/levels.json',
       'hi-mr/strings.json',
