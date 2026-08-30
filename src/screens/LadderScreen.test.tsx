@@ -205,6 +205,22 @@ describe('a fresh install', () => {
     ).toBeInTheDocument();
   });
 
+  /**
+   * #350: the home screen names what the learner is learning, in the course's own words.
+   *
+   * The assertion is against the FIXTURE's value (`hi-mr ladder.learning`), which is the whole
+   * point of the shared strings fixture: an assertion against "Marathi" would pass just as well
+   * on a shell that hardcoded the manifest's English `l2`, and that is exactly the thing this
+   * key exists to prevent.
+   */
+  it('names what the learner is learning, in the course’s own words', async () => {
+    await renderLadder();
+
+    const learning = screen.getByText(strings('ladder.learning'));
+    expect(learning).toBeInTheDocument();
+    expect(learning).toHaveAttribute('dir', 'ltr');
+  });
+
   it('seals Levels 2 and 3, and only they are tappable', async () => {
     await renderLadder();
 

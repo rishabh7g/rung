@@ -158,6 +158,22 @@ export default function LadderScreen() {
           prototype — there they sit outside the scroll area, here they are sticky inside the
           shell's one scroll column (design/pwa-checklist.md §1). */}
       <div className={styles.head}>
+        {/**
+         * What the learner is learning (#350) — the one line on the home screen that names the
+         * subject, in the course's own L1.
+         *
+         * The Ladder said a great deal about POSITION (the level, the rungs left, the strip) and
+         * nothing about what any of it was for: a learner opening the app saw a ladder without a
+         * subject, and the course's name lived two taps away in Settings. It sits beside the
+         * position line rather than above the rungs, because it is a fact about the screen and not
+         * about the current rung — it stays put while the rungs scroll under it. And it is the
+         * course's own sentence, never `l2` interpolated out of the manifest, whose values are
+         * English words (`stringsKeys.ts`).
+         */}
+        <p className={styles.learning} dir={course.dir}>
+          {strings['ladder.learning']}
+        </p>
+
         {/* Structural furniture, and the only numbers on the screen: counts, never time. The
             prototype puts this line in the Ladder's own header row; the shell's brand header is
             screen-agnostic (#84), so it renders as the screen's first row — reconciled in #117. */}

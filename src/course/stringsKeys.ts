@@ -52,6 +52,7 @@ export const STRINGS_KEYS = [
   'retry.cta',
   'retry.pending',
   'ordinal',
+  'ladder.learning',
   'ladder.pendingLine',
   'ladder.sealedToast',
   'rungCard.startModule',
@@ -144,6 +145,23 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'retry.pending': [],
   /** The number to ordinalise. */
   ordinal: ['{n}'],
+  /**
+   * **What the learner is learning** (#350), on the home screen, in their own language.
+   *
+   * The Ladder names the level, the rung and what is left to climb, and named nothing about the
+   * COURSE — a learner opening the app saw a ladder without a subject. This is the one line that
+   * says it.
+   *
+   * It is a fully authored phrase per bundle and **not** `{l2}` interpolated out of the manifest,
+   * which is the whole reason it is a key at all: `courses.json`'s `l2` holds English words
+   * ("Marathi", "Russian"), and an English noun dropped into a Hindi sentence is the shell
+   * speaking for the course (PRD §4) in the one place a learner looks first. Each bundle names its
+   * own target language, in its own words and its own script.
+   *
+   * It does not interpolate for the same reason `hint.*` does not: there is no number in it, and
+   * a phrase built out of parts is a sentence the shell would be assembling.
+   */
+  'ladder.learning': [],
   /**
    * The Ladder's pending line — counts only, never time (Invariant 2): which level the learner is
    * on, and how many of its rungs are still to climb.
