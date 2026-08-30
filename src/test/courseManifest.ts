@@ -3,15 +3,18 @@
  *
  * A trimmed copy of what `npm run dev` writes to `public/content/courses.json` — the envelope
  * with its dev keys, hi-mr first, en-ar carrying `romanizationNote` so the loader is exercised
- * against a row that has more than the nine required fields, and hi-en last. Shared, so the loader
+ * against a row that has more than the nine required fields, and en-ru last. Shared, so the loader
  * test and the boot tests cannot drift into disagreeing about the shape.
  *
- * **No row carries `fixture`.** en-es graduated in #195, en-ar in #202 and hi-en — Hindi (L1) →
- * English (L2), added behind the gate in #267 and authored in #270–#272 — in #273, so all four
- * courses ship and a strict build emits the same four rows (minus the dev keys). The Settings
- * smoke (`src/screens/SettingsScreen.test.tsx`) and the authored-rung walk
- * (`src/course/hiEnAuthored.test.tsx`) reach the fourth course through this copy, without a
- * browser. The `fixture` seam itself is still tested — the loader test flags a row of its own.
+ * **Five rows, four of them shipping.** en-es graduated in #195, en-ar in #202 and hi-en — Hindi
+ * (L1) → English (L2), added behind the gate in #267 and authored in #270–#272 — in #273, so those
+ * four ship and a strict build emits them (minus the dev keys). The fifth, en-ru — English (L1) →
+ * Russian (L2), added behind the gate in #338 and authored in #340–#342 — graduated in #343, so
+ * ALL FIVE ship and no row carries `fixture: true` any more. The seam itself is still proved, on
+ * a synthetic row, in `src/course/manifest.test.ts`. The Settings smoke
+ * (`src/screens/SettingsScreen.test.tsx`) and the authored-rung walks
+ * (`src/course/hiEnAuthored.test.tsx`) reach the later courses through this copy, without a
+ * browser.
  */
 import { vi } from 'vitest';
 import { completeStrings } from './courseStrings.ts';
@@ -64,6 +67,17 @@ export const DEV_MANIFEST = {
       l2Tag: 'en',
       l2Dir: 'ltr',
       pairLabel: 'hindi → english',
+      scriptMode: 'native',
+      dir: 'ltr',
+    },
+    {
+      id: 'en-ru',
+      l1: 'English',
+      l2: 'Russian',
+      l1Tag: 'en',
+      l2Tag: 'ru',
+      l2Dir: 'ltr',
+      pairLabel: 'english → russian',
       scriptMode: 'native',
       dir: 'ltr',
     },

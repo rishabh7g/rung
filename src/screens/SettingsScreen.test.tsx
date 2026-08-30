@@ -58,6 +58,24 @@ function authored(file: 'levels.json' | 'strings.json'): unknown {
   if (text === undefined) throw new Error(`content/hi-en/${file} is not authored`);
   return JSON.parse(text);
 }
+
+/**
+ * The fifth course's files (#338): `content/en-ru/levels.json` and `content/en-ru/strings.json`.
+ * en-ru is English (L1) → Russian (L2), still a dev fixture — its row carries `fixture: true`, so
+ * only a `--with-fixtures` build offers it and not one of its ten rungs is authored yet. The smoke
+ * below is the same one hi-en got: the row in the switcher, a ten-rung ladder, English chrome.
+ */
+const EN_RU_FILES = import.meta.glob<string>('../../content/en-ru/*.json', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+});
+
+function authoredEnRu(file: 'levels.json' | 'strings.json'): unknown {
+  const text = EN_RU_FILES[`../../content/en-ru/${file}`];
+  if (text === undefined) throw new Error(`content/en-ru/${file} is not authored`);
+  return JSON.parse(text);
+}
 /** Injected, so nothing here touches the wall clock — `passedAt` is a receipt, not a schedule. */
 const STAMP = () => '2026-02-03T09:00:00.000Z';
 
@@ -400,6 +418,10 @@ describe('the fourth course — hi-en (#267, shipping since #273)', () => {
       .getAllByRole('option')
       .map((option) => option.textContent);
     // Named by what it teaches since #324 — it shares hi-mr's L1, so it is in the list at all.
+    //
+    // `.at(-1)` survives en-ru's arrival (#338) precisely BECAUSE of #324: the field is filtered
+    // to the learner's own language, so appending an English-L1 course cannot move the tail of
+    // the Hindi list. Before #324 this had to loosen to `toContain`; it does not any more.
     expect(labels.at(-1)).toBe('English');
     // The switcher reads the row's own names and nothing else about it (`manifest.test.ts`) — the
     // fourth course is offered exactly like the first three, on a strict build as on a dev one.
@@ -463,6 +485,125 @@ describe('the fourth course — hi-en (#267, shipping since #273)', () => {
     expect(useAppStore.getState().courses['hi-en']).toBeDefined();
 
     // Back to hi-mr: its ladder is where the climb left it — one rung passed, M2 current.
+    fireEvent.click(screen.getByRole('link', { name: 'Settings' }));
+    fireEvent.change(await screen.findByRole('combobox', { name: 'Active course' }), {
+      target: { value: COURSE },
+    });
+    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
+    expect(await screen.findByText(/LEVEL 1 · 1 OF 10/)).toBeInTheDocument();
+    expect(screen.getByText('M2 · CURRENT RUNG')).toBeInTheDocument();
+    expect(useAppStore.getState().courses[COURSE]).toBe(before);
+  });
+});
+
+/* ------------------------------------------------- the fifth course, en-ru (#338) */
+
+describe('the fifth course — en-ru (#343, shipping)', () => {
+  /**
+   * The same switch flow, run against the REAL en-ru files. The row shipped in #343, so it carries
+   * no `fixture` key and a strict build emits it. The chrome is en-ru's English bundle — the L1 of
+   * this course is English, so `lang` stays `en` and the ladder reads exactly as en-es's does.
+   *
+   * **Reaching it is a two-step journey since #324**, and that is the point rather than an
+   * inconvenience: the course field offers only what the learner can READ, so an English course
+   * appears once the language above it says English. A Hindi reader is never shown Russian.
+   */
+  function serveEnRu(): void {
+    const base = globalThis.fetch;
+    const json = (value: unknown) =>
+      Promise.resolve(new Response(JSON.stringify(value), { status: 200 }));
+    vi.stubGlobal(
+      'fetch',
+      vi.fn((input: RequestInfo | URL) => {
+        const url = String(input);
+        if (url.endsWith('/content/en-ru/levels.json')) return json(authoredEnRu('levels.json'));
+        if (url.endsWith('/content/en-ru/strings.json')) return json(authoredEnRu('strings.json'));
+        return base(input);
+      }),
+    );
+  }
+
+  /** The language field, by the course's own label for it. */
+  function langSelect(): HTMLElement {
+    return screen.getByRole('combobox', { name: stringValue(COURSE, 'settings.yourLanguage') });
+  }
+
+  it('is offered to an English reader as Russian, and to a Hindi reader not at all', async () => {
+    const select = await renderSettings();
+
+    // A Hindi reader sees the Hindi-L1 courses only: en-ru is not among them, in any form.
+    expect(within(select).queryByRole('option', { name: 'Russian' })).toBeNull();
+    expect(select.textContent ?? '').not.toContain('russian');
+
+    // Say you read English, and the field offers what there is to learn in it (#324).
+    fireEvent.change(langSelect(), { target: { value: 'en' } });
+
+    const inEnglish = await screen.findByRole('combobox', { name: 'Active course' });
+    await waitFor(() => {
+      expect(within(inEnglish).getByRole('option', { name: 'Russian' })).toHaveValue('en-ru');
+    });
+  });
+
+  it('boots a ladder of ten pending rungs in English chrome, and leaves hi-mr where it was', async () => {
+    const ladder = tenRungLadder(3);
+    climb(ladder, 'L1-M1');
+    const before = useAppStore.getState().courses[COURSE];
+    await renderSettings(ladder);
+    serveEnRu();
+
+    // English first, then Russian — the journey #324 made explicit.
+    fireEvent.change(langSelect(), { target: { value: 'en' } });
+    const select = await screen.findByRole('combobox', { name: 'Active course' });
+    await waitFor(() => {
+      expect(within(select).queryByRole('option', { name: 'Russian' })).not.toBeNull();
+    });
+    fireEvent.change(select, { target: { value: 'en-ru' } });
+
+    // The arrival toast is en-ru's own `switchToast` — English, the L1 of this course. It names
+    // the pair being LEFT, which after the language step above is the first English-L1 course
+    // rather than hi-mr: the toast reports what actually happened, not what the test set up.
+    expect(
+      await screen.findByText(/You’re on english → russian now\. Your .+ ladder is saved/),
+    ).toBeInTheDocument();
+    // The document declares the course's L1 (#186): `en`, off the row's `l1Tag`. Russian is what
+    // this course TEACHES, and not one Cyrillic line exists yet — the skeleton carries none.
+    await waitFor(() => {
+      expect(document.documentElement.lang).toBe('en');
+    });
+    expect(document.documentElement.dir).toBe('ltr');
+
+    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
+    expect(await screen.findByText(/LEVEL 1 · 0 OF 10/)).toBeInTheDocument();
+    expect(screen.getByText('Foundations — say what you need')).toBeInTheDocument();
+    expect(within(screen.getByRole('list')).getAllByRole('listitem')).toHaveLength(10);
+    for (const title of [
+      'Who I am',
+      'First exchange',
+      'Needs and wants',
+      'My day',
+      'Yesterday',
+      'Tomorrow',
+      'Where things are',
+      'Numbers & shopping',
+      'Feelings & opinions',
+      'Connected talk',
+    ]) {
+      expect(screen.getByText(title)).toBeInTheDocument();
+    }
+    // Nothing is passed, so M1 is the current rung with the one CTA a fresh rung gets [D22] —
+    // in en-ru's own English words — and the rest of the ladder is locked, so that CTA is the
+    // only link in the list. The pending line counts all ten (Invariant 2: counts only).
+    expect(screen.getByText('M1 · CURRENT RUNG')).toBeInTheDocument();
+    const rungLinks = within(screen.getByRole('list')).getAllByRole('link');
+    expect(rungLinks).toHaveLength(1);
+    expect(rungLinks[0]).toHaveTextContent('Start with the module');
+    expect(rungLinks[0]).toHaveAttribute('href', '#/module/L1-M1');
+    expect(screen.getByText('Level 1 · 10 of 10 rungs still to climb.')).toBeInTheDocument();
+
+    // Invariant 8: the switch created en-ru's subtree and touched nobody else's.
+    expect(useAppStore.getState().courses[COURSE]).toBe(before);
+    expect(useAppStore.getState().courses['en-ru']).toBeDefined();
+
     fireEvent.click(screen.getByRole('link', { name: 'Settings' }));
     fireEvent.change(await screen.findByRole('combobox', { name: 'Active course' }), {
       target: { value: COURSE },
