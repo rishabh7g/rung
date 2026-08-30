@@ -74,6 +74,7 @@ describe('reading the shipped courses off the manifest', () => {
         { id: 'en-es', l1Tag: 'en', l2Tag: 'es' },
         { id: 'en-ar', l1Tag: 'en', l2Tag: 'ar' },
         { id: 'hi-en', l1Tag: 'hi', l2Tag: 'en' },
+        { id: 'en-ru', l1Tag: 'en', l2Tag: 'ru' },
       ],
     });
 
@@ -82,6 +83,7 @@ describe('reading the shipped courses off the manifest', () => {
       { id: 'en-es', scripts: [] }, // Latin: no font subsets of its own
       { id: 'en-ar', scripts: ['arabic'] }, // romanized still ships the native line's face (#197)
       { id: 'hi-en', scripts: ['devanagari'] }, // Hindi chrome over English sentences (#267, shipping since #273): the L1 pays for the face
+      { id: 'en-ru', scripts: ['cyrillic'] }, // #325 — Mukta bundles no Cyrillic, so the L2 pays for its own letters
     ]);
   });
 
@@ -185,8 +187,38 @@ describe('attribution: every shipped file has exactly one owner', () => {
     });
   });
 
-  it('falls back to the shell for a script no shipped course reads — dead weight everyone carries', () => {
-    expect(attribute('assets/mukta-devanagari-400-x.woff2', [EN_ES])).toEqual({ kind: 'shell' });
+  /**
+   * #325 changed this answer, and the reason the old one gave is what expired.
+   *
+   * A script subset no shipped course reads used to be charged to the SHELL, "where its ceiling
+   * makes the waste red". #304 made every size informational, so there is no ceiling left to make
+   * anything red — and `shell` now means PRECACHED, because the one gate #304 kept is the audit
+   * that the shell row equals the emitted precache list. Course scripts are never precached
+   * (`PRECACHE_IGNORES`), so the old answer failed that audit the first time a script shipped
+   * ahead of its course: Cyrillic, bundled before en-ru is authored.
+   *
+   * Its own row instead — shipped, never precached, fetched by nobody, exactly the shape `splash`
+   * and `icons/icon.svg` already have. The files move into the course's row on their own once it
+   * graduates.
+   */
+  it('gives a script no shipped course reads its own row — shipped, never precached (#325)', () => {
+    expect(attribute('assets/mukta-devanagari-400-x.woff2', [EN_ES])).toEqual({
+      kind: 'unread-script',
+    });
+    // And it is NOT the shell: shell means precached, and no course script ever is.
+    expect(attribute('assets/source-sans-3-cyrillic-400-x.woff2', [EN_ES])).not.toEqual({
+      kind: 'shell',
+    });
+  });
+
+  /** The moment a course that reads it ships, it stops being unread and becomes that course's. */
+  it('hands an unread script to the course that graduates into it', () => {
+    const enRu: ShippedCourse = { id: 'en-ru', scripts: ['cyrillic'] };
+
+    expect(attribute('assets/source-sans-3-cyrillic-400-x.woff2', [EN_ES, enRu])).toEqual({
+      kind: 'course',
+      ids: ['en-ru'],
+    });
   });
 
   it('carves out the iOS splash set, and only it (#115)', () => {

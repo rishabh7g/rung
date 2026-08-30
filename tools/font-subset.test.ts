@@ -307,10 +307,14 @@ describe('the wiring', () => {
       Number(m[1]),
     );
 
-    // One block per weight, and the same three Mukta draws the letters at: a mark at 700 beside a
-    // letter at 700 must not be a 400 the browser synthesised a bold from.
-    expect(weights).toEqual([...SOURCE_SANS_WEIGHTS]);
-    expect(weights).toEqual([...MUKTA_WEIGHTS]);
+    // One block per weight PER SUBSET — the same shape the Mukta case above takes, and since
+    // #325 this face has two subsets: the romanization gap and Cyrillic.
+    expect(weights).toHaveLength(SOURCE_SANS_WEIGHTS.length * SOURCE_SANS_TARGETS.length);
+    // And the same three weights Mukta draws the letters at: a mark at 700 beside a letter at 700
+    // must not be a 400 the browser synthesised a bold from. That matters more for Cyrillic than
+    // it ever did for four diacritics — en-ru's whole display line is set in this face.
+    expect([...new Set(weights)].sort()).toEqual([...SOURCE_SANS_WEIGHTS]);
+    expect([...new Set(weights)].sort()).toEqual([...MUKTA_WEIGHTS]);
   });
 
   it('main.tsx imports all three sheets, so the generated payloads are in the graph', () => {
