@@ -235,14 +235,36 @@ describe('the LANGUAGE section (#323)', () => {
 /* ------------------------------------------------------------------- the dropdown */
 
 describe('the COURSE dropdown (F0)', () => {
-  it('lists the manifest, verbatim, pairLabel per row, the active course selected', async () => {
+  /**
+   * #324: the field offers what there is to LEARN in the learner's own language, named by the
+   * target language — not every course by its direction pair. Half of a pair label repeated the
+   * language they had just chosen, and the other half was written for somebody else.
+   */
+  it('offers the courses in the user’s language, labelled by what they teach', async () => {
     const select = await renderSettings();
 
     const labels = within(select)
       .getAllByRole('option')
       .map((option) => option.textContent);
-    expect(labels).toEqual(DEV_MANIFEST.courses.map((course) => course.pairLabel));
+
+    // userLang is unset, so it resolves to hi-mr's own L1: the Hindi-L1 courses, in manifest
+    // order, each named by its L2.
+    expect(labels).toEqual(
+      DEV_MANIFEST.courses.filter((course) => course.l1Tag === 'hi').map((course) => course.l2),
+    );
     expect(select).toHaveValue('hi-mr');
+  });
+
+  it('offers no course outside the user’s language, in any form', async () => {
+    const select = await renderSettings();
+
+    const text = select.textContent ?? '';
+    for (const course of DEV_MANIFEST.courses) {
+      // No direction pairs anywhere, and nothing from an English-L1 course.
+      expect(text).not.toContain(course.pairLabel);
+      if (course.l1Tag !== 'hi')
+        expect(within(select).queryByRole('option', { name: course.l2 })).toBeNull();
+    }
   });
 
   it('surfaces a course added to the manifest with zero shell changes', async () => {
@@ -251,13 +273,13 @@ describe('the COURSE dropdown (F0)', () => {
       courses: [
         ...DEV_MANIFEST.courses,
         {
-          id: 'fr-de',
-          l1: 'French',
-          l2: 'German',
-          l1Tag: 'fr',
-          l2Tag: 'de',
+          id: 'hi-ta',
+          l1: 'Hindi',
+          l2: 'Tamil',
+          l1Tag: 'hi',
+          l2Tag: 'ta',
           l2Dir: 'ltr',
-          pairLabel: 'french → german',
+          pairLabel: 'hindi → tamil',
           scriptMode: 'native',
           dir: 'ltr',
           fixture: true,
@@ -267,22 +289,25 @@ describe('the COURSE dropdown (F0)', () => {
 
     const select = await renderSettings(tenRungLadder(2), manifest);
 
-    expect(within(select).getAllByRole('option')).toHaveLength(DEV_MANIFEST.courses.length + 1);
-    expect(within(select).getByRole('option', { name: 'french → german' })).toBeInTheDocument();
+    // A course in the learner's own language appears with no shell change — named by what it
+    // teaches (#324), which is the whole of what the shell knows about it.
+    const inHindi = manifest.courses.filter((course) => course.l1Tag === 'hi');
+    expect(within(select).getAllByRole('option')).toHaveLength(inHindi.length);
+    expect(within(select).getByRole('option', { name: 'Tamil' })).toBeInTheDocument();
   });
 
   it('runs the switch flow (#106): pointer moved, target ensured, re-boots into its words', async () => {
     const select = await renderSettings();
 
-    fireEvent.change(select, { target: { value: 'en-es' } });
+    fireEvent.change(select, { target: { value: 'hi-en' } });
 
     // `switchCourse`: the pointer moved and the target's subtree exists, at once.
-    expect(useAppStore.getState().activeCourse).toBe('en-es');
-    expect(useAppStore.getState().courses['en-es']).toBeDefined();
+    expect(useAppStore.getState().activeCourse).toBe('hi-en');
+    expect(useAppStore.getState().courses['hi-en']).toBeDefined();
     // The provider re-boots into the chosen course's bundle: the words on screen are en-es's
     // own. The anchor was the reassurance note under the dropdown until #232 removed it, so it
     // is now the arrival toast — whose two pair labels the next case pins.
-    expect(await screen.findByText(/^en-es switchToast/)).toBeInTheDocument();
+    expect(await screen.findByText(/^hi-en switchToast/)).toBeInTheDocument();
     // Invariant 8: the switch created the new subtree and deleted nobody's.
     expect(useAppStore.getState().courses[COURSE]).toBeDefined();
   });
@@ -293,11 +318,13 @@ describe('the COURSE dropdown (F0)', () => {
     const before = useAppStore.getState().courses[COURSE];
     const select = await renderSettings(ladder);
 
-    fireEvent.change(select, { target: { value: 'en-es' } });
+    fireEvent.change(select, { target: { value: 'hi-en' } });
 
-    // The template is en-es's own `switchToast` — the fixture value self-identifies its course —
-    // `{to}` filled with the target's pairLabel and `{from}` with the pair being left.
-    const toast = await screen.findByText('en-es switchToast english → spanish hindi → marathi');
+    // The template is hi-en's own `switchToast` — the fixture value self-identifies its course —
+    // `{to}` filled with the target's pairLabel and `{from}` with the pair being left. The TOAST
+    // still names both directions in full: #324 changed what the dropdown offers, not what the
+    // confirmation says.
+    const toast = await screen.findByText('hi-en switchToast hindi → english hindi → marathi');
     // …delivered as the shared transient line (#86): a polite live region, no dismiss control.
     expect(toast.closest('[role="status"]')).not.toBeNull();
     // And the promise the toast speaks is true: the ladder left behind is the very object it was.
@@ -311,7 +338,7 @@ describe('the COURSE dropdown (F0)', () => {
       JSON.stringify({ scrollTop: 120, expanded: ['L1-M1-S01'] }),
     );
 
-    fireEvent.change(select, { target: { value: 'en-es' } });
+    fireEvent.change(select, { target: { value: 'hi-en' } });
 
     // The sweep is synchronous with the swap: the new course's screens start fresh.
     expect(sessionStorage.getItem('rung:module-view:hi-mr:L1-M1')).toBeNull();
@@ -366,16 +393,17 @@ describe('the fourth course — hi-en (#267, shipping since #273)', () => {
     return within(screen.getByRole('list')).getAllByRole('listitem');
   }
 
-  it('is offered as the last pair, and is nothing the shell was told about', async () => {
+  it('is offered as the last thing to learn, and is nothing the shell was told about', async () => {
     const select = await renderSettings();
 
     const labels = within(select)
       .getAllByRole('option')
       .map((option) => option.textContent);
-    expect(labels.at(-1)).toBe('hindi → english');
-    // The switcher reads `pairLabel` and nothing else about the row (`manifest.test.ts`) — the
+    // Named by what it teaches since #324 — it shares hi-mr's L1, so it is in the list at all.
+    expect(labels.at(-1)).toBe('English');
+    // The switcher reads the row's own names and nothing else about it (`manifest.test.ts`) — the
     // fourth course is offered exactly like the first three, on a strict build as on a dev one.
-    expect(within(select).getByRole('option', { name: 'hindi → english' })).toHaveValue('hi-en');
+    expect(within(select).getByRole('option', { name: 'English' })).toHaveValue('hi-en');
   });
 
   it('boots a ladder of ten pending rungs in Hindi chrome, and leaves hi-mr exactly where it was', async () => {

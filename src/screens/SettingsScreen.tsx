@@ -11,9 +11,10 @@
  * ("read-only teaching · zero inputs · zero network"); #232 removed both halves as read-once
  * copy. The app goes on behaving that way — it simply stops saying so on screen.
  *
- * The COURSE section is the reason the screen exists (F0): a native `<select>` over the
- * manifest's courses — it ships even with one course, because the seam is the product promise —
- * with the ACTIVE course's status line beneath it, derived from the very progression input the
+ * The COURSE section is the reason the screen exists (F0): a native `<select>` over the courses
+ * the learner can READ — the manifest filtered to their own language (#324), each option named by
+ * what it teaches rather than by its direction pair; it ships even with one course, because the
+ * seam is the product promise — with the ACTIVE course's status line beneath it, derived from the very progression input the
  * Ladder renders and `passRitual` guards with (`useProgression`), counts only, never time
  * (Invariant 2). The reassurance note that switching erases nothing went with the explainers on
  * #232; the switch still touches no per-course state (Invariant 8), it just no longer says so.
@@ -100,6 +101,22 @@ export default function SettingsScreen() {
   const selectedLang = resolveUserLang(userLang, course);
 
   /**
+   * What there is to LEARN in that language (#324) — the manifest's courses filtered to the ones
+   * this learner can actually read, in manifest order.
+   *
+   * The dropdown used to list every course by its direction pair ("english → spanish"), which
+   * answers the wrong question once the section above exists: half of each label repeats the
+   * language they just chose, and the other half is written for someone else. Filtered, the field
+   * offers targets rather than directions, and each option is the row's own `l2` name.
+   *
+   * **The active course is always in here**, so there is no fallback branch: choosing a language
+   * re-resolves the active course to one that speaks it (`chooseLanguage` above), so by the time
+   * this renders `course.l1Tag` is `selectedLang`. A branch for a mismatch that cannot happen
+   * would be a claim about this screen that no test could ever make true.
+   */
+  const learnable = courses.filter((row) => row.l1Tag === selectedLang);
+
+  /**
    * Choosing a language is TWO facts, and only the first is always true: the learner reads this
    * language now, and — if the course they are in does not speak it — they are moved to one that
    * does. The move is the existing course switch (#106), so it resets transient UI and touches no
@@ -171,9 +188,11 @@ export default function SettingsScreen() {
             value={course.id}
             onChange={(event) => switchCourse(event.target.value)}
           >
-            {courses.map((row) => (
+            {/* The target language, not the pair: the direction is what the section above
+                already settled (#324). */}
+            {learnable.map((row) => (
               <option key={row.id} value={row.id}>
-                {row.pairLabel}
+                {row.l2}
               </option>
             ))}
           </select>
