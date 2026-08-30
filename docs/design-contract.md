@@ -47,6 +47,53 @@ documents. The `design/` pair is v3.3 and further ahead — for example
 `design/PRD-engineering.md` has a §17 that `docs/PRD-engineering.md` does not.
 Prefer the `design/` pair until the two are reconciled.
 
+## Divergence — rung teaches speech, not script (2026-08-30, #353)
+
+**rung does not teach reading or writing the target language.** An English speaker must be able
+to work the whole app without decoding a non-Latin script. No English-L1 course may require
+reading a non-Latin script on any learner-facing L2 surface; any such course ships
+`scriptMode: "romanized"`, and the native text is confined to the optional quiet `script` line.
+
+The product teaches *speech*. A learner who cannot read Cyrillic opens en-ru today and every hero
+line — the sentence, the word rows, the variations, the mistake callout, the comprehension pool —
+is a string they cannot decode. That is a script-decoding course wearing a speaking course's
+clothes, and the decision is that we do not ship it. `design/` is read-only and cannot carry a
+decision of this shape, which is exactly what this log is for.
+
+The rule lives in `content/courses.json` — `scriptMode` is per course and already carries this
+meaning. Nothing new is introduced: what is recorded here is *which value an English-L1 non-Latin
+course is allowed to pick*, and `tools/content-build.ts` `checkScriptMode` is where the build
+enforces it (#354 teaches that check to prove the `display` is actually Latin rather than merely
+non-empty, so this rule is machine-checked rather than reviewed by eye across a thousand strings).
+
+**en-ar already conforms.** Its row carries `scriptMode: "romanized"` and a `romanizationNote`,
+and its ten L1 modules measure out at **0** Arabic-script `display` strings against **753**
+`script` fields carrying the native line — Arabic script appears inside English prose in exactly
+3 places out of ~750, and every one of those is a note *about* the spelling. That is the shape
+this rule describes.
+
+**en-ru is the one violation.** It ships `scriptMode: "native"`, so `display` is Cyrillic on every
+surface the learner reads: **959** Cyrillic `display` strings across `L1-M1..M10` (100 sentence,
+126 word, 213 word `forms`, 300 variation, 100 mistake, 120 comprehension-pool), **698** prose
+fields quoting Cyrillic inline, and **0** `script` fields. Bringing it into line is #355–#360,
+not this entry.
+
+**Five courses are not affected, and a future reader should not "fix" them.** hi-mr and hi-en are
+Hindi-L1, not English-L1 — the rule is about what an *English* speaker is asked to decode, and it
+does not reach a course whose learner reads Devanagari as their own language. en-es, en-it and
+en-fr are English-L1 and stay `scriptMode: "native"` because their native script **is** Latin:
+there is nothing to romanize, and a `romanizationNote` on any of them would be noise. en-de, added
+as a fixture on #356, is `native` for the same reason.
+
+**Forward rule: a new non-Latin course is romanized from its first commit, never retrofitted.**
+The measured cost of en-ru's retrofit is 959 display strings plus 698 prose fields plus 959 new
+`script` fields — and every one of them was free to write correctly at authoring time. It is the
+same asymmetry the strings-bundle contract is built on: cheap at authorship, expensive and risky
+as a migration, and the risk is not the typing but the word index, which matches surfaces verbatim
+and is first-occurrence-wins.
+
+A deliberate, recorded product decision, not drift.
+
 ## Divergence — `glossEn` is optional in schema v5 where the L2 is English (2026-08-23, #268)
 
 `design/PRD-engineering.md` §7 lists `glossEn` among a sentence's required fields
