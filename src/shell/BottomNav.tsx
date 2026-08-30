@@ -13,9 +13,16 @@
  * and the state the learner sees are then the same state.
  *
  * The nav is not rendered at all during an immersive session — see `AppShell`.
+ *
+ * **The labels are the course's** (`nav.*`, #351). They were English furniture until hi-en and
+ * hi-mr shipped, at which point the app's whole top level greeted a Hindi-L1 learner in the
+ * language they came here to learn out of. One label per tab, used verbatim for the visible span,
+ * the `aria-label` and the `title` — three renderings of one word, so they cannot drift.
  */
 import { NavLink } from 'react-router-dom';
 import { Pencil, Rows3, Settings } from 'lucide-react';
+import { useCourse } from '../course/CourseProvider.tsx';
+import { useStrings } from '../course/strings.ts';
 import { HOME_PATH, PRACTICE_PATH, SETTINGS_PATH } from './routes.tsx';
 import styles from './BottomNav.module.css';
 
@@ -26,26 +33,31 @@ import styles from './BottomNav.module.css';
  * the mark itself stays reserved for the brand header.
  */
 const TABS = [
-  { to: HOME_PATH, label: 'Ladder', Icon: Rows3 },
-  { to: PRACTICE_PATH, label: 'Practice', Icon: Pencil },
-  { to: SETTINGS_PATH, label: 'Settings', Icon: Settings },
+  { to: HOME_PATH, key: 'nav.ladder', Icon: Rows3 },
+  { to: PRACTICE_PATH, key: 'nav.practice', Icon: Pencil },
+  { to: SETTINGS_PATH, key: 'nav.settings', Icon: Settings },
 ] as const;
 
 export function BottomNav() {
+  const { course } = useCourse();
+  const strings = useStrings();
+
   return (
-    <nav className={styles.nav} aria-label="Primary">
-      {TABS.map(({ to, label, Icon }) => (
+    <nav className={styles.nav} aria-label={strings['a11y.primaryNav']}>
+      {TABS.map(({ to, key, Icon }) => (
         <NavLink
           key={to}
           to={to}
           end
           className={styles.item}
           // Mandatory, and set at EVERY viewport — the bar hides the span below (#245).
-          aria-label={label}
-          title={label}
+          aria-label={strings[key]}
+          title={strings[key]}
         >
           <Icon className={styles.icon} />
-          <span className={styles.label}>{label}</span>
+          <span className={styles.label} dir={course.dir}>
+            {strings[key]}
+          </span>
         </NavLink>
       ))}
     </nav>

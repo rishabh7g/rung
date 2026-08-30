@@ -21,10 +21,11 @@
  * celebration, once (`useUnlockBeat` below; PRD-design §3.6, §12.3 [Q4]).
  *
  * Everything the learner reads is the course's: rung titles and jobs and level names come from
- * that course's `levels.json`, the pending line and the sealed toast from its `strings.json`
- * (PRD §4, guarded by `src/shellPurity.test.ts`). The only English in here is structural furniture — the `LEVEL`
- * and `CURRENT RUNG` kickers and the `PASSED` status label — the same register as the nav's tab
- * labels. There is no `%`, no date, no streak, and there never will be (Invariant 2).
+ * that course's `levels.json`, and every word this screen says in its own right — the position
+ * line, the pending line, the sealed toast, the `PASSED` marker — from its `strings.json` (PRD §4,
+ * guarded by `src/shellPurity.test.ts`). The position line and the marker were English furniture
+ * in the register of the nav's tab labels until #351; the nav's labels are the course's now too.
+ * There is no `%`, no date, no streak, and there never will be (Invariant 2).
  *
  * **Nothing on this screen is a source of truth.** `src/engine/progression.ts` answers every
  * question it asks — which rung is current, which levels are sealed, what state each module is in
@@ -158,11 +159,28 @@ export default function LadderScreen() {
           prototype — there they sit outside the scroll area, here they are sticky inside the
           shell's one scroll column (design/pwa-checklist.md §1). */}
       <div className={styles.head}>
-        {/* Structural furniture, and the only numbers on the screen: counts, never time. The
-            prototype puts this line in the Ladder's own header row; the shell's brand header is
-            screen-agnostic (#84), so it renders as the screen's first row — reconciled in #117. */}
-        <p className={styles.position}>
-          LEVEL {level} · {passed} OF {total}
+        {/**
+         * What the learner is learning (#350) — the one line on the home screen that names the
+         * subject, in the course's own L1.
+         *
+         * The Ladder said a great deal about POSITION (the level, the rungs left, the strip) and
+         * nothing about what any of it was for: a learner opening the app saw a ladder without a
+         * subject, and the course's name lived two taps away in Settings. It sits in the sticky
+         * header rather than above the rungs, because it is a fact about the screen and not about
+         * the current rung — it stays put while the rungs scroll under it. And it is the
+         * course's own sentence, never `l2` interpolated out of the manifest, whose values are
+         * English words (`stringsKeys.ts`).
+         */}
+        <p className={styles.learning} dir={course.dir}>
+          {strings['ladder.learning']}
+        </p>
+
+        {/* The only numbers on the screen: counts, never time. The prototype puts this line in
+            the Ladder's own header row; the shell's brand header is screen-agnostic (#84), so it
+            renders as the screen's first row — reconciled in #117. Its words are the course's
+            since #351; only the numbers in it are the shell's. */}
+        <p className={styles.position} dir={course.dir}>
+          {interpolate(strings['ladder.positionLine'], { level, passed, total })}
         </p>
 
         <LevelStrip cells={cells} dir={course.dir} onSealedTap={sealedTap} />
@@ -322,6 +340,8 @@ function CurrentRung({ stage, moduleId, title, job, dir, unlocked, production }:
 
 /** A rung the learner has climbed: filled marker, and open for practice forever after. */
 function PassedRung({ moduleId, title, job, dir }: RungProps) {
+  const strings = useStrings();
+
   return (
     <li>
       <Link className={styles.row} to={`/module/${moduleId}`}>
@@ -337,7 +357,9 @@ function PassedRung({ moduleId, title, job, dir }: RungProps) {
             {job}
           </span>
         </span>
-        <span className={styles.passedLabel}>PASSED</span>
+        <span className={styles.passedLabel} dir={dir}>
+          {strings['ladder.passed']}
+        </span>
       </Link>
     </li>
   );

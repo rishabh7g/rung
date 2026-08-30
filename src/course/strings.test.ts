@@ -33,7 +33,7 @@ describe('loadStrings', () => {
     const strings = await loadStrings('hi-mr');
 
     expect(fetchMock).toHaveBeenCalledWith('/content/hi-mr/strings.json');
-    expect(strings['ritual.stepTitle.check']).toBe(stringValue('hi-mr', 'ritual.stepTitle.check'));
+    expect(strings['retry.title']).toBe(stringValue('hi-mr', 'retry.title'));
     expect(Object.keys(strings).sort()).toEqual([...STRINGS_KEYS].sort());
   });
 
@@ -166,6 +166,10 @@ describe('interpolate', () => {
       count: 5,
       phase: 'produce',
       rung: 'M3',
+      used: '1.2 MB',
+      quota: '50 MB',
+      course: 'hindi → marathi',
+      sessions: 4,
     };
 
     for (const key of STRINGS_KEYS) {
@@ -187,6 +191,6 @@ describe('Strings', () => {
     const strings: Strings = parseStrings(completeStrings('hi-mr'));
 
     // Non-optional access: `.trim()` would not compile if the value could be undefined.
-    expect(strings['ritual.confirm.holdLabel'].trim()).not.toBe('');
+    expect(strings['ordinal'].trim()).not.toBe('');
   });
 });

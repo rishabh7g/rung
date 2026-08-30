@@ -8,15 +8,16 @@
  * is a join of two things, and this module is the join: the stored order of the phase the learner
  * was in, and a plan re-derived for the phases they were not.
  *
- *   • **The phase named by the snapshot keeps ITS queue, verbatim.** Review's five cards were
- *     chosen against a queue that has since moved — every card marked before the interruption
- *     changed a box and a countdown — so re-deriving that list would drop the cards already
- *     answered and shift the position under the learner. `idx` only means something against the
- *     order it was recorded with.
- *   • **The other phase is re-derived**, because it has no stored order to honour and its input is
- *     the current truth: Produce is least-produced-first over the counters as they stand now, and
- *     Review is whatever is due now. The chips still guide and never gate, so both must be honest
- *     the moment they are tapped.
+ *   • **A `review` snapshot keeps ITS queue, verbatim.** Review's five cards were chosen against a
+ *     queue that has since moved — every card marked before the interruption changed a box and a
+ *     countdown — so re-deriving that list would drop the cards already answered and shift the
+ *     position under the learner. `idx` only means something against the order it was recorded
+ *     with.
+ *   • **A `read` snapshot has nothing here to restore**, and that is not a gap: Read walks the
+ *     rung's own sentence list (#349), which is the same list this session and the next one see,
+ *     so the position the snapshot carries is measured against an order that cannot have moved.
+ *     The plan it comes back with is a freshly derived Review queue — whatever is due now, because
+ *     the chips still guide and never gate, and Review has to be honest the moment it is tapped.
  *
  * **The queue this is planned against must NOT be ticked.** `tickSession` is `startSession`'s, and
  * it is spent once per session (`state/store.ts`): re-ticking on the way back in would bring the
@@ -32,18 +33,15 @@ import { planSession, type SessionPlan, type SessionPlanInput } from '../../engi
 import type { SessionSnapshot } from '../../state/types.ts';
 
 /**
- * The two queues a resumed session serves: the snapshot's own for the phase it names, freshly
- * planned for the other. A `read` snapshot names neither queue — Read walks the rung itself — so
- * both come back derived, and the rung's sentence list is what the position is measured against.
+ * The queue a resumed session serves: the snapshot's own when it names Review, freshly planned
+ * otherwise. A `read` snapshot names no queue in the plan — Read walks the rung itself — so it
+ * comes back derived, and the rung's sentence list is what the position is measured against.
  *
- * The arrays are fresh, so the stored snapshot is never handed out to be mutated.
+ * The array is fresh, so the stored snapshot is never handed out to be mutated.
  */
 export function resumePlan(snapshot: SessionSnapshot, input: SessionPlanInput): SessionPlan {
-  const planned = planSession(input);
-
   return {
-    reviewIds: snapshot.phase === 'review' ? [...snapshot.queue] : planned.reviewIds,
-    produceIds: snapshot.phase === 'produce' ? [...snapshot.queue] : planned.produceIds,
+    reviewIds: snapshot.phase === 'review' ? [...snapshot.queue] : planSession(input).reviewIds,
   };
 }
 

@@ -348,17 +348,28 @@ export const OLDEST_MIGRATABLE_VERSION = 5;
  *     That matters beyond tidiness: `serialize.ts`'s import validator refuses a document with a
  *     field it does not know, so a v7 backup only survives its own upgrade if this step drops
  *     what v8 no longer holds.
+ *   • **v9 → v10 RETIRES A SESSION PARKED IN PRODUCE.** #349 removed the third phase, so `'produce'`
+ *     is no longer a value `SessionPhase` has — and an older document can legitimately name it,
+ *     because it is exactly where a learner interrupted mid-Produce left off. There is nowhere to
+ *     resume such a session to (its `queue` was the Produce order, and `idx` is a position in it),
+ *     so the position is dropped and the course opens on a fresh Begin. **Nothing a learner earned
+ *     is in that snapshot** — the counters and the review queue hold all of it, and both are
+ *     carried through untouched (Invariant 8) — so this costs a place in a session, and no
+ *     progress. A `review` or `read` snapshot is carried verbatim, like every other subtree.
  *
  * Two rules bind any version of this function: it never drops a subtree it does not recognise
- * (v5 has exactly one, and the wrap keeps it whole), and it returns a COMPLETE v8 document —
+ * (v5 has exactly one, and the wrap keeps it whole), and it returns a COMPLETE current document —
  * a half-filled shape is worse than a fresh one, because every screen below trusts the shape
  * and none of them re-check it.
  *
  * It carries; it does not bless. The values are taken as they were found, not validated —
  * this function serves two callers with different trust: the rehydrate path below reads what
  * this app itself wrote, and `serialize.ts`'s import path runs the RESULT through the same
- * field-by-field validation a native v8 file gets (#104). Validating here would be a second
- * validator waiting to disagree with that one.
+ * field-by-field validation a native current-version file gets (#104). Validating here would be a
+ * second validator waiting to disagree with that one. The v10 step is the one exception the rule
+ * allows for, and it is a narrow one: it does not judge a value, it drops a field whose only
+ * legal values no longer include the one it is holding, because the alternative is handing the
+ * import validator a document it must then refuse whole.
  *
  * A version older than any route gets a warning and first-run state — on the rehydrate path
  * that is the only honest boot (there is nothing to read), and the import path never lets such
@@ -400,11 +411,37 @@ export function migrate(persisted: unknown, fromVersion: number): AppState {
   return {
     stateVersion: STATE_VERSION,
     activeCourse: (v6['activeCourse'] ?? fresh.activeCourse) as CourseId,
-    courses: (v6['courses'] ?? fresh.courses) as AppState['courses'],
+    courses: retireProduceSessions((v6['courses'] ?? fresh.courses) as AppState['courses']),
     settings: {
       elapsedTickEnabled: v7Settings.elapsedTickEnabled,
       userLang: v7Settings.userLang,
     },
+  };
+}
+
+/**
+ * The v9 → v10 step: a session snapshot that names the retired Produce phase becomes no session.
+ *
+ * It walks every course rather than only the active one, because a document holds a snapshot per
+ * course (#99) and the one the learner is not looking at is exactly the one that would sit there
+ * unmigrated until they switched to it. Everything else about a course — the counters, the review
+ * queue, the passed modules, the session count — is carried through by reference: this returns a
+ * new object only for the courses it actually changes, so a document with no Produce session comes
+ * back as the very same map it went in as.
+ */
+function retireProduceSessions(courses: AppState['courses']): AppState['courses'] {
+  const entries = Object.entries(courses);
+  // `as` rather than a check: a v9 phase is a string this app wrote, and `'produce'` is precisely
+  // the value the current type no longer admits — which is what makes the comparison necessary.
+  const parked = entries.filter(
+    ([, course]) => (course?.session?.phase as string | undefined) === 'produce',
+  );
+
+  if (parked.length === 0) return courses;
+
+  return {
+    ...courses,
+    ...Object.fromEntries(parked.map(([id, course]) => [id, { ...course, session: null }])),
   };
 }
 
@@ -595,9 +632,9 @@ export const useAppStore = create<AppStore>()(
        * Ticking BEFORE planning is what makes "due" mean due in the session about to run, and it
        * is why the plan is taken here rather than by the screen: one tick, one plan, one write.
        * The plan is returned rather than stored whole — state v6's snapshot is a position
-       * (`{phase, idx, queue}`, PRD §8 F7), and the Produce queue is derivable from content and
-       * the counters at any moment, so persisting a second copy of it would be a second thing to
-       * keep true.
+       * (`{phase, idx, queue}`, PRD §8 F7), and Read's queue is the rung's own sentence list,
+       * derivable from content at any moment, so persisting a second copy of it would be a
+       * second thing to keep true.
        *
        * The opening phase is the first honest one: **Review when something is due, Read when
        * nothing is** (PRD §8 F4 — "courses with an empty review queue start at Read"). An empty
@@ -606,11 +643,7 @@ export const useAppStore = create<AppStore>()(
       startSession: (courseId, moduleSentenceIds = []) => {
         const course = get().courses[courseId] ?? emptyCourseState();
         const reviewQueue = tickSession(course.reviewQueue);
-        const plan = planSession({
-          queue: reviewQueue,
-          moduleSentenceIds,
-          production: course.production,
-        });
+        const plan = planSession({ queue: reviewQueue });
 
         const phase: SessionPhase = plan.reviewIds.length > 0 ? 'review' : 'read';
         const session: SessionSnapshot = {

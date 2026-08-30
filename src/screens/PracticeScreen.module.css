@@ -41,12 +41,15 @@
 
 /* --------------------------------------------------------------------- the phases */
 
-/* One row of three, not a column of three plates (#316): the counts are the promise this screen
-   makes, and the stacked blueprint objects around them were the weight that pushed Begin below
-   the fold. `1fr` apiece keeps the three columns even whatever the course's words are. */
+/* One row, not a column of plates (#316): the counts are the promise this screen makes, and the
+   stacked blueprint objects around them were the weight that pushed Begin below the fold. `1fr`
+   apiece keeps the columns even whatever the course's words are — and the count is the phase list's
+   (two since #349 retired Produce), so the row narrows with it rather than leaving a third empty
+   cell behind. */
 .phases {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
   gap: var(--space-3);
   margin: 0;
   padding: var(--space-3) 0;
@@ -56,9 +59,9 @@
 }
 
 /* A phase is now a name over a count, not a plate: the hairline pair on `.phases` above frames
-   all three at once, which is one blueprint object where there used to be three (#316). The
-   prototype's `01 / 02 / 03` numerals went with them — shell furniture narrating an order the row
-   already reads in. */
+   them all at once, which is one blueprint object where there used to be one per phase (#316).
+   The prototype's `01 / 02 / 03` numerals went with them — shell furniture narrating an order the
+   row already reads in. */
 .phase {
   display: flex;
   flex-direction: column;

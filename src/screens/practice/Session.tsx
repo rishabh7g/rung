@@ -1,6 +1,6 @@
 /**
  * The session (#96; PRD §8 F4, PRD-design §6.3, flow 3) — the 20–30 minutes the whole product is
- * built around, running immersive: Review → Read → Produce as soft chips, ending on a counts-only
+ * built around, running immersive: Review → Read as soft chips, ending on a counts-only
  * summary.
  *
  * **THE ROUTING CONTRACT LIVES HERE, AND NOWHERE ELSE.** The self-mark control is deliberately
@@ -10,13 +10,17 @@
  *
  * | phase | a mark goes to | and never to |
  * |---|---|---|
- * | Review | `recordReview` → `applyMark` on the Leitner queue (box + countdown) | the production counters |
- * | Produce | `recordProduction` on a got-it — the counter that opens the exit ritual | the review queue |
+ * | Review | `recordReview` → `applyMark` on the Leitner queue (box + countdown) | the exit counters |
+ * | Read | `recordProduction` on a got-it — the counter that opens the exit ritual (#349) | the review queue |
  *
  * They are different numbers answering different questions — Review measures what is being KEPT,
- * production measures what is being BUILT — and crossing them would open a rung's exit ritual on
- * sentences the learner never produced (PRD §8 F1). One `onResult` handler per phase, and they are
- * two functions rather than one with a branch inside it, so the wiring is legible in the diff.
+ * the counters measure what has been read through — and crossing them would open a rung's exit
+ * ritual on sentences the learner never marked. One handler per phase, and they are two functions
+ * rather than one with a branch inside it, so the wiring is legible in the diff.
+ *
+ * **Produce is gone** (#349). It was the third phase — "say it, then check" — and the only writer
+ * of those counters; the product retired notebook writing and it went too, taking the gate with
+ * it to Read.
  *
  * **The chips guide, they never gate** (`PhaseChips`): every phase is one tap away at any moment,
  * in any order, and the session is finished whenever the learner says it is — leaving the route
@@ -43,15 +47,15 @@
  * for that phase (`resume.ts`).
  *
  * **Read (#97) is the phase that costs nothing.** It writes to neither queue: its pager moves the
- * position and hands over to Produce at the end of the rung, which is why it needs no `onResult`
- * of its own. `ReadPhase` draws the card; the position stays here, because the snapshot is here.
+ * position, and its last card ends the session. `ReadPhase` draws the card; the position stays
+ * here, because the snapshot is here.
  */
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useModules } from '../../course/content.ts';
 import type { L2Written } from '../../course/manifest.ts';
 import { interpolate, useStrings } from '../../course/strings.ts';
 import type { Sentence } from '../../course/types.ts';
-import { PRODUCTIONS_PER_SENTENCE } from '../../engine/exit.ts';
+import { MARKS_PER_SENTENCE } from '../../engine/exit.ts';
 import type { SessionPlan } from '../../engine/session.ts';
 import { RevealCard, type RevealResult } from '../../components/RevealCard.tsx';
 import { WhyPanel } from '../../components/WhyPanel.tsx';
@@ -59,7 +63,6 @@ import { useAppStore } from '../../state/store.ts';
 import type { SessionPhase, SessionSnapshot } from '../../state/types.ts';
 import { Toast, useToast } from '../../shell/Toast.tsx';
 import { rungLabel } from '../ladder/rungLabel.ts';
-import { ProductionDots } from '../module/ProductionDots.tsx';
 import { moduleIdOf } from '../sentence/sentenceId.ts';
 import { PhaseChips } from './PhaseChips.tsx';
 import { ReadPhase } from './ReadPhase.tsx';
@@ -71,25 +74,23 @@ import styles from './Session.module.css';
 const NO_COUNTERS: Readonly<Record<string, number>> = {};
 
 /**
- * The ids a phase serves: Review's and Produce's come from the plan, Read walks the rung itself.
- * One definition, because the snapshot's position is an index INTO this and the resumed session
- * has to land on the very card the interrupted one was showing.
+ * The ids a phase serves: Review's come from the plan, Read walks the rung itself. One definition,
+ * because the snapshot's position is an index INTO this and the resumed session has to land on the
+ * very card the interrupted one was showing.
  */
 function queueOf(
   phase: SessionPhase,
   plan: SessionPlan,
   sentenceIds: readonly string[],
 ): readonly string[] {
-  if (phase === 'review') return plan.reviewIds;
-  if (phase === 'produce') return plan.produceIds;
-  return sentenceIds;
+  return phase === 'review' ? plan.reviewIds : sentenceIds;
 }
 
 /**
  * Everything the session holds that is not in the plan: where the learner is, and what they have
  * done since the first card. The counts are the summary's, and they are counted here rather than
- * derived from the store afterwards — "produced this session" is a different number from "produced
- * ever", and only one of them is a session's own.
+ * derived from the store afterwards — "reviewed this session" is a different number from
+ * "reviewed ever", and only one of them is a session's own.
  */
 interface Live {
   phase: SessionPhase;
@@ -99,12 +100,11 @@ interface Live {
   done: boolean;
   reviewed: number;
   gotIt: number;
-  produced: number;
 }
 
 interface SessionProps {
   courseId: string;
-  /** The rung being practised — its sentences are Read's and Produce's material. */
+  /** The rung being practised — its sentences are what Read walks. */
   moduleId: string;
   /** The rung's sentence ids in the module's own order (Read's order, and the summary's total). */
   sentenceIds: readonly string[];
@@ -136,9 +136,9 @@ export function Session({ courseId, moduleId, sentenceIds, plan, resume, dir, l2
     // snapshot); the Review chip is still there, and still answers. A RESUMED one opens wherever
     // it was left (#99).
     const phase = resume?.phase ?? (plan.reviewIds.length > 0 ? 'review' : 'read');
-    // Clamped, because the queue is re-planned and the stored index is not: a Produce queue that
-    // lost a card while the app was closed must land the learner on a real card rather than on the
-    // blank one an out-of-range index draws.
+    // Clamped, because the queue is re-planned and the stored index is not: a queue that lost a
+    // card while the app was closed must land the learner on a real card rather than on the blank
+    // one an out-of-range index draws.
     const last = Math.max(0, queueOf(phase, plan, sentenceIds).length - 1);
 
     return {
@@ -150,7 +150,6 @@ export function Session({ courseId, moduleId, sentenceIds, plan, resume, dir, l2
       // are the numbers that keep, and nothing here re-counts them.
       reviewed: 0,
       gotIt: 0,
-      produced: 0,
     };
   });
 
@@ -158,17 +157,12 @@ export function Session({ courseId, moduleId, sentenceIds, plan, resume, dir, l2
 
   // Review's five cards routinely come from five different rungs, so the session loads whatever
   // modules its ids name — silently, through the content layer's cache (`useModules`, #81/#94).
-  // Produce's ids are the rung's own in every fresh session, so that half of the set is normally
-  // just `moduleId`; a RESUMED session (#99) is the case where it need not be, because the rung
-  // can have moved on while the app was closed and the stored queue still names the old one.
+  // Read's ids are the rung's own, so that half of the set is normally just `moduleId`.
   const moduleIds = useMemo(
     () => [
-      ...new Set([
-        moduleId,
-        ...[...plan.reviewIds, ...plan.produceIds].map((id) => moduleIdOf(id)).filter(isModuleId),
-      ]),
+      ...new Set([moduleId, ...plan.reviewIds.map((id) => moduleIdOf(id)).filter(isModuleId)]),
     ],
-    [moduleId, plan.reviewIds, plan.produceIds],
+    [moduleId, plan.reviewIds],
   );
   const modules = useModules(moduleIds);
   const sentences = useMemo(() => {
@@ -268,20 +262,27 @@ export function Session({ courseId, moduleId, sentenceIds, plan, resume, dir, l2
   );
 
   /**
-   * A PRODUCE mark: the production counters, and nothing else — and only on a got-it. A missed
+   * A READ mark (#349): the exit counters, and nothing else — and only on a got-it. A missed
    * sentence writes nothing at all (the counters only ever count up, #95) and the review queue is
    * not in this function either.
+   *
+   * **It does NOT move the position**, and it does not count twice. Read is a read-through and the
+   * pager is its navigation, so a learner who marked a sentence is still ON it — free to open the
+   * cue, expand "why", or tap the lit segment again. The counter is a fact about the SENTENCE
+   * ("read through, at least once" — the whole of what the gate asks), not a tally of taps, and
+   * the screen already draws it as a fact: `marked` lights the segment and stays lit. Writing on
+   * every re-tap would move a number nothing on screen reflects, which is the definition of a
+   * silent write.
    */
-  const onProduce = useCallback(
-    ({ sentenceId, gotIt }: RevealResult) => {
-      if (gotIt) recordProduction(courseId, sentenceId);
-      setLive((held) => ({
-        ...held,
-        produced: held.produced + (gotIt ? 1 : 0),
-        ...(held.idx + 1 < plan.produceIds.length ? { idx: held.idx + 1 } : { done: true }),
-      }));
+  const onReadMark = useCallback(
+    (gotIt: boolean) => {
+      const sentenceId = sentenceIds[live.idx];
+      if (!gotIt || sentenceId === undefined) return;
+      if ((production[sentenceId] ?? 0) >= MARKS_PER_SENTENCE) return;
+
+      recordProduction(courseId, sentenceId);
     },
-    [courseId, plan.produceIds.length, recordProduction],
+    [courseId, live.idx, production, recordProduction, sentenceIds],
   );
 
   /* ------------------------------------------------------------------ reading */
@@ -295,12 +296,10 @@ export function Session({ courseId, moduleId, sentenceIds, plan, resume, dir, l2
     setLive((held) => ({ ...held, idx: Math.max(0, held.idx - 1) }));
   }, []);
 
-  /** Next — and, on the rung's last sentence, the hand-over to Produce (PRD-design §6.3). */
+  /** Next — and, on the rung's last sentence, the end of the session (#349). */
   const onReadNext = useCallback(() => {
     setLive((held) =>
-      held.idx + 1 < sentenceIds.length
-        ? { ...held, idx: held.idx + 1 }
-        : { ...held, phase: 'produce' as const, idx: 0 },
+      held.idx + 1 < sentenceIds.length ? { ...held, idx: held.idx + 1 } : { ...held, done: true },
     );
   }, [sentenceIds.length]);
 
@@ -323,10 +322,8 @@ export function Session({ courseId, moduleId, sentenceIds, plan, resume, dir, l2
 
   const sentenceId = queue[live.idx];
   const sentence = sentenceId === undefined ? undefined : sentences.get(sentenceId);
-  /** The rung's sentences standing at the two the exit ritual asks for — the summary's last count. */
-  const atTwo = sentenceIds.filter(
-    (id) => (production[id] ?? 0) >= PRODUCTIONS_PER_SENTENCE,
-  ).length;
+  /** The rung's sentences marked through — the summary's last count, and the exit gate's own. */
+  const marked = sentenceIds.filter((id) => (production[id] ?? 0) >= MARKS_PER_SENTENCE).length;
 
   return (
     <section className={styles.session}>
@@ -345,45 +342,43 @@ export function Session({ courseId, moduleId, sentenceIds, plan, resume, dir, l2
         <SessionSummary
           reviewed={live.reviewed}
           gotIt={live.gotIt}
-          produced={live.produced}
-          atTwo={atTwo}
+          marked={marked}
           total={sentenceIds.length}
           dir={dir}
         />
       )}
 
-      {/* Read (#97): one sentence, its cue behind a toggle, and a pager that ends in Produce.
-          It is keyed by nothing on purpose — a key per sentence would remount the phase (and its
-          cue toggle) under every card. */}
-      {!live.done && live.phase === 'read' && sentence !== undefined && (
-        <ReadPhase
-          moduleId={moduleId}
-          sentence={sentence}
-          at={live.idx}
-          total={queue.length}
-          onPrev={onReadPrev}
-          onNext={onReadNext}
-          dir={dir}
-          l2={l2}
-        />
-      )}
+      {/* Read (#97): one sentence, its cue behind a toggle, the self-mark that opens the rung
+          (#349), and a pager whose last step ends the session. It is keyed by nothing on purpose
+          — a key per sentence would remount the phase (and its cue toggle) under every card. */}
+      {!live.done &&
+        live.phase === 'read' &&
+        sentence !== undefined &&
+        sentenceId !== undefined && (
+          <ReadPhase
+            moduleId={moduleId}
+            sentence={sentence}
+            at={live.idx}
+            total={queue.length}
+            onPrev={onReadPrev}
+            onNext={onReadNext}
+            onMark={onReadMark}
+            marked={(production[sentenceId] ?? 0) >= MARKS_PER_SENTENCE}
+            dir={dir}
+            l2={l2}
+          />
+        )}
 
       {!live.done &&
-        live.phase !== 'read' &&
+        live.phase === 'review' &&
         sentence !== undefined &&
         sentenceId !== undefined && (
           <div className={styles.card}>
             <div className={styles.head}>
               {/* Structural furniture, like the module list's `M1 · MODULE` — raised on #71. */}
               <p className={styles.kicker}>
-                {live.phase === 'review'
-                  ? `REVIEW · FROM ${rungLabel(moduleIdOf(sentenceId) ?? moduleId)}`
-                  : `PRODUCE · ${rungLabel(moduleId)}`}
+                {`REVIEW · FROM ${rungLabel(moduleIdOf(sentenceId) ?? moduleId)}`}
               </p>
-              {/* The rung's own two dots on a Produce card, exactly as the prototype draws them. */}
-              {live.phase === 'produce' && (
-                <ProductionDots produced={production[sentenceId] ?? 0} direction="row" />
-              )}
               {/* Counts, never time — and no English "of": the shell owns neither word (#88, #89). */}
               <p className={styles.position}>
                 {live.idx + 1} / {queue.length}
@@ -396,9 +391,8 @@ export function Session({ courseId, moduleId, sentenceIds, plan, resume, dir, l2
              *
              * The hand-over was silent: Review's last mark dropped the learner into Read with no
              * word about it, which is the session's shape being legible to the code and not to the
-             * person in it. Read's pager already says its own (`read.toProduce`), so this is the
-             * Review card's line and the two hand-overs are now both spoken for. Produce's last
-             * card ends the session, and the summary is its own announcement.
+             * person in it. Read's pager says its own on its last card (`read.finish`), so this
+             * is the Review card's line and the one hand-over left is spoken for.
              */}
             {live.phase === 'review' && live.idx + 1 === queue.length && (
               <p className={styles.upNext} dir={dir}>
@@ -419,14 +413,14 @@ export function Session({ courseId, moduleId, sentenceIds, plan, resume, dir, l2
                 <WhyPanel
                   sentenceId={sentenceId}
                   display={sentence.display}
-                  // Produce cards offer "open full", Review cards do not (PRD §8 F4): leaving a
-                  // review for a whole screen of answers is leaving the recall behind.
-                  openFull={live.phase === 'produce'}
+                  // Review cards do not offer "open full" (PRD §8 F4): leaving a review for a
+                  // whole screen of answers is leaving the recall behind.
+                  openFull={false}
                   dir={dir}
                   l2={l2}
                 />
               }
-              onResult={live.phase === 'review' ? onReview : onProduce}
+              onResult={onReview}
               dir={dir}
               l2={l2}
             />

@@ -2,18 +2,6 @@
   "cueLabel": "हिंदी cue",
   "revealLabel": "मराठी दिखाओ",
   "revealLabelComprehend": "हिंदी दिखाओ",
-  "ritual": {
-    "stepTitle": {
-      "write": "लिखो",
-      "check": "जांचो",
-      "confirm": "पक्का करो"
-    },
-    "constraint": "इस level का एक नया वाक्य, अपनी notebook में — {maxWords} शब्द तक.",
-    "confirm": {
-      "holdLabel": "मैंने अपना {ordinal} वाक्य लिखा और खुद जांच लिया — दबाकर रखो",
-      "done": "पक्का — पहला हिस्सा हो गया."
-    }
-  },
   "retry": {
     "kicker": "COMPREHEND · फिर से",
     "title": "नए वाक्य, फिर से.",
@@ -22,15 +10,19 @@
   },
   "ordinal": "{n}वाँ",
   "ladder": {
+    "learning": "तुम मराठी सीख रहे हो.",
     "pendingLine": "Level {level} · {total} में से {remaining} rungs अभी बाकी.",
-    "sealedToast": "सील है — नीचे की rungs पार होने पर Level {level} खुलेगा: {remaining} बाकी."
+    "sealedToast": "सील है — नीचे की rungs पार होने पर Level {level} खुलेगा: {remaining} बाकी.",
+    "positionLine": "Level {level} · {total} में से {passed}",
+    "passed": "पार"
   },
   "rungCard": {
     "startModule": "Module से शुरू करो",
     "practice": "Practice करो",
     "revisitModule": "module फिर से देखो",
     "exitRitual": "Exit ritual — खोलो",
-    "module": "Module"
+    "module": "Module",
+    "currentRung": "{rung} · अभी यही rung"
   },
   "sentence": {
     "trapHead": "यहाँ हिंदी धोखा देगी",
@@ -48,36 +40,32 @@
     "openFull": "पूरा खोलो"
   },
   "hint": {
-    "recall": "पहले खुद बोलो या copy में लिखो — फिर answer देखो.",
-    "production": "हर वाक्य दो बार — तभी इस rung का exit ritual खुलता है.",
-    "check": "खुद जांचो — dictionary, grammar, कोई दोस्त. App यह नहीं कर सकता."
+    "recall": "पहले खुद बोलो — फिर answer देखो.",
+    "production": "हर वाक्य एक बार “आ गया” — तभी इस rung का exit ritual खुलता है."
   },
   "read": {
     "showCue": "cue दिखाओ",
     "hideCue": "cue छुपाओ",
     "prev": "पीछे",
     "next": "अगला वाक्य",
-    "toProduce": "अब लिखने चलो"
+    "finish": "पढ़ना पूरा"
   },
   "practice": {
     "hubTitle": "आज का session",
     "hubReview": "पिछली rungs से {count} due",
     "hubRead": "इस rung के {count} वाक्य",
-    "hubProduce": "notebook में लिखने के लिए {count} वाक्य",
     "beginReview": "शुरू करो — पहले दोहराओ",
     "beginRead": "शुरू करो — पहले पढ़ो",
     "phase": {
       "review": "दोहराओ",
-      "read": "पढ़ो",
-      "produce": "लिखो"
+      "read": "पढ़ो"
     },
     "nothingDue": "अभी कुछ due नहीं — यह पहली rung है.",
     "upNext": "आगे: {phase}",
     "summaryTitle": "आज के लिए हो गया.",
     "summaryReviewed": "पिछली rungs से {count} दोहराए.",
     "summaryGotIt": "उनमें से {count} आ गए थे.",
-    "summaryProduced": "{count} लिखे और खुद मिलाए.",
-    "summaryAtTwo": "{total} में से {count} वाक्य अब दो बार हो चुके.",
+    "summaryMarked": "{total} में से {count} वाक्य पढ़ लिए.",
     "summaryToRitual": "Exit ritual खुल गया — शुरू करो",
     "backToLadder": "सीढ़ी पर वापस",
     "resumeLine": "पिछला session अधूरा है — {phase}, {total} में से {count}.",
@@ -88,7 +76,9 @@
     "checkSentence": "{ordinal} वाक्य — तुम्हारी notebook में, नया, इसी level का.",
     "checkComprehension": "Comprehension {total} में से {count} — खुद मिलाए.",
     "line": "अगली सीढ़ी खुल गई — {nextModule}.",
-    "toLadder": "सीढ़ी पर चढ़ो"
+    "toLadder": "सीढ़ी पर चढ़ो",
+    "ritualComplete": "Exit ritual पूरा",
+    "passedRung": "{rung} · पार"
   },
   "settings": {
     "yourLanguage": "आपकी भाषा",
@@ -97,8 +87,49 @@
     "importReplace": "Import करने से हर course की मौजूदा progress इस file वाली से बदल जाएगी.",
     "importConfirm": "मेरी progress बदलो",
     "importCancel": "जो है वही रखो",
-    "importFailed": "यह file पढ़ी नहीं जा सकी, इसलिए कुछ नहीं बदला."
+    "importFailed": "यह file पढ़ी नहीं जा सकी, इसलिए कुछ नहीं बदला.",
+    "title": "Settings",
+    "kicker": {
+      "language": "भाषा",
+      "course": "Course",
+      "practice": "Practice",
+      "storage": "Storage"
+    },
+    "activeCourse": "चालू course",
+    "tick": {
+      "title": "हल्की समय-रेखा",
+      "note": "Session के दौरान एक पतली रेखा, बिना किसी गिनती के — एक बार भरती है, उल्टी नहीं गिनती.",
+      "on": "चालू",
+      "off": "बंद"
+    },
+    "storage": {
+      "meter": "Browser की दी हुई {quota} में से {used} इस्तेमाल हुई.",
+      "courseRow": "{course} course (offline)",
+      "progressRow": "तुम्हारी सारी progress — हर course की"
+    },
+    "backup": {
+      "title": "Backup",
+      "export": "Export",
+      "import": "Import",
+      "onDevice": "इस device पर",
+      "inFile": "File में",
+      "counts": "{passed} पार · {sessions} sessions"
+    }
   },
   "switchToast": "अब {to} चल रहा है. तुम्हारी {from} सीढ़ी जहाँ थी, ठीक वहीं सुरक्षित है.",
-  "importToast": "Backup वापस आ गया — हर सीढ़ी ठीक वैसी है जैसी file में थी."
+  "importToast": "Backup वापस आ गया — हर सीढ़ी ठीक वैसी है जैसी file में थी.",
+  "nav": {
+    "ladder": "सीढ़ी",
+    "practice": "Practice",
+    "settings": "Settings"
+  },
+  "levelStrip": {
+    "level": "Level {level}"
+  },
+  "a11y": {
+    "primaryNav": "मुख्य navigation",
+    "pauseSession": "Session रोको",
+    "storageMeter": "इस device पर इस्तेमाल हुई जगह",
+    "sentencePager": "इस module के वाक्य"
+  }
 }

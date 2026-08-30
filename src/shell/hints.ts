@@ -7,8 +7,9 @@
  * whose screens are mostly explanation is a product that does not trust its own shapes. But the
  * app also has no onboarding by design ([D21]: first run lands on the Ladder), and the two
  * decisions together left a first-run learner told none of the things the product is built on —
- * that the recall happens outside the app, that two writes per sentence open a rung's exit ritual,
- * that the checking in the ritual is theirs. The shapes say it eventually; nothing said it once.
+ * that the recall happens outside the app, that one marked sentence apiece opens a rung's exit
+ * ritual, that the checking in the ritual is theirs. The shapes say it eventually; nothing said it
+ * once.
  *
  * A hint is the resolution of that: it renders on its surface the first time that surface is used,
  * and never again on this install. The thirty-first session is exactly the clean screen #225 asked
@@ -37,8 +38,15 @@
  * copy whose whole job is to be seen once is to be seen twice, never zero times.
  */
 
-/** The three hints, one per surface. The values are the `hint.*` keys they render. */
-export type Hint = 'recall' | 'production' | 'check';
+/**
+ * The hints, one per surface. The values are the `hint.*` keys they render.
+ *
+ * There were three until #348. `check` belonged to the exit ritual's deliberately empty check
+ * step — the one that told a first-run learner the checking was theirs to do, outside the app —
+ * and that step went with the whole write half of the ritual when the product retired notebook
+ * writing. A hint whose surface no longer exists is a key nothing can render.
+ */
+export type Hint = 'recall' | 'production';
 
 /**
  * `rung:hint:<name>` — its own namespace beside the store's `rung:state` and the module view's

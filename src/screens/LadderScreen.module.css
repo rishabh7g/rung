@@ -48,6 +48,23 @@
   font-size: var(--devanagari-min-size);
 }
 
+/**
+ * What the learner is learning (#350) — a line of the course's own prose, so it takes the same
+ * `courseProse` slot the pending line does rather than the caption token: a caption is Barlow,
+ * and Barlow has no Devanagari (see the note above).
+ *
+ * It sits on its own row above the position line rather than beside it. Beside was the first
+ * shape and it does not survive the type ramp: the counts are an 11.5px kicker and course prose
+ * has an 18px floor, so a shared baseline would have set a sentence against a label half its
+ * size — and the sentence, being the longer of the two, would then be the thing that wrapped.
+ */
+.learning {
+  composes: courseProse;
+  margin: 0;
+  padding: var(--space-3) var(--gutter) 0;
+  color: var(--ink-70);
+}
+
 /* Counts only — how many rungs of the level are left, in the course's own words. */
 .pending {
   composes: courseProse;

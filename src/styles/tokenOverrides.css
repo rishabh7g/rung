@@ -34,6 +34,10 @@
  *  --text-secondary           13px/1.55                16px/1.55                   "Body-text
  *  --text-caption              11.5px/1.5               16px/1.5                    floor" (#252)
  *  --text-micro                10.5px/1.5               16px/1.5
+ *  --font-kicker              (not in design pkg)     "Barlow Condensed", "Mukta" design-contract
+ *  --text-kicker              var(--font-heading)     var(--font-kicker)           "Kickers in
+ *  --text-kicker-sm           var(--font-heading)     var(--font-kicker)            Devanagari"
+ *                                                                                   (#351)
  * ─────────────────────────────────────────────────────────────────────────────────────────────
  *
  * A `px` literal in one of these definitions is a sanctioned exemption from the style-contract
@@ -110,10 +114,28 @@
      one is raised to the floor here. Line-heights are unchanged — only the size moves.
      `--text-kicker` and `--text-kicker-sm` are deliberately NOT in this list: they are uppercase
      tracked labels (nav tabs, section headers), not a body text role, and the standard's floor
-     is about prose a learner reads, not a badge. docs/design-contract.md "Body-text floor"
-     (#252). */
+     is about prose a learner reads, not a badge. That still holds after #351 made several of them
+     course copy — what changed there is their FAMILY, below, not their size.
+     docs/design-contract.md "Body-text floor" (#252). */
   --text-body: 400 16px/1.55 var(--font-body);
   --text-secondary: 400 16px/1.55 var(--font-body);
   --text-caption: 400 16px/1.5 var(--font-body);
   --text-micro: 400 16px/1.5 var(--font-body);
+
+  /* The kicker slots gain a Devanagari face — a FAMILY change, not a size change (#351).
+     The kickers were English shell furniture until #351 routed them through the course bundle:
+     the Ladder's position line, the rung card's `M1 · CURRENT RUNG`, the level strip's cells, the
+     nav's tab labels, the Verdict's and the Settings section heads. In a hi-* course those strings
+     are Devanagari, and both kicker slots resolve to `--font-heading` — Barlow Condensed, which
+     has no Devanagari at all. Tofu on this machine, an arbitrary system face on a phone, and in
+     either case a violation of design/tokens.md §2 ("ALL Devanagari is Mukta").
+     Mukta is inserted BEFORE the generics rather than appended after them: `system-ui` and
+     `sans-serif` answer for every glyph, so a stack that reached them first would never fall
+     through to the bundled face. Barlow Condensed still wins every Latin glyph it has, which is
+     what keeps `Level 1 · 10 में से 0` reading as one line in two faces rather than two lines.
+     The SIZE is deliberately untouched — the body-text floor above is about prose a learner
+     reads, and these are still tracked labels. docs/design-contract.md "Kickers in Devanagari". */
+  --font-kicker: 'Barlow Condensed', 'Mukta', system-ui, sans-serif;
+  --text-kicker: 600 11px/1.2 var(--font-kicker);
+  --text-kicker-sm: 600 10px/1.2 var(--font-kicker);
 }

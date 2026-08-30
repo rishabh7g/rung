@@ -79,9 +79,9 @@ describe('startSession counts one session, once', () => {
     // Everything a session does after its first card: marks, counters, position, and the clear.
     const store = useAppStore.getState();
     store.recordReview(COURSE, 'L1-M1-S01', true);
-    store.setSession(COURSE, { phase: 'produce', idx: 0, queue: RUNG });
+    store.setSession(COURSE, { phase: 'read', idx: 0, queue: RUNG });
     store.recordProduction(COURSE, 'L1-M2-S01');
-    store.setSession(COURSE, { phase: 'produce', idx: 1, queue: RUNG });
+    store.setSession(COURSE, { phase: 'read', idx: 1, queue: RUNG });
     store.recordProduction(COURSE, 'L1-M2-S02');
     store.setSession(COURSE, null);
 
@@ -128,7 +128,8 @@ describe('the snapshot a fresh session opens on', () => {
       idx: 0,
       queue: ['L1-M1-S01', 'L1-M1-S02'],
     });
-    expect(plan.produceIds).toEqual(RUNG);
+    // Read has no queue in the plan (#349) — it walks the rung's own sentence list.
+    expect(plan).toEqual({ reviewIds: ['L1-M1-S01', 'L1-M1-S02'] });
   });
 
   it('starts at Read with the rung’s sentences when the queue is empty — the first rung', () => {
@@ -210,8 +211,8 @@ describe('setSession moves a position, and only a position', () => {
   it('writes the card the learner is on, and clears at the summary', () => {
     useAppStore.getState().startSession(COURSE, RUNG);
 
-    useAppStore.getState().setSession(COURSE, { phase: 'produce', idx: 4, queue: RUNG });
-    expect(course().session).toEqual({ phase: 'produce', idx: 4, queue: RUNG });
+    useAppStore.getState().setSession(COURSE, { phase: 'read', idx: 4, queue: RUNG });
+    expect(course().session).toEqual({ phase: 'read', idx: 4, queue: RUNG });
 
     useAppStore.getState().setSession(COURSE, null);
     expect(course().session).toBeNull();
@@ -219,11 +220,11 @@ describe('setSession moves a position, and only a position', () => {
 
   it('is not a write when the position has not changed', () => {
     useAppStore.getState().startSession(COURSE, RUNG);
-    useAppStore.getState().setSession(COURSE, { phase: 'produce', idx: 2, queue: RUNG });
+    useAppStore.getState().setSession(COURSE, { phase: 'read', idx: 2, queue: RUNG });
     const before = course();
 
     // A fresh array holding the same ids is the same session — a re-render is not a move.
-    useAppStore.getState().setSession(COURSE, { phase: 'produce', idx: 2, queue: [...RUNG] });
+    useAppStore.getState().setSession(COURSE, { phase: 'read', idx: 2, queue: [...RUNG] });
 
     expect(course()).toBe(before);
   });
@@ -243,7 +244,7 @@ describe('setSession moves a position, and only a position', () => {
 describe('a session belongs to its course', () => {
   it('leaves every other course’s count, queue and snapshot exactly where they were', () => {
     seedQueue([{ sentenceId: 'L1-M1-S01', box: 2, dueInSessions: 3 }], OTHER);
-    useAppStore.getState().setSession(OTHER, { phase: 'produce', idx: 3, queue: ['L1-M1-S04'] });
+    useAppStore.getState().setSession(OTHER, { phase: 'read', idx: 3, queue: ['L1-M1-S04'] });
     const before = course(OTHER);
 
     useAppStore.getState().startSession(COURSE, RUNG);
@@ -252,15 +253,15 @@ describe('a session belongs to its course', () => {
 
     expect(course(OTHER)).toBe(before);
     expect(course(OTHER).sessionCount).toBe(0);
-    expect(course(OTHER).session).toEqual({ phase: 'produce', idx: 3, queue: ['L1-M1-S04'] });
+    expect(course(OTHER).session).toEqual({ phase: 'read', idx: 3, queue: ['L1-M1-S04'] });
   });
 
   it('keeps two sessions open at once — one per course, both intact', () => {
     useAppStore.getState().startSession(COURSE, RUNG);
     useAppStore.getState().startSession(OTHER, ['L1-M1-S01', 'L1-M1-S02']);
-    useAppStore.getState().setSession(COURSE, { phase: 'produce', idx: 7, queue: RUNG });
+    useAppStore.getState().setSession(COURSE, { phase: 'read', idx: 7, queue: RUNG });
 
-    expect(course(COURSE).session).toEqual({ phase: 'produce', idx: 7, queue: RUNG });
+    expect(course(COURSE).session).toEqual({ phase: 'read', idx: 7, queue: RUNG });
     expect(course(OTHER).session).toEqual({
       phase: 'read',
       idx: 0,

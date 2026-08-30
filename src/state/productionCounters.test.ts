@@ -291,10 +291,10 @@ const CALLS: Record<string, (store: AppStore) => void> = {
   recordProduction: (store) => store.recordProduction(COURSE, SENTENCE),
   // The session machine's three (#96), called on the very sentence the counters are seeded with:
   // a Review mark, a fresh session and a snapshot all pass right by it. That is the routing
-  // contract from the counters' side — only a Produce got-it may move this number.
+  // contract from the counters' side — only a Read got-it may move this number.
   recordReview: (store) => store.recordReview(COURSE, SENTENCE, true),
   startSession: (store) => store.startSession(COURSE, [SENTENCE]),
-  setSession: (store) => store.setSession(COURSE, { phase: 'produce', idx: 0, queue: [SENTENCE] }),
+  setSession: (store) => store.setSession(COURSE, { phase: 'read', idx: 0, queue: [SENTENCE] }),
   passRitual: (store) => store.passRitual(COURSE, 'L1-M1', () => '2026-02-02T02:40:00.000Z'),
   // The end of the exit ritual (#103): a rung passes and its sentences enter review. Neither half
   // is a production got-it — the counters are what OPENED the ritual, and passing it does not add
@@ -307,7 +307,7 @@ const CALLS: Record<string, (store: AppStore) => void> = {
   // counter, only land a document some device's `recordProduction` already counted up.
   restoreBackup: (store) =>
     store.restoreBackup({
-      stateVersion: 9,
+      stateVersion: 10,
       activeCourse: COURSE,
       courses: {
         [COURSE]: {

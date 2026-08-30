@@ -25,7 +25,7 @@ function wrapper({ children }: { children: ReactNode }) {
   return <CourseProvider>{children}</CourseProvider>;
 }
 
-/** One Produce-phase got-it per id, through the store's one counter action. */
+/** One Read-phase got-it per id, through the store's one counter action. */
 function produce(...sentenceIds: string[]): void {
   const { ensureCourse, recordProduction } = useAppStore.getState();
   ensureCourse(COURSE);
@@ -44,7 +44,7 @@ afterEach(() => {
 });
 
 describe('useExitAvailable', () => {
-  it('says yes for the rung whose every sentence is at two, once its module has loaded', async () => {
+  it('says yes for the rung whose every sentence is marked, once its module has loaded', async () => {
     mockContentFetch(DEV_MANIFEST);
     produce(...SENTENCES, ...SENTENCES);
 
@@ -94,7 +94,8 @@ describe('useExitAvailable', () => {
 
   it('follows the counters live: the got-it that finishes the rung flips it', async () => {
     mockContentFetch(DEV_MANIFEST);
-    produce(...SENTENCES, 'L1-M1-S01');
+    // Every sentence of the rung but one: the gate is a mark APIECE (#349), so the rung is shut.
+    produce('L1-M1-S01');
 
     const { result } = renderHook(() => useExitAvailable('L1-M1'), { wrapper });
     await waitFor(() => expect(result.current).not.toBeNull());

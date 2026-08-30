@@ -43,11 +43,11 @@
 
 /**
  * The production dots row (design/tokens.md §6.1 anatomy — found missing on the #117 walk): one
- * stacked pair per sentence, the same squares the module list stamps on every card
- * (`../module/ProductionDots.tsx`, #88), because they are the same fact — a row of full pairs
- * here IS the exit unlocking. The prototype writes 3px in the pair, 5px between pairs and an
- * 11px line beside; the pair's gap is the component's, and the rest resolves to the Industry
- * scale (§6 intro: "pixel values quoted from the prototype resolve to the nearest token").
+ * dot per sentence, the same square the module list stamps on every card
+ * (`../module/ProductionDots.tsx`, #88, one apiece since #349), because they are the same fact —
+ * a row of full dots here IS the exit unlocking. The prototype writes 5px between them and an
+ * 11px line beside, which resolves to the Industry scale (§6 intro: "pixel values quoted from the
+ * prototype resolve to the nearest token").
  */
 .dotsRow {
   display: flex;
@@ -57,7 +57,7 @@
 }
 
 /**
- * Counts only — `16 / 20`, never the prototype's trailing note ("two got-its per sentence →
+ * Counts only — `8 / 10`, never the prototype's trailing note ("a got-it per sentence →
  * exit opens"): that note is course copy, the frozen key list (#71, 96 keys) carries no key for
  * it, and the shell may not say it in English for every course (PRD §4). The `3 / 10` call from
  * #89, on this card.

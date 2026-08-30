@@ -27,7 +27,7 @@ import tokensCss from '../../design/tokens.css?raw';
 import App from '../App.tsx';
 import { resetContentCache } from '../course/content.ts';
 import { resetManifestCache } from '../course/manifest.ts';
-import { resetStringsCache } from '../course/strings.ts';
+import { interpolate, resetStringsCache } from '../course/strings.ts';
 import { ladderFromLevels } from '../engine/progression.ts';
 import { exportState } from '../state/serialize.ts';
 import { persistedSlice, useAppStore } from '../state/store.ts';
@@ -142,12 +142,45 @@ function climb(ladder: ReturnType<typeof tenRungLadder>, ...moduleIds: string[])
   for (const moduleId of moduleIds) store.passRitual(COURSE, moduleId, STAMP);
 }
 
+/**
+ * **The COURSE dropdown and the nav tabs, found by structure rather than by name.**
+ *
+ * Every label on this screen is the active course's own since #351 — including the dropdown's
+ * (`settings.activeCourse`) and the tabs' (`nav.*`) — and these cases exist precisely to cross
+ * courses, several of them into the real authored bundles. So the accessible name is not a
+ * constant here any more, and pinning one would assert the fixture rather than the behaviour.
+ * The dropdown is the second of the screen's two selects (LANGUAGE leads, #323, which the section
+ * order case above pins), and a tab is where it goes. What the labels SAY is asserted where it
+ * belongs: `AppShell.test.tsx` for the tabs, the section-order case here for the rest.
+ */
+function courseSelect(): HTMLElement {
+  const select = screen.getAllByRole('combobox')[1];
+  if (select === undefined) throw new Error('no COURSE dropdown on screen');
+  return select;
+}
+
+async function findCourseSelect(): Promise<HTMLElement> {
+  const selects = await screen.findAllByRole('combobox');
+  const select = selects[1];
+  if (select === undefined) throw new Error('no COURSE dropdown on screen');
+  return select;
+}
+
+/** A bottom-nav tab by its destination — `#/` and `#/settings` are the two these cases travel. */
+function tab(href: string): HTMLElement {
+  const link = within(screen.getByRole('navigation'))
+    .getAllByRole('link')
+    .find((candidate) => candidate.getAttribute('href') === href);
+  if (link === undefined) throw new Error(`no nav tab for ${href}`);
+  return link;
+}
+
 /** Renders the app at /settings and waits for the screen's one landmark, the course select. */
 async function renderSettings(ladder = tenRungLadder(2), manifest: unknown = DEV_MANIFEST) {
   mockContentFetch(manifest, undefined, { levels: ladder });
   window.location.hash = '#/settings';
   render(<App />);
-  return await screen.findByRole('combobox', { name: 'Active course' });
+  return await findCourseSelect();
 }
 
 beforeEach(() => {
@@ -179,7 +212,16 @@ describe('the frozen section order (F6)', () => {
       .map((heading) => heading.textContent)
       .filter((text) => text !== 'rung'); // the shell's brand h1 sits above the screen
 
-    expect(headings).toEqual(['Settings', 'LANGUAGE', 'COURSE', 'PRACTICE', 'STORAGE', 'Backup']);
+    expect(headings).toEqual(
+      [
+        'settings.title',
+        'settings.kicker.language',
+        'settings.kicker.course',
+        'settings.kicker.practice',
+        'settings.kicker.storage',
+        'settings.backup.title',
+      ].map((key) => stringValue(COURSE, key)),
+    );
   });
 
   it('ends on the Backup section — no closing promise, in either voice (#232)', async () => {
@@ -198,8 +240,12 @@ describe('the frozen section order (F6)', () => {
 
     expect(screen.queryByText(/Section stub/)).not.toBeInTheDocument();
     // #108's body stands in the slot: the two Backup controls.
-    expect(screen.getByRole('button', { name: 'Export' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Import' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: stringValue(COURSE, 'settings.backup.export') }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: stringValue(COURSE, 'settings.backup.import') }),
+    ).toBeInTheDocument();
   });
 });
 
@@ -484,8 +530,8 @@ describe('the fourth course — hi-en (#267, shipping since #273)', () => {
     expect(document.documentElement.dir).toBe('ltr');
 
     // On to the Ladder, through the app's own nav — the ten rungs of the authored L1.
-    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
-    expect(await screen.findByText(/LEVEL 1 · 0 OF 10/)).toBeInTheDocument();
+    fireEvent.click(tab('#/'));
+    expect(await screen.findByText('Level 1 · 10 में से 0')).toBeInTheDocument();
     expect(screen.getByText('Foundations — say what you need')).toBeInTheDocument();
     expect(rungs()).toHaveLength(10);
     for (const title of [
@@ -505,7 +551,7 @@ describe('the fourth course — hi-en (#267, shipping since #273)', () => {
     // Nothing passed: M1 is the current rung, and since #270 it has content behind it, so the
     // card carries the one CTA a fresh rung gets [D22] — in hi-en's own words — and M2–M10 are
     // locked, so that CTA is the only link in the list.
-    expect(screen.getByText('M1 · CURRENT RUNG')).toBeInTheDocument();
+    expect(screen.getByText('M1 · अभी यही rung')).toBeInTheDocument();
     const rungLinks = within(screen.getByRole('list')).getAllByRole('link');
     expect(rungLinks).toHaveLength(1);
     expect(rungLinks[0]).toHaveTextContent('Module से शुरू करो');
@@ -518,13 +564,19 @@ describe('the fourth course — hi-en (#267, shipping since #273)', () => {
     expect(useAppStore.getState().courses['hi-en']).toBeDefined();
 
     // Back to hi-mr: its ladder is where the climb left it — one rung passed, M2 current.
-    fireEvent.click(screen.getByRole('link', { name: 'Settings' }));
-    fireEvent.change(await screen.findByRole('combobox', { name: 'Active course' }), {
+    fireEvent.click(tab('#/settings'));
+    fireEvent.change(await findCourseSelect(), {
       target: { value: COURSE },
     });
-    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
-    expect(await screen.findByText(/LEVEL 1 · 1 OF 10/)).toBeInTheDocument();
-    expect(screen.getByText('M2 · CURRENT RUNG')).toBeInTheDocument();
+    fireEvent.click(tab('#/'));
+    expect(
+      await screen.findByText(
+        interpolate(stringValue(COURSE, 'ladder.positionLine'), { level: 1, passed: 1, total: 10 }),
+      ),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(interpolate(stringValue(COURSE, 'rungCard.currentRung'), { rung: 'M2' })),
+    ).toBeInTheDocument();
     expect(useAppStore.getState().courses[COURSE]).toBe(before);
   });
 });
@@ -571,7 +623,7 @@ describe('the fifth course — en-ru (#343, shipping)', () => {
     // Say you read English, and the field offers what there is to learn in it (#324).
     fireEvent.change(langSelect(), { target: { value: 'en' } });
 
-    const inEnglish = await screen.findByRole('combobox', { name: 'Active course' });
+    const inEnglish = await findCourseSelect();
     await waitFor(() => {
       expect(within(inEnglish).getByRole('option', { name: 'Russian' })).toHaveValue('en-ru');
     });
@@ -586,7 +638,7 @@ describe('the fifth course — en-ru (#343, shipping)', () => {
 
     // English first, then Russian — the journey #324 made explicit.
     fireEvent.change(langSelect(), { target: { value: 'en' } });
-    const select = await screen.findByRole('combobox', { name: 'Active course' });
+    const select = await findCourseSelect();
     await waitFor(() => {
       expect(within(select).queryByRole('option', { name: 'Russian' })).not.toBeNull();
     });
@@ -605,7 +657,7 @@ describe('the fifth course — en-ru (#343, shipping)', () => {
     });
     expect(document.documentElement.dir).toBe('ltr');
 
-    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
+    fireEvent.click(tab('#/'));
     expect(await screen.findByText(/LEVEL 1 · 0 OF 10/)).toBeInTheDocument();
     expect(screen.getByText('Foundations — say what you need')).toBeInTheDocument();
     expect(within(screen.getByRole('list')).getAllByRole('listitem')).toHaveLength(10);
@@ -637,13 +689,19 @@ describe('the fifth course — en-ru (#343, shipping)', () => {
     expect(useAppStore.getState().courses[COURSE]).toBe(before);
     expect(useAppStore.getState().courses['en-ru']).toBeDefined();
 
-    fireEvent.click(screen.getByRole('link', { name: 'Settings' }));
-    fireEvent.change(await screen.findByRole('combobox', { name: 'Active course' }), {
+    fireEvent.click(tab('#/settings'));
+    fireEvent.change(await findCourseSelect(), {
       target: { value: COURSE },
     });
-    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
-    expect(await screen.findByText(/LEVEL 1 · 1 OF 10/)).toBeInTheDocument();
-    expect(screen.getByText('M2 · CURRENT RUNG')).toBeInTheDocument();
+    fireEvent.click(tab('#/'));
+    expect(
+      await screen.findByText(
+        interpolate(stringValue(COURSE, 'ladder.positionLine'), { level: 1, passed: 1, total: 10 }),
+      ),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(interpolate(stringValue(COURSE, 'rungCard.currentRung'), { rung: 'M2' })),
+    ).toBeInTheDocument();
     expect(useAppStore.getState().courses[COURSE]).toBe(before);
   });
 });
@@ -690,7 +748,7 @@ describe('the sixth course — en-it (#337, shipping)', () => {
     // Say you read English, and the field offers what there is to learn in it (#324).
     fireEvent.change(langSelect(), { target: { value: 'en' } });
 
-    const inEnglish = await screen.findByRole('combobox', { name: 'Active course' });
+    const inEnglish = await findCourseSelect();
     await waitFor(() => {
       expect(within(inEnglish).getByRole('option', { name: 'Italian' })).toHaveValue('en-it');
     });
@@ -708,10 +766,10 @@ describe('the sixth course — en-it (#337, shipping)', () => {
     // node captured before it is stale by the time the second change fires.
     fireEvent.change(langSelect(), { target: { value: 'en' } });
     await waitFor(() => {
-      const field = screen.getByRole('combobox', { name: 'Active course' });
+      const field = courseSelect();
       expect(within(field).queryByRole('option', { name: 'Italian' })).not.toBeNull();
     });
-    fireEvent.change(screen.getByRole('combobox', { name: 'Active course' }), {
+    fireEvent.change(courseSelect(), {
       target: { value: 'en-it' },
     });
 
@@ -734,7 +792,7 @@ describe('the sixth course — en-it (#337, shipping)', () => {
     });
     expect(document.documentElement.dir).toBe('ltr');
 
-    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
+    fireEvent.click(tab('#/'));
     expect(await screen.findByText(/LEVEL 1 · 0 OF 10/)).toBeInTheDocument();
     expect(screen.getByText('Foundations — say what you need')).toBeInTheDocument();
     expect(within(screen.getByRole('list')).getAllByRole('listitem')).toHaveLength(10);
@@ -766,13 +824,19 @@ describe('the sixth course — en-it (#337, shipping)', () => {
     expect(useAppStore.getState().courses[COURSE]).toBe(before);
     expect(useAppStore.getState().courses['en-it']).toBeDefined();
 
-    fireEvent.click(screen.getByRole('link', { name: 'Settings' }));
-    fireEvent.change(await screen.findByRole('combobox', { name: 'Active course' }), {
+    fireEvent.click(tab('#/settings'));
+    fireEvent.change(await findCourseSelect(), {
       target: { value: COURSE },
     });
-    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
-    expect(await screen.findByText(/LEVEL 1 · 1 OF 10/)).toBeInTheDocument();
-    expect(screen.getByText('M2 · CURRENT RUNG')).toBeInTheDocument();
+    fireEvent.click(tab('#/'));
+    expect(
+      await screen.findByText(
+        interpolate(stringValue(COURSE, 'ladder.positionLine'), { level: 1, passed: 1, total: 10 }),
+      ),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(interpolate(stringValue(COURSE, 'rungCard.currentRung'), { rung: 'M2' })),
+    ).toBeInTheDocument();
     expect(useAppStore.getState().courses[COURSE]).toBe(before);
   });
 });
@@ -819,7 +883,7 @@ describe('the seventh course — en-fr (#331, shipping)', () => {
     // Say you read English, and the field offers what there is to learn in it (#324).
     fireEvent.change(langSelect(), { target: { value: 'en' } });
 
-    const inEnglish = await screen.findByRole('combobox', { name: 'Active course' });
+    const inEnglish = await findCourseSelect();
     await waitFor(() => {
       expect(within(inEnglish).getByRole('option', { name: 'French' })).toHaveValue('en-fr');
     });
@@ -837,10 +901,10 @@ describe('the seventh course — en-fr (#331, shipping)', () => {
     // node captured before it is stale by the time the second change fires.
     fireEvent.change(langSelect(), { target: { value: 'en' } });
     await waitFor(() => {
-      const field = screen.getByRole('combobox', { name: 'Active course' });
+      const field = courseSelect();
       expect(within(field).queryByRole('option', { name: 'French' })).not.toBeNull();
     });
-    fireEvent.change(screen.getByRole('combobox', { name: 'Active course' }), {
+    fireEvent.change(courseSelect(), {
       target: { value: 'en-fr' },
     });
 
@@ -863,7 +927,7 @@ describe('the seventh course — en-fr (#331, shipping)', () => {
     });
     expect(document.documentElement.dir).toBe('ltr');
 
-    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
+    fireEvent.click(tab('#/'));
     expect(await screen.findByText(/LEVEL 1 · 0 OF 10/)).toBeInTheDocument();
     expect(screen.getByText('Foundations — say what you need')).toBeInTheDocument();
     expect(within(screen.getByRole('list')).getAllByRole('listitem')).toHaveLength(10);
@@ -895,13 +959,19 @@ describe('the seventh course — en-fr (#331, shipping)', () => {
     expect(useAppStore.getState().courses[COURSE]).toBe(before);
     expect(useAppStore.getState().courses['en-fr']).toBeDefined();
 
-    fireEvent.click(screen.getByRole('link', { name: 'Settings' }));
-    fireEvent.change(await screen.findByRole('combobox', { name: 'Active course' }), {
+    fireEvent.click(tab('#/settings'));
+    fireEvent.change(await findCourseSelect(), {
       target: { value: COURSE },
     });
-    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
-    expect(await screen.findByText(/LEVEL 1 · 1 OF 10/)).toBeInTheDocument();
-    expect(screen.getByText('M2 · CURRENT RUNG')).toBeInTheDocument();
+    fireEvent.click(tab('#/'));
+    expect(
+      await screen.findByText(
+        interpolate(stringValue(COURSE, 'ladder.positionLine'), { level: 1, passed: 1, total: 10 }),
+      ),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(interpolate(stringValue(COURSE, 'rungCard.currentRung'), { rung: 'M2' })),
+    ).toBeInTheDocument();
     expect(useAppStore.getState().courses[COURSE]).toBe(before);
   });
 });
@@ -939,7 +1009,9 @@ describe('the status line', () => {
     climb(ladder, 'L1-M1', 'L1-M2');
 
     await renderSettings(ladder);
-    const settings = screen.getByRole('heading', { name: 'Settings' }).closest('section');
+    const settings = screen
+      .getByRole('heading', { name: stringValue(COURSE, 'settings.title') })
+      .closest('section');
 
     expect(settings?.textContent).not.toMatch(/%|\bday\b|\bweek\b|\bstreak\b|\d+:\d\d/);
   });
@@ -951,23 +1023,29 @@ describe('the elapsed-tick toggle', () => {
   it('reads the store: On is the shipped default', async () => {
     await renderSettings();
 
-    expect(screen.getByRole('button', { name: 'On' })).toHaveAttribute('aria-pressed', 'true');
-    expect(screen.getByRole('button', { name: 'Off' })).toHaveAttribute('aria-pressed', 'false');
+    expect(
+      screen.getByRole('button', { name: stringValue(COURSE, 'settings.tick.on') }),
+    ).toHaveAttribute('aria-pressed', 'true');
+    expect(
+      screen.getByRole('button', { name: stringValue(COURSE, 'settings.tick.off') }),
+    ).toHaveAttribute('aria-pressed', 'false');
   });
 
   it('writes `settings.elapsedTickEnabled`, and only it', async () => {
     await renderSettings();
     const before = useAppStore.getState();
 
-    fireEvent.click(screen.getByRole('button', { name: 'Off' }));
+    fireEvent.click(screen.getByRole('button', { name: stringValue(COURSE, 'settings.tick.off') }));
 
     const after = useAppStore.getState();
     expect(after.settings.elapsedTickEnabled).toBe(false);
-    expect(screen.getByRole('button', { name: 'Off' })).toHaveAttribute('aria-pressed', 'true');
+    expect(
+      screen.getByRole('button', { name: stringValue(COURSE, 'settings.tick.off') }),
+    ).toHaveAttribute('aria-pressed', 'true');
     // A setting is not progress: the course subtrees are the very objects they were.
     expect(after.courses).toBe(before.courses);
 
-    fireEvent.click(screen.getByRole('button', { name: 'On' }));
+    fireEvent.click(screen.getByRole('button', { name: stringValue(COURSE, 'settings.tick.on') }));
     expect(useAppStore.getState().settings.elapsedTickEnabled).toBe(true);
   });
 });
@@ -996,17 +1074,30 @@ describe('the STORAGE section (#107)', () => {
 
     await renderSettings();
 
-    const meter = await screen.findByRole('meter', { name: 'Storage used on this device' });
+    const meter = await screen.findByRole('meter', {
+      name: stringValue(COURSE, 'a11y.storageMeter'),
+    });
     expect(meter).toHaveAttribute('aria-valuenow', String(12 * 1024 * 1024));
     expect(meter).toHaveAttribute('aria-valuemax', String(1024 ** 3));
-    expect(screen.getByText('12 MB used of 1 GB the browser offers')).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        interpolate(stringValue(COURSE, 'settings.storage.meter'), {
+          used: '12 MB',
+          quota: '1 GB',
+        }),
+      ),
+    ).toBeInTheDocument();
   });
 
   it('renders one computed content row per manifest course, from the build’s sizes files', async () => {
     await renderSettings();
 
     for (const course of DEV_MANIFEST.courses) {
-      const row = await screen.findByText(`${course.pairLabel} course (offline)`);
+      const row = await screen.findByText(
+        interpolate(stringValue(COURSE, 'settings.storage.courseRow'), {
+          course: course.pairLabel,
+        }),
+      );
       expect(row.parentElement?.textContent).toContain(formatBytes(sizesFixture(course.id).bytes));
     }
   });
@@ -1014,7 +1105,7 @@ describe('the STORAGE section (#107)', () => {
   it('renders the one progress row at the serialized state’s real size', async () => {
     await renderSettings();
 
-    const row = screen.getByText('Your saved progress — all courses');
+    const row = screen.getByText(stringValue(COURSE, 'settings.storage.progressRow'));
     expect(row.parentElement?.textContent).toContain(formatBytes(progressBytes()));
   });
 
@@ -1027,16 +1118,22 @@ describe('the STORAGE section (#107)', () => {
 
     const after = progressBytes();
     expect(after).toBeGreaterThan(before);
-    const row = screen.getByText('Your saved progress — all courses');
+    const row = screen.getByText(stringValue(COURSE, 'settings.storage.progressRow'));
     expect(row.parentElement?.textContent).toContain(formatBytes(after));
   });
 
   it('omits the meter when estimate() is unavailable — the rows are unchanged ([Q2])', async () => {
     await renderSettings(); // jsdom: no navigator.storage at all
 
-    await screen.findByText('hindi → marathi course (offline)');
+    await screen.findByText(
+      interpolate(stringValue(COURSE, 'settings.storage.courseRow'), {
+        course: 'hindi → marathi',
+      }),
+    );
     expect(screen.queryByRole('meter')).not.toBeInTheDocument();
-    expect(screen.getByText('Your saved progress — all courses')).toBeInTheDocument();
+    expect(
+      screen.getByText(stringValue(COURSE, 'settings.storage.progressRow')),
+    ).toBeInTheDocument();
   });
 
   /**
@@ -1051,12 +1148,31 @@ describe('the STORAGE section (#107)', () => {
     stubNavigatorStorage({ persisted });
 
     await renderSettings();
-    await screen.findByText('hindi → marathi course (offline)');
+    await screen.findByText(
+      interpolate(stringValue(COURSE, 'settings.storage.courseRow'), {
+        course: 'hindi → marathi',
+      }),
+    );
 
     expect(persisted).not.toHaveBeenCalled();
-    // No course sentence survives under the kicker — every line in the section is a number.
-    const section = screen.getByRole('heading', { name: 'STORAGE' }).closest('section');
-    expect(within(section as HTMLElement).queryByText(/^hi-mr /)).not.toBeInTheDocument();
+    // No course SENTENCE survives under the kicker. The section's labels became course copy on
+    // #351 — a Hindi learner could not read them otherwise — so "no course string at all" is no
+    // longer the way to say it. What #232 actually removed was the prose: the durability line and
+    // the honesty note under it. So the check is now exact rather than absolute — every course
+    // string in here is one of the three labels that ticket sent, and nothing else has appeared.
+    const section = screen
+      .getByRole('heading', { name: stringValue(COURSE, 'settings.kicker.storage') })
+      .closest('section');
+    const keys = within(section as HTMLElement)
+      .queryAllByText(/^hi-mr /)
+      .map((node) => (node.textContent ?? '').split(' ')[1]);
+    expect(new Set(keys)).toEqual(
+      new Set([
+        'settings.kicker.storage',
+        'settings.storage.courseRow',
+        'settings.storage.progressRow',
+      ]),
+    );
   });
 });
 

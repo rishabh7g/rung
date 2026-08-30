@@ -223,8 +223,7 @@ const CALLS: Record<string, (store: AppStore) => void> = {
   // start to summary, climbs nothing.
   recordReview: (store) => store.recordReview('hi-mr', 'L1-M1-S01', true),
   startSession: (store) => store.startSession('hi-mr', ['L1-M2-S01', 'L1-M2-S02']),
-  setSession: (store) =>
-    store.setSession('hi-mr', { phase: 'produce', idx: 1, queue: ['L1-M2-S01'] }),
+  setSession: (store) => store.setSession('hi-mr', { phase: 'read', idx: 1, queue: ['L1-M2-S01'] }),
   passRitual: (store) => store.passRitual('hi-mr', 'L1-M2', () => '2026-02-02T02:40:00.000Z'),
   // The end of the exit ritual (#103) — and the one action besides `passRitual` whose call
   // changes the map, because it IS a call to `passRitual`. It has its own describe below: the
@@ -237,7 +236,7 @@ const CALLS: Record<string, (store: AppStore) => void> = {
   // exactly what some device's `passRitual` already wrote there. Checked on its own below.
   restoreBackup: (store) =>
     store.restoreBackup({
-      stateVersion: 9,
+      stateVersion: 10,
       activeCourse: 'hi-mr',
       courses: {
         'hi-mr': {

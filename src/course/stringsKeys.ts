@@ -33,12 +33,15 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about).
+ * file it is complaining about) — save for the chrome block at the end (#351), which the authored
+ * files nest into the groups it belongs to rather than repeating them.
  *
- * A key earns its place here on ONE test: the shell would otherwise have to hardcode a
- * learner-facing sentence, which is the one thing this list exists to prevent. Everything that is
- * furniture — section labels, kickers, technical detail — stays English in the shell and never
- * appears below.
+ * A key earns its place here on ONE test: **does a learner read it?** It used to be the narrower
+ * "would the shell otherwise hardcode a learner-facing SENTENCE", with section labels, kickers and
+ * tab names left out as English furniture — a distinction that survived only as long as every
+ * course read English. #351 retired it: see the chrome block's note in `STRINGS_PLACEHOLDERS`.
+ * What is still out is what no bundle could serve — `BootScreens` (it renders before one is
+ * loaded), the manifest's own names (data), and technical detail like an import's failure reason.
  *
  * The per-key grouping and reasoning live in `STRINGS_PLACEHOLDERS` below, beside the rows they
  * are about; the removals live in `docs/design-contract.md`.
@@ -47,17 +50,12 @@ export const STRINGS_KEYS = [
   'cueLabel',
   'revealLabel',
   'revealLabelComprehend',
-  'ritual.stepTitle.write',
-  'ritual.stepTitle.check',
-  'ritual.stepTitle.confirm',
-  'ritual.constraint',
-  'ritual.confirm.holdLabel',
-  'ritual.confirm.done',
   'retry.kicker',
   'retry.title',
   'retry.cta',
   'retry.pending',
   'ordinal',
+  'ladder.learning',
   'ladder.pendingLine',
   'ladder.sealedToast',
   'rungCard.startModule',
@@ -76,28 +74,24 @@ export const STRINGS_KEYS = [
   'why.openFull',
   'hint.recall',
   'hint.production',
-  'hint.check',
   'read.showCue',
   'read.hideCue',
   'read.prev',
   'read.next',
-  'read.toProduce',
+  'read.finish',
   'practice.hubTitle',
   'practice.hubReview',
   'practice.hubRead',
-  'practice.hubProduce',
   'practice.beginReview',
   'practice.beginRead',
   'practice.phase.review',
   'practice.phase.read',
-  'practice.phase.produce',
   'practice.nothingDue',
   'practice.upNext',
   'practice.summaryTitle',
   'practice.summaryReviewed',
   'practice.summaryGotIt',
-  'practice.summaryProduced',
-  'practice.summaryAtTwo',
+  'practice.summaryMarked',
   'practice.summaryToRitual',
   'practice.backToLadder',
   'practice.resumeLine',
@@ -116,6 +110,39 @@ export const STRINGS_KEYS = [
   'settings.importFailed',
   'switchToast',
   'importToast',
+  /* --------------------------------------------------- the chrome (#351), appended together */
+  'nav.ladder',
+  'nav.practice',
+  'nav.settings',
+  'ladder.positionLine',
+  'ladder.passed',
+  'levelStrip.level',
+  'rungCard.currentRung',
+  'verdict.ritualComplete',
+  'verdict.passedRung',
+  'settings.title',
+  'settings.kicker.language',
+  'settings.kicker.course',
+  'settings.kicker.practice',
+  'settings.kicker.storage',
+  'settings.activeCourse',
+  'settings.tick.title',
+  'settings.tick.note',
+  'settings.tick.on',
+  'settings.tick.off',
+  'settings.storage.meter',
+  'settings.storage.courseRow',
+  'settings.storage.progressRow',
+  'settings.backup.title',
+  'settings.backup.export',
+  'settings.backup.import',
+  'settings.backup.onDevice',
+  'settings.backup.inFile',
+  'settings.backup.counts',
+  'a11y.primaryNav',
+  'a11y.pauseSession',
+  'a11y.storageMeter',
+  'a11y.sentencePager',
 ] as const;
 
 /** A dot-path into strings.json — the union of the canonical list. */
@@ -136,24 +163,6 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   cueLabel: [],
   revealLabel: [],
   revealLabelComprehend: [],
-  'ritual.stepTitle.write': [],
-  'ritual.stepTitle.check': [],
-  'ritual.stepTitle.confirm': [],
-  /**
-   * The word cap the new sentence must fit — this rung's own, off its module's complexity. It
-   * also named how many sentences the new one may not be (`{sentenceCount}`) until #230 trimmed
-   * the constraint to the bare task.
-   */
-  'ritual.constraint': ['{maxWords}'],
-  /** The rendered `ordinal` value — "my 3rd sentence" — not a bare number. */
-  'ritual.confirm.holdLabel': ['{ordinal}'],
-  /**
-   * The ✓ line, and the whole of what the signed hold says now. `ritual.confirm.toComprehension`
-   * stood beside it until #314: the hold IS the intentional act, so paying it now carries the
-   * learner into part 2 rather than drawing a second control to tap. A label for a button that no
-   * longer exists is a key the app can never read.
-   */
-  'ritual.confirm.done': [],
   /**
    * What is left of the retry interstitial's five layers (tokens.md §6.3), top to bottom — kicker,
    * title, CTA; the body and the reassurance were read-once prose and went on #231. All course
@@ -172,6 +181,23 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'retry.pending': [],
   /** The number to ordinalise. */
   ordinal: ['{n}'],
+  /**
+   * **What the learner is learning** (#350), on the home screen, in their own language.
+   *
+   * The Ladder names the level, the rung and what is left to climb, and named nothing about the
+   * COURSE — a learner opening the app saw a ladder without a subject. This is the one line that
+   * says it.
+   *
+   * It is a fully authored phrase per bundle and **not** `{l2}` interpolated out of the manifest,
+   * which is the whole reason it is a key at all: `courses.json`'s `l2` holds English words
+   * ("Marathi", "Russian"), and an English noun dropped into a Hindi sentence is the shell
+   * speaking for the course (PRD §4) in the one place a learner looks first. Each bundle names its
+   * own target language, in its own words and its own script.
+   *
+   * It does not interpolate for the same reason `hint.*` does not: there is no number in it, and
+   * a phrase built out of parts is a sentence the shell would be assembling.
+   */
+  'ladder.learning': [],
   /**
    * The Ladder's pending line — counts only, never time (Invariant 2): which level the learner is
    * on, and how many of its rungs are still to climb.
@@ -226,7 +252,7 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'mark.missed': [],
   /**
    * The "why" panel (#94) — the three words the shared expansion says in its own right, on every
-   * revealed surface (Review, Produce, Comprehension). The toggle carries two labels because it
+   * revealed surface (Review, Read, Comprehension). The toggle carries two labels because it
    * says what it will DO, and the prototype writes both ("why" / "hide why"); `aria-expanded`
    * states the same thing to a screen reader, which is why the words may differ per course
    * without the control changing meaning.
@@ -258,17 +284,16 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    * first one is not left guessing.
    *
    * One per surface, and each is the fact that surface cannot show by itself: `recall` that the
-   * recall happens outside the app (the reveal card), `production` that two writes per sentence
-   * open the rung's exit ritual (the rung card's dots row), `check` that the checking is the
-   * learner's own (the ritual's deliberately empty step 2, whose emptiness [D18] is the statement
-   * — the hint names it once rather than explaining it forever).
+   * recall happens outside the app (the reveal card), `production` that one marked sentence apiece
+   * opens the rung's exit ritual (the rung card's dots row). There was a third, `check` — that the
+   * checking is the learner's own — on the ritual's deliberately empty step 2; #348 retired that
+   * step and the key with it, because a hint whose surface is gone is a thing said nowhere.
    *
    * None interpolates: the counts they are about are drawn beside them, and a hint that carried a
    * number would be a status line rather than a thing said once.
    */
   'hint.recall': [],
   'hint.production': [],
-  'hint.check': [],
   /**
    * The Read phase (#97) — the five words that phase says in its own right: the cue toggle's two
    * labels, and the three on its pager. They are `read.*` rather than `practice.*` for the reason
@@ -278,10 +303,10 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    * thing to a screen reader.
    *
    * `read.prev`/`read.next` are deliberately NOT `sentence.prev`/`sentence.next`: that pager walks
-   * a module while browsing, this one walks a rung mid-session and its last step leaves the phase
-   * (`read.toProduce` — "on to producing", the prototype's own label for it). A course may well
-   * word the first two the same; sharing the key would mean it never could word them differently
-   * — the call #93 made for `mark.next` and #94 for `why.openFull`.
+   * a module while browsing, this one walks a rung mid-session and its last step ends it
+   * (`read.finish`). A course may well word the first two the same; sharing the key would mean it
+   * never could word them differently — the call #93 made for `mark.next` and #94 for
+   * `why.openFull`.
    *
    * None of them interpolates: the position is the `3 / 10` count the shell renders, not a
    * sentence.
@@ -290,36 +315,39 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'read.hideCue': [],
   'read.prev': [],
   'read.next': [],
-  'read.toProduce': [],
+  /**
+   * Read's last step (#349). It used to read `read.toProduce` — "on to producing" — because the
+   * phase handed over to Produce; with that phase retired, reading the rung through IS the end of
+   * the session, and the label says so. The issue asked for an existing key reused; none says
+   * "this ends here", and a last card that ends a session in silence is worse than one key.
+   */
+  'read.finish': [],
   /**
    * The session (#96) — the Practice hub, the phase chips and the summary (PRD §8 F4, PRD-design
-   * §6.3). Sixteen keys, and the rule that put every one of them here is the same as the module
+   * §6.3). Eighteen keys, and the rule that put every one of them here is the same as the module
    * list's: the prototype writes this screen in English for every course, which is what a
    * prototype does and what a product cannot.
    *
    * **The counts interpolate; nothing else does.** `{count}` is the only new placeholder in the
-   * canonical set, and it appears in the three hub lines and the four summary lines because a
+   * canonical set, and it appears in the two hub lines and the three summary lines because a
    * number's place in a sentence is the language's business, not the shell's — a right-aligned
    * value column beside a label (the prototype's summary rows) would fix it at the end of every
    * line in every course. **They are counts, never time** (Invariant 2): the summary says how many
    * cards were seen, never how long they took, and the gentle elapsed tick — the one sanctioned
    * time affordance, numberless by construction — is #98's and has no string at all.
    *
-   * `practice.phase.*` are the three soft chips AND the hub's three rows: one name per phase, used
-   * wherever the phase is named, because they are the same three things.
+   * `practice.phase.*` are the soft chips AND the hub's rows: one name per phase, used wherever the
+   * phase is named, because they are the same two things.
    */
   'practice.hubTitle': [],
   /** How many due reviews this session will serve — 0 on the first rung. */
   'practice.hubReview': ['{count}'],
   /** How many sentences the rung holds. */
   'practice.hubRead': ['{count}'],
-  /** How many sentences the Produce phase will serve — the rung's, least-produced first. */
-  'practice.hubProduce': ['{count}'],
   'practice.beginReview': [],
   'practice.beginRead': [],
   'practice.phase.review': [],
   'practice.phase.read': [],
-  'practice.phase.produce': [],
   /** The Review chip's honest answer when nothing is due — the empty state, not an error. */
   'practice.nothingDue': [],
   /**
@@ -328,8 +356,8 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    * it (`practice.phase.*`, the same one the chips and the resume line use), because a phase is
    * named the same wherever it is named.
    *
-   * Read's pager says its own hand-over on its last step (`read.toProduce`), which is why this is
-   * the Review card's line and not a third copy of the same idea.
+   * Read's pager says its own end on its last step (`read.finish`), which is why this is the
+   * Review card's line and not a second copy of the same idea.
    */
   'practice.upNext': ['{phase}'],
   'practice.summaryTitle': [],
@@ -337,10 +365,8 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'practice.summaryReviewed': ['{count}'],
   /** How many of those were a got-it. */
   'practice.summaryGotIt': ['{count}'],
-  /** Produce got-its counted this session — the number that reached the counters. */
-  'practice.summaryProduced': ['{count}'],
-  /** How many of the rung's sentences now stand at ≥ 2×, out of how many there are. */
-  'practice.summaryAtTwo': ['{count}', '{total}'],
+  /** How many of the rung's sentences are marked through, out of how many there are (#349). */
+  'practice.summaryMarked': ['{count}', '{total}'],
   /**
    * The way on when that count is the whole rung (#315) — the exit ritual, offered at the one
    * moment the learner has just earned it.
@@ -443,4 +469,107 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   switchToast: ['{to}', '{from}'],
   /** The Ladder's arrival toast after a restore (#108) — a landing, so no number and no name. */
   importToast: [],
+  /* ------------------------------------------------------------------- the chrome (#351) */
+  /**
+   * **The chrome** — the layer this list spent its first ninety keys deliberately excluding, and
+   * the one place the exclusion turned out to be wrong.
+   *
+   * The rule above ("everything that is furniture — section labels, kickers, technical detail —
+   * stays English in the shell") was written about the SHELL: labels that name the app's own
+   * machinery to whoever is reading the code, in a register no learner was expected to dwell on.
+   * It held while every course read English. It stopped holding the moment hi-en and hi-mr
+   * shipped: a Hindi-L1 learner opening the app met `Ladder`, `Practice`, `Settings`, `LEVEL 1 ·
+   * 2 OF 10`, `PASSED` and a Settings screen in a language the course exists to teach them out
+   * of. Furniture a learner cannot read is not furniture, it is the first screen — so the test a
+   * key must pass is not "is this a sentence" but "does a learner read it".
+   *
+   * Every row below fails that second test in English and passes it here. What is still excluded
+   * is what genuinely never reaches a learner in their own language: `BootScreens` (it renders
+   * BEFORE any bundle is loaded, so a key it read would not exist yet), the manifest's own `l1` /
+   * `l2` / `pairLabel` names (data, interpolated as `{course}` below), and `ImportError`'s
+   * path-naming reason (a technical detail, shown under the course's friendly line).
+   *
+   * **The ALL-CAPS kickers keep their key and their CSS.** The capitals live in the authored
+   * English, not in a `text-transform` — Devanagari has no capitals and any transform is a no-op
+   * on it — so the hi-* bundles author the same keys as ordinary Devanagari and the letter-spacing
+   * that makes a kicker a kicker is unchanged. No per-script styling, one key per label.
+   *
+   * The block is appended whole rather than interleaved, so it reads as the one decision it is.
+   */
+  'nav.ladder': [],
+  'nav.practice': [],
+  'nav.settings': [],
+  /**
+   * The Ladder's position line and its passed marker (#86) — counts, never time (Invariant 2),
+   * and the same derivation `ladder.pendingLine` above interpolates. `positionLine` names all
+   * three numbers because where a count sits in a sentence is the language's business; `passed`
+   * is the status word on a climbed rung's row and carries none, the count being the line above.
+   */
+  'ladder.positionLine': ['{level}', '{passed}', '{total}'],
+  'ladder.passed': [],
+  /** One cell's own number, in the strip's tighter register than the position line's. */
+  'levelStrip.level': ['{level}'],
+  /**
+   * The staged rung card's kicker [D22] — `{rung}` is the shell-rendered rung label ("M3", from
+   * `rungLabel`), never an id the course must parse, exactly as `settings.statusLine` takes it.
+   */
+  'rungCard.currentRung': ['{rung}'],
+  /**
+   * The Verdict's two head lines (#103) — the kicker that says the ritual is over, and the rung
+   * it was over for. `passedRung` takes the same shell-rendered `{rung}` the card's kicker does;
+   * it is a separate key from `ladder.passed` because one is a row's status marker in a list and
+   * the other is a screen's title, and a course may want a fuller word for the second.
+   */
+  'verdict.ritualComplete': [],
+  'verdict.passedRung': ['{rung}'],
+  /**
+   * **Settings, all of it** (#105, #107, #108) — the screen a learner opens to change their own
+   * language, which is the one screen that cannot be in a language they may not have.
+   *
+   * The title and the four section kickers are the frozen F6 order named in the course's words;
+   * `activeCourse` labels the dropdown (its OPTIONS stay manifest data, as `settings.yourLanguage`
+   * above already records). `tick.*` is #98's one sanctioned time affordance — the row title, the
+   * note that says what the line does, and the two segment labels, which are separate keys because
+   * they are two states rather than one toggle's name.
+   *
+   * `storage.*` is #107's computed section: the meter's caption over the browser's own two numbers
+   * (`{used}` / `{quota}`, formatted by `formatBytes` — the shell renders the unit, the course
+   * renders the sentence around it), one row label per manifest course (`{course}` is that row's
+   * `pairLabel`, data), and the progress row that is every course at once. `backup.*` is #108's:
+   * the section title, its two buttons, and the confirm's two sides — `onDevice` / `inFile` label
+   * the halves and `counts` is the pair of numbers under each, one key because "2 passed · 5
+   * sessions" is one line whose word order is the language's.
+   */
+  'settings.title': [],
+  'settings.kicker.language': [],
+  'settings.kicker.course': [],
+  'settings.kicker.practice': [],
+  'settings.kicker.storage': [],
+  'settings.activeCourse': [],
+  'settings.tick.title': [],
+  'settings.tick.note': [],
+  'settings.tick.on': [],
+  'settings.tick.off': [],
+  'settings.storage.meter': ['{used}', '{quota}'],
+  'settings.storage.courseRow': ['{course}'],
+  'settings.storage.progressRow': [],
+  'settings.backup.title': [],
+  'settings.backup.export': [],
+  'settings.backup.import': [],
+  'settings.backup.onDevice': [],
+  'settings.backup.inFile': [],
+  'settings.backup.counts': ['{passed}', '{sessions}'],
+  /**
+   * The four accessible names nothing draws (#84, #107) — the nav's landmark, the immersive
+   * header's pause ✕, the storage meter's `role="meter"`, and Sentence Detail's pager landmark.
+   *
+   * They are course copy for the reason the visible labels are, only more so: a screen reader is
+   * the one surface where the label IS the interface, and a Hindi learner navigating by landmark
+   * heard four English words with no picture beside them to recover the meaning from. None
+   * interpolates — an accessible name that carried a runtime value would be a live region.
+   */
+  'a11y.primaryNav': [],
+  'a11y.pauseSession': [],
+  'a11y.storageMeter': [],
+  'a11y.sentencePager': [],
 };

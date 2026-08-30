@@ -25,7 +25,7 @@
  * within an attempt, disjoint across fresh ones. `comprehension.test.ts` pins the algorithm itself
  * against an injected sequence.
  */
-import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from '../App.tsx';
 import { resetContentCache } from '../course/content.ts';
@@ -37,7 +37,6 @@ import { persistedSlice, STORAGE_KEY, useAppStore } from '../state/store.ts';
 import { DEV_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
 import { moduleFixture } from '../test/courseContent.ts';
 import { stringValue } from '../test/courseStrings.ts';
-import { SIGNED_BEAT_MS } from '../components/HoldToConfirm.tsx';
 import { COMMIT_WINDOW_MS } from '../components/useCommitWindow.ts';
 import itemSource from './comprehension/ComprehensionItem.tsx?raw';
 import retryCss from './comprehension/RetryInterstitial.module.css?raw';
@@ -47,8 +46,6 @@ import screenSource from './ComprehensionScreen.tsx?raw';
 const COURSE = 'hi-mr';
 /** The fixture ladder's current rung: authored, unlocked, and the only module this screen reads. */
 const CURRENT = 'L1-M1';
-/** `--motion-hold-total` [D14] — the whole press-and-hold, in milliseconds (#101). */
-const HOLD_MS = 900;
 /** Injected, so nothing here touches the wall clock — `passedAt` is a receipt, not a schedule. */
 const STAMP = () => '2026-02-03T09:00:00.000Z';
 
@@ -83,17 +80,15 @@ function poolModule(size = 6, pool: PoolItem[] = poolOf(size)) {
 }
 
 /**
- * Seeds production the only way the app can: one `recordProduction` per Produce-phase got-it.
- * Two per sentence across the whole rung is exactly what `exit_available` means (PRD §8 F1) — and
- * it is what opens the ritual whose hold opens this screen.
+ * Seeds production the only way the app can: one `recordProduction` per Read-phase got-it. One per
+ * sentence across the whole rung is exactly what `exit_available` means (PRD §8 F1, #349) — and it
+ * is what opens the ritual this screen IS.
  */
 function produceRung(sentences = 2): void {
   const store = useAppStore.getState();
   store.ensureCourse(COURSE);
-  for (let round = 0; round < 2; round += 1) {
-    for (let index = 0; index < sentences; index += 1) {
-      store.recordProduction(COURSE, sentenceId(index));
-    }
+  for (let index = 0; index < sentences; index += 1) {
+    store.recordProduction(COURSE, sentenceId(index));
   }
 }
 
@@ -106,22 +101,19 @@ async function renderAt(hash: string, module: unknown): Promise<void> {
 }
 
 /**
- * The learner's own way in: `/ritual`, and the whole ~900ms hold — which is now the whole of it.
- * The hold used to end on a CTA to tap; #314 made the paid hold carry the learner here itself, so
- * the walk-in is the hold plus the beat the ✓ stands for. Nothing in this file reaches
- * `#/comprehension` any other way, because nothing in the product does.
+ * The learner's own way in: `/ritual`, which IS this screen since #348.
+ *
+ * It used to be a three-step arc — write an eleventh sentence in a notebook, check it, sign it
+ * with a ~900ms hold — and only a paid hold handed over here. The product retired notebook
+ * writing, so opening the ritual opens the test. What still has to be true is the COUNTERS: the
+ * rung must be marked through, which `produceRung()` seeds the only way the app can.
  */
 async function walkIn(module: unknown = poolModule()): Promise<void> {
   produceRung();
   await renderAt('#/ritual', module);
-  const arc = await screen.findByRole('list');
-  const confirm = within(arc).getAllByRole('listitem')[2];
-  fireEvent.pointerDown(within(confirm as HTMLElement).getByRole('button'));
-  act(() => vi.advanceTimersByTime(HOLD_MS));
-  // The ✓ lands, is read, and the arc moves on by itself (#314).
-  act(() => vi.advanceTimersByTime(SIGNED_BEAT_MS));
-
-  await waitFor(() => expect(window.location.hash).toBe('#/comprehension'));
+  // The shell's frame arrives before the rung's module does, and the guard cannot answer until it
+  // has: waiting for the item's own control is waiting for the screen to have decided.
+  await screen.findByRole('button', { name: strings('revealLabelComprehend') });
 }
 
 /* ------------------------------------------------------- the item, as the learner drives it */
@@ -184,8 +176,8 @@ beforeEach(() => {
    */
   vi.useFakeTimers({ shouldAdvanceTime: true });
   // The show-once hints (#319) are not what this file is about; seeded as already seen so the
-  // ritual's check step and the cards render the shape every assertion here was written against.
-  for (const hint of ['recall', 'production', 'check']) {
+  // cards render the shape every assertion here was written against.
+  for (const hint of ['recall', 'production']) {
     localStorage.setItem(`rung:hint:${hint}`, '1');
   }
 });
@@ -201,27 +193,30 @@ afterEach(() => {
 /* ------------------------------------------------------------------------- the guard */
 
 describe('part 2 is where part 1 leaves you', () => {
-  it('opens on the items when the hold was actually held', async () => {
+  it('opens on the items — the ritual IS the test since #348', async () => {
     await walkIn();
 
-    expect(window.location.hash).toBe('#/comprehension');
+    expect(window.location.hash).toBe('#/ritual');
     expect(screen.getByText(onScreen(poolOf(6)).display)).toBeVisible();
   });
 
-  it('sends a deep link back to the ritual — the hold is what opens this screen', async () => {
-    produceRung();
-    await renderAt('#/comprehension', poolModule());
-
-    await waitFor(() => expect(window.location.hash).toBe('#/ritual'));
-    // And it really is the arc, not an empty frame with a rewritten URL.
-    expect(await screen.findByText(strings('ritual.stepTitle.write'))).toBeVisible();
-  });
-
-  it('sends a deep link on to the module when the rung is not produced out either', async () => {
-    // No counters: the ritual's own guard takes it from here, and the work is where it points.
-    await renderAt('#/comprehension', poolModule());
+  /**
+   * A deep link is no longer refused by a hand-over token — there is no hold to have paid. What
+   * guards the screen is what always did the real work: the counters. An unmarked rung has no
+   * test to sit, and lands on its module, which is where the work is.
+   */
+  it('sends a deep link on to the module when the rung is not marked through', async () => {
+    await renderAt('#/ritual', poolModule());
 
     await waitFor(() => expect(window.location.hash).toBe(`#/module/${CURRENT}`));
+  });
+
+  it('opens for a marked-through rung on a deep link, with no token to carry', async () => {
+    produceRung();
+    await renderAt('#/ritual', poolModule());
+
+    await screen.findByRole('main');
+    expect(window.location.hash).toBe('#/ritual');
   });
 
   it('lets go the moment the rung it was testing is no longer the current one', async () => {
@@ -240,20 +235,21 @@ describe('part 2 is where part 1 leaves you', () => {
     await walkIn();
 
     expect(screen.getByRole('button', { name: 'Back to the ladder' })).toBeVisible();
-    expect(screen.getByRole('heading', { level: 1 }).textContent).toBe('Comprehension');
+    expect(screen.getByRole('heading', { level: 1 }).textContent).toBe('Exit ritual');
   });
 
-  /** The token itself: a key in the history entry, and only the ritual's own step turns it. */
+  /**
+   * The token itself: a key in the history entry, and only the step that hands over turns it.
+   * There is ONE now — #348 retired the hold, so `'comprehension'` is the whole vocabulary.
+   */
   describe('the hand-over token', () => {
     it('answers only for the step that handed over', () => {
-      expect(cameFrom('hold', handover('hold'))).toBe(true);
-      expect(cameFrom('comprehension', handover('hold'))).toBe(false);
-      expect(cameFrom('hold', handover('comprehension'))).toBe(false);
+      expect(cameFrom('comprehension', handover('comprehension'))).toBe(true);
     });
 
     it('answers false for everything a deep link can carry', () => {
       for (const state of [null, undefined, '', 'hold', 0, [], {}, { ritualStep: 'held' }]) {
-        expect(cameFrom('hold', state), JSON.stringify(state) ?? 'undefined').toBe(false);
+        expect(cameFrom('comprehension', state), JSON.stringify(state) ?? 'undefined').toBe(false);
       }
     });
   });
@@ -535,8 +531,8 @@ describe('nothing is stored on a failed round', () => {
     expect(after?.modules).toEqual({});
     expect(after?.reviewQueue).toEqual([]);
     expect(after?.session).toBeNull();
-    // The counters are the ones the Produce phase earned, untouched by anything here.
-    expect(after?.production).toEqual({ [sentenceId(0)]: 2, [sentenceId(1)]: 2 });
+    // The counters are the ones the Read phase earned, untouched by anything here.
+    expect(after?.production).toEqual({ [sentenceId(0)]: 1, [sentenceId(1)]: 1 });
   });
 
   /**
@@ -623,7 +619,7 @@ describe('two "same meaning" marks finish the test', () => {
 
     playAttempt(pool, ['got', 'miss']);
 
-    expect(window.location.hash).toBe('#/comprehension');
+    expect(window.location.hash).toBe('#/ritual');
     expect(screen.getByText(strings('retry.title'))).toBeVisible();
   });
 });

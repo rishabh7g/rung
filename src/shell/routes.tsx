@@ -26,7 +26,6 @@ import LadderScreen from '../screens/LadderScreen.tsx';
 import ModuleScreen from '../screens/ModuleScreen.tsx';
 import SentenceScreen from '../screens/SentenceScreen.tsx';
 import PracticeScreen from '../screens/PracticeScreen.tsx';
-import RitualScreen from '../screens/RitualScreen.tsx';
 import ComprehensionScreen from '../screens/ComprehensionScreen.tsx';
 import VerdictScreen from '../screens/VerdictScreen.tsx';
 import SettingsScreen from '../screens/SettingsScreen.tsx';
@@ -36,47 +35,53 @@ export const HOME_PATH = '/';
 /** The Practice hub — where the pause ✕ returns a paused session. */
 export const PRACTICE_PATH = '/practice';
 export const SETTINGS_PATH = '/settings';
-/** The exit ritual — the only unlock path, and the rung card's primary once a rung is ready. */
+/**
+ * The exit ritual — the only unlock path, and the rung card's primary once a rung is ready.
+ *
+ * **It IS the comprehension test now** (#348). The ritual used to open on a three-step arc asking
+ * the learner to write an eleventh sentence in a notebook, sign it with a ~900ms hold, and only
+ * then hand over to a second route for comprehension. The product retired notebook writing, so
+ * the arc, the hold and the hand-over went with it — and rather than leave `/ritual` as a screen
+ * that only redirects, the route renders the test directly. One route, one screen, and the rung
+ * card's CTA and the back chevron point where they always did.
+ */
 export const RITUAL_PATH = '/ritual';
-/** The ritual's second half, where the completed hold hands over (#101, #102). */
-export const COMPREHENSION_PATH = '/comprehension';
 /** The ritual's end: the pass checklist and the climb back (#103). */
 export const VERDICT_PATH = '/verdict';
 
 /* ------------------------------------------------------- the ritual's hand-overs */
 
 /**
- * The exit ritual's steps, in order — the three screens that are only reachable from each other
- * (#101 → #102 → #103). They are a chain rather than a menu: the hold is what opens Comprehension,
- * and passing Comprehension is what opens the Verdict.
+ * What the ritual hands over to the Verdict.
+ *
+ * There used to be two steps and two tokens: the hold proved the learner had signed for an
+ * eleventh sentence, and passing comprehension proved the test was taken. #348 retired notebook
+ * writing, so the hold is gone and with it the `'hold'` token — the ritual IS the comprehension
+ * test now, and the one hand-over left is the one that matters.
  */
-export type RitualStep = 'hold' | 'comprehension';
+export type RitualStep = 'comprehension';
 
 /**
- * **How the chain is guarded: the navigation itself carries the proof.**
+ * **How the last step is guarded: the navigation itself carries the proof.**
  *
- * Every route in this app is a real deep link — HashRouter, an installable PWA — so
- * `#/comprehension` is a URL a learner can reach with the ritual never started. What makes it
- * legitimate is one fact that happened a moment ago on another screen, and the honest question is
- * where that fact should live:
+ * Every route in this app is a real deep link — HashRouter, an installable PWA — so `#/verdict`
+ * is a URL a learner can reach with the test never taken. What makes it legitimate is one fact
+ * that happened a moment ago on another screen, and the honest question is where that fact should
+ * live:
  *
  *   • **Not in the store.** Nothing about an unfinished ritual is progress, and Invariant 4 says
- *     only the pass writes anything; a `heldTheHold` flag in `rung:state` would be a durable
+ *     only the pass writes anything; a `passedTheTest` flag in `rung:state` would be a durable
  *     record of a ritual in progress, surviving app kills and course switches, that some later
  *     screen would eventually have to clean up.
- *   • **Not on the ritual screen.** It deliberately holds no state at all (#100) — a source scan
- *     fails it on `useState`/`useReducer`/`useRef`, which is what keeps the learner's sentence
- *     from having anywhere to live, not even for one render — so a lifted flag would reopen
- *     exactly the door that scan closed.
  *   • **In the history entry**, which is where "how did you get here" already lives. React
- *     Router's location state is per entry: the hold's own `<Link state={handover('hold')}>`
- *     writes it, this screen reads it, a typed URL or a tap on a stale entry does not carry it,
- *     and it dies with the entry. It holds one literal string, so there is nothing in the
- *     mechanism a learner's sentence could ever be put into.
+ *     Router's location state is per entry: Comprehension's own `navigate(state: …)` writes it,
+ *     the Verdict reads it, a typed URL or a tap on a stale entry does not carry it, and it dies
+ *     with the entry. It holds one literal string, so there is nothing in the mechanism a
+ *     learner's own words could ever be put into.
  *
- * The token is a **key, not a claim**: it proves the learner arrived through the hold, and the
- * receiving screen still asks the ladder whether the ritual is open at all (`exit_available`,
- * #95), so a forged history entry buys nothing a stale one does not.
+ * The token is a **key, not a claim**: it proves the learner arrived by passing, and the receiving
+ * screen still asks the ladder whether the ritual was open at all (`exit_available`, #95), so a
+ * forged history entry buys nothing a stale one does not.
  */
 export function handover(step: RitualStep): { ritualStep: RitualStep } {
   return { ritualStep: step };
@@ -169,13 +174,7 @@ export const SHELL_ROUTES: readonly ShellRoute[] = [
   { path: '/module/:id', label: 'Module', chrome: 'back', element: <ModuleScreen /> },
   { path: '/sentence/:id', label: 'Sentence', chrome: 'back', element: <SentenceScreen /> },
   { path: PRACTICE_PATH, label: 'Practice', chrome: 'brand', element: <PracticeScreen /> },
-  { path: RITUAL_PATH, label: 'Exit ritual', chrome: 'back', element: <RitualScreen /> },
-  {
-    path: COMPREHENSION_PATH,
-    label: 'Comprehension',
-    chrome: 'back',
-    element: <ComprehensionScreen />,
-  },
+  { path: RITUAL_PATH, label: 'Exit ritual', chrome: 'back', element: <ComprehensionScreen /> },
   { path: VERDICT_PATH, label: 'Verdict', chrome: 'back', element: <VerdictScreen /> },
   { path: SETTINGS_PATH, label: 'Settings', chrome: 'brand', element: <SettingsScreen /> },
 ];

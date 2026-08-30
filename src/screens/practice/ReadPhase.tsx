@@ -3,10 +3,15 @@
  * middle phase, and the quietest thing in the product: one sentence on screen, the learner's own
  * voice, and nothing being marked.
  *
- * **Nothing here writes.** Read moves between Review (which feeds the Leitner queue) and Produce
- * (which feeds the production counters) and touches neither: there is no self-mark on this card,
- * no counter, no box. The only thing it moves is the position — which the session snapshots, so
- * leaving mid-read comes back to the same sentence (#99).
+ * **This is where the exit gate lives now** (#349). Read used to write nothing at all: it sat
+ * between Review, which feeds the Leitner queue, and Produce, which fed the counters that open a
+ * rung's exit ritual. The product retired notebook writing and Produce went with it — so the gate
+ * moved HERE, to the learner's own mark on each sentence they read.
+ *
+ * A got-it counts the sentence; a miss counts nothing and costs nothing. Neither touches the
+ * Leitner queue, which is Review's alone. The mark does not move the pager either: this is a
+ * read-through, and a learner who wants to sit with a sentence, mark it, and read it again should
+ * be able to. The pager is still the navigation.
  *
  * **The cue is HIDDEN until asked for** — the one deliberate divergence from the prototype, which
  * opens with the Hindi line already showing (`readHiOn: true`). Read sits one phase before
@@ -28,6 +33,7 @@ import { useState } from 'react';
 import type { L2Written } from '../../course/manifest.ts';
 import { useStrings } from '../../course/strings.ts';
 import type { Sentence } from '../../course/types.ts';
+import { SelfMark } from '../../components/SelfMark.tsx';
 import { WhyPanel } from '../../components/WhyPanel.tsx';
 import { RegistrationMarks } from '../RegistrationMarks.tsx';
 import { rungLabel } from '../ladder/rungLabel.ts';
@@ -44,6 +50,14 @@ interface ReadPhaseProps {
   total: number;
   /** Back. Never called on the first sentence — the control is disabled there. */
   onPrev: () => void;
+  /**
+   * The learner's own verdict on this sentence (#349). A got-it counts it towards the rung's exit
+   * ritual; a miss counts nothing. The phase reports the mark and the session decides what it
+   * costs — the same division of labour every marked surface in this app keeps.
+   */
+  onMark: (gotIt: boolean) => void;
+  /** Has this sentence already been marked got-it? The mark is a fact, not a tally to re-take. */
+  marked: boolean;
   /** Next — and on the last sentence, the hand-over to Produce. The session decides which. */
   onNext: () => void;
   /** The course's writing direction — every word on this card is its content or its copy. */
@@ -59,6 +73,8 @@ export function ReadPhase({
   total,
   onPrev,
   onNext,
+  onMark,
+  marked,
   dir,
   l2,
 }: ReadPhaseProps) {
@@ -133,6 +149,26 @@ export function ReadPhase({
         />
       </div>
 
+      {/**
+       * The gate (#349). The same two segments every marked surface in the app uses — the mark is
+       * the learner's, and the app's whole part in it is to take it (Invariant 4).
+       *
+       * It is NOT a commit window like the reveal card's (#313): there is nothing to advance to,
+       * because the mark does not move the pager. A got-it lands the moment it is chosen, and the
+       * lit segment is the receipt. Re-marking a sentence already counted writes nothing — the
+       * counter is a fact about the sentence, not a tally of taps.
+       */}
+      <div className={styles.marks}>
+        <SelfMark
+          // Keyed by the sentence, so the next one arrives unmarked rather than wearing the last
+          // one's verdict.
+          key={sentence.id}
+          mark={marked ? 'got' : null}
+          onMark={(mark) => onMark(mark === 'got')}
+          dir={dir}
+        />
+      </div>
+
       {/* Bottom of the column, where the prototype puts the pair. */}
       <div className={styles.pager}>
         <button
@@ -147,9 +183,9 @@ export function ReadPhase({
           {strings['read.prev']}
         </button>
         <button type="button" className={styles.next} onClick={onNext} dir={dir}>
-          {/* The last sentence names where it goes, as the prototype's does: reading the rung
-              through IS the hand-over to Produce. */}
-          {last ? strings['read.toProduce'] : strings['read.next']}
+          {/* The last sentence names where it goes. It used to hand over to Produce; with that
+              phase gone (#349) reading the rung through IS the end of the session. */}
+          {last ? strings['read.finish'] : strings['read.next']}
         </button>
       </div>
     </section>

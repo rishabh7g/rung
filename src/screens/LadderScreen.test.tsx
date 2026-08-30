@@ -21,7 +21,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from '../App.tsx';
 import { resetContentCache } from '../course/content.ts';
 import { resetManifestCache } from '../course/manifest.ts';
-import { resetStringsCache } from '../course/strings.ts';
+import { interpolate, resetStringsCache } from '../course/strings.ts';
 import { ladderFromLevels } from '../engine/progression.ts';
 import { justPassed, passedRung } from '../shell/routes.tsx';
 import { useAppStore } from '../state/store.ts';
@@ -65,8 +65,8 @@ function tenRungLadder(courseId = COURSE) {
 }
 
 /**
- * Seeds production the only way the app can: one `recordProduction` per Produce-phase got-it, in
- * the order the learner would have marked them. Two per sentence is what opens the exit ritual.
+ * Seeds production the only way the app can: one `recordProduction` per Read-phase got-it, in the
+ * order the learner would have marked them. One per sentence is what opens the exit ritual (#349).
  */
 function produce(...sentenceIds: string[]): void {
   const store = useAppStore.getState();
@@ -126,6 +126,25 @@ function strings(key: string): string {
   return stringValue(COURSE, key);
 }
 
+/**
+ * A fixture value with its `{placeholders}` filled — the chrome went into the bundle on #351
+ * (`ladder.positionLine`, `ladder.passed`, `levelStrip.level`, `rungCard.currentRung`), so the
+ * lines this screen used to spell in English are now assertions against the course's own words.
+ */
+function filled(key: string, values: Readonly<Record<string, string | number>>): string {
+  return interpolate(strings(key), values);
+}
+
+/** The rung card's kicker for a given rung. */
+function currentRung(rung: string): string {
+  return filled('rungCard.currentRung', { rung });
+}
+
+/** A level cell's kicker, as a matcher for the sealed cell's accessible name. */
+function levelCell(level: number): RegExp {
+  return new RegExp(filled('levelStrip.level', { level }));
+}
+
 beforeEach(() => {
   resetContentCache();
   resetManifestCache();
@@ -154,7 +173,7 @@ describe('a fresh install', () => {
   it('makes M1 the current rung and the dominant object on the screen', async () => {
     await renderLadder();
 
-    expect(screen.getByText('M1 · CURRENT RUNG')).toBeInTheDocument();
+    expect(screen.getByText(currentRung('M1'))).toBeInTheDocument();
     // The only heading below the shell's wordmark: the rung the learner is on.
     expect(screen.getByRole('heading', { level: 2 }).textContent).toBe('L1 rung 1');
     expect(screen.getByText('what L1 rung 1 does')).toBeInTheDocument();
@@ -191,10 +210,12 @@ describe('a fresh install', () => {
     expect(markers()).toEqual(['current', ...Array<string>(9).fill('locked')]);
   });
 
-  it('reads LEVEL 1 · 0 OF 10 and closes with the course’s own pending line', async () => {
+  it('reads its position line and closes with the course’s own pending line', async () => {
     await renderLadder();
 
-    expect(screen.getByText(/LEVEL 1 · 0 OF 10/)).toBeInTheDocument();
+    expect(
+      screen.getByText(filled('ladder.positionLine', { level: 1, passed: 0, total: 10 })),
+    ).toBeInTheDocument();
     expect(
       screen.getByText(
         strings('ladder.pendingLine')
@@ -205,20 +226,36 @@ describe('a fresh install', () => {
     ).toBeInTheDocument();
   });
 
+  /**
+   * #350: the home screen names what the learner is learning, in the course's own words.
+   *
+   * The assertion is against the FIXTURE's value (`hi-mr ladder.learning`), which is the whole
+   * point of the shared strings fixture: an assertion against "Marathi" would pass just as well
+   * on a shell that hardcoded the manifest's English `l2`, and that is exactly the thing this
+   * key exists to prevent.
+   */
+  it('names what the learner is learning, in the course’s own words', async () => {
+    await renderLadder();
+
+    const learning = screen.getByText(strings('ladder.learning'));
+    expect(learning).toBeInTheDocument();
+    expect(learning).toHaveAttribute('dir', 'ltr');
+  });
+
   it('seals Levels 2 and 3, and only they are tappable', async () => {
     await renderLadder();
 
     expect(screen.getByText('Foundations — say what you need')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /LEVEL 2/ })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /LEVEL 3/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: levelCell(2) })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: levelCell(3) })).toBeInTheDocument();
     // The active cell is where the learner already is: a control with nothing to do is not one.
-    expect(screen.queryByRole('button', { name: /LEVEL 1/ })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: levelCell(1) })).not.toBeInTheDocument();
   });
 
   it('answers a sealed cell with an honest count, not a lecture', async () => {
     await renderLadder();
 
-    fireEvent.click(screen.getByRole('button', { name: /LEVEL 2/ }));
+    fireEvent.click(screen.getByRole('button', { name: levelCell(2) }));
 
     const toast = await screen.findByRole('status');
     // Level 2, and the ten rungs of Level 1 that are still in the way.
@@ -238,13 +275,13 @@ describe('mid-journey — three rungs climbed', () => {
   it('moves the current rung to M4 and opens every rung behind it', async () => {
     await renderLadder();
 
-    expect(screen.getByText('M4 · CURRENT RUNG')).toBeInTheDocument();
+    expect(screen.getByText(currentRung('M4'))).toBeInTheDocument();
     // M4's module is not authored in this ladder, so its card is the pending stage: no CTA and
     // no note, so the only links in the list are the rungs already passed [D22].
     expect(openRungs()).toEqual([
-      'M1 · L1 rung 1what L1 rung 1 doesPASSED',
-      'M2 · L1 rung 2what L1 rung 2 doesPASSED',
-      'M3 · L1 rung 3what L1 rung 3 doesPASSED',
+      `M1 · L1 rung 1what L1 rung 1 does${strings('ladder.passed')}`,
+      `M2 · L1 rung 2what L1 rung 2 does${strings('ladder.passed')}`,
+      `M3 · L1 rung 3what L1 rung 3 does${strings('ladder.passed')}`,
     ]);
     expect(screen.getByRole('link', { name: /L1 rung 2/ })).toHaveAttribute(
       'href',
@@ -267,7 +304,9 @@ describe('mid-journey — three rungs climbed', () => {
   it('counts in the header and the pending line — 3 of 10, 7 to go', async () => {
     await renderLadder();
 
-    expect(screen.getByText(/LEVEL 1 · 3 OF 10/)).toBeInTheDocument();
+    expect(
+      screen.getByText(filled('ladder.positionLine', { level: 1, passed: 3, total: 10 })),
+    ).toBeInTheDocument();
     expect(
       screen.getByText(
         strings('ladder.pendingLine')
@@ -281,7 +320,7 @@ describe('mid-journey — three rungs climbed', () => {
   it('keeps Level 2 sealed until every rung below it is climbed, and says how many', async () => {
     await renderLadder();
 
-    fireEvent.click(screen.getByRole('button', { name: /LEVEL 2/ }));
+    fireEvent.click(screen.getByRole('button', { name: levelCell(2) }));
 
     expect(await screen.findByRole('status')).toHaveTextContent(
       strings('ladder.sealedToast').replace('{level}', '2').replace('{remaining}', '7'),
@@ -304,7 +343,9 @@ describe('mid-journey — three rungs climbed', () => {
 describe('the staged rung card [D22]', () => {
   /** The tab that must survive every stage. */
   function practiceTab(): HTMLElement {
-    return within(screen.getByRole('navigation')).getByRole('link', { name: 'Practice' });
+    return within(screen.getByRole('navigation')).getByRole('link', {
+      name: strings('nav.practice'),
+    });
   }
 
   it('opens fresh: one action into the module, and nothing beside it', async () => {
@@ -362,8 +403,8 @@ describe('the staged rung card [D22]', () => {
 
   it('holds the ritual back while one sentence is a got-it short', async () => {
     useAppStore.getState().markStudied(COURSE, 'L1-M1');
-    // The module's other sentence is at 2×; this one is at 1×. Nine-of-ten, at the fixture's scale.
-    produce('L1-M1-S01', 'L1-M1-S01', 'L1-M1-S02');
+    // One of the module's two sentences marked, the other not — nine-of-ten at the fixture's scale.
+    produce('L1-M1-S01', 'L1-M1-S01');
 
     await renderLadder();
     await screen.findByRole('link', { name: strings('rungCard.practice') });
@@ -382,11 +423,11 @@ describe('the staged rung card [D22]', () => {
     climb('L1-M1', 'L1-M2');
     await renderLadder();
 
-    expect(screen.getByText('M3 · CURRENT RUNG')).toBeInTheDocument();
+    expect(screen.getByText(currentRung('M3'))).toBeInTheDocument();
     // The card offers no CTA and no explanation: the two links in the list are the passed rungs.
     expect(openRungs()).toEqual([
-      'M1 · L1 rung 1what L1 rung 1 doesPASSED',
-      'M2 · L1 rung 2what L1 rung 2 doesPASSED',
+      `M1 · L1 rung 1what L1 rung 1 does${strings('ladder.passed')}`,
+      `M2 · L1 rung 2what L1 rung 2 does${strings('ladder.passed')}`,
     ]);
     // There is nothing behind this rung to open, so nothing offers to open it.
     expect(screen.queryAllByRole('link').map((link) => link.getAttribute('href'))).not.toContain(
@@ -447,9 +488,7 @@ describe('the unlock beat', () => {
 
     expect(beats()).toEqual(['rung']);
     // On the card of the rung that is now current — not on the one that was just passed.
-    expect(document.querySelector('[data-beat="rung"]')?.textContent).toContain(
-      'M2 · CURRENT RUNG',
-    );
+    expect(document.querySelector('[data-beat="rung"]')?.textContent).toContain(currentRung('M2'));
   });
 
   it('does not play on an ordinary visit — no flag, no beat', async () => {
@@ -476,10 +515,10 @@ describe('the unlock beat', () => {
     await arriveAfterPassing('L1-M1');
     expect(beats()).toEqual(['rung']);
 
-    fireEvent.click(screen.getByRole('link', { name: 'Practice' }));
+    fireEvent.click(screen.getByRole('link', { name: strings('nav.practice') }));
     await screen.findByText(strings('practice.hubTitle'));
-    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
-    await screen.findByText('M2 · CURRENT RUNG');
+    fireEvent.click(screen.getByRole('link', { name: strings('nav.ladder') }));
+    await screen.findByText(currentRung('M2'));
 
     expect(beats()).toEqual([]);
   });
@@ -494,10 +533,10 @@ describe('the unlock beat', () => {
     await arriveAfterPassing('L1-M10');
 
     expect(beats().sort()).toEqual(['level', 'rung']);
-    expect(document.querySelector('[data-beat="level"]')?.textContent).toContain('LEVEL 2');
-    expect(document.querySelector('[data-beat="rung"]')?.textContent).toContain(
-      'M1 · CURRENT RUNG',
+    expect(document.querySelector('[data-beat="level"]')?.textContent).toContain(
+      filled('levelStrip.level', { level: 2 }),
     );
+    expect(document.querySelector('[data-beat="rung"]')?.textContent).toContain(currentRung('M1'));
   });
 
   it('does not touch the strip at nine of ten — the level below is not complete', async () => {
@@ -505,7 +544,9 @@ describe('the unlock beat', () => {
     await arriveAfterPassing('L1-M9');
 
     expect(beats()).toEqual(['rung']);
-    expect(screen.getByText(/LEVEL 1 · 9 OF 10/)).toBeInTheDocument();
+    expect(
+      screen.getByText(filled('ladder.positionLine', { level: 1, passed: 9, total: 10 })),
+    ).toBeInTheDocument();
   });
 
   it('stays quiet on a ladder with nothing left to open', async () => {
@@ -560,9 +601,13 @@ describe('a finished ladder', () => {
   it('goes quiet: the last level, every rung passed, no current rung and no pending line', async () => {
     await renderLadder();
 
-    expect(screen.getByText(/LEVEL 3 · 10 OF 10/)).toBeInTheDocument();
+    expect(
+      screen.getByText(filled('ladder.positionLine', { level: 3, passed: 10, total: 10 })),
+    ).toBeInTheDocument();
     expect(markers()).toEqual(Array<string>(10).fill('passed'));
-    expect(screen.queryByText(/CURRENT RUNG/)).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(new RegExp(strings('rungCard.currentRung').replace(' {rung}', ''))),
+    ).not.toBeInTheDocument();
     expect(screen.queryByText(/ladder\.pendingLine/)).not.toBeInTheDocument();
   });
 

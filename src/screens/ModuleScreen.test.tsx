@@ -20,7 +20,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from '../App.tsx';
 import { resetContentCache } from '../course/content.ts';
 import { resetManifestCache } from '../course/manifest.ts';
-import { resetStringsCache } from '../course/strings.ts';
+import { interpolate, resetStringsCache } from '../course/strings.ts';
 import { ladderFromLevels } from '../engine/progression.ts';
 import { useAppStore } from '../state/store.ts';
 import { DEV_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
@@ -164,7 +164,9 @@ describe('the guard', () => {
 
     // The Ladder, not the module: its current-rung card is the thing that proves which screen
     // this is, and the route replaced the bad entry rather than pushing over it.
-    expect(await screen.findByText('M1 · CURRENT RUNG')).toBeInTheDocument();
+    expect(
+      await screen.findByText(interpolate(strings('rungCard.currentRung'), { rung: 'M1' })),
+    ).toBeInTheDocument();
     expect(window.location.hash).toBe('#/');
     expect(screen.queryByText('M2 · MODULE')).not.toBeInTheDocument();
   });
@@ -172,7 +174,9 @@ describe('the guard', () => {
   it('sends an id the ladder does not list back to the Ladder too', async () => {
     await renderAt('#/module/L9-M9');
 
-    expect(await screen.findByText('M1 · CURRENT RUNG')).toBeInTheDocument();
+    expect(
+      await screen.findByText(interpolate(strings('rungCard.currentRung'), { rung: 'M1' })),
+    ).toBeInTheDocument();
     expect(window.location.hash).toBe('#/');
   });
 });
@@ -212,7 +216,7 @@ describe('markStudied', () => {
     const markStudied = spyOnMarkStudied();
 
     await renderAt(`#/module/${LOCKED}`);
-    await screen.findByText('M1 · CURRENT RUNG');
+    await screen.findByText(interpolate(strings('rungCard.currentRung'), { rung: 'M1' }));
 
     expect(markStudied).not.toHaveBeenCalled();
   });
@@ -279,7 +283,7 @@ describe('a card', () => {
 /* ---------------------------------------------------------------- the dots */
 
 describe('the production dots', () => {
-  /** One Produce-phase got-it per call, through the store's one counter action (#95). */
+  /** One Read-phase got-it per call, through the store's one counter action (#95). */
   function produce(...sentenceIds: string[]): void {
     const { ensureCourse, recordProduction } = useAppStore.getState();
     ensureCourse(COURSE);
@@ -294,30 +298,41 @@ describe('the production dots', () => {
 
     await renderModule();
 
-    expect(dots(0)).toEqual(['done', 'pending']);
-    // Three got-its draw the same two dots: two is what the ritual asks for, and there is
+    expect(dots(0)).toEqual(['done']);
+    // Three got-its draw the same one dot: one is what the ritual asks for (#349), and there is
     // nothing further to say about a sentence past it.
-    expect(dots(1)).toEqual(['done', 'done']);
+    expect(dots(1)).toEqual(['done']);
   });
 
-  it('draw both dots pending on a module nobody has produced yet', async () => {
+  it('draw the dot pending on a module nobody has marked yet', async () => {
     await renderModule();
 
-    expect(dots(0)).toEqual(['pending', 'pending']);
-    expect(dots(1)).toEqual(['pending', 'pending']);
+    expect(dots(0)).toEqual(['pending']);
+    expect(dots(1)).toEqual(['pending']);
   });
 
+  /**
+   * The count above them is SENTENCES marked, not marks made (#349) — so a sentence marked twice
+   * moves the row it is on and nothing else, and `n / 10` stays an answer to "how much of this
+   * rung is read through".
+   */
   it('fill as the got-its land, with no reload — the count above them follows', async () => {
     await renderModule();
-    expect(screen.getByText('0 / 4')).toBeInTheDocument();
+    expect(screen.getByText('0 / 2')).toBeInTheDocument();
 
     act(() => {
-      produce(`${CURRENT}-S01`, `${CURRENT}-S01`, `${CURRENT}-S02`);
+      produce(`${CURRENT}-S01`, `${CURRENT}-S01`);
     });
 
-    expect(dots(0)).toEqual(['done', 'done']);
-    expect(dots(1)).toEqual(['done', 'pending']);
-    expect(screen.getByText('3 / 4')).toBeInTheDocument();
+    expect(dots(0)).toEqual(['done']);
+    expect(dots(1)).toEqual(['pending']);
+    expect(screen.getByText('1 / 2')).toBeInTheDocument();
+
+    act(() => {
+      produce(`${CURRENT}-S02`);
+    });
+
+    expect(screen.getByText('2 / 2')).toBeInTheDocument();
   });
 });
 

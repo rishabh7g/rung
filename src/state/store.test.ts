@@ -69,10 +69,10 @@ afterEach(() => {
   vi.restoreAllMocks();
 });
 
-describe('state v9', () => {
+describe('state v10', () => {
   it('starts as the shape the PRD prints — the drift guard (§8 F7)', () => {
     expect(persistedSlice(useAppStore.getState())).toEqual({
-      stateVersion: 9,
+      stateVersion: 10,
       activeCourse: '',
       courses: {},
       settings: { elapsedTickEnabled: true, userLang: '' },
@@ -107,14 +107,14 @@ describe('state v9', () => {
    * v9 settings is two keys (#322): the tick, and the user's own language — unset at first run,
    * which means "follow the active course's L1" and is why an existing learner sees no change.
    */
-  it('defaults the tick ON pending [Q3] (#70), and the language unset — v9 settings is two keys', () => {
+  it('defaults the tick ON pending [Q3] (#70), and the language unset — settings is two keys', () => {
     expect(useAppStore.getState().settings).toEqual({ elapsedTickEnabled: true, userLang: '' });
   });
 
-  it('persists under rung:state, versioned 9', () => {
+  it('persists under rung:state, versioned 10', () => {
     useAppStore.getState().ensureCourse('hi-mr');
 
-    expect(stored().version).toBe(9);
+    expect(stored().version).toBe(10);
     expect(storage.items.has('rung:state')).toBe(true);
   });
 
@@ -266,11 +266,10 @@ describe('recordProduction', () => {
     const ready = () =>
       exitAvailable(sentences, useAppStore.getState().courses['hi-mr']?.production ?? {});
 
-    for (const sentenceId of sentences)
-      useAppStore.getState().recordProduction('hi-mr', sentenceId);
     expect(ready()).toBe(false);
 
     useAppStore.getState().recordProduction('hi-mr', 'L1-M1-S01');
+    // One sentence marked is not a rung: the gate is one mark APIECE (#349), not one in total.
     expect(ready()).toBe(false);
 
     useAppStore.getState().recordProduction('hi-mr', 'L1-M1-S02');
@@ -619,7 +618,7 @@ describe('switchCourse (#106 — swap, and nothing erased)', () => {
     reviewQueue: [{ sentenceId: 'L1-M1-S01', box: 2, dueInSessions: 1 }],
     sessionCount: 14,
     studied: { 'L1-M1': true, 'L1-M2': true },
-    session: { phase: 'produce', idx: 1, queue: ['L1-M2-S01', 'L1-M2-S02'] },
+    session: { phase: 'read', idx: 1, queue: ['L1-M2-S01', 'L1-M2-S02'] },
   };
 
   it('round-trips hi-mr → en-ar → hi-mr with every per-course fact EXACTLY restored (F0 AC)', () => {
@@ -718,7 +717,7 @@ describe('rehydration', () => {
     writeCourse('hi-mr', {
       sessionCount: 14,
       modules: { 'L1-M1': { status: 'passed', passedAt: '2026-02-02T02:40:00.000Z' } },
-      session: { phase: 'produce', idx: 4, queue: ['L1-M2-S01', 'L1-M2-S02'] },
+      session: { phase: 'read', idx: 4, queue: ['L1-M2-S01', 'L1-M2-S02'] },
     });
     setActiveCourse('en-ar');
     setSetting('elapsedTickEnabled', false);
@@ -734,7 +733,7 @@ describe('rehydration', () => {
     expect(persistedSlice(useAppStore.getState())).toEqual(before);
     expect(useAppStore.getState().activeCourse).toBe('en-ar');
     expect(useAppStore.getState().courses['hi-mr']?.session).toEqual({
-      phase: 'produce',
+      phase: 'read',
       idx: 4,
       queue: ['L1-M2-S01', 'L1-M2-S02'],
     });
@@ -769,7 +768,7 @@ describe('migration', () => {
 
     const state = useAppStore.getState();
     expect(warn).not.toHaveBeenCalled();
-    expect(state.stateVersion).toBe(9);
+    expect(state.stateVersion).toBe(10);
     expect(state.activeCourse).toBe('hi-mr');
     expect(state.courses['hi-mr']).toEqual({
       ...emptyCourseState(),
@@ -807,7 +806,7 @@ describe('migration', () => {
 
     const state = useAppStore.getState();
     expect(warn).not.toHaveBeenCalled();
-    expect(state.stateVersion).toBe(9);
+    expect(state.stateVersion).toBe(10);
     expect(state.activeCourse).toBe('hi-mr');
     // The ladder position survives the upgrade untouched (Invariant 8).
     expect(state.courses['hi-mr']).toEqual(midClimb);
@@ -828,13 +827,62 @@ describe('migration', () => {
     // lets a v7 backup through `serialize.ts`'s unknown-key refusal (#227).
     expect(state.settings).toEqual({ elapsedTickEnabled: false, userLang: '' });
     expect(Object.keys(state.settings).sort()).toEqual(['elapsedTickEnabled', 'userLang']);
-    expect(state.stateVersion).toBe(9);
+    expect(state.stateVersion).toBe(10);
     expect(state.courses['hi-mr']).toEqual(emptyCourseState());
   });
 
-  it('answers a COMPLETE v9 document even for a sparse v5 payload — a half shape is worse than a fresh one', () => {
-    expect(migrate({ stateVersion: 5, modules: {} }, 5)).toEqual({
+  /**
+   * The v9 → v10 step (#349): `'produce'` is no longer a phase, so a snapshot naming it has
+   * nowhere to resume to. The position goes; nothing the learner earned does — that is the whole
+   * point of the step, and the counters, the queue and the passed modules beside it are what prove
+   * the step is narrow.
+   */
+  it('retires a v9 session parked in the Produce phase, and keeps everything it earned', () => {
+    const v9 = {
       stateVersion: 9,
+      activeCourse: 'hi-mr',
+      courses: {
+        'hi-mr': {
+          ...emptyCourseState(),
+          production: { 'L1-M2-S01': 2 },
+          sessionCount: 14,
+          session: { phase: 'produce', idx: 4, queue: ['L1-M2-S01', 'L1-M2-S02'] },
+        },
+        // A course the learner is not looking at is migrated too — one snapshot per course (#99),
+        // and the unmigrated one would sit there until they switched to it.
+        'en-ar': {
+          ...emptyCourseState(),
+          session: { phase: 'produce', idx: 0, queue: ['L1-M1-S01'] },
+        },
+      },
+      settings: { elapsedTickEnabled: true, userLang: '' },
+    };
+
+    const state = migrate(v9, 9);
+
+    expect(state.courses['hi-mr']?.session).toBeNull();
+    expect(state.courses['en-ar']?.session).toBeNull();
+    expect(state.courses['hi-mr']?.production).toEqual({ 'L1-M2-S01': 2 });
+    expect(state.courses['hi-mr']?.sessionCount).toBe(14);
+    expect(state.stateVersion).toBe(10);
+  });
+
+  it('leaves a review or read snapshot exactly where it was — only Produce had nowhere to go', () => {
+    const read = { phase: 'read' as const, idx: 3, queue: ['L1-M2-S01'] };
+    const v9 = {
+      stateVersion: 9,
+      activeCourse: 'hi-mr',
+      courses: { 'hi-mr': { ...emptyCourseState(), session: read } },
+      settings: { elapsedTickEnabled: true, userLang: '' },
+    };
+
+    // The very same object, not a copy: a document with no Produce session is not rewritten at all.
+    expect(migrate(v9, 9).courses['hi-mr']?.session).toBe(read);
+  });
+
+  it('answers a COMPLETE v10 document even for a sparse v5 payload — a half shape is worse than a fresh one', () => {
+    expect(migrate({ stateVersion: 5, modules: {} }, 5)).toEqual({
+      stateVersion: 10,
       activeCourse: 'hi-mr',
       courses: { 'hi-mr': emptyCourseState() },
       settings: { elapsedTickEnabled: true, userLang: '' },

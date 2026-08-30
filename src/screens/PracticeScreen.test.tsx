@@ -2,11 +2,11 @@
  * Practice (#96) — the hub, the session machine, and the one rule the whole ticket exists for:
  *
  *   • **the routing contract, in both directions** (PRD §8 F4) — a Review mark moves a Leitner box
- *     and NEVER a production counter; a Produce got-it moves a counter and NEVER the queue,
+ *     and NEVER a production counter; a Read got-it moves a counter and NEVER the queue,
  *   • **one session, counted once**: `startSession` is called on Begin and by nothing else, so
  *     `sessionCount` goes up by one and the queue ticks by one,
- *   • **the chips guide, they never gate**: Produce is reachable without reviewing or reading, and
- *     a Review chip with nothing due answers honestly instead of opening an empty phase,
+ *   • **the chips guide, they never gate**: Read is reachable without reviewing, and a Review chip
+ *     with nothing due answers honestly instead of opening an empty phase,
  *   • **the summary is counts**, from the course's own templates — no clock, no duration, no
  *     percentage (Invariant 2),
  *   • **the snapshot is written per course on every advance**, and cleared at the summary (F7).
@@ -90,7 +90,7 @@ async function begin(label = 'practice.beginRead'): Promise<void> {
   fireEvent.click(await screen.findByRole('button', { name: strings(label) }));
 }
 
-function chip(phase: 'review' | 'read' | 'produce'): HTMLElement {
+function chip(phase: 'review' | 'read'): HTMLElement {
   return screen.getByRole('button', { name: strings(`practice.phase.${phase}`) });
 }
 
@@ -106,12 +106,29 @@ function answer(mark: 'mark.gotIt' | 'mark.missed'): void {
   });
 }
 
-/** The cue on the card currently on screen — which sentence the session is serving. */
+/** The cue on the card currently on screen — which sentence the Review phase is serving. */
 async function cardFor(sentenceId: string): Promise<HTMLElement> {
   const sentence = moduleFixture(sentenceId.slice(0, sentenceId.lastIndexOf('-'))).sentences.find(
     (item) => item.id === sentenceId,
   );
   return screen.findByText(sentence?.cue ?? sentenceId);
+}
+
+/** The same question of a READ card, which shows the L2 line and keeps the cue behind a toggle. */
+async function readCardFor(sentenceId: string): Promise<HTMLElement> {
+  const sentence = moduleFixture(sentenceId.slice(0, sentenceId.lastIndexOf('-'))).sentences.find(
+    (item) => item.id === sentenceId,
+  );
+  return screen.findByText(sentence?.display ?? sentenceId);
+}
+
+/**
+ * Read's own self-mark (#349) — the gate, and the only writer of the counters since Produce went.
+ * No reveal to click first and no commit window to wait out: it does not move the pager, so it
+ * lands the moment it is chosen.
+ */
+function readMark(mark: 'mark.gotIt' | 'mark.missed'): void {
+  fireEvent.click(screen.getByRole('button', { name: strings(mark) }));
 }
 
 beforeEach(() => {
@@ -124,7 +141,7 @@ beforeEach(() => {
   vi.useFakeTimers({ shouldAdvanceTime: true });
   // The show-once hints (#319) have tests of their own; seeded as seen so the cards and the rung
   // card render the shape the assertions here were written against.
-  for (const hint of ['recall', 'production', 'check']) {
+  for (const hint of ['recall', 'production']) {
     localStorage.setItem(`rung:hint:${hint}`, '1');
   }
 });
@@ -140,28 +157,27 @@ afterEach(() => {
 /* ------------------------------------------------------------------------ the hub */
 
 describe('the hub', () => {
-  it('names the rung and what the three phases will serve — counts, from one plan', async () => {
+  it('names the rung and what the two phases will serve — counts, from one plan', async () => {
     await renderHub();
 
     expect(await screen.findByText(`M1 · ${moduleFixture(M1).title}`)).toBeInTheDocument();
-    // Nothing passed, so nothing is due: 0 to review, and the module's two sentences twice over.
+    // Nothing passed, so nothing is due: 0 to review, and the module's two sentences to read.
     expect(screen.getByText(line('practice.hubReview', { count: 0 }))).toBeInTheDocument();
     expect(screen.getByText(line('practice.hubRead', { count: 2 }))).toBeInTheDocument();
-    expect(screen.getByText(line('practice.hubProduce', { count: 2 }))).toBeInTheDocument();
     expect(screen.getByRole('button', { name: strings('practice.beginRead') })).toBeInTheDocument();
   });
 
   /**
    * #316: the hub is one screen, not a page to read. The counts stay — they are the promise the
-   * session then keeps — but the three tall numbered plates around them went, so Begin is in
-   * thumb reach rather than below three blueprint objects.
+   * session then keeps — but the tall numbered plates around them went, so Begin is in thumb
+   * reach rather than below a stack of blueprint objects. Two rows since #349, not three.
    */
-  it('draws the three phases as one row, with no 01 / 02 / 03 furniture', async () => {
+  it('draws the phases as one row, with no 01 / 02 / 03 furniture', async () => {
     await renderHub();
     await screen.findByText(line('practice.hubRead', { count: 2 }));
 
     const phases = screen.getByRole('list');
-    expect(within(phases).getAllByRole('listitem')).toHaveLength(3);
+    expect(within(phases).getAllByRole('listitem')).toHaveLength(2);
 
     // The prototype's numerals are gone; nothing on the hub counts the phases at the learner.
     const said = phases.textContent ?? '';
@@ -242,7 +258,7 @@ describe('starting a session', () => {
     await begin();
 
     expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Pause session' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: strings('a11y.pauseSession') })).toBeInTheDocument();
   });
 
   it('starts at Read when nothing is due — never an empty Review phase', async () => {
@@ -304,12 +320,12 @@ describe('a Review mark reaches the Leitner queue and never the counters', () =>
   });
 });
 
-describe('a Produce got-it reaches the counters and never the queue', () => {
+describe('a Read got-it reaches the counters and never the queue', () => {
   /**
-   * The discriminating seed: the very sentence about to be produced is ALSO in the review queue,
+   * The discriminating seed: the very sentence about to be marked is ALSO in the review queue,
    * enrolled and not due. Nothing in the product puts it there — a rung's sentences enrol when it
-   * is passed (#103), by which time it is no longer the rung being produced — and that is exactly
-   * why it belongs here: without it, a Produce mark misrouted to `recordReview` would be a silent
+   * is passed (#103), by which time it is no longer the rung being read — and that is exactly
+   * why it belongs here: without it, a Read mark misrouted to `recordReview` would be a silent
    * no-op that no assertion could see. With it, the misroute moves a box, and these tests go red.
    */
   const ENROLLED_TWICE = [
@@ -331,41 +347,46 @@ describe('a Produce got-it reaches the counters and never the queue', () => {
   it('counts the sentence, and leaves every review box exactly where it was', async () => {
     await renderHub();
     await begin();
-    fireEvent.click(chip('produce'));
-    await cardFor('L1-M2-S01');
+    await readCardFor('L1-M2-S01');
 
-    answer('mark.gotIt');
+    readMark('mark.gotIt');
 
     expect(courseState()?.production).toEqual({ 'L1-M2-S01': 1 });
     // Ticked once by the session start, and untouched by the mark — including the entry for the
-    // sentence that was just produced.
+    // sentence that was just marked.
     expect(courseState()?.reviewQueue).toEqual(TICKED);
   });
 
   it('counts nothing at all on a miss — the counters only ever go up', async () => {
     await renderHub();
     await begin();
-    fireEvent.click(chip('produce'));
-    await cardFor('L1-M2-S01');
+    await readCardFor('L1-M2-S01');
 
-    answer('mark.missed');
+    readMark('mark.missed');
 
     expect(courseState()?.production).toEqual({});
     expect(courseState()?.reviewQueue).toEqual(TICKED);
   });
 
-  it('serves the rung least-produced first, and moves on card by card', async () => {
+  /**
+   * The mark does NOT move the pager (#349): a learner who marked a sentence may still want its
+   * cue, its "why" or another look at it, and the phase is a read-through rather than a queue of
+   * verdicts. Re-marking a sentence already counted writes nothing — the counter is a fact about
+   * the sentence, not a tally of taps.
+   */
+  it('stays on the card it marked, and counts it once however often it is marked', async () => {
     await renderHub();
     await begin();
-    fireEvent.click(chip('produce'));
-    await cardFor('L1-M2-S01');
+    await readCardFor('L1-M2-S01');
 
-    answer('mark.gotIt');
-    await cardFor('L1-M2-S02');
+    readMark('mark.gotIt');
+    readMark('mark.gotIt');
 
+    expect(await readCardFor('L1-M2-S01')).toBeInTheDocument();
+    expect(courseState()?.production).toEqual({ 'L1-M2-S01': 1 });
     expect(courseState()?.session).toEqual({
-      phase: 'produce',
-      idx: 1,
+      phase: 'read',
+      idx: 0,
       queue: ['L1-M2-S01', 'L1-M2-S02'],
     });
   });
@@ -374,15 +395,16 @@ describe('a Produce got-it reaches the counters and never the queue', () => {
 /* ----------------------------------------------------------------- the Read phase */
 
 /**
- * Read (#97) — the phase that costs nothing: one sentence at a time, the cue behind a toggle, and
- * a pager whose last step is Produce. The rule under the assertions is that the CUE STARTS HIDDEN
- * (recall before recognition — the prototype opens with it showing, and this is the deliberate
- * divergence).
+ * Read (#97, #349) — one sentence at a time, the cue behind a toggle, the self-mark that opens the
+ * rung, and a pager whose last step ends the session. Two rules are under the assertions: the CUE
+ * STARTS HIDDEN (recall before recognition — the prototype opens with it showing, and this is the
+ * deliberate divergence), and the MARK DOES NOT MOVE THE PAGER (the routing-contract describe
+ * above owns that one).
  */
 describe('the Read phase', () => {
   /** The rung's sentences, in the module's own order — Read's material and its count. */
-  function sentence(index: number) {
-    return moduleFixture(M1).sentences[index]!;
+  function sentence(index: number, moduleId = M1) {
+    return moduleFixture(moduleId).sentences[index]!;
   }
 
   /** A session that opens at Read: nothing is passed, so nothing is due. */
@@ -392,8 +414,8 @@ describe('the Read phase', () => {
     await screen.findByText(sentence(0).display);
   }
 
-  /** The pager's two controls, by the course's own labels. */
-  function pager(key: 'read.prev' | 'read.next' | 'read.toProduce'): HTMLElement {
+  /** The pager's controls, by the course's own labels. */
+  function pager(key: 'read.prev' | 'read.next' | 'read.finish'): HTMLElement {
     return screen.getByRole('button', { name: strings(key) });
   }
 
@@ -467,34 +489,43 @@ describe('the Read phase', () => {
     expect(screen.getByText(sentence(1).cue)).toBeInTheDocument();
   });
 
-  /* #225 took the read-aloud line away: the phase is the sentence and its pager, and nothing else
-     survives a walk out to Produce and back in by chip. */
+  /* #225 took the read-aloud line away: the phase is the sentence, its mark and its pager, and
+     nothing else survives a walk out to Review and back in by chip. */
   it('comes back to the sentence and the pager when the phase is re-entered by chip', async () => {
-    await read();
+    // Something due, so Review is a phase there is anything to walk out TO.
+    pass(M1);
+    seedQueue([{ sentenceId: 'L1-M1-S01', box: 1, dueInSessions: 0 }]);
+    await renderHub();
+    await begin('practice.beginReview');
+    fireEvent.click(chip('read'));
+    await screen.findByText(sentence(0, M2).display);
 
-    fireEvent.click(chip('produce'));
+    fireEvent.click(chip('review'));
     await cardFor('L1-M1-S01');
     fireEvent.click(chip('read'));
 
-    expect(await screen.findByText(sentence(0).display)).toBeInTheDocument();
+    expect(await screen.findByText(sentence(0, M2).display)).toBeInTheDocument();
     expect(pager('read.next')).toBeInTheDocument();
   });
 
-  it('hands over to Produce when the rung has been read through', async () => {
+  /**
+   * Read's last step ENDS the session (#349). It used to hand over to Produce; with that phase
+   * retired, reading the rung through is the whole of a session's material and the summary is
+   * what comes next.
+   */
+  it('ends the session at the summary when the rung has been read through', async () => {
     await read();
 
     fireEvent.click(pager('read.next'));
     await screen.findByText(sentence(1).display);
     // The last sentence's control says where it goes, as the prototype's does.
-    fireEvent.click(pager('read.toProduce'));
+    fireEvent.click(pager('read.finish'));
 
-    expect(chip('produce')).toHaveAttribute('aria-pressed', 'true');
-    expect(courseState()?.session?.phase).toBe('produce');
-    expect(courseState()?.session?.idx).toBe(0);
-    expect(await screen.findByText(strings('revealLabel'))).toBeInTheDocument();
+    expect(await screen.findByText(strings('practice.summaryTitle'))).toBeInTheDocument();
+    expect(courseState()?.session).toBeNull();
   });
 
-  it('writes nothing on the way through: no box moves, no counter moves', async () => {
+  it('writes nothing while nothing is marked: no box moves, no counter moves', async () => {
     // Enrolled and not due, so the session opens at Read with the queue standing behind it.
     seedQueue([{ sentenceId: 'L1-M1-S01', box: 2, dueInSessions: 3 }]);
     await read();
@@ -503,25 +534,30 @@ describe('the Read phase', () => {
     fireEvent.click(pager('read.next'));
     await screen.findByText(sentence(1).display);
 
-    // Ticked once by the session start, and by nothing since. Read is the phase between the two
-    // that write, and it writes to neither.
+    // Ticked once by the session start, and by nothing since. Reading, paging and opening the cue
+    // are free — only the self-mark writes, and it is the queue this phase never touches (#349).
     expect(courseState()?.reviewQueue).toEqual([
       { sentenceId: 'L1-M1-S01', box: 2, dueInSessions: 2 },
     ]);
     expect(courseState()?.production).toEqual({});
   });
 
-  it('leaves the chips free — Produce is one tap away mid-read', async () => {
-    await read();
+  it('leaves the chips free — Review is one tap away mid-read', async () => {
+    pass(M1);
+    seedQueue([{ sentenceId: 'L1-M1-S01', box: 1, dueInSessions: 0 }]);
+    await renderHub();
+    await begin('practice.beginReview');
+    fireEvent.click(chip('read'));
+    await screen.findByText(sentence(0, M2).display);
 
-    for (const phase of ['review', 'read', 'produce'] as const) {
+    for (const phase of ['review', 'read'] as const) {
       expect(chip(phase)).not.toBeDisabled();
     }
 
-    fireEvent.click(chip('produce'));
+    fireEvent.click(chip('review'));
 
     expect(await cardFor('L1-M1-S01')).toBeInTheDocument();
-    expect(chip('produce')).toHaveAttribute('aria-pressed', 'true');
+    expect(chip('review')).toHaveAttribute('aria-pressed', 'true');
   });
 });
 
@@ -579,25 +615,34 @@ describe('the gentle elapsed tick', () => {
 /* ------------------------------------------------------------- the chips never gate */
 
 describe('the chips', () => {
-  it('reach Produce with nothing reviewed and nothing read', async () => {
+  it('reach Read with nothing reviewed — the phases are an order, never a sequence', async () => {
+    pass(M1);
+    seedQueue([{ sentenceId: 'L1-M1-S01', box: 1, dueInSessions: 0 }]);
     await renderHub();
-    await begin();
+    await begin('practice.beginReview');
 
-    fireEvent.click(chip('produce'));
+    fireEvent.click(chip('read'));
 
-    expect(await cardFor('L1-M2-S01')).toBeInTheDocument();
-    expect(chip('produce')).toHaveAttribute('aria-pressed', 'true');
+    expect(await screen.findByText(moduleFixture(M2).sentences[0]!.display)).toBeInTheDocument();
+    expect(chip('read')).toHaveAttribute('aria-pressed', 'true');
+    // …and the review that was skipped is still due: skipping a phase costs nothing and spends
+    // nothing.
+    expect(courseState()?.reviewQueue).toEqual([
+      { sentenceId: 'L1-M1-S01', box: 1, dueInSessions: 0 },
+    ]);
   });
 
   it('are never disabled, in any phase', async () => {
+    pass(M1);
+    seedQueue([{ sentenceId: 'L1-M1-S01', box: 1, dueInSessions: 0 }]);
     await renderHub();
-    await begin();
+    await begin('practice.beginReview');
 
-    for (const phase of ['review', 'read', 'produce'] as const) {
+    for (const phase of ['review', 'read'] as const) {
       expect(chip(phase)).not.toBeDisabled();
     }
-    fireEvent.click(chip('produce'));
-    for (const phase of ['review', 'read', 'produce'] as const) {
+    fireEvent.click(chip('read'));
+    for (const phase of ['review', 'read'] as const) {
       expect(chip(phase)).not.toBeDisabled();
     }
   });
@@ -618,7 +663,7 @@ describe('the chips', () => {
     seedQueue([{ sentenceId: 'L1-M1-S01', box: 1, dueInSessions: 0 }]);
     await renderHub();
     await begin('practice.beginReview');
-    fireEvent.click(chip('produce'));
+    fireEvent.click(chip('read'));
 
     fireEvent.click(chip('review'));
 
@@ -632,9 +677,9 @@ describe('the chips', () => {
 /**
  * #317: the session's shape, said out loud at the two places it changes.
  *
- * Read's pager already named its own hand-over (`read.toProduce`); the Review → Read boundary was
- * silent — the last mark simply dropped the learner into a different phase. Neither is a new step:
- * both are the tap that was already there, labelled.
+ * Read's pager already named its own last step (`read.toProduce` then, `read.finish` since #349);
+ * the Review → Read boundary was silent — the last mark simply dropped the learner into a
+ * different phase. Neither is a new step: both are the tap that was already there, labelled.
  */
 describe('the phase hand-overs are signposted', () => {
   it('names Read on the last Review card, and not before it', async () => {
@@ -663,27 +708,26 @@ describe('the phase hand-overs are signposted', () => {
     expect(await screen.findByText(strings('read.showCue'))).toBeVisible();
   });
 
-  it('names Produce on the last Read card — the pager says its own hand-over', async () => {
+  it('names the end on the last Read card — the pager says where it goes', async () => {
     await renderHub();
     await begin();
 
-    // Two sentences in the fixture rung: the first pager reads "next", the last reads the phase.
+    // Two sentences in the fixture rung: the first pager reads "next", the last says it ends here.
     expect(await screen.findByRole('button', { name: strings('read.next') })).toBeVisible();
-    expect(screen.queryByRole('button', { name: strings('read.toProduce') })).toBeNull();
+    expect(screen.queryByRole('button', { name: strings('read.finish') })).toBeNull();
 
     fireEvent.click(screen.getByRole('button', { name: strings('read.next') }));
 
-    expect(await screen.findByRole('button', { name: strings('read.toProduce') })).toBeVisible();
+    expect(await screen.findByRole('button', { name: strings('read.finish') })).toBeVisible();
   });
 
-  /* The Produce phase ends the session, and the summary is its own announcement. */
-  it('says nothing about a next phase on a Produce card', async () => {
+  /* Read ends the session, and its own pager says so — there is no phase after it to name. */
+  it('says nothing about a next phase on a Read card', async () => {
     await renderHub();
     await begin();
-    fireEvent.click(chip('produce'));
-    await cardFor('L1-M2-S01');
+    await readCardFor('L1-M1-S01');
 
-    for (const phase of ['review', 'read', 'produce'] as const) {
+    for (const phase of ['review', 'read'] as const) {
       expect(
         screen.queryByText(line('practice.upNext', { phase: strings(`practice.phase.${phase}`) })),
       ).toBeNull();
@@ -694,7 +738,7 @@ describe('the phase hand-overs are signposted', () => {
 /* ---------------------------------------------------------------------- the summary */
 
 describe('the summary', () => {
-  /** One scripted session: one review got-it, then both produce cards — one had, one missed. */
+  /** One scripted session: one review got-it, then both read cards — one marked, one missed. */
   async function runSession(): Promise<void> {
     pass(M1);
     seedQueue([{ sentenceId: 'L1-M1-S01', box: 1, dueInSessions: 0 }]);
@@ -704,24 +748,24 @@ describe('the summary', () => {
     await cardFor('L1-M1-S01');
     answer('mark.gotIt');
 
-    fireEvent.click(chip('produce'));
-    await cardFor('L1-M2-S01');
-    answer('mark.gotIt');
-    await cardFor('L1-M2-S02');
-    answer('mark.missed');
+    await readCardFor('L1-M2-S01');
+    readMark('mark.gotIt');
+    fireEvent.click(screen.getByRole('button', { name: strings('read.next') }));
+    await readCardFor('L1-M2-S02');
+    readMark('mark.missed');
+    fireEvent.click(screen.getByRole('button', { name: strings('read.finish') }));
 
     await screen.findByText(strings('practice.summaryTitle'));
   }
 
-  it('counts what happened: reviewed, had, produced, and how many stand at two', async () => {
+  it('counts what happened: reviewed, had, and how much of the rung is marked', async () => {
     await runSession();
 
     expect(screen.getByText(line('practice.summaryReviewed', { count: 1 }))).toBeInTheDocument();
     expect(screen.getByText(line('practice.summaryGotIt', { count: 1 }))).toBeInTheDocument();
-    expect(screen.getByText(line('practice.summaryProduced', { count: 1 }))).toBeInTheDocument();
-    // One got-it is not two: nothing on this rung is produced out yet.
+    // One of the rung's two sentences marked: the missed one wrote nothing.
     expect(
-      screen.getByText(line('practice.summaryAtTwo', { count: 0, total: 2 })),
+      screen.getByText(line('practice.summaryMarked', { count: 1, total: 2 })),
     ).toBeInTheDocument();
   });
 
@@ -732,34 +776,29 @@ describe('the summary', () => {
    * sends a wrong arrival to the module — so this is a link appearing beside a count that already
    * says the same thing, not a second gate.
    */
-  it('offers the exit ritual only once every sentence stands at two (#315)', async () => {
+  it('offers the exit ritual only once every sentence is marked (#315)', async () => {
     await runSession();
 
-    // One got-it apiece: the rung is not produced out, and the summary says nothing about a ritual.
-    expect(screen.getByText(line('practice.summaryAtTwo', { count: 0, total: 2 }))).toBeVisible();
+    // One of two marked: the rung is not read through, and the summary says nothing about a ritual.
+    expect(screen.getByText(line('practice.summaryMarked', { count: 1, total: 2 }))).toBeVisible();
     expect(screen.queryByRole('link', { name: strings('practice.summaryToRitual') })).toBeNull();
   });
 
-  it('links straight to the ritual when the rung is produced out (#315)', async () => {
+  it('links straight to the ritual when the rung is read through (#315)', async () => {
     pass(M1);
-    // The rung's two sentences, each already produced once: one more apiece finishes them.
-    const store = useAppStore.getState();
-    store.ensureCourse(COURSE);
-    store.recordProduction(COURSE, 'L1-M2-S01');
-    store.recordProduction(COURSE, 'L1-M2-S02');
-
     await renderHub();
     await begin();
 
-    fireEvent.click(chip('produce'));
-    await cardFor('L1-M2-S01');
-    answer('mark.gotIt');
-    await cardFor('L1-M2-S02');
-    answer('mark.gotIt');
+    await readCardFor('L1-M2-S01');
+    readMark('mark.gotIt');
+    fireEvent.click(screen.getByRole('button', { name: strings('read.next') }));
+    await readCardFor('L1-M2-S02');
+    readMark('mark.gotIt');
+    fireEvent.click(screen.getByRole('button', { name: strings('read.finish') }));
 
     await screen.findByText(strings('practice.summaryTitle'));
 
-    expect(screen.getByText(line('practice.summaryAtTwo', { count: 2, total: 2 }))).toBeVisible();
+    expect(screen.getByText(line('practice.summaryMarked', { count: 2, total: 2 }))).toBeVisible();
 
     const toRitual = screen.getByRole('link', { name: strings('practice.summaryToRitual') });
     expect(toRitual).toHaveAttribute('href', '#/ritual');
@@ -786,7 +825,7 @@ describe('the summary', () => {
 
     expect(document.querySelector('[data-slot="elapsedTick"]')).toBeNull();
     // The chips stay up, so the tick's absence is the session's state and not the screen's.
-    expect(chip('produce')).toBeInTheDocument();
+    expect(chip('read')).toBeInTheDocument();
   });
 
   it('clears the snapshot: a session that reached its end is not one to resume', async () => {
@@ -802,7 +841,9 @@ describe('the summary', () => {
     fireEvent.click(screen.getByRole('link', { name: strings('practice.backToLadder') }));
 
     await waitFor(() => {
-      expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument();
+      expect(
+        screen.getByRole('navigation', { name: strings('a11y.primaryNav') }),
+      ).toBeInTheDocument();
     });
     expect(window.location.hash).toBe('#/');
   });
@@ -816,15 +857,15 @@ describe('the snapshot', () => {
     await renderHub();
     await begin();
 
-    fireEvent.click(chip('produce'));
-    await cardFor('L1-M1-S01');
+    await readCardFor('L1-M1-S01');
     expect(courseState()?.session).toEqual({
-      phase: 'produce',
+      phase: 'read',
       idx: 0,
       queue: ['L1-M1-S01', 'L1-M1-S02'],
     });
 
-    answer('mark.gotIt');
+    fireEvent.click(screen.getByRole('button', { name: strings('read.next') }));
+    await readCardFor('L1-M1-S02');
 
     expect(courseState()?.session?.idx).toBe(1);
     // Invariant 8: another course's position is not this session's to touch.
@@ -835,14 +876,13 @@ describe('the snapshot', () => {
   it('survives the pause ✕ — leaving is not losing your place (#99 picks it back up)', async () => {
     await renderHub();
     await begin();
-    fireEvent.click(chip('produce'));
-    await cardFor('L1-M1-S01');
+    await readCardFor('L1-M1-S01');
 
-    fireEvent.click(screen.getByRole('button', { name: 'Pause session' }));
+    fireEvent.click(screen.getByRole('button', { name: strings('a11y.pauseSession') }));
 
     expect(await screen.findByText(strings('practice.hubTitle'))).toBeInTheDocument();
     expect(courseState()?.session).toEqual({
-      phase: 'produce',
+      phase: 'read',
       idx: 0,
       queue: ['L1-M1-S01', 'L1-M1-S02'],
     });

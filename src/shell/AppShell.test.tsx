@@ -20,13 +20,7 @@ import { resetStringsCache } from '../course/strings.ts';
 import { useAppStore } from '../state/store.ts';
 import { DEV_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
 import { stringValue } from '../test/courseStrings.ts';
-import {
-  COMPREHENSION_PATH,
-  handover,
-  RITUAL_PATH,
-  SHELL_ROUTES,
-  VERDICT_PATH,
-} from './routes.tsx';
+import { handover, RITUAL_PATH, SHELL_ROUTES, VERDICT_PATH } from './routes.tsx';
 
 /**
  * Renders the app at `hash` and waits for boot — no screen mounts before there is a course.
@@ -46,16 +40,17 @@ async function renderAt(hash: string, state?: unknown) {
 }
 
 /**
- * What a route in this table needs before it will mount: the exit ritual's two screens belong to
- * a rung that is produced out (#100), and part 2 is only ever entered from part 1's completed
- * hold (#102). Anything else in the table mounts on its own.
+ * What a route in this table needs before it will mount: the exit ritual belongs to a rung whose
+ * sentences are all marked, and the Verdict is only ever entered from a passed test. Anything else
+ * in the table mounts on its own.
+ *
+ * One screen, not two, since #348 folded the write step away and made `/ritual` the comprehension
+ * test itself.
  */
 function precondition(path: string): unknown {
-  if (path !== RITUAL_PATH && path !== COMPREHENSION_PATH && path !== VERDICT_PATH) {
-    return undefined;
-  }
+  if (path !== RITUAL_PATH && path !== VERDICT_PATH) return undefined;
+
   produceRung();
-  if (path === COMPREHENSION_PATH) return handover('hold');
   // The Verdict is where the comprehension leaves you (#103), and arriving there passes the rung.
   return path === VERDICT_PATH ? handover('comprehension') : undefined;
 }
@@ -86,9 +81,18 @@ function produceRung(): void {
   }
 }
 
+/**
+ * The three tab labels, in nav order — the fixture bundle's values, because the nav's words are
+ * the course's now (`nav.*`, #351) and a test that spelled them in English would be asserting
+ * against the one thing that ticket removed.
+ */
+const TAB_LABELS = ['nav.ladder', 'nav.practice', 'nav.settings'].map((key) =>
+  stringValue('hi-mr', key),
+);
+
 /** The tab links, in nav order — scoped to the nav, because screens have links of their own. */
 function tabs(): string[] {
-  return within(screen.getByRole('navigation', { name: 'Primary' }))
+  return within(screen.getByRole('navigation', { name: stringValue('hi-mr', 'a11y.primaryNav') }))
     .getAllByRole('link')
     .map((link) => link.textContent ?? '');
 }
@@ -110,30 +114,35 @@ describe('bottom nav', () => {
   it('renders exactly the three tabs of the IA', async () => {
     await renderAt('#/');
 
-    expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument();
-    expect(tabs()).toEqual(['Ladder', 'Practice', 'Settings']);
+    expect(
+      screen.getByRole('navigation', { name: stringValue('hi-mr', 'a11y.primaryNav') }),
+    ).toBeInTheDocument();
+    expect(tabs()).toEqual(TAB_LABELS);
   });
 
   it('routes to each tab, and marks the one you are on', async () => {
     await renderAt('#/');
-    expect(screen.getByRole('link', { name: 'Ladder' })).toHaveAttribute('aria-current', 'page');
+    const [ladder, practice, settings] = TAB_LABELS;
+    expect(screen.getByRole('link', { name: ladder })).toHaveAttribute('aria-current', 'page');
 
-    fireEvent.click(screen.getByRole('link', { name: 'Practice' }));
+    fireEvent.click(screen.getByRole('link', { name: practice }));
     expect(await screen.findByText(stringValue('hi-mr', 'practice.hubTitle'))).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Practice' })).toHaveAttribute('aria-current', 'page');
-    expect(screen.getByRole('link', { name: 'Ladder' })).not.toHaveAttribute('aria-current');
+    expect(screen.getByRole('link', { name: practice })).toHaveAttribute('aria-current', 'page');
+    expect(screen.getByRole('link', { name: ladder })).not.toHaveAttribute('aria-current');
 
-    fireEvent.click(screen.getByRole('link', { name: 'Settings' }));
-    expect(await screen.findByRole('heading', { name: 'Settings' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('link', { name: settings }));
+    expect(
+      await screen.findByRole('heading', { name: stringValue('hi-mr', 'settings.title') }),
+    ).toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
+    fireEvent.click(screen.getByRole('link', { name: ladder }));
     expect(await screen.findByRole('heading', { level: 1, name: BRAND })).toBeInTheDocument();
   });
 
   it('is icon-only, but every tab is still reachable by its accessible name and carries a title (#245)', async () => {
     await renderAt('#/');
 
-    for (const label of ['Ladder', 'Practice', 'Settings']) {
+    for (const label of TAB_LABELS) {
       const link = screen.getByRole('link', { name: label });
       expect(link).toHaveAttribute('title', label);
     }
@@ -152,7 +161,9 @@ describe('routes', () => {
     // Something rendered, and it was not the redirect: the location is still where we asked.
     expect(screen.getByRole('main')).not.toBeEmptyDOMElement();
     expect(window.location.hash).toBe(hash);
-    expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('navigation', { name: stringValue('hi-mr', 'a11y.primaryNav') }),
+    ).toBeInTheDocument();
   });
 
   it('sends an unknown route to the Ladder, replacing it', async () => {
@@ -186,7 +197,6 @@ describe('headers', () => {
 
   it.each([
     ['#/ritual', 'Exit ritual'],
-    ['#/comprehension', 'Comprehension'],
     ['#/verdict', 'Verdict'],
   ])('%s is a child screen with a back header', async (hash, title) => {
     await renderAt(hash, precondition(hash.slice(1)));
@@ -219,14 +229,20 @@ describe('headers', () => {
 describe('immersive mode', () => {
   it('hides the nav entirely and always offers the pause ✕', async () => {
     await renderAt('#/practice');
-    expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument();
-    expect(screen.queryByRole('button', { name: 'Pause session' })).not.toBeInTheDocument();
+    expect(
+      screen.getByRole('navigation', { name: stringValue('hi-mr', 'a11y.primaryNav') }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: stringValue('hi-mr', 'a11y.pauseSession') }),
+    ).not.toBeInTheDocument();
 
     await beginSession();
 
     expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
     expect(screen.queryByRole('link')).not.toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Pause session' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: stringValue('hi-mr', 'a11y.pauseSession') }),
+    ).toBeInTheDocument();
     // No brand, no back chevron — the ✕ is the only chrome a session has.
     expect(screen.queryByRole('heading', { level: 1 })).not.toBeInTheDocument();
   });
@@ -235,7 +251,9 @@ describe('immersive mode', () => {
     await renderAt('#/practice');
     await beginSession();
 
-    fireEvent.click(screen.getByRole('button', { name: 'Pause session' }));
+    fireEvent.click(
+      screen.getByRole('button', { name: stringValue('hi-mr', 'a11y.pauseSession') }),
+    );
 
     expect(await screen.findByText(stringValue('hi-mr', 'practice.hubTitle'))).toBeInTheDocument();
     // The hub, with the session it just left still standing: since #99 the CTA slot holds the
@@ -243,7 +261,9 @@ describe('immersive mode', () => {
     expect(
       screen.getByRole('button', { name: stringValue('hi-mr', 'practice.resumeContinue') }),
     ).toBeInTheDocument();
-    expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('navigation', { name: stringValue('hi-mr', 'a11y.primaryNav') }),
+    ).toBeInTheDocument();
     expect(window.location.hash).toBe('#/practice');
   });
 
@@ -255,8 +275,12 @@ describe('immersive mode', () => {
     window.location.hash = '#/settings';
 
     await waitFor(() => {
-      expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument();
+      expect(
+        screen.getByRole('navigation', { name: stringValue('hi-mr', 'a11y.primaryNav') }),
+      ).toBeInTheDocument();
     });
-    expect(screen.queryByRole('button', { name: 'Pause session' })).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: stringValue('hi-mr', 'a11y.pauseSession') }),
+    ).not.toBeInTheDocument();
   });
 });

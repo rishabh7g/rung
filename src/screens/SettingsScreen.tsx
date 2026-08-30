@@ -26,10 +26,12 @@
  * confirms the switch in the TARGET course's own words (`switchToast`), naming both pairs:
  * the course now active and the course whose ladder is saved exactly where it was.
  *
- * What the learner reads here is the course's (`settings.*` strings); the section kickers, the
- * dropdown's label and the tick toggle's rows are English shell furniture in the register of
- * the nav's tab labels — the same call the Ladder's kickers made (#86), flagged on #71/#117
- * with them. **No checking or translation control exists here or anywhere** (F6's AC — [D18],
+ * **Everything the learner reads here is the course's** (`settings.*`). The screen's title, its
+ * four section kickers, the dropdown's label and the tick toggle's rows were English shell
+ * furniture in the register of the nav's tab labels — the call the Ladder's kickers made (#86) —
+ * until #351 sent them the same way the nav's labels went: this is the screen a learner opens to
+ * change their own language, so it is the last screen that may be in one they do not have.
+ * **No checking or translation control exists here or anywhere** (F6's AC — [D18],
  * Invariant 4): there is nothing to configure about features the product does not have, and
  * the test sweeps this screen's controls to prove none crept in.
  */
@@ -143,14 +145,18 @@ export default function SettingsScreen() {
 
   return (
     <section className={styles.settings}>
-      <h2 className={styles.title}>Settings</h2>
+      <h2 className={styles.title} dir={course.dir}>
+        {strings['settings.title']}
+      </h2>
 
       {/* --------------------------------------------------------------- YOUR LANGUAGE */}
       {/* Above COURSE deliberately: "what do you read" is the question that makes sense
           first, and the course dropdown below is downstream of its answer. */}
       <section className={styles.card}>
         <RegistrationMarks />
-        <h3 className={styles.kicker}>LANGUAGE</h3>
+        <h3 className={styles.kicker} dir={course.dir}>
+          {strings['settings.kicker.language']}
+        </h3>
         <div className={styles.courseField}>
           <label className={styles.fieldLabel} htmlFor={langSelectId} dir={course.dir}>
             {strings['settings.yourLanguage']}
@@ -174,10 +180,12 @@ export default function SettingsScreen() {
       {/* ------------------------------------------------------------------ COURSE (F0) */}
       <section className={styles.card}>
         <RegistrationMarks />
-        <h3 className={styles.kicker}>COURSE</h3>
+        <h3 className={styles.kicker} dir={course.dir}>
+          {strings['settings.kicker.course']}
+        </h3>
         <div className={styles.courseField}>
-          <label className={styles.fieldLabel} htmlFor={selectId}>
-            Active course
+          <label className={styles.fieldLabel} htmlFor={selectId} dir={course.dir}>
+            {strings['settings.activeCourse']}
           </label>
           {/* Native on purpose (PRD-design §7): the platform's own picker scales to many
               courses and owes this screen nothing. ≥16px type is the iOS zoom guard
@@ -207,14 +215,16 @@ export default function SettingsScreen() {
       {/* ------------------------------------------------------------------ PRACTICE */}
       <section className={styles.card}>
         <RegistrationMarks />
-        <h3 className={styles.kicker}>PRACTICE</h3>
+        <h3 className={styles.kicker} dir={course.dir}>
+          {strings['settings.kicker.practice']}
+        </h3>
         <div className={styles.row}>
           <div className={styles.rowText}>
-            <p className={styles.rowTitle} id={tickLabelId}>
-              Gentle elapsed tick
+            <p className={styles.rowTitle} id={tickLabelId} dir={course.dir}>
+              {strings['settings.tick.title']}
             </p>
-            <p className={styles.rowNote}>
-              A thin, numberless line during sessions — fills once, never counts down.
+            <p className={styles.rowNote} dir={course.dir}>
+              {strings['settings.tick.note']}
             </p>
           </div>
           {/* The same seg the self-mark draws, for the same reason it is buttons rather than
@@ -227,16 +237,18 @@ export default function SettingsScreen() {
               className={tickEnabled ? styles.segSelected : styles.segOption}
               aria-pressed={tickEnabled}
               onClick={() => setSetting('elapsedTickEnabled', true)}
+              dir={course.dir}
             >
-              On
+              {strings['settings.tick.on']}
             </button>
             <button
               type="button"
               className={tickEnabled ? styles.segOption : styles.segSelected}
               aria-pressed={!tickEnabled}
               onClick={() => setSetting('elapsedTickEnabled', false)}
+              dir={course.dir}
             >
-              Off
+              {strings['settings.tick.off']}
             </button>
           </div>
         </div>
@@ -245,14 +257,18 @@ export default function SettingsScreen() {
       {/* ------------------------------------------- STORAGE — computed, honest (#107, F6) */}
       <section className={styles.card}>
         <RegistrationMarks />
-        <h3 className={styles.kicker}>STORAGE</h3>
+        <h3 className={styles.kicker} dir={course.dir}>
+          {strings['settings.kicker.storage']}
+        </h3>
         <StorageSection />
       </section>
 
       {/* --------------------------------------- Backup — export / import (#108, F6, F7) */}
       <section className={styles.card}>
         <RegistrationMarks />
-        <h3 className={styles.backupTitle}>Backup</h3>
+        <h3 className={styles.backupTitle} dir={course.dir}>
+          {strings['settings.backup.title']}
+        </h3>
         <BackupSection />
       </section>
 
