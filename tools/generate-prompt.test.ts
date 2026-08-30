@@ -130,6 +130,7 @@ const BRIEFED_LEVELS: Readonly<
   'en-es': [{ level: 'L1', firstBound: 5, lastBound: 8 }],
   'en-ar': [{ level: 'L1', firstBound: 5, lastBound: 8 }],
   'hi-en': [{ level: 'L1', firstBound: 5, lastBound: 8 }],
+  'en-fr': [{ level: 'L1', firstBound: 5, lastBound: 8 }],
 };
 
 /** Every briefed course answers the same two structural questions, so they are asked once. */
@@ -519,6 +520,156 @@ describe('COURSE_BRIEFS hi-en', () => {
     }
     // No possessive 's is taught: the one that appears is named as the thing not to write.
     expect(allText).toContain("never Rohan's book");
+  });
+});
+
+describe('COURSE_BRIEFS en-fr', () => {
+  const briefs = COURSE_BRIEFS['en-fr'];
+  const notes = (id: string): string => briefs?.[id]?.notes.join(' ') ?? '';
+  const patterns = (id: string): string => briefs?.[id]?.patterns.join(' ') ?? '';
+  const ids = Array.from({ length: 10 }, (_, i) => `L1-M${i + 1}`);
+  const allText = Object.values(briefs ?? {})
+    .map((brief) => [...brief.patterns, ...brief.notes].join(' '))
+    .join(' ');
+
+  it('places each English→French pressure point in the module that needs it', () => {
+    // M1: the reflexive chunk, être by person, gender, and the generic article English drops.
+    expect(patterns('L1-M1')).toContain("Je m'appelle + name");
+    expect(notes('L1-M1')).toContain('je suis · vous êtes · il/elle est');
+    expect(notes('L1-M1')).toContain('*Je suis un étudiant');
+    expect(notes('L1-M1')).toContain("*J'aime café");
+    // M2: greetings tied to the register, ça va, one question strategy, agreement, no do.
+    expect(patterns('L1-M2')).toContain('Ça va ?');
+    expect(notes('L1-M2')).toContain('salut');
+    expect(notes('L1-M2')).toContain('Vous êtes de Paris ?');
+    expect(notes('L1-M2')).toContain('fatigué');
+    expect(notes('L1-M2')).toContain('fatiguée');
+    // The agreement rule names the SUBJECT, never the speaker — docs/08's thrice-made correction.
+    expect(notes('L1-M2')).toMatch(/agrees with the SUBJECT/);
+    expect(notes('L1-M2')).toContain('no French word standing in for');
+    // M3: the bare infinitive, the two-part negation, the partitive, the silent plural.
+    expect(patterns('L1-M3')).toContain('Je veux + V-inf');
+    expect(notes('L1-M3')).toContain('*Je veux à manger');
+    expect(notes('L1-M3')).toContain('*Je ne veux pas du café');
+    expect(notes('L1-M3')).toContain('du pain, de la soupe, des pommes');
+    // M4: one present for both English presents, the reflexive daily, the habitual article.
+    expect(notes('L1-M4')).toContain('*Je suis manger');
+    expect(notes('L1-M4')).toContain('je me lève');
+    expect(notes('L1-M4')).toContain('"on Mondays"');
+    expect(notes('L1-M4')).toContain('à sept heures');
+    // M5: the passé composé, the être set with agreement, negation on the auxiliary, no did.
+    expect(notes('L1-M5')).toContain("J'ai mangé");
+    expect(notes('L1-M5')).toContain('je suis allée');
+    expect(notes('L1-M5')).toContain("*Je n'ai pas allé");
+    expect(notes('L1-M5')).toContain('*Je ne suis allé pas');
+    expect(notes('L1-M5')).toMatch(/imparfait is DEFERRED/);
+    // M6: aller + bare infinitive, the futur simple deferred, demain + present.
+    expect(patterns('L1-M6')).toContain('Demain + je vais + V-inf');
+    expect(notes('L1-M6')).toContain('*Je vais à manger');
+    expect(notes('L1-M6')).toContain('Demain je travaille');
+    expect(notes('L1-M6')).toMatch(/futur simple \(je mangerai\) is DEFERRED/);
+    // M7: the invariable existential, simple vs compound prepositions, the location copula.
+    expect(patterns('L1-M7')).toContain('Il y a');
+    expect(notes('L1-M7')).toContain('*Il y ont');
+    expect(notes('L1-M7')).toContain('sur la table');
+    expect(notes('L1-M7')).toContain('à côté de la table');
+    expect(notes('L1-M7')).toContain('Où est le livre ?');
+    // M8: the price question, one combien de, quantities, the polite edge.
+    expect(patterns('L1-M8')).toContain("C'est combien ?");
+    expect(notes('L1-M8')).toContain('Combien de pain ?');
+    expect(notes('L1-M8')).toContain('*combien des pommes');
+    expect(notes('L1-M8')).toContain('un kilo de riz');
+    // M9: the reason/consequence pair, the avoir states, the obligatory que.
+    expect(patterns('L1-M9')).toContain('parce que');
+    expect(patterns('L1-M9')).toContain(', donc');
+    expect(notes('L1-M9')).toContain('*Je suis faim');
+    expect(notes('L1-M9')).toContain("*Je pense c'est bien");
+    // M10: turns, the never-dropped pronoun, gendered il/elle for things.
+    expect(notes('L1-M10')).toMatch(/2–3|turn/i);
+    expect(notes('L1-M10')).toContain('NEVER dropped');
+    expect(notes('L1-M10')).toContain('*Il est belle');
+  });
+
+  it('settles the register in a NOTE, since a prompt only ever shows an author the notes', () => {
+    // French forces a choice English never makes, and it is taken once for the course (#327):
+    // vous throughout, tu named in prose and never written, je voudrais deferred with it.
+    expect(notes('L1-M1')).toContain('this course speaks vous');
+    expect(notes('L1-M1')).toContain('never WRITTEN in L1');
+    expect(notes('L1-M1')).toContain('je voudrais');
+    expect(notes('L1-M1')).toContain('register neutral');
+    // …and it is still the register at the far end of the ladder, not a first-module aside.
+    expect(notes('L1-M2')).toContain('register decision');
+    expect(notes('L1-M3')).toContain('Vous voulez');
+    expect(notes('L1-M8')).toContain("s'il te plaît is tu's and is never written here");
+    expect(notes('L1-M10')).toContain('vous to the end, tu never written');
+  });
+
+  it('names the index seam wherever a French surface is decided', () => {
+    // Every module says where its colliding surfaces land: first occurrence wins, so a key the
+    // wrong module opens is a note the learner reads for the rest of the course.
+    for (const id of ids) expect(notes(id), id).toContain('INDEX SEAM');
+    // Elision: an inner apostrophe stays inside its token, so the fusion is its own row and the
+    // bare stem is never listed on it (the hi-mr forms-swallowing bug in French dress).
+    expect(notes('L1-M1')).toContain("j'aime is ONE surface");
+    expect(notes('L1-M1')).toContain('never lists the bare aime in forms');
+    expect(notes('L1-M5')).toContain("j'ai is one fused token");
+    expect(notes('L1-M9')).toContain("the fused n'ai row");
+    // Accents are letters, and each accented pair has an owner: à (M4) vs a, où (M7) vs ou,
+    // mange (M4) vs mangé (M5), ça with its cedilla on the capital.
+    expect(notes('L1-M4')).toContain('this module teaches the surface à first');
+    expect(notes('L1-M4')).toContain('Bare a ("has") never appears in L1');
+    expect(notes('L1-M7')).toContain('où carries its accent always');
+    expect(notes('L1-M5')).toContain('the accent IS the tense');
+    expect(notes('L1-M2')).toContain('*Ca va');
+    // Multi-token surfaces keep bare words free, and each names the word it protects.
+    expect(notes('L1-M1')).toContain('keeps the bare je free');
+    expect(notes('L1-M2')).toContain('leaves ça free');
+    expect(notes('L1-M4')).toContain('whole two-token surfaces');
+    expect(notes('L1-M7')).toContain('ONE three-token surface');
+    expect(notes('L1-M7')).toContain('à côté de · à côté du · à côté de la');
+    expect(notes('L1-M8')).toContain("s'il vous plaît is ONE three-token surface");
+    expect(notes('L1-M9')).toContain('parce que is a two-token surface');
+    // Homograph owners, each stated in the module that owns the key.
+    expect(notes('L1-M1')).toContain('forms suis · êtes · est');
+    expect(notes('L1-M2')).toContain("est is already M1's");
+    expect(notes('L1-M3')).toContain('pas is the negator');
+    expect(notes('L1-M3')).toContain('"of the" before a place or a possessor');
+    expect(notes('L1-M6')).toContain('ONE vais row');
+    expect(notes('L1-M7')).toContain("du is M3's partitive row");
+    expect(notes('L1-M8')).toContain("c'est is this module's row");
+    expect(notes('L1-M10')).toContain('both il and elle are still free here');
+    // The question policy exists partly BECAUSE of a seam: est-ce que carries a hyphen, and
+    // surfaceIndexKeys would hand it the bare est and ce keys.
+    expect(notes('L1-M2')).toContain('surfaceIndexKeys would hand it the bare est and ce keys');
+  });
+
+  it('names the slogan each module attracts and states the law instead (rule 2)', () => {
+    // Header rule 2: a rule must be TRUE first and memorable second, so every module names the
+    // memorable-and-false thing it will attract, in quotes, and the law that replaces it.
+    for (const id of ids) {
+      expect(notes(id), `${id} slogan`).toMatch(/slogan/i);
+      expect(notes(id), `${id} law`).toContain('The law:');
+    }
+    expect(notes('L1-M1')).toContain('"un = a, le = the"');
+    expect(notes('L1-M3')).toContain('"add -s for the plural"');
+    expect(notes('L1-M4')).toContain('"French has no continuous, so drop the -ing"');
+    expect(notes('L1-M6')).toContain('"will = the future tense"');
+    expect(notes('L1-M9')).toContain('"être translates every \'I am\'"');
+  });
+
+  it('writes straight apostrophes and every accent — the briefs seed every prompt', () => {
+    // A curly quote folds into the apostrophe class on the index (`src/engine/surface.ts`), so a
+    // stray one in an example is indistinguishable from the straight one `display` must carry.
+    expect(allText).not.toMatch(/[’‘]/);
+    // Accents are never optional and the briefs must model that: every one of these is a word
+    // whose unaccented spelling is a DIFFERENT word, or no word at all.
+    for (const accented of ['être', 'à', 'où', 'ça', 'mangé', 'très']) {
+      expect(allText, accented).toContain(accented);
+    }
+    // The elided fusions the policy names all appear, straight-quoted.
+    for (const fusion of ["j'aime", "c'est", "n'ai", "m'appelle", "s'il vous plaît"]) {
+      expect(allText, fusion).toContain(fusion);
+    }
   });
 });
 
