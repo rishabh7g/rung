@@ -465,10 +465,14 @@ describe('the sixth course — en-it (#332, still behind the fixture gate)', () 
     ]) {
       expect(screen.getByText(title)).toBeInTheDocument();
     }
-    // Nothing is authored yet, so M1 is the current rung with no content behind it — no CTA
-    // anywhere in the list, which is the honest rendering of a course that is all ladder.
+    // M1 is the current rung, and since #334 it has content behind it, so the card carries the
+    // one CTA a fresh rung gets [D22] — in en-it's own English — and M2–M10 are locked, which
+    // makes that CTA the only link in the list.
     expect(screen.getByText('M1 · CURRENT RUNG')).toBeInTheDocument();
-    expect(within(screen.getByRole('list')).queryAllByRole('link')).toHaveLength(0);
+    const rungLinks = within(screen.getByRole('list')).getAllByRole('link');
+    expect(rungLinks).toHaveLength(1);
+    expect(rungLinks[0]).toHaveTextContent('Start with the module');
+    expect(rungLinks[0]).toHaveAttribute('href', '#/module/L1-M1');
     // …and the pending line is en-it's English, counting all ten (Invariant 2: counts only).
     expect(screen.getByText('Level 1 · 10 of 10 rungs still to climb.')).toBeInTheDocument();
 

@@ -1718,6 +1718,10 @@ describe('the shared normaliser', () => {
 describe('the authored content', () => {
   /** Everything a strict build must emit for the fourth course (#273): the ladder, the Hindi
    *  bundle, the ten rungs and their ten cumulative indexes. */
+  /** The en-it rungs authored so far (#334 → #336), and the report line they produce. */
+  const EN_IT_AUTHORED = ['L1-M1', 'L1-M2'];
+  const EN_IT_LINE = `${EN_IT_AUTHORED.length} modules (L1-M1..M${EN_IT_AUTHORED.length})`;
+
   const HI_EN_FILES = [
     'hi-en/levels.json',
     'hi-en/strings.json',
@@ -1833,6 +1837,7 @@ describe('the authored content', () => {
       ['en-es', L1],
       ['en-ar', L1],
       ['hi-en', L1],
+      ['en-it', EN_IT_AUTHORED],
     ]);
     // hi-en was authored behind this relaxation (#267, #270–#272) and graduated in #273, so a dev
     // build now ships exactly what the strict build above does — the same ten rungs, the same
@@ -1840,27 +1845,32 @@ describe('the authored content', () => {
     expect(report.lines).toContain('hi-en: 10 modules (L1-M1..M10)');
     expect(report.lines).toContain('  index L1-M10: 207 surfaces');
     expect(report.lines).toContain(
-      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10) | skipped: en-it (no modules)',
+      `CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10), en-it ${EN_IT_LINE}`,
     );
-    // en-it's relaxation is admitted, and its own line is the honest one: the course exists in
-    // the manifest and has no `modules/` folder at all yet (#332), which the walker treats as a
-    // state and not an error.
-    expect(report.lines).toContain('en-it: 0 modules — nothing authored yet');
+    // en-it is the course being authored behind the gate right now (#332): the relaxation is what
+    // admits it, and the strict build above drops it whole. Its rungs land in ladder order.
+    expect(report.lines).toContain(`en-it: ${EN_IT_LINE}`);
     expect(readManifest(outRoot).devBuild).toBe(true);
-    // The manifest lists what SHIPPED, so en-it is absent from it even here: the build filters
-    // the manifest to courses that emitted at least one module, and en-it has none yet (#332).
+    // The manifest lists what SHIPPED, and a dev build ships en-it — WITH its `fixture` flag, so
+    // no artefact can pretend the course has graduated before #337 deletes it.
     expect(readManifest(outRoot).courses.map((course) => course.id)).toEqual([
       'hi-mr',
       'en-es',
       'en-ar',
       'hi-en',
+      'en-it',
     ]);
     expect(readManifest(outRoot).courses.at(-1)).toMatchObject({
-      id: 'hi-en',
-      l1Tag: 'hi',
-      l2Tag: 'en',
+      id: 'en-it',
+      l1Tag: 'en',
+      l2Tag: 'it',
+      fixture: true,
     });
-    expect(readManifest(outRoot).courses.some((course) => 'fixture' in course)).toBe(false);
+    expect(
+      readManifest(outRoot)
+        .courses.filter((course) => 'fixture' in course)
+        .map((course) => course.id),
+    ).toEqual(['en-it']);
     for (const file of [
       'hi-mr/levels.json',
       'hi-mr/strings.json',
