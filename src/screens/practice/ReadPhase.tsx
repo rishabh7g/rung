@@ -33,7 +33,6 @@ import { useState } from 'react';
 import type { L2Written } from '../../course/manifest.ts';
 import { useStrings } from '../../course/strings.ts';
 import type { Sentence } from '../../course/types.ts';
-import { SelfMark } from '../../components/SelfMark.tsx';
 import { WhyPanel } from '../../components/WhyPanel.tsx';
 import { RegistrationMarks } from '../RegistrationMarks.tsx';
 import { rungLabel } from '../ladder/rungLabel.ts';
@@ -51,14 +50,9 @@ interface ReadPhaseProps {
   /** Back. Never called on the first sentence — the control is disabled there. */
   onPrev: () => void;
   /**
-   * The learner's own verdict on this sentence (#349). A got-it counts it towards the rung's exit
-   * ritual; a miss counts nothing. The phase reports the mark and the session decides what it
-   * costs — the same division of labour every marked surface in this app keeps.
+   * Next — and it is what MARKS this sentence read (#368). On the last sentence it ends the
+   * session instead. The phase reports the tap; the session decides what it costs.
    */
-  onMark: (gotIt: boolean) => void;
-  /** Has this sentence already been marked got-it? The mark is a fact, not a tally to re-take. */
-  marked: boolean;
-  /** Next — and on the last sentence, the hand-over to Produce. The session decides which. */
   onNext: () => void;
   /** The course's writing direction — every word on this card is its content or its copy. */
   dir?: string;
@@ -73,8 +67,6 @@ export function ReadPhase({
   total,
   onPrev,
   onNext,
-  onMark,
-  marked,
   dir,
   l2,
 }: ReadPhaseProps) {
@@ -146,26 +138,6 @@ export function ReadPhase({
               {cueOpen ? strings['read.hideCue'] : strings['read.showCue']}
             </button>
           }
-        />
-      </div>
-
-      {/**
-       * The gate (#349). The same two segments every marked surface in the app uses — the mark is
-       * the learner's, and the app's whole part in it is to take it (Invariant 4).
-       *
-       * It is NOT a commit window like the reveal card's (#313): there is nothing to advance to,
-       * because the mark does not move the pager. A got-it lands the moment it is chosen, and the
-       * lit segment is the receipt. Re-marking a sentence already counted writes nothing — the
-       * counter is a fact about the sentence, not a tally of taps.
-       */}
-      <div className={styles.marks}>
-        <SelfMark
-          // Keyed by the sentence, so the next one arrives unmarked rather than wearing the last
-          // one's verdict.
-          key={sentence.id}
-          mark={marked ? 'got' : null}
-          onMark={(mark) => onMark(mark === 'got')}
-          dir={dir}
         />
       </div>
 

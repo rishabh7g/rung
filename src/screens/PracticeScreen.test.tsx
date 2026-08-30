@@ -123,12 +123,12 @@ async function readCardFor(sentenceId: string): Promise<HTMLElement> {
 }
 
 /**
- * Read's own self-mark (#349) — the gate, and the only writer of the counters since Produce went.
- * No reveal to click first and no commit window to wait out: it does not move the pager, so it
- * lands the moment it is chosen.
+ * Read's pager, which is what MARKS a sentence read (#368) — paging past it is the gate, and the
+ * self-mark #349 briefly put on this card is gone. `read.finish` on the last sentence both marks
+ * it and ends the session.
  */
-function readMark(mark: 'mark.gotIt' | 'mark.missed'): void {
-  fireEvent.click(screen.getByRole('button', { name: strings(mark) }));
+function readOn(control: 'read.next' | 'read.finish' | 'read.prev'): void {
+  fireEvent.click(screen.getByRole('button', { name: strings(control) }));
 }
 
 beforeEach(() => {
@@ -320,7 +320,7 @@ describe('a Review mark reaches the Leitner queue and never the counters', () =>
   });
 });
 
-describe('a Read got-it reaches the counters and never the queue', () => {
+describe('Read’s pager reaches the counters and never the queue', () => {
   /**
    * The discriminating seed: the very sentence about to be marked is ALSO in the review queue,
    * enrolled and not due. Nothing in the product puts it there — a rung's sentences enrol when it
@@ -344,51 +344,72 @@ describe('a Read got-it reaches the counters and never the queue', () => {
     seedQueue(ENROLLED_TWICE);
   });
 
-  it('counts the sentence, and leaves every review box exactly where it was', async () => {
+  it('counts the sentence it pages past, and leaves every review box exactly where it was', async () => {
     await renderHub();
     await begin();
     await readCardFor('L1-M2-S01');
 
-    readMark('mark.gotIt');
+    readOn('read.next');
 
     expect(courseState()?.production).toEqual({ 'L1-M2-S01': 1 });
     // Ticked once by the session start, and untouched by the mark — including the entry for the
-    // sentence that was just marked.
+    // sentence that was just read.
     expect(courseState()?.reviewQueue).toEqual(TICKED);
   });
 
-  it('counts nothing at all on a miss — the counters only ever go up', async () => {
+  /**
+   * The last sentence is marked by the control that ENDS the session, not by a separate tap
+   * (#368). Otherwise the tenth sentence of every rung would be the one that never counted, and
+   * no rung would ever reach its gate.
+   */
+  it('counts the last sentence too — `read.finish` marks it on the way out', async () => {
+    await renderHub();
+    await begin();
+    await readCardFor('L1-M2-S01');
+    readOn('read.next');
+    await readCardFor('L1-M2-S02');
+
+    readOn('read.finish');
+
+    await screen.findByText(strings('practice.summaryTitle'));
+    expect(courseState()?.production).toEqual({ 'L1-M2-S01': 1, 'L1-M2-S02': 1 });
+  });
+
+  /**
+   * Reading is free until the learner moves on: arriving at a card writes NOTHING. That is not
+   * only a product call — marking on arrival would mean calling a store action out of a render
+   * effect, which is the `setState`-in-effect pattern this repo's lint forbids and the reason
+   * #316's structural version was built and backed out (#368).
+   */
+  it('writes nothing on arrival — the tap is the mark, not the render', async () => {
     await renderHub();
     await begin();
     await readCardFor('L1-M2-S01');
 
-    readMark('mark.missed');
+    // The cue and "why" are free too: opening either is reading, not progress.
+    fireEvent.click(screen.getByRole('button', { name: strings('read.showCue') }));
 
     expect(courseState()?.production).toEqual({});
     expect(courseState()?.reviewQueue).toEqual(TICKED);
   });
 
   /**
-   * The mark does NOT move the pager (#349): a learner who marked a sentence may still want its
-   * cue, its "why" or another look at it, and the phase is a read-through rather than a queue of
-   * verdicts. Re-marking a sentence already counted writes nothing — the counter is a fact about
-   * the sentence, not a tally of taps.
+   * Paging back and forward over the same card counts it ONCE. The counter is a fact about the
+   * sentence — "went through it" — not a tally of taps, and the counters only ever go up (#95),
+   * so Back never unmarks either.
    */
-  it('stays on the card it marked, and counts it once however often it is marked', async () => {
+  it('counts a sentence once however often it is paged over, and never unmarks', async () => {
     await renderHub();
     await begin();
     await readCardFor('L1-M2-S01');
 
-    readMark('mark.gotIt');
-    readMark('mark.gotIt');
+    readOn('read.next');
+    await readCardFor('L1-M2-S02');
+    readOn('read.prev');
+    await readCardFor('L1-M2-S01');
+    readOn('read.next');
 
-    expect(await readCardFor('L1-M2-S01')).toBeInTheDocument();
     expect(courseState()?.production).toEqual({ 'L1-M2-S01': 1 });
-    expect(courseState()?.session).toEqual({
-      phase: 'read',
-      idx: 0,
-      queue: ['L1-M2-S01', 'L1-M2-S02'],
-    });
   });
 });
 
@@ -525,7 +546,7 @@ describe('the Read phase', () => {
     expect(courseState()?.session).toBeNull();
   });
 
-  it('writes nothing while nothing is marked: no box moves, no counter moves', async () => {
+  it('never touches the review queue, however far the learner pages (#349, #368)', async () => {
     // Enrolled and not due, so the session opens at Read with the queue standing behind it.
     seedQueue([{ sentenceId: 'L1-M1-S01', box: 2, dueInSessions: 3 }]);
     await read();
@@ -534,12 +555,12 @@ describe('the Read phase', () => {
     fireEvent.click(pager('read.next'));
     await screen.findByText(sentence(1).display);
 
-    // Ticked once by the session start, and by nothing since. Reading, paging and opening the cue
-    // are free — only the self-mark writes, and it is the queue this phase never touches (#349).
+    // Ticked once by the session start, and by nothing since. The queue is the one thing Read
+    // never writes — the pager writes the EXIT counters instead, which is the routing contract.
     expect(courseState()?.reviewQueue).toEqual([
       { sentenceId: 'L1-M1-S01', box: 2, dueInSessions: 2 },
     ]);
-    expect(courseState()?.production).toEqual({});
+    expect(courseState()?.production).toEqual({ 'L1-M1-S01': 1 });
   });
 
   it('leaves the chips free — Review is one tap away mid-read', async () => {
@@ -748,11 +769,11 @@ describe('the summary', () => {
     await cardFor('L1-M1-S01');
     answer('mark.gotIt');
 
+    // Read's pager is the mark (#368): paging past S01 counts it, and `read.finish` counts S02
+    // on the way to the summary. A session that reaches the end reads the whole rung through.
     await readCardFor('L1-M2-S01');
-    readMark('mark.gotIt');
     fireEvent.click(screen.getByRole('button', { name: strings('read.next') }));
     await readCardFor('L1-M2-S02');
-    readMark('mark.missed');
     fireEvent.click(screen.getByRole('button', { name: strings('read.finish') }));
 
     await screen.findByText(strings('practice.summaryTitle'));
@@ -763,9 +784,9 @@ describe('the summary', () => {
 
     expect(screen.getByText(line('practice.summaryReviewed', { count: 1 }))).toBeInTheDocument();
     expect(screen.getByText(line('practice.summaryGotIt', { count: 1 }))).toBeInTheDocument();
-    // One of the rung's two sentences marked: the missed one wrote nothing.
+    // Both of the rung's sentences read through — the pager counted each as it left it (#368).
     expect(
-      screen.getByText(line('practice.summaryMarked', { count: 1, total: 2 })),
+      screen.getByText(line('practice.summaryMarked', { count: 2, total: 2 })),
     ).toBeInTheDocument();
   });
 
@@ -776,27 +797,32 @@ describe('the summary', () => {
    * sends a wrong arrival to the module — so this is a link appearing beside a count that already
    * says the same thing, not a second gate.
    */
-  it('offers the exit ritual only once every sentence is marked (#315)', async () => {
-    await runSession();
+  /**
+   * The rung opens only when the WHOLE of it has been read through (#315, #368). A learner who
+   * pages out of Read early — the chips never gate, so they can — leaves the gate shut, and the
+   * summary says nothing about a ritual it cannot offer.
+   */
+  it('offers no ritual when the learner left Read part-way (#315)', async () => {
+    pass(M1);
+    seedQueue([{ sentenceId: 'L1-M1-S01', box: 1, dueInSessions: 0 }]);
+    await renderHub();
+    await begin('practice.beginReview');
 
-    // One of two marked: the rung is not read through, and the summary says nothing about a ritual.
-    expect(screen.getByText(line('practice.summaryMarked', { count: 1, total: 2 }))).toBeVisible();
+    // Page past the rung's FIRST sentence only, then answer the review out and end there.
+    fireEvent.click(chip('read'));
+    await readCardFor('L1-M2-S01');
+    fireEvent.click(screen.getByRole('button', { name: strings('read.next') }));
+    await readCardFor('L1-M2-S02');
+    fireEvent.click(chip('review'));
+    await cardFor('L1-M1-S01');
+    answer('mark.gotIt');
+
+    expect(courseState()?.production).toEqual({ 'L1-M2-S01': 1 });
     expect(screen.queryByRole('link', { name: strings('practice.summaryToRitual') })).toBeNull();
   });
 
   it('links straight to the ritual when the rung is read through (#315)', async () => {
-    pass(M1);
-    await renderHub();
-    await begin();
-
-    await readCardFor('L1-M2-S01');
-    readMark('mark.gotIt');
-    fireEvent.click(screen.getByRole('button', { name: strings('read.next') }));
-    await readCardFor('L1-M2-S02');
-    readMark('mark.gotIt');
-    fireEvent.click(screen.getByRole('button', { name: strings('read.finish') }));
-
-    await screen.findByText(strings('practice.summaryTitle'));
+    await runSession();
 
     expect(screen.getByText(line('practice.summaryMarked', { count: 2, total: 2 }))).toBeVisible();
 

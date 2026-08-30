@@ -5,87 +5,93 @@
   "job": "Locations and prepositions",
   "prerequisites": ["L1-M6"],
   "verified": true,
-  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedBy": "LLM review of the romanization, authorised by repo owner",
   "verifiedAt": "2026-08-30",
   "complexity": {
     "minWordsPerSentence": 2,
     "maxWordsPerSentence": 7,
     "allowedTenses": ["simple_present"],
     "allowedPatterns": [
-      "Где + N + ?",
-      "N + в / на + place (prep.)",
-      "На + place (prep.) + есть + N",
-      "N + здесь / там"
+      "Gde + N + ?",
+      "N + v / na + place (prep.)",
+      "Na + place (prep.) + yest' + N",
+      "N + zdes' / tam"
     ],
     "newWordCap": 25
   },
   "rules": [
     {
       "tag": "delta",
-      "text": "The second case ending of the course, and the only one that never appears without a preposition in front of it — which is where its name, the prepositional, comes from. The everyday shape is -е on the end: стол → на столе, магазин → в магазине, работа → на работе, комната → в комнате, Москва → в Москве."
+      "text": "The second case ending of the course, and the only one that never appears without a preposition in front of it — which is where its name, the prepositional, comes from. The everyday shape is -e on the end: stol → na stolé, magazín → v magazíne, rabóta → na rabóte, kómnata → v kómnate, Moskvá → v Moskvé."
     },
     {
       "tag": "interference",
-      "text": "в is roughly \"inside\" and на roughly \"on\" or \"at\", but which one a place takes is as often a fact about the word as it is about the geometry: в магазине, but на работе — and nobody stands on top of their job. Learn each place WITH its preposition, the way you learn a noun with its gender."
+      "text": "v is roughly \"inside\" and na roughly \"on\" or \"at\", but which one a place takes is as often a fact about the word as it is about the geometry: v magazíne, but na rabóte — and nobody stands on top of their job. Learn each place WITH its preposition, the way you learn a noun with its gender."
     },
     {
       "tag": "delta",
-      "text": "есть means \"there is\" — it asserts that something exists somewhere: На столе есть книга. When you already know the thing exists and are only saying WHERE it is, есть drops out entirely: Книга на столе. That drop is the difference between announcing a book and locating one."
+      "text": "yest' means \"there is\" — it asserts that something exists somewhere: Na stolé yest' kníga. When you already know the thing exists and are only saying WHERE it is, yest' drops out entirely: Kníga na stolé. That drop is the difference between announcing a book and locating one."
     },
     {
       "tag": "interference",
-      "text": "There is no dummy subject. English \"there is a book on the table\" has a \"there\" that means nothing and an \"is\" that agrees with the book; Russian has neither — на столе есть книга is simply \"on table is book\". Reaching for a Russian word to put where \"there\" was is the trap, and there is none."
+      "text": "There is no dummy subject. English \"there is a book on the table\" has a \"there\" that means nothing and an \"is\" that agrees with the book; Russian has neither — na stolé yest' kníga is simply \"on table is book\". Reaching for a Russian word to put where \"there\" was is the trap, and there is none."
     },
     {
       "tag": "free",
-      "text": "здесь (\"here\") and там (\"there\") take no preposition and no ending, so they answer Где …? without touching the case system at all. They are the easiest answers on the rung."
+      "text": "zdes' (\"here\") and tam (\"there\") take no preposition and no ending, so they answer Gde …? without touching the case system at all. They are the easiest answers on the rung."
     },
     {
       "tag": "delta",
-      "text": "Word order is already doing the work English gives to a and the. Книга на столе puts the known thing first and the news last: \"THE book is on the table\". На столе книга turns it round: \"there is A book on the table\". Both are correct and they are not interchangeable — M10 makes this the lesson."
+      "text": "Word order is already doing the work English gives to a and the. Kníga na stolé puts the known thing first and the news last: \"THE book is on the table\". Na stolé kníga turns it round: \"there is A book on the table\". Both are correct and they are not interchangeable — M10 makes this the lesson."
     }
   ],
   "sentences": [
     {
       "id": "L1-M7-S01",
-      "display": "Где книга?",
+      "display": "Gde kníga?",
+      "script": "Где книга?",
       "cue": "Where is the book?",
       "glossEn": "lit. \"where book?\"",
       "literal": "Where book?",
       "deconstruction": {
         "words": [
           {
-            "display": "Где",
+            "display": "Gde",
+            "script": "Где",
             "cue": "where",
             "tag": "delta",
-            "forms": ["Где"],
-            "note": "\"Where\", asking about a position rather than a direction. Russian has a second word for \"where to\" (куда), which this level does not teach — M5's домой covered the only direction the course needs."
+            "forms": ["Gde"],
+            "note": "\"Where\", asking about a position rather than a direction. Russian has a second word for \"where to\" (kudá), which this level does not teach — M5's domóy covered the only direction the course needs."
           }
         ],
         "rules": [3]
       },
       "trap": "Two words, and no verb — the zero copula from M1 has been quietly running under every sentence since. \"Where IS the book\" has an is that Russian simply does not write in the present.",
-      "sound": "gdye KNEE-ga. Russian is comfortable starting a word with г and д together; say both, quickly.",
+      "sound": "gdye KNEE-ga. Russian is comfortable starting a word with g and d together; say both, quickly.",
       "variations": [
         {
-          "display": "Где Анна?",
+          "display": "Gde Ánna?",
+          "script": "Где Анна?",
           "cue": "Where is Anna?",
           "changed": "swap what is being looked for — the frame is two words either way"
         },
         {
-          "display": "Где вы работаете?",
+          "display": "Gde vy rabótayete?",
+          "script": "Где вы работаете?",
           "cue": "Where do you work?",
-          "changed": "a full verb after Где, and it takes the polite you-ending"
+          "changed": "a full verb after Gde, and it takes the polite you-ending"
         },
         {
-          "display": "Где мой ключ?",
+          "display": "Gde moy klyuch?",
+          "script": "Где мой ключ?",
           "cue": "Where is my key?",
-          "changed": "a possessive word slips in front of the noun — мой agrees with what it describes"
+          "changed": "a possessive word slips in front of the noun — moy agrees with what it describes"
         }
       ],
       "mistake": {
-        "display": "Где есть книга?",
-        "why": "есть asserts that something exists; it does not fill the gap where English puts is. Где книга? is the question."
+        "display": "Gde yest' kníga?",
+        "script": "Где есть книга?",
+        "why": "yest' asserts that something exists; it does not fill the gap where English puts is. Gde kníga? is the question."
       },
       "usage": "Looking for something — the most-used question on this rung.",
       "register": "neutral",
@@ -93,276 +99,313 @@
     },
     {
       "id": "L1-M7-S02",
-      "display": "Книга на столе.",
+      "display": "Kníga na stolé.",
+      "script": "Книга на столе.",
       "cue": "The book is on the table",
       "glossEn": "lit. \"book on table\"",
       "literal": "Book on table",
       "deconstruction": {
         "words": [
           {
-            "display": "на",
+            "display": "na",
+            "script": "на",
             "cue": "on · at",
             "tag": "delta",
-            "forms": ["на"],
-            "note": "\"On\" — and also \"at\" for a place you think of as an activity rather than a container: на работе (at work), на почте (at the post office). It bends the word after it into the -е shape, exactly as в does."
+            "forms": ["na"],
+            "note": "\"On\" — and also \"at\" for a place you think of as an activity rather than a container: na rabóte (at work), na póchte (at the post office). It bends the word after it into the -e shape, exactly as v does."
           },
           {
-            "display": "столе",
+            "display": "stolé",
+            "script": "столе",
             "cue": "table",
             "tag": "delta",
-            "forms": ["стол", "столе"],
-            "note": "Table. стол is the dictionary shape and the subject shape; столе is what в and на take. Masculine — it ends in a consonant — and the stress sits on the ending in both shapes: stol, sta-LYE."
+            "forms": ["stol", "stolé"],
+            "note": "Table. stol is the dictionary shape and the subject shape; stolé is what v and na take. Masculine — it ends in a consonant — and the stress sits on the ending in both shapes: stol, sta-LYE."
           }
         ],
         "rules": [0, 1, 5]
       },
-      "trap": "The answer to Где …? is where the ending appears, not the question. стол is the shape you look up; столе is the shape you stand things on.",
-      "sound": "KNEE-ga na sta-LYE. The о of столе is unstressed and flattens to \"a\", and the е on the end softens the л.",
+      "trap": "The answer to Gde …? is where the ending appears, not the question. stol is the shape you look up; stolé is the shape you stand things on.",
+      "sound": "KNEE-ga na sta-LYE. The o of stolé is unstressed and flattens to \"a\", and the e on the end softens the l.",
       "variations": [
         {
-          "display": "Газета на столе.",
+          "display": "Gazéta na stolé.",
+          "script": "Газета на столе.",
           "cue": "The newspaper is on the table",
-          "changed": "swap what is on the table — на столе does not move"
+          "changed": "swap what is on the table — na stolé does not move"
         },
         {
-          "display": "На столе книга.",
+          "display": "Na stolé kníga.",
+          "script": "На столе книга.",
           "cue": "There is a book on the table",
           "changed": "the same three words, reordered — and now the book is the news, not the table"
         },
         {
-          "display": "Книга не на столе.",
+          "display": "Kníga ne na stolé.",
+          "script": "Книга не на столе.",
           "cue": "The book is not on the table",
-          "changed": "не in front of what it denies — here the place, since there is no verb"
+          "changed": "ne in front of what it denies — here the place, since there is no verb"
         }
       ],
       "mistake": {
-        "display": "Книга на стол.",
-        "why": "на bends the word after it. Standing on something is на столе; на стол would be putting something onto it."
+        "display": "Kníga na stol.",
+        "script": "Книга на стол.",
+        "why": "na bends the word after it. Standing on something is na stolé; na stol would be putting something onto it."
       },
       "usage": "Saying where a thing is — the plainest sentence this rung can make.",
       "register": "neutral",
-      "mnemonic": "Look it up as стол, put things on it as столе."
+      "mnemonic": "Look it up as stol, put things on it as stolé."
     },
     {
       "id": "L1-M7-S03",
-      "display": "На столе есть книга.",
+      "display": "Na stolé yest' kníga.",
+      "script": "На столе есть книга.",
       "cue": "There is a book on the table",
       "glossEn": "lit. \"on table is book\"",
       "literal": "On table is book",
       "deconstruction": {
         "words": [
           {
-            "display": "есть",
+            "display": "yest'",
+            "script": "есть",
             "cue": "there is · there are",
             "tag": "interference",
-            "forms": ["есть"],
-            "note": "\"There is\" — the word that asserts something exists. It never changes for number or gender: на столе есть книга, на столе есть книги. It drops out completely when you are only saying WHERE a known thing is (Книга на столе), and it comes back in M8 to do possession — У меня есть книга, \"at me is a book\". One word, both jobs."
+            "forms": ["yest'"],
+            "note": "\"There is\" — the word that asserts something exists. It never changes for number or gender: na stolé yest' kníga, na stolé yest' knígi. It drops out completely when you are only saying WHERE a known thing is (Kníga na stolé), and it comes back in M8 to do possession — U menyá yest' kníga, \"at me is a book\". One word, both jobs."
           }
         ],
         "rules": [2, 3]
       },
-      "trap": "The English sentence has four words of scaffolding — there, is, a — and Russian has none of them. есть is not \"is\": it is the assertion that something exists, and putting it into Книга на столе would change what that sentence claims.",
-      "sound": "na sta-LYE yest' KNEE-ga. есть is one syllable ending soft; the ь is what softens the т.",
+      "trap": "The English sentence has four words of scaffolding — there, is, a — and Russian has none of them. yest' is not \"is\": it is the assertion that something exists, and putting it into Kníga na stolé would change what that sentence claims.",
+      "sound": "na sta-LYE yest' KNEE-ga. yest' is one syllable ending soft; the ' is what softens the t.",
       "variations": [
         {
-          "display": "На столе есть газета.",
+          "display": "Na stolé yest' gazéta.",
+          "script": "На столе есть газета.",
           "cue": "There is a newspaper on the table",
-          "changed": "swap what exists — есть does not move for gender or number"
+          "changed": "swap what exists — yest' does not move for gender or number"
         },
         {
-          "display": "Книга на столе.",
+          "display": "Kníga na stolé.",
+          "script": "Книга на столе.",
           "cue": "The book is on the table",
-          "changed": "drop есть and reorder: now the book is known and its place is the news"
+          "changed": "drop yest' and reorder: now the book is known and its place is the news"
         },
         {
-          "display": "В магазине есть хлеб.",
+          "display": "V magazíne yest' khleb.",
+          "script": "В магазине есть хлеб.",
           "cue": "There is bread in the shop",
-          "changed": "swap the place — the frame works with в as well as with на"
+          "changed": "swap the place — the frame works with v as well as with na"
         }
       ],
       "mistake": {
-        "display": "Там есть книга на столе.",
-        "why": "The English \"there\" imported as там, which means an actual other place. Russian's existential sentence has no dummy subject at all."
+        "display": "Tam yest' kníga na stolé.",
+        "script": "Там есть книга на столе.",
+        "why": "The English \"there\" imported as tam, which means an actual other place. Russian's existential sentence has no dummy subject at all."
       },
       "usage": "Announcing that something is available — the sentence a shop assistant answers a question with.",
       "register": "neutral",
-      "mnemonic": "есть says a thing EXISTS. Where it is, is a different sentence."
+      "mnemonic": "yest' says a thing EXISTS. Where it is, is a different sentence."
     },
     {
       "id": "L1-M7-S04",
-      "display": "Хлеб в магазине.",
+      "display": "Khleb v magazíne.",
+      "script": "Хлеб в магазине.",
       "cue": "The bread is in the shop",
       "glossEn": "lit. \"bread in shop\"",
       "literal": "Bread in shop",
       "deconstruction": {
         "words": [
           {
-            "display": "магазине",
+            "display": "magazíne",
+            "script": "магазине",
             "cue": "shop",
             "tag": "delta",
-            "forms": ["магазин", "магазине"],
-            "note": "Shop. Masculine, and it takes the same -е ending as стол: магазин → в магазине. This is M4's в again, doing its other job — the clock seat and the place seat are one word with two lives."
+            "forms": ["magazín", "magazíne"],
+            "note": "Shop. Masculine, and it takes the same -e ending as stol: magazín → v magazíne. This is M4's v again, doing its other job — the clock seat and the place seat are one word with two lives."
           }
         ],
         "rules": [0, 1]
       },
-      "trap": "M4 taught в for the clock — в семь часов — and it did not bend anything there. In front of a place it does. Same word, two jobs, and only one of them touches the ending.",
-      "sound": "khlyep v ma-ga-ZEE-nye. The в here is barely a sound of its own; it leans onto the word after it.",
+      "trap": "M4 taught v for the clock — v sem' chasóv — and it did not bend anything there. In front of a place it does. Same word, two jobs, and only one of them touches the ending.",
+      "sound": "khlyep v ma-ga-ZEE-nye. The v here is barely a sound of its own; it leans onto the word after it.",
       "variations": [
         {
-          "display": "Молоко в магазине.",
+          "display": "Molokó v magazíne.",
+          "script": "Молоко в магазине.",
           "cue": "The milk is in the shop",
-          "changed": "swap what is there — в магазине is unchanged"
+          "changed": "swap what is there — v magazíne is unchanged"
         },
         {
-          "display": "В магазине есть хлеб.",
+          "display": "V magazíne yest' khleb.",
+          "script": "В магазине есть хлеб.",
           "cue": "There is bread in the shop",
-          "changed": "reordered with есть — now it announces that bread is available"
+          "changed": "reordered with yest' — now it announces that bread is available"
         },
         {
-          "display": "Я работаю в магазине.",
+          "display": "Ya rabótayu v magazíne.",
+          "script": "Я работаю в магазине.",
           "cue": "I work in a shop",
           "changed": "a verb instead of a bare noun — the place phrase is exactly the same"
         }
       ],
       "mistake": {
-        "display": "Хлеб в магазин.",
-        "why": "в bends the place after it, exactly as на does: в магазине. в магазин would be going into the shop, not being there."
+        "display": "Khleb v magazín.",
+        "script": "Хлеб в магазин.",
+        "why": "v bends the place after it, exactly as na does: v magazíne. v magazín would be going into the shop, not being there."
       },
       "usage": "Saying where something is kept or sold.",
       "register": "neutral",
-      "mnemonic": "M4's в told the time and left the word alone. M7's в names a place and bends it."
+      "mnemonic": "M4's v told the time and left the word alone. M7's v names a place and bends it."
     },
     {
       "id": "L1-M7-S05",
-      "display": "Книга здесь.",
+      "display": "Kníga zdes'.",
+      "script": "Книга здесь.",
       "cue": "The book is here",
       "glossEn": "lit. \"book here\"",
       "literal": "Book here",
       "deconstruction": {
         "words": [
           {
-            "display": "здесь",
+            "display": "zdes'",
+            "script": "здесь",
             "cue": "here",
             "tag": "free",
-            "forms": ["здесь"],
-            "note": "\"Here\". No preposition, no ending, nothing to build — it answers Где …? all by itself. Both ь letters in it are silent softeners."
+            "forms": ["zdes'"],
+            "note": "\"Here\". No preposition, no ending, nothing to build — it answers Gde …? all by itself. The ' on the end is a silent softener — it is not a sound of its own, it is what makes the s before it soft."
           }
         ],
         "rules": [4]
       },
-      "trap": "After a whole rung of endings, здесь is a relief and a warning: not every answer to Где …? is a bent noun. Some places are just words.",
-      "sound": "KNEE-ga zdyes'. Another з and д together at the start, and the word ends soft.",
+      "trap": "After a whole rung of endings, zdes' is a relief and a warning: not every answer to Gde …? is a bent noun. Some places are just words.",
+      "sound": "KNEE-ga zdyes'. Another z and d together at the start, and the word ends soft.",
       "variations": [
         {
-          "display": "Ключ здесь.",
+          "display": "Klyuch zdes'.",
+          "script": "Ключ здесь.",
           "cue": "The key is here",
-          "changed": "swap the thing — здесь never changes"
+          "changed": "swap the thing — zdes' never changes"
         },
         {
-          "display": "Книга там.",
+          "display": "Kníga tam.",
+          "script": "Книга там.",
           "cue": "The book is there",
-          "changed": "здесь → там: the other end of the same pair"
+          "changed": "zdes' → tam: the other end of the same pair"
         },
         {
-          "display": "Здесь есть книга.",
+          "display": "Zdes' yest' kníga.",
+          "script": "Здесь есть книга.",
           "cue": "There is a book here",
-          "changed": "reordered with есть — now it announces the book rather than locating it"
+          "changed": "reordered with yest' — now it announces the book rather than locating it"
         }
       ],
       "mistake": {
-        "display": "Книга в здесь.",
-        "why": "здесь is already a place. Putting a preposition in front of it is like saying \"in here-place\"."
+        "display": "Kníga v zdes'.",
+        "script": "Книга в здесь.",
+        "why": "zdes' is already a place. Putting a preposition in front of it is like saying \"in here-place\"."
       },
       "usage": "Handing something over, or pointing at where it is.",
       "register": "neutral",
-      "mnemonic": "Some answers to \"where\" are nouns with endings. Others are just здесь and там."
+      "mnemonic": "Some answers to \"where\" are nouns with endings. Others are just zdes' and tam."
     },
     {
       "id": "L1-M7-S06",
-      "display": "Магазин там.",
+      "display": "Magazín tam.",
+      "script": "Магазин там.",
       "cue": "The shop is there",
       "glossEn": "lit. \"shop there\"",
       "literal": "Shop there",
       "deconstruction": {
         "words": [
           {
-            "display": "там",
+            "display": "tam",
+            "script": "там",
             "cue": "there",
             "tag": "delta",
-            "forms": ["там"],
-            "note": "\"There\", meaning an actual other place — never the empty English \"there\" of \"there is a book\". That job belongs to есть, and mixing the two is the module's main trap."
+            "forms": ["tam"],
+            "note": "\"There\", meaning an actual other place — never the empty English \"there\" of \"there is a book\". That job belongs to yest', and mixing the two is the module's main trap."
           }
         ],
         "rules": [3, 4]
       },
-      "trap": "English uses \"there\" for two completely different things: a place (\"the shop is there\") and a piece of scaffolding (\"there is a shop\"). там is only ever the first one.",
-      "sound": "ma-ga-ZEEN tam. Note that магазин is back in its dictionary shape here — nothing is in front of it, so nothing bends it.",
+      "trap": "English uses \"there\" for two completely different things: a place (\"the shop is there\") and a piece of scaffolding (\"there is a shop\"). tam is only ever the first one.",
+      "sound": "ma-ga-ZEEN tam. Note that magazín is back in its dictionary shape here — nothing is in front of it, so nothing bends it.",
       "variations": [
         {
-          "display": "Магазин здесь.",
+          "display": "Magazín zdes'.",
+          "script": "Магазин здесь.",
           "cue": "The shop is here",
-          "changed": "там → здесь, the other end of the pair"
+          "changed": "tam → zdes', the other end of the pair"
         },
         {
-          "display": "Там магазин.",
+          "display": "Tam magazín.",
+          "script": "Там магазин.",
           "cue": "There is a shop over there",
           "changed": "the same two words reordered — now the shop is the news"
         },
         {
-          "display": "Ключ там, на столе.",
+          "display": "Klyuch tam, na stolé.",
+          "script": "Ключ там, на столе.",
           "cue": "The key is there, on the table",
-          "changed": "там followed by the exact place, set off by a comma"
+          "changed": "tam followed by the exact place, set off by a comma"
         }
       ],
       "mistake": {
-        "display": "Там есть магазин там.",
-        "why": "One там is a place and the other is English scaffolding. Russian needs only the first: Там магазин."
+        "display": "Tam yest' magazín tam.",
+        "script": "Там есть магазин там.",
+        "why": "One tam is a place and the other is English scaffolding. Russian needs only the first: Tam magazín."
       },
       "usage": "Pointing somebody towards something.",
       "register": "neutral",
-      "mnemonic": "там is a place you could walk to. English's other \"there\" is nowhere at all."
+      "mnemonic": "tam is a place you could walk to. English's other \"there\" is nowhere at all."
     },
     {
       "id": "L1-M7-S07",
-      "display": "Анна в комнате.",
+      "display": "Ánna v kómnate.",
+      "script": "Анна в комнате.",
       "cue": "Anna is in the room",
       "glossEn": "lit. \"Anna in room\"",
       "literal": "Anna in room",
       "deconstruction": {
         "words": [
           {
-            "display": "комнате",
+            "display": "kómnate",
+            "script": "комнате",
             "cue": "room",
             "tag": "delta",
-            "forms": ["комната", "комнате"],
-            "note": "Room. Feminine, and it takes the SAME -е ending as the masculine стол and магазин — this is the one case where the ending does not care about gender, which makes it much the easiest of the six."
+            "forms": ["kómnata", "kómnate"],
+            "note": "Room. Feminine, and it takes the SAME -e ending as the masculine stol and magazín — this is the one case where the ending does not care about gender, which makes it much the easiest of the six."
           }
         ],
         "rules": [0, 1]
       },
-      "trap": "M3's object ending cared about gender: only feminine -а nouns became -у. This one does not. комната → комнате and стол → столе are the same ending on different genders.",
-      "sound": "AN-na v KOM-na-tye. The stress stays at the front of комната in both shapes.",
+      "trap": "M3's object ending cared about gender: only feminine -a nouns became -u. This one does not. kómnata → kómnate and stol → stolé are the same ending on different genders.",
+      "sound": "AN-na v KOM-na-tye. The stress stays at the front of kómnata in both shapes.",
       "variations": [
         {
-          "display": "Иван в комнате.",
+          "display": "Iván v kómnate.",
+          "script": "Иван в комнате.",
           "cue": "Ivan is in the room",
           "changed": "swap who is there — the place phrase does not move"
         },
         {
-          "display": "В комнате есть стол.",
+          "display": "V kómnate yest' stol.",
+          "script": "В комнате есть стол.",
           "cue": "There is a table in the room",
-          "changed": "reordered with есть — and стол is back in its dictionary shape, being the thing that exists"
+          "changed": "reordered with yest' — and stol is back in its dictionary shape, being the thing that exists"
         },
         {
-          "display": "Анна не в комнате.",
+          "display": "Ánna ne v kómnate.",
+          "script": "Анна не в комнате.",
           "cue": "Anna is not in the room",
-          "changed": "не in front of the place, since there is no verb to put it in front of"
+          "changed": "ne in front of the place, since there is no verb to put it in front of"
         }
       ],
       "mistake": {
-        "display": "Анна в комнату.",
-        "why": "-у is M3's object ending, for the thing a verb acts on. Being somewhere takes -е: в комнате."
+        "display": "Ánna v kómnatu.",
+        "script": "Анна в комнату.",
+        "why": "-u is M3's object ending, for the thing a verb acts on. Being somewhere takes -e: v kómnate."
       },
       "usage": "Saying where a person is — and the sentence that shows this ending ignores gender.",
       "register": "neutral",
@@ -370,89 +413,101 @@
     },
     {
       "id": "L1-M7-S08",
-      "display": "Иван на работе.",
+      "display": "Iván na rabóte.",
+      "script": "Иван на работе.",
       "cue": "Ivan is at work",
       "glossEn": "lit. \"Ivan on work\"",
       "literal": "Ivan at work",
       "deconstruction": {
         "words": [
           {
-            "display": "работе",
+            "display": "rabóte",
+            "script": "работе",
             "cue": "work · job",
             "tag": "interference",
-            "forms": ["работа", "работе"],
-            "note": "Work, as a place and as a thing — the noun behind M3's работать. It takes на and not в, and there is no logic to recover: a Russian is ON their work the way an English speaker is AT it. Learn the preposition with the place."
+            "forms": ["rabóta", "rabóte"],
+            "note": "Work, as a place and as a thing — the noun behind M3's rabótat'. It takes na and not v, and there is no logic to recover: a Russian is ON their work the way an English speaker is AT it. Learn the preposition with the place."
           }
         ],
         "rules": [0, 1]
       },
-      "trap": "на normally means \"on\", and nobody stands on top of their job. This is the module's clearest case of the preposition being a fact about the word rather than about the world — and there are a dozen more like it.",
-      "sound": "ee-VAN na ra-BO-tye. The unstressed а of работе flattens; the stress stays where it was in работа.",
+      "trap": "na normally means \"on\", and nobody stands on top of their job. This is the module's clearest case of the preposition being a fact about the word rather than about the world — and there are a dozen more like it.",
+      "sound": "ee-VAN na ra-BO-tye. The unstressed a of rabóte flattens; the stress stays where it was in rabóta.",
       "variations": [
         {
-          "display": "Анна на работе.",
+          "display": "Ánna na rabóte.",
+          "script": "Анна на работе.",
           "cue": "Anna is at work",
-          "changed": "swap who — на работе is fixed"
+          "changed": "swap who — na rabóte is fixed"
         },
         {
-          "display": "Я на работе.",
+          "display": "Ya na rabóte.",
+          "script": "Я на работе.",
           "cue": "I am at work",
           "changed": "a pronoun subject, and still no verb in the sentence"
         },
         {
-          "display": "Иван не на работе.",
+          "display": "Iván ne na rabóte.",
+          "script": "Иван не на работе.",
           "cue": "Ivan is not at work",
-          "changed": "не in front of the place phrase"
+          "changed": "ne in front of the place phrase"
         }
       ],
       "mistake": {
-        "display": "Иван в работе.",
-        "why": "Work takes на, not в. There is no rule behind it — it is a fact about this word, and it has to be learned with it."
+        "display": "Iván v rabóte.",
+        "script": "Иван в работе.",
+        "why": "Work takes na, not v. There is no rule behind it — it is a fact about this word, and it has to be learned with it."
       },
       "usage": "Where somebody is during the day — one of the ten most-said sentences in the language.",
       "register": "neutral",
-      "mnemonic": "в магазине, but на работе. Learn the preposition with the place, not with the meaning."
+      "mnemonic": "v magazíne, but na rabóte. Learn the preposition with the place, not with the meaning."
     },
     {
       "id": "L1-M7-S09",
-      "display": "Ключ на столе.",
+      "display": "Klyuch na stolé.",
+      "script": "Ключ на столе.",
       "cue": "The key is on the table",
       "glossEn": "lit. \"key on table\"",
       "literal": "Key on table",
       "deconstruction": {
         "words": [
           {
-            "display": "Ключ",
+            "display": "Klyuch",
+            "script": "Ключ",
             "cue": "key",
             "tag": "free",
-            "forms": ["Ключ"],
+            "forms": ["Klyuch"],
             "note": "Key. Masculine — it ends in a consonant sound — and it does not change here, because nothing is in front of it: only the word after a preposition bends."
           }
         ],
         "rules": [0, 5]
       },
-      "trap": "One noun bends and the other does not, in the same short sentence. столе bends because на is in front of it; Ключ does not, because nothing is in front of Ключ.",
-      "sound": "klyuch na sta-LYE. The ч is always soft in Russian, closer to the ch of \"cheese\" than of \"chore\".",
+      "trap": "One noun bends and the other does not, in the same short sentence. stolé bends because na is in front of it; Klyuch does not, because nothing is in front of Klyuch.",
+      "sound": "klyuch na sta-LYE. The ch is always soft in Russian, closer to the ch of \"cheese\" than of \"chore\".",
       "variations": [
         {
-          "display": "Ключ здесь.",
+          "display": "Klyuch zdes'.",
+          "script": "Ключ здесь.",
           "cue": "The key is here",
           "changed": "a place that needs no preposition and no ending at all"
         },
         {
-          "display": "На столе ключ.",
+          "display": "Na stolé klyuch.",
+          "script": "На столе ключ.",
           "cue": "There is a key on the table",
           "changed": "reordered — now the key is the news and the table is what we already knew"
         },
         {
-          "display": "Где ключ?",
+          "display": "Gde klyuch?",
+          "script": "Где ключ?",
           "cue": "Where is the key?",
           "changed": "the question this sentence answers"
         }
       ],
       "mistake": {
-        "display": "Ключе на столе.",
-        "why": "The ending belongs to the word after the preposition, not to the subject. Ключ stays as it is."
+        "display": "Klyuché na stolé.",
+        "script": "Ключе на столе.",
+        "why": "The ending belongs to the word after the preposition, not to the subject. Klyuch stays as it is."
       },
       "usage": "The most domestic sentence in the course — and the answer to the most domestic question.",
       "register": "neutral",
@@ -460,67 +515,129 @@
     },
     {
       "id": "L1-M7-S10",
-      "display": "Я живу в Москве.",
+      "display": "Ya zhivú v Moskvé.",
+      "script": "Я живу в Москве.",
       "cue": "I live in Moscow",
       "glossEn": "lit. \"I live in Moscow\"",
       "literal": "I live in Moscow",
       "deconstruction": {
         "words": [
           {
-            "display": "живу",
+            "display": "zhivú",
+            "script": "живу",
             "cue": "I live",
             "tag": "delta",
-            "forms": ["живу", "живёте", "живёт"],
-            "note": "\"I live\", from жить — pattern I, with ё in the you-form and the he/she-form: живёте, живёт. The жи at the front is always said \"zhy\" with a hard ж, whatever the spelling suggests."
+            "forms": ["zhivú", "zhivyóte", "zhivyót"],
+            "note": "\"I live\", from zhit' — pattern I, with yó in the you-form and the he/she-form: zhivyóte, zhivyót. The zhi at the front is always said \"zhy\" with a hard zh, whatever the spelling suggests."
           }
         ],
         "rules": [0]
       },
-      "trap": "Москве is the third shape of a word M1 taught: Москва is the dictionary form, Москвы is what из takes, Москве is what в takes. All three live on one row, which is why tapping any of them opens the same note.",
-      "sound": "ya zhy-VOO v mask-VYE. The и after ж is said as ы — Russian's ж is always hard, and it hardens the vowel behind it.",
+      "trap": "Moskvé is the third shape of a word M1 taught: Moskvá is the dictionary form, Moskvý is what iz takes, Moskvé is what v takes. All three live on one row, which is why tapping any of them opens the same note.",
+      "sound": "ya zhy-VOO v mask-VYE. The i after zh is said as the hard y-vowel, not as an English \"ee\" — Russian's zh is always hard, and it hardens the vowel behind it.",
       "variations": [
         {
-          "display": "Я живу в Индии.",
+          "display": "Ya zhivú v Índii.",
+          "script": "Я живу в Индии.",
           "cue": "I live in India",
-          "changed": "swap the place — and Индии is the same shape из took in M1, doing a second job"
+          "changed": "swap the place — and Índii is the same shape iz took in M1, doing a second job"
         },
         {
-          "display": "Где вы живёте?",
+          "display": "Gde vy zhivyóte?",
+          "script": "Где вы живёте?",
           "cue": "Where do you live?",
-          "changed": "the polite you-form, with ё, after Где"
+          "changed": "the polite you-form, with yó, after Gde"
         },
         {
-          "display": "Анна живёт в Москве.",
+          "display": "Ánna zhivyót v Moskvé.",
+          "script": "Анна живёт в Москве.",
           "cue": "Anna lives in Moscow",
-          "changed": "the he/she form — живёт, ё still in place"
+          "changed": "the he/she form — zhivyót, yó still in place"
         }
       ],
       "mistake": {
-        "display": "Я живу в Москва.",
-        "why": "в bends the place after it. Москва is the dictionary shape; living there is в Москве."
+        "display": "Ya zhivú v Moskvá.",
+        "script": "Я живу в Москва.",
+        "why": "v bends the place after it. Moskvá is the dictionary shape; living there is v Moskvé."
       },
-      "usage": "The line that follows Я из … in every introduction — where you are from, and where you are now.",
+      "usage": "The line that follows Ya iz … in every introduction — where you are from, and where you are now.",
       "register": "neutral",
-      "mnemonic": "Москва, Москвы, Москве — one word, three jobs, one row."
+      "mnemonic": "Moskvá, Moskvý, Moskvé — one word, three jobs, one row."
     }
   ],
   "comprehensionPool": [
-    { "id": "L1-M7-C01", "display": "Где ключ?", "cue": "Where is the key?" },
-    { "id": "L1-M7-C02", "display": "Ключ здесь.", "cue": "The key is here" },
-    { "id": "L1-M7-C03", "display": "Газета на столе.", "cue": "The newspaper is on the table" },
-    { "id": "L1-M7-C04", "display": "Молоко в магазине.", "cue": "The milk is in the shop" },
+    {
+      "id": "L1-M7-C01",
+      "display": "Gde klyuch?",
+      "script": "Где ключ?",
+      "cue": "Where is the key?"
+    },
+    {
+      "id": "L1-M7-C02",
+      "display": "Klyuch zdes'.",
+      "script": "Ключ здесь.",
+      "cue": "The key is here"
+    },
+    {
+      "id": "L1-M7-C03",
+      "display": "Gazéta na stolé.",
+      "script": "Газета на столе.",
+      "cue": "The newspaper is on the table"
+    },
+    {
+      "id": "L1-M7-C04",
+      "display": "Molokó v magazíne.",
+      "script": "Молоко в магазине.",
+      "cue": "The milk is in the shop"
+    },
     {
       "id": "L1-M7-C05",
-      "display": "На столе есть газета.",
+      "display": "Na stolé yest' gazéta.",
+      "script": "На столе есть газета.",
       "cue": "There is a newspaper on the table"
     },
-    { "id": "L1-M7-C06", "display": "Где магазин?", "cue": "Where is the shop?" },
-    { "id": "L1-M7-C07", "display": "Анна на работе.", "cue": "Anna is at work" },
-    { "id": "L1-M7-C08", "display": "Я живу в Индии.", "cue": "I live in India" },
-    { "id": "L1-M7-C09", "display": "Иван в комнате.", "cue": "Ivan is in the room" },
-    { "id": "L1-M7-C10", "display": "Где вы живёте?", "cue": "Where do you live?" },
-    { "id": "L1-M7-C11", "display": "Ключ не на столе.", "cue": "The key is not on the table" },
-    { "id": "L1-M7-C12", "display": "В магазине есть хлеб.", "cue": "There is bread in the shop" }
+    {
+      "id": "L1-M7-C06",
+      "display": "Gde magazín?",
+      "script": "Где магазин?",
+      "cue": "Where is the shop?"
+    },
+    {
+      "id": "L1-M7-C07",
+      "display": "Ánna na rabóte.",
+      "script": "Анна на работе.",
+      "cue": "Anna is at work"
+    },
+    {
+      "id": "L1-M7-C08",
+      "display": "Ya zhivú v Índii.",
+      "script": "Я живу в Индии.",
+      "cue": "I live in India"
+    },
+    {
+      "id": "L1-M7-C09",
+      "display": "Iván v kómnate.",
+      "script": "Иван в комнате.",
+      "cue": "Ivan is in the room"
+    },
+    {
+      "id": "L1-M7-C10",
+      "display": "Gde vy zhivyóte?",
+      "script": "Где вы живёте?",
+      "cue": "Where do you live?"
+    },
+    {
+      "id": "L1-M7-C11",
+      "display": "Klyuch ne na stolé.",
+      "script": "Ключ не на столе.",
+      "cue": "The key is not on the table"
+    },
+    {
+      "id": "L1-M7-C12",
+      "display": "V magazíne yest' khleb.",
+      "script": "В магазине есть хлеб.",
+      "cue": "There is bread in the shop"
+    }
   ],
   "exitTest": {
     "generateCount": 2,

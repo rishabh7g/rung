@@ -115,6 +115,51 @@ function moduleFrom(fixture: FixtureModule): Module {
   return module;
 }
 
+/**
+ * The hi-mr module every scaffold starts from, with its Devanagari surfaces TRANSLITERATED to
+ * Latin — what a course row saying `scriptMode: "romanized"` is actually promising.
+ *
+ * It exists because #354 taught `checkScriptMode` to prove the display IS a romanization rather
+ * than merely a non-empty string. A scaffold that declares a course romanized and then writes
+ * Devanagari into it is now a hard build error, which is correct — but the two cases that use
+ * this are about the MANIFEST and the missing-`script` WARNING, and neither wants to be blocked
+ * at the earlier gate.
+ *
+ * **It transliterates rather than replacing.** The first attempt wrote `romanized 1`, `romanized
+ * 2` over every surface, and the build rejected it for a better reason than the script: a
+ * comprehension pool item's every token must resolve in the cumulative word index (PRD §6.3), and
+ * meaningless text resolves to nothing. Mapping each non-Latin CODEPOINT to a distinct ASCII
+ * string keeps the mapping injective, so two surfaces that were equal stay equal, two that
+ * differed still differ, and every token that resolved before resolves now.
+ */
+function toLatin(value: string): string {
+  let out = '';
+  for (const character of value) {
+    // ASCII letters, digits, spaces and punctuation are already what the policy admits.
+    out += /[\p{Script=Latin}\p{P}\p{N}\p{S}\p{Z}]/u.test(character)
+      ? character
+      : `q${(character.codePointAt(0) ?? 0).toString(36)}`;
+  }
+  return out;
+}
+
+function romanize(module: Module): void {
+  const surface = (target: { display?: string }): void => {
+    if (target.display !== undefined) target.display = toLatin(target.display);
+  };
+
+  for (const sentence of module.sentences) {
+    surface(sentence);
+    for (const word of sentence.deconstruction.words) {
+      surface(word);
+      word.forms = word.forms.map(toLatin);
+    }
+    for (const variation of sentence.variations ?? []) surface(variation);
+    if (sentence.mistake !== undefined) surface(sentence.mistake);
+  }
+  for (const item of module.comprehensionPool) surface(item);
+}
+
 /** Every entry claims `hasContent: true` — the hand-flag the build must never trust. */
 function levelsFor(course: FixtureCourse): Levels {
   const ids = course.listed ?? course.modules.map((module) => module.id);
@@ -339,7 +384,7 @@ describe('the emitted manifest', () => {
       { row: courseRow('en-es'), modules: [{ id: 'L1-M1', verified: false }] },
       {
         row: courseRow('en-ar', { scriptMode: 'romanized', romanizationNote: 'ALA-LC' }),
-        modules: [{ id: 'L1-M1', verified: true }],
+        modules: [{ id: 'L1-M1', verified: true, edit: romanize }],
       },
     ]);
 
@@ -575,12 +620,18 @@ describe('manifest validation', () => {
       'en-ru',
       'en-it',
       'en-fr',
+      'en-de',
     ]);
     expect(courses[2]?.romanizationNote).toMatch(/^ALA-LC/);
     // hi-en graduated in #273, as en-es (#195) and en-ar (#202) did before it, en-ru in #343,
-    // en-it in #337 and en-fr in #331 — so no authored row carries `fixture` any more. The seam itself is still
-    // proved, on a synthetic row, in `src/course/manifest.test.ts`.
-    expect(courses.filter((course) => 'fixture' in course).map((course) => course.id)).toEqual([]);
+    // en-it in #337 and en-fr in #331 — so those seven are shipping rows with no `fixture` key at
+    // all. en-de (#356) is the eighth row and the one still behind the gate: it is the only
+    // authored row carrying the key, and the key survives validation untouched, because the
+    // validator REPORTS the manifest and the gate is what acts on it.
+    expect(courses.filter((course) => 'fixture' in course).map((course) => course.id)).toEqual([
+      'en-de',
+    ]);
+    expect(courses.at(-1)?.fixture).toBe(true);
   });
 
   it('rejects a manifest that is not a non-empty array of objects', () => {
@@ -762,6 +813,108 @@ describe('the scriptMode cross-check', () => {
     ]);
   });
 
+  /**
+   * The regression guard for en-ar (#354), asserted as ZERO errors rather than "no Cyrillic
+   * error": the honest failure mode of a Latin-script check is that it is too strict, and a
+   * course whose every sentence carries `ʾ` and `ʿ` — modifier letters, NOT `Script=Latin` —
+   * is the one that would go dark first. The fixture is the real shipped module, so the
+   * characters under test are the ones en-ar actually writes.
+   */
+  it('passes the whole en-ar fixture — long vowels, an emphatic and hamza', () => {
+    const module = romanizedFixture();
+    const written = JSON.stringify(module);
+
+    // The guard is only a guard if the fixture really carries these; a fixture that quietly
+    // stopped using them would leave this test passing on nothing.
+    for (const character of ['ā', 'ī', 'ḥ', 'ʾ']) {
+      expect(written, `en-ar fixture no longer writes ${character}`).toContain(character);
+    }
+    expect(checkScriptMode(module, 'romanized').errors).toEqual([]);
+  });
+
+  /**
+   * The characters en-ar does not happen to use today but the policy admits: the remaining
+   * emphatics, the Romance courses' accents, and the typographic apostrophes `src/engine/
+   * surface.ts` folds. Written onto surfaces rather than asserted against the regex directly,
+   * because what has to hold is that the CHECK accepts them.
+   */
+  it('passes the rest of the policy: ū ḍ ṭ ẓ, é è ñ ç à ù î ô, and the folded apostrophes', () => {
+    const module = romanizedFixture();
+    module.sentences[0]!.display = 'ḍayf ẓarīf ūlā ṭarīq';
+    module.sentences[0]!.deconstruction.words[0]!.display = 'é è ñ ç à ù î ô';
+    module.comprehensionPool[0]!.display = 'l’homme ‘quoted’ — 12 €, 50%';
+
+    expect(checkScriptMode(module, 'romanized').errors).toEqual([]);
+  });
+
+  /**
+   * The case an allowlist of Unicode CATEGORIES would have missed and an allowlist of SCRIPTS
+   * catches: Devanagari digits are digits, so a `\p{N}` clause would wave them through.
+   */
+  it('rejects Devanagari — its digits included, which are digits and still unreadable', () => {
+    const module = romanizedFixture();
+    module.sentences[0]!.display = 'नमस्ते';
+    module.sentences[1]!.display = 'kitāb १२३';
+
+    const report = checkScriptMode(module, 'romanized');
+
+    expect(report.errors).toHaveLength(2);
+    expect(report.errors[0]).toContain('/sentences/0/display');
+    expect(report.errors[1]).toContain('/sentences/1/display');
+    // The digits are the point: they are `\p{N}`, and a category allowlist would pass them.
+    expect(report.errors[1]).toContain('"१"');
+  });
+
+  /**
+   * The guard that actually protects en-ar: the ten SHIPPED modules, not the trimmed fixture
+   * above. Zero errors, asserted as zero rather than as "no Cyrillic error" — the honest failure
+   * mode of a Latin-script check is that it is too strict, and this is the course that would go
+   * dark first (`ʿ` and `ʾ` are modifier letters, not `Script=Latin`).
+   */
+  it('passes all ten shipped en-ar modules — the course this check could most easily break', () => {
+    for (let n = 1; n <= 10; n += 1) {
+      const id = `L1-M${n}`;
+      expect(checkScriptMode(authored('en-ar', id), 'romanized').errors, id).toEqual([]);
+    }
+  });
+
+  it('rejects a Cyrillic display, naming the surface and the characters', () => {
+    const module = romanizedFixture();
+    module.sentences[1]!.display = 'Меня зовут Иван';
+
+    const report = checkScriptMode(module, 'romanized');
+
+    expect(report.errors).toHaveLength(1);
+    expect(report.errors[0]).toContain('/sentences/1/display');
+    expect(report.errors[0]).toContain('Latin-script romanization');
+    expect(report.errors[0]).toContain('"М"');
+  });
+
+  it('rejects an Arabic-script display — the native line has one home, and this is not it', () => {
+    const module = romanizedFixture();
+    module.comprehensionPool[1]!.display = 'اسمي روهان';
+
+    const report = checkScriptMode(module, 'romanized');
+
+    expect(report.errors).toHaveLength(1);
+    expect(report.errors[0]).toContain('/comprehensionPool/1/display');
+  });
+
+  /**
+   * `forms` was invisible to this check until #354: it is a plain array of strings rather than a
+   * surface with a `display`, so the walk never reached it — and `buildWordIndex` indexes it
+   * verbatim, so a native-script form is what a learner taps.
+   */
+  it('rejects a Cyrillic entry in a word’s forms, naming the forms index', () => {
+    const module = romanizedFixture();
+    module.sentences[0]!.deconstruction.words[0]!.forms = ['ismī', 'зовут'];
+
+    const report = checkScriptMode(module, 'romanized');
+
+    expect(report.errors).toHaveLength(1);
+    expect(report.errors[0]).toContain('/sentences/0/deconstruction/words/0/forms/1');
+  });
+
   it('has nothing to say about a native course — display IS the native text', () => {
     const module = romanizedFixture();
     module.sentences[0]!.display = '';
@@ -773,7 +926,7 @@ describe('the scriptMode cross-check', () => {
     const tree = scaffold([
       {
         row: courseRow('en-ar', { scriptMode: 'romanized' }),
-        modules: [{ id: 'L1-M1', verified: true }],
+        modules: [{ id: 'L1-M1', verified: true, edit: romanize }],
       },
     ]);
 
@@ -1504,66 +1657,114 @@ describe('the romanized edge cases (#116, [Q3])', () => {
    * Russian is the first L2 in the product that INFLECTS, so the seams are not homographs but
    * paradigms: every shape of a word has to land on the row that first taught the word, or a
    * learner taps a case form and is shown a note about a different one.
+   *
+   * **Every surface below is the romanization** (#353–#360), and the index keys are the shipped
+   * `display`/`forms` strings verbatim, so this test is where the rewrite is actually cashed.
+   * These lines were spelled in whichever alphabet each owning module had at the time while the
+   * three batches were in flight; all ten modules ship the scheme of `tools/course-briefs.ts` §0
+   * now, so they are converted wholesale.
+   *
+   * **What was NOT allowed to move is which module owns each key.** A romanization can merge two
+   * Cyrillic surfaces into one Latin one or split one into two, and either moves an owner — which
+   * is why #355 decision 6 re-checked the ownership table against the scheme rather than assuming
+   * it survived, and why every ownership assertion below is unchanged from before the rewrite
+   * except for the alphabet it is written in. The seams that could have moved and did not are the
+   * interesting ones: `u menyá yest'` is still three tokens, so `maxSpan` is still 3; `yest'`
+   * keeps its apostrophe as part of its key because the folder exempts `'` from edge stripping by
+   * name; and `vsyó` still cannot collide with `vse`.
    */
   it('keeps every en-ru case shape, gender pair and chunk on the row the briefs assigned (#339)', () => {
     const index = lastIndex('en-ru');
     const owner = (surface: string) => index.surfaces[surface]?.moduleId;
 
     // Case shapes live on the row that first taught the word — never a second, unreachable row.
-    expect(owner('москва')).toBe('L1-M1');
-    expect(owner('москвы')).toBe('L1-M1');
-    expect(owner('москве')).toBe('L1-M1'); // M7 needed it; M1's row grew, no new row opened
-    expect(owner('индия')).toBe('L1-M1');
-    expect(owner('индии')).toBe('L1-M1'); // one surface, two seats: `из` and `в`
-    expect(owner('вода')).toBe('L1-M3');
-    expect(owner('воду')).toBe('L1-M3');
-    expect(owner('стол')).toBe('L1-M7');
-    expect(owner('столе')).toBe('L1-M7');
+    expect(owner('moskvá')).toBe('L1-M1');
+    expect(owner('moskvý')).toBe('L1-M1');
+    expect(owner('moskvé')).toBe('L1-M1'); // M7 needed it; M1's row grew, no new row opened
+    expect(owner('índiya')).toBe('L1-M1');
+    expect(owner('índii')).toBe('L1-M1'); // one surface, two seats: `iz` and `v`
+    expect(owner('vodá')).toBe('L1-M3');
+    expect(owner('vódu')).toBe('L1-M3');
+    // M7's own row, so romanized by #359 — and the stress is part of the surface: `stol` is a
+    // monosyllable and bare, `stolé` carries the acute because the stress sits on the ending.
+    expect(owner('stol')).toBe('L1-M7');
+    expect(owner('stolé')).toBe('L1-M7');
 
-    // `быть` is ONE row across the level: M5 opened it, M6 extended it rather than forking it.
-    for (const shape of ['был', 'была', 'было', 'были', 'буду', 'будете', 'будет']) {
+    // The other half of the same claim, and the one that proves the rewrite was a MOVE rather
+    // than an addition: not one Cyrillic surface survives anywhere in the index. A course that
+    // had gained romanized keys while keeping its old ones would pass every assertion above and
+    // still be broken — two rows per word, and the learner's tap landing on whichever the
+    // longest-match walk reached first.
+    const cyrillicKeys = Object.keys(index.surfaces).filter((key) =>
+      /\p{Script=Cyrillic}/u.test(key),
+    );
+    expect(cyrillicKeys, 'the Cyrillic surfaces are gone, not merely joined').toEqual([]);
+
+    // `byt'` is ONE row across the level: M5 opened it, M6 extended it rather than forking it.
+    for (const shape of ['byl', 'bylá', 'býlo', 'býli', 'búdu', 'búdete', 'búdet']) {
       expect(owner(shape), shape).toBe('L1-M5');
     }
     // …and so is each aspect pair's own paradigm — past and future of one word, one row.
-    for (const shape of ['купил', 'купила', 'купили', 'куплю']) {
+    for (const shape of ['kupíl', 'kupíla', 'kupíli', 'kuplyú']) {
       expect(owner(shape), shape).toBe('L1-M5');
     }
     // The gender pairs: the speaker's own shape, on one row.
-    expect(owner('устал')).toBe('L1-M2');
-    expect(owner('устала')).toBe('L1-M2');
-    expect(owner('пошёл')).toBe('L1-M5');
-    expect(owner('пошла')).toBe('L1-M5');
+    expect(owner('ustál')).toBe('L1-M2');
+    expect(owner('ustála')).toBe('L1-M2');
+    expect(owner('poshyól')).toBe('L1-M5');
+    expect(owner('poshlá')).toBe('L1-M5');
 
     // An aspect pair is TWO words, so it is two rows — never two forms of one.
-    expect(owner('пью')).toBe('L1-M4');
-    expect(owner('выпил')).toBe('L1-M5');
-    expect(owner('встаю')).toBe('L1-M4');
-    expect(owner('встану')).toBe('L1-M6');
+    expect(owner("p'yu")).toBe('L1-M4');
+    expect(owner('výpil')).toBe('L1-M5');
+    expect(owner('vstayú')).toBe('L1-M4');
+    expect(owner('vstánu')).toBe('L1-M6'); // M6's row, so romanized
 
-    // The multi-token surfaces, and the bare words they leave free.
+    // The multi-token surfaces, and the bare words they leave free. The romanization does not
+    // move a token boundary: `u menyá yest'` was three tokens and `u menyá yest'` is three, so the
+    // course's maxSpan is still 3 and the longest-match walk still swallows the same words.
     expect(index.maxSpan).toBe(3);
-    expect(owner('меня зовут')).toBe('L1-M1');
-    expect(owner('меня')).toBe('L1-M1'); // the pronoun row, not the formula
-    expect(owner('как дела')).toBe('L1-M2');
-    expect(owner('как')).toBe('L1-M2'); // left free by the chunk, claimed one sentence earlier
-    expect(owner('у меня есть')).toBe('L1-M8');
-    expect(owner('у вас есть')).toBe('L1-M8');
-    expect(owner('потому что')).toBe('L1-M9');
-    expect(owner('что')).toBe('L1-M9'); // the conjunction, left free by потому что
-    // A bare `у` earns no key at all: `surfaceIndexKeys` splits hyphen parts, not whitespace.
-    expect(owner('у')).toBeUndefined();
+    expect(owner('menyá zovút')).toBe('L1-M1');
+    expect(owner('menyá')).toBe('L1-M1'); // the pronoun row, not the formula
+    expect(owner('kak delá')).toBe('L1-M2');
+    expect(owner('kak')).toBe('L1-M2'); // left free by the chunk, claimed one sentence earlier
+    expect(owner("u menyá yest'")).toBe('L1-M8');
+    expect(owner("u vas yest'")).toBe('L1-M8');
+    expect(owner('potomú chto')).toBe('L1-M9');
+    expect(owner('chto')).toBe('L1-M9'); // the conjunction, left free by potomú chto
+    // A bare `u` earns no key at all: `surfaceIndexKeys` splits hyphen parts, not whitespace —
+    // and the same was true of the bare `u` it replaced.
+    expect(owner('u')).toBeUndefined();
+    expect(owner('u')).toBeUndefined();
 
-    // `есть` — the homograph settled by exclusion: "to eat" never appears, so M7's existential
-    // owns the one bare row, and M8's three-token chunks capture the `есть` inside them.
-    expect(owner('есть')).toBe('L1-M7');
+    // `yest'` — the homograph settled by exclusion: "to eat" never appears, so M7's existential
+    // owns the one bare row, and M8's three-token chunks capture the `yest'` inside them. The
+    // apostrophe is part of the key: `src/engine/surface.ts` exempts `'` from edge stripping by
+    // name, so a hypothetical `yest` is a surface this course never wrote.
+    expect(owner("yest'")).toBe('L1-M7');
+    expect(owner('yest')).toBeUndefined();
 
-    // ё is written everywhere it belongs, and the е-spelling of a ё-word is never a surface.
-    for (const shape of ['пошёл', 'пьёте', 'встаёте', 'живёте', 'придёте', 'ещё', 'всё', 'днём']) {
+    // yó is written everywhere it belongs — as `yó` while a module is still native and as `yó`
+    // once it is romanized — and the e-spelling of a yó-word is never a surface either way.
+    for (const shape of [
+      'poshyól',
+      "p'yóte",
+      'vstayóte',
+      'dnyóm',
+      'zhivyóte',
+      'pridyóte',
+      'yeshchyó',
+      'vsyó',
+    ]) {
       expect(owner(shape), shape).toBeDefined();
     }
-    for (const wrong of ['пошел', 'пьете', 'встаете', 'живете', 'придете', 'еще', 'все']) {
+    for (const wrong of ['poshyol', "p'yote", 'vstayote', 'zhivete', 'pridete', 'yeshche', 'vso']) {
       expect(owner(wrong), wrong).toBeUndefined();
     }
+    // `vse` is the one member of that family that IS a word — "everybody", against `vsyó`
+    // "everything" — which is the whole reason #355 made `yó` always `yó`. M10 writes it only on a
+    // mistake plate, so it earns no row, and the two never collide as index keys.
+    expect(owner('vse')).toBeUndefined();
   });
 
   it('keeps hi-en surface-pass seams on the row that owns them (#284)', () => {
@@ -2011,9 +2212,11 @@ describe('the authored content', () => {
       ['en-it', L1],
       ['en-fr', L1],
     ]);
-    // SIX courses ship, in manifest order — hi-mr first and default, en-fr last. en-ru was behind
-    // the fixture gate from #338 and en-it from #332; #343 and #337 deleted both flags, so a
-    // strict build needs no `--with-fixtures` to see either.
+    // SEVEN courses ship, in manifest order — hi-mr first and default, en-fr last. en-ru was
+    // behind the fixture gate from #338 and en-it from #332; #343 and #337 deleted both flags, so
+    // a strict build needs no `--with-fixtures` to see either. en-de is an EIGHTH authored row
+    // (#356) and is not here at all: the gate drops the whole course, so the emitted manifest —
+    // which lists only courses that shipped ≥ 1 module — never names it.
     expect(readManifest(outRoot).courses.map((course) => course.id)).toEqual([
       'hi-mr',
       'en-es',
@@ -2023,11 +2226,12 @@ describe('the authored content', () => {
       'en-it',
       'en-fr',
     ]);
-    // No EMITTED row carries `fixture` — and that is because none of the seven HAS one, rather than
-    // because the ones that did were dropped. The envelope carries no dev key.
+    // No EMITTED row carries `fixture` — the one authored row that does, en-de's, never reaches
+    // the envelope, and the seven that ship never had the key. The envelope carries no dev key.
     expect(readManifest(outRoot).courses.some((course) => 'fixture' in course)).toBe(false);
+    expect(existsSync(path.join(outRoot, 'en-de'))).toBe(false);
     expect(readManifest(outRoot).devBuild).toBeUndefined();
-    // Nothing is skipped any more, so the summary line has no `| skipped:` tail at all.
+    // One course is skipped — en-de, whole — so the summary line carries a `| skipped:` tail again.
     expect(report.lines).toEqual([
       'hi-mr: 10 modules (L1-M1..M10)',
       ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
@@ -2045,7 +2249,11 @@ describe('the authored content', () => {
       ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
       'en-fr: 10 modules (L1-M1..M10)',
       ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
-      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10), en-ru 10 modules (L1-M1..M10), en-it 10 modules (L1-M1..M10), en-fr 10 modules (L1-M1..M10)',
+      // en-de (#356) is a dev fixture with nothing authored at all: the gate drops the course
+      // before a single module is considered, so the line names the gate rather than the content,
+      // and the summary names it in the skipped tail.
+      'en-de: 0 modules — fixture course, excluded by the gate (--with-fixtures ships it in dev)',
+      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10), en-ru 10 modules (L1-M1..M10), en-it 10 modules (L1-M1..M10), en-fr 10 modules (L1-M1..M10) | skipped: en-de (fixture course)',
     ]);
     // The strict tree carries the fourth course whole — the files a learner's device fetches
     // (AC 2 of #273), and the emitted ladder says all ten L1 rungs have content.
@@ -2133,16 +2341,24 @@ describe('the authored content', () => {
     // en-ru (#338) is the course being authored behind the fixture flag right now, so THIS is the
     // build that carries it: `--with-fixtures` admits the course and its authored rungs ship.
     expect(report.lines).toContain(`en-ru: ${EN_RU_AUTHORED.length} modules (${EN_RU_RANGE})`);
+    // en-de (#356) is the course sitting behind the fixture flag right now, so THIS is the build
+    // that admits it — and it still ships nothing, because not one of its rungs is authored. The
+    // course directory carries a ladder and a bundle and no `modules/` folder at all, and the
+    // walker treats an absent directory as zero modules rather than as an error.
+    expect(report.lines).toContain('en-de: 0 modules — nothing authored yet');
     expect(report.lines).toContain(
       'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10), ' +
-        `en-ru ${EN_RU_AUTHORED.length} modules (${EN_RU_RANGE}), en-it ${EN_IT_LINE}, en-fr 10 modules (L1-M1..M10)`,
+        `en-ru ${EN_RU_AUTHORED.length} modules (${EN_RU_RANGE}), en-it ${EN_IT_LINE}, en-fr 10 modules (L1-M1..M10)` +
+        ' | skipped: en-de (no modules)',
     );
     // en-it was authored behind the gate (#332, #334–#336) and graduated in #337, so a dev build
     // now ships exactly what the strict build above does.
     expect(report.lines).toContain(`en-it: ${EN_IT_LINE}`);
     expect(readManifest(outRoot).devBuild).toBe(true);
-    // The manifest lists what SHIPPED: all six courses, and no row carries `fixture` — the dev
-    // relaxation has nothing in this repo left to admit.
+    // The manifest lists what SHIPPED, which is the seven courses with modules. en-de's row is
+    // admitted by the relaxation and STILL does not appear: a course with nothing authored ships
+    // nothing, so no `public/content/en-de/` is written and no row is emitted for it either. That
+    // is why #356's Settings smoke is a render test over `DEV_MANIFEST` and not over a build.
     expect(readManifest(outRoot).courses.map((course) => course.id)).toEqual([
       'hi-mr',
       'en-es',
@@ -2157,6 +2373,7 @@ describe('the authored content', () => {
       l1Tag: 'en',
       l2Tag: 'fr',
     });
+    expect(existsSync(path.join(outRoot, 'en-de'))).toBe(false);
     expect(
       readManifest(outRoot)
         .courses.filter((course) => 'fixture' in course)

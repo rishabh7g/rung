@@ -272,13 +272,80 @@ export interface ScriptModeReport {
 }
 
 /**
+ * **What a romanization is allowed to be made of** (#354).
+ *
+ * Three Unicode scripts, and everything else is rejected:
+ *
+ *   • **Latin** — plain ASCII letters *and* every precomposed accented Latin letter, so the
+ *     Romance courses' `é è ñ ç à ù î ô` and the Arabic romanization's `ā ī ū ḥ ṣ ḍ ṭ ẓ` pass
+ *     without a list of their own.
+ *   • **Common** — the script every character belongs to that belongs to no script in
+ *     particular: the spaces, the digits, the full stops and question marks, the em dash, the
+ *     currency signs, the typographic apostrophes `’ ‘` that `src/engine/surface.ts` folds, and —
+ *     load-bearing, not incidental — en-ar's `ʾ` (U+02BE, hamza) and `ʿ` (U+02BF, ʿayn). Those
+ *     two are modifier LETTERS and are **not** `Script=Latin`, so a naive Latin-only class
+ *     rejects every sentence in that course.
+ *   • **Inherited** — combining marks, which take the script of whatever they sit on. A
+ *     decomposed `ā` therefore passes exactly as a precomposed one does; the build has no
+ *     business caring which normalisation form a file was saved in.
+ *
+ * **Stated as three scripts rather than as "letters plus punctuation plus digits"** for two
+ * reasons. It is shorter and it is the rule itself — "no letter from a script the learner cannot
+ * read" — rather than an enumeration that has to be kept complete. And it catches what an
+ * enumeration would miss: Devanagari digits (`१२३`) are digits, and would sail through a
+ * `\p{N}` clause, but they are `Script=Devanagari` and are caught here.
+ *
+ * What it rejects is every script an English speaker would have to decode: Cyrillic, Arabic,
+ * Devanagari, Greek, Hebrew, Han, Kana, Hangul, Thai.
+ */
+const LATIN_SURFACE = /^[\p{Script=Latin}\p{Script=Common}\p{Script=Inherited}]*$/u;
+
+/** The offending characters, deduplicated in first-seen order — an error that names them. */
+function nonLatinIn(value: string): string[] {
+  const found: string[] = [];
+  for (const character of value) {
+    if (!LATIN_SURFACE.test(character) && !found.includes(character)) found.push(character);
+  }
+  return found;
+}
+
+/**
  * PRD §6.6: a `romanized` course needs a romanized `display` on EVERY readable surface (error);
  * the native `script` line is optional-but-recommended (warning, aggregated by the caller).
  * `native` courses have nothing to cross-check — `display` is already the native text.
+ *
+ * **And the display has to actually BE a romanization** (#354). This check used to ask only
+ * whether `display` was a non-empty string, which a line of Cyrillic satisfies perfectly: the one
+ * rule that makes a course readable by someone who cannot decode its script passed silently for
+ * anything at all. `docs/design-contract.md` "rung teaches speech, not script" (#353) made that a
+ * product rule, and a rule the build cannot see is a rule that decays on the next content PR —
+ * "no Cyrillic remains in any display" is not a claim a reviewer can check by eye across a
+ * thousand strings.
+ *
+ * **`forms` is checked too, and it is not an afterthought.** A word's `forms` is a plain array of
+ * strings rather than surfaces with a `display`, so the surface walk below never saw it — and
+ * `buildWordIndex`'s own comment says "romanized courses index themselves: `display`/`forms` ARE
+ * the romanization", which means a native-script form lands straight in the generated word index
+ * and is what a learner taps. 213 of en-ru's Cyrillic strings live there.
+ *
+ * Both go in `errors`, not the aggregated warning channel the optional `script` line uses. A
+ * course that fails this does not ship.
  */
 export function checkScriptMode(module: Module, scriptMode: ScriptMode): ScriptModeReport {
   const report: ScriptModeReport = { errors: [], surfaces: 0, withScript: 0 };
   if (scriptMode !== 'romanized') return report;
+
+  /** One string that has to be Latin, wherever it lives — a `display` or a `forms` entry. */
+  const romanized = (value: string, at: string): void => {
+    const offending = nonLatinIn(value);
+    if (offending.length === 0) return;
+
+    report.errors.push(
+      `${at}: scriptMode romanized requires a Latin-script romanization — found ${offending
+        .map((character) => `"${character}"`)
+        .join(', ')}`,
+    );
+  };
 
   const visit = (surface: { display?: unknown; script?: unknown }, at: string): void => {
     report.surfaces += 1;
@@ -286,15 +353,23 @@ export function checkScriptMode(module: Module, scriptMode: ScriptMode): ScriptM
       report.errors.push(
         `${at}/display: scriptMode romanized requires a romanized display on every surface`,
       );
+    } else {
+      romanized(surface.display, `${at}/display`);
     }
+    // The quiet native line is the ONE place the native script belongs, so it is never checked
+    // here — that is the whole shape of the rule (#353), not an omission.
     if (isNonEmptyString(surface.script)) report.withScript += 1;
   };
 
   module.sentences.forEach((sentence, i) => {
     visit(sentence, `/sentences/${i}`);
-    sentence.deconstruction.words.forEach((word, j) =>
-      visit(word, `/sentences/${i}/deconstruction/words/${j}`),
-    );
+    sentence.deconstruction.words.forEach((word, j) => {
+      const at = `/sentences/${i}/deconstruction/words/${j}`;
+      visit(word, at);
+      (word.forms ?? []).forEach((form, k) => {
+        if (typeof form === 'string') romanized(form, `${at}/forms/${k}`);
+      });
+    });
     (sentence.variations ?? []).forEach((variation, j) =>
       visit(variation, `/sentences/${i}/variations/${j}`),
     );

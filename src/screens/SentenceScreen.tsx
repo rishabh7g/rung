@@ -35,7 +35,7 @@
  * prototype's, and the type sizes are the standing 18px-Mukta divergence recorded in the CSS.
  */
 import { useLayoutEffect } from 'react';
-import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, TriangleAlert } from 'lucide-react';
 import { ContentErrorScreen } from '../course/BootScreens.tsx';
 import { useCourse } from '../course/CourseProvider.tsx';
@@ -45,7 +45,7 @@ import { useStrings } from '../course/strings.ts';
 import type { Rule, Sentence } from '../course/types.ts';
 import { deriveStatuses, rungStage } from '../engine/progression.ts';
 import { normalizeSurface, tokenizeSurface } from '../engine/surface.ts';
-import { HOME_PATH } from '../shell/routes.tsx';
+import { HOME_PATH, PRACTICE_PATH } from '../shell/routes.tsx';
 import { setScrollOffset, useScrollArea } from '../shell/scrollArea.tsx';
 import { useAppStore } from '../state/store.ts';
 import { rungLabel } from './ladder/rungLabel.ts';
@@ -372,18 +372,49 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
         <p className={styles.position}>
           {at + 1} / {content.sentences.length}
         </p>
-        <button
-          type="button"
-          className={styles.step}
-          disabled={next === undefined}
-          onClick={() => {
-            step(next);
-          }}
-          dir={course.dir}
-        >
-          {strings['sentence.next']}
-          <ArrowRight className={styles.stepIcon} aria-hidden="true" />
-        </button>
+        {/**
+         * The trailing slot is a HAND-OVER on the last sentence, not a dead button (#367).
+         *
+         * Reaching the end of a module's sentences used to grey Next out and stop: the screen
+         * closed on a piece of content, a disabled control and nothing else. Every other
+         * walk-through surface in the app names its own end — the module LIST closes with a
+         * Practice link ("reading a module is never a gate in front of practising it"), and the
+         * Read phase's pager says `read.finish` on its last card rather than going quiet. This is
+         * the one that did not, and the asymmetry was the bug.
+         *
+         * **Prev's bound is untouched and stays disabled on the first sentence**, because that
+         * asymmetry is honest: there is genuinely nothing before the first sentence, and there is
+         * genuinely somewhere to go after the last one.
+         *
+         * It goes to PRACTICE rather than back to the module list, and arriving there starts
+         * nothing: the hub is counts plus one Begin CTA, and `startSession` — which spends a
+         * session count and ticks the review queue — runs only on that deliberate tap (the
+         * structural version of #316 was built and backed out over exactly this). Routing through
+         * the module list would have been one extra tap to the same place, since that list's own
+         * closing move is a Practice link. A learner mid-session meets the resume banner there and
+         * is offered their position back rather than a silent restart.
+         *
+         * A `<Link>`, not the pager's `navigate(replace)`: prev/next is one screen paging, so it
+         * replaces; this is a real destination change and belongs in history.
+         */}
+        {next === undefined ? (
+          <Link className={styles.step} to={PRACTICE_PATH} dir={course.dir}>
+            {strings['sentence.done']}
+            <ArrowRight className={styles.stepIcon} aria-hidden="true" />
+          </Link>
+        ) : (
+          <button
+            type="button"
+            className={styles.step}
+            onClick={() => {
+              step(next);
+            }}
+            dir={course.dir}
+          >
+            {strings['sentence.next']}
+            <ArrowRight className={styles.stepIcon} aria-hidden="true" />
+          </button>
+        )}
       </nav>
     </article>
   );

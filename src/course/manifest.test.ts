@@ -34,6 +34,7 @@ describe('loadCourses', () => {
       'en-ru',
       'en-it',
       'en-fr',
+      'en-de',
     ]);
     expect(courses[0]).toMatchObject({
       id: 'hi-mr',
@@ -49,12 +50,23 @@ describe('loadCourses', () => {
     // en-ar carries more than the nine required fields; the loader keeps them, never rejects them.
     expect(courses[2]?.romanizationNote).toMatch(/Modern Standard Arabic/);
     // en-es graduated in #195, en-ar in #202, hi-en in #273, en-ru in #343, en-it in #337 and
-    // en-fr in #331 — a shipping course carries no fixture key at all, and every course ships.
-    expect(courses.filter((course) => course.fixture !== undefined).map((c) => c.id)).toEqual([]);
+    // en-fr in #331 — a shipping course carries no fixture key at all. en-de (#356) is the eighth
+    // row and the one still behind the gate, so it is the only row that carries the key, and the
+    // key SURVIVES the parse: the loader reports the manifest, it never edits it.
+    expect(courses.filter((course) => course.fixture !== undefined).map((c) => c.id)).toEqual([
+      'en-de',
+    ]);
     expect(courses[3]).toMatchObject({ id: 'hi-en', l1Tag: 'hi', l2Tag: 'en' });
     expect(courses[4]).toMatchObject({ id: 'en-ru', l1Tag: 'en', l2Tag: 'ru' });
     expect(courses[5]).toMatchObject({ id: 'en-it', l1Tag: 'en', l2Tag: 'it' });
     expect(courses[6]).toMatchObject({ id: 'en-fr', l1Tag: 'en', l2Tag: 'fr' });
+    expect(courses[7]).toMatchObject({
+      id: 'en-de',
+      l1Tag: 'en',
+      l2Tag: 'de',
+      pairLabel: 'english → german',
+      fixture: true,
+    });
   });
 
   /**
@@ -64,10 +76,13 @@ describe('loadCourses', () => {
    * row reaches the app intact — the key is what `resolveActiveCourse` and the Settings switcher
    * never branch on, and what graduation deletes.
    *
-   * The row is SYNTHETIC now, and deliberately so: with every course graduated, none is behind
-   * the gate, and the seam still has to work for the next course that is. A test that borrowed
-   * whichever manifest row happened to carry the key would go quiet exactly when the catalogue is
-   * fully graduated — which is when nothing else is watching it either.
+   * The SYNTHETIC row stays, even though en-de (#356) is a real flagged row again. It is not
+   * redundant with the real one: a test that borrowed whichever manifest row happened to carry
+   * the key would go quiet exactly when the catalogue is fully graduated — which is when nothing
+   * else is watching the seam either, and when the next course is about to be added behind it.
+   * The real row is asserted too, one line below, because the two prove different things: the
+   * synthetic row proves the loader's behaviour survives an empty catalogue of fixtures, and the
+   * real one proves today's fixture actually reaches the app flagged.
    */
   it('keeps a fixture row intact — a course authored behind the gate reaches the app as one', () => {
     const row = { ...DEV_MANIFEST.courses[4], id: 'en-ja', fixture: true };
@@ -76,6 +91,9 @@ describe('loadCourses', () => {
 
     expect(manifest.courses[0]?.fixture).toBe(true);
     expect(manifest.devBuild).toBe(true);
+    // And the same for the row the repo really carries behind the gate today.
+    const real = parseManifest({ devBuild: true, courses: [DEV_MANIFEST.courses[7]] });
+    expect(real.courses[0]).toMatchObject({ id: 'en-de', fixture: true });
   });
 
   it('fetches once however many callers ask — the cache is the promise', async () => {

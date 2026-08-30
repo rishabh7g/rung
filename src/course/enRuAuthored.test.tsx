@@ -9,18 +9,25 @@
  *
  *   • the Ladder offers L1-M1 as the current rung with its one CTA, in en-ru's English chrome,
  *   • the module list renders each authored module's ten sentences as ten cards,
- *   • Sentence Detail renders the hero in Cyrillic (`lang="ru"`, the document still `en`), WITH
+ *   • Sentence Detail renders the hero on the L2 line (`lang="ru"`, the document still `en`), WITH
  *     the English gloss paragraph — #268's exemption is for a course whose L2 is English, and
  *     Russian is not one — and the WORD-FOR-WORD plate beside it,
  *   • the Why panel, tapped on a comprehension item, answers with the rows the briefs assigned:
- *     `меня зовут` whole rather than as two words, a case shape landing on the row that first
- *     taught the word (`Москвы` → M1's `Москва`, `устала` → M2's `устал`), and the polite
- *     pronoun's object shape (`вас`) landing on the one `Вы` row.
+ *     `menyá zovút` whole rather than as two words, a case shape landing on the row that first
+ *     taught the word (`Moskvý` → M1's `Moskvá`, `ustála` → M2's `ustál`), and the polite
+ *     pronoun's object shape (`vas`) landing on the one `Vy` row.
  *
  * The word index has no authored twin (`public/content/` is generated and gitignored, and
  * `verify.sh` runs TEST before CONTENT), so the one served here is folded in-test over the
  * authored modules with the engine's own surface rule — the same fold `tools/content-build.ts`
  * performs, first occurrence wins.
+ *
+ * **Every hero line here is the ROMANIZATION** (#353–#360). The course was written in Cyrillic
+ * and #357–#359 rewrote all ten modules into the one scheme `tools/course-briefs.ts` §0 settles;
+ * this file's assertions were split along the batch boundary while that was in flight, and are
+ * converted wholesale now that it is not. The `script` line under each hero carries the Cyrillic,
+ * and it is deliberately NOT what these screens assert: what a learner is asked to SAY is the
+ * `display`, and this file tests what the learner meets.
  */
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
@@ -260,7 +267,7 @@ describe('Sentence Detail over the authored rungs', () => {
     const sentence = module('L1-M1').sentences[0]!;
 
     const hero = await screen.findByRole('heading', { level: 2 });
-    expect(hero).toHaveTextContent('Меня зовут Иван.');
+    expect(hero).toHaveTextContent('Menyá zovút Iván.');
     // The language law (#186): the L2 line declares `ru`, the document speaks the L1, `en`.
     expect(hero).toHaveAttribute('lang', 'ru');
     expect(hero).toHaveAttribute('dir', 'ltr');
@@ -275,14 +282,14 @@ describe('Sentence Detail over the authored rungs', () => {
 
     // The word rows: the name formula taught WHOLE, as the briefs assigned it.
     const words = section('words');
-    expect(within(words).getAllByText('Меня зовут').length).toBeGreaterThan(0);
+    expect(within(words).getAllByText('Menyá zovút').length).toBeGreaterThan(0);
     expect(within(words).getByText('my name is')).toBeInTheDocument();
     expect(within(words).getByText(sentence.deconstruction.words[0]!.note!)).toBeInTheDocument();
 
     // The trap plate, headed in this course's own English words, and the rest of the enrichment.
     expect(within(section('trap')).getByText('English will mislead you')).toBeInTheDocument();
     expect(within(section('trap')).getByText(sentence.trap!)).toBeInTheDocument();
-    expect(within(section('mistake')).getByText('Моё имя Иван.')).toBeInTheDocument();
+    expect(within(section('mistake')).getByText('Moyó ímya Iván.')).toBeInTheDocument();
     expect(within(section('mnemonic')).getByText(sentence.mnemonic!)).toBeInTheDocument();
   });
 
@@ -290,17 +297,17 @@ describe('Sentence Detail over the authored rungs', () => {
     await renderAt('#/sentence/L1-M1-S03');
 
     const hero = await screen.findByRole('heading', { level: 2 });
-    expect(hero).toHaveTextContent('Я студент.');
+    expect(hero).toHaveTextContent('Ya studént.');
 
-    // Я студент is the whole sentence: the rows are the pronoun and the noun, and there is no
+    // Ya studént is the whole sentence: the rows are the pronoun and the noun, and there is no
     // third row standing in for a copula, because there is no copula on the page to teach.
     const rows = within(section('words')).getAllByRole('listitem');
     expect(rows).toHaveLength(2);
     expect(rows.map((row) => row.textContent)).toEqual([
-      expect.stringContaining('я'),
-      expect.stringContaining('студент'),
+      expect.stringContaining('ya'),
+      expect.stringContaining('studént'),
     ]);
-    expect(within(section('mistake')).getByText('Я есть студент.')).toBeInTheDocument();
+    expect(within(section('mistake')).getByText("Ya yest' studént.")).toBeInTheDocument();
   });
 
   it('shows L1-M2-S08 once L1-M1 is passed — the speaker-gender pair on ONE row', async () => {
@@ -312,12 +319,12 @@ describe('Sentence Detail over the authored rungs', () => {
     await screen.findByRole('main');
 
     const hero = await screen.findByRole('heading', { level: 2 });
-    expect(hero).toHaveTextContent('Я устал.');
+    expect(hero).toHaveTextContent('Ya ustál.');
 
-    // One row carries both shapes — the gender is the SUBJECT's, and вы takes the plural.
+    // One row carries both shapes — the gender is the SUBJECT's, and vy takes the plural.
     const words = section('words');
-    expect(within(words).getByText('устал')).toBeInTheDocument();
-    expect(within(words).getByText('устал · устала · устали')).toBeInTheDocument();
+    expect(within(words).getByText('ustál')).toBeInTheDocument();
+    expect(within(words).getByText('ustál · ustála · ustáli')).toBeInTheDocument();
   });
 });
 
@@ -337,52 +344,57 @@ describe('Sentence Detail over L1-M3, L1-M4 and L1-M5', () => {
   it('shows M3’s first case ending — the noun’s two shapes on ONE row', async () => {
     await renderSentence('L1-M3', 'L1-M3-S02');
 
-    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent('Я хочу воду.');
-    // вода and воду are the same word, so they share a row and a note — a second row for the
-    // bent shape would be a second note the index could never reach.
+    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent('Ya khochú vódu.');
+    // vodá and vódu are the same word, so they share a row and a note — a second row for the
+    // bent shape would be a second note the index could never reach. Since #358 the row is a
+    // STRESS list as well as an ending list: the acute moves with the ending, so an author who
+    // wrote `vodu` would have produced a surface the index has never met.
     const words = section('words');
-    expect(within(words).getAllByText('вода').length).toBeGreaterThan(0);
-    expect(within(words).getByText('вода · воду')).toBeInTheDocument();
-    expect(within(section('mistake')).getByText('Я хочу вода.')).toBeInTheDocument();
+    expect(within(words).getAllByText('vodá').length).toBeGreaterThan(0);
+    expect(within(words).getByText('vodá · vódu')).toBeInTheDocument();
+    expect(within(section('mistake')).getByText('Ya khochú vodá.')).toBeInTheDocument();
   });
 
   it('shows M4’s clock hour with all three number-driven shapes on one row', async () => {
     await renderSentence('L1-M4', 'L1-M4-S02');
 
     expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
-      'Я встаю в семь часов.',
+      "Ya vstayú v sem' chasóv.",
     );
     const words = section('words');
-    expect(within(words).getByText('час · часа · часов')).toBeInTheDocument();
-    // The в row is M4's, and its note has to answer for M7's place seat as well.
+    expect(within(words).getByText('chas · chasá · chasóv')).toBeInTheDocument();
+    // The v row is M4's, and its note has to answer for M7's place seat as well.
     expect(within(words).getByText('at · in')).toBeInTheDocument();
   });
 
-  it('shows M5’s past with the gender pair and the one быть row', async () => {
+  it('shows M5’s past with the gender pair and the one byt’ row', async () => {
     await renderSentence('L1-M5', 'L1-M5-S01');
 
-    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent('Вчера я был дома.');
+    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
+      'Vcherá ya byl dóma.',
+    );
     const words = section('words');
     // The verb that had no present tense at all now has seven shapes, all on ONE row: M5 opened
-    // it with the past and M6 extended it with the future, rather than forking the lexeme.
+    // it with the past and M6 extended it with the future, rather than forking the lexeme. Note
+    // `byl` bare beside three acutes: the #355 monosyllable rule, visible in one row.
     expect(
-      within(words).getByText('был · была · было · были · буду · будете · будет'),
+      within(words).getByText('byl · bylá · býlo · býli · búdu · búdete · búdet'),
     ).toBeInTheDocument();
     expect(within(words).getByText('was')).toBeInTheDocument();
-    expect(within(section('mistake')).getByText('Вчера я есть дома.')).toBeInTheDocument();
+    expect(within(section('mistake')).getByText("Vcherá ya yest' dóma.")).toBeInTheDocument();
   });
 
   it('shows M5’s two endings answering to two different masters', async () => {
     await renderSentence('L1-M5', 'L1-M5-S03');
 
     expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
-      'Вчера я купила газету.',
+      'Vcherá ya kupíla gazétu.',
     );
-    // купила follows the speaker; газету follows its job in the sentence. The trap says so.
+    // kupíla follows the speaker; gazétu follows its job in the sentence. The trap says so.
     expect(
-      within(section('trap')).getByText(/Two -а endings, two different reasons/),
+      within(section('trap')).getByText(/Two endings moving at once, for two different reasons/),
     ).toBeInTheDocument();
-    expect(within(section('words')).getByText('газета · газету')).toBeInTheDocument();
+    expect(within(section('words')).getByText('gazéta · gazétu')).toBeInTheDocument();
   });
 });
 
@@ -398,26 +410,31 @@ describe('Sentence Detail over L1-M6 … L1-M10', () => {
     await screen.findByRole('main');
   }
 
-  it('shows M6’s perfective future — a present-shaped verb with no буду in the sentence', async () => {
+  it('shows M6’s perfective future — a present-shaped verb with no búdu in the sentence', async () => {
     await renderSentence('L1-M6', 'L1-M6-S03');
 
+    // Romanized since #359: the hero line is the scheme, and the Cyrillic is the quiet `script`
+    // line under it. Asserting the romanization rather than the Cyrillic is the point — it is
+    // what a learner who cannot read Cyrillic is asked to say.
     expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
-      'Завтра я напишу письмо.',
+      "Závtra ya napishú pis'mó.",
     );
     expect(within(section('words')).getByText('I will write')).toBeInTheDocument();
     expect(
-      within(section('mistake')).getByText('Завтра я буду напишу письмо.'),
+      within(section('mistake')).getByText("Závtra ya búdu napishú pis'mó."),
     ).toBeInTheDocument();
   });
 
-  it('shows M7’s existential есть — the one row that also serves M8’s possession', async () => {
+  it("shows M7’s existential yest' — the one row that also serves M8’s possession", async () => {
     await renderSentence('L1-M7', 'L1-M7-S03');
 
     expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
-      'На столе есть книга.',
+      "Na stolé yest' kníga.",
     );
     const words = section('words');
-    expect(within(words).getAllByText('есть').length).toBeGreaterThan(0);
+    // The apostrophe is load-bearing: `src/engine/surface.ts` exempts `'` from edge stripping by
+    // name, so `yest'` is the index key and `yest` is a surface this course never wrote.
+    expect(within(words).getAllByText("yest'").length).toBeGreaterThan(0);
     expect(within(words).getByText('there is · there are')).toBeInTheDocument();
     // The literal is the point of the rung: English's "there" corresponds to nothing at all.
     expect(within(section('gloss')).getByText('On table is book')).toBeInTheDocument();
@@ -427,10 +444,10 @@ describe('Sentence Detail over L1-M6 … L1-M10', () => {
     await renderSentence('L1-M8', 'L1-M8-S06');
 
     expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
-      'У меня есть билет.',
+      "U menyá yest' bilét.",
     );
     const words = section('words');
-    expect(within(words).getAllByText('У меня есть').length).toBeGreaterThan(0);
+    expect(within(words).getAllByText("U menyá yest'").length).toBeGreaterThan(0);
     expect(within(words).getByText('I have')).toBeInTheDocument();
     expect(within(section('gloss')).getByText('At me is ticket')).toBeInTheDocument();
   });
@@ -439,9 +456,9 @@ describe('Sentence Detail over L1-M6 … L1-M10', () => {
     await renderSentence('L1-M9', 'L1-M9-S03');
 
     expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
-      'Мне нравится Москва.',
+      'Mne nrávitsya Moskvá.',
     );
-    expect(within(section('words')).getByText('нравится · нравятся')).toBeInTheDocument();
+    expect(within(section('words')).getByText('nrávitsya · nrávyatsya')).toBeInTheDocument();
     expect(within(section('gloss')).getByText('To-me pleases Moscow')).toBeInTheDocument();
   });
 
@@ -450,80 +467,81 @@ describe('Sentence Detail over L1-M6 … L1-M10', () => {
 
     // A turn is 2–3 short sentences and the hero line carries all of them, unsplit.
     expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
-      'Где ключ? Он на столе.',
+      'Gde klyuch? On na stolé.',
     );
-    expect(within(section('words')).getByText('Он · она · оно · они')).toBeInTheDocument();
-    expect(within(section('mistake')).getByText('Где ключ? Оно на столе.')).toBeInTheDocument();
+    expect(within(section('words')).getByText('On · oná · onó · oní')).toBeInTheDocument();
+    expect(within(section('mistake')).getByText('Gde klyuch? Onó na stolé.')).toBeInTheDocument();
   });
 });
 
 /* ------------------------------------------------------------------- the Why panel */
 
 describe('the Why panel over an en-ru comprehension item', () => {
-  it('answers `Меня зовут Анна.` with TWO rows — the formula whole, never as меня + зовут', async () => {
-    await renderPanel('L1-M1-C01', 'Меня зовут Анна.');
+  it('answers `Menyá zovút Ánna.` with TWO rows — the formula whole, never as menyá + zovút', async () => {
+    await renderPanel('L1-M1-C01', 'Menyá zovút Ánna.');
     fireEvent.click(screen.getByRole('button', { name: 'why' }));
 
-    const first = await screen.findByText('Меня зовут');
+    const first = await screen.findByText('Menyá zovút');
     const rows = within(first.closest('ul')!).getAllByRole('listitem');
     expect(rows).toHaveLength(2);
     expect(rows.map((row) => row.textContent)).toEqual([
-      expect.stringContaining('Меня зовут'),
-      expect.stringContaining('Анна'),
+      expect.stringContaining('Menyá zovút'),
+      expect.stringContaining('Ánna'),
     ]);
     // The cues are English — the L1 of this course.
     expect(within(rows[0]!).getByText('my name is')).toBeInTheDocument();
     expect(within(rows[1]!).getByText('Anna')).toBeInTheDocument();
   });
 
-  it('lands a case shape on the row that first taught the word — Москвы on M1’s Москва', async () => {
-    await renderPanel('L1-M1-C03', 'Анна из Москвы.');
+  it('lands a case shape on the row that first taught the word — Moskvý on M1’s Moskvá', async () => {
+    await renderPanel('L1-M1-C03', 'Ánna iz Moskvý.');
     fireEvent.click(screen.getByRole('button', { name: 'why' }));
 
-    const first = await screen.findByText('Анна');
+    const first = await screen.findByText('Ánna');
     const rows = within(first.closest('ul')!).getAllByRole('listitem');
     expect(rows).toHaveLength(3);
-    // The third row is Москва's, not a second row for the bent shape: a case form never opens
+    // The third row is Moskvá's, not a second row for the bent shape: a case form never opens
     // one, so the note a learner reads here is the one written true of both shapes.
-    expect(within(rows[2]!).getByText('Москва')).toBeInTheDocument();
+    expect(within(rows[2]!).getByText('Moskvá')).toBeInTheDocument();
     expect(within(rows[2]!).getByText('Moscow')).toBeInTheDocument();
-    expect(within(rows[2]!).getByText(/Москвы is what из takes/)).toBeInTheDocument();
+    expect(within(rows[2]!).getByText(/Moskvý is what iz takes/)).toBeInTheDocument();
   });
 
-  it('takes M8’s three-token possession chunk whole, never as у + меня + есть', async () => {
-    await renderPanel('L1-M8-C04', 'У меня есть ключ.');
+  it("takes M8’s three-token possession chunk whole, never as u + menyá + yest'", async () => {
+    await renderPanel('L1-M8-C04', "U menyá yest' klyuch.");
     fireEvent.click(screen.getByRole('button', { name: 'why' }));
 
-    const first = await screen.findByText('У меня есть');
+    const first = await screen.findByText("U menyá yest'");
     const rows = within(first.closest('ul')!).getAllByRole('listitem');
     // Two rows, not four: the resolver takes the longest match, so the chunk swallows its own
-    // `есть` and the bare `у` never has to resolve at all.
+    // `yest'` and the bare `u` never has to resolve at all. The romanization did not move this
+    // seam — `u menyá yest'` was three tokens and `u menyá yest'` is three tokens (#359).
     expect(rows).toHaveLength(2);
     expect(within(rows[0]!).getByText('I have')).toBeInTheDocument();
-    expect(within(rows[1]!).getByText('Ключ')).toBeInTheDocument();
+    expect(within(rows[1]!).getByText('Klyuch')).toBeInTheDocument();
   });
 
-  it('lands устала on M2’s ONE устал row, and вас on the ONE Вы row', async () => {
-    await renderPanel('L1-M2-C09', 'Я устала.');
+  it('lands ustála on M2’s ONE ustál row, and vas on the ONE Vy row', async () => {
+    await renderPanel('L1-M2-C09', 'Ya ustála.');
     fireEvent.click(screen.getByRole('button', { name: 'why' }));
 
-    const tired = await screen.findByText('устал');
+    const tired = await screen.findByText('ustál');
     const rows = within(tired.closest('ul')!).getAllByRole('listitem');
     expect(rows).toHaveLength(2);
-    expect(within(rows[1]!).getByText(/устала for a woman/)).toBeInTheDocument();
+    expect(within(rows[1]!).getByText(/ustála for a woman/)).toBeInTheDocument();
 
     // …and the polite pronoun's object shape, on the same one row as its subject shape.
     resetContentCache();
     resetStringsCache();
     vi.unstubAllGlobals();
-    await renderPanel('L1-M2-S05', 'Как вас зовут?');
+    await renderPanel('L1-M2-S05', 'Kak vas zovút?');
     fireEvent.click(screen.getAllByRole('button', { name: 'why' })[0]!);
 
-    const how = await screen.findAllByText('Как');
+    const how = await screen.findAllByText('Kak');
     const askRows = within(how[0]!.closest('ul')!).getAllByRole('listitem');
     expect(askRows).toHaveLength(3);
-    expect(within(askRows[1]!).getByText('Вы')).toBeInTheDocument();
+    expect(within(askRows[1]!).getByText('Vy')).toBeInTheDocument();
     expect(within(askRows[1]!).getByText('you (polite)')).toBeInTheDocument();
-    expect(within(askRows[2]!).getByText('зовут')).toBeInTheDocument();
+    expect(within(askRows[2]!).getByText('zovút')).toBeInTheDocument();
   });
 });

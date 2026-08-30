@@ -30,6 +30,7 @@ import {
   coveredChars,
   subsetText,
   outputFiles,
+  weightsFor,
   FACES,
   MUKTA_TARGETS,
   MUKTA_WEIGHTS,
@@ -302,19 +303,41 @@ describe('the wiring', () => {
     expect(weights).toEqual([...NASKH_WEIGHTS]);
   });
 
-  it('declares the diacritic face at every weight the L2 ramp renders (#222)', () => {
-    const weights = [...sheet('source-sans-3.css').matchAll(/font-weight:\s*(\d{3})/g)].map((m) =>
-      Number(m[1]),
-    );
+  /**
+   * One face, two roles, two weight ramps (#360) — which is why `weightsFor` exists.
+   *
+   * Source Sans 3 carries en-ar's HERO diacritics (`ʾ` U+02BE, `ʿ` U+02BF, `Ẓ ẓ`) and en-ru's
+   * quiet Cyrillic `script` line. Until #353 both were hero text and one ramp served both; the
+   * romanization moved the Cyrillic to a secondary line, and a secondary line needs one weight
+   * (`NASKH_WEIGHTS = [400]`, the same call for the same reason). So the sheet is asserted
+   * TARGET BY TARGET rather than as a single count — a face-wide assertion cannot tell the two
+   * roles apart, which is exactly the confusion that would let en-ar's hero quietly lose its 600
+   * and 700.
+   */
+  it('declares each Source Sans target at its own weights — hero ramp, quiet line (#222, #360)', () => {
+    const face = FACES.find((entry) => entry.slug === 'source-sans-3')!;
+    const css = sheet('source-sans-3.css');
 
-    // One block per weight PER SUBSET — the same shape the Mukta case above takes, and since
-    // #325 this face has two subsets: the romanization gap and Cyrillic.
-    expect(weights).toHaveLength(SOURCE_SANS_WEIGHTS.length * SOURCE_SANS_TARGETS.length);
-    // And the same three weights Mukta draws the letters at: a mark at 700 beside a letter at 700
-    // must not be a 400 the browser synthesised a bold from. That matters more for Cyrillic than
-    // it ever did for four diacritics — en-ru's whole display line is set in this face.
-    expect([...new Set(weights)].sort()).toEqual([...SOURCE_SANS_WEIGHTS]);
-    expect([...new Set(weights)].sort()).toEqual([...MUKTA_WEIGHTS]);
+    for (const target of SOURCE_SANS_TARGETS) {
+      const declared = [
+        ...css.matchAll(
+          /font-weight:\s*(\d{3});\s*\n\s*src: url\('\.\/generated\/source-sans-3-([a-z-]+)-\d{3}\.woff2'\)/g,
+        ),
+      ]
+        .filter(([, , subset]) => subset === target.subset)
+        .map(([, weight]) => Number(weight));
+
+      expect(declared, target.subset).toEqual([...weightsFor(face, target)]);
+    }
+
+    // en-ar's hero keeps the whole ramp, and it is the same one Mukta draws the letters at: a mark
+    // at 700 beside a letter at 700 must not be a 400 the browser synthesised a bold from.
+    const latinExt = SOURCE_SANS_TARGETS.find((t) => t.subset === 'latin-ext')!;
+    expect([...weightsFor(face, latinExt)]).toEqual([...SOURCE_SANS_WEIGHTS]);
+    expect([...weightsFor(face, latinExt)]).toEqual([...MUKTA_WEIGHTS]);
+    // …and the Cyrillic secondary line is cut at one, like Naskh's.
+    const cyrillic = SOURCE_SANS_TARGETS.find((t) => t.subset === 'cyrillic')!;
+    expect([...weightsFor(face, cyrillic)]).toEqual([...NASKH_WEIGHTS]);
   });
 
   it('main.tsx imports all three sheets, so the generated payloads are in the graph', () => {

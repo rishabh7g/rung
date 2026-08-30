@@ -83,6 +83,31 @@ describe('every course names its two languages in tags, not just in words', () =
     }
   });
 
+  /**
+   * en-ru, spelled out rather than left to the loop above (#360).
+   *
+   * `l2Written()` did not change when the course flipped to `romanized` — it already branched on
+   * `scriptMode`, so the flip alone moved en-ru's display line from `ru` to `ru-Latn`. That is
+   * the whole point and it is worth one explicit case: the generic assertions above would pass
+   * just as well if `scriptMode` had never flipped, because they check the branch against the
+   * row rather than checking the row.
+   *
+   * **`ru-Latn` is what stops a screen reader reading `menyá zovút` as Cyrillic Russian** — the
+   * tag says "this language, written in Latin letters", and a bare `ru` on a Latin string is a
+   * promise the text does not keep.
+   */
+  it('gives en-ru a ru-Latn display line and a ru script line, with no code change (#360)', () => {
+    const enRu = AUTHORED.find((course) => course.id === 'en-ru');
+    expect(enRu, 'en-ru is in the manifest').toBeDefined();
+    expect(enRu?.scriptMode, 'en-ru is romanized since #353').toBe('romanized');
+    expect(enRu?.romanizationNote, 'and says which scheme').toMatch(/one scheme/);
+
+    expect(l2Written(enRu!)).toEqual({
+      display: { lang: 'ru-Latn', dir: 'ltr' },
+      script: { lang: 'ru', dir: 'ltr' },
+    });
+  });
+
   it('says which way its L2 runs, as data rather than as a guess about the script (#196)', () => {
     for (const course of AUTHORED) {
       expect(['ltr', 'rtl'], `${course.id}.l2Dir`).toContain(course.l2Dir);
@@ -141,6 +166,19 @@ describe('every course names its two languages in tags, not just in words', () =
     expect(enFr?.l1Tag).toBe('en');
     expect(enFr?.l2Tag).toBe('fr');
     expect(enFr?.fixture).toBeUndefined();
+  });
+
+  it('is English about German for the eighth course, still behind the gate (#356)', () => {
+    const enDe = AUTHORED.find((course) => course.id === 'en-de');
+
+    // en-fr's closest sibling: the same English L1, another Latin-script L2. The shell reads
+    // `l1Tag` for the document and `l2Tag` for the taught line and knows neither language — which
+    // is why `ä ö ü ß` need no code anywhere, only a font cut that already claims U+0000-00FF.
+    // The row still carries `fixture: true`: nothing in this course reaches a learner build until
+    // its graduation issue deletes the flag, the way #331 deleted en-fr's.
+    expect(enDe?.l1Tag).toBe('en');
+    expect(enDe?.l2Tag).toBe('de');
+    expect(enDe?.fixture).toBe(true);
   });
 
   it('is an ltr course with an rtl second line for the pair that needs both (#196)', () => {

@@ -67,6 +67,7 @@ export const STRINGS_KEYS = [
   'sentence.pocketIt',
   'sentence.prev',
   'sentence.next',
+  'sentence.done',
   'mark.gotIt',
   'mark.missed',
   'why.show',
@@ -222,18 +223,36 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'rungCard.exitRitual': [],
   'rungCard.module': [],
   /**
-   * Sentence Detail (#89) — the four things the screen says in its own right. Its ten section
+   * Sentence Detail (#89) — the five things the screen says in its own right. Its ten section
    * labels stay English furniture (`WORD BY WORD`, `RULES USED` …), in the register of the
-   * `M1 · SENTENCE 02` kicker; these four are not. The trap's heading is a sentence about the
+   * `M1 · SENTENCE 02` kicker; these five are not. The trap's heading is a sentence about the
    * learner's own first language ("Hindi will mislead you"), `pocketIt` is the mnemonic's label
-   * and PRD §8 F3 names it as course copy, and the two pager buttons are controls the learner
-   * reads — the same call #87 made for the rung card's labels. None of them interpolates: the
-   * pager's position is a `n / total` count the shell renders, not a sentence.
+   * and PRD §8 F3 names it as course copy, and the pager's controls are words the learner reads
+   * — the same call #87 made for the rung card's labels. None of them interpolates: the pager's
+   * position is a `n / total` count the shell renders, not a sentence.
+   *
+   * **`sentence.done` is the fifth, and it exists because the walk-through used to end in
+   * silence** (#367). On a module's last sentence the pager simply disabled Next: the screen
+   * closed on a piece of content, a dead control and nothing else, while every other
+   * walk-through surface in the app names its own end — the module LIST closes with a Practice
+   * link, and the Read phase's pager says `read.finish` on its last card. So the trailing slot
+   * becomes a hand-over rather than a disabled button, and this is its label.
+   *
+   * It is its OWN key rather than a reuse of two near neighbours, and both refusals are
+   * deliberate. Not `read.finish`: that ends a practice SESSION, and this ends a reading walk —
+   * the same word in one language may be two in another, which is the whole reason #93 refused
+   * to share `mark.next` with `sentence.next` in the first place. Not `rungCard.practice`
+   * either: that is a bare tab name on a card, and this one has to carry "the module is
+   * finished — practise it", which is a different sentence even where it lands on the same verb.
+   *
+   * **It names the destination**, because a hand-over that only says "done" is the silence this
+   * key was minted to end.
    */
   'sentence.trapHead': [],
   'sentence.pocketIt': [],
   'sentence.prev': [],
   'sentence.next': [],
+  'sentence.done': [],
   /**
    * The gated self-mark [D11] (#93) — the three words the reveal card owns. `gotIt` and `missed`
    * are the two segments, and `next` is the control that only exists once one segment is chosen.

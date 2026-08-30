@@ -29,6 +29,20 @@
  * question with a different pair — "same meaning" / "not quite" (PRD-design §7) — which is #101's
  * two keys to add beside these and a variant here; the fills, the geometry and the gate are
  * already the same control.
+ *
+ * **The got-it segment sits SECOND, which puts it under the thumb.** It led for the first year of
+ * this control, on the reading-order argument that the affirmative comes first. That argument is
+ * about a page; this is a control a learner hits one-handed, dozens of times a session, and on a
+ * phone held in the right hand the thumb rests at the right edge. Leading with the affirmative
+ * meant the mark taken most often was the one furthest to reach, and the miss sat where the thumb
+ * already was — the wrong verdict is the one a mis-tap should cost, never the likely one.
+ *
+ * DOM order rather than `row-reverse`, so the visual order and the tab order stay the same
+ * sequence; a control whose focus ring jumps right-to-left is a worse trade than the one this
+ * fixes. Note the consequence for an RTL course (en-ar): the group inherits the document's
+ * direction, so the segments mirror and got-it lands on the LEFT there. That follows the script,
+ * which is the rule this app applies everywhere else, and it is the reason the swap is done here
+ * once rather than per-surface.
  */
 import { useStrings } from '../course/strings.ts';
 import styles from './SelfMark.module.css';
@@ -51,21 +65,21 @@ export function SelfMark({ mark, onMark, dir }: SelfMarkProps) {
     <div className={styles.group} role="group">
       <button
         type="button"
-        className={mark === 'got' ? styles.optionGot : styles.option}
-        aria-pressed={mark === 'got'}
-        onClick={() => onMark('got')}
-        dir={dir}
-      >
-        {strings['mark.gotIt']}
-      </button>
-      <button
-        type="button"
         className={mark === 'miss' ? styles.optionMiss : styles.option}
         aria-pressed={mark === 'miss'}
         onClick={() => onMark('miss')}
         dir={dir}
       >
         {strings['mark.missed']}
+      </button>
+      <button
+        type="button"
+        className={mark === 'got' ? styles.optionGot : styles.option}
+        aria-pressed={mark === 'got'}
+        onClick={() => onMark('got')}
+        dir={dir}
+      >
+        {strings['mark.gotIt']}
       </button>
     </div>
   );

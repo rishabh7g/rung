@@ -4,7 +4,8 @@
  *   • the ten sections render in the frozen [D10] order, and in no other,
  *   • a section with nothing to say renders NOTHING — no heading, no empty plate,
  *   • the tag chips carry their name as text, never colour alone,
- *   • prev/next moves within the module and stops at both ends of it,
+ *   • prev/next moves within the module, stops before its first sentence, and hands over to
+ *     Practice after its last one rather than dead-ending (#367),
  *   • back lands on the module the learner came from, at the offset and with the cards they left,
  *   • `deconstruction.rules` resolve through the module's `rules`, and an index it does not have
  *     renders nothing rather than throwing.
@@ -345,19 +346,48 @@ describe('prev and next', () => {
     expect(window.location.hash).toBe(`#/sentence/${FULL}`);
   });
 
-  it('stops at both ends of the module — there is no sentence 0 and no sentence 11', async () => {
+  /**
+   * The two ends of the module are NOT symmetric, and #367 is that asymmetry made honest.
+   *
+   * Before the first sentence there is genuinely nothing, so Prev stays disabled — that half of
+   * this case is unchanged and must stay. After the last one there IS somewhere to go, and the
+   * pager used to grey Next out and say nothing about it; now the trailing slot is a hand-over.
+   */
+  it('stops before the first sentence — there is no sentence 0', async () => {
     await renderSentence(FULL);
+
     expect(pager('prev')).toBeDisabled();
     expect(pager('next')).toBeEnabled();
+  });
 
+  it('hands over to Practice on the last sentence, instead of a dead Next (#367)', async () => {
+    await renderSentence(FULL);
     fireEvent.click(pager('next'));
     await screen.findByText(fixture().sentences[1]!.display);
 
+    // Prev is live now — the learner came from somewhere — and the trailing slot is no longer a
+    // button at all: it is a link, which is what a real destination change is.
     expect(pager('prev')).toBeEnabled();
-    expect(pager('next')).toBeDisabled();
+    expect(screen.queryByRole('button', { name: strings('sentence.next') })).toBeNull();
+    const handOver = screen.getByRole('link', { name: strings('sentence.done') });
 
-    // The bound is the button's, not a redirect's: clicking it changes nothing.
+    fireEvent.click(handOver);
+
+    // Practice, not back to the module list: the list's own closing move is a Practice link, so
+    // routing through it would be one extra tap to the same place.
+    await waitFor(() => {
+      expect(window.location.hash).toBe('#/practice');
+    });
+  });
+
+  it('keeps a working Next on every sentence that has one after it', async () => {
+    await renderSentence(FULL);
+
+    // The first of two: an enabled `sentence.next` button that advances, and no hand-over yet.
+    expect(screen.queryByRole('link', { name: strings('sentence.done') })).toBeNull();
     fireEvent.click(pager('next'));
+
+    await screen.findByText(fixture().sentences[1]!.display);
     expect(window.location.hash).toBe(`#/sentence/${SPARSE}`);
   });
 

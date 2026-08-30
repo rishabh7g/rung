@@ -71,7 +71,13 @@
   unicode-range: U+02BE-02BF, U+1E92-1E93;
 }
 
-/* ------------------------------------------------------------------- Cyrillic (#325) */
+/* ------------------------------------------------------------------- Cyrillic (#325, #360) */
+
+/* ONE weight, where #325 shipped three. Cyrillic was en-ru's hero text then, so the whole L2 ramp
+   ran through it; #353 moved the hero to the romanization — rung teaches speech, not script — and
+   what is left is the quiet `script` line under it. Naskh does the same job at
+   `NASKH_WEIGHTS = [400]`, and this now matches. The 600 and 700 cuts are gone from
+   `src/fonts/generated/` with the rows that named them. */
 
 /* source-sans-3-cyrillic-400 */
 @font-face {
@@ -84,25 +90,5 @@
      would otherwise fall to system-ui in the middle of a Russian line. Deliberately NO space, no
      guillemets and no em dash: Mukta is named first and draws all three, so claiming them would
      download this cut for every course in the catalogue to draw glyphs Mukta already has. */
-  unicode-range: U+0400-04FF, U+2116;
-}
-
-/* source-sans-3-cyrillic-600 */
-@font-face {
-  font-family: 'Source Sans 3';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 600;
-  src: url('./generated/source-sans-3-cyrillic-600.woff2') format('woff2');
-  unicode-range: U+0400-04FF, U+2116;
-}
-
-/* source-sans-3-cyrillic-700 */
-@font-face {
-  font-family: 'Source Sans 3';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 700;
-  src: url('./generated/source-sans-3-cyrillic-700.woff2') format('woff2');
   unicode-range: U+0400-04FF, U+2116;
 }

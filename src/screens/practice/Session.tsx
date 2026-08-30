@@ -3,20 +3,26 @@
  * built around, running immersive: Review → Read as soft chips, ending on a counts-only
  * summary.
  *
- * **THE ROUTING CONTRACT LIVES HERE, AND NOWHERE ELSE.** The self-mark control is deliberately
- * identical in every phase ([D11], `components/SelfMark`) and the reveal card imports no store at
- * all — it emits `onResult({sentenceId, gotIt})` and stops (#93). So the phase, which is the only
- * thing that decides what a mark COSTS, is this component's knowledge:
+ * **THE ROUTING CONTRACT LIVES HERE, AND NOWHERE ELSE.** The reveal card imports no store at all
+ * — it emits `onResult({sentenceId, gotIt})` and stops (#93). So the phase, which is the only
+ * thing that decides what a tap COSTS, is this component's knowledge:
  *
- * | phase | a mark goes to | and never to |
- * |---|---|---|
- * | Review | `recordReview` → `applyMark` on the Leitner queue (box + countdown) | the exit counters |
- * | Read | `recordProduction` on a got-it — the counter that opens the exit ritual (#349) | the review queue |
+ * | phase | what writes | where it goes | and never to |
+ * |---|---|---|---|
+ * | Review | the self-mark ([D11], `components/SelfMark`) | `recordReview` → `applyMark` on the Leitner queue (box + countdown) | the exit counters |
+ * | Read | the PAGER (#368) | `recordProduction` — the counter that opens the exit ritual | the review queue |
  *
  * They are different numbers answering different questions — Review measures what is being KEPT,
  * the counters measure what has been read through — and crossing them would open a rung's exit
- * ritual on sentences the learner never marked. One handler per phase, and they are two functions
- * rather than one with a branch inside it, so the wiring is legible in the diff.
+ * ritual on sentences the learner never went through. One handler per phase, and they are two
+ * functions rather than one with a branch inside it, so the wiring is legible in the diff.
+ *
+ * **Read's writer is its pager, not a self-mark** (#368). #349 moved the gate here and put the
+ * got-it/missed pair on the Read card to carry it; that pair asked a question the phase cannot
+ * answer, because Read shows the sentence outright — there is no cue to recall against and
+ * nothing to be right about, so a verdict on it has nothing behind it. What the gate wants to
+ * know is whether the learner went through the rung, and the pager already knows. Review keeps
+ * its self-mark, where the question is real: the card is face-down until the learner answers it.
  *
  * **Produce is gone** (#349). It was the third phase — "say it, then check" — and the only writer
  * of those counters; the product retired notebook writing and it went too, taking the gate with
@@ -46,9 +52,10 @@
  * snapshot's phase and index here, and the plan it hands over carries the snapshot's own queue
  * for that phase (`resume.ts`).
  *
- * **Read (#97) is the phase that costs nothing.** It writes to neither queue: its pager moves the
- * position, and its last card ends the session. `ReadPhase` draws the card; the position stays
- * here, because the snapshot is here.
+ * **Read (#97) costs the review queue nothing** — its pager moves the position and writes the
+ * exit counter, and its last card ends the session. `ReadPhase` draws the card; the position and
+ * the write stay here, because the snapshot is here and the routing contract above is this
+ * component's whole job.
  */
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useModules } from '../../course/content.ts';
@@ -261,47 +268,50 @@ export function Session({ courseId, moduleId, sentenceIds, plan, resume, dir, l2
     [courseId, plan.reviewIds.length, recordReview],
   );
 
-  /**
-   * A READ mark (#349): the exit counters, and nothing else — and only on a got-it. A missed
-   * sentence writes nothing at all (the counters only ever count up, #95) and the review queue is
-   * not in this function either.
-   *
-   * **It does NOT move the position**, and it does not count twice. Read is a read-through and the
-   * pager is its navigation, so a learner who marked a sentence is still ON it — free to open the
-   * cue, expand "why", or tap the lit segment again. The counter is a fact about the SENTENCE
-   * ("read through, at least once" — the whole of what the gate asks), not a tally of taps, and
-   * the screen already draws it as a fact: `marked` lights the segment and stays lit. Writing on
-   * every re-tap would move a number nothing on screen reflects, which is the definition of a
-   * silent write.
-   */
-  const onReadMark = useCallback(
-    (gotIt: boolean) => {
-      const sentenceId = sentenceIds[live.idx];
-      if (!gotIt || sentenceId === undefined) return;
-      if ((production[sentenceId] ?? 0) >= MARKS_PER_SENTENCE) return;
-
-      recordProduction(courseId, sentenceId);
-    },
-    [courseId, live.idx, production, recordProduction, sentenceIds],
-  );
-
   /* ------------------------------------------------------------------ reading */
 
   /**
-   * Read's pager, and the whole of what Read costs: a position. No box moves, no counter moves —
-   * the phase between the two that write is the one that does not (PRD §8 F4). Back is never
-   * called on the first sentence; the control is disabled there, and the clamp is belt-and-braces.
+   * Read's Back. It costs nothing at all: no box moves, no counter moves, and it never unmarks —
+   * the counters only ever count up (#95), so re-reading a sentence is free and re-paging past it
+   * writes nothing new. Back is never called on the first sentence; the control is disabled
+   * there, and the clamp is belt-and-braces.
    */
   const onReadPrev = useCallback(() => {
     setLive((held) => ({ ...held, idx: Math.max(0, held.idx - 1) }));
   }, []);
 
-  /** Next — and, on the rung's last sentence, the end of the session (#349). */
+  /**
+   * **Next — and it is the WRITER of this course's exit counters** (#368). Paging past a sentence
+   * is what marks it read; when every sentence of the rung has been paged past, the rung's exit
+   * ritual opens (`exitAvailable`, #95). On the last sentence it ends the session instead.
+   *
+   * This replaces the got-it/missed pair #349 put on the Read card. Those two segments were the
+   * gate for one ticket's worth of time and they asked the learner a question the phase cannot
+   * use: Read has no cue to recall against and no answer to be right about, so "did you get it?"
+   * on a sentence the learner is simply reading is a verdict with nothing behind it. What the
+   * gate actually wants to know is whether they went through the rung, and the pager already
+   * knows that. So the ceremony goes and the gate stays — which is the shape the whole UX audit
+   * has been pushing towards (#313's Next, #348's hold, #349's Produce).
+   *
+   * **It writes from the TAP, never from an effect**, and that is not incidental. Marking on
+   * arrival would mean calling a store action — a write that spends a counter — out of a render
+   * effect, which is the `setState`-in-effect pattern this repo's lint forbids and the reason
+   * #316's structural version was built and backed out. An event handler has no such problem.
+   *
+   * Marking is IDEMPOTENT: a sentence already at the gate writes nothing, so paging back and
+   * forward over the same card does not inflate its counter. The number is a fact about the
+   * sentence, not a tally of taps.
+   */
   const onReadNext = useCallback(() => {
+    const sentenceId = sentenceIds[live.idx];
+    if (sentenceId !== undefined && (production[sentenceId] ?? 0) < MARKS_PER_SENTENCE) {
+      recordProduction(courseId, sentenceId);
+    }
+
     setLive((held) =>
       held.idx + 1 < sentenceIds.length ? { ...held, idx: held.idx + 1 } : { ...held, done: true },
     );
-  }, [sentenceIds.length]);
+  }, [courseId, live.idx, production, recordProduction, sentenceIds]);
 
   /**
    * A chip. Every phase is reachable from every phase — except that Review with nothing due
@@ -362,8 +372,6 @@ export function Session({ courseId, moduleId, sentenceIds, plan, resume, dir, l2
             total={queue.length}
             onPrev={onReadPrev}
             onNext={onReadNext}
-            onMark={onReadMark}
-            marked={(production[sentenceId] ?? 0) >= MARKS_PER_SENTENCE}
             dir={dir}
             l2={l2}
           />

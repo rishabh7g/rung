@@ -11,12 +11,13 @@ import { DEFAULT_CONTENT_ROOT } from './validate.ts';
  * issue text predates five PRs and lists 21 keys; the files carry 39 (PR #120, verified across
  * courses by PR #124, plus the Ladder's three in #86 and the staged rung card's seven in #87).
  * Where they disagree, the files win, so the suite checks the list AGAINST the files rather than
- * the other way round. Seven bundles now — hi-mr, en-es, en-ar, hi-en, en-ru, en-it and en-fr,
- * all seven shipping (#273, #343, #337, #331) — and the content build checks every one exactly the
- * same way. A bundle is checked whether or not its course ships: the gate decides what reaches a
- * learner, never what has to be well formed.
+ * the other way round. Eight bundles now — hi-mr, en-es, en-ar, hi-en, en-ru, en-it and en-fr, the
+ * seven shipping ones (#273, #343, #337, #331), plus en-de, whose row is still a dev fixture
+ * (#356) — and the content build checks every one exactly the same way. A bundle is checked
+ * whether or not its course ships: the gate decides what reaches a learner, never what has to be
+ * well formed, so a fixture course's bundle is held to precisely the same bar.
  */
-const COURSES = ['hi-mr', 'en-es', 'en-ar', 'hi-en', 'en-ru', 'en-it', 'en-fr'] as const;
+const COURSES = ['hi-mr', 'en-es', 'en-ar', 'hi-en', 'en-ru', 'en-it', 'en-fr', 'en-de'] as const;
 
 function authoredStrings(courseId: string): Record<string, unknown> {
   const file = path.join(DEFAULT_CONTENT_ROOT, courseId, 'strings.json');
@@ -46,15 +47,15 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the seven authored bundles carry — 95 keys, nested, identical', () => {
+  it('is exactly what the seven authored bundles carry — 96 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(95);
+      expect(keys.length, courseId).toBe(96);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(95);
-    expect(new Set(STRINGS_KEYS).size).toBe(95);
+    expect(STRINGS_KEYS.length).toBe(96);
+    expect(new Set(STRINGS_KEYS).size).toBe(96);
   });
 
   /**
