@@ -33,9 +33,10 @@ import {
   type ShippedFile,
 } from './payload-budget.ts';
 
-/** Three of the four courses a strict build emits, as the manifest carries them — one per
+/** Three of the five courses a strict build emits, as the manifest carries them — one per
     attribution shape (a script, no script, a romanized script). hi-en (#273) maps like hi-mr,
-    `['devanagari']`, and shares its subset; the manifest test below pins that mapping. */
+    `['devanagari']`, and shares its subset; en-it (#337) maps like en-es, `[]`, because neither
+    `en` nor `it` reaches a course face; the manifest test below pins both mappings. */
 const HI_MR: ShippedCourse = { id: 'hi-mr', scripts: ['devanagari'] };
 const EN_ES: ShippedCourse = { id: 'en-es', scripts: [] };
 const EN_AR: ShippedCourse = { id: 'en-ar', scripts: ['arabic'] };

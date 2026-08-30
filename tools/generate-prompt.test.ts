@@ -69,7 +69,9 @@ const HI_EN: CourseRow = {
   fixture: true,
 };
 
-/** The sixth course (#332): English L1, Italian L2 — en-es's nearest sibling, still a fixture. */
+/** The fifth course (#332): English L1, Italian L2 — en-es's nearest sibling. The row is kept
+    `fixture: true` here, as en-es's and hi-en's are: this file's rows exercise the CLI, not the
+    manifest, and #337's graduation is asserted in `tools/content-build.test.ts`. */
 const EN_IT: CourseRow = {
   id: 'en-it',
   l1: 'English',

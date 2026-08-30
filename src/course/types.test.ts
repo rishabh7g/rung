@@ -194,7 +194,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 40 of them — hi-mr, en-es, en-ar and hi-en L1-M1..M10, plus the 10 en-it modules authored so far', () => {
+  it('finds all 50 of them — hi-mr, en-es, en-ar, hi-en and en-it L1-M1..M10', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',

@@ -1,5 +1,5 @@
 /**
- * The sixth course's AUTHORED rungs, walked through the real screens (#334–#336).
+ * The fifth course's AUTHORED rungs, walked through the real screens (#334–#336).
  *
  * en-it (#332–#337) is English → Italian, and no browser may open it on the host that builds it
  * (CLAUDE.md bans Playwright and Chromium on the Pi). So the dev-build smoke is this file:

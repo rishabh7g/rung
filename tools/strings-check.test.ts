@@ -11,10 +11,10 @@ import { DEFAULT_CONTENT_ROOT } from './validate.ts';
  * issue text predates five PRs and lists 21 keys; the files carry 39 (PR #120, verified across
  * courses by PR #124, plus the Ladder's three in #86 and the staged rung card's seven in #87).
  * Where they disagree, the files win, so the suite checks the list AGAINST the files rather than
- * the other way round. Five bundles since #332 — hi-mr, en-es, en-ar and hi-en, all shipping
- * since #273, plus en-it, still behind the fixture gate — and the content build checks every one
- * exactly the same way. A bundle is checked whether or not its course ships: the gate decides
- * what reaches a learner, never what has to be well formed.
+ * the other way round. Five bundles since #332 — hi-mr, en-es, en-ar, hi-en and en-it, all five
+ * shipping since #337 — and the content build checks every one exactly the same way. A bundle is
+ * checked whether or not its course ships: the gate decides what reaches a learner, never what
+ * has to be well formed.
  */
 const COURSES = ['hi-mr', 'en-es', 'en-ar', 'hi-en', 'en-it'] as const;
 
@@ -255,7 +255,7 @@ describe('the canonical key list', () => {
    * COUNTS, never time (Invariant 2) — the Sync-3 freeze's banned-vocabulary sweep (#71),
    * widened from #96's session-only scan to EVERY value in every bundle. The shell holds no
    * copy of its own, so the only door a streak, a duration or a percentage has into the product
-   * is an authored bundle — which is what this reads, in all four courses. ("Today" and hi-mr's
+   * is an authored bundle — which is what this reads, in all five courses. ("Today" and hi-mr's
    * "आज" pass by construction: the word-bounded scan bans the calendar's units, not every word
    * that contains one — ratified at the freeze alongside the scheduler's "due", which counts
    * sessions, never days.)

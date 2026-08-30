@@ -59,10 +59,9 @@ function authored(file: 'levels.json' | 'strings.json'): unknown {
 }
 
 /**
- * The sixth course's ladder and bundle (#332), read off disk the same way. en-it is still a dev
- * FIXTURE — `content/courses.json` carries `fixture: true` and a strict build drops the whole
- * course — so what boots here is the ratified ladder with nothing authored behind it: ten pending
- * rungs, in English chrome, from `content/en-it/`.
+ * The fifth course's ladder and bundle, read off disk the same way. en-it was authored behind the
+ * gate (#332 row with `fixture: true`, #334–#336 the ten rungs) and graduated in #337, so what
+ * boots here is the shipped ladder: ten rungs, all authored, none climbed, in English chrome.
  */
 const EN_IT_FILES = import.meta.glob<string>('../../content/en-it/*.json', {
   query: '?raw',
@@ -379,18 +378,20 @@ describe('the fourth course — hi-en (#267, shipping since #273)', () => {
   });
 });
 
-/* ------------------------------------------ the sixth course, en-it (#332, dev fixture) */
+/* ------------------------------------------- the fifth course, en-it (#332, shipping) */
 
-describe('the sixth course — en-it (#332, still behind the fixture gate)', () => {
+describe('the fifth course — en-it (#332, shipping since #337)', () => {
   /**
    * The same switch flow, run against the REAL en-it files: the manifest row lives in
-   * `DEV_MANIFEST` WITH `fixture: true` (a dev build is the only build that carries it), and the
-   * fetch for en-it's ladder and bundle answers with what `content/en-it/` holds today — the
-   * ratified ten-rung L1 with nothing authored behind it, and the English strings.
+   * `DEV_MANIFEST` (no `fixture` key since #337 graduated the course), and the fetch for en-it's
+   * ladder and bundle answers with what `content/en-it/` holds today — the ten authored L1 rungs
+   * and the English strings.
    *
-   * This is the skeleton issue's smoke, and no browser on this host may open it (no Playwright,
-   * no Chromium on the Pi): the row in the switcher, the ten pending rungs, the English chrome,
-   * and hi-mr's ladder left exactly where it was (Invariant 8).
+   * No browser on this host may open it (no Playwright, no Chromium on the Pi), so this is the
+   * smoke that proves the course boots: the row in the switcher, the ten-rung ladder, the English
+   * chrome, and hi-mr's ladder left exactly where it was (Invariant 8). The authored rungs
+   * themselves — module list, Sentence Detail, the Why panel — are walked in
+   * `src/course/enItAuthored.test.tsx`.
    */
   function serveAuthoredEnIt(): void {
     const base = globalThis.fetch;
@@ -412,15 +413,14 @@ describe('the sixth course — en-it (#332, still behind the fixture gate)', () 
     return within(screen.getByRole('list')).getAllByRole('listitem');
   }
 
-  it('is offered as the last pair — a fixture row reaches the switcher like any other', async () => {
+  it('is offered as the last pair, and is nothing the shell was told about', async () => {
     const select = await renderSettings();
 
     const labels = within(select)
       .getAllByRole('option')
       .map((option) => option.textContent);
-    // The switcher reads `pairLabel` and nothing else about the row: `fixture` is not something
-    // the shell branches on, so a course authored behind the gate is offered exactly like the
-    // five before it.
+    // The switcher reads `pairLabel` and nothing else about the row (`manifest.test.ts`) — the
+    // fifth course is offered exactly like the first four, on a strict build as on a dev one.
     expect(labels.at(-1)).toBe('english → italian');
     expect(within(select).getByRole('option', { name: 'english → italian' })).toHaveValue('en-it');
   });

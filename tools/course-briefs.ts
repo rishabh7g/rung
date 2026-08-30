@@ -283,7 +283,7 @@
  *
  * There was no seam-proof fixture to replace: `content/hi-en/modules/` did not exist until #270
  * authored L1-M1 against the brief below, and #273 graduated the course out of `fixture: true`
- * — the fourth course shipping, all four courses briefed here.
+ * — the fourth course shipping.
  *
  * ## en-it: the five decisions a brief must settle before any Italian is written
  *
@@ -418,8 +418,9 @@
  * `ci sono`. None of the ten jobs needs any of them, and importing one would spend the word budget
  * on a contrast the learner cannot yet frame.
  *
- * There is no seam-proof fixture to replace: `content/en-it/modules/` does not exist until #334
- * authors L1-M1 against the brief below, and #337 graduates the course out of `fixture: true`.
+ * There was no seam-proof fixture to replace: `content/en-it/modules/` did not exist until #334
+ * authored L1-M1 against the brief below, and #337 graduated the course out of `fixture: true`
+ * — the fifth course shipping, all five courses briefed here.
  *
  * ## hi-mr L2: the four decisions, taken against the finished L1 (#295)
  *
