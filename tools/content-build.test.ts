@@ -1657,66 +1657,114 @@ describe('the romanized edge cases (#116, [Q3])', () => {
    * Russian is the first L2 in the product that INFLECTS, so the seams are not homographs but
    * paradigms: every shape of a word has to land on the row that first taught the word, or a
    * learner taps a case form and is shown a note about a different one.
+   *
+   * **Every surface below is the romanization** (#353–#360), and the index keys are the shipped
+   * `display`/`forms` strings verbatim, so this test is where the rewrite is actually cashed.
+   * These lines were spelled in whichever alphabet each owning module had at the time while the
+   * three batches were in flight; all ten modules ship the scheme of `tools/course-briefs.ts` §0
+   * now, so they are converted wholesale.
+   *
+   * **What was NOT allowed to move is which module owns each key.** A romanization can merge two
+   * Cyrillic surfaces into one Latin one or split one into two, and either moves an owner — which
+   * is why #355 decision 6 re-checked the ownership table against the scheme rather than assuming
+   * it survived, and why every ownership assertion below is unchanged from before the rewrite
+   * except for the alphabet it is written in. The seams that could have moved and did not are the
+   * interesting ones: `u menyá yest'` is still three tokens, so `maxSpan` is still 3; `yest'`
+   * keeps its apostrophe as part of its key because the folder exempts `'` from edge stripping by
+   * name; and `vsyó` still cannot collide with `vse`.
    */
   it('keeps every en-ru case shape, gender pair and chunk on the row the briefs assigned (#339)', () => {
     const index = lastIndex('en-ru');
     const owner = (surface: string) => index.surfaces[surface]?.moduleId;
 
     // Case shapes live on the row that first taught the word — never a second, unreachable row.
-    expect(owner('москва')).toBe('L1-M1');
-    expect(owner('москвы')).toBe('L1-M1');
-    expect(owner('москве')).toBe('L1-M1'); // M7 needed it; M1's row grew, no new row opened
-    expect(owner('индия')).toBe('L1-M1');
-    expect(owner('индии')).toBe('L1-M1'); // one surface, two seats: `из` and `в`
-    expect(owner('вода')).toBe('L1-M3');
-    expect(owner('воду')).toBe('L1-M3');
-    expect(owner('стол')).toBe('L1-M7');
-    expect(owner('столе')).toBe('L1-M7');
+    expect(owner('moskvá')).toBe('L1-M1');
+    expect(owner('moskvý')).toBe('L1-M1');
+    expect(owner('moskvé')).toBe('L1-M1'); // M7 needed it; M1's row grew, no new row opened
+    expect(owner('índiya')).toBe('L1-M1');
+    expect(owner('índii')).toBe('L1-M1'); // one surface, two seats: `iz` and `v`
+    expect(owner('vodá')).toBe('L1-M3');
+    expect(owner('vódu')).toBe('L1-M3');
+    // M7's own row, so romanized by #359 — and the stress is part of the surface: `stol` is a
+    // monosyllable and bare, `stolé` carries the acute because the stress sits on the ending.
+    expect(owner('stol')).toBe('L1-M7');
+    expect(owner('stolé')).toBe('L1-M7');
 
-    // `быть` is ONE row across the level: M5 opened it, M6 extended it rather than forking it.
-    for (const shape of ['был', 'была', 'было', 'были', 'буду', 'будете', 'будет']) {
+    // The other half of the same claim, and the one that proves the rewrite was a MOVE rather
+    // than an addition: not one Cyrillic surface survives anywhere in the index. A course that
+    // had gained romanized keys while keeping its old ones would pass every assertion above and
+    // still be broken — two rows per word, and the learner's tap landing on whichever the
+    // longest-match walk reached first.
+    const cyrillicKeys = Object.keys(index.surfaces).filter((key) =>
+      /\p{Script=Cyrillic}/u.test(key),
+    );
+    expect(cyrillicKeys, 'the Cyrillic surfaces are gone, not merely joined').toEqual([]);
+
+    // `byt'` is ONE row across the level: M5 opened it, M6 extended it rather than forking it.
+    for (const shape of ['byl', 'bylá', 'býlo', 'býli', 'búdu', 'búdete', 'búdet']) {
       expect(owner(shape), shape).toBe('L1-M5');
     }
     // …and so is each aspect pair's own paradigm — past and future of one word, one row.
-    for (const shape of ['купил', 'купила', 'купили', 'куплю']) {
+    for (const shape of ['kupíl', 'kupíla', 'kupíli', 'kuplyú']) {
       expect(owner(shape), shape).toBe('L1-M5');
     }
     // The gender pairs: the speaker's own shape, on one row.
-    expect(owner('устал')).toBe('L1-M2');
-    expect(owner('устала')).toBe('L1-M2');
-    expect(owner('пошёл')).toBe('L1-M5');
-    expect(owner('пошла')).toBe('L1-M5');
+    expect(owner('ustál')).toBe('L1-M2');
+    expect(owner('ustála')).toBe('L1-M2');
+    expect(owner('poshyól')).toBe('L1-M5');
+    expect(owner('poshlá')).toBe('L1-M5');
 
     // An aspect pair is TWO words, so it is two rows — never two forms of one.
-    expect(owner('пью')).toBe('L1-M4');
-    expect(owner('выпил')).toBe('L1-M5');
-    expect(owner('встаю')).toBe('L1-M4');
-    expect(owner('встану')).toBe('L1-M6');
+    expect(owner("p'yu")).toBe('L1-M4');
+    expect(owner('výpil')).toBe('L1-M5');
+    expect(owner('vstayú')).toBe('L1-M4');
+    expect(owner('vstánu')).toBe('L1-M6'); // M6's row, so romanized
 
-    // The multi-token surfaces, and the bare words they leave free.
+    // The multi-token surfaces, and the bare words they leave free. The romanization does not
+    // move a token boundary: `u menyá yest'` was three tokens and `u menyá yest'` is three, so the
+    // course's maxSpan is still 3 and the longest-match walk still swallows the same words.
     expect(index.maxSpan).toBe(3);
-    expect(owner('меня зовут')).toBe('L1-M1');
-    expect(owner('меня')).toBe('L1-M1'); // the pronoun row, not the formula
-    expect(owner('как дела')).toBe('L1-M2');
-    expect(owner('как')).toBe('L1-M2'); // left free by the chunk, claimed one sentence earlier
-    expect(owner('у меня есть')).toBe('L1-M8');
-    expect(owner('у вас есть')).toBe('L1-M8');
-    expect(owner('потому что')).toBe('L1-M9');
-    expect(owner('что')).toBe('L1-M9'); // the conjunction, left free by потому что
-    // A bare `у` earns no key at all: `surfaceIndexKeys` splits hyphen parts, not whitespace.
-    expect(owner('у')).toBeUndefined();
+    expect(owner('menyá zovút')).toBe('L1-M1');
+    expect(owner('menyá')).toBe('L1-M1'); // the pronoun row, not the formula
+    expect(owner('kak delá')).toBe('L1-M2');
+    expect(owner('kak')).toBe('L1-M2'); // left free by the chunk, claimed one sentence earlier
+    expect(owner("u menyá yest'")).toBe('L1-M8');
+    expect(owner("u vas yest'")).toBe('L1-M8');
+    expect(owner('potomú chto')).toBe('L1-M9');
+    expect(owner('chto')).toBe('L1-M9'); // the conjunction, left free by potomú chto
+    // A bare `u` earns no key at all: `surfaceIndexKeys` splits hyphen parts, not whitespace —
+    // and the same was true of the bare `u` it replaced.
+    expect(owner('u')).toBeUndefined();
+    expect(owner('u')).toBeUndefined();
 
-    // `есть` — the homograph settled by exclusion: "to eat" never appears, so M7's existential
-    // owns the one bare row, and M8's three-token chunks capture the `есть` inside them.
-    expect(owner('есть')).toBe('L1-M7');
+    // `yest'` — the homograph settled by exclusion: "to eat" never appears, so M7's existential
+    // owns the one bare row, and M8's three-token chunks capture the `yest'` inside them. The
+    // apostrophe is part of the key: `src/engine/surface.ts` exempts `'` from edge stripping by
+    // name, so a hypothetical `yest` is a surface this course never wrote.
+    expect(owner("yest'")).toBe('L1-M7');
+    expect(owner('yest')).toBeUndefined();
 
-    // ё is written everywhere it belongs, and the е-spelling of a ё-word is never a surface.
-    for (const shape of ['пошёл', 'пьёте', 'встаёте', 'живёте', 'придёте', 'ещё', 'всё', 'днём']) {
+    // yó is written everywhere it belongs — as `yó` while a module is still native and as `yó`
+    // once it is romanized — and the e-spelling of a yó-word is never a surface either way.
+    for (const shape of [
+      'poshyól',
+      "p'yóte",
+      'vstayóte',
+      'dnyóm',
+      'zhivyóte',
+      'pridyóte',
+      'yeshchyó',
+      'vsyó',
+    ]) {
       expect(owner(shape), shape).toBeDefined();
     }
-    for (const wrong of ['пошел', 'пьете', 'встаете', 'живете', 'придете', 'еще', 'все']) {
+    for (const wrong of ['poshyol', "p'yote", 'vstayote', 'zhivete', 'pridete', 'yeshche', 'vso']) {
       expect(owner(wrong), wrong).toBeUndefined();
     }
+    // `vse` is the one member of that family that IS a word — "everybody", against `vsyó`
+    // "everything" — which is the whole reason #355 made `yó` always `yó`. M10 writes it only on a
+    // mistake plate, so it earns no row, and the two never collide as index keys.
+    expect(owner('vse')).toBeUndefined();
   });
 
   it('keeps hi-en surface-pass seams on the row that owns them (#284)', () => {
