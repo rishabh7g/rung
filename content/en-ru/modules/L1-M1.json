@@ -5,155 +5,169 @@
   "job": "Introduce yourself and state what you like",
   "prerequisites": [],
   "verified": true,
-  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedBy": "Claude Opus 5 — LLM review of the romanization, authorised by repo owner",
   "verifiedAt": "2026-08-30",
   "complexity": {
     "minWordsPerSentence": 2,
     "maxWordsPerSentence": 5,
     "allowedTenses": ["simple_present"],
     "allowedPatterns": [
-      "Меня зовут + name",
-      "Я из + place (gen.)",
-      "Я + N (nom.)",
-      "Это + N (nom.)",
-      "Я люблю + N (acc.)"
+      "Menyá zovút + name",
+      "Ya iz + place (gen.)",
+      "Ya + N (nom.)",
+      "Éhto + N (nom.)",
+      "Ya lyublyú + N (acc.)"
     ],
     "newWordCap": 25
   },
   "rules": [
     {
       "tag": "free",
-      "text": "The neutral word order is the English one — subject, verb, object — so Я люблю чай comes out in the order you already think in. Russian can move the pieces around for emphasis, and M10 shows what that does; nothing in this module needs it."
+      "text": "The neutral word order is the English one — subject, verb, object — so Ya lyublyú chay comes out in the order you already think in. Russian can move the pieces around for emphasis, and M10 shows what that does; nothing in this module needs it."
     },
     {
       "tag": "interference",
-      "text": "There is no present-tense \"to be\". Я студент is the whole sentence — two words, \"I student\" — and nothing has been left out. Reaching for a word to fill the gap gives Я есть студент, which is the single most English mistake you can make in Russian. Only the PRESENT is empty: the past (был) and the future (буду) are real words, and they arrive in M5 and M6."
+      "text": "There is no present-tense \"to be\". Ya studént is the whole sentence — two words, \"I student\" — and nothing has been left out. Reaching for a word to fill the gap gives Ya yest' studént, which is the single most English mistake you can make in Russian. Only the PRESENT is empty: the past (byl) and the future (búdu) are real words, and they arrive in M5 and M6."
     },
     {
       "tag": "delta",
-      "text": "There are no articles at all. книга is \"book\", \"a book\" and \"the book\"; nothing on the page tells them apart. That is a whole system with nothing to learn — but the work English gives a and the has to go somewhere, and in Russian it goes into word order: M10 is where that is paid."
+      "text": "There are no articles at all. kníga is \"book\", \"a book\" and \"the book\"; nothing on the page tells them apart. That is a whole system with nothing to learn — but the work English gives a and the has to go somewhere, and in Russian it goes into word order: M10 is where that is paid."
     },
     {
       "tag": "delta",
-      "text": "A name is given with Меня зовут — literally \"me they-call\". It is a fixed phrase, not a sentence you assemble: Меня зовут Иван is \"my name is Ivan\", and Моё имя — Иван, though grammatical, is not how anyone introduces themselves."
+      "text": "A name is given with Menyá zovút — literally \"me they-call\". It is a fixed phrase, not a sentence you assemble: Menyá zovút Iván is \"my name is Ivan\", and Moyó ímya — Iván, though grammatical, is not how anyone introduces themselves."
     },
     {
       "tag": "delta",
-      "text": "из (\"from\") changes the ending of the place after it: Индия → Индии, Москва → Москвы. Russian has six such endings — cases — and this is the first one you meet. Do not try to work it out here: learn Я из … with the shape it takes, and M3 starts teaching the endings properly."
+      "text": "iz (\"from\") changes the ending of the place after it: Índiya → Índii, Moskvá → Moskvý. Russian has six such endings — cases — and this is the first one you meet. Do not try to work it out here: learn Ya iz … with the shape it takes, and M3 starts teaching the endings properly."
     },
     {
       "tag": "delta",
-      "text": "Every noun has a gender, and its ending is the first clue: a consonant at the end means masculine (чай, хлеб, язык), -а or -я means feminine (книга, Москва, Индия), -о or -е means neuter (молоко). The clue is not a law — nouns ending in -ь can be either and must be learned with their gender, and кофе is masculine in spite of its -е. Learn a noun and its gender together."
+      "text": "Every noun has a gender, and its ending is the first clue: a consonant at the end means masculine (chay, khleb, yazýk), -a or -ya means feminine (kníga, Moskvá, Índiya), -o or -e means neuter (molokó). The clue is not a law — nouns ending in the soft sign -' can be either and must be learned with their gender, and kófe is masculine in spite of its -e. Learn a noun and its gender together."
     },
     {
       "tag": "delta",
-      "text": "The thing you like follows the verb, in the object case: Я люблю чай. In this module the object never actually changes shape, because masculine things that are not alive (чай, язык) and neuter things (молоко) look identical in the object case. M3 is where the ending finally moves — and it moves on feminine nouns."
+      "text": "The thing you like follows the verb, in the object case: Ya lyublyú chay. In this module the object never actually changes shape, because masculine things that are not alive (chay, yazýk) and neuter things (molokó) look identical in the object case. M3 is where the ending finally moves — and it moves on feminine nouns."
     },
     {
       "tag": "free",
-      "text": "In writing, when both halves of an \"X is Y\" sentence are nouns, a dash stands where English puts is: Анна — студентка. After a pronoun it is left out: Я студентка. The dash is punctuation, not a word — it is never said out loud."
+      "text": "In writing, when both halves of an \"X is Y\" sentence are nouns, a dash stands where English puts is: Ánna — studéntka. After a pronoun it is left out: Ya studéntka. The dash is punctuation, not a word — it is never said out loud."
     }
   ],
   "sentences": [
     {
       "id": "L1-M1-S01",
-      "display": "Меня зовут Иван.",
+      "display": "Menyá zovút Iván.",
+      "script": "Меня зовут Иван.",
       "cue": "My name is Ivan",
       "glossEn": "lit. \"me they-call Ivan\"",
       "literal": "Me they-call Ivan",
       "deconstruction": {
         "words": [
           {
-            "display": "Меня зовут",
+            "display": "Menyá zovút",
+            "script": "Меня зовут",
             "cue": "my name is",
             "tag": "delta",
-            "forms": ["Меня зовут"],
-            "note": "Two words that work as one: зовут is \"they call\" and меня is \"me\", so the phrase is \"they call me …\" with nobody in particular doing the calling. This, and not Моё имя, is how a Russian gives a name. Learn it whole — the pieces are not worth separating until much later."
+            "forms": ["Menyá zovút"],
+            "note": "Two words that work as one: zovút is \"they call\" and menyá is \"me\", so the phrase is \"they call me …\" with nobody in particular doing the calling. This, and not Moyó ímya, is how a Russian gives a name. Learn it whole — the pieces are not worth separating until much later."
           },
           {
-            "display": "Иван",
+            "display": "Iván",
+            "script": "Иван",
             "cue": "Ivan",
             "tag": "free",
-            "forms": ["Иван"],
+            "forms": ["Iván"],
             "note": "A man's name, carried over unchanged — swap in your own. Russian writes names with a capital letter, exactly as English does."
           }
         ],
         "rules": [3]
       },
-      "trap": "Меня зовут is Иван looks like it is missing a verb, so English speakers want to add one: Меня зовут есть Иван. There is nothing to add — зовут is already the verb of the sentence.",
-      "sound": "me-NYA za-VOOT. Both unstressed о sounds come out as a short \"a\" — this is the single most useful pronunciation fact in Russian, and it applies to every word on this rung.",
+      "trap": "Menyá zovút Iván looks like it is missing a verb, so English speakers want to add one: Menyá zovút yest' Iván. There is nothing to add — zovút is already the verb of the sentence.",
+      "sound": "me-NYA za-VOOT. The unstressed o of zovút comes out as a short \"a\" — the acute marks the one vowel in the word that keeps its full value, and everything around it flattens. This is the single most useful pronunciation fact in Russian, and it applies to every word on this rung.",
       "variations": [
         {
-          "display": "Меня зовут Анна.",
+          "display": "Menyá zovút Ánna.",
+          "script": "Меня зовут Анна.",
           "cue": "My name is Anna",
-          "changed": "swap the name — Меня зовут itself never moves"
+          "changed": "swap the name — Menyá zovút itself never moves"
         },
         {
-          "display": "Как вас зовут?",
+          "display": "Kak vas zovút?",
+          "script": "Как вас зовут?",
           "cue": "What is your name?",
-          "changed": "меня → вас: the same verb, now asking somebody else. M2 takes this apart"
+          "changed": "menyá → vas: the same verb, now asking somebody else. M2 takes this apart"
         },
         {
-          "display": "Её зовут Анна.",
+          "display": "Yeyó zovút Ánna.",
+          "script": "Её зовут Анна.",
           "cue": "Her name is Anna",
-          "changed": "меня → её: the phrase names a third person without changing зовут"
+          "changed": "menyá → yeyó: the phrase names a third person without changing zovút"
         }
       ],
       "mistake": {
-        "display": "Моё имя Иван.",
-        "why": "Grammatical, and nobody says it — it reads the way \"My appellation is Ivan\" reads in English. Меня зовут Иван is the sentence."
+        "display": "Moyó ímya Iván.",
+        "script": "Моё имя Иван.",
+        "why": "Grammatical, and nobody says it — it reads the way \"My appellation is Ivan\" reads in English. Menyá zovút Iván is the sentence."
       },
       "usage": "The first line of any introduction, in any register.",
       "register": "neutral",
-      "mnemonic": "зовут is \"they call\". Your name is what they call you — меня зовут."
+      "mnemonic": "zovút is \"they call\". Your name is what they call you — menyá zovút."
     },
     {
       "id": "L1-M1-S02",
-      "display": "Очень приятно.",
+      "display": "Óchen' priyátno.",
+      "script": "Очень приятно.",
       "cue": "Nice to meet you",
       "glossEn": "lit. \"very pleasant\"",
       "literal": "Very pleasant",
       "deconstruction": {
         "words": [
           {
-            "display": "очень",
+            "display": "óchen'",
+            "script": "очень",
             "cue": "very",
             "tag": "free",
-            "forms": ["очень"],
+            "forms": ["óchen'"],
             "note": "\"Very\", and it sits in front of whatever it strengthens, exactly as in English."
           },
           {
-            "display": "приятно",
+            "display": "priyátno",
+            "script": "приятно",
             "cue": "pleasant · pleasantly",
             "tag": "delta",
-            "forms": ["приятно"],
-            "note": "\"Pleasant\", in the shape Russian uses when there is no particular thing being described — it is the whole reply on its own. M9 builds a family of these: мне холодно, \"to me [it is] cold\"."
+            "forms": ["priyátno"],
+            "note": "\"Pleasant\", in the shape Russian uses when there is no particular thing being described — it is the whole reply on its own. M9 builds a family of these: mne khólodno, \"to me [it is] cold\"."
           }
         ],
         "rules": [1]
       },
       "trap": "There is no \"it\", no \"is\" and no \"to meet you\" anywhere in it. English needs four words of scaffolding for a formula Russian says in two.",
-      "sound": "O-chen pree-YAT-na. The final -о of приятно is unstressed, so it comes out as \"a\"; the ь on очень only softens the н, and is never a sound of its own.",
+      "sound": "O-chen pree-YAT-na. The final -o of priyátno is unstressed, so it comes out as \"a\"; the ' on the end of óchen' is a soft sign, and it only softens the n in front of it — it is never a sound of its own.",
       "variations": [
         {
-          "display": "Очень приятно, Иван.",
+          "display": "Óchen' priyátno, Iván.",
+          "script": "Очень приятно, Иван.",
           "cue": "Nice to meet you, Ivan",
           "changed": "a name after a comma — the standard way to close the formula"
         },
         {
-          "display": "Приятно.",
+          "display": "Priyátno.",
+          "script": "Приятно.",
           "cue": "Pleased",
-          "changed": "drop очень: shorter and cooler, the same reply with less warmth in it"
+          "changed": "drop óchen': shorter and cooler, the same reply with less warmth in it"
         },
         {
-          "display": "Очень хорошо.",
+          "display": "Óchen' khoroshó.",
+          "script": "Очень хорошо.",
           "cue": "Very good",
-          "changed": "swap what очень strengthens — the frame takes any of these words. M2 teaches хорошо"
+          "changed": "swap what óchen' strengthens — the frame takes any of these words. M2 teaches khoroshó"
         }
       ],
       "mistake": {
-        "display": "Это очень приятно.",
-        "why": "The Это is English scaffolding creeping in. The formula is two words and stands alone."
+        "display": "Éhto óchen' priyátno.",
+        "script": "Это очень приятно.",
+        "why": "The Éhto is English scaffolding creeping in. The formula is two words and stands alone."
       },
       "usage": "Said on being introduced, immediately after hearing a name. Both people say it.",
       "register": "neutral",
@@ -161,51 +175,58 @@
     },
     {
       "id": "L1-M1-S03",
-      "display": "Я студент.",
+      "display": "Ya studént.",
+      "script": "Я студент.",
       "cue": "I am a student",
       "glossEn": "lit. \"I student\"",
       "literal": "I student",
       "deconstruction": {
         "words": [
           {
-            "display": "я",
+            "display": "ya",
+            "script": "я",
             "cue": "I · me",
             "tag": "free",
-            "forms": ["я", "меня", "мне"],
-            "note": "One pronoun in three shapes, and Russian picks the shape by the job: я does the acting (Я студент), меня is the one acted on (Меня зовут — \"they call ME\"), and мне is the one something is done TO or FOR (M9's мне холодно, \"to me [it is] cold\"). English does the same trick with I / me, just less often."
+            "forms": ["ya", "menyá", "mne"],
+            "note": "One pronoun in three shapes, and Russian picks the shape by the job: ya does the acting (Ya studént), menyá is the one acted on (Menyá zovút — \"they call ME\"), and mne is the one something is done TO or FOR (M9's mne khólodno, \"to me [it is] cold\"). English does the same trick with I / me, just less often."
           },
           {
-            "display": "студент",
+            "display": "studént",
+            "script": "студент",
             "cue": "student (m)",
             "tag": "delta",
-            "forms": ["студент"],
-            "note": "A male student. A woman is студентка — a different word, not a different ending on this one, and it has its own row on S07. Masculine, because it ends in a consonant."
+            "forms": ["studént"],
+            "note": "A male student. A woman is studéntka — a different word, not a different ending on this one, and it has its own row on S07. Masculine, because it ends in a consonant."
           }
         ],
         "rules": [1, 2, 5]
       },
-      "trap": "English cannot say this sentence: it needs am and it needs a. Russian has neither, and adding either one is wrong — Я есть студент and Я один студент are both mistakes, not politer versions.",
-      "sound": "ya stoo-DYENT. The е after д softens it, so it is \"dyent\", not \"dent\" — that softening is what most of Russian's е letters are doing.",
+      "trap": "English cannot say this sentence: it needs am and it needs a. Russian has neither, and adding either one is wrong — Ya yest' studént and Ya odín studént are both mistakes, not politer versions.",
+      "sound": "ya stoo-DYENT. The e after the d softens it, so it is \"dyent\", not \"dent\" — a plain e after a consonant always does that, and that softening is what most of this course's e's are doing.",
       "variations": [
         {
-          "display": "Я студентка.",
+          "display": "Ya studéntka.",
+          "script": "Я студентка.",
           "cue": "I am a student (said by a woman)",
-          "changed": "студент → студентка: the sentence changes with who is speaking, which English never does here"
+          "changed": "studént → studéntka: the sentence changes with who is speaking, which English never does here"
         },
         {
-          "display": "Анна студентка.",
+          "display": "Ánna studéntka.",
+          "script": "Анна студентка.",
           "cue": "Anna is a student",
-          "changed": "я → a name: still no verb anywhere in the sentence"
+          "changed": "ya → a name: still no verb anywhere in the sentence"
         },
         {
-          "display": "Я не студент.",
+          "display": "Ya ne studént.",
+          "script": "Я не студент.",
           "cue": "I am not a student",
-          "changed": "не in front of the missing verb — where nothing is, не goes before the word it denies. M3 teaches this properly"
+          "changed": "ne in front of the missing verb — where nothing is, ne goes before the word it denies. M3 teaches this properly"
         }
       ],
       "mistake": {
-        "display": "Я есть студент.",
-        "why": "есть is a real Russian word, but not this one: the present tense of \"to be\" simply is not written. Я студент is the whole sentence."
+        "display": "Ya yest' studént.",
+        "script": "Я есть студент.",
+        "why": "yest' is a real Russian word, but not this one: the present tense of \"to be\" simply is not written. Ya studént is the whole sentence."
       },
       "usage": "Saying what you do — work or study — when you meet someone.",
       "register": "neutral",
@@ -213,193 +234,219 @@
     },
     {
       "id": "L1-M1-S04",
-      "display": "Я из Индии.",
+      "display": "Ya iz Índii.",
+      "script": "Я из Индии.",
       "cue": "I am from India",
       "glossEn": "lit. \"I from India\"",
       "literal": "I from India",
       "deconstruction": {
         "words": [
           {
-            "display": "из",
+            "display": "iz",
+            "script": "из",
             "cue": "from · out of",
             "tag": "delta",
-            "forms": ["из"],
+            "forms": ["iz"],
             "note": "\"From\", in the sense of coming out of somewhere. It always changes the ending of the place that follows it — that is not optional and not a style, it is what Russian prepositions do."
           },
           {
-            "display": "Индия",
+            "display": "Índiya",
+            "script": "Индия",
             "cue": "India",
             "tag": "delta",
-            "forms": ["Индия", "Индии"],
-            "note": "India. Индия is the dictionary shape; Индии is what из takes (Я из Индии) and also what в takes (в Индии, \"in India\") — one written shape doing two jobs, which is normal in Russian and worth expecting."
+            "forms": ["Índiya", "Índii"],
+            "note": "India. Índiya is the dictionary shape; Índii is what iz takes (Ya iz Índii) and also what v takes (v Índii, \"in India\") — one written shape doing two jobs, which is normal in Russian and worth expecting. The stress stays on the first syllable in both."
           }
         ],
         "rules": [1, 4]
       },
-      "trap": "Я из Индия copies the dictionary form straight into the sentence, the way English would. из never leaves a place unchanged.",
-      "sound": "ya eez EEN-dee-ee. из loses its \"z\" sound to a \"s\" before some consonants, but before a vowel — as here — it stays a clean z.",
+      "trap": "Ya iz Índiya copies the dictionary form straight into the sentence, the way English would. iz never leaves a place unchanged.",
+      "sound": "ya eez EEN-dee-ee. iz loses its z sound to an s before some consonants, but before a vowel — as here — it stays a clean z.",
       "variations": [
         {
-          "display": "Я из России.",
+          "display": "Ya iz Rossíi.",
+          "script": "Я из России.",
           "cue": "I am from Russia",
-          "changed": "swap the place — Россия shifts to России exactly as Индия shifted"
+          "changed": "swap the place — Rossíya shifts to Rossíi exactly as Índiya shifted"
         },
         {
-          "display": "Анна из Индии.",
+          "display": "Ánna iz Índii.",
+          "script": "Анна из Индии.",
           "cue": "Anna is from India",
-          "changed": "я → a name: the place keeps its из-shape whoever is speaking"
+          "changed": "ya → a name: the place keeps its iz-shape whoever is speaking"
         },
         {
-          "display": "Вы из Индии?",
+          "display": "Vy iz Índii?",
+          "script": "Вы из Индии?",
           "cue": "Are you from India?",
           "changed": "a question with nothing moved — only the mark and the voice change. M2's lesson"
         }
       ],
       "mistake": {
-        "display": "Я из Индия.",
-        "why": "из takes a changed ending, always: Я из Индии. The dictionary form Индия is for the subject of a sentence, not for after a preposition."
+        "display": "Ya iz Índiya.",
+        "script": "Я из Индия.",
+        "why": "iz takes a changed ending, always: Ya iz Índii. The dictionary form Índiya is for the subject of a sentence, not for after a preposition."
       },
       "usage": "Where you are from — the second or third line of any introduction.",
       "register": "neutral",
-      "mnemonic": "из pulls something OUT of a place, and pulling it out bends the ending."
+      "mnemonic": "iz pulls something OUT of a place, and pulling it out bends the ending."
     },
     {
       "id": "L1-M1-S05",
-      "display": "Я из Москвы.",
+      "display": "Ya iz Moskvý.",
+      "script": "Я из Москвы.",
       "cue": "I am from Moscow",
       "glossEn": "lit. \"I from Moscow\"",
       "literal": "I from Moscow",
       "deconstruction": {
         "words": [
           {
-            "display": "Москва",
+            "display": "Moskvá",
+            "script": "Москва",
             "cue": "Moscow",
             "tag": "delta",
-            "forms": ["Москва", "Москвы", "Москве"],
-            "note": "Moscow. Москва is the dictionary shape and the subject shape; Москвы is what из takes. A third shape, Москве, is what в takes for \"in Moscow\" (M7) — all three are the same word, and they all live on this row."
+            "forms": ["Moskvá", "Moskvý", "Moskvé"],
+            "note": "Moscow. Moskvá is the dictionary shape and the subject shape; Moskvý is what iz takes. A third shape, Moskvé, is what v takes for \"in Moscow\" (M7) — all three are the same word, they all live on this row, and all three keep the stress on that final vowel."
           }
         ],
         "rules": [1, 4]
       },
-      "trap": "The two из sentences take different endings — Индии but Москвы — and there is no way to guess which from English. The ending depends on how the word itself ends, and this level teaches the pairs rather than the system.",
-      "sound": "ya eez mask-VY. The stress is on the last syllable and the first о is unstressed, so nobody says \"MOSS-cow\"; ы is a hard, back \"i\" made with the tongue pulled away from the teeth.",
+      "trap": "The two iz sentences take different endings — Índii but Moskvý — and there is no way to guess which from English. The ending depends on how the word itself ends, and this level teaches the pairs rather than the system.",
+      "sound": "ya eez mask-VY. The acute says the stress is on the last syllable and the first o is unstressed, so nobody says \"MOSS-cow\". The ý is the letter Russian writes ы — a hard, back \"i\" made with the tongue pulled away from the teeth — and it turns up again, stressed, in yazýk.",
       "variations": [
         {
-          "display": "Иван из Москвы.",
+          "display": "Iván iz Moskvý.",
+          "script": "Иван из Москвы.",
           "cue": "Ivan is from Moscow",
-          "changed": "я → a name, and still no verb in the sentence"
+          "changed": "ya → a name, and still no verb in the sentence"
         },
         {
-          "display": "Это Москва.",
+          "display": "Éhto Moskvá.",
+          "script": "Это Москва.",
           "cue": "This is Moscow",
-          "changed": "back to the dictionary shape — with no preposition in front of it, Москва does not bend"
+          "changed": "back to the dictionary shape — with no preposition in front of it, Moskvá does not bend"
         },
         {
-          "display": "Вы из Москвы?",
+          "display": "Vy iz Moskvý?",
+          "script": "Вы из Москвы?",
           "cue": "Are you from Moscow?",
           "changed": "the same words as a question: nothing moves, only the mark"
         }
       ],
       "mistake": {
-        "display": "Я из Москва.",
-        "why": "из bends the place after it. Я из Москвы — and the -ы here is a different ending from Индии's -и, because the two words end differently."
+        "display": "Ya iz Moskvá.",
+        "script": "Я из Москва.",
+        "why": "iz bends the place after it. Ya iz Moskvý — and the -ý here is a different ending from Índii's -i, because the two words end differently."
       },
       "usage": "Naming a city rather than a country — the same frame, and it is the more common answer.",
       "register": "neutral",
-      "mnemonic": "Москва has an а on the end; из swaps that а for ы."
+      "mnemonic": "Moskvá has an a on the end; iz swaps that a for ý."
     },
     {
       "id": "L1-M1-S06",
-      "display": "Это Анна.",
+      "display": "Éhto Ánna.",
+      "script": "Это Анна.",
       "cue": "This is Anna",
       "glossEn": "lit. \"this Anna\"",
       "literal": "This Anna",
       "deconstruction": {
         "words": [
           {
-            "display": "Это",
+            "display": "Éhto",
+            "script": "Это",
             "cue": "this is · that is",
             "tag": "delta",
-            "forms": ["Это"],
-            "note": "The pointing word, and it does the whole job on its own: Это Анна is \"this is Anna\" with no verb anywhere. It never changes shape when it opens a sentence like this, whatever it points at — Это книга, Это Москва, Это молоко."
+            "forms": ["Éhto"],
+            "note": "The pointing word, and it does the whole job on its own: Éhto Ánna is \"this is Anna\" with no verb anywhere. It never changes shape when it opens a sentence like this, whatever it points at — Éhto kníga, Éhto Moskvá, Éhto molokó."
           },
           {
-            "display": "Анна",
+            "display": "Ánna",
+            "script": "Анна",
             "cue": "Anna",
             "tag": "free",
-            "forms": ["Анна"],
-            "note": "A woman's name. Both н letters are written and both are said — a held \"nn\", not the single n of English \"Anna\"."
+            "forms": ["Ánna"],
+            "note": "A woman's name. Both n letters are written and both are said — a held \"nn\", not the single n of English \"Anna\"."
           }
         ],
         "rules": [1, 2]
       },
-      "trap": "English needs is here and cannot drop it. Russian supplies Это and stops — putting anything between Это and the name is the mistake.",
-      "sound": "E-ta AN-na. The final о of Это is unstressed, so it is \"E-ta\"; the double н of Анна is genuinely held, roughly \"AN-na\".",
+      "trap": "English needs is here and cannot drop it. Russian supplies Éhto and stops — putting anything between Éhto and the name is the mistake.",
+      "sound": "E-ta AN-na. The final o of Éhto is unstressed, so it is \"E-ta\"; the eh is this course's spelling for a letter that is always a plain, open \"e\" and never softens the consonant in front of it. The double n of Ánna is genuinely held, roughly \"AN-na\".",
       "variations": [
         {
-          "display": "Это Иван.",
+          "display": "Éhto Iván.",
+          "script": "Это Иван.",
           "cue": "This is Ivan",
-          "changed": "swap who is being introduced — Это never moves"
+          "changed": "swap who is being introduced — Éhto never moves"
         },
         {
-          "display": "Это студентка.",
+          "display": "Éhto studéntka.",
+          "script": "Это студентка.",
           "cue": "This is a student (a woman)",
           "changed": "point at a role instead of a person — and there is still no word for \"a\""
         },
         {
-          "display": "Это Анна?",
+          "display": "Éhto Ánna?",
+          "script": "Это Анна?",
           "cue": "Is this Anna?",
           "changed": "the same two words asked instead of told — Russian moves nothing to make a question"
         }
       ],
       "mistake": {
-        "display": "Это есть Анна.",
-        "why": "The same reflex as Я есть студент, one sentence later. Это Анна is complete."
+        "display": "Éhto yest' Ánna.",
+        "script": "Это есть Анна.",
+        "why": "The same reflex as Ya yest' studént, one sentence later. Éhto Ánna is complete."
       },
       "usage": "Introducing somebody else, or pointing at a thing and naming it.",
       "register": "neutral",
-      "mnemonic": "Это points, and pointing is enough — Russian does not also need to say that the thing is."
+      "mnemonic": "Éhto points, and pointing is enough — Russian does not also need to say that the thing is."
     },
     {
       "id": "L1-M1-S07",
-      "display": "Анна — студентка.",
+      "display": "Ánna — studéntka.",
+      "script": "Анна — студентка.",
       "cue": "Anna is a student",
       "glossEn": "lit. \"Anna — student\"",
       "literal": "Anna — student",
       "deconstruction": {
         "words": [
           {
-            "display": "студентка",
+            "display": "studéntka",
+            "script": "студентка",
             "cue": "student (f)",
             "tag": "delta",
-            "forms": ["студентка"],
-            "note": "A female student — its own word, built from студент with -ка, and feminine because it ends in -а. Russian names most jobs twice like this, and which one you write depends on who is being described, not on who is speaking."
+            "forms": ["studéntka"],
+            "note": "A female student — its own word, built from studént with -ka, and feminine because it ends in -a. Russian names most jobs twice like this, and which one you write depends on who is being described, not on who is speaking."
           }
         ],
         "rules": [1, 7]
       },
-      "trap": "The dash is not a translation of is. It is a punctuation mark that marks the gap where English would put a verb, and it appears only when both halves are nouns — never after я or вы.",
+      "trap": "The dash is not a translation of is. It is a punctuation mark that marks the gap where English would put a verb, and it appears only when both halves are nouns — never after ya or vy.",
       "sound": "AN-na stoo-DYENT-ka. Nothing is said where the dash is: it is a pause at most.",
       "variations": [
         {
-          "display": "Иван — студент.",
+          "display": "Iván — studént.",
+          "script": "Иван — студент.",
           "cue": "Ivan is a student",
-          "changed": "the same frame about a man — студентка → студент"
+          "changed": "the same frame about a man — studéntka → studént"
         },
         {
-          "display": "Я студентка.",
+          "display": "Ya studéntka.",
+          "script": "Я студентка.",
           "cue": "I am a student (said by a woman)",
           "changed": "a pronoun subject, so the dash goes: it is written only between two nouns"
         },
         {
-          "display": "Анна — студентка из Москвы.",
+          "display": "Ánna — studéntka iz Moskvý.",
+          "script": "Анна — студентка из Москвы.",
           "cue": "Anna is a student from Moscow",
-          "changed": "the из phrase hangs off the second noun, exactly as in English"
+          "changed": "the iz phrase hangs off the second noun, exactly as in English"
         }
       ],
       "mistake": {
-        "display": "Я — студентка.",
-        "why": "The dash belongs between two nouns. With a pronoun in front, Russian writes Я студентка and nothing else."
+        "display": "Ya — studéntka.",
+        "script": "Я — студентка.",
+        "why": "The dash belongs between two nouns. With a pronoun in front, Russian writes Ya studéntka and nothing else."
       },
       "usage": "Saying what somebody else does — the third line of an introduction, after their name.",
       "register": "neutral",
@@ -407,96 +454,109 @@
     },
     {
       "id": "L1-M1-S08",
-      "display": "Я люблю чай.",
+      "display": "Ya lyublyú chay.",
+      "script": "Я люблю чай.",
       "cue": "I like tea",
       "glossEn": "lit. \"I love tea\"",
       "literal": "I love tea",
       "deconstruction": {
         "words": [
           {
-            "display": "люблю",
+            "display": "lyublyú",
+            "script": "люблю",
             "cue": "I like · I love",
             "tag": "delta",
-            "forms": ["люблю", "любит", "любите"],
-            "note": "One verb for both \"like\" and \"love\", and about food or music it is simply \"like\". The ending names who: люблю is I, любит is he or she, любите is you (the polite вы this course speaks). The б in люблю appears only in the I-form — a quirk of this verb, not a rule; M4 sorts out endings properly."
+            "forms": ["lyublyú", "lyúbit", "lyúbite"],
+            "note": "One verb for both \"like\" and \"love\", and about food or music it is simply \"like\". The ending names who: lyublyú is I, lyúbit is he or she, lyúbite is you (the polite vy this course speaks). Two things move between the shapes, not one — the ending, and the stress, which is why the acute sits on the last syllable of lyublyú and on the first of lyúbit. The b of lyublyú turns up only in the I-form: a quirk of this verb, not a rule, and M4 sorts out endings properly."
           },
           {
-            "display": "чай",
+            "display": "chay",
+            "script": "чай",
             "cue": "tea",
             "tag": "free",
-            "forms": ["чай"],
+            "forms": ["chay"],
             "note": "Tea. Masculine, because it ends in a consonant sound — and because it is a thing rather than a living creature, it looks exactly the same as the object of a sentence as it does in the dictionary."
           }
         ],
         "rules": [0, 6]
       },
-      "trap": "люблю is not too strong. English keeps love for people and big feelings, so \"I love tea\" sounds odd; Russian uses люблю for anything you are fond of, and saying it about tea is completely ordinary.",
-      "sound": "ya lyoo-BLYOO chai. The л is soft in both syllables — the tongue is up against the roof of the mouth, closer to English \"million\" than to \"loop\".",
+      "trap": "lyublyú is not too strong. English keeps love for people and big feelings, so \"I love tea\" sounds odd; Russian uses lyublyú for anything you are fond of, and saying it about tea is completely ordinary.",
+      "sound": "ya lyoo-BLYOO chai. The l is soft in both syllables — the tongue is up against the roof of the mouth, closer to English \"million\" than to \"loop\".",
       "variations": [
         {
-          "display": "Анна любит чай.",
+          "display": "Ánna lyúbit chay.",
+          "script": "Анна любит чай.",
           "cue": "Anna likes tea",
-          "changed": "люблю → любит: the ending swaps the person, and no other word moves"
+          "changed": "lyublyú → lyúbit: the ending swaps the person, the stress moves back with it, and no other word moves"
         },
         {
-          "display": "Вы любите чай?",
+          "display": "Vy lyúbite chay?",
+          "script": "Вы любите чай?",
           "cue": "Do you like tea?",
-          "changed": "люблю → любите for the person you are speaking to, and the sentence becomes a question with nothing added"
+          "changed": "lyublyú → lyúbite for the person you are speaking to, and the sentence becomes a question with nothing added"
         },
         {
-          "display": "Я люблю русский чай.",
+          "display": "Ya lyublyú rússkiy chay.",
+          "script": "Я люблю русский чай.",
           "cue": "I like Russian tea",
           "changed": "a describing word slots in front of the noun, exactly where English puts it"
         }
       ],
       "mistake": {
-        "display": "Я люблю чая.",
-        "why": "чай does not change here. Bending the ending is what M3's feminine nouns do; a masculine thing like чай stays as it is."
+        "display": "Ya lyublyú cháya.",
+        "script": "Я люблю чая.",
+        "why": "chay does not change here. Bending the ending is what M3's feminine nouns do; a masculine thing like chay stays as it is."
       },
       "usage": "Likes of every kind — food, drink, music, a language.",
       "register": "neutral",
-      "mnemonic": "люблю covers everything from tea to people; Russian simply does not have a weaker word for it."
+      "mnemonic": "lyublyú covers everything from tea to people; Russian simply does not have a weaker word for it."
     },
     {
       "id": "L1-M1-S09",
-      "display": "Я люблю молоко.",
+      "display": "Ya lyublyú molokó.",
+      "script": "Я люблю молоко.",
       "cue": "I like milk",
       "glossEn": "lit. \"I love milk\"",
       "literal": "I love milk",
       "deconstruction": {
         "words": [
           {
-            "display": "молоко",
+            "display": "molokó",
+            "script": "молоко",
             "cue": "milk",
             "tag": "delta",
-            "forms": ["молоко"],
-            "note": "Milk. Neuter, because it ends in -о — and neuter things, like masculine things that are not alive, look identical whether they are the subject of a sentence or its object. So молоко does not move here."
+            "forms": ["molokó"],
+            "note": "Milk. Neuter, because it ends in -o — and neuter things, like masculine things that are not alive, look identical whether they are the subject of a sentence or its object. So molokó does not move here."
           }
         ],
         "rules": [0, 5, 6]
       },
-      "trap": "There is no \"the\" and no \"some\" in front of it. Я люблю молоко covers \"I like milk\" in general, which is the only reading this sentence has.",
-      "sound": "ma-la-KO. Three о letters, and only the stressed one is really an \"o\" — the other two flatten to \"a\". Russian written with its stress on the page would help here, and Russian is never written that way.",
+      "trap": "There is no \"the\" and no \"some\" in front of it. Ya lyublyú molokó covers \"I like milk\" in general, which is the only reading this sentence has.",
+      "sound": "ma-la-KO. Three o's, and only the one under the acute is really an \"o\" — the other two flatten to \"a\". The acute is doing you a favour a Russian book will not: real print leaves the stress unmarked and expects you to know it already.",
       "variations": [
         {
-          "display": "Анна любит молоко.",
+          "display": "Ánna lyúbit molokó.",
+          "script": "Анна любит молоко.",
           "cue": "Anna likes milk",
-          "changed": "люблю → любит: the person changes and молоко does not"
+          "changed": "lyublyú → lyúbit: the person changes and molokó does not"
         },
         {
-          "display": "Вы любите молоко?",
+          "display": "Vy lyúbite molokó?",
+          "script": "Вы любите молоко?",
           "cue": "Do you like milk?",
           "changed": "the polite you-form, asked rather than told"
         },
         {
-          "display": "Это молоко.",
+          "display": "Éhto molokó.",
+          "script": "Это молоко.",
           "cue": "This is milk",
           "changed": "the same word as the subject of a pointing sentence — proof that it never bends"
         }
       ],
       "mistake": {
-        "display": "Я люблю молока.",
-        "why": "A neuter noun does not change in the object slot. Я люблю молоко — молока is a different shape with a different job, and this sentence has no use for it."
+        "display": "Ya lyublyú moloká.",
+        "script": "Я люблю молока.",
+        "why": "A neuter noun does not change in the object slot. Ya lyublyú molokó — moloká is a different shape with a different job, and this sentence has no use for it."
       },
       "usage": "Everyday likes and dislikes about food and drink.",
       "register": "neutral",
@@ -504,74 +564,132 @@
     },
     {
       "id": "L1-M1-S10",
-      "display": "Я люблю русский язык.",
+      "display": "Ya lyublyú rússkiy yazýk.",
+      "script": "Я люблю русский язык.",
       "cue": "I like the Russian language",
       "glossEn": "lit. \"I love Russian language\"",
       "literal": "I love Russian language",
       "deconstruction": {
         "words": [
           {
-            "display": "русский",
+            "display": "rússkiy",
+            "script": "русский",
             "cue": "Russian (describing a thing)",
             "tag": "delta",
-            "forms": ["русский"],
-            "note": "\"Russian\" as a description, and it goes in front of what it describes, exactly as in English. Russian writes nationalities and languages with a small letter — русский, never Русский — which is the opposite of the English habit."
+            "forms": ["rússkiy"],
+            "note": "\"Russian\" as a description, and it goes in front of what it describes, exactly as in English. Russian writes nationalities and languages with a small letter — rússkiy, never Rússkiy — which is the opposite of the English habit."
           },
           {
-            "display": "язык",
+            "display": "yazýk",
+            "script": "язык",
             "cue": "language · tongue",
             "tag": "free",
-            "forms": ["язык"],
+            "forms": ["yazýk"],
             "note": "Language — and also the tongue in your mouth, the same double meaning English once had. Masculine, ends in a consonant, and does not change in the object slot."
           }
         ],
         "rules": [0, 6]
       },
-      "trap": "The language is русский язык, two words, and dropping the noun does not work the way \"I like Russian\" does in English. Русский on its own describes a Russian man.",
-      "sound": "ROO-skee ya-ZYK. The double с in русский is one long \"ss\", and the ы of язык is that hard back \"i\" again, stressed this time.",
+      "trap": "The language is rússkiy yazýk, two words, and dropping the noun does not work the way \"I like Russian\" does in English. Rússkiy on its own describes a Russian man.",
+      "sound": "ROO-skee ya-ZYK. The double s of rússkiy is one long \"ss\", and the ý of yazýk is that hard back \"i\" from Moskvý again, stressed this time.",
       "variations": [
         {
-          "display": "Анна любит русский язык.",
+          "display": "Ánna lyúbit rússkiy yazýk.",
+          "script": "Анна любит русский язык.",
           "cue": "Anna likes the Russian language",
-          "changed": "люблю → любит, and the two-word object travels together"
+          "changed": "lyublyú → lyúbit, and the two-word object travels together"
         },
         {
-          "display": "Вы любите русский язык?",
+          "display": "Vy lyúbite rússkiy yazýk?",
+          "script": "Вы любите русский язык?",
           "cue": "Do you like the Russian language?",
           "changed": "the polite you-form, as a question"
         },
         {
-          "display": "Я люблю русский чай.",
+          "display": "Ya lyublyú rússkiy chay.",
+          "script": "Я люблю русский чай.",
           "cue": "I like Russian tea",
-          "changed": "swap the noun and русский comes along unchanged, because чай is masculine too"
+          "changed": "swap the noun and rússkiy comes along unchanged, because chay is masculine too"
         }
       ],
       "mistake": {
-        "display": "Я люблю Русский.",
-        "why": "Two things at once: languages take a small letter in Russian, and the noun язык cannot be dropped. Я люблю русский язык."
+        "display": "Ya lyublyú Rússkiy.",
+        "script": "Я люблю Русский.",
+        "why": "Two things at once: languages take a small letter in Russian, and the noun yazýk cannot be dropped. Ya lyublyú rússkiy yazýk."
       },
       "usage": "Saying what you study or what you are here for — the natural last line of a first introduction.",
       "register": "neutral",
-      "mnemonic": "русский is the coat and язык is the person wearing it; Russian never sends the coat out alone."
+      "mnemonic": "rússkiy is the coat and yazýk is the person wearing it; Russian never sends the coat out alone."
     }
   ],
   "comprehensionPool": [
-    { "id": "L1-M1-C01", "display": "Меня зовут Анна.", "cue": "My name is Anna" },
-    { "id": "L1-M1-C02", "display": "Я студентка.", "cue": "I am a student (a woman speaking)" },
-    { "id": "L1-M1-C03", "display": "Анна из Москвы.", "cue": "Anna is from Moscow" },
-    { "id": "L1-M1-C04", "display": "Иван из Индии.", "cue": "Ivan is from India" },
-    { "id": "L1-M1-C05", "display": "Это Иван.", "cue": "This is Ivan" },
-    { "id": "L1-M1-C06", "display": "Анна любит чай.", "cue": "Anna likes tea" },
-    { "id": "L1-M1-C07", "display": "Иван любит молоко.", "cue": "Ivan likes milk" },
-    { "id": "L1-M1-C08", "display": "Я люблю русский чай.", "cue": "I like Russian tea" },
+    {
+      "id": "L1-M1-C01",
+      "display": "Menyá zovút Ánna.",
+      "script": "Меня зовут Анна.",
+      "cue": "My name is Anna"
+    },
+    {
+      "id": "L1-M1-C02",
+      "display": "Ya studéntka.",
+      "script": "Я студентка.",
+      "cue": "I am a student (a woman speaking)"
+    },
+    {
+      "id": "L1-M1-C03",
+      "display": "Ánna iz Moskvý.",
+      "script": "Анна из Москвы.",
+      "cue": "Anna is from Moscow"
+    },
+    {
+      "id": "L1-M1-C04",
+      "display": "Iván iz Índii.",
+      "script": "Иван из Индии.",
+      "cue": "Ivan is from India"
+    },
+    { "id": "L1-M1-C05", "display": "Éhto Iván.", "script": "Это Иван.", "cue": "This is Ivan" },
+    {
+      "id": "L1-M1-C06",
+      "display": "Ánna lyúbit chay.",
+      "script": "Анна любит чай.",
+      "cue": "Anna likes tea"
+    },
+    {
+      "id": "L1-M1-C07",
+      "display": "Iván lyúbit molokó.",
+      "script": "Иван любит молоко.",
+      "cue": "Ivan likes milk"
+    },
+    {
+      "id": "L1-M1-C08",
+      "display": "Ya lyublyú rússkiy chay.",
+      "script": "Я люблю русский чай.",
+      "cue": "I like Russian tea"
+    },
     {
       "id": "L1-M1-C09",
-      "display": "Анна любит русский язык.",
+      "display": "Ánna lyúbit rússkiy yazýk.",
+      "script": "Анна любит русский язык.",
       "cue": "Anna likes the Russian language"
     },
-    { "id": "L1-M1-C10", "display": "Иван — студент.", "cue": "Ivan is a student" },
-    { "id": "L1-M1-C11", "display": "Очень приятно, Иван.", "cue": "Nice to meet you, Ivan" },
-    { "id": "L1-M1-C12", "display": "Это студентка.", "cue": "This is a student (a woman)" }
+    {
+      "id": "L1-M1-C10",
+      "display": "Iván — studént.",
+      "script": "Иван — студент.",
+      "cue": "Ivan is a student"
+    },
+    {
+      "id": "L1-M1-C11",
+      "display": "Óchen' priyátno, Iván.",
+      "script": "Очень приятно, Иван.",
+      "cue": "Nice to meet you, Ivan"
+    },
+    {
+      "id": "L1-M1-C12",
+      "display": "Éhto studéntka.",
+      "script": "Это студентка.",
+      "cue": "This is a student (a woman)"
+    }
   ],
   "exitTest": {
     "generateCount": 2,
