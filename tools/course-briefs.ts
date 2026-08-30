@@ -8,8 +8,8 @@
  * levels.json stays the single source of the ladder, and a brief only adds the authoring
  * guidance on top.
  *
- * Eight courses are briefed: hi-mr through L2, and en-es, en-ar, hi-en, en-ru, en-it, en-fr and
- * en-de L1 only. The
+ * Nine courses are briefed: hi-mr through L2, and en-es, en-ar, hi-en, en-ru, en-it, en-fr,
+ * en-de and en-ko L1 only. The
  * L2/L3 module lists are RATIFIED (#112 closed [Q1] — titles, jobs and sequence in levels.json
  * are final), and a level's briefs are written when its authoring project starts: a brief encodes
  * pattern-and-interference pedagogy that should be planned against the verified ladder below it,
@@ -1295,6 +1295,115 @@
  * than the Romance equivalent at the same difficulty (`Ich möchte einen Kaffee trinken` is five
  * tokens for what French says in four), so the ceiling is a real constraint on M3 and M5 rather
  * than slack.
+ *
+ * ## en-ko: the decisions a brief must settle before any Korean is written
+ *
+ * en-ko is the first course **born** conforming to `docs/design-contract.md`'s "rung teaches
+ * speech, not script" (#353). Its manifest row is `scriptMode: "romanized"` from its first commit
+ * (#374), so no English speaker is ever asked to decode Hangul, and `checkScriptMode` fails the
+ * build on a Hangul `display` before a module can ship one. en-ru had to be dragged into that
+ * shape across #353–#360, 959 Cyrillic strings at a time. This one never will be, and the reason
+ * it never will be is that the scheme was settled BEFORE the row existed — #373, recorded in
+ * `docs/34-en-ko-romanization-decisions.md`, which is the citable source for everything below.
+ *
+ * 1. **The romanization is Revised Romanization, transcribing pronunciation, and it is not
+ *    reopened in a brief.** Word-internal sound changes are written as they are said (`hakgyo`,
+ *    `silla`, `joayo`, `simman`). It is pure ASCII, which is why this course — unlike en-ar and
+ *    en-ru — is charged no font cut for anything a learner reads. McCune-Reischauer was rejected
+ *    on a mechanical ground, not a taste one: its aspirates are written with an apostrophe, and
+ *    `src/engine/surface.ts` rules 2 and 3 fold apostrophe classes and strip edge punctuation, so
+ *    MR would put Korean's most important consonant contrast on the one character the normaliser
+ *    has the most rules about.
+ *
+ * 2. **THE PARTICLE HYPHEN, and it is the decision the whole course rests on.** Korean writes its
+ *    particles attached, with no space, so a naive romanization gives `chaegeul`, `jeoneun`,
+ *    `hakgyoeseo` — one whitespace token each, and `tokenizeSurface` counts whitespace tokens. The
+ *    bare noun would then never appear as a surface anywhere in the course, and "book" would have
+ *    no row for a learner to tap. `surface.ts` already solves exactly this, and its header says so
+ *    under **Hyphens** (#116, [Q3]): `al-qahwa` is one surface and the emitter ALSO indexes `al`
+ *    and `qahwa` against the same entry. So every particle and the copula are joined to their host
+ *    by a hyphen — `jeo-neun`, `chaek-eul`, `hakgyo-e`, `hakseng-ieyo` — and the host keeps its
+ *    ISOLATION shape across the join (`chaek-eul`, never the resyllabified `chaeg-eul`), because a
+ *    stem that respelled itself for every particle would mint a fresh unreachable surface each
+ *    time. The liaison goes in `sound`, where a pronunciation note belongs. Checked against the
+ *    real functions rather than assumed: `surfaceIndexKeys(normalizeSurface('chaek-eul'))` is
+ *    `['chaek-eul', 'chaek', 'eul']`, and `normalizeSurface('-neun')` is `'neun'` — a leading
+ *    hyphen is edge punctuation and is stripped, which is what lets a word row written `-neun`
+ *    own the bare particle key. RR's own syllable-disambiguation hyphen (`jung-ang`) is therefore
+ *    BANNED: in this repo a hyphen is a semantic split, and that one would mint the junk keys
+ *    `jung` and `ang`.
+ *
+ * 3. **SPEECH LEVEL, decided course-wide: this course speaks 해요체, the `-yo` ending.** Korean
+ *    has no neutral verb form — every sentence encodes the relationship to the listener — so the
+ *    choice is unavoidable and is made once, here, not per module. `-yo` is what an adult learner
+ *    speaks to a stranger, a shopkeeper or a colleague, and it is never wrong in those places. The
+ *    plain style (`meogeo`, `ga`) is never written; the formal `-mnida` style is written in
+ *    exactly two frozen phrases the learner will hear on day one, `gamsahamnida` and
+ *    `mannaseo bangapseumnida`, and both are taught as fixed phrases with a note saying so. Three
+ *    consequences, and they are why this is one decision rather than ten: the pronoun for "I" is
+ *    `jeo` (humble), never `na`, and `je` is its possessive; the honorific infix `-si-` that makes
+ *    `annyeonghaseyo` and `juseyo` is a SEPARATE axis — it raises the SUBJECT, not the listener —
+ *    and L1 teaches those as whole phrases with the productive rule named as deferred; and `-yo`
+ *    is not a politeness suffix bolted onto a finished word, because the stem changes shape before
+ *    it (`-ayo` after an a/o stem, `-eoyo` otherwise, `haeyo` for `hada` verbs), which is the
+ *    conjugation the level is drilling from M4 on.
+ *
+ * 4. **HOMOGRAPHS — the romanization keeps Korean's homophones, and that is correct.** The
+ *    product teaches speech, so two words that sound alike are alike on the page. What matters is
+ *    that first occurrence wins, so each collision is assigned an owner: `cha` is TEA (M3) and
+ *    "car" stays out of L1; `mal` is "word" (M9) and "horse" is not taught; `nun`, `bae` and `bam`
+ *    take one reading each and the other stays out. The sharp one is `i`, which is the subject
+ *    particle (M1's row, and it must stay M1's), the demonstrative "this", the Sino-Korean two and
+ *    the word for "tooth" — so the demonstrative is written as the hyphenated `i-geo` and M8's
+ *    numeral appears inside compounds rather than bare.
+ *
+ * 5. **CASE FOLDING IS A NON-ISSUE HERE, and that is worth writing down.** `surface.ts` rule 4
+ *    lowercases without a locale; RR capitalises proper nouns and sentence case capitalises the
+ *    first word, and all of it folds away harmlessly, exactly as `Soy`/`soy` does in en-es. This
+ *    is en-de's catastrophe — German capitalises every noun, so `Essen`/`essen` and
+ *    `Morgen`/`morgen` are one entry each — NOT happening. Recorded so nobody goes looking for it,
+ *    and so nobody "fixes" the romanization to dodge a problem it does not have.
+ *
+ * 6. **TRANSCRIPTION MEANS ONE WORD HAS SEVERAL SPELLINGS.** Because RR writes the sound, a stem's
+ *    shape moves with what follows it: `joayo`/`jota`, `meogeoyo`/`meokda`, `ilgeoyo`/`ikda`. The
+ *    index matches verbatim, so those are separate surfaces, and a word row's `forms` carries
+ *    every shape that course's sentences actually use — and only shapes of THAT word. The `forms`
+ *    rule from `docs/07-llm-review-L1-M6-M10.md` binds unchanged: never a cousin, never a synonym.
+ *    In practice L1 speaks the `-yo` forms almost throughout, so most rows carry one or two
+ *    shapes; M5's past forms are the exception and sit on the same row as the present, because
+ *    they are the same verb.
+ *
+ * 7. **`sound` CARRIES WHAT THE ROMANIZATION CANNOT, and Korean is the opposite of Russian here.**
+ *    en-ru had to mark stress on every polysyllable because Russian vowel reduction is
+ *    unintelligible without it; Korean has NO English-style stress, and marking one would teach a
+ *    wrong thing. No acutes, ever — if a later reader reaches for them out of symmetry with en-ar
+ *    or en-ru, this is the answer. What `sound` must carry instead: the three-way stop contrast
+ *    (plain `g d b j`, tense `kk tt pp jj`, aspirated `k t p ch`) where English hears two
+ *    categories; `eo` against `o` and `eu` against `u`, which an English reader collapses on
+ *    sight; unreleased final consonants; and the liaison at the particle hyphen every time it is
+ *    audible.
+ *
+ * 8. **Hangul lives in exactly one field: `script`, the quiet native line.** Never in `display`,
+ *    never in `forms`, never quoted inside an English rule or note. `checkScriptMode` enforces the
+ *    first two; the third is on the author. `script` is typed on `Sentence`, `Variation` AND
+ *    `PoolItem` — unlike `sound`, which exists only on `Sentence` — so it is authored on all
+ *    three. It renders from a system face today: `tools/font-subset.ts` bundles no Hangul, because
+ *    `@fontsource/noto-sans-kr` splits Korean across ~120 numbered range files per weight and the
+ *    subsetter is built on one source file per target. That is an honest, recorded defect (#375,
+ *    `docs/34-en-ko-romanization-decisions.md` §8), not a reason to withhold the line.
+ *
+ * Kept deliberately OUT of L1, and named as deferred in the module that would otherwise reach for
+ * it: the plain and `-mnida` speech levels as productive systems (decision 3); the progressive
+ * `-go isseoyo` (M4); `-(eu)llae yo` and `-gess-` as futures (M6); the long negative `-ji anayo`
+ * and `mot` beyond one named mention (M3); honorific `-si-` as a rule rather than a phrase; the
+ * topic/subject contrast beyond a working rule (M1); Sino-Korean numerals above the price range
+ * M8 needs; and every clause-joining ending but `-go` and `-aseo/-eoseo` (M9, M10).
+ *
+ * Bounds climb 4 → 7, LOWER than the European courses at the same rungs and deliberately so:
+ * Korean's eojeol spacing packs a clause into fewer whitespace tokens (`jeo-neun hakseng-ieyo` is
+ * two tokens for what German needs three to say), so `maxWordsPerSentence` is slack here and the
+ * bound that actually bites is `newWordCap` — every particle, every ending and every counter is a
+ * new surface.
  *
  */
 
@@ -3161,6 +3270,221 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         "Language of the fields holds to the last turn: ENGLISH in every teaching field — rules[].text, note, trap, sound, changed, why, usage, mnemonic, cue — German only in display and forms, glossEn on every sentence, and literal wherever a turn's order moves. The register holds too: Sie to the end, du never written, and every noun still capitalised.",
       ],
       maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+  },
+  'en-ko': {
+    'L1-M1': {
+      id: 'L1-M1',
+      title: 'Who I am',
+      job: 'Introduce yourself and state what you like',
+      patterns: [
+        'jeo-neun + N + -ieyo/-yeyo',
+        'je ireum-eun + name + -ieyo/-yeyo',
+        'jeo-neun + place saram-ieyo',
+        'jeo-neun + N-eul/reul + joahaeyo',
+        'i-geo-neun + N + -ieyo/-yeyo',
+      ],
+      notes: [
+        "LANGUAGE OF THE FIELDS, settled once for the course: the document speaks the course's L1, so every teaching field — rules[].text, word note, trap, sound, variations[].changed, mistake.why, usage, mnemonic and cue — is ENGLISH, and Korean appears only in the L2 slots: sentence / word / variation / mistake / pool display, and word forms. Those slots carry the ROMANIZATION (#373), never Hangul; checkScriptMode fails the build on a Hangul display or form, and the quiet Hangul line goes in script, which is typed on sentences, variations AND pool items. An English field may quote the romanization it explains. glossEn is REQUIRED on every sentence — #268 exempts only a course whose L2 IS English. literal is needed on nearly every sentence in this course rather than occasionally: jeo-neun chaek-eul ilgeoyo is 'I-topic book-object read', and an author who skips literal is hiding the one thing that makes Korean word order learnable.",
+        "THREE STRUCTURAL FACTS, all in M1, because no Korean sentence can dodge them. (a) The verb is LAST, in every clause, always — none of German's verb-second subtlety, and nothing moves it. (b) The PARTICLE marks the role, so word order carries emphasis rather than grammar: moving a noun does not change who did what. (c) The copula ATTACHES to the noun — hakseng-ieyo is one word, not a noun plus a verb. The slogan this module attracts is 'Korean is backwards'; the law that replaces it is 'verb-final and particle-marked', and stating it that way is what makes M7's and M9's word order predictable instead of surprising.",
+        'SPEECH LEVEL, settled course-wide (see the section above) and inherited by all ten modules: this course speaks the -yo style. The pronoun for I is jeo, never na, and the possessive is je — na, nae and the plain style are never WRITTEN anywhere in L1, not even on a mistake plate, so the index never carries a shape the course does not teach. -ieyo after a consonant, -yeyo after a vowel: hakseng-ieyo, uisa-yeyo. Every sentence chips register neutral.',
+        "TOPIC vs SUBJECT is NAMED here, not solved. -neun/-eun marks what the sentence is ABOUT; -i/-ga marks what is new, singled out, or the answer to a question. The honest L1 rule is exactly that much, plus the admission that the rest comes with exposure — a brief that promises a clean rule is lying, and a module that hides the distinction leaves the learner unable to read any real Korean. Introductions take -neun (jeo-neun …), which is why this module can teach it as the default and let M7's existence sentences show -i/-ga doing its own job.",
+        "TWO ABSENCES ENGLISH WILL TRY TO FILL, and they are this module's cheapest wins. There are NO ARTICLES — chaek is 'book', 'a book' and 'the book', and nothing on the page tells them apart. And there is NO PLURAL MARKING in ordinary speech: chaek is also 'books' when the context says so, and -deul exists but is not taught in L1. Both are deltas, not interference: the learner has less to write, and the mistake to plate is inventing a word for 'a'.",
+        "joahaeyo IS A VERB, and that is the module's one real interference. English 'like' takes an object and so does joahaeyo, but Korean marks the object with -eul/-reul and puts the verb last: jeo-neun keopi-reul joahaeyo. The trap is the M9 word joayo, which is a DESCRIBING verb meaning 'is good' and takes no object at all; keopi-ga joayo is 'coffee is good', not 'I like coffee'. Name joayo here as the thing this word is not, and let M9 open it — the two are different keys, so both rows stay reachable.",
+        "INDEX SEAM, decided here and load-bearing for the whole course. The particle rows come FIRST in L1-M1's very first deconstruction, before any hyphenated host row, because the emitter walks sentence → word → forms in order and first occurrence wins: a row written -neun claims the bare key neun (a leading hyphen is edge punctuation and is stripped — checked against the real function), and if a hyphenated host got there first the particle key would point at the host's row instead. One row per particle FUNCTION carrying both allomorphs in forms — -neun/-eun, -i/-ga, -eul/-reul — with a note true of both shapes. The demonstrative is written i-geo, never a bare i, so M1's subject-particle row keeps the key i. cha is TEA and M3 owns it; the word for car is not taught in L1. Every host word here (jeo-neun, hakseng-ieyo, keopi-reul) donates its bare part to its own row, which is how chaek, keopi and hakseng become tappable without a second row anywhere.",
+      ],
+      maxWordsPerSentence: 4,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M2': {
+      id: 'L1-M2',
+      title: 'First exchange',
+      job: 'Greetings, wellbeing, yes/no questions',
+      patterns: [
+        'annyeonghaseyo',
+        '<M1 statement> + ? (intonation only)',
+        'ne / aniyo + , + <statement>',
+        'jal jinaeseyo + ?',
+        'mannaseo bangapseumnida',
+        'N + -ieyo/-yeyo + ?',
+      ],
+      notes: [
+        "annyeonghaseyo is ONE greeting for every hour of the day and for both people in the exchange — there is no good-morning / good-afternoon split to teach, which is a clean delta from every European course in the catalogue. The goodbye is where Korean asks something English never does: annyeonghi gaseyo is said to the person LEAVING and annyeonghi gyeseyo to the person STAYING, so the choice is about who walks away, not about register. Teach both as whole surfaces with one usage line; it is the module's most memorable fact.",
+        "A YES/NO QUESTION IS MADE BY INTONATION ALONE. The words do not move, nothing is inserted, and the ending does not change: hakseng-ieyo is 'you are a student' and hakseng-ieyo? is 'are you a student?'. That is a DOUBLE delta — no inversion (German moves the verb, M2 of en-de spends a note on it) and no do-support (English builds a word that Korean has no equivalent for) — and it means the sound field is carrying grammatical information here, which no other course's M2 has to do. Write the rise explicitly in every question's sound line. INDEX CONSEQUENCE, and it is intended: surface.ts strips edge punctuation, so a question and its statement twin are the SAME index key. They are the same words; the pitch is not spelled. Say so in the review doc rather than letting a later reader file it as a bug.",
+        "ne and aniyo ANSWER THE QUESTION, NOT THE FACT, and this is the module's sharpest interference. Asked hakseng-i aniyeyo? ('aren't you a student?'), a Korean speaker says ne to mean 'that is right — I am not', where English says 'no'. English answers the fact; Korean agrees or disagrees with the asker. One sentence and one usage line is the right spend, and the mistake plate writes itself.",
+        "jal jinaeseyo? is NOT the automatic greeting English makes 'how are you' into. It is a real question, asked of somebody you have not seen for a while, and answering it with a real answer is normal. A learner who greets a shopkeeper with it every morning is producing something odd, so the usage line has to say when it is used — and the module must NOT author it as the reflex second half of annyeonghaseyo. This is a place where a calque would ship fluent-looking nonsense.",
+        'gamsahamnida is -mnida, the formal-polite style, inside a -yo course, and mannaseo bangapseumnida is the same. Both are taught as FROZEN PHRASES with a note that says exactly that: the style they belong to is real, this course does not teach it productively, and these two are learned whole because they are what the learner will actually hear and say. Naming the exception is what keeps the register decision honest; leaving it unnamed is what makes a later module drift.',
+        "INDEX SEAM: take jal jinaeseyo as ONE two-token surface. A multi-token surface does NOT donate its individual tokens (checked: surfaceIndexKeys of a two-token surface returns only the whole and any hyphen parts), so jal stays free for M4's jal jayo and M9's jal haeyo, exactly as en-de's Guten Morgen frees morgen. annyeonghaseyo, annyeonghi gaseyo and annyeonghi gyeseyo are three whole surfaces; the bare annyeong is the plain-style hello and is never written. ne and aniyo are bare one-token rows with no rivals later in the course.",
+      ],
+      maxWordsPerSentence: 4,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M3': {
+      id: 'L1-M3',
+      title: 'Needs and wants',
+      job: "Say what you want and don't want",
+      patterns: [
+        'N-eul/reul + juseyo',
+        'V-go sipeoyo',
+        'N-i/ga + isseoyo',
+        'N-i/ga + eopseoyo',
+        'an + V-ayo/-eoyo',
+        'N-do + juseyo',
+      ],
+      notes: [
+        "juseyo is the everyday shape of asking for anything — mul-eul juseyo, keopi-reul juseyo — and it is the honorific -si- appearing for the second time (annyeonghaseyo was the first). Teach it whole, note that the -se- inside it is the same piece, and say plainly that the productive rule is a later level's. That is the register decision doing its job: the phrase is authored, the system is deferred, and the note says which is which.",
+        "-go sipeoyo attaches to the VERB STEM, not to a finished word: meokda gives meokgo sipeoyo, gada gives gago sipeoyo. The object still comes first and the whole construction still lands at the end of the clause — jeo-neun bap-eul meokgo sipeoyo, literally 'I-topic rice-object eat-want'. Carry literal on every one of them; the order IS the lesson, and it is M1's verb-final law being paid off rather than a new rule.",
+        "isseoyo / eopseoyo IS THE MODULE'S BIG IDEA: one pair of verbs covers 'there is / there isn't' AND 'I have / I don't have'. English splits those into two constructions and Korean does not, which is a delta worth a rule of its own. And eopseoyo is a WORD, not a negated verb — it is not an- plus isseoyo, and a learner who builds *an isseoyo has built something ungrammatical. Both take -i/-ga on the thing that exists, which is where M1's subject particle finally does its own job rather than sitting in the shadow of -neun.",
+        "NEGATION SPLITS THREE WAYS, and L1 teaches ONE. an goes in front of the verb — an meogeoyo, 'I do not eat' — and that is the course's negation. mot means unable-to for reasons outside you (mot gayo, 'I can't go'), and the long form -ji anayo says the same thing as an with a different weight. Name both as deferred, in prose, in this module, so a later module does not quietly introduce one; write neither. The slogan to kill is that Korean has one 'not' the way English does.",
+        "-do means 'too' and it REPLACES the particle rather than joining it: keopi-reul juseyo becomes keopi-do juseyo, not *keopi-reul-do juseyo. English adds 'also' as a separate word and leaves everything else alone, so the interference is real and cheap to plate. It is also the module's second particle row after M1's three, and the same one-row-per-function rule applies.",
+        'INDEX SEAM: cha is opened here as TEA (the collision was assigned in the section above — the word for car is not taught in L1). isseoyo and eopseoyo are two rows, each with the -yo form and, on isseoyo, the shapes M7 will reuse for location — M7 opens NO rival row, so this note must already be true of both existence and location. juseyo is one row; the phrase-level pattern N-eul/reul juseyo is not a surface. -do is its own particle row, listed before any host word that carries it, exactly as M1 ordered its three.',
+      ],
+      maxWordsPerSentence: 5,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M4': {
+      id: 'L1-M4',
+      title: 'My day',
+      job: 'Daily habits and time words',
+      patterns: [
+        'jeo-neun + N-eul/reul + V-ayo/-eoyo',
+        '<time>-e + V-ayo/-eoyo',
+        'maeil + V-ayo/-eoyo',
+        'achim-e / jeonyeog-e + V-ayo/-eoyo',
+        'N-eul/reul + haeyo',
+      ],
+      notes: [
+        "THE CONJUGATION THE WHOLE LEVEL RUNS ON, and the romanization makes it visible: a stem whose last vowel is a or o takes -ayo (gada → gayo, boda → bwayo), everything else takes -eoyo (meokda → meogeoyo, masida → masyeoyo), and a hada verb becomes haeyo. In Hangul this choice is buried inside a syllable block; written in Latin letters it is on the surface, which is a genuine advantage of this course's romanization and worth saying once, here. Every verb row's forms carry the shapes this course actually writes — the -yo form always, and from M5 the past of the same verb — and only shapes of that verb.",
+        "ONE KOREAN PRESENT COVERS BOTH ENGLISH PRESENTS: meogeoyo is 'I eat' AND 'I am eating'. The delta to celebrate, and the interference to plate is building something for the progressive. -go isseoyo exists and is genuinely used; it is DEFERRED, named here in prose and written nowhere.",
+        'SUBJECTS ARE DROPPED whenever context supplies them, and this is the module where that becomes a rule rather than a liberty. meogeoyo on its own is a whole sentence. It is the exact opposite of English and German, where the pronoun is compulsory, and it is the single most natural-sounding thing a learner can start doing — so author at least three sentences with no subject at all, and say in the notes that repeating jeo-neun in every sentence is the anglophone tell M10 will come back to.',
+        'TIME: -e marks a POINT in time — ahop si-e, achim-e, jeonyeog-e — and it is the same particle M7 will use for place. That is one row, not two, and its note is written true of both from the start (M7 opens no rival). The honest exception, which every learner trips on: oneul, eoje, naeil and maeil take NO particle at all. *naeil-e is wrong. State the exception in the same note as the rule, never in a later module.',
+        'hada verbs are the productive pattern that makes the module possible at this word cap: gongbu-haeyo, il-haeyo, unwundong-haeyo. Author them as single tokens (gongbuhaeyo), because that is how they are spoken and written, and note that the noun half is a word in its own right — which is what lets M8 and M9 reuse them without a new row.',
+        "INDEX SEAM: -e is opened here (time) and M7 extends it (place) with no second row. bam is opened here as NIGHT; the chestnut reading is not taught. The verb rows opened here — gayo, meogeoyo, masyeoyo, ilgeoyo, jayo — are the rows M5's past forms attach to, so their notes must be written to survive that: 'the -yo form of X' rather than 'the present of X'. jal is still free here (M2 spent it inside a two-token surface) and is opened as the adverb in jal jayo.",
+      ],
+      maxWordsPerSentence: 5,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M5': {
+      id: 'L1-M5',
+      title: 'Yesterday',
+      job: 'Past tense — the first big divergence',
+      patterns: [
+        'jeo-neun + V-asseoyo/-eosseoyo',
+        'eoje + V-asseoyo/-eosseoyo',
+        'N + -ieosseoyo/-yeosseoyo',
+        'an + V-asseoyo/-eosseoyo',
+      ],
+      notes: [
+        "THE PAST IS AN INFIX, NOT AN AUXILIARY. -at-/-eot- goes INSIDE the word, before the ending: meogeoyo → meogeosseoyo, gayo → gasseoyo, haeyo → haesseoyo. Nothing is added in front — no have, no did, no was. Every European course in this catalogue teaches a past built from two words, so an author coming off en-de's Perfekt or en-fr's passé composé will reach for one; say explicitly that there is nothing to reach for. The mistake plate is a learner hunting for the Korean word for 'did'.",
+        "IT IS THE SAME STEM RULE AS M4, APPLIED TWICE. The vowel that chose -ayo or -eoyo in the present chooses -asseoyo or -eosseoyo in the past, so a learner who has M4's rule already has this one. Frame it that way in the note — one rule, two tenses — rather than as a new paradigm to memorise. This is the module where the romanization pays off most visibly, because the a/eo choice is right there in the spelling on both forms.",
+        "NO PERFECT / PRETERITE SPLIT. Korean has ONE everyday past, and it does the work English divides between 'I ate', 'I have eaten' and 'I did eat'. After German's haben/sein choice and French's auxiliary rules this is a genuine relief, and naming it as a relief is worth more than leaving it unsaid — a learner braced for a choice will invent one.",
+        "The copula has its own past — hakseng-ieosseoyo, uisa-yeosseoyo — built the same way from M1's -ieyo/-yeyo, so it is the same rule a third time rather than a fourth thing. Negation is unchanged: an sits in front of the verb exactly as it did in M3, and the infix does not move it.",
+        "INDEX SEAM, and it is the one to verify against the emitted index rather than reason about: a past form goes in the FORMS of the M4 row that taught the verb, because it is the same verb — never a new row. gasseoyo belongs to M4's gayo row, meogeosseoyo to meogeoyo's. Read public/content/en-ko/index/L1-M5.json and confirm each past key points at the M4 sentence that opened the verb; if one opened a row of its own, the module is wrong, not the index. eoje is a bare row of its own with no rival.",
+      ],
+      maxWordsPerSentence: 5,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M6': {
+      id: 'L1-M6',
+      title: 'Tomorrow',
+      job: 'Future and plans',
+      patterns: [
+        'naeil + V-(eu)l geoyeyo',
+        'jeo-neun + <place>-e + gal geoyeyo',
+        'naeil + V-ayo/-eoyo',
+        'naeil + V-go sipeoyo',
+      ],
+      notes: [
+        "THE PRESENT PLUS A TIME WORD ALREADY IS A FUTURE: naeil gayo is 'I'm going tomorrow' and nothing further is needed. Teach that first, because it is free — the learner already has M4's forms — and it is what Korean speakers actually say for a settled plan. The delta is the same one German reaches by a different road, and it is worth naming the parallel for an author coming off #361.",
+        "-(eu)l geoyeyo IS A NOUN-PHRASE CONSTRUCTION, NOT A MODAL, and that is the module's law. It is built from a verb form plus geot ('thing') plus M1's copula, which is why it ENDS in -yeyo: gal geoyeyo is, piece by piece, 'it is a thing-that-will-be-gone'. English 'will' is a modal that sits in front of the verb and changes nothing else; a learner looking for the Korean word for 'will' is looking for a word that does not exist. Carry literal on these lines and let M1's copula do the explaining.",
+        "The stem rule is one line and must be stated exactly: -l geoyeyo after a vowel (gada → gal geoyeyo), -eul geoyeyo after a consonant (meokda → meogeul geoyeyo). It is the same shape of choice as -ieyo/-yeyo and -ayo/-eoyo, so it is the level's pattern for a third time rather than an exception.",
+        'DEFERRED, named here and written nowhere: -gess- (the other future, and the one an intermediate learner meets in weather reports) and -(eu)llae yo (the offering / intending one). Naming them is what stops a later module reaching for one; writing one would put a shape in the index the course cannot explain.',
+        "INDEX SEAM: naeil is a bare row and takes NO particle (M4's exception, restated). geoyeyo is its own row, and its note says what it is made of, because a learner will tap it. gal is a form of M4's gayo row, not a new row — verify that against the emitted index the way M5's past forms are verified.",
+      ],
+      maxWordsPerSentence: 6,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M7': {
+      id: 'L1-M7',
+      title: 'Where things are',
+      job: 'Locations and prepositions',
+      patterns: [
+        'N-i/ga + <place>-e + isseoyo',
+        'N-eun/neun + eodi-e + isseoyo + ?',
+        '<place>-eseo + V-ayo/-eoyo',
+        'N-i/ga + <N> wi-e / ap-e / yeop-e + isseoyo',
+      ],
+      notes: [
+        "THIS IS THE MODULE WHERE ENGLISH PREPOSITIONS STOP EXISTING, and the -e / -eseo split is the level's second-sharpest interference after M3's negation. -e marks where something IS or where it is GOING; -eseo marks where an action HAPPENS. hakgyo-e isseoyo is 'I am at school'; hakgyo-eseo gongbuhaeyo is 'I study at school'. English uses 'at' for both, so the learner has no signal at all until this note gives them one. The test is not the place, it is the verb: existence and motion-toward take -e, an activity takes -eseo.",
+        "POSITION WORDS ARE NOUNS, NOT PREPOSITIONS. wi, arae, ap, dwi and yeop follow their noun and then take -e themselves: chaeksang wi-e is 'desk top-at', literally the opposite order to 'on the desk'. That is M1's particle-marked law doing something new, not a fresh rule, and framing it that way is what makes it stick. Author each as a two-piece surface (chaeksang wi-e) so the bare noun stays tappable.",
+        "isseoyo returns from M3 and opens NO new row: the note M3 wrote already covers existence and location, which is why M3 was told to write it that way. Same for -e, opened in M4 for time and extended here to place on the same row. This is the course's cleanest demonstration of planning against the index instead of against the JSON — two modules, one row, one note that was true from the start.",
+        "eodi ('where') plus M2's intonation question is the whole question pattern: eodi-e isseoyo? — no inversion, no do-support, no question word order. Note that eodi takes -e like any other place, which is why the question looks exactly like the answer with one word swapped.",
+        'INDEX SEAM, and this one needs checking on the emitted index: hakgyo-e and hakgyo-eseo are two surfaces that BOTH donate the bare key hakgyo, and only the first one written owns it. Decide the order deliberately, put the fuller note on whichever row appears first, and quote the emitted entry in the review. wi, ap, yeop and dwi each get a row through their two-piece surface. -eseo is its own particle row, listed before any host that carries it.',
+      ],
+      maxWordsPerSentence: 6,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M8': {
+      id: 'L1-M8',
+      title: 'Numbers & shopping',
+      job: 'Prices, quantities, buying',
+      patterns: [
+        'N + <number> + <counter> + juseyo',
+        'eolmayeyo + ?',
+        'N-eun/neun + <number> won-ieyo',
+        'myeot + <counter> + ?',
+      ],
+      notes: [
+        "TWO NUMBER SYSTEMS, AND THE MODULE HAS TO BE HONEST ABOUT IT. Sino-Korean (il, i, sam, sa, o …) counts money, minutes, dates and anything written; native Korean (hana, dul, set, net, daseot …) counts THINGS and hours. Nothing in English prepares a learner for a language with two complete numeral sets divided by job, and no other course in this catalogue carries a comparable load. The slogan to kill is 'just learn the numbers'; the law is that the JOB picks the system.",
+        "COUNTERS ARE OBLIGATORY and the order is noun–number–counter: keopi du jan ('coffee two cups'), sagwa se gae, chingu du myeong. English can say 'two coffees'; Korean cannot. Teach -gae (things), -myeong (people), -jan (cups) and -si (hours) and no more — the cap will not stand for more.",
+        'THE FIRST FOUR NATIVE NUMERALS SHRINK BEFORE A COUNTER: hana → han, dul → du, set → se, net → ne. It is not optional and it is not a dialect thing. Every counted phrase in the module uses the short form, and the full form appears only when counting alone. Both shapes live in the forms of ONE row per numeral, because they are the same word.',
+        'THE CAP WILL BIND HERE, harder than anywhere else in the level: every numeral, every counter and won are all new surfaces. Plan the module against newWordCap BEFORE authoring. If it binds, cut the number of SENTENCES that need fresh numerals — never cut the honesty of the two-system rule, and never teach a counter without its numerals.',
+        "INDEX SEAM: the Sino-Korean i ('two') must NOT be written bare, because M1's subject-particle row owns the key i and first occurrence wins — so prices are authored as whole numerals (icheon-won, ocheon-won) and bare Sino numerals stay out. du, se and ne are opened here with their long forms in the same row's forms. won is its own row. eolmayeyo is one surface built on M1's copula, and its note says so.",
+      ],
+      maxWordsPerSentence: 6,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M9': {
+      id: 'L1-M9',
+      title: 'Feelings & opinions',
+      job: 'Why — because and so',
+      patterns: [
+        'N-i/ga + joayo / masisseoyo',
+        'wae + V-ayo/-eoyo + ?',
+        '<stem>-aseo/-eoseo + <clause>',
+        'geuraeseo + <clause>',
+        'jeo-neun + N-eul/reul + joahaeyo',
+      ],
+      notes: [
+        "KOREAN ADJECTIVES ARE VERBS, and this is the module's headline. joayo is 'is good' — it conjugates with the same -ayo/-eoyo endings M4 taught, it takes the past -asseoyo M5 taught, and it takes NO copula in front of it. keopi-ga joayo is a complete sentence. The interference is severe because it lands straight on M1's copula rule: an English speaker reaches for -ieyo and produces *keopi-ga joeun-ieyo, which is not a near miss. The slogan is 'adjectives need is'; the law is that Korean's describing words ARE verbs and conjugate like them.",
+        "joayo vs joahaeyo is the collision this module has to keep straight, and M1 already owns half of it. joahaeyo is transitive and takes -eul/-reul (jeo-neun keopi-reul joahaeyo, 'I like coffee'); joayo is a describing verb and takes -i/-ga on the thing being described (keopi-ga joayo, 'coffee is good'). They are different keys, so both rows are reachable — but each note must say what the OTHER one is, or a learner will read one and use the other.",
+        "-aseo/-eoseo PUTS THE REASON FIRST. It attaches to the verb stem, the reason clause comes before the result, and the ending carries no tense of its own — the tense sits on the final verb: bappaseo mot gayo would be 'being busy, I can't go', and in this course's negation policy that is written with an rather than mot. English can put 'because' either side; Korean cannot move this one. Carry literal on every one of them.",
+        "geuraeseo is the sentence-initial pair to -aseo: it starts a NEW sentence and means 'so, that's why'. One clause ending, one connector, same relationship — teaching them together is what makes M10's turns possible. wae ('why') plus M2's intonation is the question, and the answer is the -aseo clause.",
+        "INDEX SEAM: mal is opened here as WORD (the horse reading stays out of L1 — assigned in the section above). joayo opens its own row here and its note names joahaeyo; M1's joahaeyo row already names joayo, so the pair is covered from both sides. masisseoyo is one row (it is built from mat plus isseoyo historically, but it is learned whole and the pieces are not taught). geuraeseo is a bare row with no rival.",
+      ],
+      maxWordsPerSentence: 7,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M10': {
+      id: 'L1-M10',
+      title: 'Connected talk',
+      job: 'Short 2–3 sentence exchanges',
+      patterns: [
+        '<sentence> + . + geurigo + <sentence>',
+        '<sentence> + . + hajiman + <sentence>',
+        '<question> → <answer> + . + geuraeseo + <reason>',
+        '<stem>-go + <clause>',
+      ],
+      notes: [
+        "Each item is a TURN of two or three short sentences — a question and its answer, or a statement, a reason and a follow-up — not one long sentence. The per-sentence bound applies to each sentence inside the turn. Korean's eojeol spacing means these turns stay short in tokens even when they say a lot, so prefer three real sentences to two padded ones.",
+        "THE RECOMBINATION LAW: Korean joins clauses in two places and the module must keep them apart. A SENTENCE CONNECTOR starts a new sentence — geurigo ('and'), geuraeseo ('so'), hajiman ('but') — while a CLAUSE ENDING joins inside one sentence: -go ('and then', on the stem) and M9's -aseo/-eoseo ('because'). Same relationships, two grammatical places, and choosing the wrong one is what makes a turn read as translated rather than spoken.",
+        'PRO-DROP IS THE NATURALNESS MARKER, and this is the module that enforces it. M4 introduced dropping the subject; here it becomes the rule across a whole turn — jeo-neun appears in the FIRST sentence of a turn at most, and usually not at all. Repeating it in every sentence is the anglophone tell, and a turn that repeats it is wrong even though every sentence in it is grammatical. Author at least half the turns with no explicit subject anywhere.',
+        "SPEECH LEVEL HOLDS ACROSS THE WHOLE TURN. One -mnida ending inside a -yo turn is audible, and the frozen phrases from M2 are the only place it appears. This is now a within-item consistency problem rather than a between-module one, which is exactly why it is worth restating in the last module's brief.",
+        "hajiman and geureonde both translate as 'but', and the difference is worth one line and no more: hajiman contrasts, geureonde changes the subject or softens into a new topic. Write hajiman in the displays and name geureonde in prose — a second connector for the same job would spend words the cap needs elsewhere.",
+        "Language of the fields holds to the last turn: ENGLISH in every teaching field, the ROMANIZATION in every L2 slot, Hangul only in script, glossEn on every sentence, and literal wherever a turn's order moves — which, with two clauses and a verb at the end of each, is most of them.",
+      ],
+      maxWordsPerSentence: 7,
       newWordCap: NEW_WORD_CAP,
     },
   },
