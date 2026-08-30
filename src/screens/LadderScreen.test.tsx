@@ -65,8 +65,8 @@ function tenRungLadder(courseId = COURSE) {
 }
 
 /**
- * Seeds production the only way the app can: one `recordProduction` per Produce-phase got-it, in
- * the order the learner would have marked them. Two per sentence is what opens the exit ritual.
+ * Seeds production the only way the app can: one `recordProduction` per Read-phase got-it, in the
+ * order the learner would have marked them. One per sentence is what opens the exit ritual (#349).
  */
 function produce(...sentenceIds: string[]): void {
   const store = useAppStore.getState();
@@ -362,8 +362,8 @@ describe('the staged rung card [D22]', () => {
 
   it('holds the ritual back while one sentence is a got-it short', async () => {
     useAppStore.getState().markStudied(COURSE, 'L1-M1');
-    // The module's other sentence is at 2×; this one is at 1×. Nine-of-ten, at the fixture's scale.
-    produce('L1-M1-S01', 'L1-M1-S01', 'L1-M1-S02');
+    // One of the module's two sentences marked, the other not — nine-of-ten at the fixture's scale.
+    produce('L1-M1-S01', 'L1-M1-S01');
 
     await renderLadder();
     await screen.findByRole('link', { name: strings('rungCard.practice') });

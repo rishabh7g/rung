@@ -46,15 +46,15 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the six authored bundles carry — 65 keys, nested, identical', () => {
+  it('is exactly what the seven authored bundles carry — 62 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(65);
+      expect(keys.length, courseId).toBe(62);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(65);
-    expect(new Set(STRINGS_KEYS).size).toBe(65);
+    expect(STRINGS_KEYS.length).toBe(62);
+    expect(new Set(STRINGS_KEYS).size).toBe(62);
   });
 
   /**
@@ -137,27 +137,29 @@ describe('the canonical key list', () => {
   });
 
   /**
-   * The session machine's sixteen (#96). PRD-design §6.3's hub, its soft phase chips and its
-   * counts-only summary are learner-facing top to bottom, and the prototype writes every line of
-   * them in English for every course. Draft values in all three bundles, flagged on #71.
+   * The session machine's (#96). PRD-design §6.3's hub, its soft phase chips and its counts-only
+   * summary are learner-facing top to bottom, and the prototype writes every line of them in
+   * English for every course. Draft values in all three bundles, flagged on #71.
+   *
+   * It forced sixteen; twelve of them are left. `practice.hubProduce`, `practice.phase.produce`,
+   * `practice.summaryProduced` and `practice.summaryAtTwo` went with the Produce phase on #349,
+   * and the summary's two count lines collapsed into `practice.summaryMarked` — asserted below
+   * with the rest of that ticket's set, so this case stays a record of what #96 forced and what
+   * survives of it.
    */
-  it('carries the sixteen keys the session machine forced (#96)', () => {
+  it('carries the twelve surviving keys the session machine forced (#96)', () => {
     const added: StringsKey[] = [
       'practice.hubTitle',
       'practice.hubReview',
       'practice.hubRead',
-      'practice.hubProduce',
       'practice.beginReview',
       'practice.beginRead',
       'practice.phase.review',
       'practice.phase.read',
-      'practice.phase.produce',
       'practice.nothingDue',
       'practice.summaryTitle',
       'practice.summaryReviewed',
       'practice.summaryGotIt',
-      'practice.summaryProduced',
-      'practice.summaryAtTwo',
       'practice.backToLadder',
     ];
 
@@ -165,11 +167,34 @@ describe('the canonical key list', () => {
   });
 
   /**
+   * What #349 left in place of the Produce phase's keys: one summary line saying how much of the
+   * rung is read through, and Read's own end-of-session pager label. The retired four (and
+   * `read.toProduce`) are asserted GONE rather than merely unlisted — a key that comes back is a
+   * bundle the app would then have to author a value for in seven languages.
+   */
+  it('carries #349’s two, and none of the five the Produce phase took with it', () => {
+    for (const key of ['practice.summaryMarked', 'read.finish']) {
+      expect(STRINGS_KEYS).toContain(key);
+    }
+
+    for (const retired of [
+      'practice.hubProduce',
+      'practice.phase.produce',
+      'practice.summaryProduced',
+      'practice.summaryAtTwo',
+      'read.toProduce',
+    ]) {
+      expect(STRINGS_KEYS).not.toContain(retired);
+    }
+  });
+
+  /**
    * The Read phase's five (#97). PRD-design §6.3's read-through says five things in its own right
    * — the cue toggle's two labels and its pager's three — and the prototype writes all of them in
    * English for every course. `read.prev`/`read.next` are deliberately not `sentence.prev`/`.next`:
-   * that pager browses a module, this one walks a rung mid-session and its last step leaves the
-   * phase (`read.toProduce`). Draft values in all three bundles, flagged on #71.
+   * that pager browses a module, this one walks a rung mid-session and its last step ends it
+   * (`read.finish`, `read.toProduce` until #349). Draft values in all three bundles, flagged
+   * on #71.
    */
   it('carries the five keys the Read phase forced (#97)', () => {
     const added: StringsKey[] = [
@@ -177,7 +202,7 @@ describe('the canonical key list', () => {
       'read.hideCue',
       'read.prev',
       'read.next',
-      'read.toProduce',
+      'read.finish',
     ];
 
     for (const key of added) expect(STRINGS_KEYS).toContain(key);
@@ -284,12 +309,10 @@ describe('the canonical key list', () => {
       switchToast: ['{to}', '{from}'],
       'practice.hubReview': ['{count}'],
       'practice.hubRead': ['{count}'],
-      'practice.hubProduce': ['{count}'],
       'practice.upNext': ['{phase}'],
       'practice.summaryReviewed': ['{count}'],
       'practice.summaryGotIt': ['{count}'],
-      'practice.summaryProduced': ['{count}'],
-      'practice.summaryAtTwo': ['{count}', '{total}'],
+      'practice.summaryMarked': ['{count}', '{total}'],
       'practice.resumeLine': ['{phase}', '{count}', '{total}'],
       'settings.statusLine': ['{level}', '{passed}', '{total}', '{rung}'],
       'settings.statusPending': ['{level}', '{passed}', '{total}'],

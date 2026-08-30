@@ -20,7 +20,7 @@
  * `progressionInput` the store guards `passRitual` with, never stored. This component takes the
  * answer and renders it; it holds no state and reads none. The stage flips because the engine's
  * inputs changed: `markStudied` on first module open turns `fresh` into `studied` (#88), and the
- * last got-it that brings every sentence to 2× turns `studied` into `exit_ready` — the production
+ * last got-it that brings every sentence to 1× turns `studied` into `exit_ready` — the production
  * counters, read live through `screens/useExitAvailable.ts` (#95).
  *
  * **Every label is the course's** (`strings.json`, PRD §4) — the shell has no copy of its own, so
@@ -34,6 +34,7 @@
  */
 import { Link } from 'react-router-dom';
 import { useStrings } from '../../course/strings.ts';
+import { MARKS_PER_SENTENCE } from '../../engine/exit.ts';
 import type { RungStage } from '../../engine/progression.ts';
 import { PRACTICE_PATH, RITUAL_PATH } from '../../shell/routes.tsx';
 import { HintLine } from '../../shell/useHint.tsx';
@@ -59,7 +60,7 @@ interface RungCardProps {
    */
   unlocked?: boolean;
   /**
-   * Per-sentence got-it counts, in authored order — the writes, drawn (design/tokens.md §6.1
+   * Per-sentence got-it counts, in authored order — the marks, drawn (design/tokens.md §6.1
    * anatomy). Empty while the module's sentences have not loaded, and for a `pending` rung
    * whose module is not authored: a count of sentences that do not exist yet is not a count,
    * so the row is simply absent there (the prototype papers over it with the authored module's
@@ -79,9 +80,12 @@ export function RungCard({
 }: RungCardProps) {
   const strings = useStrings();
   const modulePath = `/module/${moduleId}`;
-  // Clamped at the two writes a pair can draw, so the count and the dots never disagree — a
-  // sentence produced five times has said everything it can say at 2 (PRD §8 F1).
-  const writes = production.reduce((sum, produced) => sum + Math.min(produced, 2), 0);
+  // Clamped at the one mark a dot can draw, so the count and the dots never disagree — a sentence
+  // marked five times has said everything it can say at 1 (PRD §8 F1, `MARKS_PER_SENTENCE`).
+  const writes = production.reduce(
+    (sum, produced) => sum + Math.min(produced, MARKS_PER_SENTENCE),
+    0,
+  );
 
   return (
     <div
@@ -108,14 +112,14 @@ export function RungCard({
             <ProductionDots key={index} produced={produced} />
           ))}
           <span className={styles.writes}>
-            {writes} / {production.length * 2}
+            {writes} / {production.length * MARKS_PER_SENTENCE}
           </span>
         </div>
       )}
 
       {/**
-       * What the dots are counting towards (#319), said once per install. The row draws the two
-       * writes per sentence and the `n / 20` beside them, and neither says what reaching them
+       * What the dots are counting towards (#319), said once per install. The row draws the one
+       * mark per sentence and the `n / 10` beside them, and neither says what reaching them
        * DOES — the card's stages act on it ([D22]: the primary becomes the exit ritual) without
        * ever having named the rule. This names it, on the first rung card the learner meets, and
        * never again.

@@ -3,15 +3,15 @@
  * §4, §6.3, flow 3).
  *
  * The hub is the one screen in the app that is entirely about what is *about to* happen: which
- * rung the session will work on, what its three phases will serve, and one CTA that starts it.
+ * rung the session will work on, what its phases will serve, and one CTA that starts it.
  * Everything on it is a count taken from a plan (`engine/session.ts`) made against the queue the
  * session is about to tick — the same pure function `startSession` uses, so the hub cannot promise
  * a Review phase the session then does not serve.
  *
  * **It is one screen, not a page to read** (#316). It stood between the learner's intent and their
- * first card on the common path — tap Practice on the rung card, read three tall numbered phase
- * blocks, tap Begin — which is a lot of screen spent describing what the next tap was going to do
- * anyway. The three counts still earn their place (they are the promise the session then keeps),
+ * first card on the common path — tap Practice on the rung card, read a stack of tall numbered
+ * phase blocks, tap Begin — which is a lot of screen spent describing what the next tap was going
+ * to do anyway. The counts still earn their place (they are the promise the session then keeps),
  * so what went is the WEIGHT: the prototype's `01 / 02 / 03` numerals and the stacked blocks, for
  * one compact row. Begin sits in thumb reach without scrolling, and the hub reads as the single
  * action it is.
@@ -70,15 +70,13 @@ import type { StringsKey } from '../course/stringsKeys.ts';
 import type { SessionPhase } from '../state/types.ts';
 import styles from './PracticeScreen.module.css';
 
-/** Shared, so a course with no state yet reads the same values every render. */
+/** Shared, so a course with no state yet reads the same value every render. */
 const NO_QUEUE: never[] = [];
-const NO_COUNTERS: Readonly<Record<string, number>> = {};
 
-/** The hub's line for each phase — the same three phases the session's chips wear. */
+/** The hub's line for each phase — the same phases the session's chips wear. */
 const HUB_LINE: Readonly<Record<(typeof PHASES)[number], StringsKey>> = {
   review: 'practice.hubReview',
   read: 'practice.hubRead',
-  produce: 'practice.hubProduce',
 };
 
 /** What the hub hands the session: the plan it started with, and the rung it is working on. */
@@ -99,7 +97,6 @@ export default function PracticeScreen() {
   const startSession = useAppStore((store) => store.startSession);
   const setSession = useAppStore((store) => store.setSession);
   const reviewQueue = useAppStore((store) => store.courses[course.id]?.reviewQueue) ?? NO_QUEUE;
-  const production = useAppStore((store) => store.courses[course.id]?.production) ?? NO_COUNTERS;
   /**
    * The ACTIVE course's open session, or `null` (#99). It is read per course and never per app, so
    * a switch away and back finds this course's own position exactly where it was left — the state
@@ -126,11 +123,7 @@ export default function PracticeScreen() {
    * sentences, and the session it feeds holds its OWN copy of the plan from the moment it starts
    * (`Run`), so nothing downstream re-renders because this array is new.
    */
-  const preview = planSession({
-    queue: tickSession(reviewQueue),
-    moduleSentenceIds: sentenceIds,
-    production,
-  });
+  const preview = planSession({ queue: tickSession(reviewQueue) });
 
   /**
    * The session on screen, held here because it belongs to this mount: `enterSession` raises the
@@ -158,11 +151,10 @@ export default function PracticeScreen() {
   // module. The shell's frame is already up, so the hub waits rather than inventing a state.
   if (!ready) return <section className={styles.hub} aria-busy="true" />;
 
-  /** The counts the hub promises, all three out of the one preview plan. */
+  /** The counts the hub promises: the preview plan's review queue, and the rung itself. */
   const counts = {
     review: preview.reviewIds.length,
     read: sentenceIds.length,
-    produce: preview.produceIds.length,
   };
   const title = module?.title;
   const startable = rung !== null && stage !== 'pending' && sentenceIds.length > 0;
@@ -188,11 +180,7 @@ export default function PracticeScreen() {
   const carryOn = (): void => {
     if (rung === null || !startable || !isResumable(snapshot)) return;
 
-    const plan = resumePlan(snapshot, {
-      queue: reviewQueue,
-      moduleSentenceIds: sentenceIds,
-      production,
-    });
+    const plan = resumePlan(snapshot, { queue: reviewQueue });
     setRun({
       moduleId: rung,
       sentenceIds,
@@ -230,15 +218,15 @@ export default function PracticeScreen() {
       {stage !== 'pending' && rung !== null && (
         <>
           {/**
-           * The three phases as ONE compact row (#316), where the prototype stacks three tall
-           * numbered blocks.
+           * The phases as ONE compact row (#316), where the prototype stacks tall numbered
+           * blocks.
            *
            * The counts stay — they are the promise the session then keeps, and the whole reason
            * this screen exists — but the weight around them goes: the `01 / 02 / 03` numerals were
            * shell furniture narrating an order the row already reads in, and a blueprint plate per
-           * phase made three objects out of one fact. What is left is the phase's name over its
-           * count, three across, so the Begin CTA below is in thumb reach without scrolling and
-           * the hub reads as the single action it is.
+           * phase made an object per phase out of one fact. What is left is the phase's name over
+           * its count, across one row, so the Begin CTA below is in thumb reach without scrolling
+           * and the hub reads as the single action it is.
            */}
           <ol className={styles.phases}>
             {PHASES.map((phase) => (

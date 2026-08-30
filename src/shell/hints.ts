@@ -7,8 +7,9 @@
  * whose screens are mostly explanation is a product that does not trust its own shapes. But the
  * app also has no onboarding by design ([D21]: first run lands on the Ladder), and the two
  * decisions together left a first-run learner told none of the things the product is built on —
- * that the recall happens outside the app, that two writes per sentence open a rung's exit ritual,
- * that the checking in the ritual is theirs. The shapes say it eventually; nothing said it once.
+ * that the recall happens outside the app, that one marked sentence apiece opens a rung's exit
+ * ritual, that the checking in the ritual is theirs. The shapes say it eventually; nothing said it
+ * once.
  *
  * A hint is the resolution of that: it renders on its surface the first time that surface is used,
  * and never again on this install. The thirty-first session is exactly the clean screen #225 asked

@@ -60,7 +60,7 @@ function line(key: string, values: Record<string, string | number>, courseId = C
 
 /** The banner's line for a position — the phase in the course's own name, and the card of the queue. */
 function resumeLine(
-  phase: 'review' | 'read' | 'produce',
+  phase: 'review' | 'read',
   count: number,
   total: number,
   courseId = COURSE,
@@ -110,7 +110,7 @@ async function begin(label = 'practice.beginRead', courseId = COURSE): Promise<v
   fireEvent.click(await screen.findByRole('button', { name: strings(label, courseId) }));
 }
 
-function chip(phase: 'review' | 'read' | 'produce', courseId = COURSE): HTMLElement {
+function chip(phase: 'review' | 'read', courseId = COURSE): HTMLElement {
   return screen.getByRole('button', { name: strings(`practice.phase.${phase}`, courseId) });
 }
 
@@ -124,6 +124,15 @@ function answer(mark: 'mark.gotIt' | 'mark.missed', courseId = COURSE): void {
   act(() => {
     vi.advanceTimersByTime(COMMIT_WINDOW_MS);
   });
+}
+
+/**
+ * Read's own self-mark (#349) — the gate, and the only writer of the counters since Produce went.
+ * There is no reveal to click first and no commit window to wait out: the mark lands as it is
+ * chosen, because it does not move the pager.
+ */
+function mark(kind: 'mark.gotIt' | 'mark.missed', courseId = COURSE): void {
+  fireEvent.click(screen.getByRole('button', { name: strings(kind, courseId) }));
 }
 
 /** The banner's two controls, by the course's own labels. */
@@ -170,7 +179,7 @@ beforeEach(() => {
   vi.useFakeTimers({ shouldAdvanceTime: true });
   // Seeded AFTER the clear above: the show-once hints (#319) live in localStorage too, and this
   // file is about the snapshot, not about which visit a learner is on.
-  for (const hint of ['recall', 'production', 'check']) {
+  for (const hint of ['recall', 'production']) {
     window.localStorage.setItem(`rung:hint:${hint}`, '1');
   }
 });
@@ -252,15 +261,12 @@ describe('an app kill', () => {
   it('comes back to the exact card, through a real reload of the document', async () => {
     const view = await renderHub();
     await begin();
-    fireEvent.click(chip('produce'));
-    await screen.findByText(strings('revealLabel'));
-    answer('mark.gotIt');
-    // A Produce card shows the CUE and hides the L2 line until it is revealed (#93) — which is
-    // exactly what makes it worth asserting on: the resumed session must come back to the same
-    // unanswered card, not to an answer.
-    await screen.findByText(sentence(1).cue);
+    await screen.findByText(sentence(0).display);
+    mark('mark.gotIt');
+    fireEvent.click(screen.getByRole('button', { name: strings('read.next') }));
+    await screen.findByText(sentence(1).display);
     expect(courseState()?.session).toEqual({
-      phase: 'produce',
+      phase: 'read',
       idx: 1,
       queue: [`${M1}-S01`, `${M1}-S02`],
     });
@@ -269,39 +275,21 @@ describe('an app kill', () => {
     await renderHub();
 
     // The hub offers it, in the course's own words, and says where it stopped.
-    expect(await screen.findByText(resumeLine('produce', 2, 2))).toBeInTheDocument();
-    fireEvent.click(control('practice.resumeContinue'));
-
-    // …the same phase, the same card, the same place in the same queue.
-    expect(chip('produce')).toHaveAttribute('aria-pressed', 'true');
-    expect(await screen.findByText('2 / 2')).toBeInTheDocument();
-    expect(screen.getByText(sentence(1).cue)).toBeInTheDocument();
-    expect(screen.queryByText(sentence(1).display)).not.toBeInTheDocument();
-    expect(courseState()?.session).toEqual({
-      phase: 'produce',
-      idx: 1,
-      queue: [`${M1}-S01`, `${M1}-S02`],
-    });
-    // And the got-it from before the kill is still counted, once.
-    expect(courseState()?.production).toEqual({ [`${M1}-S01`]: 1 });
-  });
-
-  it('comes back mid-Read as well — the phase is the snapshot’s, not the plan’s', async () => {
-    const view = await renderHub();
-    await begin();
-    await screen.findByText(sentence(0).display);
-    fireEvent.click(screen.getByRole('button', { name: strings('read.next') }));
-    await screen.findByText(sentence(1).display);
-
-    await killAndReboot(view);
-    await renderHub();
-
     expect(await screen.findByText(resumeLine('read', 2, 2))).toBeInTheDocument();
     fireEvent.click(control('practice.resumeContinue'));
 
-    expect(await screen.findByText(sentence(1).display)).toBeInTheDocument();
+    // …the same phase, the same card, the same place in the same queue.
     expect(chip('read')).toHaveAttribute('aria-pressed', 'true');
-    expect(screen.getByText('2 / 2')).toBeInTheDocument();
+    expect(await screen.findByText('2 / 2')).toBeInTheDocument();
+    expect(screen.getByText(sentence(1).display)).toBeInTheDocument();
+    expect(screen.queryByText(sentence(0).display)).not.toBeInTheDocument();
+    expect(courseState()?.session).toEqual({
+      phase: 'read',
+      idx: 1,
+      queue: [`${M1}-S01`, `${M1}-S02`],
+    });
+    // And the got-it from before the kill is still counted, once (#349's gate).
+    expect(courseState()?.production).toEqual({ [`${M1}-S01`]: 1 });
   });
 
   it('keeps the review cards it was serving, in the order it was serving them', async () => {
@@ -348,12 +336,11 @@ describe('a resume is not a session', () => {
       { sentenceId: `${M1}-S01`, box: 2, dueInSessions: 2 },
     ]);
 
-    fireEvent.click(chip('produce'));
-    await screen.findByText(strings('revealLabel'));
+    await screen.findByText(sentence(0, M2).display);
     await killAndReboot(view);
     await renderHub();
     fireEvent.click(control('practice.resumeContinue'));
-    await screen.findByText(strings('revealLabel'));
+    await screen.findByText(sentence(0, M2).display);
 
     // Resuming spends neither: not the count (closing a tab is not a session), and not the tick
     // (the queue would come due twice on one sitting's work).
@@ -362,10 +349,10 @@ describe('a resume is not a session', () => {
       { sentenceId: `${M1}-S01`, box: 2, dueInSessions: 2 },
     ]);
 
-    // …and finishing the resumed session still leaves one.
-    answer('mark.gotIt');
-    await screen.findByText(strings('revealLabel'));
-    answer('mark.gotIt');
+    // …and finishing the resumed session still leaves one: Read's last step ends it (#349).
+    fireEvent.click(screen.getByRole('button', { name: strings('read.next') }));
+    await screen.findByText(sentence(1, M2).display);
+    fireEvent.click(screen.getByRole('button', { name: strings('read.finish') }));
     await screen.findByText(strings('practice.summaryTitle'));
 
     expect(courseState()?.sessionCount).toBe(1);
@@ -379,9 +366,8 @@ describe('a resume is not a session', () => {
   it('starts a NEW one from the same banner — the snapshot dropped, the count spent', async () => {
     await renderHub();
     await begin();
-    fireEvent.click(chip('produce'));
-    await screen.findByText(strings('revealLabel'));
-    answer('mark.gotIt');
+    await screen.findByText(sentence(0, M2).display);
+    mark('mark.gotIt');
     fireEvent.click(screen.getByRole('button', { name: 'Pause session' }));
     await screen.findByText(strings('practice.hubTitle'));
 
@@ -411,22 +397,21 @@ describe('the pause ✕', () => {
   it('lands on the hub with the position intact, and the hub offers it back', async () => {
     await renderHub();
     await begin();
-    fireEvent.click(chip('produce'));
-    await screen.findByText(strings('revealLabel'));
+    await screen.findByText(sentence(0).display);
 
     fireEvent.click(screen.getByRole('button', { name: 'Pause session' }));
 
     expect(await screen.findByText(strings('practice.hubTitle'))).toBeInTheDocument();
     expect(courseState()?.session).toEqual({
-      phase: 'produce',
+      phase: 'read',
       idx: 0,
       queue: [`${M1}-S01`, `${M1}-S02`],
     });
-    expect(screen.getByText(resumeLine('produce', 1, 2))).toBeInTheDocument();
+    expect(screen.getByText(resumeLine('read', 1, 2))).toBeInTheDocument();
 
     fireEvent.click(control('practice.resumeContinue'));
 
-    expect(chip('produce')).toHaveAttribute('aria-pressed', 'true');
+    expect(chip('read')).toHaveAttribute('aria-pressed', 'true');
     expect(await screen.findByText('1 / 2')).toBeInTheDocument();
     expect(courseState()?.sessionCount).toBe(1);
   });
@@ -494,16 +479,16 @@ describe('across a course switch', () => {
   }
 
   it('offers each course its own position, and never the other’s', async () => {
-    // hi-mr, left mid-Produce on the second card.
+    // hi-mr, left mid-Read on the second card, with the first one marked.
     await renderHub();
     await begin();
-    fireEvent.click(chip('produce'));
-    await screen.findByText(strings('revealLabel'));
-    answer('mark.gotIt');
-    await screen.findByText(sentence(1).cue);
+    await screen.findByText(sentence(0).display);
+    mark('mark.gotIt');
+    fireEvent.click(screen.getByRole('button', { name: strings('read.next') }));
+    await screen.findByText(sentence(1).display);
     fireEvent.click(screen.getByRole('button', { name: 'Pause session' }));
     await screen.findByText(strings('practice.hubTitle'));
-    const hiMr = { phase: 'produce', idx: 1, queue: [`${M1}-S01`, `${M1}-S02`] };
+    const hiMr = { phase: 'read', idx: 1, queue: [`${M1}-S01`, `${M1}-S02`] };
     expect(courseState()?.session).toEqual(hiMr);
 
     // …then away to the other course, which has its own session and its own first card.
@@ -528,11 +513,11 @@ describe('across a course switch', () => {
     await switchTo(COURSE);
     expect(courseState()?.session).toEqual(hiMr);
     expect(courseState(OTHER)?.session).toEqual(enAr);
-    expect(screen.getByText(resumeLine('produce', 2, 2))).toBeInTheDocument();
+    expect(screen.getByText(resumeLine('read', 2, 2))).toBeInTheDocument();
 
     fireEvent.click(control('practice.resumeContinue'));
 
-    expect(chip('produce')).toHaveAttribute('aria-pressed', 'true');
+    expect(chip('read')).toHaveAttribute('aria-pressed', 'true');
     expect(await screen.findByText('2 / 2')).toBeInTheDocument();
     // One session each, and neither switch counted as one (Invariant 8).
     expect(courseState()?.sessionCount).toBe(1);
@@ -583,11 +568,9 @@ describe('resumePlan', () => {
       { sentenceId: 'L1-M1-S01', box: 1 as const, dueInSessions: 0 },
       { sentenceId: 'L1-M1-S02', box: 2 as const, dueInSessions: 4 },
     ],
-    moduleSentenceIds: RUNG,
-    production: { 'L1-M2-S01': 2, 'L1-M2-S02': 0, 'L1-M2-S03': 1 },
   };
 
-  it('keeps a review snapshot’s own queue, and plans Produce fresh', () => {
+  it('keeps a review snapshot’s own queue rather than re-deriving it', () => {
     const snapshot: SessionSnapshot = {
       phase: 'review',
       idx: 1,
@@ -598,35 +581,28 @@ describe('resumePlan', () => {
 
     // Both cards, including the one that is no longer due — it was in the session being resumed.
     expect(plan.reviewIds).toEqual(['L1-M1-S01', 'L1-M1-S02']);
-    // Produce has no stored order to honour: least-produced first, as of now.
-    expect(plan.produceIds).toEqual(['L1-M2-S02', 'L1-M2-S03', 'L1-M2-S01']);
   });
 
-  it('keeps a produce snapshot’s own queue, and plans Review fresh', () => {
-    const snapshot: SessionSnapshot = { phase: 'produce', idx: 2, queue: [...RUNG] };
-
-    const plan = resumePlan(snapshot, INPUT);
-
-    expect(plan.produceIds).toEqual(RUNG);
-    expect(plan.reviewIds).toEqual(['L1-M1-S01']);
-  });
-
-  it('plans both fresh for a read snapshot — Read walks the rung itself', () => {
+  /**
+   * Read's position is measured against the rung's own sentence list, which no plan carries and
+   * nothing between two sessions can reorder (#349) — so the plan a read snapshot comes back with
+   * is a freshly derived Review queue, and the snapshot's own queue is not in it.
+   */
+  it('plans Review fresh for a read snapshot — Read walks the rung itself', () => {
     const snapshot: SessionSnapshot = { phase: 'read', idx: 1, queue: [...RUNG] };
 
     const plan = resumePlan(snapshot, INPUT);
 
-    expect(plan.reviewIds).toEqual(['L1-M1-S01']);
-    expect(plan.produceIds).toEqual(['L1-M2-S02', 'L1-M2-S03', 'L1-M2-S01']);
+    expect(plan).toEqual({ reviewIds: ['L1-M1-S01'] });
   });
 
   it('copies the snapshot’s queue rather than handing it out', () => {
-    const snapshot: SessionSnapshot = { phase: 'produce', idx: 0, queue: [...RUNG] };
+    const snapshot: SessionSnapshot = { phase: 'review', idx: 0, queue: ['L1-M1-S01'] };
 
     const plan = resumePlan(snapshot, INPUT);
-    plan.produceIds.push('L1-M2-S04');
+    plan.reviewIds.push('L1-M1-S09');
 
-    expect(snapshot.queue).toEqual(RUNG);
+    expect(snapshot.queue).toEqual(['L1-M1-S01']);
   });
 
   it('calls a position with no cards in it unresumable — a blank card is not a place', () => {

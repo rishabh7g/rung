@@ -42,7 +42,7 @@ import { l2Written } from '../course/manifest.ts';
 import { useStrings } from '../course/strings.ts';
 import { useModule } from '../course/content.ts';
 import { ContentErrorScreen } from '../course/BootScreens.tsx';
-import { PRODUCTIONS_PER_SENTENCE } from '../engine/exit.ts';
+import { MARKS_PER_SENTENCE } from '../engine/exit.ts';
 import { deriveStatuses, rungStage } from '../engine/progression.ts';
 import { useAppStore } from '../state/store.ts';
 import { PRACTICE_PATH, HOME_PATH } from '../shell/routes.tsx';
@@ -150,10 +150,13 @@ function ModuleList({ moduleId }: ModuleListProps) {
   if (!ready || module.data === null) return <section className={styles.module} aria-busy="true" />;
 
   const sentences = module.data.sentences;
-  const produced = sentences.reduce(
-    (total, sentence) => total + (production?.[sentence.id] ?? 0),
-    0,
-  );
+  // Sentences MARKED, not marks made: the counters have no ceiling (`recordProduction` only adds),
+  // so summing them would let one sentence read four times carry the module past a total that
+  // means "every sentence is done". Capping each at the gate is what keeps `n / 10` an answer to
+  // "how much of this rung is read through".
+  const marked = sentences.filter(
+    (sentence) => (production?.[sentence.id] ?? 0) >= MARKS_PER_SENTENCE,
+  ).length;
 
   return (
     <section className={styles.module}>
@@ -165,11 +168,12 @@ function ModuleList({ moduleId }: ModuleListProps) {
             {module.data.title}
           </h2>
         </div>
-        {/* Counts, never time (Invariant 2): got-its across the module, out of the two per
-            sentence the exit ritual asks for (`PRODUCTIONS_PER_SENTENCE`, the same constant the
-            exit rule reads). Written by Produce got-its; read here. */}
+        {/* Counts, never time (Invariant 2): got-its across the module, out of the one per
+            sentence the exit ritual asks for (`MARKS_PER_SENTENCE`, the same constant the exit
+            rule reads — one since #349, so this reads `n / 10` where it read `n / 20`). Written
+            by Read got-its; read here. */}
         <p className={styles.count}>
-          {produced} / {sentences.length * PRODUCTIONS_PER_SENTENCE}
+          {marked} / {sentences.length * MARKS_PER_SENTENCE}
         </p>
       </div>
 

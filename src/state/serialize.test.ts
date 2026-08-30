@@ -14,11 +14,11 @@
  *   4. **Older documents go through the store's `migrate`, and Invariant 4 holds.** A v5
  *      payload imports as the same wrap the rehydrate path would produce (one migration, not a
  *      copy — asserted over `serialize.ts`'s source too), and no string vocabulary in the
- *      shape accepts learner-authored text — walked off `STATE_V9` itself, so a field added to
+ *      shape accepts learner-authored text — walked off `STATE_V10` itself, so a field added to
  *      the shape is a field added to this assertion.
  */
 import { describe, expect, it } from 'vitest';
-import { ImportError, STATE_V9, exportState, importState } from './serialize.ts';
+import { ImportError, STATE_V10, exportState, importState } from './serialize.ts';
 import { emptyCourseState, migrate } from './store.ts';
 import type { AppState, CourseState, LeitnerBox, SessionPhase } from './types.ts';
 
@@ -31,7 +31,7 @@ import type { AppState, CourseState, LeitnerBox, SessionPhase } from './types.ts
  */
 function richState(): AppState {
   return {
-    stateVersion: 9,
+    stateVersion: 10,
     activeCourse: 'hi-mr',
     courses: {
       'hi-mr': {
@@ -46,7 +46,7 @@ function richState(): AppState {
         ],
         sessionCount: 14,
         studied: { 'L1-M3': true, 'L1-M4': false },
-        session: { phase: 'produce', idx: 4, queue: ['L1-M3-S01', 'L1-M3-S02'] },
+        session: { phase: 'read', idx: 4, queue: ['L1-M3-S01', 'L1-M3-S02'] },
       },
       'en-ar': emptyCourseState(),
     },
@@ -70,7 +70,7 @@ const F7_EXAMPLE = `{
       "production": { "L1-M3-S01": 2 },
       "reviewQueue": [ { "sentenceId": "L1-M1-S03", "box": 2, "dueInSessions": 1 } ],
       "sessionCount": 14, "studied": { "L1-M3": true },
-      "session": { "phase": "produce", "idx": 4, "queue": ["L1-M3-S01", "L1-M3-S02"] }
+      "session": { "phase": "read", "idx": 4, "queue": ["L1-M3-S01", "L1-M3-S02"] }
     },
     "en-ar": { "modules": {}, "production": {}, "reviewQueue": [], "sessionCount": 0, "studied": {}, "session": null }
   },
@@ -153,7 +153,7 @@ function generateState(rand: () => number): AppState {
         rand() < 0.4
           ? null
           : {
-              phase: pick<SessionPhase>(['review', 'read', 'produce']),
+              phase: pick<SessionPhase>(['review', 'read']),
               idx: int(8),
               queue: Array.from({ length: int(5) }, sentenceId),
             },
@@ -165,7 +165,7 @@ function generateState(rand: () => number): AppState {
   for (const courseId of courseIds.slice(0, int(3))) courses[courseId] = course();
 
   return {
-    stateVersion: 9,
+    stateVersion: 10,
     activeCourse: rand() < 0.2 ? '' : pick(courseIds),
     courses,
     settings: {
@@ -205,16 +205,16 @@ describe('a v8 backup predates the user language', () => {
   it('imports cleanly and lands with the language unset', () => {
     const state = importState(V8);
 
-    expect(state.stateVersion).toBe(9);
+    expect(state.stateVersion).toBe(10);
     expect(state.settings.userLang).toBe('');
     // And nothing they earned is lost on the way through.
     expect(state.courses['hi-mr']?.sessionCount).toBe(3);
   });
 
-  it('re-exports as v9, so the next import needs no migration at all', () => {
+  it('re-exports at the current version, so the next import needs no migration at all', () => {
     const round = importState(exportState(importState(V8)));
 
-    expect(round.stateVersion).toBe(9);
+    expect(round.stateVersion).toBe(10);
     expect(round.settings.userLang).toBe('');
   });
 
@@ -267,7 +267,7 @@ describe('the exported file', () => {
     const file = exportState(richState());
     const parsed = JSON.parse(file) as Record<string, unknown>;
 
-    expect(file.startsWith('{\n  "stateVersion": 9,\n  "activeCourse"')).toBe(true);
+    expect(file.startsWith('{\n  "stateVersion": 10,\n  "activeCourse"')).toBe(true);
     expect(Object.keys(parsed)).toEqual(['stateVersion', 'activeCourse', 'courses', 'settings']);
     expect(Object.keys(hiMr(parsed))).toEqual([
       'modules',
@@ -325,10 +325,10 @@ describe('a bad file is refused with a reason that names a path', () => {
     );
   });
 
-  it('a newer document — v10 says update rung, not import less', () => {
-    const error = refusal((parsed) => (parsed['stateVersion'] = 10));
+  it('a newer document — v11 says update rung, not import less', () => {
+    const error = refusal((parsed) => (parsed['stateVersion'] = 11));
 
-    expect(error.reason).toContain('v10');
+    expect(error.reason).toContain('v11');
     expect(error.reason).toContain('update rung');
   });
 
@@ -432,7 +432,7 @@ describe('older documents route through the store migration', () => {
     const state = importState(JSON.stringify(v6));
 
     expect(state).toEqual(migrate(v6, 6));
-    expect(state.stateVersion).toBe(9);
+    expect(state.stateVersion).toBe(10);
     expect(state.settings).toEqual({ elapsedTickEnabled: false, userLang: '' });
   });
 
@@ -446,7 +446,7 @@ describe('older documents route through the store migration', () => {
       "production": { "L1-M3-S01": 2 },
       "reviewQueue": [ { "sentenceId": "L1-M1-S03", "box": 2, "dueInSessions": 1 } ],
       "sessionCount": 14, "studied": { "L1-M3": true },
-      "session": { "phase": "produce", "idx": 4, "queue": ["L1-M3-S01", "L1-M3-S02"] }
+      "session": { "phase": "read", "idx": 4, "queue": ["L1-M3-S01", "L1-M3-S02"] }
     }
   },
   "settings": { "elapsedTickEnabled": false, "notebookInvitationDismissed": true }
@@ -456,11 +456,11 @@ describe('older documents route through the store migration', () => {
 
     // A learner's file outlives the app that wrote it: everything they earned comes back, and
     // the one field v8 retired is left behind by the migration rather than refused by `object`.
-    expect(state.stateVersion).toBe(9);
+    expect(state.stateVersion).toBe(10);
     expect(state.settings).toEqual({ elapsedTickEnabled: false, userLang: '' });
     expect(state.courses['hi-mr']?.sessionCount).toBe(14);
     expect(state.courses['hi-mr']?.session).toEqual({
-      phase: 'produce',
+      phase: 'read',
       idx: 4,
       queue: ['L1-M3-S01', 'L1-M3-S02'],
     });
@@ -504,10 +504,10 @@ describe('Invariant 4 — no field can hold learner-authored text', () => {
 
   it('every string vocabulary in the shape rejects learner text', () => {
     // Walked off the shape itself: a field added to `types.ts` reaches the export only through
-    // `STATE_V9`, and its vocabulary lands in this list without this test changing.
-    expect(STATE_V9.strings.length).toBeGreaterThan(0);
+    // `STATE_V10`, and its vocabulary lands in this list without this test changing.
+    expect(STATE_V10.strings.length).toBeGreaterThan(0);
 
-    for (const vocabulary of STATE_V9.strings) {
+    for (const vocabulary of STATE_V10.strings) {
       for (const text of learnerText) {
         expect(
           vocabulary.accepts(text),

@@ -404,7 +404,7 @@ const REVIEW_ITEM = object<ReviewItem>('a review item', {
 
 /** The in-flight session: a POSITION, never the cards — `{phase, idx, queue}` and nothing more. */
 const SESSION_SNAPSHOT = object<SessionSnapshot>('a session snapshot', {
-  phase: enumOf<SessionPhase>(['review', 'read', 'produce']),
+  phase: enumOf<SessionPhase>(['review', 'read']),
   idx: COUNT,
   queue: list(id(VOCABULARY.sentenceId)),
 });
@@ -429,7 +429,7 @@ const SETTINGS = object<Settings>('the settings', {
  * written in. Exported so `serialize.test.ts` can walk the shape itself: the vocabularies below
  * are Invariant 4's assertion, and a test that re-declared them would be asserting its own list.
  */
-export const STATE_V9 = object<AppState>('the exported rung state', {
+export const STATE_V10 = object<AppState>('the exported rung state', {
   stateVersion: literal(STATE_VERSION),
   activeCourse: id(ACTIVE_COURSE),
   courses: record(VOCABULARY.courseId, COURSE),
@@ -447,7 +447,7 @@ export const STATE_V9 = object<AppState>('the exported rung state', {
  * same bytes — so a diff between yesterday's file and today's shows what the learner DID.
  */
 export function exportState(state: AppState): string {
-  return JSON.stringify(STATE_V9.write(state), null, 2);
+  return JSON.stringify(STATE_V10.write(state), null, 2);
 }
 
 /* ------------------------------------------------------------------------------ import */
@@ -482,7 +482,7 @@ export function importState(json: string): AppState {
 
   const version = versionOf(parsed);
 
-  if (version === STATE_VERSION) return STATE_V9.read(parsed, DOCUMENT);
+  if (version === STATE_VERSION) return STATE_V10.read(parsed, DOCUMENT);
 
   if (version > STATE_VERSION) {
     throw new ImportError(
@@ -498,12 +498,12 @@ export function importState(json: string): AppState {
 
   // The store's migration, not a second one: a file and a rehydrate must never disagree about
   // what a v5 document means (#82's contract, and `serialize.test.ts` proves there is one of it).
-  return STATE_V9.read(migrate(parsed, version), DOCUMENT);
+  return STATE_V10.read(migrate(parsed, version), DOCUMENT);
 }
 
 /** The version the file was written at — the one field read before anything else is trusted. */
 function versionOf(parsed: unknown): number {
-  if (!isRecord(parsed)) return fail(DOCUMENT, STATE_V9.expected, parsed);
+  if (!isRecord(parsed)) return fail(DOCUMENT, STATE_V10.expected, parsed);
 
   const version = parsed['stateVersion'];
   if (typeof version !== 'number' || !Number.isInteger(version)) {

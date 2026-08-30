@@ -74,23 +74,20 @@ export const STRINGS_KEYS = [
   'read.hideCue',
   'read.prev',
   'read.next',
-  'read.toProduce',
+  'read.finish',
   'practice.hubTitle',
   'practice.hubReview',
   'practice.hubRead',
-  'practice.hubProduce',
   'practice.beginReview',
   'practice.beginRead',
   'practice.phase.review',
   'practice.phase.read',
-  'practice.phase.produce',
   'practice.nothingDue',
   'practice.upNext',
   'practice.summaryTitle',
   'practice.summaryReviewed',
   'practice.summaryGotIt',
-  'practice.summaryProduced',
-  'practice.summaryAtTwo',
+  'practice.summaryMarked',
   'practice.summaryToRitual',
   'practice.backToLadder',
   'practice.resumeLine',
@@ -201,7 +198,7 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'mark.missed': [],
   /**
    * The "why" panel (#94) — the three words the shared expansion says in its own right, on every
-   * revealed surface (Review, Produce, Comprehension). The toggle carries two labels because it
+   * revealed surface (Review, Read, Comprehension). The toggle carries two labels because it
    * says what it will DO, and the prototype writes both ("why" / "hide why"); `aria-expanded`
    * states the same thing to a screen reader, which is why the words may differ per course
    * without the control changing meaning.
@@ -233,10 +230,10 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    * first one is not left guessing.
    *
    * One per surface, and each is the fact that surface cannot show by itself: `recall` that the
-   * recall happens outside the app (the reveal card), `production` that two writes per sentence
-   * open the rung's exit ritual (the rung card's dots row), `check` that the checking is the
-   * learner's own (the ritual's deliberately empty step 2, whose emptiness [D18] is the statement
-   * — the hint names it once rather than explaining it forever).
+   * recall happens outside the app (the reveal card), `production` that one marked sentence apiece
+   * opens the rung's exit ritual (the rung card's dots row). There was a third, `check` — that the
+   * checking is the learner's own — on the ritual's deliberately empty step 2; #348 retired that
+   * step and the key with it, because a hint whose surface is gone is a thing said nowhere.
    *
    * None interpolates: the counts they are about are drawn beside them, and a hint that carried a
    * number would be a status line rather than a thing said once.
@@ -252,10 +249,10 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    * thing to a screen reader.
    *
    * `read.prev`/`read.next` are deliberately NOT `sentence.prev`/`sentence.next`: that pager walks
-   * a module while browsing, this one walks a rung mid-session and its last step leaves the phase
-   * (`read.toProduce` — "on to producing", the prototype's own label for it). A course may well
-   * word the first two the same; sharing the key would mean it never could word them differently
-   * — the call #93 made for `mark.next` and #94 for `why.openFull`.
+   * a module while browsing, this one walks a rung mid-session and its last step ends it
+   * (`read.finish`). A course may well word the first two the same; sharing the key would mean it
+   * never could word them differently — the call #93 made for `mark.next` and #94 for
+   * `why.openFull`.
    *
    * None of them interpolates: the position is the `3 / 10` count the shell renders, not a
    * sentence.
@@ -264,36 +261,39 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'read.hideCue': [],
   'read.prev': [],
   'read.next': [],
-  'read.toProduce': [],
+  /**
+   * Read's last step (#349). It used to read `read.toProduce` — "on to producing" — because the
+   * phase handed over to Produce; with that phase retired, reading the rung through IS the end of
+   * the session, and the label says so. The issue asked for an existing key reused; none says
+   * "this ends here", and a last card that ends a session in silence is worse than one key.
+   */
+  'read.finish': [],
   /**
    * The session (#96) — the Practice hub, the phase chips and the summary (PRD §8 F4, PRD-design
-   * §6.3). Sixteen keys, and the rule that put every one of them here is the same as the module
+   * §6.3). Eighteen keys, and the rule that put every one of them here is the same as the module
    * list's: the prototype writes this screen in English for every course, which is what a
    * prototype does and what a product cannot.
    *
    * **The counts interpolate; nothing else does.** `{count}` is the only new placeholder in the
-   * canonical set, and it appears in the three hub lines and the four summary lines because a
+   * canonical set, and it appears in the two hub lines and the three summary lines because a
    * number's place in a sentence is the language's business, not the shell's — a right-aligned
    * value column beside a label (the prototype's summary rows) would fix it at the end of every
    * line in every course. **They are counts, never time** (Invariant 2): the summary says how many
    * cards were seen, never how long they took, and the gentle elapsed tick — the one sanctioned
    * time affordance, numberless by construction — is #98's and has no string at all.
    *
-   * `practice.phase.*` are the three soft chips AND the hub's three rows: one name per phase, used
-   * wherever the phase is named, because they are the same three things.
+   * `practice.phase.*` are the soft chips AND the hub's rows: one name per phase, used wherever the
+   * phase is named, because they are the same two things.
    */
   'practice.hubTitle': [],
   /** How many due reviews this session will serve — 0 on the first rung. */
   'practice.hubReview': ['{count}'],
   /** How many sentences the rung holds. */
   'practice.hubRead': ['{count}'],
-  /** How many sentences the Produce phase will serve — the rung's, least-produced first. */
-  'practice.hubProduce': ['{count}'],
   'practice.beginReview': [],
   'practice.beginRead': [],
   'practice.phase.review': [],
   'practice.phase.read': [],
-  'practice.phase.produce': [],
   /** The Review chip's honest answer when nothing is due — the empty state, not an error. */
   'practice.nothingDue': [],
   /**
@@ -302,8 +302,8 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    * it (`practice.phase.*`, the same one the chips and the resume line use), because a phase is
    * named the same wherever it is named.
    *
-   * Read's pager says its own hand-over on its last step (`read.toProduce`), which is why this is
-   * the Review card's line and not a third copy of the same idea.
+   * Read's pager says its own end on its last step (`read.finish`), which is why this is the
+   * Review card's line and not a second copy of the same idea.
    */
   'practice.upNext': ['{phase}'],
   'practice.summaryTitle': [],
@@ -311,10 +311,8 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'practice.summaryReviewed': ['{count}'],
   /** How many of those were a got-it. */
   'practice.summaryGotIt': ['{count}'],
-  /** Produce got-its counted this session — the number that reached the counters. */
-  'practice.summaryProduced': ['{count}'],
-  /** How many of the rung's sentences now stand at ≥ 2×, out of how many there are. */
-  'practice.summaryAtTwo': ['{count}', '{total}'],
+  /** How many of the rung's sentences are marked through, out of how many there are (#349). */
+  'practice.summaryMarked': ['{count}', '{total}'],
   /**
    * The way on when that count is the whole rung (#315) — the exit ritual, offered at the one
    * moment the learner has just earned it.

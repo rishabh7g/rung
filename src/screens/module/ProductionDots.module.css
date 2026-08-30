@@ -1,19 +1,11 @@
 /* Layout only, tokens only (docs/design-contract.md rule 1).
-   Geometry follows design/Rung App v3.3.dc.html → Module list → the dot pair on every card. */
+   Geometry follows design/Rung App v3.3.dc.html → Module list → the dot on every card. */
 
-/* Stacked, not side by side: the pair sits in the card's top-right corner beside the chevron. */
+/* The wrapper survives the pair it used to lay out (#349 left one dot): it is what holds the dot
+   out of the card's flex flow, in the top-right corner beside the chevron. */
 .dots {
   display: flex;
   flex: none;
-  flex-direction: column;
-  gap: var(--space-1);
-}
-
-/* Along the baseline instead — the Practice card's header row, where the prototype draws the pair
-   beside the `PRODUCE · SENTENCE 03` kicker (#96). */
-.dotsRow {
-  composes: dots;
-  flex-direction: row;
 }
 
 /* 6px squares — radius 0 like every blueprint object (design/tokens.md §3, §4). */

@@ -138,21 +138,22 @@ describe.each(STAGES)('the $stage stage', ({ stage, ctas: expected }) => {
 /* ------------------------------------------------------------- the writes, drawn (§6.1) */
 
 describe('the production dots row', () => {
-  it('draws one stacked pair per sentence off the counters, and a counts-only line', () => {
+  it('draws one dot per sentence off the counters, and a counts-only line', () => {
     const { container } = renderCard('studied', [2, 2, 1, 0, 5]);
 
-    // Five pairs = ten squares; a count above two draws the same two full dots (#88's component).
+    // Five sentences = five squares; a count above one draws the same full dot (#88's component,
+    // one apiece since #349).
     const squares = [...container.querySelectorAll('[data-state]')];
-    expect(squares).toHaveLength(10);
+    expect(squares).toHaveLength(5);
     expect(squares.filter((square) => square.getAttribute('data-state') === 'done')).toHaveLength(
-      7,
+      4,
     );
 
     // Counts only — clamped, so the line and the dots never disagree; no note, no English.
-    expect(screen.getByText('7 / 10')).toBeInTheDocument();
+    expect(screen.getByText('4 / 5')).toBeInTheDocument();
   });
 
-  it('is a drawing, not an announcement: every pair is aria-hidden', () => {
+  it('is a drawing, not an announcement: every dot is aria-hidden', () => {
     const { container } = renderCard('studied', [1, 0]);
 
     for (const pair of container.querySelectorAll('[data-state]')) {

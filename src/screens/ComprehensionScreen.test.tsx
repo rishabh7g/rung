@@ -80,17 +80,15 @@ function poolModule(size = 6, pool: PoolItem[] = poolOf(size)) {
 }
 
 /**
- * Seeds production the only way the app can: one `recordProduction` per Produce-phase got-it.
- * Two per sentence across the whole rung is exactly what `exit_available` means (PRD §8 F1) — and
- * it is what opens the ritual whose hold opens this screen.
+ * Seeds production the only way the app can: one `recordProduction` per Read-phase got-it. One per
+ * sentence across the whole rung is exactly what `exit_available` means (PRD §8 F1, #349) — and it
+ * is what opens the ritual this screen IS.
  */
 function produceRung(sentences = 2): void {
   const store = useAppStore.getState();
   store.ensureCourse(COURSE);
-  for (let round = 0; round < 2; round += 1) {
-    for (let index = 0; index < sentences; index += 1) {
-      store.recordProduction(COURSE, sentenceId(index));
-    }
+  for (let index = 0; index < sentences; index += 1) {
+    store.recordProduction(COURSE, sentenceId(index));
   }
 }
 
@@ -113,7 +111,9 @@ async function renderAt(hash: string, module: unknown): Promise<void> {
 async function walkIn(module: unknown = poolModule()): Promise<void> {
   produceRung();
   await renderAt('#/ritual', module);
-  await screen.findByRole('main');
+  // The shell's frame arrives before the rung's module does, and the guard cannot answer until it
+  // has: waiting for the item's own control is waiting for the screen to have decided.
+  await screen.findByRole('button', { name: strings('revealLabelComprehend') });
 }
 
 /* ------------------------------------------------------- the item, as the learner drives it */
@@ -176,8 +176,8 @@ beforeEach(() => {
    */
   vi.useFakeTimers({ shouldAdvanceTime: true });
   // The show-once hints (#319) are not what this file is about; seeded as already seen so the
-  // ritual's check step and the cards render the shape every assertion here was written against.
-  for (const hint of ['recall', 'production', 'check']) {
+  // cards render the shape every assertion here was written against.
+  for (const hint of ['recall', 'production']) {
     localStorage.setItem(`rung:hint:${hint}`, '1');
   }
 });
@@ -531,8 +531,8 @@ describe('nothing is stored on a failed round', () => {
     expect(after?.modules).toEqual({});
     expect(after?.reviewQueue).toEqual([]);
     expect(after?.session).toBeNull();
-    // The counters are the ones the Produce phase earned, untouched by anything here.
-    expect(after?.production).toEqual({ [sentenceId(0)]: 2, [sentenceId(1)]: 2 });
+    // The counters are the ones the Read phase earned, untouched by anything here.
+    expect(after?.production).toEqual({ [sentenceId(0)]: 1, [sentenceId(1)]: 1 });
   });
 
   /**

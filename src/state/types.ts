@@ -31,7 +31,7 @@ export type ModuleId = string;
 export type SentenceId = string;
 
 /** The persisted state's version. The store and the migration read it from here. */
-export const STATE_VERSION = 9;
+export const STATE_VERSION = 10;
 
 /**
  * A passed module. `status` is a one-member union on purpose: a module is in this map because
@@ -54,8 +54,16 @@ export interface ReviewItem {
   dueInSessions: number;
 }
 
-/** Practice phases, in the order a session serves them (PRD §8 F4). */
-export type SessionPhase = 'review' | 'read' | 'produce';
+/**
+ * Practice phases, in the order a session serves them (PRD §8 F4).
+ *
+ * **There were three** — Review, Read, Produce — until #349 retired notebook writing and with it
+ * the phase that asked the learner to say a sentence and check it. This union is a persisted
+ * value (a `SessionSnapshot` names one), so dropping a member is a schema change and not a
+ * refactor: state v10 is exactly this narrowing, and `migrate` retires a session parked in the
+ * phase that no longer exists rather than resuming it into nowhere.
+ */
+export type SessionPhase = 'review' | 'read';
 
 /**
  * The in-flight session, stored per course — what makes resume lossless after an app kill AND
@@ -74,9 +82,14 @@ export interface CourseState {
   /** Passed modules only — the ladder position. */
   modules: Record<ModuleId, ModuleProgress>;
   /**
-   * Times each sentence has been self-marked got-it in Produce. **Counters never decrement**:
+   * Times each sentence has been self-marked got-it in Read. **Counters never decrement**:
    * `recordProduction` is their one writer and its only arithmetic is `+ 1`
-   * (`productionCounters.test.ts` proves it). Every sentence at ≥ 2 is `exit_available` (F1).
+   * (`productionCounters.test.ts` proves it). Every sentence at ≥ 1 is `exit_available` (F1).
+   *
+   * The field is still called `production` because it is on disk under that name and the numbers
+   * in it are the same numbers: #349 moved WHO writes them (Produce's got-it became Read's) and
+   * WHAT they open (two marks became one), not what they count. Renaming it would be a migration
+   * of every learner's document to say the same thing in different words.
    */
   production: Record<SentenceId, number>;
   reviewQueue: ReviewItem[];
