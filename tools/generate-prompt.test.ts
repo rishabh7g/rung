@@ -2,10 +2,10 @@ import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { afterAll, describe, expect, it } from 'vitest';
-import type { CourseRow, WordIndexFile } from './content-build.ts';
+import { checkScriptMode, type CourseRow, type WordIndexFile } from './content-build.ts';
 import { COURSE_BRIEFS, NEW_WORD_CAP, type ModuleBrief } from './course-briefs.ts';
 import { generatePrompt, priorModuleId, renderPrompt } from './generate-prompt.ts';
-import { DEFAULT_CONTENT_ROOT, SCHEMA_PATH } from './validate.ts';
+import { DEFAULT_CONTENT_ROOT, REPO_ROOT, SCHEMA_PATH } from './validate.ts';
 
 /**
  * `renderPrompt` is pure, so most of this file feeds it rows/briefs/indexes directly; the
@@ -806,16 +806,16 @@ describe('COURSE_BRIEFS en-ru', () => {
   it('places each English→Russian pressure point in the module that needs it', () => {
     // M1: the present of "be" is written as nothing, and there are no articles either.
     expect(notes('L1-M1')).toMatch(/ZERO COPULA/);
-    expect(notes('L1-M1')).toContain('*Я есть студент');
+    expect(notes('L1-M1')).toContain("*Ya yest' studént");
     expect(notes('L1-M1')).toMatch(/NO ARTICLES/);
-    expect(patterns('L1-M1')).toContain('Меня зовут + name');
+    expect(patterns('L1-M1')).toContain('Menyá zovút + name');
     // M2: the question moves nothing, and the predicate carries the subject's gender.
     expect(notes('L1-M2')).toMatch(/MOVES NOTHING/);
-    expect(notes('L1-M2')).toContain('устал');
-    expect(notes('L1-M2')).toContain('устала');
+    expect(notes('L1-M2')).toContain('ustál');
+    expect(notes('L1-M2')).toContain('ustála');
     // M3: the first case ending, and negation as one word in one place.
-    expect(notes('L1-M3')).toContain('Я хочу воду');
-    expect(notes('L1-M3')).toContain('*Я хочу вода');
+    expect(notes('L1-M3')).toContain('Ya khochú vódu');
+    expect(notes('L1-M3')).toContain('*Ya khochú vodá');
     expect(notes('L1-M3')).toMatch(/NEGATION IS ONE WORD IN ONE PLACE/);
     // M4: two conjugation classes, and aspect named but not taught.
     expect(notes('L1-M4')).toMatch(/IMPERFECTIVE PRESENT/);
@@ -823,27 +823,27 @@ describe('COURSE_BRIEFS en-ru', () => {
     expect(notes('L1-M4')).toMatch(/class II/);
     // M5: gender not person, "be" reappears, aspect decided.
     expect(notes('L1-M5')).toMatch(/GENDER AND NUMBER, NOT WITH PERSON/);
-    expect(notes('L1-M5')).toContain('был · была · было · были');
+    expect(notes('L1-M5')).toContain('byl · bylá · býlo · býli');
     expect(notes('L1-M5')).toMatch(/PERFECTIVE/);
     expect(notes('L1-M5')).toMatch(/imperfective past .*DEFERRED|DEFERRED/);
     // M6: two futures, and the cross-wiring they invite.
     expect(notes('L1-M6')).toMatch(/TWO FUTURES/);
-    expect(notes('L1-M6')).toContain('*Я буду пойти');
-    expect(patterns('L1-M6')).toContain('Завтра я буду + V-inf (impf.)');
+    expect(notes('L1-M6')).toContain('*Ya búdu poytí');
+    expect(patterns('L1-M6')).toContain('Závtra ya búdu + V-inf (impf.)');
     // M7: the prepositional, the existential, and the missing dummy subject.
     expect(notes('L1-M7')).toMatch(/THE PREPOSITIONAL/);
-    expect(notes('L1-M7')).toContain('на столе');
+    expect(notes('L1-M7')).toContain('na stolé');
     expect(notes('L1-M7')).toMatch(/NO DUMMY SUBJECT/);
     // M8: numbers govern the noun, and possession has no verb.
     expect(notes('L1-M8')).toMatch(/NUMBERS GOVERN THE NOUN/);
-    expect(notes('L1-M8')).toContain('пять рублей');
+    expect(notes('L1-M8')).toContain("pyat' rubléy");
     expect(notes('L1-M8')).toMatch(/POSSESSION HAS NO VERB/);
-    expect(notes('L1-M8')).toContain('Я имею книгу');
+    expect(notes('L1-M8')).toContain('Ya iméyu knígu');
     // M9: because/so, the obligatory comma, and the dative experiencer.
-    expect(patterns('L1-M9')).toContain('потому что');
-    expect(patterns('L1-M9')).toContain('поэтому');
+    expect(patterns('L1-M9')).toContain('potomú chto');
+    expect(patterns('L1-M9')).toContain('poéhtomu');
     expect(notes('L1-M9')).toMatch(/DATIVE EXPERIENCERS/);
-    expect(notes('L1-M9')).toContain('мне нравятся книги');
+    expect(notes('L1-M9')).toContain('mne nrávyatsya knígi');
     expect(notes('L1-M9')).toMatch(/COMMA IS OBLIGATORY/);
     // M10: turns, and word order doing the article's old work.
     expect(notes('L1-M10')).toMatch(/2–3|turn/i);
@@ -851,42 +851,46 @@ describe('COURSE_BRIEFS en-ru', () => {
   });
 
   it('settles the register in a NOTE, since a prompt only ever shows an author the notes', () => {
-    // `ты` or `вы` is a choice English never makes and every addressed sentence forces. The
+    // `ty` or `vy` is a choice English never makes and every addressed sentence forces. The
     // decision is course-wide, so it has to be readable from the prompt of any module that
     // addresses somebody — M2 takes it, and M1 and M10 repeat it.
-    expect(notes('L1-M2')).toContain('вы');
+    expect(notes('L1-M2')).toContain('vy');
     expect(notes('L1-M2')).toMatch(/REGISTER, decided course-wide/);
-    expect(notes('L1-M2')).toContain('Здравствуйте');
-    expect(notes('L1-M2')).toContain('привет');
-    expect(notes('L1-M2')).toMatch(/ты .*L2’s job|ты.*is L2/);
+    expect(notes('L1-M2')).toContain('Zdrávstvuyte');
+    expect(notes('L1-M2')).toContain('privét');
+    expect(notes('L1-M2')).toMatch(/ty .*L2’s job|ty.*is L2/);
     expect(notes('L1-M1')).toMatch(/REGISTER, ratified for the whole course/);
     // The slogan and the law that replaces it.
-    expect(notes('L1-M2')).toContain('вы is just the plural of ты');
+    expect(notes('L1-M2')).toContain('vy is just the plural of ty');
     expect(notes('L1-M2')).toMatch(/BOTH the plural and the singular-polite/);
-    // And the one exemption is argued, not smuggled: `Как дела?` carries no ты/вы marking at all.
-    expect(notes('L1-M2')).toContain('Как дела?');
-    expect(notes('L1-M2')).toContain('Как у вас дела?');
+    // And the one exemption is argued, not smuggled: `Kak delá?` carries no ty/vy marking at all.
+    expect(notes('L1-M2')).toContain('Kak delá?');
+    expect(notes('L1-M2')).toContain('Kak u vas delá?');
   });
 
-  it('settles the ё policy in a NOTE, and never writes a stress mark', () => {
-    // `src/engine/surface.ts` folds case and strips edge punctuation and does NOT fold ё to е —
-    // checked against the real function in the header section, so `всё` and `все` are two keys
-    // and one word spelled both ways would be two index entries.
-    expect(notes('L1-M1')).toMatch(/Write ё wherever a word has it/);
-    expect(notes('L1-M4')).toMatch(/ё, course-wide/);
-    expect(notes('L1-M4')).toContain('вы пьёте');
-    expect(notes('L1-M5')).toContain('пошёл');
-    // Never the е-spelling of a ё-word anywhere in the briefs, starred forms included.
-    expect(allText).not.toContain('пошел');
-    // Stress is not written in normal Russian and would be a codepoint the index must match
-    // forever: no combining acute (U+0301) anywhere except the one example that names the ban.
+  /**
+   * #355 romanized the course, and this is the case that moved most. The ё policy survives in
+   * both halves — `yó` in the display, `ё` in the script — and the STRESS BAN INVERTED: the old
+   * brief forbade an acute because it would be a codepoint the index has to match forever, and
+   * the romanization marks it for exactly that reason, so a `forms` list is a stress list too.
+   */
+  it('settles the yó policy in a NOTE, and marks stress consistently', () => {
+    expect(notes('L1-M1')).toMatch(/Write yó wherever a word has it/);
+    expect(notes('L1-M4')).toMatch(/yó, course-wide/);
+    expect(notes('L1-M4')).toContain("vy p'yóte");
+    expect(notes('L1-M5')).toContain('poshyól');
+    // Never the plain-`yo` spelling of a ё-word anywhere in the briefs, starred forms included.
+    expect(allText).not.toMatch(/\bposhyol\b/);
+    // The acute is PRECOMPOSED, never `a` + U+0301: one form in the files is one form in a diff.
     expect(allText).not.toMatch(/́/);
+    // And no Cyrillic survives in a pattern or a note — the briefs teach the romanization.
+    expect(allText).not.toMatch(/[Ѐ-ӿ]/);
   });
 
   it('fixes the case plan course-wide: which case, which module, and what is deferred', () => {
     // Six cases, ten modules: the plan is a decision, not something an author discovers in M8.
     expect(notes('L1-M1')).toMatch(/ACCUSATIVE SLOT/);
-    expect(notes('L1-M1')).toContain('Я из Индии');
+    expect(notes('L1-M1')).toContain('Ya iz Índii');
     expect(notes('L1-M3')).toMatch(/THE FIRST CASE ENDING/);
     expect(notes('L1-M7')).toMatch(/second case ending|THE PREPOSITIONAL/);
     expect(notes('L1-M8')).toContain('genitive plural');
@@ -895,30 +899,30 @@ describe('COURSE_BRIEFS en-ru', () => {
     // says are frozen rather than quietly teaching a seventh thing.
     expect(notes('L1-M4')).toContain('frozen instrumentals');
     expect(notes('L1-M4')).toMatch(/not taught at this level/);
-    // Direction is written around with adverbs, so the в row answers for exactly two seats.
-    expect(notes('L1-M6')).toContain('домой');
-    expect(notes('L1-M5')).toContain('дома');
+    // Direction is written around with adverbs, so the v row answers for exactly two seats.
+    expect(notes('L1-M6')).toContain('domóy');
+    expect(notes('L1-M5')).toContain('dóma');
   });
 
   it('names the index seam wherever a Russian surface or homograph is decided', () => {
     // First occurrence wins, so every colliding surface has an owner and every multi-token
     // chunk is claimed by the module that keeps its parts free — the `का` bug's Russian twins.
-    expect(notes('L1-M1')).toContain('Меня зовут is a chunk');
-    expect(notes('L1-M2')).toContain('как дела');
-    expect(notes('L1-M4')).toContain('каждый день');
-    expect(notes('L1-M8')).toContain('у меня есть');
-    expect(notes('L1-M9')).toContain('потому что');
-    // The homographs. `есть` is the big one: "to eat" is excluded from L1 outright, and M7 owns
+    expect(notes('L1-M1')).toContain('Menyá zovút is a chunk');
+    expect(notes('L1-M2')).toContain('kak delá');
+    expect(notes('L1-M4')).toContain("kázhdyy den'");
+    expect(notes('L1-M8')).toContain("u menyá yest'");
+    expect(notes('L1-M9')).toContain('potomú chto');
+    // The homographs. `yest'` is the big one: "to eat" is excluded from L1 outright, and M7 owns
     // the one row that is left, written true of M8's possession seat as well.
     expect(notes('L1-M7')).toMatch(/stays out of L1 entirely/);
-    expect(notes('L1-M7')).toContain('есть means eat');
-    expect(notes('L1-M2')).toContain('нет');
-    expect(notes('L1-M9')).toMatch(/что is this module’s row/);
-    expect(notes('L1-M4')).toMatch(/this module teaches the surface в first/);
+    expect(notes('L1-M7')).toContain("yest' means eat");
+    expect(notes('L1-M2')).toContain('net');
+    expect(notes('L1-M9')).toMatch(/chto is this module’s row/);
+    expect(notes('L1-M4')).toMatch(/this module teaches the surface v first/);
     // Case shapes and gender pairs live in ONE row's forms — never a second, unreachable row.
     expect(notes('L1-M3')).toMatch(/ONE row that first taught it/);
-    expect(notes('L1-M5')).toMatch(/ONE быть row/);
-    expect(notes('L1-M6')).toMatch(/буду goes on M5’s быть row/);
+    expect(notes('L1-M5')).toMatch(/ONE byt' row/);
+    expect(notes('L1-M6')).toMatch(/búdu goes on M5’s byt' row/);
     // …and an aspect pair is two words, so it is two rows.
     expect(notes('L1-M5')).toMatch(/aspect pair is TWO WORDS, not two forms/);
   });
@@ -926,14 +930,14 @@ describe('COURSE_BRIEFS en-ru', () => {
   it('names the false slogan each module attracts and states the law instead (rule 2)', () => {
     const SLOGANS: Record<string, string> = {
       'L1-M1': 'Russian has no verb to be',
-      'L1-M2': 'вы is just the plural of ты',
+      'L1-M2': 'vy is just the plural of ty',
       'L1-M3': 'the accusative is the object case',
       'L1-M4': 'the present tense is one set of endings',
       'L1-M5': 'the past is the easy tense',
-      'L1-M6': 'буду = will',
-      'L1-M7': 'есть means eat',
+      'L1-M6': 'búdu = will',
+      'L1-M7': "yest' means eat",
       'L1-M8': 'numbers are just words in front of a noun',
-      'L1-M9': 'мне нравится is Russian for I like',
+      'L1-M9': 'mne nrávitsya is Russian for I like',
       'L1-M10': 'no articles — one thing less to learn',
     };
 
@@ -944,12 +948,105 @@ describe('COURSE_BRIEFS en-ru', () => {
     expect(allNotes.match(/slogan/gi)?.length ?? 0).toBeGreaterThanOrEqual(10);
   });
 
-  it('says the language of every field, and that the script slot stays empty', () => {
-    // native scriptMode: `display` IS the Cyrillic and `script` is unused (the prompt's own
-    // Script section says the second half). What the notes have to carry is `literal`, which is
-    // this course's most useful line, and the gloss that #268's exemption does NOT reach.
+  it('says the language of every field, and where the Cyrillic lives', () => {
+    // romanized scriptMode since #355: `display` is the romanization and `script` carries the
+    // Cyrillic. What the notes have to carry is `literal`, which is this course's most useful
+    // line, and the gloss that #268's exemption does NOT reach.
     expect(notes('L1-M1')).toMatch(/literal on every sentence/);
     expect(notes('L1-M7')).toMatch(/literal earns its keep/);
+  });
+});
+
+/**
+ * The romanization scheme (#355) — the decision every en-ru module is written against.
+ *
+ * It lives in a FILE COMMENT rather than in code, because it is authoring guidance and nothing
+ * executes it; that is exactly why it needs a test. A scheme nobody can check is a scheme the
+ * next content PR quietly writes around, and the failure it causes is invisible: the word index
+ * matches surfaces verbatim and is first-occurrence-wins, so a second spelling of a word is not a
+ * typo a learner squints past — it is a word with no "why" row, or one that opens another word's.
+ */
+describe('the en-ru romanization scheme', () => {
+  const source = readFileSync(path.join(REPO_ROOT, 'tools', 'course-briefs.ts'), 'utf8');
+  // Both markers, and the end one searched FROM the start one: `### 1. The language of every
+  // field` is a heading hi-mr's section uses too, several hundred lines earlier.
+  const opens = source.indexOf('### 0. THE ROMANIZATION');
+  const scheme = source.slice(opens, source.indexOf('### 1. The language of every field', opens));
+
+  it('is stated at all, and states that it is the only one', () => {
+    expect(scheme).not.toBe('');
+    expect(scheme).toMatch(/and in\n \* no other/);
+    expect(scheme).toMatch(/FIRST OCCURRENCE WINS/);
+  });
+
+  it('decides every collision Latin letters collapse, each with its reason', () => {
+    // The list is the issue's, not a summary of it: е/э, и/ы, ь/ъ, ё, and the hushers.
+    expect(scheme).toMatch(/е \/ э/);
+    expect(scheme).toMatch(/и \/ ы/);
+    expect(scheme).toMatch(/ь \/ ъ/);
+    expect(scheme).toMatch(/ё/);
+    expect(scheme).toMatch(/ж \/ ш \/ щ \/ ч/);
+    // …and the merge the scheme deliberately MAKES, which is the one a reader would query.
+    expect(scheme).toMatch(/`й` is ALSO `y`/);
+  });
+
+  it('decides stress: that it is marked, and what that costs', () => {
+    expect(scheme).toMatch(/Stress is MARKED/);
+    expect(scheme).toMatch(/Monosyllables carry NO acute/);
+    expect(scheme).toMatch(/Every occurrence, every field/);
+    expect(scheme).toMatch(/Precomposed, not decomposed/);
+  });
+
+  it('records that it was checked against the folder rather than assumed', () => {
+    expect(scheme).toMatch(/Checked against the folder rather than assumed/);
+    // The two folding rules that actually constrain a scheme: case cannot distinguish letters,
+    // diacritics can. Both are named, because getting either backwards breaks the index.
+    expect(scheme).toMatch(
+      /nothing in this scheme may distinguish two\n \* letters by capitalisation/,
+    );
+    expect(scheme).toMatch(/Diacritics are NOT touched by the fold/);
+  });
+
+  it('carries the one-paragraph note the manifest row will take', () => {
+    expect(scheme).toMatch(/romanizationNote/);
+    expect(scheme).toMatch(/a second scheme would break resolution/);
+  });
+
+  /**
+   * The acceptance criterion that cannot be met by reading: every character the scheme can emit
+   * has to survive #354's codepoint policy. Run the check over the alphabet rather than over the
+   * regex — a policy read by eye is a policy that passes by eye.
+   */
+  it('emits only characters `checkScriptMode` admits (#354)', () => {
+    const alphabet = "a b v g d e ye zh z i y k l m n o p r s t u f kh ts ch sh shch ' eh yu ya yó";
+    const stressed = 'á é í ó ú ý';
+    const words = [
+      'menyá',
+      'zovút',
+      'Iván',
+      'éhto',
+      'khoroshó',
+      'vsyó',
+      'yeyó',
+      "yest'",
+      "p'yóte",
+      'nóvyy',
+      'pozháluysta',
+      'zdrávstvuyte',
+      'potomú chto',
+    ];
+    const module = {
+      sentences: [
+        {
+          display: `${alphabet} ${stressed}`,
+          deconstruction: { words: [{ display: 'kníga', forms: words }] },
+          variations: [],
+        },
+      ],
+      comprehensionPool: words.map((display) => ({ display })),
+    } as unknown as Parameters<typeof checkScriptMode>[0];
+
+    expect(checkScriptMode(module, 'romanized').errors).toEqual([]);
   });
 });
 
