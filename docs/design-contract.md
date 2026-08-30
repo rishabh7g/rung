@@ -102,6 +102,58 @@ the notch's strip genuinely does substitute for its top padding.
 The `0px` inside the `env()` fallback is the one place a `px` literal is not a design decision —
 `src/styleContract.test.ts` exempts a zero length, and only a zero, for that reason.
 
+## Divergence — kickers in Devanagari (2026-08-30, #351)
+
+`design/tokens.css` defines both kicker slots on `--font-heading`: `--text-kicker` is
+`600 11px/1.2 "Barlow Condensed", system-ui, sans-serif` and `--text-kicker-sm` the same at 10px.
+That was correct while the kickers were English shell furniture, which the copy freeze (#71) said
+they were and design/tokens.md §5 still prints in English (`"M3 · CURRENT RUNG"`).
+
+#351 made seven of them course copy: the Ladder's position line, the rung card's current-rung
+kicker, the level strip's cells, the bottom nav's tab labels, the Verdict's kicker and the four
+Settings section heads. In `hi-mr` and `hi-en` those strings are Devanagari — and Barlow Condensed
+carries no Devanagari at all, so the stack falls through to `system-ui`. That is tofu in a
+headless browser and an arbitrary system face on a phone, and it is flatly against
+design/tokens.md §2: **"`--font-devanagari` Mukta 400–700 — all Devanagari"**.
+
+`src/styles/tokenOverrides.css` inserts Mukta into both stacks, before the generics:
+
+```
+--font-kicker:    'Barlow Condensed', 'Mukta', system-ui, sans-serif;
+--text-kicker:    600 11px/1.2 var(--font-kicker);
+--text-kicker-sm: 600 10px/1.2 var(--font-kicker);
+```
+
+It is a NAMED role rather than two literal stacks, so the two slots cannot drift apart and
+`src/fonts.test.ts`'s `familiesByRole()` — which reads `--font-*` out of both sheets — sees it the
+way it sees every other family. The weight it asks Mukta for is 600, which the bundle already
+carries: `--text-l2-card` and `--text-l2-list` render Mukta 600 today, so this adds a use of an
+existing cut rather than a cut.
+
+Three things about the shape of that fix:
+
+* **Before the generics, not appended after them.** CSS font fallback is per glyph, and a generic
+  family answers for every glyph there is: a stack ending `…, system-ui, sans-serif, 'Mukta'`
+  would never reach the bundled face, because `system-ui` would have supplied a Devanagari glyph
+  first. `--font-devanagari`'s own override has the same shape for the same reason
+  (`docs/04-font-notes.md` §9).
+* **Barlow Condensed stays first**, so every Latin glyph it has still comes from it. The hi-*
+  position line is `Level {level} · {total} में से {passed}` — Latin numerals and a Latin word
+  beside Devanagari — and per-glyph fallback is what lets one line be set in two faces rather than
+  forcing the whole thing into one.
+* **The size does not move.** The body-text floor below deliberately excludes these two slots, on
+  the argument that the floor is about prose a learner reads rather than a tracked label. That
+  argument does not change because the label's WORDS are now the course's: a nav tab is a nav tab
+  in every language, and raising it to the 18px Devanagari body floor would rebuild the bottom bar
+  and the level strip around a type decision neither screen asked for. The accepted consequence is
+  that Devanagari renders below `--devanagari-min-size` in these seven places — narrowly, at label
+  scale, and never in prose.
+
+`--kicker-tracking` and `text-transform: uppercase` are left alone. Uppercasing is a no-op on
+Devanagari, and the tracking is an aesthetic cost at label size rather than a correctness one; a
+per-script tracking rule is a bigger design question than this fix, and it is flagged rather than
+answered here.
+
 ## Divergence — body-text floor (2026-08-14, #252)
 
 `design/tokens.css` sets four body-role sizes below the house UI standard's floor:
