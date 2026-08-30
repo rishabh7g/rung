@@ -69,6 +69,20 @@ const HI_EN: CourseRow = {
   fixture: true,
 };
 
+/** The sixth course (#332): English L1, Italian L2 — en-es's nearest sibling, still a fixture. */
+const EN_IT: CourseRow = {
+  id: 'en-it',
+  l1: 'English',
+  l2: 'Italian',
+  l1Tag: 'en',
+  l2Tag: 'it',
+  l2Dir: 'ltr',
+  pairLabel: 'english → italian',
+  scriptMode: 'native',
+  dir: 'ltr',
+  fixture: true,
+};
+
 /** A row for a course with no brief at all — the CLI's "briefed so far" branch needs one. */
 const UNBRIEFED: CourseRow = {
   id: 'en-ja',
@@ -130,6 +144,7 @@ const BRIEFED_LEVELS: Readonly<
   'en-es': [{ level: 'L1', firstBound: 5, lastBound: 8 }],
   'en-ar': [{ level: 'L1', firstBound: 5, lastBound: 8 }],
   'hi-en': [{ level: 'L1', firstBound: 5, lastBound: 8 }],
+  'en-it': [{ level: 'L1', firstBound: 5, lastBound: 8 }],
 };
 
 /** Every briefed course answers the same two structural questions, so they are asked once. */
@@ -406,6 +421,98 @@ describe('COURSE_BRIEFS en-ar', () => {
   });
 });
 
+describe('COURSE_BRIEFS en-it', () => {
+  const briefs = COURSE_BRIEFS['en-it'];
+  const allText = Object.values(briefs ?? {})
+    .map((brief) => [...brief.patterns, ...brief.notes].join(' '))
+    .join(' ');
+
+  it('places each English→Italian pressure point in the module that needs it', () => {
+    expect(briefs?.['L1-M1']?.notes.join(' ')).toMatch(/pro-drop/i);
+    expect(briefs?.['L1-M1']?.notes.join(' ')).toContain('piacere');
+    expect(briefs?.['L1-M1']?.patterns.join(' ')).toContain('Mi chiamo + name');
+    expect(briefs?.['L1-M2']?.notes.join(' ')).toMatch(/rising voice|intonation/i);
+    expect(briefs?.['L1-M2']?.notes.join(' ')).toMatch(/no do-support/i);
+    expect(briefs?.['L1-M3']?.notes.join(' ')).toContain('non');
+    expect(briefs?.['L1-M3']?.notes.join(' ')).toMatch(/BARE infinitive/);
+    expect(briefs?.['L1-M4']?.notes.join(' ')).toMatch(/ONE Italian present/);
+    expect(briefs?.['L1-M5']?.notes.join(' ')).toMatch(/interference/i);
+    expect(briefs?.['L1-M5']?.notes.join(' ')).toContain('passato prossimo');
+    expect(briefs?.['L1-M5']?.notes.join(' ')).toMatch(/participle AGREES with the subject/);
+    expect(briefs?.['L1-M6']?.notes.join(' ')).toContain('futuro semplice');
+    expect(briefs?.['L1-M7']?.patterns.join(' ')).toContain('Ci sono');
+    expect(briefs?.['L1-M8']?.notes.join(' ')).toMatch(/INVARIABLE/);
+    expect(briefs?.['L1-M9']?.patterns.join(' ')).toContain('perché');
+    expect(briefs?.['L1-M9']?.patterns.join(' ')).toContain('quindi');
+    expect(briefs?.['L1-M9']?.notes.join(' ')).toContain('ho fame');
+    expect(briefs?.['L1-M10']?.notes.join(' ')).toMatch(/2–3|turn/i);
+  });
+
+  /**
+   * Each module names the false-but-memorable slogan it will attract and states the law that
+   * replaces it (the header's rule 2, learned on hi-mr's M5). These are the ten laws, one per
+   * module, and a brief that lost one would let the slogan back into a prompt.
+   */
+  it('names the slogan each module attracts, and the law replacing it', () => {
+    expect(briefs?.['L1-M1']?.notes.join(' ')).toContain('-o is masculine, -a is feminine');
+    expect(briefs?.['L1-M1']?.notes.join(' ')).toContain('piace means like');
+    expect(briefs?.['L1-M2']?.notes.join(' ')).toMatch(/optional emphasis/);
+    expect(briefs?.['L1-M3']?.notes.join(' ')).toContain('Add -s for the plural');
+    expect(briefs?.['L1-M4']?.notes.join(' ')).toMatch(/\*sto mangiare/);
+    expect(briefs?.['L1-M5']?.notes.join(' ')).toContain('Verbs of motion take essere');
+    expect(briefs?.['L1-M6']?.notes.join(' ')).toMatch(
+      /You need the future tense to talk about the future/,
+    );
+    expect(briefs?.['L1-M7']?.notes.join(' ')).toMatch(/c'è means there is\/are/);
+    expect(briefs?.['L1-M8']?.notes.join(' ')).toMatch(/quanto is how much and quanti is how many/);
+    expect(briefs?.['L1-M9']?.notes.join(' ')).toMatch(/perché means why/);
+    expect(briefs?.['L1-M10']?.notes.join(' ')).toContain('You must write the subject pronoun');
+  });
+
+  it('settles the register in a NOTE, since a prompt only ever shows an author the notes', () => {
+    // tu course-wide, Lei in no display string: the decision itself is #333's deliverable, and
+    // a prompt carries it only if it is in the notes.
+    expect(briefs?.['L1-M1']?.notes.join(' ')).toMatch(/L1 speaks tu/);
+    expect(briefs?.['L1-M1']?.notes.join(' ')).toMatch(/NO display string/);
+    expect(briefs?.['L1-M2']?.notes.join(' ')).toContain('come stai?');
+    expect(briefs?.['L1-M2']?.notes.join(' ')).toMatch(/never come sta\?/);
+    // The one module where the decision is most likely to be argued says why it holds anyway.
+    expect(briefs?.['L1-M8']?.notes.join(' ')).toMatch(/REGISTER/);
+    expect(briefs?.['L1-M8']?.notes.join(' ')).toMatch(/no Lei form in any display/);
+  });
+
+  it('names the index seam wherever an Italian homograph or elision is decided', () => {
+    // First occurrence wins and an inner apostrophe never splits (`src/engine/surface.ts`), so
+    // every colliding surface and every elided one has an owning module named in the notes.
+    expect(briefs?.['L1-M1']?.notes.join(' ')).toContain('sono is ONE row');
+    expect(briefs?.['L1-M1']?.notes.join(' ')).toContain('mi chiamo');
+    expect(briefs?.['L1-M3']?.notes.join(' ')).toContain("un po' di");
+    expect(briefs?.['L1-M4']?.notes.join(' ')).toContain('alle');
+    expect(briefs?.['L1-M5']?.notes.join(' ')).toContain('ho');
+    expect(briefs?.['L1-M6']?.notes.join(' ')).toContain('vado a Roma');
+    expect(briefs?.['L1-M7']?.notes.join(' ')).toContain("c'è");
+    expect(briefs?.['L1-M7']?.notes.join(' ')).toContain("dov'è");
+    expect(briefs?.['L1-M8']?.notes.join(' ')).toContain('per favore');
+    expect(briefs?.['L1-M9']?.notes.join(' ')).toMatch(/opens NO ho row/);
+    // The accent seam is the other half: è/e and sì/si are one keystroke apart and the index
+    // keeps them apart only because the accent is written.
+    expect(briefs?.['L1-M2']?.notes.join(' ')).toMatch(/ACCENT SEAM/);
+    expect(briefs?.['L1-M10']?.notes.join(' ')).toMatch(/ACCENT SEAM/);
+  });
+
+  it('writes one Italian orthography: straight apostrophes, and the accents actually on', () => {
+    // The briefs seed every prompt, so a sloppy example becomes sloppy content. A curly quote
+    // folds to a straight one on the index (`src/engine/surface.ts`) but would reach `display`
+    // as a second spelling of the same word, so no example may carry one.
+    expect(allText).not.toMatch(/[’‘]/);
+    // The accents these briefs argue about have to be written in the briefs themselves.
+    expect(allText).toContain('perché');
+    expect(allText).toContain('è');
+    expect(allText).toContain('sì');
+    expect(allText).toContain('lunedì');
+  });
+});
+
 describe('COURSE_BRIEFS hi-en', () => {
   const briefs = COURSE_BRIEFS['hi-en'];
   const notes = (id: string): string => briefs?.[id]?.notes.join(' ') ?? '';
@@ -640,7 +747,7 @@ describe('generatePrompt (CLI shape)', () => {
     mkdirSync(contentRoot, { recursive: true });
     writeFileSync(
       path.join(contentRoot, 'courses.json'),
-      JSON.stringify([HI_MR, EN_AR, HI_EN, UNBRIEFED]),
+      JSON.stringify([HI_MR, EN_AR, HI_EN, EN_IT, UNBRIEFED]),
     );
     return { contentRoot, builtRoot, promptsDir: path.join(dir, '.prompts') };
   }
@@ -733,6 +840,24 @@ describe('generatePrompt (CLI shape)', () => {
     expect(written).toContain(SCHEMA_TEXT.trimEnd());
   });
 
+  it('renders en-it L1-M1 from its own brief — the register decision reaches the author', () => {
+    const roots = tree();
+    const report = generatePrompt({ courseId: 'en-it', moduleId: 'L1-M1', ...roots });
+    expect(report.exitCode).toBe(0);
+    expect(report.lines.join('\n')).toContain('first module — empty inventory');
+    expect(report.outFile).toBe(path.join(roots.promptsDir, 'en-it-L1-M1.md'));
+    const written = readFileSync(report.outFile ?? '', 'utf8');
+    const brief = COURSE_BRIEFS['en-it']?.['L1-M1'] as ModuleBrief;
+    for (const pattern of brief.patterns) expect(written).toContain(pattern);
+    expect(written).toContain('expert Italian teacher for native English speakers');
+    expect(written).toContain('content/en-it/modules/L1-M1.json');
+    expect(written).toContain('L1 speaks tu');
+    expect(written).toContain(`"maxWordsPerSentence": ${brief.maxWordsPerSentence}`);
+    expect(written).toContain(`"newWordCap": ${NEW_WORD_CAP}`);
+    expect(written).not.toContain('Romanization scheme');
+    expect(written).toContain(SCHEMA_TEXT.trimEnd());
+  });
+
   it('fails with the content:build hint when the prior index is missing', () => {
     const roots = tree();
     const report = generatePrompt({ courseId: 'hi-mr', moduleId: 'L1-M3', ...roots });
@@ -749,7 +874,7 @@ describe('generatePrompt (CLI shape)', () => {
     const unknown = generatePrompt({ courseId: 'xx-yy', moduleId: 'L1-M1', ...roots });
     expect(unknown.exitCode).toBe(1);
     expect(unknown.lines.join('\n')).toContain('unknown course "xx-yy"');
-    expect(unknown.lines.join('\n')).toContain('hi-mr, en-ar, hi-en, en-ja');
+    expect(unknown.lines.join('\n')).toContain('hi-mr, en-ar, hi-en, en-it, en-ja');
 
     const unbriefedCourse = generatePrompt({ courseId: 'en-ja', moduleId: 'L1-M1', ...roots });
     expect(unbriefedCourse.exitCode).toBe(1);
