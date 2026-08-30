@@ -33,6 +33,7 @@ describe('loadCourses', () => {
       'hi-en',
       'en-ru',
       'en-it',
+      'en-fr',
     ]);
     expect(courses[0]).toMatchObject({
       id: 'hi-mr',
@@ -47,18 +48,19 @@ describe('loadCourses', () => {
     });
     // en-ar carries more than the nine required fields; the loader keeps them, never rejects them.
     expect(courses[2]?.romanizationNote).toMatch(/Modern Standard Arabic/);
-    // en-es graduated in #195, en-ar in #202, hi-en in #273, en-ru in #343 and en-it in #337 —
-    // a shipping course carries no fixture key at all, and today every course ships.
+    // en-es graduated in #195, en-ar in #202, hi-en in #273, en-ru in #343, en-it in #337 and
+    // en-fr in #331 — a shipping course carries no fixture key at all, and every course ships.
     expect(courses.filter((course) => course.fixture !== undefined).map((c) => c.id)).toEqual([]);
     expect(courses[3]).toMatchObject({ id: 'hi-en', l1Tag: 'hi', l2Tag: 'en' });
     expect(courses[4]).toMatchObject({ id: 'en-ru', l1Tag: 'en', l2Tag: 'ru' });
     expect(courses[5]).toMatchObject({ id: 'en-it', l1Tag: 'en', l2Tag: 'it' });
+    expect(courses[6]).toMatchObject({ id: 'en-fr', l1Tag: 'en', l2Tag: 'fr' });
   });
 
   /**
    * `--with-fixtures` and the `fixture` key are the seam a course is authored behind (PRD §17):
-   * hi-en was that course from #267 until #273 graduated it, en-ru from #338 until #343, and
-   * en-it from #332 until #337. The loader keeps the key rather than validating it away, so the
+   * hi-en was that course from #267 until #273 graduated it, en-ru from #338 until #343, en-it
+   * from #332 until #337 and en-fr from #326 until #331. The loader keeps the key rather than validating it away, so the
    * row reaches the app intact — the key is what `resolveActiveCourse` and the Settings switcher
    * never branch on, and what graduation deletes.
    *

@@ -6,14 +6,12 @@
  * against a row that has more than the nine required fields, and the newest course last. Shared,
  * so the loader test and the boot tests cannot drift into disagreeing about the shape.
  *
- * **No row carries `fixture`.** en-es graduated in #195, en-ar in #202, hi-en — Hindi (L1) →
- * English (L2) — in #273, en-ru — English (L1) → Russian (L2), added behind the gate in #338 and
- * authored in #340–#342 — in #343, and en-it — English (L1) → Italian (L2), added in #332 and
- * authored in #334–#336 — in #337. So all SIX courses ship and a strict build emits the same six
- * rows (minus the dev keys). The Settings smoke (`src/screens/SettingsScreen.test.tsx`) and the
- * authored-rung walks (`src/course/hiEnAuthored.test.tsx`, `src/course/enRuAuthored.test.tsx`,
- * `src/course/enItAuthored.test.tsx`) reach the later courses through this copy, without a
- * browser. The `fixture` seam itself is still proved, on a synthetic row, in
+ * **No row carries `fixture`.** en-es graduated in #195, en-ar in #202, hi-en in #273, en-ru in
+ * #343, en-it in #337 and en-fr in #331 — every course this repo ships was authored behind the
+ * gate and let out of it, and none is behind it now. The Settings smoke
+ * (`src/screens/SettingsScreen.test.tsx`) and the authored-rung walks (`hiEnAuthored`,
+ * `enRuAuthored`, `enItAuthored`, `enFrAuthored`) reach the later courses through this copy,
+ * without a browser. The `fixture` seam itself is still proved, on a synthetic row, in
  * `src/course/manifest.test.ts`.
  */
 import { vi } from 'vitest';
@@ -89,6 +87,17 @@ export const DEV_MANIFEST = {
       l2Tag: 'it',
       l2Dir: 'ltr',
       pairLabel: 'english → italian',
+      scriptMode: 'native',
+      dir: 'ltr',
+    },
+    {
+      id: 'en-fr',
+      l1: 'English',
+      l2: 'French',
+      l1Tag: 'en',
+      l2Tag: 'fr',
+      l2Dir: 'ltr',
+      pairLabel: 'english → french',
       scriptMode: 'native',
       dir: 'ltr',
     },

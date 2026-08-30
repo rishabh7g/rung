@@ -131,6 +131,18 @@ describe('every course names its two languages in tags, not just in words', () =
     expect(enIt?.fixture).toBeUndefined();
   });
 
+  it('is English about French for the fifth course (#326, shipping since #331)', () => {
+    const enFr = AUTHORED.find((course) => course.id === 'en-fr');
+
+    // Same L1 as en-es, a different L2: the chrome is English and the sentences are French, and
+    // the shell reads `l1Tag` for the document and `l2Tag` for the taught line without knowing
+    // either language. The row carries no fixture flag — #331 deleted it, so a learner build
+    // ships the course.
+    expect(enFr?.l1Tag).toBe('en');
+    expect(enFr?.l2Tag).toBe('fr');
+    expect(enFr?.fixture).toBeUndefined();
+  });
+
   it('is an ltr course with an rtl second line for the pair that needs both (#196)', () => {
     const enAr = AUTHORED.find((course) => course.id === 'en-ar');
 

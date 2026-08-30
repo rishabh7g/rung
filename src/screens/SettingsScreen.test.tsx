@@ -93,6 +93,22 @@ function authoredEnIt(file: 'levels.json' | 'strings.json'): unknown {
   if (text === undefined) throw new Error(`content/en-it/${file} is not authored`);
   return JSON.parse(text);
 }
+
+/**
+ * The seventh course's ladder and bundle, read off disk the same way. en-fr was authored behind
+ * the gate (#326 row with `fixture: true`, #328–#330 the ten rungs) and graduated in #331.
+ */
+const EN_FR_FILES = import.meta.glob<string>('../../content/en-fr/*.json', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+});
+
+function authoredEnFr(file: 'levels.json' | 'strings.json'): unknown {
+  const text = EN_FR_FILES[`../../content/en-fr/${file}`];
+  if (text === undefined) throw new Error(`content/en-fr/${file} is not authored`);
+  return JSON.parse(text);
+}
 /** Injected, so nothing here touches the wall clock — `passedAt` is a receipt, not a schedule. */
 const STAMP = () => '2026-02-03T09:00:00.000Z';
 
@@ -749,6 +765,135 @@ describe('the sixth course — en-it (#337, shipping)', () => {
     // Invariant 8: the switch created en-it's subtree and touched nobody else's.
     expect(useAppStore.getState().courses[COURSE]).toBe(before);
     expect(useAppStore.getState().courses['en-it']).toBeDefined();
+
+    fireEvent.click(screen.getByRole('link', { name: 'Settings' }));
+    fireEvent.change(await screen.findByRole('combobox', { name: 'Active course' }), {
+      target: { value: COURSE },
+    });
+    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
+    expect(await screen.findByText(/LEVEL 1 · 1 OF 10/)).toBeInTheDocument();
+    expect(screen.getByText('M2 · CURRENT RUNG')).toBeInTheDocument();
+    expect(useAppStore.getState().courses[COURSE]).toBe(before);
+  });
+});
+
+/* ------------------------------------------------- the seventh course, en-fr (#326) */
+
+describe('the seventh course — en-fr (#331, shipping)', () => {
+  /**
+   * The same switch flow, run against the REAL en-fr files. The row shipped in #337, so it carries
+   * no `fixture` key and a strict build emits it. The chrome is en-fr's English bundle — the L1 of
+   * this course is English, so `lang` stays `en` and the ladder reads exactly as en-es's does.
+   *
+   * **Reaching it is a two-step journey since #324**, and that is the point rather than an
+   * inconvenience: the course field offers only what the learner can READ, so an English course
+   * appears once the language above it says English. A Hindi reader is never shown French.
+   */
+  function serveEnFr(): void {
+    const base = globalThis.fetch;
+    const json = (value: unknown) =>
+      Promise.resolve(new Response(JSON.stringify(value), { status: 200 }));
+    vi.stubGlobal(
+      'fetch',
+      vi.fn((input: RequestInfo | URL) => {
+        const url = String(input);
+        if (url.endsWith('/content/en-fr/levels.json')) return json(authoredEnFr('levels.json'));
+        if (url.endsWith('/content/en-fr/strings.json')) return json(authoredEnFr('strings.json'));
+        return base(input);
+      }),
+    );
+  }
+
+  /** The language field, by the course's own label for it. */
+  function langSelect(): HTMLElement {
+    return screen.getByRole('combobox', { name: stringValue(COURSE, 'settings.yourLanguage') });
+  }
+
+  it('is offered to an English reader as French, and to a Hindi reader not at all', async () => {
+    const select = await renderSettings();
+
+    // A Hindi reader sees the Hindi-L1 courses only: en-fr is not among them, in any form.
+    expect(within(select).queryByRole('option', { name: 'French' })).toBeNull();
+    expect(select.textContent ?? '').not.toContain('french');
+
+    // Say you read English, and the field offers what there is to learn in it (#324).
+    fireEvent.change(langSelect(), { target: { value: 'en' } });
+
+    const inEnglish = await screen.findByRole('combobox', { name: 'Active course' });
+    await waitFor(() => {
+      expect(within(inEnglish).getByRole('option', { name: 'French' })).toHaveValue('en-fr');
+    });
+  });
+
+  it('boots a ladder of ten pending rungs in English chrome, and leaves hi-mr where it was', async () => {
+    const ladder = tenRungLadder(3);
+    climb(ladder, 'L1-M1');
+    const before = useAppStore.getState().courses[COURSE];
+    await renderSettings(ladder);
+    serveEnFr();
+
+    // English first, then French — the journey #324 made explicit. The course field is re-found
+    // after the language step rather than held across it: that step re-renders the field, and a
+    // node captured before it is stale by the time the second change fires.
+    fireEvent.change(langSelect(), { target: { value: 'en' } });
+    await waitFor(() => {
+      const field = screen.getByRole('combobox', { name: 'Active course' });
+      expect(within(field).queryByRole('option', { name: 'French' })).not.toBeNull();
+    });
+    fireEvent.change(screen.getByRole('combobox', { name: 'Active course' }), {
+      target: { value: 'en-fr' },
+    });
+
+    // The arrival toast is en-fr's own `switchToast` — English, the L1 of this course. It names
+    // the pair being LEFT, which after the language step above is the first English-L1 course
+    // rather than hi-mr: the toast reports what actually happened, not what the test set up.
+    // The pointer moves synchronously (`switchCourse`), and the provider re-boots into en-fr's
+    // own bundle after it.
+    //
+    // The arrival TOAST is asserted in the en-ru block above rather than here, deliberately: it is
+    // one shared mechanism (#106) and one assertion of it is enough. What this case is for is the
+    // course booting — the ladder, the chrome and Invariant 8 below.
+    await waitFor(() => {
+      expect(useAppStore.getState().activeCourse).toBe('en-fr');
+    });
+    // The document declares the course's L1 (#186): `en`, off the row's `l1Tag`. French is what
+    // this course TEACHES, and not one Cyrillic line exists yet — the skeleton carries none.
+    await waitFor(() => {
+      expect(document.documentElement.lang).toBe('en');
+    });
+    expect(document.documentElement.dir).toBe('ltr');
+
+    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
+    expect(await screen.findByText(/LEVEL 1 · 0 OF 10/)).toBeInTheDocument();
+    expect(screen.getByText('Foundations — say what you need')).toBeInTheDocument();
+    expect(within(screen.getByRole('list')).getAllByRole('listitem')).toHaveLength(10);
+    for (const title of [
+      'Who I am',
+      'First exchange',
+      'Needs and wants',
+      'My day',
+      'Yesterday',
+      'Tomorrow',
+      'Where things are',
+      'Numbers & shopping',
+      'Feelings & opinions',
+      'Connected talk',
+    ]) {
+      expect(screen.getByText(title)).toBeInTheDocument();
+    }
+    // Nothing is passed, so M1 is the current rung with the one CTA a fresh rung gets [D22] —
+    // in en-fr's own English words — and the rest of the ladder is locked, so that CTA is the
+    // only link in the list. The pending line counts all ten (Invariant 2: counts only).
+    expect(screen.getByText('M1 · CURRENT RUNG')).toBeInTheDocument();
+    const rungLinks = within(screen.getByRole('list')).getAllByRole('link');
+    expect(rungLinks).toHaveLength(1);
+    expect(rungLinks[0]).toHaveTextContent('Start with the module');
+    expect(rungLinks[0]).toHaveAttribute('href', '#/module/L1-M1');
+    expect(screen.getByText('Level 1 · 10 of 10 rungs still to climb.')).toBeInTheDocument();
+
+    // Invariant 8: the switch created en-fr's subtree and touched nobody else's.
+    expect(useAppStore.getState().courses[COURSE]).toBe(before);
+    expect(useAppStore.getState().courses['en-fr']).toBeDefined();
 
     fireEvent.click(screen.getByRole('link', { name: 'Settings' }));
     fireEvent.change(await screen.findByRole('combobox', { name: 'Active course' }), {

@@ -1,0 +1,555 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M4",
+  "title": "My day",
+  "job": "Daily habits and time words",
+  "prerequisites": ["L1-M3"],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 6,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "Je + V-e + à + num + heures",
+      "Je me lève à + num + heures",
+      "Le matin + je + V-e",
+      "Le lundi + je + V-e",
+      "Vous + V-ez + à quelle heure ?"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "French has ONE present and it covers both of English's. Je mange is \"I eat\" AND \"I am eating\" — the same three words — and which one it is comes from the sentence around it, never from the verb."
+    },
+    {
+      "tag": "interference",
+      "text": "There is no continuous to build, so there is nothing to translate the -ing with. Je suis manger is two verbs with nothing joining them, and it is what an English speaker assembles when they go looking for the missing form."
+    },
+    {
+      "tag": "delta",
+      "text": "Daily verbs carry a little pronoun that is part of the verb and changes with the person: je me lève · vous vous levez. English \"I get up\" has nothing at all standing where me stands, so leaving it out is the commonest slip in the module."
+    },
+    {
+      "tag": "delta",
+      "text": "The -er present across the persons this course writes: je mange · vous mangez · il/elle mange. Three of those endings are SILENT — mange, manges and mangent are one sound — so the subject pronoun is what carries the person to the ear, and French can never drop it."
+    },
+    {
+      "tag": "delta",
+      "text": "Time goes in front of the clause or at its end, and the definite article is what turns a day into a habit: le matin is \"in the morning\", every morning, and le lundi is \"on Mondays\", while lundi on its own is one particular Monday."
+    },
+    {
+      "tag": "delta",
+      "text": "The clock is à + a number + heures, and heures is written plural from two upwards: à sept heures, but à une heure. English hangs \"o'clock\" on the end; French puts the word for hour in the middle and never leaves it out."
+    },
+    {
+      "tag": "delta",
+      "text": "An article cannot sit on its own vowel next to another: le eau is impossible, so le and la shorten to l' and weld onto the noun — l'eau. The partitive does the same: de la eau becomes de l'eau."
+    },
+    {
+      "tag": "free",
+      "text": "Negation still wraps the verb exactly as L1-M3 taught it, whatever else the sentence carries: Le soir je ne travaille pas."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M4-S01",
+      "display": "Je mange à sept heures",
+      "cue": "I eat at seven o'clock",
+      "glossEn": "lit. \"I eat at seven hours\"",
+      "literal": "I eat at seven hours",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mange",
+            "cue": "eat · eats",
+            "tag": "delta",
+            "forms": ["mange", "mangez"],
+            "note": "manger with a person on it: je mange · vous mangez · il/elle mange. One present covers both of English's — je mange is \"I eat\" and \"I am eating\" — and the je-form and the third-person form are spelled and said alike, which is why the pronoun can never go."
+          },
+          {
+            "display": "à",
+            "cue": "at · to",
+            "tag": "delta",
+            "forms": [],
+            "note": "The course's one à, and it will answer for every later tap. Here it is the \"at\" of a time — à sept heures. In L1-M7 it is the \"at\" or \"to\" of a place — à la maison, je vais au marché — and it is inside the longer prepositions there too. Its accent is the whole difference between it and a (\"has\"), so it is never left off, on a capital either."
+          },
+          {
+            "display": "sept",
+            "cue": "seven",
+            "tag": "free",
+            "forms": [],
+            "note": "seven. The p is silent — set — and the final -t is sounded, which is unusual enough to be worth remembering. Numbers as a set are L1-M8's; this one is here because the clock needs it."
+          },
+          {
+            "display": "heures",
+            "cue": "hour · hours · o'clock",
+            "tag": "delta",
+            "forms": ["heure", "heures"],
+            "note": "hour. The h is silent, so sept heures runs together as set-UR. It is written plural from two upwards — à sept heures, but à une heure — and it is never left out: French has no bare \"at seven\"."
+          }
+        ],
+        "rules": [0, 1, 5]
+      },
+      "trap": "English can say \"I eat at seven\" and stop. French cannot: heures is part of the time, not an optional flourish, so à sept is not a time at all.",
+      "sound": "mahnzh, with the an nasal and the final -e silent. sept is set — the p says nothing. The h of heures is silent too, so the two words run together: set-UR.",
+      "variations": [
+        {
+          "display": "Je mange à une heure",
+          "cue": "I eat at one o'clock",
+          "changed": "one o'clock takes the singular heure — the plural starts at two"
+        },
+        {
+          "display": "Vous mangez à sept heures ?",
+          "cue": "Do you eat at seven?",
+          "changed": "mangez for the person you are speaking to, asked with a rising voice"
+        },
+        {
+          "display": "Je ne mange pas à sept heures",
+          "cue": "I don't eat at seven",
+          "changed": "L1-M3's brackets close around the verb; the time phrase stays outside them"
+        }
+      ],
+      "mistake": {
+        "display": "Je suis manger à sept heures",
+        "why": "There is no continuous to assemble: je mange already means \"I am eating\". Putting suis in front leaves two verbs with nothing joining them."
+      },
+      "usage": "Saying when you do something, every day.",
+      "register": "neutral",
+      "mnemonic": "French counts the hours out loud: seven hours, not seven o'clock."
+    },
+    {
+      "id": "L1-M4-S02",
+      "display": "Je me lève à sept heures",
+      "cue": "I get up at seven o'clock",
+      "glossEn": "lit. \"I raise myself at seven hours\"",
+      "literal": "I raise-myself at seven hours",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "me lève",
+            "cue": "get up · gets up",
+            "tag": "delta",
+            "forms": ["me lève", "vous levez"],
+            "note": "se lever, \"to raise oneself\". The little pronoun is part of the verb and changes with the person: je me lève · vous vous levez. Note the accent: lève carries a grave and levez does not — a spelling rule of this verb, and the index keeps the two shapes apart on it."
+          }
+        ],
+        "rules": [2, 5]
+      },
+      "trap": "English \"I get up\" has nothing standing where me stands, so an English speaker drops it and writes Je lève — which means \"I raise\" something else, and leaves the sentence waiting for an object.",
+      "sound": "muh LEV, with the è an open eh sound the grave accent marks. In vous vous levez the two vous are said identically and both are needed.",
+      "variations": [
+        {
+          "display": "Vous vous levez à sept heures ?",
+          "cue": "Do you get up at seven?",
+          "changed": "both vous — the subject and the verb's own pronoun — and the accent goes with the ending"
+        },
+        {
+          "display": "Je me lève à une heure",
+          "cue": "I get up at one o'clock",
+          "changed": "swap the hour; heure goes singular at one"
+        },
+        {
+          "display": "Le lundi je me lève à sept heures",
+          "cue": "On Mondays I get up at seven",
+          "changed": "a habit word in front — and the rest of the sentence does not move"
+        }
+      ],
+      "mistake": {
+        "display": "Je lève à sept heures",
+        "why": "Without me the verb is \"I raise\", and the sentence is left waiting to hear what. Getting yourself up is je me lève."
+      },
+      "usage": "The first thing anyone says about their day.",
+      "register": "neutral",
+      "mnemonic": "You do not just get up in French — you raise yourself."
+    },
+    {
+      "id": "L1-M4-S03",
+      "display": "Le matin je mange du pain",
+      "cue": "In the morning I eat bread",
+      "glossEn": "lit. \"The morning I eat of-the bread\"",
+      "literal": "The-morning I eat of-the bread",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Le matin",
+            "cue": "in the morning",
+            "tag": "delta",
+            "forms": [],
+            "note": "in the morning — and, said this way, EVERY morning. French uses the definite article where English uses \"in the\", and the article is exactly what makes it a habit rather than one particular morning. Take the two words together: that is what leaves matin free for a later module."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "English marks a habit with a word like \"usually\" or with nothing at all. French marks it with le, quietly, in front of the time word — and a learner who leaves the le off has written something that means one specific morning.",
+      "sound": "luh ma-TAN, with the in nasal and the n never sounded on its own.",
+      "variations": [
+        {
+          "display": "Le matin je bois du café",
+          "cue": "In the morning I drink coffee",
+          "changed": "swap the habit — the time phrase does not move"
+        },
+        {
+          "display": "Je mange du pain le matin",
+          "cue": "I eat bread in the morning",
+          "changed": "the time phrase goes to the end just as happily; nothing else changes"
+        },
+        {
+          "display": "Le matin je ne mange pas",
+          "cue": "In the morning I don't eat",
+          "changed": "the brackets close round the verb, with the time phrase outside them"
+        }
+      ],
+      "mistake": {
+        "display": "En le matin je mange du pain",
+        "why": "There is no word for \"in\" here: le matin already carries it. En le is not French in any case — that pair does not exist."
+      },
+      "usage": "Describing what you habitually do at a time of day.",
+      "register": "neutral",
+      "mnemonic": "le is the habit marker: THE morning means every morning."
+    },
+    {
+      "id": "L1-M4-S04",
+      "display": "Le lundi je travaille",
+      "cue": "On Mondays I work",
+      "glossEn": "lit. \"The Monday I work\"",
+      "literal": "The-Monday I work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Le lundi",
+            "cue": "on Mondays",
+            "tag": "delta",
+            "forms": [],
+            "note": "on Mondays — every Monday. The article is again what makes it a habit: lundi on its own is one particular Monday, usually the next one. Days of the week are lowercase in French, where English capitalises them."
+          },
+          {
+            "display": "travaille",
+            "cue": "work · works",
+            "tag": "free",
+            "forms": ["travaille", "travaillez"],
+            "note": "travailler with a person on it: je travaille · vous travaillez. The bare form travailler was L1-M3's; this is the same verb doing the sentence's own work rather than following another verb."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "English needs a plural and a preposition to say this — \"on MondayS\". French needs neither: one singular day with le in front of it is the whole habit.",
+      "sound": "luh luhn-DEE, with the un nasal. travaille is tra-VAI — the ill is a y as in \"yes\", never an l sound.",
+      "variations": [
+        {
+          "display": "Le lundi je ne travaille pas",
+          "cue": "On Mondays I don't work",
+          "changed": "the brackets round the verb, with the day left outside"
+        },
+        {
+          "display": "Vous travaillez le lundi ?",
+          "cue": "Do you work on Mondays?",
+          "changed": "travaillez, a rising voice, and the day moved to the end"
+        },
+        {
+          "display": "Le matin je travaille",
+          "cue": "In the morning I work",
+          "changed": "swap one habit phrase for another; both are built the same way"
+        }
+      ],
+      "mistake": {
+        "display": "Le Lundi je travaille",
+        "why": "Days of the week are lowercase in French. The capital is English showing through, and it is the one difference the eye catches immediately."
+      },
+      "usage": "Saying what you do on a given day, week after week.",
+      "register": "neutral",
+      "mnemonic": "One day plus le makes all of them."
+    },
+    {
+      "id": "L1-M4-S05",
+      "display": "Je travaille tous les jours",
+      "cue": "I work every day",
+      "glossEn": "lit. \"I work all the days\"",
+      "literal": "I work all the days",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tous les jours",
+            "cue": "every day",
+            "tag": "delta",
+            "forms": [],
+            "note": "every day — literally \"all the days\", and French says it in the plural where English says it in the singular. Take the three words together: they are a fixed phrase, and the -s of tous is silent here."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "\"Every day\" is singular in English and plural in French, so the word-for-word translation goes wrong in both halves at once: there is no French chaque jour in everyday speech about routine, and there is no singular in this phrase at all.",
+      "sound": "too lay ZHOOR. The -s of tous is silent when it sits in front of a noun like this, and the -s of jours is silent as always.",
+      "variations": [
+        {
+          "display": "Je mange à sept heures tous les jours",
+          "cue": "I eat at seven every day",
+          "changed": "the phrase goes at the very end, after the time"
+        },
+        {
+          "display": "Vous travaillez tous les jours ?",
+          "cue": "Do you work every day?",
+          "changed": "travaillez and a rising voice; the phrase is untouched"
+        },
+        {
+          "display": "Je ne travaille pas tous les jours",
+          "cue": "I don't work every day",
+          "changed": "the brackets close round the verb and the phrase stays outside"
+        }
+      ],
+      "mistake": {
+        "display": "Je travaille tout le jour",
+        "why": "That is \"all day long\", a different thing entirely. The routine phrase is plural: tous les jours."
+      },
+      "usage": "Saying how often — the plainest habit word there is.",
+      "register": "neutral",
+      "mnemonic": "French counts them: all the days, not every day."
+    },
+    {
+      "id": "L1-M4-S06",
+      "display": "Vous mangez à quelle heure ?",
+      "cue": "What time do you eat?",
+      "glossEn": "lit. \"You eat at what hour?\"",
+      "literal": "You eat at what hour ?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "à quelle heure",
+            "cue": "at what time",
+            "tag": "delta",
+            "forms": [],
+            "note": "at what time. Take the three words together: quelle is \"which\" and agrees with heure, which is feminine, so the two l's and the -e are not optional. In speech the phrase most often stays at the END, where the answer would go, and the verb does not move — the same shape L1-M8's C'est combien ? will use."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "English hauls the whole question to the front and inserts a \"do\": \"What time DO you eat?\". French leaves the sentence standing and puts the question phrase where the answer would go.",
+      "sound": "a KEL-ur. The l of quelle links straight into the silent h of heure, so the last two words sound like one.",
+      "variations": [
+        {
+          "display": "Vous vous levez à quelle heure ?",
+          "cue": "What time do you get up?",
+          "changed": "swap the verb — the question phrase does not move"
+        },
+        {
+          "display": "À quelle heure vous mangez ?",
+          "cue": "What time do you eat?",
+          "changed": "the phrase moved to the front instead; still nothing inverted"
+        },
+        {
+          "display": "Je mange à sept heures",
+          "cue": "I eat at seven o'clock",
+          "changed": "the answer — the time takes exactly the seat the question phrase held"
+        }
+      ],
+      "mistake": {
+        "display": "Vous mangez à quel heure ?",
+        "why": "heure is feminine, so it is quelle with two l's and an -e. quel would be agreeing with a masculine noun that is not there."
+      },
+      "usage": "Asking about someone's routine.",
+      "register": "neutral",
+      "mnemonic": "Put the question where the answer will go, and move nothing."
+    },
+    {
+      "id": "L1-M4-S07",
+      "display": "Je bois du café le matin",
+      "cue": "I drink coffee in the morning",
+      "glossEn": "lit. \"I drink of-the coffee the morning\"",
+      "literal": "I drink of-the coffee the-morning",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bois",
+            "cue": "drink · drinks",
+            "tag": "delta",
+            "forms": ["bois", "buvez"],
+            "note": "boire with a person on it, and it is irregular enough to be worth learning whole: je bois · vous buvez. The stem itself changes, which the -er verbs never do — compare je mange · vous mangez, where only the ending moved."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "The partitive is still there under the habit: it is coffee in general, so du café, exactly as in L1-M3. A time phrase never takes an article away.",
+      "sound": "bwa, one syllable, with the final -s silent. buvez is bü-VAY — a different stem, and the ending sounds like every other -ez.",
+      "variations": [
+        {
+          "display": "Vous buvez du café le matin ?",
+          "cue": "Do you drink coffee in the morning?",
+          "changed": "buvez — the stem changes, not just the ending — and a rising voice"
+        },
+        {
+          "display": "Le matin je bois du thé",
+          "cue": "In the morning I drink tea",
+          "changed": "the time phrase to the front and another mass noun behind the verb"
+        },
+        {
+          "display": "Je ne bois pas de café",
+          "cue": "I don't drink coffee",
+          "changed": "the brackets round the verb, and du collapses to a bare de behind them"
+        }
+      ],
+      "mistake": {
+        "display": "Je bois café le matin",
+        "why": "The partitive does not vanish because a time word turned up: du café, as it was in L1-M3."
+      },
+      "usage": "A habit with a thing in it — the ordinary shape of talking about your day.",
+      "register": "neutral",
+      "mnemonic": "-er verbs change their ending; boire changes its middle."
+    },
+    {
+      "id": "L1-M4-S08",
+      "display": "Le soir je ne travaille pas",
+      "cue": "In the evening I don't work",
+      "glossEn": "lit. \"The evening I not work not\"",
+      "literal": "The-evening I not work not",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Le soir",
+            "cue": "in the evening",
+            "tag": "delta",
+            "forms": [],
+            "note": "in the evening — every evening, by the same article that made le matin a habit. It is the third of this module's fixed time phrases, and like the others it is taken whole."
+          }
+        ],
+        "rules": [4, 7]
+      },
+      "trap": "The negation and the time phrase never interfere with each other. The brackets go round the verb only, so le soir stands entirely outside them, at the front or at the end.",
+      "sound": "luh SWAR, one syllable after the article, with the r in the back of the throat.",
+      "variations": [
+        {
+          "display": "Le soir je mange à la maison",
+          "cue": "In the evening I eat at home",
+          "changed": "a positive habit in the same time frame"
+        },
+        {
+          "display": "Je ne travaille pas le soir",
+          "cue": "I don't work in the evening",
+          "changed": "the time phrase to the end — the brackets do not move with it"
+        },
+        {
+          "display": "Vous ne travaillez pas le soir ?",
+          "cue": "Don't you work in the evening?",
+          "changed": "travaillez inside the same brackets, asked with a rising voice"
+        }
+      ],
+      "mistake": {
+        "display": "Le soir je ne pas travaille",
+        "why": "pas goes AFTER the verb, not in front of it: je ne travaille pas. The two halves are brackets, and the verb sits between them."
+      },
+      "usage": "Saying what you do not do, at a time of day.",
+      "register": "neutral",
+      "mnemonic": "Time outside the brackets, verb inside."
+    },
+    {
+      "id": "L1-M4-S09",
+      "display": "Je mange à la maison",
+      "cue": "I eat at home",
+      "glossEn": "lit. \"I eat at the house\"",
+      "literal": "I eat at the house",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "maison",
+            "cue": "house · home",
+            "tag": "free",
+            "forms": [],
+            "note": "house — feminine, so la maison. With à in front of it, à la maison is how French says \"at home\": there is no separate word for home in this sense, and the article is not optional."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English \"at home\" has no article in it at all. French keeps la, so à la maison is the phrase — and the à here is the same à that told the time in S01, doing the other of its two jobs.",
+      "sound": "meh-ZOHN, with the s between two vowels sounding like a z and the on nasal.",
+      "variations": [
+        {
+          "display": "Le soir je mange à la maison",
+          "cue": "In the evening I eat at home",
+          "changed": "a habit phrase in front — the place phrase does not move"
+        },
+        {
+          "display": "Vous mangez à la maison ?",
+          "cue": "Do you eat at home?",
+          "changed": "mangez and a rising voice"
+        },
+        {
+          "display": "Je travaille à la maison",
+          "cue": "I work at home",
+          "changed": "swap the verb — à la maison is the frame"
+        }
+      ],
+      "mistake": {
+        "display": "Je mange à maison",
+        "why": "The article stays: à la maison. Dropping it is English's \"at home\" arriving whole."
+      },
+      "usage": "Saying where you do something — the first place phrase of the course.",
+      "register": "neutral",
+      "mnemonic": "French eats at THE house; only English can eat at home."
+    },
+    {
+      "id": "L1-M4-S10",
+      "display": "Je bois de l'eau",
+      "cue": "I drink water",
+      "glossEn": "lit. \"I drink of the water\"",
+      "literal": "I drink of the-water",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "l'eau",
+            "cue": "the water",
+            "tag": "delta",
+            "forms": [],
+            "note": "water, with its article welded on. eau is feminine, so it should be la eau — but an article cannot sit on its own vowel next to another one, so la shortens to l' and the two are written as a single word: l'eau. The partitive in front of it does the same thing, which is why this is de l'eau and not de la eau."
+          }
+        ],
+        "rules": [0, 6]
+      },
+      "trap": "The article did not disappear — it shrank. A learner who reads l'eau as a bare noun will write le eau or la eau later, and neither is a spelling French allows.",
+      "sound": "duh LOH. The eau spelling is one plain o sound, and the l runs straight into it with nothing in between.",
+      "variations": [
+        {
+          "display": "Je veux de l'eau",
+          "cue": "I want some water",
+          "changed": "L1-M3's verb with the same welded article behind it"
+        },
+        {
+          "display": "Vous buvez de l'eau ?",
+          "cue": "Do you drink water?",
+          "changed": "buvez and a rising voice; the welding is unaffected"
+        },
+        {
+          "display": "Je ne bois pas d'eau",
+          "cue": "I don't drink water",
+          "changed": "behind the negation the partitive collapses to de — and de shortens too, to d'"
+        }
+      ],
+      "mistake": {
+        "display": "Je bois de la eau",
+        "why": "Two vowels cannot sit side by side across an article: la becomes l' and welds on. It is de l'eau."
+      },
+      "usage": "Everyday drinking — and the first place the course shows an article shrinking.",
+      "register": "neutral",
+      "mnemonic": "French will not let two vowels collide: the article gives up its own."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M4-C01", "display": "Le matin je bois du café", "cue": "In the morning I drink coffee" },
+    { "id": "L1-M4-C02", "display": "Le soir je mange à la maison", "cue": "In the evening I eat at home" },
+    { "id": "L1-M4-C03", "display": "Vous travaillez tous les jours ?", "cue": "Do you work every day?" },
+    { "id": "L1-M4-C04", "display": "Vous vous levez à quelle heure ?", "cue": "What time do you get up?" },
+    { "id": "L1-M4-C05", "display": "Je ne mange pas le soir", "cue": "I don't eat in the evening" },
+    { "id": "L1-M4-C06", "display": "Je bois de l'eau le matin", "cue": "I drink water in the morning" },
+    { "id": "L1-M4-C07", "display": "Le lundi je mange du pain", "cue": "On Mondays I eat bread" },
+    { "id": "L1-M4-C08", "display": "Vous mangez du pain ?", "cue": "Do you eat bread?" },
+    { "id": "L1-M4-C09", "display": "Je travaille à la maison", "cue": "I work at home" },
+    { "id": "L1-M4-C10", "display": "Je bois du thé tous les jours", "cue": "I drink tea every day" },
+    { "id": "L1-M4-C11", "display": "Le soir je bois de l'eau", "cue": "In the evening I drink water" },
+    { "id": "L1-M4-C12", "display": "Vous buvez du café ?", "cue": "Do you drink coffee?" }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

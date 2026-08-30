@@ -35,8 +35,9 @@ import {
 
 /** Three of the five courses a strict build emits, as the manifest carries them — one per
     attribution shape (a script, no script, a romanized script). hi-en (#273) maps like hi-mr,
-    `['devanagari']`, and shares its subset; en-it (#337) maps like en-es, `[]`, because neither
-    `en` nor `it` reaches a course face; the manifest test below pins both mappings. */
+    `['devanagari']`, and shares its subset; en-it, en-fr and en-ru's Latin siblings map like
+    en-es — `[]`, because neither tag reaches a course face — while en-ru maps to `['cyrillic']`;
+    the manifest test below pins every mapping. */
 const HI_MR: ShippedCourse = { id: 'hi-mr', scripts: ['devanagari'] };
 const EN_ES: ShippedCourse = { id: 'en-es', scripts: [] };
 const EN_AR: ShippedCourse = { id: 'en-ar', scripts: ['arabic'] };
@@ -77,6 +78,7 @@ describe('reading the shipped courses off the manifest', () => {
         { id: 'hi-en', l1Tag: 'hi', l2Tag: 'en' },
         { id: 'en-ru', l1Tag: 'en', l2Tag: 'ru' },
         { id: 'en-it', l1Tag: 'en', l2Tag: 'it' },
+        { id: 'en-fr', l1Tag: 'en', l2Tag: 'fr' },
       ],
     });
 
@@ -87,6 +89,7 @@ describe('reading the shipped courses off the manifest', () => {
       { id: 'hi-en', scripts: ['devanagari'] }, // Hindi chrome over English sentences (#267, shipping since #273): the L1 pays for the face
       { id: 'en-ru', scripts: ['cyrillic'] }, // #325 — Mukta bundles no Cyrillic, so the L2 pays for its own letters
       { id: 'en-it', scripts: [] }, // neither `en` nor `it` maps to a course face (#332): content only, like en-es
+      { id: 'en-fr', scripts: [] }, // French is Latin on both sides (#326): charged content only, like en-es
     ]);
   });
 

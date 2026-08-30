@@ -187,8 +187,11 @@ describe('CourseProvider', () => {
       </CourseProvider>,
     );
 
+    // The row is a pair the repo has never authored — en-fr was that row until #326 made it a
+    // real course — and the count is read off the manifest this test builds, so a seventh course
+    // landing beside it does not make the case a lie.
     expect(
-      await screen.findByText(new RegExp(`active fr-de of ${DEV_MANIFEST.courses.length + 1}`)),
+      await screen.findByText(new RegExp(`active fr-de of ${withNewCourse.courses.length}`)),
     ).toBeInTheDocument();
   });
 

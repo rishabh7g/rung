@@ -1,0 +1,570 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M6",
+  "title": "Tomorrow",
+  "job": "Future and plans",
+  "prerequisites": ["L1-M5"],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": ["aller_plus_infinitive", "simple_present"],
+    "allowedPatterns": [
+      "Demain + je vais + V-inf",
+      "Je vais + V-inf + <time>",
+      "Vous allez + V-inf + ?",
+      "Je ne vais pas + V-inf",
+      "Demain + je + V-e"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The everyday future is aller plus a BARE infinitive: Je vais manger. English's \"going to\" is the same idea with a \"to\" inside it, and that \"to\" is exactly the word French does not write — Je vais à manger is the interference."
+    },
+    {
+      "tag": "delta",
+      "text": "aller is irregular and carries the module: je vais · vous allez · il/elle va. The same verb also does plain movement — je vais à Paris — so one word covers both the plan and the journey."
+    },
+    {
+      "tag": "delta",
+      "text": "There is a second future, the futur simple (je mangerai), and this level does not teach it: a plan is aller + infinitive, and the -rai form is what a French speaker reaches for LEAST when making one. \"will = the future tense\" is the slogan that would send you to the wrong form."
+    },
+    {
+      "tag": "delta",
+      "text": "The plain present is a perfectly normal future once a time word has said so: Demain matin je travaille. English can do this too — \"I work tomorrow\" — so it is the one part of the module that transfers whole."
+    },
+    {
+      "tag": "delta",
+      "text": "The negation wraps the verb that carries the person, which here is vais: Je ne vais pas partir. The infinitive stays outside the brackets, exactly as it did in L1-M3 and L1-M5."
+    },
+    {
+      "tag": "delta",
+      "text": "Time phrases stand at the front of the sentence or at its end, never in the middle: demain, ce soir, demain matin, la semaine prochaine."
+    },
+    {
+      "tag": "free",
+      "text": "A question is still the statement with a rising voice: Vous allez rester à la maison ?"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M6-S01",
+      "display": "Demain je vais travailler",
+      "cue": "Tomorrow I'm going to work",
+      "glossEn": "lit. \"Tomorrow I go work\"",
+      "literal": "Tomorrow I go work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Demain",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [],
+            "note": "tomorrow. It stands at the front of the sentence or at the end and never in the middle, like every time word in this course."
+          },
+          {
+            "display": "vais",
+            "cue": "go · goes",
+            "tag": "delta",
+            "forms": ["vais", "allez", "va"],
+            "note": "aller, to go — irregular, and worth learning whole: je vais · vous allez · il/elle va. It has two jobs and this row answers for both: in front of a bare verb it makes a plan (je vais travailler), and in front of a place it is plain movement (je vais à Paris)."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "English's \"going to\" carries a \"to\" that French does not have. Je vais à travailler is the sentence an English speaker assembles, and the à is the one word too many in it.",
+      "sound": "duh-MAN zhuh veh tra-va-YAY. demain ends nasal, and vais is one syllable with its -s silent.",
+      "variations": [
+        {
+          "display": "Demain je vais manger à la maison",
+          "cue": "Tomorrow I'm going to eat at home",
+          "changed": "swap the plan — the frame and the time word do not move"
+        },
+        {
+          "display": "Vous allez travailler demain ?",
+          "cue": "Are you going to work tomorrow?",
+          "changed": "allez for the person spoken to, the time word at the end, and a rising voice"
+        },
+        {
+          "display": "Demain je ne vais pas travailler",
+          "cue": "Tomorrow I'm not going to work",
+          "changed": "the brackets close round vais; the infinitive stays outside them"
+        }
+      ],
+      "mistake": {
+        "display": "Demain je vais à travailler",
+        "why": "Nothing stands between aller and the verb it plans: je vais travailler. The à is English's \"to\" arriving where French keeps the gap empty."
+      },
+      "usage": "The ordinary way to say what you will do.",
+      "register": "neutral",
+      "mnemonic": "\"I go work\" — French plans by going, and puts nothing in between."
+    },
+    {
+      "id": "L1-M6-S02",
+      "display": "Je vais acheter du pain",
+      "cue": "I'm going to buy some bread",
+      "glossEn": "lit. \"I go buy of-the bread\"",
+      "literal": "I go buy of-the bread",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "acheter",
+            "cue": "to buy",
+            "tag": "free",
+            "forms": [],
+            "note": "to buy — the bare form of the verb whose participle L1-M5 taught as acheté. The two are said exactly alike, ash-TAY, so only the page tells them apart: after vais it must be the bare form."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "This is where the homophone starts costing something. j'ai acheté (I bought) and je vais acheter (I'm going to buy) differ in speech only in the little verb at the front — the ending sounds identical in both.",
+      "sound": "ash-TAY, with the first syllable barely there. The whole line runs zhuh veh ash-TAY dü pan.",
+      "variations": [
+        {
+          "display": "Je vais acheter une voiture",
+          "cue": "I'm going to buy a car",
+          "changed": "a countable object — une rather than the partitive"
+        },
+        {
+          "display": "Vous allez acheter du pain ?",
+          "cue": "Are you going to buy bread?",
+          "changed": "allez and a rising voice"
+        },
+        {
+          "display": "Hier j'ai acheté du pain",
+          "cue": "Yesterday I bought bread",
+          "changed": "the same verb pointed backwards: the auxiliary changes and the ending gains its accent"
+        }
+      ],
+      "mistake": {
+        "display": "Je vais acheté du pain",
+        "why": "After vais the verb is bare: acheter. acheté is the participle, and it belongs behind j'ai."
+      },
+      "usage": "An errand you are about to run.",
+      "register": "neutral",
+      "mnemonic": "-er after vais, -é after j'ai. The ear cannot help; the accent can."
+    },
+    {
+      "id": "L1-M6-S03",
+      "display": "Vous allez rester à la maison ?",
+      "cue": "Are you going to stay at home?",
+      "glossEn": "lit. \"You go stay at the house?\"",
+      "literal": "You go stay at the house ?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rester",
+            "cue": "to stay",
+            "tag": "free",
+            "forms": [],
+            "note": "to stay — the bare form behind L1-M5's resté. In the past it took être, being on that short list; in a plan it is simply the verb after allez, and no auxiliary is involved at all."
+          }
+        ],
+        "rules": [1, 6]
+      },
+      "trap": "English needs \"are\" hauled to the front to ask this. French adds nothing: the statement Vous allez rester à la maison becomes the question by the voice and the mark alone.",
+      "sound": "voo-za-lay res-TAY. The -s of vous wakes into a z in front of allez, so the first two words run together.",
+      "variations": [
+        {
+          "display": "Je vais rester à la maison",
+          "cue": "I'm going to stay at home",
+          "changed": "the answer, in the first person — allez becomes vais"
+        },
+        {
+          "display": "Vous allez rester ici ?",
+          "cue": "Are you going to stay here?",
+          "changed": "swap the place phrase for a single word"
+        },
+        {
+          "display": "Je ne vais pas rester à la maison",
+          "cue": "I'm not going to stay at home",
+          "changed": "the brackets close round vais, with rester outside them"
+        }
+      ],
+      "mistake": {
+        "display": "Allez-vous rester à la maison",
+        "why": "Two things: this course asks with a rising voice rather than by inverting, and a question always carries its mark. Vous allez rester à la maison ?"
+      },
+      "usage": "Asking about someone's plans.",
+      "register": "neutral",
+      "mnemonic": "The verb never moves. The voice does the asking."
+    },
+    {
+      "id": "L1-M6-S04",
+      "display": "Demain je vais voir Anne",
+      "cue": "Tomorrow I'm going to see Anne",
+      "glossEn": "lit. \"Tomorrow I go see Anne\"",
+      "literal": "Tomorrow I go see Anne",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "voir",
+            "cue": "to see",
+            "tag": "free",
+            "forms": [],
+            "note": "to see — the bare form behind L1-M5's vu. Unlike the -er verbs, its bare form and its participle look and sound nothing alike, which for once makes the pair easy to keep apart."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "A person after voir needs no preposition and no article: voir Anne, exactly as English sees Anne. The transfer is complete, and it is worth noticing how rare that is in this module.",
+      "sound": "vwar, one syllable, with the r in the back of the throat — the same ending as boire and soir.",
+      "variations": [
+        {
+          "display": "Ce soir je vais voir Marc",
+          "cue": "This evening I'm going to see Marc",
+          "changed": "a different time word at the front, and a different person after the verb"
+        },
+        {
+          "display": "Vous allez voir le film ?",
+          "cue": "Are you going to see the film?",
+          "changed": "allez, a rising voice, and a thing rather than a person"
+        },
+        {
+          "display": "Hier j'ai vu Anne",
+          "cue": "Yesterday I saw Anne",
+          "changed": "the same verb pointed backwards — and the past shape shares nothing with the bare one"
+        }
+      ],
+      "mistake": {
+        "display": "Demain je vais vu Anne",
+        "why": "vu is the participle and belongs behind j'ai. After vais the verb is bare: voir."
+      },
+      "usage": "A plan involving somebody else.",
+      "register": "neutral",
+      "mnemonic": "voir, vu — the only pair in the module you can tell apart by ear."
+    },
+    {
+      "id": "L1-M6-S05",
+      "display": "Ce soir je vais manger",
+      "cue": "This evening I'm going to eat",
+      "glossEn": "lit. \"This evening I go eat\"",
+      "literal": "This evening I go eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Ce soir",
+            "cue": "this evening · tonight",
+            "tag": "delta",
+            "forms": [],
+            "note": "this evening. Take the two words together: ce is \"this\" and it is not taught on its own here. Note the contrast with L1-M4's le soir — le soir is EVERY evening, a habit, while ce soir is the one that is coming."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "le soir and ce soir differ by one small word and mean quite different things: the habit against the single occasion. English marks the same difference with \"in the evening\" against \"this evening\", so the distinction transfers even though the words do not.",
+      "sound": "suh SWAR — the same soir as in le soir, with ce reduced almost to nothing in front of it.",
+      "variations": [
+        {
+          "display": "Ce soir je vais dormir",
+          "cue": "This evening I'm going to sleep",
+          "changed": "swap the plan — the time phrase does not move"
+        },
+        {
+          "display": "Le soir je mange à la maison",
+          "cue": "In the evening I eat at home",
+          "changed": "le rather than ce: a habit rather than one particular evening"
+        },
+        {
+          "display": "Vous allez manger ce soir ?",
+          "cue": "Are you going to eat this evening?",
+          "changed": "allez, a rising voice, and the time phrase moved to the end"
+        }
+      ],
+      "mistake": {
+        "display": "Cette soir je vais manger",
+        "why": "soir is masculine, so it is ce soir. cette is the feminine form and belongs in front of a feminine noun."
+      },
+      "usage": "A plan for the same day.",
+      "register": "neutral",
+      "mnemonic": "le is the habit, ce is the one in front of you."
+    },
+    {
+      "id": "L1-M6-S06",
+      "display": "Je ne vais pas partir demain",
+      "cue": "I'm not going to leave tomorrow",
+      "glossEn": "lit. \"I not go not leave tomorrow\"",
+      "literal": "I not go not leave tomorrow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "partir",
+            "cue": "to leave",
+            "tag": "free",
+            "forms": [],
+            "note": "to leave, to set off — another of the movement verbs that take être in the past, though here it is simply the bare verb after vais. Its -ir ending marks a third verb family, alongside manger's -er and boire's -re."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "The brackets grip vais and nothing else. English would put the \"not\" next to \"leave\"; French leaves partir standing entirely outside the negation, exactly as it left the infinitive alone in L1-M3.",
+      "sound": "par-TEER, with both r's in the throat. The whole line has six beats and only the last two carry any weight.",
+      "variations": [
+        {
+          "display": "Je vais partir demain",
+          "cue": "I'm going to leave tomorrow",
+          "changed": "the brackets come away and nothing else changes"
+        },
+        {
+          "display": "Vous n'allez pas partir demain ?",
+          "cue": "Aren't you going to leave tomorrow?",
+          "changed": "allez inside the same brackets, with ne shortened in front of its vowel"
+        },
+        {
+          "display": "Je ne vais pas rester ici",
+          "cue": "I'm not going to stay here",
+          "changed": "swap the infinitive — the brackets do not notice"
+        }
+      ],
+      "mistake": {
+        "display": "Je vais ne pas partir demain",
+        "why": "The brackets go round the verb that carries the person, and that is vais: Je ne vais pas partir."
+      },
+      "usage": "Denying a plan.",
+      "register": "neutral",
+      "mnemonic": "The brackets always grip the verb that changed for you."
+    },
+    {
+      "id": "L1-M6-S07",
+      "display": "La semaine prochaine je vais à Paris",
+      "cue": "Next week I'm going to Paris",
+      "glossEn": "lit. \"The week next I go to Paris\"",
+      "literal": "The week next I go to Paris",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "La semaine prochaine",
+            "cue": "next week",
+            "tag": "delta",
+            "forms": [],
+            "note": "next week — three words, taken whole. Two things are worth seeing inside it: the adjective comes AFTER its noun, as French adjectives usually do, and the definite article is there where English has nothing at all."
+          }
+        ],
+        "rules": [1, 5]
+      },
+      "trap": "Here vais has no infinitive behind it and is not making a plan at all: it is plain movement, \"I go to Paris\". The same word, the other of its two jobs — which is why its note had to be written for both.",
+      "sound": "la suh-MEN pro-SHEN. Both words end in the same -aine sound, and neither final -e is heard.",
+      "variations": [
+        {
+          "display": "La semaine prochaine je vais travailler",
+          "cue": "Next week I'm going to work",
+          "changed": "an infinitive behind vais — the plan reading, with the same time phrase"
+        },
+        {
+          "display": "Demain je vais à Paris",
+          "cue": "Tomorrow I'm going to Paris",
+          "changed": "a shorter time word; the movement reading is unchanged"
+        },
+        {
+          "display": "Vous allez à Paris ?",
+          "cue": "Are you going to Paris?",
+          "changed": "allez and a rising voice, still with no infinitive behind it"
+        }
+      ],
+      "mistake": {
+        "display": "La prochaine semaine je vais à Paris",
+        "why": "The adjective follows the noun: la semaine prochaine. Putting it in front is English's order arriving whole."
+      },
+      "usage": "A plan further out than tomorrow.",
+      "register": "neutral",
+      "mnemonic": "French says the week, then which week."
+    },
+    {
+      "id": "L1-M6-S08",
+      "display": "Demain matin je travaille",
+      "cue": "Tomorrow morning I'm working",
+      "glossEn": "lit. \"Tomorrow morning I work\"",
+      "literal": "Tomorrow morning I work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Demain matin",
+            "cue": "tomorrow morning",
+            "tag": "free",
+            "forms": [],
+            "note": "tomorrow morning — the two words simply set side by side, with nothing between them. Compare L1-M4's le matin, which needed its article to mean every morning: a specific morning takes none."
+          }
+        ],
+        "rules": [2, 3, 5]
+      },
+      "trap": "There is no aller here and no future ending either — just the present, made future by the time word in front of it. English does exactly the same thing (\"tomorrow morning I work\"), so this is the one shape in the module that needs no translating at all.",
+      "sound": "duh-MAN ma-TAN. Both words end nasal, and neither n is sounded on its own.",
+      "variations": [
+        {
+          "display": "Demain matin je vais travailler",
+          "cue": "Tomorrow morning I'm going to work",
+          "changed": "the aller frame instead of the plain present — both are ordinary French"
+        },
+        {
+          "display": "Demain matin je bois du café",
+          "cue": "Tomorrow morning I'm drinking coffee",
+          "changed": "swap the verb; the present keeps doing the future's work"
+        },
+        {
+          "display": "Le matin je travaille",
+          "cue": "In the morning I work",
+          "changed": "le rather than demain: a habit rather than one particular morning"
+        }
+      ],
+      "mistake": {
+        "display": "Demain le matin je travaille",
+        "why": "The article belongs to the habit, not to a named morning: demain matin, and le matin only when it means every morning."
+      },
+      "usage": "A near, fixed plan — the way a diary entry is said out loud.",
+      "register": "neutral",
+      "mnemonic": "Name the morning and the article goes away."
+    },
+    {
+      "id": "L1-M6-S09",
+      "display": "Ce soir je vais dormir",
+      "cue": "This evening I'm going to sleep",
+      "glossEn": "lit. \"This evening I go sleep\"",
+      "literal": "This evening I go sleep",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dormir",
+            "cue": "to sleep",
+            "tag": "free",
+            "forms": [],
+            "note": "to sleep — another -ir verb, like partir. It is not reflexive, so nothing stands between je and the frame: compare je me lève, where the little pronoun was part of the verb."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "English has \"go to sleep\" as a fixed phrase, which makes je vais dormir look like a word-for-word match. It is not: vais is the plan marker here, and \"go to sleep\" in the English sense would need a different verb entirely.",
+      "sound": "dor-MEER, with both r's in the throat and the stress at the end, as always.",
+      "variations": [
+        {
+          "display": "Je vais dormir à la maison",
+          "cue": "I'm going to sleep at home",
+          "changed": "a place phrase behind the infinitive"
+        },
+        {
+          "display": "Vous allez dormir ?",
+          "cue": "Are you going to sleep?",
+          "changed": "allez and a rising voice, with the time phrase dropped"
+        },
+        {
+          "display": "Je ne vais pas dormir ce soir",
+          "cue": "I'm not going to sleep this evening",
+          "changed": "the brackets round vais, and the time phrase moved to the end"
+        }
+      ],
+      "mistake": {
+        "display": "Ce soir je vais à dormir",
+        "why": "Still no à between aller and the verb it plans: je vais dormir. English's \"go to sleep\" is what puts it there."
+      },
+      "usage": "The last plan of the day.",
+      "register": "neutral",
+      "mnemonic": "The gap after vais stays empty, whatever English does with its own \"to\"."
+    },
+    {
+      "id": "L1-M6-S10",
+      "display": "Demain je vais faire du café",
+      "cue": "Tomorrow I'm going to make coffee",
+      "glossEn": "lit. \"Tomorrow I go make of-the coffee\"",
+      "literal": "Tomorrow I go make of-the coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "faire",
+            "cue": "to make · to do",
+            "tag": "delta",
+            "forms": [],
+            "note": "to make and to do at once — French does not split the two, so faire covers both English verbs and the choice a learner keeps trying to make simply is not there. Its participle, fait, was L1-M5's."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "An English speaker keeps looking for the second verb — the one that means \"do\" as against \"make\". There is not one. faire is both, and the sentence around it decides which English word fits.",
+      "sound": "fair, one syllable, rhyming with the English \"fair\" but with the r in the throat.",
+      "variations": [
+        {
+          "display": "Demain je vais faire du thé",
+          "cue": "Tomorrow I'm going to make tea",
+          "changed": "swap the mass noun; the partitive is untouched by the plan"
+        },
+        {
+          "display": "Vous allez faire du café ?",
+          "cue": "Are you going to make coffee?",
+          "changed": "allez and a rising voice"
+        },
+        {
+          "display": "Hier j'ai fait du café",
+          "cue": "Yesterday I made coffee",
+          "changed": "the same verb pointed backwards — and its participle shares almost nothing with the bare form"
+        }
+      ],
+      "mistake": {
+        "display": "Demain je vais fait du café",
+        "why": "fait is the participle and belongs behind j'ai. After vais the verb is bare: faire."
+      },
+      "usage": "A plan to make or do something — the most useful verb in the module.",
+      "register": "neutral",
+      "mnemonic": "One French verb where English keeps two."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M6-C01",
+      "display": "Demain je vais manger à la maison",
+      "cue": "Tomorrow I'm going to eat at home"
+    },
+    { "id": "L1-M6-C02", "display": "Je vais boire du café", "cue": "I'm going to drink coffee" },
+    {
+      "id": "L1-M6-C03",
+      "display": "Vous allez travailler demain ?",
+      "cue": "Are you going to work tomorrow?"
+    },
+    {
+      "id": "L1-M6-C04",
+      "display": "Ce soir je vais voir Marc",
+      "cue": "This evening I'm going to see Marc"
+    },
+    {
+      "id": "L1-M6-C05",
+      "display": "Je ne vais pas travailler demain",
+      "cue": "I'm not going to work tomorrow"
+    },
+    {
+      "id": "L1-M6-C06",
+      "display": "Demain matin je vais acheter du pain",
+      "cue": "Tomorrow morning I'm going to buy bread"
+    },
+    {
+      "id": "L1-M6-C07",
+      "display": "La semaine prochaine je vais rester à la maison",
+      "cue": "Next week I'm going to stay at home"
+    },
+    { "id": "L1-M6-C08", "display": "Vous allez dormir ?", "cue": "Are you going to sleep?" },
+    {
+      "id": "L1-M6-C09",
+      "display": "Demain je vais faire du thé",
+      "cue": "Tomorrow I'm going to make tea"
+    },
+    {
+      "id": "L1-M6-C10",
+      "display": "Je vais partir ce soir",
+      "cue": "I'm going to leave this evening"
+    },
+    {
+      "id": "L1-M6-C11",
+      "display": "Vous allez voir le film ?",
+      "cue": "Are you going to see the film?"
+    },
+    {
+      "id": "L1-M6-C12",
+      "display": "Demain je ne vais pas manger",
+      "cue": "Tomorrow I'm not going to eat"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

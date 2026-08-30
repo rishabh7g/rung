@@ -1,0 +1,584 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M1",
+  "title": "Who I am",
+  "job": "Introduce yourself and state what you like",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 5,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "Je m'appelle + name",
+      "Je suis de + place",
+      "Je suis + N (profession, bare)",
+      "Je suis + Adj",
+      "J'aime + le/la/les + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "Word order is the English one — subject, verb, then the rest — so a plain statement comes out in the order you already think in."
+    },
+    {
+      "tag": "delta",
+      "text": "You give your name with je m'appelle — literally \"I call myself\". The little pronoun in the middle says whose name it is: je m'appelle · vous vous appelez."
+    },
+    {
+      "tag": "delta",
+      "text": "être is the one verb \"to be\", and it does every job English's \"be\" does: who you are, where you are from, and where a thing is. The ending names the person — je suis · vous êtes · il/elle est — and it is irregular, so it is learned rather than built."
+    },
+    {
+      "tag": "delta",
+      "text": "After être a profession or a role stands bare: Je suis étudiant, never Je suis un étudiant. un comes back only when something describes the noun (Je suis un bon étudiant)."
+    },
+    {
+      "tag": "delta",
+      "text": "Every noun has a gender and its article shows it: le (m) · la (f) · les (plural, both genders). Learn each noun with its article — the ending of the noun is a hint at best, and le musée and la main both break the obvious guess."
+    },
+    {
+      "tag": "interference",
+      "text": "French keeps the article where English drops it: a whole class of thing takes le, la or les. J'aime le café is \"I like coffee\", not \"I like the coffee\", and J'aime café is not a shorter sentence — it is not a sentence."
+    },
+    {
+      "tag": "delta",
+      "text": "je shortens to j' in front of a vowel and the two are written as one word: j'aime, never je aime. The apostrophe belongs to je, not to the verb — with a name as the subject nothing shortens, so it is Anne aime."
+    },
+    {
+      "tag": "delta",
+      "text": "An adjective agrees with the SUBJECT — whoever or whatever the sentence is about, not whoever is speaking: Marc est français · Anne est française. The written -e is often audible too: it wakes the silent consonant in front of it."
+    },
+    {
+      "tag": "free",
+      "text": "French writes the subject pronoun every time, exactly as English does: je is never dropped."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M1-S01",
+      "display": "Je m'appelle Marc",
+      "cue": "My name is Marc",
+      "glossEn": "lit. \"I call myself Marc\"",
+      "literal": "I call-myself Marc",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Je m'appelle",
+            "cue": "my name is · to be called",
+            "tag": "delta",
+            "forms": ["Je m'appelle", "vous vous appelez"],
+            "note": "s'appeler, \"to call oneself\". The little pronoun in the middle says whose name it is: je m'appelle (mine) · vous vous appelez (yours). This, and not mon nom est, is how a name is given."
+          },
+          {
+            "display": "Marc",
+            "cue": "Marc",
+            "tag": "free",
+            "forms": [],
+            "note": "A man's name. Names carry over unchanged — swap in your own."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Mon nom est Marc is the English sentence translated word for word. It is grammatical, and it is not how anyone introduces themselves.",
+      "sound": "Three syllables: zhuh ma-PEL. The j of je is the soft sound in the middle of \"measure\", the double l is a plain l, and the final -e is silent.",
+      "variations": [
+        {
+          "display": "Je m'appelle Anne",
+          "cue": "My name is Anne",
+          "changed": "swap the name — je m'appelle itself never changes"
+        },
+        {
+          "display": "Vous vous appelez Marc ?",
+          "cue": "Your name is Marc?",
+          "changed": "me → vous: the same verb, turned to the person you are speaking to"
+        },
+        {
+          "display": "L'étudiant s'appelle Marc",
+          "cue": "The student is called Marc",
+          "changed": "a full noun can be the subject — l'étudiant, and s'appelle gives his name"
+        }
+      ],
+      "mistake": {
+        "display": "Je m'appelle est Marc",
+        "why": "No est — m'appelle is already the verb. Je m'appelle Marc is the whole sentence."
+      },
+      "usage": "First introductions, to anyone at all.",
+      "register": "neutral",
+      "mnemonic": "appeler is to call. Your name is what you call yourself, so je m'appelle."
+    },
+    {
+      "id": "L1-M1-S02",
+      "display": "Je suis de Paris",
+      "cue": "I am from Paris",
+      "glossEn": "lit. \"I am of Paris\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Je",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "I. French writes the subject pronoun every time, exactly as English does, and never drops it. In front of a vowel it shortens to j' (j'aime)."
+          },
+          {
+            "display": "suis",
+            "cue": "am · are · is",
+            "tag": "delta",
+            "forms": ["suis", "êtes", "est"],
+            "note": "être — the one French verb \"to be\". It covers who you are (je suis étudiant), where you are from (je suis de Paris) and, later, where a thing is (le livre est sur la table): French makes no second choice the way some languages do. The ending names the person: suis (I) · êtes (you) · est (he, she, it). It is also the verb that builds the past of a few movement verbs, in L1-M5."
+          },
+          {
+            "display": "de",
+            "cue": "from · of",
+            "tag": "free",
+            "forms": [],
+            "note": "One small word doing several English jobs: \"from\" after an origin (je suis de Paris), \"of\" inside a quantity (un kilo de riz), and the \"of\" inside the longer prepositions (à côté de la table). It is also the base of the partitive — de la soupe, and de l'eau where the article shrinks in front of a vowel — and the bare de that replaces du, de la, un and une after a negation: je ne veux pas de café."
+          },
+          {
+            "display": "Paris",
+            "cue": "Paris",
+            "tag": "free",
+            "forms": [],
+            "note": "City names carry over, capital and all — and they take no article after de: de Paris, de Lyon."
+          }
+        ],
+        "rules": [0, 2, 8]
+      },
+      "trap": "English can shrink \"I am\" to \"I'm\" and lean on it. French shrinks nothing here and drops nothing either: Je de Paris is not a shorter sentence, it is not a sentence.",
+      "sound": "suis is one syllable, swee, with the final -s silent. de is a short uh. Paris ends in a silent -s: pa-REE.",
+      "variations": [
+        {
+          "display": "Je suis de Lyon",
+          "cue": "I am from Lyon",
+          "changed": "swap the place — je suis de … is the frame"
+        },
+        {
+          "display": "Marc est de Paris",
+          "cue": "Marc is from Paris",
+          "changed": "suis → est: the same verb, a different person"
+        },
+        {
+          "display": "Vous êtes de Paris ?",
+          "cue": "Are you from Paris?",
+          "changed": "suis → êtes, and a rising voice turns the same words into a question"
+        }
+      ],
+      "mistake": {
+        "display": "Je suis de la Paris",
+        "why": "A city name takes no article after de: de Paris, de Lyon, de Delhi."
+      },
+      "usage": "Where you are from — the second line of any introduction.",
+      "register": "neutral",
+      "mnemonic": "suis sounds like \"swee\": one small word carrying the whole of \"I am\"."
+    },
+    {
+      "id": "L1-M1-S03",
+      "display": "Je suis étudiant",
+      "cue": "I am a student",
+      "glossEn": "lit. \"I am student\" — there is no word for \"a\"",
+      "literal": "I am student",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "étudiant",
+            "cue": "student (m · f)",
+            "tag": "delta",
+            "forms": ["étudiant", "étudiante"],
+            "note": "student. A woman writes étudiante, and here the extra -e is not silent: it wakes the final -t, so étudiant ends on the vowel and étudiante ends on a t. Like every job after être, it stands bare."
+          }
+        ],
+        "rules": [0, 2, 3]
+      },
+      "trap": "English needs \"a\" in front of a job — \"I am a student\". French leaves it out after être, and Je suis un étudiant is exactly what English pushes you to write. un comes back only once something describes the noun: Je suis un bon étudiant.",
+      "sound": "Three syllables, ay-tü-DYAHN, and the final -t is silent. The é is a clean \"ay\" with no glide sliding off it.",
+      "variations": [
+        {
+          "display": "Je suis journaliste",
+          "cue": "I am a journalist",
+          "changed": "swap the job — the missing article stays missing"
+        },
+        {
+          "display": "Anne est étudiante",
+          "cue": "Anne is a student",
+          "changed": "est for a third person, and the -e that marks a woman"
+        },
+        {
+          "display": "Vous êtes étudiant ?",
+          "cue": "Are you a student?",
+          "changed": "êtes for the person you are speaking to, and a rising voice makes it a question"
+        }
+      ],
+      "mistake": {
+        "display": "Je suis un étudiant",
+        "why": "No un in front of a bare job after être. It comes back only when something describes the noun: Je suis un bon étudiant."
+      },
+      "usage": "Saying what you do — a job, a course of study, a role.",
+      "register": "neutral",
+      "mnemonic": "A job after être stands on its own: suis étudiant, not suis un étudiant."
+    },
+    {
+      "id": "L1-M1-S04",
+      "display": "Je suis français",
+      "cue": "I am French",
+      "glossEn": "lit. \"I am French\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "français",
+            "cue": "French (m · f)",
+            "tag": "delta",
+            "forms": ["français", "française"],
+            "note": "French, the adjective. It agrees with the subject: français for a man, française for a woman — and the -e is audible, turning the silent final -s into a z. The adjective is lowercase; only the noun for the person, un Français, takes a capital."
+          }
+        ],
+        "rules": [0, 2, 7]
+      },
+      "trap": "English writes \"French\" with a capital whether it means the people, the language or the adjective. French capitalises only the person: je suis français describes me, un Français is a Frenchman, and le français is the language.",
+      "sound": "Two syllables, frahn-SEH, and the final -s is silent. The ç is a plain s sound, never a k.",
+      "variations": [
+        {
+          "display": "Anne est française",
+          "cue": "Anne is French",
+          "changed": "est and the feminine -e — which also wakes the final -s into a z"
+        },
+        {
+          "display": "Je suis anglais",
+          "cue": "I am English",
+          "changed": "swap the nationality — the frame and the agreement are unchanged"
+        },
+        {
+          "display": "Vous êtes français ?",
+          "cue": "Are you French?",
+          "changed": "êtes for the person you are speaking to, and the question is the rising voice"
+        }
+      ],
+      "mistake": {
+        "display": "Je suis Français",
+        "why": "Lowercase for the adjective. The capital belongs to the noun un Français, a Frenchman — je suis français is describing myself, not naming a nation."
+      },
+      "usage": "Nationality, in an introduction.",
+      "register": "neutral",
+      "mnemonic": "The person gets the capital, the description does not."
+    },
+    {
+      "id": "L1-M1-S05",
+      "display": "J'aime le café",
+      "cue": "I like coffee",
+      "glossEn": "lit. \"I like the coffee\" — French keeps the article English drops",
+      "literal": "I-like the coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "J'aime",
+            "cue": "I like",
+            "tag": "delta",
+            "forms": [],
+            "note": "aimer, to like. je shortens to j' in front of the vowel and the two are written as one word — j'aime, never je aime — so this is a single word to look up. The apostrophe belongs to je: with a name as the subject nothing shortens, and the verb stands alone as aime."
+          },
+          {
+            "display": "le",
+            "cue": "the (masculine)",
+            "tag": "delta",
+            "forms": [],
+            "note": "the, in front of a masculine noun: le café, le livre. Every noun has a gender and its article is where you see it — le (m), la (f), les (plural). Learn each noun with its article."
+          },
+          {
+            "display": "café",
+            "cue": "coffee",
+            "tag": "free",
+            "forms": [],
+            "note": "coffee — masculine, so le café. The same word names the place you drink it in."
+          }
+        ],
+        "rules": [0, 5, 6]
+      },
+      "trap": "English says \"I like coffee\" with nothing in front of coffee. French will not: a whole class of thing takes le, la or les. J'aime café is the sentence an English speaker writes first, and it is not French.",
+      "sound": "J'aime is one syllable, zhem — the j is the soft sound in the middle of \"measure\". café takes its stress on the last syllable: ka-FAY.",
+      "variations": [
+        {
+          "display": "J'aime la musique",
+          "cue": "I like music",
+          "changed": "a feminine noun takes la — the article follows the noun's gender"
+        },
+        {
+          "display": "Anne aime le café",
+          "cue": "Anne likes coffee",
+          "changed": "a name as the subject: there is no je, so nothing shortens and the verb is aime"
+        },
+        {
+          "display": "Vous aimez le café ?",
+          "cue": "Do you like coffee?",
+          "changed": "aimez for the person you are speaking to — and the English \"do\" has nothing to translate into"
+        }
+      ],
+      "mistake": {
+        "display": "J'aime café",
+        "why": "A kind of thing keeps its article in French: j'aime le café. Dropping it is the English habit, not a shortcut."
+      },
+      "usage": "Saying what you like — the third line of an introduction.",
+      "register": "neutral",
+      "mnemonic": "In French you like THE coffee, all of it: j'aime le café."
+    },
+    {
+      "id": "L1-M1-S06",
+      "display": "J'aime la musique",
+      "cue": "I like music",
+      "glossEn": "lit. \"I like the music\"",
+      "literal": "I-like the music",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "la",
+            "cue": "the (feminine)",
+            "tag": "delta",
+            "forms": [],
+            "note": "the, in front of a feminine noun: la musique, la maison. It is le's twin, wearing the gender of the noun behind it."
+          },
+          {
+            "display": "musique",
+            "cue": "music",
+            "tag": "free",
+            "forms": [],
+            "note": "music — feminine, so la musique."
+          }
+        ],
+        "rules": [0, 4, 5]
+      },
+      "trap": "There is nothing about musique that looks feminine and nothing about café that looks masculine. The gender is a fact about the word, learned with its article, and English offers no clue at all.",
+      "sound": "mü-ZEEK — the u is the tight French u, lips rounded as if for oo while the tongue says ee. The final -e is silent.",
+      "variations": [
+        {
+          "display": "Anne aime la musique",
+          "cue": "Anne likes music",
+          "changed": "a name as the subject — aime, with no je to shorten"
+        },
+        {
+          "display": "Vous aimez la musique ?",
+          "cue": "Do you like music?",
+          "changed": "aimez for the person you are speaking to, said as a question"
+        },
+        {
+          "display": "J'aime la musique française",
+          "cue": "I like French music",
+          "changed": "an adjective comes AFTER the noun in French, and agrees with it"
+        }
+      ],
+      "mistake": {
+        "display": "J'aime le musique",
+        "why": "musique is feminine, so it takes la. The article is not a choice — it belongs to the noun."
+      },
+      "usage": "Likes and tastes, in any conversation.",
+      "register": "neutral",
+      "mnemonic": "la musique, le café — the little word carries the gender, so learn it with the noun."
+    },
+    {
+      "id": "L1-M1-S07",
+      "display": "J'aime les livres",
+      "cue": "I like books",
+      "glossEn": "lit. \"I like the books\"",
+      "literal": "I-like the books",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "les",
+            "cue": "the (plural)",
+            "tag": "delta",
+            "forms": [],
+            "note": "the, in front of any plural noun: les livres, les cafés. One form for both genders — the plural is the one place where the gender stops showing."
+          },
+          {
+            "display": "livres",
+            "cue": "book · books",
+            "tag": "free",
+            "forms": ["livre", "livres"],
+            "note": "book. The plural adds a written -s that is not pronounced, so le livre and les livres differ in speech only in the article."
+          }
+        ],
+        "rules": [0, 4, 5]
+      },
+      "trap": "English hears its plural: \"book\" and \"books\" are two different sounds. French does not — livre and livres are one sound, and it is les that carries the plural to the ear. A learner who only listens has to listen to the little word.",
+      "sound": "LEE-vruh, with the final -e barely there and the -s silent. les is \"lay\", not \"lez\" — its s only wakes up in front of a vowel.",
+      "variations": [
+        {
+          "display": "J'aime le livre",
+          "cue": "I like the book",
+          "changed": "les → le: one particular book, not books in general"
+        },
+        {
+          "display": "Anne aime les livres",
+          "cue": "Anne likes books",
+          "changed": "a name as the subject — aime, with nothing shortened"
+        },
+        {
+          "display": "Vous aimez les livres ?",
+          "cue": "Do you like books?",
+          "changed": "aimez for the person you are speaking to, said as a question"
+        }
+      ],
+      "mistake": {
+        "display": "J'aime le livres",
+        "why": "The article carries the plural too: les livres. le beside a plural noun is the one place the eye catches what the ear cannot."
+      },
+      "usage": "A taste in general — books, films, a kind of thing.",
+      "register": "neutral",
+      "mnemonic": "The -s is for the eye; les is for the ear."
+    },
+    {
+      "id": "L1-M1-S08",
+      "display": "Marc est journaliste",
+      "cue": "Marc is a journalist",
+      "glossEn": "lit. \"Marc is journalist\" — there is no word for \"a\"",
+      "literal": "Marc is journalist",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "journaliste",
+            "cue": "journalist",
+            "tag": "free",
+            "forms": [],
+            "note": "journalist. One spelling for a man and a woman — un journaliste, une journaliste — so only the article ahead of it would change. Like étudiant, it stands bare after être."
+          }
+        ],
+        "rules": [0, 2, 3]
+      },
+      "trap": "est is the same verb as suis — French has no second \"to be\" hiding behind it. What changed is the ending, and it changed because the subject did: je suis, Marc est.",
+      "sound": "est is just \"eh\" — the -s and the -t are both silent. journaliste ends on a clear -st: zhoor-na-LEEST.",
+      "variations": [
+        {
+          "display": "Anne est journaliste",
+          "cue": "Anne is a journalist",
+          "changed": "the same word for a woman — only an article in front of it would change"
+        },
+        {
+          "display": "Je suis journaliste",
+          "cue": "I am a journalist",
+          "changed": "est → suis: the ending follows the subject back to me"
+        },
+        {
+          "display": "Marc est français",
+          "cue": "Marc is French",
+          "changed": "swap what follows être — a nationality instead of a job"
+        }
+      ],
+      "mistake": {
+        "display": "Marc est un journaliste",
+        "why": "No un in front of a bare job after être: Marc est journaliste."
+      },
+      "usage": "Saying what someone else does.",
+      "register": "neutral",
+      "mnemonic": "One verb, three endings: je suis, vous êtes, il est."
+    },
+    {
+      "id": "L1-M1-S09",
+      "display": "Anne est française",
+      "cue": "Anne is French",
+      "glossEn": "lit. \"Anne is French\" — with the feminine ending",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Anne",
+            "cue": "Anne",
+            "tag": "free",
+            "forms": [],
+            "note": "A woman's name. Names carry over unchanged — swap in your own."
+          }
+        ],
+        "rules": [0, 2, 7]
+      },
+      "trap": "The ending follows the SUBJECT, not the speaker. A man saying this about Anne still writes française, because Anne is who the sentence is about.",
+      "sound": "frahn-SEZ — the -e at the end wakes the -s into a z. Anne is one syllable, \"ann\", with its final -e silent.",
+      "variations": [
+        {
+          "display": "Marc est français",
+          "cue": "Marc is French",
+          "changed": "a man as the subject — the -e goes, and the final -s falls silent again"
+        },
+        {
+          "display": "Je suis française",
+          "cue": "I am French (a woman speaking)",
+          "changed": "suis for me, and the -e because of who I am"
+        },
+        {
+          "display": "Anne est étudiante",
+          "cue": "Anne is a student",
+          "changed": "swap the adjective for a job — the -e marks the woman either way"
+        }
+      ],
+      "mistake": {
+        "display": "Anne est français",
+        "why": "The ending agrees with the subject, and the subject is Anne: française."
+      },
+      "usage": "Describing someone else.",
+      "register": "neutral",
+      "mnemonic": "Look at who the sentence is about, then write the ending."
+    },
+    {
+      "id": "L1-M1-S10",
+      "display": "Anne aime la musique",
+      "cue": "Anne likes music",
+      "glossEn": "lit. \"Anne likes the music\"",
+      "literal": "Anne likes the music",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aime",
+            "cue": "likes",
+            "tag": "delta",
+            "forms": [],
+            "note": "likes — the same verb as j'aime, standing on its own because the subject is a name and not je. The apostrophe in j'aime belongs to je: it is je that shortens in front of a vowel, never the verb."
+          }
+        ],
+        "rules": [0, 5, 6]
+      },
+      "trap": "English changes the verb for a third person — \"I like\" but \"she likes\". French writes aime for je, for il and for elle alike; only j'aime looks different, and that is the elision, not the person.",
+      "sound": "Anne aime runs together as a-NEM: French links a final consonant straight into the vowel that follows it.",
+      "variations": [
+        {
+          "display": "J'aime la musique",
+          "cue": "I like music",
+          "changed": "je as the subject — and je + aime is written j'aime"
+        },
+        {
+          "display": "Marc aime le café",
+          "cue": "Marc likes coffee",
+          "changed": "a different name and a different noun; aime does not move"
+        },
+        {
+          "display": "Anne aime les livres",
+          "cue": "Anne likes books",
+          "changed": "a plural after the verb — les, and an -s the ear does not hear"
+        }
+      ],
+      "mistake": {
+        "display": "Anne j'aime la musique",
+        "why": "j' is je — \"I\". With Anne as the subject there is no je to shorten: Anne aime la musique."
+      },
+      "usage": "Saying what someone else likes.",
+      "register": "neutral",
+      "mnemonic": "j' is je in a hurry. No je, no apostrophe."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M1-C01", "display": "Je m'appelle Anne", "cue": "My name is Anne" },
+    { "id": "L1-M1-C02", "display": "Marc est de Paris", "cue": "Marc is from Paris" },
+    { "id": "L1-M1-C03", "display": "Anne est journaliste", "cue": "Anne is a journalist" },
+    { "id": "L1-M1-C04", "display": "Je suis journaliste", "cue": "I am a journalist" },
+    { "id": "L1-M1-C05", "display": "J'aime le livre", "cue": "I like the book" },
+    { "id": "L1-M1-C06", "display": "Anne aime le café", "cue": "Anne likes coffee" },
+    { "id": "L1-M1-C07", "display": "Marc aime la musique", "cue": "Marc likes music" },
+    { "id": "L1-M1-C08", "display": "Anne est étudiante", "cue": "Anne is a student" },
+    { "id": "L1-M1-C09", "display": "Marc est français", "cue": "Marc is French" },
+    { "id": "L1-M1-C10", "display": "Je suis française", "cue": "I am French (a woman speaking)" },
+    { "id": "L1-M1-C11", "display": "Anne est de Paris", "cue": "Anne is from Paris" },
+    { "id": "L1-M1-C12", "display": "J'aime la musique française", "cue": "I like French music" }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
