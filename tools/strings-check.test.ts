@@ -11,10 +11,11 @@ import { DEFAULT_CONTENT_ROOT } from './validate.ts';
  * issue text predates five PRs and lists 21 keys; the files carry 39 (PR #120, verified across
  * courses by PR #124, plus the Ladder's three in #86 and the staged rung card's seven in #87).
  * Where they disagree, the files win, so the suite checks the list AGAINST the files rather than
- * the other way round. Four bundles since #267 — hi-mr, en-es, en-ar and hi-en, all four shipping
- * since #273 — and the content build checks every one exactly the same way.
+ * the other way round. Five bundles since #338 — hi-mr, en-es, en-ar and hi-en, all four shipping
+ * since #273, plus en-ru, authored behind the fixture gate — and the content build checks every
+ * one exactly the same way, fixture course or not: a bundle is complete or it is a build failure.
  */
-const COURSES = ['hi-mr', 'en-es', 'en-ar', 'hi-en'] as const;
+const COURSES = ['hi-mr', 'en-es', 'en-ar', 'hi-en', 'en-ru'] as const;
 
 function authoredStrings(courseId: string): Record<string, unknown> {
   const file = path.join(DEFAULT_CONTENT_ROOT, courseId, 'strings.json');
@@ -44,7 +45,7 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the four authored bundles carry — 71 keys, nested, identical', () => {
+  it('is exactly what the five authored bundles carry — 71 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
@@ -253,7 +254,7 @@ describe('the canonical key list', () => {
    * COUNTS, never time (Invariant 2) — the Sync-3 freeze's banned-vocabulary sweep (#71),
    * widened from #96's session-only scan to EVERY value in every bundle. The shell holds no
    * copy of its own, so the only door a streak, a duration or a percentage has into the product
-   * is an authored bundle — which is what this reads, in all four courses. ("Today" and hi-mr's
+   * is an authored bundle — which is what this reads, in all five courses. ("Today" and hi-mr's
    * "आज" pass by construction: the word-bounded scan bans the calendar's units, not every word
    * that contains one — ratified at the freeze alongside the scheduler's "due", which counts
    * sessions, never days.)
@@ -299,12 +300,12 @@ describe('the canonical key list', () => {
   });
 });
 
-describe('the four authored bundles', () => {
+describe('the five authored bundles', () => {
   it.each(COURSES)('%s passes the check with no issues', (courseId) => {
     expect(checkStrings(authoredStrings(courseId), courseId)).toEqual([]);
   });
 
-  it('agrees on placeholders key for key across all four (PR #124, mechanised)', () => {
+  it('agrees on placeholders key for key across all five (PR #124, mechanised)', () => {
     const perCourse = COURSES.map((courseId) => flattenStrings(authoredStrings(courseId)));
 
     for (const key of STRINGS_KEYS) {

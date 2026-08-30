@@ -57,6 +57,24 @@ function authored(file: 'levels.json' | 'strings.json'): unknown {
   if (text === undefined) throw new Error(`content/hi-en/${file} is not authored`);
   return JSON.parse(text);
 }
+
+/**
+ * The fifth course's files (#338): `content/en-ru/levels.json` and `content/en-ru/strings.json`.
+ * en-ru is English (L1) → Russian (L2), still a dev fixture — its row carries `fixture: true`, so
+ * only a `--with-fixtures` build offers it and not one of its ten rungs is authored yet. The smoke
+ * below is the same one hi-en got: the row in the switcher, a ten-rung ladder, English chrome.
+ */
+const EN_RU_FILES = import.meta.glob<string>('../../content/en-ru/*.json', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+});
+
+function authoredEnRu(file: 'levels.json' | 'strings.json'): unknown {
+  const text = EN_RU_FILES[`../../content/en-ru/${file}`];
+  if (text === undefined) throw new Error(`content/en-ru/${file} is not authored`);
+  return JSON.parse(text);
+}
 /** Injected, so nothing here touches the wall clock — `passedAt` is a receipt, not a schedule. */
 const STAMP = () => '2026-02-03T09:00:00.000Z';
 
@@ -281,13 +299,15 @@ describe('the fourth course — hi-en (#267, shipping since #273)', () => {
     return within(screen.getByRole('list')).getAllByRole('listitem');
   }
 
-  it('is offered as the last pair, and is nothing the shell was told about', async () => {
+  it('is offered as a pair of its own, and is nothing the shell was told about', async () => {
     const select = await renderSettings();
 
     const labels = within(select)
       .getAllByRole('option')
       .map((option) => option.textContent);
-    expect(labels.at(-1)).toBe('hindi → english');
+    // Not `.at(-1)` any more: en-ru (#338) is appended after hi-en, so the switcher's tail moves
+    // with every new course. What matters is that the fourth pair is offered, wherever it sits.
+    expect(labels).toContain('hindi → english');
     // The switcher reads `pairLabel` and nothing else about the row (`manifest.test.ts`) — the
     // fourth course is offered exactly like the first three, on a strict build as on a dev one.
     expect(within(select).getByRole('option', { name: 'hindi → english' })).toHaveValue('hi-en');
@@ -350,6 +370,98 @@ describe('the fourth course — hi-en (#267, shipping since #273)', () => {
     expect(useAppStore.getState().courses['hi-en']).toBeDefined();
 
     // Back to hi-mr: its ladder is where the climb left it — one rung passed, M2 current.
+    fireEvent.click(screen.getByRole('link', { name: 'Settings' }));
+    fireEvent.change(await screen.findByRole('combobox', { name: 'Active course' }), {
+      target: { value: COURSE },
+    });
+    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
+    expect(await screen.findByText(/LEVEL 1 · 1 OF 10/)).toBeInTheDocument();
+    expect(screen.getByText('M2 · CURRENT RUNG')).toBeInTheDocument();
+    expect(useAppStore.getState().courses[COURSE]).toBe(before);
+  });
+});
+
+/* ------------------------------------------------- the fifth course, en-ru (#338) */
+
+describe('the fifth course — en-ru (#338, still a dev fixture)', () => {
+  /**
+   * The same switch flow, run against the REAL en-ru files. The row is in `DEV_MANIFEST` carrying
+   * `fixture: true`, exactly as hi-en's did between #267 and #273: a dev build offers the pair, a
+   * strict build never emits it, and #343 deletes the flag. Nothing is authored yet, so every one
+   * of the ten rungs is pending and the chrome is en-ru's English bundle — the L1 of this course
+   * is English, so `lang` stays `en` and the ladder reads exactly as en-es's does.
+   */
+  function serveEnRu(): void {
+    const base = globalThis.fetch;
+    const json = (value: unknown) =>
+      Promise.resolve(new Response(JSON.stringify(value), { status: 200 }));
+    vi.stubGlobal(
+      'fetch',
+      vi.fn((input: RequestInfo | URL) => {
+        const url = String(input);
+        if (url.endsWith('/content/en-ru/levels.json')) return json(authoredEnRu('levels.json'));
+        if (url.endsWith('/content/en-ru/strings.json')) return json(authoredEnRu('strings.json'));
+        return base(input);
+      }),
+    );
+  }
+
+  it('is offered in the switcher as english → russian', async () => {
+    const select = await renderSettings();
+
+    expect(within(select).getByRole('option', { name: 'english → russian' })).toHaveValue('en-ru');
+  });
+
+  it('boots a ladder of ten pending rungs in English chrome, and leaves hi-mr where it was', async () => {
+    const ladder = tenRungLadder(3);
+    climb(ladder, 'L1-M1');
+    const before = useAppStore.getState().courses[COURSE];
+    const select = await renderSettings(ladder);
+    serveEnRu();
+
+    fireEvent.change(select, { target: { value: 'en-ru' } });
+
+    // The arrival toast is en-ru's own `switchToast` — English, the L1 of this course.
+    expect(
+      await screen.findByText(
+        'You’re on english → russian now. Your hindi → marathi ladder is saved exactly where it was.',
+      ),
+    ).toBeInTheDocument();
+    // The document declares the course's L1 (#186): `en`, off the row's `l1Tag`. Russian is what
+    // this course TEACHES, and not one Cyrillic line exists yet — the skeleton carries none.
+    await waitFor(() => {
+      expect(document.documentElement.lang).toBe('en');
+    });
+    expect(document.documentElement.dir).toBe('ltr');
+
+    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
+    expect(await screen.findByText(/LEVEL 1 · 0 OF 10/)).toBeInTheDocument();
+    expect(screen.getByText('Foundations — say what you need')).toBeInTheDocument();
+    expect(within(screen.getByRole('list')).getAllByRole('listitem')).toHaveLength(10);
+    for (const title of [
+      'Who I am',
+      'First exchange',
+      'Needs and wants',
+      'My day',
+      'Yesterday',
+      'Tomorrow',
+      'Where things are',
+      'Numbers & shopping',
+      'Feelings & opinions',
+      'Connected talk',
+    ]) {
+      expect(screen.getByText(title)).toBeInTheDocument();
+    }
+    // Nothing is authored, so M1 is the current rung with NO module CTA — the whole ladder is
+    // pending, and the pending line is en-ru's English, counting all ten (Invariant 2).
+    expect(screen.getByText('M1 · CURRENT RUNG')).toBeInTheDocument();
+    expect(within(screen.getByRole('list')).queryAllByRole('link')).toHaveLength(0);
+    expect(screen.getByText('Level 1 · 10 of 10 rungs still to climb.')).toBeInTheDocument();
+
+    // Invariant 8: the switch created en-ru's subtree and touched nobody else's.
+    expect(useAppStore.getState().courses[COURSE]).toBe(before);
+    expect(useAppStore.getState().courses['en-ru']).toBeDefined();
+
     fireEvent.click(screen.getByRole('link', { name: 'Settings' }));
     fireEvent.change(await screen.findByRole('combobox', { name: 'Active course' }), {
       target: { value: COURSE },
