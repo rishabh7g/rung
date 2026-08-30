@@ -575,6 +575,19 @@
  *   because its whole job — blocking palatalization before a `ye`/`ya`/`yu` — is already done by
  *   the digraph's own `y`: `объявление` is `obyavlénie`, which reads correctly, and no L1 word
  *   depends on the distinction.
+ * - **`г` is `v` where Russian SAYS /v/**, and this is the one place the table above is overruled
+ *   rather than applied (#359). `сегодня` is said [sʲɪˈvodʲnʲə], so it is written **`sevódnya`**,
+ *   not `segódnya`; the same call covers the genitive endings `-ого` / `-его` as **`-ovo`** /
+ *   **`-evo`** if any ever reach L1 (`его` → `yevó`). The table is the DEFAULT and the scheme's
+ *   stated principle is that reading-first beats reversible — and this is the case where obeying
+ *   the letter would teach an English reader to say a word wrong. "se-GOD-nya" is not a
+ *   mispronunciation a learner recovers from on their own, and the whole reason this course is
+ *   romanized (#353) is that they cannot read the Cyrillic to check. **Note what this does NOT
+ *   license**: `что` stays `chto` and `конечно` stays `konéchno`, because the `ch` there is still
+ *   a `ch` the reader can see and the `sound` line carries the "shto"/"kanyeshna" — the `г`/`v`
+ *   swap is singled out because the letter and the sound are not even neighbours. Every module
+ *   writing one of these words says so in a `note`, quoting the Cyrillic, because that is exactly
+ *   the case where a parenthetical Cyrillic earns its place (decision 1).
  * - **ё.** The pre-romanization brief mandated writing `ё` everywhere so the index kept it apart
  *   from `е`. That decision stands and gets stronger: **`ё` is always written `yó`, monosyllable
  *   or not.** Russian `ё` is by definition the stressed vowel of its word, so the acute is part of

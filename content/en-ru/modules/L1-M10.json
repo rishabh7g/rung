@@ -5,7 +5,7 @@
   "job": "Short 2–3 sentence exchanges",
   "prerequisites": ["L1-M9"],
   "verified": true,
-  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-30",
   "complexity": {
     "minWordsPerSentence": 2,
@@ -13,27 +13,27 @@
     "allowedTenses": ["simple_present", "past", "future"],
     "allowedPatterns": [
       "<M1–M9 pattern> + <M1–M9 pattern>",
-      "<question> → <answer + потому что + reason>",
-      "<statement> + и / но + <statement>"
+      "<question> → <answer + potomú chto + reason>",
+      "<statement> + i / no + <statement>"
     ],
     "newWordCap": 25
   },
   "rules": [
     {
       "tag": "delta",
-      "text": "WORD ORDER DOES THE ARTICLE'S WORK, and this is where M1's promise is paid. Russian has no a and no the, so the job moves into the order: what is already known goes first, and the NEW information goes last. Книга на столе is \"the book is on the table\" — we know the book, and where it is, is the news. На столе книга is \"there is a book on the table\" — we know the table, and the book is the news. Both are correct, and they are not interchangeable."
+      "text": "WORD ORDER DOES THE ARTICLE'S WORK, and this is where M1's promise is paid. Russian has no a and no the, so the job moves into the order: what is already known goes first, and the NEW information goes last. Kníga na stolé is \"the book is on the table\" — we know the book, and where it is, is the news. Na stolé kníga is \"there is a book on the table\" — we know the table, and the book is the news. Both are correct, and they are not interchangeable."
     },
     {
       "tag": "interference",
-      "text": "он, она and оно refer to things as well as people, and they follow the noun's GENDER rather than whether it is alive: a стол is он, a книга is она, молоко is оно. English has one \"it\" for all of them, so an English speaker reaches for оно and is wrong most of the time."
+      "text": "on, oná and onó refer to things as well as people, and they follow the noun's GENDER rather than whether it is alive: a stol is on, a kníga is oná, molokó is onó. English has one \"it\" for all of them, so an English speaker reaches for onó and is wrong most of the time."
     },
     {
       "tag": "free",
-      "text": "The joiners are the module's honest spend: и (and), но (but), а (and-but, marking a contrast between two things), тоже (also), потом (then, afterwards). а is the one with no clean English twin — it joins two halves that differ without contradicting, where но contradicts."
+      "text": "The joiners are the module's honest spend: i (and), no (but), a (and-but, marking a contrast between two things), tózhe (also), potóm (then, afterwards). a is the one with no clean English twin — it joins two halves that differ without contradicting, where no contradicts."
     },
     {
       "tag": "delta",
-      "text": "Keep the subject pronoun. Russian can drop я and in speech often does, especially in answers — but the past tense names a gender rather than a person, so был with no pronoun is genuinely ambiguous, and knowing when the drop sounds natural rather than clipped takes an ear you do not have yet. Write the pronoun; lose it later."
+      "text": "Keep the subject pronoun. Russian can drop ya and in speech often does, especially in answers — but the past tense names a gender rather than a person, so byl with no pronoun is genuinely ambiguous, and knowing when the drop sounds natural rather than clipped takes an ear you do not have yet. Write the pronoun; lose it later."
     },
     {
       "tag": "free",
@@ -43,321 +43,364 @@
   "sentences": [
     {
       "id": "L1-M10-S01",
-      "display": "Добрый день! Как дела?",
+      "display": "Dóbryy den'! Kak delá?",
+      "script": "Добрый день! Как дела?",
       "cue": "Good afternoon! How are things?",
       "glossEn": "lit. \"good day! how affairs?\"",
       "literal": "Good day! How affairs?",
       "deconstruction": {
         "words": [
           {
-            "display": "Добрый день",
+            "display": "Dóbryy den'",
+            "script": "Добрый день",
             "cue": "good afternoon · good day",
             "tag": "free",
-            "forms": ["Добрый день"],
-            "note": "The third greeting, for the middle of the day — M2 had Здравствуйте for any hour and Доброе утро for the morning. добрый is the masculine shape of the same word that was доброе in front of утро: the greeting agrees with the time of day it names."
+            "forms": ["Dóbryy den'"],
+            "note": "The third greeting, for the middle of the day — M2 had Zdrávstvuyte for any hour and Dóbroye útro for the morning. dóbryy is the masculine shape of the same word that was dóbroye in front of útro: the greeting agrees with the time of day it names."
           }
         ],
         "rules": [4]
       },
-      "trap": "The two words of the greeting have to agree, and they do so invisibly: доброе with the neuter утро, добрый with the masculine день. Getting them crossed is the commonest slip in Russian's politest phrase.",
-      "sound": "DO-bry dyen' kak dye-LA. The ы of добрый is the hard back vowel, and день ends soft.",
+      "trap": "The two words of the greeting have to agree, and they do so invisibly: dóbroye with the neuter útro, dóbryy with the masculine den'. Getting them crossed is the commonest slip in Russian's politest phrase.",
+      "sound": "DO-bry dyen' kak dye-LA. The first y of dóbryy is the hard back vowel and the second is the glide that closes the word — one letter, two jobs — and den' ends soft.",
       "variations": [
         {
-          "display": "Добрый день, Анна!",
+          "display": "Dóbryy den', Ánna!",
+          "script": "Добрый день, Анна!",
           "cue": "Good afternoon, Anna!",
           "changed": "a name after a comma, as with every greeting in the course"
         },
         {
-          "display": "Доброе утро! Как дела?",
+          "display": "Dóbroye útro! Kak delá?",
+          "script": "Доброе утро! Как дела?",
           "cue": "Good morning! How are things?",
           "changed": "the morning greeting instead — and its describing word changes with it"
         },
         {
-          "display": "Здравствуйте! Как у вас дела?",
+          "display": "Zdrávstvuyte! Kak u vas delá?",
+          "script": "Здравствуйте! Как у вас дела?",
           "cue": "Hello! How are things with you?",
           "changed": "the fuller, more careful version of both halves — the one to prefer with a stranger"
         }
       ],
       "mistake": {
-        "display": "Доброе день! Как дела?",
-        "why": "день is masculine, so its describing word is добрый. доброе belongs with утро."
+        "display": "Dóbroye den'! Kak delá?",
+        "script": "Доброе день! Как дела?",
+        "why": "den' is masculine, so its describing word is dóbryy. dóbroye belongs with útro."
       },
       "usage": "Opening any conversation between about noon and the evening.",
       "register": "neutral",
-      "mnemonic": "Доброе утро, добрый день. The greeting agrees with the part of the day it names."
+      "mnemonic": "Dóbroye útro, dóbryy den'. The greeting agrees with the part of the day it names."
     },
     {
       "id": "L1-M10-S02",
-      "display": "Хорошо, спасибо. А вы?",
+      "display": "Khoroshó, spasíbo. A vy?",
+      "script": "Хорошо, спасибо. А вы?",
       "cue": "Fine, thank you. And you?",
       "glossEn": "lit. \"well, thanks. and you?\"",
       "literal": "Well, thanks. And you?",
       "deconstruction": {
         "words": [
           {
-            "display": "А",
+            "display": "A",
+            "script": "А",
             "cue": "and · but · as for",
             "tag": "interference",
-            "forms": ["А"],
-            "note": "The joiner English has no single word for. It links two halves that DIFFER without contradicting — \"I'm fine, and you?\", \"this is a book, and that is a newspaper\". Where но would set the halves against each other, а just turns the attention from one to the other. On its own with a pronoun it is the standard way of handing a question back."
+            "forms": ["A"],
+            "note": "The joiner English has no single word for. It links two halves that DIFFER without contradicting — \"I'm fine, and you?\", \"this is a book, and that is a newspaper\". Where no would set the halves against each other, a just turns the attention from one to the other. On its own with a pronoun it is the standard way of handing a question back."
           }
         ],
         "rules": [2, 4]
       },
-      "trap": "и, а and но all come out as \"and\" or \"but\" in English, and they are three different jobs: и adds, а turns, но contradicts. Choosing и here would sound as if you were listing yourself and the other person together.",
-      "sound": "kha-ra-SHO spa-SEE-ba a vy. А is one unstressed vowel and leans onto вы.",
+      "trap": "i, a and no all come out as \"and\" or \"but\" in English, and they are three different jobs: i adds, a turns, no contradicts. Choosing i here would sound as if you were listing yourself and the other person together.",
+      "sound": "kha-ra-SHO spa-SEE-ba a vy. A is one unstressed vowel and leans onto vy.",
       "variations": [
         {
-          "display": "Хорошо, спасибо. А вы, Анна?",
+          "display": "Khoroshó, spasíbo. A vy, Ánna?",
+          "script": "Хорошо, спасибо. А вы, Анна?",
           "cue": "Fine, thank you. And you, Anna?",
           "changed": "the name added, which is warmer"
         },
         {
-          "display": "Плохо. А вы?",
+          "display": "Plókho. A vy?",
+          "script": "Плохо. А вы?",
           "cue": "Not good. And you?",
-          "changed": "M9's плохо as the answer — the handing-back half does not change"
+          "changed": "M9's plókho as the answer — the handing-back half does not change"
         },
         {
-          "display": "Хорошо, спасибо. А как дела у вас?",
+          "display": "Khoroshó, spasíbo. A kak delá u vas?",
+          "script": "Хорошо, спасибо. А как дела у вас?",
           "cue": "Fine, thank you. And how are things with you?",
           "changed": "the full question handed back instead of the two-word version"
         }
       ],
       "mistake": {
-        "display": "Хорошо, спасибо. И вы?",
-        "why": "и adds one thing to another. Turning the question back on somebody is а вы?"
+        "display": "Khoroshó, spasíbo. I vy?",
+        "script": "Хорошо, спасибо. И вы?",
+        "why": "i adds one thing to another. Turning the question back on somebody is a vy?"
       },
       "usage": "The second turn of every conversation you will have.",
       "register": "neutral",
-      "mnemonic": "и adds, а turns, но contradicts. Three joiners, three jobs, one English word."
+      "mnemonic": "i adds, a turns, no contradicts. Three joiners, three jobs, one English word."
     },
     {
       "id": "L1-M10-S03",
-      "display": "Я студент и я работаю.",
+      "display": "Ya studént i ya rabótayu.",
+      "script": "Я студент и я работаю.",
       "cue": "I am a student and I work",
       "glossEn": "lit. \"I student and I work\"",
       "literal": "I student and I work",
       "deconstruction": {
         "words": [
           {
-            "display": "и",
+            "display": "i",
+            "script": "и",
             "cue": "and",
             "tag": "free",
-            "forms": ["и"],
+            "forms": ["i"],
             "note": "\"And\", adding one thing to another. No comma in front of it when it simply joins two halves — Russian's comma rules are strict, and this is one of the places where the comma stays away."
           }
         ],
         "rules": [3, 4]
       },
-      "trap": "The second я is not optional at this level. Russian could drop it, and in speech often would — but the ending alone will not always name the person, and the habit is worth keeping until you can hear when to break it.",
-      "sound": "ya stoo-DYENT ee ya ra-BO-ta-yoo. и is one short \"ee\", and it leans onto whatever follows it.",
+      "trap": "The second ya is not optional at this level. Russian could drop it, and in speech often would — but the ending alone will not always name the person, and the habit is worth keeping until you can hear when to break it.",
+      "sound": "ya stoo-DYENT ee ya ra-BO-ta-yoo. i is one short \"ee\", and it leans onto whatever follows it.",
       "variations": [
         {
-          "display": "Я студентка и я работаю.",
+          "display": "Ya studéntka i ya rabótayu.",
+          "script": "Я студентка и я работаю.",
           "cue": "I am a student and I work (said by a woman)",
-          "changed": "студент → студентка: a different word, as it has been since M1"
+          "changed": "studént → studéntka: a different word, as it has been since M1"
         },
         {
-          "display": "Я работаю и я живу в Москве.",
+          "display": "Ya rabótayu i ya zhivú v Moskvé.",
+          "script": "Я работаю и я живу в Москве.",
           "cue": "I work and I live in Moscow",
           "changed": "two verbs joined instead of a noun and a verb"
         },
         {
-          "display": "Я студент, но я не работаю.",
+          "display": "Ya studént, no ya ne rabótayu.",
+          "script": "Я студент, но я не работаю.",
           "cue": "I am a student but I don't work",
-          "changed": "и → но, which contradicts rather than adds — and но takes a comma where и does not"
+          "changed": "i → no, which contradicts rather than adds — and no takes a comma where i does not"
         }
       ],
       "mistake": {
-        "display": "Я студент, и я работаю.",
-        "why": "No comma before и when it simply joins two halves. Russian's punctuation is stricter than English's in both directions."
+        "display": "Ya studént, i ya rabótayu.",
+        "script": "Я студент, и я работаю.",
+        "why": "No comma before i when it simply joins two halves. Russian's punctuation is stricter than English's in both directions."
       },
       "usage": "Saying two things about yourself in one breath.",
       "register": "neutral",
-      "mnemonic": "и joins and takes no comma. но contradicts and takes one."
+      "mnemonic": "i joins and takes no comma. no contradicts and takes one."
     },
     {
       "id": "L1-M10-S04",
-      "display": "Я хочу чай, но не хочу кофе.",
+      "display": "Ya khochú chay, no ne khochú kófe.",
+      "script": "Я хочу чай, но не хочу кофе.",
       "cue": "I want tea but I don't want coffee",
       "glossEn": "lit. \"I want tea, but not want coffee\"",
       "literal": "I want tea, but not want coffee",
       "deconstruction": {
         "words": [
           {
-            "display": "но",
+            "display": "no",
+            "script": "но",
             "cue": "but",
             "tag": "free",
-            "forms": ["но"],
-            "note": "\"But\", setting one half against the other. It always takes a comma in front of it, where и takes none — that is the practical difference between them on the page."
+            "forms": ["no"],
+            "note": "\"But\", setting one half against the other. It always takes a comma in front of it, where i takes none — that is the practical difference between them on the page."
           }
         ],
         "rules": [2, 3, 4]
       },
-      "trap": "The second я really is dropped here, and that is allowed: when the person has not changed and the halves are joined, Russian leaves it out. This is the one place on the rung where the pronoun goes, and the rule elsewhere still holds.",
-      "sound": "ya kha-CHOO chai no nye kha-CHOO KO-fye. но is short and flat, not the drawn-out English \"but\".",
+      "trap": "The second ya really is dropped here, and that is allowed: when the person has not changed and the halves are joined, Russian leaves it out. This is the one place on the rung where the pronoun goes, and the rule elsewhere still holds.",
+      "sound": "ya kha-CHOO chai no nye kha-CHOO KO-fye. no is short and flat, not the drawn-out English \"but\".",
       "variations": [
         {
-          "display": "Я хочу чай, но я не хочу кофе.",
+          "display": "Ya khochú chay, no ya ne khochú kófe.",
+          "script": "Я хочу чай, но я не хочу кофе.",
           "cue": "I want tea but I don't want coffee",
-          "changed": "the second я written out — equally correct, and a shade more deliberate"
+          "changed": "the second ya written out — equally correct, and a shade more deliberate"
         },
         {
-          "display": "Я хочу чай и кофе.",
+          "display": "Ya khochú chay i kófe.",
+          "script": "Я хочу чай и кофе.",
           "cue": "I want tea and coffee",
-          "changed": "и instead of но, so the halves add rather than contradict — and the comma goes"
+          "changed": "i instead of no, so the halves add rather than contradict — and the comma goes"
         },
         {
-          "display": "Я хочу воду, но не хочу сок.",
+          "display": "Ya khochú vódu, no ne khochú sok.",
+          "script": "Я хочу воду, но не хочу сок.",
           "cue": "I want water but I don't want juice",
-          "changed": "swap the drinks — воду still bends, being feminine"
+          "changed": "swap the drinks — vódu still bends, being feminine"
         }
       ],
       "mistake": {
-        "display": "Я хочу чай но не хочу кофе.",
-        "why": "но takes a comma in front of it, always. It is the mirror of и, which takes none."
+        "display": "Ya khochú chay no ne khochú kófe.",
+        "script": "Я хочу чай но не хочу кофе.",
+        "why": "no takes a comma in front of it, always. It is the mirror of i, which takes none."
       },
-      "usage": "Turning half an offer down — and the commonest use of но in ordinary speech.",
+      "usage": "Turning half an offer down — and the commonest use of no in ordinary speech.",
       "register": "neutral",
-      "mnemonic": "Comma, но. No comma, и. The punctuation tells you which joiner you are looking at."
+      "mnemonic": "Comma, no. No comma, i. The punctuation tells you which joiner you are looking at."
     },
     {
       "id": "L1-M10-S05",
-      "display": "Иван студент. Анна тоже студентка.",
+      "display": "Iván studént. Ánna tózhe studéntka.",
+      "script": "Иван студент. Анна тоже студентка.",
       "cue": "Ivan is a student. Anna is a student too.",
       "glossEn": "lit. \"Ivan student. Anna also student.\"",
       "literal": "Ivan student. Anna also student.",
       "deconstruction": {
         "words": [
           {
-            "display": "тоже",
+            "display": "tózhe",
+            "script": "тоже",
             "cue": "also · too",
             "tag": "delta",
-            "forms": ["тоже"],
-            "note": "\"Also\", and it goes in front of what it adds — not at the end of the sentence, where English usually puts \"too\". Here it is in front of студентка, because it is the being-a-student that is shared."
+            "forms": ["tózhe"],
+            "note": "\"Also\", and it goes in front of what it adds — not at the end of the sentence, where English usually puts \"too\". Here it is in front of studéntka, because it is the being-a-student that is shared."
           }
         ],
         "rules": [4]
       },
-      "trap": "English puts \"too\" at the end and Russian puts тоже in front of the thing being shared, which means it also decides what the sentence claims: Анна тоже студентка says Anna is one as well, while Тоже Анна студентка would be pointing at another Anna.",
-      "sound": "ee-VAN stoo-DYENT AN-na TO-zhe stoo-DYENT-ka. The ж of тоже is the s of \"measure\" again.",
+      "trap": "English puts \"too\" at the end and Russian puts tózhe in front of the thing being shared, which means it also decides what the sentence claims: Ánna tózhe studéntka says Anna is one as well, while Tózhe Ánna studéntka would be pointing at another Anna.",
+      "sound": "ee-VAN stoo-DYENT AN-na TO-zhe stoo-DYENT-ka. The zh of tózhe is the s of \"measure\" again.",
       "variations": [
         {
-          "display": "Иван студент. Анна тоже.",
+          "display": "Iván studént. Ánna tózhe.",
+          "script": "Иван студент. Анна тоже.",
           "cue": "Ivan is a student. Anna too.",
-          "changed": "the second half cut to two words — тоже can stand alone as the whole reply"
+          "changed": "the second half cut to two words — tózhe can stand alone as the whole reply"
         },
         {
-          "display": "Я студент. Анна тоже студентка.",
+          "display": "Ya studént. Ánna tózhe studéntka.",
+          "script": "Я студент. Анна тоже студентка.",
           "cue": "I am a student. Anna is a student too.",
           "changed": "a pronoun in the first half instead of a name"
         },
         {
-          "display": "Иван работает. Анна тоже работает.",
+          "display": "Iván rabótayet. Ánna tózhe rabótayet.",
+          "script": "Иван работает. Анна тоже работает.",
           "cue": "Ivan works. Anna works too.",
-          "changed": "a shared verb rather than a shared noun — тоже still sits in front of it"
+          "changed": "a shared verb rather than a shared noun — tózhe still sits in front of it"
         }
       ],
       "mistake": {
-        "display": "Иван студент. Анна студентка тоже.",
-        "why": "тоже goes in front of what it adds, not at the end. Анна тоже студентка."
+        "display": "Iván studént. Ánna studéntka tózhe.",
+        "script": "Иван студент. Анна студентка тоже.",
+        "why": "tózhe goes in front of what it adds, not at the end. Ánna tózhe studéntka."
       },
       "usage": "Agreeing that somebody else is in the same position — a very common second half of a turn.",
       "register": "neutral",
-      "mnemonic": "English adds \"too\" at the end. Russian puts тоже in front of the shared thing."
+      "mnemonic": "English adds \"too\" at the end. Russian puts tózhe in front of the shared thing."
     },
     {
       "id": "L1-M10-S06",
-      "display": "Сегодня я работаю. Потом я буду отдыхать.",
+      "display": "Sevódnya ya rabótayu. Potóm ya búdu otdykhát'.",
+      "script": "Сегодня я работаю. Потом я буду отдыхать.",
       "cue": "Today I am working. Afterwards I will rest.",
       "glossEn": "lit. \"today I work. then I will-be rest-INFINITIVE\"",
       "literal": "Today I work. Then I will-be to-rest",
       "deconstruction": {
         "words": [
           {
-            "display": "Сегодня",
+            "display": "Sevódnya",
+            "script": "Сегодня",
             "cue": "today",
             "tag": "delta",
-            "forms": ["Сегодня"],
-            "note": "Today. Written with a г and said with a в — see-VOD-nya — one of the same small group of words as конечно, where the spelling and the sound part company. It joins вчера and завтра to complete the set."
+            "forms": ["Sevódnya"],
+            "note": "Today. The line you say is sevódnya; the quiet line under it is сегодня, with a г where you hear the v. It is one of a small group of words — konéchno is another — where the Russian letter and the Russian sound part company, and this course writes the sound, because a romanization that wrote the letter would teach you to say the word wrong. It joins vcherá and závtra to complete the set."
           },
           {
-            "display": "Потом",
+            "display": "Potóm",
+            "script": "Потом",
             "cue": "then · afterwards · later",
             "tag": "free",
-            "forms": ["Потом"],
+            "forms": ["Potóm"],
             "note": "\"Then\", in the sense of afterwards. It opens the second half of a turn and is the simplest way to put two events in order."
           }
         ],
         "rules": [4]
       },
-      "trap": "Сегодня is said \"see-VOD-nya\" and there is no rule to derive it from — the г is pronounced as a в in a handful of very common words, and they have to be learned one at a time.",
-      "sound": "see-VOD-nya ya ra-BO-ta-yoo pa-TOM ya BOO-doo ad-dy-KHAT'. The г of сегодня is a v.",
+      "trap": "Sevódnya is said \"see-VOD-nya\", and the v you say is not the letter Russian writes there — a handful of very common words swap that letter for a v, and there is no rule to derive which. Read it off the display here; a Russian book would leave you to know it.",
+      "sound": "see-VOD-nya ya ra-BO-ta-yoo pa-TOM ya BOO-doo ad-dy-KHAT'. The v in the middle of sevódnya is written as a different letter in Russian, and said as a v anyway.",
       "variations": [
         {
-          "display": "Сегодня я работаю. Потом я пойду домой.",
+          "display": "Sevódnya ya rabótayu. Potóm ya poydú domóy.",
+          "script": "Сегодня я работаю. Потом я пойду домой.",
           "cue": "Today I am working. Then I will go home.",
-          "changed": "a finished-event future in the second half, so no буду"
+          "changed": "a finished-event future in the second half, so no búdu"
         },
         {
-          "display": "Вчера я купил хлеб. Потом я пошёл домой.",
+          "display": "Vcherá ya kupíl khleb. Potóm ya poshyól domóy.",
+          "script": "Вчера я купил хлеб. Потом я пошёл домой.",
           "cue": "Yesterday I bought bread. Then I went home.",
           "changed": "the whole turn moved into the past"
         },
         {
-          "display": "Завтра я буду работать. Потом я буду отдыхать.",
+          "display": "Závtra ya búdu rabótat'. Potóm ya búdu otdykhát'.",
+          "script": "Завтра я буду работать. Потом я буду отдыхать.",
           "cue": "Tomorrow I will work. Then I will rest.",
           "changed": "the whole turn moved into the future"
         }
       ],
       "mistake": {
-        "display": "Сегодня я буду работаю.",
-        "why": "Two verbs cannot both carry an ending, and Сегодня я работаю is already about today. буду has no place here."
+        "display": "Sevódnya ya búdu rabótayu.",
+        "script": "Сегодня я буду работаю.",
+        "why": "Two verbs cannot both carry an ending, and Sevódnya ya rabótayu is already about today. búdu has no place here."
       },
       "usage": "Describing a day in two steps — the shortest real narrative in the course.",
       "register": "neutral",
-      "mnemonic": "вчера, сегодня, завтра. Three words, three days, and the middle one is said with a v."
+      "mnemonic": "vcherá, sevódnya, závtra. Three words, three days — and the middle one is the one whose spelling and sound disagree."
     },
     {
       "id": "L1-M10-S07",
-      "display": "Где ключ? Он на столе.",
+      "display": "Gde klyuch? On na stolé.",
+      "script": "Где ключ? Он на столе.",
       "cue": "Where is the key? It is on the table.",
       "glossEn": "lit. \"where key? he on table\"",
       "literal": "Where key? He on table",
       "deconstruction": {
         "words": [
           {
-            "display": "Он",
+            "display": "On",
+            "script": "Он",
             "cue": "he · it (masculine)",
             "tag": "interference",
-            "forms": ["Он", "она", "оно", "они"],
-            "note": "One row, four shapes, and the shape follows the noun's GENDER rather than whether it is alive: он for a masculine noun (ключ, стол, город), она for a feminine one (книга, газета), оно for a neuter one (молоко, письмо), они for more than one. English has a single \"it\" for every object, which is exactly why this needs its own row."
+            "forms": ["On", "oná", "onó", "oní"],
+            "note": "One row, four shapes, and the shape follows the noun's GENDER rather than whether it is alive: on for a masculine noun (klyuch, stol, górod), oná for a feminine one (kníga, gazéta), onó for a neuter one (molokó, pis'mó), oní for more than one. English has a single \"it\" for every object, which is exactly why this needs its own row."
           }
         ],
         "rules": [1, 4]
       },
-      "trap": "English would say \"it\" here and an English speaker reaches for оно. But ключ is masculine, so the key is он. оно is only for neuter nouns, and there are far fewer of those than the English habit expects.",
-      "sound": "gdye klyuch on na sta-LYE. Он is one short syllable with a clean o.",
+      "trap": "English would say \"it\" here and an English speaker reaches for onó. But klyuch is masculine, so the key is on. onó is only for neuter nouns, and there are far fewer of those than the English habit expects.",
+      "sound": "gdye klyuch on na sta-LYE. On is one short syllable with a clean o.",
       "variations": [
         {
-          "display": "Где книга? Она на столе.",
+          "display": "Gde kníga? Oná na stolé.",
+          "script": "Где книга? Она на столе.",
           "cue": "Where is the book? It is on the table.",
-          "changed": "книга is feminine, so the book is она"
+          "changed": "kníga is feminine, so the book is oná"
         },
         {
-          "display": "Где молоко? Оно в магазине.",
+          "display": "Gde molokó? Onó v magazíne.",
+          "script": "Где молоко? Оно в магазине.",
           "cue": "Where is the milk? It is in the shop.",
-          "changed": "молоко is neuter, so this is the one case where English's \"it\" and Russian's оно line up"
+          "changed": "molokó is neuter, so this is the one case where English's \"it\" and Russian's onó line up"
         },
         {
-          "display": "Где Иван? Он на работе.",
+          "display": "Gde Iván? On na rabóte.",
+          "script": "Где Иван? Он на работе.",
           "cue": "Where is Ivan? He is at work.",
-          "changed": "the same он, this time about a person — Russian makes no distinction"
+          "changed": "the same on, this time about a person — Russian makes no distinction"
         }
       ],
       "mistake": {
-        "display": "Где ключ? Оно на столе.",
-        "why": "ключ is masculine, so it is он. оно is only for neuter nouns like молоко and письмо."
+        "display": "Gde klyuch? Onó na stolé.",
+        "script": "Где ключ? Оно на столе.",
+        "why": "klyuch is masculine, so it is on. onó is only for neuter nouns like molokó and pis'mó."
       },
       "usage": "Answering a question about a thing without repeating its name.",
       "register": "neutral",
@@ -365,96 +408,109 @@
     },
     {
       "id": "L1-M10-S08",
-      "display": "Извините, вы говорите по-русски? Немного.",
+      "display": "Izviníte, vy govoríte po-rússki? Nemnógo.",
+      "script": "Извините, вы говорите по-русски? Немного.",
       "cue": "Excuse me, do you speak Russian? A little.",
       "glossEn": "lit. \"excuse [me], you speak in-Russian? a-little.\"",
       "literal": "Excuse-me, you speak Russian-ly? A-little.",
       "deconstruction": {
         "words": [
           {
-            "display": "Извините",
+            "display": "Izviníte",
+            "script": "Извините",
             "cue": "excuse me · sorry",
             "tag": "delta",
-            "forms": ["Извините"],
-            "note": "\"Excuse me\" — the вы-form again, with the same polite -те as Здравствуйте and Дайте. It opens a question to a stranger and it also serves as a light apology; there is no separate word for the two jobs at this level."
+            "forms": ["Izviníte"],
+            "note": "\"Excuse me\" — the vy-form again, with the same polite -te as Zdrávstvuyte and Dáyte. It opens a question to a stranger and it also serves as a light apology; there is no separate word for the two jobs at this level."
           },
           {
-            "display": "немного",
+            "display": "nemnógo",
+            "script": "немного",
             "cue": "a little · a bit",
             "tag": "free",
-            "forms": ["немного"],
-            "note": "\"A little\" — M6's много with не- fused onto the front, and it is written as one word. As an answer on its own it is the modest reply to any question about what you can do."
+            "forms": ["nemnógo"],
+            "note": "\"A little\" — M6's mnógo with ne- fused onto the front, and it is written as one word. As an answer on its own it is the modest reply to any question about what you can do."
           }
         ],
         "rules": [4]
       },
-      "trap": "Извините is a command in form — it is telling somebody to excuse you — but it is not heard as one. Its -те is what makes it polite, and leaving it off gives the ты-form this course does not write.",
+      "trap": "Izviníte is a command in form — it is telling somebody to excuse you — but it is not heard as one. Its -te is what makes it polite, and leaving it off gives the ty-form this course does not write.",
       "sound": "eez-vee-NEE-tye vy ga-va-REE-tye pa-ROO-skee. Two words ending in the same polite -tye, one after the other.",
       "variations": [
         {
-          "display": "Извините, вы говорите по-русски?",
+          "display": "Izviníte, vy govoríte po-rússki?",
+          "script": "Извините, вы говорите по-русски?",
           "cue": "Excuse me, do you speak Russian?",
           "changed": "the question alone, without the answer attached"
         },
         {
-          "display": "Извините, где магазин?",
+          "display": "Izviníte, gde magazín?",
+          "script": "Извините, где магазин?",
           "cue": "Excuse me, where is the shop?",
-          "changed": "the same opener in front of M7's question — this is what Извините is for"
+          "changed": "the same opener in front of M7's question — this is what Izviníte is for"
         },
         {
-          "display": "Извините, я не понимаю.",
+          "display": "Izviníte, ya ne ponimáyu.",
+          "script": "Извините, я не понимаю.",
           "cue": "Sorry, I don't understand.",
           "changed": "the apology sense, in front of M9's most useful sentence"
         }
       ],
       "mistake": {
-        "display": "Извини, вы говорите по-русски?",
-        "why": "Извини is the ты-form, and вы in the same breath contradicts it. With вы it is Извините."
+        "display": "Izviní, vy govoríte po-rússki?",
+        "script": "Извини, вы говорите по-русски?",
+        "why": "Izviní is the ty-form, and vy in the same breath contradicts it. With vy it is Izviníte."
       },
       "usage": "Stopping a stranger — and it is the first word of most useful conversations you will have.",
       "register": "neutral",
-      "mnemonic": "The polite -те on Здравствуйте, Дайте and Извините is the same ending, doing the same job."
+      "mnemonic": "The polite -te on Zdrávstvuyte, Dáyte and Izviníte is the same ending, doing the same job."
     },
     {
       "id": "L1-M10-S09",
-      "display": "Сейчас я работаю, потом я пойду домой.",
+      "display": "Seychás ya rabótayu, potóm ya poydú domóy.",
+      "script": "Сейчас я работаю, потом я пойду домой.",
       "cue": "Right now I am working, then I will go home",
       "glossEn": "lit. \"now I work, then I will-go home-wards\"",
       "literal": "Now I work, then I will-go homewards",
       "deconstruction": {
         "words": [
           {
-            "display": "Сейчас",
+            "display": "Seychás",
+            "script": "Сейчас",
             "cue": "now · right now",
             "tag": "delta",
-            "forms": ["Сейчас"],
-            "note": "\"Now\". It is what makes M4's one present tense unambiguous — Я работаю on its own is both \"I work\" and \"I am working\", and Сейчас я работаю can only be the second. In speech it is often cut down to \"shchas\"."
+            "forms": ["Seychás"],
+            "note": "\"Now\". It is what makes M4's one present tense unambiguous — Ya rabótayu on its own is both \"I work\" and \"I am working\", and Seychás ya rabótayu can only be the second. In speech it is often cut down to \"shchas\"."
           }
         ],
         "rules": [4]
       },
-      "trap": "Both halves of the turn use a present-shaped verb and only one of them is a present tense. работаю is happening now; пойду looks the same and means \"I will go\", because it is a finished-event verb. M6's rule is doing the work here.",
-      "sound": "see-CHAS ya ra-BO-ta-yoo pa-TOM ya pay-DOO da-MOY. Сейчас is stressed on the second syllable.",
+      "trap": "Both halves of the turn use a present-shaped verb and only one of them is a present tense. rabótayu is happening now; poydú looks the same and means \"I will go\", because it is a finished-event verb. M6's rule is doing the work here.",
+      "sound": "see-CHAS ya ra-BO-ta-yoo pa-TOM ya pay-DOO da-MOY. Seychás is stressed on the second syllable.",
       "variations": [
         {
-          "display": "Сейчас я работаю, потом я буду отдыхать.",
+          "display": "Seychás ya rabótayu, potóm ya búdu otdykhát'.",
+          "script": "Сейчас я работаю, потом я буду отдыхать.",
           "cue": "Right now I am working, then I will rest",
-          "changed": "an everyday verb in the second half, so this future needs буду"
+          "changed": "an everyday verb in the second half, so this future needs búdu"
         },
         {
-          "display": "Сейчас я дома, потом я буду работать.",
+          "display": "Seychás ya dóma, potóm ya búdu rabótat'.",
+          "script": "Сейчас я дома, потом я буду работать.",
           "cue": "Right now I am at home, then I will work",
           "changed": "no verb at all in the first half — the zero copula, on the last rung as on the first"
         },
         {
-          "display": "Сейчас я не работаю.",
+          "display": "Seychás ya ne rabótayu.",
+          "script": "Сейчас я не работаю.",
           "cue": "Right now I am not working",
-          "changed": "one half only, with не in front of the verb"
+          "changed": "one half only, with ne in front of the verb"
         }
       ],
       "mistake": {
-        "display": "Сейчас я буду работаю, потом я пойду домой.",
-        "why": "буду goes with a dictionary shape, never with a verb that already has an ending — and Сейчас is now, not later, so no future belongs in that half at all."
+        "display": "Seychás ya búdu rabótayu, potóm ya poydú domóy.",
+        "script": "Сейчас я буду работаю, потом я пойду домой.",
+        "why": "búdu goes with a dictionary shape, never with a verb that already has an ending — and Seychás is now, not later, so no future belongs in that half at all."
       },
       "usage": "Saying what you are doing and what comes next — a whole small plan in one turn.",
       "register": "neutral",
@@ -462,83 +518,129 @@
     },
     {
       "id": "L1-M10-S10",
-      "display": "Всё хорошо, спасибо. До свидания!",
+      "display": "Vsyó khoroshó, spasíbo. Do svidániya!",
+      "script": "Всё хорошо, спасибо. До свидания!",
       "cue": "Everything is fine, thank you. Goodbye!",
       "glossEn": "lit. \"everything well, thanks. until [the] meeting!\"",
       "literal": "Everything well, thanks. Until meeting!",
       "deconstruction": {
         "words": [
           {
-            "display": "Всё",
+            "display": "Vsyó",
+            "script": "Всё",
             "cue": "everything · all",
             "tag": "delta",
-            "forms": ["Всё"],
-            "note": "\"Everything\", and the two dots matter: всё is everything, все is everybody. They are two different words, and the only thing telling them apart on the page is the ё — which is why this course always writes it, even though Russian print usually does not."
+            "forms": ["Vsyó"],
+            "note": "\"Everything\", and the yó is what carries the meaning: vsyó is everything, vse is everybody. They are two different words and the yó is the only thing between them, which is why this course writes it every time. The quiet line keeps the difference too — всё, not все — where most Russian print drops the two dots and leaves you to work it out."
           }
         ],
         "rules": [4]
       },
-      "trap": "всё and все are one letter apart and mean different things — one is a pile of things, the other is a crowd of people. In most Russian books both are printed все, and you are expected to work out which from the sentence. Write the dots.",
-      "sound": "fsyo kha-ra-SHO spa-SEE-ba da svee-DA-nee-ya. Всё is one syllable, and the ё carries the stress as it always does.",
+      "trap": "vsyó and vse are one letter apart and mean different things — one is a pile of things, the other is a crowd of people. In most Russian books the two are printed the same and you are expected to work out which one is meant from the sentence. Write the yó.",
+      "sound": "fsyo kha-ra-SHO spa-SEE-ba da svee-DA-nee-ya. Vsyó is one syllable, and the yó carries the stress as it always does.",
       "variations": [
         {
-          "display": "Всё хорошо.",
+          "display": "Vsyó khoroshó.",
+          "script": "Всё хорошо.",
           "cue": "Everything is fine",
-          "changed": "the first half alone — a complete answer to Как дела?"
+          "changed": "the first half alone — a complete answer to Kak delá?"
         },
         {
-          "display": "Всё хорошо, спасибо. А вы?",
+          "display": "Vsyó khoroshó, spasíbo. A vy?",
+          "script": "Всё хорошо, спасибо. А вы?",
           "cue": "Everything is fine, thank you. And you?",
           "changed": "the question handed back instead of the goodbye"
         },
         {
-          "display": "Спасибо, до свидания!",
+          "display": "Spasíbo, do svidániya!",
+          "script": "Спасибо, до свидания!",
           "cue": "Thank you, goodbye!",
           "changed": "the closing half alone — how a shop conversation ends"
         }
       ],
       "mistake": {
-        "display": "Все хорошо, спасибо.",
-        "why": "Without the dots this is все, \"everybody\", and the sentence says something else. Everything is всё."
+        "display": "Vse khoroshó, spasíbo.",
+        "script": "Все хорошо, спасибо.",
+        "why": "Without the yó this is vse, \"everybody\", and the sentence says something else. Everything is vsyó."
       },
       "usage": "Closing a conversation warmly — the last turn of the level, and the one you will use most.",
       "register": "neutral",
-      "mnemonic": "всё is everything; все is everybody. Two dots are the whole difference."
+      "mnemonic": "vsyó is everything; vse is everybody. The yó is the whole difference."
     }
   ],
   "comprehensionPool": [
     {
       "id": "L1-M10-C01",
-      "display": "Добрый день, Иван! Как дела?",
+      "display": "Dóbryy den', Iván! Kak delá?",
+      "script": "Добрый день, Иван! Как дела?",
       "cue": "Good afternoon, Ivan! How are things?"
     },
-    { "id": "L1-M10-C02", "display": "Всё хорошо, спасибо. А вы?", "cue": "Everything is fine, thank you. And you?" },
-    { "id": "L1-M10-C03", "display": "Где газета? Она на столе.", "cue": "Where is the newspaper? It is on the table." },
-    { "id": "L1-M10-C04", "display": "Извините, где магазин?", "cue": "Excuse me, where is the shop?" },
+    {
+      "id": "L1-M10-C02",
+      "display": "Vsyó khoroshó, spasíbo. A vy?",
+      "script": "Всё хорошо, спасибо. А вы?",
+      "cue": "Everything is fine, thank you. And you?"
+    },
+    {
+      "id": "L1-M10-C03",
+      "display": "Gde gazéta? Oná na stolé.",
+      "script": "Где газета? Она на столе.",
+      "cue": "Where is the newspaper? It is on the table."
+    },
+    {
+      "id": "L1-M10-C04",
+      "display": "Izviníte, gde magazín?",
+      "script": "Извините, где магазин?",
+      "cue": "Excuse me, where is the shop?"
+    },
     {
       "id": "L1-M10-C05",
-      "display": "Я студентка и я работаю.",
+      "display": "Ya studéntka i ya rabótayu.",
+      "script": "Я студентка и я работаю.",
       "cue": "I am a student and I work (said by a woman)"
     },
     {
       "id": "L1-M10-C06",
-      "display": "Сегодня я не работаю, потом я буду отдыхать.",
+      "display": "Sevódnya ya ne rabótayu, potóm ya búdu otdykhát'.",
+      "script": "Сегодня я не работаю, потом я буду отдыхать.",
       "cue": "Today I am not working, then I will rest"
     },
-    { "id": "L1-M10-C07", "display": "Анна тоже живёт в Москве.", "cue": "Anna also lives in Moscow" },
+    {
+      "id": "L1-M10-C07",
+      "display": "Ánna tózhe zhivyót v Moskvé.",
+      "script": "Анна тоже живёт в Москве.",
+      "cue": "Anna also lives in Moscow"
+    },
     {
       "id": "L1-M10-C08",
-      "display": "Я хочу воду, но не хочу сок.",
+      "display": "Ya khochú vódu, no ne khochú sok.",
+      "script": "Я хочу воду, но не хочу сок.",
       "cue": "I want water but I don't want juice"
     },
-    { "id": "L1-M10-C09", "display": "Где молоко? Оно в магазине.", "cue": "Where is the milk? It is in the shop." },
-    { "id": "L1-M10-C10", "display": "Сейчас я не понимаю.", "cue": "Right now I don't understand" },
+    {
+      "id": "L1-M10-C09",
+      "display": "Gde molokó? Onó v magazíne.",
+      "script": "Где молоко? Оно в магазине.",
+      "cue": "Where is the milk? It is in the shop."
+    },
+    {
+      "id": "L1-M10-C10",
+      "display": "Seychás ya ne ponimáyu.",
+      "script": "Сейчас я не понимаю.",
+      "cue": "Right now I don't understand"
+    },
     {
       "id": "L1-M10-C11",
-      "display": "Извините, я не понимаю. Немного.",
+      "display": "Izviníte, ya ne ponimáyu. Nemnógo.",
+      "script": "Извините, я не понимаю. Немного.",
       "cue": "Sorry, I don't understand. A little."
     },
-    { "id": "L1-M10-C12", "display": "Спасибо, до свидания!", "cue": "Thank you, goodbye!" }
+    {
+      "id": "L1-M10-C12",
+      "display": "Spasíbo, do svidániya!",
+      "script": "Спасибо, до свидания!",
+      "cue": "Thank you, goodbye!"
+    }
   ],
   "exitTest": {
     "generateCount": 2,

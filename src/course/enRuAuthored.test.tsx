@@ -9,7 +9,7 @@
  *
  *   • the Ladder offers L1-M1 as the current rung with its one CTA, in en-ru's English chrome,
  *   • the module list renders each authored module's ten sentences as ten cards,
- *   • Sentence Detail renders the hero in Cyrillic (`lang="ru"`, the document still `en`), WITH
+ *   • Sentence Detail renders the hero on the L2 line (`lang="ru"`, the document still `en`), WITH
  *     the English gloss paragraph — #268's exemption is for a course whose L2 is English, and
  *     Russian is not one — and the WORD-FOR-WORD plate beside it,
  *   • the Why panel, tapped on a comprehension item, answers with the rows the briefs assigned:
@@ -21,6 +21,13 @@
  * `verify.sh` runs TEST before CONTENT), so the one served here is folded in-test over the
  * authored modules with the engine's own surface rule — the same fold `tools/content-build.ts`
  * performs, first occurrence wins.
+ *
+ * **The course is mid-romanization (#353–#360)** and the assertions below are split along the
+ * batch boundary rather than converted wholesale: M1–M5 still assert Cyrillic hero lines because
+ * that is what those files still hold (#357/#358 have not landed), and the M6–M10 block asserts
+ * the romanization of `tools/course-briefs.ts` §0 because #359 rewrote exactly those five files.
+ * The `script` line under each hero carries the Cyrillic, and it is not what the screens assert:
+ * what a learner is asked to SAY is the `display`, and this file tests what the learner meets.
  */
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
@@ -398,26 +405,31 @@ describe('Sentence Detail over L1-M6 … L1-M10', () => {
     await screen.findByRole('main');
   }
 
-  it('shows M6’s perfective future — a present-shaped verb with no буду in the sentence', async () => {
+  it('shows M6’s perfective future — a present-shaped verb with no búdu in the sentence', async () => {
     await renderSentence('L1-M6', 'L1-M6-S03');
 
+    // Romanized since #359: the hero line is the scheme, and the Cyrillic is the quiet `script`
+    // line under it. Asserting the romanization rather than the Cyrillic is the point — it is
+    // what a learner who cannot read Cyrillic is asked to say.
     expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
-      'Завтра я напишу письмо.',
+      "Závtra ya napishú pis'mó.",
     );
     expect(within(section('words')).getByText('I will write')).toBeInTheDocument();
     expect(
-      within(section('mistake')).getByText('Завтра я буду напишу письмо.'),
+      within(section('mistake')).getByText("Závtra ya búdu napishú pis'mó."),
     ).toBeInTheDocument();
   });
 
-  it('shows M7’s existential есть — the one row that also serves M8’s possession', async () => {
+  it("shows M7’s existential yest' — the one row that also serves M8’s possession", async () => {
     await renderSentence('L1-M7', 'L1-M7-S03');
 
     expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
-      'На столе есть книга.',
+      "Na stolé yest' kníga.",
     );
     const words = section('words');
-    expect(within(words).getAllByText('есть').length).toBeGreaterThan(0);
+    // The apostrophe is load-bearing: `src/engine/surface.ts` exempts `'` from edge stripping by
+    // name, so `yest'` is the index key and `yest` is a surface this course never wrote.
+    expect(within(words).getAllByText("yest'").length).toBeGreaterThan(0);
     expect(within(words).getByText('there is · there are')).toBeInTheDocument();
     // The literal is the point of the rung: English's "there" corresponds to nothing at all.
     expect(within(section('gloss')).getByText('On table is book')).toBeInTheDocument();
@@ -427,10 +439,10 @@ describe('Sentence Detail over L1-M6 … L1-M10', () => {
     await renderSentence('L1-M8', 'L1-M8-S06');
 
     expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
-      'У меня есть билет.',
+      "U menyá yest' bilét.",
     );
     const words = section('words');
-    expect(within(words).getAllByText('У меня есть').length).toBeGreaterThan(0);
+    expect(within(words).getAllByText("U menyá yest'").length).toBeGreaterThan(0);
     expect(within(words).getByText('I have')).toBeInTheDocument();
     expect(within(section('gloss')).getByText('At me is ticket')).toBeInTheDocument();
   });
@@ -439,9 +451,9 @@ describe('Sentence Detail over L1-M6 … L1-M10', () => {
     await renderSentence('L1-M9', 'L1-M9-S03');
 
     expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
-      'Мне нравится Москва.',
+      'Mne nrávitsya Moskvá.',
     );
-    expect(within(section('words')).getByText('нравится · нравятся')).toBeInTheDocument();
+    expect(within(section('words')).getByText('nrávitsya · nrávyatsya')).toBeInTheDocument();
     expect(within(section('gloss')).getByText('To-me pleases Moscow')).toBeInTheDocument();
   });
 
@@ -450,10 +462,10 @@ describe('Sentence Detail over L1-M6 … L1-M10', () => {
 
     // A turn is 2–3 short sentences and the hero line carries all of them, unsplit.
     expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
-      'Где ключ? Он на столе.',
+      'Gde klyuch? On na stolé.',
     );
-    expect(within(section('words')).getByText('Он · она · оно · они')).toBeInTheDocument();
-    expect(within(section('mistake')).getByText('Где ключ? Оно на столе.')).toBeInTheDocument();
+    expect(within(section('words')).getByText('On · oná · onó · oní')).toBeInTheDocument();
+    expect(within(section('mistake')).getByText('Gde klyuch? Onó na stolé.')).toBeInTheDocument();
   });
 });
 
@@ -490,17 +502,18 @@ describe('the Why panel over an en-ru comprehension item', () => {
     expect(within(rows[2]!).getByText(/Москвы is what из takes/)).toBeInTheDocument();
   });
 
-  it('takes M8’s three-token possession chunk whole, never as у + меня + есть', async () => {
-    await renderPanel('L1-M8-C04', 'У меня есть ключ.');
+  it("takes M8’s three-token possession chunk whole, never as u + menyá + yest'", async () => {
+    await renderPanel('L1-M8-C04', "U menyá yest' klyuch.");
     fireEvent.click(screen.getByRole('button', { name: 'why' }));
 
-    const first = await screen.findByText('У меня есть');
+    const first = await screen.findByText("U menyá yest'");
     const rows = within(first.closest('ul')!).getAllByRole('listitem');
     // Two rows, not four: the resolver takes the longest match, so the chunk swallows its own
-    // `есть` and the bare `у` never has to resolve at all.
+    // `yest'` and the bare `u` never has to resolve at all. The romanization did not move this
+    // seam — `у меня есть` was three tokens and `u menyá yest'` is three tokens (#359).
     expect(rows).toHaveLength(2);
     expect(within(rows[0]!).getByText('I have')).toBeInTheDocument();
-    expect(within(rows[1]!).getByText('Ключ')).toBeInTheDocument();
+    expect(within(rows[1]!).getByText('Klyuch')).toBeInTheDocument();
   });
 
   it('lands устала on M2’s ONE устал row, and вас on the ONE Вы row', async () => {

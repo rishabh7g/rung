@@ -5,85 +5,91 @@
   "job": "Why — because and so",
   "prerequisites": ["L1-M8"],
   "verified": true,
-  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-30",
   "complexity": {
     "minWordsPerSentence": 2,
     "maxWordsPerSentence": 8,
     "allowedTenses": ["simple_present"],
     "allowedPatterns": [
-      "<statement> + , потому что + <statement>",
-      "<statement> + , поэтому + <statement>",
-      "Почему + <question> + ?",
-      "Мне + Adv (холодно / жарко)",
-      "Мне нравится + N (nom.)",
-      "Я думаю, что + <statement>"
+      "<statement> + , potomú chto + <statement>",
+      "<statement> + , poéhtomu + <statement>",
+      "Pochemú + <question> + ?",
+      "Mne + Adv (khólodno / zhárko)",
+      "Mne nrávitsya + N (nom.)",
+      "Ya dúmayu, chto + <statement>"
     ],
     "newWordCap": 25
   },
   "rules": [
     {
       "tag": "interference",
-      "text": "The person who FEELS something goes into the to-shape: мне холодно is literally \"to me [it is] cold\", with no subject at all and no verb. Saying it the English way — Я холодный — describes you as a cold sort of person, which is not what you meant. This to-shape is M1's мне, the third shape of я, finally doing the job it was listed for."
+      "text": "The person who FEELS something goes into the to-shape: mne khólodno is literally \"to me [it is] cold\", with no subject at all and no verb. Saying it the English way — Ya kholódnyy — describes you as a cold sort of person, which is not what you meant. This to-shape is M1's mne, the third shape of ya, finally doing the job it was listed for."
     },
     {
       "tag": "interference",
-      "text": "Liking runs backwards from English. In мне нравится Москва the thing liked is the SUBJECT and the verb agrees with IT: мне нравится книга (one thing) · мне нравятся книги (more than one). мне only names who is pleased and never changes. It is exactly M8's Сколько стоят книги? — a verb following the thing rather than the person."
+      "text": "Liking runs backwards from English. In mne nrávitsya Moskvá the thing liked is the SUBJECT and the verb agrees with IT: mne nrávitsya kníga (one thing) · mne nrávyatsya knígi (more than one). mne only names who is pleased and never changes. It is exactly M8's Skól'ko stóyat knígi? — a verb following the thing rather than the person."
     },
     {
       "tag": "free",
-      "text": "потому что gives the REASON and поэтому gives the CONSEQUENCE. They map cleanly onto \"because\" and \"so\", which makes them one of the few free rides in the course — the same two facts, written in either order."
+      "text": "potomú chto gives the REASON and poéhtomu gives the CONSEQUENCE. They map cleanly onto \"because\" and \"so\", which makes them one of the few free rides in the course — the same two facts, written in either order."
     },
     {
       "tag": "delta",
-      "text": "The comma is not optional. Russian writes one before потому что and one before что, always: Я думаю, что это хорошо. English drops both the comma and the word \"that\"; Russian drops neither."
+      "text": "The comma is not optional. Russian writes one before potomú chto and one before chto, always: Ya dúmayu, chto éhto khoroshó. English drops both the comma and the word \"that\"; Russian drops neither."
     },
     {
       "tag": "delta",
-      "text": "Feelings that DO have a subject use M2's short predicate, which agrees with whoever is described: Я устал · Я устала. Keep the two shapes apart — мне холодно has no subject and cannot agree with anything, while я устал has one and must."
+      "text": "Feelings that DO have a subject use M2's short predicate, which agrees with whoever is described: Ya ustál · Ya ustála. Keep the two shapes apart — mne khólodno has no subject and cannot agree with anything, while ya ustál has one and must."
     }
   ],
   "sentences": [
     {
       "id": "L1-M9-S01",
-      "display": "Мне холодно.",
+      "display": "Mne khólodno.",
+      "script": "Мне холодно.",
       "cue": "I am cold",
       "glossEn": "lit. \"to me [it is] cold\"",
       "literal": "To-me cold",
       "deconstruction": {
         "words": [
           {
-            "display": "холодно",
+            "display": "khólodno",
+            "script": "холодно",
             "cue": "cold",
             "tag": "interference",
-            "forms": ["холодно"],
-            "note": "\"Cold\" — in the shape Russian uses when nothing in particular is being described, the same shape as M1's приятно. It describes the situation, not you, which is why the person feeling it goes into the to-shape in front of it."
+            "forms": ["khólodno"],
+            "note": "\"Cold\" — in the shape Russian uses when nothing in particular is being described, the same shape as M1's priyátno. It describes the situation, not you, which is why the person feeling it goes into the to-shape in front of it."
           }
         ],
         "rules": [0]
       },
-      "trap": "Я холодный is a real Russian sentence and it says that you are a cold person — unfeeling. The temperature version puts you in the to-shape and leaves the sentence without a subject at all.",
-      "sound": "mnye KHO-lad-na. Three о letters in холодно and only the first is stressed; the other two flatten to \"a\".",
+      "trap": "Ya kholódnyy is a real Russian sentence and it says that you are a cold person — unfeeling. The temperature version puts you in the to-shape and leaves the sentence without a subject at all.",
+      "sound": "mnye KHO-lad-na. Three o letters in khólodno and only the first is stressed; the other two flatten to \"a\".",
       "variations": [
         {
-          "display": "Вам холодно?",
+          "display": "Vam khólodno?",
+          "script": "Вам холодно?",
           "cue": "Are you cold?",
-          "changed": "мне → вам, the polite you in its to-shape — the third shape of вы, from M2"
+          "changed": "mne → vam, the polite you in its to-shape — the third shape of vy, from M2"
         },
         {
-          "display": "Анне холодно.",
+          "display": "Ánne khólodno.",
+          "script": "Анне холодно.",
           "cue": "Anna is cold",
-          "changed": "a name in its to-shape: Анна → Анне, the same ending as в комнате"
+          "changed": "a name in its to-shape: Ánna → Ánne, the same ending as v kómnate"
         },
         {
-          "display": "Мне не холодно.",
+          "display": "Mne ne khólodno.",
+          "script": "Мне не холодно.",
           "cue": "I am not cold",
-          "changed": "не in front of what it denies — here the feeling, since there is no verb"
+          "changed": "ne in front of what it denies — here the feeling, since there is no verb"
         }
       ],
       "mistake": {
-        "display": "Я холодно.",
-        "why": "The person feeling something goes into the to-shape: Мне холодно. Я холодно is not a sentence at all."
+        "display": "Ya khólodno.",
+        "script": "Я холодно.",
+        "why": "The person feeling something goes into the to-shape: Mne khólodno. Ya khólodno is not a sentence at all."
       },
       "usage": "Weather, rooms, and anything you feel rather than are — this frame covers a great many of them.",
       "register": "neutral",
@@ -91,44 +97,50 @@
     },
     {
       "id": "L1-M9-S02",
-      "display": "Мне жарко.",
+      "display": "Mne zhárko.",
+      "script": "Мне жарко.",
       "cue": "I am hot",
       "glossEn": "lit. \"to me [it is] hot\"",
       "literal": "To-me hot",
       "deconstruction": {
         "words": [
           {
-            "display": "жарко",
+            "display": "zhárko",
+            "script": "жарко",
             "cue": "hot",
             "tag": "free",
-            "forms": ["жарко"],
-            "note": "\"Hot\", in the same shape as холодно and in the same frame. It is about temperature only — Russian does not use it the way English uses \"hot\" for anything else."
+            "forms": ["zhárko"],
+            "note": "\"Hot\", in the same shape as khólodno and in the same frame. It is about temperature only — Russian does not use it the way English uses \"hot\" for anything else."
           }
         ],
         "rules": [0]
       },
-      "trap": "The frame is worth more than the word. Once мне + a feeling-word is fixed, half a dozen everyday states come for free — and every one of them would be wrong with я.",
-      "sound": "mnye ZHAR-ka. The ж is the s of English \"measure\", and the final о flattens as always.",
+      "trap": "The frame is worth more than the word. Once mne + a feeling-word is fixed, half a dozen everyday states come for free — and every one of them would be wrong with ya.",
+      "sound": "mnye ZHAR-ka. The zh is the s of English \"measure\", and the final o flattens as always.",
       "variations": [
         {
-          "display": "Вам жарко?",
+          "display": "Vam zhárko?",
+          "script": "Вам жарко?",
           "cue": "Are you hot?",
-          "changed": "the polite you in its to-shape — вам, from M2's row"
+          "changed": "the polite you in its to-shape — vam, from M2's row"
         },
         {
-          "display": "Мне не жарко.",
+          "display": "Mne ne zhárko.",
+          "script": "Мне не жарко.",
           "cue": "I am not hot",
-          "changed": "не in front of the feeling word"
+          "changed": "ne in front of the feeling word"
         },
         {
-          "display": "Здесь жарко.",
+          "display": "Zdes' zhárko.",
+          "script": "Здесь жарко.",
           "cue": "It is hot here",
-          "changed": "M7's здесь instead of a person — the frame works about a place too, and still has no subject"
+          "changed": "M7's zdes' instead of a person — the frame works about a place too, and still has no subject"
         }
       ],
       "mistake": {
-        "display": "Я жаркий.",
-        "why": "That describes you as a hot object. The feeling is Мне жарко."
+        "display": "Ya zhárkiy.",
+        "script": "Я жаркий.",
+        "why": "That describes you as a hot object. The feeling is Mne zhárko."
       },
       "usage": "Rooms, trains, summers — and complaining about them politely.",
       "register": "neutral",
@@ -136,367 +148,415 @@
     },
     {
       "id": "L1-M9-S03",
-      "display": "Мне нравится Москва.",
+      "display": "Mne nrávitsya Moskvá.",
+      "script": "Мне нравится Москва.",
       "cue": "I like Moscow",
       "glossEn": "lit. \"to me pleases Moscow\"",
       "literal": "To-me pleases Moscow",
       "deconstruction": {
         "words": [
           {
-            "display": "нравится",
+            "display": "nrávitsya",
+            "script": "нравится",
             "cue": "pleases · is liked",
             "tag": "interference",
-            "forms": ["нравится", "нравятся"],
-            "note": "\"Pleases\". The thing liked is the SUBJECT, so the verb agrees with it — нравится for one thing, нравятся for more than one — and мне never changes, because it only names who is pleased. M1's люблю is the other way of liking: люблю is a stronger, more personal fondness, and нравится is closer to \"I find it nice\"."
+            "forms": ["nrávitsya", "nrávyatsya"],
+            "note": "\"Pleases\". The thing liked is the SUBJECT, so the verb agrees with it — nrávitsya for one thing, nrávyatsya for more than one — and mne never changes, because it only names who is pleased. M1's lyublyú is the other way of liking: lyublyú is a stronger, more personal fondness, and nrávitsya is closer to \"I find it nice\"."
           }
         ],
         "rules": [1]
       },
-      "trap": "Everything is the wrong way round from English. The city does the pleasing, you are the one pleased, and the verb answers to the city. Я нравлюсь Москве would say that Moscow likes YOU.",
-      "sound": "mnye NRA-vee-tsa mask-VA. The -тся on the end is said \"tsa\", as one sound — the т and the с run together.",
+      "trap": "Everything is the wrong way round from English. The city does the pleasing, you are the one pleased, and the verb answers to the city. Ya nrávlyus' Moskvé would say that Moscow likes YOU.",
+      "sound": "mnye NRA-vee-tsa mask-VA. The -tsya on the end is said \"tsa\", as one sound — the t and the s run together.",
       "variations": [
         {
-          "display": "Мне нравятся книги.",
+          "display": "Mne nrávyatsya knígi.",
+          "script": "Мне нравятся книги.",
           "cue": "I like books",
-          "changed": "more than one thing, so the verb changes to нравятся — and мне does not"
+          "changed": "more than one thing, so the verb changes to nrávyatsya — and mne does not"
         },
         {
-          "display": "Вам нравится Москва?",
+          "display": "Vam nrávitsya Moskvá?",
+          "script": "Вам нравится Москва?",
           "cue": "Do you like Moscow?",
-          "changed": "мне → вам: a different person is pleased, and нравится still follows Moscow"
+          "changed": "mne → vam: a different person is pleased, and nrávitsya still follows Moscow"
         },
         {
-          "display": "Мне не нравится Москва.",
+          "display": "Mne ne nrávitsya Moskvá.",
+          "script": "Мне не нравится Москва.",
           "cue": "I don't like Moscow",
-          "changed": "не in front of the verb — the same one word as ever"
+          "changed": "ne in front of the verb — the same one word as ever"
         }
       ],
       "mistake": {
-        "display": "Я нравится Москва.",
-        "why": "The person pleased goes into the to-shape: Мне нравится Москва. я is for the one doing something, and here that is the city."
+        "display": "Ya nrávitsya Moskvá.",
+        "script": "Я нравится Москва.",
+        "why": "The person pleased goes into the to-shape: Mne nrávitsya Moskvá. ya is for the one doing something, and here that is the city."
       },
-      "usage": "Opinions about places, films, food — and it is gentler than люблю, which is why it is the everyday choice.",
+      "usage": "Opinions about places, films, food — and it is gentler than lyublyú, which is why it is the everyday choice.",
       "register": "neutral",
       "mnemonic": "You do not like it. It pleases you — and the verb agrees with it, not with you."
     },
     {
       "id": "L1-M9-S04",
-      "display": "Мне нравится город.",
+      "display": "Mne nrávitsya górod.",
+      "script": "Мне нравится город.",
       "cue": "I like the city",
       "glossEn": "lit. \"to me pleases city\"",
       "literal": "To-me pleases city",
       "deconstruction": {
         "words": [
           {
-            "display": "город",
+            "display": "górod",
+            "script": "город",
             "cue": "city · town",
             "tag": "free",
-            "forms": ["город"],
+            "forms": ["górod"],
             "note": "City, and also town — Russian does not split the two by size the way English does. Masculine, ending in a consonant, and here it is the SUBJECT of the sentence, so it is in its plain dictionary shape."
           }
         ],
         "rules": [1]
       },
-      "trap": "город is not the object of anything, so it does not take M3's ending. In this frame the thing liked is always the subject and always keeps its dictionary shape.",
-      "sound": "mnye NRA-vee-tsa GO-rat. The final д of город is said as a t, the way хлеб ends in a p.",
+      "trap": "górod is not the object of anything, so it does not take M3's ending. In this frame the thing liked is always the subject and always keeps its dictionary shape.",
+      "sound": "mnye NRA-vee-tsa GO-rat. The final d of górod is said as a t, the way khleb ends in a p.",
       "variations": [
         {
-          "display": "Мне нравится этот город.",
+          "display": "Mne nrávitsya éhtot górod.",
+          "script": "Мне нравится этот город.",
           "cue": "I like this city",
-          "changed": "a pointing word in front — этот agrees with what it points at"
+          "changed": "a pointing word in front — éhtot agrees with what it points at"
         },
         {
-          "display": "Вам нравится город?",
+          "display": "Vam nrávitsya górod?",
+          "script": "Вам нравится город?",
           "cue": "Do you like the city?",
           "changed": "the polite you in its to-shape, asked rather than told"
         },
         {
-          "display": "Я люблю город.",
+          "display": "Ya lyublyú górod.",
+          "script": "Я люблю город.",
           "cue": "I love the city",
-          "changed": "M1's verb instead — and now я is the subject and город is the object, the whole sentence turned round"
+          "changed": "M1's verb instead — and now ya is the subject and górod is the object, the whole sentence turned round"
         }
       ],
       "mistake": {
-        "display": "Мне нравится города.",
-        "why": "города is a counting or plural shape. The thing liked is the subject, so it is город."
+        "display": "Mne nrávitsya góroda.",
+        "script": "Мне нравится города.",
+        "why": "góroda is a counting or plural shape. The thing liked is the subject, so it is górod."
       },
-      "usage": "Opinions about where you are — and the third variation is worth studying, because the two ways of liking build opposite sentences."
-      ,
+      "usage": "Opinions about where you are — and the third variation is worth studying, because the two ways of liking build opposite sentences.",
       "register": "neutral",
       "mnemonic": "In this frame the thing liked is the subject, so it never bends."
     },
     {
       "id": "L1-M9-S05",
-      "display": "Почему вы не работаете?",
+      "display": "Pochemú vy ne rabótayete?",
+      "script": "Почему вы не работаете?",
       "cue": "Why aren't you working?",
       "glossEn": "lit. \"why you not work?\"",
       "literal": "Why you not work?",
       "deconstruction": {
         "words": [
           {
-            "display": "Почему",
+            "display": "Pochemú",
+            "script": "Почему",
             "cue": "why",
             "tag": "delta",
-            "forms": ["Почему"],
-            "note": "\"Why\". Its answer is потому что, and the two look alike on purpose — почему asks and потому что replies. Nothing else in the question moves: no helper, no reordering."
+            "forms": ["Pochemú"],
+            "note": "\"Why\". Its answer is potomú chto, and the two look alike on purpose — pochemú asks and potomú chto replies. Nothing else in the question moves: no helper, no reordering."
           }
         ],
         "rules": [2]
       },
-      "trap": "English needs \"aren't\" here — a helper carrying both the tense and the negation. Russian has не in front of the verb and a question mark at the end, and that is the entire machinery.",
-      "sound": "pa-chee-MOO vy nye ra-BO-ta-ye-tye. The stress is right at the end of почему, and the pitch climbs after it.",
+      "trap": "English needs \"aren't\" here — a helper carrying both the tense and the negation. Russian has ne in front of the verb and a question mark at the end, and that is the entire machinery.",
+      "sound": "pa-chee-MOO vy nye ra-BO-ta-ye-tye. The stress is right at the end of pochemú, and the pitch climbs after it.",
       "variations": [
         {
-          "display": "Почему вы здесь?",
+          "display": "Pochemú vy zdes'?",
+          "script": "Почему вы здесь?",
           "cue": "Why are you here?",
           "changed": "a question with no verb at all — the zero copula, still running"
         },
         {
-          "display": "Почему Анна не работает?",
+          "display": "Pochemú Ánna ne rabótayet?",
+          "script": "Почему Анна не работает?",
           "cue": "Why isn't Anna working?",
-          "changed": "a name instead of вы, and the verb takes the he/she ending"
+          "changed": "a name instead of vy, and the verb takes the he/she ending"
         },
         {
-          "display": "Почему вы не пьёте чай?",
+          "display": "Pochemú vy ne p'yóte chay?",
+          "script": "Почему вы не пьёте чай?",
           "cue": "Why aren't you drinking tea?",
           "changed": "swap the verb — the frame takes any of them"
         }
       ],
       "mistake": {
-        "display": "Почему не вы работаете?",
-        "why": "не goes in front of the verb, not in front of the person. Почему вы не работаете?"
+        "display": "Pochemú ne vy rabótayete?",
+        "script": "Почему не вы работаете?",
+        "why": "ne goes in front of the verb, not in front of the person. Pochemú vy ne rabótayete?"
       },
       "usage": "Asking for a reason — and its answer is the next two sentences.",
       "register": "neutral",
-      "mnemonic": "почему asks; потому что answers. They rhyme because they are two halves of one exchange."
+      "mnemonic": "pochemú asks; potomú chto answers. They rhyme because they are two halves of one exchange."
     },
     {
       "id": "L1-M9-S06",
-      "display": "Я не работаю, потому что я устал.",
+      "display": "Ya ne rabótayu, potomú chto ya ustál.",
+      "script": "Я не работаю, потому что я устал.",
       "cue": "I am not working because I am tired",
       "glossEn": "lit. \"I not work, because I got-tired\"",
       "literal": "I not work, because I got-tired",
       "deconstruction": {
         "words": [
           {
-            "display": "потому что",
+            "display": "potomú chto",
+            "script": "потому что",
             "cue": "because",
             "tag": "free",
-            "forms": ["потому что"],
+            "forms": ["potomú chto"],
             "note": "\"Because\", in two words that are always written together and always preceded by a comma. It introduces the REASON, and the clause after it is an ordinary sentence with nothing rearranged."
           }
         ],
         "rules": [2, 3]
       },
-      "trap": "The comma before потому что is a rule, not a preference. Russian punctuation is much more tightly specified than English punctuation, and this is one of the places where leaving a comma out is simply an error.",
-      "sound": "ya nye ra-BO-ta-yoo pa-ta-MOO shta ya oo-STAL. потому что runs together in speech and что is said \"shta\", not \"chto\".",
+      "trap": "The comma before potomú chto is a rule, not a preference. Russian punctuation is much more tightly specified than English punctuation, and this is one of the places where leaving a comma out is simply an error.",
+      "sound": "ya nye ra-BO-ta-yoo pa-ta-MOO shta ya oo-STAL. potomú chto runs together in speech and chto is said \"shta\", not \"chto\".",
       "variations": [
         {
-          "display": "Я не работаю, потому что я устала.",
+          "display": "Ya ne rabótayu, potomú chto ya ustála.",
+          "script": "Я не работаю, потому что я устала.",
           "cue": "I am not working because I am tired (said by a woman)",
-          "changed": "устал → устала: M2's rule, still following the speaker"
+          "changed": "ustál → ustála: M2's rule, still following the speaker"
         },
         {
-          "display": "Я дома, потому что я устал.",
+          "display": "Ya dóma, potomú chto ya ustál.",
+          "script": "Я дома, потому что я устал.",
           "cue": "I am at home because I am tired",
-          "changed": "swap the first half — потому что takes any statement on either side"
+          "changed": "swap the first half — potomú chto takes any statement on either side"
         },
         {
-          "display": "Я не работаю, потому что мне холодно.",
+          "display": "Ya ne rabótayu, potomú chto mne khólodno.",
+          "script": "Я не работаю, потому что мне холодно.",
           "cue": "I am not working because I am cold",
           "changed": "a to-shape feeling as the reason — and it still has no subject"
         }
       ],
       "mistake": {
-        "display": "Я не работаю потому что я устал.",
-        "why": "The comma is obligatory in Russian. It goes before потому что, every time."
+        "display": "Ya ne rabótayu potomú chto ya ustál.",
+        "script": "Я не работаю потому что я устал.",
+        "why": "The comma is obligatory in Russian. It goes before potomú chto, every time."
       },
       "usage": "Explaining yourself — and the reason half is the longer, more useful half of the pair.",
       "register": "neutral",
-      "mnemonic": "Comma, потому что, reason. The comma is part of the phrase."
+      "mnemonic": "Comma, potomú chto, reason. The comma is part of the phrase."
     },
     {
       "id": "L1-M9-S07",
-      "display": "Я устал, поэтому я не работаю.",
+      "display": "Ya ustál, poéhtomu ya ne rabótayu.",
+      "script": "Я устал, поэтому я не работаю.",
       "cue": "I am tired, so I am not working",
       "glossEn": "lit. \"I got-tired, therefore I not work\"",
       "literal": "I got-tired, therefore I not work",
       "deconstruction": {
         "words": [
           {
-            "display": "поэтому",
+            "display": "poéhtomu",
+            "script": "поэтому",
             "cue": "so · therefore · that is why",
             "tag": "free",
-            "forms": ["поэтому"],
-            "note": "\"So\", introducing the CONSEQUENCE — the mirror image of потому что. Same comma rule, and the same two facts: put the reason first and use поэтому, or put it second and use потому что."
+            "forms": ["poéhtomu"],
+            "note": "\"So\", introducing the CONSEQUENCE — the mirror image of potomú chto. Same comma rule, and the same two facts: put the reason first and use poéhtomu, or put it second and use potomú chto."
           }
         ],
         "rules": [2, 3]
       },
       "trap": "The pair is easy and the choice is the lesson: which half of the sentence you write first decides which word you need. Getting them the wrong way round reverses cause and effect entirely.",
-      "sound": "ya oo-STAL pa-E-ta-moo ya nye ra-BO-ta-yoo. поэтому is stressed on its second syllable, which is where the э is.",
+      "sound": "ya oo-STAL pa-E-ta-moo ya nye ra-BO-ta-yoo. poéhtomu is stressed on its second syllable, which is where the eh is.",
       "variations": [
         {
-          "display": "Я устала, поэтому я не работаю.",
+          "display": "Ya ustála, poéhtomu ya ne rabótayu.",
+          "script": "Я устала, поэтому я не работаю.",
           "cue": "I am tired, so I am not working (said by a woman)",
-          "changed": "устал → устала, following the speaker"
+          "changed": "ustál → ustála, following the speaker"
         },
         {
-          "display": "Мне холодно, поэтому я дома.",
+          "display": "Mne khólodno, poéhtomu ya dóma.",
+          "script": "Мне холодно, поэтому я дома.",
           "cue": "I am cold, so I am at home",
-          "changed": "a to-shape feeling as the reason, and M5's дома as the consequence"
+          "changed": "a to-shape feeling as the reason, and M5's dóma as the consequence"
         },
         {
-          "display": "Я не работаю, потому что я устал.",
+          "display": "Ya ne rabótayu, potomú chto ya ustál.",
+          "script": "Я не работаю, потому что я устал.",
           "cue": "I am not working because I am tired",
           "changed": "the same two facts the other way round — so the word flips too"
         }
       ],
       "mistake": {
-        "display": "Я устал, потому что я не работаю.",
-        "why": "That says you are tired BECAUSE you are not working — cause and effect swapped. With the reason first, the word is поэтому."
+        "display": "Ya ustál, potomú chto ya ne rabótayu.",
+        "script": "Я устал, потому что я не работаю.",
+        "why": "That says you are tired BECAUSE you are not working — cause and effect swapped. With the reason first, the word is poéhtomu."
       },
       "usage": "Explaining a decision — and it is the more natural order in Russian conversation.",
       "register": "neutral",
-      "mnemonic": "Reason first: поэтому. Reason second: потому что."
+      "mnemonic": "Reason first: poéhtomu. Reason second: potomú chto."
     },
     {
       "id": "L1-M9-S08",
-      "display": "Я думаю, что это хорошо.",
+      "display": "Ya dúmayu, chto éhto khoroshó.",
+      "script": "Я думаю, что это хорошо.",
       "cue": "I think that is good",
       "glossEn": "lit. \"I think, that this good\"",
       "literal": "I think, that this good",
       "deconstruction": {
         "words": [
           {
-            "display": "думаю",
+            "display": "dúmayu",
+            "script": "думаю",
             "cue": "I think",
             "tag": "free",
-            "forms": ["думаю", "думаете", "думает"],
-            "note": "\"I think\", pattern I — думаю (I), думаете (you, polite), думает (he or she). It is for holding an opinion; Russian uses a different word for thinking about something in your head."
+            "forms": ["dúmayu", "dúmayete", "dúmayet"],
+            "note": "\"I think\", pattern I — dúmayu (I), dúmayete (you, polite), dúmayet (he or she). It is for holding an opinion; Russian uses a different word for thinking about something in your head."
           },
           {
-            "display": "что",
+            "display": "chto",
+            "script": "что",
             "cue": "that · what",
             "tag": "delta",
-            "forms": ["что"],
-            "note": "\"That\", joining an opinion to what it is about — and it can never be left out, where English drops \"that\" freely. The same word also means \"what\" as a question (Что это?), and the sentence tells you which. Said \"shto\" in the question and \"shta\" inside потому что."
+            "forms": ["chto"],
+            "note": "\"That\", joining an opinion to what it is about — and it can never be left out, where English drops \"that\" freely. The same word also means \"what\" as a question (Chto éhto?), and the sentence tells you which. Said \"shto\" in the question and \"shta\" inside potomú chto."
           }
         ],
         "rules": [3]
       },
-      "trap": "English can say \"I think it's good\" with no \"that\" and no comma. Russian requires both — the comma before что is as obligatory as the word itself.",
-      "sound": "ya DOO-ma-yoo shto E-ta kha-ra-SHO. что is written with a ч and said with an sh, the same trick as конечно.",
+      "trap": "English can say \"I think it's good\" with no \"that\" and no comma. Russian requires both — the comma before chto is as obligatory as the word itself.",
+      "sound": "ya DOO-ma-yoo shto E-ta kha-ra-SHO. chto is written with a ch and said with an sh, the same trick as konéchno.",
       "variations": [
         {
-          "display": "Я думаю, что это плохо.",
+          "display": "Ya dúmayu, chto éhto plókho.",
+          "script": "Я думаю, что это плохо.",
           "cue": "I think that is bad",
           "changed": "swap the opinion — the frame does not move"
         },
         {
-          "display": "Вы думаете, что это хорошо?",
+          "display": "Vy dúmayete, chto éhto khoroshó?",
+          "script": "Вы думаете, что это хорошо?",
           "cue": "Do you think that is good?",
           "changed": "the polite you-form, asked rather than told"
         },
         {
-          "display": "Я думаю, что Анна дома.",
+          "display": "Ya dúmayu, chto Ánna dóma.",
+          "script": "Я думаю, что Анна дома.",
           "cue": "I think Anna is at home",
-          "changed": "a whole statement after что, with the zero copula still running inside it"
+          "changed": "a whole statement after chto, with the zero copula still running inside it"
         }
       ],
       "mistake": {
-        "display": "Я думаю это хорошо.",
-        "why": "Two things missing that English can do without: the comma and что. Я думаю, что это хорошо."
+        "display": "Ya dúmayu éhto khoroshó.",
+        "script": "Я думаю это хорошо.",
+        "why": "Two things missing that English can do without: the comma and chto. Ya dúmayu, chto éhto khoroshó."
       },
       "usage": "Any opinion, softened — and it is the politest way to disagree.",
       "register": "neutral",
-      "mnemonic": "что and its comma both stay. English drops them; Russian never does."
+      "mnemonic": "chto and its comma both stay. English drops them; Russian never does."
     },
     {
       "id": "L1-M9-S09",
-      "display": "Мне плохо.",
+      "display": "Mne plókho.",
+      "script": "Мне плохо.",
       "cue": "I feel unwell",
       "glossEn": "lit. \"to me [it is] bad\"",
       "literal": "To-me bad",
       "deconstruction": {
         "words": [
           {
-            "display": "плохо",
+            "display": "plókho",
+            "script": "плохо",
             "cue": "bad · badly",
             "tag": "delta",
-            "forms": ["плохо"],
-            "note": "\"Bad\" — the opposite of M2's хорошо, and it does the same two jobs: it answers Как дела? and it describes a verb (Я плохо говорю, \"I speak badly\"). In the to-shape frame it means feeling unwell rather than being a bad person."
+            "forms": ["plókho"],
+            "note": "\"Bad\" — the opposite of M2's khoroshó, and it does the same two jobs: it answers Kak delá? and it describes a verb (Ya plókho govoryú, \"I speak badly\"). In the to-shape frame it means feeling unwell rather than being a bad person."
           }
         ],
         "rules": [0]
       },
-      "trap": "Мне плохо means you feel ill, not that things are going badly. For that, Russian answers Как дела? with плохо on its own — the same word without the мне.",
-      "sound": "mnye PLO-kha. The х at the end is the raspy one, and the final о flattens to \"a\".",
+      "trap": "Mne plókho means you feel ill, not that things are going badly. For that, Russian answers Kak delá? with plókho on its own — the same word without the mne.",
+      "sound": "mnye PLO-kha. The kh at the end is the raspy one, and the final o flattens to \"a\".",
       "variations": [
         {
-          "display": "Вам плохо?",
+          "display": "Vam plókho?",
+          "script": "Вам плохо?",
           "cue": "Are you feeling unwell?",
-          "changed": "мне → вам — the question you would be asked if you looked pale"
+          "changed": "mne → vam — the question you would be asked if you looked pale"
         },
         {
-          "display": "Плохо.",
+          "display": "Plókho.",
+          "script": "Плохо.",
           "cue": "Bad",
-          "changed": "on its own, as the answer to Как дела? — and now it is about things, not about you"
+          "changed": "on its own, as the answer to Kak delá? — and now it is about things, not about you"
         },
         {
-          "display": "Мне не плохо.",
+          "display": "Mne ne plókho.",
+          "script": "Мне не плохо.",
           "cue": "I don't feel bad",
-          "changed": "не in front of the feeling word"
+          "changed": "ne in front of the feeling word"
         }
       ],
       "mistake": {
-        "display": "Я плохой.",
-        "why": "That says you are a bad person. Feeling unwell is Мне плохо."
+        "display": "Ya plokhóy.",
+        "script": "Я плохой.",
+        "why": "That says you are a bad person. Feeling unwell is Mne plókho."
       },
       "usage": "Saying you feel ill — and it is understood immediately as a request for help.",
       "register": "neutral",
-      "mnemonic": "With мне it is about your body. Without it, it is about your day."
+      "mnemonic": "With mne it is about your body. Without it, it is about your day."
     },
     {
       "id": "L1-M9-S10",
-      "display": "Я не понимаю.",
+      "display": "Ya ne ponimáyu.",
+      "script": "Я не понимаю.",
       "cue": "I don't understand",
       "glossEn": "lit. \"I not understand\"",
       "literal": "I not understand",
       "deconstruction": {
         "words": [
           {
-            "display": "понимаю",
+            "display": "ponimáyu",
+            "script": "понимаю",
             "cue": "I understand",
             "tag": "free",
-            "forms": ["понимаю", "понимаете", "понимает"],
-            "note": "\"I understand\", pattern I — понимаю (I), понимаете (you, polite), понимает (he or she). The single most useful verb a beginner owns, and it is at its most useful with не in front of it."
+            "forms": ["ponimáyu", "ponimáyete", "ponimáyet"],
+            "note": "\"I understand\", pattern I — ponimáyu (I), ponimáyete (you, polite), ponimáyet (he or she). The single most useful verb a beginner owns, and it is at its most useful with ne in front of it."
           }
         ],
         "rules": [2]
       },
-      "trap": "There is no do. \"I don't understand\" has a helper carrying the negation in English and Russian has none — не in front of the verb, and the sentence is finished, exactly as it was in M3.",
-      "sound": "ya nye pa-nee-MA-yoo. Four syllables, the stress near the end, and every unstressed о flattened to \"a\".",
+      "trap": "There is no do. \"I don't understand\" has a helper carrying the negation in English and Russian has none — ne in front of the verb, and the sentence is finished, exactly as it was in M3.",
+      "sound": "ya nye pa-nee-MA-yoo. Four syllables, the stress near the end, and every unstressed o flattened to \"a\".",
       "variations": [
         {
-          "display": "Я понимаю.",
+          "display": "Ya ponimáyu.",
+          "script": "Я понимаю.",
           "cue": "I understand",
-          "changed": "drop не — and nothing else has to move back"
+          "changed": "drop ne — and nothing else has to move back"
         },
         {
-          "display": "Вы понимаете?",
+          "display": "Vy ponimáyete?",
+          "script": "Вы понимаете?",
           "cue": "Do you understand?",
           "changed": "the polite you-form, as a question"
         },
         {
-          "display": "Я не понимаю, потому что вы говорите быстро.",
+          "display": "Ya ne ponimáyu, potomú chto vy govoríte býstro.",
+          "script": "Я не понимаю, потому что вы говорите быстро.",
           "cue": "I don't understand because you speak fast",
-          "changed": "потому что joining the two halves — the module's frame doing real work"
+          "changed": "potomú chto joining the two halves — the module's frame doing real work"
         }
       ],
       "mistake": {
-        "display": "Я не понимать.",
-        "why": "A dictionary shape cannot be the verb of its own sentence. It needs an ending: Я не понимаю."
+        "display": "Ya ne ponimát'.",
+        "script": "Я не понимать.",
+        "why": "A dictionary shape cannot be the verb of its own sentence. It needs an ending: Ya ne ponimáyu."
       },
       "usage": "The most useful sentence in any language you are learning — and the third variation is how you ask for help without asking.",
       "register": "neutral",
@@ -504,36 +564,76 @@
     }
   ],
   "comprehensionPool": [
-    { "id": "L1-M9-C01", "display": "Вам холодно?", "cue": "Are you cold?" },
-    { "id": "L1-M9-C02", "display": "Мне нравятся книги.", "cue": "I like books" },
-    { "id": "L1-M9-C03", "display": "Почему вы не понимаете?", "cue": "Why don't you understand?" },
+    {
+      "id": "L1-M9-C01",
+      "display": "Vam khólodno?",
+      "script": "Вам холодно?",
+      "cue": "Are you cold?"
+    },
+    {
+      "id": "L1-M9-C02",
+      "display": "Mne nrávyatsya knígi.",
+      "script": "Мне нравятся книги.",
+      "cue": "I like books"
+    },
+    {
+      "id": "L1-M9-C03",
+      "display": "Pochemú vy ne ponimáyete?",
+      "script": "Почему вы не понимаете?",
+      "cue": "Why don't you understand?"
+    },
     {
       "id": "L1-M9-C04",
-      "display": "Я дома, потому что мне плохо.",
+      "display": "Ya dóma, potomú chto mne plókho.",
+      "script": "Я дома, потому что мне плохо.",
       "cue": "I am at home because I feel unwell"
     },
     {
       "id": "L1-M9-C05",
-      "display": "Мне жарко, поэтому я не работаю.",
+      "display": "Mne zhárko, poéhtomu ya ne rabótayu.",
+      "script": "Мне жарко, поэтому я не работаю.",
       "cue": "I am hot, so I am not working"
     },
-    { "id": "L1-M9-C06", "display": "Я думаю, что это плохо.", "cue": "I think that is bad" },
-    { "id": "L1-M9-C07", "display": "Вам нравится город?", "cue": "Do you like the city?" },
-    { "id": "L1-M9-C08", "display": "Почему вы не пьёте чай?", "cue": "Why aren't you drinking tea?" },
+    {
+      "id": "L1-M9-C06",
+      "display": "Ya dúmayu, chto éhto plókho.",
+      "script": "Я думаю, что это плохо.",
+      "cue": "I think that is bad"
+    },
+    {
+      "id": "L1-M9-C07",
+      "display": "Vam nrávitsya górod?",
+      "script": "Вам нравится город?",
+      "cue": "Do you like the city?"
+    },
+    {
+      "id": "L1-M9-C08",
+      "display": "Pochemú vy ne p'yóte chay?",
+      "script": "Почему вы не пьёте чай?",
+      "cue": "Why aren't you drinking tea?"
+    },
     {
       "id": "L1-M9-C09",
-      "display": "Мне нравится Москва, потому что я здесь живу.",
+      "display": "Mne nrávitsya Moskvá, potomú chto ya zdes' zhivú.",
+      "script": "Мне нравится Москва, потому что я здесь живу.",
       "cue": "I like Moscow because I live here"
     },
-    { "id": "L1-M9-C10", "display": "Я не понимаю, почему.", "cue": "I don't understand why" },
+    {
+      "id": "L1-M9-C10",
+      "display": "Ya ne ponimáyu, pochemú.",
+      "script": "Я не понимаю, почему.",
+      "cue": "I don't understand why"
+    },
     {
       "id": "L1-M9-C11",
-      "display": "Вы думаете, что это хорошо?",
+      "display": "Vy dúmayete, chto éhto khoroshó?",
+      "script": "Вы думаете, что это хорошо?",
       "cue": "Do you think that is good?"
     },
     {
       "id": "L1-M9-C12",
-      "display": "Мне холодно, поэтому я дома.",
+      "display": "Mne khólodno, poéhtomu ya dóma.",
+      "script": "Мне холодно, поэтому я дома.",
       "cue": "I am cold, so I am at home"
     }
   ],

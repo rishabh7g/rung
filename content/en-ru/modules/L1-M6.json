@@ -5,128 +5,140 @@
   "job": "Future and plans",
   "prerequisites": ["L1-M5"],
   "verified": true,
-  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-30",
   "complexity": {
     "minWordsPerSentence": 2,
     "maxWordsPerSentence": 7,
     "allowedTenses": ["future"],
     "allowedPatterns": [
-      "Завтра я буду + V-inf (impf.)",
-      "Завтра я + V-perf (non-past)",
-      "Завтра я не буду + V-inf",
-      "Вы будете + V-inf + завтра + ?"
+      "Závtra ya búdu + V-inf (impf.)",
+      "Závtra ya + V-perf (non-past)",
+      "Závtra ya ne búdu + V-inf",
+      "Vy búdete + V-inf + závtra + ?"
     ],
     "newWordCap": 25
   },
   "rules": [
     {
       "tag": "interference",
-      "text": "Russian has two futures, and which one you get is decided by the VERB, not by what you mean. A verb of the everyday kind — the M4 kind — builds its future with буду plus the dictionary form: Завтра я буду работать. A verb of the finished-event kind — the M5 kind — has no буду future at all: its present-tense shape IS its future. Завтра я куплю хлеб is \"tomorrow I will buy bread\", with a form that looks like a present tense."
+      "text": "Russian has two futures, and which one you get is decided by the VERB, not by what you mean. A verb of the everyday kind — the M4 kind — builds its future with búdu plus the dictionary form: Závtra ya búdu rabótat'. A verb of the finished-event kind — the M5 kind — has no búdu future at all: its present-tense shape IS its future. Závtra ya kuplyú khleb is \"tomorrow I will buy bread\", with a form that looks like a present tense."
     },
     {
       "tag": "interference",
-      "text": "So буду is not \"will\". It is half of one of the two futures, and it never touches the other half: Я буду купить and Я буду пойти do not exist, in the way that \"I will to buy\" does not exist in English. If the verb is one of M5's finished-event pair, drop буду and use the verb alone."
+      "text": "So búdu is not \"will\". It is half of one of the two futures, and it never touches the other half: Ya búdu kupít' and Ya búdu poytí do not exist, in the way that \"I will to buy\" does not exist in English. If the verb is one of M5's finished-event pair, drop búdu and use the verb alone."
     },
     {
       "tag": "delta",
-      "text": "буду · будете · будет is the same word as M5's был. Russian's \"be\" has a real past, a real future, and nothing at all in the present — that is the whole of it, and \"Russian has no verb to be\" was only ever true of the middle one."
+      "text": "búdu · búdete · búdet is the same word as M5's byl. Russian's \"be\" has a real past, a real future, and nothing at all in the present — that is the whole of it, and \"Russian has no verb to be\" was only ever true of the middle one."
     },
     {
       "tag": "delta",
-      "text": "Negation has not moved since M3: не goes in front of the finite verb, which in a буду future means in front of буду and never in front of the dictionary form. Завтра я не буду работать."
+      "text": "Negation has not moved since M3: ne goes in front of the finite verb, which in a búdu future means in front of búdu and never in front of the dictionary form. Závtra ya ne búdu rabótat'."
     },
     {
       "tag": "free",
-      "text": "The present tense can also be a future when a time word makes it obvious — Завтра я работаю is ordinary Russian for a fixed arrangement, exactly as English says \"I'm working tomorrow\". It is not taught as a pattern here, but it is worth recognising."
+      "text": "The present tense can also be a future when a time word makes it obvious — Závtra ya rabótayu is ordinary Russian for a fixed arrangement, exactly as English says \"I'm working tomorrow\". It is not taught as a pattern here, but it is worth recognising."
     }
   ],
   "sentences": [
     {
       "id": "L1-M6-S01",
-      "display": "Завтра я буду работать.",
+      "display": "Závtra ya búdu rabótat'.",
+      "script": "Завтра я буду работать.",
       "cue": "Tomorrow I will work",
       "glossEn": "lit. \"tomorrow I will-be work-INFINITIVE\"",
       "literal": "Tomorrow I will-be to-work",
       "deconstruction": {
         "words": [
           {
-            "display": "Завтра",
+            "display": "Závtra",
+            "script": "Завтра",
             "cue": "tomorrow",
             "tag": "free",
-            "forms": ["Завтра"],
-            "note": "Tomorrow. It opens the sentence, the way вчера did, and it anchors every line on this rung. Never changes shape."
+            "forms": ["Závtra"],
+            "note": "Tomorrow. It opens the sentence, the way vcherá did, and it anchors every line on this rung. Never changes shape."
           }
         ],
         "rules": [0, 2]
       },
-      "trap": "буду carries the future and работать stays in its dictionary shape — the same shape it had after хочу in M3. Only one verb in a Russian sentence ever takes an ending.",
-      "sound": "ZAV-tra ya BOO-doo ra-BO-tat'. The в of завтра is said as an f, as it is in вчера and всегда.",
+      "trap": "búdu carries the future and rabótat' stays in its dictionary shape — the same shape it had after khochú in M3. Only one verb in a Russian sentence ever takes an ending.",
+      "sound": "ZAV-tra ya BOO-doo ra-BO-tat'. The v of závtra is said as an f, as it is in vcherá and vsegdá.",
       "variations": [
         {
-          "display": "Завтра я буду читать.",
+          "display": "Závtra ya búdu chitát'.",
+          "script": "Завтра я буду читать.",
           "cue": "Tomorrow I will read",
           "changed": "swap the second verb — any of M3's or M4's dictionary shapes drops into the slot"
         },
         {
-          "display": "Завтра я не буду работать.",
+          "display": "Závtra ya ne búdu rabótat'.",
+          "script": "Завтра я не буду работать.",
           "cue": "Tomorrow I will not work",
-          "changed": "не in front of буду, never in front of работать"
+          "changed": "ne in front of búdu, never in front of rabótat'"
         },
         {
-          "display": "Вы будете работать завтра?",
+          "display": "Vy búdete rabótat' závtra?",
+          "script": "Вы будете работать завтра?",
           "cue": "Will you be working tomorrow?",
-          "changed": "буду → будете for the polite you, and the question adds nothing"
+          "changed": "búdu → búdete for the polite you, and the question adds nothing"
         }
       ],
       "mistake": {
-        "display": "Завтра я буду работаю.",
-        "why": "Two verbs cannot both carry an ending. буду takes it; работать stays in its dictionary shape."
+        "display": "Závtra ya búdu rabótayu.",
+        "script": "Завтра я буду работаю.",
+        "why": "Two verbs cannot both carry an ending. búdu takes it; rabótat' stays in its dictionary shape."
       },
       "usage": "Plans for tomorrow — the pattern you can build yourself out of anything M3 and M4 taught.",
       "register": "neutral",
-      "mnemonic": "One ending per sentence. буду takes it, the other verb waits in its dictionary clothes."
+      "mnemonic": "One ending per sentence. búdu takes it, the other verb waits in its dictionary clothes."
     },
     {
       "id": "L1-M6-S02",
-      "display": "Завтра я буду отдыхать.",
+      "display": "Závtra ya búdu otdykhát'.",
+      "script": "Завтра я буду отдыхать.",
       "cue": "Tomorrow I will rest",
       "glossEn": "lit. \"tomorrow I will-be rest-INFINITIVE\"",
       "literal": "Tomorrow I will-be to-rest",
       "deconstruction": {
         "words": [
           {
-            "display": "отдыхать",
+            "display": "otdykhát'",
+            "script": "отдыхать",
             "cue": "to rest · to relax · to be on holiday",
             "tag": "delta",
-            "forms": ["отдыхать", "отдыхаю", "отдыхаете"],
-            "note": "One word for resting, relaxing and being on holiday — Russians отдыхают at the seaside for a fortnight and also for ten minutes on a bench. Pattern I: отдыхаю (I), отдыхаете (you, polite)."
+            "forms": ["otdykhát'", "otdykháyu", "otdykháyete"],
+            "note": "One word for resting, relaxing and being on holiday — Russians otdykháyut at the seaside for a fortnight and also for ten minutes on a bench. Pattern I: otdykháyu (I), otdykháyete (you, polite)."
           }
         ],
         "rules": [0]
       },
       "trap": "English picks a different word for each size of rest — rest, relax, be on holiday. Russian uses this one for all three, so the sentence is vaguer than its English translations and that is not a problem.",
-      "sound": "ZAV-tra ya BOO-doo ad-dy-KHAT'. Two unstressed о letters at the front of отдыхать, both flattened; the х near the end is the raspy one.",
+      "sound": "ZAV-tra ya BOO-doo ad-dy-KHAT'. Two unstressed o letters at the front of otdykhát', both flattened; the kh near the end is the raspy one.",
       "variations": [
         {
-          "display": "Завтра я буду отдыхать дома.",
+          "display": "Závtra ya búdu otdykhát' dóma.",
+          "script": "Завтра я буду отдыхать дома.",
           "cue": "Tomorrow I will rest at home",
-          "changed": "M5's дома on the end — no preposition needed"
+          "changed": "M5's dóma on the end — no preposition needed"
         },
         {
-          "display": "Вы будете отдыхать завтра?",
+          "display": "Vy búdete otdykhát' závtra?",
+          "script": "Вы будете отдыхать завтра?",
           "cue": "Will you be resting tomorrow?",
-          "changed": "the polite you-form of буду, and the time word moved to the end"
+          "changed": "the polite you-form of búdu, and the time word moved to the end"
         },
         {
-          "display": "Я не буду отдыхать.",
+          "display": "Ya ne búdu otdykhát'.",
+          "script": "Я не буду отдыхать.",
           "cue": "I will not rest",
-          "changed": "не in front of буду, and завтра dropped altogether"
+          "changed": "ne in front of búdu, and závtra dropped altogether"
         }
       ],
       "mistake": {
-        "display": "Завтра я отдыхать.",
-        "why": "A dictionary shape cannot stand alone as the sentence's verb. It needs буду in front of it, or an ending of its own."
+        "display": "Závtra ya otdykhát'.",
+        "script": "Завтра я отдыхать.",
+        "why": "A dictionary shape cannot stand alone as the sentence's verb. It needs búdu in front of it, or an ending of its own."
       },
       "usage": "Weekends, holidays, and the answer to \"what are you doing tomorrow?\".",
       "register": "neutral",
@@ -134,44 +146,50 @@
     },
     {
       "id": "L1-M6-S03",
-      "display": "Завтра я напишу письмо.",
+      "display": "Závtra ya napishú pis'mó.",
+      "script": "Завтра я напишу письмо.",
       "cue": "Tomorrow I will write a letter",
       "glossEn": "lit. \"tomorrow I will-write letter\"",
       "literal": "Tomorrow I will-write letter",
       "deconstruction": {
         "words": [
           {
-            "display": "напишу",
+            "display": "napishú",
+            "script": "напишу",
             "cue": "I will write",
             "tag": "interference",
-            "forms": ["напишу", "напишете", "напишет", "написал", "написала"],
-            "note": "\"I will write\" — and there is no буду anywhere. This is a finished-event verb, like M5's купить, so its present-looking shape is its future: напишу (I), напишете (you, polite). Its past is написал · написала. The на- on the front is what makes it the finished kind."
+            "forms": ["napishú", "napíshete", "napíshet", "napisál", "napisála"],
+            "note": "\"I will write\" — and there is no búdu anywhere. This is a finished-event verb, like M5's kupít', so its present-looking shape is its future: napishú (I), napíshete (you, polite). Its past is napisál · napisála. The na- on the front is what makes it the finished kind."
           }
         ],
         "rules": [0, 1]
       },
-      "trap": "Nothing in напишу looks like a future, and that is exactly the difficulty. The ending is the ordinary I-ending; the tense comes from which verb of the pair you chose, and this one has no present tense at all.",
-      "sound": "ZAV-tra ya na-pee-SHOO pees'-MO. The ш is a hard sh, made with the tongue pulled back — harder than the English one.",
+      "trap": "Nothing in napishú looks like a future, and that is exactly the difficulty. The ending is the ordinary I-ending; the tense comes from which verb of the pair you chose, and this one has no present tense at all.",
+      "sound": "ZAV-tra ya na-pee-SHOO pees'-MO. The sh of napishú is a hard sh, made with the tongue pulled back — harder than the English one.",
       "variations": [
         {
-          "display": "Вчера я написал письмо.",
+          "display": "Vcherá ya napisál pis'mó.",
+          "script": "Вчера я написал письмо.",
           "cue": "Yesterday I wrote a letter",
-          "changed": "the same verb in the past — the shape a man writes; a woman writes написала"
+          "changed": "the same verb in the past — the shape a man writes; a woman writes napisála"
         },
         {
-          "display": "Завтра я напишу газету.",
+          "display": "Závtra ya napishú gazétu.",
+          "script": "Завтра я напишу газету.",
           "cue": "Tomorrow I will write the newspaper",
-          "changed": "swap the object — and it bends, being feminine: газету"
+          "changed": "swap the object — and it bends, being feminine: gazétu"
         },
         {
-          "display": "Вы напишете письмо?",
+          "display": "Vy napíshete pis'mó?",
+          "script": "Вы напишете письмо?",
           "cue": "Will you write the letter?",
-          "changed": "the polite you-form — still no буду in the sentence"
+          "changed": "the polite you-form — still no búdu in the sentence"
         }
       ],
       "mistake": {
-        "display": "Завтра я буду напишу письмо.",
-        "why": "буду belongs only with the everyday kind of verb. напишу is already the future all by itself."
+        "display": "Závtra ya búdu napishú pis'mó.",
+        "script": "Завтра я буду напишу письмо.",
+        "why": "búdu belongs only with the everyday kind of verb. napishú is already the future all by itself."
       },
       "usage": "Promising to do one particular thing — the future Russians use most.",
       "register": "neutral",
@@ -179,18 +197,20 @@
     },
     {
       "id": "L1-M6-S04",
-      "display": "Завтра я позвоню.",
+      "display": "Závtra ya pozvonyú.",
+      "script": "Завтра я позвоню.",
       "cue": "Tomorrow I will call",
       "glossEn": "lit. \"tomorrow I will-call\"",
       "literal": "Tomorrow I will-call",
       "deconstruction": {
         "words": [
           {
-            "display": "позвоню",
+            "display": "pozvonyú",
+            "script": "позвоню",
             "cue": "I will call · I will phone",
             "tag": "delta",
-            "forms": ["позвоню", "позвоните", "позвонил", "позвонила"],
-            "note": "\"I will call\", on the telephone. Another finished-event verb, so again no буду: позвоню (I), позвоните (you, polite). Its past is позвонил · позвонила. It shares a root with M1's Меня зовут — both are about calling, one on the phone and one by name."
+            "forms": ["pozvonyú", "pozvoníte", "pozvoníl", "pozvoníla"],
+            "note": "\"I will call\", on the telephone. Another finished-event verb, so again no búdu: pozvonyú (I), pozvoníte (you, polite). Its past is pozvoníl · pozvoníla. It shares a root with M1's Menyá zovút — both are about calling, one on the phone and one by name."
           }
         ],
         "rules": [0, 1]
@@ -199,24 +219,28 @@
       "sound": "ZAV-tra ya pa-zva-NYOO. Three syllables before the stress, all light, then the weight lands right at the end.",
       "variations": [
         {
-          "display": "Я позвоню завтра.",
+          "display": "Ya pozvonyú závtra.",
+          "script": "Я позвоню завтра.",
           "cue": "I will call tomorrow",
           "changed": "the time word at the end instead of the front — both orders are ordinary"
         },
         {
-          "display": "Вчера я позвонил.",
+          "display": "Vcherá ya pozvoníl.",
+          "script": "Вчера я позвонил.",
           "cue": "Yesterday I called",
-          "changed": "the same verb in the past, from a man — позвонила from a woman"
+          "changed": "the same verb in the past, from a man — pozvoníla from a woman"
         },
         {
-          "display": "Вы позвоните завтра?",
+          "display": "Vy pozvoníte závtra?",
+          "script": "Вы позвоните завтра?",
           "cue": "Will you call tomorrow?",
-          "changed": "the polite you-form, and still no буду anywhere"
+          "changed": "the polite you-form, and still no búdu anywhere"
         }
       ],
       "mistake": {
-        "display": "Завтра я буду позвоню.",
-        "why": "The same cross-wiring as S03. позвоню is the whole future; буду has no business in front of it."
+        "display": "Závtra ya búdu pozvonyú.",
+        "script": "Завтра я буду позвоню.",
+        "why": "The same cross-wiring as S03. pozvonyú is the whole future; búdu has no business in front of it."
       },
       "usage": "Arranging to be in touch — one of the most useful promises in the language.",
       "register": "neutral",
@@ -224,44 +248,50 @@
     },
     {
       "id": "L1-M6-S05",
-      "display": "Завтра я куплю подарок.",
+      "display": "Závtra ya kuplyú podárok.",
+      "script": "Завтра я куплю подарок.",
       "cue": "Tomorrow I will buy a present",
       "glossEn": "lit. \"tomorrow I will-buy present\"",
       "literal": "Tomorrow I will-buy present",
       "deconstruction": {
         "words": [
           {
-            "display": "подарок",
+            "display": "podárok",
+            "script": "подарок",
             "cue": "present · gift",
             "tag": "free",
-            "forms": ["подарок"],
+            "forms": ["podárok"],
             "note": "A present. Masculine, and a thing rather than a creature, so it does not change as the object."
           }
         ],
         "rules": [0, 1]
       },
-      "trap": "куплю is M5's купил, one row and one word — the past and the future of the same verb, with no present tense in between. Tapping either shape opens the same note, and that is deliberate.",
-      "sound": "ZAV-tra ya koo-PLYOO pa-DA-rak. куплю grows a л the way люблю does, and the stress moves onto it.",
+      "trap": "kuplyú is M5's kupíl, one row and one word — the past and the future of the same verb, with no present tense in between. Tapping either shape opens the same note, and that is deliberate.",
+      "sound": "ZAV-tra ya koo-PLYOO pa-DA-rak. kuplyú grows an l the way lyublyú does, and the stress moves onto it.",
       "variations": [
         {
-          "display": "Вчера я купил подарок.",
+          "display": "Vcherá ya kupíl podárok.",
+          "script": "Вчера я купил подарок.",
           "cue": "Yesterday I bought a present",
           "changed": "the same verb in the past — one word, two tenses, no present"
         },
         {
-          "display": "Завтра я куплю билет.",
+          "display": "Závtra ya kuplyú bilét.",
+          "script": "Завтра я куплю билет.",
           "cue": "Tomorrow I will buy a ticket",
           "changed": "swap the thing bought — neither word around it moves"
         },
         {
-          "display": "Я хочу купить подарок.",
+          "display": "Ya khochú kupít' podárok.",
+          "script": "Я хочу купить подарок.",
           "cue": "I want to buy a present",
-          "changed": "M3's frame — after хочу the verb goes back to its dictionary shape, купить"
+          "changed": "M3's frame — after khochú the verb goes back to its dictionary shape, kupít'"
         }
       ],
       "mistake": {
-        "display": "Завтра я буду куплю подарок.",
-        "why": "куплю is already the future. буду goes only with the everyday kind of verb, and this is not one."
+        "display": "Závtra ya búdu kuplyú podárok.",
+        "script": "Завтра я буду куплю подарок.",
+        "why": "kuplyú is already the future. búdu goes only with the everyday kind of verb, and this is not one."
       },
       "usage": "Shopping plans, birthdays, and anything you intend to get done once.",
       "register": "neutral",
@@ -269,44 +299,50 @@
     },
     {
       "id": "L1-M6-S06",
-      "display": "Завтра экзамен.",
+      "display": "Závtra ehkzámen.",
+      "script": "Завтра экзамен.",
       "cue": "Tomorrow there is an exam",
       "glossEn": "lit. \"tomorrow exam\"",
       "literal": "Tomorrow exam",
       "deconstruction": {
         "words": [
           {
-            "display": "экзамен",
+            "display": "ehkzámen",
+            "script": "экзамен",
             "cue": "exam",
             "tag": "free",
-            "forms": ["экзамен"],
-            "note": "An exam. Masculine, and borrowed — the з is said as a z and the whole word is close enough to English to be free."
+            "forms": ["ehkzámen"],
+            "note": "An exam. Masculine, and borrowed — the z in the middle is a plain z and the whole word is close enough to English to be free."
           }
         ],
         "rules": [2]
       },
       "trap": "Two words, and both of them are nouns — no verb at all. The zero copula from M1 is still running, and a time word plus a noun is a complete Russian sentence about the future.",
-      "sound": "ZAV-tra ek-ZA-myen. The э at the front is a plain open \"e\", the letter Russian keeps for exactly this job.",
+      "sound": "ZAV-tra ek-ZA-myen. The eh at the front is a plain open \"e\", the letter Russian keeps for exactly this job.",
       "variations": [
         {
-          "display": "Завтра будет экзамен.",
+          "display": "Závtra búdet ehkzámen.",
+          "script": "Завтра будет экзамен.",
           "cue": "Tomorrow there will be an exam",
-          "changed": "будет spelled out — the same fact, with the future said rather than left to the time word"
+          "changed": "búdet spelled out — the same fact, with the future said rather than left to the time word"
         },
         {
-          "display": "Вчера был экзамен.",
+          "display": "Vcherá byl ehkzámen.",
+          "script": "Вчера был экзамен.",
           "cue": "Yesterday there was an exam",
-          "changed": "the past cannot be left out: был is obligatory where будет was optional"
+          "changed": "the past cannot be left out: byl is obligatory where búdet was optional"
         },
         {
-          "display": "Завтра экзамен утром.",
+          "display": "Závtra ehkzámen útrom.",
+          "script": "Завтра экзамен утром.",
           "cue": "Tomorrow there is an exam in the morning",
           "changed": "M4's time word on the end, and still no verb in the sentence"
         }
       ],
       "mistake": {
-        "display": "Завтра есть экзамен.",
-        "why": "есть is not a present tense of \"to be\" — M1's rule holds. Завтра экзамен, or Завтра будет экзамен."
+        "display": "Závtra yest' ehkzámen.",
+        "script": "Завтра есть экзамен.",
+        "why": "yest' is not a present tense of \"to be\" — M1's rule holds. Závtra ehkzámen, or Závtra búdet ehkzámen."
       },
       "usage": "Announcing what is happening — the shortest complete sentence about the future you can write.",
       "register": "neutral",
@@ -314,96 +350,109 @@
     },
     {
       "id": "L1-M6-S07",
-      "display": "Завтра я буду много читать.",
+      "display": "Závtra ya búdu mnógo chitát'.",
+      "script": "Завтра я буду много читать.",
       "cue": "Tomorrow I will read a lot",
       "glossEn": "lit. \"tomorrow I will-be much read-INFINITIVE\"",
       "literal": "Tomorrow I will-be much to-read",
       "deconstruction": {
         "words": [
           {
-            "display": "много",
+            "display": "mnógo",
+            "script": "много",
             "cue": "a lot · much · many",
             "tag": "delta",
-            "forms": ["много"],
-            "note": "\"A lot\", covering English's much and many at once. It goes in front of the verb, in the same seat as M4's часто and всегда. In front of a noun it changes that noun's ending — a job this level does not teach — so here it only ever describes a verb."
+            "forms": ["mnógo"],
+            "note": "\"A lot\", covering English's much and many at once. It goes in front of the verb, in the same seat as M4's chásto and vsegdá. In front of a noun it changes that noun's ending — a job this level does not teach — so here it only ever describes a verb."
           }
         ],
         "rules": [0]
       },
-      "trap": "English splits much and many by whether you can count the thing. Russian does not split them at all, and много covers both.",
-      "sound": "ZAV-tra ya BOO-doo MNO-ga chee-TAT'. The м and н at the start of много run together, and the final о flattens to \"a\".",
+      "trap": "English splits much and many by whether you can count the thing. Russian does not split them at all, and mnógo covers both.",
+      "sound": "ZAV-tra ya BOO-doo MNO-ga chee-TAT'. The m and n at the start of mnógo run together, and the final o flattens to \"a\".",
       "variations": [
         {
-          "display": "Завтра я буду много работать.",
+          "display": "Závtra ya búdu mnógo rabótat'.",
+          "script": "Завтра я буду много работать.",
           "cue": "Tomorrow I will work a lot",
-          "changed": "swap the second verb — много keeps its place in front of it"
+          "changed": "swap the second verb — mnógo keeps its place in front of it"
         },
         {
-          "display": "Я много читаю.",
+          "display": "Ya mnógo chitáyu.",
+          "script": "Я много читаю.",
           "cue": "I read a lot",
-          "changed": "back to M4's present — много sits in exactly the same seat there"
+          "changed": "back to M4's present — mnógo sits in exactly the same seat there"
         },
         {
-          "display": "Завтра я не буду много читать.",
+          "display": "Závtra ya ne búdu mnógo chitát'.",
+          "script": "Завтра я не буду много читать.",
           "cue": "Tomorrow I will not read a lot",
-          "changed": "не in front of буду, and много stays where it was"
+          "changed": "ne in front of búdu, and mnógo stays where it was"
         }
       ],
       "mistake": {
-        "display": "Завтра я буду читать много.",
-        "why": "Understandable, and it throws an odd emphasis onto много. It belongs in front of the verb it describes."
+        "display": "Závtra ya búdu chitát' mnógo.",
+        "script": "Завтра я буду читать много.",
+        "why": "Understandable, and it throws an odd emphasis onto mnógo. It belongs in front of the verb it describes."
       },
-      "usage": "Saying how much of something you will do — and много is the same word for countable and uncountable alike.",
+      "usage": "Saying how much of something you will do — and mnógo is the same word for countable and uncountable alike.",
       "register": "neutral",
-      "mnemonic": "much and many are one word here, and it goes where часто goes."
+      "mnemonic": "much and many are one word here, and it goes where chásto goes."
     },
     {
       "id": "L1-M6-S08",
-      "display": "Завтра я встану поздно.",
+      "display": "Závtra ya vstánu pózdno.",
+      "script": "Завтра я встану поздно.",
       "cue": "Tomorrow I will get up late",
       "glossEn": "lit. \"tomorrow I will-get-up late\"",
       "literal": "Tomorrow I will-get-up late",
       "deconstruction": {
         "words": [
           {
-            "display": "встану",
+            "display": "vstánu",
+            "script": "встану",
             "cue": "I will get up",
             "tag": "interference",
-            "forms": ["встану", "встанете", "встал", "встала"],
-            "note": "\"I will get up\" — the finished-event partner of M4's встаю, and a different word from it, not a different tense. встаю is what you do every morning; встану is what you will do once, tomorrow. Its past is встал · встала."
+            "forms": ["vstánu", "vstánete", "vstal", "vstála"],
+            "note": "\"I will get up\" — the finished-event partner of M4's vstayú, and a different word from it, not a different tense. vstayú is what you do every morning; vstánu is what you will do once, tomorrow. Its past is vstal · vstála."
           },
           {
-            "display": "поздно",
+            "display": "pózdno",
+            "script": "поздно",
             "cue": "late",
             "tag": "free",
-            "forms": ["поздно"],
-            "note": "Late — the opposite of M4's рано, and it sits in the same place, after the verb. The д in the middle is not said: \"POZ-na\"."
+            "forms": ["pózdno"],
+            "note": "Late — the opposite of M4's ráno, and it sits in the same place, after the verb. The d in the middle is not said: \"POZ-na\"."
           }
         ],
         "rules": [0, 1]
       },
-      "trap": "M4's встаю and this встану differ by two letters and by everything else. One is a habit and has a present tense; the other is a single event and has none, which is why it can be a future.",
-      "sound": "ZAV-tra ya FSTA-noo POZ-na. The д of поздно is dropped entirely, the way the т of часто nearly is.",
+      "trap": "M4's vstayú and this vstánu differ by two letters and by everything else. One is a habit and has a present tense; the other is a single event and has none, which is why it can be a future.",
+      "sound": "ZAV-tra ya FSTA-noo POZ-na. The d of pózdno is dropped entirely, the way the t of chásto nearly is.",
       "variations": [
         {
-          "display": "Завтра я встану рано.",
+          "display": "Závtra ya vstánu ráno.",
+          "script": "Завтра я встану рано.",
           "cue": "Tomorrow I will get up early",
-          "changed": "swap the time word — M4's рано, in the same seat"
+          "changed": "swap the time word — M4's ráno, in the same seat"
         },
         {
-          "display": "Я встаю поздно.",
+          "display": "Ya vstayú pózdno.",
+          "script": "Я встаю поздно.",
           "cue": "I get up late",
           "changed": "M4's habit verb — every day, not tomorrow"
         },
         {
-          "display": "Вчера я встал поздно.",
+          "display": "Vcherá ya vstal pózdno.",
+          "script": "Вчера я встал поздно.",
           "cue": "Yesterday I got up late",
           "changed": "the same finished-event verb in the past, from a man"
         }
       ],
       "mistake": {
-        "display": "Завтра я буду встану поздно.",
-        "why": "встану is already the future. буду belongs with вставать, the habit verb — and even then it would say something else."
+        "display": "Závtra ya búdu vstánu pózdno.",
+        "script": "Завтра я буду встану поздно.",
+        "why": "vstánu is already the future. búdu belongs with vstavát', the habit verb — and even then it would say something else."
       },
       "usage": "Weekend plans — and the clearest side-by-side of the two halves of a verb pair.",
       "register": "neutral",
@@ -411,112 +460,180 @@
     },
     {
       "id": "L1-M6-S09",
-      "display": "Вы придёте завтра?",
+      "display": "Vy pridyóte závtra?",
+      "script": "Вы придёте завтра?",
       "cue": "Will you come tomorrow?",
       "glossEn": "lit. \"you will-come tomorrow?\"",
       "literal": "You will-come tomorrow?",
       "deconstruction": {
         "words": [
           {
-            "display": "придёте",
+            "display": "pridyóte",
+            "script": "придёте",
             "cue": "you will come",
             "tag": "delta",
-            "forms": ["придёте", "приду", "придёт"],
-            "note": "\"You will come\" — a finished-event verb, so no буду. придёте (you, polite), приду (I), придёт (he or she). The ё is written, as always in this course, and as always it carries the stress."
+            "forms": ["pridyóte", "pridú", "pridyót"],
+            "note": "\"You will come\" — a finished-event verb, so no búdu. pridyóte (you, polite), pridú (I), pridyót (he or she). The yó is written, as always in this course, and as always it carries the stress."
           }
         ],
         "rules": [0, 1]
       },
       "trap": "It looks like a present tense and asks about tomorrow. By now that should be expected: with this half of a verb pair, the present-shaped ending is the only future there is.",
-      "sound": "vy pree-DYO-tye ZAV-tra. The ё is stressed, as every ё is, so the middle of the word is where the weight lands.",
+      "sound": "vy pree-DYO-tye ZAV-tra. The yó is stressed, as every yó is, so the middle of the word is where the weight lands.",
       "variations": [
         {
-          "display": "Я приду завтра.",
+          "display": "Ya pridú závtra.",
+          "script": "Я приду завтра.",
           "cue": "I will come tomorrow",
-          "changed": "the answer, in the I-form — приду, and the ё disappears when the stress moves"
+          "changed": "the answer, in the I-form — pridú, and the yó disappears when the stress moves"
         },
         {
-          "display": "Анна придёт завтра.",
+          "display": "Ánna pridyót závtra.",
+          "script": "Анна придёт завтра.",
           "cue": "Anna will come tomorrow",
-          "changed": "the he/she form, ё still in place"
+          "changed": "the he/she form, yó still in place"
         },
         {
-          "display": "Вы придёте вечером?",
+          "display": "Vy pridyóte vécherom?",
+          "script": "Вы придёте вечером?",
           "cue": "Will you come in the evening?",
-          "changed": "M4's time word instead of завтра — the question frame is unchanged"
+          "changed": "M4's time word instead of závtra — the question frame is unchanged"
         }
       ],
       "mistake": {
-        "display": "Вы будете придёте завтра?",
-        "why": "придёте is the whole future already. Two future markers in one sentence is one too many."
+        "display": "Vy búdete pridyóte závtra?",
+        "script": "Вы будете придёте завтра?",
+        "why": "pridyóte is the whole future already. Two future markers in one sentence is one too many."
       },
       "usage": "Inviting somebody, or checking that they are coming — the most useful question on this rung.",
       "register": "neutral",
-      "mnemonic": "ё is always stressed. When the stress leaves, so does the ё: придёте, but приду."
+      "mnemonic": "yó is always stressed. When the stress leaves, so does the yó: pridyóte, but pridú."
     },
     {
       "id": "L1-M6-S10",
-      "display": "Конечно, я буду работать.",
+      "display": "Konéchno, ya búdu rabótat'.",
+      "script": "Конечно, я буду работать.",
       "cue": "Of course I will work",
       "glossEn": "lit. \"of-course, I will-be work-INFINITIVE\"",
       "literal": "Of-course, I will-be to-work",
       "deconstruction": {
         "words": [
           {
-            "display": "Конечно",
+            "display": "Konéchno",
+            "script": "Конечно",
             "cue": "of course · certainly",
             "tag": "delta",
-            "forms": ["Конечно"],
-            "note": "\"Of course.\" Written with a ч and said with a ш — ka-NYESH-na — which is one of the few Russian words whose spelling and sound genuinely disagree. It is set off by a comma at the front of the sentence."
+            "forms": ["Konéchno"],
+            "note": "\"Of course.\" Written with a ch and said with a sh — ka-NYESH-na — which is one of the few Russian words whose spelling and sound genuinely disagree. It is set off by a comma at the front of the sentence."
           }
         ],
         "rules": [0]
       },
       "trap": "The spelling lies. Almost every Russian word is said as it is written; this one, and a handful like it, are not, and no rule will help you — it has to be remembered.",
-      "sound": "ka-NYESH-na ya BOO-doo ra-BO-tat'. The чн of конечно is said \"shn\", not \"chn\".",
+      "sound": "ka-NYESH-na ya BOO-doo ra-BO-tat'. The chn of konéchno is said \"shn\", not \"chn\".",
       "variations": [
         {
-          "display": "Конечно, я приду.",
+          "display": "Konéchno, ya pridú.",
+          "script": "Конечно, я приду.",
           "cue": "Of course I will come",
-          "changed": "swap the promise — Конечно takes any statement after its comma"
+          "changed": "swap the promise — Konéchno takes any statement after its comma"
         },
         {
-          "display": "Конечно!",
+          "display": "Konéchno!",
+          "script": "Конечно!",
           "cue": "Of course!",
           "changed": "on its own, as a whole answer"
         },
         {
-          "display": "Конечно, я не буду работать.",
+          "display": "Konéchno, ya ne búdu rabótat'.",
+          "script": "Конечно, я не буду работать.",
           "cue": "Of course I will not work",
-          "changed": "не in front of буду, with Конечно untouched at the front"
+          "changed": "ne in front of búdu, with Konéchno untouched at the front"
         }
       ],
       "mistake": {
-        "display": "Конечно я буду работать.",
-        "why": "The comma is not optional in Russian: Конечно is set off from the sentence it introduces, always."
+        "display": "Konéchno ya búdu rabótat'.",
+        "script": "Конечно я буду работать.",
+        "why": "The comma is not optional in Russian: Konéchno is set off from the sentence it introduces, always."
       },
       "usage": "Agreeing warmly — and it is one of the first words you will hear in reply to a request.",
       "register": "neutral",
-      "mnemonic": "Written with ч, said with ш. There is no rule; there is only this word."
+      "mnemonic": "Written with ch, said with sh. There is no rule; there is only this word."
     }
   ],
   "comprehensionPool": [
-    { "id": "L1-M6-C01", "display": "Завтра я буду читать.", "cue": "Tomorrow I will read" },
-    { "id": "L1-M6-C02", "display": "Завтра я куплю билет.", "cue": "Tomorrow I will buy a ticket" },
-    { "id": "L1-M6-C03", "display": "Вы будете отдыхать завтра?", "cue": "Will you rest tomorrow?" },
-    { "id": "L1-M6-C04", "display": "Анна придёт вечером.", "cue": "Anna will come in the evening" },
-    { "id": "L1-M6-C05", "display": "Завтра будет дождь.", "cue": "Tomorrow it will rain" },
-    { "id": "L1-M6-C06", "display": "Я не буду работать завтра.", "cue": "I will not work tomorrow" },
-    { "id": "L1-M6-C07", "display": "Конечно, я позвоню.", "cue": "Of course I will call" },
+    {
+      "id": "L1-M6-C01",
+      "display": "Závtra ya búdu chitát'.",
+      "script": "Завтра я буду читать.",
+      "cue": "Tomorrow I will read"
+    },
+    {
+      "id": "L1-M6-C02",
+      "display": "Závtra ya kuplyú bilét.",
+      "script": "Завтра я куплю билет.",
+      "cue": "Tomorrow I will buy a ticket"
+    },
+    {
+      "id": "L1-M6-C03",
+      "display": "Vy búdete otdykhát' závtra?",
+      "script": "Вы будете отдыхать завтра?",
+      "cue": "Will you rest tomorrow?"
+    },
+    {
+      "id": "L1-M6-C04",
+      "display": "Ánna pridyót vécherom.",
+      "script": "Анна придёт вечером.",
+      "cue": "Anna will come in the evening"
+    },
+    {
+      "id": "L1-M6-C05",
+      "display": "Závtra búdet dozhd'.",
+      "script": "Завтра будет дождь.",
+      "cue": "Tomorrow it will rain"
+    },
+    {
+      "id": "L1-M6-C06",
+      "display": "Ya ne búdu rabótat' závtra.",
+      "script": "Я не буду работать завтра.",
+      "cue": "I will not work tomorrow"
+    },
+    {
+      "id": "L1-M6-C07",
+      "display": "Konéchno, ya pozvonyú.",
+      "script": "Конечно, я позвоню.",
+      "cue": "Of course I will call"
+    },
     {
       "id": "L1-M6-C08",
-      "display": "Завтра я встану рано.",
+      "display": "Závtra ya vstánu ráno.",
+      "script": "Завтра я встану рано.",
       "cue": "Tomorrow I will get up early"
     },
-    { "id": "L1-M6-C09", "display": "Иван напишет письмо.", "cue": "Ivan will write a letter" },
-    { "id": "L1-M6-C10", "display": "Завтра я пойду домой рано.", "cue": "Tomorrow I will go home early" },
-    { "id": "L1-M6-C11", "display": "Я буду много отдыхать.", "cue": "I will rest a lot" },
-    { "id": "L1-M6-C12", "display": "Вы купите подарок завтра?", "cue": "Will you buy a present tomorrow?" }
+    {
+      "id": "L1-M6-C09",
+      "display": "Iván napíshet pis'mó.",
+      "script": "Иван напишет письмо.",
+      "cue": "Ivan will write a letter"
+    },
+    {
+      "id": "L1-M6-C10",
+      "display": "Závtra ya poydú domóy ráno.",
+      "script": "Завтра я пойду домой рано.",
+      "cue": "Tomorrow I will go home early"
+    },
+    {
+      "id": "L1-M6-C11",
+      "display": "Ya búdu mnógo otdykhát'.",
+      "script": "Я буду много отдыхать.",
+      "cue": "I will rest a lot"
+    },
+    {
+      "id": "L1-M6-C12",
+      "display": "Vy kúpite podárok závtra?",
+      "script": "Вы купите подарок завтра?",
+      "cue": "Will you buy a present tomorrow?"
+    }
   ],
   "exitTest": {
     "generateCount": 2,

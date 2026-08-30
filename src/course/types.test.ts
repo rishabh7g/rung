@@ -500,23 +500,39 @@ describe('ModuleContent against the modules that exist', () => {
   });
 
   /**
-   * en-ru (#338–#343) is the product's first Cyrillic course, and its language law runs the way
-   * en-es's does rather than hi-en's: the document speaks ENGLISH (`l1Tag: en`), so every teaching
-   * field is English prose — which may quote Cyrillic inside itself — and Russian appears only in
-   * the L2 slots: sentence / word / variation / mistake / pool `display`, and word `forms`. Two
-   * further rules the briefs settled (`tools/course-briefs.ts`, "en-ru: the six decisions"):
+   * en-ru (#338–#343) is the product's Russian course, and its language law runs the way en-es's
+   * does rather than hi-en's: the document speaks ENGLISH (`l1Tag: en`), so every teaching field
+   * is English prose — which may quote the native script inside itself — and Russian appears only
+   * in the L2 slots: sentence / word / variation / mistake / pool `display` and `script`, and word
+   * `forms`. `glossEn` is REQUIRED on every sentence: #268's exemption is for a course whose L2 IS
+   * English, and Russian is not one; the build enforces it and this pins it in the tree.
    *
-   *   • `glossEn` is REQUIRED on every sentence — #268's exemption is for a course whose L2 IS
-   *     English, and Russian is not one; the build enforces it and this pins it in the tree,
-   *   • **no stress marks anywhere.** Normal Russian text carries none, and a combining acute
-   *     (U+0301) would be a codepoint the word index has to match forever — `кни́га` and `книга`
-   *     are two different surfaces. Stress is taught in `sound`, in English syllables.
+   * **The course is mid-romanization (#353–#360), and this test is written to hold on both sides
+   * of it rather than to be rewritten twice.** The product rule is "rung teaches speech, not
+   * script" (docs/design-contract.md), so every en-ru `display` becomes the romanization of
+   * `tools/course-briefs.ts` §0 and the Cyrillic moves to the quiet `script` line. The batches
+   * land module by module (#357/#358 take M1–M5, #359 takes M6–M10, #360 flips the manifest row),
+   * so at any moment between those merges some modules are native and some are romanized, and a
+   * test that asserted either shape course-wide would be red for a week for no defect.
    *
-   * `scriptMode` is `native`, so `display` IS the Cyrillic and the `script` field is unused: a
-   * quiet native line exists for romanized courses, and a native course has nothing to put under
-   * itself. The keys walk above already prove no en-ru surface carries one.
+   * What is asserted instead is the invariant that is true of BOTH shapes and that a mixed module
+   * would break: a module is entirely one or entirely the other. A NATIVE module has Cyrillic in
+   * every L2 slot and no `script` anywhere — a quiet native line exists for romanized courses, and
+   * a native course has nothing to put under itself. A ROMANIZED module has Latin in every
+   * `display` and every `forms` entry (#354's `checkScriptMode` fails the build on anything else
+   * once the manifest row flips) and Cyrillic in `script` on every surface that has one, with
+   * `forms` — a plain array of strings the schema gives no `script` — romanized and uncounterparted.
+   * The half-and-half module is the failure this catches, and it is exactly the failure a
+   * per-module rewrite can produce.
+   *
+   * The one rule that survives both shapes unchanged: **no COMBINING acute (U+0301) anywhere.**
+   * The pre-romanization brief banned stress marks outright; #355 overturned that for the
+   * romanization (Russian vowel reduction is unintelligible without stress) but kept the
+   * codepoint discipline — `á` U+00E1, never `a` + U+0301. The folder NFC-composes so both would
+   * resolve, but one form in the files is one form to read in a diff, and the Cyrillic `script`
+   * line carries no acute at all.
    */
-  it('keeps the Cyrillic course in its lane: display is Russian, every teaching field English (#340)', () => {
+  it('keeps the Russian course in its lane, native or romanized, never half of each (#340, #359)', () => {
     const enRu = MODULE_FILES.filter(([name]) => name.includes('en-ru'));
     const cyrillic = /\p{Script=Cyrillic}/u;
     const latin = /[A-Za-z]/;
@@ -528,18 +544,35 @@ describe('ModuleContent against the modules that exist', () => {
     expect(enRu.length, 'the en-ru L1 modules authored so far').toBeGreaterThan(0);
     for (const [file, json] of enRu) {
       const module = parseModule(json, file);
+      /** Which side of the romanization this module is on — decided once, then held everywhere. */
+      const romanized = module.sentences[0]?.script !== undefined;
 
-      // Teaching prose is English. It may QUOTE Cyrillic, so the test is that English is there.
+      /**
+       * One L2 surface, checked against whichever shape the module declared. `script` is the
+       * inverse of `display` in a romanized module and absent altogether in a native one.
+       */
+      const l2 = (at: string, surface: { display: string; script?: string }): void => {
+        if (romanized) {
+          expect(surface.display, `${at} display is the romanization`).toMatch(noCyrillic);
+          expect(surface.display, `${at} display is the romanization`).toMatch(latin);
+          expect(surface.script, `${at} carries the Cyrillic on its quiet line`).toMatch(cyrillic);
+        } else {
+          expect(surface.display, `${at} display is Russian`).toMatch(cyrillic);
+          expect(surface.display, `${at} display is Russian only`).toMatch(noLatin);
+          expect(surface.script, `${at} native module writes no quiet line`).toBeUndefined();
+        }
+      };
+
+      // Teaching prose is English. It may QUOTE the native script, so the test is that English is
+      // there — the romanization does not change this half at all.
       for (const rule of module.rules) expect(rule.text, `${file} rule`).toMatch(latin);
       for (const item of module.comprehensionPool) {
-        expect(item.display, item.id).toMatch(cyrillic);
-        expect(item.display, `${item.id} display is Russian only`).toMatch(noLatin);
+        l2(item.id, item);
         expect(item.cue, `${item.id} cue is English only`).toMatch(noCyrillic);
       }
       for (const sentence of module.sentences) {
         const at = sentence.id;
-        expect(sentence.display, at).toMatch(cyrillic);
-        expect(sentence.display, `${at} display is Russian only`).toMatch(noLatin);
+        l2(at, sentence);
         expect(sentence.cue, `${at} cue is English only`).toMatch(noCyrillic);
         // The gloss is mandatory here: the L2 is not English, so #268's exemption does not reach.
         expect(sentence.glossEn, `${at} glossEn`).toMatch(latin);
@@ -548,26 +581,27 @@ describe('ModuleContent against the modules that exist', () => {
           expect(sentence[field], `${at} ${field}`).toMatch(latin);
         }
         if (sentence.trap !== undefined) expect(sentence.trap, `${at} trap`).toMatch(latin);
-        expect(sentence.mistake?.display, `${at} mistake`).toMatch(noLatin);
+        if (sentence.mistake) l2(`${at} mistake`, sentence.mistake);
         expect(sentence.mistake?.why, `${at} mistake.why`).toMatch(latin);
         for (const variation of sentence.variations ?? []) {
-          expect(variation.display, `${at} variation`).toMatch(noLatin);
+          l2(`${at} variation`, variation);
           expect(variation.cue, `${at} variation cue`).toMatch(noCyrillic);
           expect(variation.changed, `${at} variation changed`).toMatch(latin);
         }
         for (const word of sentence.deconstruction.words) {
-          expect(word.display, `${at} word`).toMatch(noLatin);
-          expect(word.display, `${at} word is Russian`).toMatch(cyrillic);
+          l2(`${at} word`, word);
           for (const form of word.forms) {
-            expect(form, `${at} form of ${word.display}`).toMatch(noLatin);
+            // `forms` has no `script` in the schema, so in a romanized module it is the
+            // romanization with no Cyrillic counterpart — exactly the shape en-ar ships.
+            expect(form, `${at} form of ${word.display}`).toMatch(romanized ? noCyrillic : noLatin);
           }
           expect(word.cue, `${at} cue of ${word.display}`).toMatch(noCyrillic);
           expect(word.note, `${at} note of ${word.display}`).toMatch(latin);
         }
       }
 
-      // No stress mark anywhere in the file — display, forms, or a quotation inside English prose.
-      expect(JSON.stringify(module), `${file} carries a stress mark`).not.toMatch(stressMark);
+      // Precomposed acutes only, on either side of the romanization: `á` U+00E1, never a + U+0301.
+      expect(JSON.stringify(module), `${file} carries a combining acute`).not.toMatch(stressMark);
     }
   });
 
