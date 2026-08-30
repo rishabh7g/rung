@@ -120,16 +120,16 @@ describe('every course names its two languages in tags, not just in words', () =
     expect(hiEn?.fixture).toBeUndefined();
   });
 
-  it('is English about French for the fifth course, still behind the gate (#326)', () => {
+  it('is English about French for the fifth course (#326, shipping since #331)', () => {
     const enFr = AUTHORED.find((course) => course.id === 'en-fr');
 
     // Same L1 as en-es, a different L2: the chrome is English and the sentences are French, and
     // the shell reads `l1Tag` for the document and `l2Tag` for the taught line without knowing
-    // either language. The row still carries `fixture: true` — nothing in this course reaches a
-    // learner build until its graduation issue deletes the flag, the way #273 deleted hi-en's.
+    // either language. The row carries no fixture flag — #331 deleted it, so a learner build
+    // ships the course.
     expect(enFr?.l1Tag).toBe('en');
     expect(enFr?.l2Tag).toBe('fr');
-    expect(enFr?.fixture).toBe(true);
+    expect(enFr?.fixture).toBeUndefined();
   });
 
   it('is an ltr course with an rtl second line for the pair that needs both (#196)', () => {

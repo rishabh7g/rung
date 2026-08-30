@@ -410,8 +410,9 @@
  * - **`que`** — M9's, from `je pense que`; `parce que` is a two-token surface beside it and takes
  *   nothing from it.
  *
- * There is no seam-proof fixture to replace: `content/en-fr/modules/` does not exist until #328
- * authors L1-M1 against the briefs below.
+ * There was no seam-proof fixture to replace: `content/en-fr/modules/` did not exist until #328
+ * authored L1-M1 against the briefs below, and #331 graduated the course out of `fixture: true`
+ * — the fifth course shipping, all five courses briefed here.
  *
  * ## hi-mr L2: the four decisions, taken against the finished L1 (#295)
  *

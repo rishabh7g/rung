@@ -366,17 +366,16 @@ describe('the fourth course — hi-en (#267, shipping since #273)', () => {
 /* ----------------------------------------------- the fifth course, en-fr (#326) */
 
 /**
- * The same smoke for the course that is still a dev fixture: `content/courses.json` carries the
- * en-fr row with `fixture: true`, so a strict build drops the whole course and the emitted
- * manifest never lists it — which is exactly why this smoke runs over `DEV_MANIFEST` and the
- * AUTHORED `content/en-fr/` files rather than over a build.
+ * The switch flow above, run against the REAL en-fr files: the manifest row is in `DEV_MANIFEST`
+ * (no `fixture` key since #331 graduated the course), and the fetch for en-fr's ladder and bundle
+ * answers with what `content/en-fr/` holds today — ten L1 rungs, all ten authored (#328–#330) and
+ * verified, English chrome over French sentences.
  *
- * Nothing is authored yet (#328–#330 fill the ten rungs one at a time), so the ladder that boots
- * is ten PENDING rungs: the ratified titles, no content behind any of them, and the pending line
- * counting ten of ten — in English, because en-fr's L1 is English and its bundle is en-es's with
- * one key changed.
+ * hi-mr keeps the test's own ten-rung ladder and its self-identifying fixture bundle, so the two
+ * courses cannot be confused on screen. The authored rungs themselves — module list, Sentence
+ * Detail, the Why panel — are walked in `src/course/enFrAuthored.test.tsx`.
  */
-describe('the fifth course — en-fr (#326, still a dev fixture)', () => {
+describe('the fifth course — en-fr (#326, shipping since #331)', () => {
   const EN_FR_FILES = import.meta.glob<string>('../../content/en-fr/*.json', {
     query: '?raw',
     import: 'default',

@@ -6,15 +6,14 @@
  * against a row that has more than the nine required fields, and en-fr last. Shared, so the loader
  * test and the boot tests cannot drift into disagreeing about the shape.
  *
- * **Four rows ship; the last is still behind the gate.** en-es graduated in #195, en-ar in #202 and
- * hi-en — Hindi (L1) → English (L2), added behind the gate in #267 and authored in #270–#272 — in
- * #273, so those four courses ship and a strict build emits their rows (minus the dev keys). en-fr
- * — English (L1) → French (L2), added as a dev fixture in #326 — carries `fixture: true` until its
- * graduation issue deletes it, exactly as hi-en's row did between #267 and #273, so it is the row
- * that keeps the `fixture` seam exercised against real authored data. The Settings smoke
- * (`src/screens/SettingsScreen.test.tsx`) and the authored-rung walk
- * (`src/course/hiEnAuthored.test.tsx`) reach the later courses through this copy, without a
- * browser.
+ * **No row carries `fixture`.** en-es graduated in #195, en-ar in #202, hi-en — Hindi (L1) →
+ * English (L2), added behind the gate in #267 and authored in #270–#272 — in #273, and en-fr —
+ * English (L1) → French (L2), added as a dev fixture in #326 and authored in #328–#330 — in #331.
+ * So all five courses ship and a strict build emits the same five rows (minus the dev keys). The
+ * Settings smoke (`src/screens/SettingsScreen.test.tsx`) and the authored-rung walks
+ * (`src/course/hiEnAuthored.test.tsx`, `src/course/enFrAuthored.test.tsx`) reach the later courses
+ * through this copy, without a browser. The `fixture` seam itself is still tested — the loader
+ * test flags a row of its own.
  */
 import { vi } from 'vitest';
 import { completeStrings } from './courseStrings.ts';
@@ -80,7 +79,6 @@ export const DEV_MANIFEST = {
       pairLabel: 'english → french',
       scriptMode: 'native',
       dir: 'ltr',
-      fixture: true,
     },
   ],
 } as const;

@@ -143,7 +143,9 @@ module's index and pins the three remaining misses (the proper noun `प्र�
 exemptions), so a new variation that resolves nowhere fails the suite. The reasoning, row by row,
 is `docs/15-llm-review-hi-mr-surfaces.md`.
 
-**No fixture course again (#273, 2026-08-24).** All four courses ship and no module in the repo
+**No fixture course again (#273, 2026-08-24; and again at #331, 2026-08-30).** All five courses
+ship — en-fr was the fifth to be authored behind the gate and graduated the same way, below — and
+no module in the repo
 is unverified, so `npm run dev` and `npm run build` contain the same modules — the two
 relaxations are still enforced and still tested (`tools/content-build.test.ts` builds synthetic
 fixture rows and unverified modules and watches them be dropped), they simply have nothing in
@@ -279,6 +281,42 @@ on hi-mr, not on `shell`: `tools/font-subset.ts` cuts the Devanagari faces over 
 shipped courses, so hi-en's repertoire grew the subset both Hindi courses download —
 `course:hi-mr` 336.3 → **338.7 KiB** (+2.4, its first move across three graduations), `shell`
 214.5 → 214.6, `course:en-es` and `course:en-ar` unchanged (docs/05-perf-notes.md §4.6).
+
+**en-fr ships (#331, 2026-08-30) — the product has five courses, and the fifth is the first
+authored to the retrofitted standards from its first rung.** Ten L1 rungs authored against ten
+briefs (#327 — `tools/course-briefs.ts`, "en-fr: decisions a brief must settle": the `vous`
+register taken course-wide, elision as an index seam, accents as letters, multi-token surfaces,
+intonation questions, and an owner for every homograph), reviewed in
+`docs/28-llm-review-en-fr-L1-M1-M2.md`, `docs/29-llm-review-en-fr-L1-M3-M5.md` and
+`docs/30-llm-review-en-fr-L1-M6-M10.md`, and shipping on the same LLM-review-plus-owner-authority
+bar as the other four. Dropping `fixture: true` from the en-fr row in `content/courses.json` —
+plus the L1 `draftNote` that called the ladder a fixture — was the whole change: a strict
+`npm run build` now emits `public/content/en-fr/` with levels, strings, ten modules and ten
+cumulative indexes (171 surfaces through L1-M10, `maxSpan` 4), and the emitted `courses.json`
+lists **hi-mr, en-es, en-ar, hi-en and en-fr**. Every sentence carries a `glossEn`, because the L2
+is not English and #268's exemption is hi-en's alone. The chrome is English (`revealLabel` =
+"Reveal the French") and the Settings switcher offers the pair as `english → french`. Its L2/L3
+ladders stay `draft: true` — placeholder lists, nothing authored.
+
+Two standards the older courses had retrofitted onto them are baked into en-fr from L1-M1: **three
+variations on every sentence** (#288's bar) and **twelve comprehension items per module** (#292's).
+The payload below is therefore honest already — no retrofit growth is coming.
+
+**No native or fluent-French reviewer has read a word of it.** The bar en-fr clears is LLM review
+plus the owner's authority, and the **33 open questions** (10 + 11 + 12) across the three review
+docs are what a fluent-French pass still owes — naturalness, register and the pronunciation
+glosses first, since nobody has heard any of them. Three of those questions are about the register
+decision itself: `vous` course-wide means a learner finishes L1 able to buy bread and unable to
+speak to a friend.
+
+The payload holds with room to spare: `course:en-fr` **74.6 KiB** gzip against 360,
+`precache:en-fr` **291.8 KiB** against 590 — the lightest course in the product after en-es, and
+for the same reason. French is Latin on both sides, so `fr` maps to no course face in
+`SCRIPT_BY_LANGUAGE_TAG` and the course is charged content only. Its shared cost is `shell`
+214.8 → **217.2 KiB** (+2.4): the emitted manifest gained a row, and Mukta's `latin` subsets are
+cut over the union of shipped courses, so French's accented glyphs are in the bytes every learner
+downloads. `course:hi-mr` **345.6 KiB**, `course:en-es` **76.6 KiB**, `course:en-ar`
+**115.7 KiB** and `course:hi-en` **353.3 KiB** are all unchanged by the graduation.
 
 The two relaxations are independent (`--with-unverified`, `--with-fixtures`), and either
 one makes the output a **dev build**, which says so twice over: the run prints
