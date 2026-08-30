@@ -194,7 +194,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 50 of them — hi-mr, en-es, en-ar, hi-en and en-it L1-M1..M10', () => {
+  it('finds all 60 of them — hi-mr, en-es, en-ar, hi-en, en-it and en-ru L1-M1..M10', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -226,6 +226,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-it/modules/L1-M7.json',
       'content/en-it/modules/L1-M8.json',
       'content/en-it/modules/L1-M9.json',
+      'content/en-ru/modules/L1-M1.json',
+      'content/en-ru/modules/L1-M10.json',
+      'content/en-ru/modules/L1-M2.json',
+      'content/en-ru/modules/L1-M3.json',
+      'content/en-ru/modules/L1-M4.json',
+      'content/en-ru/modules/L1-M5.json',
+      'content/en-ru/modules/L1-M6.json',
+      'content/en-ru/modules/L1-M7.json',
+      'content/en-ru/modules/L1-M8.json',
+      'content/en-ru/modules/L1-M9.json',
       'content/hi-en/modules/L1-M1.json',
       'content/hi-en/modules/L1-M10.json',
       'content/hi-en/modules/L1-M2.json',
@@ -476,6 +486,78 @@ describe('ModuleContent against the modules that exist', () => {
           expect(word.note, `${at} note of ${word.display}`).toMatch(devanagari);
         }
       }
+    }
+  });
+
+  /**
+   * en-ru (#338–#343) is the product's first Cyrillic course, and its language law runs the way
+   * en-es's does rather than hi-en's: the document speaks ENGLISH (`l1Tag: en`), so every teaching
+   * field is English prose — which may quote Cyrillic inside itself — and Russian appears only in
+   * the L2 slots: sentence / word / variation / mistake / pool `display`, and word `forms`. Two
+   * further rules the briefs settled (`tools/course-briefs.ts`, "en-ru: the six decisions"):
+   *
+   *   • `glossEn` is REQUIRED on every sentence — #268's exemption is for a course whose L2 IS
+   *     English, and Russian is not one; the build enforces it and this pins it in the tree,
+   *   • **no stress marks anywhere.** Normal Russian text carries none, and a combining acute
+   *     (U+0301) would be a codepoint the word index has to match forever — `кни́га` and `книга`
+   *     are two different surfaces. Stress is taught in `sound`, in English syllables.
+   *
+   * `scriptMode` is `native`, so `display` IS the Cyrillic and the `script` field is unused: a
+   * quiet native line exists for romanized courses, and a native course has nothing to put under
+   * itself. The keys walk above already prove no en-ru surface carries one.
+   */
+  it('keeps the Cyrillic course in its lane: display is Russian, every teaching field English (#340)', () => {
+    const enRu = MODULE_FILES.filter(([name]) => name.includes('en-ru'));
+    const cyrillic = /\p{Script=Cyrillic}/u;
+    const latin = /[A-Za-z]/;
+    const noLatin = /^[^A-Za-z]+$/;
+    const noCyrillic = /^\P{Script=Cyrillic}+$/u;
+    /** A combining acute — the one codepoint that would fork a word into two index surfaces. */
+    const stressMark = /́/u;
+
+    expect(enRu.length, 'the en-ru L1 modules authored so far').toBeGreaterThan(0);
+    for (const [file, json] of enRu) {
+      const module = parseModule(json, file);
+
+      // Teaching prose is English. It may QUOTE Cyrillic, so the test is that English is there.
+      for (const rule of module.rules) expect(rule.text, `${file} rule`).toMatch(latin);
+      for (const item of module.comprehensionPool) {
+        expect(item.display, item.id).toMatch(cyrillic);
+        expect(item.display, `${item.id} display is Russian only`).toMatch(noLatin);
+        expect(item.cue, `${item.id} cue is English only`).toMatch(noCyrillic);
+      }
+      for (const sentence of module.sentences) {
+        const at = sentence.id;
+        expect(sentence.display, at).toMatch(cyrillic);
+        expect(sentence.display, `${at} display is Russian only`).toMatch(noLatin);
+        expect(sentence.cue, `${at} cue is English only`).toMatch(noCyrillic);
+        // The gloss is mandatory here: the L2 is not English, so #268's exemption does not reach.
+        expect(sentence.glossEn, `${at} glossEn`).toMatch(latin);
+        expect(sentence.literal, `${at} literal`).toMatch(latin);
+        for (const field of ['sound', 'usage', 'mnemonic'] as const) {
+          expect(sentence[field], `${at} ${field}`).toMatch(latin);
+        }
+        if (sentence.trap !== undefined) expect(sentence.trap, `${at} trap`).toMatch(latin);
+        expect(sentence.mistake?.display, `${at} mistake`).toMatch(noLatin);
+        expect(sentence.mistake?.why, `${at} mistake.why`).toMatch(latin);
+        for (const variation of sentence.variations ?? []) {
+          expect(variation.display, `${at} variation`).toMatch(noLatin);
+          expect(variation.cue, `${at} variation cue`).toMatch(noCyrillic);
+          expect(variation.changed, `${at} variation changed`).toMatch(latin);
+        }
+        for (const word of sentence.deconstruction.words) {
+          expect(word.display, `${at} word`).toMatch(noLatin);
+          expect(word.display, `${at} word is Russian`).toMatch(cyrillic);
+          for (const form of word.forms) {
+            expect(form, `${at} form of ${word.display}`).toMatch(noLatin);
+          }
+          expect(word.cue, `${at} cue of ${word.display}`).toMatch(noCyrillic);
+          expect(word.note, `${at} note of ${word.display}`).toMatch(latin);
+        }
+      }
+
+      // No stress mark anywhere in the file — display, forms, or a quotation inside English prose.
+      expect(JSON.stringify(module), `${file} carries a stress mark`).not.toMatch(stressMark);
     }
   });
 });

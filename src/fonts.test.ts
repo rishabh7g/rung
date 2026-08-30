@@ -45,6 +45,7 @@ import mainSource from './main.tsx?raw';
 import muktaCss from './fonts/mukta.css?raw';
 import naskhCss from './fonts/naskh.css?raw';
 import sourceSansCss from './fonts/source-sans-3.css?raw';
+import subsetSource from '../tools/font-subset.ts?raw';
 import overridesCss from './styles/tokenOverrides.css?raw';
 import fontNotes from '../docs/04-font-notes.md?raw';
 import barlowCss from '@fontsource/barlow/latin-400.css?raw';
@@ -362,6 +363,75 @@ describe('the quiet native script line has a bundled face, not a guess (#197)', 
   });
 });
 
+/**
+ * en-ru's display line has a bundled face, not a guess (#325).
+ *
+ * This is a harder promise than #222's four diacritics. Those were marks INSIDE a Latin word; this
+ * is every letter of every sentence, word, variation, mistake and pool item a `native` Cyrillic
+ * course draws. Mukta bundles no Cyrillic at all, so without a claimed range the hero line of the
+ * whole course renders in whatever the phone owns — or in tofu where it owns nothing, which is why
+ * en-ru's graduation cannot land before this does.
+ *
+ * The assertions are over the STYLESHEETS rather than over any en-ru content, deliberately: this
+ * target lands before the course is authored (the honest-gate curve — Naskh's cut was ~2 KiB until
+ * its ladder existed), so a test that walked the content would pass vacuously today and mean
+ * nothing tomorrow.
+ */
+describe('the Cyrillic display line has a bundled face, not a guess (#325)', () => {
+  /** Russian letters a first-rung sentence cannot avoid, plus the two the ticket calls out. */
+  const RUSSIAN = 'менязовутяЁё';
+
+  function ranges(css: string): [number, number][] {
+    return [...css.matchAll(/unicode-range:([^;]+);/g)].flatMap((declaration) =>
+      [...declaration[1]!.matchAll(/U\+([0-9A-F]+)(?:-([0-9A-F]+))?/gi)].map(
+        (part): [number, number] => [parseInt(part[1]!, 16), parseInt(part[2] ?? part[1]!, 16)],
+      ),
+    );
+  }
+
+  const claims = (css: string, codePoint: number): boolean =>
+    ranges(css).some(([from, to]) => codePoint >= from && codePoint <= to);
+
+  it('claims every Cyrillic letter a Russian line carries — none falls through to the system', () => {
+    const orphans = [...RUSSIAN].filter((letter) => !claims(sourceSansCss, letter.codePointAt(0)!));
+
+    expect(
+      orphans,
+      `${orphans.join(' ')} — no bundled face claims these, so en-ru's display line renders in whatever the phone owns, or in tofu (#325).`,
+    ).toEqual([]);
+  });
+
+  it('is a face Mukta cannot supply, which is why the second family is reached at all', () => {
+    // The premise of the whole target: Mukta is named FIRST in --font-devanagari, so if it claimed
+    // this range the browser would never ask Source Sans 3 and the cut would be dead weight.
+    for (const letter of RUSSIAN) {
+      expect(claims(muktaCss, letter.codePointAt(0)!)).toBe(false);
+    }
+  });
+
+  /**
+   * ё is a LETTER, so it is content-decided like every other letter — it must be claimed by the
+   * range (above) but must NOT be baked into the baseline, or every build ships a glyph for a
+   * course that may never write one.
+   */
+  it('keeps ё out of the baseline — letters are content-decided', () => {
+    expect(subsetSource).toContain("const CYRILLIC_BASELINE = '№'");
+    expect(subsetSource).not.toMatch(/CYRILLIC_BASELINE = '[^']*ё/);
+  });
+
+  /** The family that actually draws it is named, bundled, and reached by the order already set. */
+  it('resolves through --font-devanagari, where the face is already second', () => {
+    const stack = [...[tokensCss, overridesCss].join('\n').matchAll(/--font-devanagari:([^;]+);/g)]
+      .at(-1)?.[1]
+      ?.trim();
+
+    expect(stack).toBeDefined();
+    expect(stack).toContain('Source Sans 3');
+    // Named, not guessed: system-ui may close the stack, but it may not open it.
+    expect(stack).toMatch(/^['"][^'"]+['"]\s*,/);
+  });
+});
+
 describe("the romanization's diacritics have a bundled face, not a system one (#222)", () => {
   /** The ten marks PRD-engineering [D15] and issue #222 name, plus the capitals en-ar ships. */
   const MARKS = 'āīūḥṣḍṭẓʾʿḤṢḌṬẒ';
@@ -391,13 +461,25 @@ describe("the romanization's diacritics have a bundled face, not a system one (#
     ).toEqual([]);
   });
 
-  it('gives the second face exactly the gap: the four codepoints Mukta has no glyph for', () => {
+  it('gives the second face exactly the gap: the four codepoints Mukta has no glyph for, and Cyrillic', () => {
     // Measured in #222 against the real @fontsource files, not assumed — `tools/font-subset.test.
     // ts` re-measures it with HarfBuzz so this list cannot rot silently. Every weight's block
-    // carries the same range, so the distinct set is the whole claim.
+    // carries the same range per subset, so the distinct set is the whole claim.
+    //
+    // Two subsets since #325: the romanization gap, and the Cyrillic block that is en-ru's whole
+    // display line (Mukta bundles none). № rides with the Cyrillic range because Mukta's latin
+    // cut stops at U+206F and nothing else bundled reaches it.
     const distinct = [...new Set(ranges(sourceSansCss).map(([from, to]) => `${from}-${to}`))];
 
-    expect(distinct).toEqual([`${0x02be}-${0x02bf}`, `${0x1e92}-${0x1e93}`]);
+    expect(distinct).toEqual([
+      `${0x02be}-${0x02bf}`,
+      `${0x1e92}-${0x1e93}`,
+      `${0x0400}-${0x04ff}`,
+      `${0x2116}-${0x2116}`,
+    ]);
+    // And it claims NO space, guillemet or em dash: Mukta is first in the family and draws all
+    // three, so a range holding one would download this cut for every course in the catalogue.
+    for (const shared of ' «»—') expect(claims(sourceSansCss, shared.codePointAt(0)!)).toBe(false);
     // ā ī ū and the dot-below emphatics are Mukta's own, so the common case is ONE face on the
     // line: `ṣabāḥ` is Mukta end to end.
     for (const mark of 'āīūḥṣḍṭ') expect(claims(muktaCss, mark.codePointAt(0)!)).toBe(true);

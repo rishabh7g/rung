@@ -572,13 +572,14 @@ describe('manifest validation', () => {
       'en-es',
       'en-ar',
       'hi-en',
+      'en-ru',
       'en-it',
     ]);
     expect(courses[2]?.romanizationNote).toMatch(/^ALA-LC/);
-    // en-it graduated in #337, as hi-en (#273), en-ar (#202) and en-es (#195) did before it:
-    // every authored row is a shipping course and none carries `fixture`. The seam stays for a
-    // course #6.
-    expect(courses.some((course) => 'fixture' in course)).toBe(false);
+    // hi-en graduated in #273, as en-es (#195) and en-ar (#202) did before it, en-ru in #343 and
+    // en-it in #337 — so no authored row carries `fixture` any more. The seam itself is still
+    // proved, on a synthetic row, in `src/course/manifest.test.ts`.
+    expect(courses.filter((course) => 'fixture' in course).map((course) => course.id)).toEqual([]);
   });
 
   it('rejects a manifest that is not a non-empty array of objects', () => {
@@ -1071,7 +1072,9 @@ describe('the romanized edge cases (#116, [Q3])', () => {
     // The "why" path is sentence displays; the exit ritual reads the pool. Variations are outside
     // the sweep by design: they legitimately carry untaught tokens (proper nouns like Priya, and
     // variation-only forms — the documented gap on #61) and the panel drops what cannot resolve.
-    for (const courseId of ['en-ar', 'en-es', 'en-it', 'hi-en', 'hi-mr']) {
+    // Every authored course is swept, shipping or not: the sweep reads `content/`, so the gate
+    // decides what reaches a learner and never what has to be well formed.
+    for (const courseId of ['en-ar', 'en-es', 'en-it', 'en-ru', 'hi-en', 'hi-mr']) {
       const modules = authoredCourse(courseId);
       const index = lastIndex(courseId);
       const lookup = {
@@ -1495,6 +1498,73 @@ describe('the romanized edge cases (#116, [Q3])', () => {
    * numbers of docs/13 (`three`, `six`, `hundred`) plus M10's declared-untaught trio
    * (`well`, `now`, `bus`) stay free for later authoring.
    */
+  /**
+   * en-ru's index seams (#339's briefs, shipped by #340–#342), pinned on the real emitted index.
+   * Russian is the first L2 in the product that INFLECTS, so the seams are not homographs but
+   * paradigms: every shape of a word has to land on the row that first taught the word, or a
+   * learner taps a case form and is shown a note about a different one.
+   */
+  it('keeps every en-ru case shape, gender pair and chunk on the row the briefs assigned (#339)', () => {
+    const index = lastIndex('en-ru');
+    const owner = (surface: string) => index.surfaces[surface]?.moduleId;
+
+    // Case shapes live on the row that first taught the word — never a second, unreachable row.
+    expect(owner('москва')).toBe('L1-M1');
+    expect(owner('москвы')).toBe('L1-M1');
+    expect(owner('москве')).toBe('L1-M1'); // M7 needed it; M1's row grew, no new row opened
+    expect(owner('индия')).toBe('L1-M1');
+    expect(owner('индии')).toBe('L1-M1'); // one surface, two seats: `из` and `в`
+    expect(owner('вода')).toBe('L1-M3');
+    expect(owner('воду')).toBe('L1-M3');
+    expect(owner('стол')).toBe('L1-M7');
+    expect(owner('столе')).toBe('L1-M7');
+
+    // `быть` is ONE row across the level: M5 opened it, M6 extended it rather than forking it.
+    for (const shape of ['был', 'была', 'было', 'были', 'буду', 'будете', 'будет']) {
+      expect(owner(shape), shape).toBe('L1-M5');
+    }
+    // …and so is each aspect pair's own paradigm — past and future of one word, one row.
+    for (const shape of ['купил', 'купила', 'купили', 'куплю']) {
+      expect(owner(shape), shape).toBe('L1-M5');
+    }
+    // The gender pairs: the speaker's own shape, on one row.
+    expect(owner('устал')).toBe('L1-M2');
+    expect(owner('устала')).toBe('L1-M2');
+    expect(owner('пошёл')).toBe('L1-M5');
+    expect(owner('пошла')).toBe('L1-M5');
+
+    // An aspect pair is TWO words, so it is two rows — never two forms of one.
+    expect(owner('пью')).toBe('L1-M4');
+    expect(owner('выпил')).toBe('L1-M5');
+    expect(owner('встаю')).toBe('L1-M4');
+    expect(owner('встану')).toBe('L1-M6');
+
+    // The multi-token surfaces, and the bare words they leave free.
+    expect(index.maxSpan).toBe(3);
+    expect(owner('меня зовут')).toBe('L1-M1');
+    expect(owner('меня')).toBe('L1-M1'); // the pronoun row, not the formula
+    expect(owner('как дела')).toBe('L1-M2');
+    expect(owner('как')).toBe('L1-M2'); // left free by the chunk, claimed one sentence earlier
+    expect(owner('у меня есть')).toBe('L1-M8');
+    expect(owner('у вас есть')).toBe('L1-M8');
+    expect(owner('потому что')).toBe('L1-M9');
+    expect(owner('что')).toBe('L1-M9'); // the conjunction, left free by потому что
+    // A bare `у` earns no key at all: `surfaceIndexKeys` splits hyphen parts, not whitespace.
+    expect(owner('у')).toBeUndefined();
+
+    // `есть` — the homograph settled by exclusion: "to eat" never appears, so M7's existential
+    // owns the one bare row, and M8's three-token chunks capture the `есть` inside them.
+    expect(owner('есть')).toBe('L1-M7');
+
+    // ё is written everywhere it belongs, and the е-spelling of a ё-word is never a surface.
+    for (const shape of ['пошёл', 'пьёте', 'встаёте', 'живёте', 'придёте', 'ещё', 'всё', 'днём']) {
+      expect(owner(shape), shape).toBeDefined();
+    }
+    for (const wrong of ['пошел', 'пьете', 'встаете', 'живете', 'придете', 'еще', 'все']) {
+      expect(owner(wrong), wrong).toBeUndefined();
+    }
+  });
+
   it('keeps hi-en surface-pass seams on the row that owns them (#284)', () => {
     const index = lastIndex('hi-en');
     const row = (surface: string): string =>
@@ -1715,6 +1785,26 @@ describe('the shared normaliser', () => {
  * a strict build.
  */
 describe('the authored content', () => {
+  /**
+   * en-ru's authored rungs, in ladder order — the course is still behind `fixture: true`
+   * (#338), so this list grows one authoring issue at a time (#340, #341, #342) and #343 is
+   * what finally lets a strict build see it. Pinned, never derived: the point of the block is
+   * to know what the repo really holds.
+   */
+  const EN_RU_AUTHORED = [
+    'L1-M1',
+    'L1-M2',
+    'L1-M3',
+    'L1-M4',
+    'L1-M5',
+    'L1-M6',
+    'L1-M7',
+    'L1-M8',
+    'L1-M9',
+    'L1-M10',
+  ];
+  const EN_RU_RANGE = 'L1-M1..M10';
+
   /** Everything a strict build must emit for the fourth course (#273): the ladder, the Hindi
    *  bundle, the ten rungs and their ten cumulative indexes. */
   /** The ten L1 rungs, in ladder order — shared by every course in this block since #336. */
@@ -1750,7 +1840,7 @@ describe('the authored content', () => {
     ...Array.from({ length: 10 }, (_, i) => `hi-en/index/L1-M${i + 1}.json`),
   ];
 
-  it('ships hi-mr, en-es, en-ar, hi-en and en-it L1-M1..M10 on a strict build', () => {
+  it('ships all six courses’ L1-M1..M10 on a strict build', () => {
     const { report, outRoot } = build(DEFAULT_CONTENT_ROOT, STRICT);
     const L1 = [
       'L1-M1',
@@ -1771,21 +1861,25 @@ describe('the authored content', () => {
       ['en-es', L1],
       ['en-ar', L1],
       ['hi-en', L1],
+      ['en-ru', L1],
       ['en-it', L1],
     ]);
-    // Five courses, in manifest order — hi-mr first and default, en-it last (#337).
+    // SIX courses ship, in manifest order — hi-mr first and default, en-it last. en-ru was behind
+    // the fixture gate from #338 and en-it from #332; #343 and #337 deleted both flags, so a
+    // strict build needs no `--with-fixtures` to see either.
     expect(readManifest(outRoot).courses.map((course) => course.id)).toEqual([
       'hi-mr',
       'en-es',
       'en-ar',
       'hi-en',
+      'en-ru',
       'en-it',
     ]);
-    // No EMITTED row carries `fixture` — no authored row does either, since #337 deleted en-it's
-    // — and the envelope carries no dev key.
+    // No EMITTED row carries `fixture` — and that is because none of the six HAS one, rather than
+    // because the ones that did were dropped. The envelope carries no dev key.
     expect(readManifest(outRoot).courses.some((course) => 'fixture' in course)).toBe(false);
     expect(readManifest(outRoot).devBuild).toBeUndefined();
-    // Nothing skipped, so the summary line carries no `| skipped:` tail.
+    // Nothing is skipped any more, so the summary line has no `| skipped:` tail at all.
     expect(report.lines).toEqual([
       'hi-mr: 10 modules (L1-M1..M10)',
       ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
@@ -1795,11 +1889,13 @@ describe('the authored content', () => {
       ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
       'hi-en: 10 modules (L1-M1..M10)',
       ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
-      // en-it was authored behind the gate (#332 row with `fixture: true`, #334–#336 the ten
-      // rungs) and graduated in #337 — so a strict build now ships it like any other course.
+      // Both were authored behind the gate — en-ru from #338, en-it from #332 — and graduated in
+      // #343 and #337, so a strict build now ships them like any other course.
+      'en-ru: 10 modules (L1-M1..M10)',
+      ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
       'en-it: 10 modules (L1-M1..M10)',
       ...Array.from({ length: 10 }, (_, i) => expect.stringContaining(`index L1-M${i + 1}: `)),
-      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10), en-it 10 modules (L1-M1..M10)',
+      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10), en-ru 10 modules (L1-M1..M10), en-it 10 modules (L1-M1..M10)',
     ]);
     // The strict tree carries the fourth course whole — the files a learner's device fetches
     // (AC 2 of #273), and the emitted ladder says all ten L1 rungs have content.
@@ -1840,7 +1936,7 @@ describe('the authored content', () => {
     }
   });
 
-  it('ships hi-mr, en-es, en-ar, hi-en and en-it L1-M1..M10 on a dev build', () => {
+  it('ships all six courses’ L1-M1..M10 on a dev build too', () => {
     const { report, outRoot } = build(DEFAULT_CONTENT_ROOT, DEV);
     const L1 = [
       'L1-M1',
@@ -1861,6 +1957,7 @@ describe('the authored content', () => {
       ['en-es', L1],
       ['en-ar', L1],
       ['hi-en', L1],
+      ['en-ru', EN_RU_AUTHORED],
       ['en-it', EN_IT_AUTHORED],
     ]);
     // hi-en was authored behind this relaxation (#267, #270–#272) and graduated in #273, so a dev
@@ -1868,20 +1965,25 @@ describe('the authored content', () => {
     // report line — and differs only in the banner and the `devBuild` key.
     expect(report.lines).toContain('hi-en: 10 modules (L1-M1..M10)');
     expect(report.lines).toContain('  index L1-M10: 207 surfaces');
+    // en-ru (#338) is the course being authored behind the fixture flag right now, so THIS is the
+    // build that carries it: `--with-fixtures` admits the course and its authored rungs ship.
+    expect(report.lines).toContain(`en-ru: ${EN_RU_AUTHORED.length} modules (${EN_RU_RANGE})`);
     expect(report.lines).toContain(
-      `CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10), en-it ${EN_IT_LINE}`,
+      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10), ' +
+        `en-ru ${EN_RU_AUTHORED.length} modules (${EN_RU_RANGE}), en-it ${EN_IT_LINE}`,
     );
     // en-it was authored behind the gate (#332, #334–#336) and graduated in #337, so a dev build
     // now ships exactly what the strict build above does.
     expect(report.lines).toContain(`en-it: ${EN_IT_LINE}`);
     expect(readManifest(outRoot).devBuild).toBe(true);
-    // The manifest lists what shipped: all five courses, and no row carries `fixture` — the dev
-    // relaxation has nothing in this repo to admit since #337.
+    // The manifest lists what SHIPPED: all six courses, and no row carries `fixture` — the dev
+    // relaxation has nothing in this repo left to admit.
     expect(readManifest(outRoot).courses.map((course) => course.id)).toEqual([
       'hi-mr',
       'en-es',
       'en-ar',
       'hi-en',
+      'en-ru',
       'en-it',
     ]);
     expect(readManifest(outRoot).courses.at(-1)).toMatchObject({
@@ -1889,7 +1991,11 @@ describe('the authored content', () => {
       l1Tag: 'en',
       l2Tag: 'it',
     });
-    expect(readManifest(outRoot).courses.some((course) => 'fixture' in course)).toBe(false);
+    expect(
+      readManifest(outRoot)
+        .courses.filter((course) => 'fixture' in course)
+        .map((course) => course.id),
+    ).toEqual([]);
     for (const file of [
       'hi-mr/levels.json',
       'hi-mr/strings.json',
@@ -1945,6 +2051,11 @@ describe('the authored content', () => {
       'hi-en/index/L1-M8.json',
       'hi-en/index/L1-M9.json',
       'hi-en/index/L1-M10.json',
+      // en-ru ships on a STRICT build since #343 — no `--with-fixtures` anywhere.
+      'en-ru/levels.json',
+      'en-ru/strings.json',
+      ...Array.from({ length: 10 }, (_, i) => `en-ru/modules/L1-M${i + 1}.json`),
+      ...Array.from({ length: 10 }, (_, i) => `en-ru/index/L1-M${i + 1}.json`),
     ]) {
       expect(existsSync(path.join(outRoot, ...file.split('/')))).toBe(true);
     }

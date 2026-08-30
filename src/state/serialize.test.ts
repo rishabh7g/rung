@@ -14,11 +14,11 @@
  *   4. **Older documents go through the store's `migrate`, and Invariant 4 holds.** A v5
  *      payload imports as the same wrap the rehydrate path would produce (one migration, not a
  *      copy — asserted over `serialize.ts`'s source too), and no string vocabulary in the
- *      shape accepts learner-authored text — walked off `STATE_V8` itself, so a field added to
+ *      shape accepts learner-authored text — walked off `STATE_V9` itself, so a field added to
  *      the shape is a field added to this assertion.
  */
 import { describe, expect, it } from 'vitest';
-import { ImportError, STATE_V8, exportState, importState } from './serialize.ts';
+import { ImportError, STATE_V9, exportState, importState } from './serialize.ts';
 import { emptyCourseState, migrate } from './store.ts';
 import type { AppState, CourseState, LeitnerBox, SessionPhase } from './types.ts';
 
@@ -31,7 +31,7 @@ import type { AppState, CourseState, LeitnerBox, SessionPhase } from './types.ts
  */
 function richState(): AppState {
   return {
-    stateVersion: 8,
+    stateVersion: 9,
     activeCourse: 'hi-mr',
     courses: {
       'hi-mr': {
@@ -50,7 +50,9 @@ function richState(): AppState {
       },
       'en-ar': emptyCourseState(),
     },
-    settings: { elapsedTickEnabled: true },
+    // A SET language (#322), so the rich state exercises the populated branch of the vocabulary;
+    // the randomised state below covers the unset `''` sentinel.
+    settings: { elapsedTickEnabled: true, userLang: 'hi' },
   };
 }
 
@@ -163,12 +165,69 @@ function generateState(rand: () => number): AppState {
   for (const courseId of courseIds.slice(0, int(3))) courses[courseId] = course();
 
   return {
-    stateVersion: 8,
+    stateVersion: 9,
     activeCourse: rand() < 0.2 ? '' : pick(courseIds),
     courses,
-    settings: { elapsedTickEnabled: rand() < 0.5 },
+    settings: {
+      elapsedTickEnabled: rand() < 0.5,
+      // Both branches of the vocabulary, at the same 1-in-5 rate the empty `activeCourse` takes:
+      // unset is a real persisted state, not a gap, so the round-trip law has to hold over it.
+      userLang: rand() < 0.2 ? '' : pick(['hi', 'en', 'ar-Latn']),
+    },
   };
 }
+
+/* ------------------------------------------------------- the v8 → v9 language field (#322) */
+
+describe('a v8 backup predates the user language', () => {
+  /** A v8 document: the shape before `settings.userLang` existed. */
+  const V8 = `{
+  "stateVersion": 8,
+  "activeCourse": "hi-mr",
+  "courses": {
+    "hi-mr": {
+      "modules": {},
+      "production": {},
+      "reviewQueue": [],
+      "sessionCount": 3,
+      "studied": {},
+      "session": null
+    }
+  },
+  "settings": { "elapsedTickEnabled": true }
+}`;
+
+  /**
+   * The upgrade a real learner takes. Their file was written by an app that had no notion of a
+   * user language, and it must still open — landing on the unset sentinel, which resolves to the
+   * active course's own L1 and is therefore the behaviour they already had.
+   */
+  it('imports cleanly and lands with the language unset', () => {
+    const state = importState(V8);
+
+    expect(state.stateVersion).toBe(9);
+    expect(state.settings.userLang).toBe('');
+    // And nothing they earned is lost on the way through.
+    expect(state.courses['hi-mr']?.sessionCount).toBe(3);
+  });
+
+  it('re-exports as v9, so the next import needs no migration at all', () => {
+    const round = importState(exportState(importState(V8)));
+
+    expect(round.stateVersion).toBe(9);
+    expect(round.settings.userLang).toBe('');
+  });
+
+  /** A v9 document with a language SET keeps it — the field is carried, not re-defaulted. */
+  it('keeps a language the learner chose', () => {
+    const chosen = exportState({
+      ...richState(),
+      settings: { elapsedTickEnabled: true, userLang: 'en' },
+    });
+
+    expect(importState(chosen).settings.userLang).toBe('en');
+  });
+});
 
 /* --------------------------------------------------------------------- 1. the round trip */
 
@@ -208,7 +267,7 @@ describe('the exported file', () => {
     const file = exportState(richState());
     const parsed = JSON.parse(file) as Record<string, unknown>;
 
-    expect(file.startsWith('{\n  "stateVersion": 8,\n  "activeCourse"')).toBe(true);
+    expect(file.startsWith('{\n  "stateVersion": 9,\n  "activeCourse"')).toBe(true);
     expect(Object.keys(parsed)).toEqual(['stateVersion', 'activeCourse', 'courses', 'settings']);
     expect(Object.keys(hiMr(parsed))).toEqual([
       'modules',
@@ -266,11 +325,25 @@ describe('a bad file is refused with a reason that names a path', () => {
     );
   });
 
-  it('a newer document — v9 says update rung, not import less', () => {
-    const error = refusal((parsed) => (parsed['stateVersion'] = 9));
+  it('a newer document — v10 says update rung, not import less', () => {
+    const error = refusal((parsed) => (parsed['stateVersion'] = 10));
 
-    expect(error.reason).toContain('v9');
+    expect(error.reason).toContain('v10');
     expect(error.reason).toContain('update rung');
+  });
+
+  /**
+   * Invariant 4 in its narrowest form (#322): `userLang` is a bounded vocabulary, so a document
+   * carrying free text where a language tag belongs is refused — and the refusal names the path,
+   * because a file a learner has to fix is only fixable if the reason says where.
+   */
+  it('a userLang that is not a language tag, named down to the field', () => {
+    const error = refusal(
+      (parsed) => ((parsed['settings'] as Record<string, unknown>)['userLang'] = 'not a tag!'),
+    );
+
+    expect(error.reason).toContain('state.settings.userLang');
+    expect(error.reason).toContain('BCP-47');
   });
 
   it('a version older than any migration route', () => {
@@ -345,7 +418,7 @@ describe('older documents route through the store migration', () => {
       modules: { 'L1-M1': { status: 'passed', passedAt: '2026-02-02T02:40:00.000Z' } },
       production: { 'L1-M3-S01': 2 },
     });
-    expect(state.settings).toEqual({ elapsedTickEnabled: false });
+    expect(state.settings).toEqual({ elapsedTickEnabled: false, userLang: '' });
   });
 
   it('imports a v6 backup written before the notebook bit existed — an export outlives the app that wrote it', () => {
@@ -359,8 +432,8 @@ describe('older documents route through the store migration', () => {
     const state = importState(JSON.stringify(v6));
 
     expect(state).toEqual(migrate(v6, 6));
-    expect(state.stateVersion).toBe(8);
-    expect(state.settings).toEqual({ elapsedTickEnabled: false });
+    expect(state.stateVersion).toBe(9);
+    expect(state.settings).toEqual({ elapsedTickEnabled: false, userLang: '' });
   });
 
   it('imports a v7 backup carrying the retired invitation bit — the field v8 refuses (#227)', () => {
@@ -383,8 +456,8 @@ describe('older documents route through the store migration', () => {
 
     // A learner's file outlives the app that wrote it: everything they earned comes back, and
     // the one field v8 retired is left behind by the migration rather than refused by `object`.
-    expect(state.stateVersion).toBe(8);
-    expect(state.settings).toEqual({ elapsedTickEnabled: false });
+    expect(state.stateVersion).toBe(9);
+    expect(state.settings).toEqual({ elapsedTickEnabled: false, userLang: '' });
     expect(state.courses['hi-mr']?.sessionCount).toBe(14);
     expect(state.courses['hi-mr']?.session).toEqual({
       phase: 'produce',
@@ -431,10 +504,10 @@ describe('Invariant 4 — no field can hold learner-authored text', () => {
 
   it('every string vocabulary in the shape rejects learner text', () => {
     // Walked off the shape itself: a field added to `types.ts` reaches the export only through
-    // `STATE_V8`, and its vocabulary lands in this list without this test changing.
-    expect(STATE_V8.strings.length).toBeGreaterThan(0);
+    // `STATE_V9`, and its vocabulary lands in this list without this test changing.
+    expect(STATE_V9.strings.length).toBeGreaterThan(0);
 
-    for (const vocabulary of STATE_V8.strings) {
+    for (const vocabulary of STATE_V9.strings) {
       for (const text of learnerText) {
         expect(
           vocabulary.accepts(text),

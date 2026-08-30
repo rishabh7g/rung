@@ -11,12 +11,12 @@ import { DEFAULT_CONTENT_ROOT } from './validate.ts';
  * issue text predates five PRs and lists 21 keys; the files carry 39 (PR #120, verified across
  * courses by PR #124, plus the Ladder's three in #86 and the staged rung card's seven in #87).
  * Where they disagree, the files win, so the suite checks the list AGAINST the files rather than
- * the other way round. Five bundles since #332 — hi-mr, en-es, en-ar, hi-en and en-it, all five
- * shipping since #337 — and the content build checks every one exactly the same way. A bundle is
- * checked whether or not its course ships: the gate decides what reaches a learner, never what
- * has to be well formed.
+ * the other way round. Six bundles now — hi-mr, en-es, en-ar, hi-en, en-ru and en-it, all six
+ * shipping (#273, #343, #337) — and the content build checks every one exactly the same way. A
+ * bundle is checked whether or not its course ships: the gate decides what reaches a learner,
+ * never what has to be well formed.
  */
-const COURSES = ['hi-mr', 'en-es', 'en-ar', 'hi-en', 'en-it'] as const;
+const COURSES = ['hi-mr', 'en-es', 'en-ar', 'hi-en', 'en-ru', 'en-it'] as const;
 
 function authoredStrings(courseId: string): Record<string, unknown> {
   const file = path.join(DEFAULT_CONTENT_ROOT, courseId, 'strings.json');
@@ -46,15 +46,15 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the five authored bundles carry — 71 keys, nested, identical', () => {
+  it('is exactly what the six authored bundles carry — 72 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(71);
+      expect(keys.length, courseId).toBe(72);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(71);
-    expect(new Set(STRINGS_KEYS).size).toBe(71);
+    expect(STRINGS_KEYS.length).toBe(72);
+    expect(new Set(STRINGS_KEYS).size).toBe(72);
   });
 
   /**

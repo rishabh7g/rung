@@ -1,0 +1,566 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M4",
+  "title": "My day",
+  "job": "Daily habits and time words",
+  "prerequisites": ["L1-M3"],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 6,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "Я + V-ю/-у + каждый день",
+      "Утром / Вечером + я + V",
+      "Я встаю в + num + часов",
+      "Вы + V-ете/-ите + ?",
+      "Я часто / всегда + V"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Russian has ONE present tense where English has two. Я работаю covers both \"I work\" (every day) and \"I am working\" (right now), and there is no second shape to reach for. Everything on this rung is a habit, and the same forms would do for what is happening this minute."
+    },
+    {
+      "tag": "delta",
+      "text": "Verbs come in two ending patterns and the pattern is a property of the verb, learned with it — there is no way to tell from the meaning. Pattern I: работаю · работаете · работает, читаю · читаете · читает. Pattern II: говорю · говорите · говорит. The difference shows in the you-form and the he/she-form: -ете for one pattern, -ите for the other."
+    },
+    {
+      "tag": "delta",
+      "text": "Some verbs write ё in their endings — пью · пьёте, встаю · встаёте — and this course always writes the two dots. Most Russian printing leaves them off and expects you to know; here they stay on, because ё and е are different letters and dropping the dots would make one word look like another."
+    },
+    {
+      "tag": "delta",
+      "text": "The times of day are single words: утром (in the morning), днём (in the afternoon), вечером (in the evening), ночью (at night). They are frozen shapes of утро, день, вечер and ночь — the leftovers of a case this level does not teach — so learn them as they are and do not try to build them. They usually open the sentence."
+    },
+    {
+      "tag": "delta",
+      "text": "Clock time is в plus the hour, and the word for \"hour\" changes with the number in front of it: один час, два часа, семь часов. That is your first sight of a rule M8 will spell out — after 1 the noun is in its plain shape, after 2–4 it takes one ending, after 5 and up another. Here, just learn часов with the bigger numbers."
+    },
+    {
+      "tag": "free",
+      "text": "This level always writes the subject pronoun. Russian can drop я, because the ending already names the person, and in speech it often does — but the drop is a stylistic judgement rather than a rule, and M5's past tense will not name the person at all. Keep the pronoun until you can hear when to lose it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M4-S01",
+      "display": "Я встаю рано.",
+      "cue": "I get up early",
+      "glossEn": "lit. \"I get-up early\"",
+      "literal": "I get-up early",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "встаю",
+            "cue": "I get up",
+            "tag": "delta",
+            "forms": ["встаю", "встаёте", "встаёт"],
+            "note": "\"I get up\", from вставать. One Russian word for what English needs two for — there is no separate \"up\". The you-form and the he/she-form write ё: встаёте, встаёт, and this course always prints the dots."
+          },
+          {
+            "display": "рано",
+            "cue": "early",
+            "tag": "free",
+            "forms": ["рано"],
+            "note": "Early. It describes the verb rather than a noun, so it never changes shape — a whole class of Russian words that ask nothing of you."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "English \"get up\" is a verb plus a little word, and hunting for the Russian \"up\" is wasted effort. встаю is the whole thing.",
+      "sound": "ya fsta-YOO RA-na. The в at the start is said as an f, because the с after it is voiceless — Russian consonants take their colour from their neighbours.",
+      "variations": [
+        {
+          "display": "Я встаю поздно.",
+          "cue": "I get up late",
+          "changed": "swap the time word — the verb does not move"
+        },
+        {
+          "display": "Вы встаёте рано?",
+          "cue": "Do you get up early?",
+          "changed": "встаю → встаёте for the polite you, and the ё appears in the ending"
+        },
+        {
+          "display": "Анна встаёт рано.",
+          "cue": "Anna gets up early",
+          "changed": "the he/she ending — встаёт, with the same ё"
+        }
+      ],
+      "mistake": {
+        "display": "Я встаю вверх.",
+        "why": "вверх is a real word for \"upwards\", and it has no business here. встаю already means \"get up\"."
+      },
+      "usage": "Describing your routine — the first line of any \"my day\" conversation.",
+      "register": "neutral",
+      "mnemonic": "One Russian word swallows the English verb and its little word whole."
+    },
+    {
+      "id": "L1-M4-S02",
+      "display": "Я встаю в семь часов.",
+      "cue": "I get up at seven o'clock",
+      "glossEn": "lit. \"I get-up in seven hours\"",
+      "literal": "I get-up at seven hours",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "в",
+            "cue": "at · in",
+            "tag": "delta",
+            "forms": ["в"],
+            "note": "One tiny preposition with two jobs in this course. Here it points at a clock time — в семь часов, \"at seven\". In M7 it points at a place — в магазине, \"in the shop\" — and it bends the word after it there, the way из does. Same word, two seats; the shape of what follows tells you which."
+          },
+          {
+            "display": "семь",
+            "cue": "seven",
+            "tag": "free",
+            "forms": ["семь"],
+            "note": "Seven. The ь on the end is not a sound of its own — it softens the м. Numbers from five upward all end this way."
+          },
+          {
+            "display": "часов",
+            "cue": "hours · o'clock",
+            "tag": "interference",
+            "forms": ["час", "часа", "часов"],
+            "note": "\"Hour\", and the number in front decides its shape: один час, два часа, семь часов. English says \"seven o'clock\" with the noun untouched; Russian makes the noun answer to the number, and M8 turns that into a rule for every noun."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "The noun changes because of the number, which English never does. \"Seven o'clock\" and \"one o'clock\" use the same word; семь часов and один час do not.",
+      "sound": "ya fsta-YOO f syem chee-SOF. The в is said as an f here too, and the final в of часов is an f as well — Russian ends words voiceless.",
+      "variations": [
+        {
+          "display": "Я встаю в шесть часов.",
+          "cue": "I get up at six o'clock",
+          "changed": "swap the number — часов stays, because six is also above four"
+        },
+        {
+          "display": "Я встаю в два часа.",
+          "cue": "I get up at two o'clock",
+          "changed": "два takes the other ending: часа, not часов"
+        },
+        {
+          "display": "Вы встаёте в семь часов?",
+          "cue": "Do you get up at seven?",
+          "changed": "the polite you-form, asked rather than told"
+        }
+      ],
+      "mistake": {
+        "display": "Я встаю в семь час.",
+        "why": "час is the shape that goes after один. After семь it is часов."
+      },
+      "usage": "Any time of day — the frame every appointment and every routine runs on.",
+      "register": "neutral",
+      "mnemonic": "The number is in charge. The noun does what it is told."
+    },
+    {
+      "id": "L1-M4-S03",
+      "display": "Утром я пью чай.",
+      "cue": "In the morning I drink tea",
+      "glossEn": "lit. \"in-the-morning I drink tea\"",
+      "literal": "In-the-morning I drink tea",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Утром",
+            "cue": "in the morning",
+            "tag": "delta",
+            "forms": ["Утром"],
+            "note": "\"In the morning\", in one word: there is no preposition and no article anywhere in it. It is a frozen shape of утро, left over from a case this course does not teach, so learn it whole. It normally opens the sentence."
+          },
+          {
+            "display": "пью",
+            "cue": "I drink",
+            "tag": "delta",
+            "forms": ["пью", "пьёте", "пьёт"],
+            "note": "\"I drink\", from пить. The ь inside пью and пьёте is a separator: it keeps the п and the vowel apart, so the word is said \"pyoo\" and not \"pu\". The you-form and the he/she-form carry ё, and this course writes the dots."
+          }
+        ],
+        "rules": [0, 2, 3]
+      },
+      "trap": "\"In the morning\" is three English words and one Russian one, with nothing standing in for \"in\" or \"the\". Building it out of в plus утро is the English reflex and it is wrong.",
+      "sound": "OO-tram ya pyoo chai. The unstressed о of утром flattens to \"a\", and пью is one syllable, not two.",
+      "variations": [
+        {
+          "display": "Утром я пью кофе.",
+          "cue": "In the morning I drink coffee",
+          "changed": "swap the drink — neither word around it moves"
+        },
+        {
+          "display": "Вечером я пью чай.",
+          "cue": "In the evening I drink tea",
+          "changed": "swap the time of day — the frame is the same for all four"
+        },
+        {
+          "display": "Вы пьёте чай утром?",
+          "cue": "Do you drink tea in the morning?",
+          "changed": "the polite you-form, and the time word moved to the end — both orders are ordinary"
+        }
+      ],
+      "mistake": {
+        "display": "В утро я пью чай.",
+        "why": "There is no preposition in this phrase. \"In the morning\" is утром, one word, and building it out of в plus утро is the English habit."
+      },
+      "usage": "Anything you do at a particular time of day — the spine of a routine.",
+      "register": "neutral",
+      "mnemonic": "Four times of day, four single words, no prepositions anywhere."
+    },
+    {
+      "id": "L1-M4-S04",
+      "display": "Вечером я читаю книгу.",
+      "cue": "In the evening I read a book",
+      "glossEn": "lit. \"in-the-evening I read book\"",
+      "literal": "In-the-evening I read book-OBJECT",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Вечером",
+            "cue": "in the evening",
+            "tag": "delta",
+            "forms": ["Вечером"],
+            "note": "\"In the evening\", one word, the same frozen shape as утром. Russian's evening runs from about five until it is properly dark, and ночью takes over after that — the split is earlier than the English one."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "книгу still carries M3's object ending. A time word at the front changes nothing about what happens at the back of the sentence.",
+      "sound": "VYE-che-ram ya chee-TA-yoo KNEE-goo. Three of the four vowels in вечером are unstressed and flatten right down; only the first is fully said.",
+      "variations": [
+        {
+          "display": "Вечером я читаю газету.",
+          "cue": "In the evening I read a newspaper",
+          "changed": "swap the thing read — and it bends the same way, being feminine too"
+        },
+        {
+          "display": "Вечером я не читаю.",
+          "cue": "In the evening I don't read",
+          "changed": "не in front of the verb, and the object dropped altogether"
+        },
+        {
+          "display": "Вы читаете вечером?",
+          "cue": "Do you read in the evening?",
+          "changed": "the polite you-form, with the time word at the end"
+        }
+      ],
+      "mistake": {
+        "display": "Вечером я читаю книга.",
+        "why": "книга is the subject shape. As the thing being read it is книгу — M3's ending, still doing its job."
+      },
+      "usage": "Evening routines — and the frame takes any of M3's verbs.",
+      "register": "neutral",
+      "mnemonic": "The front of the sentence and the back of it mind their own business."
+    },
+    {
+      "id": "L1-M4-S05",
+      "display": "Я работаю каждый день.",
+      "cue": "I work every day",
+      "glossEn": "lit. \"I work every day\"",
+      "literal": "I work every day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "каждый день",
+            "cue": "every day",
+            "tag": "free",
+            "forms": ["каждый день"],
+            "note": "\"Every day\", learned as one phrase. каждый is \"every\" and день is \"day\" — masculine, which is why каждый ends the way it does. The phrase normally sits at the end of the sentence."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "Russian's one present tense is doing double duty here. Я работаю каждый день is a habit, and Я работаю on its own could be either \"I work\" or \"I am working right now\" — the time word is what settles it.",
+      "sound": "ya ra-BO-ta-yoo KAZH-dy dyen'. The ж of каждый is the s in English \"measure\"; the ь at the end of день softens the н without adding a sound.",
+      "variations": [
+        {
+          "display": "Я читаю каждый день.",
+          "cue": "I read every day",
+          "changed": "swap the verb — the phrase hangs off any of them"
+        },
+        {
+          "display": "Я не работаю каждый день.",
+          "cue": "I don't work every day",
+          "changed": "не in front of the verb, and the phrase does not move"
+        },
+        {
+          "display": "Вы работаете каждый день?",
+          "cue": "Do you work every day?",
+          "changed": "the polite you-form — pattern I, so the ending is -ете"
+        }
+      ],
+      "mistake": {
+        "display": "Я работаю каждый дни.",
+        "why": "The phrase is fixed and singular: каждый день, one day at a time, however many of them there are."
+      },
+      "usage": "Routines, jobs, habits — and the single most useful time phrase on this rung.",
+      "register": "neutral",
+      "mnemonic": "Every day, one day: Russian counts them one at a time."
+    },
+    {
+      "id": "L1-M4-S06",
+      "display": "Я часто читаю.",
+      "cue": "I read often",
+      "glossEn": "lit. \"I often read\"",
+      "literal": "I often read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "часто",
+            "cue": "often",
+            "tag": "delta",
+            "forms": ["часто"],
+            "note": "Often. Words like this go in front of the verb in Russian, where English usually puts them after it or at the end. Never changes shape."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "The word order is the delta: Russian says \"I often read\" and English says \"I read often\". Both orders exist in English; only one is ordinary in Russian.",
+      "sound": "ya CHA-sta chee-TA-yoo. The т of часто is barely said between the с and the о — a cluster Russian smooths over.",
+      "variations": [
+        {
+          "display": "Я часто пью чай.",
+          "cue": "I often drink tea",
+          "changed": "swap the verb — часто keeps its place in front of it"
+        },
+        {
+          "display": "Я не часто читаю.",
+          "cue": "I don't read often",
+          "changed": "не in front of часто, because it is часто that is being denied"
+        },
+        {
+          "display": "Вы часто читаете?",
+          "cue": "Do you read often?",
+          "changed": "the polite you-form, as a question"
+        }
+      ],
+      "mistake": {
+        "display": "Я читаю часто.",
+        "why": "Understandable, and it puts the emphasis on \"often\" rather than saying it plainly. The neutral order is Я часто читаю."
+      },
+      "usage": "Saying how much you do something — часто, всегда and иногда all sit in the same slot.",
+      "register": "neutral",
+      "mnemonic": "How often comes before what you do."
+    },
+    {
+      "id": "L1-M4-S07",
+      "display": "Я всегда пью кофе.",
+      "cue": "I always drink coffee",
+      "glossEn": "lit. \"I always drink coffee\"",
+      "literal": "I always drink coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "всегда",
+            "cue": "always",
+            "tag": "free",
+            "forms": ["всегда"],
+            "note": "Always, and it takes the same slot as часто, in front of the verb. Note the spelling: it is written всегда and said \"fsyeg-DA\" — the в is an f here, as it is in встаю."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "It looks like it should start with a v sound and it does not. Russian's в takes the voicing of whatever follows, and с is voiceless.",
+      "sound": "ya fsyeg-DA pyoo KO-fye. The stress lands right at the end of всегда, which is unusual enough to be worth remembering.",
+      "variations": [
+        {
+          "display": "Я всегда встаю рано.",
+          "cue": "I always get up early",
+          "changed": "swap the verb — всегда keeps its place in front of it"
+        },
+        {
+          "display": "Утром я всегда пью кофе.",
+          "cue": "In the morning I always drink coffee",
+          "changed": "a time word in front, and всегда still hugs the verb"
+        },
+        {
+          "display": "Вы всегда пьёте кофе?",
+          "cue": "Do you always drink coffee?",
+          "changed": "the polite you-form, with the ё in the ending"
+        }
+      ],
+      "mistake": {
+        "display": "Я пью всегда кофе.",
+        "why": "That order puts a strange emphasis on \"always\" and sounds foreign. It belongs in front of the verb: Я всегда пью кофе."
+      },
+      "usage": "Habits you never break — and the ordinary way to answer \"do you always …?\".",
+      "register": "neutral",
+      "mnemonic": "всегда, часто, иногда: all three live in the same seat, in front of the verb."
+    },
+    {
+      "id": "L1-M4-S08",
+      "display": "Вы говорите по-русски?",
+      "cue": "Do you speak Russian?",
+      "glossEn": "lit. \"you speak in-Russian?\"",
+      "literal": "You speak Russian-ly?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "говорите",
+            "cue": "you speak (polite)",
+            "tag": "delta",
+            "forms": ["говорите", "говорю", "говорит"],
+            "note": "\"You speak\", from говорить — and this is the OTHER ending pattern: -ите for the polite you and -ит for he or she, where работать took -ете and -ет. The pattern is a fact about the verb and has to be learned with it; nothing in the meaning predicts it."
+          },
+          {
+            "display": "по-русски",
+            "cue": "in Russian",
+            "tag": "delta",
+            "forms": ["по-русски"],
+            "note": "\"In Russian\", said of the way you speak — a different word from M1's русский язык, which is the language as a thing. Say a language this way after говорить and never the other way: this shape is only for how something is spoken or written."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "M1's русский язык cannot be used here. Вы говорите русский язык is the word-for-word English and it is wrong: speaking a language takes the по-русски shape.",
+      "sound": "vy ga-va-REE-tye pa-ROO-skee. Two unstressed о letters in говорите, both flattened to \"a\", and the pitch rises on по-русски.",
+      "variations": [
+        {
+          "display": "Я говорю по-русски.",
+          "cue": "I speak Russian",
+          "changed": "говорите → говорю: the answer, in the I-form of pattern II"
+        },
+        {
+          "display": "Я не говорю по-русски.",
+          "cue": "I don't speak Russian",
+          "changed": "не in front of the verb — the most useful sentence a beginner owns"
+        },
+        {
+          "display": "Анна говорит по-русски.",
+          "cue": "Anna speaks Russian",
+          "changed": "the he/she ending of pattern II — говорит, not говорет"
+        }
+      ],
+      "mistake": {
+        "display": "Вы говорите русский язык?",
+        "why": "That is the English sentence with Russian words in it. Speaking a language takes по-русски: Вы говорите по-русски?"
+      },
+      "usage": "The most useful question a beginner can ask, and the most useful answer they can give.",
+      "register": "neutral",
+      "mnemonic": "You do not speak a language in Russian — you speak Russian-ly."
+    },
+    {
+      "id": "L1-M4-S09",
+      "display": "Днём я работаю.",
+      "cue": "In the afternoon I work",
+      "glossEn": "lit. \"in-the-afternoon I work\"",
+      "literal": "In-the-afternoon I work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Днём",
+            "cue": "in the afternoon · during the day",
+            "tag": "delta",
+            "forms": ["Днём"],
+            "note": "The frozen shape of день, covering roughly noon to early evening — Russian's day-part does not line up with English \"afternoon\". Written with ё, always, and said \"dnyom\"."
+          }
+        ],
+        "rules": [0, 2, 3]
+      },
+      "trap": "It does not mean \"in the day\" as opposed to \"in the night\". днём is the middle stretch of the day, sitting between утром and вечером — four parts, not two.",
+      "sound": "dnyom ya ra-BO-ta-yoo. One syllable, and it opens with a д and an н together — a cluster English never starts a word with.",
+      "variations": [
+        {
+          "display": "Днём я читаю.",
+          "cue": "In the afternoon I read",
+          "changed": "swap the verb — the time word keeps its place at the front"
+        },
+        {
+          "display": "Днём я не работаю.",
+          "cue": "In the afternoon I don't work",
+          "changed": "не in front of the verb; the time word is untouched"
+        },
+        {
+          "display": "Вы работаете днём?",
+          "cue": "Do you work in the afternoon?",
+          "changed": "the polite you-form, with the time word moved to the end"
+        }
+      ],
+      "mistake": {
+        "display": "В день я работаю.",
+        "why": "The same English habit as В утро: there is no preposition in these phrases. It is днём, one word."
+      },
+      "usage": "The middle of the day — the piece of a routine English speakers most often get wrong.",
+      "register": "neutral",
+      "mnemonic": "Four words for four parts of the day, and none of them needs a preposition."
+    },
+    {
+      "id": "L1-M4-S10",
+      "display": "Ночью я сплю.",
+      "cue": "At night I sleep",
+      "glossEn": "lit. \"at-night I sleep\"",
+      "literal": "At-night I sleep",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Ночью",
+            "cue": "at night",
+            "tag": "delta",
+            "forms": ["Ночью"],
+            "note": "The last of the four, frozen from ночь. Russian's night starts late — around midnight in ordinary use — so somebody arriving at ten in the evening arrives вечером, not ночью."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "сплю is M3's спать with its everyday ending, and it grows a л the way люблю does. The dictionary shape gave no warning of it.",
+      "sound": "NO-chyu ya splyoo. Both words end in a soft sound — the ю does the softening in each — and neither is more than one syllable of real weight.",
+      "variations": [
+        {
+          "display": "Ночью я не сплю.",
+          "cue": "At night I don't sleep",
+          "changed": "не in front of the verb, and the time word does not move"
+        },
+        {
+          "display": "Вы спите ночью?",
+          "cue": "Do you sleep at night?",
+          "changed": "the polite you-form of pattern II — спите, with the time word at the end"
+        },
+        {
+          "display": "Анна спит ночью.",
+          "cue": "Anna sleeps at night",
+          "changed": "the he/she ending — спит, another pattern II verb"
+        }
+      ],
+      "mistake": {
+        "display": "Ночью я спать.",
+        "why": "спать is the dictionary shape and only goes after another verb (Я хочу спать). Standing on its own it needs an ending: Ночью я сплю."
+      },
+      "usage": "Closing a description of your day — and the last of the four time words.",
+      "register": "neutral",
+      "mnemonic": "The dictionary shape waits behind another verb; on its own, the verb has to say who."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M4-C01", "display": "Утром я пью кофе.", "cue": "In the morning I drink coffee" },
+    { "id": "L1-M4-C02", "display": "Вечером я работаю.", "cue": "In the evening I work" },
+    { "id": "L1-M4-C03", "display": "Я часто пью чай.", "cue": "I often drink tea" },
+    { "id": "L1-M4-C04", "display": "Анна встаёт рано.", "cue": "Anna gets up early" },
+    { "id": "L1-M4-C05", "display": "Иван всегда работает.", "cue": "Ivan always works" },
+    {
+      "id": "L1-M4-C06",
+      "display": "Днём я читаю книгу.",
+      "cue": "In the afternoon I read a book"
+    },
+    { "id": "L1-M4-C07", "display": "Вы читаете каждый день?", "cue": "Do you read every day?" },
+    { "id": "L1-M4-C08", "display": "Ночью я не работаю.", "cue": "At night I don't work" },
+    { "id": "L1-M4-C09", "display": "Я говорю по-русски.", "cue": "I speak Russian" },
+    { "id": "L1-M4-C10", "display": "Анна не спит ночью.", "cue": "Anna doesn't sleep at night" },
+    {
+      "id": "L1-M4-C11",
+      "display": "Вы пьёте кофе утром?",
+      "cue": "Do you drink coffee in the morning?"
+    },
+    {
+      "id": "L1-M4-C12",
+      "display": "Я всегда встаю в семь часов.",
+      "cue": "I always get up at seven o'clock"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

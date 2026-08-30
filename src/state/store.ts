@@ -76,6 +76,9 @@ export function initialState(): AppState {
       // Design recommends ON: numberless, calm, one tap to off. The first-run default is still
       // open as [Q3] (#70) — when Rishabh decides, this line and the drift guard change together.
       elapsedTickEnabled: true,
+      // Unset (#322): the user's language follows the active course's own L1 until they say
+      // otherwise, which is exactly what the app did before the field existed.
+      userLang: '',
     },
   };
 }
@@ -388,11 +391,20 @@ export function migrate(persisted: unknown, fromVersion: number): AppState {
   // key the document holds, including ones v8 has retired (`notebookInvitationDismissed`, #227);
   // naming the survivors is what leaves those behind — and the import validator, which rejects a
   // key it does not know, is why a v7 file needs them left behind to get in at all.
+  //
+  // v8 → v9: `userLang` (#322). It needs no route of its own — the spread above already lays the
+  // document over the first-run defaults, so a v8 document arrives carrying `''`, which is the
+  // unset sentinel and means "follow the active course's L1". Naming it here is what carries it
+  // for a v9 document that HAS one; leaving it out would silently reset every learner's choice on
+  // the next version bump.
   return {
     stateVersion: STATE_VERSION,
     activeCourse: (v6['activeCourse'] ?? fresh.activeCourse) as CourseId,
     courses: (v6['courses'] ?? fresh.courses) as AppState['courses'],
-    settings: { elapsedTickEnabled: v7Settings.elapsedTickEnabled },
+    settings: {
+      elapsedTickEnabled: v7Settings.elapsedTickEnabled,
+      userLang: v7Settings.userLang,
+    },
   };
 }
 

@@ -8,13 +8,14 @@
  * levels.json stays the single source of the ladder, and a brief only adds the authoring
  * guidance on top.
  *
- * Five courses are briefed: hi-mr through L2, and en-es, en-ar, hi-en and en-it L1 only. The
+ * Six courses are briefed: hi-mr through L2, and en-es, en-ar, hi-en, en-ru and en-it L1 only. The
  * L2/L3 module lists are RATIFIED (#112 closed [Q1] — titles, jobs and sequence in levels.json
  * are final), and a level's briefs are written when its authoring project starts: a brief encodes
  * pattern-and-interference pedagogy that should be planned against the verified ladder below it,
  * not ahead of it. hi-mr's L2 briefs (#295) are the first written to that rule — planned against
  * the finished L1 index (215 surfaces through L1-M10) and the L1 review chain; hi-mr's L3 waits
- * for a verified L2. en-ar's, hi-en's and en-it's own L2/L3 lists are still placeholder text
+ * for a verified L2. en-ar's, hi-en's, en-ru's and en-it's own L2/L3 lists are still placeholder
+ * text
  * (PRD §5) and are not briefed either. The CLI says exactly this when asked for a course or
  * module without a brief.
  *
@@ -47,10 +48,15 @@
  *    further seams that Spanish is not — hyphen parts and the apostrophe classes — so en-ar's
  *    index rules get their own section below. English has two of its own — contractions, which
  *    survive normalisation as ONE token (`don't`), and a stock of tiny homographs (`to`, `do`,
- *    `have`, `that`, `it`) — so hi-en's get theirs. Italian adds a seam nobody else has: the
- *    ELISION apostrophe, which `surface.ts` keeps INSIDE a token while `surfaceIndexKeys` splits
- *    only hyphens — so `l'acqua`, `c'è` and `un po'` are each one key answering for nothing
- *    else, and `acqua`, `è` and `po` are untouched by them — so en-it's get theirs too.
+ *    `have`, `that`, `it`) — so hi-en's get theirs. Russian adds two more, and they are the
+ *    sharpest yet: `ё` and `е` are DIFFERENT codepoints the fold never merges (checked against
+ *    the real function, not assumed — `normalizeSurface('всё') !== normalizeSurface('все')`), and
+ *    a case system turns one noun into several written shapes, every one of which must live in
+ *    the `forms` of the ONE row that first taught the word. en-ru's index rules get their own
+ *    section below too. Italian adds a seam of its own: the ELISION apostrophe, which
+ *    `surface.ts` keeps INSIDE a token while `surfaceIndexKeys` splits only hyphens — so
+ *    `l'acqua`, `c'è` and `un po'` are each one key answering for nothing else, and `acqua`, `è`
+ *    and `po` are untouched by them — so en-it's get theirs too.
  *
  * ## Why the en-es ladder teaches what it teaches
  *
@@ -283,7 +289,90 @@
  *
  * There was no seam-proof fixture to replace: `content/hi-en/modules/` did not exist until #270
  * authored L1-M1 against the brief below, and #273 graduated the course out of `fixture: true`
- * — the fourth course shipping.
+ * — the fourth course shipping. en-ru followed the same path (#338 → #343) and is the fifth; all
+ * five shipping courses are briefed here.
+ *
+ * ## hi-mr L2: the four decisions, taken against the finished L1 (#295)
+ *
+ * The first L2 briefed anywhere: ten modules planned against the REAL cumulative L1 index —
+ * 215 surfaces through L1-M10, maxSpan 1, rebuilt and read rather than remembered — and against
+ * the L1 review chain (docs/08 open questions 1–22, docs/15 23–30, docs/19 31–40, docs/23
+ * 41–48). The four decisions below are hi-mr L2's equivalents of hi-en's four, recorded in
+ * `docs/26-hi-mr-L2-brief-decisions.md` and repeated in the notes, because a prompt only ever
+ * shows an author the notes.
+ *
+ * ### 1. Language of fields — L2 keeps L1's split, field for field
+ *
+ * hi-mr writes `rules[].text` and word `note` in English, and every learner-facing line —
+ * `cue`, `literal`, `trap`, `sound`, `usage`, `mistake.why`, `variations[].changed`, `mnemonic`
+ * — in Hindi (Devanagari), with `glossEn` required on every sentence (the L2 is not English, so
+ * #268's exemption does not apply). The English is the tolerated quirk of a course with one
+ * bilingual learner (the hi-en section above forbids copying it INTO hi-en) — and mid-course is
+ * the wrong place to fix a voice: an L2 module whose notes suddenly spoke Hindi would fork the
+ * course's own conventions for zero pedagogy. L2 copies `content/hi-mr/modules/L1-M1.json`'s
+ * split exactly.
+ *
+ * ### 2. Register — L1 taught तू as the default; L2 finally teaches WHEN
+ *
+ * docs/08 Q16 recorded the choice; L2-M1 is the module that pays for it: तू for a friend or
+ * family your own age or younger, तुम्ही for elders, strangers and counters — and every L2
+ * brief states which register its frames speak (M4, M7 and M8 talk to strangers: तुम्ही; M6's
+ * plans are among friends: तू). Marathi has no दीजिए tier — the imperative stops at
+ * तुम्ही + -आ, and politeness above it goes into words (जरा, कृपया) or the future question
+ * (द्याल का?). The schema's register chip has exactly two values, `neutral` and `informal` — so
+ * तू frames chip informal, and the formal end (कृपया, आभारी आहे) is carried by the `usage` line
+ * in words. आपण stays the course's "we" (L1-M10's row): the very-formal "you" job (docs/08 Q17)
+ * is named in prose, never a display subject.
+ *
+ * ### 3. Forms — L2 never edits an L1 file
+ *
+ * The additions-only invariant, made structural: a new SHAPE of an L1 lexeme (माझ्या, घरं,
+ * जायचं, बोला…) is deconstructed in the L2 module that first shows it — its own row, its note
+ * pointing back to the first-teach row — because the bare word's key is L1's forever (first
+ * occurrence wins) and re-verifying shipped L1 files from every L2 issue would churn what the
+ * gate froze. (docs/15 put दुकानाजवळ on दुकान's own L1 row; that was L1 repairing L1 — across
+ * levels the rule flips.) Within L2 the docs/15 discipline continues: a first-teach row lists
+ * the shapes its LEVEL shows (plan the wave, not the module), `[]` stays honest for invariables
+ * and re-teaches, and a spoken contraction and its full form share one row — बोलतोय · बोलतेय ·
+ * बोलतंय · बोलत — the hi-en `don't · do not` precedent. The participle -त is listed as a
+ * single-token form of its verb's row, so the two-word spellings (बोलत आहे, चालत नाही) resolve
+ * word by word — the -त form to the verb's row, आहे/नाही to M1's/M2's — and negation never
+ * needs a new row.
+ *
+ * ### 4. Seams — hi-mr stays single-token, and the owners are decided up front
+ *
+ * maxSpan is 1 and stays 1: Devanagari GLUES what other courses span — postpositions
+ * (स्टेशनला, चहापेक्षा, सगळ्यात), the continuous (बोलतोय), the purpose infinitive (जेवायला) —
+ * so every fused form is a fresh single-token key owned by the module that first shows it, and
+ * the multi-token tool (en-es's `Me llamo`) stays unused. The collisions, each named again in
+ * its module's notes: बसा's row must NOT list the bare stem बस in `forms`, or M4's bus lands on
+ * "sit"; प्यायला-as-purpose is spelled exactly like L1-M5's past प्यायला, whose row owns the
+ * key, so the -आयला frame is shown on जेवायला/खायला and writes around it; या (M1) carries two
+ * jobs in one note — "come (polite)" and the invite particle after -ऊ (जाऊ या, M6) — the hi-en
+ * do-row precedent; कोण (M2) and कोणता (M9) are sibling keys whose notes cross-reference;
+ * proper nouns (रोहन, पुणे, पुण्याला) never index (#61), so every direction anchors on a common
+ * noun. L2 also pays L1's three recorded debts — दे (docs/15's M10 note) in M1, the counting
+ * set (open question 28) across M5's table and M6's clock, and बोलणे (open question 29) in M7 —
+ * while the three pinned L1 sweep misses (प्रिया, पाच, बोललो) STAND, because a module's index
+ * is cumulative through itself and no L2 row reaches back into an L1 reader's screen. And what
+ * first-occurrence-wins takes away, it also settles: आम्ही can never get a row of its own
+ * (open question 23) — the आपण row keeps teaching the split.
+ *
+ * ### Why the hi-mr L2 ladder teaches what it teaches
+ *
+ * The jobs are levels.json's, mirrored verbatim; the brief adds which Hindi→Marathi delta each
+ * job carries, sequenced so each pressure point lands in the module whose job cannot be done
+ * without it: the two-step imperative and the आप→आपण trap in M1 (a request is addressed, and
+ * must pick a register); तो/ती/ते and आहेत in M2 (describing a person forks Hindi's one वह by
+ * gender); the full agreement paradigm — plurals at last — in M3; the place -ला and the
+ * instrumental -ने in M4; मिळेल and the guest script in M5; the -ऊ या suggestion and
+ * जमेल/चालेल in M6; the continuous -तोय in M7 (a phone call happens NOW); the -त नाही negative
+ * and the मिळणे/सापडणे split in M8; -पेक्षा, सगळ्यात and की/किंवा in M9; and the third-person
+ * ergative — त्याने/तिने, the ने withheld since L1-M5 — in M10, where a past-tense account
+ * cannot dodge it. Kept deliberately OUT of L2: the genitive as a system (M2 shows one -चं
+ * frame; L3 owns the rest), conditionals and reported speech (L3-M4/M5 per levels.json), the
+ * passive, and the -ऊन converb — none of the ten jobs needs them. Bounds climb 8 → 10; pools
+ * are authored to 12, the course's shipped size (#305).
  *
  * ## en-it: the five decisions a brief must settle before any Italian is written
  *
@@ -422,87 +511,201 @@
  * authored L1-M1 against the brief below, and #337 graduated the course out of `fixture: true`
  * — the fifth course shipping, all five courses briefed here.
  *
- * ## hi-mr L2: the four decisions, taken against the finished L1 (#295)
+ * ## en-ru: the six decisions a brief must settle before any Russian is written
  *
- * The first L2 briefed anywhere: ten modules planned against the REAL cumulative L1 index —
- * 215 surfaces through L1-M10, maxSpan 1, rebuilt and read rather than remembered — and against
- * the L1 review chain (docs/08 open questions 1–22, docs/15 23–30, docs/19 31–40, docs/23
- * 41–48). The four decisions below are hi-mr L2's equivalents of hi-en's four, recorded in
- * `docs/26-hi-mr-L2-brief-decisions.md` and repeated in the notes, because a prompt only ever
- * shows an author the notes.
+ * en-ru (#338–#343) is the product's seventh course and the first written in Cyrillic. The
+ * language law runs as it does in en-es and en-ar — the document speaks English (`l1Tag: en`),
+ * every teaching field is English, and Russian appears only in the L2 slots — but Russian
+ * diverges from English harder than either, and it diverges through INFLECTION, which is exactly
+ * what a verbatim-matching word index feels. The six decisions below are settled here and
+ * repeated in the notes, because a prompt only ever shows an author the notes.
  *
- * ### 1. Language of fields — L2 keeps L1's split, field for field
+ * ### 1. The language of every field, and the lines a sentence carries
  *
- * hi-mr writes `rules[].text` and word `note` in English, and every learner-facing line —
- * `cue`, `literal`, `trap`, `sound`, `usage`, `mistake.why`, `variations[].changed`, `mnemonic`
- * — in Hindi (Devanagari), with `glossEn` required on every sentence (the L2 is not English, so
- * #268's exemption does not apply). The English is the tolerated quirk of a course with one
- * bilingual learner (the hi-en section above forbids copying it INTO hi-en) — and mid-course is
- * the wrong place to fix a voice: an L2 module whose notes suddenly spoke Hindi would fork the
- * course's own conventions for zero pedagogy. L2 copies `content/hi-mr/modules/L1-M1.json`'s
- * split exactly.
+ * `scriptMode: native`, so `display` IS the Cyrillic — there is no romanization anywhere in this
+ * course, and the `script` field is UNUSED (the prompt's own Script section says so: `script`
+ * exists for a romanized course's quiet native line, and a native course has nothing to put
+ * under itself). Every teaching field — `rules[].text`, word `note`, `trap`, `sound`,
+ * `variations[].changed`, `mistake.why`, `usage`, `mnemonic`, `cue` — is ENGLISH, and may quote
+ * Cyrillic inside English prose. Russian appears in sentence / word / variation / mistake / pool
+ * `display` and in word `forms`, and nowhere else.
  *
- * ### 2. Register — L1 taught तू as the default; L2 finally teaches WHEN
+ * - **`glossEn` is REQUIRED on every sentence.** #268's exemption is for a course whose L2 IS
+ *   English (hi-en); Russian is not, so the gloss is mandatory and the build enforces it.
+ * - **`literal` is the workhorse of this course.** Russian says whole sentences with words English
+ *   does not have and drops words English cannot drop, so write the Russian words in English
+ *   order under any sentence whose construction is not word-for-word: `Меня зовут Иван` →
+ *   "me they-call Ivan"; `Мне нравится Москва` → "to-me pleases Moscow"; `У меня есть книга` →
+ *   "at me is book"; `На столе есть книга` → "on table is book". Hyphenate a multi-word English
+ *   gloss of one Russian word, as en-es hyphenates `call-myself`: `я встаю` → `I get-up`.
+ * - **Stress is NOT written.** Normal Russian text carries no stress marks, and an acute accent
+ *   would be a codepoint the index has to match forever — `кни́га` and `книга` are two different
+ *   surfaces. So no sentence, word, form, variation, mistake or pool item ever writes one. Where
+ *   stress is worth teaching it goes in `sound`, in English words ("KNEE-ga").
  *
- * docs/08 Q16 recorded the choice; L2-M1 is the module that pays for it: तू for a friend or
- * family your own age or younger, तुम्ही for elders, strangers and counters — and every L2
- * brief states which register its frames speak (M4, M7 and M8 talk to strangers: तुम्ही; M6's
- * plans are among friends: तू). Marathi has no दीजिए tier — the imperative stops at
- * तुम्ही + -आ, and politeness above it goes into words (जरा, कृपया) or the future question
- * (द्याल का?). The schema's register chip has exactly two values, `neutral` and `informal` — so
- * तू frames chip informal, and the formal end (कृपया, आभारी आहे) is carried by the `usage` line
- * in words. आपण stays the course's "we" (L1-M10's row): the very-formal "you" job (docs/08 Q17)
- * is named in prose, never a display subject.
+ * ### 2. Register: `вы` is the course-wide default, and `ты` stays OUT of L1
  *
- * ### 3. Forms — L2 never edits an L1 file
+ * Russian forces a choice English never makes, on every sentence addressed to somebody. The
+ * decision, taken for the whole course:
  *
- * The additions-only invariant, made structural: a new SHAPE of an L1 lexeme (माझ्या, घरं,
- * जायचं, बोला…) is deconstructed in the L2 module that first shows it — its own row, its note
- * pointing back to the first-teach row — because the bare word's key is L1's forever (first
- * occurrence wins) and re-verifying shipped L1 files from every L2 issue would churn what the
- * gate froze. (docs/15 put दुकानाजवळ on दुकान's own L1 row; that was L1 repairing L1 — across
- * levels the rule flips.) Within L2 the docs/15 discipline continues: a first-teach row lists
- * the shapes its LEVEL shows (plan the wave, not the module), `[]` stays honest for invariables
- * and re-teaches, and a spoken contraction and its full form share one row — बोलतोय · बोलतेय ·
- * बोलतंय · बोलत — the hi-en `don't · do not` precedent. The participle -त is listed as a
- * single-token form of its verb's row, so the two-word spellings (बोलत आहे, चालत नाही) resolve
- * word by word — the -त form to the verb's row, आहे/नाही to M1's/M2's — and negation never
- * needs a new row.
+ * - **Every second-person line in L1 uses `вы`** — the polite/plural address: `Как вас зовут?`,
+ *   `Вы хотите чай?`, `У вас есть хлеб?`, `Дайте, пожалуйста`. `вы` is the survival register: a
+ *   learner meets strangers, shop assistants and hosts long before friends, and `ты` to a
+ *   stranger is a rudeness English has no way to commit by accident.
+ * - **`ты` never appears in a `display` line in L1.** It is named in prose — the notes say it
+ *   exists, that it takes its own verb endings, and that choosing it is L2's job — so the learner
+ *   is told the truth about the fork without being asked to write on both sides of it.
+ * - The greetings follow: **`здравствуйте`** (M2), not `привет`, which is the `ты`-tier greeting
+ *   and is named in a `usage` line rather than written on a hero line.
+ * - **`Как дела?` is the one exemption, and honestly so**: it contains no second-person word at
+ *   all — it is verbless, literally "how [are the] affairs" — so it carries no `ты`/`вы` marking
+ *   to get wrong. Its fully polite expansion is `Как у вас дела?`, and M2's `usage` line says
+ *   which to prefer with somebody just met.
  *
- * ### 4. Seams — hi-mr stays single-token, and the owners are decided up front
+ * The false slogan here is "`вы` is just the plural of `ты`". The law: `вы` is BOTH the plural
+ * and the singular-polite, and it always takes the plural verb form even when it means one
+ * person — `Вы хотите чай?`, said to a single stranger.
  *
- * maxSpan is 1 and stays 1: Devanagari GLUES what other courses span — postpositions
- * (स्टेशनला, चहापेक्षा, सगळ्यात), the continuous (बोलतोय), the purpose infinitive (जेवायला) —
- * so every fused form is a fresh single-token key owned by the module that first shows it, and
- * the multi-token tool (en-es's `Me llamo`) stays unused. The collisions, each named again in
- * its module's notes: बसा's row must NOT list the bare stem बस in `forms`, or M4's bus lands on
- * "sit"; प्यायला-as-purpose is spelled exactly like L1-M5's past प्यायला, whose row owns the
- * key, so the -आयला frame is shown on जेवायला/खायला and writes around it; या (M1) carries two
- * jobs in one note — "come (polite)" and the invite particle after -ऊ (जाऊ या, M6) — the hi-en
- * do-row precedent; कोण (M2) and कोणता (M9) are sibling keys whose notes cross-reference;
- * proper nouns (रोहन, पुणे, पुण्याला) never index (#61), so every direction anchors on a common
- * noun. L2 also pays L1's three recorded debts — दे (docs/15's M10 note) in M1, the counting
- * set (open question 28) across M5's table and M6's clock, and बोलणे (open question 29) in M7 —
- * while the three pinned L1 sweep misses (प्रिया, पाच, बोललो) STAND, because a module's index
- * is cumulative through itself and no L2 row reaches back into an L1 reader's screen. And what
- * first-occurrence-wins takes away, it also settles: आम्ही can never get a row of its own
- * (open question 23) — the आपण row keeps teaching the split.
+ * ### 3. The `ё` policy: always write `ё`, because the index keeps it apart from `е`
  *
- * ### Why the hi-mr L2 ladder teaches what it teaches
+ * `src/engine/surface.ts` NFC-normalises, folds the two apostrophe classes, strips edge
+ * punctuation and lowercases — and that is all. It does NOT fold `ё` to `е`. Checked against the
+ * real function rather than assumed: `Ё` lowercases to `ё` (Cyrillic case-folds correctly, so
+ * `Меня` and `меня` are one surface), while `всё` and `все` normalise to two different keys, and
+ * `пошёл` spelled `пошел` would be a word the index had never met.
  *
- * The jobs are levels.json's, mirrored verbatim; the brief adds which Hindi→Marathi delta each
+ * **The policy: always write `ё` where the word has `ё`** — `пошёл`, `её`, `всё`, `ещё`, `пьёшь`,
+ * `встаёшь` — and never the `е`-spelling of a `ё`-word. Real Russian print usually drops the
+ * diaeresis, so this is a deliberate departure, and it buys two things: one word is one surface,
+ * and `всё` (everything) never merges with `все` (everybody), which are genuinely two words. Say
+ * so in a `usage` or `sound` line the first time a `ё` word appears, so a learner meeting a book
+ * that omits it is not ambushed.
+ *
+ * ### 4. Case: what L1 teaches, where, and what it defers — the course's biggest decision
+ *
+ * Russian has six cases and L1 cannot teach them. Teaching them badly — a declension table nobody
+ * can use — is worse than teaching four of them where the ten jobs actually need them. The plan,
+ * fixed here so that no module improvises:
+ *
+ * - **Nominative** — M1. The citation form and the subject; every word row's `display` is the
+ *   nominative unless the module is teaching a shape.
+ * - **Accusative, the SLOT** — M1. `Я люблю чай` is already an object sentence, but M1's liked
+ *   things are chosen so the form does not move: masculine inanimate and neuter nouns are
+ *   identical in the accusative (`чай`, `хлеб`, `молоко`, `спорт`) and `кофе` does not decline at
+ *   all. M1 names the slot and promises the ending.
+ * - **Accusative, the ENDING** — M3. The first case ending a learner writes: feminine `-а/-я`
+ *   becomes `-у/-ю` — `вода → воду`, `книга → книгу`, `музыка → музыку`. `*Я хочу вода` is THE
+ *   interference of the module.
+ * - **Genitive as a frozen partner** — M1, and only after `из`: `Я из Индии`, `Я из Москвы`. The
+ *   note says what it is — the shape `из` always takes — and does not generalise.
+ * - **Prepositional** — M7. The second ending taught: `в`/`на` + `-е` on the ordinary noun —
+ *   `стол → на столе`, `магазин → в магазине`, `Москва → в Москве`, `работа → на работе`.
+ * - **Genitive as the counting case** — M8. After 1 the noun is nominative singular, after 2–4
+ *   genitive singular, after 5 and up genitive plural: `один рубль` · `два рубля` ·
+ *   `пять рублей`. One honest note, the shapes the sentences need in `forms`, and no table.
+ * - **Dative** — M9, and PRONOUNS only: `мне холодно`, `мне нравится`, `вам`. The dative of nouns
+ *   is not taught; none of the ten jobs needs it.
+ * - **Instrumental — DEFERRED ENTIRELY.** The only instrumental shapes in L1 are the frozen time
+ *   adverbs `утром`, `днём`, `вечером`, `ночью` (M4), which the course teaches as single time
+ *   words and says are frozen. No module explains the case; no module declines a noun into it.
+ *
+ * Two consequences every module obeys. First, **direction is not a seat this level opens**: `в` +
+ * accusative for "into" is written around with `домой` (homeward) and `дома` (at home), which are
+ * adverbs and take no case at all, so M4's `в` (time) and M7's `в` (place) are the only two seats
+ * the `в` row has to answer for. Second, **a noun's shapes never sprawl**: see 5.
+ *
+ * ### 5. Every case shape of a word lives in ONE row's `forms` — and aspect pairs do not
+ *
+ * The index is cumulative and FIRST OCCURRENCE WINS, so the module that first teaches a word owns
+ * the note every later learner sees when they tap ANY shape of it. Therefore:
+ *
+ * - **All shapes on one row.** `вода · воду` (M3), `стол · столе` (M7), `рубль · рубля · рублей`
+ *   (M8), `час · часа · часов` (M4), `книга · книгу · книги` (M3, the plural added when M8 counts
+ *   them). A second row for a case form would be unreachable, and the note on the first row is
+ *   therefore written true of every shape it lists.
+ * - **The same rule for the gender pairs.** The past `пошёл · пошла · пошло · пошли` is ONE row
+ *   (M5); so is the speaker-describing `устал · устала` (M2); so is `был · была · было · были`
+ *   (M5). The gender is the SPEAKER's, and the row's note says so once.
+ * - **`быть` is ONE row across the whole level.** M5 opens it with `был · была · было · были` and
+ *   M6 EXTENDS that same row with `буду · будете · будет` rather than opening a second — a second
+ *   row would be reachable and WRONG, two notes for one lexeme. One row, one note, and that note
+ *   is the level's best weapon against the "Russian has no verb to be" slogan: the past is there,
+ *   the future is there, and the PRESENT is the empty cell.
+ * - **Aspect pairs are two words, not two forms.** `пить`/`выпить`, `читать`/`прочитать`,
+ *   `покупать`/`купить`, `идти`/`пойти` are separate lexemes and get separate rows, each owned by
+ *   the module that teaches it and each note true of its own aspect only. What travels together on
+ *   one row is one lexeme's own paradigm: `купить`'s row carries `купил · купила · купили` and
+ *   gains `куплю` in M6, because those are all the same word.
+ * - **`Индии` is one surface with two jobs**, and M1 owns it: the genitive after `из` (M1's
+ *   `Я из Индии`) and the prepositional after `в`. M1's `Индия` row lists `Индия · Индии` and its
+ *   note is written true of both seats, so a later `в Индии` cannot land on a false note.
+ *
+ * ### 6. Multi-token surfaces and the homograph owners
+ *
+ * A surface may span tokens and the resolver takes the LONGEST match first, so a multi-token
+ * surface both keeps its parts' bare keys free and CAPTURES those parts wherever the phrase
+ * appears. Russian's chunks, with their owners:
+ *
+ * - `меня зовут` (M1) — the name formula, taught whole. `Меня зовут Иван` is "me they-call Ivan";
+ *   `Моё имя — Иван` is grammatical and nobody introduces themselves that way.
+ * - `как дела` (M2) — leaves the bare `как` to M2's own "how" row (`Как вас зовут?`).
+ * - `доброе утро` (M2) — leaves `утром` free; a different surface, so no clash.
+ * - `до свидания` (M2), `каждый день` (M4), `сколько стоит` and `сколько стоят` (M8),
+ *   `у вас есть` and `у меня есть` (M8 — three tokens each, so this course's `maxSpan` is 3),
+ *   `потому что` (M9).
+ * - A bare `у` is never written on any display or pool line: `surfaceIndexKeys` splits hyphen
+ *   parts, not whitespace tokens, so `у` inside `у меня есть` earns no key of its own.
+ *
+ * And the homographs, first occurrence winning, each with an owner:
+ *
+ * - **`есть` — the big one, settled by exclusion plus one owner.** Russian's `есть` is both "to
+ *   eat" and the existential "there is". **"To eat" stays OUT of L1 entirely**: no module writes
+ *   it, food is bought (`купить хлеб`) and drunk (`пить чай`), and none of the ten jobs needs it.
+ *   That leaves one sense, and **M7 owns the bare `есть` row** — the existential "there is" of
+ *   `На столе есть книга` — with a note written true of both its seats, because M8's
+ *   `у меня есть` is the same word doing possession. M8's three-token chunks win the longest match
+ *   wherever they appear, so a tap inside one opens the possession note and a tap on a bare `есть`
+ *   opens M7's.
+ * - **`нет`** — M2, as the answer "no". Its second life as the existential negative ("there
+ *   isn't") takes the genitive of negation, which this level does not teach, so the note names
+ *   that job and says it is L2's. No L1 display writes `нет` in that sense.
+ * - **`что`** — M9, as the conjunction of `Я думаю, что …` (the comma before `что` is obligatory
+ *   in writing, unlike English "I think that"). Its question sense, "what", is named in the same
+ *   note; earlier modules ask yes/no questions and `Как вас зовут?`, so no earlier surface claims
+ *   the key.
+ * - **`в`** — M4, in the time seat (`в семь часов`), and its note must be written true of M7's
+ *   place seat too (`в магазине`), because M7's own row would be unreachable. The en-es `a`
+ *   precedent, exactly.
+ * - **`я`** — M1, with `forms` `я · меня · мне`: the subject, the object and the to-form of one
+ *   pronoun, all named in one note, so M9's `мне холодно` lands on something true. Likewise `вы`
+ *   (M2) carries `вы · вас · вам`.
+ * - **`хорошо`** — M2 ("fine", the answer), its note covering the adverb job ("well") because M9
+ *   and M10 reuse the key.
+ * - Proper nouns never index unless a word row declares them (#61), so every place or person a
+ *   sentence or a pool item names — `Иван`, `Анна`, `Москва`, `Индия` — needs a row in the module
+ *   that first writes it, or the pool rule fails the build.
+ *
+ * ### Why the en-ru ladder teaches what it teaches
+ *
+ * The jobs are levels.json's, mirrored verbatim; the brief adds which English→Russian delta each
  * job carries, sequenced so each pressure point lands in the module whose job cannot be done
- * without it: the two-step imperative and the आप→आपण trap in M1 (a request is addressed, and
- * must pick a register); तो/ती/ते and आहेत in M2 (describing a person forks Hindi's one वह by
- * gender); the full agreement paradigm — plurals at last — in M3; the place -ला and the
- * instrumental -ने in M4; मिळेल and the guest script in M5; the -ऊ या suggestion and
- * जमेल/चालेल in M6; the continuous -तोय in M7 (a phone call happens NOW); the -त नाही negative
- * and the मिळणे/सापडणे split in M8; -पेक्षा, सगळ्यात and की/किंवा in M9; and the third-person
- * ergative — त्याने/तिने, the ने withheld since L1-M5 — in M10, where a past-tense account
- * cannot dodge it. Kept deliberately OUT of L2: the genitive as a system (M2 shows one -चं
- * frame; L3 owns the rest), conditionals and reported speech (L3-M4/M5 per levels.json), the
- * passive, and the -ऊन converb — none of the ten jobs needs them. Bounds climb 8 → 10; pools
- * are authored to 12, the course's shipped size (#305).
+ * without it: the ZERO COPULA and the total absence of articles in M1 (the first sentence a
+ * learner writes has no "is" and no "a" in it, and neither omission has an English twin); the `вы`
+ * decision, intonation questions and the speaker's own gender on the predicate in M2 (a greeting
+ * is addressed to somebody, and `устал`/`устала` cannot dodge who is speaking); the first case
+ * ending in M3 (every want names a noun); conjugation classes and time words in M4; the
+ * gender-agreeing past and the aspect choice in M5 (the level's richest interference zone, and
+ * where "Russian has no to be" dies); the two futures in M6; the prepositional and existential
+ * `есть` in M7; the counting genitive and `у вас есть` in M8; dative experiencers and
+ * `потому что`/`поэтому` in M9; and recombination into turns, with word order doing the article's
+ * old work, in M10. Kept deliberately OUT of L1: the instrumental as a case, the declension of
+ * adjectives (they appear only in fixed phrases and as short-form predicates), verbs of motion as
+ * a system, the imperfective past, the genitive of negation, participles, and `ты`.
+ *
+ * There is no seam-proof fixture to replace: `content/en-ru/modules/` did not exist until the
+ * first authoring issue created it, exactly as on hi-en. Bounds climb 5 → 8, as en-es's do; pools
+ * are authored to 12 and every sentence to three variations from the first module, so en-ru never
+ * needs the retrofits #288 and #292 had to make.
  */
 
 /** PRD §5 module budget: at most 25 new words per module, every course, every level. */
@@ -1492,6 +1695,225 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         "The slogan this module attracts is the Hindi speaker's own ear: थक गया is a whole sentence, so *Am tired and *Went to the market yesterday come out once the person is established in a turn. The law: an English sentence always has a subject word, even when the context has made it obvious — I'm tired · It's very good — and the second sentence of a turn repeats the pronoun Hindi would drop. This is the mirror image of en-es's pro-drop rule and the one loud thing of the module: tag it interference and spend the mistakes here (*Am tired · *Is a good shop · *Went to the market yesterday).",
         'he vs she, at last: वह is one word for a man and a woman, and a Hindi speaker who learned he first says he for everyone — mixing them inside one turn (My sister is a teacher. *He works in Delhi.) is the tell and a mistake plate here. State it as the law M1\'s "no gender" slogan hid: nouns and verbs carry no gender, but the pronoun for a PERSON must be chosen — he for a man, she for a woman, it for a thing (M7) — and once chosen it holds for the turn. Articles in running text: the second mention of a thing takes the (I have a book. The book is on the table.) — M3\'s law across a sentence boundary, and worth one turn.',
         "Language of the fields holds to the last turn: Hindi (Devanagari) in every teaching field — rules[].text, note, trap, sound, changed, why, usage, mnemonic, cue — English only in display and forms; no glossEn on any sentence; literal wherever a turn's order moves. A turn is where an author is most tempted to slip an English aside into a note because the English is right there; do not — the note is read in a Hindi voice on screen, and hi-mr's English notes are the quirk this course does not copy.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+  },
+  'en-ru': {
+    'L1-M1': {
+      id: 'L1-M1',
+      title: 'Who I am',
+      job: 'Introduce yourself and state what you like',
+      patterns: [
+        'Меня зовут + name',
+        'Я из + place (gen.)',
+        'Я + N (nom.)',
+        'Это + N (nom.)',
+        'Я люблю + N (acc.)',
+      ],
+      notes: [
+        'THE ZERO COPULA, and it is the module. Russian writes no present-tense "to be" at all: Я студент is "I student" and Меня зовут Иван is "me they-call Ivan". There is no word to leave out and no word to put in — *Я есть студент is the English habit and THE interference of this course. Use literal on every sentence so the missing verb is visible, and tag it interference, not delta: the gap is easy to read and hard to write. The slogan this module attracts is "Russian has no verb to be"; the law replacing it is that only the PRESENT is zero — был (M5) and буду (M6) are real words, and M5 opens the one быть row that says so.',
+        'NO ARTICLES, at all. книга is "book", "a book" and "the book", and nothing marks the difference. That is a delta — one whole system with nothing to learn — but say the second half too, because M10 pays for it: the work English gives a/the is done in Russian by WORD ORDER, and new information goes last. Do not let a rule here promise that articles are simply absent.',
+        'Меня зовут is a chunk, taught whole as one two-token surface: it keeps the bare меня free and it is how a name is actually given. Моё имя — Иван is grammatical and nobody says it. The я row is opened here with forms я · меня · мне — the subject, the object and the to-form of one pronoun — and its note names all three jobs, because first occurrence wins and M9’s мне холодно will land on this row.',
+        'NOUN GENDER, by ending, with its exceptions stated rather than hidden: a noun ending in a consonant is masculine (стол, хлеб, чай), one in -а/-я is feminine (книга, вода, музыка), one in -о/-е is neuter (молоко, письмо). Two honest caveats belong in the note the first time they bite: nouns in -ь can be either and must be learned with their gender (рубль is masculine, дверь feminine), and кофе is masculine despite its -е. Gender is a property of the noun, learned with it — "-а is feminine" is memorable and incomplete (папа, мужчина are masculine).',
+        'Я люблю + object names the ACCUSATIVE SLOT without teaching an ending. Choose the liked things so the form does not move: чай, хлеб, спорт, молоко are masculine-inanimate or neuter, which look identical in the accusative, and кофе does not decline at all. Say that plainly and promise M3, where the feminine ending lands. любить is a class II verb with a stem change in the I-form only — люблю · любите — so write люблю and leave the paradigm to M4.',
+        'Я из Индии is the one place a case ending appears in M1, and it is taught as a frozen partner, not a system: из always takes the genitive, and Индия becomes Индии, Москва becomes Москвы. INDEX SEAM: Индии is ALSO the prepositional (в Индии), so M1’s Индия row carries Индия · Индии and its note is written true of both seats — a later в Индии would otherwise land on a note that says only "from".',
+        'REGISTER, ratified for the whole course and repeated here because a prompt only ever shows an author the notes: this course speaks вы, the polite address, and ты never appears in an L1 display line. M1 is all first person, so nothing here is addressed yet — but the sound and usage lines may already say that Russian will ask the learner to choose, and that this course has chosen. Write ё wherever a word has it (the course-wide policy: пошёл, всё, её, never the е-spelling), because the index keeps ё and е apart.',
+      ],
+      maxWordsPerSentence: 5,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M2': {
+      id: 'L1-M2',
+      title: 'First exchange',
+      job: 'Greetings, wellbeing, yes/no questions',
+      patterns: [
+        'Здравствуйте + , + name',
+        'Как дела?',
+        'Как вас зовут?',
+        'Вы + V-ете/-ите + ?',
+        'Да / Нет + , + <statement>',
+        'Я + Adj-short (устал / устала)',
+      ],
+      notes: [
+        'A YES/NO QUESTION MOVES NOTHING. Вы из Москвы? is the statement Вы из Москвы with a question mark — no auxiliary appears, no word changes place, and nothing corresponds to English do or are. Spoken Russian carries the question in a rising pitch on the questioned word, which is what the ? stands for; say that in sound rather than pretending punctuation is the whole story. This is a clean delta and the module should spend it: English speakers reliably over-build the question.',
+        'REGISTER, decided course-wide and stated here because this is the module that addresses somebody: this course speaks вы. Здравствуйте is the greeting (привет is the ты-tier one and belongs in a usage line, never on a hero line); Как вас зовут? asks the name; every second-person verb in L1 is the вы-form. The false slogan is "вы is just the plural of ты"; the law is that вы is BOTH the plural and the singular-polite, and it always takes the plural verb form even for one person. ты exists, takes its own endings, and is L2’s job — say that once, here.',
+        'Как дела? is the exemption, and an honest one: it contains no second-person word at all — it is verbless, "how [are the] affairs" — so it carries no ты/вы marking to get wrong. The fully polite expansion is Как у вас дела?, and the usage line says to prefer it with somebody just met. INDEX SEAM: teach как дела as ONE two-token surface, which leaves the bare как free for this module’s own "how" row in Как вас зовут?.',
+        'THE SPEAKER’S OWN GENDER IS IN THE SENTENCE. Я устал is said by a man and Я устала by a woman — the short-form predicate agrees with whoever is speaking, and English marks this nowhere. One row, forms устал · устала, and a note that says the gender is the SUBJECT’s (with вы it is the person being asked), never "the speaker’s" as a slogan — that exact imprecision is the defect the third Marathi review had to correct three times.',
+        'Short answers are Да / Нет plus the statement: Да, я из Москвы. INDEX SEAM: нет is this module’s row, meaning "no". Its second life as the existential negative ("there isn’t") takes the genitive of negation, which this level does not teach — the note names that job and says it is L2’s, and no L1 display writes нет in that sense. Same discipline on хорошо, whose row is opened here as the answer "fine" and whose note must also cover the adverb "well", because M9 and M10 reuse the key.',
+        'Other whole surfaces to claim here, each leaving a bare word free: доброе утро (which leaves утром to M4 — a different surface, so no clash) and до свидания. Spend the rest of the budget on спасибо, пожалуйста and Как вас зовут?, and keep every sentence to the greeting exchange: no wants, no past, no plans.',
+      ],
+      maxWordsPerSentence: 5,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M3': {
+      id: 'L1-M3',
+      title: 'Needs and wants',
+      job: "Say what you want and don't want",
+      patterns: [
+        'Я хочу + N (acc.)',
+        'Я не хочу + N (acc.)',
+        'Я хочу + V-inf',
+        'Вы хотите + N (acc.) + ?',
+        'Я не + V',
+      ],
+      notes: [
+        'THE FIRST CASE ENDING, and the module exists for it: a feminine noun in -а/-я becomes -у/-ю when it is the object. Я хочу воду, not *Я хочу вода — the starred form is the interference, and it is worth the module’s mistake budget. The slogan to name and replace is "the accusative is the object case, so the object changes": it does not always change, and M1 already showed why — masculine-inanimate and neuter nouns are identical in the accusative (Я хочу чай), кофе never moves at all, and only the feminine -а/-я actually shifts at this level. Stating that is what makes M1’s unchanged objects make sense in retrospect.',
+        'INDEX SEAM: every shape of a noun lives in the forms of the ONE row that first taught it. вода · воду, книга · книгу, музыка · музыку — one row each, one note each, written true of both shapes. A second row for воду would be a second note for the same word, and the earlier row would keep answering every tap anyway.',
+        'NEGATION IS ONE WORD IN ONE PLACE: не goes straight in front of the verb and nothing else moves — Я не хочу кофе. English needs a do-not auxiliary that Russian has no equivalent of, so this is a delta to celebrate. INDEX SEAM: не is this module’s row and its note has to survive every later negative — M5’s past, M6’s future, M9’s reason clauses — so write it as a rule about the particle, not about wanting.',
+        'Wanting TO DO something is хочу plus a bare infinitive: Я хочу работать, with no word for "to". English "want to" tempts a stray что or чтобы into the sentence; *Я хочу что работать does not exist and is worth showing.',
+        'хотеть is irregular and this module pays for it once: хочу · хотите (and хочешь · хочет · хотим · хотят, which the note may list but the displays do not use, because L1 addresses only вы). Keep the plural of nouns out of the grammar and in the vocabulary — книги appears as a shape on книга’s row when M8 counts them, not as a lesson here.',
+      ],
+      maxWordsPerSentence: 6,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M4': {
+      id: 'L1-M4',
+      title: 'My day',
+      job: 'Daily habits and time words',
+      patterns: [
+        'Я + V-ю/-у + каждый день',
+        'Утром / Вечером + я + V',
+        'Я встаю в + num + часов',
+        'Вы + V-ете/-ите + ?',
+        'Я часто / всегда + V',
+      ],
+      notes: [
+        'Habits live in the IMPERFECTIVE PRESENT, and this module is purely imperfective: Я работаю каждый день, Я встаю рано, Утром я пью чай. Aspect is lurking behind every one of these verbs and M5 is where it lands — name it here in one sentence ("every verb in this module is the shape Russian uses for something you do repeatedly; M5 shows the other shape and why it exists") and then leave it alone. Do not import a perfective into M4.',
+        'CONJUGATION IN TWO CLASSES, and the class is a property of the verb: class I takes -ю/-ешь/-ет/-ем/-ете/-ют (работаю · работаете, читаю · читаете) and class II takes -ю/-ишь/-ит/-им/-ите/-ят (говорю · говорите). The slogan to name and replace is "the present tense is one set of endings"; the law is that there are two sets and the verb carries which. Learn a verb with its class, exactly as a noun is learned with its gender. L1 writes only the я- and вы-forms, since ты is out.',
+        'ё, course-wide, bites first here: пить is я пью · вы пьёте and вставать is я встаю · вы встаёте. Write the ё. The index keeps ё and е apart, so the е-spelling of a ё-word is a surface this course never taught — a learner tapping it would be shown nothing.',
+        'TIME WORDS carry the module, and four of them are frozen instrumentals that this course teaches as single words: утром, днём, вечером, ночью. Say they are frozen shapes and that the case they come from is not taught at this level — that is honest, it is one sentence, and it stops an author from opening the instrumental. Beside them: рано, поздно, часто, всегда, иногда, and the two-token surface каждый день (which leaves днём, a different surface, alone).',
+        'INDEX SEAM, decided here: this module teaches the surface в first, in the clock seat (Я встаю в семь часов), so its row answers every later tap — including M7’s place seat (в магазине). Write that row true of BOTH jobs, because M7’s own row would be unreachable. The clock also pre-teaches M8’s counting rule for free: час · часа · часов are three shapes of ONE word on ONE row, and the note says after 1 it is час, after 2–4 часа, after 5 and up часов.',
+        'Keep every sentence a habit — no past, no plans, no requests — and keep the subject pronoun я on the page. Russian can drop it and colloquially does, but a dropped pronoun is a stylistic choice a beginner cannot yet control, and the verb ending here is enough of a lesson on its own.',
+      ],
+      maxWordsPerSentence: 6,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M5': {
+      id: 'L1-M5',
+      title: 'Yesterday',
+      job: 'Past tense — the first big divergence',
+      patterns: [
+        'Вчера я + V-л / V-ла',
+        'Вчера я + V-л + N (acc.)',
+        'Вчера я не + V-л / V-ла',
+        'Вы + V-ли + вчера + ?',
+        'Вчера я был / была + дома',
+      ],
+      notes: [
+        'THE PAST AGREES WITH GENDER AND NUMBER, NOT WITH PERSON. The endings are -л (m) · -ла (f) · -ло (n) · -ли (pl), and the same speaker writes a different word depending on who they are: Вчера я купил хлеб from a man, Вчера я купила хлеб from a woman. English marks none of this, and a learner has to decide something about themselves before the sentence can be written. Say SUBJECT, not speaker, as the rule — with вы it is the person addressed, and вы always takes -ли, even for one person. The slogan to name and replace is "the past is the easy tense" (one form for everybody, no auxiliary): it is easy in person and hard in gender, and ASPECT still picks the verb.',
+        '"TO BE" COMES BACK, and it kills M1’s slogan for good: был · была · было · были is a real word where the present had none. INDEX SEAM: this is ONE быть row, opened here, and M6 EXTENDS it with буду · будете · будет rather than opening a second — one lexeme, one note, and the note is where the whole shape of Russian "be" is finally told: past yes, future yes, present empty. Keep its display sentences simple and case-free: Вчера я был дома — дома is an adverb ("at home"), so no case is opened, and M6 gets домой ("homeward") the same way.',
+        'ASPECT, named and decided. Yesterday’s sentences are single finished events, so they take the PERFECTIVE: купил, выпил, прочитал, пошёл. The imperfective past (Я работал — "I was working / I used to work") is DEFERRED out of L1 and named as deferred, so the learner knows a second past exists rather than believing the one they have is all there is. быть is the one exception on the page, because был is the only past it has. INDEX SEAM: an aspect pair is TWO WORDS, not two forms — пить (M4) and выпить (M5) get separate rows, as do читать and прочитать, each note true of its own aspect. What shares a row is one lexeme’s own paradigm: купить carries купил · купила · купили, and M6 adds куплю to that same row.',
+        'THERE IS NO DID. Negation is still M3’s one word in one place, now in front of the past verb: Вчера я не купил хлеб. Nothing is added and nothing moves — a delta, and the sharpest one this module has.',
+        'ё is unavoidable here and that is a feature: пошёл is the course’s flagship ё-word and its pair пошла has none. Write both, on one row (пошёл · пошла · пошли), and let a sound line say why the two dots are on the page when Russian books usually drop them.',
+        'вчера anchors every sentence, and the vocabulary is the perfective partners of M4’s habits plus what a day actually contains. Do not spend the budget on a paradigm table: the four endings are the rule, and the sentences are the evidence.',
+      ],
+      maxWordsPerSentence: 7,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M6': {
+      id: 'L1-M6',
+      title: 'Tomorrow',
+      job: 'Future and plans',
+      patterns: [
+        'Завтра я буду + V-inf (impf.)',
+        'Завтра я + V-perf (non-past)',
+        'Завтра я не буду + V-inf',
+        'Вы будете + V-inf + завтра + ?',
+      ],
+      notes: [
+        'TWO FUTURES, and which one you get is decided by the verb, not by the meaning. An IMPERFECTIVE verb builds its future with буду plus the infinitive: Завтра я буду работать. A PERFECTIVE verb has no буду future at all — its present-tense form IS its future: Завтра я куплю хлеб, Завтра я пойду домой. The slogan to name and replace is "буду = will": буду is not a translation of will, it is half of one of the two futures, and the other half never touches it. *Я буду пойти and *Я буду купить are the classic cross-wiring and belong in a mistake block.',
+        'INDEX SEAM: буду goes on M5’s быть row (forms gain буду · будете · будет), not on a new one — one lexeme, one note, and that note now carries the complete story the course has been building since M1: no present, был in the past, буду in the future. Likewise куплю joins M5’s купить row and пойду joins its пошёл row, because they are the same words; only genuinely new lexemes get new rows here.',
+        'The perfective futures are taught as VOCABULARY with a rule beside them, not as a paradigm: the learner meets куплю and пойду in sentences and is told why they look like a present tense. Lead with буду + infinitive, which is the pattern they can build themselves from anything M4 taught.',
+        'завтра anchors the module the way вчера anchored M5, and домой (an adverb, "homeward") keeps direction out of the case system — Завтра я пойду домой opens no accusative-of-motion seat, which is deliberate: в + accusative for "into" is not a seat this level opens, so M4’s в (time) and M7’s в (place) stay the only two jobs that row has to answer for.',
+        'Negation stays exactly where M3 put it, in front of the finite verb: Завтра я не буду работать — не before буду, never before the infinitive.',
+      ],
+      maxWordsPerSentence: 7,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M7': {
+      id: 'L1-M7',
+      title: 'Where things are',
+      job: 'Locations and prepositions',
+      patterns: [
+        'Где + N + ?',
+        'N + в / на + place (prep.)',
+        'На + place (prep.) + есть + N',
+        'N + здесь / там',
+      ],
+      notes: [
+        'THE PREPOSITIONAL, the second case ending this level teaches, and the only one that is never used without a preposition — which is where its name comes from and is worth saying. The everyday shape is -е on the ordinary noun: стол → на столе, магазин → в магазине, работа → на работе, Москва → в Москве. в is broadly "inside" and на broadly "on" or "at", but the pairing is lexical as often as it is logical (на работе, на почте), so teach each place WITH its preposition rather than offering a rule that will fail by M8.',
+        'INDEX SEAM: the shapes live on the noun’s own row — стол · столе, магазин · магазине — never on a second row, and the note is written true of both. And the bare в belongs to M4 (the clock seat), so a learner tapping в here is shown M4’s row: M4’s note was written true of this seat too, and this module’s rule text carries the place job rather than relying on a new row being reachable.',
+        'EXISTENTIAL есть, and this module OWNS the row. На столе есть книга asserts that a book is there; Книга на столе says where a known book is, and drops есть entirely. That drop is the module’s comprehension work, and it is genuinely subtle: есть appears when existence is the news and vanishes when location is. INDEX SEAM: "to eat" — the other есть — stays out of L1 entirely, so this row has exactly one lexical rival, M8’s possession chunks у меня есть / у вас есть, which are the SAME word and are captured whole by the longest-match walk. Write this note true of both seats, because it is the note a learner will meet from either.',
+        'THERE IS NO DUMMY SUBJECT. English "there is" has a "there" that means nothing and an "is" that agrees; Russian has neither, so на столе есть книга is literally "on table is book". literal earns its keep on every sentence in this module — it is the only place the learner can see that the English "there" corresponds to nothing at all.',
+        'Где …? asks the question, здесь and там answer it without any case at all, and word order is already doing article work: state it once here (Книга на столе = "the book is on the table"; На столе книга = "there is a book on the table") and let M10 make it the lesson.',
+        'The slogan to name and replace is "есть means eat". The law: the есть this module teaches is the existential "there is", the same word M8 uses for possession, and the eating verb is a different lexeme this course never writes.',
+      ],
+      maxWordsPerSentence: 7,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M8': {
+      id: 'L1-M8',
+      title: 'Numbers & shopping',
+      job: 'Prices, quantities, buying',
+      patterns: [
+        'Сколько стоит + N (nom.) + ?',
+        'Сколько стоят + N-pl (nom.) + ?',
+        'У вас есть + N (nom.) + ?',
+        'У меня есть + N (nom.)',
+        'Дайте, пожалуйста + , + N (acc.)',
+        'N + стоит + num + N (gen.)',
+      ],
+      notes: [
+        'NUMBERS GOVERN THE NOUN, and that is the module’s one grammatical claim: after 1 the noun is nominative singular (один рубль), after 2, 3 and 4 it is genitive singular (два рубля), and after 5 and up it is genitive plural (пять рублей, сто рублей). Teach the shapes the sentences actually need as forms on the noun’s own row — рубль · рубля · рублей — state the rule once in one honest note, and build no declension table. The slogan to name and replace is "numbers are just words in front of a noun"; the law is that the number decides the noun’s case, which English never does. M4’s clock already showed the same split on час · часа · часов, so name the link back: it is one rule, met twice.',
+        'THE PRICE QUESTION AGREES WITH THE THING, not with the buyer: Сколько стоит книга? for one, Сколько стоят книги? for more than one. Teach сколько стоит and сколько стоят as two whole two-token surfaces, and name the link forward to M9’s мне нравится / мне нравятся — it is the same shape twice, a verb agreeing with the thing rather than with the person.',
+        'POSSESSION HAS NO VERB. У меня есть книга is literally "at me is book" — the owner sits in a prepositional phrase and the thing owned is the SUBJECT. Russian does have a verb иметь, but it is bookish and abstract (иметь право, "to have a right") and nobody uses it for owning a book — so Я имею книгу is the anglophone trap of the whole course and belongs in a mistake block, flagged as unnatural rather than as ungrammatical, which is the honest charge. INDEX SEAM: у меня есть and у вас есть are THREE-token surfaces (this course’s maxSpan is 3) that capture the есть inside them, so a tap anywhere in the phrase opens the possession note while a bare есть still opens M7’s existential row. Never write a bare у anywhere — it earns no key of its own, because surfaceIndexKeys splits hyphen parts, not whitespace.',
+        'The shop script is the module’s usable half: Дайте, пожалуйста, воду (дайте is the вы-form imperative — the register decision again, and the only imperative L1 teaches), спасибо, рубль. Keep the numbers to what the sentences use — один/одна, два/две, три, четыре, пять, десять, двадцать, сто — and note that один and два are the only two that change for gender (один рубль · одна книга; два рубля · две книги).',
+        'Every place, price and product a pool item names has to be taught by a word row somewhere in the cumulative index, or the build fails on it. Plan the pool against the index, not against the sentences.',
+      ],
+      maxWordsPerSentence: 7,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M9': {
+      id: 'L1-M9',
+      title: 'Feelings & opinions',
+      job: 'Why — because and so',
+      patterns: [
+        '<statement> + , потому что + <statement>',
+        '<statement> + , поэтому + <statement>',
+        'Почему + <question> + ?',
+        'Мне + Adv (холодно / жарко)',
+        'Мне нравится + N (nom.)',
+        'Я думаю, что + <statement>',
+      ],
+      notes: [
+        'потому что and поэтому map cleanly onto "because" and "so", and the clean mapping is the delta: потому что introduces the REASON, поэтому the CONSEQUENCE, and the same two facts written in the opposite order give the pair. Build the sentences in pairs — Я не хочу работать, потому что я устал · Я устал, поэтому я не хочу работать — and make the comprehension pool test the choice. INDEX SEAM: потому что is ONE two-token surface, which leaves the bare что free for this module’s own conjunction row.',
+        'THE COMMA IS OBLIGATORY. Russian writes a comma before потому что and before что, always — Я думаю, что это хорошо. English drops "that" and drops the comma; Russian does neither. It is a punctuation rule and it is not optional, so say it as a law rather than a preference. INDEX SEAM: что is this module’s row, as the conjunction; its note names the question sense ("what") too, since no earlier module claimed the key and a later learner may tap it in either job.',
+        'DATIVE EXPERIENCERS — this course’s gustar, and the interference to spend the module on. Мне холодно is "to-me [it is] cold", with no subject at all and no verb: the person who feels something goes in the DATIVE, and the English "I am cold" pattern (*Я холодный) says that you are a cold person. Мне нравится Москва is the same shape with a subject: the thing liked is the SUBJECT, so the verb agrees with IT — мне нравится книга, мне нравятся книги — and мне never changes. The slogan to name and replace is "мне нравится is Russian for I like"; the law is that the thing does the pleasing and the person is the one pleased, exactly as in M8’s Сколько стоят книги?.',
+        'INDEX SEAM: мне is a shape of я and belongs to M1’s row, which was written with forms я · меня · мне and a note naming all three jobs — so a tap here lands on something true. This module’s rule text carries the dative lesson; no second я row is opened, and none would be reachable.',
+        'Feelings that DO take a subject use the short-form predicate from M2, which agrees with whoever is being described: Я устал · Я устала. Keep the two shapes apart in the rules — мне холодно has no subject and cannot agree with anything; я устал has one and must.',
+        'Почему …? asks the question, and its answer is потому что; they look alike, they are two words, and the module must write both often enough that the learner sees the difference.',
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M10': {
+      id: 'L1-M10',
+      title: 'Connected talk',
+      job: 'Short 2–3 sentence exchanges',
+      patterns: [
+        '<M1–M9 pattern> + <M1–M9 pattern>',
+        '<question> → <answer + потому что + reason>',
+        '<statement> + и / но + <statement>',
+      ],
+      notes: [
+        'Each item is a TURN of 2–3 short sentences, not one long one — a greeting and its answer, a question and its reply, a statement with a reason and a follow-up. The per-sentence bound applies to each sentence inside the turn, and the turn is what the learner writes.',
+        'Recombination is the lesson: nearly everything comes from M1–M9. The honest new spend is the joiners that hold a turn together — и, но, тоже, потом — and the third-person pronouns.',
+        'WORD ORDER DOES THE ARTICLE’S OLD WORK, and this is where M1’s "no articles" promise is paid. The slogan to name and replace is "no articles — one thing less to learn"; the law is that the article’s job moved into the ORDER, and new information goes LAST: Книга на столе is "the book is on the table" (we know the book; where it is, is the news) and На столе книга is "there is a book on the table" (we know the table; the book is the news). Both are correct Russian and they are not interchangeable. Build at least one comprehension pair on exactly this.',
+        'он · она · оно · они refer to things as well as people, by GRAMMATICAL gender, not by sex: a table is он, a book is она, milk is оно. English "it" covers all three, so an English speaker will reach for оно and be wrong most of the time. One row, forms он · она · оно · они, note written true of the thing-uses.',
+        'KEEP THE SUBJECT PRONOUN. Russian can drop я and colloquially does, especially in answers, but the ending alone does not always identify the person (the past agrees with gender and number, not person, so был with no pronoun is genuinely ambiguous) and a beginner cannot yet judge when the drop reads as natural rather than clipped. So L1 writes the pronoun, and this module says why rather than pretending Russian requires it.',
+        'Keep the turns everyday and symmetric, and reuse the register decision on every addressed line: greeting → wellbeing → plan (Здравствуйте! Как дела? · Хорошо, спасибо. · Завтра я буду работать.); want → reason → buy.',
       ],
       maxWordsPerSentence: 8,
       newWordCap: NEW_WORD_CAP,

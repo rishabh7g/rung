@@ -262,6 +262,41 @@ plus the owner's authority, exactly the other three courses', and the **88 open 
 naturalness first. Graduating the course ships LLM-reviewed English to Hindi speakers; it does not
 close that gap.
 
+**en-ru ships (#343, 2026-08-30) — the product has five courses, and the fifth is the first
+written in a non-Latin script the app had to bundle a face for.** Ten L1 rungs authored against
+ten briefs (#339 — `tools/course-briefs.ts`, "en-ru: the six decisions a brief must settle":
+`вы` for the whole of L1, a fixed case plan with the instrumental deferred, perfective-only past,
+the zero copula as a delta to celebrate, `ё` and the case endings as index seams), reviewed in
+[`docs/28-llm-review-en-ru-L1-M1-M2.md`](docs/28-llm-review-en-ru-L1-M1-M2.md),
+[`docs/29-llm-review-en-ru-L1-M3-M5.md`](docs/29-llm-review-en-ru-L1-M3-M5.md) and
+[`docs/30-llm-review-en-ru-L1-M6-M10.md`](docs/30-llm-review-en-ru-L1-M6-M10.md), and shipping on
+the same LLM-review-plus-owner-authority bar as the other four. 100 sentences, 120 comprehension
+pool items, three variations on every sentence and a 215-surface cumulative index, with zero
+unresolved tokens.
+
+**It could not ship until the app could draw it.** Mukta bundles no Cyrillic, and en-ru is a
+`native` course — the Cyrillic IS the hero line, not a quiet secondary one. #325 bundled the face
+(Source Sans 3's `cyrillic` subset, already second in `--font-devanagari`) and mapped `ru` in
+`SCRIPT_BY_LANGUAGE_TAG`; this graduation is the moment its cut grows from a near-empty
+placeholder over the real repertoire: **source-sans-3 5,484 → 20,280 bytes**. The `unread-script`
+payload row — script subsets bundled ahead of the course that reads them — drops from 3 files to
+**zero** as those cuts move into `course:en-ru`, which is that row working exactly as designed.
+
+Budget: `course:en-ru` **101.9 KiB** gzip (26 files) against a 360 KiB `COURSE_LIMIT`,
+`precache:en-ru` 317.2 KiB, `shell` 215.3 KiB. `course:hi-mr` stays 345.6 KiB — adding a fifth
+course moved no other course's row. The chrome is English (`revealLabel` = "Reveal the Russian")
+and the Settings switcher offers it to an English reader as **Russian**. Its L2/L3 ladders stay
+`draft: true` — placeholder lists, nothing authored.
+
+**No native or fluent-Russian reviewer has read a word of it.** The bar en-ru clears is LLM review
+plus the owner's authority, and the **78 open questions** across the three review docs are what a
+fluent-Russian pass still owes. Four of them are decisions a native might overturn wholesale — the
+`вы`-only register, `Как дела?` inside it, the perfective-only past, and the deferred instrumental
+— and the riskiest single line is `Ещё чай, пожалуйста`, which may want the partitive `чаю` that
+L1 deliberately does not teach. **Every `sound` line in the course was written from description,
+never from listening**, and the intonation claims underpinning M2 are the least safe of them.
+Graduating the course ships LLM-reviewed Russian to English speakers; it does not close that gap.
+
 The payload budget holds, because #207 made it per learner: `course:en-es` **71.3 KiB** gzip
 against 360 and `course:en-ar` **96.6 KiB** against 360, with `course:hi-mr` **byte-identical**
 at 337.9 KiB across both graduations — a Spanish learner is never charged for hi-mr's Devanagari

@@ -7,12 +7,14 @@
  * so the loader test and the boot tests cannot drift into disagreeing about the shape.
  *
  * **No row carries `fixture`.** en-es graduated in #195, en-ar in #202, hi-en — Hindi (L1) →
- * English (L2) — in #273, and en-it — English (L1) → Italian (L2), added behind the gate in #332
- * and authored in #334–#336 — in #337, so all five courses ship and a strict build emits the same
- * five rows (minus the dev keys). The Settings smoke (`src/screens/SettingsScreen.test.tsx`) and
- * the authored-rung walks (`src/course/hiEnAuthored.test.tsx`, `src/course/enItAuthored.test.tsx`)
- * reach the later courses through this copy, without a browser. The `fixture` seam itself is still
- * tested — the loader test flags a row of its own.
+ * English (L2) — in #273, en-ru — English (L1) → Russian (L2), added behind the gate in #338 and
+ * authored in #340–#342 — in #343, and en-it — English (L1) → Italian (L2), added in #332 and
+ * authored in #334–#336 — in #337. So all SIX courses ship and a strict build emits the same six
+ * rows (minus the dev keys). The Settings smoke (`src/screens/SettingsScreen.test.tsx`) and the
+ * authored-rung walks (`src/course/hiEnAuthored.test.tsx`, `src/course/enRuAuthored.test.tsx`,
+ * `src/course/enItAuthored.test.tsx`) reach the later courses through this copy, without a
+ * browser. The `fixture` seam itself is still proved, on a synthetic row, in
+ * `src/course/manifest.test.ts`.
  */
 import { vi } from 'vitest';
 import { completeStrings } from './courseStrings.ts';
@@ -65,6 +67,17 @@ export const DEV_MANIFEST = {
       l2Tag: 'en',
       l2Dir: 'ltr',
       pairLabel: 'hindi → english',
+      scriptMode: 'native',
+      dir: 'ltr',
+    },
+    {
+      id: 'en-ru',
+      l1: 'English',
+      l2: 'Russian',
+      l1Tag: 'en',
+      l2Tag: 'ru',
+      l2Dir: 'ltr',
+      pairLabel: 'english → russian',
       scriptMode: 'native',
       dir: 'ltr',
     },
