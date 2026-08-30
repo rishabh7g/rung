@@ -1,0 +1,563 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M3",
+  "title": "Needs and wants",
+  "job": "Say what you want and don't want",
+  "prerequisites": ["L1-M2"],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 6,
+    "allowedTenses": ["simple_present", "present_conditional"],
+    "allowedPatterns": [
+      "Voglio + un/una + N",
+      "Non voglio + N",
+      "Voglio + V-inf",
+      "Vorrei + un/una + N",
+      "Un po' di + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Wanting to DO something is voglio plus a bare infinitive: Voglio mangiare. There is no word for \"to\" in it, and nothing may stand in the gap — neither a nor di."
+    },
+    {
+      "tag": "delta",
+      "text": "Negation is ONE word in ONE place: non, straight in front of the verb, and nothing else in the sentence moves — Non voglio il caffè. English needs a \"do not\" helper that Italian has no equivalent of."
+    },
+    {
+      "tag": "delta",
+      "text": "The indefinite article picks its shape from the sound that follows it: un before most masculine nouns (un caffè, un libro), uno before a masculine noun starting with s + consonant or with z (uno zaino, uno studente), una before a feminine noun (una pizza), un' before a feminine noun starting with a vowel (un'amica)."
+    },
+    {
+      "tag": "interference",
+      "text": "The plural is a change of the last vowel and never an added -s: libro → libri, pizza → pizze, studente → studenti. -o becomes -i, -a becomes -e, and -e becomes -i whatever the noun's gender."
+    },
+    {
+      "tag": "delta",
+      "text": "An adjective normally FOLLOWS its noun and agrees with it: una casa grande, un libro italiano, una pizza italiana. English puts the adjective in front and never inflects it, so both halves are new."
+    },
+    {
+      "tag": "delta",
+      "text": "vorrei is the polite want — \"I would like\" — and in this course it is one of the two things that carry politeness. voglio is direct without being rude: a friend at a table, a child to a parent."
+    },
+    {
+      "tag": "free",
+      "text": "volere names its person in the ending, like every verb so far: voglio (I) · vuoi (you) · vuole (he, she)."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M3-S01",
+      "display": "Voglio un caffè",
+      "cue": "I want a coffee",
+      "glossEn": "lit. \"Want a coffee\" — the \"I\" is inside voglio",
+      "literal": "I-want a coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Voglio",
+            "cue": "I want",
+            "tag": "delta",
+            "forms": ["Voglio", "vuoi", "vuole"],
+            "note": "volere — to want. The ending names the person: voglio (I) · vuoi (you) · vuole (he, she). It is direct without being rude; the softer vorrei arrives in S08."
+          },
+          {
+            "display": "un",
+            "cue": "a · an",
+            "tag": "delta",
+            "forms": [],
+            "note": "The masculine indefinite article, and the everyday one: un caffè, un libro, un amico. It changes to uno before a masculine noun starting with s + consonant or with z."
+          }
+        ],
+        "rules": [2, 6]
+      },
+      "trap": "English chooses between \"a coffee\" and \"some coffee\" by how much you mean. Italian's indefinite article does not care about the amount — it changes for the SOUND of the noun behind it.",
+      "sound": "VO-lyo. The gli is one sound, the ly of \"million\" pressed together — the g is never heard on its own.",
+      "variations": [
+        {
+          "display": "Vuoi un caffè?",
+          "cue": "Do you want a coffee?",
+          "changed": "voglio → vuoi and a question mark: the same want, asked"
+        },
+        {
+          "display": "Voglio un libro",
+          "cue": "I want a book",
+          "changed": "swap what you want — un holds, because libro is masculine too"
+        },
+        {
+          "display": "Non voglio un caffè",
+          "cue": "I don't want a coffee",
+          "changed": "non in front of the verb, and nothing else moves"
+        }
+      ],
+      "mistake": {
+        "display": "Voglio uno caffè",
+        "why": "uno stands only before s + consonant or z. Before caffè the article is un."
+      },
+      "usage": "Asking for something plainly — at a table with friends, or at home.",
+      "register": "informal",
+      "mnemonic": "un is the short one, for the words that need no help."
+    },
+    {
+      "id": "L1-M3-S02",
+      "display": "Voglio una pizza",
+      "cue": "I want a pizza",
+      "glossEn": "lit. \"Want a pizza\" — una because pizza is feminine",
+      "literal": "I-want a pizza",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "una",
+            "cue": "a · an",
+            "tag": "delta",
+            "forms": [],
+            "note": "The feminine indefinite article: una pizza, una casa. Before a feminine noun starting with a vowel it loses its own vowel and joins on — un'amica."
+          },
+          {
+            "display": "pizza",
+            "cue": "pizza",
+            "tag": "free",
+            "forms": ["pizza", "pizze"],
+            "note": "Feminine: la pizza (one) · le pizze (more than one). The plural is the last vowel changing from -a to -e."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "English \"a\" never changes shape. Italian's does, and gender is what decides: una for a feminine noun, un for most masculine ones.",
+      "sound": "PIT-tsa. The double z is a doubled \"ts\", held twice as long as a single one — Italian's doubled consonants are heard, not just written.",
+      "variations": [
+        {
+          "display": "Voglio le pizze",
+          "cue": "I want the pizzas",
+          "changed": "more than one: the noun's -a becomes -e, and the article goes plural with it"
+        },
+        {
+          "display": "Vuoi una pizza?",
+          "cue": "Do you want a pizza?",
+          "changed": "voglio → vuoi: the same want, asked of you"
+        },
+        {
+          "display": "Voglio una pizza italiana",
+          "cue": "I want an Italian pizza",
+          "changed": "the adjective goes behind the noun and agrees with it — italiana"
+        }
+      ],
+      "mistake": {
+        "display": "Voglio un pizza",
+        "why": "pizza is feminine, so the article is una: Voglio una pizza."
+      },
+      "usage": "Ordering, or saying what you feel like eating.",
+      "register": "informal",
+      "mnemonic": "una ends in -a because pizza does."
+    },
+    {
+      "id": "L1-M3-S03",
+      "display": "Voglio uno zaino",
+      "cue": "I want a backpack",
+      "glossEn": "lit. \"Want a backpack\" — uno, because zaino starts with z",
+      "literal": "I-want a backpack",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "uno",
+            "cue": "a · an",
+            "tag": "delta",
+            "forms": [],
+            "note": "The masculine article for the awkward openings: a noun starting with s + consonant or with z takes uno, not un — uno zaino, uno studente. It is the same shift that gives the plural gli instead of i."
+          },
+          {
+            "display": "zaino",
+            "cue": "backpack",
+            "tag": "free",
+            "forms": ["zaino", "zaini"],
+            "note": "Masculine: lo zaino (one) · gli zaini (more than one). Its z is what pulls uno and lo in front of it."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "un is right nearly all the time, which is exactly why this one is missed. It is the noun's opening SOUND, not its meaning, that pulls uno.",
+      "sound": "DZAI-no. Italian z at the start of a word is often a \"dz\", and -ai- is one glide, not two syllables.",
+      "variations": [
+        {
+          "display": "Vuoi uno zaino?",
+          "cue": "Do you want a backpack?",
+          "changed": "voglio → vuoi: the same want, asked — and uno is untouched by it"
+        },
+        {
+          "display": "Voglio un libro",
+          "cue": "I want a book",
+          "changed": "an ordinary masculine opening, so un comes back"
+        },
+        {
+          "display": "Non voglio uno zaino",
+          "cue": "I don't want a backpack",
+          "changed": "non in front of the verb; the article is untouched by it"
+        }
+      ],
+      "mistake": {
+        "display": "Voglio un zaino",
+        "why": "A z at the start of the noun pulls uno: Voglio uno zaino."
+      },
+      "usage": "Shopping, or saying what you need for a trip.",
+      "register": "informal",
+      "mnemonic": "uno is the long article for the words that start with a mouthful."
+    },
+    {
+      "id": "L1-M3-S04",
+      "display": "Non voglio il caffè",
+      "cue": "I don't want the coffee",
+      "glossEn": "lit. \"Not want the coffee\" — one word does the whole negative",
+      "literal": "Not I-want the coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Non",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [],
+            "note": "The whole negative, in one word, standing immediately in front of the verb: Non voglio, Non sono, Non mi piace. Nothing else in the sentence changes, and nothing else is added — Italian has no helper answering to English \"do not\"."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "English builds a negative out of two pieces — do plus not — and neither has an Italian twin. Put non in front of the verb and stop.",
+      "sound": "NON, one short syllable with an open o, and it leans onto the verb behind it: non voglio comes out in one breath.",
+      "variations": [
+        {
+          "display": "Non voglio la pizza",
+          "cue": "I don't want the pizza",
+          "changed": "swap what you are refusing — non does not move"
+        },
+        {
+          "display": "Non sono stanco",
+          "cue": "I'm not tired",
+          "changed": "another verb, same position: non goes in front of whatever the verb is"
+        },
+        {
+          "display": "Non vuoi il caffè?",
+          "cue": "Don't you want the coffee?",
+          "changed": "voglio → vuoi and a question mark — a negative question needs nothing added either"
+        }
+      ],
+      "mistake": {
+        "display": "Voglio non il caffè",
+        "why": "non goes in FRONT of the verb, never after it: Non voglio il caffè."
+      },
+      "usage": "Turning something down without explaining yourself.",
+      "register": "informal",
+      "mnemonic": "non stands guard in front of the verb."
+    },
+    {
+      "id": "L1-M3-S05",
+      "display": "Voglio mangiare",
+      "cue": "I want to eat",
+      "glossEn": "lit. \"Want eat\" — there is no word for \"to\"",
+      "literal": "I-want eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mangiare",
+            "cue": "to eat",
+            "tag": "delta",
+            "forms": [],
+            "note": "The plain form of the verb — what a dictionary lists. Italian's -are ending IS the English \"to\", so mangiare is already \"to eat\" and needs nothing in front of it."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English \"want to eat\" has a \"to\" in it, and the hand reaches for a or di to fill the gap. After volere there is no gap: Voglio mangiare.",
+      "sound": "man-JA-re. The gi is the j of \"jam\", one sound, and the final -e is pronounced.",
+      "variations": [
+        {
+          "display": "Vuoi mangiare?",
+          "cue": "Do you want to eat?",
+          "changed": "voglio → vuoi: the infinitive behind it does not move at all"
+        },
+        {
+          "display": "Non voglio mangiare",
+          "cue": "I don't want to eat",
+          "changed": "non in front of the verb — the infinitive stays where it is"
+        },
+        {
+          "display": "Voglio mangiare una pizza",
+          "cue": "I want to eat a pizza",
+          "changed": "the infinitive takes its own object, and the frame still holds"
+        }
+      ],
+      "mistake": {
+        "display": "Voglio di mangiare",
+        "why": "Nothing stands between volere and its infinitive — no di, no a. Voglio mangiare."
+      },
+      "usage": "Saying what you feel like doing, at any hour.",
+      "register": "informal",
+      "mnemonic": "-are is the \"to\": mangiare is already \"to eat\"."
+    },
+    {
+      "id": "L1-M3-S06",
+      "display": "Voglio bere un caffè",
+      "cue": "I want to drink a coffee",
+      "glossEn": "lit. \"Want drink a coffee\"",
+      "literal": "I-want drink a coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bere",
+            "cue": "to drink",
+            "tag": "delta",
+            "forms": [],
+            "note": "to drink. Its plain form ends in -ere rather than -are — the second of Italian's three verb classes — and after volere it stands bare, exactly as mangiare does."
+          }
+        ],
+        "rules": [0, 6]
+      },
+      "trap": "English can say \"have a coffee\" and mean drinking it. Italian will not: avere is for owning, and drinking is bere.",
+      "sound": "BE-re, two clear syllables, and the single r is one tap of the tongue.",
+      "variations": [
+        {
+          "display": "Non voglio bere il caffè",
+          "cue": "I don't want to drink the coffee",
+          "changed": "non in front, the two verbs untouched behind it"
+        },
+        {
+          "display": "Vuoi bere un caffè?",
+          "cue": "Do you want to drink a coffee?",
+          "changed": "voglio → vuoi: the want moves to you, the infinitive stays"
+        },
+        {
+          "display": "Voglio bere una birra",
+          "cue": "I want to drink a beer",
+          "changed": "swap the drink — and una, because birra is feminine"
+        }
+      ],
+      "mistake": {
+        "display": "Voglio a bere un caffè",
+        "why": "No a. volere takes the bare infinitive: Voglio bere un caffè."
+      },
+      "usage": "Suggesting a stop at a bar, or saying what you are after.",
+      "register": "informal",
+      "mnemonic": "bere is short because a drink is quick."
+    },
+    {
+      "id": "L1-M3-S07",
+      "display": "Non voglio studiare oggi",
+      "cue": "I don't want to study today",
+      "glossEn": "lit. \"Not want study today\" — nothing is added for the negative or the \"to\"",
+      "literal": "Not I-want study today",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "studiare",
+            "cue": "to study",
+            "tag": "free",
+            "forms": [],
+            "note": "to study — an -are verb like mangiare, and it carries its own object: studiare l'italiano."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Two English pieces are missing at once here, and both are missing on purpose: no \"do\" in front of the negative, and no \"to\" before the second verb.",
+      "sound": "stu-DYA-re. The -dia- is one syllable, DYA, not dee-ah.",
+      "variations": [
+        {
+          "display": "Voglio studiare oggi",
+          "cue": "I want to study today",
+          "changed": "drop non and the sentence turns positive — nothing else moves"
+        },
+        {
+          "display": "Non voglio studiare",
+          "cue": "I don't want to study",
+          "changed": "drop the time word: it was never holding the sentence together"
+        },
+        {
+          "display": "Vuoi studiare l'italiano?",
+          "cue": "Do you want to study Italian?",
+          "changed": "voglio → vuoi, and the infinitive takes an object of its own"
+        }
+      ],
+      "mistake": {
+        "display": "Non voglio a studiare oggi",
+        "why": "No a between volere and its infinitive — and non is already doing all the negating this sentence needs."
+      },
+      "usage": "Saying no to a plan, with the reason left out.",
+      "register": "informal",
+      "mnemonic": "Two English words vanish here: \"do\" and \"to\"."
+    },
+    {
+      "id": "L1-M3-S08",
+      "display": "Vorrei una pizza",
+      "cue": "I'd like a pizza",
+      "glossEn": "lit. \"Would-want a pizza\" — the polite want",
+      "literal": "I-would-like a pizza",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Vorrei",
+            "cue": "I'd like",
+            "tag": "delta",
+            "forms": [],
+            "note": "The polite want — \"I would like\". It is volere in another shape, and it is what you say across a counter or to someone you have just met. voglio is not rude; vorrei is simply softer, and in this course it is one of the two things carrying politeness."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "English softens a request from outside the verb — please, could I, would you mind. Italian can soften it inside the verb, and then the sentence needs nothing else.",
+      "sound": "vor-REY. The double r is trilled longer than a single one, and -ei is one glide.",
+      "variations": [
+        {
+          "display": "Vorrei un caffè",
+          "cue": "I'd like a coffee",
+          "changed": "swap what you are asking for — un, because caffè is masculine"
+        },
+        {
+          "display": "Voglio una pizza",
+          "cue": "I want a pizza",
+          "changed": "the direct want instead — fine among friends, blunt at a counter"
+        },
+        {
+          "display": "Vorrei mangiare una pizza",
+          "cue": "I'd like to eat a pizza",
+          "changed": "vorrei takes a bare infinitive too, exactly as voglio does"
+        }
+      ],
+      "mistake": {
+        "display": "Vorrebbe una pizza",
+        "why": "vorrebbe is the polite Lei form, which this course does not teach. Speaking as yourself it is vorrei."
+      },
+      "usage": "Ordering, asking, or saying what you would like when you are not among friends.",
+      "register": "neutral",
+      "mnemonic": "The extra r in vorrei is the extra politeness."
+    },
+    {
+      "id": "L1-M3-S09",
+      "display": "Voglio un po' di pane",
+      "cue": "I want a bit of bread",
+      "glossEn": "lit. \"Want a bit of bread\"",
+      "literal": "I-want a bit of bread",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "un po' di",
+            "cue": "a bit of · some",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"A bit of\", and it is the everyday way to ask for some of something. The apostrophe is not decoration: po' is poco with its ending cut off, and the apostrophe is the cut. It never comes off, and it is always the straight one."
+          },
+          {
+            "display": "pane",
+            "cue": "bread",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine — il pane — even though it ends in -e, which is an ending both genders use. Like English \"bread\", it is not usually counted."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "English has two ways in — \"some bread\" and \"a bit of bread\" — and neither translates piece by piece. un po' di is one thing, learned whole.",
+      "sound": "The apostrophe is a cut, not a sound: po' is simply \"po\", short. The three words run together — oon-po-DEE.",
+      "variations": [
+        {
+          "display": "Vorrei un po' di pane",
+          "cue": "I'd like a bit of bread",
+          "changed": "voglio → vorrei: the polite want in front of the same phrase"
+        },
+        {
+          "display": "Voglio un po' di musica",
+          "cue": "I want a bit of music",
+          "changed": "swap what you want some of — un po' di never changes"
+        },
+        {
+          "display": "Non voglio un po' di pane",
+          "cue": "I don't want a bit of bread",
+          "changed": "non in front of the verb; the phrase behind it is untouched"
+        }
+      ],
+      "mistake": {
+        "display": "Voglio un po di pane",
+        "why": "po' keeps its apostrophe — it is poco with the ending cut away, and the apostrophe is what says so."
+      },
+      "usage": "Asking for some of something at a table, without naming an amount.",
+      "register": "informal",
+      "mnemonic": "po' is poco with its tail cut off, and the apostrophe is the scar."
+    },
+    {
+      "id": "L1-M3-S10",
+      "display": "Voglio una casa grande",
+      "cue": "I want a big house",
+      "glossEn": "lit. \"Want a house big\"",
+      "literal": "I-want a house big",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "casa",
+            "cue": "house · home",
+            "tag": "free",
+            "forms": ["casa", "case"],
+            "note": "Feminine: la casa (one) · le case (more than one). It covers both \"house\" and \"home\"."
+          },
+          {
+            "display": "grande",
+            "cue": "big",
+            "tag": "delta",
+            "forms": ["grande", "grandi"],
+            "note": "big. An adjective ending in -e has ONE shape for both genders — una casa grande, un libro grande — and goes to -i in the plural for both: case grandi, libri grandi."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "English puts the adjective in front of the noun and never changes it. Italian normally puts it behind and makes it agree — though grande, ending in -e, agrees only in number.",
+      "sound": "CA-za and GRAN-de. The single s between two vowels is a z through much of the north and a plain s in Tuscany; both are standard.",
+      "variations": [
+        {
+          "display": "Voglio una casa italiana",
+          "cue": "I want an Italian house",
+          "changed": "an -o/-a adjective instead, so it agrees in gender too — italiana"
+        },
+        {
+          "display": "Voglio un libro grande",
+          "cue": "I want a big book",
+          "changed": "a masculine noun, and grande does not move: -e adjectives have one shape"
+        },
+        {
+          "display": "Le case sono grandi",
+          "cue": "The houses are big",
+          "changed": "plural on both sides — case and grandi, and sono for \"they are\""
+        }
+      ],
+      "mistake": {
+        "display": "Voglio una casa granda",
+        "why": "grande ends in -e and has one shape for both genders: una casa grande, un libro grande. There is no granda."
+      },
+      "usage": "Saying what you are after when the thing alone is not enough.",
+      "register": "informal",
+      "mnemonic": "An -e adjective is lazy: it changes for number and not for gender."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M3-C01", "display": "Vorrei un caffè", "cue": "I'd like a coffee" },
+    { "id": "L1-M3-C02", "display": "Non voglio la pizza", "cue": "I don't want the pizza" },
+    { "id": "L1-M3-C03", "display": "Voglio mangiare una pizza", "cue": "I want to eat a pizza" },
+    {
+      "id": "L1-M3-C04",
+      "display": "Non voglio bere il caffè",
+      "cue": "I don't want to drink the coffee"
+    },
+    { "id": "L1-M3-C05", "display": "Vorrei uno zaino", "cue": "I'd like a backpack" },
+    { "id": "L1-M3-C06", "display": "Voglio studiare l'italiano", "cue": "I want to study Italian" },
+    {
+      "id": "L1-M3-C07",
+      "display": "Non vorrei mangiare oggi",
+      "cue": "I wouldn't like to eat today"
+    },
+    { "id": "L1-M3-C08", "display": "Vorrei una casa grande", "cue": "I'd like a big house" },
+    { "id": "L1-M3-C09", "display": "Vorrei un po' di pane", "cue": "I'd like a bit of bread" },
+    { "id": "L1-M3-C10", "display": "Le pizze sono buone", "cue": "The pizzas are good" },
+    { "id": "L1-M3-C11", "display": "Il pane italiano è buono", "cue": "Italian bread is good" },
+    { "id": "L1-M3-C12", "display": "Vuoi un caffè?", "cue": "Do you want a coffee?" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

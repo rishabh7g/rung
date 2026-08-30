@@ -1,0 +1,556 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M5",
+  "title": "Yesterday",
+  "job": "Past tense — the first big divergence",
+  "prerequisites": ["L1-M4"],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": ["simple_present", "passato_prossimo"],
+    "allowedPatterns": [
+      "Ieri + ho + V-participle",
+      "Ieri + sono + andato/andata + a + place",
+      "Ieri non ho + V-participle",
+      "Che cosa hai + V-participle + ieri?"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The everyday Italian past is TWO words: a helper plus a participle — ho mangiato. There is no separate one-word past to reach for at this level, and nothing is fronted to make a question or a negative out of it."
+    },
+    {
+      "tag": "interference",
+      "text": "The helper splits, and this is the module's one loud thing. Most verbs take avere: ho mangiato, ho bevuto, ho parlato. A short fixed set takes essere — going, coming, staying, being, becoming, and every reflexive verb: sono andato, sono stata. It is a LIST to learn, not a category to derive: camminare (\"to walk\") is motion and still takes avere."
+    },
+    {
+      "tag": "delta",
+      "text": "With essere the participle agrees with the subject, exactly like an adjective: sono andato (a man) · sono andata (a woman) · sono andati (more than one). With avere it never moves at all: ho mangiato, whoever is speaking."
+    },
+    {
+      "tag": "delta",
+      "text": "The participle is built from the verb's class: -are gives -ato (parlare → parlato), -ere gives -uto (bere → bevuto), -ire gives -ito (dormire → dormito). Irregular ones exist and are learned one at a time."
+    },
+    {
+      "tag": "delta",
+      "text": "non goes in front of the WHOLE verb, helper included: Non ho studiato, never Ho non studiato. English splits its negative around the helper; Italian never splits anything."
+    },
+    {
+      "tag": "interference",
+      "text": "ho mangiato translates \"I ate\" as readily as \"I have eaten\". One Italian tense covers both English pasts in ordinary speech, so there is no choice to make and no \"did\" to invent."
+    },
+    {
+      "tag": "delta",
+      "text": "Italian has a second past, the imperfetto (mangiavo, ero, avevo), for habits and background. It belongs to a later level; every sentence here is anchored with ieri, so nothing in this module needs it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M5-S01",
+      "display": "Ieri ho mangiato una pizza",
+      "cue": "Yesterday I ate a pizza",
+      "glossEn": "lit. \"Yesterday I-have eaten a pizza\"",
+      "literal": "Yesterday I-have eaten a pizza",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Ieri",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [],
+            "note": "yesterday. It stands at the front or at the end and needs no preposition — the same freedom oggi has."
+          },
+          {
+            "display": "ho",
+            "cue": "I have",
+            "tag": "delta",
+            "forms": ["ho", "hai", "ha"],
+            "note": "avere — to have. It does two jobs in this course. Here it is the HELPER that builds the past: ho mangiato, hai mangiato, ha mangiato. On its own it is plain possession, and in M9 it is what Italian uses for hunger and cold: ho fame. The h is silent in every one of these shapes."
+          },
+          {
+            "display": "mangiato",
+            "cue": "eaten",
+            "tag": "delta",
+            "forms": [],
+            "note": "The participle of mangiare — an -are verb, so its ending is -ato. Behind avere it never changes shape, whoever is speaking."
+          }
+        ],
+        "rules": [0, 1, 3, 5]
+      },
+      "trap": "English has one word for the past — \"ate\". Italian has two, and both are compulsory: the helper says who, the participle says what.",
+      "sound": "YEH-ri: the initial i is a y-glide, so it is two syllables. In ho the h is silent — always, in every Italian word — so it is simply \"o\".",
+      "variations": [
+        {
+          "display": "Ieri ho mangiato il pane",
+          "cue": "Yesterday I ate bread",
+          "changed": "swap what was eaten — the two-word verb is untouched"
+        },
+        {
+          "display": "Hai mangiato una pizza?",
+          "cue": "Did you eat a pizza?",
+          "changed": "ho → hai and a question mark: the helper carries the person, and nothing is fronted"
+        },
+        {
+          "display": "Ieri non ho mangiato una pizza",
+          "cue": "Yesterday I didn't eat a pizza",
+          "changed": "non in front of the whole verb — it never slips between ho and mangiato"
+        }
+      ],
+      "mistake": {
+        "display": "Ieri mangiato una pizza",
+        "why": "The helper is not optional: ho mangiato. Without it, nothing in the sentence says who ate."
+      },
+      "usage": "The first thing anyone is asked about yesterday.",
+      "register": "informal",
+      "mnemonic": "Two words for one past: who, then what."
+    },
+    {
+      "id": "L1-M5-S02",
+      "display": "Ieri ho bevuto un caffè",
+      "cue": "Yesterday I drank a coffee",
+      "glossEn": "lit. \"Yesterday I-have drunk a coffee\"",
+      "literal": "Yesterday I-have drunk a coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bevuto",
+            "cue": "drunk",
+            "tag": "delta",
+            "forms": [],
+            "note": "The participle of bere. bere is an -ere verb, so its ending is -uto — and the v of bevo comes back for it: bevuto, not beuto."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "The verb's CLASS decides the participle's ending, and bere is an -ere verb even though its plain form has worn short. That is where -uto comes from.",
+      "sound": "be-VU-to, stressed in the middle. All three vowels stay clean and none is swallowed.",
+      "variations": [
+        {
+          "display": "Ieri ho bevuto un po' di caffè",
+          "cue": "Yesterday I drank a bit of coffee",
+          "changed": "the amount phrase slots in where the article was"
+        },
+        {
+          "display": "Hai bevuto un caffè?",
+          "cue": "Did you drink a coffee?",
+          "changed": "ho → hai: the helper moves to you, the participle does not"
+        },
+        {
+          "display": "Ieri non ho bevuto caffè",
+          "cue": "Yesterday I didn't drink coffee",
+          "changed": "non in front of the whole verb, and no article once the amount is open"
+        }
+      ],
+      "mistake": {
+        "display": "Ieri ho bevato un caffè",
+        "why": "bere is an -ere verb, so its participle takes -uto: bevuto."
+      },
+      "usage": "Recounting an ordinary day, drink by drink.",
+      "register": "informal",
+      "mnemonic": "-are gives -ato, -ere gives -uto, -ire gives -ito."
+    },
+    {
+      "id": "L1-M5-S03",
+      "display": "Ieri ho comprato un libro",
+      "cue": "Yesterday I bought a book",
+      "glossEn": "lit. \"Yesterday I-have bought a book\"",
+      "literal": "Yesterday I-have bought a book",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "comprato",
+            "cue": "bought",
+            "tag": "free",
+            "forms": ["comprato", "comprare"],
+            "note": "The participle of comprare, \"to buy\" — an -are verb, so -ato. Buying is done to a thing, so the helper is avere and the participle does not move."
+          }
+        ],
+        "rules": [0, 1, 3]
+      },
+      "trap": "English fronts \"did\" to ask or to deny in the past. Italian never adds anything — the helper it already has does both jobs on its own.",
+      "sound": "kom-PRA-to. The r is one tap, and the o at the end is short and round.",
+      "variations": [
+        {
+          "display": "Hai comprato un libro?",
+          "cue": "Did you buy a book?",
+          "changed": "ho → hai, and a question mark instead of a fronted \"did\""
+        },
+        {
+          "display": "Ieri ho comprato una pizza",
+          "cue": "Yesterday I bought a pizza",
+          "changed": "swap what was bought — comprato does not agree with it"
+        },
+        {
+          "display": "Anna ha comprato un libro",
+          "cue": "Anna bought a book",
+          "changed": "ho → ha for a third person; the participle still does not move"
+        }
+      ],
+      "mistake": {
+        "display": "Ieri sono comprato un libro",
+        "why": "comprare takes avere: Ieri ho comprato un libro. essere is only for the short going-and-staying list."
+      },
+      "usage": "Saying what you did with an afternoon.",
+      "register": "informal",
+      "mnemonic": "Buying happens to a thing, so it rides avere."
+    },
+    {
+      "id": "L1-M5-S04",
+      "display": "Ieri non ho lavorato",
+      "cue": "Yesterday I didn't work",
+      "glossEn": "lit. \"Yesterday not I-have worked\"",
+      "literal": "Yesterday not I-have worked",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lavorato",
+            "cue": "worked",
+            "tag": "free",
+            "forms": [],
+            "note": "The participle of lavorare (M4) — an -are verb, so -ato. The stress moves to the -ra- that the ending brings with it."
+          }
+        ],
+        "rules": [0, 3, 4, 5]
+      },
+      "trap": "English splits its past negative around the helper — did not work. Italian never splits anything: non sits in front of ho, and ho and lavorato stay glued together.",
+      "sound": "la-vo-RA-to, four light syllables with the stress on the third, and both r's are single taps.",
+      "variations": [
+        {
+          "display": "Ieri ho lavorato",
+          "cue": "Yesterday I worked",
+          "changed": "drop non and the sentence turns positive"
+        },
+        {
+          "display": "Il sabato non ho lavorato",
+          "cue": "On Saturday I didn't work",
+          "changed": "swap the time phrase — the negative and the verb are untouched"
+        },
+        {
+          "display": "Hai lavorato ieri?",
+          "cue": "Did you work yesterday?",
+          "changed": "ho → hai, the time word to the end, and a question mark"
+        }
+      ],
+      "mistake": {
+        "display": "Ieri ho non lavorato",
+        "why": "non goes in front of the WHOLE verb, helper included: Ieri non ho lavorato."
+      },
+      "usage": "Explaining a quiet day.",
+      "register": "informal",
+      "mnemonic": "non guards the front door, and the two-word verb comes through it together."
+    },
+    {
+      "id": "L1-M5-S05",
+      "display": "Ieri sono andato a Roma",
+      "cue": "Yesterday I went to Rome",
+      "glossEn": "lit. \"Yesterday I-am gone to Rome\"",
+      "literal": "Yesterday I-am gone to Rome",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "andato",
+            "cue": "gone",
+            "tag": "interference",
+            "forms": ["andato", "andata", "andati", "andate"],
+            "note": "The participle of andare — and andare is on the short essere list, so its past is built with sono and never with ho: sono andato, sei andato, è andato. Because the helper is essere, the participle behaves like an adjective and takes the ending of whoever went: -o for a man, -a for a woman, -i and -e in the plural."
+          },
+          {
+            "display": "a",
+            "cue": "to",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"To\", in front of a place you are going: a Roma, a casa. The same little word comes back in M6 between andare and another verb — vado a mangiare — so it is doing one job here and one there, and neither takes an article with a city name."
+          }
+        ],
+        "rules": [1, 2, 3]
+      },
+      "trap": "English builds every past with \"have\" or with nothing. Italian picks the helper from the verb, and going is the commonest verb that picks essere — *ho andato is the mistake almost everyone makes once.",
+      "sound": "an-DA-to. sono andato runs together with no break: so-no-an-DA-to.",
+      "variations": [
+        {
+          "display": "Ieri sono andata a Roma",
+          "cue": "Yesterday I went to Rome",
+          "changed": "-o → -a: the same sentence said by a woman, because essere makes the ending agree"
+        },
+        {
+          "display": "Ieri sono andato a casa presto",
+          "cue": "Yesterday I went home early",
+          "changed": "another destination, and the adverb still hugs the verb"
+        },
+        {
+          "display": "Sei andato a Roma?",
+          "cue": "Did you go to Rome?",
+          "changed": "sono → sei: the helper moves to you, and the participle keeps agreeing with you"
+        }
+      ],
+      "mistake": {
+        "display": "Ieri ho andato a Roma",
+        "why": "andare takes essere: Ieri sono andato a Roma. avere is for nearly everything else."
+      },
+      "usage": "The other half of yesterday — not what you did, but where you went.",
+      "register": "informal",
+      "mnemonic": "You GO with essere, and the ending goes with you."
+    },
+    {
+      "id": "L1-M5-S06",
+      "display": "Ieri sono stata a casa",
+      "cue": "Yesterday I was at home",
+      "glossEn": "lit. \"Yesterday I-am been at home\" — said by a woman",
+      "literal": "Yesterday I-am been at home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "stata",
+            "cue": "been",
+            "tag": "delta",
+            "forms": ["stato", "stata", "stati", "state"],
+            "note": "The participle essere uses for its own past — and it is the participle of stare as well, so sono stata covers both \"I was\" and \"I stayed\". The helper is essere, so the ending agrees: stato for a man, stata for a woman."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "essere's own past is built with essere: sono stato, sono stata. And since the helper is essere, the ending follows whoever is speaking — a man writing this sentence writes stato.",
+      "sound": "STA-ta, stressed on the first syllable, both a's open and equal.",
+      "variations": [
+        {
+          "display": "Ieri sono stato a casa",
+          "cue": "Yesterday I was at home",
+          "changed": "-a → -o: the same sentence said by a man"
+        },
+        {
+          "display": "Sei stata a Roma?",
+          "cue": "Have you been to Rome?",
+          "changed": "sono → sei: asked of a woman, so the participle stays feminine"
+        },
+        {
+          "display": "Ieri non sono stata a casa",
+          "cue": "Yesterday I wasn't at home",
+          "changed": "non in front of the whole verb, helper and participle together"
+        }
+      ],
+      "mistake": {
+        "display": "Ieri ho stata a casa",
+        "why": "essere's own past takes essere: sono stata. And with essere the participle agrees — stata for a woman, stato for a man."
+      },
+      "usage": "Saying where you spent a day, or that you spent it nowhere at all.",
+      "register": "informal",
+      "mnemonic": "essere goes back to itself: sono stato."
+    },
+    {
+      "id": "L1-M5-S07",
+      "display": "Che cosa hai mangiato ieri?",
+      "cue": "What did you eat yesterday?",
+      "glossEn": "lit. \"What thing you-have eaten yesterday?\"",
+      "literal": "What thing you-have eaten yesterday?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Che cosa",
+            "cue": "what",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"What\", asking about a thing. Literally \"what thing\", and Italian is happy with either half on its own — che hai mangiato? and cosa hai mangiato? are both said. Taught whole here so the pair is learned as one question word."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "There is no \"did\" to front. The question phrase goes to the front, the two-word verb stays exactly as it was, and the question mark does the rest.",
+      "sound": "ke-KO-za. che is KE — a c before h is always hard — and the single s between vowels is the one from casa.",
+      "variations": [
+        {
+          "display": "Che cosa hai comprato?",
+          "cue": "What did you buy?",
+          "changed": "swap the participle — the question phrase never changes"
+        },
+        {
+          "display": "Che cosa hai bevuto ieri?",
+          "cue": "What did you drink yesterday?",
+          "changed": "another participle behind the same helper"
+        },
+        {
+          "display": "Ieri ho mangiato una pizza",
+          "cue": "Yesterday I ate a pizza",
+          "changed": "the answer: the helper swaps person and the question phrase drops away"
+        }
+      ],
+      "mistake": {
+        "display": "Che cosa hai mangiare ieri?",
+        "why": "The helper takes a PARTICIPLE, never the plain form: Che cosa hai mangiato ieri?"
+      },
+      "usage": "The question that starts every conversation about a meal.",
+      "register": "informal",
+      "mnemonic": "che cosa is \"what thing\" — and either word can carry it alone."
+    },
+    {
+      "id": "L1-M5-S08",
+      "display": "Ieri ho parlato con Anna",
+      "cue": "Yesterday I spoke with Anna",
+      "glossEn": "lit. \"Yesterday I-have spoken with Anna\"",
+      "literal": "Yesterday I-have spoken with Anna",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "parlato",
+            "cue": "spoken",
+            "tag": "free",
+            "forms": [],
+            "note": "The participle of parlare (M4) — an -are verb, so -ato. Behind avere it is frozen: ho parlato whoever is speaking, and never ho parlata."
+          }
+        ],
+        "rules": [0, 2, 3]
+      },
+      "trap": "With avere the participle is frozen. It moves only behind essere — so sono andata is right and ho parlata is not, even when a woman is speaking.",
+      "sound": "par-LA-to, stressed in the middle, and the r is a single tap.",
+      "variations": [
+        {
+          "display": "Ieri ho parlato con Rohan",
+          "cue": "Yesterday I spoke with Rohan",
+          "changed": "swap who you spoke with — con never fuses with what follows"
+        },
+        {
+          "display": "Hai parlato con Anna?",
+          "cue": "Did you speak with Anna?",
+          "changed": "ho → hai, and a question mark rather than a fronted \"did\""
+        },
+        {
+          "display": "Ieri non ho parlato con Anna",
+          "cue": "Yesterday I didn't speak with Anna",
+          "changed": "non in front of the whole verb; con Anna is untouched"
+        }
+      ],
+      "mistake": {
+        "display": "Ieri ho parlata con Anna",
+        "why": "Behind avere the participle never moves: ho parlato, whoever is speaking. Agreement belongs to essere."
+      },
+      "usage": "Reporting a conversation without saying what was in it.",
+      "register": "informal",
+      "mnemonic": "avere freezes the participle; essere lets it move."
+    },
+    {
+      "id": "L1-M5-S09",
+      "display": "Non ho studiato ieri",
+      "cue": "I didn't study yesterday",
+      "glossEn": "lit. \"Not I-have studied yesterday\"",
+      "literal": "Not I-have studied yesterday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "studiato",
+            "cue": "studied",
+            "tag": "free",
+            "forms": [],
+            "note": "The participle of studiare (M3) — an -are verb, so -ato. It rides avere, like every verb that acts on something."
+          }
+        ],
+        "rules": [0, 4, 5]
+      },
+      "trap": "Both English pasts land on this one sentence: \"I didn't study yesterday\" and \"I haven't studied yesterday\" are the same Italian, and neither needs anything Italian has not already written.",
+      "sound": "stu-DYA-to. The -dia- is one syllable, DYA, exactly as in studio.",
+      "variations": [
+        {
+          "display": "Ho studiato ieri",
+          "cue": "I studied yesterday",
+          "changed": "drop non and the sentence turns positive"
+        },
+        {
+          "display": "Non ho studiato l'italiano ieri",
+          "cue": "I didn't study Italian yesterday",
+          "changed": "the participle takes its own object, and the negative is untouched"
+        },
+        {
+          "display": "Hai studiato ieri?",
+          "cue": "Did you study yesterday?",
+          "changed": "the helper moves to you and the negative drops away"
+        }
+      ],
+      "mistake": {
+        "display": "Ieri sono studiato",
+        "why": "studiare takes avere: ho studiato. Only the short essere list — andare, stare, essere and the reflexives — takes sono."
+      },
+      "usage": "Owning up, or excusing yourself.",
+      "register": "informal",
+      "mnemonic": "If the verb acts on something, it rides avere."
+    },
+    {
+      "id": "L1-M5-S10",
+      "display": "Ieri ho dormito bene",
+      "cue": "Yesterday I slept well",
+      "glossEn": "lit. \"Yesterday I-have slept well\"",
+      "literal": "Yesterday I-have slept well",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dormito",
+            "cue": "slept",
+            "tag": "delta",
+            "forms": ["dormito", "dormire"],
+            "note": "The participle of dormire, \"to sleep\" — the third verb class, so its ending is -ito. Sleeping acts on nothing, and it still takes avere: the essere list is a list, not a rule about what a verb means."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "-ire verbs take -ito, and that is the third and last of the participle endings. Learn the set — -ato, -uto, -ito — before meeting a single irregular one.",
+      "sound": "dor-MI-to, stressed in the middle. The r is one tap and the final o is short.",
+      "variations": [
+        {
+          "display": "Ieri non ho dormito bene",
+          "cue": "Yesterday I didn't sleep well",
+          "changed": "non in front of the whole verb; bene stays beside it"
+        },
+        {
+          "display": "Hai dormito bene?",
+          "cue": "Did you sleep well?",
+          "changed": "ho → hai and a question mark — the morning's first question"
+        },
+        {
+          "display": "Ieri ho dormito molto",
+          "cue": "Yesterday I slept a lot",
+          "changed": "swap the adverb — both bene and molto hug the verb"
+        }
+      ],
+      "mistake": {
+        "display": "Ieri ho dormuto bene",
+        "why": "dormire is an -ire verb, so its participle is dormito. -uto belongs to the -ere class."
+      },
+      "usage": "The first thing said at breakfast, in any language.",
+      "register": "informal",
+      "mnemonic": "Three classes, three endings: -ato, -uto, -ito."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M5-C01", "display": "Ieri ho mangiato il pane", "cue": "Yesterday I ate bread" },
+    {
+      "id": "L1-M5-C02",
+      "display": "Ieri non ho bevuto caffè",
+      "cue": "Yesterday I didn't drink coffee"
+    },
+    { "id": "L1-M5-C03", "display": "Che cosa hai comprato?", "cue": "What did you buy?" },
+    { "id": "L1-M5-C04", "display": "Ieri sono andata a Roma", "cue": "Yesterday I went to Rome" },
+    {
+      "id": "L1-M5-C05",
+      "display": "Non ho lavorato il sabato",
+      "cue": "I didn't work on Saturday"
+    },
+    { "id": "L1-M5-C06", "display": "Ieri ho parlato con Rohan", "cue": "Yesterday I spoke with Rohan" },
+    { "id": "L1-M5-C07", "display": "Ieri sono stato a casa", "cue": "Yesterday I was at home" },
+    {
+      "id": "L1-M5-C08",
+      "display": "Che cosa hai studiato ieri?",
+      "cue": "What did you study yesterday?"
+    },
+    { "id": "L1-M5-C09", "display": "Ieri ho dormito molto", "cue": "Yesterday I slept a lot" },
+    { "id": "L1-M5-C10", "display": "Anna ha comprato una pizza", "cue": "Anna bought a pizza" },
+    {
+      "id": "L1-M5-C11",
+      "display": "Non ho mangiato di mattina",
+      "cue": "I didn't eat in the morning"
+    },
+    { "id": "L1-M5-C12", "display": "Ieri sono andati a Roma", "cue": "Yesterday they went to Rome" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

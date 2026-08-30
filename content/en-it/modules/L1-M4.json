@@ -1,0 +1,571 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M4",
+  "title": "My day",
+  "job": "Daily habits and time words",
+  "prerequisites": ["L1-M3"],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 6,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "(Io) + V-o + ogni giorno",
+      "Mi alzo alle + hour",
+      "Di mattina/sera + V-o",
+      "Il lunedì + V-o",
+      "A che ora + V-i?"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "ONE Italian present covers BOTH English presents: mangio is \"I eat\" and \"I am eating\" alike, and which one it is comes from the sentence, never from the form. Italian has its own progressive (sto mangiando) for what is happening this second; it belongs to a later level, and nothing here needs it."
+    },
+    {
+      "tag": "delta",
+      "text": "The present is one stem plus an ending, in all three verb classes: parlo · parli · parla (-are); bevo · bevi · beve (-ere); dormo · dormi · dorme (-ire). The tu ending is -i in every one of them."
+    },
+    {
+      "tag": "delta",
+      "text": "Daily verbs carry a little pronoun in front, and it changes with the person: mi alzo · ti alzi · si alza. English \"I get up\" has nothing there at all, so the dropped mi is the commonest slip in this module."
+    },
+    {
+      "tag": "delta",
+      "text": "A time word normally goes in FRONT of the sentence — Di mattina mangio il pane, Ogni giorno parlo con Anna — and can also stand at the end. What it never needs is an extra preposition Italian has not written."
+    },
+    {
+      "tag": "delta",
+      "text": "The article is what turns a day into a habit: il lunedì means \"on Mondays\", every Monday, while a bare lunedì is one particular Monday. English does that job with a plural -s."
+    },
+    {
+      "tag": "delta",
+      "text": "The clock runs on alle, a + le squeezed into one word: alle sette, alle otto. Italian fuses a preposition and a following article like this wherever the two meet."
+    },
+    {
+      "tag": "delta",
+      "text": "si — the little pronoun of si alza and si chiama — is M2's sì with the accent taken off, and the two are different words. The accent is never optional in either direction."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M4-S01",
+      "display": "Parlo italiano ogni giorno",
+      "cue": "I speak Italian every day",
+      "glossEn": "lit. \"Speak Italian every day\" — the \"I\" is inside parlo",
+      "literal": "I-speak Italian every day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Parlo",
+            "cue": "I speak",
+            "tag": "delta",
+            "forms": ["Parlo", "parli", "parla", "parlare"],
+            "note": "parlare — to speak, the first of the three verb classes. The stem stays and the ending names the person: parlo (I) · parli (you) · parla (he, she). With a language after it the article drops: parlo italiano, not parlo l'italiano."
+          },
+          {
+            "display": "ogni giorno",
+            "cue": "every day",
+            "tag": "free",
+            "forms": [],
+            "note": "every day. ogni is followed by a SINGULAR noun — ogni giorno, never ogni giorni — which is the opposite of what English \"every day\" would suggest if you translated it piece by piece."
+          }
+        ],
+        "rules": [0, 1, 3]
+      },
+      "trap": "This one sentence is both English presents at once: \"I speak Italian every day\" and \"I am speaking Italian every day\" are the same Italian. There is nothing to add for the -ing.",
+      "sound": "PAR-lo. The r is one tap of the tongue and the l is clear and forward, never the dark l of English \"full\".",
+      "variations": [
+        {
+          "display": "Parli italiano?",
+          "cue": "Do you speak Italian?",
+          "changed": "-o → -i: the ending moves to you, and nothing is added to ask"
+        },
+        {
+          "display": "Non parlo italiano ogni giorno",
+          "cue": "I don't speak Italian every day",
+          "changed": "non in front of the verb; the time phrase stays where it was"
+        },
+        {
+          "display": "Ogni giorno parlo italiano",
+          "cue": "Every day I speak Italian",
+          "changed": "the time phrase moved to the front — Italian is content either way"
+        }
+      ],
+      "mistake": {
+        "display": "Parlo italiano ogni giorni",
+        "why": "ogni takes a singular noun: ogni giorno. The plural belongs to tutti i giorni, which says the same thing another way."
+      },
+      "usage": "Saying what you do habitually — the frame the whole module is built on.",
+      "register": "informal",
+      "mnemonic": "ogni counts them one at a time, so the noun stays singular."
+    },
+    {
+      "id": "L1-M4-S02",
+      "display": "Mi alzo alle sette",
+      "cue": "I get up at seven",
+      "glossEn": "lit. \"Myself I-raise at-the seven\"",
+      "literal": "Myself I-raise at-the seven",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Mi alzo",
+            "cue": "I get up",
+            "tag": "delta",
+            "forms": ["Mi alzo", "ti alzi", "si alza"],
+            "note": "alzarsi — literally \"to raise oneself\". The little pronoun is part of the verb and changes with the person: mi alzo (I) · ti alzi (you) · si alza (he, she). English \"get up\" has nothing in that slot, which is why it is the piece most often dropped."
+          },
+          {
+            "display": "alle sette",
+            "cue": "at seven",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"At seven\" — alle is a + le fused into one word, and the le is there because the hours are feminine and plural (le sette, le otto). Taught whole: the clock always takes alle, except for one o'clock, which takes all'una."
+          }
+        ],
+        "rules": [2, 5]
+      },
+      "trap": "Two things are here that English does not have: a pronoun inside the verb, and a fused a + le in front of the hour. Neither is optional.",
+      "sound": "AL-tso — the z is a \"ts\". mi runs straight into it, so the pair comes out as one word. In alle sette both doubled consonants are held: a single one would give ale and sete, which are other words.",
+      "variations": [
+        {
+          "display": "Ti alzi alle sette?",
+          "cue": "Do you get up at seven?",
+          "changed": "mi → ti and the verb ending with it — both halves move together"
+        },
+        {
+          "display": "Si alza alle otto",
+          "cue": "He gets up at eight",
+          "changed": "mi → si for a third person, and another hour after alle"
+        },
+        {
+          "display": "Non mi alzo alle sette",
+          "cue": "I don't get up at seven",
+          "changed": "non goes in front of the whole verb, pronoun included"
+        }
+      ],
+      "mistake": {
+        "display": "Alzo alle sette",
+        "why": "The mi is not decoration — it is part of the verb. Mi alzo alle sette."
+      },
+      "usage": "The first line of anyone's day, and the one a language exchange asks for first.",
+      "register": "informal",
+      "mnemonic": "alzarsi raises YOURSELF, so the little pronoun goes with you."
+    },
+    {
+      "id": "L1-M4-S03",
+      "display": "Di mattina mangio il pane",
+      "cue": "In the morning I eat bread",
+      "glossEn": "lit. \"Of morning I-eat the bread\"",
+      "literal": "In-the-morning I-eat the bread",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Di mattina",
+            "cue": "in the morning",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"In the morning\", as a habit rather than one particular morning. Taught whole, because the di inside it is not the di of sono di Roma — it is doing a job English gives to \"in\"."
+          },
+          {
+            "display": "mangio",
+            "cue": "I eat",
+            "tag": "delta",
+            "forms": ["mangio", "mangi", "mangia"],
+            "note": "The present of mangiare (M3): mangio (I) · mangi (you) · mangia (he, she). It is \"I eat\" and \"I am eating\" at once — Italian has one present where English has two."
+          }
+        ],
+        "rules": [0, 1, 3]
+      },
+      "trap": "English drops the article for a kind of food — \"I eat bread\" — and Italian keeps it: mangio il pane. It is M1's rule again, in a new place.",
+      "sound": "mat-TI-na, with the double t held, and MAN-jo, where gi is the j of \"jam\" and the i is not a syllable of its own.",
+      "variations": [
+        {
+          "display": "Di mattina mangio una pizza",
+          "cue": "In the morning I eat a pizza",
+          "changed": "swap what is eaten — the time phrase in front is untouched"
+        },
+        {
+          "display": "Mangi il pane di mattina?",
+          "cue": "Do you eat bread in the morning?",
+          "changed": "-o → -i and the time phrase moved to the end: both moves are free"
+        },
+        {
+          "display": "Non mangio il pane di mattina",
+          "cue": "I don't eat bread in the morning",
+          "changed": "non in front of the verb, and everything else holds"
+        }
+      ],
+      "mistake": {
+        "display": "Di mattina mangio pane",
+        "why": "A kind of thing keeps its article in Italian: mangio il pane. Bare pane would be asking for some particular quantity of it."
+      },
+      "usage": "Describing a routine — what you do, and when.",
+      "register": "informal",
+      "mnemonic": "di mattina is a habit; una mattina would be one morning."
+    },
+    {
+      "id": "L1-M4-S04",
+      "display": "Di sera studio l'italiano",
+      "cue": "In the evening I study Italian",
+      "glossEn": "lit. \"Of evening I-study the-Italian\"",
+      "literal": "In-the-evening I-study the-Italian",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Di sera",
+            "cue": "in the evening",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"In the evening\", the habitual one, built exactly like di mattina and taught whole for the same reason. Italian counts the evening from mid-afternoon, so di sera starts earlier than English \"in the evening\" does."
+          },
+          {
+            "display": "studio",
+            "cue": "I study",
+            "tag": "free",
+            "forms": ["studio", "studi", "studia"],
+            "note": "The present of studiare (M3): studio (I) · studi (you) · studia (he, she). Unlike parlare with a language, studiare keeps the article: studio l'italiano."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "parlo italiano drops the article and studio l'italiano keeps it. That is not a rule about languages — it is a difference between the two verbs, and it is worth learning as a pair.",
+      "sound": "SE-ra, one tapped r, and STU-dyo — the -dio is one syllable, DYO, not dee-oh.",
+      "variations": [
+        {
+          "display": "Di sera studio ogni giorno",
+          "cue": "In the evening I study every day",
+          "changed": "two time phrases, one at each end, and neither needs a preposition"
+        },
+        {
+          "display": "Studi l'italiano di sera?",
+          "cue": "Do you study Italian in the evening?",
+          "changed": "-o → -i, the time phrase at the end, and a question mark to ask"
+        },
+        {
+          "display": "Di mattina studio l'italiano",
+          "cue": "In the morning I study Italian",
+          "changed": "swap the half of the day — the frame is the same"
+        }
+      ],
+      "mistake": {
+        "display": "Di sera studio italiano",
+        "why": "studiare keeps the article: studio l'italiano. It is parlare that drops it — parlo italiano."
+      },
+      "usage": "Saying when you do the thing you are trying to get better at.",
+      "register": "informal",
+      "mnemonic": "You SPEAK a language bare and STUDY it with its article."
+    },
+    {
+      "id": "L1-M4-S05",
+      "display": "Il lunedì lavoro",
+      "cue": "On Mondays I work",
+      "glossEn": "lit. \"The Monday I-work\" — the article makes it every Monday",
+      "literal": "The Monday I-work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Il lunedì",
+            "cue": "on Mondays",
+            "tag": "delta",
+            "forms": [],
+            "note": "The article is what makes it a habit: il lunedì is \"on Mondays\", every Monday, while a bare lunedì is one particular Monday. The same trick works down the week — il martedì, il mercoledì — and the accent on lunedì is never dropped."
+          },
+          {
+            "display": "lavoro",
+            "cue": "I work",
+            "tag": "free",
+            "forms": ["lavoro", "lavori", "lavora", "lavorare"],
+            "note": "lavorare — to work: lavoro (I) · lavori (you) · lavora (he, she). It is also the noun \"work\", and the sentence around it is what tells you which."
+          }
+        ],
+        "rules": [1, 3, 4]
+      },
+      "trap": "English marks the habit with a plural — \"on Mondays\" — and Italian marks it with the article instead. Drop the il and you have said one specific Monday.",
+      "sound": "lu-ne-DEE: the accent marks the last syllable as the stressed one. la-VO-ro is stressed in the middle, and both r's are single taps.",
+      "variations": [
+        {
+          "display": "Il sabato lavoro",
+          "cue": "On Saturdays I work",
+          "changed": "swap the day — the article keeps doing the same job"
+        },
+        {
+          "display": "Il lunedì non lavoro",
+          "cue": "On Mondays I don't work",
+          "changed": "non in front of the verb, behind the time phrase"
+        },
+        {
+          "display": "Lavori il lunedì?",
+          "cue": "Do you work on Mondays?",
+          "changed": "-o → -i and the time phrase at the end — nothing else is added to ask"
+        }
+      ],
+      "mistake": {
+        "display": "Lunedì lavoro ogni giorno",
+        "why": "Without the article, lunedì is one particular Monday, which cannot be \"every day\". For the habit it is il lunedì."
+      },
+      "usage": "Laying out a week — which days you work and which you do not.",
+      "register": "informal",
+      "mnemonic": "The article makes the day a habit: il lunedì, every one of them."
+    },
+    {
+      "id": "L1-M4-S06",
+      "display": "A che ora ti alzi?",
+      "cue": "What time do you get up?",
+      "glossEn": "lit. \"At what hour yourself you-raise?\"",
+      "literal": "At what hour yourself you-raise?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "A che ora",
+            "cue": "what time",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"At what time\", taught whole. Italian asks with the preposition already attached — a che ora — where English can leave it off (\"what time do you get up?\"), and the answer comes back with alle: alle sette."
+          }
+        ],
+        "rules": [2, 5]
+      },
+      "trap": "English fronts \"do\" to ask. Italian fronts only the question phrase, and the verb stays exactly as it was: A che ora ti alzi?",
+      "sound": "che is KE — a c before h is always hard. The three words run together: a-ke-O-ra.",
+      "variations": [
+        {
+          "display": "A che ora mangi?",
+          "cue": "What time do you eat?",
+          "changed": "swap the verb — the question phrase in front never changes"
+        },
+        {
+          "display": "A che ora lavori?",
+          "cue": "What time do you work?",
+          "changed": "another verb, and still nothing added to make it a question"
+        },
+        {
+          "display": "Mi alzo alle sette",
+          "cue": "I get up at seven",
+          "changed": "the answer: a che ora is asked with a, and answered with alle"
+        }
+      ],
+      "mistake": {
+        "display": "Che ora ti alzi?",
+        "why": "The a is part of the question: A che ora ti alzi? Bare Che ora è? is a different question — it asks what time it is now."
+      },
+      "usage": "Arranging to meet, or asking about someone's routine.",
+      "register": "informal",
+      "mnemonic": "Ask with a, answer with alle."
+    },
+    {
+      "id": "L1-M4-S07",
+      "display": "Mi alzo presto ogni giorno",
+      "cue": "I get up early every day",
+      "glossEn": "lit. \"Myself I-raise early every day\"",
+      "literal": "Myself I-raise early every day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "presto",
+            "cue": "early",
+            "tag": "free",
+            "forms": [],
+            "note": "early. It is an adverb, so it never changes shape — and it sits right after the verb, where molto sits too."
+          }
+        ],
+        "rules": [0, 2, 3]
+      },
+      "trap": "presto is \"early\", not \"soon-ish\" and not \"fast\": for speed Italian says velocemente, and a presto on its own is \"see you soon\".",
+      "sound": "PRE-sto. The e is close and the s before t is a plain s, never a z.",
+      "variations": [
+        {
+          "display": "Ti alzi presto?",
+          "cue": "Do you get up early?",
+          "changed": "mi → ti with the ending, and the time phrase dropped"
+        },
+        {
+          "display": "Non mi alzo presto",
+          "cue": "I don't get up early",
+          "changed": "non in front of the whole verb, pronoun included"
+        },
+        {
+          "display": "Si alza presto ogni giorno",
+          "cue": "She gets up early every day",
+          "changed": "mi → si: a third person's routine, everything else in place"
+        }
+      ],
+      "mistake": {
+        "display": "Mi alzo ogni giorno presto",
+        "why": "presto belongs beside the verb: Mi alzo presto ogni giorno. The time phrase goes at either end, but the adverb hugs the verb."
+      },
+      "usage": "The line that starts every conversation about mornings.",
+      "register": "informal",
+      "mnemonic": "presto hugs the verb, the way molto does."
+    },
+    {
+      "id": "L1-M4-S08",
+      "display": "Di sera bevo un caffè",
+      "cue": "In the evening I drink a coffee",
+      "glossEn": "lit. \"Of evening I-drink a coffee\"",
+      "literal": "In-the-evening I-drink a coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bevo",
+            "cue": "I drink",
+            "tag": "delta",
+            "forms": ["bevo", "bevi", "beve"],
+            "note": "The present of bere (M3), and the stem is not what the infinitive would predict: bevo (I) · bevi (you) · beve (he, she). Italian keeps a handful of verbs like this, where the plain form has worn down and the present has not."
+          }
+        ],
+        "rules": [0, 1, 3]
+      },
+      "trap": "bere is the plain form and bevo is the present, and the v appears from nowhere. It is worth learning the pair together rather than deriving one from the other.",
+      "sound": "BE-vo, both syllables short and clean, with no glide on the o.",
+      "variations": [
+        {
+          "display": "Bevi un caffè di sera?",
+          "cue": "Do you drink a coffee in the evening?",
+          "changed": "-o → -i, the time phrase to the end, and a question mark"
+        },
+        {
+          "display": "Non bevo caffè di sera",
+          "cue": "I don't drink coffee in the evening",
+          "changed": "non in front of the verb, and the article gone with the amount"
+        },
+        {
+          "display": "Di mattina bevo un caffè",
+          "cue": "In the morning I drink a coffee",
+          "changed": "swap the half of the day — the frame holds"
+        }
+      ],
+      "mistake": {
+        "display": "Di sera bero un caffè",
+        "why": "The present of bere is bevo, with a v: Di sera bevo un caffè."
+      },
+      "usage": "Talking about habits at the edges of the day.",
+      "register": "informal",
+      "mnemonic": "bere loses its v in the plain form and finds it again in bevo."
+    },
+    {
+      "id": "L1-M4-S09",
+      "display": "Il sabato non lavoro",
+      "cue": "On Saturdays I don't work",
+      "glossEn": "lit. \"The Saturday not I-work\"",
+      "literal": "The Saturday not I-work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Il sabato",
+            "cue": "on Saturdays",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"On Saturdays\", the same habit article as il lunedì. Six days of the week are masculine and take il; only la domenica, Sunday, is feminine."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "The negative and the habit do not interfere with each other: the time phrase stays in front, non stays glued to the verb, and nothing is added between them.",
+      "sound": "SA-ba-to, stressed on the first syllable — three light syllables in a row, and none of them swallowed.",
+      "variations": [
+        {
+          "display": "Il sabato lavoro",
+          "cue": "On Saturdays I work",
+          "changed": "drop non and the sentence turns positive"
+        },
+        {
+          "display": "Il sabato non mi alzo presto",
+          "cue": "On Saturdays I don't get up early",
+          "changed": "another verb behind the same time phrase — non still hugs it"
+        },
+        {
+          "display": "Lavori il sabato?",
+          "cue": "Do you work on Saturdays?",
+          "changed": "-o → -i, the time phrase at the end, and nothing added to ask"
+        }
+      ],
+      "mistake": {
+        "display": "Il sabato lavoro non",
+        "why": "non goes in front of the verb, never after it: Il sabato non lavoro."
+      },
+      "usage": "The other half of the working week.",
+      "register": "informal",
+      "mnemonic": "Six days take il; only la domenica is feminine."
+    },
+    {
+      "id": "L1-M4-S10",
+      "display": "Ogni giorno parlo con Anna",
+      "cue": "Every day I speak with Anna",
+      "glossEn": "lit. \"Every day I-speak with Anna\"",
+      "literal": "Every day I-speak with Anna",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "con",
+            "cue": "with",
+            "tag": "free",
+            "forms": [],
+            "note": "with. It stays a separate word in front of its noun and does not fuse with a following article the way a, di, in and su do: con il caffè, con la musica."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "Italian fuses most prepositions onto a following article — a + il = al, di + il = del — and con is the one that comfortably does not. con il and con la are written out.",
+      "sound": "KON, short, and it leans onto the word after it: con Anna comes out as one breath.",
+      "variations": [
+        {
+          "display": "Parlo con Anna ogni giorno",
+          "cue": "I speak with Anna every day",
+          "changed": "the time phrase moved to the end — Italian is content either way"
+        },
+        {
+          "display": "Non parlo con Anna ogni giorno",
+          "cue": "I don't speak with Anna every day",
+          "changed": "non in front of the verb; the phrase behind it is untouched"
+        },
+        {
+          "display": "Parli con Anna il sabato?",
+          "cue": "Do you speak with Anna on Saturdays?",
+          "changed": "-o → -i and the habit article at the end, asked with nothing added"
+        }
+      ],
+      "mistake": {
+        "display": "Ogni giorno parlo a Anna",
+        "why": "Speaking WITH someone is con. a would make it speaking TO them, which Italian says as parlo ad Anna and means something narrower."
+      },
+      "usage": "Naming who is in your routine, not just what is.",
+      "register": "informal",
+      "mnemonic": "con keeps its distance: it never fuses with the article."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M4-C01", "display": "Parlo italiano con Anna", "cue": "I speak Italian with Anna" },
+    {
+      "id": "L1-M4-C02",
+      "display": "Mi alzo alle sette ogni giorno",
+      "cue": "I get up at seven every day"
+    },
+    { "id": "L1-M4-C03", "display": "Di mattina bevo un caffè", "cue": "In the morning I drink a coffee" },
+    { "id": "L1-M4-C04", "display": "A che ora mangi?", "cue": "What time do you eat?" },
+    { "id": "L1-M4-C05", "display": "Il sabato mi alzo presto", "cue": "On Saturdays I get up early" },
+    { "id": "L1-M4-C06", "display": "Non studio di sera", "cue": "I don't study in the evening" },
+    { "id": "L1-M4-C07", "display": "Si alza alle sette", "cue": "He gets up at seven" },
+    { "id": "L1-M4-C08", "display": "Anna lavora il lunedì", "cue": "Anna works on Mondays" },
+    {
+      "id": "L1-M4-C09",
+      "display": "Ogni giorno studio l'italiano",
+      "cue": "Every day I study Italian"
+    },
+    {
+      "id": "L1-M4-C10",
+      "display": "Non voglio lavorare oggi",
+      "cue": "I don't want to work today"
+    },
+    { "id": "L1-M4-C11", "display": "Bevo un caffè di mattina", "cue": "I drink a coffee in the morning" },
+    {
+      "id": "L1-M4-C12",
+      "display": "A che ora ti alzi il sabato?",
+      "cue": "What time do you get up on Saturdays?"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

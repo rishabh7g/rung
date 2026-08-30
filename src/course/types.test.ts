@@ -19,6 +19,12 @@
  */
 import { describe, expect, it } from 'vitest';
 import { parseIndex, parseLevels, parseModule } from './content.ts';
+import {
+  matchSurfaces,
+  normalizeSurface,
+  surfaceSpan,
+  tokenizeSurface,
+} from '../engine/surface.ts';
 import type {
   Complexity,
   Deconstruction,
@@ -55,6 +61,11 @@ const LEVELS_FILES = readAll(
     eager: true,
   }),
 );
+
+/** Ladder position of a module id, so `L1-M10` sorts after `L1-M2` rather than before it. */
+function moduleNumber(id: string): number {
+  return Number(/-M(\d+)$/.exec(id)?.[1] ?? 0);
+}
 
 function readAll(loaded: Record<string, string>): [file: string, json: unknown][] {
   return Object.entries(loaded)
@@ -183,7 +194,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it("finds them all — hi-mr, en-es, en-ar and hi-en L1-M1..M10, plus en-ru's authored rungs", () => {
+  it('finds all 60 of them — hi-mr, en-es, en-ar, hi-en, en-it and en-ru L1-M1..M10', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -205,6 +216,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-es/modules/L1-M7.json',
       'content/en-es/modules/L1-M8.json',
       'content/en-es/modules/L1-M9.json',
+      'content/en-it/modules/L1-M1.json',
+      'content/en-it/modules/L1-M10.json',
+      'content/en-it/modules/L1-M2.json',
+      'content/en-it/modules/L1-M3.json',
+      'content/en-it/modules/L1-M4.json',
+      'content/en-it/modules/L1-M5.json',
+      'content/en-it/modules/L1-M6.json',
+      'content/en-it/modules/L1-M7.json',
+      'content/en-it/modules/L1-M8.json',
+      'content/en-it/modules/L1-M9.json',
       'content/en-ru/modules/L1-M1.json',
       'content/en-ru/modules/L1-M10.json',
       'content/en-ru/modules/L1-M2.json',
@@ -302,6 +323,106 @@ describe('ModuleContent against the modules that exist', () => {
       for (const sentence of module.sentences) {
         expect(sentence.display).toMatch(/^[^\p{Script=Arabic}]+$/u);
         if (sentence.script !== undefined) expect(sentence.script).toMatch(/\p{Script=Arabic}/u);
+      }
+    }
+  });
+
+  /**
+   * en-it (#332–#337) is the second English-L1 course with a Latin-script L2, so the language law
+   * runs the ordinary way (`tools/course-briefs.ts`, "en-it: the five decisions"): every teaching
+   * field is ENGLISH — `rules[].text`, word `note`, `trap`, `sound`, `variations[].changed`,
+   * `mistake.why`, `usage`, `mnemonic`, `cue` — and Italian appears only in the L2 slots: sentence
+   * / word / variation / mistake / pool `display`, and word `forms`. An English field may quote
+   * the Italian it is explaining; quoting is not switching. `glossEn` is REQUIRED on every
+   * sentence (the L2 is not English, so #268's exemption does not apply), and the briefs' two
+   * orthographic decisions are asserted here because the index cannot: the apostrophe is always
+   * the straight one (`src/engine/surface.ts` folds the curly one, but `display` must carry one
+   * spelling), and no display writes an unaccented `e` where the copula `è` belongs.
+   */
+  it('keeps the Italian course the ordinary way round: display is Italian, teaching fields English (#334)', () => {
+    const enIt = MODULE_FILES.filter(([name]) => name.includes('en-it'));
+    const nonLatin = /[^\p{Script=Latin}\p{Nd}\s\p{P}\p{S}]/u;
+
+    expect(enIt.length, 'the en-it L1 modules authored so far').toBeGreaterThan(0);
+    for (const [file, json] of enIt) {
+      const module = parseModule(json, file);
+
+      for (const rule of module.rules) expect(rule.text, `${file} rule`).not.toMatch(nonLatin);
+      for (const item of module.comprehensionPool) {
+        expect(item.display, item.id).not.toMatch(nonLatin);
+        expect(item.display, `${item.id} straight apostrophe`).not.toMatch(/’/);
+      }
+      for (const sentence of module.sentences) {
+        const at = sentence.id;
+        // Italian is written in the Latin alphabet, accents and all; nothing else may appear.
+        expect(sentence.display, at).not.toMatch(nonLatin);
+        expect(sentence.display, `${at} straight apostrophe`).not.toMatch(/’/);
+        // The L2 is not English, so the gloss is never optional here (#268 / checkGlossEn).
+        expect(sentence.glossEn, `${at} glossEn`).toMatch(/\S/);
+        // Every teaching field is English prose, and `script` belongs to romanized courses only.
+        expect(sentence.script, `${at} script`).toBeUndefined();
+        for (const variation of sentence.variations ?? []) {
+          expect(variation.display, `${at} variation`).not.toMatch(/’/);
+        }
+        for (const word of sentence.deconstruction.words) {
+          expect(word.display, `${at} word`).not.toMatch(/’/);
+          for (const form of word.forms) {
+            expect(form, `${at} form of ${word.display}`).not.toMatch(nonLatin);
+            expect(form, `${at} form of ${word.display}`).not.toMatch(/’/);
+          }
+          expect(word.note, `${at} note of ${word.display}`).toMatch(/\S/);
+        }
+      }
+    }
+  });
+
+  /**
+   * The elision decision of `tools/course-briefs.ts` ("en-it: the five decisions", 2), mechanised.
+   * `src/engine/surface.ts` keeps an inner apostrophe INSIDE one token and `surfaceIndexKeys`
+   * splits only hyphens, so `l'italiano` is one index key that answers for nothing else — it does
+   * not resolve through `italiano`, and `c'è` does not resolve through `è`. An apostrophe shape a
+   * display writes without a row (or a `forms` entry) behind it is therefore a word with no "why"
+   * at all. This walks the ladder in order and checks every one of them against what is taught at
+   * or before that module.
+   */
+  it('teaches every apostrophe surface it writes — the en-it elision policy (#333)', () => {
+    const ladder = MODULE_FILES.filter(([name]) => name.includes('en-it'))
+      .map(([file, json]) => [file, parseModule(json, file)] as const)
+      .sort(([, a], [, b]) => moduleNumber(a.id) - moduleNumber(b.id));
+    const taught = new Set<string>();
+    let maxSpan = 1;
+
+    expect(ladder.length, 'the en-it L1 modules authored so far').toBeGreaterThan(0);
+    for (const [file, module] of ladder) {
+      // First-occurrence-wins is cumulative, so a module's own rows count for its own displays.
+      for (const sentence of module.sentences) {
+        for (const word of sentence.deconstruction.words) {
+          for (const raw of [word.display, ...word.forms]) {
+            const surface = normalizeSurface(raw);
+            if (surface === '') continue;
+            taught.add(surface);
+            maxSpan = Math.max(maxSpan, surfaceSpan(surface));
+          }
+        }
+      }
+      const written = [
+        ...module.sentences.map((sentence) => sentence.display),
+        ...module.sentences.flatMap((sentence) =>
+          (sentence.variations ?? []).map((variation) => variation.display),
+        ),
+        ...module.comprehensionPool.map((item) => item.display),
+      ];
+      for (const line of written) {
+        // The resolver's own walk, longest surface first — so a token inside a taught phrase
+        // (the po' of un po' di) is answered by the phrase and needs no key of its own.
+        const matches = matchSurfaces(tokenizeSurface(line), {
+          maxSpan,
+          has: (surface) => taught.has(surface),
+        });
+        for (const match of matches) {
+          if (match.resolved || !match.surface.includes("'")) continue;
+          expect.fail(`${file}: "${match.surface}" in "${line}" resolves to no word row`);
+        }
       }
     }
   });

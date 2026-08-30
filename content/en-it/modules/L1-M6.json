@@ -1,0 +1,556 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M6",
+  "title": "Tomorrow",
+  "job": "Future and plans",
+  "prerequisites": ["L1-M5"],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "Domani + V-o",
+      "Domani vado a + place",
+      "Domani vado a + V-inf",
+      "La settimana prossima + V-o"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The everyday Italian future is the PRESENT plus a time word: Domani vado a Roma, Domani lavoro. The time word carries the tense and nothing on the verb changes — English half-shares this with \"I'm going tomorrow\", so it is a delta you already own half of."
+    },
+    {
+      "tag": "delta",
+      "text": "Italian does have a future tense — andrò, lavorerò — and it is used for predictions and promises rather than for arrangements. It belongs to a later level, and nothing in this module needs it."
+    },
+    {
+      "tag": "delta",
+      "text": "andare is irregular and carries the module: vado · vai · va. Going to a place takes a — vado a Roma, vado a casa — and going to DO something takes the same a in front of the plain verb: vado a mangiare."
+    },
+    {
+      "tag": "delta",
+      "text": "A time phrase built on prossimo agrees with its noun: la settimana prossima (feminine), il mese prossimo (masculine). It stands at the front or at the end, and needs no preposition in either place."
+    },
+    {
+      "tag": "delta",
+      "text": "Some of the commonest verbs bend their stems and are learned one at a time: andare gives vado · vai · va, fare gives faccio · fai · fa, uscire gives esco · esci · esce. The endings are the ordinary ones; it is the stem that moves."
+    },
+    {
+      "tag": "free",
+      "text": "The present keeps doing what M4 taught, one ending per person: prendo · prendi · prende, vedo · vedi · vede."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M6-S01",
+      "display": "Domani vado a Roma",
+      "cue": "Tomorrow I'm going to Rome",
+      "glossEn": "lit. \"Tomorrow I-go to Rome\" — a present tense doing a future's work",
+      "literal": "Tomorrow I-go to Rome",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Domani",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [],
+            "note": "tomorrow. A plain adverb: it takes no article and no preposition, and it stands at the front or at the end. It is what turns the present tense in front of it into a plan."
+          },
+          {
+            "display": "vado",
+            "cue": "I go",
+            "tag": "delta",
+            "forms": ["vado", "vai", "va", "andare"],
+            "note": "andare — to go, and one of the irregular ones: vado (I) · vai (you) · va (he, she). Its plain form andare is what M5's sono andato was built from."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "English needs \"will\" or \"going to\" to mark a plan. Italian needs neither: the present plus domani says everything, and reaching for the future tense here writes the form Italians use least in conversation.",
+      "sound": "do-MA-ni, stressed in the middle — no accent is written because the stress falls where the language expects it. VA-do is two short syllables.",
+      "variations": [
+        {
+          "display": "Domani vado a Milano",
+          "cue": "Tomorrow I'm going to Milan",
+          "changed": "swap the destination — a stays in front of it"
+        },
+        {
+          "display": "Domani non vado a Roma",
+          "cue": "Tomorrow I'm not going to Rome",
+          "changed": "non in front of the verb; the plan is cancelled, nothing else moves"
+        },
+        {
+          "display": "Vai a Roma domani?",
+          "cue": "Are you going to Rome tomorrow?",
+          "changed": "vado → vai, the time word to the end, and a question mark to ask"
+        }
+      ],
+      "mistake": {
+        "display": "Domani vado Roma",
+        "why": "andare needs its a in front of a place: Domani vado a Roma. (The future tense, Domani andrò a Roma, is not wrong either — it is simply not what is said about an arrangement.)"
+      },
+      "usage": "Any plan for tomorrow, in any company.",
+      "register": "informal",
+      "mnemonic": "The time word carries the future, so the verb does not have to."
+    },
+    {
+      "id": "L1-M6-S02",
+      "display": "Stasera vado a mangiare",
+      "cue": "Tonight I'm going out to eat",
+      "glossEn": "lit. \"This-evening I-go to eat\"",
+      "literal": "This-evening I-go to eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Stasera",
+            "cue": "this evening · tonight",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"This evening\" — questa sera worn down into one word, the way stamattina and stanotte are. It covers the whole English \"tonight\" as long as you mean the evening rather than the small hours."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "The a in vado a mangiare is not the \"to\" of an infinitive — Italian infinitives need no \"to\". It is the same a as in vado a Roma: you are going somewhere in order to eat.",
+      "sound": "sta-SE-ra, three syllables with the stress in the middle, and a single tapped r.",
+      "variations": [
+        {
+          "display": "Stasera vado a studiare",
+          "cue": "Tonight I'm going to study",
+          "changed": "swap what you are going to do — a stays in front of the plain verb"
+        },
+        {
+          "display": "Domani vado a mangiare con Anna",
+          "cue": "Tomorrow I'm going out to eat with Anna",
+          "changed": "another time word, and con brings someone along"
+        },
+        {
+          "display": "Stasera non vado a mangiare",
+          "cue": "Tonight I'm not going out to eat",
+          "changed": "non in front of the whole thing, and the plan is off"
+        }
+      ],
+      "mistake": {
+        "display": "Stasera vado mangiare",
+        "why": "andare needs its a before another verb: vado a mangiare. It is volere that takes the infinitive bare."
+      },
+      "usage": "Making an evening plan, or turning one down.",
+      "register": "informal",
+      "mnemonic": "You GO somewhere to do it, so andare keeps its a."
+    },
+    {
+      "id": "L1-M6-S03",
+      "display": "Domani prendo il treno",
+      "cue": "Tomorrow I'm taking the train",
+      "glossEn": "lit. \"Tomorrow I-take the train\"",
+      "literal": "Tomorrow I-take the train",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prendo",
+            "cue": "I take",
+            "tag": "free",
+            "forms": ["prendo", "prendi", "prende", "prendere"],
+            "note": "prendere — to take, and an ordinary -ere verb: prendo (I) · prendi (you) · prende (he, she). It is also what you do with a coffee: prendo un caffè."
+          },
+          {
+            "display": "treno",
+            "cue": "train",
+            "tag": "free",
+            "forms": ["treno", "treni"],
+            "note": "Masculine: il treno (one) · i treni (more than one). The e is close, so it is TRE-no and never \"tray-no\"."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "English can say \"I'm taking the train tomorrow\" or \"I'll take the train\" and mean the same thing. Italian has one sentence for both, and it is the plain present.",
+      "sound": "PREN-do, and TRE-no with a single tapped r. Neither e is the long \"ay\" of English — both are short and close.",
+      "variations": [
+        {
+          "display": "Domani prendo un caffè con Anna",
+          "cue": "Tomorrow I'm having a coffee with Anna",
+          "changed": "the same verb, doing what English does with \"have\""
+        },
+        {
+          "display": "Prendi il treno domani?",
+          "cue": "Are you taking the train tomorrow?",
+          "changed": "-o → -i, the time word to the end, and a question mark"
+        },
+        {
+          "display": "Domani non prendo il treno",
+          "cue": "Tomorrow I'm not taking the train",
+          "changed": "non in front of the verb; the object stays where it was"
+        }
+      ],
+      "mistake": {
+        "display": "Domani prendo treno",
+        "why": "A particular train keeps its article: prendo il treno. Italian drops an article far less often than English does."
+      },
+      "usage": "Saying how you will get somewhere.",
+      "register": "informal",
+      "mnemonic": "prendere takes trains and coffees alike."
+    },
+    {
+      "id": "L1-M6-S04",
+      "display": "La settimana prossima vado a Milano",
+      "cue": "Next week I'm going to Milan",
+      "glossEn": "lit. \"The week next I-go to Milan\"",
+      "literal": "The week next I-go to Milan",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "La settimana prossima",
+            "cue": "next week",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Next week\", and every piece of it is doing work English does differently: the article is compulsory, and prossima FOLLOWS the noun and agrees with it. The masculine partner is il mese prossimo."
+          },
+          {
+            "display": "Milano",
+            "cue": "Milan",
+            "tag": "free",
+            "forms": [],
+            "note": "Italian spells its own cities: Milano, Roma, Firenze, Venezia. A city takes a with no article — a Milano, a Roma."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "English says \"next week\" with two words and no article. Italian needs three, in the other order, with the adjective agreeing: la settimana prossima.",
+      "sound": "set-ti-MA-na with the double t held, and PROS-si-ma with a doubled s. mi-LA-no is stressed in the middle.",
+      "variations": [
+        {
+          "display": "Il mese prossimo vado a Milano",
+          "cue": "Next month I'm going to Milan",
+          "changed": "a masculine noun, so the adjective goes masculine with it — prossimo"
+        },
+        {
+          "display": "Vado a Milano la settimana prossima",
+          "cue": "I'm going to Milan next week",
+          "changed": "the time phrase moved to the end, still with no preposition"
+        },
+        {
+          "display": "La settimana prossima non lavoro",
+          "cue": "Next week I'm not working",
+          "changed": "another verb behind the same time phrase, with non in front of it"
+        }
+      ],
+      "mistake": {
+        "display": "Prossima settimana vado a Milano",
+        "why": "The article is not optional and the adjective goes behind: La settimana prossima vado a Milano."
+      },
+      "usage": "Planning further out than tomorrow.",
+      "register": "informal",
+      "mnemonic": "The week comes first and next comes after: la settimana prossima."
+    },
+    {
+      "id": "L1-M6-S05",
+      "display": "Domani vedo Anna",
+      "cue": "Tomorrow I'm seeing Anna",
+      "glossEn": "lit. \"Tomorrow I-see Anna\"",
+      "literal": "Tomorrow I-see Anna",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vedo",
+            "cue": "I see",
+            "tag": "free",
+            "forms": ["vedo", "vedi", "vede", "vedere"],
+            "note": "vedere — to see, and an ordinary -ere verb: vedo (I) · vedi (you) · vede (he, she). Meeting someone by arrangement is vedere in Italian, exactly as it is \"see\" in English."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "Italian puts no preposition in front of a person here. Spanish would (veo a mi hermana); Italian says vedo Anna, and the a would turn it into a destination.",
+      "sound": "VE-do, both syllables short, with a close e.",
+      "variations": [
+        {
+          "display": "Domani vedo Rohan",
+          "cue": "Tomorrow I'm seeing Rohan",
+          "changed": "swap who you are meeting — nothing stands in front of the name"
+        },
+        {
+          "display": "Vedi Anna domani?",
+          "cue": "Are you seeing Anna tomorrow?",
+          "changed": "-o → -i, the time word to the end, and a question mark"
+        },
+        {
+          "display": "La settimana prossima vedo Anna",
+          "cue": "Next week I'm seeing Anna",
+          "changed": "a longer time phrase in front, and the plan holds"
+        }
+      ],
+      "mistake": {
+        "display": "Domani vedo a Anna",
+        "why": "No a in front of a person: Domani vedo Anna. The a of vado a Roma marks a destination, not an object."
+      },
+      "usage": "Arranging to meet.",
+      "register": "informal",
+      "mnemonic": "vedere sees people straight, with nothing in between."
+    },
+    {
+      "id": "L1-M6-S06",
+      "display": "Stasera non esco",
+      "cue": "Tonight I'm not going out",
+      "glossEn": "lit. \"This-evening not I-go-out\"",
+      "literal": "This-evening not I-go-out",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "esco",
+            "cue": "I go out",
+            "tag": "delta",
+            "forms": ["esco", "esci", "esce", "uscire"],
+            "note": "uscire — to go out, and its stem bends: esco (I) · esci (you) · esce (he, she). It is one word where English needs two, and it covers leaving the house for the evening as well as simply stepping outside."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "English builds \"go out\" from two words and can split them (\"go straight out\"). Italian has one verb, and non goes in front of the whole of it.",
+      "sound": "ES-ko. sc before o is a hard \"sk\"; the same letters before i or e would be the sh of \"ship\", which is why esci is E-shee.",
+      "variations": [
+        {
+          "display": "Stasera esco",
+          "cue": "Tonight I'm going out",
+          "changed": "drop non and the evening is on again"
+        },
+        {
+          "display": "Esci stasera?",
+          "cue": "Are you going out tonight?",
+          "changed": "esco → esci — and the sc changes sound with the vowel behind it"
+        },
+        {
+          "display": "Domani non esco",
+          "cue": "Tomorrow I'm not going out",
+          "changed": "swap the time word; the refusal is the same shape"
+        }
+      ],
+      "mistake": {
+        "display": "Stasera io non esco",
+        "why": "Drop the io — esco already says who. It comes back only to draw a contrast: Io non esco, ma Anna sì."
+      },
+      "usage": "Turning down an evening, or announcing one.",
+      "register": "informal",
+      "mnemonic": "uscire keeps its u only in the plain form; the present starts with e."
+    },
+    {
+      "id": "L1-M6-S07",
+      "display": "Che cosa fai domani?",
+      "cue": "What are you doing tomorrow?",
+      "glossEn": "lit. \"What thing you-do tomorrow?\"",
+      "literal": "What thing you-do tomorrow?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fai",
+            "cue": "you do · you make",
+            "tag": "delta",
+            "forms": ["faccio", "fai", "fa", "fare"],
+            "note": "fare — one verb for both \"do\" and \"make\", and its stem bends hard: faccio (I) · fai (you) · fa (he, she). It also does the weather — fa caldo, fa freddo — which M9 comes back to."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "English needs \"are\" and \"-ing\" to ask about a plan, and Italian needs neither: the plain present plus a time word is the whole question.",
+      "sound": "FAI is one syllable — the a and the i glide together, like the English word \"fie\".",
+      "variations": [
+        {
+          "display": "Che cosa fai stasera?",
+          "cue": "What are you doing tonight?",
+          "changed": "swap the time word — the question is otherwise identical"
+        },
+        {
+          "display": "Che cosa fai la settimana prossima?",
+          "cue": "What are you doing next week?",
+          "changed": "a longer time phrase, still with no preposition in front of it"
+        },
+        {
+          "display": "Domani vado a Roma",
+          "cue": "Tomorrow I'm going to Rome",
+          "changed": "the answer: a plan in the plain present"
+        }
+      ],
+      "mistake": {
+        "display": "Che cosa tu fai domani?",
+        "why": "Drop the tu — fai already says who is being asked, and a pronoun here reads as a challenge rather than a question."
+      },
+      "usage": "The question that opens every arrangement.",
+      "register": "informal",
+      "mnemonic": "fare does and makes, and it does the weather too."
+    },
+    {
+      "id": "L1-M6-S08",
+      "display": "Domani parto presto",
+      "cue": "Tomorrow I'm leaving early",
+      "glossEn": "lit. \"Tomorrow I-leave early\"",
+      "literal": "Tomorrow I-leave early",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "parto",
+            "cue": "I leave · I set off",
+            "tag": "free",
+            "forms": ["parto", "parti", "parte", "partire"],
+            "note": "partire — to leave, in the sense of setting off on a journey: parto (I) · parti (you) · parte (he, she). It is an -ire verb, and it is what a train does as well as what you do."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "partire is leaving FOR somewhere, not leaving something behind. \"I'm leaving my bag\" is a different verb (lasciare), which L1 does not need.",
+      "sound": "PAR-to, one tapped r, and PRE-sto with a plain s before the t.",
+      "variations": [
+        {
+          "display": "Domani parto per Roma",
+          "cue": "Tomorrow I'm leaving for Rome",
+          "changed": "per marks what you are setting off towards"
+        },
+        {
+          "display": "Parti domani?",
+          "cue": "Are you leaving tomorrow?",
+          "changed": "-o → -i and a question mark; nothing else is added"
+        },
+        {
+          "display": "Domani non parto presto",
+          "cue": "Tomorrow I'm not leaving early",
+          "changed": "non in front of the verb, and presto still hugs it"
+        }
+      ],
+      "mistake": {
+        "display": "Domani parto a Roma",
+        "why": "Setting off towards a place takes per: parto per Roma. a belongs to andare — vado a Roma."
+      },
+      "usage": "Trips, trains and early mornings.",
+      "register": "informal",
+      "mnemonic": "You PART from here and go per there."
+    },
+    {
+      "id": "L1-M6-S09",
+      "display": "Il mese prossimo vado a Milano",
+      "cue": "Next month I'm going to Milan",
+      "glossEn": "lit. \"The month next I-go to Milan\"",
+      "literal": "The month next I-go to Milan",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Il mese prossimo",
+            "cue": "next month",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Next month\", built exactly like la settimana prossima and differing only in gender: mese is masculine, so the article is il and the adjective is prossimo."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "The two time phrases look interchangeable and are not: la settimana prossima is feminine throughout, il mese prossimo masculine throughout. Mixing them is the commonest slip.",
+      "sound": "ME-ze — the single s between two vowels again, said as a z through much of the north. PROS-si-mo has a doubled s that is held.",
+      "variations": [
+        {
+          "display": "Il mese prossimo non lavoro",
+          "cue": "Next month I'm not working",
+          "changed": "another verb behind the same phrase, with non in front of it"
+        },
+        {
+          "display": "Vado a Milano il mese prossimo",
+          "cue": "I'm going to Milan next month",
+          "changed": "the time phrase to the end — no preposition either way"
+        },
+        {
+          "display": "La settimana prossima vado a Roma",
+          "cue": "Next week I'm going to Rome",
+          "changed": "the feminine partner, agreeing all the way through"
+        }
+      ],
+      "mistake": {
+        "display": "Il mese prossima vado a Milano",
+        "why": "mese is masculine, so the adjective is prossimo. The pair moves together: il mese prossimo, la settimana prossima."
+      },
+      "usage": "The longer plan, and the one people ask about at the end of a conversation.",
+      "register": "informal",
+      "mnemonic": "The article and the adjective agree at both ends of the phrase."
+    },
+    {
+      "id": "L1-M6-S10",
+      "display": "Domani vado a comprare un regalo",
+      "cue": "Tomorrow I'm going to buy a present",
+      "glossEn": "lit. \"Tomorrow I-go to buy a present\"",
+      "literal": "Tomorrow I-go to buy a present",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "regalo",
+            "cue": "present · gift",
+            "tag": "free",
+            "forms": ["regalo", "regali"],
+            "note": "Masculine: un regalo (one) · i regali (more than one). It is the thing, not the act — giving one is fare un regalo."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "English \"I'm going to buy\" is a pure future marker with no journey in it. Italian's vado a comprare still means you are going somewhere to do it — and it is the ordinary way to say this anyway.",
+      "sound": "re-GA-lo, stressed in the middle, with a tapped r and clear vowels throughout.",
+      "variations": [
+        {
+          "display": "Domani vado a comprare il pane",
+          "cue": "Tomorrow I'm going to buy the bread",
+          "changed": "swap what you are buying; the frame holds"
+        },
+        {
+          "display": "Vai a comprare un regalo?",
+          "cue": "Are you going to buy a present?",
+          "changed": "vado → vai and a question mark, with the a untouched"
+        },
+        {
+          "display": "Stasera vado a comprare un regalo",
+          "cue": "Tonight I'm going to buy a present",
+          "changed": "another time word in front — the plan moves with it"
+        }
+      ],
+      "mistake": {
+        "display": "Domani vado comprare un regalo",
+        "why": "andare keeps its a in front of the second verb: vado a comprare."
+      },
+      "usage": "The errand you are announcing rather than the one you are already on.",
+      "register": "informal",
+      "mnemonic": "andare always brings its a along."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M6-C01", "display": "Domani vado a Milano", "cue": "Tomorrow I'm going to Milan" },
+    {
+      "id": "L1-M6-C02",
+      "display": "Stasera vado a mangiare con Anna",
+      "cue": "Tonight I'm going out to eat with Anna"
+    },
+    { "id": "L1-M6-C03", "display": "Che cosa fai stasera?", "cue": "What are you doing tonight?" },
+    {
+      "id": "L1-M6-C04",
+      "display": "La settimana prossima non lavoro",
+      "cue": "Next week I'm not working"
+    },
+    { "id": "L1-M6-C05", "display": "Domani prendo un caffè con Rohan", "cue": "Tomorrow I'm having a coffee with Rohan" },
+    { "id": "L1-M6-C06", "display": "Stasera non esco", "cue": "Tonight I'm not going out" },
+    { "id": "L1-M6-C07", "display": "Vai a Roma domani?", "cue": "Are you going to Rome tomorrow?" },
+    {
+      "id": "L1-M6-C08",
+      "display": "Il mese prossimo vedo Anna",
+      "cue": "Next month I'm seeing Anna"
+    },
+    { "id": "L1-M6-C09", "display": "Domani parto presto", "cue": "Tomorrow I'm leaving early" },
+    {
+      "id": "L1-M6-C10",
+      "display": "Domani vado a comprare il pane",
+      "cue": "Tomorrow I'm going to buy the bread"
+    },
+    { "id": "L1-M6-C11", "display": "Prendi il treno stasera?", "cue": "Are you taking the train tonight?" },
+    {
+      "id": "L1-M6-C12",
+      "display": "Ieri sono andato a Milano",
+      "cue": "Yesterday I went to Milan"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

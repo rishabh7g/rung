@@ -1,0 +1,537 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M9",
+  "title": "Feelings & opinions",
+  "job": "Why — because and so",
+  "prerequisites": ["L1-M8"],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": ["simple_present", "passato_prossimo"],
+    "allowedPatterns": [
+      "<statement> + perché + <statement>",
+      "<statement> + , quindi + <statement>",
+      "Perché + <question>?",
+      "Ho + fame/freddo/sete"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "perché is ONE word doing BOTH jobs: it asks \"why\" (Perché non mangi?) and it answers \"because\" (Non mangio perché non ho fame). Spanish separates the two in spelling and Italian does not, so there is no orthographic escape — the sentence around it is what tells you which one you are looking at."
+    },
+    {
+      "tag": "delta",
+      "text": "quindi is the other direction: perché puts the REASON second, quindi puts the CONSEQUENCE second. The same two facts either way round — Non voglio il caffè perché sono stanco · Sono stanco, quindi non voglio il caffè."
+    },
+    {
+      "tag": "interference",
+      "text": "A closed set of states runs on avere plus a BARE noun where English uses \"be\" plus an adjective: ho fame (I'm hungry) · ho freddo (I'm cold) · ho sete (I'm thirsty) · ho sonno (I'm sleepy) · ho caldo (I'm hot). No article, and never essere: sono fame is the classic English sentence and it says nothing."
+    },
+    {
+      "tag": "delta",
+      "text": "Feelings that ARE adjectives take essere and agree with the SUBJECT — with whoever the sentence is about: sono stanco (a man about himself) · sono stanca (a woman) · sei felice? (asked of anyone, since felice has one shape). It is M2's agreement rule at a length where it finally has room to move."
+    },
+    {
+      "tag": "delta",
+      "text": "The weather takes fare: fa caldo, fa freddo. The same noun that rides avere for a person rides fare for the day — ho freddo is about me, fa freddo is about the weather."
+    },
+    {
+      "tag": "delta",
+      "text": "An opinion at this level is penso di plus a plain verb: penso di andare a Roma. penso che pulls in a mood Italian keeps for exactly this job (penso che sia…), and that belongs to a later level."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M9-S01",
+      "display": "Ho fame",
+      "cue": "I'm hungry",
+      "glossEn": "lit. \"I-have hunger\"",
+      "literal": "I-have hunger",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fame",
+            "cue": "hunger",
+            "tag": "interference",
+            "forms": [],
+            "note": "hunger — a noun, not an adjective, which is why the verb in front of it is avere and not essere. It stands bare, with no article: ho fame, never ho la fame."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "English makes hunger a state you ARE. Italian makes it a thing you HAVE. Sono fame is the sentence an English speaker writes first, and it means nothing at all.",
+      "sound": "FA-me, two syllables with the final -e pronounced. It is one letter from fame in English and nothing like it in sound.",
+      "variations": [
+        {
+          "display": "Non ho fame",
+          "cue": "I'm not hungry",
+          "changed": "non in front of the verb — the noun behind it is untouched"
+        },
+        {
+          "display": "Hai fame?",
+          "cue": "Are you hungry?",
+          "changed": "ho → hai: the same state, asked"
+        },
+        {
+          "display": "Anna ha fame",
+          "cue": "Anna is hungry",
+          "changed": "ho → ha for a third person; fame never moves"
+        }
+      ],
+      "mistake": {
+        "display": "Sono fame",
+        "why": "fame is a noun, so it takes avere: Ho fame. Sono fame would be claiming to BE hunger."
+      },
+      "usage": "The shortest complete sentence in the module, and the most used.",
+      "register": "informal",
+      "mnemonic": "In Italian you HAVE hunger; in English you ARE hungry."
+    },
+    {
+      "id": "L1-M9-S02",
+      "display": "Ho freddo oggi",
+      "cue": "I'm cold today",
+      "glossEn": "lit. \"I-have cold today\"",
+      "literal": "I-have cold today",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "freddo",
+            "cue": "cold",
+            "tag": "interference",
+            "forms": [],
+            "note": "cold — a noun here, riding avere like fame: ho freddo. The same word does duty as an adjective elsewhere (un caffè freddo), and the verb in front of it is what tells you which job it is doing."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "The English word is an adjective and the Italian one is doing a noun's work. Once ho fame is in place, ho freddo, ho sete and ho sonno all follow the same shape.",
+      "sound": "FRED-do, with the double d genuinely held — a single one would be a different word.",
+      "variations": [
+        {
+          "display": "Non ho freddo",
+          "cue": "I'm not cold",
+          "changed": "non in front of the verb"
+        },
+        {
+          "display": "Hai freddo?",
+          "cue": "Are you cold?",
+          "changed": "ho → hai: asked instead of stated"
+        },
+        {
+          "display": "Fa freddo oggi",
+          "cue": "It's cold today",
+          "changed": "the same noun with fare instead of avere — now it is the weather, not me"
+        }
+      ],
+      "mistake": {
+        "display": "Sono freddo",
+        "why": "This is a sentence, and it says you are a cold person. The state is ho freddo."
+      },
+      "usage": "Complaining, and asking for a window to be shut.",
+      "register": "informal",
+      "mnemonic": "ho freddo is me; fa freddo is the day."
+    },
+    {
+      "id": "L1-M9-S03",
+      "display": "Non mangio perché non ho fame",
+      "cue": "I'm not eating because I'm not hungry",
+      "glossEn": "lit. \"Not I-eat because not I-have hunger\"",
+      "literal": "Not I-eat because not I-have hunger",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "perché",
+            "cue": "because · why",
+            "tag": "interference",
+            "forms": [],
+            "note": "ONE word for both jobs. In the middle of a sentence it means \"because\" and introduces the reason; at the front of a question it means \"why\". Nothing about the spelling changes, and the accent on the final e is never optional."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "English uses two different words — why and because — and Spanish uses two different spellings. Italian uses one word for both, so the only clue is where it stands in the sentence.",
+      "sound": "per-KE. The final é carries the stress and is a close e; the ch of that syllable is written che and said KE.",
+      "variations": [
+        {
+          "display": "Non mangio perché sono stanco",
+          "cue": "I'm not eating because I'm tired",
+          "changed": "swap the reason — perché takes any whole sentence behind it"
+        },
+        {
+          "display": "Perché non mangi?",
+          "cue": "Why aren't you eating?",
+          "changed": "the same word at the FRONT, where it asks instead of answering"
+        },
+        {
+          "display": "Non ho fame, quindi non mangio",
+          "cue": "I'm not hungry, so I'm not eating",
+          "changed": "the same two facts the other way round, joined by quindi"
+        }
+      ],
+      "mistake": {
+        "display": "Non mangio perche non ho fame",
+        "why": "perché carries an accent on its last letter, always. Without it, it is not a word."
+      },
+      "usage": "Explaining yourself without being asked.",
+      "register": "informal",
+      "mnemonic": "One word, two directions: it asks at the front and answers in the middle."
+    },
+    {
+      "id": "L1-M9-S04",
+      "display": "Ho sete, quindi bevo un caffè",
+      "cue": "I'm thirsty, so I'm having a coffee",
+      "glossEn": "lit. \"I-have thirst, so I-drink a coffee\"",
+      "literal": "I-have thirst, so I-drink a coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sete",
+            "cue": "thirst",
+            "tag": "interference",
+            "forms": [],
+            "note": "thirst, and another bare noun on avere: ho sete. Note the single t — sette with two is \"seven\", and Italian holds a doubled consonant long enough that the two are never confused out loud."
+          },
+          {
+            "display": "quindi",
+            "cue": "so",
+            "tag": "delta",
+            "forms": [],
+            "note": "so — it introduces the CONSEQUENCE, where perché introduces the reason. It sits after a comma and takes a whole sentence behind it. così does the same job."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "perché and quindi are the same two facts in opposite orders. Choosing wrongly does not make a wrong sentence — it makes a sentence that says the opposite of what you meant.",
+      "sound": "SE-te, with a single t, against alle sette with a doubled one. KWIN-di has the usual \"kw\" for qu.",
+      "variations": [
+        {
+          "display": "Bevo un caffè perché ho sete",
+          "cue": "I'm having a coffee because I'm thirsty",
+          "changed": "the same two facts with the reason second — perché instead of quindi"
+        },
+        {
+          "display": "Ho sete, quindi bevo un po' di acqua",
+          "cue": "I'm thirsty, so I'm drinking a bit of water",
+          "changed": "swap the consequence; quindi does not move"
+        },
+        {
+          "display": "Non ho sete",
+          "cue": "I'm not thirsty",
+          "changed": "the state on its own, negated"
+        }
+      ],
+      "mistake": {
+        "display": "Ho sete, perché bevo un caffè",
+        "why": "That says you are thirsty because you are drinking a coffee. The consequence takes quindi: Ho sete, quindi bevo un caffè."
+      },
+      "usage": "Explaining a decision in the same breath as making it.",
+      "register": "informal",
+      "mnemonic": "perché looks back at the reason; quindi looks forward to what follows."
+    },
+    {
+      "id": "L1-M9-S05",
+      "display": "Sono felice oggi",
+      "cue": "I'm happy today",
+      "glossEn": "lit. \"I-am happy today\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "felice",
+            "cue": "happy",
+            "tag": "delta",
+            "forms": ["felice", "felici"],
+            "note": "happy — a real adjective, so it takes essere and not avere. It ends in -e, so it has ONE shape for a man and a woman alike, and only goes plural: felici."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "The module's two halves sit side by side here: ho fame is a noun on avere, sono felice is an adjective on essere. Which verb you need depends on the WORD, not on the feeling.",
+      "sound": "fe-LI-che. The c before e is soft — the ch of \"church\" — and the final -e is pronounced.",
+      "variations": [
+        {
+          "display": "Sei felice?",
+          "cue": "Are you happy?",
+          "changed": "sono → sei; felice has one shape, so nothing else moves"
+        },
+        {
+          "display": "Sono felice perché domani vado a Roma",
+          "cue": "I'm happy because tomorrow I'm going to Rome",
+          "changed": "a reason hung on with perché"
+        },
+        {
+          "display": "Non sono felice oggi",
+          "cue": "I'm not happy today",
+          "changed": "non in front of the verb"
+        }
+      ],
+      "mistake": {
+        "display": "Ho felice oggi",
+        "why": "felice is an adjective, so it takes essere: Sono felice oggi. avere is for the bare nouns — fame, freddo, sete."
+      },
+      "usage": "Saying how you are when \"bene\" is not enough.",
+      "register": "informal",
+      "mnemonic": "A noun rides avere; an adjective rides essere."
+    },
+    {
+      "id": "L1-M9-S06",
+      "display": "Perché sei triste?",
+      "cue": "Why are you sad?",
+      "glossEn": "lit. \"Why you-are sad?\"",
+      "literal": "Why you-are sad?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "triste",
+            "cue": "sad",
+            "tag": "free",
+            "forms": ["triste", "tristi"],
+            "note": "sad — another -e adjective, so one shape for both genders and tristi in the plural. It rides essere, like felice."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "At the front of a question perché is \"why\", and the answer to it will use the very same word for \"because\". Nothing is added to ask — no \"do\", no inversion.",
+      "sound": "TRI-ste, with a tapped r and a plain s before the t.",
+      "variations": [
+        {
+          "display": "Perché sei felice?",
+          "cue": "Why are you happy?",
+          "changed": "swap the adjective — the question word is the frame"
+        },
+        {
+          "display": "Sono triste perché non vedo Anna",
+          "cue": "I'm sad because I'm not seeing Anna",
+          "changed": "the answer, with the same word now meaning \"because\""
+        },
+        {
+          "display": "Perché non mangi?",
+          "cue": "Why aren't you eating?",
+          "changed": "another verb behind the same question word, negated"
+        }
+      ],
+      "mistake": {
+        "display": "Perché tu sei triste?",
+        "why": "Drop the tu — sei already says who is being asked. A pronoun here reads as an accusation."
+      },
+      "usage": "Asking after someone, once bene is clearly not the answer.",
+      "register": "informal",
+      "mnemonic": "perché at the front is a question; perché in the middle is an answer."
+    },
+    {
+      "id": "L1-M9-S07",
+      "display": "Penso di andare a Roma",
+      "cue": "I'm thinking of going to Rome",
+      "glossEn": "lit. \"I-think of to-go to Rome\"",
+      "literal": "I-think of to-go to Rome",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Penso di",
+            "cue": "I'm thinking of",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"I'm thinking of\" — and the di is compulsory in front of the plain verb that follows: penso di andare, penso di comprare. Taught whole, because penso on its own leads into penso che, which needs a mood this level does not teach."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "English says \"I'm thinking of going\" and \"I think that I'll go\" almost interchangeably. Italian's second one — penso che — needs a whole extra verb form, so this course stays on penso di and the plain verb.",
+      "sound": "PEN-so. The s here is a plain s, not the z of casa: it follows a consonant rather than sitting between two vowels.",
+      "variations": [
+        {
+          "display": "Penso di comprare un regalo",
+          "cue": "I'm thinking of buying a present",
+          "changed": "swap the plan — di stays in front of the plain verb"
+        },
+        {
+          "display": "Non penso di andare a Roma",
+          "cue": "I'm not thinking of going to Rome",
+          "changed": "non in front of the verb, and the rest is untouched"
+        },
+        {
+          "display": "Penso di andare a Roma perché ho una settimana libera",
+          "cue": "I'm thinking of going to Rome because I have a free week",
+          "changed": "a reason hung on with perché, at the length the module allows"
+        }
+      ],
+      "mistake": {
+        "display": "Penso andare a Roma",
+        "why": "The di is not optional after penso: Penso di andare a Roma."
+      },
+      "usage": "Floating a plan you have not committed to.",
+      "register": "informal",
+      "mnemonic": "penso di + a plain verb; penso che is for a level that has the mood for it."
+    },
+    {
+      "id": "L1-M9-S08",
+      "display": "Ho sonno, quindi vado a casa",
+      "cue": "I'm sleepy, so I'm going home",
+      "glossEn": "lit. \"I-have sleep, so I-go to home\"",
+      "literal": "I-have sleep, so I-go to home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sonno",
+            "cue": "sleepiness",
+            "tag": "interference",
+            "forms": [],
+            "note": "The state of being sleepy — the fourth of the bare nouns on avere. Two n's: sono with one n is \"I am\", and the pair are a whole sentence apart."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "sonno and sono are one letter apart and the doubled n is held long enough that Italians never confuse them. On the page, the second n is what stands between \"I'm sleepy\" and \"I am\".",
+      "sound": "SON-no, with the double n genuinely held — longer than the single n of sono.",
+      "variations": [
+        {
+          "display": "Ho sonno, quindi non esco",
+          "cue": "I'm sleepy, so I'm not going out",
+          "changed": "swap the consequence; quindi is the hinge either way"
+        },
+        {
+          "display": "Vado a casa perché ho sonno",
+          "cue": "I'm going home because I'm sleepy",
+          "changed": "the same two facts reversed, so the joiner becomes perché"
+        },
+        {
+          "display": "Hai sonno?",
+          "cue": "Are you sleepy?",
+          "changed": "ho → hai: the state, asked"
+        }
+      ],
+      "mistake": {
+        "display": "Ho sono, quindi vado a casa",
+        "why": "One n makes it \"I have I-am\". Sleepiness is sonno, with two."
+      },
+      "usage": "Leaving a party.",
+      "register": "informal",
+      "mnemonic": "Two n's for sleep, one n for being."
+    },
+    {
+      "id": "L1-M9-S09",
+      "display": "Fa caldo oggi",
+      "cue": "It's hot today",
+      "glossEn": "lit. \"It-makes hot today\"",
+      "literal": "It-makes hot today",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "caldo",
+            "cue": "heat · hot",
+            "tag": "delta",
+            "forms": ["caldo", "calda", "caldi", "calde"],
+            "note": "The same double life as freddo: a bare noun after avere (ho caldo — I'm hot) and after fare (fa caldo — it's hot out). As an adjective it agrees like any other: un caffè caldo, una pizza calda."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "English needs a subject — \"it\" — for the weather, and Italian refuses to write one. Fa caldo is the whole sentence, and fa is doing all the work.",
+      "sound": "KAL-do. The l is clear and forward, and the a is open.",
+      "variations": [
+        {
+          "display": "Fa freddo oggi",
+          "cue": "It's cold today",
+          "changed": "the other half of the weather, on the same verb"
+        },
+        {
+          "display": "Ho caldo",
+          "cue": "I'm hot",
+          "changed": "avere instead of fare — now it is me, not the day"
+        },
+        {
+          "display": "Fa caldo, quindi bevo un po' di acqua",
+          "cue": "It's hot, so I'm drinking a bit of water",
+          "changed": "a consequence hung on with quindi"
+        }
+      ],
+      "mistake": {
+        "display": "È caldo oggi",
+        "why": "About the weather it is fare, not essere: Fa caldo oggi. È caldo would be about a particular thing — il caffè è caldo."
+      },
+      "usage": "The most reliable small talk there is.",
+      "register": "informal",
+      "mnemonic": "The day MAKES the weather: fa caldo, fa freddo."
+    },
+    {
+      "id": "L1-M9-S10",
+      "display": "Non voglio uscire perché piove",
+      "cue": "I don't want to go out because it's raining",
+      "glossEn": "lit. \"Not I-want to-go-out because it-rains\"",
+      "literal": "Not I-want to-go-out because it-rains",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "piove",
+            "cue": "it's raining",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"It rains\" and \"it is raining\", in one word with no subject at all — Italian never writes an \"it\" for the weather. Its past is ha piovuto."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "One Italian word carries an English subject, a verb and a tense: piove is \"it's raining\". Adding anything in front of it — esso piove, lui piove — breaks the sentence.",
+      "sound": "PYO-ve. The io is one syllable, and the v is soft and quick.",
+      "variations": [
+        {
+          "display": "Non esco perché piove",
+          "cue": "I'm not going out because it's raining",
+          "changed": "one verb instead of two — the reason is unchanged"
+        },
+        {
+          "display": "Piove, quindi non esco",
+          "cue": "It's raining, so I'm not going out",
+          "changed": "the same two facts the other way round, on quindi"
+        },
+        {
+          "display": "Non voglio uscire perché ho sonno",
+          "cue": "I don't want to go out because I'm sleepy",
+          "changed": "swap the reason — perché takes any whole sentence"
+        }
+      ],
+      "mistake": {
+        "display": "Non voglio uscire perché esso piove",
+        "why": "Nothing goes in front of piove. The weather has no subject in Italian: perché piove."
+      },
+      "usage": "The reason for staying in, in one clause.",
+      "register": "informal",
+      "mnemonic": "piove is a whole English sentence in five letters."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M9-C01", "display": "Ho fame, quindi mangio una pizza", "cue": "I'm hungry, so I'm eating a pizza" },
+    { "id": "L1-M9-C02", "display": "Perché non bevi un caffè?", "cue": "Why don't you drink a coffee?" },
+    {
+      "id": "L1-M9-C03",
+      "display": "Non esco perché fa freddo",
+      "cue": "I'm not going out because it's cold"
+    },
+    { "id": "L1-M9-C04", "display": "Anna è felice oggi", "cue": "Anna is happy today" },
+    { "id": "L1-M9-C05", "display": "Hai sete?", "cue": "Are you thirsty?" },
+    {
+      "id": "L1-M9-C06",
+      "display": "Sono triste perché parto domani",
+      "cue": "I'm sad because I'm leaving tomorrow"
+    },
+    { "id": "L1-M9-C07", "display": "Penso di comprare un regalo", "cue": "I'm thinking of buying a present" },
+    { "id": "L1-M9-C08", "display": "Ho sonno, quindi vado a dormire", "cue": "I'm sleepy, so I'm going to sleep" },
+    { "id": "L1-M9-C09", "display": "Fa caldo, quindi ho sete", "cue": "It's hot, so I'm thirsty" },
+    {
+      "id": "L1-M9-C10",
+      "display": "Perché sei stanca?",
+      "cue": "Why are you tired?"
+    },
+    { "id": "L1-M9-C11", "display": "Non mangio perché ho caldo", "cue": "I'm not eating because I'm hot" },
+    {
+      "id": "L1-M9-C12",
+      "display": "Piove, quindi prendo il treno",
+      "cue": "It's raining, so I'm taking the train"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

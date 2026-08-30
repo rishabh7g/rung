@@ -3,18 +3,18 @@
  *
  * A trimmed copy of what `npm run dev` writes to `public/content/courses.json` — the envelope
  * with its dev keys, hi-mr first, en-ar carrying `romanizationNote` so the loader is exercised
- * against a row that has more than the nine required fields, and en-ru last. Shared, so the loader
- * test and the boot tests cannot drift into disagreeing about the shape.
+ * against a row that has more than the nine required fields, and the newest course last. Shared,
+ * so the loader test and the boot tests cannot drift into disagreeing about the shape.
  *
- * **Five rows, four of them shipping.** en-es graduated in #195, en-ar in #202 and hi-en — Hindi
- * (L1) → English (L2), added behind the gate in #267 and authored in #270–#272 — in #273, so those
- * four ship and a strict build emits them (minus the dev keys). The fifth, en-ru — English (L1) →
- * Russian (L2), added behind the gate in #338 and authored in #340–#342 — graduated in #343, so
- * ALL FIVE ship and no row carries `fixture: true` any more. The seam itself is still proved, on
- * a synthetic row, in `src/course/manifest.test.ts`. The Settings smoke
- * (`src/screens/SettingsScreen.test.tsx`) and the authored-rung walks
- * (`src/course/hiEnAuthored.test.tsx`) reach the later courses through this copy, without a
- * browser.
+ * **No row carries `fixture`.** en-es graduated in #195, en-ar in #202, hi-en — Hindi (L1) →
+ * English (L2) — in #273, en-ru — English (L1) → Russian (L2), added behind the gate in #338 and
+ * authored in #340–#342 — in #343, and en-it — English (L1) → Italian (L2), added in #332 and
+ * authored in #334–#336 — in #337. So all SIX courses ship and a strict build emits the same six
+ * rows (minus the dev keys). The Settings smoke (`src/screens/SettingsScreen.test.tsx`) and the
+ * authored-rung walks (`src/course/hiEnAuthored.test.tsx`, `src/course/enRuAuthored.test.tsx`,
+ * `src/course/enItAuthored.test.tsx`) reach the later courses through this copy, without a
+ * browser. The `fixture` seam itself is still proved, on a synthetic row, in
+ * `src/course/manifest.test.ts`.
  */
 import { vi } from 'vitest';
 import { completeStrings } from './courseStrings.ts';
@@ -78,6 +78,17 @@ export const DEV_MANIFEST = {
       l2Tag: 'ru',
       l2Dir: 'ltr',
       pairLabel: 'english → russian',
+      scriptMode: 'native',
+      dir: 'ltr',
+    },
+    {
+      id: 'en-it',
+      l1: 'English',
+      l2: 'Italian',
+      l1Tag: 'en',
+      l2Tag: 'it',
+      l2Dir: 'ltr',
+      pairLabel: 'english → italian',
       scriptMode: 'native',
       dir: 'ltr',
     },
