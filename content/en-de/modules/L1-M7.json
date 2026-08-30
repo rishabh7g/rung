@@ -1,0 +1,671 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M7",
+  "title": "Where things are",
+  "job": "Locations and prepositions",
+  "prerequisites": [
+    "L1-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "Es gibt + einen/eine/ein + N",
+      "Der/Die/Das + N + ist + in/auf/unter/neben/vor/hinter + dem/der + N",
+      "Ich gehe in + den/die/das + N",
+      "Wo ist + der/die/das + N + ?",
+      "Ich bin zu Hause"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "es gibt IS THE IDIOM AND IT NEVER CHANGES: Es gibt einen Stuhl and Es gibt Stühle are the same two words. English splits \"there is\" from \"there are\" by number and German does not — a delta worth celebrating. Literally it says \"it gives\": es is a dummy subject standing in for nobody, and what exists is the OBJECT of gibt, which is why it comes out in the accusative."
+    },
+    {
+      "tag": "interference",
+      "text": "THE TWO-WAY PREPOSITIONS, and this is where a slogan dies. in, auf, unter, neben, vor and hinter take the DATIVE for a LOCATION and the ACCUSATIVE for MOTION TOWARD: Ich bin im Park (dative — where I am) against Ich gehe in den Park (accusative — where I am going). The slogan is \"the accusative is the object case\". The law is that the accusative ALSO marks motion-toward after these six, and es gibt takes it with no object relationship anywhere in the sentence — so the case is not a job description, it is a form that the preposition and the meaning choose together."
+    },
+    {
+      "tag": "free",
+      "text": "WHERE A THING IS TAKES sein, the same verb M1 opened for identity: Das Buch ist auf dem Tisch. There is still only one German verb \"to be\", doing classifying and locating alike, so there is no ser/estar split to warn about here — the whole cost of this module is in the preposition and the case after it, not in the verb."
+    },
+    {
+      "tag": "delta",
+      "text": "THE CONTRACTIONS ARE OBLIGATORY, not optional shortenings: in dem is im, in das is ins, an dem is am, zu dem is zum, zu der is zur. Ordinary speech writes im Park and never *in dem Park. Each fused form is its own word, so learning them is learning six small words rather than six rules."
+    },
+    {
+      "tag": "delta",
+      "text": "wo ASKS WHERE, AND THE VERB IS STILL SECOND: Wo ist das Kino? The question word is the first element, sein follows it, and the subject comes last. That is M4's verb-second law and M6's question shape, unchanged — nothing about a location question is special."
+    },
+    {
+      "tag": "interference",
+      "text": "auf HERE IS A PLAIN PREPOSITION, and the learner has already met the same bare word doing something else: in M4's Ich stehe um sieben Uhr auf it was the separable prefix of aufstehen, flown to the end of the clause. One spelling, two jobs, and the word index holds them on M4's single row, whose note names both seats. Which job it is doing is decided by whether a noun phrase follows it: auf dem Tisch is a place, and a lone auf at the end of a clause is a prefix that belongs to its verb."
+    },
+    {
+      "tag": "delta",
+      "text": "der IS NOT ONLY THE MASCULINE \"the\": in auf der Straße it is the FEMININE DATIVE. M1 opened that row and its note names this seat, so it is one word wearing a second hat rather than a new word — which is also why the dative is not being taught here as a paradigm. This level uses it in fixed places: after these prepositions when nothing is moving, and nowhere else."
+    },
+    {
+      "tag": "delta",
+      "text": "zu Hause IS WHERE YOU ARE AND nach Hause IS WHERE YOU ARE GOING. They are two frozen phrases, taken whole, and neither takes an article: Ich bin zu Hause against M5's Ich bin nach Hause gegangen. English says \"at home\" and \"home\" and lets the verb carry the difference; German puts the difference in the little word."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M7-S01",
+      "display": "Es gibt einen Stuhl",
+      "cue": "There's a chair",
+      "glossEn": "lit. \"It gives a chair\"",
+      "literal": "It gives a chair",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "es gibt",
+            "cue": "there is · there are",
+            "tag": "delta",
+            "forms": [],
+            "note": "there is, there are — two words taken whole, and they never change for number: Es gibt einen Stuhl and Es gibt Stühle are the same phrase. Literally it is \"it gives\", with es a dummy subject that stands for nothing. Because the thing that exists is grammatically the object of gibt, it comes out in the accusative — einen Stuhl, not ein Stuhl — which is the first sign that the accusative in German is not simply \"the object case\". It is taught as one two-word surface, so it takes no claim on the bare es that M10 needs for things, and none on gibt, which is not otherwise taught at this level."
+          },
+          {
+            "display": "Stuhl",
+            "cue": "chair",
+            "tag": "free",
+            "forms": [
+              "Stuhl",
+              "Stühle"
+            ],
+            "note": "chair — der Stuhl, masculine, capitalised like every German noun. The plural is Stühle: the vowel takes an umlaut and an -e is added, which is one of German's commonest plural patterns and is nothing like English's bare -s. The umlaut is not decoration — Stuhl and Stühle are two different words to the eye and to the ear, and writing ue for ü would be a third thing that is neither."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "einen looks like an object ending because M3 taught it as one, and there is no object here — nothing is being done to the chair. The accusative is following es gibt, which simply demands it. This is the first crack in \"accusative = object\", and the module widens it from here.",
+      "sound": "es GIPT — the b at the end of gibt hardens to a p, as a final b always does in German. Stuhl is SHTOOL: st- at the start of a word is sht-, and the u is a long oo.",
+      "variations": [
+        {
+          "display": "Es gibt eine Tür",
+          "cue": "There's a door",
+          "changed": "a feminine noun, so eine — and the feminine shows no accusative ending at all"
+        },
+        {
+          "display": "Es gibt Stühle",
+          "cue": "There are chairs",
+          "changed": "a plural, and es gibt does not move a letter — English would have to swap \"is\" for \"are\""
+        },
+        {
+          "display": "Es gibt ein Buch",
+          "cue": "There's a book",
+          "changed": "a neuter noun, so ein — again no visible ending"
+        }
+      ],
+      "mistake": {
+        "display": "Es gibt ein Stuhl",
+        "why": "es gibt takes the accusative, and the masculine is the one gender where the accusative is visible: ein becomes einen. The feminine and the neuter would have looked identical, which is exactly why the masculine has to be drilled."
+      },
+      "usage": "Announcing what exists in a room, a shop or a town.",
+      "register": "neutral",
+      "mnemonic": "It gives — so whatever it gives is in the accusative."
+    },
+    {
+      "id": "L1-M7-S02",
+      "display": "Das Buch ist auf dem Tisch",
+      "cue": "The book is on the table",
+      "glossEn": "lit. \"The book is on the table\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dem",
+            "cue": "the (masculine/neuter, dative)",
+            "tag": "delta",
+            "forms": [],
+            "note": "the — the masculine and neuter form of der and das when nothing is moving and one of this module's prepositions is in front. der Tisch becomes dem Tisch, das Buch becomes dem Buch, and the feminine die becomes der, which is M1's row wearing its second hat. This is a case ending on the ARTICLE, not on the noun, so the noun itself never changes shape here."
+          },
+          {
+            "display": "Straße",
+            "cue": "street",
+            "tag": "free",
+            "forms": [],
+            "note": "street — die Straße, feminine. The ß is written because the a in front of it is long; ss after a short vowel and ß after a long one is the rule, and the two are genuinely different spellings that the word index never merges. Never write ss here and never write the word in capitals: STRASSE and Straße are two different keys, and only one of them is this word."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          5
+        ]
+      },
+      "trap": "auf is the same bare word M4 sent flying to the end of Ich stehe um sieben Uhr auf. Here it is an ordinary preposition with a noun phrase behind it, and the learner's \"why\" tap lands on M4's row, whose note covers both seats. Nothing is broken; the word simply has two jobs.",
+      "sound": "owf — the au is the ow of \"how\", and the f is clean. dem is like English \"dame\" without the y-glide: DAYM. Tisch ends in the sh of \"ship\", because sch is always sh.",
+      "variations": [
+        {
+          "display": "Der Stuhl ist auf der Straße",
+          "cue": "The chair is on the street",
+          "changed": "a feminine noun, so the dative article is der — M1's der, not a new word"
+        },
+        {
+          "display": "Das Buch ist auf dem Stuhl",
+          "cue": "The book is on the chair",
+          "changed": "a different masculine noun underneath; dem does not move"
+        },
+        {
+          "display": "Der Kaffee ist auf dem Tisch",
+          "cue": "The coffee is on the table",
+          "changed": "a different thing on top"
+        }
+      ],
+      "mistake": {
+        "display": "Das Buch ist auf den Tisch",
+        "why": "den is the accusative and would say the book is moving onto the table. Nothing is moving: the book is lying there, so the preposition takes the dative and the article is dem."
+      },
+      "usage": "Telling somebody where to find the thing they are looking for.",
+      "register": "neutral",
+      "mnemonic": "Nothing is moving, so the article settles into dem."
+    },
+    {
+      "id": "L1-M7-S03",
+      "display": "Der Stuhl ist neben dem Tisch",
+      "cue": "The chair is next to the table",
+      "glossEn": "lit. \"The chair is next-to the table\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "neben",
+            "cue": "next to · beside",
+            "tag": "free",
+            "forms": [],
+            "note": "next to, beside. One of the six two-way prepositions, and it means the same thing English's \"next to\" means, in the same place in the sentence — so the only work here is the case behind it. Nothing is moving, so it is dative: neben dem Tisch."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "The English is two words and the German is one, so a learner can end up writing an extra preposition after it. neben already contains the \"to\" of \"next to\"; nothing follows it but the article.",
+      "sound": "NAY-ben, with a long a in the first syllable and a clearly voiced -en at the end. The e's are both said; German does not swallow an unstressed vowel the way English does.",
+      "variations": [
+        {
+          "display": "Der Stuhl ist neben der Tür",
+          "cue": "The chair is next to the door",
+          "changed": "a feminine noun, so the dative article is der"
+        },
+        {
+          "display": "Das Buch ist neben dem Kaffee",
+          "cue": "The book is next to the coffee",
+          "changed": "different things on both sides of the preposition"
+        },
+        {
+          "display": "Der Tisch ist neben dem Buch",
+          "cue": "The table is next to the book",
+          "changed": "a neuter noun — das Buch takes the same dem as a masculine one"
+        }
+      ],
+      "mistake": {
+        "display": "Der Stuhl ist neben zu dem Tisch",
+        "why": "neben is the whole preposition on its own. The \"to\" of English's \"next to\" is already inside it, and adding a second little word gives the sentence two prepositions where German wants one."
+      },
+      "usage": "Describing a room to somebody who cannot see it.",
+      "register": "neutral",
+      "mnemonic": "neben is next-to in one word."
+    },
+    {
+      "id": "L1-M7-S04",
+      "display": "Die Tür ist hinter dem Stuhl",
+      "cue": "The door is behind the chair",
+      "glossEn": "lit. \"The door is behind the chair\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hinter",
+            "cue": "behind",
+            "tag": "free",
+            "forms": [],
+            "note": "behind. Another of the six, and another straight transfer — it stands where English's \"behind\" stands and takes the dative when nothing is moving. It is worth saying out loud beside unter, because the two look alike on the page and mean opposite kinds of thing."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "hinter and unter differ by two letters and by everything else. Reading quickly and taking one for the other puts the door in the wrong place, and neither word gives any other clue.",
+      "sound": "HIN-ter, with an h that is really said — German never has a silent h at the start of a word. The final -er is a weak uh, not the American -er.",
+      "variations": [
+        {
+          "display": "Die Tür ist hinter dem Tisch",
+          "cue": "The door is behind the table",
+          "changed": "a different masculine noun; the article does not move"
+        },
+        {
+          "display": "Der Stuhl ist hinter der Tür",
+          "cue": "The chair is behind the door",
+          "changed": "the two nouns swapped, and the feminine dative der appears"
+        },
+        {
+          "display": "Das Buch ist hinter dem Kaffee",
+          "cue": "The book is behind the coffee",
+          "changed": "a neuter subject, which changes nothing after the preposition"
+        }
+      ],
+      "mistake": {
+        "display": "Die Tür ist hinter den Stuhl",
+        "why": "den would make the door move to behind the chair. A door that is simply standing there takes the dative: hinter dem Stuhl."
+      },
+      "usage": "Answering \"where is it?\" when the thing is out of sight.",
+      "register": "neutral",
+      "mnemonic": "hinter is behind; unter is under. Two letters, two worlds."
+    },
+    {
+      "id": "L1-M7-S05",
+      "display": "Das Buch ist unter dem Tisch",
+      "cue": "The book is under the table",
+      "glossEn": "lit. \"The book is under the table\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "unter",
+            "cue": "under",
+            "tag": "free",
+            "forms": [],
+            "note": "under. It looks like English \"under\", it means \"under\", and it stands where \"under\" stands — one of the cleanest transfers in the level. It is a two-way preposition like the rest, so it takes the dative for a resting place and the accusative for something being pushed underneath."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "The transfer is so complete that the case behind it gets forgotten. unter is free; unter DEM Tisch is the part that has to be learned.",
+      "sound": "OON-ter — the u is the oo of \"book\", not the uh of English \"under\". That vowel is the only thing standing between this word and its English twin.",
+      "variations": [
+        {
+          "display": "Der Kaffee ist unter dem Buch",
+          "cue": "The coffee is under the book",
+          "changed": "a neuter noun after the preposition — still dem"
+        },
+        {
+          "display": "Das Buch ist unter dem Stuhl",
+          "cue": "The book is under the chair",
+          "changed": "a different piece of furniture"
+        },
+        {
+          "display": "Das Wasser ist unter dem Tisch",
+          "cue": "The water is under the table",
+          "changed": "a different subject; nothing after ist moves"
+        }
+      ],
+      "mistake": {
+        "display": "Das Buch ist unter der Tisch",
+        "why": "der is the nominative here and would be the subject form. After a two-way preposition with nothing moving, a masculine noun takes dem: unter dem Tisch. der is only right in front of a FEMININE noun in this slot."
+      },
+      "usage": "Finding something that has fallen.",
+      "register": "neutral",
+      "mnemonic": "The word is free; the ending after it is not."
+    },
+    {
+      "id": "L1-M7-S06",
+      "display": "Der Stuhl ist vor der Tür",
+      "cue": "The chair is in front of the door",
+      "glossEn": "lit. \"The chair is in-front-of the door\"",
+      "literal": "The chair is in-front-of the door",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vor",
+            "cue": "in front of",
+            "tag": "delta",
+            "forms": [],
+            "note": "in front of — one German word for an English phrase of three. It is the sixth two-way preposition, and the feminine dative it takes here is M1's der wearing its second hat: vor der Tür. It also does time work in German (\"ago\", \"before\"), which this level does not teach and does not need — every use here is a place."
+          }
+        ],
+        "rules": [
+          1,
+          6
+        ]
+      },
+      "trap": "vor der Tür has the article der in front of a FEMININE noun, which looks exactly like the masculine nominative der of M1's Der Stuhl. Same spelling, two seats: the first der in this sentence is the subject's article, the second is a dative ending on Tür. The word index holds them on one row for exactly this reason, and M1's note says so.",
+      "sound": "for, one syllable, with the r softened almost out of existence at the end. It sounds close to English \"for\" and means nothing like it.",
+      "variations": [
+        {
+          "display": "Der Tisch ist vor der Tür",
+          "cue": "The table is in front of the door",
+          "changed": "a different thing in the way"
+        },
+        {
+          "display": "Das Buch ist vor dem Kaffee",
+          "cue": "The book is in front of the coffee",
+          "changed": "a masculine noun after the preposition, so dem instead of der"
+        },
+        {
+          "display": "Der Stuhl ist vor dem Kino",
+          "cue": "The chair is in front of the cinema",
+          "changed": "a neuter noun, which takes dem exactly as a masculine one does"
+        }
+      ],
+      "mistake": {
+        "display": "Der Stuhl ist vor die Tür",
+        "why": "die is the accusative and would mean the chair is being moved into the doorway. A chair that is simply standing there takes the dative, and the feminine dative is der."
+      },
+      "usage": "Warning somebody that the way is blocked.",
+      "register": "neutral",
+      "mnemonic": "One der is a subject, the other is a dative. Read the noun, not the article."
+    },
+    {
+      "id": "L1-M7-S07",
+      "display": "Wo ist das Kino?",
+      "cue": "Where's the cinema?",
+      "glossEn": "lit. \"Where is the cinema?\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wo",
+            "cue": "where",
+            "tag": "interference",
+            "forms": [],
+            "note": "where. It is short and it looks like nothing in English, which is the danger: the German word that LOOKS like \"where\" is wer, and wer means \"who\". wo asks about a place and wer asks about a person, and an English speaker reading by shape will get them the wrong way round exactly once and never forget it. wer is not taught at this level; wo is, and it takes first position with the verb straight after it."
+          },
+          {
+            "display": "Kino",
+            "cue": "cinema",
+            "tag": "free",
+            "forms": [],
+            "note": "cinema — das Kino, neuter. Nouns ending in -o borrowed into German are generally neuter, which is one of the few reliable gender clues there is. It is a place you can go INTO, which makes it the natural home for the accusative contraction ins later in this module."
+          }
+        ],
+        "rules": [
+          4,
+          2
+        ]
+      },
+      "trap": "Nothing is inserted to make this a question. wo, then ist, then the subject — the same verb-second shape as a statement, with a question word standing in the first slot instead of a noun.",
+      "sound": "vo, one syllable, with the German w said as a v — so the word sounds like English \"vo\". Kino is KEE-no, with the stress on the first syllable.",
+      "variations": [
+        {
+          "display": "Wo ist der Stuhl?",
+          "cue": "Where's the chair?",
+          "changed": "a masculine subject; the article is the nominative der"
+        },
+        {
+          "display": "Wo ist die Straße?",
+          "cue": "Where's the street?",
+          "changed": "a feminine subject"
+        },
+        {
+          "display": "Wo sind die Stühle?",
+          "cue": "Where are the chairs?",
+          "changed": "a plural subject, so the verb becomes sind — the one thing in the sentence that does move"
+        }
+      ],
+      "mistake": {
+        "display": "Wo das Kino ist?",
+        "why": "The verb is the second element in a question exactly as it is in a statement: Wo ist das Kino? Sending it to the end is what a subordinate clause does, and this is not one — M9 is where that order becomes right."
+      },
+      "usage": "The single most useful question in a town you do not know.",
+      "register": "neutral",
+      "mnemonic": "wo is where, wer is who — and they are the wrong way round for an English eye."
+    },
+    {
+      "id": "L1-M7-S08",
+      "display": "Ich gehe in den Park",
+      "cue": "I'm going into the park",
+      "glossEn": "lit. \"I go into the park\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "in",
+            "cue": "in · into",
+            "tag": "interference",
+            "forms": [],
+            "note": "in, and also into — one German word for two English ones, and the case is what tells them apart. With the dative it is a place you are (im Park, \"in the park\"); with the accusative it is a place you are going (in den Park, \"into the park\"). English marks that difference with two separate words and German marks it with the ending on the article, so an English speaker has nothing to copy and has to read the case instead. The same word does the plain residential job in Ich wohne in Berlin, where a bare place name shows no ending at all."
+          },
+          {
+            "display": "den",
+            "cue": "the (masculine, accusative)",
+            "tag": "delta",
+            "forms": [],
+            "note": "the — the masculine accusative of der, and the ONLY definite article that visibly changes for the accusative. die, das and the plural die all look exactly as they did. It is the definite twin of M3's einen, and it does two jobs: the object of a verb, and motion-toward after a two-way preposition. Because both jobs wear the same ending, the case cannot be read as \"the object case\" and survive."
+          },
+          {
+            "display": "Park",
+            "cue": "park",
+            "tag": "free",
+            "forms": [],
+            "note": "park — der Park, masculine, spelled as in English and said with a much softer r. It is masculine, which is what makes it useful here: the masculine is the one gender whose accusative can be seen, so every motion sentence in this module leans on it."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "There is no object in this sentence. Nothing is being done to the park — the speaker is simply walking into it — and yet the article is den, the accusative. That is the case marking MOTION, and it is the fact the module exists to establish.",
+      "sound": "GEH-uh, two syllables with a voiced final -e. den is DAYN. Park is said with a swallowed r: closer to PAHK than to the English word, though the k is crisp.",
+      "variations": [
+        {
+          "display": "Ich gehe auf die Straße",
+          "cue": "I'm going out onto the street",
+          "changed": "auf doing motion instead of location, with a feminine noun — die is the accusative here and looks exactly like the nominative, which is why the masculine den had to come first"
+        },
+        {
+          "display": "Ich gehe in den Park, nicht nach Hause",
+          "cue": "I'm going into the park, not home",
+          "changed": "M3's nicht setting one destination against another"
+        },
+        {
+          "display": "Morgen gehe ich in den Park",
+          "cue": "Tomorrow I'll go into the park",
+          "changed": "M6's fronted time word, so gehe and ich swap places"
+        }
+      ],
+      "mistake": {
+        "display": "Ich gehe in dem Park",
+        "why": "dem is the dative and says where you already are, so this sentence claims the speaker is walking around inside a park rather than heading for one. Motion toward takes the accusative: in den Park."
+      },
+      "usage": "Saying where you are off to.",
+      "register": "neutral",
+      "mnemonic": "Moving toward it? Accusative. Sitting in it? Dative."
+    },
+    {
+      "id": "L1-M7-S09",
+      "display": "Ich gehe zur Arbeit",
+      "cue": "I'm going to work",
+      "glossEn": "lit. \"I go to-the work\"",
+      "literal": "I go to-the work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zur",
+            "cue": "to the (feminine)",
+            "tag": "delta",
+            "forms": [
+              "zur",
+              "zum"
+            ],
+            "note": "to the — zu fused with der, the feminine dative article. Its masculine and neuter twin is zum, from zu and dem: Ich gehe zum Park. Both fusions are obligatory in ordinary German, so zu der and zu dem are not written. zu marks a destination you head for rather than a space you enter, which is why work takes zur Arbeit while a park can take either zum Park or in den Park. The bare zu on its own is not written anywhere in this module — M8 opens it in its other job, \"too\"."
+          }
+        ],
+        "rules": [
+          3,
+          1
+        ]
+      },
+      "trap": "English says \"to work\" with no article at all, and German cannot: die Arbeit keeps its article, and the article fuses with the preposition into zur. Dropping it gives *zu Arbeit, which is not a phrase German has.",
+      "sound": "tsoor — a German z is always ts, never a buzzing English z. Arbeit is AR-byte, with the ei said like English \"eye\".",
+      "variations": [
+        {
+          "display": "Ich gehe zum Park",
+          "cue": "I'm going to the park",
+          "changed": "a masculine noun, so the fusion is zum instead of zur"
+        },
+        {
+          "display": "Morgen gehe ich zur Arbeit",
+          "cue": "Tomorrow I'll go to work",
+          "changed": "M6's fronted time word, and the inversion that comes with it"
+        },
+        {
+          "display": "Ich gehe früh zur Arbeit",
+          "cue": "I go to work early",
+          "changed": "M4's früh dropped in before the destination"
+        }
+      ],
+      "mistake": {
+        "display": "Ich gehe zu der Arbeit",
+        "why": "zu and der must fuse: zur Arbeit. The unfused form is not a more careful version of the same thing — it is simply not what German writes or says here."
+      },
+      "usage": "The commute, in three words.",
+      "register": "neutral",
+      "mnemonic": "zu + der = zur, zu + dem = zum. Always fused."
+    },
+    {
+      "id": "L1-M7-S10",
+      "display": "Ich bin im Park, nicht zu Hause",
+      "cue": "I'm in the park, not at home",
+      "glossEn": "lit. \"I am in-the park, not at house\"",
+      "literal": "I am in-the park, not at-home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "im",
+            "cue": "in the (masculine/neuter, dative)",
+            "tag": "delta",
+            "forms": [
+              "im",
+              "ins"
+            ],
+            "note": "in the — in fused with dem, so it is the DATIVE fusion and it says where something is: Ich bin im Park. Its accusative twin is ins, from in and das, and that one says where something is going: Ich gehe ins Kino. The two fusions carry the module's whole contrast in three letters each, and both are obligatory — in dem Park and in das Kino are not written. The feminine has no fusion at all: in der Straße stays two words."
+          },
+          {
+            "display": "zu Hause",
+            "cue": "at home",
+            "tag": "delta",
+            "forms": [],
+            "note": "at home — a frozen two-word phrase, taken whole, with no article ever. It is where you ARE; M5's nach Hause is where you are GOING, and the two are told apart by the little word alone, not by the verb. Because both are taught as spans, the bare Hause is written nowhere in this level, the bare nach is never written at all, and the bare zu stays free for M8."
+          }
+        ],
+        "rules": [
+          3,
+          7,
+          2
+        ]
+      },
+      "trap": "im and ins are one letter apart and are the whole two-way rule in miniature: im is dative and static, ins is accusative and moving. A learner who reads them as spelling variants of the same word loses the distinction the module was built to teach.",
+      "sound": "im is a short, clipped im. zu Hause is tsoo HOW-zuh: the z is ts, the au is the ow of \"how\", and the s between vowels is a z.",
+      "variations": [
+        {
+          "display": "Ich bin zu Hause",
+          "cue": "I'm at home",
+          "changed": "the contrast dropped — the bare statement on its own"
+        },
+        {
+          "display": "Ich gehe ins Kino",
+          "cue": "I'm going to the cinema",
+          "changed": "the accusative fusion ins, and with it a destination instead of a location"
+        },
+        {
+          "display": "Ich bin im Park, nicht im Kino",
+          "cue": "I'm in the park, not at the cinema",
+          "changed": "two locations set against each other, both dative"
+        }
+      ],
+      "mistake": {
+        "display": "Ich bin in dem Park, nicht zu Hause",
+        "why": "in and dem fuse into im in ordinary German. Writing them apart is not more precise, it is simply not the phrase — and the same goes for in das, which must be ins."
+      },
+      "usage": "Telling somebody on the phone where you actually are.",
+      "register": "neutral",
+      "mnemonic": "im sits still, ins sets off."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M7-C01",
+      "display": "Es gibt einen Tisch",
+      "cue": "There's a table"
+    },
+    {
+      "id": "L1-M7-C02",
+      "display": "Es gibt eine Tür",
+      "cue": "There's a door"
+    },
+    {
+      "id": "L1-M7-C03",
+      "display": "Der Kaffee ist auf dem Tisch",
+      "cue": "The coffee is on the table"
+    },
+    {
+      "id": "L1-M7-C04",
+      "display": "Wo ist die Suppe?",
+      "cue": "Where's the soup?"
+    },
+    {
+      "id": "L1-M7-C05",
+      "display": "Das Buch ist neben der Tür",
+      "cue": "The book is next to the door"
+    },
+    {
+      "id": "L1-M7-C06",
+      "display": "Das Wasser ist unter dem Tisch",
+      "cue": "The water is under the table"
+    },
+    {
+      "id": "L1-M7-C07",
+      "display": "Ich bin im Park",
+      "cue": "I'm in the park"
+    },
+    {
+      "id": "L1-M7-C08",
+      "display": "Das Buch ist auf der Straße",
+      "cue": "The book is on the street"
+    },
+    {
+      "id": "L1-M7-C09",
+      "display": "Ich bin zu Hause",
+      "cue": "I'm at home"
+    },
+    {
+      "id": "L1-M7-C10",
+      "display": "Ich gehe zum Park",
+      "cue": "I'm going to the park"
+    },
+    {
+      "id": "L1-M7-C11",
+      "display": "Die Tür ist hinter dem Tisch",
+      "cue": "The door is behind the table"
+    },
+    {
+      "id": "L1-M7-C12",
+      "display": "Der Tisch ist vor der Tür",
+      "cue": "The table is in front of the door"
+    },
+    {
+      "id": "L1-M7-C13",
+      "display": "Ich gehe ins Kino",
+      "cue": "I'm going to the cinema"
+    },
+    {
+      "id": "L1-M7-C14",
+      "display": "Es gibt Stühle im Park",
+      "cue": "There are chairs in the park"
+    },
+    {
+      "id": "L1-M7-C15",
+      "display": "Wo ist der Stuhl?",
+      "cue": "Where's the chair?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

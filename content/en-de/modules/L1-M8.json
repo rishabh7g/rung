@@ -1,0 +1,695 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M8",
+  "title": "Numbers & shopping",
+  "job": "Prices, quantities, buying",
+  "prerequisites": [
+    "L1-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "Was kostet + der/die/das + N + ?",
+      "Wie viel kostet + N + ?",
+      "Wie viele + N + möchten Sie + ?",
+      "Ich möchte + num + N + , bitte",
+      "Ein Kilo + N + , bitte",
+      "Das ist zu teuer"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "THE PRICE QUESTION HAS TWO EVERYDAY SHAPES and both keep the verb second: Was kostet das? and Wie viel kostet das Brot? The question word or phrase is the first element, kostet follows it, and the subject comes last — M6's question order, unchanged. Nothing is inserted to build the question, here or anywhere else in this course."
+    },
+    {
+      "tag": "free",
+      "text": "viel AND viele SPLIT EXACTLY WHERE ENGLISH'S \"much\" AND \"many\" DO: wie viel for an amount you cannot count (Wie viel kostet das Brot?) and wie viele for things you can (Wie viele Äpfel möchten Sie?). This is a transfer, not a trap — but the counting one takes a PLURAL noun after it, and the plural is the thing an English speaker will forget because German plurals are not made with -s."
+    },
+    {
+      "tag": "interference",
+      "text": "GERMAN READS A TWO-DIGIT NUMBER BACKWARDS, and it is permanent interference rather than a curiosity. einundzwanzig is \"one-and-twenty\": the UNITS come first, then und, then the tens, and the whole thing is written as ONE word with no spaces and no hyphens. The slogan is \"numbers are just words in front of a noun\". The law is that above twenty a German number reverses the order English says it in, so a learner hearing sechsundvierzig and writing 64 has heard it correctly and assembled it wrongly."
+    },
+    {
+      "tag": "delta",
+      "text": "A MEASURE PHRASE TAKES A BARE NOUN — no \"of\" and no von: ein Kilo Brot, eine Tasse Kaffee, eine Flasche Wasser. English needs \"a kilo OF bread\" and French needs un kilo DE pain; German simply puts the two nouns side by side. There is nothing to leave out here, because there was never a word there to begin with."
+    },
+    {
+      "tag": "delta",
+      "text": "Euro TAKES NO PLURAL -s AFTER A NUMBER: zwei Euro, zwanzig Euro, dreißig Euro. A currency counted in German stays in the singular, which is the opposite of the English habit of adding -s to everything countable, and *zwei Euros marks a learner instantly."
+    },
+    {
+      "tag": "delta",
+      "text": "eins STANDS ALONE AND ein STANDS IN FRONT: the counting word is eins (\"one\", said on its own or at the end of a number), but before a noun it becomes ein, eine or einen exactly as M1's and M3's articles do. So ein Brot, never *eins Brot — and einundzwanzig starts with the ein- shape, not with eins."
+    },
+    {
+      "tag": "interference",
+      "text": "zu IN FRONT OF AN ADJECTIVE MEANS \"TOO\", AN EXCESS: Das ist zu teuer is \"that is too expensive\", not \"that is very expensive\" and not \"that is expensive enough\". It is the same three letters as the zu inside M7's zum and zur and inside the frozen zu Hause, and it is doing a completely different job here — this is the only place in the level where a bare zu is written, and this is what it means."
+    },
+    {
+      "tag": "free",
+      "text": "AN ADJECTIVE AFTER sein IS UNINFLECTED: Das ist teuer, Der Kaffee ist billig, Die Suppe ist gut. No ending is added for gender or number, which is the one place German adjectives are as simple as English ones. Adjective endings in FRONT of a noun are a real system and they are deliberately left out of this level."
+    },
+    {
+      "tag": "free",
+      "text": "bitte IS THE POLITENESS THIS COURSE PUTS INTO A WORD. The register decision left the verb form fixed at Sie, so the extra courtesy of a request rides on bitte, which sits at the end of the order after a comma: Ich möchte drei Äpfel, bitte. It also answers \"thank you\" as \"you're welcome\", which is worth knowing before somebody says it to you."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M8-S01",
+      "display": "Was kostet das?",
+      "cue": "How much is that?",
+      "glossEn": "lit. \"What costs that?\"",
+      "literal": "What costs that?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kosten",
+            "cue": "to cost",
+            "tag": "free",
+            "forms": [
+              "kosten",
+              "kostet"
+            ],
+            "note": "to cost. kostet is the form for one thing (das Buch kostet) and kosten is the form for several (zwölf Äpfel kosten), which is also the infinitive and the Sie form — the same triple duty essen and arbeiten do. The stem already ends in -t, so the er/sie/es ending adds a linking -e-: kostet, not *kostt."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "das here is not the article \"the\" — it is the demonstrative \"that\", pointing at the thing on the counter. It is the same word and the same index row as M1's neuter article, whose note covers both seats, and the position is what tells them apart: an article leans on a noun, and this one is standing alone as the subject.",
+      "sound": "vahs KOS-tet dahs. The German w is a v, and the final -t of kostet is crisp — German does not soften a final t into a d the way English often does.",
+      "variations": [
+        {
+          "display": "Was kostet das Brot?",
+          "cue": "How much is the bread?",
+          "changed": "das is now the article in front of a noun, not the demonstrative standing alone"
+        },
+        {
+          "display": "Was kostet der Kaffee?",
+          "cue": "How much is the coffee?",
+          "changed": "a masculine noun, so der"
+        },
+        {
+          "display": "Was kosten die Äpfel?",
+          "cue": "How much are the apples?",
+          "changed": "a plural subject, so the verb becomes kosten — the only word that moves"
+        }
+      ],
+      "mistake": {
+        "display": "Was tut das kosten?",
+        "why": "There is no German word standing where English's do stands. The question is built by putting was first and kostet second, and nothing is inserted to help — the same law M2 stated for yes/no questions and M6 restated for question words."
+      },
+      "usage": "Three words, said at any counter in any German-speaking country.",
+      "register": "neutral",
+      "mnemonic": "What costs that? — German asks the price of the thing, not what the thing is."
+    },
+    {
+      "id": "L1-M8-S02",
+      "display": "Wie viel kostet der Kaffee?",
+      "cue": "How much is the coffee?",
+      "glossEn": "lit. \"How much costs the coffee?\"",
+      "literal": "How much costs the coffee?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wie viel",
+            "cue": "how much",
+            "tag": "free",
+            "forms": [],
+            "note": "how much — two words, taken whole as one surface, and used for an amount that is not counted out: money, bread, water, time. It sits beside M2's bare wie (\"how\", as in Wie heißen Sie?) and beside wie viele for countable things; three surfaces, three jobs, and none of them answers for another. Written as two words in modern spelling, never as one."
+          }
+        ],
+        "rules": [
+          1,
+          0
+        ]
+      },
+      "trap": "wie viel is the first ELEMENT even though it is two words, so kostet is still the second thing in the sentence and the subject comes after it. This is the same element-not-word rule M6 drilled with am Dienstag.",
+      "sound": "vee FEEL — both words have the long ee of ie, and the v of viel is said as an f. So the phrase begins with a v-sound written w and continues with an f-sound written v, which is German spelling in a nutshell.",
+      "variations": [
+        {
+          "display": "Wie viel kostet das Brot?",
+          "cue": "How much is the bread?",
+          "changed": "a neuter noun in the subject slot"
+        },
+        {
+          "display": "Wie viel kostet ein Kilo Brot?",
+          "cue": "How much is a kilo of bread?",
+          "changed": "a measure phrase as the subject, with no word for \"of\" inside it"
+        },
+        {
+          "display": "Wie viel kostet die Suppe?",
+          "cue": "How much is the soup?",
+          "changed": "a feminine noun"
+        }
+      ],
+      "mistake": {
+        "display": "Wie viele kostet der Kaffee?",
+        "why": "Coffee here is an amount, not a count of things, so it takes wie viel. wie viele asks how many separate objects there are and would need a plural noun behind it."
+      },
+      "usage": "Asking a price when you want to name the thing you are asking about.",
+      "register": "neutral",
+      "mnemonic": "viel for stuff, viele for things."
+    },
+    {
+      "id": "L1-M8-S03",
+      "display": "Wie viele Stühle möchten Sie?",
+      "cue": "How many chairs would you like?",
+      "glossEn": "lit. \"How many chairs would-like you?\"",
+      "literal": "How many chairs would-like you?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wie viele",
+            "cue": "how many",
+            "tag": "free",
+            "forms": [],
+            "note": "how many — the countable twin of wie viel, and it takes a PLURAL noun straight after it: wie viele Stühle, wie viele Äpfel. Like wie viel it is one two-word surface of its own, so it takes nothing from M2's bare wie. The -e on the end is the only difference between the two phrases and it carries the whole distinction."
+          }
+        ],
+        "rules": [
+          1,
+          0
+        ]
+      },
+      "trap": "The plural is the trap, not the phrase. German plurals are made with umlauts and endings that vary by word — Stuhl becomes Stühle, Apfel becomes Äpfel — so there is no -s to reach for, and a learner who adds one has invented a word.",
+      "sound": "vee FEE-luh, with the final -e voiced. Stühle has the ü of pursed lips and is two syllables: SHTÜ-luh.",
+      "variations": [
+        {
+          "display": "Wie viele Äpfel möchten Sie?",
+          "cue": "How many apples would you like?",
+          "changed": "a different plural, made with an umlaut and no ending at all"
+        },
+        {
+          "display": "Wie viele Bücher möchten Sie?",
+          "cue": "How many books would you like?",
+          "changed": "a third plural pattern — umlaut plus -er"
+        },
+        {
+          "display": "Wie viele Stühle gibt es?",
+          "cue": "How many chairs are there?",
+          "changed": "M7's es gibt turned into a question, with es sliding in behind the verb"
+        }
+      ],
+      "mistake": {
+        "display": "Wie viel Stühle möchten Sie?",
+        "why": "Chairs are counted, so the phrase is wie viele. wie viel would be asking for an unmeasured quantity of chair, which is not a thing anybody wants."
+      },
+      "usage": "What the person behind the counter asks you.",
+      "register": "neutral",
+      "mnemonic": "The -e on viele is the plural asking for a plural."
+    },
+    {
+      "id": "L1-M8-S04",
+      "display": "Ich möchte drei Äpfel, bitte",
+      "cue": "I'd like three apples, please",
+      "glossEn": "lit. \"I would-like three apples, please\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "drei",
+            "cue": "three",
+            "tag": "free",
+            "forms": [],
+            "note": "three. A plain counting word, and it changes nothing around it — no ending on the number and no article in front of the noun. The ei is said like English \"eye\", so drei rhymes with \"dry\" and not with \"day\"."
+          },
+          {
+            "display": "Apfel",
+            "cue": "apple",
+            "tag": "free",
+            "forms": [
+              "Apfel",
+              "Äpfel"
+            ],
+            "note": "apple — der Apfel, masculine. The plural is Äpfel: nothing is added at all, and the a simply takes an umlaut. That is a whole plural made out of two dots, which is why the umlaut can never be optional or written as ae — Apfel and Äpfel are two different words to the index and to the ear alike."
+          },
+          {
+            "display": "bitte",
+            "cue": "please · you're welcome",
+            "tag": "free",
+            "forms": [],
+            "note": "please. It goes at the end of the request after a comma, exactly where English puts it, and it is what carries the politeness in a course whose verb form is already fixed at Sie. It has a second job worth knowing before it happens to you: said in reply to danke it means \"you're welcome\"."
+          }
+        ],
+        "rules": [
+          8,
+          5
+        ]
+      },
+      "trap": "There is no article between the number and the noun. drei Äpfel, not *drei die Äpfel — the number has already done the article's work, and adding one gives the phrase two determiners.",
+      "sound": "dry EP-fel, BIT-uh. The Ä is the e of \"bed\", and the final -e of bitte is a voiced uh, so the word has two clear syllables.",
+      "variations": [
+        {
+          "display": "Ich möchte zwei Äpfel, bitte",
+          "cue": "I'd like two apples, please",
+          "changed": "a different number; nothing else in the sentence moves"
+        },
+        {
+          "display": "Ich möchte drei Brote, bitte",
+          "cue": "I'd like three loaves, please",
+          "changed": "a different plural — Brot takes a plain -e and no umlaut"
+        },
+        {
+          "display": "Ich möchte einen Apfel, bitte",
+          "cue": "I'd like an apple, please",
+          "changed": "one apple instead of three, so M3's accusative einen comes back and the noun is singular"
+        }
+      ],
+      "mistake": {
+        "display": "Ich möchte drei Apfels, bitte",
+        "why": "German does not build plurals with -s. This word's plural is Äpfel — the same letters with an umlaut on the a — and the -s ending is the English habit arriving where German has none."
+      },
+      "usage": "Ordering at a market stall.",
+      "register": "neutral",
+      "mnemonic": "Two dots make the plural. No -s anywhere."
+    },
+    {
+      "id": "L1-M8-S05",
+      "display": "Ein Kilo Brot, bitte",
+      "cue": "A kilo of bread, please",
+      "glossEn": "lit. \"A kilo bread, please\"",
+      "literal": "A kilo bread, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Kilo",
+            "cue": "kilo",
+            "tag": "free",
+            "forms": [],
+            "note": "kilo — das Kilo, neuter, so ein Kilo. What matters is not the word but what follows it: the thing measured comes straight after with nothing in between. ein Kilo Brot is two nouns pushed together, and there is no von and no other little word hiding in the gap."
+          }
+        ],
+        "rules": [
+          3,
+          8
+        ]
+      },
+      "trap": "English's \"of\" has no German twin here, and a learner who reaches for von produces ein Kilo von Brot — which is not a smaller mistake than leaving a word out, it is a phrase German does not have.",
+      "sound": "KEE-lo, stress on the first syllable. Brot has a long o, rhyming with English \"boat\".",
+      "variations": [
+        {
+          "display": "Ein Kilo Äpfel, bitte",
+          "cue": "A kilo of apples, please",
+          "changed": "a plural measured instead of a mass — the phrase itself does not change"
+        },
+        {
+          "display": "Eine Tasse Kaffee, bitte",
+          "cue": "A cup of coffee, please",
+          "changed": "a different measure, feminine, so eine"
+        },
+        {
+          "display": "Ich möchte ein Kilo Brot, bitte",
+          "cue": "I'd like a kilo of bread, please",
+          "changed": "the full sentence around the order, with M3's möchte carrying it"
+        }
+      ],
+      "mistake": {
+        "display": "Ein Kilo von Brot, bitte",
+        "why": "A measure phrase puts the two nouns side by side and nothing between them: ein Kilo Brot. von exists in German but does not do this job, and inserting it is a straight translation of English \"of\"."
+      },
+      "usage": "At a bakery, a market, a butcher's counter.",
+      "register": "neutral",
+      "mnemonic": "Measure, then thing. Nothing in between."
+    },
+    {
+      "id": "L1-M8-S06",
+      "display": "Eine Tasse Kaffee, bitte",
+      "cue": "A cup of coffee, please",
+      "glossEn": "lit. \"A cup coffee, please\"",
+      "literal": "A cup coffee, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Tasse",
+            "cue": "cup",
+            "tag": "free",
+            "forms": [],
+            "note": "cup — die Tasse, feminine, so eine Tasse. The double s is written because the a in front of it is short; that is the same rule that gives Straße its ß after a long a, and the two spellings are never interchangeable."
+          }
+        ],
+        "rules": [
+          3,
+          8
+        ]
+      },
+      "trap": "eine Tasse Kaffee is a cup OF coffee; a cup FOR coffee is one welded word, eine Kaffeetasse, with the parts in the opposite order. German distinguishes the two by word order and by whether it writes one word or two, where English inserts \"of\" for the one and nothing for the other.",
+      "sound": "TAH-suh, with a short a and a hissed double s. Kaffee is stressed on the FIRST syllable in German — KAH-fay — unlike English \"caf-FAY\".",
+      "variations": [
+        {
+          "display": "Eine Tasse Suppe, bitte",
+          "cue": "A cup of soup, please",
+          "changed": "a different thing measured — and a cup of soup is as ordinary in German as in English"
+        },
+        {
+          "display": "Eine Flasche Wasser, bitte",
+          "cue": "A bottle of water, please",
+          "changed": "a different measure, and the same bare noun behind it"
+        },
+        {
+          "display": "Zwei Tassen Kaffee, bitte",
+          "cue": "Two cups of coffee, please",
+          "changed": "a plural measure — Tassen takes -n — while Kaffee stays singular and bare"
+        }
+      ],
+      "mistake": {
+        "display": "Eine Tasse des Kaffees, bitte",
+        "why": "The genitive is not what a measure phrase wants, and it is not taught at this level for exactly this reason. The thing measured stands bare: eine Tasse Kaffee."
+      },
+      "usage": "The first thing many learners order out loud in German.",
+      "register": "neutral",
+      "mnemonic": "eine Tasse Kaffee — no glue between the nouns."
+    },
+    {
+      "id": "L1-M8-S07",
+      "display": "Eine Flasche Wasser kostet zwei Euro",
+      "cue": "A bottle of water costs two euros",
+      "glossEn": "lit. \"A bottle water costs two euro\"",
+      "literal": "A bottle water costs two euro",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Flasche",
+            "cue": "bottle",
+            "tag": "free",
+            "forms": [],
+            "note": "bottle — die Flasche, feminine. The sch is one sound, the sh of \"ship\", and it is never said as two consonants. As a measure it behaves exactly like Tasse and Kilo: the thing inside follows it bare."
+          },
+          {
+            "display": "zwei",
+            "cue": "two",
+            "tag": "free",
+            "forms": [],
+            "note": "two. Said TSVY — the z is ts and the ei is \"eye\". On the telephone and in noisy shops Germans often say zwo instead, to keep it from being heard as drei; that is worth recognising, and this course does not write it."
+          },
+          {
+            "display": "Euro",
+            "cue": "euro",
+            "tag": "delta",
+            "forms": [],
+            "note": "euro — der Euro, and after a number it takes NO plural ending at all: zwei Euro, zwanzig Euro, dreißig Euro. English adds -s to anything it counts and German leaves a counted currency in the singular, so *zwei Euros is the single commonest slip a learner makes at a till."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "The measure phrase is the SUBJECT here, so the verb agrees with Flasche and not with Wasser: eine Flasche Wasser kostet, singular. Count the measure word, not the thing being measured — and the number after the verb never changes the verb at all.",
+      "sound": "FLA-shuh, OY-ro. The German eu is always the oy of \"boy\", so Euro begins the way \"oil\" does and not the way English \"euro\" does.",
+      "variations": [
+        {
+          "display": "Eine Tasse Kaffee kostet drei Euro",
+          "cue": "A cup of coffee costs three euros",
+          "changed": "a different measure and a different price"
+        },
+        {
+          "display": "Ein Kilo Äpfel kostet zwei Euro",
+          "cue": "A kilo of apples costs two euros",
+          "changed": "a neuter measure word, so ein — and the verb is still singular"
+        },
+        {
+          "display": "Wie viel kostet eine Flasche Wasser?",
+          "cue": "How much is a bottle of water?",
+          "changed": "the same phrase turned into the question that would produce this answer"
+        }
+      ],
+      "mistake": {
+        "display": "Eine Flasche Wasser kostet zwei Euros",
+        "why": "A currency counted in German stays singular: zwei Euro. The -s is the English plural arriving on a word that never takes one after a number."
+      },
+      "usage": "Reading a price back to somebody, or explaining one.",
+      "register": "neutral",
+      "mnemonic": "Count them all you like — Euro never grows an s."
+    },
+    {
+      "id": "L1-M8-S08",
+      "display": "Das Buch kostet einundzwanzig Euro",
+      "cue": "The book costs twenty-one euros",
+      "glossEn": "lit. \"The book costs one-and-twenty euro\"",
+      "literal": "The book costs one-and-twenty euro",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "einundzwanzig",
+            "cue": "twenty-one",
+            "tag": "interference",
+            "forms": [],
+            "note": "twenty-one, and read out in the opposite order: ein-und-zwanzig is \"one-and-twenty\". The units come first, then und, then the tens, and the whole number is written as ONE word — no spaces, no hyphens, one token, one index key. Every two-digit number above twenty is built this way, so hearing 46 means hearing the six before the forty and holding it until the end."
+          },
+          {
+            "display": "zwanzig",
+            "cue": "twenty",
+            "tag": "free",
+            "forms": [],
+            "note": "twenty. The -zig ending is German's \"-ty\", and it turns up on vierzig, fünfzig and the rest. In standard German the final -ig is said like the soft ch of ich, so the word ends TSVAN-tsich rather than with a hard g."
+          },
+          {
+            "display": "eins",
+            "cue": "one (counting)",
+            "tag": "delta",
+            "forms": [],
+            "note": "one — but only when it stands alone: counting out loud, giving a house number, saying the last word of a price. In FRONT of a noun it loses its -s and becomes M1's ein or eine, or M3's einen: ein Brot, never *eins Brot. That is also why einundzwanzig starts with ein- and not with eins-."
+          }
+        ],
+        "rules": [
+          2,
+          5,
+          4
+        ]
+      },
+      "trap": "The number is one word, so it is one thing to say and one thing to hear. A learner who writes it as three words has not made a spelling slip — the index and the eye both treat ein und zwanzig as an entirely different string from einundzwanzig.",
+      "sound": "AYN-oont-TSVAN-tsich. The whole number runs as a single word with the stress on the first syllable, and the -ig at the end is the soft ch of ich in standard German.",
+      "variations": [
+        {
+          "display": "Das Buch kostet zwanzig Euro",
+          "cue": "The book costs twenty euros",
+          "changed": "a round number, so nothing is reversed and nothing is welded together"
+        },
+        {
+          "display": "Der Stuhl kostet einundzwanzig Euro",
+          "cue": "The chair costs twenty-one euros",
+          "changed": "a different thing priced"
+        },
+        {
+          "display": "Wie viel kostet das Buch?",
+          "cue": "How much is the book?",
+          "changed": "the question this sentence answers"
+        }
+      ],
+      "mistake": {
+        "display": "Das Buch kostet zwanzigundein Euro",
+        "why": "German puts the UNITS first: einundzwanzig. Assembling the number in the English order gives a word that is not German at all, and it is the reversal — not the joining — that has to be learned."
+      },
+      "usage": "Any price between twenty-one and ninety-nine, which is most of them.",
+      "register": "neutral",
+      "mnemonic": "One-and-twenty. Say the small part first."
+    },
+    {
+      "id": "L1-M8-S09",
+      "display": "Zwölf Äpfel kosten dreißig Euro",
+      "cue": "Twelve apples cost thirty euros",
+      "glossEn": "lit. \"Twelve apples cost thirty euro\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zwölf",
+            "cue": "twelve",
+            "tag": "free",
+            "forms": [],
+            "note": "twelve. It is the last of the numbers that has its own name — from thirteen on, German builds them out of parts — and it has the ö of rounded lips, made by saying \"eh\" with the mouth held for \"oh\"."
+          },
+          {
+            "display": "dreißig",
+            "cue": "thirty",
+            "tag": "delta",
+            "forms": [],
+            "note": "thirty — and it is the one ten spelled with ß rather than the -zig of zwanzig and vierzig. The ß is written because the vowel in front of it is long, and it is not interchangeable with ss: the word index treats ß and ss as different letters, so the ss spelling would be a different word that means nothing."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "dreißig is the odd one out among the tens, and it is odd in spelling only — it is built from drei exactly as vierzig is built from vier. Writing it with ss or with a plain z is a different string, not a near miss.",
+      "sound": "TSVÖLF, one syllable, with the ts of z at the front. DRY-sich: the ei is \"eye\", the ß is a plain hissed s, and the final -ig is the soft ch again.",
+      "variations": [
+        {
+          "display": "Zwölf Äpfel kosten zwanzig Euro",
+          "cue": "Twelve apples cost twenty euros",
+          "changed": "a different price, and one spelled with a plain -zig"
+        },
+        {
+          "display": "Drei Äpfel kosten zwei Euro",
+          "cue": "Three apples cost two euros",
+          "changed": "smaller numbers on both sides; the verb is still the plural kosten"
+        },
+        {
+          "display": "Ein Kilo Äpfel kostet dreißig Euro",
+          "cue": "A kilo of apples costs thirty euros",
+          "changed": "a measure phrase as the subject, so the verb goes back to the singular kostet"
+        }
+      ],
+      "mistake": {
+        "display": "Zwölf Äpfel kostet dreißig Euro",
+        "why": "The subject is twelve apples, which is plural, so the verb is kosten. Only Euro stays singular here — the verb agrees with what is being priced, not with the price."
+      },
+      "usage": "Quoting a price for a quantity.",
+      "register": "neutral",
+      "mnemonic": "dreißig keeps the ß that the other tens gave up."
+    },
+    {
+      "id": "L1-M8-S10",
+      "display": "Das ist zu teuer",
+      "cue": "That's too expensive",
+      "glossEn": "lit. \"That is too expensive\"",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zu",
+            "cue": "too (excessively)",
+            "tag": "interference",
+            "forms": [],
+            "note": "too, in the sense of an excess: zu teuer is \"too expensive\", the price at which you walk away. It is not \"very\" and it is not \"also\" — English's other \"too\", the one that means \"as well\", is auch and arrives in M10. These are the same two letters as the zu buried in M7's zum and zur and in the frozen zu Hause, and this is the only place in the level where the bare word is written on its own."
+          },
+          {
+            "display": "teuer",
+            "cue": "expensive",
+            "tag": "free",
+            "forms": [],
+            "note": "expensive. It stands after ist with no ending at all, which is the easy half of German adjectives — endings only appear in front of a noun, and that is left for a later level. Its opposite is billig, \"cheap\"."
+          },
+          {
+            "display": "billig",
+            "cue": "cheap",
+            "tag": "free",
+            "forms": [],
+            "note": "cheap, and it carries no sneer: billig is the ordinary word for a low price, where English \"cheap\" can suggest poor quality. Like teuer it takes no ending after ist. The final -ig is said as the soft ch of ich in standard German, so it ends BIL-lich."
+          }
+        ],
+        "rules": [
+          6,
+          7
+        ]
+      },
+      "trap": "zu and sehr are not interchangeable. Das ist zu teuer says the price has passed the point where you would pay it; Das ist sehr teuer says only that it is a lot. Saying zu when you mean \"very\" is the difference between a comment and a refusal.",
+      "sound": "tsoo TOY-er. The z is ts, and teuer has the eu of \"boy\" followed by a weak -er — two syllables, TOY-uh.",
+      "variations": [
+        {
+          "display": "Das ist nicht teuer",
+          "cue": "That's not expensive",
+          "changed": "M3's nicht denying the adjective instead of zu intensifying it"
+        },
+        {
+          "display": "Der Kaffee ist billig",
+          "cue": "The coffee is cheap",
+          "changed": "the opposite adjective, on a named thing"
+        },
+        {
+          "display": "Das Buch ist zu teuer",
+          "cue": "The book is too expensive",
+          "changed": "a named subject instead of the pointing das"
+        }
+      ],
+      "mistake": {
+        "display": "Das ist auch teuer",
+        "why": "auch is the \"too\" that means \"as well\", so this says the thing is expensive IN ADDITION to something else. The excess \"too\" is zu, and the two English senses of one word are two different German words."
+      },
+      "usage": "Turning something down without haggling.",
+      "register": "neutral",
+      "mnemonic": "zu is too-much; auch is too-as-well."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M8-C01",
+      "display": "Was kostet der Kaffee?",
+      "cue": "How much is the coffee?"
+    },
+    {
+      "id": "L1-M8-C02",
+      "display": "Wie viel kostet das Buch?",
+      "cue": "How much is the book?"
+    },
+    {
+      "id": "L1-M8-C03",
+      "display": "Wie viele Äpfel möchten Sie?",
+      "cue": "How many apples would you like?"
+    },
+    {
+      "id": "L1-M8-C04",
+      "display": "Ich möchte zwei Äpfel, bitte",
+      "cue": "I'd like two apples, please"
+    },
+    {
+      "id": "L1-M8-C05",
+      "display": "Ein Kilo Äpfel, bitte",
+      "cue": "A kilo of apples, please"
+    },
+    {
+      "id": "L1-M8-C06",
+      "display": "Eine Tasse Kaffee kostet drei Euro",
+      "cue": "A cup of coffee costs three euros"
+    },
+    {
+      "id": "L1-M8-C07",
+      "display": "Das Brot ist zu teuer",
+      "cue": "The bread is too expensive"
+    },
+    {
+      "id": "L1-M8-C08",
+      "display": "Der Stuhl kostet zwanzig Euro",
+      "cue": "The chair costs twenty euros"
+    },
+    {
+      "id": "L1-M8-C09",
+      "display": "Zwölf Äpfel kosten einundzwanzig Euro",
+      "cue": "Twelve apples cost twenty-one euros"
+    },
+    {
+      "id": "L1-M8-C10",
+      "display": "Eine Flasche Wasser, bitte",
+      "cue": "A bottle of water, please"
+    },
+    {
+      "id": "L1-M8-C11",
+      "display": "Das ist nicht teuer",
+      "cue": "That's not expensive"
+    },
+    {
+      "id": "L1-M8-C12",
+      "display": "Der Kaffee ist billig",
+      "cue": "The coffee is cheap"
+    },
+    {
+      "id": "L1-M8-C13",
+      "display": "Wie viel kostet ein Kilo Brot?",
+      "cue": "How much is a kilo of bread?"
+    },
+    {
+      "id": "L1-M8-C14",
+      "display": "Ich möchte eine Suppe, bitte",
+      "cue": "I'd like a soup, please"
+    },
+    {
+      "id": "L1-M8-C15",
+      "display": "Was kostet die Tasse?",
+      "cue": "How much is the cup?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

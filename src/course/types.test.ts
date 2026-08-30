@@ -194,7 +194,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 75 of them — seven full L1 ladders, plus en-de’s authored L1-M1..M5', () => {
+  it('finds all 80 of them — eight full L1 ladders, en-de included (#362–#364)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -206,14 +206,19 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ar/modules/L1-M7.json',
       'content/en-ar/modules/L1-M8.json',
       'content/en-ar/modules/L1-M9.json',
-      // en-de is being authored a rung at a time (#362 M1-M2, #363 M3-M5), so its row here is
-      // deliberately PARTIAL — the eighth course is the first one this list has ever seen
-      // half-written, and the gap is the point rather than an oversight. M6..M10 join on #364.
+      // en-de was authored a rung at a time — #362 M1-M2, #363 M3-M5, #364 M6-M10 — and this
+      // list saw it half-written twice on the way. It is whole now: eight courses, ten rungs
+      // each, and the eighth still behind `fixture: true` until #365.
       'content/en-de/modules/L1-M1.json',
+      'content/en-de/modules/L1-M10.json',
       'content/en-de/modules/L1-M2.json',
       'content/en-de/modules/L1-M3.json',
       'content/en-de/modules/L1-M4.json',
       'content/en-de/modules/L1-M5.json',
+      'content/en-de/modules/L1-M6.json',
+      'content/en-de/modules/L1-M7.json',
+      'content/en-de/modules/L1-M8.json',
+      'content/en-de/modules/L1-M9.json',
       'content/en-es/modules/L1-M1.json',
       'content/en-es/modules/L1-M10.json',
       'content/en-es/modules/L1-M2.json',
@@ -720,6 +725,15 @@ describe('ModuleContent against the modules that exist', () => {
     ]);
     /** Surface → the rows that would open it. Every one of these must have exactly one owner. */
     const owners = new Map<string, Set<string>>();
+    /**
+     * The umlauts and `ß` this course cannot do without. A blanket `/ae|oe|ue/` ban was tried
+     * first and REJECTED: `teuer`, `neue` and `Steuer` all carry a `ue` across a morpheme seam
+     * and are correctly spelled, so the regex flags real German. What is checkable, and what the
+     * decision actually claims, is that the orthography is WRITTEN rather than transcribed away —
+     * a module whose L2 slots hold no umlaut and no `ß` anywhere is a module that spelled around
+     * them, exactly as en-ru's stress check reads.
+     */
+    const UMLAUT_OR_ESZETT = /[äöüÄÖÜß]/;
 
     expect(enDe.length, 'the en-de L1 modules authored so far').toBeGreaterThan(0);
     for (const [file, json] of enDe) {
@@ -732,6 +746,7 @@ describe('ModuleContent against the modules that exist', () => {
         const at = sentence.id;
         expect(sentence.glossEn, `${at} glossEn`).toMatch(/\S/);
         expect(sentence.register, `${at} register`).toBe('neutral');
+        expect(sentence.sound, `${at} sound`).toMatch(/\S/);
         l2Slots.push([at, sentence.display]);
         for (const variation of sentence.variations ?? []) {
           l2Slots.push([`${at} variation`, variation.display]);
@@ -775,6 +790,15 @@ describe('ModuleContent against the modules that exist', () => {
           /heisse|heissen|strasse|gross|dreissig|weiss/i,
         );
       }
+
+      // The orthography is WRITTEN, not transcribed away. A blanket /ae|oe|ue/ ban was tried and
+      // REJECTED: `teuer`, `neue` and `Steuer` carry a `ue` across a morpheme seam and are
+      // correctly spelled, so it flagged real German. What is checkable is that a module's L2
+      // slots hold an umlaut or an ß SOMEWHERE — a module with none spelled around them.
+      expect(
+        l2Slots.some(([, text]) => UMLAUT_OR_ESZETT.test(text)),
+        `${file} writes no umlaut and no ß anywhere in its German`,
+      ).toBe(true);
     }
 
     // The seams. One row apiece, on the module the briefs named, or the later note is unreachable.
