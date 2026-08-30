@@ -35,7 +35,8 @@ import {
 
 /** Three of the four courses a strict build emits, as the manifest carries them — one per
     attribution shape (a script, no script, a romanized script). hi-en (#273) maps like hi-mr,
-    `['devanagari']`, and shares its subset; the manifest test below pins that mapping. */
+    `['devanagari']`, and shares its subset; en-fr (#326) maps like en-es, `[]`, since `fr` names no
+    course face — the manifest test below pins both mappings. */
 const HI_MR: ShippedCourse = { id: 'hi-mr', scripts: ['devanagari'] };
 const EN_ES: ShippedCourse = { id: 'en-es', scripts: [] };
 const EN_AR: ShippedCourse = { id: 'en-ar', scripts: ['arabic'] };
@@ -74,6 +75,7 @@ describe('reading the shipped courses off the manifest', () => {
         { id: 'en-es', l1Tag: 'en', l2Tag: 'es' },
         { id: 'en-ar', l1Tag: 'en', l2Tag: 'ar' },
         { id: 'hi-en', l1Tag: 'hi', l2Tag: 'en' },
+        { id: 'en-fr', l1Tag: 'en', l2Tag: 'fr' },
       ],
     });
 
@@ -82,6 +84,7 @@ describe('reading the shipped courses off the manifest', () => {
       { id: 'en-es', scripts: [] }, // Latin: no font subsets of its own
       { id: 'en-ar', scripts: ['arabic'] }, // romanized still ships the native line's face (#197)
       { id: 'hi-en', scripts: ['devanagari'] }, // Hindi chrome over English sentences (#267, shipping since #273): the L1 pays for the face
+      { id: 'en-fr', scripts: [] }, // French is Latin on both sides (#326): charged content only, like en-es
     ]);
   });
 

@@ -11,10 +11,12 @@ import { DEFAULT_CONTENT_ROOT } from './validate.ts';
  * issue text predates five PRs and lists 21 keys; the files carry 39 (PR #120, verified across
  * courses by PR #124, plus the Ladder's three in #86 and the staged rung card's seven in #87).
  * Where they disagree, the files win, so the suite checks the list AGAINST the files rather than
- * the other way round. Four bundles since #267 — hi-mr, en-es, en-ar and hi-en, all four shipping
- * since #273 — and the content build checks every one exactly the same way.
+ * the other way round. Five bundles since #326 — hi-mr, en-es, en-ar and hi-en, all four shipping
+ * since #273, plus en-fr, whose row is still a dev fixture — and the content build checks every one
+ * exactly the same way. A fixture course's bundle is held to the same bar as a shipping one: the
+ * gate decides whether it ships, never whether it is correct.
  */
-const COURSES = ['hi-mr', 'en-es', 'en-ar', 'hi-en'] as const;
+const COURSES = ['hi-mr', 'en-es', 'en-ar', 'hi-en', 'en-fr'] as const;
 
 function authoredStrings(courseId: string): Record<string, unknown> {
   const file = path.join(DEFAULT_CONTENT_ROOT, courseId, 'strings.json');

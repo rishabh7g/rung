@@ -3,15 +3,18 @@
  *
  * A trimmed copy of what `npm run dev` writes to `public/content/courses.json` — the envelope
  * with its dev keys, hi-mr first, en-ar carrying `romanizationNote` so the loader is exercised
- * against a row that has more than the nine required fields, and hi-en last. Shared, so the loader
+ * against a row that has more than the nine required fields, and en-fr last. Shared, so the loader
  * test and the boot tests cannot drift into disagreeing about the shape.
  *
- * **No row carries `fixture`.** en-es graduated in #195, en-ar in #202 and hi-en — Hindi (L1) →
- * English (L2), added behind the gate in #267 and authored in #270–#272 — in #273, so all four
- * courses ship and a strict build emits the same four rows (minus the dev keys). The Settings
- * smoke (`src/screens/SettingsScreen.test.tsx`) and the authored-rung walk
- * (`src/course/hiEnAuthored.test.tsx`) reach the fourth course through this copy, without a
- * browser. The `fixture` seam itself is still tested — the loader test flags a row of its own.
+ * **Four rows ship; the last is still behind the gate.** en-es graduated in #195, en-ar in #202 and
+ * hi-en — Hindi (L1) → English (L2), added behind the gate in #267 and authored in #270–#272 — in
+ * #273, so those four courses ship and a strict build emits their rows (minus the dev keys). en-fr
+ * — English (L1) → French (L2), added as a dev fixture in #326 — carries `fixture: true` until its
+ * graduation issue deletes it, exactly as hi-en's row did between #267 and #273, so it is the row
+ * that keeps the `fixture` seam exercised against real authored data. The Settings smoke
+ * (`src/screens/SettingsScreen.test.tsx`) and the authored-rung walk
+ * (`src/course/hiEnAuthored.test.tsx`) reach the later courses through this copy, without a
+ * browser.
  */
 import { vi } from 'vitest';
 import { completeStrings } from './courseStrings.ts';
@@ -66,6 +69,18 @@ export const DEV_MANIFEST = {
       pairLabel: 'hindi → english',
       scriptMode: 'native',
       dir: 'ltr',
+    },
+    {
+      id: 'en-fr',
+      l1: 'English',
+      l2: 'French',
+      l1Tag: 'en',
+      l2Tag: 'fr',
+      l2Dir: 'ltr',
+      pairLabel: 'english → french',
+      scriptMode: 'native',
+      dir: 'ltr',
+      fixture: true,
     },
   ],
 } as const;

@@ -52,7 +52,9 @@ describe('CourseProvider', () => {
       </CourseProvider>,
     );
 
-    expect(await screen.findByText(/active hi-mr of 4/)).toBeInTheDocument();
+    expect(
+      await screen.findByText(new RegExp(`active hi-mr of ${DEV_MANIFEST.courses.length}`)),
+    ).toBeInTheDocument();
   });
 
   it('boots on the persisted course when it is still in the manifest', async () => {
@@ -65,7 +67,9 @@ describe('CourseProvider', () => {
       </CourseProvider>,
     );
 
-    expect(await screen.findByText(/active en-ar of 4/)).toBeInTheDocument();
+    expect(
+      await screen.findByText(new RegExp(`active en-ar of ${DEV_MANIFEST.courses.length}`)),
+    ).toBeInTheDocument();
   });
 
   it('falls back to the first entry, with a warn, when the persisted course is gone', async () => {
@@ -79,7 +83,9 @@ describe('CourseProvider', () => {
       </CourseProvider>,
     );
 
-    expect(await screen.findByText(/active hi-mr of 4/)).toBeInTheDocument();
+    expect(
+      await screen.findByText(new RegExp(`active hi-mr of ${DEV_MANIFEST.courses.length}`)),
+    ).toBeInTheDocument();
     expect(warn).toHaveBeenCalledWith(expect.stringMatching(/"fr-de"/));
   });
 
@@ -104,7 +110,9 @@ describe('CourseProvider', () => {
       </CourseProvider>,
     );
 
-    expect(await screen.findByText(/active hi-mr of 4$/)).toBeInTheDocument();
+    expect(
+      await screen.findByText(new RegExp(`active hi-mr of ${DEV_MANIFEST.courses.length}$`)),
+    ).toBeInTheDocument();
   });
 
   it('shows the wordmark and nothing else while the manifest is in flight', () => {
@@ -154,20 +162,20 @@ describe('CourseProvider', () => {
       courses: [
         ...DEV_MANIFEST.courses,
         {
-          id: 'en-fr',
-          l1: 'English',
-          l2: 'French',
-          l1Tag: 'en',
-          l2Tag: 'fr',
+          id: 'fr-de',
+          l1: 'French',
+          l2: 'German',
+          l1Tag: 'fr',
+          l2Tag: 'de',
           l2Dir: 'ltr',
-          pairLabel: 'english → french',
+          pairLabel: 'french → german',
           scriptMode: 'native',
           dir: 'ltr',
         },
       ],
     };
     mockContentFetch(withNewCourse);
-    persistCourse('en-fr');
+    persistCourse('fr-de');
 
     render(
       <CourseProvider>
@@ -175,7 +183,12 @@ describe('CourseProvider', () => {
       </CourseProvider>,
     );
 
-    expect(await screen.findByText(/active en-fr of 5/)).toBeInTheDocument();
+    // The row is a pair the repo has never authored — en-fr was that row until #326 made it a
+    // real course — and the count is read off the manifest, so a sixth course landing beside it
+    // does not make this case a lie.
+    expect(
+      await screen.findByText(new RegExp(`active fr-de of ${withNewCourse.courses.length}`)),
+    ).toBeInTheDocument();
   });
 
   it("loads the active course's strings as part of boot, not after it", async () => {
@@ -241,7 +254,9 @@ describe('the persistence seam (#82)', () => {
       </CourseProvider>,
     );
 
-    expect(await screen.findByText(/active hi-mr of 4/)).toBeInTheDocument();
+    expect(
+      await screen.findByText(new RegExp(`active hi-mr of ${DEV_MANIFEST.courses.length}`)),
+    ).toBeInTheDocument();
     expect(useAppStore.getState().activeCourse).toBe('hi-mr');
   });
 
@@ -255,7 +270,7 @@ describe('the persistence seam (#82)', () => {
       </CourseProvider>,
     );
 
-    await screen.findByText(/active en-ar of 4/);
+    await screen.findByText(new RegExp(`active en-ar of ${DEV_MANIFEST.courses.length}`));
     expect(useAppStore.getState().courses['en-ar']).toEqual({
       modules: {},
       production: {},
