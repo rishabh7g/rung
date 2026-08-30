@@ -41,7 +41,18 @@ import type { Levels, ModuleContent, WordIndex, WordIndexEntry } from './types.t
 
 const COURSE = 'en-ru';
 /** The rungs authored so far, in ladder order — the fold below is cumulative over this list. */
-const AUTHORED = ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5'] as const;
+const AUTHORED = [
+  'L1-M1',
+  'L1-M2',
+  'L1-M3',
+  'L1-M4',
+  'L1-M5',
+  'L1-M6',
+  'L1-M7',
+  'L1-M8',
+  'L1-M9',
+  'L1-M10',
+] as const;
 
 const FILES = import.meta.glob<string>('../../content/en-ru/**/*.json', {
   query: '?raw',
@@ -352,8 +363,11 @@ describe('Sentence Detail over L1-M3, L1-M4 and L1-M5', () => {
 
     expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent('Вчера я был дома.');
     const words = section('words');
-    // The verb that had no present tense at all now has four shapes, all on one row.
-    expect(within(words).getByText('был · была · было · были')).toBeInTheDocument();
+    // The verb that had no present tense at all now has seven shapes, all on ONE row: M5 opened
+    // it with the past and M6 extended it with the future, rather than forking the lexeme.
+    expect(
+      within(words).getByText('был · была · было · были · буду · будете · будет'),
+    ).toBeInTheDocument();
     expect(within(words).getByText('was')).toBeInTheDocument();
     expect(within(section('mistake')).getByText('Вчера я есть дома.')).toBeInTheDocument();
   });
@@ -369,6 +383,77 @@ describe('Sentence Detail over L1-M3, L1-M4 and L1-M5', () => {
       within(section('trap')).getByText(/Two -а endings, two different reasons/),
     ).toBeInTheDocument();
     expect(within(section('words')).getByText('газета · газету')).toBeInTheDocument();
+  });
+});
+
+/* -------------------------------------------------- the last five rungs (#342) */
+
+describe('Sentence Detail over L1-M6 … L1-M10', () => {
+  async function renderSentence(moduleId: string, sentenceId: string) {
+    serveAuthoredEnRu();
+    activateEnRu();
+    passRungsBefore(moduleId);
+    window.location.hash = `#/sentence/${sentenceId}`;
+    render(<App />);
+    await screen.findByRole('main');
+  }
+
+  it('shows M6’s perfective future — a present-shaped verb with no буду in the sentence', async () => {
+    await renderSentence('L1-M6', 'L1-M6-S03');
+
+    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
+      'Завтра я напишу письмо.',
+    );
+    expect(within(section('words')).getByText('I will write')).toBeInTheDocument();
+    expect(
+      within(section('mistake')).getByText('Завтра я буду напишу письмо.'),
+    ).toBeInTheDocument();
+  });
+
+  it('shows M7’s existential есть — the one row that also serves M8’s possession', async () => {
+    await renderSentence('L1-M7', 'L1-M7-S03');
+
+    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
+      'На столе есть книга.',
+    );
+    const words = section('words');
+    expect(within(words).getAllByText('есть').length).toBeGreaterThan(0);
+    expect(within(words).getByText('there is · there are')).toBeInTheDocument();
+    // The literal is the point of the rung: English's "there" corresponds to nothing at all.
+    expect(within(section('gloss')).getByText('On table is book')).toBeInTheDocument();
+  });
+
+  it('shows M8’s possession frame whole — three tokens, and no verb "to have"', async () => {
+    await renderSentence('L1-M8', 'L1-M8-S06');
+
+    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
+      'У меня есть билет.',
+    );
+    const words = section('words');
+    expect(within(words).getAllByText('У меня есть').length).toBeGreaterThan(0);
+    expect(within(words).getByText('I have')).toBeInTheDocument();
+    expect(within(section('gloss')).getByText('At me is ticket')).toBeInTheDocument();
+  });
+
+  it('shows M9’s dative experiencer — no subject, and the verb following the thing', async () => {
+    await renderSentence('L1-M9', 'L1-M9-S03');
+
+    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
+      'Мне нравится Москва.',
+    );
+    expect(within(section('words')).getByText('нравится · нравятся')).toBeInTheDocument();
+    expect(within(section('gloss')).getByText('To-me pleases Moscow')).toBeInTheDocument();
+  });
+
+  it('renders an M10 turn whole — two sentences on one card, with its own gloss', async () => {
+    await renderSentence('L1-M10', 'L1-M10-S07');
+
+    // A turn is 2–3 short sentences and the hero line carries all of them, unsplit.
+    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(
+      'Где ключ? Он на столе.',
+    );
+    expect(within(section('words')).getByText('Он · она · оно · они')).toBeInTheDocument();
+    expect(within(section('mistake')).getByText('Где ключ? Оно на столе.')).toBeInTheDocument();
   });
 });
 
@@ -403,6 +488,19 @@ describe('the Why panel over an en-ru comprehension item', () => {
     expect(within(rows[2]!).getByText('Москва')).toBeInTheDocument();
     expect(within(rows[2]!).getByText('Moscow')).toBeInTheDocument();
     expect(within(rows[2]!).getByText(/Москвы is what из takes/)).toBeInTheDocument();
+  });
+
+  it('takes M8’s three-token possession chunk whole, never as у + меня + есть', async () => {
+    await renderPanel('L1-M8-C04', 'У меня есть ключ.');
+    fireEvent.click(screen.getByRole('button', { name: 'why' }));
+
+    const first = await screen.findByText('У меня есть');
+    const rows = within(first.closest('ul')!).getAllByRole('listitem');
+    // Two rows, not four: the resolver takes the longest match, so the chunk swallows its own
+    // `есть` and the bare `у` never has to resolve at all.
+    expect(rows).toHaveLength(2);
+    expect(within(rows[0]!).getByText('I have')).toBeInTheDocument();
+    expect(within(rows[1]!).getByText('Ключ')).toBeInTheDocument();
   });
 
   it('lands устала on M2’s ONE устал row, and вас on the ONE Вы row', async () => {

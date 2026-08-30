@@ -1,0 +1,538 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M8",
+  "title": "Numbers & shopping",
+  "job": "Prices, quantities, buying",
+  "prerequisites": ["L1-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "Сколько стоит + N (nom.) + ?",
+      "Сколько стоят + N-pl (nom.) + ?",
+      "У вас есть + N (nom.) + ?",
+      "У меня есть + N (nom.)",
+      "Дайте, пожалуйста + , + N (acc.)",
+      "N + стоит + num + N (gen.)"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "A number decides the shape of the noun after it, which English never does. After один the noun is in its ordinary dictionary shape (один рубль). After два, три and четыре it takes one ending (два рубля). After пять and everything above it takes another (пять рублей, сто рублей). Learn the three shapes of a word you will count — рубль · рубля · рублей — rather than trying to build them."
+    },
+    {
+      "tag": "delta",
+      "text": "M4 already showed you this rule on the clock: один час, два часа, семь часов. It was the same law then, applied to hours instead of roubles."
+    },
+    {
+      "tag": "interference",
+      "text": "The price question agrees with the THING, not with the buyer: Сколько стоит книга? for one, Сколько стоят книги? for more than one. M9's мне нравится works the same way — a Russian verb very often agrees with the thing rather than with the person, and this is the first place it bites."
+    },
+    {
+      "tag": "interference",
+      "text": "There is no everyday verb \"to have\". Possession is built out of a place phrase: У меня есть книга is literally \"at me is a book\" — the owner sits in the У-phrase and the thing owned is the SUBJECT of the sentence. Russian does have a verb иметь, but it is bookish and abstract and nobody uses it for owning a book, so Я имею книгу is not so much wrong as unnatural."
+    },
+    {
+      "tag": "delta",
+      "text": "У вас есть …? is how you ask a shop whether they have something, and У меня есть … is how you say what you have. Learn each as one whole phrase: the есть inside them is M7's existential word doing a second job."
+    },
+    {
+      "tag": "free",
+      "text": "Дайте is the polite \"give\" — the вы-form, matching the register this course speaks throughout — and it is the only command this level teaches. It is nearly always followed by пожалуйста, set off by commas."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M8-S01",
+      "display": "Сколько стоит книга?",
+      "cue": "How much does the book cost?",
+      "glossEn": "lit. \"how-much costs book?\"",
+      "literal": "How-much costs book?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Сколько стоит",
+            "cue": "how much does … cost",
+            "tag": "delta",
+            "forms": ["Сколько стоит"],
+            "note": "Two words, learned whole: сколько is \"how much\" and стоит is \"costs\". This is the one-thing version — S02 has the version for more than one. There is no do and no does anywhere in the question."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "English builds the question with a helper — \"how much DOES it cost\" — and Russian has nothing to build it with. The words of the statement, in order, plus a question mark.",
+      "sound": "SKOL-ka STO-eet KNEE-ga. The л of сколько is soft, and both unstressed о letters flatten to \"a\".",
+      "variations": [
+        {
+          "display": "Сколько стоит билет?",
+          "cue": "How much does a ticket cost?",
+          "changed": "swap the thing priced — still one of it, so still стоит"
+        },
+        {
+          "display": "Сколько стоит молоко?",
+          "cue": "How much does the milk cost?",
+          "changed": "a neuter thing this time, and the verb does not notice gender — only number"
+        },
+        {
+          "display": "Книга стоит сто рублей.",
+          "cue": "The book costs a hundred roubles",
+          "changed": "the answer, with the same verb and a price after it"
+        }
+      ],
+      "mistake": {
+        "display": "Сколько книга стоит есть?",
+        "why": "Two things at once: nothing needs to be added to make a question, and есть is not a helper. Сколько стоит книга?"
+      },
+      "usage": "Every shop, every market, every ticket office.",
+      "register": "neutral",
+      "mnemonic": "How much costs the thing. The words are already in the right order."
+    },
+    {
+      "id": "L1-M8-S02",
+      "display": "Сколько стоят книги?",
+      "cue": "How much do the books cost?",
+      "glossEn": "lit. \"how-much cost books?\"",
+      "literal": "How-much cost books?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Сколько стоят",
+            "cue": "how much do … cost",
+            "tag": "interference",
+            "forms": ["Сколько стоят"],
+            "note": "The more-than-one version. The verb changes because the THING is plural, not because the person asking has changed: стоит for one, стоят for several. Nothing about the buyer appears in the sentence at all."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "In English \"does\" and \"do\" also follow the thing, so the idea is familiar — but it is worth naming, because M9's мне нравится / мне нравятся runs on the same principle and there English does the opposite.",
+      "sound": "SKOL-ka sta-YAT KNEE-gee. The stress moves onto the ending in стоят, which is why it sounds so unlike стоит.",
+      "variations": [
+        {
+          "display": "Сколько стоит книга?",
+          "cue": "How much does the book cost?",
+          "changed": "back to one book — стоят → стоит, following the thing"
+        },
+        {
+          "display": "Сколько стоят билеты?",
+          "cue": "How much do the tickets cost?",
+          "changed": "swap the plural thing — стоят stays"
+        },
+        {
+          "display": "Книги стоят сто рублей.",
+          "cue": "The books cost a hundred roubles",
+          "changed": "the answer, with the same plural verb"
+        }
+      ],
+      "mistake": {
+        "display": "Сколько стоит книги?",
+        "why": "книги is more than one book, so the verb has to be стоят. The verb follows the thing, always."
+      },
+      "usage": "Asking about several things at once — and the plural of a noun you already know is often just -и or -ы.",
+      "register": "neutral",
+      "mnemonic": "The verb looks at what is being priced, never at who is asking."
+    },
+    {
+      "id": "L1-M8-S03",
+      "display": "Книга стоит сто рублей.",
+      "cue": "The book costs a hundred roubles",
+      "glossEn": "lit. \"book costs hundred roubles\"",
+      "literal": "Book costs hundred roubles",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "стоит",
+            "cue": "costs",
+            "tag": "delta",
+            "forms": ["стоит", "стоят"],
+            "note": "\"Costs\" — the verb inside S01's and S02's question phrases, here on its own in the answer. It follows the THING, not the buyer: стоит for one, стоят for more than one. There is no \"for\" and no \"is worth\" anywhere: the price simply follows the verb."
+          },
+          {
+            "display": "сто",
+            "cue": "a hundred",
+            "tag": "free",
+            "forms": ["сто"],
+            "note": "A hundred. Three letters, and it never changes shape here — but like every number above four, it puts the noun behind it into the -ей / -ов shape."
+          },
+          {
+            "display": "рублей",
+            "cue": "roubles",
+            "tag": "interference",
+            "forms": ["рубль", "рубля", "рублей"],
+            "note": "The rouble, in the three shapes the counting rule needs: один рубль, два рубля, пять рублей. Note that рубль ends in -ь and is masculine — M1 warned that -ь nouns go either way and have to be learned one at a time."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English says \"a hundred roubles\" with the noun untouched; Russian bends it. The number is in charge of the noun, and that is the whole grammar of this rung.",
+      "sound": "KNEE-ga STO-eet sto roob-LYEY. The ь inside рублей softens the л, and the stress lands on the ending.",
+      "variations": [
+        {
+          "display": "Книга стоит один рубль.",
+          "cue": "The book costs one rouble",
+          "changed": "after один the noun is in its plain dictionary shape"
+        },
+        {
+          "display": "Книга стоит два рубля.",
+          "cue": "The book costs two roubles",
+          "changed": "два takes the middle shape — рубля, not рублей"
+        },
+        {
+          "display": "Билет стоит сто рублей.",
+          "cue": "The ticket costs a hundred roubles",
+          "changed": "swap what is priced — the number and the noun behind it do not move"
+        }
+      ],
+      "mistake": {
+        "display": "Книга стоит сто рубль.",
+        "why": "рубль is the shape that follows один. After сто it is рублей."
+      },
+      "usage": "Every price you will be told — and the three shapes are worth learning as a set.",
+      "register": "neutral",
+      "mnemonic": "1 plain, 2–4 one ending, 5 and up another. Three shapes cover every price in Russia."
+    },
+    {
+      "id": "L1-M8-S04",
+      "display": "Сок стоит пять рублей.",
+      "cue": "The juice costs five roubles",
+      "glossEn": "lit. \"juice costs five roubles\"",
+      "literal": "Juice costs five roubles",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "пять",
+            "cue": "five",
+            "tag": "delta",
+            "forms": ["пять"],
+            "note": "Five — the number where the second ending starts. Everything from пять upward behaves the same way, so this one number teaches the whole upper half of the rule. It ends in -ь, like every number from five to twenty."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "There is nothing special about five in itself. It is simply where Russian's counting rule switches, and it stays switched for every number above it.",
+      "sound": "sok STO-eet pyat' roob-LYEY. The я of пять is a soft \"a\", and the ь on the end softens the т.",
+      "variations": [
+        {
+          "display": "Сок стоит два рубля.",
+          "cue": "The juice costs two roubles",
+          "changed": "два is in the 2–4 group, so the noun takes the other ending"
+        },
+        {
+          "display": "Хлеб стоит пять рублей.",
+          "cue": "The bread costs five roubles",
+          "changed": "swap what is priced — the number phrase is unchanged"
+        },
+        {
+          "display": "Сколько стоит сок?",
+          "cue": "How much does the juice cost?",
+          "changed": "the question this sentence answers"
+        }
+      ],
+      "mistake": {
+        "display": "Сок стоит пять рубля.",
+        "why": "рубля is the 2–4 shape. After пять it is рублей."
+      },
+      "usage": "Any price under a hundred — and пять is the number to test the rule with.",
+      "register": "neutral",
+      "mnemonic": "Five is where the switch is. Above it, nothing changes again."
+    },
+    {
+      "id": "L1-M8-S05",
+      "display": "У вас есть хлеб?",
+      "cue": "Do you have bread?",
+      "glossEn": "lit. \"at you is bread?\"",
+      "literal": "At you is bread?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "У вас есть",
+            "cue": "do you have",
+            "tag": "interference",
+            "forms": ["У вас есть"],
+            "note": "Three words, learned whole: \"at you is …\". There is no verb \"to have\" in it — the owner sits in the У-phrase and the thing owned is the subject. The есть inside it is M7's existential word, doing possession instead of location. Ask a shop this and you have asked whether they stock it."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "Every instinct says to look for a Russian \"have\". There is not one in everyday use, and the sentence is built the other way round: the bread is the subject, and you are a place it might be found.",
+      "sound": "oo vas yest' khlyep. Four short words, and the pitch rises on хлеб to make the question.",
+      "variations": [
+        {
+          "display": "У вас есть молоко?",
+          "cue": "Do you have milk?",
+          "changed": "swap what you are asking for — the phrase never moves"
+        },
+        {
+          "display": "У вас есть книга?",
+          "cue": "Do you have the book?",
+          "changed": "the thing owned is the subject, so it stays in its dictionary shape — книга, not книгу"
+        },
+        {
+          "display": "У меня есть хлеб.",
+          "cue": "I have bread",
+          "changed": "вас → меня: the same frame, about yourself"
+        }
+      ],
+      "mistake": {
+        "display": "Вы имеете хлеб?",
+        "why": "иметь is a real verb, but a bookish one — nobody uses it for having bread. The everyday question is У вас есть хлеб?"
+      },
+      "usage": "Every shop, every kitchen, every time you need something.",
+      "register": "neutral",
+      "mnemonic": "Russian does not have things. Things are AT you."
+    },
+    {
+      "id": "L1-M8-S06",
+      "display": "У меня есть билет.",
+      "cue": "I have a ticket",
+      "glossEn": "lit. \"at me is ticket\"",
+      "literal": "At me is ticket",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "У меня есть",
+            "cue": "I have",
+            "tag": "interference",
+            "forms": ["У меня есть"],
+            "note": "The same three-word frame about yourself. меня is M1's я in its object shape, and the phrase is literally \"at me is …\". The thing owned stays in its dictionary shape, because it is the subject of the sentence — билет, never билета."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "The thing you own does NOT take M3's object ending, because it is not an object — it is the subject. У меня есть книга, never У меня есть книгу.",
+      "sound": "oo mee-NYA yest' bee-LYET. меня here sounds exactly as it did in Меня зовут, because it is the same word.",
+      "variations": [
+        {
+          "display": "У меня есть книга.",
+          "cue": "I have a book",
+          "changed": "swap what you have — and it stays in its dictionary shape"
+        },
+        {
+          "display": "У меня есть ключ.",
+          "cue": "I have the key",
+          "changed": "the most useful version of this sentence you will ever say"
+        },
+        {
+          "display": "У вас есть билет?",
+          "cue": "Do you have a ticket?",
+          "changed": "меня → вас: the same frame, asked of somebody else"
+        }
+      ],
+      "mistake": {
+        "display": "У меня есть билета.",
+        "why": "The thing owned is the subject of the sentence, so it keeps its dictionary shape: билет."
+      },
+      "usage": "Saying what you have on you — tickets, keys, money, time.",
+      "register": "neutral",
+      "mnemonic": "At me is a ticket. The ticket is the subject; you are only the place."
+    },
+    {
+      "id": "L1-M8-S07",
+      "display": "Дайте, пожалуйста, воду.",
+      "cue": "Give me some water, please",
+      "glossEn": "lit. \"give, please, water\"",
+      "literal": "Give, please, water",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Дайте",
+            "cue": "give (polite)",
+            "tag": "delta",
+            "forms": ["Дайте"],
+            "note": "\"Give\" — the вы-form, which is what makes it polite, and the only command this course teaches. The -те on the end is the same polite ending as on Здравствуйте. With пожалуйста after it, it is the ordinary way to ask for something in a shop; without it, it is brusque."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "The thing asked for takes M3's object ending — воду, not вода — because Дайте is a real verb with a real object. That is the difference between this and У меня есть, where the thing is the subject and does not bend.",
+      "sound": "DAY-tye pa-ZHA-loo-sta VO-doo. Both commas are pauses, and the middle word is where the politeness lives.",
+      "variations": [
+        {
+          "display": "Дайте, пожалуйста, хлеб.",
+          "cue": "Give me some bread, please",
+          "changed": "a masculine thing, so nothing bends — хлеб stays as it is"
+        },
+        {
+          "display": "Дайте, пожалуйста, книгу.",
+          "cue": "Give me the book, please",
+          "changed": "a feminine thing, so M3's ending appears: книгу"
+        },
+        {
+          "display": "Дайте два билета, пожалуйста.",
+          "cue": "Give me two tickets, please",
+          "changed": "a number in front, so the counting rule takes over: два билета"
+        }
+      ],
+      "mistake": {
+        "display": "Дайте, пожалуйста, вода.",
+        "why": "Дайте takes an object, and a feminine -а noun bends as an object: воду. It is M3's rule, in a shop."
+      },
+      "usage": "Ordering, asking, buying — the single most useful sentence frame in the course.",
+      "register": "neutral",
+      "mnemonic": "Дайте takes an object, so the object bends. У меня есть takes a subject, so it does not."
+    },
+    {
+      "id": "L1-M8-S08",
+      "display": "Один билет, пожалуйста.",
+      "cue": "One ticket, please",
+      "glossEn": "lit. \"one ticket, please\"",
+      "literal": "One ticket, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Один",
+            "cue": "one",
+            "tag": "delta",
+            "forms": ["Один", "одна"],
+            "note": "One — and it is the only number besides два that changes for gender: один билет, but одна книга. After it the noun keeps its plain dictionary shape, which is what makes один the easy end of the counting rule."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "Russian has no article, so один is genuinely \"one\" and not \"a\". Putting it in front of every noun the way English puts \"a\" is the mistake — it counts, it does not introduce.",
+      "sound": "a-DEEN bee-LYET pa-ZHA-loo-sta. The first о of один is unstressed and flattens all the way to \"a\".",
+      "variations": [
+        {
+          "display": "Одна книга, пожалуйста.",
+          "cue": "One book, please",
+          "changed": "один → одна for a feminine noun — the number agrees with what it counts"
+        },
+        {
+          "display": "Два билета, пожалуйста.",
+          "cue": "Two tickets, please",
+          "changed": "два puts the noun into the 2–4 shape: билета"
+        },
+        {
+          "display": "Дайте один билет, пожалуйста.",
+          "cue": "Give me one ticket, please",
+          "changed": "the verb spelled out — and now билет is an object, though a masculine one does not bend"
+        }
+      ],
+      "mistake": {
+        "display": "Один книга, пожалуйста.",
+        "why": "книга is feminine, so the number agrees with it: одна книга."
+      },
+      "usage": "A ticket counter, a bakery, a market stall — the shortest complete purchase in the language.",
+      "register": "neutral",
+      "mnemonic": "один is a count, not an article. Russian has no word for \"a\", and this is not it."
+    },
+    {
+      "id": "L1-M8-S09",
+      "display": "Дайте два билета, пожалуйста.",
+      "cue": "Give me two tickets, please",
+      "glossEn": "lit. \"give two tickets, please\"",
+      "literal": "Give two ticket-2-4, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "два",
+            "cue": "two",
+            "tag": "delta",
+            "forms": ["два", "две"],
+            "note": "Two — the other number that changes for gender: два билета, but две книги. It puts the noun into the 2–4 shape, and три and четыре do exactly the same without changing themselves."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "Two endings are stacked here and only one of them is M3's. билета is the 2–4 counting shape, not an object ending — the object ending would have been билет, since masculine things do not bend as objects. The number wins.",
+      "sound": "DAY-tye dva bee-LYE-ta pa-ZHA-loo-sta. The stress on билета stays where it was in билет.",
+      "variations": [
+        {
+          "display": "Дайте две книги, пожалуйста.",
+          "cue": "Give me two books, please",
+          "changed": "две for a feminine noun, and книги for the 2–4 shape"
+        },
+        {
+          "display": "Дайте один билет, пожалуйста.",
+          "cue": "Give me one ticket, please",
+          "changed": "один, so the noun goes back to its plain shape"
+        },
+        {
+          "display": "Два билета стоят сто рублей.",
+          "cue": "Two tickets cost a hundred roubles",
+          "changed": "the same number phrase as the subject — and стоят, because there are two of them"
+        }
+      ],
+      "mistake": {
+        "display": "Дайте два билет, пожалуйста.",
+        "why": "два puts the noun into the 2–4 shape: два билета. The counting rule overrides everything else in the sentence."
+      },
+      "usage": "Buying more than one of something — and the sentence where two rules meet and the number wins.",
+      "register": "neutral",
+      "mnemonic": "When a number and a verb both want the noun, the number gets it."
+    },
+    {
+      "id": "L1-M8-S10",
+      "display": "Ещё чай, пожалуйста.",
+      "cue": "More tea, please",
+      "glossEn": "lit. \"more tea, please\"",
+      "literal": "More tea, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Ещё",
+            "cue": "more · another · still",
+            "tag": "delta",
+            "forms": ["Ещё"],
+            "note": "\"More\" or \"another\" when you are asking for a second helping, and \"still\" when something has not stopped. Written with ё, always, and this course writes the dots — Russian print usually does not, which is one of the places the missing dots cost a beginner most."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "One small word covering \"more\", \"another\" and \"still\". Which one it means comes entirely from the situation, and asking which is which is the wrong question.",
+      "sound": "ye-SHCHO chai pa-ZHA-loo-sta. The щ is a long soft \"shch\", and the ё is stressed, as every ё is.",
+      "variations": [
+        {
+          "display": "Ещё воду, пожалуйста.",
+          "cue": "More water, please",
+          "changed": "a feminine noun after a verb that is understood, so M3's ending still appears: воду"
+        },
+        {
+          "display": "Дайте ещё чай, пожалуйста.",
+          "cue": "Give me more tea, please",
+          "changed": "the verb spelled out, with ещё between it and the thing"
+        },
+        {
+          "display": "Ещё один билет, пожалуйста.",
+          "cue": "One more ticket, please",
+          "changed": "ещё in front of a number — \"one more\", the commonest way it is used"
+        }
+      ],
+      "mistake": {
+        "display": "Больше чай, пожалуйста.",
+        "why": "больше is \"more\" in the sense of a larger quantity or a comparison. Asking for another helping is ещё."
+      },
+      "usage": "A café, a table, a second helping — and the sentence that shows why the two dots on ё are worth writing.",
+      "register": "neutral",
+      "mnemonic": "ещё is the word for one more of what you already have."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L1-M8-C01", "display": "Сколько стоит хлеб?", "cue": "How much does the bread cost?" },
+    { "id": "L1-M8-C02", "display": "Сок стоит два рубля.", "cue": "The juice costs two roubles" },
+    { "id": "L1-M8-C03", "display": "У вас есть молоко?", "cue": "Do you have milk?" },
+    { "id": "L1-M8-C04", "display": "У меня есть ключ.", "cue": "I have the key" },
+    {
+      "id": "L1-M8-C05",
+      "display": "Дайте, пожалуйста, книгу.",
+      "cue": "Give me the book, please"
+    },
+    { "id": "L1-M8-C06", "display": "Сколько стоят билеты?", "cue": "How much do the tickets cost?" },
+    { "id": "L1-M8-C07", "display": "Одна книга, пожалуйста.", "cue": "One book, please" },
+    { "id": "L1-M8-C08", "display": "Ещё воду, пожалуйста.", "cue": "More water, please" },
+    { "id": "L1-M8-C09", "display": "У меня есть два билета.", "cue": "I have two tickets" },
+    { "id": "L1-M8-C10", "display": "Газета стоит пять рублей.", "cue": "The newspaper costs five roubles" },
+    { "id": "L1-M8-C11", "display": "У вас есть сок?", "cue": "Do you have juice?" },
+    { "id": "L1-M8-C12", "display": "Дайте две книги, пожалуйста.", "cue": "Give me two books, please" }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

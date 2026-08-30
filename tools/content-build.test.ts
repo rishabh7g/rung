@@ -1069,11 +1069,13 @@ describe('the romanized edge cases (#116, [Q3])', () => {
     expect(index.surfaces['kot']?.moduleId).toBe('L1-M1');
   });
 
-  it('resolves every sentence and pool token of all four authored courses — the [Q3] sweep', () => {
+  it('resolves every sentence and pool token of all five authored courses — the [Q3] sweep', () => {
     // The "why" path is sentence displays; the exit ritual reads the pool. Variations are outside
     // the sweep by design: they legitimately carry untaught tokens (proper nouns like Priya, and
     // variation-only forms — the documented gap on #61) and the panel drops what cannot resolve.
-    for (const courseId of ['en-ar', 'en-es', 'hi-en', 'hi-mr']) {
+    // en-ru joins the sweep at #342 with ten authored rungs; it is still a fixture course, and the
+    // sweep reads `content/`, so the gate does not hide it from this check.
+    for (const courseId of ['en-ar', 'en-es', 'en-ru', 'hi-en', 'hi-mr']) {
       const modules = authoredCourse(courseId);
       const index = lastIndex(courseId);
       const lookup = {
@@ -1497,6 +1499,73 @@ describe('the romanized edge cases (#116, [Q3])', () => {
    * numbers of docs/13 (`three`, `six`, `hundred`) plus M10's declared-untaught trio
    * (`well`, `now`, `bus`) stay free for later authoring.
    */
+  /**
+   * en-ru's index seams (#339's briefs, shipped by #340–#342), pinned on the real emitted index.
+   * Russian is the first L2 in the product that INFLECTS, so the seams are not homographs but
+   * paradigms: every shape of a word has to land on the row that first taught the word, or a
+   * learner taps a case form and is shown a note about a different one.
+   */
+  it('keeps every en-ru case shape, gender pair and chunk on the row the briefs assigned (#339)', () => {
+    const index = lastIndex('en-ru');
+    const owner = (surface: string) => index.surfaces[surface]?.moduleId;
+
+    // Case shapes live on the row that first taught the word — never a second, unreachable row.
+    expect(owner('москва')).toBe('L1-M1');
+    expect(owner('москвы')).toBe('L1-M1');
+    expect(owner('москве')).toBe('L1-M1'); // M7 needed it; M1's row grew, no new row opened
+    expect(owner('индия')).toBe('L1-M1');
+    expect(owner('индии')).toBe('L1-M1'); // one surface, two seats: `из` and `в`
+    expect(owner('вода')).toBe('L1-M3');
+    expect(owner('воду')).toBe('L1-M3');
+    expect(owner('стол')).toBe('L1-M7');
+    expect(owner('столе')).toBe('L1-M7');
+
+    // `быть` is ONE row across the level: M5 opened it, M6 extended it rather than forking it.
+    for (const shape of ['был', 'была', 'было', 'были', 'буду', 'будете', 'будет']) {
+      expect(owner(shape), shape).toBe('L1-M5');
+    }
+    // …and so is each aspect pair's own paradigm — past and future of one word, one row.
+    for (const shape of ['купил', 'купила', 'купили', 'куплю']) {
+      expect(owner(shape), shape).toBe('L1-M5');
+    }
+    // The gender pairs: the speaker's own shape, on one row.
+    expect(owner('устал')).toBe('L1-M2');
+    expect(owner('устала')).toBe('L1-M2');
+    expect(owner('пошёл')).toBe('L1-M5');
+    expect(owner('пошла')).toBe('L1-M5');
+
+    // An aspect pair is TWO words, so it is two rows — never two forms of one.
+    expect(owner('пью')).toBe('L1-M4');
+    expect(owner('выпил')).toBe('L1-M5');
+    expect(owner('встаю')).toBe('L1-M4');
+    expect(owner('встану')).toBe('L1-M6');
+
+    // The multi-token surfaces, and the bare words they leave free.
+    expect(index.maxSpan).toBe(3);
+    expect(owner('меня зовут')).toBe('L1-M1');
+    expect(owner('меня')).toBe('L1-M1'); // the pronoun row, not the formula
+    expect(owner('как дела')).toBe('L1-M2');
+    expect(owner('как')).toBe('L1-M2'); // left free by the chunk, claimed one sentence earlier
+    expect(owner('у меня есть')).toBe('L1-M8');
+    expect(owner('у вас есть')).toBe('L1-M8');
+    expect(owner('потому что')).toBe('L1-M9');
+    expect(owner('что')).toBe('L1-M9'); // the conjunction, left free by потому что
+    // A bare `у` earns no key at all: `surfaceIndexKeys` splits hyphen parts, not whitespace.
+    expect(owner('у')).toBeUndefined();
+
+    // `есть` — the homograph settled by exclusion: "to eat" never appears, so M7's existential
+    // owns the one bare row, and M8's three-token chunks capture the `есть` inside them.
+    expect(owner('есть')).toBe('L1-M7');
+
+    // ё is written everywhere it belongs, and the е-spelling of a ё-word is never a surface.
+    for (const shape of ['пошёл', 'пьёте', 'встаёте', 'живёте', 'придёте', 'ещё', 'всё', 'днём']) {
+      expect(owner(shape), shape).toBeDefined();
+    }
+    for (const wrong of ['пошел', 'пьете', 'встаете', 'живете', 'придете', 'еще', 'все']) {
+      expect(owner(wrong), wrong).toBeUndefined();
+    }
+  });
+
   it('keeps hi-en surface-pass seams on the row that owns them (#284)', () => {
     const index = lastIndex('hi-en');
     const row = (surface: string): string =>
@@ -1722,8 +1791,19 @@ describe('the authored content', () => {
    * what finally lets a strict build see it. Pinned, never derived: the point of the block is
    * to know what the repo really holds.
    */
-  const EN_RU_AUTHORED = ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5'];
-  const EN_RU_RANGE = 'L1-M1..M5';
+  const EN_RU_AUTHORED = [
+    'L1-M1',
+    'L1-M2',
+    'L1-M3',
+    'L1-M4',
+    'L1-M5',
+    'L1-M6',
+    'L1-M7',
+    'L1-M8',
+    'L1-M9',
+    'L1-M10',
+  ];
+  const EN_RU_RANGE = 'L1-M1..M10';
 
   /** Everything a strict build must emit for the fourth course (#273): the ladder, the Hindi
    *  bundle, the ten rungs and their ten cumulative indexes. */
