@@ -47,12 +47,6 @@ export const STRINGS_KEYS = [
   'cueLabel',
   'revealLabel',
   'revealLabelComprehend',
-  'ritual.stepTitle.write',
-  'ritual.stepTitle.check',
-  'ritual.stepTitle.confirm',
-  'ritual.constraint',
-  'ritual.confirm.holdLabel',
-  'ritual.confirm.done',
   'retry.kicker',
   'retry.title',
   'retry.cta',
@@ -76,7 +70,6 @@ export const STRINGS_KEYS = [
   'why.openFull',
   'hint.recall',
   'hint.production',
-  'hint.check',
   'read.showCue',
   'read.hideCue',
   'read.prev',
@@ -136,24 +129,6 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   cueLabel: [],
   revealLabel: [],
   revealLabelComprehend: [],
-  'ritual.stepTitle.write': [],
-  'ritual.stepTitle.check': [],
-  'ritual.stepTitle.confirm': [],
-  /**
-   * The word cap the new sentence must fit — this rung's own, off its module's complexity. It
-   * also named how many sentences the new one may not be (`{sentenceCount}`) until #230 trimmed
-   * the constraint to the bare task.
-   */
-  'ritual.constraint': ['{maxWords}'],
-  /** The rendered `ordinal` value — "my 3rd sentence" — not a bare number. */
-  'ritual.confirm.holdLabel': ['{ordinal}'],
-  /**
-   * The ✓ line, and the whole of what the signed hold says now. `ritual.confirm.toComprehension`
-   * stood beside it until #314: the hold IS the intentional act, so paying it now carries the
-   * learner into part 2 rather than drawing a second control to tap. A label for a button that no
-   * longer exists is a key the app can never read.
-   */
-  'ritual.confirm.done': [],
   /**
    * What is left of the retry interstitial's five layers (tokens.md §6.3), top to bottom — kicker,
    * title, CTA; the body and the reassurance were read-once prose and went on #231. All course
@@ -268,7 +243,6 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    */
   'hint.recall': [],
   'hint.production': [],
-  'hint.check': [],
   /**
    * The Read phase (#97) — the five words that phase says in its own right: the cue toggle's two
    * labels, and the three on its pager. They are `read.*` rather than `practice.*` for the reason

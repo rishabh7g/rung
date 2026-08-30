@@ -129,21 +129,20 @@ describe('the surface decides when the moment is', () => {
   });
 });
 
-describe('the three hints are three', () => {
-  it('spends them one at a time — seeing one does not spend the others', () => {
+/** Two since #348: `check` belonged to the ritual's check step, which went with the write half. */
+describe('the hints are their own', () => {
+  it('spends them one at a time — seeing one does not spend the other', () => {
     markHintSeen('recall');
 
     expect(hintSeen('recall')).toBe(true);
     expect(hintSeen('production')).toBe(false);
-    expect(hintSeen('check')).toBe(false);
   });
 
   it('keys them apart, in a namespace that is visibly not progress', () => {
     expect(hintKey('recall')).toBe('rung:hint:recall');
     expect(hintKey('production')).toBe('rung:hint:production');
-    expect(hintKey('check')).toBe('rung:hint:check');
     // `rung:state` is the store's, and nothing here may look like it (#82, PRD §8 F7).
-    for (const hint of ['recall', 'production', 'check'] as const) {
+    for (const hint of ['recall', 'production'] as const) {
       expect(hintKey(hint)).not.toBe('rung:state');
     }
   });

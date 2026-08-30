@@ -20,13 +20,7 @@ import { resetStringsCache } from '../course/strings.ts';
 import { useAppStore } from '../state/store.ts';
 import { DEV_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
 import { stringValue } from '../test/courseStrings.ts';
-import {
-  COMPREHENSION_PATH,
-  handover,
-  RITUAL_PATH,
-  SHELL_ROUTES,
-  VERDICT_PATH,
-} from './routes.tsx';
+import { handover, RITUAL_PATH, SHELL_ROUTES, VERDICT_PATH } from './routes.tsx';
 
 /**
  * Renders the app at `hash` and waits for boot — no screen mounts before there is a course.
@@ -46,16 +40,17 @@ async function renderAt(hash: string, state?: unknown) {
 }
 
 /**
- * What a route in this table needs before it will mount: the exit ritual's two screens belong to
- * a rung that is produced out (#100), and part 2 is only ever entered from part 1's completed
- * hold (#102). Anything else in the table mounts on its own.
+ * What a route in this table needs before it will mount: the exit ritual belongs to a rung whose
+ * sentences are all marked, and the Verdict is only ever entered from a passed test. Anything else
+ * in the table mounts on its own.
+ *
+ * One screen, not two, since #348 folded the write step away and made `/ritual` the comprehension
+ * test itself.
  */
 function precondition(path: string): unknown {
-  if (path !== RITUAL_PATH && path !== COMPREHENSION_PATH && path !== VERDICT_PATH) {
-    return undefined;
-  }
+  if (path !== RITUAL_PATH && path !== VERDICT_PATH) return undefined;
+
   produceRung();
-  if (path === COMPREHENSION_PATH) return handover('hold');
   // The Verdict is where the comprehension leaves you (#103), and arriving there passes the rung.
   return path === VERDICT_PATH ? handover('comprehension') : undefined;
 }
@@ -186,7 +181,6 @@ describe('headers', () => {
 
   it.each([
     ['#/ritual', 'Exit ritual'],
-    ['#/comprehension', 'Comprehension'],
     ['#/verdict', 'Verdict'],
   ])('%s is a child screen with a back header', async (hash, title) => {
     await renderAt(hash, precondition(hash.slice(1)));

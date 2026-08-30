@@ -46,28 +46,26 @@ function bundle(edit?: (flat: Map<string, unknown>) => void): Record<string, unk
 }
 
 describe('the canonical key list', () => {
-  it('is exactly what the six authored bundles carry — 72 keys, nested, identical', () => {
+  it('is exactly what the six authored bundles carry — 65 keys, nested, identical', () => {
     for (const courseId of COURSES) {
       const keys = [...flattenStrings(authoredStrings(courseId)).keys()];
 
-      expect(keys.length, courseId).toBe(72);
+      expect(keys.length, courseId).toBe(65);
       expect([...keys].sort(), courseId).toEqual([...STRINGS_KEYS].sort());
     }
-    expect(STRINGS_KEYS.length).toBe(72);
-    expect(new Set(STRINGS_KEYS).size).toBe(72);
+    expect(STRINGS_KEYS.length).toBe(65);
+    expect(new Set(STRINGS_KEYS).size).toBe(65);
   });
 
   /**
-   * The fifth was `ritual.check.plateLabel`, the label on the ritual's dashed resource plate. It
-   * was read-once copy and went with the plate on #230; these four stayed.
+   * PR #120 added five keys beyond the issue text. `ritual.check.plateLabel` went with the dashed
+   * resource plate on #230, and the three `ritual.stepTitle.*` went with the write half of the
+   * ritual itself on #348 — the product retired notebook writing, so the Write / Check / Confirm
+   * arc has no screen to title. One survivor, and it is the one that never belonged to the arc:
+   * Comprehension reveals the L1 rather than the L2, so it needs a reveal label of its own.
    */
-  it('carries the four keys PR #120 added beyond the issue text that survive (#230)', () => {
-    const added: StringsKey[] = [
-      'revealLabelComprehend',
-      'ritual.stepTitle.write',
-      'ritual.stepTitle.check',
-      'ritual.stepTitle.confirm',
-    ];
+  it('carries the one key PR #120 added that survives (#230, #348)', () => {
+    const added: StringsKey[] = ['revealLabelComprehend'];
 
     for (const key of added) expect(STRINGS_KEYS).toContain(key);
   });
@@ -194,7 +192,7 @@ describe('the canonical key list', () => {
    * copy and went on #231.
    *
    * Both survivors carry a number, and both are the module's own: `{ordinal}` is the course's word
-   * for "the 11th" (rendered through `ordinal`, as `ritual.confirm.holdLabel` does) and `{count}`
+   * for "the 11th" (rendered through `ordinal`) and `{count}`
    * is `exitTest.comprehendCount`, twice — "2 of 2" today, "3 of 3" for a module that asks for
    * three. Draft values in all three bundles, flagged on #71.
    */
@@ -277,8 +275,6 @@ describe('the canonical key list', () => {
     const templated = Object.entries(STRINGS_PLACEHOLDERS).filter(([, names]) => names.length > 0);
 
     expect(Object.fromEntries(templated)).toEqual({
-      'ritual.constraint': ['{maxWords}'],
-      'ritual.confirm.holdLabel': ['{ordinal}'],
       ordinal: ['{n}'],
       'ladder.pendingLine': ['{level}', '{remaining}', '{total}'],
       'ladder.sealedToast': ['{level}', '{remaining}'],
@@ -346,25 +342,25 @@ describe('the four rules', () => {
 
   it('fails a missing key, naming course and key', () => {
     const issues = checkStrings(
-      bundle((flat) => flat.delete('ritual.confirm.done')),
+      bundle((flat) => flat.delete('retry.cta')),
       'hi-mr',
     );
 
-    expect(issues).toEqual(['hi-mr/strings.json: missing key "ritual.confirm.done"']);
+    expect(issues).toEqual(['hi-mr/strings.json: missing key "retry.cta"']);
   });
 
   it('fails an extra key as a typo tripwire, naming course and key', () => {
     const issues = checkStrings(
       bundle((flat) => {
-        flat.delete('ritual.stepTitle.check');
-        flat.set('ritual.stepTitle.checked', 'Check');
+        flat.delete('retry.kicker');
+        flat.set('retry.kickers', 'Again');
       }),
       'en-es',
     );
 
     expect(issues).toEqual([
-      'en-es/strings.json: missing key "ritual.stepTitle.check"',
-      'en-es/strings.json: unknown key "ritual.stepTitle.checked" — not in the canonical list (src/course/stringsKeys.ts)',
+      'en-es/strings.json: missing key "retry.kicker"',
+      'en-es/strings.json: unknown key "retry.kickers" — not in the canonical list (src/course/stringsKeys.ts)',
     ]);
   });
 
@@ -401,14 +397,12 @@ describe('the four rules', () => {
 
   it('fails a dropped placeholder — a translation cannot lose {ordinal} silently', () => {
     const issues = checkStrings(
-      bundle((flat) =>
-        flat.set('ritual.confirm.holdLabel', 'I wrote my sentence — press and hold'),
-      ),
+      bundle((flat) => flat.set('verdict.checkSentence', 'You wrote a new sentence')),
       'en-es',
     );
 
     expect(issues).toEqual([
-      'en-es/strings.json: "ritual.confirm.holdLabel" placeholders — expected {ordinal}, found none',
+      'en-es/strings.json: "verdict.checkSentence" placeholders — expected {ordinal}, found none',
     ]);
   });
 

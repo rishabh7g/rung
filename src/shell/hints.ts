@@ -37,8 +37,15 @@
  * copy whose whole job is to be seen once is to be seen twice, never zero times.
  */
 
-/** The three hints, one per surface. The values are the `hint.*` keys they render. */
-export type Hint = 'recall' | 'production' | 'check';
+/**
+ * The hints, one per surface. The values are the `hint.*` keys they render.
+ *
+ * There were three until #348. `check` belonged to the exit ritual's deliberately empty check
+ * step — the one that told a first-run learner the checking was theirs to do, outside the app —
+ * and that step went with the whole write half of the ritual when the product retired notebook
+ * writing. A hint whose surface no longer exists is a key nothing can render.
+ */
+export type Hint = 'recall' | 'production';
 
 /**
  * `rung:hint:<name>` — its own namespace beside the store's `rung:state` and the module view's
