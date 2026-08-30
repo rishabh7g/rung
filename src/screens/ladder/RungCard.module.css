@@ -166,3 +166,11 @@
 .ghost:active {
   background: color-mix(in srgb, var(--color-accent) 18%, transparent);
 }
+
+/* The show-once production hint (#319) — what the dots row above it is counting towards, said
+   once per install and never again. Muted caption, under the dots, above the stage's CTA. */
+.hint {
+  margin: var(--space-2) 0 0;
+  font: var(--text-caption);
+  color: var(--ink-65);
+}

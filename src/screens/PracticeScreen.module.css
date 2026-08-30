@@ -41,36 +41,25 @@
 
 /* --------------------------------------------------------------------- the phases */
 
+/* One row of three, not a column of three plates (#316): the counts are the promise this screen
+   makes, and the stacked blueprint objects around them were the weight that pushed Begin below
+   the fold. `1fr` apiece keeps the three columns even whatever the course's words are. */
 .phases {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-3);
   margin: 0;
-  padding: 0;
+  padding: var(--space-3) 0;
+  border-top: var(--border-hairline);
+  border-bottom: var(--border-hairline);
   list-style: none;
 }
 
-/* A blueprint object per phase: radius 0, hairline, no fill, four registration marks — which is
-   the `position: relative` (design/tokens.md §3). */
+/* A phase is now a name over a count, not a plate: the hairline pair on `.phases` above frames
+   all three at once, which is one blueprint object where there used to be three (#316). The
+   prototype's `01 / 02 / 03` numerals went with them — shell furniture narrating an order the row
+   already reads in. */
 .phase {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-3) var(--space-4);
-  background: var(--color-bg);
-  border: var(--border-hairline);
-}
-
-/* The prototype's 01 / 02 / 03 — a count, and shell furniture. */
-.phaseNumber {
-  margin: 0;
-  flex: none;
-  font: var(--text-kicker);
-  color: var(--color-accent-700);
-}
-
-.phaseText {
   display: flex;
   flex-direction: column;
   gap: var(--space-1);

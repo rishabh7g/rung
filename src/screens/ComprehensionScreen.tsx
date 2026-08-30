@@ -254,6 +254,11 @@ function ComprehensionRound({ moduleId, pool, count }: ComprehensionRoundProps) 
             key={item.id}
             item={item}
             onMark={mark}
+            // The round already holds a "not quite" (#318): the redraw is certain, so the item
+            // says so while the learner can still act on it. It stays a fact about THIS visit —
+            // `marks` is dropped the moment the interstitial opens, so nothing survives the round
+            // that could tell a later screen what went wrong (Invariant 4).
+            redrawing={attempt.marks.includes('miss')}
             dir={course.dir}
             l2={l2Written(course)}
           />

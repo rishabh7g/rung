@@ -16,6 +16,15 @@
 
 /* A blueprint object: radius 0, a hairline, the paper ground and the four registration marks —
    which is what the `position: relative` is for. */
+/* The round-is-redrawing line (#318). Quiet by construction — muted, small, no rule and no fill:
+   it is a fact the learner is owed, not a verdict, and the retry's whole design is that nothing
+   here is loud (PRD §8 F5: no red, no shame framing, no counters). */
+.pending {
+  margin: 0 0 var(--space-3);
+  font: var(--text-caption);
+  color: var(--ink-65);
+}
+
 .plate {
   position: relative;
   padding: var(--space-6) var(--space-4);
@@ -146,49 +155,16 @@
   margin-top: auto;
 }
 
-/* With a Next in it the row is 2:1, where the prototype splits it 1:1 — the type wall as
-   geometry: hi-mr's segments are Devanagari at the floor, and half of a 360px row is not enough
-   for them (#93 recorded the same call on #117). */
+/* Marked: the row keeps its single column — the 2:1 split it used to take existed only to make
+   room for the Next beside the segments (#313), and there is no Next now. */
 .marksMarked {
   composes: marks;
-  grid-template-columns: 2fr 1fr;
-}
-
-/* Next — which exists only once a mark does [D11]. It enters over `--motion-next-appear` (200ms)
-   the instant the mark lands, exactly as the prototype's `rowIn .2s` does.
-   `--btn-secondary-height` (46px) is the prototype's own height for it. */
-.next {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  min-width: 0;
-  min-height: var(--btn-secondary-height);
-  padding: var(--space-2) var(--space-3);
-  background: var(--color-accent);
-  border: var(--border-hairline);
-  border-color: var(--color-accent);
-  color: var(--color-bg);
-  font: var(--text-l2-card);
-  font-size: var(--devanagari-min-size);
-  text-align: center;
-  cursor: pointer;
-  animation: reveal-in var(--motion-next-appear) both;
-  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.next:active {
-  background: var(--color-accent-700);
-  border-color: var(--color-accent-700);
 }
 
 /* design/tokens.md §5: reduced motion collapses every movement in the product — including the one
-   the ritual is built around. The answer and the Next appear; they do not travel. */
+   the ritual is built around. The answer appears; it does not travel. */
 @media (prefers-reduced-motion: reduce) {
-  .answer,
-  .next {
+  .answer {
     animation: none;
   }
 }

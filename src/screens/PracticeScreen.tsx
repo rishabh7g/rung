@@ -8,6 +8,23 @@
  * session is about to tick — the same pure function `startSession` uses, so the hub cannot promise
  * a Review phase the session then does not serve.
  *
+ * **It is one screen, not a page to read** (#316). It stood between the learner's intent and their
+ * first card on the common path — tap Practice on the rung card, read three tall numbered phase
+ * blocks, tap Begin — which is a lot of screen spent describing what the next tap was going to do
+ * anyway. The three counts still earn their place (they are the promise the session then keeps),
+ * so what went is the WEIGHT: the prototype's `01 / 02 / 03` numerals and the stacked blocks, for
+ * one compact row. Begin sits in thumb reach without scrolling, and the hub reads as the single
+ * action it is.
+ *
+ * The structural version of #316 — the rung card's CTA starting a session outright, skipping this
+ * screen — was built and backed out. Honouring a "start now" flag on arrival means calling
+ * `startSession` (a WRITE: it spends a count and ticks the review queue) from an effect, and the
+ * local state that the resulting plan has to live in makes it a `setState` inside an effect, which
+ * this repo's lint forbids and which has no `eslint-disable` precedent anywhere in `src/`. The
+ * alternatives were worse: a ref cannot be read during render, and deriving the run from the
+ * snapshot instead would have re-created the plan through the resume path, where a fresh session's
+ * queue is deliberately ticked and a resumed one's is not. Recorded rather than retried.
+ *
  * **Starting is one call, and it happens once.** `startSession` increments `sessionCount`, ticks
  * the review queue and writes the opening snapshot in a single write, and answers with the plan
  * the session then runs on. Nothing else in the app may do any of that — and RESUMING (#99) calls
@@ -212,20 +229,26 @@ export default function PracticeScreen() {
           is the state, the same silence the rung card keeps [D22]. */}
       {stage !== 'pending' && rung !== null && (
         <>
+          {/**
+           * The three phases as ONE compact row (#316), where the prototype stacks three tall
+           * numbered blocks.
+           *
+           * The counts stay — they are the promise the session then keeps, and the whole reason
+           * this screen exists — but the weight around them goes: the `01 / 02 / 03` numerals were
+           * shell furniture narrating an order the row already reads in, and a blueprint plate per
+           * phase made three objects out of one fact. What is left is the phase's name over its
+           * count, three across, so the Begin CTA below is in thumb reach without scrolling and
+           * the hub reads as the single action it is.
+           */}
           <ol className={styles.phases}>
-            {PHASES.map((phase, index) => (
+            {PHASES.map((phase) => (
               <li key={phase} className={styles.phase}>
-                <RegistrationMarks />
-                {/* The prototype's 01 / 02 / 03 — a count, and shell furniture. */}
-                <p className={styles.phaseNumber}>{String(index + 1).padStart(2, '0')}</p>
-                <div className={styles.phaseText}>
-                  <p className={styles.phaseName} dir={course.dir}>
-                    {strings[`practice.phase.${phase}`]}
-                  </p>
-                  <p className={styles.phaseLine} dir={course.dir}>
-                    {interpolate(strings[HUB_LINE[phase]], { count: counts[phase] })}
-                  </p>
-                </div>
+                <p className={styles.phaseName} dir={course.dir}>
+                  {strings[`practice.phase.${phase}`]}
+                </p>
+                <p className={styles.phaseLine} dir={course.dir}>
+                  {interpolate(strings[HUB_LINE[phase]], { count: counts[phase] })}
+                </p>
               </li>
             ))}
           </ol>

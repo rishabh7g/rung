@@ -47,6 +47,7 @@ import { useModule } from '../course/content.ts';
 import { interpolate, useStrings } from '../course/strings.ts';
 import { currentRungId, deriveStatuses } from '../engine/progression.ts';
 import { HOME_PATH } from '../shell/routes.tsx';
+import { HintLine } from '../shell/useHint.tsx';
 import { rungLabel } from './ladder/rungLabel.ts';
 import { useProgression } from './useProgression.ts';
 import styles from './RitualScreen.module.css';
@@ -165,6 +166,18 @@ function RitualArc({ moduleId, open }: RitualArcProps) {
           <h3 className={styles.stepTitle} dir={course.dir}>
             {strings['ritual.stepTitle.check']}
           </h3>
+          {/**
+           * Once per install (#319): the checking is the learner's, and the app cannot do it.
+           *
+           * #230 was right that a paragraph standing here forever explains an absence the absence
+           * already states — but it stated it only to a learner who had been told the rule once,
+           * and nothing told them. This is that once. It is a SENTENCE, never a control: the step
+           * keeps its zero interactive elements (Invariant 5, and `RitualScreen.test.tsx` queries
+           * every interactive ARIA role inside `data-step="check"` to prove it), because a
+           * dictionary link here would be the app taking the job back — which is exactly what the
+           * hint says it cannot do.
+           */}
+          <HintLine hint="check" className={styles.stepCopy} dir={course.dir} />
         </li>
 
         <li className={styles.step}>

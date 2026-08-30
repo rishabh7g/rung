@@ -5,8 +5,8 @@
  * | state | what is on screen |
  * |---|---|
  * | unrevealed | the pool item's L2 `display`, large, in a blueprint plate (+ the quiet `script` line in romanized courses); the 52px reveal |
- * | revealed | the **scripted answer** — the item's own L1 `cue` — the "why" panel and the self-mark. **No Next** |
- * | marked | Next, appearing over `--motion-next-appear` the moment a mark exists [D11] |
+ * | revealed | the **scripted answer** — the item's own L1 `cue` — the "why" panel and the self-mark |
+ * | marked | the chosen segment lit, and the item committing itself when the window elapses |
  *
  * **The model answer is the content's, not the app's** (Invariant 4). It is the `cue` the pool
  * item was authored with, revealed on request and compared by the learner — nothing here reads,
@@ -15,14 +15,15 @@
  * the app; the card used to say so in a dashed "outside the app" plate above the reveal, and #225
  * took the line and its plate away with the rest of the app's read-once copy.
  *
- * **Next is HIDDEN, not disabled, until a mark exists** [D11], for the reason `RevealCard` gives:
- * a disabled Next is the app telling the learner what it is waiting for. It is literally not in
- * the DOM, and that is what the tests assert.
+ * **The mark commits itself** (#313), through the same commit window the reveal card uses
+ * (`useCommitWindow`): the Next that used to stand beside the segments asked the learner to confirm
+ * a decision they had just made, and the window keeps what it was protecting — the choice stays
+ * changeable until it elapses, then fires once.
  *
- * **The card writes nothing and keeps nothing.** It emits the mark on Next — one mark, the one the
- * learner settled on, so a "not quite" reconsidered into a "same meaning" sends what they meant —
- * and the screen above decides what it costs (nothing, until every item of the attempt is a
- * "same meaning"; #102's whole point).
+ * **The card writes nothing and keeps nothing.** It emits one mark, the one the learner settled on,
+ * so a "not quite" reconsidered into a "same meaning" sends what they meant — and the screen above
+ * decides what it costs (nothing, until every item of the attempt is a "same meaning"; #102's
+ * whole point).
  *
  * `SelfMark` is reused **verbatim** (#93): the same two segments, the same `--mark-got-bg` /
  * `--mark-miss-bg` fills, the same gate. Its two labels are the course's ratified `mark.*` pair —
@@ -35,6 +36,7 @@ import type { L2Written } from '../../course/manifest.ts';
 import { useStrings } from '../../course/strings.ts';
 import type { PoolItem } from '../../course/types.ts';
 import { SelfMark, type Mark } from '../../components/SelfMark.tsx';
+import { useCommitWindow } from '../../components/useCommitWindow.ts';
 import { WhyPanel } from '../../components/WhyPanel.tsx';
 import { RegistrationMarks } from '../RegistrationMarks.tsx';
 import styles from './ComprehensionItem.module.css';
@@ -44,23 +46,42 @@ interface ComprehensionItemProps {
   item: PoolItem;
   /** Called once, on Next, with the mark the learner settled on. The card stores nothing. */
   onMark: (mark: Mark) => void;
+  /**
+   * This round already holds a "not quite", so fresh sentences follow it whatever happens here
+   * (#318). The item says so rather than letting the learner work on in the belief that the round
+   * is still live — the app knows, and hiding what it knows is the opposite of the calm the retry
+   * is designed for. It is a fact about the round, so the screen owns it.
+   */
+  redrawing?: boolean;
   /** The course's writing direction — every line on the card is its content or its copy. */
   dir?: string;
   /** The tags the L2 lines are written in (#186); the cue and the copy are L1 and inherit. */
   l2?: L2Written;
 }
 
-export function ComprehensionItem({ item, onMark, dir, l2 }: ComprehensionItemProps) {
+export function ComprehensionItem({ item, onMark, redrawing, dir, l2 }: ComprehensionItemProps) {
   const strings = useStrings();
   // `setCard`, never `setState`: `src/state/unlockPath.test.ts` scans the shell for that call and
   // the store's actions are the only place allowed to make it (Invariant 1).
-  const [card, setCard] = useState<{ revealed: boolean; mark: Mark | null }>({
-    revealed: false,
-    mark: null,
-  });
+  const [card, setCard] = useState<{ revealed: boolean }>({ revealed: false });
+  /** The mark, and the window that commits it (#313) — the same seam the reveal card uses. */
+  const { chosen, choose } = useCommitWindow<Mark>(onMark);
 
   return (
     <section className={styles.item}>
+      {/**
+       * The round is already redrawing (#318) — said once, above the line under test, in the
+       * course's own words. It names no count, no item and no failure: the marks that led here are
+       * dropped on the way into the interstitial, so there is nothing to count with even if this
+       * line wanted to (Invariant 4). It is the retry's own calm, arriving when the learner can
+       * still use it rather than after they have finished working for nothing.
+       */}
+      {redrawing === true && (
+        <p className={styles.pending} dir={dir}>
+          {strings['retry.pending']}
+        </p>
+      )}
+
       {/* A blueprint object: hairline, no radius, the four registration marks — the prototype's
           own frame for the line under test. */}
       <div className={styles.plate}>
@@ -84,7 +105,7 @@ export function ComprehensionItem({ item, onMark, dir, l2 }: ComprehensionItemPr
               type="button"
               className={styles.reveal}
               onClick={() => {
-                setCard({ revealed: true, mark: null });
+                setCard({ revealed: true });
               }}
               dir={dir}
             >
@@ -115,28 +136,9 @@ export function ComprehensionItem({ item, onMark, dir, l2 }: ComprehensionItemPr
               sentence does. No "open full": a pool item has no Detail page to open. */}
           <WhyPanel sentenceId={item.id} display={item.display} dir={dir} l2={l2} />
 
-          <div className={card.mark === null ? styles.marks : styles.marksMarked}>
-            <SelfMark
-              mark={card.mark}
-              onMark={(mark) => {
-                setCard({ ...card, mark });
-              }}
-              dir={dir}
-            />
-
-            {/* [D11]: hidden, not disabled — there is no Next in the DOM until there is a mark. */}
-            {card.mark !== null && (
-              <button
-                type="button"
-                className={styles.next}
-                onClick={() => {
-                  if (card.mark !== null) onMark(card.mark);
-                }}
-                dir={dir}
-              >
-                {strings['mark.next']}
-              </button>
-            )}
+          {/* The mark, and nothing beside it: choosing commits the item (#313). */}
+          <div className={chosen === null ? styles.marks : styles.marksMarked}>
+            <SelfMark mark={chosen} onMark={choose} dir={dir} />
           </div>
         </div>
       )}

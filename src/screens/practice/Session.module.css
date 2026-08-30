@@ -48,3 +48,12 @@
   white-space: nowrap;
   color: var(--ink-65);
 }
+
+/* Where the next tap goes (#317) — the quietest line on the card, under the head and above the
+   reveal. It is a signpost, not an instruction: muted, small, and only on the card that actually
+   hands over, so it never becomes another always-there sentence to skim past (#225). */
+.upNext {
+  margin: 0;
+  font: var(--text-caption);
+  color: var(--ink-65);
+}

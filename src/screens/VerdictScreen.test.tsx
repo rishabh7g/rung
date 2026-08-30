@@ -21,6 +21,8 @@ import { StrictMode } from 'react';
 import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from '../App.tsx';
+import { SIGNED_BEAT_MS } from '../components/HoldToConfirm.tsx';
+import { COMMIT_WINDOW_MS } from '../components/useCommitWindow.ts';
 import { resetContentCache } from '../course/content.ts';
 import { resetManifestCache } from '../course/manifest.ts';
 import { resetStringsCache } from '../course/strings.ts';
@@ -116,11 +118,17 @@ beforeEach(() => {
   useAppStore.getState()._reset();
   window.location.hash = '';
   window.history.replaceState(null, '');
+  // The show-once hints (#319) have tests of their own; seeded as seen so this file sees the
+  // steady-state screens its assertions were written against.
+  for (const hint of ['recall', 'production', 'check']) {
+    localStorage.setItem(`rung:hint:${hint}`, '1');
+  }
 });
 
 afterEach(() => {
   vi.unstubAllGlobals();
   vi.restoreAllMocks();
+  localStorage.clear();
   window.location.hash = '';
 });
 
@@ -309,6 +317,10 @@ describe('“climb to the ladder” carries the beat', () => {
 describe('the loop closes: produced rung → ritual → comprehension → verdict → ladder', () => {
   it('walks it end to end, and the beat lands once on the rung that opened', async () => {
     produceRung();
+    /**
+     * Fake timers for the whole walk: two of the chain's steps are timers rather than taps now —
+     * the paid hold's beat into part 2 (#314) and each self-mark's commit window (#313).
+     */
     vi.useFakeTimers({ shouldAdvanceTime: true });
     try {
       await renderAt('#/ritual');
@@ -318,21 +330,22 @@ describe('the loop closes: produced rung → ritual → comprehension → verdic
       const confirm = within(arc).getAllByRole('listitem')[2];
       fireEvent.pointerDown(within(confirm as HTMLElement).getByRole('button'));
       act(() => vi.advanceTimersByTime(HOLD_MS));
+
+      // The ✓ stands its beat, and the arc carries the learner on — no second tap (#314).
+      act(() => vi.advanceTimersByTime(SIGNED_BEAT_MS));
+      await waitFor(() => expect(window.location.hash).toBe('#/comprehension'));
+
+      // Part 2: two items, revealed and marked "same meaning" — the only way to the verdict.
+      for (let item = 0; item < 2; item += 1) {
+        fireEvent.click(screen.getByRole('button', { name: strings('revealLabelComprehend') }));
+        fireEvent.click(screen.getByRole('button', { name: strings('mark.gotIt') }));
+        act(() => vi.advanceTimersByTime(COMMIT_WINDOW_MS));
+      }
+
+      await waitFor(() => expect(window.location.hash).toBe('#/verdict'));
     } finally {
       vi.useRealTimers();
     }
-
-    fireEvent.click(screen.getByRole('link', { name: strings('ritual.confirm.toComprehension') }));
-    await waitFor(() => expect(window.location.hash).toBe('#/comprehension'));
-
-    // Part 2: two items, revealed and marked "same meaning" — the only way to the verdict (#102).
-    for (let item = 0; item < 2; item += 1) {
-      fireEvent.click(screen.getByRole('button', { name: strings('revealLabelComprehend') }));
-      fireEvent.click(screen.getByRole('button', { name: strings('mark.gotIt') }));
-      fireEvent.click(screen.getByRole('button', { name: strings('mark.next') }));
-    }
-
-    await waitFor(() => expect(window.location.hash).toBe('#/verdict'));
     await verdict();
     await waitFor(() => expect(modules()?.[CURRENT]?.status).toBe('passed'));
     expect(reviewQueue().map((item) => item.sentenceId)).toEqual(SENTENCES);

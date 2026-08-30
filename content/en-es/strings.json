@@ -11,14 +11,14 @@
     "constraint": "One new sentence at this level, in your notebook — up to {maxWords} words.",
     "confirm": {
       "holdLabel": "I wrote my {ordinal} sentence and checked it myself — press and hold",
-      "done": "Signed — part one done.",
-      "toComprehension": "Comprehension — part 2"
+      "done": "Signed — part one done."
     }
   },
   "retry": {
     "kicker": "COMPREHEND · AGAIN",
     "title": "Fresh sentences, once more.",
-    "cta": "Fresh sentences"
+    "cta": "Fresh sentences",
+    "pending": "Fresh sentences follow this round — finish this one, nothing is counted."
   },
   "ordinal": "{n}th",
   "ladder": {
@@ -40,13 +40,17 @@
   },
   "mark": {
     "gotIt": "Got it",
-    "missed": "Missed",
-    "next": "Next"
+    "missed": "Missed"
   },
   "why": {
     "show": "why",
     "hide": "hide why",
     "openFull": "Open full"
+  },
+  "hint": {
+    "recall": "Say it, or write it in your notebook, before you reveal.",
+    "production": "Two writes per sentence opens this rung’s exit ritual.",
+    "check": "Check it yourself — a dictionary, a grammar, a friend. The app cannot."
   },
   "read": {
     "showCue": "show cue",
@@ -68,11 +72,13 @@
       "produce": "Produce"
     },
     "nothingDue": "Nothing due yet — this is the first rung.",
+    "upNext": "Next: {phase}",
     "summaryTitle": "Done for today.",
     "summaryReviewed": "{count} reviewed from earlier rungs.",
     "summaryGotIt": "{count} of them you had.",
     "summaryProduced": "{count} produced and self-marked.",
     "summaryAtTwo": "{count} of {total} sentences now stand at two.",
+    "summaryToRitual": "The exit ritual is open — begin it",
     "backToLadder": "Back to the ladder",
     "resumeLine": "Your last session is still open — {phase}, card {count} of {total}.",
     "resumeContinue": "Pick it up where you left it",

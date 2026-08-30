@@ -5,8 +5,8 @@
  * | state | what is on screen |
  * |---|---|
  * | `cue` | the L1 cue and the 52px reveal button |
- * | `revealed` | the L2 `display` (+ the quiet `script` line in romanized courses), the "why" slot, and the self-mark — **no Next** |
- * | `marked` | Next, appearing over `--motion-next-appear` the moment a mark exists |
+ * | `revealed` | the L2 `display` (+ the quiet `script` line in romanized courses), the "why" slot, and the self-mark |
+ * | `marked` | the chosen segment lit, and the card committing itself over `--motion-mark-commit` |
  *
  * **The recall happens outside the app.** Between the cue and the reveal the learner says it,
  * thinks it, or writes it in their notebook — the app never sees it and offers nowhere to put it
@@ -15,17 +15,28 @@
  * plate away, because an instruction that never changes is read once and skimmed thirty times.
  * The gap between the cue and the reveal says it now.
  *
- * **Next is HIDDEN, not disabled, until a mark exists** [D11]. A disabled Next is the app telling
- * the learner what it is waiting for; an absent one leaves the mark as the only thing on screen
- * to do. It is literally not in the DOM — `queryByRole('button', { name: next })` is null — and
- * that, rather than an attribute, is what the test asserts.
+ * **THE MARK IS THE WHOLE INTERACTION** (#313). It used to be two taps: mark, then a Next that
+ * appeared beside it. [D11] made that Next hidden-until-marked rather than disabled, for a good
+ * reason — a disabled control is the app telling the learner what it is waiting for — but the
+ * deeper problem was the tap itself. The learner had already answered the only question the card
+ * asks; the second tap confirmed a decision they had just made, fifteen times a session, which
+ * made the mark read as a question followed by a confirmation.
+ *
+ * So the mark commits itself, and what the Next protected is protected by a **commit window**
+ * instead (`useCommitWindow`): the chosen segment lights and `onResult` fires when the window
+ * elapses. Tapping the other segment inside it switches the mark and starts the window again — so
+ * a learner who taps "missed", thinks again and taps "got it" still sends ONE result, the one they
+ * meant, which is the promise [D11] was really making. Nothing is written before the window
+ * elapses, so there is no store write to undo and no reversal action to build.
+ *
+ * The window is deliberately a WINDOW and not a delay to sit through: it is short enough that the
+ * session does not feel paced by the app, and the segment is lit throughout, so what it looks like
+ * is the card acknowledging the mark rather than waiting for permission.
  *
  * **The card writes nothing** (Invariant 4). It emits `onResult({ sentenceId, gotIt })` when the
- * learner takes Next, and the parent decides what that means: a Review mark feeds the Leitner
- * queue (`applyMark`), a Produce mark the production counters (`recordProduction`, #95) — and the
- * session machine (#96) is the parent that routes them. Nothing here imports the store, and
- * the mark is only committed on Next — so a learner who taps "missed", thinks again and taps "got
- * it" sends one result, the one they meant.
+ * window elapses, and the parent decides what that means: a Review mark feeds the Leitner queue
+ * (`applyMark`), a Produce mark the production counters (`recordProduction`, #95) — and the
+ * session machine (#96) is the parent that routes them. Nothing here imports the store.
  *
  * **The "why" panel is a slot, not a feature here** — `WhyPanel` (#94) fills it with the
  * word-index resolver's rows and its own ghost toggle, and the parent passes it in. It renders
@@ -39,11 +50,13 @@
  * what this card renders — the one thing the mode ever picked was the per-phase nudge, and #225
  * removed the nudges. The session still knows which phase it is in; the card no longer needs to.
  */
-import { useState, type ReactNode } from 'react';
+import { useCallback, useState, type ReactNode } from 'react';
 import type { L2Written } from '../course/manifest.ts';
 import { useStrings } from '../course/strings.ts';
 import { RegistrationMarks } from '../screens/RegistrationMarks.tsx';
+import { HintLine } from '../shell/useHint.tsx';
 import { SelfMark, type Mark } from './SelfMark.tsx';
+import { useCommitWindow } from './useCommitWindow.ts';
 import styles from './RevealCard.module.css';
 
 /** What the learner said about their own recall. The parent decides what it costs. */
@@ -71,15 +84,17 @@ interface RevealCardProps {
   l2?: L2Written;
 }
 
-/** The card's whole state, tied to the sentence it belongs to. */
+/**
+ * The card's whole state, tied to the sentence it belongs to — which is now just "has the answer
+ * been shown". The mark lives in the commit window, because the window is what owns its lifetime.
+ */
 interface CardState {
   sentenceId: string;
   revealed: boolean;
-  mark: Mark | null;
 }
 
 function fresh(sentenceId: string): CardState {
-  return { sentenceId, revealed: false, mark: null };
+  return { sentenceId, revealed: false };
 }
 
 export function RevealCard({
@@ -96,6 +111,19 @@ export function RevealCard({
   // `setCard`, never `setState`: `src/state/unlockPath.test.ts` scans the shell for that call and
   // the store's actions are the only place allowed to make it (Invariant 1).
   const [held, setCard] = useState<CardState>(() => fresh(sentenceId));
+
+  /**
+   * The mark, and the window that commits it (#313). The card still emits exactly one result per
+   * sentence — the window is what makes "the mark the learner settled on" true without a second
+   * control to settle it with.
+   */
+  const commit = useCallback(
+    (mark: Mark) => {
+      onResult({ sentenceId, gotIt: mark === 'got' });
+    },
+    [onResult, sentenceId],
+  );
+  const { chosen, choose } = useCommitWindow(commit);
 
   /**
    * A new sentence is a new card, whatever the parent did with keys: state belonging to the
@@ -118,6 +146,19 @@ export function RevealCard({
 
       {!card.revealed && (
         <div className={styles.recall}>
+          {/**
+           * Said once per install, on the first cue the learner ever sees (#319): the recall
+           * happens outside the app. The card used to say it on EVERY cue, in a dashed "outside
+           * the app" plate, and #225 was right to take that away — but the gap between the cue and
+           * the reveal only says it to someone who already knows. This is the sentence, once.
+           *
+           * It renders `null` on every later card, so the shape #225 asked for is what the
+           * product actually looks like from the second card onwards. The component reaches for no
+           * storage itself (Invariant 4's scan reads this file for exactly that); `HintLine` owns
+           * the fact, as `WhyPanel` owns the word rows.
+           */}
+          <HintLine hint="recall" className={styles.hint} dir={dir} />
+
           <div className={styles.revealFrame}>
             <RegistrationMarks />
             <button
@@ -149,20 +190,10 @@ export function RevealCard({
             {why !== undefined && <div className={styles.why}>{why}</div>}
           </div>
 
-          <div className={card.mark === null ? styles.marks : styles.marksMarked}>
-            <SelfMark mark={card.mark} onMark={(mark) => setCard({ ...card, mark })} dir={dir} />
-
-            {/* [D11]: hidden, not disabled — there is no Next in the DOM until there is a mark. */}
-            {card.mark !== null && (
-              <button
-                type="button"
-                className={styles.next}
-                onClick={() => onResult({ sentenceId, gotIt: card.mark === 'got' })}
-                dir={dir}
-              >
-                {strings['mark.next']}
-              </button>
-            )}
+          {/* The mark, and nothing beside it: choosing commits the card (#313). No Next, and
+              nothing disabled either — the two segments are the whole of what there is to do. */}
+          <div className={chosen === null ? styles.marks : styles.marksMarked}>
+            <SelfMark mark={chosen} onMark={choose} dir={dir} />
           </div>
         </div>
       )}

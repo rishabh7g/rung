@@ -37,6 +37,8 @@ import { persistedSlice, STORAGE_KEY, useAppStore } from '../state/store.ts';
 import { DEV_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
 import { moduleFixture } from '../test/courseContent.ts';
 import { stringValue } from '../test/courseStrings.ts';
+import { SIGNED_BEAT_MS } from '../components/HoldToConfirm.tsx';
+import { COMMIT_WINDOW_MS } from '../components/useCommitWindow.ts';
 import itemSource from './comprehension/ComprehensionItem.tsx?raw';
 import retryCss from './comprehension/RetryInterstitial.module.css?raw';
 import retrySource from './comprehension/RetryInterstitial.tsx?raw';
@@ -104,23 +106,21 @@ async function renderAt(hash: string, module: unknown): Promise<void> {
 }
 
 /**
- * The learner's own way in: `/ritual`, the whole ~900ms hold, then the CTA it reveals. Nothing in
- * this file reaches `#/comprehension` any other way, because nothing in the product does.
+ * The learner's own way in: `/ritual`, and the whole ~900ms hold — which is now the whole of it.
+ * The hold used to end on a CTA to tap; #314 made the paid hold carry the learner here itself, so
+ * the walk-in is the hold plus the beat the ✓ stands for. Nothing in this file reaches
+ * `#/comprehension` any other way, because nothing in the product does.
  */
 async function walkIn(module: unknown = poolModule()): Promise<void> {
   produceRung();
-  vi.useFakeTimers({ shouldAdvanceTime: true });
-  try {
-    await renderAt('#/ritual', module);
-    const arc = await screen.findByRole('list');
-    const confirm = within(arc).getAllByRole('listitem')[2];
-    fireEvent.pointerDown(within(confirm as HTMLElement).getByRole('button'));
-    act(() => vi.advanceTimersByTime(HOLD_MS));
-  } finally {
-    vi.useRealTimers();
-  }
+  await renderAt('#/ritual', module);
+  const arc = await screen.findByRole('list');
+  const confirm = within(arc).getAllByRole('listitem')[2];
+  fireEvent.pointerDown(within(confirm as HTMLElement).getByRole('button'));
+  act(() => vi.advanceTimersByTime(HOLD_MS));
+  // The ✓ lands, is read, and the arc moves on by itself (#314).
+  act(() => vi.advanceTimersByTime(SIGNED_BEAT_MS));
 
-  fireEvent.click(screen.getByRole('link', { name: strings('ritual.confirm.toComprehension') }));
   await waitFor(() => expect(window.location.hash).toBe('#/comprehension'));
 }
 
@@ -145,8 +145,14 @@ function mark(kind: 'got' | 'miss'): void {
   );
 }
 
+/**
+ * Let the mark commit itself (#313). The Next this used to click is gone: the mark IS the tap, and
+ * the window is what a learner who changed their mind would have used the Next for.
+ */
 function next(): void {
-  fireEvent.click(screen.getByRole('button', { name: strings('mark.next') }));
+  act(() => {
+    vi.advanceTimersByTime(COMMIT_WINDOW_MS);
+  });
 }
 
 /** One whole attempt, marked as told — and the ids it dealt, in the order it showed them. */
@@ -171,11 +177,24 @@ beforeEach(() => {
   resetStringsCache();
   useAppStore.getState()._reset();
   window.location.hash = '';
+  /**
+   * Fake timers for the whole file, because two of this flow's steps are now timers rather than
+   * taps: the paid hold's beat into part 2 (#314) and the self-mark's commit window (#313).
+   * `shouldAdvanceTime` keeps the async waits below working as they always did.
+   */
+  vi.useFakeTimers({ shouldAdvanceTime: true });
+  // The show-once hints (#319) are not what this file is about; seeded as already seen so the
+  // ritual's check step and the cards render the shape every assertion here was written against.
+  for (const hint of ['recall', 'production', 'check']) {
+    localStorage.setItem(`rung:hint:${hint}`, '1');
+  }
 });
 
 afterEach(() => {
+  vi.useRealTimers();
   vi.unstubAllGlobals();
   vi.restoreAllMocks();
+  localStorage.clear();
   window.location.hash = '';
 });
 
@@ -283,17 +302,22 @@ describe('the item: read it, then ask for the answer', () => {
     expect(screen.queryByRole('link', { name: strings('why.openFull') })).toBeNull();
   });
 
-  it('hides Next until a mark exists — hidden, not disabled [D11]', async () => {
+  /**
+   * [D11] asked for a Next that was absent rather than disabled; #313 removed the Next itself, on
+   * this surface and on Practice's alike. The mark is the last tap here too.
+   */
+  it('offers the two segments and no Next at all — the mark is the tap', async () => {
     await walkIn();
     reveal();
 
-    expect(screen.queryByRole('button', { name: strings('mark.next') })).toBeNull();
     // The self-mark is the shared control, verbatim: the same two segments as Practice (#93).
     expect(screen.getByRole('button', { name: strings('mark.gotIt') })).toBeVisible();
     expect(screen.getByRole('button', { name: strings('mark.missed') })).toBeVisible();
 
     mark('miss');
-    expect(screen.getByRole('button', { name: strings('mark.next') })).toBeVisible();
+
+    // Still just the two, and nothing waiting to be confirmed.
+    expect(screen.queryByRole('button', { name: strings('mark.next') })).toBeNull();
   });
 
   it('counts the items 1 / 2, and never shows the same one twice in a test', async () => {
@@ -341,6 +365,46 @@ describe('the item: read it, then ask for the answer', () => {
 /* -------------------------------------------------------------------------- the retry */
 
 describe('any "not quite" deals fresh sentences, calmly and forever', () => {
+  /**
+   * #318: the round is redrawing, and the item says so.
+   *
+   * Not grading as it goes is the design (the second item is still shown, still revealed, still
+   * the learner's to mark) — but working on in the belief that the round is still live, when the
+   * app already knows it is not, is the app keeping something back. The line names no count, no
+   * item and no failure: there is nothing to count with, because nothing about a failed round is
+   * stored (Invariant 4).
+   */
+  it('says the round is redrawing once a "not quite" makes it certain (#318)', async () => {
+    const pool = poolOf(6);
+    await walkIn(poolModule(6, pool));
+
+    // Nothing said before the first mark: the round is still live.
+    expect(screen.queryByText(strings('retry.pending'))).toBeNull();
+    reveal();
+    expect(screen.queryByText(strings('retry.pending'))).toBeNull();
+
+    mark('miss');
+    next();
+
+    // The second item still comes, and now it says what it is: practice, not a test.
+    expect(await screen.findByText(strings('retry.pending'))).toBeVisible();
+    // And still no number of any kind beside it (PRD §8 F5).
+    const said = screen.getByText(strings('retry.pending')).textContent ?? '';
+    expect(said).not.toMatch(/\d/);
+  });
+
+  it('says nothing about a redraw while every mark is still "same meaning"', async () => {
+    const pool = poolOf(6);
+    await walkIn(poolModule(6, pool));
+
+    reveal();
+    mark('got');
+    next();
+
+    // Second item, round still alive: the app has nothing to disclose.
+    expect(screen.queryByText(strings('retry.pending'))).toBeNull();
+  });
+
   it('still shows the second item after a miss on the first — nothing is cut short', async () => {
     const pool = poolOf(6);
     await walkIn(poolModule(6, pool));

@@ -36,6 +36,7 @@ import { Link } from 'react-router-dom';
 import { useStrings } from '../../course/strings.ts';
 import type { RungStage } from '../../engine/progression.ts';
 import { PRACTICE_PATH, RITUAL_PATH } from '../../shell/routes.tsx';
+import { HintLine } from '../../shell/useHint.tsx';
 import { ProductionDots } from '../module/ProductionDots.tsx';
 import { RegistrationMarks } from '../RegistrationMarks.tsx';
 import { rungLabel } from './rungLabel.ts';
@@ -111,6 +112,15 @@ export function RungCard({
           </span>
         </div>
       )}
+
+      {/**
+       * What the dots are counting towards (#319), said once per install. The row draws the two
+       * writes per sentence and the `n / 20` beside them, and neither says what reaching them
+       * DOES — the card's stages act on it ([D22]: the primary becomes the exit ritual) without
+       * ever having named the rule. This names it, on the first rung card the learner meets, and
+       * never again.
+       */}
+      {production.length > 0 && <HintLine hint="production" className={styles.hint} dir={dir} />}
 
       {stage === 'fresh' && (
         <Link className={styles.primary} to={modulePath} dir={dir}>

@@ -53,10 +53,10 @@ export const STRINGS_KEYS = [
   'ritual.constraint',
   'ritual.confirm.holdLabel',
   'ritual.confirm.done',
-  'ritual.confirm.toComprehension',
   'retry.kicker',
   'retry.title',
   'retry.cta',
+  'retry.pending',
   'ordinal',
   'ladder.pendingLine',
   'ladder.sealedToast',
@@ -71,10 +71,12 @@ export const STRINGS_KEYS = [
   'sentence.next',
   'mark.gotIt',
   'mark.missed',
-  'mark.next',
   'why.show',
   'why.hide',
   'why.openFull',
+  'hint.recall',
+  'hint.production',
+  'hint.check',
   'read.showCue',
   'read.hideCue',
   'read.prev',
@@ -90,11 +92,13 @@ export const STRINGS_KEYS = [
   'practice.phase.read',
   'practice.phase.produce',
   'practice.nothingDue',
+  'practice.upNext',
   'practice.summaryTitle',
   'practice.summaryReviewed',
   'practice.summaryGotIt',
   'practice.summaryProduced',
   'practice.summaryAtTwo',
+  'practice.summaryToRitual',
   'practice.backToLadder',
   'practice.resumeLine',
   'practice.resumeContinue',
@@ -142,17 +146,29 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'ritual.constraint': ['{maxWords}'],
   /** The rendered `ordinal` value — "my 3rd sentence" — not a bare number. */
   'ritual.confirm.holdLabel': ['{ordinal}'],
+  /**
+   * The ✓ line, and the whole of what the signed hold says now. `ritual.confirm.toComprehension`
+   * stood beside it until #314: the hold IS the intentional act, so paying it now carries the
+   * learner into part 2 rather than drawing a second control to tap. A label for a button that no
+   * longer exists is a key the app can never read.
+   */
   'ritual.confirm.done': [],
-  'ritual.confirm.toComprehension': [],
   /**
    * What is left of the retry interstitial's five layers (tokens.md §6.3), top to bottom — kicker,
    * title, CTA; the body and the reassurance were read-once prose and went on #231. All course
    * copy, all counterless by construction: none interpolates, because an attempt number is the one
    * thing that screen must never render (Invariant 4).
+   *
+   * `retry.pending` (#318) is the fourth, and it belongs to the ITEM rather than the interstitial:
+   * once a round holds a "not quite" the redraw is certain, and the learner finishing the remaining
+   * item deserves to know they are practising rather than still being tested. It says the round
+   * redraws — never how many items were missed, and never which: the marks are dropped on the way
+   * into the interstitial and there is no number here to render.
    */
   'retry.kicker': [],
   'retry.title': [],
   'retry.cta': [],
+  'retry.pending': [],
   /** The number to ordinalise. */
   ordinal: ['{n}'],
   /**
@@ -200,13 +216,13 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    * Comprehension test asks its own question of its own pair ("same meaning" / "not quite"), and
    * that pair is #101's to add here beside these.
    *
-   * `mark.next` is deliberately NOT `sentence.next`: the pager on Sentence Detail moves through a
-   * module, this commits a self-mark and asks for the next card. A course may well word them the
-   * same; sharing the key would mean it could never word them differently.
+   * `mark.next` stood beside them until #313. The mark is now the whole of the interaction — it
+   * lights, a short window lets the learner change it, and the card commits itself — so the Next
+   * that used to confirm a decision the learner had already made has no label because it has no
+   * button. What the window protects is what `mark.next` protected: one result, the one they meant.
    */
   'mark.gotIt': [],
   'mark.missed': [],
-  'mark.next': [],
   /**
    * The "why" panel (#94) — the three words the shared expansion says in its own right, on every
    * revealed surface (Review, Produce, Comprehension). The toggle carries two labels because it
@@ -228,6 +244,30 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'why.show': [],
   'why.hide': [],
   'why.openFull': [],
+  /**
+   * The show-once hints (#319) — the three facts the product is built on, and the only copy in the
+   * app that is allowed to be instructional.
+   *
+   * #225–#233 removed the app's read-once prose on the argument that an instruction which never
+   * changes is read once and skimmed thirty times. That argument is about copy that is ALWAYS
+   * there; it is not an argument for never saying the thing at all, and the app has no onboarding
+   * ([D21]: first run lands on the Ladder), so a first-run learner was told none of it. These are
+   * the answer: each renders on its surface exactly once per install and never again
+   * (`shell/hints.ts`), so the thirty-first session sees the clean screen #225 asked for and the
+   * first one is not left guessing.
+   *
+   * One per surface, and each is the fact that surface cannot show by itself: `recall` that the
+   * recall happens outside the app (the reveal card), `production` that two writes per sentence
+   * open the rung's exit ritual (the rung card's dots row), `check` that the checking is the
+   * learner's own (the ritual's deliberately empty step 2, whose emptiness [D18] is the statement
+   * — the hint names it once rather than explaining it forever).
+   *
+   * None interpolates: the counts they are about are drawn beside them, and a hint that carried a
+   * number would be a status line rather than a thing said once.
+   */
+  'hint.recall': [],
+  'hint.production': [],
+  'hint.check': [],
   /**
    * The Read phase (#97) — the five words that phase says in its own right: the cue toggle's two
    * labels, and the three on its pager. They are `read.*` rather than `practice.*` for the reason
@@ -281,6 +321,16 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'practice.phase.produce': [],
   /** The Review chip's honest answer when nothing is due — the empty state, not an error. */
   'practice.nothingDue': [],
+  /**
+   * Where the next tap goes (#317) — named on the last card of a phase, so a hand-over the session
+   * used to make silently is one the learner sees coming. `{phase}` is the course's own name for
+   * it (`practice.phase.*`, the same one the chips and the resume line use), because a phase is
+   * named the same wherever it is named.
+   *
+   * Read's pager says its own hand-over on its last step (`read.toProduce`), which is why this is
+   * the Review card's line and not a third copy of the same idea.
+   */
+  'practice.upNext': ['{phase}'],
   'practice.summaryTitle': [],
   /** Review cards self-marked this session. */
   'practice.summaryReviewed': ['{count}'],
@@ -290,6 +340,20 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'practice.summaryProduced': ['{count}'],
   /** How many of the rung's sentences now stand at ≥ 2×, out of how many there are. */
   'practice.summaryAtTwo': ['{count}', '{total}'],
+  /**
+   * The way on when that count is the whole rung (#315) — the exit ritual, offered at the one
+   * moment the learner has just earned it.
+   *
+   * The summary deliberately carried no such line before: the ritual is the Ladder's loud action
+   * ([D22] `exit_ready`), and offering an unlock from two places is how one of them ends up out of
+   * step with the rule. It still is — this is a LINK, not a second gate. `exit_available` is
+   * derived in one place (`engine/progression.ts`) and re-asked by the route's own guard, so a
+   * summary that offered the ritual wrongly would land on the module exactly as a typed URL does.
+   * What changes is only that the app stops going quiet at the moment the next step opens.
+   *
+   * It does not interpolate: the count it follows is the line above it (`summaryAtTwo`).
+   */
+  'practice.summaryToRitual': [],
   'practice.backToLadder': [],
   /**
    * Lossless resume (#99, PRD §8 F4) — the hub's offer when the course has a session still open.

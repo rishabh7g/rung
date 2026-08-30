@@ -18,9 +18,10 @@
  * prototype's English would pass on a hardcoded shell string, which is the one thing the strings
  * contract exists to prevent.
  */
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from '../App.tsx';
+import { COMMIT_WINDOW_MS } from '../components/useCommitWindow.ts';
 import { resetContentCache } from '../course/content.ts';
 import { resetManifestCache } from '../course/manifest.ts';
 import { resetStringsCache } from '../course/strings.ts';
@@ -42,7 +43,7 @@ function strings(key: string, courseId = COURSE): string {
 }
 
 /** A count line as the hub and the summary render it: the template, interpolated. */
-function line(key: string, values: Record<string, number>): string {
+function line(key: string, values: Record<string, number | string>): string {
   let filled = strings(key);
   for (const [name, value] of Object.entries(values)) {
     filled = filled.replace(`{${name}}`, String(value));
@@ -93,11 +94,16 @@ function chip(phase: 'review' | 'read' | 'produce'): HTMLElement {
   return screen.getByRole('button', { name: strings(`practice.phase.${phase}`) });
 }
 
-/** Reveal → mark → Next: one card, answered the way a learner answers it. */
+/**
+ * Reveal → mark: one card, answered the way a learner answers it. The Next this used to tap went
+ * on #313 — the mark commits itself when its window elapses, which is what the advance below is.
+ */
 function answer(mark: 'mark.gotIt' | 'mark.missed'): void {
   fireEvent.click(screen.getByRole('button', { name: strings('revealLabel') }));
   fireEvent.click(screen.getByRole('button', { name: strings(mark) }));
-  fireEvent.click(screen.getByRole('button', { name: strings('mark.next') }));
+  act(() => {
+    vi.advanceTimersByTime(COMMIT_WINDOW_MS);
+  });
 }
 
 /** The cue on the card currently on screen — which sentence the session is serving. */
@@ -114,11 +120,20 @@ beforeEach(() => {
   resetStringsCache();
   useAppStore.getState()._reset();
   window.location.hash = '';
+  // The self-mark commits on a timer since #313, so every card answered here needs one.
+  vi.useFakeTimers({ shouldAdvanceTime: true });
+  // The show-once hints (#319) have tests of their own; seeded as seen so the cards and the rung
+  // card render the shape the assertions here were written against.
+  for (const hint of ['recall', 'production', 'check']) {
+    localStorage.setItem(`rung:hint:${hint}`, '1');
+  }
 });
 
 afterEach(() => {
+  vi.useRealTimers();
   vi.unstubAllGlobals();
   vi.restoreAllMocks();
+  localStorage.clear();
   window.location.hash = '';
 });
 
@@ -134,6 +149,26 @@ describe('the hub', () => {
     expect(screen.getByText(line('practice.hubRead', { count: 2 }))).toBeInTheDocument();
     expect(screen.getByText(line('practice.hubProduce', { count: 2 }))).toBeInTheDocument();
     expect(screen.getByRole('button', { name: strings('practice.beginRead') })).toBeInTheDocument();
+  });
+
+  /**
+   * #316: the hub is one screen, not a page to read. The counts stay — they are the promise the
+   * session then keeps — but the three tall numbered plates around them went, so Begin is in
+   * thumb reach rather than below three blueprint objects.
+   */
+  it('draws the three phases as one row, with no 01 / 02 / 03 furniture', async () => {
+    await renderHub();
+    await screen.findByText(line('practice.hubRead', { count: 2 }));
+
+    const phases = screen.getByRole('list');
+    expect(within(phases).getAllByRole('listitem')).toHaveLength(3);
+
+    // The prototype's numerals are gone; nothing on the hub counts the phases at the learner.
+    const said = phases.textContent ?? '';
+    expect(said).not.toMatch(/\b0[123]\b/);
+
+    // And each phase is its name over its count, with no plate of its own to wear marks on.
+    expect(phases.querySelectorAll('svg')).toHaveLength(0);
   });
 
   it('offers to begin at Review when something is due, and counts what the tick will bring', async () => {
@@ -592,6 +627,70 @@ describe('the chips', () => {
   });
 });
 
+/* ------------------------------------------------------------------ the hand-overs */
+
+/**
+ * #317: the session's shape, said out loud at the two places it changes.
+ *
+ * Read's pager already named its own hand-over (`read.toProduce`); the Review → Read boundary was
+ * silent — the last mark simply dropped the learner into a different phase. Neither is a new step:
+ * both are the tap that was already there, labelled.
+ */
+describe('the phase hand-overs are signposted', () => {
+  it('names Read on the last Review card, and not before it', async () => {
+    pass(M1);
+    seedQueue([
+      { sentenceId: 'L1-M1-S01', box: 1, dueInSessions: 0 },
+      { sentenceId: 'L1-M1-S02', box: 1, dueInSessions: 0 },
+    ]);
+    await renderHub();
+    await begin('practice.beginReview');
+
+    const upNext = line('practice.upNext', { phase: strings('practice.phase.read') });
+
+    // Two due: the first card is not the hand-over, and says nothing about one.
+    await cardFor('L1-M1-S01');
+    expect(screen.queryByText(upNext)).toBeNull();
+
+    answer('mark.gotIt');
+
+    // The second is the last, and names where the next tap goes.
+    await cardFor('L1-M1-S02');
+    expect(screen.getByText(upNext)).toBeVisible();
+
+    // And it goes there.
+    answer('mark.gotIt');
+    expect(await screen.findByText(strings('read.showCue'))).toBeVisible();
+  });
+
+  it('names Produce on the last Read card — the pager says its own hand-over', async () => {
+    await renderHub();
+    await begin();
+
+    // Two sentences in the fixture rung: the first pager reads "next", the last reads the phase.
+    expect(await screen.findByRole('button', { name: strings('read.next') })).toBeVisible();
+    expect(screen.queryByRole('button', { name: strings('read.toProduce') })).toBeNull();
+
+    fireEvent.click(screen.getByRole('button', { name: strings('read.next') }));
+
+    expect(await screen.findByRole('button', { name: strings('read.toProduce') })).toBeVisible();
+  });
+
+  /* The Produce phase ends the session, and the summary is its own announcement. */
+  it('says nothing about a next phase on a Produce card', async () => {
+    await renderHub();
+    await begin();
+    fireEvent.click(chip('produce'));
+    await cardFor('L1-M2-S01');
+
+    for (const phase of ['review', 'read', 'produce'] as const) {
+      expect(
+        screen.queryByText(line('practice.upNext', { phase: strings(`practice.phase.${phase}`) })),
+      ).toBeNull();
+    }
+  });
+});
+
 /* ---------------------------------------------------------------------- the summary */
 
 describe('the summary', () => {
@@ -624,6 +723,50 @@ describe('the summary', () => {
     expect(
       screen.getByText(line('practice.summaryAtTwo', { count: 0, total: 2 })),
     ).toBeInTheDocument();
+  });
+
+  /**
+   * #315: the summary offers the exit ritual at the one moment the learner has just earned it.
+   *
+   * The rule still lives in one derivation — `/ritual`'s own guard re-asks `exit_available` and
+   * sends a wrong arrival to the module — so this is a link appearing beside a count that already
+   * says the same thing, not a second gate.
+   */
+  it('offers the exit ritual only once every sentence stands at two (#315)', async () => {
+    await runSession();
+
+    // One got-it apiece: the rung is not produced out, and the summary says nothing about a ritual.
+    expect(screen.getByText(line('practice.summaryAtTwo', { count: 0, total: 2 }))).toBeVisible();
+    expect(screen.queryByRole('link', { name: strings('practice.summaryToRitual') })).toBeNull();
+  });
+
+  it('links straight to the ritual when the rung is produced out (#315)', async () => {
+    pass(M1);
+    // The rung's two sentences, each already produced once: one more apiece finishes them.
+    const store = useAppStore.getState();
+    store.ensureCourse(COURSE);
+    store.recordProduction(COURSE, 'L1-M2-S01');
+    store.recordProduction(COURSE, 'L1-M2-S02');
+
+    await renderHub();
+    await begin();
+
+    fireEvent.click(chip('produce'));
+    await cardFor('L1-M2-S01');
+    answer('mark.gotIt');
+    await cardFor('L1-M2-S02');
+    answer('mark.gotIt');
+
+    await screen.findByText(strings('practice.summaryTitle'));
+
+    expect(screen.getByText(line('practice.summaryAtTwo', { count: 2, total: 2 }))).toBeVisible();
+
+    const toRitual = screen.getByRole('link', { name: strings('practice.summaryToRitual') });
+    expect(toRitual).toHaveAttribute('href', '#/ritual');
+
+    // And it goes there: the route's guard agrees, because it reads the same predicate.
+    fireEvent.click(toRitual);
+    await waitFor(() => expect(window.location.hash).toBe('#/ritual'));
   });
 
   it('says nothing about time — no clock, no duration, no percentage (Invariant 2)', async () => {

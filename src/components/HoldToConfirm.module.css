@@ -1,7 +1,8 @@
 /* Layout only, tokens only (docs/design-contract.md rule 1).
    Geometry follows design/Rung App v3.3.dc.html → Exit ritual → step 3, state for state: a 56px
    hairline box with an accent-200 fill growing from its left edge under a centred label, and — once
-   held — an accent-100 plate with a ✓ over the primary CTA to part 2. */
+   held — an accent-100 plate with a ✓ in it. The prototype draws a primary CTA to part 2 under that
+   plate; #314 removed it, because the paid hold now carries the learner there itself. */
 
 /* ------------------------------------------------------------------ the control */
 
@@ -99,35 +100,6 @@
   color: var(--color-accent-700);
 }
 
-/* The way on to part 2 — the solid-accent primary block CTA, the one filled object in the system
-   (design/tokens.md §3), at `--cta-height`. */
-.cta {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: var(--cta-height);
-  margin-top: var(--space-3);
-  padding: var(--space-2) var(--space-3);
-  background: var(--color-accent);
-  border: var(--border-hairline);
-  border-color: var(--color-accent);
-  color: var(--color-bg);
-  font: var(--text-l2-card);
-  font-size: var(--devanagari-min-size);
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  animation: reveal-in var(--motion-reveal) both;
-  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.cta:active {
-  background: var(--color-accent-700);
-  border-color: var(--color-accent-700);
-}
-
 @keyframes reveal-in {
   from {
     opacity: 0;
@@ -153,8 +125,7 @@
     transition: none;
   }
 
-  .signedRow,
-  .cta {
+  .signedRow {
     animation: none;
   }
 }

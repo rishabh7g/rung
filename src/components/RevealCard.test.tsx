@@ -1,11 +1,11 @@
 /**
- * The reveal card (#93) — the six promises the make-or-break interaction makes:
+ * The reveal card (#93, #313) — the six promises the make-or-break interaction makes:
  *
- *   • cue → reveal → mark → Next, and **Next does not exist until a mark does** [D11]: the
- *     assertion is `queryByRole(…) === null`, because hidden is not disabled,
+ *   • cue → reveal → mark, and **the mark is the last tap**: no Next exists in any state, which
+ *     is asserted as an absence of buttons rather than as a `disabled` attribute,
  *   • nothing is preselected: a revealed card offers two segments and lights neither,
- *   • the card writes nothing (Invariant 4) — one `onResult` on Next, carrying the mark the
- *     learner settled on, and no storage of any kind underneath it,
+ *   • the card writes nothing (Invariant 4) — one `onResult` per card when the commit window
+ *     elapses, carrying the mark the learner settled on, and no storage of any kind underneath it,
  *   • there is no input element anywhere in the tree, in any state (Invariant 6),
  *   • the romanized courses' quiet `script` line renders under the answer, and a native course's
  *     card has no such line at all,
@@ -17,19 +17,43 @@
  * assertion against the prototype's "Next" would pass on a hardcoded shell string, which is the
  * one thing the strings contract exists to prevent.
  */
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import type { ReactNode } from 'react';
-import { describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { StringsContext, type Strings } from '../course/strings.ts';
 import { STRINGS_KEYS } from '../course/stringsKeys.ts';
 import { moduleFixture, romanizedModuleFixture } from '../test/courseContent.ts';
 import { stringValue } from '../test/courseStrings.ts';
 import { RevealCard } from './RevealCard.tsx';
+import { COMMIT_WINDOW_MS } from './useCommitWindow.ts';
 import cardCss from './RevealCard.module.css?raw';
 import cardSource from './RevealCard.tsx?raw';
 import markSource from './SelfMark.tsx?raw';
 
 const COURSE = 'hi-mr';
+
+/**
+ * The show-once recall hint (#319) is deliberately NOT part of these tests: it renders on the
+ * first cue of an install and never again, so leaving it live would make every assertion below
+ * depend on which test ran first. `localStorage` is seeded as "already seen", and the hint has
+ * tests of its own (`src/shell/useHint.test.tsx`).
+ */
+beforeEach(() => {
+  localStorage.setItem('rung:hint:recall', '1');
+  vi.useFakeTimers({ shouldAdvanceTime: true });
+});
+
+afterEach(() => {
+  vi.useRealTimers();
+  localStorage.clear();
+});
+
+/** Let the commit window elapse — the moment a mark becomes a result. */
+function settle(): void {
+  act(() => {
+    vi.advanceTimersByTime(COMMIT_WINDOW_MS);
+  });
+}
 
 const STRINGS = Object.fromEntries(
   STRINGS_KEYS.map((key) => [key, stringValue(COURSE, key)]),
@@ -67,11 +91,6 @@ function renderCard({ script, why, sentenceId }: RenderOptions = {}) {
   );
 
   return { ...view, onResult };
-}
-
-/** The one control that must not exist before a mark does. */
-function next(): HTMLElement | null {
-  return screen.queryByRole('button', { name: copy('mark.next') });
 }
 
 function reveal(): void {
@@ -115,7 +134,6 @@ describe('the cue state', () => {
 
     expect(screen.queryByText(NATIVE.display)).not.toBeInTheDocument();
     expect(screen.queryByText(copy('mark.gotIt'))).not.toBeInTheDocument();
-    expect(next()).toBeNull();
   });
 });
 
@@ -143,13 +161,19 @@ describe('the revealed state', () => {
     expect(screen.queryByText(copy('revealLabel'))).not.toBeInTheDocument();
   });
 
-  /* [D11], the promise the whole ticket is about. */
-  it('has NO Next in the DOM — hidden, not disabled', () => {
+  /**
+   * [D11] asked for a Next that was absent rather than disabled; #313 removed the Next itself, and
+   * this is what is left of that promise — the mark is the only thing on the card to do, and it is
+   * not waiting on a second control to make it count.
+   */
+  it('offers the two segments and NOTHING else — no Next, nothing disabled', () => {
     const { container } = renderCard();
     reveal();
 
-    expect(next()).toBeNull();
-    // and not there wearing a `disabled` either — the gate is absence, not a dimmed control.
+    expect(screen.getAllByRole('button').map((button) => button.textContent)).toEqual([
+      copy('mark.gotIt'),
+      copy('mark.missed'),
+    ]);
     expect(container.querySelectorAll('button[disabled]')).toHaveLength(0);
   });
 
@@ -182,24 +206,15 @@ describe('the revealed state', () => {
 });
 
 describe('the marked state', () => {
-  it('brings Next into existence the moment a mark does', () => {
-    renderCard();
-    reveal();
-    expect(next()).toBeNull();
-
-    mark('mark.gotIt');
-
-    expect(next()).toBeInTheDocument();
-  });
-
-  it('emits the mark on Next — once, and not before', () => {
+  /* The window is what the Next used to be: nothing is committed while it runs. */
+  it('emits the mark when the window elapses — once, and not before', () => {
     const { onResult } = renderCard();
     reveal();
     mark('mark.gotIt');
 
     expect(onResult).not.toHaveBeenCalled();
 
-    fireEvent.click(next()!);
+    settle();
 
     expect(onResult.mock.calls).toEqual([[{ sentenceId: NATIVE.id, gotIt: true }]]);
   });
@@ -208,17 +223,35 @@ describe('the marked state', () => {
     const { onResult } = renderCard();
     reveal();
     mark('mark.missed');
-    fireEvent.click(next()!);
+    settle();
 
     expect(onResult.mock.calls).toEqual([[{ sentenceId: NATIVE.id, gotIt: false }]]);
   });
 
-  it('sends the mark the learner settled on — changing it before Next changes the result', () => {
+  /**
+   * The promise the Next was really making, and the whole reason the window exists rather than an
+   * immediate commit: a learner who taps "missed", thinks again and taps "got it" sends ONE
+   * result, and it is the one they meant.
+   */
+  it('sends the mark the learner settled on — changing it inside the window changes the result', () => {
     const { onResult } = renderCard();
     reveal();
     mark('mark.missed');
     mark('mark.gotIt');
-    fireEvent.click(next()!);
+    settle();
+
+    expect(onResult.mock.calls).toEqual([[{ sentenceId: NATIVE.id, gotIt: true }]]);
+  });
+
+  /* Changing the mark restarts the window, so the first choice's timer cannot fire behind it. */
+  it('emits exactly once when the mark is changed twice inside the window', () => {
+    const { onResult } = renderCard();
+    reveal();
+    mark('mark.gotIt');
+    mark('mark.missed');
+    mark('mark.gotIt');
+    settle();
+    settle();
 
     expect(onResult.mock.calls).toEqual([[{ sentenceId: NATIVE.id, gotIt: true }]]);
   });
@@ -288,7 +321,32 @@ describe('the card as a whole', () => {
     expect(screen.getByText('I am from India')).toBeInTheDocument();
     expect(screen.getByText(copy('revealLabel'))).toBeInTheDocument();
     expect(screen.queryByText('Soy de India')).not.toBeInTheDocument();
-    expect(next()).toBeNull();
+  });
+
+  /**
+   * And the window that was running when it was swapped belongs to the sentence it was opened for.
+   * The parent keys the card in both real call sites, so this is the belt-and-braces path — but a
+   * mark credited to the NEXT sentence is the worst thing this component could do quietly, and
+   * `useCommitWindow` captures the callback at the choice to make sure it cannot.
+   */
+  it('commits a mark to the sentence it was made on, even if the parent swaps mid-window', () => {
+    const { rerender, onResult } = renderCard();
+    reveal();
+    mark('mark.gotIt');
+
+    rerender(
+      <StringsContext.Provider value={STRINGS}>
+        <RevealCard
+          sentenceId="L1-M1-S02"
+          cue="I am from India"
+          display="Soy de India"
+          onResult={onResult}
+        />
+      </StringsContext.Provider>,
+    );
+    settle();
+
+    expect(onResult.mock.calls).toEqual([[{ sentenceId: NATIVE.id, gotIt: true }]]);
   });
 
   /* The blueprint grammar: registration marks are "never dropped" (design/tokens.md §7 rule 3). */
@@ -303,21 +361,42 @@ describe('the card as a whole', () => {
 
 /* Motion is a stylesheet fact, so it is read off the stylesheet (design/tokens.md §5). */
 describe('the motion', () => {
-  it('is the 300ms reveal and the 200ms Next, and nothing else moves', () => {
+  it('is the 300ms reveal, and nothing else moves', () => {
     const animated = rules().filter(([, declarations]) => declarations.includes('animation:'));
 
     expect(animated).toEqual([
       ['.answer', expect.stringContaining('reveal-in var(--motion-reveal) both')],
-      ['.next', expect.stringContaining('reveal-in var(--motion-next-appear) both')],
     ]);
   });
 
-  it('collapses under prefers-reduced-motion — both the reveal and the Next', () => {
-    const reduced = /@media \(prefers-reduced-motion: reduce\) \{([\s\S]*)\n\}/.exec(cardCss)?.[1];
+  it('collapses the reveal under prefers-reduced-motion', () => {
+    const reduced = /@media \(prefers-reduced-motion: reduce\) \{([\s\S]*?)\n\}/.exec(cardCss)?.[1];
 
     expect(reduced).toBeDefined();
     expect(reduced).toContain('.answer');
-    expect(reduced).toContain('.next');
     expect(reduced).toMatch(/animation:\s*none/);
+  });
+
+  /**
+   * The commit window is a JavaScript gate, not an animation [D14]'s reason — a stylesheet that
+   * could shorten it would fire the commit in 0.01ms under this very media query, rushing exactly
+   * the learners the query exists to protect.
+   */
+  it('does not put the commit window in the stylesheet', () => {
+    // Declarations only: this file's own prose explains why the window is not here, and a scan
+    // that read comments would fail on the explanation.
+    const declarations = rules()
+      .map(([, body]) => body)
+      .join('\n');
+
+    expect(declarations).not.toMatch(/commit/i);
+    // The mark row carries no animation of its own, so there is no `animationend` for a commit to
+    // hang off even by accident — the only animation on the card is the reveal, asserted above.
+    const markRows = rules().filter(([selector]) => selector.startsWith('.marks'));
+
+    expect(markRows.length).toBeGreaterThan(0);
+    for (const [selector, body] of markRows) {
+      expect(body, selector).not.toMatch(/animation|transition/);
+    }
   });
 });

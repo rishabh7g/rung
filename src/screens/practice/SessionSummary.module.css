@@ -53,8 +53,42 @@
   font-size: var(--devanagari-min-size);
 }
 
-/* The one control on the screen, at the prototype's secondary height — and a link, because it
-   navigates, which is also what ends the session (`AppShell`). */
+/**
+ * The way on to the exit ritual (#315), shown only when the rung is produced out — the solid-accent
+ * primary block CTA at `--cta-height`, the one filled object in the system (design/tokens.md §3).
+ *
+ * It takes the `margin-top: auto` that used to push the back link to the bottom, so the pair sits
+ * together at the foot of the column with the loud one on top: when the ritual is open it is the
+ * screen's action, and "back to the ladder" is the way past it.
+ */
+.toRitual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--cta-height);
+  margin-top: auto;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-accent);
+  border: var(--border-hairline);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+  font: var(--text-l2-card);
+  font-size: var(--devanagari-min-size);
+  text-align: center;
+  text-decoration: none;
+  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.toRitual:active {
+  background: var(--color-accent-700);
+  border-color: var(--color-accent-700);
+}
+
+/* The way out, at the prototype's secondary height — and a link, because it navigates, which is
+   also what ends the session (`AppShell`). `margin-top: auto` keeps it at the foot of the column
+   when it is alone there. */
 .back {
   display: flex;
   align-items: center;
@@ -71,4 +105,12 @@
   /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+}
+
+/* Both links carry `margin-top: auto` so that EITHER can be the thing pinned to the foot of the
+   column. When the ritual CTA is there they would otherwise share the free space between them and
+   drift apart, so the one that follows it gives its own claim up: the pair sits together at the
+   bottom, spaced by the column's gap, loud one on top. */
+.toRitual + .back {
+  margin-top: 0;
 }
