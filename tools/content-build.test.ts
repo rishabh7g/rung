@@ -2322,6 +2322,8 @@ describe('the authored content', () => {
     ];
     /** en-fr's ten rungs, complete since #330 — the same shape as every other course's L1. */
     const EN_FR = L1;
+    /** en-de's authored prefix (#362). The rest of the ladder is titles in levels.json only. */
+    const EN_DE_AUTHORED = ['L1-M1', 'L1-M2'];
 
     expect(report.exitCode).toBe(0);
     expect([...report.shipped]).toEqual([
@@ -2332,6 +2334,7 @@ describe('the authored content', () => {
       ['en-ru', EN_RU_AUTHORED],
       ['en-it', EN_IT_AUTHORED],
       ['en-fr', EN_FR],
+      ['en-de', EN_DE_AUTHORED],
     ]);
     // hi-en was authored behind this relaxation (#267, #270–#272) and graduated in #273, so a dev
     // build now ships exactly what the strict build above does — the same ten rungs, the same
@@ -2342,23 +2345,25 @@ describe('the authored content', () => {
     // build that carries it: `--with-fixtures` admits the course and its authored rungs ship.
     expect(report.lines).toContain(`en-ru: ${EN_RU_AUTHORED.length} modules (${EN_RU_RANGE})`);
     // en-de (#356) is the course sitting behind the fixture flag right now, so THIS is the build
-    // that admits it — and it still ships nothing, because not one of its rungs is authored. The
-    // course directory carries a ladder and a bundle and no `modules/` folder at all, and the
-    // walker treats an absent directory as zero modules rather than as an error.
-    expect(report.lines).toContain('en-de: 0 modules — nothing authored yet');
+    // that admits it — and since #362 it ships the two rungs that are authored. It used to ship
+    // nothing at all and be reported as `skipped: en-de (no modules)`; the walker still treats an
+    // absent `modules/` directory as zero modules rather than as an error, which is what that
+    // earlier line proved, and the two authored files are what moved this course off it.
+    expect(report.lines).toContain(`en-de: ${EN_DE_AUTHORED.length} modules (L1-M1..M2)`);
     expect(report.lines).toContain(
       'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10), ' +
-        `en-ru ${EN_RU_AUTHORED.length} modules (${EN_RU_RANGE}), en-it ${EN_IT_LINE}, en-fr 10 modules (L1-M1..M10)` +
-        ' | skipped: en-de (no modules)',
+        `en-ru ${EN_RU_AUTHORED.length} modules (${EN_RU_RANGE}), en-it ${EN_IT_LINE}, en-fr 10 modules (L1-M1..M10),` +
+        ` en-de ${EN_DE_AUTHORED.length} modules (L1-M1..M2)`,
     );
     // en-it was authored behind the gate (#332, #334–#336) and graduated in #337, so a dev build
     // now ships exactly what the strict build above does.
     expect(report.lines).toContain(`en-it: ${EN_IT_LINE}`);
     expect(readManifest(outRoot).devBuild).toBe(true);
-    // The manifest lists what SHIPPED, which is the seven courses with modules. en-de's row is
-    // admitted by the relaxation and STILL does not appear: a course with nothing authored ships
-    // nothing, so no `public/content/en-de/` is written and no row is emitted for it either. That
-    // is why #356's Settings smoke is a render test over `DEV_MANIFEST` and not over a build.
+    // The manifest lists what SHIPPED, which is now eight courses: en-de's row is admitted by the
+    // relaxation AND has content behind it since #362, so `public/content/en-de/` is written and
+    // the row is emitted. It keeps `fixture: true` — the manifest carries the flag forward, and a
+    // strict build still refuses the whole course — until en-de's own graduation issue (#365)
+    // deletes it, the way #331 deleted en-fr's.
     expect(readManifest(outRoot).courses.map((course) => course.id)).toEqual([
       'hi-mr',
       'en-es',
@@ -2367,18 +2372,19 @@ describe('the authored content', () => {
       'en-ru',
       'en-it',
       'en-fr',
+      'en-de',
     ]);
     expect(readManifest(outRoot).courses.at(-1)).toMatchObject({
-      id: 'en-fr',
+      id: 'en-de',
       l1Tag: 'en',
-      l2Tag: 'fr',
+      l2Tag: 'de',
     });
-    expect(existsSync(path.join(outRoot, 'en-de'))).toBe(false);
+    expect(existsSync(path.join(outRoot, 'en-de'))).toBe(true);
     expect(
       readManifest(outRoot)
         .courses.filter((course) => 'fixture' in course)
         .map((course) => course.id),
-    ).toEqual([]);
+    ).toEqual(['en-de']);
     for (const file of [
       'hi-mr/levels.json',
       'hi-mr/strings.json',

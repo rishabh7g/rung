@@ -1,0 +1,671 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M1",
+  "title": "Who I am",
+  "job": "Introduce yourself and state what you like",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-08-30",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 5,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "Ich heiße + name",
+      "Ich komme aus + place",
+      "Ich wohne in + place",
+      "Ich bin + N (profession, bare)",
+      "Ich mag + N (bare)",
+      "Das ist + der/die/das + N",
+      "Das ist + ein/eine + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "A plain German statement comes out in the order you already think in: subject, then verb, then the rest. Ich wohne in Berlin is \"I live in Berlin\", word for word."
+    },
+    {
+      "tag": "delta",
+      "text": "You give your name with ich heiße — heißen is \"to be called\", so it is literally \"I am called Anna\". Take the two words as one chunk; the person lives in the ending, ich heiße for yourself and Sie heißen for whoever you are speaking to."
+    },
+    {
+      "tag": "delta",
+      "text": "sein is the one verb \"to be\" and it is irregular, so it is learned rather than built: ich bin · er/sie/es ist · Sie sind. That single verb does every job English's \"be\" does — who you are, what state you are in, and where a thing is. There is no second \"to be\" to choose between."
+    },
+    {
+      "tag": "delta",
+      "text": "A regular verb marks the person in its ending: -e for ich, -en for Sie. ich komme · Sie kommen, ich wohne · Sie wohnen. The -en form is spelled exactly like the infinitive, so learning one shape gives you both."
+    },
+    {
+      "tag": "delta",
+      "text": "This course speaks Sie — the form you use with a shopkeeper, a landlord, an official or a colleague, where it is never wrong. German also has a familiar du with a whole second set of endings; choosing it is a later level's job, so nothing in this course is written with it."
+    },
+    {
+      "tag": "delta",
+      "text": "Every German noun has one of three genders and its article shows which: der (m) · die (f) · das (n). Learn each noun WITH its article. The ending is often a real clue — a noun in -ung, -heit, -keit, -schaft, -ion or -tät is feminine, one in -chen or -lein is neuter, an -er agent noun like Lehrer is masculine — and what is left over is genuinely learned rather than guessed."
+    },
+    {
+      "tag": "delta",
+      "text": "Every noun is written with a CAPITAL letter, anywhere in the sentence: der Tisch, die Tür, das Buch, Ich mag Kaffee. This is not emphasis and it is not optional — the capital is how German marks a noun, and you have to produce it every time."
+    },
+    {
+      "tag": "delta",
+      "text": "ein (m and n) and eine (f) are the German \"a\", and they follow the same three-way gender as der/die/das: ein Tisch, eine Tür, ein Buch."
+    },
+    {
+      "tag": "interference",
+      "text": "English puts \"a\" in front of a job and German leaves it out: Ich bin Student, never Ich bin ein Student. The article comes back only once something describes the noun."
+    },
+    {
+      "tag": "interference",
+      "text": "A whole CLASS of thing takes a bare noun: Ich mag Kaffee is \"I like coffee\". Put der in front and you have narrowed it to one particular cup — Ich mag den Kaffee is \"I like this coffee here\". This is the opposite of French and Spanish, which use the definite article for the class (J'aime le café, Me gusta el café), so a habit from either language will mislead you here as surely as the English one."
+    },
+    {
+      "tag": "free",
+      "text": "German writes the subject pronoun every time, exactly as English does: ich is never dropped."
+    },
+    {
+      "tag": "delta",
+      "text": "das does two jobs. In front of a neuter noun it is \"the\": das Buch. Standing alone in front of ist it points at something — Das ist der Tisch, \"that is the table\" — and it points at anything at all, whatever gender the thing turns out to have."
+    },
+    {
+      "tag": "delta",
+      "text": "The umlaut and the ß are letters, not decorations. Tür is not spelled with a bare u, and heiße is not spelled with a double s: change either one and you have written a different word, or no word at all."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M1-S01",
+      "display": "Ich heiße Anna",
+      "cue": "My name is Anna",
+      "glossEn": "My name is Anna",
+      "literal": "I am-called Anna",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Ich heiße",
+            "cue": "my name is · I am called",
+            "tag": "delta",
+            "forms": ["Ich heiße", "heißen", "Sie heißen"],
+            "note": "heißen, \"to be called\", and this is how a name is actually given. Take the two words as one chunk: the person lives in the ending — ich heiße for yourself, Sie heißen for the person in front of you. Note the ß. The vowel before it is long, and that is exactly what the ß spells; German does not write a double s here, and if you did you would have written something that is not this word."
+          },
+          {
+            "display": "Anna",
+            "cue": "Anna",
+            "tag": "free",
+            "forms": [],
+            "note": "A woman's name. Names carry over unchanged — swap in your own. They take a capital in German exactly as in English, and so, unlike English, does every other noun."
+          }
+        ],
+        "rules": [0, 1, 12]
+      },
+      "trap": "Mein Name ist Anna is the English sentence translated word for word. It is grammatical, and it is stiff — a form you fill in rather than a person you meet. Ich heiße Anna is what is actually said.",
+      "sound": "Three chunks: ish HIGH-suh AH-nah. The ch of ich is a soft hiss made at the front of the mouth, never a k. ei is always \"eye\", so heiße rhymes with English \"nicer\" minus the r, and the ß in the middle is a plain sharp s, never a z. The final -e of heiße is a real, unstressed \"uh\" — German never leaves a final -e silent the way French does.",
+      "variations": [
+        {
+          "display": "Ich heiße Thomas",
+          "cue": "My name is Thomas",
+          "changed": "swap the name — ich heiße itself never moves"
+        },
+        {
+          "display": "Sie heißen Anna",
+          "cue": "Your name is Anna",
+          "changed": "the person shifts to the one you are speaking to, and the ending goes from -e to -en"
+        },
+        {
+          "display": "Ich bin Anna",
+          "cue": "I am Anna",
+          "changed": "a different verb does the same job — a name can follow ich bin, which is shorter and a little more casual"
+        }
+      ],
+      "mistake": {
+        "display": "Ich heiße ist Anna",
+        "why": "There is no second verb. heiße is already the verb of this sentence — English \"my name IS\" is what pushes an ist in, and German has no room for it."
+      },
+      "usage": "The first line of any introduction, to anyone at all.",
+      "register": "neutral",
+      "mnemonic": "heißen is \"to be called\". You are not saying what your name is, you are saying what you are called — so ich heiße, and nothing else."
+    },
+    {
+      "id": "L1-M1-S02",
+      "display": "Ich komme aus Indien",
+      "cue": "I am from India",
+      "glossEn": "I come from India",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ich",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "I. German writes the subject pronoun every time, exactly as English does, and never drops it. Note that it is lowercase in the middle of a sentence, unlike English \"I\" — the capital in German is reserved for nouns, and for the Sie you will meet in the next rung."
+          },
+          {
+            "display": "komme",
+            "cue": "come",
+            "tag": "delta",
+            "forms": ["komme", "kommen"],
+            "note": "kommen, \"to come\". The ending names the person: -e for ich (ich komme), -en for Sie (Sie kommen). That -en form is spelled exactly like the infinitive, so one shape does both jobs — which is a large part of why this course speaks Sie. The familiar du form and its own ending are not taught here."
+          },
+          {
+            "display": "aus",
+            "cue": "from · out of",
+            "tag": "delta",
+            "forms": [],
+            "note": "aus is the \"from\" of ORIGIN — the country or town you come from: Ich komme aus Indien, Ich komme aus Berlin. English has one \"from\" and German splits the job, so this is a choice you have to make: aus for where you are from, and a different word for a person or a point you have moved away from. The same aus later means \"out of\" a place; it is one word, not two."
+          },
+          {
+            "display": "Indien",
+            "cue": "India",
+            "tag": "free",
+            "forms": [],
+            "note": "India. Country and town names carry over, capital and all, and most of them take no article at all: aus Indien, in Indien."
+          }
+        ],
+        "rules": [0, 3, 10]
+      },
+      "trap": "English says \"I am from India\" with the verb \"to be\". German says it with \"come\": Ich komme aus Indien. Ich bin aus Indien exists and sounds like a translation; the ordinary sentence uses kommen.",
+      "sound": "ish KOM-uh owss IN-dee-en. The final -e of komme is a genuine unstressed \"uh\", never silent. aus rhymes with English \"house\". Indien is three syllables with the stress on the first, and its d is a clean d, not the American flapped one.",
+      "variations": [
+        {
+          "display": "Ich komme aus Berlin",
+          "cue": "I am from Berlin",
+          "changed": "swap the place — the frame Ich komme aus … is what stays"
+        },
+        {
+          "display": "Sie kommen aus Indien",
+          "cue": "You are from India",
+          "changed": "the person shifts to Sie, and the verb ending goes -e → -en"
+        },
+        {
+          "display": "Anna ist aus Indien",
+          "cue": "Anna is from India",
+          "changed": "a name takes the subject slot, and sein replaces kommen — the same fact stated the flatter way"
+        }
+      ],
+      "mistake": {
+        "display": "Ich komme von Indien",
+        "why": "von is the \"from\" of a person or of a point you moved away from. An origin — the country or town you come from — takes aus."
+      },
+      "usage": "Where you are from — the second line of any introduction, and the one a stranger will actually ask about.",
+      "register": "neutral",
+      "mnemonic": "You come OUT of the place you are from: aus, which is the same aus as \"out\"."
+    },
+    {
+      "id": "L1-M1-S03",
+      "display": "Ich wohne in Berlin",
+      "cue": "I live in Berlin",
+      "glossEn": "I live in Berlin",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wohne",
+            "cue": "live · reside",
+            "tag": "delta",
+            "forms": ["wohne", "wohnen"],
+            "note": "wohnen, \"to live\" in the sense of having your address somewhere. Same endings as kommen: ich wohne, Sie wohnen. German has a second verb for \"live\" meaning \"be alive\", and this course never uses it — an address always wants wohnen, so there is nothing to weigh up."
+          },
+          {
+            "display": "in",
+            "cue": "in",
+            "tag": "free",
+            "forms": [],
+            "note": "in, doing the English job with the English spelling: in Berlin, in Indien. A town or country name takes no article after it. The same in comes back in a later rung for being inside a thing — a room, a building — where the ARTICLE after it changes shape to say whether you are in there or going in. The word in itself never changes."
+          },
+          {
+            "display": "Berlin",
+            "cue": "Berlin",
+            "tag": "free",
+            "forms": [],
+            "note": "Berlin. Town names carry over unchanged and take no article: in Berlin, aus Berlin. The stress is on the second syllable in German, as it is in English."
+          }
+        ],
+        "rules": [0, 3, 10]
+      },
+      "trap": "\"Live\" is one English word covering two German ones. wohnen is where your address is; the other is being alive. Reach for the wrong one and the sentence still parses — it just stops being about Berlin.",
+      "sound": "ish VOH-nuh in bair-LEEN. German w is an English v, every time: wohne begins with a v sound. The oh is long and pure, with no glide sliding off the end of it. The r of Berlin is made far back in the throat and barely sounds at all.",
+      "variations": [
+        {
+          "display": "Ich wohne in Indien",
+          "cue": "I live in India",
+          "changed": "swap the place — a country works in the same frame as a town"
+        },
+        {
+          "display": "Sie wohnen in Berlin",
+          "cue": "You live in Berlin",
+          "changed": "the person shifts to Sie and the ending goes -e → -en, exactly as it did on kommen"
+        },
+        {
+          "display": "Ich komme aus Berlin",
+          "cue": "I am from Berlin",
+          "changed": "wohnen → kommen: where you live against where you are from. Berlin can be both, one, or neither"
+        }
+      ],
+      "mistake": {
+        "display": "Ich wohne in der Berlin",
+        "why": "A town or country name takes no article: in Berlin, in Indien, aus Indien. The article belongs to ordinary nouns, not to place names."
+      },
+      "usage": "Where you live now — said at a counter, on a form read aloud, or to anyone who has just asked where you are from.",
+      "register": "neutral",
+      "mnemonic": "wohnen and English \"won\" share a sound but not a meaning; think of a place you have WON and settled into."
+    },
+    {
+      "id": "L1-M1-S04",
+      "display": "Ich bin Student",
+      "cue": "I am a student",
+      "glossEn": "I am a student",
+      "literal": "I am student",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bin",
+            "cue": "am · is · are",
+            "tag": "delta",
+            "forms": ["bin", "ist", "sind"],
+            "note": "sein, the one verb \"to be\". It is irregular, so it is learned rather than built: ich bin · er/sie/es ist · Sie sind. This single verb does every job English's \"be\" does — who you are (Ich bin Student), what state you are in (Ich bin müde), where a thing is (Der Tisch ist in Berlin) — and it later helps build the past of a few verbs of movement. There is no second \"to be\" to choose between, as Spanish has. sind is the Sie form and the they-form at once, which the next rung sorts out; the familiar du form is not taught in this course."
+          },
+          {
+            "display": "Student",
+            "cue": "student (m) · Studentin (f)",
+            "tag": "delta",
+            "forms": ["Student", "Studentin"],
+            "note": "A student. Like every German noun it takes a capital, and it has a gender: der Student, die Studentin. The -in ending is the regular way to make an agent noun feminine — Lehrer / Lehrerin, Kellner / Kellnerin — and an -er agent noun is reliably masculine, which is one of the endings worth trusting. After sein a job stands bare, with nothing in front of it."
+          }
+        ],
+        "rules": [0, 2, 6, 8]
+      },
+      "trap": "English cannot say \"I am student\" — it needs \"a\". German cannot say Ich bin ein Student for a plain job. The article you have spent your life inserting is exactly the one German wants left out, and it comes back only once something describes the noun.",
+      "sound": "ish bin shtoo-DENT. An initial st- is \"sht\" in German, always — Student, Straße, Stuhl. The stress falls on the second syllable, and the final -t is crisp. bin is short, like the English word.",
+      "variations": [
+        {
+          "display": "Ich bin Studentin",
+          "cue": "I am a student (said by a woman)",
+          "changed": "the -in ending marks a woman: Student → Studentin, and the article behind it would be die, not der"
+        },
+        {
+          "display": "Anna ist Studentin",
+          "cue": "Anna is a student",
+          "changed": "a name takes the subject slot, and bin becomes ist for a third person"
+        },
+        {
+          "display": "Sie sind Student",
+          "cue": "You are a student",
+          "changed": "the person shifts to Sie, and sein's form for it is sind — the same shape as the they-form"
+        }
+      ],
+      "mistake": {
+        "display": "Ich bin ein Student",
+        "why": "No ein in front of a bare job after sein. It returns only once something describes the noun — Ich bin ein guter Student — which is a later rung's sentence."
+      },
+      "usage": "Saying what you do: a job, a course of study, a role. The same bare shape works for Ich bin Lehrer, Ich bin Kellner.",
+      "register": "neutral",
+      "mnemonic": "A job after sein stands on its own two feet: bin Student, not bin ein Student."
+    },
+    {
+      "id": "L1-M1-S05",
+      "display": "Ich mag Kaffee",
+      "cue": "I like coffee",
+      "glossEn": "I like coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mag",
+            "cue": "like",
+            "tag": "delta",
+            "forms": ["mag"],
+            "note": "mögen, \"to like\" as a standing preference — what you like in general, not what you want right now. mag does not change between ich and er/sie/es: ich mag, Anna mag, both with no ending at all, which is unusual enough to pocket. A later rung teaches the polite Ich möchte, \"I would like\", which is the one a shop counter wants; the two are different words doing different jobs."
+          },
+          {
+            "display": "Kaffee",
+            "cue": "coffee",
+            "tag": "interference",
+            "forms": [],
+            "note": "Coffee — masculine, der Kaffee, and capitalised like every German noun. This is where English and the Romance languages mislead in opposite directions. A whole CLASS of thing takes a BARE noun in German: Ich mag Kaffee is \"I like coffee\". English drops the article here too, so English speakers are safe — but French and Spanish put the definite article in (J'aime le café, Me gusta el café), and importing that gives Ich mag den Kaffee, which is a different sentence about one particular cup already on the table."
+          }
+        ],
+        "rules": [0, 6, 9]
+      },
+      "trap": "The trap here is not English, it is any Romance language you have met. French and Spanish say \"I like THE coffee\" for coffee in general; German, like English, says it bare.",
+      "sound": "ish mahk KAH-fay. A final g hardens to a k, so mag ends in the sound of \"mock\". Kaffee is stressed on the FIRST syllable, unlike English \"café\", and both e's at the end run together into one long \"ay\".",
+      "variations": [
+        {
+          "display": "Ich mag Berlin",
+          "cue": "I like Berlin",
+          "changed": "swap what is liked — a place needs no article either"
+        },
+        {
+          "display": "Anna mag Kaffee",
+          "cue": "Anna likes coffee",
+          "changed": "the person shifts to a third person and mag does not move — no -s, no ending, nothing"
+        },
+        {
+          "display": "Ich mag das Buch",
+          "cue": "I like the book",
+          "changed": "an article appears, and the meaning narrows: not books in general but this one book"
+        }
+      ],
+      "mistake": {
+        "display": "Ich mag den Kaffee",
+        "why": "Grammatical German, and not this sentence. With the article it means one particular coffee — the cup in front of you. Coffee as a class of thing goes bare: Ich mag Kaffee."
+      },
+      "usage": "Standing preferences — food, drink, places, music. For ordering something at a counter, a later rung gives you the polite Ich möchte.",
+      "register": "neutral",
+      "mnemonic": "mag is one syllable and takes no ending in any person you will use — the laziest verb in the rung."
+    },
+    {
+      "id": "L1-M1-S06",
+      "display": "Das ist der Tisch",
+      "cue": "That is the table",
+      "glossEn": "That is the table",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "das",
+            "cue": "that · this · the (neuter)",
+            "tag": "delta",
+            "forms": [],
+            "note": "One word doing two jobs, and the sentence tells you which. In front of a neuter noun it is \"the\": das Buch. Standing on its own in front of ist it POINTS at something — Das ist der Tisch, \"that is the table\" — and when it points it does not care what gender the thing turns out to have, so Das ist die Tür is right too. A later rung uses the same pointing das to ask what something costs."
+          },
+          {
+            "display": "der",
+            "cue": "the (masculine)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The definite article for a masculine noun: der Tisch, der Kaffee, der Student. German has three of these where English has one, so learn every noun WITH its article rather than on its own. der has a second seat you will meet later: in front of a FEMININE noun after certain prepositions it also appears as der — auf der Straße, \"on the street\". Same three letters, a different job, and the sentence around it is what tells them apart."
+          },
+          {
+            "display": "Tisch",
+            "cue": "table",
+            "tag": "delta",
+            "forms": [],
+            "note": "Table — masculine: der Tisch. Nothing in the word says so; this is one of the ones that is genuinely learned rather than worked out. Capital T, wherever it stands in the sentence."
+          }
+        ],
+        "rules": [0, 5, 6, 11]
+      },
+      "trap": "English has one \"the\" and never has to think about it. German has three, and the one you pick is fixed by the noun, not by the sentence: der Tisch is der whatever else happens around it.",
+      "sound": "dass ist dair TISH. der is \"dair\" with a throaty r that fades almost to a vowel — closer to \"deh-uh\" than to English \"dare\". -sch is always the sh of \"fish\", so Tisch rhymes with it.",
+      "variations": [
+        {
+          "display": "Das ist der Student",
+          "cue": "That is the student",
+          "changed": "a different masculine noun — der does not move, because the noun is still masculine"
+        },
+        {
+          "display": "Der Tisch ist in Berlin",
+          "cue": "The table is in Berlin",
+          "changed": "the article-and-noun becomes the subject, and sein now says where something is rather than what it is"
+        },
+        {
+          "display": "Das ist ein Student",
+          "cue": "That is a student",
+          "changed": "der → ein: the one we both mean becomes any one at all"
+        }
+      ],
+      "mistake": {
+        "display": "Das ist Tisch",
+        "why": "A single countable noun does not stand bare here — it needs its article: der Tisch. The bare noun is for a whole class after mögen (Ich mag Kaffee) and for a job after sein (Ich bin Student), and this is neither."
+      },
+      "usage": "Pointing something out — in a room, in a shop, on a page.",
+      "register": "neutral",
+      "mnemonic": "Das ist … is the pointing finger of German, and it never changes shape no matter what it points at."
+    },
+    {
+      "id": "L1-M1-S07",
+      "display": "Das ist die Tür",
+      "cue": "That is the door",
+      "glossEn": "That is the door",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "die",
+            "cue": "the (feminine · plural)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The definite article for a feminine noun: die Tür, die Studentin. It is ALSO the article for the plural of every gender — die Tische, die Türen, die Bücher — so a die in front of a noun is either \"the (feminine)\" or \"the (plural)\", and the shape of the noun itself is what settles which. Plurals are a later rung's work; the word is this same one."
+          },
+          {
+            "display": "Tür",
+            "cue": "door",
+            "tag": "delta",
+            "forms": [],
+            "note": "Door — feminine: die Tür. The ü is a letter, not a decoration: schon and schön are two different words, and so are Mutter and Mütter. Write the two dots every time — there is no substitute spelling that German accepts."
+          }
+        ],
+        "rules": [0, 5, 6, 12]
+      },
+      "trap": "Nothing about a door is female, and nothing about a table is male. Gender in German is a property of the WORD, not of the thing — which is why the article has to be learned with the noun instead of reasoned out from the world.",
+      "sound": "dass ist dee tür. die is \"dee\" — ie is read by its second letter, and it is nothing like the English word spelled the same way. ü has no English twin: say \"ee\" and round your lips as though for \"oo\" without moving your tongue. Tür comes out roughly as \"tewr\".",
+      "variations": [
+        {
+          "display": "Das ist die Studentin",
+          "cue": "That is the student",
+          "changed": "a different feminine noun — die holds, because Studentin is feminine too"
+        },
+        {
+          "display": "Die Studentin ist in Berlin",
+          "cue": "The student is in Berlin",
+          "changed": "the article-and-noun moves into the subject slot and sein says where she is"
+        },
+        {
+          "display": "Das ist eine Tür",
+          "cue": "That is a door",
+          "changed": "die → eine: the door we both mean becomes any door at all"
+        }
+      ],
+      "mistake": {
+        "display": "Das ist der Tür",
+        "why": "Tür is feminine, so its article is die. der in front of a noun like this makes it masculine, which Tür is not."
+      },
+      "usage": "Pointing at a thing and naming it — the sentence a shop assistant or a landlord will use on you constantly.",
+      "register": "neutral",
+      "mnemonic": "die and Tür both carry a long thin vowel; pair the sound of the article with the sound of the noun and the gender travels with it."
+    },
+    {
+      "id": "L1-M1-S08",
+      "display": "Das ist das Buch",
+      "cue": "That is the book",
+      "glossEn": "That is the book",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Buch",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "Book — neuter: das Buch. Neuter is the third box English and French have no twin for, which makes it the gender most often guessed wrong; das Buch is worth learning as a single piece. Its plural changes the vowel in the middle — a later rung's job."
+          }
+        ],
+        "rules": [0, 5, 6, 11]
+      },
+      "trap": "This line writes das twice and means something different each time: the first points (\"that\"), the second is the article of a neuter noun (\"the\"). One word, two jobs, and only the position tells you which is which.",
+      "sound": "dass ist dass BOOKH. Buch has a long u, and the ch after it is the rasping sound at the back of the throat you hear in Scottish \"loch\" — a different sound from the soft ch of ich, and which one you get depends on the vowel in front of it.",
+      "variations": [
+        {
+          "display": "Ich mag das Buch",
+          "cue": "I like the book",
+          "changed": "the same das, now doing only the article job after mögen — and the meaning narrows to this one book"
+        },
+        {
+          "display": "Das Buch ist in Berlin",
+          "cue": "The book is in Berlin",
+          "changed": "the article-and-noun becomes the subject and sein locates it"
+        },
+        {
+          "display": "Das ist ein Buch",
+          "cue": "That is a book",
+          "changed": "das → ein: the neuter \"a\" is spelled the same as the masculine one"
+        }
+      ],
+      "mistake": {
+        "display": "Das ist die Buch",
+        "why": "Buch is neuter, so its article is das. die would make it feminine — and neuter is exactly the box an English speaker forgets exists."
+      },
+      "usage": "Pointing at a thing and naming it; and the first place you will see das doing both of its jobs in one breath.",
+      "register": "neutral",
+      "mnemonic": "Das ist das … — when the pointing word and the article match, the noun is neuter."
+    },
+    {
+      "id": "L1-M1-S09",
+      "display": "Das ist ein Tisch",
+      "cue": "That is a table",
+      "glossEn": "That is a table",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ein",
+            "cue": "a (masculine · neuter)",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"A\" in front of a masculine OR a neuter noun: ein Tisch, ein Buch. One shape covers two of the three genders, so it is the article you will write most often. Feminine takes eine. There is no plural of it, for the same reason English has no plural of \"a\". And remember it drops out entirely in front of a bare job after sein: Ich bin Student."
+          }
+        ],
+        "rules": [0, 6, 7, 8]
+      },
+      "trap": "ein and eine look like a small spelling difference and they are not: they are the masculine-and-neuter shape against the feminine one, and the noun decides which you write.",
+      "sound": "dass ist eyn TISH. ei is always \"eye\", so ein rhymes with English \"nine\". Set it beside die from the last card: ei is read by its second letter and so is ie, which is why ein is \"eyn\" and die is \"dee\".",
+      "variations": [
+        {
+          "display": "Das ist ein Kaffee",
+          "cue": "That is a coffee",
+          "changed": "another masculine noun in the same slot — ein holds"
+        },
+        {
+          "display": "Das ist der Tisch",
+          "cue": "That is the table",
+          "changed": "ein → der: any table at all becomes the one we both mean"
+        },
+        {
+          "display": "Ein Student ist in Berlin",
+          "cue": "A student is in Berlin",
+          "changed": "the ein-phrase takes the subject slot, and sein says where he is"
+        }
+      ],
+      "mistake": {
+        "display": "Das ist eine Tisch",
+        "why": "eine is the feminine shape. Tisch is masculine, so it takes ein — the ending on eine is what marks the feminine, and adding it to a masculine noun is the commonest slip in this rung."
+      },
+      "usage": "Naming something for the first time, when neither of you has it in mind yet. Once you both do, it becomes der Tisch.",
+      "register": "neutral",
+      "mnemonic": "ein is one syllable for two genders; eine has one syllable more for the one gender left."
+    },
+    {
+      "id": "L1-M1-S10",
+      "display": "Das ist eine Tür",
+      "cue": "That is a door",
+      "glossEn": "That is a door",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eine",
+            "cue": "a (feminine)",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"A\" in front of a feminine noun: eine Tür, eine Studentin. The -e on the end is the feminine mark, and it is the same -e you can hear in die. In a later rung the masculine ein grows an ending when its noun is the OBJECT of the verb; eine and the neuter ein never change at all, which is what makes the masculine ending so easy to forget."
+          }
+        ],
+        "rules": [0, 6, 7]
+      },
+      "trap": "Two of the three genders share ein and only one has eine — so the odds are against the ending, and English gives you no reason to add it. Anchor it to the noun: Tür is feminine, therefore eine Tür.",
+      "sound": "dass ist EYE-nuh tür. eine is two syllables where ein is one: that final -e is an audible unstressed \"uh\", so the feminine article is genuinely longer in the mouth, not only on the page.",
+      "variations": [
+        {
+          "display": "Das ist eine Studentin",
+          "cue": "That is a student",
+          "changed": "another feminine noun — the -in ending on the noun and the -e on the article agree"
+        },
+        {
+          "display": "Eine Studentin ist in Berlin",
+          "cue": "A student is in Berlin",
+          "changed": "the eine-phrase takes the subject slot and sein says where she is"
+        },
+        {
+          "display": "Das ist die Tür",
+          "cue": "That is the door",
+          "changed": "eine → die: any door at all becomes the one we both mean"
+        }
+      ],
+      "mistake": {
+        "display": "Das ist ein Tür",
+        "why": "Tür is feminine and takes eine. Bare ein would make it masculine or neuter — and dropping the -e is exactly what an English ear, which hears no difference worth keeping, will do."
+      },
+      "usage": "Naming a feminine thing for the first time. The pair to hold in your head is ein Tisch / eine Tür.",
+      "register": "neutral",
+      "mnemonic": "The feminine article is the longer one in both rows: die is longer than der in the mouth, and eine is longer than ein on the page."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M1-C01",
+      "display": "Anna ist Studentin",
+      "cue": "Anna is a student"
+    },
+    {
+      "id": "L1-M1-C02",
+      "display": "Ich bin Studentin",
+      "cue": "I am a student"
+    },
+    {
+      "id": "L1-M1-C03",
+      "display": "Ich mag Berlin",
+      "cue": "I like Berlin"
+    },
+    {
+      "id": "L1-M1-C04",
+      "display": "Ich wohne in Indien",
+      "cue": "I live in India"
+    },
+    {
+      "id": "L1-M1-C05",
+      "display": "Ich komme aus Berlin",
+      "cue": "I am from Berlin"
+    },
+    {
+      "id": "L1-M1-C06",
+      "display": "Ich bin in Berlin",
+      "cue": "I am in Berlin"
+    },
+    {
+      "id": "L1-M1-C07",
+      "display": "Anna ist in Indien",
+      "cue": "Anna is in India"
+    },
+    {
+      "id": "L1-M1-C08",
+      "display": "Das ist ein Student",
+      "cue": "That is a student"
+    },
+    {
+      "id": "L1-M1-C09",
+      "display": "Das ist eine Studentin",
+      "cue": "That is a student"
+    },
+    {
+      "id": "L1-M1-C10",
+      "display": "Das ist ein Buch",
+      "cue": "That is a book"
+    },
+    {
+      "id": "L1-M1-C11",
+      "display": "Das ist der Kaffee",
+      "cue": "That is the coffee"
+    },
+    {
+      "id": "L1-M1-C12",
+      "display": "Anna ist Studentin in Berlin",
+      "cue": "Anna is a student in Berlin"
+    },
+    {
+      "id": "L1-M1-C13",
+      "display": "Ich mag Indien",
+      "cue": "I like India"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

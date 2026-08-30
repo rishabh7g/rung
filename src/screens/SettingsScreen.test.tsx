@@ -1132,11 +1132,15 @@ describe('the eighth course — en-de (#356, still a dev fixture)', () => {
     ]) {
       expect(screen.getByText(title)).toBeInTheDocument();
     }
-    // Nothing is authored, so M1 is the current rung with nothing behind it: no CTA anywhere in
-    // the list, and the pending line counts all ten in en-de's own English (Invariant 2: counts
-    // only). This is the assertion a shipping course cannot make.
+    // M1 is the current rung, and since #362 it is the only rung with a file behind it — so the
+    // list carries exactly ONE call to action, M1's, and the eight titles below M2 are still
+    // pending-authoring rows with nothing to tap. This used to assert zero links, back when the
+    // course was ten placeholder titles (#356); the number is the count of authored rungs the
+    // learner can actually reach, which is why it moves with the authoring issues rather than
+    // being pinned to the ladder's length. The pending line still counts all ten, in en-de's own
+    // English (Invariant 2: counts only), because nothing has been PASSED.
     expect(screen.getByText('M1 · CURRENT RUNG')).toBeInTheDocument();
-    expect(within(screen.getByRole('list')).queryAllByRole('link')).toHaveLength(0);
+    expect(within(screen.getByRole('list')).queryAllByRole('link')).toHaveLength(1);
     expect(screen.getByText('Level 1 · 10 of 10 rungs still to climb.')).toBeInTheDocument();
 
     // Invariant 8: the switch created en-de's subtree and touched nobody else's.

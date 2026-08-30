@@ -194,7 +194,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 70 of them — hi-mr, en-es, en-ar, hi-en, en-fr, en-it and en-ru L1-M1..M10', () => {
+  it('finds all 72 — seven courses at L1-M1..M10, plus en-de\u2019s authored L1-M1..M2', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -206,6 +206,8 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ar/modules/L1-M7.json',
       'content/en-ar/modules/L1-M8.json',
       'content/en-ar/modules/L1-M9.json',
+      'content/en-de/modules/L1-M1.json',
+      'content/en-de/modules/L1-M2.json',
       'content/en-es/modules/L1-M1.json',
       'content/en-es/modules/L1-M10.json',
       'content/en-es/modules/L1-M2.json',
@@ -655,6 +657,130 @@ describe('ModuleContent against the modules that exist', () => {
           expect(TU_REGISTER.has(token), `${where}: "${token}" is tu-register`).toBe(false);
         }
       }
+    }
+  });
+
+  /**
+   * en-de (#356–#365) is en-fr's closest mirror — English L1, another Latin-script L2 — so the
+   * same limit applies: a script regex cannot tell the two sides apart, and "every teaching field
+   * is English" stays a review claim rather than an assertion. What CAN be pinned is everything
+   * the briefs (#361) settled as a RULE, asserted on the shipped files rather than on the briefs
+   * that produced them:
+   *
+   *   • `glossEn` on every sentence — the L2 is not English, so #268's exemption misses this
+   *     course entirely and the build would fail without it,
+   *   • the REGISTER decision, which for German is heavier than en-fr's `vous`: the course speaks
+   *     `Sie`, so no L2 slot ANYWHERE — display, form, variation, mistake or pool item — writes a
+   *     `du`-register word. Unlike en-fr, the mistake plates are held to it too: a `du` form on a
+   *     starred plate is still a `du` form on the learner's screen, and the whole point of the
+   *     decision is that the index never carries a shape the course does not teach,
+   *   • `Ihr` and `Ihnen` capitalised wherever they are written. `src/engine/surface.ts` folds
+   *     case, so the capital is invisible to the index and is the ONLY signal the reader gets;
+   *     a lowercase `ihr` / `ihnen` on the page would be a different word (`her` / `their` /
+   *     `to them`) landing on the same row,
+   *   • the `ß` spellings, never respelled with a double s: `normalizeSurface` does not fold `ß`
+   *     (checked in `surface.test.ts`), so `Maße` and `Masse` are two keys and a respelled word is
+   *     a word the index cannot reach,
+   *   • no ALL-CAPS display, the same seam pointing the other way: an upper-cased `Straße` folds
+   *     to a key that no row owns, so a shouted line would resolve to nothing at all,
+   *   • and the index seams themselves, which are what first-occurrence-wins makes irreversible:
+   *     ONE `sie` row for all three readings and it is L1-M2's, one `der` / `die` / `das` row
+   *     apiece and all three are L1-M1's. A rival row for any of them is unreachable by
+   *     construction — the earlier module keeps the key — so a second row is a note nobody will
+   *     ever be shown, and this is the assertion that catches it at the file level.
+   */
+  it('keeps en-de to the decisions its briefs settled: glossEn, Sie, umlauts, one sie row (#361)', () => {
+    const enDe = MODULE_FILES.filter(([name]) => name.includes('en-de'));
+    /** The `du`-register shapes the course names in prose and never writes (#361 decision 3). */
+    const DU_REGISTER = new Set([
+      'du',
+      'dich',
+      'dir',
+      'dein',
+      'deine',
+      'deinen',
+      'deinem',
+      'deiner',
+      'bist',
+      'hast',
+      'willst',
+      'möchtest',
+      'kommst',
+      'wohnst',
+      'sprichst',
+      'heißt',
+      'hallo',
+      'tschüss',
+    ]);
+    /** Surface → the rows that would open it. Every one of these must have exactly one owner. */
+    const owners = new Map<string, Set<string>>();
+
+    expect(enDe.length, 'the en-de L1 modules authored so far').toBeGreaterThan(0);
+    for (const [file, json] of enDe) {
+      const module = parseModule(json, file);
+
+      /** Every L2 slot, mistake plates included — the register ban reaches all of them. */
+      const l2Slots: [where: string, text: string][] = [];
+      for (const item of module.comprehensionPool) l2Slots.push([item.id, item.display]);
+      for (const sentence of module.sentences) {
+        const at = sentence.id;
+        expect(sentence.glossEn, `${at} glossEn`).toMatch(/\S/);
+        expect(sentence.register, `${at} register`).toBe('neutral');
+        l2Slots.push([at, sentence.display]);
+        for (const variation of sentence.variations ?? []) {
+          l2Slots.push([`${at} variation`, variation.display]);
+        }
+        if (sentence.mistake !== undefined) {
+          l2Slots.push([`${at} mistake`, sentence.mistake.display]);
+        }
+        sentence.deconstruction.words.forEach((word, wordIdx) => {
+          const row = `${module.id} ${at} w${wordIdx}`;
+          l2Slots.push([`${at} word`, word.display]);
+          for (const surface of [word.display, ...word.forms]) {
+            l2Slots.push([`${at} form`, surface]);
+            const key = normalizeSurface(surface);
+            const seats = owners.get(key) ?? new Set<string>();
+            seats.add(row);
+            owners.set(key, seats);
+          }
+        });
+      }
+
+      for (const [where, text] of l2Slots) {
+        for (const raw of text.split(/[\s,.?!]+/)) {
+          const token = raw.trim();
+          if (token === '') continue;
+          expect(
+            DU_REGISTER.has(token.toLowerCase()),
+            `${where}: "${token}" is du-register, and this course speaks Sie`,
+          ).toBe(false);
+          // The capital is the reader's only signal, because the index cannot see it.
+          expect(
+            ['ihr', 'ihre', 'ihnen'].includes(token),
+            `${where}: "${token}" lost its capital`,
+          ).toBe(false);
+          // An all-caps word folds to a key no row owns — decision 2, pointing the other way.
+          expect(
+            token.length > 1 && token === token.toUpperCase() && /\p{L}/u.test(token),
+            `${where}: "${token}" is all capitals`,
+          ).toBe(false);
+        }
+        expect(text, `${where}: ß is never respelled with a double s`).not.toMatch(
+          /heisse|heissen|strasse|gross|dreissig|weiss/i,
+        );
+      }
+    }
+
+    // The seams. One row apiece, on the module the briefs named, or the later note is unreachable.
+    for (const [key, module] of [
+      ['sie', 'L1-M2'],
+      ['der', 'L1-M1'],
+      ['die', 'L1-M1'],
+      ['das', 'L1-M1'],
+    ] as const) {
+      const seats = [...(owners.get(key) ?? new Set<string>())];
+      expect(seats.length, `"${key}" must have exactly one word row: ${seats.join(' | ')}`).toBe(1);
+      expect(seats[0], `"${key}" is ${module}'s`).toContain(module);
     }
   });
 });
