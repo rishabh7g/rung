@@ -6,13 +6,19 @@
  * against a row that has more than the nine required fields, and the newest course last. Shared,
  * so the loader test and the boot tests cannot drift into disagreeing about the shape.
  *
- * **No row carries `fixture`.** en-es graduated in #195, en-ar in #202, hi-en in #273, en-ru in
- * #343, en-it in #337 and en-fr in #331 — every course this repo ships was authored behind the
- * gate and let out of it, and none is behind it now. The Settings smoke
- * (`src/screens/SettingsScreen.test.tsx`) and the authored-rung walks (`hiEnAuthored`,
- * `enRuAuthored`, `enItAuthored`, `enFrAuthored`) reach the later courses through this copy,
- * without a browser. The `fixture` seam itself is still proved, on a synthetic row, in
- * `src/course/manifest.test.ts`.
+ * **Seven rows ship; the eighth is behind the gate.** en-es graduated in #195, en-ar in #202,
+ * hi-en in #273, en-ru in #343, en-it in #337 and en-fr in #331 — every one of those seven courses
+ * was authored behind the gate and let out of it. en-de — English (L1) → German (L2), added as a
+ * dev fixture in #356 — is the one row still behind it, so it carries `fixture: true` until its
+ * graduation issue deletes the key, exactly as hi-en's row did between #267 and #273. It is
+ * therefore also the row that keeps the `fixture` seam exercised against a REAL manifest row
+ * rather than only against the synthetic one in `src/course/manifest.test.ts` — that synthetic
+ * case stays, because the seam has to keep working on the day the catalogue is fully graduated
+ * again and nothing real carries the key.
+ *
+ * The Settings smoke (`src/screens/SettingsScreen.test.tsx`) and the authored-rung walks
+ * (`hiEnAuthored`, `enRuAuthored`, `enItAuthored`, `enFrAuthored`) reach the later courses through
+ * this copy, without a browser.
  */
 import { vi } from 'vitest';
 import { completeStrings } from './courseStrings.ts';
@@ -100,6 +106,22 @@ export const DEV_MANIFEST = {
       pairLabel: 'english → french',
       scriptMode: 'native',
       dir: 'ltr',
+    },
+    {
+      // The one row still behind the gate (#356). `fixture: true` is carried here rather than
+      // stripped because the app has to meet the row exactly as the dev build emits it: the
+      // switcher, `resolveActiveCourse` and every screen below them must go on never branching
+      // on the key, and a fixture stripped of it could not prove that.
+      id: 'en-de',
+      l1: 'English',
+      l2: 'German',
+      l1Tag: 'en',
+      l2Tag: 'de',
+      l2Dir: 'ltr',
+      pairLabel: 'english → german',
+      scriptMode: 'native',
+      dir: 'ltr',
+      fixture: true,
     },
   ],
 } as const;
