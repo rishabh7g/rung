@@ -311,6 +311,41 @@ describe('Sentence Detail over the authored en-it rungs', () => {
     expect(within(words).getByText('stanco')).toBeInTheDocument();
     expect(within(words).getByText('stanco · stanca · stanchi · stanche')).toBeInTheDocument();
   });
+
+  it("renders M10's turns whole — two or three sentences to a card, per-sentence bounds intact", async () => {
+    await renderRung('L1-M10', '#/module/L1-M10');
+    const turns = module('L1-M10');
+    await screen.findByText(turns.sentences[0]!.display);
+
+    // The card is the TURN, not the sentence: each display carries its own 2-3 sentences and the
+    // list still holds exactly ten of them (#111 / #194 - the format needed no schema change).
+    for (const sentence of turns.sentences) {
+      expect(screen.getByText(sentence.display), sentence.id).toBeInTheDocument();
+      const parts = sentence.display.split(/(?<=[.?!])\s+/).filter((part) => part !== '');
+      expect(parts.length, `${sentence.id} is a turn`).toBeGreaterThanOrEqual(2);
+      for (const part of parts) {
+        expect(part.split(/\s+/).length, `${sentence.id}: "${part}"`).toBeLessThanOrEqual(
+          turns.complexity.maxWordsPerSentence,
+        );
+      }
+    }
+  });
+
+  it('shows L1-M10-S06 - lui and lei as two rows, taught where a turn switches person', async () => {
+    await renderRung('L1-M10', '#/sentence/L1-M10-S06');
+
+    const hero = await screen.findByRole('heading', { level: 2 });
+    expect(hero).toHaveTextContent(
+      'Anna è italiana: lei è di Roma. Rohan è indiano: lui è di Delhi.',
+    );
+
+    const words = section('words');
+    expect(within(words).getByText('lei')).toBeInTheDocument();
+    expect(within(words).getByText('lui')).toBeInTheDocument();
+    expect(
+      within(words).getByText(/the polite "you", which this course does not teach/),
+    ).toBeInTheDocument();
+  });
 });
 
 /* ------------------------------------------------------------------- the Why panel */

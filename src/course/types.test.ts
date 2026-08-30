@@ -194,7 +194,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 35 of them — hi-mr, en-es, en-ar and hi-en L1-M1..M10, plus the 5 en-it modules authored so far', () => {
+  it('finds all 40 of them — hi-mr, en-es, en-ar and hi-en L1-M1..M10, plus the 10 en-it modules authored so far', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -217,10 +217,15 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-es/modules/L1-M8.json',
       'content/en-es/modules/L1-M9.json',
       'content/en-it/modules/L1-M1.json',
+      'content/en-it/modules/L1-M10.json',
       'content/en-it/modules/L1-M2.json',
       'content/en-it/modules/L1-M3.json',
       'content/en-it/modules/L1-M4.json',
       'content/en-it/modules/L1-M5.json',
+      'content/en-it/modules/L1-M6.json',
+      'content/en-it/modules/L1-M7.json',
+      'content/en-it/modules/L1-M8.json',
+      'content/en-it/modules/L1-M9.json',
       'content/hi-en/modules/L1-M1.json',
       'content/hi-en/modules/L1-M10.json',
       'content/hi-en/modules/L1-M2.json',
