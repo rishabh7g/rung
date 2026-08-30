@@ -183,7 +183,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all forty-two — hi-mr, en-es, en-ar and hi-en L1-M1..M10, and en-fr as far as it is authored', () => {
+  it('finds all forty-five — hi-mr, en-es, en-ar and hi-en L1-M1..M10, and en-fr as far as it is authored', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -207,6 +207,9 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-es/modules/L1-M9.json',
       'content/en-fr/modules/L1-M1.json',
       'content/en-fr/modules/L1-M2.json',
+      'content/en-fr/modules/L1-M3.json',
+      'content/en-fr/modules/L1-M4.json',
+      'content/en-fr/modules/L1-M5.json',
       'content/hi-en/modules/L1-M1.json',
       'content/hi-en/modules/L1-M10.json',
       'content/hi-en/modules/L1-M2.json',

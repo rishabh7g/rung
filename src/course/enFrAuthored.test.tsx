@@ -42,7 +42,7 @@ import type { Levels, ModuleContent, WordIndex, WordIndexEntry } from './types.t
 
 const COURSE = 'en-fr';
 /** The rungs authored so far, in ladder order — the fold below is cumulative over this list. */
-const AUTHORED = ['L1-M1', 'L1-M2'] as const;
+const AUTHORED = ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5'] as const;
 
 const FILES = import.meta.glob<string>('../../content/en-fr/**/*.json', {
   query: '?raw',
@@ -374,5 +374,109 @@ describe('the Why panel over an en-fr comprehension item', () => {
     ]);
     // The singular resolves to the row that lists both shapes — not to a second, unreachable row.
     expect(within(rows[2]!).getByText('book · books')).toBeInTheDocument();
+  });
+
+  /* --------------------------------------------------- the middle three rungs (#329) */
+
+  it('answers `Je ne veux pas de lait` with the negation as two rows and de on M1 row', async () => {
+    await renderPanel('L1-M3-C11', 'Je ne veux pas de lait');
+    fireEvent.click(screen.getByRole('button', { name: 'why' }));
+
+    await screen.findByText('not (first half)');
+    const rows = whyRows('not (first half)');
+    // ne and pas are TWO rows, one on each side of the verb — the shape the module exists for.
+    expect(rows).toHaveLength(6);
+    expect(rows.map((row) => row.textContent)).toEqual([
+      expect.stringContaining('Je'),
+      expect.stringContaining('ne'),
+      expect.stringContaining('veux'),
+      expect.stringContaining('pas'),
+      expect.stringContaining('de'),
+      expect.stringContaining('lait'),
+    ]);
+    // The bare de behind the negation lands on M1's row, whose note was written for this seat.
+    expect(within(rows[4]!).getByText('from · of')).toBeInTheDocument();
+    // `voulez` and `veux` are one row: the tap opens the paradigm, not the shape that opened it.
+    expect(within(rows[2]!).getByText('want')).toBeInTheDocument();
+  });
+
+  it('answers `Vous vous levez à quelle heure ?` with the reflexive and the phrase whole', async () => {
+    await renderPanel('L1-M4-C04', 'Vous vous levez à quelle heure ?');
+    fireEvent.click(screen.getByRole('button', { name: 'why' }));
+
+    await screen.findByText('at what time');
+    const rows = whyRows('at what time');
+    // Three rows, not five: `vous levez` is the reflexive verb taken whole, and `à quelle heure`
+    // is a three-token surface — so neither `à` nor `heure` is torn out of it.
+    expect(rows).toHaveLength(3);
+    expect(rows.map((row) => row.textContent)).toEqual([
+      expect.stringContaining('Vous'),
+      expect.stringContaining('me lève'),
+      expect.stringContaining('à quelle heure'),
+    ]);
+    expect(within(rows[1]!).getByText('get up · gets up')).toBeInTheDocument();
+  });
+
+  it("answers `Vous avez vu le film ?` with avez on M5's one avoir row", async () => {
+    await renderPanel('L1-M5-C09', 'Vous avez vu le film ?');
+    fireEvent.click(screen.getByRole('button', { name: 'why' }));
+
+    await screen.findByText('have · has');
+    const rows = whyRows('have · has');
+    expect(rows).toHaveLength(5);
+    expect(rows.map((row) => row.textContent)).toEqual([
+      expect.stringContaining('Vous'),
+      expect.stringContaining("j'ai"),
+      expect.stringContaining('vu'),
+      expect.stringContaining('le'),
+      expect.stringContaining('film'),
+    ]);
+    // The auxiliary row was written true of both its jobs, so a tap here is not told "I have".
+    expect(within(rows[1]!).getByText(/plain possession/)).toBeInTheDocument();
+  });
+});
+
+/* ------------------------------------------------- Sentence Detail, the middle rungs */
+
+describe('Sentence Detail over L1-M3, L1-M4 and L1-M5', () => {
+  it.each([
+    {
+      sentenceId: 'L1-M3-S07',
+      hero: 'Je ne veux pas de café',
+      literal: 'I not want not of coffee',
+      word: 'ne',
+      cue: 'not (first half)',
+      mistake: 'Je ne veux pas du café',
+    },
+    {
+      sentenceId: 'L1-M4-S10',
+      hero: "Je bois de l'eau",
+      literal: 'I drink of the-water',
+      word: "l'eau",
+      cue: 'the water',
+      mistake: 'Je bois de la eau',
+    },
+    {
+      sentenceId: 'L1-M5-S05',
+      hero: "Je n'ai pas mangé hier",
+      literal: 'I not-have not eaten yesterday',
+      word: "n'ai",
+      cue: 'have not (first half)',
+      mistake: "Je n'ai mangé pas hier",
+    },
+  ])('renders $sentenceId with its fused rows and its mistake plate', async (expected) => {
+    serveAuthoredEnFr();
+    activateEnFr();
+    passRungsBefore(expected.sentenceId.slice(0, 5));
+    window.location.hash = `#/sentence/${expected.sentenceId}`;
+    render(<App />);
+    await screen.findByRole('main');
+
+    expect(await screen.findByRole('heading', { level: 2 })).toHaveTextContent(expected.hero);
+    expect(within(section('gloss')).getByText(expected.literal)).toBeInTheDocument();
+    const words = section('words');
+    expect(within(words).getByText(expected.word)).toBeInTheDocument();
+    expect(within(words).getByText(expected.cue)).toBeInTheDocument();
+    expect(within(section('mistake')).getByText(expected.mistake)).toBeInTheDocument();
   });
 });

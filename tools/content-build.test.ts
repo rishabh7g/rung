@@ -1639,8 +1639,34 @@ describe('the romanized edge cases (#116, [Q3])', () => {
     expect(row('française')).toBe(row('français'));
     expect(row('livre')).toBe(row('livres'));
     expect(row('fatiguée')).toBe(row('fatigué'));
-    // Keys the briefs reserve for later modules are still free after M2.
-    for (const reserved of ["c'est", 'combien', 'pas', 'ne', 'du', 'il', 'elle', 'où', 'demain']) {
+    expect(row('mangez')).toBe(row('mange'));
+    expect(row('buvez')).toBe(row('bois'));
+    expect(row('travaillez')).toBe(row('travaille'));
+    expect(row('voulez')).toBe(row('veux'));
+    expect(row('allée')).toBe(row('allé'));
+    expect(row('restée')).toBe(row('resté'));
+    expect(row('avez')).toBe(row("j'ai"));
+    expect(row('vous levez')).toBe(row('me lève'));
+    // …and the shapes that are NOT forms of one word keep their own rows: the bare form, the
+    // present and the participle of one verb are three surfaces with three different jobs, and
+    // the accent is the whole difference between the last two (M4's mange, M5's mangé).
+    expect(row('manger')).not.toBe(row('mange'));
+    expect(row('mangé')).not.toBe(row('mange'));
+    expect(row('travailler')).not.toBe(row('travaille'));
+    expect(row('travaillé')).not.toBe(row('travaille'));
+    expect(row('boire')).not.toBe(row('bois'));
+    // The negation is two rows, one on each side of the verb, and its elided shape is a third.
+    expect(row('ne')).toBe('L1-M3-S07#0');
+    expect(row('pas')).toBe('L1-M3-S07#1');
+    expect(row("n'ai")).toBe('L1-M5-S05#0');
+    expect(row("n'ai")).not.toBe(row("j'ai"));
+    // The partitive rows M7 will inherit, and the à whose note was written for both its seats.
+    expect(row('du')).toBe('L1-M3-S02#0');
+    expect(row('de la')).toBe('L1-M3-S03#0');
+    expect(row('des')).toBe('L1-M3-S04#0');
+    expect(row('à')).toBe('L1-M4-S01#1');
+    // Keys the briefs reserve for later modules are still free after M5.
+    for (const reserved of ["c'est", 'combien', 'il', 'elle', 'où', 'demain', 'vais', 'sur']) {
       expect(Object.hasOwn(index.surfaces, reserved), `${reserved} is a later module's`).toBe(
         false,
       );
@@ -1913,7 +1939,7 @@ describe('the authored content', () => {
       'L1-M10',
     ];
     /** en-fr's rungs, as far as they are authored — the list grows with #329 and #330. */
-    const EN_FR = ['L1-M1', 'L1-M2'];
+    const EN_FR = ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5'];
 
     expect(report.exitCode).toBe(0);
     expect([...report.shipped]).toEqual([
@@ -1931,18 +1957,16 @@ describe('the authored content', () => {
     // en-fr's row is admitted by `--with-fixtures`, and since #328 it has rungs to ship: the
     // course is still a fixture in `content/courses.json`, so this relaxation is the ONLY way
     // its modules reach a build at all until the graduation issue deletes the flag.
-    expect(report.lines).toContain('en-fr: 2 modules (L1-M1..M2)');
+    expect(report.lines).toContain('en-fr: 5 modules (L1-M1..M5)');
     expect(report.lines).toContain(
-      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10), en-fr 2 modules (L1-M1..M2)',
+      'CONTENT build: hi-mr 10 modules (L1-M1..M10), en-es 10 modules (L1-M1..M10), en-ar 10 modules (L1-M1..M10), hi-en 10 modules (L1-M1..M10), en-fr 5 modules (L1-M1..M5)',
     );
     // The dev tree carries the fifth course's authored rungs and their cumulative indexes.
     for (const file of [
       'en-fr/levels.json',
       'en-fr/strings.json',
-      'en-fr/modules/L1-M1.json',
-      'en-fr/modules/L1-M2.json',
-      'en-fr/index/L1-M1.json',
-      'en-fr/index/L1-M2.json',
+      ...EN_FR.map((id) => `en-fr/modules/${id}.json`),
+      ...EN_FR.map((id) => `en-fr/index/${id}.json`),
     ]) {
       expect(existsSync(path.join(outRoot, ...file.split('/'))), file).toBe(true);
     }
