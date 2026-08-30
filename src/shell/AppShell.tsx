@@ -30,6 +30,7 @@ import { useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { ChevronLeft, X } from 'lucide-react';
 import { BRAND } from '../brand.ts';
+import { useStrings } from '../course/strings.ts';
 import { BottomNav } from './BottomNav.tsx';
 import { RailsMark } from './RailsMark.tsx';
 import { useImmersive } from './immersive.tsx';
@@ -39,6 +40,7 @@ import styles from './AppShell.module.css';
 
 export function AppShell() {
   const { immersive, exitSession } = useImmersive();
+  const strings = useStrings();
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const route = matchShellRoute(pathname);
@@ -69,7 +71,7 @@ export function AppShell() {
             type="button"
             className={styles.pause}
             onClick={pauseSession}
-            aria-label="Pause session"
+            aria-label={strings['a11y.pauseSession']}
           >
             <X className={styles.icon} />
           </button>

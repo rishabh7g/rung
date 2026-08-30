@@ -354,7 +354,7 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
       {/* The pager: within this module, and bounded by it. `replace`, because prev/next is one
           screen paging rather than ten destinations — the back chevron still returns to the
           module the learner came from, not to the sentence before this one. */}
-      <nav className={styles.pager} aria-label="Sentences in this module">
+      <nav className={styles.pager} aria-label={strings['a11y.sentencePager']}>
         <button
           type="button"
           className={styles.step}

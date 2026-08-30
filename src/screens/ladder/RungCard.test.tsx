@@ -16,7 +16,7 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
-import { StringsContext, type Strings } from '../../course/strings.ts';
+import { interpolate, StringsContext, type Strings } from '../../course/strings.ts';
 import { STRINGS_KEYS } from '../../course/stringsKeys.ts';
 import type { RungStage } from '../../engine/progression.ts';
 import { stringValue } from '../../test/courseStrings.ts';
@@ -115,7 +115,9 @@ describe.each(STAGES)('the $stage stage', ({ stage, ctas: expected }) => {
   it('is still the rung’s card: kicker, title and job', () => {
     renderCard(stage);
 
-    expect(screen.getByText('M3 · CURRENT RUNG')).toBeInTheDocument();
+    expect(
+      screen.getByText(interpolate(copy('rungCard.currentRung'), { rung: 'M3' })),
+    ).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 2 }).textContent).toBe('Needs and wants');
     expect(screen.getByText('Say what you want')).toBeInTheDocument();
   });

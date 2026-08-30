@@ -24,7 +24,7 @@ import App from '../App.tsx';
 import { COMMIT_WINDOW_MS } from '../components/useCommitWindow.ts';
 import { resetContentCache } from '../course/content.ts';
 import { resetManifestCache } from '../course/manifest.ts';
-import { resetStringsCache } from '../course/strings.ts';
+import { interpolate, resetStringsCache } from '../course/strings.ts';
 import { handover, justPassed } from '../shell/routes.tsx';
 import { useAppStore } from '../state/store.ts';
 import { DEV_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
@@ -34,8 +34,9 @@ import { stringValue } from '../test/courseStrings.ts';
 const COURSE = 'hi-mr';
 /** The fixture ladder's current rung, and the one this verdict is always about. */
 const CURRENT = 'L1-M1';
-/** The rung it opens — the fixture's L1 is `L1-M1`, `L1-M2`, `L1-M3` — as the Ladder prints it. */
-const NEXT_KICKER = 'M2 · CURRENT RUNG';
+/** The rung it opens — the fixture's L1 is `L1-M1`, `L1-M2`, `L1-M3` — as the Ladder prints it,
+    which since #351 is through the course's own `rungCard.currentRung`. */
+const NEXT_KICKER = interpolate(stringValue(COURSE, 'rungCard.currentRung'), { rung: 'M2' });
 
 /** What the fixture bundle says for a key — the self-identifying value an assertion reads. */
 function strings(key: string): string {
@@ -205,8 +206,10 @@ describe('the checklist is the learner’s receipt, in the course’s own words'
     await renderAt('#/verdict', handover('comprehension'));
     const main = await verdict();
 
-    expect(within(main).getByRole('heading', { level: 2 }).textContent).toBe('M1 · Passed');
-    expect(within(main).getByText('EXIT RITUAL COMPLETE')).toBeVisible();
+    expect(within(main).getByRole('heading', { level: 2 }).textContent).toBe(
+      interpolate(strings('verdict.passedRung'), { rung: 'M1' }),
+    );
+    expect(within(main).getByText(strings('verdict.ritualComplete'))).toBeVisible();
   });
 
   it('drops the closing line at the top of the ladder — nothing opened, so nothing is named', async () => {
@@ -347,9 +350,9 @@ describe('the loop closes: produced rung → ritual → comprehension → verdic
     await waitFor(() => expect(flag()).toBeNull());
 
     // And a revisit is a Ladder with nothing to celebrate: same rung, no beat.
-    fireEvent.click(screen.getByRole('link', { name: 'Practice' }));
+    fireEvent.click(screen.getByRole('link', { name: strings('nav.practice') }));
     await screen.findByText(strings('practice.hubTitle'));
-    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
+    fireEvent.click(screen.getByRole('link', { name: strings('nav.ladder') }));
 
     expect(await screen.findByText(NEXT_KICKER)).toBeVisible();
     expect(document.querySelector('[data-beat="rung"]')).toBeNull();

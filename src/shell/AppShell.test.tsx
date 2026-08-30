@@ -81,9 +81,18 @@ function produceRung(): void {
   }
 }
 
+/**
+ * The three tab labels, in nav order — the fixture bundle's values, because the nav's words are
+ * the course's now (`nav.*`, #351) and a test that spelled them in English would be asserting
+ * against the one thing that ticket removed.
+ */
+const TAB_LABELS = ['nav.ladder', 'nav.practice', 'nav.settings'].map((key) =>
+  stringValue('hi-mr', key),
+);
+
 /** The tab links, in nav order — scoped to the nav, because screens have links of their own. */
 function tabs(): string[] {
-  return within(screen.getByRole('navigation', { name: 'Primary' }))
+  return within(screen.getByRole('navigation', { name: stringValue('hi-mr', 'a11y.primaryNav') }))
     .getAllByRole('link')
     .map((link) => link.textContent ?? '');
 }
@@ -105,30 +114,35 @@ describe('bottom nav', () => {
   it('renders exactly the three tabs of the IA', async () => {
     await renderAt('#/');
 
-    expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument();
-    expect(tabs()).toEqual(['Ladder', 'Practice', 'Settings']);
+    expect(
+      screen.getByRole('navigation', { name: stringValue('hi-mr', 'a11y.primaryNav') }),
+    ).toBeInTheDocument();
+    expect(tabs()).toEqual(TAB_LABELS);
   });
 
   it('routes to each tab, and marks the one you are on', async () => {
     await renderAt('#/');
-    expect(screen.getByRole('link', { name: 'Ladder' })).toHaveAttribute('aria-current', 'page');
+    const [ladder, practice, settings] = TAB_LABELS;
+    expect(screen.getByRole('link', { name: ladder })).toHaveAttribute('aria-current', 'page');
 
-    fireEvent.click(screen.getByRole('link', { name: 'Practice' }));
+    fireEvent.click(screen.getByRole('link', { name: practice }));
     expect(await screen.findByText(stringValue('hi-mr', 'practice.hubTitle'))).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Practice' })).toHaveAttribute('aria-current', 'page');
-    expect(screen.getByRole('link', { name: 'Ladder' })).not.toHaveAttribute('aria-current');
+    expect(screen.getByRole('link', { name: practice })).toHaveAttribute('aria-current', 'page');
+    expect(screen.getByRole('link', { name: ladder })).not.toHaveAttribute('aria-current');
 
-    fireEvent.click(screen.getByRole('link', { name: 'Settings' }));
-    expect(await screen.findByRole('heading', { name: 'Settings' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('link', { name: settings }));
+    expect(
+      await screen.findByRole('heading', { name: stringValue('hi-mr', 'settings.title') }),
+    ).toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole('link', { name: 'Ladder' }));
+    fireEvent.click(screen.getByRole('link', { name: ladder }));
     expect(await screen.findByRole('heading', { level: 1, name: BRAND })).toBeInTheDocument();
   });
 
   it('is icon-only, but every tab is still reachable by its accessible name and carries a title (#245)', async () => {
     await renderAt('#/');
 
-    for (const label of ['Ladder', 'Practice', 'Settings']) {
+    for (const label of TAB_LABELS) {
       const link = screen.getByRole('link', { name: label });
       expect(link).toHaveAttribute('title', label);
     }
@@ -147,7 +161,9 @@ describe('routes', () => {
     // Something rendered, and it was not the redirect: the location is still where we asked.
     expect(screen.getByRole('main')).not.toBeEmptyDOMElement();
     expect(window.location.hash).toBe(hash);
-    expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('navigation', { name: stringValue('hi-mr', 'a11y.primaryNav') }),
+    ).toBeInTheDocument();
   });
 
   it('sends an unknown route to the Ladder, replacing it', async () => {
@@ -213,14 +229,20 @@ describe('headers', () => {
 describe('immersive mode', () => {
   it('hides the nav entirely and always offers the pause ✕', async () => {
     await renderAt('#/practice');
-    expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument();
-    expect(screen.queryByRole('button', { name: 'Pause session' })).not.toBeInTheDocument();
+    expect(
+      screen.getByRole('navigation', { name: stringValue('hi-mr', 'a11y.primaryNav') }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: stringValue('hi-mr', 'a11y.pauseSession') }),
+    ).not.toBeInTheDocument();
 
     await beginSession();
 
     expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
     expect(screen.queryByRole('link')).not.toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Pause session' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: stringValue('hi-mr', 'a11y.pauseSession') }),
+    ).toBeInTheDocument();
     // No brand, no back chevron — the ✕ is the only chrome a session has.
     expect(screen.queryByRole('heading', { level: 1 })).not.toBeInTheDocument();
   });
@@ -229,7 +251,9 @@ describe('immersive mode', () => {
     await renderAt('#/practice');
     await beginSession();
 
-    fireEvent.click(screen.getByRole('button', { name: 'Pause session' }));
+    fireEvent.click(
+      screen.getByRole('button', { name: stringValue('hi-mr', 'a11y.pauseSession') }),
+    );
 
     expect(await screen.findByText(stringValue('hi-mr', 'practice.hubTitle'))).toBeInTheDocument();
     // The hub, with the session it just left still standing: since #99 the CTA slot holds the
@@ -237,7 +261,9 @@ describe('immersive mode', () => {
     expect(
       screen.getByRole('button', { name: stringValue('hi-mr', 'practice.resumeContinue') }),
     ).toBeInTheDocument();
-    expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('navigation', { name: stringValue('hi-mr', 'a11y.primaryNav') }),
+    ).toBeInTheDocument();
     expect(window.location.hash).toBe('#/practice');
   });
 
@@ -249,8 +275,12 @@ describe('immersive mode', () => {
     window.location.hash = '#/settings';
 
     await waitFor(() => {
-      expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument();
+      expect(
+        screen.getByRole('navigation', { name: stringValue('hi-mr', 'a11y.primaryNav') }),
+      ).toBeInTheDocument();
     });
-    expect(screen.queryByRole('button', { name: 'Pause session' })).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: stringValue('hi-mr', 'a11y.pauseSession') }),
+    ).not.toBeInTheDocument();
   });
 });

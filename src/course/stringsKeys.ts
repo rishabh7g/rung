@@ -33,12 +33,15 @@
 
 /**
  * Every key of a complete bundle, in file order (so validator output reads top-to-bottom like the
- * file it is complaining about).
+ * file it is complaining about) — save for the chrome block at the end (#351), which the authored
+ * files nest into the groups it belongs to rather than repeating them.
  *
- * A key earns its place here on ONE test: the shell would otherwise have to hardcode a
- * learner-facing sentence, which is the one thing this list exists to prevent. Everything that is
- * furniture — section labels, kickers, technical detail — stays English in the shell and never
- * appears below.
+ * A key earns its place here on ONE test: **does a learner read it?** It used to be the narrower
+ * "would the shell otherwise hardcode a learner-facing SENTENCE", with section labels, kickers and
+ * tab names left out as English furniture — a distinction that survived only as long as every
+ * course read English. #351 retired it: see the chrome block's note in `STRINGS_PLACEHOLDERS`.
+ * What is still out is what no bundle could serve — `BootScreens` (it renders before one is
+ * loaded), the manifest's own names (data), and technical detail like an import's failure reason.
  *
  * The per-key grouping and reasoning live in `STRINGS_PLACEHOLDERS` below, beside the rows they
  * are about; the removals live in `docs/design-contract.md`.
@@ -107,6 +110,39 @@ export const STRINGS_KEYS = [
   'settings.importFailed',
   'switchToast',
   'importToast',
+  /* --------------------------------------------------- the chrome (#351), appended together */
+  'nav.ladder',
+  'nav.practice',
+  'nav.settings',
+  'ladder.positionLine',
+  'ladder.passed',
+  'levelStrip.level',
+  'rungCard.currentRung',
+  'verdict.ritualComplete',
+  'verdict.passedRung',
+  'settings.title',
+  'settings.kicker.language',
+  'settings.kicker.course',
+  'settings.kicker.practice',
+  'settings.kicker.storage',
+  'settings.activeCourse',
+  'settings.tick.title',
+  'settings.tick.note',
+  'settings.tick.on',
+  'settings.tick.off',
+  'settings.storage.meter',
+  'settings.storage.courseRow',
+  'settings.storage.progressRow',
+  'settings.backup.title',
+  'settings.backup.export',
+  'settings.backup.import',
+  'settings.backup.onDevice',
+  'settings.backup.inFile',
+  'settings.backup.counts',
+  'a11y.primaryNav',
+  'a11y.pauseSession',
+  'a11y.storageMeter',
+  'a11y.sentencePager',
 ] as const;
 
 /** A dot-path into strings.json — the union of the canonical list. */
@@ -433,4 +469,107 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   switchToast: ['{to}', '{from}'],
   /** The Ladder's arrival toast after a restore (#108) — a landing, so no number and no name. */
   importToast: [],
+  /* ------------------------------------------------------------------- the chrome (#351) */
+  /**
+   * **The chrome** — the layer this list spent its first ninety keys deliberately excluding, and
+   * the one place the exclusion turned out to be wrong.
+   *
+   * The rule above ("everything that is furniture — section labels, kickers, technical detail —
+   * stays English in the shell") was written about the SHELL: labels that name the app's own
+   * machinery to whoever is reading the code, in a register no learner was expected to dwell on.
+   * It held while every course read English. It stopped holding the moment hi-en and hi-mr
+   * shipped: a Hindi-L1 learner opening the app met `Ladder`, `Practice`, `Settings`, `LEVEL 1 ·
+   * 2 OF 10`, `PASSED` and a Settings screen in a language the course exists to teach them out
+   * of. Furniture a learner cannot read is not furniture, it is the first screen — so the test a
+   * key must pass is not "is this a sentence" but "does a learner read it".
+   *
+   * Every row below fails that second test in English and passes it here. What is still excluded
+   * is what genuinely never reaches a learner in their own language: `BootScreens` (it renders
+   * BEFORE any bundle is loaded, so a key it read would not exist yet), the manifest's own `l1` /
+   * `l2` / `pairLabel` names (data, interpolated as `{course}` below), and `ImportError`'s
+   * path-naming reason (a technical detail, shown under the course's friendly line).
+   *
+   * **The ALL-CAPS kickers keep their key and their CSS.** The capitals live in the authored
+   * English, not in a `text-transform` — Devanagari has no capitals and any transform is a no-op
+   * on it — so the hi-* bundles author the same keys as ordinary Devanagari and the letter-spacing
+   * that makes a kicker a kicker is unchanged. No per-script styling, one key per label.
+   *
+   * The block is appended whole rather than interleaved, so it reads as the one decision it is.
+   */
+  'nav.ladder': [],
+  'nav.practice': [],
+  'nav.settings': [],
+  /**
+   * The Ladder's position line and its passed marker (#86) — counts, never time (Invariant 2),
+   * and the same derivation `ladder.pendingLine` above interpolates. `positionLine` names all
+   * three numbers because where a count sits in a sentence is the language's business; `passed`
+   * is the status word on a climbed rung's row and carries none, the count being the line above.
+   */
+  'ladder.positionLine': ['{level}', '{passed}', '{total}'],
+  'ladder.passed': [],
+  /** One cell's own number, in the strip's tighter register than the position line's. */
+  'levelStrip.level': ['{level}'],
+  /**
+   * The staged rung card's kicker [D22] — `{rung}` is the shell-rendered rung label ("M3", from
+   * `rungLabel`), never an id the course must parse, exactly as `settings.statusLine` takes it.
+   */
+  'rungCard.currentRung': ['{rung}'],
+  /**
+   * The Verdict's two head lines (#103) — the kicker that says the ritual is over, and the rung
+   * it was over for. `passedRung` takes the same shell-rendered `{rung}` the card's kicker does;
+   * it is a separate key from `ladder.passed` because one is a row's status marker in a list and
+   * the other is a screen's title, and a course may want a fuller word for the second.
+   */
+  'verdict.ritualComplete': [],
+  'verdict.passedRung': ['{rung}'],
+  /**
+   * **Settings, all of it** (#105, #107, #108) — the screen a learner opens to change their own
+   * language, which is the one screen that cannot be in a language they may not have.
+   *
+   * The title and the four section kickers are the frozen F6 order named in the course's words;
+   * `activeCourse` labels the dropdown (its OPTIONS stay manifest data, as `settings.yourLanguage`
+   * above already records). `tick.*` is #98's one sanctioned time affordance — the row title, the
+   * note that says what the line does, and the two segment labels, which are separate keys because
+   * they are two states rather than one toggle's name.
+   *
+   * `storage.*` is #107's computed section: the meter's caption over the browser's own two numbers
+   * (`{used}` / `{quota}`, formatted by `formatBytes` — the shell renders the unit, the course
+   * renders the sentence around it), one row label per manifest course (`{course}` is that row's
+   * `pairLabel`, data), and the progress row that is every course at once. `backup.*` is #108's:
+   * the section title, its two buttons, and the confirm's two sides — `onDevice` / `inFile` label
+   * the halves and `counts` is the pair of numbers under each, one key because "2 passed · 5
+   * sessions" is one line whose word order is the language's.
+   */
+  'settings.title': [],
+  'settings.kicker.language': [],
+  'settings.kicker.course': [],
+  'settings.kicker.practice': [],
+  'settings.kicker.storage': [],
+  'settings.activeCourse': [],
+  'settings.tick.title': [],
+  'settings.tick.note': [],
+  'settings.tick.on': [],
+  'settings.tick.off': [],
+  'settings.storage.meter': ['{used}', '{quota}'],
+  'settings.storage.courseRow': ['{course}'],
+  'settings.storage.progressRow': [],
+  'settings.backup.title': [],
+  'settings.backup.export': [],
+  'settings.backup.import': [],
+  'settings.backup.onDevice': [],
+  'settings.backup.inFile': [],
+  'settings.backup.counts': ['{passed}', '{sessions}'],
+  /**
+   * The four accessible names nothing draws (#84, #107) — the nav's landmark, the immersive
+   * header's pause ✕, the storage meter's `role="meter"`, and Sentence Detail's pager landmark.
+   *
+   * They are course copy for the reason the visible labels are, only more so: a screen reader is
+   * the one surface where the label IS the interface, and a Hindi learner navigating by landmark
+   * heard four English words with no picture beside them to recover the meaning from. None
+   * interpolates — an accessible name that carried a runtime value would be a live region.
+   */
+  'a11y.primaryNav': [],
+  'a11y.pauseSession': [],
+  'a11y.storageMeter': [],
+  'a11y.sentencePager': [],
 };

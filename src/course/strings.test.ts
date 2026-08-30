@@ -166,6 +166,10 @@ describe('interpolate', () => {
       count: 5,
       phase: 'produce',
       rung: 'M3',
+      used: '1.2 MB',
+      quota: '50 MB',
+      course: 'hindi → marathi',
+      sessions: 4,
     };
 
     for (const key of STRINGS_KEYS) {

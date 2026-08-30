@@ -20,7 +20,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from '../App.tsx';
 import { resetContentCache } from '../course/content.ts';
 import { resetManifestCache } from '../course/manifest.ts';
-import { resetStringsCache } from '../course/strings.ts';
+import { interpolate, resetStringsCache } from '../course/strings.ts';
 import { ladderFromLevels } from '../engine/progression.ts';
 import { useAppStore } from '../state/store.ts';
 import { DEV_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
@@ -164,7 +164,9 @@ describe('the guard', () => {
 
     // The Ladder, not the module: its current-rung card is the thing that proves which screen
     // this is, and the route replaced the bad entry rather than pushing over it.
-    expect(await screen.findByText('M1 · CURRENT RUNG')).toBeInTheDocument();
+    expect(
+      await screen.findByText(interpolate(strings('rungCard.currentRung'), { rung: 'M1' })),
+    ).toBeInTheDocument();
     expect(window.location.hash).toBe('#/');
     expect(screen.queryByText('M2 · MODULE')).not.toBeInTheDocument();
   });
@@ -172,7 +174,9 @@ describe('the guard', () => {
   it('sends an id the ladder does not list back to the Ladder too', async () => {
     await renderAt('#/module/L9-M9');
 
-    expect(await screen.findByText('M1 · CURRENT RUNG')).toBeInTheDocument();
+    expect(
+      await screen.findByText(interpolate(strings('rungCard.currentRung'), { rung: 'M1' })),
+    ).toBeInTheDocument();
     expect(window.location.hash).toBe('#/');
   });
 });
@@ -212,7 +216,7 @@ describe('markStudied', () => {
     const markStudied = spyOnMarkStudied();
 
     await renderAt(`#/module/${LOCKED}`);
-    await screen.findByText('M1 · CURRENT RUNG');
+    await screen.findByText(interpolate(strings('rungCard.currentRung'), { rung: 'M1' }));
 
     expect(markStudied).not.toHaveBeenCalled();
   });

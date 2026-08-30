@@ -36,7 +36,7 @@ import { Download, Upload } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { BRAND } from '../../brand.ts';
 import { useCourse } from '../../course/CourseProvider.tsx';
-import { useStrings } from '../../course/strings.ts';
+import { interpolate, useStrings } from '../../course/strings.ts';
 import type { Course } from '../../course/manifest.ts';
 import { systemClock } from '../../state/clock.ts';
 import { ImportError, exportState, importState } from '../../state/serialize.ts';
@@ -128,16 +128,22 @@ export default function BackupSection() {
           {comparisonRows(currentCourses, pending.courses, courses).map((row) => (
             <div key={row.id} className={styles.course}>
               <p className={styles.courseLabel}>{row.label}</p>
-              <p className={styles.side}>
-                <span className={styles.sideLabel}>on this device</span>
+              <p className={styles.side} dir={course.dir}>
+                <span className={styles.sideLabel}>{strings['settings.backup.onDevice']}</span>
                 <span className={styles.sideCounts}>
-                  {row.now.passed} passed · {row.now.sessions} sessions
+                  {interpolate(strings['settings.backup.counts'], {
+                    passed: row.now.passed,
+                    sessions: row.now.sessions,
+                  })}
                 </span>
               </p>
-              <p className={styles.side}>
-                <span className={styles.sideLabel}>in the file</span>
+              <p className={styles.side} dir={course.dir}>
+                <span className={styles.sideLabel}>{strings['settings.backup.inFile']}</span>
                 <span className={styles.sideCounts}>
-                  {row.file.passed} passed · {row.file.sessions} sessions
+                  {interpolate(strings['settings.backup.counts'], {
+                    passed: row.file.passed,
+                    sessions: row.file.sessions,
+                  })}
                 </span>
               </p>
             </div>
@@ -163,15 +169,15 @@ export default function BackupSection() {
   return (
     <>
       <div className={styles.actions}>
-        {/* English shell furniture with the prototype's two arrows — the register of the tick
-            toggle's On/Off (#105); the promises around them are the course's. */}
-        <button type="button" className={styles.action} onClick={exportTap}>
+        {/* The course's two words, with the prototype's two arrows — they went the way the tick
+            toggle's On/Off did (#351), and the promises around them were always the course's. */}
+        <button type="button" className={styles.action} onClick={exportTap} dir={course.dir}>
           <Upload className={styles.icon} aria-hidden="true" />
-          Export
+          {strings['settings.backup.export']}
         </button>
-        <button type="button" className={styles.action} onClick={importTap}>
+        <button type="button" className={styles.action} onClick={importTap} dir={course.dir}>
           <Download className={styles.icon} aria-hidden="true" />
-          Import
+          {strings['settings.backup.import']}
         </button>
       </div>
       {failure !== null && (
