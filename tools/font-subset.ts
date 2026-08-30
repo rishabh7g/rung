@@ -100,7 +100,7 @@ export const SOURCE_SANS_WEIGHTS = [400, 600, 700] as const;
  * does not (docs/04-font-notes.md §9).
  */
 export interface ScriptTarget {
-  subset: 'devanagari' | 'latin' | 'latin-ext' | 'arabic';
+  subset: 'devanagari' | 'latin' | 'latin-ext' | 'arabic' | 'cyrillic';
   /** Does this codepoint belong to this target's `unicode-range`? */
   covers: (codePoint: number) => boolean;
   /** Characters included no matter what the content build shipped. */
@@ -134,6 +134,28 @@ const DEVANAGARI_BASELINE = '।॥०१२३४५६७८९‌‍';
     system face for the gaps between them, at whatever advance that face happens to use. Letters
     are absent for the same reason Mukta's latin baseline has none: content decides those. */
 const ARABIC_BASELINE = ' ،؛؟٠١٢٣٤٥٦٧٨٩ـ‌‍';
+
+/**
+ * The numero sign (#325) — the one mark a Russian line carries that no other bundled cut draws.
+ *
+ * The ticket proposed a wider baseline: the space, the guillemets « », the em dash and №. Three of
+ * those are deliberately NOT here, and the reason is the sheet's own rule. Mukta is named FIRST in
+ * `--font-devanagari` and already draws the space, « » (its `latin` cut runs to U+00FF) and the em
+ * dash (its U+2000-206F range) — so claiming them here would download this face to draw glyphs
+ * Mukta already has, which is exactly what `source-sans-3.css` warns against, and a range holding
+ * a SPACE would pull the Cyrillic cut into every course in the catalogue (the #211 bug, through
+ * the font system instead of the precache).
+ *
+ * That is also why this diverges from the Arabic baseline, which does carry its space: Naskh is
+ * reached only through `--font-script-fallback`, a per-course quiet line, where Source Sans 3
+ * sits in the shared L2 family every course renders through. The cost is that a Cyrillic line's
+ * gaps are set in Mukta and its letters in Source Sans 3 — no ink either way, so what differs is
+ * the space's advance, which is the right trade against a face download for every other course.
+ *
+ * № (U+2116) is the exception: Mukta's `latin` range stops at U+206F and nothing else bundled
+ * reaches it, so without this it falls to `system-ui` mid-line.
+ */
+const CYRILLIC_BASELINE = '№';
 
 /** Nothing (#222). Every other baseline is punctuation a line carries whatever it says; a
     diacritic subset is nothing BUT letters, and letters are the one thing content decides — a
@@ -203,6 +225,30 @@ export const SOURCE_SANS_TARGETS: readonly ScriptTarget[] = [
     subset: 'latin-ext',
     covers: (cp) => cp === 0x02be || cp === 0x02bf || cp === 0x1e92 || cp === 0x1e93,
     baseline: DIACRITIC_BASELINE,
+  },
+  /**
+   * Cyrillic (#325) — en-ru's HERO text, not a quiet secondary line.
+   *
+   * Mukta bundles no Cyrillic at all, so without this every letter of every en-ru sentence, word,
+   * variation, mistake and pool item is whatever the device happens to own, or tofu where it owns
+   * nothing. A course whose display line can be tofu does not ship, which is why en-ru's
+   * graduation depends on this target existing.
+   *
+   * The face is PROVISIONAL by the ticket's own terms — Source Sans 3 is the zero-new-dependency
+   * candidate (it is already a `SubsetFace` from #222, already second in `--font-devanagari`, and
+   * `@fontsource/source-sans-3` ships a `cyrillic` subset at all three weights the L2 ramp uses).
+   * A design review may replace it; that would be one row here and one committed sheet, and
+   * nothing else.
+   *
+   * The range is the Cyrillic block and no more. The supplement (U+0500-052F), the extended
+   * blocks and the historic letters buy nothing for a Russian L1 ladder — widen it only when
+   * harvested content actually reaches them. **ё is a LETTER, not baseline**: it lives inside the
+   * block and is therefore content-decided, exactly like every other letter in this file.
+   */
+  {
+    subset: 'cyrillic',
+    covers: (cp) => (cp >= 0x0400 && cp <= 0x04ff) || cp === 0x2116,
+    baseline: CYRILLIC_BASELINE,
   },
 ];
 

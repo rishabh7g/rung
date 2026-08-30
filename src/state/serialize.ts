@@ -122,6 +122,32 @@ const ACTIVE_COURSE: Vocabulary = {
   accepts: (value) => value === '' || VOCABULARY.courseId.accepts(value),
 };
 
+/**
+ * The BCP-47 shape a language tag may take — deliberately the SAME narrow subset
+ * `src/course/manifest.ts` accepts for `l1Tag`/`l2Tag` (language, optional script, optional
+ * region; no variants, no extensions). Kept as its own regex rather than imported because this
+ * module is the import validator: it must be able to reject a file without the manifest layer
+ * having loaded, and the two are pinned to each other by a test rather than by a shared symbol.
+ */
+const LANGUAGE_TAG = /^[a-z]{2,3}(-[A-Z][a-z]{3})?(-([A-Z]{2}|\d{3}))?$/;
+
+/**
+ * `userLang` is a language tag **or** `''` — unset, meaning "follow the active course's L1"
+ * (#322). The same "a value or the first-run empty" shape `ACTIVE_COURSE` takes above, and for
+ * the same reason: the empty string is a real state the document must be able to carry, not a
+ * missing field to repair.
+ *
+ * It is deliberately NOT cross-checked against the manifest's courses, exactly as `activeCourse`
+ * is not checked against `courses`: a build that ships without the course whose L1 the learner
+ * chose must still import their document and leave the choice alone, so it comes back when that
+ * course does. Invariant 4 asks for a bounded vocabulary, and a tag shape is one — free text is
+ * what it forbids.
+ */
+const USER_LANG: Vocabulary = {
+  name: 'a BCP-47 language tag like "hi" or "ar-Latn", or "" when unset',
+  accepts: (value) => value === '' || LANGUAGE_TAG.test(value),
+};
+
 /* ------------------------------------------------------------------------- the combinators */
 
 /**
@@ -395,6 +421,7 @@ const COURSE = object<CourseState>('a course subtree', {
 
 const SETTINGS = object<Settings>('the settings', {
   elapsedTickEnabled: FLAG,
+  userLang: id(USER_LANG),
 });
 
 /**
@@ -402,7 +429,7 @@ const SETTINGS = object<Settings>('the settings', {
  * written in. Exported so `serialize.test.ts` can walk the shape itself: the vocabularies below
  * are Invariant 4's assertion, and a test that re-declared them would be asserting its own list.
  */
-export const STATE_V8 = object<AppState>('the exported rung state', {
+export const STATE_V9 = object<AppState>('the exported rung state', {
   stateVersion: literal(STATE_VERSION),
   activeCourse: id(ACTIVE_COURSE),
   courses: record(VOCABULARY.courseId, COURSE),
@@ -420,7 +447,7 @@ export const STATE_V8 = object<AppState>('the exported rung state', {
  * same bytes — so a diff between yesterday's file and today's shows what the learner DID.
  */
 export function exportState(state: AppState): string {
-  return JSON.stringify(STATE_V8.write(state), null, 2);
+  return JSON.stringify(STATE_V9.write(state), null, 2);
 }
 
 /* ------------------------------------------------------------------------------ import */
@@ -455,7 +482,7 @@ export function importState(json: string): AppState {
 
   const version = versionOf(parsed);
 
-  if (version === STATE_VERSION) return STATE_V8.read(parsed, DOCUMENT);
+  if (version === STATE_VERSION) return STATE_V9.read(parsed, DOCUMENT);
 
   if (version > STATE_VERSION) {
     throw new ImportError(
@@ -471,12 +498,12 @@ export function importState(json: string): AppState {
 
   // The store's migration, not a second one: a file and a rehydrate must never disagree about
   // what a v5 document means (#82's contract, and `serialize.test.ts` proves there is one of it).
-  return STATE_V8.read(migrate(parsed, version), DOCUMENT);
+  return STATE_V9.read(migrate(parsed, version), DOCUMENT);
 }
 
 /** The version the file was written at — the one field read before anything else is trusted. */
 function versionOf(parsed: unknown): number {
-  if (!isRecord(parsed)) return fail(DOCUMENT, STATE_V8.expected, parsed);
+  if (!isRecord(parsed)) return fail(DOCUMENT, STATE_V9.expected, parsed);
 
   const version = parsed['stateVersion'];
   if (typeof version !== 'number' || !Number.isInteger(version)) {

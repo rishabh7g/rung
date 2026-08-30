@@ -621,3 +621,72 @@ Glyph-level truth is a browser question and this host runs no browser: the evide
 `cmap` of the real subsets (`tools/font-subset.test.ts` reads it with HarfBuzz, in CI-visible
 assertions rather than a screenshot), the ranges in the served CSS, and the per-course byte rows
 above. `/dev/type` in a browser on another machine remains the way to see it.
+
+## 10. Cyrillic — the same face, a second range (#325)
+
+en-ru (English → Russian, `scriptMode: native`) draws Cyrillic as its **display** line: every
+sentence, word, variation, mistake and pool item. Mukta bundles no Cyrillic at all, so before
+this target every one of those letters was whatever the device happened to own — or tofu where
+it owned nothing. That is why the en-ru graduation issue depends on this one: a course whose
+hero line can be tofu does not ship.
+
+### 10.1 The face, and why it is not a new one
+
+Source Sans 3 — already bundled since #222, already second in `--font-devanagari`, already at
+400/600/700. `@fontsource/source-sans-3` ships a `cyrillic` subset at exactly those weights, so
+this is one `ScriptTarget` row and three `@font-face` blocks, with no new dependency, no new
+licence question (SIL OFL 1.1, §9.1) and no new token override: Mukta is asked first, has nothing
+in the Cyrillic block, and the browser falls through to the family that does.
+
+**The choice is provisional by the ticket's own terms.** If a design review prefers a dedicated
+Cyrillic face, that is one `SubsetFace` row and one committed sheet — the shape §9 already set.
+
+### 10.2 The range, and the three marks deliberately left out
+
+```
+unicode-range: U+0400-04FF, U+2116;
+```
+
+The ticket proposed a baseline of space, « », — and №. Only № is here, and the reason is the rule
+`source-sans-3.css` already states: **Mukta is named first and draws the other three** (its `latin`
+cut runs to U+00FF, covering the guillemets; its U+2000-206F range covers the em dash). Claiming
+them would download this cut to draw glyphs Mukta already has — and a range containing a SPACE
+would pull it into *every course in the catalogue*, which is the #211 precache bug arriving through
+the font system instead.
+
+№ (U+2116) is the exception: Mukta's latin range stops at U+206F, nothing else bundled reaches it,
+and without a claim it drops to `system-ui` mid-line.
+
+**This diverges from the Arabic baseline (§8), which does carry its space, and the difference is
+scope.** Noto Naskh Arabic is reached only through `--font-script-fallback` — a per-course quiet
+line — so a space in its range costs the courses that already load it. Source Sans 3 sits in the
+shared L2 family that *every* course renders through. The cost of leaving the space out is that a
+Cyrillic line's gaps are set in Mukta and its letters in Source Sans 3; neither has ink, so what
+differs is the space's advance. That is the right trade against a face download for every other
+course in the catalogue.
+
+**ё is a letter, not baseline.** It is inside the claimed block, so it renders — but it is
+harvested from content like every other letter, so a build with no en-ru content ships no glyph
+for it. The baseline is `'№'` and `src/fonts.test.ts` pins that ё is not in it.
+
+### 10.3 Bytes
+
+Measured on a strict build with **no en-ru content authored yet** — the honest-gate curve §8
+describes for Naskh, which was ~2 KiB until its ladder existed:
+
+| | files | source-sans-3 total |
+|---|---|---|
+| before #325 | 13 | 3 cuts, 3.9 KiB |
+| after #325 | 16 | 6 cuts, 5.5 KiB |
+
+The three Cyrillic cuts are near-empty today: they carry № and nothing else, because no en-ru
+content exists to harvest letters from. They grow as the en-ru authoring issues land and
+`fonts:build` re-runs. `npm run budget` is green, and no existing course's row moves — the new
+range is claimed by no course that does not write Cyrillic.
+
+### 10.4 What is not proven here
+
+Glyph-level rendering is a browser question and this host runs no browser (§9.6). The evidence is
+the `cmap` of the real subsets (`tools/font-subset.test.ts`, HarfBuzz), the claimed ranges in the
+committed sheet, and the byte rows above. **No en-ru content has been rendered in a browser in
+this face** — when the course is authored, `/dev/type` on a machine with one is the way to see it.
