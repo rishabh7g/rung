@@ -107,6 +107,7 @@ export const STRINGS_KEYS = [
   'verdict.checkComprehension',
   'verdict.line',
   'verdict.toLadder',
+  'settings.yourLanguage',
   'settings.statusLine',
   'settings.statusPending',
   'settings.importReplace',
@@ -407,6 +408,20 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    * and the privacy line the screen ended on were read once and skimmed past forever; they went
    * on #232 with the screen's other explainers.
    */
+  /**
+   * **"Your language"** (#323) — the label on the section that asks the first question Settings
+   * should have asked all along.
+   *
+   * The screen led with a COURSE dropdown reading "hindi → marathi", which makes the learner
+   * answer "what am I studying" before "what do I read". This names the L1 choice, and it is
+   * course copy for the reason every label here is: a learner picking their own language is
+   * reading it in the language they already have.
+   *
+   * The OPTIONS under it need no keys — they are the manifest's own `l1` names ("English",
+   * "Hindi"), which are data. A key per language would be a second list to keep in step with
+   * `courses.json`, and it would have to be translated into every course to say the same word.
+   */
+  'settings.yourLanguage': [],
   'settings.statusLine': ['{level}', '{passed}', '{total}', '{rung}'],
   'settings.statusPending': ['{level}', '{passed}', '{total}'],
   /**

@@ -33,6 +33,7 @@ import { exportState } from '../state/serialize.ts';
 import { persistedSlice, useAppStore } from '../state/store.ts';
 import { DEV_MANIFEST, mockContentFetch } from '../test/courseManifest.ts';
 import { sizesFixture } from '../test/courseContent.ts';
+import { stringValue } from '../test/courseStrings.ts';
 import { formatBytes } from './settings/formatBytes.ts';
 import settingsCss from './SettingsScreen.module.css?raw';
 
@@ -115,7 +116,11 @@ afterEach(() => {
 /* -------------------------------------------------------------- the section order */
 
 describe('the frozen section order (F6)', () => {
-  it('renders COURSE → PRACTICE → STORAGE → Backup, under the screen title', async () => {
+  /**
+   * LANGUAGE leads (#323): "what do you read" is the question that makes sense before "what are
+   * you studying", and the COURSE dropdown below is downstream of its answer.
+   */
+  it('renders LANGUAGE → COURSE → PRACTICE → STORAGE → Backup, under the screen title', async () => {
     await renderSettings();
 
     const headings = screen
@@ -123,7 +128,7 @@ describe('the frozen section order (F6)', () => {
       .map((heading) => heading.textContent)
       .filter((text) => text !== 'rung'); // the shell's brand h1 sits above the screen
 
-    expect(headings).toEqual(['Settings', 'COURSE', 'PRACTICE', 'STORAGE', 'Backup']);
+    expect(headings).toEqual(['Settings', 'LANGUAGE', 'COURSE', 'PRACTICE', 'STORAGE', 'Backup']);
   });
 
   it('ends on the Backup section — no closing promise, in either voice (#232)', async () => {
@@ -144,6 +149,86 @@ describe('the frozen section order (F6)', () => {
     // #108's body stands in the slot: the two Backup controls.
     expect(screen.getByRole('button', { name: 'Export' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Import' })).toBeInTheDocument();
+  });
+});
+
+/* ------------------------------------------------------------- the language section */
+
+/**
+ * "Your language" (#323) — the L1 choice, and the course move that follows from it.
+ *
+ * The one promise worth more than the rest: choosing a language may switch the course, and a
+ * switch must never cost a learner anything. That is Invariant 8, already proved for the course
+ * dropdown (#106), and it is asserted here as a deep-equal over the LEFT course's whole subtree
+ * rather than as a spot check.
+ */
+describe('the LANGUAGE section (#323)', () => {
+  function langSelect(): HTMLElement {
+    return screen.getByRole('combobox', { name: stringValue(COURSE, 'settings.yourLanguage') });
+  }
+
+  it("offers the manifest's distinct L1s, deduped, in manifest order", async () => {
+    await renderSettings();
+
+    const labels = within(langSelect())
+      .getAllByRole('option')
+      .map((option) => option.textContent);
+
+    // DEV_MANIFEST ships hi-mr, en-es, en-ar, hi-en — two distinct L1s, each named once.
+    const expected: string[] = [];
+    const seen = new Set<string>();
+    for (const row of DEV_MANIFEST.courses) {
+      if (seen.has(row.l1Tag)) continue;
+      seen.add(row.l1Tag);
+      expected.push(row.l1);
+    }
+
+    expect(labels).toEqual(expected);
+    expect(new Set(labels).size).toBe(labels.length);
+  });
+
+  /** Unset means "follow the course" (#322): the active course's L1 shows, and nothing moves. */
+  it("shows the active course's L1 when nothing is persisted, and switches nothing", async () => {
+    await renderSettings();
+
+    expect(langSelect()).toHaveValue('hi');
+    expect(useAppStore.getState().settings.userLang).toBe('');
+    expect(useAppStore.getState().activeCourse).toBe('hi-mr');
+  });
+
+  it('persists the chosen language', async () => {
+    await renderSettings();
+
+    fireEvent.change(langSelect(), { target: { value: 'en' } });
+
+    await waitFor(() => expect(useAppStore.getState().settings.userLang).toBe('en'));
+  });
+
+  it('moves to the first manifest course in that language, and keeps what the old one earned', async () => {
+    const ladder = tenRungLadder(2);
+    await renderSettings(ladder);
+    climb(ladder, 'L1-M1');
+
+    const before = structuredClone(useAppStore.getState().courses[COURSE]);
+
+    fireEvent.change(langSelect(), { target: { value: 'en' } });
+
+    // The first English-L1 row in the manifest — chosen by the manifest's order, not by a list
+    // this screen keeps.
+    const target = DEV_MANIFEST.courses.find((row) => row.l1Tag === 'en');
+    await waitFor(() => expect(useAppStore.getState().activeCourse).toBe(target?.id));
+
+    // Invariant 8, in full: the course left behind is byte-identical, not merely present.
+    expect(useAppStore.getState().courses[COURSE]).toEqual(before);
+  });
+
+  it('switches nothing when the active course already speaks the chosen language', async () => {
+    await renderSettings();
+
+    fireEvent.change(langSelect(), { target: { value: 'hi' } });
+
+    await waitFor(() => expect(useAppStore.getState().settings.userLang).toBe('hi'));
+    expect(useAppStore.getState().activeCourse).toBe('hi-mr');
   });
 });
 

@@ -32,8 +32,9 @@
  * Invariant 4): there is nothing to configure about features the product does not have, and
  * the test sweeps this screen's controls to prove none crept in.
  */
-import { useEffect, useId, useRef } from 'react';
+import { useEffect, useId, useMemo, useRef } from 'react';
 import { useCourse } from '../course/CourseProvider.tsx';
+import { resolveUserLang } from '../course/manifest.ts';
 import { interpolate, useStrings, type Strings } from '../course/strings.ts';
 import { currentRungId, rungStage, type ProgressionInput } from '../engine/progression.ts';
 import { useAppStore } from '../state/store.ts';
@@ -51,11 +52,13 @@ export default function SettingsScreen() {
   const switchCourse = useAppStore((store) => store.switchCourse);
   const setSetting = useAppStore((store) => store.setSetting);
   const tickEnabled = useAppStore((store) => store.settings.elapsedTickEnabled);
+  const userLang = useAppStore((store) => store.settings.userLang);
   // The active course's ladder, loaded and derived — the same lines the Ladder starts with, so
   // the status here and the rungs there cannot disagree: they are one derivation.
   const { levels, input, ready } = useProgression();
 
   const selectId = useId();
+  const langSelectId = useId();
   const tickLabelId = useId();
 
   const { message: toastMessage, show: showToast } = useToast();
@@ -78,6 +81,44 @@ export default function SettingsScreen() {
     showToast(interpolate(strings.switchToast, { to: course.pairLabel, from: left.pairLabel }));
   }, [course, strings, showToast]);
 
+  /**
+   * The languages this build can be READ in (#323) — the manifest's distinct `l1`s, deduped by
+   * tag, in manifest order.
+   *
+   * They are data, not a string list: each option's label is the course row's own `l1` name, so
+   * adding a course in a new L1 offers that language here with no key to mint and no translation
+   * to commission. Every tag comes from a course by construction, so the switch target below
+   * always exists and there is no empty state to design.
+   */
+  const languages = useMemo(() => {
+    const seen = new Map<string, string>();
+    for (const row of courses) if (!seen.has(row.l1Tag)) seen.set(row.l1Tag, row.l1);
+    return [...seen].map(([tag, name]) => ({ tag, name }));
+  }, [courses]);
+
+  /** The language showing as chosen: the persisted one, else the active course's own (#322). */
+  const selectedLang = resolveUserLang(userLang, course);
+
+  /**
+   * Choosing a language is TWO facts, and only the first is always true: the learner reads this
+   * language now, and — if the course they are in does not speak it — they are moved to one that
+   * does. The move is the existing course switch (#106), so it resets transient UI and touches no
+   * per-course progress: **switching language cannot erase what any course earned** (Invariant 8),
+   * which is the same guarantee the course dropdown already makes.
+   *
+   * The toast is not raised here. `switchCourse` moves the pointer synchronously but the provider
+   * re-boots the strings before the arrival is real, and the effect above fires on the ARRIVAL —
+   * so the toast speaks in the language the learner just switched INTO, which is the whole point
+   * of #106's timing and would be lost by announcing it at the tap.
+   */
+  const chooseLanguage = (tag: string): void => {
+    setSetting('userLang', tag);
+    if (course.l1Tag === tag) return;
+
+    const target = courses.find((row) => row.l1Tag === tag);
+    if (target !== undefined) switchCourse(target.id);
+  };
+
   // No ladder, no status: before the levels resolve (or when the content layer is broken —
   // that failure belongs to the screens that render the ladder, not to Settings) the slot is
   // simply absent. Every count in the line would be dishonest without the ladder behind it.
@@ -86,6 +127,32 @@ export default function SettingsScreen() {
   return (
     <section className={styles.settings}>
       <h2 className={styles.title}>Settings</h2>
+
+      {/* --------------------------------------------------------------- YOUR LANGUAGE */}
+      {/* Above COURSE deliberately: "what do you read" is the question that makes sense
+          first, and the course dropdown below is downstream of its answer. */}
+      <section className={styles.card}>
+        <RegistrationMarks />
+        <h3 className={styles.kicker}>LANGUAGE</h3>
+        <div className={styles.courseField}>
+          <label className={styles.fieldLabel} htmlFor={langSelectId} dir={course.dir}>
+            {strings['settings.yourLanguage']}
+          </label>
+          {/* Native, like the course picker below and for its reasons (PRD-design §7). */}
+          <select
+            id={langSelectId}
+            className={styles.select}
+            value={selectedLang}
+            onChange={(event) => chooseLanguage(event.target.value)}
+          >
+            {languages.map((language) => (
+              <option key={language.tag} value={language.tag}>
+                {language.name}
+              </option>
+            ))}
+          </select>
+        </div>
+      </section>
 
       {/* ------------------------------------------------------------------ COURSE (F0) */}
       <section className={styles.card}>
