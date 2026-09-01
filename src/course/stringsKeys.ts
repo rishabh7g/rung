@@ -68,6 +68,7 @@ export const STRINGS_KEYS = [
   'sentence.prev',
   'sentence.next',
   'sentence.done',
+  'sentence.nextModule',
   'mark.gotIt',
   'mark.missed',
   'why.show',
@@ -246,13 +247,30 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    * finished — practise it", which is a different sentence even where it lands on the same verb.
    *
    * **It names the destination**, because a hand-over that only says "done" is the silence this
-   * key was minted to end.
+   * key was minted to end. It was once a whole sentence — "Module finished — practise it" — and
+   * that overflowed the pager by 65px at 360 and 105px at 320, because the slot is a third of a
+   * row and not a line of prose. Naming the destination is the requirement; saying it in a
+   * sentence never was.
+   *
+   * **`sentence.nextModule` is the sixth, and it exists because the destination is not always
+   * the same place.** `sentence.done` hands over to Practice, which is the right end for the
+   * rung the learner is CLIMBING. It is the wrong end for one they have already passed: a
+   * learner re-reading M3 from the top of the ladder is reading, not practising, and sending
+   * them to the practice hub both interrupts the read and — since the hub resolves the CURRENT
+   * rung, not the module in front of them — lands them on a module they were not looking at.
+   * So a passed module's last sentence hands over to the NEXT module's first sentence instead,
+   * and this is that label.
+   *
+   * A separate key rather than a swap of `sentence.done`'s value, for the reason the block above
+   * gives twice: these are two different sentences that happen to sit in one slot. A course may
+   * well want "practise it" and "carry on" to share no word at all.
    */
   'sentence.trapHead': [],
   'sentence.pocketIt': [],
   'sentence.prev': [],
   'sentence.next': [],
   'sentence.done': [],
+  'sentence.nextModule': [],
   /**
    * The gated self-mark [D11] (#93) — the three words the reveal card owns. `gotIt` and `missed`
    * are the two segments, and `next` is the control that only exists once one segment is chosen.

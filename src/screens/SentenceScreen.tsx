@@ -95,9 +95,41 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
    * deep link under a HashRouter, and a rung the ladder has locked has no readable sentences
    * however the learner arrives at one.
    */
-  const status = ready ? deriveStatuses(input)[moduleId] : undefined;
+  const statuses = ready ? deriveStatuses(input) : undefined;
+  const status = statuses?.[moduleId];
   const openable =
     status !== undefined && status !== 'locked' && rungStage(input, moduleId) !== 'pending';
+
+  /**
+   * Where the last sentence hands over to — and it is not one place, because a module the learner
+   * has PASSED is a different situation from the rung they are climbing.
+   *
+   * The rung they are climbing ends at Practice: reading it is the preparation, and the module
+   * list's own closing move is the same link. A module they passed weeks ago ends at the NEXT
+   * module, because someone re-reading the ladder from the top is reading, not practising. The
+   * old unconditional Practice link got this wrong twice over: it interrupted the read, and since
+   * the Practice hub resolves the CURRENT rung rather than the module on screen, a learner
+   * re-reading M3 while sitting on M7 was handed M7 — a module they had not asked about and were
+   * not looking at.
+   *
+   * "Next" is the ladder's own order, so re-reading M3 offers M4 rather than jumping to the
+   * frontier: the learner is walking the ladder, and the walk continues where they are.
+   *
+   * Two conditions guard it, and both are the same openability test this screen already applies
+   * to itself above — a hand-over that lands on `Navigate to={HOME_PATH}` is worse than no
+   * hand-over at all. A locked next rung is reachable in real life: passing L1-M10 without having
+   * passed L1-M4 leaves L2 sealed, so L2-M1 is locked and the offer has to fall back.
+   */
+  const ladder = input.levels.flatMap((level) => level.moduleIds);
+  const after = ladder[ladder.indexOf(moduleId) + 1];
+  const handOverTo =
+    status === 'passed' &&
+    after !== undefined &&
+    statuses?.[after] !== undefined &&
+    statuses[after] !== 'locked' &&
+    rungStage(input, after) !== 'pending'
+      ? after
+      : undefined;
 
   // Every sentence opens at its own top. The shell's `<main>` keeps its offset across a route
   // change — arriving from a module list scrolled to 240 would otherwise open this screen 240px
@@ -386,20 +418,34 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
          * asymmetry is honest: there is genuinely nothing before the first sentence, and there is
          * genuinely somewhere to go after the last one.
          *
-         * It goes to PRACTICE rather than back to the module list, and arriving there starts
-         * nothing: the hub is counts plus one Begin CTA, and `startSession` — which spends a
-         * session count and ticks the review queue — runs only on that deliberate tap (the
+         * **Where it goes depends on whether this module is behind the learner** (`handOverTo`,
+         * computed above). On the rung they are climbing it goes to PRACTICE, and arriving there
+         * starts nothing: the hub is counts plus one Begin CTA, and `startSession` — which spends
+         * a session count and ticks the review queue — runs only on that deliberate tap (the
          * structural version of #316 was built and backed out over exactly this). Routing through
          * the module list would have been one extra tap to the same place, since that list's own
          * closing move is a Practice link. A learner mid-session meets the resume banner there and
          * is offered their position back rather than a silent restart.
          *
+         * On a module they have PASSED it goes to the next module's FIRST SENTENCE instead, so a
+         * re-read of the ladder carries straight on rather than being bounced into the practice
+         * hub for a rung the learner is not looking at.
+         *
+         * The target id is built by convention — every module's first sentence is `<id>-S01`,
+         * checked across all nine courses' content — and the convention failing is not a broken
+         * link: an id this screen cannot find falls through to `Navigate to={/module/:id}` above,
+         * which is the module list, which is a fair place to arrive.
+         *
          * A `<Link>`, not the pager's `navigate(replace)`: prev/next is one screen paging, so it
          * replaces; this is a real destination change and belongs in history.
          */}
         {next === undefined ? (
-          <Link className={styles.step} to={PRACTICE_PATH} dir={course.dir}>
-            {strings['sentence.done']}
+          <Link
+            className={styles.step}
+            to={handOverTo === undefined ? PRACTICE_PATH : `/sentence/${handOverTo}-S01`}
+            dir={course.dir}
+          >
+            {handOverTo === undefined ? strings['sentence.done'] : strings['sentence.nextModule']}
             <ArrowRight className={styles.stepIcon} aria-hidden="true" />
           </Link>
         ) : (
