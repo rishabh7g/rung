@@ -39,7 +39,7 @@ import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, TriangleAlert } from 'lucide-react';
 import { ContentErrorScreen } from '../course/BootScreens.tsx';
 import { useCourse } from '../course/CourseProvider.tsx';
-import { useModule } from '../course/content.ts';
+import { useModule, useModules } from '../course/content.ts';
 import { l2Written } from '../course/manifest.ts';
 import { useStrings } from '../course/strings.ts';
 import type { Rule, Sentence } from '../course/types.ts';
@@ -130,6 +130,46 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
     rungStage(input, after) !== 'pending'
       ? after
       : undefined;
+
+  /**
+   * Where the FIRST sentence hands BACK to — the same move as `handOverTo`, pointing the other way,
+   * and it exists for the same reason that one does.
+   *
+   * The leading slot went dead on a module's first sentence because there is genuinely nothing
+   * before it INSIDE the module. There is something before it on the LADDER, though, and that is
+   * the walk the learner is actually on: someone reading M4 from the top has M3 behind them, and
+   * the read continues at M3's LAST sentence rather than stopping at a greyed-out control. The
+   * asymmetry #367 called honest was only ever honest about the module; it was never true of the
+   * ladder, and the first sentence is exactly where the two differ.
+   *
+   * The previous rung by the ladder's own order, so it crosses a level boundary the way `after`
+   * does: the first sentence of L2-M1 hands back to the last sentence of L1-M10.
+   *
+   * The same guard as forwards, and it is the openability test this screen already applies to
+   * itself — a hand-back that lands on `Navigate to={HOME_PATH}` is worse than a disabled button.
+   * A locked or pending rung behind the learner is not hypothetical: L1 can be passed with L1-M4
+   * still unpassed, and a rung mid-ritual is not readable.
+   *
+   * Unlike forwards, the destination is NOT built by convention. `<id>-S01` is a first sentence in
+   * every course, but a module's last sentence is `-S10` only while every module carries exactly
+   * ten — which `tools/validate.ts` requires of shipped content and relaxes for fixtures — so the
+   * id is read off the previous module's own `sentences` instead. `useModules` is the loader for
+   * that: a file that will not load is simply absent, which leaves the slot the disabled button it
+   * was before, and it is asked for ONLY on a first sentence with an eligible rung behind it, so
+   * no other sentence in the app pays a second fetch for it.
+   */
+  const before = ladder[ladder.indexOf(moduleId) - 1];
+  const handBackTo =
+    module.data?.sentences[0]?.id === sentenceId &&
+    before !== undefined &&
+    statuses?.[before] !== undefined &&
+    statuses[before] !== 'locked' &&
+    rungStage(input, before) !== 'pending'
+      ? before
+      : undefined;
+  const behind = useModules(handBackTo === undefined ? [] : [handBackTo]);
+  const handBackAt =
+    handBackTo === undefined ? undefined : behind.get(handBackTo)?.sentences.at(-1);
 
   // Every sentence opens at its own top. The shell's `<main>` keeps its offset across a route
   // change — arriving from a module list scrolled to 240 would otherwise open this screen 240px
@@ -387,18 +427,39 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
           screen paging rather than ten destinations — the back chevron still returns to the
           module the learner came from, not to the sentence before this one. */}
       <nav className={styles.pager} aria-label={strings['a11y.sentencePager']}>
-        <button
-          type="button"
-          className={styles.step}
-          disabled={previous === undefined}
-          onClick={() => {
-            step(previous);
-          }}
-          dir={course.dir}
-        >
-          <ArrowLeft className={styles.stepIcon} aria-hidden="true" />
-          {strings['sentence.prev']}
-        </button>
+        {/**
+         * The leading slot is the trailing one's mirror: paging inside the module wherever there is
+         * a sentence before this one, and on the FIRST sentence a HAND-BACK to the module behind
+         * this one on the ladder (`handBackAt`, resolved above) rather than a dead control.
+         *
+         * It stays a disabled button wherever there is nothing behind: the first module of the
+         * ladder, a previous rung the ladder has locked or left mid-ritual, and the moment before
+         * that module's file has arrived. Those are the cases where the old asymmetry was telling
+         * the truth.
+         *
+         * A `<Link>` for the hand-back and a button for the paging, for the reason the trailing
+         * slot draws the same distinction: paging replaces, because it is one screen turning its
+         * own pages; leaving for another module is a destination change and belongs in history.
+         */}
+        {handBackAt === undefined ? (
+          <button
+            type="button"
+            className={styles.step}
+            disabled={previous === undefined}
+            onClick={() => {
+              step(previous);
+            }}
+            dir={course.dir}
+          >
+            <ArrowLeft className={styles.stepIcon} aria-hidden="true" />
+            {strings['sentence.prev']}
+          </button>
+        ) : (
+          <Link className={styles.step} to={`/sentence/${handBackAt.id}`} dir={course.dir}>
+            <ArrowLeft className={styles.stepIcon} aria-hidden="true" />
+            {strings['sentence.prevModule']}
+          </Link>
+        )}
         {/* Counts, never time (Invariant 2) — and the prototype's "3 of 10" as the `n / total`
             the module list already writes, so the shell adds no English word of its own. */}
         <p className={styles.position}>

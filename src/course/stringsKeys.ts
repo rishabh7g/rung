@@ -69,6 +69,7 @@ export const STRINGS_KEYS = [
   'sentence.next',
   'sentence.done',
   'sentence.nextModule',
+  'sentence.prevModule',
   'mark.gotIt',
   'mark.missed',
   'why.show',
@@ -264,6 +265,15 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    * A separate key rather than a swap of `sentence.done`'s value, for the reason the block above
    * gives twice: these are two different sentences that happen to sit in one slot. A course may
    * well want "practise it" and "carry on" to share no word at all.
+   *
+   * **`sentence.prevModule` is the seventh, and it is the same hand-over pointing backwards.**
+   * The leading slot went dead on a module's FIRST sentence for the reason the trailing slot went
+   * dead on its last: nothing exists inside the module in that direction. But the LADDER does —
+   * a learner reading M4 from its first sentence has M3 behind them — so the walk carries back to
+   * the previous module's last sentence, and this is that label. `sentence.prev` stays what it
+   * always was: paging within one module, where the destination needs no name because the learner
+   * can see it. This one names the destination, exactly as its two neighbours do, because leaving
+   * the module the learner is looking at is a thing to be told about before it happens.
    */
   'sentence.trapHead': [],
   'sentence.pocketIt': [],
@@ -271,6 +281,7 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'sentence.next': [],
   'sentence.done': [],
   'sentence.nextModule': [],
+  'sentence.prevModule': [],
   /**
    * The gated self-mark [D11] (#93) — the three words the reveal card owns. `gotIt` and `missed`
    * are the two segments, and `next` is the control that only exists once one segment is chosen.
