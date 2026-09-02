@@ -57,8 +57,26 @@
   text-transform: uppercase;
 }
 
+/* Gone on a phone while the learner is inside a rung (`AppShell`): a module, a sentence and the
+   ritual are work rather than places, they each carry their own way back in the header, and the
+   bar was spending a sixth of a 320px screen on three destinations the learner did not ask for.
+   The rule is the prototype's own `navPad`, which this stylesheet finally has an owner for.
+
+   Hidden rather than unmounted, and hidden HERE rather than in the shell, because "not on a
+   phone" is a viewport fact: a tablet rotated to portrait crosses the breakpoint without a route
+   change, and only a media query notices. */
+.phoneHidden {
+  display: none;
+}
+
 /* Tablet and up: the nav is the left rail, not a bar — and there is room to label (#249). */
 @media (min-width: 768px) {
+  /* The rail is beside the column, not under the thumb: it costs the screen nothing, so every
+     screen keeps it. */
+  .phoneHidden {
+    display: flex;
+  }
+
   .label {
     display: block;
   }

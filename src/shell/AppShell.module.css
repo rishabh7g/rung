@@ -102,9 +102,24 @@
   min-height: 0;
 }
 
+/* Inside a rung the bar is gone on a phone (BottomNav.module.css), and the home indicator's strip
+   goes with it — so the column takes the inset the bar was carrying (#265). It is padding on the
+   flex parent rather than on the scroll area, because what needs lifting is the screen's sticky
+   footer: a sticky element's bottom is the SCROLLPORT's edge, which padding on `.screen` would not
+   move. */
+.bodyInsideRung {
+  composes: body;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
 @media (min-width: 768px) {
   .body {
     flex-direction: row-reverse;
+  }
+
+  /* The rail is still there at this width, and carrying its own inset. */
+  .bodyInsideRung {
+    padding-bottom: 0;
   }
 }
 

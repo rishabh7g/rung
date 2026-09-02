@@ -16,9 +16,17 @@
  *   3. **A tab** (Ladder, Practice, Settings) → the brand: rails mark + the lowercase wordmark
  *      from `src/brand.ts`, the one place the product name lives.
  *
- * The nav renders for 2 and 3 alike. The prototype also drops it on the child screens (its
- * `navPad` state) — that is chrome those screens own, and the fidelity pass (#117) is where the
- * two get reconciled; the rule this ticket owes is "immersion hides it entirely".
+ * **The nav renders for 3, and on a phone only for 3.** Immersion hides it entirely; below 768px
+ * a child of the rung hides it too, which is the prototype's `navPad` reconciled (#117). A module,
+ * a sentence and the ritual are work the learner opened deliberately, and each of them already
+ * carries its way out in the header — so the bar underneath was three destinations nobody asked
+ * for, spending a sixth of a 320px screen on them. The tabs keep it, because a tab with no nav is
+ * a screen with no way off it.
+ *
+ * At 768px and up nothing is hidden: the nav is the left RAIL there (#249), beside the column
+ * rather than under the thumb, so it costs the screen nothing on any route. That is a viewport
+ * fact rather than a route fact, so it is a media query in `BottomNav.module.css` and not a second
+ * condition here — a tablet rotated into portrait crosses the breakpoint with no route change.
  *
  * Layout: the column is `100dvh` and never scrolls; `<main>` is the one scroll area, per screen,
  * `overflow-x: hidden` and `overscroll-behavior: contain` so a session can't be pulled to
@@ -44,6 +52,10 @@ export function AppShell() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const route = matchShellRoute(pathname);
+  // Inside a rung — the `back` chrome is exactly that set (Module, Sentence, the ritual, the
+  // verdict), so the nav's phone rule is the header's own rule read a second time rather than a
+  // second list of routes to keep in step with this one.
+  const insideRung = route?.chrome === 'back';
   const back = backTarget(pathname);
   // Published to the screens through `ScrollAreaContext`: the frame owns the only scroll area,
   // and a screen that restores a position (#88) asks for it rather than hunting for it. State
@@ -98,14 +110,18 @@ export function AppShell() {
       {/* Below the header: the scroll area and, at >=768px, the rail beside it (#249). `<main>`
           stays exactly where it was — this only gives it and the nav a shared flex parent so the
           two can lay out as a row at >=768px; ScrollAreaContext still publishes the same element. */}
-      <div className={styles.body}>
+      {/* The bar carried `env(safe-area-inset-bottom)` for everything above it (#265). Where it is
+          hidden, the column below the header takes that inset instead — otherwise the sentence
+          pager, which is sticky at the bottom of its own scroll area and has no inset of its own,
+          would sit under the home indicator on exactly the screens this hides the bar on. */}
+      <div className={insideRung ? styles.bodyInsideRung : styles.body}>
         <main className={styles.screen} ref={setScreen}>
           <ScrollAreaContext.Provider value={screen}>
             <Outlet />
           </ScrollAreaContext.Provider>
         </main>
 
-        {!immersive && <BottomNav />}
+        {!immersive && <BottomNav hiddenOnPhone={insideRung} />}
       </div>
     </div>
   );

@@ -12,7 +12,10 @@
  * `NavLink`'s own `aria-current="page"` that selects it — the state a screen reader announces
  * and the state the learner sees are then the same state.
  *
- * The nav is not rendered at all during an immersive session — see `AppShell`.
+ * The nav is not rendered at all during an immersive session, and it is **dropped on a phone
+ * while the learner is inside a rung** — a module, a sentence, the ritual, the verdict. Both
+ * decisions are `AppShell`'s; this file only takes the second one as a prop, because the first is
+ * "there is no nav" and the second is "there is a nav, and this viewport is not where it goes".
  *
  * **The labels are the course's** (`nav.*`, #351). They were English furniture until hi-en and
  * hi-mr shipped, at which point the app's whole top level greeted a Hindi-L1 learner in the
@@ -38,12 +41,27 @@ const TABS = [
   { to: SETTINGS_PATH, key: 'nav.settings', Icon: Settings },
 ] as const;
 
-export function BottomNav() {
+interface BottomNavProps {
+  /**
+   * Drop the bar below 768px — the rung's own screens (see `AppShell`). The rail at 768px and up
+   * is a different object with a different problem: it sits BESIDE the column rather than under
+   * the learner's thumb, so it costs the screen nothing and stays.
+   *
+   * CSS, not a second `&&` in the shell: the bar is hidden at one viewport and rendered at
+   * another, and a media query is the only one of the two that answers a resize.
+   */
+  hiddenOnPhone?: boolean;
+}
+
+export function BottomNav({ hiddenOnPhone = false }: BottomNavProps) {
   const { course } = useCourse();
   const strings = useStrings();
 
   return (
-    <nav className={styles.nav} aria-label={strings['a11y.primaryNav']}>
+    <nav
+      className={hiddenOnPhone ? `${styles.nav} ${styles.phoneHidden}` : styles.nav}
+      aria-label={strings['a11y.primaryNav']}
+    >
       {TABS.map(({ to, key, Icon }) => (
         <NavLink
           key={to}
