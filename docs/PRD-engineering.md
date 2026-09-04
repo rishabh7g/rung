@@ -205,11 +205,11 @@ Each feature lists requirements (R) and acceptance criteria (AC), written to con
 
 ### F3 — Practice loop (the 20–30 min session)
 
-- R: Three phases with soft guidance, learner can skip/extend (phase chips guide, never gate): **Review → Read → Produce.**
-- R: **Review:** scheduler serves up to 5 due items from past modules as Hindi cues; learner writes (or mentally constructs) the Marathi, taps reveal, sees the scripted answer plus diff (F4), self-marks got-it / missed. Leitner boxes 1–3; box 1 due next session, box 2 in ~3 sessions, box 3 in ~7. Session-count based, never calendar-date based (Invariant 2). Missed → box 1.
-- R: **Read:** guided read-through of the module's sentences — Marathi primary, Hindi cue toggleable, deconstruction one tap away. Microcopy nudges reading aloud; the app neither plays nor records anything.
-- R: **Produce:** written cover-and-recall. Hindi cue shown, Marathi hidden; learner types the Marathi and taps check → scripted diff against the model answer → self-mark. A secondary "just reveal" action exists for quick mental recall but still requires a self-mark to count. Each got-it increments that sentence's production counter (feeds F1's `exit_available`).
-- AC: A full session touches all three phases; production counters persist; review queue orders strictly by due-ness then module recency; exact-match answers pre-select "got it" (learner can override).
+- R: **One activity, no phases.** A session is a single queue of cards, and every card is the same card: the L1 cue is shown, the learner constructs the L2 sentence from memory, taps reveal, and self-marks got-it / missed. There is no second section, no chips, no pager and no cue toggle — choosing a mark is the only thing to do on a card, and it advances. (#388 retired the Review / Read split; #349 had already retired Produce.)
+- R: **The session is a fixed 15 cards** (`CARDS_PER_SESSION`, `src/engine/session.ts`): the current rung's sentences whole and in the module's own order (ten in every shipped module, never trimmed — the exit gate needs all of them), plus **up to 5** from earlier, passed rungs (`REVIEWS_PER_SESSION`), interleaved one earlier-rung card after every two rung cards. Where the ladder holds fewer than 15 distinct cards — the first rung, where nothing has been passed — the tail repeats the rung from its first sentence, so the count is the same every session.
+- R: **Which earlier-rung sentences** is the Leitner scheduler's answer (`src/engine/leitner.ts`): due items first (`dueInSessions <= 0`), strictly by due-ness then module recency; when fewer than 5 are due, the remaining slots take the closest-to-due rather than shortening the session. Boxes 1–3; box 1 due next session, box 2 in ~3 sessions, box 3 in ~7. Session-count based, never calendar-date based (Invariant 2). Missed → box 1.
+- R: **A mark is routed by which rung its sentence belongs to, and never by where the learner is.** A got-it on a sentence of the CURRENT rung increments that sentence's production counter (feeds F1's `exit_available`) and touches no review queue; a miss on one writes nothing at all. Any mark on a sentence from an EARLIER rung goes to the Leitner queue and touches no counter. Marking is idempotent: a sentence already at the gate writes nothing, so a repeated card cannot inflate a counter.
+- AC: Every card in a session shows its cue before its answer; the hub's count equals what the session then serves; production counters persist and never decrement; the review queue orders strictly by due-ness then module recency; the exit ritual opens when every sentence of the rung has been marked got-it at least once.
 
 ### F4 — Scripted diff + normalisation engine (replaces all v1 speech machinery)
 
@@ -265,6 +265,8 @@ Each feature lists requirements (R) and acceptance criteria (AC), written to con
 }
 ```
 
+- R: **The in-flight session is a position, per course** — `session: {idx, queue} | null`, where `queue` is the cards the session was planned with and `idx` is how far into them the learner got. Nothing else about a sitting persists: what was earned is in the counters and the review queue. It is written on every card advance and flushed synchronously on `visibilitychange`/`pagehide`, so a backgrounded phone loses no cards.
+- R: **State v11.** A snapshot written before v11 also carried a `phase`, because Practice ran in two halves; it is dropped on migration rather than mapped, since a position inside a half names no card of a one-list session. That step costs a place in one interrupted session and no progress — counters, review queue, passed modules and session count all ride through untouched.
 - AC: Export on device A → import on device B reproduces ladder position, queue, counters, and full attempt history exactly.
 
 ### F9 — Audit support (the human safety net)
@@ -301,7 +303,7 @@ No AI runs at runtime. There is nothing to prompt, no keys to protect, no proxy 
 
 - **P0 — Content first, zero code.** M1 + M2 JSON handwritten, native-verified. Exit: Rishabh runs M1 with P1 manually over WhatsApp (sentences + deconstruction as text; exit test verified by Rishabh directly). *Nothing else starts until P0 ships — it exists to break the format cheaply.*
 - **P1 — Shell.** PWA scaffold, content loader, service worker, Ladder + Module viewer. Exit: P1 studies M1 in the app in airplane mode.
-- **P2 — Practice loop.** Session phases, Leitner scheduler, written cover-and-recall, normalisation + diff engine with test suite, production counters. Exit: one full 25-min session end-to-end.
+- **P2 — Practice loop.** The session queue, Leitner scheduler, cover-and-recall, normalisation + diff engine with test suite, production counters. Exit: one full 25-min session end-to-end.
 - **P3 — Exit tests.** Mechanical checks, verification-request generator, attestation flow, comprehension flow, verdict states, unlock. Exit: P1 passes M1 in-app for real, verified by a friend.
 - **P4 — Persistence + audit.** Export/import, attempt pinning, audit list screen. Exit: one weekly audit performed from a single exported file.
 - **P5 — Hardening + scale content.** Font subsetting, input edge cases, equivalence-table tuning, M3–M10 through the pipeline with native verification.

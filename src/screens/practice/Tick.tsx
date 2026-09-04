@@ -1,6 +1,6 @@
 /**
  * The gentle elapsed tick (#98; PRD §2 boundary note + §8 F4, PRD-design §7, design/tokens.md §5;
- * prototype → Practice → the hairline under the phase chips) — the ONLY sanctioned time
+ * prototype → Practice → the hairline at the top of a running session) — the ONLY sanctioned time
  * affordance in the product, and the least of one: two pixels of track that fill once over ~25
  * minutes and then stop.
  *

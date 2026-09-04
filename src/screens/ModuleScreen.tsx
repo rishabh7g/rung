@@ -16,10 +16,10 @@
  *      It marks; it cannot unlock (`state/store.ts`).
  *   3. **The cards**, each one a link into Sentence Detail (`module/SentenceCard.tsx`) and
  *      nothing more since #217 — the details live in exactly one screen, so the list neither
- *      expands nor holds any per-card state. Each carries its two production dots, which live off
- *      `courses[<id>].production`, written by the Produce phase through the store's one counter
- *      action (`recordProduction`, #95). This screen only reads them: two full dots on every card
- *      is the rung's exit ritual open, drawn one sentence at a time.
+ *      expands nor holds any per-card state. Each carries its production dots, which live off
+ *      `courses[<id>].production`, written by a Practice got-it through the store's one counter
+ *      action (`recordProduction`, #95). This screen only reads them: a full dot on every card is
+ *      the rung's exit ritual open, drawn one sentence at a time.
  *   4. **Where the learner was.** The scroll offset survives a detour into Sentence Detail, in
  *      `sessionStorage` and never in the store (`module/moduleView.ts`).
  *

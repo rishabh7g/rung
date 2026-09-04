@@ -42,7 +42,6 @@ import {
   type ModuleId,
   type ReviewItem,
   type SentenceId,
-  type SessionPhase,
   type SessionSnapshot,
   type Settings,
 } from './types.ts';
@@ -162,36 +161,41 @@ export interface AppActions {
    * measures what is being built. Counting a review as production would open the exit ritual on a
    * rung the learner has not produced at all.
    *
-   * The distinction belongs to the caller, because nothing below it can see a phase: the self-mark
-   * control is deliberately identical in Review, Produce and Comprehension (`components/SelfMark`,
-   * [D11]) and the reveal card imports no store. The session machine (#96) is the one caller, and
-   * it must call this from its Produce branch and from nowhere else — a red mark calls nothing.
+   * The distinction belongs to the caller, because nothing below it can see which rung a card came
+   * from: the self-mark control is deliberately identical everywhere it appears
+   * (`components/SelfMark`, [D11]) and the reveal card imports no store. The session
+   * (`screens/practice/Session.tsx`) is the one caller, and it must call this only for a got-it on
+   * a sentence of the CURRENT RUNG — a red mark calls nothing, and a card from an earlier rung
+   * goes to `recordReview`.
    */
   recordProduction: (courseId: CourseId, sentenceId: SentenceId) => void;
   /**
-   * One self-marked Review card, applied to the Leitner queue — the OTHER half of the routing
-   * contract above (PRD §8 F4). A got-it promotes a box and buys its interval, a miss goes back to
-   * box 1; `engine/leitner.ts` owns both rules and this action only carries the answer into state.
+   * One self-marked card from an EARLIER rung, applied to the Leitner queue — the OTHER half of
+   * the routing contract above (PRD §8 F4). A got-it promotes a box and buys its interval, a miss
+   * goes back to box 1; `engine/leitner.ts` owns both rules and this action only carries the
+   * answer into state.
    *
-   * **It never touches `production`.** Review measures what is being kept and production measures
-   * what is being built, and counting a review as production would open the exit ritual on a rung
-   * the learner has not produced at all. A `sentenceId` the queue does not hold changes nothing —
-   * a Produce mark misrouted here is a no-op rather than a silent write somewhere else.
+   * **It never touches `production`.** A review measures what is being kept and production
+   * measures what is being built, and counting a review as production would open the exit ritual
+   * on a rung the learner has not worked at all. A `sentenceId` the queue does not hold changes
+   * nothing — a current-rung mark misrouted here is a no-op rather than a silent write somewhere
+   * else.
    */
   recordReview: (courseId: CourseId, sentenceId: SentenceId, gotIt: boolean) => void;
   /**
    * Opens a FRESH session, and it is the one action that may: `sessionCount + 1`, the review queue
-   * ticked one session closer to due, and the per-course snapshot initialised at the first card.
-   * It answers with the plan (`engine/session.ts`) the session then serves.
+   * ticked one session closer to due, and the per-course snapshot initialised at the first card of
+   * the plan. It answers with the plan (`engine/session.ts`) the session then serves; `rungIds` is
+   * the current rung's sentence list, which is most of that plan.
    *
    * **Called ONCE per session** — see the comment block on the implementation for why resume (#99)
    * depends on that.
    */
-  startSession: (courseId: CourseId, moduleSentenceIds?: readonly SentenceId[]) => SessionPlan;
+  startSession: (courseId: CourseId, rungIds?: readonly SentenceId[]) => SessionPlan;
   /**
    * Writes the in-flight session's position, or clears it with `null` at the summary (PRD §8 F7 —
-   * `session`, the per-course snapshot that makes resume lossless). Called on every card advance
-   * and every phase change; an unchanged snapshot is not a write.
+   * `session`, the per-course snapshot that makes resume lossless). Called on every card advance;
+   * an unchanged snapshot is not a write.
    *
    * It moves a position and nothing else: it cannot start a session (no `sessionCount`, no tick)
    * and cannot mark anything.
@@ -313,7 +317,6 @@ function sameSession(a: SessionSnapshot | null, b: SessionSnapshot | null): bool
   if (a === null || b === null) return a === b;
 
   return (
-    a.phase === b.phase &&
     a.idx === b.idx &&
     a.queue.length === b.queue.length &&
     a.queue.every((sentenceId, index) => sentenceId === b.queue[index])
@@ -348,14 +351,17 @@ export const OLDEST_MIGRATABLE_VERSION = 5;
  *     That matters beyond tidiness: `serialize.ts`'s import validator refuses a document with a
  *     field it does not know, so a v7 backup only survives its own upgrade if this step drops
  *     what v8 no longer holds.
- *   • **v9 → v10 RETIRES A SESSION PARKED IN PRODUCE.** #349 removed the third phase, so `'produce'`
- *     is no longer a value `SessionPhase` has — and an older document can legitimately name it,
- *     because it is exactly where a learner interrupted mid-Produce left off. There is nowhere to
- *     resume such a session to (its `queue` was the Produce order, and `idx` is a position in it),
- *     so the position is dropped and the course opens on a fresh Begin. **Nothing a learner earned
- *     is in that snapshot** — the counters and the review queue hold all of it, and both are
- *     carried through untouched (Invariant 8) — so this costs a place in a session, and no
- *     progress. A `review` or `read` snapshot is carried verbatim, like every other subtree.
+ *   • **ANY PRE-v11 SESSION SNAPSHOT IS RETIRED.** #388 made Practice one list of fifteen cards,
+ *     so a snapshot is now `{idx, queue}` and nothing else. Every older one was a position inside
+ *     a PHASE — `produce` until #349, then `review` or `read` — and there is no honest place to
+ *     land it: its `queue` was that phase's own order and its `idx` a position in that order, so
+ *     card 4 of Read is not card 4 of anything this app now serves. The position is dropped and
+ *     the course opens on a fresh Start. **Nothing a learner earned is in that snapshot** — the
+ *     counters, the review queue, the passed modules and the session count hold all of it, and
+ *     every one of them is carried through untouched (docs/01-plan.md §6) — so this costs a place
+ *     in one interrupted session, and no progress. It is one step rather than two because v10's
+ *     own retirement rule is a special case of it: a snapshot older than v11 goes, whatever phase
+ *     it names.
  *
  * Two rules bind any version of this function: it never drops a subtree it does not recognise
  * (v5 has exactly one, and the wrap keeps it whole), and it returns a COMPLETE current document —
@@ -366,10 +372,10 @@ export const OLDEST_MIGRATABLE_VERSION = 5;
  * this function serves two callers with different trust: the rehydrate path below reads what
  * this app itself wrote, and `serialize.ts`'s import path runs the RESULT through the same
  * field-by-field validation a native current-version file gets (#104). Validating here would be a
- * second validator waiting to disagree with that one. The v10 step is the one exception the rule
- * allows for, and it is a narrow one: it does not judge a value, it drops a field whose only
- * legal values no longer include the one it is holding, because the alternative is handing the
- * import validator a document it must then refuse whole.
+ * second validator waiting to disagree with that one. The snapshot step is the one exception the
+ * rule allows for, and it is a narrow one: it does not judge a value, it drops a subtree whose
+ * shape this version no longer admits, because the alternative is handing the import validator a
+ * document it must then refuse whole.
  *
  * A version older than any route gets a warning and first-run state — on the rehydrate path
  * that is the only honest boot (there is nothing to read), and the import path never lets such
@@ -411,7 +417,7 @@ export function migrate(persisted: unknown, fromVersion: number): AppState {
   return {
     stateVersion: STATE_VERSION,
     activeCourse: (v6['activeCourse'] ?? fresh.activeCourse) as CourseId,
-    courses: retireProduceSessions((v6['courses'] ?? fresh.courses) as AppState['courses']),
+    courses: retireSessions((v6['courses'] ?? fresh.courses) as AppState['courses']),
     settings: {
       elapsedTickEnabled: v7Settings.elapsedTickEnabled,
       userLang: v7Settings.userLang,
@@ -420,21 +426,28 @@ export function migrate(persisted: unknown, fromVersion: number): AppState {
 }
 
 /**
- * The v9 → v10 step: a session snapshot that names the retired Produce phase becomes no session.
+ * The pre-v11 step: a session snapshot written by any older version becomes no session.
+ *
+ * A pre-v11 snapshot is recognised by the field it carries and v11 does not — `phase`. That is
+ * the whole test, and it is deliberately a test on SHAPE rather than on which phase is named:
+ * `produce` (pre-#349), `review` and `read` are all positions inside a half of a session that no
+ * longer has halves, and none of the three can be landed on a card of the one list Practice now
+ * serves. A document already written at v11 carries no `phase` on any course and comes back
+ * untouched, which is what makes this safe to run on every migration path.
  *
  * It walks every course rather than only the active one, because a document holds a snapshot per
  * course (#99) and the one the learner is not looking at is exactly the one that would sit there
  * unmigrated until they switched to it. Everything else about a course — the counters, the review
  * queue, the passed modules, the session count — is carried through by reference: this returns a
- * new object only for the courses it actually changes, so a document with no Produce session comes
+ * new object only for the courses it actually changes, so a document with no stale snapshot comes
  * back as the very same map it went in as.
  */
-function retireProduceSessions(courses: AppState['courses']): AppState['courses'] {
-  const entries = Object.entries(courses);
-  // `as` rather than a check: a v9 phase is a string this app wrote, and `'produce'` is precisely
-  // the value the current type no longer admits — which is what makes the comparison necessary.
-  const parked = entries.filter(
-    ([, course]) => (course?.session?.phase as string | undefined) === 'produce',
+function retireSessions(courses: AppState['courses']): AppState['courses'] {
+  // `as` rather than a check: an older snapshot is a shape this app itself wrote, and `phase` is
+  // precisely the field the current type no longer has — which is what makes the reach necessary.
+  const parked = Object.entries(courses).filter(
+    ([, course]) =>
+      course?.session != null && 'phase' in (course.session as unknown as Record<string, unknown>),
   );
 
   if (parked.length === 0) return courses;
@@ -548,17 +561,17 @@ export const useAppStore = create<AppStore>()(
       /* ------------------------------------------------------------------------------------
        * THE PRODUCTION COUNTERS — ONE WRITER, AND IT ONLY EVER COUNTS UP.
        *
-       * One self-marked got-it in the Produce phase, counted, and that is the entire action.
-       * `exit_available` is "every sentence of the module at ≥ 2×" (PRD §8 F1), so this number is
-       * what opens the exit ritual — and a number that can fall is a rung that can close again
-       * under a learner who did nothing wrong. So there is no decrement, no reset, no undo and no
-       * ceiling: the only arithmetic in here is `+ 1`.
+       * One self-marked got-it on a sentence of the current rung, counted, and that is the entire
+       * action. `exit_available` is "every sentence of the module marked" (PRD §8 F1,
+       * `MARKS_PER_SENTENCE`), so this number is what opens the exit ritual — and a number that can
+       * fall is a rung that can close again under a learner who did nothing wrong. So there is no
+       * decrement, no reset, no undo and no ceiling: the only arithmetic in here is `+ 1`.
        *
-       * Undo is not missing by oversight. The mark commits on Next rather than on the tap
+       * Undo is not missing by oversight. The mark commits through the commit window
        * ([D11], `components/SelfMark`), which is where a mis-tap is corrected; past that, the
        * counter is a record of work the learner says they did, and the app does not argue with it.
-       * A count above two is kept exactly as it is: two is what the ritual asks for, not a cap on
-       * practice, and the module list draws its two dots full and says nothing more.
+       * A count above the threshold is kept exactly as it is: it is what the ritual asks for, not
+       * a cap on practice.
        *
        * `productionCounters.test.ts` is the mechanical half — it slices this file by action and
        * fails if a second one writes `production`, reads this body for any arithmetic that could
@@ -566,9 +579,11 @@ export const useAppStore = create<AppStore>()(
        * prove none of them moves it. The same posture as `unlockPath.test.ts` (#83), for the same
        * reason: a rule that lives only in prose decays one well-meant convenience at a time.
        *
-       * WHO CALLS IT is on the interface above, and it is the other half of the rule (PRD §8 F4):
-       * Produce got-its only. Review marks are the Leitner queue's, and pass through
-       * `engine/leitner.ts` instead. The session machine (#96) owns that branch.
+       * WHO CALLS IT is on the interface above, and it is the other half of the rule (PRD §8 F3):
+       * got-its on sentences of the CURRENT RUNG only. A mark on a card from an earlier rung is
+       * the Leitner queue's, and passes through `engine/leitner.ts` instead. The session
+       * (`screens/practice/Session.tsx`) routes by which rung the card belongs to, and that branch
+       * is the whole of the routing contract (#388).
        * ---------------------------------------------------------------------------------- */
       recordProduction: (courseId, sentenceId) =>
         set((state) => {
@@ -592,12 +607,12 @@ export const useAppStore = create<AppStore>()(
        * `engine/leitner.ts` decides what a mark costs (got-it promotes a box and buys 1 / 3 / 7
        * sessions; a miss returns to box 1); this action carries that answer into state and does
        * nothing else. It writes `reviewQueue` and never a counter — the pair of writes the session
-       * machine keeps apart, one per phase, and the reason `recordProduction` says who may call it.
+       * keeps apart, one per card, and the reason `recordProduction` says who may call it.
        *
        * An id the queue does not hold leaves the state object untouched, rather than rebuilding
-       * the queue with nothing changed in it. That is idempotence, not an optimisation: a Produce
-       * mark that arrived here by mistake must be a no-op, and "same object back" is how the tests
-       * can tell a no-op from a write that happened to land on the same values.
+       * the queue with nothing changed in it. That is idempotence, not an optimisation: a
+       * current-rung mark that arrived here by mistake must be a no-op, and "same object back" is
+       * how the tests can tell a no-op from a write that happened to land on the same values.
        * ---------------------------------------------------------------------------------- */
       recordReview: (courseId, sentenceId, gotIt) =>
         set((state) => {
@@ -631,26 +646,21 @@ export const useAppStore = create<AppStore>()(
        *
        * Ticking BEFORE planning is what makes "due" mean due in the session about to run, and it
        * is why the plan is taken here rather than by the screen: one tick, one plan, one write.
-       * The plan is returned rather than stored whole — state v6's snapshot is a position
-       * (`{phase, idx, queue}`, PRD §8 F7), and Read's queue is the rung's own sentence list,
-       * derivable from content at any moment, so persisting a second copy of it would be a
-       * second thing to keep true.
        *
-       * The opening phase is the first honest one: **Review when something is due, Read when
-       * nothing is** (PRD §8 F4 — "courses with an empty review queue start at Read"). An empty
-       * Review phase would be the app asking the learner to admire a queue with nothing in it.
+       * **The plan's card list IS the snapshot's queue** (#386, #388). It used to be derivable
+       * instead — the session ran in two phases, and the one the learner was usually in walked the
+       * rung's own sentence list, which content could hand back at any moment. One interleaved
+       * list of fifteen is not derivable from content: it depends on what was due at the moment
+       * the session started, and that queue has been ticked and marked since. So it is written
+       * down, which is also what lets a resume land on the very card the learner left
+       * (`screens/practice/resume.ts`) without re-planning and re-spending the tick.
        * ---------------------------------------------------------------------------------- */
-      startSession: (courseId, moduleSentenceIds = []) => {
+      startSession: (courseId, rungIds = []) => {
         const course = get().courses[courseId] ?? emptyCourseState();
         const reviewQueue = tickSession(course.reviewQueue);
-        const plan = planSession({ queue: reviewQueue });
+        const plan = planSession({ queue: reviewQueue, rungIds });
 
-        const phase: SessionPhase = plan.reviewIds.length > 0 ? 'review' : 'read';
-        const session: SessionSnapshot = {
-          phase,
-          idx: 0,
-          queue: phase === 'review' ? [...plan.reviewIds] : [...moduleSentenceIds],
-        };
+        const session: SessionSnapshot = { idx: 0, queue: [...plan.cardIds] };
 
         set((state) => {
           const held = state.courses[courseId] ?? emptyCourseState();

@@ -62,7 +62,7 @@ Because Hindi and Marathi are close, every word and rule carries one of three ta
 
 - **Ladder (home).** The 10-checkpoint map; entry point to everything.
 - **Module.** The 10 sentences of the current rung + deconstruction.
-- **Practice.** The guided 20–30 min session (Review → Read → Produce).
+- **Practice.** The guided 20–30 min session: 15 cards, one card type, cue → guess → reveal → self-mark.
 - **Exit Test.** Two parts: Generate ("the 11th sentence") and Comprehend.
 - **Verdict.** Checklist results, hand-off, attestation, pass/fail states.
 - Secondary: minimal Settings (quick-insert strip toggle, export/backup), first-run onboarding (≤ 3 screens).
@@ -72,7 +72,7 @@ Navigation model: Ladder is home; Module/Practice/Exit are children of the activ
 ## 5. User flows to design (step-by-step)
 
 1. **First run.** Welcome (what this is, who built it for whom — one warm screen) → "You'll be writing Marathi from minute one" + **Devanagari keyboard set-up guide** (any Hindi/Marathi layout works; where to enable it; note on ळ) → land on Ladder with M1 unlocked. No account, no goal-setting, no time-commitment question (Invariant 2).
-2. **Daily session (the spine).** Open app → Ladder shows current rung → "Practice" → Review phase (up to 5 cards from earlier modules: Hindi cue → learner writes or mentally constructs → reveal scripted answer + diff → self-mark got-it/missed) → Read phase (read through module sentences, Marathi primary, deconstruction on tap, "read it aloud" nudge in copy) → Produce phase (written cover-and-recall) → session-end summary (counts of things produced; no time stats).
+2. **Daily session (the spine).** Open app → Ladder shows current rung → "Practice" → the hub: the rung's name, how many cards the session holds, one Start button → 15 cards, every one the same card (L1 cue → learner constructs the L2 sentence from memory → reveal → self-mark got-it/missed, which commits and advances) → session-end summary (one score line, and the exit ritual when the rung is complete; no time stats). The cards are the current rung's sentences plus up to five from earlier rungs, interleaved. There are no phases, no chips, no pager and no cue toggle.
 3. **Studying a module.** Ladder → Module → browse 10 sentence cards → expand deconstruction → per-sentence production dots show progress toward the exit test.
 4. **Written cover-and-recall (make-or-break interaction #1 — prototype this).** Card shows Hindi cue, Marathi hidden → learner types the Marathi → "check" → **diff view** highlights word-level matches/mismatches (character-level within a mismatched word) → self-mark got-it/missed (exact match pre-selects got-it). Secondary path: "just reveal" for quick mental recall, still requiring a self-mark to count.
 5. **Exit test — Generate (make-or-break interaction #2).** Explainer ("Write something new at this level — not one of the 10") → Devanagari input → submit → **instant scripted checklist** appears: New ✓/✗ · Within what you've learned ✓/✗ · Within length ✓/✗ (failures name the offending sentence or unknown words) → all pass → **the hand-off moment**: app presents a pre-written verification request containing the sentence ("क्या यह मराठी वाक्य सही है? — ‹sentence›") with one-tap copy for WhatsApp/a friend, plus a suggested internet-search phrasing → learner returns and **attests**: verified by a friend/native speaker · via internet · by Rishabh → pass registers.
@@ -96,7 +96,8 @@ Navigation model: Ladder is home; Module/Practice/Exit are children of the activ
 
 ### Practice
 
-- Must show: which phase I'm in (Review / Read / Produce) as soft, skippable chips — never countdown clocks; the current card; the text input + check as hero (§3.3); diff results; got-it / missed self-marks.
+- Must show: which card I am on as a `n / total` count — never countdown clocks; the cue in the language I already speak; a reveal control; then the answer, its word-by-word breakdown behind one collapsed toggle, and the got-it / missed self-marks. A card from an earlier rung says so in its kicker; a card from the rung I am climbing needs no such note.
+- Must NOT show: a phase name or chip, a Back/Next pager, a control that hides the cue, or a link out of the session. There is one thing to do on a card and the mark does it. (The three phases this section used to describe went with #349 and #388.)
 - Critical layout constraint: the **on-screen keyboard occupies ~half the viewport** during every production moment. The cue, input, check action, and (after checking) the diff must all work in the remaining space — design production cards keyboard-first, not as an afterthought. **[Q2: pattern for diff appearing above an open keyboard]**
 
 ### Exit Test — Generate
@@ -134,7 +135,7 @@ Navigation model: Ladder is home; Module/Practice/Exit are children of the activ
 - The honesty pattern for the hand-off (design's most important copy): the app plainly says what it cannot do and hands over with confidence. Shape: "Grammar मैं नहीं जांच सकता — ये message copy करो और किसी मराठी जानकार से पूछ लो."
 - Never use: "streak", "daily goal", "you're behind", "hurry", "days left", "% fluent".
 - Failure copy pattern: name what happened + name the fix + invite retry. Example shape: "वाक्य नया नहीं था — ये 10 में से एक है. अपना खुद का बनाकर देखो."
-- A recurring gentle nudge in Read/Produce phases: "जो लिखा है, उसे बोलकर भी पढ़ो" — the app encourages the learner's own voice without ever capturing or playing sound.
+- A recurring gentle nudge on the practice card: "जो लिखा है, उसे बोलकर भी पढ़ो" — the app encourages the learner's own voice without ever capturing or playing sound.
 - Numbers shown are counts of things done (sentences written, rungs passed), never time.
 
 ## 9. Visual language
@@ -158,7 +159,7 @@ Navigation model: Ladder is home; Module/Practice/Exit are children of the activ
 ## 12. Deliverables checklist (these become GitHub issues)
 
 1. Flow diagrams for the 9 flows in §5.
-2. Low-fi wireframes: Ladder, Module, Practice (all 3 phases, keyboard-open variants), Exit-Generate (input → checklist → hand-off → attestation), Exit-Comprehend, Verdict (pass + mechanical fail), onboarding incl. keyboard guide.
+2. Low-fi wireframes: Ladder, Module, Practice (hub + card + summary), Exit-Generate (input → checklist → hand-off → attestation), Exit-Comprehend, Verdict (pass + mechanical fail), onboarding incl. keyboard guide.
 3. Clickable prototype of the two make-or-break interactions: written cover-and-recall → diff → self-mark, and the full exit-test → hand-off → attestation → unlock sequence.
 4. Component specs for §7 with all states.
 5. Design tokens: type ramp (Devanagari + Latin), colour semantics (three tag colours + diff correction treatment), spacing, motion durations.

@@ -1,6 +1,6 @@
 /* Layout only, tokens only (docs/design-contract.md rule 1).
    Geometry follows design/Rung App v3.3.dc.html → Practice → the hub (`phStart`): kicker, title,
-   three numbered phase rows, and the CTA held at the bottom of the column. */
+   the session's length, and the CTA held at the bottom of the column. */
 
 /* The whole column, so the CTA can sit at the bottom of the screen as it does in the prototype:
    the shell's `<main>` is a plain scrolling block, so `min-height: 100%` is what gives
@@ -39,47 +39,17 @@
   font: var(--text-l2-card);
 }
 
-/* --------------------------------------------------------------------- the phases */
+/* ---------------------------------------------------------------------- the count */
 
-/* One row, not a column of plates (#316): the counts are the promise this screen makes, and the
-   stacked blueprint objects around them were the weight that pushed Begin below the fold. `1fr`
-   apiece keeps the columns even whatever the course's words are — and the count is the phase list's
-   (two since #349 retired Produce), so the row narrows with it rather than leaving a third empty
-   cell behind. */
-.phases {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr;
-  gap: var(--space-3);
+/* The one line on the hub, and the one promise it makes: how many cards the next tap serves
+   (#389). Course words, so it is Mukta at the 18px floor Devanagari needs (design/tokens.md §2).
+   The hairline pair is what is left of the phase row's frame — one blueprint rule under the
+   title, rather than a grid of plates describing a session that no longer has parts. */
+.count {
   margin: 0;
   padding: var(--space-3) 0;
   border-top: var(--border-hairline);
   border-bottom: var(--border-hairline);
-  list-style: none;
-}
-
-/* A phase is now a name over a count, not a plate: the hairline pair on `.phases` above frames
-   them all at once, which is one blueprint object where there used to be one per phase (#316).
-   The prototype's `01 / 02 / 03` numerals went with them — shell furniture narrating an order the
-   row already reads in. */
-.phase {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-  min-width: 0;
-}
-
-/* Course words, so both lines are Mukta at the 18px floor: the phase's name at weight 600 and
-   what it will serve at 400 — the prototype's 14px bold + 12px caption, pulled up to the floor
-   Devanagari needs (design/tokens.md §2). */
-.phaseName {
-  margin: 0;
-  font: var(--text-l2-card);
-  font-size: var(--devanagari-min-size);
-}
-
-.phaseLine {
-  margin: 0;
   font: var(--text-l2-cue);
   font-size: var(--devanagari-min-size);
   color: var(--ink-70);
@@ -118,4 +88,27 @@
 .begin:active {
   background: var(--color-accent-700);
   border-color: var(--color-accent-700);
+}
+
+/* Starting over, under Continue — the rarer and costlier of the two (it spends a session count and
+   a tick of the review queue), so it is a quiet line rather than a second filled block. The
+   secondary height keeps it a comfortable target all the same. */
+.fresh {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: var(--btn-secondary-height);
+  padding: var(--space-2) var(--space-3);
+  background: none;
+  border: 0;
+  color: var(--ink-65);
+  font: var(--text-l2-cue);
+  font-size: var(--devanagari-min-size);
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
+  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }

@@ -529,7 +529,7 @@ Two consequences worth knowing before you author content:
   emitter imports it, and so does the runtime resolver (`src/engine/wordIndex.ts`, #94). Never
   copy it: a second copy is a word that silently has no "why".
 
-### The strings contract — 82 keys, no fallback copy
+### The strings contract — 83 keys, no fallback copy
 
 Every course ships one `strings.json` carrying **all** the microcopy the shell renders, because
 the shell has none of its own (PRD §4). So the build validates it against the canonical key list
@@ -545,7 +545,7 @@ declared twice.
 `tools/strings-check.ts` runs per course, flattens the nested file onto dot-paths
 (`ritual.check.copy`), and reports four things, always naming course **and** key:
 
-- **missing key** — the 82 canonical paths must all be there;
+- **missing key** — the 83 canonical paths must all be there;
 - **empty or non-string value** — a present-but-blank key is a missing key with extra steps;
 - **unknown key** — the typo tripwire; `ritual.check.plate` would otherwise sit quietly beside a
   missing `plateLabel`;
@@ -564,16 +564,12 @@ the module list forced (#88 — `module.helper`, `module.openFull`, `module.trap
 Sentence Detail forced (#89 — `sentence.trapHead`, `.pocketIt`, `.prev`, `.next`: the trap
 callout's heading, the mnemonic's label and the two pager buttons), four the reveal card forced
 (#93 — `mark.gotIt`, `.missed`, `.prompt`, `.next`: the two self-mark segments [D11], the question
-above them and the Next that does not exist until one is chosen) and three the "why" panel forced
-(#94 — `why.show`, `.hide`, `.openFull`: the toggle's two labels, because it names what it will
-do, and the link that leaves a running session) and seventeen the session machine forced
-(#96 — `practice.*`: the hub's title, its three phase lines and the line that says the phases never
-gate, the two Begin labels, the three phase names the chips wear, the honest answer to a Review
-chip with nothing due, and the summary's title, four count lines and its way back) and five the
-Read phase forced (#97 — `read.showCue`, `.hideCue`, `.prev`, `.next`, `.toProduce`: the cue
-toggle's two labels and the pager's three, the last of which names where the rung's last sentence
-goes) and three lossless resume forced (#99 — `practice.resumeLine`, `.resumeContinue`,
-`.resumeNew`: where the open session stopped, and the two ways out of it) and two the
+above them and the Next that does not exist until one is chosen) and two the "why" panel forced
+(#94 — `why.show`, `.hide`: the toggle's two labels, because it names what it will do) and seven
+the session forced (#96, cut to that count by #388/#389 — `practice.*`: the hub's title, the count
+of cards the next tap serves and the one Start label, and the summary's title, its one score line,
+its way on to the ritual and its way back) and two lossless resume forced (#99 — `practice.resumeContinue`,
+`.resumeNew`: the two ways out of an open session) and two the
 press-and-hold forced (#101 — `ritual.confirm.done`, `.toComprehension`: what the control says
 once it is signed, and the way on to part 2 — the prototype writes both in English for every
 course, which is the shell owning a learner-facing sentence) and five the Verdict forced
@@ -655,9 +651,11 @@ playback (`Audio` and its contexts, `<audio>`, `<video>`), synthesis (`speechSyn
 `SpeechSynthesisUtterance`) or capture (`MediaRecorder`, `getUserMedia`) — and a violation fails
 naming file, line and API.
 
-It landed with the **Read phase** (#97) because Read is where the temptation lands: the phase asks
-the learner to say the sentence out loud, and the obvious "help" is a play button — a synthesised
-Marathi voice, or a recorder to compare yourself against. Both are the app saying the line *for*
+It landed with the **Read phase** (#97, retired by #388) because that phase was where the
+temptation landed: it asked the learner to say the sentence out loud, and the obvious "help" is a
+play button — a synthesised Marathi voice, or a recorder to compare yourself against. The
+temptation did not retire with the phase; every practice card still asks for the learner's own
+voice. Both are the app saying the line *for*
 the learner (Invariant 3), and neither could be right offline for a pronunciation nobody has
 signed off. Comments count, as in #80 and #82, and the exemption list is **empty and stays empty**:
 there is no file that gets to make a sound. Its own tests plant one violation per API, so a
@@ -1113,8 +1111,8 @@ Four divergences from the prototype, three of them the same wall:
   the uppercasing goes with it, the same call Sentence Detail's two course-copy labels made (#89).
 - **The 2px cue rule is `var(--tick-height)`**, the design package's only 2px length — the stand-in
   the level strip's bar already takes (#86).
-- **The kicker row, the phase chips and the position count are not on the card.** They belong to
-  the session that renders it (#96), which is also what keeps the card usable in the ritual.
+- **The kicker row and the position count are not on the card.** They belong to the session that
+  renders it (#96), which is also what keeps the card usable in the ritual.
 
 `prefers-reduced-motion` collapses both movements (the 300ms reveal, the 200ms Next), asserted off
 the stylesheet — and the 200ms is the entrance, not a delay: Next exists the instant the mark does.
@@ -1159,112 +1157,93 @@ Fidelity: the rows are the 18px Mukta floor again (seventh recurrence, #117) whe
 writes 11.5–15px, and the prototype's 52px/40px alignment columns are dropped — there is no token
 for either, and a wrapping Devanagari word needs the width more than the rows need a shared left
 edge. `TagChip` keeps the design's own 9.5–11px band, because its label is English furniture.
+### The session — one queue, one card, and one rule about marks
 
-### The session machine — three phases, two queues, and one rule about marks
+`/practice` is the hub and the immersive session that runs from it (#96, remade by #386–#389; PRD
+§8 F3, PRD-design §6.3, flow 3): **fifteen cards, every one the same card**, with the learner's
+position snapshotted per course from the first one.
 
-`/practice` is the hub and the immersive session that runs from it (#96; PRD §8 F4, PRD-design
-§6.3, flow 3): Review → Read → Produce as soft chips, ending on a counts-only summary, with the
-learner's position snapshotted per course from the first card.
+The card is the cue in the language the learner already speaks, a reveal control, and then the
+answer with a got-it / missed self-mark under it. Choosing a mark commits the card and advances.
+That is the whole interaction: no phases, no chips, no pager, no cue toggle, no link out.
 
 | file | what it is |
 |---|---|
-| `src/engine/session.ts` | pure: `planSession({queue, moduleSentenceIds, production})` → `{reviewIds, produceIds}` |
-| `startSession` / `recordReview` / `setSession` | the store's three session actions — the count and the tick, a Leitner mark, and the position |
-| `src/screens/PracticeScreen.tsx` | the hub: the rung, what the three phases will serve, one CTA |
-| `src/screens/practice/Session.tsx` | the session: chips, cards, the mark routing, the snapshot |
-| `src/screens/practice/PhaseChips.tsx`, `SessionSummary.tsx` | the three chips, and the four counts |
+| `src/engine/session.ts` | pure: `planSession({queue, rungIds})` → `{cardIds}` — the whole session, in serving order |
+| `src/engine/leitner.ts` | which earlier-rung sentences come back, and what a mark on one costs |
+| `startSession` / `recordReview` / `recordProduction` / `setSession` | the store's session actions — the count and the tick, the two marks, and the position |
+| `src/screens/PracticeScreen.tsx` | the hub: the rung, how many cards, one button |
+| `src/screens/practice/Session.tsx` | the session: the cards, the mark routing, the snapshot |
+| `src/screens/practice/SessionSummary.tsx` | the score, and the way on |
 
-| the hub | Review | Produce | the summary |
-|---|---|---|---|
-| [practice-hub-360.png](docs/images/practice-hub-360.png) | [practice-review-360.png](docs/images/practice-review-360.png) | [practice-produce-360.png](docs/images/practice-produce-360.png) | [practice-summary-360.png](docs/images/practice-summary-360.png) |
-
-- **The routing contract is the ticket** (PRD §8 F4). A **Review** mark goes to the Leitner queue
-  (`recordReview` → `applyMark`) and **never** to the production counters; a **Produce** got-it goes
-  to the counters (`recordProduction`) and **never** to the queue. They are different numbers
-  answering different questions — what is being *kept* against what is being *built* — and crossing
-  them would open a rung's exit ritual on sentences nobody produced. `RevealCard` and `SelfMark`
-  cannot see a phase by design, so `Session.tsx` is the only place that knows, and
-  `PracticeScreen.test.tsx` proves both directions: routing a Produce mark to `recordReview`, or a
-  Review mark to `recordProduction`, turns tests red.
-- **One session, counted once.** `startSession` increments `sessionCount`, ticks the queue
-  (`tickSession`) and writes the opening snapshot in a single write, and it is the only action that
-  does any of it. That is what lossless resume (#99) rests on: restoring a snapshot must not charge
-  a learner a session for closing their tab, or bring the whole queue due twice in one day's work.
-- **The plan is taken once, and the hub previews it with the same function.** `planSession` runs
-  against the queue *after* the tick, so the hub's "2 due · 10 to read · 10 to produce" is the
-  session that will actually be served. Review is `dueItems(queue, 5)` verbatim; Produce is **every
-  sentence of the rung, least-produced first** — a learner who leaves early leaves the most-owed
-  sentences done, and nothing is dropped for being finished (two is what the ritual asks for, not a
-  cap on practice). The prototype filters its Produce queue to sentences under 2×; the product
-  orders instead of filtering.
-- **Empty review is an honest state, not an empty screen.** A course with no passed rung starts at
-  Read, and tapping the Review chip toasts the course's own "nothing due yet — this is the first
-  rung" rather than opening a phase with nothing in it ([practice-nothing-due-360.png](docs/images/practice-nothing-due-360.png)).
-  That is a message, not a lock: **the chips never gate** — every phase is one tap away from every
-  other, in any order, and no chip is ever disabled.
-- **The summary is counts, and only counts** (Invariant 2): reviewed, how many of those you had,
-  produced, and how many of the rung's sentences now stand at two — four templates from the course
-  bundle, so the number sits where the language puts it. No duration, no percentage, no date, and a
-  test scans the rendered screen for all three. The gentle elapsed tick (numberless, 2px) is #98's.
-- **The snapshot is a position, per course** — `{phase, idx, queue}`, written on every advance and
-  cleared at the summary — plus a flush on `visibilitychange`/`pagehide` so a page that goes away
-  mid-card is not one advance stale (#99). The pause ✕ leaves it standing, and the hub offers it
-  back, which is why nothing here calls `startSession` twice.
-- **Read is the phase in the middle** (`practice/ReadPhase.tsx`, #97 — its own section below).
-  `useModules` (the content layer's many-files loader, moved out of `WhyPanel`) fetches whatever
-  modules the Review queue names — five due cards routinely come from five different rungs — and a
-  module that will not load costs its own card and nothing else.
-
-Fidelity: the chips are `--tap-min` tall in 18px Mukta where the prototype writes a 32px chip in
-11px uppercase Barlow Condensed (the type wall again, #117), the summary's rows are sentences
-rather than the prototype's label-and-right-aligned-number, and the prototype's "the exit ritual is
-open" block is deliberately absent — that unlock is the Ladder's rung card, and offering it from two
-places is how one of them ends up out of step with the rule.
-
-### The Read phase — L2 first, and the cue only when you ask
-
-`src/screens/practice/ReadPhase.tsx` is the session's middle phase (#97; PRD §8 F4, PRD-design
-§6.3): the rung's sentences one at a time, `display` at the card size the ramp names for it, the L1
-cue behind a toggle, "why" and "open full" beside it, `3 / 10` on the header row, and a pager whose
-last step hands over to Produce.
-
-| cue hidden (the default) | cue shown | the last sentence |
+| the hub | a card | the summary |
 |---|---|---|
-| [practice-read-360.png](docs/images/practice-read-360.png) | [practice-read-cue-360.png](docs/images/practice-read-cue-360.png) | [practice-read-last-360.png](docs/images/practice-read-last-360.png) |
+| [practice-hub-360.png](docs/images/practice-hub-360.png) | [practice-review-360.png](docs/images/practice-review-360.png) | [practice-summary-360.png](docs/images/practice-summary-360.png) |
 
-- **The cue starts hidden** — the deliberate divergence from the prototype, which opens with the
-  Hindi line showing (`readHiOn: true`). Read sits one phase before Produce and the whole sequence
-  is a production bias: L2 first, recall before recognition, the L1 as what you check yourself
-  against. A cue on screen by default makes the L2 line optional, which is the opposite of what the
-  phase is for. Recorded for #117 rather than "fixed" back.
-- **The read-aloud nudge (`nudge.read`) is shown once, at phase start** — it is an instruction for
-  the phase, and a line repeated under all ten sentences stops being read by the third. The
-  prototype prints it per card. It is state on the phase, not on the sentence, so re-entering Read
-  by chip says it again; also #117's.
-- **Read costs nothing.** No box moves, no counter moves — the phase between the two that write is
-  the one that does not. All it moves is the position, which the session snapshots per course like
-  every other advance, so leaving mid-read comes back to the same sentence (#99).
-- **The cue toggle rides inside `WhyPanel`'s controls row** (a `leading` slot added there rather
-  than a second row here), so the prototype's three ghosts share one line and the "why" rows still
-  expand under all of them. The panel is keyed by the sentence and the cue is not: a new sentence
-  never arrives with the last one's rows open, and a learner who asked for the cue asked for the
-  phase.
-- **Back is disabled on the first sentence** — the same bound Sentence Detail's pager takes (#89) —
-  and that is not a gate on anything: the phase chips are still live in every direction, which is
-  what "guide, never gate" is about.
+- **What a session holds.** The current rung's sentences, whole and in the module's own order —
+  ten in every shipped module, never trimmed, because the exit gate needs all of them — plus up to
+  **five** from earlier, passed rungs, interleaved one after every two rung cards. Fifteen, always:
+  where the ladder holds fewer than fifteen distinct cards (the first rung, where nothing has been
+  passed) the tail repeats the rung from its first sentence, so a learner always knows how long a
+  session is. `CARDS_PER_SESSION` and `REVIEWS_PER_SESSION` are the two numbers, both in
+  `engine/session.ts`.
+- **The routing contract is the ticket** (PRD §8 F3), and it is decided by the SENTENCE, not by
+  where the learner is. A got-it on a sentence of the **current rung** goes to the production
+  counters (`recordProduction`) and **never** to the queue; a miss on one writes nothing at all. A
+  mark on a sentence from an **earlier rung** goes to the Leitner queue (`recordReview` →
+  `applyMark`) and **never** to the counters. They are different numbers answering different
+  questions — what is being *built* against what is being *kept* — and crossing them would open a
+  rung's exit ritual on sentences nobody worked. `RevealCard` and `SelfMark` import no store by
+  design, so `Session.tsx` is the only place that knows.
+- **Marking is idempotent.** A sentence already at the gate writes nothing, which is what makes a
+  repeated card free: the counter is a fact about the sentence, not a tally of taps. Counters never
+  decrement, here or anywhere.
+- **One session, counted once.** `startSession` increments `sessionCount`, ticks the queue
+  (`tickSession`), plans, and writes the opening snapshot in a single write, and it is the only
+  action that does any of it. That is what lossless resume (#99) rests on: restoring a snapshot
+  must not charge a learner a session for closing their tab, or bring the whole queue due twice in
+  one day's work.
+- **The plan is taken once, and the hub previews it with the same function.** `planSession` runs
+  against the queue *after* the tick, so the hub's "15 sentences to guess" is the session that will
+  actually be served. Which earlier-rung sentences is `leitner.ts`'s answer: `dueItems` first, in
+  its urgency order, and when fewer than five are due the remaining slots take the closest-to-due
+  (`reviewPicks`) rather than shortening the session.
+- **A first rung is an honest state, not an empty screen.** With nothing passed there is nothing
+  earlier to serve, so the session is the rung and its repeats — no empty card, no "nothing due"
+  message, and nothing to explain, because there is no second section whose absence needs
+  accounting for.
+- **The summary is one count** (Invariant 2): how many the learner got, out of how many were
+  served, from one template in the course bundle so the numbers sit where the language puts them.
+  No duration, no percentage, no date. The gentle elapsed tick (numberless, 2px) is #98's.
+- **The snapshot is a position and the cards it indexes** — `{idx, queue}`, written on every
+  advance and cleared at the summary — plus a flush on `visibilitychange`/`pagehide` so a page that
+  goes away mid-card is not one advance stale (#99). The queue is written down rather than derived
+  because an interleaved list depends on what was due the moment the session started, and that
+  queue has been ticked and marked since.
+- `useModules` (the content layer's many-files loader) fetches whatever modules the cards name —
+  five earlier-rung cards routinely come from five different rungs — and a module that will not
+  load costs its own card and nothing else.
 
-Fidelity: the sentence is `--text-l2-card` (26px) where the prototype writes 28px inline — the ramp
-has no 28px step and its 26px slot is named "reveal/read/comp cards", so the token wins; the
-kicker reads `READ · M1` and the count `1 / 10`, because the shell owns no learner-facing word
-(#88, #89); and the pager's labels are the course's (`read.*`) where the prototype writes "Back" /
-"Next" / "On to producing" in English for every course. Live at 360px the Devanagari clears its
-18px floor everywhere: 26px for the sentence, 18px for the cue, the nudge, the ghosts and both
-pager buttons.
+**What #388 removed, and why it is recorded here.** Practice used to run in two halves: *Review*,
+which is what every card now is, and *Read*, which walked the rung showing the L2 sentence outright
+with the cue behind a toggle, a Back/Next pager, and an "open full" link out to Sentence Detail.
+Two halves meant two chips to name them, a hand-over line between them, and a hub that described
+both before the first card. Watched in use that was too many ideas at once — and Read was teaching
+backwards besides: it showed the answer and then asked "did you get it?", a verdict with nothing
+behind it, which is exactly why #368 had already taken the self-mark off that card and made the
+pager write the exit counter instead. Giving every card a cue fixed the cause rather than the
+symptom, and the mark went back to being the gate. `ReadPhase.tsx`, `PhaseChips.tsx` and
+`ResumeBanner.tsx` are gone; state v11 drops the snapshot's `phase` with them.
+
+Fidelity: the summary's score is a sentence rather than the prototype's
+label-and-right-aligned-number, and the prototype's "the exit ritual is open" block appears only
+when the rung is actually complete — that unlock is the Ladder's rung card, and this is a link to
+it, never a second gate.
 
 ### The gentle elapsed tick — the only time affordance, and it has no numbers
 
-`src/screens/practice/Tick.tsx` is the 2px hairline under the phase chips (#98; PRD §2 boundary
-note, §8 F4, PRD-design §7, design/tokens.md §5): `--tick-track` under `--tick-fill`, filling once
+`src/screens/practice/Tick.tsx` is the 2px hairline at the top of a running session (#98; PRD §2
+boundary note, §8 F3, PRD-design §7, design/tokens.md §5): `--tick-track` under `--tick-fill`, filling once
 over ~25 minutes on a 1s linear width transition, and then stopping.
 
 | ~5 minutes in | capped, and it stays there | the setting off |
@@ -1311,56 +1290,53 @@ computed transition is `none` while the fill still reads 41%.
 
 ### Lossless resume — the place is kept, and the session is not re-counted
 
-An interrupted session costs the learner the interruption and nothing else (#99; PRD §8 F4
+An interrupted session costs the learner the interruption and nothing else (#99; PRD §8 F3
 "immersive mode + lossless resume", §8 F0 AC "resumable session exactly", §17). There is **no draft
 text anywhere** in this app — no inputs at all (Invariant 6) — so the snapshot is pure position,
-`{phase, idx, queue}` per course, and all an app kill can take is the place.
+`{idx, queue}` per course, and all an app kill can take is the place.
 
 | file | what it is |
 |---|---|
-| `src/screens/practice/resume.ts` | pure: `resumePlan(snapshot, input)` → the two queues a resumed session serves |
-| `src/screens/practice/ResumeBanner.tsx` | the hub's offer: where it stopped, Continue, New session |
+| `src/screens/practice/resume.ts` | pure: `resumePlan(snapshot)` → the cards the interrupted session was serving |
+| `src/screens/PracticeScreen.tsx` | the hub's offer: Continue, with "start over" under it |
 | `src/screens/practice/Session.tsx` | the flush on `visibilitychange`/`pagehide`, and the `resume` entry point |
 
-[practice-resume-360.png](docs/images/practice-resume-360.png) — the banner in the CTA's place.
-
 - **The stored position is exact, not one card stale.** The snapshot is written from a passive
-  effect, and a passive effect is *scheduled*: tap Next and the OS can background, freeze or
+  effect, and a passive effect is *scheduled*: tap a mark and the OS can background, freeze or
   discard the page before React runs it. `visibilitychange → hidden` and `pagehide` write the
   current position **synchronously**, off a ref a layout effect keeps in step with the commit, and
   between them they fire on every path a phone actually takes (home button, app switcher, tab
   close, bfcache). The tests clear the store behind the session's back and prove the flush puts the
   position back; deleting either listener turns them red.
-- **A resume is not a session.** Continue restores the phase, the index and the queue and calls
+- **A resume is not a session.** Continue restores the index and the queue and calls
   `startSession` *not at all* — no second `sessionCount`, no second `tickSession`. Charging a
   learner a session for closing their tab, or bringing the whole review queue due twice on one
   sitting's work, is what the single-caller contract (#96) exists to prevent, and a test walks
   start → kill → resume → finish asserting `sessionCount === 1` and one tick throughout. **New
-  session** is the other button: it drops the snapshot and spends a fresh one (2, and a second
-  tick).
-- **The phase named by the snapshot keeps its own queue.** Review's five cards were chosen against
-  a queue that has since moved — every card marked before the interruption changed a box and a
-  countdown — so re-deriving that list would drop answered cards and shift the position under the
-  learner. The phase it does *not* name is planned fresh, because the chips never gate and both
-  must be honest the moment they are tapped.
+  session** is the quiet line under it: it drops the snapshot and spends a fresh one (2, and a
+  second tick).
+- **The snapshot's queue IS the resumed plan, verbatim.** The cards were chosen against a queue
+  that has since moved — every card marked before the interruption changed a box and a countdown —
+  so re-planning would drop answered cards and shift the position under the learner. `resumePlan`
+  therefore does not call `planSession` at all. (It used to have to pick per phase; one list has
+  one answer — #386.)
 - **The snapshot belongs to its course** (Invariant 8). The hub reads `courses[active].session`, so
   switching away and back offers *that* course's own position, untouched — which is exactly where
   the prototype resets instead (§17: do not copy). Nothing on the screen implements it; it falls
   out of state v6's keying.
-- **The banner replaces the Begin CTA** rather than sitting beside it: two CTAs on one screen is
-  the learner deciding which of them means "practise". The prototype makes the same call
-  (`hubCta: 'Resume'`) — what it does not do is come back to the card you left. Three draft strings
-  (#71): `practice.resumeLine` (`{phase}`, `{count}`, `{total}` — counts, never time), plus a label
-  each for the two controls. The canonical list is 75.
+- **Continue replaces the Start CTA** rather than sitting beside it: two CTAs on one screen is the
+  learner deciding which of them means "practise". The prototype makes the same call
+  (`hubCta: 'Resume'`) — what it does not do is come back to the card you left. Two strings
+  (#71, cut from three by #389, which retired the line describing where the session stopped): a
+  label each for the two controls.
 - **The elapsed tick still starts fresh** on a resumed session (#98), and that is intended: the
   tick is about the sitting, not the ladder.
 
-Verified live at 360px in headless Chrome against `npm run dev` (hi-mr): Read 3 / 10 on
-"माझा देश भारत आहे" → tab hidden → snapshot `{phase: 'read', idx: 2, queue: [10 ids]}` →
-**page killed** → the hub offers "पिछला session अधूरा है — पढ़ो, 10 में से 3." → Continue → the same
-card, `sessionCount` still 1 → active course swapped to en-ar and rebooted (its own hub, its own
-Begin, hi-mr's snapshot untouched) → swapped back → the same banner, the same card, still one
-session.
+Verified live at 360px in headless Chrome against `npm run dev` (hi-mr): card 3 / 15 → tab hidden →
+snapshot `{idx: 2, queue: [15 ids]}` → **page killed** → the hub offers "वहीं से आगे बढ़ो" →
+Continue → the same card, `sessionCount` still 1 → active course swapped to en-ar and rebooted (its
+own hub, its own Start, hi-mr's snapshot untouched) → swapped back → the same offer, the same card,
+still one session.
 
 ### The exit ritual's arc — the app says where to go, and does nothing else
 

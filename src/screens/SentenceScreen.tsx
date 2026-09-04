@@ -471,8 +471,7 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
          * Reaching the end of a module's sentences used to grey Next out and stop: the screen
          * closed on a piece of content, a disabled control and nothing else. Every other
          * walk-through surface in the app names its own end — the module LIST closes with a
-         * Practice link ("reading a module is never a gate in front of practising it"), and the
-         * Read phase's pager says `read.finish` on its last card rather than going quiet. This is
+         * Practice link ("reading a module is never a gate in front of practising it"). This is
          * the one that did not, and the asymmetry was the bug.
          *
          * **Prev's bound is untouched and stays disabled on the first sentence**, because that
@@ -481,7 +480,7 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
          *
          * **Where it goes depends on whether this module is behind the learner** (`handOverTo`,
          * computed above). On the rung they are climbing it goes to PRACTICE, and arriving there
-         * starts nothing: the hub is counts plus one Begin CTA, and `startSession` — which spends
+         * starts nothing: the hub is a count plus one Start CTA, and `startSession` — which spends
          * a session count and ticks the review queue — runs only on that deliberate tap (the
          * structural version of #316 was built and backed out over exactly this). Routing through
          * the module list would have been one extra tap to the same place, since that list's own

@@ -5,9 +5,11 @@ import {
   BOX_INTERVALS,
   dueItems,
   enrol,
+  reviewPicks,
   tickSession,
   type ReviewItem,
 } from './leitner.ts';
+import { CARDS_PER_SESSION, planSession, REVIEWS_PER_SESSION } from './session.ts';
 
 /** One queue entry, written the way the cases read: id, box, sessions until due. */
 function item(sentenceId: string, box: ReviewItem['box'], dueInSessions: number): ReviewItem {
@@ -298,6 +300,158 @@ describe('enrol', () => {
   });
 });
 
+/* ------------------------------------------------------------- the session plan */
+
+/** A rung's sentence ids, `L1-M3-S01` … — the order a module file lists them in. */
+function rung(moduleId: string, count: number): string[] {
+  return [...Array(count).keys()].map(
+    (index) => `${moduleId}-S${String(index + 1).padStart(2, '0')}`,
+  );
+}
+
+describe('reviewPicks — filling the earlier-rung slots', () => {
+  it('is dueItems when enough is due', () => {
+    const queue = [...due('L1-M1-S01', 'L1-M1-S02', 'L1-M2-S01'), item('L1-M3-S01', 2, 5)];
+
+    expect(idsOf(reviewPicks(queue, 2))).toEqual(idsOf(dueItems(queue, 2)));
+    expect(idsOf(reviewPicks(queue, 3))).toEqual(idsOf(dueItems(queue, 3)));
+  });
+
+  it('tops up with the closest to due, in that order, when less is due than there is room for', () => {
+    const queue = [
+      item('L1-M1-S01', 1, 0),
+      item('L1-M2-S01', 2, 6),
+      item('L1-M3-S01', 3, 2),
+      item('L1-M4-S01', 1, 4),
+    ];
+
+    // One due, then 2 → 4 → 6 sessions out.
+    expect(idsOf(reviewPicks(queue, 4))).toEqual([
+      'L1-M1-S01',
+      'L1-M3-S01',
+      'L1-M4-S01',
+      'L1-M2-S01',
+    ]);
+  });
+
+  it('answers with everything it has when the queue is shorter than the room, and never repeats', () => {
+    const queue = due('L1-M1-S01', 'L1-M1-S02');
+    const picks = idsOf(reviewPicks(queue, 5));
+
+    expect(picks).toEqual(['L1-M1-S01', 'L1-M1-S02']);
+    expect(new Set(picks).size).toBe(picks.length);
+  });
+
+  it('answers with nothing for an empty queue or no room, and writes to neither argument', () => {
+    const queue = frozen(due('L1-M1-S01'));
+
+    expect(reviewPicks([], 5)).toEqual([]);
+    expect(reviewPicks(queue, 0)).toEqual([]);
+    expect(reviewPicks(queue, -3)).toEqual([]);
+    expect(() => reviewPicks(queue, 5)).not.toThrow();
+  });
+});
+
+describe('planSession — one list, fifteen cards', () => {
+  const ten = rung('L1-M3', 10);
+
+  it('interleaves one earlier-rung card after every two rung cards', () => {
+    const queue = due('L1-M1-S01', 'L1-M1-S02', 'L1-M2-S01', 'L1-M2-S02', 'L1-M2-S03');
+    const { cardIds } = planSession({ queue, rungIds: ten });
+
+    expect(cardIds).toHaveLength(CARDS_PER_SESSION);
+    // The five due, most recent module first (byRecency), at slots 3, 6, 9, 12 and 15.
+    expect(cardIds).toEqual([
+      'L1-M3-S01',
+      'L1-M3-S02',
+      'L1-M2-S01',
+      'L1-M3-S03',
+      'L1-M3-S04',
+      'L1-M2-S02',
+      'L1-M3-S05',
+      'L1-M3-S06',
+      'L1-M2-S03',
+      'L1-M3-S07',
+      'L1-M3-S08',
+      'L1-M1-S01',
+      'L1-M3-S09',
+      'L1-M3-S10',
+      'L1-M1-S02',
+    ]);
+  });
+
+  it('serves at most five earlier-rung cards however much is due', () => {
+    const queue = due(...rung('L1-M1', 12));
+    const { cardIds } = planSession({ queue, rungIds: ten });
+    const earlier = cardIds.filter((id) => !ten.includes(id));
+
+    expect(cardIds).toHaveLength(CARDS_PER_SESSION);
+    expect(earlier).toHaveLength(REVIEWS_PER_SESSION);
+    expect(earlier).toEqual(idsOf(dueItems(queue, REVIEWS_PER_SESSION)));
+  });
+
+  it('reaches past what is due rather than serving a shorter session', () => {
+    const queue = [...due('L1-M1-S01'), item('L1-M1-S02', 2, 3), item('L1-M1-S03', 3, 7)];
+    const { cardIds } = planSession({ queue, rungIds: ten });
+    const earlier = cardIds.filter((id) => !ten.includes(id));
+
+    expect(cardIds).toHaveLength(CARDS_PER_SESSION);
+    expect(earlier).toEqual(['L1-M1-S01', 'L1-M1-S02', 'L1-M1-S03']);
+  });
+
+  it('pads with the rung itself on the first rung, where nothing has been passed', () => {
+    const { cardIds } = planSession({ queue: [], rungIds: ten });
+
+    expect(cardIds).toHaveLength(CARDS_PER_SESSION);
+    expect(cardIds.slice(0, 10)).toEqual(ten);
+    // The repeats start at the rung's first sentence, ten cards after it was first served.
+    expect(cardIds.slice(10)).toEqual(ten.slice(0, 5));
+  });
+
+  it('serves every rung sentence at least once, whatever the queue holds — the exit gate needs them all', () => {
+    for (const queue of [[], due('L1-M1-S01'), due(...rung('L1-M1', 20))]) {
+      const { cardIds } = planSession({ queue, rungIds: ten });
+      for (const sentenceId of ten) expect(cardIds).toContain(sentenceId);
+    }
+  });
+
+  it('never trims a rung longer than the session, and never pads past the cap', () => {
+    const long = rung('L1-M3', 18);
+    const { cardIds } = planSession({ queue: due('L1-M1-S01'), rungIds: long });
+
+    expect(cardIds).toEqual(long);
+  });
+
+  it('never spends an earlier-rung slot on a sentence the rung already serves', () => {
+    // Enrolment happens at pass, so the current rung is never in the queue — but an imported
+    // queue can carry anything (PRD §8 F7). A fourteen-sentence rung leaves exactly one slot, and
+    // it must go to the card that is genuinely from an earlier rung. No padding runs here.
+    const long = rung('L1-M3', 14);
+    const queue = due('L1-M3-S02', 'L1-M1-S01');
+    const { cardIds } = planSession({ queue, rungIds: long });
+
+    expect(cardIds).toHaveLength(CARDS_PER_SESSION);
+    expect(cardIds.filter((id) => id === 'L1-M3-S02')).toHaveLength(1);
+    expect(cardIds).toContain('L1-M1-S01');
+  });
+
+  it('answers with the queue alone when no rung is current, and pads nothing', () => {
+    const queue = due('L1-M1-S01', 'L1-M1-S02');
+
+    expect(planSession({ queue, rungIds: [] }).cardIds).toEqual(['L1-M1-S01', 'L1-M1-S02']);
+    expect(planSession({ queue: [], rungIds: [] }).cardIds).toEqual([]);
+  });
+
+  it('is pure — same answer twice, and neither argument is written to', () => {
+    const queue = frozen(due('L1-M1-S01', 'L1-M2-S01'));
+    const rungIds = Object.freeze([...ten]);
+
+    expect(planSession({ queue, rungIds })).toEqual(planSession({ queue, rungIds }));
+    expect(queue).toEqual(due('L1-M1-S01', 'L1-M2-S01'));
+    expect(rungIds).toEqual(ten);
+  });
+});
+
 /* ------------------------------------------------------- purity and determinism */
 
 describe('the module is pure', () => {
@@ -332,7 +486,7 @@ describe('the module is pure', () => {
 
   it('serves the same review list whatever order the queue is stored in', () => {
     // The ordering is a TOTAL order over distinct ids, so storage order cannot leak into it —
-    // which is what makes a session's Review phase reproducible after an export/import round trip.
+    // which is what makes a session's earlier-rung cards reproducible after an export/import trip.
     const stored = [
       item('L1-M10-S02', 1, 0),
       item('L1-M10-S01', 1, 0),

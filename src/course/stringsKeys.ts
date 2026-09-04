@@ -74,30 +74,15 @@ export const STRINGS_KEYS = [
   'mark.missed',
   'why.show',
   'why.hide',
-  'why.openFull',
   'hint.recall',
   'hint.production',
-  'read.showCue',
-  'read.hideCue',
-  'read.prev',
-  'read.next',
-  'read.finish',
   'practice.hubTitle',
-  'practice.hubReview',
-  'practice.hubRead',
-  'practice.beginReview',
-  'practice.beginRead',
-  'practice.phase.review',
-  'practice.phase.read',
-  'practice.nothingDue',
-  'practice.upNext',
+  'practice.hubCount',
+  'practice.begin',
   'practice.summaryTitle',
-  'practice.summaryReviewed',
-  'practice.summaryGotIt',
-  'practice.summaryMarked',
+  'practice.summaryScore',
   'practice.summaryToRitual',
   'practice.backToLadder',
-  'practice.resumeLine',
   'practice.resumeContinue',
   'practice.resumeNew',
   'verdict.checkSentence',
@@ -235,15 +220,12 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    *
    * **`sentence.done` is the fifth, and it exists because the walk-through used to end in
    * silence** (#367). On a module's last sentence the pager simply disabled Next: the screen
-   * closed on a piece of content, a dead control and nothing else, while every other
-   * walk-through surface in the app names its own end — the module LIST closes with a Practice
-   * link, and the Read phase's pager says `read.finish` on its last card. So the trailing slot
+   * closed on a piece of content, a dead control and nothing else, while the module LIST — the
+   * other walk-through surface in the app — closes with a Practice link. So the trailing slot
    * becomes a hand-over rather than a disabled button, and this is its label.
    *
-   * It is its OWN key rather than a reuse of two near neighbours, and both refusals are
-   * deliberate. Not `read.finish`: that ends a practice SESSION, and this ends a reading walk —
-   * the same word in one language may be two in another, which is the whole reason #93 refused
-   * to share `mark.next` with `sentence.next` in the first place. Not `rungCard.practice`
+   * It is its OWN key rather than a reuse of a near neighbour, and the refusal is deliberate. Not
+   * `rungCard.practice`
    * either: that is a bare tab name on a card, and this one has to carry "the module is
    * finished — practise it", which is a different sentence even where it lands on the same verb.
    *
@@ -299,26 +281,27 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'mark.gotIt': [],
   'mark.missed': [],
   /**
-   * The "why" panel (#94) — the three words the shared expansion says in its own right, on every
-   * revealed surface (Review, Read, Comprehension). The toggle carries two labels because it
-   * says what it will DO, and the prototype writes both ("why" / "hide why"); `aria-expanded`
-   * states the same thing to a screen reader, which is why the words may differ per course
-   * without the control changing meaning.
+   * The "why" panel (#94) — the two words the shared expansion says in its own right, on every
+   * revealed surface (Practice, Comprehension). The toggle carries two labels because it says what
+   * it will DO, and `aria-expanded` states the same thing to a screen reader, which is why the
+   * words may differ per course without the control changing meaning.
    *
-   * `why.openFull` was deliberately never shared with the module list's own "open full" label:
-   * that one opened a sentence from a browsing list, this one leaves a running session for it. A
-   * course may well word them the same; sharing the key would mean it could never word them
-   * differently — the call #93 made for `mark.next` against `sentence.next`. The list's twin
-   * rendered nowhere in the end and went on #229; this one is the survivor, on the surface that
-   * shows it.
+   * **The label must not read as a question** (#390). It used to be the prototype's "why" / "hide
+   * why", and watched in use a first-time learner took it for something she was being asked —
+   * she looked for where to type the answer. The control discloses the word rows under an answer
+   * she has already seen; every course words it as the action it performs ("break it down"), never
+   * as an interrogative.
    *
-   * None of them interpolates: they are labels, not sentences. The delta-learning tag inside the
-   * rows stays English furniture (`TagChip`, #89) — it names the model, it does not teach the
-   * language.
+   * **`why.openFull` is gone.** It linked out to Sentence Detail from a running session, and no
+   * surface offers that any more: Practice used to, from the Read card, and #388 retired both the
+   * card and the link. Leaving a card for a whole screen of answers is leaving the recall behind,
+   * which is the reason the Review card never offered it in the first place.
+   *
+   * Neither interpolates: they are labels, not sentences. The delta-learning tag inside the rows
+   * stays English furniture (`TagChip`, #89) — it names the model, it does not teach the language.
    */
   'why.show': [],
   'why.hide': [],
-  'why.openFull': [],
   /**
    * The show-once hints (#319) — the three facts the product is built on, and the only copy in the
    * app that is allowed to be instructional.
@@ -332,8 +315,8 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    * first one is not left guessing.
    *
    * One per surface, and each is the fact that surface cannot show by itself: `recall` that the
-   * recall happens outside the app (the reveal card), `production` that one marked sentence apiece
-   * opens the rung's exit ritual (the rung card's dots row). There was a third, `check` — that the
+   * guess happens in the learner's head before the reveal (the reveal card), `production` that one
+   * got-it per sentence opens the rung's exit ritual (the rung card's dots row). There was a third, `check` — that the
    * checking is the learner's own — on the ritual's deliberately empty step 2; #348 retired that
    * step and the key with it, because a hint whose surface is gone is a thing said nowhere.
    *
@@ -343,78 +326,38 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'hint.recall': [],
   'hint.production': [],
   /**
-   * The Read phase (#97) — the five words that phase says in its own right: the cue toggle's two
-   * labels, and the three on its pager. They are `read.*` rather than `practice.*` for the reason
-   * `mark.*` and `why.*` are their own groups — they travel with the surface, not with the screen
-   * that hosts it — and the toggle carries two labels for `why.*`'s reason: it names what it will
-   * DO, so a course words "show cue" and "hide cue" itself while `aria-expanded` says the same
-   * thing to a screen reader.
+   * The session (#388) — the Practice hub and the summary (PRD §8 F3, PRD-design §6.3). Nine keys
+   * now, and the rule that put every one of them here is the same as the module list's: the
+   * prototype writes this screen in English for every course, which is what a prototype does and
+   * what a product cannot.
    *
-   * `read.prev`/`read.next` are deliberately NOT `sentence.prev`/`sentence.next`: that pager walks
-   * a module while browsing, this one walks a rung mid-session and its last step ends it
-   * (`read.finish`). A course may well word the first two the same; sharing the key would mean it
-   * never could word them differently — the call #93 made for `mark.next` and #94 for
-   * `why.openFull`.
+   * **There were eighteen.** The others named the parts of a two-phase session — a chip each for
+   * Review and Read, a hub row and a Begin label each, the hand-over line between them, the "nothing
+   * due" answer a chip could give, and three separate summary counts. #388 made Practice one
+   * activity: one queue, one card type, one gesture. What has no part has no name, so the keys went
+   * with the parts.
    *
-   * None of them interpolates: the position is the `3 / 10` count the shell renders, not a
-   * sentence.
-   */
-  'read.showCue': [],
-  'read.hideCue': [],
-  'read.prev': [],
-  'read.next': [],
-  /**
-   * Read's last step (#349). It used to read `read.toProduce` — "on to producing" — because the
-   * phase handed over to Produce; with that phase retired, reading the rung through IS the end of
-   * the session, and the label says so. The issue asked for an existing key reused; none says
-   * "this ends here", and a last card that ends a session in silence is worse than one key.
-   */
-  'read.finish': [],
-  /**
-   * The session (#96) — the Practice hub, the phase chips and the summary (PRD §8 F4, PRD-design
-   * §6.3). Eighteen keys, and the rule that put every one of them here is the same as the module
-   * list's: the prototype writes this screen in English for every course, which is what a
-   * prototype does and what a product cannot.
-   *
-   * **The counts interpolate; nothing else does.** `{count}` is the only new placeholder in the
-   * canonical set, and it appears in the two hub lines and the three summary lines because a
-   * number's place in a sentence is the language's business, not the shell's — a right-aligned
-   * value column beside a label (the prototype's summary rows) would fix it at the end of every
-   * line in every course. **They are counts, never time** (Invariant 2): the summary says how many
-   * cards were seen, never how long they took, and the gentle elapsed tick — the one sanctioned
-   * time affordance, numberless by construction — is #98's and has no string at all.
-   *
-   * `practice.phase.*` are the soft chips AND the hub's rows: one name per phase, used wherever the
-   * phase is named, because they are the same two things.
+   * **The counts interpolate; nothing else does.** A number's place in a sentence is the language's
+   * business, not the shell's — a right-aligned value column beside a label (the prototype's
+   * summary rows) would fix it at the end of every line in every course. **They are counts, never
+   * time** (Invariant 2): the summary says how many cards were got, never how long they took, and
+   * the gentle elapsed tick — the one sanctioned time affordance, numberless by construction — is
+   * #98's and has no string at all.
    */
   'practice.hubTitle': [],
-  /** How many due reviews this session will serve — 0 on the first rung. */
-  'practice.hubReview': ['{count}'],
-  /** How many sentences the rung holds. */
-  'practice.hubRead': ['{count}'],
-  'practice.beginReview': [],
-  'practice.beginRead': [],
-  'practice.phase.review': [],
-  'practice.phase.read': [],
-  /** The Review chip's honest answer when nothing is due — the empty state, not an error. */
-  'practice.nothingDue': [],
   /**
-   * Where the next tap goes (#317) — named on the last card of a phase, so a hand-over the session
-   * used to make silently is one the learner sees coming. `{phase}` is the course's own name for
-   * it (`practice.phase.*`, the same one the chips and the resume line use), because a phase is
-   * named the same wherever it is named.
-   *
-   * Read's pager says its own end on its last step (`read.finish`), which is why this is the
-   * Review card's line and not a second copy of the same idea.
+   * How many cards the next tap serves (#389) — the hub's one line, and the one promise this
+   * screen makes. Fifteen whenever the ladder holds that much (`engine/session.ts`).
    */
-  'practice.upNext': ['{phase}'],
+  'practice.hubCount': ['{count}'],
+  /** The one way in. It names no phase, because the session has none. */
+  'practice.begin': [],
   'practice.summaryTitle': [],
-  /** Review cards self-marked this session. */
-  'practice.summaryReviewed': ['{count}'],
-  /** How many of those were a got-it. */
-  'practice.summaryGotIt': ['{count}'],
-  /** How many of the rung's sentences are marked through, out of how many there are (#349). */
-  'practice.summaryMarked': ['{count}', '{total}'],
+  /**
+   * The session's score: cards got, out of cards served. One line where there were three — every
+   * card is the same card now, so one number is the whole honest report of a session.
+   */
+  'practice.summaryScore': ['{count}', '{total}'],
   /**
    * The way on when that count is the whole rung (#315) — the exit ritual, offered at the one
    * moment the learner has just earned it.
@@ -426,24 +369,23 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    * summary that offered the ritual wrongly would land on the module exactly as a typed URL does.
    * What changes is only that the app stops going quiet at the moment the next step opens.
    *
-   * It does not interpolate: the count it follows is the line above it (`summaryAtTwo`).
+   * It does not interpolate: the count it follows is the line above it (`practice.summaryScore`).
    */
   'practice.summaryToRitual': [],
   'practice.backToLadder': [],
   /**
    * Lossless resume (#99, PRD §8 F4) — the hub's offer when the course has a session still open.
    *
-   * The line says WHERE it stopped, because a resume the learner cannot picture is a button they
-   * will not press: the phase in the course's own name (`practice.phase.*`, interpolated as
-   * `{phase}` — one name per phase, wherever a phase is named) and the card as a `{count}` of
-   * `{total}`. Counts, never time (Invariant 2): nothing here says when the session was left,
-   * how long ago, or how long it ran — the app has no calendar to say it with.
+   * **There was a line above them describing where the session stopped**, naming the phase and the
+   * card as a count. It went with the phases (#389): the hub already prints how many cards the
+   * session holds, and "Continue" on that screen is not a button a learner needs a paragraph to
+   * understand. Counts, never time (Invariant 2) — nothing here says when the session was left or
+   * how long ago, and the app has no calendar to say it with.
    *
    * The two controls are separate keys rather than one toggle because they are two different
    * promises: `resumeContinue` keeps the place AND the session (no second `sessionCount`, no
    * second tick of the review queue), `resumeNew` drops the place and spends a fresh session.
    */
-  'practice.resumeLine': ['{phase}', '{count}', '{total}'],
   'practice.resumeContinue': [],
   'practice.resumeNew': [],
   /**
@@ -460,7 +402,7 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    * `exitTest.comprehendCount` — every item was marked "same meaning", because anything else is a
    * retry rather than a verdict — so a module that asked for three items reads "3 of 3" with no
    * code change. Two names rather than one repeated, so a course can put them in its own order —
-   * Hindi says "of {total}, {count}" — the way `practice.summaryAtTwo` already does.
+   * Hindi says "of {total}, {count}" — the way `practice.summaryScore` already does.
    *
    * `verdict.toLadder` is the CTA that fires the unlock beat.
    */

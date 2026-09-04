@@ -36,7 +36,6 @@ import {
   type LeitnerBox,
   type ModuleProgress,
   type ReviewItem,
-  type SessionPhase,
   type SessionSnapshot,
   type Settings,
 } from './types.ts';
@@ -402,9 +401,12 @@ const REVIEW_ITEM = object<ReviewItem>('a review item', {
   dueInSessions: COUNTDOWN,
 });
 
-/** The in-flight session: a POSITION, never the cards — `{phase, idx, queue}` and nothing more. */
+/**
+ * The in-flight session: a POSITION and the cards it is a position in — `{idx, queue}` and nothing
+ * more. A pre-v11 document also carried a `phase`; it never reaches here, because `migrate` drops
+ * every such snapshot before this validator sees it (`retireSessions` in `store.ts`).
+ */
 const SESSION_SNAPSHOT = object<SessionSnapshot>('a session snapshot', {
-  phase: enumOf<SessionPhase>(['review', 'read']),
   idx: COUNT,
   queue: list(id(VOCABULARY.sentenceId)),
 });
@@ -429,7 +431,7 @@ const SETTINGS = object<Settings>('the settings', {
  * written in. Exported so `serialize.test.ts` can walk the shape itself: the vocabularies below
  * are Invariant 4's assertion, and a test that re-declared them would be asserting its own list.
  */
-export const STATE_V10 = object<AppState>('the exported rung state', {
+export const STATE_V11 = object<AppState>('the exported rung state', {
   stateVersion: literal(STATE_VERSION),
   activeCourse: id(ACTIVE_COURSE),
   courses: record(VOCABULARY.courseId, COURSE),
@@ -447,7 +449,7 @@ export const STATE_V10 = object<AppState>('the exported rung state', {
  * same bytes — so a diff between yesterday's file and today's shows what the learner DID.
  */
 export function exportState(state: AppState): string {
-  return JSON.stringify(STATE_V10.write(state), null, 2);
+  return JSON.stringify(STATE_V11.write(state), null, 2);
 }
 
 /* ------------------------------------------------------------------------------ import */
@@ -467,7 +469,7 @@ export function exportState(state: AppState): string {
  *     behind rather than presenting `object` with a key it would refuse.
  *   • **older than any route** — refused. Answering first-run state would tell the learner their
  *     history was restored while handing them an empty ladder.
- *   • **newer** — refused, and it says so: a v9 file knows things this build does not, and reading
+ *   • **newer** — refused, and it says so: a newer file knows things this build does not, and reading
  *     the v8-shaped parts of it would quietly drop the rest.
  */
 export function importState(json: string): AppState {
@@ -482,7 +484,7 @@ export function importState(json: string): AppState {
 
   const version = versionOf(parsed);
 
-  if (version === STATE_VERSION) return STATE_V10.read(parsed, DOCUMENT);
+  if (version === STATE_VERSION) return STATE_V11.read(parsed, DOCUMENT);
 
   if (version > STATE_VERSION) {
     throw new ImportError(
@@ -498,12 +500,12 @@ export function importState(json: string): AppState {
 
   // The store's migration, not a second one: a file and a rehydrate must never disagree about
   // what a v5 document means (#82's contract, and `serialize.test.ts` proves there is one of it).
-  return STATE_V10.read(migrate(parsed, version), DOCUMENT);
+  return STATE_V11.read(migrate(parsed, version), DOCUMENT);
 }
 
 /** The version the file was written at — the one field read before anything else is trusted. */
 function versionOf(parsed: unknown): number {
-  if (!isRecord(parsed)) return fail(DOCUMENT, STATE_V10.expected, parsed);
+  if (!isRecord(parsed)) return fail(DOCUMENT, STATE_V11.expected, parsed);
 
   const version = parsed['stateVersion'];
   if (typeof version !== 'number' || !Number.isInteger(version)) {

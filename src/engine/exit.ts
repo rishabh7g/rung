@@ -9,7 +9,8 @@
  *
  * **The threshold moved from 2 to 1 on #349**, with the phase that fed it. The counters used to be
  * fed by a Produce phase — "say it, then check" — that the product retired along with notebook
- * writing, and the gate moved to the Read phase's own self-marks. One marked read-through opens a
+ * writing. The gate has moved twice since: to the Read phase's pager (#368), and then to the one
+ * self-mark every Practice card carries (#388). One got-it per sentence opens a
  * rung where two produced passes used to, which is a deliberate pacing change and the whole point
  * of the ticket.
  *

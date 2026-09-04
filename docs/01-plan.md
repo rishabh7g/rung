@@ -127,18 +127,21 @@ rung/ (repo name: shidi — GitHub redirects; local dir may keep its name)
   Both validators reject a missing or malformed `l2Dir`, and `src/langLaw.test.tsx` scans for a
   taught surface rendered without a direction the same way it scans for one without a language.
 - **courses.json / strings.json** — §4. strings.json has a FIXED key list
-  (cue label, reveal labels, phase nudges, ritual arc copy incl. resource rows
+  (cue label, reveal labels, practice copy, ritual arc copy incl. resource rows
   + hold label, retry copy, ordinal, pending-authoring note, verdict line,
   course-switch toast) — validated at build; missing key = build failure. The
   list is `src/course/stringsKeys.ts`, declared once: the app's `Strings` type
   derives from it and `tools/strings-check.ts` validates against the same array.
   Screens read microcopy with `useStrings()` and nothing else; the shell owns no
   copy, and `src/shellPurity.test.ts` fails on any course script under `src/`.
-- **State v8** — §F7 verbatim (localStorage `rung:state`):
-  `{ stateVersion: 8, activeCourse, courses: { <id>: { modules, production,
+- **State v11** — §F8 verbatim (localStorage `rung:state`):
+  `{ stateVersion: 11, activeCourse, courses: { <id>: { modules, production,
   reviewQueue, sessionCount, studied, session } }, settings }`. The per-course
-  `session` snapshot is what makes resume lossless — including across course
-  switches.
+  `session` snapshot is `{idx, queue} | null` — a position and the cards it
+  indexes — and it is what makes resume lossless, including across course
+  switches. Pre-v11 snapshots also carried a `phase`, from when Practice ran in
+  two halves; migration drops them rather than mapping a position that names no
+  card of a one-list session.
 - Rules: engine pure; the ONLY unlock path is the module-pass action
   (Invariant 1, asserted in tests); counters never decrement; timestamps only
   at the store layer via clock.ts (`passedAt` is the only date in state).
@@ -170,7 +173,8 @@ content (edge cases live in romanized courses: apostrophes/ʾ, hyphens, case).
 ## 9. Milestones
 
 P0 content-first → P1 shell → P2 practice → P3 exit ritual → P4 settings +
-data → P5 hardening + content scale → P6 course #2 (gated). Exit criteria live
+data → P5 hardening + content scale → P6 course #2 (gated) → P7 course #4
+(hi-en) → P8 practice, one card. Exit criteria live
 in the milestone descriptions and design/PRD-engineering.md §11. Design
 follow-ups run parallel (Rishabh).
 

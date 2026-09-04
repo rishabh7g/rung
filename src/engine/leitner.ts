@@ -15,8 +15,8 @@
  * when these run and what gets persisted (#96, #103); this module owns only what the answer is.
  *
  * **Enrolment policy — a sentence enters review when its module is PASSED.** Production ends,
- * maintenance begins: while a module is the current rung the learner is still building those
- * sentences in Produce (the ≥ 2× counters), so scheduling them for review as well would be the
+ * maintenance begins: while a module is the current rung, Practice already serves every one of its
+ * sentences each session (`engine/session.ts`), so scheduling them for review as well would be the
  * same work twice under two names. Passing the module is the moment the sentences stop being
  * something to learn and start being something to keep. The call itself lives in the exit ritual's
  * pass action (#103, `completeRitual`) — this module states the policy and implements `enrol`;
@@ -51,7 +51,7 @@ const PROMOTED = { 1: 2, 2: 3, 3: 3 } as const;
 
 /**
  * One session's worth of time passing: every item comes one session closer to due, floored at 0.
- * Called ONCE at session start (#96) — the session machine's tick, not the Review phase's.
+ * Called ONCE at session start (#96) — `startSession`'s tick, and no other caller's.
  *
  * The floor is what keeps a long absence from becoming a punishment: an item due while the learner
  * was away sits at 0 and waits, rather than sinking to -40 and turning the next session into a
@@ -63,8 +63,8 @@ export function tickSession(queue: readonly ReviewItem[]): ReviewItem[] {
 }
 
 /**
- * What the Review phase serves this session: the due items (`dueInSessions <= 0`), most urgent
- * first, capped at `max` (5 — the Review phase is a warm-up, not the session).
+ * What is actually DUE, most urgent first, capped at `max`. The session asks for at most five of
+ * these (`engine/session.ts`) — earlier material is a third of a session, not the session.
  *
  * The order is fixed by PRD §8 F4 — "strictly by due-ness, then module recency":
  *
@@ -86,6 +86,36 @@ export function dueItems(queue: readonly ReviewItem[], max = 5): ReviewItem[] {
 }
 
 /**
+ * What one session serves from EARLIER rungs — `max` items, and always `max` of them if the queue
+ * holds that many (#386).
+ *
+ * `dueItems` first, in its own urgency order, and that is the whole of the answer whenever enough
+ * is due. When less is due than the session has room for, the rest are the **closest to due** —
+ * the same comparator, applied to what is left. That top-up is what makes a session a fixed
+ * fifteen cards rather than a length that swings with the queue, and it is deliberately NOT
+ * `dueItems` with a softer filter: "due" keeps meaning due, here and in the PRD, and this function
+ * is honest that it is reaching past it.
+ *
+ * An early review costs the learner nothing. A got-it promotes the box and re-schedules from
+ * today whether the item was owed or not; a miss returns it to box 1, which is what a sentence you
+ * could not recall is worth however early it was asked. The scheduler's shape is unchanged — only
+ * the caller's appetite is.
+ */
+export function reviewPicks(queue: readonly ReviewItem[], max: number): ReviewItem[] {
+  const room = Math.max(0, max);
+  const picks = dueItems(queue, room);
+  if (picks.length >= room) return picks;
+
+  const taken = new Set(picks.map((item) => item.sentenceId));
+  const rest = queue
+    .filter((item) => !taken.has(item.sentenceId))
+    .sort(byUrgency)
+    .slice(0, room - picks.length);
+
+  return [...picks, ...rest];
+}
+
+/**
  * The self-mark, applied (PRD §8 F4 [D11] — the learner's own green/red, the only judgement in the
  * app):
  *
@@ -94,11 +124,12 @@ export function dueItems(queue: readonly ReviewItem[], max = 5): ReviewItem[] {
  *     not recall is an item you are learning again, and half a demotion would keep telling you
  *     otherwise for the next three sessions.
  *
- * A `sentenceId` the queue does not hold changes nothing. Review serves only what is enrolled, and
- * a mark on anything else belongs to the Produce counters — `recordProduction` in the store,
- * `exitAvailable` in `engine/exit.ts` (#95) — which are a different number in a different place.
- * The routing is the caller's (PRD §8 F4): a Review mark comes here and NEVER to the counters, a
- * Produce mark goes there and never here.
+ * A `sentenceId` the queue does not hold changes nothing. Only passed rungs are enrolled, and a
+ * mark on a sentence of the CURRENT rung belongs to the exit counters instead — `recordProduction`
+ * in the store, `exitAvailable` in `engine/exit.ts` (#95) — which are a different number in a
+ * different place. The routing is the caller's (`screens/practice/Session.tsx`, #388): an
+ * earlier-rung mark comes here and NEVER to the counters, a current-rung got-it goes there and
+ * never here.
  */
 export function applyMark(
   queue: readonly ReviewItem[],

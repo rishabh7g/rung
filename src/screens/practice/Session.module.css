@@ -1,8 +1,8 @@
 /* Layout only, tokens only (docs/design-contract.md rule 1).
-   Geometry follows design/Rung App v3.3.dc.html → Practice → the live session: the chip row, then
-   one card filling the rest of the column. */
+   Geometry follows design/Rung App v3.3.dc.html → Practice → the live session: one card filling
+   the column. */
 
-/* The session is the whole column: the chips at the top, the card below taking what is left, so
+/* The session is the whole column: the tick at the top, the card below taking what is left, so
    the reveal button and the self-mark sit at the BOTTOM of the screen the way they do in the
    prototype. `min-height: 100%` is what makes that true — the shell's `<main>` is the scroll area
    and a plain block, so a card that only asked for `flex: 1` would bunch at the top (#84).
@@ -46,14 +46,5 @@
   margin: 0 0 0 auto;
   font: var(--text-caption);
   white-space: nowrap;
-  color: var(--ink-65);
-}
-
-/* Where the next tap goes (#317) — the quietest line on the card, under the head and above the
-   reveal. It is a signpost, not an instruction: muted, small, and only on the card that actually
-   hands over, so it never becomes another always-there sentence to skim past (#225). */
-.upNext {
-  margin: 0;
-  font: var(--text-caption);
   color: var(--ink-65);
 }

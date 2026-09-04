@@ -12,7 +12,7 @@ import {
 import { exitAvailable } from '../engine/exit.ts';
 import { currentRungId, deriveStatuses, ladderFromLevels } from '../engine/progression.ts';
 import { levelsFixture } from '../test/courseContent.ts';
-import type { CourseState } from './types.ts';
+import { STATE_VERSION, type CourseState } from './types.ts';
 
 /**
  * Storage the test owns: what the app writes is a string under a key, and reading that string
@@ -69,10 +69,10 @@ afterEach(() => {
   vi.restoreAllMocks();
 });
 
-describe('state v10', () => {
+describe('state v11', () => {
   it('starts as the shape the PRD prints — the drift guard (§8 F7)', () => {
     expect(persistedSlice(useAppStore.getState())).toEqual({
-      stateVersion: 10,
+      stateVersion: STATE_VERSION,
       activeCourse: '',
       courses: {},
       settings: { elapsedTickEnabled: true, userLang: '' },
@@ -111,10 +111,10 @@ describe('state v10', () => {
     expect(useAppStore.getState().settings).toEqual({ elapsedTickEnabled: true, userLang: '' });
   });
 
-  it('persists under rung:state, versioned 10', () => {
+  it('persists under rung:state, versioned 11', () => {
     useAppStore.getState().ensureCourse('hi-mr');
 
-    expect(stored().version).toBe(10);
+    expect(stored().version).toBe(STATE_VERSION);
     expect(storage.items.has('rung:state')).toBe(true);
   });
 
@@ -618,7 +618,7 @@ describe('switchCourse (#106 — swap, and nothing erased)', () => {
     reviewQueue: [{ sentenceId: 'L1-M1-S01', box: 2, dueInSessions: 1 }],
     sessionCount: 14,
     studied: { 'L1-M1': true, 'L1-M2': true },
-    session: { phase: 'read', idx: 1, queue: ['L1-M2-S01', 'L1-M2-S02'] },
+    session: { idx: 1, queue: ['L1-M2-S01', 'L1-M2-S02'] },
   };
 
   it('round-trips hi-mr → en-ar → hi-mr with every per-course fact EXACTLY restored (F0 AC)', () => {
@@ -717,7 +717,7 @@ describe('rehydration', () => {
     writeCourse('hi-mr', {
       sessionCount: 14,
       modules: { 'L1-M1': { status: 'passed', passedAt: '2026-02-02T02:40:00.000Z' } },
-      session: { phase: 'read', idx: 4, queue: ['L1-M2-S01', 'L1-M2-S02'] },
+      session: { idx: 4, queue: ['L1-M2-S01', 'L1-M2-S02'] },
     });
     setActiveCourse('en-ar');
     setSetting('elapsedTickEnabled', false);
@@ -733,7 +733,6 @@ describe('rehydration', () => {
     expect(persistedSlice(useAppStore.getState())).toEqual(before);
     expect(useAppStore.getState().activeCourse).toBe('en-ar');
     expect(useAppStore.getState().courses['hi-mr']?.session).toEqual({
-      phase: 'read',
       idx: 4,
       queue: ['L1-M2-S01', 'L1-M2-S02'],
     });
@@ -768,7 +767,7 @@ describe('migration', () => {
 
     const state = useAppStore.getState();
     expect(warn).not.toHaveBeenCalled();
-    expect(state.stateVersion).toBe(10);
+    expect(state.stateVersion).toBe(STATE_VERSION);
     expect(state.activeCourse).toBe('hi-mr');
     expect(state.courses['hi-mr']).toEqual({
       ...emptyCourseState(),
@@ -806,7 +805,7 @@ describe('migration', () => {
 
     const state = useAppStore.getState();
     expect(warn).not.toHaveBeenCalled();
-    expect(state.stateVersion).toBe(10);
+    expect(state.stateVersion).toBe(STATE_VERSION);
     expect(state.activeCourse).toBe('hi-mr');
     // The ladder position survives the upgrade untouched (Invariant 8).
     expect(state.courses['hi-mr']).toEqual(midClimb);
@@ -827,15 +826,15 @@ describe('migration', () => {
     // lets a v7 backup through `serialize.ts`'s unknown-key refusal (#227).
     expect(state.settings).toEqual({ elapsedTickEnabled: false, userLang: '' });
     expect(Object.keys(state.settings).sort()).toEqual(['elapsedTickEnabled', 'userLang']);
-    expect(state.stateVersion).toBe(10);
+    expect(state.stateVersion).toBe(STATE_VERSION);
     expect(state.courses['hi-mr']).toEqual(emptyCourseState());
   });
 
   /**
-   * The v9 → v10 step (#349): `'produce'` is no longer a phase, so a snapshot naming it has
-   * nowhere to resume to. The position goes; nothing the learner earned does — that is the whole
-   * point of the step, and the counters, the queue and the passed modules beside it are what prove
-   * the step is narrow.
+   * The pre-v11 step (#387): a snapshot carrying a `phase` is a position inside a half of a
+   * session that no longer has halves, so it has nowhere to resume to. The position goes; nothing
+   * the learner earned does — that is the whole point of the step, and the counters, the queue and
+   * the passed modules beside it are what prove the step is narrow.
    */
   it('retires a v9 session parked in the Produce phase, and keeps everything it earned', () => {
     const v9 = {
@@ -864,25 +863,60 @@ describe('migration', () => {
     expect(state.courses['en-ar']?.session).toBeNull();
     expect(state.courses['hi-mr']?.production).toEqual({ 'L1-M2-S01': 2 });
     expect(state.courses['hi-mr']?.sessionCount).toBe(14);
-    expect(state.stateVersion).toBe(10);
+    expect(state.stateVersion).toBe(STATE_VERSION);
   });
 
-  it('leaves a review or read snapshot exactly where it was — only Produce had nowhere to go', () => {
-    const read = { phase: 'read' as const, idx: 3, queue: ['L1-M2-S01'] };
-    const v9 = {
-      stateVersion: 9,
+  it('retires a v10 review or read snapshot too — a phase position lands on no card of a one-list session', () => {
+    const v10 = {
+      stateVersion: 10,
       activeCourse: 'hi-mr',
-      courses: { 'hi-mr': { ...emptyCourseState(), session: read } },
+      courses: {
+        'hi-mr': {
+          ...emptyCourseState(),
+          production: { 'L1-M2-S01': 1 },
+          reviewQueue: [{ sentenceId: 'L1-M1-S01', box: 2 as const, dueInSessions: 1 }],
+          sessionCount: 9,
+          studied: { 'L1-M2': true },
+          session: { phase: 'read', idx: 3, queue: ['L1-M2-S01'] },
+        },
+        'en-ar': {
+          ...emptyCourseState(),
+          session: { phase: 'review', idx: 1, queue: ['L1-M1-S01', 'L1-M1-S02'] },
+        },
+      },
       settings: { elapsedTickEnabled: true, userLang: '' },
     };
 
-    // The very same object, not a copy: a document with no Produce session is not rewritten at all.
-    expect(migrate(v9, 9).courses['hi-mr']?.session).toBe(read);
+    const state = migrate(v10, 10);
+
+    expect(state.courses['hi-mr']?.session).toBeNull();
+    expect(state.courses['en-ar']?.session).toBeNull();
+    // Everything a learner earned rides through untouched — the step costs a place, not progress.
+    expect(state.courses['hi-mr']?.production).toEqual({ 'L1-M2-S01': 1 });
+    expect(state.courses['hi-mr']?.reviewQueue).toEqual([
+      { sentenceId: 'L1-M1-S01', box: 2, dueInSessions: 1 },
+    ]);
+    expect(state.courses['hi-mr']?.sessionCount).toBe(9);
+    expect(state.courses['hi-mr']?.studied).toEqual({ 'L1-M2': true });
+    expect(state.stateVersion).toBe(STATE_VERSION);
+  });
+
+  it('leaves a v11 snapshot exactly where it was — it is already a position in one list', () => {
+    const open = { idx: 3, queue: ['L1-M2-S01'] };
+    const v11 = {
+      stateVersion: STATE_VERSION,
+      activeCourse: 'hi-mr',
+      courses: { 'hi-mr': { ...emptyCourseState(), session: open } },
+      settings: { elapsedTickEnabled: true, userLang: '' },
+    };
+
+    // The very same object, not a copy: a document with no stale snapshot is not rewritten at all.
+    expect(migrate(v11, STATE_VERSION).courses['hi-mr']?.session).toBe(open);
   });
 
   it('answers a COMPLETE v10 document even for a sparse v5 payload — a half shape is worse than a fresh one', () => {
     expect(migrate({ stateVersion: 5, modules: {} }, 5)).toEqual({
-      stateVersion: 10,
+      stateVersion: STATE_VERSION,
       activeCourse: 'hi-mr',
       courses: { 'hi-mr': emptyCourseState() },
       settings: { elapsedTickEnabled: true, userLang: '' },

@@ -54,18 +54,6 @@
   composes: ghost;
 }
 
-/* Produce cards only (PRD §8 F4): the one control here that leaves the session. */
-.openFull {
-  composes: ghost;
-}
-
-.openFullIcon {
-  flex: none;
-  width: var(--icon-inline);
-  height: var(--icon-inline);
-  stroke-width: var(--icon-stroke);
-}
-
 /* ----------------------------------------------------------------- the expansion */
 
 /* 250ms, in place: the card grows where it stands (design/tokens.md §5 "Expand"), separated from

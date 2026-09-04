@@ -31,7 +31,7 @@ export type ModuleId = string;
 export type SentenceId = string;
 
 /** The persisted state's version. The store and the migration read it from here. */
-export const STATE_VERSION = 10;
+export const STATE_VERSION = 11;
 
 /**
  * A passed module. `status` is a one-member union on purpose: a module is in this map because
@@ -55,25 +55,19 @@ export interface ReviewItem {
 }
 
 /**
- * Practice phases, in the order a session serves them (PRD §8 F4).
- *
- * **There were three** — Review, Read, Produce — until #349 retired notebook writing and with it
- * the phase that asked the learner to say a sentence and check it. This union is a persisted
- * value (a `SessionSnapshot` names one), so dropping a member is a schema change and not a
- * refactor: state v10 is exactly this narrowing, and `migrate` retires a session parked in the
- * phase that no longer exists rather than resuming it into nowhere.
- */
-export type SessionPhase = 'review' | 'read';
-
-/**
  * The in-flight session, stored per course — what makes resume lossless after an app kill AND
- * after switching courses away and back (PRD §8 F4). `null` when no session is open.
+ * after switching courses away and back (PRD §8 F3). `null` when no session is open.
+ *
+ * **There used to be a `phase` beside these two.** Practice ran as Review then Read, the snapshot
+ * named which half the learner was in, and `idx` was a position inside that half's own queue.
+ * #388 made the session one list of fifteen cards, so there is no half to name and `idx` means
+ * the only thing it can mean. State v11 is exactly that narrowing: `migrate` retires every older
+ * snapshot rather than guessing where a two-phase position lands in a one-list session.
  */
 export interface SessionSnapshot {
-  phase: SessionPhase;
   /** How far into `queue` the learner got. */
   idx: number;
-  /** The sentence ids this session serves, in order. */
+  /** The sentence ids this session serves, in order — the plan's `cardIds` (#386). */
   queue: SentenceId[];
 }
 
@@ -82,14 +76,16 @@ export interface CourseState {
   /** Passed modules only — the ladder position. */
   modules: Record<ModuleId, ModuleProgress>;
   /**
-   * Times each sentence has been self-marked got-it in Read. **Counters never decrement**:
-   * `recordProduction` is their one writer and its only arithmetic is `+ 1`
-   * (`productionCounters.test.ts` proves it). Every sentence at ≥ 1 is `exit_available` (F1).
+   * Times each sentence of a rung has been self-marked got-it in Practice. **Counters never
+   * decrement**: `recordProduction` is their one writer and its only arithmetic is `+ 1`. Every
+   * sentence at ≥ 1 is `exit_available` (F1).
    *
    * The field is still called `production` because it is on disk under that name and the numbers
-   * in it are the same numbers: #349 moved WHO writes them (Produce's got-it became Read's) and
-   * WHAT they open (two marks became one), not what they count. Renaming it would be a migration
-   * of every learner's document to say the same thing in different words.
+   * in it are the same numbers. Three tickets have moved WHO writes them — Produce's got-it became
+   * Read's (#349), Read's became the pager's (#368), and the pager's became the one self-mark
+   * every card now carries (#388) — and none of them changed what is counted: sentences of the
+   * current rung the learner has got right at least once. Renaming it would be a migration of
+   * every learner's document to say the same thing in different words.
    */
   production: Record<SentenceId, number>;
   reviewQueue: ReviewItem[];

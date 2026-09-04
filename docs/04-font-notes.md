@@ -411,7 +411,7 @@ actually used and whether it was a custom (bundled) one. Every glyph of every Ar
 |---|---|---:|---:|
 | `SentenceCard` (module list) ×4 | `#/module/L1-M1` | 12, 16, 14, 10 | **0** |
 | `SentenceScreen` | `#/sentence/L1-M1-S01` | 12 | **0** |
-| `ReadPhase` | `#/practice` (read) | 12 | **0** |
+| `ReadPhase` (retired by #388) | `#/practice` (read) | 12 | **0** |
 | `RevealCard` | `#/practice` (reveal) | 12 | **0** |
 
 Four of the five `.script` rules, observed live. The fifth, `ComprehensionItem`, sits behind the

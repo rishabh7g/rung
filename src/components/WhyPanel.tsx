@@ -30,8 +30,6 @@
  * unresolvable sentence.
  */
 import { useState, type ReactNode } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 import { useIndex, useModules } from '../course/content.ts';
 import type { L2Written } from '../course/manifest.ts';
 import { useStrings } from '../course/strings.ts';
@@ -50,9 +48,8 @@ interface WhyPanelProps {
    * Whether this surface offers "open full". Produce cards do and Review cards do not
    * (PRD §8 F4, PRD-design §6.3) — the phase is the session's knowledge, not this panel's.
    */
-  openFull?: boolean;
   /**
-   * A control that belongs in the SAME ghost row, rendered before the toggle — the Read phase's
+   * A control that belongs in the SAME ghost row, rendered before the toggle — a surface's
    * "show cue" (#97), which the prototype draws beside "why" and "open full" rather than above
    * them. The slot exists so the rows still expand under all three; every other surface leaves it
    * empty, and an empty one renders nothing.
@@ -64,14 +61,7 @@ interface WhyPanelProps {
   l2?: L2Written;
 }
 
-export function WhyPanel({
-  sentenceId,
-  display,
-  openFull = false,
-  leading,
-  dir,
-  l2,
-}: WhyPanelProps) {
+export function WhyPanel({ sentenceId, display, leading, dir, l2 }: WhyPanelProps) {
   const strings = useStrings();
   const [open, setOpen] = useState(false);
   const moduleId = moduleIdOf(sentenceId);
@@ -95,14 +85,6 @@ export function WhyPanel({
         >
           {open ? strings['why.hide'] : strings['why.show']}
         </button>
-
-        {/* The one control that leaves the session — a link, because it navigates (#88's split). */}
-        {openFull && (
-          <Link className={styles.openFull} to={`/sentence/${sentenceId}`} dir={dir}>
-            {strings['why.openFull']}
-            <ArrowRight className={styles.openFullIcon} aria-hidden="true" />
-          </Link>
-        )}
       </div>
 
       {/* The list is the expansion; an empty one draws nothing at all (`.rows:empty`). A sentence
