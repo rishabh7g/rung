@@ -1176,9 +1176,9 @@ That is the whole interaction: no phases, no chips, no pager, no cue toggle, no 
 | `src/screens/practice/Session.tsx` | the session: the cards, the mark routing, the snapshot |
 | `src/screens/practice/SessionSummary.tsx` | the score, and the way on |
 
-| the hub | a card | the summary |
+| the hub | a card, revealed | the summary |
 |---|---|---|
-| [practice-hub-360.png](docs/images/practice-hub-360.png) | [practice-review-360.png](docs/images/practice-review-360.png) | [practice-summary-360.png](docs/images/practice-summary-360.png) |
+| [practice-hub-360.png](docs/images/practice-hub-360.png) | [practice-card-360.png](docs/images/practice-card-360.png) | [practice-summary-360.png](docs/images/practice-summary-360.png) |
 
 - **What a session holds.** The current rung's sentences, whole and in the module's own order —
   ten in every shipped module, never trimmed, because the exit gate needs all of them — plus up to
