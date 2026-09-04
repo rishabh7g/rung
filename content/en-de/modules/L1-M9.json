@@ -3,14 +3,18 @@
   "id": "L1-M9",
   "title": "Feelings & opinions",
   "job": "Why — because and so",
-  "prerequisites": ["L1-M8"],
+  "prerequisites": [
+    "L1-M8"
+  ],
   "verified": true,
   "verifiedBy": "LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-30",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 8,
-    "allowedTenses": ["simple_present"],
+    "allowedTenses": [
+      "simple_present"
+    ],
     "allowedPatterns": [
       "<statement> + , weil + <clause with the verb LAST>",
       "<statement> + , denn + <clause with the verb SECOND>",
@@ -61,7 +65,6 @@
       "id": "L1-M9-S01",
       "display": "Ich möchte Tee, weil ich müde bin",
       "cue": "I'd like tea because I'm tired",
-      "glossEn": "lit. \"I would-like tea, because I tired am\"",
       "literal": "I would-like tea, because I tired am",
       "deconstruction": {
         "words": [
@@ -70,10 +73,13 @@
             "cue": "because",
             "tag": "interference",
             "forms": [],
-            "note": "because — and it is SUBORDINATING, which means it sends the finite verb of its own clause to the very end: weil ich müde bin, not *weil ich bin müde. Everything else in the clause keeps the order it would have had; only the verb moves, and it moves all the way. English's \"because\" changes nothing at all, so there is nothing here to copy and the whole rule has to be learned."
+            "note": "because — SUBORDINATING, so it sends its clause's finite verb to the very end: weil ich müde bin, not *weil ich bin müde. Only the verb moves, all the way. English's “because” moves nothing."
           }
         ],
-        "rules": [0, 7]
+        "rules": [
+          0,
+          7
+        ]
       },
       "trap": "Only the FINITE verb goes to the end. In a longer weil-clause everything else stays where it was and the one verb carrying the person jumps over all of it — so the clause reads normally until the last word, and then the verb arrives.",
       "sound": "vile — the German w is a v and the ei is \"eye\", so weil sounds like English \"vile\". müde is MÜ-duh, with the ü of pursed lips and a voiced final -e.",
@@ -106,7 +112,6 @@
       "id": "L1-M9-S02",
       "display": "Ich möchte Tee, denn ich bin müde",
       "cue": "I'd like tea, because I'm tired",
-      "glossEn": "lit. \"I would-like tea, for I am tired\"",
       "deconstruction": {
         "words": [
           {
@@ -114,10 +119,13 @@
             "cue": "because · for",
             "tag": "interference",
             "forms": [],
-            "note": "because — the same meaning as weil and the opposite grammar. denn is COORDINATING: it joins two full clauses side by side and changes nothing inside either of them, so the verb stays in second position. It is a shade more written and more deliberate than weil in everyday speech, but the difference a learner has to hold onto is the word order, not the tone."
+            "note": "because — weil's meaning, the opposite grammar. denn is COORDINATING: it joins two full clauses and changes nothing inside them, so the verb stays second. The word order is the lesson."
           }
         ],
-        "rules": [0, 7]
+        "rules": [
+          0,
+          7
+        ]
       },
       "trap": "This sentence and the one before it mean the same thing and are built the opposite way round. The conjunction is the ONLY thing that decides: weil moves the verb, denn leaves it alone. Nothing in the meaning tells you which is which.",
       "sound": "den, one short syllable, with a plain d. It sounds like English \"den\" and shares nothing with it.",
@@ -144,13 +152,13 @@
       },
       "usage": "The same reason, said the way it reads in a notice or a careful sentence.",
       "register": "neutral",
-      "mnemonic": "denn leaves everything where it found it."
+      "mnemonic": "denn leaves everything where it found it.",
+      "literal": "I would-like tea, for I am tired"
     },
     {
       "id": "L1-M9-S03",
       "display": "Deshalb möchte ich Tee",
       "cue": "That's why I'd like tea",
-      "glossEn": "lit. \"Therefore would-like I tea\"",
       "literal": "Therefore would-like I tea",
       "deconstruction": {
         "words": [
@@ -159,10 +167,12 @@
             "cue": "therefore · that's why",
             "tag": "delta",
             "forms": [],
-            "note": "therefore, that's why — the consequence word, and it turns the reason round: where weil and denn point backwards to a cause, deshalb points forwards to what follows from it. It OCCUPIES the first position of its clause, so the verb comes straight after it and the subject after that. That is what separates it from denn, which sits outside the clause and changes nothing."
+            "note": "therefore, that's why — the consequence word, pointing forward where weil and denn point back. It takes first position, so the verb comes straight after — unlike denn, which sits outside its clause."
           }
         ],
-        "rules": [1]
+        "rules": [
+          1
+        ]
       },
       "trap": "deshalb inverts and denn does not, and they can translate into the same English sentence. Deshalb möchte ich Tee has möchte second because deshalb is the first element; denn ich möchte Tee has möchte second because denn is not an element at all. Two different reasons for the same-looking result.",
       "sound": "DES-halp — the h in the middle is really said, and the final b hardens to a p as a final b always does in German.",
@@ -195,7 +205,6 @@
       "id": "L1-M9-S04",
       "display": "Warum möchten Sie Tee?",
       "cue": "Why would you like tea?",
-      "glossEn": "lit. \"Why would-like you tea?\"",
       "literal": "Why would-like you tea?",
       "deconstruction": {
         "words": [
@@ -204,10 +213,13 @@
             "cue": "why",
             "tag": "free",
             "forms": [],
-            "note": "why. A question word like M6's was and wann and M7's wo, so it takes first position and the verb follows it. What is worth knowing is the answer it invites: a full sentence, or a bare weil-clause standing on its own — Weil ich müde bin — with the verb still at the end. That fragment is normal spoken German."
+            "note": "why. A question word like was, wann and wo: first position, verb after. The answer it invites can be a bare weil-clause on its own — Weil ich müde bin — verb still at the end. Normal spoken German."
           }
         ],
-        "rules": [6, 0]
+        "rules": [
+          6,
+          0
+        ]
       },
       "trap": "The answer to warum is where weil does its damage. The question is easy; the reply is the sentence where the verb has to travel, and a learner who has just heard a comfortable verb-second question will keep the same order out of momentum.",
       "sound": "va-ROOM, with the stress on the second syllable and the w said as a v. The u is the oo of \"book\", not the uh of English \"rum\".",
@@ -240,7 +252,6 @@
       "id": "L1-M9-S05",
       "display": "Ich habe Durst",
       "cue": "I'm thirsty",
-      "glossEn": "lit. \"I have thirst\"",
       "literal": "I have thirst",
       "deconstruction": {
         "words": [
@@ -249,10 +260,12 @@
             "cue": "thirst",
             "tag": "interference",
             "forms": [],
-            "note": "thirst — a NOUN, der Durst, which is the whole point. German states this kind of bodily condition as something you HAVE, with no article at all: Ich habe Durst. English states it as something you ARE, with an adjective, and the two languages simply choose different parts of speech for the same feeling. M5's Ich hatte Hunger was the first of this family; this is the second."
+            "note": "thirst — a NOUN, der Durst. German states this kind of state as something you HAVE, with no article: Ich habe Durst; English says you ARE thirsty. After M5's Hunger, the second of the haben family."
           }
         ],
-        "rules": [2]
+        "rules": [
+          2
+        ]
       },
       "trap": "There is no article. Ich habe Durst, never *Ich habe den Durst or *Ich habe einen Durst — the bare noun is what makes it a state rather than a possession of some particular thirst.",
       "sound": "DOORST, one syllable, with the u as the oo of \"book\" and a rolled or throaty r that barely sounds before the s.",
@@ -285,7 +298,6 @@
       "id": "L1-M9-S06",
       "display": "Ich habe Angst",
       "cue": "I'm afraid",
-      "glossEn": "lit. \"I have fear\"",
       "literal": "I have fear",
       "deconstruction": {
         "words": [
@@ -294,10 +306,12 @@
             "cue": "fear",
             "tag": "interference",
             "forms": [],
-            "note": "fear — die Angst, feminine, and the third member of the haben family after Hunger and Durst. English has borrowed the word for a specific modern kind of dread; in German it is the ordinary everyday word for being afraid of anything at all, from a dog to an exam. Bare after habe, with no article."
+            "note": "fear — die Angst, the third of the haben family after Hunger and Durst. English borrowed it for a modern dread; in German it is the everyday word for being afraid of anything. Bare after habe."
           }
         ],
-        "rules": [2]
+        "rules": [
+          2
+        ]
       },
       "trap": "The English borrowing narrows the word and the German original does not. Ich habe Angst is what a child says about the dark, not a diagnosis — reading the German through the English loan makes the sentence sound far more dramatic than it is.",
       "sound": "ANGST, one syllable, and the ng is the ng of \"singer\" with no hard g after it. The a is short and open.",
@@ -330,7 +344,6 @@
       "id": "L1-M9-S07",
       "display": "Mir ist kalt",
       "cue": "I'm cold",
-      "glossEn": "lit. \"To-me is cold\"",
       "literal": "To-me is cold",
       "deconstruction": {
         "words": [
@@ -339,24 +352,26 @@
             "cue": "to me · me (dative)",
             "tag": "delta",
             "forms": [],
-            "note": "to me — the dative form of ich, and the word German uses when something happens TO a person rather than being done BY them. It has two seats in this level and they are the same construction: M2's Mir geht es gut (\"to-me goes it well\") and this module's Mir ist kalt (\"to-me is cold\"). In both, the person is in the dative and is not the subject of the sentence."
+            "note": "to me — the dative of ich, for something that happens to a person rather than being done by them. Two seats, one shape: M2's Mir geht es gut and this module's Mir ist kalt. The person is no subject."
           },
           {
             "display": "kalt",
             "cue": "cold",
             "tag": "free",
             "forms": [],
-            "note": "cold. As an adjective after ist it takes no ending, exactly like M8's teuer. What is not free is the sentence around it: with a person it goes with mir, and only with a thing does it take a plain subject — Der Kaffee ist kalt is ordinary and means what it looks like."
+            "note": "cold. After ist no ending, like teuer. The sentence around it is what is not free: with a person it goes with mir; only a thing takes a plain subject — Der Kaffee ist kalt."
           },
           {
             "display": "warm",
             "cue": "warm",
             "tag": "free",
             "forms": [],
-            "note": "warm — spelled as in English and said with a swallowed r. It behaves exactly as kalt does: Mir ist warm for the person, Der Kaffee ist warm for the thing. The pair is worth learning together, because the construction is the lesson and the two words share it."
+            "note": "warm — spelled as in English, said with a swallowed r. It behaves like kalt: Mir ist warm for the person, Der Kaffee ist warm for the thing. Learn the pair together; the construction is the lesson."
           }
         ],
-        "rules": [3]
+        "rules": [
+          3
+        ]
       },
       "trap": "This sentence has no subject. There is nothing standing where English's \"I\" stands — mir is a dative and ist has no subject to agree with — which is why the shape feels like a sentence with a hole in it until it is learned as one piece.",
       "sound": "meer ist KALT. mir has the long ee of ie; kalt has a short open a and a clear l, said with the tongue forward rather than the dark English l.",
@@ -389,7 +404,6 @@
       "id": "L1-M9-S08",
       "display": "Ich denke, dass das Buch gut ist",
       "cue": "I think the book is good",
-      "glossEn": "lit. \"I think, that the book good is\"",
       "literal": "I think, that the book good is",
       "deconstruction": {
         "words": [
@@ -397,18 +411,25 @@
             "display": "denken",
             "cue": "to think",
             "tag": "free",
-            "forms": ["denken", "denke"],
-            "note": "to think — denke for ich, denken for Sie and for the infinitive. It is how an opinion is introduced, and what follows it is not a second main clause but a dass-clause with its verb at the end. Ich denke on its own is also a complete answer, the way English's \"I think so\" is."
+            "forms": [
+              "denken",
+              "denke"
+            ],
+            "note": "to think — denke for ich, denken for Sie and the infinitive. It introduces an opinion; what follows is a dass-clause with its verb at the end. Ich denke alone is a complete answer, like “I think so”."
           },
           {
             "display": "dass",
             "cue": "that (conjunction)",
             "tag": "interference",
             "forms": [],
-            "note": "that — the conjunction, and it is NEVER optional. English drops it freely (\"I think it is good\") and German keeps it every time. It does two jobs at once: it holds the second clause onto the first, and it sends that clause's finite verb to the end. Note the two s: dass with two is this word, das with one is the neuter article and the pointing \"that\", and this sentence contains both, side by side."
+            "note": "that — the conjunction, never optional: English drops it (“I think it is good”), German keeps it. It holds the second clause on and sends its verb to the end. Two s: dass this word; das the article."
           }
         ],
-        "rules": [4, 5, 7]
+        "rules": [
+          4,
+          5,
+          7
+        ]
       },
       "trap": "dass das is not a stutter and not a typo. The first word is the conjunction with two s and the second is the article with one, and they sit next to each other because German needs both: dass opens the clause, das belongs to Buch. Hearing them as one word is what makes this the sentence to hang the spelling on.",
       "sound": "Both words are said the same: DAS, with a short a and a hissed s. The ear cannot separate them at all, which is precisely why the eye has to.",
@@ -441,7 +462,6 @@
       "id": "L1-M9-S09",
       "display": "Ich bin traurig, weil ich krank bin",
       "cue": "I'm sad because I'm ill",
-      "glossEn": "lit. \"I am sad, because I ill am\"",
       "literal": "I am sad, because I ill am",
       "deconstruction": {
         "words": [
@@ -450,7 +470,7 @@
             "cue": "sad",
             "tag": "free",
             "forms": [],
-            "note": "sad. An adjective after sein, so no ending, exactly like müde and kalt. The final -ig is said as the soft ch of ich in standard German, so the word ends TROW-rich rather than with a hard g — the same ending as billig and dreißig."
+            "note": "sad. An adjective after sein, so no ending, like müde and kalt. The final -ig is the soft ch of ich: TROW-rich, not a hard g — the same ending as billig and dreißig."
           },
           {
             "display": "krank",
@@ -460,7 +480,10 @@
             "note": "ill, sick. Another plain adjective after sein. English has borrowed it in \"crank\" and in medical words, but in German it is the everyday word for being unwell, from a cold to something serious."
           }
         ],
-        "rules": [0, 7]
+        "rules": [
+          0,
+          7
+        ]
       },
       "trap": "Both halves of this sentence use sein, and only one of them puts it last. The main clause has bin second and the weil-clause has bin last, in the space of eight words — which makes it the cleanest place in the module to see the rule doing its work.",
       "sound": "TROW-rich: the au is the ow of \"how\" and the -ig ends in the soft ch. krank has the same short open a as kalt.",
@@ -493,7 +516,6 @@
       "id": "L1-M9-S10",
       "display": "Ich bin glücklich, denn der Kaffee ist gut",
       "cue": "I'm happy, because the coffee is good",
-      "glossEn": "lit. \"I am happy, for the coffee is good\"",
       "deconstruction": {
         "words": [
           {
@@ -501,10 +523,13 @@
             "cue": "happy",
             "tag": "free",
             "forms": [],
-            "note": "happy — built from das Glück, \"luck\" and \"happiness\" at once, with the -lich ending that German uses to make adjectives the way English uses \"-ly\" and \"-ful\". It has the ü of pursed lips and the soft ch, and it takes no ending after ist."
+            "note": "happy — from das Glück, “luck” and “happiness” at once, with the -lich ending German uses the way English uses “-ly” or “-ful”. Pursed-lip ü, soft ch, and no ending after ist."
           }
         ],
-        "rules": [0, 7]
+        "rules": [
+          0,
+          7
+        ]
       },
       "trap": "The clause after denn has a full subject of its own — der Kaffee — and its verb is still second, behind that subject. denn does not count as part of the clause it introduces, so nothing about the clause changes; that is the whole difference from weil, and a longer subject makes it easier to see.",
       "sound": "GLÜK-lich, two syllables, with the ü of pursed lips and a soft ch at the end. The -lich ending never has a hard k sound in it.",
@@ -531,7 +556,8 @@
       },
       "usage": "Saying why something has gone right.",
       "register": "neutral",
-      "mnemonic": "denn joins two whole sentences; weil rebuilds the second one."
+      "mnemonic": "denn joins two whole sentences; weil rebuilds the second one.",
+      "literal": "I am happy, for the coffee is good"
     }
   ],
   "comprehensionPool": [

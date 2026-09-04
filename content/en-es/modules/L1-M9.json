@@ -3,14 +3,19 @@
   "id": "L1-M9",
   "title": "Feelings & opinions",
   "job": "Why — because and so",
-  "prerequisites": ["L1-M8"],
+  "prerequisites": [
+    "L1-M8"
+  ],
   "verified": true,
   "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 8,
-    "allowedTenses": ["present", "periphrastic_future"],
+    "allowedTenses": [
+      "present",
+      "periphrastic_future"
+    ],
     "allowedPatterns": [
       "<statement> + porque + <statement>",
       "<statement> + , por eso + <statement>",
@@ -81,11 +86,19 @@
             "display": "cansado",
             "cue": "tired",
             "tag": "delta",
-            "forms": ["cansado", "cansada", "cansados", "cansadas"],
+            "forms": [
+              "cansado",
+              "cansada",
+              "cansados",
+              "cansadas"
+            ],
             "note": "Tired, and the ending belongs to whoever the sentence is about: cansado for a man, cansada for a woman, cansados / cansadas for more than one. Being tired is a state, so it always arrives with estar."
           }
         ],
-        "rules": [2, 3]
+        "rules": [
+          2,
+          3
+        ]
       },
       "trap": "estoy, not soy. A feeling is a state you are in — soy cansado would be claiming that being tired is the kind of person you are.",
       "sound": "can-SA-do. The stress is in the middle, and the d near the end is soft, closer to the th of English \"the\".",
@@ -118,7 +131,6 @@
       "id": "L1-M9-S02",
       "display": "No quiero café porque estoy cansado",
       "cue": "I don't want coffee because I'm tired",
-      "glossEn": "lit. \"Not I-want coffee because I-am tired\"",
       "literal": "Not I-want coffee because I-am tired(m)",
       "deconstruction": {
         "words": [
@@ -130,7 +142,11 @@
             "note": "One word, no accent, and it introduces the reason. What follows it is a whole sentence with its own verb: porque estoy cansado. Its two-word, accented cousin ¿por qué? is the question, not the answer."
           }
         ],
-        "rules": [0, 1, 6]
+        "rules": [
+          0,
+          1,
+          6
+        ]
       },
       "trap": "porque and por qué sound alike and are not interchangeable. If it can be answered, it is ¿por qué?; if it is doing the answering, it is porque.",
       "sound": "por-QUE, stressed on the second syllable, with the qu as a plain k. Said aloud it is nearly the same noise as por qué — only the sentence tells them apart.",
@@ -163,7 +179,6 @@
       "id": "L1-M9-S03",
       "display": "Estoy cansado, por eso no quiero café",
       "cue": "I'm tired, so I don't want coffee",
-      "glossEn": "lit. \"I-am tired, for that not I-want coffee\"",
       "literal": "I-am tired(m), for that not I-want coffee",
       "deconstruction": {
         "words": [
@@ -175,7 +190,11 @@
             "note": "Literally \"for that\", and it introduces the CONSEQUENCE — the opposite end of the pair from porque. It joins two complete sentences, so it wants a comma or a full stop in front of it."
           }
         ],
-        "rules": [0, 1, 5]
+        "rules": [
+          0,
+          1,
+          5
+        ]
       },
       "trap": "This is S02 turned around. Same tiredness, same refusal, opposite order: porque puts the reason second, por eso puts it first. Choosing between them is choosing which half you want to lead with.",
       "sound": "por-E-so, the three syllables running together, and the r is one light tap.",
@@ -208,7 +227,6 @@
       "id": "L1-M9-S04",
       "display": "¿Por qué no quieres café?",
       "cue": "Why don't you want coffee?",
-      "glossEn": "lit. \"For what not you-want coffee?\"",
       "literal": "For what not you-want coffee?",
       "deconstruction": {
         "words": [
@@ -217,10 +235,13 @@
             "cue": "why",
             "tag": "interference",
             "forms": [],
-            "note": "Two words with an accent on the second — the question. It is built out of por and M4's qué, and it is a different thing from the one-word porque that answers it. Get the space and the accent right and the two can never be confused in writing."
+            "note": "Two words with an accent on the second — the question. Built out of por and M4's qué, and a different thing from the one-word porque that answers it. Space and accent keep them apart."
           }
         ],
-        "rules": [1, 6]
+        "rules": [
+          1,
+          6
+        ]
       },
       "trap": "English inserts \"do\" to ask this — \"why DO you not want\" — and Spanish inserts nothing. The statement no quieres café keeps its order and por qué goes on the front.",
       "sound": "por QUÉ: two words, the stress on the second, and a tiny gap between them that porque does not have.",
@@ -253,7 +274,6 @@
       "id": "L1-M9-S05",
       "display": "Estoy contento porque mañana no trabajo",
       "cue": "I'm happy because tomorrow I don't work",
-      "glossEn": "lit. \"I-am happy because tomorrow not I-work\"",
       "literal": "I-am happy(m) because tomorrow not I-work",
       "deconstruction": {
         "words": [
@@ -261,11 +281,19 @@
             "display": "contento",
             "cue": "happy · pleased",
             "tag": "delta",
-            "forms": ["contento", "contenta", "contentos", "contentas"],
-            "note": "Happy in the sense of pleased about something, which is why it goes with estar and agrees with the subject: contento / contenta. feliz is the deeper, longer-lasting kind of happy and takes either verb."
+            "forms": [
+              "contento",
+              "contenta",
+              "contentos",
+              "contentas"
+            ],
+            "note": "Happy in the sense of pleased about something, which is why it goes with estar and agrees with the subject: contento / contenta. feliz is the deeper, longer-lasting kind and takes either verb."
           }
         ],
-        "rules": [2, 0]
+        "rules": [
+          2,
+          0
+        ]
       },
       "trap": "The reason can be about tomorrow while the feeling is about now — porque does not care what tense follows it. Here M6's present-as-future does the second half.",
       "sound": "con-TEN-to, stress in the middle, and both o's are short and pure.",
@@ -298,7 +326,6 @@
       "id": "L1-M9-S06",
       "display": "¿Por qué estás triste?",
       "cue": "Why are you sad?",
-      "glossEn": "lit. \"For what you-are sad?\"",
       "literal": "For what you-are sad?",
       "deconstruction": {
         "words": [
@@ -306,11 +333,18 @@
             "display": "triste",
             "cue": "sad",
             "tag": "free",
-            "forms": ["triste", "tristes"],
+            "forms": [
+              "triste",
+              "tristes"
+            ],
             "note": "Sad — and an -e adjective, so it has one shape for a man and a woman alike, exactly like M3's caliente. It only moves for number: estamos tristes."
           }
         ],
-        "rules": [3, 4, 6]
+        "rules": [
+          3,
+          4,
+          6
+        ]
       },
       "trap": "Nothing to agree here. Learners who have just met cansado / cansada reach for *trista, which does not exist — the -e adjectives sit out the gender game entirely.",
       "sound": "TRIS-te. The tr is crisp and the r is a single tap; the final e is short, never an English \"ay\".",
@@ -343,7 +377,6 @@
       "id": "L1-M9-S07",
       "display": "Estoy enfermo, por eso no voy a trabajar",
       "cue": "I'm ill, so I'm not going to work",
-      "glossEn": "lit. \"I-am ill, for that not I-go to work\"",
       "literal": "I-am ill(m), for that not I-go to to-work",
       "deconstruction": {
         "words": [
@@ -351,11 +384,20 @@
             "display": "enfermo",
             "cue": "ill · sick",
             "tag": "delta",
-            "forms": ["enfermo", "enferma", "enfermos", "enfermas"],
+            "forms": [
+              "enfermo",
+              "enferma",
+              "enfermos",
+              "enfermas"
+            ],
             "note": "Ill, agreeing with the subject: enfermo / enferma. estar enfermo is being ill just now; ser enfermo is not how Spanish talks about people at all — the illness is a state, never an identity."
           }
         ],
-        "rules": [2, 3, 5]
+        "rules": [
+          2,
+          3,
+          5
+        ]
       },
       "trap": "Both halves need their own negative-free reading: estoy enfermo is the fact, no voy a trabajar is what follows from it, and the no belongs to the going — M6's rule, unchanged.",
       "sound": "en-FER-mo. The r is one tap and the first syllable is nasal, close to English \"en\".",
@@ -388,7 +430,6 @@
       "id": "L1-M9-S08",
       "display": "Me gusta el café porque es fuerte",
       "cue": "I like coffee because it's strong",
-      "glossEn": "lit. \"To-me pleases the coffee because it-is strong\"",
       "literal": "To-me pleases the coffee because it-is strong",
       "deconstruction": {
         "words": [
@@ -396,11 +437,18 @@
             "display": "fuerte",
             "cue": "strong",
             "tag": "free",
-            "forms": ["fuerte", "fuertes"],
+            "forms": [
+              "fuerte",
+              "fuertes"
+            ],
             "note": "Strong — of coffee, of a person, of a smell. Another -e adjective, so one shape for both genders: un café fuerte, una sopa fuerte."
           }
         ],
-        "rules": [3, 4, 8]
+        "rules": [
+          3,
+          4,
+          8
+        ]
       },
       "trap": "Two agreements in one sentence and neither of them is with you: gusta agrees with el café, and es agrees with el café. You appear only as the me at the front.",
       "sound": "FUER-te, one glide in the middle — fwer, not fu-er — and the stress on it.",
@@ -433,7 +481,6 @@
       "id": "L1-M9-S09",
       "display": "Estoy mal, por eso no estudio",
       "cue": "I'm not well, so I'm not studying",
-      "glossEn": "lit. \"I-am badly, for that not I-study\"",
       "literal": "I-am badly, for that not I-study",
       "deconstruction": {
         "words": [
@@ -445,7 +492,10 @@
             "note": "The opposite of M2's bien, and like bien it is an adverb: it never changes for gender or number. The adjective \"bad\" is malo / mala, and it is a different word for a different job."
           }
         ],
-        "rules": [5, 9]
+        "rules": [
+          5,
+          9
+        ]
       },
       "trap": "Estoy mal is how you are, not what you are. It says the day is going badly, or that you feel unwell — it never means \"I am a bad person\".",
       "sound": "One syllable, MAL, with a light l — Spanish has no dark English \"l\" at the end of a word.",
@@ -486,11 +536,19 @@
             "display": "nerviosa",
             "cue": "nervous",
             "tag": "delta",
-            "forms": ["nervioso", "nerviosa", "nerviosos", "nerviosas"],
-            "note": "Nervous, agreeing with the subject — nerviosa here because the person the sentence is about is a woman, nervioso when he is a man. The row is headed by the shape this sentence shows; all four are the same word."
+            "forms": [
+              "nervioso",
+              "nerviosa",
+              "nerviosos",
+              "nerviosas"
+            ],
+            "note": "Nervous, agreeing with the subject — nerviosa here because the subject is a woman, nervioso when he is a man. The row is headed by the shape this sentence shows; all four are one word."
           }
         ],
-        "rules": [2, 0]
+        "rules": [
+          2,
+          0
+        ]
       },
       "trap": "The -a belongs to the subject and not to the speaker. Say this to a man and it becomes ¿Estás nervioso?; say it about yourself and it follows you. It is the same law M3's roja followed for the apple.",
       "sound": "ner-VIO-sa. The v is soft, somewhere between an English b and v, and the io is one glide.",
@@ -546,7 +604,11 @@
       "display": "¿Por qué estás cansada?",
       "cue": "Why are you tired? (asked of a woman)"
     },
-    { "id": "L1-M9-C06", "display": "El café es muy fuerte", "cue": "The coffee is very strong" },
+    {
+      "id": "L1-M9-C06",
+      "display": "El café es muy fuerte",
+      "cue": "The coffee is very strong"
+    },
     {
       "id": "L1-M9-C07",
       "display": "No voy a estudiar porque estoy mal",
@@ -562,7 +624,11 @@
       "display": "Estoy triste porque estoy enfermo",
       "cue": "I'm sad because I'm ill (a man speaking)"
     },
-    { "id": "L1-M9-C10", "display": "Ana está enferma hoy", "cue": "Ana is ill today" },
+    {
+      "id": "L1-M9-C10",
+      "display": "Ana está enferma hoy",
+      "cue": "Ana is ill today"
+    },
     {
       "id": "L1-M9-C11",
       "display": "Estoy enferma, por eso estoy en casa",
@@ -574,5 +640,8 @@
       "cue": "I'm nervous because tomorrow I'm going to Mexico (a man speaking)"
     }
   ],
-  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
 }

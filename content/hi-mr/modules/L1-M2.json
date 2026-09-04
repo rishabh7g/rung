@@ -3,14 +3,18 @@
   "id": "L1-M2",
   "title": "First exchange",
   "job": "Greetings, wellbeing, yes/no questions",
-  "prerequisites": ["L1-M1"],
+  "prerequisites": [
+    "L1-M1"
+  ],
   "verified": true,
   "verifiedBy": "Fable (Claude Fable 5) — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 5,
-    "allowedTenses": ["simple_present"],
+    "allowedTenses": [
+      "simple_present"
+    ],
     "allowedPatterns": [
       "तू/तुम्ही + N/Adj + आहेस/आहात",
       "मी + बरा/बरी + आहे",
@@ -67,7 +71,9 @@
             "note": "The same word as Hindi, and the everyday Marathi greeting — it works for hello and for goodbye, at any hour."
           }
         ],
-        "rules": [0]
+        "rules": [
+          0
+        ]
       },
       "trap": "हिंदी में ज़्यादातर 'नमस्ते' निकलता है. मराठी का रोज़ का शब्द नमस्कार है — नमस्ते समझ तो आएगा, पर मराठी जैसा नहीं लगेगा.",
       "sound": "नम‑स्कार — तीन साफ़ हिस्से; अंत का 'र' हल्का रखो, खींचो मत.",
@@ -108,25 +114,40 @@
             "display": "तू",
             "cue": "तुम/तू",
             "tag": "free",
-            "forms": ["तू", "तुम्ही"],
+            "forms": [
+              "तू",
+              "तुम्ही"
+            ],
             "note": "Informal \"you\" — the same word as Hindi तू, but in Marathi it is the ordinary form between friends. तुम्ही is the polite or plural one."
           },
           {
             "display": "कसा",
             "cue": "कैसे/कैसा",
             "tag": "delta",
-            "forms": ["कसा", "कशी", "कसं", "कसे"],
+            "forms": [
+              "कसा",
+              "कशी",
+              "कसं",
+              "कसे"
+            ],
             "note": "\"How\" — it agrees with the person you are asking: कसा to a man, कशी to a woman, कसे with तुम्ही."
           },
           {
             "display": "आहेस",
             "cue": "हो",
             "tag": "delta",
-            "forms": ["आहे", "आहेस", "आहात"],
+            "forms": [
+              "आहे",
+              "आहेस",
+              "आहात"
+            ],
             "note": "M1's copula in its तू form. The shape follows the person: मी आहे · तू आहेस · तुम्ही आहात."
           }
         ],
-        "rules": [2, 3]
+        "rules": [
+          2,
+          3
+        ]
       },
       "trap": "हिंदी में 'तुम कैसे हो' कहते वक़्त क्रिया एक ही रहती है. मराठी में 'तू' आते ही आहे बदलकर आहेस हो जाता है — 'तू कसा आहे?' कान को तुरंत खटकता है.",
       "sound": "आहेस = आ‑हे‑स, तीन हिस्से; अंत का 'स' छोटा और हल्का — खींचकर 'आहेSS' मत करो.",
@@ -167,7 +188,11 @@
             "display": "बरा",
             "cue": "ठीक",
             "tag": "delta",
-            "forms": ["बरा", "बरी", "बरं"],
+            "forms": [
+              "बरा",
+              "बरी",
+              "बरं"
+            ],
             "note": "\"Well, fine\" — an adjective, so it agrees with the person it describes: a man says बरा, a woman बरी."
           },
           {
@@ -178,7 +203,9 @@
             "note": "\"And\" — the same job as और, and आणि तू? on its own is a whole question back."
           }
         ],
-        "rules": [3]
+        "rules": [
+          3
+        ]
       },
       "trap": "हिंदी का 'ठीक' किसी लिंग से नहीं बदलता, इसलिए हाथ हर बार बरा लिख देता है. मराठी में बोलने वाला ही तय करता है — लड़की कहेगी 'मी बरी आहे'.",
       "sound": "बरा का 'र' हल्का सा लुढ़कता है; आणि का 'ण' मूर्धन्य है — जीभ ऊपर मोड़कर, हिंदी वाला 'न' नहीं.",
@@ -219,7 +246,11 @@
             "display": "तुझं",
             "cue": "तुम्हारा/तेरा",
             "tag": "interference",
-            "forms": ["तुझा", "तुझी", "तुझं"],
+            "forms": [
+              "तुझा",
+              "तुझी",
+              "तुझं"
+            ],
             "note": "\"Your\" for a तू-person. It agrees with the thing owned, not the owner — नाव is neuter, so तुझं, exactly like माझं in M1."
           },
           {
@@ -230,7 +261,10 @@
             "note": "\"What\" — it stands in the slot the answer will fill, just as क्या does in Hindi."
           }
         ],
-        "rules": [5, 6]
+        "rules": [
+          5,
+          6
+        ]
       },
       "trap": "काय और का सिर्फ़ एक अक्षर की दूरी पर हैं. काय = क्या (सवाल का शब्द), का = हाँ/ना वाला निशान जो वाक्य के अंत में बैठता है. 'तुझं नाव का आहे?' का मतलब ही बदल जाता है.",
       "sound": "तुझं का 'झ' नरम है, और अंत की 'ं' सिर्फ़ नाक की हल्की हवा — वही जो माझं में सुनी थी.",
@@ -272,10 +306,14 @@
             "cue": "क्या (अंत में) · क्यों (बीच में)",
             "tag": "interference",
             "forms": [],
-            "note": "The yes/no marker when it sits at the very END of a statement — it changes nothing else, the statement stays exactly as it was. The same word in the MIDDLE of a sentence means \"why\" instead (M9 teaches that seat), so its position is what decides."
+            "note": "The yes/no marker when it sits at the very end of a statement — nothing else changes: तू विद्यार्थी आहेस का? In the middle of a sentence the same word means \"why\" (M9); position decides."
           }
         ],
-        "rules": [1, 2, 6]
+        "rules": [
+          1,
+          2,
+          6
+        ]
       },
       "trap": "हिंदी में सवाल शुरुआत से बनता है — 'क्या तुम विद्यार्थी हो?'. मराठी में उलटा है: बयान जस का तस रहता है और का सबसे अंत में जुड़ता है. शुरू में का लगाना सबसे आम ग़लती है.",
       "sound": "का पर ज़ोर मत दो — वाक्य के अंत में आवाज़ बस हल्की सी ऊपर उठती है, इतना ही काफ़ी है.",
@@ -316,11 +354,16 @@
             "display": "हो",
             "cue": "हाँ",
             "tag": "delta",
-            "forms": ["हो", "होय"],
+            "forms": [
+              "हो",
+              "होय"
+            ],
             "note": "\"Yes\" in everyday speech. होय is the fuller, more formal yes; हो is the one you will actually hear in conversation."
           }
         ],
-        "rules": [4]
+        "rules": [
+          4
+        ]
       },
       "trap": "हिंदी वाले कान को 'हो' सुनकर 'होना/हो जाओ' सुनाई देता है. यहाँ वह क्रिया नहीं — सिर्फ़ 'हाँ' है.",
       "sound": "हो छोटा और सीधा है — 'ओ' को खींचो मत.",
@@ -365,7 +408,9 @@
             "note": "Both \"no\" and \"am/is not\". In a negative statement it replaces आहे completely — nothing else is left to add."
           }
         ],
-        "rules": [4]
+        "rules": [
+          4
+        ]
       },
       "trap": "हिंदी में 'नहीं' के बाद भी 'हूँ' लगाना पड़ता है — 'मैं विद्यार्थी नहीं हूँ'. मराठी में नाही अकेला ही पूरा काम करता है; 'मी विद्यार्थी नाही आहे' मत बोलो.",
       "sound": "नाही = ना‑ही, दोनों हिस्से बराबर और खुले; हिंदी 'नहीं' वाली नाक की आवाज़ यहाँ नहीं आती.",
@@ -413,11 +458,17 @@
             "display": "आवडतो",
             "cue": "पसंद है",
             "tag": "delta",
-            "forms": ["आवडतो", "आवडते", "आवडतं"],
+            "forms": [
+              "आवडतो",
+              "आवडते",
+              "आवडतं"
+            ],
             "note": "M1's verb, untouched: the ending still follows चहा (masculine). Adding का at the end does not change it."
           }
         ],
-        "rules": [1]
+        "rules": [
+          1
+        ]
       },
       "trap": "हिंदी में सवाल आगे से बनता है — 'क्या तुम्हें चाय पसंद है?'. मराठी में वाक्य पूरा वैसा ही रहता है, सिर्फ़ का अंत में जुड़ता है. और आवडतो भी नहीं बदलता — वह अब भी चहा(पु.) के पीछे चलता है.",
       "sound": "तुला और मला एक ही धुन पर बोले जाते हैं — सिर्फ़ पहला अक्षर बदलता है.",
@@ -458,11 +509,19 @@
             "display": "बरी",
             "cue": "ठीक",
             "tag": "delta",
-            "forms": ["बरा", "बरी", "बरं"],
+            "forms": [
+              "बरा",
+              "बरी",
+              "बरं"
+            ],
             "note": "The feminine of बरा — the ending follows the person you are asking, never you."
           }
         ],
-        "rules": [1, 2, 3]
+        "rules": [
+          1,
+          2,
+          3
+        ]
       },
       "trap": "यहाँ दो चीज़ें एक साथ चलती हैं: बरी जिससे पूछ रहे हो उसके लिंग से मिलता है, और का सबसे अंत में बैठता है. हिंदी वाले का को 'क्या' समझकर आगे खींच ले जाते हैं.",
       "sound": "बरी का 'ई' साफ़ और लंबा; पूरा वाक्य एक ही साँस में — बरी‑आहेस‑का.",
@@ -507,7 +566,10 @@
             "note": "The same word as Hindi, and it does not change shape — the polite way to close a first exchange."
           }
         ],
-        "rules": [0, 3]
+        "rules": [
+          0,
+          3
+        ]
       },
       "sound": "धन्यवाद का 'ध' महाप्राण है — हवा छोड़ते हुए; बोलचाल में यह शब्द ज़रा तेज़ी से निकलता है.",
       "variations": [

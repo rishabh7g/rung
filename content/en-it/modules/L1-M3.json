@@ -3,14 +3,19 @@
   "id": "L1-M3",
   "title": "Needs and wants",
   "job": "Say what you want and don't want",
-  "prerequisites": ["L1-M2"],
+  "prerequisites": [
+    "L1-M2"
+  ],
   "verified": true,
   "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-30",
   "complexity": {
     "minWordsPerSentence": 2,
     "maxWordsPerSentence": 6,
-    "allowedTenses": ["simple_present", "present_conditional"],
+    "allowedTenses": [
+      "simple_present",
+      "present_conditional"
+    ],
     "allowedPatterns": [
       "Voglio + un/una + N",
       "Non voglio + N",
@@ -63,7 +68,11 @@
             "display": "Voglio",
             "cue": "I want",
             "tag": "delta",
-            "forms": ["Voglio", "vuoi", "vuole"],
+            "forms": [
+              "Voglio",
+              "vuoi",
+              "vuole"
+            ],
             "note": "volere — to want. The ending names the person: voglio (I) · vuoi (you) · vuole (he, she). It is direct without being rude; the softer vorrei arrives in S08."
           },
           {
@@ -74,7 +83,10 @@
             "note": "The masculine indefinite article, and the everyday one: un caffè, un libro, un amico. It changes to uno before a masculine noun starting with s + consonant or with z."
           }
         ],
-        "rules": [2, 6]
+        "rules": [
+          2,
+          6
+        ]
       },
       "trap": "English chooses between \"a coffee\" and \"some coffee\" by how much you mean. Italian's indefinite article does not care about the amount — it changes for the SOUND of the noun behind it.",
       "sound": "VO-lyo. The gli is one sound, the ly of \"million\" pressed together — the g is never heard on its own.",
@@ -122,11 +134,17 @@
             "display": "pizza",
             "cue": "pizza",
             "tag": "free",
-            "forms": ["pizza", "pizze"],
+            "forms": [
+              "pizza",
+              "pizze"
+            ],
             "note": "Feminine: la pizza (one) · le pizze (more than one). The plural is the last vowel changing from -a to -e."
           }
         ],
-        "rules": [2, 3]
+        "rules": [
+          2,
+          3
+        ]
       },
       "trap": "English \"a\" never changes shape. Italian's does, and gender is what decides: una for a feminine noun, un for most masculine ones.",
       "sound": "PIT-tsa. The double z is a doubled \"ts\", held twice as long as a single one — Italian's doubled consonants are heard, not just written.",
@@ -174,11 +192,17 @@
             "display": "zaino",
             "cue": "backpack",
             "tag": "free",
-            "forms": ["zaino", "zaini"],
+            "forms": [
+              "zaino",
+              "zaini"
+            ],
             "note": "Masculine: lo zaino (one) · gli zaini (more than one). Its z is what pulls uno and lo in front of it."
           }
         ],
-        "rules": [2, 3]
+        "rules": [
+          2,
+          3
+        ]
       },
       "trap": "un is right nearly all the time, which is exactly why this one is missed. It is the noun's opening SOUND, not its meaning, that pulls uno.",
       "sound": "DZAI-no. Italian z at the start of a word is often a \"dz\", and -ai- is one glide, not two syllables.",
@@ -220,10 +244,12 @@
             "cue": "not",
             "tag": "interference",
             "forms": [],
-            "note": "The whole negative, in one word, standing immediately in front of the verb: Non voglio, Non sono, Non mi piace. Nothing else in the sentence changes, and nothing else is added — Italian has no helper answering to English \"do not\"."
+            "note": "The whole negative, in one word, immediately in front of the verb: Non voglio, Non sono, Non mi piace. Nothing else changes and nothing is added — Italian has no helper answering to English \"do not\"."
           }
         ],
-        "rules": [1]
+        "rules": [
+          1
+        ]
       },
       "trap": "English builds a negative out of two pieces — do plus not — and neither has an Italian twin. Put non in front of the verb and stop.",
       "sound": "NON, one short syllable with an open o, and it leans onto the verb behind it: non voglio comes out in one breath.",
@@ -268,7 +294,9 @@
             "note": "The plain form of the verb — what a dictionary lists. Italian's -are ending IS the English \"to\", so mangiare is already \"to eat\" and needs nothing in front of it."
           }
         ],
-        "rules": [0]
+        "rules": [
+          0
+        ]
       },
       "trap": "English \"want to eat\" has a \"to\" in it, and the hand reaches for a or di to fill the gap. After volere there is no gap: Voglio mangiare.",
       "sound": "man-JA-re. The gi is the j of \"jam\", one sound, and the final -e is pronounced.",
@@ -301,7 +329,6 @@
       "id": "L1-M3-S06",
       "display": "Voglio bere un caffè",
       "cue": "I want to drink a coffee",
-      "glossEn": "lit. \"Want drink a coffee\"",
       "literal": "I-want drink a coffee",
       "deconstruction": {
         "words": [
@@ -313,7 +340,10 @@
             "note": "to drink. Its plain form ends in -ere rather than -are — the second of Italian's three verb classes — and after volere it stands bare, exactly as mangiare does."
           }
         ],
-        "rules": [0, 6]
+        "rules": [
+          0,
+          6
+        ]
       },
       "trap": "English can say \"have a coffee\" and mean drinking it. Italian will not: avere is for owning, and drinking is bere.",
       "sound": "BE-re, two clear syllables, and the single r is one tap of the tongue.",
@@ -358,7 +388,10 @@
             "note": "to study — an -are verb like mangiare, and it carries its own object: studiare l'italiano."
           }
         ],
-        "rules": [0, 1]
+        "rules": [
+          0,
+          1
+        ]
       },
       "trap": "Two English pieces are missing at once here, and both are missing on purpose: no \"do\" in front of the negative, and no \"to\" before the second verb.",
       "sound": "stu-DYA-re. The -dia- is one syllable, DYA, not dee-ah.",
@@ -400,10 +433,12 @@
             "cue": "I'd like",
             "tag": "delta",
             "forms": [],
-            "note": "The polite want — \"I would like\". It is volere in another shape, and it is what you say across a counter or to someone you have just met. voglio is not rude; vorrei is simply softer, and in this course it is one of the two things carrying politeness."
+            "note": "The polite want — \"I would like\". volere in another shape, what you say across a counter. voglio is not rude; vorrei is softer, one of the two things carrying politeness."
           }
         ],
-        "rules": [5]
+        "rules": [
+          5
+        ]
       },
       "trap": "English softens a request from outside the verb — please, could I, would you mind. Italian can soften it inside the verb, and then the sentence needs nothing else.",
       "sound": "vor-REY. The double r is trilled longer than a single one, and -ei is one glide.",
@@ -436,7 +471,6 @@
       "id": "L1-M3-S09",
       "display": "Voglio un po' di pane",
       "cue": "I want a bit of bread",
-      "glossEn": "lit. \"Want a bit of bread\"",
       "literal": "I-want a bit of bread",
       "deconstruction": {
         "words": [
@@ -445,7 +479,7 @@
             "cue": "a bit of · some",
             "tag": "delta",
             "forms": [],
-            "note": "\"A bit of\", and it is the everyday way to ask for some of something. The apostrophe is not decoration: po' is poco with its ending cut off, and the apostrophe is the cut. It never comes off, and it is always the straight one."
+            "note": "\"A bit of\", the everyday way to ask for some of something: un po' di zucchero. Not decoration: po' is poco with its ending cut off, and the apostrophe is the cut. Always the straight one."
           },
           {
             "display": "pane",
@@ -455,7 +489,9 @@
             "note": "Masculine — il pane — even though it ends in -e, which is an ending both genders use. Like English \"bread\", it is not usually counted."
           }
         ],
-        "rules": [2]
+        "rules": [
+          2
+        ]
       },
       "trap": "English has two ways in — \"some bread\" and \"a bit of bread\" — and neither translates piece by piece. un po' di is one thing, learned whole.",
       "sound": "The apostrophe is a cut, not a sound: po' is simply \"po\", short. The three words run together — oon-po-DEE.",
@@ -488,7 +524,6 @@
       "id": "L1-M3-S10",
       "display": "Voglio una casa grande",
       "cue": "I want a big house",
-      "glossEn": "lit. \"Want a house big\"",
       "literal": "I-want a house big",
       "deconstruction": {
         "words": [
@@ -496,18 +531,27 @@
             "display": "casa",
             "cue": "house · home",
             "tag": "free",
-            "forms": ["casa", "case"],
+            "forms": [
+              "casa",
+              "case"
+            ],
             "note": "Feminine: la casa (one) · le case (more than one). It covers both \"house\" and \"home\"."
           },
           {
             "display": "grande",
             "cue": "big",
             "tag": "delta",
-            "forms": ["grande", "grandi"],
+            "forms": [
+              "grande",
+              "grandi"
+            ],
             "note": "big. An adjective ending in -e has ONE shape for both genders — una casa grande, un libro grande — and goes to -i in the plural for both: case grandi, libri grandi."
           }
         ],
-        "rules": [3, 4]
+        "rules": [
+          3,
+          4
+        ]
       },
       "trap": "English puts the adjective in front of the noun and never changes it. Italian normally puts it behind and makes it agree — though grande, ending in -e, agrees only in number.",
       "sound": "CA-za and GRAN-de. The single s between two vowels is a z through much of the north and a plain s in Tuscany; both are standard.",
@@ -538,26 +582,69 @@
     }
   ],
   "comprehensionPool": [
-    { "id": "L1-M3-C01", "display": "Vorrei un caffè", "cue": "I'd like a coffee" },
-    { "id": "L1-M3-C02", "display": "Non voglio la pizza", "cue": "I don't want the pizza" },
-    { "id": "L1-M3-C03", "display": "Voglio mangiare una pizza", "cue": "I want to eat a pizza" },
+    {
+      "id": "L1-M3-C01",
+      "display": "Vorrei un caffè",
+      "cue": "I'd like a coffee"
+    },
+    {
+      "id": "L1-M3-C02",
+      "display": "Non voglio la pizza",
+      "cue": "I don't want the pizza"
+    },
+    {
+      "id": "L1-M3-C03",
+      "display": "Voglio mangiare una pizza",
+      "cue": "I want to eat a pizza"
+    },
     {
       "id": "L1-M3-C04",
       "display": "Non voglio bere il caffè",
       "cue": "I don't want to drink the coffee"
     },
-    { "id": "L1-M3-C05", "display": "Vorrei uno zaino", "cue": "I'd like a backpack" },
-    { "id": "L1-M3-C06", "display": "Voglio studiare l'italiano", "cue": "I want to study Italian" },
+    {
+      "id": "L1-M3-C05",
+      "display": "Vorrei uno zaino",
+      "cue": "I'd like a backpack"
+    },
+    {
+      "id": "L1-M3-C06",
+      "display": "Voglio studiare l'italiano",
+      "cue": "I want to study Italian"
+    },
     {
       "id": "L1-M3-C07",
       "display": "Non vorrei mangiare oggi",
       "cue": "I wouldn't like to eat today"
     },
-    { "id": "L1-M3-C08", "display": "Vorrei una casa grande", "cue": "I'd like a big house" },
-    { "id": "L1-M3-C09", "display": "Vorrei un po' di pane", "cue": "I'd like a bit of bread" },
-    { "id": "L1-M3-C10", "display": "Le pizze sono buone", "cue": "The pizzas are good" },
-    { "id": "L1-M3-C11", "display": "Il pane italiano è buono", "cue": "Italian bread is good" },
-    { "id": "L1-M3-C12", "display": "Vuoi un caffè?", "cue": "Do you want a coffee?" }
+    {
+      "id": "L1-M3-C08",
+      "display": "Vorrei una casa grande",
+      "cue": "I'd like a big house"
+    },
+    {
+      "id": "L1-M3-C09",
+      "display": "Vorrei un po' di pane",
+      "cue": "I'd like a bit of bread"
+    },
+    {
+      "id": "L1-M3-C10",
+      "display": "Le pizze sono buone",
+      "cue": "The pizzas are good"
+    },
+    {
+      "id": "L1-M3-C11",
+      "display": "Il pane italiano è buono",
+      "cue": "Italian bread is good"
+    },
+    {
+      "id": "L1-M3-C12",
+      "display": "Vuoi un caffè?",
+      "cue": "Do you want a coffee?"
+    }
   ],
-  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
 }

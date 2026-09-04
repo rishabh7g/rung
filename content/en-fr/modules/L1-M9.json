@@ -3,14 +3,18 @@
   "id": "L1-M9",
   "title": "Feelings & opinions",
   "job": "Why — because and so",
-  "prerequisites": ["L1-M8"],
+  "prerequisites": [
+    "L1-M8"
+  ],
   "verified": true,
   "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-30",
   "complexity": {
     "minWordsPerSentence": 2,
     "maxWordsPerSentence": 8,
-    "allowedTenses": ["simple_present"],
+    "allowedTenses": [
+      "simple_present"
+    ],
     "allowedPatterns": [
       "J'ai + faim/froid/soif",
       "<statement> + parce que + <statement>",
@@ -59,7 +63,6 @@
       "id": "L1-M9-S01",
       "display": "J'ai faim",
       "cue": "I'm hungry",
-      "glossEn": "lit. \"I have hunger\"",
       "literal": "I-have hunger",
       "deconstruction": {
         "words": [
@@ -71,7 +74,10 @@
             "note": "hunger — a NOUN, not an adjective, which is the whole reason the sentence is built with avoir. You have hunger in French; you do not be hungry. It takes no article: j'ai faim, never j'ai la faim."
           }
         ],
-        "rules": [0, 1]
+        "rules": [
+          0,
+          1
+        ]
       },
       "trap": "Je suis faim is the sentence an English speaker writes, and it is not a near miss: it says \"I am hunger\". The verb is wrong because the word class is different, and no amount of care with être will fix it.",
       "sound": "zhay FAN — nasal at the end, with the m never sounded on its own. The whole sentence is two syllables.",
@@ -104,7 +110,6 @@
       "id": "L1-M9-S02",
       "display": "J'ai froid",
       "cue": "I'm cold",
-      "glossEn": "lit. \"I have cold\"",
       "literal": "I-have cold",
       "deconstruction": {
         "words": [
@@ -113,10 +118,13 @@
             "cue": "cold",
             "tag": "interference",
             "forms": [],
-            "note": "cold — again a noun in this frame, so it is had rather than been. Note what the frame decides: j'ai froid is about me, while il fait froid (not taught here) would be about the weather. The same word, two entirely different sentences."
+            "note": "cold — again a noun in this frame, so it is had rather than been: j'ai froid is about me, while il fait froid (not taught here) would be about the weather. Same word, two entirely different sentences."
           }
         ],
-        "rules": [0, 1]
+        "rules": [
+          0,
+          1
+        ]
       },
       "trap": "English has one \"I'm cold\" that covers the person and, loosely, the room. French keeps them apart by the verb, and getting the verb wrong changes who is being talked about.",
       "sound": "zhay FRWA. The -d is silent, and the oi spelling is the wa sound, the same one as in voir and soir.",
@@ -149,7 +157,6 @@
       "id": "L1-M9-S03",
       "display": "J'ai soif",
       "cue": "I'm thirsty",
-      "glossEn": "lit. \"I have thirst\"",
       "literal": "I-have thirst",
       "deconstruction": {
         "words": [
@@ -161,7 +168,10 @@
             "note": "thirst — the third of the bare-noun states, built exactly like faim and froid. Its final -f IS sounded, unlike most final consonants in French."
           }
         ],
-        "rules": [0, 1]
+        "rules": [
+          0,
+          1
+        ]
       },
       "trap": "By the third of these an English speaker has usually accepted the shape — and then meets j'ai vingt ans, where the same frame carries an age. The pattern is wider than three feelings.",
       "sound": "zhay SWAF. The f at the end is fully pronounced, which makes it stand out among words like froid and lait.",
@@ -194,7 +204,6 @@
       "id": "L1-M9-S04",
       "display": "Je veux du thé parce que j'ai froid",
       "cue": "I want tea because I'm cold",
-      "glossEn": "lit. \"I want of-the tea because I have cold\"",
       "literal": "I want of-the tea because I-have cold",
       "deconstruction": {
         "words": [
@@ -206,7 +215,10 @@
             "note": "because — TWO words, always, and never written as one. It introduces the REASON, so what follows it is the cause and what stands in front of it is the effect. Its partner donc points the other way."
           }
         ],
-        "rules": [2, 3]
+        "rules": [
+          2,
+          3
+        ]
       },
       "trap": "English's \"because\" is one word and French's is two, so parceque is the spelling an English speaker reaches for. It is not a French word at all, and writing it would open an entry nothing could ever resolve to.",
       "sound": "pars kuh — the two words run together and the que is barely a syllable, which is exactly why it gets lost in writing.",
@@ -239,7 +251,6 @@
       "id": "L1-M9-S05",
       "display": "J'ai froid, donc je veux du thé",
       "cue": "I'm cold, so I want tea",
-      "glossEn": "lit. \"I have cold, so I want of-the tea\"",
       "literal": "I-have cold, so I want of-the tea",
       "deconstruction": {
         "words": [
@@ -251,7 +262,10 @@
             "note": "so — and it introduces the CONSEQUENCE, which is the mirror of parce que. What stands in front of donc is the cause; what follows it is the result. Its final -c is usually sounded: donk."
           }
         ],
-        "rules": [2, 3]
+        "rules": [
+          2,
+          3
+        ]
       },
       "trap": "English's \"so\" also means \"very\" — \"so tired\". French's donc never does: it is only ever the consequence word, and the intensifier is a different word entirely.",
       "sound": "donk. The vowel is nasal and the c is heard, which is unusual enough that a learner often leaves it off.",
@@ -284,7 +298,6 @@
       "id": "L1-M9-S06",
       "display": "Pourquoi vous êtes fatigué ?",
       "cue": "Why are you tired?",
-      "glossEn": "lit. \"Why you are tired?\"",
       "literal": "Why you are tired ?",
       "deconstruction": {
         "words": [
@@ -293,10 +306,12 @@
             "cue": "why",
             "tag": "delta",
             "forms": [],
-            "note": "why — ONE word, unlike its answer parce que. It stands in front and nothing else in the sentence moves, exactly as comment and où do. Neither half of it is taught separately in this course, so treat it as a single item."
+            "note": "why — one word, unlike its answer parce que. It stands in front and nothing else in the sentence moves, exactly as comment and où do. Neither half is taught separately; treat it as a single item."
           }
         ],
-        "rules": [6]
+        "rules": [
+          6
+        ]
       },
       "trap": "English inverts after \"why\" — \"why ARE you tired\". French leaves the statement exactly as it was and puts the question word in front of it, which is why Pourquoi vous êtes fatigué ? has the order of a statement.",
       "sound": "poor-KWA. The oi is the same wa as in froid and soir, and the stress lands, as always, at the end.",
@@ -329,7 +344,6 @@
       "id": "L1-M9-S07",
       "display": "Je pense que c'est bien",
       "cue": "I think it's good",
-      "glossEn": "lit. \"I think that it is well\"",
       "literal": "I think that it-is well",
       "deconstruction": {
         "words": [
@@ -337,7 +351,10 @@
             "display": "pense",
             "cue": "think · thinks",
             "tag": "free",
-            "forms": ["pense", "pensez"],
+            "forms": [
+              "pense",
+              "pensez"
+            ],
             "note": "penser, to think — a regular -er verb like mange and travaille, and it behaves exactly as they do."
           },
           {
@@ -345,10 +362,12 @@
             "cue": "that",
             "tag": "delta",
             "forms": [],
-            "note": "that — the small word that hangs a whole clause on the verb in front of it. It is NEVER optional in French, however freely English drops its own. It is also the second word of parce que, but there it is part of a fixed pair and never stands alone."
+            "note": "that — it hangs a whole clause on the verb before it. It is never optional in French, however freely English drops its own. Also the second word of parce que, where it never stands alone."
           }
         ],
-        "rules": [4]
+        "rules": [
+          4
+        ]
       },
       "trap": "English drops \"that\" so readily that most speakers do not know it is there — \"I think it's good\". French cannot drop it, so the word an English speaker never notices is the word they will leave out.",
       "sound": "zhuh pahns kuh say BYAN. que is barely a syllable and gets swallowed in speech, which does not excuse leaving it out in writing.",
@@ -381,18 +400,22 @@
       "id": "L1-M9-S08",
       "display": "Je suis content",
       "cue": "I'm happy",
-      "glossEn": "lit. \"I am happy\"",
       "deconstruction": {
         "words": [
           {
             "display": "content",
             "cue": "happy · pleased (m · f)",
             "tag": "delta",
-            "forms": ["content", "contente"],
-            "note": "happy, pleased — and here être IS the verb, because content is a genuine adjective and not a noun. It agrees with the subject: content, contente, and the -e wakes the silent final -t, so the two are audibly different."
+            "forms": [
+              "content",
+              "contente"
+            ],
+            "note": "happy, pleased — and here être is the verb, because content is a genuine adjective and not a noun. It agrees with the subject: content, contente, and the -e wakes the silent final -t."
           }
         ],
-        "rules": [5]
+        "rules": [
+          5
+        ]
       },
       "trap": "After three sentences of avoir, a learner starts using it for everything. content is an adjective, so it takes être — the split is not about feelings, it is about what part of speech the word is.",
       "sound": "kohn-TAHN, both vowels nasal and the final -t silent. contente ends on a clear t: kohn-TAHNT.",
@@ -419,13 +442,13 @@
       },
       "usage": "Saying how you feel, in the ordinary way.",
       "register": "neutral",
-      "mnemonic": "Nouns go with avoir, adjectives with être. Ask what the word is, not what it means."
+      "mnemonic": "Nouns go with avoir, adjectives with être. Ask what the word is, not what it means.",
+      "literal": "I am happy"
     },
     {
       "id": "L1-M9-S09",
       "display": "Je suis triste parce que je suis fatigué",
       "cue": "I'm sad because I'm tired",
-      "glossEn": "lit. \"I am sad because I am tired\"",
       "deconstruction": {
         "words": [
           {
@@ -436,7 +459,10 @@
             "note": "sad. It already ends in -e, so it does not change for a woman at all: je suis triste, whoever is speaking. A good number of French adjectives are like this, and they are the easy ones."
           }
         ],
-        "rules": [2, 5]
+        "rules": [
+          2,
+          5
+        ]
       },
       "trap": "After content · contente a learner starts adding an -e to everything feminine. triste already has one and takes no second: tristee is not a word.",
       "sound": "TREEST, one syllable, with the final -e silent as always.",
@@ -463,13 +489,13 @@
       },
       "usage": "Giving a reason for a feeling.",
       "register": "neutral",
-      "mnemonic": "An adjective that already ends in -e has nothing left to add."
+      "mnemonic": "An adjective that already ends in -e has nothing left to add.",
+      "literal": "I am sad because I am tired"
     },
     {
       "id": "L1-M9-S10",
       "display": "J'ai vingt ans",
       "cue": "I'm twenty years old",
-      "glossEn": "lit. \"I have twenty years\"",
       "literal": "I-have twenty years",
       "deconstruction": {
         "words": [
@@ -477,11 +503,17 @@
             "display": "ans",
             "cue": "year · years",
             "tag": "delta",
-            "forms": ["an", "ans"],
-            "note": "year. Age is a number of years that you HAVE — the same avoir frame as faim and froid, reaching further than a learner expects. And the word is never left out: j'ai vingt is not a sentence, where English is quite happy to say \"I'm twenty\"."
+            "forms": [
+              "an",
+              "ans"
+            ],
+            "note": "year. Age is a number of years that you have — the same avoir frame as faim and froid. And the word is never left out: j'ai vingt is not a sentence, where English happily says \"I'm twenty\"."
           }
         ],
-        "rules": [0, 7]
+        "rules": [
+          0,
+          7
+        ]
       },
       "trap": "This is the frame's widest reach and the one an English speaker never anticipates: not a feeling at all, but an age. Je suis vingt is what English produces, and it means nothing.",
       "sound": "zhay van-TAHN. The -t of vingt wakes in front of the vowel of ans, exactly as it did in vingt euros, and the -s of ans is silent.",
@@ -522,13 +554,21 @@
       "display": "Je veux du café parce que j'ai froid",
       "cue": "I want coffee because I'm cold"
     },
-    { "id": "L1-M9-C03", "display": "Pourquoi vous ne mangez pas ?", "cue": "Why aren't you eating?" },
+    {
+      "id": "L1-M9-C03",
+      "display": "Pourquoi vous ne mangez pas ?",
+      "cue": "Why aren't you eating?"
+    },
     {
       "id": "L1-M9-C04",
       "display": "Je pense que c'est trop cher",
       "cue": "I think it's too expensive"
     },
-    { "id": "L1-M9-C05", "display": "Je suis contente", "cue": "I'm happy (a woman speaking)" },
+    {
+      "id": "L1-M9-C05",
+      "display": "Je suis contente",
+      "cue": "I'm happy (a woman speaking)"
+    },
     {
       "id": "L1-M9-C06",
       "display": "J'ai faim, donc je vais manger",
@@ -539,8 +579,16 @@
       "display": "Je suis triste parce que je suis fatiguée",
       "cue": "I'm sad because I'm tired (a woman speaking)"
     },
-    { "id": "L1-M9-C08", "display": "Pourquoi vous êtes triste ?", "cue": "Why are you sad?" },
-    { "id": "L1-M9-C09", "display": "Je n'ai pas faim", "cue": "I'm not hungry" },
+    {
+      "id": "L1-M9-C08",
+      "display": "Pourquoi vous êtes triste ?",
+      "cue": "Why are you sad?"
+    },
+    {
+      "id": "L1-M9-C09",
+      "display": "Je n'ai pas faim",
+      "cue": "I'm not hungry"
+    },
     {
       "id": "L1-M9-C10",
       "display": "Je pense que le livre est bien",
@@ -551,7 +599,11 @@
       "display": "J'ai froid, donc je vais à la maison",
       "cue": "I'm cold, so I'm going home"
     },
-    { "id": "L1-M9-C12", "display": "Pourquoi vous voulez du thé ?", "cue": "Why do you want tea?" }
+    {
+      "id": "L1-M9-C12",
+      "display": "Pourquoi vous voulez du thé ?",
+      "cue": "Why do you want tea?"
+    }
   ],
   "exitTest": {
     "generateCount": 1,

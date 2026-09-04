@@ -3,14 +3,18 @@
   "id": "L1-M3",
   "title": "Needs and wants",
   "job": "Say what you want and don't want",
-  "prerequisites": ["L1-M2"],
+  "prerequisites": [
+    "L1-M2"
+  ],
   "verified": true,
   "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-30",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 6,
-    "allowedTenses": ["simple_present"],
+    "allowedTenses": [
+      "simple_present"
+    ],
     "allowedPatterns": [
       "Je veux + un/une + N",
       "Je veux + du/de la/des + N",
@@ -59,14 +63,16 @@
       "id": "L1-M3-S01",
       "display": "Je veux un café",
       "cue": "I want a coffee",
-      "glossEn": "lit. \"I want a coffee\"",
       "deconstruction": {
         "words": [
           {
             "display": "veux",
             "cue": "want",
             "tag": "delta",
-            "forms": ["veux", "voulez"],
+            "forms": [
+              "veux",
+              "voulez"
+            ],
             "note": "vouloir, to want. je veux · vous voulez — the ending names the person, as être's did. It takes a thing (je veux un café) or a bare verb (je veux manger), and never a preposition in between."
           },
           {
@@ -77,7 +83,10 @@
             "note": "a, in front of a masculine noun — and also the number one. French does not separate the two: un café is \"a coffee\" and \"one coffee\" at once, and the sentence decides which. Its feminine twin is une."
           }
         ],
-        "rules": [0, 5]
+        "rules": [
+          0,
+          5
+        ]
       },
       "trap": "English can leave the article out when it orders — \"I want coffee\". French cannot: something always stands in front of the noun, and the choice between un and du is the module's work.",
       "sound": "veux is one syllable, vuh, with the final -x silent — the eu is made with the lips rounded and the tongue forward. un is nasal: the air goes through the nose and the n is never sounded.",
@@ -110,7 +119,6 @@
       "id": "L1-M3-S02",
       "display": "Je veux du pain",
       "cue": "I want some bread",
-      "glossEn": "lit. \"I want of-the bread\"",
       "literal": "I want of-the bread",
       "deconstruction": {
         "words": [
@@ -119,7 +127,7 @@
             "cue": "some (masculine)",
             "tag": "delta",
             "forms": [],
-            "note": "du is de welded onto le, and it does two jobs the course will need. In front of an uncountable noun it is the partitive — du pain is \"some bread\", where English writes nothing. In front of a place or an owner it is plainly \"of the\" — à côté du lit, \"beside the bed\". One word, both readings; which one it is comes from what follows it."
+            "note": "du is de welded onto le, with two jobs. Before an uncountable noun it is the partitive — du pain, \"some bread\", where English writes nothing. Before a place or owner it is \"of the\": à côté du lit."
           },
           {
             "display": "pain",
@@ -129,7 +137,10 @@
             "note": "bread — masculine, so le pain and du pain."
           }
         ],
-        "rules": [4, 5]
+        "rules": [
+          4,
+          5
+        ]
       },
       "trap": "English has a word for this and refuses to use it: \"I want some bread\" and \"I want bread\" are both fine. French has no such choice — the partitive is not optional, and Je veux pain is not a sentence.",
       "sound": "du is one tight syllable, dü — the u is the French u, lips rounded for oo while the tongue says ee. pain is nasal, pan, and neither the i nor the n is sounded on its own.",
@@ -162,7 +173,6 @@
       "id": "L1-M3-S03",
       "display": "Je veux de la soupe",
       "cue": "I want some soup",
-      "glossEn": "lit. \"I want of the soup\"",
       "literal": "I want of-the soup",
       "deconstruction": {
         "words": [
@@ -181,7 +191,10 @@
             "note": "soup — feminine, so la soupe and de la soupe."
           }
         ],
-        "rules": [4, 5]
+        "rules": [
+          4,
+          5
+        ]
       },
       "trap": "The gender you learned with the noun in L1-M1 comes back to charge you here: it decides du against de la, and there is nothing in the sentence itself to remind you which the noun was.",
       "sound": "de la is two light syllables, duh la. soupe is soop, with the final -e silent and no oo-oo glide on the vowel.",
@@ -214,7 +227,6 @@
       "id": "L1-M3-S04",
       "display": "Je veux des pommes",
       "cue": "I want some apples",
-      "glossEn": "lit. \"I want of the apples\"",
       "literal": "I want of-the apples",
       "deconstruction": {
         "words": [
@@ -223,17 +235,24 @@
             "cue": "some (plural)",
             "tag": "delta",
             "forms": [],
-            "note": "des is de welded onto les, and it is the plural of BOTH un/une and du/de la: des pommes is \"some apples\" where English happily writes just \"apples\". Like du it also reads plainly as \"of the\" in front of a plural — but this course keeps that second job out of L1, so the partitive is the only reading you will meet."
+            "note": "des is de welded onto les, and the plural of both un/une and du/de la: des pommes is \"some apples\" where English writes just \"apples\". Its \"of the\" reading stays out of L1."
           },
           {
             "display": "pommes",
             "cue": "apple · apples",
             "tag": "free",
-            "forms": ["pomme", "pommes"],
+            "forms": [
+              "pomme",
+              "pommes"
+            ],
             "note": "apple — feminine, so une pomme and des pommes. The plural -s is written and silent: the article is the only thing the ear can hear change."
           }
         ],
-        "rules": [4, 5, 6]
+        "rules": [
+          4,
+          5,
+          6
+        ]
       },
       "trap": "English drops the word entirely in the plural — \"I want apples\". French will not: des is as obligatory as du, and Je veux pommes is not a sentence.",
       "sound": "des is day, with the -s silent unless a vowel follows. pommes is pom — one syllable, the final -es adding nothing at all.",
@@ -278,7 +297,10 @@
             "note": "to eat — the dictionary form, and the one that follows another verb with nothing in between. The -er ending is what marks it as the bare form, and it sounds exactly like é: mahn-ZHAY."
           }
         ],
-        "rules": [0, 1]
+        "rules": [
+          0,
+          1
+        ]
       },
       "trap": "English's \"to\" has nothing to translate into here. Je veux à manger and Je veux de manger both reach for a word the frame does not have, and both are wrong.",
       "sound": "mahn-ZHAY. The an is nasal, the g is the soft sound in the middle of \"measure\", and the -er ending is a clean ay.",
@@ -311,7 +333,6 @@
       "id": "L1-M3-S06",
       "display": "Je veux boire du thé",
       "cue": "I want to drink some tea",
-      "glossEn": "lit. \"I want drink of-the tea\"",
       "literal": "I want drink of-the tea",
       "deconstruction": {
         "words": [
@@ -330,7 +351,10 @@
             "note": "tea — masculine, so le thé and du thé. The h does nothing at all: th is simply a t."
           }
         ],
-        "rules": [0, 4]
+        "rules": [
+          0,
+          4
+        ]
       },
       "trap": "The partitive survives the second verb: it is the tea that is uncountable, not the drinking, so du sits in front of thé exactly as it would in a shorter sentence.",
       "sound": "boire is one syllable, bwar, with the r made at the back of the throat. thé is tay — the h is silent, and the é is the sound the accent marks.",
@@ -363,7 +387,6 @@
       "id": "L1-M3-S07",
       "display": "Je ne veux pas de café",
       "cue": "I don't want any coffee",
-      "glossEn": "lit. \"I not want not of coffee\"",
       "literal": "I not want not of coffee",
       "deconstruction": {
         "words": [
@@ -372,7 +395,7 @@
             "cue": "not (first half)",
             "tag": "delta",
             "forms": [],
-            "note": "The front half of the negation. It goes straight in front of the verb and it is never enough on its own — pas has to follow. In front of a vowel it shortens to n' and welds onto the verb, which is why L1-M9 has a row for n'ai."
+            "note": "The front half of the negation. It goes straight in front of the verb and is never enough alone — pas has to follow: je ne veux pas. Before a vowel it shortens to n' and welds on, hence L1-M9's n'ai."
           },
           {
             "display": "pas",
@@ -382,7 +405,10 @@
             "note": "The back half. It stands immediately after the verb, and it is what an ear actually hears — speech often drops the ne and never drops the pas. Writing keeps both."
           }
         ],
-        "rules": [2, 3]
+        "rules": [
+          2,
+          3
+        ]
       },
       "trap": "English negates with one word in front of the verb and an auxiliary to carry it — \"do not want\". French has no auxiliary and two words, one on each side of the verb. Reaching for a French \"do\" is reaching for something that does not exist.",
       "sound": "ne is a light duh sound, easily lost — and in speech it very often is. pas is pa, with the final -s silent, and it is the half that carries the meaning to the ear.",
@@ -415,7 +441,6 @@
       "id": "L1-M3-S08",
       "display": "Je veux une voiture",
       "cue": "I want a car",
-      "glossEn": "lit. \"I want a car\"",
       "deconstruction": {
         "words": [
           {
@@ -433,7 +458,9 @@
             "note": "car — feminine, so une voiture and la voiture."
           }
         ],
-        "rules": [5]
+        "rules": [
+          5
+        ]
       },
       "trap": "un and une look like a spelling difference and are not: un is nasal and une is not, so they are two clearly different sounds, and choosing wrongly is audible.",
       "sound": "une is ün — the French u with the n fully pronounced after it. voiture is vwa-TÜR, the same tight u again, with the r in the throat.",
@@ -466,7 +493,6 @@
       "id": "L1-M3-S09",
       "display": "Vous voulez du lait ?",
       "cue": "Do you want some milk?",
-      "glossEn": "lit. \"You want of-the milk?\"",
       "literal": "You want of-the milk ?",
       "deconstruction": {
         "words": [
@@ -478,7 +504,10 @@
             "note": "milk — masculine, so le lait and du lait. The final -t is silent, which makes it sound like the -ais of anglais."
           }
         ],
-        "rules": [0, 7]
+        "rules": [
+          0,
+          7
+        ]
       },
       "trap": "English needs \"do\" to make this a question. French adds nothing at all: the statement Vous voulez du lait becomes the question by the voice alone, plus the mark on the page.",
       "sound": "leh, one syllable, with the final -t silent. voulez is voo-LAY, the -ez ending sounding exactly like the -er of manger.",
@@ -511,7 +540,6 @@
       "id": "L1-M3-S10",
       "display": "Je ne veux pas travailler",
       "cue": "I don't want to work",
-      "glossEn": "lit. \"I not want not work\"",
       "literal": "I not want not work",
       "deconstruction": {
         "words": [
@@ -523,7 +551,10 @@
             "note": "to work — another bare -er form, following veux with nothing in between. The ill in the middle is a y sound, never an l: tra-va-YAY."
           }
         ],
-        "rules": [0, 2]
+        "rules": [
+          0,
+          2
+        ]
       },
       "trap": "The brackets close around the FIRST verb only. English would put the \"not\" next to \"work\"; French leaves travailler outside ne … pas altogether.",
       "sound": "tra-va-YAY. The r is in the throat, the ill is a y as in \"yes\", and the -er ending is the same clean ay as manger's.",
@@ -554,21 +585,61 @@
     }
   ],
   "comprehensionPool": [
-    { "id": "L1-M3-C01", "display": "Je veux du café", "cue": "I want some coffee" },
-    { "id": "L1-M3-C02", "display": "Vous voulez de la soupe ?", "cue": "Do you want some soup?" },
-    { "id": "L1-M3-C03", "display": "Je ne veux pas de pain", "cue": "I don't want any bread" },
-    { "id": "L1-M3-C04", "display": "Vous voulez manger ?", "cue": "Do you want to eat?" },
-    { "id": "L1-M3-C05", "display": "Je veux boire du lait", "cue": "I want to drink some milk" },
+    {
+      "id": "L1-M3-C01",
+      "display": "Je veux du café",
+      "cue": "I want some coffee"
+    },
+    {
+      "id": "L1-M3-C02",
+      "display": "Vous voulez de la soupe ?",
+      "cue": "Do you want some soup?"
+    },
+    {
+      "id": "L1-M3-C03",
+      "display": "Je ne veux pas de pain",
+      "cue": "I don't want any bread"
+    },
+    {
+      "id": "L1-M3-C04",
+      "display": "Vous voulez manger ?",
+      "cue": "Do you want to eat?"
+    },
+    {
+      "id": "L1-M3-C05",
+      "display": "Je veux boire du lait",
+      "cue": "I want to drink some milk"
+    },
     {
       "id": "L1-M3-C06",
       "display": "Je ne veux pas boire de thé",
       "cue": "I don't want to drink any tea"
     },
-    { "id": "L1-M3-C07", "display": "Je veux un livre", "cue": "I want a book" },
-    { "id": "L1-M3-C08", "display": "Vous voulez des pommes ?", "cue": "Do you want some apples?" },
-    { "id": "L1-M3-C09", "display": "Vous voulez travailler ?", "cue": "Do you want to work?" },
-    { "id": "L1-M3-C10", "display": "Je veux manger du pain", "cue": "I want to eat some bread" },
-    { "id": "L1-M3-C11", "display": "Je ne veux pas de lait", "cue": "I don't want any milk" },
+    {
+      "id": "L1-M3-C07",
+      "display": "Je veux un livre",
+      "cue": "I want a book"
+    },
+    {
+      "id": "L1-M3-C08",
+      "display": "Vous voulez des pommes ?",
+      "cue": "Do you want some apples?"
+    },
+    {
+      "id": "L1-M3-C09",
+      "display": "Vous voulez travailler ?",
+      "cue": "Do you want to work?"
+    },
+    {
+      "id": "L1-M3-C10",
+      "display": "Je veux manger du pain",
+      "cue": "I want to eat some bread"
+    },
+    {
+      "id": "L1-M3-C11",
+      "display": "Je ne veux pas de lait",
+      "cue": "I don't want any milk"
+    },
     {
       "id": "L1-M3-C12",
       "display": "Vous voulez boire du thé ?",

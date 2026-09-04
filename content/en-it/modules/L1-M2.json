@@ -3,14 +3,18 @@
   "id": "L1-M2",
   "title": "First exchange",
   "job": "Greetings, wellbeing, yes/no questions",
-  "prerequisites": ["L1-M1"],
+  "prerequisites": [
+    "L1-M1"
+  ],
   "verified": true,
   "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-30",
   "complexity": {
     "minWordsPerSentence": 2,
     "maxWordsPerSentence": 5,
-    "allowedTenses": ["simple_present"],
+    "allowedTenses": [
+      "simple_present"
+    ],
     "allowedPatterns": [
       "Ciao/Buongiorno + , + name",
       "Come stai?",
@@ -73,7 +77,9 @@
             "note": "Names carry over unchanged — swap in the name of whoever you are talking to."
           }
         ],
-        "rules": [3]
+        "rules": [
+          3
+        ]
       },
       "trap": "ciao is not the neutral greeting English speakers expect it to be. To a stranger, a shopkeeper or someone much older, buongiorno is the safer word.",
       "sound": "CHOW. The c before i is the ch of \"church\", and -iao runs together as one syllable.",
@@ -114,10 +120,12 @@
             "cue": "good morning · good day",
             "tag": "delta",
             "forms": [],
-            "note": "\"Good day\", written as one word. It covers the morning and the early part of the afternoon, not just the hour after breakfast, and it is the greeting that works with anyone — a friend, a stranger, a shopkeeper."
+            "note": "\"Good day\", written as one word. It covers the morning and the early afternoon, not just the hour after breakfast, and it works with anyone — a friend, a stranger, a shopkeeper."
           }
         ],
-        "rules": [3]
+        "rules": [
+          3
+        ]
       },
       "trap": "English splits \"good morning\" in two and keeps it to the morning. Italian welds it into one word and runs it through the middle of the day.",
       "sound": "bwon-JOR-no. The gi is the j of \"jam\", one sound and not two.",
@@ -165,11 +173,18 @@
             "display": "stai",
             "cue": "you are (doing)",
             "tag": "delta",
-            "forms": ["sto", "stai"],
+            "forms": [
+              "sto",
+              "stai"
+            ],
             "note": "stare, the verb of how things are GOING, as against essere for what they ARE. The ending names the person: sto (I) · stai (you). It is the verb every enquiry after someone's health uses."
           }
         ],
-        "rules": [0, 1, 5]
+        "rules": [
+          0,
+          1,
+          5
+        ]
       },
       "trap": "There is no \"are\" to add and no \"do\" to front. Come stai? is the whole question, and the rising voice — with the question mark that writes it — is all that marks it as one.",
       "sound": "KO-me STAI. stai is one syllable: the a and the i glide together, close to the English word \"sty\".",
@@ -211,7 +226,7 @@
             "cue": "well",
             "tag": "interference",
             "forms": [],
-            "note": "well — an adverb, and it answers a verb. English answers \"how are you?\" with an adjective (I'm fine, I'm good); Italian answers with this. buono is the adjective and describes a thing, not how someone is doing."
+            "note": "well — an adverb. English answers \"how are you?\" with an adjective (I'm fine); Italian answers with this: sto bene. buono is the adjective and describes a thing, not how someone is."
           },
           {
             "display": "grazie",
@@ -221,7 +236,9 @@
             "note": "thank you — one word for the whole phrase, and it never changes shape."
           }
         ],
-        "rules": [1]
+        "rules": [
+          1
+        ]
       },
       "trap": "English reaches for an adjective here — I'm good. Italian will not: how you are doing is bene, and Sto buono, if it says anything, says you are behaving yourself.",
       "sound": "BEH-ne, then GRAH-tsye. That z is a \"ts\" again, exactly as in canzoni.",
@@ -263,7 +280,7 @@
             "cue": "you are",
             "tag": "delta",
             "forms": [],
-            "note": "essere for tu, the one person this course speaks to: sono (I) · sei (you) · è (he, she, it). Italian spells the number six the same way — sei — and only the sentence around it tells you which one you are looking at."
+            "note": "essere for tu, the one person this course speaks to: sono (I) · sei (you) · è (he, she, it). Italian spells the number six the same way — sei — and only the sentence around it tells you which."
           },
           {
             "display": "Roma",
@@ -273,7 +290,11 @@
             "note": "City names carry over, though Italian spells its own: Roma, not Rome."
           }
         ],
-        "rules": [0, 5, 6]
+        "rules": [
+          0,
+          5,
+          6
+        ]
       },
       "trap": "English has to move something to ask — are you, do you. Italian moves nothing at all: the question is the statement with a rising voice, and *Fai sei di Roma? is an auxiliary Italian has no use for.",
       "sound": "SEY, one syllable, and RO-ma with an open o and a tapped r.",
@@ -318,7 +339,10 @@
             "note": "yes. The accent is part of the word, not emphasis: si without it is the little pronoun of si chiama, and the two are otherwise identical on the page."
           }
         ],
-        "rules": [4, 6]
+        "rules": [
+          4,
+          6
+        ]
       },
       "trap": "English answers with the auxiliary — Yes, I am. Italian has no auxiliary to reach for, so it either says sì alone or says sì and then the whole short sentence.",
       "sound": "SEE, held a beat, and the accent is telling you it carries the stress of the word all on its own.",
@@ -363,7 +387,9 @@
             "note": "no — the same little word as in English, with no accent on it and nothing else to remember."
           }
         ],
-        "rules": [6]
+        "rules": [
+          6
+        ]
       },
       "trap": "English softens a correction with an auxiliary — no, I'm not, I'm from Delhi. Italian puts no in front and then simply says the true sentence.",
       "sound": "NAW, with an open o held cleanly — Italian never lets it slide into the \"oh\" of English \"no\".",
@@ -404,11 +430,20 @@
             "display": "stanco",
             "cue": "tired",
             "tag": "delta",
-            "forms": ["stanco", "stanca", "stanchi", "stanche"],
-            "note": "tired, and it agrees with whoever the sentence is about: stanco of a man, stanca of a woman, stanchi and stanche in the plural. The h in stanchi and stanche is doing no work of its own — it keeps the c hard, as it does in amiche."
+            "forms": [
+              "stanco",
+              "stanca",
+              "stanchi",
+              "stanche"
+            ],
+            "note": "tired, agreeing with whoever the sentence is about: stanco of a man, stanca of a woman, stanchi and stanche in the plural. The h in stanchi and stanche keeps the c hard, as in amiche."
           }
         ],
-        "rules": [0, 2, 5]
+        "rules": [
+          0,
+          2,
+          5
+        ]
       },
       "trap": "English \"tired\" never changes, so the ending here is easy to leave on the default. It follows the SUBJECT, not the speaker: asked of a woman it is Sei stanca?, whoever is doing the asking.",
       "sound": "STAN-ko. The c before o is a hard k; the same c before i or e would be the ch of \"church\", which is why stanchi needs its h.",
@@ -453,7 +488,10 @@
             "note": "today. A time word can stand at the end, as here, or at the front (Oggi sono stanca) — Italian is content either way."
           }
         ],
-        "rules": [2, 6]
+        "rules": [
+          2,
+          6
+        ]
       },
       "trap": "The -a is not a typo and not a softening: it is there because the person speaking is a woman. A man saying the same thing writes Sono stanco.",
       "sound": "OD-ji, two syllables, and the double g is held — Italian doubles consonants audibly, and the gg before i is the j of \"jam\".",
@@ -497,7 +535,9 @@
             "note": "goodbye, and it works with anyone — where ciao would be too familiar, this is the word. It is built out of \"until we see each other again\", which is why it is so long."
           }
         ],
-        "rules": [3]
+        "rules": [
+          3
+        ]
       },
       "trap": "English has one \"goodbye\" for every situation. Italian splits the job: ciao to a friend, arrivederci to everyone else — and using ciao where arrivederci belongs is the same over-familiarity as using ciao to open.",
       "sound": "ar-ri-ve-DER-chi. The double r is trilled longer than a single one, and the final -ci is \"chee\".",
@@ -528,18 +568,69 @@
     }
   ],
   "comprehensionPool": [
-    { "id": "L1-M2-C01", "display": "Ciao, Rohan", "cue": "Hi, Rohan" },
-    { "id": "L1-M2-C02", "display": "Buongiorno, Anna", "cue": "Good morning, Anna" },
-    { "id": "L1-M2-C03", "display": "Come stai, Anna?", "cue": "How are you, Anna?" },
-    { "id": "L1-M2-C04", "display": "Sto molto bene, grazie", "cue": "I'm very well, thanks" },
-    { "id": "L1-M2-C05", "display": "Sei stanca?", "cue": "Are you tired?" },
-    { "id": "L1-M2-C06", "display": "Sei di Delhi?", "cue": "Are you from Delhi?" },
-    { "id": "L1-M2-C07", "display": "Sì, sono studente", "cue": "Yes, I'm a student" },
-    { "id": "L1-M2-C08", "display": "No, sono di Roma", "cue": "No, I'm from Rome" },
-    { "id": "L1-M2-C09", "display": "Rohan è stanco oggi", "cue": "Rohan is tired today" },
-    { "id": "L1-M2-C10", "display": "Il caffè è molto buono", "cue": "The coffee is very good" },
-    { "id": "L1-M2-C11", "display": "Anna è di Roma", "cue": "Anna is from Rome" },
-    { "id": "L1-M2-C12", "display": "Arrivederci, Anna", "cue": "Goodbye, Anna" }
+    {
+      "id": "L1-M2-C01",
+      "display": "Ciao, Rohan",
+      "cue": "Hi, Rohan"
+    },
+    {
+      "id": "L1-M2-C02",
+      "display": "Buongiorno, Anna",
+      "cue": "Good morning, Anna"
+    },
+    {
+      "id": "L1-M2-C03",
+      "display": "Come stai, Anna?",
+      "cue": "How are you, Anna?"
+    },
+    {
+      "id": "L1-M2-C04",
+      "display": "Sto molto bene, grazie",
+      "cue": "I'm very well, thanks"
+    },
+    {
+      "id": "L1-M2-C05",
+      "display": "Sei stanca?",
+      "cue": "Are you tired?"
+    },
+    {
+      "id": "L1-M2-C06",
+      "display": "Sei di Delhi?",
+      "cue": "Are you from Delhi?"
+    },
+    {
+      "id": "L1-M2-C07",
+      "display": "Sì, sono studente",
+      "cue": "Yes, I'm a student"
+    },
+    {
+      "id": "L1-M2-C08",
+      "display": "No, sono di Roma",
+      "cue": "No, I'm from Rome"
+    },
+    {
+      "id": "L1-M2-C09",
+      "display": "Rohan è stanco oggi",
+      "cue": "Rohan is tired today"
+    },
+    {
+      "id": "L1-M2-C10",
+      "display": "Il caffè è molto buono",
+      "cue": "The coffee is very good"
+    },
+    {
+      "id": "L1-M2-C11",
+      "display": "Anna è di Roma",
+      "cue": "Anna is from Rome"
+    },
+    {
+      "id": "L1-M2-C12",
+      "display": "Arrivederci, Anna",
+      "cue": "Goodbye, Anna"
+    }
   ],
-  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
 }

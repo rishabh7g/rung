@@ -122,8 +122,9 @@ function vocabularySection(
 ): string {
   const cap = `You may introduce at most **${brief.newWordCap} new words**. Every new word must be fully
 deconstructed where it first appears — \`display\`, \`cue\`, \`tag\`, \`forms\` (the taught paradigm,
-or \`[]\`), and a \`note\` saying why its tag is what it is. A word taught below is NOT new and
-must not be re-deconstructed as if it were.`;
+or \`[]\`), and a \`note\` saying why its tag is what it is — **one fact and one example, at most
+200 characters**; anything longer is a rule and belongs in \`rules\`. A word taught below is NOT new
+and must not be re-deconstructed as if it were.`;
 
   if (index === null) {
     return [

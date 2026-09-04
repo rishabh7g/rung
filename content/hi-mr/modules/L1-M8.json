@@ -3,15 +3,24 @@
   "id": "L1-M8",
   "title": "Numbers & shopping",
   "job": "Prices, quantities, buying",
-  "prerequisites": ["L1-M7"],
+  "prerequisites": [
+    "L1-M7"
+  ],
   "verified": true,
   "verifiedBy": "Fable (Claude Fable 5) — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 7,
-    "allowedTenses": ["simple_present", "imperative"],
-    "allowedPatterns": ["हे/ही + कितीला + आहे", "मला + qty + N + द्या", "N + num + रुपये + आहे"],
+    "allowedTenses": [
+      "simple_present",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "हे/ही + कितीला + आहे",
+      "मला + qty + N + द्या",
+      "N + num + रुपये + आहे"
+    ],
     "newWordCap": 25
   },
   "rules": [
@@ -53,18 +62,28 @@
             "display": "हे",
             "cue": "यह",
             "tag": "delta",
-            "forms": ["हा", "ही", "हे"],
+            "forms": [
+              "हा",
+              "ही",
+              "हे"
+            ],
             "note": "\"This\" — and it agrees with the thing pointed at, exactly like माझा/माझी/माझं: हा चहा · ही साखर · हे दूध. Hindi's one यह is three Marathi shapes."
           },
           {
             "display": "कितीला",
             "cue": "कितने का / कितने में",
             "tag": "delta",
-            "forms": ["किती", "कितीला"],
+            "forms": [
+              "किती",
+              "कितीला"
+            ],
             "note": "किती \"how much\" + -ला — the dative from मला (M1), now asking what something goes FOR. The whole shop runs on this one word."
           }
         ],
-        "rules": [0, 1]
+        "rules": [
+          0,
+          1
+        ]
       },
       "trap": "'कितने का' के दो शब्द मराठी में एक: कितीला. और यह/ये का काम यहाँ तीन शब्द करते हैं — हा, ही, हे — चीज़ के लिंग से. दुकान में उँगली उठाओ और हे कितीला आहे? — काम हो गया.",
       "sound": "कितीला = कि‑ती‑ला; 'ती' लंबी. हे छोटा और सीधा.",
@@ -87,7 +106,7 @@
       ],
       "mistake": {
         "display": "हे किती का आहे?",
-        "why": "'कितने का' का सीधा अनुवाद — मराठी में -ला जुड़कर एक शब्द बनता है: कितीला. का यहाँ सवाल का नहीं, हिंदी की छाया है."
+        "why": "का हिंदी की छाया है. सही: कितीला, एक शब्द."
       },
       "usage": "दुकान की पहली लाइन — दाम पूछना.",
       "register": "neutral",
@@ -106,17 +125,23 @@
             "cue": "दस",
             "tag": "delta",
             "forms": [],
-            "note": "\"Ten\" — one of a set of cousins in new shapes: एक(एक) · दोन(दो) · पाच(पाँच) · दहा(दस) · वीस(बीस) · पन्नास(पचास) · शंभर(सौ). Each is its own word, not a shape of this one. शंभर is the one with no echo — watch it."
+            "note": "\"Ten\" — one of a set of cousins in new shapes: एक(एक) · दोन(दो) · पाच(पाँच) · दहा(दस) · वीस(बीस) · पन्नास(पचास) · शंभर(सौ). Each is its own word; शंभर has no echo — watch it."
           },
           {
             "display": "रुपये",
             "cue": "रुपये",
             "tag": "free",
-            "forms": ["रुपया", "रुपये"],
+            "forms": [
+              "रुपया",
+              "रुपये"
+            ],
             "note": "Same word, same plural — रुपया/रुपये transfers straight from Hindi."
           }
         ],
-        "rules": [2, 4]
+        "rules": [
+          2,
+          4
+        ]
       },
       "trap": "यहाँ आराम है: शब्द-क्रम हूबहू हिंदी वाला — चीज़, गिनती, रुपये, है. बस गिनती की शक्लें नई हैं: दस → दहा, बीस → वीस. सौ → शंभर सबसे अलग — उसे अलग से याद करो.",
       "sound": "दहा = द‑हा, दूसरी 'हा' खुली. रुपये वैसा ही जैसा हिंदी में.",
@@ -175,7 +200,10 @@
             "note": "The polite \"give\" — दीजिए in one syllable. मला + amount + thing + द्या is the entire purchase; no extra politeness words needed."
           }
         ],
-        "rules": [3, 4]
+        "rules": [
+          3,
+          4
+        ]
       },
       "trap": "'दीजिए' की लंबाई मराठी में एक झटके की है: द्या. और माँगने का ढाँचा M3 वाला ही — मला से शुरू, बस अंत में हवा की जगह द्या: चाहत नहीं, सीधी माँग.",
       "sound": "द्या एक ही झटका — 'द' और 'या' साथ में: द्‍या.",
@@ -216,11 +244,18 @@
             "display": "अर्धा",
             "cue": "आधा",
             "tag": "delta",
-            "forms": ["अर्धा", "अर्धी", "अर्धं"],
+            "forms": [
+              "अर्धा",
+              "अर्धी",
+              "अर्धं"
+            ],
             "note": "\"Half\" — आधा with an र् inside: अर्धा. It agrees like माझा: अर्धा किलो (m) · अर्धी भाजी (f) · अर्धं पुस्तक (n)."
           }
         ],
-        "rules": [3, 4]
+        "rules": [
+          3,
+          4
+        ]
       },
       "trap": "आधा → अर्धा: बीच में 'र' घुस गया — यही पूरा फ़र्क़, पर उसी में लोग फिसलते हैं. और अर्धा भी माझा की तरह झुकता है: अर्धा किलो, अर्धी भाजी, अर्धं दूध... जो नापते हो, उससे मिलाओ.",
       "sound": "अर्धा = अर्‑धा; 'र्' को दबाओ मत, साफ़ बोलो.",
@@ -261,11 +296,18 @@
             "display": "ही",
             "cue": "यह (स्त्री.)",
             "tag": "delta",
-            "forms": ["हा", "ही", "हे"],
+            "forms": [
+              "हा",
+              "ही",
+              "हे"
+            ],
             "note": "S01's \"this\" in its feminine shape — साखर is feminine (M3), so ही साखर. The pointer re-checks the noun's gender every time."
           }
         ],
-        "rules": [0, 1]
+        "rules": [
+          0,
+          1
+        ]
       },
       "trap": "हिंदी में 'यह चीनी', 'यह चाय', 'यह दूध' — एक ही यह. मराठी में हर बार चीज़ से पूछो: साखर(स्त्री.) → ही, चहा(पु.) → हा, दूध(नपुं.) → हे. उँगली एक, शक्लें तीन.",
       "sound": "ही लंबी 'ई' से — 'हि' नहीं, ही.",
@@ -310,7 +352,10 @@
             "note": "\"Twenty\" — S02's set: बीस with a व. The swap belongs to this word and the twenties built on it (एकवीस, बावीस), not to Marathi numbers at large — बारा and बत्तीस keep their ब."
           }
         ],
-        "rules": [2, 4]
+        "rules": [
+          2,
+          4
+        ]
       },
       "trap": "बीस → वीस: पहला अक्षर भर बदला. सुनते वक़्त यही पकड़ना है — 'व' सुनो तो हिंदी का 'ब' सोचो: वीस-बीस.",
       "sound": "वीस = वी‑स; होंठ हल्के छूते हैं, 'बीस' का ज़ोर नहीं.",
@@ -358,11 +403,17 @@
             "display": "केळी",
             "cue": "केले",
             "tag": "interference",
-            "forms": ["केळं", "केळी"],
+            "forms": [
+              "केळं",
+              "केळी"
+            ],
             "note": "\"Bananas\" — Hindi केला is masculine; Marathi केळं is NEUTER, and its plural is केळी. The ल also becomes the Marathi ळ. Gender flip plus a new sound, in one fruit."
           }
         ],
-        "rules": [3, 4]
+        "rules": [
+          3,
+          4
+        ]
       },
       "trap": "केला(पु.) → केळं(नपुं.): लिंग पलटा और 'ल' मुड़कर 'ळ' हो गया. एक केळं, दो केळी — नपुंसक का बहुवचन -ई पर जाता है. हिंदी के 'केले' से शक्ल मिलती-जुलती है, रास्ता बिल्कुल अलग.",
       "sound": "केळी का 'ळ' जीभ मोड़कर — के‑ळी; यही मराठी की पहचान वाली आवाज़ है.",
@@ -407,7 +458,10 @@
             "note": "\"Expensive\" — and it NEVER inflects: हा चहा महाग, ही कॉफी महाग, हे दूध महाग. Hindi महँगा/महँगी bends with the noun; महाग is one shape for everything."
           }
         ],
-        "rules": [0, 5]
+        "rules": [
+          0,
+          5
+        ]
       },
       "trap": "उलटा जाल: अब तक मराठी हर जगह लिंग माँगती थी — यहाँ हिंदी माँगती है और मराठी नहीं. महँगी चाय, महँगा दूध… भूल जाओ: महाग एक ही रहता है. 'महागी' गढ़ना ही यहाँ की चूक है.",
       "sound": "महाग = म‑हा‑ग; बीच की 'हा' लंबी, अंत 'ग' साफ़.",
@@ -459,7 +513,10 @@
             "note": "\"Fifty\" — S02's set again: पचास and पन्नास are the same word grown apart, the middle syllable coming out as a doubled न्न. No rule to apply, just the pair to hold."
           }
         ],
-        "rules": [2, 4]
+        "rules": [
+          2,
+          4
+        ]
       },
       "trap": "सब्ज़ी मत ढूँढो — मंडी में शब्द भाजी है. और भाव 'रुपये किलो' में वैसा ही बोला जाता है जैसा हिंदी में: पन्नास रुपये किलो — साँचा मुफ़्त, शब्द नए.",
       "sound": "भाजी = भा‑जी; पन्नास = पन्‑ना‑स, दुहरा 'न' साफ़.",
@@ -504,7 +561,10 @@
             "note": "\"Hundred\" — the one number with no Hindi echo at all: सौ → शंभर. It earns its own slot in the memory."
           }
         ],
-        "rules": [3, 4]
+        "rules": [
+          3,
+          4
+        ]
       },
       "trap": "गिनती में सबसे बड़ा छलांग-शब्द: सौ से शंभर तक कोई पुल नहीं. बाक़ी सब जोड़ीदार थे (दस-दहा, बीस-वीस) — यह अकेला रटना पड़ेगा. पर बाज़ार इसी पर चलता है.",
       "sound": "शंभर = शम्‑भर; 'ं' को 'म' की तरह दबाओ — शम्भर.",

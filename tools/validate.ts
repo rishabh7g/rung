@@ -29,6 +29,13 @@ const addFormats = ajvFormatsModule as unknown as typeof ajvFormatsModule.defaul
 export const SENTENCE_COUNT = 10;
 export const POOL_MIN = 6;
 export const ENRICHMENT_FULL_THROUGH_MODULE = 3;
+/**
+ * A word's `note` is "the one thing worth knowing about it" (`src/components/WhyRow.tsx`), and it
+ * renders under every revealed Practice card and in the first tier of Sentence Detail. At 18px on
+ * a 360px phone, 300 characters is six lines under one word; five words on a card is a page. Two
+ * hundred is one fact and one example (#407). Anything longer is a rule, and belongs in `rules`.
+ */
+export const NOTE_MAX_CHARS = 200;
 
 /** In Sentence Detail order [D10]; a module M1-M3 must carry all five on every sentence. */
 export const ENRICHMENT_BLOCKS = ['sound', 'variations', 'mistake', 'usage', 'mnemonic'] as const;
@@ -255,6 +262,18 @@ export function validateModule(
       });
     }
     poolIds.add(item.id);
+  });
+
+  // a word's note is one fact, not a paragraph (#407)
+  module.sentences.forEach((sentence, i) => {
+    sentence.deconstruction.words.forEach((word, w) => {
+      if (typeof word.note === 'string' && word.note.length > NOTE_MAX_CHARS) {
+        issues.push({
+          path: `/sentences/${i}/deconstruction/words/${w}/note`,
+          message: `note is ${word.note.length} characters; the ceiling is ${NOTE_MAX_CHARS} — one fact and one example, and a rule belongs in "rules"`,
+        });
+      }
+    });
   });
 
   // prerequisites earlier in the same level sequence

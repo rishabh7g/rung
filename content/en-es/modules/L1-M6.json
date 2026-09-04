@@ -3,14 +3,20 @@
   "id": "L1-M6",
   "title": "Tomorrow",
   "job": "Future and plans",
-  "prerequisites": ["L1-M5"],
+  "prerequisites": [
+    "L1-M5"
+  ],
   "verified": true,
   "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 7,
-    "allowedTenses": ["present", "periphrastic_future", "simple_future"],
+    "allowedTenses": [
+      "present",
+      "periphrastic_future",
+      "simple_future"
+    ],
     "allowedPatterns": [
       "Mañana + voy a + V-inf",
       "¿Vas a + V-inf?",
@@ -71,7 +77,6 @@
       "id": "L1-M6-S01",
       "display": "Mañana voy a trabajar",
       "cue": "Tomorrow I'm going to work",
-      "glossEn": "lit. \"Tomorrow I-go to work\"",
       "literal": "Tomorrow I-go to to-work",
       "deconstruction": {
         "words": [
@@ -93,11 +98,19 @@
             "display": "trabajar",
             "cue": "to work",
             "tag": "free",
-            "forms": ["trabajar", "trabajaré"],
-            "note": "The dictionary form of the verb behind M4's trabajo and M5's trabajé. After voy a it stays exactly like this — the person is already carried by voy. S07's one-word future is this same form with an ending stuck on it: trabajar + é → trabajaré."
+            "forms": [
+              "trabajar",
+              "trabajaré"
+            ],
+            "note": "The dictionary form of the verb behind M4's trabajo and M5's trabajé. After voy a it stays like this — voy already carries the person. S07's one-word future is this form with an ending: trabajaré."
           }
         ],
-        "rules": [0, 1, 2, 3]
+        "rules": [
+          0,
+          1,
+          2,
+          3
+        ]
       },
       "trap": "English says \"going to work\" and hears one word where Spanish writes two: voy and a. The a carries no meaning and cannot be dropped.",
       "sound": "ma-ÑA-na. The ñ is the ny of \"canyon\", and the stress sits in the middle. voy rhymes with English \"boy\", with a v that is softer than an English one.",
@@ -130,7 +143,6 @@
       "id": "L1-M6-S02",
       "display": "¿Vas a comer con Ana?",
       "cue": "Are you going to eat with Ana?",
-      "glossEn": "lit. \"You-go to eat with Ana?\"",
       "literal": "You-go to to-eat with Ana?",
       "deconstruction": {
         "words": [
@@ -142,7 +154,10 @@
             "note": "ir for tú. voy and vas are the same verb and share no letters with it: voy · vas · va · vamos · van. As ever, no tú in front — vas already says who."
           }
         ],
-        "rules": [2, 3]
+        "rules": [
+          2,
+          3
+        ]
       },
       "trap": "English needs three words to ask this — \"are you going\" — and Spanish needs one. The question is the statement with the two marks around it; nothing moves.",
       "sound": "One syllable, BAS, with the s clear at the end. Spanish has no buzzing z sound here.",
@@ -175,7 +190,6 @@
       "id": "L1-M6-S03",
       "display": "Voy a estudiar después",
       "cue": "I'm going to study later",
-      "glossEn": "lit. \"I-go to study afterwards\"",
       "literal": "I-go to to-study afterwards",
       "deconstruction": {
         "words": [
@@ -187,7 +201,10 @@
             "note": "\"Later on\", with no clock attached — it points at a time after now rather than at an hour. It sits at the end of the sentence, where English also puts \"later\"."
           }
         ],
-        "rules": [1, 3]
+        "rules": [
+          1,
+          3
+        ]
       },
       "trap": "A plan does not need a day on it. voy a + a plain verb covers anything from five minutes away to next year; después just says \"after this\".",
       "sound": "des-PUÉS. The accent puts the stress on the last syllable and keeps the u and the e running together as one glide.",
@@ -232,7 +249,10 @@
             "note": "The dictionary form of M5's hice and hiciste. One verb for both English words: hacer la comida is making it, hacer el trabajo is doing it."
           }
         ],
-        "rules": [3, 8]
+        "rules": [
+          3,
+          8
+        ]
       },
       "trap": "The negative goes on the going: no voy a hacer. English can say \"I'm going to do nothing\", and Spanish still puts no in front of the verb and keeps nada as well.",
       "sound": "a-CER. The h is silent, as it always is, and the c before an e is an s across Latin America and a th in most of Spain.",
@@ -265,7 +285,6 @@
       "id": "L1-M6-S05",
       "display": "¿Vas a estudiar esta noche?",
       "cue": "Are you going to study tonight?",
-      "glossEn": "lit. \"You-go to study this night?\"",
       "literal": "You-go to to-study this night?",
       "deconstruction": {
         "words": [
@@ -277,7 +296,10 @@
             "note": "Two words where English has one: \"this night\". It is a different thing from M4's por la noche, which is \"at night\" in general — esta noche is the one that is coming."
           }
         ],
-        "rules": [3, 5]
+        "rules": [
+          3,
+          5
+        ]
       },
       "trap": "esta noche is a plan, por la noche is a habit. Trabajo por la noche says what your nights are usually like; Voy a trabajar esta noche says what tonight holds.",
       "sound": "ES-ta NO-che. The ch is the ch of English \"church\", and neither word carries an accent because both are stressed where Spanish expects.",
@@ -310,7 +332,6 @@
       "id": "L1-M6-S06",
       "display": "Mañana trabajo todo el día",
       "cue": "Tomorrow I work all day",
-      "glossEn": "lit. \"Tomorrow I-work all the day\"",
       "literal": "Tomorrow I-work all the day",
       "deconstruction": {
         "words": [
@@ -319,10 +340,13 @@
             "cue": "all day",
             "tag": "interference",
             "forms": [],
-            "note": "Three words that travel as one, and one letter apart from M4's todos los días: todo el día is a single day from end to end, todos los días is every day of the week. Singular for the stretch, plural for the habit."
+            "note": "Three words that travel as one, and one letter apart from M4's todos los días: todo el día is a single day from end to end, todos los días is every day. Singular for the stretch, plural for the habit."
           }
         ],
-        "rules": [5, 7]
+        "rules": [
+          5,
+          7
+        ]
       },
       "trap": "M4's trabajo has not changed at all; the future is coming entirely from mañana. Take the time word away and the same sentence is about today.",
       "sound": "TO-do el DÍ-a, run together into three beats. día carries its accent to split the i from the a and keep the stress on it.",
@@ -355,7 +379,6 @@
       "id": "L1-M6-S07",
       "display": "Mañana hablaré con Ana",
       "cue": "Tomorrow I'll speak with Ana",
-      "glossEn": "lit. \"Tomorrow I-will-speak with Ana\"",
       "literal": "Tomorrow I-will-speak with Ana",
       "deconstruction": {
         "words": [
@@ -363,11 +386,19 @@
             "display": "hablaré",
             "cue": "I will speak",
             "tag": "delta",
-            "forms": ["hablar", "hablaré", "hablarás", "hablará"],
-            "note": "The one-word future: the whole infinitive hablar with -é stuck on the end. That is why the r is still there, and it is the only thing keeping it apart from M5's hablé (I spoke). The other persons add their own ending to the same infinitive — hablarás (you) · hablará (he, she, usted) — and the bare hablar is the form voy a takes. Spoken Spanish would more often say voy a hablar; this form leans towards a promise or a prediction."
+            "forms": [
+              "hablar",
+              "hablaré",
+              "hablarás",
+              "hablará"
+            ],
+            "note": "The one-word future: the whole infinitive hablar with -é on. The r keeps it apart from M5's hablé (I spoke). Other persons: hablarás (you) · hablará (he, she, usted). Speech prefers voy a hablar."
           }
         ],
-        "rules": [0, 6]
+        "rules": [
+          0,
+          6
+        ]
       },
       "trap": "hablé and hablaré are one syllable apart and two tenses apart — one is yesterday, the other is tomorrow. The r is the whole difference, and it is the r of the infinitive.",
       "sound": "a-bla-RÉ, three syllables with the stress on the last. Beside M5's a-BLÉ, which has two.",
@@ -400,7 +431,6 @@
       "id": "L1-M6-S08",
       "display": "Vamos a comer a las ocho",
       "cue": "We're going to eat at eight",
-      "glossEn": "lit. \"We-go to eat at the eight\"",
       "literal": "We-go to to-eat at the eight",
       "deconstruction": {
         "words": [
@@ -409,10 +439,14 @@
             "cue": "we go · we're going · let's",
             "tag": "interference",
             "forms": [],
-            "note": "ir for \"we\", and the only shape of it that also works as an invitation: Vamos a comer is both \"we are going to eat\" and \"let's eat\". English keeps those two apart with different words; Spanish leaves it to the moment."
+            "note": "ir for \"we\", and the only shape of it that also works as an invitation: Vamos a comer is both \"we are going to eat\" and \"let's eat\". English keeps those apart with different words; Spanish does not."
           }
         ],
-        "rules": [2, 3, 9]
+        "rules": [
+          2,
+          3,
+          9
+        ]
       },
       "trap": "Both a's in this sentence are M4's one-letter signpost, in two of its seats: the first glues the plan together, the second points at a clock time.",
       "sound": "VA-mos, stressed on the first syllable — not va-MOS.",
@@ -453,11 +487,17 @@
             "display": "sábado",
             "cue": "Saturday",
             "tag": "delta",
-            "forms": ["sábado", "sábados"],
-            "note": "Saturday, masculine and written with a small s — the days of the week are not capitalised in Spanish. el sábado is \"on Saturday\"; los sábados is \"on Saturdays\", every week. The accent marks the stress on the first of its three syllables."
+            "forms": [
+              "sábado",
+              "sábados"
+            ],
+            "note": "Saturday, masculine and written with a small s — days of the week are not capitalised in Spanish. el sábado is \"on Saturday\"; los sábados is \"on Saturdays\", every week. The accent marks the stress."
           }
         ],
-        "rules": [4, 10]
+        "rules": [
+          4,
+          10
+        ]
       },
       "trap": "Here voy a is not a plan at all — a place after the a makes it real movement. Voy a trabajar is what I will do; Voy a México is where I am going.",
       "sound": "SÁ-ba-do. Three syllables, the first one loudest, and the b in the middle is soft — nearer an English v than a b.",
@@ -490,7 +530,6 @@
       "id": "L1-M6-S10",
       "display": "Mañana voy a ver una película",
       "cue": "Tomorrow I'm going to see a film",
-      "glossEn": "lit. \"Tomorrow I-go to see a film\"",
       "literal": "Tomorrow I-go to to-see a film",
       "deconstruction": {
         "words": [
@@ -502,7 +541,10 @@
             "note": "The dictionary form of M4's veo. It covers watching as well as seeing — ver una película is what English calls watching a film."
           }
         ],
-        "rules": [1, 3]
+        "rules": [
+          1,
+          3
+        ]
       },
       "trap": "No personal a here. M4's a in front of a person marks a person; a film is a thing, so nothing stands in front of it — the only a in this sentence is the plan a after voy.",
       "sound": "One syllable, BER, and the r at the end is one light tap of the tongue.",
@@ -533,7 +575,11 @@
     }
   ],
   "comprehensionPool": [
-    { "id": "L1-M6-C01", "display": "Mañana voy a estudiar", "cue": "Tomorrow I'm going to study" },
+    {
+      "id": "L1-M6-C01",
+      "display": "Mañana voy a estudiar",
+      "cue": "Tomorrow I'm going to study"
+    },
     {
       "id": "L1-M6-C02",
       "display": "¿Vas a trabajar mañana?",
@@ -590,5 +636,8 @@
       "cue": "Are you going to work all day?"
     }
   ],
-  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
 }

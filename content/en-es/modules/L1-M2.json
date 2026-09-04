@@ -3,14 +3,18 @@
   "id": "L1-M2",
   "title": "First exchange",
   "job": "Greetings, wellbeing, yes/no questions",
-  "prerequisites": ["L1-M1"],
+  "prerequisites": [
+    "L1-M1"
+  ],
   "verified": true,
   "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 2,
     "maxWordsPerSentence": 5,
-    "allowedTenses": ["simple_present"],
+    "allowedTenses": [
+      "simple_present"
+    ],
     "allowedPatterns": [
       "Hola/Buenos días + , + name",
       "¿Cómo estás/está usted?",
@@ -71,12 +75,18 @@
             "note": "Morning to night, stranger or friend — Spanish has no ladder of hi / hello / good day to climb."
           }
         ],
-        "rules": [0]
+        "rules": [
+          0
+        ]
       },
       "trap": "English picks a greeting by formality. hola is not the slangy end of a scale; it is the whole scale.",
       "sound": "The h is silent in every Spanish word: OH-la, stressed on the first syllable.",
       "variations": [
-        { "display": "Hola, Ana", "cue": "Hello, Ana", "changed": "swap the name" },
+        {
+          "display": "Hola, Ana",
+          "cue": "Hello, Ana",
+          "changed": "swap the name"
+        },
         {
           "display": "Hola, buenos días",
           "cue": "Hello, good morning",
@@ -119,7 +129,9 @@
             "note": "Names carry over; Spanish only gives them its own clean vowels — AH-na."
           }
         ],
-        "rules": [0]
+        "rules": [
+          0
+        ]
       },
       "trap": "The greeting is tied to the clock, not to politeness: after lunch buenos días stops being right and buenas tardes takes over.",
       "sound": "BWE-nos DÍ-as. The written accent marks the stress and keeps that i as a syllable of its own.",
@@ -171,7 +183,11 @@
             "note": "estar for tú: how you are, a condition rather than an identity. The -s is the tú ending — estoy (I) · estás (you) · está (he, she, usted)."
           }
         ],
-        "rules": [2, 3, 4]
+        "rules": [
+          2,
+          3,
+          4
+        ]
       },
       "trap": "Spanish has no \"do\". The question is literally how are-you, and there is no third word to add.",
       "sound": "CÓ-mo es-TÁS — two written accents, each marking its own stressed syllable.",
@@ -204,7 +220,6 @@
       "id": "L1-M2-S04",
       "display": "Estoy bien, gracias",
       "cue": "I'm fine, thanks",
-      "glossEn": "lit. \"I-am well, thanks\"",
       "literal": "I-am well, thanks",
       "deconstruction": {
         "words": [
@@ -230,7 +245,11 @@
             "note": "Always plural — gracias, never gracia. Muchas gracias is the bigger version."
           }
         ],
-        "rules": [0, 3, 4]
+        "rules": [
+          0,
+          3,
+          4
+        ]
       },
       "trap": "Soy bien is the sentence an English speaker builds and Spanish rejects: how you are is estar, so Estoy bien.",
       "sound": "es-TOY, stressed at the end. In gracias the c is an s across Latin America and a th in most of Spain — both are standard.",
@@ -271,11 +290,17 @@
             "display": "ocupado",
             "cue": "busy",
             "tag": "delta",
-            "forms": ["ocupado", "ocupada"],
+            "forms": [
+              "ocupado",
+              "ocupada"
+            ],
             "note": "The adjective agrees with the subject: ocupado when that person is male, ocupada when she is female. One word, two endings — this -o/-a is agreement, not the noun-gender of M1."
           }
         ],
-        "rules": [3, 6]
+        "rules": [
+          3,
+          6
+        ]
       },
       "trap": "English \"busy\" never changes shape. Spanish makes you decide who the sentence is about before you can finish it.",
       "sound": "o-cu-PA-do, stressed on the second-to-last syllable — the default for a word ending in a vowel, which is why nothing is written.",
@@ -316,8 +341,11 @@
             "display": "está",
             "cue": "is · you are (polite)",
             "tag": "delta",
-            "forms": ["está", "están"],
-            "note": "One form, two jobs: \"he/she is\", and — after usted — \"you are\". It is estar, so it reports a condition; from M7 it also says where something is. More than one thing takes están — the same word, counted: el libro está en la mesa · los libros están en la mesa."
+            "forms": [
+              "está",
+              "están"
+            ],
+            "note": "One form, two jobs: \"he/she is\", and — after usted — \"you are\". It is estar, so it reports a condition; from M7 it also says where something is. More than one takes están: los libros están en la mesa."
           },
           {
             "display": "usted",
@@ -327,7 +355,11 @@
             "note": "The polite \"you\", and it takes he-or-she forms: usted es, usted está, never usted eres. Strangers, older people and officials get usted; friends, family and children get tú."
           }
         ],
-        "rules": [2, 4, 5]
+        "rules": [
+          2,
+          4,
+          5
+        ]
       },
       "trap": "usted means \"you\", yet every verb after it looks like \"he\" or \"she\". usted estás is the commonest English-speaker slip in the language.",
       "sound": "us-TED, and the final d is barely there — nearer a soft th than an English d.",
@@ -379,12 +411,20 @@
             "note": "The x here is pronounced like a Spanish j: MÉ-hi-co. Mexico spells its own name with that x; Méjico is the older spelling."
           }
         ],
-        "rules": [1, 2, 3]
+        "rules": [
+          1,
+          2,
+          3
+        ]
       },
       "trap": "English turns the sentence around — you are → are you. Spanish leaves every word where it stood and lets the marks and your voice do the asking.",
       "sound": "The whole line rises at the end. In eres the single r is one light tap of the tongue.",
       "variations": [
-        { "display": "¿Eres de India?", "cue": "Are you from India?", "changed": "swap the place" },
+        {
+          "display": "¿Eres de India?",
+          "cue": "Are you from India?",
+          "changed": "swap the place"
+        },
         {
           "display": "Eres de México",
           "cue": "You are from Mexico",
@@ -408,7 +448,6 @@
       "id": "L1-M2-S08",
       "display": "Sí, soy de México",
       "cue": "Yes, I'm from Mexico",
-      "glossEn": "lit. \"Yes, am from Mexico\"",
       "literal": "Yes, I-am from Mexico",
       "deconstruction": {
         "words": [
@@ -420,7 +459,11 @@
             "note": "\"Yes\", with the accent. si without one means \"if\" — the mark is the only thing keeping the two apart."
           }
         ],
-        "rules": [0, 3, 7]
+        "rules": [
+          0,
+          3,
+          7
+        ]
       },
       "trap": "English answers with the auxiliary — Yes, I am. Spanish has no auxiliary to lean on, so the full answer repeats the statement exactly as it stood.",
       "sound": "One clean vowel: SEE. Spanish vowels never glide the way English ones do.",
@@ -453,7 +496,6 @@
       "id": "L1-M2-S09",
       "display": "¿Es usted de India?",
       "cue": "Are you from India? (polite)",
-      "glossEn": "lit. \"Is you from India?\"",
       "literal": "Is you(polite) from India?",
       "deconstruction": {
         "words": [
@@ -461,11 +503,18 @@
             "display": "es",
             "cue": "is · you are (polite)",
             "tag": "delta",
-            "forms": ["es", "son"],
-            "note": "ser for he and she — and for usted. Beside está it is the other half of the pair: es says who someone is, where they are from and what a thing is like (el libro es caro, from M8), while está says how they are and, from M7, where they are. More than one takes son: el libro es caro · los libros son caros."
+            "forms": [
+              "es",
+              "son"
+            ],
+            "note": "ser for he and she — and for usted. Beside está: es says who someone is, where they are from and what a thing is like (el libro es caro); está says how and where. Plural: son."
           }
         ],
-        "rules": [1, 3, 5]
+        "rules": [
+          1,
+          3,
+          5
+        ]
       },
       "trap": "It looks like a question about a third person and it is a question about the person in front of you. usted is what makes it \"you\".",
       "sound": "Nothing in the words has moved, so the rise at the end is the only thing marking it as a question aloud.",
@@ -498,7 +547,6 @@
       "id": "L1-M2-S10",
       "display": "No, soy de México",
       "cue": "No, I'm from Mexico",
-      "glossEn": "lit. \"No, am from Mexico\"",
       "literal": "No, I-am from Mexico",
       "deconstruction": {
         "words": [
@@ -510,7 +558,10 @@
             "note": "One word does two jobs: the answer \"no\", and the \"not\" that goes straight in front of a verb — No quiero café, which M3 teaches. Nothing else in the sentence changes when it does."
           }
         ],
-        "rules": [0, 3]
+        "rules": [
+          0,
+          3
+        ]
       },
       "trap": "The answer does not carry the negative for you: No, soy de México says no and then states the true thing. Saying only No leaves the correction unsaid.",
       "sound": "A short, flat NO — no glide into an oo the way English \"no\" ends.",
@@ -541,18 +592,69 @@
     }
   ],
   "comprehensionPool": [
-    { "id": "L1-M2-C01", "display": "Hola, Ana", "cue": "Hello, Ana" },
-    { "id": "L1-M2-C02", "display": "Buenos días, Rohan", "cue": "Good morning, Rohan" },
-    { "id": "L1-M2-C03", "display": "¿Cómo estás, Ana?", "cue": "How are you, Ana?" },
-    { "id": "L1-M2-C04", "display": "Estoy ocupada", "cue": "I'm busy (a woman speaking)" },
-    { "id": "L1-M2-C05", "display": "¿Está usted bien?", "cue": "Are you all right?" },
-    { "id": "L1-M2-C06", "display": "¿Eres de India?", "cue": "Are you from India?" },
-    { "id": "L1-M2-C07", "display": "Sí, me gusta el café", "cue": "Yes, I like coffee" },
-    { "id": "L1-M2-C08", "display": "No, estoy ocupado", "cue": "No, I'm busy" },
-    { "id": "L1-M2-C09", "display": "Ana es de México", "cue": "Ana is from Mexico" },
-    { "id": "L1-M2-C10", "display": "Sí, estoy bien", "cue": "Yes, I'm well" },
-    { "id": "L1-M2-C11", "display": "Rohan está ocupado", "cue": "Rohan is busy" },
-    { "id": "L1-M2-C12", "display": "¿Cómo está Rohan?", "cue": "How is Rohan?" }
+    {
+      "id": "L1-M2-C01",
+      "display": "Hola, Ana",
+      "cue": "Hello, Ana"
+    },
+    {
+      "id": "L1-M2-C02",
+      "display": "Buenos días, Rohan",
+      "cue": "Good morning, Rohan"
+    },
+    {
+      "id": "L1-M2-C03",
+      "display": "¿Cómo estás, Ana?",
+      "cue": "How are you, Ana?"
+    },
+    {
+      "id": "L1-M2-C04",
+      "display": "Estoy ocupada",
+      "cue": "I'm busy (a woman speaking)"
+    },
+    {
+      "id": "L1-M2-C05",
+      "display": "¿Está usted bien?",
+      "cue": "Are you all right?"
+    },
+    {
+      "id": "L1-M2-C06",
+      "display": "¿Eres de India?",
+      "cue": "Are you from India?"
+    },
+    {
+      "id": "L1-M2-C07",
+      "display": "Sí, me gusta el café",
+      "cue": "Yes, I like coffee"
+    },
+    {
+      "id": "L1-M2-C08",
+      "display": "No, estoy ocupado",
+      "cue": "No, I'm busy"
+    },
+    {
+      "id": "L1-M2-C09",
+      "display": "Ana es de México",
+      "cue": "Ana is from Mexico"
+    },
+    {
+      "id": "L1-M2-C10",
+      "display": "Sí, estoy bien",
+      "cue": "Yes, I'm well"
+    },
+    {
+      "id": "L1-M2-C11",
+      "display": "Rohan está ocupado",
+      "cue": "Rohan is busy"
+    },
+    {
+      "id": "L1-M2-C12",
+      "display": "¿Cómo está Rohan?",
+      "cue": "How is Rohan?"
+    }
   ],
-  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
 }

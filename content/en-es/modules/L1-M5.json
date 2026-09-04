@@ -3,14 +3,19 @@
   "id": "L1-M5",
   "title": "Yesterday",
   "job": "Past tense — the first big divergence",
-  "prerequisites": ["L1-M4"],
+  "prerequisites": [
+    "L1-M4"
+  ],
   "verified": true,
   "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 7,
-    "allowedTenses": ["preterite", "imperfect"],
+    "allowedTenses": [
+      "preterite",
+      "imperfect"
+    ],
     "allowedPatterns": [
       "Ayer + V-é/-í + N",
       "Ayer no + V-é/-í",
@@ -71,7 +76,6 @@
       "id": "L1-M5-S01",
       "display": "Ayer comí pan",
       "cue": "Yesterday I ate bread",
-      "glossEn": "lit. \"Yesterday I-ate bread\"",
       "literal": "Yesterday I-ate bread",
       "deconstruction": {
         "words": [
@@ -86,11 +90,20 @@
             "display": "comí",
             "cue": "I ate",
             "tag": "delta",
-            "forms": ["comí", "comiste", "comió"],
-            "note": "comer in the preterite: one meal, presented as one finished event. The -í is the preterite \"I\" of the -er and -ir families and it takes the stress — co-MÍ, against M4's CO-mo. The other two persons are comiste (you) and comió (he, she, usted)."
+            "forms": [
+              "comí",
+              "comiste",
+              "comió"
+            ],
+            "note": "comer in the preterite: one meal as one finished event. The -í is the preterite \"I\" of the -er and -ir families and takes the stress — co-MÍ, against M4's CO-mo. Also comiste (you), comió (he, she)."
           }
         ],
-        "rules": [0, 1, 2, 10]
+        "rules": [
+          0,
+          1,
+          2,
+          10
+        ]
       },
       "trap": "English can say \"I ate\" or \"I have eaten\" and mean the same afternoon. With ayer, Spanish takes the preterite and only the preterite: Ayer comí pan.",
       "sound": "co-MÍ. The accent drags the stress to the end, and that is the entire difference from como.",
@@ -123,7 +136,6 @@
       "id": "L1-M5-S02",
       "display": "Ayer hablé con mi hermana",
       "cue": "Yesterday I spoke with my sister",
-      "glossEn": "lit. \"Yesterday I-spoke with my sister\"",
       "literal": "Yesterday I-spoke with my sister",
       "deconstruction": {
         "words": [
@@ -131,11 +143,18 @@
             "display": "hablé",
             "cue": "I spoke",
             "tag": "delta",
-            "forms": ["hablé", "hablaste", "habló"],
-            "note": "hablar in the preterite. The -ar family takes -é for \"I\": hablé, trabajé, estudié. Its other two persons are hablaste (you) and habló (he, she, usted) — and hablo, hablé and habló are three different words separated by one written mark."
+            "forms": [
+              "hablé",
+              "hablaste",
+              "habló"
+            ],
+            "note": "hablar in the preterite. The -ar family takes -é for \"I\": hablé, trabajé, estudié. The other persons are hablaste (you) and habló (he, she, usted) — hablo, hablé, habló are three words one mark apart."
           }
         ],
-        "rules": [1, 2]
+        "rules": [
+          1,
+          2
+        ]
       },
       "trap": "hablé and habló are one accent apart, and the accent decides who did the talking: hablé is I, habló is he or she.",
       "sound": "a-BLÉ — silent h, and the stress on the last syllable where the accent puts it.",
@@ -168,7 +187,6 @@
       "id": "L1-M5-S03",
       "display": "Ayer no trabajé",
       "cue": "Yesterday I didn't work",
-      "glossEn": "lit. \"Yesterday not I-worked\"",
       "literal": "Yesterday not I-worked",
       "deconstruction": {
         "words": [
@@ -176,11 +194,18 @@
             "display": "trabajé",
             "cue": "I worked",
             "tag": "delta",
-            "forms": ["trabajé", "trabajaste", "trabajó"],
+            "forms": [
+              "trabajé",
+              "trabajaste",
+              "trabajó"
+            ],
             "note": "trabajar in the preterite — the same -é ending as hablé, and the stress lands on it: tra-ba-JÉ. The rest of the family runs the same way: trabajaste (you) · trabajó (he, she, usted)."
           }
         ],
-        "rules": [1, 9]
+        "rules": [
+          1,
+          9
+        ]
       },
       "trap": "English moves the past onto a helper — did not work — and leaves the verb looking present. Spanish keeps the past on the verb and puts a bare no in front: Ayer no trabajé.",
       "sound": "tra-ba-JÉ. The j rasps from the back of the throat and the é is the loudest syllable.",
@@ -221,11 +246,17 @@
             "display": "hice",
             "cue": "I did · I made",
             "tag": "delta",
-            "forms": ["hice", "hizo"],
-            "note": "hacer, \"to do\" and \"to make\", in the preterite: hice (I did) · hiciste (you did, S05's own row) · hizo (he, she, usted did). It is irregular, and like the other strong pasts it carries no written accent — the stress sits on the first syllable."
+            "forms": [
+              "hice",
+              "hizo"
+            ],
+            "note": "hacer, \"to do\" and \"to make\", in the preterite: hice (I did) · hiciste (you did, S05's own row) · hizo (he, she, usted did). Irregular, and like the other strong pasts it carries no written accent."
           }
         ],
-        "rules": [6, 9]
+        "rules": [
+          6,
+          9
+        ]
       },
       "trap": "M3's double negative, now in the past: No hice nada is \"I didn't do anything\", and neither half of it can be dropped.",
       "sound": "I-ce. The h is silent, and the c before an e is an s across Latin America and a th in most of Spain.",
@@ -270,7 +301,10 @@
             "note": "hacer in the preterite for tú: hice (I did) · hiciste (you did). No written accent on either of them, and the stress is in the middle: i-CIS-te."
           }
         ],
-        "rules": [2, 6]
+        "rules": [
+          2,
+          6
+        ]
       },
       "trap": "English needs \"did\" AND the plain verb. Spanish carries both in one word, and the question keeps the order a statement would have.",
       "sound": "i-CIS-te — silent h again, and no accent to mark the stress because it falls where it is expected.",
@@ -303,7 +337,6 @@
       "id": "L1-M5-S06",
       "display": "Ayer fui a México",
       "cue": "Yesterday I went to Mexico",
-      "glossEn": "lit. \"Yesterday I-went to Mexico\"",
       "literal": "Yesterday I-went to Mexico",
       "deconstruction": {
         "words": [
@@ -311,11 +344,19 @@
             "display": "fui",
             "cue": "I went · I was",
             "tag": "interference",
-            "forms": ["fui", "fuiste", "fue"],
-            "note": "One word doing the past of two verbs: ir (\"I went\") and ser (\"I was\"). What follows decides — Fui a México is went, Fui estudiante is was. Another strong past, so again no accent, and its persons are fui · fuiste · fue, each of them doing both verbs."
+            "forms": [
+              "fui",
+              "fuiste",
+              "fue"
+            ],
+            "note": "One word doing the past of two verbs: ir (\"I went\") and ser (\"I was\"). What follows decides — Fui a México is went, Fui estudiante is was. A strong past, so no accent; fui · fuiste · fue."
           }
         ],
-        "rules": [4, 5, 6]
+        "rules": [
+          4,
+          5,
+          6
+        ]
       },
       "trap": "It reads as ambiguous and is not. A destination after fui makes it \"went\"; a role or a description makes it \"was\". This is also M4's a in its third seat — pointing at a place.",
       "sound": "One syllable, FWEE: the u and the i run together and nothing is stressed apart from them.",
@@ -348,7 +389,6 @@
       "id": "L1-M5-S07",
       "display": "Ayer estudié mucho",
       "cue": "Yesterday I studied a lot",
-      "glossEn": "lit. \"Yesterday I-studied a-lot\"",
       "literal": "Yesterday I-studied a-lot",
       "deconstruction": {
         "words": [
@@ -356,11 +396,18 @@
             "display": "estudié",
             "cue": "I studied",
             "tag": "delta",
-            "forms": ["estudié", "estudiaste", "estudió"],
-            "note": "estudiar in the preterite — the fourth shape of one verb: estudiante (the person), estudiar (the plain verb), estudio (I study), estudié (I studied). Its other persons follow hablé's: estudiaste (you) · estudió (he, she, usted)."
+            "forms": [
+              "estudié",
+              "estudiaste",
+              "estudió"
+            ],
+            "note": "estudiar in the preterite — the fourth shape of one verb: estudiante (the person), estudiar, estudio (I study), estudié (I studied). Other persons follow hablé's: estudiaste · estudió."
           }
         ],
-        "rules": [1, 2]
+        "rules": [
+          1,
+          2
+        ]
       },
       "trap": "estudio and estudié are the same stem with one letter and one mark between them, and that mark is the day you are talking about.",
       "sound": "es-tu-DIÉ, stressed on the last syllable — the accent is there to say so.",
@@ -393,7 +440,6 @@
       "id": "L1-M5-S08",
       "display": "Antes comía pan todos los días",
       "cue": "I used to eat bread every day",
-      "glossEn": "lit. \"Before I-was-eating bread all the days\"",
       "literal": "Before I-was-eating bread all the days",
       "deconstruction": {
         "words": [
@@ -408,11 +454,18 @@
             "display": "comía",
             "cue": "I used to eat",
             "tag": "delta",
-            "forms": ["comía", "comías"],
-            "note": "comer in the imperfect: \"I used to eat\", \"I was eating\". The -er and -ir families take -ía. Beside comí — one meal, closed — it presents the eating as an open frame. \"I\" and \"he or she\" are the same shape here, comía for both; only tú moves it — comías."
+            "forms": [
+              "comía",
+              "comías"
+            ],
+            "note": "comer in the imperfect: \"I used to eat\", \"I was eating\". The -er and -ir families take -ía. Beside comí — one meal, closed — it presents the eating as an open frame. comía is both I and he or she."
           }
         ],
-        "rules": [0, 3, 4]
+        "rules": [
+          0,
+          3,
+          4
+        ]
       },
       "trap": "Both sentences are about time that is over. Antes comía pan and Ayer comí pan differ in how the eating is presented, not in whether it has finished.",
       "sound": "co-MÍ-a is three syllables: the accent splits the i from the a and keeps the stress on it.",
@@ -445,7 +498,6 @@
       "id": "L1-M5-S09",
       "display": "Antes era estudiante",
       "cue": "I used to be a student",
-      "glossEn": "lit. \"Before I-was student\"",
       "literal": "Before I-was student",
       "deconstruction": {
         "words": [
@@ -453,11 +505,18 @@
             "display": "era",
             "cue": "I was · he was · she was",
             "tag": "delta",
-            "forms": ["era", "eras"],
+            "forms": [
+              "era",
+              "eras"
+            ],
             "note": "ser in the imperfect — \"I used to be\", and equally \"he or she was\": one shape for both, and the sentence decides. tú takes eras. It says what someone WAS, where estaba says what state they were in."
           }
         ],
-        "rules": [0, 3, 7]
+        "rules": [
+          0,
+          3,
+          7
+        ]
       },
       "trap": "era and fui are both \"I was\". Fui estudiante packages the whole stretch as one closed chapter; Antes era estudiante leaves it open as the way things used to be.",
       "sound": "E-ra, stressed on the first syllable, and the single r is one light tap.",
@@ -498,11 +557,19 @@
             "display": "estaba",
             "cue": "I was · he was · she was",
             "tag": "delta",
-            "forms": ["estaba", "estabas"],
+            "forms": [
+              "estaba",
+              "estabas"
+            ],
             "note": "estar in the imperfect — the past of M2's estoy, and the same shape for \"he or she was\", with estabas for tú. It takes the kind of word estoy took: estaba bien, estaba ocupado."
           }
         ],
-        "rules": [0, 4, 7, 8]
+        "rules": [
+          0,
+          4,
+          7,
+          8
+        ]
       },
       "trap": "ayer usually pulls the preterite, and here it does not: a state that simply held all day is presented as a frame. Ayer estuve ocupado is also said — that one packages the day as a single closed block.",
       "sound": "es-TA-ba. The b between vowels is soft, nearer an English v than a b.",
@@ -533,16 +600,36 @@
     }
   ],
   "comprehensionPool": [
-    { "id": "L1-M5-C01", "display": "Ayer comí una manzana", "cue": "Yesterday I ate an apple" },
-    { "id": "L1-M5-C02", "display": "Ayer no comí nada", "cue": "Yesterday I didn't eat anything" },
-    { "id": "L1-M5-C03", "display": "Ayer hablé con Ana", "cue": "Yesterday I spoke with Ana" },
-    { "id": "L1-M5-C04", "display": "Antes comía mucho pan", "cue": "I used to eat a lot of bread" },
+    {
+      "id": "L1-M5-C01",
+      "display": "Ayer comí una manzana",
+      "cue": "Yesterday I ate an apple"
+    },
+    {
+      "id": "L1-M5-C02",
+      "display": "Ayer no comí nada",
+      "cue": "Yesterday I didn't eat anything"
+    },
+    {
+      "id": "L1-M5-C03",
+      "display": "Ayer hablé con Ana",
+      "cue": "Yesterday I spoke with Ana"
+    },
+    {
+      "id": "L1-M5-C04",
+      "display": "Antes comía mucho pan",
+      "cue": "I used to eat a lot of bread"
+    },
     {
       "id": "L1-M5-C05",
       "display": "Ayer estaba ocupada",
       "cue": "Yesterday I was busy (a woman speaking)"
     },
-    { "id": "L1-M5-C06", "display": "Ayer fui a India", "cue": "Yesterday I went to India" },
+    {
+      "id": "L1-M5-C06",
+      "display": "Ayer fui a India",
+      "cue": "Yesterday I went to India"
+    },
     {
       "id": "L1-M5-C07",
       "display": "Antes era estudiante de música",
@@ -558,7 +645,11 @@
       "display": "Ana comió pan por la mañana",
       "cue": "Ana ate bread in the morning"
     },
-    { "id": "L1-M5-C10", "display": "Ayer hice sopa", "cue": "Yesterday I made soup" },
+    {
+      "id": "L1-M5-C10",
+      "display": "Ayer hice sopa",
+      "cue": "Yesterday I made soup"
+    },
     {
       "id": "L1-M5-C11",
       "display": "Rohan fue a México ayer",
@@ -570,5 +661,8 @@
       "cue": "Did you study Spanish yesterday?"
     }
   ],
-  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
 }

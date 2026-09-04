@@ -129,27 +129,30 @@ export interface ExitTest {
 }
 
 /** One module file: `public/content/<courseId>/modules/<moduleId>.json`. */
+/**
+ * Authored module keys the build does NOT emit (#404): the pipeline's own bookkeeping —
+ * `prerequisites` (the validator's ordering check), `complexity` (the authoring bounds the prompt
+ * asks for and the validator enforces), and the native gate's record (`verified`, `verifiedBy`,
+ * `verifiedAt`, plus the dev `fixture` flag the build already excludes by). The app reads none of
+ * them, so a learner downloading them was paying for the pipeline's paperwork — about 1.5% of
+ * every module. `tools/content-build.ts` strips them at emit; `types.test.ts` strips them before
+ * checking the authored files against this shape. One list, both readers.
+ */
+export const PIPELINE_ONLY_MODULE_KEYS = [
+  'prerequisites',
+  'verified',
+  'verifiedBy',
+  'verifiedAt',
+  'fixture',
+  'complexity',
+] as const;
+
 export interface ModuleContent {
   /** Always 5. A different number is a different contract, and the loader refuses it. */
   schemaVersion: 5;
   id: string;
   title: string;
   job: string;
-  /** Module ids that must be passed first; earlier in the same level. */
-  prerequisites: string[];
-  /**
-   * The ship gate ([D4]): true means this module was reviewed and cleared to reach a learner, and
-   * `verifiedBy` names who or what reviewed it. Never authored true — whoever signs the review
-   * flips it. A learner build ships nothing else, so anything the app sees in a strict bundle
-   * carries a signature. (The native-speaker gate #64 is a stricter bar and is still open.)
-   */
-  verified: boolean;
-  verifiedBy?: string | null;
-  verifiedAt?: string | null;
-  /** Dev-only sample module. No module in the repo carries it since #202; the flag stays because
-      `--with-fixtures` is how a course #4 is authored before it ships. Never in a learner build. */
-  fixture?: boolean;
-  complexity: Complexity;
   rules: Rule[];
   sentences: Sentence[];
   comprehensionPool: PoolItem[];

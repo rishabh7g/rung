@@ -3,14 +3,19 @@
   "id": "L1-M9",
   "title": "Feelings & opinions",
   "job": "Why — because and so",
-  "prerequisites": ["L1-M8"],
+  "prerequisites": [
+    "L1-M8"
+  ],
   "verified": true,
   "verifiedBy": "Fable (Claude Fable 5) — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 8,
-    "allowedTenses": ["simple_present", "simple_past"],
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
     "allowedPatterns": [
       "<statement> कारण <statement>",
       "<statement>, म्हणून <statement>",
@@ -64,11 +69,20 @@
             "display": "आवडत",
             "cue": "पसंद (नहीं)",
             "tag": "delta",
-            "forms": ["आवडत", "आवडतो", "आवडते", "आवडतं"],
+            "forms": [
+              "आवडत",
+              "आवडतो",
+              "आवडते",
+              "आवडतं"
+            ],
             "note": "M1's आवड- in its negative shape: before नाही the ending falls away — आवडत नाही, one form for every gender. The agreement work only happens in the positive."
           }
         ],
-        "rules": [0, 2, 5]
+        "rules": [
+          0,
+          2,
+          5
+        ]
       },
       "trap": "दो नई बातें एक लाइन में: कारण के बाद वजह आती है (क्योंकि जैसा ही), और नकार में आवडतो/आवडते सब घिसकर आवडत रह जाता है — आवडत नाही. 'आवडतो नाही' कोई नहीं कहता.",
       "sound": "कारण = का‑र‑ण, अंत मूर्धन्य 'ण'. आवडत नाही एक बहाव में.",
@@ -123,11 +137,19 @@
             "display": "आला",
             "cue": "आया/आई",
             "tag": "delta",
-            "forms": ["आला", "आली", "आलं"],
+            "forms": [
+              "आला",
+              "आली",
+              "आलं"
+            ],
             "note": "Past of येणे (M6) — the feeling-frame's engine: it agrees with the feeling-noun, कंटाळा (m) → आला. M5's object rule, wearing feelings."
           }
         ],
-        "rules": [1, 2, 3]
+        "rules": [
+          1,
+          2,
+          3
+        ]
       },
       "trap": "भावना मराठी में 'आती' है: मला कंटाळा आला — ऊब मुझे आई. और क्रिया भावना के लिंग से मिलती है (कंटाळा पु. → आला), M5 का ही नियम नई पोशाक में. म्हणून के बाद नतीजा — इसलिए जैसा.",
       "sound": "म्हणून = म्ह‑णू‑न; शुरू का म्ह एक झटके में. कंटाळा में 'ळ' जीभ मोड़कर.",
@@ -175,11 +197,19 @@
             "display": "लागली",
             "cue": "लगी",
             "tag": "delta",
-            "forms": ["लागला", "लागली", "लागलं"],
+            "forms": [
+              "लागला",
+              "लागली",
+              "लागलं"
+            ],
             "note": "Past of लागणे \"to strike/be felt\" — भूक (f) → लागली, the same feeling-agreement as S02's आला. भूक लागली = भूख लगी, almost word for word."
           }
         ],
-        "rules": [1, 2, 3]
+        "rules": [
+          1,
+          2,
+          3
+        ]
       },
       "trap": "यह लाइन हिंदी से लगभग मुफ़्त मिलती है: भूख लगी → भूक लागली. फ़र्क़ बस पीछे वाले हिस्से में है — मैंने नहीं, मी: भात खाल्ला में M5 का बिना-ने वाला नियम ज़िंदा है.",
       "sound": "भूक छोटा और सधा — भू‑क; लागली = ला‑ग‑ली.",
@@ -202,7 +232,7 @@
       ],
       "mistake": {
         "display": "मला भूक लागला, म्हणून मी भात खाल्ला",
-        "why": "भूक स्त्रीलिंग है — लागली. भूख के 'लगा/लगी' की आदत में लिंग हिंदी से मत उठाओ, भूक से पूछो."
+        "why": "भूक स्त्रीलिंग है. सही: लागली."
       },
       "usage": "भूख-प्यास बताना — दिन की सबसे ज़रूरी भावना.",
       "register": "neutral",
@@ -224,7 +254,12 @@
             "note": "\"Anger\" — Hindi's राग is a musical mode; Marathi's राग is your temper. Masculine, so राग आला — the same frame as ग़ुस्सा आया."
           }
         ],
-        "rules": [1, 2, 3, 5]
+        "rules": [
+          1,
+          2,
+          3,
+          5
+        ]
       },
       "trap": "राग सुनकर संगीत मत सोचो — मराठी में राग ग़ुस्सा है. ढाँचा फिर वही मुफ़्त वाला: ग़ुस्सा आया → राग आला. और नकार M5 वाला: केलं नाही, अंत में नाही.",
       "sound": "राग = रा‑ग, सीधा; आला से मिलाकर एक साँस: राग आला.",
@@ -269,7 +304,10 @@
             "note": "\"Nice\" — and like महाग (M8) it NEVER inflects: छान चहा, छान भाषा, छान पुस्तक. Hindi अच्छा/अच्छी bends; छान is one shape, everywhere, all day."
           }
         ],
-        "rules": [0, 2]
+        "rules": [
+          0,
+          2
+        ]
       },
       "trap": "अच्छा/अच्छी/अच्छे की पूरी मेहनत मराठी में एक शब्द खा जाता है: छान. झुकाने की कोशिश ही ग़लती है — 'छानी भाषा' कुछ नहीं. राय दो, कारण जोड़ो, छान को हाथ मत लगाओ.",
       "sound": "छान = छा‑न; 'छ' पूरा फूटे, अंत नरम.",
@@ -324,11 +362,18 @@
             "display": "झाला",
             "cue": "हुआ/हुई",
             "tag": "delta",
-            "forms": ["झाला", "झाली", "झालं"],
+            "forms": [
+              "झाला",
+              "झाली",
+              "झालं"
+            ],
             "note": "Past of होणे \"to happen/become\" — हुआ with a new face: झाला. The third feeling-engine: आला, लागली, झाला — each agreeing with its feeling-noun (आनंद m → झाला)."
           }
         ],
-        "rules": [2, 3]
+        "rules": [
+          2,
+          3
+        ]
       },
       "trap": "समय की तिकड़ी पूरी हुई: काल-आज-उद्या — आज मुफ़्त मिला. नया सिर्फ़ झाला है: हुआ → झाला, और लिंग फिर भावना से (आनंद पु. → झाला). तीन इंजन याद रखो: आला, लागली, झाला.",
       "sound": "झाला = झा‑ला; 'झ' नरम, जैसे झोपलो (M5) में.",
@@ -373,7 +418,10 @@
             "note": "M2's का with a second job: in the MIDDLE of the sentence it means \"why\" (क्यों); only at the very end is it the yes/no marker. Position decides — Hindi has two words, Marathi one word in two seats."
           }
         ],
-        "rules": [2, 4]
+        "rules": [
+          2,
+          4
+        ]
       },
       "trap": "एक का, दो कुर्सियाँ: बीच में बैठा तो क्यों, अंत में बैठा तो क्या. तुला मराठी का आवडते? = क्यों पसंद है; तुला मराठी आवडते का? = क्या पसंद है. जगह बदली, सवाल बदला.",
       "sound": "बीच वाला का हल्का और तेज़ — रुकावट नहीं, बहाव में.",
@@ -396,7 +444,7 @@
       ],
       "mistake": {
         "display": "तुला मराठी क्यों आवडते?",
-        "why": "क्यों हिंदी है — मराठी में बीच वाला का ही क्यों का काम करता है: मराठी का आवडते?"
+        "why": "क्यों हिंदी है. सही: मराठी का आवडते?"
       },
       "usage": "किसी की राय की जड़ पूछना — कारण वाले जवाब का न्योता.",
       "register": "informal",
@@ -418,7 +466,11 @@
             "note": "S03's भूक in the plain negative: मला भूक नाही — no लागली needed; नाही alone carries \"नहीं है\" (M2)."
           }
         ],
-        "rules": [0, 2, 5]
+        "rules": [
+          0,
+          2,
+          5
+        ]
       },
       "trap": "'भूख नहीं है' के 'है' का यहाँ काम नहीं: नाही अकेला दोनों उठाता है (M2 की याद) — मला भूक नाही, बस. और कारण के बाद वजह — खाई हुई चीज़ का पूरा M5: मी खाल्ला, बिना ने.",
       "sound": "मला भूक नाही — तीन सम शब्द, ठहराव अल्पविराम पर.",
@@ -441,7 +493,7 @@
       ],
       "mistake": {
         "display": "मला भूक नाही आहे, कारण मी खूप भात खाल्ला",
-        "why": "नाही के बाद आहे नहीं आता (M2) — नाही अकेले में 'नहीं है' पूरा है."
+        "why": "नाही के बाद आहे नहीं आता. सही: मला भूक नाही."
       },
       "usage": "खाने से मना करना — विनम्र और साफ़ वजह के साथ.",
       "register": "neutral",
@@ -463,7 +515,10 @@
             "note": "S01's कारण joining two M3 frames — नको and हवा still carry their old grammar (हवा agreeing with चहा m). The reason-machine runs entirely on old parts."
           }
         ],
-        "rules": [0, 2]
+        "rules": [
+          0,
+          2
+        ]
       },
       "trap": "नया शब्द सिर्फ़ जोड़ है — बाक़ी सब M3: नको एक-शब्दी मना, हवा चीज़ (चहा पु.) से मिला हुआ. राय + वजह = पुराने औज़ार, नई ताक़त.",
       "sound": "दो हिस्से, बीच में कारण धुरी — पहला हिस्सा गिराकर, दूसरा उठाकर.",
@@ -508,7 +563,10 @@
             "note": "S02's म्हणून stitching a liking (M1's आवडतं, agreeing with पुस्तक n) to a habit (M4's वाचतो, no auxiliary). Consequence after the comma, as always."
           }
         ],
-        "rules": [1, 2]
+        "rules": [
+          1,
+          2
+        ]
       },
       "trap": "पूरी सीढ़ी एक वाक्य में: हे पुस्तक (M7-M8), आवडतं (M1), म्हणून (M9), रोज वाचतो (M4 — बिना हूँ). हर पुर्ज़ा पुराना, जोड़ नया — यही अगले मॉड्यूल की तैयारी है.",
       "sound": "अल्पविराम पर साँस — पहले राय, फिर म्हणून से नतीजा.",

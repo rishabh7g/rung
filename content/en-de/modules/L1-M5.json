@@ -3,14 +3,19 @@
   "id": "L1-M5",
   "title": "Yesterday",
   "job": "Past tense — the first big divergence",
-  "prerequisites": ["L1-M4"],
+  "prerequisites": [
+    "L1-M4"
+  ],
   "verified": true,
   "verifiedBy": "LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-30",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 7,
-    "allowedTenses": ["perfekt", "prateritum_war_hatte"],
+    "allowedTenses": [
+      "perfekt",
+      "prateritum_war_hatte"
+    ],
     "allowedPatterns": [
       "Ich habe + N + V-participle",
       "Gestern + habe ich + N + V-participle",
@@ -65,7 +70,6 @@
       "id": "L1-M5-S01",
       "display": "Ich habe Brot gegessen",
       "cue": "I ate bread",
-      "glossEn": "I ate bread",
       "literal": "I have bread eaten",
       "deconstruction": {
         "words": [
@@ -73,18 +77,25 @@
             "display": "habe",
             "cue": "have",
             "tag": "delta",
-            "forms": ["habe", "haben"],
-            "note": "haben, to have: ich habe · Sie haben. It has two jobs and they are worth keeping apart. Here it is the AUXILIARY of the Perfekt — it carries the person and the tense while the participle at the end carries the meaning, and it translates as nothing on its own. It is also plain \"to have\", possession and all: Ich habe Zeit. Its everyday past is the single word hatte, not a Perfekt of itself."
+            "forms": [
+              "habe",
+              "haben"
+            ],
+            "note": "haben, to have: ich habe · Sie haben. Here the AUXILIARY of the Perfekt — it carries person and tense, the participle at the end carries meaning. Also plain “have”: Ich habe Zeit. Past: hatte."
           },
           {
             "display": "gegessen",
             "cue": "eaten",
             "tag": "delta",
             "forms": [],
-            "note": "The past participle of essen — a STRONG one, so it wears ge-…-en and changes its vowel on the way: essen becomes gegessen. It sits at the END of the clause and never moves, and it never changes for the person: ich habe gegessen, Sie haben gegessen. It is its own word to learn beside the present, not a shape you can build from it."
+            "note": "The past participle of essen — STRONG: ge-…-en and a vowel change. At the END of the clause, never changing for the person: ich habe gegessen, Sie haben gegessen."
           }
         ],
-        "rules": [0, 1, 4]
+        "rules": [
+          0,
+          1,
+          4
+        ]
       },
       "trap": "English keeps its two verb parts together — \"I have EATEN bread\" — and German splits them around the whole clause. Everything the sentence has to say goes between habe and gegessen.",
       "sound": "A German h at the start of a word is a real breath, as in English \"hat\": HAH-buh. Both g's in gegessen are hard, and the first syllable is the unstressed ge- every participle wears: guh-GESS-n.",
@@ -117,7 +128,6 @@
       "id": "L1-M5-S02",
       "display": "Gestern habe ich Kaffee getrunken",
       "cue": "Yesterday I drank coffee",
-      "glossEn": "Yesterday I drank coffee",
       "literal": "yesterday have I coffee drunk",
       "deconstruction": {
         "words": [
@@ -136,7 +146,11 @@
             "note": "The past participle of trinken, and another strong one: ge-…-en with the vowel moved, trinken to getrunken. Like every participle it holds the end of the clause and never changes for the person."
           }
         ],
-        "rules": [8, 0, 4]
+        "rules": [
+          8,
+          0,
+          4
+        ]
       },
       "trap": "Two laws have to hold at once and a learner usually gets one. The fronted gestern pushes ich behind habe, AND the participle still has to be last: three positions, all decided, none of them English.",
       "sound": "gestern is GESS-tuhn — the r before the n barely sounds and colours the vowel instead. getrunken carries the same unstressed ge-, a back-of-the-mouth r and the ng of English \"singer\": guh-TROONK-n.",
@@ -169,7 +183,6 @@
       "id": "L1-M5-S03",
       "display": "Ich habe gestern gearbeitet",
       "cue": "I worked yesterday",
-      "glossEn": "I worked yesterday",
       "literal": "I have yesterday worked",
       "deconstruction": {
         "words": [
@@ -178,10 +191,13 @@
             "cue": "worked",
             "tag": "delta",
             "forms": [],
-            "note": "The past participle of arbeiten, and a WEAK one: ge- in front, -t on the end, and no vowel change at all. The extra -e- before that final -t is there because the stem already ends in -t and the two would otherwise be unsayable — the same reason er arbeitet has one."
+            "note": "The past participle of arbeiten — WEAK: ge- in front, -t on the end, no vowel change. The extra -e- before -t is there because the stem already ends in -t, as in er arbeitet."
           }
         ],
-        "rules": [4, 0]
+        "rules": [
+          4,
+          0
+        ]
       },
       "trap": "English marks this past on the verb itself (\"work\" to \"worked\") and needs no second word. German needs both halves, and a learner who has the participle right still leaves out the habe that carries the person.",
       "sound": "Four syllables with the stress on the second: guh-AR-bye-tut. The extra -e- before the final -t is genuinely audible, which is why it is written.",
@@ -214,7 +230,6 @@
       "id": "L1-M5-S04",
       "display": "Ich bin nach Hause gegangen",
       "cue": "I went home",
-      "glossEn": "I went home",
       "literal": "I am to home gone",
       "deconstruction": {
         "words": [
@@ -223,17 +238,25 @@
             "cue": "home (going there)",
             "tag": "delta",
             "forms": [],
-            "note": "A fixed two-word phrase for going home, and it is learnt whole. Neither half is used on its own here: Hause is an old case ending frozen into this expression, and the phrase for BEING at home is a different one again, zu Hause, which L1-M7 will teach. English uses one bare word, \"home\", for both directions and German uses two phrases."
+            "note": "A fixed phrase for GOING home, learnt whole: Hause is an old case ending frozen in place. BEING at home is zu Hause (M7). English has one “home” for both; German has two phrases."
           },
           {
             "display": "gegangen",
             "cue": "gone",
             "tag": "delta",
-            "forms": ["gegangen", "gehe", "gehen", "geht"],
-            "note": "The past participle of gehen, to go — strong, ge-…-en, and one of the small set of verbs that build the Perfekt with sein rather than haben because they are about MOVEMENT from one place to another. Ich bin gegangen, never Ich habe gegangen. One row carries the whole lexeme, participle and present alike — gehe, gehen, geht — because the index is first-occurrence-wins and a later module opening its own gehen row would be a second note for one word, unreachable behind this one."
+            "forms": [
+              "gegangen",
+              "gehe",
+              "gehen",
+              "geht"
+            ],
+            "note": "The past participle of gehen — strong, ge-…-en — and one of the few verbs whose Perfekt takes sein, because it is about MOVEMENT: Ich bin gegangen, never Ich habe gegangen."
           }
         ],
-        "rules": [3, 4]
+        "rules": [
+          3,
+          4
+        ]
       },
       "trap": "English says \"I HAVE gone\", so the natural import is Ich habe gegangen, and it is wrong for a reason English has no trace of: going somewhere takes sein. The verbs that do this are few and are learnt one at a time.",
       "sound": "Both g's in gegangen are hard and the ng is the sound of English \"singer\", never \"finger\". Hause is HOW-zuh — au is the vowel of \"house\" and an s between vowels buzzes like a z. The ch of nach is the HARD one, made at the back of the throat, not the soft hiss of nicht.",
@@ -266,7 +289,6 @@
       "id": "L1-M5-S05",
       "display": "Ich bin um acht Uhr aufgestanden",
       "cue": "I got up at eight o'clock",
-      "glossEn": "I got up at eight o'clock",
       "literal": "I am at eight o'clock up-got",
       "deconstruction": {
         "words": [
@@ -278,7 +300,11 @@
             "note": "eight, beside L1-M4's sieben. Numbers arrive as the vocabulary a sentence needs; L1-M8 does the rest of them and the backwards two-digit ones with them."
           }
         ],
-        "rules": [5, 3, 8]
+        "rules": [
+          5,
+          3,
+          8
+        ]
       },
       "trap": "L1-M4 taught this verb coming APART, and the participle puts it back together. The prefix that flew to the end of a present-tense clause is welded to the front of the participle, with the ge- tucked in behind it.",
       "sound": "acht has the same back-of-the-throat ch as nach: AHKHT. aufgestanden keeps the prefix first and buries the ge- inside: OWF-guh-shtan-dn, with st- again SHT-.",
@@ -311,18 +337,23 @@
       "id": "L1-M5-S06",
       "display": "Ich war müde",
       "cue": "I was tired",
-      "glossEn": "I was tired",
       "deconstruction": {
         "words": [
           {
             "display": "war",
             "cue": "was",
             "tag": "delta",
-            "forms": ["war", "waren"],
-            "note": "The everyday past of sein, and one written word for TWO persons: ich war and er war, sie war and es war are all spelled the same, so the sentence around it tells you who. The Sie form adds the usual plural -en: Sie waren. This is the one place the level uses the simple past rather than the Perfekt, because it is what people actually say."
+            "forms": [
+              "war",
+              "waren"
+            ],
+            "note": "The everyday past of sein — one written word for two persons: ich war, er war; Sie waren adds the plural -en. The one place L1 uses the simple past, because it is what people say."
           }
         ],
-        "rules": [6, 7]
+        "rules": [
+          6,
+          7
+        ]
       },
       "trap": "The module has just taught a two-part past, so the reflex is to build one here too. sein is the exception: it has a one-word past that everyone uses, and reaching for the two-part shape produces something grammatical that nobody says.",
       "sound": "war is VAR — w is a V, and the r at the end colours the vowel rather than trilling. müde is MÜ-duh, with the rounded ü of früh and the quiet final -e sounded.",
@@ -355,7 +386,6 @@
       "id": "L1-M5-S07",
       "display": "Ich hatte Hunger",
       "cue": "I was hungry",
-      "glossEn": "I was hungry",
       "literal": "I had hunger",
       "deconstruction": {
         "words": [
@@ -363,18 +393,24 @@
             "display": "hatte",
             "cue": "had",
             "tag": "delta",
-            "forms": ["hatte", "hatten"],
-            "note": "The everyday past of haben, and war's twin in every respect: ONE written word for two persons — ich hatte and er hatte are identical — with Sie hatten for the plural. It is the second and last verb this level takes out of the Perfekt, and for the same reason: nobody says the two-part past of haben in conversation."
+            "forms": [
+              "hatte",
+              "hatten"
+            ],
+            "note": "The everyday past of haben, war's twin: one written word for two persons — ich hatte, er hatte — and Sie hatten. The second and last verb this level takes out of the Perfekt."
           },
           {
             "display": "Hunger",
             "cue": "hunger",
             "tag": "interference",
             "forms": [],
-            "note": "hunger — a NOUN, masculine, der Hunger, and it stands bare with no article at all. German HAS hunger where English IS hungry, and the noun is what makes that possible: Ich habe Hunger in the present, Ich hatte Hunger in the past. There is a family of these states and L1-M9 will collect the rest."
+            "note": "hunger — a NOUN, der Hunger, bare with no article. German HAS hunger where English IS hungry: Ich habe Hunger, Ich hatte Hunger. M9 collects the rest of this family."
           }
         ],
-        "rules": [6, 7]
+        "rules": [
+          6,
+          7
+        ]
       },
       "trap": "English puts this state in an adjective and German puts it in a noun, so the two languages need different verbs for it. Translating \"I was\" gets you war, and war cannot take a noun like this one.",
       "sound": "The double t clips the a short: HAT-tuh. Hunger has a hard g and the ng of English \"singer\", with the final -er relaxing into a vowel: HOONG-uh.",
@@ -407,7 +443,6 @@
       "id": "L1-M5-S08",
       "display": "Ich hatte keine Zeit",
       "cue": "I didn't have time",
-      "glossEn": "I didn't have time",
       "literal": "I had no time",
       "deconstruction": {
         "words": [
@@ -419,7 +454,10 @@
             "note": "time — feminine, die Zeit, so keine Zeit when there is none of it, with the same kein- L1-M3 taught. This is the word for time in the abstract; the time on a clock is Uhr."
           }
         ],
-        "rules": [6, 7]
+        "rules": [
+          6,
+          7
+        ]
       },
       "trap": "English negates this with a helper verb — \"I DIDN'T have time\" — and German has no helper to negate. What gets negated instead is the NOUN, so kein- does the work and the verb is left alone.",
       "sound": "z is always TS in German: Zeit is TSYTE, with the ei saying \"eye\" as ever. German never spells its z with an English z-buzz.",
@@ -452,7 +490,6 @@
       "id": "L1-M5-S09",
       "display": "Haben Sie das gemacht?",
       "cue": "Did you do that?",
-      "glossEn": "Did you do that?",
       "literal": "have you that done?",
       "deconstruction": {
         "words": [
@@ -461,10 +498,14 @@
             "cue": "done · made",
             "tag": "delta",
             "forms": [],
-            "note": "The past participle of machen, to do or to make — a WEAK one, so it is the plain ge-…-t shape with no vowel change: machen, gemacht. It is the participle to know first, because machen is what German reaches for wherever English says \"do\"."
+            "note": "The past participle of machen, to do or make — WEAK, so plain ge-…-t with no vowel change. The participle to know first: machen is what German reaches for wherever English says “do”."
           }
         ],
-        "rules": [2, 4, 0]
+        "rules": [
+          2,
+          4,
+          0
+        ]
       },
       "trap": "English asks this with \"did\", which is a whole extra verb. German asks it with the auxiliary it already had, simply moved to the front — there is no German word for \"did\" to look for and nothing to insert.",
       "sound": "The ch of gemacht is the hard back-of-the-throat one, because an a comes in front of it: guh-MAKHT. Compare the soft ch of nicht, where an i comes first.",
@@ -497,7 +538,6 @@
       "id": "L1-M5-S10",
       "display": "Gestern Abend habe ich Suppe gegessen",
       "cue": "Yesterday evening I ate soup",
-      "glossEn": "Yesterday evening I ate soup",
       "literal": "yesterday evening have I soup eaten",
       "deconstruction": {
         "words": [
@@ -506,10 +546,13 @@
             "cue": "evening",
             "tag": "free",
             "forms": [],
-            "note": "evening — masculine, der Abend, and capitalised even inside a time phrase, because it is a noun wherever it stands. Gestern Abend is \"yesterday evening\": two words, one element, and the whole thing counts as a single thing in front of the verb. The habit word for evenings in general is L1-M4's abends."
+            "note": "evening — der Abend, capitalised even inside a time phrase. Gestern Abend is “yesterday evening”: two words, one element in front of the verb. The habit word is M4's abends."
           }
         ],
-        "rules": [8, 0]
+        "rules": [
+          8,
+          0
+        ]
       },
       "trap": "Gestern Abend is two words and a learner counts them as two elements, which puts the verb third. The law is that the finite verb is the second ELEMENT, and a time phrase of any length is one element.",
       "sound": "Abend is AH-bnt, with the final -d hardened to t — the same hardening that made abends end in ts and Tag end in k.",

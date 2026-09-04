@@ -3,14 +3,18 @@
   "id": "L1-M3",
   "title": "Needs and wants",
   "job": "Say what you want and don't want",
-  "prerequisites": ["L1-M2"],
+  "prerequisites": [
+    "L1-M2"
+  ],
   "verified": true,
   "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 2,
     "maxWordsPerSentence": 6,
-    "allowedTenses": ["simple_present"],
+    "allowedTenses": [
+      "simple_present"
+    ],
     "allowedPatterns": [
       "Quiero + un/una + N",
       "No quiero + N",
@@ -76,10 +80,13 @@
             "cue": "a · one",
             "tag": "delta",
             "forms": [],
-            "note": "The masculine \"a\", and the same word as the number one: un café is a coffee and one coffee at once. The feminine is una, and the plurals unos and unas mean \"some\". The noun's gender picks it — never the meaning."
+            "note": "The masculine \"a\", and the same word as the number one: un café is a coffee and one coffee at once. The feminine is una, and the plurals unos and unas mean \"some\". The noun's gender picks it."
           }
         ],
-        "rules": [0, 1]
+        "rules": [
+          0,
+          1
+        ]
       },
       "trap": "M1's Quiero café asks for coffee as a substance. Add un and you have asked for one cup — and English cannot say either sentence without putting a word in front of the noun.",
       "sound": "qu is a plain k and the u is silent: KYEH-ro. un is one short syllable, oon, and it runs straight into the word after it.",
@@ -112,7 +119,6 @@
       "id": "L1-M3-S02",
       "display": "Quiero un café con leche",
       "cue": "I want a coffee with milk",
-      "glossEn": "lit. \"I-want a coffee with milk\"",
       "literal": "I-want a coffee with milk",
       "deconstruction": {
         "words": [
@@ -131,7 +137,10 @@
             "note": "Milk, and feminine: la leche. Its -e tells you nothing about its gender, which is the whole reason a noun is learned with its article."
           }
         ],
-        "rules": [0, 4]
+        "rules": [
+          0,
+          4
+        ]
       },
       "trap": "The ending is no help at all here: leche is feminine and café is masculine, and neither one ends in -a or -o.",
       "sound": "LE-che, with the ch of \"church\". Both e's are short and clean, and neither one glides.",
@@ -176,7 +185,9 @@
             "note": "Bread, masculine: el pan. Like café it is usually taken as a substance, so it stands bare after a verb."
           }
         ],
-        "rules": [6]
+        "rules": [
+          6
+        ]
       },
       "trap": "English builds the negative out of a helper verb — I do not want. Spanish has no helper to build with: put no in front of the verb and stop.",
       "sound": "One short syllable, pahn. The a is the a of \"father\", cut short, and the n closes it cleanly.",
@@ -224,18 +235,30 @@
             "display": "manzana",
             "cue": "apple",
             "tag": "free",
-            "forms": ["manzana", "manzanas"],
+            "forms": [
+              "manzana",
+              "manzanas"
+            ],
             "note": "Apple, feminine: la manzana (one) · las manzanas (more than one)."
           },
           {
             "display": "roja",
             "cue": "red",
             "tag": "delta",
-            "forms": ["rojo", "roja", "rojos", "rojas"],
+            "forms": [
+              "rojo",
+              "roja",
+              "rojos",
+              "rojas"
+            ],
             "note": "Red. It agrees with the noun it describes: un libro rojo · una manzana roja · unos libros rojos · unas manzanas rojas. The -a here belongs to the apple, not to whoever is speaking."
           }
         ],
-        "rules": [0, 2, 3]
+        "rules": [
+          0,
+          2,
+          3
+        ]
       },
       "trap": "English says \"a red apple\" and can say it no other way. Spanish says una manzana roja — the adjective goes behind the noun and then copies its gender.",
       "sound": "man-ZA-na. The z is an s across Latin America and a th in most of Spain, exactly as the c of gracias is.",
@@ -268,7 +291,6 @@
       "id": "L1-M3-S05",
       "display": "Necesito agua fría",
       "cue": "I need cold water",
-      "glossEn": "lit. \"I-need water cold\"",
       "literal": "I-need water cold",
       "deconstruction": {
         "words": [
@@ -283,11 +305,19 @@
             "display": "fría",
             "cue": "cold",
             "tag": "delta",
-            "forms": ["frío", "fría", "fríos", "frías"],
-            "note": "Cold, and it agrees with the noun it describes. Water is feminine, so fría — el agua fría. The article el is only dodging two stressed a's; the -a on the adjective is what tells you the noun's real gender."
+            "forms": [
+              "frío",
+              "fría",
+              "fríos",
+              "frías"
+            ],
+            "note": "Cold, and it agrees with the noun it describes. Water is feminine, so fría — el agua fría. The article el is only dodging two stressed a's; the -a on the adjective tells you the noun's real gender."
           }
         ],
-        "rules": [3, 5]
+        "rules": [
+          3,
+          5
+        ]
       },
       "trap": "el agua looks masculine and is not. The article steps aside for the two stressed a's of la agua; the adjective goes on telling the truth — el agua fría.",
       "sound": "FRÍ-a is two syllables, FREE-ah: the written accent splits the i from the a. The r is one light tap.",
@@ -320,7 +350,6 @@
       "id": "L1-M3-S06",
       "display": "Quiero una sopa caliente",
       "cue": "I want a hot soup",
-      "glossEn": "lit. \"I-want a soup hot\"",
       "literal": "I-want a soup hot",
       "deconstruction": {
         "words": [
@@ -328,18 +357,27 @@
             "display": "sopa",
             "cue": "soup",
             "tag": "free",
-            "forms": ["sopa", "sopas"],
+            "forms": [
+              "sopa",
+              "sopas"
+            ],
             "note": "Soup, feminine: la sopa. A bowl of it is una sopa."
           },
           {
             "display": "caliente",
             "cue": "hot",
             "tag": "delta",
-            "forms": ["caliente", "calientes"],
+            "forms": [
+              "caliente",
+              "calientes"
+            ],
             "note": "Hot. An adjective ending in -e has ONE shape for both genders — un café caliente · una sopa caliente — and only changes for number: calientes. Only the -o/-a adjectives split by gender."
           }
         ],
-        "rules": [2, 3]
+        "rules": [
+          2,
+          3
+        ]
       },
       "trap": "A large share of Spanish adjectives never show gender at all. caliente is one of them, so una sopa calienta is a word that does not exist.",
       "sound": "ca-LIEN-te, three syllables. The ie is one glide, not two beats.",
@@ -381,10 +419,13 @@
             "cue": "to eat",
             "tag": "delta",
             "forms": [],
-            "note": "To eat — the infinitive, which is the verb's dictionary name, and the -er says which family it belongs to. Nothing stands between quiero and it. M4 puts the person endings on the stem: como, comes, come."
+            "note": "To eat — the infinitive, the verb's dictionary name, and the -er says which family. Nothing stands between quiero and it: quiero comer. M4 puts the person endings on the stem: como, comes."
           }
         ],
-        "rules": [8, 9]
+        "rules": [
+          8,
+          9
+        ]
       },
       "trap": "English \"want to eat\" has a word for \"to\" and Spanish has none: the -r on the end of comer is already doing that job.",
       "sound": "co-MER, stressed on the last syllable, and the final r is one quick tap.",
@@ -417,7 +458,6 @@
       "id": "L1-M3-S08",
       "display": "Quiero estudiar español",
       "cue": "I want to study Spanish",
-      "glossEn": "lit. \"I-want to-study Spanish\"",
       "literal": "I-want to-study Spanish",
       "deconstruction": {
         "words": [
@@ -429,7 +469,10 @@
             "note": "To study — an -ar verb, the largest family. You already have the noun: un estudiante is a person who does this. M4 turns it into estudio, estudias, estudia."
           }
         ],
-        "rules": [8, 9]
+        "rules": [
+          8,
+          9
+        ]
       },
       "trap": "Quiero que estudiar copies English's \"want that\". Spanish wants nothing between the two verbs: Quiero estudiar.",
       "sound": "es-tu-DIAR. The opening e- is the one Spanish always puts in front of s + consonant, exactly as in estudiante.",
@@ -474,7 +517,9 @@
             "note": "querer for tú: quiero (I) · quieres (you) · quiere (he, she and usted). Offering something is this question and nothing else — there is no \"do\" to put in front of it."
           }
         ],
-        "rules": [0]
+        "rules": [
+          0
+        ]
       },
       "trap": "English needs three words before the noun — do you want. Spanish needs one, and it is the verb itself.",
       "sound": "KYEH-res, stressed on the first syllable, and the final s stays crisp.",
@@ -519,7 +564,10 @@
             "note": "Nothing — and \"anything\" once a no is already in the sentence. It does not cancel that no; the two work together: No quiero nada. On its own, as an answer, it is \"nothing\"."
           }
         ],
-        "rules": [6, 7]
+        "rules": [
+          6,
+          7
+        ]
       },
       "trap": "English forbids exactly what Spanish requires. \"I don't want nothing\" is a mistake in English; No quiero nada is the only way to say it in Spanish.",
       "sound": "NA-da. The d between two vowels is soft, close to the th of \"this\".",
@@ -550,22 +598,69 @@
     }
   ],
   "comprehensionPool": [
-    { "id": "L1-M3-C01", "display": "Quiero una manzana", "cue": "I want an apple" },
-    { "id": "L1-M3-C02", "display": "No quiero leche", "cue": "I don't want milk" },
-    { "id": "L1-M3-C03", "display": "Sí, quiero un café", "cue": "Yes, I want a coffee" },
-    { "id": "L1-M3-C04", "display": "Necesito un libro", "cue": "I need a book" },
-    { "id": "L1-M3-C05", "display": "¿Quieres comer?", "cue": "Do you want to eat?" },
-    { "id": "L1-M3-C06", "display": "Quiero estudiar mucho", "cue": "I want to study a lot" },
-    { "id": "L1-M3-C07", "display": "No quiero sopa fría", "cue": "I don't want cold soup" },
+    {
+      "id": "L1-M3-C01",
+      "display": "Quiero una manzana",
+      "cue": "I want an apple"
+    },
+    {
+      "id": "L1-M3-C02",
+      "display": "No quiero leche",
+      "cue": "I don't want milk"
+    },
+    {
+      "id": "L1-M3-C03",
+      "display": "Sí, quiero un café",
+      "cue": "Yes, I want a coffee"
+    },
+    {
+      "id": "L1-M3-C04",
+      "display": "Necesito un libro",
+      "cue": "I need a book"
+    },
+    {
+      "id": "L1-M3-C05",
+      "display": "¿Quieres comer?",
+      "cue": "Do you want to eat?"
+    },
+    {
+      "id": "L1-M3-C06",
+      "display": "Quiero estudiar mucho",
+      "cue": "I want to study a lot"
+    },
+    {
+      "id": "L1-M3-C07",
+      "display": "No quiero sopa fría",
+      "cue": "I don't want cold soup"
+    },
     {
       "id": "L1-M3-C08",
       "display": "¿Quieres un café con leche?",
       "cue": "Do you want a coffee with milk?"
     },
-    { "id": "L1-M3-C09", "display": "Necesito un café caliente", "cue": "I need a hot coffee" },
-    { "id": "L1-M3-C10", "display": "¿Quieres agua fría?", "cue": "Do you want cold water?" },
-    { "id": "L1-M3-C11", "display": "No necesito leche", "cue": "I don't need milk" },
-    { "id": "L1-M3-C12", "display": "Quiero comer una manzana", "cue": "I want to eat an apple" }
+    {
+      "id": "L1-M3-C09",
+      "display": "Necesito un café caliente",
+      "cue": "I need a hot coffee"
+    },
+    {
+      "id": "L1-M3-C10",
+      "display": "¿Quieres agua fría?",
+      "cue": "Do you want cold water?"
+    },
+    {
+      "id": "L1-M3-C11",
+      "display": "No necesito leche",
+      "cue": "I don't need milk"
+    },
+    {
+      "id": "L1-M3-C12",
+      "display": "Quiero comer una manzana",
+      "cue": "I want to eat an apple"
+    }
   ],
-  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
 }

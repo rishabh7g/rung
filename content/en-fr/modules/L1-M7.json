@@ -3,14 +3,18 @@
   "id": "L1-M7",
   "title": "Where things are",
   "job": "Locations and prepositions",
-  "prerequisites": ["L1-M6"],
+  "prerequisites": [
+    "L1-M6"
+  ],
   "verified": true,
   "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-30",
   "complexity": {
     "minWordsPerSentence": 4,
     "maxWordsPerSentence": 7,
-    "allowedTenses": ["simple_present"],
+    "allowedTenses": [
+      "simple_present"
+    ],
     "allowedPatterns": [
       "N + est + dans/sur/sous/devant + le/la + N",
       "Il y a + un/une/num + N + ici",
@@ -59,7 +63,6 @@
       "id": "L1-M7-S01",
       "display": "Le livre est sur la table",
       "cue": "The book is on the table",
-      "glossEn": "lit. \"The book is on the table\"",
       "deconstruction": {
         "words": [
           {
@@ -77,7 +80,10 @@
             "note": "table — feminine, so la table."
           }
         ],
-        "rules": [1, 3]
+        "rules": [
+          1,
+          3
+        ]
       },
       "trap": "English can be tempted into looking for a second \"to be\" here, the way some languages have one. French does not: est is the same verb that said je suis étudiant in L1-M1, and location is simply another of its jobs.",
       "sound": "sür, with the tight French u. table is one syllable and a half — TAB-l — with the final -e barely voiced.",
@@ -110,7 +116,6 @@
       "id": "L1-M7-S02",
       "display": "Le livre est dans la voiture",
       "cue": "The book is in the car",
-      "glossEn": "lit. \"The book is in the car\"",
       "deconstruction": {
         "words": [
           {
@@ -121,7 +126,10 @@
             "note": "in, in the sense of inside something. It is a simple preposition and takes nothing after it. Note that it is NOT the \"in\" of a time phrase: L1-M4's le matin needed no preposition at all."
           }
         ],
-        "rules": [1, 3]
+        "rules": [
+          1,
+          3
+        ]
       },
       "trap": "English's \"in\" covers a place and a time — \"in the car\", \"in the morning\". French splits them: dans is only the place, and le matin carries its own time meaning with no preposition anywhere.",
       "sound": "dahn — nasal, with the -s silent. Nothing at the end of the word is sounded at all.",
@@ -154,7 +162,6 @@
       "id": "L1-M7-S03",
       "display": "Le café est sous la table",
       "cue": "The coffee is under the table",
-      "glossEn": "lit. \"The coffee is under the table\"",
       "deconstruction": {
         "words": [
           {
@@ -165,7 +172,10 @@
             "note": "under. Simple again, so nothing follows it but the noun and its article: sous la table. Its final -s is silent, which makes it sound exactly like the start of soupe."
           }
         ],
-        "rules": [1, 3]
+        "rules": [
+          1,
+          3
+        ]
       },
       "trap": "\"Under the table\" has no \"of\" in English and none in French either — which makes it easy to carry the same confidence into à côté de la table, where the de is compulsory.",
       "sound": "soo, one syllable, -s silent. sur and sous differ only in the vowel, and the difference is the whole meaning.",
@@ -198,7 +208,6 @@
       "id": "L1-M7-S04",
       "display": "Il y a un livre ici",
       "cue": "There is a book here",
-      "glossEn": "lit. \"It there has a book here\"",
       "literal": "It-there-has a book here",
       "deconstruction": {
         "words": [
@@ -207,7 +216,7 @@
             "cue": "there is · there are",
             "tag": "delta",
             "forms": [],
-            "note": "there is, and there are — the same three words for both, always. Nothing in it agrees with anything: il y a un livre and il y a deux livres are identical up to the noun. Take the three words whole; they cannot be taken apart, and the il inside is not a pronoun standing for anything."
+            "note": "there is, and there are — the same three words for both. Nothing in it agrees: il y a un livre and il y a deux livres are identical up to the noun. Take it whole; the il inside stands for nothing."
           },
           {
             "display": "ici",
@@ -217,7 +226,10 @@
             "note": "here. It goes at the end of the sentence, where English also puts it."
           }
         ],
-        "rules": [0, 2]
+        "rules": [
+          0,
+          2
+        ]
       },
       "trap": "English chooses between \"there is\" and \"there are\" before it knows why. French makes no choice at all, so the effort an English speaker is used to spending here is simply wasted — and Il y ont, the agreement they reach for, is not French.",
       "sound": "ee-lya. The three words run into one another completely: the l of il links into the y, and the a is the last thing heard.",
@@ -250,7 +262,6 @@
       "id": "L1-M7-S05",
       "display": "Il y a deux livres ici",
       "cue": "There are two books here",
-      "glossEn": "lit. \"It there has two books here\"",
       "literal": "It-there-has two books here",
       "deconstruction": {
         "words": [
@@ -262,7 +273,9 @@
             "note": "two. Its final -x is silent, and a number in front of a noun needs no article at all: deux livres, never les deux livres unless you mean a particular pair."
           }
         ],
-        "rules": [0]
+        "rules": [
+          0
+        ]
       },
       "trap": "The only thing that changed from the sentence before it is the number and the -s on the noun — and neither of those is heard. The phrase in front carries no information about how many at all.",
       "sound": "duh, with the -x silent and the vowel rounded, the same eu as in veux. livres is still one syllable, with its -s silent too.",
@@ -295,7 +308,6 @@
       "id": "L1-M7-S06",
       "display": "Où est le livre ?",
       "cue": "Where is the book?",
-      "glossEn": "lit. \"Where is the book?\"",
       "deconstruction": {
         "words": [
           {
@@ -303,10 +315,13 @@
             "cue": "where",
             "tag": "delta",
             "forms": [],
-            "note": "where. Its accent is not decoration: ou without it is \"or\", a different word entirely, and normalisation keeps accents, so the two never meet. The question word stands in front and nothing else in the sentence moves."
+            "note": "where. Its accent is not decoration: ou without it is \"or\", a different word entirely, and normalisation keeps accents. The question word stands in front and nothing else in the sentence moves."
           }
         ],
-        "rules": [1, 6]
+        "rules": [
+          1,
+          6
+        ]
       },
       "trap": "English inverts here without noticing — \"where IS the book\". French happens to look inverted too, because the subject is a noun and follows the verb; but nothing was moved, and Où le livre est ? is not the alternative a speaker would offer.",
       "sound": "oo — one sound, and identical to the ou it is distinguished from in writing. Only the page keeps them apart.",
@@ -339,7 +354,6 @@
       "id": "L1-M7-S07",
       "display": "La table est à côté du lit",
       "cue": "The table is next to the bed",
-      "glossEn": "lit. \"The table is at side of-the bed\"",
       "literal": "The table is at-side of-the bed",
       "deconstruction": {
         "words": [
@@ -347,8 +361,12 @@
             "display": "à côté de",
             "cue": "next to · beside",
             "tag": "delta",
-            "forms": ["à côté de", "à côté du", "à côté de la"],
-            "note": "next to. It is a COMPOUND preposition, so it ends in de and the de cannot be left out — and that de contracts with a masculine article exactly as it does anywhere else: à côté du lit, but à côté de la table. English's \"next to\" has nothing corresponding to the de, which is why it is the first thing an English speaker drops."
+            "forms": [
+              "à côté de",
+              "à côté du",
+              "à côté de la"
+            ],
+            "note": "next to. A compound preposition, so it ends in de and the de cannot be left out — and it contracts with a masculine article: à côté du lit, but à côté de la table. English's \"next to\" has no de."
           },
           {
             "display": "lit",
@@ -358,7 +376,11 @@
             "note": "bed — masculine, so le lit and à côté du lit. Its final -t is silent."
           }
         ],
-        "rules": [1, 4, 5]
+        "rules": [
+          1,
+          4,
+          5
+        ]
       },
       "trap": "sur la table needs nothing extra and à côté de la table needs a de. Both are prepositions in front of the same noun, and the only way to know which behaves how is to learn which set the preposition belongs to.",
       "sound": "a ko-TAY dü lee. The final -t of lit is silent, and du is the tight French u again.",
@@ -391,7 +413,6 @@
       "id": "L1-M7-S08",
       "display": "Je suis près de la maison",
       "cue": "I am near the house",
-      "glossEn": "lit. \"I am near of the house\"",
       "literal": "I am near of the house",
       "deconstruction": {
         "words": [
@@ -399,11 +420,18 @@
             "display": "près de",
             "cue": "near",
             "tag": "delta",
-            "forms": ["près de", "près du", "près de la"],
+            "forms": [
+              "près de",
+              "près du",
+              "près de la"
+            ],
             "note": "near — the second compound preposition, built exactly like à côté de: it ends in de, the de is compulsory, and it contracts with a masculine article. près du marché, but près de la maison."
           }
         ],
-        "rules": [1, 4]
+        "rules": [
+          1,
+          4
+        ]
       },
       "trap": "English's \"near\" takes nothing at all — \"near the house\" — so près la maison is what an English speaker writes, and it is missing the one word the phrase cannot do without.",
       "sound": "preh duh. The -s of près is silent, and the è is the open vowel the grave accent marks.",
@@ -436,7 +464,6 @@
       "id": "L1-M7-S09",
       "display": "Je vais au marché",
       "cue": "I'm going to the market",
-      "glossEn": "lit. \"I go at-the market\"",
       "literal": "I go at-the market",
       "deconstruction": {
         "words": [
@@ -455,7 +482,10 @@
             "note": "market — masculine, so le marché and au marché. Its accent gives the last syllable the clean ay sound."
           }
         ],
-        "rules": [5, 7]
+        "rules": [
+          5,
+          7
+        ]
       },
       "trap": "vais here has no infinitive behind it, so it is not making a plan: it is plain movement. The same word did both jobs in L1-M6, and this is the seat that shows the second one.",
       "sound": "oh mar-SHAY. au is a single plain o sound, whatever its two letters suggest.",
@@ -488,7 +518,6 @@
       "id": "L1-M7-S10",
       "display": "La voiture est devant la maison",
       "cue": "The car is in front of the house",
-      "glossEn": "lit. \"The car is in-front the house\"",
       "literal": "The car is in-front the house",
       "deconstruction": {
         "words": [
@@ -497,10 +526,13 @@
             "cue": "in front of",
             "tag": "delta",
             "forms": [],
-            "note": "in front of — and, despite the English translation, it is a SIMPLE preposition: it takes nothing after it. devant la maison, never devant de la maison. English's \"in front of\" has an \"of\" that French does not."
+            "note": "in front of — and, despite the English translation, a simple preposition: it takes nothing after it. devant la maison, never devant de la maison. English's \"in front of\" has an \"of\" French does not."
           }
         ],
-        "rules": [1, 3]
+        "rules": [
+          1,
+          3
+        ]
       },
       "trap": "This is the trap of the module turned round. \"Next to\" has no \"of\" in English and needs de in French; \"in front of\" HAS one in English and must not have it in French. The English shape is no guide in either direction.",
       "sound": "duh-VAHN, ending nasal with the -t silent — the same ending as comment and dans.",
@@ -531,10 +563,26 @@
     }
   ],
   "comprehensionPool": [
-    { "id": "L1-M7-C01", "display": "Le livre est dans la maison", "cue": "The book is in the house" },
-    { "id": "L1-M7-C02", "display": "Il y a un café ici", "cue": "There is a coffee here" },
-    { "id": "L1-M7-C03", "display": "Où est la voiture ?", "cue": "Where is the car?" },
-    { "id": "L1-M7-C04", "display": "La table est près du lit", "cue": "The table is near the bed" },
+    {
+      "id": "L1-M7-C01",
+      "display": "Le livre est dans la maison",
+      "cue": "The book is in the house"
+    },
+    {
+      "id": "L1-M7-C02",
+      "display": "Il y a un café ici",
+      "cue": "There is a coffee here"
+    },
+    {
+      "id": "L1-M7-C03",
+      "display": "Où est la voiture ?",
+      "cue": "Where is the car?"
+    },
+    {
+      "id": "L1-M7-C04",
+      "display": "La table est près du lit",
+      "cue": "The table is near the bed"
+    },
     {
       "id": "L1-M7-C05",
       "display": "Le lit est à côté de la table",
@@ -550,8 +598,16 @@
       "display": "Je vais au marché demain",
       "cue": "I'm going to the market tomorrow"
     },
-    { "id": "L1-M7-C08", "display": "Le café est sur la table", "cue": "The coffee is on the table" },
-    { "id": "L1-M7-C09", "display": "Où est le lit ?", "cue": "Where is the bed?" },
+    {
+      "id": "L1-M7-C08",
+      "display": "Le café est sur la table",
+      "cue": "The coffee is on the table"
+    },
+    {
+      "id": "L1-M7-C09",
+      "display": "Où est le lit ?",
+      "cue": "Where is the bed?"
+    },
     {
       "id": "L1-M7-C10",
       "display": "La voiture est devant le marché",
@@ -562,7 +618,11 @@
       "display": "Il y a du pain sur la table",
       "cue": "There is bread on the table"
     },
-    { "id": "L1-M7-C12", "display": "Je suis à la maison", "cue": "I am at home" }
+    {
+      "id": "L1-M7-C12",
+      "display": "Je suis à la maison",
+      "cue": "I am at home"
+    }
   ],
   "exitTest": {
     "generateCount": 1,

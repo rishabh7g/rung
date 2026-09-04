@@ -3,14 +3,18 @@
   "id": "L1-M8",
   "title": "Numbers & shopping",
   "job": "Prices, quantities, buying",
-  "prerequisites": ["L1-M7"],
+  "prerequisites": [
+    "L1-M7"
+  ],
   "verified": true,
   "verifiedBy": "LLM review of the romanization, authorised by repo owner",
   "verifiedAt": "2026-08-30",
   "complexity": {
     "minWordsPerSentence": 2,
     "maxWordsPerSentence": 7,
-    "allowedTenses": ["simple_present"],
+    "allowedTenses": [
+      "simple_present"
+    ],
     "allowedPatterns": [
       "Skól'ko stóit + N (nom.) + ?",
       "Skól'ko stóyat + N-pl (nom.) + ?",
@@ -53,7 +57,6 @@
       "display": "Skól'ko stóit kníga?",
       "script": "Сколько стоит книга?",
       "cue": "How much does the book cost?",
-      "glossEn": "lit. \"how-much costs book?\"",
       "literal": "How-much costs book?",
       "deconstruction": {
         "words": [
@@ -62,11 +65,15 @@
             "script": "Сколько стоит",
             "cue": "how much does … cost",
             "tag": "delta",
-            "forms": ["Skól'ko stóit"],
+            "forms": [
+              "Skól'ko stóit"
+            ],
             "note": "Two words, learned whole: skól'ko is \"how much\" and stóit is \"costs\". This is the one-thing version — S02 has the version for more than one. There is no do and no does anywhere in the question."
           }
         ],
-        "rules": [2]
+        "rules": [
+          2
+        ]
       },
       "trap": "English builds the question with a helper — \"how much DOES it cost\" — and Russian has nothing to build it with. The words of the statement, in order, plus a question mark.",
       "sound": "SKOL-ka STO-eet KNEE-ga. The l of skól'ko is soft, and both unstressed o letters flatten to \"a\".",
@@ -104,7 +111,6 @@
       "display": "Skól'ko stóyat knígi?",
       "script": "Сколько стоят книги?",
       "cue": "How much do the books cost?",
-      "glossEn": "lit. \"how-much cost books?\"",
       "literal": "How-much cost books?",
       "deconstruction": {
         "words": [
@@ -113,11 +119,15 @@
             "script": "Сколько стоят",
             "cue": "how much do … cost",
             "tag": "interference",
-            "forms": ["Skól'ko stóyat"],
-            "note": "The more-than-one version. The verb changes because the THING is plural, not because the person asking has changed: stóit for one, stóyat for several. Nothing about the buyer appears in the sentence at all."
+            "forms": [
+              "Skól'ko stóyat"
+            ],
+            "note": "The more-than-one version. The verb changes because the thing is plural, not the buyer: stóit for one, stóyat for several. Nothing about the buyer appears in the sentence."
           }
         ],
-        "rules": [2]
+        "rules": [
+          2
+        ]
       },
       "trap": "In English \"does\" and \"do\" also follow the thing, so the idea is familiar — but it is worth naming, because M9's mne nrávitsya / mne nrávyatsya runs on the same principle and there English does the opposite.",
       "sound": "SKOL-ka sta-YAT KNEE-gee. The stress moves onto the ending in stóyat, which is why it sounds so unlike stóit.",
@@ -155,7 +165,6 @@
       "display": "Kníga stóit sto rubléy.",
       "script": "Книга стоит сто рублей.",
       "cue": "The book costs a hundred roubles",
-      "glossEn": "lit. \"book costs hundred roubles\"",
       "literal": "Book costs hundred roubles",
       "deconstruction": {
         "words": [
@@ -164,15 +173,20 @@
             "script": "стоит",
             "cue": "costs",
             "tag": "delta",
-            "forms": ["stóit", "stóyat"],
-            "note": "\"Costs\" — the verb inside S01's and S02's question phrases, here on its own in the answer. It follows the THING, not the buyer: stóit for one, stóyat for more than one. There is no \"for\" and no \"is worth\" anywhere: the price simply follows the verb."
+            "forms": [
+              "stóit",
+              "stóyat"
+            ],
+            "note": "\"Costs\" — the verb inside S01's and S02's questions, alone in the answer. It follows the thing, not the buyer: stóit for one, stóyat for more. No \"for\": the price simply follows."
           },
           {
             "display": "sto",
             "script": "сто",
             "cue": "a hundred",
             "tag": "free",
-            "forms": ["sto"],
+            "forms": [
+              "sto"
+            ],
             "note": "A hundred. Three letters, and it never changes shape here — but like every number above four, it puts the noun behind it into the same shape pyat' does — rubléy, chasóv."
           },
           {
@@ -180,11 +194,18 @@
             "script": "рублей",
             "cue": "roubles",
             "tag": "interference",
-            "forms": ["rubl'", "rublyá", "rubléy"],
-            "note": "The rouble, in the three shapes the counting rule needs: odín rubl', dva rublyá, pyat' rubléy. Note that rubl' ends in -' and is masculine — M1 warned that -' nouns go either way and have to be learned one at a time."
+            "forms": [
+              "rubl'",
+              "rublyá",
+              "rubléy"
+            ],
+            "note": "The rouble, in the three shapes the counting rule needs: odín rubl', dva rublyá, pyat' rubléy. rubl' ends in -' and is masculine — -' nouns have to be learned one at a time."
           }
         ],
-        "rules": [0, 1]
+        "rules": [
+          0,
+          1
+        ]
       },
       "trap": "English says \"a hundred roubles\" with the noun untouched; Russian bends it. The number is in charge of the noun, and that is the whole grammar of this rung.",
       "sound": "KNEE-ga STO-eet sto roob-LYEY. The ' inside rubléy softens the l, and the stress lands on the ending.",
@@ -222,7 +243,6 @@
       "display": "Sok stóit pyat' rubléy.",
       "script": "Сок стоит пять рублей.",
       "cue": "The juice costs five roubles",
-      "glossEn": "lit. \"juice costs five roubles\"",
       "literal": "Juice costs five roubles",
       "deconstruction": {
         "words": [
@@ -231,11 +251,15 @@
             "script": "пять",
             "cue": "five",
             "tag": "delta",
-            "forms": ["pyat'"],
-            "note": "Five — the number where the second ending starts. Everything from pyat' upward behaves the same way, so this one number teaches the whole upper half of the rule. It ends in -', like every number from five to twenty."
+            "forms": [
+              "pyat'"
+            ],
+            "note": "Five — the number where the second ending starts. Everything from pyat' upward behaves the same way: pyat' rubléy. It ends in -', like every number from five to twenty."
           }
         ],
-        "rules": [0]
+        "rules": [
+          0
+        ]
       },
       "trap": "There is nothing special about five in itself. It is simply where Russian's counting rule switches, and it stays switched for every number above it.",
       "sound": "sok STO-eet pyat' roob-LYEY. The ya of pyat' is a soft \"a\", and the ' on the end softens the t.",
@@ -273,7 +297,6 @@
       "display": "U vas yest' khleb?",
       "script": "У вас есть хлеб?",
       "cue": "Do you have bread?",
-      "glossEn": "lit. \"at you is bread?\"",
       "literal": "At you is bread?",
       "deconstruction": {
         "words": [
@@ -282,11 +305,16 @@
             "script": "У вас есть",
             "cue": "do you have",
             "tag": "interference",
-            "forms": ["U vas yest'"],
-            "note": "Three words, learned whole: \"at you is …\". There is no verb \"to have\" in it — the owner sits in the U-phrase and the thing owned is the subject. The yest' inside it is M7's existential word, doing possession instead of location. Ask a shop this and you have asked whether they stock it."
+            "forms": [
+              "U vas yest'"
+            ],
+            "note": "Three words, learned whole: \"at you is …\". No verb \"to have\" — the owner sits in the U-phrase and the thing owned is the subject. Ask a shop this to ask whether they stock it."
           }
         ],
-        "rules": [3, 4]
+        "rules": [
+          3,
+          4
+        ]
       },
       "trap": "Every instinct says to look for a Russian \"have\". There is not one in everyday use, and the sentence is built the other way round: the bread is the subject, and you are a place it might be found.",
       "sound": "oo vas yest' khlyep. Four short words, and the pitch rises on khleb to make the question.",
@@ -324,7 +352,6 @@
       "display": "U menyá yest' bilét.",
       "script": "У меня есть билет.",
       "cue": "I have a ticket",
-      "glossEn": "lit. \"at me is ticket\"",
       "literal": "At me is ticket",
       "deconstruction": {
         "words": [
@@ -333,11 +360,16 @@
             "script": "У меня есть",
             "cue": "I have",
             "tag": "interference",
-            "forms": ["U menyá yest'"],
-            "note": "The same three-word frame about yourself. menyá is M1's ya in its object shape, and the phrase is literally \"at me is …\". The thing owned stays in its dictionary shape, because it is the subject of the sentence — bilét, never biléta."
+            "forms": [
+              "U menyá yest'"
+            ],
+            "note": "The same three-word frame about yourself — literally \"at me is …\"; menyá is M1's ya in its object shape. The thing owned stays in dictionary shape as subject: bilét, never biléta."
           }
         ],
-        "rules": [3, 4]
+        "rules": [
+          3,
+          4
+        ]
       },
       "trap": "The thing you own does NOT take M3's object ending, because it is not an object — it is the subject. U menyá yest' kníga, never U menyá yest' knígu.",
       "sound": "oo mee-NYA yest' bee-LYET. menyá here sounds exactly as it did in Menyá zovút, because it is the same word.",
@@ -375,7 +407,6 @@
       "display": "Dáyte, pozháluysta, vódu.",
       "script": "Дайте, пожалуйста, воду.",
       "cue": "Give me some water, please",
-      "glossEn": "lit. \"give, please, water\"",
       "literal": "Give, please, water",
       "deconstruction": {
         "words": [
@@ -384,11 +415,15 @@
             "script": "Дайте",
             "cue": "give (polite)",
             "tag": "delta",
-            "forms": ["Dáyte"],
-            "note": "\"Give\" — the vy-form, which is what makes it polite, and the only command this course teaches. The -te on the end is the same polite ending as on Zdrávstvuyte. With pozháluysta after it, it is the ordinary way to ask for something in a shop; without it, it is brusque."
+            "forms": [
+              "Dáyte"
+            ],
+            "note": "\"Give\" — the vy-form, which makes it polite, and the only command this course teaches; the -te is the Zdrávstvuyte ending. With pozháluysta it is the ordinary shop request."
           }
         ],
-        "rules": [5]
+        "rules": [
+          5
+        ]
       },
       "trap": "The thing asked for takes M3's object ending — vódu, not vodá — because Dáyte is a real verb with a real object. That is the difference between this and U menyá yest', where the thing is the subject and does not bend.",
       "sound": "DAY-tye pa-ZHA-loo-sta VO-doo. Both commas are pauses, and the middle word is where the politeness lives.",
@@ -426,7 +461,6 @@
       "display": "Odín bilét, pozháluysta.",
       "script": "Один билет, пожалуйста.",
       "cue": "One ticket, please",
-      "glossEn": "lit. \"one ticket, please\"",
       "literal": "One ticket, please",
       "deconstruction": {
         "words": [
@@ -435,11 +469,16 @@
             "script": "Один",
             "cue": "one",
             "tag": "delta",
-            "forms": ["Odín", "odná"],
-            "note": "One — and it is the only number besides dva that changes for gender: odín bilét, but odná kníga. After it the noun keeps its plain dictionary shape, which is what makes odín the easy end of the counting rule."
+            "forms": [
+              "Odín",
+              "odná"
+            ],
+            "note": "One — and besides dva the only number that changes for gender: odín bilét, but odná kníga. After it the noun keeps its plain dictionary shape — the easy end of the counting rule."
           }
         ],
-        "rules": [0]
+        "rules": [
+          0
+        ]
       },
       "trap": "Russian has no article, so odín is genuinely \"one\" and not \"a\". Putting it in front of every noun the way English puts \"a\" is the mistake — it counts, it does not introduce.",
       "sound": "a-DEEN bee-LYET pa-ZHA-loo-sta. The first o of odín is unstressed and flattens all the way to \"a\".",
@@ -477,7 +516,6 @@
       "display": "Dáyte dva biléta, pozháluysta.",
       "script": "Дайте два билета, пожалуйста.",
       "cue": "Give me two tickets, please",
-      "glossEn": "lit. \"give two tickets, please\"",
       "literal": "Give two ticket-2-4, please",
       "deconstruction": {
         "words": [
@@ -486,11 +524,17 @@
             "script": "два",
             "cue": "two",
             "tag": "delta",
-            "forms": ["dva", "dve"],
+            "forms": [
+              "dva",
+              "dve"
+            ],
             "note": "Two — the other number that changes for gender: dva biléta, but dve knígi. It puts the noun into the 2–4 shape, and tri and chetýre do exactly the same without changing themselves."
           }
         ],
-        "rules": [0, 5]
+        "rules": [
+          0,
+          5
+        ]
       },
       "trap": "Two endings are stacked here and only one of them is M3's. biléta is the 2–4 counting shape, not an object ending — the object ending would have been bilét, since masculine things do not bend as objects. The number wins.",
       "sound": "DAY-tye dva bee-LYE-ta pa-ZHA-loo-sta. The stress on biléta stays where it was in bilét.",
@@ -528,7 +572,6 @@
       "display": "Yeshchyó chay, pozháluysta.",
       "script": "Ещё чай, пожалуйста.",
       "cue": "More tea, please",
-      "glossEn": "lit. \"more tea, please\"",
       "literal": "More tea, please",
       "deconstruction": {
         "words": [
@@ -537,11 +580,15 @@
             "script": "Ещё",
             "cue": "more · another · still",
             "tag": "delta",
-            "forms": ["Yeshchyó"],
-            "note": "\"More\" or \"another\" when you are asking for a second helping, and \"still\" when something has not stopped. Written with yó, always, and the acute is part of that spelling rather than a choice: a Russian yó is the stressed vowel of its word by definition. The quiet line under it spells it ещё, with the two dots Russian print usually drops — which is one of the places the missing dots cost a beginner most, because the e-spelling hides both the sound and the stress."
+            "forms": [
+              "Yeshchyó"
+            ],
+            "note": "\"More\" or \"another\" when asking for a second helping; \"still\" when something has not stopped. Written with yó always — the stressed vowel. The quiet line spells ещё, dots kept."
           }
         ],
-        "rules": [5]
+        "rules": [
+          5
+        ]
       },
       "trap": "One small word covering \"more\", \"another\" and \"still\". Which one it means comes entirely from the situation, and asking which is which is the wrong question.",
       "sound": "ye-SHCHO chai pa-ZHA-loo-sta. The shch is a long soft \"shch\", and the yó is stressed, as every yó is.",

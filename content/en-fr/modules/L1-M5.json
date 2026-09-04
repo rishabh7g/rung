@@ -3,14 +3,18 @@
   "id": "L1-M5",
   "title": "Yesterday",
   "job": "Past tense — the first big divergence",
-  "prerequisites": ["L1-M4"],
+  "prerequisites": [
+    "L1-M4"
+  ],
   "verified": true,
   "verifiedBy": "Claude Fable 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-30",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 7,
-    "allowedTenses": ["passe_compose"],
+    "allowedTenses": [
+      "passe_compose"
+    ],
     "allowedPatterns": [
       "Hier + j'ai + V-participle + N",
       "Hier + je suis + allé(e) + à + place",
@@ -59,7 +63,6 @@
       "id": "L1-M5-S01",
       "display": "Hier j'ai mangé du pain",
       "cue": "Yesterday I ate bread",
-      "glossEn": "lit. \"Yesterday I have eaten of-the bread\"",
       "literal": "Yesterday I-have eaten of-the bread",
       "deconstruction": {
         "words": [
@@ -74,18 +77,25 @@
             "display": "j'ai",
             "cue": "have · has",
             "tag": "delta",
-            "forms": ["j'ai", "avez"],
-            "note": "avoir, with je welded onto it: je + ai cannot stand as two vowels, so it is j'ai. It has two jobs and this row answers for both — plain possession (\"I have\"), and the auxiliary that builds the past in front of a participle. Its vous shape is avez, as in vous avez mangé."
+            "forms": [
+              "j'ai",
+              "avez"
+            ],
+            "note": "avoir, with je welded on: je + ai cannot stand as two vowels, so j'ai. Two jobs — plain possession (\"I have\"), and the auxiliary that builds the past before a participle. Its vous shape is avez."
           },
           {
             "display": "mangé",
             "cue": "eaten",
             "tag": "delta",
             "forms": [],
-            "note": "the past participle of manger. It is its own word, not another spelling of L1-M4's mange: mange is \"I eat\" and mangé is \"eaten\", and the accent is the entire difference. To the ear it is worse — mangé and the bare form manger are said exactly alike, so only the sentence tells you which is on the page."
+            "note": "the past participle of manger — its own word, not another spelling of L1-M4's mange: mange is \"I eat\", mangé is \"eaten\", and the accent is the entire difference. mangé and manger sound exactly alike."
           }
         ],
-        "rules": [0, 5, 7]
+        "rules": [
+          0,
+          5,
+          7
+        ]
       },
       "trap": "English's \"I have eaten\" and \"I ate\" are two different tenses. French has one shape for both here, and the everyday reading is the simple one: Hier j'ai mangé du pain is \"Yesterday I ate bread\", not \"Yesterday I have eaten bread\", which English does not even allow beside \"yesterday\".",
       "sound": "yair zhay mahn-ZHAY. j'ai is one syllable, and mangé sounds identical to manger — the ending is the same clean ay.",
@@ -118,7 +128,6 @@
       "id": "L1-M5-S02",
       "display": "Hier j'ai bu du café",
       "cue": "Yesterday I drank coffee",
-      "glossEn": "lit. \"Yesterday I have drunk of-the coffee\"",
       "literal": "Yesterday I-have drunk of-the coffee",
       "deconstruction": {
         "words": [
@@ -130,7 +139,10 @@
             "note": "the past participle of boire, and nothing about it can be built from bois: irregular verbs have irregular participles, and this one has to be learned whole. It takes avoir, like almost everything."
           }
         ],
-        "rules": [0, 1]
+        "rules": [
+          0,
+          1
+        ]
       },
       "trap": "The -er verbs give a participle that looks like the infinitive with an accent. The irregular ones give no warning at all — boire becomes bu, and a learner who reasons from the present will write boiré, which is not a word.",
       "sound": "bü, one tight syllable, the same French u as in du and une. The whole sentence is four beats: yair zhay bü dü ka-FAY.",
@@ -163,7 +175,6 @@
       "id": "L1-M5-S03",
       "display": "Hier j'ai travaillé",
       "cue": "Yesterday I worked",
-      "glossEn": "lit. \"Yesterday I have worked\"",
       "literal": "Yesterday I-have worked",
       "deconstruction": {
         "words": [
@@ -175,7 +186,10 @@
             "note": "the past participle of travailler — the regular pattern, the -er of the bare form swapped for -é. Like manger and mangé, the two are said exactly alike: only the page tells them apart."
           }
         ],
-        "rules": [0, 5]
+        "rules": [
+          0,
+          5
+        ]
       },
       "trap": "This sentence has no object at all, and the participle still does not change. A learner looking for the missing \"did\" will try to put something in front of the auxiliary; there is nowhere for it to go.",
       "sound": "tra-va-YAY — identical to travailler. The ill is a y as in \"yes\", and the ending is the same ay as every -er.",
@@ -208,7 +222,6 @@
       "id": "L1-M5-S04",
       "display": "Hier je suis allé à Paris",
       "cue": "Yesterday I went to Paris",
-      "glossEn": "lit. \"Yesterday I am gone to Paris\"",
       "literal": "Yesterday I-am gone to Paris",
       "deconstruction": {
         "words": [
@@ -216,11 +229,17 @@
             "display": "allé",
             "cue": "gone (m · f)",
             "tag": "delta",
-            "forms": ["allé", "allée"],
-            "note": "the past participle of aller, and one of the small set that takes être rather than avoir — the movement-and-change verbs: aller, venir, partir, arriver, rester. Because the auxiliary is être, the participle agrees with the subject: je suis allé for a man, je suis allée for a woman. The extra -e is silent."
+            "forms": [
+              "allé",
+              "allée"
+            ],
+            "note": "the past participle of aller, one of the small set that takes être rather than avoir — the movement verbs: aller, venir, partir, arriver, rester. So it agrees with the subject: je suis allé · allée."
           }
         ],
-        "rules": [1, 2]
+        "rules": [
+          1,
+          2
+        ]
       },
       "trap": "English uses one auxiliary for everything — \"I have eaten\", \"I have gone\". French splits them, and the split is a list rather than a rule: aller is on être's list, so je suis allé, never j'ai allé.",
       "sound": "zhuh swee a-LAY. je suis runs together as one breath, and allé ends on the same ay as every -er participle.",
@@ -253,7 +272,6 @@
       "id": "L1-M5-S05",
       "display": "Je n'ai pas mangé hier",
       "cue": "I didn't eat yesterday",
-      "glossEn": "lit. \"I not-have not eaten yesterday\"",
       "literal": "I not-have not eaten yesterday",
       "deconstruction": {
         "words": [
@@ -262,10 +280,13 @@
             "cue": "have not (first half)",
             "tag": "delta",
             "forms": [],
-            "note": "ne welded onto ai. ne cannot sit next to a vowel, so it shortens to n' and the two become one written word — exactly the shortening that turns je into j'. pas still has to follow, behind the auxiliary: je n'ai pas mangé."
+            "note": "ne welded onto ai. ne cannot sit next to a vowel, so it shortens to n' and the two become one written word — the shortening that turns je into j'. pas still follows the auxiliary: je n'ai pas mangé."
           }
         ],
-        "rules": [3, 6]
+        "rules": [
+          3,
+          6
+        ]
       },
       "trap": "English puts its \"not\" next to the auxiliary and its verb after — \"did not eat\". French does the same, but with the second half of the negation: the participle stands OUTSIDE the brackets, not inside them.",
       "sound": "zhuh neh pa mahn-ZHAY. n'ai is one syllable, neh, and nothing at all is heard of the apostrophe.",
@@ -298,7 +319,6 @@
       "id": "L1-M5-S06",
       "display": "Je ne suis pas resté à la maison",
       "cue": "I didn't stay at home",
-      "glossEn": "lit. \"I not am not stayed at the house\"",
       "literal": "I not am not stayed at the house",
       "deconstruction": {
         "words": [
@@ -306,11 +326,18 @@
             "display": "resté",
             "cue": "stayed (m · f)",
             "tag": "delta",
-            "forms": ["resté", "restée"],
-            "note": "the past participle of rester, to stay — the change-of-nothing verb that is nonetheless on être's list, which is why the list has to be learned rather than reasoned about. Being an être verb, it agrees: je suis resté · je suis restée."
+            "forms": [
+              "resté",
+              "restée"
+            ],
+            "note": "the past participle of rester, to stay — the change-of-nothing verb that is nonetheless on être's list — the list is learned, not reasoned. An être verb, so it agrees: je suis resté · restée."
           }
         ],
-        "rules": [1, 2, 3]
+        "rules": [
+          1,
+          2,
+          3
+        ]
       },
       "trap": "Here suis is not the auxiliary a learner expects and ne is not shortened, because suis begins with a consonant. Both halves are ordinary, and both look strange after S05.",
       "sound": "res-TAY. The whole line is six beats and only the last one is stressed: zhuh nuh swee pa res-TAY a la meh-ZOHN.",
@@ -343,7 +370,6 @@
       "id": "L1-M5-S07",
       "display": "Hier j'ai vu un film",
       "cue": "Yesterday I saw a film",
-      "glossEn": "lit. \"Yesterday I have seen a film\"",
       "literal": "Yesterday I-have seen a film",
       "deconstruction": {
         "words": [
@@ -362,7 +388,9 @@
             "note": "film — masculine, so le film and un film. It is borrowed from English and said almost the same way, with the i short."
           }
         ],
-        "rules": [0]
+        "rules": [
+          0
+        ]
       },
       "trap": "The article is back to un, not du: a film is one countable thing, so L1-M3's rule decides it and the past tense has no say in the matter.",
       "sound": "vü, the same tight u as bu. film keeps its English shape but nothing of the English l-sound at the end — it is lighter, and the i is short.",
@@ -395,7 +423,6 @@
       "id": "L1-M5-S08",
       "display": "Vous avez acheté du pain ?",
       "cue": "Did you buy bread?",
-      "glossEn": "lit. \"You have bought of-the bread?\"",
       "literal": "You have bought of-the bread ?",
       "deconstruction": {
         "words": [
@@ -407,7 +434,10 @@
             "note": "the past participle of acheter, to buy — a regular -er verb, so the participle is the bare form with -é. It takes avoir, and it is the verb L1-M8's shopping will lean on."
           }
         ],
-        "rules": [0, 4]
+        "rules": [
+          0,
+          4
+        ]
       },
       "trap": "English cannot ask this without \"did\". French asks it with the auxiliary it already had and a rising voice, and adds nothing whatsoever.",
       "sound": "voo-za-vay ash-TAY. The -s of vous wakes into a z in front of avez, so the first three words run as one.",
@@ -440,7 +470,6 @@
       "id": "L1-M5-S09",
       "display": "Hier j'ai parlé avec Anne",
       "cue": "Yesterday I spoke with Anne",
-      "glossEn": "lit. \"Yesterday I have spoken with Anne\"",
       "literal": "Yesterday I-have spoken with Anne",
       "deconstruction": {
         "words": [
@@ -459,7 +488,10 @@
             "note": "with. It behaves like its English twin and needs nothing said about it — except that its final -c IS pronounced, which most final consonants in French are not."
           }
         ],
-        "rules": [0, 5]
+        "rules": [
+          0,
+          5
+        ]
       },
       "trap": "Nothing here is a trap, and that is worth noticing: avec is a straight transfer, and the past is the shape S01 built. The module's difficulty lives in the auxiliary, not in the vocabulary.",
       "sound": "par-LAY a-VEK. The c of avec is one of the few final consonants French says out loud.",
@@ -492,7 +524,6 @@
       "id": "L1-M5-S10",
       "display": "Hier j'ai fait du café",
       "cue": "Yesterday I made coffee",
-      "glossEn": "lit. \"Yesterday I have made of-the coffee\"",
       "literal": "Yesterday I-have made of-the coffee",
       "deconstruction": {
         "words": [
@@ -504,7 +535,10 @@
             "note": "the past participle of faire, to make or to do — irregular, and one of the most useful words in the language, because faire covers both English verbs at once. It takes avoir. The final -t is silent."
           }
         ],
-        "rules": [0, 1]
+        "rules": [
+          0,
+          1
+        ]
       },
       "trap": "English splits \"make\" from \"do\" and French does not: faire is both, and choosing between them is a decision a French speaker never has to make.",
       "sound": "feh, one syllable, with the final -t silent — it sounds like the -ait of lait.",
@@ -535,25 +569,61 @@
     }
   ],
   "comprehensionPool": [
-    { "id": "L1-M5-C01", "display": "Hier j'ai mangé de la soupe", "cue": "Yesterday I ate soup" },
-    { "id": "L1-M5-C02", "display": "Hier j'ai bu du thé", "cue": "Yesterday I drank tea" },
-    { "id": "L1-M5-C03", "display": "Je n'ai pas travaillé hier", "cue": "I didn't work yesterday" },
+    {
+      "id": "L1-M5-C01",
+      "display": "Hier j'ai mangé de la soupe",
+      "cue": "Yesterday I ate soup"
+    },
+    {
+      "id": "L1-M5-C02",
+      "display": "Hier j'ai bu du thé",
+      "cue": "Yesterday I drank tea"
+    },
+    {
+      "id": "L1-M5-C03",
+      "display": "Je n'ai pas travaillé hier",
+      "cue": "I didn't work yesterday"
+    },
     {
       "id": "L1-M5-C04",
       "display": "Hier je suis allée à Paris",
       "cue": "Yesterday I went to Paris (a woman speaking)"
     },
-    { "id": "L1-M5-C05", "display": "Vous avez mangé du pain ?", "cue": "Did you eat bread?" },
-    { "id": "L1-M5-C06", "display": "Hier j'ai acheté une voiture", "cue": "Yesterday I bought a car" },
+    {
+      "id": "L1-M5-C05",
+      "display": "Vous avez mangé du pain ?",
+      "cue": "Did you eat bread?"
+    },
+    {
+      "id": "L1-M5-C06",
+      "display": "Hier j'ai acheté une voiture",
+      "cue": "Yesterday I bought a car"
+    },
     {
       "id": "L1-M5-C07",
       "display": "Je ne suis pas allé à la maison",
       "cue": "I didn't go home"
     },
-    { "id": "L1-M5-C08", "display": "Hier j'ai parlé avec Marc", "cue": "Yesterday I spoke with Marc" },
-    { "id": "L1-M5-C09", "display": "Vous avez vu le film ?", "cue": "Did you see the film?" },
-    { "id": "L1-M5-C10", "display": "Hier j'ai fait du thé", "cue": "Yesterday I made tea" },
-    { "id": "L1-M5-C11", "display": "Je n'ai pas bu de café", "cue": "I didn't drink any coffee" },
+    {
+      "id": "L1-M5-C08",
+      "display": "Hier j'ai parlé avec Marc",
+      "cue": "Yesterday I spoke with Marc"
+    },
+    {
+      "id": "L1-M5-C09",
+      "display": "Vous avez vu le film ?",
+      "cue": "Did you see the film?"
+    },
+    {
+      "id": "L1-M5-C10",
+      "display": "Hier j'ai fait du thé",
+      "cue": "Yesterday I made tea"
+    },
+    {
+      "id": "L1-M5-C11",
+      "display": "Je n'ai pas bu de café",
+      "cue": "I didn't drink any coffee"
+    },
     {
       "id": "L1-M5-C12",
       "display": "Hier je suis resté à la maison",

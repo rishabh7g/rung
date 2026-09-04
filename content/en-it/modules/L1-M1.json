@@ -10,7 +10,9 @@
   "complexity": {
     "minWordsPerSentence": 2,
     "maxWordsPerSentence": 5,
-    "allowedTenses": ["simple_present"],
+    "allowedTenses": [
+      "simple_present"
+    ],
     "allowedPatterns": [
       "Mi chiamo + name",
       "Sono di + city",
@@ -63,7 +65,6 @@
       "id": "L1-M1-S01",
       "display": "Mi chiamo Rohan",
       "cue": "My name is Rohan",
-      "glossEn": "lit. \"I call myself Rohan\"",
       "literal": "Myself I-call Rohan",
       "deconstruction": {
         "words": [
@@ -71,7 +72,11 @@
             "display": "Mi chiamo",
             "cue": "my name is",
             "tag": "delta",
-            "forms": ["Mi chiamo", "ti chiami", "si chiama"],
+            "forms": [
+              "Mi chiamo",
+              "ti chiami",
+              "si chiama"
+            ],
             "note": "chiamarsi, \"to call oneself\". The little pronoun says whose name it is: mi chiamo (mine) · ti chiami (yours) · si chiama (his or hers). This, and not il mio nome è, is how a name is given."
           },
           {
@@ -82,7 +87,10 @@
             "note": "Names carry over unchanged — swap in your own."
           }
         ],
-        "rules": [0, 2]
+        "rules": [
+          0,
+          2
+        ]
       },
       "trap": "Il mio nome è Rohan is the English sentence translated word for word. It is grammatical, and nobody introduces themselves that way.",
       "sound": "ch is a hard k in Italian: mee KYAH-mo. The ch of \"church\" is written c before i or e, so chi can only be \"kee\".",
@@ -124,17 +132,24 @@
             "cue": "I am",
             "tag": "delta",
             "forms": [],
-            "note": "essere — the \"to be\" of who you are, what you are and where you are from. The ending names the person: sono (I) · sei (you) · è (he, she, it). Italian gets one more use out of this shape: sono is also the form for loro, \"they are\", and from the past-tense module it is the helper that builds sono andato, \"I went\". The sentence around it is what tells you which."
+            "note": "essere — the \"to be\" of who you are and where you are from. The ending names the person: sono (I) · sei (you) · è (he, she, it). sono is also \"they are\", and from M5 the helper in sono andato."
           },
           {
             "display": "indiano",
             "cue": "Indian",
             "tag": "delta",
-            "forms": ["indiano", "indiana"],
+            "forms": [
+              "indiano",
+              "indiana"
+            ],
             "note": "An adjective of nationality, and it agrees with whoever it describes: indiano for a man, indiana for a woman. Italian writes nationalities with a small letter — indiano, never Indiano."
           }
         ],
-        "rules": [1, 3, 4]
+        "rules": [
+          1,
+          3,
+          4
+        ]
       },
       "trap": "English says the \"I\" out loud every time. Io sono indiano is not wrong, but it reads as insistence — I am Indian, whatever you are. The neutral sentence is Sono indiano.",
       "sound": "SO-no, two short round o's, and no swallowed vowel at the end: Italian has no schwa, so the last o is as clear as the first.",
@@ -167,7 +182,6 @@
       "id": "L1-M1-S03",
       "display": "Sono di Delhi",
       "cue": "I am from Delhi",
-      "glossEn": "lit. \"Am from Delhi\"",
       "literal": "I-am from Delhi",
       "deconstruction": {
         "words": [
@@ -186,7 +200,10 @@
             "note": "City names mostly carry over, capital letter and all."
           }
         ],
-        "rules": [1, 3]
+        "rules": [
+          1,
+          3
+        ]
       },
       "trap": "Sono di takes a CITY. A country does not sit here the same way: Italian says Sono indiano, or reaches for another verb entirely — Vengo dall'India.",
       "sound": "di is one clean syllable, DEE — the i is the ee of \"see\", never the i of \"dip\".",
@@ -227,11 +244,18 @@
             "display": "studente",
             "cue": "student",
             "tag": "delta",
-            "forms": ["studente", "studentessa", "studenti"],
+            "forms": [
+              "studente",
+              "studentessa",
+              "studenti"
+            ],
             "note": "A man is uno studente, a woman una studentessa — unlike English \"student\", this noun changes shape for the person. Plural studenti."
           }
         ],
-        "rules": [3, 4]
+        "rules": [
+          3,
+          4
+        ]
       },
       "trap": "English needs the article — I am a student — and Italian leaves it out after essere. Sono studente is the whole sentence.",
       "sound": "stu-DEN-te, stressed in the middle, and the final -e is pronounced: three syllables, not two.",
@@ -264,7 +288,6 @@
       "id": "L1-M1-S05",
       "display": "Mi piace il caffè",
       "cue": "I like coffee",
-      "glossEn": "lit. \"The coffee pleases me\"",
       "literal": "To-me pleases the coffee",
       "deconstruction": {
         "words": [
@@ -272,15 +295,19 @@
             "display": "Mi piace",
             "cue": "I like",
             "tag": "interference",
-            "forms": ["Mi piace", "ti piace", "gli piace"],
-            "note": "piacere means \"to be pleasing\", so the thing liked is the subject and piace agrees with IT: one thing → piace. The little pronoun in front says who is pleased, and nothing else moves: mi piace (me) · ti piace (you) · gli piace (him). For more than one thing, S07 has mi piacciono."
+            "forms": [
+              "Mi piace",
+              "ti piace",
+              "gli piace"
+            ],
+            "note": "piacere is \"to be pleasing\", so the thing liked is the subject and piace agrees with it: one → piace. The pronoun in front names who is pleased: mi piace · ti piace · gli piace. Plural: piacciono."
           },
           {
             "display": "il",
             "cue": "the",
             "tag": "delta",
             "forms": [],
-            "note": "The masculine singular article, and the article is what shows a noun's gender: il (m) · la (f) · i (m pl) · le (f pl). Before a vowel il and la both shrink to l' and join the noun: l'italiano. Italian also keeps the article where English drops it — mi piace il caffè is \"I like coffee\"."
+            "note": "The masculine singular article, and the article shows a noun's gender: il (m) · la (f) · i (m pl) · le (f pl). Before a vowel il and la shrink to l': l'italiano. Kept where English drops it: il caffè."
           },
           {
             "display": "caffè",
@@ -290,7 +317,11 @@
             "note": "Masculine, so il caffè. The written accent is the stress — ka-FEH — and it never comes off. A noun ending in a stressed vowel does not change in the plural: due caffè."
           }
         ],
-        "rules": [5, 6, 7]
+        "rules": [
+          5,
+          6,
+          7
+        ]
       },
       "trap": "Io piaccio il caffè copies the English shape and ends up saying that you are the one doing the pleasing.",
       "sound": "Stress lands on the last syllable — ka-FEH — which is exactly what the written accent is telling you, and the double f is held audibly longer than a single one.",
@@ -323,7 +354,6 @@
       "id": "L1-M1-S06",
       "display": "Mi piace la musica",
       "cue": "I like music",
-      "glossEn": "lit. \"The music pleases me\"",
       "literal": "To-me pleases the music",
       "deconstruction": {
         "words": [
@@ -342,7 +372,11 @@
             "note": "Feminine, so la musica. The stress falls three syllables back — MU-si-ca — and Italian writes an accent only on a final stressed vowel (caffè), so this one is learned with the word."
           }
         ],
-        "rules": [5, 6, 7]
+        "rules": [
+          5,
+          6,
+          7
+        ]
       },
       "trap": "It is still one thing being liked, so it is still piace — music does not go plural just because there is a lot of it.",
       "sound": "MU-si-ca. The u is the oo of \"moon\", cut short, and the c before i is the ch of \"church\".",
@@ -375,7 +409,6 @@
       "id": "L1-M1-S07",
       "display": "Mi piacciono i libri",
       "cue": "I like books",
-      "glossEn": "lit. \"The books please me\"",
       "literal": "To-me please the books",
       "deconstruction": {
         "words": [
@@ -383,8 +416,12 @@
             "display": "Mi piacciono",
             "cue": "I like",
             "tag": "interference",
-            "forms": ["Mi piacciono", "ti piacciono", "gli piacciono"],
-            "note": "The plural partner of S05's mi piace. More than one thing does the pleasing, so the verb goes plural — piacciono. The things decide, never you: only the little pronoun swaps for the person pleased — mi piacciono · ti piacciono · gli piacciono — and piacciono itself never moves."
+            "forms": [
+              "Mi piacciono",
+              "ti piacciono",
+              "gli piacciono"
+            ],
+            "note": "The plural partner of S05's mi piace. More than one thing does the pleasing, so the verb goes plural — piacciono. The things decide, never you: only the pronoun swaps — mi piacciono · ti piacciono."
           },
           {
             "display": "i",
@@ -397,11 +434,17 @@
             "display": "libri",
             "cue": "books",
             "tag": "delta",
-            "forms": ["libro", "libri"],
+            "forms": [
+              "libro",
+              "libri"
+            ],
             "note": "Masculine: il libro (one) · i libri (more than one). The plural is a vowel change on the ending — -o becomes -i — and never an added -s."
           }
         ],
-        "rules": [5, 6]
+        "rules": [
+          5,
+          6
+        ]
       },
       "trap": "English keeps \"like\" flat — I like a book, I like books. Italian moves the verb, because the books are its subject.",
       "sound": "LEE-bri, stressed on the first syllable, and the single r is one quick tap of the tongue — nothing like the English r.",
@@ -434,7 +477,6 @@
       "id": "L1-M1-S08",
       "display": "Mi piacciono le canzoni",
       "cue": "I like songs",
-      "glossEn": "lit. \"The songs please me\"",
       "literal": "To-me please the songs",
       "deconstruction": {
         "words": [
@@ -449,11 +491,17 @@
             "display": "canzoni",
             "cue": "songs",
             "tag": "delta",
-            "forms": ["canzone", "canzoni"],
+            "forms": [
+              "canzone",
+              "canzoni"
+            ],
             "note": "Feminine: la canzone (one) · le canzoni (more than one). A noun in -e goes to -i in the plural whatever its gender, so the ending alone cannot tell you which gender it is — the article can."
           }
         ],
-        "rules": [5, 6]
+        "rules": [
+          5,
+          6
+        ]
       },
       "trap": "The article is doing work English does with nothing at all: \"I like songs\" is mi piacciono LE canzoni.",
       "sound": "kan-TSO-ni. The z is a \"ts\", pressed together as one sound, and never the buzzing z of English \"zoo\".",
@@ -486,7 +534,6 @@
       "id": "L1-M1-S09",
       "display": "Mi piace molto l'italiano",
       "cue": "I really like Italian",
-      "glossEn": "lit. \"The Italian pleases me a lot\"",
       "literal": "To-me pleases a-lot the-Italian",
       "deconstruction": {
         "words": [
@@ -495,17 +542,24 @@
             "cue": "a lot",
             "tag": "delta",
             "forms": [],
-            "note": "a lot, and it sits right after the verb: mi piace molto l'italiano, never mi piace l'italiano molto. In front of a noun it becomes an adjective and agrees (molto caffè · molta musica); as the adverb here it never changes."
+            "note": "a lot, and it sits right after the verb: mi piace molto l'italiano, never mi piace l'italiano molto. Before a noun it is an adjective and agrees (molto caffè · molta musica); as an adverb it is fixed."
           },
           {
             "display": "l'italiano",
             "cue": "Italian",
             "tag": "delta",
-            "forms": ["italiano", "l'italiano", "italiana"],
-            "note": "The language, and also the adjective. Before a vowel the article il shrinks to l' and is written onto the word — l'italiano, one word on the page. As an adjective it agrees with what it describes: il caffè italiano, la musica italiana. Italian writes languages and nationalities with a small letter."
+            "forms": [
+              "italiano",
+              "l'italiano",
+              "italiana"
+            ],
+            "note": "The language, and also the adjective. Before a vowel il shrinks to l' — l'italiano. As an adjective it agrees: il caffè italiano, la musica italiana. Languages take a small letter."
           }
         ],
-        "rules": [6, 7]
+        "rules": [
+          6,
+          7
+        ]
       },
       "trap": "English hangs \"a lot\" on the end of the sentence. Italian presses it against the verb.",
       "sound": "The article and the noun run together as one word: li-ta-LYA-no. Nothing is dropped — the apostrophe is where the vowel of il used to be.",
@@ -538,7 +592,6 @@
       "id": "L1-M1-S10",
       "display": "Il caffè è buono",
       "cue": "The coffee is good",
-      "glossEn": "lit. \"The coffee is good\"",
       "deconstruction": {
         "words": [
           {
@@ -552,11 +605,20 @@
             "display": "buono",
             "cue": "good",
             "tag": "delta",
-            "forms": ["buono", "buona", "buoni", "buone"],
+            "forms": [
+              "buono",
+              "buona",
+              "buoni",
+              "buone"
+            ],
             "note": "An adjective agrees with what it describes: il caffè è buono · la musica è buona · i libri sono buoni · le canzoni sono buone. It follows the noun when it describes one directly (un caffè buono)."
           }
         ],
-        "rules": [0, 3, 8]
+        "rules": [
+          0,
+          3,
+          8
+        ]
       },
       "trap": "è with its accent is \"is\". Drop the accent and you have written \"and\": Il caffè e buono says \"the coffee and good\", which is not a sentence.",
       "sound": "è and e are the same letter with two different mouths: è is open, like the e in \"bed\"; plain e is closer, like the a in \"gate\" without the glide. The accent tells you which one to say. buono is BWO-no, two syllables.",
@@ -587,18 +649,69 @@
     }
   ],
   "comprehensionPool": [
-    { "id": "L1-M1-C01", "display": "Si chiama Rohan", "cue": "His name is Rohan" },
-    { "id": "L1-M1-C02", "display": "Sono studentessa", "cue": "I am a student" },
-    { "id": "L1-M1-C03", "display": "Ti piace il caffè", "cue": "You like coffee" },
-    { "id": "L1-M1-C04", "display": "Mi piace il libro", "cue": "I like the book" },
-    { "id": "L1-M1-C05", "display": "Gli piacciono i libri", "cue": "He likes books" },
-    { "id": "L1-M1-C06", "display": "La musica è buona", "cue": "The music is good" },
-    { "id": "L1-M1-C07", "display": "Mi piace molto la musica", "cue": "I really like music" },
-    { "id": "L1-M1-C08", "display": "Ti piacciono le canzoni", "cue": "You like songs" },
-    { "id": "L1-M1-C09", "display": "Rohan è di Delhi", "cue": "Rohan is from Delhi" },
-    { "id": "L1-M1-C10", "display": "Il caffè italiano è buono", "cue": "Italian coffee is good" },
-    { "id": "L1-M1-C11", "display": "Mi piace l'italiano", "cue": "I like Italian" },
-    { "id": "L1-M1-C12", "display": "La studentessa è indiana", "cue": "The student is Indian" }
+    {
+      "id": "L1-M1-C01",
+      "display": "Si chiama Rohan",
+      "cue": "His name is Rohan"
+    },
+    {
+      "id": "L1-M1-C02",
+      "display": "Sono studentessa",
+      "cue": "I am a student"
+    },
+    {
+      "id": "L1-M1-C03",
+      "display": "Ti piace il caffè",
+      "cue": "You like coffee"
+    },
+    {
+      "id": "L1-M1-C04",
+      "display": "Mi piace il libro",
+      "cue": "I like the book"
+    },
+    {
+      "id": "L1-M1-C05",
+      "display": "Gli piacciono i libri",
+      "cue": "He likes books"
+    },
+    {
+      "id": "L1-M1-C06",
+      "display": "La musica è buona",
+      "cue": "The music is good"
+    },
+    {
+      "id": "L1-M1-C07",
+      "display": "Mi piace molto la musica",
+      "cue": "I really like music"
+    },
+    {
+      "id": "L1-M1-C08",
+      "display": "Ti piacciono le canzoni",
+      "cue": "You like songs"
+    },
+    {
+      "id": "L1-M1-C09",
+      "display": "Rohan è di Delhi",
+      "cue": "Rohan is from Delhi"
+    },
+    {
+      "id": "L1-M1-C10",
+      "display": "Il caffè italiano è buono",
+      "cue": "Italian coffee is good"
+    },
+    {
+      "id": "L1-M1-C11",
+      "display": "Mi piace l'italiano",
+      "cue": "I like Italian"
+    },
+    {
+      "id": "L1-M1-C12",
+      "display": "La studentessa è indiana",
+      "cue": "The student is Indian"
+    }
   ],
-  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
 }

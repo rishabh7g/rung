@@ -34,6 +34,7 @@ import {
   type SurfaceLookup,
 } from '../src/engine/surface.ts';
 import { checkStrings } from './strings-check.ts';
+import { PIPELINE_ONLY_MODULE_KEYS } from '../src/course/types.ts';
 import {
   DEFAULT_CONTENT_ROOT,
   REPO_ROOT,
@@ -391,14 +392,18 @@ export function checkScriptMode(module: Module, scriptMode: ScriptMode): ScriptM
  * when it is present and nothing when it is not. `en` exactly — every row carries a bare language
  * tag, and a regional English course would be a decision to take here, not to guess at.
  */
-export function checkGlossEn(module: Module, l2Tag: string): string[] {
+export function checkGlossEn(module: Module, l1Tag: string, l2Tag: string): string[] {
   const errors: string[] = [];
-  if (l2Tag === 'en') return errors;
+  // The gloss is a THIRD language on the page. Where either side of the pair is already English —
+  // the L2 (#268: an English gloss of an English line is the hero twice) or the L1 (#405: the cue
+  // IS the English gloss) — it is optional, and earns its place only when it carries a note the
+  // literal does not. It is required only where neither language is English (hi-mr).
+  if (l1Tag === 'en' || l2Tag === 'en') return errors;
 
   module.sentences.forEach((sentence, i) => {
     if (!isNonEmptyString(sentence.glossEn)) {
       errors.push(
-        `/sentences/${i}/glossEn: required unless the course's l2Tag is "en" (this row: "${l2Tag}")`,
+        `/sentences/${i}/glossEn: required when neither language of the pair is English (this row: ${l1Tag} → ${l2Tag})`,
       );
     }
   });
@@ -711,6 +716,13 @@ function emitLevels(levels: Levels, shipped: ReadonlySet<string>): Levels {
   };
 }
 
+/** The module as the learner receives it: the authored object minus the pipeline's keys (#404). */
+function shipModule(authored: Record<string, unknown>): Record<string, unknown> {
+  const shipped = { ...authored };
+  for (const key of PIPELINE_ONLY_MODULE_KEYS) delete shipped[key];
+  return shipped;
+}
+
 /** Returns the bytes written, so the emit loop can sum a course's weight as it writes it. */
 function writeJson(file: string, value: unknown): number {
   const text = `${JSON.stringify(value, null, 2)}\n`;
@@ -800,7 +812,8 @@ export function buildContent(options: BuildOptions): BuildReport {
 
       const scriptMode = checkScriptMode(module, row.scriptMode);
       for (const issue of scriptMode.errors) errors.push(`${name}: ${issue}`);
-      for (const issue of checkGlossEn(module, row.l2Tag)) errors.push(`${name}: ${issue}`);
+      for (const issue of checkGlossEn(module, row.l1Tag, row.l2Tag))
+        errors.push(`${name}: ${issue}`);
 
       if (levels !== null && !known.has(module.id)) {
         errors.push(`${name}: "${module.id}" is not listed in ${row.id}/levels.json`);
@@ -866,8 +879,8 @@ export function buildContent(options: BuildOptions): BuildReport {
 
   for (const plan of shipping) {
     const courseOut = path.join(outRoot, plan.row.id);
-    // The course's weight, counted AS it is emitted (#107): a copy adds the source's size (same
-    // bytes by `copies module files byte for byte`), a write adds what writeJson reports.
+    // The course's weight, counted AS it is emitted (#107): a copy adds the source's size, a
+    // write adds what writeJson reports — and modules are written, stripped (#404).
     let files = 0;
     let bytes = 0;
     const copy = (from: string, to: string): void => {
@@ -882,7 +895,15 @@ export function buildContent(options: BuildOptions): BuildReport {
 
     mkdirSync(path.join(courseOut, 'modules'), { recursive: true });
     for (const module of plan.shipped) {
-      copy(module.file, path.join(courseOut, 'modules', `${module.id}.json`));
+      // Not a copy any more (#404): the authored file carries the pipeline's own bookkeeping —
+      // prerequisites, complexity, the native gate's signature — which the app never reads and a
+      // learner should not download. `PIPELINE_ONLY_MODULE_KEYS` is the one list of what stays
+      // behind; `src/course/types.test.ts` reads the same list to check the authored files
+      // against the shipped shape.
+      write(
+        path.join(courseOut, 'modules', `${module.id}.json`),
+        shipModule(JSON.parse(readFileSync(module.file, 'utf8')) as Record<string, unknown>),
+      );
     }
     mkdirSync(path.join(courseOut, 'index'), { recursive: true });
     for (const index of plan.indexes) {

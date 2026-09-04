@@ -245,7 +245,6 @@ export function parseModule(payload: unknown, source = 'module.json'): ModuleCon
   array(root.rules, source, 'rules');
   array(root.sentences, source, 'sentences');
   array(root.comprehensionPool, source, 'comprehensionPool');
-  object(root.complexity, source, 'complexity', 'must be the module bounds object');
   object(root.exitTest, source, 'exitTest', 'must be the exit-test object');
 
   // Per sentence, only what a screen dereferences without asking first: the id it is routed by,

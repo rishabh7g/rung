@@ -3,14 +3,18 @@
   "id": "L1-M3",
   "title": "Needs and wants",
   "job": "Say what you want and don't want",
-  "prerequisites": ["L1-M2"],
+  "prerequisites": [
+    "L1-M2"
+  ],
   "verified": true,
   "verifiedBy": "LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-30",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 6,
-    "allowedTenses": ["simple_present"],
+    "allowedTenses": [
+      "simple_present"
+    ],
     "allowedPatterns": [
       "Ich möchte + N",
       "Ich möchte + einen/eine/ein + N",
@@ -68,7 +72,6 @@
       "id": "L1-M3-S01",
       "display": "Ich möchte einen Kaffee",
       "cue": "I would like a coffee",
-      "glossEn": "I would like a coffee",
       "literal": "I would-like a coffee",
       "deconstruction": {
         "words": [
@@ -76,18 +79,24 @@
             "display": "möchte",
             "cue": "would like",
             "tag": "delta",
-            "forms": ["möchte", "möchten"],
-            "note": "The polite want, and a frozen form rather than a tense to learn: ich möchte · Sie möchten. It takes a thing (Ich möchte einen Kaffee) or a bare infinitive parked at the end of the clause (Ich möchte einen Kaffee trinken). Its blunt neighbour is Ich will, which is a different verb and — a warning L1-M6 will have to repeat — is not the English \"will\" at all. Ich mag, from L1-M1, is a standing preference and answers nothing this word asks."
+            "forms": [
+              "möchte",
+              "möchten"
+            ],
+            "note": "The polite want, a frozen form: ich möchte · Sie möchten. Takes a thing (einen Kaffee) or a bare infinitive at the end of the clause. Ich will is blunt and is not English “will”."
           },
           {
             "display": "einen",
             "cue": "a (masculine, accusative)",
             "tag": "delta",
             "forms": [],
-            "note": "ein wearing the accusative -en, in front of a masculine noun that is the object of the sentence. This is the whole visible accusative in L1: eine and ein do not move, so einen is the only ending a learner can actually see arrive. It is a different written word from L1-M1's ein, so both stay reachable, and its negative twin is keinen."
+            "note": "ein wearing the accusative -en before a masculine OBJECT: Ich möchte einen Kaffee. The only accusative ending you can see in L1 — eine and ein do not move. Its negative is keinen."
           }
         ],
-        "rules": [0, 4]
+        "rules": [
+          0,
+          4
+        ]
       },
       "trap": "English can order with nothing in front of the noun — \"I'd like coffee\" — and German at this counter cannot leave the ending off the article it does use. The article is not the hard part; the -n on it is.",
       "sound": "ö is the vowel of \"bed\" said with the lips rounded for \"boot\" — the mouth of one and the lips of the other. The ch after it is the soft hiss English makes at the front of \"hue\", never the k of \"school\". Kaffee is stressed on the first syllable, KAH-fay, with a long final -ee.",
@@ -120,7 +129,6 @@
       "id": "L1-M3-S02",
       "display": "Ich möchte eine Suppe",
       "cue": "I would like a soup",
-      "glossEn": "I would like a soup",
       "literal": "I would-like a soup",
       "deconstruction": {
         "words": [
@@ -129,10 +137,13 @@
             "cue": "soup",
             "tag": "free",
             "forms": [],
-            "note": "soup — feminine, die Suppe, so eine Suppe whether it is the subject or the object. A noun in -e is very often feminine, which is one of the endings that make German gender less arbitrary than it is usually sold as."
+            "note": "soup — die Suppe, so eine Suppe as subject or object alike. A noun in -e is very often feminine: one of the endings worth trusting."
           }
         ],
-        "rules": [0, 4]
+        "rules": [
+          0,
+          4
+        ]
       },
       "trap": "A learner who has just met einen over-applies it, and Ich möchte einen Suppe is the result. The accusative moves the masculine article and nothing else in this level.",
       "sound": "Suppe has the short u of English \"put\", clipped short by the doubled p, and a final -e that is a real quiet vowel, \"uh\". German never leaves a written final e silent the way English does in \"tape\".",
@@ -165,7 +176,6 @@
       "id": "L1-M3-S03",
       "display": "Ich möchte Wasser",
       "cue": "I would like water",
-      "glossEn": "I would like water",
       "literal": "I would-like water",
       "deconstruction": {
         "words": [
@@ -174,10 +184,13 @@
             "cue": "water",
             "tag": "free",
             "forms": [],
-            "note": "water — neuter, das Wasser. Here it stands BARE, with no article at all, because it is an unmeasured amount rather than one countable thing: Ich möchte Wasser is \"I'd like some water\". That is the same bare generic L1-M1 met in Ich mag Kaffee, and it is the OPPOSITE of French and Spanish, which put the definite article there."
+            "note": "water — das Wasser, and BARE here: Ich möchte Wasser, “some water”, an unmeasured amount. The same bare generic as Ich mag Kaffee — the opposite of French and Spanish."
           }
         ],
-        "rules": [0, 9]
+        "rules": [
+          0,
+          9
+        ]
       },
       "trap": "French and Spanish want a little word in front of an uncounted noun — du café, del agua — and German wants nothing. A learner arriving from either language reaches for an article German does not use here.",
       "sound": "German w is an English V: Wasser starts VA-, never WA-. The a is short and open, and the double s is a plain hiss, never the buzz English puts in \"laser\".",
@@ -210,7 +223,6 @@
       "id": "L1-M3-S04",
       "display": "Ich möchte etwas essen",
       "cue": "I would like to eat something",
-      "glossEn": "I would like to eat something",
       "literal": "I would-like something eat",
       "deconstruction": {
         "words": [
@@ -225,11 +237,17 @@
             "display": "essen",
             "cue": "to eat · (you) eat",
             "tag": "delta",
-            "forms": ["essen", "esse"],
-            "note": "essen, to eat. This one written word does three jobs and a tap on any of them lands here. It is the INFINITIVE, parked at the end of a clause after möchte. It is also the Sie FORM — Sie essen — because the plural of a regular verb is spelled exactly like the infinitive, which is what makes the Sie register cheap. And capitalised, das Essen, it is the noun \"food\"; L1 keeps its food concrete (Brot, Kaffee, Wasser, Suppe) so nothing here has to lean on that third reading. One warning about the ear rather than the eye: er isst (\"he eats\") is spelled with two s and is a DIFFERENT word from ist (\"is\"). They sound alike and they are never the same word."
+            "forms": [
+              "essen",
+              "esse"
+            ],
+            "note": "essen, to eat — one written word, three jobs: the infinitive after möchte, the Sie form (Sie essen), and capitalised das Essen, “food”. Ear warning: er isst (eats) is not ist (is)."
           }
         ],
-        "rules": [1, 3]
+        "rules": [
+          1,
+          3
+        ]
       },
       "trap": "English puts \"to\" between the two verbs and German puts nothing, and English keeps them side by side while German pushes the second one past the object to the end of the clause. Both habits have to go at once.",
       "sound": "essen has a short, open e and a hard double s, ESS-n — the final -en collapses to a syllabic n in ordinary speech. In etwas the w is again a V, ET-vass, and the final -s is hissed, not buzzed.",
@@ -262,7 +280,6 @@
       "id": "L1-M3-S05",
       "display": "Ich möchte einen Kaffee trinken",
       "cue": "I would like to drink a coffee",
-      "glossEn": "I would like to drink a coffee",
       "literal": "I would-like a coffee drink",
       "deconstruction": {
         "words": [
@@ -270,11 +287,18 @@
             "display": "trinken",
             "cue": "to drink · (you) drink",
             "tag": "delta",
-            "forms": ["trinken", "trinke"],
-            "note": "trinken, to drink: ich trinke · Sie trinken. As with essen, the infinitive and the Sie form are the same written word — the register decision paying for itself a second time. At the end of this clause it is the infinitive; at the front of Trinken Sie Kaffee? it would be the question."
+            "forms": [
+              "trinken",
+              "trinke"
+            ],
+            "note": "trinken, to drink: ich trinke · Sie trinken — infinitive and Sie form the same word again. At the end of this clause it is the infinitive; fronted, Trinken Sie Kaffee? is the question."
           }
         ],
-        "rules": [1, 3, 4]
+        "rules": [
+          1,
+          3,
+          4
+        ]
       },
       "trap": "This is the sentence that kills \"German puts the verb at the end\". möchte is SECOND and does not move; only trinken is last. The clause is a bracket with einen Kaffee sitting inside it.",
       "sound": "The r at the start of trinken is made at the BACK of the mouth, near where you gargle, not with the tip of the tongue. The -en at the end collapses to a syllabic n: TRINK-n.",
@@ -307,7 +331,6 @@
       "id": "L1-M3-S06",
       "display": "Möchten Sie einen Tee?",
       "cue": "Would you like a tea?",
-      "glossEn": "Would you like a tea?",
       "literal": "would-like you a tea?",
       "deconstruction": {
         "words": [
@@ -319,7 +342,11 @@
             "note": "tea — masculine, der Tee, so einen Tee as an object, beside einen Kaffee. Two masculine drinks make the accusative ending drillable without a second grammar point."
           }
         ],
-        "rules": [8, 4, 0]
+        "rules": [
+          8,
+          4,
+          0
+        ]
       },
       "trap": "There is no German word standing in for English \"do\". A learner hunting for the German \"do you…\" is hunting for a word that does not exist: the verb simply moves to the front and nothing is inserted behind it.",
       "sound": "Tee is one long \"ay\", TAY, not the English \"tee\". In Möchten the ö returns and the -en again collapses to n: MÖCH-tn.",
@@ -352,7 +379,6 @@
       "id": "L1-M3-S07",
       "display": "Ich möchte kein Brot",
       "cue": "I don't want any bread",
-      "glossEn": "I don't want any bread",
       "literal": "I would-like no bread",
       "deconstruction": {
         "words": [
@@ -361,7 +387,7 @@
             "cue": "no · not a (neuter / masculine subject)",
             "tag": "delta",
             "forms": [],
-            "note": "The negator of a NOUN, and it is ein with a k welded on the front — so it takes ein's endings and nothing else: kein Brot (neuter), keine Suppe (feminine), keinen Kaffee (masculine object). Use it wherever the positive sentence would have had ein or no article at all. It never negates a verb or an adjective; that is nicht's job, and choosing between the two by TARGET is this module's sharpest work."
+            "note": "The negator of a NOUN: ein with a k in front, taking ein's endings — kein Brot, keine Suppe, keinen Kaffee. Use it where the positive had ein or no article. Verbs and adjectives take nicht."
           },
           {
             "display": "Brot",
@@ -371,7 +397,10 @@
             "note": "bread — neuter, das Brot, so ein Brot for a loaf and kein Brot for none of it. Neuter articles never move for the accusative, so this noun shows the negation cleanly with no ending to argue about."
           }
         ],
-        "rules": [6, 7]
+        "rules": [
+          6,
+          7
+        ]
       },
       "trap": "English negates with one word in front of the verb — \"I don't want bread\" — and German negates the NOUN instead. Ich möchte nicht Brot is that English shape imported whole, and it is the commonest error in the module.",
       "sound": "ei is always the vowel of English \"eye\": kein is KINE, never \"keen\". That is the single most useful sound rule German has — ei says \"eye\", ie says \"ee\". Brot has a long closed o and a back-of-the-mouth r.",
@@ -404,7 +433,6 @@
       "id": "L1-M3-S08",
       "display": "Ich möchte keinen Kaffee",
       "cue": "I don't want any coffee",
-      "glossEn": "I don't want any coffee",
       "literal": "I would-like no coffee",
       "deconstruction": {
         "words": [
@@ -413,10 +441,14 @@
             "cue": "no · not a (masculine, accusative)",
             "tag": "delta",
             "forms": [],
-            "note": "kein wearing the same accusative -en that einen wears, for the same reason: the noun behind it is masculine and it is the object. It is its own written word, distinct from kein, so both rows stay reachable — and the pair einen/keinen is the whole visible accusative of this level."
+            "note": "kein with the accusative -en that einen wears: a masculine noun as the OBJECT. Its own written word beside kein — and einen/keinen is the whole visible accusative of this level."
           }
         ],
-        "rules": [6, 4, 7]
+        "rules": [
+          6,
+          4,
+          7
+        ]
       },
       "trap": "The -n is easy to miss for an English ear and invisible to an English grammar, so it is dropped twice as often in the negative as in the positive. Ich möchte kein Kaffee is the same slip as Ich möchte ein Kaffee, one word later.",
       "sound": "keine is KINE-uh and keinen is KINE-en. The accusative -n is a real, audible consonant at the end of the word, and it is exactly the sound a learner leaves off.",
@@ -449,7 +481,6 @@
       "id": "L1-M3-S09",
       "display": "Ich möchte keine Suppe",
       "cue": "I don't want any soup",
-      "glossEn": "I don't want any soup",
       "literal": "I would-like no soup",
       "deconstruction": {
         "words": [
@@ -458,10 +489,13 @@
             "cue": "no · not a (feminine)",
             "tag": "delta",
             "forms": [],
-            "note": "The feminine of kein, and it does not move for the accusative any more than eine does — keine Suppe is the same shape whether the soup is the subject or the object. It is a separate written word from kein and keinen, so it keeps its own entry and its own note."
+            "note": "The feminine of kein, and like eine it does not change for the accusative: keine Suppe as subject or object. Its own written word beside kein and keinen."
           }
         ],
-        "rules": [6, 4]
+        "rules": [
+          6,
+          4
+        ]
       },
       "trap": "Having just learned to add -n, a learner adds it here too. The feminine has nothing to add: eine and keine are already the accusative.",
       "sound": "keine is two syllables, KINE-uh, with the quiet final -e sounded. Suppe ends the same way, so the two words rhyme and the phrase has an easy shape in the mouth.",
@@ -494,7 +528,6 @@
       "id": "L1-M3-S10",
       "display": "Ich trinke nicht",
       "cue": "I don't drink",
-      "glossEn": "I don't drink",
       "literal": "I drink not",
       "deconstruction": {
         "words": [
@@ -503,10 +536,13 @@
             "cue": "not",
             "tag": "delta",
             "forms": [],
-            "note": "The negator of a verb, an adjective or a whole sentence — never of a noun. It stands AFTER the verb it negates, and at the very end when it negates the sentence: Ich trinke nicht, Der Kaffee ist nicht gut. English's single \"not\" splits here into nicht and kein, and the line between them is drawn by WHAT is being denied, not by how strongly."
+            "note": "Negates a verb, an adjective or a whole sentence — never a noun. After the verb, or at the end: Ich trinke nicht. English's one “not” splits into nicht and kein by WHAT is denied."
           }
         ],
-        "rules": [5, 7]
+        "rules": [
+          5,
+          7
+        ]
       },
       "trap": "English builds this negative out of a helper verb — \"I DO not drink\" — and German builds it out of nothing at all. There is no German \"do\" to find, so there is none to negate: the verb stays where it is and nicht follows it.",
       "sound": "The ch in nicht is the soft hiss of English \"hue\", made with the tongue high and forward; it never becomes a k. trinke ends in the quiet -e, TRINK-uh.",

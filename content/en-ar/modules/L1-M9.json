@@ -3,14 +3,20 @@
   "id": "L1-M9",
   "title": "Feelings & opinions",
   "job": "Why — because and so",
-  "prerequisites": ["L1-M8"],
+  "prerequisites": [
+    "L1-M8"
+  ],
   "verified": true,
   "verifiedBy": "Fable (Claude Fable 5) — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 8,
-    "allowedTenses": ["simple_present", "simple_past", "future"],
+    "allowedTenses": [
+      "simple_present",
+      "simple_past",
+      "future"
+    ],
     "allowedPatterns": [
       "<statement> + li-ʾanna + <statement>",
       "<statement> + , li-dhālika + <statement>",
@@ -67,7 +73,6 @@
       "display": "anā taʿbān li-ʾannī dhahabtu ilā al-ʿamal",
       "script": "أنا تعبان لأني ذهبت إلى العمل",
       "cue": "I am tired because I went to work (said by a man)",
-      "glossEn": "lit. \"I tired because-I I-went to the-work\"",
       "literal": "I tired because-I went-I to the-work",
       "deconstruction": {
         "words": [
@@ -76,11 +81,21 @@
             "script": "لأني",
             "cue": "because I",
             "tag": "delta",
-            "forms": ["li-ʾannī", "li-ʾanna", "li-ʾannaka", "li-ʾannaki", "li-ʾannahu"],
-            "note": "\"Because\" — and it cannot stand bare in front of a verb. It takes the person on its own back, with the same suffixes as M1's ismī: li-ʾannī (because I), li-ʾannaka (you-m), li-ʾannaki (you-f), li-ʾannahu (he). In front of a noun it stays plain: li-ʾanna al-qahwa bārida. The li- on its front is the clitic \"for, to\", and it is the same li- inside li-dhālika and limādhā."
+            "forms": [
+              "li-ʾannī",
+              "li-ʾanna",
+              "li-ʾannaka",
+              "li-ʾannaki",
+              "li-ʾannahu"
+            ],
+            "note": "\"Because\" — never bare before a verb; it carries the person with the suffixes of ismī: li-ʾannī (because I), li-ʾannaka, li-ʾannaki, li-ʾannahu. Before a noun it stays plain: li-ʾanna al-qahwa."
           }
         ],
-        "rules": [0, 1, 4]
+        "rules": [
+          0,
+          1,
+          4
+        ]
       },
       "trap": "English \"because I went\" puts the pronoun in the second half; Arabic puts it on the back of the because-word itself, and the verb after it keeps its own person too.",
       "sound": "a-NAA taʿ-BAAN li-ʾan-NEE dha-HAB-tu i-LAA al-ʿA-mal — the n of li-ʾannī is held doubled.",
@@ -118,7 +133,6 @@
       "display": "anā jāʾiʿ, li-dhālika sa-ākul al-khubz",
       "script": "أنا جائع، لذلك سآكل الخبز",
       "cue": "I am hungry, so I'll eat the bread (said by a man)",
-      "glossEn": "lit. \"I hungry, for-that will-I-eat the-bread\"",
       "literal": "I hungry, for-that will-eat-I the-bread",
       "deconstruction": {
         "words": [
@@ -127,8 +141,11 @@
             "script": "جائع",
             "cue": "hungry",
             "tag": "free",
-            "forms": ["jāʾiʿ", "jāʾiʿa"],
-            "note": "\"Hungry\" — jāʾiʿ of a man, jāʾiʿa of a woman. Two throat letters in one short word and they are not the same one: the ʾ in the middle is hamza, a catch in the breath, and the ʿ at the end is ʿayn, a squeeze deeper down."
+            "forms": [
+              "jāʾiʿ",
+              "jāʾiʿa"
+            ],
+            "note": "\"Hungry\" — jāʾiʿ of a man, jāʾiʿa of a woman. Two throat letters in one short word, not the same one: the ʾ in the middle is hamza, a catch in the breath; the ʿ at the end is ʿayn, deeper down."
           },
           {
             "display": "li-dhālika",
@@ -136,10 +153,14 @@
             "cue": "so, therefore",
             "tag": "delta",
             "forms": [],
-            "note": "\"For that\" — the CONSEQUENCE word, where li-ʾanna is the reason word. dhālika on its own is \"that\", the far-pointing partner of M8's hādhā, and li- glues \"for\" onto its front. It opens the second half of the sentence, exactly where English puts \"so\"."
+            "note": "\"For that\" — the consequence word, where li-ʾanna is the reason word. dhālika is \"that\", the far-pointing partner of M8's hādhā, with li- glued on. It opens the second half, where English puts \"so\"."
           }
         ],
-        "rules": [0, 2, 9]
+        "rules": [
+          0,
+          2,
+          9
+        ]
       },
       "trap": "li-ʾanna and li-dhālika point opposite ways. Reason first then li-dhālika; consequence first then li-ʾanna. Getting them the wrong way round reverses the sentence.",
       "sound": "a-NAA JAA-ʾiʿ, li-DHAA-li-ka SAA-kul al-KHUBZ — the ʿ at the end of jāʾiʿ closes the word off in the throat.",
@@ -177,7 +198,6 @@
       "display": "limādhā anta ḥazīn?",
       "script": "لماذا أنتَ حزين؟",
       "cue": "Why are you sad? (to a man)",
-      "glossEn": "lit. \"why you sad\"",
       "literal": "why you sad",
       "deconstruction": {
         "words": [
@@ -187,18 +207,24 @@
             "cue": "why",
             "tag": "free",
             "forms": [],
-            "note": "\"Why\" — literally \"for what\", and written solid as one word: it never splits into li- and the rest the way li-ʾanna and li-dhālika do. Like ayna and matā it stands at the front and needs no hal beside it."
+            "note": "\"Why\" — literally \"for what\", written solid as one word: it never splits into li- and the rest the way li-ʾanna and li-dhālika do. Like ayna and matā it stands at the front and needs no hal."
           },
           {
             "display": "ḥazīn",
             "script": "حزين",
             "cue": "sad",
             "tag": "free",
-            "forms": ["ḥazīn", "ḥazīna"],
+            "forms": [
+              "ḥazīn",
+              "ḥazīna"
+            ],
             "note": "\"Sad\" — ḥazīn of a man, ḥazīna of a woman, agreeing with the SUBJECT of its sentence like every adjective since ṭālib. It opens with the breathy ḥ, not the plain h of hal."
           }
         ],
-        "rules": [6, 5]
+        "rules": [
+          6,
+          5
+        ]
       },
       "trap": "The adjective follows whoever the question is ABOUT. Asked of a woman it is ḥazīna, no matter who is asking.",
       "sound": "li-MAA-dhā AN-ta ḥa-ZEEN — limādhā holds its long ā in the middle.",
@@ -236,7 +262,6 @@
       "display": "anā ghāḍib li-ʾanna al-qahwa bārida",
       "script": "أنا غاضب لأن القهوة باردة",
       "cue": "I am angry because the coffee is cold (said by a man)",
-      "glossEn": "lit. \"I angry because the-coffee cold\"",
       "literal": "I angry because the-coffee cold",
       "deconstruction": {
         "words": [
@@ -245,11 +270,17 @@
             "script": "غاضب",
             "cue": "angry",
             "tag": "free",
-            "forms": ["ghāḍib", "ghāḍiba"],
+            "forms": [
+              "ghāḍib",
+              "ghāḍiba"
+            ],
             "note": "\"Angry\" — ghāḍib of a man, ghāḍiba of a woman. It opens with the gargled gh of ghadan and carries the heavy ḍ in its middle, the same one as in min faḍlika."
           }
         ],
-        "rules": [1, 5]
+        "rules": [
+          1,
+          5
+        ]
       },
       "trap": "In front of a NOUN, li-ʾanna stays plain — no suffix. It is only in front of a verb that it must borrow a pronoun.",
       "sound": "a-NAA GHAA-ḍib li-ʾAN-na al-QAH-wa BAA-ri-da.",
@@ -287,7 +318,6 @@
       "display": "al-mūsīqā jamīla jiddan",
       "script": "الموسيقى جميلة جدًا",
       "cue": "The music is very lovely",
-      "glossEn": "lit. \"the-music lovely very\"",
       "literal": "the-music lovely very",
       "deconstruction": {
         "words": [
@@ -296,11 +326,17 @@
             "script": "جميلة",
             "cue": "lovely, beautiful",
             "tag": "free",
-            "forms": ["jamīl", "jamīla"],
-            "note": "\"Lovely, beautiful\" — jamīl of a masculine thing, jamīla of a feminine one. mūsīqā is feminine, so the adjective takes the -a here. It is the everyday word of approval for anything from music to weather."
+            "forms": [
+              "jamīl",
+              "jamīla"
+            ],
+            "note": "\"Lovely, beautiful\" — jamīl of a masculine thing, jamīla of a feminine one. mūsīqā is feminine, so the -a here. The everyday word of approval for anything from music to weather."
           }
         ],
-        "rules": [4, 5]
+        "rules": [
+          4,
+          5
+        ]
       },
       "trap": "The adjective agrees with the THING, not with the person admiring it. mūsīqā is feminine, so jamīla — whoever is speaking.",
       "sound": "al-moo-SEE-qā ja-MEE-la JID-dan — jiddan holds its doubled d, as it has since M3.",
@@ -338,7 +374,6 @@
       "display": "fī raʾyī, al-ʿarabiyya ṣaʿba",
       "script": "في رأيي، العربية صعبة",
       "cue": "In my opinion, Arabic is difficult",
-      "glossEn": "lit. \"in opinion-my, the-Arabic difficult\"",
       "literal": "in opinion-my, the-Arabic difficult",
       "deconstruction": {
         "words": [
@@ -348,26 +383,35 @@
             "cue": "in my opinion",
             "tag": "free",
             "forms": [],
-            "note": "M7's fī plus raʾy (\"opinion\") wearing M1's -ī: \"in my opinion\". Learned whole, because that is how it is used. The hamza in the middle of raʾyī is written — raʾy, not *rāy — and the sentence after it stays verbless."
+            "note": "M7's fī plus raʾy (\"opinion\") wearing M1's -ī: \"in my opinion\", learned whole. The hamza in raʾyī is written — raʾy, not *rāy — and the sentence after it stays verbless."
           },
           {
             "display": "al-ʿarabiyya",
             "script": "العربية",
             "cue": "Arabic (the language)",
             "tag": "free",
-            "forms": ["al-ʿarabiyya", "ʿarabiyya"],
-            "note": "The Arabic language, and a feminine noun — so its adjectives take -a: al-ʿarabiyya ṣaʿba, al-ʿarabiyya jamīla. It opens with ʿayn, not hamza. The article is normally kept: Arabic names its own language as \"the Arabic\"."
+            "forms": [
+              "al-ʿarabiyya",
+              "ʿarabiyya"
+            ],
+            "note": "The Arabic language, a feminine noun — so its adjectives take -a: al-ʿarabiyya ṣaʿba, al-ʿarabiyya jamīla. It opens with ʿayn, not hamza. The article is kept: Arabic names its language \"the Arabic\"."
           },
           {
             "display": "ṣaʿba",
             "script": "صعبة",
             "cue": "difficult",
             "tag": "free",
-            "forms": ["ṣaʿb", "ṣaʿba"],
+            "forms": [
+              "ṣaʿb",
+              "ṣaʿba"
+            ],
             "note": "\"Difficult\" — ṣaʿb of a masculine thing, ṣaʿba of a feminine one. Heavy ṣ at the front and ʿayn in the middle; its opposite, sahl, turns up in the next sentence."
           }
         ],
-        "rules": [7, 4]
+        "rules": [
+          7,
+          4
+        ]
       },
       "trap": "fī raʾyī is not a verb and adds none. The sentence after the comma is the same verbless statement it would have been on its own.",
       "sound": "fee RAʾ-yee, al-ʿa-ra-BEE-ya ṢAʿ-ba — the catch in raʾyī is audible between the two syllables.",
@@ -405,7 +449,6 @@
       "display": "hādhā sahl, li-dhālika anā saʿīd",
       "script": "هذا سهل، لذلك أنا سعيد",
       "cue": "This is easy, so I am happy (said by a man)",
-      "glossEn": "lit. \"this easy, for-that I happy\"",
       "literal": "this easy, for-that I happy",
       "deconstruction": {
         "words": [
@@ -414,11 +457,17 @@
             "script": "سهل",
             "cue": "easy",
             "tag": "free",
-            "forms": ["sahl", "sahla"],
+            "forms": [
+              "sahl",
+              "sahla"
+            ],
             "note": "\"Easy\" — sahl of a masculine thing, sahla of a feminine one, and the plain opposite of ṣaʿb. The h in the middle is the light one, the same as in hal."
           }
         ],
-        "rules": [0, 4]
+        "rules": [
+          0,
+          4
+        ]
       },
       "trap": "Two whole sentences, joined. Each half stands on its own with no verb in it, and li-dhālika is the hinge between them.",
       "sound": "HAA-dhā SAHL, li-DHAA-li-ka a-NAA sa-ʿEED.",
@@ -456,7 +505,6 @@
       "display": "lā adhhab ilā as-sūq bi-sabab al-jaww",
       "script": "لا أذهب إلى السوق بسبب الجو",
       "cue": "I am not going to the market because of the weather",
-      "glossEn": "lit. \"not I-go to the-market by-reason the-weather\"",
       "literal": "not go-I to the-market by-reason-of the-weather",
       "deconstruction": {
         "words": [
@@ -469,7 +517,10 @@
             "note": "\"By reason of\" — M2's bi- glued to sabab (\"reason\"). This is the because that takes a NOUN: bi-sabab al-jaww, bi-sabab al-ʿamal. li-ʾanna takes a whole sentence instead, and the two never swap jobs."
           }
         ],
-        "rules": [3, 8]
+        "rules": [
+          3,
+          8
+        ]
       },
       "trap": "\"Because\" splits in two here exactly as it does in English: because + sentence is li-ʾanna, because of + noun is bi-sabab. Putting a bare noun after li-ʾanna is the error.",
       "sound": "LAA ADH-hab i-LAA as-SOOQ bi-SA-bab al-JAWW.",
@@ -507,7 +558,6 @@
       "display": "al-ʿamal muhimm li-ʾannī urīd sayyāra",
       "script": "العمل مهم لأني أريد سيارة",
       "cue": "Work is important because I want a car",
-      "glossEn": "lit. \"the-work important because-I I-want a-car\"",
       "literal": "the-work important because-I want-I car",
       "deconstruction": {
         "words": [
@@ -516,11 +566,17 @@
             "script": "مهم",
             "cue": "important",
             "tag": "free",
-            "forms": ["muhimm", "muhimma"],
+            "forms": [
+              "muhimm",
+              "muhimma"
+            ],
             "note": "\"Important\" — muhimm of a masculine thing, muhimma of a feminine one. The m at its end is held doubled, which is what the second m in the spelling is for."
           }
         ],
-        "rules": [1, 4]
+        "rules": [
+          1,
+          4
+        ]
       },
       "trap": "The first half is a verbless sentence about a thing, the second is a verb sentence about a person, and li-ʾannī is what lets them share a breath.",
       "sound": "al-ʿA-mal mu-HIMM li-ʾan-NEE u-REED say-YAA-ra — muhimm ends on a held m.",
@@ -558,7 +614,6 @@
       "display": "lā urīd al-qahwa li-ʾannī sa-anām",
       "script": "لا أريد القهوة لأني سأنام",
       "cue": "I don't want the coffee because I am going to sleep",
-      "glossEn": "lit. \"not I-want the-coffee because-I will-I-sleep\"",
       "literal": "not want-I the-coffee because-I will-sleep-I",
       "deconstruction": {
         "words": [
@@ -567,11 +622,19 @@
             "script": "سأنام",
             "cue": "I will sleep",
             "tag": "free",
-            "forms": ["sa-anām", "anām", "sa-tanām", "sa-yanām"],
-            "note": "M6's sa- on the verb \"sleep\": anām (I sleep) becomes sa-anām (I will sleep), and the person is still the prefix underneath — sa-tanām (you-m or she), sa-yanām (he). Strip the sa- and the same three are simply anām, tanām, yanām in the non-past. A reason can sit in any tense the course has taught."
+            "forms": [
+              "sa-anām",
+              "anām",
+              "sa-tanām",
+              "sa-yanām"
+            ],
+            "note": "M6's sa- on the verb \"sleep\": anām (I sleep) becomes sa-anām, the person still the prefix underneath — sa-tanām (you-m or she), sa-yanām (he). A reason can sit in any tense the course has taught."
           }
         ],
-        "rules": [0, 8]
+        "rules": [
+          0,
+          8
+        ]
       },
       "trap": "The negation is M3's lā and it stays on the VERB. The reason half has no negation at all — this level never negates a verbless sentence.",
       "sound": "LAA u-REED al-QAH-wa li-ʾan-NEE sa-a-NAAM.",

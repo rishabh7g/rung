@@ -3,14 +3,19 @@
   "id": "L1-M6",
   "title": "Tomorrow",
   "job": "Future and plans",
-  "prerequisites": ["L1-M5"],
+  "prerequisites": [
+    "L1-M5"
+  ],
   "verified": true,
   "verifiedBy": "Fable (Claude Fable 5) — LLM review, authorised by repo owner",
   "verifiedAt": "2026-08-24",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 7,
-    "allowedTenses": ["future", "simple_present"],
+    "allowedTenses": [
+      "future",
+      "simple_present"
+    ],
     "allowedPatterns": [
       "sa- + V-imperfect + ghadan",
       "sawfa + V-imperfect",
@@ -71,7 +76,6 @@
       "display": "sa-adhhab ilā al-madrasa ghadan",
       "script": "سأذهب إلى المدرسة غدًا",
       "cue": "I will go to school tomorrow",
-      "glossEn": "lit. \"will-I-go to the-school tomorrow\"",
       "literal": "will-go-I to the-school tomorrow",
       "deconstruction": {
         "words": [
@@ -80,8 +84,14 @@
             "script": "سأذهب",
             "cue": "I will go",
             "tag": "delta",
-            "forms": ["sa-adhhab", "sa-tadhhab", "sa-tadhhabīn", "sa-yadhhab", "sa-nadhhab"],
-            "note": "sa- is the whole future: a single letter glued to the front of M4's adhhab, and the verb underneath is untouched. It never changes for person — the person is still the prefix beneath it: sa-adhhab (I), sa-tadhhab (you-m or she), sa-yadhhab (he), sa-nadhhab (we) — and to a woman, M3's -īn tail rides through the future untouched: sa-tadhhabīn. It is not a word and cannot stand alone."
+            "forms": [
+              "sa-adhhab",
+              "sa-tadhhab",
+              "sa-tadhhabīn",
+              "sa-yadhhab",
+              "sa-nadhhab"
+            ],
+            "note": "sa- is the whole future: one letter glued onto M4's adhhab,. The person stays the prefix beneath: sa-adhhab (I), sa-tadhhab (you-m or she; sa-tadhhabīn to a woman), sa-yadhhab (he)."
           },
           {
             "display": "ghadan",
@@ -89,10 +99,14 @@
             "cue": "tomorrow",
             "tag": "free",
             "forms": [],
-            "note": "\"Tomorrow\", standing free at either end of the sentence like M5's ams. The -an is the adverbial ending this course writes, as in shukran and dāʾiman — as the adverb it is always ghadan, so never trim it to *ghad."
+            "note": "\"Tomorrow\", standing free at either end of the sentence like M5's ams. The -an is the adverbial ending this course writes, as in shukran and dāʾiman — never trim it to *ghad."
           }
         ],
-        "rules": [0, 1, 5]
+        "rules": [
+          0,
+          1,
+          5
+        ]
       },
       "trap": "sa- is not a word. It cannot be moved, spaced off the verb, or said on its own — it lives on the front of the verb the way al- lives on the front of a noun.",
       "sound": "sa-ADH-hab i-LAA al-MAD-ra-sa GHA-dan — the sa- is quick and unstressed, and the verb keeps the beat it had in M4.",
@@ -130,7 +144,6 @@
       "display": "sawfa adhhab ilā al-ʿamal ghadan",
       "script": "سوف أذهب إلى العمل غدًا",
       "cue": "I will go to work tomorrow",
-      "glossEn": "lit. \"shall I-go to the-work tomorrow\"",
       "literal": "shall go-I to the-work tomorrow",
       "deconstruction": {
         "words": [
@@ -140,10 +153,13 @@
             "cue": "will, shall",
             "tag": "free",
             "forms": [],
-            "note": "The other future marker, and the only one that is a word of its own: it stands in front of the verb with a space, where sa- is glued on. Same meaning, a heavier tread — sawfa is the \"I shall\" of the pair, and sa- is what people say all day."
+            "note": "The other future marker, and the only one that is a word of its own: it stands before the verb with a space, where sa- is glued on. Same meaning, heavier tread — sawfa is \"I shall\"; sa- is everyday."
           }
         ],
-        "rules": [2, 3]
+        "rules": [
+          2,
+          3
+        ]
       },
       "trap": "One marker, not two. sawfa and sa- do the same job, so *sawfa sa-adhhab doubles a marker English would only have said once.",
       "sound": "SAW-fa ADH-hab i-LAA al-ʿA-mal GHA-dan — sawfa is its own word and takes its own stress.",
@@ -181,7 +197,6 @@
       "display": "ghadan sa-ashrab qahwa fī aṣ-ṣabāḥ",
       "script": "غدًا سأشرب قهوة في الصباح",
       "cue": "Tomorrow I will drink a coffee in the morning",
-      "glossEn": "lit. \"tomorrow will-I-drink coffee in the-morning\"",
       "literal": "tomorrow will-drink-I coffee in the-morning",
       "deconstruction": {
         "words": [
@@ -190,11 +205,19 @@
             "script": "سأشرب",
             "cue": "I will drink",
             "tag": "delta",
-            "forms": ["sa-ashrab", "sa-tashrab", "sa-yashrab", "sa-nashrab"],
-            "note": "M3's ashrab with the same sa- on its front, and the same four persons underneath: sa-ashrab (I), sa-tashrab (you-m or she), sa-yashrab (he), sa-nashrab (we). One prefix serves every verb in the language — nothing here is special to drinking."
+            "forms": [
+              "sa-ashrab",
+              "sa-tashrab",
+              "sa-yashrab",
+              "sa-nashrab"
+            ],
+            "note": "M3's ashrab with sa- on its front, and the same persons underneath: sa-ashrab (I), sa-tashrab (you-m or she), sa-yashrab (he), sa-nashrab (we). One prefix serves every verb in the language."
           }
         ],
-        "rules": [0, 1]
+        "rules": [
+          0,
+          1
+        ]
       },
       "trap": "The time words you learned for habits work for plans unchanged: fī aṣ-ṣabāḥ is still \"in the morning\", and it is sa- alone that decides which morning.",
       "sound": "GHA-dan sa-ASH-rab QAH-wa fi ṣ-ṣa-BAAḤ — said, the fī melts into the article.",
@@ -232,7 +255,6 @@
       "display": "hal sa-tadhhab ilā as-sūq baʿd aẓ-ẓuhr?",
       "script": "هل ستذهب إلى السوق بعد الظهر؟",
       "cue": "Will you go to the market this afternoon? (to a man)",
-      "glossEn": "lit. \"question will-you-go to the-market after the-noon\"",
       "literal": "Q will-go-you to the-market after the-noon",
       "deconstruction": {
         "words": [
@@ -242,10 +264,14 @@
             "cue": "in the afternoon",
             "tag": "free",
             "forms": [],
-            "note": "Literally \"after the noon\", and learned whole like M4's fī aṣ-ṣabāḥ. ẓ is a sun letter, so the article assimilates and is written as it is said: aẓ-ẓuhr, never *al-ẓuhr. ẓuhr on its own is noon, the middle of the day."
+            "note": "Literally \"after the noon\", learned whole like M4's fī aṣ-ṣabāḥ. ẓ is a sun letter, so the article assimilates and is written as said: aẓ-ẓuhr, never *al-ẓuhr. ẓuhr on its own is noon."
           }
         ],
-        "rules": [1, 8, 9]
+        "rules": [
+          1,
+          8,
+          9
+        ]
       },
       "trap": "\"Will you…?\" reorders English and reorders nothing in Arabic: hal goes in front of the sentence you already had, and sa-tadhhab keeps its seat.",
       "sound": "hal sa-TADH-hab i-LAA as-SOOQ BAʿD aẓ-ẒUHR — the ẓ is heavy and the two of them run together as one long sound.",
@@ -283,7 +309,6 @@
       "display": "ghadan ākul fī al-bayt, in shāʾ Allāh",
       "script": "غدًا آكل في البيت، إن شاء الله",
       "cue": "Tomorrow I'll eat at home, God willing",
-      "glossEn": "lit. \"tomorrow I-eat in the-house, if willed God\"",
       "literal": "tomorrow eat-I in the-house, if willed God",
       "deconstruction": {
         "words": [
@@ -293,10 +318,13 @@
             "cue": "God willing, hopefully",
             "tag": "free",
             "forms": [],
-            "note": "Three words said as one, and attached to almost every plan in real speech by speakers of every background. It works the way English \"hopefully\" or \"all being well\" works: it softens a promise rather than making a religious claim. The medial hamza of shāʾ is written; Allāh keeps its long ā."
+            "note": "Three words said as one, attached to almost every plan in real speech. It works like \"hopefully\": it softens a promise. The hamza of shāʾ is written; Allāh keeps its long ā."
           }
         ],
-        "rules": [4, 10]
+        "rules": [
+          4,
+          10
+        ]
       },
       "trap": "No sa- here, and the sentence is still about tomorrow: ghadan alone is enough. Arabic marks the future once — English cannot resist a second \"will\".",
       "sound": "GHA-dan AA-kul fi l-BAYT, in SHAAʾ al-LAAH — said fast it runs together as inshaʾAllāh, one word.",
@@ -334,7 +362,6 @@
       "display": "sa-yakūn al-jaww bārid ghadan",
       "script": "سيكون الجو بارد غدًا",
       "cue": "The weather will be cold tomorrow",
-      "glossEn": "lit. \"will-be the-weather cold tomorrow\"",
       "literal": "will-be the-weather cold tomorrow",
       "deconstruction": {
         "words": [
@@ -343,11 +370,20 @@
             "script": "سيكون",
             "cue": "it will be, he will be",
             "tag": "delta",
-            "forms": ["sa-yakūn", "sa-akūn", "sa-takūn", "sa-nakūn", "yakūn"],
-            "note": "M5's kāna in the non-past, with sa- on the front: sa-akūn (I will be), sa-takūn (you-m or she), sa-yakūn (he or it), sa-nakūn (we). The bare yakūn is the same verb without the future marker. So \"to be\" is missing only from the present: the past needs kāna and the future needs yakūn."
+            "forms": [
+              "sa-yakūn",
+              "sa-akūn",
+              "sa-takūn",
+              "sa-nakūn",
+              "yakūn"
+            ],
+            "note": "M5's kāna in the non-past with sa-: sa-akūn (I will be), sa-takūn (you-m or she), sa-yakūn (he or it), sa-nakūn (we). \"To be\" is missing only from the present: the past needs kāna, the future yakūn."
           }
         ],
-        "rules": [0, 7]
+        "rules": [
+          0,
+          7
+        ]
       },
       "trap": "The three tenses of \"to be\" are not three verbs: al-jaww bārid (no verb) · kāna al-jaww bārid (past) · sa-yakūn al-jaww bārid (future). Only the present does without.",
       "sound": "sa-ya-KOON al-JAWW BAA-rid GHA-dan — jaww ends on a held, doubled w.",
@@ -385,7 +421,6 @@
       "display": "sa-akūn mashghūl ghadan",
       "script": "سأكون مشغول غدًا",
       "cue": "I will be busy tomorrow (said by a man)",
-      "glossEn": "lit. \"will-I-be busy tomorrow\"",
       "literal": "will-be-I busy tomorrow",
       "deconstruction": {
         "words": [
@@ -394,11 +429,17 @@
             "script": "مشغول",
             "cue": "busy",
             "tag": "free",
-            "forms": ["mashghūl", "mashghūla"],
-            "note": "\"Busy\" — mashghūl of a man, mashghūla of a woman, agreeing with the SUBJECT like every adjective since ṭālib/ṭāliba. Full MSA would put an accusative ending on it after kāna or yakūn; this course's pause forms drop it, exactly as M5 did with kuntu taʿbān."
+            "forms": [
+              "mashghūl",
+              "mashghūla"
+            ],
+            "note": "\"Busy\" — mashghūl of a man, mashghūla of a woman, agreeing with the subject. MSA adds a case ending after kāna or yakūn; this course drops it, as with kuntu taʿbān."
           }
         ],
-        "rules": [7, 1]
+        "rules": [
+          7,
+          1
+        ]
       },
       "trap": "Excusing yourself from tomorrow needs the verb. anā mashghūl is today; sa-akūn mashghūl is tomorrow.",
       "sound": "sa-a-KOON mash-GHOOL GHA-dan — the gh is a gargled g, the same letter as in ghadan.",
@@ -436,7 +477,6 @@
       "display": "sa-adhhab ilā as-sūq al-usbūʿ al-qādim",
       "script": "سأذهب إلى السوق الأسبوع القادم",
       "cue": "I will go to the market next week",
-      "glossEn": "lit. \"will-I-go to the-market the-week the-coming\"",
       "literal": "will-go-I to the-market the-week the-coming",
       "deconstruction": {
         "words": [
@@ -446,10 +486,13 @@
             "cue": "next week",
             "tag": "delta",
             "forms": [],
-            "note": "usbūʿ is a week and qādim is \"coming\", and the two are M3's noun-plus-adjective pattern with both halves carrying al-: al-usbūʿ al-qādim, \"the week, the coming one\". It wears no -an — it is an ordinary noun phrase put to adverbial work, exactly like M4's al-yawm."
+            "note": "usbūʿ is a week and qādim is \"coming\" — M3's noun-plus-adjective pattern with both halves carrying al-: \"the week, the coming one\". No -an: an ordinary noun phrase doing adverbial work, like al-yawm."
           }
         ],
-        "rules": [6, 0]
+        "rules": [
+          6,
+          0
+        ]
       },
       "trap": "Both words take al-, because M3's law is still running: a definite noun takes a definite adjective. Drop one article and you have said \"a week is the coming one\".",
       "sound": "sa-ADH-hab i-LAA as-SOOQ al-us-BOOʿ al-QAA-dim — the ʿ closes usbūʿ off in the throat.",
@@ -487,7 +530,6 @@
       "display": "qarīban sa-adhhab ilā al-Hind",
       "script": "قريبًا سأذهب إلى الهند",
       "cue": "Soon I will go to India",
-      "glossEn": "lit. \"soon will-I-go to the-India\"",
       "literal": "soon will-go-I to the-India",
       "deconstruction": {
         "words": [
@@ -500,7 +542,10 @@
             "note": "\"Soon\", from qarīb (near) — nearness in time rather than in space. Another adverb wearing the written -an, beside ghadan, dāʾiman and aḥyānan; it sits at either end of the sentence."
           }
         ],
-        "rules": [5, 0]
+        "rules": [
+          5,
+          0
+        ]
       },
       "trap": "qarīban is vaguer than ghadan and just as future: with no sa- at all, qarīban adhhab ilā al-Hind would still be a plan.",
       "sound": "qa-REE-ban sa-ADH-hab i-LAA al-HIND — the q comes from the very back of the throat, as in as-sūq.",
@@ -538,7 +583,6 @@
       "display": "ghadan sa-ākul al-khubz wa sa-ashrab al-ḥalīb",
       "script": "غدًا سآكل الخبز وسأشرب الحليب",
       "cue": "Tomorrow I will eat the bread and drink the milk",
-      "glossEn": "lit. \"tomorrow will-I-eat the-bread and will-I-drink the-milk\"",
       "literal": "tomorrow will-eat-I the-bread and will-drink-I the-milk",
       "deconstruction": {
         "words": [
@@ -547,11 +591,18 @@
             "script": "سآكل",
             "cue": "I will eat",
             "tag": "delta",
-            "forms": ["sa-ākul", "sa-taʾkul", "sa-yaʾkul"],
-            "note": "M4's ākul with sa- in front. The long ā of ākul is the I-prefix and the hamza hides inside it; the other persons put the hamza back on the page — sa-taʾkul (you-m or she), sa-yaʾkul (he). Written joined, one word, as every sa- verb is."
+            "forms": [
+              "sa-ākul",
+              "sa-taʾkul",
+              "sa-yaʾkul"
+            ],
+            "note": "M4's ākul with sa- in front. The long ā of ākul is the I-prefix with the hamza hidden inside; the other persons put it back — sa-taʾkul (you-m or she), sa-yaʾkul (he). Written joined, one word."
           }
         ],
-        "rules": [0, 1]
+        "rules": [
+          0,
+          1
+        ]
       },
       "trap": "Each verb carries its own sa-, the way M5's verbs each carried their own -tu. English says \"will\" once and lets it cover both halves.",
       "sound": "GHA-dan SAA-kul al-KHUBZ wa sa-ASH-rab al-ḥa-LEEB — sa-ākul runs into one long aa.",
