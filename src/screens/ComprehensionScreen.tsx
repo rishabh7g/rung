@@ -1,6 +1,6 @@
 /**
  * The exit ritual's second half (#102; PRD §8 F5, PRD-design §6.6 flow 6; prototype →
- * design/Rung App v3.3.dc.html → Comprehend, item, reveal and the retry interstitial).
+ * design/Rung App v3.3.dc.html → Comprehend, item and reveal).
  *
  * Two sentences from the rung's comprehension pool, read for meaning, checked against the
  * scripted answer, and self-marked — and a retry that always deals **fresh** sentences, forever,
@@ -47,13 +47,9 @@ import { currentRungId, deriveStatuses } from '../engine/progression.ts';
 import type { Mark } from '../components/SelfMark.tsx';
 import { handover, HOME_PATH, VERDICT_PATH } from '../shell/routes.tsx';
 import { ComprehensionItem } from './comprehension/ComprehensionItem.tsx';
-import { RetryInterstitial } from './comprehension/RetryInterstitial.tsx';
 import { rungLabel } from './ladder/rungLabel.ts';
 import { useProgression } from './useProgression.ts';
 import styles from './ComprehensionScreen.module.css';
-
-/** The ritual's two parts — the arc (#100) and this one, which `RitualScreen` counts as `1 / 2`. */
-const RITUAL_PARTS = 2;
 
 /**
  * The route's component: it answers "which rung, if any", "was the hold paid" and "is the ritual
@@ -153,8 +149,8 @@ interface Attempt {
   marks: Mark[];
   /** Every id dealt this visit, oldest first — `drawItems`' exclusion list. */
   used: string[];
-  /** The retry interstitial is up: the last attempt had a "not quite" in it. */
-  retry: boolean;
+  /** A round after the first — dealt because the one before it held a miss (#402). */
+  redrawn: boolean;
 }
 
 function ComprehensionRound({ moduleId, pool, count }: ComprehensionRoundProps) {
@@ -210,14 +206,14 @@ function ComprehensionRound({ moduleId, pool, count }: ComprehensionRoundProps) 
       return;
     }
 
-    // The interstitial, and the marks are dropped on the way into it: what went wrong is the
+    // The redraw, and the marks are dropped on the way into it: what went wrong is the
     // learner's to know, and the app is finished with it (Invariant 4).
-    setAttempt({ ...attempt, marks: [], retry: true });
-  }
-
-  /** "Fresh sentences": a new attempt, excluding everything this visit has already used. */
-  function fresh(): void {
-    setAttempt(deal(pool, attempt.used, count));
+    // A round with a miss in it redraws AT ONCE (#402). There used to be a whole screen here —
+    // a kicker, a title and one button, three phrasings of "again" for the learner to tap through
+    // — and the items after the miss had already said the round would redraw. The fresh round's
+    // first card says it has (`redrawn`), and that is the announcement. `used` still excludes
+    // everything this visit has already dealt, so fresh means fresh.
+    setAttempt(deal(pool, attempt.used, count, true));
   }
 
   return (
@@ -225,37 +221,26 @@ function ComprehensionRound({ moduleId, pool, count }: ComprehensionRoundProps) 
       <div className={styles.head}>
         {/* Structural furniture, like the module list's `M1 · MODULE` — raised on #71. */}
         <p className={styles.kicker}>{rungLabel(moduleId)} · EXIT RITUAL</p>
-        {/* The prototype's "part 2 of 2 · 1 of 2", as counts. The item's position belongs to an
-            item, so the interstitial — which is not one — shows only the part. */}
-        <p className={styles.part}>
-          {`${RITUAL_PARTS} / ${RITUAL_PARTS}`}
-          {!attempt.retry && item !== undefined && (
-            <span className={styles.position}>
-              {` · ${attempt.idx + 1} / ${attempt.items.length}`}
-            </span>
-          )}
-        </p>
+        {/* Counts, never time: which item of how many. It used to be prefixed `2 / 2 ·` — "part
+            2 of 2" — from when a write step preceded comprehension; that part went with #348/#349
+            and its count with #402. Two fractions side by side were a code nobody was given. */}
+        {item !== undefined && (
+          <p className={styles.position}>
+            {attempt.idx + 1} / {attempt.items.length}
+          </p>
+        )}
       </div>
 
-      {attempt.retry ? (
-        <RetryInterstitial onFresh={fresh} dir={course.dir} />
-      ) : (
-        item !== undefined && (
-          // Keyed by the item, so a new sentence is a new card: the reveal, the mark and the
-          // "why" belong to the line they were opened for and nothing survives into the next.
-          <ComprehensionItem
-            key={item.id}
-            item={item}
-            onMark={mark}
-            // The round already holds a "not quite" (#318): the redraw is certain, so the item
-            // says so while the learner can still act on it. It stays a fact about THIS visit —
-            // `marks` is dropped the moment the interstitial opens, so nothing survives the round
-            // that could tell a later screen what went wrong (Invariant 4).
-            redrawing={attempt.marks.includes('miss')}
-            dir={course.dir}
-            l2={l2Written(course)}
-          />
-        )
+      {item !== undefined && (
+        <ComprehensionItem
+          key={item.id}
+          item={item}
+          onMark={mark}
+          redrawing={attempt.marks.includes('miss')}
+          redrawn={attempt.redrawn && attempt.idx === 0}
+          dir={course.dir}
+          l2={l2Written(course)}
+        />
       )}
     </section>
   );
@@ -263,9 +248,14 @@ function ComprehensionRound({ moduleId, pool, count }: ComprehensionRoundProps) 
 
 /** A fresh attempt off the pool, and the used list it grows. The one place a draw is turned into
  * state, so "what has this visit seen" cannot fall out of step with "what is on screen". */
-function deal(pool: readonly PoolItem[], used: readonly string[], count: number): Attempt {
+function deal(
+  pool: readonly PoolItem[],
+  used: readonly string[],
+  count: number,
+  redrawn = false,
+): Attempt {
   const ids = drawItems({ pool: pool.map((item) => item.id), used, count });
   const items = ids.flatMap((id) => pool.filter((item) => item.id === id));
 
-  return { items, idx: 0, marks: [], used: [...used, ...ids], retry: false };
+  return { items, idx: 0, marks: [], used: [...used, ...ids], redrawn };
 }

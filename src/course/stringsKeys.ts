@@ -50,11 +50,8 @@ export const STRINGS_KEYS = [
   'cueLabel',
   'revealLabel',
   'revealLabelComprehend',
-  'retry.kicker',
   'retry.title',
-  'retry.cta',
   'retry.pending',
-  'ordinal',
   'ladder.sealedToast',
   'rungCard.startModule',
   'rungCard.practice',
@@ -68,6 +65,8 @@ export const STRINGS_KEYS = [
   'sentence.done',
   'sentence.nextModule',
   'sentence.prevModule',
+  'sentence.deeper',
+  'sentence.less',
   'mark.gotIt',
   'mark.missed',
   'why.show',
@@ -83,7 +82,6 @@ export const STRINGS_KEYS = [
   'practice.backToLadder',
   'practice.resumeContinue',
   'practice.resumeNew',
-  'verdict.checkSentence',
   'verdict.checkComprehension',
   'verdict.line',
   'verdict.toLadder',
@@ -129,7 +127,7 @@ export type StringsKey = (typeof STRINGS_KEYS)[number];
 
 /**
  * The `{brace}` placeholders each value must carry — the same in every course, because the shell
- * interpolates the same runtime values whatever the language. A translation that drops `{ordinal}`
+ * interpolates the same runtime values whatever the language. A translation that drops `{count}`
  * loses the sentence number silently, and one that invents `{name}` renders the braces verbatim;
  * both are build failures, checked as a SET (order and repetition are the translator's business).
  *
@@ -141,23 +139,19 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   revealLabel: [],
   revealLabelComprehend: [],
   /**
-   * What is left of the retry interstitial's five layers (tokens.md §6.3), top to bottom — kicker,
-   * title, CTA; the body and the reassurance were read-once prose and went on #231. All course
-   * copy, all counterless by construction: none interpolates, because an attempt number is the one
-   * thing that screen must never render (Invariant 4).
+   * The retry's two lines (#318, #402) — both on the ITEM, because there is no interstitial any
+   * more: a round with a miss in it redraws the moment it ends, and the fresh round's first card
+   * says so. There used to be a whole screen between the two rounds — a kicker, a title and one
+   * button, three phrasings of "again" for the learner to tap through — and #402 took it out.
    *
-   * `retry.pending` (#318) is the fourth, and it belongs to the ITEM rather than the interstitial:
-   * once a round holds a "not quite" the redraw is certain, and the learner finishing the remaining
-   * item deserves to know they are practising rather than still being tested. It says the round
-   * redraws — never how many items were missed, and never which: the marks are dropped on the way
-   * into the interstitial and there is no number here to render.
+   * `retry.pending` is said on the items AFTER a miss, mid-round: the redraw is already certain,
+   * and the learner finishing the remaining item deserves to know they are practising rather than
+   * still being tested. `retry.title` is said once more on the fresh round's first card. Neither
+   * names a count, an item or a failure — the marks are dropped on the way into the redraw, so
+   * there is nothing to count with even if a line wanted to (Invariant 4).
    */
-  'retry.kicker': [],
   'retry.title': [],
-  'retry.cta': [],
   'retry.pending': [],
-  /** The number to ordinalise. */
-  ordinal: ['{n}'],
   /** The sealed level, and how many rungs below it are left — the honest half of the seal rule. */
   'ladder.sealedToast': ['{level}', '{remaining}'],
   /**
@@ -231,6 +225,15 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'sentence.done': [],
   'sentence.nextModule': [],
   'sentence.prevModule': [],
+  /**
+   * The disclosure between the sentence's own tier and the depth beneath it (#401): Sentence
+   * Detail shows the sentence, its words, its trap and the thing to pocket, and puts the other six
+   * sections — gloss, rules, sound, variations, mistake, usage — behind one control. Two labels
+   * because it says what it will DO, and the same rule `why.*` learned on #390: never a question,
+   * always the action ("go deeper" / "less").
+   */
+  'sentence.deeper': [],
+  'sentence.less': [],
   /**
    * The gated self-mark [D11] (#93) — the three words the reveal card owns. `gotIt` and `missed`
    * are the two segments, and `next` is the control that only exists once one segment is chosen.
@@ -356,16 +359,17 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'practice.resumeContinue': [],
   'practice.resumeNew': [],
   /**
-   * The Verdict (#103) — the pass checklist and the way back to the ladder (PRD-design §6.7
+   * The Verdict (#103) — the pass receipt and the way back to the ladder (PRD-design §6.7
    * flow 7). The prototype writes them in English for every course, which is what a prototype does
    * and what this product cannot: they are the last words of the ritual, and the ritual is the
    * course's.
    *
-   * The two checklist lines are the receipt for what the learner actually did, in the PRD's own
-   * order — wrote the sentence, self-marked the comprehension — and both carry a number, because a
-   * number's place in a sentence is the language's business: `{ordinal}` is the course's own word
-   * for "the 11th" (`ordinal`, rendered by the caller, as `ritual.confirm.holdLabel` does), and
-   * `{count}` of `{total}` is the comprehension, both from the module's own
+   * **One receipt line, not two** (#400). There was a `checkSentence` for "the 11th sentence —
+   * written in your notebook", and an `ordinal` key to say "11th" in the course's own word. The
+   * ritual has had no such step since #348/#349 retired notebook writing, so the line was a
+   * receipt for work the app never asked for — a false one — and both keys went with it.
+   *
+   * `checkComprehension` carries `{count}` of `{total}`, both from the module's own
    * `exitTest.comprehendCount` — every item was marked "same meaning", because anything else is a
    * retry rather than a verdict — so a module that asked for three items reads "3 of 3" with no
    * code change. Two names rather than one repeated, so a course can put them in its own order —
@@ -373,7 +377,6 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    *
    * `verdict.toLadder` is the CTA that fires the unlock beat.
    */
-  'verdict.checkSentence': ['{ordinal}'],
   'verdict.checkComprehension': ['{count}', '{total}'],
   /** The rung that just opened. */
   'verdict.line': ['{nextModule}'],

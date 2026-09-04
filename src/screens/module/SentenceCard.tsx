@@ -29,7 +29,6 @@ import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import type { L2Written } from '../../course/manifest.ts';
 import type { Sentence } from '../../course/types.ts';
-import { RegistrationMarks } from '../RegistrationMarks.tsx';
 import { ProductionDots } from './ProductionDots.tsx';
 import styles from './SentenceCard.module.css';
 
@@ -46,8 +45,6 @@ interface SentenceCardProps {
 export function SentenceCard({ sentence, produced, dir, l2 }: SentenceCardProps) {
   return (
     <li className={styles.card}>
-      <RegistrationMarks />
-
       <Link className={styles.open} to={`/sentence/${sentence.id}`} dir={dir}>
         <span className={styles.lines}>
           <span className={styles.display} dir={l2?.display.dir} lang={l2?.display.lang}>

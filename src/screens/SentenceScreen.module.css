@@ -95,6 +95,39 @@
   gap: var(--space-2);
 }
 
+/* The disclosure between the tiers (#401) — the same ghost the "why" panel's toggle is
+   (`components/WhyPanel.module.css`): course words at the floor, accent, no frame, full width so
+   it reads as a rule between the two halves rather than a button floating in one of them. */
+.deeper {
+  composes: courseProse;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: var(--ghost-height);
+  padding: var(--space-2) 0;
+  background: none;
+  border: 0;
+  border-top: var(--border-hairline);
+  border-bottom: var(--border-hairline);
+  color: var(--color-accent);
+  text-align: start;
+  cursor: pointer;
+  /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.deeper:active {
+  background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+}
+
+/* The lower tier, open — the same column rhythm the article keeps between sections. */
+.depth {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
 /* ---------------------------------------------------------------------- 1 · hero */
 
 .hero {

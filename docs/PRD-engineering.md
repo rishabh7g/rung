@@ -227,6 +227,8 @@ Each feature lists requirements (R) and acceptance criteria (AC), written to con
 
 ### F6 — Exit test: Generate ("the 11th sentence")
 
+> **Retired** (#348/#349). Notebook writing left the product, and this part with it — no input element exists anywhere in the app (Invariant 6). The exit ritual is F7 alone. Kept as the design record; nothing in F6 is current behaviour, and the Verdict no longer certifies an 11th sentence (#400).
+
 - Flow: prompt ("Write a new sentence at this module's level — not one of the 10") → learner types → **instant scripted checks** → checklist result → **external verification hand-off** → attestation → verdict.
 - R: The three mechanical checks, all offline and deterministic:
   - **Novelty:** normalised Levenshtein similarity vs each of the 10 model sentences; similarity ≥ 0.85 with any → fail with "too close to sentence M1-S0x". Threshold is config. **[Q3]**
@@ -239,7 +241,9 @@ Each feature lists requirements (R) and acceptance criteria (AC), written to con
 
 ### F7 — Exit test: Comprehend
 
-- R: Show 2 random items from the module's pre-authored `comprehensionPool` as **Marathi text** (never live-generated). No repeats within one test.
+- R: Show `exitTest.comprehendCount` (2) random items from the module's pre-authored `comprehensionPool` as **L2 text** (never live-generated). No repeats within one test, and a redraw excludes everything already dealt this visit until the pool exhausts. The head shows the item's position (`1 / 2`) and no part count — the ritual has one part (#402).
+- R: A round with a miss in it redraws at once when it ends: the items after the miss carry a one-line note that fresh sentences follow, and the fresh round's first card carries one more. No interstitial screen, no attempt counter, nothing counted against the learner.
+- R: The Verdict's receipt is one line — the comprehension items, all marked (#400).
 - R: Learner writes the meaning in Hindi → submit reveals the scripted `answerHi` model answer → learner self-marks correct / incorrect against it (meaning-equivalence, not word-for-word — the model answer may show 1–2 phrasings). Both correct → comprehend passes. Generate + Comprehend both passed → module passed.
 - AC: Pool items never repeat within a test; the model answer is revealed only after submission; self-marks are persisted per attempt.
 

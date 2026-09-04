@@ -2,15 +2,21 @@
  * Sentence Detail (#89; PRD §8 F3 [D10]; PRD-design §6.4, §7) — one sentence, taken apart, in the
  * order the design froze and in no other.
  *
- * **The order is the feature.** Ten sections, always in this sequence, because a learner who
- * opens a second sentence must find the same shape in the same place:
+ * **The order is the feature, and it is now in two tiers** (#401). A learner who opens a second
+ * sentence must find the same shape in the same place, so within each tier the sequence is fixed:
  *
- *   hero → gloss → words → rules → trap → sound → variations → mistake → usage → mnemonic
+ *   ALWAYS:  hero → words → trap  ·  [go deeper]  ·  mnemonic
+ *   DEEPER:  gloss → rules → sound → variations → mistake → usage
  *
- * It runs from "what it says" to "why it says it" to "what will trip you" and lands on the one
- * thing worth carrying away — the mnemonic, labelled with the course's own "pocket it". The
- * order is asserted as a DOM fact in `SentenceScreen.test.tsx` (every section carries a
- * `data-section`), not left to the reading order of this file.
+ * The first tier is what a sentence IS — the line, its words, the one thing that will bite — and
+ * it lands on the one thing worth carrying away, the mnemonic, labelled with the course's own
+ * "pocket it". The second is everything else the course has to say, behind one control, in the
+ * order it always had. It used to be ten sections in one column, three screens for every
+ * sentence of every module (every optional block ships on every sentence — measured on M1, M3,
+ * M4, M7, M10), and most of the lower half restated the upper: the gloss says the literal, a
+ * word's note says its rule, the trap and the note both warn off the same mistake. That is the
+ * reading path a first-time learner walks ten times a module, and it was the most information
+ * anywhere in the app. Every section carries a `data-section`, as before.
  *
  * **A section with nothing in it renders NOTHING** — no heading, no empty plate, no "not
  * available". Enrichment is optional in the schema past M3 (`src/course/types.ts`), en-es and
@@ -34,7 +40,7 @@
  * bottom of the screen's own column. Everything else — including the section order — is the
  * prototype's, and the type sizes are the standing 18px-Mukta divergence recorded in the CSS.
  */
-import { useLayoutEffect } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, TriangleAlert } from 'lucide-react';
 import { ContentErrorScreen } from '../course/BootScreens.tsx';
@@ -89,6 +95,11 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
   const production = useAppStore((store) => store.courses[course.id]?.production);
   const scrollArea = useScrollArea();
   const navigate = useNavigate();
+  // `setDeeper`, never `setState`: `src/state/unlockPath.test.ts` scans the shell for that call and
+  // the store's actions are the only place allowed to make it (Invariant 1). Closed on every
+  // sentence — the detail is keyed by id, so prev/next remounts it shut (#401).
+  const [deeper, setDeeper] = useState(false);
+  const deeperId = `sentence-deeper-${sentenceId}`;
 
   /**
    * The same guard the module list keeps (#88), for the same reason: `/sentence/:id` is a real
@@ -245,31 +256,6 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
         )}
       </section>
 
-      {/* 2 · gloss — the English gloss, then the word-for-word line. Both are optional: the build
-          requires the gloss wherever the L2 is not English (#268), and where the L2 IS English the
-          sentence carries none, because it would print the hero twice. So the section obeys the
-          rule every other optional section does — nothing to show, nothing rendered. */}
-      {(sentence.glossEn !== undefined || sentence.literal !== undefined) && (
-        <section data-section="gloss" className={styles.section}>
-          {/* The gloss is English wherever it exists — in hi-mr that is a THIRD language on the
-              screen — so it is the one line that declares its language as a literal rather than
-              through the manifest (`langLaw.test.tsx`). */}
-          {sentence.glossEn !== undefined && (
-            <p className={styles.gloss} lang="en">
-              {sentence.glossEn}
-            </p>
-          )}
-          {sentence.literal !== undefined && (
-            <div className={styles.plateAccent}>
-              <h3 className={styles.sectionLabel}>WORD-FOR-WORD</h3>
-              <p className={styles.prose} dir={course.dir}>
-                {sentence.literal}
-              </p>
-            </div>
-          )}
-        </section>
-      )}
-
       {/* 3 · words — the rows the "why" resolver lands on (PRD §6.3): word, cue, tag, note, forms. */}
       {sentence.deconstruction.words.length > 0 && (
         <section data-section="words" className={styles.section}>
@@ -306,23 +292,6 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
         </section>
       )}
 
-      {/* 4 · rules — the module's own, resolved from this sentence's indices. */}
-      {rules.length > 0 && (
-        <section data-section="rules" className={styles.section}>
-          <h3 className={styles.sectionLabel}>RULES USED</h3>
-          <ul className={styles.rules}>
-            {rules.map(({ index, rule }) => (
-              <li key={index} className={styles.rule}>
-                <TagChip tag={rule.tag} />
-                <span className={styles.prose} dir={course.dir}>
-                  {rule.text}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
       {/* 5 · trap — the one loud object on the screen (design/tokens.md §7 rule 2). Its heading is
           the course's, because "Hindi will mislead you" is a sentence about the learner's own
           first language. */}
@@ -340,73 +309,135 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
         </section>
       )}
 
-      {/* 6 · sound — how it is said, in the course's words. No audio, ever (Invariant 5). */}
-      {sentence.sound !== undefined && (
-        <section data-section="sound" className={styles.plateQuiet}>
-          <h3 className={styles.sectionLabel}>SOUND NOTE</h3>
-          <p className={styles.prose} dir={course.dir}>
-            {sentence.sound}
-          </p>
-        </section>
-      )}
+      {/* THE DISCLOSURE (#401). Above it is what a sentence IS — the line, its words, and the one
+          thing that will bite; below it, still in the frozen order, is everything else the course
+          has to say about it. Six sections and three screens per sentence was the reading path a
+          first-timer walked ten times a module, and most of it restated the tier above (the gloss
+          says the literal; a word's note says its rule). Nothing is removed and nothing moves:
+          one control, and the depth is one tap away for the sentence that earns the question. */}
+      <button
+        type="button"
+        className={styles.deeper}
+        aria-expanded={deeper}
+        // Only while there is one: a reference to an id no element has is a broken reference
+        // (`WhyPanel`'s call, #88's before it).
+        aria-controls={deeper ? deeperId : undefined}
+        onClick={() => {
+          setDeeper(!deeper);
+        }}
+        dir={course.dir}
+      >
+        {deeper ? strings['sentence.less'] : strings['sentence.deeper']}
+      </button>
 
-      {/* 7 · variations — same frame, one part swapped, and the swapped part is filled. */}
-      {variations.length > 0 && (
-        <section data-section="variations" className={styles.section}>
-          <h3 className={styles.sectionLabel}>SAME PATTERN, SWAPPED PARTS</h3>
-          <ul className={styles.rows}>
-            {variations.map((variation, index) => (
-              <li key={`${variation.display}-${index}`} className={styles.variation}>
-                <p className={styles.variationLine} dir={l2.display.dir} lang={l2.display.lang}>
-                  {changedTokens(sentence.display, variation.display).map((token, position) => (
-                    <span
-                      key={`${token.text}-${position}`}
-                      className={token.changed ? styles.changed : undefined}
-                    >
-                      {token.text}
+      {deeper && (
+        <div id={deeperId} className={styles.depth}>
+          {/* 2 · gloss — the English gloss, then the word-for-word line. Both are optional: the build
+            requires the gloss wherever the L2 is not English (#268), and where the L2 IS English the
+            sentence carries none, because it would print the hero twice. So the section obeys the
+            rule every other optional section does — nothing to show, nothing rendered. */}
+          {(sentence.glossEn !== undefined || sentence.literal !== undefined) && (
+            <section data-section="gloss" className={styles.section}>
+              {/* The gloss is English wherever it exists — in hi-mr that is a THIRD language on the
+                screen — so it is the one line that declares its language as a literal rather than
+                through the manifest (`langLaw.test.tsx`). */}
+              {sentence.glossEn !== undefined && (
+                <p className={styles.gloss} lang="en">
+                  {sentence.glossEn}
+                </p>
+              )}
+              {sentence.literal !== undefined && (
+                <div className={styles.plateAccent}>
+                  <h3 className={styles.sectionLabel}>WORD-FOR-WORD</h3>
+                  <p className={styles.prose} dir={course.dir}>
+                    {sentence.literal}
+                  </p>
+                </div>
+              )}
+            </section>
+          )}
+          {/* 4 · rules — the module's own, resolved from this sentence's indices. */}
+          {rules.length > 0 && (
+            <section data-section="rules" className={styles.section}>
+              <h3 className={styles.sectionLabel}>RULES USED</h3>
+              <ul className={styles.rules}>
+                {rules.map(({ index, rule }) => (
+                  <li key={index} className={styles.rule}>
+                    <TagChip tag={rule.tag} />
+                    <span className={styles.prose} dir={course.dir}>
+                      {rule.text}
                     </span>
-                  ))}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+          {/* 6 · sound — how it is said, in the course's words. No audio, ever (Invariant 5). */}
+          {sentence.sound !== undefined && (
+            <section data-section="sound" className={styles.plateQuiet}>
+              <h3 className={styles.sectionLabel}>SOUND NOTE</h3>
+              <p className={styles.prose} dir={course.dir}>
+                {sentence.sound}
+              </p>
+            </section>
+          )}
+          {/* 7 · variations — same frame, one part swapped, and the swapped part is filled. */}
+          {variations.length > 0 && (
+            <section data-section="variations" className={styles.section}>
+              <h3 className={styles.sectionLabel}>SAME PATTERN, SWAPPED PARTS</h3>
+              <ul className={styles.rows}>
+                {variations.map((variation, index) => (
+                  <li key={`${variation.display}-${index}`} className={styles.variation}>
+                    <p className={styles.variationLine} dir={l2.display.dir} lang={l2.display.lang}>
+                      {changedTokens(sentence.display, variation.display).map((token, position) => (
+                        <span
+                          key={`${token.text}-${position}`}
+                          className={token.changed ? styles.changed : undefined}
+                        >
+                          {token.text}
+                        </span>
+                      ))}
+                    </p>
+                    <p className={styles.variationCue} dir={course.dir}>
+                      {variation.cue}
+                    </p>
+                    <p className={styles.variationChanged} dir={course.dir}>
+                      {variation.changed}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+          {/* 8 · mistake — struck, on the NEUTRAL plate: wrong L2 is information, not a warning. */}
+          {sentence.mistake !== undefined && (
+            <section data-section="mistake" className={styles.section}>
+              <h3 className={styles.sectionLabel}>COMMON MISTAKE</h3>
+              <div className={styles.mistake}>
+                <p className={styles.mistakeDisplay} dir={l2.display.dir} lang={l2.display.lang}>
+                  {sentence.mistake.display}
                 </p>
-                <p className={styles.variationCue} dir={course.dir}>
-                  {variation.cue}
+                <p className={styles.prose} dir={course.dir}>
+                  {sentence.mistake.why}
                 </p>
-                <p className={styles.variationChanged} dir={course.dir}>
-                  {variation.changed}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {/* 8 · mistake — struck, on the NEUTRAL plate: wrong L2 is information, not a warning. */}
-      {sentence.mistake !== undefined && (
-        <section data-section="mistake" className={styles.section}>
-          <h3 className={styles.sectionLabel}>COMMON MISTAKE</h3>
-          <div className={styles.mistake}>
-            <p className={styles.mistakeDisplay} dir={l2.display.dir} lang={l2.display.lang}>
-              {sentence.mistake.display}
-            </p>
-            <p className={styles.prose} dir={course.dir}>
-              {sentence.mistake.why}
-            </p>
-          </div>
-        </section>
-      )}
-
-      {/* 9 · usage — when a person actually says this, with the register beside it. */}
-      {sentence.usage !== undefined && (
-        <section data-section="usage" className={styles.plateQuiet}>
-          <p className={styles.usageHead}>
-            <span className={styles.sectionLabel}>WHEN TO USE IT</span>
-            {sentence.register !== undefined && (
-              <span className={styles.register}>{sentence.register}</span>
-            )}
-          </p>
-          <p className={styles.prose} dir={course.dir}>
-            {sentence.usage}
-          </p>
-        </section>
+              </div>
+            </section>
+          )}
+          {/* 9 · usage — when a person actually says this, with the register beside it. */}
+          {sentence.usage !== undefined && (
+            <section data-section="usage" className={styles.plateQuiet}>
+              <p className={styles.usageHead}>
+                <span className={styles.sectionLabel}>WHEN TO USE IT</span>
+                {sentence.register !== undefined && (
+                  <span className={styles.register}>{sentence.register}</span>
+                )}
+              </p>
+              <p className={styles.prose} dir={course.dir}>
+                {sentence.usage}
+              </p>
+            </section>
+          )}
+        </div>
       )}
 
       {/* 10 · mnemonic — last, always: the one thing to carry away. A blueprint object, so it

@@ -61,10 +61,10 @@ Because Hindi and Marathi are close, every word and rule carries one of three ta
 ## 4. Information architecture
 
 - **Ladder (home).** The 10-checkpoint map; entry point to everything.
-- **Module.** The 10 sentences of the current rung + deconstruction.
+- **Module.** The 10 sentences of the current rung, as rows; each opens Sentence Detail, where the deconstruction lives in two tiers.
 - **Practice.** The guided 20–30 min session: 15 cards, one card type, cue → guess → reveal → self-mark.
-- **Exit Test.** Two parts: Generate ("the 11th sentence") and Comprehend.
-- **Verdict.** Checklist results, hand-off, attestation, pass/fail states.
+- **Exit Test.** Comprehend only. (Generate — "the 11th sentence" — was retired with notebook writing, #348/#349; its section below is kept as the design record.)
+- **Verdict.** One receipt line and the unlock moment.
 - Secondary: minimal Settings (three cards — course, the elapsed-tick toggle, backup), first-run onboarding (≤ 3 screens).
 
 Navigation model: Ladder is home; Module/Practice/Exit are children of the active rung. Bottom nav vs hub-and-spoke — your call. **[Q1]**
@@ -91,8 +91,14 @@ Navigation model: Ladder is home; Module/Practice/Exit are children of the activ
 
 ### Module
 
-- Must show: sentence cards (Marathi primary, Hindi cue secondary, English gloss on demand); expandable deconstruction (word rows with free/delta/interference chips, accepted forms, rules used, interference-trap callouts); per-sentence production dots ("each sentence written ×2 opens the exit test" — dots, never a percent bar).
+- Must show: ten sentence ROWS (L2 primary, L1 cue secondary, the quiet script line in romanized courses), hairline-separated — not ten framed plates; per-sentence production dots (one got-it per sentence opens the exit ritual — dots, never a percent bar). Each row opens Sentence Detail.
 - Interference traps use the warning affordance from §8.
+
+### Sentence Detail
+
+- Must show, always, in this order: the sentence (L2, cue, script), WORD BY WORD (free/delta/interference chips, forms, notes), the interference trap, and "Pocket it" last. That is what a sentence is, what will bite, and the one thing to carry away.
+- Behind ONE disclosure ("go deeper" / "less"), in this order: gloss and word-for-word, rules used, sound note, variations, common mistake, when to use it. Closed on every sentence; prev/next never carries it over.
+- Must not show: ten always-open sections. Three screens per sentence was the reading path a first-timer walked ten times a module (#401).
 
 ### Practice
 
@@ -102,16 +108,19 @@ Navigation model: Ladder is home; Module/Practice/Exit are children of the activ
 
 ### Exit Test — Generate
 
+> **Retired** (#348/#349). Notebook writing left the product, and with it this whole part: no input, no checklist, no hand-off, no attestation. Kept as the design record; nothing below is current behaviour.
+
 - Must show: the constraint in one line; Devanagari input with quick-insert strip; submit; the three-item checklist with pass/fail states and specific failure details; the hand-off card (sentence embedded in a copyable request, copy confirmation, internet-check suggestion); the attestation chooser (3 explicit options — this is a deliberate honesty ritual, give it weight without friction).
 
 ### Exit Test — Comprehend
 
-- Must show: the Marathi sentence large and primary; Hindi answer input; post-submit reveal of the model answer laid beside the learner's answer; self-mark controls; "1 of 2" progress.
+- Must show: the L2 sentence large and primary; a reveal control (the meaning is worked out in the learner's head — there is no input anywhere in the app); the revealed L1 model answer with its word-by-word breakdown behind one toggle; the self-mark; `1 / 2` progress — the item's position only, never a "part 2 of 2" (#402).
+- A miss redraws: the remaining items of the round say so, and the fresh round announces itself on its first card. No interstitial screen between rounds, no attempt count, nothing counted against the learner.
 
 ### Verdict
 
-- Pass: checklist ✓s + attestation method shown back ("verified by your friend") + the unlock moment.
-- Fail: failed check highlighted with specifics, retry CTA, revisit deep-links after 3 fails. No shame states.
+- Pass: `M4 · Passed`, one receipt line (the comprehension items, all marked), the next rung's name, and the way to the ladder that carries the unlock moment. Nothing about a notebook or an 11th sentence — the Verdict certifies only what the ritual asked for (#400).
+- There is no fail state: a miss in comprehension redraws rather than fails. No shame states.
 
 ## 7. Component inventory (design as a small system)
 

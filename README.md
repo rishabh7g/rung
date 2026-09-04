@@ -6,8 +6,8 @@ no backend, no accounts, no audio, no runtime AI. Built by one person, for one
 friend.
 
 *rung* (formerly *Shidi*, शिडी — Marathi for "ladder") names the core metaphor: a
-fixed sequence of 10 modules ("rungs"), each exited only by **writing** a novel
-"11th sentence" of the same complexity, verified by a human.
+fixed sequence of 10 modules ("rungs"), each exited through its own ritual — every
+sentence guessed right at least once in practice, then two fresh sentences understood.
 
 ## Start here
 
@@ -529,7 +529,7 @@ Two consequences worth knowing before you author content:
   emitter imports it, and so does the runtime resolver (`src/engine/wordIndex.ts`, #94). Never
   copy it: a second copy is a word that silently has no "why".
 
-### The strings contract — 72 keys, no fallback copy
+### The strings contract — 70 keys, no fallback copy
 
 Every course ships one `strings.json` carrying **all** the microcopy the shell renders, because
 the shell has none of its own (PRD §4). So the build validates it against the canonical key list
@@ -545,7 +545,7 @@ declared twice.
 `tools/strings-check.ts` runs per course, flattens the nested file onto dot-paths
 (`ritual.check.copy`), and reports four things, always naming course **and** key:
 
-- **missing key** — the 72 canonical paths must all be there;
+- **missing key** — the 70 canonical paths must all be there;
 - **empty or non-string value** — a present-but-blank key is a missing key with extra steps;
 - **unknown key** — the typo tripwire; `ritual.check.plate` would otherwise sit quietly beside a
   missing `plateLabel`;
@@ -740,7 +740,7 @@ join between them is a hook, because the answer needs a fact from each side of t
 
 | | |
 |---|---|
-| `src/engine/exit.ts` | pure — `exitAvailable(sentenceIds, production)` (every id ≥ 2) and `started(sentenceIds, production)` (any id ≥ 1), plus `PRODUCTIONS_PER_SENTENCE`, the `2` the module list's dots and its `n / 20` count read too |
+| `src/engine/exit.ts` | pure — `exitAvailable(sentenceIds, production)` (every id ≥ `MARKS_PER_SENTENCE`, which is 1) and `started(sentenceIds, production)` (any id ≥ 1), plus `PRODUCTIONS_PER_SENTENCE`, the `2` the module list's dots and its `n / 20` count read too |
 | `recordProduction(courseId, sentenceId)` | the store's counter action: `production[sentenceId] += 1`, and nothing else |
 | `src/screens/useExitAvailable.ts` | the join — this course's counters (state) against the current rung's sentence ids (content, loaded through the content layer's cache), handed to `progressionInput` as the real predicate |
 
@@ -969,20 +969,21 @@ Four things it owes, and each is a test:
   from "Start with the module" to "Practice" [D22], so *opening this screen* is what moves the
   Ladder. It is idempotent in the store, which is what lets an effect fire it; the test proves the
   call count is 1 across re-renders, and that reading a rung passes nothing (Invariant 1).
-- **Cards that expand in place, independently.** Collapsed is the L2 `display` + its `cue` (+ the
-  quiet `script` line in romanized courses); expanded adds the English `glossEn`, the word-for-word
-  `literal`, the word rows as tag chips, the interference-trap note when there is one, and
-  "open full" → `/sentence/:id` — 250ms, `--motion-expand`, collapsed under `prefers-reduced-motion`.
-  The open set lives in the screen, not in the cards, which is why one card opening never closes
-  another. `module/ProductionDots.tsx` draws each sentence's two 6px dots off
-  `production[sentenceId]` (0 / 1 / ≥2), and the header's `n / 20` counts the same map — both
-  **read-only** here, live off what `recordProduction` writes (#95), so a row of full dots down the
-  list is the exit ritual unlocking, one sentence at a time.
-- **Where the learner was.** Scroll offset *and* open cards survive a detour into Sentence Detail,
-  in **`sessionStorage`** (`module/moduleView.ts`, `rung:module-view:<course>:<module>`) and never
-  in the store: `src/state/` is the export contract (#82), and which cards were open is this
-  visit's UI, not something the learner earned. The two are one record because an offset restored
-  into a differently expanded list is not where the learner was. The shell publishes its one
+- **Rows, each a door into Sentence Detail.** A row is the L2 `display`, its `cue` (+ the quiet
+  `script` line in romanized courses), its production dot and a chevron — hairline-separated, not
+  framed (#403: ten registration-marks plates in a column were ten things each claiming to be the
+  one object on the screen, and the frame plus its padding was most of the list's height). The
+  cards used to expand in place; #217 made every card a link instead, so the details live in
+  exactly one screen. `module/ProductionDots.tsx` draws each sentence's 6px dot off
+  `production[sentenceId]` (0 / 1), and the header's `n / 10` counts the same map — both
+  **read-only** here, live off what `recordProduction` writes (#95), so a column of full dots down
+  the list is the exit ritual unlocking, one sentence at a time.
+  [module-rows-360.png](docs/images/module-rows-360.png) — mid-climb at 360px, 1.41 screens where
+  the plates were 1.72.
+- **Where the learner was.** The scroll offset survives a detour into Sentence Detail, in
+  **`sessionStorage`** (`module/moduleView.ts`, `rung:module-view:<course>:<module>`) and never
+  in the store: `src/state/` is the export contract (#82), and where a list was scrolled to is
+  this visit's UI, not something the learner earned. The shell publishes its one
   scroll area through `src/shell/scrollArea.tsx` — the screen asks the frame for it rather than
   hunting the DOM for something that scrolls.
 
@@ -1002,18 +1003,30 @@ The one place the app overrides a font shorthand's family is the quiet script li
 `--font-script-fallback` (design/tokens.md §2) — so `src/styleContract.test.ts` bans a face by
 *name* and allows `font-family: var(--…)`, which is the opposite of one.
 
-### Sentence Detail — ten sections, one order, and the mnemonic last
+### Sentence Detail — two tiers, one order each, and the mnemonic last
 
-`src/screens/SentenceScreen.tsx` (#89; PRD §8 F3 [D10], PRD-design §6.4, §7) is one sentence taken
-apart. **The order is the feature**, and it is frozen:
+`src/screens/SentenceScreen.tsx` (#89, tiered by #401; PRD §8 F3 [D10], PRD-design §6.4, §7) is
+one sentence taken apart. **The order is the feature**, and within each tier it is frozen:
 
-> hero → gloss → words → rules → trap → sound → variations → mistake → usage → mnemonic
+> always: hero → words → trap · [go deeper] · mnemonic
+> deeper: gloss → rules → sound → variations → mistake → usage
 
-It runs from what the sentence says, to why it says it, to what will trip a Hindi speaker, and ends
-on the one thing worth carrying away — the mnemonic, under the course's own "pocket it" label. A
+The first tier is what a sentence *is* — the line, its words, the one thing that will bite — and
+it ends on the one thing worth carrying away, the mnemonic under the course's own "pocket it". The
+second is everything else the course has to say, behind one control (`sentence.deeper` /
+`sentence.less` — an action, never a question, #390's lesson), in the order it always had. A
 learner who opens a second sentence finds the same shape in the same place, which is the whole
-point of freezing it; every section carries a `data-section`, so the order is a **DOM assertion**
-in `SentenceScreen.test.tsx` rather than the reading order of a file.
+point of freezing it; every section carries a `data-section`.
+
+It used to be ten sections in one column — **2.97 screens at 360px for every sentence of every
+module**, since every optional block ships on every sentence — and most of the lower half restated
+the upper: the gloss says the literal, a word's note says its rule, the trap and the note both warn
+off the same mistake. That was the reading path a first-time learner walked ten times a module.
+Closed, `L1-M1-S01` is 1.3 screens. The disclosure lives on the detail, which is keyed by id, so
+prev/next remounts it shut: depth asked for on sentence 3 was not asked for on sentence 4.
+
+[sentence-closed-360.png](docs/images/sentence-closed-360.png) ·
+[sentence-deeper-360.png](docs/images/sentence-deeper-360.png) — closed, and opened, at 360px.
 
 Four more things it owes:
 
@@ -1350,114 +1363,43 @@ Continue → the same card, `sessionCount` still 1 → active course swapped to 
 own hub, its own Start, hi-mr's snapshot untouched) → swapped back → the same offer, the same card,
 still one session.
 
-### The exit ritual's arc — the app says where to go, and does nothing else
+### The exit ritual's arc — retired
 
-`/ritual` is the product's honesty moment (#100, #101; PRD §8 F5 [D18, D14], PRD-design §6.5 flow 5
-[Q2 answered]): three steps on one screen — **write** the 11th sentence in the notebook, **check**
-it yourself, **confirm** by holding a control down for ~900ms.
-
-| file | what it is |
-|---|---|
-| `src/screens/RitualScreen.tsx` | the guard, the head, and the three-step arc |
-| `src/screens/RitualScreen.module.css` | the rail, the numbered badges, and the one dashed plate in the app |
-| `src/components/HoldToConfirm.tsx` | step 3: the press-and-hold, the ✓ state and the way on to part 2 |
-| `src/components/HoldToConfirm.module.css` | the 56px control, the fill that grows from its left edge |
-
-[ritual-arc-360.png](docs/images/ritual-arc-360.png) · [ritual-check-360.png](docs/images/ritual-check-360.png)
-· [ritual-hold-360.png](docs/images/ritual-hold-360.png) ·
-[ritual-hold-mid-360.png](docs/images/ritual-hold-mid-360.png) ·
-[ritual-hold-signed-360.png](docs/images/ritual-hold-signed-360.png)
-— the arc at 360px, the same screen scrolled to step 3, and the hold at rest, mid-fill and signed.
-
-- **Step 2 contains zero interactive elements** — no button, no link, no copy action, no field
-  [D18]. Checking is the learner's own activity, fully outside the app (Invariant 5), so a control
-  here would be the app taking the job back; the plate's caption says in the course's own words
-  that the missing buttons are deliberate. The test is mechanical: it queries **every** interactive
-  ARIA role inside the step and asserts nothing answers, then asks the DOM the same question
-  (`a[href]`, `button`, `[tabindex]`, `[contenteditable]`, …). Planting a single link reddens both.
-- **The learner's sentence never enters the app** (Invariant 4) and **there are no input fields**
-  (Invariant 6). There is nothing on this screen to type into, and nothing behind it to type into
-  either: a source scan over the flow fails on a field, a change/paste handler, a clipboard read, a
-  form — and on `useState`/`useReducer`/`useRef`, because the arc is a pure function of the
-  course's strings and the rung's module and has no variable for a sentence to live in, not even
-  for one render. The hold control has **one** exemption from the last of those, and it is named
-  in the test rather than left implicit: `HoldToConfirm.tsx` keeps how full its bar is, and is
-  scanned for everything else — no field, no handler, no storage — plus a check that the exemption
-  is exactly one `useState` and no more. A number between 0 and 1 is not learner writing.
-- **The guard is `exit_available`, and it is the Ladder's own predicate.** `/ritual` is a real deep
-  link (HashRouter, an installable PWA), so the route is reachable with the ladder anywhere: a rung
-  that is not produced out lands on `/module/:current` — where the work is — and a finished ladder
-  lands on the Ladder. It reads `deriveStatuses` off `useProgression` (#95), so the card that
-  offers the ritual and the route that runs it cannot disagree. Deliberately the **status** and not
-  `rungStage`: a learner who produced the whole rung without ever opening its module has still
-  produced the whole rung.
-- **The numbers are the rung's own.** `ritual.constraint` interpolates `{sentenceCount}` (how many
-  sentences this module teaches — the ones the new one may not be) and `{maxWords}` (its declared
-  `complexity.maxWordsPerSentence`), and the head's ordinal is that count plus one through the
-  course's own `ordinal` template. hi-mr L1-M1 renders "इन 10 में से नहीं … 5 शब्द तक" and
-  "11वाँ"; a module of three sentences would say 3, 7 and "4th" with no code change.
-- **The dashed plate is the one place `--border-dashed-world` is used**, and that is the token's
-  reserved meaning: outside the app's solid hairline world (design/tokens.md §3). It wears no
-  registration marks — they are the blueprint grammar of the app's *own* objects, and the prototype
-  draws none here either. Its two rows are static text with a decorative Lucide icon each.
-- **Step 3 costs ~900ms of held finger, and the cost is the feature** [D14]. `pointerdown` starts
-  a linear fill from the control's left edge; `pointerup`, `pointerleave` and `pointercancel`
-  before the end put it back to 0, and the next press starts from empty — half a hold is never
-  banked. **The duration is a JavaScript timer, not a CSS transition**, and that is the security
-  of it: `prefers-reduced-motion` collapses every animation in this product to nothing
-  (design/tokens.md §5), so a fill that finished when the browser said it finished would pass a
-  tap instantly under reduced motion. Here reduced motion drops the glide between the 30 steps and
-  the ✓'s entrance — the hold still takes the full ~900ms, and there is no tap-through (PRD §8 F5's
-  acceptance criterion), which is asserted with reduced motion reported both in jsdom and live.
-- **`touch-action: none` on the control**, alone in the app: every other control sets
-  `manipulation` because they are taps, and this one has to keep a drag from becoming a scroll on
-  a screen that scrolls (design/pwa-checklist.md §1). One Pointer Events code path covers mouse,
-  touch and pen.
-- **Completion emits once and hands over.** The ✓ plate replaces the control (there is nothing
-  left to press twice), the arc's step-3 badge fills, and the primary CTA goes to
-  `/comprehension` — part 2 (#102). The badge fills through a `:has([data-hold='signed'])` rule
-  rather than a prop, so the screen above still holds no state at all.
-
-Verified live at 360px in headless Chrome against `npm run dev` (hi-mr), with the ten L1-M1
-counters seeded to 2 through the store and **real CDP touch input** rather than synthetic clicks:
-`#/ritual` opens on the arc (it redirects to `#/module/L1-M1` without them), the plate holds two
-rows and no control, and the hold reads `touch-action: none`, fills to 0.43 at 450ms, returns to 0
-on release, is still unsigned at 860ms, and signs at 900ms — then the same run with
-`prefers-reduced-motion: reduce` emulated (fill transition 0s) passes nothing on a tap, is still
-unsigned at 700ms, and signs only on the full hold. Tapping the CTA lands on `#/comprehension`.
+`/ritual` used to open on a three-step arc — **write** the 11th sentence in a notebook, **check** it
+yourself, **confirm** by holding a control for ~900ms — and hand over to comprehension as "part 2".
+#348 retired the check step and #349 retired notebook writing, taking the write step, the hold and
+`RitualScreen.tsx` / `HoldToConfirm.tsx` with them. **The exit ritual is comprehension alone**, and
+`/ritual` renders it directly. Two vestiges survived until #402 — a `2 / 2 ·` part count in the
+head, and a full interstitial screen between a missed round and the fresh one — and #400 removed
+the Verdict's receipt line for the 11th sentence, which certified a step the learner was never
+asked to take. Nothing in this section's former text describes current behaviour.
 
 ### Comprehension — the same self-mark, and a retry that always deals fresh sentences
 
-`/comprehension` is the ritual's second half (#102; PRD §8 F5, PRD-design §6.6 flow 6): two
-sentences from the rung's pool, read for meaning, revealed against the scripted answer, self-marked
-— and **any "not quite" leads to a calm retry with two NEW sentences, unlimited, with nothing
-counted against the learner**.
+`/ritual` is the exit ritual, and it is comprehension (#102, cut to one part by #348/#349/#402;
+PRD §8 F7, PRD-design §6.6 flow 6): two sentences from the rung's pool, read for meaning, revealed
+against the scripted answer, self-marked — and **any "not quite" redraws two NEW sentences at once,
+unlimited, with nothing counted against the learner**.
 
 | file | what it is |
 |---|---|
-| `src/screens/ComprehensionScreen.tsx` | the guard, the head's counts, the attempt, and the pass seam |
-| `src/screens/comprehension/ComprehensionItem.tsx` | one item: the line, the reveal, the model answer, the gated self-mark |
-| `src/screens/comprehension/RetryInterstitial.tsx` | three lines and one button, and no counter of any kind |
+| `src/screens/ComprehensionScreen.tsx` | the guard, the head's count, the attempt, the redraw, and the pass seam |
+| `src/screens/comprehension/ComprehensionItem.tsx` | one item: the line, the reveal, the model answer, the self-mark, and the two redraw notes |
 | `src/engine/comprehension.ts` | the draw: no repeats, exclusion until the pool exhausts, then recycling |
 
 [comprehension-item-360.png](docs/images/comprehension-item-360.png) ·
 [comprehension-revealed-360.png](docs/images/comprehension-revealed-360.png) ·
-[comprehension-marked-360.png](docs/images/comprehension-marked-360.png) ·
-[comprehension-retry-360.png](docs/images/comprehension-retry-360.png) ·
-[comprehension-fresh-360.png](docs/images/comprehension-fresh-360.png)
-— the line under test, its revealed answer, the mark that summons Next, the interstitial, and the
-fresh sentence behind it, all at 360px.
+[comprehension-redrawn-360.png](docs/images/comprehension-redrawn-360.png)
+— the line under test, its revealed answer, and the fresh round's first card announcing itself
+where an interstitial used to stand, all at 360px.
 
-- **The guard is the hold's own hand-over, and it travels in the history entry.** `#/comprehension`
-  is a real deep link, so what makes it legitimate is one fact that happened a moment ago on
-  another screen: the ✓'d hold's `<Link state={handover('hold')}>` writes a token into the history
-  entry, and this screen reads it back (`shell/routes.tsx`). It is deliberately **not** in the
-  store — nothing about an unfinished ritual is progress, and a durable "held the hold" flag would
-  outlive the ritual and need cleaning up — and deliberately not on the ritual screen, which holds
-  no state at all (#100) and must not start now. The token is a key, not a claim: the counters are
-  still asked (`exit_available`, #95), so a stale entry — a rung passed since, or a back tap after
-  #103 — lands on `/ritual`, which sends the learner on to the work. There is nothing in the
-  mechanism a learner's sentence could ever be put into, which is the whole reason it was chosen.
+- **The guard is the exit gate itself.** `/ritual` is a real deep link, so what makes it
+  legitimate is the one fact the ladder already derives: the current rung is `exit_available` —
+  every one of its sentences marked got-it at least once (`useProgression`, #95). A stale entry — a
+  rung passed since, a rung not yet at the gate — lands back on that rung's module. There is no
+  hand-over token any more: the hold that used to write one went with the write step (#348/#349),
+  and the pass at the far end still travels as `handover('comprehension')` into the Verdict, which
+  is the one seam left.
 - **The retry algorithm is `drawItems`, and the PRD's AC is arithmetic.** Fresh items are drawn
   excluding every id already used this visit; when the pool cannot fill an attempt it recycles,
   **minus the attempt just played** — dealing back the two sentences that went wrong would read as
@@ -1466,14 +1408,14 @@ fresh sentence behind it, all at 360px.
   pure function against an injected random source, and over the real screen, where three attempts
   deal six distinct sentences.
 - **Nothing is stored on a failed round** (Invariant 4). The attempt lives in one component cell
-  that dies with the screen; the marks are dropped on the way into the interstitial; there is no
+  that dies with the screen; the marks are dropped on the way into the redraw; there is no
   attempt count, no failure count and no history — absent, not hidden, so there is no number a
-  screen could render even by accident. The three files are scanned for a store import, a store
-  hook and a storage call, and the behavioural test asserts the persisted document is
-  **byte-identical** across two failed attempts. The interstitial is asserted to say exactly the
-  same thing on the third failure as on the first.
+  screen could render even by accident. The redraw's two notes (`retry.pending` on the items after
+  a miss, `retry.title` on the fresh round's first card) say the same thing on the third redraw as
+  on the first (#402 — there is no interstitial screen between rounds any more).
 - **The controls are the product's own.** `SelfMark` verbatim (#93) — the same two segments, the
-  same fills, and **Next hidden until marked** [D11] — and `WhyPanel` (#94) on the reveal, which
+  same fills, and the mark that commits itself through the commit window (#313) — and `WhyPanel`
+  (#94) on the reveal, which
   resolves a pool item against its module's word index (`moduleIdOf` now reads `-C<nn>` ids as well
   as `-S<nn>`; the schema fixes both shapes). The reveal itself is this screen's own, because it
   runs the other way round: Practice reveals the L2 for an L1 cue, Comprehension reveals the L1 for
@@ -1483,14 +1425,11 @@ fresh sentence behind it, all at 360px.
   same kind of token (`handover('comprehension')`); the module's `passed`, the next rung's unlock
   and the beat are #103's, on the screen that receives it. This one writes nothing at all.
 
-Verified live at 360px in headless Chrome against `npm run dev` (hi-mr), with the ten L1-M1
-counters seeded to 2 and **real CDP touch input**: a deep link to `#/comprehension` lands on
-`#/ritual`; the full hold hands over with `history.state.usr = {"ritualStep":"hold"}`; item 1 shows
-`माझी भाषा मराठी आहे` at 26px with **0 of the pool's 8 scripted answers anywhere in the DOM**, and
-the reveal brings exactly 1; Next does not exist until a mark does; item 2 is a different sentence;
-"not quite" opens the interstitial and the stored document is unchanged byte for byte; "नए वाक्य
-लो" deals two sentences disjoint from the failed pair; and two "same meaning" marks land on
-`#/verdict` with `{"ritualStep":"comprehension"}` and `modules` still `{}`.
+Verified live at 360px in headless Chrome against `npm run dev` (en-es, M4 at the gate): the head
+reads `1 / 2` and no part count; a "Missed" puts the pending note on the next item; finishing that
+round lands at once on a fresh round's first card carrying "Fresh sentences, once more." with two
+sentences disjoint from the first pair; and two "Got it" marks land on `#/verdict` showing
+`M4 · Passed` and one receipt line.
 
 ### The verdict and the unlock beat — the ritual's one write, and the one celebration
 
@@ -1530,12 +1469,12 @@ the level-boundary beat on the cell that unsealed plus its first rung, all at 36
   left in it would let a refresh mint a second verdict for whichever rung had become current. A
   deep link, a refresh or a back tap lands on the Ladder; a rung that was never produced out lands
   on `/ritual`, which sends the learner to the work.
-- **The checklist is a receipt, not a score** — the 11th sentence written in the notebook, checked
-  by you, comprehension 2 of 2 — and every line of it is the course's (`verdict.*`, five new keys
-  in all three bundles, drafts on #71). The two numbers are the module's own: the ordinal is
-  `sentences.length + 1` rendered through the course's `ordinal` template, and the "2 of 2" is
-  `exitTest.comprehendCount`, so a module that asked for three would read "3 of 3" with no code
-  change.
+- **The receipt is one line, not a score** — comprehension 2 of 2 — and it is the course's
+  (`verdict.checkComprehension`). The number is the module's own `exitTest.comprehendCount`, so a
+  module that asked for three would read "3 of 3" with no code change. There used to be a second
+  line, "the 11th sentence — written in your notebook"; #400 removed it, because the ritual has had
+  no such step since #348/#349 and a receipt for work the app never asked for is a false one. The
+  `ordinal` key went with it.
 - **The beat plays once, and cannot be replayed.** "Climb to the ladder" carries a one-shot flag
   naming the rung just passed; the Ladder reads it on mount, plays the beat on the rung that pass
   **opened**, and immediately replaces its own entry with a stateless one. So a reload has nothing
@@ -1551,8 +1490,8 @@ the level-boundary beat on the cell that unsealed plus its first rung, all at 36
 
 Verified live at 360px in headless Chrome against `npm run dev` (hi-mr), with the ten L1-M1
 counters seeded and **real CDP touch input**: the ~900ms hold hands over, two "same meaning" marks
-land on `#/verdict` with the token already spent, the receipt reads `11वाँ वाक्य …`,
-`Comprehension 2 में से 2 …` and the honesty line from the real bundle, storage shows
+land on `#/verdict` with the token already spent, the receipt reads `Comprehension 2 में से 2.`
+from the real bundle, storage shows
 `L1-M1 passed` with **all ten sentences enrolled at box 1 due in 1**, and of the five documents
 written across the whole walk **zero** hold a pass without its enrolment. "सीढ़ी पर चढ़ो" lands on
 the Ladder with the beat on M2's card (`1s cubic-bezier(0.2, 0.7, 0.3, 1)`), the flag already

@@ -39,19 +39,13 @@
   color: var(--color-accent-700);
 }
 
-/* "part 2 of 2 · 1 of 2" as counts — the same call the module list's `n / total` makes (#88). */
-.part {
+/* The item's position inside the attempt — `1 / 2`, as counts, the same call the module list's
+   `n / total` makes (#88). It used to sit behind a `2 / 2 ·` part count from the two-part ritual
+   (#402). The ramp's floor rung: the two shades below it were 2.75 : 1 and 2.42 : 1 (#185). */
+.position {
   flex: none;
   margin: 0;
   font: var(--text-caption);
   white-space: nowrap;
-  color: var(--ink-65);
-}
-
-/* The item's position inside the attempt: the part is where the learner is in the ritual, this is
-   where they are in a page of it — and it is absent entirely on the interstitial, which is not an
-   item. It used to sit one shade quieter than the part; since #185 both are the ramp's floor rung,
-   because the two shades below it (45/40%) were 2.75 : 1 and 2.42 : 1 and neither could stay. */
-.position {
   color: var(--ink-65);
 }

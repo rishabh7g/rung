@@ -53,13 +53,22 @@ interface ComprehensionItemProps {
    * is designed for. It is a fact about the round, so the screen owns it.
    */
   redrawing?: boolean;
+  /** The first card of a round dealt because the one before it held a miss (#402). */
+  redrawn?: boolean;
   /** The course's writing direction — every line on the card is its content or its copy. */
   dir?: string;
   /** The tags the L2 lines are written in (#186); the cue and the copy are L1 and inherit. */
   l2?: L2Written;
 }
 
-export function ComprehensionItem({ item, onMark, redrawing, dir, l2 }: ComprehensionItemProps) {
+export function ComprehensionItem({
+  item,
+  onMark,
+  redrawing,
+  redrawn,
+  dir,
+  l2,
+}: ComprehensionItemProps) {
   const strings = useStrings();
   // `setCard`, never `setState`: `src/state/unlockPath.test.ts` scans the shell for that call and
   // the store's actions are the only place allowed to make it (Invariant 1).
@@ -72,13 +81,21 @@ export function ComprehensionItem({ item, onMark, redrawing, dir, l2 }: Comprehe
       {/**
        * The round is already redrawing (#318) — said once, above the line under test, in the
        * course's own words. It names no count, no item and no failure: the marks that led here are
-       * dropped on the way into the interstitial, so there is nothing to count with even if this
+       * dropped on the way into the redraw, so there is nothing to count with even if this
        * line wanted to (Invariant 4). It is the retry's own calm, arriving when the learner can
        * still use it rather than after they have finished working for nothing.
        */}
       {redrawing === true && (
         <p className={styles.pending} dir={dir}>
           {strings['retry.pending']}
+        </p>
+      )}
+      {/* The fresh round, announced on its first card (#402) — where a whole interstitial screen
+          used to stand. One line, in the slot the pending note takes mid-round; the two never
+          coincide, because a round's first card has no miss before it. */}
+      {redrawn === true && (
+        <p className={styles.pending} dir={dir}>
+          {strings['retry.title']}
         </p>
       )}
 

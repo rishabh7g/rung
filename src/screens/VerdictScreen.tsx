@@ -20,16 +20,17 @@
  *     learner who closes the app on this screen has still climbed the rung — a pass that waited
  *     for a button would be a rung lost to a locked phone. The button's job is the celebration,
  *     not the record.
- *   • **The checklist is a receipt, not a score** — the things the learner actually did, in the
- *     PRD's order: wrote the 11th sentence in their notebook, marked the comprehension. Every line
- *     is the course's (`verdict.*`), and the screen makes no claim of its own about either.
+ *   • **The checklist is a receipt, not a score** — the thing the learner actually did: marked
+ *     every comprehension item. The line is the course's (`verdict.*`), and the screen makes no
+ *     claim of its own about it. It used to carry a second line for an 11th sentence written in
+ *     a notebook; #400 removed it, because the ritual has had no such step since #348/#349 and a
+ *     receipt for work the app never asked for is a false one.
  *   • **The way out carries the beat.** "Climb to the ladder" is a `<Link>` to the Ladder carrying
  *     the one-shot flag that plays the unlock beat on the rung this pass opened (`passedRung`,
  *     consumed there) — the product's single celebration, once, and never on a revisit.
  *
- * The two numbers on it are the module's own: how many sentences it taught (so the ordinal is
- * "the 11th" for a ten-sentence rung and the course's own word for it), and how many comprehension
- * items its `exitTest` asked for. The English on screen is structural furniture in the register of
+ * The one number on it is the module's own: how many comprehension items its `exitTest` asked
+ * for. The English on screen is structural furniture in the register of
  * the module list's `M1 · MODULE` kicker — the kicker and the `M1 · Passed` title, which is the
  * Ladder's own `PASSED` status label (#86) at the size the prototype gives it.
  */
@@ -180,8 +181,6 @@ function RungVerdict({ input, plan, moduleId }: RungVerdictProps) {
    */
   if (!passed && !open) return <Navigate to={RITUAL_PATH} replace />;
 
-  /** The course's own word for "the 11th" — the sentence after the ten this rung taught. */
-  const ordinal = interpolate(strings.ordinal, { n: module.data.sentences.length + 1 });
   /** The rung this pass opened, by its own title. `null` at the top of the ladder. */
   const next = nextRung(plan, moduleId);
 
@@ -197,29 +196,27 @@ function RungVerdict({ input, plan, moduleId }: RungVerdictProps) {
         </h2>
       </div>
 
-      {/* The receipt: a blueprint plate, and the two lines the learner earned on it. */}
+      {/* The receipt: a blueprint plate, and the one line the learner earned on it (#400).
+          There were two. The first certified "the 11th sentence — written in your notebook", a
+          step the ritual has not had since #348/#349 retired notebook writing; a receipt for work
+          the app never asked for is a false one, so it went. */}
       <div className={styles.receipt}>
         <RegistrationMarks />
 
         <ul className={styles.checks}>
-          {[
-            interpolate(strings['verdict.checkSentence'], { ordinal }),
-            interpolate(strings['verdict.checkComprehension'], {
-              // The module's own number, like the arc's constraint: `2` today, and a module that
-              // asked for three would read "3 of 3" with no code change (PRD §7 `exitTest`). Both
-              // values are that number, because anything short of every item marked "same
-              // meaning" is a retry rather than a verdict (#102).
-              count: module.data.exitTest.comprehendCount,
-              total: module.data.exitTest.comprehendCount,
-            }),
-          ].map((line) => (
-            <li className={styles.check} key={line}>
-              <Check className={styles.tick} aria-hidden="true" />
-              <span className={styles.checkText} dir={course.dir}>
-                {line}
-              </span>
-            </li>
-          ))}
+          <li className={styles.check}>
+            <Check className={styles.tick} aria-hidden="true" />
+            <span className={styles.checkText} dir={course.dir}>
+              {interpolate(strings['verdict.checkComprehension'], {
+                // The module's own number: `2` today, and a module that asked for three would
+                // read "3 of 3" with no code change (PRD §7 `exitTest`). Both values are that
+                // number, because anything short of every item marked "same meaning" is a retry
+                // rather than a verdict (#102).
+                count: module.data.exitTest.comprehendCount,
+                total: module.data.exitTest.comprehendCount,
+              })}
+            </span>
+          </li>
         </ul>
       </div>
 

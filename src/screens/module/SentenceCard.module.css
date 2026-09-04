@@ -5,13 +5,16 @@
    so the panel, its gloss/literal/word chips/trap plate and the "open full" button are gone with
    the markup that drew them. */
 
-/* A blueprint object like the rung card, minus the elevation: radius 0, a hairline, no surface
-   fill, and the four registration marks (`../RegistrationMarks.tsx`) — which is the
-   `position: relative`. */
+/* A ROW, not a plate (#403). Ten blueprint plates in a column were ten things each claiming to
+   be the one object on the screen — the registration-marks frame is the system's mark for the
+   rung card, the reveal plate, the receipt — and the frame plus its padding was most of the
+   list's height. Rows are what a list is: a hairline between neighbours, and the content. */
 .card {
-  position: relative;
-  background: var(--color-bg);
-  border: var(--border-hairline);
+  border-bottom: var(--border-hairline);
+}
+
+.card:first-child {
+  border-top: var(--border-hairline);
 }
 
 /* ------------------------------------------------------------------ the whole card */
@@ -24,7 +27,7 @@
   gap: var(--space-3);
   width: 100%;
   min-height: var(--tap-min);
-  padding: var(--space-4);
+  padding: var(--space-3) var(--space-2);
   color: inherit;
   text-align: start;
   text-decoration: none;
