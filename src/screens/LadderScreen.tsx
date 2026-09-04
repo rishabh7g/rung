@@ -39,13 +39,7 @@ import { Lock } from 'lucide-react';
 import { useCourse } from '../course/CourseProvider.tsx';
 import { interpolate, useStrings } from '../course/strings.ts';
 import { ContentErrorScreen } from '../course/BootScreens.tsx';
-import {
-  currentRungId,
-  deriveStatuses,
-  levelSealed,
-  rungStage,
-  type RungStage,
-} from '../engine/progression.ts';
+import { currentRungId, deriveStatuses, levelSealed, rungStage } from '../engine/progression.ts';
 import { HOME_PATH, justPassed, justRestored } from '../shell/routes.tsx';
 import { Toast, useToast } from '../shell/Toast.tsx';
 import { LevelStrip, type LevelCell, type SquareState } from './ladder/LevelStrip.tsx';
@@ -116,6 +110,9 @@ export default function LadderScreen() {
    * A finished ladder has no current rung and therefore no beat: the last pass opens nothing, and
    * the completion state is quiet (PRD-design §3.6).
    */
+  /** The active level's entry for the current rung — the card's title and job. */
+  const currentModule = active.modules.find((module) => module.id === current);
+
   const beatRung = justUnlocked !== null && current !== null ? current : null;
   const beatLevel =
     beatRung === null || levelOf(plan, justUnlocked) === levelOf(plan, beatRung)
@@ -126,8 +123,6 @@ export default function LadderScreen() {
     const sealed = levelSealed(input, index + 1);
     return {
       level: index + 1,
-      name: entry.name,
-      tagline: entry.tagline,
       sealed,
       active: index === activeIndex,
       unsealed: index + 1 === beatLevel,
@@ -159,22 +154,6 @@ export default function LadderScreen() {
           prototype — there they sit outside the scroll area, here they are sticky inside the
           shell's one scroll column (design/pwa-checklist.md §1). */}
       <div className={styles.head}>
-        {/**
-         * What the learner is learning (#350) — the one line on the home screen that names the
-         * subject, in the course's own L1.
-         *
-         * The Ladder said a great deal about POSITION (the level, the rungs left, the strip) and
-         * nothing about what any of it was for: a learner opening the app saw a ladder without a
-         * subject, and the course's name lived two taps away in Settings. It sits in the sticky
-         * header rather than above the rungs, because it is a fact about the screen and not about
-         * the current rung — it stays put while the rungs scroll under it. And it is the
-         * course's own sentence, never `l2` interpolated out of the manifest, whose values are
-         * English words (`stringsKeys.ts`).
-         */}
-        <p className={styles.learning} dir={course.dir}>
-          {strings['ladder.learning']}
-        </p>
-
         {/* The only numbers on the screen: counts, never time. The prototype puts this line in
             the Ladder's own header row; the shell's brand header is screen-agnostic (#84), so it
             renders as the screen's first row — reconciled in #117. Its words are the course's
@@ -183,32 +162,36 @@ export default function LadderScreen() {
           {interpolate(strings['ladder.positionLine'], { level, passed, total })}
         </p>
 
-        <LevelStrip cells={cells} dir={course.dir} onSealedTap={sealedTap} />
+        <LevelStrip cells={cells} onSealedTap={sealedTap} />
       </div>
 
       <div className={styles.body}>
-        {current !== null && (
-          <p className={styles.pending} dir={course.dir}>
-            {interpolate(strings['ladder.pendingLine'], {
-              level,
-              remaining: total - passed,
-              total,
-            })}
-          </p>
+        {/* THE ACTION, FIRST (#396). The rung card answers "what do I do now", so it goes where
+            the eye lands rather than behind however many rungs the learner has already climbed —
+            at 360px its CTA used to fall below the fold. The ladder under it is still the
+            ladder, in the ladder's own order. */}
+        {currentModule !== undefined && current !== null && (
+          <RungCard
+            stage={rungStage(input, current)}
+            moduleId={current}
+            title={currentModule.title}
+            job={currentModule.job}
+            dir={course.dir}
+            unlocked={current === beatRung}
+            production={rungProduction}
+          />
         )}
 
         <ol className={styles.rungs}>
           {active.modules.map((module) =>
             module.id === current ? (
+              // A ROW, not a second card: the card above IS this rung, and drawing it twice is
+              // the screen saying one thing in two sizes.
               <CurrentRung
                 key={module.id}
-                stage={rungStage(input, module.id)}
                 moduleId={module.id}
                 title={module.title}
-                job={module.job}
                 dir={course.dir}
-                unlocked={module.id === beatRung}
-                production={rungProduction}
               />
             ) : statuses[module.id] === 'passed' ? (
               <PassedRung
@@ -223,7 +206,6 @@ export default function LadderScreen() {
                 key={module.id}
                 moduleId={module.id}
                 title={module.title}
-                job={module.job}
                 dir={course.dir}
               />
             ),
@@ -303,37 +285,27 @@ interface RungProps {
   dir?: string;
 }
 
-interface CurrentRungProps extends RungProps {
-  stage: RungStage;
-  /** The beat lands here: this rung is the one the pass just opened. */
-  unlocked: boolean;
-  /** Per-sentence got-it counts for the card's dots row (§6.1) — empty until the module loads. */
-  production: readonly number[];
-}
-
 /**
- * The current rung — the crosshair marker, and beside it the dominant object on the screen: the
- * staged card [D22], which is `./ladder/RungCard.tsx` (#87). The row owns the marker and the rail
- * it masks; the card owns its own frame, its registration marks and its one CTA per stage.
+ * The current rung, in the list (#396) — a row like the ones above and below it, because the
+ * CARD is now at the top of the screen and this is the ladder saying where that card sits.
  *
- * The stage comes from `rungStage(input, id)` at the call site, off the very input the store
- * guards `passRitual` with — so the card is as derived as every other number on this screen, and
- * the title is no longer a link: the card's primary CTA is the permanent way into the module, and
- * a `pending` rung has no module to link to at all.
+ * It is deliberately not a link: the card's own staged CTA is where this rung is opened from, and
+ * a second door to the same place is a second thing to choose between. It carries no `job`
+ * either — the card three inches above it just said the same sentence, and a row that repeats the
+ * card is the screen saying one thing twice.
  */
-function CurrentRung({ stage, moduleId, title, job, dir, unlocked, production }: CurrentRungProps) {
+function CurrentRung({ moduleId, title, dir }: Omit<RungProps, 'job'>) {
   return (
-    <li className={styles.currentItem}>
+    <li className={styles.rowCurrent}>
       <RungMarker state="current" />
-      <RungCard
-        stage={stage}
-        moduleId={moduleId}
-        title={title}
-        job={job}
-        dir={dir}
-        unlocked={unlocked}
-        production={production}
-      />
+      <span className={styles.rowText}>
+        <span className={styles.rowTitle}>
+          {rungLabel(moduleId)} ·{' '}
+          <span dir={dir} className={styles.rowTitleContent}>
+            {title}
+          </span>
+        </span>
+      </span>
     </li>
   );
 }
@@ -370,7 +342,7 @@ function PassedRung({ moduleId, title, job, dir }: RungProps) {
  * tabindex — the row is text and a lock, so there is nothing to tap and nothing for a screen
  * reader to announce as available. `LadderScreen.test.tsx` asserts exactly that.
  */
-function LockedRung({ moduleId, title, job, dir }: RungProps) {
+function LockedRung({ moduleId, title, dir }: Omit<RungProps, 'job'>) {
   return (
     <li className={styles.rowLocked}>
       <RungMarker state="locked" />
@@ -380,9 +352,6 @@ function LockedRung({ moduleId, title, job, dir }: RungProps) {
           <span dir={dir} className={styles.rowTitleContent}>
             {title}
           </span>
-        </span>
-        <span className={styles.rowJob} dir={dir}>
-          {job}
         </span>
       </span>
       <Lock className={styles.rowLock} aria-hidden="true" />

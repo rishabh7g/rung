@@ -30,48 +30,6 @@
   padding: var(--space-4) var(--space-6) var(--space-8);
 }
 
-/**
- * A line the COURSE wrote, in the course's own L1 — which for hi-mr is Devanagari, and
- * design/tokens.md §2 is absolute about that: all Devanagari is Mukta, never below
- * `--devanagari-min-size`, line-height 1.6, no italics. A caption token would render it in
- * Barlow, which has no Devanagari at all — tofu on this machine, a system fallback on a phone,
- * and off-brand either way. So course prose takes the smallest Mukta slot in the ramp
- * (`--text-l2-cue`, 20px/1.6) pulled down to the 18px floor.
- *
- * The consequence is deliberate and worth seeing: the Ladder's course line is 18px rather
- * than the prototype's 11.5px, because the prototype renders it in English. The ramp has no
- * caption-sized Devanagari slot and cannot have one below the floor — flagged in #86's PR for
- * the design package (a `--text-course-prose` token, or a per-course face).
- */
-.courseProse {
-  font: var(--text-l2-cue);
-  font-size: var(--devanagari-min-size);
-}
-
-/**
- * What the learner is learning (#350) — a line of the course's own prose, so it takes the same
- * `courseProse` slot the pending line does rather than the caption token: a caption is Barlow,
- * and Barlow has no Devanagari (see the note above).
- *
- * It sits on its own row above the position line rather than beside it. Beside was the first
- * shape and it does not survive the type ramp: the counts are an 11.5px kicker and course prose
- * has an 18px floor, so a shared baseline would have set a sentence against a label half its
- * size — and the sentence, being the longer of the two, would then be the thing that wrapped.
- */
-.learning {
-  composes: courseProse;
-  margin: 0;
-  padding: var(--space-3) var(--gutter) 0;
-  color: var(--ink-70);
-}
-
-/* Counts only — how many rungs of the level are left, in the course's own words. */
-.pending {
-  composes: courseProse;
-  margin: 0 0 var(--space-4);
-  color: var(--ink-70);
-}
-
 /* ------------------------------------------------------------------- the rungs */
 
 .rungs {
@@ -159,17 +117,9 @@
 
 /* -------------------------------------------------------------- the current rung */
 
-.currentItem {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-3);
-}
-
-/* The card itself is ./ladder/RungCard.module.css — blueprint frame, registration marks and the
-   four [D22] CTA sets (#87). What stays here is the row that hosts it. */
-
-/* Lines the crosshair up with the kicker inside the card rather than with the card's top edge. */
-.currentItem > svg {
-  margin-top: var(--space-4);
+/* The card is at the TOP of the body now (#396); what is left here is the rung's row in the
+   list, which is the ordinary row at full strength — a locked row's half-opacity says "not
+   yours", and this one is. */
+.rowCurrent {
+  composes: row;
 }

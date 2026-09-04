@@ -14,6 +14,7 @@
   min-height: var(--tap-min);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
   gap: var(--space-1);
   padding: var(--space-2) var(--space-3);
@@ -72,17 +73,12 @@
   color: var(--color-neutral-500);
 }
 
-/* The level's own words — name and tagline, straight out of levels.json. */
-.name {
-  font: var(--text-micro);
-  color: var(--ink-70);
-}
-
+/* Under the label, across the chip — the level's rungs at a glance. A sealed chip renders none
+   (see the component): its lock is the whole of what it has to say. */
 .squares {
   display: flex;
   gap: var(--space-1);
   align-self: stretch;
-  margin-top: var(--space-1);
 }
 
 .square {

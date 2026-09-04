@@ -529,7 +529,7 @@ Two consequences worth knowing before you author content:
   emitter imports it, and so does the runtime resolver (`src/engine/wordIndex.ts`, #94). Never
   copy it: a second copy is a word that silently has no "why".
 
-### The strings contract — 74 keys, no fallback copy
+### The strings contract — 72 keys, no fallback copy
 
 Every course ships one `strings.json` carrying **all** the microcopy the shell renders, because
 the shell has none of its own (PRD §4). So the build validates it against the canonical key list
@@ -545,7 +545,7 @@ declared twice.
 `tools/strings-check.ts` runs per course, flattens the nested file onto dot-paths
 (`ritual.check.copy`), and reports four things, always naming course **and** key:
 
-- **missing key** — the 74 canonical paths must all be there;
+- **missing key** — the 72 canonical paths must all be there;
 - **empty or non-string value** — a present-but-blank key is a missing key with extra steps;
 - **unknown key** — the typo tripwire; `ritual.check.plate` would otherwise sit quietly beside a
   missing `plateLabel`;
@@ -557,7 +557,7 @@ declared twice.
 Adding a key is one edit to `src/course/stringsKeys.ts` plus a line in each of the three bundles —
 in that order, because the build will tell you exactly which course you forgot. The list grew that
 way nine times: five keys the frozen screens forced (PR #120), three the Ladder forced (#86 —
-`ladder.pendingLine`, `ladder.ownership`, `ladder.sealedToast`), seven the staged rung card forced
+`ladder.pendingLine`, `ladder.ownership`, `ladder.sealedToast`; only the last still exists), seven the staged rung card forced
 (#87 — `rungCard.startModule`, `.freshNote`, `.practice`, `.revisitModule`, `.exitRitual`,
 `.module`, `.practiceEarlier`: a label for every control across the four [D22] stages), three
 the module list forced (#88 — `module.helper`, `module.openFull`, `module.trapNote`), four
@@ -859,12 +859,24 @@ Two rules the scaffold bakes in, before you write a component:
 
 ### The Ladder — the home screen, and nothing it renders is stored
 
-`src/screens/LadderScreen.tsx` (#86; PRD-design §5, §7 [D16]) is where the engine becomes a
-screen: the position line, the three-cell level strip, the rungs of the active level, the
-counts-only pending line and the ownership footer. Every one of those is **derived on render** —
+`src/screens/LadderScreen.tsx` (#86, remade by #396-#399; PRD-design §5, §7 [D16]) is where the
+engine becomes a screen: the position line, a compact strip of level chips, the current rung's
+card, and the rungs of the active level under it. Every one of those is **derived on render** —
 `deriveStatuses`, `currentRungId`, `levelSealed` off the very `progressionInput` the store guards
 `passRitual` with (#83). A count on this screen and a rule in that action cannot disagree, because
 they are one derivation.
+
+[ladder-mid-360.png](docs/images/ladder-mid-360.png) — mid-climb at 360px.
+
+**The action comes first, and the position is stated once** (#396, #397). The screen used to open
+with "You are learning Spanish." — true on every render forever — then a position line, then three
+tall level cells carrying names and taglines for two levels whose modules are not authored, then
+"Level 1 · 7 of 10 rungs still to climb", which is the position line inverted. The rung card came
+after all of it and after every rung already climbed, so at 360px mid-climb its `Practice` CTA
+fell below the fold on a 1.56-screen page. Now the card is the first thing in the body, the strip
+is one row of chips, and the same fact is not asked to be read two ways. The list under the card
+is still the whole ladder in ladder order; the current rung appears there as a row, because the
+card above it IS that rung.
 
 Three things it is responsible for keeping true:
 
@@ -895,8 +907,8 @@ Ladder never having mounted.
 
 Two deliberate divergences from the prototype, both recorded in the code that makes them:
 
-- **Course prose is 18px Mukta, not an 11.5px caption.** The prototype renders the pending line,
-  the footer and the toasts in English for every course; in the product they are course copy, and
+- **Course prose is 18px Mukta, not an 11.5px caption.** The prototype renders the rung jobs and
+  the toasts in English for every course; in the product they are course copy, and
   design/tokens.md §2 is absolute — all Devanagari is Mukta, never below `--devanagari-min-size`.
   A caption token would set Hindi in Barlow, which draws no Devanagari at all. The ramp has no
   caption-sized Devanagari slot and cannot have one below the floor.

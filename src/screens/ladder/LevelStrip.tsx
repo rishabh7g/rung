@@ -1,10 +1,21 @@
 /**
- * The level strip (#86) — three cells, ten mini squares each, and the seal rule made visible
- * (PRD-design §5; design/tokens.md §6 "Level strip cell").
+ * The level strip (#86, compacted by #398) — one row of level chips, and the seal rule made
+ * visible (PRD-design §5; design/tokens.md §6 "Level strip cell").
  *
- * It is the whole ladder at a glance: where the learner is (the active cell wears a 2 px accent
- * top bar and an accent label), what is behind them (squares in `--dot-done`), and what is not
- * theirs yet (a sealed cell is muted, wears a lock, and its squares are `--level-sealed`).
+ * It is the whole ladder at a glance: where the learner is (the active chip wears a 2 px accent
+ * top bar and an accent label, over its rungs as mini squares), and what is not theirs yet (a
+ * sealed chip is muted and wears a lock).
+ *
+ * **It used to be three tall cells**, each carrying the level's name and tagline from
+ * `levels.json` and ten squares of its own — sticky, so they held roughly a third of the viewport
+ * for the whole scroll, including while the learner read six locked rungs at the bottom of the
+ * page. Two of the three are sealed for months, and their content is not authored: every course's
+ * L2 and L3 ladders ship `draft: true`. So the strip was advertising unbuilt work from the most
+ * expensive real estate in the app. The names and taglines can come back when the levels do, and
+ * they will read as a promise then rather than as a tease.
+ *
+ * A sealed chip draws no squares either: ten identical greyed boxes said nothing its lock does
+ * not, and they were most of what made a cell tall.
  *
  * **Only a sealed cell is interactive**, and that is the design rather than an oversight: the
  * active cell is the screen the learner is already on, so tapping it has nothing to do, while a
@@ -13,10 +24,10 @@
  * not, and nothing renders a control that does nothing.
  *
  * The component is presentational: every state on it is derived by the screen from
- * `src/engine/progression.ts` and handed over, and every word in it is the course's: the level's
- * name and tagline out of `levels.json`, and the cell's own kicker out of `strings.json`
- * (`levelStrip.level`, #351 — it was the English "LEVEL", held back as furniture in the register
- * of the nav's tab labels until the nav's labels stopped being English too).
+ * `src/engine/progression.ts` and handed over, and its one word is the course's — the chip's
+ * kicker out of `strings.json` (`levelStrip.level`, #351 — it was the English "LEVEL", held back
+ * as furniture in the register of the nav's tab labels until the nav's labels stopped being
+ * English too).
  */
 import { Lock } from 'lucide-react';
 import { interpolate, useStrings } from '../../course/strings.ts';
@@ -29,9 +40,6 @@ export type SquareState = 'passed' | 'current' | 'pending' | 'sealed';
 export interface LevelCell {
   /** 1-based position in the ladder — what the kicker prints and the toast names. */
   level: number;
-  /** The level's own name and tagline, from `levels.json`: "Foundations" · "say what you need". */
-  name: string;
-  tagline: string;
   sealed: boolean;
   /** The level the rung list below the strip is showing. Exactly one cell is active. */
   active: boolean;
@@ -46,13 +54,11 @@ export interface LevelCell {
 
 interface LevelStripProps {
   cells: readonly LevelCell[];
-  /** The course's writing direction, for the name line — the only course copy in here. */
-  dir?: string;
   /** Called with the sealed cell's level number; the screen turns it into the honest toast. */
   onSealedTap: (level: number) => void;
 }
 
-export function LevelStrip({ cells, dir, onSealedTap }: LevelStripProps) {
+export function LevelStrip({ cells, onSealedTap }: LevelStripProps) {
   const strings = useStrings();
 
   return (
@@ -66,14 +72,15 @@ export function LevelStrip({ cells, dir, onSealedTap }: LevelStripProps) {
               </span>
               {cell.sealed && <Lock className={styles.lock} aria-hidden="true" />}
             </span>
-            <span className={styles.name} dir={dir}>
-              {cell.name} — {cell.tagline}
-            </span>
-            <span className={styles.squares}>
-              {cell.squares.map((square, index) => (
-                <span key={index} className={SQUARE_CLASS[square]} />
-              ))}
-            </span>
+            {/* A sealed level draws no squares: ten identical greyed boxes said nothing the
+                lock does not, and they were most of the strip's height (#398). */}
+            {!cell.sealed && (
+              <span className={styles.squares}>
+                {cell.squares.map((square, index) => (
+                  <span key={index} className={SQUARE_CLASS[square]} />
+                ))}
+              </span>
+            )}
           </>
         );
 

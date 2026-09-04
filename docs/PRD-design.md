@@ -85,8 +85,8 @@ Navigation model: Ladder is home; Module/Practice/Exit are children of the activ
 
 ### Ladder (home)
 
-- Must show: 10 rungs with title + one-line job; states locked / unlocked / in-progress / passed; current rung visually dominant; overall position at a glance.
-- Must not show: dates, streaks, time estimates, percentages of time.
+- Must show: the current rung's card FIRST, its one action visible without scrolling; then the level's rungs in ladder order — a passed rung with title, job and its PASSED marker, the current one and a locked one as a single title line each; overall position at a glance, in a compact strip of level chips (the active chip carries its rungs as mini squares, a sealed chip a lock).
+- Must not show: dates, streaks, time estimates, percentages of time; the same position stated twice (the strip and the position line are one fact, and there is no second "rungs still to climb" line); a sentence that is identical on every render; names or taglines for levels whose modules are not authored.
 - States: fresh install (only M1 open), mid-journey, all-complete.
 
 ### Module
