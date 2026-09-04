@@ -376,7 +376,7 @@ plus the L1 `draftNote` that called the ladder a fixture — was the whole chang
 `npm run build` now emits `public/content/en-fr/` with levels, strings, ten modules and ten
 cumulative indexes (171 surfaces through L1-M10, `maxSpan` 4), and the emitted `courses.json`
 lists **hi-mr, en-es, en-ar, hi-en and en-fr**. Every sentence carried a `glossEn` until #405
-made the gloss optional everywhere (see below). The chrome is English (`revealLabel` =
+took the gloss off every English-L1 course (see below). The chrome is English (`revealLabel` =
 "Reveal the French") and the Settings switcher offers the pair as `english → french`. Its L2/L3
 ladders stay `draft: true` — placeholder lists, nothing authored.
 
@@ -1033,15 +1033,15 @@ Four more things it owes:
 - **A section with nothing in it renders nothing.** No heading, no empty plate, no "not available".
   Enrichment is optional in the schema past M3, so an M4+ module may ship as hero + gloss + words +
   rules and nothing else — and that is a simple sentence, not a broken screen (asserted against a
-  sparse fixture). The gloss obeys the same rule since #268, tightened by #405: `glossEn` is
-  optional in the schema and authored only where a natural English reading differs from the cue
-  and from the `literal` — a gloss that repeats either is dropped (572 came off the en-* courses:
-  449 repeated the cue or the literal, 99 near-repeated one, 24 were literals mislabelled as
-  glosses and moved into `literal`; 128 remain), and a course whose L2 *is* English (hi-en)
-  authors none. The
-  build (`checkGlossEn`) only rejects a gloss where either language of the pair is English. The
-  gloss section draws whatever is present — gloss and literal, literal alone, or nothing — and
-  branches on presence, never on a course id (`docs/design-contract.md`).
+  sparse fixture). The gloss obeys the same rule since #268, settled by #405: `glossEn` is
+  optional in the schema, required by the build where neither language of the pair is English
+  (hi-mr — there it is a third language) and forbidden where either is: hi-en's hero already
+  reads in English, and on the seven en-* courses the cue is the English reading and `literal`
+  the word-for-word one. All 700 en-* glosses came off — 572 repeated the cue or the literal (24
+  were literals mislabelled `lit.` and moved into `literal`), and the 128 that carried a note
+  tail had the tail moved into a word `note` where the note did not already say it. The gloss
+  section draws whatever is present — gloss and literal, literal alone, or nothing — and branches
+  on presence, never on a course id (`docs/design-contract.md`).
 - **Amber exactly once.** The interference trap is the only loud object on the screen
   (design/tokens.md §7 rule 2); the mistake plate is deliberately **neutral** — `--mistake-border`
   / `--mistake-bg`, struck text — because a common mistake is information about the language, not

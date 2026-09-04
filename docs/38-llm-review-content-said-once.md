@@ -34,18 +34,20 @@ had grown into a rule (#407). Each fact is now said once, in the field whose job
 
 ### #405 — a gloss only where it says something new
 
-- `checkGlossEn` now rejects a gloss where *either* language of the pair is English, and no
-  longer requires one anywhere.
-- Across the seven en-\* courses **572 glosses came off**: 330 repeated the cue, 119 repeated the
-  literal, 99 near-repeated one (Jaccard ≥ 0.75 on tokens), and 24 were literals mislabelled as
-  glosses (`lit. "…"`), which moved into an empty `literal`.
-- **128 glosses remain** on en-\* (en-fr 6 · en-de 2 · en-ar 8 · en-ru 15 · en-es 28 · en-it 28 ·
-  en-ko 41). Each is either a genuinely different English reading or a gloss carrying a note
-  tail after an em dash (`lit. "Good days, Ana" — Spanish says it in the plural`). Those tails
-  are teaching text, and dropping them would have lost it; the issue's criterion 1 ("no en-\*
-  sentence carries `glossEn`") is therefore **not met by design**, and the criterion the code
-  enforces is the weaker one above. hi-mr's 100 glosses are untouched — there the gloss is a
-  third language and the only English on the screen.
+- `checkGlossEn` now *forbids* a gloss where either language of the pair is English and still
+  requires one where neither is (hi-mr). The build fails on an en-\* gloss with the fix named.
+- Across the seven en-\* courses **all 700 glosses came off**. 572 repeated something on the
+  screen: 330 the cue, 119 the literal, 99 near-repeated one (Jaccard ≥ 0.75 on tokens), 24 were
+  literals mislabelled as glosses (`lit. "…"`) and moved into an empty `literal`. The last 128
+  were cut in a second pass at the owner's instruction: 56 carried a note tail after an em dash
+  (`lit. "Good days, Ana" — Spanish says it in the plural`); 40 of those tails were already said
+  by the word's note or the sentence's trap and were dropped, **16 were appended to the word note
+  they belong to**, and 8 more were folded into a rewritten note where appending would have
+  crossed 200 characters. Three glosses that were the only word-for-word line on their sentence
+  (en-de L1-M1-S02, en-de L1-M2-S01, en-fr L1-M1-S09) became the `literal`. The other 69 (en-ko's
+  alternate readings, en-ru's bracketed literals, en-ar's `question …` lines) duplicated the cue
+  or the literal in other words. hi-mr's 100 glosses are untouched — there the gloss is a third
+  language and the only English on the screen.
 - Briefs (`tools/course-briefs.ts`) and the prompt generator now describe the gloss as optional.
 
 ### #406 — a mistake names the error; the note holds the rule
@@ -84,7 +86,7 @@ had grown into a rule (#407). Each fact is now said once, in the field whose job
 
 ## What the owner is asked to ratify
 
-- The 128 kept glosses (`grep -l glossEn content/en-*/modules/*.json`) — keep, or cut the note
-  tails into `note`/`trap` and drop the glosses to meet #405's criterion 1 literally.
+- The 24 word notes that absorbed a gloss tail (en-es 15 · en-fr 6 · en-it 9, listed in the
+  diff) — each is one appended sentence or a rewrite that keeps the note under 200.
 - The 576 note rewrites and 88 `why` rewrites: `git diff b1cc969 -- content/` is the whole
   editorial record. Any single rewrite can be reverted by file without touching the code.

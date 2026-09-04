@@ -356,9 +356,9 @@ describe('ModuleContent against the modules that exist', () => {
    * field is ENGLISH — `rules[].text`, word `note`, `trap`, `sound`, `variations[].changed`,
    * `mistake.why`, `usage`, `mnemonic`, `cue` — and Italian appears only in the L2 slots: sentence
    * / word / variation / mistake / pool `display`, and word `forms`. An English field may quote
-   * the Italian it is explaining; quoting is not switching. `glossEn` is OPTIONAL since #405 —
-   * authored only where a natural English reading differs from the cue and the literal — and
-   * the briefs' two orthographic decisions are asserted here because the index cannot: the apostrophe is always
+   * the Italian it is explaining; quoting is not switching. `glossEn` is ABSENT since #405 —
+   * the cue is the English reading, the literal the word-for-word one, and the build forbids a
+   * third — and the briefs' two orthographic decisions are asserted here because the index cannot: the apostrophe is always
    * the straight one (`src/engine/surface.ts` folds the curly one, but `display` must carry one
    * spelling), and no display writes an unaccented `e` where the copula `è` belongs.
    */
@@ -380,8 +380,8 @@ describe('ModuleContent against the modules that exist', () => {
         // Italian is written in the Latin alphabet, accents and all; nothing else may appear.
         expect(sentence.display, at).not.toMatch(nonLatin);
         expect(sentence.display, `${at} straight apostrophe`).not.toMatch(/’/);
-        // A gloss, where one is authored, is English prose and never blank (#405).
-        if (sentence.glossEn !== undefined) expect(sentence.glossEn, `${at} glossEn`).toMatch(/\S/);
+        // No gloss on an English-L1 course (#405): the cue already reads in English.
+        expect(sentence.glossEn, `${at} glossEn`).toBeUndefined();
         // Every teaching field is English prose, and `script` belongs to romanized courses only.
         expect(sentence.script, `${at} script`).toBeUndefined();
         for (const variation of sentence.variations ?? []) {
@@ -535,8 +535,8 @@ describe('ModuleContent against the modules that exist', () => {
    *     of the old rule is its sharp edge, asserted below: the acute must be PRECOMPOSED, because
    *     `á` and `a` + U+0301 are two surfaces and only one of them has a "why" row.
    *
-   * `glossEn` is optional since #405 (authored only where it says something the cue and the
-   * literal do not); where one is present it is Latin-script English, never Cyrillic.
+   * `glossEn` is absent since #405: the L1 is English, so the cue is the gloss and the build
+   * forbids a second one.
    */
   it('keeps the romanized course in its lane: display is Latin, the Cyrillic is the script line (#353)', () => {
     const enRu = MODULE_FILES.filter(([name]) => name.includes('en-ru'));
@@ -569,9 +569,8 @@ describe('ModuleContent against the modules that exist', () => {
         const at = sentence.id;
         surface(sentence, at);
         expect(sentence.cue, `${at} cue is English only`).toMatch(noCyrillic);
-        // Where a gloss is authored (#405) it is English in Latin script, never Cyrillic.
-        if (sentence.glossEn !== undefined)
-          expect(sentence.glossEn, `${at} glossEn`).toMatch(latin);
+        // No gloss on an English-L1 course (#405).
+        expect(sentence.glossEn, `${at} glossEn`).toBeUndefined();
         expect(sentence.literal, `${at} literal`).toMatch(latin);
         for (const field of ['sound', 'usage', 'mnemonic'] as const) {
           expect(sentence[field], `${at} ${field}`).toMatch(latin);
@@ -718,11 +717,8 @@ describe('ModuleContent against the modules that exist', () => {
         const at = sentence.id;
         surface(sentence, at);
         expect(sentence.cue, `${at} cue is English only`).toMatch(noHangul);
-        // Where a gloss is authored (#405) it is English in Latin script and quotes no Hangul.
-        if (sentence.glossEn !== undefined) {
-          expect(sentence.glossEn, `${at} glossEn`).toMatch(latin);
-          expect(sentence.glossEn, `${at} glossEn quotes Hangul`).toMatch(noHangul);
-        }
+        // No gloss on an English-L1 course (#405).
+        expect(sentence.glossEn, `${at} glossEn`).toBeUndefined();
         for (const field of ['sound', 'usage', 'mnemonic', 'trap', 'literal'] as const) {
           const value = sentence[field];
           if (value !== undefined) expect(value, `${at} ${field}`).toMatch(noHangul);
@@ -760,7 +756,7 @@ describe('ModuleContent against the modules that exist', () => {
    * mechanically is everything the briefs (#327) settled as a rule rather than as taste, and it
    * is asserted on the shipped files rather than on the briefs that produced them:
    *
-   *   • `glossEn` only where it adds a reading the cue and literal lack (#405), never blank,
+   *   • no `glossEn` (#405): the cue is the English reading and the build forbids a gloss,
    *   • the apostrophe policy: a straight `'` in every L2 slot, so an elided fusion is ONE
    *     spelling and the index key it earns is the one the resolver reproduces,
    *   • the REGISTER decision, held on the content: this course speaks `vous`, so no L2 slot
@@ -789,7 +785,7 @@ describe('ModuleContent against the modules that exist', () => {
       for (const item of module.comprehensionPool) both(item.id, item.display);
       for (const sentence of module.sentences) {
         const at = sentence.id;
-        if (sentence.glossEn !== undefined) expect(sentence.glossEn, `${at} glossEn`).toMatch(/\S/);
+        expect(sentence.glossEn, `${at} glossEn`).toBeUndefined();
         expect(sentence.register, `${at} register`).toBe('neutral');
         both(at, sentence.display);
         for (const variation of sentence.variations ?? []) {
@@ -827,7 +823,7 @@ describe('ModuleContent against the modules that exist', () => {
    * the briefs (#361) settled as a RULE, asserted on the shipped files rather than on the briefs
    * that produced them:
    *
-   *   • `glossEn` only where it adds a reading the cue and literal lack (#405), never blank,
+   *   • no `glossEn` (#405): the cue is the English reading and the build forbids a gloss,
    *   • the REGISTER decision, which for German is heavier than en-fr's `vous`: the course speaks
    *     `Sie`, so no L2 slot ANYWHERE — display, form, variation, mistake or pool item — writes a
    *     `du`-register word. Unlike en-fr, the mistake plates are held to it too: a `du` form on a
@@ -892,7 +888,7 @@ describe('ModuleContent against the modules that exist', () => {
       for (const item of module.comprehensionPool) l2Slots.push([item.id, item.display]);
       for (const sentence of module.sentences) {
         const at = sentence.id;
-        if (sentence.glossEn !== undefined) expect(sentence.glossEn, `${at} glossEn`).toMatch(/\S/);
+        expect(sentence.glossEn, `${at} glossEn`).toBeUndefined();
         expect(sentence.register, `${at} register`).toBe('neutral');
         expect(sentence.sound, `${at} sound`).toMatch(/\S/);
         l2Slots.push([at, sentence.display]);

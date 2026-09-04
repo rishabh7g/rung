@@ -384,24 +384,29 @@ export function checkScriptMode(module: Module, scriptMode: ScriptMode): ScriptM
 /* ------------------------------------------------------------------- glossEn */
 
 /**
- * The English gloss is optional in the schema (#268) and mandatory here for every course whose L2
- * is not English: it is a THIRD language on hi-mr's screen and the learner's own on en-es and
- * en-ar, and only where the L2 IS English (`l2Tag: en`, hi-en) would it print the hero line twice.
- * The build is the one place that knows the course row, so this is where the rule lives — the same
- * home as `checkScriptMode`. Nothing in the shell branches on it: Sentence Detail renders the gloss
- * when it is present and nothing when it is not. `en` exactly — every row carries a bare language
- * tag, and a regional English course would be a decision to take here, not to guess at.
+ * The English gloss is optional in the schema (#268) and the build decides per course row whether
+ * it is required or forbidden. It is a THIRD language on the page, so it earns its place only where
+ * neither language of the pair is English (hi-mr): there every sentence must carry one. Where the
+ * L2 is English (#268, hi-en) it would print the hero line twice, and where the L1 is English
+ * (#405, en-*) the cue already IS the English reading and the `literal` is the word-for-word one —
+ * so on those rows a gloss is an error, not a choice; anything it would have said belongs in a
+ * word `note`. The build is the one place that knows the course row, so this is where the rule
+ * lives — the same home as `checkScriptMode`. Nothing in the shell branches on it: Sentence Detail
+ * renders the gloss when it is present and nothing when it is not. `en` exactly — every row carries
+ * a bare language tag, and a regional English course would be a decision to take here.
  */
 export function checkGlossEn(module: Module, l1Tag: string, l2Tag: string): string[] {
   const errors: string[] = [];
-  // The gloss is a THIRD language on the page. Where either side of the pair is already English —
-  // the L2 (#268: an English gloss of an English line is the hero twice) or the L1 (#405: the cue
-  // IS the English gloss) — it is optional, and earns its place only when it carries a note the
-  // literal does not. It is required only where neither language is English (hi-mr).
-  if (l1Tag === 'en' || l2Tag === 'en') return errors;
+  const englishInPair = l1Tag === 'en' || l2Tag === 'en';
 
   module.sentences.forEach((sentence, i) => {
-    if (!isNonEmptyString(sentence.glossEn)) {
+    if (englishInPair) {
+      if (sentence.glossEn !== undefined) {
+        errors.push(
+          `/sentences/${i}/glossEn: forbidden when either language of the pair is English (this row: ${l1Tag} → ${l2Tag}) — the cue or the hero already reads in English; put what the gloss said into a word note`,
+        );
+      }
+    } else if (!isNonEmptyString(sentence.glossEn)) {
       errors.push(
         `/sentences/${i}/glossEn: required when neither language of the pair is English (this row: ${l1Tag} → ${l2Tag})`,
       );

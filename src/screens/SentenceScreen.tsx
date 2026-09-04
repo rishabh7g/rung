@@ -342,11 +342,11 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
 
       {deeper && (
         <div id={deeperId} className={styles.depth}>
-          {/* 2 · gloss — the English gloss, then the word-for-word line. Both are optional: since
-            #405 a gloss is authored only where it says something the cue and the literal do not, and
-            where the L2 IS English the sentence carries none (#268), because it would print the hero
-            twice. So the section obeys the rule every other optional section does — nothing to
-            show, nothing rendered. */}
+          {/* 2 · gloss — the English gloss, then the word-for-word line. Both are optional: the
+            build requires the gloss only where neither language of the pair is English (hi-mr) and
+            forbids it where either is (#268, #405) — the hero or the cue already reads in English.
+            So the section obeys the rule every other optional section does — nothing to show,
+            nothing rendered. */}
           {(sentence.glossEn !== undefined || sentence.literal !== undefined) && (
             <section data-section="gloss" className={styles.section}>
               {/* The gloss is English wherever it exists — in hi-mr that is a THIRD language on the
