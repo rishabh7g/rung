@@ -95,22 +95,23 @@
   gap: var(--space-2);
 }
 
-/* The disclosure between the tiers (#401) — the same ghost the "why" panel's toggle is
-   (`components/WhyPanel.module.css`): course words at the floor, accent, no frame, full width so
-   it reads as a rule between the two halves rather than a button floating in one of them. */
+/* The disclosure between the tiers (#401, #408) — the pager's own button shape (`.step` below:
+   hairline frame, the secondary height, centred label) drawn full width across the column, plus
+   the chevron a disclosure needs and a pager does not. It was a ghost first — accent text between
+   two hairlines — and between the amber trap and the "pocket it" plate it read as a caption rather
+   than a control. A door has to look like a door. */
 .deeper {
   composes: courseProse;
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
   width: 100%;
-  min-height: var(--ghost-height);
-  padding: var(--space-2) 0;
+  min-height: var(--btn-secondary-height);
+  padding: var(--space-2) var(--space-3);
   background: none;
-  border: 0;
-  border-top: var(--border-hairline);
-  border-bottom: var(--border-hairline);
-  color: var(--color-accent);
-  text-align: start;
+  border: var(--border-hairline);
+  color: inherit;
   cursor: pointer;
   /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
   touch-action: manipulation;
@@ -118,7 +119,15 @@
 }
 
 .deeper:active {
-  background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+  background: color-mix(in srgb, var(--color-text) 14%, transparent);
+}
+
+.deeperIcon {
+  flex: none;
+  width: var(--icon-inline);
+  height: var(--icon-inline);
+  stroke-width: var(--icon-stroke);
+  color: var(--color-accent-700);
 }
 
 /* The lower tier, open — the same column rhythm the article keeps between sections. */

@@ -42,7 +42,7 @@
  */
 import { useLayoutEffect, useState } from 'react';
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, TriangleAlert } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ChevronDown, ChevronUp, TriangleAlert } from 'lucide-react';
 import { ContentErrorScreen } from '../course/BootScreens.tsx';
 import { useCourse } from '../course/CourseProvider.tsx';
 import { useModule, useModules } from '../course/content.ts';
@@ -309,12 +309,17 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
         </section>
       )}
 
-      {/* THE DISCLOSURE (#401). Above it is what a sentence IS — the line, its words, and the one
-          thing that will bite; below it, still in the frozen order, is everything else the course
-          has to say about it. Six sections and three screens per sentence was the reading path a
-          first-timer walked ten times a module, and most of it restated the tier above (the gloss
-          says the literal; a word's note says its rule). Nothing is removed and nothing moves:
-          one control, and the depth is one tap away for the sentence that earns the question. */}
+      {/* THE DISCLOSURE (#401, #408). Above it is what a sentence IS — the line, its words, and the
+          one thing that will bite; below it, still in the frozen order, is everything else the
+          course has to say about it. Six sections and three screens per sentence was the reading
+          path a first-timer walked ten times a module, and most of it restated the tier above (the
+          gloss says the literal; a word's note says its rule). Nothing is removed and nothing
+          moves: one control, and the depth is one tap away for the sentence that earns the question.
+
+          It wears the pager's button shape — a hairline frame at the secondary height, centred —
+          and a chevron the pager does not need. The first version was a ghost: accent text between
+          two hairlines, and between the amber trap and the "pocket it" plate it read as a caption.
+          Watched in use, it was not tapped. A disclosure has to look like a door (#408). */}
       <button
         type="button"
         className={styles.deeper}
@@ -328,6 +333,11 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
         dir={course.dir}
       >
         {deeper ? strings['sentence.less'] : strings['sentence.deeper']}
+        {deeper ? (
+          <ChevronUp className={styles.deeperIcon} aria-hidden="true" />
+        ) : (
+          <ChevronDown className={styles.deeperIcon} aria-hidden="true" />
+        )}
       </button>
 
       {deeper && (
