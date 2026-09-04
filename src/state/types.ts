@@ -31,7 +31,7 @@ export type ModuleId = string;
 export type SentenceId = string;
 
 /** The persisted state's version. The store and the migration read it from here. */
-export const STATE_VERSION = 11;
+export const STATE_VERSION = 12;
 
 /**
  * A passed module. `status` is a one-member union on purpose: a module is in this map because
@@ -102,22 +102,6 @@ export interface Settings {
    * affordance in the app (Invariant 2's boundary note, PRD §8 F4).
    */
   elapsedTickEnabled: boolean;
-  /**
-   * **The user's own language** (#322) — a BCP-47 tag matching some manifest course's `l1Tag`
-   * (`hi` or `en` today).
-   *
-   * The app had no such fact before: it knew an ACTIVE COURSE, whose `l1` happened to be the
-   * language the learner reads. That conflation is fine while a person learns one thing, and it
-   * falls apart the moment course selection is restructured as "pick your language, then pick
-   * what to learn" — the language outlives any one course, so it has to exist on its own.
-   *
-   * `''` is unset, the same first-run convention `activeCourse` uses, and it is what every
-   * migrated document carries. **Unset is not a missing value to repair**: it means "follow the
-   * active course's own L1", which is exactly what the app did before this field existed, so a
-   * learner who never opens Settings sees no change. `resolveUserLang` (`course/manifest.ts`) is
-   * the one place that resolution lives, so no screen re-derives it a second way.
-   */
-  userLang: string;
 }
 
 /** The persisted document, top to bottom. PRD §8 F7 prints exactly this. */

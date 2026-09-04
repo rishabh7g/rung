@@ -65,7 +65,7 @@ Because Hindi and Marathi are close, every word and rule carries one of three ta
 - **Practice.** The guided 20–30 min session: 15 cards, one card type, cue → guess → reveal → self-mark.
 - **Exit Test.** Two parts: Generate ("the 11th sentence") and Comprehend.
 - **Verdict.** Checklist results, hand-off, attestation, pass/fail states.
-- Secondary: minimal Settings (quick-insert strip toggle, export/backup), first-run onboarding (≤ 3 screens).
+- Secondary: minimal Settings (three cards — course, the elapsed-tick toggle, backup), first-run onboarding (≤ 3 screens).
 
 Navigation model: Ladder is home; Module/Practice/Exit are children of the active rung. Bottom nav vs hub-and-spoke — your call. **[Q1]**
 

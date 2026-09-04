@@ -89,9 +89,6 @@ export const STRINGS_KEYS = [
   'verdict.checkComprehension',
   'verdict.line',
   'verdict.toLadder',
-  'settings.yourLanguage',
-  'settings.statusLine',
-  'settings.statusPending',
   'settings.importReplace',
   'settings.importConfirm',
   'settings.importCancel',
@@ -109,18 +106,13 @@ export const STRINGS_KEYS = [
   'verdict.ritualComplete',
   'verdict.passedRung',
   'settings.title',
-  'settings.kicker.language',
   'settings.kicker.course',
   'settings.kicker.practice',
-  'settings.kicker.storage',
   'settings.activeCourse',
   'settings.tick.title',
-  'settings.tick.note',
   'settings.tick.on',
   'settings.tick.off',
   'settings.storage.meter',
-  'settings.storage.courseRow',
-  'settings.storage.progressRow',
   'settings.backup.title',
   'settings.backup.export',
   'settings.backup.import',
@@ -129,7 +121,6 @@ export const STRINGS_KEYS = [
   'settings.backup.counts',
   'a11y.primaryNav',
   'a11y.pauseSession',
-  'a11y.storageMeter',
   'a11y.sentencePager',
 ] as const;
 
@@ -412,35 +403,6 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'verdict.line': ['{nextModule}'],
   'verdict.toLadder': [],
   /**
-   * The Settings screen (#105, PRD §8 F0, F6) — the status line under the course dropdown, in the
-   * two shapes the current rung comes in: `statusLine` names the rung in progress ("Level 1 · 2
-   * of 10 passed · M3 in progress"), and `statusPending` is the honest variant when that rung's
-   * sentences are not authored yet — it names no rung, because there is nothing in progress to
-   * name. Both are **counts, never time** (Invariant 2), and the counts are the SAME derivation
-   * the Ladder renders (`engine/progression.ts`), interpolated into the course's own sentence:
-   * `{rung}` is the shell-rendered rung label ("M3"), not an id the course must parse.
-   *
-   * The reassurance note under the dropdown, the storage section's two durability lines (#107)
-   * and the privacy line the screen ended on were read once and skimmed past forever; they went
-   * on #232 with the screen's other explainers.
-   */
-  /**
-   * **"Your language"** (#323) — the label on the section that asks the first question Settings
-   * should have asked all along.
-   *
-   * The screen led with a COURSE dropdown reading "hindi → marathi", which makes the learner
-   * answer "what am I studying" before "what do I read". This names the L1 choice, and it is
-   * course copy for the reason every label here is: a learner picking their own language is
-   * reading it in the language they already have.
-   *
-   * The OPTIONS under it need no keys — they are the manifest's own `l1` names ("English",
-   * "Hindi"), which are data. A key per language would be a second list to keep in step with
-   * `courses.json`, and it would have to be translated into every course to say the same word.
-   */
-  'settings.yourLanguage': [],
-  'settings.statusLine': ['{level}', '{passed}', '{total}', '{rung}'],
-  'settings.statusPending': ['{level}', '{passed}', '{total}'],
-  /**
    * The Backup section's four (#108, PRD §8 F6/F7) — what the learner reads around the one door
    * back in. `importReplace` is the confirm's consequence line, kept when the explainer above the
    * buttons went (#232) because a destructive confirm that does not say what it destroys is a
@@ -501,7 +463,7 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'levelStrip.level': ['{level}'],
   /**
    * The staged rung card's kicker [D22] — `{rung}` is the shell-rendered rung label ("M3", from
-   * `rungLabel`), never an id the course must parse, exactly as `settings.statusLine` takes it.
+   * `rungLabel`), never an id the course must parse.
    */
   'rungCard.currentRung': ['{rung}'],
   /**
@@ -513,36 +475,41 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'verdict.ritualComplete': [],
   'verdict.passedRung': ['{rung}'],
   /**
-   * **Settings, all of it** (#105, #107, #108) — the screen a learner opens to change their own
-   * language, which is the one screen that cannot be in a language they may not have.
+   * **Settings, all of it** (#105, #107, #108; cut to this by #392–#394) — the screen a learner
+   * opens to change their course, which is the one screen that cannot be in a language they may
+   * not have.
    *
-   * The title and the four section kickers are the frozen F6 order named in the course's words;
-   * `activeCourse` labels the dropdown (its OPTIONS stay manifest data, as `settings.yourLanguage`
-   * above already records). `tick.*` is #98's one sanctioned time affordance — the row title, the
-   * note that says what the line does, and the two segment labels, which are separate keys because
-   * they are two states rather than one toggle's name.
+   * **Three cards, so two kickers and a title.** There were four kickers and a second dropdown:
+   * a LANGUAGE card asked which language the learner reads, and the COURSE card below it showed
+   * only that language's courses. One decision, two controls, with a dependency the learner had
+   * to infer — so the pairs themselves became the choice and `yourLanguage` went with the filter
+   * it labelled. `activeCourse` labels the one dropdown that is left; its OPTIONS stay manifest
+   * data (`pairLabel`), because a key per course would be a second list to keep in step with
+   * `courses.json` and it would have to be translated into every course to say the same name.
    *
-   * `storage.*` is #107's computed section: the meter's caption over the browser's own two numbers
-   * (`{used}` / `{quota}`, formatted by `formatBytes` — the shell renders the unit, the course
-   * renders the sentence around it), one row label per manifest course (`{course}` is that row's
-   * `pairLabel`, data), and the progress row that is every course at once. `backup.*` is #108's:
-   * the section title, its two buttons, and the confirm's two sides — `onDevice` / `inFile` label
-   * the halves and `counts` is the pair of numbers under each, one key because "2 passed · 5
-   * sessions" is one line whose word order is the language's.
+   * `tick.*` is #98's one sanctioned time affordance — the row title and the two segment labels,
+   * which are separate keys because they are two states rather than one toggle's name. The note
+   * that used to explain the line went with #394: three rendered lines about a 2px hairline, next
+   * to two buttons that already say what they do.
+   *
+   * `storage.meter` is what survives #107's computed section: one sentence over the browser's own
+   * two numbers (`{used}` / `{quota}`, formatted by `formatBytes` — the shell renders the unit,
+   * the course renders the sentence around it), inside the Backup card. The per-course rows and
+   * the progress row went with the meter they captioned: there is no per-course delete, so a byte
+   * figure per course was a number nobody could act on.
+   *
+   * `backup.*` is #108's: the section title, its two buttons, and the confirm's two sides —
+   * `onDevice` / `inFile` label the halves and `counts` is the pair of numbers under each, one key
+   * because "2 passed · 5 sessions" is one line whose word order is the language's.
    */
   'settings.title': [],
-  'settings.kicker.language': [],
   'settings.kicker.course': [],
   'settings.kicker.practice': [],
-  'settings.kicker.storage': [],
   'settings.activeCourse': [],
   'settings.tick.title': [],
-  'settings.tick.note': [],
   'settings.tick.on': [],
   'settings.tick.off': [],
   'settings.storage.meter': ['{used}', '{quota}'],
-  'settings.storage.courseRow': ['{course}'],
-  'settings.storage.progressRow': [],
   'settings.backup.title': [],
   'settings.backup.export': [],
   'settings.backup.import': [],
@@ -550,8 +517,10 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'settings.backup.inFile': [],
   'settings.backup.counts': ['{passed}', '{sessions}'],
   /**
-   * The four accessible names nothing draws (#84, #107) — the nav's landmark, the immersive
-   * header's pause ✕, the storage meter's `role="meter"`, and Sentence Detail's pager landmark.
+   * The three accessible names nothing draws (#84) — the nav's landmark, the immersive header's
+   * pause ✕, and Sentence Detail's pager landmark. There was a fourth, for the storage meter's
+   * `role="meter"`; #393 replaced the meter with a sentence, which needs no name because it is
+   * one.
    *
    * They are course copy for the reason the visible labels are, only more so: a screen reader is
    * the one surface where the label IS the interface, and a Hindi learner navigating by landmark
@@ -560,6 +529,5 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    */
   'a11y.primaryNav': [],
   'a11y.pauseSession': [],
-  'a11y.storageMeter': [],
   'a11y.sentencePager': [],
 };

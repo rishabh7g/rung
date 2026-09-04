@@ -529,7 +529,7 @@ Two consequences worth knowing before you author content:
   emitter imports it, and so does the runtime resolver (`src/engine/wordIndex.ts`, #94). Never
   copy it: a second copy is a word that silently has no "why".
 
-### The strings contract — 83 keys, no fallback copy
+### The strings contract — 74 keys, no fallback copy
 
 Every course ships one `strings.json` carrying **all** the microcopy the shell renders, because
 the shell has none of its own (PRD §4). So the build validates it against the canonical key list
@@ -545,7 +545,7 @@ declared twice.
 `tools/strings-check.ts` runs per course, flattens the nested file onto dot-paths
 (`ritual.check.copy`), and reports four things, always naming course **and** key:
 
-- **missing key** — the 83 canonical paths must all be there;
+- **missing key** — the 74 canonical paths must all be there;
 - **empty or non-string value** — a present-but-blank key is a missing key with extra steps;
 - **unknown key** — the typo tripwire; `ritual.check.plate` would otherwise sit quietly beside a
   missing `plateLabel`;
@@ -664,7 +664,7 @@ pattern that stops matching cannot pass as a clean tree.
 ### The state layer — one document, keyed by course
 
 `src/state/` is zustand + persist over a single `localStorage` document, `rung:state`, whose shape
-is PRD-engineering §8 F7 **verbatim**: `{stateVersion: 6, activeCourse, courses: {<courseId>:
+is PRD-engineering §8 F8 **verbatim**: `{stateVersion: 12, activeCourse, courses: {<courseId>:
 {modules, production, reviewQueue, sessionCount, studied, session}}, settings}`. Everything a
 learner earns hangs under `courses[<courseId>]`, which is what makes **course switching never
 destroy progress** (Invariant 8): a switch moves a pointer, and a course whose content is missing

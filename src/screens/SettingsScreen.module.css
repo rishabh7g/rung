@@ -41,6 +41,8 @@
 /* The one section the prototype heads with a bold body word rather than a kicker. */
 .backupTitle {
   margin: 0;
+  flex: 1;
+  min-width: 0;
   font: var(--text-body);
   font-weight: 600;
 }
@@ -83,15 +85,6 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-/* The status line — course copy, so the smallest Mukta slot pulled to the §2 floor, muted the
-   way the prototype mutes it. Same wall and same flag as the select above. */
-.status {
-  margin: 0;
-  font: var(--text-l2-cue);
-  font-size: var(--devanagari-min-size);
-  color: var(--ink-70);
-}
-
 /* ----------------------------------------------------------------------------- PRACTICE */
 
 .row {
@@ -100,21 +93,10 @@
   gap: var(--space-3);
 }
 
-.rowText {
-  flex: 1;
-  min-width: 0;
-}
-
 .rowTitle {
   margin: 0;
   font: var(--text-body);
   font-weight: 600;
-}
-
-.rowNote {
-  margin: 0;
-  font: var(--text-secondary);
-  color: var(--ink-70);
 }
 
 /* The Industry seg, as the self-mark draws it (`../components/SelfMark.module.css`): one

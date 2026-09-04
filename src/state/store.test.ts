@@ -75,7 +75,7 @@ describe('state v11', () => {
       stateVersion: STATE_VERSION,
       activeCourse: '',
       courses: {},
-      settings: { elapsedTickEnabled: true, userLang: '' },
+      settings: { elapsedTickEnabled: true },
     });
   });
 
@@ -108,7 +108,7 @@ describe('state v11', () => {
    * which means "follow the active course's L1" and is why an existing learner sees no change.
    */
   it('defaults the tick ON pending [Q3] (#70), and the language unset — settings is two keys', () => {
-    expect(useAppStore.getState().settings).toEqual({ elapsedTickEnabled: true, userLang: '' });
+    expect(useAppStore.getState().settings).toEqual({ elapsedTickEnabled: true });
   });
 
   it('persists under rung:state, versioned 11', () => {
@@ -704,7 +704,6 @@ describe('setSetting', () => {
     expect(useAppStore.getState().settings.elapsedTickEnabled).toBe(false);
     expect((stored().state as { settings: unknown }).settings).toEqual({
       elapsedTickEnabled: false,
-      userLang: '',
     });
   });
 });
@@ -778,7 +777,7 @@ describe('migration', () => {
     // and nothing else.
     // The tick is carried; the language it predates arrives unset (#322), which means "follow
     // the active course" — the pre-v9 behaviour, so the upgrade changes nothing the learner sees.
-    expect(state.settings).toEqual({ elapsedTickEnabled: false, userLang: '' });
+    expect(state.settings).toEqual({ elapsedTickEnabled: false });
   });
 
   it('carries a v6 document whole and answers the v9 settings shape', async () => {
@@ -809,7 +808,7 @@ describe('migration', () => {
     expect(state.activeCourse).toBe('hi-mr');
     // The ladder position survives the upgrade untouched (Invariant 8).
     expect(state.courses['hi-mr']).toEqual(midClimb);
-    expect(state.settings).toEqual({ elapsedTickEnabled: false, userLang: '' });
+    expect(state.settings).toEqual({ elapsedTickEnabled: false });
   });
 
   it('drops the retired invitation bit a v7 document still carries (#227)', () => {
@@ -824,8 +823,8 @@ describe('migration', () => {
 
     // Named field by field, not spread: the key v8 retired is not carried forward, which is what
     // lets a v7 backup through `serialize.ts`'s unknown-key refusal (#227).
-    expect(state.settings).toEqual({ elapsedTickEnabled: false, userLang: '' });
-    expect(Object.keys(state.settings).sort()).toEqual(['elapsedTickEnabled', 'userLang']);
+    expect(state.settings).toEqual({ elapsedTickEnabled: false });
+    expect(Object.keys(state.settings).sort()).toEqual(['elapsedTickEnabled']);
     expect(state.stateVersion).toBe(STATE_VERSION);
     expect(state.courses['hi-mr']).toEqual(emptyCourseState());
   });
@@ -854,7 +853,7 @@ describe('migration', () => {
           session: { phase: 'produce', idx: 0, queue: ['L1-M1-S01'] },
         },
       },
-      settings: { elapsedTickEnabled: true, userLang: '' },
+      settings: { elapsedTickEnabled: true },
     };
 
     const state = migrate(v9, 9);
@@ -884,7 +883,7 @@ describe('migration', () => {
           session: { phase: 'review', idx: 1, queue: ['L1-M1-S01', 'L1-M1-S02'] },
         },
       },
-      settings: { elapsedTickEnabled: true, userLang: '' },
+      settings: { elapsedTickEnabled: true },
     };
 
     const state = migrate(v10, 10);
@@ -901,13 +900,46 @@ describe('migration', () => {
     expect(state.stateVersion).toBe(STATE_VERSION);
   });
 
+  /**
+   * The v11 → v12 step (#392): `userLang` filtered a course dropdown that no longer exists, so
+   * the field's only reader is gone. It is dropped by NAMING the survivor, the same move the
+   * v7 → v8 step made for `notebookInvitationDismissed` — and for the same reason: the import
+   * validator refuses a key it does not know, so a v11 backup only gets in because this happens.
+   */
+  it('drops userLang from a v11 document and keeps everything else exactly', () => {
+    const v11 = {
+      stateVersion: 11,
+      activeCourse: 'en-es',
+      courses: {
+        'en-es': {
+          ...emptyCourseState(),
+          modules: { 'L1-M1': { status: 'passed' as const, passedAt: '2026-01-01T00:00:00.000Z' } },
+          production: { 'L1-M2-S01': 1 },
+          reviewQueue: [{ sentenceId: 'L1-M1-S01', box: 3 as const, dueInSessions: 7 }],
+          sessionCount: 21,
+          studied: { 'L1-M1': true },
+        },
+      },
+      settings: { elapsedTickEnabled: false, userLang: 'hi' },
+    };
+
+    const state = migrate(v11, 11);
+
+    expect(state.settings).toEqual({ elapsedTickEnabled: false });
+    expect(Object.keys(state.settings)).toEqual(['elapsedTickEnabled']);
+    // The learner's ladder is untouched — this step costs a dropdown's memory, and no progress.
+    expect(state.activeCourse).toBe('en-es');
+    expect(state.courses['en-es']).toEqual(v11.courses['en-es']);
+    expect(state.stateVersion).toBe(STATE_VERSION);
+  });
+
   it('leaves a v11 snapshot exactly where it was — it is already a position in one list', () => {
     const open = { idx: 3, queue: ['L1-M2-S01'] };
     const v11 = {
       stateVersion: STATE_VERSION,
       activeCourse: 'hi-mr',
       courses: { 'hi-mr': { ...emptyCourseState(), session: open } },
-      settings: { elapsedTickEnabled: true, userLang: '' },
+      settings: { elapsedTickEnabled: true },
     };
 
     // The very same object, not a copy: a document with no stale snapshot is not rewritten at all.
@@ -919,7 +951,7 @@ describe('migration', () => {
       stateVersion: STATE_VERSION,
       activeCourse: 'hi-mr',
       courses: { 'hi-mr': emptyCourseState() },
-      settings: { elapsedTickEnabled: true, userLang: '' },
+      settings: { elapsedTickEnabled: true },
     });
   });
 

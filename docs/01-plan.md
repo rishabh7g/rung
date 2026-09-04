@@ -92,7 +92,7 @@ rung/ (repo name: shidi — GitHub redirects; local dir may keep its name)
 ├── public/content/           # GENERATED per-course output (gitignored)
 ├── src/
 │   ├── engine/               # pure TS: progression, leitner, word-index resolver
-│   ├── state/                # store (v8, per-course), clock, serialize
+│   ├── state/                # store (v12, per-course), clock, serialize
 │   ├── course/               # courses.json loader, strings access, content loader
 │   ├── screens/              # Ladder, ModuleList, SentenceDetail, Practice, Ritual, Comprehension, Verdict, Settings
 │   ├── components/           # RungCard, LevelStrip, RevealCard, SelfMark, WhyRow, Tick, HoldToConfirm, …
@@ -134,14 +134,15 @@ rung/ (repo name: shidi — GitHub redirects; local dir may keep its name)
   derives from it and `tools/strings-check.ts` validates against the same array.
   Screens read microcopy with `useStrings()` and nothing else; the shell owns no
   copy, and `src/shellPurity.test.ts` fails on any course script under `src/`.
-- **State v11** — §F8 verbatim (localStorage `rung:state`):
-  `{ stateVersion: 11, activeCourse, courses: { <id>: { modules, production,
+- **State v12** — §F8 verbatim (localStorage `rung:state`):
+  `{ stateVersion: 12, activeCourse, courses: { <id>: { modules, production,
   reviewQueue, sessionCount, studied, session } }, settings }`. The per-course
   `session` snapshot is `{idx, queue} | null` — a position and the cards it
   indexes — and it is what makes resume lossless, including across course
-  switches. Pre-v11 snapshots also carried a `phase`, from when Practice ran in
-  two halves; migration drops them rather than mapping a position that names no
-  card of a one-list session.
+  switches. `settings` is `{ elapsedTickEnabled }`. Migration DROPS two fields
+  rather than mapping them, each because its only reader went: a pre-v11
+  snapshot's `phase` (from when Practice ran in two halves) and v11's
+  `settings.userLang` (which filtered a course dropdown that is now one list).
 - Rules: engine pure; the ONLY unlock path is the module-pass action
   (Invariant 1, asserted in tests); counters never decrement; timestamps only
   at the store layer via clock.ts (`passedAt` is the only date in state).

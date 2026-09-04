@@ -43,6 +43,7 @@ import { ImportError, exportState, importState } from '../../state/serialize.ts'
 import { emptyCourseState, persistedSlice, useAppStore } from '../../state/store.ts';
 import type { AppState, CourseState } from '../../state/types.ts';
 import { HOME_PATH, restoredBackup } from '../../shell/routes.tsx';
+import StorageLine from './StorageLine.tsx';
 import styles from './BackupSection.module.css';
 
 export default function BackupSection() {
@@ -188,6 +189,9 @@ export default function BackupSection() {
           <p className={styles.failureReason}>{failure}</p>
         </div>
       )}
+      {/* How much room there is (#393) — inside this branch on purpose, so the import
+          confirmation below is the only thing on screen while it is up. */}
+      <StorageLine />
     </>
   );
 }
