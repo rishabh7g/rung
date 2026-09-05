@@ -190,6 +190,13 @@ export interface AppActions {
    */
   startSession: (courseId: CourseId, rungIds?: readonly SentenceId[]) => SessionPlan;
   /**
+   * The plan `startSession` WOULD return right now — the same tick and the same planner, and
+   * nothing written: no `sessionCount`, no queue, no snapshot. It exists so the Practice hub can
+   * promise a length (#389) without owning a second copy of how a session is planned; the tick
+   * is stated here, in `startSession`'s own file, and nowhere else.
+   */
+  previewSession: (courseId: CourseId, rungIds?: readonly SentenceId[]) => SessionPlan;
+  /**
    * Writes the in-flight session's position, or clears it with `null` at the summary (PRD §8 F7 —
    * `session`, the per-course snapshot that makes resume lossless). Called on every card advance;
    * an unchanged snapshot is not a write.
@@ -652,6 +659,11 @@ export const useAppStore = create<AppStore>()(
        * down, which is also what lets a resume land on the very card the learner left
        * (`screens/practice/resume.ts`) without re-planning and re-spending the tick.
        * ---------------------------------------------------------------------------------- */
+      previewSession: (courseId, rungIds = []) => {
+        const course = get().courses[courseId] ?? emptyCourseState();
+        return planSession({ queue: tickSession(course.reviewQueue), rungIds });
+      },
+
       startSession: (courseId, rungIds = []) => {
         const course = get().courses[courseId] ?? emptyCourseState();
         const reviewQueue = tickSession(course.reviewQueue);

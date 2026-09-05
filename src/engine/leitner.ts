@@ -76,9 +76,11 @@ export function tickSession(queue: readonly ReviewItem[]): ReviewItem[] {
  *      Across levels, later level first: L2-M1 is newer than L1-M10.
  *   3. **Sentence order within the module** — S01 before S02, the order the module teaches them.
  *
- * The sort runs on `filter`'s fresh array, so the caller's queue is not reordered.
+ * The sort runs on `filter`'s fresh array, so the caller's queue is not reordered. `max` has no
+ * default: how many a session serves is `engine/session.ts`'s number (`REVIEWS_PER_SESSION`), and
+ * a second "5" here was the same fact in two files.
  */
-export function dueItems(queue: readonly ReviewItem[], max = 5): ReviewItem[] {
+export function dueItems(queue: readonly ReviewItem[], max: number): ReviewItem[] {
   return queue
     .filter((item) => item.dueInSessions <= 0)
     .sort(byUrgency)

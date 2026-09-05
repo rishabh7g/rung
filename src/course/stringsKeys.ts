@@ -235,18 +235,11 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'sentence.deeper': [],
   'sentence.less': [],
   /**
-   * The gated self-mark [D11] (#93) — the three words the reveal card owns. `gotIt` and `missed`
-   * are the two segments, and `next` is the control that only exists once one segment is chosen.
-   * The question that used to sit above them (`mark.prompt`) went with the read-once copy on
-   * #225. They are a group of their own rather than `practice.*` because the same words travel
-   * with the mark: the
-   * Comprehension test asks its own question of its own pair ("same meaning" / "not quite"), and
-   * that pair is #101's to add here beside these.
-   *
-   * `mark.next` stood beside them until #313. The mark is now the whole of the interaction — it
-   * lights, a short window lets the learner change it, and the card commits itself — so the Next
-   * that used to confirm a decision the learner had already made has no label because it has no
-   * button. What the window protects is what `mark.next` protected: one result, the one they meant.
+   * The self-mark [D11] (#93) — the two segments, and the whole of the interaction since #313: a
+   * mark lights, a short window lets the learner change it, and the card commits itself. They are
+   * a group of their own rather than `practice.*` because the same words travel with the mark to
+   * every surface that has one. (`mark.prompt`, the question above them, went on #225; `mark.next`,
+   * the confirming button beside them, on #313.)
    */
   'mark.gotIt': [],
   'mark.missed': [],
@@ -286,9 +279,10 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    *
    * One per surface, and each is the fact that surface cannot show by itself: `recall` that the
    * guess happens in the learner's head before the reveal (the reveal card), `production` that one
-   * got-it per sentence opens the rung's exit ritual (the rung card's dots row). There was a third, `check` — that the
-   * checking is the learner's own — on the ritual's deliberately empty step 2; #348 retired that
-   * step and the key with it, because a hint whose surface is gone is a thing said nowhere.
+   * got-it per sentence opens the rung's exit ritual (the rung card's dots row). There was a third,
+   * `check` — that the checking is the learner's own — on the ritual's deliberately empty step 2;
+   * #348 retired that step and the key with it, because a hint whose surface is gone is a thing
+   * said nowhere.
    *
    * None interpolates: the counts they are about are drawn beside them, and a hint that carried a
    * number would be a status line rather than a thing said once.
@@ -339,7 +333,9 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    * summary that offered the ritual wrongly would land on the module exactly as a typed URL does.
    * What changes is only that the app stops going quiet at the moment the next step opens.
    *
-   * It does not interpolate: the count it follows is the line above it (`practice.summaryScore`).
+   * It does not interpolate, and since the Practice audit (2026-09-05) it does not announce: the
+   * score line above it is the explanation, so the link says only what it does — "Begin the exit
+   * ritual" — rather than "the exit ritual is open — begin it".
    */
   'practice.summaryToRitual': [],
   'practice.backToLadder': [],

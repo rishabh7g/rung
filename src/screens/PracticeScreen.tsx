@@ -13,9 +13,14 @@
  * being a page to read on the way to a tap.
  *
  * **The count stays, because it is the one promise this screen makes.** It comes from
- * `planSession` — the same pure function `startSession` calls, against the queue the session is
- * about to tick — so the hub cannot promise a length the session does not serve. One function, two
- * callers, no second implementation to drift.
+ * `previewSession` — the store's own dry run of `startSession`, the same tick and the same plan
+ * with nothing written — so the hub cannot promise a length the session does not serve. One
+ * planner, one place that knows the tick, no second implementation to drift.
+ *
+ * **No kicker** (Practice audit, 2026-09-05). The head used to print `M3 · Module title` above the
+ * title: the rung card the learner just tapped Practice from says exactly that, and the Ladder tab
+ * is one tap away. With it gone the hub says "session" once as a title, once as a count and once
+ * as a button — and the button is the screen.
  *
  * **A resumed session says Continue, not Begin** (#99). The two buttons became one plus a quiet
  * way out: "which of these means practise?" is not a question to open a practice session with, and
@@ -37,19 +42,15 @@ import { useCourse } from '../course/CourseProvider.tsx';
 import { l2Written } from '../course/manifest.ts';
 import { useModules } from '../course/content.ts';
 import { interpolate, useStrings } from '../course/strings.ts';
-import { tickSession } from '../engine/leitner.ts';
 import { currentRungId, rungStage } from '../engine/progression.ts';
-import { planSession, type SessionPlan } from '../engine/session.ts';
+import type { SessionPlan } from '../engine/session.ts';
 import { useAppStore } from '../state/store.ts';
 import { useImmersive } from '../shell/immersive.tsx';
 import { RegistrationMarks } from './RegistrationMarks.tsx';
-import { rungLabel } from './ladder/rungLabel.ts';
 import { isResumable, resumePlan } from './practice/resume.ts';
 import { Session } from './practice/Session.tsx';
 import { useProgression } from './useProgression.ts';
 import styles from './PracticeScreen.module.css';
-
-const NO_QUEUE: never[] = [];
 
 /** What one run of the session needs: the rung it belongs to, and the cards it serves. */
 interface Run {
@@ -65,8 +66,8 @@ export default function PracticeScreen() {
   const { immersive, enterSession } = useImmersive();
   const { input, ready } = useProgression();
   const startSession = useAppStore((store) => store.startSession);
+  const previewSession = useAppStore((store) => store.previewSession);
   const setSession = useAppStore((store) => store.setSession);
-  const reviewQueue = useAppStore((store) => store.courses[course.id]?.reviewQueue) ?? NO_QUEUE;
   const snapshot = useAppStore((store) => store.courses[course.id]?.session) ?? null;
 
   const rung = ready ? currentRungId(input) : null;
@@ -100,14 +101,12 @@ export default function PracticeScreen() {
   const resumable = isResumable(snapshot);
   /**
    * How many cards the next tap will serve. A resumed session already HAS its cards, so it counts
-   * those; a fresh one is planned against the queue as it will stand after the session's tick,
-   * which is exactly what `startSession` does a moment later.
+   * those; a fresh one is what `startSession` would plan a moment later, asked without the write.
    */
   const cards = resumable
     ? snapshot.queue.length
-    : planSession({ queue: tickSession(reviewQueue), rungIds: sentenceIds }).cardIds.length;
+    : previewSession(course.id, sentenceIds).cardIds.length;
 
-  const title = module?.title;
   const startable = rung !== null && stage !== 'pending' && sentenceIds.length > 0;
 
   const begin = (): void => {
@@ -136,19 +135,9 @@ export default function PracticeScreen() {
 
   return (
     <section className={styles.hub}>
-      <div className={styles.head}>
-        {/* Structural furniture, in the register of the Ladder's `M3 · CURRENT RUNG` — the rung's
-            own title comes out of its module file, which is the course's content. */}
-        {rung !== null && (
-          <p className={styles.kicker}>
-            {rungLabel(rung)}
-            {title === undefined ? '' : ` · ${title}`}
-          </p>
-        )}
-        <h2 className={styles.title} dir={course.dir}>
-          {strings['practice.hubTitle']}
-        </h2>
-      </div>
+      <h2 className={styles.title} dir={course.dir}>
+        {strings['practice.hubTitle']}
+      </h2>
 
       {/* A rung whose sentences are not authored yet has no session to offer, so the hub offers
           nothing: no count, no CTA, and no paragraph explaining the absence — the empty column is

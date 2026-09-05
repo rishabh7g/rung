@@ -151,12 +151,12 @@ describe('dueItems — what is due', () => {
       item('L1-M1-S04', 1, -1),
     ];
 
-    expect(idsOf(dueItems(queue))).toEqual(['L1-M1-S04', 'L1-M1-S01']);
+    expect(idsOf(dueItems(queue, 5))).toEqual(['L1-M1-S04', 'L1-M1-S01']);
   });
 
   it('is empty when nothing is due, and when there is no queue at all', () => {
-    expect(dueItems([item('L1-M1-S01', 2, 3)])).toEqual([]);
-    expect(dueItems([])).toEqual([]);
+    expect(dueItems([item('L1-M1-S01', 2, 3)], 5)).toEqual([]);
+    expect(dueItems([], 5)).toEqual([]);
   });
 });
 
@@ -169,15 +169,15 @@ describe('dueItems — the order', () => {
       item('L1-M1-S04', 1, -2),
     ];
 
-    expect(idsOf(dueItems(queue))).toEqual(['L1-M1-S02', 'L1-M1-S04', 'L1-M1-S03', 'L1-M1-S01']);
+    expect(idsOf(dueItems(queue, 5))).toEqual(['L1-M1-S02', 'L1-M1-S04', 'L1-M1-S03', 'L1-M1-S01']);
   });
 
   it('breaks a due-ness tie by module, newest first — and reads the numbers, not the text', () => {
     // Lexicographically 'L1-M10-S01' < 'L1-M9-S01', so a raw string sort files the module the
     // learner just passed BEHIND the one before it. M10 is newer, so M10 comes first.
-    expect(idsOf(dueItems(due('L1-M9-S01', 'L1-M10-S01')))).toEqual(['L1-M10-S01', 'L1-M9-S01']);
-    expect(idsOf(dueItems(due('L1-M10-S01', 'L1-M9-S01')))).toEqual(['L1-M10-S01', 'L1-M9-S01']);
-    expect(idsOf(dueItems(due('L1-M2-S01', 'L1-M10-S01', 'L1-M9-S01', 'L1-M1-S01')))).toEqual([
+    expect(idsOf(dueItems(due('L1-M9-S01', 'L1-M10-S01'), 5))).toEqual(['L1-M10-S01', 'L1-M9-S01']);
+    expect(idsOf(dueItems(due('L1-M10-S01', 'L1-M9-S01'), 5))).toEqual(['L1-M10-S01', 'L1-M9-S01']);
+    expect(idsOf(dueItems(due('L1-M2-S01', 'L1-M10-S01', 'L1-M9-S01', 'L1-M1-S01'), 5))).toEqual([
       'L1-M10-S01',
       'L1-M9-S01',
       'L1-M2-S01',
@@ -186,7 +186,7 @@ describe('dueItems — the order', () => {
   });
 
   it('counts a later level as newer than any module below it', () => {
-    expect(idsOf(dueItems(due('L1-M10-S01', 'L2-M1-S01', 'L3-M2-S01')))).toEqual([
+    expect(idsOf(dueItems(due('L1-M10-S01', 'L2-M1-S01', 'L3-M2-S01'), 5))).toEqual([
       'L3-M2-S01',
       'L2-M1-S01',
       'L1-M10-S01',
@@ -194,7 +194,7 @@ describe('dueItems — the order', () => {
   });
 
   it('then keeps the module’s own sentence order', () => {
-    expect(idsOf(dueItems(due('L1-M3-S03', 'L1-M3-S01', 'L1-M3-S10', 'L1-M3-S02')))).toEqual([
+    expect(idsOf(dueItems(due('L1-M3-S03', 'L1-M3-S01', 'L1-M3-S10', 'L1-M3-S02'), 5))).toEqual([
       'L1-M3-S01',
       'L1-M3-S02',
       'L1-M3-S03',
@@ -210,7 +210,7 @@ describe('dueItems — the order', () => {
       item('L1-M1-S01', 1, -2),
     ];
 
-    expect(idsOf(dueItems(queue))).toEqual([
+    expect(idsOf(dueItems(queue, 5))).toEqual([
       'L1-M1-S01', // most overdue, whatever module it is from
       'L1-M9-S01', // newest module of the rest
       'L1-M2-S01', // same module → sentence order
@@ -231,7 +231,7 @@ describe('dueItems — the cap', () => {
       'L1-M7-S01',
     );
 
-    expect(idsOf(dueItems(queue))).toEqual([
+    expect(idsOf(dueItems(queue, 5))).toEqual([
       'L1-M7-S01',
       'L1-M6-S01',
       'L1-M5-S01',
@@ -295,8 +295,8 @@ describe('enrol', () => {
   it('holds the sentences back one session — enrolled today, due next time', () => {
     const enrolled = enrol([], ['L1-M1-S01']);
 
-    expect(dueItems(enrolled)).toEqual([]);
-    expect(dueItems(tickSession(enrolled))).toEqual([item('L1-M1-S01', 1, 0)]);
+    expect(dueItems(enrolled, 5)).toEqual([]);
+    expect(dueItems(tickSession(enrolled), 5)).toEqual([item('L1-M1-S01', 1, 0)]);
   });
 });
 
@@ -461,7 +461,7 @@ describe('the module is pure', () => {
     const input = frozen(queue);
 
     expect(() => tickSession(input)).not.toThrow();
-    expect(() => dueItems(input)).not.toThrow();
+    expect(() => dueItems(input, 5)).not.toThrow();
     expect(() => applyMark(input, 'L1-M1-S01', true)).not.toThrow();
     expect(() => enrol(input, ['L1-M9-S01'])).not.toThrow();
     expect(input).toEqual(queue);
@@ -474,12 +474,12 @@ describe('the module is pure', () => {
     expect(ticked[0]).not.toBe(queue[0]);
     expect(enrol(queue, [])).not.toBe(queue);
     expect(applyMark(queue, 'L1-M1-S01', true)).not.toBe(queue);
-    expect(dueItems(queue)).not.toBe(queue);
+    expect(dueItems(queue, 5)).not.toBe(queue);
   });
 
   it('answers the same thing twice for the same input', () => {
     expect(tickSession(queue)).toEqual(tickSession(queue));
-    expect(dueItems(queue)).toEqual(dueItems(queue));
+    expect(dueItems(queue, 5)).toEqual(dueItems(queue, 5));
     expect(applyMark(queue, 'L1-M2-S01', true)).toEqual(applyMark(queue, 'L1-M2-S01', true));
     expect(enrol(queue, ['L1-M9-S01'])).toEqual(enrol(queue, ['L1-M9-S01']));
   });
@@ -496,11 +496,11 @@ describe('the module is pure', () => {
       item('L1-M1-S01', 1, 3),
       item('L3-M4-S07', 2, 0),
     ];
-    const expected = idsOf(dueItems(stored));
+    const expected = idsOf(dueItems(stored, 5));
 
     expect(expected).toEqual(['L2-M1-S01', 'L1-M2-S01', 'L3-M4-S07', 'L1-M10-S01', 'L1-M10-S02']);
     for (let seed = 0; seed < 50; seed += 1) {
-      expect(idsOf(dueItems(shuffle(stored, seed)))).toEqual(expected);
+      expect(idsOf(dueItems(shuffle(stored, seed), 5))).toEqual(expected);
     }
   });
 });

@@ -34,9 +34,10 @@
  * is the card acknowledging the mark rather than waiting for permission.
  *
  * **The card writes nothing** (Invariant 4). It emits `onResult({ sentenceId, gotIt })` when the
- * window elapses, and the parent decides what that means: a Review mark feeds the Leitner queue
- * (`applyMark`), a Produce mark the production counters (`recordProduction`, #95) — and the
- * session machine (#96) is the parent that routes them. Nothing here imports the store.
+ * window elapses, and the parent decides what that means: an earlier-rung card feeds the Leitner
+ * queue (`applyMark`), a this-rung card the production counters (`recordProduction`, #95) — and
+ * the session (`screens/practice/Session.tsx`) is the parent that routes them. Nothing here
+ * imports the store.
  *
  * **The "why" panel is a slot, not a feature here** — `WhyPanel` (#94) fills it with the
  * word-index resolver's rows and its own ghost toggle, and the parent passes it in. It renders
@@ -46,9 +47,9 @@
  * Comprehension (#101) shares the `SelfMark` and the gate, not this card: it reveals the L1 rather
  * than the L2 and labels its own reveal out of `revealLabelComprehend`, in its own layout.
  *
- * **No `mode` prop.** Review and Produce differ in what the parent DOES with the mark, never in
- * what this card renders — the one thing the mode ever picked was the per-phase nudge, and #225
- * removed the nudges. The session still knows which phase it is in; the card no longer needs to.
+ * **No `mode` prop.** Which rung a card came from changes what the parent DOES with the mark,
+ * never what this card renders — the one thing a mode ever picked was the per-phase nudge, and
+ * #225 removed the nudges.
  */
 import { useCallback, useState, type ReactNode } from 'react';
 import type { L2Written } from '../course/manifest.ts';
@@ -76,7 +77,7 @@ interface RevealCardProps {
   script?: string;
   /** `WhyPanel` (#94) — its word rows and toggle. Nothing renders when the slot is empty. */
   why?: ReactNode;
-  /** Called once, on Next, with the mark the learner settled on. The card stores nothing. */
+  /** Called once, when the commit window elapses, with the mark the learner settled on. */
   onResult: (result: RevealResult) => void;
   /** The course's writing direction — every line on the card is its content or its copy. */
   dir?: string;
@@ -135,10 +136,10 @@ export function RevealCard({
   return (
     <section className={styles.card}>
       <div className={styles.cue}>
-        {/* The course names its own L1 ("<language> cue"), so this label is its copy too. */}
-        <p className={styles.cueLabel} dir={dir}>
-          {strings.cueLabel}
-        </p>
+        {/* No label over the cue (Practice audit, 2026-09-05). `cueLabel` used to name the learner's
+            own language above every one of the fifteen cues — the reveal button already names the
+            other one, and the accent rule is the cue's whole frame. Comprehension still prints the
+            label, because there the cue is the L2 and the language IS the surprise. */}
         <p className={styles.cueText} dir={dir}>
           {cue}
         </p>

@@ -19,7 +19,7 @@
  * origin is the page load. It cannot answer what day it is, what time it is, or what the last
  * session was; a clock change, a timezone or a DST hop moves it by nothing at all, because it is
  * not a date and does not know about any of them. The number never leaves this component either:
- * it is not persisted (state v6 carries no timestamp but `passedAt`), not exported, and not
+ * it is not persisted (the persisted state carries no timestamp but `passedAt`), not exported, and not
  * rendered — it reaches the DOM as a fraction of a bar's width and nothing else. The guard's own
  * comment carries this argument, so the exemption is one someone can read rather than infer.
  *

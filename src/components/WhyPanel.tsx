@@ -4,9 +4,10 @@
  *
  * It fills the slot `RevealCard` left for it (#93): a ghost toggle under the revealed answer that
  * expands **in place** over `--motion-expand` (250ms, design/tokens.md §5) into one `WhyRow` per
- * resolvable span of the sentence, plus the "open full" link to Sentence Detail. Every revealed
- * surface gets the same component — Review, Produce, and Comprehension (#101) — because it is a
- * panel about a sentence, not about a phase.
+ * resolvable span of the sentence. Every revealed surface gets the same component — the Practice
+ * session and Comprehension (#101) — because it is a panel about a sentence, not about a screen.
+ * The "open full" link to Sentence Detail and the `leading` slot for a "show cue" control went
+ * with the two-phase session (#388): a card that always shows its cue has nothing to toggle.
  *
  * **Resolution is graceful, and that is the design.** The learner is mid-flow: an unresolvable
  * span renders NOTHING — no error, no placeholder, no gap. Content legitimately carries tokens no
@@ -21,15 +22,14 @@
  * layer's many-files loader and shares this panel's failure policy: a module that will not load
  * degrades **silently**, because `useModule`'s error screen is the right answer for a screen whose
  * whole content is missing and the wrong one for an optional expansion mid-session. The session's
- * Review queue (#96) reads the same way, which is what moved that loader out of this file.
+ * card list reads the same way, which is what moved that loader out of this file.
  *
  * **Which index it asks.** The module is read out of the sentence id (`moduleIdOf`, #89) rather
  * than passed in: a sentence's own module's cumulative index is by construction the smallest one
  * that teaches all of its words, and it is the file the session already loaded. An id that names
- * no module (a Produce card built from something else later) expands to nothing, the same as an
- * unresolvable sentence.
+ * no module expands to nothing, the same as an unresolvable sentence.
  */
-import { useState, type ReactNode } from 'react';
+import { useState } from 'react';
 import { useIndex, useModules } from '../course/content.ts';
 import type { L2Written } from '../course/manifest.ts';
 import { useStrings } from '../course/strings.ts';
@@ -44,24 +44,13 @@ interface WhyPanelProps {
   sentenceId: string;
   /** The revealed L2 line, exactly as the card shows it. Its spans are what the rows explain. */
   display: string;
-  /**
-   * Whether this surface offers "open full". Produce cards do and Review cards do not
-   * (PRD §8 F4, PRD-design §6.3) — the phase is the session's knowledge, not this panel's.
-   */
-  /**
-   * A control that belongs in the SAME ghost row, rendered before the toggle — a surface's
-   * "show cue" (#97), which the prototype draws beside "why" and "open full" rather than above
-   * them. The slot exists so the rows still expand under all three; every other surface leaves it
-   * empty, and an empty one renders nothing.
-   */
-  leading?: ReactNode;
   /** The course's writing direction — every line here is its content or its copy. */
   dir?: string;
   /** The tags the L2 word rows are written in (#186). */
   l2?: L2Written;
 }
 
-export function WhyPanel({ sentenceId, display, leading, dir, l2 }: WhyPanelProps) {
+export function WhyPanel({ sentenceId, display, dir, l2 }: WhyPanelProps) {
   const strings = useStrings();
   const [open, setOpen] = useState(false);
   const moduleId = moduleIdOf(sentenceId);
@@ -70,7 +59,6 @@ export function WhyPanel({ sentenceId, display, leading, dir, l2 }: WhyPanelProp
   return (
     <div className={styles.why}>
       <div className={styles.controls}>
-        {leading}
         <button
           type="button"
           className={styles.toggle}

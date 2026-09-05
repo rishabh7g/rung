@@ -71,7 +71,7 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } fr
 import { useModules } from '../../course/content.ts';
 import type { L2Written } from '../../course/manifest.ts';
 import type { Sentence } from '../../course/types.ts';
-import { MARKS_PER_SENTENCE } from '../../engine/exit.ts';
+import { MARKS_PER_SENTENCE, exitAvailable } from '../../engine/exit.ts';
 import type { SessionPlan } from '../../engine/session.ts';
 import { RevealCard, type RevealResult } from '../../components/RevealCard.tsx';
 import { WhyPanel } from '../../components/WhyPanel.tsx';
@@ -256,8 +256,12 @@ export function Session({ courseId, rungIds, plan, resume, dir, l2 }: SessionPro
   const sentenceId = cards[live.idx];
   const sentence = sentenceId === undefined ? undefined : sentences.get(sentenceId);
   const fromRung = sentenceId === undefined ? undefined : moduleIdOf(sentenceId);
-  /** The rung's sentences marked through — the exit gate's own number, and the summary's link. */
-  const marked = rungIds.filter((id) => (production[id] ?? 0) >= MARKS_PER_SENTENCE).length;
+  /**
+   * Whether the rung is worked through — the summary's link to the ritual. The engine's own
+   * predicate, not a re-count of it: `exitAvailable` is what the Ladder and the route's guard ask,
+   * so the summary can never offer the ritual on a different arithmetic (Practice audit).
+   */
+  const ritualOpen = exitAvailable(rungIds, production);
 
   return (
     <section className={styles.session}>
@@ -269,27 +273,20 @@ export function Session({ courseId, rungIds, plan, resume, dir, l2 }: SessionPro
       <Tick active={!live.done} />
 
       {live.done && (
-        <SessionSummary
-          gotIt={live.gotIt}
-          total={cards.length}
-          marked={marked}
-          rungTotal={rungIds.length}
-          dir={dir}
-        />
+        <SessionSummary gotIt={live.gotIt} total={cards.length} ritualOpen={ritualOpen} dir={dir} />
       )}
 
       {!live.done && sentence !== undefined && sentenceId !== undefined && (
         <div className={styles.card}>
           <div className={styles.head}>
-            {/* Structural furniture, like the module list's `M1 · MODULE` — raised on #71. A card
-                from an earlier rung says so, because a sentence the learner last saw three rungs
-                ago arriving unannounced reads as a mistake. A card from the rung they are on needs
-                no such note: it is what they came here for. */}
-            <p className={styles.kicker}>
-              {inRung.has(sentenceId)
-                ? rungLabel(fromRung ?? '')
-                : `FROM ${rungLabel(fromRung ?? '')}`}
-            </p>
+            {/* Structural furniture, like the module list's `M1 · MODULE` — raised on #71, and
+                drawn ONLY on a card from an earlier rung: a sentence the learner last saw three
+                rungs ago arriving unannounced reads as a mistake. A card from the rung they are on
+                carries no label at all — it is what they came here for, and `M3` fifteen times
+                over was the same fact said on every card (Practice audit, 2026-09-05). */}
+            {!inRung.has(sentenceId) && (
+              <p className={styles.kicker}>{`FROM ${rungLabel(fromRung ?? '')}`}</p>
+            )}
             {/* Counts, never time — and no English "of": the shell owns neither word (#88, #89). */}
             <p className={styles.position}>
               {live.idx + 1} / {cards.length}

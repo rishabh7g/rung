@@ -1,6 +1,7 @@
 /* Layout only, tokens only (docs/design-contract.md rule 1).
-   Geometry follows design/Rung App v3.3.dc.html → Practice → the session-end panel: kicker,
-   title, one plate of counts, and the way back at the bottom. */
+   Geometry follows design/Rung App v3.3.dc.html → Practice → the session-end panel: title, one
+   plate of counts, and the way back at the bottom. The prototype's kicker is not drawn — the
+   title says it. */
 
 /* The summary owns the column too: the way back sits at the bottom, as the prototype's does. It
    renders in place of the session's card, inside the same gutter, so it sets no left padding of
@@ -12,15 +13,6 @@
   min-height: 0;
   gap: var(--space-4);
   padding: var(--space-4) 0 0;
-}
-
-/* English shell furniture, in the register of the nav's tab labels — raised on #71. */
-.kicker {
-  margin: 0;
-  font: var(--text-kicker);
-  letter-spacing: var(--kicker-tracking);
-  text-transform: uppercase;
-  color: var(--color-accent-700);
 }
 
 /**

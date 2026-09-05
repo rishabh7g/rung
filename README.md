@@ -1135,9 +1135,11 @@ Four divergences from the prototype, three of them the same wall:
   where the prototype writes 13px Barlow — and the row that carries them is therefore **2:1**
   rather than the prototype's 1:1, because half a 360px row wraps hi-mr's "not yet" inside its own
   44px segment. Flagged with the rest on **#117**; no token invented.
-- **The cue label is course prose, not a kicker.** `cueLabel` is the course's own words for its L1,
-  so it renders at the floor in `--ink-45` where the prototype writes a 10px uppercase kicker — and
-  the uppercasing goes with it, the same call Sentence Detail's two course-copy labels made (#89).
+- **No label over the cue.** The prototype writes a 10px uppercase kicker naming the L1; the card
+  drew `cueLabel` there as course prose until the Practice audit (2026-09-05) took it off — the
+  reveal button already names the other language, and a label naming the learner's own one fifteen
+  times a session was the same fact on every card. `cueLabel` still renders on Comprehension, where
+  the cue is the L2.
 - **The 2px cue rule is `var(--tick-height)`**, the design package's only 2px length — the stand-in
   the level strip's bar already takes (#86).
 - **The kicker row and the position count are not on the card.** They belong to the session that

@@ -697,6 +697,26 @@ describe('switchCourse (#106 — swap, and nothing erased)', () => {
   });
 });
 
+describe('previewSession (the hub’s count, #389)', () => {
+  it('answers exactly what startSession then serves, and writes nothing', () => {
+    const rung = ['L1-M2-S01', 'L1-M2-S02', 'L1-M2-S03'];
+    writeCourse('hi-mr', {
+      reviewQueue: [
+        { sentenceId: 'L1-M1-S01', box: 1, dueInSessions: 1 },
+        { sentenceId: 'L1-M1-S02', box: 2, dueInSessions: 3 },
+      ],
+    });
+    const before = useAppStore.getState().courses['hi-mr'];
+
+    const preview = useAppStore.getState().previewSession('hi-mr', rung);
+
+    // A dry run: the count, the queue and the snapshot are exactly as they were.
+    expect(useAppStore.getState().courses['hi-mr']).toBe(before);
+    expect(useAppStore.getState().startSession('hi-mr', rung)).toEqual(preview);
+    expect(useAppStore.getState().courses['hi-mr']?.sessionCount).toBe(1);
+  });
+});
+
 describe('setSetting', () => {
   it('writes one setting and persists it, leaving the others alone', () => {
     useAppStore.getState().setSetting('elapsedTickEnabled', false);

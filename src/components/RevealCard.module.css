@@ -23,25 +23,11 @@
   border-left: var(--tick-height) solid var(--color-accent-300);
 }
 
-/**
- * Course copy, every line of it, so both lines are Mukta: `--text-l2-cue` is the ramp's practice
- * cue slot (400 20px/1.6) and the label above it is the same slot at the `--devanagari-min-size`
- * floor, where the prototype writes a 10px uppercase Barlow Condensed kicker.
- *
- * The uppercasing goes with it, deliberately: `cueLabel` is authored per course, Devanagari has
- * no case to raise, and a kicker that shouts in the English courses and whispers in the Hindi one
- * is not one component. Sixth recurrence of the type wall (#86–#89) — flagged on #117, no token
- * invented.
- */
-.cueLabel {
-  margin: 0;
-  font: var(--text-l2-cue);
-  font-size: var(--devanagari-min-size);
-  color: var(--ink-65);
-}
-
+/* Course copy, Mukta: `--text-l2-cue` is the ramp's practice cue slot (400 20px/1.6). The label
+   the prototype writes above it (a 10px uppercase kicker naming the L1) is not drawn — see the
+   component. */
 .cueText {
-  margin: var(--space-1) 0 0;
+  margin: 0;
   font: var(--text-l2-cue);
 }
 

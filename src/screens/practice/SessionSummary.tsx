@@ -12,9 +12,12 @@
  * not re-derived from the store afterwards, which would answer a different question.
  *
  * The exit ritual link is a different fact, and it is about the RUNG rather than the session: it
- * appears when every sentence of the current rung has been marked got-it at least once, which is
- * exactly the predicate `engine/exit.ts` answers for the ladder. The route's own guard still
- * decides whether it opens — this is a way there, never a second gate.
+ * appears when `engine/exit.ts` says the rung is worked through — the session asks that predicate
+ * and hands the answer down, so this component holds no arithmetic of its own. The route's own
+ * guard still decides whether it opens — this is a way there, never a second gate.
+ *
+ * **No kicker** (Practice audit, 2026-09-05). `SESSION END` in English furniture sat over "Done
+ * for today." in the course's words — the same fact twice, in two registers. The title is enough.
  */
 import { Link } from 'react-router-dom';
 import { interpolate, useStrings } from '../../course/strings.ts';
@@ -27,20 +30,16 @@ interface SessionSummaryProps {
   gotIt: number;
   /** Cards this session served. */
   total: number;
-  /** Sentences of the current rung now at the exit gate. */
-  marked: number;
-  /** Sentences the current rung has. */
-  rungTotal: number;
+  /** Whether the current rung is worked through — `exitAvailable`, asked by the session. */
+  ritualOpen: boolean;
   dir?: string;
 }
 
-export function SessionSummary({ gotIt, total, marked, rungTotal, dir }: SessionSummaryProps) {
+export function SessionSummary({ gotIt, total, ritualOpen, dir }: SessionSummaryProps) {
   const strings = useStrings();
 
   return (
     <section className={styles.summary}>
-      {/* English shell furniture, in the register of the nav's tab labels (raised on #71). */}
-      <p className={styles.kicker}>SESSION END</p>
       <h2 className={styles.title} dir={dir}>
         {strings['practice.summaryTitle']}
       </h2>
@@ -56,7 +55,7 @@ export function SessionSummary({ gotIt, total, marked, rungTotal, dir }: Session
 
       {/* The rung is worked through: the exit ritual is what comes next, and this is the moment
           the learner earned it. */}
-      {rungTotal > 0 && marked === rungTotal && (
+      {ritualOpen && (
         <Link className={styles.toRitual} to={RITUAL_PATH} dir={dir}>
           {strings['practice.summaryToRitual']}
         </Link>

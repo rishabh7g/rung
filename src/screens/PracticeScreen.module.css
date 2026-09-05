@@ -1,6 +1,7 @@
 /* Layout only, tokens only (docs/design-contract.md rule 1).
-   Geometry follows design/Rung App v3.3.dc.html → Practice → the hub (`phStart`): kicker, title,
-   the session's length, and the CTA held at the bottom of the column. */
+   Geometry follows design/Rung App v3.3.dc.html → Practice → the hub (`phStart`): title, the
+   session's length, and the CTA held at the bottom of the column. The prototype's kicker is not
+   drawn — the rung card the learner came from already says it. */
 
 /* The whole column, so the CTA can sit at the bottom of the screen as it does in the prototype:
    the shell's `<main>` is a plain scrolling block, so `min-height: 100%` is what gives
@@ -11,22 +12,6 @@
   min-height: 100%;
   gap: var(--space-4);
   padding: var(--space-6) var(--gutter) var(--space-8);
-}
-
-.head {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-}
-
-/* English shell furniture plus the rung's own title, in the register of the Ladder's
-   `M3 · CURRENT RUNG` kicker — raised on #71. */
-.kicker {
-  margin: 0;
-  font: var(--text-kicker);
-  letter-spacing: var(--kicker-tracking);
-  text-transform: uppercase;
-  color: var(--color-accent-700);
 }
 
 /**
