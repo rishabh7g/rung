@@ -174,9 +174,19 @@ all five — **all ten L1 rungs are authored** — and reviewed them in
 `docs/13-llm-review-hi-en-L1-M6-M10.md`. Whole surfaces: `going to`, `there is` / `there are`,
 `next to`, `in front of`, `how much` / `how many`, `Can I have`, `See you`; `because` / `so` one row
 each; `it` / `it's`, `where`, `this` (M8), `that` (M9), the joiners `and` / `but` / `also` / `then`;
-M10's turns are 2–3 sentences in one `display` (`minWordsPerSentence: 2`, no schema change). The one
-recorded deviation from the contraction policy: `I'll` (M6) lists only itself, so `I will` still opens
-the `will` row the brief wants tappable. Graduation (#273) followed the en-es/en-ar path — below.
+M10's turns are 2–3 sentences in one `display` (`minWordsPerSentence: 2`, no schema change).
+Graduation (#273) followed the en-es/en-ar path — below.
+
+**The spoken-English pass (2026-09-05, `docs/39-llm-review-hi-en-spoken-english.md`)** rewrote 41 of
+the 100 heroes to what a native says rather than what a textbook prints: `I'm` from M1-S02 (the
+first pass had withheld it until M2 so that `am` could be "the lesson"), `What's` / `Where's` /
+`There's` / `She's` / `They're` / `We're` / `That's` / `isn't` as their own rows, M6's plans as
+`be + -ing` and `going to` with `will` kept for promises (`I'll call you tomorrow`), `go to bed
+late` in place of `sleep late` (which means the opposite in English), `worked from home`, `had
+rice`, `on Mondays`, `some tea`, `Do you take sugar?`, `I'm good, thanks`, `I like coffee too`,
+`Bye`. The Hindi cues moved to the same register (टीचर, स्टूडेंट, थैंक यू, गुड मॉर्निंग, बाय). The
+cumulative index now ends at **259** surfaces; `I'll` lists `I will` beside itself, and `will` has
+its own row on M6-S10.
 
 **en-es ships (#195, 2026-08-13) — the product has two courses.** All ten L1 rungs —
 `L1-M1`…`L1-M10` — are authored and carry `verified: true` on the same
@@ -308,8 +318,8 @@ bytes every learner downloads. en-ar's shared cost was **negative** — `shell` 
 1.4, because Naskh had been charged to `shell` while en-ar was a fixture and now has an owner
 (docs/05-perf-notes.md §4.4, §4.5).
 
-hi-en is the heaviest row in the product, and it holds: `course:hi-en` **346.5 KiB** gzip against
-360 (13.5 KiB of headroom), `precache:hi-en` **561.1 KiB** against 590. A Hindi-chrome course is
+hi-en is the heaviest row in the product, and it holds: `course:hi-en` **347.3 KiB** gzip against
+360 (12.7 KiB of headroom), `precache:hi-en` **563.0 KiB** against 590. A Hindi-chrome course is
 charged the Mukta Devanagari subset exactly as hi-mr is (`SCRIPT_BY_LANGUAGE_TAG`: `hi` →
 `devanagari`) — ≈ 85 KiB of JSON plus ≈ 261 KiB of face — and its Hindi teaching prose, three
 UTF-8 bytes a character, makes its JSON ≈ 8 KiB heavier than hi-mr's. hi-en's shared cost lands

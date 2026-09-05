@@ -231,9 +231,11 @@
  *
  * - **`display` uses the contraction a fluent speaker would say** — `I'm fine`, `I don't want tea`,
  *   `He doesn't get up early`, `I didn't go`, `It's on the table` — and writes the full form only
- *   where a contraction is impossible (`Yes, I am`: sentence-final `am` never contracts) or where the
- *   uncontracted word IS the module's lesson (M1's `I am a student`, because `am` is what M1 teaches;
- *   M6's `I will go`, because `will` is; M5's `was not`, because `was` is).
+ *   where a contraction is impossible (`Yes, I am`: sentence-final `am` never contracts). The first
+ *   pass exempted a module whose lesson was the uncontracted word (M1's `I am a student`, M6's
+ *   `I will go`); the spoken-English pass (2026-09-05, `docs/39-…`) withdrew that: a learner who
+ *   practises `I am from India` fifteen times is practising a sentence nobody says, so `I'm` is
+ *   taught in M1-S02 and M6 plans with `be + -ing` / `going to`, keeping `will` for promises.
  * - **A contraction is its own word row, in the module that introduces it, and that row's `forms`
  *   lists BOTH shapes** — `don't` · `do not`; `I'm` · `I am` — so either spelling resolves to one
  *   true note (a two-word form is a two-token key, and the longest-match walk takes `do not` whole),

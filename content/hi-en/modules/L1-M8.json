@@ -18,7 +18,7 @@
     "allowedPatterns": [
       "How much is this?",
       "How much does it cost?",
-      "It's + num + rupees",
+      "It's / That's + num + rupees",
       "Can I have + a/an / num + N(-s) + , please?",
       "a kilo / a bottle of + N",
       "How many + N-s + do you want?"
@@ -28,7 +28,7 @@
   "rules": [
     {
       "tag": "delta",
-      "text": "दाम के दो सवाल, और हर एक का अपना सहारा — How much is this? (be ख़ुद आगे आता है — M2 का नियम) · How much does it cost? (साधारण क्रिया does उधार लेती है — M4 का नियम, और cost मूल रूप में: *does it costs दोहरा निशान है). जवाब दोनों का एक: It's fifty rupees / It costs fifty rupees. हिंदी दाम का शब्द आख़िर में रखती है (यह कितने का है?); अंग्रेज़ी में सवाल का जोड़ा सबसे आगे, be / does उसके ठीक बाद."
+      "text": "दाम के दो सवाल, और हर एक का अपना सहारा — How much is this? (be ख़ुद आगे आता है — M2 का नियम) · How much does it cost? (साधारण क्रिया does उधार लेती है — M4 का नियम, और cost मूल रूप में: *does it costs दोहरा निशान है). जवाब दोनों का एक: It's fifty rupees / That's fifty rupees — दुकानदार दाम बोलते हुए costs नहीं कहता, be कहता है; It costs … ग़लत नहीं, किताबी है. हिंदी दाम का शब्द आख़िर में रखती है (यह कितने का है?); अंग्रेज़ी में सवाल का जोड़ा सबसे आगे, be / does उसके ठीक बाद."
     },
     {
       "tag": "interference",
@@ -36,7 +36,7 @@
     },
     {
       "tag": "delta",
-      "text": "अंक के बाद संज्ञा बहुवचन — और -s ज़रूरी: two bananas · five apples · fifty rupees (M3 का नियम दाम पर: हिंदी पाँच रुपये और बोलचाल में पाँच रुपया दोनों सह लेती है, अंग्रेज़ी सिर्फ़ rupees — *five rupee ग़लत). मात्रा of से जुड़ती है: a kilo of rice · a bottle of water · two kilos of sugar — a M1 का, मात्रा के शब्द पर; of पहली बार यहाँ, और हिंदी में इसकी कोई सीट नहीं (एक किलो चावल — तीन शब्द; a kilo of rice — चार). one गिनती वाला एक है (I want one apple, not two), a बस कोई एक (I want an apple)."
+      "text": "अंक के बाद संज्ञा बहुवचन — और -s ज़रूरी: two bananas · five apples · fifty rupees (M3 का नियम दाम पर: हिंदी पाँच रुपये और बोलचाल में पाँच रुपया दोनों सह लेती है, अंग्रेज़ी सिर्फ़ rupees — *five rupee ग़लत). मात्रा of से जुड़ती है: a kilo of rice · a bottle of water · two kilos of sugar — a M1 का, मात्रा के शब्द पर; of पहली बार यहाँ, और हिंदी में इसकी कोई सीट नहीं (एक किलो चावल — तीन शब्द; a kilo of rice — चार). one गिनती वाला एक है (Just one apple, not two), a बस कोई एक (I want an apple)."
     },
     {
       "tag": "delta",
@@ -44,7 +44,7 @@
     },
     {
       "tag": "free",
-      "text": "this = यह — उँगली उठाकर पास की चीज़ दिखाने का शब्द, अकेला (How much is this?) या संज्ञा से पहले (this bag); the (M3) दिखाने का शब्द नहीं था, this है. दूर की चीज़ वह = that, M9 में. चीज़ की बात जारी रखने को it (M7): It's fifty rupees · It costs ten rupees. दुकान की बात सादी रखो — सस्ता / महँगा की तुलना (cheaper) L2 में."
+      "text": "this = यह — उँगली उठाकर पास की चीज़ दिखाने का शब्द, अकेला (How much is this?) या संज्ञा से पहले (this bag); the (M3) दिखाने का शब्द नहीं था, this है. दूर की चीज़ वह = that, M9 में. चीज़ की बात जारी रखने को it (M7): It's fifty rupees · That's ten rupees. दुकान की बात सादी रखो — सस्ता / महँगा की तुलना (cheaper) L2 में."
     }
   ],
   "sentences": [
@@ -210,17 +210,27 @@
     },
     {
       "id": "L1-M8-S04",
-      "display": "It costs ten rupees",
-      "cue": "इसका दाम दस रुपये है",
-      "literal": "यह लगता दस रुपये",
+      "display": "That's ten rupees",
+      "cue": "वह दस रुपये का है",
+      "literal": "वह-है दस रुपये",
       "deconstruction": {
         "words": [
+          {
+            "display": "That's",
+            "cue": "वह है (दूर की चीज़ · बताई चीज़)",
+            "tag": "delta",
+            "forms": [
+              "That's",
+              "That is"
+            ],
+            "note": "that is का बोलचाल वाला रूप: That's ten rupees · That's my book. that = वह, दूर की या अभी बताई चीज़ (this = यह, S01); कि वाला that M9 में."
+          },
           {
             "display": "ten",
             "cue": "दस",
             "tag": "free",
             "forms": [],
-            "note": "दस — अंक वैसे ही; ten rupees, ten bananas (-s)."
+            "note": "दस — अंक वैसे ही; ten rupees, ten bananas (-s). That's ten rupees."
           }
         ],
         "rules": [
@@ -228,32 +238,32 @@
           2
         ]
       },
-      "trap": "दस रुपये है का है यहाँ is नहीं — costs: It costs ten rupees (या It's ten rupees — दोनों सही, पर मिलाओ मत: *It is costs नहीं). it के साथ -s: costs (M4 का he / she / it वाला नियम).",
-      "sound": "costs = कॉस्ट्स — sts एक साथ, मुश्किल पर साफ़. ten = टेन.",
+      "trap": "दस रुपये है का है यहाँ be ही है — That's ten rupees (या It's ten rupees); It costs ten rupees ग़लत नहीं, पर काउंटर पर कोई नहीं कहता. और is को अलग मत लिखो — बोलने में That's जुड़ा है.",
+      "sound": "That's = दैट्स — th में जीभ दाँतों के बीच, 'द' के पास; एक साँस. ten = टेन.",
       "variations": [
         {
-          "display": "It costs fifty rupees",
-          "cue": "इसका दाम पचास रुपये है",
-          "changed": "अंक बदला — fifty; costs वही."
+          "display": "That's fifty rupees",
+          "cue": "वह पचास रुपये का है",
+          "changed": "अंक बदला — साँचा वही."
         },
         {
-          "display": "The bag costs ten rupees",
-          "cue": "बैग का दाम दस रुपये है",
-          "changed": "it की जगह चीज़ का नाम — the bag; costs वही, एक चीज़."
+          "display": "The bag is ten rupees",
+          "cue": "बैग दस रुपये का है",
+          "changed": "चीज़ का नाम लेकर — is वही."
         },
         {
-          "display": "Does it cost ten rupees?",
-          "cue": "क्या इसका दाम दस रुपये है?",
-          "changed": "दाम का हाँ-नहीं सवाल — Does it cost …?; costs का -s फिर does में चला गया."
+          "display": "How much does it cost? Ten rupees.",
+          "cue": "इसका दाम कितना है? दस रुपये.",
+          "changed": "सवाल (S03) और बोलचाल का छोटा जवाब — सिर्फ़ अंक."
         }
       ],
       "mistake": {
-        "display": "It cost ten rupees",
-        "why": "it के साथ -s छूट गया. सही: It costs ten rupees."
+        "display": "That ten rupees",
+        "why": "be छूट गया — That's = That is. सही: That's ten rupees."
       },
-      "usage": "दाम बताना, क्रिया के साथ: It costs + अंक + rupees.",
+      "usage": "दाम बताना — हाथ में ली चीज़ या बताई चीज़ का: That's + अंक + rupees. दुकानदार की लाइन.",
       "register": "neutral",
-      "mnemonic": "it + costs — -s it का निशान; is की ज़रूरत नहीं."
+      "mnemonic": "वह दस रुपये = That's ten rupees — is उसी में जुड़ा; cost को छुट्टी."
     },
     {
       "id": "L1-M8-S05",
@@ -485,55 +495,65 @@
     },
     {
       "id": "L1-M8-S09",
-      "display": "I want one apple, not two",
+      "display": "Just one apple, not two",
       "cue": "मुझे एक सेब चाहिए, दो नहीं",
-      "literal": "मैं चाहता-हूँ एक सेब, नहीं दो",
+      "literal": "बस एक सेब, नहीं दो",
       "deconstruction": {
         "words": [
+          {
+            "display": "Just",
+            "cue": "बस · सिर्फ़",
+            "tag": "delta",
+            "forms": [
+              "Just",
+              "just"
+            ],
+            "note": "बस / सिर्फ़ — जिस चीज़ पर हो, उससे ठीक पहले: Just one apple · just tea. हिंदी का बस भी आगे ही आता है — यहाँ आराम."
+          },
           {
             "display": "one",
             "cue": "एक (गिनती वाला)",
             "tag": "free",
             "forms": [],
-            "note": "एक — गिनती वाला, ज़ोर के साथ: I want one apple, not two. कोई एक = a / an: I want an apple. one के बाद संज्ञा एकवचन."
+            "note": "एक — गिनती वाला, ज़ोर के साथ: Just one apple, not two. कोई एक = a / an: I want an apple. one के बाद संज्ञा एकवचन."
           }
         ],
         "rules": [
           2
         ]
       },
-      "trap": "एक सुनते ही हाथ हर जगह one लिखता है (M3 का *I want to read one book) — या हर जगह a. गिनती हो (एक, दो नहीं) तो one; बस 'कोई एक' हो तो a.",
-      "sound": "one = वन — w की आवाज़ से शुरू, 'ओने' नहीं. not two = नॉट-टू; not पर ज़ोर.",
+      "trap": "एक सुनते ही हाथ हर जगह one लिखता है — या हर जगह a. गिनती हो (एक, दो नहीं) तो one; बस 'कोई एक' हो तो a. और दुकान पर I want नहीं कहते — Just one apple, please जैसा छोटा टुकड़ा.",
+      "sound": "just = जस्ट — u 'अ'. one = वन — w की आवाज़ से शुरू. not two = नॉट-टू; not पर ज़ोर.",
       "variations": [
         {
-          "display": "I want one banana, not two",
-          "cue": "मुझे एक केला चाहिए, दो नहीं",
-          "changed": "चीज़ बदली — one banana; गिनती वही."
+          "display": "Just one banana, not two",
+          "cue": "बस एक केला, दो नहीं",
+          "changed": "चीज़ बदली — साँचा वही."
         },
         {
           "display": "I want an apple",
           "cue": "मुझे एक सेब चाहिए",
-          "changed": "कोई भी एक — an (M1); गिनती नहीं, इसलिए one नहीं."
+          "changed": "कोई एक — a / an, गिनती नहीं."
         },
         {
-          "display": "I want two apples, not one",
-          "cue": "मुझे दो सेब चाहिए, एक नहीं",
-          "changed": "विरोध पलटा — बहुवचन चाहिए, एक नहीं; -s इस बार two की तरफ़."
+          "display": "Two apples, not one",
+          "cue": "दो सेब, एक नहीं",
+          "changed": "उल्टा — बहुवचन -s के साथ."
         }
       ],
       "mistake": {
-        "display": "I want one apple, no two",
-        "why": "वाक्य के अंदर का नहीं not है — not two; No सिर्फ़ जवाब के शुरू में (M2 का बँटवारा: No अलग, not अलग)."
+        "display": "Just one apple, no two",
+        "why": "वाक्य के अंदर का नहीं not है — not two; No सिर्फ़ जवाब के शुरू में (M2 का बँटवारा)."
       },
-      "usage": "गिनती पक्की करना — दुकान पर, मेज़ पर: one + चीज़, not + अंक.",
+      "usage": "गिनती पक्की करना — दुकान पर, मेज़ पर: Just one + चीज़, not + अंक. बिना I want — दुकान की छोटी बात (S06 की तरह).",
       "register": "neutral",
-      "mnemonic": "गिनती = one, कोई एक = a — एक सेब दो तरह का."
+      "mnemonic": "गिनती = one, कोई एक = a — और बस = just, आगे."
     },
     {
       "id": "L1-M8-S10",
-      "display": "Five bananas cost twenty rupees",
+      "display": "Five bananas are twenty rupees",
       "cue": "पाँच केले बीस रुपये के हैं",
-      "literal": "पाँच केले लगते बीस रुपये",
+      "literal": "पाँच केले हैं बीस रुपये",
       "deconstruction": {
         "words": [
           {
@@ -556,32 +576,32 @@
           0
         ]
       },
-      "trap": "पाँच केला / पाँच केले — हिंदी दोनों सह लेती है; अंग्रेज़ी में five bananas, -s ज़रूरी. और कई चीज़ें कर्ता हों तो cost बिना -s (they की तरह); costs सिर्फ़ it / एक चीज़ के साथ (S04).",
-      "sound": "five = फ़ाइव — आख़िर में व. twenty = ट्वेंटी — बोलचाल में अक्सर 'ट्वेनी'. cost = कॉस्ट.",
+      "trap": "पाँच केला / पाँच केले — हिंदी दोनों सह लेती है; अंग्रेज़ी में five bananas, -s ज़रूरी. और कई चीज़ें कर्ता हों तो are — is नहीं (M1 का be वचन से); cost (S03) सवाल में रहता है, दाम बोलने में be.",
+      "sound": "five = फ़ाइव — आख़िर में व. are = आर, हल्का. twenty = ट्वेंटी — बोलचाल में अक्सर 'ट्वेनी'.",
       "variations": [
         {
-          "display": "Two apples cost ten rupees",
+          "display": "Two apples are ten rupees",
           "cue": "दो सेब दस रुपये के हैं",
-          "changed": "अंक और चीज़ बदले — two apples, ten; cost वही, बिना -s."
+          "changed": "अंक बदले — are वही."
         },
         {
-          "display": "Five bananas are twenty rupees",
+          "display": "Five bananas cost twenty rupees",
           "cue": "पाँच केले बीस रुपये के हैं",
-          "changed": "cost की जगह be — are (बहुवचन से); वही मतलब."
+          "changed": "cost के साथ — सही, किताबी; बोलने में are."
         },
         {
-          "display": "How much do five bananas cost?",
+          "display": "How much are five bananas?",
           "cue": "पाँच केले कितने के हैं?",
-          "changed": "दाम वाले वाक्य का सवाल — बहुवचन कर्ता पर do, cost मूल रूप में."
+          "changed": "सवाल — How much + are, कई चीज़ों के लिए."
         }
       ],
       "mistake": {
-        "display": "Five banana cost twenty rupees",
+        "display": "Five banana are twenty rupees",
         "why": "अंक के बाद -s छूट गया. सही: Five bananas."
       },
-      "usage": "कई चीज़ों का दाम एक साथ — अंक + चीज़ें-s + cost + अंक + rupees.",
+      "usage": "कई चीज़ों का दाम एक साथ — अंक + चीज़ें-s + are + अंक + rupees. दुकानदार की लाइन.",
       "register": "neutral",
-      "mnemonic": "पाँच केले, बीस रुपये — दोनों पर -s; और cost नंगा, क्योंकि कर्ता कई हैं."
+      "mnemonic": "पाँच केले, बीस रुपये — दोनों पर -s; और बीच में are, क्योंकि कर्ता कई हैं."
     }
   ],
   "comprehensionPool": [
@@ -612,12 +632,12 @@
     },
     {
       "id": "L1-M8-C06",
-      "display": "I want ten bananas",
+      "display": "Ten bananas, please",
       "cue": "मुझे दस केले चाहिए"
     },
     {
       "id": "L1-M8-C07",
-      "display": "It costs five rupees",
+      "display": "That's five rupees",
       "cue": "इसका दाम पाँच रुपये है"
     },
     {
@@ -642,7 +662,7 @@
     },
     {
       "id": "L1-M8-C12",
-      "display": "This banana costs one rupee",
+      "display": "This banana is one rupee",
       "cue": "इस केले का दाम एक रुपया है"
     }
   ],

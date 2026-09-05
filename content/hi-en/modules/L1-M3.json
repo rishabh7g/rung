@@ -20,7 +20,7 @@
       "I don't want + N",
       "I want to + V",
       "I need + N",
-      "Do you want + N?",
+      "Do you want some + N?",
       "I want + num + N-s"
     ],
     "newWordCap": 25
@@ -40,7 +40,7 @@
     },
     {
       "tag": "interference",
-      "text": "सवाल भी वही सहारा लेता है — do सबसे आगे, फिर कर्ता, फिर क्रिया मूल रूप में: Do you want tea? M2 में be ख़ुद आगे आया था (Are you a doctor?); बाक़ी हर क्रिया do उधार लेती है — यही इस module का असली फ़र्क़ है: be हिलता है, बाक़ी क्रियाएँ do माँगती हैं. हिंदी आगे क्या जोड़ती है और कुछ नहीं हिलाती — do क्या का अनुवाद नहीं है (इसका अपना कोई मतलब नहीं), पर बैठता वहीं है जहाँ क्या बैठता है. *You want tea? (सिर्फ़ ?) और *Are you want tea? (be की खींच) दोनों ग़लत. और do असली क्रिया भी है — करना (What do you do? — आप क्या करते हैं?; M5 में What did you do yesterday?)."
+      "text": "सवाल भी वही सहारा लेता है — do सबसे आगे, फिर कर्ता, फिर क्रिया मूल रूप में: Do you want some tea? M2 में be ख़ुद आगे आया था (Are you a doctor?); बाक़ी हर क्रिया do उधार लेती है — यही इस module का असली फ़र्क़ है: be हिलता है, बाक़ी क्रियाएँ do माँगती हैं. हिंदी आगे क्या जोड़ती है और कुछ नहीं हिलाती — do क्या का अनुवाद नहीं है (इसका अपना कोई मतलब नहीं), पर बैठता वहीं है जहाँ क्या बैठता है. *You want tea? (सिर्फ़ ?) और *Are you want tea? (be की खींच) दोनों ग़लत. और do असली क्रिया भी है — करना (What do you do? — आप क्या करते हैं?; M5 में What did you do yesterday?)."
     },
     {
       "tag": "interference",
@@ -292,7 +292,7 @@
           "changed": "पूरा रूप do not — वही मतलब, ज़ोर देने में या लिखावट में; बोलचाल don't."
         },
         {
-          "display": "No, I don't want coffee",
+          "display": "No, thanks. I don't want coffee",
           "cue": "नहीं, मुझे कॉफ़ी नहीं चाहिए",
           "changed": "इनकार जवाब की शक्ल में — पहले No, फिर don't वाला पूरा वाक्य."
         }
@@ -418,9 +418,9 @@
     },
     {
       "id": "L1-M3-S08",
-      "display": "Do you want tea?",
+      "display": "Do you want some tea?",
       "cue": "क्या आपको चाय चाहिए?",
-      "literal": "क्या आप चाहते चाय?",
+      "literal": "क्या आप चाहते कुछ चाय?",
       "deconstruction": {
         "words": [
           {
@@ -429,52 +429,71 @@
             "tag": "interference",
             "forms": [],
             "note": "दो काम. सहारा — साधारण क्रिया का सवाल: Do you want tea? (do आगे, क्रिया मूल रूप में; be को नहीं चाहिए). असली क्रिया — करना: What do you do?"
+          },
+          {
+            "display": "some",
+            "cue": "कुछ · थोड़ा (माँगते-देते वक़्त)",
+            "tag": "delta",
+            "forms": [
+              "some"
+            ],
+            "note": "कुछ / थोड़ा — न गिनी जाने वाली चीज़ देते या माँगते वक़्त: some tea, some water, some sugar. हिंदी में इसकी कोई सीट नहीं (चाय चाहिए?), अंग्रेज़ी की पेशकश में लगभग हमेशा."
           }
         ],
         "rules": [
           3
         ]
       },
-      "trap": "क्या आपको चाय चाहिए? में क्या आगे जुड़ा और कुछ नहीं हिला — हाथ You want tea? लिखता है, सिर्फ़ ? बदलकर. अंग्रेज़ी में do आगे आता है: Do you want tea? और M2 की आदत से Are you want tea? — be यहाँ नहीं, want साधारण क्रिया है.",
-      "sound": "do = डू — लंबा 'ऊ'. हाँ / ना के सवाल की तरह आख़िर में आवाज़ ऊपर उठती है: डू-यू-वॉन्ट-टी. want यहाँ भी वॉन्ट.",
+      "trap": "क्या आपको चाय चाहिए? में क्या आगे जुड़ा और कुछ नहीं हिला — हाथ You want tea? लिखता है. अंग्रेज़ी में do आगे: Do you want …? और पेशकश में some — Do you want some tea? बोलने का साँचा यही है; बिना some किताबी लगता है.",
+      "sound": "do = डू — लंबा 'ऊ'. some = सम — हल्का, बिना ज़ोर. सवाल आख़िर में ऊपर उठता है: डू-यू-वॉन्ट-सम-टी.",
       "variations": [
         {
-          "display": "Do you want coffee?",
+          "display": "Do you want some coffee?",
           "cue": "क्या आपको कॉफ़ी चाहिए?",
-          "changed": "चीज़ बदली — Do you want वही."
+          "changed": "चीज़ बदली — Do you want some … वही."
         },
         {
           "display": "Do you want a pen?",
           "cue": "क्या आपको पेन चाहिए?",
-          "changed": "गिनने-लायक चीज़ — a वापस; सवाल का साँचा वही."
+          "changed": "गिनने-लायक एक चीज़ — some नहीं, a."
         },
         {
-          "display": "No, thank you",
-          "cue": "नहीं, धन्यवाद",
-          "changed": "पेशकश ठुकराने का विनम्र रास्ता — No के साथ thank you; पूरा वाक्य दोहराना ज़रूरी नहीं."
+          "display": "No, thanks",
+          "cue": "नहीं, थैंक यू",
+          "changed": "पेशकश टालने का विनम्र जवाब — पूरा वाक्य नहीं चाहिए."
         }
       ],
       "mistake": {
-        "display": "You want tea?",
-        "why": "सिर्फ़ ? से सवाल नहीं बनता — do आगे चाहिए. सही: Do you want tea?"
+        "display": "You want some tea?",
+        "why": "सिर्फ़ ? से सवाल नहीं बनता — do आगे चाहिए. सही: Do you want some tea?"
       },
       "usage": "पेशकश करना या पूछना — मेहमान से, दोस्त से. जवाब: Yes / No, thank you.",
       "register": "neutral",
-      "mnemonic": "be ख़ुद हिलता है, बाक़ी do माँगते हैं: Are you …? पर Do you want …?"
+      "mnemonic": "be ख़ुद हिलता है, बाक़ी do माँगते हैं: Are you …? पर Do you want …? — और पेशकश में some."
     },
     {
       "id": "L1-M3-S09",
-      "display": "Do you want sugar?",
-      "cue": "क्या आपको चीनी चाहिए?",
-      "literal": "क्या आप चाहते चीनी?",
+      "display": "Do you take sugar?",
+      "cue": "क्या आप चीनी लेते हैं?",
+      "literal": "क्या आप लेते चीनी?",
       "deconstruction": {
         "words": [
+          {
+            "display": "take",
+            "cue": "लेना",
+            "tag": "delta",
+            "forms": [
+              "take",
+              "takes"
+            ],
+            "note": "लेना — और चाय-कॉफ़ी में चीनी-दूध के लिए अंग्रेज़ी यही क्रिया लेती है: Do you take sugar? · I take milk. साधारण क्रिया, सहारा do; she takes (M4)."
+          },
           {
             "display": "sugar",
             "cue": "चीनी",
             "tag": "free",
             "forms": [],
-            "note": "चीनी — न गिनी जाने वाली: आगे a नहीं, -s नहीं; Do you want sugar? चाय-कॉफ़ी में चीनी पूछने की लाइन."
+            "note": "चीनी — न गिनी जाने वाली: आगे a नहीं, -s नहीं; Do you take sugar? चाय-कॉफ़ी में चीनी पूछने की लाइन."
           }
         ],
         "rules": [
@@ -482,32 +501,32 @@
           4
         ]
       },
-      "trap": "क्या आप चीनी चाहते हैं? के हैं से हाथ Are you want sugar? लिखता है — हैं यहाँ be नहीं, वह सिर्फ़ हिंदी की क्रिया का पुछल्ला है. want साधारण क्रिया है, सहारा do.",
-      "sound": "sugar = शुगर — s यहाँ 'श' है, 'स' नहीं; ज़ोर पहले हिस्से पर: शु-गर. पूरा सवाल ऊपर उठकर ख़त्म: डू-यू-वॉन्ट-शुगर.",
+      "trap": "चाय बनाते हुए अंग्रेज़ी में चीनी 'लेते' हैं — Do you take sugar?; Do you want sugar? ग़लत नहीं, पर यह जमा हुआ सवाल है. और हैं से Are you take मत बनाओ — take साधारण क्रिया है, सहारा do.",
+      "sound": "take = टेक — a 'ए'. sugar = शुगर — s यहाँ 'श', ज़ोर पहले हिस्से पर. पूरा सवाल ऊपर उठकर ख़त्म: डू-यू-टेक-शुगर.",
       "variations": [
         {
-          "display": "Do you need sugar?",
-          "cue": "क्या आपको चीनी की ज़रूरत है?",
-          "changed": "want की जगह need — साँचा वही: Do you + क्रिया?"
+          "display": "Do you take milk?",
+          "cue": "क्या आप दूध लेते हैं?",
+          "changed": "चीज़ बदली — चाय में क्या-क्या लेते हैं, सब take से."
         },
         {
-          "display": "Do you want milk?",
-          "cue": "क्या आपको दूध चाहिए?",
-          "changed": "चीज़ बदली — दूध भी न गिनी जाने वाली."
+          "display": "Do you want sugar?",
+          "cue": "क्या आपको चीनी चाहिए?",
+          "changed": "want से भी सही — take चाय की जमी हुई बात है, want आम."
         },
         {
-          "display": "Yes, I want sugar",
-          "cue": "हाँ, मुझे चीनी चाहिए",
-          "changed": "हामी के बाद पूरा वाक्य — Do you want …? का जवाब want से ही बनता है."
+          "display": "Yes, please",
+          "cue": "हाँ, प्लीज़",
+          "changed": "हाँ वाला जवाब — please के साथ (M8), पूरा वाक्य नहीं."
         }
       ],
       "mistake": {
-        "display": "Are you want sugar?",
-        "why": "हैं दिखा तो are — पर want be नहीं है. be सिर्फ़ am · is · are वाले वाक्य में आगे आता है; बाक़ी क्रिया का सवाल do बनाता है: Do you want sugar?"
+        "display": "Are you take sugar?",
+        "why": "हैं दिखा तो are — पर take be नहीं है. साधारण क्रिया का सवाल do बनाता है: Do you take sugar?"
       },
-      "usage": "चाय-कॉफ़ी बनाते हुए पूछना — घर में, दफ़्तर में. जवाब: Yes / No, thank you.",
+      "usage": "चाय-कॉफ़ी बनाते हुए पूछना — घर में, दफ़्तर में. जवाब: Yes, please / No, thanks.",
       "register": "neutral",
-      "mnemonic": "हैं से are मत बनाओ — want के आगे do: Do you want sugar?"
+      "mnemonic": "हैं से are मत बनाओ — take के आगे do: Do you take sugar?"
     },
     {
       "id": "L1-M3-S10",
@@ -575,7 +594,7 @@
     },
     {
       "id": "L1-M3-C04",
-      "display": "Do you want coffee?",
+      "display": "Do you want some coffee?",
       "cue": "क्या आपको कॉफ़ी चाहिए?"
     },
     {
@@ -601,11 +620,11 @@
     {
       "id": "L1-M3-C09",
       "display": "I want to learn music",
-      "cue": "मैं संगीत सीखना चाहता हूँ"
+      "cue": "मैं म्यूज़िक सीखना चाहता हूँ"
     },
     {
       "id": "L1-M3-C10",
-      "display": "Do you need water?",
+      "display": "Do you need some water?",
       "cue": "क्या आपको पानी चाहिए?"
     },
     {

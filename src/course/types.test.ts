@@ -461,8 +461,9 @@ describe('ModuleContent against the modules that exist', () => {
    * choice — #271 and #272 kept it wherever the order moves, which in this pair is everywhere;
    * M10's turns carry one literal for the whole turn). Contractions are single surfaces with a
    * straight apostrophe (`src/engine/surface.ts` folds the curly one on the index, but `display`
-   * is one spelling), `it's` (M7) is the only `'s` any display writes, and no L1 module writes a
-   * possessive `'s`.
+   * is one spelling). Since the spoken-English pass (2026-09-05) the `'s` a display writes is a
+   * contracted `is` or `has` on a pronoun or question word — `it's`, `what's`, `where's`,
+   * `there's`, `she's`, `he's`, `that's` — and never a possessive on a noun.
    */
   it('keeps the English course the other way round: display is English, every teaching field Hindi (#270)', () => {
     const hiEn = MODULE_FILES.filter(([name]) => name.includes('hi-en'));
@@ -484,9 +485,10 @@ describe('ModuleContent against the modules that exist', () => {
       for (const sentence of module.sentences) {
         const at = sentence.id;
         expect(sentence.display, at).toMatch(latinOnly);
-        // `it's` (M7's contraction row) is the one sanctioned `'s`; a possessive `'s` never is.
+        // A contracted `is`/`has` on a pronoun or question word is sanctioned; a possessive `'s`
+        // on a noun never is (`Rohan's` would be a fresh surface no L1 job needs).
         expect(sentence.display, `${at} straight apostrophe, no possessive`).not.toMatch(
-          /’|(?<![Ii]t)'s\b/,
+          /’|(?<!\b(?:[Ii]t|[Ww]hat|[Ww]here|[Tt]here|[Ss]he|[Hh]e|[Tt]hat))'s\b/,
         );
         expect(sentence.glossEn, `${at} glossEn`).toBeUndefined();
         expect(sentence.literal, `${at} literal`).toMatch(devanagari);
