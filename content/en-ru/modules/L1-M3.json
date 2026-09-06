@@ -20,7 +20,8 @@
       "Ya ne khochú + N (acc.)",
       "Ya khochú + V-inf",
       "Vy khotíte + N (acc.) + ?",
-      "Ya ne + V"
+      "Ya ne + V",
+      "Mne + N (acc.) + , pozháluysta"
     ],
     "newWordCap": 25
   },
@@ -48,6 +49,10 @@
     {
       "tag": "free",
       "text": "A word borrowed whole from another language often refuses to change at all: kófe is the same in every position in every sentence. There are only a few such nouns, and they are a gift — nothing to learn."
+    },
+    {
+      "tag": "interference",
+      "text": "A request is not Ya khochú. Ya khochú khleb states a want — true, and blunt across a counter — and adding pozháluysta to it does not turn it into an order: nobody says Ya khochú khleb, pozháluysta. What a Russian says is Mne khleb, pozháluysta — \"to-me bread, please\", with mne (M1's third shape of ya) and no verb at all — or simply Khleb, pozháluysta. The verb is for saying what you want; the request leaves it out."
     }
   ],
   "sentences": [
@@ -69,7 +74,7 @@
               "khóchet",
               "khotíte"
             ],
-            "note": "\"I want\", from khotét' — a verb that mixes the two ending patterns, learned shape by shape: khochú (I), khóchet (he or she), khotíte (you). Bare it is blunt; pozháluysta makes it a request."
+            "note": "\"I want\", from khotét' — a verb that mixes the two ending patterns, learned shape by shape: khochú (I), khóchet (he or she), khotíte (you). It states a want; a request is Mne …, pozháluysta."
           }
         ],
         "rules": [
@@ -92,10 +97,10 @@
           "changed": "khochú → khotíte for the polite you, and the sentence becomes a question with nothing added"
         },
         {
-          "display": "Ya khochú chay, pozháluysta.",
-          "script": "Я хочу чай, пожалуйста.",
-          "cue": "I would like tea, please",
-          "changed": "pozháluysta turns the bare want into a request — the ordinary way to order something"
+          "display": "Mne chay, pozháluysta.",
+          "script": "Мне чай, пожалуйста.",
+          "cue": "Tea, please",
+          "changed": "the request shape — mne, the to-form of ya from M1's row, and no verb at all. S05 takes it apart"
         }
       ],
       "mistake": {
@@ -103,7 +108,7 @@
         "script": "Я хочу чаю.",
         "why": "cháyu is a real shape of chay, but it belongs to a different job (a partial amount — \"some tea\"), and this level does not teach it. Ya khochú chay."
       },
-      "usage": "Ordering, asking, saying what you would like — add pozháluysta and it is polite anywhere.",
+      "usage": "Saying what you want, as a fact about yourself. To order it, use the request shape — Mne chay, pozháluysta (S05).",
       "register": "neutral",
       "mnemonic": "Masculine things that are not alive travel light: subject or object, same shape."
     },
@@ -191,10 +196,10 @@
       "sound": "ya kha-CHOO KNEE-goo. Both k and n are said at the start — Russian is comfortable with the cluster English lost centuries ago.",
       "variations": [
         {
-          "display": "Ya khochú knígu, pozháluysta.",
-          "script": "Я хочу книгу, пожалуйста.",
-          "cue": "I would like a book, please",
-          "changed": "pozháluysta makes it a request rather than a demand"
+          "display": "Mne knígu, pozháluysta.",
+          "script": "Мне книгу, пожалуйста.",
+          "cue": "The book, please",
+          "changed": "the request shape (S05) — and the object bends exactly as it did behind khochú, because it is still the thing wanted"
         },
         {
           "display": "Ánna khóchet knígu.",
@@ -214,7 +219,7 @@
         "script": "Я хочу книга.",
         "why": "The dictionary shape kníga is for the subject. As the thing wanted it is knígu."
       },
-      "usage": "In a shop or a library — and the same frame does duty for anything you are asking for.",
+      "usage": "Saying what you want, in a shop or a library — and the first variation is how you actually ask for it.",
       "register": "neutral",
       "mnemonic": "Every -a that gets wanted turns into -u."
     },
@@ -285,10 +290,10 @@
     },
     {
       "id": "L1-M3-S05",
-      "display": "Ya khochú khleb, pozháluysta.",
-      "script": "Я хочу хлеб, пожалуйста.",
-      "cue": "I would like bread, please",
-      "literal": "I want bread, please",
+      "display": "Mne khleb, pozháluysta.",
+      "script": "Мне хлеб, пожалуйста.",
+      "cue": "Bread, please",
+      "literal": "To-me bread, please",
       "deconstruction": {
         "words": [
           {
@@ -309,27 +314,28 @@
             "forms": [
               "pozháluysta"
             ],
-            "note": "One word, three English jobs: \"please\" when you ask, \"you're welcome\" when thanked, \"here you are\" when handing over. It turns a bare Ya khochú … into a polite request; set off by a comma."
+            "note": "One word, three English jobs: \"please\" when you ask, \"you're welcome\" when thanked, \"here you are\" when handing over. It closes a request — Mne khleb, pozháluysta — set off by a comma."
           }
         ],
         "rules": [
-          1
+          1,
+          6
         ]
       },
-      "trap": "Ya khochú on its own is blunt — closer to \"I want\" than to \"I'd like\". pozháluysta is what carries the politeness, so a request that leaves it out is a request that sounds abrupt.",
-      "sound": "ya kha-CHOO khlyep pa-ZHA-loo-sta. The final b of khleb is said as a p — Russian hardens the last consonant of a word — and the y inside pozháluysta disappears in ordinary speech.",
+      "trap": "Ya khochú khleb, pozháluysta is the English \"I want bread, please\" in Russian words, and it is not said: khochú states a want, and pozháluysta cannot turn it into an order. The request has no verb at all — Mne khleb, pozháluysta.",
+      "sound": "mnye khlyep pa-ZHA-loo-sta. The final b of khleb is said as a p — Russian hardens the last consonant of a word — and the y inside pozháluysta disappears in ordinary speech.",
       "variations": [
         {
           "display": "Ya khochú khleb.",
           "script": "Я хочу хлеб.",
           "cue": "I want bread",
-          "changed": "drop pozháluysta and the request becomes a bare statement of what you want"
+          "changed": "the statement, with the verb — what you say about yourself, not what you say across a counter"
         },
         {
-          "display": "Vódu, pozháluysta.",
-          "script": "Воду, пожалуйста.",
+          "display": "Mne vódu, pozháluysta.",
+          "script": "Мне воду, пожалуйста.",
           "cue": "Water, please",
-          "changed": "the verb dropped entirely — and the object keeps its ending, because the verb is still understood"
+          "changed": "swap the thing — and it still bends, verb or no verb, because it is still the thing being asked for"
         },
         {
           "display": "Vy khotíte khleb?",
@@ -339,13 +345,13 @@
         }
       ],
       "mistake": {
-        "display": "Ya khochú khléba, pozháluysta.",
-        "script": "Я хочу хлеба, пожалуйста.",
-        "why": "khléba is a real shape and it belongs to the \"some of it\" job this level does not teach. The plain object is khleb."
+        "display": "Ya khochú khleb, pozháluysta.",
+        "script": "Я хочу хлеб, пожалуйста.",
+        "why": "Grammatical, and nobody says it — it is \"I want bread, please\" with the bluntness left in. A request names who it is for and drops the verb: Mne khleb, pozháluysta."
       },
-      "usage": "The shop, the bakery, the table — the most ordinary request in the language.",
+      "usage": "The shop, the bakery, the table — the most ordinary request in the language, and it has no verb in it. Khleb, pozháluysta on its own works too.",
       "register": "neutral",
-      "mnemonic": "pozháluysta is the whole of Russian politeness in one word — and it goes at the end."
+      "mnemonic": "To me, bread, please: who it is for, what it is, the magic word. No verb wanted."
     },
     {
       "id": "L1-M3-S06",
@@ -432,10 +438,10 @@
       "sound": "ya kha-CHOO ra-BO-tat'. The ' on the end of rabótat' is not a sound: it softens the t, so the word ends in a light \"t\" rather than a hard one.",
       "variations": [
         {
-          "display": "Ya khochú chitát'.",
-          "script": "Я хочу читать.",
-          "cue": "I want to read",
-          "changed": "swap the activity — any dictionary shape drops straight into the slot"
+          "display": "Ya ne khochú rabótat'.",
+          "script": "Я не хочу работать.",
+          "cue": "I don't want to work",
+          "changed": "ne in front of khochú — the first verb — and the dictionary shape behind it is untouched"
         },
         {
           "display": "Ánna khóchet rabótat'.",
@@ -519,10 +525,10 @@
     },
     {
       "id": "L1-M3-S09",
-      "display": "Ya khochú chitát' knígu.",
-      "script": "Я хочу читать книгу.",
-      "cue": "I want to read a book",
-      "literal": "I want to-read book-OBJECT",
+      "display": "Ya khochú chitát'.",
+      "script": "Я хочу читать.",
+      "cue": "I want to read",
+      "literal": "I want to-read",
       "deconstruction": {
         "words": [
           {
@@ -544,36 +550,36 @@
           3
         ]
       },
-      "trap": "Both lessons of the module are in this one sentence and they do not interfere: chitát' stands bare after khochú, and knígu still bends because it is the thing being read. The infinitive does not protect the noun behind it.",
-      "sound": "ya kha-CHOO chee-TAT' KNEE-goo. Four unstressed syllables and two stressed ones — Russian rhythm is a series of quick steps and heavy landings.",
+      "trap": "Nothing goes between khochú and chitát', and chitát' takes no ending: the first verb carries the person and the second stands in its dictionary clothes. A book can follow (chitát' knígu), but the bare verb is what Russians mostly say — \"I feel like reading\".",
+      "sound": "ya kha-CHOO chee-TAT'. Two quick unstressed steps, then a heavy landing on each verb — Russian rhythm in miniature.",
       "variations": [
         {
-          "display": "Ya khochú chitát' gazétu.",
-          "script": "Я хочу читать газету.",
-          "cue": "I want to read a newspaper",
-          "changed": "swap the thing read — and the new noun bends the same way, because it is feminine too"
+          "display": "Ya khochú chitát' knígu.",
+          "script": "Я хочу читать книгу.",
+          "cue": "I want to read a book",
+          "changed": "an object after the second verb — and it bends, being feminine: knígu. Said when the book is the point; the bare verb is the everyday line"
         },
         {
-          "display": "Ya ne khochú chitát' knígu.",
-          "script": "Я не хочу читать книгу.",
-          "cue": "I don't want to read the book",
-          "changed": "ne in front of the first verb; the other two words do not move"
+          "display": "Ánna khóchet chitát'.",
+          "script": "Анна хочет читать.",
+          "cue": "Anna wants to read",
+          "changed": "khochú → khóchet for the person, and chitát' does not move — only the first verb ever changes"
         },
         {
-          "display": "Ánna khóchet chitát' knígu.",
-          "script": "Анна хочет читать книгу.",
-          "cue": "Anna wants to read a book",
-          "changed": "only khochú changes for the person — the other two words are fixed"
+          "display": "Vy khotíte chitát'?",
+          "script": "Вы хотите читать?",
+          "cue": "Do you want to read?",
+          "changed": "the polite you-form, as a question — nothing added, nothing moved"
         }
       ],
       "mistake": {
-        "display": "Ya khochú chitát' kníga.",
-        "script": "Я хочу читать книга.",
-        "why": "kníga is still the thing being read, so it still bends: knígu. Standing behind an infinitive changes nothing."
+        "display": "Ya khochú chitáyu.",
+        "script": "Я хочу читаю.",
+        "why": "Two verbs cannot both carry an ending. khochú names the person; chitát' stands behind it in its dictionary shape: Ya khochú chitát'."
       },
-      "usage": "Saying what you want to do, with what — the fullest sentence this rung can build.",
+      "usage": "Saying what you feel like doing — the bare verb is the everyday line, and an object comes only when it is the news.",
       "register": "neutral",
-      "mnemonic": "The infinitive is bare and the noun is bent. Both at once, every time."
+      "mnemonic": "One verb with an ending, one without. The bare one is the thing you want to do."
     },
     {
       "id": "L1-M3-S10",
@@ -634,9 +640,9 @@
   "comprehensionPool": [
     {
       "id": "L1-M3-C01",
-      "display": "Ya khochú vódu, pozháluysta.",
-      "script": "Я хочу воду, пожалуйста.",
-      "cue": "I would like water, please"
+      "display": "Mne vódu, pozháluysta.",
+      "script": "Мне воду, пожалуйста.",
+      "cue": "Water, please"
     },
     {
       "id": "L1-M3-C02",
@@ -688,9 +694,9 @@
     },
     {
       "id": "L1-M3-C10",
-      "display": "Ya khochú chitát'.",
-      "script": "Я хочу читать.",
-      "cue": "I want to read"
+      "display": "Iván khóchet spat'.",
+      "script": "Иван хочет спать.",
+      "cue": "Ivan wants to sleep"
     },
     {
       "id": "L1-M3-C11",
@@ -700,9 +706,9 @@
     },
     {
       "id": "L1-M3-C12",
-      "display": "Ya ne khochú rabótat', spasíbo.",
-      "script": "Я не хочу работать, спасибо.",
-      "cue": "I don't want to work, thank you"
+      "display": "Iván ne khóchet chitát'.",
+      "script": "Иван не хочет читать.",
+      "cue": "Ivan doesn't want to read"
     }
   ],
   "exitTest": {

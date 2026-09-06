@@ -34,7 +34,7 @@
     },
     {
       "tag": "delta",
-      "text": "yest' means \"there is\" — it asserts that something exists somewhere: Na stolé yest' kníga. When you already know the thing exists and are only saying WHERE it is, yest' drops out entirely: Kníga na stolé. That drop is the difference between announcing a book and locating one."
+      "text": "yest' means \"there is\" — it asserts that something exists somewhere: V magazíne yest' khleb. When you already know the thing exists and are only saying WHERE it is, yest' drops out entirely: Khleb na kúkhne. That drop is the difference between announcing bread and locating it."
     },
     {
       "tag": "interference",
@@ -173,10 +173,10 @@
     },
     {
       "id": "L1-M7-S03",
-      "display": "Na stolé yest' kníga.",
-      "script": "На столе есть книга.",
-      "cue": "There is a book on the table",
-      "literal": "On table is book",
+      "display": "V magazíne yest' khleb.",
+      "script": "В магазине есть хлеб.",
+      "cue": "There is bread in the shop",
+      "literal": "In shop is bread",
       "deconstruction": {
         "words": [
           {
@@ -187,53 +187,8 @@
             "forms": [
               "yest'"
             ],
-            "note": "\"There is\" — asserts that something exists, and never changes for number or gender: na stolé yest' kníga / knígi. Drops out when only saying where a known thing is: Kníga na stolé."
-          }
-        ],
-        "rules": [
-          2,
-          3
-        ]
-      },
-      "trap": "The English sentence has four words of scaffolding — there, is, a — and Russian has none of them. yest' is not \"is\": it is the assertion that something exists, and putting it into Kníga na stolé would change what that sentence claims.",
-      "sound": "na sta-LYE yest' KNEE-ga. yest' is one syllable ending soft; the ' is what softens the t.",
-      "variations": [
-        {
-          "display": "Na stolé yest' gazéta.",
-          "script": "На столе есть газета.",
-          "cue": "There is a newspaper on the table",
-          "changed": "swap what exists — yest' does not move for gender or number"
-        },
-        {
-          "display": "Kníga na stolé.",
-          "script": "Книга на столе.",
-          "cue": "The book is on the table",
-          "changed": "drop yest' and reorder: now the book is known and its place is the news"
-        },
-        {
-          "display": "V magazíne yest' khleb.",
-          "script": "В магазине есть хлеб.",
-          "cue": "There is bread in the shop",
-          "changed": "swap the place — the frame works with v as well as with na"
-        }
-      ],
-      "mistake": {
-        "display": "Tam yest' kníga na stolé.",
-        "script": "Там есть книга на столе.",
-        "why": "The English \"there\" imported as tam, which means an actual other place. Russian's existential sentence has no dummy subject at all."
-      },
-      "usage": "Announcing that something is available — the sentence a shop assistant answers a question with.",
-      "register": "neutral",
-      "mnemonic": "yest' says a thing EXISTS. Where it is, is a different sentence."
-    },
-    {
-      "id": "L1-M7-S04",
-      "display": "Khleb v magazíne.",
-      "script": "Хлеб в магазине.",
-      "cue": "The bread is in the shop",
-      "literal": "Bread in shop",
-      "deconstruction": {
-        "words": [
+            "note": "\"There is\" — asserts that something exists, and never changes for number or gender: v magazíne yest' khleb / knígi. Drops out when only saying where a known thing is: Khleb na kúkhne."
+          },
           {
             "display": "magazíne",
             "script": "магазине",
@@ -248,39 +203,97 @@
         ],
         "rules": [
           0,
-          1
+          1,
+          2,
+          3
         ]
       },
-      "trap": "M4 taught v for the clock — v sem' chasóv — and it did not bend anything there. In front of a place it does. Same word, two jobs, and only one of them touches the ending.",
-      "sound": "khlyep v ma-ga-ZEE-nye. The v here is barely a sound of its own; it leans onto the word after it.",
+      "trap": "The English sentence has three words of scaffolding — there, is, a — and Russian has none of them. yest' is not \"is\": it is the assertion that something exists, and putting it into Khleb na kúkhne would change what that sentence claims.",
+      "sound": "v ma-ga-ZEE-nye yest' khlyep. The v leans onto the word after it, and yest' is one syllable ending soft — the ' is what softens the t.",
       "variations": [
         {
-          "display": "Molokó v magazíne.",
-          "script": "Молоко в магазине.",
-          "cue": "The milk is in the shop",
-          "changed": "swap what is there — v magazíne is unchanged"
+          "display": "V magazíne yest' molokó.",
+          "script": "В магазине есть молоко.",
+          "cue": "There is milk in the shop",
+          "changed": "swap what exists — yest' does not move for gender or number"
         },
         {
-          "display": "V magazíne yest' khleb.",
-          "script": "В магазине есть хлеб.",
-          "cue": "There is bread in the shop",
-          "changed": "reordered with yest' — now it announces that bread is available"
+          "display": "Na stolé yest' kníga.",
+          "script": "На столе есть книга.",
+          "cue": "There is a book on the table",
+          "changed": "swap the place — the frame works with na as well as with v. Said only when the book really is the news, which is why it is a variation and not the hero"
         },
         {
-          "display": "Ya rabótayu v magazíne.",
-          "script": "Я работаю в магазине.",
-          "cue": "I work in a shop",
-          "changed": "a verb instead of a bare noun — the place phrase is exactly the same"
+          "display": "Khleb na kúkhne.",
+          "script": "Хлеб на кухне.",
+          "cue": "The bread is in the kitchen",
+          "changed": "drop yest' and lead with the thing: now the bread is known and its place is the news. S04"
         }
       ],
       "mistake": {
-        "display": "Khleb v magazín.",
-        "script": "Хлеб в магазин.",
-        "why": "v bends the place after it, exactly as na does: v magazíne. v magazín would be going into the shop, not being there."
+        "display": "Tam yest' khleb v magazíne.",
+        "script": "Там есть хлеб в магазине.",
+        "why": "The English \"there\" imported as tam, which means an actual other place. Russian's existential sentence has no dummy subject at all."
       },
-      "usage": "Saying where something is kept or sold.",
+      "usage": "Announcing that something is available — the sentence a shop assistant answers U vas yest' khleb? with (M8).",
       "register": "neutral",
-      "mnemonic": "M4's v told the time and left the word alone. M7's v names a place and bends it."
+      "mnemonic": "yest' says a thing EXISTS. Where it is, is a different sentence."
+    },
+    {
+      "id": "L1-M7-S04",
+      "display": "Khleb na kúkhne.",
+      "script": "Хлеб на кухне.",
+      "cue": "The bread is in the kitchen",
+      "literal": "Bread on kitchen",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kúkhne",
+            "script": "кухне",
+            "cue": "kitchen",
+            "tag": "interference",
+            "forms": [
+              "kúkhnya",
+              "kúkhne"
+            ],
+            "note": "Kitchen — kúkhnya, feminine, and na kúkhne with the -e ending after the preposition. It takes na, not v, though you are plainly inside it: which preposition a place takes is a fact about the word."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English says \"in the kitchen\" and the geometry agrees, but the word takes na — as rabóta does (na rabóte, S08). The preposition is learned with the noun, not worked out from where things are.",
+      "sound": "khlyep na KOOKH-nye. The kh in the middle is the raspy one, and the -nye on the end is soft.",
+      "variations": [
+        {
+          "display": "Molokó na kúkhne.",
+          "script": "Молоко на кухне.",
+          "cue": "The milk is in the kitchen",
+          "changed": "swap what is there — na kúkhne is unchanged"
+        },
+        {
+          "display": "Na kúkhne yest' khleb.",
+          "script": "На кухне есть хлеб.",
+          "cue": "There is bread in the kitchen",
+          "changed": "reordered with yest' — now it announces that there is bread, rather than saying where the bread is"
+        },
+        {
+          "display": "Ya na kúkhne.",
+          "script": "Я на кухне.",
+          "cue": "I am in the kitchen",
+          "changed": "a pronoun subject, and still no verb — the place phrase is exactly the same"
+        }
+      ],
+      "mistake": {
+        "display": "Khleb v kúkhne.",
+        "script": "Хлеб в кухне.",
+        "why": "Kitchen takes na, the way work does (na rabóte). Inside or not, the preposition belongs to the word: na kúkhne."
+      },
+      "usage": "Saying where something is kept — the answer to Gde khleb? at home.",
+      "register": "neutral",
+      "mnemonic": "Work and kitchen are both na, and nobody is on top of either."
     },
     {
       "id": "L1-M7-S05",
@@ -684,9 +697,9 @@
     },
     {
       "id": "L1-M7-C12",
-      "display": "V magazíne yest' khleb.",
-      "script": "В магазине есть хлеб.",
-      "cue": "There is bread in the shop"
+      "display": "Na kúkhne yest' khleb.",
+      "script": "На кухне есть хлеб.",
+      "cue": "There is bread in the kitchen"
     }
   ],
   "exitTest": {

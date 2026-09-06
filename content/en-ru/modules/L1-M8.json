@@ -240,40 +240,41 @@
     },
     {
       "id": "L1-M8-S04",
-      "display": "Sok stóit pyat' rubléy.",
-      "script": "Сок стоит пять рублей.",
-      "cue": "The juice costs five roubles",
-      "literal": "Juice costs five roubles",
+      "display": "Sok stóit pyat'desyát rubléy.",
+      "script": "Сок стоит пятьдесят рублей.",
+      "cue": "The juice costs fifty roubles",
+      "literal": "Juice costs fifty roubles",
       "deconstruction": {
         "words": [
           {
-            "display": "pyat'",
-            "script": "пять",
-            "cue": "five",
+            "display": "pyat'desyát",
+            "script": "пятьдесят",
+            "cue": "fifty",
             "tag": "delta",
             "forms": [
+              "pyat'desyát",
               "pyat'"
             ],
-            "note": "Five — the number where the second ending starts. Everything from pyat' upward behaves the same way: pyat' rubléy. It ends in -', like every number from five to twenty."
+            "note": "Fifty — pyat' (five) with a fused \"tens\" on the end. Five is where the second ending starts, and everything from pyat' upward, fifty included, takes the same shape: pyat'desyát rubléy."
           }
         ],
         "rules": [
           0
         ]
       },
-      "trap": "There is nothing special about five in itself. It is simply where Russian's counting rule switches, and it stays switched for every number above it.",
-      "sound": "sok STO-eet pyat' roob-LYEY. The ya of pyat' is a soft \"a\", and the ' on the end softens the t.",
+      "trap": "There is nothing special about five in itself. It is simply where Russian's counting rule switches, and it stays switched for every number above it — fifty and a hundred both take rubléy.",
+      "sound": "sok STO-eet pee-dee-SYAT roob-LYEY. pyat'desyát is stressed on its last syllable and the front of it flattens; the ' inside it softens the t.",
       "variations": [
         {
-          "display": "Sok stóit dva rublyá.",
-          "script": "Сок стоит два рубля.",
-          "cue": "The juice costs two roubles",
-          "changed": "dva is in the 2–4 group, so the noun takes the other ending"
+          "display": "Sok stóit sto rubléy.",
+          "script": "Сок стоит сто рублей.",
+          "cue": "The juice costs a hundred roubles",
+          "changed": "sto is in the same five-and-up group, so rubléy stays — the shape on most price tags"
         },
         {
-          "display": "Khleb stóit pyat' rubléy.",
-          "script": "Хлеб стоит пять рублей.",
-          "cue": "The bread costs five roubles",
+          "display": "Khleb stóit pyat'desyát rubléy.",
+          "script": "Хлеб стоит пятьдесят рублей.",
+          "cue": "The bread costs fifty roubles",
           "changed": "swap what is priced — the number phrase is unchanged"
         },
         {
@@ -284,13 +285,13 @@
         }
       ],
       "mistake": {
-        "display": "Sok stóit pyat' rublyá.",
-        "script": "Сок стоит пять рубля.",
-        "why": "rublyá is the 2–4 shape. After pyat' it is rubléy."
+        "display": "Sok stóit pyat'desyát rublyá.",
+        "script": "Сок стоит пятьдесят рубля.",
+        "why": "rublyá is the 2–4 shape. After pyat'desyát — after anything from five up — it is rubléy."
       },
-      "usage": "Any price under a hundred — and pyat' is the number to test the rule with.",
+      "usage": "Everyday prices — fifty is what a juice or a loaf actually costs, and it takes the same shape as every number from five up.",
       "register": "neutral",
-      "mnemonic": "Five is where the switch is. Above it, nothing changes again."
+      "mnemonic": "Five is where the switch is. Above it — fifty, a hundred — nothing changes again."
     },
     {
       "id": "L1-M8-S05",
@@ -306,9 +307,10 @@
             "cue": "do you have",
             "tag": "interference",
             "forms": [
-              "U vas yest'"
+              "U vas yest'",
+              "U vas"
             ],
-            "note": "Three words, learned whole: \"at you is …\". No verb \"to have\" — the owner sits in the U-phrase and the thing owned is the subject. Ask a shop this to ask whether they stock it."
+            "note": "Three words, learned whole: \"at you is …\". No verb \"to have\" — the owner sits in the U-phrase and the thing owned is the subject. Without yest', u vas is \"with you\": Kak u vas delá?, A u vas?"
           }
         ],
         "rules": [
@@ -361,9 +363,10 @@
             "cue": "I have",
             "tag": "interference",
             "forms": [
-              "U menyá yest'"
+              "U menyá yest'",
+              "U menyá"
             ],
-            "note": "The same three-word frame about yourself — literally \"at me is …\"; menyá is M1's ya in its object shape. The thing owned stays in dictionary shape as subject: bilét, never biléta."
+            "note": "The same frame about yourself — \"at me is …\"; menyá is M1's ya in its object shape. The thing owned stays a subject: bilét, never biléta. With a count the yest' drops: U menyá dva biléta."
           }
         ],
         "rules": [
@@ -375,10 +378,10 @@
       "sound": "oo mee-NYA yest' bee-LYET. menyá here sounds exactly as it did in Menyá zovút, because it is the same word.",
       "variations": [
         {
-          "display": "U menyá yest' kníga.",
-          "script": "У меня есть книга.",
-          "cue": "I have a book",
-          "changed": "swap what you have — and it stays in its dictionary shape"
+          "display": "U menyá dva biléta.",
+          "script": "У меня два билета.",
+          "cue": "I have two tickets",
+          "changed": "with a number the yest' drops — the count is the news, not the having. dva biléta is S09's rule"
         },
         {
           "display": "U menyá yest' klyuch.",
@@ -525,10 +528,9 @@
             "cue": "two",
             "tag": "delta",
             "forms": [
-              "dva",
-              "dve"
+              "dva"
             ],
-            "note": "Two — the other number that changes for gender: dva biléta, but dve knígi. It puts the noun into the 2–4 shape, and tri and chetýre do exactly the same without changing themselves."
+            "note": "Two — the other number that changes for gender: dva biléta, but dve knígi (dve is M5's row). It puts the noun into the 2–4 shape, and tri and chetýre do exactly the same without changing themselves."
           }
         ],
         "rules": [
@@ -569,10 +571,10 @@
     },
     {
       "id": "L1-M8-S10",
-      "display": "Yeshchyó chay, pozháluysta.",
-      "script": "Ещё чай, пожалуйста.",
-      "cue": "More tea, please",
-      "literal": "More tea, please",
+      "display": "Yeshchyó odín chay, pozháluysta.",
+      "script": "Ещё один чай, пожалуйста.",
+      "cue": "One more tea, please",
+      "literal": "More one tea, please",
       "deconstruction": {
         "words": [
           {
@@ -591,33 +593,33 @@
         ]
       },
       "trap": "One small word covering \"more\", \"another\" and \"still\". Which one it means comes entirely from the situation, and asking which is which is the wrong question.",
-      "sound": "ye-SHCHO chai pa-ZHA-loo-sta. The shch is a long soft \"shch\", and the yó is stressed, as every yó is.",
+      "sound": "ye-SHCHO a-DEEN chai pa-ZHA-loo-sta. The shch is a long soft \"shch\", and the yó is stressed, as every yó is.",
       "variations": [
         {
           "display": "Yeshchyó vódu, pozháluysta.",
           "script": "Ещё воду, пожалуйста.",
           "cue": "More water, please",
-          "changed": "a feminine noun after a verb that is understood, so M3's ending still appears: vódu"
+          "changed": "a feminine noun after a verb that is understood, so M3's ending appears: vódu. Russians also say Yeshchyó vodý — a \"some of it\" shape this level does not teach"
         },
         {
-          "display": "Dáyte yeshchyó chay, pozháluysta.",
-          "script": "Дайте ещё чай, пожалуйста.",
-          "cue": "Give me more tea, please",
-          "changed": "the verb spelled out, with yeshchyó between it and the thing"
+          "display": "Dáyte yeshchyó odín chay, pozháluysta.",
+          "script": "Дайте ещё один чай, пожалуйста.",
+          "cue": "Give me one more tea, please",
+          "changed": "the verb spelled out, with yeshchyó odín between it and the thing"
         },
         {
-          "display": "Yeshchyó odín bilét, pozháluysta.",
-          "script": "Ещё один билет, пожалуйста.",
-          "cue": "One more ticket, please",
-          "changed": "yeshchyó in front of a number — \"one more\", the commonest way it is used"
+          "display": "Yeshchyó kófe, pozháluysta.",
+          "script": "Ещё кофе, пожалуйста.",
+          "cue": "More coffee, please",
+          "changed": "drop odín — with a word that never changes, yeshchyó alone is the everyday ask for a refill"
         }
       ],
       "mistake": {
-        "display": "Ból'she chay, pozháluysta.",
-        "script": "Больше чай, пожалуйста.",
-        "why": "ból'she is \"more\" in the sense of a larger quantity or a comparison. Asking for another helping is yeshchyó."
+        "display": "Ból'she odín chay, pozháluysta.",
+        "script": "Больше один чай, пожалуйста.",
+        "why": "ból'she is \"more\" in the sense of a larger quantity or a comparison. Asking for another one is yeshchyó."
       },
-      "usage": "A café, a table, a second helping — and the sentence that shows why the yó is worth writing out in full.",
+      "usage": "A café, a table, a second helping. With a countable thing Russians say yeshchyó odín; with tea or water alone they reach for a \"some of it\" ending (cháyu, vodý) this level does not teach, so odín is the shape to learn.",
       "register": "neutral",
       "mnemonic": "yeshchyó is the word for one more of what you already have."
     }
@@ -631,9 +633,9 @@
     },
     {
       "id": "L1-M8-C02",
-      "display": "Sok stóit dva rublyá.",
-      "script": "Сок стоит два рубля.",
-      "cue": "The juice costs two roubles"
+      "display": "Molokó stóit pyat'desyát rubléy.",
+      "script": "Молоко стоит пятьдесят рублей.",
+      "cue": "The milk costs fifty roubles"
     },
     {
       "id": "L1-M8-C03",
@@ -673,15 +675,15 @@
     },
     {
       "id": "L1-M8-C09",
-      "display": "U menyá yest' dva biléta.",
-      "script": "У меня есть два билета.",
+      "display": "U menyá dva biléta.",
+      "script": "У меня два билета.",
       "cue": "I have two tickets"
     },
     {
       "id": "L1-M8-C10",
-      "display": "Gazéta stóit pyat' rubléy.",
-      "script": "Газета стоит пять рублей.",
-      "cue": "The newspaper costs five roubles"
+      "display": "Gazéta stóit pyat'desyát rubléy.",
+      "script": "Газета стоит пятьдесят рублей.",
+      "cue": "The newspaper costs fifty roubles"
     },
     {
       "id": "L1-M8-C11",
