@@ -18,6 +18,7 @@
     "allowedPatterns": [
       "¿Cuánto cuesta + el/la + N?",
       "¿Cuánto cuestan + los/las + N-pl?",
+      "¿Cuánto es (todo)?",
       "Quiero + num + N + , por favor",
       "Un kilo/Una botella de + N",
       "el/la + N + es + muy + Adj"
@@ -27,7 +28,7 @@
   "rules": [
     {
       "tag": "interference",
-      "text": "The price question agrees with the THING, never with the person asking: ¿Cuánto cuesta el café? · ¿Cuánto cuestan los libros? This is M1's gustar all over again — what is bought is the subject of the verb, and the buyer is nowhere in the sentence. One thing takes cuesta, more than one takes cuestan."
+      "text": "The price question agrees with the THING, never with the person asking: ¿Cuánto cuesta el café? · ¿Cuánto cuestan los libros? This is M1's gustar all over again — what is bought is the subject of the verb, and the buyer is nowhere in the sentence. One thing takes cuesta, more than one takes cuestan. The bill is different: a total is asked with ser — ¿Cuánto es? — because you are asking what it comes to, not what one thing costs."
     },
     {
       "tag": "delta",
@@ -176,7 +177,7 @@
     {
       "id": "L1-M8-S03",
       "display": "Quiero dos cafés, por favor",
-      "cue": "I'd like two coffees, please",
+      "cue": "I want two coffees, please",
       "literal": "I-want two coffees, please",
       "deconstruction": {
         "words": [
@@ -206,17 +207,17 @@
       "variations": [
         {
           "display": "Quiero un café, por favor",
-          "cue": "I'd like one coffee, please",
+          "cue": "I want one coffee, please",
           "changed": "one, so un in front of the noun"
         },
         {
           "display": "Por favor, quiero dos cafés",
-          "cue": "Please, I'd like two coffees",
+          "cue": "Please, I want two coffees",
           "changed": "the other edge — it works at the front too"
         },
         {
           "display": "Quiero dos cafés con leche, por favor",
-          "cue": "I'd like two coffees with milk, please",
+          "cue": "I want two coffees with milk, please",
           "changed": "M3's con phrase rides along inside the order"
         }
       ],
@@ -231,7 +232,7 @@
     {
       "id": "L1-M8-S04",
       "display": "Quiero un kilo de manzanas",
-      "cue": "I'd like a kilo of apples",
+      "cue": "I want a kilo of apples",
       "literal": "I-want a kilo of apples",
       "deconstruction": {
         "words": [
@@ -255,12 +256,12 @@
       "variations": [
         {
           "display": "Quiero dos kilos de manzanas",
-          "cue": "I'd like two kilos of apples",
+          "cue": "I want two kilos of apples",
           "changed": "the measure goes plural, de stays"
         },
         {
           "display": "Quiero un kilo de pan",
-          "cue": "I'd like a kilo of bread",
+          "cue": "I want a kilo of bread",
           "changed": "swap what is being weighed"
         },
         {
@@ -305,7 +306,7 @@
       "variations": [
         {
           "display": "Quiero una botella de agua",
-          "cue": "I'd like a bottle of water",
+          "cue": "I want a bottle of water",
           "changed": "the same request with the verb back in"
         },
         {
@@ -330,7 +331,7 @@
     {
       "id": "L1-M8-S06",
       "display": "Quiero uno, por favor",
-      "cue": "I'd like one, please",
+      "cue": "I want one, please",
       "literal": "I-want one, please",
       "deconstruction": {
         "words": [
@@ -352,12 +353,12 @@
       "variations": [
         {
           "display": "Quiero dos, por favor",
-          "cue": "I'd like two, please",
+          "cue": "I want two, please",
           "changed": "dos needs no shortening — only uno does"
         },
         {
           "display": "Quiero un café, por favor",
-          "cue": "I'd like a coffee, please",
+          "cue": "I want a coffee, please",
           "changed": "name the thing and uno becomes un"
         },
         {
@@ -424,7 +425,7 @@
     {
       "id": "L1-M8-S08",
       "display": "Quiero ocho manzanas, por favor",
-      "cue": "I'd like eight apples, please",
+      "cue": "I want eight apples, please",
       "literal": "I-want eight apples, please",
       "deconstruction": {
         "words": [
@@ -446,7 +447,7 @@
       "variations": [
         {
           "display": "Quiero ocho, por favor",
-          "cue": "I'd like eight, please",
+          "cue": "I want eight, please",
           "changed": "drop the noun — numbers other than uno need no change"
         },
         {
@@ -518,6 +519,11 @@
           "display": "El libro no es muy caro",
           "cue": "The book isn't very expensive",
           "changed": "no before es — the polite disagreement"
+        },
+        {
+          "display": "El libro está muy caro",
+          "cue": "The book is really pricey right now",
+          "changed": "estar — dear at the moment, at this stall; es caro says it is an expensive kind of book"
         }
       ],
       "mistake": {
@@ -530,9 +536,9 @@
     },
     {
       "id": "L1-M8-S10",
-      "display": "¿Cuánto cuesta todo?",
-      "cue": "How much does everything cost?",
-      "literal": "How-much costs all?",
+      "display": "¿Cuánto es todo?",
+      "cue": "How much is it all?",
+      "literal": "How-much is all?",
       "deconstruction": {
         "words": [
           {
@@ -540,7 +546,7 @@
             "cue": "everything · all of it",
             "tag": "delta",
             "forms": [],
-            "note": "\"Everything\", standing alone as one lump — which is why the verb stays singular: cuesta, not cuestan. In front of a noun it agrees with it instead: todo el día (M6), toda la casa."
+            "note": "\"Everything\", standing alone as one lump — which is why the verb stays singular: ¿Cuánto es todo? In front of a noun it agrees with it instead: todo el día (M6), toda la casa."
           }
         ],
         "rules": [
@@ -548,13 +554,13 @@
           1
         ]
       },
-      "trap": "Everything is a lot of things and still counts as one: ¿Cuánto cuesta todo? A learner reaching for cuestan is agreeing with the shopping bag rather than with the word in the sentence.",
+      "trap": "At the till nobody asks what the shopping costs — they ask what it comes to, with ser: ¿Cuánto es? cuesta belongs to one thing on the shelf (S01); the total is es.",
       "sound": "TO-do. The d between two vowels is soft, close to the th of English \"the\".",
       "variations": [
         {
-          "display": "¿Cuánto cuesta todo, por favor?",
-          "cue": "How much does everything cost, please?",
-          "changed": "the polite edge, inside the question marks"
+          "display": "¿Cuánto es?",
+          "cue": "How much is it?",
+          "changed": "drop todo — the two words almost everyone says when the bill comes"
         },
         {
           "display": "Todo es muy caro",
@@ -563,17 +569,17 @@
         },
         {
           "display": "Quiero todo, por favor",
-          "cue": "I'd like everything, please",
+          "cue": "I want everything, please",
           "changed": "todo as the thing you order — the same word, now the object"
         }
       ],
       "mistake": {
-        "display": "¿Cuánto cuestan todo?",
-        "why": "todo is one word standing for one lump: ¿Cuánto cuesta todo?"
+        "display": "¿Cuánto es todos?",
+        "why": "todo standing alone is one lump, and singular: ¿Cuánto es todo?"
       },
-      "usage": "The last question at the counter.",
+      "usage": "The last question at the counter — and ¿Cuánto es? on its own is the commonest form of it.",
       "register": "neutral",
-      "mnemonic": "todo is singular, however much is in the bag."
+      "mnemonic": "The shelf cuesta; the bill es."
     }
   ],
   "comprehensionPool": [
@@ -595,7 +601,7 @@
     {
       "id": "L1-M8-C04",
       "display": "Quiero un kilo de manzanas, por favor",
-      "cue": "I'd like a kilo of apples, please"
+      "cue": "I want a kilo of apples, please"
     },
     {
       "id": "L1-M8-C05",
