@@ -188,6 +188,20 @@ rice`, `on Mondays`, `some tea`, `Do you take sugar?`, `I'm good, thanks`, `I li
 cumulative index now ends at **259** surfaces; `I'll` lists `I will` beside itself, and `will` has
 its own row on M6-S10.
 
+**The same pass ran on the other eight courses the same day**, one auditor and one implementer per
+course in parallel, each recorded in its own file: hi-mr (`docs/40`, 17 heroes — the two nonsense
+कारण sentences, `मजा आली` for `आनंद झाला`, `गाणी` for `संगीत`, spoken futures in the Hindi cues),
+en-es (`docs/41`, 21 — `la India`, `¿Cuánto es?`, a reason that holds in M9), en-ar (`docs/42`, 13 —
+`sa-` not `sawfa` in production, `jawʿān`, the `-t` of the numeral construct), en-fr (`docs/43`, 9 —
+`je rentre`, `Trois pommes, s'il vous plaît`, `et puis`), en-it (`docs/44`, 14 — `Cosa` for
+`Che cosa`, `d'acqua`, `Sabato` without the habitual article), en-ru (`docs/45`, 15 — one `ya` per
+sentence, `Mne khleb, pozháluysta`, `A u vas?`), en-de (`docs/46`, 19 — `Ich finde das Buch gut` and
+the withdrawn "dass is never optional" rule, `Einen Kaffee, bitte`, `Und Ihnen?`), en-ko (`docs/47`,
+37 — the object marker off orders and counters, `jeo-neun` dropped from the default hero, `geunde`
+for `hajiman`, `gongbuhada` for a day's study). Every deliberate register decision (tú, vous, Sie,
+vy, `-yo`, spoken-simple MSA, hi-mr's spoken neuter) held; what each pass changed, kept and asks the
+owner to ratify is in its file. No native reviewer has read any of it.
+
 **en-es ships (#195, 2026-08-13) — the product has two courses.** All ten L1 rungs —
 `L1-M1`…`L1-M10` — are authored and carry `verified: true` on the same
 LLM-review-plus-owner-authority basis as hi-mr's, so dropping `fixture: true` from the en-es row
