@@ -19,11 +19,11 @@
     ],
     "allowedPatterns": [
       "naeil + V-(eu)l geoyeyo",
-      "jeo-neun + <place>-e + gal geoyeyo",
+      "naeil-eun / naeil-do + V-(eu)l geoyeyo",
       "naeil + V-ayo/-eoyo",
       "an + V-(eu)l geoyeyo",
       "N + an hal geoyeyo",
-      "<place>-e + gayo"
+      "jeo-neun + naeil + <place>-e + gayo"
     ],
     "newWordCap": 25
   },
@@ -69,9 +69,10 @@
             "tag": "free",
             "forms": [
               "naeil",
-              "naeil-eun"
+              "naeil-eun",
+              "naeil-do"
             ],
-            "note": "'Tomorrow'. Like oneul, eoje and maeil it takes NO point-in-time marker. With the topic marker, naeil-eun, it sets tomorrow apart from the days around it."
+            "note": "'Tomorrow'. Like oneul, eoje and maeil it takes NO point-in-time marker. It can take the topic marker, naeil-eun, to set tomorrow apart — or -do, naeil-do, 'tomorrow too'."
           },
           {
             "display": "hanguk",
@@ -203,10 +204,10 @@
       "sound": "NAE-il gong-boo-HAL GUH-ye-yo. hal ends in an unreleased l and runs straight into geoyeyo, so the last two words come out almost joined: hal-guh-ye-yo.",
       "variations": [
         {
-          "display": "Naeil ilhal geoyeyo.",
-          "script": "내일 일할 거예요.",
-          "cue": "I will work tomorrow.",
-          "changed": "the other noun-plus-haeyo verb, the same shape"
+          "display": "Naeil-do gongbuhal geoyeyo.",
+          "script": "내일도 공부할 거예요.",
+          "cue": "I'll study tomorrow too.",
+          "changed": "-do on the day: tomorrow as well as today"
         },
         {
           "display": "Naeil gongbuhaeyo.",
@@ -232,23 +233,12 @@
     },
     {
       "id": "L1-M6-S03",
-      "display": "Jeo-neun naeil ilhal geoyeyo.",
-      "script": "저는 내일 일할 거예요.",
-      "cue": "I will work tomorrow.",
-      "literal": "I-topic tomorrow work-do-thing-is",
+      "display": "Naeil ilhal geoyeyo.",
+      "script": "내일 일할 거예요.",
+      "cue": "I'll work tomorrow.",
+      "literal": "tomorrow work-do-thing-is",
       "deconstruction": {
         "words": [
-          {
-            "display": "jeo",
-            "script": "저",
-            "cue": "I · me",
-            "tag": "delta",
-            "forms": [
-              "jeo",
-              "jeo-neun"
-            ],
-            "note": "'I', from M1."
-          },
           {
             "display": "naeil",
             "script": "내일",
@@ -288,30 +278,30 @@
         ]
       },
       "trap": "naeil takes no marker. This is the fourth time word in the course that refuses -e, and by now the pattern is clear: the words for particular days stand bare.",
-      "sound": "juh-nun NAE-il il-HAL GUH-ye-yo. ilhal is two beats with the h almost swallowed — many speakers say i-ral at speed, and it is still the same word.",
+      "sound": "NAE-il il-HAL GUH-ye-yo. ilhal is two beats with the h almost swallowed — many speakers say i-ral at speed, and it is still the same word.",
       "variations": [
         {
-          "display": "Naeil ilhal geoyeyo.",
-          "script": "내일 일할 거예요.",
-          "cue": "I will work tomorrow.",
-          "changed": "the subject dropped, which is the usual way"
+          "display": "Jeo-neun naeil ilhal geoyeyo.",
+          "script": "저는 내일 일할 거예요.",
+          "cue": "I'll work tomorrow.",
+          "changed": "jeo-neun added — 'as for me' — when your plan is set against somebody else's"
         },
         {
-          "display": "Jeo-neun naeil an ilhal geoyeyo.",
-          "script": "저는 내일 안 일할 거예요.",
-          "cue": "I will not work tomorrow.",
+          "display": "Naeil an ilhal geoyeyo.",
+          "script": "내일 안 일할 거예요.",
+          "cue": "I won't work tomorrow.",
           "changed": "the negative, with an in front of the verb"
         },
         {
-          "display": "Jeo-neun oneul ilhaeyo.",
-          "script": "저는 오늘 일해요.",
-          "cue": "I am working today.",
+          "display": "Oneul ilhaeyo.",
+          "script": "오늘 일해요.",
+          "cue": "I'm working today.",
           "changed": "today in the present, next to tomorrow in the future"
         }
       ],
       "mistake": {
-        "display": "Jeo-neun naeil-e ilhal geoyeyo.",
-        "script": "저는 내일에 일할 거예요.",
+        "display": "Naeil-e ilhal geoyeyo.",
+        "script": "내일에 일할 거예요.",
         "why": "-e has been put on naeil. It is one of the bare time words and never takes it, in any tense."
       },
       "usage": "Saying what your tomorrow holds.",
@@ -320,10 +310,10 @@
     },
     {
       "id": "L1-M6-S04",
-      "display": "Naeil bap-eul meogeul geoyeyo.",
-      "script": "내일 밥을 먹을 거예요.",
-      "cue": "I will eat tomorrow.",
-      "literal": "tomorrow meal-object eat-thing-is",
+      "display": "Naeil-eun achim meogeul geoyeyo.",
+      "script": "내일은 아침 먹을 거예요.",
+      "cue": "Tomorrow I'll have breakfast.",
+      "literal": "tomorrow-topic breakfast eat-thing-is",
       "deconstruction": {
         "words": [
           {
@@ -333,20 +323,21 @@
             "tag": "free",
             "forms": [
               "naeil",
-              "naeil-eun"
+              "naeil-eun",
+              "naeil-do"
             ],
-            "note": "'Tomorrow'. Like oneul, eoje and maeil it takes NO point-in-time marker. With the topic marker, naeil-eun, it sets tomorrow apart from the days around it."
+            "note": "'Tomorrow'. Like oneul, eoje and maeil it takes NO point-in-time marker. It can take the topic marker, naeil-eun, to set tomorrow apart — or -do, naeil-do, 'tomorrow too'."
           },
           {
-            "display": "bap",
-            "script": "밥",
-            "cue": "rice · a meal",
+            "display": "achim",
+            "script": "아침",
+            "cue": "morning · breakfast",
             "tag": "free",
             "forms": [
-              "bap",
-              "bap-eul"
+              "achim",
+              "achim-e"
             ],
-            "note": "'A meal', from M3."
+            "note": "'Morning', and on its own the morning meal — from M4. Bare here as the thing eaten, which is how it is said."
           },
           {
             "display": "meogeoyo",
@@ -372,37 +363,38 @@
         ],
         "rules": [
           1,
-          2
+          2,
+          3
         ]
       },
-      "trap": "The verb takes -eul here and only -l in gal geoyeyo, and the difference is the same one that runs through the whole course: a consonant-final stem takes the longer shape, a vowel-final stem the shorter.",
-      "sound": "NAE-il BA-bul MUH-gul GUH-ye-yo. Two -eul-ish syllables in a row — bap-eul and meogeul — and they are doing completely different jobs: one is a marker on a noun, the other is part of the verb.",
+      "trap": "The verb takes -eul here and only -l in gal geoyeyo, and the difference is the same one that runs through the whole course: a consonant-final stem takes the longer shape, a vowel-final stem the shorter. The -eun on naeil is what makes this a resolution — tomorrow, unlike today.",
+      "sound": "NAE-i-run A-chim MUH-gul GUH-ye-yo. The l of naeil links into -eun, giving nae-i-run. meogeul is -eul on the stem meok-, and it is part of the verb, not a marker on a noun.",
       "variations": [
         {
-          "display": "Naeil cha-reul masil geoyeyo.",
-          "script": "내일 차를 마실 거예요.",
-          "cue": "I will drink tea tomorrow.",
-          "changed": "a vowel-final stem, so the shorter -l"
+          "display": "Naeil-eun achim-e bap meogeul geoyeyo.",
+          "script": "내일은 아침에 밥 먹을 거예요.",
+          "cue": "Tomorrow I'll eat in the morning.",
+          "changed": "the time marked with -e and the meal named as bap — the longer way to say the same thing"
         },
         {
-          "display": "Naeil bap-eul meogeoyo.",
-          "script": "내일 밥을 먹어요.",
-          "cue": "I am eating tomorrow.",
+          "display": "Naeil-eun achim meogeoyo.",
+          "script": "내일은 아침 먹어요.",
+          "cue": "Tomorrow I'm having breakfast.",
           "changed": "the present as a future again"
         },
         {
-          "display": "Naeil bap-eul an meogeul geoyeyo.",
-          "script": "내일 밥을 안 먹을 거예요.",
-          "cue": "I will not eat tomorrow.",
+          "display": "Naeil-eun achim an meogeul geoyeyo.",
+          "script": "내일은 아침 안 먹을 거예요.",
+          "cue": "Tomorrow I won't have breakfast.",
           "changed": "the negative in front of the verb"
         }
       ],
       "mistake": {
-        "display": "Naeil bap-eul meokgo geoyeyo.",
-        "script": "내일 밥을 먹고 거예요.",
+        "display": "Naeil-eun achim meokgo geoyeyo.",
+        "script": "내일은 아침 먹고 거예요.",
         "why": "The -go shape from M3's meokgo sipeoyo has been used instead. Each construction takes its own shape of the verb, and geoyeyo wants -(eu)l."
       },
-      "usage": "Saying what you will eat, or that you will.",
+      "usage": "Saying what tomorrow will hold — here, the meal you skipped today.",
       "register": "neutral",
       "mnemonic": "One rule, two shapes, chosen by the sound before it."
     },
@@ -474,10 +466,10 @@
     },
     {
       "id": "L1-M6-S06",
-      "display": "Naeil hangungmal-eul baeul geoyeyo.",
-      "script": "내일 한국말을 배울 거예요.",
-      "cue": "I will learn Korean tomorrow.",
-      "literal": "tomorrow Korean-object learn-thing-is",
+      "display": "Naeil hangungmal gongbuhal geoyeyo.",
+      "script": "내일 한국말 공부할 거예요.",
+      "cue": "I'll study Korean tomorrow.",
+      "literal": "tomorrow Korean study-do-thing-is",
       "deconstruction": {
         "words": [
           {
@@ -500,18 +492,18 @@
               "hangungmal",
               "hangungmal-eul"
             ],
-            "note": "'Korean', the language, from M1."
+            "note": "'Korean', from M1 — bare here, as an object usually is in speech. A day's work on it is gongbuhaeyo, 'study'; baewoyo, 'learn', is for taking it up over time."
           },
           {
-            "display": "baewoyo",
-            "script": "배워요",
-            "cue": "learn",
+            "display": "gongbuhaeyo",
+            "script": "공부해요",
+            "cue": "study",
             "tag": "free",
             "forms": [
-              "baewoyo",
-              "baeul"
+              "gongbuhaeyo",
+              "gongbuhal"
             ],
-            "note": "'Learn'. Stem baeu-, vowel-final, so the future shape is baeul."
+            "note": "'Study', from M4, in the future shape gongbuhal from this module's second sentence. The object in front of it goes bare in speech."
           },
           {
             "display": "geoyeyo",
@@ -529,36 +521,36 @@
           2
         ]
       },
-      "trap": "baeul, not baewol. The shape in front of geoyeyo is built on the plain stem baeu-, not on the contracted baewoyo — so the w that appeared in the -yo form is not there.",
-      "sound": "NAE-il han-GOONG-ma-rul BAE-ul GUH-ye-yo. baeul is two beats, bae and ul, and it is easy to slur into one; keeping them apart is what keeps the future audible.",
+      "trap": "English says 'learn Korean' and 'study Korean' almost interchangeably. Korean does not: baewoyo is for taking something up over time, gongbuhaeyo is the work you do on a given day — so tomorrow's session is gongbuhal geoyeyo.",
+      "sound": "NAE-il han-GOONG-mal gong-boo-HAL GUH-ye-yo. hangungmal ends in a held l and no marker follows it; hal runs straight into geoyeyo.",
       "variations": [
         {
-          "display": "Naeil hangungmal-eul baewoyo.",
-          "script": "내일 한국말을 배워요.",
-          "cue": "I am learning Korean tomorrow.",
+          "display": "Naeil hangungmal gongbuhaeyo.",
+          "script": "내일 한국말 공부해요.",
+          "cue": "I'm studying Korean tomorrow.",
           "changed": "the present as a future"
         },
         {
-          "display": "Naeil-eun hangungmal-eul baeul geoyeyo.",
-          "script": "내일은 한국말을 배울 거예요.",
-          "cue": "Tomorrow I will study Korean.",
+          "display": "Naeil-eun hangungmal gongbuhal geoyeyo.",
+          "script": "내일은 한국말 공부할 거예요.",
+          "cue": "Tomorrow I'll study Korean.",
           "changed": "tomorrow set apart with the topic marker"
         },
         {
-          "display": "Minsu-neun naeil hangungmal-eul baeul geoyeyo.",
-          "script": "민수는 내일 한국말을 배울 거예요.",
-          "cue": "Minsu will study Korean tomorrow.",
-          "changed": "a different learner"
+          "display": "Minsu-neun naeil hangungmal gongbuhal geoyeyo.",
+          "script": "민수는 내일 한국말 공부할 거예요.",
+          "cue": "Minsu's studying Korean tomorrow.",
+          "changed": "a different student"
         }
       ],
       "mistake": {
-        "display": "Naeil hangungmal-eul baewol geoyeyo.",
-        "script": "내일 한국말을 배월 거예요.",
-        "why": "The contracted -yo form has been used as the base. The future is built on the stem, so the w disappears: baeul."
+        "display": "Naeil hangungmal baeul geoyeyo.",
+        "script": "내일 한국말 배울 거예요.",
+        "why": "Not wrong Korean, and usually the wrong verb: baewoyo says you are taking Korean up, or will be taught it; the ordinary word for a day you will spend on it is gongbuhaeyo. Say gongbuhal geoyeyo."
       },
       "usage": "Talking about what you plan to study.",
       "register": "neutral",
-      "mnemonic": "Build the future on the stem, not on the form you say most often."
+      "mnemonic": "A day is studied; a language is learned."
     },
     {
       "id": "L1-M6-S07",
@@ -660,10 +652,10 @@
     },
     {
       "id": "L1-M6-S08",
-      "display": "Naeil cha-reul masil geoyeyo?",
-      "script": "내일 차를 마실 거예요?",
-      "cue": "Will you drink tea tomorrow?",
-      "literal": "tomorrow tea-object drink-thing-is?",
+      "display": "Naeil-do ilhal geoyeyo?",
+      "script": "내일도 일할 거예요?",
+      "cue": "Are you working tomorrow too?",
+      "literal": "tomorrow-too work-do-thing-is?",
       "deconstruction": {
         "words": [
           {
@@ -673,31 +665,31 @@
             "tag": "free",
             "forms": [
               "naeil",
-              "naeil-eun"
+              "naeil-eun",
+              "naeil-do"
             ],
-            "note": "'Tomorrow'. Like oneul, eoje and maeil it takes NO point-in-time marker. With the topic marker, naeil-eun, it sets tomorrow apart from the days around it."
+            "note": "'Tomorrow', from the first sentence — here wearing -do, 'too': tomorrow as well as today."
           },
           {
-            "display": "cha",
-            "script": "차",
-            "cue": "tea",
-            "tag": "free",
+            "display": "-do",
+            "script": "-도",
+            "cue": "too · also",
+            "tag": "interference",
             "forms": [
-              "cha",
-              "cha-reul"
+              "-do"
             ],
-            "note": "'Tea', from M1."
+            "note": "'Too', from M3. On a day it means that day as well: naeil-do. As always it is the only ending on its word — and naeil takes no -e anyway."
           },
           {
-            "display": "masyeoyo",
-            "script": "마셔요",
-            "cue": "drink",
+            "display": "ilhaeyo",
+            "script": "일해요",
+            "cue": "work",
             "tag": "free",
             "forms": [
-              "masyeoyo",
-              "masil"
+              "ilhaeyo",
+              "ilhal"
             ],
-            "note": "'Drink'. The stem masi- ends in a vowel, so the future shape is masil — one letter, not a syllable."
+            "note": "'Work', from M4, in its future shape ilhal."
           },
           {
             "display": "geoyeyo",
@@ -716,33 +708,33 @@
         ]
       },
       "trap": "The question is made by the voice, as it has been since M2. The future does not change that — nothing is added and nothing is turned around, however long the verb has become.",
-      "sound": "NAE-il CHA-rul ma-SHIL GUH-ye-yo, rising on the last syllable. masil keeps the stem's i clearly, unlike the -yo form masyeoyo where it disappeared.",
+      "sound": "NAE-il-do il-HAL GUH-ye-yo, rising on the last syllable. -do is one short beat; ilhal runs into geoyeyo as it did before.",
       "variations": [
         {
-          "display": "Naeil cha-reul masil geoyeyo.",
-          "script": "내일 차를 마실 거예요.",
-          "cue": "I will drink tea tomorrow.",
+          "display": "Naeil-do ilhal geoyeyo.",
+          "script": "내일도 일할 거예요.",
+          "cue": "I'm working tomorrow too.",
           "changed": "said flat, it is the answer"
         },
         {
-          "display": "Naeil keopi-reul masil geoyeyo?",
-          "script": "내일 커피를 마실 거예요?",
-          "cue": "Will you drink coffee tomorrow?",
-          "changed": "a different drink"
+          "display": "Naeil-do gongbuhal geoyeyo?",
+          "script": "내일도 공부할 거예요?",
+          "cue": "Are you studying tomorrow too?",
+          "changed": "a different verb"
         },
         {
-          "display": "Oneul cha-reul masyeoyo?",
-          "script": "오늘 차를 마셔요?",
-          "cue": "Are you drinking tea today?",
+          "display": "Oneul-do ilhaeyo?",
+          "script": "오늘도 일해요?",
+          "cue": "Are you working today too?",
           "changed": "today, in the present"
         }
       ],
       "mistake": {
-        "display": "Naeil cha-reul masil geoyeyo-kka?",
-        "script": "내일 차를 마실 거예요까?",
+        "display": "Naeil-do ilhal geoyeyo-kka?",
+        "script": "내일도 일할 거예요까?",
         "why": "A syllable has been added to build the question. There is a real Korean question ending that looks a little like this, and it belongs to the formal style this course does not teach — here, the voice does the work."
       },
-      "usage": "Asking about somebody's plans.",
+      "usage": "Asking about somebody's plans — here, whether a working day repeats.",
       "register": "neutral",
       "mnemonic": "However long the verb gets, the question is still only a rise."
     },
@@ -938,7 +930,7 @@
         "script": "저는 내일 한국 가요.",
         "why": "The destination marker has been dropped. In quick speech Koreans do drop it, but while you are learning it is the only thing saying Korea is where you are going rather than something else about Korea."
       },
-      "usage": "Telling somebody your travel plans.",
+      "usage": "Telling somebody your travel plans — jeo-neun because it is your plan, as against theirs.",
       "register": "neutral",
       "mnemonic": "Two futures, one plan, and the short one is the commoner."
     }
@@ -952,9 +944,9 @@
     },
     {
       "id": "L1-M6-C02",
-      "display": "Naeil bap-eul meogeul geoyeyo.",
-      "script": "내일 밥을 먹을 거예요.",
-      "cue": "I will eat tomorrow."
+      "display": "Naeil-eun achim meogeul geoyeyo.",
+      "script": "내일은 아침 먹을 거예요.",
+      "cue": "Tomorrow I'll have breakfast."
     },
     {
       "id": "L1-M6-C03",
@@ -970,9 +962,9 @@
     },
     {
       "id": "L1-M6-C05",
-      "display": "Naeil cha-reul masil geoyeyo.",
-      "script": "내일 차를 마실 거예요.",
-      "cue": "I will drink tea tomorrow."
+      "display": "Naeil-do ilhal geoyeyo?",
+      "script": "내일도 일할 거예요?",
+      "cue": "Are you working tomorrow too?"
     },
     {
       "id": "L1-M6-C06",
@@ -982,9 +974,9 @@
     },
     {
       "id": "L1-M6-C07",
-      "display": "Naeil hangungmal-eul baeul geoyeyo?",
-      "script": "내일 한국말을 배울 거예요?",
-      "cue": "Will you study Korean tomorrow?"
+      "display": "Naeil hangungmal gongbuhal geoyeyo?",
+      "script": "내일 한국말 공부할 거예요?",
+      "cue": "Are you studying Korean tomorrow?"
     },
     {
       "id": "L1-M6-C08",
@@ -1006,9 +998,9 @@
     },
     {
       "id": "L1-M6-C11",
-      "display": "Naeil keopi-reul masil geoyeyo.",
-      "script": "내일 커피를 마실 거예요.",
-      "cue": "I will drink coffee tomorrow."
+      "display": "Naeil-do gongbuhal geoyeyo.",
+      "script": "내일도 공부할 거예요.",
+      "cue": "I'll study tomorrow too."
     },
     {
       "id": "L1-M6-C12",
@@ -1018,9 +1010,9 @@
     },
     {
       "id": "L1-M6-C13",
-      "display": "Naeil bap-eul an meogeul geoyeyo.",
-      "script": "내일 밥을 안 먹을 거예요.",
-      "cue": "I will not eat tomorrow."
+      "display": "Naeil-eun achim an meogeul geoyeyo.",
+      "script": "내일은 아침 안 먹을 거예요.",
+      "cue": "Tomorrow I won't have breakfast."
     }
   ],
   "exitTest": {

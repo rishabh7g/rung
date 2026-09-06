@@ -19,7 +19,7 @@
     ],
     "allowedPatterns": [
       "<sentence> + . + geurigo + <sentence>",
-      "<sentence> + . + hajiman + <sentence>",
+      "<sentence> + . + geunde + <sentence>",
       "<sentence> + . + geuraeseo + <sentence>",
       "<stem>-go + <clause>",
       "<question> + ? + <answer with -aseo/-eoseo>"
@@ -33,7 +33,7 @@
     },
     {
       "tag": "delta",
-      "text": "Korean joins ideas in two different places. A CONNECTOR starts a new sentence: geurigo ('and'), hajiman ('but'), geuraeseo ('so'). An ENDING joins clauses inside one sentence: -go ('and then') on the verb stem, and M9's -aseo ('because'). Same relationships, two grammatical places, and choosing the wrong one is what makes a turn read as translated."
+      "text": "Korean joins ideas in two different places. A CONNECTOR starts a new sentence: geurigo ('and'), geunde ('but'), geuraeseo ('so'). An ENDING joins clauses inside one sentence: -go ('and then') on the verb stem, and M9's -aseo ('because'). Same relationships, two grammatical places, and choosing the wrong one is what makes a turn read as translated."
     },
     {
       "tag": "interference",
@@ -41,7 +41,7 @@
     },
     {
       "tag": "free",
-      "text": "-go on a verb stem strings two actions in the order they happen: bap-eul meokgo cha-reul masyeoyo, 'I eat and then drink tea'. Only the LAST verb carries the tense and the politeness — the first one stays in its bare -go shape."
+      "text": "-go on a verb stem strings two actions in the order they happen: bap meokgo cha masyeoyo, 'I eat and then drink tea'. Only the LAST verb carries the tense and the politeness — the first one stays in its bare -go shape."
     },
     {
       "tag": "delta",
@@ -49,7 +49,7 @@
     },
     {
       "tag": "free",
-      "text": "hajiman contrasts: this, but that. There is another word that means something closer to 'and by the way' and is used to change the subject gently; it is not taught here, and if you hear a 'but' that does not sound like a contrast, that is what it is."
+      "text": "geunde is the everyday 'but' — the clipped form of geureonde — and it does two jobs: it contrasts (this, but that) and it can change the subject gently ('by the way'). hajiman is the plain written contrast; you will read it more often than hear it. All three begin a new sentence."
     }
   ],
   "sentences": [
@@ -219,9 +219,9 @@
           "changed": "a different second half"
         },
         {
-          "display": "Jeo-neun haksaeng-ieyo. Hajiman oneul-eun an bappayo.",
-          "script": "저는 학생이에요. 하지만 오늘은 안 바빠요.",
-          "cue": "I am a student. But today I am not busy.",
+          "display": "Jeo-neun haksaeng-ieyo. Geunde oneul-eun an bappayo.",
+          "script": "저는 학생이에요. 근데 오늘은 안 바빠요.",
+          "cue": "I'm a student. But today I'm not busy.",
           "changed": "a contrast instead of an addition"
         },
         {
@@ -242,8 +242,8 @@
     },
     {
       "id": "L1-M10-S03",
-      "display": "Oneul-eun bappayo. Hajiman naeil-eun an bappayo.",
-      "script": "오늘은 바빠요. 하지만 내일은 안 바빠요.",
+      "display": "Oneul-eun bappayo. Geunde naeil-eun an bappayo.",
+      "script": "오늘은 바빠요. 근데 내일은 안 바빠요.",
       "cue": "I am busy today. But tomorrow I am not.",
       "literal": "today-topic is-busy. but tomorrow-topic not is-busy",
       "deconstruction": {
@@ -271,14 +271,16 @@
             "note": "'Is busy', from M9 — a describing word, and so a verb."
           },
           {
-            "display": "hajiman",
-            "script": "하지만",
-            "cue": "but",
+            "display": "geunde",
+            "script": "근데",
+            "cue": "but · though",
             "tag": "free",
             "forms": [
+              "geunde",
+              "geureonde",
               "hajiman"
             ],
-            "note": "'But'. Like geurigo it begins a new sentence. There is another word for 'but' that softens into a change of subject rather than contrasting; this is the plain one, and it is the one to learn first."
+            "note": "'But', as it is said: geunde is the everyday clipping of geureonde, and hajiman is the same contrast in writing and careful speech. All three begin a new sentence."
           },
           {
             "display": "naeil",
@@ -307,32 +309,32 @@
           4
         ]
       },
-      "trap": "The topic marker on both days is what makes the contrast work. Without it the two sentences are simply two facts; with it they are set against each other, which is exactly the job hajiman is doing.",
-      "sound": "O-neu-run BA-ppa-yo. ha-JI-man NAE-i-run an BA-ppa-yo. Both time words link into their markers — o-neu-run, nae-i-run — and hajiman starts the second sentence.",
+      "trap": "The topic marker on both days is what makes the contrast work. Without it the two sentences are simply two facts; with it they are set against each other, which is exactly the job geunde is doing.",
+      "sound": "O-neu-run BA-ppa-yo. GUN-de NAE-i-run an BA-ppa-yo. Both time words link into their markers — o-neu-run, nae-i-run — and geunde is two light beats that start the second sentence.",
       "variations": [
         {
-          "display": "Oneul-eun bappayo. Hajiman naeil-eun gal geoyeyo.",
-          "script": "오늘은 바빠요. 하지만 내일은 갈 거예요.",
-          "cue": "I am busy today. But tomorrow I will go.",
+          "display": "Oneul-eun bappayo. Geunde naeil-eun gal geoyeyo.",
+          "script": "오늘은 바빠요. 근데 내일은 갈 거예요.",
+          "cue": "I'm busy today. But tomorrow I'll go.",
           "changed": "a different contrast, in the future"
         },
         {
           "display": "Oneul-eun an bappayo. Geurigo naeil-eun an bappayo.",
           "script": "오늘은 안 바빠요. 그리고 내일은 안 바빠요.",
-          "cue": "I am not busy today. And I am not busy tomorrow.",
+          "cue": "I'm not busy today. And I'm not busy tomorrow.",
           "changed": "addition rather than contrast"
         },
         {
-          "display": "Oneul-eun bappayo. Hajiman jip-e an gayo.",
-          "script": "오늘은 바빠요. 하지만 집에 안 가요.",
-          "cue": "I am busy today. But I am not going home.",
+          "display": "Oneul-eun bappayo. Geunde jip-e an gayo.",
+          "script": "오늘은 바빠요. 근데 집에 안 가요.",
+          "cue": "I'm busy today. But I'm not going home.",
           "changed": "a different pair of facts under the same contrast"
         }
       ],
       "mistake": {
-        "display": "Oneul-eun bappayo hajiman naeil-eun an bappayo.",
-        "script": "오늘은 바빠요 하지만 내일은 안 바빠요.",
-        "why": "The two sentences have been run together with no stop. hajiman begins a sentence; to join clauses inside one sentence you need an ending on the verb, not a connector."
+        "display": "Oneul-eun bappayo geunde naeil-eun an bappayo.",
+        "script": "오늘은 바빠요 근데 내일은 안 바빠요.",
+        "why": "The two sentences have been run together with no stop. geunde begins a sentence; to join clauses inside one sentence you need an ending on the verb, not a connector."
       },
       "usage": "Setting today against tomorrow.",
       "register": "neutral",
@@ -340,10 +342,10 @@
     },
     {
       "id": "L1-M10-S04",
-      "display": "Bap-eul meokgo cha-reul masyeoyo.",
-      "script": "밥을 먹고 차를 마셔요.",
+      "display": "Bap meokgo cha masyeoyo.",
+      "script": "밥 먹고 차 마셔요.",
       "cue": "I eat and then drink tea.",
-      "literal": "meal-object eat-and tea-object drink",
+      "literal": "meal eat-and tea drink",
       "deconstruction": {
         "words": [
           {
@@ -355,7 +357,7 @@
               "bap",
               "bap-eul"
             ],
-            "note": "'A meal', from M3."
+            "note": "'A meal', from M3 — bare, as it is said."
           },
           {
             "display": "meogeoyo",
@@ -366,7 +368,7 @@
               "meogeoyo",
               "meokgo"
             ],
-            "note": "'Eat', from M3 — and meokgo is doing a new job here. In M3 it sat in front of sipeoyo; on its own it joins one clause to the next, so bap-eul meokgo cha-reul masyeoyo is 'I eat and then drink tea'."
+            "note": "'Eat', from M3 — and meokgo is doing a new job here. In M3 it sat in front of sipeoyo; on its own it joins one clause to the next, so bap meokgo cha masyeoyo is 'I eat and then drink tea'."
           },
           {
             "display": "cha",
@@ -398,30 +400,30 @@
         ]
       },
       "trap": "meokgo is the same shape you learned in front of sipeoyo, doing a different job. On its own it means 'and then', and the first verb stays bare — it carries no tense and no -yo, because the last verb carries both for the whole sentence.",
-      "sound": "BA-bul MUK-go CHA-rul ma-SHUH-yo. There is no pause after meokgo: the two halves are one sentence, and running them together is what tells the listener so.",
+      "sound": "bap MUK-go cha ma-SHUH-yo. There is no pause after meokgo: the two halves are one sentence, and running them together is what tells the listener so.",
       "variations": [
         {
-          "display": "Bap-eul meokgo hakgyo-e gayo.",
-          "script": "밥을 먹고 학교에 가요.",
+          "display": "Bap meokgo hakgyo-e gayo.",
+          "script": "밥 먹고 학교에 가요.",
           "cue": "I eat and then go to school.",
           "changed": "a different second action"
         },
         {
-          "display": "Bap-eul meokgo cha-reul masyeosseoyo.",
-          "script": "밥을 먹고 차를 마셨어요.",
+          "display": "Bap meokgo cha masyeosseoyo.",
+          "script": "밥 먹고 차 마셨어요.",
           "cue": "I ate and then drank tea.",
           "changed": "the past — and only the last verb changes"
         },
         {
-          "display": "Cha-reul masigo gongbuhaeyo.",
-          "script": "차를 마시고 공부해요.",
+          "display": "Cha masigo gongbuhaeyo.",
+          "script": "차 마시고 공부해요.",
           "cue": "I drink tea and then study.",
           "changed": "the other verb wearing -go this time"
         }
       ],
       "mistake": {
-        "display": "Bap-eul meogeoyo-go cha-reul masyeoyo.",
-        "script": "밥을 먹어요고 차를 마셔요.",
+        "display": "Bap meogeoyo-go cha masyeoyo.",
+        "script": "밥 먹어요고 차 마셔요.",
         "why": "The ending has been put on the finished -yo form. -go goes on the STEM: meokgo, exactly as it did in M3's meokgo sipeoyo."
       },
       "usage": "Describing two things you do in order.",
@@ -538,9 +540,9 @@
           "changed": "a different thing missing"
         },
         {
-          "display": "Jip-e keopi-ga eopseoyo. Hajiman hakgyo-e isseoyo.",
-          "script": "집에 커피가 없어요. 하지만 학교에 있어요.",
-          "cue": "There is no coffee at home. But there is at school.",
+          "display": "Jip-e keopi-ga eopseoyo. Geunde hakgyo-e isseoyo.",
+          "script": "집에 커피가 없어요. 근데 학교에 있어요.",
+          "cue": "There's no coffee at home. But there is at school.",
           "changed": "a contrast, and existence at both ends so both places take -e"
         },
         {
@@ -561,10 +563,10 @@
     },
     {
       "id": "L1-M10-S06",
-      "display": "Eoje jal jasseoyo. Geurigo achim-e ireonasseoyo.",
-      "script": "어제 잘 잤어요. 그리고 아침에 일어났어요.",
-      "cue": "I slept well yesterday. And I got up in the morning.",
-      "literal": "yesterday well slept. and morning-at got-up",
+      "display": "Eoje jal jasseoyo. Geuraeseo oneul an pigonhaeyo.",
+      "script": "어제 잘 잤어요. 그래서 오늘 안 피곤해요.",
+      "cue": "I slept well yesterday. So I'm not tired today.",
+      "literal": "yesterday well slept. so today not is-tired",
       "deconstruction": {
         "words": [
           {
@@ -599,47 +601,46 @@
             "note": "'Sleep', from M4, with its past from M5."
           },
           {
-            "display": "geurigo",
-            "script": "그리고",
-            "cue": "and",
+            "display": "geuraeseo",
+            "script": "그래서",
+            "cue": "so · that is why",
             "tag": "free",
             "forms": [
-              "geurigo"
+              "geuraeseo"
             ],
-            "note": "'And', joining one whole sentence to the next. It starts the second sentence rather than sitting between two things — Korean does not use it the way English uses 'and' inside a list of nouns."
+            "note": "'So', from M9 — the connector that gives a reason for what follows."
           },
           {
-            "display": "achim",
-            "script": "아침",
-            "cue": "morning · breakfast",
+            "display": "oneul",
+            "script": "오늘",
+            "cue": "today",
             "tag": "free",
             "forms": [
-              "achim",
-              "achim-e"
+              "oneul",
+              "oneul-eun"
             ],
-            "note": "'Morning', from M4."
+            "note": "'Today', from M4 — bare here, because nothing is being set against it."
           },
           {
-            "display": "-e",
-            "script": "-에",
-            "cue": "at · to",
-            "tag": "delta",
+            "display": "an",
+            "script": "안",
+            "cue": "not",
+            "tag": "interference",
             "forms": [
-              "-e"
+              "an"
             ],
-            "note": "The point marker, from M4 and M7 — a time or a place."
+            "note": "'Not', from M3, still immediately in front of the verb."
           },
           {
-            "display": "ireonayo",
-            "script": "일어나요",
-            "cue": "get up",
+            "display": "pigonhaeyo",
+            "script": "피곤해요",
+            "cue": "is tired",
             "tag": "free",
             "forms": [
-              "ireonayo",
-              "ireonasseoyo",
-              "ireonago"
+              "pigonhaeyo",
+              "pigonhaeseo"
             ],
-            "note": "'Get up', from M4, with its past shape here — ireonasseoyo — and the joining shape ireonago. The stem ireona- already ends in a, so nothing is added between it and the past piece."
+            "note": "'Is tired', from M9 — a describing word, and so a verb."
           }
         ],
         "rules": [
@@ -647,34 +648,34 @@
           4
         ]
       },
-      "trap": "Both verbs are in the past, and each carries it separately. Korean does not let one tense cover a whole turn the way an English narrative sometimes can — every sentence marks its own.",
-      "sound": "UH-je jal JA-ssuh-yo. gu-RI-go A-chi-me i-ruh-NA-ssuh-yo. ireonasseoyo is five beats and the longest word in the module; it is the same stem you met in M4 with the past inside it.",
+      "trap": "Two sentences, two tenses: the first is about yesterday and carries the past; the second is about today and stays in the present. Nothing has to be matched up — each sentence pays its own tense, and the eoje at the start covers only its own sentence.",
+      "sound": "UH-je jal JA-ssuh-yo. gu-RAE-suh O-neul an pee-gon-HAE-yo. The first sentence falls, then geuraeseo starts the second; an leans onto pigonhaeyo as always.",
       "variations": [
         {
           "display": "Eoje jal jasseoyo. Geurigo oneul-eun bappayo.",
           "script": "어제 잘 잤어요. 그리고 오늘은 바빠요.",
-          "cue": "I slept well yesterday. And today I am busy.",
-          "changed": "the second sentence in the present, which is fine — each carries its own tense"
+          "cue": "I slept well yesterday. And today I'm busy.",
+          "changed": "an addition instead of a consequence, and the second sentence in the present again"
         },
         {
-          "display": "Eoje an jasseoyo. Geuraeseo bappayo.",
-          "script": "어제 안 잤어요. 그래서 바빠요.",
-          "cue": "I did not sleep yesterday. So I am busy.",
-          "changed": "a reason and a result across the two sentences"
+          "display": "Eoje an jasseoyo. Geuraeseo pigonhaeyo.",
+          "script": "어제 안 잤어요. 그래서 피곤해요.",
+          "cue": "I didn't sleep yesterday. So I'm tired.",
+          "changed": "both halves the other way round — no sleep, and tired"
         },
         {
-          "display": "Eoje jal jasseoyo. Hajiman achim-e an ireonasseoyo.",
-          "script": "어제 잘 잤어요. 하지만 아침에 안 일어났어요.",
-          "cue": "I slept well yesterday. But I did not get up in the morning.",
-          "changed": "a contrast instead of an addition"
+          "display": "Eoje jal jasseoyo. Geunde oneul pigonhaeyo.",
+          "script": "어제 잘 잤어요. 근데 오늘 피곤해요.",
+          "cue": "I slept well yesterday. But I'm tired today.",
+          "changed": "a contrast instead of a consequence"
         }
       ],
       "mistake": {
-        "display": "Eoje jal jasseoyo. Geurigo achim-e ireonayo.",
-        "script": "어제 잘 잤어요. 그리고 아침에 일어나요.",
-        "why": "The second sentence has been left in the present, as if the eoje at the start of the turn covered both. Each sentence carries its own tense in Korean."
+        "display": "Eoje jal jasseoyo. Geuraeseo oneul an pigonhaesseoyo.",
+        "script": "어제 잘 잤어요. 그래서 오늘 안 피곤했어요.",
+        "why": "The second sentence has been dragged into the past, as if the eoje at the start of the turn covered both. Today is now, so its verb stays in the present."
       },
-      "usage": "Telling somebody how your yesterday went.",
+      "usage": "Telling somebody how you slept and how you feel.",
       "register": "neutral",
       "mnemonic": "Every sentence pays its own tense."
     },
@@ -783,9 +784,9 @@
           "changed": "an answer with no because-ending at all — the reason is left implied"
         },
         {
-          "display": "Wae bappayo? Ilhaeseo bappayo.",
-          "script": "왜 바빠요? 일해서 바빠요.",
-          "cue": "Why are you busy? Because I work.",
+          "display": "Wae bappayo? Il-i manaseo bappayo.",
+          "script": "왜 바빠요? 일이 많아서 바빠요.",
+          "cue": "Why are you busy? I have a lot of work.",
           "changed": "the same pair with a describing verb in both halves"
         }
       ],
@@ -800,8 +801,8 @@
     },
     {
       "id": "L1-M10-S08",
-      "display": "Cha-reul joahaeyo. Hajiman oneul-eun keopi-reul masyeoyo.",
-      "script": "차를 좋아해요. 하지만 오늘은 커피를 마셔요.",
+      "display": "Cha-reul joahaeyo. Geunde oneul-eun keopi-reul masyeoyo.",
+      "script": "차를 좋아해요. 근데 오늘은 커피를 마셔요.",
       "cue": "I like tea. But today I am drinking coffee.",
       "literal": "tea-object like. but today-topic coffee-object drink",
       "deconstruction": {
@@ -829,14 +830,16 @@
             "note": "'Like', from M1 — a verb taking an object with -eul/-reul."
           },
           {
-            "display": "hajiman",
-            "script": "하지만",
-            "cue": "but",
+            "display": "geunde",
+            "script": "근데",
+            "cue": "but · though",
             "tag": "free",
             "forms": [
+              "geunde",
+              "geureonde",
               "hajiman"
             ],
-            "note": "'But'. Like geurigo it begins a new sentence. There is another word for 'but' that softens into a change of subject rather than contrasting; this is the plain one, and it is the one to learn first."
+            "note": "'But', from the third sentence of this module — the everyday geunde, beginning a new sentence."
           },
           {
             "display": "oneul",
@@ -879,12 +882,12 @@
         ]
       },
       "trap": "joahaeyo takes an object with -reul, and the contrast in the second sentence is carried by the topic marker on oneul. Two different markers, two different jobs, and neither can do the other's.",
-      "sound": "CHA-rul jo-ah-HAE-yo. ha-JI-man O-neu-run KUH-pee-rul ma-SHUH-yo. The h in joahaeyo is silent again, and the whole first sentence is three beats.",
+      "sound": "CHA-rul jo-ah-HAE-yo. GUN-de O-neu-run KUH-pee-rul ma-SHUH-yo. The h in joahaeyo is silent again, and the whole first sentence is three beats.",
       "variations": [
         {
-          "display": "Keopi-reul joahaeyo. Hajiman oneul-eun cha-reul masyeoyo.",
-          "script": "커피를 좋아해요. 하지만 오늘은 차를 마셔요.",
-          "cue": "I like coffee. But today I am drinking tea.",
+          "display": "Keopi-reul joahaeyo. Geunde oneul-eun cha-reul masyeoyo.",
+          "script": "커피를 좋아해요. 근데 오늘은 차를 마셔요.",
+          "cue": "I like coffee. But today I'm drinking tea.",
           "changed": "the two halves swapped"
         },
         {
@@ -894,15 +897,15 @@
           "changed": "addition rather than contrast"
         },
         {
-          "display": "Cha-ga joayo. Hajiman oneul-eun keopi-reul masyeoyo.",
-          "script": "차가 좋아요. 하지만 오늘은 커피를 마셔요.",
-          "cue": "Tea is good. But today I am drinking coffee.",
+          "display": "Cha-ga joayo. Geunde oneul-eun keopi-reul masyeoyo.",
+          "script": "차가 좋아요. 근데 오늘은 커피를 마셔요.",
+          "cue": "Tea is good. But today I'm drinking coffee.",
           "changed": "M9's describing verb in the first half, with -ga instead of -reul"
         }
       ],
       "mistake": {
-        "display": "Cha-ga joahaeyo. Hajiman oneul-eun keopi-reul masyeoyo.",
-        "script": "차가 좋아해요. 하지만 오늘은 커피를 마셔요.",
+        "display": "Cha-ga joahaeyo. Geunde oneul-eun keopi-reul masyeoyo.",
+        "script": "차가 좋아해요. 근데 오늘은 커피를 마셔요.",
         "why": "The subject marker has been used with joahaeyo. That verb takes an OBJECT — cha-reul joahaeyo — and -ga belongs with joayo, the describing verb that says the tea itself is good."
       },
       "usage": "Saying what you usually like and what you are doing instead.",
@@ -1018,9 +1021,9 @@
           "changed": "the plain present doing the future's job in both halves"
         },
         {
-          "display": "Naeil hanguk-e gal geoyeyo. Hajiman hangungmal-eul an baeul geoyeyo.",
-          "script": "내일 한국에 갈 거예요. 하지만 한국말을 안 배울 거예요.",
-          "cue": "I will go to Korea tomorrow. But I will not study Korean.",
+          "display": "Naeil hanguk-e gal geoyeyo. Geunde hangungmal-eul an baeul geoyeyo.",
+          "script": "내일 한국에 갈 거예요. 근데 한국말을 안 배울 거예요.",
+          "cue": "I'm going to Korea tomorrow. But I won't learn Korean.",
           "changed": "a contrast, with the second half negated"
         },
         {
@@ -1077,7 +1080,7 @@
               "jinaeseyo",
               "jinaesseoyo"
             ],
-            "note": "'Get by', from M2, in the past shape M5 built: jinaesseoyo."
+            "note": "'Get by', from M2, in its past shape jinaesseoyo — asking how the stretch since you last met went. A single day is asked about with M5's bonaesseoyo."
           }
         ],
         "rules": [
@@ -1085,7 +1088,7 @@
           4
         ]
       },
-      "trap": "The past here asks about the stretch of time since you last met, not about yesterday. jal jinaeseyo? from M2 asks about life in general; this asks how the gap went, which is exactly why it follows oraenmanieyo.",
+      "trap": "The past here asks about the stretch of time since you last met, not about yesterday — a single day is asked about with M5's bonaesseoyo. jal jinaeseyo? asks about life now; this asks how the gap went, which is exactly why it follows oraenmanieyo.",
       "sound": "o-raen-ma-NEE-eh-yo. jal ji-NAE-ssuh-yo, rising at the end. The first sentence falls and the second lifts — two sentences, two shapes, one turn.",
       "variations": [
         {
@@ -1132,14 +1135,14 @@
     },
     {
       "id": "L1-M10-C03",
-      "display": "Oneul-eun bappayo. Hajiman naeil-eun an bappayo.",
-      "script": "오늘은 바빠요. 하지만 내일은 안 바빠요.",
+      "display": "Oneul-eun bappayo. Geunde naeil-eun an bappayo.",
+      "script": "오늘은 바빠요. 근데 내일은 안 바빠요.",
       "cue": "I am busy today. But tomorrow I am not."
     },
     {
       "id": "L1-M10-C04",
-      "display": "Bap-eul meokgo hakgyo-e gayo.",
-      "script": "밥을 먹고 학교에 가요.",
+      "display": "Bap meokgo hakgyo-e gayo.",
+      "script": "밥 먹고 학교에 가요.",
       "cue": "I eat and then go to school."
     },
     {
@@ -1156,14 +1159,14 @@
     },
     {
       "id": "L1-M10-C07",
-      "display": "Wae bappayo? Ilhaeseo bappayo.",
-      "script": "왜 바빠요? 일해서 바빠요.",
-      "cue": "Why are you busy? Because I work."
+      "display": "Wae bappayo? Il-i manaseo bappayo.",
+      "script": "왜 바빠요? 일이 많아서 바빠요.",
+      "cue": "Why are you busy? I have a lot of work."
     },
     {
       "id": "L1-M10-C08",
-      "display": "Jip-e keopi-ga eopseoyo. Hajiman hakgyo-e isseoyo.",
-      "script": "집에 커피가 없어요. 하지만 학교에 있어요.",
+      "display": "Jip-e keopi-ga eopseoyo. Geunde hakgyo-e isseoyo.",
+      "script": "집에 커피가 없어요. 근데 학교에 있어요.",
       "cue": "There is no coffee at home. But there is at school."
     },
     {
@@ -1174,8 +1177,8 @@
     },
     {
       "id": "L1-M10-C10",
-      "display": "Cha-reul masigo gongbuhaeyo.",
-      "script": "차를 마시고 공부해요.",
+      "display": "Cha masigo gongbuhaeyo.",
+      "script": "차 마시고 공부해요.",
       "cue": "I drink tea and then study."
     },
     {
@@ -1186,15 +1189,15 @@
     },
     {
       "id": "L1-M10-C12",
-      "display": "Achim-e ireonago bap-eul meogeoyo.",
-      "script": "아침에 일어나고 밥을 먹어요.",
-      "cue": "I get up in the morning and then eat."
+      "display": "Cha masigo hakgyo-e gayo.",
+      "script": "차 마시고 학교에 가요.",
+      "cue": "I drink tea and then go to school."
     },
     {
       "id": "L1-M10-C13",
-      "display": "Minsu-neun bappayo. Geuraeseo jip-e gal geoyeyo.",
-      "script": "민수는 바빠요. 그래서 집에 갈 거예요.",
-      "cue": "Minsu is busy. So he will go home."
+      "display": "Minsu-neun pigonhaeyo. Geuraeseo jip-e gal geoyeyo.",
+      "script": "민수는 피곤해요. 그래서 집에 갈 거예요.",
+      "cue": "Minsu is tired. So he's going home."
     }
   ],
   "exitTest": {
