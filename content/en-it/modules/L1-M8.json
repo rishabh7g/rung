@@ -20,7 +20,7 @@
     "allowedPatterns": [
       "Quanto costa + il/la + N?",
       "Quanto costano + i/le + N-pl?",
-      "Voglio + num + N + , per favore",
+      "num + N + , per favore",
       "Un chilo di + N"
     ],
     "newWordCap": 25
@@ -40,11 +40,11 @@
     },
     {
       "tag": "delta",
-      "text": "A quantity takes di: un chilo di riso, una bottiglia di vino, un po' di pane. The di never fuses with an article here, because none follows it."
+      "text": "A quantity takes di: un chilo di riso, una bottiglia di vino, un po' di pane. In front of a vowel it elides — una bottiglia d'acqua — and it never fuses with an article here, because none follows it."
     },
     {
       "tag": "delta",
-      "text": "per favore is the everyday \"please\" and it sits at the edge of the request, after a comma: Voglio tre caffè, per favore. Together with M3's vorrei it is what carries politeness in a course that speaks tu throughout."
+      "text": "per favore is the everyday \"please\" and it sits at the edge of the request, after a comma: Tre caffè, per favore. Together with M3's vorrei it is what carries politeness in a course that speaks tu throughout."
     },
     {
       "tag": "free",
@@ -55,7 +55,7 @@
     {
       "id": "L1-M8-S01",
       "display": "Quanto costa il caffè?",
-      "cue": "How much does the coffee cost?",
+      "cue": "How much is the coffee?",
       "literal": "How-much costs the coffee?",
       "deconstruction": {
         "words": [
@@ -67,7 +67,7 @@
               "Quanto costa",
               "quanto costano"
             ],
-            "note": "\"How much does it cost\" — and the verb agrees with the thing being priced, not with you: quanto costa il caffè (one thing) · quanto costano i libri (more than one). Learned whole."
+            "note": "\"How much is it\" — and the verb agrees with the thing being priced, not with you: quanto costa il caffè (one thing) · quanto costano i libri (more than one). Learned whole."
           }
         ],
         "rules": [
@@ -79,17 +79,17 @@
       "variations": [
         {
           "display": "Quanto costa la pizza?",
-          "cue": "How much does the pizza cost?",
+          "cue": "How much is the pizza?",
           "changed": "swap the thing — still one of it, so still costa"
         },
         {
           "display": "Quanto costano i libri?",
-          "cue": "How much do the books cost?",
+          "cue": "How much are the books?",
           "changed": "more than one thing, so the verb goes plural"
         },
         {
           "display": "Quanto costa il caffè al bar?",
-          "cue": "How much does the coffee cost at the bar?",
+          "cue": "How much is the coffee at the bar?",
           "changed": "a place phrase on the end, and the question is untouched"
         }
       ],
@@ -104,7 +104,7 @@
     {
       "id": "L1-M8-S02",
       "display": "Quanto costa un chilo di pane?",
-      "cue": "How much does a kilo of bread cost?",
+      "cue": "How much is a kilo of bread?",
       "literal": "How-much costs a kilo of bread?",
       "deconstruction": {
         "words": [
@@ -126,7 +126,7 @@
       "variations": [
         {
           "display": "Quanto costa un chilo di riso?",
-          "cue": "How much does a kilo of rice cost?",
+          "cue": "How much is a kilo of rice?",
           "changed": "swap what is being weighed — di links them either way"
         },
         {
@@ -150,9 +150,9 @@
     },
     {
       "id": "L1-M8-S03",
-      "display": "Voglio tre caffè, per favore",
-      "cue": "I want three coffees, please",
-      "literal": "I-want three coffees, please",
+      "display": "Tre caffè, per favore",
+      "cue": "Three coffees, please",
+      "literal": "Three coffees, please",
       "deconstruction": {
         "words": [
           {
@@ -182,24 +182,24 @@
         {
           "display": "Vorrei tre caffè, per favore",
           "cue": "I'd like three coffees, please",
-          "changed": "voglio → vorrei: softer still, and per favore stays where it was"
+          "changed": "a verb in front — vorrei, the polite want — for when the bare order feels too short"
         },
         {
-          "display": "Voglio due pizze, per favore",
-          "cue": "I want two pizzas, please",
+          "display": "Due pizze, per favore",
+          "cue": "Two pizzas, please",
           "changed": "a noun that DOES take a plural ending — pizze"
         },
         {
           "display": "Un caffè, per favore",
           "cue": "A coffee, please",
-          "changed": "no verb at all — at a counter this is the whole order"
+          "changed": "one instead of three — and un is the article and the number at once"
         }
       ],
       "mistake": {
-        "display": "Voglio tre caffèi, per favore",
+        "display": "Tre caffèi, per favore",
         "why": "caffè ends in a stressed vowel and so has no separate plural: tre caffè."
       },
-      "usage": "Ordering, at a bar or a counter.",
+      "usage": "Ordering, at a bar or a counter — the number and the noun are the whole order.",
       "register": "neutral",
       "mnemonic": "A stressed final vowel refuses to change: un caffè, due caffè."
     },
@@ -247,7 +247,7 @@
         },
         {
           "display": "Quanto costa il caffè?",
-          "cue": "How much does the coffee cost?",
+          "cue": "How much is the coffee?",
           "changed": "the question this sentence answers"
         }
       ],
@@ -324,9 +324,10 @@
             "forms": [
               "acqua",
               "l'acqua",
+              "d'acqua",
               "acque"
             ],
-            "note": "Feminine: l'acqua, with the article elided onto the front because the word begins with a vowel. Bare acqua and l'acqua are the same word, and the apostrophe is written every time the article is there."
+            "note": "Feminine, and it starts with a vowel, so the word in front of it loses its own: l'acqua (the water), una bottiglia d'acqua (a bottle of water). acqua, l'acqua and d'acqua are one word."
           }
         ],
         "rules": [
@@ -337,13 +338,13 @@
       "sound": "AK-kwa. The cq is a doubled k followed by \"kw\", and it is genuinely held — a single one would be a different word.",
       "variations": [
         {
-          "display": "Vorrei un po' di acqua",
+          "display": "Vorrei un po' d'acqua",
           "cue": "I'd like a bit of water",
-          "changed": "an amount instead of a question, and the article drops away with it"
+          "changed": "an amount instead of a question — and di loses its vowel onto acqua: d'acqua"
         },
         {
           "display": "Quanto costa l'acqua?",
-          "cue": "How much does the water cost?",
+          "cue": "How much is the water?",
           "changed": "the article elides onto the noun — l'acqua, one word on the page"
         },
         {
@@ -396,13 +397,13 @@
       "sound": "bot-TI-lya, with the double t held and the gli as one sound — the same sound as in voglio. VI-no has a close i.",
       "variations": [
         {
-          "display": "Vorrei una bottiglia di acqua",
+          "display": "Vorrei una bottiglia d'acqua",
           "cue": "I'd like a bottle of water",
-          "changed": "swap the contents — di links them either way"
+          "changed": "swap the contents — and in front of a vowel di elides: d'acqua"
         },
         {
           "display": "Quanto costa una bottiglia di vino?",
-          "cue": "How much does a bottle of wine cost?",
+          "cue": "How much is a bottle of wine?",
           "changed": "the price question in front of the same phrase"
         },
         {
@@ -543,7 +544,7 @@
         },
         {
           "display": "Quanto costa il vino?",
-          "cue": "How much does the wine cost?",
+          "cue": "How much is the wine?",
           "changed": "the question this sentence answers"
         },
         {
@@ -566,12 +567,12 @@
     {
       "id": "L1-M8-C01",
       "display": "Quanto costa la pizza?",
-      "cue": "How much does the pizza cost?"
+      "cue": "How much is the pizza?"
     },
     {
       "id": "L1-M8-C02",
       "display": "Quanto costano i libri?",
-      "cue": "How much do the books cost?"
+      "cue": "How much are the books?"
     },
     {
       "id": "L1-M8-C03",
@@ -586,7 +587,7 @@
     {
       "id": "L1-M8-C05",
       "display": "Quanto costa l'acqua?",
-      "cue": "How much does the water cost?"
+      "cue": "How much is the water?"
     },
     {
       "id": "L1-M8-C06",
@@ -610,7 +611,7 @@
     },
     {
       "id": "L1-M8-C10",
-      "display": "Ho comprato tre bottiglie di acqua",
+      "display": "Ho comprato tre bottiglie d'acqua",
       "cue": "I bought three bottles of water"
     },
     {
@@ -621,7 +622,7 @@
     {
       "id": "L1-M8-C12",
       "display": "Quanto costa una bottiglia di vino?",
-      "cue": "How much does a bottle of wine cost?"
+      "cue": "How much is a bottle of wine?"
     }
   ],
   "exitTest": {

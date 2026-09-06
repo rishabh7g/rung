@@ -442,6 +442,9 @@
  *   and none of the ten jobs needs one: L1 contracts only before a consonant (`al`, `del`, `sul`,
  *   `nel`, `alla`, `della`, `alle`), each its own single-token surface. `un po' di` (M3) is the
  *   one apostrophe outside the article rule, and it is claimed whole as a three-token surface.
+ *   Since the spoken-Italian pass (2026-09-05, `docs/44-llm-review-en-it-spoken.md`) the row also
+ *   carries `un po'` as a form and `acqua` carries `d'acqua`, so `un po' d'acqua` — what is said —
+ *   resolves as `un po'` + `d'acqua`; `un po' di pane` is still taken whole.
  * - **Straight `'` only in authored text.** The curly quote folds on the index, but `display` must
  *   carry one spelling or two spellings of one word reach the learner.
  *
@@ -2683,7 +2686,7 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         "Every want names a noun, so this is where gender stops being a label and becomes a paradigm. The indefinite article: un before most masculine nouns (un libro, un amico), uno before a masculine noun starting s+consonant or z (uno studente, uno zaino), una before a feminine one (una casa), un' before a feminine noun starting with a vowel (un'amica). The definite plural comes with it: i libri, gli studenti, gli amici, le case. Teach the article WITH the noun, never as a table to memorise.",
         'The plural is a VOWEL CHANGE on the ending and never an -s: libro → libri, casa → case, studente → studenti, amica → amiche (the h keeps the c hard). "Add -s for the plural" is the single most productive English error in this language and the slogan this module exists to replace; the law is that the last vowel does the work. Tag it interference and spend a mistake block on *libros / *casas.',
         'vorrei is the polite want, and in a tu-only course it is one of the two things carrying politeness (per favore, M8, is the other): it is the conditional of volere, "I would like", and it is what you say across a counter. voglio is direct without being rude — a child to a parent, a friend at a table. Teach vorrei as a whole word here rather than opening the conditional; the tense is L2\'s.',
-        "INDEX SEAM: un po' di is claimed WHOLE, as a three-token surface. src/engine/surface.ts strips edge punctuation but never an inner apostrophe, so po' is its own token and does not answer for po — and claiming the phrase whole leaves bare di to M1's Sono di Roma, whose note has to be true of the \"of\" seat as well. It is the only apostrophe in L1 outside the article rule. lo is the masculine article row here and never the object pronoun, which stays out of L1; un'amica, when it appears, is a forms entry on amica rather than a row of its own.",
+        "INDEX SEAM: un po' di is claimed WHOLE, as a three-token surface. src/engine/surface.ts strips edge punctuation but never an inner apostrophe, so po' is its own token and does not answer for po — and claiming the phrase whole leaves bare di to M1's Sono di Roma, whose note has to be true of the \"of\" seat as well. It is the only apostrophe in L1 outside the article rule. Since the spoken-Italian pass (2026-09-05, docs/44) un po' is also a forms entry on the row, so un po' d'acqua resolves through it and through d'acqua on M8's acqua row. lo is the masculine article row here and never the object pronoun, which stays out of L1; un'amica, when it appears, is a forms entry on amica rather than a row of its own.",
       ],
       maxWordsPerSentence: 6,
       newWordCap: NEW_WORD_CAP,
@@ -2693,7 +2696,7 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
       title: 'My day',
       job: 'Daily habits and time words',
       patterns: [
-        '(Io) + V-o + ogni giorno',
+        '(Io) + V-o + ogni giorno / tutti i giorni',
         'Mi alzo alle + hour',
         'Di mattina/sera + V-o',
         'Il lunedì + V-o',
@@ -2717,12 +2720,12 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         'Ieri + ho + V-participle',
         'Ieri + sono + andato/andata + a + place',
         'Ieri non ho + V-participle',
-        'Che cosa hai + V-participle + ieri?',
+        'Cosa hai + V-participle + ieri?',
       ],
       notes: [
         'THE interference zone of the level, and it is not the one Spanish has: Italian\'s everyday past is ONE tense, the passato prossimo, built from a helper plus a participle — ho mangiato, sono andato. What splits is the HELPER. Most verbs take avere (ho mangiato, ho comprato, ho visto); a fixed, small set — the verbs of going, coming, staying, being and becoming, plus every reflexive — takes essere (sono andato, sono stato, mi sono alzato). "Verbs of motion take essere" is the slogan; it is nearly right and it leaks (ho camminato and ho viaggiato take avere), so state it as a LIST this module teaches, not as a category the learner can derive.',
         "With essere the participle AGREES with the subject, exactly like an adjective: sono andato (a man) · sono andata (a woman) · siamo andati. With avere it does not move at all: ho mangiato, whoever is speaking. That pair — agreement on one helper, none on the other — is the module's comprehension work, and the mistakes are *sono mangiato and *ho andato.",
-        'There is no did-support and no separate simple past to reach for: ho mangiato translates "I ate" as readily as "I have eaten", and the question is Che cosa hai mangiato?, with no auxiliary invented for it. The slogan to name and kill is "the passato prossimo is the present perfect, so it means \'have eaten\'"; the law is that ONE Italian tense covers both English pasts in ordinary speech.',
+        'There is no did-support and no separate simple past to reach for: ho mangiato translates "I ate" as readily as "I have eaten", and the question is Cosa hai mangiato?, with no auxiliary invented for it (cosa is what is said; the spoken-Italian pass, 2026-09-05, docs/44, made it the display and kept che cosa and che as forms of the same row). The slogan to name and kill is "the passato prossimo is the present perfect, so it means \'have eaten\'"; the law is that ONE Italian tense covers both English pasts in ordinary speech.',
         'The imperfetto (mangiavo, ero, avevo) is the OTHER Italian past and it is deliberately OUT of L1: it presents a past as an unbounded frame — a habit, a background state — and it needs a contrast the learner cannot yet frame. Name it as deferred in a note rather than half-teaching it, and anchor every sentence here with ieri so nothing in the module is asking for it.',
         "INDEX SEAM, three decisions: (1) the participle gets its OWN row per verb (mangiato; andato with forms andato · andata), because participle formation is what this module actually teaches; (2) ho is M5's row and it owns the key M9's ho fame will inherit, so its note defines BOTH jobs — the helper here, and the plain \"I have\" there; (3) the sono in sono andato resolves to M1's row, since first occurrence wins and no row here can reach that key — which is why M1's sono note was written to cover the helper seat. Do not open a second sono row; put the essere/avere split in this module's rule text.",
       ],
@@ -2742,7 +2745,7 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
       notes: [
         'The everyday Italian future is the PRESENT plus a time word: Domani vado a Roma · Domani lavoro. English half-shares this ("I\'m going tomorrow"), so it is a delta the learner already half-owns — say so, and let the time word carry the tense. "You need the future tense to talk about the future" is the slogan that would make an author write the form Italians use least in conversation.',
         'The futuro semplice (andrò, lavorerò) is real, is used for predictions and promises, and is DEFERRED to L2: it is a full new set of endings for a job the present already does at this level. Name the deferral in a note so a later author does not import it a level early, and keep every sentence of M6 inside present-for-plans.',
-        'andare is irregular and carries the module: vado · vai · va. It is worth its share of the word cap on its own, and it brings in the destination a — vado a Roma, vado a casa (no article on casa: that is the idiom, not a slip) — and the a that stands between andare and an infinitive, vado a mangiare.',
+        'andare is irregular and carries the module: vado · vai · va. It is worth its share of the word cap on its own, and it brings in the destination a — vado a Roma, vado a casa (no article on casa: that is the idiom, not a slip) — and the a that stands between andare and an infinitive, vado a comprare. (The spoken-Italian pass, 2026-09-05, docs/44, moved S02 to Stasera mangio fuori — vado a mangiare is not how eating out is said — so the a + infinitive hero is S10.)',
         "INDEX SEAM: bare a is claimed HERE, and its note has to be true of both seats this course gives it — the destination (vado a Roma) and the a before an infinitive after andare (vado a mangiare). M4 kept its hands off it by teaching alle whole, and M7's vicino a is a two-token surface for the same reason, so this row answers every later tap. domani is a plain adverb: no article and no preposition in a plan sentence (*Il domani vado a Roma, *Nel domani vado a Roma).",
         "Keep the plan sentences to ONE clause. The temptation at this bound is to hang a reason on the end, and perché is M9's — a turn of two sentences is M10's job, not this one.",
       ],
@@ -2777,7 +2780,7 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
       patterns: [
         'Quanto costa + il/la + N?',
         'Quanto costano + i/le + N-pl?',
-        'Voglio + num + N + , per favore',
+        'num + N + , per favore',
         'Un chilo di + N',
       ],
       notes: [
@@ -2803,7 +2806,7 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
       notes: [
         'perché is ONE word doing BOTH jobs: it asks "why" (Perché non mangi?) and it answers "because" (Non mangio perché sono stanco). Spanish separates them in spelling and Italian does not, so there is no orthographic escape here — one index row, one note true in both directions, and telling them apart from the sentence IS the module\'s comprehension work. "perché means why" is the slogan; the law is that the same word turns the question around and answers it.',
         'The consequence partner is quindi (or così): the same two facts in the opposite order — Non voglio il caffè perché sono stanco · Sono stanco, quindi non voglio il caffè. Build the sentences in pairs and make the comprehension pool test the choice.',
-        'The avere states: Italian says ho fame, ho freddo, ho sete, ho sonno, ho caldo where English says "I am hungry / cold / thirsty / sleepy / hot". The noun is BARE — no article — and the verb is avere, so *sono fame is the classic anglophone sentence and the mistake block this module owes. State the law as the closed list the module teaches, NOT as "feelings take avere": sono stanco and sono felice take essere, and both appear here.',
+        'The avere states: Italian says ho fame, ho freddo, ho sete, ho sonno, ho caldo where English says "I am hungry / cold / thirsty / sleepy / hot". The noun is BARE — no article — and the verb is avere, so *sono fame is the classic anglophone sentence and the mistake block this module owes. State the law as the closed list the module teaches, NOT as "feelings take avere": sono stanco and sono contento take essere, and both appear here (contento, not felice, since the spoken-Italian pass, 2026-09-05, docs/44 — felice stays a form for recognition).',
         "Feelings that ARE adjectives ride essere and agree with the SUBJECT: sono stanco (a man about himself) · sono stanca (a woman) · Sei stanca? (to a woman). Say subject, not speaker — with tu it is the person being asked. This is M2's agreement rule again, at a bound where it finally has a reason to move.",
         "penso che drags in the subjunctive (penso che sia…), which is not L1's. Keep opinions on penso di + infinitive (penso di andare) and on the plain perché clause, and name the deferral so a later author does not import a mood a level early. INDEX SEAM: this module opens NO ho row — M5's helper row already owns that key and its note was written to define the plain \"I have\" as well; put the states in this module's rule text instead.",
       ],

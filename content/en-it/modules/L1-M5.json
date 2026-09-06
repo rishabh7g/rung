@@ -20,7 +20,7 @@
       "Ieri + ho + V-participle",
       "Ieri + sono + andato/andata + a + place",
       "Ieri non ho + V-participle",
-      "Che cosa hai + V-participle + ieri?"
+      "Cosa hai + V-participle + ieri?"
     ],
     "newWordCap": 25
   },
@@ -125,7 +125,7 @@
     {
       "id": "L1-M5-S02",
       "display": "Ieri ho bevuto un caffè",
-      "cue": "Yesterday I drank a coffee",
+      "cue": "I had a coffee yesterday",
       "literal": "Yesterday I-have drunk a coffee",
       "deconstruction": {
         "words": [
@@ -152,7 +152,7 @@
         },
         {
           "display": "Hai bevuto un caffè?",
-          "cue": "Did you drink a coffee?",
+          "cue": "Did you have a coffee?",
           "changed": "ho → hai: the helper moves to you, the participle does not"
         },
         {
@@ -251,9 +251,9 @@
           "changed": "drop non and the sentence turns positive"
         },
         {
-          "display": "Il sabato non ho lavorato",
+          "display": "Sabato non ho lavorato",
           "cue": "On Saturday I didn't work",
-          "changed": "swap the time phrase — the negative and the verb are untouched"
+          "changed": "swap the time word — bare sabato is one particular Saturday, not the il sabato habit — and the negative verb is untouched"
         },
         {
           "display": "Hai lavorato ieri?",
@@ -293,7 +293,7 @@
             "cue": "to",
             "tag": "delta",
             "forms": [],
-            "note": "\"To\", in front of a place you are going: a Roma, a casa. The same little word comes back in M6 between andare and another verb — vado a mangiare. Neither job takes an article with a city name."
+            "note": "\"To\", in front of a place you are going: a Roma, a casa. The same little word comes back in M6 between andare and another verb — vado a comprare. Neither job takes an article with a city name."
           }
         ],
         "rules": [
@@ -383,17 +383,21 @@
     },
     {
       "id": "L1-M5-S07",
-      "display": "Che cosa hai mangiato ieri?",
+      "display": "Cosa hai mangiato ieri?",
       "cue": "What did you eat yesterday?",
-      "literal": "What thing you-have eaten yesterday?",
+      "literal": "What you-have eaten yesterday?",
       "deconstruction": {
         "words": [
           {
-            "display": "Che cosa",
+            "display": "Cosa",
             "cue": "what",
             "tag": "delta",
-            "forms": [],
-            "note": "\"What\", asking about a thing — literally \"what thing\", and either half works alone: che hai mangiato? and cosa hai mangiato? are both said. Taught whole so the pair is learned as one question word."
+            "forms": [
+              "Cosa",
+              "Che cosa",
+              "Che"
+            ],
+            "note": "\"What\", asking about a thing. In speech it is cosa; che cosa is the fuller written form, and bare che is heard too — three spellings of one question word, and cosa is the one to say."
           }
         ],
         "rules": [
@@ -402,31 +406,31 @@
         ]
       },
       "trap": "There is no \"did\" to front. The question phrase goes to the front, the two-word verb stays exactly as it was, and the question mark does the rest.",
-      "sound": "ke-KO-za. che is KE — a c before h is always hard — and the single s between vowels is the one from casa.",
+      "sound": "KO-za. The single s between vowels is the one from casa, and the o is open.",
       "variations": [
         {
-          "display": "Che cosa hai comprato?",
+          "display": "Cosa hai comprato?",
           "cue": "What did you buy?",
-          "changed": "swap the participle — the question phrase never changes"
+          "changed": "swap the participle — the question word never changes"
         },
         {
-          "display": "Che cosa hai bevuto ieri?",
+          "display": "Cosa hai bevuto ieri?",
           "cue": "What did you drink yesterday?",
           "changed": "another participle behind the same helper"
         },
         {
           "display": "Ieri ho mangiato una pizza",
           "cue": "Yesterday I ate a pizza",
-          "changed": "the answer: the helper swaps person and the question phrase drops away"
+          "changed": "the answer: the helper swaps person and the question word drops away"
         }
       ],
       "mistake": {
-        "display": "Che cosa hai mangiare ieri?",
-        "why": "The helper takes a PARTICIPLE, never the plain form: Che cosa hai mangiato ieri?"
+        "display": "Cosa hai mangiare ieri?",
+        "why": "The helper takes a PARTICIPLE, never the plain form: Cosa hai mangiato ieri?"
       },
       "usage": "The question that starts every conversation about a meal.",
       "register": "informal",
-      "mnemonic": "che cosa is \"what thing\" — and either word can carry it alone."
+      "mnemonic": "cosa is \"thing\" — what thing did you eat? — and che cosa is the same question written out in full."
     },
     {
       "id": "L1-M5-S08",
@@ -526,11 +530,21 @@
     },
     {
       "id": "L1-M5-S10",
-      "display": "Ieri ho dormito bene",
-      "cue": "Yesterday I slept well",
-      "literal": "Yesterday I-have slept well",
+      "display": "Stanotte ho dormito bene",
+      "cue": "I slept well last night",
+      "literal": "Last-night I-have slept well",
       "deconstruction": {
         "words": [
+          {
+            "display": "Stanotte",
+            "cue": "last night",
+            "tag": "delta",
+            "forms": [
+              "Stanotte",
+              "stamattina"
+            ],
+            "note": "\"Last night\" — questa notte worn down into one word, and stamattina (this morning) is built the same way. Either one takes ieri's seat in front of the two-word past."
+          },
           {
             "display": "dormito",
             "cue": "slept",
@@ -548,11 +562,11 @@
         ]
       },
       "trap": "-ire verbs take -ito, and that is the third and last of the participle endings. Learn the set — -ato, -uto, -ito — before meeting a single irregular one.",
-      "sound": "dor-MI-to, stressed in the middle. The r is one tap and the final o is short.",
+      "sound": "sta-NOT-te, with the double t held, then dor-MI-to, stressed in the middle. The r is one tap and the final o is short.",
       "variations": [
         {
-          "display": "Ieri non ho dormito bene",
-          "cue": "Yesterday I didn't sleep well",
+          "display": "Stanotte non ho dormito bene",
+          "cue": "I didn't sleep well last night",
           "changed": "non in front of the whole verb; bene stays beside it"
         },
         {
@@ -561,13 +575,13 @@
           "changed": "ho → hai and a question mark — the morning's first question"
         },
         {
-          "display": "Ieri ho dormito molto",
-          "cue": "Yesterday I slept a lot",
+          "display": "Stanotte ho dormito molto",
+          "cue": "Last night I slept a lot",
           "changed": "swap the adverb — both bene and molto hug the verb"
         }
       ],
       "mistake": {
-        "display": "Ieri ho dormuto bene",
+        "display": "Stanotte ho dormuto bene",
         "why": "dormire is an -ire verb, so its participle is dormito. -uto belongs to the -ere class."
       },
       "usage": "The first thing said at breakfast, in any language.",
@@ -588,7 +602,7 @@
     },
     {
       "id": "L1-M5-C03",
-      "display": "Che cosa hai comprato?",
+      "display": "Cosa hai comprato?",
       "cue": "What did you buy?"
     },
     {
@@ -598,8 +612,8 @@
     },
     {
       "id": "L1-M5-C05",
-      "display": "Non ho lavorato il sabato",
-      "cue": "I didn't work on Saturday"
+      "display": "Sabato non ho lavorato",
+      "cue": "On Saturday I didn't work"
     },
     {
       "id": "L1-M5-C06",
@@ -613,7 +627,7 @@
     },
     {
       "id": "L1-M5-C08",
-      "display": "Che cosa hai studiato ieri?",
+      "display": "Cosa hai studiato ieri?",
       "cue": "What did you study yesterday?"
     },
     {
@@ -628,8 +642,8 @@
     },
     {
       "id": "L1-M5-C11",
-      "display": "Non ho mangiato di mattina",
-      "cue": "I didn't eat in the morning"
+      "display": "Stamattina non ho mangiato",
+      "cue": "I didn't eat this morning"
     },
     {
       "id": "L1-M5-C12",
