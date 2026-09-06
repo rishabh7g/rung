@@ -944,7 +944,7 @@
  *   seat (`à la maison`). Bare `a` stays OUT of L1: the course writes `j'ai` (one fused token) and
  *   `il y a` (one three-token surface), so nothing ever competes for the unaccented key.
  * - **`où` (where) vs `ou` (or)** — `où` is M7's (`où est … ?`). Bare `ou` stays out of L1; M10's
- *   joiners are `et · mais · aussi · puis · alors`, and none of them is `ou`.
+ *   joiners are `et · mais · aussi · et puis · alors`, and none of them is `ou`.
  * - **`la` (the, f) vs `là` (there)** — `la` is M1's article row. `là` stays out of L1.
  * - **`mange` (I eat, M4) vs `mangé` (eaten, M5)** — the accent IS the tense, exactly as en-es's
  *   `hablo`/`habló`, and M5 must write it on every participle.
@@ -2994,7 +2994,7 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         "C'est combien ?",
         'Ça coûte combien ?',
         'Combien de + N + ?',
-        "Je veux + num + N + , s'il vous plaît",
+        "num + N + , s'il vous plaît",
         'Un kilo de + N',
       ],
       notes: [
@@ -3003,7 +3003,7 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         'Numbers are vocabulary the sentences actually use — un … dix, plus vingt and cent if a price needs them — not a counting drill, and no display may write a number the module has not taught. un is both "one" and the masculine article, and une the feminine: Je veux un café is "a coffee" and "one coffee" at once. French does not distinguish them, so the note must not pretend to.',
         "A quantity takes de and nothing after it: un kilo de riz, une bouteille d'eau — no article, and M3's du would be wrong here. d'eau is one fused token: if the module writes it, it gets its own row, whose note names both halves.",
         "s'il vous plaît is ONE three-token surface and it is the vous shape the course's register decision requires — s'il te plaît is tu's and is never written here. Taking it whole leaves M2's vous row untouched. Its note may say what the phrase is made of (\"if it pleases you\") without the module teaching si or plaire. Prices are in euros, and euro takes a written, silent plural -s: dix euros.",
-        "INDEX SEAM: c'est is this module's row and ça is its other one — ça va was taken whole in M2 precisely so that ça would still be free here for Ça coûte combien ? Register: the course writes je veux with s'il vous plaît at the edge of the request, and the usage line says when je veux alone would sound blunt; je voudrais, the conditional, stays out of L1.",
+        "INDEX SEAM: c'est is this module's row and ça is its other one — ça va was taken whole in M2 precisely so that ça would still be free here for Ça coûte combien ? Register: the course writes je veux with s'il vous plaît at the edge of the request, and the usage line says when je veux alone would sound blunt; je voudrais, the conditional, stays out of L1. Revised 2026-09-05 (docs/43): a counter request is the bare noun and the phrase — Trois pommes, s'il vous plaît, Un café, s'il vous plaît — and je veux is kept only as a statement of wanting, never framed as ordering.",
       ],
       maxWordsPerSentence: 7,
       newWordCap: NEW_WORD_CAP,
@@ -3037,11 +3037,11 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         '<M1–M9 pattern> + <M1–M9 pattern>',
         '<question> → <answer + parce que + reason>',
         '<statement> + et/mais + <statement>',
-        '<statement> + . + Puis/Alors + <statement>',
+        '<statement> + , et puis / . Alors + <statement>',
       ],
       notes: [
         'Each item is a TURN of 2–3 short sentences, not one long one — a question and its answer, or a statement, a reason and a follow-up. The per-sentence bound applies to each sentence inside the turn.',
-        "Recombination is the lesson: nearly everything comes from M1–M9. The honest new spend is the joiners that hold a turn together — et, mais, aussi, puis, alors — and little else. ou is NOT among them: it would sit one accent away from M7's où, and no turn here needs it. aussi goes AFTER what it adds to (Je veux du thé aussi); at the head of a sentence it means something else and reads as formal, so keep it out of first position.",
+        "Recombination is the lesson: nearly everything comes from M1–M9. The honest new spend is the joiners that hold a turn together — et, mais, aussi, puis, alors — and little else. ou is NOT among them: it would sit one accent away from M7's où, and no turn here needs it. aussi goes AFTER what it adds to (Je veux du thé aussi); at the head of a sentence it means something else and reads as formal, so keep it out of first position. Revised 2026-09-05 (docs/43): the sequencer is written et puis, never a sentence-initial Puis, and going home is rentrer — je rentre, opened here — because je vais à la maison is not what a French speaker says.",
         "A delta, and the last one: French subject pronouns are NEVER dropped, exactly as English's are not. The reason is the one M4 gave — je mange, il mange and ils mangent are one sound, so the ending cannot carry the person and the pronoun must. Write the pronoun in every clause of every turn, including the second and third sentences where the person is already obvious.",
         'il and elle are the GENDER OF THE NOUN, not the sex of a person: le café … il, la maison … elle. The slogan is "il = he, elle = she", and it is why an anglophone, having no French twin for "it", defaults to il for everything. The law: il and elle name the GRAMMATICAL GENDER of the noun they stand for, so a house is elle and a coffee is il — La maison est grande. Elle est belle. — never *Il est belle, which the feminine adjective beside it makes visible. This module is where a two-sentence turn forces the choice for the first time, so tag it interference and spend a mistake plate on it. INDEX SEAM: both il and elle are still free here, because M7 took il y a whole as a three-token surface and claimed no part of it.',
         "Language of the fields holds to the last turn: ENGLISH in every teaching field — rules[].text, note, trap, sound, changed, why, usage, mnemonic, cue — French only in display and forms, glossEn on every sentence, and literal wherever a turn's order moves. The register holds too: vous to the end, tu never written.",
