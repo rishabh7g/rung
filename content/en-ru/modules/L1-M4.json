@@ -39,7 +39,7 @@
     },
     {
       "tag": "delta",
-      "text": "The times of day are single words: útrom (in the morning), dnyóm (in the afternoon), vécherom (in the evening), nóch'yu (at night). They are frozen shapes of útro, den', vécher and noch' — the leftovers of a case this level does not teach — so learn them as they are and do not try to build them. They usually open the sentence."
+      "text": "The times of day are single words: útrom (in the morning), dnyóm (during the day — roughly noon to early evening), vécherom (in the evening), nóch'yu (at night). They are frozen shapes of útro, den', vécher and noch' — the leftovers of a case this level does not teach — so learn them as they are and do not try to build them. They usually open the sentence."
     },
     {
       "tag": "delta",
@@ -47,7 +47,7 @@
     },
     {
       "tag": "free",
-      "text": "This level always writes the subject pronoun. Russian can drop ya, because the ending already names the person, and in speech it often does — but the drop is a stylistic judgement rather than a rule, and M5's past tense will not name the person at all. Keep the pronoun until you can hear when to lose it."
+      "text": "This level writes the subject pronoun — once. Russian can drop ya altogether, because the ending already names the person, and in speech it often does; that drop is a stylistic judgement, so keep the pronoun until you can hear when to lose it. But one ya is the limit: a second clause with the same subject never gets its own (Ya ustál, poéhtomu ne rabótayu — M9). Repeating it is the surest sign of an English speaker."
     }
   ],
   "sentences": [
@@ -142,9 +142,11 @@
             "cue": "seven",
             "tag": "free",
             "forms": [
-              "sem'"
+              "sem'",
+              "shest'",
+              "vósem'"
             ],
-            "note": "Seven. The ' on the end is not a sound of its own — it softens the m. Numbers from five upward all end this way."
+            "note": "Seven. shest' (six) and vósem' (eight) sit in the same slot; all three end in the soft sign -', as every number from five to twenty does, and all three take chasóv."
           },
           {
             "display": "chasóv",
@@ -173,10 +175,10 @@
           "changed": "swap the number — chasóv stays, because six is also above four"
         },
         {
-          "display": "Ya vstayú v dva chasá.",
-          "script": "Я встаю в два часа.",
-          "cue": "I get up at two o'clock",
-          "changed": "dva takes the other ending: chasá, not chasóv"
+          "display": "Ya vstayú v vósem' chasóv.",
+          "script": "Я встаю в восемь часов.",
+          "cue": "I get up at eight o'clock",
+          "changed": "swap the number again — vósem' is above four too, so chasóv stays. The 2–4 shape, dva chasá, is an afternoon hour: M8 spells the rule out"
         },
         {
           "display": "Vy vstayóte v sem' chasóv?",
@@ -385,9 +387,10 @@
             "cue": "often",
             "tag": "delta",
             "forms": [
-              "chásto"
+              "chásto",
+              "rédko"
             ],
-            "note": "Often. Words like this go in front of the verb in Russian, where English usually puts them after it or at the end. Never changes shape."
+            "note": "Often — and its opposite is rédko, \"rarely\". Words like this go in front of the verb in Russian, where English usually puts them after it or at the end. Neither ever changes shape."
           }
         ],
         "rules": [
@@ -404,10 +407,10 @@
           "changed": "swap the verb — chásto keeps its place in front of it"
         },
         {
-          "display": "Ya ne chásto chitáyu.",
-          "script": "Я не часто читаю.",
-          "cue": "I don't read often",
-          "changed": "ne in front of chásto, because it is chásto that is being denied"
+          "display": "Ya rédko chitáyu.",
+          "script": "Я редко читаю.",
+          "cue": "I rarely read",
+          "changed": "chásto → rédko, its opposite — the same seat, in front of the verb. Russians say this rather than ne chásto"
         },
         {
           "display": "Vy chásto chitáyete?",
@@ -421,7 +424,7 @@
         "script": "Я читаю часто.",
         "why": "Understandable, and it puts the emphasis on \"often\" rather than saying it plainly. The neutral order is Ya chásto chitáyu."
       },
-      "usage": "Saying how much you do something — chásto, vsegdá and inogdá all sit in the same slot.",
+      "usage": "Saying how much you do something — chásto, rédko, vsegdá and inogdá all sit in the same slot.",
       "register": "neutral",
       "mnemonic": "How often comes before what you do."
     },
@@ -505,9 +508,10 @@
             "cue": "in Russian",
             "tag": "delta",
             "forms": [
-              "po-rússki"
+              "po-rússki",
+              "po-anglíyski"
             ],
-            "note": "\"In Russian\", said of how you speak — a different word from M1's rússkiy yazýk, the language as a thing. After govorít' always this shape: govoríte po-rússki."
+            "note": "\"In Russian\", said of how you speak — not M1's rússkiy yazýk, the language as a thing. After govorít' always this shape, for any language: po-rússki, po-anglíyski (in English)."
           }
         ],
         "rules": [
@@ -549,14 +553,14 @@
       "id": "L1-M4-S09",
       "display": "Dnyóm ya rabótayu.",
       "script": "Днём я работаю.",
-      "cue": "In the afternoon I work",
-      "literal": "In-the-afternoon I work",
+      "cue": "During the day I work",
+      "literal": "In-the-day I work",
       "deconstruction": {
         "words": [
           {
             "display": "Dnyóm",
             "script": "Днём",
-            "cue": "in the afternoon · during the day",
+            "cue": "during the day · in the daytime",
             "tag": "delta",
             "forms": [
               "Dnyóm"
@@ -576,19 +580,19 @@
         {
           "display": "Dnyóm ya chitáyu.",
           "script": "Днём я читаю.",
-          "cue": "In the afternoon I read",
+          "cue": "During the day I read",
           "changed": "swap the verb — the time word keeps its place at the front"
         },
         {
           "display": "Dnyóm ya ne rabótayu.",
           "script": "Днём я не работаю.",
-          "cue": "In the afternoon I don't work",
+          "cue": "During the day I don't work",
           "changed": "ne in front of the verb; the time word is untouched"
         },
         {
           "display": "Vy rabótayete dnyóm?",
           "script": "Вы работаете днём?",
-          "cue": "Do you work in the afternoon?",
+          "cue": "Do you work during the day?",
           "changed": "the polite you-form, with the time word moved to the end"
         }
       ],
@@ -603,10 +607,10 @@
     },
     {
       "id": "L1-M4-S10",
-      "display": "Nóch'yu ya splyu.",
-      "script": "Ночью я сплю.",
-      "cue": "At night I sleep",
-      "literal": "At-night I sleep",
+      "display": "Nóch'yu ya khoroshó splyu.",
+      "script": "Ночью я хорошо сплю.",
+      "cue": "At night I sleep well",
+      "literal": "At-night I well sleep",
       "deconstruction": {
         "words": [
           {
@@ -626,35 +630,35 @@
         ]
       },
       "trap": "splyu is M3's spat' with its everyday ending, and it grows an l the way lyublyú does. The dictionary shape gave no warning of it.",
-      "sound": "NO-chyu ya splyoo. Both words end in a soft sound — the yu does the softening in each — and neither is more than one syllable of real weight.",
+      "sound": "NO-chyu ya kha-ra-SHO splyoo. Nóch'yu and splyu both end in a soft sound — the yu does the softening in each — and khoroshó lands its stress on the last syllable between them.",
       "variations": [
         {
-          "display": "Nóch'yu ya ne splyu.",
-          "script": "Ночью я не сплю.",
-          "cue": "At night I don't sleep",
-          "changed": "ne in front of the verb, and the time word does not move"
+          "display": "Nóch'yu ya plókho splyu.",
+          "script": "Ночью я плохо сплю.",
+          "cue": "At night I sleep badly",
+          "changed": "khoroshó → plókho, its opposite — what you say after a bad night. M9 teaches plókho"
         },
         {
-          "display": "Vy spíte nóch'yu?",
-          "script": "Вы спите ночью?",
-          "cue": "Do you sleep at night?",
-          "changed": "the polite you-form of pattern II — spíte, with the time word at the end"
+          "display": "Vy khoroshó spíte?",
+          "script": "Вы хорошо спите?",
+          "cue": "Do you sleep well?",
+          "changed": "the polite you-form of pattern II — spíte — and the time word dropped: this is the question people actually ask each other"
         },
         {
-          "display": "Ánna spit nóch'yu.",
-          "script": "Анна спит ночью.",
-          "cue": "Anna sleeps at night",
-          "changed": "the he/she ending — spit, another pattern II verb"
+          "display": "Ánna khoroshó spit.",
+          "script": "Анна хорошо спит.",
+          "cue": "Anna sleeps well",
+          "changed": "the he/she ending — spit, another pattern II verb — with khoroshó still in front of it"
         }
       ],
       "mistake": {
-        "display": "Nóch'yu ya spat'.",
-        "script": "Ночью я спать.",
-        "why": "spat' is the dictionary shape and only goes after another verb (Ya khochú spat'). Standing on its own it needs an ending: Nóch'yu ya splyu."
+        "display": "Nóch'yu ya khoroshó spat'.",
+        "script": "Ночью я хорошо спать.",
+        "why": "spat' is the dictionary shape and only goes after another verb (Ya khochú spat'). Standing on its own it needs an ending: Nóch'yu ya khoroshó splyu."
       },
-      "usage": "Closing a description of your day — and the last of the four time words.",
+      "usage": "Closing a description of your day — the last of the four time words, and Vy khoroshó spíte? is a question you will really be asked.",
       "register": "neutral",
-      "mnemonic": "The dictionary shape waits behind another verb; on its own, the verb has to say who."
+      "mnemonic": "The dictionary shape waits behind another verb; on its own, the verb has to say who — and khoroshó sits in front of it, where chásto sits."
     }
   ],
   "comprehensionPool": [
@@ -692,7 +696,7 @@
       "id": "L1-M4-C06",
       "display": "Dnyóm ya chitáyu knígu.",
       "script": "Днём я читаю книгу.",
-      "cue": "In the afternoon I read a book"
+      "cue": "During the day I read a book"
     },
     {
       "id": "L1-M4-C07",
