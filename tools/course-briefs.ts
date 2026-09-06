@@ -182,6 +182,13 @@
  * brief below — the seam proof's four frames are the only part that survived — and #202 graduated
  * the course out of `fixture: true` altogether.
  *
+ * Amended 2026-09-05 (`docs/42-llm-review-en-ar-spoken.md`): three of the decisions above moved
+ * by one notch each, register-side only. M6 teaches `sa-` alone and demotes `sawfa` to a
+ * recognition row and variation; the "no case endings" law is clarified to write the construct
+ * `-t` of a 3–10 number (`thalāthat kutub`, `khamsat riyālāt`), which is the tāʾ marbūṭa the
+ * course already writes in `sayyāratī`, not iʿrāb; and the dual stays `kitābān` in `display`
+ * with `usage` saying that speech has `kitābayn` — the owner's open dialect question.
+ *
  * ## hi-en: the four decisions a brief must settle before any English is written
  *
  * hi-en (#267–#273) is the first course whose L2 is the language these briefs — and hi-mr's own
