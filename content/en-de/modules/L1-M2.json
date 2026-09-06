@@ -18,14 +18,15 @@
     "allowedPatterns": [
       "Guten Tag + , + name",
       "Wie heißen Sie + ?",
-      "Ist Ihr Name + name + ?",
+      "Sind Sie + Frau/Herr + name + ?",
       "Wie geht es Ihnen + ?",
-      "Mir geht es + gut + , danke",
+      "Gut, danke. Und Ihnen?",
       "Sind Sie + Adj/N + ?",
       "Kommen Sie aus + place + ?",
       "Sprechen Sie + language + ?",
       "Ja / Nein / Doch + , + <statement>",
-      "Ich bin nicht + Adj"
+      "Ich bin nicht + Adj",
+      "Auf Wiedersehen + , + Frau/Herr + name"
     ],
     "newWordCap": 25
   },
@@ -48,7 +49,7 @@
     },
     {
       "tag": "delta",
-      "text": "Wellbeing puts the PERSON in a case slot and a meaningless es in the subject slot: Wie geht es Ihnen? is \"how goes it to-you\", and Mir geht es gut is \"to-me goes it well\". English does the opposite — it makes the person the subject — so this shape has to be learned whole. It is a pattern German reuses: a later rung says Mir ist kalt for \"I'm cold\"."
+      "text": "Wellbeing puts the PERSON in a case slot and a meaningless es in the subject slot: Wie geht es Ihnen? is \"how goes it to-you\", and Mir geht es gut is \"to-me goes it well\". English does the opposite — it makes the person the subject — so this shape has to be learned whole. It is a pattern German reuses: a later rung says Mir ist kalt for \"I'm cold\". In speech the answer is usually cut to Gut, danke, and handed back with Und Ihnen? — the dative again, because it echoes the question."
     },
     {
       "tag": "delta",
@@ -98,6 +99,13 @@
             "tag": "free",
             "forms": [],
             "note": "A common German surname. Surnames carry over unchanged, take a capital like every German noun, and are what follows Frau or Herr — Frau Weber, Herr Weber. Swap in whichever one you actually need."
+          },
+          {
+            "display": "Auf Wiedersehen",
+            "cue": "goodbye",
+            "tag": "delta",
+            "forms": [],
+            "note": "Goodbye — the closing that matches Guten Tag: safe with anyone, at any hour, literally “on seeing-again”. Take it whole. Tschüss is the friend's closing, du-register, so this course never writes it."
           }
         ],
         "rules": [
@@ -119,16 +127,16 @@
           "changed": "the clock moves forward: this one takes over from about six"
         },
         {
-          "display": "Guten Tag, Herr Meyer",
-          "cue": "Hello, Mr Meyer",
-          "changed": "Herr for a man where Frau was for a woman — and a surname after it either way"
+          "display": "Auf Wiedersehen, Frau Weber",
+          "cue": "Goodbye, Mrs Weber",
+          "changed": "the closing to match the greeting — the same title and surname, and the same all-hours safety. Frau Weber opens the exchange and Frau Weber closes it"
         }
       ],
       "mistake": {
         "display": "Gute Tag, Frau Weber",
         "why": "The -n is not optional. The greeting is a frozen phrase and it is always Guten Tag, Guten Morgen, Guten Abend — the ending is carrying grammar this level does not otherwise need, which is exactly why the phrase is learned whole."
       },
-      "usage": "The first thing you say walking into a shop, an office or a waiting room, and the one greeting that is safe with anyone at any hour of the working day.",
+      "usage": "The first thing you say walking into a shop, an office or a waiting room, and the one greeting that is safe with anyone at any hour of the working day. On the way out, Auf Wiedersehen, Frau Weber closes it the same way.",
       "register": "neutral",
       "mnemonic": "\"Good day\" with the words in the English order. The only two things to hold are the -n on Guten and the fact that German greets by the clock.",
       "literal": "Good day, Mrs Weber"
@@ -177,8 +185,8 @@
           "changed": "the same question built out of a noun instead of a verb — the form a counter or an official will use"
         },
         {
-          "display": "Sind Sie Frau Weber?",
-          "cue": "Are you Mrs Weber?",
+          "display": "Heißen Sie Weber?",
+          "cue": "Is your name Weber?",
           "changed": "an open question becomes a yes/no one: the question word goes and the verb takes the front"
         }
       ],
@@ -192,10 +200,17 @@
     },
     {
       "id": "L1-M2-S03",
-      "display": "Ist Ihr Name Weber?",
-      "cue": "Is your name Weber?",
+      "display": "Sind Sie Frau Weber?",
+      "cue": "Are you Mrs Weber?",
       "deconstruction": {
         "words": [
+          {
+            "display": "Herr",
+            "cue": "Mr",
+            "tag": "delta",
+            "forms": [],
+            "note": "Mr — the title before a man's surname: Herr Weber, beside Frau Weber. Also the noun “gentleman” (der Herr). On Sie terms it is always Herr/Frau + SURNAME; the first name belongs to du."
+          },
           {
             "display": "Ihr",
             "cue": "your (formal)",
@@ -217,38 +232,38 @@
           3
         ]
       },
-      "trap": "There is nothing to insert and nothing to shuffle: the statement Ihr Name ist Anna becomes a question by moving ist to the front. English needs \"is\" to move too here — the delta is that German does this with every verb it has, and never borrows a \"do\".",
-      "sound": "ist eer NAH-muh VAY-ber. Ihr is a long \"ee\" and the h is silent — an h after a vowel is there to lengthen it, never to be pronounced. Name has two syllables, NAH-muh, ending in that unstressed \"uh\" German gives every final -e.",
+      "trap": "There is nothing to insert and nothing to shuffle: the statement Sie sind Frau Weber becomes a question by moving sind to the front. English needs \"are\" to move too here — the delta is that German does this with every verb it has, and never borrows a \"do\". And the name is the SURNAME with its title: Sind Sie Anna? is a different relationship.",
+      "sound": "zint zee frow VAY-ber. A single s in front of a vowel is voiced like a z, so Sind and Sie both open with a z sound, and the final d of sind hardens to a t. Frau has the ow of English \"how\", and Weber begins with a v, because German w always does.",
       "variations": [
         {
-          "display": "Ihr Name ist Weber",
-          "cue": "Your name is Weber",
-          "changed": "the same four words as a statement — the question was only ist moving to the front"
-        },
-        {
-          "display": "Ist Ihr Name Meyer?",
-          "cue": "Is your name Meyer?",
-          "changed": "swap the name being checked; nothing else in the frame moves"
+          "display": "Sind Sie Herr Weber?",
+          "cue": "Are you Mr Weber?",
+          "changed": "Herr for a man where Frau was for a woman — and a surname after it either way"
         },
         {
           "display": "Wie ist Ihr Name?",
           "cue": "What is your name?",
-          "changed": "a yes/no question becomes an open one: the question word takes the front and the verb stays in second place behind it"
+          "changed": "the counter's question, built out of the noun Name and the possessive Ihr — a form read aloud; face to face the question is Wie heißen Sie?"
+        },
+        {
+          "display": "Sie sind Frau Weber",
+          "cue": "You are Mrs Weber",
+          "changed": "the same four words as a statement — the question was only sind moving to the front"
         }
       ],
       "mistake": {
-        "display": "Ist Ihre Name Weber?",
-        "why": "Name is masculine — der Name — so the possessive stays bare: Ihr Name. The -e is the feminine ending, the same one that turns ein into eine, and it does not belong here."
+        "display": "Ist Sie Frau Weber?",
+        "why": "Sie takes the PLURAL verb, always: Sind Sie …?, never *Ist Sie. ist belongs to er, sie and es — and lowercase sie ist would be “is she”, a different person altogether. The capital and the plural verb travel together."
       },
-      "usage": "What a receptionist, a delivery driver or an official asks when they are checking they have the right person.",
+      "usage": "What a receptionist, a delivery driver or a colleague asks when they are checking they have the right person.",
       "register": "neutral",
-      "mnemonic": "Ihr Name — two capitals, and each one is earned: the possessive that goes with Sie keeps its capital, and every German noun keeps its own."
+      "mnemonic": "Herr or Frau, then the surname — and sind in front of it all to ask."
     },
     {
       "id": "L1-M2-S04",
-      "display": "Ja, ich heiße Weber",
-      "cue": "Yes, my name is Weber",
-      "literal": "yes, I am-called Weber",
+      "display": "Ja, das bin ich",
+      "cue": "Yes, that's me",
+      "literal": "yes, that am I",
       "deconstruction": {
         "words": [
           {
@@ -263,32 +278,32 @@
           8
         ]
       },
-      "trap": "ja does not join to the sentence behind it. German writes the comma and then a complete statement, exactly as English does — there is no shorter form where the answer swallows the sentence.",
-      "sound": "yah, ish HIGH-suh VAY-ber. German j is an English y, every time: ja is \"yah\", and it never has the sound of English \"jam\".",
+      "trap": "English says \"that's me\" with \"me\". German says it with ich — the person is the SUBJECT of bin, so it is das bin ich, and das takes the front so that the verb stays second. Ja, ich heiße Weber is grammatical, and it repeats the name back like a form being checked; the short answer is what is said.",
+      "sound": "yah, dass bin ish. German j is an English y, every time: ja is \"yah\", and it never has the sound of English \"jam\". das and bin are both short and clipped, and ich ends in the soft front ch.",
       "variations": [
         {
-          "display": "Nein, ich heiße Meyer",
-          "cue": "No, my name is Meyer",
-          "changed": "the answer flips, and the sentence behind it changes with it"
+          "display": "Nein, ich bin Frau Meyer",
+          "cue": "No, I'm Mrs Meyer",
+          "changed": "the answer flips, and the sentence behind it says who you actually are"
         },
         {
           "display": "Ja, ich bin Frau Weber",
-          "cue": "Yes, I am Mrs Weber",
-          "changed": "a different verb gives the same answer — sein instead of heißen, and the title comes with it"
+          "cue": "Yes, I'm Mrs Weber",
+          "changed": "the longer confirmation — sein with the title and the surname, the way a form would want it"
         },
         {
           "display": "Ja, ich komme aus Indien",
-          "cue": "Yes, I am from India",
+          "cue": "Yes, I'm from India",
           "changed": "the same ja frame answering a completely different question"
         }
       ],
       "mistake": {
-        "display": "Ja, ich Weber heiße",
-        "why": "The verb is the SECOND element of a German main clause, so it comes straight after ich: Ja, ich heiße Weber. Sending the verb to the end is something German really does — but only in a subordinate clause, and this is not one."
+        "display": "Ja, das ich bin",
+        "why": "The verb is the SECOND element of a German main clause. das has taken the first slot, so bin comes next and ich follows it: Ja, das bin ich. It is a fixed answer — literally \"yes, that am I\" — and L1-M4 will name the law behind it."
       },
-      "usage": "Confirming who you are. The comma is real: ja answers, and the sentence that follows it stands on its own feet.",
+      "usage": "Confirming who you are when somebody has asked for you by name — at a door, on the phone, in a waiting room. The comma is real: ja answers, and the three words after it stand on their own.",
       "register": "neutral",
-      "mnemonic": "j is y. Once ja stops looking like an English j it stops looking foreign."
+      "mnemonic": "j is y. And the answer to \"are you …?\" is three short words: das bin ich."
     },
     {
       "id": "L1-M2-S05",
@@ -346,9 +361,9 @@
     },
     {
       "id": "L1-M2-S06",
-      "display": "Mir geht es gut, danke",
-      "cue": "I'm fine, thank you",
-      "literal": "to-me goes it well, thanks",
+      "display": "Gut, danke. Und Ihnen?",
+      "cue": "Fine, thanks. And you?",
+      "literal": "well, thanks. And to-you?",
       "deconstruction": {
         "words": [
           {
@@ -356,14 +371,14 @@
             "cue": "I am (doing) · things go for me",
             "tag": "delta",
             "forms": [],
-            "note": "The answer to Wie geht es Ihnen?, taken whole: “to-me goes it” — mir is dative “to me”, es the empty subject, gut follows. A SHAPE German reuses: Mir ist kalt, “I'm cold”."
+            "note": "The full answer to Wie geht es Ihnen?, taken whole: “to-me goes it” — mir is dative “to me”, es the empty subject, gut follows. Speech shortens it to Gut, danke. The shape returns in Mir ist kalt."
           },
           {
             "display": "gut",
             "cue": "good · well",
             "tag": "free",
             "forms": [],
-            "note": "Good — and “well”, where English splits them. After sein and after the going-construction it takes no ending: an adjective only grows endings before a noun."
+            "note": "Good — and “well”, where English splits them. Alone it is the whole everyday answer to Wie geht es Ihnen?: Gut, danke. After sein and the going-construction it takes no ending."
           },
           {
             "display": "danke",
@@ -371,6 +386,13 @@
             "tag": "free",
             "forms": [],
             "note": "Thank you — the whole thing, no verb, no pronoun, tacked onto an answer like English “thanks”. The reply is bitte, a word with several later jobs."
+          },
+          {
+            "display": "Und Ihnen",
+            "cue": "and you?",
+            "tag": "delta",
+            "forms": [],
+            "note": "And you? — the question handed back, two words taken whole. Ihnen because the question it echoes puts the person in the dative (Wie geht es Ihnen?); und is “and”, which L1-M10 opens on its own."
           }
         ],
         "rules": [
@@ -378,32 +400,32 @@
           9
         ]
       },
-      "trap": "\"I am fine\" is the English shape and it does not survive the crossing: Ich bin gut means you are good AT things, or a good person. The wellbeing answer keeps the person in the dative — Mir geht es gut.",
-      "sound": "meer GAYT ess GOOT, DAN-kuh. mir has the same long \"ee\" as Ihnen, and gut a long pure oo. danke is two syllables and ends in that unstressed \"uh\" — never one syllable, never \"dank\".",
+      "trap": "\"I am fine\" is the English shape and it does not survive the crossing: Ich bin gut means you are good AT things, or a good person. The short answer sidesteps the whole construction — Gut, danke — and hands the question back with Und Ihnen?: the dative, because the question it echoes had the person in the dative.",
+      "sound": "goot, DAN-kuh. oont EE-nen. gut has a long pure oo; danke is two syllables ending in that unstressed \"uh\" — never one syllable, never \"dank\". und ends in a t, because a final d hardens, and Ihnen has the same long \"ee\" as mir and Sie.",
       "variations": [
         {
-          "display": "Mir geht es gut",
-          "cue": "I'm fine",
-          "changed": "drop the thanks — the sentence is already complete without it"
+          "display": "Mir geht es gut, danke",
+          "cue": "I'm fine, thanks",
+          "changed": "the full-sentence answer, out of the question's own parts: mir where Ihnen was, es the empty subject — correct, and longer than most people bother with"
+        },
+        {
+          "display": "Gut, danke",
+          "cue": "Fine, thanks",
+          "changed": "the question not handed back — the answer on its own, when the other person has already said how they are"
         },
         {
           "display": "Danke, mir geht es gut",
-          "cue": "Thank you, I'm fine",
-          "changed": "the thanks moves to the front instead, and nothing inside the sentence shifts"
-        },
-        {
-          "display": "Anna geht es gut",
-          "cue": "Anna is fine",
-          "changed": "a name takes the dative slot at the front — the same frame, about somebody else"
+          "cue": "Thanks, I'm fine",
+          "changed": "the thanks in front of the full answer, and nothing inside the sentence shifts"
         }
       ],
       "mistake": {
         "display": "Ich bin gut",
-        "why": "Not an answer to Wie geht es Ihnen? — it says you are good at something, or a good person. Wellbeing keeps the person in the dative and the subject slot empty: Mir geht es gut."
+        "why": "Not an answer to Wie geht es Ihnen? — it says you are good at something, or a good person. Wellbeing keeps the person out of the subject slot: the short answer is Gut, danke, and the full one is Mir geht es gut."
       },
-      "usage": "The standard reply, in a shop, an office or a corridor. It is short on purpose — nobody asking this wants a report.",
+      "usage": "The standard reply, in a shop, an office or a corridor — short on purpose, and handed straight back with Und Ihnen? Nobody asking this wants a report.",
       "register": "neutral",
-      "mnemonic": "The question is \"how goes it to-you\" and the answer is \"to-me goes it well\". Same three words, the person swapped at the front."
+      "mnemonic": "Answer with the one word, hand it back with the dative: Gut, danke. Und Ihnen?"
     },
     {
       "id": "L1-M2-S07",
@@ -511,7 +533,7 @@
     {
       "id": "L1-M2-S09",
       "display": "Doch, ich bin müde",
-      "cue": "Yes I am — I am tired",
+      "cue": "Yes I am, actually — I'm tired",
       "deconstruction": {
         "words": [
           {
@@ -532,17 +554,17 @@
       "variations": [
         {
           "display": "Doch, ich bin Student",
-          "cue": "Yes I am — I am a student",
+          "cue": "Yes I am, actually — I'm a student",
           "changed": "the same contradicting yes in front of a different sentence"
         },
         {
           "display": "Doch, ich mag Kaffee",
-          "cue": "Yes I do — I like coffee",
+          "cue": "Yes I do, actually — I like coffee",
           "changed": "answering a different negative question, \"don't you like coffee?\" — doch covers English's \"yes I do\" as well as its \"yes I am\""
         },
         {
           "display": "Doch, mir geht es gut",
-          "cue": "Yes I am — I'm fine",
+          "cue": "Yes I am, actually — I'm fine",
           "changed": "contradicting a negative wellbeing question: Geht es Ihnen nicht gut?"
         }
       ],
@@ -621,8 +643,8 @@
     },
     {
       "id": "L1-M2-C02",
-      "display": "Danke, mir geht es gut",
-      "cue": "Thank you, I'm fine"
+      "display": "Danke, gut. Und Ihnen?",
+      "cue": "Thanks, fine. And you?"
     },
     {
       "id": "L1-M2-C03",
@@ -677,12 +699,17 @@
     {
       "id": "L1-M2-C13",
       "display": "Doch, ich bin Studentin",
-      "cue": "Yes I am — I am a student"
+      "cue": "Yes I am, actually — I'm a student"
     },
     {
       "id": "L1-M2-C14",
       "display": "Ist das der Tisch?",
       "cue": "Is that the table?"
+    },
+    {
+      "id": "L1-M2-C15",
+      "display": "Auf Wiedersehen, Frau Weber",
+      "cue": "Goodbye, Mrs Weber"
     }
   ],
   "exitTest": {

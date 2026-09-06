@@ -16,7 +16,7 @@
       "simple_present"
     ],
     "allowedPatterns": [
-      "Es gibt + einen/eine/ein + N",
+      "Hier gibt es / Es gibt + einen/eine/ein + N",
       "Der/Die/Das + N + ist + in/auf/unter/neben/vor/hinter + dem/der + N",
       "Ich gehe in + den/die/das + N",
       "Wo ist + der/die/das + N + ?",
@@ -27,7 +27,7 @@
   "rules": [
     {
       "tag": "delta",
-      "text": "es gibt IS THE IDIOM AND IT NEVER CHANGES: Es gibt einen Stuhl and Es gibt Stühle are the same two words. English splits \"there is\" from \"there are\" by number and German does not — a delta worth celebrating. Literally it says \"it gives\": es is a dummy subject standing in for nobody, and what exists is the OBJECT of gibt, which is why it comes out in the accusative."
+      "text": "es gibt IS THE IDIOM AND IT NEVER CHANGES FOR NUMBER: Es gibt einen Stuhl and Es gibt Stühle are the same two words. English splits \"there is\" from \"there are\" by number and German does not — a delta worth celebrating. The only thing that ever happens to it is a swap of its two halves when something else takes first position or a question is asked: Hier gibt es einen Stuhl, Gibt es hier einen Stuhl? Literally it says \"it gives\": es is a dummy subject standing in for nobody, and what exists is the OBJECT of gibt, which is why it comes out in the accusative."
     },
     {
       "tag": "interference",
@@ -61,17 +61,20 @@
   "sentences": [
     {
       "id": "L1-M7-S01",
-      "display": "Es gibt einen Stuhl",
-      "cue": "There's a chair",
-      "literal": "It gives a chair",
+      "display": "Hier gibt es einen Stuhl",
+      "cue": "There's a chair here",
+      "literal": "Here gives it a chair",
       "deconstruction": {
         "words": [
           {
             "display": "es gibt",
             "cue": "there is · there are",
             "tag": "delta",
-            "forms": [],
-            "note": "there is, there are — two words taken whole, never changing for number: Es gibt einen Stuhl, Es gibt Stühle. Literally “it gives”; what exists is the OBJECT of gibt, so it is accusative: einen Stuhl."
+            "forms": [
+              "es gibt",
+              "gibt es"
+            ],
+            "note": "there is, there are — two words taken whole, never changing for number: Es gibt einen Stuhl, Es gibt Stühle. Behind hier, or in a question, they flip: gibt es. What exists is the OBJECT: accusative."
           },
           {
             "display": "Stuhl",
@@ -82,6 +85,13 @@
               "Stühle"
             ],
             "note": "chair — der Stuhl, capitalised. Plural Stühle: umlaut plus -e, one of German's commonest plural patterns and nothing like English -s. Stuhl and Stühle are two different words; never write ue."
+          },
+          {
+            "display": "hier",
+            "cue": "here",
+            "tag": "free",
+            "forms": [],
+            "note": "here. A place word that can take first position like a time word — Hier gibt es einen Stuhl — and then the verb comes second and es slides in behind it. Its partner da, “there”, waits for later."
           }
         ],
         "rules": [
@@ -89,30 +99,30 @@
           1
         ]
       },
-      "trap": "einen looks like an object ending because M3 taught it as one, and there is no object here — nothing is being done to the chair. The accusative is following es gibt, which simply demands it. This is the first crack in \"accusative = object\", and the module widens it from here.",
-      "sound": "es GIPT — the b at the end of gibt hardens to a p, as a final b always does in German. Stuhl is SHTOOL: st- at the start of a word is sht-, and the u is a long oo.",
+      "trap": "einen looks like an object ending because L1-M3 taught it as one, and there is no object here — nothing is being done to the chair. The accusative is following es gibt, which simply demands it. And the idiom's two halves swap whenever something else takes first position — Hier gibt es — without changing a letter of either. This is the first crack in \"accusative = object\", and the module widens it from here.",
+      "sound": "heer GIPT ess — hier has the long ee of ie and a real h at the start, and the b at the end of gibt hardens to a p, as a final b always does in German. Stuhl is SHTOOL: st- at the start of a word is sht-, and the u is a long oo.",
       "variations": [
         {
-          "display": "Es gibt eine Tür",
-          "cue": "There's a door",
-          "changed": "a feminine noun, so eine — and the feminine shows no accusative ending at all"
+          "display": "Es gibt einen Stuhl",
+          "cue": "There's a chair",
+          "changed": "hier dropped — the bare idiom, with es back in front of gibt"
         },
         {
-          "display": "Es gibt Stühle",
-          "cue": "There are chairs",
+          "display": "Hier gibt es Stühle",
+          "cue": "There are chairs here",
           "changed": "a plural, and es gibt does not move a letter — English would have to swap \"is\" for \"are\""
         },
         {
-          "display": "Es gibt ein Buch",
-          "cue": "There's a book",
-          "changed": "a neuter noun, so ein — again no visible ending"
+          "display": "Gibt es hier einen Stuhl?",
+          "cue": "Is there a chair here?",
+          "changed": "the question: gibt takes the front and es follows it — L1-M2's verb-first shape, with the idiom's two words swapped"
         }
       ],
       "mistake": {
-        "display": "Es gibt ein Stuhl",
+        "display": "Hier gibt es ein Stuhl",
         "why": "es gibt takes the accusative, and the masculine is the one gender where the accusative is visible: ein becomes einen. The feminine and the neuter would have looked identical, which is exactly why the masculine has to be drilled."
       },
-      "usage": "Announcing what exists in a room, a shop or a town.",
+      "usage": "Pointing out what a room, a shop or a town has — and, with the two words swapped, asking whether it has it.",
       "register": "neutral",
       "mnemonic": "It gives — so whatever it gives is in the accusative."
     },
@@ -128,13 +138,6 @@
             "tag": "delta",
             "forms": [],
             "note": "the — the masculine and neuter form of der and das when nothing moves and a preposition is in front: dem Tisch, dem Buch; feminine die becomes der. The case ending sits on the ARTICLE, not the noun."
-          },
-          {
-            "display": "Straße",
-            "cue": "street",
-            "tag": "free",
-            "forms": [],
-            "note": "street — die Straße. The ß is written because the a before it is long; ss after a short vowel, ß after a long one, never merged by the index. Never ss here, never capitals: STRASSE is another key."
           }
         ],
         "rules": [
@@ -147,9 +150,9 @@
       "sound": "owf — the au is the ow of \"how\", and the f is clean. dem is like English \"dame\" without the y-glide: DAYM. Tisch ends in the sh of \"ship\", because sch is always sh.",
       "variations": [
         {
-          "display": "Der Stuhl ist auf der Straße",
-          "cue": "The chair is on the street",
-          "changed": "a feminine noun, so the dative article is der — M1's der, not a new word"
+          "display": "Ich bin auf der Arbeit",
+          "cue": "I'm at work",
+          "changed": "a feminine noun, so the dative article is der — L1-M1's der, not a new word; and the everyday way to say you are at work, with auf where English has \"at\""
         },
         {
           "display": "Das Buch ist auf dem Stuhl",
@@ -198,14 +201,14 @@
           "changed": "a feminine noun, so the dative article is der"
         },
         {
-          "display": "Das Buch ist neben dem Kaffee",
-          "cue": "The book is next to the coffee",
-          "changed": "different things on both sides of the preposition"
+          "display": "Der Kaffee ist neben dem Buch",
+          "cue": "The coffee is next to the book",
+          "changed": "a masculine subject and a neuter noun after the preposition — das Buch takes the same dem as der Tisch"
         },
         {
-          "display": "Der Tisch ist neben dem Buch",
-          "cue": "The table is next to the book",
-          "changed": "a neuter noun — das Buch takes the same dem as a masculine one"
+          "display": "Das Kino ist neben dem Park",
+          "cue": "The cinema is next to the park",
+          "changed": "two places instead of two pieces of furniture — the same dative, out on a street"
         }
       ],
       "mistake": {
@@ -249,9 +252,9 @@
           "changed": "the two nouns swapped, and the feminine dative der appears"
         },
         {
-          "display": "Das Buch ist hinter dem Kaffee",
-          "cue": "The book is behind the coffee",
-          "changed": "a neuter subject, which changes nothing after the preposition"
+          "display": "Der Park ist hinter dem Kino",
+          "cue": "The park is behind the cinema",
+          "changed": "two places — and Kino, a neuter noun, takes dem exactly as a masculine one does"
         }
       ],
       "mistake": {
@@ -285,9 +288,9 @@
       "sound": "OON-ter — the u is the oo of \"book\", not the uh of English \"under\". That vowel is the only thing standing between this word and its English twin.",
       "variations": [
         {
-          "display": "Der Kaffee ist unter dem Buch",
-          "cue": "The coffee is under the book",
-          "changed": "a neuter noun after the preposition — still dem"
+          "display": "Der Stuhl ist unter dem Tisch",
+          "cue": "The chair is under the table",
+          "changed": "a different thing underneath — a masculine subject, which changes nothing after the preposition"
         },
         {
           "display": "Das Buch ist unter dem Stuhl",
@@ -337,14 +340,14 @@
           "changed": "a different thing in the way"
         },
         {
-          "display": "Das Buch ist vor dem Kaffee",
-          "cue": "The book is in front of the coffee",
+          "display": "Der Stuhl ist vor dem Tisch",
+          "cue": "The chair is in front of the table",
           "changed": "a masculine noun after the preposition, so dem instead of der"
         },
         {
-          "display": "Der Stuhl ist vor dem Kino",
-          "cue": "The chair is in front of the cinema",
-          "changed": "a neuter noun, which takes dem exactly as a masculine one does"
+          "display": "Ich bin vor dem Kino",
+          "cue": "I'm in front of the cinema",
+          "changed": "a person as the subject — where you are waiting; Kino is neuter and takes dem exactly as a masculine noun does"
         }
       ],
       "mistake": {
@@ -374,6 +377,13 @@
             "tag": "free",
             "forms": [],
             "note": "cinema — das Kino. Nouns in -o borrowed into German are generally neuter, one of the few reliable gender clues. A place you go INTO — the natural home for the accusative fusion ins."
+          },
+          {
+            "display": "Straße",
+            "cue": "street",
+            "tag": "free",
+            "forms": [],
+            "note": "street — die Straße, so Wo ist die Straße? asks for one by name. The ß is written because the a before it is long; ss after a short vowel, ß after a long one, never merged. Never STRASSE."
           }
         ],
         "rules": [
@@ -412,7 +422,7 @@
     {
       "id": "L1-M7-S08",
       "display": "Ich gehe in den Park",
-      "cue": "I'm going into the park",
+      "cue": "I'm going to the park",
       "deconstruction": {
         "words": [
           {
@@ -446,18 +456,18 @@
       "sound": "GEH-uh, two syllables with a voiced final -e. den is DAYN. Park is said with a swallowed r: closer to PAHK than to the English word, though the k is crisp.",
       "variations": [
         {
-          "display": "Ich gehe auf die Straße",
-          "cue": "I'm going out onto the street",
-          "changed": "auf doing motion instead of location, with a feminine noun — die is the accusative here and looks exactly like the nominative, which is why the masculine den had to come first"
+          "display": "Ich gehe vor die Tür",
+          "cue": "I'm stepping outside",
+          "changed": "vor doing motion instead of location, with a feminine noun — die is the accusative here and looks exactly like the nominative, which is why the masculine den had to come first. A fixed everyday phrase: out through the door"
         },
         {
           "display": "Ich gehe in den Park, nicht nach Hause",
-          "cue": "I'm going into the park, not home",
+          "cue": "I'm going to the park, not home",
           "changed": "M3's nicht setting one destination against another"
         },
         {
           "display": "Morgen gehe ich in den Park",
-          "cue": "Tomorrow I'll go into the park",
+          "cue": "Tomorrow I'll go to the park",
           "changed": "M6's fronted time word, so gehe and ich swap places"
         }
       ],
@@ -582,8 +592,8 @@
   "comprehensionPool": [
     {
       "id": "L1-M7-C01",
-      "display": "Es gibt einen Tisch",
-      "cue": "There's a table"
+      "display": "Hier gibt es einen Tisch",
+      "cue": "There's a table here"
     },
     {
       "id": "L1-M7-C02",
@@ -617,8 +627,8 @@
     },
     {
       "id": "L1-M7-C08",
-      "display": "Das Buch ist auf der Straße",
-      "cue": "The book is on the street"
+      "display": "Ich bin auf der Straße",
+      "cue": "I'm out on the street"
     },
     {
       "id": "L1-M7-C09",
@@ -628,7 +638,7 @@
     {
       "id": "L1-M7-C10",
       "display": "Ich gehe zum Park",
-      "cue": "I'm going to the park"
+      "cue": "I'm heading to the park"
     },
     {
       "id": "L1-M7-C11",

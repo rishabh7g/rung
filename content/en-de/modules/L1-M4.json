@@ -18,10 +18,10 @@
     "allowedPatterns": [
       "Ich + V-e + jeden Tag",
       "Ich stehe um + num + Uhr auf",
-      "Um + num + Uhr + V + ich + N",
+      "Um + num (+ Uhr) + V + ich",
       "Morgens / Abends + V + ich + N",
       "Am + weekday + V + ich (+ nicht)",
-      "Ich wasche mich + time"
+      "Ich dusche + time"
     ],
     "newWordCap": 25
   },
@@ -52,11 +52,11 @@
     },
     {
       "tag": "delta",
-      "text": "A reflexive verb carries a little pronoun that belongs to it and has no English twin standing anywhere: Ich wasche mich, \"I wash myself\". English can drop its \"myself\" and German cannot drop its mich."
+      "text": "A reflexive verb carries a little pronoun that belongs to it and has no English twin standing anywhere: Ich wasche mich, \"I wash myself\". English can drop its \"myself\" and German cannot drop its mich. The everyday morning verb, though, is not reflexive at all: Ich dusche jeden Tag, \"I shower every day\" — reach for it before wasche mich, which is what you say about your hands or your face."
     },
     {
       "tag": "free",
-      "text": "The time words of the module and what each one is for: jeden Tag for a habit, morgens and abends for a habitual part of the day, am Montag for a named day, um sieben Uhr for a clock time, früh and spät for early and late."
+      "text": "The time words of the module and what each one is for: jeden Tag for a habit, morgens and abends for a habitual part of the day, am Montag for a named day, um sieben Uhr for a clock time, früh and spät for early and late. In speech um sieben Uhr is often cut to um sieben; both are said."
     }
   ],
   "sentences": [
@@ -184,9 +184,9 @@
     },
     {
       "id": "L1-M4-S03",
-      "display": "Um sieben Uhr esse ich Brot",
-      "cue": "At seven o'clock I eat bread",
-      "literal": "at seven o'clock eat I bread",
+      "display": "Um sieben frühstücke ich",
+      "cue": "At seven I have breakfast",
+      "literal": "at seven have-breakfast I",
       "deconstruction": {
         "words": [
           {
@@ -208,7 +208,17 @@
             "cue": "o'clock · hour · clock",
             "tag": "free",
             "forms": [],
-            "note": "o'clock — die Uhr, never left out: English says “at seven”, German um sieben Uhr. The same word is the clock on the wall and the watch on your wrist."
+            "note": "o'clock — die Uhr. Um sieben Uhr is the full clock phrase; speech often drops it, um sieben, as English says “at seven”. The same word is the clock on the wall and the watch on your wrist."
+          },
+          {
+            "display": "frühstücke",
+            "cue": "have breakfast",
+            "tag": "free",
+            "forms": [
+              "frühstücke",
+              "frühstücken"
+            ],
+            "note": "frühstücken, to have breakfast — one verb where English needs three words: ich frühstücke, Sie frühstücken. Built on früh, “early”; the meal itself is das Frühstück."
           }
         ],
         "rules": [
@@ -217,17 +227,17 @@
           7
         ]
       },
-      "trap": "English fronts the time and leaves the sentence alone: \"At seven o'clock I eat bread\". German allows exactly ONE thing in front of the finite verb, and Um sieben Uhr has already used it — so ich has to go behind esse.",
-      "sound": "ie is the long \"ee\" that ei is not, and a German s before a vowel buzzes like a z: sieben is ZEE-bn. Uhr is OO-uh, the h only lengthening the vowel; um has the short u of English \"put\".",
+      "trap": "English fronts the time and leaves the sentence alone: \"At seven I have breakfast\". German allows exactly ONE thing in front of the finite verb, and Um sieben has already used it — so ich has to go behind frühstücke.",
+      "sound": "ie is the long \"ee\" that ei is not, and a German s before a vowel buzzes like a z: sieben is ZEE-bn. frühstücke is FRÜ-shtük-uh — two rounded ü vowels, and the st inside it is sht, because it opens the second half of the compound. um has the short u of English \"put\".",
       "variations": [
         {
-          "display": "Um sieben Uhr trinke ich Kaffee",
-          "cue": "At seven o'clock I drink coffee",
-          "changed": "swap the verb and the object — the inversion does not move"
+          "display": "Um sieben Uhr frühstücke ich",
+          "cue": "At seven o'clock I have breakfast",
+          "changed": "Uhr added — the full clock phrase, said when the hour needs to be exact; the inversion does not move"
         },
         {
-          "display": "Ich esse um sieben Uhr Brot",
-          "cue": "I eat bread at seven o'clock",
+          "display": "Ich frühstücke um sieben",
+          "cue": "I have breakfast at seven",
           "changed": "put the subject back in front and the verb is second again, with no inversion"
         },
         {
@@ -237,8 +247,8 @@
         }
       ],
       "mistake": {
-        "display": "Um sieben Uhr ich esse Brot",
-        "why": "The finite verb has to be the SECOND ELEMENT. Um sieben Uhr is the first element — three words, one element — so esse comes next and ich follows it."
+        "display": "Um sieben ich frühstücke",
+        "why": "The finite verb has to be the SECOND ELEMENT. Um sieben is the first element — two words, one element — so frühstücke comes next and ich follows it."
       },
       "usage": "Fixing a time to something you do — a routine, an appointment, a habit.",
       "register": "neutral",
@@ -279,9 +289,9 @@
           "changed": "subject in front again, so there is nothing to invert"
         },
         {
-          "display": "Morgens wasche ich mich",
-          "cue": "In the mornings I wash",
-          "changed": "the same frame over a reflexive verb, with mich after the inverted subject"
+          "display": "Morgens dusche ich",
+          "cue": "In the mornings I shower",
+          "changed": "the same frame over another verb — duschen, three cards on, standing with no object at all"
         }
       ],
       "mistake": {
@@ -396,11 +406,20 @@
     },
     {
       "id": "L1-M4-S07",
-      "display": "Ich wasche mich jeden Tag",
-      "cue": "I wash every day",
-      "literal": "I wash myself every day",
+      "display": "Ich dusche jeden Tag",
+      "cue": "I shower every day",
       "deconstruction": {
         "words": [
+          {
+            "display": "dusche",
+            "cue": "shower",
+            "tag": "free",
+            "forms": [
+              "dusche",
+              "duschen"
+            ],
+            "note": "duschen, to shower — the everyday morning verb, and a plain one: ich dusche, Sie duschen, no pronoun needed. (Ich dusche mich is also heard.) Where English says “wash”, Germans mostly shower."
+          },
           {
             "display": "wasche",
             "cue": "wash",
@@ -409,14 +428,14 @@
               "wasche",
               "waschen"
             ],
-            "note": "waschen, to wash: ich wasche · Sie waschen. It is REFLEXIVE when you are washing yourself, which means it comes with a pronoun attached that is part of the verb rather than a real object."
+            "note": "waschen, to wash: ich wasche · Sie waschen. Washing YOURSELF is reflexive — the verb comes with mich, a pronoun that is part of the verb rather than a real object: Ich wasche mich."
           },
           {
             "display": "mich",
             "cue": "myself",
             "tag": "interference",
             "forms": [],
-            "note": "myself — and it cannot be dropped. English leaves its reflexive out (“I wash”); German never does, the pronoun belongs to the verb. With Sie the partner is sich: Sie waschen sich."
+            "note": "myself — and it cannot be dropped: Ich wasche mich. English leaves its reflexive out (“I wash”); German never does, the pronoun belongs to the verb. With Sie the partner is sich: Sie waschen sich."
           }
         ],
         "rules": [
@@ -424,32 +443,32 @@
           7
         ]
       },
-      "trap": "English has nothing standing where mich stands, so the commonest slip is simply leaving it out. Ich wasche on its own asks \"you wash WHAT?\" and the sentence is left waiting.",
-      "sound": "sch is exactly English \"sh\", and w is a V: wasche is VA-shuh. mich ends in the soft ch of nicht, made with the tongue high and forward, never a k.",
+      "trap": "English \"I wash\" can stand alone; German waschen cannot — it asks \"wash WHAT?\", and the answer is mich. duschen sidesteps the whole problem, which is one reason it is the everyday verb. Keep mich for waschen, and do not import it onto verbs that never had it.",
+      "sound": "DOO-shuh — sch is exactly English \"sh\", and the u is the oo of \"boot\". jeden is YAY-den: German j is a y. Tag ends in a hard k, as a final g always does.",
       "variations": [
         {
           "display": "Ich wasche mich morgens",
           "cue": "I wash in the mornings",
-          "changed": "swap the time word — mich stays glued to the verb"
+          "changed": "the reflexive verb: waschen comes with mich, a pronoun English drops and German cannot"
         },
         {
-          "display": "Morgens wasche ich mich",
-          "cue": "In the mornings I wash",
-          "changed": "front the time and the subject inverts, with mich landing behind it"
+          "display": "Abends dusche ich",
+          "cue": "In the evenings I shower",
+          "changed": "front the time and the subject inverts behind the verb"
         },
         {
-          "display": "Ich wasche mich nicht",
-          "cue": "I don't wash",
-          "changed": "L1-M3's nicht at the end of the clause, after the reflexive pronoun"
+          "display": "Ich dusche nicht jeden Tag",
+          "cue": "I don't shower every day",
+          "changed": "L1-M3's nicht, here in front of the time phrase it denies"
         }
       ],
       "mistake": {
         "display": "Ich wasche jeden Tag",
-        "why": "waschen without its reflexive pronoun is left hanging — it now wants an object, and \"myself\" is exactly the object German insists on writing: Ich wasche mich jeden Tag."
+        "why": "waschen without its reflexive pronoun is left hanging — it wants an object, and \"myself\" is exactly the object German insists on writing: Ich wasche mich. Or use the verb that needs none: Ich dusche jeden Tag."
       },
-      "usage": "Everyday routine — the same shape covers getting dressed, getting ready, and the rest of a morning.",
+      "usage": "Everyday routine — the verb people actually use for the morning wash. The same time-phrase shape covers getting dressed, getting ready, and the rest of a morning.",
       "register": "neutral",
-      "mnemonic": "German says who is being washed even when it is obviously you."
+      "mnemonic": "Shower, no pronoun; wash, with one. duschen stands alone, waschen needs its mich."
     },
     {
       "id": "L1-M4-S08",
@@ -620,8 +639,8 @@
     },
     {
       "id": "L1-M4-C06",
-      "display": "Ich wasche mich abends",
-      "cue": "I wash in the evenings"
+      "display": "Ich dusche abends",
+      "cue": "I shower in the evenings"
     },
     {
       "id": "L1-M4-C07",
