@@ -21,7 +21,7 @@
       "<M1–M9 pattern> + <M1–M9 pattern>",
       "<question> → <answer + parce que + reason>",
       "<statement> + et/mais + <statement>",
-      "<statement> + . + Puis/Alors + <statement>"
+      "<statement> + , et puis / . Alors + <statement>"
     ],
     "newWordCap": 25
   },
@@ -40,11 +40,11 @@
     },
     {
       "tag": "free",
-      "text": "et, mais, puis and alors join two clauses exactly as their English twins do, and in the same order English would use. The joining is the free part of this module; keeping the pronouns is not."
+      "text": "et, mais, et puis and alors join two clauses exactly as their English twins do, and in the same order English would use — and the sequencer is et puis, not a bare puis at the head of a sentence. The joining is the free part of this module; keeping the pronouns is not."
     },
     {
       "tag": "delta",
-      "text": "A turn is two or three SHORT sentences, each complete and each with its own verb and its own subject. French does not run them together with commas the way a first attempt does — the full stop is the join."
+      "text": "A turn is two or three SHORT sentences, each complete with its own verb and its own subject — or a short add-on that stands alone: Et du pain aussi. French does not run them together with commas the way a first attempt does — the full stop is the join."
     },
     {
       "tag": "delta",
@@ -105,9 +105,9 @@
     },
     {
       "id": "L1-M10-S02",
-      "display": "Vous allez travailler demain ? Oui, mais je vais rester ici ce soir.",
-      "cue": "Are you going to work tomorrow? — Yes, but I'm going to stay here this evening.",
-      "literal": "You go work tomorrow ? Yes, but I go stay here this evening.",
+      "display": "Vous allez travailler demain ? Oui, mais pas ce soir.",
+      "cue": "Are you going to work tomorrow? — Yes, but not this evening.",
+      "literal": "You go work tomorrow ? Yes, but not this evening.",
       "deconstruction": {
         "words": [
           {
@@ -123,8 +123,8 @@
           4
         ]
       },
-      "trap": "The second half keeps its je even though the question already established who is answering. English keeps its \"I\" for the same reason, so this is a transfer — but a learner shortening the answer to \"mais vais rester\" has invented something French does not allow.",
-      "sound": "meh, one syllable, rhyming with lait and with the -ais of anglais. The whole second sentence runs downhill from mais to the end.",
+      "trap": "The answer keeps only the words that matter: oui, mais pas ce soir. English does the same — \"yes, but not tonight\" — and this is the one place pas stands without ne: there is no verb for ne to sit in front of. The moment a verb comes back, so does the whole pair: mais je ne vais pas travailler ce soir.",
+      "sound": "meh pa suh SWAR. mais is one syllable, rhyming with lait and with the -ais of anglais, and the whole answer runs downhill from oui to the end.",
       "variations": [
         {
           "display": "Vous allez travailler demain ? Non, je vais rester à la maison.",
@@ -134,27 +134,27 @@
         {
           "display": "Je vais travailler demain, mais pas ce soir.",
           "cue": "I'm going to work tomorrow, but not this evening.",
-          "changed": "one sentence instead of a turn — and pas standing alone, without its ne"
+          "changed": "one sentence instead of a turn — the same mais pas, with the plan spelled out in front of it"
         },
         {
           "display": "Vous allez rester ici ? Oui, mais je vais partir demain.",
           "cue": "Are you going to stay here? — Yes, but I'm going to leave tomorrow.",
-          "changed": "the same shape with the plans swapped round"
+          "changed": "a full clause behind mais — with a verb back in it, the pronoun comes back too"
         }
       ],
       "mistake": {
-        "display": "Vous allez travailler demain ? Oui, mais vais rester ici ce soir.",
-        "why": "The subject pronoun never goes, however obvious it is: je vais rester. French has no form of the verb that could carry the person on its own."
+        "display": "Vous allez travailler demain ? Oui, mais ne pas ce soir.",
+        "why": "With no verb in the fragment, pas stands alone: mais pas ce soir. ne exists only to sit in front of a verb."
       },
       "usage": "A qualified answer — the commonest shape in real conversation.",
       "register": "neutral",
-      "mnemonic": "mais joins, and the pronoun stays."
+      "mnemonic": "mais joins. pas alone is enough when there is no verb for ne."
     },
     {
       "id": "L1-M10-S03",
-      "display": "Je veux du café. Je veux du pain aussi.",
-      "cue": "I want coffee. I want bread too.",
-      "literal": "I want of-the coffee. I want of-the bread also.",
+      "display": "Je veux du café. Et du pain aussi.",
+      "cue": "I want coffee. And bread too.",
+      "literal": "I want of-the coffee. And of-the bread also.",
       "deconstruction": {
         "words": [
           {
@@ -167,15 +167,16 @@
         ],
         "rules": [
           2,
+          3,
           4
         ]
       },
-      "trap": "English can put \"also\" almost anywhere — \"I also want bread\", \"I want bread also\". French is far less free: at the end it means \"too\", and at the front it does not.",
+      "trap": "English can put \"also\" almost anywhere — \"I also want bread\", \"I want bread also\". French is far less free: at the end it means \"too\", and at the front it does not. And the add-on needs no second je veux — Et du pain aussi is the whole of it.",
       "sound": "oh-SEE. Both syllables are clean, and the double s is a plain s sound, never a z.",
       "variations": [
         {
-          "display": "Je veux du café. Je veux du thé aussi.",
-          "cue": "I want coffee. I want tea too.",
+          "display": "Je veux du café. Et du thé aussi.",
+          "cue": "I want coffee. And tea too.",
           "changed": "swap the second thing; aussi does not move"
         },
         {
@@ -184,14 +185,14 @@
           "changed": "one sentence joined with et instead of two joined by aussi"
         },
         {
-          "display": "J'ai faim. J'ai soif aussi.",
-          "cue": "I'm hungry. I'm thirsty too.",
-          "changed": "the same shape over L1-M9's avoir states"
+          "display": "J'ai faim. Et j'ai soif aussi.",
+          "cue": "I'm hungry. And I'm thirsty too.",
+          "changed": "the same shape over L1-M9's avoir states — a verb back in the add-on, and aussi still last"
         }
       ],
       "mistake": {
-        "display": "Je veux du café. Aussi je veux du pain.",
-        "why": "At the head of a sentence aussi is not \"too\": it reads as \"therefore\", and formally at that. The everyday word goes at the end — je veux du pain aussi."
+        "display": "Je veux du café. Aussi du pain.",
+        "why": "At the head of a sentence aussi is not \"too\": it reads as \"therefore\", and formally at that. The everyday word goes at the end — Et du pain aussi."
       },
       "usage": "Adding to what you have just said.",
       "register": "neutral",
@@ -221,9 +222,9 @@
       "sound": "eel, one syllable, with the l clearly sounded. In front of a vowel it runs straight on: il est is said ee-LEH, as one word.",
       "variations": [
         {
-          "display": "Le café est sur la table. Il est très bien.",
+          "display": "Le café est sur la table. Il est très bon.",
           "cue": "The coffee is on the table. It's very good.",
-          "changed": "another masculine noun, and très rather than trop"
+          "changed": "another masculine noun, and très rather than trop — and bon, not bien, for something you taste"
         },
         {
           "display": "Le livre est sur la table. Il n'est pas cher.",
@@ -303,17 +304,31 @@
     },
     {
       "id": "L1-M10-S06",
-      "display": "Je vais au marché. Puis je vais à la maison.",
-      "cue": "I'm going to the market. Then I'm going home.",
-      "literal": "I go at-the market. Then I go at the house.",
+      "display": "Je vais au marché, et puis je rentre.",
+      "cue": "I'm going to the market, and then I'm going home.",
+      "literal": "I go at-the market, and then I go-home.",
       "deconstruction": {
         "words": [
           {
-            "display": "Puis",
-            "cue": "then · next",
+            "display": "et puis",
+            "cue": "and then · then",
             "tag": "free",
-            "forms": [],
-            "note": "then, in the sense of next — it sequences two things. It stands at the head of the second sentence, where English also puts \"then\", and the subject pronoun still follows it."
+            "forms": [
+              "et puis",
+              "puis"
+            ],
+            "note": "and then — it sequences two things, and speech opens the second half with et puis, not a bare puis. The subject pronoun still follows it: et puis je rentre."
+          },
+          {
+            "display": "rentre",
+            "cue": "go home · get back",
+            "tag": "delta",
+            "forms": [
+              "rentre",
+              "rentrer",
+              "rentré"
+            ],
+            "note": "rentrer, to go home, to get back — the verb French uses where English says \"go home\". je rentre · je vais rentrer · je suis rentré (être, like aller). à la maison after it is optional."
           }
         ],
         "rules": [
@@ -321,32 +336,32 @@
           4
         ]
       },
-      "trap": "puis takes the front of the sentence and, unlike aussi, is quite right there. The two adverbs of this module go in opposite places, and there is no rule covering both — each is learned with its own seat.",
-      "sound": "pwee, one syllable. The whole word is shorter than it looks, and its -s is silent.",
+      "trap": "Going home has its own verb. English builds it from \"go\" and \"home\", and je vais à la maison is what that produces — understood, and not what a French speaker says. rentrer is the word, on its own or with à la maison behind it, and in the past it takes être: je suis rentré.",
+      "sound": "ay pwee zhuh RAHNTR. puis is one syllable, shorter than it looks, with its -s silent; rentre is nasal at the front and ends on a swallowed -tre.",
       "variations": [
         {
-          "display": "Je vais au marché. Puis je vais travailler.",
-          "cue": "I'm going to the market. Then I'm going to work.",
-          "changed": "a plan rather than a place after the second vais"
+          "display": "Je vais au marché, et puis je vais travailler.",
+          "cue": "I'm going to the market, and then I'm going to work.",
+          "changed": "a plan rather than a place after et puis"
         },
         {
-          "display": "Je vais au marché et à la maison.",
-          "cue": "I'm going to the market and home.",
-          "changed": "one sentence joined with et — the sequence is lost, and so is the second vais"
+          "display": "Je vais au marché, et puis je rentre à la maison.",
+          "cue": "I'm going to the market, and then I'm going back home.",
+          "changed": "rentrer can carry à la maison behind it — the same verb, with the place spelled out"
         },
         {
-          "display": "Ce soir je vais manger. Puis je vais dormir.",
-          "cue": "This evening I'm going to eat. Then I'm going to sleep.",
+          "display": "Ce soir je vais manger, et puis je vais dormir.",
+          "cue": "This evening I'm going to eat, and then I'm going to sleep.",
           "changed": "the same sequencing over two plans"
         }
       ],
       "mistake": {
-        "display": "Je vais au marché. Puis vais à la maison.",
-        "why": "The pronoun stays, even behind puis: Puis je vais à la maison. Nothing in French lets the verb stand without its subject."
+        "display": "Je vais au marché, et puis rentre.",
+        "why": "The pronoun stays, even behind et puis: et puis je rentre. Nothing in French lets the verb stand without its subject."
       },
       "usage": "Putting two errands in order.",
       "register": "neutral",
-      "mnemonic": "puis leads, aussi follows. Neither of them replaces the pronoun."
+      "mnemonic": "et puis leads the second half; aussi trails it. Neither of them replaces the pronoun."
     },
     {
       "id": "L1-M10-S07",
@@ -397,9 +412,9 @@
     },
     {
       "id": "L1-M10-S08",
-      "display": "Hier j'ai vu un film. Il est très bien.",
-      "cue": "Yesterday I saw a film. It's very good.",
-      "literal": "Yesterday I-have seen a film. He is very well.",
+      "display": "Hier j'ai vu un film. C'est un très bon film.",
+      "cue": "Yesterday I saw a film. It's a very good film.",
+      "literal": "Yesterday I-have seen a film. It-is a very good film.",
       "deconstruction": {
         "words": [
           {
@@ -408,20 +423,30 @@
             "tag": "free",
             "forms": [],
             "note": "very — a plain degree word, and the one L1-M8's trop is not. c'est très cher is \"it is very expensive\", a description; c'est trop cher is \"it is TOO expensive\", a complaint. Its final -s is silent."
+          },
+          {
+            "display": "bon",
+            "cue": "good (m · f)",
+            "tag": "delta",
+            "forms": [
+              "bon",
+              "bonne"
+            ],
+            "note": "good — an adjective, and one of the few French puts before its noun: un bon prix, not un prix bon. It agrees — bon, bonne — and the -e wakes the nasal vowel into a plain one: two different sounds."
           }
         ],
         "rules": [
-          1,
+          4,
           6
         ]
       },
-      "trap": "The two sentences are in two different tenses and the turn is perfectly ordinary: the seeing was yesterday, the film is still good today. English does exactly the same thing, so nothing here needs translating — but a learner who has just met the past tends to put both halves in it.",
-      "sound": "treh, with the -s silent, and the vowel open as the grave accent shows. très bien runs as two clean syllables: treh BYAN.",
+      "trap": "The two sentences are in two different tenses and the turn is perfectly ordinary: the seeing was yesterday, the film is still good today. And the verdict is c'est, not il est: a thing is judged with c'est bien or c'est un bon film, while il est bien would say it is well placed or in good shape.",
+      "sound": "say uhn treh bohn FEELM. très keeps its -s silent and its vowel open, as the grave accent shows; bon is nasal and runs straight into film.",
       "variations": [
         {
-          "display": "Hier j'ai vu un film. Il est trop cher.",
-          "cue": "Yesterday I saw a film. It's too expensive.",
-          "changed": "trop instead of très — a complaint instead of praise"
+          "display": "Hier j'ai vu un film. C'est un bon film.",
+          "cue": "Yesterday I saw a film. It's a good film.",
+          "changed": "très taken away — a plain verdict instead of a strong one"
         },
         {
           "display": "Hier j'ai vu Anne. Elle est très contente.",
@@ -429,14 +454,14 @@
           "changed": "a person rather than a thing, so elle and a feminine adjective"
         },
         {
-          "display": "J'ai vu le film. Il est bien.",
+          "display": "J'ai vu le film. C'est bien.",
           "cue": "I saw the film. It's good.",
-          "changed": "no time word and no intensifier — the plainest form of the turn"
+          "changed": "no time word, no noun and no intensifier — c'est bien is the plainest verdict there is"
         }
       ],
       "mistake": {
-        "display": "Hier j'ai vu un film. Il est trop bien.",
-        "why": "trop is always an excess, so this says the film was TOO good. Praise takes très: il est très bien."
+        "display": "Hier j'ai vu un film. C'est un très bien film.",
+        "why": "bien is L1-M2's adverb and cannot describe a noun; in front of film the word is bon: un très bon film. Without the noun, praise is c'est bien."
       },
       "usage": "Reporting something and giving a verdict on it.",
       "register": "neutral",
@@ -450,16 +475,6 @@
       "deconstruction": {
         "words": [
           {
-            "display": "bon",
-            "cue": "good (m · f)",
-            "tag": "delta",
-            "forms": [
-              "bon",
-              "bonne"
-            ],
-            "note": "good — an adjective, and one of the few French puts before its noun: un bon prix, not un prix bon. It agrees — bon, bonne — and the -e wakes the nasal vowel into a plain one: two different sounds."
-          },
-          {
             "display": "prix",
             "cue": "price · prices",
             "tag": "free",
@@ -472,7 +487,7 @@
           5
         ]
       },
-      "trap": "L1-M1 taught that adjectives follow the noun, and most of them do. bon is one of the handful that go in front, and there is no way to tell from the word which set it belongs to — it is learned with the adjective.",
+      "trap": "L1-M1 taught that adjectives follow the noun, and most of them do. bon — met on the sentence before this one — is one of the handful that go in front, and there is no way to tell from the word which set it belongs to: it is learned with the adjective.",
       "sound": "bohn, nasal, with the n never sounded; bonne is BON, with the n clear and the vowel plain. prix is pree.",
       "variations": [
         {
@@ -560,7 +575,7 @@
     },
     {
       "id": "L1-M10-C03",
-      "display": "Le café est sur la table. Il est très bien.",
+      "display": "Le café est sur la table. Il est très bon.",
       "cue": "The coffee is on the table. It's very good."
     },
     {
@@ -575,8 +590,8 @@
     },
     {
       "id": "L1-M10-C06",
-      "display": "Je vais au marché. Puis je vais travailler.",
-      "cue": "I'm going to the market. Then I'm going to work."
+      "display": "Je vais au marché, et puis je vais travailler.",
+      "cue": "I'm going to the market, and then I'm going to work."
     },
     {
       "id": "L1-M10-C07",
@@ -600,8 +615,8 @@
     },
     {
       "id": "L1-M10-C11",
-      "display": "Le livre est trop cher. Je ne vais pas acheter le livre.",
-      "cue": "The book is too expensive. I'm not going to buy the book."
+      "display": "Je ne vais pas acheter le livre. Il est trop cher.",
+      "cue": "I'm not going to buy the book. It's too expensive."
     },
     {
       "id": "L1-M10-C12",
