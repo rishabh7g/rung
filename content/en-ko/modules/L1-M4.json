@@ -16,9 +16,9 @@
       "simple_present"
     ],
     "allowedPatterns": [
-      "jeo-neun + N-eul/reul + V-ayo/-eoyo",
       "<time>-e + V-ayo/-eoyo",
-      "maeil + V-ayo/-eoyo",
+      "<time>-e + ilchik + V-ayo/-eoyo",
+      "maeil + N-eul/reul + V-ayo/-eoyo",
       "<day> + V-ayo/-eoyo",
       "N + haeyo (noun-plus-do verbs)",
       "N + an haeyo"
@@ -66,23 +66,12 @@
   "sentences": [
     {
       "id": "L1-M4-S01",
-      "display": "Jeo-neun achim-e ireonayo.",
-      "script": "저는 아침에 일어나요.",
-      "cue": "I get up in the morning.",
-      "literal": "I-topic morning-at get-up",
+      "display": "Achim-e ilchik ireonayo.",
+      "script": "아침에 일찍 일어나요.",
+      "cue": "I get up early in the morning.",
+      "literal": "morning-at early get-up",
       "deconstruction": {
         "words": [
-          {
-            "display": "jeo",
-            "script": "저",
-            "cue": "I · me",
-            "tag": "delta",
-            "forms": [
-              "jeo",
-              "jeo-neun"
-            ],
-            "note": "'I', from M1, and in this module it is mostly absent: a habit you are describing about yourself needs no subject once the conversation is about you."
-          },
           {
             "display": "achim",
             "script": "아침",
@@ -105,6 +94,16 @@
             "note": "The point-in-time marker: achim-e 'in the morning', jeonyeok-e 'in the evening'. It attaches to the time word and says when. Later it marks a place — the same job: a point, in time or in space."
           },
           {
+            "display": "ilchik",
+            "script": "일찍",
+            "cue": "early",
+            "tag": "free",
+            "forms": [
+              "ilchik"
+            ],
+            "note": "'Early'. An adverb, so it sits in front of the verb it describes, exactly as jal does — and its pair is ilchik jayo, 'go to bed early'."
+          },
+          {
             "display": "ireonayo",
             "script": "일어나요",
             "cue": "get up",
@@ -120,32 +119,32 @@
           7
         ]
       },
-      "trap": "English says 'in the morning' with a word in front. Korean marks the time word behind, and there is nothing corresponding to 'in' standing on its own — looking for one will only produce a word that does not belong.",
-      "sound": "juh-nun A-chim-e i-ruh-NA-yo. The m of achim runs into the -e, so it is heard as a-chi-me. ireonayo has four light beats; the r in it is a soft tap, closer to the middle of English 'better' than to an English r.",
+      "trap": "English says 'in the morning' with a word in front. Korean marks the time word behind, and there is nothing corresponding to 'in' standing on its own — looking for one will only produce a word that does not belong. And there is no 'I': the sentence is about you until something says otherwise.",
+      "sound": "A-chi-me IL-jjik i-ruh-NA-yo. The m of achim runs into the -e, so it is heard as a-chi-me. The ch of ilchik tenses after the l, closer to il-jjik. ireonayo has four light beats; the r in it is a soft tap, closer to the middle of English 'better' than to an English r.",
       "variations": [
-        {
-          "display": "Jeo-neun jeonyeok-e ireonayo.",
-          "script": "저는 저녁에 일어나요.",
-          "cue": "I get up in the evening.",
-          "changed": "a different time word, same marker"
-        },
         {
           "display": "Achim-e ireonayo.",
           "script": "아침에 일어나요.",
           "cue": "I get up in the morning.",
-          "changed": "the subject dropped, which is how this is usually said"
+          "changed": "without the adverb — the bare when"
         },
         {
-          "display": "Maeil achim-e ireonayo.",
-          "script": "매일 아침에 일어나요.",
-          "cue": "I get up every morning.",
+          "display": "Maeil ilchik ireonayo.",
+          "script": "매일 일찍 일어나요.",
+          "cue": "I get up early every day.",
           "changed": "maeil in front — and note it takes no marker of its own"
+        },
+        {
+          "display": "Jeo-neun achim-e ilchik ireonayo.",
+          "script": "저는 아침에 일찍 일어나요.",
+          "cue": "I get up early in the morning.",
+          "changed": "the subject supplied, which now reads as a contrast with somebody who does not"
         }
       ],
       "mistake": {
-        "display": "Jeo-neun-e achim ireonayo.",
-        "script": "저는에 아침 일어나요.",
-        "why": "The time marker has been put on the person and the time word left bare. -e belongs to the word that says WHEN, and only to that word."
+        "display": "Achim-e ireonayo ilchik.",
+        "script": "아침에 일어나요 일찍.",
+        "why": "The adverb has been put after the verb, where English can put 'early'. Nothing follows the verb in Korean; an adverb sits in front of it, as jal did in M2."
       },
       "usage": "Describing your ordinary day.",
       "register": "neutral",
@@ -209,7 +208,7 @@
           7
         ]
       },
-      "trap": "There is no word here for 'breakfast'. Korean names the meal by the time of day it happens, so 'morning meal' is the whole of it — and a learner hunting for a separate breakfast word is hunting for something the language does without.",
+      "trap": "There is no separate word here for 'breakfast'. Korean names the meal by the time of day it happens — achim is the morning and, on its own, the morning meal — so 'morning-at meal' is the whole of it.",
       "sound": "A-chi-me BA-bul MUH-guh-yo. Two liaisons in a row: achim runs into -e and bap runs into -eul, so the middle of the sentence flows as a-chi-me ba-bul. That linking is automatic and is what makes Korean sound smooth rather than clipped.",
       "variations": [
         {
@@ -225,16 +224,16 @@
           "changed": "a different habit at the same hour"
         },
         {
-          "display": "Achim-e bap-eul an meogeoyo.",
-          "script": "아침에 밥을 안 먹어요.",
-          "cue": "I do not eat breakfast.",
-          "changed": "the negative, with an in front of the verb"
+          "display": "Achim an meogeoyo.",
+          "script": "아침 안 먹어요.",
+          "cue": "I don't eat breakfast.",
+          "changed": "achim as the meal itself, bare, with an in front of the verb — how it is actually said"
         }
       ],
       "mistake": {
         "display": "Achim bap-eul meogeoyo.",
         "script": "아침 밥을 먹어요.",
-        "why": "Without -e, achim is not a time any more — the two nouns sit together and it reads as 'morning-meal' as a thing rather than as when you eat. The marker is what turns a noun into a time."
+        "why": "Without -e, achim stops being a time and becomes the meal itself, so achim bap-eul says 'breakfast meal' twice over. Either mark the time — achim-e bap-eul meogeoyo — or let achim be the meal on its own: achim meogeoyo."
       },
       "usage": "Talking about your daily routine.",
       "register": "neutral",
@@ -242,23 +241,12 @@
     },
     {
       "id": "L1-M4-S03",
-      "display": "Jeo-neun maeil gongbuhaeyo.",
-      "script": "저는 매일 공부해요.",
+      "display": "Maeil gongbuhaeyo.",
+      "script": "매일 공부해요.",
       "cue": "I study every day.",
-      "literal": "I-topic every-day study-do",
+      "literal": "every-day study-do",
       "deconstruction": {
         "words": [
-          {
-            "display": "jeo",
-            "script": "저",
-            "cue": "I · me",
-            "tag": "delta",
-            "forms": [
-              "jeo",
-              "jeo-neun"
-            ],
-            "note": "'I', from M1, and in this module it is mostly absent: a habit you are describing about yourself needs no subject once the conversation is about you."
-          },
           {
             "display": "maeil",
             "script": "매일",
@@ -287,7 +275,7 @@
         ]
       },
       "trap": "maeil takes no marker. Every other time word in this module wears -e, and this one does not — there is no rule you can hear, so it is learned as a small list.",
-      "sound": "juh-nun MAE-il gong-boo-HAE-yo. maeil is two beats, mae and il, not one. gongbuhaeyo is four, and the whole thing is said evenly with no stressed syllable anywhere.",
+      "sound": "MAE-il gong-boo-HAE-yo. maeil is two beats, mae and il, not one. gongbuhaeyo is four, and the whole thing is said evenly with no stressed syllable anywhere.",
       "variations": [
         {
           "display": "Minsu-neun maeil gongbuhaeyo.",
@@ -296,21 +284,21 @@
           "changed": "a different person and an identical verb"
         },
         {
-          "display": "Maeil gongbuhaeyo.",
-          "script": "매일 공부해요.",
+          "display": "Jeo-neun maeil gongbuhaeyo.",
+          "script": "저는 매일 공부해요.",
           "cue": "I study every day.",
-          "changed": "the subject dropped"
+          "changed": "jeo-neun added — 'as for me' — when you are setting yourself against somebody else"
         },
         {
-          "display": "Jeo-neun maeil ilhaeyo.",
-          "script": "저는 매일 일해요.",
+          "display": "Maeil ilhaeyo.",
+          "script": "매일 일해요.",
           "cue": "I work every day.",
           "changed": "another noun-plus-haeyo verb, built the same way"
         }
       ],
       "mistake": {
-        "display": "Jeo-neun maeil-e gongbuhaeyo.",
-        "script": "저는 매일에 공부해요.",
+        "display": "Maeil-e gongbuhaeyo.",
+        "script": "매일에 공부해요.",
         "why": "-e has been put on maeil, by analogy with achim-e. It does not take one, and there is no version of this sentence in which it does."
       },
       "usage": "Saying what you do regularly.",
@@ -386,22 +374,21 @@
     },
     {
       "id": "L1-M4-S05",
-      "display": "Jeo-neun hangungmal-eul maeil baewoyo.",
-      "script": "저는 한국말을 매일 배워요.",
+      "display": "Maeil hangungmal-eul baewoyo.",
+      "script": "매일 한국말을 배워요.",
       "cue": "I learn Korean every day.",
-      "literal": "I-topic Korean-object every-day learn",
+      "literal": "every-day Korean-object learn",
       "deconstruction": {
         "words": [
           {
-            "display": "jeo",
-            "script": "저",
-            "cue": "I · me",
-            "tag": "delta",
+            "display": "maeil",
+            "script": "매일",
+            "cue": "every day",
+            "tag": "free",
             "forms": [
-              "jeo",
-              "jeo-neun"
+              "maeil"
             ],
-            "note": "'I', from M1, and in this module it is mostly absent: a habit you are describing about yourself needs no subject once the conversation is about you."
+            "note": "'Every day'. It takes NO marker — it is one of the time words that stand bare, and putting -e on it is the commonest early mistake."
           },
           {
             "display": "hangungmal",
@@ -413,16 +400,6 @@
               "hangungmal-eul"
             ],
             "note": "'Korean', the language, from M1 — the thing being learned, so it takes -eul."
-          },
-          {
-            "display": "maeil",
-            "script": "매일",
-            "cue": "every day",
-            "tag": "free",
-            "forms": [
-              "maeil"
-            ],
-            "note": "'Every day'. It takes NO marker — it is one of the time words that stand bare, and putting -e on it is the commonest early mistake."
           },
           {
             "display": "baewoyo",
@@ -442,31 +419,31 @@
           8
         ]
       },
-      "trap": "The time word has slipped in behind the object here rather than in front of it. Korean lets it sit either side, because the markers say what each word is doing — the one place nothing may move is the verb, which stays last.",
-      "sound": "juh-nun han-GOONG-ma-rul MAE-il BAE-wuh-yo. baewoyo is the stem baeu- with the ending pulled onto it, which is why the u turns into a w sound. Three beats, evenly said.",
+      "trap": "The time word comes first, before the object. Korean lets the pieces in front of the verb move about, because the markers say what each one is doing — but when-then-what is the ordinary shape, and the one place nothing may move is the verb, which stays last.",
+      "sound": "MAE-il han-GOONG-ma-rul BAE-wuh-yo. baewoyo is the stem baeu- with the ending pulled onto it, which is why the u turns into a w sound. Three beats, evenly said.",
       "variations": [
         {
-          "display": "Jeo-neun maeil hangungmal-eul baewoyo.",
-          "script": "저는 매일 한국말을 배워요.",
+          "display": "Hangungmal-eul maeil baewoyo.",
+          "script": "한국말을 매일 배워요.",
           "cue": "I learn Korean every day.",
-          "changed": "the time word moved in front of the object — the sentence means exactly the same thing"
+          "changed": "the time word behind the object — possible, and it means exactly the same thing"
         },
         {
           "display": "Hangungmal-eul baewoyo.",
           "script": "한국말을 배워요.",
           "cue": "I learn Korean.",
-          "changed": "subject and time dropped, down to the bare habit"
+          "changed": "time dropped, down to the bare habit"
         },
         {
-          "display": "Minsu-neun hangungmal-eul maeil baewoyo.",
-          "script": "민수는 한국말을 매일 배워요.",
+          "display": "Minsu-neun maeil hangungmal-eul baewoyo.",
+          "script": "민수는 매일 한국말을 배워요.",
           "cue": "Minsu learns Korean every day.",
           "changed": "a different learner, an unchanged verb"
         }
       ],
       "mistake": {
-        "display": "Jeo-neun hangungmal-eul baewoyo maeil.",
-        "script": "저는 한국말을 배워요 매일.",
+        "display": "Hangungmal-eul baewoyo maeil.",
+        "script": "한국말을 배워요 매일.",
         "why": "The time word has been put after the verb, where English happily puts it. Nothing may follow the verb in a Korean sentence — that is the one fixed rule of the word order."
       },
       "usage": "Describing a routine that includes a study habit.",
@@ -563,10 +540,10 @@
     },
     {
       "id": "L1-M4-S07",
-      "display": "Bam-e jayo.",
-      "script": "밤에 자요.",
-      "cue": "I sleep at night.",
-      "literal": "night-at sleep",
+      "display": "Bam-e ilchik jayo.",
+      "script": "밤에 일찍 자요.",
+      "cue": "I go to bed early at night.",
+      "literal": "night-at early sleep",
       "deconstruction": {
         "words": [
           {
@@ -591,9 +568,19 @@
             "note": "The point-in-time marker: achim-e 'in the morning', jeonyeok-e 'in the evening'. It attaches to the time word and says when. Later it marks a place — the same job: a point, in time or in space."
           },
           {
+            "display": "ilchik",
+            "script": "일찍",
+            "cue": "early",
+            "tag": "free",
+            "forms": [
+              "ilchik"
+            ],
+            "note": "'Early', from the first sentence of this module — and this is its pair: ilchik ireonayo in the morning, ilchik jayo at night."
+          },
+          {
             "display": "jayo",
             "script": "자요",
-            "cue": "sleep",
+            "cue": "sleep · go to bed",
             "tag": "free",
             "forms": [
               "jayo"
@@ -606,36 +593,36 @@
           3
         ]
       },
-      "trap": "Two words is a whole sentence. There is no subject and none is missing, and an English speaker will feel the gap where 'I' should be — that feeling is the thing to get over.",
-      "sound": "BA-me JA-yo. The stem of jayo is ja-, and because it already ends in a, the ending's own a disappears into it: there is no ja-ayo, only jayo. That merging happens with every stem ending in the same vowel as its ending.",
+      "trap": "Three words is a whole sentence. There is no subject and none is missing, and an English speaker will feel the gap where 'I' should be — that feeling is the thing to get over.",
+      "sound": "BA-me IL-jjik JA-yo. The stem of jayo is ja-, and because it already ends in a, the ending's own a disappears into it: there is no ja-ayo, only jayo. That merging happens with every stem ending in the same vowel as its ending.",
       "variations": [
         {
-          "display": "Bam-e an jayo.",
-          "script": "밤에 안 자요.",
-          "cue": "I do not sleep at night.",
+          "display": "Ilchik an jayo.",
+          "script": "일찍 안 자요.",
+          "cue": "I don't go to bed early.",
           "changed": "the negative — an in front of a two-letter verb is still an in front of the verb"
         },
         {
-          "display": "Jeo-neun bam-e jayo.",
-          "script": "저는 밤에 자요.",
-          "cue": "I sleep at night.",
+          "display": "Jeo-neun bam-e ilchik jayo.",
+          "script": "저는 밤에 일찍 자요.",
+          "cue": "I go to bed early at night.",
           "changed": "the subject supplied, which now reads as a contrast with somebody who does not"
         },
         {
-          "display": "Jeonyeok-e jayo.",
-          "script": "저녁에 자요.",
-          "cue": "I sleep in the evening.",
-          "changed": "an earlier hour, same shape"
+          "display": "Maeil ilchik jayo.",
+          "script": "매일 일찍 자요.",
+          "cue": "I go to bed early every day.",
+          "changed": "maeil in front, bare as always"
         }
       ],
       "mistake": {
-        "display": "Bam jayo.",
-        "script": "밤 자요.",
-        "why": "The time marker has been dropped. bam on its own is the noun 'night' sitting in front of a verb with no relationship to it, and the sentence loses the one word that told you when."
+        "display": "Bam ilchik jayo.",
+        "script": "밤 일찍 자요.",
+        "why": "The time marker has been dropped. bam on its own is the noun 'night' sitting in front of the verb with no relationship to it, and the sentence loses the one word that told you when."
       },
       "usage": "Talking about when you sleep.",
       "register": "neutral",
-      "mnemonic": "Two words, one whole sentence, and nothing missing."
+      "mnemonic": "Three words, one whole sentence, and nothing missing."
     },
     {
       "id": "L1-M4-S08",
@@ -943,9 +930,9 @@
     },
     {
       "id": "L1-M4-C06",
-      "display": "Maeil hangungmal-eul baewoyo.",
-      "script": "매일 한국말을 배워요.",
-      "cue": "I learn Korean every day."
+      "display": "Minsu-neun maeil hangungmal-eul baewoyo.",
+      "script": "민수는 매일 한국말을 배워요.",
+      "cue": "Minsu learns Korean every day."
     },
     {
       "id": "L1-M4-C07",
@@ -961,15 +948,15 @@
     },
     {
       "id": "L1-M4-C09",
-      "display": "Achim-e an ireonayo.",
-      "script": "아침에 안 일어나요.",
-      "cue": "I do not get up in the morning."
+      "display": "Achim-e ilchik an ireonayo.",
+      "script": "아침에 일찍 안 일어나요.",
+      "cue": "I don't get up early in the morning."
     },
     {
       "id": "L1-M4-C10",
-      "display": "Jeo-neun jeonyeok-e jayo.",
-      "script": "저는 저녁에 자요.",
-      "cue": "I sleep in the evening."
+      "display": "Maeil ilchik jayo.",
+      "script": "매일 일찍 자요.",
+      "cue": "I go to bed early every day."
     },
     {
       "id": "L1-M4-C11",

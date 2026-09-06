@@ -18,7 +18,7 @@
     ],
     "allowedPatterns": [
       "N-i/ga + <place>-e + isseoyo",
-      "N-eun/neun + eodi-e isseoyo + ?",
+      "N + eodi isseoyo + ?",
       "<place>-eseo + V-ayo/-eoyo",
       "N-i/ga + <N> wi-e / yeop-e + isseoyo",
       "<place>-e + gal geoyeyo",
@@ -45,7 +45,7 @@
     },
     {
       "tag": "free",
-      "text": "eodi ('where') behaves like any other place: it takes -e and it sits where a place sits. The question is still made by the voice alone — eodi-e isseoyo? — and nothing about the word order changes."
+      "text": "eodi ('where') sits where a place sits, and the question is still made by the voice alone: keopi eodi isseoyo? In speech both markers are usually dropped; the full form is keopi-ga eodi-e isseoyo?, and it shows what the pieces are — eodi takes -e like any other place. Nothing about the word order changes."
     },
     {
       "tag": "free",
@@ -55,23 +55,12 @@
   "sentences": [
     {
       "id": "L1-M7-S01",
-      "display": "Jeo-neun jip-e isseoyo.",
-      "script": "저는 집에 있어요.",
-      "cue": "I am at home.",
-      "literal": "I-topic home-at exist",
+      "display": "Jip-e isseoyo.",
+      "script": "집에 있어요.",
+      "cue": "I'm at home.",
+      "literal": "home-at exist",
       "deconstruction": {
         "words": [
-          {
-            "display": "jeo",
-            "script": "저",
-            "cue": "I · me",
-            "tag": "delta",
-            "forms": [
-              "jeo",
-              "jeo-neun"
-            ],
-            "note": "'I', from M1."
-          },
           {
             "display": "jip",
             "script": "집",
@@ -110,31 +99,31 @@
           2
         ]
       },
-      "trap": "The verb here is the one you learned for 'there is' and 'I have'. English changes verb entirely for location — 'I am at home' — and Korean does not: being somewhere is existing at that point.",
-      "sound": "juh-nun JI-be i-SSUH-yo. The p of jip softens to a b in front of -e, so it is heard as ji-be. The word is still jip, which is why it is written that way here.",
+      "trap": "The verb here is the one you learned for 'there is' and 'I have'. English changes verb entirely for location — 'I am at home' — and Korean does not: being somewhere is existing at that point. And there is no 'I': the sentence is about you until something says otherwise.",
+      "sound": "JI-be i-SSUH-yo. The p of jip softens to a b in front of -e, so it is heard as ji-be. The word is still jip, which is why it is written that way here.",
       "variations": [
         {
-          "display": "Jeo-neun hakgyo-e isseoyo.",
-          "script": "저는 학교에 있어요.",
-          "cue": "I am at school.",
+          "display": "Hakgyo-e isseoyo.",
+          "script": "학교에 있어요.",
+          "cue": "I'm at school.",
           "changed": "a different place, same marker"
         },
         {
-          "display": "Minsu-neun jip-e isseoyo.",
-          "script": "민수는 집에 있어요.",
-          "cue": "Minsu is at home.",
-          "changed": "somebody else, same shape"
+          "display": "Jeo-neun jip-e isseoyo.",
+          "script": "저는 집에 있어요.",
+          "cue": "I'm at home.",
+          "changed": "jeo-neun added — 'me, I'm at home', when the others are somewhere else"
         },
         {
-          "display": "Jeo-neun jip-e eopseoyo.",
-          "script": "저는 집에 없어요.",
-          "cue": "I am not at home.",
-          "changed": "the absence verb doing the location job"
+          "display": "Jip-e eopseoyo.",
+          "script": "집에 없어요.",
+          "cue": "He's not at home.",
+          "changed": "the absence verb doing the location job — the answer on the phone when somebody is out"
         }
       ],
       "mistake": {
-        "display": "Jeo-neun jip-eseo isseoyo.",
-        "script": "저는 집에서 있어요.",
+        "display": "Jip-eseo isseoyo.",
+        "script": "집에서 있어요.",
         "why": "-eseo has been used for simply being somewhere. Existing is not an action, so it takes -e; -eseo waits for a verb that does something."
       },
       "usage": "Saying where you are.",
@@ -493,10 +482,10 @@
     },
     {
       "id": "L1-M7-S06",
-      "display": "Keopi-ga eodi-e isseoyo?",
-      "script": "커피가 어디에 있어요?",
+      "display": "Keopi eodi isseoyo?",
+      "script": "커피 어디 있어요?",
       "cue": "Where is the coffee?",
-      "literal": "coffee-subject where-at exists?",
+      "literal": "coffee where exists?",
       "deconstruction": {
         "words": [
           {
@@ -508,7 +497,7 @@
               "keopi",
               "keopi-ga"
             ],
-            "note": "'Coffee', from M1, as the thing present or missing."
+            "note": "'Coffee', from M1 — bare here, as the thing you are looking for usually is in speech."
           },
           {
             "display": "eodi",
@@ -519,17 +508,7 @@
               "eodi",
               "eodi-e"
             ],
-            "note": "'Where' — a noun, so it takes the place marker like a real place: eodi-e isseoyo?, 'at where does it exist?'. No question word order to learn; the question is made by the voice."
-          },
-          {
-            "display": "-e",
-            "script": "-에",
-            "cue": "at · in · to (a place)",
-            "tag": "delta",
-            "forms": [
-              "-e"
-            ],
-            "note": "The same marker again, now marking where something IS or where it is going: jip-e isseoyo, hakgyo-e gayo. One ending, one job — putting something at a point — whether the point is an hour or a house."
+            "note": "'Where' — a noun that sits where a place sits. In speech it usually goes bare, eodi isseoyo?; the full shape is eodi-e, 'at where'. No question word order to learn — the voice asks."
           },
           {
             "display": "isseoyo",
@@ -547,31 +526,31 @@
         ]
       },
       "trap": "The question word does not move to the front. In English 'where' has to lead the sentence; in Korean eodi sits exactly where the answer's place would sit, and the voice does the asking.",
-      "sound": "KUH-pee-ga UH-di-e i-SSUH-yo, rising at the end. eodi has the eo vowel — 'uh-dee' — and it links into the -e, so it comes out as uh-di-e in three light beats.",
+      "sound": "KUH-pee UH-di i-SSUH-yo, rising at the end. eodi has the eo vowel — 'uh-dee' — and it runs straight into isseoyo with no marker between them.",
       "variations": [
         {
-          "display": "Chaek-i eodi-e isseoyo?",
-          "script": "책이 어디에 있어요?",
-          "cue": "Where is the book?",
+          "display": "Chaek eodi isseoyo?",
+          "script": "책 어디 있어요?",
+          "cue": "Where's the book?",
           "changed": "a different thing asked about"
         },
         {
-          "display": "Keopi-ga jip-e isseoyo.",
-          "script": "커피가 집에 있어요.",
-          "cue": "The coffee is at home.",
-          "changed": "the answer, with a real place where eodi stood"
+          "display": "Keopi-ga eodi-e isseoyo?",
+          "script": "커피가 어디에 있어요?",
+          "cue": "Where is the coffee?",
+          "changed": "the full shape with both markers — correct, and what the bare words are short for"
         },
         {
-          "display": "Minsu-neun eodi-e isseoyo?",
-          "script": "민수는 어디에 있어요?",
-          "cue": "Where is Minsu?",
-          "changed": "a person rather than a thing, with the topic marker"
+          "display": "Minsu-ssi eodi isseoyo?",
+          "script": "민수 씨 어디 있어요?",
+          "cue": "Where's Minsu?",
+          "changed": "a person rather than a thing — and a name you speak of politely wears -ssi"
         }
       ],
       "mistake": {
-        "display": "Eodi keopi-ga isseoyo?",
-        "script": "어디 커피가 있어요?",
-        "why": "The question word has been fronted the way English fronts it, and stripped of its marker on the way. eodi is a place like any other: it stays in the place slot and it takes -e."
+        "display": "Eodi keopi isseoyo?",
+        "script": "어디 커피 있어요?",
+        "why": "The question word has been fronted the way English fronts it. eodi is a place like any other: it stays in the place slot, right in front of the verb."
       },
       "usage": "Asking where something is.",
       "register": "neutral",
@@ -957,9 +936,9 @@
     },
     {
       "id": "L1-M7-C04",
-      "display": "Minsu-neun eodi-e isseoyo?",
-      "script": "민수는 어디에 있어요?",
-      "cue": "Where is Minsu?"
+      "display": "Minsu-ssi eodi isseoyo?",
+      "script": "민수 씨 어디 있어요?",
+      "cue": "Where's Minsu?"
     },
     {
       "id": "L1-M7-C05",
@@ -993,9 +972,9 @@
     },
     {
       "id": "L1-M7-C10",
-      "display": "Chaek-i eodi-e isseoyo?",
-      "script": "책이 어디에 있어요?",
-      "cue": "Where is the book?"
+      "display": "Chaek eodi isseoyo?",
+      "script": "책 어디 있어요?",
+      "cue": "Where's the book?"
     },
     {
       "id": "L1-M7-C11",

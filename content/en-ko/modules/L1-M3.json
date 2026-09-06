@@ -16,9 +16,9 @@
       "simple_present"
     ],
     "allowedPatterns": [
-      "N-eul/reul + juseyo",
+      "N(-eul/reul) + juseyo",
       "N-do + juseyo",
-      "V-go sipeoyo",
+      "N(-eul/reul) + V-go sipeoyo",
       "N-i/ga + isseoyo",
       "N-i/ga + eopseoyo",
       "an + V-ayo/-eoyo"
@@ -28,11 +28,11 @@
   "rules": [
     {
       "tag": "delta",
-      "text": "Asking for something is three moves and no more: name it, mark it with -eul or -reul, finish with juseyo. mul-eul juseyo, keopi-reul juseyo. There is no word for 'please' floating in the sentence — the politeness is inside juseyo itself."
+      "text": "Asking for something is two moves: name it, finish with juseyo. mul juseyo, keopi juseyo. The object marker -eul/-reul can go on the thing — mul-eul juseyo — and in a short spoken order it usually does not. There is no word for 'please' floating in the sentence — the politeness is inside juseyo itself."
     },
     {
       "tag": "delta",
-      "text": "Wanting to do something is built on the verb STEM: take meokda ('eat'), put -go on the stem to get meokgo, and follow it with sipeoyo. The object still comes first with its marker, and the whole want lands at the end of the sentence."
+      "text": "Wanting to do something is built on the verb STEM: take meokda ('eat'), put -go on the stem to get meokgo, and follow it with sipeoyo. The object still comes first, with or without its marker, and the whole want lands at the end of the sentence."
     },
     {
       "tag": "delta",
@@ -56,20 +56,20 @@
     },
     {
       "tag": "free",
-      "text": "The thing you want still wears its object marker even though the verb of the sentence is 'want': bap-eul meokgo sipeoyo. The marker belongs to eating, not to wanting, and it stays where the eating would have put it."
+      "text": "When the thing you want to eat or drink carries a marker, it is the OBJECT marker, even though the verb of the sentence is 'want': bap-eul meokgo sipeoyo. The marker belongs to eating, not to wanting. In short everyday speech it is dropped — bap meokgo sipeoyo — and both are right."
     },
     {
       "tag": "free",
-      "text": "Where the situation says who, the subject disappears. bap-eul an meogeoyo is a complete sentence about yourself; jeo-neun is added only when you are marking yourself out from somebody else."
+      "text": "Where the situation says who, the subject disappears. bap an meogeoyo is a complete sentence about yourself; jeo-neun is added only when you are marking yourself out from somebody else."
     }
   ],
   "sentences": [
     {
       "id": "L1-M3-S01",
-      "display": "Mul-eul juseyo.",
-      "script": "물을 주세요.",
+      "display": "Mul juseyo.",
+      "script": "물 주세요.",
       "cue": "Water, please.",
-      "literal": "water-object give-please",
+      "literal": "water give-please",
       "deconstruction": {
         "words": [
           {
@@ -83,7 +83,7 @@
               "mul-do",
               "mul-i"
             ],
-            "note": "'Water'. It ends in a consonant, so its object marker is -eul. Asking for water is the first thing most travellers need, and mul-eul juseyo is the whole request."
+            "note": "'Water'. Asking for it is the first thing most travellers need, and mul juseyo is the whole request; mul-eul juseyo, with the object marker, is the same request said a shade more carefully."
           },
           {
             "display": "juseyo",
@@ -93,7 +93,7 @@
             "forms": [
               "juseyo"
             ],
-            "note": "'Please give me' — the whole of asking for something: name the thing, mark it -eul/-reul, finish with juseyo. The -se- inside is the same respectful piece as in jinaeseyo and gaseyo."
+            "note": "'Please give me' — the whole of asking for something: name the thing, finish with juseyo. A marker on the thing is optional in a short order. The -se- inside is the respectful piece of jinaeseyo."
           }
         ],
         "rules": [
@@ -101,35 +101,35 @@
         ]
       },
       "trap": "There is no word in this sentence meaning 'please'. English hangs politeness off a separate word; Korean puts it inside the verb, so hunting for a word to add is hunting for something that is already there.",
-      "sound": "MOO-rul JOO-se-yo. The l of mul softens into an r sound when the -eul follows it, so the two words run together as moo-rul. That linking happens every time a word ending in a consonant takes a marker beginning with a vowel.",
+      "sound": "mul JOO-se-yo. The l at the end of mul is held with the tongue tip up — not the dark English l. When a marker follows it, as in mul-eul, it softens into an r sound and the two run together as moo-rul; that linking happens every time a word ending in a consonant takes a marker beginning with a vowel.",
       "variations": [
         {
-          "display": "Keopi-reul juseyo.",
-          "script": "커피를 주세요.",
-          "cue": "Coffee, please.",
-          "changed": "a different thing, and -reul because keopi ends in a vowel"
+          "display": "Mul-eul juseyo.",
+          "script": "물을 주세요.",
+          "cue": "Water, please.",
+          "changed": "the object marker on — correct, and a shade more careful than the bare noun"
         },
         {
-          "display": "Cha-reul juseyo.",
-          "script": "차를 주세요.",
-          "cue": "Tea, please.",
-          "changed": "another vowel-final noun, another -reul"
+          "display": "Keopi juseyo.",
+          "script": "커피 주세요.",
+          "cue": "Coffee, please.",
+          "changed": "a different thing asked for"
         },
         {
           "display": "Mul-do juseyo.",
           "script": "물도 주세요.",
           "cue": "Water too, please.",
-          "changed": "-do instead of -eul: you are adding water to something already ordered"
+          "changed": "-do on the noun: you are adding water to something already ordered"
         }
       ],
       "mistake": {
-        "display": "Mul juseyo bureseyo.",
-        "script": "물 주세요 부르세요.",
-        "why": "A second polite word has been added at the end, as if juseyo were not enough. It is enough — it is the politeness and the verb at once — and the extra word is not a word this sentence has any room for."
+        "display": "Juseyo mul.",
+        "script": "주세요 물.",
+        "why": "The verb has been put first, English-style — 'give me water'. juseyo is the verb, so it is the last word; the thing you want stands in front of it."
       },
       "usage": "Ordering anything at all, in a cafe, a shop or a home.",
       "register": "neutral",
-      "mnemonic": "Name it, mark it, ask for it — three words at most."
+      "mnemonic": "Name it, ask for it — two words is a whole request."
     },
     {
       "id": "L1-M3-S02",
@@ -169,7 +169,7 @@
             "forms": [
               "juseyo"
             ],
-            "note": "'Please give me' — the whole of asking for something: name the thing, mark it -eul/-reul, finish with juseyo. The -se- inside is the same respectful piece as in jinaeseyo and gaseyo."
+            "note": "'Please give me' — the whole of asking for something: name the thing, finish with juseyo. A marker on the thing is optional in a short order. The -se- inside is the respectful piece of jinaeseyo."
           }
         ],
         "rules": [
@@ -193,10 +193,10 @@
           "changed": "a third noun, and still one ending"
         },
         {
-          "display": "Keopi-reul juseyo.",
-          "script": "커피를 주세요.",
+          "display": "Keopi juseyo.",
+          "script": "커피 주세요.",
           "cue": "Coffee, please.",
-          "changed": "the plain request, for comparison — the marker comes back when 'too' goes"
+          "changed": "the plain request, for comparison — 'too' simply comes off"
         }
       ],
       "mistake": {
@@ -210,23 +210,12 @@
     },
     {
       "id": "L1-M3-S03",
-      "display": "Jeo-neun bap-eul meokgo sipeoyo.",
-      "script": "저는 밥을 먹고 싶어요.",
+      "display": "Bap meokgo sipeoyo.",
+      "script": "밥 먹고 싶어요.",
       "cue": "I want to eat.",
-      "literal": "I-topic meal-object eat-and want",
+      "literal": "meal eat-and want",
       "deconstruction": {
         "words": [
-          {
-            "display": "jeo",
-            "script": "저",
-            "cue": "I · me",
-            "tag": "delta",
-            "forms": [
-              "jeo",
-              "jeo-neun"
-            ],
-            "note": "'I', in the polite style. It appears in these sentences only where the wanting needs an owner; where the situation already says who, Korean leaves it out."
-          },
           {
             "display": "bap",
             "script": "밥",
@@ -237,7 +226,7 @@
               "bap-eul",
               "bap-i"
             ],
-            "note": "'Cooked rice', and by extension a meal: bap-eul meokgo sipeoyo is closer to 'I want to eat' than 'I want rice'. Korean counts the day in meals of bap as English does in breakfast and dinner."
+            "note": "'Cooked rice', and by extension a meal: bap meokgo sipeoyo is closer to 'I want to eat' than 'I want rice'. Korean counts the day in meals of bap as English does in breakfast and dinner."
           },
           {
             "display": "meogeoyo",
@@ -266,31 +255,31 @@
           7
         ]
       },
-      "trap": "English builds 'want to eat' with an infinitive: want, then to, then eat. Korean has no 'to' at all — the -go on the verb does that work, and the wanting comes last, after the thing being eaten.",
-      "sound": "juh-nun BA-bul MUK-go SI-puh-yo. The p at the end of bap softens to a b before the -eul, so it is heard as ba-bul; the word is still bap, which is why it is written that way here. sipeoyo has the eo vowel again — 'puh', not 'po'.",
+      "trap": "English builds 'want to eat' with an infinitive: want, then to, then eat. Korean has no 'to' at all — the -go on the verb does that work, and the wanting comes last, after the thing being eaten. Nobody says 'I' here either: the sentence is about you unless something says otherwise.",
+      "sound": "bap MUK-go SI-puh-yo. The p at the end of bap is held, not released — the lips close and the next word follows. meokgo has a hard k running into g; sipeoyo has the eo vowel again — 'puh', not 'po'.",
       "variations": [
-        {
-          "display": "Jeo-neun bap-eul meogeoyo.",
-          "script": "저는 밥을 먹어요.",
-          "cue": "I eat a meal.",
-          "changed": "the plain verb — the wanting comes off and meokgo goes back to meogeoyo"
-        },
         {
           "display": "Bap-eul meokgo sipeoyo.",
           "script": "밥을 먹고 싶어요.",
           "cue": "I want to eat.",
-          "changed": "the subject dropped, which is how this is usually said"
+          "changed": "the object marker on — correct, and what a careful sentence looks like"
         },
         {
-          "display": "Jeo-neun bap-eul meokgo sipeoyo?",
-          "script": "저는 밥을 먹고 싶어요?",
-          "cue": "Do I want to eat?",
-          "changed": "the same words with a rise — a question you might ask yourself"
+          "display": "Jeo-neun bap meokgo sipeoyo.",
+          "script": "저는 밥 먹고 싶어요.",
+          "cue": "I want to eat.",
+          "changed": "jeo-neun added — only when you are setting yourself against somebody who does not"
+        },
+        {
+          "display": "Bap meokgo sipeoyo?",
+          "script": "밥 먹고 싶어요?",
+          "cue": "Do you want to eat?",
+          "changed": "the same words with a rise, asked of the person in front of you"
         }
       ],
       "mistake": {
-        "display": "Jeo-neun sipeoyo bap-eul meokgo.",
-        "script": "저는 싶어요 밥을 먹고.",
+        "display": "Sipeoyo bap meokgo.",
+        "script": "싶어요 밥 먹고.",
         "why": "The wanting has been moved to the front, English-style. sipeoyo is the verb of the sentence, so it goes last; nothing at all follows it."
       },
       "usage": "Saying what you would like to do, in a restaurant or at home.",
@@ -299,23 +288,12 @@
     },
     {
       "id": "L1-M3-S04",
-      "display": "Jeo-neun mul-eul masigo sipeoyo.",
-      "script": "저는 물을 마시고 싶어요.",
+      "display": "Mul-eul masigo sipeoyo.",
+      "script": "물을 마시고 싶어요.",
       "cue": "I want to drink water.",
-      "literal": "I-topic water-object drink-and want",
+      "literal": "water-object drink-and want",
       "deconstruction": {
         "words": [
-          {
-            "display": "jeo",
-            "script": "저",
-            "cue": "I · me",
-            "tag": "delta",
-            "forms": [
-              "jeo",
-              "jeo-neun"
-            ],
-            "note": "'I', in the polite style. It appears in these sentences only where the wanting needs an owner; where the situation already says who, Korean leaves it out."
-          },
           {
             "display": "mul",
             "script": "물",
@@ -327,7 +305,7 @@
               "mul-do",
               "mul-i"
             ],
-            "note": "'Water'. It ends in a consonant, so its object marker is -eul. Asking for water is the first thing most travellers need, and mul-eul juseyo is the whole request."
+            "note": "'Water'. Asking for it is the first thing most travellers need, and mul juseyo is the whole request; mul-eul juseyo, with the object marker, is the same request said a shade more carefully."
           },
           {
             "display": "masyeoyo",
@@ -357,31 +335,31 @@
         ]
       },
       "trap": "The object keeps its -eul even though the main verb is 'want'. The marker belongs to the drinking, not to the wanting, and it stays exactly where the drinking put it.",
-      "sound": "juh-nun MOO-rul ma-SI-go SI-puh-yo. masigo keeps the stem's i clearly; it is only in the plain form masyeoyo that the i and the ending run together. Both are the same verb.",
+      "sound": "MOO-rul ma-SI-go SI-puh-yo. mul runs into -eul as moo-rul. masigo keeps the stem's i clearly; it is only in the plain form masyeoyo that the i and the ending run together. Both are the same verb.",
       "variations": [
         {
-          "display": "Jeo-neun cha-reul masigo sipeoyo.",
-          "script": "저는 차를 마시고 싶어요.",
+          "display": "Cha-reul masigo sipeoyo.",
+          "script": "차를 마시고 싶어요.",
           "cue": "I want to drink tea.",
           "changed": "a different drink, and -reul after the vowel"
         },
         {
-          "display": "Mul-eul masyeoyo.",
-          "script": "물을 마셔요.",
-          "cue": "I drink water.",
-          "changed": "the plain statement, with the verb in its own -yo shape"
+          "display": "Keopi masigo sipeoyo.",
+          "script": "커피 마시고 싶어요.",
+          "cue": "I want a coffee.",
+          "changed": "the marker dropped, which is how it is said over a counter"
         },
         {
-          "display": "Keopi-reul masigo sipeoyo.",
-          "script": "커피를 마시고 싶어요.",
-          "cue": "I want to drink coffee.",
-          "changed": "subject dropped, and a third thing to drink"
+          "display": "Jeo-neun mul-eul masigo sipeoyo.",
+          "script": "저는 물을 마시고 싶어요.",
+          "cue": "I want to drink water.",
+          "changed": "jeo-neun added — 'me, I want water', when others want something else"
         }
       ],
       "mistake": {
-        "display": "Jeo-neun mul masigo sipeoyo.",
-        "script": "저는 물 마시고 싶어요.",
-        "why": "The object marker has been dropped. In fast speech Koreans do drop it, but while you are learning it is what tells you which noun the verb is acting on — and leaving it out here removes the one clue the sentence gives."
+        "display": "Mul-eul masyeoyo sipeoyo.",
+        "script": "물을 마셔요 싶어요.",
+        "why": "The finished -yo form has been put in front of sipeoyo. sipeoyo follows the -go shape of the verb — masigo — and nothing else; two -yo endings in one clause is two verbs."
       },
       "usage": "Saying what you would like to drink.",
       "register": "neutral",
@@ -389,23 +367,12 @@
     },
     {
       "id": "L1-M3-S05",
-      "display": "Jeo-neun hangungmal-eul baeugo sipeoyo.",
-      "script": "저는 한국말을 배우고 싶어요.",
+      "display": "Hangungmal-eul baeugo sipeoyo.",
+      "script": "한국말을 배우고 싶어요.",
       "cue": "I want to learn Korean.",
-      "literal": "I-topic Korean-object learn-and want",
+      "literal": "Korean-object learn-and want",
       "deconstruction": {
         "words": [
-          {
-            "display": "jeo",
-            "script": "저",
-            "cue": "I · me",
-            "tag": "delta",
-            "forms": [
-              "jeo",
-              "jeo-neun"
-            ],
-            "note": "'I', in the polite style. It appears in these sentences only where the wanting needs an owner; where the situation already says who, Korean leaves it out."
-          },
           {
             "display": "hangungmal",
             "script": "한국말",
@@ -445,7 +412,7 @@
         ]
       },
       "trap": "There is no shorter way to say this. English can say 'I want Korean' and be understood; Korean needs the verb, because hangungmal is a thing and wanting a thing is not the same construction as wanting to do something.",
-      "sound": "juh-nun han-GOONG-ma-rul BAE-oo-go SI-puh-yo. The l of -mal links into the -eul as it did in mul-eul, so the middle of the sentence runs as ma-rul. baeugo has three clear beats, none of them stressed.",
+      "sound": "han-GOONG-ma-rul BAE-oo-go SI-puh-yo. The l of -mal links into the -eul as it did in mul-eul, so the start of the sentence runs as ma-rul. baeugo has three clear beats, none of them stressed.",
       "variations": [
         {
           "display": "Yuna-neun hangungmal-eul baeugo sipeoyo.",
@@ -454,21 +421,21 @@
           "changed": "somebody else wanting it — the verb does not change for the person"
         },
         {
-          "display": "Hangungmal-eul baewoyo.",
-          "script": "한국말을 배워요.",
-          "cue": "I learn Korean.",
-          "changed": "the plain -yo form of the same verb, with the subject dropped"
+          "display": "Jeo-neun hangungmal-eul baeugo sipeoyo.",
+          "script": "저는 한국말을 배우고 싶어요.",
+          "cue": "I want to learn Korean.",
+          "changed": "jeo-neun added — when it is you as against somebody else"
         },
         {
-          "display": "Jeo-neun hangungmal-eul baeugo sipeoyo?",
-          "script": "저는 한국말을 배우고 싶어요?",
-          "cue": "Do I want to learn Korean?",
-          "changed": "the same sentence lifted into a question"
+          "display": "Hangungmal baeugo sipeoyo?",
+          "script": "한국말 배우고 싶어요?",
+          "cue": "Do you want to learn Korean?",
+          "changed": "the marker dropped and a rise added — asked of the person in front of you"
         }
       ],
       "mistake": {
-        "display": "Jeo-neun hangungmal sipeoyo.",
-        "script": "저는 한국말 싶어요.",
+        "display": "Hangungmal sipeoyo.",
+        "script": "한국말 싶어요.",
         "why": "The verb has been thrown away and sipeoyo left to want a noun on its own. It cannot: sipeoyo only ever follows a verb wearing -go. Wanting a thing is said another way, and it is not this."
       },
       "usage": "Saying what you are trying to learn.",
@@ -543,10 +510,10 @@
     },
     {
       "id": "L1-M3-S07",
-      "display": "Cha-ga eopseoyo.",
-      "script": "차가 없어요.",
-      "cue": "There is no tea.",
-      "literal": "tea-subject does-not-exist",
+      "display": "Cha-ga eopseoyo. Keopi-ga isseoyo.",
+      "script": "차가 없어요. 커피가 있어요.",
+      "cue": "There's no tea. There is coffee.",
+      "literal": "tea-subject does-not-exist. coffee-subject exists",
       "deconstruction": {
         "words": [
           {
@@ -570,6 +537,27 @@
               "eopseoyo"
             ],
             "note": "'There is not', 'I do not have'. Its own word, NOT isseoyo with a negative attached — you cannot build it. Korean keeps a separate word for absence, which is why it is so short and common."
+          },
+          {
+            "display": "keopi",
+            "script": "커피",
+            "cue": "coffee",
+            "tag": "free",
+            "forms": [
+              "keopi",
+              "keopi-ga"
+            ],
+            "note": "'Coffee', from M1 — here the thing that is there, so it takes -ga."
+          },
+          {
+            "display": "isseoyo",
+            "script": "있어요",
+            "cue": "there is · have",
+            "tag": "delta",
+            "forms": [
+              "isseoyo"
+            ],
+            "note": "'There is', from the last sentence — the positive, set beside the absence verb so you hear that they are two words."
           }
         ],
         "rules": [
@@ -578,7 +566,7 @@
         ]
       },
       "trap": "Do not build this out of isseoyo. There is no negative particle in it and none can be added — eopseoyo is a separate word, and an isseoyo is not something a Korean speaker would say or recognise.",
-      "sound": "CHA-ga UP-suh-yo. The p sound inside eopseoyo is not released: the lips close and the next sound follows. English speakers tend to let it out with a puff, which turns a smooth word into two.",
+      "sound": "CHA-ga UP-suh-yo. KUH-pee-ga i-SSUH-yo. The p sound inside eopseoyo is not released: the lips close and the next sound follows. Then a full stop, and the second sentence offers what there is instead.",
       "variations": [
         {
           "display": "Mul-i eopseoyo.",
@@ -590,7 +578,7 @@
           "display": "Cha-ga isseoyo.",
           "script": "차가 있어요.",
           "cue": "There is tea.",
-          "changed": "the positive, for comparison — two different words for two opposite facts"
+          "changed": "the positive alone, for comparison — two different words for two opposite facts"
         },
         {
           "display": "Bap-i eopseoyo.",
@@ -604,7 +592,7 @@
         "script": "차가 안 있어요.",
         "why": "an has been put in front of isseoyo to build a negative. Korean does not negate this verb; it has a second verb for absence, and that verb is eopseoyo."
       },
-      "usage": "Saying that something is missing, or that you are out of it.",
+      "usage": "Telling somebody you are out of something — and what there is instead.",
       "register": "neutral",
       "mnemonic": "Absence has its own word."
     },
@@ -676,9 +664,9 @@
           "changed": "a different drink refused"
         },
         {
-          "display": "Bap-eul an meogeoyo.",
-          "script": "밥을 안 먹어요.",
-          "cue": "I do not eat.",
+          "display": "Bap an meogeoyo.",
+          "script": "밥 안 먹어요.",
+          "cue": "I'm not eating.",
           "changed": "a different verb, and the subject dropped"
         },
         {
@@ -693,16 +681,16 @@
         "script": "저는 차를 마셔요 안.",
         "why": "The negation has been put after the verb, where English would put 'not' after 'do'. an has exactly one seat and it is directly in front of the verb."
       },
-      "usage": "Saying what you do not do, as a habit rather than today.",
+      "usage": "Saying what you do not do, as a habit — jeo-neun is here because you are setting yourself apart from people who do.",
       "register": "neutral",
       "mnemonic": "an sits in front of the verb and nowhere else."
     },
     {
       "id": "L1-M3-S09",
-      "display": "Bap-eul an meogeoyo.",
-      "script": "밥을 안 먹어요.",
-      "cue": "I do not eat.",
-      "literal": "meal-object not eat",
+      "display": "Bap an meogeoyo.",
+      "script": "밥 안 먹어요.",
+      "cue": "I'm not eating.",
+      "literal": "meal not eat",
       "deconstruction": {
         "words": [
           {
@@ -715,7 +703,7 @@
               "bap-eul",
               "bap-i"
             ],
-            "note": "'Cooked rice', and by extension a meal: bap-eul meokgo sipeoyo is closer to 'I want to eat' than 'I want rice'. Korean counts the day in meals of bap as English does in breakfast and dinner."
+            "note": "'Cooked rice', and by extension a meal: bap meokgo sipeoyo is closer to 'I want to eat' than 'I want rice'. Korean counts the day in meals of bap as English does in breakfast and dinner."
           },
           {
             "display": "an",
@@ -744,34 +732,34 @@
           8
         ]
       },
-      "trap": "There is no subject here and none is missing. English would need 'I', and supplying jeo-neun would turn the sentence into a contrast — as if somebody else were eating and you were not.",
-      "sound": "BA-bul an MUH-guh-yo. The k of the stem softens to a g between vowels, so meogeoyo runs smoothly; the word is still built on meok-, which is the shape you saw in meokgo.",
+      "trap": "There is no subject here and none is missing, and no marker on bap either. English would need 'I'; supplying jeo-neun would turn the sentence into a contrast — as if somebody else were eating and you were not.",
+      "sound": "bap an MUH-guh-yo. The held p of bap, then an leaning onto the verb. The k of the stem softens to a g between vowels, so meogeoyo runs smoothly; the word is still built on meok-, which is the shape you saw in meokgo.",
       "variations": [
         {
-          "display": "Bap-eul meogeoyo.",
-          "script": "밥을 먹어요.",
-          "cue": "I eat.",
+          "display": "Bap meogeoyo.",
+          "script": "밥 먹어요.",
+          "cue": "I'm eating.",
           "changed": "the positive, with an taken out"
         },
         {
-          "display": "Jeo-neun bap-eul an meogeoyo.",
-          "script": "저는 밥을 안 먹어요.",
-          "cue": "I do not eat.",
+          "display": "Jeo-neun bap an meogeoyo.",
+          "script": "저는 밥 안 먹어요.",
+          "cue": "I'm not eating.",
           "changed": "the subject put back in, which now sounds like a contrast with somebody else"
         },
         {
-          "display": "Bap-eul an meokgo sipeoyo.",
-          "script": "밥을 안 먹고 싶어요.",
-          "cue": "I do not want to eat.",
+          "display": "Bap an meokgo sipeoyo.",
+          "script": "밥 안 먹고 싶어요.",
+          "cue": "I don't want to eat.",
           "changed": "the negation now belongs to the wanting, and an moves in front of the whole thing"
         }
       ],
       "mistake": {
-        "display": "An bap-eul meogeoyo.",
-        "script": "안 밥을 먹어요.",
+        "display": "An bap meogeoyo.",
+        "script": "안 밥 먹어요.",
         "why": "an has been put at the head of the sentence, where English puts 'not' in 'not eating'. It belongs immediately before the VERB, and the object stays in front of it."
       },
-      "usage": "Saying what you do not do.",
+      "usage": "Turning down a meal, or saying you are skipping one.",
       "register": "neutral",
       "mnemonic": "Everything else in the sentence stays; an slips in front of the verb."
     },
@@ -845,8 +833,8 @@
   "comprehensionPool": [
     {
       "id": "L1-M3-C01",
-      "display": "Cha-reul juseyo.",
-      "script": "차를 주세요.",
+      "display": "Cha juseyo.",
+      "script": "차 주세요.",
       "cue": "Tea, please."
     },
     {
@@ -857,14 +845,14 @@
     },
     {
       "id": "L1-M3-C03",
-      "display": "Jeo-neun keopi-reul masigo sipeoyo.",
-      "script": "저는 커피를 마시고 싶어요.",
-      "cue": "I want to drink coffee."
+      "display": "Keopi masigo sipeoyo.",
+      "script": "커피 마시고 싶어요.",
+      "cue": "I want a coffee."
     },
     {
       "id": "L1-M3-C04",
-      "display": "Bap-eul meokgo sipeoyo.",
-      "script": "밥을 먹고 싶어요.",
+      "display": "Bap meokgo sipeoyo.",
+      "script": "밥 먹고 싶어요.",
       "cue": "I want to eat."
     },
     {
@@ -881,9 +869,9 @@
     },
     {
       "id": "L1-M3-C07",
-      "display": "Jeo-neun bap-eul an meogeoyo.",
-      "script": "저는 밥을 안 먹어요.",
-      "cue": "I do not eat."
+      "display": "Bap an meogeoyo.",
+      "script": "밥 안 먹어요.",
+      "cue": "I'm not eating."
     },
     {
       "id": "L1-M3-C08",
