@@ -16,7 +16,7 @@
       "simple_present"
     ],
     "allowedPatterns": [
-      "(Io) + V-o + ogni giorno",
+      "(Io) + V-o + ogni giorno / tutti i giorni",
       "Mi alzo alle + hour",
       "Di mattina/sera + V-o",
       "Il lunedì + V-o",
@@ -39,7 +39,7 @@
     },
     {
       "tag": "delta",
-      "text": "A time word normally goes in FRONT of the sentence — Di mattina mangio il pane, Ogni giorno parlo con Anna — and can also stand at the end. What it never needs is an extra preposition Italian has not written."
+      "text": "A time word normally goes in FRONT of the sentence — Di mattina mangio poco, Tutti i giorni parlo con Anna — and can also stand at the end: Parlo con Anna tutti i giorni. What it never needs is an extra preposition Italian has not written."
     },
     {
       "tag": "delta",
@@ -175,9 +175,9 @@
     },
     {
       "id": "L1-M4-S03",
-      "display": "Di mattina mangio il pane",
-      "cue": "In the morning I eat bread",
-      "literal": "In-the-morning I-eat the bread",
+      "display": "Di mattina mangio poco",
+      "cue": "In the morning I don't eat much",
+      "literal": "In-the-morning I-eat little",
       "deconstruction": {
         "words": [
           {
@@ -197,6 +197,18 @@
               "mangia"
             ],
             "note": "The present of mangiare (M3): mangio (I) · mangi (you) · mangia (he, she). It is \"I eat\" and \"I am eating\" at once — Italian has one present where English has two."
+          },
+          {
+            "display": "poco",
+            "cue": "not much · little",
+            "tag": "delta",
+            "forms": [
+              "poco",
+              "poca",
+              "pochi",
+              "poche"
+            ],
+            "note": "not much. After a verb it is an adverb and fixed: mangio poco, dormo poco. Before a noun it agrees — poco pane, poca acqua — and M3's un po' is this word with its ending cut off."
           }
         ],
         "rules": [
@@ -205,28 +217,28 @@
           3
         ]
       },
-      "trap": "English drops the article for a kind of food — \"I eat bread\" — and Italian keeps it: mangio il pane. It is M1's rule again, in a new place.",
-      "sound": "mat-TI-na, with the double t held, and MAN-jo, where gi is the j of \"jam\" and the i is not a syllable of its own.",
+      "trap": "English needs a negative and a quantity — \"I don't eat much\". Italian says it in one positive word after the verb: mangio poco. No non, and nothing to translate \"much\".",
+      "sound": "mat-TI-na, with the double t held; MAN-jo, where gi is the j of \"jam\" and the i is not a syllable of its own; PO-ko, two light syllables.",
       "variations": [
         {
-          "display": "Di mattina mangio una pizza",
-          "cue": "In the morning I eat a pizza",
-          "changed": "swap what is eaten — the time phrase in front is untouched"
+          "display": "Di sera mangio molto",
+          "cue": "In the evening I eat a lot",
+          "changed": "swap both halves — the time of day and the amount; molto is poco's opposite and sits in the same seat"
         },
         {
-          "display": "Mangi il pane di mattina?",
-          "cue": "Do you eat bread in the morning?",
+          "display": "Mangi di mattina?",
+          "cue": "Do you eat in the morning?",
           "changed": "-o → -i and the time phrase moved to the end: both moves are free"
         },
         {
-          "display": "Non mangio il pane di mattina",
-          "cue": "I don't eat bread in the morning",
-          "changed": "non in front of the verb, and everything else holds"
+          "display": "Di mattina non mangio",
+          "cue": "In the morning I don't eat",
+          "changed": "non in front of the verb — nothing at all, so poco goes too"
         }
       ],
       "mistake": {
-        "display": "Di mattina mangio pane",
-        "why": "A kind of thing keeps its article in Italian: mangio il pane. Bare pane would be asking for some particular quantity of it."
+        "display": "Nella mattina mangio poco",
+        "why": "English \"in the morning\" tempts an in, but the halves of the day take di: di mattina, di sera. Nella mattina is not what anyone says."
       },
       "usage": "Describing a routine — what you do, and when.",
       "register": "informal",
@@ -508,8 +520,11 @@
             "display": "Il sabato",
             "cue": "on Saturdays",
             "tag": "delta",
-            "forms": [],
-            "note": "\"On Saturdays\", the same habit article as il lunedì. Six days of the week are masculine and take il; only la domenica, Sunday, is feminine."
+            "forms": [
+              "Il sabato",
+              "sabato"
+            ],
+            "note": "\"On Saturdays\", the same habit article as il lunedì; bare sabato is one particular Saturday. Six days of the week are masculine and take il; only la domenica, Sunday, is feminine."
           }
         ],
         "rules": [
@@ -546,9 +561,9 @@
     },
     {
       "id": "L1-M4-S10",
-      "display": "Ogni giorno parlo con Anna",
-      "cue": "Every day I speak with Anna",
-      "literal": "Every day I-speak with Anna",
+      "display": "Parlo con Anna tutti i giorni",
+      "cue": "I talk to Anna every day",
+      "literal": "I-speak with Anna all the days",
       "deconstruction": {
         "words": [
           {
@@ -557,6 +572,13 @@
             "tag": "free",
             "forms": [],
             "note": "with. It stays a separate word in front of its noun and does not fuse with a following article the way a, di, in and su do: con il caffè, con la musica."
+          },
+          {
+            "display": "tutti i giorni",
+            "cue": "every day",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Every day\", literally \"all the days\" — the phrase you hear most, beside ogni giorno, which says the same with a singular noun. Learned whole: the i inside it is M1's article."
           }
         ],
         "rules": [
@@ -568,23 +590,23 @@
       "sound": "KON, short, and it leans onto the word after it: con Anna comes out as one breath.",
       "variations": [
         {
-          "display": "Parlo con Anna ogni giorno",
-          "cue": "I speak with Anna every day",
-          "changed": "the time phrase moved to the end — Italian is content either way"
+          "display": "Tutti i giorni parlo con Anna",
+          "cue": "Every day I talk to Anna",
+          "changed": "the time phrase moved to the front — Italian is content either way"
         },
         {
-          "display": "Non parlo con Anna ogni giorno",
-          "cue": "I don't speak with Anna every day",
+          "display": "Non parlo con Anna tutti i giorni",
+          "cue": "I don't talk to Anna every day",
           "changed": "non in front of the verb; the phrase behind it is untouched"
         },
         {
           "display": "Parli con Anna il sabato?",
-          "cue": "Do you speak with Anna on Saturdays?",
+          "cue": "Do you talk to Anna on Saturdays?",
           "changed": "-o → -i and the habit article at the end, asked with nothing added"
         }
       ],
       "mistake": {
-        "display": "Ogni giorno parlo a Anna",
+        "display": "Parlo a Anna tutti i giorni",
         "why": "Speaking WITH someone is con. a would make it speaking TO them, which Italian says as parlo ad Anna and means something narrower."
       },
       "usage": "Naming who is in your routine, not just what is.",
@@ -635,8 +657,8 @@
     },
     {
       "id": "L1-M4-C09",
-      "display": "Ogni giorno studio l'italiano",
-      "cue": "Every day I study Italian"
+      "display": "Studio l'italiano tutti i giorni",
+      "cue": "I study Italian every day"
     },
     {
       "id": "L1-M4-C10",
