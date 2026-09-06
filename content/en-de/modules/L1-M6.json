@@ -16,7 +16,7 @@
       "simple_present"
     ],
     "allowedPatterns": [
-      "Morgen + V + ich + N",
+      "Morgen + V + ich (+ N)",
       "Morgen + V + ich + nach + place",
       "Am Montag + V + ich + …",
       "Ich möchte morgen + infinitive (clause-final)",
@@ -27,7 +27,7 @@
   "rules": [
     {
       "tag": "delta",
-      "text": "THE PRESENT TENSE PLUS A TIME WORD IS THE FUTURE. Morgen esse ich Brot is \"tomorrow I will eat bread\" — the same verb form that says \"I eat bread\" today, with a time word in front of it. Nothing is added: no auxiliary, no second tense, no ending that moves. English cannot do this (\"tomorrow I eat bread\" is at best odd), so the interference is a learner hunting for a helper verb that German does not want here."
+      "text": "THE PRESENT TENSE PLUS A TIME WORD IS THE FUTURE. Morgen arbeite ich is \"tomorrow I'm working\" — the same verb form that says \"I work\" today, with a time word in front of it. Nothing is added: no auxiliary, no second tense, no ending that moves. English reaches for \"will\" or \"I'm going to\" here, so the interference is a learner hunting for a helper verb that German does not want."
     },
     {
       "tag": "interference",
@@ -57,9 +57,9 @@
   "sentences": [
     {
       "id": "L1-M6-S01",
-      "display": "Morgen esse ich Brot",
-      "cue": "Tomorrow I'll eat bread",
-      "literal": "Tomorrow eat I bread",
+      "display": "Morgen arbeite ich",
+      "cue": "Tomorrow I'm working",
+      "literal": "Tomorrow work I",
       "deconstruction": {
         "words": [
           {
@@ -67,7 +67,7 @@
             "cue": "tomorrow",
             "tag": "delta",
             "forms": [],
-            "note": "tomorrow. Capitalised, Morgen is “morning”; lowercase it is “tomorrow”. Opening a sentence it is capitalised for position, not meaning — Morgen esse ich Brot is “tomorrow”, filling the time slot."
+            "note": "tomorrow. Capitalised, Morgen is “morning”; lowercase it is “tomorrow”. Opening a sentence it is capitalised for position, not meaning — Morgen arbeite ich is “tomorrow”, filling the time slot."
           }
         ],
         "rules": [
@@ -75,28 +75,28 @@
           1
         ]
       },
-      "trap": "There is no future tense here to go looking for. The verb is the same esse the learner met in M4 for \"I eat\", and the only thing carrying \"will\" is the word morgen. Adding a helper verb to make it feel more like a future is what breaks it.",
-      "sound": "MOR-gen, with a throaty r and a hard g at the back. ich is the soft hissed ch made at the front of the mouth — never the k of \"ick\". Brot rhymes with English \"boat\": a long o, and the final t is crisp.",
+      "trap": "There is no future tense here to go looking for. The verb is the same arbeite the learner met in L1-M4 for \"I work\", and the only thing carrying \"tomorrow\" is the word morgen. Adding a helper verb to make it feel more like a future is what breaks it.",
+      "sound": "MOR-gen, with a throaty r and a hard g at the back. arbeite is AR-bye-tuh: ei is \"eye\", and the r after the a barely sounds. ich is the soft hissed ch made at the front of the mouth — never the k of \"ick\".",
       "variations": [
         {
-          "display": "Morgen esse ich Suppe",
-          "cue": "Tomorrow I'll eat soup",
-          "changed": "a different thing eaten; the shape and the tense do not move"
+          "display": "Morgen arbeite ich nicht",
+          "cue": "Tomorrow I'm not working",
+          "changed": "L1-M3's nicht negating the verb, standing at the end where it belongs"
         },
         {
-          "display": "Morgen arbeite ich",
-          "cue": "Tomorrow I'll work",
-          "changed": "no object at all — the inversion is still there with only three words"
+          "display": "Morgen lerne ich Deutsch",
+          "cue": "Tomorrow I'm learning German",
+          "changed": "a different verb in the same slot, with an object after the inverted pair; the shape and the tense do not move"
         },
         {
-          "display": "Morgen esse ich nicht",
-          "cue": "Tomorrow I won't eat",
-          "changed": "M3's nicht negating the verb, standing at the end where it belongs"
+          "display": "Ich arbeite morgen",
+          "cue": "I'm working tomorrow",
+          "changed": "the subject back in front, so nothing inverts — morgen can sit inside the sentence as well as in front of it"
         }
       ],
       "mistake": {
-        "display": "Morgen ich esse Brot",
-        "why": "The time word has taken first position, so the verb must come second and the subject third: Morgen esse ich Brot. Putting the subject back in front of the verb copies the English order, and it is the commonest slip in this module."
+        "display": "Morgen ich arbeite",
+        "why": "The time word has taken first position, so the verb must come second and the subject third: Morgen arbeite ich. Putting the subject back in front of the verb copies the English order, and it is the commonest slip in this module."
       },
       "usage": "Saying what you are doing tomorrow — the everyday German future, in a shop, at work, anywhere.",
       "register": "neutral",
@@ -104,9 +104,9 @@
     },
     {
       "id": "L1-M6-S02",
-      "display": "Übermorgen gehe ich nach Hause",
-      "cue": "The day after tomorrow I'll go home",
-      "literal": "Over-tomorrow go I to-house",
+      "display": "Übermorgen fahre ich nach Hause",
+      "cue": "The day after tomorrow I'm going home",
+      "literal": "Over-tomorrow drive I to-house",
       "deconstruction": {
         "words": [
           {
@@ -115,6 +115,16 @@
             "tag": "delta",
             "forms": [],
             "note": "the day after tomorrow, in ONE word: über (“over”) stacked onto morgen. English needs four words; German welds them. One token, one word row, no claim on the morgen inside."
+          },
+          {
+            "display": "fahre",
+            "cue": "go (by vehicle)",
+            "tag": "delta",
+            "forms": [
+              "fahre",
+              "fahren"
+            ],
+            "note": "fahren — to go by car, train, bus or bike: ich fahre, Sie fahren. gehen is on foot, so a trip home from another town is fahren. English has one “go” for both; German asks how you are getting there."
           }
         ],
         "rules": [
@@ -122,30 +132,30 @@
           1
         ]
       },
-      "trap": "nach Hause is one fixed phrase meaning \"home\" as a destination, taken whole in M5's Ich bin nach Hause gegangen. It is not \"to the house\", it never takes an article, and the bare nach on its own is written nowhere in this level.",
-      "sound": "ÜBER has the ü of pursed lips — say \"ee\" with your lips rounded. gehe is GEH-uh, two syllables, with the final -e voiced as a weak uh rather than swallowed. Hause is HOW-zuh: au is the ow of \"how\", and an s between vowels is a z.",
+      "trap": "nach Hause is one fixed phrase meaning \"home\" as a destination, taken whole in L1-M5's Ich bin nach Hause gegangen. It never takes an article, and the bare nach on its own is written nowhere in this level. Two verbs go home: gehen on foot, fahren by anything with wheels — Übermorgen gehe ich nach Hause says you will walk there.",
+      "sound": "ÜBER has the ü of pursed lips — say \"ee\" with your lips rounded. fahre is FAH-ruh: a long a, the h only lengthening it, and a final -e voiced as a weak uh. Hause is HOW-zuh: au is the ow of \"how\", and an s between vowels is a z.",
       "variations": [
         {
-          "display": "Morgen gehe ich nach Hause",
-          "cue": "Tomorrow I'll go home",
+          "display": "Morgen fahre ich nach Hause",
+          "cue": "Tomorrow I'm going home",
           "changed": "one day nearer; the sentence is otherwise identical"
         },
         {
-          "display": "Übermorgen komme ich nach Hause",
-          "cue": "The day after tomorrow I'll come home",
-          "changed": "coming instead of going — nach Hause serves both"
+          "display": "Übermorgen gehe ich nach Hause",
+          "cue": "The day after tomorrow I'm walking home",
+          "changed": "gehen instead of fahren: on foot — said when home is a walk away, not a train ride"
         },
         {
-          "display": "Übermorgen gehe ich früh nach Hause",
-          "cue": "The day after tomorrow I'll go home early",
-          "changed": "M4's früh added; it sits before the destination, not after it"
+          "display": "Übermorgen fahre ich früh nach Hause",
+          "cue": "The day after tomorrow I'm going home early",
+          "changed": "L1-M4's früh added; it sits before the destination, not after it"
         }
       ],
       "mistake": {
-        "display": "Übermorgen gehe ich nach dem Haus",
+        "display": "Übermorgen fahre ich nach dem Haus",
         "why": "The destination \"home\" is the frozen phrase nach Hause, with no article at all. nach dem Haus is an attempt at \"to the house\" and is not how anybody says they are going home."
       },
-      "usage": "Fixing a return date two days out.",
+      "usage": "Fixing a return date two days out — the trip home, by train or by car.",
       "register": "neutral",
       "mnemonic": "über + morgen: one word past tomorrow."
     },
@@ -208,9 +218,9 @@
     },
     {
       "id": "L1-M6-S04",
-      "display": "Ich möchte morgen Deutsch lernen",
-      "cue": "I'd like to learn German tomorrow",
-      "literal": "I would-like tomorrow German learn",
+      "display": "Morgen lerne ich Deutsch",
+      "cue": "Tomorrow I'm learning German",
+      "literal": "Tomorrow learn I German",
       "deconstruction": {
         "words": [
           {
@@ -221,40 +231,40 @@
               "lernen",
               "lerne"
             ],
-            "note": "to learn. Regular: -e for ich, -en for Sie, so lernen is infinitive and Sie form at once. Same root and meaning as English “learn” — only its place at the end of the clause is new."
+            "note": "to learn — and to study a language: ich lerne, Sie lernen, infinitive and Sie form one word. Same root as English “learn”. After möchte it goes to the end of the clause: Ich möchte Deutsch lernen."
           }
         ],
         "rules": [
-          4,
-          0
+          0,
+          1
         ]
       },
-      "trap": "The infinitive is still last and there is still no word for \"to\" in front of it. The time word does not break the bracket — it goes inside it, between möchte and lernen, along with everything else the clause carries.",
-      "sound": "MERSH-tuh, with the ö of möchte made by saying \"eh\" with rounded lips. lernen has an r that barely sounds after the vowel: LEHR-nen, closer to LEH-nen than an English speaker expects.",
+      "trap": "English says \"I'm learning German tomorrow\" or \"I'll learn\"; German says it in the plain present with morgen in front, and the fronting inverts: lerne before ich. With möchte the infinitive would go last — Ich möchte morgen Deutsch lernen — but without it there is no bracket, and lerne is simply the second element.",
+      "sound": "LEHR-nuh — the r after the vowel barely sounds, closer to LEH-nuh than an English speaker expects. Deutsch is DOYTCH: eu is always \"oy\", and the tsch on the end is the ch of English \"watch\".",
       "variations": [
         {
-          "display": "Ich möchte morgen Suppe essen",
-          "cue": "I'd like to eat soup tomorrow",
-          "changed": "a different verb closing the bracket; the shape is identical"
+          "display": "Ich möchte morgen Deutsch lernen",
+          "cue": "I'd like to learn German tomorrow",
+          "changed": "möchte added, so the infinitive goes to the END — L1-M3's bracket, with the time word inside it"
         },
         {
-          "display": "Ich möchte morgen arbeiten",
-          "cue": "I'd like to work tomorrow",
-          "changed": "nothing inside the bracket but the time word"
+          "display": "Heute lerne ich Deutsch",
+          "cue": "Today I'm learning German",
+          "changed": "today for tomorrow; the same present tense either way, and the same inversion"
         },
         {
-          "display": "Morgen möchte ich Deutsch lernen",
-          "cue": "Tomorrow I'd like to learn German",
-          "changed": "the time word fronted, so möchte and ich swap — the bracket survives the inversion intact"
+          "display": "Ich lerne morgen Deutsch",
+          "cue": "I'm learning German tomorrow",
+          "changed": "the subject in front, so no inversion — morgen drops into the middle instead"
         }
       ],
       "mistake": {
-        "display": "Ich möchte morgen lernen Deutsch",
-        "why": "The infinitive closes the clause, so everything it acts on comes before it: Ich möchte morgen Deutsch lernen. Putting the object after the infinitive is the English order, and it leaves the bracket hanging open."
+        "display": "Morgen ich lerne Deutsch",
+        "why": "morgen has taken first position, so the verb must be second: Morgen lerne ich Deutsch. This is the slip S01 warned about, and it is worth catching twice — the English order is the strongest habit in the module."
       },
-      "usage": "A plan you are proposing rather than announcing.",
+      "usage": "A plan announced rather than proposed — what tomorrow holds.",
       "register": "neutral",
-      "mnemonic": "möchte second, the infinitive last, and everything else in between."
+      "mnemonic": "Time first, verb second — and with no möchte there is no bracket to close."
     },
     {
       "id": "L1-M6-S05",
@@ -290,9 +300,9 @@
           "changed": "nicht dropped — the plain positive, and the same inversion"
         },
         {
-          "display": "Morgen arbeite ich nicht",
-          "cue": "Tomorrow I'm not working",
-          "changed": "a one-word time element instead of a two-word one; the verb sits in exactly the same slot"
+          "display": "Heute arbeite ich nicht",
+          "cue": "Today I'm not working",
+          "changed": "a one-word time element instead of a two-word one, and it is about today — the verb sits in exactly the same slot"
         }
       ],
       "mistake": {
@@ -353,7 +363,7 @@
     {
       "id": "L1-M6-S07",
       "display": "Morgen möchte ich nichts machen",
-      "cue": "Tomorrow I want to do nothing",
+      "cue": "Tomorrow I'd like to do nothing",
       "literal": "Tomorrow would-like I nothing do",
       "deconstruction": {
         "words": [
@@ -375,7 +385,7 @@
       "variations": [
         {
           "display": "Heute möchte ich nichts machen",
-          "cue": "Today I want to do nothing",
+          "cue": "Today I'd like to do nothing",
           "changed": "today instead of tomorrow; the same present tense either way"
         },
         {
@@ -385,7 +395,7 @@
         },
         {
           "display": "Am Wochenende möchte ich nichts machen",
-          "cue": "At the weekend I want to do nothing",
+          "cue": "At the weekend I'd like to do nothing",
           "changed": "a two-word time element fronted; the bracket does not move"
         }
       ],
@@ -427,7 +437,7 @@
           1
         ]
       },
-      "trap": "This sentence is the control: it is built exactly like Morgen esse ich Brot and it is not about the future at all. That is the module's whole point — the German present says both, and the time word is the only thing that decides which.",
+      "trap": "This sentence is the control: it is built exactly like Morgen arbeite ich and it is not about the future at all. That is the module's whole point — the German present says both, and the time word is the only thing that decides which.",
       "sound": "HOY-tuh — the German eu is the oy of \"boy\", never \"ee-oo\". kaufe has the au of \"how\": KOW-fuh.",
       "variations": [
         {
@@ -589,8 +599,8 @@
     },
     {
       "id": "L1-M6-C07",
-      "display": "Am Freitag gehe ich nach Hause",
-      "cue": "On Friday I'll go home"
+      "display": "Am Freitag fahre ich nach Hause",
+      "cue": "On Friday I'm going home"
     },
     {
       "id": "L1-M6-C08",
@@ -600,7 +610,7 @@
     {
       "id": "L1-M6-C09",
       "display": "Heute möchte ich nichts machen",
-      "cue": "Today I want to do nothing"
+      "cue": "Today I'd like to do nothing"
     },
     {
       "id": "L1-M6-C10",

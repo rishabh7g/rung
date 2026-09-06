@@ -20,7 +20,7 @@
       "Wie viel kostet + N + ?",
       "Wie viele + N + möchten Sie + ?",
       "Ich möchte + num + N + , bitte",
-      "Ein Kilo + N + , bitte",
+      "Ein Kilo + N + , bitte / Einen/Eine/Ein + N + , bitte",
       "Das ist zu teuer"
     ],
     "newWordCap": 25
@@ -40,7 +40,7 @@
     },
     {
       "tag": "delta",
-      "text": "A MEASURE PHRASE TAKES A BARE NOUN — no \"of\" and no von: ein Kilo Brot, eine Tasse Kaffee, eine Flasche Wasser. English needs \"a kilo OF bread\" and French needs un kilo DE pain; German simply puts the two nouns side by side. There is nothing to leave out here, because there was never a word there to begin with."
+      "text": "A MEASURE PHRASE TAKES A BARE NOUN — no \"of\" and no von: ein Kilo Äpfel, eine Tasse Tee, eine Flasche Wasser. English needs \"a kilo OF apples\" and French needs un kilo DE pommes; German simply puts the two nouns side by side. There is nothing to leave out here, because there was never a word there to begin with. And at the counter the measure word itself is usually left unsaid: Ein Brot, bitte. Einen Kaffee, bitte. — the thing, in the accusative, and bitte."
     },
     {
       "tag": "delta",
@@ -142,8 +142,8 @@
           "changed": "a neuter noun in the subject slot"
         },
         {
-          "display": "Wie viel kostet ein Kilo Brot?",
-          "cue": "How much is a kilo of bread?",
+          "display": "Wie viel kostet ein Kilo Äpfel?",
+          "cue": "How much is a kilo of apples?",
           "changed": "a measure phrase as the subject, with no word for \"of\" inside it"
         },
         {
@@ -162,9 +162,9 @@
     },
     {
       "id": "L1-M8-S03",
-      "display": "Wie viele Stühle möchten Sie?",
-      "cue": "How many chairs would you like?",
-      "literal": "How many chairs would-like you?",
+      "display": "Wie viele Äpfel möchten Sie?",
+      "cue": "How many apples would you like?",
+      "literal": "How many apples would-like you?",
       "deconstruction": {
         "words": [
           {
@@ -180,30 +180,30 @@
           0
         ]
       },
-      "trap": "The plural is the trap, not the phrase. German plurals are made with umlauts and endings that vary by word — Stuhl becomes Stühle, Apfel becomes Äpfel — so there is no -s to reach for, and a learner who adds one has invented a word.",
-      "sound": "vee FEE-luh, with the final -e voiced. Stühle has the ü of pursed lips and is two syllables: SHTÜ-luh.",
+      "trap": "The plural is the trap, not the phrase. German plurals are made with umlauts and endings that vary by word — Apfel becomes Äpfel, Stuhl becomes Stühle — so there is no -s to reach for, and a learner who adds one has invented a word.",
+      "sound": "vee FEE-luh, with the final -e voiced. Äpfel is EP-fel: the Ä is the e of \"bed\", and the pf is both letters said together, with no vowel between them.",
       "variations": [
-        {
-          "display": "Wie viele Äpfel möchten Sie?",
-          "cue": "How many apples would you like?",
-          "changed": "a different plural, made with an umlaut and no ending at all"
-        },
         {
           "display": "Wie viele Bücher möchten Sie?",
           "cue": "How many books would you like?",
-          "changed": "a third plural pattern — umlaut plus -er"
+          "changed": "a different plural pattern — umlaut plus -er"
+        },
+        {
+          "display": "Wie viele Brote möchten Sie?",
+          "cue": "How many loaves would you like?",
+          "changed": "a third plural — Brot takes a plain -e and no umlaut"
         },
         {
           "display": "Wie viele Stühle gibt es?",
           "cue": "How many chairs are there?",
-          "changed": "M7's es gibt turned into a question, with es sliding in behind the verb"
+          "changed": "L1-M7's es gibt turned into a question, with es sliding in behind the verb"
         }
       ],
       "mistake": {
-        "display": "Wie viel Stühle möchten Sie?",
-        "why": "Chairs are counted, so the phrase is wie viele. wie viel would be asking for an unmeasured quantity of chair, which is not a thing anybody wants."
+        "display": "Wie viel Äpfel möchten Sie?",
+        "why": "Apples are counted, so the phrase is wie viele. wie viel would be asking for an unmeasured quantity of apple, which is not a thing anybody sells."
       },
-      "usage": "What the person behind the counter asks you.",
+      "usage": "What the person behind the market stall asks you.",
       "register": "neutral",
       "mnemonic": "The -e on viele is the plural asking for a plural."
     },
@@ -273,9 +273,9 @@
     },
     {
       "id": "L1-M8-S05",
-      "display": "Ein Kilo Brot, bitte",
-      "cue": "A kilo of bread, please",
-      "literal": "A kilo bread, please",
+      "display": "Ein Kilo Äpfel, bitte",
+      "cue": "A kilo of apples, please",
+      "literal": "A kilo apples, please",
       "deconstruction": {
         "words": [
           {
@@ -283,7 +283,7 @@
             "cue": "kilo",
             "tag": "free",
             "forms": [],
-            "note": "kilo — das Kilo, so ein Kilo. What matters is what follows: the thing measured comes straight after with nothing between — ein Kilo Brot, two nouns pushed together, no von."
+            "note": "kilo — das Kilo, so ein Kilo. What matters is what follows: the thing measured comes straight after with nothing between — ein Kilo Äpfel, two nouns, no von. Unchanged after a number: zwei Kilo."
           }
         ],
         "rules": [
@@ -291,38 +291,37 @@
           8
         ]
       },
-      "trap": "English's \"of\" has no German twin here, and a learner who reaches for von produces ein Kilo von Brot — which is not a smaller mistake than leaving a word out, it is a phrase German does not have.",
-      "sound": "KEE-lo, stress on the first syllable. Brot has a long o, rhyming with English \"boat\".",
+      "trap": "English's \"of\" has no German twin here, and a learner who reaches for von produces ein Kilo von Äpfel — which is not a smaller mistake than leaving a word out, it is a phrase German does not have. And the measure word is only for things sold by weight: bread is ein Brot, coffee is einen Kaffee.",
+      "sound": "KEE-lo, stress on the first syllable. Äpfel is EP-fel — the Ä is the e of \"bed\" — and bitte is two clear syllables, BIT-uh.",
       "variations": [
         {
-          "display": "Ein Kilo Äpfel, bitte",
-          "cue": "A kilo of apples, please",
-          "changed": "a plural measured instead of a mass — the phrase itself does not change"
+          "display": "Ein Brot, bitte",
+          "cue": "A loaf, please",
+          "changed": "bread is bought by the loaf, not the kilo — ein Brot is one loaf, and no measure word is needed"
         },
         {
-          "display": "Eine Tasse Kaffee, bitte",
-          "cue": "A cup of coffee, please",
-          "changed": "a different measure, feminine, so eine"
+          "display": "Zwei Kilo Äpfel, bitte",
+          "cue": "Two kilos of apples, please",
+          "changed": "a number in front, and Kilo does not change after it — zwei Kilo, never *Kilos, exactly as Euro behaves"
         },
         {
-          "display": "Ich möchte ein Kilo Brot, bitte",
-          "cue": "I'd like a kilo of bread, please",
-          "changed": "the full sentence around the order, with M3's möchte carrying it"
+          "display": "Ich möchte ein Kilo Äpfel, bitte",
+          "cue": "I'd like a kilo of apples, please",
+          "changed": "the full sentence around the order, with L1-M3's möchte carrying it"
         }
       ],
       "mistake": {
-        "display": "Ein Kilo von Brot, bitte",
-        "why": "A measure phrase puts the two nouns side by side and nothing between them: ein Kilo Brot. von exists in German but does not do this job, and inserting it is a straight translation of English \"of\"."
+        "display": "Ein Kilo von Äpfel, bitte",
+        "why": "A measure phrase puts the two nouns side by side and nothing between them: ein Kilo Äpfel. von exists in German but does not do this job, and inserting it is a straight translation of English \"of\"."
       },
-      "usage": "At a bakery, a market, a butcher's counter.",
+      "usage": "At a market stall or a greengrocer's — anything sold by weight.",
       "register": "neutral",
       "mnemonic": "Measure, then thing. Nothing in between."
     },
     {
       "id": "L1-M8-S06",
-      "display": "Eine Tasse Kaffee, bitte",
-      "cue": "A cup of coffee, please",
-      "literal": "A cup coffee, please",
+      "display": "Einen Kaffee, bitte",
+      "cue": "A coffee, please",
       "deconstruction": {
         "words": [
           {
@@ -330,7 +329,7 @@
             "cue": "cup",
             "tag": "free",
             "forms": [],
-            "note": "cup — die Tasse, so eine Tasse. The double s is written because the a before it is short — the same rule that gives Straße its ß after a long a. The two spellings never swap."
+            "note": "cup — die Tasse. As a measure it takes a bare noun: eine Tasse Tee, no “of”. At the counter the cup goes unnamed: Einen Kaffee, bitte. Double s after a short a; Straße has ß after a long one."
           }
         ],
         "rules": [
@@ -338,32 +337,32 @@
           8
         ]
       },
-      "trap": "eine Tasse Kaffee is a cup OF coffee; a cup FOR coffee is one welded word, eine Kaffeetasse, with the parts in the opposite order. German distinguishes the two by word order and by whether it writes one word or two, where English inserts \"of\" for the one and nothing for the other.",
-      "sound": "TAH-suh, with a short a and a hissed double s. Kaffee is stressed on the FIRST syllable in German — KAH-fay — unlike English \"caf-FAY\".",
+      "trap": "English orders \"a coffee\" with a bare article and no ending to get wrong. German's order is an object with its verb left unsaid, so the article still takes the accusative: Einen Kaffee, bitte. The cup is not mentioned — eine Tasse Kaffee is what you say when the cup itself matters, and it is the shape a price list uses.",
+      "sound": "EYE-nen KAH-fay, BIT-uh. ei is \"eye\", the -en is a real audible syllable, and Kaffee is stressed on the FIRST syllable in German — unlike English \"caf-FAY\".",
       "variations": [
         {
-          "display": "Eine Tasse Suppe, bitte",
-          "cue": "A cup of soup, please",
-          "changed": "a different thing measured — and a cup of soup is as ordinary in German as in English"
+          "display": "Eine Tasse Tee, bitte",
+          "cue": "A cup of tea, please",
+          "changed": "the measure word named — eine Tasse, feminine, with the drink bare behind it; said when you want the cup rather than the pot or the glass"
         },
         {
-          "display": "Eine Flasche Wasser, bitte",
-          "cue": "A bottle of water, please",
-          "changed": "a different measure, and the same bare noun behind it"
+          "display": "Eine Suppe, bitte",
+          "cue": "A soup, please",
+          "changed": "a feminine noun, so eine — and no accusative ending to see"
         },
         {
-          "display": "Zwei Tassen Kaffee, bitte",
-          "cue": "Two cups of coffee, please",
-          "changed": "a plural measure — Tassen takes -n — while Kaffee stays singular and bare"
+          "display": "Zwei Kaffee, bitte",
+          "cue": "Two coffees, please",
+          "changed": "a number instead of the article: at a counter Kaffee stays singular after it — zwei Kaffee — as Euro and Kilo do"
         }
       ],
       "mistake": {
-        "display": "Eine Tasse des Kaffees, bitte",
-        "why": "The genitive is not what a measure phrase wants, and it is not taught at this level for exactly this reason. The thing measured stands bare: eine Tasse Kaffee."
+        "display": "Ein Kaffee, bitte",
+        "why": "Kaffee is masculine and it is what you are asking for — the object of an unspoken Ich möchte — so the article wears the accusative -en: Einen Kaffee, bitte. ein is the subject shape L1-M1 opened, and the -n is what gets dropped."
       },
-      "usage": "The first thing many learners order out loud in German.",
+      "usage": "The first thing many learners order out loud in German — and the shape of every counter order after it.",
       "register": "neutral",
-      "mnemonic": "eine Tasse Kaffee — no glue between the nouns."
+      "mnemonic": "Order the thing, not the cup — and give the masculine its -n."
     },
     {
       "id": "L1-M8-S07",
@@ -490,8 +489,8 @@
     },
     {
       "id": "L1-M8-S09",
-      "display": "Zwölf Äpfel kosten dreißig Euro",
-      "cue": "Twelve apples cost thirty euros",
+      "display": "Zwölf Äpfel kosten drei Euro",
+      "cue": "Twelve apples cost three euros",
       "deconstruction": {
         "words": [
           {
@@ -514,33 +513,33 @@
           4
         ]
       },
-      "trap": "dreißig is the odd one out among the tens, and it is odd in spelling only — it is built from drei exactly as vierzig is built from vier. Writing it with ss or with a plain z is a different string, not a near miss.",
-      "sound": "TSVÖLF, one syllable, with the ts of z at the front. DRY-sich: the ei is \"eye\", the ß is a plain hissed s, and the final -ig is the soft ch again.",
+      "trap": "The verb agrees with what is being priced, not with the price: zwölf Äpfel is plural, so kosten, and drei Euro after it changes nothing. In the variation, dreißig is the odd one out among the tens, and odd in spelling only — built from drei exactly as vierzig is built from vier. Writing it with ss or a plain z is a different string, not a near miss.",
+      "sound": "TSVÖLF, one syllable, with the ts of z at the front. drei is DRY. In the variation, dreißig is DRY-sich: the ß is a plain hissed s, and the final -ig is the soft ch of ich.",
       "variations": [
         {
-          "display": "Zwölf Äpfel kosten zwanzig Euro",
-          "cue": "Twelve apples cost twenty euros",
-          "changed": "a different price, and one spelled with a plain -zig"
+          "display": "Zwölf Äpfel kosten zwei Euro",
+          "cue": "Twelve apples cost two euros",
+          "changed": "a different price; the verb is still the plural kosten"
         },
         {
-          "display": "Drei Äpfel kosten zwei Euro",
-          "cue": "Three apples cost two euros",
-          "changed": "smaller numbers on both sides; the verb is still the plural kosten"
+          "display": "Das Buch kostet dreißig Euro",
+          "cue": "The book costs thirty euros",
+          "changed": "a singular subject, so kostet — and a price in the tens: dreißig, the one ten spelled with ß rather than -zig"
         },
         {
-          "display": "Ein Kilo Äpfel kostet dreißig Euro",
-          "cue": "A kilo of apples costs thirty euros",
+          "display": "Ein Kilo Äpfel kostet drei Euro",
+          "cue": "A kilo of apples costs three euros",
           "changed": "a measure phrase as the subject, so the verb goes back to the singular kostet"
         }
       ],
       "mistake": {
-        "display": "Zwölf Äpfel kostet dreißig Euro",
+        "display": "Zwölf Äpfel kostet drei Euro",
         "why": "The subject is twelve apples, which is plural, so the verb is kosten. Only Euro stays singular here — the verb agrees with what is being priced, not with the price."
       },
       "usage": "Quoting a price for a quantity.",
       "register": "neutral",
-      "mnemonic": "dreißig keeps the ß that the other tens gave up.",
-      "literal": "Twelve apples cost thirty euro"
+      "mnemonic": "Plural apples, plural kosten — and Euro stays single whatever the number.",
+      "literal": "Twelve apples cost three euro"
     },
     {
       "id": "L1-M8-S10",
@@ -617,8 +616,8 @@
     },
     {
       "id": "L1-M8-C03",
-      "display": "Wie viele Äpfel möchten Sie?",
-      "cue": "How many apples would you like?"
+      "display": "Wie viele Stühle gibt es?",
+      "cue": "How many chairs are there?"
     },
     {
       "id": "L1-M8-C04",
@@ -627,8 +626,8 @@
     },
     {
       "id": "L1-M8-C05",
-      "display": "Ein Kilo Äpfel, bitte",
-      "cue": "A kilo of apples, please"
+      "display": "Ein Brot, bitte",
+      "cue": "A loaf, please"
     },
     {
       "id": "L1-M8-C06",
@@ -647,8 +646,8 @@
     },
     {
       "id": "L1-M8-C09",
-      "display": "Zwölf Äpfel kosten einundzwanzig Euro",
-      "cue": "Twelve apples cost twenty-one euros"
+      "display": "Das Buch kostet dreißig Euro",
+      "cue": "The book costs thirty euros"
     },
     {
       "id": "L1-M8-C10",
@@ -667,8 +666,8 @@
     },
     {
       "id": "L1-M8-C13",
-      "display": "Wie viel kostet ein Kilo Brot?",
-      "cue": "How much is a kilo of bread?"
+      "display": "Wie viel kostet ein Kilo Äpfel?",
+      "cue": "How much is a kilo of apples?"
     },
     {
       "id": "L1-M8-C14",
@@ -679,6 +678,11 @@
       "id": "L1-M8-C15",
       "display": "Was kostet die Tasse?",
       "cue": "How much is the cup?"
+    },
+    {
+      "id": "L1-M8-C16",
+      "display": "Einen Tee, bitte",
+      "cue": "A tea, please"
     }
   ],
   "exitTest": {
