@@ -153,3 +153,58 @@ describe('en-ko: the decisions its briefs settle (#373, #376)', () => {
     expect(notes).toMatch(/DEFERRED|deferred/);
   });
 });
+
+describe('hi-mr L3: the decisions its briefs settle (#452)', () => {
+  const all = COURSE_BRIEFS['hi-mr'] ?? {};
+  const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
+  const notes = l3.flatMap(([, brief]) => brief.notes).join('\n');
+
+  it('covers exactly L1-M1..L3-M10 — three levels, thirty modules', () => {
+    expect(Object.keys(all)).toEqual([
+      ...['L1', 'L2', 'L3'].flatMap((level) =>
+        ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
+      ),
+    ]);
+  });
+
+  /**
+   * The bounds climb inside the level (#452): a converb chain needs ten words, a counterfactual
+   * eleven, and an eight-sentence account twelve. They are pinned because a prompt renders them
+   * verbatim into `complexity`, so a wrong number here becomes a wrong number in ten module files.
+   */
+  it('climbs its bounds 10 → 11 → 12 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L3-M1', 'L3-M2', 'L3-M3']) expect(bound(id), id).toBe(10);
+    for (const id of ['L3-M4', 'L3-M5', 'L3-M6', 'L3-M7']) expect(bound(id), id).toBe(11);
+    for (const id of ['L3-M8', 'L3-M9', 'L3-M10']) expect(bound(id), id).toBe(12);
+  });
+
+  /**
+   * Two decisions govern the whole level and must reach an author, who only ever sees the notes:
+   * the register carried from L2 with #422's chip, and M10's eight-sentence ceiling.
+   */
+  it('states the register decision and the M10 shape in a NOTE', () => {
+    expect(notes).toMatch(/chips? `?formal`?|chip formal/);
+    expect(notes).toMatch(/informal/);
+    expect(all['L3-M10']?.notes.join('\n')).toMatch(/AT MOST EIGHT SENTENCES/i);
+  });
+
+  it('assigns every shared lexeme an owner, in the notes', () => {
+    // वाटणे has two jobs and one row (M3's); M6 points back rather than opening a second.
+    expect(all['L3-M3']?.notes.join('\n')).toMatch(/वाटणे/);
+    expect(all['L3-M6']?.notes.join('\n')).toMatch(/M3/);
+    // भरणे is L2-M8's row doing bills and forms here.
+    expect(all['L3-M8']?.notes.join('\n')).toMatch(/भरणे/);
+    // की carries all three of its jobs on L2-M9's row.
+    expect(all['L3-M5']?.notes.join('\n')).toMatch(/की/);
+    // Every module names its index seam, the discipline docs/26 §4 set.
+    for (const [id, brief] of l3.filter(([id]) => id !== 'L3-M10')) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+
+  it('keeps the passive out and leaves L1-M9 बोललो pinned', () => {
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/The \*\*passive stays out of L3 entirely\*\*/);
+    expect(all['L3-M5']?.notes.join('\n')).toMatch(/बोललो/);
+  });
+});
