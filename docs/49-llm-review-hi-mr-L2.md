@@ -94,7 +94,7 @@ owned, and the system itself is L3's.
   resolves against L1 plus the module's own deconstructions, which is what the build enforces.
 - `scripts/verify.sh` green.
 
-### Open questions for a native pass
+### Open questions for a native pass — wave 1
 
 49. **`कृपया खोलीत या` (M1-S07).** Grammatical, but a native invite is more often `आत या`. आत is
     unowned vocabulary at this point in the ladder (L2-M4 owns the direction words), so the room
@@ -110,3 +110,78 @@ owned, and the system itself is L3's.
     natural in `हे मूल चांगलं आहे`, or is बाळ the word a Marathi speaker reaches for?
 54. **The pronunciation glosses.** Written, not heard: `बहीण = ब‑ही‑ण`, `भावाचं = भा‑वा‑चं`,
     `उंच = उं‑च`. Every one needs an ear.
+
+## Wave 2 — L2-M3 "Describing things", L2-M4 "Getting around", L2-M5 "Food and hosting"
+
+|                     | L2-M3 Describing things | L2-M4 Getting around | L2-M5 Food and hosting |
+| ------------------- | ----------------------- | -------------------- | ---------------------- |
+| sentences           | 10                      | 10                   | 10                     |
+| new word rows       | 13 of 25 allowed        | 15 of 25 allowed     | 15 of 25 allowed       |
+| index growth        | +38 (262 → 300)         | +28 (300 → 328)      | +22 (328 → 350)        |
+| pool items          | 12                      | 12                   | 12                     |
+| tokens per sentence | 3–7                     | 3–6                  | 3–5                    |
+| enrichment          | full                    | full                 | full                   |
+| register chips      | 10 `neutral`            | 6 `formal`, 4 `neutral` | 6 `formal`, 4 `neutral` |
+
+M3 is the last module the M1–M3 enrichment law compels; M4 and M5 carry all five blocks anyway,
+because that is what every hi-mr module has done since L1-M1 and a learner should not feel the
+ladder thin out mid-level.
+
+### What the three modules teach
+
+**L2-M3** walks the whole agreement grid where L1 only flashed corners of it. The law itself is
+Hindi's own and is tagged `free` — -आ bends, everything else stands still — and the delta is which
+endings: -ा · -ी · -ं singular, -े · -्या · -ी plural. The two loud cells are the feminine plural
+(Hindi's -ी serves one and many; Marathi bends to -्या, S04) and the neuter plural that is spelled
+exactly like the feminine singular (S05, S10 — `मोठी खोली` beside `मोठी घरं`, shown as a pair in
+one `variations` block). Nouns bend along the same seam (घरं, पुस्तकं, खोल्या, बाटल्या), each new
+plural pointing back to its L1 first-teach. Colours are the vocabulary spend and rehearse the split
+themselves: काळा, पांढरा, निळा, हिरवा, नवा, जुना bend; लाल and स्वस्त do not.
+
+**L2-M4** is two glued endings and a direction set. -ला on the destination over L1-M7's oblique
+bend (दुकान → दुकानाला), starred against Hindi's bare noun; -ने on the vehicle (बस से → बसने),
+with the note deliberately narrow — "by/with" only, because the past-tense job of -ने is L2-M10's.
+`कसं जायचं?` points L1-M3's -आयचं shape at an impersonal job. जा is flagged as the one road verb
+whose तू and तुम्ही forms share a shape, which is the rest point in a module of imperatives.
+
+**L2-M5** is the hosting script and the refusal script. मिळेल का? is the order-as-question; its
+note claims only मिळणे's half of Hindi's मिलना, leaving सापडणे's half to M8. घ्या is द्या's twin
+in the other direction. The refusal ladder is नको → आता नको → पुरे → पोट भरलं, and पुरे carries
+the module's one homograph warning: a Hindi speaker's "बस!" at a Marathi table is the vehicle or
+the sit-verb. जेवणे is one verb where Hindi needs two words, and जेवलात का? is shipped as the
+care-question it actually is. The purpose infinitive arrives on जेवायला and खायला only —
+प्यायला-as-purpose is spelled exactly like L1-M5's past प्यायला, so it is written around, not
+shown.
+
+### Seams held
+
+- **The बस key is the vehicle's** (M4-S06), as M1's बसा row promised; sit-बस never appears in a
+  display and is named only in prose.
+- **-ने's past-tense job is not opened.** The rule text says so in one clause and points at M10.
+- **मिळणे does not claim "find".** M8's सापडणे is named in the rule and in the `trap`.
+- **प्यायला is not re-used as a purpose form** — the key stays L1-M5's past.
+- **तीन · चार · पाच** land on one row (M5-S07), paying docs/15 open question 28: पाच was a pinned
+  miss in the L1 surface pass and now resolves.
+- **A shown surface is a taught surface.** Every `display` in every sentence, variation and pool
+  item of the five L2 modules resolves against that module's own cumulative index — checked
+  mechanically, the #282 discipline. The only exceptions are proper nouns (रोहन, प्रिया), which
+  ride unindexed by #61, and `mistake.display`, which is deliberately wrong Marathi.
+- **मोठा's paradigm has one home.** M2 opened the row, so M3's six cells were added to M2's
+  `forms` rather than opened a second time — the docs/15 discipline. The same for चांगला.
+
+### Open questions for a native pass — wave 2
+
+55. **`ही भाजी स्वस्त आहे, ती महाग आहे` (M3-S07).** Two clauses joined by a comma with no
+    conjunction. Natural, or does Marathi want `पण` here — which L1 never taught?
+56. **`खोल्या` for rooms (M3-S06).** Shipped as the everyday plural. Is `खोल्या` what a Pune
+    speaker says of their own house, or is `रूम` the honest spoken word?
+57. **`जरा सांगा, स्टेशनला कसं जायचं?` (M4-S01).** Is the `जरा सांगा` opener what a stranger is
+    actually addressed with, or is `एक्स्क्यूज मी` / `माफ करा` more true?
+58. **गाडी covering both a car and a train (M4-S08).** The note says the sentence disambiguates.
+    Does that hold in speech, or does a learner need `रेल्वे` before L3?
+59. **`पुरे` at the table (M5-S04).** Shipped as the refusal word, with `बस` warned against. Is
+    `पुरे` alone enough, or is `पुरे झालं` the line that is actually said?
+60. **`जेवलात का?` as a greeting (M5-S05).** Written as the care-question. Is the polite past
+    right for a stranger, or is it reserved for people you know?
+61. **Every pronunciation gloss in this wave** — `निळ्या`, `पोळ्या`, `थांबा`, `रिक्षाने`,
+    `जेवायला` — is written, not heard.

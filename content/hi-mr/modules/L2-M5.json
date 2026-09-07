@@ -1,0 +1,509 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M5",
+  "title": "Food and hosting",
+  "job": "Ordering, offering, refusing without offence",
+  "prerequisites": ["L2-M1", "L2-M2", "L2-M3", "L2-M4"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-07",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": ["simple_present", "imperative", "future", "simple_past"],
+    "allowedPatterns": [
+      "N + मिळेल का?",
+      "तुम्हाला + आणखी + N + हवं/हवी/हवा + का?",
+      "आणखी + N + घ्या",
+      "num + N-plural + द्या",
+      "जेवायला/खायला + या/हवं"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "Ordering is a question, not an order: चहा मिळेल का? is exactly Hindi's चाय मिलेगी क्या?. The move transfers whole — only the verb shape is new."
+    },
+    {
+      "tag": "delta",
+      "text": "मिळणे covers only half of Hindi's मिलना: to get, to receive, to be available. Finding something you were looking for is a different verb, सापडणे (L2-M8) — do not stretch मिळणे over it."
+    },
+    {
+      "tag": "interference",
+      "text": "Hindi's one और is two words in Marathi. आणखी is \"more\" — आणखी भात घ्या. आणि is \"and\" (L1-M2). The usual trap runs the other way, so this one is easy to miss."
+    },
+    {
+      "tag": "delta",
+      "text": "जेवणे is ONE verb for eating a meal, where Hindi needs खाना खाना: मी जेवलो. And जेवलात का? — \"have you eaten?\" — is the Maharashtrian care-question, asked the way Hindi asks खाना खाया?"
+    },
+    {
+      "tag": "delta",
+      "text": "The purpose infinitive glues onto the verb: खाने के लिए → खायला, जेवने के लिए → जेवायला. One word where Hindi needs three — जेवायला या, \"come to eat\"."
+    },
+    {
+      "tag": "free",
+      "text": "Refusing is L1-M3's नको with softer words around it: नको, धन्यवाद · आता नको · पुरे. And पोट भरलं ends the dance — भरलं agrees with पोट, L1-M5's law doing table manners."
+    },
+    {
+      "tag": "delta",
+      "text": "तुम्हाला is the तुम्ही dative — the cell मला and तुला left open (L1-M2, L1-M3). Everything the मला-frame does, तुम्हाला does for the polite you: तुम्हाला काय हवं?"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M5-S01",
+      "display": "चहा मिळेल का?",
+      "cue": "चाय मिलेगी क्या?",
+      "glossEn": "Could I get some tea?",
+      "literal": "चाय मिलेगी क्या?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "मिळेल",
+            "cue": "मिलेगा/मिलेगी",
+            "tag": "delta",
+            "forms": ["मिळेल"],
+            "note": "\"Will be available / can be had\" — मिळणे in L1-M6's -ईल cell. It means get or receive only; searching-and-finding is सापडणे."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "मिळणे हिंदी के मिलना का सिर्फ़ आधा है. 'चाबी मिल गई' (ढूँढकर मिलना) यहाँ नहीं चलेगा — उसके लिए सापडणे है (L2-M8).",
+      "sound": "मिळेल = मि‑ळे‑ल, बीच में वही मराठी ळ.",
+      "variations": [
+        {
+          "display": "दूध मिळेल का?",
+          "cue": "दूध मिलेगा क्या?",
+          "changed": "चीज़ बदली — मिळेल नहीं झुकता, चाहे चहा हो या दूध."
+        },
+        {
+          "display": "जरा चहा द्या",
+          "cue": "ज़रा चाय दीजिए",
+          "changed": "सवाल → माँग (L2-M1). होटल में मिळेल का? ज़्यादा नरम है."
+        }
+      ],
+      "mistake": {
+        "display": "चहा मिळेगा का?",
+        "why": "हिंदी का -गा यहाँ चिपका दिया. मराठी का भविष्य -ईल पर बनता है: मिळेल (L1-M6 का खाईल परिवार)."
+      },
+      "usage": "होटल, कैंटीन, किसी के घर — माँगने का सबसे नरम तरीक़ा.",
+      "register": "neutral",
+      "mnemonic": "मराठी में ऑर्डर सवाल की शक्ल में आता है — 'मिलेगी क्या?' वैसे ही, बस क्रिया नई."
+    },
+    {
+      "id": "L2-M5-S02",
+      "display": "तुम्हाला आणखी पोळी हवी का?",
+      "cue": "आपको और रोटी चाहिए क्या?",
+      "glossEn": "Would you like another roti?",
+      "literal": "आपको और रोटी चाहिए(स्त्री.) क्या?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "तुम्हाला",
+            "cue": "आपको",
+            "tag": "delta",
+            "forms": ["मला", "तुला", "तुम्हाला"],
+            "note": "The तुम्ही dative — the cell मला and तुला left open (L1-M3). Everything the मला-frame does, तुम्हाला does politely."
+          },
+          {
+            "display": "आणखी",
+            "cue": "और (अधिक)",
+            "tag": "interference",
+            "forms": [],
+            "note": "\"More\" — Hindi's और in its quantity job only. The joining और is आणि (L1-M2): one Hindi word, two Marathi ones."
+          },
+          {
+            "display": "पोळी",
+            "cue": "रोटी",
+            "tag": "delta",
+            "forms": ["पोळी", "पोळ्या"],
+            "note": "The everyday Marathi word where Hindi says रोटी. Feminine, so माझी पोळी, and the plural is पोळ्या."
+          }
+        ],
+        "rules": [6, 2]
+      },
+      "trap": "आणि और आणखी देखने में जुड़वाँ हैं, काम अलग: आणि जोड़ता है (चहा आणि पोळी), आणखी मात्रा बढ़ाता है (आणखी पोळी).",
+      "sound": "तुम्हाला = तु‑म्हा‑ला; बीच का 'म्हा' मराठी की पहचान है. पोळी में वही ळ.",
+      "variations": [
+        {
+          "display": "तुम्हाला आणखी भात हवा का?",
+          "cue": "आपको और चावल चाहिए क्या?",
+          "changed": "पोळी(स्त्री.) → भात(पु.) — इसलिए हवी → हवा (L1-M3)."
+        },
+        {
+          "display": "तुला आणखी पोळी हवी का?",
+          "cue": "तुझे और रोटी चाहिए क्या?",
+          "changed": "तुम्हाला → तुला — वही सवाल, दोस्त से (M1 का रजिस्टर नियम)."
+        }
+      ],
+      "mistake": {
+        "display": "तुम्हाला आणि पोळी हवी का?",
+        "why": "जोड़ने वाला आणि रख दिया. 'और एक' के लिए आणखी चाहिए — आणि सिर्फ़ चीज़ों को जोड़ता है."
+      },
+      "usage": "मेज़बान की सबसे आम लाइन — मराठी घर में यह दो-तीन बार पूछी जाती है, और मना करना बुरा नहीं माना जाता.",
+      "register": "formal",
+      "mnemonic": "आणि = और (जोड़), आणखी = और (और भी). लंबा शब्द, ज़्यादा मात्रा."
+    },
+    {
+      "id": "L2-M5-S03",
+      "display": "आणखी भात घ्या",
+      "cue": "और चावल लीजिए",
+      "glossEn": "Do have some more rice",
+      "literal": "और चावल लो(आदर)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "घ्या",
+            "cue": "लीजिए",
+            "tag": "delta",
+            "forms": ["घे", "घ्या"],
+            "note": "\"Take / have some\" — घेणे's तुम्ही imperative by M1's law, the vowel-stem contraction again (घेणे → घ्या). Its तू form is घे."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "घ्या और द्या जुड़वाँ जैसे दिखते हैं और उलटे काम करते हैं: द्या = दीजिए, घ्या = लीजिए. मेज़ पर मेज़बान घ्या कहता है, मेहमान द्या.",
+      "sound": "घ्या = घ्+या एक झटके में, बिलकुल द्या की तरह.",
+      "variations": [
+        {
+          "display": "आणखी पोळी घ्या",
+          "cue": "और रोटी लीजिए",
+          "changed": "चीज़ बदली — घ्या वैसा ही, वह चीज़ के पीछे नहीं झुकता."
+        },
+        {
+          "display": "आणखी भात घे",
+          "cue": "और चावल ले",
+          "changed": "दोस्त या छोटे से — घ्या → घे, M1 वाली वही जोड़ी."
+        }
+      ],
+      "mistake": {
+        "display": "आणखी भात घेइये",
+        "why": "फिर वही -इए वाली हिंदी सीढ़ी. मराठी में घे (तू) और घ्या (तुम्ही), तीसरा कोई रूप नहीं."
+      },
+      "usage": "मेज़बानी की लाइन — खाना परोसते हुए, बार-बार.",
+      "register": "formal",
+      "mnemonic": "द्या देना, घ्या लेना — पूँछ वही -आ, दिशा उलटी."
+    },
+    {
+      "id": "L2-M5-S04",
+      "display": "पुरे, माझं पोट भरलं",
+      "cue": "बस, मेरा पेट भर गया",
+      "glossEn": "That's enough — I'm full",
+      "literal": "बस, मेरा(नपुं.) पेट भर-गया(नपुं.)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "पुरे",
+            "cue": "बस",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Enough, I'm done\" — the table word. Hindi's बस्स lands here; a Marathi बस is the vehicle or \"sit\", never \"enough\"."
+          },
+          {
+            "display": "पोट",
+            "cue": "पेट",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Stomach\" — पेट with a Marathi vowel, and it is neuter, which is why the verb beside it ends in -लं."
+          },
+          {
+            "display": "भरलं",
+            "cue": "भर गया",
+            "tag": "delta",
+            "forms": ["भरला", "भरली", "भरलं"],
+            "note": "\"Filled\" — the past of भरणे, agreeing with पोट (neuter), exactly as L1-M5's लागलं agreed with its subject."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "हिंदी बोलने वाला मेज़ पर 'बस!' कह देता है — मराठी कान उसे 'बैठो' या 'बस (गाड़ी)' सुनता है. भरे पेट के लिए पुरे है.",
+      "sound": "पुरे = पु‑रे, दोनों छोटे. भरलं का अंत नाक से हल्का.",
+      "variations": [
+        {
+          "display": "नको, धन्यवाद",
+          "cue": "नहीं चाहिए, धन्यवाद",
+          "changed": "छोटा मना — नको (L1-M3) और धन्यवाद (L2-M1) साथ में सबसे साफ़ इनकार."
+        },
+        {
+          "display": "आता नको",
+          "cue": "अभी नहीं",
+          "changed": "'अभी नहीं' — आता (L1-M3) मना को टालने में बदल देता है, बंद करने में नहीं."
+        }
+      ],
+      "mistake": {
+        "display": "पुरे, माझं पोट भरला",
+        "why": "-ला वाला पुल्लिंग रूप लगा दिया. पोट नपुंसक है, इसलिए भरलं (L1-M5 का नियम)."
+      },
+      "usage": "मेज़ पर मना करने की पूरी लाइन — मराठी घर में तीन बार पूछा जाता है, तीसरी बार यही जवाब चलता है.",
+      "register": "neutral",
+      "mnemonic": "मराठी मेज़ पर 'बस' मत कहो — वह गाड़ी है. पुरे कहो."
+    },
+    {
+      "id": "L2-M5-S05",
+      "display": "तुम्ही जेवलात का?",
+      "cue": "आपने खाना खाया क्या?",
+      "glossEn": "Have you eaten?",
+      "literal": "आप जीमे क्या?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "जेवलात",
+            "cue": "खाया",
+            "tag": "delta",
+            "forms": ["जेवलो", "जेवले", "जेवलास", "जेवलात"],
+            "note": "The past of जेवणे in the तुम्ही cell — the -त ending of L1-M5's केलंत. जेवलो is a man speaking, जेवले a woman."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "हिंदी में 'खाना खाया?' दो शब्द माँगता है; मराठी के पास एक ही क्रिया है — जेवणे. खाणे तब है जब कोई चीज़ खाई जाए (केळं खाल्लं), पूरा खाना नहीं.",
+      "sound": "जेवलात = जे‑व‑लात, आख़िरी 'त' हल्का — यही आदर वाली पूँछ है.",
+      "variations": [
+        {
+          "display": "तू जेवलास का?",
+          "cue": "तूने खाना खाया क्या?",
+          "changed": "दोस्त से — जेवलात → जेवलास, वही सवाल (L1-M5 की तू वाली पूँछ)."
+        },
+        {
+          "display": "मी आत्ताच जेवलो",
+          "cue": "मैंने अभी-अभी खाना खाया",
+          "changed": "सवाल → जवाब; मर्द बोले तो जेवलो, औरत बोले तो जेवले."
+        }
+      ],
+      "mistake": {
+        "display": "तुम्ही जेवण खाल्लं का?",
+        "why": "हिंदी 'खाना खाया' का सीधा अनुवाद. मराठी में एक ही क्रिया काफ़ी है: तुम्ही जेवलात का?"
+      },
+      "usage": "महाराष्ट्र का सबसे आम ख़याल-वाला सवाल — फ़ोन पर, दरवाज़े पर, दिन में कभी भी.",
+      "register": "formal",
+      "mnemonic": "एक क्रिया, पूरा खाना: जेवणे. खाणे सिर्फ़ चीज़ों के लिए."
+    },
+    {
+      "id": "L2-M5-S06",
+      "display": "जेवण छान आहे",
+      "cue": "खाना अच्छा है",
+      "glossEn": "The food is good",
+      "literal": "खाना अच्छा(-रूप-स्थिर) है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "जेवण",
+            "cue": "खाना",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"The meal\" — the noun of जेवणे, and neuter: जेवण छान आहे, माझं जेवण झालं."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "हिंदी में 'खाना' क्रिया भी है और चीज़ भी. मराठी दोनों को अलग रखती है: जेवणे (क्रिया), जेवण (चीज़).",
+      "sound": "जेवण = जे‑वण, आख़िरी 'ण' मूर्धन्य.",
+      "variations": [
+        {
+          "display": "जेवण गोड आहे",
+          "cue": "खाना मीठा है",
+          "changed": "तारीफ़ बदली — छान → गोड (S08)."
+        },
+        {
+          "display": "माझं जेवण गोड आहे",
+          "cue": "मेरा खाना मीठा है",
+          "changed": "माझं जुड़ा — जेवण नपुंसक है, इसलिए माझं (L1-M1), और गोड फिर भी नहीं झुका."
+        }
+      ],
+      "mistake": {
+        "display": "जेवण छानी आहे",
+        "why": "छान को झुका दिया. वह कभी नहीं झुकता (L1-M9) — जेवण छान आहे."
+      },
+      "usage": "मेज़बान की तारीफ़ — मराठी घर में यही सबसे सीधी तारीफ़ मानी जाती है.",
+      "register": "neutral",
+      "mnemonic": "क्रिया जेवणे, चीज़ जेवण — पूँछ हटी, काम बदला."
+    },
+    {
+      "id": "L2-M5-S07",
+      "display": "चार पोळ्या द्या",
+      "cue": "चार रोटियाँ दीजिए",
+      "glossEn": "Four rotis, please",
+      "literal": "चार रोटियाँ दो(आदर)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "चार",
+            "cue": "चार",
+            "tag": "free",
+            "forms": ["तीन", "चार", "पाच"],
+            "note": "\"Four\", with तीन and पाच beside it — the counting the shop set skipped (L1-M8 taught दोन, दहा, वीस…). Same words as Hindi, ळ-free."
+          },
+          {
+            "display": "पोळ्या",
+            "cue": "रोटियाँ",
+            "tag": "delta",
+            "forms": [],
+            "note": "Plural of पोळी — the feminine -ी → -्या seam of L2-M3, at the table: एक पोळी, चार पोळ्या."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "गिनती हिंदी जैसी ही है — तीन, चार, पाच — पर चीज़ बहुवचन में झुकती है: चार पोळ्या, चार पोळी नहीं.",
+      "sound": "पाच = पाच (हिंदी 'पाँच' की नाक वाली हवा के बिना). पोळ्या = पो‑ळ्या.",
+      "variations": [
+        {
+          "display": "तीन पोळ्या द्या",
+          "cue": "तीन रोटियाँ दीजिए",
+          "changed": "गिनती बदली — चीज़ का रूप वही बहुवचन."
+        },
+        {
+          "display": "पाच केळी द्या",
+          "cue": "पाँच केले दीजिए",
+          "changed": "चीज़ बदली — केळं → केळी, नपुंसक बहुवचन (L1-M8)."
+        }
+      ],
+      "mistake": {
+        "display": "चार पोळी द्या",
+        "why": "हिंदी की तरह चीज़ को एकवचन में छोड़ दिया. गिनती के साथ बहुवचन चाहिए: चार पोळ्या."
+      },
+      "usage": "होटल में ऑर्डर देते वक़्त — और घर में परोसते वक़्त भी.",
+      "register": "formal",
+      "mnemonic": "गिनती मुफ़्त में मिली, पर चीज़ की पूँछ अपनी है: पोळी → पोळ्या."
+    },
+    {
+      "id": "L2-M5-S08",
+      "display": "ही भाजी गोड आहे",
+      "cue": "यह सब्ज़ी मीठी है",
+      "glossEn": "This vegetable is sweet",
+      "literal": "यह सब्ज़ी मीठा(-रूप-स्थिर) है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "गोड",
+            "cue": "मीठा",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Sweet\" — consonant-final, so it never bends (L2-M3's law): गोड चहा · गोड भाजी · गोड जेवण."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "महाराष्ट्र में भाजी का हल्का मीठा होना आम है — यह तारीफ़ है, शिकायत नहीं. और गोड कभी नहीं झुकता, हिंदी के मीठा/मीठी के उलट.",
+      "sound": "गोड = गो‑ड, 'ड' मूर्धन्य; 'गोर' मत बोलो.",
+      "variations": [
+        {
+          "display": "हा चहा गोड आहे",
+          "cue": "यह चाय मीठी है",
+          "changed": "भाजी(स्त्री.) → चहा(पु.) — ही → हा, गोड वैसा ही."
+        },
+        {
+          "display": "जेवण गोड आहे",
+          "cue": "खाना मीठा है",
+          "changed": "चीज़ नपुंसक — फिर भी गोड नहीं बदला (S06)."
+        }
+      ],
+      "mistake": {
+        "display": "ही भाजी गोडी आहे",
+        "why": "'मीठी' की नक़ल में गोड को झुका दिया. वह व्यंजन पर ख़त्म होता है — कभी नहीं झुकता."
+      },
+      "usage": "खाने पर टिप्पणी — मराठी मेज़ पर मीठा स्वाद तारीफ़ के लायक़ है.",
+      "register": "neutral",
+      "mnemonic": "स्वाद वाले शब्द अड़े रहते हैं: गोड — जैसे दाम वाले महाग और स्वस्त."
+    },
+    {
+      "id": "L2-M5-S09",
+      "display": "उद्या जेवायला या",
+      "cue": "कल खाने पर आइए",
+      "glossEn": "Come for a meal tomorrow",
+      "literal": "कल खाने-को आओ(आदर)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "जेवायला",
+            "cue": "खाने पर",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"To eat / for a meal\" — the purpose ending -आयला glued onto जेव-. Hindi needs three words (खाने के लिए); Marathi needs one."
+          }
+        ],
+        "rules": [4, 3]
+      },
+      "trap": "हिंदी 'खाने के लिए' तीन शब्दों में चलता है; मराठी उसे क्रिया की पूँछ बना देती है. या यहाँ M1 वाला 'आइए' है — वही शब्द, वही काम.",
+      "sound": "जेवायला = जे‑वा‑य‑ला, चार हल्के हिस्से.",
+      "variations": [
+        {
+          "display": "उद्या जेवायला ये",
+          "cue": "कल खाने पर आ",
+          "changed": "दोस्त को न्योता — या → ये (L2-M1)."
+        },
+        {
+          "display": "उद्या घरी जेवायला या",
+          "cue": "कल घर खाने पर आइए",
+          "changed": "जगह जुड़ी — घरी (L1-M5), जो अपनी पुरानी पूँछ रखता है, -ला नहीं लेता (L2-M4)."
+        }
+      ],
+      "mistake": {
+        "display": "उद्या जेवण्यासाठी या",
+        "why": "'के लिए' का सीधा अनुवाद खींच लिया. रोज़ की मराठी में न्योता जेवायला या है — छोटा और यही चलता है."
+      },
+      "usage": "न्योता देने की लाइन — पड़ोसी, दोस्त, रिश्तेदार.",
+      "register": "formal",
+      "mnemonic": "काम की वजह क्रिया की पूँछ में छिपती है: जेव + आयला = खाने के लिए."
+    },
+    {
+      "id": "L2-M5-S10",
+      "display": "तुम्हाला काय खायला हवं?",
+      "cue": "आपको क्या खाने के लिए चाहिए?",
+      "glossEn": "What would you like to eat?",
+      "literal": "आपको क्या खाने-को चाहिए(नपुं.)?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "खायला",
+            "cue": "खाने के लिए",
+            "tag": "delta",
+            "forms": [],
+            "note": "The same purpose ending on खाणे: खायला. Use it for a thing eaten; a whole meal takes जेवायला (S09)."
+          }
+        ],
+        "rules": [4, 6]
+      },
+      "trap": "खायला और जेवायला का बँटवारा वही है जो खाणे और जेवणे का है: चीज़ खाना बनाम खाना खाना.",
+      "sound": "खायला = खा‑य‑ला; शुरू का 'खा' लंबा.",
+      "variations": [
+        {
+          "display": "तुला काय खायला हवं?",
+          "cue": "तुझे क्या खाने के लिए चाहिए?",
+          "changed": "दोस्त से — तुम्हाला → तुला."
+        },
+        {
+          "display": "तुम्हाला काय हवं?",
+          "cue": "आपको क्या चाहिए?",
+          "changed": "खायला हटा — सवाल आम हो गया, दुकान में भी चलेगा."
+        }
+      ],
+      "mistake": {
+        "display": "तुम्हाला काय खाणे हवं?",
+        "why": "क्रिया का नंगा रूप रख दिया. मक़सद बताने के लिए पूँछ चाहिए: खायला."
+      },
+      "usage": "मेज़बान का पहला सवाल — और होटल में वेटर का भी.",
+      "register": "formal",
+      "mnemonic": "तुम्हाला वही है जो मला था, बस आदर के साथ — बाक़ी फ़्रेम ज्यों का त्यों."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L2-M5-C01", "display": "चहा मिळेल का?", "cue": "चाय मिलेगी क्या?" },
+    {
+      "id": "L2-M5-C02",
+      "display": "तुम्हाला आणखी पोळी हवी का?",
+      "cue": "आपको और रोटी चाहिए क्या?"
+    },
+    { "id": "L2-M5-C03", "display": "आणखी भात घ्या", "cue": "और चावल लीजिए" },
+    { "id": "L2-M5-C04", "display": "पुरे, माझं पोट भरलं", "cue": "बस, मेरा पेट भर गया" },
+    { "id": "L2-M5-C05", "display": "तुम्ही जेवलात का?", "cue": "आपने खाना खाया क्या?" },
+    { "id": "L2-M5-C06", "display": "जेवण छान आहे", "cue": "खाना अच्छा है" },
+    { "id": "L2-M5-C07", "display": "चार पोळ्या द्या", "cue": "चार रोटियाँ दीजिए" },
+    { "id": "L2-M5-C08", "display": "हा चहा गोड आहे", "cue": "यह चाय मीठी है" },
+    { "id": "L2-M5-C09", "display": "उद्या जेवायला या", "cue": "कल खाने पर आइए" },
+    { "id": "L2-M5-C10", "display": "तुम्हाला काय खायला हवं?", "cue": "आपको क्या खाने के लिए चाहिए?" },
+    { "id": "L2-M5-C11", "display": "नको, धन्यवाद", "cue": "नहीं चाहिए, धन्यवाद" },
+    { "id": "L2-M5-C12", "display": "मी आत्ताच जेवलो", "cue": "मैंने अभी-अभी खाना खाया" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}
