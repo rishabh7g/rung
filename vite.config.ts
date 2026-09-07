@@ -78,7 +78,6 @@ export default defineConfig({
   build: { assetsInlineLimit: 0 },
   test: {
     environment: 'jsdom',
-    setupFiles: ['./src/test/setup.ts'],
     include: ['src/**/*.test.{ts,tsx}', 'tools/**/*.test.ts', 'scripts/**/*.test.ts'],
   },
 });

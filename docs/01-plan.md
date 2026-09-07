@@ -64,7 +64,7 @@ See design/PRD-engineering.md §4 for the diagram. Essentials:
 | zustand + persist (version 8, migrations v5→v6→v7→v8) | matches state-v8 contract |
 | **design/tokens.css** loaded globally; CSS Modules for layout | tokens are the single styling source — no hard-coded hex/px/font names (docs/design-contract.md) |
 | vite-plugin-pwa (or ~20-line vanilla SW) | offline per design/pwa-checklist.md — shell precached, active course cache-first (#211) |
-| vitest + @testing-library | engine is test-first |
+| vitest (jsdom environment) | engine is test-first |
 | ajv via tsx CLIs in tools/ | schema v5 + strings validation |
 | **Mukta + Barlow + Barlow Condensed, self-hosted** [D15] | per tokens.md; subset per course at build |
 | lucide-react | the only icon set (tokens.md §4), stroke 1.5 |
