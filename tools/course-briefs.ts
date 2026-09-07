@@ -342,9 +342,9 @@
  * brief states which register its frames speak (M4, M7 and M8 talk to strangers: तुम्ही; M6's
  * plans are among friends: तू). Marathi has no दीजिए tier — the imperative stops at
  * तुम्ही + -आ, and politeness above it goes into words (जरा, कृपया) or the future question
- * (द्याल का?). The schema's register chip has exactly two values, `neutral` and `informal` — so
- * तू frames chip informal, and the formal end (कृपया, आभारी आहे) is carried by the `usage` line
- * in words. आपण stays the course's "we" (L1-M10's row): the very-formal "you" job (docs/08 Q17)
+ * (द्याल का?). The register chip gained a third value in #422, so the tier the L1 briefs had to
+ * carry in words now lives as data: तू frames chip `informal`, the तुम्ही + -आ / कृपया end chips
+ * `formal`, and everything between stays `neutral`. आपण stays the course's "we" (L1-M10's row): the very-formal "you" job (docs/08 Q17)
  * is named in prose, never a display subject.
  *
  * ### 3. Forms — L2 never edits an L1 file
@@ -423,9 +423,10 @@
  *   who has only met `Lei` cannot speak to a friend at all; one who has only met `tu` is
  *   over-familiar at a shop counter, which is a smaller failure and one the `usage` line can warn
  *   about in words.
- * - **The schema's register chip has two values, `neutral` and `informal`** — there is nowhere for
- *   a genuine third tier to live as data, exactly the argument hi-mr's L2 briefs make about
- *   कृपया. So `Lei` would be a register the file could not label.
+ * - **The register chip had two values when this L1 was authored, `neutral` and `informal`** —
+ *   there was nowhere for a genuine third tier to live as data, exactly the argument hi-mr's L2
+ *   briefs made about कृपया. So `Lei` would have been a register the file could not label. #422
+ *   added `formal` for the L2s that teach that address; en-it L1 is unchanged by it.
  *
  * Concretely, and every module inherits it: `ciao` and `come stai?`, never `come sta?`;
  * `buongiorno` is taught as the daytime greeting that is polite AND usable with a friend, which is
@@ -910,9 +911,10 @@
  *   `s'il te plaît`, and no `es` in any `forms` list, so the index never carries a shape the
  *   course does not teach. M2's notes name `tu` and `salut` in prose as what the learner will
  *   HEAR and what a later level owes them; naming is not writing.
- * - **The schema's register chip has two values, `neutral` and `informal`** — every en-fr L1
- *   sentence chips `neutral`, and the politeness above neutral is carried in words
- *   (`s'il vous plaît`, M8) and in the `usage` line, never by a third chip.
+ * - **The register chip had two values when this L1 was authored, `neutral` and `informal`** —
+ *   every en-fr L1 sentence chips `neutral`, and the politeness above neutral is carried in words
+ *   (`s'il vous plaît`, M8) and in the `usage` line. #422 added `formal` for the L2s that teach
+ *   `vous` as an address; L1 keeps the two it used.
  * - **`je voudrais` stays out of L1.** It is the conditional of `vouloir` — a whole tense, spent
  *   on politeness the course already buys with `s'il vous plaît` — so M3 and M8 write `je veux`
  *   and let `usage` say when it would sound blunt. This is en-fr's `por`/`para`: named as
@@ -1138,9 +1140,10 @@
  *   index gets one key for both. `du` would have cost a whole second set of endings, its own
  *   imperative and `dein`/`dich`/`dir`. That is the argument for `Sie` on grounds the ladder can
  *   actually supply, rather than on politeness.
- * - **The schema's register chip has two values, `neutral` and `informal`** — every en-de L1
- *   sentence chips `neutral`, and politeness above neutral is carried by words (`bitte`, M8;
- *   `Ich möchte` rather than `Ich will`, M3) and by the `usage` line, never by a third chip.
+ * - **The register chip had two values when this L1 was authored, `neutral` and `informal`** —
+ *   every en-de L1 sentence chips `neutral`, and politeness above neutral is carried by words
+ *   (`bitte`, M8; `Ich möchte` rather than `Ich will`, M3) and by the `usage` line. #422 added
+ *   `formal` for the L2s that teach `Sie` as an address; L1 keeps the two it used.
  * - **`Wie geht's?` is named and not written.** It is the `du`-flavoured casual form, and `geht's`
  *   would be a fused single-token key (`surface.ts` keeps an inner apostrophe) spent on a
  *   contraction no L1 job needs. Displays write `Wie geht es Ihnen?`; `usage` says the other
@@ -1601,7 +1604,7 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         'धन्यवाद · आभारी आहे',
       ],
       notes: [
-        "REGISTER, decided for the whole level and repeated here because the prompt only ever shows an author the notes (the full decision record is docs/26-hi-mr-L2-brief-decisions.md; language of fields is unchanged from L1 — rules[].text and word note in English, every learner-facing line in Hindi in Devanagari, glossEn on every sentence): L1 taught तू as the everyday default (docs/08 Q16); this module teaches WHEN. The law: तू for a friend or family your own age or younger, तुम्ही for elders, strangers and counters. Author the same request in both registers side by side, chip the तू lines informal (the schema's only non-neutral register value), and carry the formal end — कृपया, आभारी आहे — in the usage line, because there is no formal chip.",
+        'REGISTER, decided for the whole level and repeated here because the prompt only ever shows an author the notes (the full decision record is docs/26-hi-mr-L2-brief-decisions.md; language of fields is unchanged from L1 — rules[].text and word note in English, every learner-facing line in Hindi in Devanagari, glossEn on every sentence): L1 taught तू as the everyday default (docs/08 Q16); this module teaches WHEN. The law: तू for a friend or family your own age or younger, तुम्ही for elders, strangers and counters. Author the same request in both registers side by side and let the chip carry the law now that #422 has widened it: तू lines chip `informal`, the तुम्ही + -आ frames and the कृपया / आभारी आहे end chip `formal`, and a line that is safe with anyone stays `neutral`. The usage line says WHO the frame is for; it no longer has to smuggle the tier in words.',
         "The imperative pair is the grammar of the module: informal = the bare stem (दे · कर · ये — L1 never taught दे: docs/15 recorded that debt on M10's द्या row, and it is paid here), polite = stem + -आ (द्या · करा · या · बसा; vowel stems contract, देणे → द्या). Hindi climbs three steps — दे → दो → दीजिए — and Marathi has TWO: there is no -इए tier, and reaching for one (*द्याजी, *करिये) is the Hindi habit to star. Politeness above तुम्ही + -आ goes into words (जरा, कृपया) or the future question, never into a new verb form.",
         'THE interference of the module, and the course\'s best false friend: Hindi आप does not map to आपण. आपण looks like आप and is the course\'s "we" — L1-M10\'s row, whose note teaches the inclusive/exclusive split — so *आपण द्या meant as "आप दीजिए" misfires twice. The polite "you" is तुम्ही (M2\'s row, आहात and all). आपण as a very formal "you" (आपण कुठे राहता?) is real Marathi — docs/08 open question 17 — but stays OUT of L2 displays; a usage line may name it. Tag the reach interference and spend a mistake on it.',
         'The softeners: जरा ("just / a moment\'s worth" — जरा पाणी द्या is the everyday please), कृपया (formal please — notice-board and announcement register; say so in usage), and the polite-future question मला … द्याल का? ("will you give?" — the तुम्ही cell of देणे\'s future, Hindi देंगे क्या?). A request shaped as a question is a move Hindi and Marathi share — transfer — so the work is the new cell द्याल, not the idea.',

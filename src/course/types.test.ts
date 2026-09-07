@@ -314,7 +314,7 @@ describe('ModuleContent against the modules that exist', () => {
           expect(module.rules[rule]).toBeDefined();
         }
         if (sentence.register !== undefined) {
-          expect(['neutral', 'informal']).toContain(sentence.register);
+          expect(['neutral', 'informal', 'formal']).toContain(sentence.register);
         }
       }
     }

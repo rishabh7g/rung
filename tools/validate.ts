@@ -88,7 +88,7 @@ export interface ModuleSentence {
   variations?: ModuleVariation[];
   mistake?: ModuleMistake;
   usage?: string;
-  register?: 'neutral' | 'informal';
+  register?: 'neutral' | 'informal' | 'formal';
   mnemonic?: string;
 }
 

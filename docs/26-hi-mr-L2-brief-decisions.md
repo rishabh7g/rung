@@ -27,9 +27,13 @@ friend or family your own age or younger; तुम्ही for elders, strange
 states which register its module speaks (M4/M7/M8 talk to strangers — तुम्ही; M6's plans are
 among friends — तू; M10 shows the same account in both). Marathi has no दीजिए tier: the
 imperative stops at तुम्ही + -आ, and politeness above it goes into words (जरा, कृपया) or the
-future question (द्याल का?). The schema's `register` enum is `neutral | informal` — there is no
-formal chip — so तू lines chip `informal` and the formal end (कृपया, आभारी आहे) is carried by
-`usage` in words. आपण stays the course's "we" (L1-M10's row): its very-formal "you" job
+future question (द्याल का?). The schema's `register` enum was `neutral | informal` when this
+decision was taken — there was no formal chip — so तू lines chipped `informal` and the formal end
+(कृपया, आभारी आहे) was carried by `usage` in words. **Addendum, 2026-09-07 (#422):** the enum is
+now `neutral | informal | formal`. The decision above stands unchanged in substance; only the
+carrier moves. तू lines still chip `informal`, the तुम्ही + -आ frames and the कृपया / आभारी आहे
+end now chip `formal` rather than hiding in `usage`, and `usage` returns to its own job — WHO the
+frame is for. आपण stays the course's "we" (L1-M10's row): its very-formal "you" job
 (docs/08 Q17) is named in prose only, never a display subject.
 
 ## 3. Forms — L2 never edits an L1 file
