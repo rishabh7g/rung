@@ -1,0 +1,534 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M4",
+  "title": "If and then",
+  "job": "Conditions, wishes, advice",
+  "prerequisites": ["L3-M1", "L3-M2", "L3-M3"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-07",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": ["simple_present", "future", "simple_past"],
+    "allowedPatterns": [
+      "जर + clause + तर + clause",
+      "clause + तर + clause",
+      "तुम्ही + V-आयला + पाहिजे",
+      "जर + V-लो/-लं + असतं + तर + …"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "जर … तर is the real conditional, and तर is the half that carries the weight: speech drops जर all the time — उद्या पाऊस आला तर मी येणार नाही — but never तर. Hindi's अगर … तो behaves exactly the same way."
+    },
+    {
+      "tag": "delta",
+      "text": "Advice is -आयला पाहिजे: तुम्ही आता जायला पाहिजे. The -आयला is L2-M5's purpose ending (जेवायला, खायला) doing a second job, and पाहिजे is impersonal — it never changes for person, gender or number."
+    },
+    {
+      "tag": "free",
+      "text": "पाहिजे has a second job you already have a word for: wanting. तुला काय पाहिजे? is मला काय हवं? with a firmer edge — Hindi's चाहिए sits in both spots too."
+    },
+    {
+      "tag": "delta",
+      "text": "The counterfactual — what would have happened — is the past form plus असतं: जर मी लवकर गेलो असतो तर मी त्याला भेटलो असतो. Both halves take it, and both agree with their own subject. This ONE frame is all L3 opens; the system is L4's."
+    },
+    {
+      "tag": "free",
+      "text": "नाहीतर is नाही and तर glued together, doing exactly what Hindi's नहीं तो does: लवकर जा, नाहीतर उशीर होईल. No new grammar — two words you own, in one shape."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M4-S01",
+      "display": "जर उद्या पाऊस आला तर मी येणार नाही",
+      "cue": "अगर कल बारिश हुई तो मैं नहीं आऊँगा",
+      "glossEn": "If it rains tomorrow, I won't come",
+      "literal": "अगर कल बारिश आई तो मैं आने-वाला नहीं",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "जर",
+            "cue": "अगर",
+            "tag": "free",
+            "forms": [],
+            "note": "\"If\" — the same word as Hindi's अगर in job, and like अगर it can be left out when तर is there."
+          },
+          {
+            "display": "तर",
+            "cue": "तो",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Then\" — the load-bearing half. It stands between the condition and the result, and it is never dropped."
+          },
+          {
+            "display": "पाऊस",
+            "cue": "बारिश",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Rain\" — masculine, and it COMES rather than falls: पाऊस आला, पाऊस येईल. Hindi says बारिश हुई; Marathi uses येणे."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "मराठी में बारिश 'होती' नहीं, आती है — पाऊस आला. और पाऊस पुल्लिंग है, इसलिए आला, आली नहीं.",
+      "sound": "पाऊस = पा‑ऊस, दो साफ़ स्वर; जर और तर दोनों छोटे और हल्के.",
+      "variations": [
+        {
+          "display": "उद्या पाऊस आला तर मी येणार नाही",
+          "cue": "कल बारिश हुई तो मैं नहीं आऊँगा",
+          "changed": "जर हटाया — बोलचाल में यही ज़्यादा सुनाई देता है, और मतलब वही रहता है."
+        },
+        {
+          "display": "जर उद्या पाऊस आला तर आपण घरी जाऊ या",
+          "cue": "अगर कल बारिश हुई तो चलो घर चलें",
+          "changed": "नतीजा बदला — L2-M6 वाला सुझाव, वही शर्त."
+        }
+      ],
+      "mistake": {
+        "display": "जर उद्या पाऊस झाला मी येणार नाही",
+        "why": "दो चूकें: बारिश मराठी में आती है (आला), और तर के बिना शर्त अधूरी रह जाती है."
+      },
+      "usage": "योजना बनाते वक़्त — और बारिश के मौसम में हर रोज़.",
+      "register": "neutral",
+      "mnemonic": "जर छोड़ सकते हो, तर कभी नहीं — वही जोड़ पूरा वाक्य टिकाता है."
+    },
+    {
+      "id": "L3-M4-S02",
+      "display": "जर मला वेळ असेल तर मी येईन",
+      "cue": "अगर मेरे पास वक़्त होगा तो मैं आऊँगा",
+      "glossEn": "If I have time, I'll come",
+      "literal": "अगर मुझे वक़्त होगा तो मैं आऊँगा",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "वेळ",
+            "cue": "वक़्त",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Time\" — masculine, and it comes to you in the मला frame: मला वेळ आहे, \"I have time\", never *मी वेळ आहे."
+          },
+          {
+            "display": "असेल",
+            "cue": "होगा",
+            "tag": "delta",
+            "forms": ["असेल"],
+            "note": "The future of आहे — \"will be\". A condition about tomorrow takes it: जर वेळ असेल तर…, where the present आहे would mean right now."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "'मेरे पास वक़्त है' मराठी में मला वेळ आहे है — पास वाला ढाँचा नहीं. यह वही मला फ़्रेम है जो भूक, कंटाळा और वाटतं के साथ चला आ रहा है.",
+      "sound": "वेळ = वेळ, आख़िर में मराठी ळ. असेल = अ‑सेल.",
+      "variations": [
+        {
+          "display": "जर तुला वेळ असेल तर मला सांग",
+          "cue": "अगर तेरे पास वक़्त हो तो मुझे बता",
+          "changed": "दूसरे की तरफ़ — मला → तुला, और नतीजा हुक्म बन गया (L2-M4 का सांग)."
+        },
+        {
+          "display": "मला आज वेळ आहे",
+          "cue": "मेरे पास आज वक़्त है",
+          "changed": "शर्त हटी — आज की बात, इसलिए असेल → आहे."
+        }
+      ],
+      "mistake": {
+        "display": "जर मी वेळ असेल तर मी येईन",
+        "why": "मी को कर्ता बना दिया. वक़्त आपके पास आता है: मला वेळ असेल."
+      },
+      "usage": "वादा करते वक़्त — और नरमी से टालते वक़्त भी.",
+      "register": "neutral",
+      "mnemonic": "आज का 'है' आहे, कल का 'होगा' असेल."
+    },
+    {
+      "id": "L3-M4-S03",
+      "display": "तुम्ही आता जायला पाहिजे",
+      "cue": "आपको अब जाना चाहिए",
+      "glossEn": "You should go now",
+      "literal": "आप अब जाने-को चाहिए",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "जायला",
+            "cue": "जाना",
+            "tag": "delta",
+            "forms": ["जायला", "उठायला", "वाचायला"],
+            "note": "जाणे with L2-M5's -आयला ending. Before पाहिजे it stops meaning \"in order to go\" and becomes simply \"to go\"."
+          },
+          {
+            "display": "पाहिजे",
+            "cue": "चाहिए",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Should / must\", and it never changes — not for person, not for gender, not for number. Hindi's चाहिए behaves the same way."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "हिंदी 'जाना चाहिए' में क्रिया नंगी रहती है; मराठी उसे -आयला पहनाती है. यही ending L2-M5 में मक़सद बताता था — यहाँ वह सलाह का हिस्सा है.",
+      "sound": "पाहिजे = पा‑हि‑जे, तीनों साफ़; बीच का 'हि' निगलो मत.",
+      "variations": [
+        {
+          "display": "तुला आता जायला पाहिजे",
+          "cue": "तुझे अब जाना चाहिए",
+          "changed": "दोस्त से — तुम्ही → तुला, पाहिजे वैसा ही (वह कभी नहीं बदलता)."
+        },
+        {
+          "display": "मला आता जायला पाहिजे",
+          "cue": "मुझे अब जाना चाहिए",
+          "changed": "अपनी बात — सलाह से मजबूरी: 'मुझे निकलना है'."
+        }
+      ],
+      "mistake": {
+        "display": "तुम्ही आता जा पाहिजे",
+        "why": "हुक्म वाला जा रख दिया. सलाह में क्रिया को -आयला चाहिए: जायला पाहिजे."
+      },
+      "usage": "किसी को सलाह देते वक़्त — और महफ़िल से उठते वक़्त अपने बारे में भी.",
+      "register": "formal",
+      "mnemonic": "-आयला + पाहिजे = 'करना चाहिए'. पाहिजे पत्थर है, हिलता नहीं."
+    },
+    {
+      "id": "L3-M4-S04",
+      "display": "मला उद्या लवकर उठायला पाहिजे",
+      "cue": "मुझे कल जल्दी उठना चाहिए",
+      "glossEn": "I should get up early tomorrow",
+      "literal": "मुझे कल जल्दी उठने-को चाहिए",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "उठायला",
+            "cue": "उठना",
+            "tag": "delta",
+            "forms": ["उठायला"],
+            "note": "उठणे with the same -आयला. Every verb makes this shape the same way — उठायला, वाचायला, करायला, जायला."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "यह सलाह अपने आप को भी दी जा सकती है — मला … पाहिजे. फ़्रेम वही मला वाली है जो पसंद, ज़रूरत और राय के साथ चलती आई है.",
+      "sound": "उठायला = उ‑ठा‑य‑ला, चार हल्के हिस्से.",
+      "variations": [
+        {
+          "display": "तुला उद्या लवकर उठायला पाहिजे",
+          "cue": "तुझे कल जल्दी उठना चाहिए",
+          "changed": "सलाह दूसरे को — मला → तुला."
+        },
+        {
+          "display": "मला उद्या लवकर उठायला पाहिजे, नाहीतर उशीर होईल",
+          "cue": "मुझे कल जल्दी उठना चाहिए, नहीं तो देर हो जाएगी",
+          "changed": "वजह जुड़ी — नाहीतर वाली चेतावनी पीछे लग गई (S09)."
+        }
+      ],
+      "mistake": {
+        "display": "मी उद्या लवकर उठायला पाहिजे",
+        "why": "मी को कर्ता बना दिया. पाहिजे मला/तुला की फ़्रेम में रहता है."
+      },
+      "usage": "अपने इरादे या मजबूरी की बात — रात को सोने से पहले की लाइन.",
+      "register": "neutral",
+      "mnemonic": "सलाह किसी को भी — मला, तुला, तुम्हाला. पाहिजे तब भी वही."
+    },
+    {
+      "id": "L3-M4-S05",
+      "display": "जर मी लवकर गेलो असतो तर मी त्याला भेटलो असतो",
+      "cue": "अगर मैं जल्दी गया होता तो मैं उससे मिला होता",
+      "glossEn": "If I had gone early, I would have met him",
+      "literal": "अगर मैं जल्दी गया होता तो मैं उस-को मिला होता",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "असतो",
+            "cue": "होता",
+            "tag": "delta",
+            "forms": ["असतो", "असती", "असतं", "असता", "असते"],
+            "note": "The counterfactual helper: a past form plus असतो says what would have happened. Both halves of the sentence take it."
+          },
+          {
+            "display": "त्याला",
+            "cue": "उसको",
+            "tag": "delta",
+            "forms": ["त्याला", "तिला", "त्यांना"],
+            "note": "तो in the -ला frame — the shape भेटणे needs for the person met (L2-M10's मित्राला, now a pronoun)."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "यह वह बात है जो हुई ही नहीं. दोनों आधे हिस्सों में असतो लगता है — हिंदी 'गया होता … मिला होता' की तरह, और वहाँ भी दोनों जगह लगता है.",
+      "sound": "असतो = अ‑स‑तो; गेलो असतो को एक साँस में मत जोड़ो, दो शब्द रहते हैं.",
+      "variations": [
+        {
+          "display": "जर मी लवकर गेले असते तर मी तिला भेटले असते",
+          "cue": "अगर मैं जल्दी गई होती तो मैं उससे मिली होती",
+          "changed": "बोलने वाली औरत — गेलो → गेले, असतो → असते, और मिलने वाली भी बदली."
+        },
+        {
+          "display": "मी लवकर गेलो असतो तर बरं झालं असतं",
+          "cue": "मैं जल्दी गया होता तो अच्छा होता",
+          "changed": "जर हटाया और नतीजा बदला — 'अच्छा होता' वाली अफ़सोस की लाइन."
+        }
+      ],
+      "mistake": {
+        "display": "जर मी लवकर गेलो तर मी त्याला भेटलो",
+        "why": "असतो छोड़ दिया. उसके बिना यह बीती हुई सच्ची बात लगती है, अफ़सोस नहीं."
+      },
+      "usage": "अफ़सोस जताते वक़्त — 'काश जल्दी गया होता'.",
+      "register": "neutral",
+      "mnemonic": "जो हुआ ही नहीं, उसके दोनों सिरों पर असतो."
+    },
+    {
+      "id": "L3-M4-S06",
+      "display": "जर मला वेळ असता तर मी आलो असतो",
+      "cue": "अगर मेरे पास वक़्त होता तो मैं आया होता",
+      "glossEn": "If I had had time, I would have come",
+      "literal": "अगर मुझे वक़्त होता तो मैं आया होता",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "असता",
+            "cue": "होता",
+            "tag": "delta",
+            "forms": ["असतो", "असती", "असतं", "असता", "असते"],
+            "note": "The same helper in the condition half, agreeing with वेळ (masculine). S05 showed it in the result half; a full counterfactual carries both."
+          }
+        ],
+        "rules": [3, 0]
+      },
+      "trap": "असेल (S02) आने वाले कल की बात है; असता उस कल की जो आया ही नहीं. एक अक्षर का फ़र्क़, और पूरा समय बदल जाता है.",
+      "sound": "असता = अ‑स‑ता; असेल से सिर्फ़ आख़िरी हिस्से का फ़र्क़.",
+      "variations": [
+        {
+          "display": "जर मला वेळ असेल तर मी येईन",
+          "cue": "अगर मेरे पास वक़्त होगा तो मैं आऊँगा",
+          "changed": "अफ़सोस → वादा: असता → असेल, आलो असतो → येईन (S02)."
+        },
+        {
+          "display": "मला वेळ असता तर मी आलो असतो",
+          "cue": "मेरे पास वक़्त होता तो मैं आया होता",
+          "changed": "जर हटाया — तर अकेला भी शर्त टिका लेता है."
+        }
+      ],
+      "mistake": {
+        "display": "जर मला वेळ असती तर मी आलो असतो",
+        "why": "स्त्रीलिंग वाला असती लगा दिया. वेळ पुल्लिंग है — वेळ असता."
+      },
+      "usage": "न आ पाने का अफ़सोस जताते वक़्त — माफ़ी के साथ.",
+      "register": "neutral",
+      "mnemonic": "असेल = होगा, असता = होता. एक भविष्य, एक अनहुआ अतीत."
+    },
+    {
+      "id": "L3-M4-S07",
+      "display": "तुला काय पाहिजे?",
+      "cue": "तुझे क्या चाहिए?",
+      "glossEn": "What do you want?",
+      "literal": "तुझे क्या चाहिए?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "पाहिजे",
+            "cue": "चाहिए",
+            "tag": "free",
+            "forms": [],
+            "note": "The same पाहिजे as S03, doing its other job: wanting. It overlaps हवं (L1-M3) — पाहिजे is a little firmer, हवं a little softer."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "पाहिजे और हवं दोनों 'चाहिए' हैं. फ़र्क़ सुर का है: दुकान में हवं नरम है, और पाहिजे थोड़ा सीधा — बड़ों से हवं ही बेहतर.",
+      "sound": "पाहिजे यहाँ वैसा ही बोला जाता है; सवाल का सुर काय पर उठता है.",
+      "variations": [
+        {
+          "display": "तुम्हाला काय पाहिजे?",
+          "cue": "आपको क्या चाहिए?",
+          "changed": "बड़ों से — तुला → तुम्हाला (L2-M5)."
+        },
+        {
+          "display": "तुला काय हवं?",
+          "cue": "तुझे क्या चाहिए?",
+          "changed": "वही सवाल, नरम शब्द — L1-M3 वाला हवं."
+        }
+      ],
+      "mistake": {
+        "display": "तू काय पाहिजे?",
+        "why": "तू को कर्ता बना दिया. यह भी मला/तुला वाली फ़्रेम है: तुला काय पाहिजे?"
+      },
+      "usage": "दुकान में, घर में — और किसी की ज़रूरत पूछते वक़्त.",
+      "register": "informal",
+      "mnemonic": "एक ही पाहिजे: 'चाहिए' भी, 'करना चाहिए' भी — साथ की क्रिया बताती है कौन-सा."
+    },
+    {
+      "id": "L3-M4-S08",
+      "display": "जर तुला जमलं तर मला सांग",
+      "cue": "अगर तुझसे हो पाए तो मुझे बता",
+      "glossEn": "If you can manage it, let me know",
+      "literal": "अगर तुझे जमा तो मुझे बता",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "जमलं",
+            "cue": "हो पाया",
+            "tag": "delta",
+            "forms": ["जमेल", "जमणार", "जमलं"],
+            "note": "जमणे's past-shaped cell, which is what a condition takes: जर जमलं तर…. L2-M6 taught जमेल for the question and जमणार नाही for the refusal."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "शर्त वाले आधे हिस्से में मराठी अक्सर भूतकाल जैसा रूप रखती है, चाहे बात आगे की हो — पाऊस आला तर, जमलं तर. हिंदी भी यही करती है: 'हो पाया तो'.",
+      "sound": "जमलं = ज‑मलं, आख़िर नाक से हल्का.",
+      "variations": [
+        {
+          "display": "जर तुम्हाला जमलं तर मला सांगा",
+          "cue": "अगर आपसे हो पाए तो मुझे बताइए",
+          "changed": "बड़ों से — तुला → तुम्हाला और सांग → सांगा (L2-M1)."
+        },
+        {
+          "display": "तुला जमलं तर ये",
+          "cue": "तुझसे हो पाए तो आ",
+          "changed": "जर हटा, नतीजा छोटा — दोस्त को न्योता (L2-M1 का ये)."
+        }
+      ],
+      "mistake": {
+        "display": "जर तू जमलं तर मला सांग",
+        "why": "तू कर्ता नहीं है. जमणे तुला माँगता है — L2-M6 का वही नियम."
+      },
+      "usage": "किसी से मदद या साथ माँगते वक़्त — दबाव डाले बिना.",
+      "register": "informal",
+      "mnemonic": "शर्त का आधा हिस्सा बीते हुए रूप में — दोनों भाषाओं में."
+    },
+    {
+      "id": "L3-M4-S09",
+      "display": "लवकर जा, नाहीतर उशीर होईल",
+      "cue": "जल्दी जा, नहीं तो देर हो जाएगी",
+      "glossEn": "Go early, otherwise you'll be late",
+      "literal": "जल्दी जा, नहीं-तो देर होगी",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "नाहीतर",
+            "cue": "नहीं तो",
+            "tag": "free",
+            "forms": [],
+            "note": "नाही + तर in one word — \"otherwise\". Hindi's नहीं तो is the same two pieces, kept apart."
+          },
+          {
+            "display": "उशीर",
+            "cue": "देर",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Lateness\" — masculine, so उशीर होईल, उशीर झाला. Hindi's देर is feminine, which is exactly what makes the agreement slip."
+          },
+          {
+            "display": "होईल",
+            "cue": "हो जाएगी",
+            "tag": "delta",
+            "forms": ["होईल", "होतो", "होता"],
+            "note": "The future of होणे — \"will happen / will become\". उशीर होईल is the everyday \"it'll get late\"."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "हिंदी की 'देर' स्त्रीलिंग है, मराठी का उशीर पुल्लिंग — इसलिए 'देर हो जाएगी' यहाँ उशीर होईल है, कोई स्त्रीलिंग रूप नहीं.",
+      "sound": "नाहीतर = ना‑ही‑तर, एक शब्द की तरह; उशीर = उ‑शीर.",
+      "variations": [
+        {
+          "display": "लवकर जा, नाहीतर पाऊस येईल",
+          "cue": "जल्दी जा, नहीं तो बारिश आ जाएगी",
+          "changed": "ख़तरा बदला — उशीर → पाऊस, और वह येणे लेता है (S01)."
+        },
+        {
+          "display": "लवकर ये, नाहीतर उशीर होईल",
+          "cue": "जल्दी आ, नहीं तो देर हो जाएगी",
+          "changed": "जाने की जगह आना — जा → ये (L2-M1), चेतावनी वही."
+        }
+      ],
+      "mistake": {
+        "display": "लवकर जा, नाहीतर उशीर होईल का?",
+        "why": "चेतावनी को सवाल बना दिया. का यहाँ नहीं आता — यह डर दिखाना है, पूछना नहीं."
+      },
+      "usage": "किसी को जल्दी कराते वक़्त — घर में रोज़.",
+      "register": "informal",
+      "mnemonic": "नाही + तर = नाहीतर. हिंदी वही दो शब्द अलग रखती है."
+    },
+    {
+      "id": "L3-M4-S10",
+      "display": "तुम्ही रोज थोडं वाचायला पाहिजे",
+      "cue": "आपको रोज़ थोड़ा पढ़ना चाहिए",
+      "glossEn": "You should read a little every day",
+      "literal": "आप रोज़ थोड़ा पढ़ने-को चाहिए",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "वाचायला",
+            "cue": "पढ़ना",
+            "tag": "delta",
+            "forms": ["वाचायला"],
+            "note": "वाचणे with the same -आयला ending — the third verb in this module to take it, which is the point: every verb makes it the same way."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "सलाह देते वक़्त तुम्ही वाला रूप ही सुरक्षित है. तुला … पाहिजे दोस्त के लिए है; बड़ों या अजनबी को तुम्ही, और सुर नरम.",
+      "sound": "वाचायला = वा‑चा‑य‑ला; जायला और उठायला जैसा ही ढाँचा.",
+      "variations": [
+        {
+          "display": "तुम्ही रोज थोडं मराठी वाचायला पाहिजे",
+          "cue": "आपको रोज़ थोड़ी मराठी पढ़नी चाहिए",
+          "changed": "चीज़ जुड़ी — मराठी, और सलाह और ठोस हो गई."
+        },
+        {
+          "display": "मी रोज थोडं वाचतो",
+          "cue": "मैं रोज़ थोड़ा पढ़ता हूँ",
+          "changed": "सलाह → आदत: पाहिजे हटा और L1-M4 वाला वाचतो लौटा."
+        }
+      ],
+      "mistake": {
+        "display": "तुम्ही रोज थोडं वाचा पाहिजे",
+        "why": "हुक्म वाला वाचा रख दिया. सलाह में -आयला वाला रूप चाहिए: वाचायला पाहिजे."
+      },
+      "usage": "सलाह देते वक़्त — शिक्षक, बड़े, या ख़ुद को.",
+      "register": "formal",
+      "mnemonic": "हर क्रिया एक ही तरह से सलाह बनती है: -आयला + पाहिजे."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M4-C01",
+      "display": "जर उद्या पाऊस आला तर मी येणार नाही",
+      "cue": "अगर कल बारिश हुई तो मैं नहीं आऊँगा"
+    },
+    {
+      "id": "L3-M4-C02",
+      "display": "जर मला वेळ असेल तर मी येईन",
+      "cue": "अगर मेरे पास वक़्त होगा तो मैं आऊँगा"
+    },
+    { "id": "L3-M4-C03", "display": "तुम्ही आता जायला पाहिजे", "cue": "आपको अब जाना चाहिए" },
+    {
+      "id": "L3-M4-C04",
+      "display": "मला उद्या लवकर उठायला पाहिजे",
+      "cue": "मुझे कल जल्दी उठना चाहिए"
+    },
+    {
+      "id": "L3-M4-C05",
+      "display": "जर मी लवकर गेलो असतो तर मी त्याला भेटलो असतो",
+      "cue": "अगर मैं जल्दी गया होता तो मैं उससे मिला होता"
+    },
+    {
+      "id": "L3-M4-C06",
+      "display": "जर मला वेळ असता तर मी आलो असतो",
+      "cue": "अगर मेरे पास वक़्त होता तो मैं आया होता"
+    },
+    { "id": "L3-M4-C07", "display": "तुला काय पाहिजे?", "cue": "तुझे क्या चाहिए?" },
+    { "id": "L3-M4-C08", "display": "जर तुला जमलं तर मला सांग", "cue": "अगर तुझसे हो पाए तो मुझे बता" },
+    { "id": "L3-M4-C09", "display": "लवकर जा, नाहीतर उशीर होईल", "cue": "जल्दी जा, नहीं तो देर हो जाएगी" },
+    {
+      "id": "L3-M4-C10",
+      "display": "तुम्ही रोज थोडं वाचायला पाहिजे",
+      "cue": "आपको रोज़ थोड़ा पढ़ना चाहिए"
+    },
+    { "id": "L3-M4-C11", "display": "तुम्हाला काय पाहिजे?", "cue": "आपको क्या चाहिए?" },
+    { "id": "L3-M4-C12", "display": "मला आज वेळ आहे", "cue": "मेरे पास आज वक़्त है" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

@@ -80,3 +80,68 @@ masculine where Hindi's पढ़ाई is feminine.
 76. **शाळेत versus शाळेमध्ये (M2-S06).** The module writes शाळेत. Is शाळेमध्ये equally ordinary?
 77. **Every pronunciation gloss in this wave** — उठून, होऊन, स्वयंपाक, ऑफिसच्या — is written, not
     heard.
+
+## Wave 2 — L3-M3 "Opinions with reasons", L3-M4 "If and then", L3-M5 "What someone said"
+
+|                     | L3-M3 Opinions | L3-M4 If and then | L3-M5 What someone said |
+| ------------------- | -------------- | ----------------- | ----------------------- |
+| sentences           | 10             | 10                | 10                      |
+| new word rows       | 11 of 25       | 14 of 25          | 10 of 25                |
+| index growth        | +26 (481 → 507) | +22 (507 → 529)  | +8 (529 → 537)          |
+| pool items          | 12             | 12                | 12                      |
+| tokens per sentence | 3–10 (bounds 3–10) | 3–11 (bounds 3–11) | 4–8 (bounds 3–11)  |
+| enrichment          | full           | full              | full                    |
+| register chips      | 8 `neutral`, 2 `formal` | 6 `neutral`, 3 `formal`, 1 `informal` | 9 `neutral`, 1 `formal` |
+
+**M3** is the last module the enrichment law compels, and it opens वाटणे — the row the level's
+decision 3 assigned here rather than to M6, with its note written true of both jobs from the
+start. की does the second of its three jobs (the choosing-or was L2-M9's, reported speech is
+M5's), and the agreement words are deliberately grammar-free: बरोबर, चूक and खरं sit in the
+हे … आहे frame the learner has had since L1-M8. Softening is words, not grammar — कदाचित in
+front, ना at the end — which is the register law of L2-M1 applied without adding to it. आहे's own
+past, होता / होती / होतं, arrives quietly on the last sentence because a reason often lies in the
+past.
+
+**M4** takes the conditional in the order a speaker meets it: the real one first (जर … तर, with
+तर named as the half that never drops), then advice on -आयला पाहिजे, then exactly ONE counterfactual
+frame — past plus असतो — with the note saying in words that the system belongs to L4-M3. पाहिजे's
+second job (wanting, beside L1-M3's हवं) is shown rather than described, and नाहीतर closes the
+module as two owned words in one shape. वेळ enters on the मला frame, which is the fifth module in
+a row to reuse it.
+
+**M5** is the cheapest lesson in the level and says so: Marathi does not backshift, and neither
+does Hindi, so a Hindi speaker is already right. The work is the verb — म्हणणे, whose past agrees
+with the speaker and never takes ने — set directly against L2-M10's त्याने सांगितलं, which takes
+both. That pair is the module. असं is L3-M3's word doing its reporting job, which lets the report
+follow the words instead of opening the sentence, and विचारणे carries a reported question whose
+question word stays where the answer would sit (L1-M2's law, untouched by reporting).
+
+### Seams held
+
+- **बोललो stays pinned.** M5 teaches म्हणणे and does not stretch it over बोलणे to close docs/15
+  Q29 — the brief says why that would poison both rows, and the level's decision 3 stands.
+- **वाटणे has one row** (M3's), as decision 4 assigned. M6 will point back at it.
+- **की stays L2-M9's key** across all three jobs; no second row was opened for it here.
+- **No L1 or L2 file changed** — `git diff --stat` over both is empty.
+- Every display in every sentence, variation and pool item resolves against the module's own
+  cumulative index.
+
+### Open questions for a native pass — wave 2
+
+78. **माझ्या मते (M3-S02).** Shipped as the slightly more formal twin of मला वाटतं. Is it heard in
+    ordinary speech, or is it a written register?
+79. **चूक as an adjective (M3-S04).** हे चूक आहे is shipped as ordinary. Is चूकीचं the form a
+    native would use in the predicate?
+80. **The tag ना (M3-S05).** Written as identical to Hindi's ना. Are there placements where
+    Marathi's differs?
+81. **असेल against असता (M4-S02, S06).** The module splits them as future versus counterfactual.
+    Is that the whole of it, or does असेल carry a "might be" sense the module should have named?
+82. **जमलं in a condition (M4-S08).** Shipped as the past-shaped conditional. Correct, and is
+    जमेल तर also heard?
+83. **उशीर as masculine (M4-S09).** Shipped as masculine against Hindi's feminine देर. Confirm.
+84. **म्हणाला without ने (M5).** The module states it flatly. Is there any register or region
+    where त्याने म्हटलं is used, and would a learner hear it?
+85. **The असं order (M5-S06).** Shipped as equally ordinary with the की order. Is one of them the
+    default in speech?
+86. **Quoted speech punctuation (M5-S09).** Written with straight double quotes. Is that the house
+    convention a Marathi reader expects, and does it render well at 360 px?

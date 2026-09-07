@@ -1,0 +1,484 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M3",
+  "title": "Opinions with reasons",
+  "job": "Agree, disagree, soften — reasons attached",
+  "prerequisites": ["L3-M1", "L3-M2"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-07",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "मला वाटतं की + clause",
+      "माझ्या मते + clause",
+      "हे बरोबर आहे / हे चूक आहे",
+      "clause + कारण + clause",
+      "कदाचित + clause"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "मला वाटतं is the opinion frame, and it is a dative one — the same shape as मला आवडतं and मला हवं (L1-M1, L1-M3). वाटणे is the seems-and-feels verb; \"I think\" is one of its jobs, and L3-M6 uses the other (मला काळजी वाटते)."
+    },
+    {
+      "tag": "free",
+      "text": "की opens the clause: मला वाटतं की हे महाग आहे. It is L2-M9's own की — there the choosing-or (चहा की कॉफी?), here the joiner, and reported speech in L3-M5 takes the same word again. One key, three jobs, exactly as हा/ही/हे carry two."
+    },
+    {
+      "tag": "free",
+      "text": "Agreeing and disagreeing need no new grammar: बरोबर, चूक and खरं sit in the हे … आहे frame you have had since L1-M8, and none of the three bends — हे बरोबर आहे, ही गोष्ट बरोबर आहे."
+    },
+    {
+      "tag": "delta",
+      "text": "Softening is done with words, not with grammar: कदाचित (\"maybe\") in front, थोडं inside, and the tag ना at the end — बरोबर आहे ना?. Disagreeing with an elder reaches for कदाचित first and keeps the तुम्ही register (L2-M1)."
+    },
+    {
+      "tag": "free",
+      "text": "The reasons are already yours: कारण before the reason, म्हणून after it (L1-M9). This module only attaches them to an opinion instead of a feeling. Two clauses is the ceiling here; a third belongs in L3-M10's story."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M3-S01",
+      "display": "मला वाटतं की हे महाग आहे",
+      "cue": "मुझे लगता है कि यह महँगा है",
+      "glossEn": "I think this is expensive",
+      "literal": "मुझे लगता-है कि यह महँगा(-रूप-स्थिर) है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "वाटतं",
+            "cue": "लगता है",
+            "tag": "delta",
+            "forms": ["वाटतं", "वाटते", "वाटतो", "वाटत"],
+            "note": "वाटणे — \"it seems / it feels\". मला वाटतं is \"I think\", and the same verb carries feelings in L3-M6: मला काळजी वाटते."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "यह फ़्रेम आपकी पुरानी है: मला आवडतं, मला हवं, और अब मला वाटतं. सोचने वाला कर्ता नहीं है — मला ही रहता है, ठीक हिंदी के 'मुझे लगता है' की तरह.",
+      "sound": "वाटतं = वा‑टतं, आख़िर नाक से हल्का; 'वाटते' औरत के लिए नहीं, चीज़ के लिए बदलता है.",
+      "variations": [
+        {
+          "display": "मला वाटतं की ही भाजी स्वस्त आहे",
+          "cue": "मुझे लगता है कि यह सब्ज़ी सस्ती है",
+          "changed": "राय बदली — दूसरा खंड पूरा वाक्य है, इसलिए उसमें अपने नियम चलते हैं (L2-M3)."
+        },
+        {
+          "display": "मला असं वाटत नाही",
+          "cue": "मुझे ऐसा नहीं लगता",
+          "changed": "नकार — वाटत नाही, L2-M8 वाला वही -त नाही साँचा."
+        }
+      ],
+      "mistake": {
+        "display": "मी वाटतो की हे महाग आहे",
+        "why": "अपने को कर्ता बना दिया. वाटणे मला की फ़्रेम में चलता है: मला वाटतं."
+      },
+      "usage": "अपनी राय देने की सबसे आम शुरुआत — दुकान में, दफ़्तर में, बातचीत में.",
+      "register": "neutral",
+      "mnemonic": "जो पसंद और ज़रूरत के साथ हुआ, वही राय के साथ भी: मला."
+    },
+    {
+      "id": "L3-M3-S02",
+      "display": "माझ्या मते ही भाजी चांगली आहे",
+      "cue": "मेरे मत में यह सब्ज़ी अच्छी है",
+      "glossEn": "In my opinion this vegetable is good",
+      "literal": "मेरे मत-में यह सब्ज़ी अच्छी है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "मते",
+            "cue": "मत में",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"In the opinion of\" — मत with L1-M7's -े ending frozen onto it. It only ever appears after a genitive: माझ्या मते, त्याच्या मते."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "माझ्या मते थोड़ा किताबी है और मला वाटतं रोज़ का — दोनों सही हैं, पर बहस या दफ़्तर में पहला ज़्यादा वज़नदार लगता है.",
+      "sound": "मते = म‑ते, दोनों छोटे; माझ्या के साथ एक ही साँस में.",
+      "variations": [
+        {
+          "display": "माझ्या मते हे बरोबर आहे",
+          "cue": "मेरे मत में यह सही है",
+          "changed": "राय का दूसरा हिस्सा बदला — बरोबर (S04)."
+        },
+        {
+          "display": "मला वाटतं की ही भाजी चांगली आहे",
+          "cue": "मुझे लगता है कि यह सब्ज़ी अच्छी है",
+          "changed": "वही राय, रोज़ की शक्ल में — और की वापस आ गया (S01)."
+        }
+      ],
+      "mistake": {
+        "display": "माझा मते ही भाजी चांगली आहे",
+        "why": "माझा झुका नहीं. मते के आगे मालिक हमेशा झुकता है: माझ्या मते (L3-M2)."
+      },
+      "usage": "बहस में, और किसी को सलाह देते वक़्त — थोड़ा औपचारिक.",
+      "register": "neutral",
+      "mnemonic": "मते के आगे हमेशा झुका हुआ मालिक — माझ्या, त्याच्या."
+    },
+    {
+      "id": "L3-M3-S03",
+      "display": "हे बरोबर आहे",
+      "cue": "यह सही है",
+      "glossEn": "That's right",
+      "literal": "यह सही है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "बरोबर",
+            "cue": "सही",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Right / correct\", invariable: हे बरोबर आहे, ही गोष्ट बरोबर आहे. It also means \"along with\" — the sense a usage line names but no display shows."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "बरोबर का दूसरा अर्थ 'साथ' भी है (माझ्याबरोबर = मेरे साथ). इस मॉड्यूल में सिर्फ़ 'सही' वाला काम है; दूसरा अर्थ सुनने में आएगा, लिखने में नहीं.",
+      "sound": "बरोबर = ब‑रो‑बर, बीच का 'रो' लंबा.",
+      "variations": [
+        {
+          "display": "हे बरोबर नाही",
+          "cue": "यह सही नहीं है",
+          "changed": "नकार — आहे → नाही, कुछ और नहीं बदला (L1-M2)."
+        },
+        {
+          "display": "तुमचं बरोबर आहे",
+          "cue": "आपका कहना सही है",
+          "changed": "तुमचं जुड़ा — 'आपकी बात सही है' का रोज़ का मराठी रूप."
+        }
+      ],
+      "mistake": {
+        "display": "ही बरोबरी आहे",
+        "why": "विशेषण की तरह झुका दिया. बरोबर व्यंजन पर ख़त्म होता है और कभी नहीं बदलता (L2-M3)."
+      },
+      "usage": "सहमति की सबसे छोटी लाइन — बातचीत में हर दो मिनट पर.",
+      "register": "neutral",
+      "mnemonic": "बरोबर, चूक, खरं — तीनों पत्थर, कोई नहीं झुकता."
+    },
+    {
+      "id": "L3-M3-S04",
+      "display": "मला वाटतं की हे चूक आहे",
+      "cue": "मुझे लगता है कि यह ग़लत है",
+      "glossEn": "I think that's wrong",
+      "literal": "मुझे लगता-है कि यह ग़लत है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "चूक",
+            "cue": "ग़लत",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Wrong\", and also \"a mistake\" as a noun: ही माझी चूक आहे. Hindi's ग़लत is an adjective only; चूक does both jobs."
+          }
+        ],
+        "rules": [2, 0]
+      },
+      "trap": "सीधे 'हे चूक आहे' बोलना मराठी में भी तीखा लगता है. मला वाटतं की … उसे नरम कर देता है — असहमति हमेशा राय की शक्ल में कहो.",
+      "sound": "चूक = चूक, लंबा 'ऊ' और आख़िर का 'क' साफ़.",
+      "variations": [
+        {
+          "display": "ही माझी चूक आहे",
+          "cue": "यह मेरी ग़लती है",
+          "changed": "विशेषण → चीज़: 'ग़लती' — वही शब्द, दूसरा काम, और अब माझी उसके साथ."
+        },
+        {
+          "display": "कदाचित हे चूक आहे",
+          "cue": "शायद यह ग़लत है",
+          "changed": "और नरम — कदाचित आगे लगा दिया (S07)."
+        }
+      ],
+      "mistake": {
+        "display": "मला वाटतं की हे चूकीचं आहे",
+        "why": "विशेषण बनाने की कोशिश. रोज़ की मराठी सीधे चूक कहती है — हे चूक आहे."
+      },
+      "usage": "असहमति — नरम शुरुआत के साथ, ख़ासकर बड़ों के सामने.",
+      "register": "neutral",
+      "mnemonic": "चूक एक ही शब्द में 'ग़लत' और 'ग़लती' दोनों है."
+    },
+    {
+      "id": "L3-M3-S05",
+      "display": "हे खरं आहे ना?",
+      "cue": "यह सच है ना?",
+      "glossEn": "That's true, isn't it?",
+      "literal": "यह सच(नपुं.) है ना?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "खरं",
+            "cue": "सच",
+            "tag": "delta",
+            "forms": ["खरा", "खरी", "खरं"],
+            "note": "\"True / real\" — it bends like चांगला: खरा मित्र, खरी गोष्ट, खरं आहे. The bare खरं is the everyday \"that's true\"."
+          },
+          {
+            "display": "ना",
+            "cue": "ना",
+            "tag": "free",
+            "forms": [],
+            "note": "The tag that asks for agreement, exactly as Hindi's ना does: बरोबर आहे ना?. It softens a statement into a question."
+          }
+        ],
+        "rules": [3, 2]
+      },
+      "trap": "ना हिंदी से जस का तस आया है — यहाँ कुछ सीखना नहीं, सिर्फ़ इस्तेमाल करना है. और वह लाइन को नरम करता है, इसलिए बड़ों के सामने काम आता है.",
+      "sound": "खरं = ख‑रं, आख़िर नाक से. ना हल्का और ऊपर उठता हुआ.",
+      "variations": [
+        {
+          "display": "ही गोष्ट खरी आहे",
+          "cue": "यह बात सच है",
+          "changed": "गोष्ट(स्त्री.) आया — इसलिए खरं → खरी (S09)."
+        },
+        {
+          "display": "हे खरं आहे",
+          "cue": "यह सच है",
+          "changed": "ना हटाया — अब यह सवाल नहीं, बयान है."
+        }
+      ],
+      "mistake": {
+        "display": "हे खरा आहे ना?",
+        "why": "पुल्लिंग वाला खरा लगा दिया. यहाँ कोई चीज़ नहीं है, सिर्फ़ 'यह' — नपुंसक, इसलिए खरं."
+      },
+      "usage": "सहमति माँगते वक़्त — बातचीत को चालू रखने वाली लाइन.",
+      "register": "neutral",
+      "mnemonic": "ना = 'है ना?'. हिंदी से मुफ़्त, और हर बात को नरम कर देता है."
+    },
+    {
+      "id": "L3-M3-S06",
+      "display": "मला वाटतं की चहा चांगला आहे, कारण तो स्वस्त आहे",
+      "cue": "मुझे लगता है कि चाय अच्छी है, क्योंकि वह सस्ती है",
+      "glossEn": "I think tea is good, because it's cheap",
+      "literal": "मुझे लगता-है कि चाय अच्छा(पु.) है, क्योंकि वह सस्ता(-रूप-स्थिर) है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "कारण",
+            "cue": "क्योंकि",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Because\" — L1-M9's word, now attached to an opinion instead of a feeling. It stands before its reason, exactly as क्योंकि does."
+          }
+        ],
+        "rules": [4, 0]
+      },
+      "trap": "तीन खंड एक साथ मत जोड़ो. राय + वजह यहाँ की सीमा है; तीसरा खंड L3-M10 की कहानी का काम है.",
+      "sound": "कारण = का‑रण, आख़िरी 'ण' मूर्धन्य; उससे पहले हल्का ठहराव.",
+      "variations": [
+        {
+          "display": "चहा चांगला आहे, कारण तो स्वस्त आहे",
+          "cue": "चाय अच्छी है, क्योंकि वह सस्ती है",
+          "changed": "राय की शुरुआत हटाई — सीधा दावा, वही वजह."
+        },
+        {
+          "display": "चहा स्वस्त आहे, म्हणून तो चांगला आहे",
+          "cue": "चाय सस्ती है, इसलिए वह अच्छी है",
+          "changed": "वजह पहले, नतीजा बाद में — कारण → म्हणून, क्रम उलटा (L1-M9)."
+        }
+      ],
+      "mistake": {
+        "display": "मला वाटतं की चहा चांगला आहे, म्हणून तो स्वस्त आहे",
+        "why": "कारण और म्हणून उलट दिए. म्हणून नतीजा जोड़ता है, वजह नहीं — यहाँ लाइन कहती है 'इसलिए वह सस्ती है'."
+      },
+      "usage": "राय को वजह के साथ रखते वक़्त — बहस की सबसे काम की शक्ल.",
+      "register": "neutral",
+      "mnemonic": "कारण वजह के आगे, म्हणून नतीजे के आगे — L1-M9 वाला वही जोड़ा."
+    },
+    {
+      "id": "L3-M3-S07",
+      "display": "कदाचित तुमचं बरोबर आहे",
+      "cue": "शायद आपका कहना सही है",
+      "glossEn": "Maybe you're right",
+      "literal": "शायद आपका सही है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "कदाचित",
+            "cue": "शायद",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Maybe\" — the same word as Hindi's कदाचित, though Marathi uses it where Hindi prefers शायद. It softens without changing any verb."
+          },
+          {
+            "display": "तुमचं",
+            "cue": "आपका",
+            "tag": "delta",
+            "forms": ["तुमचा", "तुमची", "तुमचं", "तुमचे"],
+            "note": "The तुम्ही genitive — L3-M2's grid on a pronoun. तुझं (L1) is its तू partner; both agree with the thing owned."
+          }
+        ],
+        "rules": [3, 2]
+      },
+      "trap": "'आपका कहना सही है' में मराठी 'कहना' नहीं लगाती — तुमचं बरोबर आहे काफ़ी है, और यही सबसे सभ्य असहमति-सहमति की लाइन है.",
+      "sound": "कदाचित = क‑दा‑चित; तुमचं आख़िर नाक से.",
+      "variations": [
+        {
+          "display": "कदाचित माझं चूक आहे",
+          "cue": "शायद मेरी ग़लती है",
+          "changed": "अपनी तरफ़ मोड़ा — तुमचं → माझं, बरोबर → चूक."
+        },
+        {
+          "display": "तुझं बरोबर आहे",
+          "cue": "तेरा कहना सही है",
+          "changed": "दोस्त से — तुमचं → तुझं (L1-M2 का वही रजिस्टर नियम)."
+        }
+      ],
+      "mistake": {
+        "display": "कदाचित तुमचा बरोबर आहे",
+        "why": "पुल्लिंग वाला तुमचा. यहाँ कोई चीज़ नहीं है, इसलिए नपुंसक: तुमचं बरोबर आहे."
+      },
+      "usage": "किसी को मानते या नरमी से टालते वक़्त — दफ़्तर की सबसे काम की लाइन.",
+      "register": "formal",
+      "mnemonic": "कदाचित लगाओ, और असहमति भी सभ्य हो जाती है."
+    },
+    {
+      "id": "L3-M3-S08",
+      "display": "मला असं वाटत नाही",
+      "cue": "मुझे ऐसा नहीं लगता",
+      "glossEn": "I don't think so",
+      "literal": "मुझे ऐसा लग नहीं-रहा",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "असं",
+            "cue": "ऐसा",
+            "tag": "delta",
+            "forms": ["असा", "अशी", "असं", "तसं"],
+            "note": "\"Like this / so\" — it bends like चांगला, and असं is the neuter that stands for a whole idea: मला असं वाटतं."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "मराठी में असहमति ऐसे ही कही जाती है — 'मुझे ऐसा नहीं लगता', न कि 'तुम ग़लत हो'. और नकार L2-M8 वाले -त नाही से बनता है, कुछ नया नहीं.",
+      "sound": "असं = अ‑सं, आख़िर नाक से; वाटत और नाही अलग-अलग रहते हैं.",
+      "variations": [
+        {
+          "display": "मला असं वाटतं",
+          "cue": "मुझे ऐसा लगता है",
+          "changed": "हाँ वाली शक्ल — नकार हटा, और की वाला खंड भी नहीं चाहिए."
+        },
+        {
+          "display": "मला तसं वाटत नाही",
+          "cue": "मुझे वैसा नहीं लगता",
+          "changed": "यह → वह: असं का दूर वाला जोड़ीदार तसं — वही जो हा/तो में हुआ."
+        }
+      ],
+      "mistake": {
+        "display": "मी असं वाटत नाही",
+        "why": "फिर वही कर्ता वाली फिसलन. वाटणे मला माँगता है: मला असं वाटत नाही."
+      },
+      "usage": "नरम असहमति — बहस को बंद किए बिना.",
+      "register": "neutral",
+      "mnemonic": "'ऐसा नहीं लगता' — असहमति अपनी राय की शक्ल में."
+    },
+    {
+      "id": "L3-M3-S09",
+      "display": "ही गोष्ट खरी आहे",
+      "cue": "यह बात सच है",
+      "glossEn": "This thing is true",
+      "literal": "यह बात सच(स्त्री.) है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "गोष्ट",
+            "cue": "बात",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"A thing said, a matter — and a story\". Feminine: ही गोष्ट, माझी गोष्ट. L3-M10's \"your own story\" is this word."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "गोष्ट का दायरा हिंदी की 'बात' और 'कहानी' दोनों तक फैला है — कौन-सी, यह वाक्य बताता है. L3-M10 में यही शब्द 'कहानी' बन जाएगा.",
+      "sound": "गोष्ट = गोष्‑ट, बीच का 'ष्' और आख़िर का 'ट' जुड़े हुए.",
+      "variations": [
+        {
+          "display": "ही गोष्ट खरी नाही",
+          "cue": "यह बात सच नहीं है",
+          "changed": "नकार — आहे → नाही, बाक़ी वही."
+        },
+        {
+          "display": "माझ्या मते ही गोष्ट बरोबर आहे",
+          "cue": "मेरे मत में यह बात सही है",
+          "changed": "राय जोड़ी — और बरोबर, जो नहीं झुकता, खरी की जगह आ गया (S02)."
+        }
+      ],
+      "mistake": {
+        "display": "ही गोष्ट खरं आहे",
+        "why": "नपुंसक वाला खरं लगा दिया. गोष्ट स्त्रीलिंग है — खरी गोष्ट, ही गोष्ट खरी आहे."
+      },
+      "usage": "किसी की बात मानते वक़्त — और किसी अफ़वाह पर टिप्पणी करते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "गोष्ट = बात, और वही आगे चलकर कहानी भी."
+    },
+    {
+      "id": "L3-M3-S10",
+      "display": "मला वाटतं की तुमचं बरोबर आहे, कारण तुम्ही तिथे होता",
+      "cue": "मुझे लगता है कि आपका कहना सही है, क्योंकि आप वहाँ थे",
+      "glossEn": "I think you're right, because you were there",
+      "literal": "मुझे लगता-है कि आपका सही है, क्योंकि आप वहाँ थे",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "होता",
+            "cue": "थे",
+            "tag": "delta",
+            "forms": ["होतो", "होती", "होतं", "होता", "होतास"],
+            "note": "The past of आहे — \"was / were\": मी होतो, ती होती, तुम्ही होता. It agrees with the subject, like every intransitive past."
+          }
+        ],
+        "rules": [4, 0]
+      },
+      "trap": "आहे का भूतकाल अलग शब्द है — होता/होती/होतं — 'आहेला' जैसा कुछ नहीं बनता. और वह कर्ता के पीछे झुकता है, चीज़ के पीछे नहीं.",
+      "sound": "होता = हो‑ता; तुम्ही के साथ यही रूप आता है, चाहे एक ही आदमी क्यों न हो.",
+      "variations": [
+        {
+          "display": "मला वाटतं की तुमचं बरोबर आहे, कारण तू तिथे होतास",
+          "cue": "मुझे लगता है कि तेरा कहना सही है, क्योंकि तू वहाँ था",
+          "changed": "दोस्त से — तुम्ही होता → तू होतास, और राय वही."
+        },
+        {
+          "display": "मी काल तिथे होतो",
+          "cue": "मैं कल वहाँ था",
+          "changed": "राय हटी — सिर्फ़ ख़बर बची, और होता → होतो, क्योंकि कर्ता मी है."
+        }
+      ],
+      "mistake": {
+        "display": "मला वाटतं की तुमचं बरोबर आहे, कारण तुम्ही तिथे आहात",
+        "why": "वर्तमान वाला आहात रख दिया. वजह बीती हुई है — तुम्ही तिथे होता."
+      },
+      "usage": "किसी की बात मानते वक़्त, वजह के साथ — बहस ख़त्म करने की सभ्य लाइन.",
+      "register": "formal",
+      "mnemonic": "आहे का कल = होता. एक ही शब्द, पूरा भूतकाल."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L3-M3-C01", "display": "मला वाटतं की हे महाग आहे", "cue": "मुझे लगता है कि यह महँगा है" },
+    {
+      "id": "L3-M3-C02",
+      "display": "माझ्या मते ही भाजी चांगली आहे",
+      "cue": "मेरे मत में यह सब्ज़ी अच्छी है"
+    },
+    { "id": "L3-M3-C03", "display": "हे बरोबर आहे", "cue": "यह सही है" },
+    { "id": "L3-M3-C04", "display": "मला वाटतं की हे चूक आहे", "cue": "मुझे लगता है कि यह ग़लत है" },
+    { "id": "L3-M3-C05", "display": "हे खरं आहे ना?", "cue": "यह सच है ना?" },
+    {
+      "id": "L3-M3-C06",
+      "display": "चहा चांगला आहे, कारण तो स्वस्त आहे",
+      "cue": "चाय अच्छी है, क्योंकि वह सस्ती है"
+    },
+    { "id": "L3-M3-C07", "display": "कदाचित तुमचं बरोबर आहे", "cue": "शायद आपका कहना सही है" },
+    { "id": "L3-M3-C08", "display": "मला असं वाटत नाही", "cue": "मुझे ऐसा नहीं लगता" },
+    { "id": "L3-M3-C09", "display": "ही गोष्ट खरी आहे", "cue": "यह बात सच है" },
+    { "id": "L3-M3-C10", "display": "मी काल तिथे होतो", "cue": "मैं कल वहाँ था" },
+    { "id": "L3-M3-C11", "display": "कदाचित माझं चूक आहे", "cue": "शायद मेरी ग़लती है" },
+    { "id": "L3-M3-C12", "display": "ही गोष्ट खरी नाही", "cue": "यह बात सच नहीं है" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}
