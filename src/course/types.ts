@@ -25,7 +25,7 @@
 export type Tag = 'free' | 'delta' | 'interference';
 
 /** The chip beside WHEN TO USE IT. A closed enum: widen the schema first, then this. */
-export type Register = 'neutral' | 'informal';
+export type Register = 'neutral' | 'informal' | 'formal';
 
 /** One module-level grammar rule. The array is ORDERED — sentences point into it by index. */
 export interface Rule {
