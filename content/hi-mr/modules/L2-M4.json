@@ -1,0 +1,522 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M4",
+  "title": "Getting around",
+  "job": "Directions, transport, asking the way",
+  "prerequisites": ["L2-M1", "L2-M2", "L2-M3"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-07",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": ["simple_present", "imperative", "future"],
+    "allowedPatterns": [
+      "N-ला + कसं जायचं?",
+      "इथे/तिथे + डावीकडे/उजवीकडे + वळा",
+      "मी/ती + N-ने + जातो/जाते",
+      "तुम्ही + सरळ + जा"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Going TO a place glues -ला onto the noun, over the oblique bend the learner already owns from L1-M7: दुकान → दुकानाला, स्टेशन → स्टेशनला. The same bend as दुकानात, pointed at a new suffix."
+    },
+    {
+      "tag": "interference",
+      "text": "Hindi goes bare — स्टेशन जाओ — so the hand wants to drop the ending. *स्टेशन जा is the Hindi-shaped miss: in Marathi the -ला is not optional when the noun is the destination."
+    },
+    {
+      "tag": "free",
+      "text": "घरी is the one exception, and it was taught in L1-M5: home takes -ई, not -ला. मी घरी जातो, never *घराला जातो — one word to remember, no rule to learn."
+    },
+    {
+      "tag": "delta",
+      "text": "\"By\" glues too: Hindi's free-standing से becomes an ending — बस से → बसने, रिक्षा → रिक्षाने, गाडी → गाडीने. *बससे is the shape to star. (-ने has a second job in the past tense; L2-M10 owns it.)"
+    },
+    {
+      "tag": "delta",
+      "text": "कसं जायचं? is the impersonal how-to frame: L1-M3's -आयचं shape (प्यायचा, खायचा) pointed at a new job, with no subject at all and the neuter कसं by default."
+    },
+    {
+      "tag": "free",
+      "text": "जा is the one road verb whose तू and तुम्ही forms are the same shape — everyday Marathi says जा to both. वळा and थांबा follow M1's law, with वळ and थांब as their तू partners."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M4-S01",
+      "display": "जरा सांगा, स्टेशनला कसं जायचं?",
+      "cue": "ज़रा बताइए, स्टेशन कैसे जाएँ?",
+      "glossEn": "Excuse me — how does one get to the station?",
+      "literal": "ज़रा बताओ(आदर), स्टेशन-को कैसे जाना?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "सांगा",
+            "cue": "बताइए",
+            "tag": "delta",
+            "forms": ["सांग", "सांगा"],
+            "note": "\"Tell\" — the तुम्ही imperative of सांगणे by M1's law. Its तू form is सांग. L2-M7 reuses it for taking a message."
+          },
+          {
+            "display": "स्टेशनला",
+            "cue": "स्टेशन",
+            "tag": "interference",
+            "forms": ["स्टेशन", "स्टेशनला"],
+            "note": "स्टेशन + -ला, \"to the station\". Hindi says स्टेशन जाओ with nothing on the noun; Marathi cannot drop the -ला."
+          },
+          {
+            "display": "जायचं",
+            "cue": "जाना",
+            "tag": "delta",
+            "forms": ["जायचं", "जायचा", "जायची"],
+            "note": "The -आयचं shape of जाणे (L1-M6's family), used with no subject: कसं जायचं? asks how one gets there, not how YOU get there."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "हिंदी में 'स्टेशन कैसे जाएँ?' में स्टेशन नंगा रहता है. मराठी में जाने की मंज़िल पर -ला चिपकता है — यही इस मॉड्यूल की सबसे बड़ी चूक है.",
+      "sound": "जायचं का अंत नाक से हल्का. सांगा = सां‑गा, शुरू में नाक की हवा.",
+      "variations": [
+        {
+          "display": "जरा सांगा, दुकानाला कसं जायचं?",
+          "cue": "ज़रा बताइए, दुकान कैसे जाएँ?",
+          "changed": "मंज़िल बदली — स्टेशनला → दुकानाला, वही -ला (S10)."
+        },
+        {
+          "display": "स्टेशनला कसं जायचं?",
+          "cue": "स्टेशन कैसे जाएँ?",
+          "changed": "जरा सांगा हटाया — सवाल वही, शुरुआत सीधी. अजनबी से पूछते वक़्त जरा सांगा नरम रखता है."
+        }
+      ],
+      "mistake": {
+        "display": "जरा सांगा, स्टेशन कसं जायचं?",
+        "why": "हिंदी की तरह स्टेशन नंगा छोड़ दिया. मंज़िल को -ला चाहिए: स्टेशनला."
+      },
+      "usage": "अजनबी से रास्ता पूछने की पूरी लाइन — जरा सांगा पहले, सवाल बाद में.",
+      "register": "formal",
+      "mnemonic": "मंज़िल को हमेशा एक पूँछ चाहिए: -ला. सिर्फ़ घर अपनी पुरानी पूँछ रखता है — घरी."
+    },
+    {
+      "id": "L2-M4-S02",
+      "display": "तुम्ही सरळ जा",
+      "cue": "आप सीधे जाइए",
+      "glossEn": "Go straight",
+      "literal": "आप सीधा जाओ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "सरळ",
+            "cue": "सीधा",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Straight\" — invariable, doing adverb work: सरळ जा, सरळ रस्ता. Hindi's सीधा bends; सरळ never does."
+          },
+          {
+            "display": "जा",
+            "cue": "जाइए",
+            "tag": "free",
+            "forms": ["जा"],
+            "note": "\"Go\" — the one road verb whose तू and तुम्ही forms are the same shape, so it is safe with anyone."
+          }
+        ],
+        "rules": [5, 0]
+      },
+      "trap": "बाक़ी हुक्मों में तू और तुम्ही के अलग रूप हैं (दे/द्या, कर/करा), पर जा दोनों के लिए एक ही है — यहाँ चुनाव का बोझ नहीं है.",
+      "sound": "सरळ = स‑रळ, आख़िर में वही मराठी ळ (काळा वाला).",
+      "variations": [
+        {
+          "display": "सरळ जा, मग डावीकडे वळा",
+          "cue": "सीधे जाइए, फिर बाएँ मुड़िए",
+          "changed": "दो क़दम जोड़े — मग (L1-M9) रास्ते के निर्देशों को जोड़ता है (S03)."
+        },
+        {
+          "display": "तुम्ही सरळ स्टेशनला जा",
+          "cue": "आप सीधे स्टेशन जाइए",
+          "changed": "मंज़िल जोड़ी — स्टेशनला, वही -ला."
+        }
+      ],
+      "mistake": {
+        "display": "तुम्ही सरळ जाा",
+        "why": "द्या/करा वाली -आ पूँछ जा पर भी लगा दी. जा का कोई -आ वाला रूप नहीं — वह पहले से दोनों के लिए है."
+      },
+      "usage": "रास्ता बताते वक़्त पहला क़दम — और ऑटो वाले से भी यही.",
+      "register": "formal",
+      "mnemonic": "सरळ और जा — दोनों अड़े हुए शब्द हैं, किसी के पीछे नहीं झुकते."
+    },
+    {
+      "id": "L2-M4-S03",
+      "display": "इथे डावीकडे वळा",
+      "cue": "यहाँ बाएँ मुड़िए",
+      "glossEn": "Turn left here",
+      "literal": "यहाँ बाईं-तरफ़ मुड़ो(आदर)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "इथे",
+            "cue": "यहाँ",
+            "tag": "delta",
+            "forms": ["इथे", "तिथे"],
+            "note": "\"Here\" — यहाँ with a different body, and तिथे is \"there\". The pair matches हा/ती's near-far split (L1-M8, L2-M2)."
+          },
+          {
+            "display": "डावीकडे",
+            "cue": "बाएँ",
+            "tag": "delta",
+            "forms": ["डावीकडे", "उजवीकडे"],
+            "note": "\"To the left\" — डावी (left) plus -कडे (\"toward\"). Its partner is उजवीकडे, right; the -कडे half is what makes it a direction."
+          },
+          {
+            "display": "वळा",
+            "cue": "मुड़िए",
+            "tag": "delta",
+            "forms": ["वळ", "वळा"],
+            "note": "\"Turn\" — the तुम्ही imperative of वळणे, M1's law on a road verb. Its तू form is वळ."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "हिंदी 'बाएँ' अकेला चलता है; मराठी में दिशा को -कडे चाहिए — डावीकडे, उजवीकडे. अकेला डावी रास्ता नहीं बताता.",
+      "sound": "डावीकडे = डा‑वी‑क‑डे, चार हल्के हिस्से. वळा में वही ळ.",
+      "variations": [
+        {
+          "display": "तिथे डावीकडे वळा",
+          "cue": "वहाँ बाएँ मुड़िए",
+          "changed": "इथे → तिथे — पास से दूर, बाक़ी सब वही."
+        },
+        {
+          "display": "इथे उजवीकडे वळा",
+          "cue": "यहाँ दाएँ मुड़िए",
+          "changed": "दिशा उलटी — डावीकडे → उजवीकडे (S04)."
+        }
+      ],
+      "mistake": {
+        "display": "इथे डावी वळा",
+        "why": "-कडे गिरा दिया. डावी अकेला 'बाईं' है, दिशा नहीं — मुड़ने के लिए डावीकडे चाहिए."
+      },
+      "usage": "किसी को रास्ता बताते वक़्त, और ऑटो-रिक्शा में बैठे-बैठे भी.",
+      "register": "formal",
+      "mnemonic": "-कडे = 'की तरफ़'. दिशा तभी दिशा बनती है जब उसमें तरफ़ जुड़े."
+    },
+    {
+      "id": "L2-M4-S04",
+      "display": "तिथे उजवीकडे वळा",
+      "cue": "वहाँ दाएँ मुड़िए",
+      "glossEn": "Turn right there",
+      "literal": "वहाँ दाईं-तरफ़ मुड़ो(आदर)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "तिथे",
+            "cue": "वहाँ",
+            "tag": "delta",
+            "forms": ["इथे", "तिथे"],
+            "note": "\"There\" — वहाँ's Marathi partner, इथे's far twin. Both take no ending: तिथे थांबा, तिथे आहे."
+          },
+          {
+            "display": "उजवीकडे",
+            "cue": "दाएँ",
+            "tag": "delta",
+            "forms": ["डावीकडे", "उजवीकडे"],
+            "note": "\"To the right\" — उजवी plus the same -कडे. Marathi keeps the pair symmetrical: डावीकडे · उजवीकडे."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "हिंदी में 'दाएँ-बाएँ' रोज़ बोले जाते हैं, इसलिए ये दोनों शब्द ही नए लगते हैं. जोड़ी में याद करो — अकेला एक याद रखा तो दूसरा भी चला जाएगा.",
+      "sound": "उजवीकडे = उ‑ज‑वी‑क‑डे; शुरू का 'उ' छोटा रखो.",
+      "variations": [
+        {
+          "display": "तिथे थांबा",
+          "cue": "वहाँ रुकिए",
+          "changed": "मुड़ना → रुकना — वळा → थांबा (S05), तिथे वही."
+        },
+        {
+          "display": "स्टेशन तिथे आहे",
+          "cue": "स्टेशन वहाँ है",
+          "changed": "हुक्म → बयान. तिथे जगह बताने में भी वैसे ही चलता है (L1-M7 का कुठे)."
+        }
+      ],
+      "mistake": {
+        "display": "तिथे उजवा वळा",
+        "why": "विशेषण वाला उजवा लगा दिया. मुड़ने की दिशा के लिए -कडे वाला रूप चाहिए: उजवीकडे."
+      },
+      "usage": "रास्ता बताते वक़्त दूसरा क़दम — 'वहाँ जाकर दाएँ'.",
+      "register": "formal",
+      "mnemonic": "डावी-उजवी जोड़ी है; दोनों को एक ही पूँछ मिलती है — कडे."
+    },
+    {
+      "id": "L2-M4-S05",
+      "display": "जरा दुकानाजवळ थांबा",
+      "cue": "ज़रा दुकान के पास रुकिए",
+      "glossEn": "Please stop near the shop",
+      "literal": "ज़रा दुकान-के-पास रुको(आदर)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "थांबा",
+            "cue": "रुकिए",
+            "tag": "delta",
+            "forms": ["थांब", "थांबा"],
+            "note": "\"Stop / wait\" — the तुम्ही imperative of थांबणे. Hindi's रुकना has no shared root here, so the word itself is the work."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "थांबा का मतलब 'रुको' भी है और 'ठहरो' भी — बस के थांबा (स्टॉप) से भी यही शब्द बना है, इसलिए इसे सुनना आसान है.",
+      "sound": "थांबा = थां‑बा, शुरू में नाक की हवा और साँस वाला 'थ' — 'तांबा' नहीं.",
+      "variations": [
+        {
+          "display": "जरा इथे थांबा",
+          "cue": "ज़रा यहाँ रुकिए",
+          "changed": "जगह बदली — दुकानाजवळ → इथे (S03)."
+        },
+        {
+          "display": "जरा घराजवळ थांबा",
+          "cue": "ज़रा घर के पास रुकिए",
+          "changed": "दुकान → घर, वही -जवळ (L1-M7)."
+        }
+      ],
+      "mistake": {
+        "display": "जरा दुकानाजवळ थांबिये",
+        "why": "फिर वही -इए वाली सीढ़ी. मराठी में थांबा पर बात ख़त्म — ऊपर कुछ नहीं (M1)."
+      },
+      "usage": "रिक्शा या टैक्सी में — यह वह लाइन है जो हर सफ़र के आख़िर में चाहिए.",
+      "register": "formal",
+      "mnemonic": "बस का 'थांबा' = स्टॉप; रुकने का हुक्म भी वही शब्द."
+    },
+    {
+      "id": "L2-M4-S06",
+      "display": "मी बसने कामाला जातो",
+      "cue": "मैं बस से काम पर जाता हूँ",
+      "glossEn": "I go to work by bus",
+      "literal": "मैं बस-से काम-को जाता-हूँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "बसने",
+            "cue": "बस से",
+            "tag": "interference",
+            "forms": ["बस", "बसने", "रिक्षाने", "गाडीने"],
+            "note": "बस + -ने, \"by bus\". Hindi keeps से as its own word (बस से); Marathi glues it on, so *बससे is not a shape."
+          }
+        ],
+        "rules": [3, 0]
+      },
+      "trap": "से को अलग लिखने की आदत सबसे मज़बूत है. मराठी में सवारी का साधन अपनी पूँछ ख़ुद पहनता है: बसने, रिक्षाने, गाडीने.",
+      "sound": "बसने = ब‑स‑ने, तीनों हल्के; 'बस-से' की तरह रुककर मत बोलो.",
+      "variations": [
+        {
+          "display": "मी रिक्षाने कामाला जातो",
+          "cue": "मैं रिक्शा से काम पर जाता हूँ",
+          "changed": "सवारी बदली — बसने → रिक्षाने, वही -ने (S07)."
+        },
+        {
+          "display": "मी बसने घरी जातो",
+          "cue": "मैं बस से घर जाता हूँ",
+          "changed": "मंज़िल बदली — कामाला → घरी, और घर अपनी पुरानी पूँछ रखता है, -ला नहीं लेता."
+        }
+      ],
+      "mistake": {
+        "display": "मी बस से कामाला जातो",
+        "why": "हिंदी का अलग से यहाँ आ गया. मराठी में वह ending है: बसने."
+      },
+      "usage": "रोज़ के आने-जाने की बात — नए शहर में यही पहला सवाल-जवाब होता है.",
+      "register": "neutral",
+      "mnemonic": "मराठी में साधन और मंज़िल, दोनों अपनी पूँछ पहनते हैं: बसने … कामाला."
+    },
+    {
+      "id": "L2-M4-S07",
+      "display": "ती रिक्षाने स्टेशनला जाते",
+      "cue": "वह रिक्शा से स्टेशन जाती है",
+      "glossEn": "She goes to the station by rickshaw",
+      "literal": "वह(स्त्री.) रिक्शा-से स्टेशन-को जाती-है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "रिक्षाने",
+            "cue": "रिक्शा से",
+            "tag": "delta",
+            "forms": ["रिक्षा", "रिक्षाने"],
+            "note": "रिक्षा + -ने. Marathi spells the vehicle with ष — रिक्षा, not रिक्शा — and the ending is the same one बस takes."
+          }
+        ],
+        "rules": [3, 0]
+      },
+      "trap": "हिंदी 'रिक्शा' में श है, मराठी रिक्षा में ष — लिखते वक़्त हाथ हिंदी वाला अक्षर उठाता है.",
+      "sound": "रिक्षाने = रि‑क्षा‑ने; 'क्ष' एक ही जोड़ में.",
+      "variations": [
+        {
+          "display": "ती गाडीने स्टेशनला जाते",
+          "cue": "वह गाड़ी से स्टेशन जाती है",
+          "changed": "सवारी बदली — रिक्षाने → गाडीने (S08)."
+        },
+        {
+          "display": "तो रिक्षाने स्टेशनला जातो",
+          "cue": "वह रिक्शा से स्टेशन जाता है",
+          "changed": "कर्ता मर्द — ती → तो और जाते → जातो (M2, L1-M4)."
+        }
+      ],
+      "mistake": {
+        "display": "ती रिक्षाने स्टेशन जाते",
+        "why": "मंज़िल की पूँछ छूट गई. स्टेशनला — जाने की जगह हमेशा -ला लेती है."
+      },
+      "usage": "किसी के रोज़ के रास्ते के बारे में बताते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "एक ही लाइन में दो पूँछ: साधन को -ने, मंज़िल को -ला."
+    },
+    {
+      "id": "L2-M4-S08",
+      "display": "आम्ही उद्या गाडीने जाऊ",
+      "cue": "हम कल गाड़ी से जाएँगे",
+      "glossEn": "We'll go by car tomorrow",
+      "literal": "हम कल गाड़ी-से जाएँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "गाडीने",
+            "cue": "गाड़ी से",
+            "tag": "delta",
+            "forms": ["गाडी", "गाडीने"],
+            "note": "गाडी + -ने. गाडी is the everyday word for a car AND a train — the sentence around it says which."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "गाडी अकेली यह नहीं बताती कि कार है या रेलगाड़ी — मराठी में यह आम बात है, और साथ का वाक्य ही तय करता है.",
+      "sound": "गाडीने = गा‑डी‑ने; 'ड' मूर्धन्य, हिंदी 'गाड़ी' के ड़ जैसा नहीं.",
+      "variations": [
+        {
+          "display": "आम्ही उद्या बसने जाऊ",
+          "cue": "हम कल बस से जाएँगे",
+          "changed": "सवारी बदली — गाडीने → बसने (S06)."
+        },
+        {
+          "display": "आम्ही उद्या स्टेशनला जाऊ",
+          "cue": "हम कल स्टेशन जाएँगे",
+          "changed": "साधन हटा, मंज़िल आई — दोनों पूँछें अलग-अलग काम की हैं."
+        }
+      ],
+      "mistake": {
+        "display": "आम्ही उद्या गाडी जाऊ",
+        "why": "साधन की पूँछ छूट गई. 'गाड़ी से' के लिए गाडीने चाहिए — नंगी गाडी सिर्फ़ चीज़ का नाम है."
+      },
+      "usage": "साथ जाने की योजना बनाते वक़्त — पूरी योजना L2-M6 में.",
+      "register": "neutral",
+      "mnemonic": "जाऊ पहले से आपका है (L1-M6) — यहाँ सिर्फ़ सवारी की पूँछ जुड़ी है."
+    },
+    {
+      "id": "L2-M4-S09",
+      "display": "स्टेशन मागे आहे, दुकान पुढे आहे",
+      "cue": "स्टेशन पीछे है, दुकान आगे है",
+      "glossEn": "The station is behind, the shop is ahead",
+      "literal": "स्टेशन पीछे है, दुकान आगे है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "मागे",
+            "cue": "पीछे",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Behind / back\" — पीछे's Marathi twin, invariable, and it works for place and for time alike."
+          },
+          {
+            "display": "पुढे",
+            "cue": "आगे",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Ahead / in front\" — मागे's partner, and the word a direction-giver uses for \"further on\"."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "ये दोनों हिंदी की तरह ही चलते हैं — कोई पूँछ नहीं, कोई लिंग नहीं. रास्ते के शब्दों में यही आराम की जगह है.",
+      "sound": "मागे = मा‑गे, पुढे = पु‑ढे; 'ढ' साँस वाला.",
+      "variations": [
+        {
+          "display": "दुकान पुढे आहे",
+          "cue": "दुकान आगे है",
+          "changed": "आधा वाक्य — एक ही जगह बतानी हो तो इतना काफ़ी है."
+        },
+        {
+          "display": "थोडं पुढे जा",
+          "cue": "थोड़ा आगे जाइए",
+          "changed": "बयान → हुक्म; थोडं (L1-M3) दूरी को नरम कर देता है."
+        }
+      ],
+      "mistake": {
+        "display": "स्टेशन मागा आहे",
+        "why": "-आ वाली पूँछ लगा दी. मागे और पुढे कभी नहीं झुकते — ये विशेषण नहीं, जगह के शब्द हैं."
+      },
+      "usage": "रास्ते में किसी को समझाते वक़्त — इशारे के साथ.",
+      "register": "neutral",
+      "mnemonic": "मागे-पुढे हिंदी से जैसे के तैसे उठे हैं — इन्हें छेड़ो मत."
+    },
+    {
+      "id": "L2-M4-S10",
+      "display": "तुम्ही दुकानाला जा",
+      "cue": "आप दुकान जाइए",
+      "glossEn": "Go to the shop",
+      "literal": "आप दुकान-को जाओ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "दुकानाला",
+            "cue": "दुकान",
+            "tag": "interference",
+            "forms": ["दुकानाला"],
+            "note": "दुकान bent to दुकाना- plus -ला — the same bend as दुकानात (L1-M7), a different ending. Hindi leaves the noun bare."
+          }
+        ],
+        "rules": [0, 1, 5]
+      },
+      "trap": "दुकानात (दुकान में) पहले से आपका है — वही झुकाव, नई पूँछ. जहाँ हिंदी 'दुकान जाओ' कहती है, मराठी दुकानाला माँगती है.",
+      "sound": "दुकानाला = दु‑का‑ना‑ला, चार बराबर हिस्से; बीच का 'ना' निगलो मत.",
+      "variations": [
+        {
+          "display": "तुम्ही बागेत जा",
+          "cue": "आप बाग़ में जाइए",
+          "changed": "मंज़िल के अंदर जाना — तब -ला नहीं, L1-M7 वाला -त: बागेत."
+        },
+        {
+          "display": "तू दुकानाला जा",
+          "cue": "तू दुकान जा",
+          "changed": "तुम्ही → तू, पर जा वैसा ही — यही इस क्रिया की ख़ासियत है (S02)."
+        }
+      ],
+      "mistake": {
+        "display": "तुम्ही दुकान जा",
+        "why": "हिंदी की नंगी मंज़िल. मराठी में दुकानाला — पूँछ के बिना वाक्य अधूरा लगता है."
+      },
+      "usage": "किसी को भेजते वक़्त — घर में, दफ़्तर में.",
+      "register": "formal",
+      "mnemonic": "अंदर जाना = -त (दुकानात), तरफ़ जाना = -ला (दुकानाला). एक ही झुकाव, दो पूँछ."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M4-C01",
+      "display": "जरा सांगा, स्टेशनला कसं जायचं?",
+      "cue": "ज़रा बताइए, स्टेशन कैसे जाएँ?"
+    },
+    { "id": "L2-M4-C02", "display": "तुम्ही सरळ जा", "cue": "आप सीधे जाइए" },
+    { "id": "L2-M4-C03", "display": "इथे डावीकडे वळा", "cue": "यहाँ बाएँ मुड़िए" },
+    { "id": "L2-M4-C04", "display": "तिथे उजवीकडे वळा", "cue": "वहाँ दाएँ मुड़िए" },
+    { "id": "L2-M4-C05", "display": "जरा इथे थांबा", "cue": "ज़रा यहाँ रुकिए" },
+    { "id": "L2-M4-C06", "display": "मी बसने कामाला जातो", "cue": "मैं बस से काम पर जाता हूँ" },
+    {
+      "id": "L2-M4-C07",
+      "display": "ती रिक्षाने स्टेशनला जाते",
+      "cue": "वह रिक्शा से स्टेशन जाती है"
+    },
+    { "id": "L2-M4-C08", "display": "आम्ही उद्या गाडीने जाऊ", "cue": "हम कल गाड़ी से जाएँगे" },
+    { "id": "L2-M4-C09", "display": "दुकान पुढे आहे", "cue": "दुकान आगे है" },
+    { "id": "L2-M4-C10", "display": "तुम्ही दुकानाला जा", "cue": "आप दुकान जाइए" },
+    { "id": "L2-M4-C11", "display": "मी बसने घरी जातो", "cue": "मैं बस से घर जाता हूँ" },
+    { "id": "L2-M4-C12", "display": "स्टेशन मागे आहे", "cue": "स्टेशन पीछे है" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}
