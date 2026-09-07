@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M8",
+  "title": "When something goes wrong",
+  "job": "Problems, asking for help, complaining calmly",
+  "prerequisites": ["L2-M1", "L2-M2", "L2-M3", "L2-M4", "L2-M5", "L2-M6", "L2-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-07",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": ["simple_present", "simple_past", "imperative"],
+    "allowedPatterns": [
+      "मला + N + सापडत नाही",
+      "N + हरवला/हरवली/हरवलं",
+      "N + संपला/संपली/संपले",
+      "V-त + नाही",
+      "जरा + मदत करा / हळू बोला / पुन्हा सांगा"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "Hindi's one मिलना is two Marathi verbs, and the wrong one sounds fine to a Hindi ear. मिळणे is get / receive (M5's मिळेल); सापडणे is find-after-looking. *मला चावी मिळत नाही says the shop has no keys in stock."
+    },
+    {
+      "tag": "delta",
+      "text": "verb-त + नाही is the \"doesn't / isn't —ing\" frame, and nothing in it agrees: सापडत नाही, चालत नाही, येत नाही, whoever is speaking and whatever is missing. Two taught pieces and no computation — the rest point of a stressful module."
+    },
+    {
+      "tag": "free",
+      "text": "Lost and run-out follow L1-M5's law exactly: the past agrees with the THING, not with you. फोन हरवला · पिशवी हरवली · पुस्तक हरवलं, the same way Hindi's खो गया / खो गई agrees."
+    },
+    {
+      "tag": "delta",
+      "text": "विसरणे is the other way round: it agrees with the person who forgot — मी विसरलो (a man) · मी विसरले (a woman), गेलो's class. Forgetting is something you do; losing is something that happens to the thing."
+    },
+    {
+      "tag": "free",
+      "text": "The calm complaint is the negated past: काम झालं नाही, \"the work didn't happen\". नाही simply follows the past form; nothing else moves."
+    },
+    {
+      "tag": "delta",
+      "text": "Trouble COMES to you: अडचण आली, the twin of L1-M9's कंटाळा आला. Marathi does not have a difficulty, it receives one — the same frame as भूक लागली."
+    },
+    {
+      "tag": "free",
+      "text": "Asking for help is M1's register kit at the moment it exists for: जरा मदत करा · हळू बोला · पुन्हा सांगा. These are the survival lines — nothing new but the words inside a frame you own."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M8-S01",
+      "display": "जरा सांगा, काय झालं?",
+      "cue": "ज़रा बताइए, क्या हुआ?",
+      "glossEn": "Tell me — what happened?",
+      "literal": "ज़रा बताओ(आदर), क्या हुआ(नपुं.)?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "झालं",
+            "cue": "हुआ",
+            "tag": "delta",
+            "forms": ["झाला", "झाली", "झालं", "झाले"],
+            "note": "The past of होणे, \"happened / became\", agreeing with the thing that happened — काय is neuter, so झालं."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "हिंदी 'क्या हुआ' में हुआ पुल्लिंग है; मराठी में काय नपुंसक माना जाता है, इसलिए झालं — वही हल्की 'ं' फिर.",
+      "sound": "झालं = झा‑लं, आख़िर नाक से; 'झाला' मत बोलो जब तक कोई पुल्लिंग चीज़ न हो.",
+      "variations": [
+        {
+          "display": "काय झालं?",
+          "cue": "क्या हुआ?",
+          "changed": "जरा सांगा हटाया — दोस्त से या घर में इतना ही काफ़ी."
+        },
+        {
+          "display": "काम झालं नाही",
+          "cue": "काम नहीं हुआ",
+          "changed": "सवाल → शिकायत. नाही भूतकाल के रूप के पीछे आ गया, और कुछ नहीं बदला."
+        }
+      ],
+      "mistake": {
+        "display": "जरा सांगा, काय झाला?",
+        "why": "पुल्लिंग वाला झाला लगा दिया. काय नपुंसक है — काय झालं?"
+      },
+      "usage": "किसी को परेशान देखकर — दफ़्तर में, दुकान में, घर में.",
+      "register": "formal",
+      "mnemonic": "काय नपुंसक है, इसलिए उसका साथी भी: काय झालं."
+    },
+    {
+      "id": "L2-M8-S02",
+      "display": "मला चावी सापडत नाही",
+      "cue": "मुझे चाबी नहीं मिल रही",
+      "glossEn": "I can't find my key",
+      "literal": "मुझे चाबी मिल(ढूँढकर)-नहीं-रही",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "चावी",
+            "cue": "चाबी",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Key\" — चाबी with a Marathi व, feminine: माझी चावी, ती चावी."
+          },
+          {
+            "display": "सापडत",
+            "cue": "मिल रही",
+            "tag": "interference",
+            "forms": ["सापडत", "सापडला", "सापडली", "सापडलं"],
+            "note": "सापडणे is find-after-looking — the half of Hindi's मिलना that मिळणे does NOT cover. Being available is मिळणे (M5)."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "हिंदी का एक ही मिलना यहाँ दो हो जाता है. 'चाबी नहीं मिल रही' = सापडत नाही. मिळत नाही कहोगे तो मतलब होगा 'दुकान में चाबी नहीं मिलती'.",
+      "sound": "सापडत = सा‑प‑डत, बीच का 'प' साफ़; नाही अलग शब्द रहता है.",
+      "variations": [
+        {
+          "display": "मला पिशवी सापडत नाही",
+          "cue": "मुझे थैला नहीं मिल रहा",
+          "changed": "चीज़ बदली — सापडत नाही वैसा ही रहा, वह किसी के पीछे नहीं झुकता."
+        },
+        {
+          "display": "मला चावी सापडली",
+          "cue": "मुझे चाबी मिल गई",
+          "changed": "मिल गई — भूतकाल चीज़ के पीछे झुकता है: चावी(स्त्री.) → सापडली."
+        }
+      ],
+      "mistake": {
+        "display": "मला चावी मिळत नाही",
+        "why": "हिंदी के एक ही मिलना की आदत. यह कहता है 'चाबी मिलती ही नहीं (बाज़ार में)'. ढूँढने के लिए सापडणे चाहिए."
+      },
+      "usage": "घर में, दफ़्तर में — रोज़ की सबसे आम परेशानी.",
+      "register": "neutral",
+      "mnemonic": "मिळणे = दुकान से मिलना, सापडणे = ढूँढकर मिलना. दो जेबें, एक हिंदी शब्द."
+    },
+    {
+      "id": "L2-M8-S03",
+      "display": "माझा फोन हरवला",
+      "cue": "मेरा फ़ोन खो गया",
+      "glossEn": "I've lost my phone",
+      "literal": "मेरा फ़ोन खो-गया",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "हरवला",
+            "cue": "खो गया",
+            "tag": "delta",
+            "forms": ["हरवला", "हरवली", "हरवलं", "हरवले"],
+            "note": "हरवणे's past, agreeing with the lost thing: फोन हरवला · पिशवी हरवली · पुस्तक हरवलं — L1-M5's law, Hindi's खो गया/गई."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "मराठी में चीज़ खोती है, आप नहीं — इसलिए क्रिया चीज़ के पीछे झुकती है, आपके पीछे नहीं. हिंदी भी यही करती है, तो नियम मुफ़्त है; सिर्फ़ क्रिया नई है.",
+      "sound": "हरवला = ह‑र‑व‑ला, चारों हल्के.",
+      "variations": [
+        {
+          "display": "माझी पिशवी हरवली",
+          "cue": "मेरा थैला खो गया",
+          "changed": "फोन(पु.) → पिशवी(स्त्री.) — माझा → माझी, हरवला → हरवली."
+        },
+        {
+          "display": "माझं पुस्तक हरवलं",
+          "cue": "मेरी किताब खो गई",
+          "changed": "नपुंसक चीज़ — माझं और हरवलं, वही जोड़ी."
+        }
+      ],
+      "mistake": {
+        "display": "मी माझा फोन हरवला",
+        "why": "अपने को कर्ता बना दिया. मराठी कहती है 'फ़ोन खो गया' — मी की ज़रूरत ही नहीं."
+      },
+      "usage": "दुकान, बस, दफ़्तर — किसी को बताते वक़्त कि चीज़ नहीं मिल रही.",
+      "register": "neutral",
+      "mnemonic": "खोई हुई चीज़ ही मालिक है — क्रिया उसी के पीछे चलती है."
+    },
+    {
+      "id": "L2-M8-S04",
+      "display": "माझे पैसे संपले",
+      "cue": "मेरे पैसे ख़त्म हो गए",
+      "glossEn": "I've run out of money",
+      "literal": "मेरे पैसे ख़त्म-हो-गए",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "पैसे",
+            "cue": "पैसे",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Money\" — the same word as Hindi and always plural, so everything around it goes plural: माझे पैसे संपले."
+          },
+          {
+            "display": "संपले",
+            "cue": "ख़त्म हो गए",
+            "tag": "delta",
+            "forms": ["संपला", "संपली", "संपलं", "संपले"],
+            "note": "संपणे, \"run out\" — the kitchen's word, agreeing with the thing that ran out: चहा संपला · दूध संपलं · पैसे संपले."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "पैसे हमेशा बहुवचन है — माझे पैसे, माझा पैसा नहीं. इसलिए क्रिया भी बहुवचन: संपले.",
+      "sound": "संपले = सं‑प‑ले, शुरू में नाक की हवा.",
+      "variations": [
+        {
+          "display": "दूध संपलं",
+          "cue": "दूध ख़त्म हो गया",
+          "changed": "नपुंसक चीज़ — संपले → संपलं (L1-M5 का नियम)."
+        },
+        {
+          "display": "चहा संपला",
+          "cue": "चाय ख़त्म हो गई",
+          "changed": "चहा पुल्लिंग है, इसलिए संपला — हिंदी की 'चाय' स्त्रीलिंग है, यही पुरानी फिसलन (L1-M1)."
+        }
+      ],
+      "mistake": {
+        "display": "माझा पैसा संपला",
+        "why": "हिंदी की तरह एकवचन बना दिया. मराठी में पैसे बहुवचन ही चलता है: माझे पैसे संपले."
+      },
+      "usage": "दुकान पर, घर में — और महीने के आख़िर में.",
+      "register": "neutral",
+      "mnemonic": "पैसे कभी अकेले नहीं आते — शब्द भी बहुवचन, क्रिया भी."
+    },
+    {
+      "id": "L2-M8-S05",
+      "display": "मी सांगायला विसरलो",
+      "cue": "मैं बताना भूल गया",
+      "glossEn": "I forgot to tell you",
+      "literal": "मैं बताने-को भूल-गया",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "सांगायला",
+            "cue": "बताना",
+            "tag": "delta",
+            "forms": ["सांगायला", "करायला"],
+            "note": "सांगणे with M5's purpose ending -आयला: \"to tell\". The thing you forgot to do takes this shape — करायला, जेवायला, the same ending on any verb."
+          },
+          {
+            "display": "विसरलो",
+            "cue": "भूल गया",
+            "tag": "delta",
+            "forms": ["विसरलो", "विसरले"],
+            "note": "विसरणे's past, and this one agrees with YOU: मी विसरलो (a man) · मी विसरले (a woman) — गेलो's class, not हरवला's."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "एक ही मॉड्यूल में दो उलटे नियम: हरवला चीज़ के पीछे झुकता है, विसरलो बोलने वाले के पीछे. भूलना आप करते हैं, खोना चीज़ के साथ होता है.",
+      "sound": "विसरलो = वि‑स‑र‑लो; सांगायला = सां‑गा‑य‑ला.",
+      "variations": [
+        {
+          "display": "मी सांगायला विसरले",
+          "cue": "मैं बताना भूल गई",
+          "changed": "बोलने वाली औरत — विसरलो → विसरले."
+        },
+        {
+          "display": "मी फोन करायला विसरलो",
+          "cue": "मैं फ़ोन करना भूल गया",
+          "changed": "काम बदला — सांगायला → करायला, वही -आयला पूँछ."
+        }
+      ],
+      "mistake": {
+        "display": "मी सांगायला विसरला",
+        "why": "तीसरे आदमी वाला रूप लगा दिया. मी के साथ विसरलो या विसरले — अपने लिंग के हिसाब से."
+      },
+      "usage": "माफ़ी के साथ — 'माफ करा, मी सांगायला विसरलो'.",
+      "register": "neutral",
+      "mnemonic": "खोना चीज़ का काम, भूलना आपका — इसलिए झुकाव भी अलग-अलग."
+    },
+    {
+      "id": "L2-M8-S06",
+      "display": "जरा मदत करा",
+      "cue": "ज़रा मदद कीजिए",
+      "glossEn": "Please help me",
+      "literal": "ज़रा मदद करो(आदर)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "मदत",
+            "cue": "मदद",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Help\" — मदद with a Marathi त, and it works with करा exactly as माफ does: मदत करा, माफ करा."
+          }
+        ],
+        "rules": [6]
+      },
+      "trap": "मदत अकेली नहीं चलती — उसे करा/कर चाहिए, वैसे ही जैसे माफ को (L2-M1). दोनों एक ही साँचे के शब्द हैं.",
+      "sound": "मदत = म‑दत, आख़िर 'त' — हिंदी वाला 'द' नहीं.",
+      "variations": [
+        {
+          "display": "जरा मदत कर",
+          "cue": "ज़रा मदद कर",
+          "changed": "दोस्त से — करा → कर (L2-M1 की वही जोड़ी)."
+        },
+        {
+          "display": "माफ करा, जरा मदत करा",
+          "cue": "माफ़ कीजिए, ज़रा मदद कीजिए",
+          "changed": "टोकना पहले, माँग बाद में — माफ करा और मदत करा एक ही साँचे के दो शब्द (L2-M1)."
+        }
+      ],
+      "mistake": {
+        "display": "जरा मदत करिये",
+        "why": "फिर वही -इए वाली हिंदी सीढ़ी. मराठी में करा पर बात ख़त्म."
+      },
+      "usage": "अजनबी से, काउंटर पर, सड़क पर — यह वह लाइन है जिसके लिए पूरा M1 पढ़ा गया था.",
+      "register": "formal",
+      "mnemonic": "माफ करा, मदत करा — दो शब्द, एक ही साथी क्रिया."
+    },
+    {
+      "id": "L2-M8-S07",
+      "display": "जरा हळू बोला",
+      "cue": "ज़रा धीरे बोलिए",
+      "glossEn": "Please speak slowly",
+      "literal": "ज़रा धीरे बोलो(आदर)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "हळू",
+            "cue": "धीरे",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Slowly / softly\" — invariable, with the same ळ as काळा. It covers both speed and volume, as Hindi's धीरे does."
+          },
+          {
+            "display": "बोला",
+            "cue": "बोलिए",
+            "tag": "delta",
+            "forms": ["बोल", "बोला"],
+            "note": "The तुम्ही imperative of M7's बोलणे, by M1's law. Its तू form is बोल — the same shape as the Hindi word for \"speak\"."
+          }
+        ],
+        "rules": [6]
+      },
+      "trap": "यह लाइन सीखने वाले की सबसे ज़रूरी लाइन है. मराठी तेज़ बोली जाती है, और हळू बोला कहने में कोई शर्म नहीं.",
+      "sound": "हळू = ह‑ळू, बीच में मराठी ळ और अंत लंबा 'ऊ'.",
+      "variations": [
+        {
+          "display": "जरा हळू बोल",
+          "cue": "ज़रा धीरे बोल",
+          "changed": "दोस्त से — बोला → बोल."
+        },
+        {
+          "display": "जरा पुन्हा सांगा",
+          "cue": "ज़रा फिर से बताइए",
+          "changed": "दूसरी सर्वाइवल लाइन — धीरे की जगह 'फिर से' (S08)."
+        }
+      ],
+      "mistake": {
+        "display": "जरा हळू बोलिये",
+        "why": "-इए वाली सीढ़ी फिर. तुम्ही के लिए बोला, तू के लिए बोल."
+      },
+      "usage": "जब सामने वाला तेज़ बोल रहा हो — फ़ोन पर, काउंटर पर, कहीं भी.",
+      "register": "formal",
+      "mnemonic": "हळू में वही ळ है जो काळा में — मराठी की मुहर."
+    },
+    {
+      "id": "L2-M8-S08",
+      "display": "जरा पुन्हा सांगा",
+      "cue": "ज़रा फिर से बताइए",
+      "glossEn": "Please say that again",
+      "literal": "ज़रा फिर बताओ(आदर)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "पुन्हा",
+            "cue": "फिर से",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Again\" — where Hindi says फिर से. One word, invariable, and the second half of every learner's survival kit."
+          }
+        ],
+        "rules": [6]
+      },
+      "trap": "हिंदी 'फिर' का मराठी में एक ही शब्द नहीं है: 'उसके बाद' के लिए मग (L1-M9), 'दोबारा' के लिए पुन्हा. यहाँ दोबारा वाला चाहिए.",
+      "sound": "पुन्हा = पु‑न्हा; बीच का 'न्ह' एक ही जोड़ में, जैसे तुम्हाला का 'म्हा'.",
+      "variations": [
+        {
+          "display": "जरा पुन्हा बोला",
+          "cue": "ज़रा फिर से बोलिए",
+          "changed": "सांगा → बोला — 'बताइए' की जगह 'बोलिए', दोनों चलते हैं."
+        },
+        {
+          "display": "पुन्हा सांगा",
+          "cue": "फिर से बताइए",
+          "changed": "जरा हटाया — सीधा, पर उतना नरम नहीं."
+        }
+      ],
+      "mistake": {
+        "display": "जरा मग सांगा",
+        "why": "मग 'उसके बाद' है, 'दोबारा' नहीं. यह लाइन कहती है 'बाद में बताइए' — जो आप कहना ही नहीं चाहते थे."
+      },
+      "usage": "जब कुछ समझ न आए — यह और हळू बोला, दोनों साथ काम आते हैं.",
+      "register": "formal",
+      "mnemonic": "मग = उसके बाद, पुन्हा = फिर से. एक हिंदी शब्द, दो मराठी दरवाज़े."
+    },
+    {
+      "id": "L2-M8-S09",
+      "display": "माझा फोन चालत नाही",
+      "cue": "मेरा फ़ोन नहीं चल रहा",
+      "glossEn": "My phone isn't working",
+      "literal": "मेरा फ़ोन चल नहीं-रहा",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "चालत",
+            "cue": "चल",
+            "tag": "delta",
+            "forms": ["चालेल", "चालत"],
+            "note": "The participle of चालणे — M6's चालेल lexeme, kept as promised: चालेल is \"that works\", चालत नाही is \"this doesn't work\"."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "इस साँचे में कुछ नहीं झुकता: फोन चालत नाही, गाडी चालत नाही, घड़ी चालत नाही. लिंग का बोझ यहाँ है ही नहीं — पूरे मॉड्यूल की आराम की जगह.",
+      "sound": "चालत = चा‑लत, और नाही अलग; दोनों को जोड़कर मत बोलो.",
+      "variations": [
+        {
+          "display": "माझी गाडी चालत नाही",
+          "cue": "मेरी गाड़ी नहीं चल रही",
+          "changed": "चीज़ बदली — माझा → माझी, पर चालत नाही वैसा ही."
+        },
+        {
+          "display": "उद्या चालेल का?",
+          "cue": "कल चलेगा क्या?",
+          "changed": "वही क्रिया, दूसरा काम — M6 वाला 'चलेगा?', यानी 'ठीक रहेगा?'"
+        }
+      ],
+      "mistake": {
+        "display": "माझा फोन चालता नाही",
+        "why": "-आ वाली पूँछ लगा दी. इस साँचे में क्रिया का -त वाला रूप ही आता है, और वह कभी नहीं बदलता."
+      },
+      "usage": "दुकान में, दफ़्तर में — शिकायत की सबसे शांत शक्ल.",
+      "register": "neutral",
+      "mnemonic": "-त + नाही = 'नहीं चल रहा'. कुछ गिनना नहीं, कुछ झुकाना नहीं."
+    },
+    {
+      "id": "L2-M8-S10",
+      "display": "पाणी येत नाही, अडचण आली",
+      "cue": "पानी नहीं आ रहा, दिक़्क़त आ गई",
+      "glossEn": "There's no water — that's a problem",
+      "literal": "पानी आ नहीं-रहा, दिक़्क़त आई",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "येत",
+            "cue": "आ",
+            "tag": "delta",
+            "forms": ["येत"],
+            "note": "The participle of येणे (L1-M6's family) in the same -त नाही frame: पाणी येत नाही — the sentence every Indian household says."
+          },
+          {
+            "display": "अडचण",
+            "cue": "दिक़्क़त",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Difficulty\" — feminine, and it COMES to you: अडचण आली, the twin of L1-M9's कंटाळा आला."
+          }
+        ],
+        "rules": [1, 5]
+      },
+      "trap": "मराठी में दिक़्क़त होती नहीं, आती है — कंटाळा और भूक की तरह (L1-M9). इसलिए अडचण आली, अडचण आहे नहीं.",
+      "sound": "अडचण = अ‑ड‑चण, आख़िरी 'ण' मूर्धन्य.",
+      "variations": [
+        {
+          "display": "पाणी येत नाही",
+          "cue": "पानी नहीं आ रहा",
+          "changed": "आधी लाइन — शिकायत अकेली भी पूरी है."
+        },
+        {
+          "display": "मला अडचण आली",
+          "cue": "मुझे दिक़्क़त आई",
+          "changed": "मला जोड़ा — दिक़्क़त किसकी है, वह मला बताता है (L1-M9 का वही फ़्रेम)."
+        }
+      ],
+      "mistake": {
+        "display": "पाणी येत नाही, अडचण आहे",
+        "why": "आहे रख दिया. मराठी में अडचण आती है — अडचण आली, ठीक कंटाळा आला की तरह."
+      },
+      "usage": "घर की शिकायत — और दफ़्तर में किसी समस्या की ख़बर देते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "भूक लागली, कंटाळा आला, अडचण आली — मराठी में मुसीबत मेहमान की तरह आती है."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L2-M8-C01", "display": "जरा सांगा, काय झालं?", "cue": "ज़रा बताइए, क्या हुआ?" },
+    { "id": "L2-M8-C02", "display": "मला चावी सापडत नाही", "cue": "मुझे चाबी नहीं मिल रही" },
+    { "id": "L2-M8-C03", "display": "माझा फोन हरवला", "cue": "मेरा फ़ोन खो गया" },
+    { "id": "L2-M8-C04", "display": "माझे पैसे संपले", "cue": "मेरे पैसे ख़त्म हो गए" },
+    { "id": "L2-M8-C05", "display": "मी सांगायला विसरलो", "cue": "मैं बताना भूल गया" },
+    { "id": "L2-M8-C06", "display": "जरा मदत करा", "cue": "ज़रा मदद कीजिए" },
+    { "id": "L2-M8-C07", "display": "जरा हळू बोला", "cue": "ज़रा धीरे बोलिए" },
+    { "id": "L2-M8-C08", "display": "जरा पुन्हा सांगा", "cue": "ज़रा फिर से बताइए" },
+    { "id": "L2-M8-C09", "display": "माझा फोन चालत नाही", "cue": "मेरा फ़ोन नहीं चल रहा" },
+    { "id": "L2-M8-C10", "display": "पाणी येत नाही", "cue": "पानी नहीं आ रहा" },
+    { "id": "L2-M8-C11", "display": "माझी पिशवी हरवली", "cue": "मेरा थैला खो गया" },
+    { "id": "L2-M8-C12", "display": "दूध संपलं", "cue": "दूध ख़त्म हो गया" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

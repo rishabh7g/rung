@@ -1,0 +1,480 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M7",
+  "title": "On the phone",
+  "job": "Calls and messages — openings, closings, taking a message",
+  "prerequisites": ["L2-M1", "L2-M2", "L2-M3", "L2-M4", "L2-M5", "L2-M6"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-07",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": ["present_continuous", "simple_present"],
+    "allowedPatterns": [
+      "हॅलो, कोण बोलतंय?",
+      "मी + <name> + बोलतोय",
+      "N + जेवतोय/जेवतेय/बोलतायत",
+      "निरोप सांगू का?",
+      "मी + नंतर + फोन करतो / फोन ठेवतो"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The right-now tense glues the copula onto the participle: बोलत आहे said as one word — बोलतोय (m) · बोलतेय (f) · बोलतंय (n). Hindi's रहा/रही carry gender the same way, so the idea transfers and only the shape is new."
+    },
+    {
+      "tag": "interference",
+      "text": "An unknown voice takes the NEUTER: कोण बोलतंय?. It is not rude, only ungendered — and Hindi has no such cell (कौन बोल रहा है), so the Hindi habit is to guess a gender at a stranger."
+    },
+    {
+      "tag": "free",
+      "text": "The respect-plural reaches the verb too: वडील बोलतायत. That is M2's आहेत logic in the continuous, and Hindi does it as well (पिताजी बोल रहे हैं)."
+    },
+    {
+      "tag": "delta",
+      "text": "The plain present does about-to work: मी फोन ठेवतो, \"I'm hanging up\"; मी नंतर फोन करतो, \"I'll call later\". Hindi says रखता हूँ and करता हूँ in exactly the same spot — the cheapest lesson in the level: a new job, no new form."
+    },
+    {
+      "tag": "free",
+      "text": "The two-word spelling is still Marathi: बोलत आहे is the formal written form, बोलतोय the spoken one. Both resolve — बोलत is the participle, आहे is L1-M1's copula."
+    },
+    {
+      "tag": "delta",
+      "text": "बोलणे's own rows open here (docs/15 open question 29). From this module upward, बोल- surfaces resolve; L1-M9's बोललो stays a recorded miss, because a module's index is cumulative through itself only."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M7-S01",
+      "display": "हॅलो, मी रोहन बोलतोय",
+      "cue": "हैलो, मैं रोहन बोल रहा हूँ",
+      "glossEn": "Hello, this is Rohan",
+      "literal": "हैलो, मैं रोहन बोल-रहा-हूँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "हॅलो",
+            "cue": "हैलो",
+            "tag": "free",
+            "forms": [],
+            "note": "The phone greeting, English in both languages. The ॅ is Marathi's sign for the English 'a' in cat — one letter, one sound."
+          },
+          {
+            "display": "बोलतोय",
+            "cue": "बोल रहा हूँ",
+            "tag": "delta",
+            "forms": ["बोलतोय", "बोलतेय", "बोलतंय", "बोलत", "बोलतायत"],
+            "note": "बोलत आहे squeezed into one word: a man says बोलतोय, a woman बोलतेय. The gender rides the ending, exactly as रहा/रही do."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "हिंदी 'बोल रहा हूँ' तीन टुकड़ों में है; मराठी उन्हें एक शब्द में निचोड़ देती है. लिंग वहीं बचा रहता है — बोलतोय (मर्द), बोलतेय (औरत).",
+      "sound": "बोलतोय = बो‑ल‑तोय, आख़िर एक ही साँस में; 'बोलतो-य' की तरह टुकड़े मत करो.",
+      "variations": [
+        {
+          "display": "हॅलो, मी प्रिया बोलतेय",
+          "cue": "हैलो, मैं प्रिया बोल रही हूँ",
+          "changed": "बोलने वाली औरत — बोलतोय → बोलतेय, वही ढाँचा."
+        },
+        {
+          "display": "मी नंतर फोन करतो",
+          "cue": "मैं बाद में फ़ोन करता हूँ",
+          "changed": "फ़ोन उठाने से रखने तक — शुरुआत की जगह बंद करने की लाइन (S09)."
+        }
+      ],
+      "mistake": {
+        "display": "हॅलो, मी रोहन बोलत आहे",
+        "why": "ग़लत नहीं, पर फ़ोन पर कोई ऐसा नहीं बोलता — यह लिखने वाला रूप है. बोली में बोलतोय."
+      },
+      "usage": "फ़ोन उठाकर अपना नाम बताने की लाइन — मराठी में यही पहली बात होती है.",
+      "register": "neutral",
+      "mnemonic": "बोलत + आहे = बोलतोय. दो शब्द एक में, लिंग पूँछ में."
+    },
+    {
+      "id": "L2-M7-S02",
+      "display": "हॅलो, कोण बोलतंय?",
+      "cue": "हैलो, कौन बोल रहा है?",
+      "glossEn": "Hello, who's speaking?",
+      "literal": "हैलो, कौन बोल-रहा-है(नपुं.)?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "बोलतंय",
+            "cue": "बोल रहा है",
+            "tag": "interference",
+            "forms": ["बोलतोय", "बोलतेय", "बोलतंय", "बोलत", "बोलतायत"],
+            "note": "The neuter cell, and the one an unknown voice takes: कोण बोलतंय?. Ungendered, not rude — Hindi has no such cell to reach for."
+          }
+        ],
+        "rules": [1, 0]
+      },
+      "trap": "हिंदी में 'कौन बोल रहा है' पूछते ही मर्द मान लिया जाता है. मराठी के पास तीसरा लिंग है, और अनजान आवाज़ उसी में पूछी जाती है — बोलतंय.",
+      "sound": "बोलतंय का बीच वाला हिस्सा नाक से — 'बोलतोय' और 'बोलतंय' का फ़र्क़ यही एक हवा है.",
+      "variations": [
+        {
+          "display": "कोण बोलतंय?",
+          "cue": "कौन बोल रहा है?",
+          "changed": "हॅलो हटाया — दूसरी बार पूछते वक़्त इतना ही काफ़ी."
+        },
+        {
+          "display": "हॅलो, मी रोहन बोलतोय",
+          "cue": "हैलो, मैं रोहन बोल रहा हूँ",
+          "changed": "सवाल का जवाब — अनजान (नपुं.) से पहचाना हुआ (पु.) बन गया."
+        }
+      ],
+      "mistake": {
+        "display": "हॅलो, कोण बोलतोय?",
+        "why": "आवाज़ सुनकर मर्द मान लिया. जब तक पता न हो, नपुंसक वाला बोलतंय — यही मराठी का शिष्टाचार है."
+      },
+      "usage": "फ़ोन उठाकर पूछने की लाइन — और दरवाज़े पर भी.",
+      "register": "neutral",
+      "mnemonic": "अनजान = नपुंसक. जब लिंग पता न हो, मराठी तीसरा दरवाज़ा खोल देती है."
+    },
+    {
+      "id": "L2-M7-S03",
+      "display": "माझी आई जेवतेय",
+      "cue": "मेरी माँ खाना खा रही है",
+      "glossEn": "My mother is eating",
+      "literal": "मेरी माँ जीम-रही-है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "जेवतेय",
+            "cue": "खा रही है",
+            "tag": "delta",
+            "forms": ["जेवतोय", "जेवतेय", "जेवतंय", "जेवत", "जेवतायत"],
+            "note": "M5's जेवणे in the right-now tense: जेवतोय (m) · जेवतेय (f), जेवतायत for respect. One verb still covers the whole meal."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "यह लाइन फ़ोन का सबसे आम बहाना है — 'अभी खाना खा रही है, बाद में फ़ोन करना'. मराठी में पूरा खाना एक ही क्रिया में आता है (L2-M5).",
+      "sound": "जेवतेय = जे‑व‑तेय, आख़िर एक साँस में.",
+      "variations": [
+        {
+          "display": "माझी आई जेवत आहे",
+          "cue": "मेरी माँ खाना खा रही है",
+          "changed": "लिखने वाला रूप — जेवतेय → जेवत आहे, दो शब्दों में (S06)."
+        },
+        {
+          "display": "माझी आई नंतर फोन करते",
+          "cue": "मेरी माँ बाद में फ़ोन करती है",
+          "changed": "अभी → बाद में; वही 'करने वाली है' वाला काम सादे वर्तमान से (S09)."
+        }
+      ],
+      "mistake": {
+        "display": "माझी आई जेवतोय",
+        "why": "पुल्लिंग वाली पूँछ लगा दी. आई स्त्रीलिंग है — जेवतेय (M2 का वही मेल)."
+      },
+      "usage": "फ़ोन पर किसी को टालते वक़्त — घर की सबसे आम लाइन.",
+      "register": "neutral",
+      "mnemonic": "-तोय मर्द, -तेय औरत, -तंय अनजान — तीन पूँछ, एक तनाव."
+    },
+    {
+      "id": "L2-M7-S04",
+      "display": "माझे वडील बोलतायत",
+      "cue": "मेरे पिताजी बोल रहे हैं",
+      "glossEn": "My father is speaking",
+      "literal": "मेरे पिताजी बोल-रहे-हैं",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "बोलतायत",
+            "cue": "बोल रहे हैं",
+            "tag": "free",
+            "forms": ["बोलतोय", "बोलतेय", "बोलतंय", "बोलत", "बोलतायत"],
+            "note": "The plural-and-respect cell — M2's आहेत logic inside the continuous. Hindi does the same in पिताजी बोल रहे हैं."
+          }
+        ],
+        "rules": [2, 0]
+      },
+      "trap": "आदर वाला बहुवचन क्रिया तक पहुँचता है — वडील बोलतायत, वडील बोलतोय नहीं. हिंदी में भी यही होता है, इसलिए यहाँ आराम है.",
+      "sound": "बोलतायत = बो‑ल‑ता‑यत, चार हिस्से; आख़िरी 'यत' हल्का.",
+      "variations": [
+        {
+          "display": "माझे वडील जेवतायत",
+          "cue": "मेरे पिताजी खाना खा रहे हैं",
+          "changed": "क्रिया बदली — बोलतायत → जेवतायत, वही आदर वाली पूँछ."
+        },
+        {
+          "display": "माझा भाऊ बोलतोय",
+          "cue": "मेरा भाई बोल रहा है",
+          "changed": "आदर हटा — एक आदमी, एकवचन: बोलतोय."
+        }
+      ],
+      "mistake": {
+        "display": "माझे वडील बोलतोय",
+        "why": "आधा मेल: माझे तो बहुवचन हो गया, क्रिया एकवचन रह गई. वडील बोलतायत."
+      },
+      "usage": "फ़ोन पर बताते वक़्त कि कोई बात नहीं कर सकता.",
+      "register": "neutral",
+      "mnemonic": "आदर पूरी लाइन में फैलता है: माझे … वडील … बोलतायत."
+    },
+    {
+      "id": "L2-M7-S05",
+      "display": "जरा निरोप सांगू का?",
+      "cue": "ज़रा संदेश बता दूँ क्या?",
+      "glossEn": "Shall I leave a message?",
+      "literal": "ज़रा संदेश कह-दूँ क्या?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "निरोप",
+            "cue": "संदेश",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Message\" — the word a Marathi call actually uses where Hindi says संदेश or मैसेज. Masculine: निरोप द्या, निरोप सांगू का?"
+          },
+          {
+            "display": "सांगू",
+            "cue": "कह दूँ",
+            "tag": "delta",
+            "forms": ["सांग", "सांगा", "सांगू"],
+            "note": "The -ऊ cell of M4's सांगणे, in M6's asking frame: सांगू का? offers, exactly as जाऊ का? proposes."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "सांगू का? कोई नई चीज़ नहीं है — M6 वाला -ऊ का? ढाँचा नई क्रिया पर. मराठी में यही पेशकश का तरीक़ा है.",
+      "sound": "निरोप = नि‑रोप, बीच का 'रो' लंबा. सांगू = सां‑गू.",
+      "variations": [
+        {
+          "display": "तुम्ही निरोप द्या",
+          "cue": "आप संदेश दीजिए",
+          "changed": "पेशकश → माँग — सांगू का? की जगह L1-M8 वाला द्या."
+        },
+        {
+          "display": "मी निरोप सांगू का?",
+          "cue": "मैं संदेश कह दूँ क्या?",
+          "changed": "मी जोड़ा — मराठी में कर्ता छोड़ा जा सकता है, और फ़ोन पर अक्सर छोड़ा ही जाता है."
+        }
+      ],
+      "mistake": {
+        "display": "जरा निरोप सांगा का?",
+        "why": "हुक्म वाला सांगा रख दिया — वह 'बताइए' है. पेशकश के लिए -ऊ वाला रूप चाहिए: सांगू का?"
+      },
+      "usage": "फ़ोन पर, जब जिससे बात करनी है वह मौजूद न हो.",
+      "register": "formal",
+      "mnemonic": "-ऊ का? = 'मैं कर दूँ क्या?'. M6 का ढाँचा, फ़ोन पर."
+    },
+    {
+      "id": "L2-M7-S06",
+      "display": "ती आता बोलत आहे",
+      "cue": "वह अभी बात कर रही है",
+      "glossEn": "She is speaking right now",
+      "literal": "वह(स्त्री.) अभी बोल रही है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "बोलत",
+            "cue": "बोल",
+            "tag": "delta",
+            "forms": ["बोलत", "जेवत"],
+            "note": "The bare participle — the half that joins आहे in the written form बोलत आहे, and the half that hides inside spoken बोलतोय."
+          }
+        ],
+        "rules": [4, 0]
+      },
+      "trap": "एक ही बात के दो रूप हैं: बोलत आहे (लिखा हुआ) और बोलतेय (बोला हुआ). दोनों सही हैं — फ़ोन पर दूसरा ही सुनाई देगा.",
+      "sound": "बोलत आहे में दोनों शब्द अलग रहते हैं; बोलतेय में वही दोनों जुड़ जाते हैं.",
+      "variations": [
+        {
+          "display": "ती आता बोलतेय",
+          "cue": "वह अभी बात कर रही है",
+          "changed": "लिखा हुआ → बोला हुआ. एक ही अर्थ, दो रूप — यही इस पंक्ति का सबक़ है."
+        },
+        {
+          "display": "माझी आई आता जेवत आहे",
+          "cue": "मेरी माँ अभी खाना खा रही है",
+          "changed": "वही दो-शब्द वाला ढाँचा दूसरी क्रिया पर — जेवत + आहे."
+        }
+      ],
+      "mistake": {
+        "display": "ती आता बोलत आहेत",
+        "why": "आहेत बहुवचन/आदर का है (M2). ती एकवचन है — बोलत आहे."
+      },
+      "usage": "लिखने में, और औपचारिक बातचीत में — बोली में बोलतेय ज़्यादा सुनाई देगा.",
+      "register": "neutral",
+      "mnemonic": "बोलत अकेला अधूरा है — या तो आहे उसका हाथ पकड़े, या वह बोलतोय में समा जाए."
+    },
+    {
+      "id": "L2-M7-S07",
+      "display": "माझा भाऊ आता जेवतोय",
+      "cue": "मेरा भाई अभी खाना खा रहा है",
+      "glossEn": "My brother is eating right now",
+      "literal": "मेरा भाई अभी जीम-रहा-है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "जेवतोय",
+            "cue": "खा रहा है",
+            "tag": "delta",
+            "forms": ["जेवतोय", "जेवतेय", "जेवतंय", "जेवत"],
+            "note": "The masculine cell of जेवणे's right-now tense — जेवतेय's partner (S03). आता, \"now\", is L1-M3's word."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "आता (अभी) यहाँ ज़रूरी नहीं है — -तोय ख़ुद 'अभी' कहता है. हिंदी 'अभी खा रहा है' की आदत से वह जुड़ जाता है, और ग़लत भी नहीं.",
+      "sound": "जेवतोय = जे‑व‑तोय; बोलतोय की तरह आख़िर एक साँस में.",
+      "variations": [
+        {
+          "display": "माझा भाऊ जेवतोय",
+          "cue": "मेरा भाई खाना खा रहा है",
+          "changed": "आता हटाया — मतलब वही, क्योंकि तनाव ख़ुद 'अभी' का है."
+        },
+        {
+          "display": "माझी बहीण आता जेवतेय",
+          "cue": "मेरी बहन अभी खाना खा रही है",
+          "changed": "भाऊ → बहीण, इसलिए जेवतोय → जेवतेय."
+        }
+      ],
+      "mistake": {
+        "display": "माझा भाऊ आता जेवतेय",
+        "why": "स्त्रीलिंग वाली पूँछ लगा दी. भाऊ पुल्लिंग है — जेवतोय."
+      },
+      "usage": "फ़ोन पर घर का हाल बताते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "तनाव ख़ुद घड़ी है: -तोय का मतलब ही 'इसी वक़्त'."
+    },
+    {
+      "id": "L2-M7-S08",
+      "display": "बरं, मी फोन ठेवतो",
+      "cue": "ठीक है, मैं फ़ोन रखता हूँ",
+      "glossEn": "All right, I'll hang up",
+      "literal": "ठीक, मैं फ़ोन रखता-हूँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ठेवतो",
+            "cue": "रखता हूँ",
+            "tag": "delta",
+            "forms": ["ठेवतो", "ठेवते", "ठेवतोस"],
+            "note": "ठेवणे, \"to put or keep\" — and फोन ठेवतो is the hang-up line, said in the plain present exactly as Hindi says रखता हूँ."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "यहाँ कोई भविष्य का रूप नहीं चाहिए. मराठी भी हिंदी की तरह सादा वर्तमान बोलती है जब काम अभी-अभी होने वाला हो.",
+      "sound": "ठेवतो = ठे‑व‑तो, शुरू का 'ठ' साँस वाला — 'तेवतो' नहीं.",
+      "variations": [
+        {
+          "display": "बरं, मी फोन ठेवते",
+          "cue": "ठीक है, मैं फ़ोन रखती हूँ",
+          "changed": "बोलने वाली औरत — ठेवतो → ठेवते (L1-M4 का वही मेल)."
+        },
+        {
+          "display": "बरं, मी नंतर फोन करतो",
+          "cue": "ठीक है, मैं बाद में फ़ोन करता हूँ",
+          "changed": "रखने की जगह वादा — ठेवतो → नंतर फोन करतो (S09)."
+        }
+      ],
+      "mistake": {
+        "display": "बरं, मी फोन ठेवणार",
+        "why": "भविष्य वाला -णार लगा दिया. फ़ोन रखते वक़्त मराठी सादा वर्तमान बोलती है: ठेवतो."
+      },
+      "usage": "बातचीत ख़त्म करने की लाइन — बरं इसे नरम कर देता है.",
+      "register": "neutral",
+      "mnemonic": "जो काम इसी पल होने वाला है, मराठी उसे वर्तमान में कहती है — रखता हूँ, ठेवतो."
+    },
+    {
+      "id": "L2-M7-S09",
+      "display": "मी नंतर फोन करतो",
+      "cue": "मैं बाद में फ़ोन करता हूँ",
+      "glossEn": "I'll call later",
+      "literal": "मैं बाद में फ़ोन करता-हूँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "करतो",
+            "cue": "करता हूँ",
+            "tag": "delta",
+            "forms": ["करतो", "करते", "करतोस", "करता"],
+            "note": "L1-M4's habitual shape doing a new job: a promise about to be kept. Hindi puts करता हूँ in exactly this spot — a new use, no new form."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "यह वही करतो है जो L1-M4 में रोज़ की आदत बताता था. यहाँ वह आदत नहीं, वादा है — रूप वही, काम नया.",
+      "sound": "करतो = क‑र‑तो; करू (सुझाव, M6) और करा (हुक्म, M1) से अलग रखो.",
+      "variations": [
+        {
+          "display": "मी नंतर फोन करते",
+          "cue": "मैं बाद में फ़ोन करती हूँ",
+          "changed": "बोलने वाली औरत — करतो → करते."
+        },
+        {
+          "display": "मी उद्या फोन करतो",
+          "cue": "मैं कल फ़ोन करता हूँ",
+          "changed": "नंतर → उद्या. वादा उतना ही पक्का, वक़्त साफ़."
+        }
+      ],
+      "mistake": {
+        "display": "मी नंतर फोन करीन",
+        "why": "भविष्य का रूप ठूँस दिया. रोज़ की मराठी में यह वादा सादे वर्तमान में आता है: करतो."
+      },
+      "usage": "फ़ोन बंद करने से ठीक पहले — सबसे आम विदाई.",
+      "register": "neutral",
+      "mnemonic": "करतो के तीन काम हो चुके: रोज़ की आदत, अब का वादा — और रूप एक ही."
+    },
+    {
+      "id": "L2-M7-S10",
+      "display": "बरं, मी नंतर बोलतो",
+      "cue": "ठीक है, मैं बाद में बात करता हूँ",
+      "glossEn": "All right, I'll talk to you later",
+      "literal": "ठीक, मैं बाद में बोलता-हूँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "बोलतो",
+            "cue": "बात करता हूँ",
+            "tag": "delta",
+            "forms": ["बोलतो", "बोलते", "बोलत", "बोलतोय"],
+            "note": "बोलणे's plain present, doing the same about-to job as ठेवतो. This row is where the बोल- family finally has a home (docs/15 Q29)."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "बोलणे की गाड़ी अब पूरी है: बोलतो (सादा), बोलत (अधूरा), बोलतोय (अभी). L1-M9 का बोललो अब भी बिना घर के है — वह पुरानी सीढ़ी का हिसाब है, और वैसा ही दर्ज है.",
+      "sound": "बोलतो = बो‑ल‑तो; बोलतोय से सिर्फ़ आख़िरी 'य' का फ़र्क़ है, और मतलब पूरा बदल जाता है.",
+      "variations": [
+        {
+          "display": "बरं, मी नंतर बोलते",
+          "cue": "ठीक है, मैं बाद में बात करती हूँ",
+          "changed": "बोलने वाली औरत — बोलतो → बोलते."
+        },
+        {
+          "display": "मी आता बोलतोय",
+          "cue": "मैं अभी बात कर रहा हूँ",
+          "changed": "वादा → अभी का हाल: बोलतो → बोलतोय, एक 'य' का फ़र्क़ (S01)."
+        }
+      ],
+      "mistake": {
+        "display": "बरं, मी नंतर बोलतोय",
+        "why": "अभी वाला रूप वादे की जगह रख दिया. बाद की बात के लिए सादा बोलतो चाहिए — बोलतोय का मतलब है 'इसी वक़्त बोल रहा हूँ'."
+      },
+      "usage": "फ़ोन की विदाई — दोस्त से, घरवालों से, रोज़.",
+      "register": "neutral",
+      "mnemonic": "एक 'य' आगे-पीछे: बोलतो (बाद में) · बोलतोय (अभी)."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L2-M7-C01", "display": "हॅलो, मी रोहन बोलतोय", "cue": "हैलो, मैं रोहन बोल रहा हूँ" },
+    { "id": "L2-M7-C02", "display": "हॅलो, कोण बोलतंय?", "cue": "हैलो, कौन बोल रहा है?" },
+    { "id": "L2-M7-C03", "display": "माझी आई जेवतेय", "cue": "मेरी माँ खाना खा रही है" },
+    { "id": "L2-M7-C04", "display": "माझे वडील बोलतायत", "cue": "मेरे पिताजी बोल रहे हैं" },
+    { "id": "L2-M7-C05", "display": "जरा निरोप सांगू का?", "cue": "ज़रा संदेश बता दूँ क्या?" },
+    { "id": "L2-M7-C06", "display": "ती आता बोलत आहे", "cue": "वह अभी बात कर रही है" },
+    { "id": "L2-M7-C07", "display": "माझा भाऊ आता जेवतोय", "cue": "मेरा भाई अभी खाना खा रहा है" },
+    { "id": "L2-M7-C08", "display": "बरं, मी फोन ठेवतो", "cue": "ठीक है, मैं फ़ोन रखता हूँ" },
+    { "id": "L2-M7-C09", "display": "मी नंतर फोन करतो", "cue": "मैं बाद में फ़ोन करता हूँ" },
+    { "id": "L2-M7-C10", "display": "बरं, मी नंतर बोलतो", "cue": "ठीक है, मैं बाद में बात करता हूँ" },
+    { "id": "L2-M7-C11", "display": "तुम्ही निरोप द्या", "cue": "आप संदेश दीजिए" },
+    { "id": "L2-M7-C12", "display": "माझी बहीण आता जेवतेय", "cue": "मेरी बहन अभी खाना खा रही है" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}
