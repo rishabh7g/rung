@@ -16,7 +16,7 @@
  * brief encodes
  * pattern-and-interference pedagogy that should be planned against the verified ladder below it,
  * not ahead of it. hi-mr's L2 briefs (#295) are the first written to that rule — planned against
- * the finished L1 index (215 surfaces through L1-M10) and the L1 review chain; hi-mr's L3 waits
+ * the finished L1 index (222 surfaces through L1-M10) and the L1 review chain; hi-mr's L3 waits
  * for a verified L2. en-ar's, hi-en's, en-ru's, en-it's, en-fr's and en-de's own L2/L3 lists are
  * still placeholder text
  * (PRD §5) and are not briefed either. The CLI says exactly this when asked for a course or
@@ -318,7 +318,9 @@
  * ## hi-mr L2: the four decisions, taken against the finished L1 (#295)
  *
  * The first L2 briefed anywhere: ten modules planned against the REAL cumulative L1 index —
- * 215 surfaces through L1-M10, maxSpan 1, rebuilt and read rather than remembered — and against
+ * 222 surfaces through L1-M10, maxSpan 1, rebuilt and read rather than remembered (the briefs
+ * were planned at 215; the spoken pass of 2026-09-05 added seven, and the figure here is the
+ * rebuild of 2026-09-07 — no seam moved) — and against
  * the L1 review chain (docs/08 open questions 1–22, docs/15 23–30, docs/19 31–40, docs/23
  * 41–48). The four decisions below are hi-mr L2's equivalents of hi-en's four, recorded in
  * `docs/26-hi-mr-L2-brief-decisions.md` and repeated in the notes, because a prompt only ever

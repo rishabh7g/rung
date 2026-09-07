@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M2",
+  "title": "Describing people",
+  "job": "Appearance, character, relationships",
+  "prerequisites": ["L2-M1"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-07",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "तो/ती/ते + Adj/N + आहे/आहेत",
+      "ती कोण आहे? — ती माझी + N + आहे",
+      "हा/ही माझा/माझी + N + आहे",
+      "माझ्या + N-oblique-चं + नाव + <name> + आहे"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "Hindi's one वह forks into three: तो (a man), ती (a woman), ते (a thing, or a person spoken of with respect). There is no neutral pronoun to fall back on — every mention of a person picks a gender."
+    },
+    {
+      "tag": "delta",
+      "text": "The same three words also POINT, as the far twins of L1-M8's हा/ही/हे: ते पुस्तक \"that book\", ती बाटली \"that bottle\". One set, two jobs — he/she/it, and that-one-over-there."
+    },
+    {
+      "tag": "free",
+      "text": "आहेत is the plural copula, and it doubles as respect — ते माझे वडील आहेत. Hindi already does this (पिताजी हैं), so only the shape is new, not the habit."
+    },
+    {
+      "tag": "delta",
+      "text": "Person-adjectives split by their ending. Consonant-final ones never bend: उंच मुलगा · उंच मुलगी · उंच मूल. आ-final ones bend with the noun: चांगला मुलगा · चांगली मुलगी · चांगलं मूल."
+    },
+    {
+      "tag": "interference",
+      "text": "मूल (\"child\") is NEUTER. Hindi has no neuter, so there is no habit to copy: हे मूल, चांगलं मूल, ते मूल. A child in Marathi is grammatically an it, whatever the child is."
+    },
+    {
+      "tag": "delta",
+      "text": "The genitive fuses onto the owner instead of standing free: भाऊ + चं → भावाचं. The owner bends first (भाऊ → भावा-, माझा → माझ्या), the same bend as घरात and टेबलावर (L1-M7), and the ending agrees with the thing OWNED, exactly as Hindi का/की/के does."
+    },
+    {
+      "tag": "free",
+      "text": "मोठा and लहान carry both jobs, exactly as बड़ा and छोटा do: मोठा भाऊ is an elder brother, मोठं घर is a big house."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M2-S01",
+      "display": "तो माझा भाऊ आहे",
+      "cue": "वह मेरा भाई है",
+      "glossEn": "He is my brother",
+      "literal": "वह(पु.) मेरा भाई है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "तो",
+            "cue": "वह",
+            "tag": "interference",
+            "forms": ["तो", "ती", "ते"],
+            "note": "\"He\", and also \"that\" for a masculine noun — तो चहा. Hindi's वह covers a man and a woman alike; तो is only ever masculine."
+          },
+          {
+            "display": "भाऊ",
+            "cue": "भाई",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Brother\" — भाई with a Marathi ending. Masculine, so माझा भाऊ, and its oblique shape is भावा- (S10)."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "हिंदी में एक ही वह से काम चल जाता है, इसलिए हाथ हर बार तो लिखना चाहता है. मराठी में मर्द के लिए तो, औरत के लिए ती — चुनाव टाला नहीं जा सकता.",
+      "sound": "तो = हिंदी 'तो' जैसा ही, पर यहाँ इसका मतलब 'वह' है. भाऊ = भा‑ऊ, दोनों स्वर लंबे.",
+      "variations": [
+        {
+          "display": "तो माझा मित्र आहे",
+          "cue": "वह मेरा दोस्त है",
+          "changed": "रिश्ता बदला — भाऊ → मित्र, बाक़ी साँचा वही (S07)."
+        },
+        {
+          "display": "तो माझा मोठा भाऊ आहे",
+          "cue": "वह मेरा बड़ा भाई है",
+          "changed": "मोठा जोड़ा — 'बड़ा भाई' यहाँ भी उम्र वाला बड़ा है (S06)."
+        }
+      ],
+      "mistake": {
+        "display": "ते माझा भाऊ आहे",
+        "why": "ते नपुंसक/आदर वाला है. भाऊ पुल्लिंग है, इसलिए तो — और आदर देना हो तो ते माझे भाऊ आहेत, अधूरा मेल नहीं."
+      },
+      "usage": "किसी से अपने घरवालों का परिचय कराते वक़्त — मराठी में तस्वीर दिखाते हुए भी यही लाइन.",
+      "register": "neutral",
+      "mnemonic": "तो-ती-ते वही तीन लिंग हैं जो माझा-माझी-माझं में थे — पॉइंटर बदला, नियम वही."
+    },
+    {
+      "id": "L2-M2-S02",
+      "display": "ती माझी बहीण आहे",
+      "cue": "वह मेरी बहन है",
+      "glossEn": "She is my sister",
+      "literal": "वह(स्त्री.) मेरी बहन है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ती",
+            "cue": "वह",
+            "tag": "interference",
+            "forms": ["तो", "ती", "ते"],
+            "note": "\"She\", and \"that\" for a feminine noun — ती बाटली. Using तो for a woman is the module's one loud mistake."
+          },
+          {
+            "display": "बहीण",
+            "cue": "बहन",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Sister\" — बहन with a long ई and a nasal end. Feminine, so माझी बहीण."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "हिंदी 'ती' कुछ नहीं है, इसलिए कान इसे नया नहीं मानता और तो पर फिसल जाता है. औरत के लिए हमेशा ती.",
+      "sound": "ती = ती (लंबी ई). बहीण = ब‑ही‑ण, आख़िरी 'ण' मूर्धन्य — 'बहीन' नहीं.",
+      "variations": [
+        {
+          "display": "ती माझी आई आहे",
+          "cue": "वह मेरी माँ है",
+          "changed": "रिश्ता बदला — बहीण → आई (S05)."
+        },
+        {
+          "display": "ती माझी लहान बहीण आहे",
+          "cue": "वह मेरी छोटी बहन है",
+          "changed": "लहान जोड़ा — यहाँ 'छोटी' उम्र में छोटी (S08)."
+        }
+      ],
+      "mistake": {
+        "display": "तो माझी बहीण आहे",
+        "why": "हिंदी के एक ही वह की आदत. बहीण स्त्रीलिंग है — ती माझी बहीण आहे."
+      },
+      "usage": "परिचय — और फ़ोन पर किसी के बारे में बात करते हुए भी.",
+      "register": "neutral",
+      "mnemonic": "ती में जो ई है, वही माझी की ई है — दोनों साथ चलती हैं."
+    },
+    {
+      "id": "L2-M2-S03",
+      "display": "ती कोण आहे?",
+      "cue": "वह कौन है?",
+      "glossEn": "Who is she?",
+      "literal": "वह(स्त्री.) कौन है?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "कोण",
+            "cue": "कौन",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Who\" — कौन with a Marathi ण. It sits where the answer sits: ती कोण आहे? → ती माझी बहीण आहे."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "सवाल का शब्द वहीं बैठता है जहाँ जवाब बैठेगा — काय और कुठे की तरह (L1-M2, L1-M7). हिंदी का 'वह कौन है' भी यही करता है, इसलिए यहाँ कुछ उलटना नहीं है.",
+      "sound": "कोण = को‑ण, 'ण' मूर्धन्य; हिंदी 'कौन' की तरह मुँह मत खोलो, 'ओ' साफ़.",
+      "variations": [
+        {
+          "display": "तो कोण आहे?",
+          "cue": "वह कौन है?",
+          "changed": "मर्द के बारे में — ती → तो. हिंदी में यह फ़र्क़ दिखता ही नहीं."
+        },
+        {
+          "display": "ती माझी बहीण आहे",
+          "cue": "वह मेरी बहन है",
+          "changed": "जवाब — कोण की जगह पर बहीण आ गई."
+        }
+      ],
+      "mistake": {
+        "display": "कोण ती आहे?",
+        "why": "हिंदी-अंग्रेज़ी की मिली-जुली आदत से सवाल आगे खिसक गया. मराठी में कोण वहीं रहता है जहाँ जवाब आएगा: ती कोण आहे?"
+      },
+      "usage": "किसी अजनबी की तरफ़ इशारा करके, धीमे सुर में — या फ़ोन पर, जब आवाज़ पहचान न आए (L2-M7).",
+      "register": "neutral",
+      "mnemonic": "जवाब की कुर्सी पर सवाल बैठता है — कोण उसी कुर्सी पर."
+    },
+    {
+      "id": "L2-M2-S04",
+      "display": "ते माझे वडील आहेत",
+      "cue": "वे मेरे पिताजी हैं",
+      "glossEn": "He is my father",
+      "literal": "वे मेरे पिताजी हैं",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ते",
+            "cue": "वे",
+            "tag": "delta",
+            "forms": ["तो", "ती", "ते"],
+            "note": "\"It / that\" for a neuter noun — ते पुस्तक — and the respect-plural for a person: ते माझे वडील आहेत."
+          },
+          {
+            "display": "माझे",
+            "cue": "मेरे",
+            "tag": "delta",
+            "forms": ["माझा", "माझी", "माझं", "माझे"],
+            "note": "The plural shape of माझा (L1-M1), used here for respect: माझे वडील. Hindi does the same in मेरे पिताजी."
+          },
+          {
+            "display": "वडील",
+            "cue": "पिताजी",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Father\", and it takes the respect-plural by default: माझे वडील आहेत, never *माझा वडील आहे."
+          },
+          {
+            "display": "आहेत",
+            "cue": "हैं",
+            "tag": "free",
+            "forms": ["आहे", "आहेस", "आहात", "आहेत"],
+            "note": "The plural copula, and the respect one — the fourth cell of आहे. Hindi's हैं does both jobs too."
+          }
+        ],
+        "rules": [2, 0]
+      },
+      "trap": "वडील का आदर वाला बहुवचन डिफ़ॉल्ट है — हिंदी 'पिताजी हैं' की तरह. एक आदमी के लिए बहुवचन बोलना अजीब नहीं, यहाँ वही सही है.",
+      "sound": "वडील = व‑डी‑ल, बीच की 'डी' लंबी. आहेत = आ‑हे‑त, आख़िरी 'त' हल्का.",
+      "variations": [
+        {
+          "display": "ते माझे मोठे भाऊ आहेत",
+          "cue": "वे मेरे बड़े भाई हैं",
+          "changed": "आदर बड़े भाई तक — मोठा → मोठे, भाऊ वही, और आहेत साथ आता है."
+        },
+        {
+          "display": "ती माझी आई आहे",
+          "cue": "वह मेरी माँ है",
+          "changed": "घर की दूसरी तरफ़ — आई पर रोज़ की बोली में एकवचन ही चलता है (S05)."
+        }
+      ],
+      "mistake": {
+        "display": "तो माझा वडील आहे",
+        "why": "एक आदमी देखकर एकवचन लगा दिया. वडील आदर-बहुवचन लेता है: ते माझे वडील आहेत."
+      },
+      "usage": "अपने पिता का परिचय कराते वक़्त — घर में, और किसी दफ़्तर में भी.",
+      "register": "neutral",
+      "mnemonic": "आदर = बहुवचन: ते … माझे … आहेत, तीनों एक साथ बदलते हैं."
+    },
+    {
+      "id": "L2-M2-S05",
+      "display": "ती माझी आई आहे",
+      "cue": "वह मेरी माँ है",
+      "glossEn": "She is my mother",
+      "literal": "वह(स्त्री.) मेरी माँ है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "आई",
+            "cue": "माँ",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Mother\" — no Hindi twin in sound. Feminine, and everyday speech keeps it singular: ती माझी आई आहे."
+          }
+        ],
+        "rules": [2, 0]
+      },
+      "trap": "यही असल घरेलू असमानता है: वडील को आदर-बहुवचन मिलता है, आई को अक्सर नहीं — नज़दीकी की वजह से, बेअदबी की वजह से नहीं.",
+      "sound": "आई = आ‑ई, दो लंबे स्वर एक साथ; 'आयी' मत बोलो.",
+      "variations": [
+        {
+          "display": "ती माझी मैत्रीण आहे",
+          "cue": "वह मेरी सहेली है",
+          "changed": "रिश्ता बदला — आई → मैत्रीण (S07)."
+        },
+        {
+          "display": "माझी आई घरी आहे",
+          "cue": "मेरी माँ घर पर है",
+          "changed": "परिचय → ख़बर; ती हटा और जगह जुड़ी (L1-M7)."
+        }
+      ],
+      "mistake": {
+        "display": "ते माझे आई आहेत",
+        "why": "वडील वाला आदर-बहुवचन आई पर चिपका दिया. रोज़ की मराठी कहती है: ती माझी आई आहे."
+      },
+      "usage": "परिचय, और घर की बात — मराठी में आई शब्द अपने आप में गर्म है, कोई और शब्द नहीं चलता.",
+      "register": "neutral",
+      "mnemonic": "वडील दूर से आदर लेते हैं, आई पास से — इसलिए एक बहुवचन, दूसरी एकवचन."
+    },
+    {
+      "id": "L2-M2-S06",
+      "display": "माझा मोठा भाऊ उंच आहे",
+      "cue": "मेरा बड़ा भाई लंबा है",
+      "glossEn": "My elder brother is tall",
+      "literal": "मेरा बड़ा भाई ऊँचा है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "मोठा",
+            "cue": "बड़ा",
+            "tag": "free",
+            "forms": ["मोठा", "मोठी", "मोठं", "मोठे"],
+            "note": "\"Big\" and \"elder\", both jobs exactly like बड़ा — मोठा भाऊ, मोठं घर. It bends with the noun."
+          },
+          {
+            "display": "उंच",
+            "cue": "ऊँचा",
+            "tag": "interference",
+            "forms": [],
+            "note": "\"Tall\", and it NEVER bends: उंच भाऊ · उंच बहीण · उंच मूल. Hindi ऊँचा/ऊँची changes shape; उंच does not."
+          }
+        ],
+        "rules": [6, 3]
+      },
+      "trap": "यहाँ दो उलटी आदतें एक ही लाइन में हैं: मोठा झुकता है (हिंदी की तरह), उंच नहीं झुकता (हिंदी के उलट). 'उंची बहीण' गढ़ना ही चूक है.",
+      "sound": "उंच = उं‑च, शुरू में हल्की नाक की हवा; अंत का 'च' साफ़.",
+      "variations": [
+        {
+          "display": "माझी मोठी बहीण उंच आहे",
+          "cue": "मेरी बड़ी बहन लंबी है",
+          "changed": "भाऊ(पु.) → बहीण(स्त्री.) — मोठा → मोठी बदला, उंच वही रहा."
+        },
+        {
+          "display": "माझा लहान भाऊ हुशार आहे",
+          "cue": "मेरा छोटा भाई होशियार है",
+          "changed": "उम्र उलटी और गुण बदला — मोठा → लहान, उंच → हुशार (S08)."
+        }
+      ],
+      "mistake": {
+        "display": "माझी मोठी बहीण उंची आहे",
+        "why": "हिंदी 'ऊँची' की नक़ल. उंच व्यंजन पर ख़त्म होता है और कभी नहीं झुकता: उंच बहीण."
+      },
+      "usage": "किसी को भीड़ में पहचानते वक़्त — 'वह लंबा वाला मेरा भाई है'.",
+      "register": "neutral",
+      "mnemonic": "आ पर ख़त्म होने वाला झुकता है, व्यंजन पर ख़त्म होने वाला अकड़ा रहता है."
+    },
+    {
+      "id": "L2-M2-S07",
+      "display": "हा माझा मित्र आहे",
+      "cue": "यह मेरा दोस्त है",
+      "glossEn": "This is my friend",
+      "literal": "यह मेरा दोस्त है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "मित्र",
+            "cue": "दोस्त",
+            "tag": "delta",
+            "forms": ["मित्र", "मैत्रीण"],
+            "note": "\"Friend\" — masculine, and it has a separate feminine word rather than an ending: मैत्रीण, a woman friend."
+          }
+        ],
+        "rules": [1, 0]
+      },
+      "trap": "हिंदी में एक ही 'दोस्त' चलता है. मराठी में सहेली के लिए अलग शब्द है — मैत्रीण — और उसके साथ माझी लगेगा.",
+      "sound": "मित्र = मि‑त्र, जुड़ा हुआ 'त्र'. मैत्रीण = मै‑त्री‑ण.",
+      "variations": [
+        {
+          "display": "ही माझी मैत्रीण आहे",
+          "cue": "यह मेरी सहेली है",
+          "changed": "मित्र → मैत्रीण, इसलिए हा → ही और माझा → माझी — पूरी लाइन साथ बदलती है."
+        },
+        {
+          "display": "तो माझा मित्र आहे",
+          "cue": "वह मेरा दोस्त है",
+          "changed": "पास से दूर — हा → तो (S01). वही तीन रूप, दूसरी दूरी."
+        }
+      ],
+      "mistake": {
+        "display": "ही माझी मित्र आहे",
+        "why": "सहेली के लिए मित्र रख लिया. औरत के लिए अलग शब्द है: ही माझी मैत्रीण आहे."
+      },
+      "usage": "किसी को अपने साथी से मिलाते वक़्त — हाथ के इशारे के साथ.",
+      "register": "neutral",
+      "mnemonic": "मित्र-मैत्रीण जोड़ी है, भाऊ-बहीण की तरह — शब्द ही बदल जाता है, पूँछ नहीं."
+    },
+    {
+      "id": "L2-M2-S08",
+      "display": "माझी लहान मुलगी हुशार आहे",
+      "cue": "मेरी छोटी बेटी होशियार है",
+      "glossEn": "My younger daughter is clever",
+      "literal": "मेरी छोटी बेटी होशियार है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "लहान",
+            "cue": "छोटा/छोटी",
+            "tag": "interference",
+            "forms": [],
+            "note": "\"Small\" and \"younger\", both jobs like छोटा — but it never bends: लहान मुलगा · लहान मुलगी · लहान मूल."
+          },
+          {
+            "display": "मुलगी",
+            "cue": "बेटी",
+            "tag": "delta",
+            "forms": ["मुलगा", "मुलगी"],
+            "note": "\"Daughter / girl\"; मुलगा is \"son / boy\". Both are people words — the neuter मूल is the child of no stated gender (S09)."
+          },
+          {
+            "display": "हुशार",
+            "cue": "होशियार",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Clever\" — होशियार minus the ो-sound, and consonant-final, so it never bends: हुशार मुलगा · हुशार मुलगी."
+          }
+        ],
+        "rules": [3, 6]
+      },
+      "trap": "लहान हिंदी के छोटा जैसा काम करता है पर उसकी तरह झुकता नहीं — 'लहानी मुलगी' मराठी में है ही नहीं.",
+      "sound": "लहान = ल‑हान, बीच का 'ह' सुनाई देना चाहिए. मुलगी = मु‑ल‑गी, तीनों हिस्से हल्के.",
+      "variations": [
+        {
+          "display": "माझा लहान मुलगा हुशार आहे",
+          "cue": "मेरा छोटा बेटा होशियार है",
+          "changed": "मुलगी → मुलगा, इसलिए माझी → माझा — लहान और हुशार दोनों वैसे ही."
+        },
+        {
+          "display": "माझी मोठी मुलगी उंच आहे",
+          "cue": "मेरी बड़ी बेटी लंबी है",
+          "changed": "उम्र और गुण बदले — लहान → मोठी (जो झुकता है), हुशार → उंच."
+        }
+      ],
+      "mistake": {
+        "display": "माझी लहानी मुलगी हुशार आहे",
+        "why": "'छोटी' की नक़ल में लहानी गढ़ा. लहान व्यंजन पर ख़त्म होता है — वह कभी नहीं झुकता."
+      },
+      "usage": "अपने बच्चों की बात करते वक़्त — और स्कूल में शिक्षक से भी.",
+      "register": "neutral",
+      "mnemonic": "मोठा झुकता है, लहान अड़ा रहता है — जोड़ी में भी नियम अलग."
+    },
+    {
+      "id": "L2-M2-S09",
+      "display": "हे मूल चांगलं आहे",
+      "cue": "यह बच्चा अच्छा है",
+      "glossEn": "This child is good",
+      "literal": "यह(नपुं.) बच्चा(नपुं.) अच्छा(नपुं.) है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "मूल",
+            "cue": "बच्चा",
+            "tag": "interference",
+            "forms": [],
+            "note": "\"Child\" — and it is NEUTER, whatever the child is: हे मूल, चांगलं मूल. Hindi has no neuter, so there is no habit to copy."
+          },
+          {
+            "display": "चांगलं",
+            "cue": "अच्छा",
+            "tag": "delta",
+            "forms": ["चांगला", "चांगली", "चांगलं", "चांगले"],
+            "note": "\"Good\", and it bends with the noun like माझा does: चांगला मुलगा · चांगली मुलगी · चांगलं मूल."
+          }
+        ],
+        "rules": [4, 3]
+      },
+      "trap": "बच्चा हिंदी में पुल्लिंग है, मराठी में नपुंसक — इसलिए हा नहीं, हे; चांगला नहीं, चांगलं. यही माझं वाली 'ं' फिर लौट आई (L1-M1).",
+      "sound": "मूल = मू‑ल, लंबी ऊ. चांगलं का अंत नाक से हल्का — 'चांगला' मत बोलो.",
+      "variations": [
+        {
+          "display": "तो चांगला मुलगा आहे",
+          "cue": "वह अच्छा लड़का है",
+          "changed": "मूल(नपुं.) → मुलगा(पु.) — हे → तो और चांगलं → चांगला, दोनों साथ."
+        },
+        {
+          "display": "ती चांगली मैत्रीण आहे",
+          "cue": "वह अच्छी सहेली है",
+          "changed": "स्त्रीलिंग वाली कड़ी — चांगली, ती, मैत्रीण तीनों एक सुर में."
+        }
+      ],
+      "mistake": {
+        "display": "हा मूल चांगला आहे",
+        "why": "हिंदी के 'बच्चा' को पुल्लिंग मान लिया. मूल नपुंसक है: हे मूल चांगलं आहे."
+      },
+      "usage": "किसी के बच्चे की तारीफ़ करते वक़्त — पड़ोस में, रिश्तेदारी में.",
+      "register": "neutral",
+      "mnemonic": "मूल की 'ल' पर वही हल्की 'ं' लौटती है: हे … चांगलं — नपुंसक की पहचान."
+    },
+    {
+      "id": "L2-M2-S10",
+      "display": "माझ्या भावाचं नाव रोहन आहे",
+      "cue": "मेरे भाई का नाम रोहन है",
+      "glossEn": "My brother's name is Rohan",
+      "literal": "मेरे भाई-का(नपुं.) नाम रोहन है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "माझ्या",
+            "cue": "मेरे",
+            "tag": "delta",
+            "forms": ["माझा", "माझी", "माझं", "माझ्या"],
+            "note": "The oblique shape of माझा (L1-M1) — the one it takes before a bent noun: माझ्या भावाचं, माझ्या घरात."
+          },
+          {
+            "display": "भावाचं",
+            "cue": "भाई का",
+            "tag": "delta",
+            "forms": [],
+            "note": "भाऊ bent to भावा- with -चं fused on. The ending agrees with the thing owned: नाव is neuter, so -चं."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "हिंदी में का अलग शब्द है — 'भाई का नाम'. मराठी में वह मालिक से चिपक जाता है और मालिक ख़ुद झुक जाता है: भाऊ → भावाचं. दो बदलाव, एक ही शब्द में.",
+      "sound": "भावाचं = भा‑वा‑चं, आख़िर में वही नाक वाली 'ं' जो माझं में है.",
+      "variations": [
+        {
+          "display": "माझ्या बहिणीचं नाव प्रिया आहे",
+          "cue": "मेरी बहन का नाम प्रिया है",
+          "changed": "मालिक बदला — बहीण → बहिणी-, पर -चं वही, क्योंकि झुकाव नाव के पीछे है, मालिक के नहीं."
+        },
+        {
+          "display": "माझ्या मित्राचं घर मोठं आहे",
+          "cue": "मेरे दोस्त का घर बड़ा है",
+          "changed": "चीज़ बदली — नाव → घर, दोनों नपुंसक, इसलिए -चं फिर वही."
+        }
+      ],
+      "mistake": {
+        "display": "माझा भाऊचं नाव रोहन आहे",
+        "why": "मालिक को झुकाया ही नहीं. मराठी में पहले मालिक बदलता है: भाऊ → भावा-, और माझा → माझ्या."
+      },
+      "usage": "किसी और के बारे में बताते वक़्त — फ़ॉर्म भरते हुए भी यही ढाँचा काम आता है.",
+      "register": "neutral",
+      "mnemonic": "मराठी का 'का' अलग नहीं खड़ा होता — वह मालिक की पूँछ बन जाता है."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L2-M2-C01", "display": "तो माझा मोठा भाऊ आहे", "cue": "वह मेरा बड़ा भाई है" },
+    { "id": "L2-M2-C02", "display": "ती माझी लहान बहीण आहे", "cue": "वह मेरी छोटी बहन है" },
+    { "id": "L2-M2-C03", "display": "ते माझे वडील आहेत", "cue": "वे मेरे पिताजी हैं" },
+    { "id": "L2-M2-C04", "display": "माझी आई घरी आहे", "cue": "मेरी माँ घर पर है" },
+    { "id": "L2-M2-C05", "display": "ती कोण आहे?", "cue": "वह कौन है?" },
+    { "id": "L2-M2-C06", "display": "ही माझी मैत्रीण आहे", "cue": "यह मेरी सहेली है" },
+    { "id": "L2-M2-C07", "display": "माझा मुलगा हुशार आहे", "cue": "मेरा बेटा होशियार है" },
+    { "id": "L2-M2-C08", "display": "हे मूल चांगलं आहे", "cue": "यह बच्चा अच्छा है" },
+    { "id": "L2-M2-C09", "display": "माझी मुलगी उंच आहे", "cue": "मेरी बेटी लंबी है" },
+    {
+      "id": "L2-M2-C10",
+      "display": "माझ्या भावाचं नाव रोहन आहे",
+      "cue": "मेरे भाई का नाम रोहन है"
+    },
+    { "id": "L2-M2-C11", "display": "तो माझा चांगला मित्र आहे", "cue": "वह मेरा अच्छा दोस्त है" },
+    { "id": "L2-M2-C12", "display": "माझे वडील उंच आहेत", "cue": "मेरे पिताजी लंबे हैं" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

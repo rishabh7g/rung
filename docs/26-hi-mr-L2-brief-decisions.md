@@ -4,7 +4,9 @@ The ten hi-mr L2 briefs (`tools/course-briefs.ts`, `COURSE_BRIEFS['hi-mr']` L2-M
 the first L2 briefed in any course, written the way the header always promised: against the
 verified L1 ladder, not ahead of it. Every seam below was pinned against the REAL cumulative
 index — `public/content/hi-mr/index/L1-M10.json`, rebuilt and read: **215 surfaces, maxSpan 1**
-(the planning issue said 206/3; the build is the truth) — and against the L1 review chain
+(the planning issue said 206/3; the build is the truth; the spoken pass of 2026-09-05 has since
+taken it to **222**, rebuilt and read on 2026-09-07 when L2-M1 authoring started — seven added
+surfaces, no seam moved) — and against the L1 review chain
 (docs/08 open questions 1–22, docs/15 23–30, docs/19 31–40, docs/23 41–48, ~48 standing).
 This note records the four decisions the briefs are written to — hi-mr L2's equivalents of the
 hi-en four (#269) — so the next wave (filing and authoring L2-M1…M10 on the hi-en model:
