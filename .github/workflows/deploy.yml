@@ -1,9 +1,8 @@
 # Every green `main` is the live site (#91): https://rishabh7g.github.io/rung/
 #
-# CI (.github/workflows/ci.yml) is still the gate — this workflow builds and
-# publishes, it does not re-verify. The two run in parallel on a push to main;
-# a red CI does not hold the deploy back, which is the tradeoff for `main` being
-# always-deployable rather than always-blocked.
+# `scripts/verify.sh`, run locally before merging, is the gate — this workflow
+# builds and publishes, it does not re-verify. That is the tradeoff for `main`
+# being always-deployable rather than always-blocked.
 name: Deploy
 
 on:

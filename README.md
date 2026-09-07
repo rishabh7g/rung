@@ -98,11 +98,9 @@ The harness has its own tests (`scripts/verify.test.ts`): they run it in a tmp d
 `npm`/`npx` shims, because a test that really shelled out to `npm run test` would run vitest inside
 vitest.
 
-**CI runs this exact command** — `.github/workflows/ci.yml` is `npm ci` then `bash scripts/verify.sh`
-on every pull request and every push to `main`, and it is the only job. There is deliberately no
-separate lint/test/build pipeline to keep in sync: what fails on your machine fails in CI, with the
-same one-line output. When a run is red, the `.verify/` logs are attached to it as the
-`verify-logs` artifact, so the failing step's whole log is one download away.
+**This is the gate.** Run `bash scripts/verify.sh` locally before merging to `main`; there is no
+CI job. There is deliberately no separate lint/test/build pipeline to keep in sync. When a run is
+red, each step's full log is in `.verify/<step>.log`.
 
 ### The content gate — why `dev` and `build` see different content
 
