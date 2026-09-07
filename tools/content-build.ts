@@ -669,17 +669,36 @@ export function checkComprehensionPool(module: Module, index: WordIndexFile): Va
 
 /* --------------------------------------------------------------------- build */
 
+/** A module the gate cleared, as the emit phase needs it: `buildWordIndex`'s input plus its file. */
+interface ShippedModule extends IndexedModule {
+  file: string;
+}
+
+/**
+ * A module file that passed every check — read, schema, script mode, gloss, levels listing.
+ * Whether it ships is the gate's decision, made later; the warning is printed only if it does.
+ */
+interface ValidModule extends ShippedModule {
+  /** The romanization warning this module would earn if shipped; null when it earns none. */
+  warning: string | null;
+}
+
+interface GatedModule {
+  id: string;
+  reason: string;
+}
+
 interface CoursePlan {
   row: CourseRow;
   levels: Levels;
   stringsFile: string;
-  shipped: { id: string; file: string }[];
+  shipped: ShippedModule[];
   /**
    * Keyed by module id, in ladder order — one per entry of `shipped`, computed before anything
    * is written.
    */
   indexes: ReadonlyMap<string, WordIndexFile>;
-  gatedOut: { id: string; reason: string }[];
+  gatedOut: GatedModule[];
   /** Course-level exclusion (a fixture course on a strict build); modules are not even considered. */
   excluded: string | null;
   warnings: string[];
@@ -780,196 +799,288 @@ function writeJson(file: string, value: unknown): number {
 }
 
 /**
- * Builds the whole tree. Everything is read and validated BEFORE anything is written: a build
- * that fails leaves the previous output untouched rather than half-replaced (and npm aborts the
- * `dev`/`build` it is hooked to, so a stale tree is never silently served).
+ * Builds the whole tree in three phases: read, emit, report. Everything is read and validated
+ * BEFORE anything is written: a build that fails leaves the previous output untouched rather
+ * than half-replaced (and npm aborts the `dev`/`build` it is hooked to, so a stale tree is never
+ * silently served).
  */
 export function buildContent(options: BuildOptions): BuildReport {
   const flags: BuildFlags = {
     withUnverified: options.withUnverified ?? false,
     withFixtures: options.withFixtures ?? false,
   };
-  const { contentRoot, outRoot } = options;
-  const errors: string[] = [];
   const banner = devBanner(flags);
+  const { plans, errors } = readCoursePlans(options.contentRoot, flags);
+  if (errors.length > 0) {
+    const lines = ['CONTENT build FAIL', ...errors.map((error) => `  ${error}`)];
+    return { lines, exitCode: 1, shipped: new Map() };
+  }
+  const shipped = emitTree(plans, options.outRoot, banner);
+  return { lines: reportLines(plans, banner), exitCode: 0, shipped };
+}
 
-  const manifestFile = path.join(contentRoot, 'courses.json');
-  const manifestJson = readJsonFile(manifestFile, 'courses.json', errors);
-  const manifest =
-    manifestJson === null
-      ? { courses: [] as CourseRow[], errors: [] }
-      : validateManifest(manifestJson.json);
-  errors.push(...manifest.errors);
+/* ---------------------------------------------------------------------- read */
 
+/**
+ * Phase 1 — reads and validates every course, writing nothing. `errors` is the whole build's
+ * failure list, one entry per problem in manifest → file order, so a red run names them all.
+ */
+function readCoursePlans(
+  contentRoot: string,
+  flags: BuildFlags,
+): { plans: CoursePlan[]; errors: string[] } {
+  const errors: string[] = [];
+  const rows = readManifest(contentRoot, errors);
   const moduleFiles = modulesByCourse(contentRoot);
-  const plans: CoursePlan[] = [];
 
   // A folder with modules but no manifest row is a whole course that would silently not ship.
   for (const course of moduleFiles.keys()) {
-    if (!manifest.courses.some((row) => row.id === course)) {
+    if (!rows.some((row) => row.id === course)) {
       errors.push(
         `${course}/modules/: no such course in courses.json — add the manifest row or remove the folder`,
       );
     }
   }
 
-  for (const row of manifest.courses) {
-    const courseDir = path.join(contentRoot, row.id);
-    if (!isDirectory(courseDir)) {
-      errors.push(`courses.json: course "${row.id}" has no content/${row.id}/ folder`);
-      continue;
-    }
-    const levelsJson = readJsonFile(
-      path.join(courseDir, 'levels.json'),
-      `${row.id}/levels.json`,
-      errors,
-    );
-    const levels = levelsJson === null ? null : validateLevels(levelsJson.json, row.id, errors);
-
-    const stringsFile = path.join(courseDir, 'strings.json');
-    const stringsJson = readJsonFile(stringsFile, `${row.id}/strings.json`, errors);
-    // Completeness against the canonical key list (#76) — PRD §6.5: a missing key is a build
-    // failure, because the shell has no fallback copy. `checkStrings` already names course + key.
-    if (stringsJson !== null) errors.push(...checkStrings(stringsJson.json, row.id));
-
-    // A course with nothing authored yet is a state, not an error: it simply ships nothing and
-    // drops out of the manifest. The gate must never freeze work in progress.
-    const files = moduleFiles.get(row.id) ?? [];
-
-    const courseExcluded = row.fixture === true && !flags.withFixtures;
-    const seenIds = new Map<string, string>();
-    const shipped: { id: string; file: string; module: Module }[] = [];
-    const gatedOut: { id: string; reason: string }[] = [];
-    const warnings: string[] = [];
-    const known = new Set(
-      (levels?.levels ?? []).flatMap((level) => level.modules.map((entry) => entry.id)),
-    );
-
-    for (const file of files) {
-      const name = `${row.id}/${path.basename(file)}`;
-      const parsed = readJsonFile(file, name, errors);
-      if (parsed === null) continue;
-
-      // Validation is #73's job, in full, for every module — shipped or not.
-      const result = validateModule(parsed.json, name, { seenIds });
-      if (!result.ok) {
-        for (const issue of result.issues) errors.push(`${name}: ${issue.path}: ${issue.message}`);
-        continue;
-      }
-      const module = parsed.json as Module;
-      if (result.id !== null) seenIds.set(result.id, name);
-
-      const scriptMode = checkScriptMode(module, row.scriptMode);
-      for (const issue of scriptMode.errors) errors.push(`${name}: ${issue}`);
-      for (const issue of checkGlossEn(module, row.l1Tag, row.l2Tag))
-        errors.push(`${name}: ${issue}`);
-
-      if (levels !== null && !known.has(module.id)) {
-        errors.push(`${name}: "${module.id}" is not listed in ${row.id}/levels.json`);
-        continue;
-      }
-
-      if (courseExcluded) continue;
-      const verdict = gateModule(module, flags);
-      if (!verdict.ship) {
-        gatedOut.push({ id: module.id, reason: verdict.reason });
-        continue;
-      }
-      shipped.push({ id: module.id, file, module });
-      const missing = scriptMode.surfaces - scriptMode.withScript;
-      if (missing > 0) {
-        warnings.push(
-          `  warn ${name}: ${missing} of ${scriptMode.surfaces} romanized surfaces carry no script line (optional but recommended)`,
-        );
-      }
-    }
-
-    if (levels === null) continue;
-    shipped.sort((a, b) => byLadderOrder(a.id, b.id));
-    gatedOut.sort((a, b) => byLadderOrder(a.id, b.id));
-
-    // The index needs the whole shipped sequence in ladder order, so it is built here — and the
-    // pool rule runs with it, in the read-and-validate phase, so a content bug leaves the previous
-    // output untouched rather than half-replaced.
-    const indexes = buildWordIndex(row.id, shipped);
-    for (const entry of shipped) {
-      const index = indexes.get(entry.id);
-      // buildWordIndex builds one index per module it is given, so a miss is a bug in it — not
-      // a module to skip quietly.
-      if (index === undefined) throw new Error(`${row.id}: no word index built for ${entry.id}`);
-      const name = `${row.id}/${path.basename(entry.file)}`;
-      for (const issue of checkComprehensionPool(entry.module, index)) {
-        errors.push(`${name}: ${issue.path}: ${issue.message}`);
-      }
-    }
-
-    plans.push({
-      row,
-      levels,
-      stringsFile,
-      shipped,
-      indexes,
-      gatedOut,
-      excluded: courseExcluded ? 'fixture course' : null,
-      warnings,
-    });
+  const plans: CoursePlan[] = [];
+  for (const row of rows) {
+    const plan = readCoursePlan(contentRoot, row, moduleFiles.get(row.id) ?? [], flags, errors);
+    if (plan !== null) plans.push(plan);
   }
+  return { plans, errors };
+}
 
-  if (errors.length > 0) {
-    const lines = ['CONTENT build FAIL', ...errors.map((error) => `  ${error}`)];
-    return { lines, exitCode: 1, shipped: new Map() };
+function readManifest(contentRoot: string, errors: string[]): CourseRow[] {
+  const parsed = readJsonFile(path.join(contentRoot, 'courses.json'), 'courses.json', errors);
+  if (parsed === null) return [];
+  const manifest = validateManifest(parsed.json);
+  errors.push(...manifest.errors);
+  return manifest.courses;
+}
+
+/**
+ * One course, read and validated in full — every module file is checked whether or not it
+ * ships, and a course with nothing authored yet is a plan that ships nothing, not an error (the
+ * gate must never freeze work in progress). Returns null only when the course cannot be planned
+ * at all — no folder, or an unusable levels.json; those errors are already recorded, so the
+ * build fails regardless.
+ */
+function readCoursePlan(
+  contentRoot: string,
+  row: CourseRow,
+  files: readonly string[],
+  flags: BuildFlags,
+  errors: string[],
+): CoursePlan | null {
+  const courseDir = path.join(contentRoot, row.id);
+  if (!isDirectory(courseDir)) {
+    errors.push(`courses.json: course "${row.id}" has no content/${row.id}/ folder`);
+    return null;
   }
+  const levels = readLevels(courseDir, row.id, errors);
+  const stringsFile = path.join(courseDir, 'strings.json');
+  checkStringsFile(stringsFile, row.id, errors);
 
-  /* ------------------------------------------------------------------ emit */
+  const known = levels === null ? null : listedModuleIds(levels);
+  const seenIds = new Map<string, string>();
+  const valid = files
+    .map((file) => readValidModule(file, row, known, seenIds, errors))
+    .filter((module) => module !== null);
+  if (levels === null) return null;
 
+  const excluded = row.fixture === true && !flags.withFixtures;
+  const { shipped, gatedOut, warnings } = gateCourse(excluded ? [] : valid, flags);
+  // The index needs the whole shipped sequence in ladder order, so it is built here — and the
+  // pool rule runs with it, in the read-and-validate phase, so a content bug leaves the previous
+  // output untouched rather than half-replaced.
+  const indexes = buildWordIndex(row.id, shipped);
+  checkComprehensionPools(row.id, shipped, indexes, errors);
+
+  return {
+    row,
+    levels,
+    stringsFile,
+    shipped,
+    indexes,
+    gatedOut,
+    excluded: excluded ? 'fixture course' : null,
+    warnings,
+  };
+}
+
+function readLevels(courseDir: string, courseId: string, errors: string[]): Levels | null {
+  const parsed = readJsonFile(
+    path.join(courseDir, 'levels.json'),
+    `${courseId}/levels.json`,
+    errors,
+  );
+  return parsed === null ? null : validateLevels(parsed.json, courseId, errors);
+}
+
+/**
+ * Completeness against the canonical key list (#76) — PRD §6.5: a missing key is a build
+ * failure, because the shell has no fallback copy. `checkStrings` already names course + key.
+ */
+function checkStringsFile(stringsFile: string, courseId: string, errors: string[]): void {
+  const parsed = readJsonFile(stringsFile, `${courseId}/strings.json`, errors);
+  if (parsed !== null) errors.push(...checkStrings(parsed.json, courseId));
+}
+
+function listedModuleIds(levels: Levels): ReadonlySet<string> {
+  return new Set(levels.levels.flatMap((level) => level.modules.map((entry) => entry.id)));
+}
+
+/**
+ * Reads and validates one authored module file. Every problem goes into `errors` and a file that
+ * must not ship comes back null; the module's id also goes into `seenIds`, which `validateModule`
+ * reads so a later file reusing it is reported as a duplicate. `known` is the levels.json
+ * listing, or null when that file was unusable and the listing check has to be skipped.
+ */
+function readValidModule(
+  file: string,
+  row: CourseRow,
+  known: ReadonlySet<string> | null,
+  seenIds: Map<string, string>,
+  errors: string[],
+): ValidModule | null {
+  const name = `${row.id}/${path.basename(file)}`;
+  const parsed = readJsonFile(file, name, errors);
+  if (parsed === null) return null;
+
+  // Validation is #73's job, in full, for every module — shipped or not.
+  const result = validateModule(parsed.json, name, { seenIds });
+  if (!result.ok) {
+    for (const issue of result.issues) errors.push(`${name}: ${issue.path}: ${issue.message}`);
+    return null;
+  }
+  const module = parsed.json as Module;
+  if (result.id !== null) seenIds.set(result.id, name);
+
+  const scriptMode = checkScriptMode(module, row.scriptMode);
+  for (const issue of scriptMode.errors) errors.push(`${name}: ${issue}`);
+  for (const issue of checkGlossEn(module, row.l1Tag, row.l2Tag)) errors.push(`${name}: ${issue}`);
+
+  if (known !== null && !known.has(module.id)) {
+    errors.push(`${name}: "${module.id}" is not listed in ${row.id}/levels.json`);
+    return null;
+  }
+  return { id: module.id, file, module, warning: romanizationWarning(name, scriptMode) };
+}
+
+/** A romanized surface with no script line is worth a note, not an error: optional but recommended. */
+function romanizationWarning(name: string, scriptMode: ScriptModeReport): string | null {
+  const missing = scriptMode.surfaces - scriptMode.withScript;
+  if (missing <= 0) return null;
+  return `  warn ${name}: ${missing} of ${scriptMode.surfaces} romanized surfaces carry no script line (optional but recommended)`;
+}
+
+/**
+ * The gate (#64, §17) over one course's valid modules: what ships and what is held back, each in
+ * ladder order, plus the warnings the shipped ones earn — in the order the files were read.
+ */
+function gateCourse(
+  candidates: readonly ValidModule[],
+  flags: BuildFlags,
+): { shipped: ShippedModule[]; gatedOut: GatedModule[]; warnings: string[] } {
+  const shipped: ValidModule[] = [];
+  const gatedOut: GatedModule[] = [];
+  for (const candidate of candidates) {
+    const verdict = gateModule(candidate.module, flags);
+    if (verdict.ship) shipped.push(candidate);
+    else gatedOut.push({ id: candidate.id, reason: verdict.reason });
+  }
+  const warnings = shipped.map((module) => module.warning).filter((warning) => warning !== null);
+  shipped.sort((a, b) => byLadderOrder(a.id, b.id));
+  gatedOut.sort((a, b) => byLadderOrder(a.id, b.id));
+  return { shipped, gatedOut, warnings };
+}
+
+/** PRD §6.3 for every shipped module, against the cumulative index the read phase built for it. */
+function checkComprehensionPools(
+  courseId: string,
+  shipped: readonly ShippedModule[],
+  indexes: ReadonlyMap<string, WordIndexFile>,
+  errors: string[],
+): void {
+  for (const entry of shipped) {
+    const index = indexes.get(entry.id);
+    // buildWordIndex builds one index per module it is given, so a miss is a bug in it — not
+    // a module to skip quietly.
+    if (index === undefined) throw new Error(`${courseId}: no word index built for ${entry.id}`);
+    const name = `${courseId}/${path.basename(entry.file)}`;
+    for (const issue of checkComprehensionPool(entry.module, index)) {
+      errors.push(`${name}: ${issue.path}: ${issue.message}`);
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------- emit */
+
+/**
+ * Phase 2 — replaces `outRoot` wholesale with the planned tree. Returns courseId → shipped
+ * module ids, the report's contract.
+ */
+function emitTree(
+  plans: readonly CoursePlan[],
+  outRoot: string,
+  banner: string | null,
+): Map<string, string[]> {
   rmSync(outRoot, { recursive: true, force: true });
   mkdirSync(outRoot, { recursive: true });
 
   const shipping = plans.filter((plan) => plan.shipped.length > 0);
   const shipped = new Map<string, string[]>();
-
   for (const plan of shipping) {
-    const courseOut = path.join(outRoot, plan.row.id);
-    // The course's weight, counted AS it is emitted (#107): a copy adds the source's size, a
-    // write adds what writeJson reports — and modules are written, stripped (#404).
-    let files = 0;
-    let bytes = 0;
-    const copy = (from: string, to: string): void => {
-      copyFileSync(from, to);
-      files += 1;
-      bytes += statSync(from).size;
-    };
-    const write = (file: string, value: unknown): void => {
-      files += 1;
-      bytes += writeJson(file, value);
-    };
-
-    mkdirSync(path.join(courseOut, 'modules'), { recursive: true });
-    for (const module of plan.shipped) {
-      // Not a copy any more (#404): the authored file carries the pipeline's own bookkeeping —
-      // prerequisites, complexity, the native gate's signature — which the app never reads and a
-      // learner should not download. `PIPELINE_ONLY_MODULE_KEYS` is the one list of what stays
-      // behind; `src/course/types.test.ts` reads the same list to check the authored files
-      // against the shipped shape.
-      write(
-        path.join(courseOut, 'modules', `${module.id}.json`),
-        shipModule(JSON.parse(readFileSync(module.file, 'utf8')) as Record<string, unknown>),
-      );
-    }
-    mkdirSync(path.join(courseOut, 'index'), { recursive: true });
-    for (const index of plan.indexes.values()) {
-      write(path.join(courseOut, 'index', `${index.moduleId}.json`), index);
-    }
-    const ids = plan.shipped.map((module) => module.id);
-    write(path.join(courseOut, 'levels.json'), emitLevels(plan.levels, new Set(ids)));
-    copy(plan.stringsFile, path.join(courseOut, 'strings.json'));
-
-    const sizes: CourseSizesFile = { courseId: plan.row.id, files, bytes };
-    writeJson(path.join(courseOut, 'sizes.json'), sizes);
-    shipped.set(plan.row.id, ids);
+    shipped.set(plan.row.id, emitCourse(plan, path.join(outRoot, plan.row.id)));
   }
+  writeJson(path.join(outRoot, 'courses.json'), emittedManifest(shipping, banner));
+  return shipped;
+}
 
-  const emitted: EmittedManifest = {
+/** Writes one course's folder and returns its shipped module ids, in ladder order. */
+function emitCourse(plan: CoursePlan, courseOut: string): string[] {
+  // The course's weight, counted AS it is emitted (#107): a copy adds the source's size, a
+  // write adds what writeJson reports — and modules are written, stripped (#404).
+  let files = 0;
+  let bytes = 0;
+  const copy = (from: string, to: string): void => {
+    copyFileSync(from, to);
+    files += 1;
+    bytes += statSync(from).size;
+  };
+  const write = (file: string, value: unknown): void => {
+    files += 1;
+    bytes += writeJson(file, value);
+  };
+
+  mkdirSync(path.join(courseOut, 'modules'), { recursive: true });
+  for (const module of plan.shipped) {
+    // Not a copy any more (#404): the authored file carries the pipeline's own bookkeeping —
+    // prerequisites, complexity, the native gate's signature — which the app never reads and a
+    // learner should not download. `PIPELINE_ONLY_MODULE_KEYS` is the one list of what stays
+    // behind; `src/course/types.test.ts` reads the same list to check the authored files
+    // against the shipped shape.
+    write(
+      path.join(courseOut, 'modules', `${module.id}.json`),
+      shipModule(JSON.parse(readFileSync(module.file, 'utf8')) as Record<string, unknown>),
+    );
+  }
+  mkdirSync(path.join(courseOut, 'index'), { recursive: true });
+  for (const index of plan.indexes.values()) {
+    write(path.join(courseOut, 'index', `${index.moduleId}.json`), index);
+  }
+  const ids = plan.shipped.map((module) => module.id);
+  write(path.join(courseOut, 'levels.json'), emitLevels(plan.levels, new Set(ids)));
+  copy(plan.stringsFile, path.join(courseOut, 'strings.json'));
+
+  const sizes: CourseSizesFile = { courseId: plan.row.id, files, bytes };
+  writeJson(path.join(courseOut, 'sizes.json'), sizes);
+  return ids;
+}
+
+/** The learner's courses.json: only the courses that shipped, flagged when the gate was relaxed. */
+function emittedManifest(shipping: readonly CoursePlan[], banner: string | null): EmittedManifest {
+  return {
     ...(banner === null
       ? {}
       : {
@@ -979,35 +1090,51 @@ export function buildContent(options: BuildOptions): BuildReport {
         }),
     courses: shipping.map((plan) => plan.row),
   };
-  writeJson(path.join(outRoot, 'courses.json'), emitted);
+}
 
-  /* ----------------------------------------------------------------- report */
+/* -------------------------------------------------------------------- report */
 
+/** Phase 3 — the lines `main` prints: banner, one block per course, the summary line, banner. */
+function reportLines(plans: readonly CoursePlan[], banner: string | null): string[] {
   const lines: string[] = [];
   if (banner !== null) lines.push(banner);
+  for (const plan of plans) lines.push(...courseLines(plan));
+  if (!plans.some((plan) => plan.shipped.length > 0)) lines.push(nothingShippedLine(banner));
+  lines.push(summaryLine(plans));
+  if (banner !== null) lines.push(banner);
+  return lines;
+}
 
-  for (const plan of plans) {
-    const id = plan.row.id;
-    const ids = plan.shipped.map((module) => module.id);
-    if (plan.excluded !== null) {
-      lines.push(
-        `${id}: 0 modules — ${plan.excluded}, excluded by the gate (--with-fixtures ships it in dev)`,
-      );
-      continue;
-    }
-    if (ids.length === 0) {
-      lines.push(`${id}: 0 modules — ${describeGated(plan.gatedOut)}`);
-      continue;
-    }
-    lines.push(`${id}: ${countModules(ids.length)} (${moduleRanges(ids)})`);
-    for (const index of plan.indexes.values()) {
-      lines.push(`  index ${index.moduleId}: ${index.surfaceCount} surfaces`);
-    }
-    if (plan.gatedOut.length > 0) lines.push(`  held back: ${describeGated(plan.gatedOut)}`);
-    lines.push(...plan.warnings);
+function courseLines(plan: CoursePlan): string[] {
+  const id = plan.row.id;
+  const ids = plan.shipped.map((module) => module.id);
+  if (plan.excluded !== null) {
+    return [
+      `${id}: 0 modules — ${plan.excluded}, excluded by the gate (--with-fixtures ships it in dev)`,
+    ];
   }
+  if (ids.length === 0) return [`${id}: 0 modules — ${describeGated(plan.gatedOut)}`];
 
-  const shippedSummary = shipping
+  const lines = [`${id}: ${countModules(ids.length)} (${moduleRanges(ids)})`];
+  for (const index of plan.indexes.values()) {
+    lines.push(`  index ${index.moduleId}: ${index.surfaceCount} surfaces`);
+  }
+  if (plan.gatedOut.length > 0) lines.push(`  held back: ${describeGated(plan.gatedOut)}`);
+  lines.push(...plan.warnings);
+  return lines;
+}
+
+function nothingShippedLine(banner: string | null): string {
+  return banner === null
+    ? 'CONTENT ⚠ STRICT BUILD SHIPPED NO CONTENT — no module has passed the native gate (#64). ' +
+        'That is the honest production result; npm run dev relaxes the gate so the app has something to render.'
+    : 'CONTENT ⚠ NOTHING SHIPPED — even with the relaxed gate no module qualified; see the per-course lines above.';
+}
+
+/** `CONTENT build: hi-mr 10 modules (L1-M1..M10) | skipped: en-xx (2 unverified)`. */
+function summaryLine(plans: readonly CoursePlan[]): string {
+  const shippedSummary = plans
+    .filter((plan) => plan.shipped.length > 0)
     .map(
       (plan) =>
         `${plan.row.id} ${countModules(plan.shipped.length)} (${moduleRanges(plan.shipped.map((m) => m.id))})`,
@@ -1017,22 +1144,10 @@ export function buildContent(options: BuildOptions): BuildReport {
     .filter((plan) => plan.shipped.length === 0)
     .map((plan) => `${plan.row.id} (${plan.excluded ?? summariseReasons(plan.gatedOut)})`)
     .join(', ');
-
-  if (shipping.length === 0) {
-    lines.push(
-      banner === null
-        ? 'CONTENT ⚠ STRICT BUILD SHIPPED NO CONTENT — no module has passed the native gate (#64). ' +
-            'That is the honest production result; npm run dev relaxes the gate so the app has something to render.'
-        : 'CONTENT ⚠ NOTHING SHIPPED — even with the relaxed gate no module qualified; see the per-course lines above.',
-    );
-  }
-  lines.push(
+  return (
     `CONTENT build: ${shippedSummary === '' ? 'nothing shipped' : shippedSummary}` +
-      (skippedSummary === '' ? '' : ` | skipped: ${skippedSummary}`),
+    (skippedSummary === '' ? '' : ` | skipped: ${skippedSummary}`)
   );
-  if (banner !== null) lines.push(banner);
-
-  return { lines, exitCode: 0, shipped };
 }
 
 function countModules(count: number): string {
@@ -1040,7 +1155,7 @@ function countModules(count: number): string {
 }
 
 /** `L1-M1, L1-M2 unverified (native gate #64; --with-unverified ships them in dev)`. */
-function describeGated(gatedOut: readonly { id: string; reason: string }[]): string {
+function describeGated(gatedOut: readonly GatedModule[]): string {
   if (gatedOut.length === 0) return 'nothing authored yet';
   return [...new Set(gatedOut.map((module) => module.reason))]
     .map((reason) => {
@@ -1053,7 +1168,7 @@ function describeGated(gatedOut: readonly { id: string; reason: string }[]): str
 }
 
 /** The compact form for the summary line: `2 unverified`. */
-function summariseReasons(gatedOut: readonly { id: string; reason: string }[]): string {
+function summariseReasons(gatedOut: readonly GatedModule[]): string {
   if (gatedOut.length === 0) return 'no modules';
   return [...new Set(gatedOut.map((module) => module.reason))]
     .map((reason) => `${gatedOut.filter((module) => module.reason === reason).length} ${reason}`)
