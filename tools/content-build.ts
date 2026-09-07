@@ -636,9 +636,10 @@ function maxSpanOf(surfaces: ReadonlyMap<string, WordIndexEntry>): number {
  * exit ritual, so an untaught word in one is a content bug — caught here, at build, rather than as
  * a "why" row that silently has nothing to say.
  *
- * Pool items only. Variations and mistakes are deliberately outside the rule: a mistake is wrong
- * L2 by definition, and variations carry proper nouns the modules never declare (प्रिया / Priya —
- * the known gap on #61). Extending the rule to them would fail the build on correct content.
+ * Pool items only — the rule FAILS a build, and a mistake is wrong L2 by definition while a
+ * variation may carry a proper noun no module declares (प्रिया / Priya — the known gap on #61),
+ * so failing on those would reject correct content. What the learner is SHOWN outside the pool is
+ * reported instead, by `checkShownSurfaces` below, and ratcheted by `shown-surfaces.test.ts`.
  *
  * The index is the SHIPPED sequence, so a build that shipped L1-M2 without L1-M1 fails here, and
  * the named range (`is not taught by L1-M2`) says why: in THAT build those words really are
@@ -665,6 +666,55 @@ export function checkComprehensionPool(module: Module, index: WordIndexFile): Va
   });
 
   return issues;
+}
+
+/** One surface a module SHOWS that its own cumulative index cannot resolve (#491). */
+export interface ShownSurfaceFinding {
+  moduleId: string;
+  /** The sentence the surface was shown in. */
+  sentenceId: string;
+  /** `display` for the hero line, `variation` for one of its variations. */
+  field: 'display' | 'variation';
+  surface: string;
+}
+
+/**
+ * The reporting half of the shown-surface rule (#491): every surface a module puts in front of a
+ * learner — the hero `display` and every `variations[].display` — should resolve in that module's
+ * cumulative index, because a shown word that no row owns is a "why" row with nothing to say. That
+ * is the gap #282 closed by hand for seven hi-mr lines and which reopened in every course since.
+ *
+ * This REPORTS rather than fails, and the distinction is deliberate. Two kinds of finding are not
+ * content bugs: a proper noun rides unindexed by #61, and a mistake display is wrong by design (so
+ * it is not read at all). The rest are real, and there are 133 of them across the nine shipped
+ * courses — a sweep of verified content, not something to spring on a build. `shown-surfaces.test.ts`
+ * ratchets the counts so new content cannot add to them, and the sweep is its own issue.
+ *
+ * A finding is also raised when a variation shows a word taught LATER in the same ladder — a
+ * forward reference. For a learner standing at that rung the word is untaught, which is the defect.
+ */
+export function checkShownSurfaces(module: Module, index: WordIndexFile): ShownSurfaceFinding[] {
+  const lookup: SurfaceLookup = {
+    maxSpan: index.maxSpan,
+    has: (surface) => Object.hasOwn(index.surfaces, surface),
+  };
+  const findings: ShownSurfaceFinding[] = [];
+
+  const scan = (text: string, sentenceId: string, field: ShownSurfaceFinding['field']): void => {
+    for (const match of matchSurfaces(tokenizeSurface(text), lookup)) {
+      if (match.resolved) continue;
+      findings.push({ moduleId: module.id, sentenceId, field, surface: match.surface });
+    }
+  };
+
+  for (const sentence of module.sentences) {
+    scan(sentence.display, sentence.id, 'display');
+    for (const variation of sentence.variations ?? []) {
+      scan(variation.display, sentence.id, 'variation');
+    }
+  }
+
+  return findings;
 }
 
 /* --------------------------------------------------------------------- build */
@@ -702,6 +752,8 @@ interface CoursePlan {
   /** Course-level exclusion (a fixture course on a strict build); modules are not even considered. */
   excluded: string | null;
   warnings: string[];
+  /** Shown-but-untaught surfaces across the shipped modules (#491) — reported, never fatal. */
+  shownSurfaces: ShownSurfaceFinding[];
 }
 
 function errorMessage(error: unknown): string {
@@ -905,6 +957,7 @@ function readCoursePlan(
     gatedOut,
     excluded: excluded ? 'fixture course' : null,
     warnings,
+    shownSurfaces: collectShownSurfaces(shipped, indexes),
   };
 }
 
@@ -1014,6 +1067,23 @@ function checkComprehensionPools(
   }
 }
 
+/**
+ * The same walk for the reporting rule (#491), over the modules that actually ship — a module the
+ * gate held back is not shown to anyone, so it is not counted.
+ */
+function collectShownSurfaces(
+  shipped: readonly ShippedModule[],
+  indexes: ReadonlyMap<string, WordIndexFile>,
+): ShownSurfaceFinding[] {
+  const findings: ShownSurfaceFinding[] = [];
+  for (const entry of shipped) {
+    const index = indexes.get(entry.id);
+    if (index === undefined) continue;
+    findings.push(...checkShownSurfaces(entry.module, index));
+  }
+  return findings;
+}
+
 /* ---------------------------------------------------------------------- emit */
 
 /**
@@ -1120,8 +1190,27 @@ function courseLines(plan: CoursePlan): string[] {
     lines.push(`  index ${index.moduleId}: ${index.surfaceCount} surfaces`);
   }
   if (plan.gatedOut.length > 0) lines.push(`  held back: ${describeGated(plan.gatedOut)}`);
+  const shown = shownSurfacesLine(plan.shownSurfaces);
+  if (shown !== null) lines.push(shown);
   lines.push(...plan.warnings);
   return lines;
+}
+
+/**
+ * `  shown but untaught: 7 surfaces — प्रिया · पुणं · थोडं …` (#491). Null when there are none,
+ * so a clean course says nothing; the surfaces are deduplicated and capped, because the line is a
+ * signal to go and look, not the report itself.
+ */
+function shownSurfacesLine(findings: readonly ShownSurfaceFinding[]): string | null {
+  if (findings.length === 0) return null;
+  const surfaces = [...new Set(findings.map((finding) => finding.surface))];
+  const shown = surfaces.slice(0, 8).join(' · ');
+  const rest = surfaces.length > 8 ? ` … and ${surfaces.length - 8} more` : '';
+  return `  shown but untaught: ${countSurfaces(surfaces.length)} — ${shown}${rest}`;
+}
+
+function countSurfaces(count: number): string {
+  return `${count} surface${count === 1 ? '' : 's'}`;
 }
 
 function nothingShippedLine(banner: string | null): string {
