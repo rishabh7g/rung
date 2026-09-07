@@ -1,0 +1,520 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M9",
+  "title": "Festivals and everyday culture",
+  "job": "Talk about what is happening around you",
+  "prerequisites": [
+    "L3-M1",
+    "L3-M2",
+    "L3-M3",
+    "L3-M4",
+    "L3-M5",
+    "L3-M6",
+    "L3-M7",
+    "L3-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-07",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": ["simple_present", "present_continuous"],
+    "allowedPatterns": [
+      "आज + N + आहे",
+      "N-मध्ये + खूप + गर्दी + आहे",
+      "लोक + V-तायत",
+      "N-त + सुट्टी + असते"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "असतो · असते · असतं is the habitual of असणे — what is true as a rule, against आहे for what is true right now: आज सुट्टी आहे, but दिवाळीत सुट्टी असते. Hindi splits the same way (है against होता है), so only the cells are new."
+    },
+    {
+      "tag": "free",
+      "text": "L2-M7's continuous leaves the phone and describes a street: लोक गाणी ऐकतायत, सगळे जेवतायत. The -तायत cell you learnt for respect does its other job here — many people — and that is all the grammar this module needs."
+    },
+    {
+      "tag": "delta",
+      "text": "सण is the everyday word where Hindi says त्योहार, and it is masculine: मोठा सण, सण आहे. The festival names themselves are ordinary common nouns here, not proper nouns — they take rows like any other word."
+    },
+    {
+      "tag": "free",
+      "text": "This module describes what is happening; it does not explain anyone's religion. A display says आज गणपती आहे, आणि खूप गर्दी आहे — what you would see and hear that week. Maharashtra is not one custom, and nothing here is written as though it were."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M9-S01",
+      "display": "आज सण आहे",
+      "cue": "आज त्योहार है",
+      "glossEn": "There's a festival today",
+      "literal": "आज त्योहार है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "सण",
+            "cue": "त्योहार",
+            "tag": "delta",
+            "forms": ["सण", "सणात"],
+            "note": "\"Festival\" — masculine, and the everyday word where Hindi says त्योहार: मोठा सण, आज सण आहे."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "त्योहार और सण में कोई आवाज़ साझी नहीं — यह पूरा नया शब्द है, और महाराष्ट्र में साल भर सुनाई देता है.",
+      "sound": "सण = सण, आख़िरी 'ण' मूर्धन्य — 'सन' नहीं.",
+      "variations": [
+        {
+          "display": "उद्या मोठा सण आहे",
+          "cue": "कल बड़ा त्योहार है",
+          "changed": "मोठा जुड़ा — सण पुल्लिंग है, इसलिए मोठा (L2-M2)."
+        },
+        {
+          "display": "आज सुट्टी आहे",
+          "cue": "आज छुट्टी है",
+          "changed": "त्योहार → छुट्टी; सुट्टी स्त्रीलिंग है, पर आहे नहीं बदलता (S03)."
+        }
+      ],
+      "mistake": {
+        "display": "आज सण आहेत",
+        "why": "बहुवचन वाला आहेत लगा दिया. एक ही त्योहार है — आज सण आहे."
+      },
+      "usage": "दिन की शुरुआत में — और किसी को यह बताते वक़्त कि दुकानें बंद क्यों हैं.",
+      "register": "neutral",
+      "mnemonic": "सण पुल्लिंग, सुट्टी स्त्रीलिंग — दोनों एक ही दिन आते हैं, रूप अलग."
+    },
+    {
+      "id": "L3-M9-S02",
+      "display": "आज गणपती आहे, आणि खूप गर्दी आहे",
+      "cue": "आज गणपति है, और बहुत भीड़ है",
+      "glossEn": "It's Ganpati today, and there's a big crowd",
+      "literal": "आज गणपति है, और बहुत भीड़ है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "गणपती",
+            "cue": "गणपति",
+            "tag": "delta",
+            "forms": ["गणपती", "गणपतीत"],
+            "note": "The festival Pune's year turns on. In speech the name stands for the whole ten days: आज गणपती आहे means the festival, not a statue."
+          },
+          {
+            "display": "गर्दी",
+            "cue": "भीड़",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Crowd\" — feminine in both languages, so खूप गर्दी आहे. It is the word you will hear most often that week."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "गणपती यहाँ त्योहार का नाम है, मूर्ति का नहीं — 'आज गणपती आहे' का मतलब है कि उत्सव चल रहा है.",
+      "sound": "गणपती = ग‑ण‑प‑ती, आख़िर लंबा; गर्दी = गर्‑दी.",
+      "variations": [
+        {
+          "display": "आज दिवाळी आहे",
+          "cue": "आज दिवाली है",
+          "changed": "दूसरा त्योहार — दिवाळी, और वाक्य वैसा ही (S04)."
+        },
+        {
+          "display": "बाजारात खूप गर्दी आहे",
+          "cue": "बाज़ार में बहुत भीड़ है",
+          "changed": "जगह जुड़ी — बाजार झुककर बाजारात (L1-M7 का -त)."
+        }
+      ],
+      "mistake": {
+        "display": "आज गणपती आहे, आणखी खूप गर्दी आहे",
+        "why": "जोड़ने वाले आणि की जगह मात्रा वाला आणखी रख दिया (L2-M5). यहाँ दो बातें जुड़ रही हैं — आणि."
+      },
+      "usage": "किसी को दिन का हाल बताते वक़्त — और भीड़ की चेतावनी देते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "आणि जोड़ता है, आणखी बढ़ाता है — L2-M5 वाली वही जोड़ी."
+    },
+    {
+      "id": "L3-M9-S03",
+      "display": "दिवाळीत सुट्टी असते",
+      "cue": "दिवाली में छुट्टी होती है",
+      "glossEn": "There's a holiday at Diwali",
+      "literal": "दिवाली-में छुट्टी होती-है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "दिवाळीत",
+            "cue": "दिवाली में",
+            "tag": "delta",
+            "forms": ["दिवाळी", "दिवाळीत"],
+            "note": "दिवाळी with L1-M7's -त — Marathi spells it with ळ. The ending puts you inside the festival's days, as दुकानात puts you inside a shop."
+          },
+          {
+            "display": "सुट्टी",
+            "cue": "छुट्टी",
+            "tag": "free",
+            "forms": [],
+            "note": "\"A holiday\" — feminine, the same word as Hindi's छुट्टी: सुट्टी आहे, सुट्टी असते."
+          },
+          {
+            "display": "असते",
+            "cue": "होती है",
+            "tag": "delta",
+            "forms": ["असतो", "असते", "असतं", "असतात"],
+            "note": "The habitual of असणे — true every year, not just today. आहे is right now; असते is as a rule."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "आहे और असते का फ़र्क़ हिंदी के 'है' और 'होता है' जैसा ही है. आज सुट्टी आहे (आज), दिवाळीत सुट्टी असते (हर साल).",
+      "sound": "दिवाळीत = दि‑वा‑ळीत, बीच में ळ; असते = अ‑स‑ते.",
+      "variations": [
+        {
+          "display": "आज सुट्टी आहे",
+          "cue": "आज छुट्टी है",
+          "changed": "हर साल → आज: असते → आहे. यही जोड़ी पूरे मॉड्यूल की चाबी है."
+        },
+        {
+          "display": "गणपतीत खूप गर्दी असते",
+          "cue": "गणपति में बहुत भीड़ होती है",
+          "changed": "त्योहार और बात बदली — पर असते वैसा ही, क्योंकि यह हर साल की बात है."
+        }
+      ],
+      "mistake": {
+        "display": "दिवाळीत सुट्टी आहे",
+        "why": "हर साल वाली बात को आज वाली क्रिया दे दी. नियम बताने के लिए असते चाहिए."
+      },
+      "usage": "किसी को समझाते वक़्त कि साल कैसे चलता है — और छुट्टियों की योजना बनाते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "आहे = आज, असते = हर बार."
+    },
+    {
+      "id": "L3-M9-S04",
+      "display": "दिवाळी हा मोठा सण आहे",
+      "cue": "दिवाली एक बड़ा त्योहार है",
+      "glossEn": "Diwali is a big festival",
+      "literal": "दिवाली यह बड़ा त्योहार है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "दिवाळी",
+            "cue": "दिवाली",
+            "tag": "delta",
+            "forms": ["दिवाळी", "दिवाळीत"],
+            "note": "Marathi writes it with ळ, and it is feminine — but the sentence's हा agrees with सण, the thing it is being called."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "यहाँ हा दिवाळी के पीछे नहीं, सण के पीछे झुका है — 'दिवाली यह बड़ा त्योहार है'. मराठी की यह लाइन हिंदी के 'एक' के बिना चलती है.",
+      "sound": "दिवाळी = दि‑वा‑ळी; हिंदी 'दिवाली' के 'ल' की जगह मराठी ळ.",
+      "variations": [
+        {
+          "display": "गणपती हा मोठा सण आहे",
+          "cue": "गणपति एक बड़ा त्योहार है",
+          "changed": "त्योहार बदला — ढाँचा वही, और हा फिर भी सण के पीछे."
+        },
+        {
+          "display": "मला दिवाळी आवडते",
+          "cue": "मुझे दिवाली पसंद है",
+          "changed": "अपनी पसंद — L1-M1 वाली फ़्रेम, और आवडते दिवाळी के पीछे झुका."
+        }
+      ],
+      "mistake": {
+        "display": "दिवाळी ही मोठी सण आहे",
+        "why": "दिवाळी के लिंग के पीछे झुका दिया. जो कहा जा रहा है वह सण है, पुल्लिंग — हा मोठा सण."
+      },
+      "usage": "किसी बाहर वाले को त्योहार समझाते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "जिस चीज़ के बराबर रखा जा रहा है, पूँछ उसी के पीछे."
+    },
+    {
+      "id": "L3-M9-S05",
+      "display": "लोक गाणी ऐकतायत",
+      "cue": "लोग गाने सुन रहे हैं",
+      "glossEn": "People are listening to songs",
+      "literal": "लोग गाने सुन-रहे-हैं",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "लोक",
+            "cue": "लोग",
+            "tag": "free",
+            "forms": [],
+            "note": "\"People\" — always plural, like Hindi's लोग, so every verb beside it is plural: लोक ऐकतायत, लोक जेवतायत."
+          },
+          {
+            "display": "ऐकतायत",
+            "cue": "सुन रहे हैं",
+            "tag": "free",
+            "forms": ["ऐकतोय", "ऐकतेय", "ऐकतायत", "ऐकतात"],
+            "note": "L2-M7's continuous, plural cell — the ending you learnt for respect (वडील बोलतायत) doing its other job: many people."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "-तायत वाला अंत आपने आदर के लिए सीखा था (L2-M7). यहाँ वही अंत भीड़ के लिए है — एक ही रूप, दो काम.",
+      "sound": "ऐकतायत = ऐ‑क‑ता‑यत; लोक = लोक, छोटा और साफ़.",
+      "variations": [
+        {
+          "display": "सगळे जेवतायत",
+          "cue": "सब खाना खा रहे हैं",
+          "changed": "कौन — लोक → सगळे, और क्रिया बदली (S06)."
+        },
+        {
+          "display": "लोक रोज गाणी ऐकतात",
+          "cue": "लोग रोज़ गाने सुनते हैं",
+          "changed": "अभी → हर रोज़: ऐकतायत → ऐकतात, यानी आदत वाला बहुवचन."
+        }
+      ],
+      "mistake": {
+        "display": "लोक गाणी ऐकतोय",
+        "why": "एकवचन वाला अंत लगा दिया. लोक बहुवचन है — ऐकतायत."
+      },
+      "usage": "सड़क या मंडप का हाल बताते वक़्त — फ़ोन पर, या किसी के साथ चलते हुए.",
+      "register": "neutral",
+      "mnemonic": "-तायत: बड़ों के लिए भी, भीड़ के लिए भी."
+    },
+    {
+      "id": "L3-M9-S06",
+      "display": "सगळे जेवतायत",
+      "cue": "सब खाना खा रहे हैं",
+      "glossEn": "Everyone is eating",
+      "literal": "सब जीम-रहे-हैं",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "सगळे",
+            "cue": "सब",
+            "tag": "delta",
+            "forms": ["सगळा", "सगळी", "सगळं", "सगळे"],
+            "note": "\"All / everyone\" — it bends like चांगला: सगळे लोक, सगळी गर्दी, सगळं काम. You met its oblique inside सगळ्यात (L2-M9)."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "सगळ्यात (सबसे) आपने L2-M9 में देखा था — यह उसी शब्द का सीधा रूप है. वहाँ वह झुका हुआ था, यहाँ नंगा.",
+      "sound": "सगळे = स‑ग‑ळे, बीच में वही मराठी ळ.",
+      "variations": [
+        {
+          "display": "सगळे लोक जेवतायत",
+          "cue": "सब लोग खाना खा रहे हैं",
+          "changed": "लोक जोड़ा — सगळे उसके आगे विशेषण बन गया (S05)."
+        },
+        {
+          "display": "सगळं काम झालं",
+          "cue": "सारा काम हो गया",
+          "changed": "चीज़ नपुंसक — सगळे → सगळं, और बात बीत गई (L2-M8)."
+        }
+      ],
+      "mistake": {
+        "display": "सगळा जेवतायत",
+        "why": "एकवचन वाला सगळा लगा दिया. कई लोगों के लिए सगळे — और क्रिया भी बहुवचन."
+      },
+      "usage": "घर या मंडप का हाल — और किसी को बुलाते वक़्त 'सब खा रहे हैं, तुम भी आओ'.",
+      "register": "neutral",
+      "mnemonic": "सगळ्यात का सीधा भाई सगळे — एक झुका, एक नंगा."
+    },
+    {
+      "id": "L3-M9-S07",
+      "display": "बाजारात खूप गर्दी असते",
+      "cue": "बाज़ार में बहुत भीड़ होती है",
+      "glossEn": "The market is always crowded",
+      "literal": "बाज़ार-में बहुत भीड़ होती-है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "बाजारात",
+            "cue": "बाज़ार में",
+            "tag": "free",
+            "forms": ["बाजार", "बाजारात"],
+            "note": "बाजार with L1-M7's -त, a native-shaped noun taking the everyday \"in\": बाजारात, दुकानात, खोलीत."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "असते यहाँ फिर आया है — यह हर दिन की बात है, आज की नहीं. आज की भीड़ के लिए गर्दी आहे (S02).",
+      "sound": "बाजारात = बा‑जा‑रात, तीनों बराबर.",
+      "variations": [
+        {
+          "display": "आज बाजारात खूप गर्दी आहे",
+          "cue": "आज बाज़ार में बहुत भीड़ है",
+          "changed": "हर दिन → आज: असते → आहे, और आज सामने आ गया."
+        },
+        {
+          "display": "सणात बाजारात खूप गर्दी असते",
+          "cue": "त्योहार में बाज़ार में बहुत भीड़ होती है",
+          "changed": "मौक़ा जुड़ा — सण झुककर सणात, वही -त."
+        }
+      ],
+      "mistake": {
+        "display": "बाजारात खूप गर्दी असतो",
+        "why": "पुल्लिंग वाला असतो लगा दिया. गर्दी स्त्रीलिंग है — गर्दी असते."
+      },
+      "usage": "किसी को शहर समझाते वक़्त — और भीड़ से बचने की सलाह देते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "जो हर बार सच है, वह असतो/असते/असतं लेता है."
+    },
+    {
+      "id": "L3-M9-S08",
+      "display": "आमच्या घरात पूजा असते",
+      "cue": "हमारे घर में पूजा होती है",
+      "glossEn": "We have a puja at home",
+      "literal": "हमारे घर-में पूजा होती-है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "आमच्या",
+            "cue": "हमारे",
+            "tag": "delta",
+            "forms": ["आमचा", "आमची", "आमचं", "आमच्या"],
+            "note": "आम्ही's genitive (L1-M10), bent before a bent noun — L3-M2's grid, now on the pronoun a family uses about itself."
+          },
+          {
+            "display": "पूजा",
+            "cue": "पूजा",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Puja\" — the same word as Hindi, feminine: पूजा असते, पूजा झाली. What it involves differs from house to house."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "यह लाइन सिर्फ़ अपने घर के बारे में है. मराठी घर एक जैसे नहीं होते — 'हर मराठी घर में ऐसा होता है' कहना ग़लत भी है और अजीब भी.",
+      "sound": "आमच्या = आम‑च्या; पूजा = पू‑जा, पहला हिस्सा लंबा.",
+      "variations": [
+        {
+          "display": "आमच्या घरात आज पूजा आहे",
+          "cue": "हमारे घर में आज पूजा है",
+          "changed": "हर बार → आज: असते → आहे, और आज सामने."
+        },
+        {
+          "display": "माझ्या घरात पूजा असते",
+          "cue": "मेरे घर में पूजा होती है",
+          "changed": "हम → मैं: आमच्या → माझ्या, वही ख़ाना (L3-M2)."
+        }
+      ],
+      "mistake": {
+        "display": "आमचा घरात पूजा असते",
+        "why": "मालिक झुका नहीं. झुके हुए नाम के आगे आमच्या चाहिए — आमच्या घरात (L3-M2)."
+      },
+      "usage": "अपने घर की बात — किसी मेहमान को समझाते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "माझ्या, तुमच्या, आमच्या — झुके हुए नाम के आगे सब झुकते हैं."
+    },
+    {
+      "id": "L3-M9-S09",
+      "display": "सणात लोक नवे कपडे घालतात",
+      "cue": "त्योहार में लोग नए कपड़े पहनते हैं",
+      "glossEn": "At festivals people wear new clothes",
+      "literal": "त्योहार-में लोग नए कपड़े पहनते-हैं",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "कपडे",
+            "cue": "कपड़े",
+            "tag": "free",
+            "forms": ["कपडा", "कपडे"],
+            "note": "\"Clothes\" — masculine plural, as in Hindi, so नवे कपडे (L2-M3's grid)."
+          },
+          {
+            "display": "घालतात",
+            "cue": "पहनते हैं",
+            "tag": "delta",
+            "forms": ["घालतो", "घालते", "घालतात", "करतात"],
+            "note": "घालणे, \"to put on / wear\" — the plural habitual here, the -तात cell every verb takes for many people (करतात, येतात)."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "घालणे का दायरा हिंदी के 'पहनना' से चौड़ा है — कपड़े भी, और चीज़ें रखना भी. यहाँ सिर्फ़ कपड़ों वाला काम है.",
+      "sound": "घालतात = घा‑ल‑तात; कपडे = क‑प‑डे.",
+      "variations": [
+        {
+          "display": "सणात लोक नवे कपडे घालतात, आणि गोड जेवण करतात",
+          "cue": "त्योहार में लोग नए कपड़े पहनते हैं, और मीठा खाना बनाते हैं",
+          "changed": "दूसरी आदत जुड़ी — आणि से, और करणे का बहुवचन करतात."
+        },
+        {
+          "display": "मी आज नवे कपडे घालतो",
+          "cue": "मैं आज नए कपड़े पहनता हूँ",
+          "changed": "सब → मैं: घालतात → घालतो, और बात आज की हो गई."
+        }
+      ],
+      "mistake": {
+        "display": "सणात लोक नवीन कपडे घालतो",
+        "why": "बहुवचन कर्ता के साथ एकवचन क्रिया. लोक बहुवचन है — घालतात."
+      },
+      "usage": "त्योहार का रिवाज़ बताते वक़्त — बिना किसी को यह कहे कि सबको ऐसा करना चाहिए.",
+      "register": "neutral",
+      "mnemonic": "हर साल की आदत = बहुवचन का -तात."
+    },
+    {
+      "id": "L3-M9-S10",
+      "display": "मला सण आवडतात, कारण सगळे घरी येतात",
+      "cue": "मुझे त्योहार पसंद हैं, क्योंकि सब घर आते हैं",
+      "glossEn": "I like festivals, because everyone comes home",
+      "literal": "मुझे त्योहार पसंद हैं, क्योंकि सब घर आते-हैं",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "येतात",
+            "cue": "आते हैं",
+            "tag": "delta",
+            "forms": ["येतो", "येते", "येतात"],
+            "note": "The plural habitual of येणे — the everyday cell L1 never wrote, though it taught येईन, येणार and ये."
+          }
+        ],
+        "rules": [2, 1]
+      },
+      "trap": "आवडतात यहाँ त्योहारों के पीछे झुका है, आपके पीछे नहीं (L1-M1) — और वजह कारण से जुड़ी है (L1-M9). पूरा वाक्य पुराने पुर्ज़ों से बना है.",
+      "sound": "येतात = ये‑तात; आवडतात = आ‑व‑ड‑तात.",
+      "variations": [
+        {
+          "display": "मला सण आवडतात, कारण सुट्टी असते",
+          "cue": "मुझे त्योहार पसंद हैं, क्योंकि छुट्टी होती है",
+          "changed": "वजह बदली — और वह हर साल की बात है, इसलिए असते (S03)."
+        },
+        {
+          "display": "मला गर्दी आवडत नाही",
+          "cue": "मुझे भीड़ पसंद नहीं",
+          "changed": "उलटी पसंद — आवडत नाही, L2-M8 वाला -त नाही."
+        }
+      ],
+      "mistake": {
+        "display": "मी सण आवडतो, कारण सगळे घरी येतात",
+        "why": "अपने को कर्ता बना दिया. पसंद की चीज़ कर्ता है: मला सण आवडतात (L1-M1)."
+      },
+      "usage": "अपनी पसंद वजह के साथ — और किसी को त्योहार समझाते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "मॉड्यूल का जोड़: पुरानी फ़्रेम, नए शब्द, और असते/आहे का फ़र्क़."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L3-M9-C01", "display": "आज सण आहे", "cue": "आज त्योहार है" },
+    {
+      "id": "L3-M9-C02",
+      "display": "आज गणपती आहे, आणि खूप गर्दी आहे",
+      "cue": "आज गणपति है, और बहुत भीड़ है"
+    },
+    { "id": "L3-M9-C03", "display": "दिवाळीत सुट्टी असते", "cue": "दिवाली में छुट्टी होती है" },
+    { "id": "L3-M9-C04", "display": "दिवाळी हा मोठा सण आहे", "cue": "दिवाली एक बड़ा त्योहार है" },
+    { "id": "L3-M9-C05", "display": "लोक गाणी ऐकतायत", "cue": "लोग गाने सुन रहे हैं" },
+    { "id": "L3-M9-C06", "display": "सगळे जेवतायत", "cue": "सब खाना खा रहे हैं" },
+    { "id": "L3-M9-C07", "display": "बाजारात खूप गर्दी असते", "cue": "बाज़ार में बहुत भीड़ होती है" },
+    { "id": "L3-M9-C08", "display": "आमच्या घरात पूजा असते", "cue": "हमारे घर में पूजा होती है" },
+    {
+      "id": "L3-M9-C09",
+      "display": "सणात लोक नवे कपडे घालतात",
+      "cue": "त्योहार में लोग नए कपड़े पहनते हैं"
+    },
+    {
+      "id": "L3-M9-C10",
+      "display": "मला सण आवडतात, कारण सगळे घरी येतात",
+      "cue": "मुझे त्योहार पसंद हैं, क्योंकि सब घर आते हैं"
+    },
+    { "id": "L3-M9-C11", "display": "आज बाजारात खूप गर्दी आहे", "cue": "आज बाज़ार में बहुत भीड़ है" },
+    { "id": "L3-M9-C12", "display": "मला गर्दी आवडत नाही", "cue": "मुझे भीड़ पसंद नहीं" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}
