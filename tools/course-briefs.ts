@@ -399,6 +399,55 @@
  * passive, and the -ऊन converb — none of the ten jobs needs them. Bounds climb 8 → 10; pools
  * are authored to 12, the course's shipped size (#305).
  *
+ * ## hi-mr L3: the four decisions, taken against the finished L2 (#452)
+ *
+ * The first L3 briefed anywhere, and the first level in this repo planned against a verified
+ * level that is itself above L1. The pinning number is the REAL cumulative index through
+ * L2-M10 — `public/content/hi-mr/index/L2-M10.json`, rebuilt and read: **441 surfaces,
+ * maxSpan 1** — not L1's 222, and not a remembered figure. The L2 review chain it inherits is
+ * `docs/49-llm-review-hi-mr-L2.md` (open questions 49–70, all standing for a native pass); the
+ * full decision record for this level is `docs/50-hi-mr-L3-brief-decisions.md`. Each decision is
+ * repeated inside the module notes, because a prompt only ever shows an author the notes.
+ *
+ * ### 1. Language of fields — unchanged from L1 and L2, field for field
+ *
+ * `rules[].text` and word `note` in English; every learner-facing line — `cue`, `trap`, `sound`,
+ * `variations[].changed`, `mistake.why`, `usage`, `mnemonic` — in Hindi in Devanagari; `glossEn`
+ * on every sentence; `literal` wherever the word order or a gender decision moves. The quirk of
+ * this one bilingual course (docs/26 §1) is not revisited at L3.
+ *
+ * ### 2. Register — carried from L2 unchanged, chip included
+ *
+ * L2-M1 settled it and #422 gave the तुम्ही + -आ / कृपया tier its own chip: तू lines chip
+ * `informal`, the कृपया-tier lines chip `formal`, everything safe with anyone stays `neutral`.
+ * L3 adds no register rule; it applies the one it has, and the modules that face counters and
+ * doctors (M7, M8) speak तुम्ही throughout while M1's own day and M10's story speak whichever
+ * the listener earns.
+ *
+ * ### 3. What L2 deliberately withheld, and where it lands here
+ *
+ * L2 kept four things out by name, and each has an owner now: the **genitive as a system** at
+ * M2 (L2-M2 taught one frame, माझ्या भावाचं नाव, and stopped); the **-ऊन converb** at M1, where
+ * a day told at length cannot be told without it; **conditionals** at M4 (जर … तर, plus ONE
+ * counterfactual frame — the system is L4-M3's); and **reported speech** at M5, on the की whose
+ * L2-M9 note was deliberately written without a fence. The **passive stays out of L3 entirely**.
+ * Two L2 debts stay standing rather than being quietly paid: L1-M9's बोललो remains the pinned
+ * index miss (M5's note says why merging बोलणे into म्हणणे would poison both rows), and every
+ * open question in docs/49 is a native-pass item, not an authoring one.
+ *
+ * ### 4. Forms and seams — L3 never edits an L1 or an L2 file
+ *
+ * Single-token, as the whole course has been: every -ऊन converb, every -चा/-ची/-चं genitive
+ * form, every -मध्ये and -कडे form is its own key, deconstructed in the module that first shows
+ * it with its note pointing back at the base word's row. The homographs and shared lexemes are
+ * assigned up front: **वाटणे** is ONE lexeme with two jobs — "I think" at M3 and "it feels" at
+ * M6 — and M3 owns the row; **भरणे** is L2-M8's (पोट भरलं) and M8 re-shows it for bills and
+ * forms without opening a second family; **की** stays L2-M9's row across all three of its jobs;
+ * **-कडे** stands bare for the first time at M7, and its row says डावीकडे and उजवीकडे (L2-M4)
+ * were the same ending glued on. Bounds climb 10 → 12 (M1–M3: 10, M4–M7: 11, M8–M10: 12),
+ * pools are authored to 12, M1–M3 ship fully enriched, and **M10's items are capped at eight
+ * sentences** — "Your own story" is one item, not a notebook.
+ *
  * ## en-it: the five decisions a brief must settle before any Italian is written
  *
  * en-it (#332–#337) is the fifth course briefed and the nearest sibling en-es has: same L1
@@ -1809,6 +1858,207 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         "Register closes where M1 opened (docs/26): an account speaks the register its listener earns — a friend hears तू-frames and the informal chip, an elder's version swaps them out — and a good final item shows the SAME event told both ways, the level's two lessons (register and the past) in one pool entry.",
       ],
       maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M1': {
+      id: 'L3-M1',
+      title: 'Your day, in detail',
+      job: 'Longer habitual narration with sequencing words',
+      patterns: [
+        'V-ऊन + मग + V-तो/ते',
+        'आधी … मग … नंतर … शेवटी …',
+        'रोज + time-word + मी + V-तो/ते',
+        'मी + N-ला + जाऊन + N + करतो',
+      ],
+      notes: [
+        "THE grammar of the module: the -ऊन converb — उठून, जाऊन, करून, जेवून, \"having got up / having gone\". Hindi's करके is the same idea in a different body (उठकर → उठून), so the MOVE transfers and only the ending is new: tag delta, and say plainly that a chain of -ऊन forms is how Marathi tells a day without a full stop after every verb. Every converb is its own single-token key, deconstructed here with its note pointing back to the verb's first-teach row (L1-M4's उठतो, L1-M6's जाणार, L2-M5's जेवलो) — the forms policy of docs/26, unchanged.",
+        'The converb carries no person and no gender — उठून is उठून whoever got up, and the LAST verb in the chain carries everything: मी उठून चहा करतो · ती उठून चहा करते. That is the whole economy of the shape, and the one place a Hindi speaker over-thinks it: there is nothing to agree with until the end of the sentence. Say it, and let the pool test it with the same chain under मी and ती.',
+        "Sequencing words are all owned already — आधी, मग, शेवटी (L2-M10), नंतर (L1-M4), रोज and the time-of-day set (L1-M4) — so the module spends almost nothing on vocabulary and everything on length: this is where L1-M4's single habitual sentences become a paragraph. New words, if any, are the daily-routine verbs the ladder still lacks (आंघोळ, तयार) and no more than a handful; a sentence that needs a new noun is a sentence that wants rewriting.",
+        "Length is the delta the learner will feel: the bound climbs to ten words, and an item may run two sentences. Keep every clause inside L1-M4's habitual, and keep the tense simple present throughout — the past is L2-M10's and the -तोय continuous is L2-M7's; naming them in a usage line is fine, writing them here is not.",
+        "INDEX SEAM: उठून, जाऊन, करून, जेवून, येऊन and any other -ऊन form are FRESH single-token keys owned by this module — no L1 or L2 file is edited, and the bare stems stay where they were first taught. आंघोळ (if used) is this module's; the daily nouns and every time word stay L1-M4's.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M2': {
+      id: 'L3-M2',
+      title: 'Work and study',
+      job: 'Explain what you do all day, and how',
+      patterns: [
+        'N-चा/-ची/-चं + N + आहे',
+        'माझ्या + N-oblique-चं + काम + Adj + आहे',
+        'मी + N-मध्ये + काम करतो/करते',
+        'मी + N + शिकतो/शिकते',
+      ],
+      notes: [
+        "THE decision of the level lands here: the genitive becomes a SYSTEM. L2-M2 taught one frame (माझ्या भावाचं नाव) and deliberately stopped; this module opens the grid — -चा (m) · -ची (f) · -चं (n) · -चे (m.pl) · -च्या (f.pl), agreeing with the thing OWNED, over the oblique bend on the owner (ऑफिस → ऑफिसचं, कंपनी → कंपनीचा, मित्र → मित्राचं). Hindi's का/की/के agrees the same way, so the law transfers whole and the fusion plus the bend are the delta — exactly the argument L2-M2 made about one frame, now said about all of them.",
+        "Work vocabulary is the spend, and it is the module's only spend: ऑफिस, कंपनी, कामगार or नोकरी, शाळा, कॉलेज, अभ्यास, शिकवणे. Prefer the words a Pune speaker actually says (ऑफिस over कार्यालय, नोकरी for a job) and note the formal twin in a usage line rather than in a display — the same discipline that kept थँक्यू out of L2-M1's displays.",
+        '-मध्ये ("in") joins the glue-set the learner owns from L1-M7 (-त, -वर) and L2-M4 (-ला, -ने): मी ऑफिसमध्ये काम करतो. Its note must say what -त does NOT do — -त is the everyday in for small containers and rooms (खोलीत, दुकानात), -मध्ये is the wider one and the only one that fits a borrowed noun like ऑफिस. One row, one contrast, no list.',
+        'The verbs are all owned: करतो, शिकतो, वाचतो, जातो (L1-M4), शिकवणे is the one new lexeme ("teach", the causative twin of शिकणे — say that they are a pair, because Hindi\'s सीखना/सिखाना pairs the same way). Keep tense to the simple present: this module is L1-M4 grown up, not a new tense.',
+        "INDEX SEAM: every -चा/-ची/-चं form is its own single-token key (ऑफिसचं, कंपनीची, मित्राचा…), each deconstructed here with its note pointing at the base noun's row; bare चा never stands free in this course and gets no key, exactly as bare पेक्षा did not (L2-M9). भावाचं stays L2-M2's row. ऑफिस, कंपनी, नोकरी, शाळा, कॉलेज, अभ्यास, शिकवतो and -मध्ये forms are fresh.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M3': {
+      id: 'L3-M3',
+      title: 'Opinions with reasons',
+      job: 'Agree, disagree, soften — reasons attached',
+      patterns: [
+        'मला वाटतं की + clause',
+        'माझ्या मते + clause',
+        'हे बरोबर आहे / हे चूक आहे',
+        'clause + कारण + clause',
+        'कदाचित + clause',
+      ],
+      notes: [
+        'मला वाटतं is the module\'s spine and the course\'s next dative frame: "it seems to me" — वाटणे takes मला exactly as आवडतो and हवं do (L1-M1, L1-M3), so the frame is owned and only the verb is new. Write वाटणे\'s row TRUE OF BOTH ITS JOBS now, because L3-M6 inherits it for feelings (मला काळजी वाटते): it is the seems/feels verb, and "I think" is one of its uses, not its definition. The row lives here; M6 points back at it.',
+        "की opens the clause, and this is the second half of the promise L2-M9's की note left open: there it was the question-or (चहा की कॉफी?), here it is the joiner (मला वाटतं की हे महाग आहे). Same key, two jobs — the हा/ही/हे precedent — and reported speech proper is L3-M5's, which takes the same की with a different verb. Do not fence either job out.",
+        'Agreeing and disagreeing without rudeness: बरोबर ("right"), चूक ("wrong"), खरं ("true") — all three sit in the हे … आहे frame the learner has had since L1-M8, and the softening is done with words, not with grammar: कदाचित ("maybe"), थोडं (L1-M3), and the question tag ना. The register law of L2-M1 applies unchanged — disagreement with an elder chips formal and reaches for कदाचित first.',
+        "Reasons are already owned: कारण and म्हणून (L1-M9). This module's job is to attach them to an OPINION rather than to a feeling — मला वाटतं की चहा चांगला आहे, कारण तो स्वस्त आहे — and to keep both clauses inside the bounds. Two clauses is the ceiling here; three is L3-M10's.",
+        "INDEX SEAM: वाटतं (with its वाटते/वाटतो cells as forms), मते, बरोबर, चूक, खरं, कदाचित and ना are fresh keys. की stays L2-M9's row, and its note there was written without a fence for exactly this reason. कारण and म्हणून stay L1-M9's. This is a fully-enriched module (M1–M3 law): all five blocks on all ten sentences.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M4': {
+      id: 'L3-M4',
+      title: 'If and then',
+      job: 'Conditions, wishes, advice',
+      patterns: [
+        'जर + clause + तर + clause',
+        'clause + तर + clause',
+        'तुम्ही + V-आयला + पाहिजे',
+        'जर + V-लो/-लं + असतं + तर + …',
+      ],
+      notes: [
+        "The real condition first: जर … तर, and the honest news is that जर is optional in speech while तर is not — पाऊस आला तर मी येणार नाही is what a person says. Hindi's अगर … तो is the same pair with the same optionality, so the architecture transfers and the words are the delta. Teach the तर half as the load-bearing one; a display may drop जर, never तर.",
+        "Advice is -आयला पाहिजे: तुम्ही डॉक्टरकडे जायला पाहिजे. The -आयला shape is L2-M5's purpose ending (जेवायला, खायला) doing a second job, and पाहिजे is the new word — impersonal, unchanging, and NOT a verb the learner conjugates. Hindi's चाहिए sits in the same spot, which is the transfer; the delta is that Marathi puts the -आयला on the verb instead of an infinitive plus a postposition.",
+        'The counterfactual is the module\'s ceiling and its one genuinely hard shape: जर मी लवकर गेलो असतो तर… — the past form plus असतं/असता/असते. Keep it to ONE frame, first person, and only in M4 sentences that need it; the full system is L4-M3\'s ("What might have been", docs/48 §4). Say that in the note so an author does not open it wider.',
+        'Wishes ride the frames already owned: मला … हवं होतं ("I wanted"), आवडलं असतं ("I would have liked") — prefer the first, name the second. And keep the tense envelope declared: present and future in the real conditional, past-plus-असतं in the counterfactual, nothing else.',
+        "INDEX SEAM: जर, तर, पाहिजे, असतं (with असता/असते as forms) are fresh keys, and every -आयला form beyond L2-M5's जेवायला/खायला (जायला, करायला — करायला already landed as a form on L2-M8's सांगायला row) resolves to its owner. पाऊस is fresh if a sentence needs weather; otherwise keep the conditions to owned nouns (काम, पैसे, वेळ).",
+      ],
+      maxWordsPerSentence: 11,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M5': {
+      id: 'L3-M5',
+      title: 'What someone said',
+      job: "Reporting other people's words",
+      patterns: [
+        'तो/ती + म्हणाला/म्हणाली + की + clause',
+        'त्याने/तिने + सांगितलं + की + clause',
+        'clause + असं + तो + म्हणाला',
+        'त्याने विचारलं की + clause',
+      ],
+      notes: [
+        'The one great gift of this module, and it must be said in the first note: Marathi does NOT backshift. What the person said stays in the tense they said it in — तो म्हणाला की मी उद्या येईन ("he said he will come tomorrow", with येईन exactly as he spoke it). Hindi does the same (उसने कहा कि मैं कल आऊँगा), so a Hindi speaker is already right and only an English-trained instinct misleads. Tag it free, and spend the saved effort on the verb.',
+        "म्हणणे is the new lexeme: म्हणाला · म्हणाली · म्हणाले, the past that agrees with the SPEAKER (गेलो's class, not the ergative class) — and note the contrast the learner can now feel: त्याने सांगितलं takes ने and the neuter (L2-M10), तो म्हणाला takes neither. Two ways to report, two different laws, one module: that pair IS the lesson.",
+        'की is L2-M9\'s key doing the job L3-M3 opened for it. Reported speech may also drop it — तो म्हणाला, "उद्या येतो" — and Marathi\'s own device असं ("thus", pointing back at what was said) is worth one row: असं तो म्हणाला. Keep quoted-speech displays to sentences the learner already owns, so the report never smuggles in new grammar inside the quote.',
+        'Questions reported: विचारणे ("ask") — त्याने विचारलं की तू कुठे होतास?. Keep the reported question to the words the ladder owns, and note that the question word stays where the answer sits (L1-M2\'s law), unchanged by being reported.',
+        "INDEX SEAM: म्हणाला/म्हणाली/म्हणाले, विचारलं, असं are fresh keys; सांगितलं stays L2-M10's row and की stays L2-M9's. The pinned L1 miss बोललो (docs/15 Q29) is NOT paid here — बोलणे is speaking, म्हणणे is saying-that, and merging them to close an old debt would poison both rows. Say so in the brief.",
+      ],
+      maxWordsPerSentence: 11,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M6': {
+      id: 'L3-M6',
+      title: 'Feelings in depth',
+      job: 'Nuance past good and bad',
+      patterns: [
+        'मला + N + वाटतं/वाटते',
+        'मला + N + झाला/झाली/झालं',
+        'मला + N + आला/आली',
+        'मी + Adj + आहे',
+      ],
+      notes: [
+        'The module runs on frames the learner already owns, and that is the point: L1-M9 taught भूक लागली and कंटाळा आला, L2-M8 taught अडचण आली, L3-M3 taught मला वाटतं. Feelings in Marathi mostly COME to you or SEEM to you — मला काळजी वाटते, मला भीती वाटते, मला आनंद झाला, मला राग आला — so the whole module is new nouns in owned frames. Say that plainly; it is the cheapest depth in the level.',
+        "वाटणे is L3-M3's row, and its note there was written true of both jobs for this module. Do not open a second वाटणे row: point back at M3's, and let the new work be which noun goes in front of it — काळजी (worry) and भीती (fear) take वाटणे; आनंद (joy) and दुःख (sorrow) take होणे; राग (L1-M9's own word) takes येणे. That three-way split is the delta, and a Hindi speaker cannot guess it, because Hindi says डर लगता है with a different verb again.",
+        'The adjective route exists too and is the smaller half: मी खूश आहे, मी दुःखी आहे — but Marathi prefers the noun-plus-frame route for most feelings, and a learner who reaches for the adjective every time sounds translated. One or two adjective sentences, no more, and a usage line saying which route a native would pick.',
+        'Nuance past good and bad means degree words as much as new nouns: खूप (L1), थोडं (L1), जरा (L2-M1) and the honest middle — ठीक आहे. Keep every sentence inside a frame already taught; this module adds no grammar at all, and the brief should say so, because an author who invents a construction here has misread the job.',
+        "INDEX SEAM: काळजी, भीती, आनंद, दुःख, खूश, दुःखी, ठीक are fresh keys. वाटतं stays L3-M3's row, आला/आली stay L1-M9's, झालं stays L2-M8's. राग is L1-M9's and is re-shown here, not re-opened.",
+      ],
+      maxWordsPerSentence: 11,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M7': {
+      id: 'L3-M7',
+      title: 'Body and health',
+      job: 'Say what hurts, and where',
+      patterns: [
+        'माझं + N + दुखतंय',
+        'मला + ताप + आला आहे',
+        'मला + N + दुखतं',
+        'तुम्ही + औषध + घ्या',
+      ],
+      notes: [
+        "THE frame of the module: the body part is the SUBJECT and it does the hurting — माझं डोकं दुखतंय, माझा हात दुखतोय. दुखणे takes L2-M7's spoken continuous, so the shape is owned and only the verb is new; the possessive in front of it is L3-M2's genitive doing ordinary work. Hindi offers two rivals — सिर दर्द कर रहा है and मेरे सिर में दर्द है — and neither maps: there is no दर्द noun in the Marathi frame at all. Tag interference and spend the mistake there.",
+        "The body words are the vocabulary spend: डोकं (n), हात (m), पाय (m), पोट (L2-M5's, re-shown), डोळे (m.pl), कान. Gender matters more than usual here because the verb agrees with the part — डोकं दुखतंय, हात दुखतोय, डोळे दुखतायत — so every body row states its gender, and the pool should test the agreement rather than the vocabulary.",
+        'Illness rides the coming-frame the course has used since L1-M9: मला ताप आला आहे ("I have a fever"), मला सर्दी झाली आहे. The perfect (-आला आहे) is new as a shape but not as an idea — it is L2-M7\'s continuous logic on a past participle — so keep it to these two or three fixed lines and do not open the tense as a system; that is L4\'s.',
+        "The doctor's script closes the module and reuses L2-M1 whole: डॉक्टरकडे जा (\"go to the doctor\" — -कडे, the toward-ending L2-M4 taught inside डावीकडे, now standing on its own with a person), औषध घ्या (L2-M5's घ्या), आराम करा (L2-M1's करा). Register: this module talks to and about doctors and elders — तुम्ही frames, formal chips on the imperative lines.",
+        "INDEX SEAM: दुखतंय (with दुखतोय/दुखतायत/दुखतं as forms), डोकं, हात, पाय, डोळे, कान, ताप, सर्दी, औषध, डॉक्टरकडे, आराम are fresh keys. पोट stays L2-M5's row, घ्या stays L2-M5's, करा stays L2-M1's. -कडे appears bare for the first time here: its row says डावीकडे and उजवीकडे (L2-M4) were the same ending glued to a direction word.",
+      ],
+      maxWordsPerSentence: 11,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M8': {
+      id: 'L3-M8',
+      title: 'Money and paperwork',
+      job: 'Rent, bills, forms, offices',
+      patterns: [
+        'N + किती + आहे?',
+        'मी + N + भरलं/भरली',
+        'हा + फॉर्म + भरा',
+        'मला + N-ची + पावती + हवी',
+      ],
+      notes: [
+        'भरणे is the module\'s hinge and its one real seam: L2-M8 taught पोट भरलं ("filled"), and the SAME verb pays a bill and fills a form — बिल भरलं, फॉर्म भरा. One lexeme, three everyday jobs, and Hindi does exactly the same with भरना, so this is transfer the learner can be told about rather than drilled on. The row of origin is L2-M8\'s; this module re-shows the cells it needs and never opens a second family.',
+        'The paperwork nouns are the spend: भाडं (rent, n), बिल, फॉर्म, अर्ज (application), सही (signature, f), कागद (paper), पावती (receipt, f), बँक. Prefer the words heard at a Pune counter — फॉर्म and बिल are the honest borrowings, and a usage line may name अर्ज as the formal twin of the English word on the same window.',
+        "Money questions recycle L1-M8 exactly — किती, कितीला, रुपये — and L3-M2's genitive does the rest of the work: घरचं भाडं, विजेचं बिल. Keep the arithmetic out; the module is about the transaction, not the sum, and every amount should be a number the ladder already owns (L1-M8's shop set plus L2-M5 and L2-M6's clock hours).",
+        "The counter register is तुम्ही throughout, and this is where L2-M1's formal tier earns its keep: कृपया इथे सही करा chips formal, जरा हा फॉर्म भरा chips formal, and the same request to a friend would chip informal. One sentence should show the pair, because a learner meets both windows in one afternoon.",
+        "INDEX SEAM: भाडं, बिल, फॉर्म, अर्ज, सही, कागद, पावती, बँक and the -चं genitive forms this module needs are fresh keys. भरलं/भरला/भरली stay L2-M8's row, किती and रुपये stay L1-M8's, करा stays L2-M1's. Do not open विजेचं as a lexeme — वीज (electricity) is a fresh noun if a display needs it, and its genitive is the module's, not a bare compound.",
+      ],
+      maxWordsPerSentence: 12,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M9': {
+      id: 'L3-M9',
+      title: 'Festivals and everyday culture',
+      job: 'Talk about what is happening around you',
+      patterns: [
+        'आज + N + आहे',
+        'N-मध्ये + खूप + गर्दी + आहे',
+        'लोक + V-तायत',
+        'उद्या + N-ची + सुट्टी + आहे',
+      ],
+      notes: [
+        "This is the module where L2-M7's continuous leaves the phone and describes a street: लोक गाणी ऐकतायत, सगळे जेवतायत. The plural cell -तायत is owned (L2-M7 taught it as the respect form) and here it does its other job — many people — which is worth one note and no new grammar. The habitual sits beside it for what is true every year: दिवाळीत सुट्टी असते.",
+        'असणे in its habitual cell — असतो/असते/असतं — is the module\'s one new shape, and it is the difference between "is right now" (आहे) and "is, as a rule" (असतं): आज सुट्टी आहे against दिवाळीत सुट्टी असते. Hindi splits the same way (है against होता है), so the idea transfers and only the cells are new. Keep the two side by side in one sentence pair, and let the pool test the choice.',
+        "The cultural vocabulary is the spend, and it must be Maharashtra's own rather than a generic list: गणपती and गणेशोत्सव, दिवाळी, सण (festival), पूजा, सुट्टी (holiday), गर्दी (crowd), मिरवणूक if a display needs a procession. Every one of these is a word a learner will hear in Pune in the same week; a note may name the Hindi twin where there is one (त्योहार → सण), and none of these is a proper noun exempt from the index — they are common nouns and get rows.",
+        'Keep the register neutral and the claims small. The module describes what is happening, it does not explain religion: a display says आज गणपती आहे, आणि खूप गर्दी आहे, and a usage line can say when the festival falls. Nothing here should assert a practice as universal — Maharashtra is not one custom — and the brief should say that in words, because an author reaching for colour is exactly how a course starts lecturing.',
+        "INDEX SEAM: सण, पूजा, सुट्टी, गर्दी, लोक, सगळे, असतो/असते/असतं and the festival names are fresh keys. -तायत stays L2-M7's row (re-shown for the plural job), गाणी stays L1-M4's, आहे stays L1-M1's. दिवाळीत is the -त ending (L1-M7) on a fresh noun and gets its own key.",
+      ],
+      maxWordsPerSentence: 12,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M10': {
+      id: 'L3-M10',
+      title: 'Your own story',
+      job: 'An eight-sentence account, written unaided',
+      patterns: [
+        '<eight-sentence account>',
+        'आधी … मग … नंतर … शेवटी …',
+        'V-ऊन + clause',
+        'clause + कारण + clause',
+      ],
+      notes: [
+        'The format, and the cap: each item is an account of AT MOST EIGHT sentences — the level\'s written exit, L2-M10\'s four grown up, and the per-sentence bound applies to each sentence inside it. Eight is a ceiling and not a target: a six-sentence story that holds together beats an eight-sentence one padded to the number. "Written unaided" is the job, so every item should be assemblable from the ladder with no new word at all.',
+        'New-word spend is the smallest of the level, the M10 tradition — ideally ZERO. Everything the account needs is already taught: the -ऊन chain (M1), the genitive (M2), an opinion with its reason (M3), a condition (M4), a reported line (M5), a feeling (M6), and the whole of L1 and L2 underneath. A sentence that needs a new noun is a sentence that wants rewriting; say so, and mean it.',
+        "The tense envelope is the widest the course has had: past (L2-M10, ergative included), present habitual (L1-M4, L3-M1), continuous (L2-M7), future (L1-M6) and the real conditional (L3-M4) may all appear inside one account — which is exactly what makes it the exit. What stays out: the counterfactual beyond L3-M4's single frame, and the passive, which this level never opens.",
+        'Register is chosen by the listener and held for the whole account, the law L2-M1 opened and L2-M10 closed on: one item should tell the SAME story to a friend and to an elder, and a pool entry should carry both, so the level ends where it began. Chip honestly — तू lines informal, the कृपया tier formal, the rest neutral.',
+        "A good story has a shape, not just a sequence: something wanted, something in the way, what happened in the end. L2-M10's accounts were chronological; this one should carry a reason (कारण) and a feeling (M6) inside it, which is the difference between a timetable and a story. The pool tests comprehension of a story, so its items should be the ones a learner would want to retell.",
+      ],
+      maxWordsPerSentence: 12,
       newWordCap: NEW_WORD_CAP,
     },
   },
