@@ -217,10 +217,14 @@ export interface WordIndexEntry {
 /**
  * One module's word index: `public/content/<courseId>/index/<moduleId>.json` (#75, PRD §6.3).
  *
- * CUMULATIVE — L1-M2's index is L1-M1's plus what M2 adds, because a module never re-teaches
- * what an earlier one taught — and first occurrence wins, so an entry names where the learner
- * MET the word. Keys are `normalizeSurface`d (`src/engine/surface.ts`) and code-point sorted;
- * a lookup must normalise the same way or it is asking a different question.
+ * CUMULATIVE in the shape the app reads — L1-M2's index is L1-M1's plus what M2 adds, because a
+ * module never re-teaches what an earlier one taught — and first occurrence wins, so an entry names
+ * where the learner MET the word. Keys are `normalizeSurface`d (`src/engine/surface.ts`) and
+ * code-point sorted; a lookup must normalise the same way or it is asking a different question.
+ *
+ * The EMITTED file is a delta since #424: `surfaces` holds only what its own module teaches, and
+ * `delta: true` marks it. `loadIndex` folds the ladder back into this shape, so everything above
+ * `content.ts` — the resolver, the why panel, the tests — sees the cumulative form and always has.
  */
 export interface WordIndex {
   courseId: string;
@@ -235,4 +239,10 @@ export interface WordIndex {
   maxSpan: number;
   /** Surface → the word row that teaches it. `noUncheckedIndexedAccess` makes a miss explicit. */
   surfaces: Record<string, WordIndexEntry>;
+  /**
+   * `true` on an emitted file, whose `surfaces` are this module's additions alone (#424); absent on
+   * the folded value `loadIndex` returns. Anything that folds must check it — a reader that treats
+   * a delta as whole resolves a fraction of the ladder and says nothing about it.
+   */
+  delta?: boolean;
 }

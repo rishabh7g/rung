@@ -668,6 +668,44 @@ export function checkComprehensionPool(module: Module, index: WordIndexFile): Va
   return issues;
 }
 
+/**
+ * The EMITTED index file (#424). `surfaces` carries only what this module adds; `surfaceCount` and
+ * `maxSpan` stay the folded, cumulative values, so a reader that folds the ladder can check its own
+ * work (`Object.keys(folded).length === surfaceCount`) and the build report is unchanged.
+ *
+ * `delta: true` is the marker that makes the shape unmistakable: a reader that folds must never
+ * mistake a delta for a whole index, and one that does not fold must fail loudly rather than
+ * resolve half a ladder.
+ */
+export interface WordIndexDeltaFile extends WordIndexFile {
+  delta: true;
+}
+
+/**
+ * Cumulative indexes in, deltas out (#424). Each module's file keeps only the surfaces it is the
+ * first to teach — which is exactly the set difference against the module before it, because
+ * `buildWordIndex` folds first-occurrence-wins and never removes a key.
+ *
+ * Why this matters: the cumulative form is quadratic in the ladder. Nine courses at fifty modules
+ * would ship ~2.9 MB of index each, every byte of it warmed for offline; the deltas sum to ~115 KB.
+ */
+export function toDeltaIndexes(indexes: ReadonlyMap<string, WordIndexFile>): WordIndexDeltaFile[] {
+  const seen = new Set<string>();
+  const files: WordIndexDeltaFile[] = [];
+
+  for (const index of indexes.values()) {
+    const own: Record<string, WordIndexEntry> = {};
+    for (const [surface, entry] of Object.entries(index.surfaces)) {
+      if (seen.has(surface)) continue;
+      seen.add(surface);
+      own[surface] = entry;
+    }
+    files.push({ ...index, delta: true, surfaces: own });
+  }
+
+  return files;
+}
+
 /** One surface a module SHOWS that its own cumulative index cannot resolve (#491). */
 export interface ShownSurfaceFinding {
   moduleId: string;
@@ -1136,8 +1174,8 @@ function emitCourse(plan: CoursePlan, courseOut: string): string[] {
     );
   }
   mkdirSync(path.join(courseOut, 'index'), { recursive: true });
-  for (const index of plan.indexes.values()) {
-    write(path.join(courseOut, 'index', `${index.moduleId}.json`), index);
+  for (const delta of toDeltaIndexes(plan.indexes)) {
+    write(path.join(courseOut, 'index', `${delta.moduleId}.json`), delta);
   }
   const ids = plan.shipped.map((module) => module.id);
   write(path.join(courseOut, 'levels.json'), emitLevels(plan.levels, new Set(ids)));
