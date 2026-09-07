@@ -530,6 +530,21 @@ across the three review docs are what a fluent-Korean pass still owes — natura
 comprehension turns first, then the speech-level judgements, then the pronunciation lines, since
 nobody has heard any of them.
 
+**Five levels per course (2026-09-07, `docs/48-five-level-ladder-plan.md`).** Every course's
+`levels.json` now lists L4 "Nuance — say it the way they do" and L5 "Voice — your own words, at
+length" under L1–L3, ten rungs each, `draft: true` and `hasContent: false` — proposed lists awaiting
+the ratification #112 gave L2/L3, and nothing above L1 is authored anywhere. The id grammar was the
+only thing in the way: `content/schema/module.schema.json`'s three id patterns, `parseModuleId` in
+`tools/validate.ts` and `tools/content-build.ts`, and `priorModuleId` in `tools/generate-prompt.ts`
+all said `L[1-3]`, and the last of those returned `null` for `L4-M1` — an L4 prompt would have
+rendered as a course's first module, with no allowed vocabulary. All four say `L[1-5]` now, and
+`tools/module-ids.test.ts` pins the grammar at both ends on a real module re-numbered. Nothing in
+`src/` needed a change: the engine, the strip, the store and the export format read the list, and
+`src/course/types.test.ts` now pins every ladder at five levels of ten. The strip was measured at
+five cells before the lists landed — 72 px a cell at 360 px, the sealed label flush to its edge
+(`docs/images/ladder-five-levels-360.png`). The stale "Dev fixture course" wording on six courses'
+L2/L3 `draftNote`s went in the same edit; those courses graduated on 2026-08-30.
+
 ### The word index — and the rule it enforces
 
 Every shipped module also gets `public/content/<courseId>/index/<moduleId>.json`: each L2

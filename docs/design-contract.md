@@ -47,6 +47,26 @@ documents. The `design/` pair is v3.3 and further ahead — for example
 `design/PRD-engineering.md` has a §17 that `docs/PRD-engineering.md` does not.
 Prefer the `design/` pair until the two are reconciled.
 
+## Divergence — five levels per course (2026-09-07, docs/48)
+
+`design/PRD-design.md` §3 and §6.1 describe the ladder as "three levels of ten" / "3 levels × 10
+modules", §5.1's third strip state is "All three levels complete", and `design/PRD-engineering.md`
+§5 names three level names under [Q1]. **The product now carries five levels per course.** L4
+"Nuance — say it the way they do" and L5 "Voice — your own words, at length" join L1–L3 in every
+course's `levels.json` as `draft: true` lists — proposed in `docs/48-five-level-ladder-plan.md` §4
+and awaiting the ratification #112 gave L2/L3 — and the id grammar in
+`content/schema/module.schema.json`, `tools/validate.ts`, `tools/content-build.ts` and
+`tools/generate-prompt.ts` runs `L[1-5]` (`tools/module-ids.test.ts` pins both ends).
+
+Nothing in the design package's *rules* changes: the strip is still one cell per level, the seal
+rule still reads "the previous level", the unlock beat still fires at a boundary, and the quiet
+completion state still ends the ladder — it now ends at L5. The strip was measured with five cells
+before the lists landed: at 360 px each cell is 72 px and a sealed cell's `LEVEL n` label plus its
+lock runs flush to the cell's edge, legible and unclipped (`docs/images/ladder-five-levels-360.png`,
+`…-430.png`); at 430 px it is comfortable. `design/` is read-only, so the three PRD lines above are
+the ones to update on the next design re-copy, and [Q1]'s twin for L4/L5 is the ratification issue
+docs/48 §6 asks for.
+
 ## Divergence — rung teaches speech, not script (2026-08-30, #353)
 
 **rung does not teach reading or writing the target language.** An English speaker must be able

@@ -1005,8 +1005,16 @@ describe('Levels against the ladders that exist', () => {
   it.each(LEVELS_FILES)('%s is a Levels, keys and all', (file, json) => {
     const levels: Levels = parseLevels(json, file);
 
-    expect(levels.levels.map((level) => level.id)).toEqual(['L1', 'L2', 'L3']);
-    expect(levels.levels.every((level) => level.modules.length === 10)).toBe(true);
+    // Five levels of ten, every course (docs/48-five-level-ladder-plan.md §2): the level ids in
+    // order, and each level's ten rungs in order under it. The engine climbs whatever the list says,
+    // so nothing in `src/` would notice a ladder that lost a level or mis-numbered a rung.
+    expect(levels.levels.map((level) => level.id)).toEqual(['L1', 'L2', 'L3', 'L4', 'L5']);
+    for (const level of levels.levels) {
+      expect(
+        level.modules.map((module) => module.id),
+        `${file} ${level.id}`,
+      ).toEqual(Array.from({ length: 10 }, (_, i) => `${level.id}-M${i + 1}`));
+    }
     expect(undeclaredLevelsKeys(levels)).toEqual([]);
   });
 });

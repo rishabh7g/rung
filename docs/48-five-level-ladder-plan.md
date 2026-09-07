@@ -1,8 +1,9 @@
 # Five levels per course — the plan for L4 and L5, and for filling L2–L5
 
-**Date:** 2026-09-07 · **Status:** a plan. Nothing else changed on this branch — no code, no content,
-no ratification. The two screenshots in `docs/images/ladder-five-levels-*.png` are the only other
-files it adds, and they come from a throwaway build described in §7.
+**Date:** 2026-09-07 · **Status:** Track A (§2) landed the same day — the id grammar runs L1–L5, every
+`levels.json` lists L4/L5 as `draft: true`, and the divergence is recorded in `docs/design-contract.md`.
+Track B (§3), the ratification (§4) and the two pipeline changes (§5) are still to do. The two
+screenshots in `docs/images/ladder-five-levels-*.png` come from the throwaway build described in §7.
 
 **The goal, as stated by the owner:** the app holds content and UI for **five levels** per
 language. Today every course lists three (L1 Foundations · L2 Conversations · L3 Fluency) and ships
@@ -77,7 +78,8 @@ invent 25 words. That is the dangerous one, because it does not error.
 - Every `levels.json` gains `L4` and `L5`: id, name, tagline, `draft: true`, a `draftNote` naming
   the ratification issue, ten `{id, title, job, hasContent: false}` rows from §4.
 - Reword the nine L2/L3 `draftNote`s, which all say "the same 3 x 10 shape as hi-mr".
-- `src/course/types.test.ts` reads every ladder off disk and checks keys, not counts — no change.
+- `src/course/types.test.ts` reads every ladder off disk and pinned it at `['L1', 'L2', 'L3']` with ten
+  rungs a level — widened to five levels, each level's ten rung ids checked in order.
   `tools/course-briefs.test.ts` mirrors briefs onto the ladder — no change until briefs exist.
 - Optionally extend `src/test/courseContent.ts`'s `levelsFixture` to five levels so
   `store.test.ts` exercises the seal cascade at L4/L5 (today it stops at L2-M1).

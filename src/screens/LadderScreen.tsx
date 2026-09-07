@@ -5,7 +5,8 @@
  * Four things, top to bottom, and every one of them derived rather than stored:
  *
  *   1. **The position line** — `LEVEL 1 · 2 OF 10`, counts only.
- *   2. **The level strip** — three cells, ten squares each, sealed levels muted behind a lock.
+ *   2. **The level strip** — one cell per level (five since docs/48), ten squares each, sealed
+ *      levels muted behind a lock.
  *      Tapping a sealed cell answers with an honest toast naming what is left below it.
  *   3. **The rungs of the active level**, with the [D16] markers: a passed rung is a filled accent
  *      circle with a check and a link to its module; the current rung is a crosshair beside the

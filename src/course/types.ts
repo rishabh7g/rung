@@ -4,7 +4,7 @@
  * These are the shapes the app READS — the emitted tree under `public/content/`, never the
  * authored one. Three files, three types:
  *
- *   content/<courseId>/levels.json          → `Levels`        (the ladder: 3 levels × 10 rungs)
+ *   content/<courseId>/levels.json          → `Levels`        (the ladder: 5 levels × 10 rungs)
  *   content/<courseId>/modules/<id>.json     → `ModuleContent` (a rung's sentences and pool)
  *   content/<courseId>/index/<id>.json       → `WordIndex`     (surface → the word that teaches it)
  *
@@ -177,14 +177,20 @@ export interface LevelModule {
   draft?: boolean;
 }
 
-/** One level: L1 Foundations, L2 Conversations, L3 Fluency (PRD §5, names per course). */
+/**
+ * One level: L1 Foundations, L2 Conversations, L3 Fluency, L4 Nuance, L5 Voice (PRD §5 and
+ * docs/48-five-level-ladder-plan.md §4; names per course).
+ */
 export interface Level {
   id: string;
   name: string;
   tagline: string;
   modules: LevelModule[];
-  /** Unratified list — true on a ladder nobody has authored (en-es and en-ar L2/L3). Absent/false
-      means ratified (hi-mr's L2/L3 ratified by #112, closing [Q1]). */
+  /**
+   * True on a level nobody has authored — every course's L2–L5 today: L2/L3 are ratified lists
+   * (#112, closing [Q1]) flagged since #293 because nothing above L1 ships, and L4/L5 are the
+   * docs/48 §4 proposals awaiting the same ratification. Absent/false means the level ships.
+   */
   draft?: boolean;
   /** Why it is draft, in the course's own words; `null` on a ratified level. */
   draftNote?: string | null;

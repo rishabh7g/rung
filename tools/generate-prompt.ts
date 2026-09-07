@@ -61,10 +61,12 @@ export interface PromptReport {
 /**
  * The module whose cumulative index feeds this prompt: the previous rung of the ladder,
  * crossing levels (L2-M1 builds on everything through L1-M10). Null for L1-M1 — the course's
- * first module starts from an empty inventory — and for ids outside the L1-3/M1-10 grid.
+ * first module starts from an empty inventory — and for ids outside the L1-5/M1-10 grid
+ * (five levels since docs/48; an id off the grid must be null here, never "first module", or the
+ * prompt renders with no allowed vocabulary and invites the author to invent twenty-five words).
  */
 export function priorModuleId(moduleId: string): string | null {
-  const match = /^L([1-3])-M([1-9]|10)$/.exec(moduleId);
+  const match = /^L([1-5])-M([1-9]|10)$/.exec(moduleId);
   if (match === null) return null;
   const level = Number(match[1]);
   const number = Number(match[2]);
@@ -304,7 +306,7 @@ export function generatePrompt(options: GenerateOptions): PromptReport {
         COURSE_BRIEFS,
       ).join(
         ', ',
-      )}; a level's briefs are written when its authoring project starts, and the remaining courses' L2/L3 module lists are pending (PRD §5)`,
+      )}; a level's briefs are written when its authoring project starts, against the verified level below it (docs/48-five-level-ladder-plan.md §3)`,
     ]);
   }
   const brief = briefs[moduleId];
