@@ -164,9 +164,7 @@ function ModuleList({ moduleId }: ModuleListProps) {
         <div className={styles.headText}>
           {/* Structural furniture, like the Ladder's `M1 · CURRENT RUNG` — raised on #71. */}
           <p className={styles.kicker}>{rungLabel(moduleId)} · MODULE</p>
-          <h2 className={styles.title} dir={course.dir}>
-            {module.data.title}
-          </h2>
+          <h2 className={styles.title}>{module.data.title}</h2>
         </div>
         {/* Counts, never time (Invariant 2): got-its across the module, out of the one per
             sentence the exit ritual asks for (`MARKS_PER_SENTENCE`, the same constant the exit
@@ -183,7 +181,6 @@ function ModuleList({ moduleId }: ModuleListProps) {
             key={sentence.id}
             sentence={sentence}
             produced={production?.[sentence.id] ?? 0}
-            dir={course.dir}
             l2={l2}
           />
         ))}
@@ -192,7 +189,7 @@ function ModuleList({ moduleId }: ModuleListProps) {
       {/* The prototype closes the list with Practice, and the reason is the invariant: reading a
           module is never a gate in front of practising it. Same label as the rung card's, because
           it is the same tab. */}
-      <Link className={styles.practice} to={PRACTICE_PATH} dir={course.dir}>
+      <Link className={styles.practice} to={PRACTICE_PATH}>
         {strings['rungCard.practice']}
       </Link>
     </section>

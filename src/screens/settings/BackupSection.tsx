@@ -47,7 +47,7 @@ import StorageLine from './StorageLine.tsx';
 import styles from './BackupSection.module.css';
 
 export default function BackupSection() {
-  const { course, courses } = useCourse();
+  const { courses } = useCourse();
   const strings = useStrings();
   const currentCourses = useAppStore((store) => store.courses);
   const restoreBackup = useAppStore((store) => store.restoreBackup);
@@ -122,14 +122,12 @@ export default function BackupSection() {
   if (pending !== null) {
     return (
       <div className={styles.confirm}>
-        <p className={styles.warning} dir={course.dir}>
-          {strings['settings.importReplace']}
-        </p>
+        <p className={styles.warning}>{strings['settings.importReplace']}</p>
         <div className={styles.compare}>
           {comparisonRows(currentCourses, pending.courses, courses).map((row) => (
             <div key={row.id} className={styles.course}>
               <p className={styles.courseLabel}>{row.label}</p>
-              <p className={styles.side} dir={course.dir}>
+              <p className={styles.side}>
                 <span className={styles.sideLabel}>{strings['settings.backup.onDevice']}</span>
                 <span className={styles.sideCounts}>
                   {interpolate(strings['settings.backup.counts'], {
@@ -138,7 +136,7 @@ export default function BackupSection() {
                   })}
                 </span>
               </p>
-              <p className={styles.side} dir={course.dir}>
+              <p className={styles.side}>
                 <span className={styles.sideLabel}>{strings['settings.backup.inFile']}</span>
                 <span className={styles.sideCounts}>
                   {interpolate(strings['settings.backup.counts'], {
@@ -151,15 +149,10 @@ export default function BackupSection() {
           ))}
         </div>
         <div className={styles.actions}>
-          <button
-            type="button"
-            className={styles.action}
-            onClick={() => setPending(null)}
-            dir={course.dir}
-          >
+          <button type="button" className={styles.action} onClick={() => setPending(null)}>
             {strings['settings.importCancel']}
           </button>
-          <button type="button" className={styles.action} onClick={confirmTap} dir={course.dir}>
+          <button type="button" className={styles.action} onClick={confirmTap}>
             {strings['settings.importConfirm']}
           </button>
         </div>
@@ -172,20 +165,18 @@ export default function BackupSection() {
       <div className={styles.actions}>
         {/* The course's two words, with the prototype's two arrows — they went the way the tick
             toggle's On/Off did (#351), and the promises around them were always the course's. */}
-        <button type="button" className={styles.action} onClick={exportTap} dir={course.dir}>
+        <button type="button" className={styles.action} onClick={exportTap}>
           <Upload className={styles.icon} aria-hidden="true" />
           {strings['settings.backup.export']}
         </button>
-        <button type="button" className={styles.action} onClick={importTap} dir={course.dir}>
+        <button type="button" className={styles.action} onClick={importTap}>
           <Download className={styles.icon} aria-hidden="true" />
           {strings['settings.backup.import']}
         </button>
       </div>
       {failure !== null && (
         <div className={styles.failure} role="alert">
-          <p className={styles.failureLead} dir={course.dir}>
-            {strings['settings.importFailed']}
-          </p>
+          <p className={styles.failureLead}>{strings['settings.importFailed']}</p>
           <p className={styles.failureReason}>{failure}</p>
         </div>
       )}

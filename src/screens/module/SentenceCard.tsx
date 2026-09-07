@@ -36,16 +36,14 @@ interface SentenceCardProps {
   sentence: Sentence;
   /** `production[sentenceId]` — read-only here; the counters are written by `recordProduction`. */
   produced: number;
-  /** The course's writing direction — every line on the card is its content. */
-  dir?: string;
   /** The tags the L2 lines are written in (#186); the L1 ones inherit the document's. */
   l2?: L2Written;
 }
 
-export function SentenceCard({ sentence, produced, dir, l2 }: SentenceCardProps) {
+export function SentenceCard({ sentence, produced, l2 }: SentenceCardProps) {
   return (
     <li className={styles.card}>
-      <Link className={styles.open} to={`/sentence/${sentence.id}`} dir={dir}>
+      <Link className={styles.open} to={`/sentence/${sentence.id}`}>
         <span className={styles.lines}>
           <span className={styles.display} dir={l2?.display.dir} lang={l2?.display.lang}>
             {sentence.display}

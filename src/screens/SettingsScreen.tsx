@@ -69,18 +69,14 @@ export default function SettingsScreen() {
 
   return (
     <section className={styles.settings}>
-      <h2 className={styles.title} dir={course.dir}>
-        {strings['settings.title']}
-      </h2>
+      <h2 className={styles.title}>{strings['settings.title']}</h2>
 
       {/* ------------------------------------------------------------------ COURSE (F0) */}
       <section className={styles.card}>
         <RegistrationMarks />
-        <h3 className={styles.kicker} dir={course.dir}>
-          {strings['settings.kicker.course']}
-        </h3>
+        <h3 className={styles.kicker}>{strings['settings.kicker.course']}</h3>
         <div className={styles.courseField}>
-          <label className={styles.fieldLabel} htmlFor={selectId} dir={course.dir}>
+          <label className={styles.fieldLabel} htmlFor={selectId}>
             {strings['settings.activeCourse']}
           </label>
           <select
@@ -105,14 +101,12 @@ export default function SettingsScreen() {
       {/* ------------------------------------------------------------------ PRACTICE */}
       <section className={styles.card}>
         <RegistrationMarks />
-        <h3 className={styles.kicker} dir={course.dir}>
-          {strings['settings.kicker.practice']}
-        </h3>
+        <h3 className={styles.kicker}>{strings['settings.kicker.practice']}</h3>
         <div className={styles.row}>
           {/* The title and nothing under it (#394). The note that used to sit here explained the
               tick in three lines — the longest text on the page, about its smallest object, next
               to a pair of buttons that already say what they do. */}
-          <p className={styles.rowTitle} id={tickLabelId} dir={course.dir}>
+          <p className={styles.rowTitle} id={tickLabelId}>
             {strings['settings.tick.title']}
           </p>
           {/* The same seg the self-mark draws, for the same reason it is buttons rather than
@@ -125,7 +119,6 @@ export default function SettingsScreen() {
               className={tickEnabled ? styles.segSelected : styles.segOption}
               aria-pressed={tickEnabled}
               onClick={() => setSetting('elapsedTickEnabled', true)}
-              dir={course.dir}
             >
               {strings['settings.tick.on']}
             </button>
@@ -134,7 +127,6 @@ export default function SettingsScreen() {
               className={tickEnabled ? styles.segOption : styles.segSelected}
               aria-pressed={!tickEnabled}
               onClick={() => setSetting('elapsedTickEnabled', false)}
-              dir={course.dir}
             >
               {strings['settings.tick.off']}
             </button>
@@ -145,16 +137,14 @@ export default function SettingsScreen() {
       {/* ----------------------- Backup — export / import, and the room there is (#108, F6, F7) */}
       <section className={styles.card}>
         <RegistrationMarks />
-        <h3 className={styles.backupTitle} dir={course.dir}>
-          {strings['settings.backup.title']}
-        </h3>
+        <h3 className={styles.backupTitle}>{strings['settings.backup.title']}</h3>
         <BackupSection />
       </section>
 
       {/* The switch confirmation (#106) — the shared transient line (#86), in the TARGET
           course's words and direction: by the time a message is up, `course` is the course
           switched to. */}
-      <Toast message={toastMessage} dir={course.dir} />
+      <Toast message={toastMessage} />
     </section>
   );
 }

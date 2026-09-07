@@ -79,8 +79,6 @@ interface RevealCardProps {
   why?: ReactNode;
   /** Called once, when the commit window elapses, with the mark the learner settled on. */
   onResult: (result: RevealResult) => void;
-  /** The course's writing direction — every line on the card is its content or its copy. */
-  dir?: string;
   /** The tags the revealed L2 lines are written in (#186); the cue is L1 and inherits. */
   l2?: L2Written;
 }
@@ -105,7 +103,6 @@ export function RevealCard({
   script,
   why,
   onResult,
-  dir,
   l2,
 }: RevealCardProps) {
   const strings = useStrings();
@@ -140,9 +137,7 @@ export function RevealCard({
             own language above every one of the fifteen cues — the reveal button already names the
             other one, and the accent rule is the cue's whole frame. Comprehension still prints the
             label, because there the cue is the L2 and the language IS the surprise. */}
-        <p className={styles.cueText} dir={dir}>
-          {cue}
-        </p>
+        <p className={styles.cueText}>{cue}</p>
       </div>
 
       {!card.revealed && (
@@ -158,7 +153,7 @@ export function RevealCard({
            * storage itself (Invariant 4's scan reads this file for exactly that); `HintLine` owns
            * the fact, as `WhyPanel` owns the word rows.
            */}
-          <HintLine hint="recall" className={styles.hint} dir={dir} />
+          <HintLine hint="recall" className={styles.hint} />
 
           <div className={styles.revealFrame}>
             <RegistrationMarks />
@@ -166,7 +161,6 @@ export function RevealCard({
               type="button"
               className={styles.reveal}
               onClick={() => setCard({ ...card, revealed: true })}
-              dir={dir}
             >
               {strings.revealLabel}
             </button>
@@ -194,7 +188,7 @@ export function RevealCard({
           {/* The mark, and nothing beside it: choosing commits the card (#313). No Next, and
               nothing disabled either — the two segments are the whole of what there is to do. */}
           <div className={chosen === null ? styles.marks : styles.marksMarked}>
-            <SelfMark mark={chosen} onMark={choose} dir={dir} />
+            <SelfMark mark={chosen} onMark={choose} />
           </div>
         </div>
       )}

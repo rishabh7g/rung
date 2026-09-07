@@ -238,7 +238,6 @@ function ComprehensionRound({ moduleId, pool, count }: ComprehensionRoundProps) 
           onMark={mark}
           redrawing={attempt.marks.includes('miss')}
           redrawn={attempt.redrawn && attempt.idx === 0}
-          dir={course.dir}
           l2={l2Written(course)}
         />
       )}

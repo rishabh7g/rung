@@ -24,7 +24,6 @@
  */
 import { NavLink } from 'react-router-dom';
 import { Pencil, Rows3, Settings } from 'lucide-react';
-import { useCourse } from '../course/CourseProvider.tsx';
 import { useStrings } from '../course/strings.ts';
 import { HOME_PATH, PRACTICE_PATH, SETTINGS_PATH } from './routes.tsx';
 import styles from './BottomNav.module.css';
@@ -54,7 +53,6 @@ interface BottomNavProps {
 }
 
 export function BottomNav({ hiddenOnPhone = false }: BottomNavProps) {
-  const { course } = useCourse();
   const strings = useStrings();
 
   return (
@@ -73,9 +71,7 @@ export function BottomNav({ hiddenOnPhone = false }: BottomNavProps) {
           title={strings[key]}
         >
           <Icon className={styles.icon} />
-          <span className={styles.label} dir={course.dir}>
-            {strings[key]}
-          </span>
+          <span className={styles.label}>{strings[key]}</span>
         </NavLink>
       ))}
     </nav>

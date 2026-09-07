@@ -111,13 +111,11 @@ interface SessionProps {
    * fresh session, which opens at the first card.
    */
   resume?: { idx: number };
-  /** The course's writing direction — every word on screen is its content or its copy. */
-  dir?: string;
   /** The tags the L2 lines are written in (#186); everything else is L1 and inherits. */
   l2?: L2Written;
 }
 
-export function Session({ courseId, rungIds, plan, resume, dir, l2 }: SessionProps) {
+export function Session({ courseId, rungIds, plan, resume, l2 }: SessionProps) {
   const recordReview = useAppStore((store) => store.recordReview);
   const recordProduction = useAppStore((store) => store.recordProduction);
   const setSession = useAppStore((store) => store.setSession);
@@ -273,7 +271,7 @@ export function Session({ courseId, rungIds, plan, resume, dir, l2 }: SessionPro
       <Tick active={!live.done} />
 
       {live.done && (
-        <SessionSummary gotIt={live.gotIt} total={cards.length} ritualOpen={ritualOpen} dir={dir} />
+        <SessionSummary gotIt={live.gotIt} total={cards.length} ritualOpen={ritualOpen} />
       )}
 
       {!live.done && sentence !== undefined && sentenceId !== undefined && (
@@ -302,9 +300,8 @@ export function Session({ courseId, rungIds, plan, resume, dir, l2 }: SessionPro
             cue={sentence.cue}
             display={sentence.display}
             script={sentence.script ?? undefined}
-            why={<WhyPanel sentenceId={sentenceId} display={sentence.display} dir={dir} l2={l2} />}
+            why={<WhyPanel sentenceId={sentenceId} display={sentence.display} l2={l2} />}
             onResult={onMark}
-            dir={dir}
             l2={l2}
           />
         </div>

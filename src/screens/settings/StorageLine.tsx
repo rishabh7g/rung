@@ -20,20 +20,18 @@
  * apologise for and nothing to retry.
  */
 import { useEffect, useState } from 'react';
-import { useCourse } from '../../course/CourseProvider.tsx';
 import { interpolate, useStrings } from '../../course/strings.ts';
 import { formatBytes } from './formatBytes.ts';
 import styles from './StorageLine.module.css';
 
 export default function StorageLine() {
-  const { course } = useCourse();
   const strings = useStrings();
   const estimate = useStorageEstimate();
 
   if (estimate === null) return null;
 
   return (
-    <p className={styles.line} dir={course.dir}>
+    <p className={styles.line}>
       {interpolate(strings['settings.storage.meter'], {
         used: formatBytes(estimate.usage),
         quota: formatBytes(estimate.quota),

@@ -55,8 +55,6 @@ interface ComprehensionItemProps {
   redrawing?: boolean;
   /** The first card of a round dealt because the one before it held a miss (#402). */
   redrawn?: boolean;
-  /** The course's writing direction — every line on the card is its content or its copy. */
-  dir?: string;
   /** The tags the L2 lines are written in (#186); the cue and the copy are L1 and inherit. */
   l2?: L2Written;
 }
@@ -66,7 +64,6 @@ export function ComprehensionItem({
   onMark,
   redrawing,
   redrawn,
-  dir,
   l2,
 }: ComprehensionItemProps) {
   const strings = useStrings();
@@ -85,19 +82,11 @@ export function ComprehensionItem({
        * line wanted to (Invariant 4). It is the retry's own calm, arriving when the learner can
        * still use it rather than after they have finished working for nothing.
        */}
-      {redrawing === true && (
-        <p className={styles.pending} dir={dir}>
-          {strings['retry.pending']}
-        </p>
-      )}
+      {redrawing === true && <p className={styles.pending}>{strings['retry.pending']}</p>}
       {/* The fresh round, announced on its first card (#402) — where a whole interstitial screen
           used to stand. One line, in the slot the pending note takes mid-round; the two never
           coincide, because a round's first card has no miss before it. */}
-      {redrawn === true && (
-        <p className={styles.pending} dir={dir}>
-          {strings['retry.title']}
-        </p>
-      )}
+      {redrawn === true && <p className={styles.pending}>{strings['retry.title']}</p>}
 
       {/* A blueprint object: hairline, no radius, the four registration marks — the prototype's
           own frame for the line under test. */}
@@ -124,7 +113,6 @@ export function ComprehensionItem({
               onClick={() => {
                 setCard({ revealed: true });
               }}
-              dir={dir}
             >
               {/* The course's own label for revealing the L1 — Comprehension reveals the cue
                   rather than the sentence, which is why it has a key of its own (#120). */}
@@ -140,22 +128,18 @@ export function ComprehensionItem({
             {/* The course names its own L1 ("<language> cue"), so this label is its copy too —
                 the same one `RevealCard` writes above the L1 (#93), because it names the same
                 language. The prototype's English "MODEL ANSWER" would be a shell-owned word. */}
-            <p className={styles.modelLabel} dir={dir}>
-              {strings.cueLabel}
-            </p>
-            <p className={styles.modelText} dir={dir}>
-              {item.cue}
-            </p>
+            <p className={styles.modelLabel}>{strings.cueLabel}</p>
+            <p className={styles.modelText}>{item.cue}</p>
           </div>
 
           {/* "Why" on every reveal (#94), this one included: the panel resolves the L2 line
               against its own module's word index — a pool item names its module in its id, like a
               sentence does. No "open full": a pool item has no Detail page to open. */}
-          <WhyPanel sentenceId={item.id} display={item.display} dir={dir} l2={l2} />
+          <WhyPanel sentenceId={item.id} display={item.display} l2={l2} />
 
           {/* The mark, and nothing beside it: choosing commits the item (#313). */}
           <div className={chosen === null ? styles.marks : styles.marksMarked}>
-            <SelfMark mark={chosen} onMark={choose} dir={dir} />
+            <SelfMark mark={chosen} onMark={choose} />
           </div>
         </div>
       )}

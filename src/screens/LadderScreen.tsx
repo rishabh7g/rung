@@ -36,7 +36,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Lock } from 'lucide-react';
-import { useCourse } from '../course/CourseProvider.tsx';
 import { interpolate, useStrings } from '../course/strings.ts';
 import { ContentErrorScreen } from '../course/BootScreens.tsx';
 import { currentRungId, deriveStatuses, levelSealed, rungStage } from '../engine/progression.ts';
@@ -51,7 +50,6 @@ import { useProgression } from './useProgression.ts';
 import styles from './LadderScreen.module.css';
 
 export default function LadderScreen() {
-  const { course } = useCourse();
   const strings = useStrings();
   const toast = useToast();
   // Loads the ladder, hands it to the store, and assembles the engine's input — the same input
@@ -158,7 +156,7 @@ export default function LadderScreen() {
             the Ladder's own header row; the shell's brand header is screen-agnostic (#84), so it
             renders as the screen's first row — reconciled in #117. Its words are the course's
             since #351; only the numbers in it are the shell's. */}
-        <p className={styles.position} dir={course.dir}>
+        <p className={styles.position}>
           {interpolate(strings['ladder.positionLine'], { level, passed, total })}
         </p>
 
@@ -176,7 +174,6 @@ export default function LadderScreen() {
             moduleId={current}
             title={currentModule.title}
             job={currentModule.job}
-            dir={course.dir}
             unlocked={current === beatRung}
             production={rungProduction}
           />
@@ -187,33 +184,22 @@ export default function LadderScreen() {
             module.id === current ? (
               // A ROW, not a second card: the card above IS this rung, and drawing it twice is
               // the screen saying one thing in two sizes.
-              <CurrentRung
-                key={module.id}
-                moduleId={module.id}
-                title={module.title}
-                dir={course.dir}
-              />
+              <CurrentRung key={module.id} moduleId={module.id} title={module.title} />
             ) : statuses[module.id] === 'passed' ? (
               <PassedRung
                 key={module.id}
                 moduleId={module.id}
                 title={module.title}
                 job={module.job}
-                dir={course.dir}
               />
             ) : (
-              <LockedRung
-                key={module.id}
-                moduleId={module.id}
-                title={module.title}
-                dir={course.dir}
-              />
+              <LockedRung key={module.id} moduleId={module.id} title={module.title} />
             ),
           )}
         </ol>
       </div>
 
-      <Toast message={toast.message} dir={course.dir} />
+      <Toast message={toast.message} />
     </section>
   );
 }
@@ -282,7 +268,6 @@ interface RungProps {
   moduleId: string;
   title: string;
   job: string;
-  dir?: string;
 }
 
 /**
@@ -294,16 +279,13 @@ interface RungProps {
  * either — the card three inches above it just said the same sentence, and a row that repeats the
  * card is the screen saying one thing twice.
  */
-function CurrentRung({ moduleId, title, dir }: Omit<RungProps, 'job'>) {
+function CurrentRung({ moduleId, title }: Omit<RungProps, 'job'>) {
   return (
     <li className={styles.rowCurrent}>
       <RungMarker state="current" />
       <span className={styles.rowText}>
         <span className={styles.rowTitle}>
-          {rungLabel(moduleId)} ·{' '}
-          <span dir={dir} className={styles.rowTitleContent}>
-            {title}
-          </span>
+          {rungLabel(moduleId)} · <span className={styles.rowTitleContent}>{title}</span>
         </span>
       </span>
     </li>
@@ -311,7 +293,7 @@ function CurrentRung({ moduleId, title, dir }: Omit<RungProps, 'job'>) {
 }
 
 /** A rung the learner has climbed: filled marker, and open for practice forever after. */
-function PassedRung({ moduleId, title, job, dir }: RungProps) {
+function PassedRung({ moduleId, title, job }: RungProps) {
   const strings = useStrings();
 
   return (
@@ -320,18 +302,11 @@ function PassedRung({ moduleId, title, job, dir }: RungProps) {
         <RungMarker state="passed" />
         <span className={styles.rowText}>
           <span className={styles.rowTitle}>
-            {rungLabel(moduleId)} ·{' '}
-            <span dir={dir} className={styles.rowTitleContent}>
-              {title}
-            </span>
+            {rungLabel(moduleId)} · <span className={styles.rowTitleContent}>{title}</span>
           </span>
-          <span className={styles.rowJob} dir={dir}>
-            {job}
-          </span>
+          <span className={styles.rowJob}>{job}</span>
         </span>
-        <span className={styles.passedLabel} dir={dir}>
-          {strings['ladder.passed']}
-        </span>
+        <span className={styles.passedLabel}>{strings['ladder.passed']}</span>
       </Link>
     </li>
   );
@@ -342,16 +317,13 @@ function PassedRung({ moduleId, title, job, dir }: RungProps) {
  * tabindex — the row is text and a lock, so there is nothing to tap and nothing for a screen
  * reader to announce as available. `LadderScreen.test.tsx` asserts exactly that.
  */
-function LockedRung({ moduleId, title, dir }: Omit<RungProps, 'job'>) {
+function LockedRung({ moduleId, title }: Omit<RungProps, 'job'>) {
   return (
     <li className={styles.rowLocked}>
       <RungMarker state="locked" />
       <span className={styles.rowText}>
         <span className={styles.rowTitle}>
-          {rungLabel(moduleId)} ·{' '}
-          <span dir={dir} className={styles.rowTitleContent}>
-            {title}
-          </span>
+          {rungLabel(moduleId)} · <span className={styles.rowTitleContent}>{title}</span>
         </span>
       </span>
       <Lock className={styles.rowLock} aria-hidden="true" />

@@ -23,29 +23,21 @@ import styles from './WhyRow.module.css';
 
 interface WhyRowProps {
   word: Word;
-  /** The course's writing direction — every line here is its content. */
-  dir?: string;
   /** The tags the L2 lines are written in (#186); the cue and note are L1 and inherit. */
   l2?: L2Written;
 }
 
-export function WhyRow({ word, dir, l2 }: WhyRowProps) {
+export function WhyRow({ word, l2 }: WhyRowProps) {
   return (
     <li className={styles.row}>
       <p className={styles.head}>
         <span className={styles.display} dir={l2?.display.dir} lang={l2?.display.lang}>
           {word.display}
         </span>
-        <span className={styles.cue} dir={dir}>
-          {word.cue}
-        </span>
+        <span className={styles.cue}>{word.cue}</span>
         <TagChip tag={word.tag} />
       </p>
-      {word.note !== undefined && (
-        <p className={styles.note} dir={dir}>
-          {word.note}
-        </p>
-      )}
+      {word.note !== undefined && <p className={styles.note}>{word.note}</p>}
     </li>
   );
 }

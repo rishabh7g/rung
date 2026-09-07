@@ -53,8 +53,6 @@ interface RungCardProps {
   /** The rung's own title and job, out of the course's `levels.json`. */
   title: string;
   job: string;
-  /** The course's writing direction: the title, the job and every label are its words. */
-  dir?: string;
   /**
    * Play the unlock beat on this card — the one moment the product celebrates (#103). The screen
    * decides, off a one-shot navigation flag it consumes (`shell/routes.tsx`), so the card cannot
@@ -76,7 +74,6 @@ export function RungCard({
   moduleId,
   title,
   job,
-  dir,
   unlocked = false,
   production = [],
 }: RungCardProps) {
@@ -98,15 +95,11 @@ export function RungCard({
     >
       <RegistrationMarks />
 
-      <p className={styles.kicker} dir={dir}>
+      <p className={styles.kicker}>
         {interpolate(strings['rungCard.currentRung'], { rung: rungLabel(moduleId) })}
       </p>
-      <h2 className={styles.title} dir={dir}>
-        {title}
-      </h2>
-      <p className={styles.job} dir={dir}>
-        {job}
-      </p>
+      <h2 className={styles.title}>{title}</h2>
+      <p className={styles.job}>{job}</p>
 
       {production.length > 0 && (
         <div className={styles.dotsRow}>
@@ -128,21 +121,21 @@ export function RungCard({
        * ever having named the rule. This names it, on the first rung card the learner meets, and
        * never again.
        */}
-      {production.length > 0 && <HintLine hint="production" className={styles.hint} dir={dir} />}
+      {production.length > 0 && <HintLine hint="production" className={styles.hint} />}
 
       {stage === 'fresh' && (
-        <Link className={styles.primary} to={modulePath} dir={dir}>
+        <Link className={styles.primary} to={modulePath}>
           {strings['rungCard.startModule']}
         </Link>
       )}
 
       {stage === 'studied' && (
         <>
-          <Link className={styles.primary} to={PRACTICE_PATH} dir={dir}>
+          <Link className={styles.primary} to={PRACTICE_PATH}>
             {strings['rungCard.practice']}
           </Link>
           <div className={styles.ghostRow}>
-            <Link className={styles.ghost} to={modulePath} dir={dir}>
+            <Link className={styles.ghost} to={modulePath}>
               {strings['rungCard.revisitModule']}
             </Link>
           </div>
@@ -151,15 +144,15 @@ export function RungCard({
 
       {stage === 'exit_ready' && (
         <>
-          <Link className={styles.primary} to={RITUAL_PATH} dir={dir}>
+          <Link className={styles.primary} to={RITUAL_PATH}>
             {strings['rungCard.exitRitual']}
           </Link>
           {/* Neither drops away — the ritual is the loud action, not the only one. */}
           <div className={styles.secondaryRow}>
-            <Link className={styles.secondary} to={PRACTICE_PATH} dir={dir}>
+            <Link className={styles.secondary} to={PRACTICE_PATH}>
               {strings['rungCard.practice']}
             </Link>
-            <Link className={styles.secondary} to={modulePath} dir={dir}>
+            <Link className={styles.secondary} to={modulePath}>
               {strings['rungCard.module']}
             </Link>
           </div>

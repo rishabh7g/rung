@@ -88,7 +88,6 @@ export default function PracticeScreen() {
         rungIds={run.rungIds}
         plan={run.plan}
         resume={run.resume}
-        dir={course.dir}
         l2={l2}
       />
     );
@@ -135,16 +134,14 @@ export default function PracticeScreen() {
 
   return (
     <section className={styles.hub}>
-      <h2 className={styles.title} dir={course.dir}>
-        {strings['practice.hubTitle']}
-      </h2>
+      <h2 className={styles.title}>{strings['practice.hubTitle']}</h2>
 
       {/* A rung whose sentences are not authored yet has no session to offer, so the hub offers
           nothing: no count, no CTA, and no paragraph explaining the absence — the empty column is
           the state, the same silence the rung card keeps [D22]. */}
       {startable && (
         <>
-          <p className={styles.count} dir={course.dir}>
+          <p className={styles.count}>
             {interpolate(strings['practice.hubCount'], { count: cards })}
           </p>
 
@@ -152,12 +149,7 @@ export default function PracticeScreen() {
               A resumed session takes the same slot rather than adding a second CTA beside it. */}
           <div className={styles.beginFrame}>
             <RegistrationMarks />
-            <button
-              type="button"
-              className={styles.begin}
-              onClick={resumable ? carryOn : begin}
-              dir={course.dir}
-            >
+            <button type="button" className={styles.begin} onClick={resumable ? carryOn : begin}>
               {resumable ? strings['practice.resumeContinue'] : strings['practice.begin']}
             </button>
           </div>
@@ -165,7 +157,7 @@ export default function PracticeScreen() {
           {/* The rarer, costlier choice — a fresh session spends a session count and a tick — so
               it is quiet rather than a second block CTA. */}
           {resumable && (
-            <button type="button" className={styles.fresh} onClick={beginFresh} dir={course.dir}>
+            <button type="button" className={styles.fresh} onClick={beginFresh}>
               {strings['practice.resumeNew']}
             </button>
           )}

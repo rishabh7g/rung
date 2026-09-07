@@ -188,10 +188,8 @@ function RungVerdict({ input, plan, moduleId }: RungVerdictProps) {
     <section className={styles.verdict}>
       <div className={styles.head}>
         {/* The course's words, like everything else the ritual says (#351). */}
-        <p className={styles.kicker} dir={course.dir}>
-          {strings['verdict.ritualComplete']}
-        </p>
-        <h2 className={styles.title} dir={course.dir}>
+        <p className={styles.kicker}>{strings['verdict.ritualComplete']}</p>
+        <h2 className={styles.title}>
           {interpolate(strings['verdict.passedRung'], { rung: rungLabel(moduleId) })}
         </h2>
       </div>
@@ -206,7 +204,7 @@ function RungVerdict({ input, plan, moduleId }: RungVerdictProps) {
         <ul className={styles.checks}>
           <li className={styles.check}>
             <Check className={styles.tick} aria-hidden="true" />
-            <span className={styles.checkText} dir={course.dir}>
+            <span className={styles.checkText}>
               {interpolate(strings['verdict.checkComprehension'], {
                 // The module's own number: `2` today, and a module that asked for three would
                 // read "3 of 3" with no code change (PRD §7 `exitTest`). Both values are that
@@ -223,21 +221,13 @@ function RungVerdict({ input, plan, moduleId }: RungVerdictProps) {
       {/* The course's closing line names the rung that just opened, so a ladder with nothing above
           it has no line to say — the completion state is quiet (PRD-design §3.6). */}
       {next !== null && (
-        <p className={styles.line} dir={course.dir}>
-          {interpolate(strings['verdict.line'], { nextModule: next })}
-        </p>
+        <p className={styles.line}>{interpolate(strings['verdict.line'], { nextModule: next })}</p>
       )}
 
       {/* `replace`: a verdict is not something to walk back into, and the entry it replaces is the
           one Comprehension already replaced. The flag is the unlock beat's, and the Ladder spends
           it the moment it lands. */}
-      <Link
-        className={styles.cta}
-        to={HOME_PATH}
-        replace
-        state={passedRung(moduleId)}
-        dir={course.dir}
-      >
+      <Link className={styles.cta} to={HOME_PATH} replace state={passedRung(moduleId)}>
         {strings['verdict.toLadder']}
       </Link>
     </section>

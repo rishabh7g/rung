@@ -244,9 +244,7 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
         <h2 className={styles.display} dir={l2.display.dir} lang={l2.display.lang}>
           {sentence.display}
         </h2>
-        <p className={styles.cue} dir={course.dir}>
-          {sentence.cue}
-        </p>
+        <p className={styles.cue}>{sentence.cue}</p>
         {/* Romanized courses only (PRD §4): the native script as recognition, never as something
             to produce — so it is the quietest line in the hero. */}
         {sentence.script !== undefined && (
@@ -267,19 +265,13 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
                   <span className={styles.wordDisplay} dir={l2.display.dir} lang={l2.display.lang}>
                     {word.display}
                   </span>
-                  <span className={styles.wordCue} dir={course.dir}>
-                    {word.cue}
-                  </span>
+                  <span className={styles.wordCue}>{word.cue}</span>
                   <TagChip tag={word.tag} />
                 </p>
-                {word.note !== undefined && (
-                  <p className={styles.wordNote} dir={course.dir}>
-                    {word.note}
-                  </p>
-                )}
+                {word.note !== undefined && <p className={styles.wordNote}>{word.note}</p>}
                 {/* The taught paradigm, `display` included — the surfaces the word index maps. */}
                 {word.forms.length > 0 && (
-                  <p className={styles.forms} dir={course.dir}>
+                  <p className={styles.forms}>
                     forms:{' '}
                     <span dir={l2.display.dir} lang={l2.display.lang}>
                       {word.forms.join(' · ')}
@@ -299,12 +291,8 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
         <section data-section="trap" className={styles.trap}>
           <TriangleAlert className={styles.trapIcon} aria-hidden="true" />
           <div className={styles.trapText}>
-            <p className={styles.trapHead} dir={course.dir}>
-              {strings['sentence.trapHead']}
-            </p>
-            <p className={styles.trapBody} dir={course.dir}>
-              {sentence.trap}
-            </p>
+            <p className={styles.trapHead}>{strings['sentence.trapHead']}</p>
+            <p className={styles.trapBody}>{sentence.trap}</p>
           </div>
         </section>
       )}
@@ -330,7 +318,6 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
         onClick={() => {
           setDeeper(!deeper);
         }}
-        dir={course.dir}
       >
         {deeper ? strings['sentence.less'] : strings['sentence.deeper']}
         {deeper ? (
@@ -360,9 +347,7 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
               {sentence.literal !== undefined && (
                 <div className={styles.plateAccent}>
                   <h3 className={styles.sectionLabel}>WORD-FOR-WORD</h3>
-                  <p className={styles.prose} dir={course.dir}>
-                    {sentence.literal}
-                  </p>
+                  <p className={styles.prose}>{sentence.literal}</p>
                 </div>
               )}
             </section>
@@ -375,9 +360,7 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
                 {rules.map(({ index, rule }) => (
                   <li key={index} className={styles.rule}>
                     <TagChip tag={rule.tag} />
-                    <span className={styles.prose} dir={course.dir}>
-                      {rule.text}
-                    </span>
+                    <span className={styles.prose}>{rule.text}</span>
                   </li>
                 ))}
               </ul>
@@ -387,9 +370,7 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
           {sentence.sound !== undefined && (
             <section data-section="sound" className={styles.plateQuiet}>
               <h3 className={styles.sectionLabel}>SOUND NOTE</h3>
-              <p className={styles.prose} dir={course.dir}>
-                {sentence.sound}
-              </p>
+              <p className={styles.prose}>{sentence.sound}</p>
             </section>
           )}
           {/* 7 · variations — same frame, one part swapped, and the swapped part is filled. */}
@@ -409,12 +390,8 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
                         </span>
                       ))}
                     </p>
-                    <p className={styles.variationCue} dir={course.dir}>
-                      {variation.cue}
-                    </p>
-                    <p className={styles.variationChanged} dir={course.dir}>
-                      {variation.changed}
-                    </p>
+                    <p className={styles.variationCue}>{variation.cue}</p>
+                    <p className={styles.variationChanged}>{variation.changed}</p>
                   </li>
                 ))}
               </ul>
@@ -428,9 +405,7 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
                 <p className={styles.mistakeDisplay} dir={l2.display.dir} lang={l2.display.lang}>
                   {sentence.mistake.display}
                 </p>
-                <p className={styles.prose} dir={course.dir}>
-                  {sentence.mistake.why}
-                </p>
+                <p className={styles.prose}>{sentence.mistake.why}</p>
               </div>
             </section>
           )}
@@ -443,9 +418,7 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
                   <span className={styles.register}>{sentence.register}</span>
                 )}
               </p>
-              <p className={styles.prose} dir={course.dir}>
-                {sentence.usage}
-              </p>
+              <p className={styles.prose}>{sentence.usage}</p>
             </section>
           )}
         </div>
@@ -456,12 +429,8 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
       {sentence.mnemonic !== undefined && (
         <section data-section="mnemonic" className={styles.mnemonic}>
           <RegistrationMarks />
-          <p className={styles.courseLabel} dir={course.dir}>
-            {strings['sentence.pocketIt']}
-          </p>
-          <p className={styles.prose} dir={course.dir}>
-            {sentence.mnemonic}
-          </p>
+          <p className={styles.courseLabel}>{strings['sentence.pocketIt']}</p>
+          <p className={styles.prose}>{sentence.mnemonic}</p>
         </section>
       )}
 
@@ -491,13 +460,12 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
             onClick={() => {
               step(previous);
             }}
-            dir={course.dir}
           >
             <ArrowLeft className={styles.stepIcon} aria-hidden="true" />
             {strings['sentence.prev']}
           </button>
         ) : (
-          <Link className={styles.step} to={`/sentence/${handBackAt.id}`} dir={course.dir}>
+          <Link className={styles.step} to={`/sentence/${handBackAt.id}`}>
             <ArrowLeft className={styles.stepIcon} aria-hidden="true" />
             {strings['sentence.prevModule']}
           </Link>
@@ -545,7 +513,6 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
           <Link
             className={styles.step}
             to={handOverTo === undefined ? PRACTICE_PATH : `/sentence/${handOverTo}-S01`}
-            dir={course.dir}
           >
             {handOverTo === undefined ? strings['sentence.done'] : strings['sentence.nextModule']}
             <ArrowRight className={styles.stepIcon} aria-hidden="true" />
@@ -557,7 +524,6 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
             onClick={() => {
               step(next);
             }}
-            dir={course.dir}
           >
             {strings['sentence.next']}
             <ArrowRight className={styles.stepIcon} aria-hidden="true" />

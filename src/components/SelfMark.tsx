@@ -54,11 +54,9 @@ interface SelfMarkProps {
   /** The mark so far — `null` until the learner makes one, which is where every card starts. */
   mark: Mark | null;
   onMark: (mark: Mark) => void;
-  /** The course's writing direction — the labels are its words. */
-  dir?: string;
 }
 
-export function SelfMark({ mark, onMark, dir }: SelfMarkProps) {
+export function SelfMark({ mark, onMark }: SelfMarkProps) {
   const strings = useStrings();
 
   return (
@@ -68,7 +66,6 @@ export function SelfMark({ mark, onMark, dir }: SelfMarkProps) {
         className={mark === 'miss' ? styles.optionMiss : styles.option}
         aria-pressed={mark === 'miss'}
         onClick={() => onMark('miss')}
-        dir={dir}
       >
         {strings['mark.missed']}
       </button>
@@ -77,7 +74,6 @@ export function SelfMark({ mark, onMark, dir }: SelfMarkProps) {
         className={mark === 'got' ? styles.optionGot : styles.option}
         aria-pressed={mark === 'got'}
         onClick={() => onMark('got')}
-        dir={dir}
       >
         {strings['mark.gotIt']}
       </button>

@@ -45,8 +45,6 @@ interface HintProps {
   active?: boolean;
   /** The class the surface dresses it in — a hint has no geometry of its own. */
   className?: string;
-  /** The course's writing direction: the sentence is its copy. */
-  dir?: string;
 }
 
 /**
@@ -54,15 +52,11 @@ interface HintProps {
  * once seen, so a surface can drop it in unconditionally and the DOM tells the truth about which
  * visit this is.
  */
-export function HintLine({ hint, active, className, dir }: HintProps) {
+export function HintLine({ hint, active, className }: HintProps) {
   const strings = useStrings();
   const show = useHint(hint, active);
 
   if (!show) return null;
 
-  return (
-    <p className={className} dir={dir}>
-      {strings[`hint.${hint}`]}
-    </p>
-  );
+  return <p className={className}>{strings[`hint.${hint}`]}</p>;
 }

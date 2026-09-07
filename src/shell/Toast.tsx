@@ -79,19 +79,13 @@ export function useToast(duration = TOAST_DURATION_MS): ToastHandle {
 interface ToastProps {
   /** The line to show, or `null` for the resting state. */
   message: string | null;
-  /** The course's writing direction — a toast is course copy, so it reads the course's way. */
-  dir?: string;
 }
 
 /** The rendered half: a polite live region, and inside it the message when there is one. */
-export function Toast({ message, dir }: ToastProps) {
+export function Toast({ message }: ToastProps) {
   return (
     <div className={styles.region} role="status" aria-live="polite">
-      {message !== null && (
-        <p className={styles.toast} dir={dir}>
-          {message}
-        </p>
-      )}
+      {message !== null && <p className={styles.toast}>{message}</p>}
     </div>
   );
 }

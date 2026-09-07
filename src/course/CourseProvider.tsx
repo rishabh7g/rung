@@ -105,8 +105,8 @@ export function CourseProvider({ children }: CourseProviderProps) {
    *
    * `dir` rides along for the same reason: the manifest's other half of "how this course is
    * written" belongs on the same element. It is a no-op today (every shipped course is `ltr`),
-   * and it is what makes an rtl course flip the shell rather than the 36 elements that currently
-   * spread `dir={course.dir}` by hand — those stay as they are; unthreading them is not this fix.
+   * and it is what makes an rtl course flip the shell. `dir` inherits like `lang` does, so L1
+   * elements say nothing (#415); only the L2 lines override it, through `l2Written`.
    */
   const active = boot.status === 'ready' ? boot.value.course : undefined;
   useEffect(() => {

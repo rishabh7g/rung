@@ -32,23 +32,20 @@ interface SessionSummaryProps {
   total: number;
   /** Whether the current rung is worked through — `exitAvailable`, asked by the session. */
   ritualOpen: boolean;
-  dir?: string;
 }
 
-export function SessionSummary({ gotIt, total, ritualOpen, dir }: SessionSummaryProps) {
+export function SessionSummary({ gotIt, total, ritualOpen }: SessionSummaryProps) {
   const strings = useStrings();
 
   return (
     <section className={styles.summary}>
-      <h2 className={styles.title} dir={dir}>
-        {strings['practice.summaryTitle']}
-      </h2>
+      <h2 className={styles.title}>{strings['practice.summaryTitle']}</h2>
 
       <div className={styles.counts}>
         <RegistrationMarks />
         {/* One sentence, in the course's words — so the numbers sit where the language puts
             them rather than in a right-aligned column. */}
-        <p className={styles.count} dir={dir}>
+        <p className={styles.count}>
           {interpolate(strings['practice.summaryScore'], { count: gotIt, total })}
         </p>
       </div>
@@ -56,13 +53,13 @@ export function SessionSummary({ gotIt, total, ritualOpen, dir }: SessionSummary
       {/* The rung is worked through: the exit ritual is what comes next, and this is the moment
           the learner earned it. */}
       {ritualOpen && (
-        <Link className={styles.toRitual} to={RITUAL_PATH} dir={dir}>
+        <Link className={styles.toRitual} to={RITUAL_PATH}>
           {strings['practice.summaryToRitual']}
         </Link>
       )}
 
       {/* Leaving the route is what ends the session (`AppShell`), so the way out is a link. */}
-      <Link className={styles.back} to={HOME_PATH} dir={dir}>
+      <Link className={styles.back} to={HOME_PATH}>
         {strings['practice.backToLadder']}
       </Link>
     </section>
