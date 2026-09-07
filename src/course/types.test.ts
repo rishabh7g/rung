@@ -193,7 +193,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 90 of them — nine full L1 ladders, en-ko included (#377–#379)', () => {
+  it('finds all 100 of them — nine full L1 ladders and the hi-mr L2 (#425, #434, #443)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -288,6 +288,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/hi-mr/modules/L1-M7.json',
       'content/hi-mr/modules/L1-M8.json',
       'content/hi-mr/modules/L1-M9.json',
+      'content/hi-mr/modules/L2-M1.json',
+      'content/hi-mr/modules/L2-M10.json',
+      'content/hi-mr/modules/L2-M2.json',
+      'content/hi-mr/modules/L2-M3.json',
+      'content/hi-mr/modules/L2-M4.json',
+      'content/hi-mr/modules/L2-M5.json',
+      'content/hi-mr/modules/L2-M6.json',
+      'content/hi-mr/modules/L2-M7.json',
+      'content/hi-mr/modules/L2-M8.json',
+      'content/hi-mr/modules/L2-M9.json',
     ]);
   });
 

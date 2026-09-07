@@ -126,6 +126,22 @@ issues that tracked it (#64, #110, #111) were closed by the owner on 2026-08-13,
 earlier lists — plus the **8 added by `docs/15-llm-review-hi-mr-surfaces.md`** (30 in
 all) are the only remaining record of what a native reviewer still owes.
 
+**hi-mr climbs to two levels (#425, #434, #443, 2026-09-07) — the first content above L1 in any
+course.** All ten L2 rungs — `L2-M1`…`L2-M10`, _Conversations_ — are authored against the briefs
+of #295 (`docs/26-hi-mr-L2-brief-decisions.md`) and carry `verified: true` on the same standing
+authority as L1, backed by `docs/49-llm-review-hi-mr-L2.md`; a strict `npm run build` now emits
+`hi-mr: 20 modules (L1-M1..M10, L2-M1..M10)` and the cumulative index runs 222 → 441 surfaces.
+The level proves the whole chain on a second rung: the id grammar of #417, the prompt CLI crossing
+the level boundary, the M1–M3 enrichment law reading the module number rather than the level, and
+`prerequisites` staying inside the level while the seal rule carries the cross-level dependency.
+`register: "formal"` (#422) carries the तुम्ही tier the L1 briefs had to smuggle into `usage`.
+What L2 teaches: the imperative pair and the -इए tier Marathi does not have (M1), तो/ती/ते and
+the genitive (M2), the full agreement grid (M3), the glued -ला and -ने (M4), the hosting and
+refusal scripts (M5), the -ऊ या suggestion frame (M6), the spoken continuous बोलतोय (M7),
+सापडणे against मिळणे and the -त नाही frame (M8), -पेक्षा and की/किंवा (M9), and the ergative
+त्याने/तिने/त्यांनी that L1-M5 fenced off, in four-sentence accounts (M10). **The native gate is
+still unmet**: docs/49 ends in open questions 49–70, which now stand beside the L1 chain's own.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on

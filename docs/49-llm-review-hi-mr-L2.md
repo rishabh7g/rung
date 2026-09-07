@@ -185,3 +185,82 @@ shown.
     right for a stranger, or is it reserved for people you know?
 61. **Every pronunciation gloss in this wave** — `निळ्या`, `पोळ्या`, `थांबा`, `रिक्षाने`,
     `जेवायला` — is written, not heard.
+
+## Wave 3 — L2-M6…M10, and the level closes
+
+|                | M6 Making plans | M7 On the phone | M8 When something goes wrong | M9 Comparing | M10 Telling what happened |
+| -------------- | --------------- | --------------- | ---------------------------- | ------------ | ------------------------- |
+| sentences      | 10              | 10              | 10                           | 10           | 10 accounts (2–4 sentences each) |
+| new word rows  | 10              | 12              | 15                           | 10           | 12                        |
+| index growth   | +11 (350 → 361) | +15 (361 → 376) | +27 (376 → 403)              | +16 (403 → 419) | +22 (419 → 441)        |
+| pool items     | 12              | 12              | 12                           | 12           | 12                        |
+| enrichment     | full            | full            | full                         | full         | full                      |
+| register chips | 9 `informal`, 1 `neutral` | 10 `neutral` | 4 `formal`, 6 `neutral` | 2 `formal`, 8 `neutral` | 9 `informal`, 1 `neutral` |
+
+**M6** is assembly, not new grammar: the -ऊ या suggestion frame out of pieces the learner already
+owns, with the ask/propose split (जाऊ का? against जाऊ या) as the delta Hindi folds into one चलें.
+जमणे carries the polite refusal and the clock hours land, paying the second instalment of docs/15
+Q28. It is the level's first sustained तू module, and the chips say so honestly. येशील finally
+appears in a display — docs/15 Q25 asked whether showing it helps; the brief said here it earns it.
+
+**M7** spends the whole module on one tense: the glued continuous बोलतोय · बोलतेय · बोलतंय, with
+the unknown-caller neuter as the interference (Hindi has no ungendered cell to reach for). The
+written two-word form बोलत आहे is shown beside the spoken one so both resolve. The about-to job of
+the plain present (मी फोन ठेवतो, मी नंतर फोन करतो) is the cheapest lesson in the level — a new use
+of a shape owned since L1-M4 — and बोलणे's rows open at last, the docs/15 Q29 debt.
+
+**M8** is the survival module: सापडणे against मिळणे (the mirror of M5's seam), the -त नाही frame
+where nothing agrees, and L1-M5's gender law recycled through हरवला · संपले, against विसरलो which
+agrees with the person instead. जरा मदत करा · हळू बोला · जरा पुन्हा सांगा are the lines this app
+exists to hand over.
+
+**M9** is the level's rest point: -पेक्षा glued (with the oblique bend, so भावापेक्षा costs
+nothing once भावाचं is owned), जास्त/कमी invariable, सगळ्यात parseable on sight, and the की/किंवा
+pair split by sentence type — L1-M9's कारण/म्हणून device reborn.
+
+**M10** brings the course's oldest debt due: the ने L1-M5 fenced off (docs/08 Q20) arrives as
+त्याने · तिने · त्यांनी, and the object agreement is unchanged, which S03 and S07 show by holding
+the subject still while the verb moves three times. भेटणे takes -ला on the person met and agrees
+with the meeter; सांगितलं is flagged irregular. Format is L1-M10's turns grown up: accounts on
+आधी · मग · शेवटी, past tense only, and the smallest new-word spend of the level.
+
+### Two brief claims the build corrected
+
+- **झालं was not an L1 row.** The M8 brief says "काम, काय, झालं, नाही all stay L1's rows"; the
+  rebuilt index says L1 never taught झालं. It is opened here as its own row (M8-S01) with the
+  होणे paradigm, and M10 re-shows it doing the listener's job in मग काय झालं?.
+- **आलो was not taught either.** L1 taught आला · आली · आलं (third person) and the future येईन,
+  but never the मी cell of the past. M10-S05 opens it, forms आलो · आले, pointing at येणे's family.
+
+Both are additions, not edits: no L1 file changed in this level, and
+`git diff --stat content/hi-mr/modules/L1-*` is empty across all three waves.
+
+### The level, closed
+
+- 10 modules, 100 sentences, 120 comprehension items, 441 cumulative surfaces (222 at the start of
+  the level, so L2 added 219).
+- `content/hi-mr/levels.json` drops `draft` on L2: the level is authored, and `hasContent` is
+  recomputed by the build.
+- The strict build (`npm run content:build`, no flags) ships `hi-mr: 20 modules (L1-M1..M10,
+  L2-M1..M10)`.
+
+### Open questions for a native pass — wave 3
+
+62. **`आपण` for "let's" (M6).** The course teaches आपण as the inclusive we (L1-M10) and uses it as
+    the subject of every suggestion. Is आपण जाऊ या what friends actually say, or is the bare
+    जाऊ या more common?
+63. **`जमेल` versus `चालेल` (M6).** Shipped as: जमेल asks whether a person can make it, चालेल
+    whether a time is acceptable. Is that split real in speech, or do they overlap?
+64. **`बोलतंय` for an unknown caller (M7-S02).** Written as ordinary politeness. Does it ever
+    sound cold, and is कोण आहे? the safer opener?
+65. **`मी नंतर बोलतो` as a sign-off (M7-S10).** Is this the phrase, or is ठेवतो the only natural
+    closing?
+66. **`अडचण आली` (M8-S10).** Placed in L1-M9's कंटाळा आला frame. Is अडचण झाली heard as often?
+67. **`सगळ्यात` (M9-S05).** Shipped as the everyday superlative. Does spoken Pune prefer
+    सर्वात in some registers, and would a learner be marked by either?
+68. **`वडिलांनी` (M10-S04 variation).** The respect-plural ergative on a named noun. Correct as
+    spelled?
+69. **The whole M10 format.** Four-sentence accounts assembled from L1 and L2 vocabulary only —
+    do they read as something a person would actually say, or as an exercise?
+70. **Every pronunciation gloss in the level** is written, not heard. A native pass should read
+    all one hundred `sound` lines aloud before any of them is trusted.

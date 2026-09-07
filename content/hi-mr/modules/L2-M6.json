@@ -1,0 +1,470 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M6",
+  "title": "Making plans together",
+  "job": "Invitations, suggestions, settling a time",
+  "prerequisites": ["L2-M1", "L2-M2", "L2-M3", "L2-M4", "L2-M5"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-07",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": ["simple_present", "future", "imperative"],
+    "allowedPatterns": [
+      "आपण + V-ऊ + या",
+      "आपण + V-ऊ + का?",
+      "तुला + जमेल का? — मला + जमणार नाही",
+      "किती वाजता? — num + वाजता",
+      "उद्या/परवा + चालेल का?"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The suggestion frame is assembly, not new grammar: a verb's -ऊ cell plus या — जाऊ या, भेटू या, करू या, \"let's\". You own every piece already; only the joining is new."
+    },
+    {
+      "tag": "delta",
+      "text": "The bare -ऊ asks, -ऊ या proposes: जाऊ का? is \"shall we go?\", जाऊ या is \"let's go\". Hindi folds both into चलें, so the split into two moves is the delta."
+    },
+    {
+      "tag": "delta",
+      "text": "जमणे is the can-make-it verb Hindi does not quite have, and it runs on the dative frame the course has used since L1-M1: तुला जमेल का? · मला जमणार नाही. It declines a plan without declining the person."
+    },
+    {
+      "tag": "free",
+      "text": "चालेल is Hindi's चलेगा — a twin, for once: उद्या चालेल का? — चालेल!. The verb चालणे is wider than the idiom, and L2-M8 negates the same lexeme for things that do not work (चालत नाही)."
+    },
+    {
+      "tag": "delta",
+      "text": "The clock: किती वाजता? — सात वाजता. Hindi's बजे and Marathi's वाजता come from the same root wearing a different shape; किती is L1-M8's."
+    },
+    {
+      "tag": "free",
+      "text": "The negative future is a rest point: नाही simply follows the -णार form — जमणार नाही, येणार नाही. There is nothing new to conjugate, only a word to add."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M6-S01",
+      "display": "आपण उद्या काम करू या",
+      "cue": "चलो कल काम करें",
+      "glossEn": "Let's do the work tomorrow",
+      "literal": "हम कल काम करें",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "करू",
+            "cue": "करें",
+            "tag": "delta",
+            "forms": ["करू", "जाऊ", "येऊ", "भेटू"],
+            "note": "करणे's -ऊ cell, the shape the suggestion frame needs. जाऊ, येऊ and भेटू are L1's; करू completes the set."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "आपण यहाँ 'हम' है — L1-M10 वाला. हिंदी 'आप' समझकर इसे 'आप करें' मत पढ़ना, वरना पूरा न्योता उलटा हो जाता है.",
+      "sound": "करू = क‑रू, आख़िरी 'रू' लंबा; करा (हुक्म) से यही फ़र्क़ है.",
+      "variations": [
+        {
+          "display": "आपण उद्या भेटू या",
+          "cue": "चलो कल मिलें",
+          "changed": "क्रिया बदली — करू → भेटू (L1-M10). ढाँचा वही: -ऊ + या."
+        },
+        {
+          "display": "आपण उद्या काम करू का?",
+          "cue": "क्या हम कल काम करें?",
+          "changed": "या → का — प्रस्ताव सवाल बन गया. यही इस मॉड्यूल की जोड़ी है (S02)."
+        }
+      ],
+      "mistake": {
+        "display": "आपण उद्या काम करा या",
+        "why": "हुक्म वाला करा लगा दिया. सुझाव के लिए -ऊ वाला रूप चाहिए: करू या."
+      },
+      "usage": "दोस्तों के बीच योजना बनाते वक़्त — यह पूरे मॉड्यूल की रीढ़ है.",
+      "register": "informal",
+      "mnemonic": "-ऊ + या = 'चलो —'. दोनों टुकड़े पुराने हैं, जोड़ नया है."
+    },
+    {
+      "id": "L2-M6-S02",
+      "display": "आपण किती वाजता भेटू या?",
+      "cue": "हम कितने बजे मिलें?",
+      "glossEn": "What time shall we meet?",
+      "literal": "हम कितने बजे मिलें?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "वाजता",
+            "cue": "बजे",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"O'clock\" — बजे and वाजता are the same root in different clothes: किती वाजता? · सात वाजता."
+          }
+        ],
+        "rules": [4, 0]
+      },
+      "trap": "किती पहले से आपका है (L1-M8, कितीला). यहाँ वह दाम नहीं, वक़्त पूछता है — साथ का वाजता ही अंतर बताता है.",
+      "sound": "वाजता = वा‑ज‑ता, तीनों बराबर; 'वाजते' वक़्त बताने का दूसरा रूप है, यहाँ नहीं.",
+      "variations": [
+        {
+          "display": "आपण किती वाजता जाऊ या?",
+          "cue": "हम कितने बजे जाएँ?",
+          "changed": "क्रिया बदली — भेटू → जाऊ, सवाल वही."
+        },
+        {
+          "display": "किती वाजता?",
+          "cue": "कितने बजे?",
+          "changed": "सिर्फ़ सवाल — बातचीत के बीच इतना ही काफ़ी है."
+        }
+      ],
+      "mistake": {
+        "display": "आपण किती वाजे भेटू या?",
+        "why": "हिंदी 'बजे' का सीधा रूप उठा लिया. मराठी में वक़्त का शब्द वाजता है."
+      },
+      "usage": "वक़्त तय करने का पहला सवाल — फ़ोन पर, मैसेज में.",
+      "register": "informal",
+      "mnemonic": "बजे और वाजता एक ही जड़ हैं — 'ज' दोनों में बचा हुआ है."
+    },
+    {
+      "id": "L2-M6-S03",
+      "display": "सात वाजता भेटू या",
+      "cue": "सात बजे मिलें",
+      "glossEn": "Let's meet at seven",
+      "literal": "सात बजे मिलें",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "सात",
+            "cue": "सात",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Seven\" — the same word as Hindi. The clock hours (सहा, सात, आठ, नऊ) join the counting L1-M8 and L2-M5 began."
+          }
+        ],
+        "rules": [4, 0]
+      },
+      "trap": "गिनती यहाँ मुफ़्त है — सात, आठ, नऊ हिंदी जैसे ही हैं. सिर्फ़ सहा (छह) और नऊ (नौ) की आवाज़ थोड़ी अलग है.",
+      "sound": "सात = सात, हिंदी जैसा ही; आगे वाला वाजता अलग शब्द रहता है, जुड़ता नहीं.",
+      "variations": [
+        {
+          "display": "आठ वाजता भेटू या",
+          "cue": "आठ बजे मिलें",
+          "changed": "वक़्त बदला — सात → आठ (S08)."
+        },
+        {
+          "display": "सात वाजता जेवायला या",
+          "cue": "सात बजे खाने पर आइए",
+          "changed": "सुझाव → न्योता — भेटू या की जगह M5 वाला जेवायला या, और सुर आदर वाला."
+        }
+      ],
+      "mistake": {
+        "display": "सात वाजता भेटा या",
+        "why": "हुक्म वाला भेटा घुस गया. सुझाव में क्रिया का -ऊ रूप ही आता है: भेटू या."
+      },
+      "usage": "वक़्त तय करने का जवाब — 'सात बजे?' 'हाँ, सात बजे.'",
+      "register": "informal",
+      "mnemonic": "संख्या + वाजता = घड़ी. संख्या हिंदी की, पूँछ मराठी की."
+    },
+    {
+      "id": "L2-M6-S04",
+      "display": "तुला सात वाजता जमेल का?",
+      "cue": "तुझे सात बजे जम जाएगा क्या?",
+      "glossEn": "Does seven work for you?",
+      "literal": "तुझे सात बजे जमेगा क्या?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "जमेल",
+            "cue": "जम जाएगा",
+            "tag": "delta",
+            "forms": ["जमेल", "जमणार"],
+            "note": "\"Will work out / will be possible for you\" — जमणे on the मला/तुला frame. Hindi has no single verb for it; 'हो पाएगा' is the nearest."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "हिंदी में यह सवाल 'हो पाएगा?' या 'चलेगा?' से बनता है. मराठी के पास इसके लिए अपनी क्रिया है, और वह तुला के साथ आती है — तू कर्ता नहीं है.",
+      "sound": "जमेल = ज‑मेल, बीच का 'मे' लंबा.",
+      "variations": [
+        {
+          "display": "तुम्हाला सात वाजता जमेल का?",
+          "cue": "आपको सात बजे जम जाएगा क्या?",
+          "changed": "तुला → तुम्हाला — वही सवाल, बड़ों से (L2-M5)."
+        },
+        {
+          "display": "तुला उद्या जमेल का?",
+          "cue": "तुझे कल जम जाएगा क्या?",
+          "changed": "घड़ी → दिन. जमणे वक़्त के किसी भी टुकड़े के साथ चलता है."
+        }
+      ],
+      "mistake": {
+        "display": "तू सात वाजता जमेल का?",
+        "why": "तू को कर्ता बना दिया. जमणे की फ़्रेम मला/तुला वाली है: तुला जमेल का?"
+      },
+      "usage": "वक़्त पक्का करने से पहले पूछने की लाइन — नरम, और सामने वाले को ना कहने की जगह देती है.",
+      "register": "informal",
+      "mnemonic": "जमणे काम के लिए है, आदमी के लिए नहीं — इसलिए तुला, तू नहीं."
+    },
+    {
+      "id": "L2-M6-S05",
+      "display": "मला उद्या जमणार नाही, माफ कर",
+      "cue": "मुझे कल नहीं हो पाएगा, माफ़ कर",
+      "glossEn": "Tomorrow won't work for me — sorry",
+      "literal": "मुझे कल जमने-वाला नहीं, माफ़ कर",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "जमणार",
+            "cue": "हो पाएगा",
+            "tag": "delta",
+            "forms": ["जमेल", "जमणार"],
+            "note": "जमणे's -णार cell, the one that takes नाही: जमणार नाही is how a plan is declined without declining the person."
+          }
+        ],
+        "rules": [2, 5]
+      },
+      "trap": "मना करने के लिए कुछ नया नहीं सीखना: -णार वाले रूप के पीछे नाही रख दो. येणार नाही, जमणार नाही — यही पूरी क़ायदा है.",
+      "sound": "जमणार = ज‑म‑णार, आख़िरी 'णार' पर ज़ोर; नाही अलग शब्द रहता है.",
+      "variations": [
+        {
+          "display": "मला उद्या जमणार नाही, माफ करा",
+          "cue": "मुझे कल नहीं हो पाएगा, माफ़ कीजिए",
+          "changed": "माफ कर → माफ करा — वही इनकार, बड़ों या अजनबी से (L2-M1)."
+        },
+        {
+          "display": "मी उद्या येणार नाही",
+          "cue": "मैं कल नहीं आऊँगा",
+          "changed": "वही नकार दूसरी क्रिया पर — येणार नाही (L1-M6 + यही नियम)."
+        }
+      ],
+      "mistake": {
+        "display": "मला उद्या नाही जमणार, माफ कर",
+        "why": "हिंदी की तरह नाही को आगे रख दिया. मराठी में नाही क्रिया के बाद आता है: जमणार नाही."
+      },
+      "usage": "योजना से मना करने की पूरी लाइन — मना पहले, माफ़ी बाद में, वजह ज़रूरी नहीं.",
+      "register": "informal",
+      "mnemonic": "-णार + नाही = 'नहीं होगा'. नाही हमेशा पीछे चलता है, आगे नहीं."
+    },
+    {
+      "id": "L2-M6-S06",
+      "display": "उद्या चालेल का?",
+      "cue": "कल चलेगा क्या?",
+      "glossEn": "Does tomorrow work?",
+      "literal": "कल चलेगा क्या?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "चालेल",
+            "cue": "चलेगा",
+            "tag": "free",
+            "forms": ["चालेल"],
+            "note": "\"That works\" — चालणे's -ईल cell, and Hindi's चलेगा for once a twin. The same verb covers things working: L2-M8 negates it."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "यह उन गिनी-चुनी जगहों में है जहाँ हिंदी और मराठी एक ही मुहावरा बोलती हैं. जवाब भी वही शब्द है: चालेल!",
+      "sound": "चालेल = चा‑लेल, बीच का 'ले' लंबा; अंत का 'ल' हल्का.",
+      "variations": [
+        {
+          "display": "परवा चालेल का?",
+          "cue": "परसों चलेगा क्या?",
+          "changed": "दिन बदला — उद्या → परवा (S07)."
+        },
+        {
+          "display": "सात वाजता चालेल का?",
+          "cue": "सात बजे चलेगा क्या?",
+          "changed": "दिन → घड़ी. चालेल वक़्त के किसी भी टुकड़े पर चलता है."
+        }
+      ],
+      "mistake": {
+        "display": "उद्या चालेगा का?",
+        "why": "हिंदी का -गा चिपका दिया. मराठी का भविष्य -ईल पर बनता है: चालेल (L1-M6)."
+      },
+      "usage": "योजना पक्की करने का आख़िरी क़दम — और दुकान में 'यह चलेगा?' के लिए भी वही शब्द.",
+      "register": "informal",
+      "mnemonic": "चलेगा → चालेल. एक ही मुहावरा, दो भाषाएँ — यहाँ कुछ मत बदलो."
+    },
+    {
+      "id": "L2-M6-S07",
+      "display": "तू परवा येशील का?",
+      "cue": "तू परसों आएगा क्या?",
+      "glossEn": "Will you come the day after tomorrow?",
+      "literal": "तू परसों आएगा क्या?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "परवा",
+            "cue": "परसों",
+            "tag": "interference",
+            "forms": [],
+            "note": "\"The day after tomorrow\" — and, like Hindi's परसों, it can mean the day before yesterday too; the tense beside it decides."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "परवा और परसों दोनों आगे-पीछे दोनों तरफ़ चलते हैं. क्रिया का काल ही बताता है किधर — येशील (भविष्य) यानी आने वाला परसों.",
+      "sound": "परवा = प‑र‑वा, आख़िरी 'वा' लंबा.",
+      "variations": [
+        {
+          "display": "तू परवा जेवायला येशील का?",
+          "cue": "तू परसों खाने पर आएगा क्या?",
+          "changed": "मक़सद जुड़ा — जेवायला (L2-M5) क्रिया के आगे बैठ गया, बाक़ी सवाल वही."
+        },
+        {
+          "display": "तू उद्या येशील का?",
+          "cue": "तू कल आएगा क्या?",
+          "changed": "दिन बदला — परवा → उद्या."
+        }
+      ],
+      "mistake": {
+        "display": "तू परवा येईल का?",
+        "why": "येईल तीसरे आदमी का रूप है (तो येईल). तू के लिए येशील — L1-M6 की सूची में यह रूप था, यहाँ पहली बार दिखा है."
+      },
+      "usage": "दोस्त से आगे की योजना पूछते वक़्त.",
+      "register": "informal",
+      "mnemonic": "तू की पूँछ हमेशा 'स' या 'शील' पर ख़त्म होती है — येशील, जाशील, उठलास."
+    },
+    {
+      "id": "L2-M6-S08",
+      "display": "आपण आठ वाजता जेवायला जाऊ या",
+      "cue": "चलो आठ बजे खाने चलें",
+      "glossEn": "Let's go out to eat at eight",
+      "literal": "हम आठ बजे खाने-को जाएँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "आठ",
+            "cue": "आठ",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Eight\" — the same word as Hindi, and the hour a Pune dinner invitation usually names."
+          }
+        ],
+        "rules": [4, 0]
+      },
+      "trap": "जेवायला (L2-M5) यहाँ फिर आया है — मक़सद वाली पूँछ किसी भी क्रिया के साथ जुड़ सकती है: जेवायला जाऊ या, जेवायला या.",
+      "sound": "आठ = आठ, आख़िर का 'ठ' साँस वाला.",
+      "variations": [
+        {
+          "display": "आपण नऊ वाजता जेवायला जाऊ या",
+          "cue": "चलो नौ बजे खाने चलें",
+          "changed": "वक़्त बदला — आठ → नऊ (S09)."
+        },
+        {
+          "display": "आपण आठ वाजता जेवायला जाऊ का?",
+          "cue": "क्या हम आठ बजे खाने चलें?",
+          "changed": "या → का: प्रस्ताव से सवाल — वही जोड़ी जो S01 में थी."
+        }
+      ],
+      "mistake": {
+        "display": "आपण आठ वाजता जेवण जाऊ या",
+        "why": "मक़सद की पूँछ छूट गई. 'खाने जाना' के लिए जेवायला चाहिए — नंगा जेवण सिर्फ़ खाना (चीज़) है."
+      },
+      "usage": "दोस्तों के साथ बाहर खाने की योजना.",
+      "register": "informal",
+      "mnemonic": "मक़सद की पूँछ (-आयला) और सुझाव की जोड़ी (-ऊ या) एक ही वाक्य में बैठ जाती हैं."
+    },
+    {
+      "id": "L2-M6-S09",
+      "display": "मी नऊ वाजता घरी येईन",
+      "cue": "मैं नौ बजे घर आऊँगा",
+      "glossEn": "I'll be home at nine",
+      "literal": "मैं नौ बजे घर आऊँगा",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "नऊ",
+            "cue": "नौ",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Nine\" — नौ with a Marathi vowel. Say it नऊ, in two clear beats, not as Hindi's single नौ."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "घरी अपनी पुरानी पूँछ रखता है — घराला नहीं (L2-M4). योजना की लाइनों में यह सबसे आम शब्द है, इसलिए यहाँ फिर याद दिला दिया.",
+      "sound": "नऊ = न‑ऊ, दो साफ़ हिस्से; हिंदी 'नौ' की तरह एक में मत मिलाओ.",
+      "variations": [
+        {
+          "display": "मी सहा वाजता घरी येईन",
+          "cue": "मैं छह बजे घर आऊँगा",
+          "changed": "वक़्त बदला — नऊ → सहा (S10)."
+        },
+        {
+          "display": "मी नऊ वाजता येणार नाही",
+          "cue": "मैं नौ बजे नहीं आऊँगा",
+          "changed": "नकार — येईन → येणार नाही, वही -णार + नाही (S05)."
+        }
+      ],
+      "mistake": {
+        "display": "मी नऊ वाजता घराला येईन",
+        "why": "मंज़िल वाली -ला पूँछ घर पर लगा दी. घर के लिए घरी ही चलता है (L1-M5, L2-M4)."
+      },
+      "usage": "घर में बताते वक़्त — और किसी के इंतज़ार में होने पर फ़ोन पर.",
+      "register": "neutral",
+      "mnemonic": "नऊ दो साँसों में — न‑ऊ. घड़ी की गिनती में यही सबसे अलग आवाज़ है."
+    },
+    {
+      "id": "L2-M6-S10",
+      "display": "तू सहा वाजता ये",
+      "cue": "तू छह बजे आ",
+      "glossEn": "Come at six",
+      "literal": "तू छह बजे आ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "सहा",
+            "cue": "छह",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Six\" — छह with a different body, the one clock hour a Hindi speaker cannot guess. सहा वाजता, six o'clock."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "बाक़ी घंटे हिंदी जैसे हैं, पर छह → सहा बिलकुल अलग दिखता है — यही वह गिनती है जो सबसे पहले भूलती है.",
+      "sound": "सहा = स‑हा, बीच का 'ह' सुनाई देना चाहिए.",
+      "variations": [
+        {
+          "display": "तुम्ही सहा वाजता या",
+          "cue": "आप छह बजे आइए",
+          "changed": "ये → या — वही न्योता, बड़ों से (L2-M1)."
+        },
+        {
+          "display": "आपण सहा वाजता भेटू या",
+          "cue": "चलो छह बजे मिलें",
+          "changed": "हुक्म → सुझाव: ये की जगह भेटू या, और तू की जगह आपण."
+        }
+      ],
+      "mistake": {
+        "display": "तू सहा वाजता या",
+        "why": "तू के साथ आदर वाला या लगा दिया. दोस्त के लिए ये (L2-M1) — या तुम्ही के लिए है."
+      },
+      "usage": "दोस्त को वक़्त देते वक़्त — छोटी, सीधी लाइन.",
+      "register": "informal",
+      "mnemonic": "सहा अकेली अजनबी संख्या है — बाक़ी घड़ी हिंदी से उधार."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L2-M6-C01", "display": "आपण उद्या काम करू या", "cue": "चलो कल काम करें" },
+    { "id": "L2-M6-C02", "display": "आपण किती वाजता भेटू या?", "cue": "हम कितने बजे मिलें?" },
+    { "id": "L2-M6-C03", "display": "सात वाजता भेटू या", "cue": "सात बजे मिलें" },
+    { "id": "L2-M6-C04", "display": "तुला सात वाजता जमेल का?", "cue": "तुझे सात बजे जम जाएगा क्या?" },
+    { "id": "L2-M6-C05", "display": "मला उद्या जमणार नाही", "cue": "मुझे कल नहीं हो पाएगा" },
+    { "id": "L2-M6-C06", "display": "उद्या चालेल का?", "cue": "कल चलेगा क्या?" },
+    { "id": "L2-M6-C07", "display": "तू परवा येशील का?", "cue": "तू परसों आएगा क्या?" },
+    {
+      "id": "L2-M6-C08",
+      "display": "आपण आठ वाजता जेवायला जाऊ या",
+      "cue": "चलो आठ बजे खाने चलें"
+    },
+    { "id": "L2-M6-C09", "display": "मी नऊ वाजता घरी येईन", "cue": "मैं नौ बजे घर आऊँगा" },
+    { "id": "L2-M6-C10", "display": "तू सहा वाजता ये", "cue": "तू छह बजे आ" },
+    { "id": "L2-M6-C11", "display": "आपण उद्या काम करू का?", "cue": "क्या हम कल काम करें?" },
+    { "id": "L2-M6-C12", "display": "तुम्ही सहा वाजता या", "cue": "आप छह बजे आइए" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}
