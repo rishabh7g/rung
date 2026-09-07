@@ -24,11 +24,6 @@ import type { StateStorage } from 'zustand/middleware';
 /** Per page load. A session's answer is the session's answer; a reload asks again. */
 let asked = false;
 
-/** Exported for the test, which needs a fresh page's worth of state per case. */
-export function resetPersistenceRequest(): void {
-  asked = false;
-}
-
 /**
  * Asks the browser to keep this origin's storage, at most once, and never throws: this runs
  * inside a state write, and a store that could not save because a *log line* rejected would be

@@ -128,14 +128,6 @@ export async function loadCourses(): Promise<Course[]> {
 }
 
 /**
- * Tests only: drops the cache so each case boots cold. The app never calls this — a manifest
- * is loaded once per page load, by design.
- */
-export function resetManifestCache(): void {
-  inFlight = null;
-}
-
-/**
  * The active course at boot (F0): the persisted one when it is still in the manifest, else the
  * first manifest entry. A persisted id that no longer resolves — a course renamed, or a bundle
  * built without `--with-fixtures` — warns and falls back rather than throwing: an unrenderable

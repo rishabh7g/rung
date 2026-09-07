@@ -70,14 +70,6 @@ export function loadStrings(courseId: string): Promise<Strings> {
   return pending;
 }
 
-/**
- * Tests only: drops the cache so each case loads cold. The app never calls this — a bundle is
- * loaded once per course per page load, by design.
- */
-export function resetStringsCache(): void {
-  cache.clear();
-}
-
 async function fetchStrings(courseId: string): Promise<Strings> {
   // Read BASE_URL per call, not at module load: it is '/' in dev and tests and '/rung/' (or
   // whatever the host mounts) in a build, and the app must work under either.
