@@ -41,6 +41,7 @@ import {
   collectModuleFiles,
   validateModule,
   type Module,
+  type ModuleWord,
   type ValidationIssue,
 } from './validate.ts';
 
@@ -532,10 +533,17 @@ function sortedSurfaces(
   return sorted;
 }
 
+/** A module and its ladder id, as `buildWordIndex` receives it: the shipped list narrowed. */
+interface IndexedModule {
+  id: string;
+  module: Module;
+}
+
 /**
- * One index per module, each CUMULATIVE over everything shipped at or before it in ladder order
- * (PRD §6.3) — a module does not re-teach what an earlier one taught, so a module-local index
- * would leave most of L1-M2's own sentences unexplainable (PR #119).
+ * One index per module, keyed by module id so the caller pairs a module with its index by name
+ * and never by position (#416). Each is CUMULATIVE over everything shipped at or before it in
+ * ladder order (PRD §6.3) — a module does not re-teach what an earlier one taught, so a
+ * module-local index would leave most of L1-M2's own sentences unexplainable (PR #119).
  *
  * Indexed: every word row's `display` and every entry of its `forms` — each under every key
  * `surfaceIndexKeys` grants it (#116, [Q3]): the surface itself plus its hyphen parts, so
@@ -551,42 +559,75 @@ function sortedSurfaces(
  *
  * `modules` is the shipped sequence, so the index describes what a learner build actually
  * contains: a module the gate held back teaches nothing, here or on the learner's screen.
+ *
+ * Insertion order is ladder order, so iterating the map emits the files in the same order the
+ * modules were shipped.
  */
 export function buildWordIndex(
   courseId: string,
-  modules: readonly { id: string; module: Module }[],
-): WordIndexFile[] {
+  modules: readonly IndexedModule[],
+): Map<string, WordIndexFile> {
   const surfaces = new Map<string, WordIndexEntry>();
   const through: string[] = [];
-  const files: WordIndexFile[] = [];
-  let maxSpan = 1;
+  const files = new Map<string, WordIndexFile>();
 
   for (const shipped of modules) {
     through.push(shipped.id);
-    for (const sentence of shipped.module.sentences) {
-      sentence.deconstruction.words.forEach((word, wordIdx) => {
-        for (const raw of [word.display, ...word.forms]) {
-          const surface = normalizeSurface(raw);
-          if (surface === '') continue;
-          for (const key of surfaceIndexKeys(surface)) {
-            if (surfaces.has(key)) continue;
-            surfaces.set(key, { moduleId: shipped.id, sentenceId: sentence.id, wordIdx });
-            maxSpan = Math.max(maxSpan, surfaceSpan(key));
-          }
-        }
-      });
-    }
-    files.push({
+    indexModule(surfaces, shipped);
+    files.set(shipped.id, {
       courseId,
       moduleId: shipped.id,
       cumulativeThrough: [...through],
       surfaceCount: surfaces.size,
-      maxSpan,
+      maxSpan: maxSpanOf(surfaces),
       surfaces: sortedSurfaces(surfaces),
     });
   }
 
   return files;
+}
+
+/** Folds every word of every sentence in `shipped` into `surfaces`, in sentence → word order. */
+function indexModule(surfaces: Map<string, WordIndexEntry>, shipped: IndexedModule): void {
+  for (const sentence of shipped.module.sentences) {
+    sentence.deconstruction.words.forEach((word, wordIdx) => {
+      indexWord(surfaces, word, { moduleId: shipped.id, sentenceId: sentence.id, wordIdx });
+    });
+  }
+}
+
+/**
+ * Records `entry` under every key the word's `display` and `forms` earn. A spelling that
+ * normalises to nothing earns none: `surfaceIndexKeys('')` would hand back the empty key.
+ */
+function indexWord(
+  surfaces: Map<string, WordIndexEntry>,
+  word: ModuleWord,
+  entry: WordIndexEntry,
+): void {
+  const spellings = [word.display, ...word.forms]
+    .map(normalizeSurface)
+    .filter((spelling) => spelling !== '');
+  for (const spelling of spellings) {
+    for (const key of surfaceIndexKeys(spelling)) indexSurface(surfaces, key, entry);
+  }
+}
+
+/** Claims `key` for `entry` unless an earlier occurrence owns it — first occurrence wins. */
+function indexSurface(
+  surfaces: Map<string, WordIndexEntry>,
+  key: string,
+  entry: WordIndexEntry,
+): void {
+  if (surfaces.has(key)) return;
+  surfaces.set(key, entry);
+}
+
+/** The longest indexed surface in tokens, never below 1 — the resolver's greedy-match bound. */
+function maxSpanOf(surfaces: ReadonlyMap<string, WordIndexEntry>): number {
+  let maxSpan = 1;
+  for (const key of surfaces.keys()) maxSpan = Math.max(maxSpan, surfaceSpan(key));
+  return maxSpan;
 }
 
 /**
@@ -633,8 +674,11 @@ interface CoursePlan {
   levels: Levels;
   stringsFile: string;
   shipped: { id: string; file: string }[];
-  /** One per shipped module, same order — computed before anything is written. */
-  indexes: WordIndexFile[];
+  /**
+   * Keyed by module id, in ladder order — one per entry of `shipped`, computed before anything
+   * is written.
+   */
+  indexes: ReadonlyMap<string, WordIndexFile>;
   gatedOut: { id: string; reason: string }[];
   /** Course-level exclusion (a fixture course on a strict build); modules are not even considered. */
   excluded: string | null;
@@ -848,14 +892,16 @@ export function buildContent(options: BuildOptions): BuildReport {
     // pool rule runs with it, in the read-and-validate phase, so a content bug leaves the previous
     // output untouched rather than half-replaced.
     const indexes = buildWordIndex(row.id, shipped);
-    shipped.forEach((entry, i) => {
-      const index = indexes[i];
-      if (index === undefined) return;
+    for (const entry of shipped) {
+      const index = indexes.get(entry.id);
+      // buildWordIndex builds one index per module it is given, so a miss is a bug in it — not
+      // a module to skip quietly.
+      if (index === undefined) throw new Error(`${row.id}: no word index built for ${entry.id}`);
       const name = `${row.id}/${path.basename(entry.file)}`;
       for (const issue of checkComprehensionPool(entry.module, index)) {
         errors.push(`${name}: ${issue.path}: ${issue.message}`);
       }
-    });
+    }
 
     plans.push({
       row,
@@ -911,7 +957,7 @@ export function buildContent(options: BuildOptions): BuildReport {
       );
     }
     mkdirSync(path.join(courseOut, 'index'), { recursive: true });
-    for (const index of plan.indexes) {
+    for (const index of plan.indexes.values()) {
       write(path.join(courseOut, 'index', `${index.moduleId}.json`), index);
     }
     const ids = plan.shipped.map((module) => module.id);
@@ -954,7 +1000,7 @@ export function buildContent(options: BuildOptions): BuildReport {
       continue;
     }
     lines.push(`${id}: ${countModules(ids.length)} (${moduleRanges(ids)})`);
-    for (const index of plan.indexes) {
+    for (const index of plan.indexes.values()) {
       lines.push(`  index ${index.moduleId}: ${index.surfaceCount} surfaces`);
     }
     if (plan.gatedOut.length > 0) lines.push(`  held back: ${describeGated(plan.gatedOut)}`);
