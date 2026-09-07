@@ -115,7 +115,11 @@ decides what a build is allowed to contain (PRD-engineering §3, §6.2, [D4]):
 **Strict is production truth: a learner build can never contain unreviewed or sample
 content.** `verified: true` means a module has been reviewed and cleared to ship, and
 `verifiedBy`/`verifiedAt` name who or what reviewed it and when — `tools/validate.ts`
-rejects a verified module that carries no signature. On **2026-08-13** hi-mr
+rejects a verified module that carries no signature. **Since 2026-09-07 an authoring wave
+ships `verified: true` by default**, in the same change as its review doc: the LLM review is
+the review, it runs on the owner's standing authority, and `verifiedBy` says so in words. The
+old two-step — author `false`, flip later — recorded nothing the signature does not, and left
+correct content out of a learner build for no gain. On **2026-08-13** hi-mr
 L1-M1..M10 were flipped to `verified: true` on the repo owner's explicit authority,
 backed by an **LLM linguistic review** (`docs/07-llm-review-L1-M1-M5.md`,
 `docs/07-llm-review-L1-M6-M10.md`, and the third pass that re-reviewed all ten blind,

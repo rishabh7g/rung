@@ -182,7 +182,12 @@ export function renderPrompt({ course, brief, schemaText, index }: PromptInputs)
     1. Paste this entire file into Claude.
     2. Save the returned JSON to content/${course.id}/modules/${brief.id}.json.
     3. Run \`npm run content:validate\` — feed failures back and re-ask until it passes.
-    4. The native gate (#64) reviews and flips \`verified\` — never set it yourself.
+    4. Author \`verified: true\` with its signature — \`verifiedBy\` naming the reviewer
+       ("<model> — LLM review, authorised by repo owner") and \`verifiedAt\` the date —
+       and write the wave's section of \`docs/<n>-llm-review-<course>-<level>.md\` in the
+       same change. That is the repo's standing default (README, "Strict is production
+       truth"); the NATIVE gate is a separate, stricter bar and stays unmet, so the review
+       doc must end in its open questions.
 -->
 
 # Author ${course.id} ${brief.id} — ${brief.title}
