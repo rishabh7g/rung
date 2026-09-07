@@ -585,17 +585,32 @@ L2/L3 `draftNote`s went in the same edit; those courses graduated on 2026-08-30.
 Every shipped module also gets `public/content/<courseId>/index/<moduleId>.json`: each L2
 surface form (a word's `display` plus every entry of its `forms` — romanized for romanized
 courses, never the `script` line) mapped to the word entry that **teaches** it,
-`{moduleId, sentenceId, wordIdx}`. It is **cumulative** — L1-M2's index is L1-M1's plus what
-M2 adds, because a module never re-teaches what an earlier one taught — and **first
-occurrence wins**, so the pointer names where the learner met the word. The run notes each
-one: `index L1-M2: 47 surfaces`. This is what the "why" resolver reads (PRD §6.3).
+`{moduleId, sentenceId, wordIdx}`. It is **cumulative in the shape the app reads** — L1-M2's
+index is L1-M1's plus what M2 adds, because a module never re-teaches what an earlier one taught
+— and **first occurrence wins**, so the pointer names where the learner met the word. The run
+notes each one: `index L1-M2: 47 surfaces`. This is what the "why" resolver reads (PRD §6.3).
+
+**The emitted file is a delta (#424, 2026-09-07).** Cumulative *files* are quadratic in the
+ladder: hi-mr's thirty modules were 1.2 MB raw, and nine courses at fifty modules would each have
+shipped ~2.9 MB, every byte of it warmed for offline. Each file now carries only the surfaces its
+own module is the first to teach, marked `delta: true`, alongside the ladder it sits in
+(`cumulativeThrough`) and the folded totals; `loadIndex` fetches that ladder's deltas and folds
+them earliest-first, which is what preserves first-occurrence-wins. Everything above `content.ts`
+— the resolver, the why panel, the tests — sees the cumulative shape and always has.
+hi-mr's index set went **1.2 MB → 79 KB raw** (`course:hi-mr` 542.0 → 468.5 KiB gzip); the other
+eight sit at 20–31 KB. `tools/delta-index.test.ts` pins the equality that makes this safe: for
+every module of every course, fold(deltas) is the cumulative index key for key and entry for
+entry.
 
 Two consequences worth knowing before you author content:
 
 - **A comprehension-pool item may only use taught words.** Every whitespace-split token of
   every pool item must resolve in that module's cumulative index, or the build fails naming
-  the course, module, item id and token. Sentences' own `variations` and `mistake` lines are
-  deliberately outside the rule — a mistake is wrong L2 *by design*.
+  the course, module, item id and token. Sentences' own `variations` and `mistake` lines do not
+  fail a build — a mistake is wrong L2 *by design*, and a variation may carry a proper noun (#61)
+  — but they are **reported** since #491 (`shown but untaught: 7 surfaces — …`) and ratcheted by
+  `tools/shown-surfaces.test.ts`, so the count can fall and never rise. The standing list, and
+  what a sweep of it would decide, is `docs/52-shown-surface-findings.md`.
 - **`normalizeSurface` is the one definition of "same word"** — `src/engine/surface.ts`, NFC
   + edge punctuation stripped (`आहात?` → `आहात`), case and apostrophes untouched (#116). The
   emitter imports it, and so does the runtime resolver (`src/engine/wordIndex.ts`, #94). Never

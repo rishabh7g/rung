@@ -33,7 +33,7 @@
  */
 import { useCallback, useEffect, useState } from 'react';
 import { useCourse } from './CourseProvider.tsx';
-import type { Levels, ModuleContent, WordIndex } from './types.ts';
+import type { Levels, ModuleContent, WordIndex, WordIndexEntry } from './types.ts';
 
 /**
  * Every way a content file can fail to become a usable value — offline, 404, not JSON, wrong
@@ -108,8 +108,8 @@ export function loadModule(courseId: string, moduleId: string): Promise<ModuleCo
   });
 }
 
-/** Loads (once) one module's cumulative word index. Rejects with `ContentError`. */
-export function loadIndex(courseId: string, moduleId: string): Promise<WordIndex> {
+/** Loads (once) one emitted index file — a DELTA since #424, not the folded index. */
+function loadIndexFile(courseId: string, moduleId: string): Promise<WordIndex> {
   return loadContent(indexPath(courseId, moduleId), (payload, url) => {
     const index = parseIndex(payload, url);
     if (index.courseId !== courseId || index.moduleId !== moduleId) {
@@ -120,6 +120,61 @@ export function loadIndex(courseId: string, moduleId: string): Promise<WordIndex
     }
     return index;
   });
+}
+
+/** Folded indexes, keyed `courseId/moduleId` — the promise, like `cache`, so two asks share one fold. */
+const folds = new Map<string, Promise<WordIndex>>();
+
+/**
+ * Loads (once) one module's CUMULATIVE word index, folding the deltas the build emits (#424).
+ *
+ * The emitted file carries only what its module is the first to teach, plus the ladder that got
+ * there (`cumulativeThrough`) and the folded totals. So: fetch the target, fetch the modules ahead
+ * of it in that list, and fold earliest-first — **first occurrence wins**, which the fold preserves
+ * by never overwriting a key it already has, exactly as the emitter did when it built the
+ * cumulative form. `maxSpan` and `surfaceCount` come from the target file, where they are already
+ * the folded values, and the count is then checked against the fold: a mismatch means a stale or
+ * half-deployed index set, which is precisely the failure the tripwires exist for.
+ *
+ * Every delta goes through `loadContent`, so the ladder's shared prefix is fetched once per course
+ * and the service worker's warm (`offlineCourse.ts`) already covers all of them.
+ */
+export function loadIndex(courseId: string, moduleId: string): Promise<WordIndex> {
+  const key = `${courseId}/${moduleId}`;
+  const cached = folds.get(key);
+  if (cached !== undefined) return cached;
+
+  const pending = loadIndexFile(courseId, moduleId)
+    .then(async (target) => {
+      if (target.delta !== true) return target;
+
+      const earlier = target.cumulativeThrough.slice(0, -1);
+      const deltas = await Promise.all(earlier.map((id) => loadIndexFile(courseId, id)));
+
+      const surfaces: Record<string, WordIndexEntry> = {};
+      for (const delta of [...deltas, target]) {
+        for (const [surface, entry] of Object.entries(delta.surfaces)) {
+          if (!Object.hasOwn(surfaces, surface)) surfaces[surface] = entry;
+        }
+      }
+
+      const folded = Object.keys(surfaces).length;
+      if (folded !== target.surfaceCount) {
+        throw new ContentError(
+          `${import.meta.env.BASE_URL}${indexPath(courseId, moduleId)}`,
+          `folds to ${folded} surfaces but declares ${target.surfaceCount} — the index set is incomplete`,
+        );
+      }
+
+      return { ...target, delta: undefined, surfaces };
+    })
+    .catch((error: unknown) => {
+      folds.delete(key);
+      throw error;
+    });
+
+  folds.set(key, pending);
+  return pending;
 }
 
 /**
