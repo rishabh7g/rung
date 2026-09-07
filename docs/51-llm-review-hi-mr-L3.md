@@ -145,3 +145,89 @@ question word stays where the answer would sit (L1-M2's law, untouched by report
     default in speech?
 86. **Quoted speech punctuation (M5-S09).** Written with straight double quotes. Is that the house
     convention a Marathi reader expects, and does it render well at 360 px?
+
+## Wave 3 — L3-M6…M10, and the level closes
+
+|                | M6 Feelings | M7 Body and health | M8 Money and paperwork | M9 Festivals | M10 Your own story |
+| -------------- | ----------- | ------------------ | ---------------------- | ------------ | ------------------ |
+| sentences      | 10          | 10                 | 10                     | 10           | 10 accounts (4–7 sentences each) |
+| new word rows  | 11          | 12                 | 12                     | 12           | 10 (all re-shown)  |
+| index growth   | +17 (538 → 555) | +20 (555 → 575) | +24 (575 → 599)     | +33 (599 → 632) | **+1** (632 → 633) |
+| pool items     | 12          | 12                 | 12                     | 12           | 12                 |
+| enrichment     | full        | full               | full                   | full         | full               |
+| register chips | 10 `neutral` | 3 `formal`, 7 `neutral` | 3 `formal`, 7 `neutral` | 10 `neutral` | 9 `neutral`, 1 `informal` |
+
+**M6** adds nouns and no grammar, which is exactly its brief: feelings ride frames the learner has
+had since L1-M9. The delta is which verb each noun takes — काळजी and भीती on वाटणे, आनंद and दुःख
+on होणे, राग on येणे — and Hindi cannot predict it, since Hindi uses a third verb again (डर लगता
+है). वाटणे is not re-opened: the row is L3-M3's, as the level's decision 4 assigned, and M6 points
+back at it. भीती is feminine against Hindi's masculine डर, and आनंद masculine against Hindi's
+feminine ख़ुशी — two gender flips in one module.
+
+**M7** is one frame told plainly: the body part is the subject, and there is no दर्द noun in the
+sentence at all, so both Hindi routes are closed. Because the part is the subject, the verb agrees
+with it, which makes डोकं (n), हात (m) and डोळे (m.pl) a grammar lesson rather than a word list —
+and डोळे flips gender against Hindi's feminine आँख. -कडे stands bare for the first time (डॉक्टरकडे),
+its note pointing back at डावीकडे. Illness stays in the fixed lines the brief allowed; the -आला आहे
+perfect is not opened as a system.
+
+**M8** turns on भरणे: one verb for a stomach (L2-M5), a bill and a form, exactly as Hindi's भरना
+does — and the past agrees with the thing filled, which is L1-M5 at a counter. The module's false
+friend is सही: "correct" in Hindi, "signature" in Marathi, with बरोबर (L3-M3) named as the word
+Hindi's sense actually lives in. महत्त्वाचं is shipped as a genitive in disguise, which is why it
+bends in L3-M2's cells and needs no new rule.
+
+**M9** is आहे against असते — today's truth against every year's — with Hindi's है/होता है as the
+free half. L2-M7's continuous leaves the phone for a street, where the -तायत cell learnt for
+respect does its other job. The festival names are common nouns with rows, not exempt proper
+nouns, and the module describes what a learner would see that week without asserting any practice
+as universal: that restraint is written into the rules, not just into the sentences.
+
+**M10** is the exit, and its number is the proof: **+1 surface for the whole module** (गेली, a
+cell of a verb already owned). Every row in it is a re-show whose note explains the word's job in
+a story rather than the word — the sequencers, म्हणून, भेटलो, भरला, उठून, म्हणाला, जर, गेलो,
+गेलास. The accounts run four to seven sentences under an eight-sentence ceiling, each carrying a
+reason and a feeling, and the last item tells the same day to a friend and to an elder — the
+device L2-M10 closed its own level with.
+
+### Seams held across the level
+
+- **No L1 or L2 file changed.** `git diff --stat` over `content/hi-mr/modules/L1-*` and `L2-*` is
+  empty for all three waves. Every cell L2 had left open (जेवतो, आलो, the genitive grid, दुखणे's
+  family) was opened as a new row here.
+- **वाटणे: one row, M3's.** **भरणे: L2-M8's row, re-shown.** **की: L2-M9's key, three jobs.**
+  **-कडे: bare at M7, pointing back at L2-M4.** All four as docs/50 §4 assigned.
+- **बोललो stays pinned** (docs/15 Q29), and the passive was never opened, as decision 3 required.
+- **A shown surface is a taught surface** in every module of the level, checked mechanically over
+  sentences, variations and pool items.
+
+### The level, closed
+
+- 10 modules, 100 sentences, 120 comprehension items, 441 → 633 cumulative surfaces (L3 added
+  192, against L2's 219 and L1's 222 — the ladder's spend is flattening, which is what an
+  assembly level should do).
+- `content/hi-mr/levels.json` drops `draft` on L3.
+- The strict build ships `hi-mr: 30 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10)`.
+
+### Open questions for a native pass — wave 3
+
+87. **The three feeling-verbs (M6).** Shipped as काळजी/भीती → वाटणे, आनंद/दुःख → होणे, राग →
+    येणे. Are there speakers who say मला भीती वाटली against भीती लागली, and is either marked?
+88. **खूश against आनंदी (M6-S06).** The module uses खूश for the state. Is आनंदी the word a
+    Marathi speaker would write?
+89. **दुखत होतं (M7-S02 variation).** The past continuous is used but never taught as a system.
+    Is the form right, and should a later level own it?
+90. **सर्दी (M7-S06).** Shipped as the illness, with a note that Hindi's सर्दी is the season. Is
+    the Marathi word used for the season too, and would that confuse?
+91. **सही (M8-S04).** Shipped as feminine and as "signature". Confirm both, and confirm that a
+    Pune counter says सही करा rather than सही घाला.
+92. **महत्त्वाचं (M8-S08).** Shipped as an ordinary adjective built on a genitive. Is that how a
+    native parses it, or is it simply a word now?
+93. **The festival module (M9) as a whole.** It names गणपती, दिवाळी, पूजा, सण and गर्दी and
+    claims nothing beyond what a visitor would see. Is anything in it presumptuous, and is
+    गणपतीत the right locative for the festival's days?
+94. **लोक with a plural verb (M9-S05).** Confirm लोक ऐकतायत rather than a singular.
+95. **The M10 accounts.** Ten stories assembled from the ladder alone — do they read as things a
+    person would actually say, and does the eight-sentence ceiling feel right?
+96. **Every pronunciation gloss in this level** is written, not heard. A native pass should read
+    all 100 `sound` lines aloud before any of them is trusted.

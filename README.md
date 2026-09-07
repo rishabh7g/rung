@@ -142,6 +142,21 @@ refusal scripts (M5), the -ऊ या suggestion frame (M6), the spoken continuo
 त्याने/तिने/त्यांनी that L1-M5 fenced off, in four-sentence accounts (M10). **The native gate is
 still unmet**: docs/49 ends in open questions 49–70, which now stand beside the L1 chain's own.
 
+**hi-mr reaches three levels (#452, #461, #470, #479, 2026-09-07) — the first L3 anywhere.** All
+ten L3 rungs — `L3-M1`…`L3-M10`, _Fluency_ — are authored against the briefs of #452
+(`docs/50-hi-mr-L3-brief-decisions.md`, the first level in this repo planned against a verified
+level above L1) and carry `verified: true` on the same standing authority, backed by
+`docs/51-llm-review-hi-mr-L3.md`. A strict `npm run build` emits
+`hi-mr: 30 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10)`, and the cumulative index runs
+441 → 633 surfaces. What L3 teaches: the -ऊन converb that lets a day be told at length (M1), the
+genitive as a system where L2-M2 taught one frame (M2), मला वाटतं and की (M3), जर … तर with one
+counterfactual frame (M4), reported speech on म्हणणे against L2-M10's सांगितलं (M5), the three
+feeling-verbs (M6), दुखणे with the body part as its subject (M7), भरणे's three jobs (M8), आहे
+against असते (M9), and in M10 nothing new at all — **+1 surface for the whole module**, which is
+what "written unaided" is supposed to look like. The passive stays out of L3 by decision; L1-M9's
+`बोललो` stays the pinned index miss it has been since docs/15. **The native gate is still unmet**:
+docs/51 ends in open questions 71–96.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on
