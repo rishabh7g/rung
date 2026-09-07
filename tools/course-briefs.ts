@@ -2044,7 +2044,7 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
     'L3-M10': {
       id: 'L3-M10',
       title: 'Your own story',
-      job: 'An eight-sentence account, written unaided',
+      job: 'An eight-sentence account, built from the whole ladder',
       patterns: [
         '<eight-sentence account>',
         'आधी … मग … नंतर … शेवटी …',

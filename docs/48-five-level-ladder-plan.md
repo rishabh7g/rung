@@ -192,7 +192,14 @@ amend L3-M10's job tail — "written unaided" describes the notebook exit that #
 - Trim the paper: one review doc per course per level with three wave sections (36 documents
   from L2 to L5) instead of one per wave (108). Numbering continues from `docs/49`.
 
-## 4. The proposed L4 and L5 — to ratify, the way #112 ratified L2/L3
+## 4. L4 and L5 — RATIFIED 2026-09-07 (#423), the way #112 ratified L2/L3
+
+**Ratified as drafted**, on the repo owner's standing authority, after a review against the
+authored L1–L3 trajectory rather than against the plan alone: hi-mr's L2 and L3 shipped the same
+day (#443, #479), so the twenty jobs below were read next to twenty that have actually been
+written. All twenty stand; the two amendments the review produced are recorded under the lists.
+Every `levels.json` now says `Ratified list (#423)` on L4 and L5; the `draft: true` flag stays
+until each level is authored, exactly as L2/L3's did.
 
 Shared defaults across the nine courses (a course may override in its `levels.json`, as PRD §5
 allows). Each job is a speech job with a grammar payload, in the idiom of the ratified lists; the
@@ -224,6 +231,29 @@ briefs decide the payload per pair. Nothing here asks the learner to read or wri
 8. When words run out — Paraphrase, ask what something means, repair a misunderstanding
 9. Telling it your way — Retell a known story in your own register
 10. Your own voice — An eight-sentence piece that changes register midway
+
+### The two amendments the ratification made
+
+1. **L3-M10's job tail.** "An eight-sentence account, **written unaided**" described the notebook
+   exit #348/#349 retired — the app's exit ritual is generate-and-comprehend, and nothing in it is
+   written. Every `levels.json` now reads "An eight-sentence account, **built from the whole
+   ladder**", and hi-mr's shipped L3-M10 (module `job`, its brief, and the rule that quotes the
+   phrase) moved with it. The phrase is now also true: that module added one surface.
+
+2. **The passive has an owner.** docs/50 §3 deferred it out of L3 ("the passive stays out") without
+   naming where it goes, which is how a deferral becomes an orphan. It lands at **L4-M7 Official
+   talk** — announcements, offices and counters are where a learner actually meets it — with
+   **L4-M2 Cause and consequence** as its second home for the paragraph-length uses. Each course's
+   L4 briefs decide the payload; no list entry changed to say so.
+
+Two things the review deliberately did NOT change:
+
+- **L4-M10 is six sentences where L3-M10 and L5-M10 are eight.** It reads as a deliberate trade —
+  that item carries a line of dialogue inside the narrative — and §B4's cap is a ceiling, not a
+  target. Kept.
+- **L4-M7 "Official talk" overlapping L2-M1's register and L3-M8's counters.** The overlap is the
+  point: L2 teaches which register to speak, L3 puts you at a counter, and L4 is the register you
+  HEAR there and do not speak back. Kept.
 
 ## 5. Engineering changes the content needs (two, small, before L3 ships)
 
