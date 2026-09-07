@@ -11,9 +11,10 @@
  * can be about their subject rather than about content.
  */
 /**
- * A course's ladder: three levels, with L1's list cut to three rungs. `hasContent` is the
- * build-recomputed flag — true only for what shipped. All three levels are ratified
- * (`draft: false`), as hi-mr's are since #112 closed [Q1].
+ * A course's ladder: five levels (docs/48), with L1's list cut to three rungs and the others to
+ * one. `hasContent` is the build-recomputed flag — true only for what shipped. Every level is
+ * `draft: false` here — a course whose whole ladder is ratified, which is what the seal rule's
+ * tests need and what no shipping course is yet (L2–L5 are `draft: true` everywhere).
  */
 export function levelsFixture(courseId: string) {
   return {
@@ -49,6 +50,31 @@ export function levelsFixture(courseId: string) {
         draftNote: null,
         modules: [
           { id: 'L3-M1', title: 'Your day, in detail', job: 'Longer narration', hasContent: false },
+        ],
+      },
+      {
+        id: 'L4',
+        name: 'Nuance',
+        tagline: 'say it the way they do',
+        draft: false,
+        draftNote: null,
+        modules: [
+          { id: 'L4-M1', title: 'Explaining how', job: 'Steps in order', hasContent: false },
+        ],
+      },
+      {
+        id: 'L5',
+        name: 'Voice',
+        tagline: 'your own words, at length',
+        draft: false,
+        draftNote: null,
+        modules: [
+          {
+            id: 'L5-M1',
+            title: 'Sayings and idioms',
+            job: 'The figurative everyday',
+            hasContent: false,
+          },
         ],
       },
     ],

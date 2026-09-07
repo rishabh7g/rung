@@ -11,7 +11,9 @@
  * Nine courses are briefed: hi-mr through L2, and en-es, en-ar, hi-en, en-ru, en-it, en-fr,
  * en-de and en-ko L1 only. The
  * L2/L3 module lists are RATIFIED (#112 closed [Q1] — titles, jobs and sequence in levels.json
- * are final), and a level's briefs are written when its authoring project starts: a brief encodes
+ * are final), the L4/L5 lists are PROPOSED (docs/48-five-level-ladder-plan.md §4, awaiting the
+ * same ratification), and a level's briefs are written when its authoring project starts: a
+ * brief encodes
  * pattern-and-interference pedagogy that should be planned against the verified ladder below it,
  * not ahead of it. hi-mr's L2 briefs (#295) are the first written to that rule — planned against
  * the finished L1 index (215 surfaces through L1-M10) and the L1 review chain; hi-mr's L3 waits

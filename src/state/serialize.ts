@@ -86,7 +86,7 @@ function pattern(name: string, shape: RegExp): Vocabulary {
 /**
  * The four vocabularies, and every one of them is bounded.
  *
- * The id patterns are a shade wider than what the ladder ships today (3 levels × 10 rungs,
+ * The id patterns are a shade wider than what the ladder ships today (5 levels × 10 rungs,
  * `content/schema/module.schema.json`) on purpose: an export must outlive the size of the ladder
  * that wrote it, and a file that stopped importing because L4 shipped would be the export contract
  * failing at the one job it has. Wider, not open — a bound is what makes these identifiers.

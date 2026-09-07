@@ -194,7 +194,7 @@ interface ParsedModuleId {
 }
 
 function parseModuleId(id: string): ParsedModuleId | null {
-  const match = /^(L[1-3])-M([1-9]|10)$/.exec(id);
+  const match = /^(L[1-5])-M([1-9]|10)$/.exec(id);
   if (match === null) return null;
   const [, level, number] = match;
   if (level === undefined || number === undefined) return null;

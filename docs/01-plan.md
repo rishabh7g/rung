@@ -15,7 +15,8 @@ historical — kept for context only). Flag conflicts in your PR.
 ## 1. What we're building, in one paragraph
 
 A fully offline, installable mobile PWA that teaches languages as a **ladder of
-checkpoints** — three levels × ten modules per **course** (an L1→L2 pair). The
+checkpoints** — five levels × ten modules per **course** (an L1→L2 pair; L4/L5 joined the
+ladder on 2026-09-07, `docs/48-five-level-ladder-plan.md`). The
 engine is course-agnostic; v1 ships one course, **hi-mr** (Hindi → Marathi).
 Each module: ~10 model sentences with deep, tagged deconstruction. The learner
 **produces in a physical notebook** — the app contains **no input fields**, no
@@ -85,7 +86,7 @@ rung/ (repo name: shidi — GitHub redirects; local dir may keep its name)
 │   ├── courses.json          # course manifest (id, l1, l2, l1Tag, l2Tag, pairLabel,
 │                             #                  scriptMode, dir)
 │   └── hi-mr/
-│       ├── levels.json       # 3 levels × module lists (+ hasContent flags)
+│       ├── levels.json       # 5 levels × module lists (+ hasContent flags)
 │       ├── strings.json      # ALL hi-mr microcopy (fixed key list)
 │       └── modules/L1-M1.json …   # schema v5
 ├── tools/                    # tsx CLIs: validate, index, strings-check, content-build, generate-prompt
