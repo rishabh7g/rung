@@ -1028,7 +1028,11 @@ The one place the app overrides a font shorthand's family is the quiet script li
 ### Sentence Detail — two tiers, one order each, and the mnemonic last
 
 `src/screens/SentenceScreen.tsx` (#89, tiered by #401; PRD §8 F3 [D10], PRD-design §6.4, §7) is
-one sentence taken apart. **The order is the feature**, and within each tier it is frozen:
+one sentence taken apart. Since #414 the screen file holds only the guards, the ladder hand-over
+and the composition; each of the ten sections is its own component under `src/screens/sentence/`
+(`HeroSection` … `MnemonicSection`), beside the disclosure (`Deeper`), the pager (`SentencePager`)
+and the hand-over hook (`useLadderHandOver`). **The order is the feature**, and within each tier
+it is frozen:
 
 > always: hero → words → trap · [go deeper] · mnemonic
 > deeper: gloss → rules → sound → variations → mistake → usage
