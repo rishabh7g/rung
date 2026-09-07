@@ -1,0 +1,514 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M1",
+  "title": "Your day, in detail",
+  "job": "Longer habitual narration with sequencing words",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-07",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "V-ऊन + मग + V-तो/ते",
+      "आधी … मग … नंतर … शेवटी …",
+      "रोज + time-word + मी + V-तो/ते",
+      "मी + N-ला + जाऊन + N + करतो"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The -ऊन converb chains a day together: उठून, करून, जेवून, जाऊन — \"having got up\", \"having eaten\". Hindi's करके is the same move in a different body (उठकर → उठून), so the idea transfers and only the ending is new."
+    },
+    {
+      "tag": "delta",
+      "text": "The converb carries no person and no gender. उठून is उठून whoever got up, and the LAST verb in the chain carries everything: मी उठून चहा करतो · ती उठून चहा करते. There is nothing to agree with until the end of the sentence."
+    },
+    {
+      "tag": "free",
+      "text": "Every sequencer is already yours: आधी · मग · नंतर · शेवटी (L1-M4, L1-M9, L2-M10). This module spends nothing on them and everything on length — L1-M4's single habitual sentences become a paragraph."
+    },
+    {
+      "tag": "free",
+      "text": "The tense stays L1-M4's simple habitual throughout. A day told as a rule uses neither the past (L2-M10) nor the right-now -तोय (L2-M7) — those describe one day, not every day."
+    },
+    {
+      "tag": "interference",
+      "text": "Do not put आणि between the steps. आंघोळ करून कामाला जातो is one breath; आंघोळ करतो आणि कामाला जातो turns a chain into a list, and Hindi's habit of stringing clauses with और is exactly what makes a learner sound translated here."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M1-S01",
+      "display": "मी रोज लवकर उठून चहा करतो",
+      "cue": "मैं रोज़ जल्दी उठकर चाय बनाता हूँ",
+      "glossEn": "Every day I get up early and make tea",
+      "literal": "मैं रोज़ जल्दी उठ-कर चाय करता-हूँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "उठून",
+            "cue": "उठकर",
+            "tag": "delta",
+            "forms": ["उठून"],
+            "note": "उठणे + -ऊन, \"having got up\". It is Hindi's उठकर with a Marathi ending, and it never changes for person or gender."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "हिंदी 'उठकर' का साँचा वही है, इसलिए यहाँ कुछ उलटना नहीं है — बस -कर की जगह -ऊन. यही पूरे मॉड्यूल की चाबी है.",
+      "sound": "उठून = उ‑ठून, आख़िर में लंबा 'ऊ' और नाक की हल्की हवा.",
+      "variations": [
+        {
+          "display": "ती रोज लवकर उठून चहा करते",
+          "cue": "वह रोज़ जल्दी उठकर चाय बनाती है",
+          "changed": "कर्ता औरत — करतो → करते, पर उठून बिलकुल वैसा ही. यही इस रूप की ख़ूबी है (S07)."
+        },
+        {
+          "display": "मी रोज लवकर उठतो. मग मी चहा करतो.",
+          "cue": "मैं रोज़ जल्दी उठता हूँ. फिर मैं चाय बनाता हूँ.",
+          "changed": "जोड़ खोल दिया — दो अलग वाक्य. मतलब वही, पर लय टूट जाती है."
+        }
+      ],
+      "mistake": {
+        "display": "मी रोज लवकर उठतो चहा करतो",
+        "why": "दो पूरी क्रियाएँ बिना जोड़ के रख दीं. पहली को -ऊन वाला रूप चाहिए: उठून चहा करतो."
+      },
+      "usage": "अपनी दिनचर्या बताते वक़्त — यह पूरे मॉड्यूल की पहली और सबसे आम लाइन है.",
+      "register": "neutral",
+      "mnemonic": "-कर की जगह -ऊन. बाक़ी वाक्य हिंदी जैसा ही चलता है."
+    },
+    {
+      "id": "L3-M1-S02",
+      "display": "मी आंघोळ करून कामाला जातो",
+      "cue": "मैं नहाकर काम पर जाता हूँ",
+      "glossEn": "I bathe and then go to work",
+      "literal": "मैं स्नान कर-कर काम-को जाता-हूँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "आंघोळ",
+            "cue": "नहाना",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"A bath\" — a noun, and it works with करणे: आंघोळ करतो, आंघोळ करून. Hindi's नहाना is one verb; Marathi needs the pair."
+          },
+          {
+            "display": "करून",
+            "cue": "करके",
+            "tag": "delta",
+            "forms": ["करून"],
+            "note": "करणे's converb — the most useful one in the language, because every noun-plus-करणे pair uses it: आंघोळ करून, काम करून."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "हिंदी में 'नहाना' अकेली क्रिया है; मराठी में आंघोळ चीज़ है और करणे उसे चलाता है — ठीक वैसे ही जैसे माफ करा और मदत करा में हुआ (L2-M1, L2-M8).",
+      "sound": "आंघोळ = आं‑घोळ, शुरू में नाक की हवा और आख़िर में वही मराठी ळ.",
+      "variations": [
+        {
+          "display": "ती आंघोळ करून कामाला जाते",
+          "cue": "वह नहाकर काम पर जाती है",
+          "changed": "कर्ता औरत — सिर्फ़ आख़िरी क्रिया बदली: जातो → जाते."
+        },
+        {
+          "display": "मी काम करून घरी जातो",
+          "cue": "मैं काम करके घर जाता हूँ",
+          "changed": "चीज़ बदली — आंघोळ → काम, वही करून."
+        }
+      ],
+      "mistake": {
+        "display": "मी आंघोळ आणि कामाला जातो",
+        "why": "आणि से जोड़ने की कोशिश. आंघोळ अपने आप क्रिया नहीं है — आंघोळ करून चाहिए."
+      },
+      "usage": "सुबह की दिनचर्या — किसी को अपना दिन बताते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "जहाँ हिंदी में एक क्रिया है, वहाँ मराठी में अक्सर चीज़ + करणे होता है."
+    },
+    {
+      "id": "L3-M1-S03",
+      "display": "मी तयार होऊन कामाला जातो",
+      "cue": "मैं तैयार होकर काम पर जाता हूँ",
+      "glossEn": "I get ready and go to work",
+      "literal": "मैं तैयार हो-कर काम-को जाता-हूँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "तयार",
+            "cue": "तैयार",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Ready\" — the same word as Hindi तैयार, invariable: मी तयार आहे, ती तयार आहे."
+          },
+          {
+            "display": "होऊन",
+            "cue": "होकर",
+            "tag": "delta",
+            "forms": ["होऊन"],
+            "note": "होणे's converb, \"having become\". It is what turns an adjective into a step of the day: तयार होऊन, बरा होऊन."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "तयार होणे = तैयार होना. हिंदी का ढाँचा जस का तस चलता है, सिर्फ़ जोड़ने वाला रूप बदलता है — होकर → होऊन.",
+      "sound": "होऊन = हो‑ऊन, दो साफ़ स्वर; 'होन' की तरह मत निगलो.",
+      "variations": [
+        {
+          "display": "ती तयार होऊन कामाला जाते",
+          "cue": "वह तैयार होकर काम पर जाती है",
+          "changed": "कर्ता औरत — होऊन वैसा ही, आख़िरी क्रिया बदली (S10)."
+        },
+        {
+          "display": "मी तयार आहे",
+          "cue": "मैं तैयार हूँ",
+          "changed": "जोड़ हटाया — सिर्फ़ हाल बताना हो तो आहे काफ़ी है (L1-M1)."
+        }
+      ],
+      "mistake": {
+        "display": "मी तयार करून कामाला जातो",
+        "why": "करून लगा दिया. तैयार होना अपने आप में बदलना है, कुछ करना नहीं — इसलिए होऊन."
+      },
+      "usage": "निकलने से पहले की बात — घर में रोज़ सुनाई देती है.",
+      "register": "neutral",
+      "mnemonic": "करून = करके (कुछ किया), होऊन = होकर (कुछ हो गए)."
+    },
+    {
+      "id": "L3-M1-S04",
+      "display": "मी दुकानाला जाऊन काम करतो",
+      "cue": "मैं दुकान जाकर काम करता हूँ",
+      "glossEn": "I go to the shop and do my work there",
+      "literal": "मैं दुकान-को जा-कर काम करता-हूँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "जाऊन",
+            "cue": "जाकर",
+            "tag": "delta",
+            "forms": ["जाऊन"],
+            "note": "जाणे's converb. The place still takes L2-M4's -ला — दुकानाला जाऊन — because the converb changes the verb, not the destination."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "जोड़ने वाला रूप मंज़िल की पूँछ नहीं खाता: दुकानाला जाऊन, दुकान जाऊन नहीं. -ला वैसे ही रहता है जैसे L2-M4 में था.",
+      "sound": "जाऊन = जा‑ऊन, दोनों स्वर लंबे.",
+      "variations": [
+        {
+          "display": "मी स्टेशनला जाऊन काम करतो",
+          "cue": "मैं स्टेशन जाकर काम करता हूँ",
+          "changed": "मंज़िल बदली — दुकानाला → स्टेशनला, वही -ला और वही जाऊन (L2-M4)."
+        },
+        {
+          "display": "मी दुकानाला जातो. मग मी काम करतो.",
+          "cue": "मैं दुकान जाता हूँ. फिर मैं काम करता हूँ.",
+          "changed": "जोड़ खोला — दो वाक्य, वही क्रम."
+        }
+      ],
+      "mistake": {
+        "display": "मी दुकान जाऊन काम करतो",
+        "why": "मंज़िल की -ला पूँछ गिरा दी. जोड़ने वाला रूप उसे नहीं हटाता: दुकानाला जाऊन."
+      },
+      "usage": "दिन का बीच का हिस्सा बताते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "पूँछें आपस में नहीं लड़तीं: मंज़िल को -ला, क्रिया को -ऊन."
+    },
+    {
+      "id": "L3-M1-S05",
+      "display": "मी दुपारी जेवून थोडं वाचतो",
+      "cue": "मैं दोपहर में खाना खाकर थोड़ा पढ़ता हूँ",
+      "glossEn": "In the afternoon I eat and then read a little",
+      "literal": "मैं दोपहर जीम-कर थोड़ा पढ़ता-हूँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "जेवून",
+            "cue": "खाना खाकर",
+            "tag": "delta",
+            "forms": ["जेवून"],
+            "note": "जेवणे's converb (L2-M5). One Marathi word where Hindi needs three — खाना खाकर — because जेवणे already means eating a meal."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "हिंदी को यहाँ तीन शब्द चाहिए — 'खाना खाकर' — मराठी को एक: जेवून. L2-M5 का वही एक-क्रिया वाला फ़ायदा.",
+      "sound": "जेवून = जे‑वून, आख़िर लंबा.",
+      "variations": [
+        {
+          "display": "ती दुपारी जेवून थोडं वाचते",
+          "cue": "वह दोपहर में खाना खाकर थोड़ा पढ़ती है",
+          "changed": "कर्ता औरत — वाचतो → वाचते, जेवून वैसा ही."
+        },
+        {
+          "display": "मी रात्री जेवून लवकर झोपतो",
+          "cue": "मैं रात में खाना खाकर जल्दी सो जाता हूँ",
+          "changed": "वक़्त और आख़िरी क्रिया बदले — दिन का दूसरा सिरा (L1-M4)."
+        }
+      ],
+      "mistake": {
+        "display": "मी दुपारी जेवण करून थोडं वाचतो",
+        "why": "हिंदी 'खाना खाकर' का सीधा अनुवाद. मराठी में जेवण खाया नहीं जाता — जेवून ही पूरा है."
+      },
+      "usage": "दोपहर का हाल — दफ़्तर में या घर में.",
+      "register": "neutral",
+      "mnemonic": "जेवणे एक क्रिया थी, इसलिए जेवून एक शब्द है."
+    },
+    {
+      "id": "L3-M1-S06",
+      "display": "ती संध्याकाळी घरी येऊन जेवते",
+      "cue": "वह शाम को घर आकर खाना खाती है",
+      "glossEn": "She comes home in the evening and eats",
+      "literal": "वह शाम घर आ-कर जीमती-है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "येऊन",
+            "cue": "आकर",
+            "tag": "delta",
+            "forms": ["येऊन"],
+            "note": "येणे's converb. Its family is L1-M6's (येईन, येणार) and L2-M1's (ये, या) — this is the joining shape they were missing."
+          },
+          {
+            "display": "जेवते",
+            "cue": "खाना खाती है",
+            "tag": "delta",
+            "forms": ["जेवतो", "जेवते", "जेवतोस"],
+            "note": "जेवणे's everyday habitual — the cell L2 skipped: it taught the past (जेवलो) and the right-now (जेवतोय), but a daily meal needs this one."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "घरी अपनी पुरानी पूँछ रखता है (L1-M5) — घराला येऊन नहीं. जोड़ने वाला रूप जगह के नियम नहीं बदलता.",
+      "sound": "येऊन = ये‑ऊन; ये और ऊन दोनों साफ़.",
+      "variations": [
+        {
+          "display": "तो संध्याकाळी घरी येऊन जेवतो",
+          "cue": "वह शाम को घर आकर खाना खाता है",
+          "changed": "कर्ता मर्द — जेवते → जेवतो, येऊन वैसा ही."
+        },
+        {
+          "display": "ती घरी येऊन आंघोळ करते",
+          "cue": "वह घर आकर नहाती है",
+          "changed": "अगला क़दम बदला — जेवते → आंघोळ करते (S02)."
+        }
+      ],
+      "mistake": {
+        "display": "ती संध्याकाळी घरी येते जेवते",
+        "why": "दो पूरी क्रियाएँ चिपका दीं. पहली को येऊन बनना था."
+      },
+      "usage": "किसी और की दिनचर्या बताते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "ये → येऊन, जा → जाऊन. आने-जाने के दोनों जोड़ एक ही साँचे में."
+    },
+    {
+      "id": "L3-M1-S07",
+      "display": "ती रोज उठून आंघोळ करते",
+      "cue": "वह रोज़ उठकर नहाती है",
+      "glossEn": "Every day she gets up and bathes",
+      "literal": "वह रोज़ उठ-कर स्नान करती-है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "उठून",
+            "cue": "उठकर",
+            "tag": "delta",
+            "forms": ["उठून"],
+            "note": "The same उठून as S01, under a woman's day — proof of the rule: the converb has no gender, and only करते at the end shows who is speaking."
+          }
+        ],
+        "rules": [1, 0]
+      },
+      "trap": "यहाँ कुछ नया नहीं है, और यही सबक़ है: कर्ता बदला, उठून नहीं बदला. हिंदी में भी 'उठकर' नहीं बदलता — इसलिए यह मुफ़्त है.",
+      "sound": "S01 जैसा ही: उ‑ठून. आख़िरी क्रिया पर ज़ोर, वही लिंग बताती है.",
+      "variations": [
+        {
+          "display": "तो रोज उठून आंघोळ करतो",
+          "cue": "वह रोज़ उठकर नहाता है",
+          "changed": "कर्ता मर्द — करते → करतो. बीच का हिस्सा फिर भी वही."
+        },
+        {
+          "display": "तुम्ही रोज उठून काम करता",
+          "cue": "आप रोज़ उठकर काम करते हैं",
+          "changed": "तुम्ही का रूप — करता (L1-M4). उठून तब भी वैसा ही."
+        }
+      ],
+      "mistake": {
+        "display": "ती रोज उठूनी आंघोळ करते",
+        "why": "स्त्रीलिंग वाली 'ी' जोड़ी की कोशिश. -ऊन वाला रूप कभी नहीं झुकता — किसी भी कर्ता के साथ."
+      },
+      "usage": "किसी की आदत बताते वक़्त — और अपनी भी.",
+      "register": "neutral",
+      "mnemonic": "बीच वाला जुड़ा हुआ रूप जमा रहता है; लिंग हमेशा आख़िरी क्रिया में बैठता है."
+    },
+    {
+      "id": "L3-M1-S08",
+      "display": "आधी मी चहा करून पितो. मग मी कामाला जातो.",
+      "cue": "पहले मैं चाय बनाकर पीता हूँ. फिर मैं काम पर जाता हूँ.",
+      "glossEn": "First I make tea and drink it. Then I go to work.",
+      "literal": "पहले मैं चाय कर-कर पीता-हूँ. फिर मैं काम-को जाता-हूँ.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "करून",
+            "cue": "बनाकर",
+            "tag": "delta",
+            "forms": ["करून"],
+            "note": "The same करून as S02, here inside a two-sentence day: a chain may sit under आधी, and मग opens the next sentence rather than joining this one."
+          }
+        ],
+        "rules": [2, 0]
+      },
+      "trap": "आधी और मग वाक्यों को जोड़ते हैं, -ऊन क्रियाओं को. दोनों एक ही दिन में काम आते हैं, पर एक-दूसरे की जगह नहीं ले सकते.",
+      "sound": "दो वाक्य हैं — बीच में साफ़ ठहराव, और हर वाक्य की आख़िरी क्रिया पर ज़ोर.",
+      "variations": [
+        {
+          "display": "आधी मी चहा करून पिते. मग मी कामाला जाते.",
+          "cue": "पहले मैं चाय बनाकर पीती हूँ. फिर मैं काम पर जाती हूँ.",
+          "changed": "कर्ता औरत — दोनों आख़िरी क्रियाएँ बदलीं, करून नहीं."
+        },
+        {
+          "display": "आधी चहा, मग काम.",
+          "cue": "पहले चाय, फिर काम.",
+          "changed": "क्रिया हटा दी — बोलचाल में सिर्फ़ क्रम भी पूरा जवाब है."
+        }
+      ],
+      "mistake": {
+        "display": "आधी मी चहा करून पितो मग मी कामाला जातो",
+        "why": "दो वाक्य एक में गूँथ दिए. मग नया वाक्य शुरू करता है — उससे पहले पूर्णविराम चाहिए."
+      },
+      "usage": "सुबह का हिसाब — दो वाक्य, और दिन शुरू.",
+      "register": "neutral",
+      "mnemonic": "-ऊन क्रियाओं का जोड़ है, मग वाक्यों का."
+    },
+    {
+      "id": "L3-M1-S09",
+      "display": "ती स्वयंपाक करून जेवते",
+      "cue": "वह खाना बनाकर खाना खाती है",
+      "glossEn": "She cooks and then eats",
+      "literal": "वह रसोई कर-कर जीमती-है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "स्वयंपाक",
+            "cue": "खाना बनाना",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Cooking\" — a noun, and like आंघोळ it runs on करणे: स्वयंपाक करते, स्वयंपाक करून. Hindi's 'खाना बनाना' is two words for the same job."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "मराठी घर में स्वयंपाक और जेवण अलग चीज़ें हैं: स्वयंपाक बनाना है, जेवण खाना. एक ही वाक्य में दोनों आ जाते हैं.",
+      "sound": "स्वयंपाक = स्व‑यं‑पाक; शुरू का 'स्व' एक जोड़ में, बीच में नाक की हवा.",
+      "variations": [
+        {
+          "display": "मी स्वयंपाक करून जेवतो",
+          "cue": "मैं खाना बनाकर खाना खाता हूँ",
+          "changed": "कर्ता बदला — जेवते → जेवतो."
+        },
+        {
+          "display": "ती रोज स्वयंपाक करते",
+          "cue": "वह रोज़ खाना बनाती है",
+          "changed": "जोड़ हटाया — सिर्फ़ आदत बताई (L1-M4)."
+        }
+      ],
+      "mistake": {
+        "display": "ती जेवण करून जेवते",
+        "why": "जेवण खाना है, बनाना नहीं. बनाने के लिए स्वयंपाक चाहिए."
+      },
+      "usage": "घर के काम की बात — और किसी से पूछते वक़्त कि खाना बना या नहीं.",
+      "register": "neutral",
+      "mnemonic": "स्वयंपाक चूल्हे पर, जेवण मेज़ पर."
+    },
+    {
+      "id": "L3-M1-S10",
+      "display": "मी रोज उठून आंघोळ करतो. मग मी तयार होऊन कामाला जातो.",
+      "cue": "मैं रोज़ उठकर नहाता हूँ. फिर मैं तैयार होकर काम पर जाता हूँ.",
+      "glossEn": "Every day I get up and bathe. Then I get ready and go to work.",
+      "literal": "मैं रोज़ उठ-कर स्नान करता-हूँ. फिर मैं तैयार हो-कर काम-को जाता-हूँ.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "होऊन",
+            "cue": "होकर",
+            "tag": "delta",
+            "forms": ["होऊन"],
+            "note": "The same होऊन as S03, in the second half of a two-sentence day: each sentence may carry its own chain, and each ends with its own finite verb."
+          }
+        ],
+        "rules": [0, 2, 1]
+      },
+      "trap": "एक वाक्य में एक ही जोड़ रखो. दो-तीन -ऊन एक साथ मराठी में चलते तो हैं, पर सीखने वाले के मुँह में लड़खड़ाते हैं — दूसरा वाक्य शुरू कर देना ज़्यादा साफ़ है.",
+      "sound": "दोनों वाक्यों की आख़िरी क्रिया पर ज़ोर — करतो, जातो. बीच वाले जुड़े रूप हल्के रहते हैं.",
+      "variations": [
+        {
+          "display": "मी रोज उठून आंघोळ करतो. मग मी कामाला जातो.",
+          "cue": "मैं रोज़ उठकर नहाता हूँ. फिर मैं काम पर जाता हूँ.",
+          "changed": "दूसरा जोड़ हटाया — छोटा हिसाब भी पूरा है."
+        },
+        {
+          "display": "ती रोज उठून आंघोळ करते. मग ती तयार होऊन कामाला जाते.",
+          "cue": "वह रोज़ उठकर नहाती है. फिर वह तैयार होकर काम पर जाती है.",
+          "changed": "पूरा दिन औरत का — दोनों आख़िरी क्रियाएँ बदलीं, बीच के जोड़ नहीं."
+        }
+      ],
+      "mistake": {
+        "display": "मी रोज उठून आंघोळ करून तयार होऊन कामाला जातो",
+        "why": "तीन जोड़ एक ही साँस में. ग़लत नहीं, पर सुनने में गूँथा हुआ — मग से दूसरा वाक्य शुरू करो."
+      },
+      "usage": "पूरी सुबह एक साथ बताते वक़्त — यही इस मॉड्यूल का इम्तिहान है.",
+      "register": "neutral",
+      "mnemonic": "एक वाक्य, एक जोड़; अगला क़दम अगले वाक्य में."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M1-C01",
+      "display": "मी रोज लवकर उठून चहा करतो",
+      "cue": "मैं रोज़ जल्दी उठकर चाय बनाता हूँ"
+    },
+    { "id": "L3-M1-C02", "display": "मी आंघोळ करून कामाला जातो", "cue": "मैं नहाकर काम पर जाता हूँ" },
+    {
+      "id": "L3-M1-C03",
+      "display": "मी तयार होऊन कामाला जातो",
+      "cue": "मैं तैयार होकर काम पर जाता हूँ"
+    },
+    {
+      "id": "L3-M1-C04",
+      "display": "मी दुकानाला जाऊन काम करतो",
+      "cue": "मैं दुकान जाकर काम करता हूँ"
+    },
+    {
+      "id": "L3-M1-C05",
+      "display": "मी दुपारी जेवून थोडं वाचतो",
+      "cue": "मैं दोपहर में खाना खाकर थोड़ा पढ़ता हूँ"
+    },
+    {
+      "id": "L3-M1-C06",
+      "display": "ती संध्याकाळी घरी येऊन जेवते",
+      "cue": "वह शाम को घर आकर खाना खाती है"
+    },
+    { "id": "L3-M1-C07", "display": "ती रोज उठून आंघोळ करते", "cue": "वह रोज़ उठकर नहाती है" },
+    {
+      "id": "L3-M1-C08",
+      "display": "आधी मी चहा करून पितो. मग मी कामाला जातो.",
+      "cue": "पहले मैं चाय बनाकर पीता हूँ. फिर मैं काम पर जाता हूँ."
+    },
+    { "id": "L3-M1-C09", "display": "ती स्वयंपाक करून जेवते", "cue": "वह खाना बनाकर खाना खाती है" },
+    {
+      "id": "L3-M1-C10",
+      "display": "मी रात्री जेवून लवकर झोपतो",
+      "cue": "मैं रात में खाना खाकर जल्दी सो जाता हूँ"
+    },
+    { "id": "L3-M1-C11", "display": "तो घरी येऊन जेवतो", "cue": "वह घर आकर खाना खाता है" },
+    {
+      "id": "L3-M1-C12",
+      "display": "ती तयार होऊन कामाला जाते",
+      "cue": "वह तैयार होकर काम पर जाती है"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}
