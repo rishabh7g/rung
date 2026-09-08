@@ -18,7 +18,7 @@
  * verdict. en-de is the strict one: `src/course/types.test.ts` asserts exactly one owner per
  * surface there, and on that course a report here IS a defect.
  */
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 
 import {
   matchSurfaces,
@@ -36,6 +36,7 @@ if (course === undefined || moduleId === undefined) {
 }
 
 interface IndexFile {
+  moduleId: string;
   cumulativeThrough: string[];
   surfaces: Record<string, unknown>;
   maxSpan: number;
@@ -59,7 +60,18 @@ interface Module {
 
 const read = <T>(path: string): T => JSON.parse(readFileSync(path, 'utf8')) as T;
 const indexDir = `public/content/${course}/index`;
-const shipped = read<IndexFile>(`${indexDir}/L2-M10.json`);
+/**
+ * The DEEPEST emitted index, not a hard-coded module. This read `L2-M10.json` while L3 was the
+ * level being authored, which was true for exactly one level; the deepest file is the one whose
+ * `cumulativeThrough` is longest, and picking it by filename does not work — `readdirSync` sorts
+ * `L1-M10.json` before `L1-M2.json`.
+ */
+const shipped = readdirSync(indexDir)
+  .filter((f) => f.endsWith('.json'))
+  .map((f) => read<IndexFile>(`${indexDir}/${f}`))
+  .reduce((deepest, file) =>
+    file.cumulativeThrough.length > deepest.cumulativeThrough.length ? file : deepest,
+  );
 
 /** Surface → the module that first taught it. First occurrence wins, as the emitter does. */
 const taught = new Map<string, string>();
@@ -77,11 +89,16 @@ const own = (surface: string, owner: string): void => {
   maxSpan = Math.max(maxSpan, surfaceSpan(key));
 };
 
-/** Fold in the L3 modules already authored, up to and including this one. */
+/**
+ * Fold in the modules of THIS level already authored, up to and including this one — the ones the
+ * emitted index cannot know about because they have not been built. `level` is read off the module
+ * id rather than assumed, so the same check serves L3, L4 and L5.
+ */
+const [level] = moduleId.split('-');
 const number = (id: string): number => Number(id.split('M')[1]);
 const here = number(moduleId);
 for (let n = 1; n <= here; n += 1) {
-  const file = `content/${course}/modules/L3-M${n}.json`;
+  const file = `content/${course}/modules/${level}-M${n}.json`;
   if (!existsSync(file)) continue;
   const mod = read<Module>(file);
   for (const s of mod.sentences) {
