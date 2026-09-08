@@ -79,3 +79,72 @@ row the module needed. The en-fr baseline stays at 20.
 9. **`sympa`** (M2-S07). Confirm it is invariable in speech and is the everyday compliment rather
    than `gentil`.
 10. **`femme` said FAM** (M2-S09). Confirm this is the only word of its kind the course will meet.
+
+## Wave 2 — L2-M3, L2-M4, L2-M5 (#449)
+
+Three rungs against the briefs of #431.
+
+### What each module spends its budget on
+
+- **M3 Describing things.** The grid is stated as what it actually is: **almost entirely a writing
+  rule**. `grand`, `grande`, `grands`, `grandes` — three of the four sound identical, and a learner
+  who cannot hear it will not believe it matters. The index does, because `grand` and `grande` are
+  two keys. Position is taught as a LIST rather than a rule, because that is what it is, and the
+  three pre-vowel shapes (`bel`, `nouvel`, `vieil`) are each their own index key rather than
+  variants of one spelling. `propre` gets a line for changing meaning with position, and `marron`
+  for refusing to bend at all — it is a chestnut doing an adjective's work.
+- **M4 Getting around.** The imperative is **free**: the `vous` imperative is the present tense with
+  the pronoun removed, and every one of those present forms was already the learner's, so the whole
+  budget goes to prepositions and vocabulary. Transport splits on the one genuinely reliable rule in
+  the module — `en` for anything you get inside, `à` for anything you sit on — and `droite` against
+  `tout droit` gets its own mistake block, because one letter is a whole different direction.
+  `il faut` arrives frozen, with `il faut que` plus a subjunctive named as L3's so a later author
+  does not import the tense with the word.
+- **M5 Food and hosting.** The module's rule is the one L1 set up perfectly and never stated:
+  L1-M3 taught `du`, `de la`, `des`, and L1-M3 taught `ne … pas`, and the two never met in one
+  sentence. **After a negation every partitive collapses to `de`.** One rule, no exceptions worth a
+  learner's time, one mistake block. The stressed pronouns `moi` and `toi` arrive for `Pour moi`,
+  and the object pronouns open narrowly on `me` and `te` — because `le`, `la` and `les` are already
+  L1-M1's ARTICLES and the identically spelled object pronouns can never be first-taught here.
+
+### The refusal, which is different in this course
+
+Every other course in this collection describes hosting where the offer is expected to be repeated.
+French is the exception: a host offers once or twice and stops, and the refusal is softened by a
+**compliment** rather than by a reason — `Non merci, c'est très gentil`. The usage line says so
+without judging either shape.
+
+### Seam notes
+
+`encore` carries the offer deliberately, which keeps `plus` free for M9's comparative — the same
+protection en-es gives `más` by offering `otro`. `près` is opened as a bare adverb beside L1-M7's
+`près de`, and `prendre` and `aller` sit in the `forms` of the rows that show them rather than
+taking rows of their own.
+
+### The ratchet
+
+Ten findings across the wave, each fixed by opening the row the module needed or by rewriting the
+variation. The en-fr baseline stays at 20.
+
+### Open questions for the native pass
+
+11. **The front-adjective list** (M3, rule 1). Confirm the ten given are the ones worth teaching and
+    that none of them is now usually placed after the noun in speech.
+12. **`bel`, `nouvel`, `vieil`** (M3-S05, S06). Confirm these three are the whole set a learner
+    meets.
+13. **`marron` invariable** (M3-S03). Confirm speakers do not regularise it to `marronne`.
+14. **`propre`** (M3-S09). Confirm the position/meaning split is live rather than a textbook point.
+15. **`en` / `à` for transport** (M4-S05, S06). Confirm the inside/on rule holds without exceptions
+    a learner will meet.
+16. **`tout droit` against `à droite`** (M4-S03). Confirm the pair really is the confusion the
+    module claims.
+17. **`il faut` + infinitive** (M4-S07). Confirm it is the everyday obligation frame and not
+    formal.
+18. **`arrêt de bus`** (M4-S09). Confirm the bare `de` and that `arrêt d'autobus` is not the
+    commoner form.
+19. **The negated partitive** (M5-S02, S07, S10). Confirm there is genuinely no exception at this
+    level.
+20. **`Encore du café?`** (M5-S05). Confirm this is what a host says rather than `Vous en voulez
+    encore?`.
+21. **The compliment-shaped refusal** (M5-S06). Confirm `C'est très gentil, mais ça va` is current
+    and that a French host really does stop after one or two offers.

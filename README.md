@@ -435,6 +435,23 @@ only `vous`, and both are what L2-M1 is chartered to lift. That is the second ti
 that a second level exposed a test encoding the level as well as the rule. **The native gate is
 still unmet**: docs/66 ends in open questions 1–10, a fresh en-fr L2 chain.
 
+**en-fr reaches the middle of L2 (#449, 2026-09-08).** `L2-M3` _Describing things_, `L2-M4`
+_Getting around_ and `L2-M5` _Food and hosting_ ship against the same briefs; a strict
+`npm run build` emits `en-fr: 15 modules (L1-M1..M10, L2-M1..M5)`. M3 states the agreement grid as
+what it actually is — **almost entirely a writing rule**, since three of `grand`'s four shapes sound
+identical and only the index can tell them apart — and teaches adjective position as a LIST rather
+than a rule, with `bel`, `nouvel` and `vieil` each its own index key. M4's imperative is **free**:
+the `vous` imperative is the present tense with the pronoun removed, so the whole budget goes to the
+prepositions, where one genuinely reliable rule does the work (`en` for anything you get inside,
+`à` for anything you sit on). M5 states the rule L1 set up perfectly and never named: L1-M3 taught
+`du`, `de la`, `des`, and L1-M3 taught `ne … pas`, and the two never met in one sentence —
+**after a negation every partitive collapses to `de`**. Its object pronouns open narrowly on `me`
+and `te`, because `le`, `la` and `les` are already articles and the identically spelled pronouns can
+never be first-taught here; and its refusal is the odd one out of the whole collection, softened by
+a **compliment** rather than a reason, with a host who offers once or twice and then stops. Ten
+ratchet findings, all fixed in content. **The native gate is still unmet**: docs/66 now ends in open
+questions 1–21.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on

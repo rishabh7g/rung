@@ -1,0 +1,759 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M3",
+  "title": "Describing things",
+  "job": "Size, colour, quality — agreement at length",
+  "prerequisites": [
+    "L2-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Le/La + N + est + Adj",
+      "Les + N-pl + sont + Adj-pl",
+      "un/une + N + Adj",
+      "un beau + N   /   un bel + N-vowel",
+      "C'est + très + Adj"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "AGREEMENT HERE IS ALMOST ENTIRELY A WRITING RULE: -e for the feminine, -s for the plural, -es for both — grand, grande, grands, grandes, where three of the four sound identical. An adjective already ending in -e adds nothing for gender (rouge, jaune, jeune), and one already ending in -s adds nothing for the plural (gris, français). A learner who cannot hear it will not believe it matters; the index does, because grand and grande are two different keys."
+    },
+    {
+      "tag": "delta",
+      "text": "THE ADJECTIVE NORMALLY FOLLOWS THE NOUN — une voiture rouge, un livre intéressant — which is the reverse of English. A small closed set goes in front: beau, joli, jeune, vieux, bon, mauvais, grand, petit, gros, nouveau. The summary people remember is beauty, age, goodness, size; the true statement is that it is a LIST, and the list is what to learn."
+    },
+    {
+      "tag": "interference",
+      "text": "Three of those front adjectives have a THIRD shape before a masculine noun starting with a vowel: beau → bel, nouveau → nouvel, vieux → vieil. un bel appartement, un nouvel ami, un vieil homme. It is the same instinct as M2's mon amie — French avoids the vowel clash and changes the spelling to do it — and each shape is its own index key."
+    },
+    {
+      "tag": "free",
+      "text": "Two colours refuse to bend at all: marron and orange are nouns doing an adjective's work — a chestnut, an orange — so les chaussures marron keeps its shape. blanc goes to blanche, which is irregular; rouge, jaune and rose mark number only; bleu, vert, noir and gris take all four cells."
+    },
+    {
+      "tag": "interference",
+      "text": "très modifies an ADJECTIVE and beaucoup modifies a VERB. très grand, j'aime beaucoup — and très j'aime is the error an English speaker makes, because \"very\" and \"very much\" look like one word with a tail. It is the same pair Spanish teaches as muy and mucho."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M3-S01",
+      "display": "La voiture est rouge",
+      "cue": "The car is red",
+      "literal": "The car is red",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rouge",
+            "cue": "red",
+            "tag": "free",
+            "forms": [
+              "rouges"
+            ],
+            "note": "It ends in -e already, so it never marks gender — une voiture rouge, un livre rouge. Only the plural adds anything."
+          },
+          {
+            "display": "jaune",
+            "cue": "yellow",
+            "tag": "free",
+            "forms": [
+              "jaunes"
+            ],
+            "note": "The same shape as rouge: number only. The j is the soft zh of French, and the au is a single o sound."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Nothing happens here for gender, and that is a fact about this adjective rather than about French. bleue and verte would both have moved.",
+      "sound": "la vwa-TÜR eh ROOZH. The final e is silent and the g before it is the soft zh.",
+      "variations": [
+        {
+          "display": "Le livre est rouge",
+          "cue": "The book is red",
+          "changed": "a masculine noun — and rouge does not move"
+        },
+        {
+          "display": "La voiture est jaune",
+          "cue": "The car is yellow",
+          "changed": "a different colour of the same class"
+        },
+        {
+          "display": "Les voitures sont rouges",
+          "cue": "The cars are red",
+          "changed": "plural, where rouge finally does add something"
+        }
+      ],
+      "mistake": {
+        "display": "La voiture est rouges",
+        "why": "One car takes the singular: La voiture est rouge."
+      },
+      "usage": "Naming which one you mean, in a car park or a shop.",
+      "register": "neutral",
+      "mnemonic": "An -e adjective marks number and nothing else."
+    },
+    {
+      "id": "L2-M3-S02",
+      "display": "Les livres sont bleus",
+      "cue": "The books are blue",
+      "literal": "The books are blue",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bleu",
+            "cue": "blue",
+            "tag": "free",
+            "forms": [
+              "bleue",
+              "bleus",
+              "bleues"
+            ],
+            "note": "All four cells, and all four sound the same. The written agreement is real and invisible, which is the module's whole point."
+          },
+          {
+            "display": "vert",
+            "cue": "green",
+            "tag": "free",
+            "forms": [
+              "verte",
+              "verts",
+              "vertes"
+            ],
+            "note": "M2 opened this row for eyes; here it is a colour in general. The feminine sounds its t and the masculine does not."
+          },
+          {
+            "display": "noir",
+            "cue": "black",
+            "tag": "free",
+            "forms": [
+              "noire",
+              "noirs",
+              "noires"
+            ],
+            "note": "Four cells, and the r is sounded in all of them. The oi is a single wa sound."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "bleus, bleue and bleues are all said the same as bleu. French writes four forms and pronounces one, which is why the spelling has to be learnt separately from the word.",
+      "sound": "lay LEEVR son BLUH. The eu is the rounded vowel, and no final letter is heard.",
+      "variations": [
+        {
+          "display": "Les voitures sont bleues",
+          "cue": "The cars are blue",
+          "changed": "feminine plural — four letters more, no sound"
+        },
+        {
+          "display": "Les livres sont noirs",
+          "cue": "The books are black",
+          "changed": "a colour whose r IS heard"
+        },
+        {
+          "display": "Le livre est vert",
+          "cue": "The book is green",
+          "changed": "singular, and a silent t"
+        }
+      ],
+      "mistake": {
+        "display": "Les livres sont bleu",
+        "why": "The plural is written even when it is not heard: Les livres sont bleus."
+      },
+      "usage": "Describing several things at once.",
+      "register": "neutral",
+      "mnemonic": "Four spellings, one sound."
+    },
+    {
+      "id": "L2-M3-S03",
+      "display": "C'est une voiture blanche",
+      "cue": "It's a white car",
+      "literal": "It-is a car white",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "blanc",
+            "cue": "white",
+            "tag": "interference",
+            "forms": [
+              "blanche",
+              "blancs",
+              "blanches"
+            ],
+            "note": "Its feminine is blanche, not blanque or blance — the c becomes ch and the vowel before it changes sound. Irregular, and worth holding as a word."
+          },
+          {
+            "display": "marron",
+            "cue": "brown",
+            "tag": "delta",
+            "forms": [],
+            "note": "INVARIABLE, because it is the noun for a chestnut. les chaussures marron keeps its shape whatever it describes — and orange behaves the same way."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          3
+        ]
+      },
+      "trap": "The adjective comes AFTER the noun here, which is the ordinary French order and the reverse of English. Only the small front list breaks it.",
+      "sound": "say ün vwa-TÜR BLAHNSH. The an of blanche is nasal and the ch is a sh.",
+      "variations": [
+        {
+          "display": "C'est un livre blanc",
+          "cue": "It's a white book",
+          "changed": "masculine — and the c goes silent"
+        },
+        {
+          "display": "C'est une voiture marron",
+          "cue": "It's a brown car",
+          "changed": "an invariable colour"
+        },
+        {
+          "display": "Ce sont des voitures blanches",
+          "cue": "They're white cars",
+          "changed": "plural, with the indefinite des"
+        }
+      ],
+      "mistake": {
+        "display": "C'est une blanche voiture",
+        "why": "Colours follow the noun: C'est une voiture blanche."
+      },
+      "usage": "Identifying something by its colour.",
+      "register": "neutral",
+      "mnemonic": "Colours go behind. Only the short list goes in front."
+    },
+    {
+      "id": "L2-M3-S04",
+      "display": "C'est un beau livre",
+      "cue": "It's a beautiful book",
+      "literal": "It-is a beautiful book",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "beau",
+            "cue": "beautiful · handsome",
+            "tag": "delta",
+            "forms": [
+              "beaux"
+            ],
+            "note": "One of the front list. Its plural is beaux with an x rather than an s, which a handful of -eau words do."
+          },
+          {
+            "display": "belle",
+            "cue": "beautiful (feminine)",
+            "tag": "free",
+            "forms": [
+              "belles"
+            ],
+            "note": "The feminine, and it shares almost nothing with beau on the page. It is a different shape rather than an ending."
+          },
+          {
+            "display": "joli",
+            "cue": "pretty · nice",
+            "tag": "free",
+            "forms": [
+              "jolie",
+              "jolis",
+              "jolies"
+            ],
+            "note": "Also in the front list, and regular. It is lighter than beau — a pretty dress rather than a beautiful one."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "beau goes in FRONT because it is on the list, and rouge goes behind because it is not. There is no principle to work it out from — the list is the rule.",
+      "sound": "say un bo LEEVR. beau is one syllable, and the au is a pure o.",
+      "variations": [
+        {
+          "display": "C'est une belle voiture",
+          "cue": "It's a beautiful car",
+          "changed": "feminine, and a different shape entirely"
+        },
+        {
+          "display": "C'est un joli livre",
+          "cue": "It's a nice book",
+          "changed": "a lighter word from the same list"
+        },
+        {
+          "display": "Ce sont de beaux livres",
+          "cue": "They're beautiful books",
+          "changed": "plural — and des becomes de in front of an adjective"
+        }
+      ],
+      "mistake": {
+        "display": "C'est un livre beau",
+        "why": "beau is on the front list: C'est un beau livre."
+      },
+      "usage": "Praising something, which is what most of the front list is for.",
+      "register": "neutral",
+      "mnemonic": "The list goes in front. Everything else goes behind."
+    },
+    {
+      "id": "L2-M3-S05",
+      "display": "C'est un bel appartement",
+      "cue": "It's a beautiful flat",
+      "literal": "It-is a beautiful flat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "appartement",
+            "cue": "flat · apartment",
+            "tag": "free",
+            "forms": [
+              "appartements"
+            ],
+            "note": "Masculine and starting with a vowel, which is exactly why it pulls bel in front of it. The double p is written and not heard."
+          },
+          {
+            "display": "bel",
+            "cue": "beautiful (before a vowel)",
+            "tag": "delta",
+            "forms": [],
+            "note": "beau's third shape, used only in front of a masculine noun starting with a vowel. It is its own index key, not a variant of beau."
+          },
+          {
+            "display": "nouveau",
+            "cue": "new",
+            "tag": "free",
+            "forms": [
+              "nouveaux",
+              "nouvelle",
+              "nouvelles"
+            ],
+            "note": "The same pattern as beau, including the -x plural. Its feminine nouvelle also shares little with it on the page."
+          },
+          {
+            "display": "nouvel",
+            "cue": "new (before a vowel)",
+            "tag": "delta",
+            "forms": [],
+            "note": "nouveau's pre-vowel shape — un nouvel ami. Three of these exist in the language and this module has all three."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "bel exists only in front of a vowel and only in the masculine. Move the adjective behind the noun and it goes back to beau — the shape belongs to the position, not to the word.",
+      "sound": "say un bel a-par-tuh-MON. The l of bel links straight onto the vowel.",
+      "variations": [
+        {
+          "display": "C'est un nouvel ami",
+          "cue": "He's a new friend",
+          "changed": "the second of the three pre-vowel shapes"
+        },
+        {
+          "display": "C'est une belle maison",
+          "cue": "It's a beautiful house",
+          "changed": "feminine — where the problem never arises"
+        },
+        {
+          "display": "C'est un beau livre",
+          "cue": "It's a beautiful book",
+          "changed": "a consonant, so the ordinary shape"
+        }
+      ],
+      "mistake": {
+        "display": "C'est un beau appartement",
+        "why": "A vowel takes bel: C'est un bel appartement."
+      },
+      "usage": "Complimenting somebody's home.",
+      "register": "neutral",
+      "mnemonic": "Three words have a pre-vowel shape. These are all of them."
+    },
+    {
+      "id": "L2-M3-S06",
+      "display": "C'est un vieil homme",
+      "cue": "He's an old man",
+      "literal": "It-is an old man",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "homme",
+            "cue": "man",
+            "tag": "free",
+            "forms": [
+              "hommes"
+            ],
+            "note": "The h is silent and French counts the word as beginning with a vowel — l'homme, un vieil homme. femme is its pair, and only one of them is said the way it looks."
+          },
+          {
+            "display": "vieil",
+            "cue": "old (before a vowel)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The third pre-vowel shape, and it appears in front of an h too — homme starts with a silent h, which French treats as a vowel."
+          },
+          {
+            "display": "vieille",
+            "cue": "old (feminine)",
+            "tag": "free",
+            "forms": [
+              "vieilles"
+            ],
+            "note": "M2 opened this beside vieux. The ille is the soft y of fille."
+          },
+          {
+            "display": "mauvais",
+            "cue": "bad",
+            "tag": "free",
+            "forms": [
+              "mauvaise",
+              "mauvaises"
+            ],
+            "note": "On the front list, and its masculine plural is also mauvais — it already ends in s. bon's opposite."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "The h of homme is silent and French counts it as a vowel. So vieil, not vieux — and the rule is about sound rather than spelling, as it always is here.",
+      "sound": "say un vyay OM. The h is not said at all, and vieil links straight into the vowel.",
+      "variations": [
+        {
+          "display": "C'est une vieille maison",
+          "cue": "It's an old house",
+          "changed": "feminine"
+        },
+        {
+          "display": "C'est un vieux livre",
+          "cue": "It's an old book",
+          "changed": "a consonant, so the ordinary shape"
+        },
+        {
+          "display": "C'est un mauvais livre",
+          "cue": "It's a bad book",
+          "changed": "a different front-list adjective"
+        }
+      ],
+      "mistake": {
+        "display": "C'est un vieux homme",
+        "why": "A silent h counts as a vowel: C'est un vieil homme."
+      },
+      "usage": "Describing a person by age, and the shape is the point.",
+      "register": "neutral",
+      "mnemonic": "A silent h is a vowel to French."
+    },
+    {
+      "id": "L2-M3-S07",
+      "display": "La maison est très grande",
+      "cue": "The house is very big",
+      "literal": "The house is very big",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gros",
+            "cue": "big · fat · thick",
+            "tag": "interference",
+            "forms": [
+              "grosse",
+              "grosses"
+            ],
+            "note": "Bulk rather than height. Of a person it means fat and is blunt, which is why grand covers most of what English's \"big\" does."
+          },
+          {
+            "display": "long",
+            "cue": "long",
+            "tag": "free",
+            "forms": [
+              "longue",
+              "longs",
+              "longues"
+            ],
+            "note": "Its feminine adds a u to keep the g hard: longue. The masculine's g is not sounded at all."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "très goes with an adjective and beaucoup goes with a verb. très grande and j'aime beaucoup — putting très in front of a verb is the error, and it comes straight from English's \"very much\".",
+      "sound": "treh GRAHND. The feminine sounds the d; the masculine grand does not.",
+      "variations": [
+        {
+          "display": "Le livre est très long",
+          "cue": "The book is very long",
+          "changed": "masculine, with a silent g"
+        },
+        {
+          "display": "La maison est très grosse",
+          "cue": "The house is very big",
+          "changed": "bulk rather than size"
+        },
+        {
+          "display": "J'aime beaucoup la maison",
+          "cue": "I like the house very much",
+          "changed": "a verb, so beaucoup"
+        }
+      ],
+      "mistake": {
+        "display": "Très j'aime la maison",
+        "why": "A verb takes beaucoup: J'aime beaucoup la maison."
+      },
+      "usage": "Turning a description up.",
+      "register": "neutral",
+      "mnemonic": "très with an adjective, beaucoup with a verb."
+    },
+    {
+      "id": "L2-M3-S08",
+      "display": "Les cheveux sont courts",
+      "cue": "The hair is short",
+      "literal": "The hairs are short",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "court",
+            "cue": "short (in length)",
+            "tag": "interference",
+            "forms": [
+              "courte",
+              "courts",
+              "courtes"
+            ],
+            "note": "Length, never height. A short person is petit — M2's word — and using court of a person is the error."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "cheveux is plural in French, so its adjective is plural too. English says \"the hair is short\" with a singular, and the two languages disagree about how many hairs there are.",
+      "sound": "lay shuh-VUH son KOOR. The final ts of courts is silent.",
+      "variations": [
+        {
+          "display": "Les cheveux sont longs",
+          "cue": "The hair is long",
+          "changed": "the opposite"
+        },
+        {
+          "display": "Elle a les cheveux courts",
+          "cue": "She has short hair",
+          "changed": "M2's feature frame"
+        },
+        {
+          "display": "Le livre est court",
+          "cue": "The book is short",
+          "changed": "a singular masculine thing"
+        }
+      ],
+      "mistake": {
+        "display": "Les cheveux sont court",
+        "why": "cheveux is plural: Les cheveux sont courts."
+      },
+      "usage": "Describing someone, or telling a hairdresser what you want.",
+      "register": "neutral",
+      "mnemonic": "court is length. petit is height."
+    },
+    {
+      "id": "L2-M3-S09",
+      "display": "La table est propre",
+      "cue": "The table is clean",
+      "literal": "The table is clean",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "propre",
+            "cue": "clean · own",
+            "tag": "interference",
+            "forms": [
+              "propres"
+            ],
+            "note": "BEHIND the noun it means clean; in FRONT of it, it means \"own\" — ma propre voiture is my own car. Position changes the meaning outright."
+          },
+          {
+            "display": "sale",
+            "cue": "dirty",
+            "tag": "free",
+            "forms": [
+              "sales"
+            ],
+            "note": "propre's opposite, and an -e adjective. It is nothing to do with the English word it is spelled like."
+          },
+          {
+            "display": "table",
+            "cue": "table",
+            "tag": "free",
+            "forms": [
+              "tables"
+            ],
+            "note": "L1-M7 opened the singular; the plural is new. It is feminine, so its adjectives take an -e whether or not anything is heard."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Two adjectives change meaning with position and this is one of them. une voiture propre is a clean car; ma propre voiture is my own car, clean or not.",
+      "sound": "la TABL eh PROPR. Both words end in a consonant cluster with no vowel after it.",
+      "variations": [
+        {
+          "display": "La table est sale",
+          "cue": "The table is dirty",
+          "changed": "the opposite"
+        },
+        {
+          "display": "Les tables sont propres",
+          "cue": "The tables are clean",
+          "changed": "plural"
+        },
+        {
+          "display": "C'est une table propre",
+          "cue": "It's a clean table",
+          "changed": "in front of the verb rather than after it"
+        }
+      ],
+      "mistake": {
+        "display": "C'est une propre table",
+        "why": "In front it would mean \"own\": C'est une table propre."
+      },
+      "usage": "In a restaurant, a hotel, or an argument about the washing-up.",
+      "register": "neutral",
+      "mnemonic": "Behind means clean. In front means own."
+    },
+    {
+      "id": "L2-M3-S10",
+      "display": "Le livre est très lourd",
+      "cue": "The book is very heavy",
+      "literal": "The book is very heavy",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lourd",
+            "cue": "heavy",
+            "tag": "free",
+            "forms": [
+              "lourde",
+              "lourds",
+              "lourdes"
+            ],
+            "note": "The d is silent in the masculine and sounded in the feminine lourde — the ordinary French pattern, on one more word."
+          },
+          {
+            "display": "léger",
+            "cue": "light (in weight)",
+            "tag": "free",
+            "forms": [
+              "légère",
+              "légers",
+              "légères"
+            ],
+            "note": "Its feminine takes a grave accent to keep the sound: légère. Weight only — light as in not dark is clair."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "légère changes its accent as well as adding an e. The acute é becomes grave è, because the syllable is now closed — which is a spelling rule the eye has to learn.",
+      "sound": "luh LEEVR eh treh LOOR. No final d is heard in the masculine.",
+      "variations": [
+        {
+          "display": "Le livre est très léger",
+          "cue": "The book is very light",
+          "changed": "the opposite"
+        },
+        {
+          "display": "La table est très lourde",
+          "cue": "The table is very heavy",
+          "changed": "feminine, and the d is finally heard"
+        },
+        {
+          "display": "Les livres sont lourds",
+          "cue": "The books are heavy",
+          "changed": "plural"
+        }
+      ],
+      "mistake": {
+        "display": "La table est très lourd",
+        "why": "The adjective agrees: La table est très lourde."
+      },
+      "usage": "Carrying something, or warning someone before they pick it up.",
+      "register": "neutral",
+      "mnemonic": "The feminine is where the consonant finally speaks."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M3-C01",
+      "display": "La voiture est rouge",
+      "cue": "The car is red"
+    },
+    {
+      "id": "L2-M3-C02",
+      "display": "Les livres sont bleus",
+      "cue": "The books are blue"
+    },
+    {
+      "id": "L2-M3-C03",
+      "display": "C'est une voiture blanche",
+      "cue": "It's a white car"
+    },
+    {
+      "id": "L2-M3-C04",
+      "display": "C'est un beau livre",
+      "cue": "It's a beautiful book"
+    },
+    {
+      "id": "L2-M3-C05",
+      "display": "C'est un bel appartement",
+      "cue": "It's a beautiful flat"
+    },
+    {
+      "id": "L2-M3-C06",
+      "display": "C'est un vieil homme",
+      "cue": "He's an old man"
+    },
+    {
+      "id": "L2-M3-C07",
+      "display": "La maison est très grande",
+      "cue": "The house is very big"
+    },
+    {
+      "id": "L2-M3-C08",
+      "display": "Les cheveux sont courts",
+      "cue": "The hair is short"
+    },
+    {
+      "id": "L2-M3-C09",
+      "display": "La table est propre",
+      "cue": "The table is clean"
+    },
+    {
+      "id": "L2-M3-C10",
+      "display": "Le livre est très lourd",
+      "cue": "The book is very heavy"
+    },
+    {
+      "id": "L2-M3-C11",
+      "display": "C'est un nouvel ami",
+      "cue": "He's a new friend"
+    },
+    {
+      "id": "L2-M3-C12",
+      "display": "J'aime beaucoup la maison",
+      "cue": "I like the house very much"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
