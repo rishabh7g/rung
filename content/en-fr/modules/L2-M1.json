@@ -1,0 +1,646 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M1",
+  "title": "Asking politely",
+  "job": "Requests, thanks, apologies in the right register",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Est-ce que vous pouvez + V-inf + ?",
+      "Est-ce que tu peux + V-inf + ?",
+      "Je voudrais + un/une + N + , + s'il vous plaît",
+      "Excusez-moi + , + <request>",
+      "Merci beaucoup — De rien"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "TU OPENS HERE, and L1 held it back on purpose: every second-person line in that level was vous, and tu appeared in no display and no forms list. The law is L1's — vous is never wrong with a stranger, a shopkeeper, an official or a new colleague; tu is for friends, family, children and people who have offered it. Getting it wrong upward is stiff; getting it wrong downward is rude, and only one of those costs anything."
+    },
+    {
+      "tag": "free",
+      "text": "French has VERBS for this — tutoyer and vouvoyer — and the switch is asked for out loud: On peut se tutoyer? A learner who knows only that tu is \"informal\" switches too early. There is also a rest point hiding in the new paradigm: for most verbs the tu form is the je form plus -s, and for vouloir and pouvoir it is spelled identically — je veux and tu veux, je peux and tu peux."
+    },
+    {
+      "tag": "delta",
+      "text": "est-ce que goes in front of a statement and turns it into a question, changing nothing else: Vous avez du pain → Est-ce que vous avez du pain? That is exactly the tool an English speaker needs, since English fronts do or are and French otherwise moves nothing. Inversion — Pouvez-vous…? — appears in this level only inside frozen frames, and the system behind it is L3's."
+    },
+    {
+      "tag": "free",
+      "text": "je voudrais arrives as ONE frozen cell. It is the conditional of vouloir — a whole tense spent on politeness — and the tense is L3's. pourriez and j'aimerais belong to the same set and are named here rather than written. Shipping the word while deferring the system is the honest move; pretending it is unrelated to vouloir would not be."
+    },
+    {
+      "tag": "interference",
+      "text": "FRENCH SPLITS \"SORRY\" THREE WAYS. Excusez-moi asks to be excused before the fact — interrupting, getting past, stopping someone. Pardon does the same in one word, and is also what you say when you have bumped into somebody. Je suis désolé is regret for something that has happened. An English speaker reaches for one word and lands on the wrong one."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M1-S01",
+      "display": "Est-ce que vous pouvez répéter?",
+      "cue": "Could you repeat that?",
+      "literal": "Is-it that you can to-repeat?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "est-ce que",
+            "cue": "(question marker)",
+            "tag": "delta",
+            "forms": [],
+            "note": "It has no meaning of its own. Put it in front of any statement and the statement becomes a question, with nothing else moving."
+          },
+          {
+            "display": "pouvez",
+            "cue": "you can (vous)",
+            "tag": "free",
+            "forms": [],
+            "note": "The vous cell of pouvoir. An infinitive follows it, exactly as in English — and L1-M6's voulez is the same shape on the other verb."
+          },
+          {
+            "display": "répéter",
+            "cue": "to repeat",
+            "tag": "free",
+            "forms": [],
+            "note": "Both e's carry an accent and both are sounded: ré-pé-TER. The final -er is the infinitive ending and rhymes with the é's before it."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "est-ce que is three words on the page and one sound in the mouth. Nobody says it slowly, and a learner listening for three separate words will miss the question entirely.",
+      "sound": "ess-kuh-VOO poo-VAY ray-pay-TAY. The whole marker collapses to two syllables.",
+      "variations": [
+        {
+          "display": "Est-ce que tu peux répéter?",
+          "cue": "Can you repeat that?",
+          "changed": "to a friend — both words move together"
+        },
+        {
+          "display": "Est-ce que vous pouvez venir?",
+          "cue": "Can you come?",
+          "changed": "a different infinitive"
+        },
+        {
+          "display": "Vous pouvez répéter?",
+          "cue": "Can you repeat that?",
+          "changed": "without the marker — a question by intonation alone"
+        }
+      ],
+      "mistake": {
+        "display": "Est-ce que vous pouvez répétez?",
+        "why": "An infinitive follows pouvez: Est-ce que vous pouvez répéter?"
+      },
+      "usage": "In a shop, on a phone, anywhere you did not catch what was said.",
+      "register": "formal",
+      "mnemonic": "Put it in front and change nothing else."
+    },
+    {
+      "id": "L2-M1-S02",
+      "display": "Est-ce que tu peux venir?",
+      "cue": "Can you come?",
+      "literal": "Is-it that you can to-come?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tu",
+            "cue": "you (one friend)",
+            "tag": "delta",
+            "forms": [],
+            "note": "For friends, family, children and anyone who has offered it. L1 used vous everywhere because getting it wrong upward costs nothing and getting it wrong downward does."
+          },
+          {
+            "display": "peux",
+            "cue": "I can · you can",
+            "tag": "free",
+            "forms": [],
+            "note": "je peux and tu peux are spelled the same, and so are je veux and tu veux. The pronoun is the only thing that says which."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The x on the end is silent, and so is the s on tu's other verbs. The tu paradigm is mostly a spelling change rather than a sound change, which makes it easier to say than to write.",
+      "sound": "ess-kuh-tü PUH vuh-NEER. The ü of tu is the rounded front vowel English does not have.",
+      "variations": [
+        {
+          "display": "Est-ce que tu peux venir demain?",
+          "cue": "Can you come tomorrow?",
+          "changed": "a time added"
+        },
+        {
+          "display": "Est-ce que vous pouvez venir?",
+          "cue": "Can you come?",
+          "changed": "to someone you do not know"
+        },
+        {
+          "display": "Tu peux venir?",
+          "cue": "Can you come?",
+          "changed": "no marker — friends drop it constantly"
+        }
+      ],
+      "mistake": {
+        "display": "Est-ce que tu pouvez venir?",
+        "why": "tu takes peux: Est-ce que tu peux venir?"
+      },
+      "usage": "Inviting a friend. With a stranger the same sentence would be presumptuous.",
+      "register": "informal",
+      "mnemonic": "je peux and tu peux are the same word twice."
+    },
+    {
+      "id": "L2-M1-S03",
+      "display": "Tu es fatigué?",
+      "cue": "Are you tired?",
+      "literal": "You are tired?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "es",
+            "cue": "you are (tu)",
+            "tag": "free",
+            "forms": [],
+            "note": "The tu cell of être, and the s is silent. L1-M1's suis and L1-M10's êtes are its neighbours."
+          },
+          {
+            "display": "as",
+            "cue": "you have (tu)",
+            "tag": "free",
+            "forms": [],
+            "note": "The tu cell of avoir, and its s is silent too. Tu as faim? is \"are you hungry?\" — French has hunger rather than being it."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "es and as sound like a single vowel each, and neither final s is heard. In speech the tu forms are told apart only by the vowel, which is why the pronoun is never dropped in French.",
+      "sound": "tü ay fa-tee-GAY. es is one short vowel, and the é of fatigué is the same sound held.",
+      "variations": [
+        {
+          "display": "Tu es fatiguée?",
+          "cue": "Are you tired?",
+          "changed": "asking a woman — the adjective agrees, the sound does not change"
+        },
+        {
+          "display": "Tu as faim?",
+          "cue": "Are you hungry?",
+          "changed": "avoir rather than être, because French HAS hunger"
+        },
+        {
+          "display": "Vous êtes fatigué?",
+          "cue": "Are you tired?",
+          "changed": "to someone you do not know"
+        }
+      ],
+      "mistake": {
+        "display": "Tu as fatigué?",
+        "why": "Tiredness is a state: Tu es fatigué?"
+      },
+      "usage": "Asking after a friend, which in French is done directly.",
+      "register": "informal",
+      "mnemonic": "You ARE tired, but you HAVE hunger."
+    },
+    {
+      "id": "L2-M1-S04",
+      "display": "Tu vas bien?",
+      "cue": "Are you all right?",
+      "literal": "You go well?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vas",
+            "cue": "you go (tu)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The tu cell of aller, beside L1's vais and va. Wellbeing in French is a matter of GOING — Ça va, tu vas bien — never of being."
+          },
+          {
+            "display": "fais",
+            "cue": "you do · you make (tu)",
+            "tag": "free",
+            "forms": [],
+            "note": "The tu cell of faire, and it is spelled like the je cell — je fais, tu fais. Another of the pairs that make this paradigm cheaper than it looks."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "French asks how you are GOING, not how you are. L1-M2's Ça va was already this verb, and Tu vas bien? is the same idea with a person in it.",
+      "sound": "tü va byan. The final n of bien is nasal and no n is actually said.",
+      "variations": [
+        {
+          "display": "Vous allez bien?",
+          "cue": "Are you all right?",
+          "changed": "to someone you do not know"
+        },
+        {
+          "display": "Tu vas au marché?",
+          "cue": "Are you going to the market?",
+          "changed": "the verb doing its literal job"
+        },
+        {
+          "display": "Tu fais le café?",
+          "cue": "Are you making the coffee?",
+          "changed": "a different verb in the same cell"
+        }
+      ],
+      "mistake": {
+        "display": "Tu es bien?",
+        "why": "Wellbeing goes: Tu vas bien?"
+      },
+      "usage": "The everyday greeting between friends, and it expects an answer.",
+      "register": "informal",
+      "mnemonic": "In French you go well, you are not well."
+    },
+    {
+      "id": "L2-M1-S05",
+      "display": "Je voudrais un café, s'il vous plaît",
+      "cue": "I'd like a coffee, please",
+      "literal": "I would-like a coffee, if-it you pleases",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "voudrais",
+            "cue": "I would like",
+            "tag": "delta",
+            "forms": [],
+            "note": "One frozen cell of the conditional of vouloir, which L3 opens as a tense. Je veux un café is grammatical and lands as a demand, which is why this word exists in the course at all."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Je veux is not rude in itself and is heard as one all the same. French buys politeness with a longer verb here, exactly as English does with \"would like\" — and the shorter form is what a child says.",
+      "sound": "zhuh voo-DRAY. The final s is silent and the ai is a single open vowel.",
+      "variations": [
+        {
+          "display": "Je voudrais une bouteille d'eau",
+          "cue": "I'd like a bottle of water",
+          "changed": "a feminine noun and L1-M8's elided of-water"
+        },
+        {
+          "display": "Je voudrais un livre, s'il vous plaît",
+          "cue": "I'd like a book, please",
+          "changed": "a different thing"
+        },
+        {
+          "display": "Je voudrais du pain, s'il te plaît",
+          "cue": "I'd like some bread, please",
+          "changed": "to a friend, so the tu form of please"
+        }
+      ],
+      "mistake": {
+        "display": "Je veux un café, s'il vous plaît",
+        "why": "The polite order is voudrais: Je voudrais un café, s'il vous plaît."
+      },
+      "usage": "Ordering anything, anywhere. It is the single most useful sentence in the module.",
+      "register": "formal",
+      "mnemonic": "One word borrowed from a tense you do not have yet."
+    },
+    {
+      "id": "L2-M1-S06",
+      "display": "Un café, s'il te plaît",
+      "cue": "A coffee, please",
+      "literal": "A coffee, if-it to-you pleases",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "s'il te plaît",
+            "cue": "please (to a friend)",
+            "tag": "delta",
+            "forms": [
+              "s'il"
+            ],
+            "note": "L1-M8's s'il vous plaît with the tu pronoun in it. Literally \"if it pleases you\", and the s'il is si plus il, elided into one token."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The whole phrase changes with the address, not just the pronoun in the middle. Saying s'il vous plaît to a close friend is stiff in exactly the way tu to a stranger is forward.",
+      "sound": "seel tuh PLEH. Three syllables and the last one takes the weight.",
+      "variations": [
+        {
+          "display": "Un café, s'il vous plaît",
+          "cue": "A coffee, please",
+          "changed": "to someone you do not know"
+        },
+        {
+          "display": "Du pain, s'il te plaît",
+          "cue": "Some bread, please",
+          "changed": "a partitive rather than an article"
+        },
+        {
+          "display": "Un livre, s'il te plaît",
+          "cue": "A book, please",
+          "changed": "a different thing"
+        }
+      ],
+      "mistake": {
+        "display": "Un café, si te plaît",
+        "why": "si and il fuse: Un café, s'il te plaît."
+      },
+      "usage": "At a counter among friends, or at home.",
+      "register": "informal",
+      "mnemonic": "Please carries the address too."
+    },
+    {
+      "id": "L2-M1-S07",
+      "display": "Excusez-moi, où est le marché?",
+      "cue": "Excuse me, where is the market?",
+      "literal": "Excuse-me, where is the market?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "excusez-moi",
+            "cue": "excuse me (vous)",
+            "tag": "delta",
+            "forms": [],
+            "note": "One key, hyphen and all — and the hyphen splits, so excusez and moi are indexed too. It asks to be excused BEFORE the fact."
+          },
+          {
+            "display": "excuse-moi",
+            "cue": "excuse me (tu)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The tu form, one z shorter. Both are single words to the index and to the ear."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "The pronoun goes on the END here, joined by a hyphen. That is the imperative's own order, and it is the reverse of where a pronoun sits in an ordinary sentence.",
+      "sound": "ex-kü-zay-MWA. Four syllables running to the last, and the hyphen is not a pause.",
+      "variations": [
+        {
+          "display": "Excuse-moi, où est le marché?",
+          "cue": "Excuse me, where is the market?",
+          "changed": "to a friend"
+        },
+        {
+          "display": "Excusez-moi, est-ce que vous avez du pain?",
+          "cue": "Excuse me, do you have any bread?",
+          "changed": "with the question marker"
+        },
+        {
+          "display": "Excusez-moi, où est la maison?",
+          "cue": "Excuse me, where is the house?",
+          "changed": "a different place"
+        }
+      ],
+      "mistake": {
+        "display": "Excusez moi, où est le marché?",
+        "why": "The hyphen is part of the word: Excusez-moi, où est le marché?"
+      },
+      "usage": "Stopping a stranger in the street. The safest opener in French.",
+      "register": "formal",
+      "mnemonic": "The pronoun hangs off the back of an imperative."
+    },
+    {
+      "id": "L2-M1-S08",
+      "display": "Pardon, je suis désolé",
+      "cue": "Sorry, I'm very sorry",
+      "literal": "Pardon, I am sorry",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pardon",
+            "cue": "sorry · excuse me",
+            "tag": "delta",
+            "forms": [],
+            "note": "One word doing two jobs: getting past someone, and apologising for a small bump. It is not the word for real regret — that is désolé."
+          },
+          {
+            "display": "désolé",
+            "cue": "sorry (said by a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "An adjective, so it agrees with the speaker. Je suis désolé is regret for something that has already happened."
+          },
+          {
+            "display": "désolée",
+            "cue": "sorry (said by a woman)",
+            "tag": "free",
+            "forms": [],
+            "note": "The feminine, and the extra e changes nothing in the sound. French writes this distinction far more often than it says it."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Three words for \"sorry\" and each has its own moment: Excusez-moi before, Pardon on contact, Je suis désolé after. Reaching for one of them everywhere is what marks an English speaker.",
+      "sound": "par-DON day-zo-LAY. The on of pardon is nasal, and no n is sounded.",
+      "variations": [
+        {
+          "display": "Pardon, je suis désolée",
+          "cue": "Sorry, I'm very sorry",
+          "changed": "said by a woman"
+        },
+        {
+          "display": "Je suis désolé",
+          "cue": "I'm sorry",
+          "changed": "the apology alone"
+        },
+        {
+          "display": "Pardon, excusez-moi",
+          "cue": "Sorry, excuse me",
+          "changed": "the two openers together, which is common"
+        }
+      ],
+      "mistake": {
+        "display": "Pardon, je suis désolé pour passer",
+        "why": "Getting past is Pardon on its own: Pardon, excusez-moi."
+      },
+      "usage": "On a bus, in a crowd, and after treading on someone.",
+      "register": "neutral",
+      "mnemonic": "Before, on contact, after — three different words."
+    },
+    {
+      "id": "L2-M1-S09",
+      "display": "Merci beaucoup, Anne!",
+      "cue": "Thank you very much, Anne!",
+      "literal": "Thanks much, Anne!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "beaucoup",
+            "cue": "a lot · very much",
+            "tag": "free",
+            "forms": [],
+            "note": "The final p is silent. It also counts things — beaucoup de livres — where it takes de and never an article."
+          },
+          {
+            "display": "de rien",
+            "cue": "you're welcome",
+            "tag": "free",
+            "forms": [],
+            "note": "Literally \"of nothing\", and it is what answers thanks. Je vous en prie is the more formal version and is not written here."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "beaucoup ends in a silent p and beau ends in a silent u. French spells more than it says, and this word is where a learner first notices how much more.",
+      "sound": "mer-SEE bo-KOO. Two syllables each, and neither final letter is heard.",
+      "variations": [
+        {
+          "display": "Merci beaucoup! De rien",
+          "cue": "Thank you very much! — You're welcome",
+          "changed": "the whole exchange"
+        },
+        {
+          "display": "Merci beaucoup, Marc!",
+          "cue": "Thank you very much, Marc!",
+          "changed": "a different name"
+        },
+        {
+          "display": "Merci, de rien",
+          "cue": "Thanks — not at all",
+          "changed": "the plainer thanks"
+        }
+      ],
+      "mistake": {
+        "display": "Merci beaucoup, de rien!",
+        "why": "The two halves belong to two speakers: Merci beaucoup! — De rien."
+      },
+      "usage": "Real thanks, for something that took someone trouble.",
+      "register": "neutral",
+      "mnemonic": "De rien — it was nothing."
+    },
+    {
+      "id": "L2-M1-S10",
+      "display": "Est-ce que je peux vous aider?",
+      "cue": "Can I help you?",
+      "literal": "Is-it that I can you to-help?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aider",
+            "cue": "to help",
+            "tag": "delta",
+            "forms": [
+              "m'aider"
+            ],
+            "note": "The object goes IN FRONT of the infinitive in French — vous aider, m'aider — where English puts it after. m'aider is one token, because the elision fuses it."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "vous sits between peux and aider, which is where English would put nothing at all. French object pronouns go in front of the verb they belong to, and here that verb is the infinitive.",
+      "sound": "zhuh PUH voo-zay-DAY. The s of vous links onto the vowel of aider and is heard as a z.",
+      "variations": [
+        {
+          "display": "Est-ce que je peux aider?",
+          "cue": "Can I help?",
+          "changed": "without saying whom"
+        },
+        {
+          "display": "Tu peux m'aider?",
+          "cue": "Can you help me?",
+          "changed": "asking rather than offering, with the elided object"
+        },
+        {
+          "display": "Est-ce que vous pouvez m'aider?",
+          "cue": "Can you help me?",
+          "changed": "asking a stranger"
+        }
+      ],
+      "mistake": {
+        "display": "Est-ce que je peux aider vous?",
+        "why": "The object goes in front: Est-ce que je peux vous aider?"
+      },
+      "usage": "Said by anyone behind a counter, and the sentence a customer answers.",
+      "register": "formal",
+      "mnemonic": "The object goes in front of its verb."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M1-C01",
+      "display": "Est-ce que vous pouvez répéter?",
+      "cue": "Could you repeat that?"
+    },
+    {
+      "id": "L2-M1-C02",
+      "display": "Est-ce que tu peux venir?",
+      "cue": "Can you come?"
+    },
+    {
+      "id": "L2-M1-C03",
+      "display": "Tu es fatigué?",
+      "cue": "Are you tired?"
+    },
+    {
+      "id": "L2-M1-C04",
+      "display": "Tu vas bien?",
+      "cue": "Are you all right?"
+    },
+    {
+      "id": "L2-M1-C05",
+      "display": "Je voudrais un café, s'il vous plaît",
+      "cue": "I'd like a coffee, please"
+    },
+    {
+      "id": "L2-M1-C06",
+      "display": "Un café, s'il te plaît",
+      "cue": "A coffee, please"
+    },
+    {
+      "id": "L2-M1-C07",
+      "display": "Excusez-moi, où est le marché?",
+      "cue": "Excuse me, where is the market?"
+    },
+    {
+      "id": "L2-M1-C08",
+      "display": "Pardon, je suis désolé",
+      "cue": "Sorry, I'm very sorry"
+    },
+    {
+      "id": "L2-M1-C09",
+      "display": "Merci beaucoup, Anne!",
+      "cue": "Thank you very much, Anne!"
+    },
+    {
+      "id": "L2-M1-C10",
+      "display": "Est-ce que je peux vous aider?",
+      "cue": "Can I help you?"
+    },
+    {
+      "id": "L2-M1-C11",
+      "display": "Tu as faim?",
+      "cue": "Are you hungry?"
+    },
+    {
+      "id": "L2-M1-C12",
+      "display": "Est-ce que vous pouvez m'aider?",
+      "cue": "Can you help me?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

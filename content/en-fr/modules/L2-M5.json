@@ -1,0 +1,651 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M5",
+  "title": "Food and hosting",
+  "job": "Ordering, offering, refusing without offence",
+  "prerequisites": [
+    "L2-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Je voudrais + du/de la/des + N + , + s'il vous plaît",
+      "Je ne veux pas de + N",
+      "Pour moi + , + un/une + N",
+      "Encore + du/de la + N + ?",
+      "L'addition + , + s'il vous plaît"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "AFTER A NEGATION EVERY PARTITIVE COLLAPSES TO de. Je ne veux pas DE café, Il n'y a pas DE pain, Je ne mange pas DE viande. L1-M3 taught du, de la and des, and L1-M3 taught ne … pas, and the two never met in one sentence until now. This is one of the few French rules with no exception worth a learner's time, and Je ne veux pas du café is what every English speaker writes who has not been told."
+    },
+    {
+      "tag": "delta",
+      "text": "FRENCH HAS A SECOND SET OF PRONOUNS for standing alone and for following a preposition: moi, toi. Pour moi, un café — je and tu cannot go there at all. They are also what you use to answer a question with one word: Qui veut du café? — Moi."
+    },
+    {
+      "tag": "free",
+      "text": "The object pronouns open narrowly, and the index decides how: me and te are free words, but le, la and les are already L1-M1's ARTICLES, so the identically spelled object pronouns can never be first-taught here. The placement law is shown on me and te — Vous pouvez me donner…? — and the rest of the series is L3's."
+    },
+    {
+      "tag": "free",
+      "text": "Ordering is M1's frozen je voudrais plus L1's partitives, and the register point is the same one M1 made: Je veux un café is grammatical and lands as a demand. Je voudrais and Pour moi are what people actually say at a counter."
+    },
+    {
+      "tag": "interference",
+      "text": "A FRENCH REFUSAL IS SOFTENED BY A COMPLIMENT, not by a reason. Non merci, c'était très bon · C'est très gentil, mais ça va. A host offers once or twice and then stops — which is a genuinely different shape from the Indian and Russian hosting the other courses in this collection describe, where the offer is expected to be repeated."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M5-S01",
+      "display": "Je voudrais du pain, s'il vous plaît",
+      "cue": "I'd like some bread, please",
+      "literal": "I would-like of-the bread, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "addition",
+            "cue": "the bill",
+            "tag": "interference",
+            "forms": [
+              "l'addition"
+            ],
+            "note": "Not a sum. L'addition, s'il vous plaît is how a meal ends, and the elided form is its own index key."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "du is not \"some\" as a separate word — it is de plus le, welded, and it means an unspecified amount of something. L1-M3 taught it and this module is where it meets a negation.",
+      "sound": "zhuh voo-DRAY dü PAN. The ü is rounded and the an of pain is nasal.",
+      "variations": [
+        {
+          "display": "Je voudrais de la viande, s'il vous plaît",
+          "cue": "I'd like some meat, please",
+          "changed": "a feminine noun, so a different partitive"
+        },
+        {
+          "display": "Je voudrais des légumes, s'il vous plaît",
+          "cue": "I'd like some vegetables, please",
+          "changed": "plural"
+        },
+        {
+          "display": "L'addition, s'il vous plaît",
+          "cue": "The bill, please",
+          "changed": "the end of the meal"
+        }
+      ],
+      "mistake": {
+        "display": "Je voudrais le pain, s'il vous plaît",
+        "why": "An unspecified amount takes the partitive: Je voudrais du pain."
+      },
+      "usage": "Ordering anything at a counter or a table.",
+      "register": "formal",
+      "mnemonic": "du is de plus le, welded."
+    },
+    {
+      "id": "L2-M5-S02",
+      "display": "Je ne veux pas de café",
+      "cue": "I don't want any coffee",
+      "literal": "I not want not of coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "de",
+            "cue": "of · any (after a negative)",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M1's de doing a second job. After ne … pas every partitive collapses to this — du, de la and des all become de, with no exception worth learning."
+          },
+          {
+            "display": "viande",
+            "cue": "meat",
+            "tag": "free",
+            "forms": [
+              "viandes"
+            ],
+            "note": "Feminine, so de la viande — until a negation flattens it to de viande."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Je ne veux pas du café is what an English speaker writes and it is wrong. The negation eats the article, and nothing survives of it but the de.",
+      "sound": "zhuh nuh vuh pa duh ka-FAY. The whole line runs flat until the last syllable.",
+      "variations": [
+        {
+          "display": "Je ne veux pas de viande",
+          "cue": "I don't want any meat",
+          "changed": "a feminine noun — and the de is the same"
+        },
+        {
+          "display": "Je ne mange pas de viande",
+          "cue": "I don't eat meat",
+          "changed": "a different verb"
+        },
+        {
+          "display": "Il n'y a pas de pain",
+          "cue": "There isn't any bread",
+          "changed": "L1-M7's frame, negated"
+        }
+      ],
+      "mistake": {
+        "display": "Je ne veux pas du café",
+        "why": "A negation flattens the partitive: Je ne veux pas de café."
+      },
+      "usage": "Turning something down, or saying what you do not eat.",
+      "register": "neutral",
+      "mnemonic": "The negation eats the article."
+    },
+    {
+      "id": "L2-M5-S03",
+      "display": "Pour moi, un café",
+      "cue": "A coffee for me",
+      "literal": "For me, a coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pour",
+            "cue": "for",
+            "tag": "free",
+            "forms": [],
+            "note": "A preposition, and it is what forces the stressed pronoun: pour moi, never pour je. It also does purpose — pour manger, in order to eat."
+          },
+          {
+            "display": "moi",
+            "cue": "me",
+            "tag": "delta",
+            "forms": [],
+            "note": "The stressed pronoun. je cannot follow a preposition or stand alone, so pour moi and Moi? both need this word instead."
+          },
+          {
+            "display": "toi",
+            "cue": "you (one friend)",
+            "tag": "free",
+            "forms": [],
+            "note": "moi's tu partner. Et toi? is how a question gets turned back, and it is one of the commonest two words in French."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "pour je is not French at all. A preposition needs the stressed form, and that is a whole second set of pronouns rather than a variant of the first.",
+      "sound": "poor MWA un ka-FAY. moi is one syllable and takes the weight of the phrase.",
+      "variations": [
+        {
+          "display": "Pour moi, une soupe",
+          "cue": "A soup for me",
+          "changed": "a feminine noun"
+        },
+        {
+          "display": "Et pour toi?",
+          "cue": "And for you?",
+          "changed": "the tu form, turning the question back"
+        },
+        {
+          "display": "Pour moi, du pain",
+          "cue": "Some bread for me",
+          "changed": "a partitive rather than an article"
+        }
+      ],
+      "mistake": {
+        "display": "Pour je, un café",
+        "why": "A preposition takes the stressed form: Pour moi, un café."
+      },
+      "usage": "At a table where several people are ordering.",
+      "register": "neutral",
+      "mnemonic": "After a preposition, moi and toi."
+    },
+    {
+      "id": "L2-M5-S04",
+      "display": "Vous pouvez me donner du pain?",
+      "cue": "Could you give me some bread?",
+      "literal": "You can me to-give of-the bread?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "me",
+            "cue": "me · to me",
+            "tag": "delta",
+            "forms": [
+              "m'"
+            ],
+            "note": "The object pronoun, and it goes IN FRONT of the verb it belongs to — here the infinitive donner. Before a vowel it elides to m'."
+          },
+          {
+            "display": "donner",
+            "cue": "to give",
+            "tag": "free",
+            "forms": [],
+            "note": "A regular -er infinitive. It takes a thing and a person: donner du pain à quelqu'un, or with a pronoun in front, me donner du pain."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "me sits between pouvez and donner, where English would put nothing. French object pronouns go in front of the verb they belong to, and here that verb is the infinitive.",
+      "sound": "voo poo-VAY muh do-NAY dü PAN. me is short and leans onto the verb.",
+      "variations": [
+        {
+          "display": "Tu peux me donner du pain?",
+          "cue": "Can you give me some bread?",
+          "changed": "to a friend"
+        },
+        {
+          "display": "Vous pouvez me donner l'addition?",
+          "cue": "Could you give me the bill?",
+          "changed": "a definite thing, so no partitive"
+        },
+        {
+          "display": "Je peux te donner du pain",
+          "cue": "I can give you some bread",
+          "changed": "the other pronoun, and the other direction"
+        }
+      ],
+      "mistake": {
+        "display": "Vous pouvez donner me du pain?",
+        "why": "The pronoun goes in front: Vous pouvez me donner du pain?"
+      },
+      "usage": "Asking for anything at a table.",
+      "register": "formal",
+      "mnemonic": "The pronoun goes in front of its verb."
+    },
+    {
+      "id": "L2-M5-S05",
+      "display": "Encore du café?",
+      "cue": "More coffee?",
+      "literal": "Again of-the coffee?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "encore",
+            "cue": "more · again · still",
+            "tag": "delta",
+            "forms": [],
+            "note": "Three jobs on one word. Encore du café? is the offer; il est encore là is \"he's still there\", and the sentence says which."
+          },
+          {
+            "display": "désirez",
+            "cue": "would you like (formal)",
+            "tag": "free",
+            "forms": [],
+            "note": "What a waiter says: Vous désirez? It is more formal than vouloir and is almost only heard in that one question."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "The offer is made with encore rather than with a word for \"more\", which keeps plus free for the comparative M9 needs. Encore is what a host actually says.",
+      "sound": "on-KOR dü ka-FAY. The en is nasal and the r is at the back.",
+      "variations": [
+        {
+          "display": "Encore de la soupe?",
+          "cue": "More soup?",
+          "changed": "a feminine noun"
+        },
+        {
+          "display": "Encore du pain?",
+          "cue": "More bread?",
+          "changed": "a different thing"
+        },
+        {
+          "display": "Vous désirez?",
+          "cue": "What would you like?",
+          "changed": "the waiter's own question"
+        }
+      ],
+      "mistake": {
+        "display": "Encore le café?",
+        "why": "An unspecified amount takes the partitive: Encore du café?"
+      },
+      "usage": "Offering a refill — at home, or at a table.",
+      "register": "neutral",
+      "mnemonic": "encore does more, again and still."
+    },
+    {
+      "id": "L2-M5-S06",
+      "display": "Non merci, c'est très gentil",
+      "cue": "No thank you, that's very kind",
+      "literal": "No thanks, it-is very kind",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "verre",
+            "cue": "glass",
+            "tag": "free",
+            "forms": [
+              "verres"
+            ],
+            "note": "A drinking glass and the material alike. It is a homophone of vert, M2's green, and the spelling is the only difference."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "A French refusal is softened with a COMPLIMENT rather than a reason. Non merci, j'ai déjà mangé is correct and lands flat; C'est très gentil is what makes the no warm.",
+      "sound": "non mer-SEE say treh zhon-TEE. The final l of gentil is silent.",
+      "variations": [
+        {
+          "display": "Non merci, ça va",
+          "cue": "No thanks, I'm fine",
+          "changed": "L1-M2's phrase doing the refusal"
+        },
+        {
+          "display": "Non merci, c'est très bon",
+          "cue": "No thanks, it's very good",
+          "changed": "the compliment on the food itself"
+        },
+        {
+          "display": "C'est très gentil, mais ça va",
+          "cue": "That's very kind, but I'm fine",
+          "changed": "both halves, joined with mais"
+        }
+      ],
+      "mistake": {
+        "display": "Non",
+        "why": "A bare no is cold: Non merci, c'est très gentil."
+      },
+      "usage": "Declining a second helping, and it ends the matter — a French host does not insist.",
+      "register": "neutral",
+      "mnemonic": "Soften a no with a compliment, not a reason."
+    },
+    {
+      "id": "L2-M5-S07",
+      "display": "Je voudrais du poisson, pas de viande",
+      "cue": "I'd like fish, not meat",
+      "literal": "I would-like of-the fish, not of meat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "poisson",
+            "cue": "fish",
+            "tag": "interference",
+            "forms": [
+              "poissons"
+            ],
+            "note": "With one s it would be poison, which means what it looks like. The double s is what keeps them apart, and it is heard."
+          },
+          {
+            "display": "légumes",
+            "cue": "vegetables",
+            "tag": "free",
+            "forms": [
+              "légume"
+            ],
+            "note": "Masculine and plural in ordinary use: des légumes. The singular is heard mostly in a shop's labelling."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "One sentence, both halves of the rule: du poisson where there is no negation, de viande where there is. Nothing else in the sentence changed.",
+      "sound": "dü pwa-SON pa duh VYAND. The double s is a hiss and the single s of poison would be a z.",
+      "variations": [
+        {
+          "display": "Je voudrais des légumes, pas de viande",
+          "cue": "I'd like vegetables, not meat",
+          "changed": "a plural partitive on the positive half"
+        },
+        {
+          "display": "Je voudrais du poisson",
+          "cue": "I'd like fish",
+          "changed": "the positive half alone"
+        },
+        {
+          "display": "Pas de viande, s'il vous plaît",
+          "cue": "No meat, please",
+          "changed": "the negative half alone"
+        }
+      ],
+      "mistake": {
+        "display": "Je voudrais du poisson, pas de la viande",
+        "why": "The negation flattens it: pas de viande."
+      },
+      "usage": "Ordering with a restriction, which is what most orders are.",
+      "register": "formal",
+      "mnemonic": "One sentence, both halves of the rule."
+    },
+    {
+      "id": "L2-M5-S08",
+      "display": "Un verre d'eau, s'il vous plaît",
+      "cue": "A glass of water, please",
+      "literal": "A glass of-water, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "assiette",
+            "cue": "plate",
+            "tag": "free",
+            "forms": [
+              "assiettes"
+            ],
+            "note": "Feminine, and it starts with a vowel — l'assiette. Une assiette de soupe is a plate of soup, with de and no article."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "d'eau is L1-M8's own key, one token with the apostrophe inside it. A container plus de plus a bare noun is the shape, and the article never comes back.",
+      "sound": "un VEHR DO seel voo PLEH. d'eau is one syllable with a pure o.",
+      "variations": [
+        {
+          "display": "Une assiette de soupe, s'il vous plaît",
+          "cue": "A plate of soup, please",
+          "changed": "a different container and a different thing"
+        },
+        {
+          "display": "Un verre de lait, s'il vous plaît",
+          "cue": "A glass of milk, please",
+          "changed": "a thing with no elision"
+        },
+        {
+          "display": "Deux verres d'eau, s'il vous plaît",
+          "cue": "Two glasses of water, please",
+          "changed": "plural on the container only"
+        }
+      ],
+      "mistake": {
+        "display": "Un verre de l'eau, s'il vous plaît",
+        "why": "A container takes bare de: Un verre d'eau, s'il vous plaît."
+      },
+      "usage": "At any table, and the water is free if you ask for it this way.",
+      "register": "formal",
+      "mnemonic": "A container takes de and nothing else."
+    },
+    {
+      "id": "L2-M5-S09",
+      "display": "Vous pouvez me donner l'addition?",
+      "cue": "Could you give me the bill?",
+      "literal": "You can me to-give the-bill?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "te",
+            "cue": "you · to you (one friend)",
+            "tag": "free",
+            "forms": [
+              "t'"
+            ],
+            "note": "me's tu partner, and it goes in the same place — in front of the verb. Before a vowel it elides to t'."
+          },
+          {
+            "display": "dessert",
+            "cue": "dessert",
+            "tag": "free",
+            "forms": [
+              "desserts"
+            ],
+            "note": "Two s's, and both are heard as a hiss. With one it would be désert, a desert — the same trap as poisson and poison."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The bill has to be asked for. A French waiter will not bring it unprompted, and this is the sentence that ends every meal.",
+      "sound": "voo poo-VAY muh do-NAY la-dee-SYON. The elision joins l' straight onto addition.",
+      "variations": [
+        {
+          "display": "L'addition, s'il vous plaît",
+          "cue": "The bill, please",
+          "changed": "the short version — perfectly polite"
+        },
+        {
+          "display": "Vous pouvez me donner le dessert?",
+          "cue": "Could you bring me the dessert?",
+          "changed": "a different thing"
+        },
+        {
+          "display": "Tu peux me donner l'addition?",
+          "cue": "Can you give me the bill?",
+          "changed": "to a friend"
+        }
+      ],
+      "mistake": {
+        "display": "Vous pouvez me donner le addition?",
+        "why": "A vowel takes the elided article: me donner l'addition?"
+      },
+      "usage": "The last thing said at every French table.",
+      "register": "formal",
+      "mnemonic": "The bill comes when you ask, and not before."
+    },
+    {
+      "id": "L2-M5-S10",
+      "display": "Il n'y a pas de dessert",
+      "cue": "There isn't any dessert",
+      "literal": "It not-there has not of dessert",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "n'y",
+            "cue": "not there (in il n'y a pas)",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M7's il y a with ne squeezed into it and elided: il n'y a pas. The apostrophe fuses ne and y into one token, so this is its own index key."
+          },
+          {
+            "display": "riz",
+            "cue": "rice",
+            "tag": "free",
+            "forms": [],
+            "note": "The z is silent, so it sounds like ri. Its plural is also riz — a word ending in z never adds an s."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "L1-M7's il y a is negated here, and the partitive goes flat with it. Three separate L1 pieces meet in this one sentence and none of them is new.",
+      "sound": "eel nya pa duh de-SEHR. The n'y a runs together as a single syllable.",
+      "variations": [
+        {
+          "display": "Il n'y a pas de riz",
+          "cue": "There isn't any rice",
+          "changed": "a different thing"
+        },
+        {
+          "display": "Il n'y a pas de pain",
+          "cue": "There isn't any bread",
+          "changed": "a different thing"
+        },
+        {
+          "display": "Il y a du riz",
+          "cue": "There is some rice",
+          "changed": "the positive, where the partitive survives"
+        }
+      ],
+      "mistake": {
+        "display": "Il n'y a pas du dessert",
+        "why": "The negation flattens it: Il n'y a pas de dessert."
+      },
+      "usage": "Saying what a place has run out of.",
+      "register": "neutral",
+      "mnemonic": "Negation in, article out."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M5-C01",
+      "display": "Je voudrais du pain, s'il vous plaît",
+      "cue": "I'd like some bread, please"
+    },
+    {
+      "id": "L2-M5-C02",
+      "display": "Je ne veux pas de café",
+      "cue": "I don't want any coffee"
+    },
+    {
+      "id": "L2-M5-C03",
+      "display": "Pour moi, un café",
+      "cue": "A coffee for me"
+    },
+    {
+      "id": "L2-M5-C04",
+      "display": "Vous pouvez me donner du pain?",
+      "cue": "Could you give me some bread?"
+    },
+    {
+      "id": "L2-M5-C05",
+      "display": "Encore du café?",
+      "cue": "More coffee?"
+    },
+    {
+      "id": "L2-M5-C06",
+      "display": "Non merci, c'est très gentil",
+      "cue": "No thank you, that's very kind"
+    },
+    {
+      "id": "L2-M5-C07",
+      "display": "Je voudrais du poisson, pas de viande",
+      "cue": "I'd like fish, not meat"
+    },
+    {
+      "id": "L2-M5-C08",
+      "display": "Un verre d'eau, s'il vous plaît",
+      "cue": "A glass of water, please"
+    },
+    {
+      "id": "L2-M5-C09",
+      "display": "Vous pouvez me donner l'addition?",
+      "cue": "Could you give me the bill?"
+    },
+    {
+      "id": "L2-M5-C10",
+      "display": "Il n'y a pas de dessert",
+      "cue": "There isn't any dessert"
+    },
+    {
+      "id": "L2-M5-C11",
+      "display": "Je ne mange pas de viande",
+      "cue": "I don't eat meat"
+    },
+    {
+      "id": "L2-M5-C12",
+      "display": "L'addition, s'il vous plaît",
+      "cue": "The bill, please"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

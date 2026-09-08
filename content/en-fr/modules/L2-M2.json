@@ -1,0 +1,804 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M2",
+  "title": "Describing people",
+  "job": "Appearance, character, relationships",
+  "prerequisites": [
+    "L2-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Il/Elle est + Adj",
+      "Il/Elle a + les + N + Adj",
+      "Elle a + <number> + ans",
+      "mon/ma/mes + N-family",
+      "son/sa/ses + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "AGE TAKES AVOIR: elle a trente ans, not elle est trente. L1-M9 already shipped an and ans, so only the verb choice is new — and it is the single most reliable English error in French. Features take avoir too: il a les cheveux bruns, elle a les yeux verts."
+    },
+    {
+      "tag": "delta",
+      "text": "A POSSESSIVE AGREES WITH THE THING POSSESSED, not with the owner. sa voiture is his car AND her car; son frère is her brother AND his. English marks the owner and French marks the noun, so a learner hunting for a masculine word to mean \"his\" gets it exactly backwards — the gender in the sentence belongs to what is owned."
+    },
+    {
+      "tag": "interference",
+      "text": "Before a vowel the FEMININE possessive borrows the masculine shape: mon amie, ton école, son adresse. It is not a gender change — amie is still feminine — it is that French will not put ma in front of a vowel. The sound decides the spelling, which is the same instinct behind bel and vieil in the next module."
+    },
+    {
+      "tag": "free",
+      "text": "The article goes where English wants a possessive: il a les cheveux bruns, never ses cheveux, in this frame. Whose hair it is was never in doubt, so French does not say it — the same habit Italian and Spanish both have."
+    },
+    {
+      "tag": "interference",
+      "text": "Two words carry two jobs each and no second row can take them back. femme is \"woman\" and \"wife\"; fille is \"girl\" and \"daughter\". Only the sentence around them says which, and both notes are written true of both readings."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M2-S01",
+      "display": "Elle a trente ans",
+      "cue": "She's thirty",
+      "literal": "She has thirty years",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "a",
+            "cue": "has (il/elle)",
+            "tag": "free",
+            "forms": [],
+            "note": "The third-person cell of avoir, beside L1-M5's ai and avez. One letter, and the à with an accent is a different word entirely."
+          },
+          {
+            "display": "trente",
+            "cue": "thirty",
+            "tag": "free",
+            "forms": [],
+            "note": "The final e is silent but it is what stops the t before it from disappearing too — trente ends in a t sound and vingt does not."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "elle est trente is what an English speaker says and it means nothing. In French you HAVE your years, and the noun ans can never be dropped.",
+      "sound": "el a TRAHNT ahn. The an of ans is nasal, and the s is silent.",
+      "variations": [
+        {
+          "display": "Il a trente ans",
+          "cue": "He's thirty",
+          "changed": "a man — nothing else moves"
+        },
+        {
+          "display": "Elle a vingt ans",
+          "cue": "She's twenty",
+          "changed": "a different number"
+        },
+        {
+          "display": "Il a dix ans",
+          "cue": "He's ten",
+          "changed": "a child"
+        }
+      ],
+      "mistake": {
+        "display": "Elle est trente",
+        "why": "Age is had: Elle a trente ans."
+      },
+      "usage": "Saying how old someone is, which comes up early in every conversation.",
+      "register": "neutral",
+      "mnemonic": "You have your years, you do not be them."
+    },
+    {
+      "id": "L2-M2-S02",
+      "display": "Il a les cheveux bruns",
+      "cue": "He has brown hair",
+      "literal": "He has the hairs brown",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cheveux",
+            "cue": "hair (on the head)",
+            "tag": "delta",
+            "forms": [
+              "cheveu"
+            ],
+            "note": "PLURAL in French — the hairs — so its adjective is plural too. The singular cheveu is one single hair."
+          },
+          {
+            "display": "brun",
+            "cue": "brown",
+            "tag": "free",
+            "forms": [
+              "brune",
+              "bruns",
+              "brunes"
+            ],
+            "note": "For hair and eyes. marron is the everyday brown for objects and does not agree at all, being a noun — a chestnut."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "There is an article where English has a possessive. il a LES cheveux is what is said, and ses cheveux in this frame would sound as though somebody else's hair were also in question.",
+      "sound": "eel a lay shuh-VUH BRUHN. The eux is a rounded vowel with no consonant after it.",
+      "variations": [
+        {
+          "display": "Elle a les cheveux bruns",
+          "cue": "She has brown hair",
+          "changed": "a woman — and the adjective follows the hair, not her"
+        },
+        {
+          "display": "Il a les yeux bruns",
+          "cue": "He has brown eyes",
+          "changed": "a different feature"
+        },
+        {
+          "display": "Elle a les cheveux gris",
+          "cue": "She has grey hair",
+          "changed": "a different colour"
+        }
+      ],
+      "mistake": {
+        "display": "Il a ses cheveux bruns",
+        "why": "The article does the work: Il a les cheveux bruns."
+      },
+      "usage": "Describing someone so they can be found in a crowd.",
+      "register": "neutral",
+      "mnemonic": "French has THE hair, not YOUR hair."
+    },
+    {
+      "id": "L2-M2-S03",
+      "display": "Elle a les yeux verts",
+      "cue": "She has green eyes",
+      "literal": "She has the eyes green",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yeux",
+            "cue": "eyes",
+            "tag": "interference",
+            "forms": [
+              "œil"
+            ],
+            "note": "Its singular is œil, which shares no letters with it at all. That is the most irregular plural in the language and it simply has to be learnt."
+          },
+          {
+            "display": "vert",
+            "cue": "green",
+            "tag": "free",
+            "forms": [
+              "verte",
+              "verts",
+              "vertes"
+            ],
+            "note": "Four cells. The t is silent in the masculine and sounded in the feminine — verte — which is how most French adjectives work."
+          },
+          {
+            "display": "gris",
+            "cue": "grey",
+            "tag": "free",
+            "forms": [
+              "grise",
+              "grises"
+            ],
+            "note": "Its masculine plural is also gris, because it already ends in s. Adjectives ending in s or x never take another one."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "œil and yeux are the same word and look nothing alike. The ligature œ is one letter and must be written — writing oeil would make it a different word to the index.",
+      "sound": "el a lay-ZYUH VER. The s of les links onto the y and is heard as a z.",
+      "variations": [
+        {
+          "display": "Il a les yeux verts",
+          "cue": "He has green eyes",
+          "changed": "a man"
+        },
+        {
+          "display": "Elle a les yeux gris",
+          "cue": "She has grey eyes",
+          "changed": "a colour that does not add an s"
+        },
+        {
+          "display": "Elle a les cheveux verts",
+          "cue": "She has green hair",
+          "changed": "a different feature, same colour"
+        }
+      ],
+      "mistake": {
+        "display": "Elle a les yeux vert",
+        "why": "The adjective follows yeux: Elle a les yeux verts."
+      },
+      "usage": "The other half of a description, after the hair.",
+      "register": "neutral",
+      "mnemonic": "œil and yeux — one word, two shapes, no overlap."
+    },
+    {
+      "id": "L2-M2-S04",
+      "display": "C'est mon frère",
+      "cue": "This is my brother",
+      "literal": "It-is my brother",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mon",
+            "cue": "my (masculine)",
+            "tag": "delta",
+            "forms": [],
+            "note": "It agrees with what is owned. mon frère whoever is speaking — the owner's own gender never enters it."
+          },
+          {
+            "display": "ma",
+            "cue": "my (feminine)",
+            "tag": "delta",
+            "forms": [],
+            "note": "ma sœur, ma voiture. Before a vowel it becomes mon — mon amie — because French will not say ma before a vowel."
+          },
+          {
+            "display": "mes",
+            "cue": "my (plural)",
+            "tag": "free",
+            "forms": [],
+            "note": "One form for both genders in the plural: mes frères, mes sœurs. The plural is always the easy cell in this system."
+          },
+          {
+            "display": "frère",
+            "cue": "brother",
+            "tag": "free",
+            "forms": [
+              "frères"
+            ],
+            "note": "The è takes a grave accent, which is a letter and not decoration — frere would be a different key entirely."
+          },
+          {
+            "display": "sont",
+            "cue": "they are",
+            "tag": "free",
+            "forms": [
+              "ce sont"
+            ],
+            "note": "The third-person plural of être, and Ce sont is what introduces more than one person — C'est goes singular, Ce sont goes plural, and English uses \"this is\" for both."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The possessive is chosen by frère and by nothing else. A woman saying this still says mon frère, because the word agrees with the brother.",
+      "sound": "say mon FREHR. The on of mon is nasal, and the è is an open e.",
+      "variations": [
+        {
+          "display": "C'est ma sœur",
+          "cue": "This is my sister",
+          "changed": "a feminine relative"
+        },
+        {
+          "display": "Ce sont mes frères",
+          "cue": "These are my brothers",
+          "changed": "plural, and the verb moves too"
+        },
+        {
+          "display": "C'est mon père",
+          "cue": "This is my father",
+          "changed": "a different relative"
+        }
+      ],
+      "mistake": {
+        "display": "C'est ma frère",
+        "why": "frère is masculine: C'est mon frère."
+      },
+      "usage": "Introducing family, or handing round a photograph.",
+      "register": "neutral",
+      "mnemonic": "The possessive agrees with what is owned."
+    },
+    {
+      "id": "L2-M2-S05",
+      "display": "C'est sa voiture",
+      "cue": "That's his car",
+      "literal": "It-is his/her car",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "son",
+            "cue": "his · her (masculine thing)",
+            "tag": "delta",
+            "forms": [],
+            "note": "One word for both, because it agrees with the thing. son frère is her brother AND his, and nothing in the sentence says which."
+          },
+          {
+            "display": "sa",
+            "cue": "his · her (feminine thing)",
+            "tag": "delta",
+            "forms": [],
+            "note": "sa voiture is his car and her car alike. English marks the owner here and French refuses to."
+          },
+          {
+            "display": "ses",
+            "cue": "his · her (plural)",
+            "tag": "free",
+            "forms": [],
+            "note": "The plural, and still silent about the owner. ses enfants is his children or hers."
+          },
+          {
+            "display": "enfant",
+            "cue": "child",
+            "tag": "free",
+            "forms": [
+              "enfants"
+            ],
+            "note": "One word for a boy or a girl, and its article does the gender work: un enfant, une enfant. It never changes shape for sex."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "This is the module's real delta and it is worth saying twice: sa voiture does not mean \"her car\". It means the car of somebody, and the a is there because voiture is feminine.",
+      "sound": "say sa vwa-TÜR. The ur ends in the rounded ü, not the oo of English.",
+      "variations": [
+        {
+          "display": "C'est son frère",
+          "cue": "That's his brother",
+          "changed": "a masculine thing — and still silent about the owner"
+        },
+        {
+          "display": "Ce sont ses enfants",
+          "cue": "Those are his children",
+          "changed": "plural"
+        },
+        {
+          "display": "C'est sa fille",
+          "cue": "That's his daughter",
+          "changed": "a feminine relative"
+        }
+      ],
+      "mistake": {
+        "display": "C'est son voiture",
+        "why": "voiture is feminine: C'est sa voiture."
+      },
+      "usage": "Talking about a third person's things or family.",
+      "register": "neutral",
+      "mnemonic": "The gender in the sentence is the thing's, not the owner's."
+    },
+    {
+      "id": "L2-M2-S06",
+      "display": "C'est mon amie",
+      "cue": "This is my friend",
+      "literal": "It-is my friend",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ami",
+            "cue": "friend (male)",
+            "tag": "free",
+            "forms": [
+              "amis"
+            ],
+            "note": "Mon ami can mean a boyfriend as well as a friend, and the context decides. Un ami is the safer way to say the second thing."
+          },
+          {
+            "display": "amie",
+            "cue": "friend (female)",
+            "tag": "interference",
+            "forms": [
+              "amies"
+            ],
+            "note": "Feminine, and it still takes MON — mon amie — because it starts with a vowel. The word has not changed gender; the sound has forced the spelling."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "mon amie is feminine. That is the whole point of the rule, and a learner who reads mon as a gender signal will get this wrong every time it appears.",
+      "sound": "say mon-na-MEE. The n of mon links onto the vowel and is fully sounded, which is the clue that a vowel follows.",
+      "variations": [
+        {
+          "display": "C'est mon ami",
+          "cue": "This is my friend",
+          "changed": "a male friend — spelled one letter shorter, said the same"
+        },
+        {
+          "display": "C'est ton amie",
+          "cue": "This is your friend",
+          "changed": "the tu possessive, borrowing the same shape"
+        },
+        {
+          "display": "Ce sont mes amies",
+          "cue": "These are my friends",
+          "changed": "plural, where the rule does not apply at all"
+        }
+      ],
+      "mistake": {
+        "display": "C'est ma amie",
+        "why": "A vowel takes mon: C'est mon amie."
+      },
+      "usage": "Introducing someone, and the shape that trips every learner once.",
+      "register": "neutral",
+      "mnemonic": "The sound decides, not the gender."
+    },
+    {
+      "id": "L2-M2-S07",
+      "display": "Ton père est très gentil",
+      "cue": "Your father is very kind",
+      "literal": "Your father is very kind",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ton",
+            "cue": "your (masculine, to a friend)",
+            "tag": "free",
+            "forms": [],
+            "note": "The tu possessive, and it follows mon's rules exactly — including borrowing its shape before a vowel, as in ton amie."
+          },
+          {
+            "display": "ta",
+            "cue": "your (feminine, to a friend)",
+            "tag": "free",
+            "forms": [
+              "tes"
+            ],
+            "note": "ta sœur, and tes for the plural. The whole set mirrors mon, ma, mes with a t."
+          },
+          {
+            "display": "père",
+            "cue": "father",
+            "tag": "free",
+            "forms": [
+              "pères"
+            ],
+            "note": "The neutral word. papa is what a child says and what an adult says warmly, exactly as in English."
+          },
+          {
+            "display": "gentil",
+            "cue": "kind",
+            "tag": "free",
+            "forms": [
+              "gentille",
+              "gentils",
+              "gentilles"
+            ],
+            "note": "The l is silent in the masculine and the feminine gentille ends in a soft y sound. Same word, two quite different endings."
+          },
+          {
+            "display": "sympa",
+            "cue": "nice · friendly",
+            "tag": "free",
+            "forms": [],
+            "note": "Short for sympathique and invariable in speech — il est sympa, elle est sympa. It is the everyday compliment, where gentil is about kindness specifically."
+          },
+          {
+            "display": "parents",
+            "cue": "parents",
+            "tag": "free",
+            "forms": [],
+            "note": "Plural by default. It also means \"relatives\" in older and formal use, which is where the English word came from."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Character goes to être, and only age and features go to avoir. Il est gentil but il a trente ans — and the split is by what is being said, not by the person.",
+      "sound": "ton PEHR eh treh zhon-TEE. The final l of gentil is not sounded.",
+      "variations": [
+        {
+          "display": "Ta mère est très gentille",
+          "cue": "Your mother is very kind",
+          "changed": "feminine throughout — three words move"
+        },
+        {
+          "display": "Ton père est très sympa",
+          "cue": "Your father is very nice",
+          "changed": "a different quality"
+        },
+        {
+          "display": "Tes parents sont très gentils",
+          "cue": "Your parents are very kind",
+          "changed": "plural"
+        }
+      ],
+      "mistake": {
+        "display": "Ton père a très gentil",
+        "why": "Character takes être: Ton père est très gentil."
+      },
+      "usage": "Talking about someone's family to them.",
+      "register": "informal",
+      "mnemonic": "être for what you are, avoir for years and features."
+    },
+    {
+      "id": "L2-M2-S08",
+      "display": "Ma sœur est très intelligente",
+      "cue": "My sister is very intelligent",
+      "literal": "My sister is very intelligent",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sœur",
+            "cue": "sister",
+            "tag": "interference",
+            "forms": [
+              "sœurs"
+            ],
+            "note": "The œ is ONE letter and must be written as one — soeur would be a different key. The vowel is rounded and open, close to the eu of cheveux."
+          },
+          {
+            "display": "intelligent",
+            "cue": "intelligent · clever",
+            "tag": "free",
+            "forms": [
+              "intelligente",
+              "intelligents",
+              "intelligentes"
+            ],
+            "note": "The masculine ends in a nasal vowel with no t sounded; the feminine intelligente sounds the t. That is the ordinary French pattern."
+          },
+          {
+            "display": "mère",
+            "cue": "mother",
+            "tag": "free",
+            "forms": [
+              "mères"
+            ],
+            "note": "père's pair, with the same grave accent. maman stands beside it as papa stands beside père."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The ligature is not a typographic flourish. sœur and soeur are two different surfaces to the index, and only one of them has a row behind it.",
+      "sound": "ma SUHR eh treh zan-tay-lee-ZHONT. The feminine ending is where the t finally gets said.",
+      "variations": [
+        {
+          "display": "Mon frère est très intelligent",
+          "cue": "My brother is very intelligent",
+          "changed": "masculine throughout"
+        },
+        {
+          "display": "Ma mère est très intelligente",
+          "cue": "My mother is very intelligent",
+          "changed": "a different relative"
+        },
+        {
+          "display": "Mes sœurs sont très intelligentes",
+          "cue": "My sisters are very intelligent",
+          "changed": "plural"
+        }
+      ],
+      "mistake": {
+        "display": "Ma sœur est très intelligent",
+        "why": "The adjective agrees: Ma sœur est très intelligente."
+      },
+      "usage": "Describing family, which is what these words are mostly for.",
+      "register": "neutral",
+      "mnemonic": "Write the ligature. It is one letter."
+    },
+    {
+      "id": "L2-M2-S09",
+      "display": "Ma femme est petite",
+      "cue": "My wife is small",
+      "literal": "My wife is small",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "femme",
+            "cue": "woman · wife",
+            "tag": "interference",
+            "forms": [
+              "femmes"
+            ],
+            "note": "One word for both, and only the sentence says which. Its spelling lies about the sound: it is said FAM, with an a."
+          },
+          {
+            "display": "mari",
+            "cue": "husband",
+            "tag": "free",
+            "forms": [
+              "maris"
+            ],
+            "note": "Only \"husband\" — the word for a man is homme. So the pair femme/mari is not symmetrical, which is worth noticing."
+          },
+          {
+            "display": "petit",
+            "cue": "small · short",
+            "tag": "free",
+            "forms": [
+              "petite",
+              "petits",
+              "petites"
+            ],
+            "note": "grand's opposite, and one of the few adjectives that goes BEFORE its noun: une petite maison. M3 gives the list."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "femme is said FAM and not FEM. It is the one word in the course where an e is pronounced as an a, and no rule covers it.",
+      "sound": "ma FAM eh puh-TEET. The feminine petite sounds its t; the masculine petit does not.",
+      "variations": [
+        {
+          "display": "Mon mari est petit",
+          "cue": "My husband is short",
+          "changed": "masculine throughout"
+        },
+        {
+          "display": "Ma femme est grande",
+          "cue": "My wife is tall",
+          "changed": "the opposite, with L1-M10's adjective"
+        },
+        {
+          "display": "C'est une petite femme",
+          "cue": "She's a small woman",
+          "changed": "the adjective in front of the noun"
+        }
+      ],
+      "mistake": {
+        "display": "Ma femme est petit",
+        "why": "The adjective agrees: Ma femme est petite."
+      },
+      "usage": "Introducing or describing a partner.",
+      "register": "neutral",
+      "mnemonic": "femme is said with an a."
+    },
+    {
+      "id": "L2-M2-S10",
+      "display": "Sa fille est jeune",
+      "cue": "His daughter is young",
+      "literal": "His/her daughter is young",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fille",
+            "cue": "girl · daughter",
+            "tag": "interference",
+            "forms": [
+              "filles"
+            ],
+            "note": "Two jobs on one word, like femme. The ll is a soft y — FEE-yuh — and the word for a son is fils, said FEESS with the l silent."
+          },
+          {
+            "display": "fils",
+            "cue": "son",
+            "tag": "interference",
+            "forms": [],
+            "note": "The l is silent and the s IS sounded, which is backwards from every other French word. Its plural is also fils."
+          },
+          {
+            "display": "jeune",
+            "cue": "young",
+            "tag": "free",
+            "forms": [
+              "jeunes"
+            ],
+            "note": "It ends in e already, so the feminine adds nothing. Adjectives like this have only two written forms."
+          },
+          {
+            "display": "vieux",
+            "cue": "old",
+            "tag": "delta",
+            "forms": [
+              "vieille",
+              "vieilles"
+            ],
+            "note": "Its feminine is vieille, which shares almost nothing with it. M3 adds the third shape, vieil, for the vowel case."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "fils and fille look like a pair and sound nothing alike: FEESS and FEE-yuh. The l is silent in one and a y in the other, which is as unhelpful as French spelling gets.",
+      "sound": "sa FEE-yuh eh ZHUHN. The ille is the soft y, and jeune ends in the rounded vowel.",
+      "variations": [
+        {
+          "display": "Son fils est jeune",
+          "cue": "His son is young",
+          "changed": "a masculine relative"
+        },
+        {
+          "display": "Sa fille est très jeune",
+          "cue": "His daughter is very young",
+          "changed": "with très"
+        },
+        {
+          "display": "Son père est vieux",
+          "cue": "His father is old",
+          "changed": "the opposite age"
+        }
+      ],
+      "mistake": {
+        "display": "Son fille est jeune",
+        "why": "fille is feminine: Sa fille est jeune."
+      },
+      "usage": "Talking about someone else's children.",
+      "register": "neutral",
+      "mnemonic": "fils sounds its s; fille sounds a y."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M2-C01",
+      "display": "Elle a trente ans",
+      "cue": "She's thirty"
+    },
+    {
+      "id": "L2-M2-C02",
+      "display": "Il a les cheveux bruns",
+      "cue": "He has brown hair"
+    },
+    {
+      "id": "L2-M2-C03",
+      "display": "Elle a les yeux verts",
+      "cue": "She has green eyes"
+    },
+    {
+      "id": "L2-M2-C04",
+      "display": "C'est mon frère",
+      "cue": "This is my brother"
+    },
+    {
+      "id": "L2-M2-C05",
+      "display": "C'est sa voiture",
+      "cue": "That's his car"
+    },
+    {
+      "id": "L2-M2-C06",
+      "display": "C'est mon amie",
+      "cue": "This is my friend"
+    },
+    {
+      "id": "L2-M2-C07",
+      "display": "Ton père est très gentil",
+      "cue": "Your father is very kind"
+    },
+    {
+      "id": "L2-M2-C08",
+      "display": "Ma sœur est très intelligente",
+      "cue": "My sister is very intelligent"
+    },
+    {
+      "id": "L2-M2-C09",
+      "display": "Ma femme est petite",
+      "cue": "My wife is small"
+    },
+    {
+      "id": "L2-M2-C10",
+      "display": "Sa fille est jeune",
+      "cue": "His daughter is young"
+    },
+    {
+      "id": "L2-M2-C11",
+      "display": "C'est ma sœur",
+      "cue": "This is my sister"
+    },
+    {
+      "id": "L2-M2-C12",
+      "display": "Son père est vieux",
+      "cue": "His father is old"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

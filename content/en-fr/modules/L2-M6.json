@@ -1,0 +1,675 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M6",
+  "title": "Making plans together",
+  "job": "Invitations, suggestions, settling a time",
+  "prerequisites": [
+    "L2-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "On va + à + <place> + ?",
+      "Tu es libre + <day> + ?",
+      "Ça te dit de + V-inf + ?",
+      "On se voit à + <hour>",
+      "D'accord + , + à + <day>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "IN EVERYDAY FRENCH, on IS \"WE\". On va au cinéma?, On se voit demain? — and it takes the THIRD-PERSON SINGULAR verb, so every form the learner needs is already theirs from L1's il and elle sentences. nous exists and is written; in speech it is the formal or emphatic one. A course that taught nous allons first would give the learner a sentence they will rarely hear."
+    },
+    {
+      "tag": "free",
+      "text": "Plans are made among friends, so this module runs on tu and on, and M4's vous is deliberately absent. An invitation in the vous forms is not wrong — it is a business appointment, which is M7's scene. None of the suggestion frames needs a new tense: L1-M6's aller plus an infinitive already carries the future."
+    },
+    {
+      "tag": "delta",
+      "text": "THE ARTICLE ON A DAY MEANS \"EVERY\". le lundi is Mondays in general — L1-M4's own two-token surface — and bare lundi is this coming Monday. English marks that with a plural and French with an article, and the learner has been saying the phrase for two levels without ever meeting the bare word."
+    },
+    {
+      "tag": "free",
+      "text": "The clock adds et demie and et quart to L1-M4's à sept heures. The quarter-to form is moins le quart, and this course does not show it here: moins is M9's key and its first note has to be the comparative one. When M9 opens it, the clock use comes with it."
+    },
+    {
+      "tag": "free",
+      "text": "Settling is done with d'accord, ça marche and super, and signing off with à plus the day — à demain, à lundi. That à is L1-M4's row doing a third job, so nothing new is opened for it; the phrase is the useful unit."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M6-S01",
+      "display": "On va au cinéma ce soir?",
+      "cue": "Shall we go to the cinema tonight?",
+      "literal": "One goes to-the cinema this evening?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "on",
+            "cue": "we (everyday) · one",
+            "tag": "delta",
+            "forms": [],
+            "note": "It takes the same verb form as il and elle, so it costs no conjugation at all. In speech it has almost entirely replaced nous."
+          },
+          {
+            "display": "cinéma",
+            "cue": "cinema",
+            "tag": "free",
+            "forms": [
+              "cinémas"
+            ],
+            "note": "The é is a letter with its accent. au cinéma is at or to the cinema alike — French does not distinguish."
+          },
+          {
+            "display": "y",
+            "cue": "there",
+            "tag": "free",
+            "forms": [],
+            "note": "It stands in for a place already named. On y va is \"shall we go\" with the destination understood, and like every clitic it sits in front of the verb."
+          },
+          {
+            "display": "nous",
+            "cue": "we (formal)",
+            "tag": "free",
+            "forms": [
+              "allons"
+            ],
+            "note": "The written and emphatic \"we\", with its own verb ending — nous allons. In speech on has almost entirely replaced it, which is why this module teaches on first."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "on va looks like \"one goes\" and means \"we're going\". The verb is singular and the meaning is plural, and there is nothing in the sentence to warn an English speaker of it.",
+      "sound": "on va o see-nay-MA. The on is nasal, and no n is said.",
+      "variations": [
+        {
+          "display": "On va au marché demain?",
+          "cue": "Shall we go to the market tomorrow?",
+          "changed": "a different place and time"
+        },
+        {
+          "display": "On y va?",
+          "cue": "Shall we go?",
+          "changed": "the shortest invitation there is"
+        },
+        {
+          "display": "Nous allons au cinéma ce soir",
+          "cue": "We are going to the cinema tonight",
+          "changed": "the formal we — written far more than it is said"
+        }
+      ],
+      "mistake": {
+        "display": "On vont au cinéma ce soir?",
+        "why": "on takes the singular verb: On va au cinéma ce soir?"
+      },
+      "usage": "Suggesting something to a friend. With a stranger the same sentence would be forward.",
+      "register": "informal",
+      "mnemonic": "on is we, and it takes a singular verb."
+    },
+    {
+      "id": "L2-M6-S02",
+      "display": "Ça te dit de venir?",
+      "cue": "Do you fancy coming?",
+      "literal": "That to-you says of to-come?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dit",
+            "cue": "says · appeals",
+            "tag": "delta",
+            "forms": [
+              "d'aller"
+            ],
+            "note": "Ça te dit is literally \"does that speak to you\". The thing offered is the subject and te names who it is offered to — the same shape as L1's ça va. Before a vowel the de that follows elides: d'aller."
+          },
+          {
+            "display": "ensemble",
+            "cue": "together",
+            "tag": "free",
+            "forms": [],
+            "note": "Invariable, and it goes after the verb: On y va ensemble. The en is nasal and the final e is silent."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The de is compulsory in front of a verb and absent in front of a noun: Ça te dit de venir? but Ça te dit, un café? Both are ordinary, and only what follows decides.",
+      "sound": "sa tuh DEE duh vuh-NEER. dit is one syllable and the t is silent.",
+      "variations": [
+        {
+          "display": "Ça te dit d'aller au cinéma?",
+          "cue": "Do you fancy going to the cinema?",
+          "changed": "an elided de in front of a vowel"
+        },
+        {
+          "display": "Ça te dit, un café?",
+          "cue": "Do you fancy a coffee?",
+          "changed": "a noun, so no de"
+        },
+        {
+          "display": "Ça te dit de venir ensemble?",
+          "cue": "Do you fancy coming along?",
+          "changed": "with ensemble on the end"
+        }
+      ],
+      "mistake": {
+        "display": "Ça te dit venir?",
+        "why": "A verb needs de: Ça te dit de venir?"
+      },
+      "usage": "The lightest invitation there is — easy to accept and easy to turn down.",
+      "register": "informal",
+      "mnemonic": "de before a verb, nothing before a noun."
+    },
+    {
+      "id": "L2-M6-S03",
+      "display": "Tu es libre mardi?",
+      "cue": "Are you free on Tuesday?",
+      "literal": "You are free Tuesday?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "libre",
+            "cue": "free (available)",
+            "tag": "interference",
+            "forms": [
+              "libres"
+            ],
+            "note": "Available, not free of charge — that is gratuit. An -e adjective, so it marks number only."
+          },
+          {
+            "display": "mardi",
+            "cue": "Tuesday",
+            "tag": "free",
+            "forms": [],
+            "note": "No preposition in front of it. French puts the bare day where English needs \"on\", and days are not capitalised."
+          },
+          {
+            "display": "mercredi",
+            "cue": "Wednesday",
+            "tag": "free",
+            "forms": [],
+            "note": "Every weekday name ends in -di, which is \"day\". The stress in French falls at the end of a phrase rather than on a syllable of a word."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "There is no preposition before a day. Adding en or à is the error, and it comes from English's \"on Tuesday\" having a word in it.",
+      "sound": "tü eh LEEBR mar-DEE. libre ends in a consonant cluster with no vowel after it.",
+      "variations": [
+        {
+          "display": "Tu es libre mercredi?",
+          "cue": "Are you free on Wednesday?",
+          "changed": "a different day"
+        },
+        {
+          "display": "Vous êtes libre mardi?",
+          "cue": "Are you free on Tuesday?",
+          "changed": "to someone you do not know"
+        },
+        {
+          "display": "Je suis libre jeudi",
+          "cue": "I'm free on Thursday",
+          "changed": "the answer"
+        }
+      ],
+      "mistake": {
+        "display": "Tu es libre en mardi?",
+        "why": "A day takes no preposition: Tu es libre mardi?"
+      },
+      "usage": "The question that opens every plan.",
+      "register": "informal",
+      "mnemonic": "No preposition in front of a day."
+    },
+    {
+      "id": "L2-M6-S04",
+      "display": "Je suis libre jeudi ou vendredi",
+      "cue": "I'm free on Thursday or Friday",
+      "literal": "I am free Thursday or Friday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeudi",
+            "cue": "Thursday",
+            "tag": "free",
+            "forms": [],
+            "note": "The eu is the rounded vowel of deux. Like every weekday it ends in -di."
+          },
+          {
+            "display": "vendredi",
+            "cue": "Friday",
+            "tag": "free",
+            "forms": [],
+            "note": "The last of the -di weekdays. Its name is Venus's day, as the Italian venerdì is."
+          },
+          {
+            "display": "samedi",
+            "cue": "Saturday",
+            "tag": "free",
+            "forms": [],
+            "note": "Also in -di, though it belongs to the weekend. Only Sunday breaks the pattern."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "ou here is \"or\" and takes no accent. M4 met its twin où, and the accent is the only difference between them on the page.",
+      "sound": "zhuh swee LEEBR zhuh-DEE oo von-druh-DEE. Both days end on the stressed -di.",
+      "variations": [
+        {
+          "display": "Je suis libre samedi",
+          "cue": "I'm free on Saturday",
+          "changed": "one day"
+        },
+        {
+          "display": "Je suis libre dimanche",
+          "cue": "I'm free on Sunday",
+          "changed": "the day that breaks the pattern"
+        },
+        {
+          "display": "Tu es libre vendredi?",
+          "cue": "Are you free on Friday?",
+          "changed": "asking rather than answering"
+        }
+      ],
+      "mistake": {
+        "display": "Je suis libre jeudi où vendredi",
+        "why": "\"Or\" has no accent: jeudi ou vendredi."
+      },
+      "usage": "Offering a choice of days, which is how plans actually get made.",
+      "register": "informal",
+      "mnemonic": "Six days in -di, and Sunday is the exception."
+    },
+    {
+      "id": "L2-M6-S05",
+      "display": "On se voit dimanche?",
+      "cue": "Shall we meet on Sunday?",
+      "literal": "One oneself sees Sunday?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "se",
+            "cue": "oneself · each other",
+            "tag": "delta",
+            "forms": [],
+            "note": "The reflexive particle, and here it means \"each other\". It goes in front of the verb, exactly as M5's me and te do."
+          },
+          {
+            "display": "dimanche",
+            "cue": "Sunday",
+            "tag": "interference",
+            "forms": [],
+            "note": "The only day not ending in -di, and it is masculine like the rest — le dimanche for Sundays in general."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "On se voit is \"we'll see each other\", which is what French says where English says \"see you\". The se is doing the \"each other\" and cannot be dropped.",
+      "sound": "on suh VWA dee-MAHNSH. The se is short and leans onto the verb.",
+      "variations": [
+        {
+          "display": "On se voit demain?",
+          "cue": "Shall we meet tomorrow?",
+          "changed": "a different day"
+        },
+        {
+          "display": "On se voit à sept heures",
+          "cue": "We'll meet at seven",
+          "changed": "with a time — and it is a statement now"
+        },
+        {
+          "display": "On se voit au cinéma?",
+          "cue": "Shall we meet at the cinema?",
+          "changed": "with a place"
+        }
+      ],
+      "mistake": {
+        "display": "On voit dimanche?",
+        "why": "The each-other particle is needed: On se voit dimanche?"
+      },
+      "usage": "Fixing the day, and it doubles as a goodbye.",
+      "register": "informal",
+      "mnemonic": "se is each other, and it goes in front."
+    },
+    {
+      "id": "L2-M6-S06",
+      "display": "On se voit à sept heures et demie",
+      "cue": "We'll meet at half past seven",
+      "literal": "One oneself sees at seven hours and half",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "demie",
+            "cue": "half (past)",
+            "tag": "free",
+            "forms": [
+              "demi"
+            ],
+            "note": "Feminine here because it agrees with heures. In et demi — after midi or minuit, which are masculine — it loses the e."
+          },
+          {
+            "display": "quart",
+            "cue": "quarter",
+            "tag": "free",
+            "forms": [
+              "quarts"
+            ],
+            "note": "et quart is a quarter past. The quarter-to form uses moins, which M9 opens — the module names it and does not write it."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "demie agrees with heures and demi does not agree with midi. The e on the end is decided by the hour, not by the speaker.",
+      "sound": "a set UHR ay duh-MEE. The final e of demie is silent and the word is two syllables.",
+      "variations": [
+        {
+          "display": "On se voit à sept heures et quart",
+          "cue": "We'll meet at a quarter past seven",
+          "changed": "fifteen minutes rather than thirty"
+        },
+        {
+          "display": "On se voit à sept heures",
+          "cue": "We'll meet at seven",
+          "changed": "on the hour"
+        },
+        {
+          "display": "Tu es libre à sept heures et demie?",
+          "cue": "Are you free at half past seven?",
+          "changed": "asking rather than settling"
+        }
+      ],
+      "mistake": {
+        "display": "On se voit à sept heures et demi",
+        "why": "It agrees with heures: à sept heures et demie."
+      },
+      "usage": "Settling the time, which comes after the day.",
+      "register": "informal",
+      "mnemonic": "Half agrees with the hour."
+    },
+    {
+      "id": "L2-M6-S07",
+      "display": "Le lundi je travaille, mais lundi je suis libre",
+      "cue": "I work on Mondays, but I'm free this Monday",
+      "literal": "The Monday I work, but Monday I am free",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lundi",
+            "cue": "Monday (this coming one)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The bare word means the next one. L1-M4's le lundi, with the article, means Mondays in general — the learner has said the phrase for two levels without meeting the word."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "One article is the whole difference, and English marks it with a plural instead. le lundi is every Monday; lundi is the one coming up.",
+      "sound": "luh lun-DEE zhuh tra-VAI meh lun-DEE. Both are the same word and only the article moves.",
+      "variations": [
+        {
+          "display": "Le samedi je travaille, mais samedi je suis libre",
+          "cue": "I work on Saturdays, but I'm free this Saturday",
+          "changed": "a different day, the same contrast"
+        },
+        {
+          "display": "Lundi je suis libre",
+          "cue": "I'm free on Monday",
+          "changed": "the coming Monday only"
+        },
+        {
+          "display": "Le lundi je ne travaille pas",
+          "cue": "I don't work on Mondays",
+          "changed": "the habit, negated"
+        }
+      ],
+      "mistake": {
+        "display": "Lundi je travaille, mais le lundi je suis libre",
+        "why": "The article marks the habit: Le lundi je travaille, mais lundi je suis libre."
+      },
+      "usage": "Sorting out which Monday is meant — which is exactly where this trips people.",
+      "register": "informal",
+      "mnemonic": "Article means every. Bare means next."
+    },
+    {
+      "id": "L2-M6-S08",
+      "display": "D'accord, ça marche",
+      "cue": "All right, that works",
+      "literal": "Of-agreement, that walks",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "d'accord",
+            "cue": "all right · agreed",
+            "tag": "free",
+            "forms": [],
+            "note": "An elision, so ONE index key — de plus accord, welded. It is what you say when a plan is settled."
+          },
+          {
+            "display": "marche",
+            "cue": "works · walks",
+            "tag": "delta",
+            "forms": [],
+            "note": "Literally \"walks\". Ça marche is \"that works\" of a plan and of a machine alike, and M8 will use the second reading."
+          },
+          {
+            "display": "super",
+            "cue": "great",
+            "tag": "free",
+            "forms": [],
+            "note": "Invariable and everywhere in speech. C'est super and Super! both stand, and neither is slang exactly."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "ça marche has nothing to do with walking when it is said about a plan. The literal sense is still there for a machine, and M8 opens that reading on this same row.",
+      "sound": "da-KOR sa MARSH. The apostrophe is a join and not a pause.",
+      "variations": [
+        {
+          "display": "D'accord, super",
+          "cue": "All right, great",
+          "changed": "a warmer agreement"
+        },
+        {
+          "display": "Ça marche, à demain",
+          "cue": "That works — see you tomorrow",
+          "changed": "with the sign-off"
+        },
+        {
+          "display": "D'accord, on se voit lundi",
+          "cue": "All right, we'll meet on Monday",
+          "changed": "with the plan restated"
+        }
+      ],
+      "mistake": {
+        "display": "De accord, ça marche",
+        "why": "The elision is compulsory: D'accord, ça marche."
+      },
+      "usage": "Closing the deal, once the day and the time are fixed.",
+      "register": "informal",
+      "mnemonic": "One word, one apostrophe, plan settled."
+    },
+    {
+      "id": "L2-M6-S09",
+      "display": "À demain!",
+      "cue": "See you tomorrow!",
+      "literal": "To tomorrow!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "voit",
+            "cue": "sees",
+            "tag": "free",
+            "forms": [],
+            "note": "The third-person cell of voir, which on borrows for its \"we\". L1-M6 shipped the infinitive and this is the form on needs."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "À demain is two words and a whole goodbye. L1-M4's à is doing a third job here — after place and time, it now means \"until\" — and nothing else is needed.",
+      "sound": "a duh-MAN. The ain of demain is nasal, and no n is said.",
+      "variations": [
+        {
+          "display": "À lundi!",
+          "cue": "See you on Monday!",
+          "changed": "a named day"
+        },
+        {
+          "display": "À samedi!",
+          "cue": "See you on Saturday!",
+          "changed": "a different day"
+        },
+        {
+          "display": "D'accord, à demain",
+          "cue": "All right, see you tomorrow",
+          "changed": "with the agreement in front"
+        }
+      ],
+      "mistake": {
+        "display": "Pour demain!",
+        "why": "The sign-off takes à: À demain!"
+      },
+      "usage": "Ending the conversation that made the plan.",
+      "register": "informal",
+      "mnemonic": "à plus a day is a goodbye."
+    },
+    {
+      "id": "L2-M6-S10",
+      "display": "On mange ensemble ce soir?",
+      "cue": "Shall we eat together tonight?",
+      "literal": "One eats together this evening?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mange",
+            "cue": "eat · eats",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's row, and the same cell serves je, il, elle and on. That is why on costs no conjugation at all."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The present tense carries the plan. French does not need a future here any more than English needs one in \"we're eating together tonight\" — the time word does the work.",
+      "sound": "on MAHNZH on-SAHMBL suh SWAR. Two nasals in a row, and no n is said in either.",
+      "variations": [
+        {
+          "display": "On mange ensemble demain?",
+          "cue": "Shall we eat together tomorrow?",
+          "changed": "a different day"
+        },
+        {
+          "display": "On mange au cinéma?",
+          "cue": "Shall we eat at the cinema?",
+          "changed": "with a place"
+        },
+        {
+          "display": "Ça te dit de manger ensemble?",
+          "cue": "Do you fancy eating together?",
+          "changed": "the other invitation frame"
+        }
+      ],
+      "mistake": {
+        "display": "On mangeons ensemble ce soir?",
+        "why": "on takes the singular: On mange ensemble ce soir?"
+      },
+      "usage": "The commonest invitation in the language.",
+      "register": "informal",
+      "mnemonic": "One cell serves je, il, elle and on."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M6-C01",
+      "display": "On va au cinéma ce soir?",
+      "cue": "Shall we go to the cinema tonight?"
+    },
+    {
+      "id": "L2-M6-C02",
+      "display": "Ça te dit de venir?",
+      "cue": "Do you fancy coming?"
+    },
+    {
+      "id": "L2-M6-C03",
+      "display": "Tu es libre mardi?",
+      "cue": "Are you free on Tuesday?"
+    },
+    {
+      "id": "L2-M6-C04",
+      "display": "Je suis libre jeudi ou vendredi",
+      "cue": "I'm free on Thursday or Friday"
+    },
+    {
+      "id": "L2-M6-C05",
+      "display": "On se voit dimanche?",
+      "cue": "Shall we meet on Sunday?"
+    },
+    {
+      "id": "L2-M6-C06",
+      "display": "On se voit à sept heures et demie",
+      "cue": "We'll meet at half past seven"
+    },
+    {
+      "id": "L2-M6-C07",
+      "display": "Le lundi je travaille, mais lundi je suis libre",
+      "cue": "I work on Mondays, but I'm free this Monday"
+    },
+    {
+      "id": "L2-M6-C08",
+      "display": "D'accord, ça marche",
+      "cue": "All right, that works"
+    },
+    {
+      "id": "L2-M6-C09",
+      "display": "À demain!",
+      "cue": "See you tomorrow!"
+    },
+    {
+      "id": "L2-M6-C10",
+      "display": "On mange ensemble ce soir?",
+      "cue": "Shall we eat together tonight?"
+    },
+    {
+      "id": "L2-M6-C11",
+      "display": "On se voit à sept heures",
+      "cue": "We'll meet at seven"
+    },
+    {
+      "id": "L2-M6-C12",
+      "display": "Je suis libre samedi",
+      "cue": "I'm free on Saturday"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
