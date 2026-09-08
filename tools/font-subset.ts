@@ -44,7 +44,7 @@
  *     empty cut rather than ten marks nobody renders.
  *   • **The `/dev/type` specimen, dev builds only.** The specimen words (ळ, the conjuncts, the
  *     candrabindu — `src/dev/TypeSpecimen.tsx`) are read out of the component's source, the same
- *     source-scan idiom as `tools/make-icons.ts`, so the matrix stays tofu-free in the builds where
+ *     source-scan idiom as `scripts/generate-icons.ts`, so the matrix stays tofu-free in the builds where
  *     the page exists. A learner build ships no specimen page and carries no specimen glyphs.
  *
  * The output is honest about the gate: a strict build that ships no modules gets near-empty

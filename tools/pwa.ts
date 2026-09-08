@@ -14,7 +14,7 @@
  *
  * Two values are never written here: the product name comes from `src/brand.ts` and the colours
  * from `design/tokens.css` (`--color-bg`), so the manifest cannot drift from the app's own paper
- * ground. The icons are generated from the header rails mark by `tools/make-icons.ts`.
+ * ground. The icons are generated from the header rails mark by `scripts/generate-icons.ts`.
  *
  * **The worker precaches the SHELL and runtime-caches the ACTIVE COURSE (#211).** It used to
  * precache everything and route nothing, on the reasoning that PRD-engineering §3/§10 is zero
@@ -158,11 +158,11 @@ const PLUGIN_DEFAULTS_DROPPED = { scope: undefined };
  *     (`mukta-devanagari-*`) is read by the courses written in that script and by nobody else.
  *
  * The icons line is `*.png`, not `*` or `**`, ON PURPOSE: `*` does not cross `/`, so the iOS
- * splash set in `icons/splash/` (#115, `tools/make-splash.ts`) stays out of the precache — the
+ * splash set in `icons/splash/` (#115, `scripts/generate-splash.ts`) stays out of the precache — the
  * app never fetches a splash image, Safari itself does, once, at Add-to-Home-Screen, so
  * precaching the set would make every first visit download ~70 KiB it can never use. The `.png`
  * narrows it further and deliberately excludes `icons/icon.svg` (#251): the app never fetches
- * that file either — it is the generator's source, read by `tools/make-icons.ts` at build time
+ * that file either — it is the generator's source, read by `scripts/generate-icons.ts` at build time
  * and by nobody at runtime (every `<link>`/manifest entry names a PNG) — so precaching it would
  * be the same wasted download for the same reason the splash set is out.
  *

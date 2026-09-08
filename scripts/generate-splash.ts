@@ -13,7 +13,7 @@
  * make every Android first visit download images it can never use.
  *
  * **Nothing here is drawn twice.** The mark is read out of `src/shell/RailsMark.tsx` by
- * `tools/make-icons.ts`'s parser — the ratified §6.4 grid, same as the icons. The wordmark is
+ * `scripts/generate-icons.ts`'s parser — the ratified §6.4 grid, same as the icons. The wordmark is
  * `BRAND` (`src/brand.ts`) set in the real Barlow Condensed 700 (`@fontsource`, converted to a
  * TTF subset in a temp dir because Pango cannot read woff2), in `--color-text` on `--color-bg`
  * (`design/tokens.css` via `tools/tokens.ts`). The proportions are the header lockup's
@@ -25,8 +25,8 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { BRAND } from '../src/brand.ts';
-import { markShapes, markViewBox, readMarkSource, shapeMarkup } from './make-icons.ts';
-import { TOKENS_CSS_PATH, token } from './tokens.ts';
+import { markShapes, markViewBox, readMarkSource, shapeMarkup } from './generate-icons.ts';
+import { TOKENS_CSS_PATH, token } from '../tools/tokens.ts';
 
 // `path.dirname(import.meta.url)`, not `new URL('..', import.meta.url)`: Vite rewrites the second
 // form into an asset URL, and this module is read by a vitest test (`tools/tokens.ts` says more).
@@ -116,7 +116,7 @@ export interface LockupScale {
 /** `--brand-mark` (`20px`) as a number — the unit every lockup proportion is expressed in. */
 export function brandMarkPx(): number {
   const size = Number.parseFloat(token('--brand-mark'));
-  if (Number.isNaN(size)) throw new Error('make-splash: --brand-mark is not a px length');
+  if (Number.isNaN(size)) throw new Error('generate-splash: --brand-mark is not a px length');
   return size;
 }
 
@@ -129,7 +129,7 @@ export function brandMarkPx(): number {
 export function wordmarkPx(): number {
   const declaration = readFileSync(TOKENS_CSS_PATH, 'utf8').match(/--text-brand:\s*([^;]+);/);
   const size = declaration?.[1]?.match(/(\d+(?:\.\d+)?)px/);
-  if (!size) throw new Error('make-splash: --text-brand carries no px font size');
+  if (!size) throw new Error('generate-splash: --text-brand carries no px font size');
   return Number(size[1]);
 }
 
@@ -157,7 +157,7 @@ export function lockupMarkSvg(source: string, box: number): string {
 
 async function main(): Promise<number> {
   // sharp and subset-font are native/wasm and load only when the script actually rasterises —
-  // everything above is plain string work the tests exercise (same shape as tools/make-icons.ts).
+  // everything above is plain string work (same shape as scripts/generate-icons.ts).
   const { default: sharp } = await import('sharp');
   const { default: subsetFont } = await import('subset-font');
 
@@ -195,7 +195,7 @@ async function main(): Promise<number> {
       const wordPng = await word.png().toBuffer();
       const { width: wordW, height: wordH } = await sharp(wordPng).metadata();
       if (wordW === undefined || wordH === undefined) {
-        throw new Error('make-splash: the rendered wordmark has no dimensions');
+        throw new Error('generate-splash: the rendered wordmark has no dimensions');
       }
 
       // The header's flex row: mark, gap, wordmark, the whole row centred both ways. Centring

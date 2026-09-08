@@ -24,7 +24,7 @@ such.
 | Piece | Where |
 |---|---|
 | Plugin config — manifest, globs, workbox | `tools/pwa.ts` (`vite.config.ts` is one line: `VitePWA(pwaOptions())`) |
-| Icons, generated from the header rails mark | `tools/make-icons.ts` → `public/icons/*.png`, committed |
+| Icons, generated from the header rails mark | `scripts/generate-icons.ts` → `public/icons/*.png`, committed |
 | Registration | `src/pwa/registerServiceWorker.ts`, called from `src/main.tsx` |
 | Storage durability | `src/state/durableStorage.ts`, the store's `storage` |
 | iOS meta + favicon + theme colour | `index.html` |
@@ -67,7 +67,7 @@ the package. Every other key is still the checklist, parsed and deep-equalled.
 ## 2. The icons are the header mark, read not redrawn
 
 `src/shell/RailsMark.tsx` says its geometry is the ticket's verbatim SVG and is not to be
-redrawn. So `tools/make-icons.ts` **reads that component** — the same source-scan idiom as
+redrawn. So `scripts/generate-icons.ts` **reads that component** — the same source-scan idiom as
 `src/fonts.test.ts` — lifts its five `<line>`/`<rect>` elements, resolves the colours the
 component defers to the page (`currentColor` → `--color-text`, `var(--color-accent)`) out of
 `design/tokens.css`, stands them on the `--color-bg` ground and rasterises with sharp. There is
@@ -84,9 +84,10 @@ no second copy of the mark anywhere: change the header and `npm run icons:build`
 **The maskable safe zone is arithmetic, not judgement.** A launcher may crop to a circle of 80%
 of the icon's width, i.e. radius 0.4 × size. The mark's ink box is 9.5 × 17.5 in a viewBox of 20,
 so at 50% height its own half-diagonal is `hypot(0.136, 0.25) = 0.284 × size` — inside 0.4 with
-room to spare. `tools/make-icons.test.ts` asserts that number, and asserts the plain icons sit
-*outside* it: they are never cropped, and a mark shrunk for a crop that will not happen is a
-smaller mark for nothing.
+room to spare. A test asserted that number, and asserted the plain icons sit *outside* it, until
+the render-level suite was cut on 2026-08-30 (#362–#365); the arithmetic above is the record now.
+The plain icons are never cropped, and a mark shrunk for a crop that will not happen is a smaller
+mark for nothing.
 
 `favicon-32.png` is here for an offline reason, not a cosmetic one — see §4.
 
@@ -351,21 +352,25 @@ five icons from it — same sizes, same mark heights, ~2.8–3.2 KB apiece.
 
 The maskable arithmetic §2 explains moved with the geometry: the ink box is now 12.5 × 21.5 in a
 viewBox of 22, so at 50% height the box's half-diagonal is **0.289 × size** — still well inside
-the 0.4 safe radius, still asserted as a number in `tools/make-icons.test.ts`.
+the 0.4 safe radius. The test that asserted it as a number went with the render-level suite on
+2026-08-30 (#362–#365).
 
-**The splash set** (`npm run splash:build` → `tools/make-splash.ts`) is the checklist §3.3 item
+**The splash set** (`npm run splash:build` → `scripts/generate-splash.ts`) is the checklist §3.3 item
 #90 deferred. iOS ignores the manifest's `background_color`, so a cold standalone launch flashes
 white unless an `apple-touch-startup-image` matches the device's EXACT size. Eleven portrait
 iPhone viewports (SE → 17 Pro Max, ~70 KiB in total, `public/icons/splash/`), each the header
-lockup at 5% of the screen height — mark read out of `RailsMark.tsx` by make-icons' parser, the
+lockup at 5% of the screen height — mark read out of `RailsMark.tsx` by generate-icons' parser, the
 wordmark `BRAND` set in the real Barlow Condensed 700 (converted woff2 → TTF at generation time
 because Pango reads no woff2), `--color-text` on exactly `--color-bg`. No iPad rows and no
 landscape: the product targets P1's phone and the manifest pins `orientation: portrait`.
 
-Three deliberate boundaries, each with a test in `tools/make-splash.test.ts`:
+Three deliberate boundaries. Each had a test in the render-level suite cut on 2026-08-30
+(#362–#365), so the first is a review rule now; `tools/payload-budget.ts` still meters and bounds
+the set, which is the last one:
 
 - **`index.html` is cross-checked against the generator** — one `<link>` per device, exact media
-  query, exact filename; a device row added without its link (or vice versa) is a red test.
+  query, exact filename; a device row added without its link (or vice versa) is a defect nothing
+  catches automatically today.
 - **The set is NOT precached.** The app never fetches a splash image — Safari does, once, at
   Add-to-Home-Screen. The precache glob is `icons/*.png`, whose `*` does not cross into
   `icons/splash/`; precaching would cost every Android first visit ~70 KiB it can never use.
