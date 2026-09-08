@@ -30,7 +30,7 @@ import { ChevronRight } from 'lucide-react';
 import type { L2Written } from '../../course/manifest.ts';
 import type { Sentence } from '../../course/types.ts';
 import { ProductionDots } from './ProductionDots.tsx';
-import styles from './SentenceCard.module.css';
+import './sentence-card.css';
 
 interface SentenceCardProps {
   sentence: Sentence;
@@ -42,18 +42,18 @@ interface SentenceCardProps {
 
 export function SentenceCard({ sentence, produced, l2 }: SentenceCardProps) {
   return (
-    <li className={styles.card}>
-      <Link className={styles.open} to={`/sentence/${sentence.id}`}>
-        <span className={styles.lines}>
-          <span className={styles.display} dir={l2?.display.dir} lang={l2?.display.lang}>
+    <li className="sentence-card">
+      <Link className="sentence-card-open" to={`/sentence/${sentence.id}`}>
+        <span className="sentence-card-lines">
+          <span className="sentence-card-display" dir={l2?.display.dir} lang={l2?.display.lang}>
             {sentence.display}
           </span>
-          <span className={styles.cue}>{sentence.cue}</span>
+          <span className="sentence-card-cue sentence-card-course-prose">{sentence.cue}</span>
           {/* Romanized courses only (scriptMode, PRD §4): the native script as recognition, never
               as something to produce — so it is the quietest line on the card. A native course's
               sentences carry no `script` at all, which is why the content is the condition. */}
           {sentence.script !== undefined && (
-            <span className={styles.script} dir={l2?.script.dir} lang={l2?.script.lang}>
+            <span className="sentence-card-script" dir={l2?.script.dir} lang={l2?.script.lang}>
               {sentence.script}
             </span>
           )}
@@ -61,7 +61,7 @@ export function SentenceCard({ sentence, produced, l2 }: SentenceCardProps) {
 
         <ProductionDots produced={produced} />
 
-        <ChevronRight className={styles.go} aria-hidden="true" />
+        <ChevronRight className="sentence-card-go" aria-hidden="true" />
       </Link>
     </li>
   );

@@ -9,11 +9,11 @@
    be the one object on the screen — the registration-marks frame is the system's mark for the
    rung card, the reveal plate, the receipt — and the frame plus its padding was most of the
    list's height. Rows are what a list is: a hairline between neighbours, and the content. */
-.card {
+.sentence-card {
   border-bottom: var(--border-hairline);
 }
 
-.card:first-child {
+.sentence-card:first-child {
   border-top: var(--border-hairline);
 }
 
@@ -21,7 +21,7 @@
 
 /* The whole card is the way in, so the whole card is the link — 44px of it at minimum
    (design/tokens.md §4), which the L2 line clears on its own. */
-.open {
+.sentence-card-open {
   display: flex;
   align-items: flex-start;
   gap: var(--space-3);
@@ -36,11 +36,11 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.open:active {
+.sentence-card-open:active {
   background: color-mix(in srgb, var(--color-text) 6%, transparent);
 }
 
-.lines {
+.sentence-card-lines {
   flex: 1;
   min-width: 0;
   display: flex;
@@ -49,7 +49,7 @@
 
 /* The L2 sentence — the row's whole point, and the token is named for this screen:
    --text-l2-list is 600 22px/1.6 Mukta (design/tokens.md §2). */
-.display {
+.sentence-card-display {
   font: var(--text-l2-list);
 }
 
@@ -62,13 +62,12 @@
  * for the same reason, and it wants the same answer from the design package — a course-prose slot
  * below the floor cannot exist while the floor does. Raised again on #117; no token invented here.
  */
-.courseProse {
+.sentence-card-course-prose {
   font: var(--text-l2-cue);
   font-size: var(--devanagari-min-size);
 }
 
-.cue {
-  composes: courseProse;
+.sentence-card-cue {
   margin-top: var(--space-1);
   color: var(--ink-70);
 }
@@ -79,7 +78,7 @@
  * Devanagari — the design package's note is "bundle a Naskh face if Arabic ships". This is the
  * one place in the app that overrides a font shorthand's family, and it does it with the token.
  */
-.script {
+.sentence-card-script {
   margin-top: var(--space-1);
   font: var(--text-body);
   font-family: var(--font-script-fallback);
@@ -88,7 +87,7 @@
 
 /* The direction affordance: one chevron, pointing where the tap goes. It says "there is more of
    this, elsewhere" rather than "this opens here", which is the whole difference #217 made. */
-.go {
+.sentence-card-go {
   flex: none;
   width: var(--icon-inline);
   height: var(--icon-inline);
@@ -99,6 +98,6 @@
 
 /* A course that reads right to left reads its way out too: the card carries the course's `dir`,
    so the one drawing mirrors rather than a second icon shipping. */
-[dir='rtl'] .go {
+[dir='rtl'] .sentence-card-go {
   transform: scaleX(-1);
 }
