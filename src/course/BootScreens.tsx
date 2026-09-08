@@ -10,7 +10,7 @@
  * when no course bundle loaded, so by definition no bundle can supply it.
  */
 import { BRAND } from '../brand.ts';
-import styles from './BootScreens.module.css';
+import './boot-screens.css';
 
 /**
  * Loading. Deliberately quiet — the wordmark and nothing else. Content is local and precached,
@@ -18,8 +18,8 @@ import styles from './BootScreens.module.css';
  */
 export function BootLoadingScreen() {
   return (
-    <main className={styles.screen} aria-busy="true">
-      <p className={styles.wordmark}>{BRAND}</p>
+    <main className="boot-screen" aria-busy="true">
+      <p className="boot-wordmark">{BRAND}</p>
     </main>
   );
 }
@@ -33,10 +33,10 @@ export function BootLoadingScreen() {
  */
 export function ContentErrorScreen({ detail }: { detail: string }) {
   return (
-    <main className={styles.screen} role="alert">
-      <h1 className={styles.wordmark}>{BRAND}</h1>
-      <p className={styles.message}>This build has no course content to show.</p>
-      <p className={styles.detail}>{detail}</p>
+    <main className="boot-screen" role="alert">
+      <h1 className="boot-wordmark">{BRAND}</h1>
+      <p className="boot-message">This build has no course content to show.</p>
+      <p className="boot-detail">{detail}</p>
     </main>
   );
 }
