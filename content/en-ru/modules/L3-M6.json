@@ -1,0 +1,594 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M6",
+  "title": "Feelings in depth",
+  "job": "Nuance past good and bad",
+  "prerequisites": ["L3-M5"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": ["simple_present_imperfective", "simple_past"],
+    "allowedPatterns": [
+      "Mne + <predicate in -o>",
+      "Ya rad / ráda + <complement>",
+      "Ya chúvstvuyu sebyá + Adv",
+      "Mne stálo + <predicate in -o>",
+      "Ya bespokóyus' o + <N-prepositional>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE DATIVE-SUBJECT FRAME is this module's spine, and the learner has met it twice already without its name. mne grústno, mne stráshno, mne skúchno, mne stýdno — the person feeling it stands in the DATIVE and the predicate is a bare word ending in -o, and there is no subject in the sentence at all. L1-M9's mne nrávitsya and L2-M1's mne núzhno are the same shape: what happens, happens TO you. Learn the one frame and seven feelings come with it."
+    },
+    {
+      "tag": "interference",
+      "text": "English says \"I am sad\" — a subject, a verb and an adjective, and Russian drops all three. ya grústnyy is not a clumsier way of saying it: it is a different claim, that you are a gloomy person by nature rather than sad this afternoon. The -o word never agrees with anybody, because there is nobody for it to agree with; mne grústno is what a Russian says about this afternoon."
+    },
+    {
+      "tag": "delta",
+      "text": "rad is a SHORT-FORM adjective, and it agrees with the speaker rather than staying flat: rad from a man, ráda from a woman, rády from a group. This is M3's soglásen a second time, and the pair is worth noticing because short forms are otherwise a corner of the grammar a learner can leave alone — these two, with L2's svobóden and zanyát, are very nearly the whole list."
+    },
+    {
+      "tag": "delta",
+      "text": "chúvstvuyu sebyá takes an ADVERB and never an adjective: chúvstvuyu sebyá khoroshó, plókho, lúchshe. The sebyá is obligatory, and it is NOT the -sya of M1's odeváyus'. That -sya is a particle welded to the end of a verb; sebyá is a free word standing after it. This module shows both at once — bespokóyus' carries one, chúvstvuyu sebyá the other."
+    },
+    {
+      "tag": "free",
+      "text": "The whole family takes a past with no new tense: býlo for the plain past, stálo for the change into it. mne býlo stráshno is \"I was frightened\"; mne stálo stráshno is \"I got frightened\", the moment the fear arrived. Both are neuter -o forms agreeing with nothing, because the frame still has no subject for them to agree with."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M6-S01",
+      "display": "Mne sevódnya grústno",
+      "script": "Мне сегодня грустно",
+      "cue": "I feel sad today",
+      "literal": "To-me today sad-ly",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "grústno",
+            "script": "грустно",
+            "cue": "sad",
+            "tag": "delta",
+            "forms": ["grústno"],
+            "note": "The -o predicate for sadness. It does not agree with you and never changes: the person it happens to stands in the dative in front of it, mne grústno."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "There is no ya in it and no verb either. Adding them — ya grústnyy — turns a mood into a personality.",
+      "sound": "mnye si-VOD-nya GRUS-na. The t of grústno is not pronounced, and sevódnya's d is said as a v.",
+      "variations": [
+        {
+          "display": "Mne býlo grústno",
+          "script": "Мне было грустно",
+          "cue": "I felt sad",
+          "changed": "the same feeling, yesterday"
+        },
+        {
+          "display": "Yey grústno",
+          "script": "Ей грустно",
+          "cue": "She feels sad",
+          "changed": "a different person in the dative"
+        }
+      ],
+      "mistake": {
+        "display": "Ya grústnyy sevódnya",
+        "script": "Я грустный сегодня",
+        "why": "grústnyy is a gloomy sort of person, which is not what today is about. The mood takes the dative frame: mne grústno."
+      },
+      "usage": "Answering kak delá honestly, without making a speech of it.",
+      "register": "neutral",
+      "mnemonic": "To me — sadly. No I, no am."
+    },
+    {
+      "id": "L3-M6-S02",
+      "display": "Mne býlo stráshno",
+      "script": "Мне было страшно",
+      "cue": "I was frightened",
+      "literal": "To-me was frightening",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "stráshno",
+            "script": "страшно",
+            "cue": "frightening, scared",
+            "tag": "delta",
+            "forms": ["stráshno"],
+            "note": "Fear in the dative frame. One word covers \"it is frightening\" and \"I am scared\"; which one it means is decided by whether a dative stands with it."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "býlo is neuter because there is nothing for it to agree with. A man does not say byl here and a woman does not say bylá.",
+      "sound": "mnye BY-la STRASH-na. Both words lean on their first syllable and the line falls away.",
+      "variations": [
+        {
+          "display": "Mne stálo stráshno",
+          "script": "Мне стало страшно",
+          "cue": "I got frightened",
+          "changed": "the moment the fear arrived"
+        },
+        {
+          "display": "Yemú býlo stráshno",
+          "script": "Ему было страшно",
+          "cue": "He was frightened",
+          "changed": "a man, in the dative"
+        }
+      ],
+      "mistake": {
+        "display": "Ya byl stráshno",
+        "script": "Я был страшно",
+        "why": "Two mistakes at once: this frame has no subject for byl to agree with, and the person belongs in the dative. mne býlo stráshno."
+      },
+      "usage": "Telling a story that ended well — the fear is safely in the past.",
+      "register": "neutral",
+      "mnemonic": "Was frightening to me. Neuter, always."
+    },
+    {
+      "id": "L3-M6-S03",
+      "display": "Mne skúchno dóma",
+      "script": "Мне скучно дома",
+      "cue": "I'm bored at home",
+      "literal": "To-me boring at-home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "skúchno",
+            "script": "скучно",
+            "cue": "bored, boring",
+            "tag": "delta",
+            "forms": ["skúchno"],
+            "note": "Boredom in the same frame. Like stráshno it does double duty: with a dative it is your boredom, without one it is the thing that is dull."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English splits \"I am bored\" from \"it is boring\" and Russian does not. The dative is the whole difference.",
+      "sound": "mnye SKUSH-na DO-ma. skúchno is said with sh, not ch — one of the few words where that happens.",
+      "variations": [
+        {
+          "display": "Mne skúchno na rabóte",
+          "script": "Мне скучно на работе",
+          "cue": "I'm bored at work",
+          "changed": "where the boredom is"
+        },
+        {
+          "display": "Nam skúchno",
+          "script": "Нам скучно",
+          "cue": "We're bored",
+          "changed": "a group, in the dative"
+        }
+      ],
+      "mistake": {
+        "display": "Ya skúchnyy dóma",
+        "script": "Я скучный дома",
+        "why": "skúchnyy is a boring person — you have said you are dull company. mne skúchno is the state you are in."
+      },
+      "usage": "A Sunday afternoon with nothing in it.",
+      "register": "neutral",
+      "mnemonic": "Boring to me — the dative says whose boredom it is."
+    },
+    {
+      "id": "L3-M6-S04",
+      "display": "Ya rad, chto ty zdes'",
+      "script": "Я рад, что ты здесь",
+      "cue": "I'm glad you're here",
+      "literal": "I glad, that you here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rad",
+            "script": "рад",
+            "cue": "glad",
+            "tag": "delta",
+            "forms": ["rad", "ráda", "rády"],
+            "note": "A short-form adjective agreeing with the speaker: rad from a man, ráda from a woman, rády from a group. Exactly M3's soglásen — that row has the shape."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "This one is NOT the dative frame. rad has a real subject, so ya stays and the ending moves instead.",
+      "sound": "ya RAT, shto ty ZDYES. The d of rad is said as a t at the end of the word.",
+      "variations": [
+        {
+          "display": "Ya ráda, chto ty zdes'",
+          "script": "Я рада, что ты здесь",
+          "cue": "I'm glad you're here",
+          "changed": "a woman saying it"
+        },
+        {
+          "display": "My rády, chto vy zdes'",
+          "script": "Мы рады, что вы здесь",
+          "cue": "We're glad you're here",
+          "changed": "a group, and a polite you"
+        }
+      ],
+      "mistake": {
+        "display": "Mne rad, chto ty zdes'",
+        "script": "Мне рад, что ты здесь",
+        "why": "rad is not an -o predicate and takes no dative. It agrees with whoever is glad: ya rad, ya ráda."
+      },
+      "usage": "Meeting someone at the door, or at the end of a long trip.",
+      "register": "neutral",
+      "mnemonic": "rad, ráda, rády — glad has a gender."
+    },
+    {
+      "id": "L3-M6-S05",
+      "display": "Ya chúvstvuyu sebyá khoroshó",
+      "script": "Я чувствую себя хорошо",
+      "cue": "I feel well",
+      "literal": "I feel self well",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chúvstvuyu",
+            "script": "чувствую",
+            "cue": "I feel",
+            "tag": "delta",
+            "forms": ["chúvstvuyu", "chúvstvuyete"],
+            "note": "The verb for how you are, in body or in mood. It is never used alone: sebyá comes with it, and what follows is an adverb — khoroshó, plókho, lúchshe."
+          },
+          {
+            "display": "sebyá",
+            "script": "себя",
+            "cue": "oneself",
+            "tag": "delta",
+            "forms": ["sebyá"],
+            "note": "A free word meaning \"self\", the same for every person. It is not M1's welded-on -sya: that one is part of the verb, this one stands after it."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "khoroshó and not khoróshiy. The complement of this verb is an adverb, so no adjective ever lands here.",
+      "sound": "ya CHUST-vu-yu si-BYA kha-ra-SHO. The first v of chúvstvuyu is silent — CHUST, not CHUVST.",
+      "variations": [
+        {
+          "display": "Ya chúvstvuyu sebyá plókho",
+          "script": "Я чувствую себя плохо",
+          "cue": "I feel unwell",
+          "changed": "the opposite adverb"
+        },
+        {
+          "display": "Vy chúvstvuyete sebyá khoroshó?",
+          "script": "Вы чувствуете себя хорошо?",
+          "cue": "Are you feeling well?",
+          "changed": "asked politely"
+        }
+      ],
+      "mistake": {
+        "display": "Ya chúvstvuyu khoroshó",
+        "script": "Я чувствую хорошо",
+        "why": "Without sebyá the verb says your senses are sharp. Your own state needs the self: chúvstvuyu sebyá khoroshó."
+      },
+      "usage": "The answer a doctor is actually asking for.",
+      "register": "neutral",
+      "mnemonic": "Feel yourself — well, not good."
+    },
+    {
+      "id": "L3-M6-S06",
+      "display": "Mne stálo spokóyno",
+      "script": "Мне стало спокойно",
+      "cue": "I felt calm",
+      "literal": "To-me became calm-ly",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "stálo",
+            "script": "стало",
+            "cue": "became",
+            "tag": "delta",
+            "forms": ["stálo"],
+            "note": "\"Became\" — the change into a feeling, where býlo is the feeling itself. mne býlo spokóyno is how the evening was; mne stálo spokóyno is the moment it turned."
+          },
+          {
+            "display": "spokóyno",
+            "script": "спокойно",
+            "cue": "calm",
+            "tag": "delta",
+            "forms": ["spokóyno"],
+            "note": "Calm, in the dative frame. It doubles as the ordinary adverb for doing a thing calmly, which is why it needs no second form."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "stálo is neuter and stays neuter, whoever is speaking. It has no subject to agree with.",
+      "sound": "mnye STA-la spa-KOY-na. Three falling words; nothing here is stressed at the end.",
+      "variations": [
+        {
+          "display": "Mne stálo lúchshe",
+          "script": "Мне стало лучше",
+          "cue": "I felt better",
+          "changed": "a comparative in the same frame"
+        },
+        {
+          "display": "Yey stálo spokóyno",
+          "script": "Ей стало спокойно",
+          "cue": "She felt calm",
+          "changed": "a different person in the dative"
+        }
+      ],
+      "mistake": {
+        "display": "Ya stal spokóyno",
+        "script": "Я стал спокойно",
+        "why": "stal wants a subject and an adjective after it. The feeling frame keeps the person in the dative and the verb neuter: mne stálo spokóyno."
+      },
+      "usage": "The moment after bad news turns out to be nothing.",
+      "register": "neutral",
+      "mnemonic": "Became calm to me — a past with no new tense."
+    },
+    {
+      "id": "L3-M6-S07",
+      "display": "Ya bespokóyus' o rabóte",
+      "script": "Я беспокоюсь о работе",
+      "cue": "I'm worried about work",
+      "literal": "I worry-self about work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bespokóyus'",
+            "script": "беспокоюсь",
+            "cue": "I worry",
+            "tag": "delta",
+            "forms": ["bespokóyus'", "bespokóish'sya", "bespokóitsya"],
+            "note": "A -sya verb, so the worrying stays with the worrier. The endings are M1's: -yus' for ya, -ish'sya for ty, -itsya for on and oná."
+          },
+          {
+            "display": "o",
+            "script": "о",
+            "cue": "about",
+            "tag": "delta",
+            "forms": ["o", "ob"],
+            "note": "\"About\", and it takes the prepositional — the case L1-M7 opened for v and na. Before a vowel it is said and written ob: ob éhtom."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "Two selves in one module: bespokóyus' carries -sya welded to the verb, chúvstvuyu sebyá keeps sebyá free.",
+      "sound": "ya bis-pa-KO-yus a ra-BO-tye. Unstressed o is said as a, so the preposition all but disappears.",
+      "variations": [
+        {
+          "display": "Ya bespokóyus' o tebé",
+          "script": "Я беспокоюсь о тебе",
+          "cue": "I'm worried about you",
+          "changed": "a person worried about"
+        },
+        {
+          "display": "Oná bespokóitsya o dócheri",
+          "script": "Она беспокоится о дочери",
+          "cue": "She's worried about her daughter",
+          "changed": "she, worrying about someone else"
+        }
+      ],
+      "mistake": {
+        "display": "Ya bespokóyus' o rabóta",
+        "script": "Я беспокоюсь о работа",
+        "why": "o takes the prepositional, and rabóta becomes rabóte in it — the same ending you already say in na rabóte."
+      },
+      "usage": "Saying what is on your mind without dramatising it.",
+      "register": "neutral",
+      "mnemonic": "o plus the -e case: worried about work, rabóte."
+    },
+    {
+      "id": "L3-M6-S08",
+      "display": "Mne stýdno, chto ya opázdyvayu",
+      "script": "Мне стыдно, что я опаздываю",
+      "cue": "I'm ashamed that I'm late",
+      "literal": "To-me shameful, that I am-late",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "stýdno",
+            "script": "стыдно",
+            "cue": "ashamed, embarrassing",
+            "tag": "delta",
+            "forms": ["stýdno"],
+            "note": "Shame in the dative frame. Russians reach for it where English would say \"sorry\": it admits the fault rather than asking to be let off."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "The comma before chto is obligatory, as it has been since M3. Russian puts one in front of every chto clause.",
+      "sound": "mnye STYD-na, shto ya a-PAZ-dy-va-yu. chto is said shto, as always.",
+      "variations": [
+        {
+          "display": "Mne býlo stýdno",
+          "script": "Мне было стыдно",
+          "cue": "I was ashamed",
+          "changed": "the feeling in the past"
+        },
+        {
+          "display": "Mne stýdno, chto ya ne pomóg",
+          "script": "Мне стыдно, что я не помог",
+          "cue": "I'm ashamed that I didn't help",
+          "changed": "what the shame is about"
+        }
+      ],
+      "mistake": {
+        "display": "Ya stýdnyy, chto ya opázdyvayu",
+        "script": "Я стыдный, что я опаздываю",
+        "why": "There is no such adjective for a person here. Shame is a state that happens to you: mne stýdno."
+      },
+      "usage": "Arriving late and saying so before anyone else does.",
+      "register": "neutral",
+      "mnemonic": "Shameful to me — the fault admitted, not excused."
+    },
+    {
+      "id": "L3-M6-S09",
+      "display": "Mne obídno, a on vésel",
+      "script": "Мне обидно, а он весел",
+      "cue": "I feel hurt, and he's cheerful",
+      "literal": "To-me hurtful, and he cheerful",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "obídno",
+            "script": "обидно",
+            "cue": "hurt, galling",
+            "tag": "delta",
+            "forms": ["obídno"],
+            "note": "The feeling of being treated unfairly — closer to \"it stings\" than to anger. English has no one word for it, which is why it earns the room."
+          },
+          {
+            "display": "vésel",
+            "script": "весел",
+            "cue": "cheerful",
+            "tag": "delta",
+            "forms": ["vésel"],
+            "note": "The short form of L2-M3's vesyólyy, agreeing like rad: vésel, veselá, vésely. The short form is the mood now, the long one the character."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "a is the quiet contrast — \"and meanwhile\". It is not no, which would set the two halves against each other.",
+      "sound": "mnye a-BID-na, a on VYE-sil. The a between them is unstressed and almost swallowed.",
+      "variations": [
+        {
+          "display": "Mne obídno, no ya ponimáyu",
+          "script": "Мне обидно, но я понимаю",
+          "cue": "It stings, but I understand",
+          "changed": "a real objection, with no"
+        },
+        {
+          "display": "Yey obídno, a on vésel",
+          "script": "Ей обидно, а он весел",
+          "cue": "She feels hurt, and he's cheerful",
+          "changed": "a woman in the dative"
+        }
+      ],
+      "mistake": {
+        "display": "Ya obídnyy, a on vesyólyy",
+        "script": "Я обидный, а он весёлый",
+        "why": "obídnyy describes the remark, not the person stung by it. The feeling is mne obídno, and vésel is his mood rather than his nature."
+      },
+      "usage": "The half-complaint you make to a friend, not to the person who caused it.",
+      "register": "informal",
+      "mnemonic": "It stings me — a, and he is fine."
+    },
+    {
+      "id": "L3-M6-S10",
+      "display": "Ty chúvstvuyesh' sebyá lúchshe?",
+      "script": "Ты чувствуешь себя лучше?",
+      "cue": "Are you feeling better?",
+      "literal": "You feel self better?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chúvstvuyesh'",
+            "script": "чувствуешь",
+            "cue": "you feel",
+            "tag": "delta",
+            "forms": ["chúvstvuyesh'"],
+            "note": "The ty form of S05's verb, carrying L1's -esh' ending. sebyá does not change for person — only the verb in front of it does."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "lúchshe is an adverb here and needs no ending. There is no question word either: the voice rises, and that is the question.",
+      "sound": "ty CHUST-vu-yesh si-BYA LUCH-she. Again no v in the first syllable.",
+      "variations": [
+        {
+          "display": "Ty chúvstvuyesh' sebyá khoroshó?",
+          "script": "Ты чувствуешь себя хорошо?",
+          "cue": "Are you feeling all right?",
+          "changed": "no comparison in it"
+        },
+        {
+          "display": "Vy chúvstvuyete sebyá lúchshe?",
+          "script": "Вы чувствуете себя лучше?",
+          "cue": "Are you feeling better?",
+          "changed": "asked politely"
+        }
+      ],
+      "mistake": {
+        "display": "Ty chúvstvuyesh' lúchshe?",
+        "script": "Ты чувствуешь лучше?",
+        "why": "Without sebyá you have asked whether their senses are sharper. Feeling better about yourself needs the self in it."
+      },
+      "usage": "Calling someone the day after they were ill.",
+      "register": "informal",
+      "mnemonic": "Feeling yourself better? The self never leaves."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M6-C01",
+      "display": "Mne sevódnya grústno",
+      "script": "Мне сегодня грустно",
+      "cue": "I feel sad today"
+    },
+    {
+      "id": "L3-M6-C02",
+      "display": "Mne býlo stráshno",
+      "script": "Мне было страшно",
+      "cue": "I was frightened"
+    },
+    {
+      "id": "L3-M6-C03",
+      "display": "Mne skúchno dóma",
+      "script": "Мне скучно дома",
+      "cue": "I'm bored at home"
+    },
+    {
+      "id": "L3-M6-C04",
+      "display": "Ya rad, chto ty zdes'",
+      "script": "Я рад, что ты здесь",
+      "cue": "I'm glad you're here"
+    },
+    {
+      "id": "L3-M6-C05",
+      "display": "Ya chúvstvuyu sebyá khoroshó",
+      "script": "Я чувствую себя хорошо",
+      "cue": "I feel well"
+    },
+    {
+      "id": "L3-M6-C06",
+      "display": "Mne stálo spokóyno",
+      "script": "Мне стало спокойно",
+      "cue": "I felt calm"
+    },
+    {
+      "id": "L3-M6-C07",
+      "display": "Ya bespokóyus' o rabóte",
+      "script": "Я беспокоюсь о работе",
+      "cue": "I'm worried about work"
+    },
+    {
+      "id": "L3-M6-C08",
+      "display": "Mne stýdno, chto ya opázdyvayu",
+      "script": "Мне стыдно, что я опаздываю",
+      "cue": "I'm ashamed that I'm late"
+    },
+    {
+      "id": "L3-M6-C09",
+      "display": "Mne obídno, a on vésel",
+      "script": "Мне обидно, а он весел",
+      "cue": "I feel hurt, and he's cheerful"
+    },
+    {
+      "id": "L3-M6-C10",
+      "display": "Ty chúvstvuyesh' sebyá lúchshe?",
+      "script": "Ты чувствуешь себя лучше?",
+      "cue": "Are you feeling better?"
+    },
+    {
+      "id": "L3-M6-C11",
+      "display": "Mne priyátno, chto vy zdes'",
+      "script": "Мне приятно, что вы здесь",
+      "cue": "I'm pleased that you're here"
+    },
+    {
+      "id": "L3-M6-C12",
+      "display": "Ya rad, chto vsyó khoroshó",
+      "script": "Я рад, что всё хорошо",
+      "cue": "I'm glad everything is all right"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

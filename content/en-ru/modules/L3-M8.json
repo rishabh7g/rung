@@ -1,0 +1,586 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M8",
+  "title": "Money and paperwork",
+  "job": "Rent, bills, forms, offices",
+  "prerequisites": ["L3-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": ["simple_present_imperfective", "simple_past", "simple_future_perfective"],
+    "allowedPatterns": [
+      "<number> + <N-genitive singular or plural>",
+      "Nádo zaplatít' + <amount>",
+      "Gde mózhno + V-inf + ?",
+      "Zapólnite + <form>",
+      "Éhto stóit + <amount>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE NUMBER RULE, at last. Russian counts in three shapes: 1 takes the NOMINATIVE SINGULAR (odín rubl'), 2, 3 and 4 take the GENITIVE SINGULAR (dva rublyá), and 5 and everything above takes the GENITIVE PLURAL (pyat' rubléy). The rule then restarts on the LAST DIGIT, so 21 goes back to odín rubl' and 22 to dva rublyá. L1-M8 shipped rubléy and chasóv without ever saying why; this is the why, and it explains both retroactively."
+    },
+    {
+      "tag": "interference",
+      "text": "English has one plural and uses it after every number from two upwards — two roubles, five roubles, twenty-one roubles. Russian makes three choices instead of one, and makes them on the last digit rather than on the size of the number. A learner who picks one ending and sticks with it is wrong two times in three, which is why the rule is worth learning as arithmetic rather than as vocabulary."
+    },
+    {
+      "tag": "free",
+      "text": "Round hundreds and a thousand are the vocabulary that makes the rule usable: sto, dvésti, trísta, týsyacha. A rent or a salary is five digits and has to be said aloud, so these earn their room — but only the round ones. Everything between them is built from what L1-M8 already gave you, and the comprehension pool is where that practice belongs."
+    },
+    {
+      "tag": "delta",
+      "text": "This module speaks vy from beginning to end, because a counter is exactly what that register was made for. Nothing new is opened for politeness: zapólnite and podpishíte are L2-M1's imperative, mózhno and nel'zyá are M4's, and pozháluysta is where it always was. That is what leaves the room for the numbers."
+    },
+    {
+      "tag": "free",
+      "text": "The vocabulary is simply what appears on the paper: schyot, kvitántsiya, arénda, dokumént, ankéta, pódpis', srok, nalóg. Each genitive shape a number frame needs lives in its own noun's forms rather than on a row of its own — sto týsyach rubléy is one phrase with two counted nouns in it, and both are the same rule."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M8-S01",
+      "display": "Éhto stóit dvésti rubléy",
+      "script": "Это стоит двести рублей",
+      "cue": "That costs two hundred roubles",
+      "literal": "This costs two-hundred of-roubles",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dvésti",
+            "script": "двести",
+            "cue": "two hundred",
+            "tag": "delta",
+            "forms": ["dvésti"],
+            "note": "Two hundred. It ends the number in a zero, so what follows is the genitive plural: dvésti rubléy. The rule reads the LAST digit and nothing else."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "rubléy is not a plural in the English sense — it is the genitive plural, and it appears because the number ends in 0.",
+      "sound": "EH-ta STO-it DVYE-sti rub-LEY. dvésti keeps its stress at the front, rubléy at the very end.",
+      "variations": [
+        {
+          "display": "Éhto stóit dva rublyá",
+          "script": "Это стоит два рубля",
+          "cue": "That costs two roubles",
+          "changed": "2 takes the genitive singular"
+        },
+        {
+          "display": "Éhto stóit pyat' rubléy",
+          "script": "Это стоит пять рублей",
+          "cue": "That costs five roubles",
+          "changed": "5 and up take the genitive plural"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto stóit dvésti rublyá",
+        "script": "Это стоит двести рубля",
+        "why": "rublyá is the shape for 2, 3 and 4 only. Two hundred ends in a zero, so it is rubléy."
+      },
+      "usage": "Asking a price and understanding the answer.",
+      "register": "neutral",
+      "mnemonic": "One rubl', two rublyá, five rubléy — and 200 counts as none of them but the last."
+    },
+    {
+      "id": "L3-M8-S02",
+      "display": "Arénda stóit sto týsyach rubléy",
+      "script": "Аренда стоит сто тысяч рублей",
+      "cue": "The rent is a hundred thousand roubles",
+      "literal": "Rent costs hundred of-thousands of-roubles",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "arénda",
+            "script": "аренда",
+            "cue": "rent",
+            "tag": "delta",
+            "forms": ["arénda", "aréndu", "aréndy"],
+            "note": "The rent on a flat, as a sum rather than as an act. Paying it is platít' aréndu, in the accusative, and the word itself never changes its stress."
+          },
+          {
+            "display": "týsyach",
+            "script": "тысяч",
+            "cue": "thousands (counted)",
+            "tag": "delta",
+            "forms": ["týsyach", "týsyacha", "týsyachu"],
+            "note": "A thousand is týsyacha; after sto it becomes the genitive plural týsyach, and the roubles after it follow the same rule. Two counted nouns, one rule."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "Two counted nouns in a row, and the rule is applied twice: sto decides týsyach, and the whole number decides rubléy.",
+      "sound": "a-RYEN-da STO-it sto TY-syach rub-LEY. týsyach is front-stressed and short.",
+      "variations": [
+        {
+          "display": "Arénda stóit dvésti týsyach rubléy",
+          "script": "Аренда стоит двести тысяч рублей",
+          "cue": "The rent is two hundred thousand roubles",
+          "changed": "a bigger round number"
+        },
+        {
+          "display": "Skól'ko stóit arénda?",
+          "script": "Сколько стоит аренда?",
+          "cue": "How much is the rent?",
+          "changed": "L1-M8's question, on a new noun"
+        }
+      ],
+      "mistake": {
+        "display": "Arénda stóit sto týsyachi rubléy",
+        "script": "Аренда стоит сто тысячи рублей",
+        "why": "týsyachi is the shape after 2, 3 and 4. sto ends in a zero, so the genitive plural týsyach is what follows it."
+      },
+      "usage": "The first question about any flat, and the first number you have to hear correctly.",
+      "register": "neutral",
+      "mnemonic": "sto týsyach rubléy — the rule runs down the line."
+    },
+    {
+      "id": "L3-M8-S03",
+      "display": "Nádo zaplatít' trísta rubléy",
+      "script": "Надо заплатить триста рублей",
+      "cue": "Three hundred roubles have to be paid",
+      "literal": "Necessary to-pay three-hundred of-roubles",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zaplatít'",
+            "script": "заплатить",
+            "cue": "to pay",
+            "tag": "delta",
+            "forms": ["zaplatít'", "zaplatíl", "zaplatíla"],
+            "note": "The finished act of paying. After nádo it stays an infinitive, exactly as after L2-M1's nádo — one form, and the person is left out or put in the dative."
+          },
+          {
+            "display": "trísta",
+            "script": "триста",
+            "cue": "three hundred",
+            "tag": "delta",
+            "forms": ["trísta"],
+            "note": "Three hundred, front-stressed like dvésti. It ends in a zero, so the noun after it is the genitive plural: trísta rubléy."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "nádo takes an infinitive and no subject. Adding ya to it is the one thing that makes this sentence wrong.",
+      "sound": "NA-da za-pla-TIT TRI-sta rub-LEY. The infinitive ending -tit' is short and unstressed at the end.",
+      "variations": [
+        {
+          "display": "Nádo zaplatít' schyot",
+          "script": "Надо заплатить счёт",
+          "cue": "The bill has to be paid",
+          "changed": "L2-M5's bill, as the thing paid"
+        },
+        {
+          "display": "Nádo zaplatít' sevódnya",
+          "script": "Надо заплатить сегодня",
+          "cue": "It has to be paid today",
+          "changed": "when rather than how much"
+        }
+      ],
+      "mistake": {
+        "display": "Ya nádo zaplatít' trísta rubléy",
+        "script": "Я надо заплатить триста рублей",
+        "why": "nádo never takes a nominative. Either leave the person out or put them in the dative: mne nádo zaplatít'."
+      },
+      "usage": "Working out what is owed, aloud, in front of the person who is owed it.",
+      "register": "neutral",
+      "mnemonic": "nádo plus an infinitive — no one is named."
+    },
+    {
+      "id": "L3-M8-S04",
+      "display": "Gde mózhno zaplatít' nalóg?",
+      "script": "Где можно заплатить налог?",
+      "cue": "Where can I pay the tax?",
+      "literal": "Where possible to-pay tax?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nalóg",
+            "script": "налог",
+            "cue": "tax",
+            "tag": "delta",
+            "forms": ["nalóg"],
+            "note": "A tax, and the thing paid, so it stands in the accusative — which for this noun looks exactly like the plain form. Stress on the ending: na-LOG."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "mózhno needs no ya either. The question is about what is possible here, not about you.",
+      "sound": "gdye MOZH-na za-pla-TIT na-LOK. The final g of nalóg is said as a k.",
+      "variations": [
+        {
+          "display": "Zdes' mózhno zaplatít' nalóg",
+          "script": "Здесь можно заплатить налог",
+          "cue": "You can pay the tax here",
+          "changed": "the answer instead of the question"
+        },
+        {
+          "display": "Gde mózhno zaplatít'?",
+          "script": "Где можно заплатить?",
+          "cue": "Where can I pay?",
+          "changed": "the object left out, as at a counter"
+        }
+      ],
+      "mistake": {
+        "display": "Gde ya mózhno zaplatít' nalóg?",
+        "script": "Где я можно заплатить налог?",
+        "why": "mózhno is impersonal — there is no room for ya in it. The dative is the most it ever takes: mne mózhno."
+      },
+      "usage": "Standing in the wrong queue in a government office.",
+      "register": "formal",
+      "mnemonic": "gde mózhno — where is it possible, not where can I."
+    },
+    {
+      "id": "L3-M8-S05",
+      "display": "Zapólnite ankétu, pozháluysta",
+      "script": "Заполните анкету, пожалуйста",
+      "cue": "Fill in the form, please",
+      "literal": "Fill-in form, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zapólnite",
+            "script": "заполните",
+            "cue": "fill in (polite)",
+            "tag": "delta",
+            "forms": ["zapólnite"],
+            "note": "L2-M1's polite imperative on a new verb: the -ite ending is the one in skazhíte and pomogíte. It is what you are told, not what you say."
+          },
+          {
+            "display": "ankétu",
+            "script": "анкету",
+            "cue": "a form (to fill in)",
+            "tag": "delta",
+            "forms": ["ankétu", "ankéta"],
+            "note": "The printed form with boxes on it. Accusative here because it is the thing filled in; on its own it is ankéta."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "ankéta is a form, not a questionnaire in the survey sense, and never a formality. It is the paper in front of you.",
+      "sound": "za-POL-ni-tye an-KYE-tu, pa-ZHA-lu-sta. pozháluysta loses its middle: pa-ZHAL-sta in fast speech.",
+      "variations": [
+        {
+          "display": "Zapólnite ankétu zdes'",
+          "script": "Заполните анкету здесь",
+          "cue": "Fill in the form here",
+          "changed": "where to do it"
+        },
+        {
+          "display": "Zapólnite dokumént, pozháluysta",
+          "script": "Заполните документ, пожалуйста",
+          "cue": "Fill in the document, please",
+          "changed": "a different piece of paper"
+        }
+      ],
+      "mistake": {
+        "display": "Zapólnite ankéta, pozháluysta",
+        "script": "Заполните анкета, пожалуйста",
+        "why": "The form is the thing being filled in, so it takes the accusative: ankétu. The -a ending is the naming form only."
+      },
+      "usage": "The sentence every counter in the country says to you.",
+      "register": "formal",
+      "mnemonic": "-ite is what they say to you; -u is what you do it to."
+    },
+    {
+      "id": "L3-M8-S06",
+      "display": "Vásha pódpis' zdes'",
+      "script": "Ваша подпись здесь",
+      "cue": "Your signature goes here",
+      "literal": "Your signature here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pódpis'",
+            "script": "подпись",
+            "cue": "signature",
+            "tag": "delta",
+            "forms": ["pódpis'", "pódpisi"],
+            "note": "Signature, stressed on the first syllable: POD-pis'. It is feminine despite the consonant ending, which is why it takes vásha and not vash."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "A noun ending in -' can be either gender, and this one is feminine. vásha pódpis', never vash pódpis'.",
+      "sound": "VA-sha POT-pis ZDYES. The d is said as a t before the p.",
+      "variations": [
+        {
+          "display": "Zdes' vásha pódpis'",
+          "script": "Здесь ваша подпись",
+          "cue": "Here is where you sign",
+          "changed": "the place put first"
+        },
+        {
+          "display": "Gde moyá pódpis'?",
+          "script": "Где моя подпись?",
+          "cue": "Where is my signature?",
+          "changed": "asked back, with moyá"
+        }
+      ],
+      "mistake": {
+        "display": "Vash pódpis' zdes'",
+        "script": "Ваш подпись здесь",
+        "why": "pódpis' is feminine, so the possessive is vásha. The soft sign at the end is the only clue, and it is not a reliable one — this word has to be learnt with its gender."
+      },
+      "usage": "A clerk pointing at the bottom of a page.",
+      "register": "formal",
+      "mnemonic": "vásha pódpis' — feminine, whatever the ending looks like."
+    },
+    {
+      "id": "L3-M8-S07",
+      "display": "Ya poteryál dokumént",
+      "script": "Я потерял документ",
+      "cue": "I've lost my document",
+      "literal": "I lost document",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dokumént",
+            "script": "документ",
+            "cue": "a document, an official paper",
+            "tag": "delta",
+            "forms": ["dokumént", "dokuménty"],
+            "note": "Any official paper, and in the plural dokuménty is what an official means by \"your papers\". Stress on the last syllable: do-ku-MENT."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "No moy in it. Losing it already says whose it was, and Russian leaves the possessive out.",
+      "sound": "ya pa-ti-RYAL da-ku-MYENT. Both words put their weight on the last syllable.",
+      "variations": [
+        {
+          "display": "Ya poteryála dokumént",
+          "script": "Я потеряла документ",
+          "cue": "I've lost my document",
+          "changed": "a woman saying it"
+        },
+        {
+          "display": "Oná poteryála kvitántsiyu",
+          "script": "Она потеряла квитанцию",
+          "cue": "She's lost the receipt",
+          "changed": "a different paper, in the accusative"
+        }
+      ],
+      "mistake": {
+        "display": "Ya poteryál moy dokumént",
+        "script": "Я потерял мой документ",
+        "why": "Grammatical, but nobody says it. The possessive is dropped wherever the owner is obvious."
+      },
+      "usage": "The worst sentence in the module, and the one you will need.",
+      "register": "neutral",
+      "mnemonic": "do-ku-MENT — the stress is at the end, as in English."
+    },
+    {
+      "id": "L3-M8-S08",
+      "display": "U menyá yest' kvitántsiya",
+      "script": "У меня есть квитанция",
+      "cue": "I have the receipt",
+      "literal": "At me is receipt",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kvitántsiya",
+            "script": "квитанция",
+            "cue": "a receipt, a paid slip",
+            "tag": "delta",
+            "forms": ["kvitántsiya", "kvitántsiyu"],
+            "note": "The slip that proves a payment, as against schyot, which is the bill asking for it. Stress in the middle: kvi-TAN-tsi-ya."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "yest' belongs here, unlike in the health module: the whole point is that the receipt exists and you are holding it.",
+      "sound": "u mi-NYA yest kvi-TAN-tsi-ya. The -iya ending runs together into one soft syllable.",
+      "variations": [
+        {
+          "display": "U menyá yest' kvitántsiya i dokumént",
+          "script": "У меня есть квитанция и документ",
+          "cue": "I have the receipt and the document",
+          "changed": "two papers at once"
+        },
+        {
+          "display": "U nevó yest' kvitántsiya",
+          "script": "У него есть квитанция",
+          "cue": "He has the receipt",
+          "changed": "a different owner"
+        }
+      ],
+      "mistake": {
+        "display": "Ya iméyu kvitántsiyu",
+        "script": "Я имею квитанцию",
+        "why": "The verb exists and is used in contracts, not at a counter. Say u menyá yest'."
+      },
+      "usage": "Proving you have already paid, which happens more often than it should.",
+      "register": "neutral",
+      "mnemonic": "schyot asks, kvitántsiya proves."
+    },
+    {
+      "id": "L3-M8-S09",
+      "display": "Srok uzhé závtra",
+      "script": "Срок уже завтра",
+      "cue": "The deadline is tomorrow",
+      "literal": "Deadline already tomorrow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "srok",
+            "script": "срок",
+            "cue": "deadline, term",
+            "tag": "delta",
+            "forms": ["srok"],
+            "note": "The date by which a thing must be done — a deadline, a term, a period of validity. One syllable, and no verb needed around it."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "There is no verb in the sentence, because Russian has no present tense of \"to be\". The two words are simply set beside each other.",
+      "sound": "srok u-ZHE ZAF-tra. závtra is said with an f in the middle.",
+      "variations": [
+        {
+          "display": "Kakóy srok?",
+          "script": "Какой срок?",
+          "cue": "What's the deadline?",
+          "changed": "asked instead of stated"
+        },
+        {
+          "display": "Srok byl vcherá",
+          "script": "Срок был вчера",
+          "cue": "The deadline was yesterday",
+          "changed": "the past, agreeing with srok"
+        }
+      ],
+      "mistake": {
+        "display": "Srok yest' závtra",
+        "script": "Срок есть завтра",
+        "why": "yest' says a thing exists. A deadline that falls tomorrow needs no verb at all."
+      },
+      "usage": "The line that decides whether today is calm or not.",
+      "register": "formal",
+      "mnemonic": "Two nouns, no verb — Russian's present tense of \"to be\" is silence."
+    },
+    {
+      "id": "L3-M8-S10",
+      "display": "Mózhno zaplatít' kártoy?",
+      "script": "Можно заплатить картой?",
+      "cue": "Can I pay by card?",
+      "literal": "Possible to-pay by-card?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kártoy",
+            "script": "картой",
+            "cue": "by card",
+            "tag": "delta",
+            "forms": ["kártoy", "kárta", "kártu"],
+            "note": "The instrumental — the case that means BY means of. It is L2-M2's ending on a new noun: kártoy for the card, and the plain form is kárta."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "No preposition. \"By card\" is one word in Russian, and the ending carries the \"by\".",
+      "sound": "MOZH-na za-pla-TIT KAR-toy. The question is made by the rise at the end alone.",
+      "variations": [
+        {
+          "display": "Mózhno zaplatít' zdes'?",
+          "script": "Можно заплатить здесь?",
+          "cue": "Can I pay here?",
+          "changed": "where instead of how"
+        },
+        {
+          "display": "Ya zaplatíl kártoy",
+          "script": "Я заплатил картой",
+          "cue": "I paid by card",
+          "changed": "done, and reported"
+        }
+      ],
+      "mistake": {
+        "display": "Mózhno zaplatít' s kárta?",
+        "script": "Можно заплатить с карта?",
+        "why": "s is not needed and would take a different case anyway. The instrumental on its own means by this means: kártoy."
+      },
+      "usage": "Said at every till, several times a day.",
+      "register": "neutral",
+      "mnemonic": "kártoy — the ending is the \"by\"."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M8-C01",
+      "display": "Éhto stóit dvésti rubléy",
+      "script": "Это стоит двести рублей",
+      "cue": "That costs two hundred roubles"
+    },
+    {
+      "id": "L3-M8-C02",
+      "display": "Arénda stóit sto týsyach rubléy",
+      "script": "Аренда стоит сто тысяч рублей",
+      "cue": "The rent is a hundred thousand roubles"
+    },
+    {
+      "id": "L3-M8-C03",
+      "display": "Nádo zaplatít' trísta rubléy",
+      "script": "Надо заплатить триста рублей",
+      "cue": "Three hundred roubles have to be paid"
+    },
+    {
+      "id": "L3-M8-C04",
+      "display": "Gde mózhno zaplatít' nalóg?",
+      "script": "Где можно заплатить налог?",
+      "cue": "Where can I pay the tax?"
+    },
+    {
+      "id": "L3-M8-C05",
+      "display": "Zapólnite ankétu, pozháluysta",
+      "script": "Заполните анкету, пожалуйста",
+      "cue": "Fill in the form, please"
+    },
+    {
+      "id": "L3-M8-C06",
+      "display": "Vásha pódpis' zdes'",
+      "script": "Ваша подпись здесь",
+      "cue": "Your signature goes here"
+    },
+    {
+      "id": "L3-M8-C07",
+      "display": "Ya poteryál dokumént",
+      "script": "Я потерял документ",
+      "cue": "I've lost my document"
+    },
+    {
+      "id": "L3-M8-C08",
+      "display": "U menyá yest' kvitántsiya",
+      "script": "У меня есть квитанция",
+      "cue": "I have the receipt"
+    },
+    {
+      "id": "L3-M8-C09",
+      "display": "Srok uzhé závtra",
+      "script": "Срок уже завтра",
+      "cue": "The deadline is tomorrow"
+    },
+    {
+      "id": "L3-M8-C10",
+      "display": "Mózhno zaplatít' kártoy?",
+      "script": "Можно заплатить картой?",
+      "cue": "Can I pay by card?"
+    },
+    {
+      "id": "L3-M8-C11",
+      "display": "Éhto stóit pyat' rubléy",
+      "script": "Это стоит пять рублей",
+      "cue": "That costs five roubles"
+    },
+    {
+      "id": "L3-M8-C12",
+      "display": "Skól'ko stóit arénda?",
+      "script": "Сколько стоит аренда?",
+      "cue": "How much is the rent?"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

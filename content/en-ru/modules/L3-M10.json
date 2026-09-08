@@ -1,0 +1,641 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M10",
+  "title": "Your own story",
+  "job": "An eight-sentence account, built from the whole ladder",
+  "prerequisites": ["L3-M9"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": ["simple_past", "simple_present_imperfective", "simple_future_perfective"],
+    "allowedPatterns": [
+      "Ránshe ya + V-imperfective-past",
+      "Ya poshyól + , + potóm prishyól + , + zatém ushyól",
+      "<imperfective background> + , + kogdá + <perfective step>",
+      "Nakonéts ya + V-perfective-past"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "ASPECT AT LENGTH is what this module is really testing. L2-M10 taught the choice inside a four-sentence account; six to eight sentences is where a learner either has it or does not. The imperfective paints what was going on — ya rabótal dólgo — and the perfective moves the account one finished step — ya ushyól domóy. Nothing new is opened for it. This is L2-M10's rule run at twice the length, and the test of a good account is that swapping one pair changes what happened rather than only how it sounds."
+    },
+    {
+      "tag": "free",
+      "text": "PREFIXED MOTION VERBS finish what L1 began with poshyól. The stem never changes and each prefix is a direction: u- away from here (ushyól), vy- out of somewhere (výshel), za- in on the way past (zashyól), pri- arrived (prishyól, and priyékhal for arriving by vehicle). Four words cost about one and a half, and a learner who memorises them as four separate items has paid three times over."
+    },
+    {
+      "tag": "delta",
+      "text": "ránshe plus an imperfective past is the whole of English's \"used to\": ránshe ya rabótal v magazíne, \"I used to work in a shop\". One adverb and no new form. khodíl and yézdil belong to the same frame — repeated trips there and back, on foot and by vehicle — and are taken here as vocabulary. The determinate and indeterminate system they come from is L4's business, not this module's."
+    },
+    {
+      "tag": "free",
+      "text": "The connectors are the skeleton of an account and every one of them is already yours: snachála, potóm, zatém, poslé étovo, nakonéts. They are what turns seven sentences into a story rather than a list, and they carry the order so completely that the sentences themselves can stay short. Say them at the front of the sentence, where English also likes them."
+    },
+    {
+      "tag": "interference",
+      "text": "English marks one past inside another with \"had\" — \"I had already left when she arrived\". Russian has no such form and does not miss it: the order is carried by the connectors and by aspect alone, and uzhé does the rest. If an account reads clearly in the order it happened, nothing further is needed, which is why the whole level closes without a single new tense."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M10-S01",
+      "display": "Vcherá ya vstal ráno. Snachála ya výpil kófe. Potóm ya poshyól na rabótu. Ya rabótal dólgo. Zatém ya ushyól domóy. Vécherom ya chitál knígu. Ya óchen' ustál.",
+      "script": "Вчера я встал рано. Сначала я выпил кофе. Потом я пошёл на работу. Я работал долго. Затем я ушёл домой. Вечером я читал книгу. Я очень устал.",
+      "cue": "Yesterday I got up early. First I had a coffee. Then I went to work. I worked for a long time. After that I left for home. In the evening I read a book. I was very tired.",
+      "literal": "Yesterday I got-up early. First I drank coffee. Then I went to work. I worked long. Then I left home. In-evening I read book. I very tired.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dólgo",
+            "script": "долго",
+            "cue": "for a long time",
+            "tag": "delta",
+            "forms": ["dólgo"],
+            "note": "For a long time — and it goes with the imperfective, because it describes a stretch rather than a finished act. rabótal dólgo, never porabótal dólgo."
+          },
+          {
+            "display": "ushyól",
+            "script": "ушёл",
+            "cue": "left, went away",
+            "tag": "delta",
+            "forms": ["ushyól"],
+            "note": "L1-M5's poshyól with the prefix u-, which means away from here. Same stem, same past ending: only the front of the word has changed."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "Seven sentences and two new words. That is the point of the module: the ladder you already have is a whole account.",
+      "sound": "Each sentence falls at the end and the connectors sit up front: sna-CHA-la, pa-TOM, za-TYEM.",
+      "variations": [
+        {
+          "display": "Vcherá ya vstal ráno i poshyól na rabótu. Vécherom ya ustál.",
+          "script": "Вчера я встал рано и пошёл на работу. Вечером я устал.",
+          "cue": "Yesterday I got up early and went to work. In the evening I was tired.",
+          "changed": "the same day in two sentences"
+        },
+        {
+          "display": "Vcherá ya vstála ráno. Potóm ya poshlá na rabótu. Ya ushlá domóy pózdno.",
+          "script": "Вчера я встала рано. Потом я пошла на работу. Я ушла домой поздно.",
+          "cue": "Yesterday I got up early. Then I went to work. I left for home late.",
+          "changed": "a woman telling it"
+        }
+      ],
+      "mistake": {
+        "display": "Vcherá ya vstal ráno. Snachála ya pil kófe. Potóm ya khodíl na rabótu.",
+        "script": "Вчера я встал рано. Сначала я пил кофе. Потом я ходил на работу.",
+        "why": "Those are the wrong aspects for single finished steps. One coffee that got drunk is výpil, and one trip that got made is poshyól."
+      },
+      "usage": "The account of an ordinary day, which is what most conversations want.",
+      "register": "neutral",
+      "mnemonic": "snachála, potóm, zatém, nakonéts — four pegs and the story hangs on them."
+    },
+    {
+      "id": "L3-M10-S02",
+      "display": "Ránshe ya rabótal v magazíne. Kázhdyy den' ya rabótal dólgo. Ya chásto khodíl v kafé. Inogdá ya yézdil v górod. Seychás ya rabótayu zdes'. Ránshe býlo lúchshe.",
+      "script": "Раньше я работал в магазине. Каждый день я работал долго. Я часто ходил в кафе. Иногда я ездил в город. Сейчас я работаю здесь. Раньше было лучше.",
+      "cue": "I used to work in a shop. Every day I worked long hours. I often went to a café. Sometimes I went into town. Now I work here. Things were better before.",
+      "literal": "Earlier I worked in shop. Every day I worked long. I often walked to café. Sometimes I travelled to town. Now I work here. Earlier was better.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ránshe",
+            "script": "раньше",
+            "cue": "before, formerly",
+            "tag": "delta",
+            "forms": ["ránshe"],
+            "note": "One adverb, and it is the whole of English's \"used to\". Put it in front of an ordinary imperfective past and the habit is said."
+          },
+          {
+            "display": "khodíl",
+            "script": "ходил",
+            "cue": "used to go (on foot)",
+            "tag": "delta",
+            "forms": ["khodíl"],
+            "note": "Repeated trips on foot, there and back — where poshyól is one trip in one direction. With chásto or kázhdyy den' this is the verb you want."
+          },
+          {
+            "display": "yézdil",
+            "script": "ездил",
+            "cue": "used to go (by vehicle)",
+            "tag": "delta",
+            "forms": ["yézdil"],
+            "note": "khodíl's partner for anything with wheels: yézdil v górod, went into town and came back. Russians never walk and ride with the same verb."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "There is no separate \"used to\" form to learn. ránshe plus the plain imperfective past is all of it.",
+      "sound": "RAN-she, KHO-dil, YEZ-dil — all three are front-stressed, which makes the habit easy to hear.",
+      "variations": [
+        {
+          "display": "Ránshe ya rabótal v magazíne. Ya chásto khodíl v kafé.",
+          "script": "Раньше я работал в магазине. Я часто ходил в кафе.",
+          "cue": "I used to work in a shop. I often went to a café.",
+          "changed": "the habit in two lines"
+        },
+        {
+          "display": "Ránshe oná rabótala v magazíne. Oná chásto khodíla v kafé.",
+          "script": "Раньше она работала в магазине. Она часто ходила в кафе.",
+          "cue": "She used to work in a shop. She often went to a café.",
+          "changed": "a woman's habit"
+        }
+      ],
+      "mistake": {
+        "display": "Ránshe ya poshyól v kafé kázhdyy den'.",
+        "script": "Раньше я пошёл в кафе каждый день.",
+        "why": "poshyól is one trip, and a habit is not one of anything. Repeated trips take khodíl."
+      },
+      "usage": "Telling somebody what your life was like before this one.",
+      "register": "neutral",
+      "mnemonic": "ránshe plus the -l past: used to, in two words."
+    },
+    {
+      "id": "L3-M10-S03",
+      "display": "Útrom ya výshel iz dóma. Ya zashyól v magazín. Tam ya kupíl khleb. Potóm ya poshyól na rabótu. Ya prishyól nemnógo pózdno. No vsyó býlo khoroshó.",
+      "script": "Утром я вышел из дома. Я зашёл в магазин. Там я купил хлеб. Потом я пошёл на работу. Я пришёл немного поздно. Но всё было хорошо.",
+      "cue": "In the morning I left the house. I dropped into a shop. I bought bread there. Then I went on to work. I arrived a little late. But everything was fine.",
+      "literal": "In-morning I went-out from house. I dropped-in into shop. There I bought bread. Then I went to work. I arrived a-little late. But all was well.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "výshel",
+            "script": "вышел",
+            "cue": "went out, left (a building)",
+            "tag": "delta",
+            "forms": ["výshel"],
+            "note": "vy- is out of somewhere, so výshel iz dóma is stepping out of the house. Note the stress moves to the front: VY-shel, unlike ushyól."
+          },
+          {
+            "display": "zashyól",
+            "script": "зашёл",
+            "cue": "dropped in, called in",
+            "tag": "delta",
+            "forms": ["zashyól"],
+            "note": "za- is a call made on the way to somewhere else — dropping into a shop, not going shopping. The stop is short and the journey continues."
+          },
+          {
+            "display": "prishyól",
+            "script": "пришёл",
+            "cue": "arrived, came",
+            "tag": "delta",
+            "forms": ["prishyól"],
+            "note": "pri- is arrival, the other end of L1-M5's poshyól: one leaves, the other lands. L1 taught the future pridú; this is its past."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "Three prefixes on one stem in one account. Read them as directions and there is only one verb here, not three.",
+      "sound": "VY-shel is front-stressed; za-SHOL and pri-SHOL both land at the end. The prefix is where the difference lives.",
+      "variations": [
+        {
+          "display": "Ya výshel iz dóma i zashyól v magazín.",
+          "script": "Я вышел из дома и зашёл в магазин.",
+          "cue": "I left the house and dropped into a shop.",
+          "changed": "two steps in one line"
+        },
+        {
+          "display": "Oná výshla iz dóma i zashlá v magazín.",
+          "script": "Она вышла из дома и зашла в магазин.",
+          "cue": "She left the house and dropped into a shop.",
+          "changed": "a woman doing it"
+        }
+      ],
+      "mistake": {
+        "display": "Útrom ya poshyól iz dóma. Ya poshyól v magazín.",
+        "script": "Утром я пошёл из дома. Я пошёл в магазин.",
+        "why": "poshyól says only that a trip started. Out of a building is výshel, and a call on the way is zashyól."
+      },
+      "usage": "The shape of any morning, told afterwards.",
+      "register": "neutral",
+      "mnemonic": "u- away, vy- out, za- in passing, pri- arrived."
+    },
+    {
+      "id": "L3-M10-S04",
+      "display": "Vcherá ko mne priyékhal brat. On priyékhal na póyezde. My srázu poshlí v kafé. Tam my býli dólgo. Potóm on poshyól domóy. Éhto byl khoróshiy den'.",
+      "script": "Вчера ко мне приехал брат. Он приехал на поезде. Мы сразу пошли в кафе. Там мы были долго. Потом он пошёл домой. Это был хороший день.",
+      "cue": "Yesterday my brother came to see me. He came by train. We went straight to a café. We were there a long time. Then he went home. It was a good day.",
+      "literal": "Yesterday to me arrived brother. He arrived on train. We straight-away went into café. There we were long. Then he went home. This was good day.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "priyékhal",
+            "script": "приехал",
+            "cue": "arrived (by vehicle)",
+            "tag": "delta",
+            "forms": ["priyékhal"],
+            "note": "prishyól arrives on foot and priyékhal arrives with wheels under it — the stem is L2-M4's yékhat'. For a train, a car or a plane this is the only choice."
+          },
+          {
+            "display": "srázu",
+            "script": "сразу",
+            "cue": "straight away",
+            "tag": "delta",
+            "forms": ["srázu"],
+            "note": "At once, with nothing in between. It goes with a perfective, because the point is that the next finished step followed immediately."
+          }
+        ],
+        "rules": [1, 0]
+      },
+      "trap": "ko mne, not k mne. k grows a vowel in front of certain clusters, and mne is one of them.",
+      "sound": "ka MNYE pri-YE-khal brat. priyékhal is stressed in the middle, on the YE.",
+      "variations": [
+        {
+          "display": "Ko mne priyékhal brat. My srázu poshlí v kafé.",
+          "script": "Ко мне приехал брат. Мы сразу пошли в кафе.",
+          "cue": "My brother came to see me. We went straight to a café.",
+          "changed": "the visit in two lines"
+        },
+        {
+          "display": "K nam priyékhala sestrá. My poshlí v magazín.",
+          "script": "К нам приехала сестра. Мы пошли в магазин.",
+          "cue": "My sister came to see us. We went to a shop.",
+          "changed": "a woman arriving, at our place"
+        }
+      ],
+      "mistake": {
+        "display": "Vcherá ko mne prishyól brat na póyezde.",
+        "script": "Вчера ко мне пришёл брат на поезде.",
+        "why": "prishyól is on foot, and nobody walks in on a train. Arriving by vehicle is priyékhal."
+      },
+      "usage": "Telling somebody about a visit, the day after it.",
+      "register": "neutral",
+      "mnemonic": "Feet prishyól, wheels priyékhal."
+    },
+    {
+      "id": "L3-M10-S05",
+      "display": "Vcherá ya vstála ráno. Snachála ya výpila kófe. Potóm ya poshlá na rabótu. Ya rabótala dólgo. Zatém ya ushlá domóy. Ya prishlá i srázu ustála.",
+      "script": "Вчера я встала рано. Сначала я выпила кофе. Потом я пошла на работу. Я работала долго. Затем я ушла домой. Я пришла и сразу устала.",
+      "cue": "Yesterday I got up early. First I had a coffee. Then I went to work. I worked for a long time. After that I left for home. I got in and was tired at once.",
+      "literal": "Yesterday I got-up early. First I drank coffee. Then I went to work. I worked long. Then I left home. I arrived and straight-away tired.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ushlá",
+            "script": "ушла",
+            "cue": "left, went away (she)",
+            "tag": "delta",
+            "forms": ["ushlá"],
+            "note": "The feminine past of S01's ushyól — see that row for the prefix. The stress moves to the ending, exactly as it does in poshyól and poshlá."
+          },
+          {
+            "display": "prishlá",
+            "script": "пришла",
+            "cue": "arrived, came (she)",
+            "tag": "delta",
+            "forms": ["prishlá"],
+            "note": "The feminine past of prishyól, taught in S03. Every one of these prefixed verbs behaves the same way: -shyól for a man, -shlá for a woman."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "The whole account changes with the speaker, verb by verb, and nothing else in it moves.",
+      "sound": "ush-LA, prish-LA — the feminine forms all put the stress on the last syllable.",
+      "variations": [
+        {
+          "display": "Vcherá ya vstála ráno i výpila kófe. Potóm ya ushlá na rabótu.",
+          "script": "Вчера я встала рано и выпила кофе. Потом я ушла на работу.",
+          "cue": "Yesterday I got up early and had a coffee. Then I left for work.",
+          "changed": "the morning only"
+        },
+        {
+          "display": "Ya prishlá domóy pózdno i ustála.",
+          "script": "Я пришла домой поздно и устала.",
+          "cue": "I got home late and was tired.",
+          "changed": "the end of the day alone"
+        }
+      ],
+      "mistake": {
+        "display": "Vcherá ya vstála ráno. Potóm ya poshyól na rabótu.",
+        "script": "Вчера я встала рано. Потом я пошёл на работу.",
+        "why": "The speaker cannot change sex halfway through. Once vstála has been said, every past verb in the account is feminine."
+      },
+      "usage": "The same ordinary day, told by a woman.",
+      "register": "neutral",
+      "mnemonic": "-shyól for him, -shlá for her, all the way down."
+    },
+    {
+      "id": "L3-M10-S06",
+      "display": "Ránshe oná rabótala v magazíne. Oná chásto khodíla v kafé. Inogdá oná yézdila v górod. Potóm oná kupíla mashínu. Seychás oná rabótayet zdes'. Yey nrávitsya rabóta.",
+      "script": "Раньше она работала в магазине. Она часто ходила в кафе. Иногда она ездила в город. Потом она купила машину. Сейчас она работает здесь. Ей нравится работа.",
+      "cue": "She used to work in a shop. She often went to a café. Sometimes she went into town. Then she bought a car. Now she works here. She likes the job.",
+      "literal": "Earlier she worked in shop. She often walked to café. Sometimes she travelled to town. Then she bought car. Now she works here. To-her pleases work.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "khodíla",
+            "script": "ходила",
+            "cue": "used to go (on foot, she)",
+            "tag": "delta",
+            "forms": ["khodíla"],
+            "note": "The feminine of S02's khodíl. Note the stress does not move here: kho-DI-la, as in the masculine."
+          },
+          {
+            "display": "yézdila",
+            "script": "ездила",
+            "cue": "used to go (by vehicle, she)",
+            "tag": "delta",
+            "forms": ["yézdila"],
+            "note": "The feminine of yézdil, and front-stressed like it: YEZ-di-la. The trips are repeated, and each one came back."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "One perfective in the middle — kupíla — and it is the only finished step in six sentences. Everything around it is habit.",
+      "sound": "kho-DI-la and YEZ-di-la keep the stress the masculine forms had. Only the ending is added.",
+      "variations": [
+        {
+          "display": "Ránshe oná chásto khodíla v kafé.",
+          "script": "Раньше она часто ходила в кафе.",
+          "cue": "She used to go to a café often.",
+          "changed": "one habit on its own"
+        },
+        {
+          "display": "Inogdá oná yézdila v górod. Seychás oná rabótayet zdes'.",
+          "script": "Иногда она ездила в город. Сейчас она работает здесь.",
+          "cue": "Sometimes she went into town. Now she works here.",
+          "changed": "then set against now"
+        }
+      ],
+      "mistake": {
+        "display": "Ránshe oná poshlá v kafé chásto.",
+        "script": "Раньше она пошла в кафе часто.",
+        "why": "poshlá is one trip. chásto needs the repeated verb, khodíla."
+      },
+      "usage": "Telling somebody else's story, which is most of what gets told.",
+      "register": "neutral",
+      "mnemonic": "Habits stay imperfective; one purchase breaks the line."
+    },
+    {
+      "id": "L3-M10-S07",
+      "display": "Útrom oná výshla iz dóma. Oná zashlá v aptéku. Tam oná kupíla tablétki. Potóm oná poshlá k vrachú. Vrach skazál, chto vsyó khoroshó. Oná vernúlas' domóy.",
+      "script": "Утром она вышла из дома. Она зашла в аптеку. Там она купила таблетки. Потом она пошла к врачу. Врач сказал, что всё хорошо. Она вернулась домой.",
+      "cue": "In the morning she left the house. She called in at the chemist's. She bought tablets there. Then she went to the doctor. The doctor said everything was fine. She came back home.",
+      "literal": "In-morning she went-out from house. She dropped-in into chemist's. There she bought tablets. Then she went to doctor. Doctor said, that all well. She returned home.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "výshla",
+            "script": "вышла",
+            "cue": "went out, left (she)",
+            "tag": "delta",
+            "forms": ["výshla"],
+            "note": "The feminine of S03's výshel, and the stress stays at the front: VY-shla. The vy- prefix keeps the stress wherever it goes."
+          },
+          {
+            "display": "zashlá",
+            "script": "зашла",
+            "cue": "dropped in, called in (she)",
+            "tag": "delta",
+            "forms": ["zashlá"],
+            "note": "The feminine of zashyól. As always, the -shyól ending becomes -shlá and takes the stress with it."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "M7's k vrachú and v aptéku are both in this account. A person takes k, a place takes v, and the trip is the same trip.",
+      "sound": "VY-shla is the odd one out: every other feminine past here is stressed at the end.",
+      "variations": [
+        {
+          "display": "Oná zashlá v aptéku i kupíla tablétki.",
+          "script": "Она зашла в аптеку и купила таблетки.",
+          "cue": "She called in at the chemist's and bought tablets.",
+          "changed": "the errand alone"
+        },
+        {
+          "display": "Ya zashyól v aptéku. Potóm ya poshyól k vrachú.",
+          "script": "Я зашёл в аптеку. Потом я пошёл к врачу.",
+          "cue": "I called in at the chemist's. Then I went to the doctor.",
+          "changed": "a man telling it"
+        }
+      ],
+      "mistake": {
+        "display": "Útrom oná ushlá iz dóma. Oná zashlá v aptéku.",
+        "script": "Утром она ушла из дома. Она зашла в аптеку.",
+        "why": "ushlá is leaving for good, or at least for the day. Stepping out of a building is výshla."
+      },
+      "usage": "The morning of a day that started at the chemist's.",
+      "register": "neutral",
+      "mnemonic": "vy- out of the door, u- away from the day."
+    },
+    {
+      "id": "L3-M10-S08",
+      "display": "Vcherá k nam priyékhala sestrá. Oná priyékhala na mashíne. My srázu poshlí v kafé. Tam my býli dólgo. My vernúlis' domóy pózdno. Sestrá ostálas' zdes'.",
+      "script": "Вчера к нам приехала сестра. Она приехала на машине. Мы сразу пошли в кафе. Там мы были долго. Мы вернулись домой поздно. Сестра осталась здесь.",
+      "cue": "Yesterday my sister came to see us. She came by car. We went straight to a café. We were there a long time. We got back home late. My sister stayed here.",
+      "literal": "Yesterday to us arrived sister. She arrived on car. We straight-away went into café. There we were long. We returned home late. Sister stayed here.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "priyékhala",
+            "script": "приехала",
+            "cue": "arrived (by vehicle, she)",
+            "tag": "delta",
+            "forms": ["priyékhala"],
+            "note": "The feminine of S04's priyékhal, and the stress does not move: pri-YE-kha-la. na mashíne is how you say by car."
+          },
+          {
+            "display": "vernúlis'",
+            "script": "вернулись",
+            "cue": "came back (we, they)",
+            "tag": "delta",
+            "forms": ["vernúlis'"],
+            "note": "The plural of L2-M10's vernúlsya and vernúlas' — the same -sya verb with a plural ending. Going back is one word in Russian and two in English."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "Two arrivals and one return in six sentences, and every one of them is a different verb. English uses \"come\" for all three.",
+      "sound": "pri-YE-kha-la is four syllables with the weight on the second; vernúlis' has it in the middle.",
+      "variations": [
+        {
+          "display": "K nam priyékhala sestrá. Oná ostálas' zdes'.",
+          "script": "К нам приехала сестра. Она осталась здесь.",
+          "cue": "My sister came to us. She stayed here.",
+          "changed": "the visit in two lines"
+        },
+        {
+          "display": "My vernúlis' domóy pózdno.",
+          "script": "Мы вернулись домой поздно.",
+          "cue": "We got home late.",
+          "changed": "the last step alone"
+        }
+      ],
+      "mistake": {
+        "display": "Vcherá k nam prishlá sestrá na mashíne.",
+        "script": "Вчера к нам пришла сестра на машине.",
+        "why": "prishlá is on foot. Arriving by car is priyékhala, whatever English does with \"came\"."
+      },
+      "usage": "Reporting a visit to someone who missed it.",
+      "register": "neutral",
+      "mnemonic": "priyékhala arrived, vernúlis' went back."
+    },
+    {
+      "id": "L3-M10-S09",
+      "display": "Vcherá ya opozdál na rabótu. Snachála slomálsya lift. Potóm ya dólgo byl na ostanóvke. Ya prishyól na rabótu pózdno. Mne býlo stýdno. No nachál'nik skazál, chto vsyó khoroshó.",
+      "script": "Вчера я опоздал на работу. Сначала сломался лифт. Потом я долго был на остановке. Я пришёл на работу поздно. Мне было стыдно. Но начальник сказал, что всё хорошо.",
+      "cue": "Yesterday I was late for work. First the lift broke. Then I stood at the bus stop for a long time. I got to work late. I was ashamed. But my boss said it was all right.",
+      "literal": "Yesterday I was-late to work. First broke lift. Then I long was at stop. I arrived to work late. To-me was shameful. But boss said, that all well.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "opozdál",
+            "script": "опоздал",
+            "cue": "was late, arrived late",
+            "tag": "delta",
+            "forms": ["opozdál", "opozdála"],
+            "note": "The finished twin of L2-M8's opázdyvayu: that one is running late now, this one arrived late and it is over. na rabótu, with the accusative."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "\"I had already left when the lift broke\" needs no new form. The order of the sentences is the order of the events.",
+      "sound": "a-paz-DAL na ra-BO-tu. The account is six short sentences and each one lands on its last word.",
+      "variations": [
+        {
+          "display": "Vcherá ya opozdál na rabótu. Slomálsya lift.",
+          "script": "Вчера я опоздал на работу. Сломался лифт.",
+          "cue": "Yesterday I was late for work. The lift broke.",
+          "changed": "the excuse in two lines"
+        },
+        {
+          "display": "Oná opozdála na rabótu. Yey býlo stýdno.",
+          "script": "Она опоздала на работу. Ей было стыдно.",
+          "cue": "She was late for work. She was ashamed.",
+          "changed": "a woman, with M6's feeling"
+        }
+      ],
+      "mistake": {
+        "display": "Vcherá ya opázdyval na rabótu i prishyól pózdno.",
+        "script": "Вчера я опаздывал на работу и пришёл поздно.",
+        "why": "opázdyval is the running-late that was going on. The single fact that you arrived late is opozdál."
+      },
+      "usage": "The explanation you give at the door, one morning in ten.",
+      "register": "neutral",
+      "mnemonic": "opázdyvayu is happening; opozdál has happened."
+    },
+    {
+      "id": "L3-M10-S10",
+      "display": "Ránshe ya rabótal v Índii. Potóm ya priyékhal v górod. Snachála mne býlo stráshno. Ya nemnógo govoríl po-rússki. Zatém ya poshyól rabótat'. Tepér' ya rabótayu i uchús'. Nakonéts mne stálo spokóyno.",
+      "script": "Раньше я работал в Индии. Потом я приехал в город. Сначала мне было страшно. Я немного говорил по-русски. Затем я пошёл работать. Теперь я работаю и учусь. Наконец мне стало спокойно.",
+      "cue": "I used to work in India. Then I came to the city. At first I was frightened. I spoke very little Russian. After that I went out to work. Now I work and study. At last I feel settled.",
+      "literal": "Earlier I worked in India. Then I arrived into city. First to-me was frightening. I a-little spoke in-Russian. Then I went to-work. Now I work and study. Finally to-me became calm.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tepér'",
+            "script": "теперь",
+            "cue": "now (as against before)",
+            "tag": "delta",
+            "forms": ["tepér'"],
+            "note": "Now, in contrast with how things were — where seychás is simply at this moment. An account that opens with ránshe closes with tepér'."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "Seven sentences, three tenses of a kind, and one new word. This is the level's exit and it is built almost entirely from L1 and L2.",
+      "sound": "ti-PYER, with the stress at the end — not TE-per. The whole account slows down at nakonéts.",
+      "variations": [
+        {
+          "display": "Ránshe ya rabótal v Índii. Tepér' ya rabótayu zdes'.",
+          "script": "Раньше я работал в Индии. Теперь я работаю здесь.",
+          "cue": "I used to work in India. Now I work here.",
+          "changed": "before and after, in two lines"
+        },
+        {
+          "display": "Snachála mne býlo stráshno. Nakonéts mne stálo spokóyno.",
+          "script": "Сначала мне было страшно. Наконец мне стало спокойно.",
+          "cue": "At first I was frightened. At last I felt calm.",
+          "changed": "M6's frame carrying the ending"
+        }
+      ],
+      "mistake": {
+        "display": "Ránshe ya rabótayu v Índii. Tepér' ya rabótal zdes'.",
+        "script": "Раньше я работаю в Индии. Теперь я работал здесь.",
+        "why": "The two halves have swapped tenses. ránshe takes the past and tepér' takes the present."
+      },
+      "usage": "Your own story, which is what the whole level was for.",
+      "register": "neutral",
+      "mnemonic": "ránshe … tepér' — the two ends of an account."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M10-C01",
+      "display": "Vcherá ya vstal ráno. Snachála ya výpil kófe. Potóm ya poshyól na rabótu. Zatém ya ushyól domóy.",
+      "script": "Вчера я встал рано. Сначала я выпил кофе. Потом я пошёл на работу. Затем я ушёл домой.",
+      "cue": "Yesterday I got up early. First I had a coffee. Then I went to work. After that I left for home."
+    },
+    {
+      "id": "L3-M10-C02",
+      "display": "Ránshe ya rabótal v magazíne. Ya chásto khodíl v kafé. Inogdá ya yézdil v górod.",
+      "script": "Раньше я работал в магазине. Я часто ходил в кафе. Иногда я ездил в город.",
+      "cue": "I used to work in a shop. I often went to a café. Sometimes I went into town."
+    },
+    {
+      "id": "L3-M10-C03",
+      "display": "Útrom ya výshel iz dóma. Ya zashyól v magazín. Tam ya kupíl khleb. Ya prishyól nemnógo pózdno.",
+      "script": "Утром я вышел из дома. Я зашёл в магазин. Там я купил хлеб. Я пришёл немного поздно.",
+      "cue": "In the morning I left the house. I dropped into a shop. I bought bread there. I arrived a little late."
+    },
+    {
+      "id": "L3-M10-C04",
+      "display": "Vcherá ko mne priyékhal brat. My srázu poshlí v kafé. Potóm on poshyól domóy.",
+      "script": "Вчера ко мне приехал брат. Мы сразу пошли в кафе. Потом он пошёл домой.",
+      "cue": "Yesterday my brother came to see me. We went straight to a café. Then he went home."
+    },
+    {
+      "id": "L3-M10-C05",
+      "display": "Vcherá ya vstála ráno. Potóm ya poshlá na rabótu. Zatém ya ushlá domóy. Ya prishlá i srázu ustála.",
+      "script": "Вчера я встала рано. Потом я пошла на работу. Затем я ушла домой. Я пришла и сразу устала.",
+      "cue": "Yesterday I got up early. Then I went to work. After that I left for home. I got in and was tired at once."
+    },
+    {
+      "id": "L3-M10-C06",
+      "display": "Ránshe oná rabótala v magazíne. Oná chásto khodíla v kafé. Potóm oná kupíla mashínu.",
+      "script": "Раньше она работала в магазине. Она часто ходила в кафе. Потом она купила машину.",
+      "cue": "She used to work in a shop. She often went to a café. Then she bought a car."
+    },
+    {
+      "id": "L3-M10-C07",
+      "display": "Útrom oná výshla iz dóma. Oná zashlá v aptéku. Potóm oná poshlá k vrachú. Oná vernúlas' domóy.",
+      "script": "Утром она вышла из дома. Она зашла в аптеку. Потом она пошла к врачу. Она вернулась домой.",
+      "cue": "In the morning she left the house. She called in at the chemist's. Then she went to the doctor. She came back home."
+    },
+    {
+      "id": "L3-M10-C08",
+      "display": "Vcherá k nam priyékhala sestrá. Oná priyékhala na mashíne. My vernúlis' domóy pózdno.",
+      "script": "Вчера к нам приехала сестра. Она приехала на машине. Мы вернулись домой поздно.",
+      "cue": "Yesterday my sister came to see us. She came by car. We got home late."
+    },
+    {
+      "id": "L3-M10-C09",
+      "display": "Vcherá ya opozdál na rabótu. Snachála slomálsya lift. Ya prishyól na rabótu pózdno. Mne býlo stýdno.",
+      "script": "Вчера я опоздал на работу. Сначала сломался лифт. Я пришёл на работу поздно. Мне было стыдно.",
+      "cue": "Yesterday I was late for work. First the lift broke. I got to work late. I was ashamed."
+    },
+    {
+      "id": "L3-M10-C10",
+      "display": "Ránshe ya rabótal v Índii. Potóm ya priyékhal v górod. Tepér' ya rabótayu i uchús'.",
+      "script": "Раньше я работал в Индии. Потом я приехал в город. Теперь я работаю и учусь.",
+      "cue": "I used to work in India. Then I came to the city. Now I work and study."
+    },
+    {
+      "id": "L3-M10-C11",
+      "display": "Oná výshla iz dóma i zashlá v aptéku. Potóm oná vernúlas' domóy.",
+      "script": "Она вышла из дома и зашла в аптеку. Потом она вернулась домой.",
+      "cue": "She left the house and called in at the chemist's. Then she came back home."
+    },
+    {
+      "id": "L3-M10-C12",
+      "display": "Snachála mne býlo stráshno. Nakonéts mne stálo spokóyno.",
+      "script": "Сначала мне было страшно. Наконец мне стало спокойно.",
+      "cue": "At first I was frightened. At last I felt calm."
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}
