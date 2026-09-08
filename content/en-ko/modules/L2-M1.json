@@ -1,0 +1,696 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M1",
+  "title": "Asking politely",
+  "job": "Requests, thanks, apologies in the right register",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "simple_present",
+      "simple_future"
+    ],
+    "allowedPatterns": [
+      "jom + N-eul/reul + juseyo",
+      "V-a/eo + juseyo",
+      "V-(eu)seyo",
+      "V-(eu)l su isseoyo?",
+      "gomawoyo / gamsahamnida"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE HONORIFIC RAISES THE SUBJECT, NOT THE LISTENER. -(eu)seyo is -si- plus -eoyo, and -si- honours the person the sentence is ABOUT — so you never use it of yourself. jeo-neun gayo is right; jeo-neun gaseyo is wrong, and it is the mistake an English speaker makes first, because they have learnt -(eu)seyo as \"the polite one\". L1 shipped five whole phrases containing it — annyeonghaseyo, juseyo, gaseyo, gyeseyo, jinaeseyo — with the rule named as deferred. This is where it becomes productive."
+    },
+    {
+      "tag": "delta",
+      "text": "THE REQUEST IS -a/eo juseyo, literally \"do it and give it to me\": dowajuseyo (please help), gidaryeojuseyo (please wait), sseojuseyo (please write it). L1-M3's juseyo is the second half of every one of them, and each fused form is ONE whitespace token — never hyphenated, because the hyphen in this course marks a particle boundary and nothing else."
+    },
+    {
+      "tag": "free",
+      "text": "jom goes in front of almost any request and is the single most useful politeness word in the language: literally \"a little\", functionally \"please\". It softens without changing anything else in the sentence, which is why it is the first thing to reach for and the last thing to leave out."
+    },
+    {
+      "tag": "free",
+      "text": "The softer alternative to a request is an ABILITY QUESTION — V-(eu)l su isseoyo? — which is L1-M6's -l shape doing a new job in front of the noun su, \"way\" or \"means\". Asking whether something is possible is less direct than asking for it, exactly as in English, and su is the whole of what is new here."
+    },
+    {
+      "tag": "free",
+      "text": "Thanks and apology finally get their -yo forms, which makes the speech-level decision visible for the first time: gomawoyo is the -yo thanks and L1-M2's gamsahamnida is the frozen formal one; mianhaeyo is the -yo apology and joesonghamnida the formal one, and gwaenchanayo answers both. THE CHIP: a line whose subject is honoured takes formal, plain -yo stays neutral, and informal is NEVER used in this course — the forms that would earn it are banmal, which L1 banned and this level does not lift. The missing value is deliberate."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M1-S01",
+      "display": "Mul jom juseyo.",
+      "script": "물 좀 주세요.",
+      "cue": "Some water, please.",
+      "literal": "water a-little give-please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jom",
+            "script": "좀",
+            "cue": "please · a little",
+            "tag": "delta",
+            "forms": [
+              "jom"
+            ],
+            "note": "Literally 'a little', and it is doing the work English gives to 'please'. It goes in front of the request and softens the whole of it without changing a single other word."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "jom is not asking for a small amount. It is asking gently, and leaving it out turns an ordinary request into an instruction — the one word that most changes how a Korean sentence lands.",
+      "sound": "mool jom joo-SE-yo. jom has a short o, closer to English 'jome' than to 'jam'.",
+      "variations": [
+        {
+          "display": "Keopi jom juseyo.",
+          "script": "커피 좀 주세요.",
+          "cue": "Some coffee, please.",
+          "changed": "a different thing asked for"
+        },
+        {
+          "display": "Mul-eul juseyo.",
+          "script": "물을 주세요.",
+          "cue": "Give me water.",
+          "changed": "without jom, and with the object particle — correct, and much flatter"
+        },
+        {
+          "display": "Cha jom juseyo.",
+          "script": "차 좀 주세요.",
+          "cue": "Some tea, please.",
+          "changed": "L1-M1's tea"
+        }
+      ],
+      "mistake": {
+        "display": "Jom mul juseyo.",
+        "script": "좀 물 주세요.",
+        "why": "jom goes next to the verb, not in front of the noun: Mul jom juseyo."
+      },
+      "usage": "At any table, any counter, any time you want something handed to you.",
+      "register": "neutral",
+      "mnemonic": "jom is 'a little'. It is also the whole of 'please'."
+    },
+    {
+      "id": "L2-M1-S02",
+      "display": "Jom dowajuseyo.",
+      "script": "좀 도와주세요.",
+      "cue": "Please help me.",
+      "literal": "a-little help-and-give-please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dowajuseyo",
+            "script": "도와주세요",
+            "cue": "please help me",
+            "tag": "delta",
+            "forms": [
+              "dowajuseyo",
+              "dowajul"
+            ],
+            "note": "dowa- plus L1-M3's juseyo: 'help and give it to me'. Every Korean request is built this way, and the whole of it is one word with no space and no hyphen in it."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "There is no 'me' in this sentence and none is missing. juseyo means 'give it to me' all by itself, so a request built with it already says who the favour is for.",
+      "sound": "jom do-wa-joo-SE-yo. Five syllables run together with no break at the seam.",
+      "variations": [
+        {
+          "display": "Dowajuseyo.",
+          "script": "도와주세요.",
+          "cue": "Help me.",
+          "changed": "without jom, and it is a real call for help"
+        },
+        {
+          "display": "Chingu-ga dowajuseyo.",
+          "script": "친구가 도와주세요.",
+          "cue": "My friend, please help.",
+          "changed": "naming who is being asked"
+        },
+        {
+          "display": "Jom dowajul su isseoyo?",
+          "script": "좀 도와줄 수 있어요?",
+          "cue": "Could you help me?",
+          "changed": "the ability question, which is softer still"
+        }
+      ],
+      "mistake": {
+        "display": "Jom dowa juseyo.",
+        "script": "좀 도와 주세요.",
+        "why": "The fused request is one word: Jom dowajuseyo."
+      },
+      "usage": "Anything from a heavy bag to a form you cannot read.",
+      "register": "neutral",
+      "mnemonic": "Every request ends in juseyo: do it, and give it to me."
+    },
+    {
+      "id": "L2-M1-S03",
+      "display": "Yeogi anjeuseyo.",
+      "script": "여기 앉으세요.",
+      "cue": "Please sit here.",
+      "literal": "here sit-honorific",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yeogi",
+            "script": "여기",
+            "cue": "here",
+            "tag": "free",
+            "forms": [
+              "yeogi",
+              "yeogi-e",
+              "yeogi-eseo"
+            ],
+            "note": "'Here', and it takes L1's place particles unchanged: yeogi-e for going or being, yeogi-eseo for doing something here."
+          },
+          {
+            "display": "anjeuseyo",
+            "script": "앉으세요",
+            "cue": "please sit",
+            "tag": "delta",
+            "forms": [
+              "anjeuseyo"
+            ],
+            "note": "anj- plus -euseyo, the honorific ending made productive. It raises the person SITTING, which is why you would never say it about yourself."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "-(eu)seyo honours the SUBJECT of its own sentence. Say jeo-neun anjeuseyo and you have honoured yourself, which is not merely odd — it is the one register error a Korean listener cannot hear past.",
+      "sound": "YEO-gi an-jeu-SE-yo. The j of anjeuseyo is soft, and the eu is the vowel with no English equivalent — lips flat, tongue back.",
+      "variations": [
+        {
+          "display": "Yeogi-e anjeuseyo.",
+          "script": "여기에 앉으세요.",
+          "cue": "Please sit here.",
+          "changed": "with the place particle, which is equally correct"
+        },
+        {
+          "display": "Jom anjeuseyo.",
+          "script": "좀 앉으세요.",
+          "cue": "Do sit down.",
+          "changed": "softened, and warmer for it"
+        },
+        {
+          "display": "Yeogi-eseo gidaryeojuseyo.",
+          "script": "여기에서 기다려주세요.",
+          "cue": "Please wait here.",
+          "changed": "-eseo, because waiting is something done here"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun anjeuseyo.",
+        "script": "저는 앉으세요.",
+        "why": "The honorific never lands on yourself: jeo-neun anjayo."
+      },
+      "usage": "Offering somebody a seat — in an office, a home, a waiting room.",
+      "register": "formal",
+      "mnemonic": "The honorific honours the subject. Never yourself."
+    },
+    {
+      "id": "L2-M1-S04",
+      "display": "Cheoncheonhi malsseumhaseyo.",
+      "script": "천천히 말씀하세요.",
+      "cue": "Please speak slowly.",
+      "literal": "slowly speak-honorific",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cheoncheonhi",
+            "script": "천천히",
+            "cue": "slowly",
+            "tag": "free",
+            "forms": [
+              "cheoncheonhi"
+            ],
+            "note": "The single most useful adverb a learner has, and it is asked for far more often than it is offered. The h in the middle is barely heard."
+          },
+          {
+            "display": "malsseumhaseyo",
+            "script": "말씀하세요",
+            "cue": "please speak",
+            "tag": "free",
+            "forms": [
+              "malsseumhaseyo",
+              "malsseumhae"
+            ],
+            "note": "malsseum is the honorific word for speech — a whole different noun, not an ending — so this raises the speaker in a way malhaeyo cannot."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "malsseum is an honorific NOUN, so the respect is built into the word rather than added to it. Korean does this for a handful of very common things, and asking somebody to speak is one of them.",
+      "sound": "cheon-cheon-HEE mal-sseum-HA-se-yo. The double ss is tense, said with the throat tightened.",
+      "variations": [
+        {
+          "display": "Jom cheoncheonhi malsseumhaseyo.",
+          "script": "좀 천천히 말씀하세요.",
+          "cue": "Please speak a little slowly.",
+          "changed": "softened with jom"
+        },
+        {
+          "display": "Cheoncheonhi juseyo.",
+          "script": "천천히 주세요.",
+          "cue": "Slowly, please.",
+          "changed": "the adverb on its own request"
+        },
+        {
+          "display": "Cheoncheonhi malsseumhae juseyo.",
+          "script": "천천히 말씀해 주세요.",
+          "cue": "Please speak slowly for me.",
+          "changed": "the request form, which asks a favour rather than instructs"
+        }
+      ],
+      "mistake": {
+        "display": "Cheoncheonhi malsseumhaeyo.",
+        "script": "천천히 말씀해요.",
+        "why": "malsseum takes the honorific ending: Cheoncheonhi malsseumhaseyo."
+      },
+      "usage": "The sentence that rescues every conversation you cannot follow.",
+      "register": "formal",
+      "mnemonic": "Some words are honorific all the way through."
+    },
+    {
+      "id": "L2-M1-S05",
+      "display": "Jom gidaryeojuseyo.",
+      "script": "좀 기다려주세요.",
+      "cue": "Please wait a moment.",
+      "literal": "a-little wait-and-give-please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gidaryeojuseyo",
+            "script": "기다려주세요",
+            "cue": "please wait",
+            "tag": "free",
+            "forms": [
+              "gidaryeojuseyo",
+              "gidaryeojul"
+            ],
+            "note": "gidaryeo- plus juseyo, the same fusion as dowajuseyo. Waiting is a favour done for the asker, which is exactly what the juseyo half says."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "The -yeo- in the middle is part of the verb and not a separate word. gidaryeo juseyo written apart is understood and is not how it is spelled in this course.",
+      "sound": "jom gi-da-RYEO-joo-se-yo. The ryeo is one syllable, said in a single beat.",
+      "variations": [
+        {
+          "display": "Yeogi-eseo gidaryeojuseyo.",
+          "script": "여기에서 기다려주세요.",
+          "cue": "Please wait here.",
+          "changed": "naming the place"
+        },
+        {
+          "display": "Gidaryeojuseyo.",
+          "script": "기다려주세요.",
+          "cue": "Please wait.",
+          "changed": "without jom, and firmer for it"
+        },
+        {
+          "display": "Jom gidaryeojul su isseoyo?",
+          "script": "좀 기다려줄 수 있어요?",
+          "cue": "Could you wait a moment?",
+          "changed": "the ability question"
+        }
+      ],
+      "mistake": {
+        "display": "Jom gidaryeoseyo.",
+        "script": "좀 기다리세요.",
+        "why": "A favour asked takes juseyo: Jom gidaryeojuseyo."
+      },
+      "usage": "On the phone, at a counter, in a doorway.",
+      "register": "neutral",
+      "mnemonic": "Wait FOR ME, not just wait."
+    },
+    {
+      "id": "L2-M1-S06",
+      "display": "Yeogi-e sseojuseyo.",
+      "script": "여기에 써주세요.",
+      "cue": "Please write it here.",
+      "literal": "here-at write-and-give-please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sseojuseyo",
+            "script": "써주세요",
+            "cue": "please write it",
+            "tag": "free",
+            "forms": [
+              "sseojuseyo"
+            ],
+            "note": "sseo- plus juseyo. The tense ss at the front is made by tightening the throat, and it is what separates this verb from a great many others."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "There is nothing here saying WHAT to write, and the sentence does not need it. Korean leaves out anything both speakers can see, which a learner reads as a missing word and a Korean reads as ordinary.",
+      "sound": "YEO-gi-e sseo-JOO-se-yo. The ss is tense — the same sound as in masisseoyo.",
+      "variations": [
+        {
+          "display": "Yeogi sseojuseyo.",
+          "script": "여기 써주세요.",
+          "cue": "Write it here.",
+          "changed": "without the particle, which is how it is usually said"
+        },
+        {
+          "display": "Jom sseojuseyo.",
+          "script": "좀 써주세요.",
+          "cue": "Please write it down.",
+          "changed": "softened with jom"
+        },
+        {
+          "display": "Hangungmal-eul sseojuseyo.",
+          "script": "한국말을 써주세요.",
+          "cue": "Please write it in Korean.",
+          "changed": "L1-M1's Korean as the object"
+        }
+      ],
+      "mistake": {
+        "display": "Yeogi-e sseoyo.",
+        "script": "여기에 써요.",
+        "why": "A request takes juseyo: Yeogi-e sseojuseyo."
+      },
+      "usage": "Handing somebody a form, or asking for an address.",
+      "register": "neutral",
+      "mnemonic": "If both of you can see it, Korean leaves it out."
+    },
+    {
+      "id": "L2-M1-S07",
+      "display": "Naeil hanguk-e gal su isseoyo?",
+      "script": "내일 한국에 갈 수 있어요?",
+      "cue": "Can you go to Korea tomorrow?",
+      "literal": "tomorrow Korea-to go way exists?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "su",
+            "script": "수",
+            "cue": "way · means (in 'can')",
+            "tag": "delta",
+            "forms": [
+              "su"
+            ],
+            "note": "A noun, not an ending: 'a way'. V-(eu)l su isseoyo is literally 'there exists a way to do it', which is why L1-M3's isseoyo is the verb at the end of it."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Korean has no verb 'can'. It has a noun meaning 'way' and the ordinary verb for existing, and the two together are the whole of the ability construction — which is why the negative is su eopseoyo, 'there is no way'.",
+      "sound": "NAE-il han-gu-GE gal soo i-SSEO-yo. The -l of gal is light, and it runs straight into su.",
+      "variations": [
+        {
+          "display": "Hanguk-e gal su eopseoyo.",
+          "script": "한국에 갈 수 없어요.",
+          "cue": "I can't go to Korea.",
+          "changed": "the negative — no way exists"
+        },
+        {
+          "display": "Naeil gal su isseoyo.",
+          "script": "내일 갈 수 있어요.",
+          "cue": "I can go tomorrow.",
+          "changed": "as a statement"
+        },
+        {
+          "display": "Hangungmal-eul baeul su isseoyo?",
+          "script": "한국말을 배울 수 있어요?",
+          "cue": "Can you learn Korean?",
+          "changed": "L1-M9's baeul in the same frame"
+        }
+      ],
+      "mistake": {
+        "display": "Naeil hanguk-e gayo su isseoyo?",
+        "script": "내일 한국에 가요 수 있어요?",
+        "why": "su follows the -l shape: Naeil hanguk-e gal su isseoyo?"
+      },
+      "usage": "Asking whether something is possible — which is softer than asking for it.",
+      "register": "neutral",
+      "mnemonic": "There is no 'can'. There is a way, and it exists."
+    },
+    {
+      "id": "L2-M1-S08",
+      "display": "Ne, gomawoyo.",
+      "script": "네, 고마워요.",
+      "cue": "Yes, thank you.",
+      "literal": "yes, is-thankful",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gomawoyo",
+            "script": "고마워요",
+            "cue": "thank you",
+            "tag": "free",
+            "forms": [
+              "gomawoyo"
+            ],
+            "note": "The -yo thanks, beside L1-M2's frozen gamsahamnida. gomawoyo is warm and everyday; gamsahamnida is what you say to a stranger, an official or a stage."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "gomawoyo and gamsahamnida are two SPEECH LEVELS of the same act, not two words for it. This is the first place the level split is visible, and every -yo form in this course sits on the same rung as gomawoyo.",
+      "sound": "ne, go-ma-WO-yo. The wo is one syllable and takes the stress.",
+      "variations": [
+        {
+          "display": "Gomawoyo.",
+          "script": "고마워요.",
+          "cue": "Thank you.",
+          "changed": "on its own"
+        },
+        {
+          "display": "Ne, gamsahamnida.",
+          "script": "네, 감사합니다.",
+          "cue": "Yes, thank you.",
+          "changed": "L1-M2's formal thanks, a rung up"
+        },
+        {
+          "display": "Gomawoyo. Gwaenchanayo.",
+          "script": "고마워요. 괜찮아요.",
+          "cue": "Thank you. It's fine.",
+          "changed": "thanks and the answer to it, in one breath"
+        }
+      ],
+      "mistake": {
+        "display": "Ne, gamsahamnida gomawoyo.",
+        "script": "네, 감사합니다 고마워요.",
+        "why": "One level or the other, never both: Ne, gomawoyo."
+      },
+      "usage": "Answering a favour that has just been done.",
+      "register": "neutral",
+      "mnemonic": "gomawoyo is warm. gamsahamnida is formal. Same act."
+    },
+    {
+      "id": "L2-M1-S09",
+      "display": "Mianhaeyo, jom gidaryeojuseyo.",
+      "script": "미안해요, 좀 기다려주세요.",
+      "cue": "Sorry — please wait a moment.",
+      "literal": "is-sorry, a-little wait-and-give-please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mianhaeyo",
+            "script": "미안해요",
+            "cue": "sorry",
+            "tag": "free",
+            "forms": [
+              "mianhaeyo",
+              "joesonghamnida"
+            ],
+            "note": "The -yo apology, and joesonghamnida is its formal twin — the same split as gomawoyo against gamsahamnida, on the other half of politeness."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "mianhaeyo apologises for something small and is not an admission of anything. Korean apologises far more often than English does, and reading it as a confession will make you refuse to say it.",
+      "sound": "mi-an-HAE-yo, jom gi-da-RYEO-joo-se-yo. The h in mianhaeyo is almost silent.",
+      "variations": [
+        {
+          "display": "Joesonghamnida.",
+          "script": "죄송합니다.",
+          "cue": "I'm sorry.",
+          "changed": "the formal apology, to a stranger or an official"
+        },
+        {
+          "display": "Mianhaeyo.",
+          "script": "미안해요.",
+          "cue": "Sorry.",
+          "changed": "on its own"
+        },
+        {
+          "display": "Mianhaeyo, gal su eopseoyo.",
+          "script": "미안해요, 갈 수 없어요.",
+          "cue": "Sorry, I can't go.",
+          "changed": "declining, with the ability negative"
+        }
+      ],
+      "mistake": {
+        "display": "Mianhaseyo, jom gidaryeojuseyo.",
+        "script": "미안하세요, 좀 기다려주세요.",
+        "why": "The apology is yours, so it never takes the honorific: Mianhaeyo, jom gidaryeojuseyo."
+      },
+      "usage": "Buying yourself a moment — the commonest apology there is.",
+      "register": "neutral",
+      "mnemonic": "mianhaeyo for small. joesonghamnida for formal."
+    },
+    {
+      "id": "L2-M1-S10",
+      "display": "Ne, gwaenchanayo.",
+      "script": "네, 괜찮아요.",
+      "cue": "Yes, it's fine.",
+      "literal": "yes, is-all-right",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gwaenchanayo",
+            "script": "괜찮아요",
+            "cue": "it's fine · no problem",
+            "tag": "free",
+            "forms": [
+              "gwaenchanayo"
+            ],
+            "note": "It answers thanks and apology alike, asks whether somebody is all right, and declines an offer. Four jobs, one word, and it is heard constantly."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "gwaenchanayo said with a rising tone ASKS whether you are all right; said flat it says that you are. Nothing in the words distinguishes them, and the tone carries all of it.",
+      "sound": "ne, gwaen-CHA-na-yo. The written h is silent, so it runs chan-a-yo.",
+      "variations": [
+        {
+          "display": "Gwaenchanayo?",
+          "script": "괜찮아요?",
+          "cue": "Are you all right?",
+          "changed": "the same word as a question"
+        },
+        {
+          "display": "Aniyo, gwaenchanayo.",
+          "script": "아니요, 괜찮아요.",
+          "cue": "No, I'm fine.",
+          "changed": "declining an offer"
+        },
+        {
+          "display": "Ne, gwaenchanayo. Gomawoyo.",
+          "script": "네, 괜찮아요. 고마워요.",
+          "cue": "Yes, it's fine. Thank you.",
+          "changed": "with thanks after it"
+        }
+      ],
+      "mistake": {
+        "display": "Ne, gwaenchaneyo.",
+        "script": "네, 괜찮네요.",
+        "why": "The -yo form is gwaenchanayo: Ne, gwaenchanayo."
+      },
+      "usage": "Answering an apology, refusing an offer, or checking on somebody.",
+      "register": "neutral",
+      "mnemonic": "One word: it's fine, are you fine, no thank you."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M1-C01",
+      "display": "Mul jom juseyo.",
+      "script": "물 좀 주세요.",
+      "cue": "Some water, please."
+    },
+    {
+      "id": "L2-M1-C02",
+      "display": "Jom dowajuseyo.",
+      "script": "좀 도와주세요.",
+      "cue": "Please help me."
+    },
+    {
+      "id": "L2-M1-C03",
+      "display": "Yeogi anjeuseyo.",
+      "script": "여기 앉으세요.",
+      "cue": "Please sit here."
+    },
+    {
+      "id": "L2-M1-C04",
+      "display": "Cheoncheonhi malsseumhaseyo.",
+      "script": "천천히 말씀하세요.",
+      "cue": "Please speak slowly."
+    },
+    {
+      "id": "L2-M1-C05",
+      "display": "Jom gidaryeojuseyo.",
+      "script": "좀 기다려주세요.",
+      "cue": "Please wait a moment."
+    },
+    {
+      "id": "L2-M1-C06",
+      "display": "Yeogi-e sseojuseyo.",
+      "script": "여기에 써주세요.",
+      "cue": "Please write it here."
+    },
+    {
+      "id": "L2-M1-C07",
+      "display": "Naeil hanguk-e gal su isseoyo?",
+      "script": "내일 한국에 갈 수 있어요?",
+      "cue": "Can you go to Korea tomorrow?"
+    },
+    {
+      "id": "L2-M1-C08",
+      "display": "Ne, gomawoyo.",
+      "script": "네, 고마워요.",
+      "cue": "Yes, thank you."
+    },
+    {
+      "id": "L2-M1-C09",
+      "display": "Mianhaeyo, jom gidaryeojuseyo.",
+      "script": "미안해요, 좀 기다려주세요.",
+      "cue": "Sorry — please wait a moment."
+    },
+    {
+      "id": "L2-M1-C10",
+      "display": "Ne, gwaenchanayo.",
+      "script": "네, 괜찮아요.",
+      "cue": "Yes, it's fine."
+    },
+    {
+      "id": "L2-M1-C11",
+      "display": "Keopi jom juseyo.",
+      "script": "커피 좀 주세요.",
+      "cue": "Some coffee, please."
+    },
+    {
+      "id": "L2-M1-C12",
+      "display": "Hanguk-e gal su eopseoyo.",
+      "script": "한국에 갈 수 없어요.",
+      "cue": "I can't go to Korea."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

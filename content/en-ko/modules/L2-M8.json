@@ -1,0 +1,706 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M8",
+  "title": "When something goes wrong",
+  "job": "Problems, asking for help, complaining calmly",
+  "prerequisites": [
+    "L2-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "N-i/ga + an + dwaeyo",
+      "N-eul/reul + ireobeoryeosseoyo",
+      "N-i/ga + apayo",
+      "mot + V-yo",
+      "V-eoya + dwaeyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "mot OPENS HERE, and L1 named it as deferred with one mention. The law in one line: an is DO NOT or WILL NOT, mot is CANNOT. mot gayo means something is stopping me; an gayo means I am choosing not to. English's single \"can't\" and \"won't\" hide the difference, and a problem report is the only place in the ladder where both are needed in the same breath."
+    },
+    {
+      "tag": "free",
+      "text": "Pain and malfunction both use the DOUBLE-SUBJECT sentence M2 taught: meori-ga apayo (my head hurts — as-for-me, the head hurts) and i-geo-ga an dwaeyo (this does not work). apayo is a descriptive verb like everything in M2 and M3, so nothing new is opened here; a structure is APPLIED for the third time. A learner who sees the third use learns the structure; a learner given three idioms learns three idioms."
+    },
+    {
+      "tag": "delta",
+      "text": "-eoya dwaeyo is the OBLIGATION ending: gayaa dwaeyo, gidaryeoya dwaeyo. It is built on the same -a/-eo stem the course has been conjugating since L1-M4, so the shape is familiar and only the frame is new. With M1's dowajuseyo and M1's ability question, that is the whole kit a problem needs and no new tense is opened for any of it."
+    },
+    {
+      "tag": "free",
+      "text": "COMPLAINING CALMLY, and Korean's answer is the HONORIFIC rather than the hedge. The softening comes from M1's jom, from joesonghajiman (\"I'm sorry, but\"), and from keeping the honorific on the person you are complaining TO. Raising your voice with a stranger is a heavier breach in Korean than in English, and the repair is the ending, not the volume."
+    },
+    {
+      "tag": "free",
+      "text": "dwaeyo is M7's row doing its widest job: it becomes, it works, it will do. an dwaeyo is the everyday \"it's not working\" and also \"that won't do\" — one verb covering a broken machine and a refused request, and the sentence decides which."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M8-S01",
+      "display": "I-geo-ga an dwaeyo.",
+      "script": "이거가 안 돼요.",
+      "cue": "This doesn't work.",
+      "literal": "this-subject not becomes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "an dwaeyo",
+            "script": "안 돼요",
+            "cue": "doesn't work · that won't do",
+            "tag": "delta",
+            "forms": [
+              "an dwaeyo",
+              "i-geo-ga",
+              "jeonhwa-ga"
+            ],
+            "note": "M7's dwaeyo with L1-M3's an. It covers a broken machine and a refused request alike, and the sentence around it says which — i-geo-ga an dwaeyo, jeonhwa-ga an dwaeyo."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "an and not mot, because a machine is not being prevented from anything — it simply does not work. mot belongs to a person who is stopped by something, and that is the whole of the difference.",
+      "sound": "i-GEO-ga an DWAE-yo. an is short and runs straight into the verb.",
+      "variations": [
+        {
+          "display": "Jeonhwa-ga an dwaeyo.",
+          "script": "전화가 안 돼요.",
+          "cue": "The phone isn't working.",
+          "changed": "M7's telephone"
+        },
+        {
+          "display": "An dwaeyo.",
+          "script": "안 돼요.",
+          "cue": "That won't do.",
+          "changed": "on its own — a refusal rather than a fault"
+        },
+        {
+          "display": "I-geo-ga gojang-ieyo.",
+          "script": "이거가 고장이에요.",
+          "cue": "This is broken.",
+          "changed": "the noun for a breakdown"
+        }
+      ],
+      "mistake": {
+        "display": "I-geo-ga mot dwaeyo.",
+        "script": "이거가 못 돼요.",
+        "why": "A machine is not prevented, it just fails: I-geo-ga an dwaeyo."
+      },
+      "usage": "At a counter, a machine, a rented room.",
+      "register": "neutral",
+      "mnemonic": "an is 'does not'. mot is 'cannot'."
+    },
+    {
+      "id": "L2-M8-S02",
+      "display": "Oneul mot gayo.",
+      "script": "오늘 못 가요.",
+      "cue": "I can't come today.",
+      "literal": "today cannot go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mot",
+            "script": "못",
+            "cue": "cannot (something prevents it)",
+            "tag": "delta",
+            "forms": [
+              "mot"
+            ],
+            "note": "The inability negative, and it goes in front of the verb exactly as L1-M3's an does. mot gayo means something is stopping you; an gayo means you have decided not to."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "English's 'I can't come' is ambiguous and Korean's is not. mot gayo says something outside you is in the way; an gayo says you are not going, and a listener hears the difference immediately.",
+      "sound": "O-neul mot GA-yo. The t of mot is unreleased and hardens the g after it.",
+      "variations": [
+        {
+          "display": "Oneul an gayo.",
+          "script": "오늘 안 가요.",
+          "cue": "I'm not going today.",
+          "changed": "a choice rather than an obstacle"
+        },
+        {
+          "display": "Mot gayo. Joesonghamnida.",
+          "script": "못 가요. 죄송합니다.",
+          "cue": "I can't come. I'm sorry.",
+          "changed": "with M1's formal apology"
+        },
+        {
+          "display": "Naeil mot gayo.",
+          "script": "내일 못 가요.",
+          "cue": "I can't come tomorrow.",
+          "changed": "L1-M6's tomorrow"
+        }
+      ],
+      "mistake": {
+        "display": "Oneul gal su an isseoyo.",
+        "script": "오늘 갈 수 안 있어요.",
+        "why": "The inability negative is mot: Oneul mot gayo."
+      },
+      "usage": "Cancelling, and the word choice says whether it was your decision.",
+      "register": "neutral",
+      "mnemonic": "mot is stopped. an is chose not to."
+    },
+    {
+      "id": "L2-M8-S03",
+      "display": "Meori-ga apayo.",
+      "script": "머리가 아파요.",
+      "cue": "I have a headache.",
+      "literal": "head-subject hurts",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "apayo",
+            "script": "아파요",
+            "cue": "hurts · is sore",
+            "tag": "free",
+            "forms": [
+              "apayo",
+              "apeun"
+            ],
+            "note": "A descriptive verb like every other, so M2's double subject builds this sentence with nothing new in it. Its modifier is apeun."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "This is M2's structure for the third time: the topic is you and the SUBJECT is the part that hurts. Nothing here says 'my' and nothing needs to — the sentence is about you already.",
+      "sound": "MEO-ri-ga a-PA-yo. Both words are three light syllables.",
+      "variations": [
+        {
+          "display": "Bae-ga apayo.",
+          "script": "배가 아파요.",
+          "cue": "I have a stomach ache.",
+          "changed": "M5's belly"
+        },
+        {
+          "display": "Jeo-neun meori-ga apayo.",
+          "script": "저는 머리가 아파요.",
+          "cue": "I have a headache.",
+          "changed": "with the topic spelled out"
+        },
+        {
+          "display": "Bae-ga apayo?",
+          "script": "배가 아파요?",
+          "cue": "Does your stomach hurt?",
+          "changed": "asked, with M5's belly"
+        }
+      ],
+      "mistake": {
+        "display": "Je meori-reul apayo.",
+        "script": "제 머리를 아파요.",
+        "why": "The part that hurts is the subject: Meori-ga apayo."
+      },
+      "usage": "At a chemist, or explaining why you are going home.",
+      "register": "neutral",
+      "mnemonic": "The part hurts. You are only the topic."
+    },
+    {
+      "id": "L2-M8-S04",
+      "display": "Gabang-eul ireobeoryeosseoyo.",
+      "script": "가방을 잃어버렸어요.",
+      "cue": "I've lost my bag.",
+      "literal": "bag-object lost-away",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ireobeoryeosseoyo",
+            "script": "잃어버렸어요",
+            "cue": "lost (and it's gone)",
+            "tag": "free",
+            "forms": [
+              "ireobeoryeosseoyo"
+            ],
+            "note": "ireo-, to lose, plus -beorida, which says the thing is gone for good. L1-M5's past sits on the end of it and nothing else is new."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "-beorida adds regret and finality, which English carries with 'gone' rather than with a verb ending. Korean puts it inside the verb, and a learner who leaves it out sounds oddly unbothered.",
+      "sound": "GA-bang-eul i-reo-beo-RYEO-sseo-yo. Six syllables, and the ryeo carries the stress.",
+      "variations": [
+        {
+          "display": "Jeonhwa-reul ireobeoryeosseoyo.",
+          "script": "전화를 잃어버렸어요.",
+          "cue": "I've lost my phone.",
+          "changed": "M7's telephone"
+        },
+        {
+          "display": "Gabang-eul ireobeoryeosseoyo. Jom dowajuseyo.",
+          "script": "가방을 잃어버렸어요. 좀 도와주세요.",
+          "cue": "I've lost my bag. Please help me.",
+          "changed": "with M1's request"
+        },
+        {
+          "display": "Chaek-eul ireobeoryeosseoyo.",
+          "script": "책을 잃어버렸어요.",
+          "cue": "I've lost the book.",
+          "changed": "L1-M1's book"
+        }
+      ],
+      "mistake": {
+        "display": "Gabang-i ireobeoryeosseoyo.",
+        "script": "가방이 잃어버렸어요.",
+        "why": "What you lost is an object: Gabang-eul ireobeoryeosseoyo."
+      },
+      "usage": "At a lost-property desk, or a station office.",
+      "register": "neutral",
+      "mnemonic": "-beorida means it is gone, and you mind."
+    },
+    {
+      "id": "L2-M8-S05",
+      "display": "Byeongwon-e gaya dwaeyo.",
+      "script": "병원에 가야 돼요.",
+      "cue": "I have to go to the hospital.",
+      "literal": "hospital-to go-must becomes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "byeongwon",
+            "script": "병원",
+            "cue": "hospital · clinic",
+            "tag": "free",
+            "forms": [
+              "byeongwon",
+              "byeongwon-e",
+              "byeongwon-eseo"
+            ],
+            "note": "Any medical place, from a big hospital to a one-room clinic — Korean draws no line where English draws one."
+          },
+          {
+            "display": "gaya dwaeyo",
+            "script": "가야 돼요",
+            "cue": "have to go",
+            "tag": "delta",
+            "forms": [
+              "gaya dwaeyo",
+              "-eoya dwaeyo",
+              "-eoya",
+              "meogeoya",
+              "gidaryeoya"
+            ],
+            "note": "The obligation frame: the -a/-eo stem the course has conjugated since L1-M4, plus -ya, plus dwaeyo. Only the frame is new."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "-e and not -eseo, because the hospital is where you are GOING. M4's law again, and it holds in every module that follows it.",
+      "sound": "BYEONG-wo-ne GA-ya DWAE-yo. byeong is one syllable.",
+      "variations": [
+        {
+          "display": "Yak-eul meogeoya dwaeyo.",
+          "script": "약을 먹어야 돼요.",
+          "cue": "I have to take medicine.",
+          "changed": "medicine, which in Korean is eaten"
+        },
+        {
+          "display": "Gidaryeoya dwaeyo.",
+          "script": "기다려야 돼요.",
+          "cue": "I have to wait.",
+          "changed": "M1's waiting verb"
+        },
+        {
+          "display": "Byeongwon-e gal su isseoyo?",
+          "script": "병원에 갈 수 있어요?",
+          "cue": "Can you get to a hospital?",
+          "changed": "M1's ability question"
+        }
+      ],
+      "mistake": {
+        "display": "Byeongwon-eseo gaya dwaeyo.",
+        "script": "병원에서 가야 돼요.",
+        "why": "A destination takes -e: Byeongwon-e gaya dwaeyo."
+      },
+      "usage": "Explaining why you have to leave.",
+      "register": "neutral",
+      "mnemonic": "-eoya dwaeyo: you must. Nothing new but the frame."
+    },
+    {
+      "id": "L2-M8-S06",
+      "display": "Yak-eul meogeoya dwaeyo.",
+      "script": "약을 먹어야 돼요.",
+      "cue": "I have to take medicine.",
+      "literal": "medicine-object eat-must becomes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yak",
+            "script": "약",
+            "cue": "medicine",
+            "tag": "interference",
+            "forms": [
+              "yak",
+              "yak-eul",
+              "yak-i"
+            ],
+            "note": "Korean EATS medicine — yak-eul meokda — where English takes it. The verb is L1-M3's meokda and nothing about it changes."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Medicine is eaten in Korean, not taken. It is one of the clearest cases where the verb a language picks is simply a fact about that language, and translating 'take' gives a sentence nobody says.",
+      "sound": "YA-geul meo-GEO-ya DWAE-yo. The k of yak runs into the particle.",
+      "variations": [
+        {
+          "display": "Yak-i isseoyo?",
+          "script": "약이 있어요?",
+          "cue": "Do you have any medicine?",
+          "changed": "asking for some"
+        },
+        {
+          "display": "Yak-eul meogeosseoyo.",
+          "script": "약을 먹었어요.",
+          "cue": "I took some medicine.",
+          "changed": "L1-M5's past"
+        },
+        {
+          "display": "Yak-eul juseyo.",
+          "script": "약을 주세요.",
+          "cue": "Some medicine, please.",
+          "changed": "M1's request"
+        }
+      ],
+      "mistake": {
+        "display": "Yak-eul badaya dwaeyo.",
+        "script": "약을 받아야 돼요.",
+        "why": "Medicine is eaten in Korean: Yak-eul meogeoya dwaeyo."
+      },
+      "usage": "At a pharmacy, which in Korea is on every second corner.",
+      "register": "neutral",
+      "mnemonic": "You EAT medicine in Korean."
+    },
+    {
+      "id": "L2-M8-S07",
+      "display": "Joesonghajiman, i-geo-ga gojang-ieyo.",
+      "script": "죄송하지만, 이거가 고장이에요.",
+      "cue": "I'm sorry, but this is broken.",
+      "literal": "am-sorry-but, this-subject breakdown-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "joesonghajiman",
+            "script": "죄송하지만",
+            "cue": "I'm sorry, but",
+            "tag": "delta",
+            "forms": [
+              "joesonghajiman"
+            ],
+            "note": "M1's joesonghamnida with L1-M10's -jiman, 'but'. It opens a complaint and is what makes the rest of it acceptable."
+          },
+          {
+            "display": "gojang",
+            "script": "고장",
+            "cue": "a breakdown · out of order",
+            "tag": "free",
+            "forms": [
+              "gojang",
+              "gojang-i",
+              "gojang-ieyo"
+            ],
+            "note": "The noun for something being broken, and gojang-ieyo is the sign you will see on a machine. an dwaeyo is the spoken version."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "THE SOFTENING IS THE OPENING, not a weakening of the complaint. Korean states the fault plainly after joesonghajiman, and an English speaker who hedges the fault itself instead sounds evasive rather than polite.",
+      "sound": "joe-song-ha-ji-MAN, i-GEO-ga go-JANG-i-e-yo.",
+      "variations": [
+        {
+          "display": "Joesonghajiman, jom dowajuseyo.",
+          "script": "죄송하지만, 좀 도와주세요.",
+          "cue": "I'm sorry, but could you help me?",
+          "changed": "a request rather than a complaint"
+        },
+        {
+          "display": "I-geo-ga gojang-ieyo.",
+          "script": "이거가 고장이에요.",
+          "cue": "This is broken.",
+          "changed": "without the opening — plain, and not rude"
+        },
+        {
+          "display": "Joesonghajiman, jigeum mot gayo.",
+          "script": "죄송하지만, 지금 못 가요.",
+          "cue": "I'm sorry, but I can't come now.",
+          "changed": "declining, with mot"
+        }
+      ],
+      "mistake": {
+        "display": "I-geo-ga jom gojang-in geot gatayo.",
+        "script": "이거가 좀 고장인 것 같아요.",
+        "why": "Korean softens at the front and states the fault plainly: Joesonghajiman, i-geo-ga gojang-ieyo."
+      },
+      "usage": "Opening a complaint at a desk, calmly.",
+      "register": "formal",
+      "mnemonic": "Soften the opening. State the fault flat."
+    },
+    {
+      "id": "L2-M8-S08",
+      "display": "Jom dowajusillae-yo?",
+      "script": "좀 도와주실래요?",
+      "cue": "Could you help me?",
+      "literal": "a-little help-and-give-honorific-want-to?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dowajusillae-yo",
+            "script": "도와주실래요",
+            "cue": "would you help me?",
+            "tag": "free",
+            "forms": [
+              "dowajusillae-yo"
+            ],
+            "note": "M1's dowajuseyo rebuilt on M6's invitation ending, which turns an instruction into a question about the listener's wish — and that is what makes it softer."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Asking whether somebody WANTS to help is softer than asking them to help, and Korean builds that softness into the ending rather than into extra words. English does the same with 'would you' and then adds four more words anyway.",
+      "sound": "jom do-wa-joo-sil-LAE-yo. Six syllables, level throughout.",
+      "variations": [
+        {
+          "display": "Jom dowajuseyo.",
+          "script": "좀 도와주세요.",
+          "cue": "Please help me.",
+          "changed": "M1's plain request, which is not rude"
+        },
+        {
+          "display": "Jom dowajul su isseoyo?",
+          "script": "좀 도와줄 수 있어요?",
+          "cue": "Can you help me?",
+          "changed": "M1's ability question"
+        },
+        {
+          "display": "Joesonghajiman, jom dowajusillae-yo?",
+          "script": "죄송하지만, 좀 도와주실래요?",
+          "cue": "Sorry — could you help me?",
+          "changed": "with the softening opening"
+        }
+      ],
+      "mistake": {
+        "display": "Jom dowajullae-yo?",
+        "script": "좀 도와줄래요?",
+        "why": "Asking a stranger keeps the honorific: Jom dowajusillae-yo?"
+      },
+      "usage": "To a stranger, when something has gone wrong.",
+      "register": "formal",
+      "mnemonic": "Ask what they WANT, not what they will do."
+    },
+    {
+      "id": "L2-M8-S09",
+      "display": "Dachyeosseoyo.",
+      "script": "다쳤어요.",
+      "cue": "I'm hurt.",
+      "literal": "got-injured",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dachyeosseoyo",
+            "script": "다쳤어요",
+            "cue": "got hurt · is injured",
+            "tag": "free",
+            "forms": [
+              "dachyeosseoyo"
+            ],
+            "note": "Always in the PAST, because the injury has already happened — Korean reports the event and English reports the state. L1-M5's -eoss- again."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "English says 'I am hurt' and Korean says 'I got hurt'. The past is not optional here: the present would say you are in the act of injuring yourself.",
+      "sound": "da-CHYEO-sseo-yo. The chyeo is one syllable.",
+      "variations": [
+        {
+          "display": "Chingu-ga dachyeosseoyo.",
+          "script": "친구가 다쳤어요.",
+          "cue": "My friend is hurt.",
+          "changed": "somebody else, with the subject particle"
+        },
+        {
+          "display": "Dachyeosseoyo. Byeongwon-e gaya dwaeyo.",
+          "script": "다쳤어요. 병원에 가야 돼요.",
+          "cue": "I'm hurt. I have to go to hospital.",
+          "changed": "with what follows from it"
+        },
+        {
+          "display": "Mani dachyeosseoyo?",
+          "script": "많이 다쳤어요?",
+          "cue": "Are you badly hurt?",
+          "changed": "asked, with M5's mani"
+        }
+      ],
+      "mistake": {
+        "display": "Dachyeoyo.",
+        "script": "다쳐요.",
+        "why": "The injury has happened: Dachyeosseoyo."
+      },
+      "usage": "Said quickly, and it will get attention.",
+      "register": "neutral",
+      "mnemonic": "Korean reports the event. English reports the state."
+    },
+    {
+      "id": "L2-M8-S10",
+      "display": "Jigeum mot gidaryeoyo.",
+      "script": "지금 못 기다려요.",
+      "cue": "I can't wait right now.",
+      "literal": "now cannot wait",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gidaryeoyo",
+            "script": "기다려요",
+            "cue": "wait",
+            "tag": "free",
+            "forms": [
+              "gidaryeoyo",
+              "gidaryeoya"
+            ],
+            "note": "M1's gidaryeojuseyo without the juseyo half — the plain verb, doing its own work. gidaryeoya dwaeyo is the obligation shape."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "mot puts the reason outside you and an puts it inside. Here mot says a train or a meeting is forcing your hand, which is exactly what makes it a courteous thing to say.",
+      "sound": "JI-geum mot gi-da-RYEO-yo. The t of mot hardens the g.",
+      "variations": [
+        {
+          "display": "Jigeum an gidaryeoyo.",
+          "script": "지금 안 기다려요.",
+          "cue": "I'm not waiting now.",
+          "changed": "a choice, which lands very differently"
+        },
+        {
+          "display": "Gidaryeoya dwaeyo.",
+          "script": "기다려야 돼요.",
+          "cue": "I have to wait.",
+          "changed": "the obligation frame"
+        },
+        {
+          "display": "Jom gidaryeojuseyo.",
+          "script": "좀 기다려주세요.",
+          "cue": "Please wait a moment.",
+          "changed": "M1's request"
+        }
+      ],
+      "mistake": {
+        "display": "Jigeum mot gidaryeojuseyo.",
+        "script": "지금 못 기다려주세요.",
+        "why": "mot goes with a plain verb, not a request: Jigeum mot gidaryeoyo."
+      },
+      "usage": "Leaving a queue, or getting off a call.",
+      "register": "neutral",
+      "mnemonic": "mot blames the world. an blames you."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M8-C01",
+      "display": "I-geo-ga an dwaeyo.",
+      "script": "이거가 안 돼요.",
+      "cue": "This doesn't work."
+    },
+    {
+      "id": "L2-M8-C02",
+      "display": "Oneul mot gayo.",
+      "script": "오늘 못 가요.",
+      "cue": "I can't come today."
+    },
+    {
+      "id": "L2-M8-C03",
+      "display": "Meori-ga apayo.",
+      "script": "머리가 아파요.",
+      "cue": "I have a headache."
+    },
+    {
+      "id": "L2-M8-C04",
+      "display": "Gabang-eul ireobeoryeosseoyo.",
+      "script": "가방을 잃어버렸어요.",
+      "cue": "I've lost my bag."
+    },
+    {
+      "id": "L2-M8-C05",
+      "display": "Byeongwon-e gaya dwaeyo.",
+      "script": "병원에 가야 돼요.",
+      "cue": "I have to go to the hospital."
+    },
+    {
+      "id": "L2-M8-C06",
+      "display": "Yak-eul meogeoya dwaeyo.",
+      "script": "약을 먹어야 돼요.",
+      "cue": "I have to take medicine."
+    },
+    {
+      "id": "L2-M8-C07",
+      "display": "Joesonghajiman, i-geo-ga gojang-ieyo.",
+      "script": "죄송하지만, 이거가 고장이에요.",
+      "cue": "I'm sorry, but this is broken."
+    },
+    {
+      "id": "L2-M8-C08",
+      "display": "Jom dowajusillae-yo?",
+      "script": "좀 도와주실래요?",
+      "cue": "Could you help me?"
+    },
+    {
+      "id": "L2-M8-C09",
+      "display": "Dachyeosseoyo.",
+      "script": "다쳤어요.",
+      "cue": "I'm hurt."
+    },
+    {
+      "id": "L2-M8-C10",
+      "display": "Jigeum mot gidaryeoyo.",
+      "script": "지금 못 기다려요.",
+      "cue": "I can't wait right now."
+    },
+    {
+      "id": "L2-M8-C11",
+      "display": "Oneul an gayo.",
+      "script": "오늘 안 가요.",
+      "cue": "I'm not going today."
+    },
+    {
+      "id": "L2-M8-C12",
+      "display": "Bae-ga apayo.",
+      "script": "배가 아파요.",
+      "cue": "I have a stomach ache."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,753 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M6",
+  "title": "Making plans together",
+  "job": "Invitations, suggestions, settling a time",
+  "prerequisites": [
+    "L2-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "simple_present",
+      "simple_future"
+    ],
+    "allowedPatterns": [
+      "gachi + V-(eu)llae-yo?",
+      "eonje + V-l geoyeyo?",
+      "<native number> + si + <Sino number> + bun-e",
+      "N-yoil-e + sigan + isseoyo?",
+      "joayo + , + geuraeyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "-(eu)llae-yo IS THE INVITATION ENDING and L1 named it as deferred; plans are what it is for. gachi bap meogeullae-yo? is the everyday Korean invitation, and it differs from a plain question exactly as English \"shall we\" differs from \"will you\" — it asks the listener's WISH rather than a fact. No second future is opened here: L1-M6's -l geoyeyo carries the plan itself, -gess- stays deferred, and -(eu)psida belongs to the -mnida level and travels with it, so it is named in usage and never written."
+    },
+    {
+      "tag": "delta",
+      "text": "THE CLOCK IS WHERE M5'S NUMBER RULE PAYS FOR ITSELF IN ONE BREATH: the HOUR is a native number with the counter -si, and the MINUTES are a Sino number with -bun. du si samsip bun is half past two, and it uses both systems in four syllables. There is no rule beyond the one M5 stated — which is the point of putting them side by side."
+    },
+    {
+      "tag": "free",
+      "text": "The days are a closed set built on ONE ROOT: woryoil, hwayoil, suyoil, mogyoil, geumyoil, toyoil, iryoil, where -yoil is the shared ending. Seven words cost about two, and a learner shown the pattern will not memorise seven. L1-M7's -e marks the day as well as the hour — woryoil-e, du si-e — a fourth job for one particle and no new row for any of it."
+    },
+    {
+      "tag": "free",
+      "text": "Plans are made among friends, and here THIS COURSE MOVES THE OPPOSITE WAY FROM THE OTHER EIGHT. There is no informal tier to switch into, because banmal is not written in en-ko L2 at all — so the module stays neutral throughout and the friendliness is carried by the ENDING (-(eu)llae-yo rather than an honorific imperative) and by gachi. An author who has read the other L2 briefs will look for an informal chip; it is deliberately absent."
+    },
+    {
+      "tag": "free",
+      "text": "joayo does a second job here — L1-M9's \"is good\" is also \"sounds good\", which is how a Korean accepts a plan — and geuraeyo (\"let's do that\") settles it. Neither opens a new row for the acceptance: joayo stays L1-M9's, and geuraeyo is the one fresh word the exchange needs."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M6-S01",
+      "display": "Gachi bap meogeullae-yo?",
+      "script": "같이 밥 먹을래요?",
+      "cue": "Shall we get something to eat?",
+      "literal": "together rice eat-want-to?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gachi",
+            "script": "같이",
+            "cue": "together",
+            "tag": "free",
+            "forms": [
+              "gachi"
+            ],
+            "note": "Written with a t and said with a ch, which is one of Korean's regular sound changes. It is the word that turns any verb into an invitation."
+          },
+          {
+            "display": "meogeullae-yo",
+            "script": "먹을래요",
+            "cue": "shall we eat?",
+            "tag": "delta",
+            "forms": [
+              "meogeullae-yo",
+              "-llae-yo",
+              "-eullae-yo",
+              "gallae-yo",
+              "masillae-yo"
+            ],
+            "note": "L1-M3's meokda with the invitation ending. It asks what the listener WANTS rather than what they will do, which is why it is an offer and not a question."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "bap is rice and it is also 'a meal'. Gachi bap meogeullae-yo? does not propose rice specifically — it is the ordinary Korean way to suggest eating anything at all together.",
+      "sound": "GA-chi bap meo-geul-LAE-yo. gachi is written gat-i and said ga-chi.",
+      "variations": [
+        {
+          "display": "Gachi gallae-yo?",
+          "script": "같이 갈래요?",
+          "cue": "Shall we go together?",
+          "changed": "going instead of eating"
+        },
+        {
+          "display": "Bap meogeullae-yo?",
+          "script": "밥 먹을래요?",
+          "cue": "Do you want to eat?",
+          "changed": "without gachi, so it asks about them rather than about both of you"
+        },
+        {
+          "display": "Gachi keopi masillae-yo?",
+          "script": "같이 커피 마실래요?",
+          "cue": "Shall we get a coffee?",
+          "changed": "L1-M1's coffee"
+        }
+      ],
+      "mistake": {
+        "display": "Gachi bap meogeoyo?",
+        "script": "같이 밥 먹어요?",
+        "why": "An invitation takes the -llae-yo ending: Gachi bap meogeullae-yo?"
+      },
+      "usage": "The commonest invitation in the language, and it means far more than the food.",
+      "register": "neutral",
+      "mnemonic": "-llae-yo asks what you WANT, not what you will do."
+    },
+    {
+      "id": "L2-M6-S02",
+      "display": "Geumyoil-e sigan isseoyo?",
+      "script": "금요일에 시간 있어요?",
+      "cue": "Are you free on Friday?",
+      "literal": "Friday-on time exists?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "geumyoil",
+            "script": "금요일",
+            "cue": "Friday",
+            "tag": "free",
+            "forms": [
+              "geumyoil",
+              "geumyoil-e",
+              "toyoil",
+              "toyoil-e",
+              "toyoil-eun",
+              "iryoil",
+              "iryoil-e",
+              "yoil"
+            ],
+            "note": "geum, gold, plus -yoil. All seven days share that ending and differ by one syllable, so seven words cost about two."
+          },
+          {
+            "display": "sigan",
+            "script": "시간",
+            "cue": "time",
+            "tag": "free",
+            "forms": [
+              "sigan",
+              "sigan-i"
+            ],
+            "note": "Time in the sense of free time, and also an hour's duration. Korean asks whether you HAVE time, exactly as English does."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "-e marks the day here, and it is the same particle that marks a place in L1-M7 and an hour in S04. One particle, four jobs, and Korean sees no difficulty in that at all.",
+      "sound": "GEU-myo-i-re SI-gan i-SSEO-yo. The l of geumyoil runs into the particle as an r.",
+      "variations": [
+        {
+          "display": "Toyoil-e sigan isseoyo?",
+          "script": "토요일에 시간 있어요?",
+          "cue": "Are you free on Saturday?",
+          "changed": "Saturday"
+        },
+        {
+          "display": "Iryoil-e sigan isseoyo?",
+          "script": "일요일에 시간 있어요?",
+          "cue": "Are you free on Sunday?",
+          "changed": "Sunday"
+        },
+        {
+          "display": "Naeil sigan isseoyo?",
+          "script": "내일 시간 있어요?",
+          "cue": "Are you free tomorrow?",
+          "changed": "L1-M6's tomorrow, which takes no particle"
+        }
+      ],
+      "mistake": {
+        "display": "Geumyoil sigan isseoyo?",
+        "script": "금요일 시간 있어요?",
+        "why": "A named day takes -e: Geumyoil-e sigan isseoyo?"
+      },
+      "usage": "Asked before anything is proposed.",
+      "register": "neutral",
+      "mnemonic": "Seven days, one ending. -yoil."
+    },
+    {
+      "id": "L2-M6-S03",
+      "display": "Woryoil-e mannallae-yo?",
+      "script": "월요일에 만날래요?",
+      "cue": "Shall we meet on Monday?",
+      "literal": "Monday-on meet-want-to?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "woryoil",
+            "script": "월요일",
+            "cue": "Monday",
+            "tag": "free",
+            "forms": [
+              "woryoil",
+              "woryoil-e",
+              "woryoil-i",
+              "hwayoil",
+              "hwayoil-e",
+              "suyoil",
+              "suyoil-e",
+              "mogyoil",
+              "mogyoil-e"
+            ],
+            "note": "wol, moon, plus -yoil — the same Monday the English word is. hwa is fire, su is water, mok is wood, and the week is the old planets in order."
+          },
+          {
+            "display": "mannallae-yo",
+            "script": "만날래요",
+            "cue": "shall we meet?",
+            "tag": "free",
+            "forms": [
+              "mannallae-yo",
+              "mannayo",
+              "mannal"
+            ],
+            "note": "mannada, to meet, with the invitation ending. Unlike M2's Korean it needs no reflexive pronoun — you simply meet a person."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "Meeting takes no extra pronoun in Korean. English says 'meet up' and Spanish and Korean both simply meet, so nothing goes between mannallae-yo and the day.",
+      "sound": "WO-ryo-i-re man-nal-LAE-yo. The nn of mannada is held.",
+      "variations": [
+        {
+          "display": "Hwayoil-e mannallae-yo?",
+          "script": "화요일에 만날래요?",
+          "cue": "Shall we meet on Tuesday?",
+          "changed": "Tuesday"
+        },
+        {
+          "display": "Suyoil-e mannallae-yo?",
+          "script": "수요일에 만날래요?",
+          "cue": "Shall we meet on Wednesday?",
+          "changed": "Wednesday"
+        },
+        {
+          "display": "Mogyoil-e mannallae-yo?",
+          "script": "목요일에 만날래요?",
+          "cue": "Shall we meet on Thursday?",
+          "changed": "Thursday"
+        }
+      ],
+      "mistake": {
+        "display": "Woryoil mannallae-yo?",
+        "script": "월요일 만날래요?",
+        "why": "A named day takes -e: Woryoil-e mannallae-yo?"
+      },
+      "usage": "Proposing the day, once you know they are free.",
+      "register": "neutral",
+      "mnemonic": "Moon, fire, water, wood — the week is the old planets."
+    },
+    {
+      "id": "L2-M6-S04",
+      "display": "Du si samsip bun-e mannayo.",
+      "script": "두 시 삼십 분에 만나요.",
+      "cue": "Let's meet at half past two.",
+      "literal": "two hour thirty minute-at meet",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "si",
+            "script": "시",
+            "cue": "o'clock (counter for hours)",
+            "tag": "delta",
+            "forms": [
+              "si",
+              "si-e",
+              "si-ga"
+            ],
+            "note": "The hour counter, and the number in front of it is NATIVE: han si, du si, se si. It is M5's law in its first four syllables."
+          },
+          {
+            "display": "bun",
+            "script": "분",
+            "cue": "minute",
+            "tag": "delta",
+            "forms": [
+              "bun",
+              "bun-e",
+              "samsip",
+              "sip"
+            ],
+            "note": "The minute counter, and the number in front of it is SINO: sip bun, samsip bun. One clock, two number systems, and no exception either way."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "du si samsip bun uses BOTH number systems in one phrase — native for the hour, Sino for the minutes — and getting it the other way round is the mistake M5's rule exists to prevent.",
+      "sound": "du si sam-SIP bu-ne man-NA-yo. samsip is two even syllables.",
+      "variations": [
+        {
+          "display": "Han si-e mannayo.",
+          "script": "한 시에 만나요.",
+          "cue": "Let's meet at one.",
+          "changed": "on the hour, with no minutes"
+        },
+        {
+          "display": "Se si sip bun-e mannayo.",
+          "script": "세 시 십 분에 만나요.",
+          "cue": "Let's meet at ten past three.",
+          "changed": "a different time, same two systems"
+        },
+        {
+          "display": "Du si-e mannallae-yo?",
+          "script": "두 시에 만날래요?",
+          "cue": "Shall we meet at two?",
+          "changed": "proposed rather than settled"
+        }
+      ],
+      "mistake": {
+        "display": "I si samsip bun-e mannayo.",
+        "script": "이 시 삼십 분에 만나요.",
+        "why": "The hour takes a native number: Du si samsip bun-e mannayo."
+      },
+      "usage": "Settling the time, which in Korea happens fast.",
+      "register": "neutral",
+      "mnemonic": "Native hour. Sino minute. Every time."
+    },
+    {
+      "id": "L2-M6-S05",
+      "display": "Eonje gal geoyeyo?",
+      "script": "언제 갈 거예요?",
+      "cue": "When are you going?",
+      "literal": "when go will-be?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eonje",
+            "script": "언제",
+            "cue": "when",
+            "tag": "free",
+            "forms": [
+              "eonje"
+            ],
+            "note": "The question word for a time, and a sibling of L1-M9's wae and L1-M8's myeot. Like every question word it takes no topic particle."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "L1-M6's -l geoyeyo carries the plan and nothing else is needed. Korean has a second future in -gess-, and this level does not open it; a learner who meets it later will find it does a different job.",
+      "sound": "EON-je gal GEO-ye-yo. eonje is two even syllables with no stress.",
+      "variations": [
+        {
+          "display": "Eonje mannal geoyeyo?",
+          "script": "언제 만날 거예요?",
+          "cue": "When are you meeting?",
+          "changed": "meeting instead of going"
+        },
+        {
+          "display": "Eonje sigan isseoyo?",
+          "script": "언제 시간 있어요?",
+          "cue": "When are you free?",
+          "changed": "asking about time rather than a plan"
+        },
+        {
+          "display": "Naeil gal geoyeyo.",
+          "script": "내일 갈 거예요.",
+          "cue": "I'm going tomorrow.",
+          "changed": "the answer, with L1-M6's tomorrow"
+        }
+      ],
+      "mistake": {
+        "display": "Eonje-neun gal geoyeyo?",
+        "script": "언제는 갈 거예요?",
+        "why": "A question word never takes the topic particle: Eonje gal geoyeyo?"
+      },
+      "usage": "Pinning down a plan somebody has mentioned in passing.",
+      "register": "neutral",
+      "mnemonic": "Question words take no topic. Ever."
+    },
+    {
+      "id": "L2-M6-S06",
+      "display": "Joayo, geuraeyo.",
+      "script": "좋아요, 그래요.",
+      "cue": "Sounds good — let's do that.",
+      "literal": "is-good, is-so",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "geuraeyo",
+            "script": "그래요",
+            "cue": "let's do that · that's right",
+            "tag": "free",
+            "forms": [
+              "geuraeyo"
+            ],
+            "note": "From geureohda, 'to be so'. It agrees, it settles a plan, and with a rising tone it asks 'really?' — three jobs, decided by the tone."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "joayo here is not describing anything. L1-M9 taught it as 'is good' and this is its second job — 'sounds good' — which is how a Korean accepts a proposal, and no new word is needed for it.",
+      "sound": "JO-a-yo, geu-RAE-yo. The h inside joayo is silent.",
+      "variations": [
+        {
+          "display": "Joayo.",
+          "script": "좋아요.",
+          "cue": "Sounds good.",
+          "changed": "on its own, which is enough"
+        },
+        {
+          "display": "Geuraeyo?",
+          "script": "그래요?",
+          "cue": "Really?",
+          "changed": "the same word as a question"
+        },
+        {
+          "display": "Ne, geuraeyo.",
+          "script": "네, 그래요.",
+          "cue": "Yes, let's.",
+          "changed": "with L1-M2's yes in front"
+        }
+      ],
+      "mistake": {
+        "display": "Joahaeyo, geuraeyo.",
+        "script": "좋아해요, 그래요.",
+        "why": "Accepting a plan takes joayo: Joayo, geuraeyo."
+      },
+      "usage": "Accepting — and in Korea it is said quickly.",
+      "register": "neutral",
+      "mnemonic": "joayo describes. It also accepts."
+    },
+    {
+      "id": "L2-M6-S07",
+      "display": "Toyoil-e yaksok isseoyo.",
+      "script": "토요일에 약속 있어요.",
+      "cue": "I have plans on Saturday.",
+      "literal": "Saturday-on appointment exists",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yaksok",
+            "script": "약속",
+            "cue": "appointment · plans · a promise",
+            "tag": "free",
+            "forms": [
+              "yaksok",
+              "yaksok-i",
+              "yaksok-eul"
+            ],
+            "note": "One word for an appointment, an arrangement with a friend and a promise. Yaksok isseoyo is the polite way to say you are busy without saying with what."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "yaksok isseoyo declines an invitation without giving a reason, and nobody will ask for one. Korean treats an existing arrangement as a complete answer, where English often expects a detail.",
+      "sound": "TO-yo-i-re YAK-sok i-SSEO-yo. The k of yaksok is unreleased.",
+      "variations": [
+        {
+          "display": "Yaksok isseoyo.",
+          "script": "약속 있어요.",
+          "cue": "I have plans.",
+          "changed": "without the day"
+        },
+        {
+          "display": "Toyoil-e yaksok eopseoyo.",
+          "script": "토요일에 약속 없어요.",
+          "cue": "I have nothing on on Saturday.",
+          "changed": "L1-M3's eopseoyo — nothing arranged"
+        },
+        {
+          "display": "Yaksok-i isseoyo.",
+          "script": "약속이 있어요.",
+          "cue": "I have an arrangement.",
+          "changed": "with the subject particle spelled out"
+        }
+      ],
+      "mistake": {
+        "display": "Toyoil-e yaksok-i-yeyo.",
+        "script": "토요일에 약속이예요.",
+        "why": "Having something takes isseoyo: Toyoil-e yaksok isseoyo."
+      },
+      "usage": "Declining without explaining, which is complete in Korean.",
+      "register": "neutral",
+      "mnemonic": "yaksok isseoyo is a whole answer."
+    },
+    {
+      "id": "L2-M6-S08",
+      "display": "Eonje-ga joayo?",
+      "script": "언제가 좋아요?",
+      "cue": "When suits you?",
+      "literal": "when-subject is-good?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eonje-ga",
+            "script": "언제가",
+            "cue": "when (as subject)",
+            "tag": "free",
+            "forms": [
+              "eonje-ga"
+            ],
+            "note": "The question word with the SUBJECT particle, exactly as M3's nuga was. Asking which time is good is asking which time is the subject of 'is good'."
+          },
+          {
+            "display": "eottaeyo",
+            "script": "어때요",
+            "cue": "how about it? · how is it?",
+            "tag": "free",
+            "forms": [
+              "eottaeyo"
+            ],
+            "note": "The whole of \"how about …?\", and it comes after what it asks about: Toyoil-eun eottaeyo? It is also the ordinary way to ask how something was."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "joayo does its 'suits you' job here, which L1-M9 named and this module uses twice. Nothing about the sentence says 'you' — the question alone carries it.",
+      "sound": "EON-je-ga JO-a-yo. The two words run together.",
+      "variations": [
+        {
+          "display": "Woryoil-i joayo.",
+          "script": "월요일이 좋아요.",
+          "cue": "Monday suits me.",
+          "changed": "the answer, with the day as subject"
+        },
+        {
+          "display": "Toyoil-eun eottaeyo?",
+          "script": "토요일은 어때요?",
+          "cue": "How about Saturday?",
+          "changed": "a suggestion, with the topic particle contrasting"
+        },
+        {
+          "display": "Du si-ga joayo.",
+          "script": "두 시가 좋아요.",
+          "cue": "Two o'clock suits me.",
+          "changed": "a time rather than a day"
+        }
+      ],
+      "mistake": {
+        "display": "Eonje-neun joayo?",
+        "script": "언제는 좋아요?",
+        "why": "A question word takes the subject particle: Eonje-ga joayo?"
+      },
+      "usage": "Handing the choice to the other person.",
+      "register": "neutral",
+      "mnemonic": "joayo suits you, and never needs a 'you'."
+    },
+    {
+      "id": "L2-M6-S09",
+      "display": "Yeok-eseo mannayo.",
+      "script": "역에서 만나요.",
+      "cue": "Let's meet at the station.",
+      "literal": "station-at meet",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mannayo",
+            "script": "만나요",
+            "cue": "meet · let's meet",
+            "tag": "free",
+            "forms": [
+              "mannayo"
+            ],
+            "note": "The plain -yo form does duty as a gentle 'let's' when the plan is already agreed. -(eu)psida would be the formal version and belongs to the -mnida level this course does not write."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "-eseo and not -e, because meeting is something that HAPPENS at the station rather than a place you are going to. M4's law again, in a sentence about plans.",
+      "sound": "YEO-ge-seo man-NA-yo. The k of yeok softens into the particle.",
+      "variations": [
+        {
+          "display": "Jeongnyujang-eseo mannayo.",
+          "script": "정류장에서 만나요.",
+          "cue": "Let's meet at the bus stop.",
+          "changed": "M4's bus stop"
+        },
+        {
+          "display": "Yeok-eseo du si-e mannayo.",
+          "script": "역에서 두 시에 만나요.",
+          "cue": "Let's meet at the station at two.",
+          "changed": "with the time"
+        },
+        {
+          "display": "Yeok-e gal geoyeyo.",
+          "script": "역에 갈 거예요.",
+          "cue": "I'll go to the station.",
+          "changed": "-e, because going there is a destination"
+        }
+      ],
+      "mistake": {
+        "display": "Yeok-e mannayo.",
+        "script": "역에 만나요.",
+        "why": "Meeting happens somewhere: Yeok-eseo mannayo."
+      },
+      "usage": "Settling where, once when is settled.",
+      "register": "neutral",
+      "mnemonic": "Meeting HAPPENS somewhere. -eseo."
+    },
+    {
+      "id": "L2-M6-S10",
+      "display": "Geuraeyo, geumyoil-e bwayo.",
+      "script": "그래요, 금요일에 봐요.",
+      "cue": "All right — see you Friday.",
+      "literal": "is-so, Friday-on see",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bwayo",
+            "script": "봐요",
+            "cue": "see · see you",
+            "tag": "free",
+            "forms": [
+              "bwayo",
+              "bol"
+            ],
+            "note": "The plain -yo of boda, to see, doing duty as a farewell that promises a meeting. Its -l shape bol is what M1's ability question takes."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "bwayo promises the meeting, exactly as a day after 'see you' does in English. L1-M2's annyeonghi gaseyo is the goodbye with nothing attached, and the two are not interchangeable once a plan exists.",
+      "sound": "geu-RAE-yo, GEU-myo-i-re BWA-yo. bwayo is one syllable and a half.",
+      "variations": [
+        {
+          "display": "Toyoil-e bwayo.",
+          "script": "토요일에 봐요.",
+          "cue": "See you Saturday.",
+          "changed": "a different day"
+        },
+        {
+          "display": "Naeil bwayo.",
+          "script": "내일 봐요.",
+          "cue": "See you tomorrow.",
+          "changed": "L1-M6's tomorrow, with no particle"
+        },
+        {
+          "display": "Du si-e bwayo.",
+          "script": "두 시에 봐요.",
+          "cue": "See you at two.",
+          "changed": "a time instead of a day"
+        }
+      ],
+      "mistake": {
+        "display": "Geuraeyo, geumyoil bwayo.",
+        "script": "그래요, 금요일 봐요.",
+        "why": "A named day takes -e: Geuraeyo, geumyoil-e bwayo."
+      },
+      "usage": "Closing the conversation once the plan is fixed.",
+      "register": "neutral",
+      "mnemonic": "bwayo promises. annyeonghi gaseyo does not."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M6-C01",
+      "display": "Gachi bap meogeullae-yo?",
+      "script": "같이 밥 먹을래요?",
+      "cue": "Shall we get something to eat?"
+    },
+    {
+      "id": "L2-M6-C02",
+      "display": "Geumyoil-e sigan isseoyo?",
+      "script": "금요일에 시간 있어요?",
+      "cue": "Are you free on Friday?"
+    },
+    {
+      "id": "L2-M6-C03",
+      "display": "Woryoil-e mannallae-yo?",
+      "script": "월요일에 만날래요?",
+      "cue": "Shall we meet on Monday?"
+    },
+    {
+      "id": "L2-M6-C04",
+      "display": "Du si samsip bun-e mannayo.",
+      "script": "두 시 삼십 분에 만나요.",
+      "cue": "Let's meet at half past two."
+    },
+    {
+      "id": "L2-M6-C05",
+      "display": "Eonje gal geoyeyo?",
+      "script": "언제 갈 거예요?",
+      "cue": "When are you going?"
+    },
+    {
+      "id": "L2-M6-C06",
+      "display": "Joayo, geuraeyo.",
+      "script": "좋아요, 그래요.",
+      "cue": "Sounds good — let's do that."
+    },
+    {
+      "id": "L2-M6-C07",
+      "display": "Toyoil-e yaksok isseoyo.",
+      "script": "토요일에 약속 있어요.",
+      "cue": "I have plans on Saturday."
+    },
+    {
+      "id": "L2-M6-C08",
+      "display": "Eonje-ga joayo?",
+      "script": "언제가 좋아요?",
+      "cue": "When suits you?"
+    },
+    {
+      "id": "L2-M6-C09",
+      "display": "Yeok-eseo mannayo.",
+      "script": "역에서 만나요.",
+      "cue": "Let's meet at the station."
+    },
+    {
+      "id": "L2-M6-C10",
+      "display": "Geuraeyo, geumyoil-e bwayo.",
+      "script": "그래요, 금요일에 봐요.",
+      "cue": "All right — see you Friday."
+    },
+    {
+      "id": "L2-M6-C11",
+      "display": "Han si-e mannayo.",
+      "script": "한 시에 만나요.",
+      "cue": "Let's meet at one."
+    },
+    {
+      "id": "L2-M6-C12",
+      "display": "Naeil bwayo.",
+      "script": "내일 봐요.",
+      "cue": "See you tomorrow."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

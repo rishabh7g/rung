@@ -1,0 +1,754 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M5",
+  "title": "Food and hosting",
+  "job": "Ordering, offering, refusing without offence",
+  "prerequisites": [
+    "L2-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "N + <native number> + <counter> + juseyo",
+      "N-i/ga + <Sino number> + won-ieyo",
+      "deo + deuseyo",
+      "jal + meogeosseumnida",
+      "gwaenchanayo + , + bae + bulleoyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "KOREAN HAS TWO NUMBER SYSTEMS, and L1-M8 used both in one module without ever saying which was which: han jan and du gae and se myeong are NATIVE numbers, ocheon won and samcheon won are SINO ones. The law, at last: native numbers COUNT THINGS and always take a counter; Sino numbers do money, minutes, dates and anything above ninety-nine. This rule explains something a learner already has, which is worth three rules that only add."
+    },
+    {
+      "tag": "delta",
+      "text": "A COUNTER IS NOT OPTIONAL the way an English measure word is, and the order is fixed: NOUN, then number, then counter. maekju du byeong — beer, two bottles — which is the reverse of English's number-then-noun. Beside L1-M8's gae, myeong and jan this module adds byeong for bottles, geureut for bowls and inbun for portions."
+    },
+    {
+      "tag": "delta",
+      "text": "THE HONORIFIC VERB SET ARRIVES AT THE TABLE, which is M1's decision made visible: meokda has a whole separate honorific word, deusida, so a host says deuseyo and masitge deuseyo and never meogeuseyo. This is the clearest of the four irregular honorifics — with gyesida (M2), jumusida and malsseumhasida (M1) — and a table is where a learner meets it first."
+    },
+    {
+      "tag": "free",
+      "text": "jal meogeosseumnida is said after eating and it is a FROZEN -mnida phrase, the third and last this course teaches, beside L1-M2's gamsahamnida and mannaseo bangapseumnida. It is not a licence to build -mnida forms: the speech level of this course is still -yo, and this phrase is learnt whole exactly as those two are."
+    },
+    {
+      "tag": "free",
+      "text": "Refusing without offence, and the cultural half is stated rather than judged. In Korean hosting THE OFFER IS REPEATED, and a bare aniyo is heard as politeness rather than as a decision — so the refusal that lands adds a reason: gwaenchanayo, bae bulleoyo. The other half a learner needs is the etiquette English has no equivalent for: the younger person pours for the older, and a glass is received with two hands."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M5-S01",
+      "display": "Maekju du byeong juseyo.",
+      "script": "맥주 두 병 주세요.",
+      "cue": "Two bottles of beer, please.",
+      "literal": "beer two bottle give-please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "maekju",
+            "script": "맥주",
+            "cue": "beer",
+            "tag": "free",
+            "forms": [
+              "maekju",
+              "maekju-reul",
+              "maekju-neun",
+              "maekju-ga"
+            ],
+            "note": "Literally 'wheat wine'. It is counted in bottles or glasses and never on its own, which is what the counter is for."
+          },
+          {
+            "display": "byeong",
+            "script": "병",
+            "cue": "(counter for bottles)",
+            "tag": "delta",
+            "forms": [
+              "byeong"
+            ],
+            "note": "The bottle counter, beside L1-M8's jan for glasses and gae for things. The number in front of it is native and shortens: han, du, se."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The order is NOUN, number, counter — maekju du byeong — which is the reverse of English. And du and not dul, because a native number shortens in front of a counter exactly as L1-M8 showed with han jan.",
+      "sound": "MAEK-ju du BYEONG joo-SE-yo. byeong is one syllable with the ng held.",
+      "variations": [
+        {
+          "display": "Maekju han byeong juseyo.",
+          "script": "맥주 한 병 주세요.",
+          "cue": "One bottle of beer, please.",
+          "changed": "one, shortened from hana"
+        },
+        {
+          "display": "Mul du byeong juseyo.",
+          "script": "물 두 병 주세요.",
+          "cue": "Two bottles of water, please.",
+          "changed": "L1-M3's water"
+        },
+        {
+          "display": "Maekju du jan juseyo.",
+          "script": "맥주 두 잔 주세요.",
+          "cue": "Two glasses of beer, please.",
+          "changed": "L1-M8's glass counter instead"
+        }
+      ],
+      "mistake": {
+        "display": "Dul byeong maekju juseyo.",
+        "script": "둘 병 맥주 주세요.",
+        "why": "Noun, number, counter — and the number shortens: Maekju du byeong juseyo."
+      },
+      "usage": "Ordering at any table where the food has already arrived.",
+      "register": "neutral",
+      "mnemonic": "Noun first. Then how many. Then what of."
+    },
+    {
+      "id": "L2-M5-S02",
+      "display": "Bibimbap se geureut juseyo.",
+      "script": "비빔밥 세 그릇 주세요.",
+      "cue": "Three bowls of bibimbap, please.",
+      "literal": "bibimbap three bowl give-please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bibimbap",
+            "script": "비빔밥",
+            "cue": "bibimbap (rice with vegetables)",
+            "tag": "free",
+            "forms": [
+              "bibimbap",
+              "bibimbap-eul",
+              "bibimbap-i",
+              "bibimbap-eun",
+              "inbun",
+              "i-inbun"
+            ],
+            "note": "bibim-, mixed, plus L1-M3's bap, rice. The name says what it is, which is true of a great deal of Korean food. inbun is its portion counter, and i-inbun — 'for two' — takes a SINO number."
+          },
+          {
+            "display": "geureut",
+            "script": "그릇",
+            "cue": "(counter for bowls)",
+            "tag": "free",
+            "forms": [
+              "geureut"
+            ],
+            "note": "A bowl, and the counter for anything served in one. It is also the ordinary word for the bowl itself."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "se and not set, the same shortening as han and du. The long forms hana, dul, set stand alone; the short ones go in front of a counter and nowhere else.",
+      "sound": "bi-bim-BAP se GEU-reut joo-SE-yo. The final t of geureut is unreleased.",
+      "variations": [
+        {
+          "display": "Bibimbap han geureut juseyo.",
+          "script": "비빔밥 한 그릇 주세요.",
+          "cue": "One bowl of bibimbap, please.",
+          "changed": "one"
+        },
+        {
+          "display": "Bibimbap i-inbun juseyo.",
+          "script": "비빔밥 이인분 주세요.",
+          "cue": "Bibimbap for two, please.",
+          "changed": "portions, which take a SINO number"
+        },
+        {
+          "display": "Bap han geureut juseyo.",
+          "script": "밥 한 그릇 주세요.",
+          "cue": "A bowl of rice, please.",
+          "changed": "L1-M3's rice"
+        }
+      ],
+      "mistake": {
+        "display": "Bibimbap set geureut juseyo.",
+        "script": "비빔밥 셋 그릇 주세요.",
+        "why": "The number shortens in front of a counter: se geureut."
+      },
+      "usage": "Ordering for a table, once everybody has decided.",
+      "register": "neutral",
+      "mnemonic": "hana, dul, set alone. han, du, se in front."
+    },
+    {
+      "id": "L2-M5-S03",
+      "display": "Bibimbap-i chilcheon won-ieyo.",
+      "script": "비빔밥이 칠천 원이에요.",
+      "cue": "The bibimbap is seven thousand won.",
+      "literal": "bibimbap-subject seven-thousand won-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chilcheon",
+            "script": "칠천",
+            "cue": "seven thousand",
+            "tag": "delta",
+            "forms": [
+              "chilcheon",
+              "chil"
+            ],
+            "note": "A SINO number, which is what money always takes — L1-M8's ocheon and samcheon are the same system. Native numbers never touch a price."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Money is Sino and things are native, and there is no overlap. Ilgop, the native seven, cannot appear in front of won at all, which is the cleanest demonstration of the two-system law.",
+      "sound": "bi-bim-BA-bi CHIL-cheon WO-ni-e-yo. chilcheon runs as two even syllables.",
+      "variations": [
+        {
+          "display": "Maekju-ga samcheon won-ieyo.",
+          "script": "맥주가 삼천 원이에요.",
+          "cue": "The beer is three thousand won.",
+          "changed": "L1-M8's three thousand"
+        },
+        {
+          "display": "Bibimbap-eun chilcheon won-ieyo.",
+          "script": "비빔밥은 칠천 원이에요.",
+          "cue": "The bibimbap, at least, is seven thousand won.",
+          "changed": "M3's topic particle and its contrast"
+        },
+        {
+          "display": "Eolmayeyo?",
+          "script": "얼마예요?",
+          "cue": "How much is it?",
+          "changed": "L1-M8's question, which this answers"
+        }
+      ],
+      "mistake": {
+        "display": "Bibimbap-i ilgop cheon won-ieyo.",
+        "script": "비빔밥이 일곱 천 원이에요.",
+        "why": "Money takes Sino numbers: Bibimbap-i chilcheon won-ieyo."
+      },
+      "usage": "Reading a menu out loud, or checking a bill.",
+      "register": "neutral",
+      "mnemonic": "Native counts things. Sino counts money."
+    },
+    {
+      "id": "L2-M5-S04",
+      "display": "Masitge deuseyo.",
+      "script": "맛있게 드세요.",
+      "cue": "Enjoy your meal.",
+      "literal": "tastily eat-honorific",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "deuseyo",
+            "script": "드세요",
+            "cue": "please eat",
+            "tag": "delta",
+            "forms": [
+              "deuseyo",
+              "deusida"
+            ],
+            "note": "A whole separate honorific verb from meokda, not an ending added to it. A host says deuseyo; meogeuseyo does not exist."
+          },
+          {
+            "display": "masitge",
+            "script": "맛있게",
+            "cue": "tastily · with enjoyment",
+            "tag": "free",
+            "forms": [
+              "masitge"
+            ],
+            "note": "L1-M9's masisseoyo turned into an adverb with -ge. Said to whoever is about to eat, and it is the closest Korean comes to bon appétit."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "There is no meogeuseyo. Four very common verbs have an ENTIRE honorific twin rather than the -si- infix — meokda becomes deusida, itda becomes gyesida, jada becomes jumusida, malhada becomes malsseumhasida — and the four are the four you meet first.",
+      "sound": "ma-SIT-ge DEU-se-yo. The eu of deuseyo is the flat vowel, not an oo.",
+      "variations": [
+        {
+          "display": "Deuseyo.",
+          "script": "드세요.",
+          "cue": "Please eat.",
+          "changed": "on its own, which is enough"
+        },
+        {
+          "display": "Deo deuseyo.",
+          "script": "더 드세요.",
+          "cue": "Have some more.",
+          "changed": "with the offer word"
+        },
+        {
+          "display": "Mani deuseyo.",
+          "script": "많이 드세요.",
+          "cue": "Eat plenty.",
+          "changed": "the warmest of the three, and the commonest"
+        }
+      ],
+      "mistake": {
+        "display": "Masitge meogeuseyo.",
+        "script": "맛있게 먹으세요.",
+        "why": "meokda has its own honorific word: Masitge deuseyo."
+      },
+      "usage": "Said by the host as the food goes down, and answered by eating.",
+      "register": "formal",
+      "mnemonic": "Four verbs have a twin, not an ending."
+    },
+    {
+      "id": "L2-M5-S05",
+      "display": "Deo deuseyo.",
+      "script": "더 드세요.",
+      "cue": "Do have some more.",
+      "literal": "more eat-honorific",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "deo",
+            "script": "더",
+            "cue": "more",
+            "tag": "delta",
+            "forms": [
+              "deo"
+            ],
+            "note": "The offer word, and this module owns it. M9's comparative is built on this same deo, so it points back here rather than opening a row of its own."
+          },
+          {
+            "display": "mani",
+            "script": "많이",
+            "cue": "a lot · plenty",
+            "tag": "free",
+            "forms": [
+              "mani",
+              "jogeum"
+            ],
+            "note": "Its opposite is jogeum, 'a little' — not M1's jom, which is the softener. The two are close in sound and do different jobs."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "deo is an offer and not a comparison. Nothing is being measured against anything here; the host is simply pressing more food on you, which is what a Korean host does.",
+      "sound": "deo DEU-se-yo. deo is one short syllable, said with the mouth barely open.",
+      "variations": [
+        {
+          "display": "Deo juseyo.",
+          "script": "더 주세요.",
+          "cue": "More, please.",
+          "changed": "asked for rather than offered"
+        },
+        {
+          "display": "Jogeum deo deuseyo.",
+          "script": "조금 더 드세요.",
+          "cue": "Have a little more.",
+          "changed": "softened with 'a little'"
+        },
+        {
+          "display": "Mani deuseyo.",
+          "script": "많이 드세요.",
+          "cue": "Eat plenty.",
+          "changed": "the standing invitation rather than a second helping"
+        }
+      ],
+      "mistake": {
+        "display": "Deo meogeuseyo.",
+        "script": "더 먹으세요.",
+        "why": "The honorific of eating is deuseyo: Deo deuseyo."
+      },
+      "usage": "Pressed on you at least twice, and expected to be.",
+      "register": "formal",
+      "mnemonic": "deo offers here. It compares in M9."
+    },
+    {
+      "id": "L2-M5-S06",
+      "display": "Gwaenchanayo, bae bulleoyo.",
+      "script": "괜찮아요, 배 불러요.",
+      "cue": "I'm fine, I'm full.",
+      "literal": "is-all-right, belly is-swollen",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bae",
+            "script": "배",
+            "cue": "belly · stomach",
+            "tag": "free",
+            "forms": [
+              "bae",
+              "bae-ga"
+            ],
+            "note": "The belly. There is a second bae meaning pear, and this course teaches only this one — L1's homograph discipline, continued."
+          },
+          {
+            "display": "bulleoyo",
+            "script": "불러요",
+            "cue": "is full (after eating)",
+            "tag": "free",
+            "forms": [
+              "bulleoyo",
+              "gopayo"
+            ],
+            "note": "Said of the belly and never of a person: bae bulleoyo, the belly is full. gopayo is its opposite, bae gopayo, 'I'm hungry'."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "A bare aniyo will NOT end the offer. In Korean hosting the offer is repeated and a plain no is heard as politeness, so the refusal that lands is the one with a reason attached — which is what this sentence is.",
+      "sound": "gwaen-CHA-na-yo, bae bul-LEO-yo. The ll is held.",
+      "variations": [
+        {
+          "display": "Bae bulleoyo.",
+          "script": "배 불러요.",
+          "cue": "I'm full.",
+          "changed": "the reason on its own"
+        },
+        {
+          "display": "Bae gopayo.",
+          "script": "배 고파요.",
+          "cue": "I'm hungry.",
+          "changed": "the opposite, and the same shape"
+        },
+        {
+          "display": "Gwaenchanayo, gomawoyo.",
+          "script": "괜찮아요, 고마워요.",
+          "cue": "I'm fine, thank you.",
+          "changed": "M1's thanks instead of the reason"
+        }
+      ],
+      "mistake": {
+        "display": "Aniyo.",
+        "script": "아니요.",
+        "why": "A refusal needs a reason to land: Gwaenchanayo, bae bulleoyo."
+      },
+      "usage": "The third time more food is offered, and it will be offered a third time.",
+      "register": "neutral",
+      "mnemonic": "The belly is full, not you."
+    },
+    {
+      "id": "L2-M5-S07",
+      "display": "Jal meogeosseumnida.",
+      "script": "잘 먹었습니다.",
+      "cue": "Thank you for the meal.",
+      "literal": "well ate",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jal meogeosseumnida",
+            "script": "잘 먹었습니다",
+            "cue": "thank you for the meal",
+            "tag": "delta",
+            "forms": [
+              "jal meogeosseumnida"
+            ],
+            "note": "FROZEN, exactly like L1-M2's gamsahamnida and mannaseo bangapseumnida, and the third and last of them. It is not a licence to build -mnida forms; this course still speaks -yo."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "It is a whole phrase, learnt as one thing. Taking it apart to build other -mnida forms is the mistake the freeze exists to prevent, and this course teaches exactly three of them and no fourth.",
+      "sound": "jal meo-GEO-sseum-ni-da. The final -da is light and often barely voiced.",
+      "variations": [
+        {
+          "display": "Jal meogeosseumnida. Gomawoyo.",
+          "script": "잘 먹었습니다. 고마워요.",
+          "cue": "Thank you for the meal. Thank you.",
+          "changed": "with M1's thanks after it"
+        },
+        {
+          "display": "Masitge meogeosseoyo.",
+          "script": "맛있게 먹었어요.",
+          "cue": "I enjoyed it.",
+          "changed": "the -yo way to say much the same, and not frozen"
+        },
+        {
+          "display": "Jal meogeosseumnida.",
+          "script": "잘 먹었습니다.",
+          "cue": "That was a lovely meal.",
+          "changed": "a fuller English reading of the same Korean"
+        }
+      ],
+      "mistake": {
+        "display": "Jal meogeosseoyo.",
+        "script": "잘 먹었어요.",
+        "why": "The phrase is frozen and is said whole: Jal meogeosseumnida."
+      },
+      "usage": "Said on standing up from the table, to whoever fed you.",
+      "register": "formal",
+      "mnemonic": "Three frozen phrases in the whole course. This is the third."
+    },
+    {
+      "id": "L2-M5-S08",
+      "display": "Gogi-reul joahaeyo.",
+      "script": "고기를 좋아해요.",
+      "cue": "I like meat.",
+      "literal": "meat-object like",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gogi",
+            "script": "고기",
+            "cue": "meat",
+            "tag": "free",
+            "forms": [
+              "gogi",
+              "gogi-reul",
+              "gogi-neun",
+              "saengseon",
+              "saengseon-eul",
+              "yachae",
+              "yachae-reul"
+            ],
+            "note": "Meat in general. saengseon is fish and yachae is vegetables, and the three between them cover most of what anybody needs to say at a table."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "joahaeyo takes an OBJECT and joayo does not — L1-M9's distinction, and a menu is where it finally matters. gogi-ga joayo says the meat is good; gogi-reul joahaeyo says you like it.",
+      "sound": "GO-gi-reul jo-a-HAE-yo. The h of joahaeyo is silent.",
+      "variations": [
+        {
+          "display": "Saengseon-eul joahaeyo.",
+          "script": "생선을 좋아해요.",
+          "cue": "I like fish.",
+          "changed": "fish, which ends in a consonant so the particle is -eul"
+        },
+        {
+          "display": "Yachae-reul joahaeyo.",
+          "script": "야채를 좋아해요.",
+          "cue": "I like vegetables.",
+          "changed": "vegetables"
+        },
+        {
+          "display": "Gogi-neun an meogeoyo.",
+          "script": "고기는 안 먹어요.",
+          "cue": "I don't eat meat.",
+          "changed": "L1-M3's an, and the topic particle marking the contrast"
+        }
+      ],
+      "mistake": {
+        "display": "Gogi-ga joahaeyo.",
+        "script": "고기가 좋아해요.",
+        "why": "joahaeyo takes an object: Gogi-reul joahaeyo."
+      },
+      "usage": "Answering what you would like, before the ordering starts.",
+      "register": "neutral",
+      "mnemonic": "joayo describes. joahaeyo takes an object."
+    },
+    {
+      "id": "L2-M5-S09",
+      "display": "I-sikdang-i masisseoyo.",
+      "script": "이 식당이 맛있어요.",
+      "cue": "This restaurant is good.",
+      "literal": "this restaurant-subject is-tasty",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sikdang",
+            "script": "식당",
+            "cue": "restaurant · canteen",
+            "tag": "free",
+            "forms": [
+              "sikdang",
+              "sikdang-i",
+              "sikdang-eun",
+              "i-sikdang",
+              "i-sikdang-i",
+              "i-sikdang-eun"
+            ],
+            "note": "An ordinary eating place rather than a smart one. The demonstrative joins it with a hyphen, because a bare i is the subject particle's key."
+          }
+        ],
+        "rules": []
+      },
+      "trap": "masisseoyo is said of the PLACE as readily as of the food, which English does not do — a restaurant that is masisseoyo is one whose food is good, not one that tastes of anything.",
+      "sound": "i-SIK-dang-i ma-SI-sseo-yo. The k of sikdang hardens the d after it.",
+      "variations": [
+        {
+          "display": "I-sikdang-eun ssayo.",
+          "script": "이 식당은 싸요.",
+          "cue": "This restaurant, at least, is cheap.",
+          "changed": "M3's cheap, with the topic particle"
+        },
+        {
+          "display": "Sikdang-i eodi-e isseoyo?",
+          "script": "식당이 어디에 있어요?",
+          "cue": "Where is the restaurant?",
+          "changed": "M4's question"
+        },
+        {
+          "display": "I-sikdang-i joayo.",
+          "script": "이 식당이 좋아요.",
+          "cue": "This restaurant is nice.",
+          "changed": "L1-M9's joayo, which is about the place rather than the food"
+        }
+      ],
+      "mistake": {
+        "display": "I-sikdang-i masitneun-ieyo.",
+        "script": "이 식당이 맛있는이에요.",
+        "why": "masisseoyo is the whole predicate: I-sikdang-i masisseoyo."
+      },
+      "usage": "Recommending somewhere, or agreeing with a recommendation.",
+      "register": "neutral",
+      "mnemonic": "A place can be tasty in Korean."
+    },
+    {
+      "id": "L2-M5-S10",
+      "display": "Maekju-reul du son-euro badayo.",
+      "script": "맥주를 두 손으로 받아요.",
+      "cue": "You take the drink with two hands.",
+      "literal": "beer-object two hand-with receive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "son",
+            "script": "손",
+            "cue": "hand",
+            "tag": "free",
+            "forms": [
+              "son",
+              "son-euro"
+            ],
+            "note": "With M4's -euro it means 'with', by hand: du son-euro, with two hands. Same particle, third job, and the family is now complete."
+          },
+          {
+            "display": "badayo",
+            "script": "받아요",
+            "cue": "receive · take",
+            "tag": "free",
+            "forms": [
+              "badayo",
+              "badeuseyo"
+            ],
+            "note": "Receiving something handed to you, which is a different verb from taking it yourself. It is the verb the etiquette is built on."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "This is etiquette rather than grammar and English has no equivalent for it: the younger person pours for the older, and a glass is received with TWO HANDS. Doing it with one is not rude in a way anybody will mention, and it will be noticed.",
+      "sound": "MAEK-ju-reul du SO-neu-ro BA-da-yo. son-euro runs as three syllables.",
+      "variations": [
+        {
+          "display": "Du son-euro juseyo.",
+          "script": "두 손으로 주세요.",
+          "cue": "Give it with two hands.",
+          "changed": "giving rather than receiving"
+        },
+        {
+          "display": "Maekju-reul badayo.",
+          "script": "맥주를 받아요.",
+          "cue": "I take the drink.",
+          "changed": "without the etiquette"
+        },
+        {
+          "display": "Du son-euro badeuseyo.",
+          "script": "두 손으로 받으세요.",
+          "cue": "Take it with two hands.",
+          "changed": "the honorific imperative, as instruction"
+        }
+      ],
+      "mistake": {
+        "display": "Maekju-reul du son-e badayo.",
+        "script": "맥주를 두 손에 받아요.",
+        "why": "'With' is -euro: du son-euro badayo."
+      },
+      "usage": "At any table where somebody older is pouring.",
+      "register": "neutral",
+      "mnemonic": "-euro points, and -euro also means 'with'."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M5-C01",
+      "display": "Maekju du byeong juseyo.",
+      "script": "맥주 두 병 주세요.",
+      "cue": "Two bottles of beer, please."
+    },
+    {
+      "id": "L2-M5-C02",
+      "display": "Bibimbap se geureut juseyo.",
+      "script": "비빔밥 세 그릇 주세요.",
+      "cue": "Three bowls of bibimbap, please."
+    },
+    {
+      "id": "L2-M5-C03",
+      "display": "Bibimbap-i chilcheon won-ieyo.",
+      "script": "비빔밥이 칠천 원이에요.",
+      "cue": "The bibimbap is seven thousand won."
+    },
+    {
+      "id": "L2-M5-C04",
+      "display": "Masitge deuseyo.",
+      "script": "맛있게 드세요.",
+      "cue": "Enjoy your meal."
+    },
+    {
+      "id": "L2-M5-C05",
+      "display": "Deo deuseyo.",
+      "script": "더 드세요.",
+      "cue": "Do have some more."
+    },
+    {
+      "id": "L2-M5-C06",
+      "display": "Gwaenchanayo, bae bulleoyo.",
+      "script": "괜찮아요, 배 불러요.",
+      "cue": "I'm fine, I'm full."
+    },
+    {
+      "id": "L2-M5-C07",
+      "display": "Jal meogeosseumnida.",
+      "script": "잘 먹었습니다.",
+      "cue": "Thank you for the meal."
+    },
+    {
+      "id": "L2-M5-C08",
+      "display": "Gogi-reul joahaeyo.",
+      "script": "고기를 좋아해요.",
+      "cue": "I like meat."
+    },
+    {
+      "id": "L2-M5-C09",
+      "display": "I-sikdang-i masisseoyo.",
+      "script": "이 식당이 맛있어요.",
+      "cue": "This restaurant is good."
+    },
+    {
+      "id": "L2-M5-C10",
+      "display": "Du son-euro badayo.",
+      "script": "두 손으로 받아요.",
+      "cue": "You take it with two hands."
+    },
+    {
+      "id": "L2-M5-C11",
+      "display": "Bae gopayo.",
+      "script": "배 고파요.",
+      "cue": "I'm hungry."
+    },
+    {
+      "id": "L2-M5-C12",
+      "display": "Mani deuseyo.",
+      "script": "많이 드세요.",
+      "cue": "Eat plenty."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

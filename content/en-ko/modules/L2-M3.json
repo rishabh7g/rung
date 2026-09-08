@@ -1,0 +1,739 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M3",
+  "title": "Describing things",
+  "job": "Size, colour, quality — agreement at length",
+  "prerequisites": [
+    "L2-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "N-eun/neun + Adj-verb-yo",
+      "N-i/ga + Adj-verb-yo",
+      "Adj-(eu)n + N + -eul/reul + V-yo",
+      "Adj-verb-go + Adj-verb-yo",
+      "i-geo-neun + Adj-(eu)n + N-ieyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "KOREAN MARKS NO GENDER, NO NUMBER AND NO ARTICLE, so \"agreement at length\" cannot mean here what it means in the Romance courses — and an author or a learner going looking for endings that do not exist will waste weeks. What Korean marks instead is ROLE, and it marks it on the PARTICLE. L1 shipped every one of them across six modules without ever laying them side by side: -i/-ga, -eun/-neun, -eul/-reul, -do, -e, -eseo. This module assembles the grid."
+    },
+    {
+      "tag": "delta",
+      "text": "TOPIC AGAINST SUBJECT is the hardest thing in beginner Korean, because no English sentence marks it. The working law is what each DOES rather than what it translates to. -eun/-neun sets what the sentence is ABOUT, and it very often implies a contrast with something else: i chaek-eun bissayo — this book, at any rate, is expensive. -i/-ga simply identifies who or what does or is the thing, and it is what brand-new information takes: chingu-ga wasseoyo. Neither is the default; the context is."
+    },
+    {
+      "tag": "free",
+      "text": "M2's attributive -(eu)n at length — ppalgan sagwa, keun jip, joeun chaek — and beside it -go for stacking two descriptions in one clause: keugo joayo, ssago masisseoyo. That -go is L1-M3's own (meokgo, masigo) doing a second job, so nothing new is opened for it. These two endings together are what this course has INSTEAD of an adjective grid, and a module that teaches them well has taught the whole of Korean description."
+    },
+    {
+      "tag": "interference",
+      "text": "The colours are descriptive verbs like everything else, and their attributive shapes are irregular enough to be learnt as PAIRS: ppalgayo / ppalgan, paraeyo / paran, norayo / noran, kkamayo / kkaman, hayayo / hayan. Each pair is one word, so both shapes live in one row."
+    },
+    {
+      "tag": "interference",
+      "text": "THE SLOGAN TO REFUSE: \"Korean has no plurals.\" It has -deul. It simply does not REQUIRE it, and the true rule is that number is optional and marked only when it matters — chingu can be one friend or several, and chingu-deul insists on several. An English speaker taught the slogan will hear a missing ending everywhere; a learner told the truth hears an optional one."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M3-S01",
+      "display": "Sagwa-ga ppalgayo.",
+      "script": "사과가 빨개요.",
+      "cue": "The apple is red.",
+      "literal": "apple-subject is-red",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ppalgayo",
+            "script": "빨개요",
+            "cue": "is red",
+            "tag": "delta",
+            "forms": [
+              "ppalgayo",
+              "ppalgan"
+            ],
+            "note": "A verb, as every colour is. In front of a noun it becomes ppalgan — ppalgan sagwa — and the two shapes are one word, which is why they share a row."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "There is no 'is' here and none is missing, exactly as in M2. A colour in Korean conjugates, so ppalgayo is the whole predicate and nothing may follow it.",
+      "sound": "SA-gwa-ga ppal-GAE-yo. The pp is tense, made with the throat tightened.",
+      "variations": [
+        {
+          "display": "Ppalgan sagwa.",
+          "script": "빨간 사과.",
+          "cue": "A red apple.",
+          "changed": "the modifier shape, in front of the noun"
+        },
+        {
+          "display": "Sagwa-neun ppalgayo.",
+          "script": "사과는 빨개요.",
+          "cue": "Apples, at least, are red.",
+          "changed": "the topic particle, which sets up a contrast"
+        },
+        {
+          "display": "Sagwa-ga paraeyo.",
+          "script": "사과가 파래요.",
+          "cue": "The apple is blue.",
+          "changed": "a different colour"
+        }
+      ],
+      "mistake": {
+        "display": "Sagwa-ga ppalgan-ieyo.",
+        "script": "사과가 빨간이에요.",
+        "why": "A colour is already a verb: Sagwa-ga ppalgayo."
+      },
+      "usage": "Picking one thing out of several by its colour.",
+      "register": "neutral",
+      "mnemonic": "Colours conjugate. Nothing follows them."
+    },
+    {
+      "id": "L2-M3-S02",
+      "display": "I-geo-neun paran chaek-ieyo.",
+      "script": "이거는 파란 책이에요.",
+      "cue": "This is a blue book.",
+      "literal": "this-topic blue book-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "paraeyo",
+            "script": "파래요",
+            "cue": "is blue",
+            "tag": "free",
+            "forms": [
+              "paraeyo",
+              "paran"
+            ],
+            "note": "Blue and green at once in older usage, and blue in ordinary modern speech. Its modifier is paran, which is the shape used here."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The modifier goes IN FRONT of the noun and never behind it. Korean builds every description leftward, which is the mirror of the Romance courses and the same direction English takes.",
+      "sound": "i-geo-neun PA-ran CHAE-gi-e-yo. The final k of chaek runs into the copula.",
+      "variations": [
+        {
+          "display": "I-geo-neun ppalgan chaek-ieyo.",
+          "script": "이거는 빨간 책이에요.",
+          "cue": "This is a red book.",
+          "changed": "a different colour"
+        },
+        {
+          "display": "Chaek-i paraeyo.",
+          "script": "책이 파래요.",
+          "cue": "The book is blue.",
+          "changed": "the verb shape, with the subject particle"
+        },
+        {
+          "display": "I-geo-neun kkaman chaek-ieyo.",
+          "script": "이거는 까만 책이에요.",
+          "cue": "This is a black book.",
+          "changed": "black"
+        }
+      ],
+      "mistake": {
+        "display": "I-geo-neun chaek paran-ieyo.",
+        "script": "이거는 책 파란이에요.",
+        "why": "The modifier goes in front: I-geo-neun paran chaek-ieyo."
+      },
+      "usage": "Handing something over, or naming which one you mean.",
+      "register": "neutral",
+      "mnemonic": "The description leans left, onto the noun."
+    },
+    {
+      "id": "L2-M3-S03",
+      "display": "Chaek-eun bissayo.",
+      "script": "책은 비싸요.",
+      "cue": "The book is expensive.",
+      "literal": "book-topic is-expensive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bissayo",
+            "script": "비싸요",
+            "cue": "is expensive",
+            "tag": "free",
+            "forms": [
+              "bissayo",
+              "bissan"
+            ],
+            "note": "L1-M8 asked eolmayeyo and never had the word for the answer. bissan is the modifier — bissan chaek, an expensive book."
+          },
+          {
+            "display": "chaek-eun",
+            "script": "책은",
+            "cue": "the book (as topic)",
+            "tag": "delta",
+            "forms": [
+              "chaek-eun",
+              "chaek-i"
+            ],
+            "note": "L1-M1's chaek with the TOPIC particle, which sets up a contrast: this book, at any rate. chaek-i would simply identify it."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "chaek-eun implies something else is not expensive. That contrast is real and constant, and it is the whole difference from chaek-i — which no English sentence can show you, because English marks neither.",
+      "sound": "CHAE-geun bi-SSA-yo. The ss is tense and the vowel before it is short.",
+      "variations": [
+        {
+          "display": "Chaek-i bissayo.",
+          "script": "책이 비싸요.",
+          "cue": "The book is expensive.",
+          "changed": "the subject particle — identifying, with no contrast implied"
+        },
+        {
+          "display": "Chaek-eun ssayo.",
+          "script": "책은 싸요.",
+          "cue": "The book is cheap.",
+          "changed": "the opposite"
+        },
+        {
+          "display": "Bissan chaek-eul juseyo.",
+          "script": "비싼 책을 주세요.",
+          "cue": "The expensive book, please.",
+          "changed": "the modifier in front of an object"
+        }
+      ],
+      "mistake": {
+        "display": "Chaek-eun bissan-ieyo.",
+        "script": "책은 비싼이에요.",
+        "why": "bissayo is the whole predicate: Chaek-eun bissayo."
+      },
+      "usage": "Saying why you are putting something back on the shelf.",
+      "register": "neutral",
+      "mnemonic": "-eun contrasts. -i identifies. Neither is the default."
+    },
+    {
+      "id": "L2-M3-S04",
+      "display": "Sagwa-ga ssayo.",
+      "script": "사과가 싸요.",
+      "cue": "The apples are cheap.",
+      "literal": "apple-subject is-cheap",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ssayo",
+            "script": "싸요",
+            "cue": "is cheap",
+            "tag": "free",
+            "forms": [
+              "ssayo",
+              "ssan",
+              "ssago"
+            ],
+            "note": "The opposite of bissayo, and the two are one letter apart in Hangul as well as in sound. ssan is the modifier."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "Nothing here says whether it is one apple or several, and Korean does not care. Number is marked with -deul only when it MATTERS — which is not the same as Korean having no plural.",
+      "sound": "SA-gwa-ga SSA-yo. bissayo and ssayo differ by one syllable and mean opposites.",
+      "variations": [
+        {
+          "display": "Sagwa-neun ssayo.",
+          "script": "사과는 싸요.",
+          "cue": "Apples, at least, are cheap.",
+          "changed": "the topic particle and its contrast"
+        },
+        {
+          "display": "Ssan sagwa-reul juseyo.",
+          "script": "싼 사과를 주세요.",
+          "cue": "The cheap apples, please.",
+          "changed": "the modifier, in front of an object, with M1's request"
+        },
+        {
+          "display": "Ppalgan sagwa-ga ssayo.",
+          "script": "빨간 사과가 싸요.",
+          "cue": "The red apples are cheap.",
+          "changed": "with a colour in front"
+        }
+      ],
+      "mistake": {
+        "display": "Sagwa-ga bissa an-ayo.",
+        "script": "사과가 비싸 않아요.",
+        "why": "The opposite of bissayo is a word of its own: Sagwa-ga ssayo."
+      },
+      "usage": "At a market, deciding.",
+      "register": "neutral",
+      "mnemonic": "bissayo out. ssayo in. One syllable apart."
+    },
+    {
+      "id": "L2-M3-S05",
+      "display": "Jip-eun keugo joayo.",
+      "script": "집은 크고 좋아요.",
+      "cue": "The house is big and nice.",
+      "literal": "house-topic is-big-and is-good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "keugo",
+            "script": "크고",
+            "cue": "is big, and",
+            "tag": "delta",
+            "forms": [
+              "keugo"
+            ],
+            "note": "M2's keoyo with L1-M3's -go on it — the same ending as meokgo and masigo, doing a second job. It stacks descriptions inside one clause."
+          },
+          {
+            "display": "jip-eun",
+            "script": "집은",
+            "cue": "the house (as topic)",
+            "tag": "free",
+            "forms": [
+              "jip-eun",
+              "jip-i"
+            ],
+            "note": "L1-M7's jip with the topic particle. The subject shape jip-i sits beside it, and this module is where the two are finally contrasted."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "-go carries no tense and no politeness of its own. Whatever the sentence is doing sits on the LAST verb, and everything in front of it stays in its plain stacking shape.",
+      "sound": "JI-beun KEU-go JO-a-yo. The eu of keugo is flat, with the tongue back and the lips unrounded.",
+      "variations": [
+        {
+          "display": "Jip-eun keoyo.",
+          "script": "집은 커요.",
+          "cue": "The house is big.",
+          "changed": "one description only"
+        },
+        {
+          "display": "Sagwa-neun ssago masisseoyo.",
+          "script": "사과는 싸고 맛있어요.",
+          "cue": "Apples are cheap and tasty.",
+          "changed": "the same stack on food, with L1-M9's masisseoyo"
+        },
+        {
+          "display": "Keun jip-i joayo.",
+          "script": "큰 집이 좋아요.",
+          "cue": "A big house is nice.",
+          "changed": "the modifier shape instead of the stack"
+        }
+      ],
+      "mistake": {
+        "display": "Jip-eun keoyo-go joayo.",
+        "script": "집은 커요고 좋아요.",
+        "why": "-go goes on the stem, not on the -yo form: Jip-eun keugo joayo."
+      },
+      "usage": "Saying two things about one thing without two sentences.",
+      "register": "neutral",
+      "mnemonic": "-go stacks. The last verb carries everything."
+    },
+    {
+      "id": "L2-M3-S06",
+      "display": "Gabang-i mugeoweoyo.",
+      "script": "가방이 무거워요.",
+      "cue": "The bag is heavy.",
+      "literal": "bag-subject is-heavy",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gabang",
+            "script": "가방",
+            "cue": "bag",
+            "tag": "free",
+            "forms": [
+              "gabang",
+              "gabang-i",
+              "gabang-eun",
+              "gabang-eul"
+            ],
+            "note": "The everyday bag — a rucksack, a handbag, a shopping bag alike. Its three particle shapes are here because this module is the one that lays the particles out."
+          },
+          {
+            "display": "mugeoweoyo",
+            "script": "무거워요",
+            "cue": "is heavy",
+            "tag": "free",
+            "forms": [
+              "mugeoweoyo",
+              "mugeoun",
+              "gabyeoweoyo",
+              "gabyeoun"
+            ],
+            "note": "Its modifier is mugeoun, with the w softening away. gabyeoweoyo and gabyeoun are the light pair, built exactly the same way and learnt beside it."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "gabang-i and not gabang-eun, because nothing is being contrasted — you are simply reporting which thing is heavy. Reaching for the topic particle by habit makes every sentence sound like an argument.",
+      "sound": "ga-BANG-i mu-geo-WO-yo. The final ng of gabang runs into the particle.",
+      "variations": [
+        {
+          "display": "Gabang-i gabyeoweoyo.",
+          "script": "가방이 가벼워요.",
+          "cue": "The bag is light.",
+          "changed": "the opposite"
+        },
+        {
+          "display": "Mugeoun gabang-eul juseyo.",
+          "script": "무거운 가방을 주세요.",
+          "cue": "The heavy bag, please.",
+          "changed": "the modifier in front of an object"
+        },
+        {
+          "display": "Gabang-eun mugeoweoyo.",
+          "script": "가방은 무거워요.",
+          "cue": "The bag, at least, is heavy.",
+          "changed": "the topic particle and its contrast"
+        }
+      ],
+      "mistake": {
+        "display": "Gabang-i mugeoun-ieyo.",
+        "script": "가방이 무거운이에요.",
+        "why": "mugeoweoyo is the whole predicate: Gabang-i mugeoweoyo."
+      },
+      "usage": "Asking somebody to take one end of it.",
+      "register": "neutral",
+      "mnemonic": "New information takes -i/-ga. Contrast takes -eun/-neun."
+    },
+    {
+      "id": "L2-M3-S07",
+      "display": "Noran gabang-eul juseyo.",
+      "script": "노란 가방을 주세요.",
+      "cue": "The yellow bag, please.",
+      "literal": "yellow bag-object give-please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "norayo",
+            "script": "노래요",
+            "cue": "is yellow",
+            "tag": "free",
+            "forms": [
+              "norayo",
+              "noran"
+            ],
+            "note": "Yellow, and its modifier noran is the shape a shop needs. The colour pairs are all irregular in the same way and are learnt two at a time."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "The object particle -eul is on the BAG, not on the colour. A Korean modifier takes no particle of its own — the whole phrase behaves as one noun, and the particle lands at the end of it.",
+      "sound": "NO-ran ga-BANG-eul joo-SE-yo. noran has no stress of its own; the phrase runs level.",
+      "variations": [
+        {
+          "display": "Hayan gabang-eul juseyo.",
+          "script": "하얀 가방을 주세요.",
+          "cue": "The white bag, please.",
+          "changed": "white"
+        },
+        {
+          "display": "Kkaman gabang-eul juseyo.",
+          "script": "까만 가방을 주세요.",
+          "cue": "The black bag, please.",
+          "changed": "black"
+        },
+        {
+          "display": "Jom keun gabang-eul juseyo.",
+          "script": "좀 큰 가방을 주세요.",
+          "cue": "A slightly bigger bag, please.",
+          "changed": "with M1's jom softening the request"
+        }
+      ],
+      "mistake": {
+        "display": "Noran-eul gabang juseyo.",
+        "script": "노란을 가방 주세요.",
+        "why": "The particle goes on the noun: Noran gabang-eul juseyo."
+      },
+      "usage": "In a shop, when pointing is not enough.",
+      "register": "neutral",
+      "mnemonic": "One phrase, one particle, at the very end."
+    },
+    {
+      "id": "L2-M3-S08",
+      "display": "Kkaman gabang-i joayo.",
+      "script": "까만 가방이 좋아요.",
+      "cue": "The black bag is the one.",
+      "literal": "black bag-subject is-good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kkamayo",
+            "script": "까매요",
+            "cue": "is black",
+            "tag": "free",
+            "forms": [
+              "kkamayo",
+              "kkaman",
+              "hayayo",
+              "hayan"
+            ],
+            "note": "Black, with hayayo and hayan for white beside it — the two are always taught together because they are the pair a learner needs first."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "L1-M9's joayo says a thing suits you, which is what makes this a choice rather than a compliment. joahaeyo would take an object and say that somebody likes it.",
+      "sound": "KKA-man ga-BANG-i JO-a-yo. The kk is tense; the h of joayo is silent.",
+      "variations": [
+        {
+          "display": "Hayan gabang-i joayo.",
+          "script": "하얀 가방이 좋아요.",
+          "cue": "The white bag is the one.",
+          "changed": "white"
+        },
+        {
+          "display": "Kkaman gabang-eun bissayo.",
+          "script": "까만 가방은 비싸요.",
+          "cue": "The black bag, though, is expensive.",
+          "changed": "topic, and the contrast is the point"
+        },
+        {
+          "display": "Kkamayo.",
+          "script": "까매요.",
+          "cue": "It's black.",
+          "changed": "the verb on its own"
+        }
+      ],
+      "mistake": {
+        "display": "Kkaman gabang-i joahaeyo.",
+        "script": "까만 가방이 좋아해요.",
+        "why": "joahaeyo needs somebody doing the liking: Kkaman gabang-i joayo."
+      },
+      "usage": "Choosing between two, out loud.",
+      "register": "neutral",
+      "mnemonic": "joayo suits you. joahaeyo is done BY you."
+    },
+    {
+      "id": "L2-M3-S09",
+      "display": "Chingu-deul-i wasseoyo.",
+      "script": "친구들이 왔어요.",
+      "cue": "My friends came.",
+      "literal": "friend-plural-subject came",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "deul",
+            "script": "들",
+            "cue": "(plural marker)",
+            "tag": "interference",
+            "forms": [
+              "deul",
+              "-deul",
+              "chingu-deul-i",
+              "chingu-deul-eun",
+              "haksaeng-deul-i"
+            ],
+            "note": "Optional, not absent. chingu alone can be one friend or several; chingu-deul insists on more than one, and Korean adds it only when the number matters."
+          },
+          {
+            "display": "wasseoyo",
+            "script": "왔어요",
+            "cue": "came",
+            "tag": "free",
+            "forms": [
+              "wasseoyo",
+              "wayo"
+            ],
+            "note": "The past of oda, to come. Brand-new information, which is exactly why the subject particle and not the topic one is on chingu-deul."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "'Korean has no plurals' is a slogan and it is false. Korean has -deul and does not REQUIRE it, which is a different thing — and a learner told the slogan will hear a missing ending in every sentence for a year.",
+      "sound": "CHIN-gu-deu-ri WA-sseo-yo. The l of deul runs into the particle and is heard as an r.",
+      "variations": [
+        {
+          "display": "Chingu-ga wasseoyo.",
+          "script": "친구가 왔어요.",
+          "cue": "A friend came.",
+          "changed": "without -deul, which leaves the number open"
+        },
+        {
+          "display": "Haksaeng-deul-i wasseoyo.",
+          "script": "학생들이 왔어요.",
+          "cue": "The students came.",
+          "changed": "L1-M1's students"
+        },
+        {
+          "display": "Chingu-deul-eun wasseoyo.",
+          "script": "친구들은 왔어요.",
+          "cue": "My friends, at least, came.",
+          "changed": "topic, so somebody else did not"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-deul-eun wasseoyo?",
+        "script": "친구들은 왔어요?",
+        "why": "New information takes the subject particle: Chingu-deul-i wasseoyo."
+      },
+      "usage": "Reporting who has arrived.",
+      "register": "neutral",
+      "mnemonic": "-deul is optional. It is not missing."
+    },
+    {
+      "id": "L2-M3-S10",
+      "display": "Nuga wasseoyo?",
+      "script": "누가 왔어요?",
+      "cue": "Who came?",
+      "literal": "who-subject came?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nuga",
+            "script": "누가",
+            "cue": "who (as subject)",
+            "tag": "delta",
+            "forms": [
+              "nuga",
+              "nugu",
+              "nugu-neun"
+            ],
+            "note": "nugu plus the subject particle, fused into one word. A question word is the newest information a sentence can carry, so it never takes the topic particle."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "A question word can never take -eun/-neun. It is by definition brand-new information, so nuga-neun does not exist — which is the cleanest proof that the two particles are not interchangeable.",
+      "sound": "NU-ga WA-sseo-yo. nuga is two even syllables with no stress on either.",
+      "variations": [
+        {
+          "display": "Nuga chinjeolhaeyo?",
+          "script": "누가 친절해요?",
+          "cue": "Who's kind?",
+          "changed": "M2's kind, in the same frame"
+        },
+        {
+          "display": "Chingu-ga wasseoyo.",
+          "script": "친구가 왔어요.",
+          "cue": "A friend came.",
+          "changed": "the answer, which also takes -ga"
+        },
+        {
+          "display": "Nuga jip-e isseoyo?",
+          "script": "누가 집에 있어요?",
+          "cue": "Who's at home?",
+          "changed": "L1-M7's house, same frame"
+        }
+      ],
+      "mistake": {
+        "display": "Nugu-neun wasseoyo?",
+        "script": "누구는 왔어요?",
+        "why": "A question word never takes the topic particle: Nuga wasseoyo?"
+      },
+      "usage": "Asked at a door, or of a list.",
+      "register": "neutral",
+      "mnemonic": "A question word is always new. So it never takes -eun."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M3-C01",
+      "display": "Sagwa-ga ppalgayo.",
+      "script": "사과가 빨개요.",
+      "cue": "The apple is red."
+    },
+    {
+      "id": "L2-M3-C02",
+      "display": "I-geo-neun paran chaek-ieyo.",
+      "script": "이거는 파란 책이에요.",
+      "cue": "This is a blue book."
+    },
+    {
+      "id": "L2-M3-C03",
+      "display": "Chaek-eun bissayo.",
+      "script": "책은 비싸요.",
+      "cue": "The book is expensive."
+    },
+    {
+      "id": "L2-M3-C04",
+      "display": "Sagwa-ga ssayo.",
+      "script": "사과가 싸요.",
+      "cue": "The apples are cheap."
+    },
+    {
+      "id": "L2-M3-C05",
+      "display": "Jip-eun keugo joayo.",
+      "script": "집은 크고 좋아요.",
+      "cue": "The house is big and nice."
+    },
+    {
+      "id": "L2-M3-C06",
+      "display": "Gabang-i mugeoweoyo.",
+      "script": "가방이 무거워요.",
+      "cue": "The bag is heavy."
+    },
+    {
+      "id": "L2-M3-C07",
+      "display": "Noran gabang-eul juseyo.",
+      "script": "노란 가방을 주세요.",
+      "cue": "The yellow bag, please."
+    },
+    {
+      "id": "L2-M3-C08",
+      "display": "Kkaman gabang-i joayo.",
+      "script": "까만 가방이 좋아요.",
+      "cue": "The black bag is the one."
+    },
+    {
+      "id": "L2-M3-C09",
+      "display": "Chingu-deul-i wasseoyo.",
+      "script": "친구들이 왔어요.",
+      "cue": "My friends came."
+    },
+    {
+      "id": "L2-M3-C10",
+      "display": "Nuga wasseoyo?",
+      "script": "누가 왔어요?",
+      "cue": "Who came?"
+    },
+    {
+      "id": "L2-M3-C11",
+      "display": "Gabang-i gabyeoweoyo.",
+      "script": "가방이 가벼워요.",
+      "cue": "The bag is light."
+    },
+    {
+      "id": "L2-M3-C12",
+      "display": "Sagwa-neun ssago masisseoyo.",
+      "script": "사과는 싸고 맛있어요.",
+      "cue": "Apples are cheap and tasty."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

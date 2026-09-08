@@ -1,0 +1,737 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M7",
+  "title": "On the phone",
+  "job": "Calls and messages — openings, closings, taking a message",
+  "prerequisites": [
+    "L2-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past",
+      "simple_future"
+    ],
+    "allowedPatterns": [
+      "yeoboseyo",
+      "N-ssi + gyeseyo?",
+      "jigeum + V-go isseoyo",
+      "jamsiman-yo",
+      "najunge + jeonhwahalgeyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "yeoboseyo IS M1'S RULE VISIBLE INSIDE ONE WORD. It is how Korea answers a phone, and it is an honorific imperative of a verb meaning \"look here\" — yeogi bo- plus -seyo. A learner told that remembers the word AND the rule; a learner given it as an unanalysable noise learns one word. The call then runs on honorifics throughout, which makes this module the payoff of M1's whole decision."
+    },
+    {
+      "tag": "delta",
+      "text": "-go isseoyo, THE PROGRESSIVE, opens here, and L1 named it as deferred for exactly this moment: a call is happening NOW. jigeum bap meokgo isseoyo. The -go is L1-M3's own linking ending in a new frame, so nothing new is opened for it. The delta worth stating: Korean's plain -yo present already covers a habitual action, so -go isseoyo is reserved for what is GENUINELY IN PROGRESS — the same restriction en-it puts on its gerundio, where en-fr and en-de have no progressive at all."
+    },
+    {
+      "tag": "free",
+      "text": "Absence uses the negation the course already owns: an gyeseyo — literally \"is not honourably present\" — which is how a Korean office says somebody is not in. The honorific STAYS in the negative and stays even about somebody absent, because it is about the person and not the situation."
+    },
+    {
+      "tag": "free",
+      "text": "jamsiman-yo is the hold, and it is a NOUN with -yo stuck on the end. That is worth its own line: -yo politens a fragment, not only a verb, which is why Korean can be polite in two syllables where English needs a clause."
+    },
+    {
+      "tag": "free",
+      "text": "Taking a message needs no new tense — memo, jeonhwa beonho, and L1-M5's past. -l-geyo (najunge jeonhwahalgeyo, \"I'll call later\") is a PROMISE ending built on L1-M6's -l shape and is taught as one item, not as a system. Reported speech (-dago) is L3's, which is why a message here is passed on with the words themselves."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M7-S01",
+      "display": "Yeoboseyo, jeoyeyo.",
+      "script": "여보세요, 저예요.",
+      "cue": "Hello — it's me.",
+      "literal": "look-here-honorific, I-am",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yeoboseyo",
+            "script": "여보세요",
+            "cue": "hello (on the phone)",
+            "tag": "delta",
+            "forms": [
+              "yeoboseyo"
+            ],
+            "note": "An honorific imperative meaning 'look here' — M1's ending frozen into a greeting. It is used on the telephone and almost nowhere else."
+          },
+          {
+            "display": "jeoyeyo",
+            "script": "저예요",
+            "cue": "it's me",
+            "tag": "free",
+            "forms": [
+              "jeoyeyo"
+            ],
+            "note": "L1-M1's jeo with the copula. Korean identifies itself with 'I am' where English says 'it is me', and the vowel ending takes -yeyo."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "yeoboseyo belongs to the telephone. Said to somebody in front of you it is either a joke or a way of getting the attention of a stranger, and neither is what a learner intends.",
+      "sound": "YEO-bo-se-yo, JEO-ye-yo. Four even syllables and then three.",
+      "variations": [
+        {
+          "display": "Yeoboseyo?",
+          "script": "여보세요?",
+          "cue": "Hello?",
+          "changed": "answering, with the rise that asks who is there"
+        },
+        {
+          "display": "Yeoboseyo, Minsu-ssi?",
+          "script": "여보세요, 민수 씨?",
+          "cue": "Hello, is that Minsu?",
+          "changed": "naming who you hope has answered"
+        },
+        {
+          "display": "Ne, jeoyeyo.",
+          "script": "네, 저예요.",
+          "cue": "Yes, it's me.",
+          "changed": "with L1-M2's yes"
+        }
+      ],
+      "mistake": {
+        "display": "Annyeonghaseyo, jeoyeyo.",
+        "script": "안녕하세요, 저예요.",
+        "why": "A phone is answered with yeoboseyo: Yeoboseyo, jeoyeyo."
+      },
+      "usage": "Both ends of a Korean call open with it.",
+      "register": "formal",
+      "mnemonic": "'Look here' — an imperative that became a hello."
+    },
+    {
+      "id": "L2-M7-S02",
+      "display": "Kim seonsaengnim gyeseyo?",
+      "script": "김 선생님 계세요?",
+      "cue": "Is Mr Kim there?",
+      "literal": "Kim teacher exists-honorific?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kim",
+            "script": "김",
+            "cue": "Kim (a surname)",
+            "tag": "free",
+            "forms": [
+              "kim",
+              "yuna-ssi",
+              "minsu-ssi"
+            ],
+            "note": "The commonest Korean surname by a long way, and a surname goes FIRST — Kim seonsaengnim, never seonsaengnim Kim. With a given name L1-M1's -ssi does the same job: Yuna-ssi, Minsu-ssi."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "gyeseyo and not isseoyo, because the person asked after is honoured. M2 opened the separate honorific verb for existence, and a phone call is where it is used ten times a day.",
+      "sound": "kim seon-saeng-NIM gye-SE-yo. gye is one syllable.",
+      "variations": [
+        {
+          "display": "Minsu-ssi gyeseyo?",
+          "script": "민수 씨 계세요?",
+          "cue": "Is Minsu there?",
+          "changed": "L1-M1's -ssi instead of a title"
+        },
+        {
+          "display": "Kim seonsaengnim an gyeseyo?",
+          "script": "김 선생님 안 계세요?",
+          "cue": "Is Mr Kim not there?",
+          "changed": "negated, and the honorific stays"
+        },
+        {
+          "display": "Yuna-ssi gyeseyo?",
+          "script": "유나 씨 계세요?",
+          "cue": "Is Yuna there?",
+          "changed": "L1-M1's Yuna"
+        }
+      ],
+      "mistake": {
+        "display": "Kim seonsaengnim isseoyo?",
+        "script": "김 선생님 있어요?",
+        "why": "An honoured person takes gyeseyo: Kim seonsaengnim gyeseyo?"
+      },
+      "usage": "Asking to be put through, in an office or a home.",
+      "register": "formal",
+      "mnemonic": "The surname goes first. The honorific stays."
+    },
+    {
+      "id": "L2-M7-S03",
+      "display": "Jigeum an gyeseyo.",
+      "script": "지금 안 계세요.",
+      "cue": "He isn't in right now.",
+      "literal": "now not exists-honorific",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jigeum",
+            "script": "지금",
+            "cue": "now · right now",
+            "tag": "free",
+            "forms": [
+              "jigeum"
+            ],
+            "note": "The word that pins a sentence to this moment, and it is what -go isseoyo usually travels with. It goes at the front."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The honorific stays even in the negative and even about somebody who is not there. It is about the PERSON, not about the situation, and dropping it because they are absent is the mistake to avoid.",
+      "sound": "JI-geum an gye-SE-yo. an is short and unstressed.",
+      "variations": [
+        {
+          "display": "Jigeum an gyeseyo. Najunge jeonhwahaseyo.",
+          "script": "지금 안 계세요. 나중에 전화하세요.",
+          "cue": "He isn't in. Call later.",
+          "changed": "with what to do about it"
+        },
+        {
+          "display": "Oneul an gyeseyo.",
+          "script": "오늘 안 계세요.",
+          "cue": "He isn't in today.",
+          "changed": "L1-M4's today, so a whole day"
+        },
+        {
+          "display": "Jigeum gyeseyo.",
+          "script": "지금 계세요.",
+          "cue": "He's here now.",
+          "changed": "the answer that puts you through"
+        }
+      ],
+      "mistake": {
+        "display": "Jigeum an isseoyo.",
+        "script": "지금 안 있어요.",
+        "why": "The honorific stays in the negative: Jigeum an gyeseyo."
+      },
+      "usage": "What you hear when the person you want is out.",
+      "register": "formal",
+      "mnemonic": "Honour the person, not the situation."
+    },
+    {
+      "id": "L2-M7-S04",
+      "display": "Jigeum bap meokgo isseoyo.",
+      "script": "지금 밥 먹고 있어요.",
+      "cue": "He's eating right now.",
+      "literal": "now rice eat-and exists",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "go isseoyo",
+            "script": "고 있어요",
+            "cue": "is -ing (in progress)",
+            "tag": "delta",
+            "forms": [
+              "go isseoyo",
+              "-go isseoyo"
+            ],
+            "note": "L1-M3's linking -go plus L1-M3's isseoyo — 'doing and being at it'. Reserved for what is genuinely in progress, because the plain -yo already covers a habit."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "meogeoyo already means both 'eats' and 'is eating'. -go isseoyo is not the ordinary present; it is the emphatic one, used when the fact that it is happening right now is the point — which on a phone it usually is.",
+      "sound": "JI-geum bap MEOK-go i-SSEO-yo. The k of meokgo hardens the g after it.",
+      "variations": [
+        {
+          "display": "Jigeum jeonhwahago isseoyo.",
+          "script": "지금 전화하고 있어요.",
+          "cue": "He's on the phone right now.",
+          "changed": "on a call instead"
+        },
+        {
+          "display": "Bap meogeoyo.",
+          "script": "밥 먹어요.",
+          "cue": "He eats.",
+          "changed": "the plain present, which covers the habit"
+        },
+        {
+          "display": "Jigeum ilhago isseoyo.",
+          "script": "지금 일하고 있어요.",
+          "cue": "He's working right now.",
+          "changed": "L1-M4's work"
+        }
+      ],
+      "mistake": {
+        "display": "Jigeum bap meogeo isseoyo.",
+        "script": "지금 밥 먹어 있어요.",
+        "why": "The progressive takes -go: Jigeum bap meokgo isseoyo."
+      },
+      "usage": "Explaining why somebody cannot come to the phone.",
+      "register": "neutral",
+      "mnemonic": "-go isseoyo is for NOW. -yo is for usually."
+    },
+    {
+      "id": "L2-M7-S05",
+      "display": "Jamsiman-yo.",
+      "script": "잠시만요.",
+      "cue": "One moment, please.",
+      "literal": "just-a-moment-polite",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jamsiman-yo",
+            "script": "잠시만요",
+            "cue": "one moment",
+            "tag": "delta",
+            "forms": [
+              "jamsiman-yo",
+              "jamsiman"
+            ],
+            "note": "A NOUN with -yo stuck on it — jamsi, a moment, plus -man, only. -yo politens a fragment and not only a verb, which is how Korean is polite in two syllables."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "-yo does not need a verb under it. That is why Korean can politen a single word — jamsiman-yo, yeogi-yo — where English needs a whole clause to do the same work.",
+      "sound": "jam-si-MAN-yo. The n runs into the yo and is heard as nyo.",
+      "variations": [
+        {
+          "display": "Ne, jamsiman-yo.",
+          "script": "네, 잠시만요.",
+          "cue": "Yes, one moment.",
+          "changed": "with L1-M2's yes"
+        },
+        {
+          "display": "Jamsiman gidaryeojuseyo.",
+          "script": "잠시만 기다려주세요.",
+          "cue": "Please wait a moment.",
+          "changed": "the full request, with M1's fused form"
+        },
+        {
+          "display": "Jamsiman-yo, jeonhwa wasseoyo.",
+          "script": "잠시만요, 전화 왔어요.",
+          "cue": "One moment — there's a call.",
+          "changed": "with the reason after it"
+        }
+      ],
+      "mistake": {
+        "display": "Jamsiman.",
+        "script": "잠시만.",
+        "why": "Dropping the -yo drops the politeness: Jamsiman-yo."
+      },
+      "usage": "Putting somebody on hold, or squeezing past them in a shop.",
+      "register": "neutral",
+      "mnemonic": "-yo politens a fragment, not just a verb."
+    },
+    {
+      "id": "L2-M7-S06",
+      "display": "Jeonhwa beonho-ga eotteoke dwaeyo?",
+      "script": "전화 번호가 어떻게 돼요?",
+      "cue": "What's your phone number?",
+      "literal": "telephone number-subject how becomes?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeonhwa",
+            "script": "전화",
+            "cue": "telephone · a call",
+            "tag": "free",
+            "forms": [
+              "jeonhwa",
+              "jeonhwa-reul",
+              "jeonhwahaeyo",
+              "jeonhwahago",
+              "jeonhwahaseyo",
+              "jeonhwahal",
+              "ilhago"
+            ],
+            "note": "The noun, and jeonhwahaeyo is the verb built straight on it with hada — Korean makes hundreds of verbs that way, and ilhago is L1-M4's work doing the same."
+          },
+          {
+            "display": "beonho",
+            "script": "번호",
+            "cue": "number",
+            "tag": "free",
+            "forms": [
+              "beonho",
+              "beonho-ga",
+              "beonho-reul"
+            ],
+            "note": "A number in the sense of a label — a phone number, a room number — and never a quantity. A phone number is read digit by digit with Sino numbers."
+          },
+          {
+            "display": "dwaeyo",
+            "script": "돼요",
+            "cue": "becomes · works out",
+            "tag": "free",
+            "forms": [
+              "dwaeyo"
+            ],
+            "note": "'Becomes'. eotteoke dwaeyo — 'how does it turn out' — is the polite way to ask for a detail, softer than mwoyeyo."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "eotteoke dwaeyo — literally 'how does it become' — is the polite way to ask for a detail, and it is softer than mwoyeyo. Korean asks how something turns out rather than what it is.",
+      "sound": "JEON-hwa BEON-ho-ga eo-TTEO-ke DWAE-yo. dwaeyo rhymes with English 'dway'.",
+      "variations": [
+        {
+          "display": "Jeonhwa beonho-reul juseyo.",
+          "script": "전화 번호를 주세요.",
+          "cue": "Give me your number, please.",
+          "changed": "asked for outright, with M1's request"
+        },
+        {
+          "display": "Ireum-eun eotteoke dwaeyo?",
+          "script": "이름은 어떻게 돼요?",
+          "cue": "What's your name?",
+          "changed": "L1-M1's name, in the same polite frame"
+        },
+        {
+          "display": "Jeonhwa beonho-ga isseoyo?",
+          "script": "전화 번호가 있어요?",
+          "cue": "Do you have a number?",
+          "changed": "asking whether there is one at all"
+        }
+      ],
+      "mistake": {
+        "display": "Jeonhwa beonho-ga mwoyeyo?",
+        "script": "전화 번호가 뭐예요?",
+        "why": "A detail is asked politely with eotteoke dwaeyo: Jeonhwa beonho-ga eotteoke dwaeyo?"
+      },
+      "usage": "Taking down a number, and the polite form matters here.",
+      "register": "formal",
+      "mnemonic": "Korean asks how it BECOMES, not what it is."
+    },
+    {
+      "id": "L2-M7-S07",
+      "display": "Memo-reul namgyeojuseyo.",
+      "script": "메모를 남겨주세요.",
+      "cue": "Please leave a message.",
+      "literal": "memo-object leave-and-give-please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "memo",
+            "script": "메모",
+            "cue": "message · memo",
+            "tag": "free",
+            "forms": [
+              "memo",
+              "memo-reul",
+              "memo-neun"
+            ],
+            "note": "From the English word. It is what an office takes when somebody is out, and it goes with namgida, to leave behind."
+          },
+          {
+            "display": "namgyeojuseyo",
+            "script": "남겨주세요",
+            "cue": "please leave (it)",
+            "tag": "free",
+            "forms": [
+              "namgyeojuseyo"
+            ],
+            "note": "namgyeo- plus M1's juseyo, the same fusion as dowajuseyo and gidaryeojuseyo. One token, no space, no hyphen."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "This is M1's request pattern doing ordinary office work. Nothing about it is idiomatic — once the -a/eo juseyo fusion is understood, dozens of sentences like it build themselves.",
+      "sound": "ME-mo-reul nam-GYEO-joo-se-yo. The gyeo is one syllable.",
+      "variations": [
+        {
+          "display": "Memo-reul namgyeojuseyo.",
+          "script": "메모를 남겨주세요.",
+          "cue": "Please leave a message.",
+          "changed": "the plain request, which is what an office says"
+        },
+        {
+          "display": "Memo isseoyo?",
+          "script": "메모 있어요?",
+          "cue": "Is there a message?",
+          "changed": "asking whether one was left"
+        },
+        {
+          "display": "Jeonhwa beonho-reul namgyeojuseyo.",
+          "script": "전화 번호를 남겨주세요.",
+          "cue": "Please leave your number.",
+          "changed": "the number rather than a message"
+        }
+      ],
+      "mistake": {
+        "display": "Memo-reul namgyeoyo.",
+        "script": "메모를 남겨요.",
+        "why": "A request takes juseyo: Memo-reul namgyeojuseyo."
+      },
+      "usage": "Said by whoever answered, before you have to ask.",
+      "register": "formal",
+      "mnemonic": "-a/eo juseyo builds itself, once you have it."
+    },
+    {
+      "id": "L2-M7-S08",
+      "display": "Najunge jeonhwahalgeyo.",
+      "script": "나중에 전화할게요.",
+      "cue": "I'll call later.",
+      "literal": "later telephone-do-will",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "najunge",
+            "script": "나중에",
+            "cue": "later · afterwards",
+            "tag": "free",
+            "forms": [
+              "najunge"
+            ],
+            "note": "Later in the same day or later in general, and it already contains L1-M7's -e. It goes at the front, like every time word."
+          },
+          {
+            "display": "halgeyo",
+            "script": "할게요",
+            "cue": "I'll (do it) — a promise",
+            "tag": "delta",
+            "forms": [
+              "halgeyo",
+              "-l-geyo",
+              "jeonhwahalgeyo"
+            ],
+            "note": "A PROMISE, not a prediction: it says what the speaker undertakes to do. L1-M6's -l geoyeyo simply states a plan, and only -l-geyo commits."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "-l-geyo COMMITS where L1-M6's -l geoyeyo only states a plan. And it is first person only: you cannot promise on somebody else's behalf, and Korean grammar refuses to let you try.",
+      "sound": "na-JUNG-e jeon-hwa-HAL-ge-yo. The g of -geyo is hardened by the l in front of it.",
+      "variations": [
+        {
+          "display": "Naeil jeonhwahalgeyo.",
+          "script": "내일 전화할게요.",
+          "cue": "I'll call tomorrow.",
+          "changed": "L1-M6's tomorrow"
+        },
+        {
+          "display": "Najunge bwayo.",
+          "script": "나중에 봐요.",
+          "cue": "See you later.",
+          "changed": "M6's farewell instead"
+        },
+        {
+          "display": "Jigeum jeonhwahalgeyo.",
+          "script": "지금 전화할게요.",
+          "cue": "I'll call now.",
+          "changed": "now instead of later"
+        }
+      ],
+      "mistake": {
+        "display": "Najunge jeonhwahaeyo.",
+        "script": "나중에 전화해요.",
+        "why": "A promise takes -l-geyo: Najunge jeonhwahalgeyo."
+      },
+      "usage": "Closing a call you will have to finish another time.",
+      "register": "neutral",
+      "mnemonic": "-l-geyo promises. -l geoyeyo only plans."
+    },
+    {
+      "id": "L2-M7-S09",
+      "display": "Eoje jeonhwahaesseoyo.",
+      "script": "어제 전화했어요.",
+      "cue": "I called yesterday.",
+      "literal": "yesterday telephone-did",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeonhwahaesseoyo",
+            "script": "전화했어요",
+            "cue": "called (past)",
+            "tag": "free",
+            "forms": [
+              "jeonhwahaesseoyo"
+            ],
+            "note": "L1-M5's past on the hada verb. Nothing new is opened for it: -eoss- is L1's, and this is one more cell of it."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "A message is passed on with the words themselves at this level. Reported speech — 'he said that he would call' — needs -dago, which belongs to L3 and is deliberately not here.",
+      "sound": "EO-je jeon-hwa-HAE-sseo-yo. The sseo is tense.",
+      "variations": [
+        {
+          "display": "Oneul jeonhwahaesseoyo.",
+          "script": "오늘 전화했어요.",
+          "cue": "He called today.",
+          "changed": "L1-M4's today"
+        },
+        {
+          "display": "Eoje jeonhwahaesseoyo?",
+          "script": "어제 전화했어요?",
+          "cue": "Did you call yesterday?",
+          "changed": "as a question, with a rise"
+        },
+        {
+          "display": "Kim seonsaengnim-i jeonhwahaesseoyo.",
+          "script": "김 선생님이 전화했어요.",
+          "cue": "Mr Kim called.",
+          "changed": "naming who, with the subject particle"
+        }
+      ],
+      "mistake": {
+        "display": "Eoje jeonhwahaeyo.",
+        "script": "어제 전화해요.",
+        "why": "A past time word needs the past: Eoje jeonhwahaesseoyo."
+      },
+      "usage": "Reporting a call that already happened.",
+      "register": "neutral",
+      "mnemonic": "-eoss- is L1's. Every past is one of its cells."
+    },
+    {
+      "id": "L2-M7-S10",
+      "display": "Ne, annyeonghi gyeseyo.",
+      "script": "네, 안녕히 계세요.",
+      "cue": "All right — goodbye.",
+      "literal": "yes, peacefully exist-honorific",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "annyeonghi gyeseyo",
+            "script": "안녕히 계세요",
+            "cue": "goodbye (to the one staying)",
+            "tag": "free",
+            "forms": [
+              "annyeonghi gyeseyo"
+            ],
+            "note": "L1-M2's farewell, and a call is where it is easiest: the other person is staying where they are, so it is gyeseyo and never gaseyo."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Korean has two goodbyes and the caller uses the STAYING one, because the person at the other end is not going anywhere. L1-M2 taught both; a phone is where the choice finally has an obvious answer.",
+      "sound": "ne, an-NYEONG-hi gye-SE-yo. The hi is light.",
+      "variations": [
+        {
+          "display": "Annyeonghi gyeseyo.",
+          "script": "안녕히 계세요.",
+          "cue": "Goodbye.",
+          "changed": "on its own"
+        },
+        {
+          "display": "Ne, gomawoyo. Annyeonghi gyeseyo.",
+          "script": "네, 고마워요. 안녕히 계세요.",
+          "cue": "Yes, thank you. Goodbye.",
+          "changed": "with M1's thanks"
+        },
+        {
+          "display": "Najunge jeonhwahalgeyo. Annyeonghi gyeseyo.",
+          "script": "나중에 전화할게요. 안녕히 계세요.",
+          "cue": "I'll call later. Goodbye.",
+          "changed": "with the promise in front"
+        }
+      ],
+      "mistake": {
+        "display": "Ne, annyeonghi gaseyo.",
+        "script": "네, 안녕히 가세요.",
+        "why": "The one on the other end is staying: Ne, annyeonghi gyeseyo."
+      },
+      "usage": "Closing a call — and the choice of goodbye is not free.",
+      "register": "formal",
+      "mnemonic": "They are not going anywhere. So gyeseyo."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M7-C01",
+      "display": "Yeoboseyo, jeoyeyo.",
+      "script": "여보세요, 저예요.",
+      "cue": "Hello — it's me."
+    },
+    {
+      "id": "L2-M7-C02",
+      "display": "Kim seonsaengnim gyeseyo?",
+      "script": "김 선생님 계세요?",
+      "cue": "Is Mr Kim there?"
+    },
+    {
+      "id": "L2-M7-C03",
+      "display": "Jigeum an gyeseyo.",
+      "script": "지금 안 계세요.",
+      "cue": "He isn't in right now."
+    },
+    {
+      "id": "L2-M7-C04",
+      "display": "Jigeum bap meokgo isseoyo.",
+      "script": "지금 밥 먹고 있어요.",
+      "cue": "He's eating right now."
+    },
+    {
+      "id": "L2-M7-C05",
+      "display": "Jamsiman-yo.",
+      "script": "잠시만요.",
+      "cue": "One moment, please."
+    },
+    {
+      "id": "L2-M7-C06",
+      "display": "Jeonhwa beonho-ga eotteoke dwaeyo?",
+      "script": "전화 번호가 어떻게 돼요?",
+      "cue": "What's your phone number?"
+    },
+    {
+      "id": "L2-M7-C07",
+      "display": "Memo-reul namgyeojuseyo.",
+      "script": "메모를 남겨주세요.",
+      "cue": "Please leave a message."
+    },
+    {
+      "id": "L2-M7-C08",
+      "display": "Najunge jeonhwahalgeyo.",
+      "script": "나중에 전화할게요.",
+      "cue": "I'll call later."
+    },
+    {
+      "id": "L2-M7-C09",
+      "display": "Eoje jeonhwahaesseoyo.",
+      "script": "어제 전화했어요.",
+      "cue": "I called yesterday."
+    },
+    {
+      "id": "L2-M7-C10",
+      "display": "Ne, annyeonghi gyeseyo.",
+      "script": "네, 안녕히 계세요.",
+      "cue": "All right — goodbye."
+    },
+    {
+      "id": "L2-M7-C11",
+      "display": "Jigeum jeonhwahago isseoyo.",
+      "script": "지금 전화하고 있어요.",
+      "cue": "He's on the phone right now."
+    },
+    {
+      "id": "L2-M7-C12",
+      "display": "Minsu-ssi gyeseyo?",
+      "script": "민수 씨 계세요?",
+      "cue": "Is Minsu there?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

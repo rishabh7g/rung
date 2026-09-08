@@ -542,6 +542,66 @@ allow-listed. The ratchet held at en-de 11 across all five modules, with roughly
 fixed by opening rows the modules owned or rewriting variations onto taught surfaces. **The native
 gate is still unmet**: docs/67 ends in open questions 1–40, a fresh en-de L2 chain.
 
+**en-ko starts its second level — the last course to (#442, 2026-09-08).** `L2-M1` _Asking politely_
+and `L2-M2` _Describing people_ are authored against the briefs of #433
+(`docs/60-en-ko-L2-brief-decisions.md`), backed by the new `docs/68-llm-review-en-ko-L2.md`; a
+strict `npm run build` emits `en-ko: 12 modules (L1-M1..M10, L2-M1..M2)`. M1 makes L1's deferred
+honorific productive, and the whole lesson is **which person it lands on**: `-(eu)seyo` honours the
+SUBJECT of its own sentence, so `jeo-neun gaseyo` — honouring yourself — is the error an English
+speaker who learnt it as "the polite one" makes first. It also names the thing Korean does not have:
+**there is no verb "can"**, only the noun `su` ("a way") and L1-M3's `isseoyo`, which is why the
+negative is "there is no way". M2 assembles Korean's signature sentence, **the double subject** —
+`jeo-neun ki-ga keoyo` is *for-me, the-height is-big* — out of pieces L1 had already shipped, and it
+teaches the family set as the place where **Korean is richer than English and the delta runs the
+other way**: four words for an older sibling that each encode the SPEAKER's gender, and one that
+encodes nothing for the younger. The wave widened one L1-shaped assertion by exactly one: the
+`-mnida` check allowed two frozen phrases, and M1's job is to teach the speech levels side by side,
+so `joesonghamnida` joins them at L2 and nowhere else. That is the fourth time this milestone a
+second level has exposed a test encoding the level as well as the rule. **The native gate is still
+unmet**: docs/68 ends in open questions 1–12, a fresh en-ko L2 chain.
+
+**en-ko reaches the halfway mark of its L2 (#451, 2026-09-08).** `L2-M3` _Describing things_,
+`L2-M4` _Getting around_ and `L2-M5` _Food and hosting_ land, and `npm run build` emits `en-ko: 15
+modules (L1-M1..M10, L2-M1..M5)`. M3's job line cannot mean what it means in the Romance courses,
+and saying so is the module: **Korean marks no gender, no number and no article — what it marks is
+ROLE, on the particle**, and L1 shipped all six of them across six modules without ever laying them
+side by side. It also refuses a slogan out loud: "Korean has no plurals" is false, because Korean
+has `-deul` and simply does not require it. M4 opens the pair L1 taught and never contrasted — `-e`
+for a destination, `-eseo` for where an action happens — and the thing no English speaker guesses:
+**riding takes an object particle**, `beoseu-reul tayo`, "the bus, ride it", while getting off takes
+`-eseo` because it happens somewhere. M5 states the law that explains what a learner already has:
+**native numbers count things and always take a counter, Sino numbers do money and dates**, which
+L1-M8 used in one module without ever naming. The honorific verb set arrives at the table —
+`meokda` has a whole separate word, `deusida`, so a host says `deuseyo` and never `meogeuseyo` — and
+the hosting note is stated rather than moralised: in Korea the offer is repeated, a bare `aniyo` is
+heard as politeness, and the refusal that lands carries a reason. The `-mnida` set is widened once
+more and closed at four: `jal meogeosseumnida` joins L1's two and M1's `joesonghamnida`, frozen
+exactly as they are. The briefs' prediction that a bare `i` would collide with the subject
+particle's key came true on the first build, and the demonstrative is now written joined
+everywhere — `i-jjok`, `i-sikdang` — as L1-M1's `i-geo` already was. The ratchet held at en-ko 12.
+**The native gate is still unmet**: docs/68 ends in open questions 1–27, a fresh en-ko L2 chain.
+
+**en-ko completes its L2 — and so does every course (#460, 2026-09-08).** `L2-M6` through `L2-M10`
+land together, `npm run build` emits `en-ko: 20 modules (L1-M1..M10, L2-M1..M10)`, and **all nine
+courses now have a complete second level**. M6 is where M5's number rule pays for itself in one
+breath: **the hour is a native number with `-si` and the minutes are a Sino number with `-bun`**, so
+`du si samsip bun` uses both systems in four syllables. It also moves the OPPOSITE way from the
+other eight courses on register — every other L2 chips `informal` when friends make plans, and en-ko
+has no informal tier to switch into, because banmal is not written in this course at all. M7 pays
+back M1's whole decision inside one word: `yeoboseyo` is an honorific imperative meaning "look
+here". It opens **`-go isseoyo`**, reserved for what is genuinely in progress because the plain `-yo`
+present already covers a habit, and it notes that `-yo` politens a fragment and not only a verb.
+M8's law is one line — **`an` is "do not", `mot` is "cannot"** — where English's single "can't"
+hides the difference, and its complaining note is that **Korean softens with the honorific rather
+than the hedge**. M9's delta is word order: `-boda` attaches to the thing compared against and comes
+before the predicate, nothing declines and nothing agrees, and there is **no Korean verb for
+"prefer"** — `deo joahaeyo`, the mirror image of German's `lieber`. M10 refuses the lesson four other
+courses spend their M10 on: **Korean has no perfect/imperfect split**, and what replaces it is that
+**Korean drops every subject once the topic is set** — its final item is two sentences, three verbs
+and not one word saying who. The ratchet held at en-ko 12 across all ten modules of the level, with
+roughly a hundred findings fixed in content across the three waves and no baseline raised. **The
+native gate is still unmet**: docs/68 ends in open questions 1–47, a fresh en-ko L2 chain.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on

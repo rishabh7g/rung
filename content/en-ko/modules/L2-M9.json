@@ -1,0 +1,733 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M9",
+  "title": "Comparing and choosing",
+  "job": "More, less, better — stating a preference",
+  "prerequisites": [
+    "L2-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "A-neun/eun + B-boda + Adj-verb-yo",
+      "A-neun/eun + B-boda + deo + Adj-verb-yo",
+      "N + jung-eseo + gajang + Adj-(eu)n + N",
+      "eoneu + N-i/ga + deo + joayo?",
+      "jeo-neun + N-eul/reul + deo + joahaeyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "-boda IS THE COMPARISON PARTICLE and the WORD ORDER is the delta. It attaches to the thing compared AGAINST, and that phrase comes in the MIDDLE, before the predicate: i-geo-ga geugeo-boda bissayo — literally \"this, than-that, is-expensive\". English puts the standard last (\"more expensive than that\") and Korean puts it where a verb-final language puts everything: in front of the verb. deo (\"more\") is optional and usually present, and it is M5's row doing its second job."
+    },
+    {
+      "tag": "free",
+      "text": "The superlative is gajang or jeil in front of the descriptive verb — gajang keoyo, jeil masisseoyo — with the group marked by jung-eseo, \"among\". Both words mean the SAME thing and jeil is the more colloquial. There is no distinction to invent between them."
+    },
+    {
+      "tag": "free",
+      "text": "NOTHING DECLINES AND NOTHING AGREES, which is the relief this course keeps offering and should keep naming: Korean's difficulty is in the particles and the endings, never in the shapes of its adjectives. A comparative is the plain descriptive verb with a particle somewhere else in the sentence."
+    },
+    {
+      "tag": "delta",
+      "text": "THE TOPIC PARTICLE DOES ITS SECOND JOB HERE, and this is the module that finally explains M3's law: -eun/-neun marks CONTRAST, and a comparison is contrast. i-geo-neun bissayo, geugeo-neun ssayo — this one is expensive, that one is cheap. M3 taught the distinction as a rule; here a learner sees why it was worth the trouble, and no new particle is opened for it."
+    },
+    {
+      "tag": "delta",
+      "text": "STATING A PREFERENCE: deo joahaeyo, \"like more\", on L1-M1's joahaeyo row. There is no separate verb for \"prefer\" — which is the mirror image of German's lieber, where an ADVERB carries what English gives to a verb, and worth naming as such. eoneu (\"which\") is the choosing word and a sibling of L1-M9's wae and L1-M8's myeot; -hago joins the two options."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M9-S01",
+      "display": "I-geo-ga geugeo-boda bissayo.",
+      "script": "이거가 그거보다 비싸요.",
+      "cue": "This one is more expensive than that one.",
+      "literal": "this-subject that-than is-expensive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "boda",
+            "script": "보다",
+            "cue": "than",
+            "tag": "delta",
+            "forms": [
+              "boda",
+              "-boda",
+              "i-geo-boda",
+              "beoseu-boda"
+            ],
+            "note": "It sticks to what you are comparing AGAINST, and that phrase comes before the verb. English puts the standard last; Korean puts it in the middle."
+          },
+          {
+            "display": "geugeo",
+            "script": "그거",
+            "cue": "that one (near you)",
+            "tag": "free",
+            "forms": [
+              "geugeo",
+              "geugeo-boda",
+              "geugeo-neun",
+              "geugeo-ga"
+            ],
+            "note": "The partner of L1-M1's i-geo: i-geo is near me, geugeo is near you. Both are written joined, because a bare demonstrative would collide with a particle's key."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Nothing in bissayo changes for the comparison. The whole of it is carried by -boda sitting on the other thing, which is why Korean needs no comparative form at all.",
+      "sound": "i-GEO-ga GEU-geo-bo-da bi-SSA-yo. -boda runs straight onto its noun with no pause.",
+      "variations": [
+        {
+          "display": "Geugeo-ga i-geo-boda bissayo.",
+          "script": "그거가 이거보다 비싸요.",
+          "cue": "That one is more expensive than this one.",
+          "changed": "the other way round"
+        },
+        {
+          "display": "I-geo-ga geugeo-boda deo bissayo.",
+          "script": "이거가 그거보다 더 비싸요.",
+          "cue": "This one is more expensive than that one.",
+          "changed": "with M5's deo, which is usual and optional"
+        },
+        {
+          "display": "I-geo-neun bissayo. Geugeo-neun ssayo.",
+          "script": "이거는 비싸요. 그거는 싸요.",
+          "cue": "This one is expensive. That one is cheap.",
+          "changed": "the contrast done with M3's topic particle instead"
+        }
+      ],
+      "mistake": {
+        "display": "I-geo-ga bissayo geugeo-boda.",
+        "script": "이거가 비싸요 그거보다.",
+        "why": "The standard comes before the verb: I-geo-ga geugeo-boda bissayo."
+      },
+      "usage": "Comparing two things you can both see.",
+      "register": "neutral",
+      "mnemonic": "-boda sticks to the loser, and comes first."
+    },
+    {
+      "id": "L2-M9-S02",
+      "display": "Geugeo-neun deol bissayo.",
+      "script": "그거는 덜 비싸요.",
+      "cue": "That one is less expensive.",
+      "literal": "that-topic less is-expensive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "deol",
+            "script": "덜",
+            "cue": "less",
+            "tag": "free",
+            "forms": [
+              "deol"
+            ],
+            "note": "The opposite of M5's deo, and it goes in the same slot, right in front of the verb. It is used far less often than deo — Korean prefers to say the other thing is more."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "geugeo-neun and not geugeo-ga, because a comparison IS a contrast. M3 taught the topic particle as a law; this is the sentence that shows what the law was for.",
+      "sound": "GEU-geo-neun deol bi-SSA-yo. deol is one short syllable.",
+      "variations": [
+        {
+          "display": "Geugeo-neun deol masisseoyo.",
+          "script": "그거는 덜 맛있어요.",
+          "cue": "That one is less tasty.",
+          "changed": "L1-M9's tasty"
+        },
+        {
+          "display": "I-geo-ga deo bissayo.",
+          "script": "이거가 더 비싸요.",
+          "cue": "This one is more expensive.",
+          "changed": "the same fact said the way Korean prefers"
+        },
+        {
+          "display": "Geugeo-neun deol keoyo.",
+          "script": "그거는 덜 커요.",
+          "cue": "That one is less big.",
+          "changed": "M2's keoyo"
+        }
+      ],
+      "mistake": {
+        "display": "Geugeo-ga deol bissayo.",
+        "script": "그거가 덜 비싸요.",
+        "why": "A comparison is a contrast, so it takes the topic particle: Geugeo-neun deol bissayo."
+      },
+      "usage": "Talking yourself into the cheaper one.",
+      "register": "neutral",
+      "mnemonic": "deo is more. deol is less. One letter."
+    },
+    {
+      "id": "L2-M9-S03",
+      "display": "Jihacheol-i gajang ppallayo.",
+      "script": "지하철이 가장 빨라요.",
+      "cue": "The subway is the fastest.",
+      "literal": "subway-subject most is-fast",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gajang",
+            "script": "가장",
+            "cue": "most · -est",
+            "tag": "free",
+            "forms": [
+              "gajang"
+            ],
+            "note": "It goes straight in front of the descriptive verb and changes nothing about it. jeil means exactly the same and is more colloquial."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "ppallayo is the same word it was in M4, unchanged. Korean builds a superlative by putting one word in front, and nothing in the adjective moves — which is what rule 2 keeps promising.",
+      "sound": "ji-ha-CHEO-ri GA-jang ppal-LA-yo. gajang is two even syllables.",
+      "variations": [
+        {
+          "display": "Jihacheol-i jeil ppallayo.",
+          "script": "지하철이 제일 빨라요.",
+          "cue": "The subway is the fastest.",
+          "changed": "jeil, which means exactly the same"
+        },
+        {
+          "display": "Beoseu-ga gajang ssayo.",
+          "script": "버스가 가장 싸요.",
+          "cue": "The bus is the cheapest.",
+          "changed": "M4's bus and M3's cheap"
+        },
+        {
+          "display": "Jihacheol-i beoseu-boda ppallayo.",
+          "script": "지하철이 버스보다 빨라요.",
+          "cue": "The subway is faster than the bus.",
+          "changed": "a comparison of two rather than a top of the list"
+        }
+      ],
+      "mistake": {
+        "display": "Jihacheol-i ppareun gajang-ieyo.",
+        "script": "지하철이 빠른 가장이에요.",
+        "why": "gajang goes in front and nothing follows the verb: Jihacheol-i gajang ppallayo."
+      },
+      "usage": "Settling an argument about how to get there.",
+      "register": "neutral",
+      "mnemonic": "One word in front. Nothing else moves."
+    },
+    {
+      "id": "L2-M9-S04",
+      "display": "Gwail jung-eseo sagwa-ga jeil masisseoyo.",
+      "script": "과일 중에서 사과가 제일 맛있어요.",
+      "cue": "Of all fruit, apples are the tastiest.",
+      "literal": "fruit among apple-subject most is-tasty",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jung-eseo",
+            "script": "중에서",
+            "cue": "among · out of",
+            "tag": "delta",
+            "forms": [
+              "jung-eseo",
+              "jung"
+            ],
+            "note": "jung, 'the middle', with M4's -eseo. It marks the GROUP a superlative picks from, and it comes first because Korean puts the frame before the claim."
+          },
+          {
+            "display": "gwail",
+            "script": "과일",
+            "cue": "fruit",
+            "tag": "free",
+            "forms": [
+              "gwail",
+              "gwail-i",
+              "gwail-eul"
+            ],
+            "note": "Fruit in general. L1-M8's sagwa is one of them, which is what makes this the natural group for a first superlative."
+          },
+          {
+            "display": "jeil",
+            "script": "제일",
+            "cue": "most · -est",
+            "tag": "free",
+            "forms": [
+              "jeil"
+            ],
+            "note": "The same job as gajang and slightly more colloquial. There is nothing to choose between them beyond how the sentence sounds."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The group comes FIRST, before the thing picked out of it. English says 'apples are the tastiest fruit' and Korean says 'among fruit, apples are tastiest', which is one more case of the frame preceding the claim.",
+      "sound": "GWA-il JUNG-e-seo SA-gwa-ga JE-il ma-SI-sseo-yo.",
+      "variations": [
+        {
+          "display": "Gwail jung-eseo sagwa-ga gajang ssayo.",
+          "script": "과일 중에서 사과가 가장 싸요.",
+          "cue": "Of all fruit, apples are the cheapest.",
+          "changed": "gajang, and cheapest"
+        },
+        {
+          "display": "Sagwa-ga jeil masisseoyo.",
+          "script": "사과가 제일 맛있어요.",
+          "cue": "Apples are the tastiest.",
+          "changed": "without the group, which is often obvious"
+        },
+        {
+          "display": "Gwail-eul joahaeyo.",
+          "script": "과일을 좋아해요.",
+          "cue": "I like fruit.",
+          "changed": "L1-M1's joahaeyo"
+        }
+      ],
+      "mistake": {
+        "display": "Sagwa-ga gwail jung-eseo jeil masisseoyo.",
+        "script": "사과가 과일 중에서 제일 맛있어요.",
+        "why": "The group goes in front: Gwail jung-eseo sagwa-ga jeil masisseoyo."
+      },
+      "usage": "Picking a favourite out of a named set.",
+      "register": "neutral",
+      "mnemonic": "Name the group, then pick from it."
+    },
+    {
+      "id": "L2-M9-S05",
+      "display": "Eoneu geo-ga deo joayo?",
+      "script": "어느 거가 더 좋아요?",
+      "cue": "Which one is better?",
+      "literal": "which thing-subject more is-good?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eoneu",
+            "script": "어느",
+            "cue": "which",
+            "tag": "delta",
+            "forms": [
+              "eoneu",
+              "yoil-i"
+            ],
+            "note": "It always stands in front of a noun and never alone — eoneu geo, eoneu yoil-i. A sibling of L1-M9's wae and L1-M8's myeot, and like them it takes no topic particle."
+          },
+          {
+            "display": "geot",
+            "script": "것",
+            "cue": "thing · one",
+            "tag": "free",
+            "forms": [
+              "geot",
+              "geot-i",
+              "geo-ga",
+              "geo-reul",
+              "geo-neun"
+            ],
+            "note": "The bare 'thing' that L1-M1's i-geo already contains. In speech it shortens to geo, which is why eoneu geo-ga and not eoneu geot-i."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "deo joayo is Korean's whole comparative here — no second thing is named and none is needed, because the question itself supplies the set. English needs 'better than what?' and Korean does not.",
+      "sound": "EO-neu GEO-ga deo JO-a-yo. eoneu is two light syllables.",
+      "variations": [
+        {
+          "display": "Eoneu geo-ga deo ssayo?",
+          "script": "어느 거가 더 싸요?",
+          "cue": "Which one is cheaper?",
+          "changed": "M3's cheap"
+        },
+        {
+          "display": "Eoneu yoil-i joayo?",
+          "script": "어느 요일이 좋아요?",
+          "cue": "Which day suits you?",
+          "changed": "M6's day"
+        },
+        {
+          "display": "Eoneu geo-reul joahaeyo?",
+          "script": "어느 거를 좋아해요?",
+          "cue": "Which one do you like?",
+          "changed": "joahaeyo, so the thing becomes an object"
+        }
+      ],
+      "mistake": {
+        "display": "Eoneu-neun deo joayo?",
+        "script": "어느는 더 좋아요?",
+        "why": "eoneu always stands in front of a noun: Eoneu geo-ga deo joayo?"
+      },
+      "usage": "Asked while holding two of something.",
+      "register": "neutral",
+      "mnemonic": "eoneu never stands alone. It leans on a noun."
+    },
+    {
+      "id": "L2-M9-S06",
+      "display": "Keopi-hago cha-reul joahaeyo.",
+      "script": "커피하고 차를 좋아해요.",
+      "cue": "I like coffee and tea.",
+      "literal": "coffee-and tea-object like",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hago",
+            "script": "하고",
+            "cue": "and (joining nouns)",
+            "tag": "free",
+            "forms": [
+              "hago",
+              "-hago",
+              "keopi-hago",
+              "sagwa-hago"
+            ],
+            "note": "It joins two NOUNS and never two sentences — L1-M10's geurigo does that. The particle goes on the first one only, and the second takes the sentence's own particle."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "-hago sits on the FIRST noun, not between them as English's 'and' does. And the object particle goes on the second noun alone, because the pair behaves as one object.",
+      "sound": "KEO-pi-ha-go CHA-reul jo-a-HAE-yo. hago runs straight onto keopi.",
+      "variations": [
+        {
+          "display": "Keopi-hago cha jung-eseo eoneu geo-ga joayo?",
+          "script": "커피하고 차 중에서 어느 거가 좋아요?",
+          "cue": "Coffee or tea — which would you like?",
+          "changed": "the pair as a group to choose from"
+        },
+        {
+          "display": "Sagwa-hago gwail-eul joahaeyo.",
+          "script": "사과하고 과일을 좋아해요.",
+          "cue": "I like apples and fruit.",
+          "changed": "L1-M8's apple"
+        },
+        {
+          "display": "Cha-reul joahaeyo.",
+          "script": "차를 좋아해요.",
+          "cue": "I like tea.",
+          "changed": "one thing only"
+        }
+      ],
+      "mistake": {
+        "display": "Keopi cha-hago-reul joahaeyo.",
+        "script": "커피 차하고를 좋아해요.",
+        "why": "-hago goes on the first noun: Keopi-hago cha-reul joahaeyo."
+      },
+      "usage": "Answering what you drink, before the choosing starts.",
+      "register": "neutral",
+      "mnemonic": "-hago joins nouns. geurigo joins sentences."
+    },
+    {
+      "id": "L2-M9-S07",
+      "display": "Yeonghwa-reul deo joahaeyo.",
+      "script": "영화를 더 좋아해요.",
+      "cue": "I prefer films.",
+      "literal": "film-object more like",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yeonghwa",
+            "script": "영화",
+            "cue": "film · cinema",
+            "tag": "free",
+            "forms": [
+              "yeonghwa",
+              "yeonghwa-reul",
+              "yeonghwa-neun",
+              "yeonghwa-ga"
+            ],
+            "note": "A film and the cinema alike. yeonghwa bwayo, 'I watch films', uses M6's bwayo — the same verb as seeing anything else."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "THERE IS NO KOREAN VERB FOR 'PREFER'. deo joahaeyo — 'like more' — is the whole of it, which is the mirror image of German, where an adverb carries what English gives to a verb. Neither language is missing anything.",
+      "sound": "YEONG-hwa-reul deo jo-a-HAE-yo. The h of joahaeyo is silent.",
+      "variations": [
+        {
+          "display": "Jeo-neun yeonghwa-reul deo joahaeyo.",
+          "script": "저는 영화를 더 좋아해요.",
+          "cue": "I prefer films.",
+          "changed": "with the topic spelled out"
+        },
+        {
+          "display": "Chaek-eul deo joahaeyo.",
+          "script": "책을 더 좋아해요.",
+          "cue": "I prefer books.",
+          "changed": "L1-M1's book"
+        },
+        {
+          "display": "Yeonghwa-reul joahaeyo.",
+          "script": "영화를 좋아해요.",
+          "cue": "I like films.",
+          "changed": "without deo, so no comparison at all"
+        }
+      ],
+      "mistake": {
+        "display": "Yeonghwa-reul deo joayo.",
+        "script": "영화를 더 좋아요.",
+        "why": "joahaeyo takes an object and joayo does not: Yeonghwa-reul deo joahaeyo."
+      },
+      "usage": "Answering a choice without refusing the other thing.",
+      "register": "neutral",
+      "mnemonic": "Korean prefers by liking MORE."
+    },
+    {
+      "id": "L2-M9-S08",
+      "display": "Sigan-i jeogeoyo.",
+      "script": "시간이 적어요.",
+      "cue": "There isn't much time.",
+      "literal": "time-subject is-few",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeogeoyo",
+            "script": "적어요",
+            "cue": "is little · is few",
+            "tag": "free",
+            "forms": [
+              "jeogeoyo",
+              "jeogeun"
+            ],
+            "note": "The opposite of L1-M9's manayo, and a descriptive verb like all of them. It covers both 'few' and 'little', because Korean does not count that distinction."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Korean makes no difference between 'few' and 'little'. One word covers a countable shortage and an uncountable one, which is one distinction fewer than English asks a learner to keep.",
+      "sound": "SI-ga-ni JEO-geo-yo. The n of sigan runs into the particle.",
+      "variations": [
+        {
+          "display": "Sigan-i manayo.",
+          "script": "시간이 많아요.",
+          "cue": "There's plenty of time.",
+          "changed": "L1-M9's manayo, the opposite"
+        },
+        {
+          "display": "Sagwa-ga jeogeoyo.",
+          "script": "사과가 적어요.",
+          "cue": "There aren't many apples.",
+          "changed": "something countable, and the same word"
+        },
+        {
+          "display": "Sigan-i deo jeogeoyo.",
+          "script": "시간이 더 적어요.",
+          "cue": "There's even less time.",
+          "changed": "with deo, comparing to before"
+        }
+      ],
+      "mistake": {
+        "display": "Sigan-i jageun-ieyo.",
+        "script": "시간이 작은이에요.",
+        "why": "Small in number is jeogeoyo, and it is a verb: Sigan-i jeogeoyo."
+      },
+      "usage": "Cutting a conversation short, politely.",
+      "register": "neutral",
+      "mnemonic": "jagayo is small. jeogeoyo is few."
+    },
+    {
+      "id": "L2-M9-S09",
+      "display": "Jeil ssan geo-reul juseyo.",
+      "script": "제일 싼 거를 주세요.",
+      "cue": "The cheapest one, please.",
+      "literal": "most cheap thing-object give-please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ssan",
+            "script": "싼",
+            "cue": "cheap (in front of a noun)",
+            "tag": "free",
+            "forms": [
+              "ssan"
+            ],
+            "note": "M3's ssayo in its modifier shape. A superlative in front of a noun is just jeil plus that shape, and nothing declines."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "jeil goes in front of the MODIFIER, not in front of the noun. jeil ssan geo, never ssan jeil geo — the whole superlative phrase builds leftward, as every Korean description does.",
+      "sound": "JE-il ssan GEO-reul joo-SE-yo. The ss is tense.",
+      "variations": [
+        {
+          "display": "Gajang ssan geo-reul juseyo.",
+          "script": "가장 싼 거를 주세요.",
+          "cue": "The cheapest one, please.",
+          "changed": "gajang, which is the same"
+        },
+        {
+          "display": "Jeil keun geo-reul juseyo.",
+          "script": "제일 큰 거를 주세요.",
+          "cue": "The biggest one, please.",
+          "changed": "M2's keun"
+        },
+        {
+          "display": "Deo ssan geo-ga isseoyo?",
+          "script": "더 싼 거가 있어요?",
+          "cue": "Is there a cheaper one?",
+          "changed": "asking rather than choosing"
+        }
+      ],
+      "mistake": {
+        "display": "Ssan jeil geo-reul juseyo.",
+        "script": "싼 제일 거를 주세요.",
+        "why": "jeil comes first: Jeil ssan geo-reul juseyo."
+      },
+      "usage": "In a shop, once you have decided how to decide.",
+      "register": "neutral",
+      "mnemonic": "The whole phrase builds leftward."
+    },
+    {
+      "id": "L2-M9-S10",
+      "display": "Sae gabang-i deo joayo.",
+      "script": "새 가방이 더 좋아요.",
+      "cue": "The new bag is better.",
+      "literal": "new bag-subject more is-good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sae",
+            "script": "새",
+            "cue": "new",
+            "tag": "interference",
+            "forms": [
+              "sae"
+            ],
+            "note": "It is ALREADY a modifier and has no -yo form at all: sae gabang, but never gabang-i saeyo. One of a handful of Korean words that only ever stand in front of a noun."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "sae cannot be a predicate. Every other describing word in this course is a verb first and a modifier second; sae is a modifier and nothing else, and saeyo does not exist.",
+      "sound": "sae ga-BANG-i deo JO-a-yo. sae is one syllable, close to English 'say'.",
+      "variations": [
+        {
+          "display": "Sae gabang-eul juseyo.",
+          "script": "새 가방을 주세요.",
+          "cue": "The new bag, please.",
+          "changed": "asking for it, with M1's request"
+        },
+        {
+          "display": "Sae yeonghwa-ga deo joayo.",
+          "script": "새 영화가 더 좋아요.",
+          "cue": "The new film is better.",
+          "changed": "the film instead"
+        },
+        {
+          "display": "Sae geo-ga isseoyo?",
+          "script": "새 거가 있어요?",
+          "cue": "Is there a new one?",
+          "changed": "with the bare 'thing'"
+        }
+      ],
+      "mistake": {
+        "display": "Gabang-i saeyo.",
+        "script": "가방이 새요.",
+        "why": "sae is only ever a modifier: Sae gabang-i deo joayo."
+      },
+      "usage": "Choosing between two of the same thing.",
+      "register": "neutral",
+      "mnemonic": "sae has no verb. It only leans on nouns."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M9-C01",
+      "display": "I-geo-ga geugeo-boda bissayo.",
+      "script": "이거가 그거보다 비싸요.",
+      "cue": "This one is more expensive than that one."
+    },
+    {
+      "id": "L2-M9-C02",
+      "display": "Geugeo-neun deol bissayo.",
+      "script": "그거는 덜 비싸요.",
+      "cue": "That one is less expensive."
+    },
+    {
+      "id": "L2-M9-C03",
+      "display": "Jihacheol-i gajang ppallayo.",
+      "script": "지하철이 가장 빨라요.",
+      "cue": "The subway is the fastest."
+    },
+    {
+      "id": "L2-M9-C04",
+      "display": "Gwail jung-eseo sagwa-ga jeil masisseoyo.",
+      "script": "과일 중에서 사과가 제일 맛있어요.",
+      "cue": "Of all fruit, apples are the tastiest."
+    },
+    {
+      "id": "L2-M9-C05",
+      "display": "Eoneu geo-ga deo joayo?",
+      "script": "어느 거가 더 좋아요?",
+      "cue": "Which one is better?"
+    },
+    {
+      "id": "L2-M9-C06",
+      "display": "Keopi-hago cha-reul joahaeyo.",
+      "script": "커피하고 차를 좋아해요.",
+      "cue": "I like coffee and tea."
+    },
+    {
+      "id": "L2-M9-C07",
+      "display": "Yeonghwa-reul deo joahaeyo.",
+      "script": "영화를 더 좋아해요.",
+      "cue": "I prefer films."
+    },
+    {
+      "id": "L2-M9-C08",
+      "display": "Sigan-i jeogeoyo.",
+      "script": "시간이 적어요.",
+      "cue": "There isn't much time."
+    },
+    {
+      "id": "L2-M9-C09",
+      "display": "Jeil ssan geo-reul juseyo.",
+      "script": "제일 싼 거를 주세요.",
+      "cue": "The cheapest one, please."
+    },
+    {
+      "id": "L2-M9-C10",
+      "display": "Sae gabang-i deo joayo.",
+      "script": "새 가방이 더 좋아요.",
+      "cue": "The new bag is better."
+    },
+    {
+      "id": "L2-M9-C11",
+      "display": "I-geo-neun bissayo. Geugeo-neun ssayo.",
+      "script": "이거는 비싸요. 그거는 싸요.",
+      "cue": "This one is expensive. That one is cheap."
+    },
+    {
+      "id": "L2-M9-C12",
+      "display": "Jihacheol-i beoseu-boda ppallayo.",
+      "script": "지하철이 버스보다 빨라요.",
+      "cue": "The subway is faster than the bus."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
