@@ -98,7 +98,7 @@ Only four movements exist; everything else is static. All durations in tokens.cs
 - *Ghost:* transparent, `--color-accent` text, `min-height: var(--ghost-height)`, **`white-space: nowrap`**, centered on its own row; hover/active = 10%/18% accent color-mix washes.
 - *Secondary pair:* transparent fill, `--color-divider` hairline, inherited text, each `flex: 1` at `min-height: var(--btn-compact-height)`; `:active` → 14% ink wash.
 
-**Course-type ruling.** Everything below the job line is course copy (PRD §8) and obeys §2's floor: prose 400 / labels 600, `--font-devanagari` at ≥ `--devanagari-min-size`, line-height 1.6 in Devanagari courses. The prototype's 11–12 px notes and 14 px Barlow Condensed button labels are its *English* rendering, not a size license — this answers the open `--text-course-prose` question: **the smallest Mukta slot pulled to the floor is the slot** (as shipped in `RungCard.module.css`).
+**Course-type ruling.** Everything below the job line is course copy (PRD §8) and obeys §2's floor: prose 400 / labels 600, `--font-devanagari` at ≥ `--devanagari-min-size`, line-height 1.6 in Devanagari courses. The prototype's 11–12 px notes and 14 px Barlow Condensed button labels are its *English* rendering, not a size license — this answers the open `--text-course-prose` question: **the smallest Mukta slot pulled to the floor is the slot** (as shipped in `rung-card.css`).
 
 **Motion.** The unlock beat (§5) only — once, on arrival with the one-shot flag, shared with the level cell (PRD §5.1); reduced motion `animation: none`. Stage changes swap content instantly, no transition. **Never:** two competing primaries; a disabled control (nothing on this card disables anything); any CTA into an unauthored module; celebration beyond the beat.
 

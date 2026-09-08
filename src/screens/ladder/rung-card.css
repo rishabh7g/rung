@@ -5,7 +5,7 @@
 /* The blueprint object the screen is built around (design/tokens.md §3): radius 0, a hairline,
    --shadow-sm, no surface fill — and the four registration marks it wears
    (`../RegistrationMarks.tsx`, absolutely positioned), which is why it is `position: relative`. */
-.card {
+.rung-card {
   position: relative;
   flex: 1;
   min-width: 0;
@@ -19,7 +19,7 @@
 
 /* English shell furniture, in the register of the nav's tab labels — raised on #71 with the
    Ladder's other two. */
-.kicker {
+.rung-kicker {
   margin: 0;
   font: var(--text-kicker);
   letter-spacing: var(--kicker-tracking);
@@ -28,12 +28,12 @@
   color: var(--color-accent-700);
 }
 
-.title {
+.rung-title {
   margin: var(--space-1) 0 0;
   font: var(--text-rung-title);
 }
 
-.job {
+.rung-job {
   margin: var(--space-1) 0 0;
   font: var(--text-secondary);
   color: var(--ink-75);
@@ -49,7 +49,7 @@
  * 11px line beside, which resolves to the Industry scale (§6 intro: "pixel values quoted from the
  * prototype resolve to the nearest token").
  */
-.dotsRow {
+.rung-dots-row {
   display: flex;
   align-items: center;
   gap: var(--space-2);
@@ -62,7 +62,7 @@
  * it, and the shell may not say it in English for every course (PRD §4). The `3 / 10` call from
  * #89, on this card.
  */
-.writes {
+.rung-writes {
   margin: 0 0 0 var(--space-2);
   font: var(--text-caption);
   white-space: nowrap;
@@ -82,7 +82,7 @@
  * Same divergence the Ladder's prose made in #138, same reason, and it wants the same answer from
  * the design package (a `--text-course-prose` slot, or a per-course face) — raised for #117.
  */
-.label {
+.rung-label {
   font: var(--text-l2-card);
   font-size: var(--devanagari-min-size);
 }
@@ -91,7 +91,7 @@
 
 /* The shape every CTA shares. Transparent border by default so a variant colours it without
    moving anything: a border that appears with a state shifts the button it is on. */
-.action {
+.rung-action {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,8 +110,7 @@
 
 /* THE one filled object on the screen (design/tokens.md §3): solid accent, ground-coloured text,
    full width, --cta-height (48px). Everything else on the Ladder is a wireframe. */
-.primary {
-  composes: action label;
+.rung-primary {
   width: 100%;
   min-height: var(--cta-height);
   margin-top: var(--space-4);
@@ -120,13 +119,13 @@
   color: var(--color-bg);
 }
 
-.primary:active {
+.rung-primary:active {
   background: var(--color-accent-700);
   border-color: var(--color-accent-700);
 }
 
 /* exit_ready only: Practice and Module side by side under the ritual. */
-.secondaryRow {
+.rung-secondary-row {
   display: flex;
   gap: var(--space-2);
   margin-top: var(--space-2);
@@ -134,18 +133,17 @@
 
 /* --btn-secondary-height (46px) is design/tokens.md §4's secondary; the prototype writes 44 inline
    on this pair. The token is the rule of record and clears --tap-min either way. */
-.secondary {
-  composes: action label;
+.rung-secondary {
   flex: 1;
   min-height: var(--btn-secondary-height);
   border-color: var(--color-divider);
 }
 
-.secondary:active {
+.rung-secondary:active {
   background: color-mix(in srgb, var(--color-text) 14%, transparent);
 }
 
-.ghostRow {
+.rung-ghost-row {
   display: flex;
   justify-content: center;
   margin-top: var(--space-1);
@@ -155,21 +153,20 @@
    which design/tokens.md §4 sets for ghosts in the same breath as the 44px --tap-min floor it
    sits under. The design package owes that reconciliation; noted for #117. `white-space: nowrap`
    is not optional on one (§4). */
-.ghost {
-  composes: action label;
+.rung-ghost {
   min-height: var(--ghost-height);
   padding-inline: var(--space-1);
   color: var(--color-accent);
   white-space: nowrap;
 }
 
-.ghost:active {
+.rung-ghost:active {
   background: color-mix(in srgb, var(--color-accent) 18%, transparent);
 }
 
 /* The show-once production hint (#319) — what the dots row above it is counting towards, said
    once per install and never again. Muted caption, under the dots, above the stage's CTA. */
-.hint {
+.rung-hint {
   margin: var(--space-2) 0 0;
   font: var(--text-caption);
   color: var(--ink-65);

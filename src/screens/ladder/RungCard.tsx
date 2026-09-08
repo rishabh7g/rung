@@ -44,7 +44,7 @@ import { ProductionDots } from '../module/ProductionDots.tsx';
 import { RegistrationMarks } from '../RegistrationMarks.tsx';
 import { rungLabel } from './rungLabel.ts';
 import './unlock-beat.css';
-import styles from './RungCard.module.css';
+import './rung-card.css';
 
 interface RungCardProps {
   /** Which CTA set to render — `rungStage(input, moduleId)`, derived on every render. */
@@ -88,27 +88,27 @@ export function RungCard({
 
   return (
     <div
-      className={[styles.card, unlocked ? 'unlock-beat' : null].filter(Boolean).join(' ')}
+      className={['rung-card', unlocked ? 'unlock-beat' : null].filter(Boolean).join(' ')}
       // The beat's own handle: a test and a live walk both need to see the celebration land on
       // the right rung, and the class name is a CSS-modules hash.
       data-beat={unlocked ? 'rung' : undefined}
     >
       <RegistrationMarks />
 
-      <p className={styles.kicker}>
+      <p className="rung-kicker">
         {interpolate(strings['rungCard.currentRung'], { rung: rungLabel(moduleId) })}
       </p>
-      <h2 className={styles.title}>{title}</h2>
-      <p className={styles.job}>{job}</p>
+      <h2 className="rung-title">{title}</h2>
+      <p className="rung-job">{job}</p>
 
       {production.length > 0 && (
-        <div className={styles.dotsRow}>
+        <div className="rung-dots-row">
           {/* The pairs are aria-hidden inside the component, like every dot drawing in the app;
               the count beside them is the announcement. */}
           {production.map((produced, index) => (
             <ProductionDots key={index} produced={produced} />
           ))}
-          <span className={styles.writes}>
+          <span className="rung-writes">
             {writes} / {production.length * MARKS_PER_SENTENCE}
           </span>
         </div>
@@ -121,21 +121,21 @@ export function RungCard({
        * ever having named the rule. This names it, on the first rung card the learner meets, and
        * never again.
        */}
-      {production.length > 0 && <HintLine hint="production" className={styles.hint} />}
+      {production.length > 0 && <HintLine hint="production" className="rung-hint" />}
 
       {stage === 'fresh' && (
-        <Link className={styles.primary} to={modulePath}>
+        <Link className="rung-primary rung-action rung-label" to={modulePath}>
           {strings['rungCard.startModule']}
         </Link>
       )}
 
       {stage === 'studied' && (
         <>
-          <Link className={styles.primary} to={PRACTICE_PATH}>
+          <Link className="rung-primary rung-action rung-label" to={PRACTICE_PATH}>
             {strings['rungCard.practice']}
           </Link>
-          <div className={styles.ghostRow}>
-            <Link className={styles.ghost} to={modulePath}>
+          <div className="rung-ghost-row">
+            <Link className="rung-ghost rung-action rung-label" to={modulePath}>
               {strings['rungCard.revisitModule']}
             </Link>
           </div>
@@ -144,15 +144,15 @@ export function RungCard({
 
       {stage === 'exit_ready' && (
         <>
-          <Link className={styles.primary} to={RITUAL_PATH}>
+          <Link className="rung-primary rung-action rung-label" to={RITUAL_PATH}>
             {strings['rungCard.exitRitual']}
           </Link>
           {/* Neither drops away — the ritual is the loud action, not the only one. */}
-          <div className={styles.secondaryRow}>
-            <Link className={styles.secondary} to={PRACTICE_PATH}>
+          <div className="rung-secondary-row">
+            <Link className="rung-secondary rung-action rung-label" to={PRACTICE_PATH}>
               {strings['rungCard.practice']}
             </Link>
-            <Link className={styles.secondary} to={modulePath}>
+            <Link className="rung-secondary rung-action rung-label" to={modulePath}>
               {strings['rungCard.module']}
             </Link>
           </div>
