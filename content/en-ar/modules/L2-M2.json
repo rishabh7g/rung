@@ -1,0 +1,695 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M2",
+  "title": "Describing people",
+  "job": "Appearance, character, relationships",
+  "prerequisites": [
+    "L2-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "huwa/hiya + Adj",
+      "huwa/hiya + N + fī + al- + N",
+      "ismuhā + <name>",
+      "ʿindī/ʿindahā + N",
+      "N + N-ī   (iḍāfa)"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "huwa and hiya are the free pronouns for he and she. L1 never needed them, because the ya-/ta- prefix already carried the person inside the verb — they arrive now because a sentence with no verb has nowhere else to put it."
+    },
+    {
+      "tag": "free",
+      "text": "There is still no copula. huwa ṭawīl is two words and means \"he is tall\", exactly as anā ṭālib did in the first module of the course."
+    },
+    {
+      "tag": "delta",
+      "text": "The possessive suffixes continue: -ī mine, -ka yours (m), -ki yours (f), -hu his, and now -hā hers. They attach with no hyphen and no space, so each suffixed shape is its own word."
+    },
+    {
+      "tag": "interference",
+      "text": "ʿind- is not a verb. It is a preposition meaning \"at\", which is why it takes the possessive suffixes rather than conjugating — ʿindī, ʿindaka, ʿindahā — and why Arabic has no verb \"to have\" to look for."
+    },
+    {
+      "tag": "delta",
+      "text": "Two nouns in a row is possession: bayt ṣadīqī, \"my friend's house\". The FIRST noun never takes al-, however definite the phrase is."
+    },
+    {
+      "tag": "delta",
+      "text": "An adjective agrees with what it describes: huwa ṭawīl, hiya ṭawīla. That is the same law the course has applied since ṭālib and ṭāliba, now with a pronoun in front of it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M2-S01",
+      "display": "huwa ṭālib fī al-madrasa",
+      "script": "هو طالب في المدرسة",
+      "cue": "He is a student at the school",
+      "literal": "He student in the-school",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "huwa",
+            "script": "هو",
+            "cue": "he",
+            "tag": "delta",
+            "forms": [],
+            "note": "The free pronoun for he. L1 never needed it, because a verb's ya- prefix already said who; a sentence with no verb has nowhere else to put the person."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "No word for \"is\" and none for \"a\". Three Arabic words carry six English ones, and both missing pieces are the same absence L1-M1 taught.",
+      "sound": "HU-wa, and the w is fully said — it is not the vowel of English \"who\".",
+      "variations": [
+        {
+          "display": "huwa mudarris fī al-madrasa",
+          "script": "هو مدرس في المدرسة",
+          "cue": "He is a teacher at the school",
+          "changed": "a different job in the same building"
+        },
+        {
+          "display": "huwa ṭālib jamīl",
+          "script": "هو طالب جميل",
+          "cue": "He is a fine student",
+          "changed": "an adjective instead of a place"
+        },
+        {
+          "display": "hal huwa ṭālib?",
+          "script": "هل هو طالب؟",
+          "cue": "Is he a student?",
+          "changed": "hal in front turns it into a question and moves nothing"
+        }
+      ],
+      "mistake": {
+        "display": "huwa huwa ṭālib",
+        "script": "هو هو طالب",
+        "why": "There is no \"is\" to add. huwa ṭālib is the whole sentence, and repeating the pronoun is what an English speaker does looking for the verb."
+      },
+      "usage": "Introducing someone who is not present. With someone standing there, hādhā is warmer.",
+      "register": "neutral",
+      "mnemonic": "The sentence is finished before you have looked for the verb."
+    },
+    {
+      "id": "L2-M2-S02",
+      "display": "hiya mudarrisa fī al-madrasa",
+      "script": "هي مدرسة في المدرسة",
+      "cue": "She is a teacher at the school",
+      "literal": "She teacher(f) in the-school",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hiya",
+            "script": "هي",
+            "cue": "she",
+            "tag": "delta",
+            "forms": [],
+            "note": "The partner of huwa, and the two differ by one letter in the script as well as in the sound. Neither carries any hint of an \"is\"."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          5
+        ]
+      },
+      "trap": "mudarrisa and al-madrasa look alike and are unrelated: one is a teacher, the other a school. Arabic builds both from the same three letters and gives them different shapes.",
+      "sound": "HI-ya. mu-DAR-ri-sa, with the r doubled and held.",
+      "variations": [
+        {
+          "display": "hiya ṭāliba fī al-madrasa",
+          "script": "هي طالبة في المدرسة",
+          "cue": "She is a student at the school",
+          "changed": "the feminine of ṭālib, which L1-M1 already taught"
+        },
+        {
+          "display": "hiya jamīla jiddan",
+          "script": "هي جميلة جدا",
+          "cue": "She is very beautiful",
+          "changed": "an adjective, agreeing with her"
+        },
+        {
+          "display": "hal hiya mudarrisa?",
+          "script": "هل هي مدرسة؟",
+          "cue": "Is she a teacher?",
+          "changed": "asked as a question"
+        }
+      ],
+      "mistake": {
+        "display": "hiya mudarris fī al-madrasa",
+        "script": "هي مدرس في المدرسة",
+        "why": "A woman is a mudarrisa. The -a is not optional, and L1-M2 taught the pair."
+      },
+      "usage": "The same introduction, about a woman. Both pronouns are used far less in speech than in writing, because a verb usually says who.",
+      "register": "neutral",
+      "mnemonic": "One letter apart in the script, and a whole person apart in the room."
+    },
+    {
+      "id": "L2-M2-S03",
+      "display": "ismuhā hind wa hiya jamīla",
+      "script": "اسمها هند وهي جميلة",
+      "cue": "Her name is Hind and she is beautiful",
+      "literal": "Name-her Hind and she beautiful",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ismuhā",
+            "script": "اسمها",
+            "cue": "her name",
+            "tag": "delta",
+            "forms": [],
+            "note": "ism with -hā glued on, exactly as ismuhu (M1) took -hu. The suffix attaches with no space, so this is one word and one index key."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "-hā for her, -hu for him, and no space before either. English writes \"her name\" as two words and Arabic writes one.",
+      "sound": "IS-mu-hā, with the long ā at the end carrying no stress of its own.",
+      "variations": [
+        {
+          "display": "ismuhu rohān",
+          "script": "اسمه روهان",
+          "cue": "His name is Rohan",
+          "changed": "the masculine suffix, which M1 taught"
+        },
+        {
+          "display": "ismuhā hind wa hiya ṭāliba",
+          "script": "اسمها هند وهي طالبة",
+          "cue": "Her name is Hind and she is a student",
+          "changed": "a noun instead of an adjective after wa"
+        },
+        {
+          "display": "ismī rohān wa ismuhā hind",
+          "script": "اسمي روهان واسمها هند",
+          "cue": "My name is Rohan and her name is Hind",
+          "changed": "two suffixes on the same word, side by side"
+        }
+      ],
+      "mistake": {
+        "display": "ismu hā hind",
+        "script": "اسم ها هند",
+        "why": "The suffix is part of the word: ismuhā. Arabic never leaves a possessive pronoun standing apart."
+      },
+      "usage": "Introducing a third person. wa joins the two halves and is written joined to the word after it.",
+      "register": "neutral",
+      "mnemonic": "Every possessive in Arabic arrives glued."
+    },
+    {
+      "id": "L2-M2-S04",
+      "display": "ʿindahā sayyāra jamīla",
+      "script": "عندها سيارة جميلة",
+      "cue": "She has a beautiful car",
+      "literal": "At-her car beautiful",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ʿindahā",
+            "script": "عندها",
+            "cue": "she has",
+            "tag": "interference",
+            "forms": [],
+            "note": "Literally \"at her\". ʿind- is a preposition, which is why it takes suffixes rather than conjugating — and why the past is kāna ʿindahā, with kāna doing the tense."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "\"ʿindī means I have\" is memorable and useless: it leaves you unable to explain ʿindahā, or the past, or why there is no verb. ʿind- is \"at\", and Arabic locates a thing at a person.",
+      "sound": "ʿIN-da-hā, with the ʿayn tightening the throat before the first vowel.",
+      "variations": [
+        {
+          "display": "ʿindahu sayyāra kabīra",
+          "script": "عنده سيارة كبيرة",
+          "cue": "He has a big car",
+          "changed": "the masculine suffix, and a different adjective"
+        },
+        {
+          "display": "ʿindahā bayt qarīb min al-madrasa",
+          "script": "عندها بيت قريب من المدرسة",
+          "cue": "She has a house near the school",
+          "changed": "something bigger, and a place named"
+        },
+        {
+          "display": "hal ʿindaka miftāḥ?",
+          "script": "هل عندك مفتاح؟",
+          "cue": "Do you have a key?",
+          "changed": "asked of a man, with M7's own suffix"
+        }
+      ],
+      "mistake": {
+        "display": "hiya ʿindahā sayyāra",
+        "script": "هي عندها سيارة",
+        "why": "The suffix already says who. Adding hiya in front is the English shape, and it reads as insistence."
+      },
+      "usage": "Everyday possession. The adjective follows the noun, as it always does in this course.",
+      "register": "neutral",
+      "mnemonic": "Arabic has nothing; it only ever has things AT it."
+    },
+    {
+      "id": "L2-M2-S05",
+      "display": "huwa ṭawīl wa hiya qaṣīra",
+      "script": "هو طويل وهي قصيرة",
+      "cue": "He is tall and she is short",
+      "literal": "He tall and she short(f)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ṭawīl",
+            "script": "طويل",
+            "cue": "tall · long",
+            "tag": "free",
+            "forms": [
+              "ṭawīl",
+              "ṭawīla"
+            ],
+            "note": "Tall of a person and long of a thing alike. The ṭ is emphatic — a t said with the tongue flattened and the whole mouth darker."
+          },
+          {
+            "display": "qaṣīra",
+            "script": "قصيرة",
+            "cue": "short (of a woman)",
+            "tag": "delta",
+            "forms": [
+              "qaṣīr",
+              "qaṣīra"
+            ],
+            "note": "The opposite of ṭawīl, agreeing with her. The q is made far back in the throat, and the ṣ is emphatic like the ṭ."
+          }
+        ],
+        "rules": [
+          1,
+          5
+        ]
+      },
+      "trap": "Two clauses, two pronouns, two adjectives, and every ending is decided by the person it belongs to. Nothing here agrees with the speaker.",
+      "sound": "ṭa-WĪL, qa-ṢĪ-ra — both stressed on the long ī.",
+      "variations": [
+        {
+          "display": "huwa qaṣīr wa hiya ṭawīla",
+          "script": "هو قصير وهي طويلة",
+          "cue": "He is short and she is tall",
+          "changed": "the two swapped, and both endings follow"
+        },
+        {
+          "display": "hiya ṭawīla jiddan",
+          "script": "هي طويلة جدا",
+          "cue": "She is very tall",
+          "changed": "one clause, with jiddan intensifying"
+        },
+        {
+          "display": "ʿindahā bayt ṭawīl",
+          "script": "عندها بيت طويل",
+          "cue": "She has a tall house",
+          "changed": "the same adjective describing a thing"
+        }
+      ],
+      "mistake": {
+        "display": "huwa ṭawīl wa hiya qaṣīr",
+        "script": "هو طويل وهي قصير",
+        "why": "The adjective agrees with hiya: qaṣīra. Agreement does not stop at the first clause."
+      },
+      "usage": "Plain description, and Arabic is comfortable making it about someone present.",
+      "register": "neutral",
+      "mnemonic": "Each half of the sentence answers to its own person."
+    },
+    {
+      "id": "L2-M2-S06",
+      "display": "ʿindī akh wa ukht",
+      "script": "عندي أخ وأخت",
+      "cue": "I have a brother and a sister",
+      "literal": "At-me brother and sister",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "akh",
+            "script": "أخ",
+            "cue": "brother",
+            "tag": "free",
+            "forms": [],
+            "note": "Two letters and one syllable. The kh is the sound at the end of Scottish \"loch\", made at the back of the mouth."
+          },
+          {
+            "display": "ukht",
+            "script": "أخت",
+            "cue": "sister",
+            "tag": "free",
+            "forms": [],
+            "note": "The feminine of akh, and unusually it does not simply add -a: the vowel changes too. Learn the pair rather than deriving one from the other."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "ukht is not akha. This is one of the few family words where the feminine is a different shape rather than an ending.",
+      "sound": "AKH and UKHT, both one syllable, and the kh is the same in each.",
+      "variations": [
+        {
+          "display": "ʿindī akh fī miṣr",
+          "script": "عندي أخ في مصر",
+          "cue": "I have a brother in Egypt",
+          "changed": "a place, from M9 of the level below"
+        },
+        {
+          "display": "ʿindahā akh wa ukht",
+          "script": "عندها أخ وأخت",
+          "cue": "She has a brother and a sister",
+          "changed": "the same family, someone else's"
+        },
+        {
+          "display": "hal ʿindaka ukht?",
+          "script": "هل عندك أخت؟",
+          "cue": "Do you have a sister?",
+          "changed": "asked of a man"
+        }
+      ],
+      "mistake": {
+        "display": "ʿindī akh wa akha",
+        "script": "عندي أخ وأخة",
+        "why": "The word for sister is ukht, not a feminine built off akh."
+      },
+      "usage": "The first question anyone asks a newcomer in an Arabic-speaking country, and the first answer they give.",
+      "register": "neutral",
+      "mnemonic": "Two letters for a brother, three for a sister, and a new vowel in between."
+    },
+    {
+      "id": "L2-M2-S07",
+      "display": "hādhā abī wa hādhihi ummī",
+      "script": "هذا أبي وهذه أمي",
+      "cue": "This is my father and this is my mother",
+      "literal": "This father-my and this(f) mother-my",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "abī",
+            "script": "أبي",
+            "cue": "my father",
+            "tag": "delta",
+            "forms": [],
+            "note": "ab with -ī glued on. The bare word for father almost never appears alone in speech; it arrives already owned by somebody."
+          },
+          {
+            "display": "ummī",
+            "script": "أمي",
+            "cue": "my mother",
+            "tag": "delta",
+            "forms": [],
+            "note": "umm with -ī. The m is doubled and held, which is what separates it from the preposition min in the ear."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "hādhā for him and hādhihi for her. The pointing word agrees with what is pointed at, which is the same law as every adjective in the course.",
+      "sound": "a-BĪ and um-MĪ, both stressed on the long ī at the end.",
+      "variations": [
+        {
+          "display": "hādhā abī wa huwa mudarris",
+          "script": "هذا أبي وهو مدرس",
+          "cue": "This is my father and he is a teacher",
+          "changed": "a job added after the introduction"
+        },
+        {
+          "display": "hādhihi ummī wa hiya jamīla",
+          "script": "هذه أمي وهي جميلة",
+          "cue": "This is my mother and she is beautiful",
+          "changed": "the feminine half on its own"
+        },
+        {
+          "display": "abī laṭīf jiddan",
+          "script": "أبي لطيف جدا",
+          "cue": "My father is very kind",
+          "changed": "the same person described rather than introduced"
+        }
+      ],
+      "mistake": {
+        "display": "hādhā abī wa hādhā ummī",
+        "script": "هذا أبي وهذا أمي",
+        "why": "A woman is pointed at with hādhihi. The pointing word agrees like everything else."
+      },
+      "usage": "Introducing family to a guest, and it is done in exactly this order.",
+      "register": "neutral",
+      "mnemonic": "Parents arrive already belonging to someone."
+    },
+    {
+      "id": "L2-M2-S08",
+      "display": "bayt ṣadīqī qarīb min al-madrasa",
+      "script": "بيت صديقي قريب من المدرسة",
+      "cue": "My friend's house is near the school",
+      "literal": "House friend-my near from the-school",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ṣadīqī",
+            "script": "صديقي",
+            "cue": "my friend",
+            "tag": "free",
+            "forms": [],
+            "note": "ṣadīq with -ī. The ṣ is emphatic and the q is made at the back of the throat, so the whole word sits low in the mouth."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "bayt has no al- in front of it, and the phrase is still definite: \"THE house of my friend\". The second noun's ownership makes the first one definite, and adding al- would break it.",
+      "sound": "ṣa-DĪ-qī, and the q is not a k — it is made further back and lower.",
+      "variations": [
+        {
+          "display": "bayt abī qarīb min as-sūq",
+          "script": "بيت أبي قريب من السوق",
+          "cue": "My father's house is near the market",
+          "changed": "another owner and another landmark"
+        },
+        {
+          "display": "sayyārat ṣadīqī jamīla",
+          "script": "سيارة صديقي جميلة",
+          "cue": "My friend's car is beautiful",
+          "changed": "a different thing owned, and the tāʾ shows in the script"
+        },
+        {
+          "display": "bayt ummī qarīb min as-sūq",
+          "script": "بيت أمي قريب من السوق",
+          "cue": "My mother's house is near the market",
+          "changed": "the same two-noun frame with another owner"
+        }
+      ],
+      "mistake": {
+        "display": "al-bayt ṣadīqī qarīb",
+        "script": "البيت صديقي قريب",
+        "why": "The first noun of a two-noun possession never takes al-: bayt ṣadīqī."
+      },
+      "usage": "Everyday. It is how Arabic says anything belongs to anyone, and it costs no extra word at all.",
+      "register": "neutral",
+      "mnemonic": "The second noun makes the first one definite, so the al- is not needed."
+    },
+    {
+      "id": "L2-M2-S09",
+      "display": "huwa laṭīf jiddan",
+      "script": "هو لطيف جدا",
+      "cue": "He is very kind",
+      "literal": "He kind very",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "laṭīf",
+            "script": "لطيف",
+            "cue": "kind · pleasant",
+            "tag": "free",
+            "forms": [
+              "laṭīf",
+              "laṭīfa"
+            ],
+            "note": "Warm and easy to be around, said of people and of weather alike. The ṭ is emphatic, which darkens the vowel around it."
+          }
+        ],
+        "rules": [
+          1,
+          5
+        ]
+      },
+      "trap": "jiddan goes AFTER the adjective. English puts \"very\" in front and Arabic puts it behind, every time.",
+      "sound": "la-ṬĪF, with the ṭ pulling the a towards an o.",
+      "variations": [
+        {
+          "display": "hiya laṭīfa jiddan",
+          "script": "هي لطيفة جدا",
+          "cue": "She is very kind",
+          "changed": "the feminine, and the adjective follows her"
+        },
+        {
+          "display": "huwa laṭīf wa ṭawīl",
+          "script": "هو لطيف وطويل",
+          "cue": "He is kind and tall",
+          "changed": "two adjectives joined by wa"
+        },
+        {
+          "display": "al-jaww laṭīf al-yawm",
+          "script": "الجو لطيف اليوم",
+          "cue": "The weather is pleasant today",
+          "changed": "the same word about the weather, with M5's al-jaww"
+        }
+      ],
+      "mistake": {
+        "display": "huwa jiddan laṭīf",
+        "script": "هو جدا لطيف",
+        "why": "jiddan follows what it intensifies: laṭīf jiddan. Putting it in front is the English order."
+      },
+      "usage": "The default compliment about a person's character, and it is used constantly.",
+      "register": "neutral",
+      "mnemonic": "Arabic puts its very at the back."
+    },
+    {
+      "id": "L2-M2-S10",
+      "display": "hiya kabīra fī as-sinn",
+      "script": "هي كبيرة في السن",
+      "cue": "She is old",
+      "literal": "She big in the-age",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "as-sinn",
+            "script": "السن",
+            "cue": "age",
+            "tag": "delta",
+            "forms": [
+              "as-sinn",
+              "sinn"
+            ],
+            "note": "Arabic says someone is big IN AGE rather than old. The s is a sun letter, so al- assimilates: as-sinn, written السن and said with a doubled s."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "kabīra alone would mean she is big. The fī as-sinn is what turns size into age, and it cannot be left off.",
+      "sound": "as-SINN, with the l of al- swallowed entirely into the s and the s held long.",
+      "variations": [
+        {
+          "display": "huwa kabīr fī as-sinn",
+          "script": "هو كبير في السن",
+          "cue": "He is old",
+          "changed": "the masculine, and the adjective follows him"
+        },
+        {
+          "display": "abī kabīr fī as-sinn",
+          "script": "أبي كبير في السن",
+          "cue": "My father is old",
+          "changed": "a named person instead of a pronoun"
+        },
+        {
+          "display": "hiya kabīra wa laṭīfa",
+          "script": "هي كبيرة ولطيفة",
+          "cue": "She is big and kind",
+          "changed": "kabīra without fī as-sinn, which means size again"
+        }
+      ],
+      "mistake": {
+        "display": "hiya kabīra fī al-sinn",
+        "script": "هي كبيرة في السن",
+        "why": "s is a sun letter, so the l assimilates: as-sinn. The build treats al-sinn and as-sinn as two different words."
+      },
+      "usage": "Said with respect rather than as a plain fact. Arabic has no comfortable equivalent of the blunt English \"old\".",
+      "register": "neutral",
+      "mnemonic": "Big in the age, not old."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M2-C01",
+      "display": "huwa ṭālib fī al-madrasa",
+      "script": "هو طالب في المدرسة",
+      "cue": "He is a student at the school"
+    },
+    {
+      "id": "L2-M2-C02",
+      "display": "hiya mudarrisa fī al-madrasa",
+      "script": "هي مدرسة في المدرسة",
+      "cue": "She is a teacher at the school"
+    },
+    {
+      "id": "L2-M2-C03",
+      "display": "ismuhā hind wa hiya jamīla",
+      "script": "اسمها هند وهي جميلة",
+      "cue": "Her name is Hind and she is beautiful"
+    },
+    {
+      "id": "L2-M2-C04",
+      "display": "ʿindahā sayyāra jamīla",
+      "script": "عندها سيارة جميلة",
+      "cue": "She has a beautiful car"
+    },
+    {
+      "id": "L2-M2-C05",
+      "display": "huwa ṭawīl wa hiya qaṣīra",
+      "script": "هو طويل وهي قصيرة",
+      "cue": "He is tall and she is short"
+    },
+    {
+      "id": "L2-M2-C06",
+      "display": "ʿindī akh wa ukht",
+      "script": "عندي أخ وأخت",
+      "cue": "I have a brother and a sister"
+    },
+    {
+      "id": "L2-M2-C07",
+      "display": "hādhā abī wa hādhihi ummī",
+      "script": "هذا أبي وهذه أمي",
+      "cue": "This is my father and this is my mother"
+    },
+    {
+      "id": "L2-M2-C08",
+      "display": "bayt ṣadīqī qarīb min al-madrasa",
+      "script": "بيت صديقي قريب من المدرسة",
+      "cue": "My friend's house is near the school"
+    },
+    {
+      "id": "L2-M2-C09",
+      "display": "huwa laṭīf jiddan",
+      "script": "هو لطيف جدا",
+      "cue": "He is very kind"
+    },
+    {
+      "id": "L2-M2-C10",
+      "display": "hiya kabīra fī as-sinn",
+      "script": "هي كبيرة في السن",
+      "cue": "She is old"
+    },
+    {
+      "id": "L2-M2-C11",
+      "display": "hal ʿindaka ukht?",
+      "script": "هل عندك أخت؟",
+      "cue": "Do you have a sister?"
+    },
+    {
+      "id": "L2-M2-C12",
+      "display": "hiya laṭīfa jiddan",
+      "script": "هي لطيفة جدا",
+      "cue": "She is very kind"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

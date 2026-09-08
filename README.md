@@ -190,6 +190,20 @@ modules, 249 new surfaces, and the en-es baseline still at 10 — every variatio
 an untaught word was rewritten rather than baselined, and most of them were reaching for another
 cell of a verb the module already taught.
 
+**en-ar starts its second level (#436, 2026-09-08).** `L2-M1` _Asking politely_ and `L2-M2`
+_Describing people_ are authored against the briefs of #427
+(`docs/54-en-ar-L2-brief-decisions.md`) and carry `verified: true` on the standing authority,
+backed by `docs/62-llm-review-en-ar-L2.md`; a strict `npm run build` emits
+`en-ar: 12 modules (L1-M1..M10, L2-M1..M2)`. M1 makes the imperative productive (`tashrab` →
+`ishrab`, `taʾkul` → `kul`) and buys politeness with words rather than with a verb form Arabic does
+not have; M2 opens `huwa`/`hiya`, which L1 never needed because a verb prefix carried the person,
+and gives `ʿind-` its rule — a PREPOSITION meaning "at", which is why it takes suffixes rather than
+conjugating. **Authoring found something the briefs did not**: `samaḥta` and `samaḥti` are one
+spelling in unvowelled Arabic and two in the romanization, so this course's two lines carry
+different amounts of information — the romanized line names the addressee and the quiet line does
+not. That is now a rule of the module, and no other course in this repo can teach it. **The native
+gate is still unmet**: docs/62 ends in open questions 1–7, a fresh en-ar L2 chain.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on
