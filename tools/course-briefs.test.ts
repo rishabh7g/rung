@@ -497,3 +497,66 @@ describe('en-ru L2: the decisions its briefs settle (#429)', () => {
     }
   });
 });
+
+describe('en-it L2: the decisions its briefs settle (#430)', () => {
+  const all = COURSE_BRIEFS['en-it'] ?? {};
+  const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
+
+  it('covers exactly L1-M1..L2-M10 — two levels, twenty modules', () => {
+    expect(Object.keys(all)).toEqual([
+      ...['L1', 'L2'].flatMap((level) =>
+        ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
+      ),
+    ]);
+  });
+
+  it('climbs its bounds 8 → 9 → 10 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L2-M1', 'L2-M2', 'L2-M3']) expect(bound(id), id).toBe(8);
+    for (const id of ['L2-M4', 'L2-M5', 'L2-M6', 'L2-M7']) expect(bound(id), id).toBe(9);
+    for (const id of ['L2-M8', 'L2-M9', 'L2-M10']) expect(bound(id), id).toBe(10);
+  });
+
+  /**
+   * The ruling the case fold forced: `Lei` folds onto L1-M10's `lei` ("she"), so the polite
+   * address is a verb choice and the pronoun never reaches a display. If this note goes, the
+   * course starts teaching a pronoun whose tap says "she".
+   */
+  it('teaches the polite address as a verb and keeps the pronoun out of display', () => {
+    const m1 = all['L2-M1']?.notes.join('\n') ?? '';
+    expect(m1).toMatch(/The pronoun Lei stays OUT of display/);
+    expect(m1).toMatch(/surface\.ts lowercases, so Lei folds to lei/);
+    expect(m1).toMatch(/politeness rides the THIRD-PERSON VERB/);
+    expect(m1).toMatch(/`formal`/);
+    expect(m1).toMatch(/`informal`/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/en-de's `Sie`\/`sie` catastrophe, arriving in Italian/);
+  });
+
+  /** Words shipped, systems deferred — the congiuntivo and the conditional. */
+  it('ships the formal imperatives as frozen words and defers the congiuntivo', () => {
+    expect(all['L2-M1']?.notes.join('\n')).toMatch(/present SUBJUNCTIVE forms/);
+    expect(all['L2-M1']?.notes.join('\n')).toMatch(/frozen politeness words/);
+    expect(all['L2-M4']?.notes.join('\n')).toMatch(/subjunctive forms L3 will teach as a paradigm/);
+  });
+
+  /** The clitic ruling, shared with en-es, and the infinitive that swallows one. */
+  it('teaches the clitics on lo/li/mi/ti and names the articles as the reason', () => {
+    const m5 = all['L2-M5']?.notes.join('\n') ?? '';
+    expect(m5).toMatch(/la, le, i and gli are L1-M1's ARTICLES/);
+    expect(m5).toMatch(/left to L3/);
+    expect(all['L2-M8']?.notes.join('\n')).toMatch(/aiutarmi is one word to the index/);
+  });
+
+  it('assigns every seam an owner, and pins M10 to the shared slogan', () => {
+    expect(all['L2-M4']?.notes.join('\n')).toMatch(/a destra and a sinistra are indexed WHOLE/);
+    expect(all['L2-M7']?.notes.join('\n')).toMatch(/più tardi — which rides as a two-token/);
+    expect(all['L2-M9']?.notes.join('\n')).toMatch(/che is L1-M5's key/);
+    expect(all['L2-M9']?.notes.join('\n')).toMatch(/migliore against meglio/);
+    const m10 = all['L2-M10']?.notes.join('\n') ?? '';
+    expect(m10).toMatch(/one tense is for completed actions and the other for ongoing ones/);
+    expect(m10).toMatch(/essere for movement and change of state/);
+    for (const [id, brief] of l2) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+});
