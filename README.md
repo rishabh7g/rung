@@ -214,6 +214,19 @@ second job here — it surfaced a brief violation of the level's own `lam` ban i
 and both sentences were rewritten rather than the ban relaxed. **The native gate is still unmet**:
 docs/62 ends in open questions 1–20, a fresh en-ar L2 chain.
 
+**hi-en starts its second level (#437, 2026-09-08).** `L2-M1` _Asking politely_ and `L2-M2`
+_Describing people_ are authored against the briefs of #428
+(`docs/55-hi-en-L2-brief-decisions.md`), backed by `docs/63-llm-review-hi-en-L2.md`; a strict
+`npm run build` emits `hi-en: 12 modules (L1-M1..M10, L2-M1..M2)`. M1 is one sentence said five
+ways — `Give me the book` up to `Would you mind waiting?` — because English politeness comes from
+turning a request into a question and making it longer, and the verb never changes; `kindly` and
+`do the needful` are named as ordinary Indian English and not written. M2 teaches the ABSENCE a
+Hindi speaker feels first (adjectives never agree) and says plainly where **English is poorer**:
+`cousin` covers eight Hindi words, `uncle` four, and `brother` carries no age. The possessive `'s`
+opens here, which lifts an L1 ban on the record — and `src/course/types.test.ts`'s check, written
+when no L1 job needed one, is now scoped to the level that made it. **The native gate is still
+unmet**: docs/63 ends in open questions 1–6, a fresh hi-en L2 chain.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on
