@@ -17,6 +17,7 @@ import { createRoot } from 'react-dom/client';
 // only woff2 reaches dist. Byte accounting: docs/05-perf-notes.md.
 import './fonts/mukta.css';
 import './fonts/naskh.css';
+import './fonts/noto-sans-kr.css';
 import './fonts/source-sans-3.css';
 import '@fontsource/barlow/latin-400.css';
 import '@fontsource/barlow-condensed/latin-600.css';

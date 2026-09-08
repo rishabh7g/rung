@@ -242,6 +242,11 @@ were exercised on the authored modules (#377–#379) and reported there.
 
 ## 8. The quiet Hangul `script` line (#375) — decision and the honest defect
 
+> **Superseded on 2026-09-08 by §10.** The premise this section turns on — that
+> `@fontsource/noto-sans-kr` ships no single whole-Korean file — is false. The section is kept as
+> written because the reasoning from that premise was sound and the authoring instruction it gave
+> still stands; only the outcome changed, from (B) to (A).
+
 `script` is the optional quiet native line, rendered in `--font-script-fallback` on five surfaces.
 It is typed on `Sentence`, `Variation` **and** `PoolItem` (`src/course/types.ts`) — unlike `sound`,
 which exists only on `Sentence`. So Hangul is authorable on all three, and #362's "do not put
@@ -293,3 +298,49 @@ The string below is what `content/courses.json`'s en-ko row carries. It is paste
 > noun and the bare particle each keep an index key of their own; the standard's
 > syllable-disambiguation hyphen is never used. Every display string in this course follows this one
 > scheme — the word index matches surfaces verbatim, so a second scheme would break resolution.
+
+---
+
+## 10. (A) after all: the whole-Korean file exists, so the face is bundled (#375, 2026-09-08)
+
+§8's package check is wrong on its central fact, and #375 says in terms that a drifted premise
+changes the answer. Re-run against `@fontsource/noto-sans-kr@5.3.0`:
+
+- The package ships **2,319 files**, and §8 is right that most of them are the ~120 numbered
+  `unicode-range` slices per weight that a CJK face is normally split into.
+- It **also ships `files/noto-sans-kr-korean-<weight>-normal.woff2`** — the whole-Korean file, at
+  all nine weights. §8 says there is no such file. There is.
+
+So the pipeline's `files/<slug>-<subset>-<weight>-normal.woff2` naming holds with no special case,
+`tools/font-subset.ts` needs no multi-source target, and the follow-up §8 deferred does not exist.
+Bundling is one `SubsetFace` row, one committed sheet, and one entry in each of the budget's two
+tables — the shape the ticket describes for (A).
+
+**Decision: (A). The face is bundled.** What it costs, measured rather than estimated:
+
+- Source `noto-sans-kr-korean-400-normal.woff2` is **529 KiB**; en-ko's **294 authored Hangul
+  syllables** cut to **20,492 bytes**, the same order as Naskh's 10 KiB Arabic cut. The harvest
+  does exactly the job the numbered slices exist to do, and does it better, because it knows what
+  the content actually says.
+- `FONTS 15/15 ok`. `npm run budget` stays green: `unmetered` holds zero files and the precache
+  audit passes. The cut is charged to `course:en-ko`, which is why `ko: 'korean'` in
+  `SCRIPT_BY_LANGUAGE_TAG` carries a comment saying it is the **quiet line only** — the romanized
+  display is ASCII and pays nothing.
+
+Two details worth keeping, because both are easy to get wrong later:
+
+1. **The range does not claim U+0020.** Naskh claims the space deliberately, so that Arabic word
+   gaps come from the Arabic face, and both families sit in the same `--font-script-fallback`
+   stack — only one of them can own it. Taking it from a shipped course to give it to this one
+   would buy nothing: Hangul syllables are square and evenly set, and the gap between two of them
+   is not a shape the face has an opinion about.
+2. **The range is wider than the syllable block.** Compatibility Jamo (U+3130-318F) is how a lone
+   consonant is written when a course NAMES a letter, and conjoining Jamo (U+1100-11FF) is what a
+   decomposed syllable is made of. Neither is baseline — a range is routing, not coverage, so a
+   codepoint the harvest never saw falls through to `system-ui` rather than drawing tofu.
+
+**The authoring instruction is unchanged**, and §8's version of it stands: author `script` on every
+sentence, on every variation with a distinct Korean form, and on every pool item. The data was
+always right; this only means it is now drawn in a face this repo ships rather than one the device
+happens to own. The README's "en-ko ships" paragraph should record the face, not the defect.
+

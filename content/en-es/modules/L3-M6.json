@@ -1,0 +1,459 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M6",
+  "title": "Feelings in depth",
+  "job": "Nuance past good and bad",
+  "prerequisites": [
+    "L3-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Me + <gustar-verb> + <N>",
+      "Estoy + Adj + , + no soy + Adj",
+      "Tengo + <noun feeling>",
+      "Tengo ganas de + V-inf",
+      "Me da + <noun>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "ser or estar with an adjective is not permanent against temporary — it CHANGES THE WORD'S MEANING. es aburrido is boring and está aburrido is bored; es rico is wealthy and está rico is delicious; es listo is clever and está listo is ready (L2-M2's row already says so). The slogan dies on está muerto, which is as permanent as anything gets."
+    },
+    {
+      "tag": "delta",
+      "text": "A feeling you are IN takes estar, and the adjective agrees with the person feeling it: estoy preocupado / estoy preocupada, estamos hartos. The verb never changes the word; only the ending moves."
+    },
+    {
+      "tag": "delta",
+      "text": "gustar is not a one-off, it is a CLASS: encantar, molestar, importar, faltar and doler (L2-M8's) all run the same way. The thing is the SUBJECT and the person is an indirect object, so the verb follows the thing: me encanta el libro, me encantan los libros."
+    },
+    {
+      "tag": "delta",
+      "text": "encantar already means love, so it takes no muy and no mucho. me encanta mucho is not a stronger like, it is a learner's sentence. For the smaller feeling, gustar with mucho is what a speaker reaches for."
+    },
+    {
+      "tag": "delta",
+      "text": "Spanish keeps some feelings as NOUNS and hands them to tener: tengo miedo, tengo ganas de, tengo vergüenza, tengo hambre. They are things you HAVE, so nothing agrees with you and neither ser nor estar appears."
+    },
+    {
+      "tag": "delta",
+      "text": "me da + noun is the same backwards shape with dar (L2-M1's) as the verb — the thing gives the feeling to me: me da pena, me da igual, me da miedo. What follows da is a noun, never an adjective."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M6-S01",
+      "display": "Estoy aburrido, pero no soy aburrido.",
+      "cue": "I'm bored, but I'm not boring.",
+      "literal": "I-am bored, but not I-am boring.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aburrido",
+            "cue": "boring · bored",
+            "tag": "interference",
+            "forms": [
+              "aburrido",
+              "aburrida",
+              "aburridos",
+              "aburridas"
+            ],
+            "note": "One word, two meanings, and the verb picks: es aburrido is boring, está aburrido is bored. Say it of a person with ser and you have called them dull."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "English has two words, bored and boring. Spanish has one, and the verb in front of it is what tells them apart.",
+      "mistake": {
+        "display": "Soy aburrido, pero no soy aburrido.",
+        "why": "Both halves now say boring, so the sentence contradicts nothing. The state needs estar: estoy aburrido."
+      },
+      "usage": "A joke you can make about a slow afternoon. First person throughout; no address is chosen.",
+      "register": "neutral",
+      "mnemonic": "ser says what you ARE; estar says how you are RIGHT NOW."
+    },
+    {
+      "id": "L3-M6-S02",
+      "display": "Este café está rico. Mi jefe es rico.",
+      "cue": "This coffee is delicious. My boss is rich.",
+      "literal": "This coffee is delicious. My boss is rich.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rico",
+            "cue": "rich · delicious",
+            "tag": "interference",
+            "forms": [
+              "rico",
+              "rica",
+              "ricos",
+              "ricas"
+            ],
+            "note": "es rico is wealthy; está rico is delicious, and it is what people say about food. ¡Qué rico! at a table is about the meal, never about the cook."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Nothing in the word rico tells you which meaning is meant. está or es does, every time.",
+      "sound": "RI-co, stressed on the first syllable, and the r is a single tap, not the rolled one that starts a word.",
+      "usage": "The first half is what you say over a meal; the second is gossip. Neutral in both, and no second person appears.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S03",
+      "display": "Me encanta la música, y me encantan los libros.",
+      "cue": "I love music, and I love books.",
+      "literal": "To-me it-enchants the music, and to-me they-enchant the books.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "me encanta",
+            "cue": "I love it",
+            "tag": "delta",
+            "forms": [
+              "me encanta",
+              "me encantan"
+            ],
+            "note": "The gustar shape one step up: me encanta la música, me encantan los libros. The verb follows the thing, not me, and it already means love, so no muy."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "The verb changes because the BOOKS are plural, not because I am. me is never the subject of these verbs.",
+      "mistake": {
+        "display": "Me encanto los libros.",
+        "why": "That makes me the subject and says roughly I enchant myself. The books do the enchanting: me encantan los libros."
+      },
+      "usage": "Ordinary enthusiasm, said about anything from food to a city. First person; no address chosen.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S04",
+      "display": "Me molesta el ruido de la calle.",
+      "cue": "The noise from the street bothers me.",
+      "literal": "To-me it-bothers the noise of the street.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "me molesta",
+            "cue": "it bothers me",
+            "tag": "delta",
+            "forms": [
+              "me molesta",
+              "me molestan"
+            ],
+            "note": "Same shape as me gusta, opposite feeling: the noise is the subject. One thing takes me molesta, more than one takes me molestan."
+          },
+          {
+            "display": "ruido",
+            "cue": "noise",
+            "tag": "free",
+            "forms": [],
+            "note": "Noise of any kind — traffic, a party, a neighbour. hacer ruido is what a noisy thing does, and it is masculine: el ruido."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "English puts the noise first and me last; Spanish puts me first and the noise last, and the noise is still the subject.",
+      "usage": "A complaint to a friend, or to a landlord. Neutral enough for both, and it names no one.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S05",
+      "display": "No me importa. Me da igual.",
+      "cue": "I don't mind. It's all the same to me.",
+      "literal": "Not to-me it-matters. To-me it-gives equal.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "me importa",
+            "cue": "it matters to me",
+            "tag": "delta",
+            "forms": [
+              "me importa",
+              "me importan"
+            ],
+            "note": "Literally it matters to me, so the thing is the subject. No me importa is I don't mind — it is not the cold English I don't care."
+          },
+          {
+            "display": "me da igual",
+            "cue": "it's all the same to me",
+            "tag": "interference",
+            "forms": [],
+            "note": "Three words, one surface. Said warmly it opens the choice to you; said flat it says you have stopped caring, so tone is what decides."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "Neither half is the English I don't care. Both are polite ways of handing the choice to the other person.",
+      "mistake": {
+        "display": "No importo.",
+        "why": "That says I don't matter. The thing is the subject and me is the person it matters to: no me importa."
+      },
+      "usage": "The answer when someone asks which one you want and you truly have no preference. Warm tone required.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S06",
+      "display": "Me da pena tu hermano. No está tranquilo.",
+      "cue": "I feel sorry for your brother. He isn't at ease.",
+      "literal": "To-me it-gives pity your brother. Not he-is calm.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "me da pena",
+            "cue": "I feel sorry for it",
+            "tag": "interference",
+            "forms": [],
+            "note": "The thing gives me pena. It covers pity and a mild sadness at once — me da pena tu hermano is I feel for him, not I look down on him."
+          },
+          {
+            "display": "tranquilo",
+            "cue": "calm · at ease",
+            "tag": "free",
+            "forms": [
+              "tranquilo",
+              "tranquila",
+              "tranquilos",
+              "tranquilas"
+            ],
+            "note": "Calm, unhurried, at ease. Alone, ¡Tranquilo! is what you say to someone who is worrying — nearer to it's fine than to be quiet."
+          }
+        ],
+        "rules": [
+          5,
+          1
+        ]
+      },
+      "trap": "What follows da is a noun — pena. Spanish will not take an adjective there, so me da triste is not a sentence.",
+      "usage": "Said about someone you both know. tu chooses the informal address, so this is a friend, not a counter clerk.",
+      "register": "informal"
+    },
+    {
+      "id": "L3-M6-S07",
+      "display": "Tengo miedo de hablar con el jefe.",
+      "cue": "I'm afraid of talking to the boss.",
+      "literal": "I-have fear of to-speak with the boss.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tengo miedo",
+            "cue": "I'm afraid",
+            "tag": "interference",
+            "forms": [
+              "tengo miedo",
+              "tienes miedo",
+              "tiene miedo"
+            ],
+            "note": "Fear is a noun you HAVE. soy miedoso would say you are a fearful person by nature, which is a claim about your character, not your evening."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Fear is HAD, not been. And what you are afraid of arrives with de plus an infinitive, never with a que clause here.",
+      "mistake": {
+        "display": "Soy miedoso de hablar con el jefe.",
+        "why": "miedoso describes your character — a timid person. The evening's fear is tengo miedo."
+      },
+      "usage": "An admission to a friend or a colleague. First person, and el jefe keeps it work-shaped.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S08",
+      "display": "Tengo ganas de ver a mis amigos.",
+      "cue": "I feel like seeing my friends.",
+      "literal": "I-have urges of to-see to my friends.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tengo ganas de",
+            "cue": "I feel like",
+            "tag": "delta",
+            "forms": [
+              "tengo ganas de",
+              "tienes ganas de"
+            ],
+            "note": "The everyday I feel like doing something, and de is not optional: tengo ganas de ver a mis amigos. A noun after it wants the de too."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "ganas is a noun and it is plural in the frame — tengo ganas, never tengo gana. The de is fixed too.",
+      "usage": "How a plan gets floated. The a before mis amigos is the personal a, because they are people.",
+      "register": "neutral",
+      "mnemonic": "tener + noun for a feeling: miedo, ganas, hambre, sed."
+    },
+    {
+      "id": "L3-M6-S09",
+      "display": "Estoy preocupado, pero estoy orgulloso de mi hermana.",
+      "cue": "I'm worried, but I'm proud of my sister.",
+      "literal": "I-am worried, but I-am proud of my sister.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "preocupado",
+            "cue": "worried",
+            "tag": "free",
+            "forms": [
+              "preocupado",
+              "preocupada",
+              "preocupados",
+              "preocupadas"
+            ],
+            "note": "Worried, and it takes estar because it is a state you are in. What the worry is about arrives with por: preocupado por mi madre."
+          },
+          {
+            "display": "orgulloso",
+            "cue": "proud",
+            "tag": "free",
+            "forms": [
+              "orgulloso",
+              "orgullosa",
+              "orgullosos",
+              "orgullosas"
+            ],
+            "note": "Proud, and proud OF takes de: orgulloso de mi hermana. With ser it drifts towards arrogant, so estar is the one you want about a feeling."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Both adjectives agree with the SPEAKER, not with the sister. A woman saying this writes preocupada and orgullosa.",
+      "usage": "Said about family, plainly. First person; the sister is talked about, not addressed.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S10",
+      "display": "Mi padre está enfadado. Estoy harto.",
+      "cue": "My father is angry. I've had enough.",
+      "literal": "My father is angry. I-am fed-up.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "enfadado",
+            "cue": "angry",
+            "tag": "free",
+            "forms": [
+              "enfadado",
+              "enfadada",
+              "enfadados",
+              "enfadadas"
+            ],
+            "note": "Angry, in Spain; much of Latin America says enojado for the same feeling. Both take estar — it is a state, not a character."
+          },
+          {
+            "display": "harto",
+            "cue": "fed up",
+            "tag": "free",
+            "forms": [
+              "harto",
+              "harta",
+              "hartos",
+              "hartas"
+            ],
+            "note": "Fed up, had enough. estar harto de is the full frame: estoy harto de esperar. Blunt, but not rude."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Both are states, so both take estar. es enfadado would claim anger is what your father is made of.",
+      "usage": "A complaint between friends. Blunt but not rude; harto is the word a Spaniard reaches for when patience is gone.",
+      "register": "informal"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M6-C01",
+      "display": "Estoy aburrido, pero no soy aburrido.",
+      "cue": "I'm bored, but I'm not boring."
+    },
+    {
+      "id": "L3-M6-C02",
+      "display": "Me encanta la música, y me encantan los libros.",
+      "cue": "I love music, and I love books."
+    },
+    {
+      "id": "L3-M6-C03",
+      "display": "No me importa. Me da igual.",
+      "cue": "I don't mind. It's all the same to me."
+    },
+    {
+      "id": "L3-M6-C04",
+      "display": "Tengo miedo de hablar con el jefe.",
+      "cue": "I'm afraid of talking to the boss."
+    },
+    {
+      "id": "L3-M6-C05",
+      "display": "Tengo ganas de ver a mis amigos.",
+      "cue": "I feel like seeing my friends."
+    },
+    {
+      "id": "L3-M6-C06",
+      "display": "Mi padre está enfadado. Estoy harto.",
+      "cue": "My father is angry. I've had enough."
+    },
+    {
+      "id": "L3-M6-C07",
+      "display": "¿Tienes ganas de comer algo?",
+      "cue": "Do you feel like eating something?"
+    },
+    {
+      "id": "L3-M6-C08",
+      "display": "Me molestan los errores. Estoy harto.",
+      "cue": "Mistakes bother me. I've had enough."
+    },
+    {
+      "id": "L3-M6-C09",
+      "display": "Mi madre está preocupada, pero está tranquila.",
+      "cue": "My mother is worried, but she's calm."
+    },
+    {
+      "id": "L3-M6-C10",
+      "display": "El pescado está muy rico.",
+      "cue": "The fish is delicious."
+    },
+    {
+      "id": "L3-M6-C11",
+      "display": "Me da pena, pero no puedo ir.",
+      "cue": "I feel bad about it, but I can't go."
+    },
+    {
+      "id": "L3-M6-C12",
+      "display": "Mi hermano tiene miedo, y está enfadado.",
+      "cue": "My brother is afraid, and he's angry."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

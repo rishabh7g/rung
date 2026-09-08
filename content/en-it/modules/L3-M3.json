@@ -1,0 +1,643 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M3",
+  "title": "Opinions with reasons",
+  "job": "Agree, disagree, soften — reasons attached",
+  "prerequisites": [
+    "L3-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present",
+      "present congiuntivo — four cells only (sia, abbia, possa, vada)"
+    ],
+    "allowedPatterns": [
+      "Secondo me + , + <clause>",
+      "Penso che / Credo che / Mi sembra che + <congiuntivo>",
+      "Penso di + V-inf",
+      "Sono d'accordo + , + anche se + <indicative>",
+      "Non sono d'accordo + , + perché + <indicative>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE CONGIUNTIVO OPENS HERE, ON ONE TRIGGER AND FOUR CELLS. penso che, credo che and mi sembra che do not take the verb form you already know: after them è becomes sia, ha becomes abbia, può becomes possa and va becomes vada. Those four are the whole of it in this module. The mood as a SYSTEM — every verb, every tense, every other trigger — is L4's and is not opened here. Four cells on one trigger is what buys a learner the sentences they actually say."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH MAPS STRAIGHT ONTO THE WRONG THING. \"I think that it is true\" runs word for word into penso che è vero, and that sentence is wrong. The English verb does not change after \"I think\", so nothing warns you that the Italian one must. An Italian hears the indicative there at once — it is not a small slip that passes — which is the whole reason the mood cannot wait for L4. The one loud thing in this module: after penso che, credo che and mi sembra che, the verb moves."
+    },
+    {
+      "tag": "delta",
+      "text": "THE ESCAPE HATCH IS WORTH AS MUCH AS THE RULE. When BOTH halves have the same subject, Italian does not use che at all: penso DI avere ragione, credo DI tornare presto. Penso che io abbia ragione is grammatical and nobody says it. L1-M9 shipped penso di with a plain verb after it and left the reason for later; the reason is this. Half of what a learner wants to say about their own opinion needs no mood at all."
+    },
+    {
+      "tag": "interference",
+      "text": "ANCHE SE TAKES THE PLAIN INDICATIVE. anche se costa molto, anche se è vero — never anche se costi. It is the counterweight to rule 0 and it sits in the same module on purpose: the mood belongs to the TRIGGER and not to the idea of a subordinate clause. A learner who has just met penso che sia will reach for the mood everywhere, and this is the first place that goes wrong."
+    },
+    {
+      "tag": "delta",
+      "text": "TWO OPINION PHRASES THAT ARE NOT VERBS. secondo me needs no verb at all and is the cheapest useful thing in the module — two words and then your claim. sono d'accordo is an ADJECTIVE phrase carried by essere, never a verb of its own: never accordo, never mi accordo. Its apostrophe is inside one key with a straight mark, per the elision law, and it answers for nothing else."
+    },
+    {
+      "tag": "free",
+      "text": "SOFTENING IS A FRAME AT THE FRONT, NOT A WEAKENING OF THE CLAIM. Italian states an opinion plainly and marks it as an opinion before it starts: secondo me, forse, magari, non sono sicuro. Hedging the claim itself — trailing away, half-saying it — reads as evasive rather than polite. Neither language is the courteous one; they put the courtesy in different places, and Italian puts it in the first two words."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M3-S01",
+      "display": "Secondo me questo ristorante è molto buono",
+      "cue": "In my opinion this restaurant is very good",
+      "literal": "Second me this restaurant is very good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "secondo me",
+            "cue": "in my opinion",
+            "tag": "delta",
+            "forms": [],
+            "note": "ONE key of two words, so the bare me is not spent. It needs no verb: two words and then the claim. English's \"according to me\" sounds arrogant; this does not."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "The pronoun is me and not mi. mi is the little word that leans on a verb — mi piace, mi alzo — and me is what stands after a preposition, exactly as in L2-M5's per me. secondo takes the second kind.",
+      "sound": "se-KON-do me. Both words are stressed on the syllable before last, and the me is a full clear e, not a schwa.",
+      "variations": [
+        {
+          "display": "Secondo me questo vino è molto caro",
+          "cue": "In my opinion this wine is very expensive",
+          "changed": "a different thing judged"
+        },
+        {
+          "display": "Secondo me il pesce è buono",
+          "cue": "In my opinion the fish is good",
+          "changed": "shorter, with no molto"
+        },
+        {
+          "display": "Secondo me il ristorante non è caro",
+          "cue": "In my opinion the restaurant isn't expensive",
+          "changed": "the claim negated, not the frame"
+        }
+      ],
+      "mistake": {
+        "display": "Secondo mi questo ristorante è molto buono",
+        "why": "After a preposition the pronoun is me: Secondo me questo ristorante è molto buono."
+      },
+      "usage": "The first two words of most spoken opinions, and they cost no verb at all.",
+      "register": "neutral",
+      "mnemonic": "secondo me — no verb needed."
+    },
+    {
+      "id": "L3-M3-S02",
+      "display": "Penso che questo libro sia molto bello",
+      "cue": "I think this book is very good",
+      "literal": "I-think that this book be very beautiful",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "penso",
+            "cue": "I think",
+            "tag": "delta",
+            "forms": [],
+            "note": "The opinion verb standing on its own, without L1-M9's di. penso che opens a clause with its OWN subject, and that clause takes the congiuntivo."
+          },
+          {
+            "display": "sia",
+            "cue": "is (after an opinion)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The congiuntivo of è, and the only shape allowed after penso che. Two syllables, SEE-a. One shape covers io, tu and lui: penso che sia vero."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English says \"I think that this book is\" and the verb never moves, so nothing in the English sentence warns you. Penso che questo libro è is the single most common thing an English speaker gets wrong in Italian, and it is heard immediately.",
+      "sound": "PEN-so ke SEE-a. sia is two syllables and never rhymes with the English \"see\"; the a is fully sounded.",
+      "variations": [
+        {
+          "display": "Penso che questo libro sia molto utile",
+          "cue": "I think this book is very useful",
+          "changed": "the judgement"
+        },
+        {
+          "display": "Credo che questo vino sia buono",
+          "cue": "I think this wine is good",
+          "changed": "the other trigger, same mood"
+        },
+        {
+          "display": "Non penso che sia caro",
+          "cue": "I don't think it's expensive",
+          "changed": "negated, with the subject left out"
+        }
+      ],
+      "mistake": {
+        "display": "Penso che questo libro è molto bello",
+        "why": "penso che takes the congiuntivo: Penso che questo libro sia molto bello."
+      },
+      "usage": "Any opinion about a thing rather than about yourself, which is most of them.",
+      "register": "neutral",
+      "mnemonic": "penso che → sia."
+    },
+    {
+      "id": "L3-M3-S03",
+      "display": "Credo che mia sorella abbia ragione",
+      "cue": "I think my sister is right",
+      "literal": "I-believe that my sister have reason",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "credo",
+            "cue": "I think · I believe",
+            "tag": "delta",
+            "forms": [],
+            "note": "The same job as penso and a shade more considered, not more religious. It takes the same clause and the same mood: credo che sia, credo che abbia."
+          },
+          {
+            "display": "abbia",
+            "cue": "has (after an opinion)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The congiuntivo of ho, hai and ha — one shape for all three persons. credo che abbia ragione, never credo che ha ragione."
+          },
+          {
+            "display": "ragione",
+            "cue": "right (in avere ragione)",
+            "tag": "interference",
+            "forms": [],
+            "note": "Italian HAS reason where English IS right: ho ragione, hai ragione, never sono ragione. A feminine noun, and it takes no article in the phrase."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "abbia hides the person. io abbia, tu abbia and lei abbia are one shape, so where English's verb tells you who, the Italian congiuntivo does not — which is why the subject is named out loud whenever it is not obvious from the room.",
+      "sound": "KRE-do ke AB-bya ra-JO-ne. The double b is held, and the gi of ragione is a soft j.",
+      "variations": [
+        {
+          "display": "Credo che mio fratello abbia ragione",
+          "cue": "I think my brother is right",
+          "changed": "who is right"
+        },
+        {
+          "display": "Penso che tu abbia ragione",
+          "cue": "I think you're right",
+          "changed": "the tu subject, and the same abbia"
+        },
+        {
+          "display": "Non credo che abbia ragione",
+          "cue": "I don't think he's right",
+          "changed": "negated, with no subject named"
+        }
+      ],
+      "mistake": {
+        "display": "Credo che mia sorella ha ragione",
+        "why": "credo che takes the congiuntivo: Credo che mia sorella abbia ragione."
+      },
+      "usage": "Conceding a point about somebody who is not in the room.",
+      "register": "neutral",
+      "mnemonic": "One abbia for io, tu and lei."
+    },
+    {
+      "id": "L3-M3-S04",
+      "display": "Mi sembra che mio fratello possa aiutare",
+      "cue": "It seems to me my brother can help",
+      "literal": "To-me it-seems that my brother can to-help",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mi sembra che",
+            "cue": "it seems to me that",
+            "tag": "delta",
+            "forms": [
+              "mi sembra"
+            ],
+            "note": "ONE key with the pronoun and the che inside it, so the bare mi stays L2-M5's. The softest of the three triggers, and it takes the same mood as the other two."
+          },
+          {
+            "display": "possa",
+            "cue": "can (after an opinion)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The congiuntivo of posso, puoi and può — one shape for all three. What follows it is still a bare infinitive: possa aiutare, never possa di aiutare."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "The mood changes the modal and not what comes after it. L3-M2's law still holds — devo lavorare, posso studiare, possa aiutare — and nothing goes between the two verbs whichever shape the first one is in.",
+      "sound": "mee SEM-bra ke POS-sa. The double s of possa is held, and sembra keeps its m and b as one blur.",
+      "variations": [
+        {
+          "display": "Mi sembra che mia sorella possa aiutare",
+          "cue": "It seems to me my sister can help",
+          "changed": "who can help"
+        },
+        {
+          "display": "Mi sembra che il capo possa tornare presto",
+          "cue": "It seems to me the boss can come back early",
+          "changed": "a different infinitive after possa"
+        },
+        {
+          "display": "Mi sembra caro",
+          "cue": "It seems expensive to me",
+          "changed": "no clause at all, so no che and no mood"
+        }
+      ],
+      "mistake": {
+        "display": "Mi sembra che mio fratello può aiutare",
+        "why": "mi sembra che takes the congiuntivo: Mi sembra che mio fratello possa aiutare."
+      },
+      "usage": "Putting an opinion on the table without owning it, which is what this frame is for.",
+      "register": "neutral",
+      "mnemonic": "Softest trigger, same mood."
+    },
+    {
+      "id": "L3-M3-S05",
+      "display": "Non credo che vada bene così",
+      "cue": "I don't think it works like that",
+      "literal": "Not I-believe that go well so",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vada",
+            "cue": "goes (after an opinion)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The congiuntivo of vado, vai and va — and the same shape L2-M4 taught as the polite go. The polite imperative IS this mood, which is why one form does both jobs."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "va bene is \"it works\", not \"it goes well\", so non credo che vada bene is the ordinary Italian no. Said with the mood in place it is a considered refusal; said as non credo che va bene it is the same refusal with a mistake in it.",
+      "sound": "non KRE-do ke VA-da BE-ne ko-ZEE. così carries its stress on the final ì and the s is a soft z.",
+      "variations": [
+        {
+          "display": "Non credo che vada bene",
+          "cue": "I don't think it works",
+          "changed": "shorter, with no così"
+        },
+        {
+          "display": "Penso che vada bene così",
+          "cue": "I think it works like that",
+          "changed": "the positive, and the other trigger"
+        },
+        {
+          "display": "Non credo che vada a casa",
+          "cue": "I don't think he's going home",
+          "changed": "vada doing its literal go job"
+        }
+      ],
+      "mistake": {
+        "display": "Non credo che va bene così",
+        "why": "The trigger is still there under the non: Non credo che vada bene così."
+      },
+      "usage": "The polite Italian no to a plan, and the sentence a meeting turns on.",
+      "register": "neutral",
+      "mnemonic": "vada — the polite go, and the mood's go."
+    },
+    {
+      "id": "L3-M3-S06",
+      "display": "Penso di avere ragione, ma forse no",
+      "cue": "I think I'm right, but maybe not",
+      "literal": "I-think of to-have reason, but perhaps no",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "avere",
+            "cue": "to have",
+            "tag": "free",
+            "forms": [],
+            "note": "The infinitive of ho, hai and ha, and what follows penso di. It is the verb inside avere ragione, where Italian has the reason English is."
+          },
+          {
+            "display": "forse",
+            "cue": "maybe · perhaps",
+            "tag": "free",
+            "forms": [],
+            "note": "Sits where English's \"maybe\" sits — in front of the clause or at the end — and changes nothing around it. It never triggers the congiuntivo."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "This is the escape hatch. Both halves here are about ME, so Italian drops the che entirely and uses di plus a plain infinitive. Penso che io abbia ragione is grammatical and nobody says it — the mood is for when the second subject is somebody else.",
+      "sound": "PEN-so dee a-VE-re ra-JO-ne. avere is stressed on the middle syllable, a-VE-re.",
+      "variations": [
+        {
+          "display": "Penso di avere ragione",
+          "cue": "I think I'm right",
+          "changed": "without the hedge"
+        },
+        {
+          "display": "Credo di avere ragione",
+          "cue": "I believe I'm right",
+          "changed": "the other trigger, still with di"
+        },
+        {
+          "display": "Penso di tornare a casa",
+          "cue": "I think I'll go back home",
+          "changed": "a different infinitive after di"
+        }
+      ],
+      "mistake": {
+        "display": "Penso che io abbia ragione",
+        "why": "Same subject in both halves takes di and an infinitive: Penso di avere ragione."
+      },
+      "usage": "Standing your ground and leaving the door open in the same breath.",
+      "register": "neutral",
+      "mnemonic": "Same subject → penso di. No mood at all."
+    },
+    {
+      "id": "L3-M3-S07",
+      "display": "Sono d'accordo, anche se costa molto",
+      "cue": "I agree, even if it's expensive",
+      "literal": "I-am in-agreement, even if it-costs a-lot",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sono d'accordo",
+            "cue": "I agree",
+            "tag": "delta",
+            "forms": [],
+            "note": "An adjective phrase carried by essere, never a verb of its own: never accordo, never mi accordo. The straight apostrophe is inside one key, answering for nothing else."
+          },
+          {
+            "display": "anche se",
+            "cue": "even if · even though",
+            "tag": "interference",
+            "forms": [],
+            "note": "Takes the plain indicative: anche se costa, never anche se costi. English's \"even if\" gives no warning either way, so the habit has to be built here."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "Not every clause after an opinion bends. penso che takes the mood because of penso che; anche se does not, and the two sit in one module precisely so they never blur into \"anything after an opinion goes congiuntivo\".",
+      "sound": "so-no dak-KOR-do. The d and the a run into one syllable, and the double c is held.",
+      "variations": [
+        {
+          "display": "Non sono d'accordo, anche se è vero",
+          "cue": "I don't agree, even if it's true",
+          "changed": "the negative, with the same indicative after anche se"
+        },
+        {
+          "display": "Sono d'accordo con il capo",
+          "cue": "I agree with the boss",
+          "changed": "who you agree with, and no second clause"
+        },
+        {
+          "display": "Sono d'accordo, anche se non è caro",
+          "cue": "I agree, even if it isn't expensive",
+          "changed": "the reason negated"
+        }
+      ],
+      "mistake": {
+        "display": "Accordo, anche se costa molto",
+        "why": "d'accordo is an adjective and needs essere: Sono d'accordo, anche se costa molto."
+      },
+      "usage": "Agreeing while naming the cost of agreeing, which is how most agreements are said.",
+      "register": "neutral",
+      "mnemonic": "penso che bends. anche se does not."
+    },
+    {
+      "id": "L3-M3-S08",
+      "display": "Non sono d'accordo, perché non è vero",
+      "cue": "I don't agree, because it isn't true",
+      "literal": "Not I-am in-agreement, because not it-is true",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vero",
+            "cue": "true",
+            "tag": "free",
+            "forms": [
+              "vera",
+              "veri",
+              "vere"
+            ],
+            "note": "An ordinary four-shape adjective. È vero is a whole sentence for \"that's true\", with nothing standing in front of the verb."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "The reason hangs off perché and nothing else moves: perché takes the plain indicative, exactly as anche se does. Only the three opinion triggers bend the verb, and perché is not one of them.",
+      "sound": "non SO-no dak-KOR-do per-KE non e VE-ro. perché carries its stress on the final é.",
+      "variations": [
+        {
+          "display": "Non è vero",
+          "cue": "That's not true",
+          "changed": "the bare denial, with no frame"
+        },
+        {
+          "display": "Non sono d'accordo, perché è caro",
+          "cue": "I don't agree, because it's expensive",
+          "changed": "a different reason"
+        },
+        {
+          "display": "Penso che sia vero",
+          "cue": "I think it's true",
+          "changed": "the same adjective under a trigger, so the verb moves"
+        }
+      ],
+      "mistake": {
+        "display": "Non sono d'accordo, perché non vero",
+        "why": "The verb is not optional: Non sono d'accordo, perché non è vero."
+      },
+      "usage": "Disagreeing with the reason attached, which is the only shape that lands well.",
+      "register": "neutral",
+      "mnemonic": "Disagree, then say why — and perché does not bend."
+    },
+    {
+      "id": "L3-M3-S09",
+      "display": "Magari hai ragione, ma non sono d'accordo",
+      "cue": "Maybe you're right, but I don't agree",
+      "literal": "Maybe you-have reason, but not I-am in-agreement",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "magari",
+            "cue": "maybe",
+            "tag": "delta",
+            "forms": [],
+            "note": "Two lives. In front of a plain verb it is \"maybe\", warmer than forse. On its own, Magari! is \"if only!\" — English has no single word that does both."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "magari in front of a plain verb is only \"maybe\" and takes no che. Alone it is a wish, and the two are told apart by what follows rather than by the word, so a learner who meets the wish first will hear the maybe as enthusiasm.",
+      "sound": "ma-GA-ree. The stress is on the middle syllable, and the g is hard.",
+      "variations": [
+        {
+          "display": "Magari hai ragione",
+          "cue": "Maybe you're right",
+          "changed": "the concession on its own"
+        },
+        {
+          "display": "Forse hai ragione, ma non è vero",
+          "cue": "Maybe you're right, but it isn't true",
+          "changed": "the cooler softener in its place"
+        },
+        {
+          "display": "Magari torniamo domani",
+          "cue": "Maybe we'll come back tomorrow",
+          "changed": "a plain verb after it, and no opinion at all"
+        }
+      ],
+      "mistake": {
+        "display": "Magari che hai ragione, ma non sono d'accordo",
+        "why": "magari takes no che in front of a plain verb: Magari hai ragione."
+      },
+      "usage": "Giving someone the point and keeping your position, in one sentence.",
+      "register": "neutral",
+      "mnemonic": "Magari! is a wish. Magari hai ragione is a maybe."
+    },
+    {
+      "id": "L3-M3-S10",
+      "display": "Non sono sicuro, quindi penso di tornare",
+      "cue": "I'm not sure, so I think I'll go back",
+      "literal": "Not I-am sure, therefore I-think of to-return",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sicuro",
+            "cue": "sure · certain",
+            "tag": "free",
+            "forms": [
+              "sicura",
+              "sicuri",
+              "sicure"
+            ],
+            "note": "A four-shape adjective, so a woman says non sono sicura. It hedges the frame around a claim and leaves the claim itself standing."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "Non sono sicuro softens the FRAME, and the claim after it stays plain. Trailing off in the middle of the claim itself is not politeness in Italian — it reads as evasion, and the hedge belongs in front where a listener can hear it coming.",
+      "sound": "see-KOO-ro. quindi is KWEEN-dee, with the qu as a full kw.",
+      "variations": [
+        {
+          "display": "Non sono sicura, quindi penso di tornare",
+          "cue": "I'm not sure, so I think I'll go back",
+          "changed": "a woman speaking, so the adjective moves"
+        },
+        {
+          "display": "Non sono sicuro, ma penso di andare",
+          "cue": "I'm not sure, but I think I'll go",
+          "changed": "ma instead of quindi, and a different infinitive"
+        },
+        {
+          "display": "Secondo me è meglio tornare",
+          "cue": "In my opinion it's better to go back",
+          "changed": "the frame from S01, with no hedge at all"
+        }
+      ],
+      "mistake": {
+        "display": "Non sono sicuro, quindi penso tornare",
+        "why": "penso needs its di before an infinitive: quindi penso di tornare."
+      },
+      "usage": "Getting out of a decision honestly, with the reason and the plan in one line.",
+      "register": "neutral",
+      "mnemonic": "Hedge the frame. Never the claim."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M3-C01",
+      "display": "Secondo me questo ristorante è molto buono",
+      "cue": "In my opinion this restaurant is very good"
+    },
+    {
+      "id": "L3-M3-C02",
+      "display": "Penso che questo libro sia molto bello",
+      "cue": "I think this book is very good"
+    },
+    {
+      "id": "L3-M3-C03",
+      "display": "Credo che mia sorella abbia ragione",
+      "cue": "I think my sister is right"
+    },
+    {
+      "id": "L3-M3-C04",
+      "display": "Mi sembra che mio fratello possa aiutare",
+      "cue": "It seems to me my brother can help"
+    },
+    {
+      "id": "L3-M3-C05",
+      "display": "Non credo che vada bene così",
+      "cue": "I don't think it works like that"
+    },
+    {
+      "id": "L3-M3-C06",
+      "display": "Penso di avere ragione, ma forse no",
+      "cue": "I think I'm right, but maybe not"
+    },
+    {
+      "id": "L3-M3-C07",
+      "display": "Sono d'accordo, anche se costa molto",
+      "cue": "I agree, even if it's expensive"
+    },
+    {
+      "id": "L3-M3-C08",
+      "display": "Non sono d'accordo, perché non è vero",
+      "cue": "I don't agree, because it isn't true"
+    },
+    {
+      "id": "L3-M3-C09",
+      "display": "Magari hai ragione, ma non sono d'accordo",
+      "cue": "Maybe you're right, but I don't agree"
+    },
+    {
+      "id": "L3-M3-C10",
+      "display": "Non sono sicuro, quindi penso di tornare",
+      "cue": "I'm not sure, so I think I'll go back"
+    },
+    {
+      "id": "L3-M3-C11",
+      "display": "Penso che il capo abbia ragione",
+      "cue": "I think the boss is right"
+    },
+    {
+      "id": "L3-M3-C12",
+      "display": "Secondo me non è vero",
+      "cue": "In my opinion it isn't true"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

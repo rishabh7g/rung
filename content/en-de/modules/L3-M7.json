@@ -1,0 +1,536 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M7",
+  "title": "Body and health",
+  "job": "Say what hurts, and where",
+  "prerequisites": [
+    "L3-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "present",
+      "Perfekt"
+    ],
+    "allowedPatterns": [
+      "Ich habe seit + <duration> + N",
+      "Mir tut + der/die/das + N + weh",
+      "Ich habe mir + den + N + gebrochen",
+      "Was fehlt Ihnen?",
+      "Ich brauche einen Termin"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "GERMAN SAYS HOW LONG WITH seit AND THE PRESENT TENSE, and this is the sharpest tense delta in the level. Ich habe seit drei Tagen Kopfschmerzen. Ich wohne seit einem Jahr hier. English needs a perfect there — I have HAD a headache for three days — and a learner who translates word for word produces Ich habe Kopfschmerzen für drei Tage, which a German hears as a headache with a scheduled end. seit always takes the dative and there is nothing to choose."
+    },
+    {
+      "tag": "delta",
+      "text": "The possessor of a body part is a DATIVE pronoun and the part itself takes the definite article: Mir tut der Kopf weh. Ich habe mir den Arm gebrochen. German says whose body it is once, in the pronoun, and then uses der, die or das for the part — where English marks the owner on the noun and nothing else. This is M6's dative reflexive doing its most useful job one module later; the shape is identical to Ich wasche mir die Hände."
+    },
+    {
+      "tag": "free",
+      "text": "Most of this module was paid for long ago, so point back rather than relearning: Kopf, Kopfschmerzen, Bauchschmerzen, weh, Arzt, Ärztin, Hilfe, schlecht and brauchen are L2-M8's, krank, kalt and warm are L1-M9's, and Mir ist schlecht is L2-M8's subjectless dative sentence. What is genuinely new here is seit, the body parts L2 never needed, and the vocabulary of the surgery."
+    },
+    {
+      "tag": "free",
+      "text": "Mir tut der Kopf weh and Was fehlt Ihnen? belong to the same family as Mir ist kalt (L1-M9) and Mir ist schlecht (L2-M8): the person is in the DATIVE and the sentence has no ordinary subject at all. That is four appearances of one pattern across the course, and the fourth is where it should stop feeling strange. What hurts is the grammatical subject; you are only the one it happens to."
+    },
+    {
+      "tag": "interference",
+      "text": "Mein Kopf tut weh is not ungrammatical, and it is still not what a German reaches for. The English habit — my head hurts — is strong enough to survive the whole of L3 unless it is named: the German sentence starts with Mir and lets the head take der. Say Mir tut der Kopf weh and you sound like a patient; say Mein Kopf tut weh and you sound like a translation."
+    },
+    {
+      "tag": "free",
+      "text": "The scene is the surgery and the register is Sie throughout. An appointment is expected — you ring for a Termin rather than sitting down and waiting — and the Apotheke is a separate shop from the practice, the only place that hands over Tabletten a doctor has prescribed. That is what a learner will meet, not advice about what to do."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M7-S01",
+      "display": "Ich habe seit drei Tagen Kopfschmerzen",
+      "cue": "I've had a headache for three days",
+      "literal": "I have since three days head-pains",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "seit",
+            "cue": "since / for (a stretch of time)",
+            "tag": "delta",
+            "forms": [
+              "seit"
+            ],
+            "note": "seit + dative, and the verb stays in the PRESENT: the trouble started then and is still going. English switches to a perfect; German does not."
+          },
+          {
+            "display": "Tagen",
+            "cue": "days (dative plural)",
+            "tag": "delta",
+            "forms": [
+              "Tage",
+              "Tagen"
+            ],
+            "note": "L1-M4's Tag in the plural: die Tage, and after seit the dative plural adds -n — seit drei Tagen. First-teach row for Tag is L1-M4's."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Ich habe Kopfschmerzen für drei Tage is the word-for-word English, and it says the headache is booked to end. Use seit and the present.",
+      "sound": "ikh HAH-buh zyte dry TAH-gen KOPF-shmair-tsen. seit rhymes with the English site.",
+      "variations": [
+        {
+          "display": "Ich habe seit gestern Bauchschmerzen",
+          "cue": "I've had a stomach ache since yesterday",
+          "changed": "a point in time after seit instead of a stretch"
+        },
+        {
+          "display": "Ich wohne seit einem Jahr hier",
+          "cue": "I've lived here for a year",
+          "changed": "the same seit outside the surgery — dative singular this time"
+        }
+      ],
+      "mistake": {
+        "display": "Ich habe Kopfschmerzen für drei Tage",
+        "why": "für plus a stretch of time schedules it. What you mean is seit drei Tagen, with the present tense carrying the fact that it has not stopped."
+      },
+      "usage": "The first thing a doctor wants after what hurts: how long.",
+      "register": "neutral",
+      "mnemonic": "seit plus present. English's have had is one verb too many."
+    },
+    {
+      "id": "L3-M7-S02",
+      "display": "Mir tut der Rücken weh",
+      "cue": "My back hurts",
+      "literal": "to-me does the back sore",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Rücken",
+            "cue": "back",
+            "tag": "free",
+            "forms": [
+              "Rücken"
+            ],
+            "note": "der Rücken, and the plural is the same word. Rückenschmerzen is built exactly like L2-M8's Kopfschmerzen."
+          }
+        ],
+        "rules": [
+          1,
+          3,
+          4
+        ]
+      },
+      "trap": "The German sentence opens with Mir, not with the body part, and never with a possessive. Mein Rücken tut weh is what an English speaker builds instead.",
+      "sound": "meer toot dair RUE-ken vay. The ü is the ee of see with the lips rounded.",
+      "variations": [
+        {
+          "display": "Mir tut der Kopf weh",
+          "cue": "My head hurts",
+          "changed": "another part, and L2-M8's Kopf doing the work"
+        },
+        {
+          "display": "Tut Ihnen der Rücken weh?",
+          "cue": "Does your back hurt?",
+          "changed": "the doctor asking, Sie form — Ihnen is the dative"
+        }
+      ],
+      "mistake": {
+        "display": "Mein Rücken tut weh",
+        "why": "Grammatical, and still not the sentence. German marks the owner once, in the dative pronoun: Mir tut der Rücken weh."
+      },
+      "usage": "The everyday complaint, to a doctor or to anyone.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S03",
+      "display": "Ich habe mir den Arm gebrochen",
+      "cue": "I've broken my arm",
+      "literal": "I have to-me the arm broken",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Arm",
+            "cue": "arm",
+            "tag": "free",
+            "forms": [
+              "Arm"
+            ],
+            "note": "der Arm, so in the accusative it is den Arm. The plural die Arme is not needed here — you break one at a time."
+          },
+          {
+            "display": "gebrochen",
+            "cue": "broken",
+            "tag": "delta",
+            "forms": [
+              "gebrochen"
+            ],
+            "note": "The participle of brechen (to break), irregular: the e of the stem becomes o. It sits at the end of the bracket, as every participle since L2-M10 has."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "English says my arm and stops. German says mir first and then lets the arm take den — the possessive would be doing the pronoun's job twice.",
+      "sound": "ikh HAH-buh meer dayn arm guh-BROKH-en. The ch of gebrochen is the hard one.",
+      "variations": [
+        {
+          "display": "Er hat sich das Bein gebrochen",
+          "cue": "He's broken his leg",
+          "changed": "third person, so the dative reflexive is sich"
+        }
+      ],
+      "mistake": {
+        "display": "Ich habe meinen Arm gebrochen",
+        "why": "A German hears something detached about it, as if the arm were an object you were carrying. The shape is mir + den Arm."
+      },
+      "usage": "At the surgery, and the sentence that explains the plaster.",
+      "register": "neutral",
+      "mnemonic": "mir first, then the article. The body belongs to the pronoun."
+    },
+    {
+      "id": "L3-M7-S04",
+      "display": "Was fehlt Ihnen?",
+      "cue": "What's wrong? (doctor to patient)",
+      "literal": "what lacks to-you",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fehlt",
+            "cue": "is missing / is wrong",
+            "tag": "delta",
+            "forms": [
+              "fehlt",
+              "fehlen"
+            ],
+            "note": "fehlen is to be missing, and with a dative person it means what is wrong with them. Mir fehlt nichts — nothing is wrong with me."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "There is no I and no you as subject anywhere in this sentence. What is missing is the subject; the person is only the dative it is missing from.",
+      "sound": "vas faylt EE-nen. The h in fehlt is silent and only lengthens the e.",
+      "variations": [
+        {
+          "display": "Was fehlt dir?",
+          "cue": "What's wrong? (to a friend)",
+          "changed": "the du form — dir instead of Ihnen"
+        }
+      ],
+      "mistake": {
+        "display": "Was ist Ihr Problem?",
+        "why": "Word for word from English, and it sounds like an accusation in German. The doctor's line is Was fehlt Ihnen?"
+      },
+      "usage": "What the doctor asks as you sit down. Answer it with Mir tut … weh or Ich habe seit …",
+      "register": "formal"
+    },
+    {
+      "id": "L3-M7-S05",
+      "display": "Ich brauche einen Termin beim Arzt, weil ich Fieber habe",
+      "cue": "I need an appointment with the doctor, because I have a fever",
+      "literal": "I need an appointment at-the doctor, because I fever have",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "beim",
+            "cue": "at the / with the",
+            "tag": "delta",
+            "forms": [
+              "bei",
+              "beim"
+            ],
+            "note": "bei + dative, and beim is bei dem squashed together — the same fusion as zum and zur (L2-M2). beim Arzt is at the doctor's."
+          },
+          {
+            "display": "Fieber",
+            "cue": "fever / temperature",
+            "tag": "free",
+            "forms": [
+              "Fieber"
+            ],
+            "note": "das Fieber, and you HAVE it: Ich habe Fieber. No article, exactly like Ich habe Hunger (L1-M8)."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "Fieber is a temperature above normal, not merely feeling hot. Mir ist warm is the other sentence, and L1-M9 owns it.",
+      "sound": "ikh BROW-khuh INE-en tair-MEEN bime artst, vile ikh FEE-ber HAH-buh. Termin stresses its second syllable.",
+      "variations": [
+        {
+          "display": "Ich brauche einen Termin, weil mir der Hals weh tut",
+          "cue": "I need an appointment, because my throat hurts",
+          "changed": "the same reason clause with weil, verb last — L1-M9's rule"
+        }
+      ],
+      "usage": "Said on the telephone to the practice. Termin is L3-M4's word, and it is what the receptionist expects to hear.",
+      "register": "formal"
+    },
+    {
+      "id": "L3-M7-S06",
+      "display": "Ich habe seit gestern Husten",
+      "cue": "I've had a cough since yesterday",
+      "literal": "I have since yesterday cough",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Husten",
+            "cue": "cough",
+            "tag": "free",
+            "forms": [
+              "Husten"
+            ],
+            "note": "der Husten, and like Fieber you simply have it: Ich habe Husten. It is the condition, not one cough."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "sound": "ikh HAH-buh zyte GES-tern HOOS-ten. The H of Husten is breathed, the u long.",
+      "usage": "The second half of the complaint, after the headache or the fever.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S07",
+      "display": "Ich bin erkältet und mein Hals tut weh",
+      "cue": "I have a cold and my throat hurts",
+      "literal": "I am cold-struck and my throat does sore",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "erkältet",
+            "cue": "have a cold",
+            "tag": "interference",
+            "forms": [
+              "erkältet"
+            ],
+            "note": "German says you ARE erkältet, never that you have a cold. Ich bin erkältet — built on kalt (L1-M9), and nothing to do with Mir ist kalt."
+          },
+          {
+            "display": "Hals",
+            "cue": "throat / neck",
+            "tag": "free",
+            "forms": [
+              "Hals"
+            ],
+            "note": "der Hals covers both the throat and the neck; the sentence says which. Halsschmerzen is the sore throat itself."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "Ich habe eine Erkältung exists, but Ich bin erkältet is what people say — and Ich bin kalt says your body temperature is low, not that you have a cold.",
+      "sound": "ikh bin air-KEL-tet oont mine hals toot vay. The ä of erkältet is the e of bed.",
+      "variations": [
+        {
+          "display": "Mir tut der Hals weh",
+          "cue": "My throat hurts",
+          "changed": "the dative shape, which is the one to prefer"
+        }
+      ],
+      "mistake": {
+        "display": "Ich habe kalt",
+        "why": "Two sentences collide here. Ich bin erkältet is the cold you catch; Mir ist kalt (L1-M9) is the cold you feel."
+      },
+      "usage": "The whole of a winter's small talk in one line.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S08",
+      "display": "Die Tabletten kaufe ich in der Apotheke",
+      "cue": "I buy the tablets at the pharmacy",
+      "literal": "the tablets buy I in the pharmacy",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Tabletten",
+            "cue": "tablets",
+            "tag": "free",
+            "forms": [
+              "Tablette",
+              "Tabletten"
+            ],
+            "note": "die Tablette, plural die Tabletten — you almost always meet the plural. Two at a time is eine Tablette twice, not eine Tabletten."
+          },
+          {
+            "display": "Apotheke",
+            "cue": "pharmacy",
+            "tag": "free",
+            "forms": [
+              "Apotheke"
+            ],
+            "note": "die Apotheke is the chemist that dispenses medicine; a Drogerie sells soap and shampoo and no Tabletten at all."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "The object is in front, so the verb still comes second and the subject follows it: Die Tabletten kaufe ich — L2-M6's word order, not a new one.",
+      "sound": "dee ta-BLET-en KOW-fuh ikh in dair a-po-TAY-kuh. Apotheke stresses its third syllable and its th is a plain t.",
+      "variations": [
+        {
+          "display": "Ich kaufe die Tabletten in der Apotheke",
+          "cue": "I buy the tablets at the pharmacy",
+          "changed": "the plain order, with the subject first"
+        }
+      ],
+      "usage": "The Apotheke is a separate shop from the practice, and it is where a prescription is handed over.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S09",
+      "display": "Mir tut das Bein weh",
+      "cue": "My leg hurts",
+      "literal": "to-me does the leg sore",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Bein",
+            "cue": "leg",
+            "tag": "free",
+            "forms": [
+              "Bein"
+            ],
+            "note": "das Bein, so it is das here and den it never is — the article follows the part's own gender, not yours."
+          }
+        ],
+        "rules": [
+          1,
+          3,
+          4
+        ]
+      },
+      "sound": "meer toot das bine vay. The ei of Bein is the eye sound.",
+      "variations": [
+        {
+          "display": "Mir tut die Hand weh",
+          "cue": "My hand hurts",
+          "changed": "a feminine part, so die — the Hand row is M6's"
+        }
+      ],
+      "usage": "Point at it while you say it; a doctor will ask seit wann next.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S10",
+      "display": "Ich wohne seit einem Jahr hier",
+      "cue": "I've lived here for a year",
+      "literal": "I live since one year here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Jahr",
+            "cue": "year",
+            "tag": "free",
+            "forms": [
+              "Jahr",
+              "Jahre",
+              "Jahren"
+            ],
+            "note": "das Jahr, plural die Jahre, and the dative plural adds -n: seit zwei Jahren. Same -n as L1-M4's Tag takes in seit drei Tagen."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "English has to move to a perfect — I have lived here for a year. German keeps the plain present, because you still live here.",
+      "sound": "ikh VOH-nuh zyte INE-em yar heer. The J of Jahr is a y.",
+      "variations": [
+        {
+          "display": "Ich arbeite seit zwei Jahren hier",
+          "cue": "I've worked here for two years",
+          "changed": "the dative plural, Jahren"
+        }
+      ],
+      "mistake": {
+        "display": "Ich habe hier seit einem Jahr gewohnt",
+        "why": "The Perfekt closes the stay off. If you still live here, the present is the tense: Ich wohne seit einem Jahr hier."
+      },
+      "usage": "Outside the surgery entirely — the same seit answering how long you have been in the country.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M7-C01",
+      "display": "Ich habe seit drei Tagen Kopfschmerzen",
+      "cue": "I've had a headache for three days"
+    },
+    {
+      "id": "L3-M7-C02",
+      "display": "Mir tut der Rücken weh",
+      "cue": "My back hurts"
+    },
+    {
+      "id": "L3-M7-C03",
+      "display": "Er hat sich das Bein gebrochen",
+      "cue": "He's broken his leg"
+    },
+    {
+      "id": "L3-M7-C04",
+      "display": "Was fehlt Ihnen?",
+      "cue": "What's wrong? (doctor to patient)"
+    },
+    {
+      "id": "L3-M7-C05",
+      "display": "Ich brauche einen Termin beim Arzt",
+      "cue": "I need an appointment with the doctor"
+    },
+    {
+      "id": "L3-M7-C06",
+      "display": "Ich habe seit gestern Husten und Fieber",
+      "cue": "I've had a cough and a fever since yesterday"
+    },
+    {
+      "id": "L3-M7-C07",
+      "display": "Ich bin erkältet",
+      "cue": "I have a cold"
+    },
+    {
+      "id": "L3-M7-C08",
+      "display": "Die Tabletten kaufe ich in der Apotheke",
+      "cue": "I buy the tablets at the pharmacy"
+    },
+    {
+      "id": "L3-M7-C09",
+      "display": "Mir tut die Hand weh",
+      "cue": "My hand hurts"
+    },
+    {
+      "id": "L3-M7-C10",
+      "display": "Ich wohne seit einem Jahr hier",
+      "cue": "I've lived here for a year"
+    },
+    {
+      "id": "L3-M7-C11",
+      "display": "Mir ist schlecht",
+      "cue": "I feel sick"
+    },
+    {
+      "id": "L3-M7-C12",
+      "display": "Tut Ihnen der Hals weh?",
+      "cue": "Does your throat hurt?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

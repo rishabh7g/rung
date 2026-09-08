@@ -1,0 +1,608 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M4",
+  "title": "If and then",
+  "job": "Conditions, wishes, advice",
+  "prerequisites": [
+    "L3-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "present",
+      "condizionale presente — five verbs only (vorrei, potrei, dovrei, sarebbe, verrei)",
+      "congiuntivo imperfetto — one cell (avessi), in one counterfactual frame"
+    ],
+    "allowedPatterns": [
+      "Se + <present> + , + <present>",
+      "Se avessi + <N> + , + <condizionale>",
+      "Vorrei / Potrei + V-inf",
+      "Dovresti / Potresti + V-inf",
+      "Io al posto tuo + , + <condizionale>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "SE PLUS THE PRESENT IS ENGLISH'S \"IF\" AND NOTHING ELSE. Se piove, resto a casa lines up word for word with \"If it rains, I'm staying home\", and a learner braced after L3-M3 for another mood will invent a trap that is not there. The one real difference is small and worth saying: the second half is far more often a plain present in Italian than English would allow — Se domani ho tempo, andiamo al mare, where English wants \"we'll go\". Both are correct Italian; the present is what is said."
+    },
+    {
+      "tag": "delta",
+      "text": "THE CONDIZIONALE IS A TENSE, AND THIS COURSE HAS BEEN USING IT SINCE L1-M3. vorrei was shipped as a frozen politeness at L1-M3, and L2-M1 shipped two more the same way — potrebbe and potresti. None of the three was ever explained, because a tense had not been opened. They are one tense: vorrei, potrei, dovrei, sarebbe, verrei all end the same way, and the three words already in your mouth are the proof that the endings are learnable."
+    },
+    {
+      "tag": "delta",
+      "text": "THE ENDINGS, ONCE: io is -ei, tu is -esti, lui and lei are -ebbe. vorrei / vorresti / vorrebbe, potrei / potresti / potrebbe, dovrei / dovresti / dovrebbe. This module opens the tense on five verbs and no more — volere, potere, dovere, essere and venire — because five is what the sentences need. The rest of the verbs are L4's, and the endings above are what they will take."
+    },
+    {
+      "tag": "delta",
+      "text": "ONE COUNTERFACTUAL FRAME, AND IT IS BUILT FROM TWO PIECES: se avessi (a past form the course does not otherwise own) and then the condizionale. Se avessi tempo, verrei — I don't have the time, so I am not coming. Both halves move, and neither one is a plain present. The paradigm behind avessi is L4-M3's; this module owns the one cell and the one shape of sentence it builds."
+    },
+    {
+      "tag": "free",
+      "text": "WHAT YOU WILL ACTUALLY HEAR IS OFTEN SIMPLER, AND THAT IS NOT A MISTAKE TO HIDE. Spoken Italian very often puts the plain imperfetto in BOTH halves — Se avevo tempo, venivo — where the textbook wants se avessi tempo, verrei. It is ordinary, unremarkable speech, not slang and not an error to correct in someone. Write the first; recognise the second when it reaches you, because a course that denies what a learner hears stops being believed."
+    },
+    {
+      "tag": "delta",
+      "text": "ADVICE IS THE CONDIZIONALE, NOT AN ORDER. Dovresti parlare con il capo is what a friend says; Devi parlare con il capo is what a boss says, and English's \"you should\" hides the difference because it is one word either way. Potresti, sarebbe meglio and io al posto tuo do the same softening job, and none of them needs a mood or a new tense."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M4-S01",
+      "display": "Se piove, resto a casa",
+      "cue": "If it rains, I'm staying home",
+      "literal": "If it-rains, I-stay at home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "se",
+            "cue": "if",
+            "tag": "free",
+            "forms": [],
+            "note": "The bare if, kept free by L3-M3's anche se being one whole key. It behaves exactly as English's \"if\" — here in a condition, and in L3-M5 in a reported yes/no question."
+          },
+          {
+            "display": "resto",
+            "cue": "I stay",
+            "tag": "free",
+            "forms": [
+              "resti",
+              "resta",
+              "restare"
+            ],
+            "note": "A plain -are verb. The noun resto is the change a shop hands back, and the two are told apart by what stands in front of them."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "There is no trap here and saying so is the lesson. After L3-M3 a learner expects every conjunction to bend the verb; se plus the present does not, and neither does the half that follows it.",
+      "sound": "se PYO-ve, RES-to a KA-za. piove is two syllables, PYO-ve, with the i swallowed into the p.",
+      "variations": [
+        {
+          "display": "Se piove, non esco",
+          "cue": "If it rains, I'm not going out",
+          "changed": "the negative in the second half"
+        },
+        {
+          "display": "Se piove, resto in ufficio",
+          "cue": "If it rains, I'll stay at the office",
+          "changed": "where you stay"
+        },
+        {
+          "display": "Se non piove, andiamo al mare",
+          "cue": "If it doesn't rain, we're going to the sea",
+          "changed": "the condition negated, and a noi verb"
+        }
+      ],
+      "mistake": {
+        "display": "Se piove, io resto a casa mia",
+        "why": "The pronoun and the possessive are both spare here: Se piove, resto a casa."
+      },
+      "usage": "The most-said conditional there is, and it costs nothing new.",
+      "register": "neutral",
+      "mnemonic": "se + present = if + present. No trap."
+    },
+    {
+      "id": "L3-M4-S02",
+      "display": "Se domani ho tempo, andiamo al mare",
+      "cue": "If I have time tomorrow, we'll go to the sea",
+      "literal": "If tomorrow I-have time, we-go to-the sea",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tempo",
+            "cue": "time · weather",
+            "tag": "delta",
+            "forms": [],
+            "note": "One word for both: ho tempo is \"I have time\" and che tempo fa is \"what's the weather\". Context separates them and nothing else does."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "English cannot say \"if I have time tomorrow, we go to the sea\" — it needs \"we'll go\". Italian says the present and means the future, and this is the one place se differs from \"if\" at all.",
+      "sound": "se do-MA-nee o TEM-po. The h of ho is silent, so ho tempo runs together as o-TEM-po.",
+      "variations": [
+        {
+          "display": "Se domani ho tempo, vado al cinema",
+          "cue": "If I have time tomorrow, I'll go to the cinema",
+          "changed": "who goes, and where"
+        },
+        {
+          "display": "Se ho tempo, andiamo al mare domani",
+          "cue": "If I have time, we'll go to the sea tomorrow",
+          "changed": "when the tomorrow sits"
+        },
+        {
+          "display": "Se non ho tempo, resto a casa",
+          "cue": "If I don't have time, I'll stay home",
+          "changed": "the condition negated"
+        }
+      ],
+      "mistake": {
+        "display": "Se domani ho il tempo, andiamo al mare",
+        "why": "The phrase takes no article: Se domani ho tempo, andiamo al mare."
+      },
+      "usage": "Half-promising a day out, which is what most conditionals are for.",
+      "register": "neutral",
+      "mnemonic": "Italian says the present and means tomorrow."
+    },
+    {
+      "id": "L3-M4-S03",
+      "display": "Vorrei tornare presto, ma potrei restare",
+      "cue": "I'd like to go back early, but I could stay",
+      "literal": "I-would-want to-return early, but I-could to-stay",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "potrei",
+            "cue": "I could",
+            "tag": "delta",
+            "forms": [],
+            "note": "The io cell of the same tense as L2-M1's potresti and potrebbe. Same verb, same endings, one row apart: potrei, potresti, potrebbe."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "vorrei has been in your mouth since L1-M3 and was never explained, because there was no tense to explain it with. There is now: vorrei is to volere exactly what potrei is to potere, and neither is a polite word — both are one cell of the condizionale.",
+      "sound": "vor-RE-ee ma po-TRE-ee. Both end on a stressed è plus a light i, and the double r of vorrei is held.",
+      "variations": [
+        {
+          "display": "Vorrei tornare presto",
+          "cue": "I'd like to go back early",
+          "changed": "the frozen half on its own"
+        },
+        {
+          "display": "Potrei restare a casa",
+          "cue": "I could stay at home",
+          "changed": "the new cell on its own"
+        },
+        {
+          "display": "Vorrei restare, ma devo tornare",
+          "cue": "I'd like to stay, but I have to go back",
+          "changed": "the plain present in the second half"
+        }
+      ],
+      "mistake": {
+        "display": "Vorrei di tornare presto, ma potrei di restare",
+        "why": "A conditional takes the bare infinitive, exactly as a present modal does: Vorrei tornare presto, ma potrei restare."
+      },
+      "usage": "Saying what you want and what you might do instead, in one line.",
+      "register": "neutral",
+      "mnemonic": "vorrei and potrei are the same tense wearing different verbs."
+    },
+    {
+      "id": "L3-M4-S04",
+      "display": "Dovrei studiare, ma sono molto stanco",
+      "cue": "I should study, but I'm very tired",
+      "literal": "I-should to-study, but I-am very tired",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dovrei",
+            "cue": "I should",
+            "tag": "delta",
+            "forms": [],
+            "note": "The condizionale of L3-M2's devo, and a whole world softer. devo studiare is a duty; dovrei studiare is a duty you are admitting you will not do."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "English's \"should\" and \"have to\" are two different words, so the pair reads as two verbs. In Italian it is ONE verb in two tenses — devo and dovrei — and the softening is entirely in the ending.",
+      "sound": "do-VRE-ee stoo-DYA-re. dovrei loses the vowel devo has: it is do-VREI, never do-ve-REI.",
+      "variations": [
+        {
+          "display": "Dovrei studiare, ma non ho tempo",
+          "cue": "I should study, but I don't have time",
+          "changed": "the excuse"
+        },
+        {
+          "display": "Dovrei lavorare, ma sono stanco",
+          "cue": "I should work, but I'm tired",
+          "changed": "the duty"
+        },
+        {
+          "display": "Non dovrei uscire stasera",
+          "cue": "I shouldn't go out tonight",
+          "changed": "negated, with no second half"
+        }
+      ],
+      "mistake": {
+        "display": "Devo studiare, ma sono molto stanco",
+        "why": "That is a duty, not an admission. The soft one is the conditional: Dovrei studiare, ma sono molto stanco."
+      },
+      "usage": "The sentence everybody says to themselves in the evening.",
+      "register": "neutral",
+      "mnemonic": "devo is a duty. dovrei is a duty you are dodging."
+    },
+    {
+      "id": "L3-M4-S05",
+      "display": "Dovresti parlare con il capo domani",
+      "cue": "You should talk to the boss tomorrow",
+      "literal": "You-should to-talk with the boss tomorrow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dovresti",
+            "cue": "you should",
+            "tag": "delta",
+            "forms": [],
+            "note": "The tu cell, with the same -esti ending as L2-M1's potresti. It is advice between equals; devi in the same seat is an instruction."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "English says \"you should\" to a friend and to an employee alike. Italian does not: dovresti is a suggestion you may decline and devi is not, and choosing devi where a friend expected dovresti lands as an order.",
+      "sound": "do-VRES-tee. The stress is on the VRES, and the final i is short and clear.",
+      "variations": [
+        {
+          "display": "Potresti parlare con il capo domani?",
+          "cue": "Could you talk to the boss tomorrow?",
+          "changed": "L2-M1's cell, doing the same softening"
+        },
+        {
+          "display": "Dovresti tornare a casa presto",
+          "cue": "You should go back home early",
+          "changed": "the advice"
+        },
+        {
+          "display": "Non dovresti lavorare il sabato",
+          "cue": "You shouldn't work on Saturdays",
+          "changed": "negated advice"
+        }
+      ],
+      "mistake": {
+        "display": "Devi parlare con il capo domani",
+        "why": "That is an order. Advice to a friend is the conditional: Dovresti parlare con il capo domani."
+      },
+      "usage": "The everyday shape of advice, and the one an English speaker gets wrong by being too direct.",
+      "register": "neutral",
+      "mnemonic": "dovresti suggests. devi commands."
+    },
+    {
+      "id": "L3-M4-S06",
+      "display": "Io al posto tuo, vorrei restare a casa",
+      "cue": "If I were you, I'd want to stay home",
+      "literal": "I at-the place your, I-would-want to-stay at home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al posto tuo",
+            "cue": "if I were you · in your place",
+            "tag": "delta",
+            "forms": [],
+            "note": "ONE key of three words: \"in your place\". The possessive comes AFTER the noun here and takes no article of its own — never al tuo posto in this phrase."
+          }
+        ],
+        "rules": [
+          1,
+          5
+        ]
+      },
+      "trap": "English builds this out of a past tense — \"if I were you\" — and Italian builds it out of a noun. There is no verb inside al posto tuo at all, so nothing in it has to be conjugated; the conditional lands on the advice that follows.",
+      "sound": "ee-o al POS-to TOO-o. tuo is two syllables, TOO-o, and the io in front is fully sounded.",
+      "variations": [
+        {
+          "display": "Io al posto tuo, vorrei tornare a casa",
+          "cue": "If I were you, I'd want to go back home",
+          "changed": "the advice"
+        },
+        {
+          "display": "Al posto tuo, vorrei parlare con il capo",
+          "cue": "In your place, I'd want to talk to the boss",
+          "changed": "without the io in front"
+        },
+        {
+          "display": "Io al posto tuo, potrei restare qui",
+          "cue": "If I were you, I could stay here",
+          "changed": "a different conditional cell"
+        }
+      ],
+      "mistake": {
+        "display": "Io al tuo posto, vorrei restare a casa",
+        "why": "The phrase is fixed with the possessive last: Io al posto tuo, vorrei restare a casa."
+      },
+      "usage": "Advice given by standing in the other person's shoes rather than by telling them what to do.",
+      "register": "neutral",
+      "mnemonic": "al posto tuo — the possessive goes last."
+    },
+    {
+      "id": "L3-M4-S07",
+      "display": "Sarebbe meglio tornare a casa presto",
+      "cue": "It would be better to go back home early",
+      "literal": "It-would-be better to-return at home early",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sarebbe",
+            "cue": "it would be",
+            "tag": "delta",
+            "forms": [],
+            "note": "The lui/lei cell of essere in the condizionale, with the same -ebbe ending as potrebbe. Sarebbe meglio is the most-used piece of advice in the language."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "There is no it in the Italian. sarebbe carries the subject in its ending, so Sarebbe meglio is a whole sentence where English needs three words in front of \"better\" before it can start.",
+      "sound": "sa-REB-be MEL-yo. The double b is held, and the gli of meglio is the lli of million.",
+      "variations": [
+        {
+          "display": "Sarebbe meglio parlare con il capo",
+          "cue": "It would be better to talk to the boss",
+          "changed": "the advice"
+        },
+        {
+          "display": "Sarebbe bello tornare a Roma",
+          "cue": "It would be lovely to go back to Rome",
+          "changed": "a wish rather than advice"
+        },
+        {
+          "display": "Non sarebbe meglio restare a casa?",
+          "cue": "Wouldn't it be better to stay home?",
+          "changed": "asked rather than said"
+        }
+      ],
+      "mistake": {
+        "display": "Sarebbe meglio di tornare a casa presto",
+        "why": "No preposition before the infinitive: Sarebbe meglio tornare a casa presto."
+      },
+      "usage": "Advice with nobody named in it, which is the least confrontational shape there is.",
+      "register": "neutral",
+      "mnemonic": "Sarebbe meglio — two words, whole advice."
+    },
+    {
+      "id": "L3-M4-S08",
+      "display": "Se avessi tempo, verrei anche io",
+      "cue": "If I had time, I'd come too",
+      "literal": "If I-had time, I-would-come also I",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "avessi",
+            "cue": "I had (in an if)",
+            "tag": "delta",
+            "forms": [],
+            "note": "A past form that lives only after se, in the frame below. It says the opposite is true: se avessi tempo means the time is exactly what I do not have."
+          },
+          {
+            "display": "verrei",
+            "cue": "I would come",
+            "tag": "delta",
+            "forms": [],
+            "note": "The io conditional of venire, irregular in its stem and regular in its ending — verrei, verresti, verrebbe. The double r is held."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "Both halves move, and an English speaker moves only one. \"If I had time, I would come\" puts the change in the second half; Italian changes se avessi as well, and se ho tempo, verrei is neither the real condition nor the unreal one.",
+      "sound": "se a-VES-see TEM-po, ver-RE-ee. Both double consonants are held, and avessi ends on a clear ee.",
+      "variations": [
+        {
+          "display": "Se avessi tempo, verrei domani",
+          "cue": "If I had time, I'd come tomorrow",
+          "changed": "when"
+        },
+        {
+          "display": "Se avessi i soldi, verrei anche io",
+          "cue": "If I had the money, I'd come too",
+          "changed": "what is missing"
+        },
+        {
+          "display": "Se avessi tempo, verrei al mare",
+          "cue": "If I had time, I'd come to the sea",
+          "changed": "where"
+        }
+      ],
+      "mistake": {
+        "display": "Se ho tempo, verrei anche io",
+        "why": "An unreal condition moves both halves: Se avessi tempo, verrei anche io."
+      },
+      "usage": "Turning an invitation down while making clear you wanted to accept. Said out loud, though, Italians very often use the plain imperfetto in both halves — Se avevo tempo, venivo — and it is ordinary speech, not a slip: write the frame above, and expect to hear that one.",
+      "register": "neutral",
+      "mnemonic": "Unreal: se avessi … verrei. Both halves move."
+    },
+    {
+      "id": "L3-M4-S09",
+      "display": "Se ho i soldi, vado a Roma domani",
+      "cue": "If I have the money, I'll go to Rome tomorrow",
+      "literal": "If I-have the money, I-go to Rome tomorrow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "soldi",
+            "cue": "money",
+            "tag": "delta",
+            "forms": [],
+            "note": "Plural in Italian where English is singular: i soldi, never il soldo in this sense. Everything around it agrees in the plural too."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "soldi is plural and \"money\" is not, so English pulls a singular verb and a singular article after it. Ho i soldi, and the article is there in Italian where English has none.",
+      "sound": "se o ee SOL-dee. ho i runs as one long o-ee, because the h is silent.",
+      "variations": [
+        {
+          "display": "Se ho i soldi, vado al mare",
+          "cue": "If I have the money, I'll go to the sea",
+          "changed": "where"
+        },
+        {
+          "display": "Se non ho i soldi, resto a casa",
+          "cue": "If I don't have the money, I'll stay home",
+          "changed": "the condition negated"
+        },
+        {
+          "display": "Se hai i soldi, andiamo a Roma",
+          "cue": "If you have the money, we'll go to Rome",
+          "changed": "who has it"
+        }
+      ],
+      "mistake": {
+        "display": "Se ho soldo, vado a Roma domani",
+        "why": "Money is plural and takes its article: Se ho i soldi, vado a Roma domani."
+      },
+      "usage": "The real condition against S08's unreal one — this one might actually happen.",
+      "register": "neutral",
+      "mnemonic": "i soldi — plural, with its article."
+    },
+    {
+      "id": "L3-M4-S10",
+      "display": "Se hai un problema, dovresti chiamare subito",
+      "cue": "If you have a problem, you should call right away",
+      "literal": "If you-have a problem, you-should to-call immediately",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "subito",
+            "cue": "right away · immediately",
+            "tag": "interference",
+            "forms": [],
+            "note": "Stressed on the FIRST syllable, SOO-bee-to, and it has nothing to do with English \"subtle\" or with anything sudden. It means now, not soon."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "The two halves of this module meet here and neither one changes the other: se plus a plain present on the left, the conditional of advice on the right. A condition does not make advice unreal, and advice does not bend the condition.",
+      "sound": "SOO-bee-to. First syllable stressed; a learner who says soo-BEE-to will be understood and heard as a foreigner.",
+      "variations": [
+        {
+          "display": "Se hai un problema, dovresti chiamare",
+          "cue": "If you have a problem, you should call",
+          "changed": "without the subito"
+        },
+        {
+          "display": "Dovresti chiamare subito il capo",
+          "cue": "You should call the boss right away",
+          "changed": "who to call, and no condition"
+        },
+        {
+          "display": "Se hai un problema, potresti chiamare subito",
+          "cue": "If you have a problem, you could call right away",
+          "changed": "the softer of the two conditionals"
+        }
+      ],
+      "mistake": {
+        "display": "Se hai un problema, devi chiamare subito",
+        "why": "Advice, not an order: Se hai un problema, dovresti chiamare subito."
+      },
+      "usage": "The whole module in one line — a real condition and a piece of advice.",
+      "register": "neutral",
+      "mnemonic": "SOO-bee-to means now."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M4-C01",
+      "display": "Se piove, resto a casa",
+      "cue": "If it rains, I'm staying home"
+    },
+    {
+      "id": "L3-M4-C02",
+      "display": "Se domani ho tempo, andiamo al mare",
+      "cue": "If I have time tomorrow, we'll go to the sea"
+    },
+    {
+      "id": "L3-M4-C03",
+      "display": "Vorrei tornare presto, ma potrei restare",
+      "cue": "I'd like to go back early, but I could stay"
+    },
+    {
+      "id": "L3-M4-C04",
+      "display": "Dovrei studiare, ma sono molto stanco",
+      "cue": "I should study, but I'm very tired"
+    },
+    {
+      "id": "L3-M4-C05",
+      "display": "Dovresti parlare con il capo domani",
+      "cue": "You should talk to the boss tomorrow"
+    },
+    {
+      "id": "L3-M4-C06",
+      "display": "Io al posto tuo, vorrei restare a casa",
+      "cue": "If I were you, I'd want to stay home"
+    },
+    {
+      "id": "L3-M4-C07",
+      "display": "Sarebbe meglio tornare a casa presto",
+      "cue": "It would be better to go back home early"
+    },
+    {
+      "id": "L3-M4-C08",
+      "display": "Se avessi tempo, verrei anche io",
+      "cue": "If I had time, I'd come too"
+    },
+    {
+      "id": "L3-M4-C09",
+      "display": "Se ho i soldi, vado a Roma domani",
+      "cue": "If I have the money, I'll go to Rome tomorrow"
+    },
+    {
+      "id": "L3-M4-C10",
+      "display": "Se hai un problema, dovresti chiamare subito",
+      "cue": "If you have a problem, you should call right away"
+    },
+    {
+      "id": "L3-M4-C11",
+      "display": "Sarebbe meglio restare a casa oggi",
+      "cue": "It would be better to stay home today"
+    },
+    {
+      "id": "L3-M4-C12",
+      "display": "Se avessi i soldi, vorrei una macchina",
+      "cue": "If I had the money, I'd want a car"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

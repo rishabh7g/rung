@@ -3,14 +3,22 @@
   "id": "L3-M4",
   "title": "If and then",
   "job": "Conditions, wishes, advice",
-  "prerequisites": ["L3-M1", "L3-M2", "L3-M3"],
+  "prerequisites": [
+    "L3-M1",
+    "L3-M2",
+    "L3-M3"
+  ],
   "verified": true,
   "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-09-07",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 11,
-    "allowedTenses": ["simple_present", "future", "simple_past"],
+    "allowedTenses": [
+      "simple_present",
+      "future",
+      "simple_past"
+    ],
     "allowedPatterns": [
       "जर + clause + तर + clause",
       "clause + तर + clause",
@@ -72,7 +80,9 @@
             "note": "\"Rain\" — masculine, and it COMES rather than falls: पाऊस आला, पाऊस येईल. Hindi says बारिश हुई; Marathi uses येणे."
           }
         ],
-        "rules": [0]
+        "rules": [
+          0
+        ]
       },
       "trap": "मराठी में बारिश 'होती' नहीं, आती है — पाऊस आला. और पाऊस पुल्लिंग है, इसलिए आला, आली नहीं.",
       "sound": "पाऊस = पा‑ऊस, दो साफ़ स्वर; जर और तर दोनों छोटे और हल्के.",
@@ -115,11 +125,15 @@
             "display": "असेल",
             "cue": "होगा",
             "tag": "delta",
-            "forms": ["असेल"],
+            "forms": [
+              "असेल"
+            ],
             "note": "The future of आहे — \"will be\". A condition about tomorrow takes it: जर वेळ असेल तर…, where the present आहे would mean right now."
           }
         ],
-        "rules": [0]
+        "rules": [
+          0
+        ]
       },
       "trap": "'मेरे पास वक़्त है' मराठी में मला वेळ आहे है — पास वाला ढाँचा नहीं. यह वही मला फ़्रेम है जो भूक, कंटाळा और वाटतं के साथ चला आ रहा है.",
       "sound": "वेळ = वेळ, आख़िर में मराठी ळ. असेल = अ‑सेल.",
@@ -155,7 +169,9 @@
             "display": "जायला",
             "cue": "जाना",
             "tag": "delta",
-            "forms": ["जायला", "उठायला", "वाचायला"],
+            "forms": [
+              "जायला"
+            ],
             "note": "जाणे with L2-M5's -आयला ending. Before पाहिजे it stops meaning \"in order to go\" and becomes simply \"to go\"."
           },
           {
@@ -163,10 +179,12 @@
             "cue": "चाहिए",
             "tag": "delta",
             "forms": [],
-            "note": "\"Should / must\", and it never changes — not for person, not for gender, not for number. Hindi's चाहिए behaves the same way."
+            "note": "\"Should / must\", and it never changes — not for person, gender or number, exactly like Hindi's चाहिए. It also does WANTING, where it is a little firmer than L1-M3's हवं."
           }
         ],
-        "rules": [1]
+        "rules": [
+          1
+        ]
       },
       "trap": "हिंदी 'जाना चाहिए' में क्रिया नंगी रहती है; मराठी उसे -आयला पहनाती है. यही ending L2-M5 में मक़सद बताता था — यहाँ वह सलाह का हिस्सा है.",
       "sound": "पाहिजे = पा‑हि‑जे, तीनों साफ़; बीच का 'हि' निगलो मत.",
@@ -202,11 +220,15 @@
             "display": "उठायला",
             "cue": "उठना",
             "tag": "delta",
-            "forms": ["उठायला"],
+            "forms": [
+              "उठायला"
+            ],
             "note": "उठणे with the same -आयला. Every verb makes this shape the same way — उठायला, वाचायला, करायला, जायला."
           }
         ],
-        "rules": [1]
+        "rules": [
+          1
+        ]
       },
       "trap": "यह सलाह अपने आप को भी दी जा सकती है — मला … पाहिजे. फ़्रेम वही मला वाली है जो पसंद, ज़रूरत और राय के साथ चलती आई है.",
       "sound": "उठायला = उ‑ठा‑य‑ला, चार हल्के हिस्से.",
@@ -242,18 +264,29 @@
             "display": "असतो",
             "cue": "होता",
             "tag": "delta",
-            "forms": ["असतो", "असती", "असतं", "असता", "असते"],
+            "forms": [
+              "असतो",
+              "असती",
+              "असतं",
+              "असते"
+            ],
             "note": "The counterfactual helper: a past form plus असतो says what would have happened. Both halves of the sentence take it."
           },
           {
             "display": "त्याला",
             "cue": "उसको",
             "tag": "delta",
-            "forms": ["त्याला", "तिला", "त्यांना"],
+            "forms": [
+              "त्याला",
+              "तिला",
+              "त्यांना"
+            ],
             "note": "तो in the -ला frame — the shape भेटणे needs for the person met (L2-M10's मित्राला, now a pronoun)."
           }
         ],
-        "rules": [3]
+        "rules": [
+          3
+        ]
       },
       "trap": "यह वह बात है जो हुई ही नहीं. दोनों आधे हिस्सों में असतो लगता है — हिंदी 'गया होता … मिला होता' की तरह, और वहाँ भी दोनों जगह लगता है.",
       "sound": "असतो = अ‑स‑तो; गेलो असतो को एक साँस में मत जोड़ो, दो शब्द रहते हैं.",
@@ -289,11 +322,16 @@
             "display": "असता",
             "cue": "होता",
             "tag": "delta",
-            "forms": ["असतो", "असती", "असतं", "असता", "असते"],
+            "forms": [
+              "असता"
+            ],
             "note": "The same helper in the condition half, agreeing with वेळ (masculine). S05 showed it in the result half; a full counterfactual carries both."
           }
         ],
-        "rules": [3, 0]
+        "rules": [
+          3,
+          0
+        ]
       },
       "trap": "असेल (S02) आने वाले कल की बात है; असता उस कल की जो आया ही नहीं. एक अक्षर का फ़र्क़, और पूरा समय बदल जाता है.",
       "sound": "असता = अ‑स‑ता; असेल से सिर्फ़ आख़िरी हिस्से का फ़र्क़.",
@@ -330,10 +368,12 @@
             "cue": "चाहिए",
             "tag": "free",
             "forms": [],
-            "note": "The same पाहिजे as S03, doing its other job: wanting. It overlaps हवं (L1-M3) — पाहिजे is a little firmer, हवं a little softer."
+            "note": "\"Should / must\", and it never changes — not for person, gender or number, exactly like Hindi's चाहिए. It also does WANTING, where it is a little firmer than L1-M3's हवं."
           }
         ],
-        "rules": [2]
+        "rules": [
+          2
+        ]
       },
       "trap": "पाहिजे और हवं दोनों 'चाहिए' हैं. फ़र्क़ सुर का है: दुकान में हवं नरम है, और पाहिजे थोड़ा सीधा — बड़ों से हवं ही बेहतर.",
       "sound": "पाहिजे यहाँ वैसा ही बोला जाता है; सवाल का सुर काय पर उठता है.",
@@ -369,11 +409,17 @@
             "display": "जमलं",
             "cue": "हो पाया",
             "tag": "delta",
-            "forms": ["जमेल", "जमणार", "जमलं"],
+            "forms": [
+              "जमेल",
+              "जमणार",
+              "जमलं"
+            ],
             "note": "जमणे's past-shaped cell, which is what a condition takes: जर जमलं तर…. L2-M6 taught जमेल for the question and जमणार नाही for the refusal."
           }
         ],
-        "rules": [0]
+        "rules": [
+          0
+        ]
       },
       "trap": "शर्त वाले आधे हिस्से में मराठी अक्सर भूतकाल जैसा रूप रखती है, चाहे बात आगे की हो — पाऊस आला तर, जमलं तर. हिंदी भी यही करती है: 'हो पाया तो'.",
       "sound": "जमलं = ज‑मलं, आख़िर नाक से हल्का.",
@@ -423,11 +469,17 @@
             "display": "होईल",
             "cue": "हो जाएगी",
             "tag": "delta",
-            "forms": ["होईल", "होतो", "होता"],
+            "forms": [
+              "होईल",
+              "होतो",
+              "होता"
+            ],
             "note": "The future of होणे — \"will happen / will become\". उशीर होईल is the everyday \"it'll get late\"."
           }
         ],
-        "rules": [4]
+        "rules": [
+          4
+        ]
       },
       "trap": "हिंदी की 'देर' स्त्रीलिंग है, मराठी का उशीर पुल्लिंग — इसलिए 'देर हो जाएगी' यहाँ उशीर होईल है, कोई स्त्रीलिंग रूप नहीं.",
       "sound": "नाहीतर = ना‑ही‑तर, एक शब्द की तरह; उशीर = उ‑शीर.",
@@ -463,11 +515,15 @@
             "display": "वाचायला",
             "cue": "पढ़ना",
             "tag": "delta",
-            "forms": ["वाचायला"],
+            "forms": [
+              "वाचायला"
+            ],
             "note": "वाचणे with the same -आयला ending — the third verb in this module to take it, which is the point: every verb makes it the same way."
           }
         ],
-        "rules": [1]
+        "rules": [
+          1
+        ]
       },
       "trap": "सलाह देते वक़्त तुम्ही वाला रूप ही सुरक्षित है. तुला … पाहिजे दोस्त के लिए है; बड़ों या अजनबी को तुम्ही, और सुर नरम.",
       "sound": "वाचायला = वा‑चा‑य‑ला; जायला और उठायला जैसा ही ढाँचा.",
@@ -503,7 +559,11 @@
       "display": "जर मला वेळ असेल तर मी येईन",
       "cue": "अगर मेरे पास वक़्त होगा तो मैं आऊँगा"
     },
-    { "id": "L3-M4-C03", "display": "तुम्ही आता जायला पाहिजे", "cue": "आपको अब जाना चाहिए" },
+    {
+      "id": "L3-M4-C03",
+      "display": "तुम्ही आता जायला पाहिजे",
+      "cue": "आपको अब जाना चाहिए"
+    },
     {
       "id": "L3-M4-C04",
       "display": "मला उद्या लवकर उठायला पाहिजे",
@@ -519,16 +579,39 @@
       "display": "जर मला वेळ असता तर मी आलो असतो",
       "cue": "अगर मेरे पास वक़्त होता तो मैं आया होता"
     },
-    { "id": "L3-M4-C07", "display": "तुला काय पाहिजे?", "cue": "तुझे क्या चाहिए?" },
-    { "id": "L3-M4-C08", "display": "जर तुला जमलं तर मला सांग", "cue": "अगर तुझसे हो पाए तो मुझे बता" },
-    { "id": "L3-M4-C09", "display": "लवकर जा, नाहीतर उशीर होईल", "cue": "जल्दी जा, नहीं तो देर हो जाएगी" },
+    {
+      "id": "L3-M4-C07",
+      "display": "तुला काय पाहिजे?",
+      "cue": "तुझे क्या चाहिए?"
+    },
+    {
+      "id": "L3-M4-C08",
+      "display": "जर तुला जमलं तर मला सांग",
+      "cue": "अगर तुझसे हो पाए तो मुझे बता"
+    },
+    {
+      "id": "L3-M4-C09",
+      "display": "लवकर जा, नाहीतर उशीर होईल",
+      "cue": "जल्दी जा, नहीं तो देर हो जाएगी"
+    },
     {
       "id": "L3-M4-C10",
       "display": "तुम्ही रोज थोडं वाचायला पाहिजे",
       "cue": "आपको रोज़ थोड़ा पढ़ना चाहिए"
     },
-    { "id": "L3-M4-C11", "display": "तुम्हाला काय पाहिजे?", "cue": "आपको क्या चाहिए?" },
-    { "id": "L3-M4-C12", "display": "मला आज वेळ आहे", "cue": "मेरे पास आज वक़्त है" }
+    {
+      "id": "L3-M4-C11",
+      "display": "तुम्हाला काय पाहिजे?",
+      "cue": "आपको क्या चाहिए?"
+    },
+    {
+      "id": "L3-M4-C12",
+      "display": "मला आज वेळ आहे",
+      "cue": "मेरे पास आज वक़्त है"
+    }
   ],
-  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
 }

@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M3",
+  "title": "Opinions with reasons",
+  "job": "Agree, disagree, soften — reasons attached",
+  "prerequisites": [
+    "L3-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present",
+      "present subjunctive"
+    ],
+    "allowedPatterns": [
+      "Creo que + <indicative>",
+      "No creo que + <subjunctive>",
+      "Me parece que + <clause>",
+      "No es tan + Adj + como + <N>",
+      "Estoy de acuerdo + , + aunque + <clause>",
+      "La verdad es que + <clause>",
+      "No sé si + <clause>",
+      "Depende de + <N>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "creo que takes the INDICATIVE and no creo que takes the SUBJUNCTIVE: creo que es fácil, no creo que sea fácil. English keeps one shape for both — \"I think it is\" and \"I don't think it is\" — so the negative is where an English speaker writes the wrong verb, every time, without anything in the sentence warning them."
+    },
+    {
+      "tag": "delta",
+      "text": "Four cells and no more: sea (ser), tenga (tener), pueda (poder), vaya (ir). Each is built off the yo form of the indicative — tengo → tenga, puedo → pueda — except sea and vaya, which are learnt whole. One cell covers yo and él/ella both, so no creo que sea fácil takes its subject from the conversation. The mood as a system, and every other trigger, is a later level's."
+    },
+    {
+      "tag": "delta",
+      "text": "Spanish softens an opinion with the FRAME, not with the claim: me parece que, la verdad es que, no sé si. None of them weakens what follows; they place it. An English speaker who softens the claim itself — \"it might be a little bit wrong\" — sounds evasive in Spanish rather than polite, because the hedging lands on the fact instead of on the speaker."
+    },
+    {
+      "tag": "delta",
+      "text": "An equal comparison is written tan + adjective + como, one piece with a gap in the middle: tan difícil como el otro. The como that closes it is part of the frame; it is not L1-M4's como, \"I eat\", and it is not the que that más and menos take."
+    },
+    {
+      "tag": "delta",
+      "text": "aunque joins a concession to a claim and here it takes the INDICATIVE, because what it concedes is a fact: estoy de acuerdo, aunque es caro. It works at either end of the sentence. The subjunctive after aunque — the \"even if\" reading, about something not yet true — is a later level's."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M3-S01",
+      "display": "Creo que es fácil. No creo que sea fácil.",
+      "cue": "I think it's easy. I don't think it's easy.",
+      "literal": "I-believe that is easy. Not I-believe that be easy.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sea",
+            "cue": "(that) it is · (that) I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "The subjunctive of ser — the shape no creo que forces. One cell covers yo and él/ella both, so no creo que sea fácil takes its subject from the conversation."
+          },
+          {
+            "display": "fácil",
+            "cue": "easy",
+            "tag": "free",
+            "forms": [
+              "fácil",
+              "fáciles"
+            ],
+            "note": "One ending for both genders, like grande: un examen fácil, una hermana fácil de entender. The plural adds -es and the accent stays where it was: fáciles."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The English is the same sentence twice with a not in it. The Spanish is not: negating the believing reaches all the way into the second verb and changes its shape.",
+      "sound": "FA-sil, stressed on the first syllable, which is exactly what the accent mark is there to say. SE-a is two syllables and both vowels are said.",
+      "variations": [
+        {
+          "display": "Creo que es difícil.",
+          "cue": "I think it's hard.",
+          "changed": "the adjective, with the indicative untouched"
+        },
+        {
+          "display": "No creo que sea difícil.",
+          "cue": "I don't think it's hard.",
+          "changed": "the same swap on the negative side, where sea stays"
+        }
+      ],
+      "mistake": {
+        "display": "No creo que es fácil.",
+        "why": "no creo que forces the subjunctive: no creo que sea fácil. es is the shape creo que would have taken, and it is the first thing an English speaker writes."
+      },
+      "usage": "The module's whole grammar in one item, and the pair to say out loud until the second half stops feeling like an extra step.",
+      "register": "neutral",
+      "mnemonic": "Doubt it and the verb changes."
+    },
+    {
+      "id": "L3-M3-S02",
+      "display": "Mi jefe cree que tiene tiempo. No creo que tenga tiempo.",
+      "cue": "My boss thinks he has time. I don't think he has time.",
+      "literal": "My boss believes that has time. Not I-believe that have time.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tenga",
+            "cue": "(that) he has · (that) I have",
+            "tag": "delta",
+            "forms": [],
+            "note": "The subjunctive of tener, built off the yo form tengo rather than off the infinitive — which is where the g comes from: tengo, tenga."
+          },
+          {
+            "display": "tiempo",
+            "cue": "time",
+            "tag": "free",
+            "forms": [],
+            "note": "Time as an amount of it: tengo tiempo, no tengo tiempo. The hour on a clock is L1-M4's hora, and the two never swap places."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "cree que and no creo que sit in one item on purpose. Somebody else's belief is still a belief, so it keeps the indicative; only the negation flips the mood.",
+      "sound": "TEN-ga, with a hard g as in \"go\" — the e in front of it never softens it. TIEM-po in two syllables, the ie said as one glide.",
+      "variations": [
+        {
+          "display": "No creo que tenga hambre.",
+          "cue": "I don't think he's hungry.",
+          "changed": "what is not had"
+        },
+        {
+          "display": "Creo que tiene un problema.",
+          "cue": "I think he has a problem.",
+          "changed": "back to the indicative, with a new object"
+        }
+      ],
+      "mistake": {
+        "display": "No creo que tiene tiempo.",
+        "why": "The negated belief reaches the second verb: no creo que tenga tiempo. tiene is correct only under creo que, four words earlier in this same item."
+      },
+      "usage": "Disagreeing with somebody who is not in the room, which is most of what an opinion frame is for at work.",
+      "register": "neutral",
+      "mnemonic": "tengo gives tenga its g."
+    },
+    {
+      "id": "L3-M3-S03",
+      "display": "Me parece que puede ayudar. No creo que pueda hoy.",
+      "cue": "It seems to me he can help. I don't think he can today.",
+      "literal": "To-me seems that can to-help. Not I-believe that can today.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "me parece",
+            "cue": "it seems to me · I think",
+            "tag": "delta",
+            "forms": [
+              "me parece",
+              "parece"
+            ],
+            "note": "The softest of the opinion frames, and a positive one: it takes the indicative exactly as creo que does. It places the claim as yours rather than weakening it."
+          },
+          {
+            "display": "pueda",
+            "cue": "(that) he can · (that) I can",
+            "tag": "delta",
+            "forms": [],
+            "note": "The subjunctive of poder, built off the yo form puedo: puedo, pueda. L2-M1's puede is the indicative and nothing about it changes here."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "Softening in Spanish is a frame in front of the claim. me parece que does not make the helping less likely; it makes the sentence an opinion instead of a report.",
+      "sound": "me pa-RE-se, four quick syllables and no pause after me. PUE-da, the ue said as one glide.",
+      "variations": [
+        {
+          "display": "Me parece que es interesante.",
+          "cue": "I think it's interesting.",
+          "changed": "the frame over an opinion instead of an ability"
+        },
+        {
+          "display": "No creo que pueda ayudar.",
+          "cue": "I don't think he can help.",
+          "changed": "the subjunctive half given its verb back"
+        }
+      ],
+      "mistake": {
+        "display": "Me parece que sea interesante.",
+        "why": "me parece que is a positive frame and takes the indicative: me parece que es interesante. Only a negated belief flips the mood, and this module is where that over-correction is learnt."
+      },
+      "usage": "The frame to reach for when you are giving an opinion to somebody who did not ask for one.",
+      "register": "neutral",
+      "mnemonic": "me parece places it; it does not weaken it."
+    },
+    {
+      "id": "L3-M3-S04",
+      "display": "Creo que vamos al cine. No creo que vaya hoy.",
+      "cue": "I think we're going to the cinema. I don't think I'll go today.",
+      "literal": "I-believe that we-go to-the cinema. Not I-believe that go today.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vaya",
+            "cue": "(that) I go · (that) he goes",
+            "tag": "delta",
+            "forms": [],
+            "note": "The subjunctive of ir. It looks nothing like voy, vas or vamos, so it is learnt whole rather than built — and one cell covers yo and él/ella."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "vaya is the one cell of the four with no visible parent. voy gives nothing away, which is why the module puts it beside vamos in the same breath.",
+      "sound": "BA-ya, with the v said as a soft b and the ll-sound of the y — the same sound as in yo.",
+      "variations": [
+        {
+          "display": "No creo que vaya al cine.",
+          "cue": "I don't think I'll go to the cinema.",
+          "changed": "the destination restored"
+        },
+        {
+          "display": "Creo que vamos el sábado.",
+          "cue": "I think we're going on Saturday.",
+          "changed": "the day instead of the place"
+        }
+      ],
+      "mistake": {
+        "display": "No creo que voy al cine.",
+        "why": "voy is the indicative and the frame forces vaya: no creo que vaya al cine. Nothing in voy hints at the shape, which is why this one has to be memorised."
+      },
+      "usage": "Backing out of a plan without saying no. The negative belief is the softening, and Spanish hears it as one.",
+      "register": "informal",
+      "mnemonic": "voy tells you nothing; vaya is learnt whole."
+    },
+    {
+      "id": "L3-M3-S05",
+      "display": "Este libro no es tan difícil como el otro.",
+      "cue": "This book isn't as hard as the other one.",
+      "literal": "This book not is so hard as the other.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tan",
+            "cue": "as · so",
+            "tag": "delta",
+            "forms": [
+              "tan",
+              "tan difícil como",
+              "tan fácil como",
+              "tan caro como"
+            ],
+            "note": "as … as, written around the adjective: tan difícil como el otro. The como that closes it belongs to this frame, not to L1-M4's como, \"I eat\"."
+          },
+          {
+            "display": "difícil",
+            "cue": "hard · difficult",
+            "tag": "free",
+            "forms": [
+              "difícil",
+              "difíciles"
+            ],
+            "note": "One ending for both genders, and the accent stays put in the plural: difíciles. Built exactly like fácil, and its opposite."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "L2-M9 bought más difícil que and menos difícil que. An EQUAL comparison drops que entirely and closes with como instead, and the two frames never mix.",
+      "sound": "tan is one flat syllable with no English \"tahn\" drawl. di-FI-sil, stressed in the middle, where the accent mark says.",
+      "variations": [
+        {
+          "display": "Este libro no es tan caro como el otro.",
+          "cue": "This book isn't as expensive as the other one.",
+          "changed": "the adjective changed inside the frame"
+        },
+        {
+          "display": "No es tan fácil como parece.",
+          "cue": "It's not as easy as it looks.",
+          "changed": "the comparison made against how it seems"
+        }
+      ],
+      "mistake": {
+        "display": "Este libro no es tan difícil que el otro.",
+        "why": "Only como closes tan: tan difícil como el otro. que is what English's \"than\" pulls in, and it belongs to L2-M9's más and menos instead."
+      },
+      "usage": "The polite way to disagree about anything with a price or a difficulty on it — you rank rather than reject.",
+      "register": "neutral",
+      "mnemonic": "tan opens it, como closes it."
+    },
+    {
+      "id": "L3-M3-S06",
+      "display": "Estoy de acuerdo contigo. No estoy de acuerdo con tu jefe.",
+      "cue": "I agree with you. I don't agree with your boss.",
+      "literal": "I-am of accord with-you. Not I-am of accord with your boss.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "estoy de acuerdo",
+            "cue": "I agree",
+            "tag": "interference",
+            "forms": [
+              "estoy de acuerdo",
+              "de acuerdo"
+            ],
+            "note": "Agreement is a position you are standing in, not something you do: estoy de acuerdo. There is no verb \"to agree\" to reach for, and de acuerdo alone answers a question."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "English has a verb here and Spanish has a place. Nothing in estoy de acuerdo is optional — dropping the de, or swapping estoy for soy, breaks it.",
+      "sound": "es-TOY de a-KUER-do, said as one run with no stop before de. The final o is short.",
+      "variations": [
+        {
+          "display": "No estoy de acuerdo.",
+          "cue": "I don't agree.",
+          "changed": "the negative standing on its own"
+        },
+        {
+          "display": "Estoy de acuerdo con mi hermana.",
+          "cue": "I agree with my sister.",
+          "changed": "who is agreed with"
+        }
+      ],
+      "mistake": {
+        "display": "Soy de acuerdo contigo.",
+        "why": "It is a position, so it takes estar: estoy de acuerdo contigo. soy would make agreeing part of who you are rather than where you stand today."
+      },
+      "usage": "Said in full when it matters and clipped to de acuerdo when it does not — the short form is the everyday one.",
+      "register": "neutral",
+      "mnemonic": "You STAND in agreement, so estar."
+    },
+    {
+      "id": "L3-M3-S07",
+      "display": "Estoy de acuerdo, aunque el libro es un poco caro.",
+      "cue": "I agree, although the book is a bit expensive.",
+      "literal": "I-am of accord, although the book is a little expensive.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aunque",
+            "cue": "although · even though",
+            "tag": "delta",
+            "forms": [],
+            "note": "Joins a concession to a claim, at either end of the sentence: aunque es caro, estoy de acuerdo. Here it takes the indicative, because what it concedes is a fact."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "aunque is one word doing what English does with two, and the sentence needs no comma the way English wants one. Both orders are ordinary.",
+      "sound": "AUN-ke, with au said as one glide and the que a clean ke — no w sound anywhere in it.",
+      "variations": [
+        {
+          "display": "No estoy de acuerdo, aunque es interesante.",
+          "cue": "I don't agree, although it's interesting.",
+          "changed": "the concession attached to a disagreement"
+        },
+        {
+          "display": "Aunque es caro, creo que es bueno.",
+          "cue": "Although it's expensive, I think it's good.",
+          "changed": "the concession moved to the front"
+        }
+      ],
+      "mistake": {
+        "display": "Estoy de acuerdo, aunque sea un poco caro.",
+        "why": "At this level aunque takes the indicative for something that is true: aunque es un poco caro. The subjunctive there says \"even if\", about something not yet settled, and it is a later level's."
+      },
+      "usage": "The whole shape of a reasoned opinion: the position first, the reservation attached, nothing withdrawn.",
+      "register": "neutral",
+      "mnemonic": "aunque concedes a fact, so the fact stays indicative."
+    },
+    {
+      "id": "L3-M3-S08",
+      "display": "Depende de mi horario. No creo que pueda ir el sábado.",
+      "cue": "It depends on my hours. I don't think I can go on Saturday.",
+      "literal": "Depends of my timetable. Not I-believe that can to-go the Saturday.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "depende",
+            "cue": "it depends",
+            "tag": "interference",
+            "forms": [],
+            "note": "A whole answer on its own, as English's \"it depends\" is. What it depends on always takes de: depende de mi horario, never depende en."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "English says \"depends on\" and the on is what an English speaker translates. Spanish reaches for de, and en there is audibly wrong rather than merely odd.",
+      "sound": "de-PEN-de, stressed in the middle, and the two de sounds around it are identical.",
+      "variations": [
+        {
+          "display": "Depende de ti.",
+          "cue": "It's up to you.",
+          "changed": "what it depends on made a person"
+        },
+        {
+          "display": "Depende de mi jefe.",
+          "cue": "It depends on my boss.",
+          "changed": "who decides it"
+        }
+      ],
+      "mistake": {
+        "display": "Depende en mi horario.",
+        "why": "depende takes de and only de: depende de mi horario. English's \"depends on\" is what puts en there, and it is the commonest error in the frame."
+      },
+      "usage": "The half-answer everybody gives before committing to a weekend. It softens by deferring rather than by hedging.",
+      "register": "neutral",
+      "mnemonic": "depende DE, never en."
+    },
+    {
+      "id": "L3-M3-S09",
+      "display": "La verdad es que no sé si es tan fácil.",
+      "cue": "The truth is I don't know if it's that easy.",
+      "literal": "The truth is that not I-know if is so easy.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "verdad",
+            "cue": "truth",
+            "tag": "free",
+            "forms": [
+              "verdad",
+              "verdades"
+            ],
+            "note": "la verdad es que opens a claim you are willing to own. It softens by framing the speaker, not by weakening what comes after it."
+          },
+          {
+            "display": "no sé si",
+            "cue": "I don't know whether",
+            "tag": "interference",
+            "forms": [],
+            "note": "The si inside is \"whether\", and it is not L1-M2's sí, \"yes\" — accents are letters. Taught whole here; the bare si earns its own row in the next module."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "si and sí are one keystroke apart and mean opposite things. No sé sí is not a typo a reader repairs; it is a different word in the sentence.",
+      "sound": "la ver-DA es ke, with the final d of verdad barely said at all — closer to a soft th than to an English d.",
+      "variations": [
+        {
+          "display": "No sé si puedo ir.",
+          "cue": "I don't know if I can go.",
+          "changed": "the frame over a plan instead of an opinion"
+        },
+        {
+          "display": "La verdad es que estoy cansado.",
+          "cue": "The truth is I'm tired.",
+          "changed": "the truth frame over a feeling"
+        }
+      ],
+      "mistake": {
+        "display": "No sé sí es tan fácil.",
+        "why": "The whether-si carries no accent: no sé si es tan fácil. sí with one is L1-M2's yes, and writing it turns the doubt into an agreement."
+      },
+      "usage": "How a Spanish speaker disagrees with a room. la verdad es que announces that the next thing is honest rather than that it is harsh.",
+      "register": "neutral",
+      "mnemonic": "si asks, sí answers."
+    },
+    {
+      "id": "L3-M3-S10",
+      "display": "Me parece interesante, aunque no creo que sea fácil.",
+      "cue": "It seems interesting to me, although I don't think it's easy.",
+      "literal": "To-me seems interesting, although not I-believe that be easy.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "interesante",
+            "cue": "interesting",
+            "tag": "free",
+            "forms": [
+              "interesante",
+              "interesantes"
+            ],
+            "note": "One ending for both genders: un libro interesante, una película interesante. It reads exactly as English reads it, and the plural is interesantes."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2,
+          4
+        ]
+      },
+      "trap": "me parece takes an adjective with nothing between them. The que only arrives when a whole clause follows, and this item has one of each.",
+      "sound": "in-te-re-SAN-te, five syllables and the stress late — nothing like the English word's front-loaded shape.",
+      "variations": [
+        {
+          "display": "Me parece interesante.",
+          "cue": "It seems interesting to me.",
+          "changed": "the concession dropped"
+        },
+        {
+          "display": "Creo que es interesante, aunque es difícil.",
+          "cue": "I think it's interesting, although it's hard.",
+          "changed": "creo que back in the indicative on both halves"
+        }
+      ],
+      "mistake": {
+        "display": "Me parece que interesante.",
+        "why": "me parece takes the adjective directly — me parece interesante — and me parece que needs a whole clause after it: me parece que es interesante."
+      },
+      "usage": "The module in one line: a soft frame, a concession, and a doubt that reaches the verb. Nothing here is new except the adjective.",
+      "register": "neutral",
+      "mnemonic": "An adjective needs no que; a clause does."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M3-C01",
+      "display": "Creo que es fácil. No creo que sea fácil.",
+      "cue": "I think it's easy. I don't think it's easy."
+    },
+    {
+      "id": "L3-M3-C02",
+      "display": "No creo que tenga tiempo.",
+      "cue": "I don't think he has time."
+    },
+    {
+      "id": "L3-M3-C03",
+      "display": "Me parece que puede ayudar.",
+      "cue": "It seems to me he can help."
+    },
+    {
+      "id": "L3-M3-C04",
+      "display": "No creo que vaya al cine hoy.",
+      "cue": "I don't think I'll go to the cinema today."
+    },
+    {
+      "id": "L3-M3-C05",
+      "display": "Este libro no es tan difícil como el otro.",
+      "cue": "This book isn't as hard as the other one."
+    },
+    {
+      "id": "L3-M3-C06",
+      "display": "Estoy de acuerdo contigo.",
+      "cue": "I agree with you."
+    },
+    {
+      "id": "L3-M3-C07",
+      "display": "No estoy de acuerdo con tu jefe.",
+      "cue": "I don't agree with your boss."
+    },
+    {
+      "id": "L3-M3-C08",
+      "display": "Estoy de acuerdo, aunque el libro es un poco caro.",
+      "cue": "I agree, although the book is a bit expensive."
+    },
+    {
+      "id": "L3-M3-C09",
+      "display": "Depende de mi horario.",
+      "cue": "It depends on my hours."
+    },
+    {
+      "id": "L3-M3-C10",
+      "display": "La verdad es que no sé si es tan fácil.",
+      "cue": "The truth is I don't know if it's that easy."
+    },
+    {
+      "id": "L3-M3-C11",
+      "display": "Me parece interesante, aunque no creo que sea fácil.",
+      "cue": "It seems interesting to me, although I don't think it's easy."
+    },
+    {
+      "id": "L3-M3-C12",
+      "display": "No es tan fácil como parece.",
+      "cue": "It's not as easy as it looks."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

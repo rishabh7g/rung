@@ -1,0 +1,563 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M5",
+  "title": "What someone said",
+  "job": "Pass on a message, a question and an order of events",
+  "prerequisites": [
+    "L3-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "present",
+      "Perfekt",
+      "Präteritum",
+      "Plusquamperfekt"
+    ],
+    "allowedPatterns": [
+      "Er hat gesagt + , + dass + <clause, tense unchanged>",
+      "Sie hat gefragt + , + ob + <verb-final>",
+      "Wir müssen fragen + , + wann + <verb-final>",
+      "Nachdem ich + <participle> + hatte + , + <Perfekt>",
+      "Als ich klein war + , + V-2 + <rest>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Reported speech is built on L1-M9's dass, and nothing about the clause is new: dass sends its finite verb to the end, as it has since L1. L2-M7 passed a phone message on with the speaker's own words precisely because this frame was not available yet; it is available now. Er hat gesagt, dass er morgen kommt. Speech often drops the dass altogether — Er hat gesagt, er kommt morgen — and then the verb comes back to second place, because there is no subordinating word left to send it anywhere."
+    },
+    {
+      "tag": "free",
+      "text": "GERMAN DOES NOT BACKSHIFT, and this is the cheapest lesson in the level. Whatever tense the original speaker used, the report keeps it: Ich komme morgen becomes Er hat gesagt, dass er morgen kommt, and Ich war krank becomes Sie hat gesagt, dass sie krank war. English drags every verb back a step — he said he WAS coming — and German simply does not. An English speaker will not believe this and will backshift anyway for a month; the fix is to check what the original speaker actually said and copy it."
+    },
+    {
+      "tag": "delta",
+      "text": "A yes/no question reported becomes an ob-clause: Hast du Zeit? becomes Sie hat gefragt, ob ich Zeit habe. ob is a subordinating conjunction like dass, so the verb goes last, and it exists for exactly this job — there is no other place in the language where you need it."
+    },
+    {
+      "tag": "interference",
+      "text": "English's if does two completely different jobs and German splits them with two words. ob is the QUESTION if — whether. wenn is the CONDITION if. Er hat gefragt, wenn ich Zeit habe does not report a question at all; it says something about a condition, and a German listener hears the sentence break. If you can replace the English if with whether, it is ob. If you cannot, it is wenn."
+    },
+    {
+      "tag": "delta",
+      "text": "A w-question reported keeps its own w-word and moves nothing but the verb: Wann kommt der Zug? becomes Wir müssen fragen, wann der Zug kommt. wann, wo, was and wer are already yours from L1 and L2 — the w-word is the conjunction, and no new word is needed. What changes is only that the finite verb now sits at the end, exactly as it does after dass and ob."
+    },
+    {
+      "tag": "delta",
+      "text": "The PLUSQUAMPERFEKT is the Perfekt with its auxiliary moved back into the Präteritum, and that is the entire rule: hat gemacht gives hatte gemacht, ist gefahren gives war gefahren. Its one job is being a step further back than the Perfekt — the thing that had already happened when the rest of the story starts. Er hat gesagt, dass er den Zug genommen hatte. Every part of it is already owned: L1-M5's hatte, hatten, war and waren, and the participles L1-M5 and L2-M10 opened."
+    },
+    {
+      "tag": "delta",
+      "text": "nachdem is the conjunction that FORCES the tense gap, and German is stricter about it than English is about after. The nachdem clause must be one step further back than the main clause: Nachdem ich gegessen hatte, bin ich gegangen — Plusquamperfekt on the left, Perfekt on the right. Two Perfekts in a row is the error, and it flattens exactly the order of events nachdem exists to mark. bevor, während, seitdem and bis are later, at L4-M6, and stay out of this module."
+    },
+    {
+      "tag": "free",
+      "text": "als and wenn are both English's when, split by how many times the thing happened. als is a SINGLE past event: Als ich klein war. wenn is a repeated one or a future one: Wenn ich müde bin, gehe ich früh nach Hause. Neither word is new — als is L2-M9's comparative standard, wenn is L1-M10's — and its row said this second job would land here. Both send their verb to the end, so only the choice is new."
+    },
+    {
+      "tag": "free",
+      "text": "There is a second German reported speech, the Konjunktiv I — er sei, er habe, sie komme — and you will meet it in newspapers and in court reports, where it marks the words as somebody else's without vouching for them. It is L4-M7's, not this module's. Everyday spoken German reports with the plain indicative you have here, and nobody will think you careless for using it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M5-S01",
+      "display": "Er hat gesagt, dass er morgen kommt",
+      "cue": "He said he's coming tomorrow",
+      "literal": "he has said, that he tomorrow comes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sagt",
+            "cue": "says",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M10's sagen in the er cell. Er sagt, dass … reports something still standing; hat gesagt reports something said once."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English says \"he said he WAS coming\" and moves the verb back a step. German keeps the tense the speaker used, so kommt stays kommt — the report is not about the past, the saying is.",
+      "sound": "air hat guh-ZAHKT, das air MOR-gen komt. The g of gesagt is a hard g and the -t is crisp.",
+      "variations": [
+        {
+          "display": "Er sagt, dass er morgen kommt",
+          "cue": "He says he's coming tomorrow",
+          "changed": "the saying itself in the present"
+        },
+        {
+          "display": "Sie hat gesagt, dass sie müde ist",
+          "cue": "She said she was tired",
+          "changed": "another report, and ist still does not move"
+        }
+      ],
+      "mistake": {
+        "display": "Er hat gesagt, dass er morgen gekommen ist",
+        "why": "German does not backshift. He said Ich komme morgen, so the report keeps it: dass er morgen kommt."
+      },
+      "usage": "Passing on what somebody told you, to a third person.",
+      "register": "neutral",
+      "mnemonic": "Copy the speaker's tense. Do not move it."
+    },
+    {
+      "id": "L3-M5-S02",
+      "display": "Sie hat gefragt, ob ich Zeit habe",
+      "cue": "She asked whether I had time",
+      "literal": "she has asked, whether I time have",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gefragt",
+            "cue": "asked",
+            "tag": "free",
+            "forms": [],
+            "note": "The participle of fragen, built with ge- and -t like L1-M5's gemacht. hat gefragt is how a reported question always starts."
+          },
+          {
+            "display": "ob",
+            "cue": "whether",
+            "tag": "delta",
+            "forms": [],
+            "note": "The question if. It subordinates, so the verb goes last: ob ich Zeit habe. It exists for reported yes/no questions and for nothing else."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "This is the module's one loud error. English if covers both a question and a condition; German splits them, and wenn here reports nothing. Test it in English: if \"whether\" fits, the word is ob.",
+      "sound": "zee hat guh-FRAHKT, op ikh tsite HAH-buh. ob is said with a p at the end.",
+      "variations": [
+        {
+          "display": "Sie hat gefragt, ob du Zeit hast",
+          "cue": "She asked whether you had time",
+          "changed": "the question aimed at du"
+        },
+        {
+          "display": "Er hat gefragt, ob das stimmt",
+          "cue": "He asked whether that was true",
+          "changed": "L3-M3's stimmt inside the ob-clause"
+        }
+      ],
+      "mistake": {
+        "display": "Sie hat gefragt, wenn ich Zeit habe",
+        "why": "wenn is the condition if. A reported question takes ob: Sie hat gefragt, ob ich Zeit habe."
+      },
+      "usage": "Relaying somebody's question when they are not in the room.",
+      "register": "neutral",
+      "mnemonic": "whether → ob. If-and-then → wenn."
+    },
+    {
+      "id": "L3-M5-S03",
+      "display": "Wir müssen fragen, wann der Zug kommt",
+      "cue": "We have to ask when the train leaves",
+      "literal": "we must ask, when the train comes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fragen",
+            "cue": "to ask",
+            "tag": "free",
+            "forms": [],
+            "note": "Asking a QUESTION. Asking FOR a thing is L2-M8's bitten territory and L1-M8's bitte, and the two never share a verb in German."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "The w-word is already the conjunction, so nothing is added in front of it. English can say \"ask about when\"; German puts wann straight after the comma and sends the verb to the end.",
+      "sound": "veer MUE-sen FRAH-gen, van dair tsook komt.",
+      "variations": [
+        {
+          "display": "Ich muss fragen, wann der Zug kommt",
+          "cue": "I have to ask when the train leaves",
+          "changed": "one person instead of two"
+        },
+        {
+          "display": "Wir müssen fragen, was das kostet",
+          "cue": "We have to ask what that costs",
+          "changed": "L1-M8's kostet at the end of a was-clause"
+        }
+      ],
+      "usage": "Standing in a station with somebody, working out what to do.",
+      "register": "neutral",
+      "mnemonic": "The w-word IS the conjunction. Only the verb moves."
+    },
+    {
+      "id": "L3-M5-S04",
+      "display": "Sie fragt, wo der Bahnhof ist",
+      "cue": "She's asking where the station is",
+      "literal": "she asks, where the station is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fragt",
+            "cue": "asks",
+            "tag": "free",
+            "forms": [],
+            "note": "The er/sie cell of fragen. Sie fragt, wo … reports a question being asked right now, where hat gefragt reports one already asked."
+          },
+          {
+            "display": "frage",
+            "cue": "ask (I ask)",
+            "tag": "free",
+            "forms": [],
+            "note": "The ich cell: Ich frage, ob das stimmt. It announces the question you are about to put, which German does far more readily than English."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Wo ist der Bahnhof? has the verb second because it is a real question. The moment it is reported it stops being one, and ist goes to the end.",
+      "sound": "zee frahkt, voh dair BAHN-hofe ist.",
+      "variations": [
+        {
+          "display": "Ich frage, ob das stimmt",
+          "cue": "I'm asking whether that's right",
+          "changed": "a yes/no question, so ob instead of a w-word"
+        },
+        {
+          "display": "Sie fragt, was ich mache",
+          "cue": "She's asking what I'm doing",
+          "changed": "L1-M6's was, and mache at the end"
+        }
+      ],
+      "mistake": {
+        "display": "Sie fragt, wo ist der Bahnhof",
+        "why": "A reported question is a subordinate clause, so the verb goes last: Sie fragt, wo der Bahnhof ist."
+      },
+      "usage": "Explaining to a third person what the stranger next to you wants.",
+      "register": "neutral",
+      "mnemonic": "A real question keeps the verb second. A reported one sends it last."
+    },
+    {
+      "id": "L3-M5-S05",
+      "display": "Nachdem ich gegessen hatte, bin ich gegangen",
+      "cue": "After I'd eaten, I left",
+      "literal": "after I eaten had, am I gone",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nachdem",
+            "cue": "after (joining two clauses)",
+            "tag": "delta",
+            "forms": [],
+            "note": "A conjunction, so its verb goes last and its clause can front. It forces the tense gap: Plusquamperfekt on its side, Perfekt on the other."
+          }
+        ],
+        "rules": [
+          5,
+          6
+        ]
+      },
+      "trap": "L2-M4's nach is the preposition — nach Hause, nach der Arbeit — and takes a noun. nachdem takes a whole clause. They are two words, and only one of them can be followed by ich.",
+      "sound": "nakh-DAYM ikh guh-GESS-en HAT-uh, bin ikh guh-GANG-en. The stress falls on the second syllable of nachdem.",
+      "variations": [
+        {
+          "display": "Nachdem ich gegessen hatte, bin ich ins Kino gegangen",
+          "cue": "After I'd eaten, I went to the cinema",
+          "changed": "a destination added, and the bracket stretches around it"
+        },
+        {
+          "display": "Nachdem ich gearbeitet hatte, war ich müde",
+          "cue": "After I'd worked, I was tired",
+          "changed": "L1-M5's war holding the state on the right"
+        }
+      ],
+      "mistake": {
+        "display": "Nachdem ich gegessen habe, bin ich gegangen",
+        "why": "nachdem needs the step back: Nachdem ich gegessen hatte, bin ich gegangen."
+      },
+      "usage": "Telling somebody the order things happened in, and meaning it.",
+      "register": "neutral",
+      "mnemonic": "hatte gegessen first, then bin gegangen. One step apart."
+    },
+    {
+      "id": "L3-M5-S06",
+      "display": "Er hat gesagt, dass er den Zug genommen hatte",
+      "cue": "He said he had taken the train",
+      "literal": "he has said, that he the train taken had",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "genommen",
+            "cue": "taken",
+            "tag": "delta",
+            "forms": [],
+            "note": "The participle of L2-M4's nehmen, and it is irregular: the vowel changes and it ends in -en, not -t. den Zug genommen is how German catches a train."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          5
+        ]
+      },
+      "trap": "Here the report DOES look backshifted, and it is not. The speaker himself said Ich hatte den Zug genommen — the step back was already in his sentence, and the report copies it like everything else.",
+      "sound": "air hat guh-ZAHKT, das air dayn tsook guh-NOM-en HAT-uh.",
+      "variations": [
+        {
+          "display": "Er hat gesagt, dass er den Bus genommen hatte",
+          "cue": "He said he had taken the bus",
+          "changed": "L2-M4's Bus instead of the train"
+        },
+        {
+          "display": "Ich hatte den Zug genommen",
+          "cue": "I had taken the train",
+          "changed": "the Plusquamperfekt on its own, outside any report"
+        }
+      ],
+      "usage": "Explaining somebody else's lateness for them.",
+      "register": "neutral",
+      "mnemonic": "hatte + participle. The Perfekt, one step back."
+    },
+    {
+      "id": "L3-M5-S07",
+      "display": "Sie hat mir erzählt, dass sie krank war",
+      "cue": "She told me she'd been ill",
+      "literal": "she has to-me told, that she ill was",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "erzählt",
+            "cue": "told",
+            "tag": "delta",
+            "forms": [],
+            "note": "The participle of erzählen, and it takes no ge-: verbs beginning er-, ver- or be- never do, as L2-M8's vergessen and verloren already showed."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "erzählen is telling a story or a piece of news, and it takes the person in the dative — erzählt mir. L2-M10's sagen is saying words. English \"tell\" covers both and the choice has to be made in German.",
+      "sound": "zee hat meer er-TSAYLT, das zee krank vahr. The z of erzählt is a ts.",
+      "variations": [
+        {
+          "display": "Sie hat mir erzählt, dass sie krank ist",
+          "cue": "She told me she's ill",
+          "changed": "still ill now, so the present stays present"
+        },
+        {
+          "display": "Er hat mir erzählt, dass er aus Berlin kommt",
+          "cue": "He told me he comes from Berlin",
+          "changed": "L1-M1's aus Berlin, and no backshift here either"
+        }
+      ],
+      "mistake": {
+        "display": "Sie hat mir gesagt, dass sie krank war",
+        "why": "Not wrong, but flat: news you are passing on is erzählen. Sie hat mir erzählt, dass sie krank war."
+      },
+      "usage": "Repeating something personal that was told to you.",
+      "register": "neutral",
+      "mnemonic": "sagen is words. erzählen is a story."
+    },
+    {
+      "id": "L3-M5-S08",
+      "display": "Ich weiß die Antwort nicht",
+      "cue": "I don't know the answer",
+      "literal": "I know the answer not",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Antwort",
+            "cue": "answer",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine, die Antwort. It is the answer to a question, and the reply to a letter is the same word. Its plural is spelt like the verb below it."
+          },
+          {
+            "display": "antworten",
+            "cue": "to answer · to reply",
+            "tag": "delta",
+            "forms": [
+              "antwortet",
+              "geantwortet"
+            ],
+            "note": "It takes the PERSON in the dative and never a direct object: Er hat mir geantwortet. You answer TO somebody in German."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The weiß here is L2-M3's white in the index — one key, two words, and only the sentence says which. Tapping it answers with the colour, and that is expected.",
+      "sound": "ikh vise dee ANT-vort nikht. weiß rhymes with English \"vice\".",
+      "variations": [
+        {
+          "display": "Er hat mir nicht geantwortet",
+          "cue": "He didn't answer me",
+          "changed": "the verb in the Perfekt, with the person in the dative"
+        },
+        {
+          "display": "Sie antwortet nicht",
+          "cue": "She isn't answering",
+          "changed": "the plain present, still with no direct object"
+        }
+      ],
+      "usage": "The honest end of a conversation you cannot carry further.",
+      "register": "neutral",
+      "mnemonic": "die Antwort is the thing. antworten is done TO somebody."
+    },
+    {
+      "id": "L3-M5-S09",
+      "display": "Sie hat erzählt, was sie gemacht hatte",
+      "cue": "She told us what she had done",
+      "literal": "she has told, what she done had",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "erzählen",
+            "cue": "to tell · to recount",
+            "tag": "delta",
+            "forms": [],
+            "note": "The citation form behind erzählt. It is the verb for an account of something: Er kann viel erzählen — he has plenty to tell."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "Two things are ending this clause at once — the participle gemacht and the finite hatte — and the finite verb is the LAST of them. That is the order in every subordinate clause with a compound tense.",
+      "sound": "zee hat er-TSAYLT, vass zee guh-MAKHT HAT-uh.",
+      "variations": [
+        {
+          "display": "Er kann viel erzählen",
+          "cue": "He has a lot to tell",
+          "changed": "the infinitive after a modal, where L2-M1's bracket puts it"
+        },
+        {
+          "display": "Sie hat erzählt, was sie gesehen hatte",
+          "cue": "She told us what she had seen",
+          "changed": "L2-M10's gesehen inside the same reported w-question"
+        }
+      ],
+      "usage": "Summarising somebody's account without repeating all of it.",
+      "register": "neutral",
+      "mnemonic": "Participle, then the finite verb. The finite one is last."
+    },
+    {
+      "id": "L3-M5-S10",
+      "display": "Als ich klein war, hat mein Vater Geschichten erzählt",
+      "cue": "When I was little, my father used to tell stories",
+      "literal": "when I small was, has my father stories told",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Geschichte",
+            "cue": "story",
+            "tag": "free",
+            "forms": [
+              "Geschichten"
+            ],
+            "note": "Feminine, die Geschichte, plural die Geschichten. The same word is history — a story and the past are one noun in German."
+          }
+        ],
+        "rules": [
+          7
+        ]
+      },
+      "trap": "wenn would make this a repeated condition — every time I was little, which is nonsense. Childhood is one stretch of past time seen once, so it is als, and L2-M9's als row said this job was coming.",
+      "sound": "als ikh kline vahr, hat mine FAH-ter guh-SHIKH-ten er-TSAYLT.",
+      "variations": [
+        {
+          "display": "Als ich klein war, hatte ich Angst",
+          "cue": "When I was little, I was frightened",
+          "changed": "L1-M9's Angst, and the Präteritum holding the state"
+        },
+        {
+          "display": "Wenn ich müde bin, gehe ich früh nach Hause",
+          "cue": "When I'm tired, I go home early",
+          "changed": "wenn instead, because this one happens over and over"
+        }
+      ],
+      "mistake": {
+        "display": "Wenn ich klein war, hat mein Vater Geschichten erzählt",
+        "why": "A single stretch of past time takes als: Als ich klein war, hat mein Vater Geschichten erzählt."
+      },
+      "usage": "Opening a story about your own childhood.",
+      "register": "neutral",
+      "mnemonic": "Once in the past, als. Again and again, wenn."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M5-C01",
+      "display": "Er hat gesagt, dass er morgen kommt",
+      "cue": "He said he's coming tomorrow"
+    },
+    {
+      "id": "L3-M5-C02",
+      "display": "Sie hat gefragt, ob ich Zeit habe",
+      "cue": "She asked whether I had time"
+    },
+    {
+      "id": "L3-M5-C03",
+      "display": "Wir müssen fragen, wann der Zug kommt",
+      "cue": "We have to ask when the train leaves"
+    },
+    {
+      "id": "L3-M5-C04",
+      "display": "Sie fragt, wo der Bahnhof ist",
+      "cue": "She's asking where the station is"
+    },
+    {
+      "id": "L3-M5-C05",
+      "display": "Nachdem ich gegessen hatte, bin ich gegangen",
+      "cue": "After I'd eaten, I left"
+    },
+    {
+      "id": "L3-M5-C06",
+      "display": "Er hat gesagt, dass er den Zug genommen hatte",
+      "cue": "He said he had taken the train"
+    },
+    {
+      "id": "L3-M5-C07",
+      "display": "Sie hat mir erzählt, dass sie krank war",
+      "cue": "She told me she'd been ill"
+    },
+    {
+      "id": "L3-M5-C08",
+      "display": "Ich weiß die Antwort nicht",
+      "cue": "I don't know the answer"
+    },
+    {
+      "id": "L3-M5-C09",
+      "display": "Sie hat erzählt, was sie gemacht hatte",
+      "cue": "She told us what she had done"
+    },
+    {
+      "id": "L3-M5-C10",
+      "display": "Als ich klein war, hat mein Vater Geschichten erzählt",
+      "cue": "When I was little, my father used to tell stories"
+    },
+    {
+      "id": "L3-M5-C11",
+      "display": "Er hat gefragt, ob ich den Zug genommen hatte",
+      "cue": "He asked whether I had taken the train"
+    },
+    {
+      "id": "L3-M5-C12",
+      "display": "Als ich klein war, bin ich oft ins Kino gegangen",
+      "cue": "When I was little, I often went to the cinema"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

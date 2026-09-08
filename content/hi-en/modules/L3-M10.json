@@ -1,0 +1,717 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M10",
+  "title": "Your own story",
+  "job": "An eight-sentence account, built from the whole ladder",
+  "prerequisites": [
+    "L3-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "present_simple",
+      "simple_past",
+      "past_continuous",
+      "past_perfect"
+    ],
+    "allowedPatterns": [
+      "I used to + V + , + but now I + V",
+      "I had + V-past-participle + before + <clause>",
+      "While I was + V-ing + , + <past simple>",
+      "<past simple> + . + <past simple> + . + In the end + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "पुरानी आदत बताने के लिए अंग्रेज़ी के पास एक बँधा हुआ जोड़ है — used to: I used to walk to school. यह हिंदी के करता था पर लगभग हूबहू बैठता है, इसलिए यह उन थोड़ी-सी चीज़ों में है जो हिंदी बोलने वाले को पहली बार में ही ठीक आती हैं. भरोसा कीजिए और इसे बरतिए. इसका कोई वर्तमान रूप नहीं होता: अब की आदत के लिए सीधा present ही चलता है — Now I take the train."
+    },
+    {
+      "tag": "interference",
+      "text": "used to का इकलौता धोखा नकार और सवाल में है, जहाँ d ग़ायब हो जाता है क्योंकि did उसे पहले ही अपने पास ले लेता है: I did not use to study in the morning, Did you use to walk to school? did not used to और did you used to दोनों ग़लत हैं."
+    },
+    {
+      "tag": "delta",
+      "text": "past perfect — had + तीसरा रूप — उस काम के लिए है जो पहले से चल रही बीती बात से भी पहले हो चुका था: I had already eaten before he called. यानी फ़ोन आने के वक़्त खाना निपट चुका था. इसका नियम संभालकर बरतने का है: जब घटनाएँ अपने ही क्रम में सुनाई जा रही हों तो यह ज़रूरी नहीं, और हर पुरानी बात पर had लगाने से पूरा क़िस्सा भारी हो जाता है."
+    },
+    {
+      "tag": "free",
+      "text": "पीछे का दृश्य past continuous बनाता है और उसे काटने वाली बात past simple में आती है: While I was waiting at the station, the phone rang. लंबा काम while के साथ चलता रहता है, छोटी घटना बीच में आ गिरती है. यही जोड़ी L2-M10 में आ चुकी है और यहाँ पूरे क़िस्से भर चलती है."
+    },
+    {
+      "tag": "delta",
+      "text": "अब तीनों बीते काल एक ही क़िस्से में साथ चलते हैं और हरेक का काम अलग है: continuous पीछे का दृश्य रखता है (While I was having lunch), simple क़िस्सा आगे बढ़ाता है (my sister called), और perfect उससे भी पीछे पहुँचता है (I had finished my work by then). जोड़ने वाले शब्द — before, by then, already, still, in the end — यही क्रम पाठक तक पहुँचाते हैं."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M10-S01",
+      "display": "I used to walk to school. Now I take the train. School used to start at eight. Now I start work at eight.",
+      "cue": "मैं स्कूल पैदल जाया करता था. अब मैं ट्रेन लेता हूँ. स्कूल आठ बजे शुरू हुआ करता था. अब मैं आठ बजे काम शुरू करता हूँ.",
+      "literal": "मैं इस्तेमाल-करता को चलना को स्कूल. अब मैं लेता वह ट्रेन.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "used to",
+            "cue": "किया करता था",
+            "tag": "free",
+            "forms": [
+              "used to",
+              "use to"
+            ],
+            "note": "पुरानी आदत का बँधा हुआ जोड़, हिंदी के करता था जैसा. इसका कोई वर्तमान रूप नहीं; अब की आदत सीधे present में आती है."
+          },
+          {
+            "display": "walk",
+            "cue": "पैदल जाना · चलना",
+            "tag": "free",
+            "forms": [
+              "walk",
+              "walks",
+              "walked"
+            ],
+            "note": "पैदल जाने की क्रिया: I walk to school. बीता हुआ रूप walked है."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "अब की आदत के लिए use to मत लगाइए. वर्तमान में सीधा present चलता है: Now I take the train.",
+      "sound": "used to में d और t जुड़कर एक ही आवाज़ बनते हैं — यूज़्टु.",
+      "variations": [
+        {
+          "display": "I used to walk to work. Now I take the bus.",
+          "cue": "मैं काम पर पैदल जाया करता था. अब मैं बस लेता हूँ.",
+          "changed": "दूसरी जगह, दूसरी सवारी"
+        },
+        {
+          "display": "My brother used to walk to school.",
+          "cue": "मेरा भाई स्कूल पैदल जाया करता था.",
+          "changed": "दूसरा आदमी, रूप वही"
+        },
+        {
+          "display": "I walked to school yesterday.",
+          "cue": "मैं कल स्कूल पैदल गया.",
+          "changed": "एक बार की बात, सीधा past"
+        }
+      ],
+      "mistake": {
+        "display": "Now I use to take the train",
+        "why": "used to सिर्फ़ पुरानी आदत के लिए है: Now I take the train."
+      },
+      "usage": "अपने बारे में बताना कि पहले क्या था और अब क्या है.",
+      "register": "neutral",
+      "mnemonic": "used to = करता था."
+    },
+    {
+      "id": "L3-M10-S02",
+      "display": "I used to study at night. I did not use to study in the morning. I started at college. I still study English.",
+      "cue": "मैं रात को पढ़ा करता था. सुबह नहीं पढ़ा करता था. मैंने कॉलेज से शुरू किया. मैं अब भी अंग्रेज़ी पढ़ता हूँ.",
+      "literal": "मैं इस्तेमाल-करता को पढ़ना पर रात. मैं किया नहीं इस्तेमाल को पढ़ना में वह सुबह.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "started",
+            "cue": "शुरू किया",
+            "tag": "free",
+            "forms": [
+              "started"
+            ],
+            "note": "यह start (L1-M6) का बीता हुआ रूप है. क़िस्से की पहली घटना अक्सर इसी से खुलती है."
+          },
+          {
+            "display": "still",
+            "cue": "अब भी · अब तक",
+            "tag": "delta",
+            "forms": [
+              "still"
+            ],
+            "note": "पुरानी बात जो अब तक चल रही है: I still study English. जगह कर्ता के बाद, क्रिया से पहले."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "did not used to सबसे आम ग़लती है. did पहले ही बीता हुआ बना चुका है, इसलिए use to रह जाता है.",
+      "sound": "still में इ छोटी है — स्टिल.",
+      "variations": [
+        {
+          "display": "I did not use to study English.",
+          "cue": "मैं अंग्रेज़ी नहीं पढ़ा करता था.",
+          "changed": "नकार"
+        },
+        {
+          "display": "Did you use to walk to school?",
+          "cue": "क्या तुम स्कूल पैदल जाया करते थे?",
+          "changed": "सवाल, d ग़ायब"
+        },
+        {
+          "display": "I still work at the bank.",
+          "cue": "मैं अब भी बैंक में काम करता हूँ.",
+          "changed": "still का दूसरा इस्तेमाल"
+        }
+      ],
+      "mistake": {
+        "display": "I did not used to study in the morning",
+        "why": "did के बाद use to: I did not use to study in the morning."
+      },
+      "usage": "अपनी पढ़ाई या नौकरी का पुराना ढर्रा बताना.",
+      "register": "neutral",
+      "mnemonic": "did आया तो d गया."
+    },
+    {
+      "id": "L3-M10-S03",
+      "display": "I had already eaten before he called. He came at eight. I was not hungry. In the end I gave him tea.",
+      "cue": "उसके फ़ोन करने से पहले मैं खा चुका था. वह आठ बजे आया. मुझे भूख नहीं थी. आख़िर में मैंने उसे चाय दी.",
+      "literal": "मैंने रखा पहले-ही खाया-हुआ पहले वह फ़ोन-किया. आख़िर में मैंने दी उसे चाय.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "already",
+            "cue": "पहले ही",
+            "tag": "free",
+            "forms": [
+              "already"
+            ],
+            "note": "काम निपट चुका है, यह बताता है और had तथा तीसरे रूप के बीच बैठता है: I had already eaten."
+          },
+          {
+            "display": "eaten",
+            "cue": "खाया हुआ",
+            "tag": "delta",
+            "forms": [
+              "eaten"
+            ],
+            "note": "यह eat (L1-M4) का तीसरा रूप है — had और have इसी को लेते हैं. बीता हुआ रूप ate अलग है."
+          },
+          {
+            "display": "before",
+            "cue": "से पहले",
+            "tag": "free",
+            "forms": [
+              "before"
+            ],
+            "note": "दो बीती बातों का क्रम तय करता है और अपने बाद पूरा वाक्य ले सकता है: before he called."
+          },
+          {
+            "display": "in the end",
+            "cue": "आख़िर में · अंत में",
+            "tag": "free",
+            "forms": [
+              "in the end"
+            ],
+            "note": "पूरा जोड़ एक इकाई है और क़िस्से का आख़िरी हिस्सा खोलता है. finally (L2-M10) इसी का जोड़ीदार है."
+          },
+          {
+            "display": "gave",
+            "cue": "दिया",
+            "tag": "free",
+            "forms": [
+              "gave"
+            ],
+            "note": "यह give (L2-M1) का बीता हुआ रूप है: I gave him tea. रूप पूरा बदल जाता है, -ed नहीं लगता."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "I had eaten और I ate एक नहीं. had वाला रूप तभी चाहिए जब क्रम बताना ज़रूरी हो.",
+      "sound": "already में ज़ोर दूसरे हिस्से पर — ऑल-रेडी.",
+      "variations": [
+        {
+          "display": "I had already eaten before my friend came.",
+          "cue": "मेरे दोस्त के आने से पहले मैं खा चुका था.",
+          "changed": "दूसरा आदमी"
+        },
+        {
+          "display": "He had already left.",
+          "cue": "वह पहले ही जा चुका था.",
+          "changed": "छोटा रूप"
+        },
+        {
+          "display": "In the end I gave him the book.",
+          "cue": "आख़िर में मैंने उसे किताब दी.",
+          "changed": "दूसरा कर्म"
+        }
+      ],
+      "mistake": {
+        "display": "I had already ate before he called",
+        "why": "had के साथ तीसरा रूप: I had already eaten before he called."
+      },
+      "usage": "किसी को बताना कि कौन-सी बात पहले हो चुकी थी.",
+      "register": "neutral",
+      "mnemonic": "had + तीसरा रूप, बीच में already."
+    },
+    {
+      "id": "L3-M10-S04",
+      "display": "While I was waiting at the station, the phone rang. It was my brother. He had already left. In the end I went home.",
+      "cue": "मैं स्टेशन पर इंतज़ार कर रहा था तभी फ़ोन बजा. मेरा भाई था. वह पहले ही निकल चुका था. आख़िर में मैं घर चला गया.",
+      "literal": "जबकि मैं था इंतज़ार-करता पर वह स्टेशन, वह फ़ोन बजा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "while",
+            "cue": "जबकि · जिस वक़्त",
+            "tag": "delta",
+            "forms": [
+              "while"
+            ],
+            "note": "लंबे चलते काम को खोलता है और उसके साथ was या were तथा -ing आता है: While I was waiting."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "While I waited कहने पर दृश्य नहीं बनता. while के साथ was और -ing ही चलता है.",
+      "sound": "while में wh हल्की व की आवाज़ — वाइल.",
+      "variations": [
+        {
+          "display": "While I was waiting, my friend called.",
+          "cue": "मैं इंतज़ार कर रहा था तभी मेरे दोस्त का फ़ोन आया.",
+          "changed": "छोटा रूप"
+        },
+        {
+          "display": "While she was having lunch, the phone rang.",
+          "cue": "वह खाना खा रही थी तभी फ़ोन बजा.",
+          "changed": "दूसरा आदमी"
+        },
+        {
+          "display": "The phone rang while I was having lunch.",
+          "cue": "मैं खाना खा रहा था तभी फ़ोन बजा.",
+          "changed": "while पीछे"
+        }
+      ],
+      "mistake": {
+        "display": "While I waited at the station, the phone was ringing",
+        "why": "दृश्य continuous में और घटना simple में: While I was waiting, the phone rang."
+      },
+      "usage": "कोई घटना सुनाना — कब और किस बीच हुई.",
+      "register": "neutral",
+      "mnemonic": "while लंबा, simple छोटा."
+    },
+    {
+      "id": "L3-M10-S05",
+      "display": "While I was having lunch, my sister called. I had finished my work by then. We went to the market. In the end we bought a gift.",
+      "cue": "मैं खाना खा रहा था तभी बहन का फ़ोन आया. तब तक मैं अपना काम निपटा चुका था. हम बाज़ार गए. आख़िर में हमने एक तोहफ़ा ख़रीदा.",
+      "literal": "जबकि मैं था खाना-खाता, मेरी बहन ने फ़ोन-किया. मैंने रखा निपटाया मेरा काम तब-तक.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "finished",
+            "cue": "निपटा दिया · ख़त्म किया",
+            "tag": "free",
+            "forms": [
+              "finished"
+            ],
+            "note": "यह finish (L3-M1) का बीता हुआ और तीसरा रूप है, दोनों एक ही: I finished, I had finished."
+          },
+          {
+            "display": "by then",
+            "cue": "तब तक",
+            "tag": "delta",
+            "forms": [
+              "by then"
+            ],
+            "note": "पूरा जोड़ एक इकाई है और past perfect के साथ बैठता है: I had finished my work by then."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "by then के साथ सीधा past नहीं जँचता. तब तक वाली बात had के साथ आती है.",
+      "sound": "by then में दोनों शब्द जुड़े — बाइ-देन.",
+      "variations": [
+        {
+          "display": "I had finished my work by then.",
+          "cue": "तब तक मैं अपना काम निपटा चुका था.",
+          "changed": "छोटा रूप"
+        },
+        {
+          "display": "While I was having lunch, my brother came.",
+          "cue": "मैं खाना खा रहा था तभी मेरा भाई आया.",
+          "changed": "दूसरी घटना"
+        },
+        {
+          "display": "I finished my work and went home.",
+          "cue": "मैंने काम निपटाया और घर चला गया.",
+          "changed": "सीधा past, बिना perfect"
+        }
+      ],
+      "mistake": {
+        "display": "I finished my work by then",
+        "why": "तब तक वाली बात perfect माँगती है: I had finished my work by then."
+      },
+      "usage": "एक ही दिन की दो-तीन बातें क्रम से सुनाना.",
+      "register": "neutral",
+      "mnemonic": "by then के साथ had."
+    },
+    {
+      "id": "L3-M10-S06",
+      "display": "I used to live in a small house. I moved to the city. Now I work at a bank. I am very glad.",
+      "cue": "मैं एक छोटे घर में रहा करता था. मैं शहर आ गया. अब मैं बैंक में काम करता हूँ. मैं बहुत ख़ुश हूँ.",
+      "literal": "मैं इस्तेमाल-करता को रहना में एक छोटा घर. मैं हटा को वह शहर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "live",
+            "cue": "रहना",
+            "tag": "free",
+            "forms": [
+              "live",
+              "lives",
+              "lived",
+              "living"
+            ],
+            "note": "किसी जगह रहना: I live in the city. जगह in से जुड़ती है, at से नहीं."
+          },
+          {
+            "display": "move",
+            "cue": "रहने की जगह बदलना",
+            "tag": "delta",
+            "forms": [
+              "move",
+              "moves",
+              "moved"
+            ],
+            "note": "घर या शहर बदलना, चीज़ खिसकाना नहीं. नई जगह to से जुड़ती है: I moved to the city."
+          },
+          {
+            "display": "city",
+            "cue": "शहर",
+            "tag": "free",
+            "forms": [
+              "city",
+              "cities"
+            ],
+            "note": "गिना जाता है और बहुवचन में y हटकर -ies आता है: two cities. जगह के आगे in आता है."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "I moved in the city का मतलब है शहर के अंदर ही खिसके. नई जगह के लिए moved to.",
+      "sound": "city में c स की तरह — सिटी.",
+      "variations": [
+        {
+          "display": "I used to live in a small house.",
+          "cue": "मैं एक छोटे घर में रहा करता था.",
+          "changed": "छोटा रूप"
+        },
+        {
+          "display": "My sister moved to the city.",
+          "cue": "मेरी बहन शहर आ गई.",
+          "changed": "दूसरा आदमी"
+        },
+        {
+          "display": "Now I live near the office.",
+          "cue": "अब मैं दफ़्तर के पास रहता हूँ.",
+          "changed": "अब की बात"
+        }
+      ],
+      "mistake": {
+        "display": "I moved in the city two years before",
+        "why": "नई जगह के आगे to: I moved to the city."
+      },
+      "usage": "अपनी ज़िंदगी का बड़ा बदलाव बताना.",
+      "register": "neutral",
+      "mnemonic": "moved to नई जगह."
+    },
+    {
+      "id": "L3-M10-S07",
+      "display": "I studied English at college. I had studied at school before. In the end I got a job. My family was very happy.",
+      "cue": "मैंने कॉलेज में अंग्रेज़ी पढ़ी. उससे पहले मैं स्कूल में पढ़ चुका था. आख़िर में मुझे नौकरी मिली. मेरा परिवार बहुत ख़ुश था.",
+      "literal": "मैंने पढ़ा अंग्रेज़ी पर कॉलेज. मैंने रखा पढ़ा पर स्कूल पहले.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "studied",
+            "cue": "पढ़ा",
+            "tag": "free",
+            "forms": [
+              "studied"
+            ],
+            "note": "यह study (L3-M2) का बीता हुआ और तीसरा रूप है: I studied, I had studied. y हटकर -ied आता है."
+          },
+          {
+            "display": "college",
+            "cue": "कॉलेज",
+            "tag": "free",
+            "forms": [
+              "college",
+              "colleges"
+            ],
+            "note": "पढ़ाई की जगह के तौर पर आगे at आता है: at college, at school. गिनना हो तो a college."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "before अकेला भी वाक्य के आख़िर में आ सकता है: I had studied at school before.",
+      "sound": "college में ज़ोर पहले हिस्से पर — कॉलिज.",
+      "variations": [
+        {
+          "display": "I studied English at school.",
+          "cue": "मैंने स्कूल में अंग्रेज़ी पढ़ी.",
+          "changed": "दूसरी जगह"
+        },
+        {
+          "display": "My brother had studied at college before.",
+          "cue": "मेरा भाई उससे पहले कॉलेज में पढ़ चुका था.",
+          "changed": "दूसरा आदमी"
+        },
+        {
+          "display": "In the end I got a job at a bank.",
+          "cue": "आख़िर में मुझे बैंक में नौकरी मिली.",
+          "changed": "जगह जोड़ी"
+        }
+      ],
+      "mistake": {
+        "display": "I had study at school before",
+        "why": "had के साथ तीसरा रूप: I had studied at school before."
+      },
+      "usage": "अपनी पढ़ाई का सिलसिला क्रम से बताना.",
+      "register": "neutral",
+      "mnemonic": "study, studied, had studied — तीन सीढ़ियाँ."
+    },
+    {
+      "id": "L3-M10-S08",
+      "display": "I walked to the office for a long time. Then I bought a car two years ago. Now I go by car.",
+      "cue": "मैं बहुत समय तक दफ़्तर पैदल जाता रहा. फिर दो साल पहले मैंने गाड़ी ख़रीदी. अब मैं गाड़ी से जाता हूँ.",
+      "literal": "मैं चला को वह दफ़्तर के-लिए एक लंबा समय. फिर मैंने ख़रीदी एक गाड़ी दो साल पहले.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "time",
+            "cue": "समय · वक़्त",
+            "tag": "interference",
+            "forms": [
+              "time",
+              "times"
+            ],
+            "note": "आम मतलब में गिना नहीं जाता: a long time, न कि a long times. गिनना हो तो बार — two times."
+          },
+          {
+            "display": "ago",
+            "cue": "पहले (आज से गिनकर)",
+            "tag": "delta",
+            "forms": [
+              "ago"
+            ],
+            "note": "वक़्त की लंबाई के बाद आता है, पहले नहीं: two years ago, न कि ago two years. साथ में सीधा past चलता है."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "two years ago के साथ perfect नहीं आता. यह बीता और ख़त्म वक़्त है, इसलिए सीधा past.",
+      "sound": "ago में ज़ोर दूसरे हिस्से पर — अगो.",
+      "variations": [
+        {
+          "display": "I bought a car two years ago.",
+          "cue": "मैंने दो साल पहले गाड़ी ख़रीदी.",
+          "changed": "छोटा रूप"
+        },
+        {
+          "display": "I moved to the city ten years ago.",
+          "cue": "मैं दस साल पहले शहर आ गया.",
+          "changed": "दूसरी घटना"
+        },
+        {
+          "display": "I still walk on Sunday.",
+          "cue": "मैं अब भी रविवार को पैदल चलता हूँ.",
+          "changed": "अब की आदत"
+        }
+      ],
+      "mistake": {
+        "display": "I have bought a car two years ago",
+        "why": "बीता और ख़त्म वक़्त के साथ सीधा past: I bought a car two years ago."
+      },
+      "usage": "अपनी ज़िंदगी की तारीख़ें आज से गिनकर बताना.",
+      "register": "neutral",
+      "mnemonic": "लंबाई पहले, ago बाद में."
+    },
+    {
+      "id": "L3-M10-S09",
+      "display": "While I was living in the city, I met my friend. We used to talk every day. In the end we started a shop together.",
+      "cue": "जब मैं शहर में रह रहा था तब मेरे दोस्त से मुलाक़ात हुई. हम रोज़ बात किया करते थे. आख़िर में हमने साथ मिलकर एक दुकान खोली.",
+      "literal": "जबकि मैं था रहता में वह शहर, मैं मिला मेरा दोस्त. हम इस्तेमाल-करते को बात-करना हर दिन.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "together",
+            "cue": "साथ मिलकर",
+            "tag": "free",
+            "forms": [
+              "together"
+            ],
+            "note": "क्रिया के बाद आता है और किसी के साथ मिलकर किया गया काम बताता है: We started a shop together."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "together with each other जैसा जोड़ ज़रूरी नहीं. अकेला together पूरी बात कह देता है.",
+      "sound": "together में ज़ोर बीच वाले हिस्से पर — टुगेदर.",
+      "variations": [
+        {
+          "display": "We used to talk every day.",
+          "cue": "हम रोज़ बात किया करते थे.",
+          "changed": "छोटा रूप"
+        },
+        {
+          "display": "While I was living in the city, I met my brother.",
+          "cue": "जब मैं शहर में रह रहा था तब मेरा भाई मिला.",
+          "changed": "दूसरा आदमी"
+        },
+        {
+          "display": "In the end we started a shop together.",
+          "cue": "आख़िर में हमने साथ मिलकर एक दुकान खोली.",
+          "changed": "सिर्फ़ आख़िरी हिस्सा"
+        }
+      ],
+      "mistake": {
+        "display": "While I lived in the city, I was meeting my friend",
+        "why": "दृश्य continuous में और घटना simple में: While I was living in the city, I met my friend."
+      },
+      "usage": "किसी से कैसे मिले, यह क़िस्सा सुनाना.",
+      "register": "neutral",
+      "mnemonic": "दृश्य लंबा, मुलाक़ात छोटी."
+    },
+    {
+      "id": "L3-M10-S10",
+      "display": "Yesterday I got up early. I had already eaten before I left. While I was waiting, my friend called. In the end we came home. That is my story.",
+      "cue": "कल मैं जल्दी उठा. निकलने से पहले मैं खा चुका था. मैं इंतज़ार कर रहा था तभी दोस्त का फ़ोन आया. आख़िर में हम घर आ गए. यही मेरी कहानी है.",
+      "literal": "कल मैं उठा जल्दी. मैंने रखा पहले-ही खाया-हुआ पहले मैं निकला. यह है मेरी कहानी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "story",
+            "cue": "कहानी · बीती बात",
+            "tag": "free",
+            "forms": [
+              "story",
+              "stories"
+            ],
+            "note": "गिना जाता है और बहुवचन में y हटकर -ies आता है: two stories. अपनी बात सुनाकर यही जोड़ना काफ़ी है."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          4
+        ]
+      },
+      "trap": "पूरे क़िस्से में had सिर्फ़ वहीं लगाइए जहाँ क्रम बताना ज़रूरी है. हर बात पर लगाने से क़िस्सा भारी हो जाता है.",
+      "sound": "story में o लंबी — स्टोरी.",
+      "variations": [
+        {
+          "display": "Yesterday I got up early and went to work.",
+          "cue": "कल मैं जल्दी उठा और काम पर गया.",
+          "changed": "सिर्फ़ सीधा past"
+        },
+        {
+          "display": "I had already eaten before I left.",
+          "cue": "निकलने से पहले मैं खा चुका था.",
+          "changed": "सिर्फ़ perfect वाला हिस्सा"
+        },
+        {
+          "display": "That is my story. Now you tell me your story.",
+          "cue": "यही मेरी कहानी है. अब आप अपनी सुनाइए.",
+          "changed": "बात दूसरे की तरफ़"
+        }
+      ],
+      "mistake": {
+        "display": "Yesterday I had got up early and I had eaten",
+        "why": "क्रम में सुनाई बात सीधा past लेती है: Yesterday I got up early. I had already eaten before I left."
+      },
+      "usage": "पूरी सीढ़ी की कमाई एक क़िस्से में लगाना — इंटरव्यू, नई जान-पहचान, या बस बातचीत.",
+      "register": "neutral",
+      "mnemonic": "continuous दृश्य, simple क़िस्सा, perfect पीछे."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M10-C01",
+      "display": "I used to walk to school. Now I take the train.",
+      "cue": "मैं स्कूल पैदल जाया करता था. अब मैं ट्रेन लेता हूँ."
+    },
+    {
+      "id": "L3-M10-C02",
+      "display": "I did not use to study in the morning.",
+      "cue": "मैं सुबह नहीं पढ़ा करता था."
+    },
+    {
+      "id": "L3-M10-C03",
+      "display": "Did you use to walk to school?",
+      "cue": "क्या तुम स्कूल पैदल जाया करते थे?"
+    },
+    {
+      "id": "L3-M10-C04",
+      "display": "I had already eaten before he called.",
+      "cue": "उसके फ़ोन करने से पहले मैं खा चुका था."
+    },
+    {
+      "id": "L3-M10-C05",
+      "display": "In the end I gave him tea.",
+      "cue": "आख़िर में मैंने उसे चाय दी."
+    },
+    {
+      "id": "L3-M10-C06",
+      "display": "While I was waiting at the station, the phone rang.",
+      "cue": "मैं स्टेशन पर इंतज़ार कर रहा था तभी फ़ोन बजा."
+    },
+    {
+      "id": "L3-M10-C07",
+      "display": "I had finished my work by then.",
+      "cue": "तब तक मैं अपना काम निपटा चुका था."
+    },
+    {
+      "id": "L3-M10-C08",
+      "display": "I used to live in a small house. I moved to the city.",
+      "cue": "मैं एक छोटे घर में रहा करता था. मैं शहर आ गया."
+    },
+    {
+      "id": "L3-M10-C09",
+      "display": "I studied English at college. In the end I got a job.",
+      "cue": "मैंने कॉलेज में अंग्रेज़ी पढ़ी. आख़िर में मुझे नौकरी मिली."
+    },
+    {
+      "id": "L3-M10-C10",
+      "display": "I bought a car two years ago. Now I go by car.",
+      "cue": "मैंने दो साल पहले गाड़ी ख़रीदी. अब मैं गाड़ी से जाता हूँ."
+    },
+    {
+      "id": "L3-M10-C11",
+      "display": "In the end we started a shop together.",
+      "cue": "आख़िर में हमने साथ मिलकर एक दुकान खोली."
+    },
+    {
+      "id": "L3-M10-C12",
+      "display": "Yesterday I got up early. That is my story.",
+      "cue": "कल मैं जल्दी उठा. यही मेरी कहानी है."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

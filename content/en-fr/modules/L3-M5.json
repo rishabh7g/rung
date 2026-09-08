@@ -1,0 +1,601 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M5",
+  "title": "What someone said",
+  "job": "Reporting other people's words",
+  "prerequisites": [
+    "L3-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "present",
+      "passé composé",
+      "imparfait (the backshifted clause)",
+      "infinitive after de"
+    ],
+    "allowedPatterns": [
+      "Il a dit que + <backshifted clause>",
+      "Il m'a demandé si + <clause>",
+      "Il m'a demandé + <question word> + <clause>",
+      "Il m'a dit de + V-inf",
+      "Je l'ai vue + <complement>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "REPORTING MOVES THE TENSE BACK ONE STEP, ONTO L2-M10's IMPARFAIT. il dit qu'il vient becomes il a dit qu'il venait; elle dit qu'elle ne peut pas becomes elle a dit qu'elle ne pouvait pas. Nothing new is opened for the tense — it is the imparfait you already have, sitting in a second seat. English does the same shift (he said he was coming), so the machinery transfers; what does not transfer is that French will not leave the present there."
+    },
+    {
+      "tag": "interference",
+      "text": "A YES/NO QUESTION IS REPORTED WITH si AND NEVER WITH que. il m'a demandé si j'avais le temps — the same si L3-M4 taught for conditions, doing a second job, and it does NOT fuse here unless il follows it. que reports a STATEMENT and nothing else; a learner who uses it for a question has written something French does not have. A wh-question keeps its own word instead: où, quand, pourquoi, comment."
+    },
+    {
+      "tag": "delta",
+      "text": "A REQUEST IS NOT A CLAUSE AT ALL: it becomes de plus an infinitive. il m'a dit d'attendre, il m'a demandé de venir. English keeps the verb whole too (he told me to wait), but it uses to, and French uses de — the one preposition L3-M2's modals were forbidden. After dit and demandé it is required."
+    },
+    {
+      "tag": "interference",
+      "text": "THE OBJECT PRONOUNS ARE SPELLED EXACTLY LIKE L1-M1's ARTICLES AND GO BEFORE THE VERB. le, la and les are the article in front of a noun and the object in front of a verb, and the word never changes shape to tell you which it is: je les connais against les livres. English puts the object AFTER the verb (I know them), so the position is the whole delta, and this module teaches each one glued to its verb rather than on its own."
+    },
+    {
+      "tag": "delta",
+      "text": "lui AND leur ARE THE INDIRECT OBJECT — to him, to her, to them — AND THEY DO NOT SHOW GENDER. je lui ai parlé is I spoke to him or to her, with nothing in the sentence to say which; je leur ai parlé is the plural. le, la and les are the direct object and do show it. English marks the gender and drops the to; French drops the gender and keeps the to inside the word."
+    },
+    {
+      "tag": "interference",
+      "text": "THE PARTICIPLE AGREES WITH A DIRECT OBJECT THAT COMES BEFORE IT, AND WITH NOTHING ELSE ON avoir — AND IT IS A WRITING-ONLY RULE. je l'ai vue (a woman), je les ai vus (men), je les ai vues (women). Say the limit as loudly as the rule: j'ai vu la voiture has the object AFTER the participle and takes no agreement at all, and neither does je lui ai parlé, because lui is indirect. Every one of those endings is silent, so a learner hears nothing and must write it."
+    },
+    {
+      "tag": "delta",
+      "text": "THE ne IS STILL WRITTEN, INSIDE THE REPORTED CLAUSE TOO. elle a dit qu'elle ne pouvait pas venir — speech drops it and writing keeps it, exactly as in every module before this one."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M5-S01",
+      "display": "Il a dit qu'il venait ce soir",
+      "cue": "He said he was coming this evening",
+      "literal": "He has said that-he was-coming this evening",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "qu'il",
+            "cue": "that he",
+            "tag": "delta",
+            "forms": [
+              "qu'il",
+              "qu'elle"
+            ],
+            "note": "L1-M9's que elided onto the pronoun and written as one word. It happens before every vowel: qu'il, qu'elle, qu'on — never que il."
+          },
+          {
+            "display": "venait",
+            "cue": "was coming",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M10's venir in L2-M10's imparfait. Reporting is what puts it here: il dit qu'il vient, il a dit qu'il venait."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The reported verb moves back even when the arrangement still stands. il a dit qu'il vient looks reasonable and is not what a French speaker writes — the step back is automatic, not a comment on whether he is still coming.",
+      "sound": "eel a dee keel vuh-NEH suh SWAR. qu'il is one syllable, keel.",
+      "variations": [
+        {
+          "display": "Elle a dit qu'elle venait ce soir",
+          "cue": "She said she was coming this evening",
+          "changed": "elle, so que elides onto her instead"
+        },
+        {
+          "display": "Il dit qu'il vient ce soir",
+          "cue": "He says he's coming this evening",
+          "changed": "the present on both sides, so nothing steps back"
+        }
+      ],
+      "mistake": {
+        "display": "Il a dit qu'il vient ce soir",
+        "why": "Reporting steps the verb back: Il a dit qu'il venait ce soir."
+      },
+      "usage": "Passing on an arrangement somebody else made, which is what most reporting is.",
+      "register": "neutral",
+      "mnemonic": "Said in the past, told in the imparfait."
+    },
+    {
+      "id": "L3-M5-S02",
+      "display": "Elle a dit qu'elle ne pouvait pas venir",
+      "cue": "She said she couldn't come",
+      "literal": "She has said that-she not could not to-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pouvait",
+            "cue": "could · was able to",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M1's peux in the imparfait, and the shape reporting needs: elle dit qu'elle ne peut pas, elle a dit qu'elle ne pouvait pas."
+          }
+        ],
+        "rules": [
+          0,
+          6
+        ]
+      },
+      "trap": "The ne and pas still wrap the modal, inside the reported clause exactly as outside it, and the ne is still written. qu'elle pouvait pas is what you will hear and is not what you write.",
+      "sound": "el a dee kel nuh poo-VEH pa vuh-NEER.",
+      "variations": [
+        {
+          "display": "Il a dit qu'il ne pouvait pas venir",
+          "cue": "He said he couldn't come",
+          "changed": "il, so que elides onto him"
+        },
+        {
+          "display": "Elle a dit qu'elle voulait rester",
+          "cue": "She said she wanted to stay",
+          "changed": "L3-M4's voulait, stepped back the same way"
+        }
+      ],
+      "mistake": {
+        "display": "Elle a dit qu'elle peut pas venir",
+        "why": "Two things: the verb steps back, and the ne is written. Elle a dit qu'elle ne pouvait pas venir."
+      },
+      "usage": "Passing on a refusal, which is the reporting a learner needs first.",
+      "register": "neutral",
+      "mnemonic": "The negative reports whole — ne included."
+    },
+    {
+      "id": "L3-M5-S03",
+      "display": "Il m'a demandé si j'avais le temps",
+      "cue": "He asked me if I had time",
+      "literal": "He me-has asked if I-had the time",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "m'a",
+            "cue": "(he) … me — me plus a",
+            "tag": "delta",
+            "forms": [
+              "m'a"
+            ],
+            "note": "L2-M5's m' fused onto a and written as one word. The pronoun comes BEFORE the auxiliary in a passé composé: il m'a demandé, never il a demandé moi."
+          },
+          {
+            "display": "demandé",
+            "cue": "asked",
+            "tag": "interference",
+            "forms": [
+              "demandé",
+              "demande"
+            ],
+            "note": "It means asked a question or asked for something — never demanded, which is exigé. The false friend is one of the loudest French has."
+          }
+        ],
+        "rules": [
+          1,
+          0
+        ]
+      },
+      "trap": "A reported yes/no question takes si and never que. Il m'a demandé QUE j'avais le temps is the sentence English word order builds and it is not French; si is L3-M4's word doing a second job here.",
+      "sound": "eel ma duh-mahn-DAY see zha-VEH luh TAHN.",
+      "variations": [
+        {
+          "display": "Il m'a demandé si tu étais libre",
+          "cue": "He asked me if you were free",
+          "changed": "the question is about you, so the clause steps back on tu"
+        },
+        {
+          "display": "Elle m'a demandé si j'avais le temps",
+          "cue": "She asked me if I had time",
+          "changed": "elle asking instead"
+        }
+      ],
+      "mistake": {
+        "display": "Il m'a demandé que j'avais le temps",
+        "why": "que reports a statement; a yes/no question takes si: Il m'a demandé si j'avais le temps."
+      },
+      "usage": "Reporting a phone call, where a question and an answer both need passing on.",
+      "register": "neutral",
+      "mnemonic": "si asks; que tells."
+    },
+    {
+      "id": "L3-M5-S04",
+      "display": "Il m'a demandé quand tu partais",
+      "cue": "He asked me when you were leaving",
+      "literal": "He me-has asked when you were-leaving",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "partais",
+            "cue": "were leaving · was leaving",
+            "tag": "delta",
+            "forms": [
+              "partais",
+              "partait"
+            ],
+            "note": "L1-M6's partir in the imparfait. Reporting steps tu pars back to tu partais, on the same endings as every other imparfait."
+          }
+        ],
+        "rules": [
+          1,
+          0
+        ]
+      },
+      "trap": "A wh-question keeps its own word and nothing else changes: quand, où, pourquoi, comment. Only the yes/no kind needs si, and only a statement takes que — three shapes, and picking the wrong one is the module's whole error surface.",
+      "sound": "eel ma duh-mahn-DAY kahn tü par-TEH.",
+      "variations": [
+        {
+          "display": "Il m'a demandé où tu travaillais",
+          "cue": "He asked me where you worked",
+          "changed": "a different question word, same shape after it"
+        },
+        {
+          "display": "Il m'a demandé pourquoi tu partais",
+          "cue": "He asked me why you were leaving",
+          "changed": "pourquoi, and the clause untouched"
+        }
+      ],
+      "mistake": {
+        "display": "Il m'a demandé si quand tu partais",
+        "why": "A question word replaces si rather than joining it: Il m'a demandé quand tu partais."
+      },
+      "usage": "Relaying somebody else's question, which is half of being in the middle of a plan.",
+      "register": "neutral",
+      "mnemonic": "The question word is the joint."
+    },
+    {
+      "id": "L3-M5-S05",
+      "display": "Il m'a dit d'attendre ici",
+      "cue": "He told me to wait here",
+      "literal": "He me-has said of-to-wait here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "d'attendre",
+            "cue": "to wait",
+            "tag": "interference",
+            "forms": [
+              "d'attendre",
+              "attendre"
+            ],
+            "note": "de plus attendre, elided into one written word. English uses to for this and French uses de — the preposition L3-M2's modals refused is the one a request requires."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "A request never becomes a que clause. Il m'a dit que j'attends is not the sentence; an order or a request collapses into de plus an infinitive, and the person it is aimed at is already there in the m'.",
+      "sound": "eel ma dee da-TAHNDR ee-SEE. The final re is barely a sound.",
+      "variations": [
+        {
+          "display": "Elle m'a dit d'attendre",
+          "cue": "She told me to wait",
+          "changed": "elle giving the instruction, and nowhere named"
+        },
+        {
+          "display": "Il m'a demandé d'attendre ici",
+          "cue": "He asked me to wait here",
+          "changed": "demandé, which softens an order into a request"
+        }
+      ],
+      "mistake": {
+        "display": "Il m'a dit à attendre ici",
+        "why": "The preposition is de: Il m'a dit d'attendre ici."
+      },
+      "usage": "Explaining why you are standing where you are, which is this sentence's real job.",
+      "register": "neutral",
+      "mnemonic": "An order takes de, not a clause."
+    },
+    {
+      "id": "L3-M5-S06",
+      "display": "Je l'ai vue hier au marché",
+      "cue": "I saw her yesterday at the market",
+      "literal": "I her-have seen yesterday at-the market",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je l'ai vue",
+            "cue": "I saw her",
+            "tag": "interference",
+            "forms": [
+              "je l'ai vue",
+              "je l'ai vu"
+            ],
+            "note": "The l' is la or le, elided — the object, not L1-M1's article. It sits BEFORE the verb, and the participle takes an e when it stands for a woman."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "The l' is spelled exactly like the article and is not one. le livre is a book; je l'ai vu is I saw it — same two letters, and only the position tells you, because a French object pronoun goes in FRONT of the verb where English puts it behind.",
+      "sound": "zhuh lay VÜ ee-YEHR o mar-SHAY. vue and vu are the same sound; only the page separates them.",
+      "variations": [
+        {
+          "display": "Je l'ai vu hier au marché",
+          "cue": "I saw him yesterday at the market",
+          "changed": "a man, so the participle loses its e — and nothing is heard"
+        },
+        {
+          "display": "J'ai vu ma sœur hier",
+          "cue": "I saw my sister yesterday",
+          "changed": "the object after the verb, so there is no agreement at all"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai vu la hier au marché",
+        "why": "The object goes before the verb and elides: Je l'ai vue hier au marché."
+      },
+      "usage": "Answering a question about somebody the other person has just named.",
+      "register": "neutral",
+      "mnemonic": "The object goes first, the e goes silent."
+    },
+    {
+      "id": "L3-M5-S07",
+      "display": "Je les ai vus au restaurant",
+      "cue": "I saw them at the restaurant",
+      "literal": "I them-have seen at-the restaurant",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je les ai vus",
+            "cue": "I saw them",
+            "tag": "interference",
+            "forms": [
+              "je les ai vus",
+              "je les ai vues"
+            ],
+            "note": "les is the plural object here, not L1-M1's article, and the participle takes s for them and es for a group of women. Both endings are silent."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "This is the writing-only rule at its clearest. vu, vus and vues are one sound; the learner hears a single word and has to choose between three spellings from what the object was — which is why an ear will never supply it.",
+      "sound": "zhuh lay-zay VÜ o res-to-RAHN. The s of les links onto ai as a z.",
+      "variations": [
+        {
+          "display": "Je les ai vues au restaurant",
+          "cue": "I saw them at the restaurant",
+          "changed": "a group of women, so the participle takes es — still silent"
+        },
+        {
+          "display": "J'ai vu mes amis au restaurant",
+          "cue": "I saw my friends at the restaurant",
+          "changed": "the object named after the verb, so no agreement"
+        }
+      ],
+      "mistake": {
+        "display": "Je les ai vu au restaurant",
+        "why": "A direct object in front of the participle makes it agree: Je les ai vus au restaurant."
+      },
+      "usage": "Reporting a sighting, which is what a whole evening's account is made of.",
+      "register": "neutral",
+      "mnemonic": "Object in front, ending on the back."
+    },
+    {
+      "id": "L3-M5-S08",
+      "display": "Je lui ai parlé ce matin",
+      "cue": "I spoke to him this morning",
+      "literal": "I to-him have spoken this morning",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je lui ai parlé",
+            "cue": "I spoke to him · I spoke to her",
+            "tag": "delta",
+            "forms": [
+              "je lui ai parlé"
+            ],
+            "note": "The to is inside lui, so parler needs no preposition after it. The participle does NOT agree, because lui is indirect."
+          },
+          {
+            "display": "lui",
+            "cue": "to him · to her",
+            "tag": "delta",
+            "forms": [],
+            "note": "One word for both genders: nothing in je lui ai parlé says whether it was a man or a woman. English marks the gender and French marks the direction instead."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "No agreement here, and that is the limit of the rule rather than an exception to it. lui is indirect, so parlé stays flat — a learner who has just met je l'ai vue will want to write parlée, and there is nothing to agree with.",
+      "sound": "zhuh lwee ay par-LAY suh ma-TAN. lui is one syllable, lwee.",
+      "variations": [
+        {
+          "display": "Je lui ai parlé hier",
+          "cue": "I spoke to her yesterday",
+          "changed": "a different day — and still nothing to say which of them it was"
+        },
+        {
+          "display": "Je l'ai vue ce matin",
+          "cue": "I saw her this morning",
+          "changed": "a direct object, so the participle agrees after all"
+        }
+      ],
+      "mistake": {
+        "display": "Je lui ai parlée ce matin",
+        "why": "lui is indirect, so nothing agrees: Je lui ai parlé ce matin."
+      },
+      "usage": "Saying you have already dealt with somebody, which is what closes an arrangement.",
+      "register": "neutral",
+      "mnemonic": "lui carries the to and blocks the agreement."
+    },
+    {
+      "id": "L3-M5-S09",
+      "display": "Je les connais bien, ce sont mes amis",
+      "cue": "I know them well, they're my friends",
+      "literal": "I them know well, these are my friends",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je les connais",
+            "cue": "I know them",
+            "tag": "interference",
+            "forms": [
+              "je les connais",
+              "je le connais",
+              "je la connais"
+            ],
+            "note": "The object still goes before the verb in the present: je les connais, never je connais les. The verb is for knowing PEOPLE and places rather than facts."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "English puts the object after the verb and cannot do otherwise — I know them — so the French order has nothing to attach to and is the error a learner makes for months. There is no participle here at all, which means no agreement to worry about either.",
+      "sound": "zhuh lay ko-NEH byan, suh son may-za-MEE. The final s of connais is silent.",
+      "variations": [
+        {
+          "display": "Je le connais bien",
+          "cue": "I know him well",
+          "changed": "one man, so les becomes le"
+        },
+        {
+          "display": "Je la connais, c'est ma collègue",
+          "cue": "I know her, she's my colleague",
+          "changed": "one woman, so les becomes la"
+        }
+      ],
+      "mistake": {
+        "display": "Je connais les bien",
+        "why": "The object pronoun goes in front of the verb: Je les connais bien."
+      },
+      "usage": "Vouching for people you have just been asked about.",
+      "register": "neutral",
+      "mnemonic": "The pronoun goes where English will not put it."
+    },
+    {
+      "id": "L3-M5-S10",
+      "display": "Je leur ai parlé hier au téléphone",
+      "cue": "I spoke to them yesterday on the phone",
+      "literal": "I to-them have spoken yesterday at-the telephone",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je leur ai parlé",
+            "cue": "I spoke to them",
+            "tag": "delta",
+            "forms": [
+              "je leur ai parlé"
+            ],
+            "note": "The plural of je lui ai parlé, and it takes no s — leur is already plural here. The participle stays flat, as it does after any indirect object."
+          },
+          {
+            "display": "leur",
+            "cue": "to them",
+            "tag": "interference",
+            "forms": [],
+            "note": "Two different words are spelled leur: this one, to them, never takes an s, while leur meaning their does — leurs amis. Position tells them apart."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "leur before a verb is to them and never takes an s. The possessive leur, in front of a noun, does take one — so the same four letters are invariable in one place and inflected in the other, and only what follows tells you which.",
+      "sound": "zhuh lur ay par-LAY ee-YEHR o tay-lay-FON.",
+      "variations": [
+        {
+          "display": "Je leur ai parlé ce matin",
+          "cue": "I spoke to them this morning",
+          "changed": "a different time, and still no agreement"
+        },
+        {
+          "display": "Je lui ai parlé hier au téléphone",
+          "cue": "I spoke to him yesterday on the phone",
+          "changed": "one person, so leur becomes lui"
+        }
+      ],
+      "mistake": {
+        "display": "Je leurs ai parlé hier au téléphone",
+        "why": "The pronoun leur never takes an s: Je leur ai parlé hier au téléphone."
+      },
+      "usage": "Closing an account of a day's messages, which is where every shape in this module turns up at once.",
+      "register": "neutral",
+      "mnemonic": "leur to a verb is bare; leur to a noun can grow an s."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M5-C01",
+      "display": "Il a dit qu'il était fatigué",
+      "cue": "He said he was tired"
+    },
+    {
+      "id": "L3-M5-C02",
+      "display": "Elle a dit qu'elle venait ce soir",
+      "cue": "She said she was coming this evening"
+    },
+    {
+      "id": "L3-M5-C03",
+      "display": "Il m'a demandé si tu étais libre",
+      "cue": "He asked me if you were free"
+    },
+    {
+      "id": "L3-M5-C04",
+      "display": "Il m'a demandé où tu travaillais",
+      "cue": "He asked me where you worked"
+    },
+    {
+      "id": "L3-M5-C05",
+      "display": "Elle m'a dit d'attendre",
+      "cue": "She told me to wait"
+    },
+    {
+      "id": "L3-M5-C06",
+      "display": "Je l'ai vue au cinéma",
+      "cue": "I saw her at the cinema"
+    },
+    {
+      "id": "L3-M5-C07",
+      "display": "Je les ai vus hier",
+      "cue": "I saw them yesterday"
+    },
+    {
+      "id": "L3-M5-C08",
+      "display": "Je lui ai parlé au téléphone",
+      "cue": "I spoke to him on the phone"
+    },
+    {
+      "id": "L3-M5-C09",
+      "display": "Je leur ai parlé ce matin",
+      "cue": "I spoke to them this morning"
+    },
+    {
+      "id": "L3-M5-C10",
+      "display": "Je les connais, ce sont mes collègues",
+      "cue": "I know them, they're my colleagues"
+    },
+    {
+      "id": "L3-M5-C11",
+      "display": "Il a dit qu'il ne pouvait pas venir",
+      "cue": "He said he couldn't come"
+    },
+    {
+      "id": "L3-M5-C12",
+      "display": "Marc m'a demandé quand tu partais",
+      "cue": "Marc asked me when you were leaving"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

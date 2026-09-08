@@ -1,0 +1,635 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M5",
+  "title": "What someone said",
+  "job": "Reporting other people's words",
+  "prerequisites": [
+    "L3-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "simple_past",
+      "simple_present_imperfective",
+      "simple_future_perfective"
+    ],
+    "allowedPatterns": [
+      "On skazál, chto + <clause, NOT backshifted>",
+      "Ya skazál yemú / yey / im + , + chto + <clause>",
+      "On sprosíl, gde / kogdá / skól'ko + <clause>",
+      "On sprosíl, (ne) + <word> + li + <clause>",
+      "Oná poprosíla + <person-accusative> + V-inf"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "RUSSIAN DOES NOT BACKSHIFT, and this is the module's delta and a genuine relief. On skazál, chto on bólen is \"he said he WAS ill\", and the Russian stays present. Whatever tense the speaker used is the tense the report keeps — present stays present, future stays future. A learner backshifting out of English habit has said that he was ill at some earlier time and is presumably better now, which is a different fact rather than a clumsier way of saying the same one."
+    },
+    {
+      "tag": "delta",
+      "text": "M3's comma law does its second tour here, and every reported clause is fenced: skazál, chto … / sprosíl, gde … / sprosíl, ne … li. No exceptions, and the comma is not optional in any of them. By this module the fence should be predictable rather than surprising — it is the same rule, on a third kind of clause."
+    },
+    {
+      "tag": "delta",
+      "text": "A YES/NO question is reported with the particle li, and li sits AFTER THE FIRST WORD of its clause and nowhere else: On sprosíl, svobóden li ya. That first word is the thing being asked about, so it has to be moved to the front to carry the particle — there is no word for \"whether\" to park at the head of the clause. A wh-question needs no li at all: it simply keeps its own question word, and the word order does not invert the way English's does."
+    },
+    {
+      "tag": "delta",
+      "text": "skazál and otvétil take the DATIVE of the person told — skazál yemú, otvétil yey, skazál im — which is L2-M1's case doing ordinary work. English has two shapes, \"told him\" and \"said to him\"; Russian has one, and there is no preposition in it. The dative pronoun goes straight after the reporting verb, before the comma."
+    },
+    {
+      "tag": "free",
+      "text": "poprosíl takes an INFINITIVE for what was asked: Oná poprosíla menyá pozvonít'. The person asked is the accusative object and the request itself is just the bare verb — no chto, no clause and no comma. English uses \"asked me\" for both a question and a request; Russian splits them, sprosíl for the question and poprosíl for the favour."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M5-S01",
+      "display": "On skazál, chto on bólen",
+      "script": "Он сказал, что он болен",
+      "cue": "He said he was ill",
+      "literal": "He said, that he ill",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bólen",
+            "script": "болен",
+            "cue": "ill (said of a man)",
+            "tag": "delta",
+            "forms": [
+              "bólen",
+              "bol'ná"
+            ],
+            "note": "A short form like M3's soglásen: bólen of a man, bol'ná of a woman. It is a state of the person, not L2-M8's bolít, which is what a body part does."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English backshifts — \"he said he WAS ill\" — and Russian does not. The reported verb stays present, because present is the tense he used when he said it.",
+      "sound": "on ska-ZAL, shto on BO-lyen. bólen is stressed on the first syllable; the feminine bol'ná moves the stress to the end.",
+      "variations": [
+        {
+          "display": "Oná skazála, chto oná bol'ná",
+          "script": "Она сказала, что она больна",
+          "cue": "She said she was ill",
+          "changed": "a woman, so the short form and its stress move"
+        },
+        {
+          "display": "On skazál, chto on ustál",
+          "script": "Он сказал, что он устал",
+          "cue": "He said he was tired",
+          "changed": "a different state reported"
+        }
+      ],
+      "mistake": {
+        "display": "On skazál, chto on byl bólen",
+        "script": "Он сказал, что он был болен",
+        "why": "The past here says he was ill at some earlier time and is presumably better now — a different fact from the one he reported. Keep the tense he used: chto on bólen."
+      },
+      "usage": "Passing on what somebody told you about themselves.",
+      "register": "neutral",
+      "mnemonic": "Keep his tense, not yours."
+    },
+    {
+      "id": "L3-M5-S02",
+      "display": "Ya skazál yey, chto ya rabótayu",
+      "script": "Я сказал ей, что я работаю",
+      "cue": "I told her that I was working",
+      "literal": "I said to-her, that I work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yey",
+            "script": "ей",
+            "cue": "to her",
+            "tag": "delta",
+            "forms": [
+              "yey"
+            ],
+            "note": "The dative of oná — the person TOLD. L2-M1's case doing ordinary work: skazál yey covers both English's \"told her\" and \"said to her\"."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "English has two shapes, \"told her\" and \"said to her\". Russian has one — skazál plus the dative — so there is no preposition to add and none to leave out.",
+      "sound": "ya ska-ZAL yey, shto ya ra-BO-ta-yu. yey is one short syllable and hangs onto the verb in front of it.",
+      "variations": [
+        {
+          "display": "Ya skazál yey, chto ya ustál",
+          "script": "Я сказал ей, что я устал",
+          "cue": "I told her that I was tired",
+          "changed": "a different thing told"
+        },
+        {
+          "display": "Oná skazála yey, chto oná rabótayet",
+          "script": "Она сказала ей, что она работает",
+          "cue": "She told her that she was working",
+          "changed": "a woman reporting about another woman"
+        }
+      ],
+      "mistake": {
+        "display": "Ya skazál k yey, chto ya rabótayu",
+        "script": "Я сказал к ей, что я работаю",
+        "why": "There is no preposition in it. The dative on its own is the person told: skazál yey."
+      },
+      "usage": "Reporting your own half of a conversation.",
+      "register": "neutral",
+      "mnemonic": "Told her, said to her — one dative for both."
+    },
+    {
+      "id": "L3-M5-S03",
+      "display": "Ya skazál yemú, chto ya ne mogú",
+      "script": "Я сказал ему, что я не могу",
+      "cue": "I told him that I couldn't",
+      "literal": "I said to-him, that I not can",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yemú",
+            "script": "ему",
+            "cue": "to him",
+            "tag": "delta",
+            "forms": [
+              "yemú"
+            ],
+            "note": "The dative of on, and yey's partner. Both name the person told rather than the thing said, so both sit straight after the reporting verb."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "\"I couldn't\" is a past in English and stays PRESENT in Russian: ne mogú. The report keeps the refusal in the tense it was spoken in.",
+      "sound": "ya ska-ZAL ye-MU, shto ya ne ma-GU. yemú takes its stress on the last syllable, so it does not rhyme with yey.",
+      "variations": [
+        {
+          "display": "Ya skazál yemú, chto ya rabótayu",
+          "script": "Я сказал ему, что я работаю",
+          "cue": "I told him that I was working",
+          "changed": "a different thing told"
+        },
+        {
+          "display": "Oná skazála yemú, chto oná ne mózhet",
+          "script": "Она сказала ему, что она не может",
+          "cue": "She told him that she couldn't",
+          "changed": "a woman speaking, about herself"
+        }
+      ],
+      "mistake": {
+        "display": "Ya skazál yemú, chto ya ne smog",
+        "script": "Я сказал ему, что я не смог",
+        "why": "The Russian report does not move into the past just because the English one does. What he was told was ya ne mogú, and that is what stays in the clause."
+      },
+      "usage": "Reporting a refusal.",
+      "register": "neutral",
+      "mnemonic": "yemú to him, yey to her, and neither takes a preposition."
+    },
+    {
+      "id": "L3-M5-S04",
+      "display": "On sprosíl, gde ya zhivú",
+      "script": "Он спросил, где я живу",
+      "cue": "He asked where I lived",
+      "literal": "He asked, where I live",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sprosíl",
+            "script": "спросил",
+            "cue": "asked (a question)",
+            "tag": "delta",
+            "forms": [
+              "sprosíl",
+              "sprosíla"
+            ],
+            "note": "\"Asked a question\" — never a request, which is poprosíl. Its clause is fenced with a comma, and a wh-question simply keeps its own question word."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "A wh-question needs nothing added. gde stays where it was, the tense stays present, and the word order does not invert the way English's \"where did I live\" would.",
+      "sound": "on spra-SIL, gdye ya zhy-VU. The spr runs together at the front — spra, never sa-pra.",
+      "variations": [
+        {
+          "display": "Oná sprosíla, gde ya rabótayu",
+          "script": "Она спросила, где я работаю",
+          "cue": "She asked where I worked",
+          "changed": "a woman asking, about work"
+        },
+        {
+          "display": "On sprosíl, kogdá ya pridú",
+          "script": "Он спросил, когда я приду",
+          "cue": "He asked when I would come",
+          "changed": "when instead of where, and a future that stays future"
+        }
+      ],
+      "mistake": {
+        "display": "On sprosíl gde ya zhivú",
+        "script": "Он спросил где я живу",
+        "why": "The comma is missing. M3's fence holds for every reported clause, and a reported question is not an exception to it."
+      },
+      "usage": "Saying what you were asked.",
+      "register": "neutral",
+      "mnemonic": "The question word stays; only the comma is added."
+    },
+    {
+      "id": "L3-M5-S05",
+      "display": "On sprosíl, svobóden li ya",
+      "script": "Он спросил, свободен ли я",
+      "cue": "He asked whether I was free",
+      "literal": "He asked, free whether I",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "li",
+            "script": "ли",
+            "cue": "whether (the yes/no particle)",
+            "tag": "delta",
+            "forms": [
+              "li"
+            ],
+            "note": "It reports a yes/no question and sits AFTER THE FIRST WORD of its clause, nowhere else. That first word is the one being asked about: svobóden li ya."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "There is no word for \"whether\" to put at the head of the clause. li is a second-position particle, so the thing you are asking about has to move to the front to carry it.",
+      "sound": "on spra-SIL, sva-BO-dyen li ya. li is unstressed and leans backwards onto svobóden, so what you hear is sva-BO-dyen-li.",
+      "variations": [
+        {
+          "display": "Oná sprosíla, svobódna li ya",
+          "script": "Она спросила, свободна ли я",
+          "cue": "She asked whether I was free (a woman answering)",
+          "changed": "a woman, so L2-M6's short form changes"
+        },
+        {
+          "display": "On sprosíl, dóma li ya",
+          "script": "Он спросил, дома ли я",
+          "cue": "He asked whether I was at home",
+          "changed": "a different thing asked about, carrying the particle"
+        }
+      ],
+      "mistake": {
+        "display": "On sprosíl, li ya svobóden",
+        "script": "Он спросил, ли я свободен",
+        "why": "li can never begin its clause. It comes second, after the word being asked about: svobóden li ya."
+      },
+      "usage": "Reporting a yes-or-no question.",
+      "register": "neutral",
+      "mnemonic": "li is always second, never first."
+    },
+    {
+      "id": "L3-M5-S06",
+      "display": "Oná poprosíla menyá pozvonít'",
+      "script": "Она попросила меня позвонить",
+      "cue": "She asked me to call",
+      "literal": "She requested me to-call",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "poprosíl",
+            "script": "попросил",
+            "cue": "asked for, requested",
+            "tag": "delta",
+            "forms": [
+              "poprosíl",
+              "poprosíla"
+            ],
+            "note": "A REQUEST, where sprosíl is a question. What was asked for follows as a bare infinitive — no chto, no clause and no comma anywhere in it."
+          },
+          {
+            "display": "pozvonít'",
+            "script": "позвонить",
+            "cue": "to call, to phone",
+            "tag": "free",
+            "forms": [
+              "pozvonít'"
+            ],
+            "note": "The infinitive of L1-M6's pozvonyú. After poprosíla it needs nothing else at all: the request is just the verb."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "English says \"she asked me\" for both a question and a favour. Russian splits them: sprosíla asks a question, poprosíla asks for something.",
+      "sound": "a-NA pap-ra-SI-la me-NYA paz-va-NIT'. Both long verbs put their stress late, so each one runs quiet-quiet-LOUD.",
+      "variations": [
+        {
+          "display": "On poprosíl menyá pomóch'",
+          "script": "Он попросил меня помочь",
+          "cue": "He asked me to help",
+          "changed": "a man asking, and a different request"
+        },
+        {
+          "display": "Oná poprosíla menyá rabótat' dóma",
+          "script": "Она попросила меня работать дома",
+          "cue": "She asked me to work from home",
+          "changed": "the request spelled out further"
+        }
+      ],
+      "mistake": {
+        "display": "Oná poprosíla menyá, chto ya pozvonyú",
+        "script": "Она попросила меня, что я позвоню",
+        "why": "A request is not a clause. poprosíl takes the person in the accusative and the request as an infinitive: poprosíla menyá pozvonít'."
+      },
+      "usage": "Passing on a request.",
+      "register": "neutral",
+      "mnemonic": "sprosíl asks a question; poprosíl asks a favour."
+    },
+    {
+      "id": "L3-M5-S07",
+      "display": "Ya otvétil, chto éhto právda",
+      "script": "Я ответил, что это правда",
+      "cue": "I answered that it was true",
+      "literal": "I answered, that this truth",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "otvétil",
+            "script": "ответил",
+            "cue": "answered, replied",
+            "tag": "delta",
+            "forms": [
+              "otvétil",
+              "otvétila"
+            ],
+            "note": "\"Answered\". Like skazál it fences its clause with a comma, and like skazál it takes the dative of the person answered: otvétil yemú."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "\"It WAS true\" in English; éhto právda, a plain present with no verb in it, in Russian. The report keeps the answer in the tense it was given.",
+      "sound": "ya at-VYE-til, shto EH-ta PRAV-da. The stress falls on the vye and the o at the front reduces to a.",
+      "variations": [
+        {
+          "display": "Ya otvétil yemú, chto éhto právda",
+          "script": "Я ответил ему, что это правда",
+          "cue": "I answered him that it was true",
+          "changed": "the person answered, added in the dative"
+        },
+        {
+          "display": "Oná otvétila, chto oná ne soglásna",
+          "script": "Она ответила, что она не согласна",
+          "cue": "She answered that she didn't agree",
+          "changed": "a woman answering, with M3's disagreement"
+        }
+      ],
+      "mistake": {
+        "display": "Ya otvétil, chto éhto bylá právda",
+        "script": "Я ответил, что это была правда",
+        "why": "Russian does not move the reported clause into the past to match the reporting verb. It stays as it was answered: chto éhto právda."
+      },
+      "usage": "Reporting your own reply.",
+      "register": "neutral",
+      "mnemonic": "Answer in the tense you answered."
+    },
+    {
+      "id": "L3-M5-S08",
+      "display": "On sprosíl, ne zanyát li ya",
+      "script": "Он спросил, не занят ли я",
+      "cue": "He asked whether I was busy",
+      "literal": "He asked, not busy whether I",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zanyát",
+            "script": "занят",
+            "cue": "busy (said of a man)",
+            "tag": "delta",
+            "forms": [
+              "zanyát",
+              "zanyatá"
+            ],
+            "note": "A short form and the opposite of L2-M6's svobóden: zanyát of a man, zanyatá of a woman, with the stress moving to the end in the feminine."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "The ne is not a negative here. ne … li is simply the polite shape of a yes/no question in Russian, and it means \"whether\", not \"whether not\".",
+      "sound": "on spra-SIL, ne za-NYAT li ya. ne, zanyát and li run as one group with a single stress, on the nyat.",
+      "variations": [
+        {
+          "display": "Oná sprosíla, ne zanyatá li ya",
+          "script": "Она спросила, не занята ли я",
+          "cue": "She asked whether I was busy (a woman answering)",
+          "changed": "a woman, so the short form and its stress move"
+        },
+        {
+          "display": "On sprosíl, ne ustál li ya",
+          "script": "Он спросил, не устал ли я",
+          "cue": "He asked whether I was tired",
+          "changed": "a different state asked about"
+        }
+      ],
+      "mistake": {
+        "display": "On sprosíl, ya zanyát li",
+        "script": "Он спросил, я занят ли",
+        "why": "li has to follow the FIRST word of its clause, and the word being asked about has to be that first word: ne zanyát li ya."
+      },
+      "usage": "Reporting the polite form of a yes-or-no question.",
+      "register": "neutral",
+      "mnemonic": "ne … li asks; it does not deny."
+    },
+    {
+      "id": "L3-M5-S09",
+      "display": "On sprosíl, skól'ko éhto stóit",
+      "script": "Он спросил, сколько это стоит",
+      "cue": "He asked how much it cost",
+      "literal": "He asked, how-much this costs",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "skól'ko",
+            "script": "сколько",
+            "cue": "how much, how many",
+            "tag": "delta",
+            "forms": [
+              "skól'ko"
+            ],
+            "note": "The bare word. L1-M8 taught skól'ko stóit as one frozen phrase; on its own skól'ko is an ordinary question word and something can come between it and the verb."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "L1-M8's skól'ko stóit was learned as a single lump, so splitting it feels wrong. It is not: skól'ko is a question word and éhto slides in behind it.",
+      "sound": "on spra-SIL, SKOL'-ka EH-ta STO-it. The soft sign softens the l, so it is SKOL'-ka rather than a hard SKOL-ka.",
+      "variations": [
+        {
+          "display": "Oná sprosíla, skól'ko éhto stóit",
+          "script": "Она спросила, сколько это стоит",
+          "cue": "She asked how much it cost",
+          "changed": "a woman asking"
+        },
+        {
+          "display": "On sprosíl, skól'ko stóyat biléty",
+          "script": "Он спросил, сколько стоят билеты",
+          "cue": "He asked how much the tickets cost",
+          "changed": "a plural, so the verb changes with it"
+        }
+      ],
+      "mistake": {
+        "display": "On sprosíl, skól'ko stóit éhto",
+        "script": "Он спросил, сколько стоит это",
+        "why": "Not ungrammatical, but not what anybody says: the thing being priced comes before the verb. skól'ko éhto stóit."
+      },
+      "usage": "Reporting a question about a price.",
+      "register": "neutral",
+      "mnemonic": "skól'ko is a word, not half a phrase."
+    },
+    {
+      "id": "L3-M5-S10",
+      "display": "Ya skazál im, chto ya ne pridú",
+      "script": "Я сказал им, что я не приду",
+      "cue": "I told them that I wouldn't come",
+      "literal": "I said to-them, that I not will-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "im",
+            "script": "им",
+            "cue": "to them",
+            "tag": "delta",
+            "forms": [
+              "im"
+            ],
+            "note": "The dative of oní, completing yemú and yey. Same job and same slot: the person told, straight after the reporting verb and with no preposition."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "\"I wouldn't come\" is English's backshifted future. Russian keeps the future it was actually said in: chto ya ne pridú.",
+      "sound": "ya ska-ZAL im, shto ya ne pri-DU. im is one short syllable and leans onto the verb — ska-ZA-lim.",
+      "variations": [
+        {
+          "display": "Ya skazál im, chto ya pridú závtra",
+          "script": "Я сказал им, что я приду завтра",
+          "cue": "I told them that I would come tomorrow",
+          "changed": "a promise instead of a refusal"
+        },
+        {
+          "display": "Oná skazála im, chto oná ne pridyót",
+          "script": "Она сказала им, что она не придёт",
+          "cue": "She told them that she wouldn't come",
+          "changed": "a woman reporting about herself"
+        }
+      ],
+      "mistake": {
+        "display": "Ya skazál ikh, chto ya ne pridú",
+        "script": "Я сказал их, что я не приду",
+        "why": "ikh is the accusative — the people seen or heard. The people TOLD go in the dative: skazál im."
+      },
+      "usage": "Reporting a decision you passed on.",
+      "register": "neutral",
+      "mnemonic": "The person told is always dative."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M5-C01",
+      "display": "On skazál, chto on bólen",
+      "script": "Он сказал, что он болен",
+      "cue": "He said he was ill"
+    },
+    {
+      "id": "L3-M5-C02",
+      "display": "Ya skazál yey, chto ya rabótayu",
+      "script": "Я сказал ей, что я работаю",
+      "cue": "I told her that I was working"
+    },
+    {
+      "id": "L3-M5-C03",
+      "display": "Ya skazál yemú, chto ya ne mogú",
+      "script": "Я сказал ему, что я не могу",
+      "cue": "I told him that I couldn't"
+    },
+    {
+      "id": "L3-M5-C04",
+      "display": "On sprosíl, gde ya zhivú",
+      "script": "Он спросил, где я живу",
+      "cue": "He asked where I lived"
+    },
+    {
+      "id": "L3-M5-C05",
+      "display": "On sprosíl, svobóden li ya",
+      "script": "Он спросил, свободен ли я",
+      "cue": "He asked whether I was free"
+    },
+    {
+      "id": "L3-M5-C06",
+      "display": "Oná poprosíla menyá pozvonít'",
+      "script": "Она попросила меня позвонить",
+      "cue": "She asked me to call"
+    },
+    {
+      "id": "L3-M5-C07",
+      "display": "Ya otvétil, chto éhto právda",
+      "script": "Я ответил, что это правда",
+      "cue": "I answered that it was true"
+    },
+    {
+      "id": "L3-M5-C08",
+      "display": "On sprosíl, ne zanyát li ya",
+      "script": "Он спросил, не занят ли я",
+      "cue": "He asked whether I was busy"
+    },
+    {
+      "id": "L3-M5-C09",
+      "display": "On sprosíl, skól'ko éhto stóit",
+      "script": "Он спросил, сколько это стоит",
+      "cue": "He asked how much it cost"
+    },
+    {
+      "id": "L3-M5-C10",
+      "display": "Ya skazál im, chto ya ne pridú",
+      "script": "Я сказал им, что я не приду",
+      "cue": "I told them that I wouldn't come"
+    },
+    {
+      "id": "L3-M5-C11",
+      "display": "Oná skazála, chto oná bol'ná",
+      "script": "Она сказала, что она больна",
+      "cue": "She said she was ill"
+    },
+    {
+      "id": "L3-M5-C12",
+      "display": "Oná sprosíla, kogdá ya pridú",
+      "script": "Она спросила, когда я приду",
+      "cue": "She asked when I would come"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

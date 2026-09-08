@@ -20,7 +20,12 @@
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 12,
-    "allowedTenses": ["simple_past", "simple_present", "future", "present_continuous"],
+    "allowedTenses": [
+      "simple_past",
+      "simple_present",
+      "future",
+      "present_continuous"
+    ],
     "allowedPatterns": [
       "<account of at most eight sentences>",
       "आधी … मग … नंतर … शेवटी …",
@@ -64,11 +69,19 @@
             "display": "आधी",
             "cue": "पहले",
             "tag": "free",
-            "forms": ["आधी", "मग", "नंतर", "शेवटी"],
+            "forms": [
+              "आधी",
+              "मग",
+              "नंतर",
+              "शेवटी"
+            ],
             "note": "L2-M10's sequencers, doing a longer job: आधी opens, मग and नंतर carry the middle, शेवटी closes. Four pegs, and a whole day hangs on them."
           }
         ],
-        "rules": [0, 3]
+        "rules": [
+          0,
+          3
+        ]
       },
       "trap": "सात वाक्य हैं, पर कोई नया शब्द नहीं. यही इस मॉड्यूल की पूरी बात है — जो आपके पास है, उसी से पूरी कहानी बन जाती है.",
       "sound": "हर वाक्य के आख़िर पर ठहराव. सुनाते वक़्त आधी, मग और शेवटी पर हल्का ज़ोर — वही सुनने वाले को रास्ता दिखाते हैं.",
@@ -104,11 +117,19 @@
             "display": "भेटलो",
             "cue": "मिला",
             "tag": "free",
-            "forms": ["भेटलो", "भेटले", "भेटली", "भेटला"],
+            "forms": [
+              "भेटलो",
+              "भेटले",
+              "भेटली",
+              "भेटला"
+            ],
             "note": "L2-M10's row inside a story: the person met takes -ला, and the verb agrees with the one who went to meet."
           }
         ],
-        "rules": [2, 3]
+        "rules": [
+          2,
+          3
+        ]
       },
       "trap": "एक ही हिसाब में तीन काल हैं: भेटलो (बीता), येईल (आने वाला, क्योंकि उसने वही कहा), झाला (बीता). L3-M5 का नियम यहाँ काम कर रहा है — कही हुई बात अपना काल रखती है.",
       "sound": "तो म्हणाला के बाद हल्का ठहराव — वहीं से उसकी बात शुरू होती है.",
@@ -144,11 +165,17 @@
             "display": "म्हणून",
             "cue": "इसलिए",
             "tag": "free",
-            "forms": ["कारण", "म्हणून"],
+            "forms": [
+              "कारण",
+              "म्हणून"
+            ],
             "note": "L1-M9's pair inside a story: कारण stands before a reason, म्हणून before a result. A story needs at least one of them."
           }
         ],
-        "rules": [3, 2]
+        "rules": [
+          3,
+          2
+        ]
       },
       "trap": "कहानी में वजह और नतीजा दोनों चाहिए, वरना वह सिर्फ़ क़दमों की सूची रह जाती है. यहाँ म्हणून वही मोड़ है.",
       "sound": "म्हणून पर हल्का ज़ोर — वही बताता है कि अब नतीजा आ रहा है.",
@@ -184,11 +211,20 @@
             "display": "होते",
             "cue": "थे",
             "tag": "free",
-            "forms": ["होतो", "होती", "होतं", "होता", "होते"],
+            "forms": [
+              "होतो",
+              "होती",
+              "होतं",
+              "होता",
+              "होते"
+            ],
             "note": "L3-M3's past of आहे across a whole account: होती for पूजा, होते for सगळे. Every clause picks its own cell."
           }
         ],
-        "rules": [2, 3]
+        "rules": [
+          2,
+          3
+        ]
       },
       "trap": "एक ही हिसाब में आहे का भूतकाल तीन बार अलग-अलग रूपों में आया है — दिवाळी होती, पूजा होती, सगळे खूश होते. हर बार साथ वाली चीज़ तय करती है.",
       "sound": "होती और होते में सिर्फ़ आख़िरी स्वर का फ़र्क़ — बोलते वक़्त उसे निगलो मत.",
@@ -224,11 +260,19 @@
             "display": "भरला",
             "cue": "भरा",
             "tag": "free",
-            "forms": ["भरला", "भरली", "भरलं", "भरले"],
+            "forms": [
+              "भरला",
+              "भरली",
+              "भरलं",
+              "भरले"
+            ],
             "note": "L3-M8's भरणे twice in three lines, agreeing each time with what was filled: फॉर्म भरला (m), पैसे भरले (pl)."
           }
         ],
-        "rules": [1, 2]
+        "rules": [
+          1,
+          2
+        ]
       },
       "trap": "मी के साथ कहीं ने नहीं आया, फिर भी क्रिया चीज़ के पीछे झुकी — भरला, भरले. यही L1-M5 का पुराना क़ायदा है, कहानी की लंबाई में.",
       "sound": "भरला और भरले में आख़िरी स्वर का फ़र्क़ — और वही बताता है कि क्या भरा गया.",
@@ -264,11 +308,20 @@
             "display": "उठून",
             "cue": "उठकर",
             "tag": "free",
-            "forms": ["उठून", "येऊन", "जाऊन", "करून", "जेवून"],
+            "forms": [
+              "उठून",
+              "येऊन",
+              "जाऊन",
+              "करून",
+              "जेवून"
+            ],
             "note": "L3-M1's converbs inside an account: they compress two steps into one breath, which is what keeps an eight-sentence story from becoming a list."
           }
         ],
-        "rules": [1, 0]
+        "rules": [
+          1,
+          0
+        ]
       },
       "trap": "कहानी में -ऊन का काम जगह बचाना है. आठ वाक्य की सीमा में यही जोड़ आपको दो-तीन क़दम मुफ़्त में दे देता है.",
       "sound": "उठून और येऊन दोनों हल्के — ज़ोर हमेशा आगे वाली पूरी क्रिया पर.",
@@ -304,11 +357,19 @@
             "display": "म्हणाला",
             "cue": "कहा",
             "tag": "free",
-            "forms": ["म्हणालो", "म्हणाली", "म्हणाले", "म्हणाला"],
+            "forms": [
+              "म्हणालो",
+              "म्हणाली",
+              "म्हणाले",
+              "म्हणाला"
+            ],
             "note": "L3-M5's म्हणणे inside a story: one reported line is often what sets the whole account moving, and it takes no ने."
           }
         ],
-        "rules": [2, 3]
+        "rules": [
+          2,
+          3
+        ]
       },
       "trap": "कही हुई बात अपना काल रखती है — उसने कल कहा था 'उद्या सुट्टी आहे', और आज वही उद्या है. L3-M5 का नियम कहानी में यही करता है.",
       "sound": "म्हणाला की के बाद हल्का ठहराव, फिर उसकी बात.",
@@ -344,11 +405,17 @@
             "display": "जर",
             "cue": "अगर",
             "tag": "free",
-            "forms": ["जर", "तर"],
+            "forms": [
+              "जर",
+              "तर"
+            ],
             "note": "L3-M4's conditional opening a story that has not happened yet — an account may look forward as well as back, and तर is still the half that cannot drop."
           }
         ],
-        "rules": [2, 3]
+        "rules": [
+          2,
+          3
+        ]
       },
       "trap": "कहानी हमेशा बीती हुई नहीं होती. आगे की योजना भी एक हिसाब है — और उसमें शर्त, इरादा और भाव तीनों आ सकते हैं.",
       "sound": "तर पर हल्का ज़ोर, और उसके बाद ठहराव — वहीं से नतीजा शुरू होता है.",
@@ -384,11 +451,19 @@
             "display": "गेलो",
             "cue": "गया",
             "tag": "free",
-            "forms": ["गेलो", "गेले", "गेलास", "गेलीस", "गेली"],
+            "forms": [
+              "गेलो",
+              "गेले",
+              "गेलीस",
+              "गेली"
+            ],
             "note": "The negated past inside a story: नाही simply follows the past form — गेलो नाही, जेवलो नाही, झालं नाही (L2-M8)."
           }
         ],
-        "rules": [2, 3]
+        "rules": [
+          2,
+          3
+        ]
       },
       "trap": "कहानी में 'नहीं हुआ' वाले वाक्य उतने ही ज़रूरी हैं जितने 'हुआ' वाले — और उनके लिए कुछ नया नहीं चाहिए, बस नाही पीछे रख दो.",
       "sound": "गेलो नाही में दोनों शब्द अलग रहते हैं; नाही पर हल्का ज़ोर.",
@@ -424,11 +499,16 @@
             "display": "गेलास",
             "cue": "गया (तू)",
             "tag": "free",
-            "forms": ["गेलास", "गेलीस", "गेलो", "गेले"],
+            "forms": [
+              "गेलास"
+            ],
             "note": "The तू cell of the past (L1-M5), and the register decision of the whole account: ask with तू and the story that follows is a friend's."
           }
         ],
-        "rules": [4, 3]
+        "rules": [
+          4,
+          3
+        ]
       },
       "trap": "रजिस्टर पूरे हिसाब पर चलता है, एक लाइन पर नहीं. तू से पूछा तो जवाब भी दोस्ताना; बड़ों से तुम्ही … केलंत, और पूरी कहानी उसी सुर में.",
       "sound": "गेलास का आख़िरी 'स' साफ़ — वही तू की पहचान है.",
@@ -515,5 +595,8 @@
       "cue": "कल मैं जल्दी उठकर चाय बनाई. फिर मैं काम पर गया."
     }
   ],
-  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
 }

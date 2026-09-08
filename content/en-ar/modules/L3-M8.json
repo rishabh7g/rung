@@ -1,0 +1,642 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M8",
+  "title": "Money and paperwork",
+  "job": "Rent, bills, forms, offices",
+  "prerequisites": ["L3-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "<sign>: mamnūʿ + al-<maṣdar>",
+      "yajibu an adfaʿ + <N>",
+      "hādhihi al-istimāra + maṭlūba",
+      "ayna + adfaʿ + ?",
+      "min faḍlika, hal yumkinu an + V"
+    ],
+    "newWordCap": 25
+  },
+  "exitTest": { "generateCount": 2, "comprehendCount": 3 },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A sign is written in the PASSIVE PARTICIPLE, and that is what this module teaches instead of the passive verb: maṭlūb (required), mamnūʿ (forbidden), maftūḥ (open), mughlaq (closed) — and L2-M7's mawjūd (present, in stock) turns out to have been one all along. They behave as ordinary adjectives and agree like ordinary adjectives: al-istimāra maṭlūba. The passive VERB (yuktabu, yudfaʿu) is L4's and is not opened here."
+    },
+    {
+      "tag": "delta",
+      "text": "mamnūʿ takes a MAṢDAR after it — L3-M1's grammar, printed on a public notice: mamnūʿ at-tadkhīn, \"smoking forbidden\". Once you see that the -ing noun on the sign is the same word you met in \"after work\", half the signs in an Arab city stop being decoration."
+    },
+    {
+      "tag": "interference",
+      "text": "The participle agrees with what it describes, and English participles never do: al-maktab maftūḥ but al-fātūra maṭlūba, at-tawqīʿ maṭlūb but al-istimāra maṭlūba. On a real sign you will see both endings within a metre of each other."
+    },
+    {
+      "tag": "free",
+      "text": "This module speaks the careful register throughout, and opens no new politeness shape to do it: min faḍlika is L1-M8's, law samaḥt is L2-M1's, hal yumkinu an is L3-M2's. A counter is exactly the place that decision was made for."
+    },
+    {
+      "tag": "free",
+      "text": "Numbers past L1-M8's range come in as VOCABULARY, not as a system: alf is a thousand, alfayn two thousand. A rent is four digits and you need to say it out loud long before you need the counting rules that build it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M8-S01",
+      "display": "mamnūʿ at-tadkhīn hunā",
+      "script": "ممنوع التدخين هنا",
+      "cue": "Smoking is forbidden here",
+      "literal": "Forbidden the-smoking here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mamnūʿ",
+            "script": "ممنوع",
+            "cue": "forbidden",
+            "tag": "delta",
+            "forms": ["mamnūʿ", "mamnūʿa"],
+            "note": "Forbidden — a passive participle used as an adjective. On a sign it comes FIRST, before the thing forbidden."
+          },
+          {
+            "display": "tadkhīn",
+            "script": "تدخين",
+            "cue": "smoking",
+            "tag": "delta",
+            "forms": ["tadkhīn", "at-tadkhīn"],
+            "note": "Smoking — a maṣdar, the verbal noun of L3-M1. t is a sun letter: at-tadkhīn. Signs almost always carry the article."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English signs say \"no smoking\" with a negative word. Arabic says \"forbidden, the smoking\" with an adjective and a noun, in that order — and the noun keeps its al-.",
+      "sound": "mam-NOOʿ at-tad-KHEEN — the ʿ at the end of mamnūʿ is a squeeze in the throat, not a silent letter.",
+      "variations": [
+        {
+          "display": "mamnūʿ at-tadkhīn fī al-maṭʿam",
+          "script": "ممنوع التدخين في المطعم",
+          "cue": "Smoking is forbidden in the restaurant",
+          "changed": "where: hunā → fī al-maṭʿam"
+        },
+        {
+          "display": "at-tadkhīn mamnūʿ hunā",
+          "script": "التدخين ممنوع هنا",
+          "cue": "Smoking is forbidden here",
+          "changed": "the order — a sentence rather than a sign, and both are correct"
+        }
+      ],
+      "mistake": {
+        "display": "lā tadkhīn hunā",
+        "script": "لا تدخين هنا",
+        "why": "The English sign translated word for word. lā negates verbs, not notices. A notice is mamnūʿ at-tadkhīn."
+      },
+      "usage": "Read off a wall in every airport, restaurant and lift in the Arab world — the single most useful sign to decode.",
+      "register": "formal",
+      "mnemonic": "Forbidden first, the thing second."
+    },
+    {
+      "id": "L3-M8-S02",
+      "display": "hādhihi al-istimāra maṭlūba al-yawm",
+      "script": "هذه الاستمارة مطلوبة اليوم",
+      "cue": "This form is required today",
+      "literal": "This the-form required(f) the-day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "istimāra",
+            "script": "استمارة",
+            "cue": "form (to fill in)",
+            "tag": "free",
+            "forms": ["istimāra", "al-istimāra", "istimārāt"],
+            "note": "The paper form you fill in. Feminine, so everything beside it takes -a: hādhihi al-istimāra maṭlūba."
+          },
+          {
+            "display": "maṭlūb",
+            "script": "مطلوب",
+            "cue": "required, wanted",
+            "tag": "delta",
+            "forms": ["maṭlūb", "maṭlūba"],
+            "note": "Required — the same participle shape as mamnūʿ. It agrees: maṭlūba beside a feminine noun, maṭlūb beside a masculine one."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "\"Required\" never changes in English. Here it must agree twice over — with the form's gender, and with nothing else in the sentence.",
+      "sound": "HAA-dhi-hi lis-ti-MAA-ra maṭ-LOO-ba — the ṭ is the heavy t, said with the tongue flat.",
+      "variations": [
+        {
+          "display": "at-taʾrīkh maṭlūb ʿalā al-waṣl",
+          "script": "التاريخ مطلوب على الوصل",
+          "cue": "The date is required on the receipt",
+          "changed": "what is required — masculine, so maṭlūb loses its -a"
+        },
+        {
+          "display": "hādhihi al-istimāra maṭlūba",
+          "script": "هذه الاستمارة مطلوبة",
+          "cue": "This form is required",
+          "changed": "the day dropped, for a counter conversation"
+        }
+      ],
+      "mistake": {
+        "display": "hādhā al-istimāra maṭlūb",
+        "script": "هذا الاستمارة مطلوب",
+        "why": "istimāra is feminine, so both the pointer and the participle move: hādhihi al-istimāra maṭlūba. Two agreements, one noun."
+      },
+      "usage": "What the clerk says when they hand you a sheet, and what you repeat back to be sure.",
+      "register": "formal",
+      "mnemonic": "The paper is feminine, so everything around it grows an -a."
+    },
+    {
+      "id": "L3-M8-S03",
+      "display": "yajibu an adfaʿ al-ījār",
+      "script": "يجب أن أدفع الإيجار",
+      "cue": "I have to pay the rent",
+      "literal": "It-is-necessary that I-pay the-rent",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "adfaʿ",
+            "script": "أدفع",
+            "cue": "I pay",
+            "tag": "free",
+            "forms": ["adfaʿ", "tadfaʿ", "yadfaʿ", "dafaʿtu"],
+            "note": "I pay. Same shape as L2's adhhab and adrus, and it follows yajibu an the same way. dafaʿtu is the past, I paid."
+          },
+          {
+            "display": "ījār",
+            "script": "إيجار",
+            "cue": "rent",
+            "tag": "free",
+            "forms": ["ījār", "al-ījār"],
+            "note": "Rent — the money, not the act. The initial ī is long: EE-jaar. Moon letter, so the article stays al-."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "yajibu an is L3-M2's frame and money does not change it. The only new thing here is the verb between them.",
+      "sound": "YAJ-i-bu an AD-faʿ al-ee-JAAR.",
+      "variations": [
+        {
+          "display": "yajibu an adfaʿ min ḥisābī",
+          "script": "يجب أن أدفع من حسابي",
+          "cue": "I have to pay from my account",
+          "changed": "what is paid → where it is paid from"
+        },
+        {
+          "display": "yajibu an adfaʿ al-fātūra al-yawm",
+          "script": "يجب أن أدفع الفاتورة اليوم",
+          "cue": "I have to pay the bill today",
+          "changed": "what: al-ījār → al-fātūra"
+        }
+      ],
+      "mistake": {
+        "display": "yajibu adfaʿ al-ījār",
+        "script": "يجب أدفع الإيجار",
+        "why": "The an is not optional after yajibu. It is the joint the sentence turns on: yajibu an adfaʿ al-ījār."
+      },
+      "usage": "The sentence in your head on the first of the month, and the one you say when declining an invitation.",
+      "register": "neutral",
+      "mnemonic": "yajibu, then an, then you."
+    },
+    {
+      "id": "L3-M8-S04",
+      "display": "ayna adfaʿ al-fātūra",
+      "script": "أين أدفع الفاتورة",
+      "cue": "Where do I pay the bill?",
+      "literal": "Where I-pay the-bill",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fātūra",
+            "script": "فاتورة",
+            "cue": "bill, invoice",
+            "tag": "free",
+            "forms": ["fātūra", "al-fātūra", "fawātīr"],
+            "note": "Bill or invoice. Feminine. Its plural fawātīr is a broken plural — take it as a second word, not as a rule."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "English needs \"do\" to ask this. Arabic needs nothing at all: ayna and then the plain verb, in the order they come.",
+      "sound": "AY-na AD-faʿ al-faa-TOO-ra.",
+      "variations": [
+        {
+          "display": "ayna adfaʿ al-ījār",
+          "script": "أين أدفع الإيجار",
+          "cue": "Where do I pay the rent?",
+          "changed": "what: al-fātūra → al-ījār"
+        },
+        {
+          "display": "ayna al-maktab",
+          "script": "أين المكتب",
+          "cue": "Where is the office?",
+          "changed": "the verb dropped — ayna alone is enough for a place"
+        }
+      ],
+      "mistake": {
+        "display": "ayna anā adfaʿ al-fātūra",
+        "script": "أين أنا أدفع الفاتورة",
+        "why": "The a- of adfaʿ is already \"I\". Adding anā is the English habit and turns a question into an oddly emphatic one."
+      },
+      "usage": "The first sentence in any office where the queue is not signposted.",
+      "register": "neutral",
+      "mnemonic": "ayna plus the verb. No do, no anā."
+    },
+    {
+      "id": "L3-M8-S05",
+      "display": "min faḍlika, hal yumkinu an tusāʿidanī",
+      "script": "من فضلك، هل يمكن أن تساعدني",
+      "cue": "Please, can you help me?",
+      "literal": "From your-favour, question it-is-possible that you-help-me",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "maktab",
+            "script": "مكتب",
+            "cue": "office, desk",
+            "tag": "free",
+            "forms": ["maktab", "al-maktab", "makātib"],
+            "note": "Office or desk — the counter you are standing at when you say this. Broken plural makātib, taken as vocabulary."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "Every piece of this is already yours: min faḍlika from L1-M8, hal from L1-M2, yumkinu an from L3-M2, tusāʿidanī from L2. The module opens no new politeness — it only puts the old ones at a counter.",
+      "sound": "min FAḌ-li-ka, hal YUM-ki-nu an tu-SAA-ʿi-da-nee — a real pause at the comma.",
+      "variations": [
+        {
+          "display": "law samaḥta, hal yumkinu an tusāʿidanī",
+          "script": "لو سمحت، هل يمكن أن تساعدني",
+          "cue": "Excuse me, can you help me?",
+          "changed": "the opener: min faḍlika → L2-M1's law samaḥta"
+        },
+        {
+          "display": "min faḍliki, hal yumkinu an tusāʿidanī",
+          "script": "من فضلك، هل يمكن أن تساعدني",
+          "cue": "Please, can you help me?",
+          "changed": "who you are asking: faḍlika → faḍliki"
+        }
+      ],
+      "mistake": {
+        "display": "hal tusāʿidanī",
+        "script": "هل تساعدني",
+        "why": "Not wrong, but bare. At a counter the yumkinu an is what makes it a request instead of an interrogation: hal yumkinu an tusāʿidanī."
+      },
+      "usage": "The opening line at any desk — bank, town hall, pharmacy, letting agent.",
+      "register": "formal",
+      "mnemonic": "Old words, new room."
+    },
+    {
+      "id": "L3-M8-S06",
+      "display": "al-maktab maftūḥ al-ān",
+      "script": "المكتب مفتوح الآن",
+      "cue": "The office is open now",
+      "literal": "The-office open the-now",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "maftūḥ",
+            "script": "مفتوح",
+            "cue": "open",
+            "tag": "delta",
+            "forms": ["maftūḥ", "maftūḥa"],
+            "note": "Open — the participle again, and an adjective in every way that matters. maftūḥa beside a feminine noun."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "maftūḥ describes a state, not an action. It never means \"opens\" or \"is opening\" — for that you would need the verb, which is L4's.",
+      "sound": "al-MAK-tab maf-TOOḤ al-AAN — the final ḥ is breathed out, not swallowed.",
+      "variations": [
+        {
+          "display": "aṣ-ṣaydaliyya maftūḥa al-ān",
+          "script": "الصيدلية مفتوحة الآن",
+          "cue": "The pharmacy is open now",
+          "changed": "what is open — feminine, so maftūḥa"
+        },
+        {
+          "display": "al-muwaẓẓaf mawjūd al-ān",
+          "script": "الموظف موجود الآن",
+          "cue": "The clerk is in now",
+          "changed": "which participle: L2-M7's mawjūd, the same shape all along"
+        }
+      ],
+      "mistake": {
+        "display": "al-maktab maftūḥa al-ān",
+        "script": "المكتب مفتوحة الآن",
+        "why": "maktab is masculine, so it takes maftūḥ with no -a. The participle agrees exactly as any adjective does."
+      },
+      "usage": "Read off a door, or asked on the phone before you set out.",
+      "register": "neutral",
+      "mnemonic": "Open is a state, and states agree."
+    },
+    {
+      "id": "L3-M8-S07",
+      "display": "al-bank mughlaq yawm al-jumʿa",
+      "script": "البنك مغلق يوم الجمعة",
+      "cue": "The bank is closed on Friday",
+      "literal": "The-bank closed day the-Friday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bank",
+            "script": "بنك",
+            "cue": "bank",
+            "tag": "free",
+            "forms": ["bank", "al-bank"],
+            "note": "Bank — a borrowed word, said as it looks. b is a moon letter: al-bank."
+          },
+          {
+            "display": "mughlaq",
+            "script": "مغلق",
+            "cue": "closed",
+            "tag": "delta",
+            "forms": ["mughlaq", "mughlaqa"],
+            "note": "Closed, the opposite number of maftūḥ and the same participle shape. mughlaqa beside a feminine noun."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "yawm al-jumʿa is an iḍāfa — L3-M2's two nouns touching, \"the day of the Friday\". No preposition is needed where English wants \"on\".",
+      "sound": "al-BANK MUGH-laq YAWM al-JUM-ʿa — the gh is a gargle, like a French r.",
+      "variations": [
+        {
+          "display": "al-maktab mughlaq al-yawm",
+          "script": "المكتب مغلق اليوم",
+          "cue": "The office is closed today",
+          "changed": "what, and when"
+        },
+        {
+          "display": "aṣ-ṣaydaliyya mughlaqa yawm al-jumʿa",
+          "script": "الصيدلية مغلقة يوم الجمعة",
+          "cue": "The pharmacy is closed on Friday",
+          "changed": "what is closed — feminine, so mughlaqa"
+        }
+      ],
+      "mistake": {
+        "display": "al-bank mughlaq fī yawm al-jumʿa",
+        "script": "البنك مغلق في يوم الجمعة",
+        "why": "The fī is the English \"on\" carried across. yawm al-jumʿa already means \"on Friday\" by itself."
+      },
+      "usage": "The single most useful fact about a working week you did not grow up in.",
+      "register": "neutral",
+      "mnemonic": "Closed on the day of the Friday — no preposition anywhere."
+    },
+    {
+      "id": "L3-M8-S08",
+      "display": "al-ījār alf riyāl fī ash-shahr",
+      "script": "الإيجار ألف ريال في الشهر",
+      "cue": "The rent is a thousand riyals a month",
+      "literal": "The-rent thousand riyal in the-month",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "alf",
+            "script": "ألف",
+            "cue": "thousand",
+            "tag": "free",
+            "forms": ["alf", "alfayn"],
+            "note": "A thousand. alfayn is two thousand, the dual again. Vocabulary, not a counting system — that is L4's."
+          },
+          {
+            "display": "shahr",
+            "script": "شهر",
+            "cue": "month",
+            "tag": "free",
+            "forms": ["shahr", "ash-shahr", "ashhur"],
+            "note": "Month. sh is a sun letter: ash-shahr. fī ash-shahr is \"a month\" in the sense of per month."
+          },
+          {
+            "display": "mablagh",
+            "script": "مبلغ",
+            "cue": "amount, sum",
+            "tag": "free",
+            "forms": ["mablagh", "al-mablagh"],
+            "note": "The amount — the number written on the form. What a clerk asks for when they will not say \"money\"."
+          },
+          {
+            "display": "māl",
+            "script": "مال",
+            "cue": "money",
+            "tag": "free",
+            "forms": ["māl", "al-māl"],
+            "note": "Money in general, the substance. For a specific sum on a form, use mablagh instead."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "There is no verb here at all. Arabic states a price the way it states any equation — the thing, then what it is — and the copula stays absent as it has since L1-M1.",
+      "sound": "al-ee-JAAR ALF ri-YAAL fish-SHAHR.",
+      "variations": [
+        {
+          "display": "al-mablagh maṭlūb al-yawm",
+          "script": "المبلغ مطلوب اليوم",
+          "cue": "The amount is due today",
+          "changed": "the price → the demand for it"
+        },
+        {
+          "display": "ʿindī māl fī al-bank",
+          "script": "عندي مال في البنك",
+          "cue": "I have money in the bank",
+          "changed": "a price → what you hold, with L1-M7's ʿindī"
+        }
+      ],
+      "mistake": {
+        "display": "al-ījār huwa alf riyāl",
+        "script": "الإيجار هو ألف ريال",
+        "why": "The huwa is an English \"is\" smuggled in. Arabic joins the two halves with nothing: al-ījār alf riyāl."
+      },
+      "usage": "Said and heard at every letting agent, and the shape of every price you will be quoted.",
+      "register": "neutral",
+      "mnemonic": "No verb, no \"is\", just the two facts touching."
+    },
+    {
+      "id": "L3-M8-S09",
+      "display": "at-tawqīʿ maṭlūb ʿalā hādhihi al-istimāra",
+      "script": "التوقيع مطلوب على هذه الاستمارة",
+      "cue": "A signature is required on this form",
+      "literal": "The-signature required on this the-form",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tawqīʿ",
+            "script": "توقيع",
+            "cue": "signature",
+            "tag": "free",
+            "forms": ["tawqīʿ", "at-tawqīʿ"],
+            "note": "Signature. t is a sun letter: at-tawqīʿ. Masculine, so the participle beside it is maṭlūb with no -a."
+          },
+          {
+            "display": "waqqiʿ",
+            "script": "وقّع",
+            "cue": "sign! (imperative)",
+            "tag": "free",
+            "forms": ["waqqiʿ", "waqqiʿī"],
+            "note": "Sign — the command, said to you across a counter. waqqiʿī to a woman, exactly as khudh became khudhī."
+          },
+          {
+            "display": "taʾrīkh",
+            "script": "تاريخ",
+            "cue": "date",
+            "tag": "free",
+            "forms": ["taʾrīkh", "at-taʾrīkh"],
+            "note": "Date — the one on the form, and also \"history\". The ʾ is a hamza: ta-ʾ-REEKH, with a catch."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "Two participles a metre apart on the same desk, agreeing differently: at-tawqīʿ maṭlūb (masculine) but al-istimāra maṭlūba (feminine). Read the ending, not the English.",
+      "sound": "at-taw-QEEʿ maṭ-LOOB ʿa-laa HAA-dhi-hi lis-ti-MAA-ra.",
+      "variations": [
+        {
+          "display": "waqqiʿ hunā min faḍlika",
+          "script": "وقّع هنا من فضلك",
+          "cue": "Sign here, please",
+          "changed": "the notice → the instruction you are given"
+        },
+        {
+          "display": "at-tawqīʿ maṭlūb al-yawm",
+          "script": "التوقيع مطلوب اليوم",
+          "cue": "The signature is required today",
+          "changed": "where it is required → when"
+        }
+      ],
+      "mistake": {
+        "display": "at-tawqīʿ maṭlūba ʿalā hādhihi al-istimāra",
+        "script": "التوقيع مطلوبة على هذه الاستمارة",
+        "why": "The -a has drifted onto the wrong word. maṭlūb agrees with at-tawqīʿ, the signature, not with the form it sits on."
+      },
+      "usage": "The line on the form itself, and the one the clerk taps with a pen.",
+      "register": "formal",
+      "mnemonic": "The participle looks left, at its own noun."
+    },
+    {
+      "id": "L3-M8-S10",
+      "display": "khudh al-waṣl min al-muwaẓẓaf",
+      "script": "خذ الوصل من الموظف",
+      "cue": "Take the receipt from the clerk",
+      "literal": "Take the-receipt from the-clerk",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "waṣl",
+            "script": "وصل",
+            "cue": "receipt",
+            "tag": "free",
+            "forms": ["waṣl", "al-waṣl"],
+            "note": "Receipt — the slip you keep. Same root as L2-M10's waṣaltu, arrive: what arrives in your hand."
+          },
+          {
+            "display": "ḥisābī",
+            "script": "حسابي",
+            "cue": "my account",
+            "tag": "delta",
+            "forms": ["ḥisābī"],
+            "note": "My account — L2-M5's ḥisāb with the -ī of raʾsī and ismī, its first outing on this ladder. Tap ḥisāb for the plain word."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "Never leave a counter without the waṣl. Grammatically it is an ordinary object; practically it is the only proof the mablagh was paid.",
+      "sound": "KHUDH al-WAṢL min al-mu-WAẒ-ẓaf.",
+      "variations": [
+        {
+          "display": "khudhī al-waṣl min al-muwaẓẓafa",
+          "script": "خذي الوصل من الموظفة",
+          "cue": "Take the receipt from the clerk",
+          "changed": "who is told, and who hands it over — both feminine"
+        },
+        {
+          "display": "khudh al-waṣl min faḍlika",
+          "script": "خذ الوصل من فضلك",
+          "cue": "Take the receipt, please",
+          "changed": "who it comes from → a softening min faḍlika"
+        }
+      ],
+      "mistake": {
+        "display": "khudh al-waṣl ilā al-muwaẓẓaf",
+        "script": "خذ الوصل إلى الموظف",
+        "why": "ilā is towards; min is from. Reversed, this tells the clerk to take the receipt off you, which is the opposite of what you want."
+      },
+      "usage": "The last sentence of every transaction, and the one worth saying to yourself before you walk away.",
+      "register": "neutral",
+      "mnemonic": "min brings it to you; ilā takes it away."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M8-C01",
+      "display": "mamnūʿ at-tadkhīn hunā",
+      "script": "ممنوع التدخين هنا",
+      "cue": "Smoking is forbidden here"
+    },
+    {
+      "id": "L3-M8-C02",
+      "display": "hādhihi al-istimāra maṭlūba al-yawm",
+      "script": "هذه الاستمارة مطلوبة اليوم",
+      "cue": "This form is required today"
+    },
+    {
+      "id": "L3-M8-C03",
+      "display": "yajibu an adfaʿ al-ījār",
+      "script": "يجب أن أدفع الإيجار",
+      "cue": "I have to pay the rent"
+    },
+    {
+      "id": "L3-M8-C04",
+      "display": "ayna adfaʿ al-fātūra",
+      "script": "أين أدفع الفاتورة",
+      "cue": "Where do I pay the bill?"
+    },
+    {
+      "id": "L3-M8-C05",
+      "display": "min faḍlika, hal yumkinu an tusāʿidanī",
+      "script": "من فضلك، هل يمكن أن تساعدني",
+      "cue": "Please, can you help me?"
+    },
+    {
+      "id": "L3-M8-C06",
+      "display": "al-maktab maftūḥ al-ān",
+      "script": "المكتب مفتوح الآن",
+      "cue": "The office is open now"
+    },
+    {
+      "id": "L3-M8-C07",
+      "display": "al-bank mughlaq yawm al-jumʿa",
+      "script": "البنك مغلق يوم الجمعة",
+      "cue": "The bank is closed on Friday"
+    },
+    {
+      "id": "L3-M8-C08",
+      "display": "al-ījār alf riyāl fī ash-shahr",
+      "script": "الإيجار ألف ريال في الشهر",
+      "cue": "The rent is a thousand riyals a month"
+    },
+    {
+      "id": "L3-M8-C09",
+      "display": "at-tawqīʿ maṭlūb ʿalā hādhihi al-istimāra",
+      "script": "التوقيع مطلوب على هذه الاستمارة",
+      "cue": "A signature is required on this form"
+    },
+    {
+      "id": "L3-M8-C10",
+      "display": "khudh al-waṣl min al-muwaẓẓaf",
+      "script": "خذ الوصل من الموظف",
+      "cue": "Take the receipt from the clerk"
+    },
+    {
+      "id": "L3-M8-C11",
+      "display": "waqqiʿ hunā min faḍlika",
+      "script": "وقّع هنا من فضلك",
+      "cue": "Sign here, please"
+    },
+    {
+      "id": "L3-M8-C12",
+      "display": "yajibu an adfaʿ min ḥisābī",
+      "script": "يجب أن أدفع من حسابي",
+      "cue": "I have to pay from my account"
+    }
+  ]
+}

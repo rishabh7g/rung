@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M9",
+  "title": "Festivals and everyday culture",
+  "job": "Talk about what is happening around you",
+  "prerequisites": [
+    "L3-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "El + <day> + hay + <event>",
+      "Los + <day-plural> + <habitual>",
+      "El + <ordinal> + de + <month>",
+      "Estamos en + <season/month>",
+      "Se celebra + <event> + en + <month>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "THE ARTICLE IS THE TENSE HERE. el domingo is THIS Sunday; los domingos is EVERY Sunday. El lunes tengo una cita against Los martes trabajo — one word apart in Spanish, and English needs two different sentences to say the difference at all."
+    },
+    {
+      "tag": "interference",
+      "text": "Spanish takes NO preposition with a day. en el domingo is not a sentence: the article alone does the work English hands to on. This is the second half of the same trap, and the half an English speaker builds first."
+    },
+    {
+      "tag": "delta",
+      "text": "A date is el + a plain counting number + de + the month: el quince de agosto. Only the first of the month takes an ordinal — el primero, and in Spain simply el uno. L2-M4 already owns primero, so nothing new opens for it here."
+    },
+    {
+      "tag": "delta",
+      "text": "Days, months and seasons are written in LOWERCASE: lunes, agosto, verano. The named festivals keep their capitals — Navidad, Nochevieja, Semana Santa — so the habit an English speaker arrives with is right in one place out of two, which is worse than being wrong everywhere."
+    },
+    {
+      "tag": "delta",
+      "text": "M8's impersonal se is how a custom gets described: se celebra, se come, se regala. What is done, without saying by whom, is exactly the shape a festival needs — and no new family opens here, these are M8's rows doing their cultural job."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M9-S01",
+      "display": "El domingo hay una fiesta en la plaza.",
+      "cue": "On Sunday there's a party in the square.",
+      "literal": "The Sunday there-is a party in the square.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fiesta",
+            "cue": "party · public holiday",
+            "tag": "free",
+            "forms": [
+              "fiesta",
+              "fiestas"
+            ],
+            "note": "A party, and also a public holiday: el lunes es fiesta means nobody works. Feminine, la fiesta, in both senses."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "el domingo means this coming Sunday, once. Nothing here translates on — the article is carrying it.",
+      "mistake": {
+        "display": "En el domingo hay una fiesta en la plaza.",
+        "why": "Spanish never puts a preposition in front of a day. El domingo already means on Sunday."
+      },
+      "usage": "Telling a friend what is on. Neutral; nobody is addressed directly.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M9-S02",
+      "display": "Los domingos como en casa. Es mi día favorito.",
+      "cue": "On Sundays I eat at home. It's my favourite day.",
+      "literal": "The Sundays I-eat in house. It-is my day favourite.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "día",
+            "cue": "day",
+            "tag": "interference",
+            "forms": [
+              "día",
+              "días"
+            ],
+            "note": "Masculine despite the -a: el día, los días. It is one of a small set of Greek-derived nouns that break the -a rule, so the article has to be learnt with it."
+          },
+          {
+            "display": "favorito",
+            "cue": "favourite",
+            "tag": "free",
+            "forms": [
+              "favorito",
+              "favorita",
+              "favoritos",
+              "favoritas"
+            ],
+            "note": "Favourite, and it follows the noun like almost every Spanish adjective: mi día favorito, never mi favorito día."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "One letter apart from the sentence above and a different meaning: los domingos is every Sunday, as a habit.",
+      "usage": "Describing your week. First person, informal enough for a friend and fine anywhere.",
+      "register": "neutral",
+      "mnemonic": "el = this one. los = all of them."
+    },
+    {
+      "id": "L3-M9-S03",
+      "display": "El lunes tengo una cita, y los martes trabajo.",
+      "cue": "On Monday I have an appointment, and on Tuesdays I work.",
+      "literal": "The Monday I-have an appointment, and the Tuesdays I-work.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lunes",
+            "cue": "Monday",
+            "tag": "free",
+            "forms": [],
+            "note": "Monday, lowercase. Like martes and viernes it already ends in -s, so only the article moves: el lunes, los lunes."
+          },
+          {
+            "display": "martes",
+            "cue": "Tuesday",
+            "tag": "free",
+            "forms": [],
+            "note": "Tuesday, and unchanged in the plural: los martes. Spanish superstition puts the unlucky day on martes 13, not on a Friday."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          3
+        ]
+      },
+      "trap": "Both halves in one breath: el lunes is one Monday, los martes is every Tuesday. The verb tense does not change at all.",
+      "usage": "What you say when someone asks if you are free. cita is M8's word, doing ordinary duty here.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M9-S04",
+      "display": "Los miércoles y los jueves estudio en casa.",
+      "cue": "On Wednesdays and Thursdays I study at home.",
+      "literal": "The Wednesdays and the Thursdays I-study in house.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "miércoles",
+            "cue": "Wednesday",
+            "tag": "free",
+            "forms": [],
+            "note": "Wednesday, stressed on the first syllable: MIÉR-co-les. Another -s day, so the article is what carries the number."
+          },
+          {
+            "display": "jueves",
+            "cue": "Thursday",
+            "tag": "free",
+            "forms": [],
+            "note": "Thursday, the last of the -s days. el jueves is this one; los jueves is all of them."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "Each day needs its own los. Spanish does not let one article stretch across both.",
+      "sound": "MIÉR-co-les and JUE-ves both take the stress on the first syllable, against the English habit of the second.",
+      "usage": "A timetable, given plainly. Neutral.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M9-S05",
+      "display": "Mi cumpleaños es el quince de agosto. Hay regalos.",
+      "cue": "My birthday is the fifteenth of August. There are presents.",
+      "literal": "My birthday is the fifteen of August. There-are presents.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cumpleaños",
+            "cue": "birthday",
+            "tag": "free",
+            "forms": [],
+            "note": "Birthday, already -s in the singular: el cumpleaños, los cumpleaños. It is cumple + años, the years you complete."
+          },
+          {
+            "display": "quince",
+            "cue": "fifteen",
+            "tag": "delta",
+            "forms": [],
+            "note": "Fifteen. A date takes the plain counting number — el quince de agosto — with no ordinal and nothing answering to the English -th."
+          },
+          {
+            "display": "agosto",
+            "cue": "August",
+            "tag": "free",
+            "forms": [],
+            "note": "August, lowercase. Much of Spain shuts in agosto, which is why it is the month a learner hears named most often."
+          },
+          {
+            "display": "regalo",
+            "cue": "present · gift",
+            "tag": "free",
+            "forms": [
+              "regalo",
+              "regalos"
+            ],
+            "note": "A present, masculine: el regalo. The verb behind it is regalar — to give AS A GIFT, which dar does not say on its own."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "Spanish counts the date: el quince, not el quinceavo. And agosto keeps its small a.",
+      "mistake": {
+        "display": "Mi cumpleaños es el quince de Agosto.",
+        "why": "Months are lowercase in Spanish. Only the named festivals — Navidad, Nochevieja — take a capital."
+      },
+      "usage": "Said about yourself, in any company. es rather than está, because a date is an identity, not a state.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M9-S06",
+      "display": "Estamos en verano. Los días son largos.",
+      "cue": "It's summer. The days are long.",
+      "literal": "We-are in summer. The days are long.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "estamos",
+            "cue": "we are",
+            "tag": "delta",
+            "forms": [],
+            "note": "The we cell of the estar the ladder already taught. Estamos en verano is how Spanish says it is summer: a season is a place you are in."
+          },
+          {
+            "display": "verano",
+            "cue": "summer",
+            "tag": "free",
+            "forms": [],
+            "note": "Summer, lowercase. estamos en verano rather than es verano, because Spanish puts the speaker inside the season."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Spanish puts you inside the season — estamos en verano — where English uses an empty it is. es verano exists but sounds like a definition.",
+      "usage": "Small talk, and the natural opening to anything about the calendar.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M9-S07",
+      "display": "En otoño y en invierno hay fiestas.",
+      "cue": "In autumn and in winter there are festivals.",
+      "literal": "In autumn and in winter there-are festivals.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "otoño",
+            "cue": "autumn",
+            "tag": "free",
+            "forms": [],
+            "note": "Autumn, lowercase, with the ñ of mañana. South of the equator it lands at the opposite end of the year, and the word does not change."
+          },
+          {
+            "display": "invierno",
+            "cue": "winter",
+            "tag": "free",
+            "forms": [],
+            "note": "Winter, lowercase. en invierno is the frame; an article appears only when one particular winter is meant."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "No article with a season after en: en invierno, not en el invierno, unless you mean one particular winter.",
+      "usage": "Describing the year where you live. Neutral, and it claims nothing about any one region.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M9-S08",
+      "display": "Se celebra la Semana Santa en primavera.",
+      "cue": "Holy Week is celebrated in spring.",
+      "literal": "One-celebrates the Holy Week in spring.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "se celebra",
+            "cue": "is celebrated · people celebrate",
+            "tag": "delta",
+            "forms": [],
+            "note": "M8's impersonal se with celebrar, the standard verb for a festival. Indexed whole, so L2-M4's bare se keeps its own row."
+          },
+          {
+            "display": "Semana Santa",
+            "cue": "Holy Week (Easter week)",
+            "tag": "free",
+            "forms": [],
+            "note": "The week before Easter, capitalised because it is a name. In Spain it means processions; in much of Latin America it means a week at the coast."
+          },
+          {
+            "display": "primavera",
+            "cue": "spring",
+            "tag": "free",
+            "forms": [],
+            "note": "Spring, lowercase and feminine: la primavera. en primavera takes no article at all."
+          }
+        ],
+        "rules": [
+          4,
+          3
+        ]
+      },
+      "trap": "The season is lowercase and the festival is not. Both rules are in one short sentence, pulling opposite ways.",
+      "usage": "How a custom is described to someone who does not know it. No person is named, which is the point of se.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M9-S09",
+      "display": "En diciembre se come mucho, y se regala algo en Navidad.",
+      "cue": "In December people eat a lot, and something is given at Christmas.",
+      "literal": "In December one-eats much, and one-gives-as-gift something in Christmas.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "diciembre",
+            "cue": "December",
+            "tag": "free",
+            "forms": [],
+            "note": "December, lowercase — unlike the Navidad that sits inside it, the month takes no capital."
+          },
+          {
+            "display": "se come",
+            "cue": "one eats · people eat",
+            "tag": "delta",
+            "forms": [],
+            "note": "How a custom around food is stated: en diciembre se come mucho. Indexed whole, like se celebra, so the bare se is untouched."
+          },
+          {
+            "display": "se regala",
+            "cue": "one gives as a present",
+            "tag": "delta",
+            "forms": [],
+            "note": "regalar under M8's impersonal se: what people give, rather than what you gave. Indexed whole for the same reason as se come."
+          },
+          {
+            "display": "Navidad",
+            "cue": "Christmas",
+            "tag": "free",
+            "forms": [],
+            "note": "Christmas, capitalised as a name. In Spain the presents often wait for Reyes on 6 January rather than arriving on the 25th."
+          }
+        ],
+        "rules": [
+          4,
+          3
+        ]
+      },
+      "trap": "se come and se regala name no one at all. Adding a subject — la gente come — turns a custom into a report about particular people.",
+      "usage": "What you say about your own December to someone from elsewhere. It claims the custom for nobody in particular, which is honest.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M9-S10",
+      "display": "En Nochevieja hay una feria en la plaza.",
+      "cue": "On New Year's Eve there's a fair in the square.",
+      "literal": "In New-Year's-Eve there-is a fair in the square.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Nochevieja",
+            "cue": "New Year's Eve",
+            "tag": "free",
+            "forms": [],
+            "note": "New Year's Eve — literally old night. The twelve grapes at midnight belong to it. Christmas Eve is a different word, Nochebuena."
+          },
+          {
+            "display": "feria",
+            "cue": "fair · town festival",
+            "tag": "free",
+            "forms": [],
+            "note": "A town's annual fair, with music, food and a fairground. Andalusia's are the famous ones; further north the same event is often a verbena."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "A festival takes en — en Nochevieja, en Navidad — while a day takes nothing at all. The two rules sit side by side and are not the same.",
+      "usage": "A local fact, said locally. feria is a Spanish word for a Spanish thing; elsewhere the same night has other names.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M9-C01",
+      "display": "El domingo hay una fiesta en la plaza.",
+      "cue": "On Sunday there's a party in the square."
+    },
+    {
+      "id": "L3-M9-C02",
+      "display": "Los domingos como en casa. Es mi día favorito.",
+      "cue": "On Sundays I eat at home. It's my favourite day."
+    },
+    {
+      "id": "L3-M9-C03",
+      "display": "El lunes tengo una cita, y los martes trabajo.",
+      "cue": "On Monday I have an appointment, and on Tuesdays I work."
+    },
+    {
+      "id": "L3-M9-C04",
+      "display": "Mi cumpleaños es el quince de agosto. Hay regalos.",
+      "cue": "My birthday is the fifteenth of August. There are presents."
+    },
+    {
+      "id": "L3-M9-C05",
+      "display": "Se celebra la Semana Santa en primavera.",
+      "cue": "Holy Week is celebrated in spring."
+    },
+    {
+      "id": "L3-M9-C06",
+      "display": "En Nochevieja hay una feria en la plaza.",
+      "cue": "On New Year's Eve there's a fair in the square."
+    },
+    {
+      "id": "L3-M9-C07",
+      "display": "Los viernes no trabajo.",
+      "cue": "On Fridays I don't work."
+    },
+    {
+      "id": "L3-M9-C08",
+      "display": "El sábado hay una fiesta en casa de mi hermana.",
+      "cue": "On Saturday there's a party at my sister's."
+    },
+    {
+      "id": "L3-M9-C09",
+      "display": "Estamos en invierno. Los días son cortos.",
+      "cue": "It's winter. The days are short."
+    },
+    {
+      "id": "L3-M9-C10",
+      "display": "En diciembre se come mucho.",
+      "cue": "In December people eat a lot."
+    },
+    {
+      "id": "L3-M9-C11",
+      "display": "Los miércoles estudio en casa de mi amigo.",
+      "cue": "On Wednesdays I study at my friend's."
+    },
+    {
+      "id": "L3-M9-C12",
+      "display": "El jueves hay una fiesta. ¿Vas?",
+      "cue": "On Thursday there's a party. Are you going?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

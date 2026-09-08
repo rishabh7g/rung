@@ -1,0 +1,585 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M4",
+  "title": "If and then",
+  "job": "Conditions, wishes, advice",
+  "prerequisites": [
+    "L3-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "present",
+      "future (-ré)",
+      "conditional (-ría)",
+      "imperfect subjunctive (one frame)"
+    ],
+    "allowedPatterns": [
+      "Si + <present> + , + <present/future>",
+      "Si + tuviera + N + , + V-ría",
+      "Yo que tú + , + V-ría",
+      "V-ré + <complement>",
+      "¿Podría + V-inf + ?",
+      "Si + fuera + Adj + , + V-ría"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "si takes the PRESENT and never the future: si tienes tiempo, si puedo, si llueve. English says \"if it will rain\" without blinking; Spanish has no such sentence at all. What follows the comma is free — present or future, both ordinary — so the rule is about one side of the sentence only."
+    },
+    {
+      "tag": "delta",
+      "text": "si (if) and L1-M2's sí (yes) are two different words one keystroke apart. The accent is a letter, not decoration: si vienes is a condition and sí, vienes is an agreement. Nothing else in the sentence tells them apart, and a reader does not repair the wrong one."
+    },
+    {
+      "tag": "delta",
+      "text": "The -ré future is built on the whole infinitive, endings added to the end of it: hablar → hablaré, ir → iré. Five verbs shorten the stem first and have to be learnt: haré (hacer), tendré (tener), podré (poder), diré (decir), vendré (venir). L1-M6's voy a + infinitive is not replaced by any of this — voy a is the near, spoken future and -ré is the more distant and more written one."
+    },
+    {
+      "tag": "delta",
+      "text": "The conditional is the same stem as the future with -ía on it: iré → iría, podré → podría, tendré → tendría, haré → haría. Whatever shortening the future did, the conditional does too — which is why the two are learnt in one breath and never separately."
+    },
+    {
+      "tag": "delta",
+      "text": "One counterfactual frame, and one only: si + tuviera / fuera, then the conditional — si tuviera tiempo, iría. It says a wish about something that is not so. tuviera and fuera are the imperfect subjunctive, and the rest of that mood — every other verb, every other cell — is a later level's."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M4-S01",
+      "display": "Si tienes tiempo, te llamo mañana.",
+      "cue": "If you have time, I'll call you tomorrow.",
+      "literal": "If you-have time, to-you I-call tomorrow.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "si",
+            "cue": "if",
+            "tag": "interference",
+            "forms": [],
+            "note": "No accent, and that is the whole difference from L1-M2's sí, \"yes\". After it the verb is present, never future: si tienes tiempo, never si tendrás tiempo."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English hears a future in both halves of \"if you'll have time, I'll call\". Spanish allows one at most, and never in the si half.",
+      "sound": "si is one flat syllable, said exactly as English \"see\". No stress lands on it — the weight of the sentence is on tiempo.",
+      "variations": [
+        {
+          "display": "Si puedo, te llamo esta noche.",
+          "cue": "If I can, I'll call you tonight.",
+          "changed": "the condition made about the speaker"
+        },
+        {
+          "display": "Si tienes tiempo, hablamos mañana.",
+          "cue": "If you have time, we'll talk tomorrow.",
+          "changed": "the present standing in for a future on both sides"
+        }
+      ],
+      "mistake": {
+        "display": "Si tendrás tiempo, te llamo mañana.",
+        "why": "There is no future after si in Spanish: si tienes tiempo. English's \"if you'll have time\" is what builds the sentence, and no Spanish speaker would finish it."
+      },
+      "usage": "How every loose plan is made. The present in the si half is doing future work and nobody hears it as present.",
+      "register": "informal",
+      "mnemonic": "After si, the present. Always."
+    },
+    {
+      "id": "L3-M4-S02",
+      "display": "Si llueve, no voy al parque. Si puedo, iré.",
+      "cue": "If it rains, I'm not going to the park. If I can, I'll go.",
+      "literal": "If it-rains, not I-go to-the park. If I-can, I-will-go.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "llueve",
+            "cue": "it rains · it's raining",
+            "tag": "delta",
+            "forms": [],
+            "note": "Weather verbs have no subject at all — there is nothing to put in front of llueve, and Spanish has no word doing English's job of \"it\" here."
+          },
+          {
+            "display": "iré",
+            "cue": "I'll go",
+            "tag": "delta",
+            "forms": [],
+            "note": "ir plus the future ending, with nothing shortened: ir → iré. L1-M6's voy a ir is the near, spoken future and this is the more distant one."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "Both halves of a si sentence can take a different tense from each other. The first stays present because it is a condition; the second says whenever it likes.",
+      "sound": "YUE-be, with the ll a y sound and the v a soft b. i-RE, two syllables with the stress on the end, which is what the accent marks.",
+      "variations": [
+        {
+          "display": "Si llueve, no voy al cine.",
+          "cue": "If it rains, I'm not going to the cinema.",
+          "changed": "where the rain stops you going"
+        },
+        {
+          "display": "Si puedo, iré el sábado.",
+          "cue": "If I can, I'll go on Saturday.",
+          "changed": "the future given its day"
+        }
+      ],
+      "mistake": {
+        "display": "Si lloverá, no voy al parque.",
+        "why": "The condition takes the present: si llueve. lloverá is a real word and it cannot stand after si, which is the one shape English speakers reach for."
+      },
+      "usage": "Weekend arithmetic, said out loud. The second sentence swaps to -ré because the going is further off and less certain.",
+      "register": "neutral",
+      "mnemonic": "It rains with nobody doing it."
+    },
+    {
+      "id": "L3-M4-S03",
+      "display": "Mañana tendré una reunión con mi jefe.",
+      "cue": "Tomorrow I'll have a meeting with my boss.",
+      "literal": "Tomorrow I-will-have a meeting with my boss.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tendré",
+            "cue": "I'll have",
+            "tag": "delta",
+            "forms": [],
+            "note": "tener shortens before the future ending — tener → tendr- → tendré — so it cannot be built from the infinitive whole. L2-M2's tengo is untouched by this."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "L1-M6 taught voy a and this module teaches -ré, and neither replaces the other. Voy a tener una reunión is the same appointment said in the near future.",
+      "sound": "ten-DRE, stressed on the end. The d is there because the stem shortened, and it is fully said.",
+      "variations": [
+        {
+          "display": "Mañana tendré tiempo.",
+          "cue": "Tomorrow I'll have time.",
+          "changed": "what there will be"
+        },
+        {
+          "display": "Voy a tener una reunión mañana.",
+          "cue": "I'm going to have a meeting tomorrow.",
+          "changed": "L1-M6's near future in place of -ré"
+        }
+      ],
+      "mistake": {
+        "display": "Mañana teneré una reunión.",
+        "why": "tener is one of the five that shorten: tendré. Adding the ending to the whole infinitive is exactly what works for hablar and exactly what fails here."
+      },
+      "usage": "Diary talk. The -ré future is what gets written in a message, where voy a is what gets said across a desk.",
+      "register": "neutral",
+      "mnemonic": "tener loses its e and gains a d."
+    },
+    {
+      "id": "L3-M4-S04",
+      "display": "No podré ir el sábado, pero haré algo el domingo.",
+      "cue": "I won't be able to go on Saturday, but I'll do something on Sunday.",
+      "literal": "Not I-will-be-able to-go the Saturday, but I-will-do something the Sunday.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "podré",
+            "cue": "I'll be able to",
+            "tag": "delta",
+            "forms": [],
+            "note": "poder shortens to podr- before the ending: podré. English has no future of \"can\" and reaches for \"will be able to\"; Spanish just conjugates the verb."
+          },
+          {
+            "display": "haré",
+            "cue": "I'll do · I'll make",
+            "tag": "delta",
+            "forms": [],
+            "note": "hacer shortens all the way to har-: haré. L1-M6's hacer and L1-M5's hice are the same verb, and none of its shapes look like the others."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "English cannot say \"I will can\", so it borrows a whole phrase. Spanish has the cell, and podré is one word where English needs four.",
+      "sound": "po-DRE and a-RE, both stressed on the end, and the h of haré is silent as every Spanish h is.",
+      "variations": [
+        {
+          "display": "No podré ir mañana.",
+          "cue": "I won't be able to go tomorrow.",
+          "changed": "the day"
+        },
+        {
+          "display": "Haré algo el domingo.",
+          "cue": "I'll do something on Sunday.",
+          "changed": "the second half standing alone"
+        }
+      ],
+      "mistake": {
+        "display": "No poderé ir el sábado.",
+        "why": "poder shortens before the ending: podré. The five that shorten are the whole of the irregularity, and poder is one of them."
+      },
+      "usage": "Turning down one invitation and offering another, which is what most of the future tense is for.",
+      "register": "neutral",
+      "mnemonic": "Five verbs shorten; podré and haré are two of them."
+    },
+    {
+      "id": "L3-M4-S05",
+      "display": "Te diré algo mañana. Vendré el sábado por la tarde.",
+      "cue": "I'll tell you something tomorrow. I'll come on Saturday afternoon.",
+      "literal": "To-you I-will-say something tomorrow. I-will-come the Saturday by the afternoon.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "diré",
+            "cue": "I'll tell · I'll say",
+            "tag": "delta",
+            "forms": [],
+            "note": "decir shortens to dir- before the ending: diré. L2-M10's dije and dijo are the past of the same verb, and no two of its shapes agree."
+          },
+          {
+            "display": "vendré",
+            "cue": "I'll come",
+            "tag": "delta",
+            "forms": [],
+            "note": "venir shortens and grows a d, exactly as tener does: venir → vendr- → vendré. The pair is worth learning together because they break the same way."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "tendré and vendré rhyme because tener and venir shorten identically. Learning one of them is learning both, and that is the only bargain this tense offers.",
+      "sound": "di-RE, and ben-DRE with the v a soft b made with both lips. Both stressed on the final syllable.",
+      "variations": [
+        {
+          "display": "Te diré algo el domingo.",
+          "cue": "I'll tell you something on Sunday.",
+          "changed": "the day"
+        },
+        {
+          "display": "Vendré mañana por la mañana.",
+          "cue": "I'll come tomorrow morning.",
+          "changed": "when the coming happens"
+        }
+      ],
+      "mistake": {
+        "display": "Te deciré algo mañana.",
+        "why": "decir shortens to dir-: te diré algo mañana. The whole infinitive plus an ending is what regular verbs do, and decir is not one."
+      },
+      "usage": "Both halves of a promise. Spanish reaches for -ré here because the promise is for another day.",
+      "register": "informal",
+      "mnemonic": "tendré and vendré break the same way."
+    },
+    {
+      "id": "L3-M4-S06",
+      "display": "Yo que tú, iría al médico hoy.",
+      "cue": "If I were you, I'd go to the doctor today.",
+      "literal": "I that you, I-would-go to-the doctor today.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yo que tú",
+            "cue": "if I were you",
+            "tag": "delta",
+            "forms": [],
+            "note": "A whole frame with no verb in it at all, where English needs four words and a subjunctive. It is fixed: nothing inside it changes, and it is tú-only."
+          },
+          {
+            "display": "iría",
+            "cue": "I would go",
+            "tag": "delta",
+            "forms": [],
+            "note": "The conditional of ir: the future stem iré plus -ía. Whatever the future did to a verb, the conditional does the same, which makes the pair one lesson."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The frame has no verb, so there is nothing in it to conjugate. A learner building si yo fuera tú word by word has said something correct and heavier than anyone speaks.",
+      "sound": "yo ke TU, three quick syllables with the stress at the end. i-RI-a is three syllables, the accent breaking the i away from the a.",
+      "variations": [
+        {
+          "display": "Yo que tú, iría mañana.",
+          "cue": "If I were you, I'd go tomorrow.",
+          "changed": "when the advice says to go"
+        },
+        {
+          "display": "Yo que tú, no iría hoy.",
+          "cue": "If I were you, I wouldn't go today.",
+          "changed": "the advice reversed"
+        }
+      ],
+      "mistake": {
+        "display": "Yo que tú, voy al médico hoy.",
+        "why": "The frame is advice about a situation that is not yours, so the verb after it is conditional: yo que tú, iría. voy makes it a plan of your own."
+      },
+      "usage": "The everyday way to give advice without giving an order. Said between friends; the frame itself names tú, so it never reaches a stranger.",
+      "register": "informal",
+      "mnemonic": "yo que tú carries no verb of its own."
+    },
+    {
+      "id": "L3-M4-S07",
+      "display": "¿Podría ayudarme, por favor? Sería muy amable.",
+      "cue": "Could you help me, please? That would be very kind.",
+      "literal": "Could to-help-me, please? Would-be very kind.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "podría",
+            "cue": "could you · could I",
+            "tag": "delta",
+            "forms": [],
+            "note": "The conditional of poder, and the politest way to ask for anything: ¿podría ayudarme? L2-M1's ¿puede? asks the same thing with less distance in it."
+          },
+          {
+            "display": "sería",
+            "cue": "it would be",
+            "tag": "delta",
+            "forms": [],
+            "note": "The conditional of ser, off the future stem seré: sería. One cell covers yo and él/ella, exactly as sea does."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "L2-M1 bought politeness with frames because this tense was not available yet. Now it is, and ¿podría? is a step above ¿puede? rather than a replacement for it.",
+      "sound": "po-DRI-a, three syllables, and the question rises at the end even with the two question marks around it.",
+      "variations": [
+        {
+          "display": "¿Podría repetir, por favor?",
+          "cue": "Could you repeat that, please?",
+          "changed": "what is being asked for"
+        },
+        {
+          "display": "¿Podría abrir la ventana?",
+          "cue": "Could you open the window?",
+          "changed": "L2-M1's request rebuilt with the conditional"
+        }
+      ],
+      "mistake": {
+        "display": "¿Podría a ayudarme, por favor?",
+        "why": "podría takes the infinitive with nothing between: ¿podría ayudarme? The a belongs to voy a, and it is the habit that puts it here."
+      },
+      "usage": "For a stranger, a counter, an office. The chip is formal because podría is what distance sounds like in Spanish.",
+      "register": "formal",
+      "mnemonic": "puede asks; podría asks from further away."
+    },
+    {
+      "id": "L3-M4-S08",
+      "display": "Si tuviera más tiempo, iría al cine contigo.",
+      "cue": "If I had more time, I'd go to the cinema with you.",
+      "literal": "If I-had more time, I-would-go to-the cinema with-you.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tuviera",
+            "cue": "if I had · if he had",
+            "tag": "delta",
+            "forms": [],
+            "note": "The imperfect subjunctive of tener, and here it says the opposite of what is true: si tuviera tiempo means the speaker has none. One cell for yo and él/ella."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "This si is not S01's. A present after si is a real condition; tuviera after si is a wish about something that is not so, and the second half moves to the conditional to match.",
+      "sound": "tu-BIE-ra, with the v a soft b and the ie said as one glide. Three syllables, stressed in the middle.",
+      "variations": [
+        {
+          "display": "Si tuviera tiempo, iría hoy.",
+          "cue": "If I had time, I'd go today.",
+          "changed": "the wish brought forward to today"
+        },
+        {
+          "display": "Si tengo tiempo, voy al cine.",
+          "cue": "If I have time, I'll go to the cinema.",
+          "changed": "the real condition beside the unreal one"
+        }
+      ],
+      "mistake": {
+        "display": "Si tengo más tiempo, iría al cine.",
+        "why": "A conditional in the second half needs tuviera in the first: si tuviera más tiempo, iría. tengo makes it a real condition, and then the going has to be voy."
+      },
+      "usage": "Turning something down while saying you wanted it. The frame is an apology as much as a condition.",
+      "register": "informal",
+      "mnemonic": "tuviera says it is not so."
+    },
+    {
+      "id": "L3-M4-S09",
+      "display": "Si fuera más fácil, lo haría hoy. Tendría más tiempo.",
+      "cue": "If it were easier, I'd do it today. I'd have more time.",
+      "literal": "If it-were more easy, it I-would-do today. I-would-have more time.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fuera",
+            "cue": "if it were · if I were",
+            "tag": "delta",
+            "forms": [],
+            "note": "The imperfect subjunctive of ser, the second and last cell this module opens: si fuera más fácil. L1-M5's fue is the same verb in the past."
+          },
+          {
+            "display": "haría",
+            "cue": "I would do · I would make",
+            "tag": "delta",
+            "forms": [],
+            "note": "The conditional of hacer, off the shortened future stem har-: haré, haría. The shortening happens once and both tenses use it."
+          },
+          {
+            "display": "tendría",
+            "cue": "I would have",
+            "tag": "delta",
+            "forms": [],
+            "note": "The conditional of tener, off tendr-: tendré, tendría. Reading the two side by side is the cheapest way to see that the stem is shared."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "fuera and tuviera are the only two cells of this mood the module opens, and both live inside the same frame. Everything else the imperfect subjunctive does is a later level's.",
+      "sound": "FUE-ra, two syllables with the ue as one glide, stressed at the front. a-RI-a and ten-DRI-a both break the i from the a.",
+      "variations": [
+        {
+          "display": "Si fuera más barato, lo haría.",
+          "cue": "If it were cheaper, I'd do it.",
+          "changed": "what would have to change first"
+        },
+        {
+          "display": "Tendría más tiempo el domingo.",
+          "cue": "I'd have more time on Sunday.",
+          "changed": "the conditional standing without its condition"
+        }
+      ],
+      "mistake": {
+        "display": "Si sería más fácil, lo haría hoy.",
+        "why": "The conditional never stands after si: si fuera más fácil. sería belongs on the other side of the comma, where the wish lands."
+      },
+      "usage": "Explaining why something is not happening. The second sentence shows the conditional living perfectly well on its own.",
+      "register": "neutral",
+      "mnemonic": "Never a -ría after si."
+    },
+    {
+      "id": "L3-M4-S10",
+      "display": "Si tengo tiempo, hablaré con mi jefe. Yo que tú, hablaría hoy.",
+      "cue": "If I have time, I'll speak to my boss. If I were you, I'd speak today.",
+      "literal": "If I-have time, I-will-speak with my boss. I that you, I-would-speak today.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hablaría",
+            "cue": "I would speak",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M6's hablaré with -ía in place of -é. hablar shortens nothing, so both tenses are the whole infinitive plus an ending, and the pair is visible in one line."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "hablaré came two levels ago and hablaría is one letter of work away from it. The module's whole conditional is that swap, applied to whatever stem the future already had.",
+      "sound": "a-bla-RE against a-bla-RI-a: the second is a syllable longer and the stress moves onto the i.",
+      "variations": [
+        {
+          "display": "Si tengo tiempo, hablaré mañana.",
+          "cue": "If I have time, I'll speak tomorrow.",
+          "changed": "when the speaking happens"
+        },
+        {
+          "display": "Yo que tú, hablaría con tu jefe.",
+          "cue": "If I were you, I'd speak to your boss.",
+          "changed": "the advice given its listener"
+        }
+      ],
+      "mistake": {
+        "display": "Si tendré tiempo, hablaré con mi jefe.",
+        "why": "The si half is present, whatever the other half does: si tengo tiempo, hablaré. A future on both sides is the English sentence, word for word."
+      },
+      "usage": "A plan and the advice it earns, in one breath. Nothing here is new except the ending on the last verb.",
+      "register": "informal",
+      "mnemonic": "-é is what will happen; -ía is what would."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M4-C01",
+      "display": "Si tienes tiempo, te llamo mañana.",
+      "cue": "If you have time, I'll call you tomorrow."
+    },
+    {
+      "id": "L3-M4-C02",
+      "display": "Si llueve, no voy al parque.",
+      "cue": "If it rains, I'm not going to the park."
+    },
+    {
+      "id": "L3-M4-C03",
+      "display": "Mañana tendré una reunión con mi jefe.",
+      "cue": "Tomorrow I'll have a meeting with my boss."
+    },
+    {
+      "id": "L3-M4-C04",
+      "display": "No podré ir el sábado, pero haré algo el domingo.",
+      "cue": "I won't be able to go on Saturday, but I'll do something on Sunday."
+    },
+    {
+      "id": "L3-M4-C05",
+      "display": "Te diré algo mañana.",
+      "cue": "I'll tell you something tomorrow."
+    },
+    {
+      "id": "L3-M4-C06",
+      "display": "Vendré el sábado por la tarde.",
+      "cue": "I'll come on Saturday afternoon."
+    },
+    {
+      "id": "L3-M4-C07",
+      "display": "Yo que tú, iría al médico hoy.",
+      "cue": "If I were you, I'd go to the doctor today."
+    },
+    {
+      "id": "L3-M4-C08",
+      "display": "¿Podría ayudarme, por favor?",
+      "cue": "Could you help me, please?"
+    },
+    {
+      "id": "L3-M4-C09",
+      "display": "Si tuviera más tiempo, iría al cine contigo.",
+      "cue": "If I had more time, I'd go to the cinema with you."
+    },
+    {
+      "id": "L3-M4-C10",
+      "display": "Si fuera más fácil, lo haría hoy.",
+      "cue": "If it were easier, I'd do it today."
+    },
+    {
+      "id": "L3-M4-C11",
+      "display": "Si tengo tiempo, hablaré con mi jefe.",
+      "cue": "If I have time, I'll speak to my boss."
+    },
+    {
+      "id": "L3-M4-C12",
+      "display": "Yo que tú, hablaría hoy. Sería mucho mejor.",
+      "cue": "If I were you, I'd speak today. It would be much better."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

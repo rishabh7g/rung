@@ -1,0 +1,579 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M8",
+  "title": "Money and paperwork",
+  "job": "Rent, bills, forms, offices",
+  "prerequisites": [
+    "L3-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "present",
+      "Perfekt"
+    ],
+    "allowedPatterns": [
+      "Das ist die Rechnung des letzten Monats",
+      "Das ist der Vertrag + , + den ich + <participle> + habe",
+      "Der Mann + , + dem ich das Geld gebe",
+      "Wegen des Vertrags + V-2 + ich",
+      "Ich muss das Formular ausfüllen"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE GENITIVE is the case of paperwork and of writing — die Rechnung des letzten Monats, der Anfang des Monats, das Ende des Vertrags. Masculine and neuter take des and add -s or -es to the noun (des Vertrags, des Problems, des Tages); feminine and plural take der and the noun does not move (der Miete). In ordinary speech German mostly says von plus the dative instead, and you already have that: L2-M2's der Bruder von Anna is the same relation. Neither is wrong. The form is what a contract is written in; von is what a person says."
+    },
+    {
+      "tag": "free",
+      "text": "A small class of masculine nouns adds -n or -en in EVERY case except the bare subject, and L2-M2 already met its edge when it had to write Herrn: der Kollege, but des Kollegen, dem Kollegen, den Kollegen. So it is des Kollegen and never des Kolleges. The class is small — Herr, Kollege, Student, Mensch, Name — and each one is learned with the noun rather than by a rule."
+    },
+    {
+      "tag": "interference",
+      "text": "wegen, während and trotz are the genitive prepositions a contract and an office form will both use: wegen des Vertrags, während des Tages, trotz des Problems. Here is the honesty this owes you, in the register L2-M9 used for größer wie: spoken German puts wegen with the DATIVE constantly — wegen dem Wetter — and you will hear both within a week. Neither will get you misunderstood. Write the genitive, because that is what the form is written in."
+    },
+    {
+      "tag": "delta",
+      "text": "THE RELATIVE CLAUSE, and it opens no new pronoun at all: the relative pronoun is spelled exactly like the definite article in every cell this level needs — der, die, das, den, dem — all of them L1-M1's and L1-M7's. The clause is subordinate, so its finite verb goes to the END, and the comma in front of it is obligatory, which is L1-M9's comma rule doing its third job in this course. Das ist der Vertrag, den ich unterschrieben habe. Only the dative plural denen is new; the genitive relatives dessen and deren are out of this level entirely."
+    },
+    {
+      "tag": "interference",
+      "text": "The relative pronoun takes its GENDER from the noun it points back at and its CASE from its own clause, and this is the part that goes wrong every time. der Mann, den ich sehe — masculine from Mann, accusative because he is what sehen sees. der Mann, dem ich das Geld gebe — masculine still, but dative because geben puts its recipient there (L2-M3's grid, earning its keep again). And English drops the word half the time, so the error an English speaker builds is no pronoun at all: Das ist der Vertrag ich unterschrieben habe. German never allows the gap."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M8-S01",
+      "display": "Das ist die Rechnung des letzten Monats",
+      "cue": "That's last month's bill",
+      "literal": "that is the bill of-the last month",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "des",
+            "cue": "of the (masculine / neuter)",
+            "tag": "delta",
+            "forms": [
+              "des"
+            ],
+            "note": "The genitive article for masculine and neuter, and the noun after it adds -s or -es: des Monats, des Vertrags. Feminine and plural take der."
+          },
+          {
+            "display": "letzten",
+            "cue": "last",
+            "tag": "free",
+            "forms": [
+              "letzten"
+            ],
+            "note": "letzt- with the -en ending the genitive asks for, exactly as L3-M2's adjectives take their ending from the case in front of them."
+          },
+          {
+            "display": "Monat",
+            "cue": "month",
+            "tag": "free",
+            "forms": [
+              "Monat",
+              "Monats",
+              "Monate"
+            ],
+            "note": "der Monat, plural die Monate, genitive des Monats. It is one of the -s nouns, not one of L2-M2's Herrn class."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "English puts the owner first with an apostrophe — last month's bill. German puts it after the noun and changes the article instead.",
+      "sound": "das ist dee REKH-noong des LET-sten MOH-nats. The ch of Rechnung is the hard one, from the back of the throat.",
+      "variations": [
+        {
+          "display": "Das ist die Rechnung von der letzten Woche",
+          "cue": "That's last week's bill",
+          "changed": "the spoken version — von plus the dative, L2-M2's shape"
+        }
+      ],
+      "mistake": {
+        "display": "Das ist die Rechnung des letzten Monat",
+        "why": "The genitive marks the noun as well as the article. It is des Monats, with the -s."
+      },
+      "usage": "Handing over a bill, or asking which one you are looking at.",
+      "register": "neutral",
+      "mnemonic": "des plus -s. The article and the noun both carry the case."
+    },
+    {
+      "id": "L3-M8-S02",
+      "display": "Das ist der Vertrag, den ich unterschrieben habe",
+      "cue": "That's the contract I signed",
+      "literal": "that is the contract, which I signed have",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Vertrag",
+            "cue": "contract",
+            "tag": "free",
+            "forms": [
+              "Vertrag",
+              "Vertrags"
+            ],
+            "note": "der Vertrag, genitive des Vertrags. A Mietvertrag is the rental one, and it is the piece of paper a flat depends on."
+          },
+          {
+            "display": "unterschrieben",
+            "cue": "signed",
+            "tag": "free",
+            "forms": [
+              "unterschreiben",
+              "unterschrieben"
+            ],
+            "note": "unterschreiben, to sign — literally to write under. The participle has no ge-, because the verb starts with an unstressed prefix."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "English can leave the relative pronoun out — the contract I signed. German cannot: den has to be there, and the verb has to go last.",
+      "sound": "das ist dair fair-TRAHK, dayn ikh oon-ter-SHREE-ben HAH-buh. The V of Vertrag is an f.",
+      "variations": [
+        {
+          "display": "Das ist die Rechnung, die ich bezahlt habe",
+          "cue": "That's the bill I paid",
+          "changed": "a feminine noun, so the pronoun is die"
+        },
+        {
+          "display": "Das ist das Formular, das ich ausfülle",
+          "cue": "That's the form I'm filling in",
+          "changed": "neuter, and the present tense inside the clause"
+        }
+      ],
+      "mistake": {
+        "display": "Das ist der Vertrag ich unterschrieben habe",
+        "why": "The gap English allows does not exist in German. The pronoun den is obligatory, and so is the comma before it."
+      },
+      "usage": "Pointing at one document among several — in an office, at a bank, at a viewing.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M8-S03",
+      "display": "Die Kollegen, denen ich das Geld überweise, arbeiten im Büro",
+      "cue": "The colleagues I transfer the money to work in the office",
+      "literal": "the colleagues, to-whom I the money transfer, work in-the office",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "denen",
+            "cue": "to whom (plural)",
+            "tag": "delta",
+            "forms": [
+              "denen"
+            ],
+            "note": "The one relative pronoun that is not spelled like an article: the DATIVE PLURAL. den Kollegen as an article, denen as the pronoun."
+          },
+          {
+            "display": "überweise",
+            "cue": "transfer (money)",
+            "tag": "free",
+            "forms": [
+              "überweise",
+              "überweisen"
+            ],
+            "note": "überweisen is to move money from one account to another — the ordinary way a bill is paid here. Not the same as bezahlen, which is the paying itself."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "The case comes from inside the clause: überweisen gives money TO someone, so the pronoun is dative — denen, not die.",
+      "sound": "dee ko-LAY-gen, DAY-nen ikh das gelt UE-ber-vy-zuh. The stress in überweise sits on the wy.",
+      "variations": [
+        {
+          "display": "Der Mann, dem ich das Geld gebe, ist mein Chef",
+          "cue": "The man I give the money to is my boss",
+          "changed": "one person, so the dative singular dem — L1-M7's article, doing pronoun duty"
+        }
+      ],
+      "usage": "Naming who gets paid, in a sentence that keeps the whole thing together.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M8-S04",
+      "display": "Wegen des Vertrags muss ich zum Amt gehen",
+      "cue": "Because of the contract I have to go to the office",
+      "literal": "because-of the contract must I to-the office go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wegen",
+            "cue": "because of",
+            "tag": "delta",
+            "forms": [
+              "wegen"
+            ],
+            "note": "wegen + genitive in writing, wegen + dative all over spoken German (wegen dem Wetter). It takes a noun; weil (L1-M9) takes a whole clause."
+          },
+          {
+            "display": "Amt",
+            "cue": "public office",
+            "tag": "free",
+            "forms": [
+              "Amt"
+            ],
+            "note": "das Amt is the government office you go to in person, with a number and a waiting room. Bürgeramt, Finanzamt — the same word inside longer ones."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "wegen and weil are not interchangeable. wegen des Vertrags takes a noun; weil ich den Vertrag habe takes a clause with the verb last.",
+      "sound": "VAY-gen des fair-TRAHKS moos ikh tsoom amt GAY-en. The w of wegen is a v.",
+      "variations": [
+        {
+          "display": "Wegen dem Vertrag muss ich zum Amt gehen",
+          "cue": "Because of the contract I have to go to the office",
+          "changed": "the spoken dative, which you will hear constantly"
+        }
+      ],
+      "mistake": {
+        "display": "Wegen ich den Vertrag habe, muss ich zum Amt gehen",
+        "why": "wegen cannot open a clause. Either wegen des Vertrags, or weil ich den Vertrag habe."
+      },
+      "usage": "The reason you give at the door, or on the telephone when you ring for an appointment.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M8-S05",
+      "display": "Ich muss das Formular ausfüllen",
+      "cue": "I have to fill in the form",
+      "literal": "I must the form out-fill",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Formular",
+            "cue": "form",
+            "tag": "free",
+            "forms": [
+              "Formular"
+            ],
+            "note": "das Formular is the sheet you fill in. It is not the English formula, which is a false friend worth one line."
+          },
+          {
+            "display": "ausfüllen",
+            "cue": "fill in",
+            "tag": "free",
+            "forms": [
+              "ausfüllen",
+              "ausgefüllt",
+              "ausfülle",
+              "fülle"
+            ],
+            "note": "Separable, like L3-M1's einkaufen: Ich fülle das Formular aus. After a modal it stays whole and goes to the end."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "English fills a form IN or OUT and means the same thing; German has one verb and the particle is part of it, never a preposition.",
+      "sound": "ikh moos das for-moo-LAR OWS-fue-len. Formular stresses its last syllable.",
+      "variations": [
+        {
+          "display": "Ich fülle das Formular aus",
+          "cue": "I'm filling in the form",
+          "changed": "no modal, so the prefix comes off and goes to the end"
+        }
+      ],
+      "usage": "At the Amt, at the bank, at the doctor's — the sentence of the waiting room.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M8-S06",
+      "display": "Die Miete bezahle ich am Anfang des Monats",
+      "cue": "I pay the rent at the beginning of the month",
+      "literal": "the rent pay I at-the beginning of-the month",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Miete",
+            "cue": "rent",
+            "tag": "free",
+            "forms": [
+              "Miete"
+            ],
+            "note": "die Miete, the rent itself. Kaltmiete is the rent without heating and bills, Warmmiete the rent with them — the two numbers on every advert."
+          },
+          {
+            "display": "bezahle",
+            "cue": "pay",
+            "tag": "free",
+            "forms": [
+              "bezahle",
+              "bezahlen",
+              "bezahlt"
+            ],
+            "note": "bezahlen is to pay for something; the participle bezahlt has no ge- because be- is an unstressed prefix, exactly like unterschrieben."
+          },
+          {
+            "display": "Anfang",
+            "cue": "beginning",
+            "tag": "free",
+            "forms": [
+              "Anfang"
+            ],
+            "note": "der Anfang, and am Anfang is at the beginning. Its opposite, das Ende, works the same way: am Ende des Monats."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The object is in front here, so the verb still stands second and the subject comes after it — L2-M6's order, not a new one.",
+      "sound": "dee MEE-tuh buh-TSAH-luh ikh am AN-fang des MOH-nats. The z of bezahle is ts.",
+      "variations": [
+        {
+          "display": "Ich habe die Miete schon bezahlt",
+          "cue": "I've already paid the rent",
+          "changed": "the Perfekt, with bezahlt at the end of the bracket"
+        }
+      ],
+      "usage": "The rent is normally a standing transfer, and it is expected at the start of the month.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M8-S07",
+      "display": "Trotz des Problems bleibe ich ruhig",
+      "cue": "In spite of the problem I'm staying calm",
+      "literal": "in-spite-of the problem stay I calm",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "trotz",
+            "cue": "in spite of",
+            "tag": "free",
+            "forms": [
+              "trotz"
+            ],
+            "note": "trotz + genitive, and it is the noun version of L3-M3's obwohl: trotz des Problems against obwohl es ein Problem gibt."
+          },
+          {
+            "display": "Problems",
+            "cue": "problem (genitive)",
+            "tag": "delta",
+            "forms": [
+              "Problems"
+            ],
+            "note": "The genitive of L2-M8's Problem — the neuter -s the genitive adds. First-teach row for Problem is L2-M8's."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "trotzdem (L3-M3) and trotz are not the same word. trotzdem joins two sentences; trotz takes a noun in the genitive.",
+      "sound": "trots des pro-BLAYMS BLY-buh ikh ROO-ikh. The final -ig of ruhig is said ikh.",
+      "variations": [
+        {
+          "display": "Trotz der Rechnung bleibe ich ruhig",
+          "cue": "In spite of the bill I'm staying calm",
+          "changed": "a feminine noun, so der and nothing added to it"
+        }
+      ],
+      "usage": "The register of a complaint letter, and of anyone being reasonable at a counter.",
+      "register": "formal"
+    },
+    {
+      "id": "L3-M8-S08",
+      "display": "Während des Tages arbeite ich im Büro",
+      "cue": "During the day I work in the office",
+      "literal": "during the day work I in-the office",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "während",
+            "cue": "during",
+            "tag": "free",
+            "forms": [
+              "während"
+            ],
+            "note": "während + genitive for a stretch of time: während des Tages. As a conjunction (while) it belongs to L4-M6 and stays out here."
+          },
+          {
+            "display": "Tages",
+            "cue": "day (genitive)",
+            "tag": "delta",
+            "forms": [
+              "Tages"
+            ],
+            "note": "The genitive of L1-M4's Tag: masculine, so -es rather than a bare -s. Its dative plural Tagen is L3-M7's row."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "sound": "VAY-rent des TAH-ges AR-by-tuh ikh im bue-ROH. The final d of während is said as a t.",
+      "variations": [
+        {
+          "display": "Während der Woche arbeite ich im Büro",
+          "cue": "During the week I work in the office",
+          "changed": "feminine, so der — and L3-M1's Woche"
+        }
+      ],
+      "usage": "Saying when something holds, on a form or in an office.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M8-S09",
+      "display": "Ich habe den Antrag noch nicht unterschrieben",
+      "cue": "I haven't signed the application yet",
+      "literal": "I have the application still not signed",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Antrag",
+            "cue": "application",
+            "tag": "free",
+            "forms": [
+              "Antrag",
+              "Antrags"
+            ],
+            "note": "der Antrag is the application you submit — einen Antrag stellen is to make one. The Formular is the paper it is written on."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "noch nicht is the pair that means not yet, and it stays together in the middle of the bracket, ahead of the participle.",
+      "sound": "ikh HAH-buh dayn AN-trahk nokh nikht oon-ter-SHREE-ben. The ch of noch is hard and the ch of nicht is soft.",
+      "variations": [
+        {
+          "display": "Ich habe den Antrag schon ausgefüllt",
+          "cue": "I've already filled in the application",
+          "changed": "schon instead of noch nicht, and the other participle"
+        }
+      ],
+      "usage": "Where a case actually is, said to a clerk who asked.",
+      "register": "formal"
+    },
+    {
+      "id": "L3-M8-S10",
+      "display": "Ich habe ein Konto bei der Bank",
+      "cue": "I have an account at the bank",
+      "literal": "I have an account at the bank",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Konto",
+            "cue": "account",
+            "tag": "free",
+            "forms": [
+              "Konto"
+            ],
+            "note": "das Konto, the bank account. Kontonummer is its number, and it is what every Antrag asks for after your name."
+          },
+          {
+            "display": "Bank",
+            "cue": "bank",
+            "tag": "free",
+            "forms": [
+              "Bank"
+            ],
+            "note": "die Bank is the bank, and also the bench you sit on — the plural tells them apart: Banken for money, Bänke for benches."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "sound": "ikh HAH-buh ine KON-toh by dair bank. bei rhymes with the English by.",
+      "variations": [
+        {
+          "display": "Die Miete überweise ich jeden Monat",
+          "cue": "I transfer the rent every month",
+          "changed": "the transfer verb from S03 in a plain sentence, with jeden Monat for the timing"
+        }
+      ],
+      "usage": "The first sentence of any office visit that involves money — and beim Arzt is L3-M7's bei doing the same job.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M8-C01",
+      "display": "Das ist die Rechnung des letzten Monats",
+      "cue": "That's last month's bill"
+    },
+    {
+      "id": "L3-M8-C02",
+      "display": "Das ist der Vertrag, den ich unterschrieben habe",
+      "cue": "That's the contract I signed"
+    },
+    {
+      "id": "L3-M8-C03",
+      "display": "Der Mann, dem ich das Geld gebe, ist mein Chef",
+      "cue": "The man I give the money to is my boss"
+    },
+    {
+      "id": "L3-M8-C04",
+      "display": "Wegen des Vertrags muss ich zum Amt gehen",
+      "cue": "Because of the contract I have to go to the office"
+    },
+    {
+      "id": "L3-M8-C05",
+      "display": "Ich muss das Formular ausfüllen",
+      "cue": "I have to fill in the form"
+    },
+    {
+      "id": "L3-M8-C06",
+      "display": "Die Miete bezahle ich am Anfang des Monats",
+      "cue": "I pay the rent at the beginning of the month"
+    },
+    {
+      "id": "L3-M8-C07",
+      "display": "Trotz des Problems bleibe ich ruhig",
+      "cue": "In spite of the problem I'm staying calm"
+    },
+    {
+      "id": "L3-M8-C08",
+      "display": "Während des Tages arbeite ich im Büro",
+      "cue": "During the day I work in the office"
+    },
+    {
+      "id": "L3-M8-C09",
+      "display": "Ich habe den Antrag noch nicht unterschrieben",
+      "cue": "I haven't signed the application yet"
+    },
+    {
+      "id": "L3-M8-C10",
+      "display": "Ich habe ein Konto bei der Bank",
+      "cue": "I have an account at the bank"
+    },
+    {
+      "id": "L3-M8-C11",
+      "display": "Das Geld überweise ich morgen",
+      "cue": "I'll transfer the money tomorrow"
+    },
+    {
+      "id": "L3-M8-C12",
+      "display": "Das ist das Büro des Kollegen",
+      "cue": "That's my colleague's office"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

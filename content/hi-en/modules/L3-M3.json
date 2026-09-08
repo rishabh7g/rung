@@ -1,0 +1,615 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M3",
+  "title": "Opinions with reasons",
+  "job": "Agree, disagree, soften — reasons attached",
+  "prerequisites": [
+    "L3-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present_simple",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "I don't think + <clause, positive>",
+      "I agree with + <N>",
+      "I think so / I hope so",
+      "<clause> + , + although + <clause>",
+      "To be honest + , + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "राय में नकार ऊपर चढ़ जाता है. अंग्रेज़ी कहती है I don't think it's true — नकार सोचने वाली क्रिया पर — जबकि हिंदी उसे वहीं छोड़ती है जहाँ उसका काम है: मुझे लगता है कि यह सही नहीं है. I think it isn't true व्याकरण से सही है, पर उसमें ज़ोर इतना है कि हर असहमति लड़ाई जैसी लगने लगती है. think, believe, seem — तीनों पर यही चलता है."
+    },
+    {
+      "tag": "interference",
+      "text": "agree क्रिया है, विशेषण नहीं: I agree, I don't agree, I agreed, he agrees. *I am agree अंग्रेज़ी में है ही नहीं. यह ग़लती सीधे मैं सहमत हूँ से आती है, जहाँ सहमत सचमुच विशेषण है और हूँ उसका सहारा. साथ आने वाला शब्द भी तय है — आदमी से agree with, योजना पर agree on, माँग पर agree to."
+    },
+    {
+      "tag": "delta",
+      "text": "पूरा वाक्य दोहराने की जगह अंग्रेज़ी एक शब्द रख देती है: Is the shop open? — I think so. Will she come? — I hope so. Is he here? — I'm afraid not. so हाँ वाले वाक्य की जगह खड़ा होता है और not ना वाले की. I think the shop is open ग़लत नहीं है, बस भारी है — और भारीपन ही यहाँ सुनाई देता है."
+    },
+    {
+      "tag": "delta",
+      "text": "although और though एक ही काम करते हैं, जगह अलग रखते हैं. although आधे वाक्य के आगे लगता है — The food is good, although it is expensive — और though बोलचाल में आख़िर में अकेला रह जाता है: It is expensive. The food is good, though. एक शर्त दोनों पर है: हिंदी के हालाँकि … फिर भी की तरह इनके साथ but नहीं आता, एक वाक्य में एक ही जोड़ चलता है."
+    },
+    {
+      "tag": "delta",
+      "text": "नरमी फ़्रेम पर आती है, दावे पर नहीं. To be honest, I don't like this film — फ़्रेम नरम है और दावा सीधा. दावे को ही गोल-मोल कर देना अंग्रेज़ी में टालमटोल सुनाई देता है, इसलिए नरमी आगे रखिए और बात साफ़ कहिए. भारतीय अंग्रेज़ी की अपनी नरमी — actually, only, itself — यहाँ काम नहीं करती."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M3-S01",
+      "display": "I don't think it's true.",
+      "cue": "मुझे नहीं लगता कि यह सही है.",
+      "literal": "मैं नहीं सोचता यह है सच.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "true",
+            "cue": "सच · सही",
+            "tag": "delta",
+            "forms": [
+              "true"
+            ],
+            "note": "विशेषण है, इसलिए इसके आगे a नहीं आता: That's true. उल्टा कहना हो तो That's not true."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "नकार वहीं रखना जहाँ हिंदी रखती है — I think it isn't true — इस पाठ की सबसे बड़ी पहचान है. अंग्रेज़ी उसे ऊपर, think पर चढ़ा देती है.",
+      "sound": "don't में t हल्का सा दबता है — डोन्ट, डोन्टअ नहीं.",
+      "variations": [
+        {
+          "display": "I don't think it's expensive.",
+          "cue": "मुझे नहीं लगता कि यह महँगा है.",
+          "changed": "दूसरा विशेषण"
+        },
+        {
+          "display": "He doesn't think it's true.",
+          "cue": "उसे नहीं लगता कि यह सही है.",
+          "changed": "दूसरा कर्ता, doesn't के साथ"
+        },
+        {
+          "display": "I don't think so.",
+          "cue": "मुझे ऐसा नहीं लगता.",
+          "changed": "पूरा वाक्य एक शब्द में"
+        }
+      ],
+      "mistake": {
+        "display": "I think it isn't true",
+        "why": "नकार ऊपर वाली क्रिया पर जाता है: I don't think it's true."
+      },
+      "usage": "किसी की बात से असहमत होना, बिना कड़वा हुए.",
+      "register": "neutral",
+      "mnemonic": "नकार ऊपर चढ़ता है."
+    },
+    {
+      "id": "L3-M3-S02",
+      "display": "I agree with you. The food here is very good.",
+      "cue": "मैं तुमसे सहमत हूँ. यहाँ का खाना बहुत अच्छा है.",
+      "literal": "मैं सहमत-होता साथ तुम. वह खाना यहाँ है बहुत अच्छा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "agree",
+            "cue": "सहमत होना · मानना",
+            "tag": "interference",
+            "forms": [
+              "agree",
+              "agrees",
+              "agreed"
+            ],
+            "note": "क्रिया है, विशेषण नहीं: I agree. *I am agree ग़लत, क्योंकि हिंदी का सहमत विशेषण है. आदमी के साथ with आता है."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "मैं सहमत हूँ को सीधे उठा लेने से I am agree बनता है, और यही भारतीय अंग्रेज़ी की सबसे आम एक ग़लती है.",
+      "sound": "agree पर ज़ोर दूसरे हिस्से पर है — अग्री, ऐग्री नहीं.",
+      "variations": [
+        {
+          "display": "I agree with my manager.",
+          "cue": "मैं अपने मैनेजर से सहमत हूँ.",
+          "changed": "दूसरा आदमी"
+        },
+        {
+          "display": "My brother agrees with you.",
+          "cue": "मेरा भाई तुमसे सहमत है.",
+          "changed": "दूसरा कर्ता, agrees पर -s"
+        },
+        {
+          "display": "I agreed with you yesterday.",
+          "cue": "मैं कल तुमसे सहमत था.",
+          "changed": "बीता हुआ रूप"
+        }
+      ],
+      "mistake": {
+        "display": "I am agree with you",
+        "why": "agree क्रिया है, am नहीं लेती: I agree with you."
+      },
+      "usage": "किसी की बात मानना और उसकी वजह साथ में देना.",
+      "register": "neutral",
+      "mnemonic": "agree करते हैं, agree होते नहीं."
+    },
+    {
+      "id": "L3-M3-S03",
+      "display": "I disagree, but I see your point.",
+      "cue": "मैं सहमत नहीं हूँ, पर तुम्हारी बात समझ में आती है.",
+      "literal": "मैं असहमत-होता, पर मैं देखता तुम्हारी बात.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "disagree",
+            "cue": "असहमत होना",
+            "tag": "delta",
+            "forms": [
+              "disagree",
+              "disagrees",
+              "disagreed"
+            ],
+            "note": "agree का उल्टा और यह भी क्रिया है: I disagree. I don't agree भी उतना ही सही, और थोड़ा नरम."
+          },
+          {
+            "display": "point",
+            "cue": "बात · दलील",
+            "tag": "delta",
+            "forms": [
+              "point",
+              "points"
+            ],
+            "note": "किसी की कही हुई बात. I see your point का मतलब मानना नहीं, समझना है — That's a good point भी ख़ूब चलता है."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "असहमति के दोनों रास्ते क्रिया वाले हैं — I disagree या I don't agree. *I am disagree किसी में नहीं है.",
+      "sound": "disagree के तीनों हिस्से बोले जाते हैं — डिस-अ-ग्री.",
+      "variations": [
+        {
+          "display": "I disagree with my manager.",
+          "cue": "मैं अपने मैनेजर से असहमत हूँ.",
+          "changed": "दूसरा आदमी"
+        },
+        {
+          "display": "That's a good point.",
+          "cue": "यह बात तो सही है.",
+          "changed": "सिर्फ़ बात की तारीफ़"
+        },
+        {
+          "display": "I don't agree, but I see your point.",
+          "cue": "मैं सहमत नहीं हूँ, पर तुम्हारी बात समझ में आती है.",
+          "changed": "नरम असहमति"
+        }
+      ],
+      "mistake": {
+        "display": "I am disagree with you",
+        "why": "disagree भी क्रिया है: I disagree with you."
+      },
+      "usage": "मीटिंग में असहमत होना और सामने वाले की बात भी मान लेना.",
+      "register": "neutral",
+      "mnemonic": "बात दिखती है — I see your point."
+    },
+    {
+      "id": "L3-M3-S04",
+      "display": "Is the shop open? I think so.",
+      "cue": "क्या दुकान खुली है? मुझे लगता है, हाँ.",
+      "literal": "है वह दुकान खुली? मैं सोचता ऐसा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "I think so",
+            "cue": "मुझे लगता है, हाँ",
+            "tag": "delta",
+            "forms": [
+              "I think so"
+            ],
+            "note": "तीनों शब्द एक साथ चलते हैं. so पूरे वाक्य की जगह खड़ा है: I think the shop is open ग़लत नहीं, बस भारी है."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "जवाब में पूरा वाक्य लौटा देना अंग्रेज़ी में भारी लगता है. so अकेला वही काम कर देता है.",
+      "sound": "think में th जीभ दाँतों के बीच से निकलती है — थिंक, टिंक नहीं.",
+      "variations": [
+        {
+          "display": "Is the bank open? I think so.",
+          "cue": "क्या बैंक खुला है? मुझे लगता है, हाँ.",
+          "changed": "दूसरी जगह"
+        },
+        {
+          "display": "Is she at home? I think so.",
+          "cue": "क्या वह घर पर है? मुझे लगता है, हाँ.",
+          "changed": "दूसरा सवाल"
+        },
+        {
+          "display": "Is the shop open? I don't think so.",
+          "cue": "क्या दुकान खुली है? मुझे नहीं लगता.",
+          "changed": "उल्टा जवाब"
+        }
+      ],
+      "mistake": {
+        "display": "Is the shop open? I think the shop is open",
+        "why": "जवाब में so काफ़ी है: I think so."
+      },
+      "usage": "किसी सवाल का आधा-पक्का जवाब देना.",
+      "register": "neutral",
+      "mnemonic": "पूरा वाक्य नहीं — बस so."
+    },
+    {
+      "id": "L3-M3-S05",
+      "display": "Will she come tomorrow? I hope so.",
+      "cue": "क्या वह कल आएगी? उम्मीद तो यही है.",
+      "literal": "आएगी वह कल? मैं उम्मीद-करता ऐसा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "I hope so",
+            "cue": "उम्मीद तो यही है",
+            "tag": "delta",
+            "forms": [
+              "I hope so"
+            ],
+            "note": "I think so लगने की बात है, I hope so चाहने की. दोनों में so पूरे वाक्य की जगह खड़ा है."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "उम्मीद वाला जवाब think से नहीं बनता. आना अच्छा लगे तो hope, अंदाज़ा भर हो तो think.",
+      "sound": "hope में o लंबा है और e चुप — होप.",
+      "variations": [
+        {
+          "display": "Will he come tonight? I hope so.",
+          "cue": "क्या वह आज रात आएगा? उम्मीद तो यही है.",
+          "changed": "दूसरा आदमी और दूसरा वक़्त"
+        },
+        {
+          "display": "Is the food good? I hope so.",
+          "cue": "क्या खाना अच्छा है? उम्मीद तो यही है.",
+          "changed": "दूसरा सवाल"
+        },
+        {
+          "display": "I hope so, but I am not sure.",
+          "cue": "उम्मीद तो यही है, पर मैं पक्का नहीं कह सकता.",
+          "changed": "उम्मीद के साथ नरमी"
+        }
+      ],
+      "mistake": {
+        "display": "Will she come tomorrow? I hope she will come",
+        "why": "पूरा वाक्य दोहराने की ज़रूरत नहीं: I hope so."
+      },
+      "usage": "किसी के आने-जाने की बात पर उम्मीद जताना.",
+      "register": "neutral",
+      "mnemonic": "लगना think, चाहना hope."
+    },
+    {
+      "id": "L3-M3-S06",
+      "display": "Is the manager here? I'm afraid not.",
+      "cue": "क्या मैनेजर यहाँ हैं? अफ़सोस, नहीं.",
+      "literal": "है वह मैनेजर यहाँ? मैं-हूँ अफ़सोस नहीं.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "I'm afraid not",
+            "cue": "अफ़सोस, नहीं",
+            "tag": "delta",
+            "forms": [
+              "I'm afraid not"
+            ],
+            "note": "ना कहने का नरम तरीक़ा. यहाँ afraid में डर नहीं, अफ़सोस है, और not पूरे ना वाले वाक्य की जगह खड़ा है."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "I'm afraid को डर समझ लेना आम है. यह सिर्फ़ बुरी ख़बर के आगे रखी जाने वाली नरमी है.",
+      "sound": "afraid पर ज़ोर दूसरे हिस्से पर है — अफ़्रेड.",
+      "variations": [
+        {
+          "display": "Is the shop open? I'm afraid not.",
+          "cue": "क्या दुकान खुली है? अफ़सोस, नहीं.",
+          "changed": "दूसरा सवाल"
+        },
+        {
+          "display": "I'm afraid not. He is at home.",
+          "cue": "अफ़सोस, नहीं. वह घर पर हैं.",
+          "changed": "जवाब के साथ वजह"
+        },
+        {
+          "display": "Is he here? I don't think so.",
+          "cue": "क्या वह यहाँ है? मुझे नहीं लगता.",
+          "changed": "कम पक्का जवाब"
+        }
+      ],
+      "mistake": {
+        "display": "Is the manager here? I'm afraid he is not here",
+        "why": "not अकेला ही पूरा जवाब है: I'm afraid not."
+      },
+      "usage": "दफ़्तर में या फ़ोन पर किसी को नरमी से ना कहना.",
+      "register": "formal",
+      "mnemonic": "बुरी ख़बर के आगे I'm afraid."
+    },
+    {
+      "id": "L3-M3-S07",
+      "display": "To be honest, I don't like this film.",
+      "cue": "सच कहूँ तो, मुझे यह फ़िल्म पसंद नहीं.",
+      "literal": "को होना ईमानदार, मैं नहीं पसंद-करता यह फ़िल्म.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "to be honest",
+            "cue": "सच कहूँ तो",
+            "tag": "delta",
+            "forms": [
+              "to be honest"
+            ],
+            "note": "तीनों शब्द जमा हुआ एक टुकड़ा हैं और आगे कौमा लेते हैं. बीच का be अलग से अभी कहीं काम नहीं आता."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "नरमी फ़्रेम पर लगती है, दावे पर नहीं. To be honest के बाद बात सीधी कही जाती है, गोल-मोल नहीं.",
+      "sound": "honest में h चुप है — ऑनेस्ट, होनेस्ट नहीं.",
+      "variations": [
+        {
+          "display": "To be honest, I don't think it's good.",
+          "cue": "सच कहूँ तो, मुझे नहीं लगता कि यह अच्छा है.",
+          "changed": "नरमी के साथ ऊपर चढ़ा नकार"
+        },
+        {
+          "display": "To be honest, I don't agree.",
+          "cue": "सच कहूँ तो, मैं सहमत नहीं हूँ.",
+          "changed": "नरमी के साथ असहमति"
+        },
+        {
+          "display": "I don't like this film.",
+          "cue": "मुझे यह फ़िल्म पसंद नहीं.",
+          "changed": "बिना नरमी के"
+        }
+      ],
+      "mistake": {
+        "display": "To be honest, I think this film is not good",
+        "why": "नरमी के बाद भी नकार ऊपर ही जाता है: To be honest, I don't think this film is good."
+      },
+      "usage": "अपनी सच्ची राय देने से पहले सामने वाले को तैयार करना.",
+      "register": "informal",
+      "mnemonic": "फ़्रेम नरम, दावा सीधा."
+    },
+    {
+      "id": "L3-M3-S08",
+      "display": "The food is good, although it is expensive.",
+      "cue": "खाना अच्छा है, हालाँकि महँगा है.",
+      "literal": "वह खाना है अच्छा, हालाँकि यह है महँगा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "although",
+            "cue": "हालाँकि",
+            "tag": "delta",
+            "forms": [
+              "although"
+            ],
+            "note": "आधे वाक्य के आगे लगता है और उसे बाक़ी से जोड़ देता है. इसके साथ but नहीं आता — एक वाक्य में एक ही जोड़."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "हिंदी में हालाँकि … फिर भी दोनों साथ चलते हैं. अंग्रेज़ी में although के साथ but रख देना ग़लत है.",
+      "sound": "although में gh चुप है — ऑल्दो, ऑल्थॉग नहीं.",
+      "variations": [
+        {
+          "display": "The food is good, although it is not cheap.",
+          "cue": "खाना अच्छा है, हालाँकि सस्ता नहीं है.",
+          "changed": "दूसरी कमी"
+        },
+        {
+          "display": "Although it is expensive, the food is good.",
+          "cue": "हालाँकि महँगा है, खाना अच्छा है.",
+          "changed": "जोड़ वाला आधा पहले"
+        },
+        {
+          "display": "I like my job, although the salary is not big.",
+          "cue": "मुझे अपना काम पसंद है, हालाँकि तनख़्वाह बड़ी नहीं है.",
+          "changed": "दूसरी बात"
+        }
+      ],
+      "mistake": {
+        "display": "Although it is expensive, but the food is good",
+        "why": "although के साथ but नहीं आता: Although it is expensive, the food is good."
+      },
+      "usage": "तारीफ़ के साथ एक कमी भी साफ़ बता देना.",
+      "register": "neutral",
+      "mnemonic": "although आया तो but गया."
+    },
+    {
+      "id": "L3-M3-S09",
+      "display": "It is expensive. The food is very good, though.",
+      "cue": "महँगा है. पर खाना बहुत अच्छा है.",
+      "literal": "यह है महँगा. वह खाना है बहुत अच्छा, हालाँकि.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "though",
+            "cue": "पर · फिर भी",
+            "tag": "delta",
+            "forms": [
+              "though"
+            ],
+            "note": "बात वही है जो although की, जगह आख़िर में — …, though. बोलचाल में यही ज़्यादा सुनाई देता है."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "आख़िर वाला though अकेला खड़ा रहता है. उसके पीछे कोई आधा वाक्य नहीं आता, और although वहाँ नहीं चलता.",
+      "sound": "though में th भारी है और gh चुप — दो.",
+      "variations": [
+        {
+          "display": "The food is good, though.",
+          "cue": "पर खाना अच्छा है.",
+          "changed": "सिर्फ़ दूसरा आधा"
+        },
+        {
+          "display": "It is expensive. I like it, though.",
+          "cue": "महँगा है. पर मुझे पसंद है.",
+          "changed": "दूसरी बात"
+        },
+        {
+          "display": "The shop is far. It is cheap, though.",
+          "cue": "दुकान दूर है. पर सस्ती है.",
+          "changed": "दूसरी जोड़ी"
+        }
+      ],
+      "mistake": {
+        "display": "It is expensive. The food is very good, although",
+        "why": "आख़िर में though आता है, although नहीं: The food is very good, though."
+      },
+      "usage": "पहले कमी कहकर बाद में तारीफ़ जोड़ देना — बोलचाल का सबसे आम मोड़.",
+      "register": "informal",
+      "mnemonic": "आख़िर में though."
+    },
+    {
+      "id": "L3-M3-S10",
+      "display": "I'm not sure, but I think you are wrong.",
+      "cue": "मैं पक्का नहीं कह सकता, पर मुझे लगता है तुम ग़लत हो.",
+      "literal": "मैं-हूँ नहीं पक्का, पर मैं सोचता तुम हो ग़लत.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wrong",
+            "cue": "ग़लत",
+            "tag": "delta",
+            "forms": [
+              "wrong"
+            ],
+            "note": "आदमी पर भी लगता है — You are wrong — और L2-M7 का wrong number इसी शब्द का जमा हुआ जोड़ा है."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "पक्का न होना फ़्रेम में कहा जाता है — I'm not sure, but … — और दावा उसके बाद सीधा. only या actually जोड़ने से नरमी नहीं आती.",
+      "sound": "wrong में w चुप है — रॉन्ग, व्रॉन्ग नहीं.",
+      "variations": [
+        {
+          "display": "I'm not sure, but I don't think it's true.",
+          "cue": "मैं पक्का नहीं कह सकता, पर मुझे नहीं लगता कि यह सही है.",
+          "changed": "नरमी के साथ ऊपर चढ़ा नकार"
+        },
+        {
+          "display": "I think you are wrong.",
+          "cue": "मुझे लगता है तुम ग़लत हो.",
+          "changed": "बिना नरमी के"
+        },
+        {
+          "display": "I'm not sure, but I agree with you.",
+          "cue": "मैं पक्का नहीं कह सकता, पर मैं तुमसे सहमत हूँ.",
+          "changed": "नरमी के साथ सहमति"
+        }
+      ],
+      "mistake": {
+        "display": "I'm not sure, but I think you are wrong only",
+        "why": "only से नरमी नहीं आती — वह हिंदी की ही आदत है. नरमी फ़्रेम में है: I'm not sure, but …"
+      },
+      "usage": "किसी को ग़लत बताना और साथ ही अपनी बात पर अड़ न जाना.",
+      "register": "neutral",
+      "mnemonic": "फ़्रेम में शक, दावे में सफ़ाई."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M3-C01",
+      "display": "I don't think it's true.",
+      "cue": "मुझे नहीं लगता कि यह सही है."
+    },
+    {
+      "id": "L3-M3-C02",
+      "display": "I agree with you.",
+      "cue": "मैं तुमसे सहमत हूँ."
+    },
+    {
+      "id": "L3-M3-C03",
+      "display": "I disagree, but I see your point.",
+      "cue": "मैं सहमत नहीं हूँ, पर तुम्हारी बात समझ में आती है."
+    },
+    {
+      "id": "L3-M3-C04",
+      "display": "Is the shop open? I think so.",
+      "cue": "क्या दुकान खुली है? मुझे लगता है, हाँ."
+    },
+    {
+      "id": "L3-M3-C05",
+      "display": "Will she come tomorrow? I hope so.",
+      "cue": "क्या वह कल आएगी? उम्मीद तो यही है."
+    },
+    {
+      "id": "L3-M3-C06",
+      "display": "Is the manager here? I'm afraid not.",
+      "cue": "क्या मैनेजर यहाँ हैं? अफ़सोस, नहीं."
+    },
+    {
+      "id": "L3-M3-C07",
+      "display": "To be honest, I don't like this film.",
+      "cue": "सच कहूँ तो, मुझे यह फ़िल्म पसंद नहीं."
+    },
+    {
+      "id": "L3-M3-C08",
+      "display": "The food is good, although it is expensive.",
+      "cue": "खाना अच्छा है, हालाँकि महँगा है."
+    },
+    {
+      "id": "L3-M3-C09",
+      "display": "It is expensive. The food is good, though.",
+      "cue": "महँगा है. पर खाना अच्छा है."
+    },
+    {
+      "id": "L3-M3-C10",
+      "display": "I'm not sure, but I think you are wrong.",
+      "cue": "मैं पक्का नहीं कह सकता, पर मुझे लगता है तुम ग़लत हो."
+    },
+    {
+      "id": "L3-M3-C11",
+      "display": "That's a good point.",
+      "cue": "यह बात तो सही है."
+    },
+    {
+      "id": "L3-M3-C12",
+      "display": "He doesn't agree with my manager.",
+      "cue": "वह मेरे मैनेजर से सहमत नहीं है."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

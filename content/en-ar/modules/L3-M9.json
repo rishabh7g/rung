@@ -1,0 +1,650 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M9",
+  "title": "Festivals and everyday culture",
+  "job": "Talk about what is happening around you",
+  "prerequisites": ["L3-M8"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": ["simple_present", "simple_past"],
+    "allowedPatterns": [
+      "kull + <N-genitive>",
+      "<N> + fī + <month>",
+      "al-<ordinal> + min + <month>",
+      "naḥtafil + bi- + <event>",
+      "kull ʿām wa antum bi-khayr  (frozen)"
+    ],
+    "newWordCap": 25
+  },
+  "exitTest": { "generateCount": 2, "comprehendCount": 3 },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "TWO CALENDARS run at once, and that is the real content of this module. The Gregorian months (yanāyir, dīsambir) are what a form and a bus timetable use; the hijrī months (muḥarram, ramaḍān, shawwāl) are what a festival is fixed to. The hijrī year is shorter, so ramaḍān walks backwards through the Gregorian year by about eleven days each time — which is why \"when is Eid\" has no fixed answer, and why a diary alone will not tell you."
+    },
+    {
+      "tag": "interference",
+      "text": "kull heads an IḌĀFA, L3-M2's construct in the field, and the ARTICLE flips the meaning. kull yawm is \"every day\"; kull al-yawm is \"the whole day\". kull sana is \"every year\"; kull as-sana is \"the whole year\". One al-, two different sentences."
+    },
+    {
+      "tag": "free",
+      "text": "The greetings are frozen and are learnt whole, exactly as L1-M2's alḥamdu lillāh was: kull ʿām wa antum bi-khayr (said at any annual occasion), ʿīd mubārak (at the Eid itself), mabrūk (for anything congratulable). None of them is taken apart for grammar, and none of them needs to be."
+    },
+    {
+      "tag": "free",
+      "text": "naḥtafil takes bi- for what is celebrated: naḥtafil bi-al-ʿīd. That is M6's ashʿuru bi- pattern again — a verb reaching its object through a preposition where English needs none — and the third time this level has asked for it."
+    },
+    {
+      "tag": "free",
+      "text": "Broken plurals (aʿyād, hadāyā, ʿuṭal, aʿwām) sit in their singular's forms as VOCABULARY. Do not look for a rule: a calendar module is where you meet the most of them at once, and each is learnt as its own word."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M9-S01",
+      "display": "naḥtafil bi-al-ʿīd kull sana",
+      "script": "نحتفل بالعيد كل سنة",
+      "cue": "We celebrate the Eid every year",
+      "literal": "We-celebrate with-the-Eid every year",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "naḥtafil",
+            "script": "نحتفل",
+            "cue": "we celebrate",
+            "tag": "delta",
+            "forms": ["naḥtafil", "aḥtafil", "yaḥtafil"],
+            "note": "We celebrate. It reaches its object through bi-, like M6's ashʿuru: naḥtafil bi-al-ʿīd. aḥtafil is I, yaḥtafil is he."
+          },
+          {
+            "display": "ʿīd",
+            "script": "عيد",
+            "cue": "festival, Eid",
+            "tag": "free",
+            "forms": ["ʿīd", "al-ʿīd", "bi-al-ʿīd", "li-al-ʿīd", "aʿyād"],
+            "note": "A festival, and with the article the Eid. ʿ is a moon letter: al-ʿīd. Plural aʿyād, broken, taken as vocabulary."
+          },
+          {
+            "display": "sana",
+            "script": "سنة",
+            "cue": "year",
+            "tag": "free",
+            "forms": ["sana", "as-sana", "sanawāt"],
+            "note": "Year. s is a sun letter: as-sana. Plural sanawāt. ʿām is its twin and means the same thing."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "English celebrates something directly. Arabic celebrates WITH it, and the bi- is not optional — the third verb this level has handed you that needs a preposition English does not.",
+      "sound": "naḥ-TA-fil bil-ʿEED kull SA-na — the ḥ is breathy and the ʿ is a squeeze.",
+      "variations": [
+        {
+          "display": "aḥtafil bi-al-ʿīd kull sana",
+          "script": "أحتفل بالعيد كل سنة",
+          "cue": "I celebrate the Eid every year",
+          "changed": "who: naḥtafil → aḥtafil"
+        },
+        {
+          "display": "naḥtafil bi-al-ʿīd fī shawwāl",
+          "script": "نحتفل بالعيد في شوال",
+          "cue": "We celebrate the Eid in Shawwal",
+          "changed": "how often → in which month"
+        }
+      ],
+      "mistake": {
+        "display": "naḥtafil al-ʿīd kull sana",
+        "script": "نحتفل العيد كل سنة",
+        "why": "The bi- has been dropped because English does not need one. naḥtafil bi-al-ʿīd — the verb only reaches its object through the preposition."
+      },
+      "usage": "The plain statement of a family's year, and the answer to \"what do you do at Eid?\".",
+      "register": "neutral",
+      "mnemonic": "You celebrate WITH the festival, not the festival."
+    },
+    {
+      "id": "L3-M9-S02",
+      "display": "kull ʿām wa antum bi-khayr",
+      "script": "كل عام وأنتم بخير",
+      "cue": "Happy new year / many happy returns",
+      "literal": "Every year and you(pl) in-good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kull ʿām wa antum bi-khayr",
+            "script": "كل عام وأنتم بخير",
+            "cue": "may you be well every year",
+            "tag": "free",
+            "forms": ["kull ʿām wa antum bi-khayr"],
+            "note": "One frozen greeting, learnt whole like alḥamdu lillāh. Said at any yearly occasion — Eid, a birthday, a new year, hijrī or Gregorian."
+          },
+          {
+            "display": "ʿām",
+            "script": "عام",
+            "cue": "year",
+            "tag": "free",
+            "forms": ["ʿām", "al-ʿām", "aʿwām"],
+            "note": "Year — sana's twin, and the one the greeting froze around. Plural aʿwām, broken."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "Do not translate this and do not take it apart. The antum inside it is a plural \"you\" the ladder has not taught, and the phrase is one unit — treat it as a single word with five spaces in it.",
+      "sound": "kull ʿAAM wa an-TUM bi-KHAYR — said fast, almost as one word, with the stress landing on KHAYR.",
+      "variations": [
+        {
+          "display": "kull sana wa anta bi-khayr",
+          "script": "كل سنة وأنت بخير",
+          "cue": "Many happy returns (to one man)",
+          "changed": "the everyday version: ʿām → sana, antum → anta"
+        },
+        {
+          "display": "ʿīd mubārak",
+          "script": "عيد مبارك",
+          "cue": "Blessed Eid",
+          "changed": "the occasion — the greeting for the Eid itself"
+        }
+      ],
+      "mistake": {
+        "display": "kull ʿām anta bi-khayr",
+        "script": "كل عام أنت بخير",
+        "why": "The wa is structural, not decorative: it joins the two halves of the wish. Dropped, the phrase stops being the greeting and becomes a flat statement."
+      },
+      "usage": "Said and answered on every annual occasion, and answered with the same words back.",
+      "register": "neutral",
+      "mnemonic": "Five words, one greeting, no parts."
+    },
+    {
+      "id": "L3-M9-S03",
+      "display": "ʿīd mubārak, kull sana wa anta bi-khayr",
+      "script": "عيد مبارك، كل سنة وأنت بخير",
+      "cue": "Blessed Eid — many happy returns",
+      "literal": "Festival blessed, every year and you in-good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ʿīd mubārak",
+            "script": "عيد مبارك",
+            "cue": "blessed Eid",
+            "tag": "free",
+            "forms": ["ʿīd mubārak"],
+            "note": "The Eid greeting, frozen whole. Said on the day itself and for two or three days after it."
+          },
+          {
+            "display": "mabrūk",
+            "script": "مبروك",
+            "cue": "congratulations",
+            "tag": "free",
+            "forms": ["mabrūk"],
+            "note": "Congratulations — for a job, a baby, a car, a pass. Not tied to the calendar, and said on its own."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "Three greetings, three occasions: ʿīd mubārak for the Eid, kull ʿām wa antum bi-khayr for anything yearly, mabrūk for a piece of good news. They are not interchangeable and none of them is a translation of \"happy\".",
+      "sound": "ʿEED mu-BAA-rak — a clear pause at the comma, then the second greeting at speed.",
+      "variations": [
+        {
+          "display": "ʿīd mubārak",
+          "script": "عيد مبارك",
+          "cue": "Blessed Eid",
+          "changed": "the second half dropped — it stands alone perfectly well"
+        },
+        {
+          "display": "mabrūk",
+          "script": "مبروك",
+          "cue": "Congratulations!",
+          "changed": "the occasion: a festival → any piece of good news"
+        }
+      ],
+      "mistake": {
+        "display": "mabrūk al-ʿīd",
+        "script": "مبروك العيد",
+        "why": "mabrūk congratulates a person on something they did or received. A festival arrives for everybody, so the word for it is ʿīd mubārak."
+      },
+      "usage": "The doorway exchange at Eid, said twice over before anyone sits down.",
+      "register": "neutral",
+      "mnemonic": "mubārak for the day, mabrūk for the news."
+    },
+    {
+      "id": "L3-M9-S04",
+      "display": "shahr ramaḍān fī at-taqwīm al-hijrī",
+      "script": "شهر رمضان في التقويم الهجري",
+      "cue": "Ramadan is a month in the hijri calendar",
+      "literal": "Month Ramadan in the-calendar the-hijri",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ramaḍān",
+            "script": "رمضان",
+            "cue": "Ramadan",
+            "tag": "free",
+            "forms": ["ramaḍān"],
+            "note": "The ninth hijrī month, the month of fasting. shahr ramaḍān is the full name — an iḍāfa, L3-M2's two nouns touching."
+          },
+          {
+            "display": "taqwīm",
+            "script": "تقويم",
+            "cue": "calendar",
+            "tag": "free",
+            "forms": ["taqwīm", "at-taqwīm"],
+            "note": "Calendar. t is a sun letter: at-taqwīm. Which one you mean has to be said, because two are in daily use."
+          },
+          {
+            "display": "hijrī",
+            "script": "هجري",
+            "cue": "hijri (lunar)",
+            "tag": "delta",
+            "forms": ["hijrī", "al-hijrī"],
+            "note": "Of the hijrī calendar, counted from the emigration to Medina. Its year is about eleven days shorter than the Gregorian one."
+          },
+          {
+            "display": "mīlādī",
+            "script": "ميلادي",
+            "cue": "Gregorian",
+            "tag": "delta",
+            "forms": ["mīlādī", "al-mīlādī"],
+            "note": "Of the Gregorian calendar — the one on a form or a bus timetable. Both dates are often printed side by side."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "Ramadan has no fixed Gregorian date and never will: the hijrī year is shorter, so it moves back about eleven days each time. Anyone asking you \"when is Ramadan next year\" is asking a real question, not a lazy one.",
+      "sound": "SHAHR ra-ma-ḌAAN fit-taq-WEEM al-HIJ-ree — the ḍ is the heavy d, said with the jaw low.",
+      "variations": [
+        {
+          "display": "yanāyir fī at-taqwīm al-mīlādī",
+          "script": "يناير في التقويم الميلادي",
+          "cue": "January is in the Gregorian calendar",
+          "changed": "which calendar, and which month belongs to it"
+        },
+        {
+          "display": "shahr ramaḍān qabla shawwāl",
+          "script": "شهر رمضان قبل شوال",
+          "cue": "Ramadan comes before Shawwal",
+          "changed": "the calendar named → the order inside it"
+        }
+      ],
+      "mistake": {
+        "display": "ramaḍān fī yanāyir kull sana",
+        "script": "رمضان في يناير كل سنة",
+        "why": "This pins a hijrī month to a Gregorian one, which cannot be done. Ramadan falls in a different Gregorian month every few years — that is the whole point of two calendars."
+      },
+      "usage": "The one sentence that explains why the dates on a wall calendar and the dates people live by disagree.",
+      "register": "neutral",
+      "mnemonic": "Two calendars, one sky, eleven days of drift."
+    },
+    {
+      "id": "L3-M9-S05",
+      "display": "al-ʿīd fī shawwāl baʿda ramaḍān",
+      "script": "العيد في شوال بعد رمضان",
+      "cue": "The Eid is in Shawwal, after Ramadan",
+      "literal": "The-festival in Shawwal after Ramadan",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "shawwāl",
+            "script": "شوال",
+            "cue": "Shawwal (hijri month)",
+            "tag": "free",
+            "forms": ["shawwāl"],
+            "note": "The tenth hijrī month, the one that opens with the Eid. The doubled w is held: shaw-WAAL."
+          },
+          {
+            "display": "muḥarram",
+            "script": "محرم",
+            "cue": "Muharram (hijri month)",
+            "tag": "free",
+            "forms": ["muḥarram"],
+            "note": "The first hijrī month, where the hijrī year begins — the equivalent of January in the other calendar."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "There is no verb here, and none is needed: a date is stated the way a price was in M8, by putting the two facts next to each other.",
+      "sound": "al-ʿEED fee shaw-WAAL BAʿ-da ra-ma-ḌAAN.",
+      "variations": [
+        {
+          "display": "al-ʿīd fī muḥarram",
+          "script": "العيد في محرم",
+          "cue": "The festival is in Muharram",
+          "changed": "which month — the hijri year's first"
+        },
+        {
+          "display": "al-ʿuṭla baʿda ramaḍān",
+          "script": "العطلة بعد رمضان",
+          "cue": "The holiday is after Ramadan",
+          "changed": "what falls there: the Eid → the holiday around it"
+        }
+      ],
+      "mistake": {
+        "display": "al-ʿīd huwa fī shawwāl",
+        "script": "العيد هو في شوال",
+        "why": "The huwa is an English \"is\" that Arabic never asked for. al-ʿīd fī shawwāl is a complete sentence exactly as it stands."
+      },
+      "usage": "How the year gets explained to a visitor, and how a colleague tells you when the office will be empty.",
+      "register": "neutral",
+      "mnemonic": "Ramadan ends, Shawwal opens, the Eid is the door."
+    },
+    {
+      "id": "L3-M9-S06",
+      "display": "ʿindī ʿuṭla fī yanāyir",
+      "script": "عندي عطلة في يناير",
+      "cue": "I have a holiday in January",
+      "literal": "At-me holiday in January",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ʿuṭla",
+            "script": "عطلة",
+            "cue": "holiday, time off",
+            "tag": "free",
+            "forms": ["ʿuṭla", "al-ʿuṭla", "ʿuṭal"],
+            "note": "Time off work — a day, a week, a fortnight. Plural ʿuṭal, broken. Held by ʿindī, like everything else you have."
+          },
+          {
+            "display": "yanāyir",
+            "script": "يناير",
+            "cue": "January",
+            "tag": "free",
+            "forms": ["yanāyir"],
+            "note": "January, in the Gregorian calendar. Month names take no article and never change shape."
+          },
+          {
+            "display": "dīsambir",
+            "script": "ديسمبر",
+            "cue": "December",
+            "tag": "free",
+            "forms": ["dīsambir"],
+            "note": "December. Like yanāyir, a borrowed name said close to how it looks — and like it, never carries al-."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "A month name takes no article: fī yanāyir, never fī al-yanāyir. It is one of the few nouns on this ladder that refuses al- outright.",
+      "sound": "ʿIN-dee ʿUṬ-la fee ya-NAA-yir.",
+      "variations": [
+        {
+          "display": "ʿindī ʿuṭla fī dīsambir",
+          "script": "عندي عطلة في ديسمبر",
+          "cue": "I have a holiday in December",
+          "changed": "which month: yanāyir → dīsambir"
+        },
+        {
+          "display": "ʿindī ʿuṭla baʿda al-ʿīd",
+          "script": "عندي عطلة بعد العيد",
+          "cue": "I have a holiday after the Eid",
+          "changed": "a Gregorian month → the festival it hangs off"
+        }
+      ],
+      "mistake": {
+        "display": "ʿindī ʿuṭla fī al-yanāyir",
+        "script": "عندي عطلة في اليناير",
+        "why": "Month names are already definite. fī yanāyir, with nothing in front of it."
+      },
+      "usage": "Said when someone asks about your year, and the sentence that starts every plan to travel.",
+      "register": "neutral",
+      "mnemonic": "Months wear no al-."
+    },
+    {
+      "id": "L3-M9-S07",
+      "display": "ishtaraytu hadiyya al-yawm",
+      "script": "اشتريت هدية اليوم",
+      "cue": "I bought a present today",
+      "literal": "I-bought present the-day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hadiyya",
+            "script": "هدية",
+            "cue": "present, gift",
+            "tag": "free",
+            "forms": ["hadiyya", "al-hadiyya", "hadāyā", "al-hadāyā"],
+            "note": "A present. Plural hadāyā, broken and worth memorising on its own — it is what a shop window is labelled at Eid."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "hadiyya is indefinite here, with no al-, because it is a present and not the present. Arabic marks that by leaving the article off, and English marks it with \"a\" — one word against nothing.",
+      "sound": "ish-ta-RAY-tu ha-DIY-ya al-YAWM — the doubled y is held.",
+      "variations": [
+        {
+          "display": "ishtaraytu hadiyya li-al-ʿīd",
+          "script": "اشتريت هدية للعيد",
+          "cue": "I bought a present for the Eid",
+          "changed": "what it is for, with L1-M9's li-"
+        },
+        {
+          "display": "ishtaraytu al-hadāyā al-yawm",
+          "script": "اشتريت الهدايا اليوم",
+          "cue": "I bought the presents today",
+          "changed": "one gift → the broken plural, hadāyā"
+        }
+      ],
+      "mistake": {
+        "display": "ishtaraytu al-hadiyya al-yawm",
+        "script": "اشتريت الهدية اليوم",
+        "why": "Not wrong, but it says \"THE present\" — the one you and your listener both already have in mind. For a present nobody has mentioned yet, leave the al- off."
+      },
+      "usage": "The everyday past-tense sentence of festival week, said in every shop queue.",
+      "register": "neutral",
+      "mnemonic": "No al-, no shared knowledge."
+    },
+    {
+      "id": "L3-M9-S08",
+      "display": "al-ḥafla fī al-bayt masāʾ al-jumʿa",
+      "script": "الحفلة في البيت مساء الجمعة",
+      "cue": "The party is at the house on Friday evening",
+      "literal": "The-party in the-house evening the-Friday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ḥafla",
+            "script": "حفلة",
+            "cue": "party, gathering",
+            "tag": "free",
+            "forms": ["ḥafla", "al-ḥafla", "ḥaflāt"],
+            "note": "A party or a formal gathering — a wedding, a graduation, a concert. Regular plural ḥaflāt. Same root as naḥtafil."
+          },
+          {
+            "display": "iḥtifāl",
+            "script": "احتفال",
+            "cue": "celebration",
+            "tag": "free",
+            "forms": ["iḥtifāl", "al-iḥtifāl", "iḥtifālāt"],
+            "note": "The celebrating itself — the maṣdar of naḥtafil, where ḥafla is the event you attend. Same root, different job."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "masāʾ al-jumʿa is an iḍāfa, \"the evening of the Friday\", and it needs no preposition. But fī al-bayt does need its fī — the construct only replaces \"of\", never \"in\".",
+      "sound": "al-ḤAF-la fil-BAYT ma-SAAʾ al-JUM-ʿa.",
+      "variations": [
+        {
+          "display": "al-ḥafla fī al-maṭʿam",
+          "script": "الحفلة في المطعم",
+          "cue": "The party is at the restaurant",
+          "changed": "where: al-bayt → al-maṭʿam"
+        },
+        {
+          "display": "al-iḥtifāl fī al-bayt masāʾ al-jumʿa",
+          "script": "الاحتفال في البيت مساء الجمعة",
+          "cue": "The celebration is at the house on Friday evening",
+          "changed": "the event → the celebrating, al-iḥtifāl"
+        }
+      ],
+      "mistake": {
+        "display": "al-ḥafla fī al-bayt fī masāʾ al-jumʿa",
+        "script": "الحفلة في البيت في مساء الجمعة",
+        "why": "The second fī is the English \"on\" carried across. masāʾ al-jumʿa already says \"on Friday evening\" by itself."
+      },
+      "usage": "The invitation as it actually arrives — place, then time, no verb anywhere.",
+      "register": "neutral",
+      "mnemonic": "fī for the place, nothing at all for the time."
+    },
+    {
+      "id": "L3-M9-S09",
+      "display": "al-iḥtifāl al-kabīr fī al-awwal min yanāyir",
+      "script": "الاحتفال الكبير في الأول من يناير",
+      "cue": "The big celebration is on the first of January",
+      "literal": "The-celebration the-big in the-first from January",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-awwal",
+            "script": "الأول",
+            "cue": "the first",
+            "tag": "free",
+            "forms": ["al-awwal", "awwal", "al-ūlā"],
+            "note": "The first. A date is al-awwal min + the month. al-ūlā is its feminine — the ordinals for clock hours were L2-M6's."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "A date is built with min, not fī: al-awwal min yanāyir, \"the first FROM January\". English says \"of\", Arabic says \"from\", and neither is an iḍāfa here.",
+      "sound": "al-iḥ-ti-FAAL al-ka-BEER fil-AW-wal min ya-NAA-yir.",
+      "variations": [
+        {
+          "display": "al-iḥtifāl fī al-awwal min muḥarram",
+          "script": "الاحتفال في الأول من محرم",
+          "cue": "The celebration is on the first of Muharram",
+          "changed": "which calendar's first — the hijri new year"
+        },
+        {
+          "display": "al-ʿuṭla fī al-awwal min dīsambir",
+          "script": "العطلة في الأول من ديسمبر",
+          "cue": "The holiday is on the first of December",
+          "changed": "what falls on the date, and which month"
+        }
+      ],
+      "mistake": {
+        "display": "al-iḥtifāl fī awwal yanāyir",
+        "script": "الاحتفال في أول يناير",
+        "why": "Heard in speech, but the careful form keeps both pieces: al-awwal min yanāyir. Write it that way on anything anyone else will read."
+      },
+      "usage": "How a date is said aloud when it matters — an invitation, an appointment, a deadline.",
+      "register": "neutral",
+      "mnemonic": "The first FROM January."
+    },
+    {
+      "id": "L3-M9-S10",
+      "display": "kull yawm ʿamal, wa kull al-yawm ʿuṭla",
+      "script": "كل يوم عمل، وكل اليوم عطلة",
+      "cue": "Every day is work — and the whole day is a holiday",
+      "literal": "Every day work, and all the-day holiday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kull",
+            "script": "كل",
+            "cue": "every / the whole of",
+            "tag": "interference",
+            "forms": ["kull", "kull al-yawm"],
+            "note": "The minimal pair of the module: kull yawm is every day, kull al-yawm is the whole day. The al- on the second noun is the only difference."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "Two phrases, one word apart, and they mean opposite things. If you hear kull and reach for \"every\" without checking the next word for al-, you will get this backwards about half the time.",
+      "sound": "kull YAWM ʿA-mal, wa kull al-YAWM ʿUṬ-la — a real pause at the comma, and the al- said clearly.",
+      "variations": [
+        {
+          "display": "kull sana ḥafla",
+          "script": "كل سنة حفلة",
+          "cue": "Every year, a party",
+          "changed": "the unit: yawm → sana, and no article, so still every"
+        },
+        {
+          "display": "kull as-sana ʿuṭla",
+          "script": "كل السنة عطلة",
+          "cue": "The whole year is a holiday",
+          "changed": "the article added — every year becomes the whole year"
+        }
+      ],
+      "mistake": {
+        "display": "kull al-yawm ʿamal",
+        "script": "كل اليوم عمل",
+        "why": "If you meant \"work every day\", the al- has changed it to \"the whole day is work\" — true of one day, not of your life. kull yawm ʿamal is the one you wanted."
+      },
+      "usage": "The pair to say out loud twice, because it is the level's sharpest one-letter difference.",
+      "register": "neutral",
+      "mnemonic": "No al-, every. With al-, the whole."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M9-C01",
+      "display": "naḥtafil bi-al-ʿīd kull sana",
+      "script": "نحتفل بالعيد كل سنة",
+      "cue": "We celebrate the Eid every year"
+    },
+    {
+      "id": "L3-M9-C02",
+      "display": "kull ʿām wa antum bi-khayr",
+      "script": "كل عام وأنتم بخير",
+      "cue": "Happy new year / many happy returns"
+    },
+    {
+      "id": "L3-M9-C03",
+      "display": "ʿīd mubārak, kull sana wa anta bi-khayr",
+      "script": "عيد مبارك، كل سنة وأنت بخير",
+      "cue": "Blessed Eid — many happy returns"
+    },
+    {
+      "id": "L3-M9-C04",
+      "display": "shahr ramaḍān fī at-taqwīm al-hijrī",
+      "script": "شهر رمضان في التقويم الهجري",
+      "cue": "Ramadan is a month in the hijri calendar"
+    },
+    {
+      "id": "L3-M9-C05",
+      "display": "al-ʿīd fī shawwāl baʿda ramaḍān",
+      "script": "العيد في شوال بعد رمضان",
+      "cue": "The Eid is in Shawwal, after Ramadan"
+    },
+    {
+      "id": "L3-M9-C06",
+      "display": "ʿindī ʿuṭla fī yanāyir",
+      "script": "عندي عطلة في يناير",
+      "cue": "I have a holiday in January"
+    },
+    {
+      "id": "L3-M9-C07",
+      "display": "ishtaraytu hadiyya al-yawm",
+      "script": "اشتريت هدية اليوم",
+      "cue": "I bought a present today"
+    },
+    {
+      "id": "L3-M9-C08",
+      "display": "al-ḥafla fī al-bayt masāʾ al-jumʿa",
+      "script": "الحفلة في البيت مساء الجمعة",
+      "cue": "The party is at the house on Friday evening"
+    },
+    {
+      "id": "L3-M9-C09",
+      "display": "al-iḥtifāl al-kabīr fī al-awwal min yanāyir",
+      "script": "الاحتفال الكبير في الأول من يناير",
+      "cue": "The big celebration is on the first of January"
+    },
+    {
+      "id": "L3-M9-C10",
+      "display": "kull yawm ʿamal, wa kull al-yawm ʿuṭla",
+      "script": "كل يوم عمل، وكل اليوم عطلة",
+      "cue": "Every day is work — and the whole day is a holiday"
+    },
+    {
+      "id": "L3-M9-C11",
+      "display": "ishtaraytu hadiyya li-al-ʿīd",
+      "script": "اشتريت هدية للعيد",
+      "cue": "I bought a present for the Eid"
+    },
+    {
+      "id": "L3-M9-C12",
+      "display": "ʿindī ʿuṭla fī dīsambir",
+      "script": "عندي عطلة في ديسمبر",
+      "cue": "I have a holiday in December"
+    }
+  ]
+}

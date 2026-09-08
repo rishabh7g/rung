@@ -1,0 +1,551 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M9",
+  "title": "Festivals and everyday culture",
+  "job": "Talk about what is happening around you",
+  "prerequisites": [
+    "L3-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "present",
+      "present passive"
+    ],
+    "allowedPatterns": [
+      "Man feiert + N-acc + im + <month>",
+      "N + wird + im + <month> + gefeiert",
+      "Hier + V-2 + man + <rest>",
+      "Bei uns + V-2 + man + <rest>",
+      "Es wird kalt"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "man is a real subject with a singular verb, and it is how German says what people do without naming who: Man feiert das Fest im Dezember. Hier geht man um acht nach Hause. English reaches for you (round here you go home at eight) or for a passive, and neither maps cleanly; the stiff English one is not what man sounds like at all — man is completely ordinary, and you should use it without embarrassment. It is also the cheaper of this module's two impersonals, and it carries most of these sentences."
+    },
+    {
+      "tag": "delta",
+      "text": "THE PRESENT PASSIVE is werden plus a participle: werden conjugated in position two, the participle at the very END. Das Fest wird im Dezember gefeiert. That is L2-M1's bracket for the fifth time in this course — the same frame that holds a modal and its infinitive, and an auxiliary and its participle — so there is nothing new about the shape, only about what fills it. Every participle it needs is already formed by the rule L2-M10 stated."
+    },
+    {
+      "tag": "free",
+      "text": "werden is a THREE-JOB key and one note is true of all three: to become (Es wird kalt), the passive auxiliary (Das Fest wird gefeiert), and the future auxiliary this course has never needed, because German lets the present do the future's work — Ich komme morgen. When you meet werden, look at what follows: an adjective means becoming, a participle at the end means the passive."
+    },
+    {
+      "tag": "free",
+      "text": "What stays out, because the edge is right here: the PAST passive (wurde gefeiert), the agent named with von (von der Familie gefeiert) and the sein-passive of a resulting state (Die Tür ist geschlossen) all belong to L4-M7, Official talk. This module writes the present passive and nothing else. The past exists and you will see it on a sign; you do not need to build it yet."
+    },
+    {
+      "tag": "free",
+      "text": "Culture is described here, never explained, and no sentence claims a practice for the whole language area: Germany, Austria and Switzerland do not keep one calendar, and the north and south of Germany do not either. That is exactly what man and Hier and Bei uns are for — they say what happens where you are standing, and leave the rest of the map alone."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M9-S01",
+      "display": "Man feiert das Fest im Dezember",
+      "cue": "People celebrate the festival in December",
+      "literal": "one celebrates the festival in-the December",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "man",
+            "cue": "people / you (in general)",
+            "tag": "delta",
+            "forms": [
+              "man"
+            ],
+            "note": "A subject, not a word for a person: it always takes the er/sie/es verb. Do not confuse it with der Mann, which is a man and is spelled with two n."
+          },
+          {
+            "display": "feiert",
+            "cue": "celebrates",
+            "tag": "free",
+            "forms": [
+              "feiere",
+              "feiern",
+              "feiert",
+              "gefeiert"
+            ],
+            "note": "feiern, to celebrate, and also simply to have a party. The participle is gefeiert, formed by L2-M10's rule with no surprises."
+          },
+          {
+            "display": "Fest",
+            "cue": "festival / celebration",
+            "tag": "free",
+            "forms": [
+              "Fest",
+              "Feste"
+            ],
+            "note": "das Fest, plural die Feste — a festival or any big celebration. A birthday party is a Fest as readily as a public holiday is."
+          },
+          {
+            "display": "Dezember",
+            "cue": "December",
+            "tag": "free",
+            "forms": [
+              "Dezember"
+            ],
+            "note": "der Dezember, and a month takes im: im Dezember, im Januar. Months are capitalised like every other German noun."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "man is not the English one. One celebrates sounds like a lecture; man feiert is what anybody says at a bus stop.",
+      "sound": "man FY-ert das fest im day-TSEM-ber. The ei of feiert is the eye sound; the z of Dezember is ts.",
+      "variations": [
+        {
+          "display": "Hier feiert man das Fest im Sommer",
+          "cue": "Here people celebrate the festival in summer",
+          "changed": "a fronted Hier, so the verb stays second and man follows it"
+        },
+        {
+          "display": "Bei uns feiert man zu Hause",
+          "cue": "Where I'm from people celebrate at home",
+          "changed": "Bei uns — the same order, and it says where without claiming more"
+        }
+      ],
+      "mistake": {
+        "display": "Man feiern das Fest im Dezember",
+        "why": "man always takes the singular verb, whatever number of people it means: man feiert."
+      },
+      "usage": "Describing what happens around you without naming who does it.",
+      "register": "neutral",
+      "mnemonic": "man is one word and one verb ending: feiert, kommt, geht."
+    },
+    {
+      "id": "L3-M9-S02",
+      "display": "Das Fest wird im Dezember gefeiert",
+      "cue": "The festival is celebrated in December",
+      "literal": "the festival becomes in-the December celebrated",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wird",
+            "cue": "becomes / is (passive)",
+            "tag": "delta",
+            "forms": [
+              "werde",
+              "wird",
+              "werden"
+            ],
+            "note": "werden: to become, and the passive auxiliary. In the passive it stands second and the participle goes to the very end of the sentence."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          3
+        ]
+      },
+      "trap": "English builds its passive on to be — is celebrated. German builds it on werden, to become. Ist gefeiert says something else and is L4-M7's.",
+      "sound": "das fest virt im day-TSEM-ber guh-FY-ert. w is said as an English v, and the d of wird as a t.",
+      "variations": [
+        {
+          "display": "Das Formular wird ausgefüllt",
+          "cue": "The form is filled in",
+          "changed": "the same passive on L3-M8's verb — nothing new but the participle"
+        },
+        {
+          "display": "Die Feste werden im Sommer gefeiert",
+          "cue": "The festivals are celebrated in summer",
+          "changed": "a plural subject, so werden rather than wird"
+        }
+      ],
+      "mistake": {
+        "display": "Das Fest ist im Dezember gefeiert",
+        "why": "sein plus a participle describes a finished state, not an event. The present passive is wird … gefeiert."
+      },
+      "usage": "The written register — a poster, a programme, a notice on a door.",
+      "register": "formal"
+    },
+    {
+      "id": "L3-M9-S03",
+      "display": "Jeder kommt mit einem Geschenk",
+      "cue": "Everyone comes with a present",
+      "literal": "everyone comes with a present",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeder",
+            "cue": "everyone / each",
+            "tag": "free",
+            "forms": [
+              "jeder"
+            ],
+            "note": "jeder is singular and takes the singular verb, exactly as man does: Jeder kommt. Before a noun it agrees — jeder Tag, jede Woche."
+          },
+          {
+            "display": "Geschenk",
+            "cue": "present",
+            "tag": "free",
+            "forms": [
+              "Geschenk",
+              "Geschenke",
+              "Geschenken"
+            ],
+            "note": "das Geschenk, plural die Geschenke. Built on schenken, to give as a gift — the ge- here makes a noun, not a participle."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "English everyone comes feels plural — they all come. German jeder is strictly one at a time and never takes a plural verb.",
+      "sound": "YAY-der komt mit INE-em guh-SHENK. The J of jeder is a y.",
+      "variations": [
+        {
+          "display": "Alle kommen mit Geschenken",
+          "cue": "Everyone comes with presents",
+          "changed": "alle instead of jeder, so the verb is plural"
+        }
+      ],
+      "usage": "Saying what is expected of a guest, without telling anybody what to do.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M9-S04",
+      "display": "Alle Kinder freuen sich auf das Fest",
+      "cue": "All the children are looking forward to the festival",
+      "literal": "all children gladden themselves onto the festival",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "alle",
+            "cue": "all / everyone",
+            "tag": "free",
+            "forms": [
+              "alle",
+              "allen"
+            ],
+            "note": "alle is plural where jeder is singular: alle Kinder kommen, jedes Kind kommt. On its own it means everybody."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "German says alle Kinder with no article between them; all OF the children needs no von and no der.",
+      "sound": "AL-uh KIN-der FROY-en zikh owf das fest. The eu of freuen is the oy of boy.",
+      "variations": [
+        {
+          "display": "Alle freuen sich auf den Feiertag",
+          "cue": "Everyone is looking forward to the public holiday",
+          "changed": "alle standing on its own as the subject"
+        }
+      ],
+      "usage": "M6's reflexive doing its everyday work — the sentence a parent says in the week before a festival.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M9-S05",
+      "display": "Viele Kinder besuchen ihre Eltern",
+      "cue": "Many children visit their parents",
+      "literal": "many children visit their parents",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "viele",
+            "cue": "many",
+            "tag": "delta",
+            "forms": [
+              "viele"
+            ],
+            "note": "viele is a different word from L2-M6's viel: viele counts things (viele Kinder), viel measures a mass (viel Zeit). Both are yours now."
+          },
+          {
+            "display": "besuchen",
+            "cue": "visit",
+            "tag": "free",
+            "forms": [
+              "besuche",
+              "besuchen",
+              "besucht"
+            ],
+            "note": "besuchen takes its object straight, with no preposition: Ich besuche meine Eltern. The participle is besucht, with no ge- after be-."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "English visits WITH someone in some places; German never does. besuchen takes the accusative and nothing else.",
+      "sound": "FEE-luh KIN-der buh-ZOO-khen EE-ruh EL-tern. The v of viele is an f.",
+      "variations": [
+        {
+          "display": "Viele Leute besuchen ihre Familie",
+          "cue": "Many people visit their family",
+          "changed": "Leute instead of Kinder — the general word for people"
+        }
+      ],
+      "usage": "What a holiday looks like in practice, said without claiming it holds everywhere.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M9-S06",
+      "display": "Ich habe alle Freunde eingeladen",
+      "cue": "I've invited all my friends",
+      "literal": "I have all friends in-loaded",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eingeladen",
+            "cue": "invited",
+            "tag": "delta",
+            "forms": [
+              "einladen",
+              "eingeladen",
+              "lade",
+              "laden",
+              "lädt"
+            ],
+            "note": "einladen is separable (Ich lade dich ein), so the ge- of the participle lands INSIDE the word: ein-ge-laden. L3-M1's rule, with an irregular vowel in lädt."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The ge- does not go at the front. A separable verb wraps it: eingeladen, angerufen, aufgestanden — all of them L3-M1's shape.",
+      "sound": "ikh HAH-buh AL-luh FROYN-duh AYN-guh-lah-den. The stress sits on the ein.",
+      "variations": [
+        {
+          "display": "Ich lade alle Freunde ein",
+          "cue": "I'm inviting all my friends",
+          "changed": "the present, so the prefix comes off and waits at the end"
+        }
+      ],
+      "mistake": {
+        "display": "Ich habe alle Freunde geeinladen",
+        "why": "The ge- belongs between the prefix and the stem: eingeladen. Only an inseparable verb loses the ge- altogether."
+      },
+      "usage": "Your own party rather than a public festival — and the sentence that starts one.",
+      "register": "informal"
+    },
+    {
+      "id": "L3-M9-S07",
+      "display": "Am Feiertag arbeiten wir nicht",
+      "cue": "We don't work on the public holiday",
+      "literal": "on-the holiday work we not",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Feiertag",
+            "cue": "public holiday",
+            "tag": "free",
+            "forms": [
+              "Feiertag",
+              "Feiertage"
+            ],
+            "note": "der Feiertag is a day off for everybody, feiern plus Tag. Urlaub is holiday you take yourself, and it is a different word."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "A Feiertag is not a holiday you book. It is a public day off, and which days count differs between the Länder.",
+      "sound": "am FY-er-tahk AR-by-ten veer nikht. Feiertag stresses its first syllable.",
+      "variations": [
+        {
+          "display": "Am Feiertag wird nicht gearbeitet",
+          "cue": "No work is done on the public holiday",
+          "changed": "the passive with no subject at all — the register of a notice"
+        }
+      ],
+      "usage": "Explaining why the shops are shut, which on a Feiertag they will be.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M9-S08",
+      "display": "Es wird im Sommer sehr warm",
+      "cue": "It gets very warm in summer",
+      "literal": "it becomes in-the summer very warm",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Sommer",
+            "cue": "summer",
+            "tag": "free",
+            "forms": [
+              "Sommer"
+            ],
+            "note": "der Sommer, and a season takes im like a month: im Sommer, im Winter. The plural is the same word."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Here werden is not the passive at all — an adjective follows it, so it means becoming. Es ist warm is the state; es wird warm is the change.",
+      "sound": "es virt im ZOM-er zair varm. Both w's are v's, and the S of Sommer is a z.",
+      "variations": [
+        {
+          "display": "Es wird kalt",
+          "cue": "It's getting cold",
+          "changed": "the shortest version of the same verb, with L1-M9's kalt"
+        }
+      ],
+      "usage": "Weather, and the sentence that follows anyone opening a window.",
+      "register": "neutral",
+      "mnemonic": "Adjective after werden: becoming. Participle at the end: passive."
+    },
+    {
+      "id": "L3-M9-S09",
+      "display": "Viele Leute laden ihre Freunde ein",
+      "cue": "Many people invite their friends",
+      "literal": "many people load their friends in",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Leute",
+            "cue": "people",
+            "tag": "delta",
+            "forms": [
+              "Leute",
+              "Leuten"
+            ],
+            "note": "die Leute is plural only — there is no one Leut. For a single person German says Mensch or Person, and for people in general it says man."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Leute has no singular and takes a plural verb: viele Leute kommen. Reaching for one person out of it needs a different word.",
+      "sound": "FEE-luh LOY-tuh LAH-den EE-ruh FROYN-duh ine. The eu of Leute and Freunde is the oy of boy.",
+      "variations": [
+        {
+          "display": "Man lädt die Freunde ein",
+          "cue": "People invite their friends",
+          "changed": "man instead of viele Leute, so the verb is singular — and lädt has the umlaut"
+        }
+      ],
+      "usage": "The habit described from the outside, in the register of a guidebook or of small talk.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M9-S10",
+      "display": "Man feiert den Geburtstag mit der Familie",
+      "cue": "People celebrate the birthday with the family",
+      "literal": "one celebrates the birthday with the family",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Geburtstag",
+            "cue": "birthday",
+            "tag": "free",
+            "forms": [
+              "Geburtstag",
+              "Geburtstage"
+            ],
+            "note": "der Geburtstag — birth plus day. Congratulating anyone before the day is widely avoided; the wish waits until the day itself."
+          },
+          {
+            "display": "Familie",
+            "cue": "family",
+            "tag": "free",
+            "forms": [
+              "Familie",
+              "Familien"
+            ],
+            "note": "die Familie, said fa-MEE-lee-uh with four syllables. It is singular and takes a singular verb: Die Familie kommt."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "mit always takes the dative, so it is mit der Familie — no motion question to ask, unlike L2-M4's an and auf.",
+      "sound": "man FY-ert dayn guh-BOORTS-tahk mit dair fa-MEE-lee-uh. Familie has four syllables.",
+      "variations": [
+        {
+          "display": "Der Geburtstag wird zu Hause gefeiert",
+          "cue": "The birthday is celebrated at home",
+          "changed": "the passive again, with the participle at the end"
+        }
+      ],
+      "usage": "Describing the ordinary shape of a birthday where you are, and leaving the rest of the map alone.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M9-C01",
+      "display": "Man feiert das Fest im Dezember",
+      "cue": "People celebrate the festival in December"
+    },
+    {
+      "id": "L3-M9-C02",
+      "display": "Das Fest wird im Dezember gefeiert",
+      "cue": "The festival is celebrated in December"
+    },
+    {
+      "id": "L3-M9-C03",
+      "display": "Man geht um acht nach Hause",
+      "cue": "People go home at eight"
+    },
+    {
+      "id": "L3-M9-C04",
+      "display": "Bei uns feiert man zu Hause",
+      "cue": "Where I'm from people celebrate at home"
+    },
+    {
+      "id": "L3-M9-C05",
+      "display": "Jeder kommt mit einem Geschenk",
+      "cue": "Everyone comes with a present"
+    },
+    {
+      "id": "L3-M9-C06",
+      "display": "Alle Kinder freuen sich auf das Fest",
+      "cue": "All the children are looking forward to the festival"
+    },
+    {
+      "id": "L3-M9-C07",
+      "display": "Viele Leute besuchen ihre Familie",
+      "cue": "Many people visit their family"
+    },
+    {
+      "id": "L3-M9-C08",
+      "display": "Ich habe alle Freunde eingeladen",
+      "cue": "I've invited all my friends"
+    },
+    {
+      "id": "L3-M9-C09",
+      "display": "Am Feiertag arbeiten wir nicht",
+      "cue": "We don't work on the public holiday"
+    },
+    {
+      "id": "L3-M9-C10",
+      "display": "Es wird im Sommer sehr warm",
+      "cue": "It gets very warm in summer"
+    },
+    {
+      "id": "L3-M9-C11",
+      "display": "Der Geburtstag wird zu Hause gefeiert",
+      "cue": "The birthday is celebrated at home"
+    },
+    {
+      "id": "L3-M9-C12",
+      "display": "Man lädt die Freunde ein",
+      "cue": "People invite their friends"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

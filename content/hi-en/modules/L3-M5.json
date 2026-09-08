@@ -1,0 +1,626 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M5",
+  "title": "What someone said",
+  "job": "Reporting other people's words",
+  "prerequisites": [
+    "L3-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "simple_past",
+      "past_continuous",
+      "past_perfect",
+      "present_simple"
+    ],
+    "allowedPatterns": [
+      "He said + (that) + <backshifted clause>",
+      "He told me + (that) + <clause>",
+      "She asked + where/if + <statement order>",
+      "He asked me to + V",
+      "They said they were + V-ing"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "सुनाए हुए सवाल में शब्दों का क्रम सीधे वाक्य जैसा हो जाता है: She asked where I was living, न कि *She asked where was I living. सीधा सवाल पूछते वक़्त अंग्रेज़ी कर्ता और क्रिया को उलटती है (Where are you living?) और सुनाते वक़्त सीधा कर देती है. हिंदी दोनों में कुछ नहीं उलटती, इसलिए सीखने वाला उलटना सवाल का नियम मान बैठता है और यहाँ भी उलट देता है. इस पाठ की सबसे मुश्किल बात यही है, क्योंकि इसमें कुछ सीखना नहीं, सीखा हुआ हटाना है."
+    },
+    {
+      "tag": "interference",
+      "text": "told को आदमी चाहिए, said को नहीं: He told me that … और He said that … दोनों सही, पर *He told that … और *He said me that … दोनों ग़लत. हिंदी का कहा दोनों काम एक साथ कर लेता है (उसने मुझसे कहा), और इसी से ये दोनों आपस में बदल जाते हैं. दोनों की पंक्तियाँ L2-M10 की हैं; यहाँ सिर्फ़ यह जुड़ता है कि साथ में आदमी आएगा या नहीं. बीच का that बोलचाल में गिरा भी दिया जाता है — He said he was busy."
+    },
+    {
+      "tag": "delta",
+      "text": "सुनाते वक़्त काल एक क़दम पीछे हट जाता है: is → was, am → was, will → would, have · has → had, और go का बीता रूप went आगे बढ़कर had gone बन जाता है. He is busy से He said he was busy. हिंदी में कहे हुए वाक्य का काल जस का तस रहता है, इसलिए यह क़दम पूरा नया है."
+    },
+    {
+      "tag": "delta",
+      "text": "पर यह क़दम हमेशा नहीं पड़ता. जो बात आज भी सच है, उसका काल नहीं हटता — She said she lives in Delhi बिलकुल आम अंग्रेज़ी है, क्योंकि वह अब भी वहीं रहती है. सिर्फ़ पीछे हटाना सिखा देना आधा सच है: तब सीखने वाला उन बातों को भी पीछे धकेल देता है जो बदली ही नहीं."
+    },
+    {
+      "tag": "delta",
+      "text": "हाँ-ना वाला सवाल if या whether से सुनाया जाता है, that से कभी नहीं: He asked IF I had time. और कहीं जाने-करने को कहा गया हो तो वह to वाली सादी क्रिया बन जाता है — He asked me TO wait, She told me TO sit down. फ़ोन की बात सुनाने में यही दूसरा साँचा सबसे ज़्यादा काम आता है."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M5-S01",
+      "display": "She asked where I was living.",
+      "cue": "उसने पूछा कि मैं कहाँ रह रहा हूँ.",
+      "literal": "उसने पूछा कहाँ मैं था रह-रहा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "asked",
+            "cue": "पूछा",
+            "tag": "delta",
+            "forms": [
+              "ask",
+              "asks",
+              "asked"
+            ],
+            "note": "सवाल सुनाने वाली क्रिया. इसके बाद सवाल सीधा हो जाता है: asked where I was, न कि asked where was I."
+          },
+          {
+            "display": "was living",
+            "cue": "रह रहा था",
+            "tag": "delta",
+            "forms": [
+              "was living"
+            ],
+            "note": "am living का पीछे हटा हुआ रूप, इसी पाठ का ख़ाना. बिना सुनाए इसका अलग से कोई काम नहीं."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "सीधा सवाल Where are you living? उलटा है, और सुनाया हुआ सवाल सीधा. यहाँ कुछ नया सीखना नहीं है, उलटने की आदत छोड़नी है.",
+      "sound": "asked के आख़िर में k और t साथ दबते हैं — आस्क्ट.",
+      "variations": [
+        {
+          "display": "She asked where I was working.",
+          "cue": "उसने पूछा कि मैं कहाँ काम कर रहा हूँ.",
+          "changed": "दूसरा सवाल"
+        },
+        {
+          "display": "He asked where I was living.",
+          "cue": "उसने पूछा कि मैं कहाँ रह रहा हूँ.",
+          "changed": "दूसरा पूछने वाला"
+        },
+        {
+          "display": "She asked me where I was living.",
+          "cue": "उसने मुझसे पूछा कि मैं कहाँ रह रहा हूँ.",
+          "changed": "पूछने वाले के साथ आदमी"
+        }
+      ],
+      "mistake": {
+        "display": "She asked where was I living",
+        "why": "सुनाए हुए सवाल में क्रम सीधा रहता है: She asked where I was living."
+      },
+      "usage": "किसी से हुई बातचीत आगे बताना.",
+      "register": "neutral",
+      "mnemonic": "सुनाया हुआ सवाल उलटता नहीं."
+    },
+    {
+      "id": "L3-M5-S02",
+      "display": "She asked whether I had time.",
+      "cue": "उसने पूछा कि मेरे पास वक़्त है या नहीं.",
+      "literal": "उसने पूछा या-नहीं मैं रखता वक़्त.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "whether",
+            "cue": "या नहीं · कि क्या",
+            "tag": "delta",
+            "forms": [
+              "whether"
+            ],
+            "note": "हाँ-ना वाला सवाल सुनाने के लिए. if इसी जगह चलता है और थोड़ा हल्का लगता है; that यहाँ कभी नहीं आता."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "हाँ-ना वाले सवाल में that रख देना आम ग़लती है. *She asked that I had time अंग्रेज़ी में कुछ और ही कहता है.",
+      "sound": "whether और weather एक ही तरह बोले जाते हैं — वेदर.",
+      "variations": [
+        {
+          "display": "She asked if I had time.",
+          "cue": "उसने पूछा कि मेरे पास वक़्त है या नहीं.",
+          "changed": "whether की जगह if"
+        },
+        {
+          "display": "He asked whether the shop was open.",
+          "cue": "उसने पूछा कि दुकान खुली है या नहीं.",
+          "changed": "दूसरा सवाल"
+        },
+        {
+          "display": "She asked me whether I had time.",
+          "cue": "उसने मुझसे पूछा कि मेरे पास वक़्त है या नहीं.",
+          "changed": "पूछने वाले के साथ आदमी"
+        }
+      ],
+      "mistake": {
+        "display": "She asked that I had time",
+        "why": "हाँ-ना वाला सवाल if या whether लेता है: She asked whether I had time."
+      },
+      "usage": "किसी का पूछा हुआ हाँ-ना वाला सवाल आगे बताना.",
+      "register": "neutral",
+      "mnemonic": "हाँ-ना वाला सवाल — if या whether, that नहीं."
+    },
+    {
+      "id": "L3-M5-S03",
+      "display": "He told me that he would come tomorrow.",
+      "cue": "उसने मुझसे कहा कि वह कल आएगा.",
+      "literal": "उसने कहा मुझे कि वह आता कल.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "would come",
+            "cue": "आएगा (कहे हुए में)",
+            "tag": "delta",
+            "forms": [
+              "would come"
+            ],
+            "note": "will come का पीछे हटा हुआ ख़ाना. वही would है जो L2-M5 के would like और L3-M4 की कल्पना में मिला था."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "told के साथ आदमी आना ही आना है. *He told that he would come अधूरा है, और *He said me that … भी ग़लत.",
+      "sound": "told में l हल्का दबता है — टोल्ड.",
+      "variations": [
+        {
+          "display": "He said that he would come tomorrow.",
+          "cue": "उसने कहा कि वह कल आएगा.",
+          "changed": "told की जगह said, आदमी हटा"
+        },
+        {
+          "display": "He told me he would come tomorrow.",
+          "cue": "उसने मुझसे कहा कि वह कल आएगा.",
+          "changed": "बीच का that गिरा"
+        },
+        {
+          "display": "She told her brother that she would come.",
+          "cue": "उसने अपने भाई से कहा कि वह आएगी.",
+          "changed": "दूसरा आदमी"
+        }
+      ],
+      "mistake": {
+        "display": "He told that he would come tomorrow",
+        "why": "told को आदमी चाहिए: He told me that he would come tomorrow."
+      },
+      "usage": "किसी का वादा या इरादा आगे बताना.",
+      "register": "neutral",
+      "mnemonic": "told के साथ आदमी, said के साथ नहीं."
+    },
+    {
+      "id": "L3-M5-S04",
+      "display": "He said that he had gone to the market.",
+      "cue": "उसने कहा कि वह बाज़ार गया था.",
+      "literal": "उसने कहा कि वह था गया को वह बाज़ार.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "had gone",
+            "cue": "गया था",
+            "tag": "delta",
+            "forms": [
+              "had gone"
+            ],
+            "note": "went का पीछे हटा हुआ ख़ाना — go का बीता रूप एक क़दम और पीछे. सुनाए हुए वाक्य के बाहर यह L3-M10 की बात है."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "said के साथ आदमी नहीं आता. *He said me that … ग़लत है; आदमी चाहिए तो told चुनिए.",
+      "sound": "gone में o छोटा है — गॉन, गोन नहीं.",
+      "variations": [
+        {
+          "display": "He said that he had gone to the bank.",
+          "cue": "उसने कहा कि वह बैंक गया था.",
+          "changed": "दूसरी जगह"
+        },
+        {
+          "display": "He said he had gone to the market.",
+          "cue": "उसने कहा कि वह बाज़ार गया था.",
+          "changed": "बीच का that गिरा"
+        },
+        {
+          "display": "She told me that she had gone to the office.",
+          "cue": "उसने मुझसे कहा कि वह दफ़्तर गई थी.",
+          "changed": "told और दूसरी जगह"
+        }
+      ],
+      "mistake": {
+        "display": "He said me that he had gone to the market",
+        "why": "said आदमी नहीं लेता: He said that he had gone to the market."
+      },
+      "usage": "किसी की बताई हुई पुरानी बात आगे कहना.",
+      "register": "neutral",
+      "mnemonic": "went एक क़दम पीछे — had gone."
+    },
+    {
+      "id": "L3-M5-S05",
+      "display": "She said she lives in Delhi.",
+      "cue": "उसने कहा कि वह दिल्ली में रहती है.",
+      "literal": "उसने कहा वह रहती में दिल्ली.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "live",
+            "cue": "रहना (बसना)",
+            "tag": "delta",
+            "forms": [
+              "live",
+              "lives",
+              "lived",
+              "living"
+            ],
+            "note": "बसने वाला रहना: I live in Delhi. जगह पर ठहरने वाला रहना stay है — दोनों को हिंदी एक ही शब्द से कहती है."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "यहाँ काल पीछे नहीं हटा, क्योंकि वह आज भी दिल्ली में ही रहती है. She said she lived in Delhi कहने से लगता है कि अब नहीं रहती.",
+      "sound": "lives में i छोटा है — लिव्ज़, लाइव्ज़ नहीं.",
+      "variations": [
+        {
+          "display": "She said she lives in Mumbai.",
+          "cue": "उसने कहा कि वह मुंबई में रहती है.",
+          "changed": "दूसरा शहर"
+        },
+        {
+          "display": "He said he lives near the station.",
+          "cue": "उसने कहा कि वह स्टेशन के पास रहता है.",
+          "changed": "दूसरा आदमी और दूसरी जगह"
+        },
+        {
+          "display": "She told me she lives in Delhi.",
+          "cue": "उसने मुझसे कहा कि वह दिल्ली में रहती है.",
+          "changed": "told के साथ आदमी"
+        }
+      ],
+      "mistake": {
+        "display": "She said she lived in Delhi, but she is there today",
+        "why": "जो बात अब भी सच है उसका काल नहीं हटता: She said she lives in Delhi."
+      },
+      "usage": "किसी का पता या ठिकाना आगे बताना.",
+      "register": "neutral",
+      "mnemonic": "जो अब भी सच है, वह पीछे नहीं हटता."
+    },
+    {
+      "id": "L3-M5-S06",
+      "display": "She told me to sit down.",
+      "cue": "उसने मुझसे बैठने को कहा.",
+      "literal": "उसने कहा मुझे को बैठना नीचे.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sit down",
+            "cue": "बैठना",
+            "tag": "delta",
+            "forms": [
+              "sit down"
+            ],
+            "note": "दोनों शब्द साथ चलते हैं और अकेला sit कम सुनाई देता है. बैठने को कहा गया हो तो to sit down बनता है."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "कहे हुए हुक्म में that नहीं आता. *She told me that sit down ग़लत है — वहाँ to वाली सादी क्रिया आती है.",
+      "sound": "sit down में दोनों शब्द जुड़कर बोले जाते हैं — सिट्डाउन.",
+      "variations": [
+        {
+          "display": "He asked me to wait.",
+          "cue": "उसने मुझसे इंतज़ार करने को कहा.",
+          "changed": "दूसरी क्रिया और asked"
+        },
+        {
+          "display": "She told me to call the manager.",
+          "cue": "उसने मुझसे मैनेजर को फ़ोन करने को कहा.",
+          "changed": "दूसरा काम"
+        },
+        {
+          "display": "He told me not to wait.",
+          "cue": "उसने मुझसे इंतज़ार न करने को कहा.",
+          "changed": "मना करना — to के आगे not"
+        }
+      ],
+      "mistake": {
+        "display": "She told me that sit down",
+        "why": "कहे हुए हुक्म में to वाली क्रिया आती है: She told me to sit down."
+      },
+      "usage": "किसी का दिया हुआ हुक्म या गुज़ारिश आगे बताना.",
+      "register": "neutral",
+      "mnemonic": "हुक्म सुनाओ तो to वाली क्रिया."
+    },
+    {
+      "id": "L3-M5-S07",
+      "display": "I wondered why he was late.",
+      "cue": "मैं सोच रहा था कि उसे देर क्यों हुई.",
+      "literal": "मैं सोचता-रहा क्यों वह था देर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wondered",
+            "cue": "सोचता रहा · जानना चाहा",
+            "tag": "delta",
+            "forms": [
+              "wonder",
+              "wonders",
+              "wondered"
+            ],
+            "note": "अपने मन में उठा सवाल. इसके बाद भी क्रम सीधा रहता है: I wondered why he was late, न कि *why was he late."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "wonder के बाद भी सवाल सीधा हो जाता है, ठीक asked की तरह. यह नियम पूछने वाली हर क्रिया पर चलता है.",
+      "sound": "wondered का आख़िरी -ed सिर्फ़ d की तरह — वंडर्ड.",
+      "variations": [
+        {
+          "display": "I wondered where he was.",
+          "cue": "मैं सोच रहा था कि वह कहाँ है.",
+          "changed": "दूसरा सवाल"
+        },
+        {
+          "display": "She wondered why I was late.",
+          "cue": "वह सोच रही थी कि मुझे देर क्यों हुई.",
+          "changed": "दूसरा कर्ता"
+        },
+        {
+          "display": "I wondered whether he would come.",
+          "cue": "मैं सोच रहा था कि वह आएगा या नहीं.",
+          "changed": "हाँ-ना वाला सवाल"
+        }
+      ],
+      "mistake": {
+        "display": "I wondered why was he late",
+        "why": "यहाँ भी क्रम सीधा रहता है: I wondered why he was late."
+      },
+      "usage": "अपने मन में उठा सवाल किसी को बताना.",
+      "register": "neutral",
+      "mnemonic": "मन का सवाल भी सीधा ही सुनाया जाता है."
+    },
+    {
+      "id": "L3-M5-S08",
+      "display": "He said that he was working at home.",
+      "cue": "उसने कहा कि वह घर से काम कर रहा है.",
+      "literal": "उसने कहा कि वह था काम-कर-रहा पर घर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "was working",
+            "cue": "काम कर रहा था",
+            "tag": "delta",
+            "forms": [
+              "was working",
+              "were working"
+            ],
+            "note": "is working का पीछे हटा हुआ ख़ाना; कई लोग हों तो were working. काम आज भी चल रहा हो तो is working भी चलता है."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "चलती हुई बात भी एक क़दम पीछे हटती है — is working से was working. पर अगर वह आज भी घर से काम कर रहा है तो is working ही रहने दीजिए.",
+      "sound": "working में r दबा हुआ है — वर्किंग.",
+      "variations": [
+        {
+          "display": "He said he was working at home.",
+          "cue": "उसने कहा कि वह घर से काम कर रहा है.",
+          "changed": "बीच का that गिरा"
+        },
+        {
+          "display": "She said that she was working at the office.",
+          "cue": "उसने कहा कि वह दफ़्तर में काम कर रही है.",
+          "changed": "दूसरा कर्ता और दूसरी जगह"
+        },
+        {
+          "display": "They said they were working at home.",
+          "cue": "उन्होंने कहा कि वे घर से काम कर रहे हैं.",
+          "changed": "बहुवचन, were के साथ"
+        }
+      ],
+      "mistake": {
+        "display": "He said that he is working at home yesterday",
+        "why": "बीती बात सुनाते वक़्त काल पीछे हटता है: He said that he was working at home."
+      },
+      "usage": "किसी का काम का हाल आगे बताना — फ़ोन पर सबसे आम.",
+      "register": "neutral",
+      "mnemonic": "is working एक क़दम पीछे — was working."
+    },
+    {
+      "id": "L3-M5-S09",
+      "display": "She said that she had finished her work.",
+      "cue": "उसने कहा कि उसका काम ख़त्म हो गया था.",
+      "literal": "उसने कहा कि उसने था ख़त्म-किया उसका काम.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "had finished",
+            "cue": "ख़त्म कर लिया था",
+            "tag": "delta",
+            "forms": [
+              "had finished"
+            ],
+            "note": "has finished का पीछे हटा हुआ ख़ाना — have और has दोनों सुनाते वक़्त had बन जाते हैं."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "have और has दोनों का पीछे हटा रूप एक ही है — had. सुनाते वक़्त यह फ़र्क़ मिट जाता है.",
+      "sound": "finished का आख़िरी -ed सिर्फ़ t की तरह — फ़िनिश्ट.",
+      "variations": [
+        {
+          "display": "She said she had finished her work.",
+          "cue": "उसने कहा कि उसका काम ख़त्म हो गया था.",
+          "changed": "बीच का that गिरा"
+        },
+        {
+          "display": "He told me that he had finished the homework.",
+          "cue": "उसने मुझसे कहा कि उसका होमवर्क ख़त्म हो गया था.",
+          "changed": "told और दूसरा काम"
+        },
+        {
+          "display": "They said that they had finished the work.",
+          "cue": "उन्होंने कहा कि उनका काम ख़त्म हो गया था.",
+          "changed": "बहुवचन"
+        }
+      ],
+      "mistake": {
+        "display": "She said that she has finished her work",
+        "why": "has सुनाते वक़्त had बनता है: She said that she had finished her work."
+      },
+      "usage": "किसी का काम पूरा होने की ख़बर आगे देना.",
+      "register": "neutral",
+      "mnemonic": "have और has, दोनों पीछे जाकर had."
+    },
+    {
+      "id": "L3-M5-S10",
+      "display": "I asked her whether she was coming tonight.",
+      "cue": "मैंने उससे पूछा कि वह आज रात आ रही है या नहीं.",
+      "literal": "मैंने पूछा उसे या-नहीं वह थी आ-रही आज-रात.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "was coming",
+            "cue": "आ रही थी",
+            "tag": "delta",
+            "forms": [
+              "was coming"
+            ],
+            "note": "is coming का पीछे हटा हुआ ख़ाना. आने-जाने की चलती हुई बात अंग्रेज़ी में आगे के वक़्त का भी काम करती है."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          4
+        ]
+      },
+      "trap": "asked के बाद आदमी सीधे आता है, बिना to के — I asked her, न कि *I asked to her.",
+      "sound": "coming में o अ की तरह — कमिंग, कोमिंग नहीं.",
+      "variations": [
+        {
+          "display": "I asked her if she was coming tonight.",
+          "cue": "मैंने उससे पूछा कि वह आज रात आ रही है या नहीं.",
+          "changed": "whether की जगह if"
+        },
+        {
+          "display": "I asked him whether he was coming tonight.",
+          "cue": "मैंने उससे पूछा कि वह आज रात आ रहा है या नहीं.",
+          "changed": "दूसरा आदमी"
+        },
+        {
+          "display": "She asked me whether I was coming.",
+          "cue": "उसने मुझसे पूछा कि मैं आ रहा हूँ या नहीं.",
+          "changed": "पूछने वाला बदला"
+        }
+      ],
+      "mistake": {
+        "display": "I asked to her whether she was coming tonight",
+        "why": "asked के बाद आदमी सीधे आता है: I asked her whether she was coming tonight."
+      },
+      "usage": "किसी से पूछी हुई बात आगे बताना — योजना बनाते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "ask किसी से, to किसी को नहीं."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M5-C01",
+      "display": "She asked where I was living.",
+      "cue": "उसने पूछा कि मैं कहाँ रह रहा हूँ."
+    },
+    {
+      "id": "L3-M5-C02",
+      "display": "She asked whether I had time.",
+      "cue": "उसने पूछा कि मेरे पास वक़्त है या नहीं."
+    },
+    {
+      "id": "L3-M5-C03",
+      "display": "He told me that he would come tomorrow.",
+      "cue": "उसने मुझसे कहा कि वह कल आएगा."
+    },
+    {
+      "id": "L3-M5-C04",
+      "display": "He said that he had gone to the market.",
+      "cue": "उसने कहा कि वह बाज़ार गया था."
+    },
+    {
+      "id": "L3-M5-C05",
+      "display": "She said she lives in Delhi.",
+      "cue": "उसने कहा कि वह दिल्ली में रहती है."
+    },
+    {
+      "id": "L3-M5-C06",
+      "display": "She told me to sit down.",
+      "cue": "उसने मुझसे बैठने को कहा."
+    },
+    {
+      "id": "L3-M5-C07",
+      "display": "I wondered why he was late.",
+      "cue": "मैं सोच रहा था कि उसे देर क्यों हुई."
+    },
+    {
+      "id": "L3-M5-C08",
+      "display": "He said that he was working at home.",
+      "cue": "उसने कहा कि वह घर से काम कर रहा है."
+    },
+    {
+      "id": "L3-M5-C09",
+      "display": "She said that she had finished her work.",
+      "cue": "उसने कहा कि उसका काम ख़त्म हो गया था."
+    },
+    {
+      "id": "L3-M5-C10",
+      "display": "I asked her whether she was coming tonight.",
+      "cue": "मैंने उससे पूछा कि वह आज रात आ रही है या नहीं."
+    },
+    {
+      "id": "L3-M5-C11",
+      "display": "He asked me if I had time.",
+      "cue": "उसने मुझसे पूछा कि मेरे पास वक़्त है या नहीं."
+    },
+    {
+      "id": "L3-M5-C12",
+      "display": "She told me that she lives in Mumbai.",
+      "cue": "उसने मुझसे कहा कि वह मुंबई में रहती है."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,594 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M6",
+  "title": "Feelings in depth",
+  "job": "Nuance past good and bad",
+  "prerequisites": ["L3-M5"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "jeo-neun + N-i/ga + Adj-verb-yo",
+      "N-i/ga + Adj-verb-a/eo + haeyo",
+      "V/Adj-gesseoyo",
+      "gibun-i + Adj-verb-yo",
+      "neomu / jom / byeollo + Adj-verb-yo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "KOREAN WILL NOT LET YOU STATE ANOTHER PERSON'S INNER STATE DIRECTLY. Jeo-neun gippeoyo is right, and Chingu-neun gippeoyo is not. A feeling that is somebody else's is said with the ACTION shape gippeohaeyo — you can see what a person does, and you cannot see what they feel."
+    },
+    {
+      "tag": "interference",
+      "text": "THE SHAPE IS THE DESCRIPTIVE VERB PLUS haeyo, AND IT IS ALREADY IN THE COURSE. gippeo + haeyo, seulpeo + haeyo — the same -a/-eo stem the ladder has been conjugating since L1-M4, with haeyo on the end. L1-M1's joahaeyo IS this rule already frozen: joayo is it-is-good-to-me, joahaeyo is likes it."
+    },
+    {
+      "tag": "free",
+      "text": "It is written as ONE token, not two. joahaeyo has been one word since L1-M1, and gippeohaeyo, seulpeohaeyo follow it. A hyphen in this course means a particle boundary and nothing else, and a space would make the index read haeyo as a separate verb."
+    },
+    {
+      "tag": "delta",
+      "text": "NUANCE HERE IS DEGREE, NOT NEW WORDS. neomu (too much of it, and in speech simply very), jom and jogeum (a bit), L3-M1's byeollo and geoui with their obligatory negative, and L2-M1's gwaenchanayo for the honest middle. The word in front of the feeling is what moves it."
+    },
+    {
+      "tag": "delta",
+      "text": "-gess- IS CONJECTURE, NOT A SECOND FUTURE. himdeulgesseoyo is that must be hard, masitgesseoyo is that looks good, algesseoyo is I see, I have got it. It is what Korean says to sympathise, which is why it lives with the feelings. Every plan is still L1-M6's -l geoyeyo, and no second future is opened here."
+    },
+    {
+      "tag": "free",
+      "text": "EVERY CLAUSE IN THIS MODULE IS PRESENT. A feeling in the past — how the day felt, how the exam went — is L3-M10's business, and the -eoss- past is not written on a feeling verb anywhere in this file."
+    },
+    {
+      "tag": "free",
+      "text": "REGISTER: this module stays neutral, and that is a decision rather than an oversight. Feelings are what friends talk about, and the forms that would earn an informal chip are banmal, which L1 banned and L3 does not lift. Warmth is carried by -gess- to sympathise and jom to soften instead."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M6-S01",
+      "display": "Jeo-neun neomu gippeoyo.",
+      "script": "저는 너무 기뻐요.",
+      "cue": "I'm so glad.",
+      "literal": "I-topic too-much am-glad",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "neomu",
+            "script": "너무",
+            "cue": "so · really · too",
+            "tag": "delta",
+            "forms": ["neomu"],
+            "note": "Its dictionary sense is too much, but in ordinary speech it is simply very: neomu joayo is I love it, not I like it excessively."
+          },
+          {
+            "display": "gippeoyo",
+            "script": "기뻐요",
+            "cue": "(I) am glad · am happy",
+            "tag": "delta",
+            "forms": ["gippeoyo"],
+            "note": "A descriptive verb, so it is a whole sentence on its own and needs no am. It may only describe the speaker; for anyone else see gippeohaeyo."
+          }
+        ],
+        "rules": [0, 3, 5]
+      },
+      "trap": "neomu is not a warning. An English speaker reads too and hears a complaint, but neomu gippeoyo is unmixed good news; the complaint reading needs a bad thing after it, as in neomu bissayo.",
+      "sound": "JEO-neun NEO-mu GI-ppeo-yo. The pp in gippeoyo is tense and unaspirated — no puff of air, closer to a hard English b than to p.",
+      "variations": [
+        {
+          "display": "Jeo-neun jogeum gippeoyo.",
+          "script": "저는 조금 기뻐요.",
+          "cue": "I'm a little glad.",
+          "changed": "jogeum for neomu — the same sentence with the degree turned down"
+        },
+        {
+          "display": "Jeo-neun jeongmal gippeoyo.",
+          "script": "저는 정말 기뻐요.",
+          "cue": "I'm really glad.",
+          "changed": "L3-M1's jeongmal, which asserts the feeling is true rather than large"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun neomu gippeo isseoyo.",
+        "script": "저는 너무 기뻐 있어요.",
+        "why": "gippeoyo is already the whole predicate. There is no am to add, and isseoyo is a different verb: Jeo-neun neomu gippeoyo."
+      },
+      "usage": "Good news you have just been given, and the first thing you say back.",
+      "register": "neutral",
+      "mnemonic": "The feeling is the verb."
+    },
+    {
+      "id": "L3-M6-S02",
+      "display": "Chingu-ga gippeohaeyo.",
+      "script": "친구가 기뻐해요.",
+      "cue": "My friend is glad.",
+      "literal": "friend-subject glad-does",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gippeohaeyo",
+            "script": "기뻐해요",
+            "cue": "(someone else) is glad",
+            "tag": "interference",
+            "forms": ["gippeohaeyo"],
+            "note": "gippeo + haeyo: the feeling turned into something a person is seen doing. It is the only shape available once the feeling is not the speaker's."
+          }
+        ],
+        "rules": [0, 1, 2]
+      },
+      "trap": "THE FRIEND TAKES -ga, NOT -neun. A topic is what the whole sentence is about, and here the sentence is about what the friend is visibly doing, so the plain subject particle is what it wants.",
+      "sound": "CHIN-gu-ga GI-ppeo-hae-yo. Said at speed the eo and hae run together, but the word is never shortened in writing.",
+      "variations": [
+        {
+          "display": "Dongsaeng-i gippeohaeyo.",
+          "script": "동생이 기뻐해요.",
+          "cue": "My little brother is glad.",
+          "changed": "L1-M7's dongsaeng, with -i because the name ends in a consonant"
+        },
+        {
+          "display": "Chingu-ga neomu gippeohaeyo.",
+          "script": "친구가 너무 기뻐해요.",
+          "cue": "My friend is over the moon.",
+          "changed": "the degree word sits in front of the action shape unchanged"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-ga gippeoyo.",
+        "script": "친구가 기뻐요.",
+        "why": "gippeoyo can only be said of yourself. Somebody else's gladness is Chingu-ga gippeohaeyo."
+      },
+      "usage": "Reporting how another person is, when you can see it on them.",
+      "register": "neutral",
+      "mnemonic": "Mine is felt, theirs is done."
+    },
+    {
+      "id": "L3-M6-S03",
+      "display": "Jeo-neun jogeum seulpeoyo.",
+      "script": "저는 조금 슬퍼요.",
+      "cue": "I'm a little sad.",
+      "literal": "I-topic a-little am-sad",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "seulpeoyo",
+            "script": "슬퍼요",
+            "cue": "(I) am sad",
+            "tag": "delta",
+            "forms": ["seulpeoyo", "seulpeohaeyo"],
+            "note": "The same pair as gippeoyo: seulpeoyo of yourself, seulpeohaeyo of anybody else. The second form is the one a learner never guesses."
+          }
+        ],
+        "rules": [0, 1, 3]
+      },
+      "trap": "jogeum and L2-M1's jom are the same word, and jom is the softer of the two — jogeum measures the sadness, jom apologises for mentioning it.",
+      "sound": "JEO-neun JO-geum SEUL-peo-yo. seul is one syllable; the eu is the flat unrounded vowel, not English 'ul'.",
+      "variations": [
+        {
+          "display": "Dongsaeng-i seulpeohaeyo.",
+          "script": "동생이 슬퍼해요.",
+          "cue": "My little brother is sad.",
+          "changed": "the same feeling moved onto somebody else, so the action shape takes over"
+        },
+        {
+          "display": "Jeo-neun byeollo an seulpeoyo.",
+          "script": "저는 별로 안 슬퍼요.",
+          "cue": "I'm not particularly sad.",
+          "changed": "L3-M1's byeollo, which still cannot stand without its negative"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-neun seulpeoyo.",
+        "script": "친구는 슬퍼요.",
+        "why": "Twice wrong in one short sentence: the feeling of another person needs seulpeohaeyo, and the subject wants -ga. Chingu-ga seulpeohaeyo."
+      },
+      "usage": "Admitting to a small sadness without making it the whole conversation.",
+      "register": "neutral",
+      "mnemonic": "jogeum measures, jom softens."
+    },
+    {
+      "id": "L3-M6-S04",
+      "display": "Oneul gibun-i eottaeyo?",
+      "script": "오늘 기분이 어때요?",
+      "cue": "How do you feel today?",
+      "literal": "today mood-subject how-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gibun",
+            "script": "기분",
+            "cue": "mood · how one feels",
+            "tag": "delta",
+            "forms": ["gibun", "gibun-i"],
+            "note": "The mood you are in on a given day, not your character. It is the SUBJECT of the sentence, so it takes -i and the feeling word describes it."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "There is no you anywhere in this question. Korean leaves the listener out once the situation has named them, and adding one would make the question pointed rather than kind.",
+      "sound": "O-neul GI-bu-ni EO-ttae-yo. gibun-i runs together as GI-bu-ni — the particle takes the noun's last consonant with it.",
+      "variations": [
+        {
+          "display": "Oneul gibun-i joayo.",
+          "script": "오늘 기분이 좋아요.",
+          "cue": "I'm in a good mood today.",
+          "changed": "L1-M9's joayo answering the question it was made for"
+        },
+        {
+          "display": "Gibun-i gwaenchanayo.",
+          "script": "기분이 괜찮아요.",
+          "cue": "I feel all right.",
+          "changed": "L2-M1's gwaenchanayo as the honest middle answer"
+        }
+      ],
+      "mistake": {
+        "display": "Oneul gibun-eun eottaeyo?",
+        "script": "오늘 기분은 어때요?",
+        "why": "-eun would set the mood up against something else you had in mind. The plain question is Oneul gibun-i eottaeyo?"
+      },
+      "usage": "Asking after somebody at the start of a day, or the morning after bad news.",
+      "register": "neutral",
+      "mnemonic": "The mood is the subject."
+    },
+    {
+      "id": "L3-M6-S05",
+      "display": "Jeo-neun jigeum gibun-i nappayo.",
+      "script": "저는 지금 기분이 나빠요.",
+      "cue": "I'm in a bad mood right now.",
+      "literal": "I-topic now mood-subject is-bad",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nappayo",
+            "script": "나빠요",
+            "cue": "is bad",
+            "tag": "delta",
+            "forms": ["nappayo"],
+            "note": "The opposite of joayo. On a mood it says out of sorts or cross, which is a smaller claim than English a bad mood usually makes."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "TWO SUBJECT-LIKE PHRASES, AND BOTH ARE CORRECT. jeo-neun sets the topic and gibun-i is the grammatical subject; the sentence is as-for-me, the-mood-is-bad. English has no room for both, so a learner drops one and says the wrong thing.",
+      "sound": "JEO-neun JI-geum GI-bu-ni NA-ppa-yo. The pp is tense: hold the lips and release without a puff.",
+      "variations": [
+        {
+          "display": "Gibun-i byeollo an joayo.",
+          "script": "기분이 별로 안 좋아요.",
+          "cue": "I'm not in a great mood.",
+          "changed": "the same news said gently, with byeollo and its negative"
+        },
+        {
+          "display": "Oneul gibun-i nappayo.",
+          "script": "오늘 기분이 나빠요.",
+          "cue": "I'm in a bad mood today.",
+          "changed": "the topic dropped altogether once the conversation knows who"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun jigeum gibun nappayo.",
+        "script": "저는 지금 기분 나빠요.",
+        "why": "The particle is what marks gibun as the thing being described. Written out it is Jeo-neun jigeum gibun-i nappayo."
+      },
+      "usage": "Warning somebody, kindly, that this is not the moment.",
+      "register": "neutral",
+      "mnemonic": "Topic then subject, both."
+    },
+    {
+      "id": "L3-M6-S06",
+      "display": "Jeo-neun jeongmal sinnayo.",
+      "script": "저는 정말 신나요.",
+      "cue": "I'm really excited.",
+      "literal": "I-topic really am-excited",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sinnayo",
+            "script": "신나요",
+            "cue": "(I) am excited · it's a thrill",
+            "tag": "delta",
+            "forms": ["sinnayo"],
+            "note": "Excitement that is already happening, not anticipation of something later. A trip you are on is sinnayo; a trip next month is not."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "English excited points forward — I'm excited for Friday. sinnayo points at now, so the Friday version is a plan sentence with L1-M6's -l geoyeyo in it, not this word.",
+      "sound": "JEO-neun JEONG-mal SIN-na-yo. The n doubles across the seam and is held: sin-NA, not si-na.",
+      "variations": [
+        {
+          "display": "Jeo-neun byeollo an sinnayo.",
+          "script": "저는 별로 안 신나요.",
+          "cue": "I'm not that excited.",
+          "changed": "byeollo with an, the negative it cannot do without"
+        },
+        {
+          "display": "Jeo-neun neomu sinnayo.",
+          "script": "저는 너무 신나요.",
+          "cue": "I'm so excited.",
+          "changed": "neomu raising the degree instead of jeongmal asserting it"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun sinnaeyo.",
+        "script": "저는 신내요.",
+        "why": "The stem ends in -na and takes -yo directly. It is sinnayo."
+      },
+      "usage": "The moment something you were waiting for actually starts.",
+      "register": "neutral",
+      "mnemonic": "sinnayo is now, not soon."
+    },
+    {
+      "id": "L3-M6-S07",
+      "display": "Jeo-neun siheom-i museoweoyo.",
+      "script": "저는 시험이 무서워요.",
+      "cue": "I'm scared of the exam.",
+      "literal": "I-topic exam-subject is-frightening",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "museoweoyo",
+            "script": "무서워요",
+            "cue": "is frightening · (I) am scared of",
+            "tag": "interference",
+            "forms": ["museoweoyo"],
+            "note": "The thing feared is the SUBJECT and does the frightening, so the exam takes -i. There is no of anywhere in the Korean sentence."
+          },
+          {
+            "display": "buranhaeyo",
+            "script": "불안해요",
+            "cue": "(I) am anxious · uneasy",
+            "tag": "delta",
+            "forms": ["buranhaeyo"],
+            "note": "Unease with no single object — the feeling before results come out. Its -haeyo is part of the word itself, not the rule that builds gippeohaeyo."
+          }
+        ],
+        "rules": [0, 3, 5]
+      },
+      "trap": "museoweoyo IS ALREADY BACKWARDS. Korean says the exam is frightening and lets jeo-neun say who to; an English speaker reaches for a word meaning I fear and marks the exam as an object, which is not a sentence here.",
+      "sound": "JEO-neun SI-heo-mi MU-seo-weo-yo. siheom-i is SI-heo-mi, and the weo is one glide, close to English 'wuh'.",
+      "variations": [
+        {
+          "display": "Jeo-neun jom buranhaeyo.",
+          "script": "저는 좀 불안해요.",
+          "cue": "I'm a bit anxious.",
+          "changed": "the unfocused feeling, which needs no thing to fear at all"
+        },
+        {
+          "display": "Siheom-i neomu museoweoyo.",
+          "script": "시험이 너무 무서워요.",
+          "cue": "The exam is terrifying.",
+          "changed": "the topic dropped, leaving the frightening thing on its own"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun siheom-eul museoweoyo.",
+        "script": "저는 시험을 무서워요.",
+        "why": "Nothing is being done to the exam, so -eul has no work here: Jeo-neun siheom-i museoweoyo."
+      },
+      "usage": "Saying what is weighing on you, to a friend or to a teacher.",
+      "register": "neutral",
+      "mnemonic": "The scary thing is the subject."
+    },
+    {
+      "id": "L3-M6-S08",
+      "display": "Sueop-i jom himdeureoyo.",
+      "script": "수업이 좀 힘들어요.",
+      "cue": "The class is a bit tough.",
+      "literal": "class-subject a-bit is-hard",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "himdeureoyo",
+            "script": "힘들어요",
+            "cue": "is hard going · is tough",
+            "tag": "delta",
+            "forms": ["himdeureoyo"],
+            "note": "Hard as in draining, said of work, a class or a week. Difficult-to-understand is a different word, and this one is about the toll rather than the puzzle."
+          }
+        ],
+        "rules": [3, 5, 6]
+      },
+      "trap": "jom is doing politeness here, not measurement. Dropping it leaves Sueop-i himdeureoyo, which is a complaint; with jom it is an admission.",
+      "sound": "SU-eo-bi JOM HIM-deu-reo-yo. sueop-i is SU-eo-bi — the p softens to b between vowels.",
+      "variations": [
+        {
+          "display": "Ilhaneun geo-ga jom himdeureoyo.",
+          "script": "일하는 게 좀 힘들어요.",
+          "cue": "Working is a bit hard going.",
+          "changed": "L3-M2's modifier in front of geo, so the hard thing is an activity"
+        },
+        {
+          "display": "Sueop-i jeongmal himdeureoyo.",
+          "script": "수업이 정말 힘들어요.",
+          "cue": "The class is really tough.",
+          "changed": "jeongmal in place of jom, and the admission becomes a complaint"
+        }
+      ],
+      "mistake": {
+        "display": "Sueop-eun jom himdeureoyo.",
+        "script": "수업은 좀 힘들어요.",
+        "why": "-eun sets the class against your other classes. To say only that it is tough, use Sueop-i jom himdeureoyo."
+      },
+      "usage": "Telling a classmate or a teacher how it is going, without asking for anything.",
+      "register": "neutral",
+      "mnemonic": "jom makes it an admission."
+    },
+    {
+      "id": "L3-M6-S09",
+      "display": "Geugeo-neun jeongmal himdeulgesseoyo.",
+      "script": "그거는 정말 힘들겠어요.",
+      "cue": "That must be really hard.",
+      "literal": "that-topic really hard-would-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "himdeulgesseoyo",
+            "script": "힘들겠어요",
+            "cue": "that must be hard",
+            "tag": "delta",
+            "forms": [
+              "himdeulgesseoyo",
+              "masitgesseoyo",
+              "algesseoyo",
+              "-gesseoyo"
+            ],
+            "note": "himdeureoyo with -gess- inside it. The ending guesses at what you cannot know first-hand, which is why it is the polite way to answer somebody else's bad news."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "-gess- IS NOT A FUTURE, whatever half the material a learner meets will say. himdeulgesseoyo is about right now and about somebody else; every plan in this course is still L1-M6's -l geoyeyo.",
+      "sound": "GEU-geo-neun JEONG-mal HIM-deul-GE-sseo-yo. The ss is tense — hold it and release sharply.",
+      "variations": [
+        {
+          "display": "Ne, algesseoyo.",
+          "script": "네, 알겠어요.",
+          "cue": "Yes, I've got it.",
+          "changed": "the same ending on to know, where it softens I know into I see"
+        },
+        {
+          "display": "Bibimbap-i masitgesseoyo.",
+          "script": "비빔밥이 맛있겠어요.",
+          "cue": "That bibimbap looks good.",
+          "changed": "-gess- guessing from the look of a thing rather than from what you were told"
+        }
+      ],
+      "mistake": {
+        "display": "Geugeo-neun jeongmal himdeureoyo.",
+        "script": "그거는 정말 힘들어요.",
+        "why": "Without -gess- you are claiming to know how their week felt. Guessing is Geugeo-neun jeongmal himdeulgesseoyo."
+      },
+      "usage": "Answering somebody who has just told you something hard.",
+      "register": "neutral",
+      "mnemonic": "-gess- guesses, it does not promise."
+    },
+    {
+      "id": "L3-M6-S10",
+      "display": "Jeo-neun maeum-i apayo.",
+      "script": "저는 마음이 아파요.",
+      "cue": "My heart aches.",
+      "literal": "I-topic heart-subject hurts",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "maeum",
+            "script": "마음",
+            "cue": "heart · how one is inclined",
+            "tag": "delta",
+            "forms": ["maeum", "maeum-i"],
+            "note": "Not the organ but the inner self — where a decision, a kindness or a hurt sits. gibun is today's weather; maeum is the climate."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "maeum-i apayo is not a medical sentence. L2-M8's apayo does bodies and this does grief, and the difference is carried entirely by which noun takes -i.",
+      "sound": "JEO-neun MA-eu-mi A-pa-yo. maeum is two syllables, ma-eum, never one.",
+      "variations": [
+        {
+          "display": "Maeum-i neomu apayo.",
+          "script": "마음이 너무 아파요.",
+          "cue": "It hurts so much.",
+          "changed": "the topic dropped, and neomu on a hurt rather than on a gladness"
+        },
+        {
+          "display": "Chingu-ga seulpeohaeyo. Maeum-i apayo.",
+          "script": "친구가 슬퍼해요. 마음이 아파요.",
+          "cue": "My friend is sad. It hurts to see.",
+          "changed": "the two halves of the module in one turn — their feeling, then yours"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun maeum-eul apayo.",
+        "script": "저는 마음을 아파요.",
+        "why": "Nothing is done to the heart; it is what hurts. Jeo-neun maeum-i apayo."
+      },
+      "usage": "What you say when somebody else's news has landed on you.",
+      "register": "neutral",
+      "mnemonic": "gibun is the day, maeum is the person."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M6-C01",
+      "display": "Jeo-neun neomu gippeoyo.",
+      "script": "저는 너무 기뻐요.",
+      "cue": "I'm so glad."
+    },
+    {
+      "id": "L3-M6-C02",
+      "display": "Chingu-ga gippeohaeyo.",
+      "script": "친구가 기뻐해요.",
+      "cue": "My friend is glad."
+    },
+    {
+      "id": "L3-M6-C03",
+      "display": "Dongsaeng-i seulpeohaeyo.",
+      "script": "동생이 슬퍼해요.",
+      "cue": "My little brother is sad."
+    },
+    {
+      "id": "L3-M6-C04",
+      "display": "Oneul gibun-i eottaeyo?",
+      "script": "오늘 기분이 어때요?",
+      "cue": "How do you feel today?"
+    },
+    {
+      "id": "L3-M6-C05",
+      "display": "Gibun-i byeollo an joayo.",
+      "script": "기분이 별로 안 좋아요.",
+      "cue": "I'm not in a great mood."
+    },
+    {
+      "id": "L3-M6-C06",
+      "display": "Jeo-neun jeongmal sinnayo.",
+      "script": "저는 정말 신나요.",
+      "cue": "I'm really excited."
+    },
+    {
+      "id": "L3-M6-C07",
+      "display": "Siheom-i neomu museoweoyo.",
+      "script": "시험이 너무 무서워요.",
+      "cue": "The exam is terrifying."
+    },
+    {
+      "id": "L3-M6-C08",
+      "display": "Jeo-neun jom buranhaeyo.",
+      "script": "저는 좀 불안해요.",
+      "cue": "I'm a bit anxious."
+    },
+    {
+      "id": "L3-M6-C09",
+      "display": "Sueop-i jom himdeureoyo.",
+      "script": "수업이 좀 힘들어요.",
+      "cue": "The class is a bit tough."
+    },
+    {
+      "id": "L3-M6-C10",
+      "display": "Geugeo-neun jeongmal himdeulgesseoyo.",
+      "script": "그거는 정말 힘들겠어요.",
+      "cue": "That must be really hard."
+    },
+    {
+      "id": "L3-M6-C11",
+      "display": "Ne, algesseoyo.",
+      "script": "네, 알겠어요.",
+      "cue": "Yes, I've got it."
+    },
+    {
+      "id": "L3-M6-C12",
+      "display": "Jeo-neun maeum-i apayo.",
+      "script": "저는 마음이 아파요.",
+      "cue": "My heart aches."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

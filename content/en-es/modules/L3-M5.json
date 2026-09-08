@@ -1,0 +1,567 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M5",
+  "title": "What someone said",
+  "job": "Reporting other people's words",
+  "prerequisites": [
+    "L3-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "present",
+      "preterite",
+      "imperfect",
+      "future (-ré)",
+      "conditional (-ría)"
+    ],
+    "allowedPatterns": [
+      "Dijo que + <clause, backshifted>",
+      "Me preguntó si + <clause>",
+      "Me preguntó + <wh-word> + <clause>",
+      "La vi + <complement>",
+      "Los conozco + <complement>",
+      "Le dije que + <clause>",
+      "Voy a + V-inf + clitic"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "Reporting moves the verb back one step, exactly as English does: dice que viene becomes dijo que venía, and dice que vendrá becomes dijo que vendría. The present goes to the IMPERFECT — L2-M10's tense doing a second job — and the future goes to the conditional, which is M4's. Nothing new is opened for either, and an English speaker's instinct is already right."
+    },
+    {
+      "tag": "interference",
+      "text": "A yes-or-no question is reported with si and never with que: me preguntó si tenía tiempo. English says \"asked me that\" nowhere and \"asked me if\" everywhere, and yet que is what a learner reaches for, because que is the word every other reported clause takes. A wh-question keeps its own word and its accent: me preguntó dónde estaba el baño."
+    },
+    {
+      "tag": "interference",
+      "text": "The object pronouns la, los and las are spelled exactly like L1-M1's articles la, los and las, and they are different words. Nothing in the spelling separates them — only the position does: in front of a verb it is an object, in front of a noun it is an article. Las llaves no están aquí, las tengo en casa: both las in one breath, two different words."
+    },
+    {
+      "tag": "delta",
+      "text": "The object goes BEFORE a conjugated verb — la vi, los conozco — and may ride on the end of an infinitive: voy a verla. One choice, two spellings, and both are ordinary. Two objects in one sentence (se lo dije) is a later level's, and this module never shows one."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M5-S01",
+      "display": "Dice que viene hoy. Dijo que venía el sábado.",
+      "cue": "He says he's coming today. He said he was coming on Saturday.",
+      "literal": "Says that comes today. Said that was-coming the Saturday.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dice",
+            "cue": "he says · she says",
+            "tag": "free",
+            "forms": [],
+            "note": "The present of decir, beside L2-M10's dijo and M4's diré. The stem vowel breaks to i under the stress, which is why it is not dece."
+          },
+          {
+            "display": "viene",
+            "cue": "he comes · he's coming",
+            "tag": "free",
+            "forms": [],
+            "note": "The present of venir, whose future M4 taught as vendré. The e breaks to ie under the stress: viene, but venir and venía."
+          },
+          {
+            "display": "venía",
+            "cue": "he was coming",
+            "tag": "delta",
+            "forms": [],
+            "note": "The imperfect of venir — L2-M10's tense doing the reporting job. The stress moves off the stem, so the ie heals back to a plain e."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Nothing here is a Spanish rule an English speaker has to learn; it is the same step back English takes in \"he said he was coming\". The work is in the cells, not in the grammar.",
+      "sound": "DI-se and BIE-ne, both stressed at the front. be-NI-a is three syllables and the accent breaks the i from the a.",
+      "variations": [
+        {
+          "display": "Dijo que venía hoy.",
+          "cue": "He said he was coming today.",
+          "changed": "the day the coming was promised for"
+        },
+        {
+          "display": "Dice que viene el domingo.",
+          "cue": "He says he's coming on Sunday.",
+          "changed": "the unreported half given a new day"
+        }
+      ],
+      "mistake": {
+        "display": "Dijo que viene el sábado.",
+        "why": "Once the saying is in the past the clause moves back with it: dijo que venía. viene there is the sentence still being said, not reported."
+      },
+      "usage": "Passing on a message. Both halves in one item so the step back is visible rather than described.",
+      "register": "neutral",
+      "mnemonic": "The saying moves back and the clause follows."
+    },
+    {
+      "id": "L3-M5-S02",
+      "display": "Dice que vendrá mañana. Dijo que vendría hoy.",
+      "cue": "He says he'll come tomorrow. He said he'd come today.",
+      "literal": "Says that will-come tomorrow. Said that would-come today.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vendrá",
+            "cue": "he'll come",
+            "tag": "delta",
+            "forms": [],
+            "note": "M4's vendré with the ending for he or she: vendré, vendrá. The shortened stem vendr- is the same in every cell of the tense."
+          },
+          {
+            "display": "vendría",
+            "cue": "he would come",
+            "tag": "delta",
+            "forms": [],
+            "note": "The conditional of venir, off the same vendr- stem: vendrá, vendría. It is what a reported future becomes, and nothing else changes."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The future does not stay a future when it is reported. English does the same thing — \"he'll come\" becomes \"he'd come\" — so the shape is new and the move is not.",
+      "sound": "ben-DRA and ben-DRI-a, the second a syllable longer with the stress on the i.",
+      "variations": [
+        {
+          "display": "Dijo que vendría el domingo.",
+          "cue": "He said he'd come on Sunday.",
+          "changed": "the day he promised"
+        },
+        {
+          "display": "Dice que vendrá el sábado.",
+          "cue": "He says he'll come on Saturday.",
+          "changed": "the promise still in the present"
+        }
+      ],
+      "mistake": {
+        "display": "Dijo que vendrá hoy.",
+        "why": "A reported future takes the conditional: dijo que vendría hoy. vendrá keeps the promise in the speaker's own mouth rather than in the one being quoted."
+      },
+      "usage": "The version of S01 for a promise rather than a plan. Both are ordinary and the choice is only about how far off the coming was.",
+      "register": "neutral",
+      "mnemonic": "A reported -rá becomes -ría."
+    },
+    {
+      "id": "L3-M5-S03",
+      "display": "Me preguntó si tenía tiempo.",
+      "cue": "He asked me if I had time.",
+      "literal": "To-me asked if I-had time.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "preguntó",
+            "cue": "he asked · she asked",
+            "tag": "delta",
+            "forms": [],
+            "note": "Asking a question is preguntar; asking FOR a thing is pedir, a different verb. Spanish never uses one for the other, where English uses \"ask\" for both."
+          },
+          {
+            "display": "tenía",
+            "cue": "I had · he had",
+            "tag": "delta",
+            "forms": [],
+            "note": "The imperfect of tener, which is what a reported tengo becomes. L2-M10's era and estaba are built the same way, and one cell covers yo and él/ella."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "This si is M4's word doing a second job: not a condition here, but \"whether\". The one thing it can never be replaced by is que.",
+      "sound": "pre-gun-TO, stressed on the last syllable, which is what the accent marks. te-NI-a in three syllables.",
+      "variations": [
+        {
+          "display": "Me preguntó si venía hoy.",
+          "cue": "He asked me if I was coming today.",
+          "changed": "what was being asked about"
+        },
+        {
+          "display": "Le preguntó si tenía tiempo.",
+          "cue": "He asked him if he had time.",
+          "changed": "who was asked, with L2-M7's le"
+        }
+      ],
+      "mistake": {
+        "display": "Me preguntó que tenía tiempo.",
+        "why": "A yes-or-no question is reported with si: me preguntó si tenía tiempo. que is what every other reported clause takes, and that is exactly why it lands here."
+      },
+      "usage": "Reporting a question you were asked, which is most of what gets reported at work.",
+      "register": "neutral",
+      "mnemonic": "A question reports with si, not que."
+    },
+    {
+      "id": "L3-M5-S04",
+      "display": "Me preguntó dónde estaba el baño. No lo sabía.",
+      "cue": "He asked me where the toilet was. I didn't know.",
+      "literal": "To-me asked where was the bathroom. Not it I-knew.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sabía",
+            "cue": "I knew · he knew",
+            "tag": "delta",
+            "forms": [],
+            "note": "The imperfect of saber, beside L3-M2's sé. Knowing is a state, so the reported past of it is almost always this tense rather than the preterite."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The wh-word keeps its accent inside the report. dónde is still a question word even with no question mark anywhere in the sentence.",
+      "sound": "sa-BI-a, three syllables. The accent on dónde marks it as the question word and changes nothing about how it is said.",
+      "variations": [
+        {
+          "display": "Me preguntó dónde estaba la estación.",
+          "cue": "He asked me where the station was.",
+          "changed": "what was being looked for"
+        },
+        {
+          "display": "Me preguntó qué quería.",
+          "cue": "He asked me what I wanted.",
+          "changed": "a different wh-word, accent and all"
+        }
+      ],
+      "mistake": {
+        "display": "Me preguntó donde estaba el baño.",
+        "why": "The accent belongs to the question word and survives the reporting: me preguntó dónde estaba. Bare donde is the joining word in la casa donde vivo."
+      },
+      "usage": "Telling somebody about an exchange you could not help with. The second sentence is the clitic lo doing quiet work.",
+      "register": "neutral",
+      "mnemonic": "A reported question keeps its accent."
+    },
+    {
+      "id": "L3-M5-S05",
+      "display": "La vi ayer en el parque.",
+      "cue": "I saw her yesterday in the park.",
+      "literal": "Her I-saw yesterday in the park.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "la vi",
+            "cue": "I saw her · I saw it",
+            "tag": "interference",
+            "forms": [
+              "la vi",
+              "las vi"
+            ],
+            "note": "The la in front of a verb is \"her\", not L1-M1's \"the\". Same spelling, different word, and only the position says which: la vi against la casa."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "English puts the object after the verb and Spanish puts it in front, which means the sentence opens on a word that looks like an article. La vi is never \"the saw\".",
+      "sound": "la BI, two quick syllables with the stress on the second. The v is a soft b made with both lips.",
+      "variations": [
+        {
+          "display": "Las vi ayer en la tienda.",
+          "cue": "I saw them yesterday in the shop.",
+          "changed": "one woman to several, and the place"
+        },
+        {
+          "display": "La vi esta mañana.",
+          "cue": "I saw her this morning.",
+          "changed": "when the seeing happened"
+        }
+      ],
+      "mistake": {
+        "display": "Vi la ayer en el parque.",
+        "why": "The object stands in front of a conjugated verb: la vi ayer. English's order is what puts it behind, and behind the verb it reads as an unfinished article."
+      },
+      "usage": "Ordinary gossip. The object is in front because that is where Spanish keeps it, and nothing about the word order is emphatic.",
+      "register": "informal",
+      "mnemonic": "In front of a verb, la is her."
+    },
+    {
+      "id": "L3-M5-S06",
+      "display": "Los conozco muy bien. Son amigos de mi hermana.",
+      "cue": "I know them very well. They're friends of my sister's.",
+      "literal": "Them I-know very well. Are friends of my sister.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "los conozco",
+            "cue": "I know them",
+            "tag": "interference",
+            "forms": [],
+            "note": "los in front of a verb is \"them\", not L1-M1's \"the\". L3-M2's conozco is untouched — it is the object that arrived, not a new verb."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "los conozco and los amigos start with the same three letters and share nothing else. The verb behind it is what makes the first one a pronoun.",
+      "sound": "los ko-NOS-ko, said as one run. The s at the end of los links straight into the k with no pause.",
+      "variations": [
+        {
+          "display": "Los conozco de la empresa.",
+          "cue": "I know them from work.",
+          "changed": "where you know them from"
+        },
+        {
+          "display": "No los conozco muy bien.",
+          "cue": "I don't know them very well.",
+          "changed": "the negative, with no in front of the pair"
+        }
+      ],
+      "mistake": {
+        "display": "Conozco los muy bien.",
+        "why": "The object goes in front: los conozco muy bien. Behind the verb, los is left waiting for a noun that never comes."
+      },
+      "usage": "Placing people for somebody who has just met them. The second sentence is what makes the first one polite rather than curt.",
+      "register": "neutral",
+      "mnemonic": "A verb behind it makes it them."
+    },
+    {
+      "id": "L3-M5-S07",
+      "display": "Las llaves no están aquí. Las tengo en casa.",
+      "cue": "The keys aren't here. I've got them at home.",
+      "literal": "The keys not are here. Them I-have in house.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "las tengo",
+            "cue": "I have them",
+            "tag": "interference",
+            "forms": [],
+            "note": "The second las of this item is \"them\" and the first is \"the\". Nothing but the word after it tells them apart: las llaves, las tengo."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "Both words are in one item on purpose. The article leans on a noun and the pronoun leans on a verb, and that is the whole of the difference a reader gets.",
+      "sound": "las TEN-go, with the s running into the t. The pair is said as one word with no gap.",
+      "variations": [
+        {
+          "display": "Las tengo aquí.",
+          "cue": "I've got them here.",
+          "changed": "where they are"
+        },
+        {
+          "display": "No las tengo.",
+          "cue": "I don't have them.",
+          "changed": "the negative, and the object still in front"
+        }
+      ],
+      "mistake": {
+        "display": "Tengo las en casa.",
+        "why": "The object stands in front of the verb: las tengo en casa. Behind it, las reads as an article waiting for its noun."
+      },
+      "usage": "The everyday answer to \"where are the keys\". Naming the keys twice would sound like an explanation rather than an answer.",
+      "register": "informal",
+      "mnemonic": "las before a noun is the; before a verb is them."
+    },
+    {
+      "id": "L3-M5-S08",
+      "display": "Lo dije ayer. Le dije que no sabía nada.",
+      "cue": "I said it yesterday. I told him I didn't know anything.",
+      "literal": "It I-said yesterday. To-him I-said that not I-knew nothing.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lo dije",
+            "cue": "I said it",
+            "tag": "delta",
+            "forms": [],
+            "note": "lo is the thing said and le is the person told: lo dije, le dije. L2-M5's lo and L2-M7's le are those two rows, and the verb is the same."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "One letter separates lo dije from le dije, and they answer different questions. What was said takes lo; who was told takes le.",
+      "sound": "lo DI-he, with the j of dije a breathy h. The two clipped words run together.",
+      "variations": [
+        {
+          "display": "Le dije que venía hoy.",
+          "cue": "I told him I was coming today.",
+          "changed": "what was reported to him"
+        },
+        {
+          "display": "Lo dije esta mañana.",
+          "cue": "I said it this morning.",
+          "changed": "when it was said"
+        }
+      ],
+      "mistake": {
+        "display": "Le dije ayer, no lo dije a él.",
+        "why": "lo is what was said and le is who heard it, so the two never stand in for each other: lo dije ayer, le dije que no sabía nada."
+      },
+      "usage": "Defending yourself in a conversation about who knew what. Both pronouns are needed, and neither is optional.",
+      "register": "neutral",
+      "mnemonic": "lo is what; le is who."
+    },
+    {
+      "id": "L3-M5-S09",
+      "display": "Voy a verla mañana. La vi ayer también.",
+      "cue": "I'm going to see her tomorrow. I saw her yesterday too.",
+      "literal": "I-go to to-see-her tomorrow. Her I-saw yesterday also.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "verla",
+            "cue": "to see her",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M6's ver with the object stuck on its end — one word on the page and two pieces in the grammar. L3-M1's ducharme is built exactly the same way."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Two positions, one meaning. The object rides the infinitive and stands in front of a conjugated verb, and neither order is more correct than the other.",
+      "sound": "ber-LA, stressed on the end because the object added a syllable and the stress came with it.",
+      "variations": [
+        {
+          "display": "Voy a verla el sábado.",
+          "cue": "I'm going to see her on Saturday.",
+          "changed": "the day"
+        },
+        {
+          "display": "No voy a verla hoy.",
+          "cue": "I'm not going to see her today.",
+          "changed": "the plan dropped, with the object still on the infinitive"
+        }
+      ],
+      "mistake": {
+        "display": "Voy a la ver mañana.",
+        "why": "On an infinitive the object goes on the end and is written as one word: voy a verla. Standing it in front only works when the verb is conjugated."
+      },
+      "usage": "A plan and the reason it is not urgent. The two positions in one item are what make the choice visible.",
+      "register": "informal",
+      "mnemonic": "Conjugated in front, infinitive behind."
+    },
+    {
+      "id": "L3-M5-S10",
+      "display": "Me preguntó si quería ir. Le dije que sí.",
+      "cue": "He asked me if I wanted to go. I told him yes.",
+      "literal": "To-me asked if I-wanted to-go. To-him I-said that yes.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quería",
+            "cue": "I wanted · he wanted",
+            "tag": "delta",
+            "forms": [],
+            "note": "The imperfect of querer, which is what a reported quiero becomes. It is also the softest way to ask for something, and that use is a later module's."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "si and sí are both in this item, four words apart. The first is \"whether\" and the second is \"yes\", and the accent is the only thing separating them.",
+      "sound": "ke-RI-a, three syllables with the stress on the i. The si and the sí are said identically; only the writing differs.",
+      "variations": [
+        {
+          "display": "Me preguntó si quería café.",
+          "cue": "He asked me if I wanted coffee.",
+          "changed": "what was offered"
+        },
+        {
+          "display": "Le dije que no podré ir.",
+          "cue": "I told him I won't be able to go.",
+          "changed": "the answer, with M4's future kept as it was said"
+        }
+      ],
+      "mistake": {
+        "display": "Me preguntó sí quería ir.",
+        "why": "The whether-si carries no accent: me preguntó si quería ir. Written with one, it is the yes that belongs at the end of the item instead."
+      },
+      "usage": "The whole module in two lines: a reported question, a backshifted verb, and an answer given with le. Nothing here is new except the tense on querer.",
+      "register": "informal",
+      "mnemonic": "si asks it; sí answers it."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M5-C01",
+      "display": "Dice que viene hoy. Dijo que venía el sábado.",
+      "cue": "He says he's coming today. He said he was coming on Saturday."
+    },
+    {
+      "id": "L3-M5-C02",
+      "display": "Dijo que vendría hoy.",
+      "cue": "He said he'd come today."
+    },
+    {
+      "id": "L3-M5-C03",
+      "display": "Me preguntó si tenía tiempo.",
+      "cue": "He asked me if I had time."
+    },
+    {
+      "id": "L3-M5-C04",
+      "display": "Me preguntó dónde estaba el baño.",
+      "cue": "He asked me where the toilet was."
+    },
+    {
+      "id": "L3-M5-C05",
+      "display": "La vi ayer en el parque.",
+      "cue": "I saw her yesterday in the park."
+    },
+    {
+      "id": "L3-M5-C06",
+      "display": "Los conozco muy bien. Son amigos de mi hermana.",
+      "cue": "I know them very well. They're friends of my sister's."
+    },
+    {
+      "id": "L3-M5-C07",
+      "display": "Las llaves no están aquí. Las tengo en casa.",
+      "cue": "The keys aren't here. I've got them at home."
+    },
+    {
+      "id": "L3-M5-C08",
+      "display": "Lo dije ayer. Le dije que no sabía nada.",
+      "cue": "I said it yesterday. I told him I didn't know anything."
+    },
+    {
+      "id": "L3-M5-C09",
+      "display": "Voy a verla mañana.",
+      "cue": "I'm going to see her tomorrow."
+    },
+    {
+      "id": "L3-M5-C10",
+      "display": "Me preguntó si quería ir. Le dije que sí.",
+      "cue": "He asked me if I wanted to go. I told him yes."
+    },
+    {
+      "id": "L3-M5-C11",
+      "display": "Me preguntó qué quería.",
+      "cue": "He asked me what I wanted."
+    },
+    {
+      "id": "L3-M5-C12",
+      "display": "Dijo que no sabía nada.",
+      "cue": "He said he didn't know anything."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

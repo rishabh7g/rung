@@ -1,0 +1,655 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M7",
+  "title": "Body and health",
+  "job": "Say what hurts, and where",
+  "prerequisites": ["L3-M6"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": ["simple_present", "simple_past", "imperative"],
+    "allowedPatterns": [
+      "jeo-neun + N-i/ga + apayo",
+      "N-i/ga + nayo",
+      "N-e + geollyeosseoyo",
+      "V-(eu)myeon + an + dwaeyo",
+      "apeun + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE BODY PART IS THE SUBJECT AND IT DOES THE HURTING. Jeo-neun mok-i apayo is as-for-me, the-throat hurts — L2-M2's double subject on its most natural outing, with L2-M8's apayo spent rather than re-opened. The frame is the same one L2-M2 built for meori-ga apayo."
+    },
+    {
+      "tag": "interference",
+      "text": "THERE IS NO POSSESSIVE ANYWHERE IN IT. jeo-neun has already said whose throat it is, so je mok-i apayo is what a learner writes and not what a Korean says. English needs my on the body part; Korean has spent that job on the topic."
+    },
+    {
+      "tag": "delta",
+      "text": "A SYMPTOM COMES OUT. yeol-i nayo, gichim-i nayo — one verb for anything that appears on its own, with the symptom marked -i/-ga. English has an owner (I have a fever) where Korean has an event, and no version of have is available here."
+    },
+    {
+      "tag": "delta",
+      "text": "CATCHING SOMETHING INVERTS THE ENGLISH PICTURE. gamgi-e geollyeosseoyo is I-got-caught-ON-a-cold: the illness takes -e and the person is the one caught. It is habitually said in the past even about a cold you still have."
+    },
+    {
+      "tag": "free",
+      "text": "L3-M2's modifier leaves the office and does everyday work: apeun de (the place that hurts), maeil meongneun yak (the medicine I take every day). M2 and M7 are one lesson in two parts — the abstraction there, the useful phrase here. apeun is L2-M8's row and is only re-shown."
+    },
+    {
+      "tag": "free",
+      "text": "Instructions and prohibitions come free: L2-M1's -(eu)seyo for what to do, and L3-M4's -(eu)myeon with an dwaeyo for what not to. A dose is counted with L2-M5's native numbers and its own counters — -beon for times, -al for tablets — under that module's law unchanged."
+    },
+    {
+      "tag": "free",
+      "text": "-(eu)seyo TAKES ITS -eu- ONLY AFTER A CONSONANT. anjeuseyo and badeuseyo have it because the stems end in one; swida ends in a vowel, so resting is swiseyo. The rule is L2-M1's and this module is where a vowel-final stem finally shows the other half of it."
+    },
+    {
+      "tag": "free",
+      "text": "REGISTER: a doctor or a pharmacist is the listener in most of these lines, so most of them chip formal. Eating medicine is yak-eul meokda, which is L2-M8's finding, and deusida is its honorific twin — L2-M1's device, with nothing new added."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M7-S01",
+      "display": "Jeo-neun mok-i apayo.",
+      "script": "저는 목이 아파요.",
+      "cue": "I have a sore throat.",
+      "literal": "I-topic throat-subject hurts",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mok",
+            "script": "목",
+            "cue": "throat · neck",
+            "tag": "delta",
+            "forms": ["mok", "mok-i", "mok-eul"],
+            "note": "One word for the throat and the neck; which one is meant comes from what is wrong with it. It is the SUBJECT of the sentence, so it takes -i."
+          },
+          {
+            "display": "pal",
+            "script": "팔",
+            "cue": "arm",
+            "tag": "free",
+            "forms": ["pal", "pal-i"],
+            "note": "Both arms together, and one of them, are pal — number is left to the situation, exactly as L2-M3's -deul row said it would be."
+          },
+          {
+            "display": "dari",
+            "script": "다리",
+            "cue": "leg",
+            "tag": "free",
+            "forms": ["dari", "dari-ga"],
+            "note": "Ends in a vowel, so the subject particle is -ga: dari-ga apayo. mok and pal end in consonants and take -i."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "je mok-i apayo IS THE MISTAKE. English puts my on the throat; Korean has already put jeo-neun on the sentence, and doing both makes the possessive read as a contrast with somebody else's throat.",
+      "sound": "JEO-neun MO-gi A-pa-yo. mok-i runs together as MO-gi — the k softens to g between vowels.",
+      "variations": [
+        {
+          "display": "Jeo-neun meori-ga apayo.",
+          "script": "저는 머리가 아파요.",
+          "cue": "I have a headache.",
+          "changed": "L2-M2's meori in the same slot, with -ga because it ends in a vowel"
+        },
+        {
+          "display": "Pal-i apayo.",
+          "script": "팔이 아파요.",
+          "cue": "My arm hurts.",
+          "changed": "the topic dropped once the doctor knows who is speaking"
+        },
+        {
+          "display": "Dari-ga apayo.",
+          "script": "다리가 아파요.",
+          "cue": "My leg hurts.",
+          "changed": "a vowel-final body part, so -ga rather than -i"
+        }
+      ],
+      "mistake": {
+        "display": "Je mok-i apayo.",
+        "script": "제 목이 아파요.",
+        "why": "The topic already says whose throat it is. Jeo-neun mok-i apayo."
+      },
+      "usage": "The first line of a visit to a doctor or a pharmacy.",
+      "register": "formal",
+      "mnemonic": "The part hurts, you do not."
+    },
+    {
+      "id": "L3-M7-S02",
+      "display": "Yeol-i nayo.",
+      "script": "열이 나요.",
+      "cue": "I have a fever.",
+      "literal": "fever-subject comes-out",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yeol",
+            "script": "열",
+            "cue": "fever · heat",
+            "tag": "delta",
+            "forms": ["yeol", "yeol-i"],
+            "note": "Not a temperature you own but a heat that has appeared, which is why it is the subject and why nayo and not isseoyo is the verb."
+          },
+          {
+            "display": "gichim",
+            "script": "기침",
+            "cue": "a cough",
+            "tag": "free",
+            "forms": ["gichim", "gichim-i"],
+            "note": "A noun, never a verb here: Korean coughs by having a cough come out. Gichim-i nayo is the whole sentence."
+          },
+          {
+            "display": "nayo",
+            "script": "나요",
+            "cue": "comes out · appears",
+            "tag": "interference",
+            "forms": ["nayo", "nasseoyo"],
+            "note": "The symptom verb. One word covers fever, cough, sweat and a nosebleed, and the symptom in front of it always carries -i/-ga."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "THERE IS NO HAVE IN IT. English makes the sick person the owner of the symptom; Korean makes the symptom the thing that happens, so nothing in the sentence names you at all.",
+      "sound": "YEO-ri NA-yo. yeol-i is YEO-ri — the l between vowels is a light tap, close to an English r.",
+      "variations": [
+        {
+          "display": "Gichim-i nayo.",
+          "script": "기침이 나요.",
+          "cue": "I have a cough.",
+          "changed": "a different symptom in the same slot, and the verb does not move"
+        },
+        {
+          "display": "Eoje yeol-i nasseoyo.",
+          "script": "어제 열이 났어요.",
+          "cue": "I had a fever yesterday.",
+          "changed": "L1-M5's past on the symptom verb"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun yeol-eul isseoyo.",
+        "script": "저는 열을 있어요.",
+        "why": "A fever is not something you hold. It comes out: Yeol-i nayo."
+      },
+      "usage": "Answering what is wrong, at a counter or on the phone.",
+      "register": "formal",
+      "mnemonic": "Symptoms come out."
+    },
+    {
+      "id": "L3-M7-S03",
+      "display": "Gamgi-e geollyeosseoyo.",
+      "script": "감기에 걸렸어요.",
+      "cue": "I've caught a cold.",
+      "literal": "cold-on got-caught",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gamgi",
+            "script": "감기",
+            "cue": "a cold",
+            "tag": "delta",
+            "forms": ["gamgi", "gamgi-e"],
+            "note": "The illness takes -e, the same particle L1-M4 put on a place and a time. Here it marks the thing you got caught on."
+          },
+          {
+            "display": "geollyeosseoyo",
+            "script": "걸렸어요",
+            "cue": "(I) caught it · got caught",
+            "tag": "interference",
+            "forms": ["geollyeosseoyo"],
+            "note": "You are the one caught and the illness is what caught you. It is said in the past even about a cold you still have, because the catching is over."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "IT IS BACKWARDS AND IT IS PAST. English catches a cold, in the present, with the cold as the object; Korean is caught on one, in the past, with the cold marked by -e. Every part of the mapping moves.",
+      "sound": "GAM-gi-e GEOL-lyeo-sseo-yo. The ll is long and held; lyeo is one syllable with a y-glide.",
+      "variations": [
+        {
+          "display": "Eoje gamgi-e geollyeosseoyo.",
+          "script": "어제 감기에 걸렸어요.",
+          "cue": "I caught a cold yesterday.",
+          "changed": "L1-M5's eoje, which fits because the verb was past already"
+        },
+        {
+          "display": "Gamgi-e geollyeosseoyo. Yeol-i nayo.",
+          "script": "감기에 걸렸어요. 열이 나요.",
+          "cue": "I've caught a cold. I have a fever.",
+          "changed": "the two frames of the module in one turn — the illness, then the symptom"
+        }
+      ],
+      "mistake": {
+        "display": "Gamgi-reul geollyeosseoyo.",
+        "script": "감기를 걸렸어요.",
+        "why": "The cold is not an object here; it is what you were caught on. Gamgi-e geollyeosseoyo."
+      },
+      "usage": "Explaining why you are off work, or why you sound like that.",
+      "register": "neutral",
+      "mnemonic": "Caught ON a cold."
+    },
+    {
+      "id": "L3-M7-S04",
+      "display": "Heori-ga jom apayo.",
+      "script": "허리가 좀 아파요.",
+      "cue": "My lower back hurts a bit.",
+      "literal": "lower-back-subject a-bit hurts",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "heori",
+            "script": "허리",
+            "cue": "lower back · waist",
+            "tag": "delta",
+            "forms": ["heori", "heori-ga"],
+            "note": "The small of the back, where a chair or a heavy bag does its damage. English back covers this and deung; Korean keeps them apart."
+          },
+          {
+            "display": "deung",
+            "script": "등",
+            "cue": "back — the upper back",
+            "tag": "interference",
+            "forms": ["deung", "deung-i"],
+            "note": "The broad back between the shoulders. Saying deung for an aching waist is understood but wrong, and heori is what a doctor expects."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "ONE ENGLISH BACK, TWO KOREAN NOUNS, and the split is not where an English speaker would put it: heori is the waist, deung is what a rucksack sits on.",
+      "sound": "HEO-ri-ga JOM A-pa-yo. heori is two even syllables, and the r is a single tap.",
+      "variations": [
+        {
+          "display": "Deung-i apayo.",
+          "script": "등이 아파요.",
+          "cue": "My upper back hurts.",
+          "changed": "the other half of English back, with -i because it ends in a consonant"
+        },
+        {
+          "display": "Heori-ga neomu apayo.",
+          "script": "허리가 너무 아파요.",
+          "cue": "My lower back hurts a lot.",
+          "changed": "L3-M6's neomu doing the degree work jom was softening"
+        }
+      ],
+      "mistake": {
+        "display": "Deung-i jom apayo.",
+        "script": "등이 좀 아파요.",
+        "why": "Said of a waist this points at the wrong half of the back. Heori-ga jom apayo."
+      },
+      "usage": "Describing an ache that has been building rather than an injury.",
+      "register": "neutral",
+      "mnemonic": "heori is the waist, deung is the load."
+    },
+    {
+      "id": "L3-M7-S05",
+      "display": "Maeil meongneun yak-i isseoyo.",
+      "script": "매일 먹는 약이 있어요.",
+      "cue": "There's medicine I take every day.",
+      "literal": "every-day eat-ing medicine-subject exists",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "meongneun",
+            "script": "먹는",
+            "cue": "that (I) take · that (I) eat",
+            "tag": "delta",
+            "forms": ["meongneun", "meogeun"],
+            "note": "L1-M4's meogeoyo with L3-M2's present modifier -neun. The k turns to ng in front of the n and the romanization writes what is said, not what is spelled."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "MEDICINE IS EATEN IN KOREAN. L2-M8 found it and this module spends it: yak-eul meogeoyo, with deuseyo as the honorific twin when a pharmacist says it back to you.",
+      "sound": "MAE-il MEONG-neun YA-gi I-sseo-yo. Spelled meok-neun, said MEONG-neun — the k is swallowed into the n.",
+      "variations": [
+        {
+          "display": "Eoje meogeun yak-i joayo.",
+          "script": "어제 먹은 약이 좋아요.",
+          "cue": "The medicine I took yesterday is good.",
+          "changed": "L3-M2's past modifier -(eu)n, where no sound change happens at all"
+        },
+        {
+          "display": "Maeil meongneun yak-eul deuseyo.",
+          "script": "매일 먹는 약을 드세요.",
+          "cue": "Take the medicine you take every day.",
+          "changed": "the same clause in front of an object, with L2-M1's honorific instruction"
+        }
+      ],
+      "mistake": {
+        "display": "Yak-i maeil meongneun isseoyo.",
+        "script": "약이 매일 먹는 있어요.",
+        "why": "The clause goes in FRONT of its noun, never after it: Maeil meongneun yak-i isseoyo."
+      },
+      "usage": "Telling a doctor what you are already on.",
+      "register": "neutral",
+      "mnemonic": "Clause first, medicine second."
+    },
+    {
+      "id": "L3-M7-S06",
+      "display": "Uisa-ga apeun de-reul bwayo.",
+      "script": "의사가 아픈 데를 봐요.",
+      "cue": "The doctor looks at the place that hurts.",
+      "literal": "doctor-subject hurting place-object looks-at",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "de",
+            "script": "데",
+            "cue": "place · spot",
+            "tag": "delta",
+            "forms": ["de", "de-reul", "de-ga"],
+            "note": "A place named only by what is true of it, so it never stands alone: it needs a modifier in front. apeun de is the spot that hurts."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "de IS NOT A WORD YOU CAN USE BY ITSELF. Unlike English place it cannot open a sentence or take an adjective after it; a clause has to arrive first, which is exactly why this module and L3-M2 are one lesson.",
+      "sound": "UI-sa-ga A-peun DE-reul BWA-yo. bwayo is one syllable plus -yo, close to English 'bwa'.",
+      "variations": [
+        {
+          "display": "Apeun de-ga eodi-e isseoyo?",
+          "script": "아픈 데가 어디에 있어요?",
+          "cue": "Where is the place that hurts?",
+          "changed": "the same phrase as the subject of L1-M7's location question"
+        },
+        {
+          "display": "Uisa-ga mok-eul bwayo.",
+          "script": "의사가 목을 봐요.",
+          "cue": "The doctor looks at my throat.",
+          "changed": "a plain noun where the clause was, so nothing is modified at all"
+        }
+      ],
+      "mistake": {
+        "display": "Uisa-ga de-reul bwayo.",
+        "script": "의사가 데를 봐요.",
+        "why": "de on its own says nothing. It needs the clause in front: Uisa-ga apeun de-reul bwayo."
+      },
+      "usage": "Describing what happens at an appointment, or asking what will.",
+      "register": "neutral",
+      "mnemonic": "de needs a clause."
+    },
+    {
+      "id": "L3-M7-S07",
+      "display": "Yak-eul achim-e han beon deuseyo.",
+      "script": "약을 아침에 한 번 드세요.",
+      "cue": "Take the medicine once in the morning.",
+      "literal": "medicine-object morning-at one time take",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "beon",
+            "script": "번",
+            "cue": "times — the counter for occasions",
+            "tag": "free",
+            "forms": ["beon"],
+            "note": "Counted with L2-M5's native numbers, which change shape in front of a counter: han beon, du beon, se beon."
+          },
+          {
+            "display": "al",
+            "script": "알",
+            "cue": "tablets — the counter for small round things",
+            "tag": "free",
+            "forms": ["al"],
+            "note": "Pills, beans, eggs. Native numbers again: han al, du al. A dose is therefore counted twice over — how many, and how often."
+          }
+        ],
+        "rules": [5, 7]
+      },
+      "trap": "THE NUMBER CHANGES SHAPE AND THE COUNTER DOES NOT. hana becomes han and dul becomes du in front of beon and al, which is L2-M5's law and not a new one; a learner who writes hana beon has skipped it.",
+      "sound": "YA-geul A-chi-me HAN BEON DEU-se-yo. han beon is two words with a clean break between them.",
+      "variations": [
+        {
+          "display": "Yak-eul du al deuseyo.",
+          "script": "약을 두 알 드세요.",
+          "cue": "Take two tablets.",
+          "changed": "the other counter, saying how many rather than how often"
+        },
+        {
+          "display": "Yak-eul jeonyeok-e se beon deuseyo.",
+          "script": "약을 저녁에 세 번 드세요.",
+          "cue": "Take the medicine three times in the evening.",
+          "changed": "L1-M4's jeonyeok and the native three, which is se and not set here"
+        }
+      ],
+      "mistake": {
+        "display": "Yak-eul achim-e hana beon deuseyo.",
+        "script": "약을 아침에 하나 번 드세요.",
+        "why": "hana loses its tail in front of a counter: Yak-eul achim-e han beon deuseyo."
+      },
+      "usage": "What a pharmacist says over the counter, and what you repeat back.",
+      "register": "formal",
+      "mnemonic": "han beon, du al."
+    },
+    {
+      "id": "L3-M7-S08",
+      "display": "Sul-eul masimyeon an dwaeyo.",
+      "script": "술을 마시면 안 돼요.",
+      "cue": "You must not drink alcohol.",
+      "literal": "alcohol-object if-drink not becomes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sul",
+            "script": "술",
+            "cue": "alcohol · a drink",
+            "tag": "free",
+            "forms": ["sul", "sul-eul"],
+            "note": "Any alcoholic drink at all, so it covers L2-M4's maekju and everything beside it. Drinking it is L1-M4's masyeoyo, unchanged."
+          },
+          {
+            "display": "masimyeon",
+            "script": "마시면",
+            "cue": "if (you) drink",
+            "tag": "free",
+            "forms": ["masimyeon"],
+            "note": "L3-M4's -(eu)myeon on L1-M4's masida. The stem ends in a vowel, so no -eu- is inserted — the same split that gives swiseyo its shape."
+          }
+        ],
+        "rules": [5, 7]
+      },
+      "trap": "IT IS LITERALLY IF YOU DRINK, IT DOES NOT BECOME. Korean forbids by saying the outcome is no good, so there is no modal verb anywhere and an dwaeyo carries the whole prohibition.",
+      "sound": "SU-reul MA-si-myeon AN DWAE-yo. an dwaeyo is said as one run, AN-dwae-yo.",
+      "variations": [
+        {
+          "display": "Sul-eul masimyeon an dwaeyo. Yak-eul deuseyo.",
+          "script": "술을 마시면 안 돼요. 약을 드세요.",
+          "cue": "You must not drink. Take your medicine.",
+          "changed": "the prohibition and the instruction in the order a pharmacist gives them"
+        },
+        {
+          "display": "Keopi-reul masimyeon an dwaeyo.",
+          "script": "커피를 마시면 안 돼요.",
+          "cue": "You must not drink coffee.",
+          "changed": "L1-M3's keopi in the object slot, with nothing else moving"
+        }
+      ],
+      "mistake": {
+        "display": "Sul-eul an masimyeon dwaeyo.",
+        "script": "술을 안 마시면 돼요.",
+        "why": "That says it is fine as long as you do not drink. The prohibition puts the negative last: Sul-eul masimyeon an dwaeyo."
+      },
+      "usage": "A rule you have been given, and one you pass on.",
+      "register": "formal",
+      "mnemonic": "If you do, it does not do."
+    },
+    {
+      "id": "L3-M7-S09",
+      "display": "Jip-eseo swiseyo.",
+      "script": "집에서 쉬세요.",
+      "cue": "Please rest at home.",
+      "literal": "house-at rest",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "swiseyo",
+            "script": "쉬세요",
+            "cue": "please rest",
+            "tag": "delta",
+            "forms": ["swiseyo"],
+            "note": "L3-M1's swieoyo told to somebody. The stem ends in a vowel, so it is swiseyo and never swieuseyo — the -eu- belongs to consonant stems like anjeuseyo."
+          }
+        ],
+        "rules": [5, 7]
+      },
+      "trap": "swieuseyo IS THE FORM A LEARNER BUILDS AND IT IS NOT KOREAN. The -eu- of -(eu)seyo is there only to separate two consonants; after a vowel there is nothing to separate, so it drops.",
+      "sound": "JI-be-seo SWI-se-yo. swi is one syllable, the s followed straight by a w-glide.",
+      "variations": [
+        {
+          "display": "Oneul-eun jip-eseo swiseyo.",
+          "script": "오늘은 집에서 쉬세요.",
+          "cue": "Rest at home today.",
+          "changed": "L1-M4's oneul set as the topic, contrasting today with other days"
+        },
+        {
+          "display": "Jip-eseo jal swiseyo.",
+          "script": "집에서 잘 쉬세요.",
+          "cue": "Rest well at home.",
+          "changed": "L1-M2's jal in front of the instruction"
+        }
+      ],
+      "mistake": {
+        "display": "Jip-eseo swieuseyo.",
+        "script": "집에서 쉬으세요.",
+        "why": "The stem ends in a vowel, so no -eu- is inserted: Jip-eseo swiseyo."
+      },
+      "usage": "What a doctor tells you to do, and what you tell a sick friend.",
+      "register": "formal",
+      "mnemonic": "Vowel stem, no -eu-."
+    },
+    {
+      "id": "L3-M7-S10",
+      "display": "Byeongwon-eseo chiryo-reul badayo.",
+      "script": "병원에서 치료를 받아요.",
+      "cue": "I get treatment at the hospital.",
+      "literal": "hospital-at treatment-object receive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chiryo",
+            "script": "치료",
+            "cue": "treatment · care",
+            "tag": "free",
+            "forms": ["chiryo", "chiryo-reul"],
+            "note": "What is done for an illness once it has been named. It is received rather than had — L2-M3's badayo is the verb it goes with."
+          },
+          {
+            "display": "yaksa",
+            "script": "약사",
+            "cue": "pharmacist",
+            "tag": "free",
+            "forms": ["yaksa", "yaksa-ga"],
+            "note": "The person at the counter where yak is sold. L2-M8's uisa is the doctor; a chemist's shop has a yaksa and no uisa in it."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "TREATMENT IS RECEIVED, NOT HAD. English has treatment; Korean receives it, with badayo, so the verb is the same one L2-M3 used for taking a receipt.",
+      "sound": "BYEONG-wo-ne-seo CHI-ryo-reul BA-da-yo. ryo is one syllable with a y-glide, not ri-o.",
+      "variations": [
+        {
+          "display": "Yaksa-ga chinjeolhaeyo.",
+          "script": "약사가 친절해요.",
+          "cue": "The pharmacist is kind.",
+          "changed": "L2-M2's chinjeolhaeyo, and the other person a health problem takes you to"
+        },
+        {
+          "display": "Eoje byeongwon-e gasseoyo.",
+          "script": "어제 병원에 갔어요.",
+          "cue": "I went to the hospital yesterday.",
+          "changed": "L1-M5's past, and the visit rather than the treatment"
+        }
+      ],
+      "mistake": {
+        "display": "Byeongwon-eseo chiryo-reul isseoyo.",
+        "script": "병원에서 치료를 있어요.",
+        "why": "isseoyo says something exists; treatment is received. Byeongwon-eseo chiryo-reul badayo."
+      },
+      "usage": "Explaining a course of care that is under way.",
+      "register": "neutral",
+      "mnemonic": "Treatment is received."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M7-C01",
+      "display": "Jeo-neun mok-i apayo.",
+      "script": "저는 목이 아파요.",
+      "cue": "I have a sore throat."
+    },
+    {
+      "id": "L3-M7-C02",
+      "display": "Jeo-neun meori-ga apayo.",
+      "script": "저는 머리가 아파요.",
+      "cue": "I have a headache."
+    },
+    {
+      "id": "L3-M7-C03",
+      "display": "Yeol-i nayo.",
+      "script": "열이 나요.",
+      "cue": "I have a fever."
+    },
+    {
+      "id": "L3-M7-C04",
+      "display": "Gichim-i nayo.",
+      "script": "기침이 나요.",
+      "cue": "I have a cough."
+    },
+    {
+      "id": "L3-M7-C05",
+      "display": "Gamgi-e geollyeosseoyo.",
+      "script": "감기에 걸렸어요.",
+      "cue": "I've caught a cold."
+    },
+    {
+      "id": "L3-M7-C06",
+      "display": "Heori-ga jom apayo.",
+      "script": "허리가 좀 아파요.",
+      "cue": "My lower back hurts a bit."
+    },
+    {
+      "id": "L3-M7-C07",
+      "display": "Maeil meongneun yak-i isseoyo.",
+      "script": "매일 먹는 약이 있어요.",
+      "cue": "There's medicine I take every day."
+    },
+    {
+      "id": "L3-M7-C08",
+      "display": "Uisa-ga apeun de-reul bwayo.",
+      "script": "의사가 아픈 데를 봐요.",
+      "cue": "The doctor looks at the place that hurts."
+    },
+    {
+      "id": "L3-M7-C09",
+      "display": "Yak-eul achim-e han beon deuseyo.",
+      "script": "약을 아침에 한 번 드세요.",
+      "cue": "Take the medicine once in the morning."
+    },
+    {
+      "id": "L3-M7-C10",
+      "display": "Sul-eul masimyeon an dwaeyo.",
+      "script": "술을 마시면 안 돼요.",
+      "cue": "You must not drink alcohol."
+    },
+    {
+      "id": "L3-M7-C11",
+      "display": "Jip-eseo swiseyo.",
+      "script": "집에서 쉬세요.",
+      "cue": "Please rest at home."
+    },
+    {
+      "id": "L3-M7-C12",
+      "display": "Byeongwon-eseo chiryo-reul badayo.",
+      "script": "병원에서 치료를 받아요.",
+      "cue": "I get treatment at the hospital."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

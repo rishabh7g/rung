@@ -1,0 +1,675 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M8",
+  "title": "Money and paperwork",
+  "job": "Rent, bills, forms, offices",
+  "prerequisites": ["L3-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": ["simple_present", "simple_past", "imperative"],
+    "allowedPatterns": [
+      "N-kkeseo + V-(eu)seyo",
+      "N-i/ga + <Sino number> + man + won-ieyo",
+      "N-eul/reul + V-(eu)syeosseoyo?",
+      "yeogi-e + ireum-eul + sseo juseyo",
+      "<Sino number>-wol + <Sino number>-il-e"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "-kkeseo REPLACES -i/-ga WHEN THE SUBJECT IS HONOURED. Sajangnim-kkeseo malsseumhasyeosseoyo — the particle itself is raised, not just the verb. L2-M1 made -(eu)seyo productive in the imperative and stopped; an office is where the honorific runs through every form a sentence has."
+    },
+    {
+      "tag": "delta",
+      "text": "THE HONORIFIC PAST IS -(eu)syeosseoyo. osyeosseoyo (you came), badeusyeosseoyo (you received), malsseumhasyeosseoyo (you said). It is L1-M5's -eoss- with -si- in front of it, and it is what a clerk uses about you and you use about the clerk."
+    },
+    {
+      "tag": "free",
+      "text": "SOME NOUNS ARE REPLACED OUTRIGHT, not merely dressed up: seongham for a name, daek for a house, L3-M5's malsseum for speech. It is the same trick as L2's four honorific verbs (deusida, gyesida, jumusida, malsseumhasida), one class further out."
+    },
+    {
+      "tag": "interference",
+      "text": "NEVER OF YOURSELF. L2-M1's one rule that does not bend holds here at full stretch: je seongham, jeo-kkeseo and any -si- on your own verb are all wrong. The clerk honours the customer and the customer honours the clerk, and neither honours themselves."
+    },
+    {
+      "tag": "delta",
+      "text": "KOREAN COUNTS IN TEN-THOUSANDS. man is 10,000, so thirty thousand won is samman won and a hundred and fifty thousand is siboman won. A learner converting digit-groups of three will be wrong at every rent, and there is no word built the English way for a million."
+    },
+    {
+      "tag": "free",
+      "text": "MONEY, DATES AND ANYTHING ABOVE NINETY-NINE ARE SINO. The month takes -wol and the day takes -il, both joined to the number: samwol siboil is the fifteenth of March. L2-M5's native numbers still do exactly what that module said and no more — count objects, with a counter."
+    },
+    {
+      "tag": "interference",
+      "text": "THE SINO ONE AND TWO ARE NEVER WRITTEN BARE IN THIS COURSE. il is L1-M9's WORK and i is L1-M1's SUBJECT PARTICLE, so both live only inside a whole token — ilman, icheon, siboil — exactly as L1-M8's ocheon and L2-M6's samsip already do."
+    },
+    {
+      "tag": "free",
+      "text": "THE REQUEST FRAMES ARE ALREADY OWNED and the module spends nothing on them: L2-M1's sseojuseyo, gidaryeojuseyo, dowajuseyo and jom, and L2-M8's joesonghajiman. What is bought with the room saved is nouns — the words printed on the window and on the form."
+    },
+    {
+      "tag": "free",
+      "text": "WHAT STAYS OUT, and this is the module whose edge touches it: the clerk genuinely does speak -(seu)pnida, and this course still does not write it. The formal speech level stays in usage only until L4-M7, -(eu)psida travels with it, and the passive stays out of L3 altogether."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M8-S01",
+      "display": "Sajangnim-kkeseo malsseumhasyeosseoyo.",
+      "script": "사장님께서 말씀하셨어요.",
+      "cue": "The company head said so.",
+      "literal": "company-head-honorific-subject said-honorific",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "-kkeseo",
+            "script": "께서",
+            "cue": "the honorific subject particle",
+            "tag": "delta",
+            "forms": ["-kkeseo", "sajangnim-kkeseo", "seonsaengnim-kkeseo"],
+            "note": "It stands where -i/-ga would, and only ever on somebody being honoured. jeo-kkeseo of yourself is the one thing it can never do."
+          },
+          {
+            "display": "malsseumhasyeosseoyo",
+            "script": "말씀하셨어요",
+            "cue": "(he/she) said",
+            "tag": "delta",
+            "forms": [
+              "malsseumhasyeosseoyo",
+              "osyeosseoyo",
+              "badeusyeosseoyo",
+              "-syeosseoyo"
+            ],
+            "note": "L2-M1's malsseumhaseyo in the past. The -syeoss- is -si- and L1-M5's -eoss- fused, and every honorific past in this module is built the same way."
+          }
+        ],
+        "rules": [0, 1, 3]
+      },
+      "trap": "-kkeseo IS NOT A POLITER -ga TO SPRINKLE ON. It marks the person as honoured, so putting it on yourself, on a friend or on a thing is not politeness but a category error.",
+      "sound": "SA-jang-nim-KKE-seo MAL-sseum-ha-SYEO-sseo-yo. The kk and the ss are both tense — held, then released without a puff.",
+      "variations": [
+        {
+          "display": "Seonsaengnim-kkeseo osyeosseoyo.",
+          "script": "선생님께서 오셨어요.",
+          "cue": "The teacher has arrived.",
+          "changed": "L1-M2's seonsaengnim, and L1-M7's oda in the honorific past"
+        },
+        {
+          "display": "Sajangnim-kkeseo eonje osyeosseoyo?",
+          "script": "사장님께서 언제 오셨어요?",
+          "cue": "When did the company head arrive?",
+          "changed": "the same form as a question, with L2-M6's eonje in front"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-kkeseo malsseumhasyeosseoyo.",
+        "script": "저께서 말씀하셨어요.",
+        "why": "You cannot honour yourself. Of your own speaking it is Jeo-neun malhaesseoyo, and -kkeseo is only ever somebody else's."
+      },
+      "usage": "Passing on what somebody senior has decided.",
+      "register": "formal",
+      "mnemonic": "-kkeseo is never yours."
+    },
+    {
+      "id": "L3-M8-S02",
+      "display": "Yeogi-e seongham-eul sseojuseyo.",
+      "script": "여기에 성함을 써주세요.",
+      "cue": "Please write your name here.",
+      "literal": "here-at name-honorific-object write-and-give",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "seongham",
+            "script": "성함",
+            "cue": "name — the honorific word",
+            "tag": "delta",
+            "forms": ["seongham", "seongham-eul", "seongham-i"],
+            "note": "It replaces L1-M1's ireum outright rather than decorating it, and only ever for somebody else's name: je seongham is not a thing anyone says."
+          },
+          {
+            "display": "daek",
+            "script": "댁",
+            "cue": "home — the honorific word",
+            "tag": "free",
+            "forms": ["daek", "daek-i"],
+            "note": "The same replacement done to L1-M7's jip. A clerk asking where you live reaches for this word, and you answer with jip about your own."
+          }
+        ],
+        "rules": [2, 3, 7]
+      },
+      "trap": "THE HONORIFIC NOUN IS NOT A POLITE SYNONYM YOU MAY USE FREELY. It raises whoever it belongs to, so it is right on the form in front of you and wrong the moment the name or the house is your own.",
+      "sound": "YEO-gi-e SEONG-ha-meul SSEO-ju-se-yo. seongham-eul is SEONG-ha-meul, and the ss of sseojuseyo is tense.",
+      "variations": [
+        {
+          "display": "Seongham-eul malsseumhaseyo.",
+          "script": "성함을 말씀하세요.",
+          "cue": "Please tell me your name.",
+          "changed": "L2-M1's honorific verb where the writing request was"
+        },
+        {
+          "display": "Daek-i eodi-e isseoyo?",
+          "script": "댁이 어디에 있어요?",
+          "cue": "Where is your home?",
+          "changed": "the other replaced noun, in L1-M7's location question"
+        }
+      ],
+      "mistake": {
+        "display": "Yeogi-e je seongham-eul sseojuseyo.",
+        "script": "여기에 제 성함을 써주세요.",
+        "why": "seongham can only be somebody else's. Of your own name it is ireum: Yeogi-e je ireum-eul sseoyo."
+      },
+      "usage": "What is said across a counter as a form is pushed towards you.",
+      "register": "formal",
+      "mnemonic": "seongham is theirs, ireum is yours."
+    },
+    {
+      "id": "L3-M8-S03",
+      "display": "Wolse-ga samman won-ieyo.",
+      "script": "월세가 삼만 원이에요.",
+      "cue": "The rent is thirty thousand won.",
+      "literal": "monthly-rent-subject three-ten-thousand won-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wolse",
+            "script": "월세",
+            "cue": "monthly rent",
+            "tag": "free",
+            "forms": ["wolse", "wolse-ga", "wolse-neun", "wolse-hago"],
+            "note": "The rent paid every month, as distinct from the deposit that sits behind it. The first syllable is the same wol that makes a month's name."
+          },
+          {
+            "display": "man",
+            "script": "만",
+            "cue": "ten thousand",
+            "tag": "interference",
+            "forms": [
+              "man",
+              "baek",
+              "cheon",
+              "samman",
+              "simman",
+              "siboman",
+              "ilman",
+              "icheon"
+            ],
+            "note": "baek is 100, cheon 1,000, man 10,000, and Korean groups from man upward: 30,000 is samman and 150,000 is siboman. No word is built the English way."
+          }
+        ],
+        "rules": [4, 5, 6]
+      },
+      "trap": "THE GROUPING IS FOUR DIGITS, NOT THREE. An English speaker reads 150,000 as a hundred and fifty thousand and looks for a word for thousand; Korean reads it as fifteen ten-thousands, siboman, and the thousand never appears.",
+      "sound": "WOL-se-ga SAM-man WO-ni-e-yo. won-ieyo is WO-ni-e-yo — the n runs onto the copula.",
+      "variations": [
+        {
+          "display": "Wolse-ga siboman won-ieyo.",
+          "script": "월세가 십오만 원이에요.",
+          "cue": "The rent is a hundred and fifty thousand won.",
+          "changed": "fifteen ten-thousands, with sip and o fused as sibo the way they are said"
+        },
+        {
+          "display": "Wolse-neun eolmayeyo?",
+          "script": "월세는 얼마예요?",
+          "cue": "How much is the rent?",
+          "changed": "L1-M8's price question, with -neun setting the rent against the other costs"
+        }
+      ],
+      "mistake": {
+        "display": "Wolse-ga samsip cheon won-ieyo.",
+        "script": "월세가 삼십 천 원이에요.",
+        "why": "Thirty thousand is not thirty thousands in Korean. It is three ten-thousands: Wolse-ga samman won-ieyo."
+      },
+      "usage": "Agreeing a figure with a landlord or an agent.",
+      "register": "neutral",
+      "mnemonic": "Count in man, not in thousands."
+    },
+    {
+      "id": "L3-M8-S04",
+      "display": "Gwallibi-ga eolmayeyo?",
+      "script": "관리비가 얼마예요?",
+      "cue": "How much is the maintenance charge?",
+      "literal": "maintenance-fee-subject how-much-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gwallibi",
+            "script": "관리비",
+            "cue": "maintenance charge · building fee",
+            "tag": "free",
+            "forms": ["gwallibi", "gwallibi-ga", "gwallibi-neun"],
+            "note": "The monthly building charge that arrives beside the rent. Spelled gwan-ri and said gwal-li, and this course writes what is said, as it does for silla."
+          }
+        ],
+        "rules": [4, 7]
+      },
+      "trap": "IT IS NOT PART OF THE RENT. wolse and gwallibi are two separate figures on the same slip, and asking only about the first is how a tenant is surprised at the end of the month.",
+      "sound": "GWAL-li-ba EOL-ma-ye-yo — the n of the spelling has become an l, so it is GWAL-li and never GWAN-ri.",
+      "variations": [
+        {
+          "display": "Gwallibi-neun man won-ieyo.",
+          "script": "관리비는 만 원이에요.",
+          "cue": "The maintenance charge is ten thousand won.",
+          "changed": "man standing on its own, with no number in front of it at all"
+        },
+        {
+          "display": "Wolse-hago gwallibi-ga eolmayeyo?",
+          "script": "월세하고 관리비가 얼마예요?",
+          "cue": "How much are the rent and the charges?",
+          "changed": "L1-M8's -hago joining the two figures into one question"
+        }
+      ],
+      "mistake": {
+        "display": "Gwanribi-ga eolmayeyo?",
+        "script": "관리비가 얼마예요?",
+        "why": "The romanization writes the sound, not the spelling: n before r becomes a long l. Gwallibi-ga eolmayeyo?"
+      },
+      "usage": "The second question to ask about any flat.",
+      "register": "neutral",
+      "mnemonic": "gwan-ri is said gwal-li."
+    },
+    {
+      "id": "L3-M8-S05",
+      "display": "Yeongsujeung-eul badeuseyo.",
+      "script": "영수증을 받으세요.",
+      "cue": "Please take your receipt.",
+      "literal": "receipt-object receive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yeongsujeung",
+            "script": "영수증",
+            "cue": "receipt",
+            "tag": "free",
+            "forms": ["yeongsujeung", "yeongsujeung-eul", "yeongsujeung-i"],
+            "note": "The slip handed back with the change. The -jeung on the end means a certifying paper, and it is the same syllable that ends sinbunjeung."
+          }
+        ],
+        "rules": [7]
+      },
+      "trap": "The receipt is RECEIVED, not taken. badeuseyo is L2-M3's badayo in L2-M1's instruction form, and the -eu- is there because the stem ends in a consonant.",
+      "sound": "YEONG-su-jeung-eul BA-deu-se-yo. jeung ends in the ng of English 'sing'.",
+      "variations": [
+        {
+          "display": "Yeongsujeung-eul juseyo.",
+          "script": "영수증을 주세요.",
+          "cue": "Could I have the receipt?",
+          "changed": "L1-M3's juseyo, so the request runs the other way across the counter"
+        },
+        {
+          "display": "Seoryu-reul badeusyeosseoyo?",
+          "script": "서류를 받으셨어요?",
+          "cue": "Did you receive the documents?",
+          "changed": "the same verb in the honorific past, asked of the person in front of you"
+        }
+      ],
+      "mistake": {
+        "display": "Yeongsujeung-eul badseyo.",
+        "script": "영수증을 받세요.",
+        "why": "The stem ends in a consonant, so -(eu)seyo keeps its -eu-: Yeongsujeung-eul badeuseyo."
+      },
+      "usage": "The last thing said at a till, and the thing you ask for when it is not.",
+      "register": "formal",
+      "mnemonic": "A receipt is received."
+    },
+    {
+      "id": "L3-M8-S06",
+      "display": "Sinbunjeung-eul juseyo.",
+      "script": "신분증을 주세요.",
+      "cue": "Your ID, please.",
+      "literal": "ID-card-object give",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sinbunjeung",
+            "script": "신분증",
+            "cue": "ID card",
+            "tag": "free",
+            "forms": ["sinbunjeung", "sinbunjeung-eul", "sinbunjeung-i"],
+            "note": "Any card that proves who you are — a residence card, a licence, a passport. It is asked for at every counter that opens an account."
+          },
+          {
+            "display": "seoryu",
+            "script": "서류",
+            "cue": "documents · paperwork",
+            "tag": "free",
+            "forms": ["seoryu", "seoryu-reul", "seoryu-ga"],
+            "note": "The papers as a bundle, so it is normally singular even when there are several. The single blank form you fill in is a sincheongseo."
+          }
+        ],
+        "rules": [7]
+      },
+      "trap": "juseyo IS NOT RUDE HERE. L1-M3 learned it for ordering coffee, and across an official counter it is exactly what a clerk says; the politeness is carried by -seyo, not by a longer sentence.",
+      "sound": "SIN-bun-jeung-eul JU-se-yo. All three syllables of sinbunjeung are even and short.",
+      "variations": [
+        {
+          "display": "Seoryu-reul juseyo.",
+          "script": "서류를 주세요.",
+          "cue": "The documents, please.",
+          "changed": "the bundle of papers where the card was"
+        },
+        {
+          "display": "Sinbunjeung-i isseoyo?",
+          "script": "신분증이 있어요?",
+          "cue": "Do you have ID?",
+          "changed": "L1-M7's isseoyo, which turns the demand into a question"
+        }
+      ],
+      "mistake": {
+        "display": "Sinbunjeung-i juseyo.",
+        "script": "신분증이 주세요.",
+        "why": "The card is what is handed over, so it is the object: Sinbunjeung-eul juseyo."
+      },
+      "usage": "Heard at a bank, a phone shop and a district office.",
+      "register": "formal",
+      "mnemonic": "One card, one bundle."
+    },
+    {
+      "id": "L3-M8-S07",
+      "display": "Sincheongseo-reul sseojuseyo.",
+      "script": "신청서를 써주세요.",
+      "cue": "Please fill in the application form.",
+      "literal": "application-form-object write-and-give",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sincheongseo",
+            "script": "신청서",
+            "cue": "application form",
+            "tag": "free",
+            "forms": ["sincheongseo", "sincheongseo-reul", "sincheongseo-ga"],
+            "note": "The blank you fill in to apply for something. The -seo on the end is a written document, the same syllable that ends seoryu at its other end."
+          },
+          {
+            "display": "sain",
+            "script": "사인",
+            "cue": "signature",
+            "tag": "free",
+            "forms": ["sain", "sain-eul", "sain-i"],
+            "note": "The borrowed word, and the one printed on most forms. A stamped seal is a different thing with a different word, and it is not what a counter asks a foreigner for."
+          },
+          {
+            "display": "haseyo",
+            "script": "하세요",
+            "cue": "please do (it)",
+            "tag": "free",
+            "forms": ["haseyo"],
+            "note": "L1-M4's haeyo in L2-M1's instruction form. It is the bare do that jeonhwahaseyo and malsseumhaseyo are both built on."
+          }
+        ],
+        "rules": [7]
+      },
+      "trap": "A FORM IS WRITTEN, NOT FILLED. Korean uses the plain verb for write on a whole form, so sseojuseyo covers what English needs fill in for, and there is no separate verb to learn.",
+      "sound": "SIN-cheong-seo-reul SSEO-ju-se-yo. cheong is aspirated — a clear puff of air on the ch.",
+      "variations": [
+        {
+          "display": "Sincheongseo-reul juseyo.",
+          "script": "신청서를 주세요.",
+          "cue": "Could I have an application form?",
+          "changed": "asking for the blank rather than being told to complete it"
+        },
+        {
+          "display": "Yeogi-e sain-eul haseyo.",
+          "script": "여기에 사인을 하세요.",
+          "cue": "Please sign here.",
+          "changed": "the signature as an object of haseyo, which is how the instruction is given"
+        }
+      ],
+      "mistake": {
+        "display": "Sincheongseo-reul chaeujuseyo.",
+        "script": "신청서를 채워주세요.",
+        "why": "Filling is what you do to a container. A form is written: Sincheongseo-reul sseojuseyo."
+      },
+      "usage": "The instruction that comes with the clipboard.",
+      "register": "formal",
+      "mnemonic": "Forms are written."
+    },
+    {
+      "id": "L3-M8-S08",
+      "display": "Eunhaeng-eseo gyejwa-reul mandeureoyo.",
+      "script": "은행에서 계좌를 만들어요.",
+      "cue": "I'm opening an account at the bank.",
+      "literal": "bank-at account-object make",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eunhaeng",
+            "script": "은행",
+            "cue": "bank",
+            "tag": "free",
+            "forms": ["eunhaeng", "eunhaeng-e", "eunhaeng-eseo"],
+            "note": "-e for the bank as somewhere you go, -eseo for the bank as where something happens, which is L1-M7's split unchanged."
+          },
+          {
+            "display": "gyejwa",
+            "script": "계좌",
+            "cue": "bank account",
+            "tag": "free",
+            "forms": ["gyejwa", "gyejwa-reul", "gyejwa-ga"],
+            "note": "The account itself, as opposed to the card that reaches it. gye and jwa are each one syllable, both with a glide inside them."
+          },
+          {
+            "display": "mandeureoyo",
+            "script": "만들어요",
+            "cue": "(I) make · open",
+            "tag": "interference",
+            "forms": ["mandeureoyo", "mandeureosseoyo"],
+            "note": "Korean MAKES an account where English opens one. The same verb makes food, so a grandmother making tteokguk uses it too."
+          }
+        ],
+        "rules": [7]
+      },
+      "trap": "AN ACCOUNT IS MADE, NOT OPENED. The English verb has no Korean twin here, and a learner reaching for one produces a sentence that is understood but heard as translated.",
+      "sound": "EUN-haeng-e-seo GYE-jwa-reul MAN-deu-reo-yo. eunhaeng ends in the ng of 'sing', not in a hard g.",
+      "variations": [
+        {
+          "display": "Eunhaeng-e gayo.",
+          "script": "은행에 가요.",
+          "cue": "I'm going to the bank.",
+          "changed": "-e for the destination, where the full sentence had -eseo for the place"
+        },
+        {
+          "display": "Eoje gyejwa-reul mandeureosseoyo.",
+          "script": "어제 계좌를 만들었어요.",
+          "cue": "I opened an account yesterday.",
+          "changed": "L1-M5's past, and the errand reported once it is done"
+        }
+      ],
+      "mistake": {
+        "display": "Eunhaeng-e gyejwa-reul mandeureoyo.",
+        "script": "은행에 계좌를 만들어요.",
+        "why": "The making happens at the bank, so the particle is -eseo: Eunhaeng-eseo gyejwa-reul mandeureoyo."
+      },
+      "usage": "The errand every new arrival runs in their first fortnight.",
+      "register": "neutral",
+      "mnemonic": "Accounts are made."
+    },
+    {
+      "id": "L3-M8-S09",
+      "display": "Hyeongeum-euro halgeyo.",
+      "script": "현금으로 할게요.",
+      "cue": "I'll pay in cash.",
+      "literal": "cash-by will-do",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hyeongeum",
+            "script": "현금",
+            "cue": "cash",
+            "tag": "free",
+            "forms": ["hyeongeum", "hyeongeum-euro", "hyeongeum-i"],
+            "note": "The means takes L2-M4's -(eu)ro, the same particle that made keompyuteo-ro and son-euro. Nothing new is opened for paying."
+          },
+          {
+            "display": "kadeu",
+            "script": "카드",
+            "cue": "card",
+            "tag": "free",
+            "forms": ["kadeu", "kadeu-ro", "kadeu-ga", "kadeu-reul"],
+            "note": "Ends in a vowel, so the means particle is the short -ro; hyeongeum ends in a consonant and takes -euro. The split is L2-M4's."
+          }
+        ],
+        "rules": [7]
+      },
+      "trap": "THERE IS NO VERB FOR PAY IN IT. halgeyo is L1-M6's I'll do it, and the means particle carries the whole meaning — Korean says I'll do it by cash and leaves paying to the situation.",
+      "sound": "HYEON-geu-mu-ro HAL-ge-yo. hyeon is one syllable, hy plus eon, and halgeyo has a tense g.",
+      "variations": [
+        {
+          "display": "Kadeu-ro halgeyo.",
+          "script": "카드로 할게요.",
+          "cue": "I'll pay by card.",
+          "changed": "a vowel-final noun, so the particle loses its -eu-"
+        },
+        {
+          "display": "Hyeongeum-i eopseoyo.",
+          "script": "현금이 없어요.",
+          "cue": "I don't have any cash.",
+          "changed": "L1-M7's eopseoyo, with cash as the thing that is not there"
+        }
+      ],
+      "mistake": {
+        "display": "Hyeongeum-ro halgeyo.",
+        "script": "현금로 할게요.",
+        "why": "A consonant-final noun takes the long form: Hyeongeum-euro halgeyo."
+      },
+      "usage": "Answering the question every till asks.",
+      "register": "formal",
+      "mnemonic": "Pay BY the thing."
+    },
+    {
+      "id": "L3-M8-S10",
+      "display": "Samwol siboil-e eunhaeng-e gaseyo.",
+      "script": "삼월 십오일에 은행에 가세요.",
+      "cue": "Go to the bank on the fifteenth of March.",
+      "literal": "March fifteenth-on bank-to go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "samwol",
+            "script": "삼월",
+            "cue": "March — the third month",
+            "tag": "delta",
+            "forms": ["samwol", "wol", "sibiwol"],
+            "note": "A month is its Sino number with -wol joined on, so March is simply three-month. There is no separate name for any month of the year."
+          },
+          {
+            "display": "siboil",
+            "script": "십오일",
+            "cue": "the fifteenth",
+            "tag": "delta",
+            "forms": ["siboil", "siboil-e"],
+            "note": "Sino fifteen with -il joined on. sip and o fuse into sibo when said, and this course writes the saying rather than the spelling."
+          }
+        ],
+        "rules": [5, 6]
+      },
+      "trap": "THE ORDER IS BIG TO SMALL AND ONLY -e IS WRITTEN. Month then day, with a single particle on the end of the whole date — never one on the month as well.",
+      "sound": "SA-mwol SI-bo-i-re EUN-haeng-e GA-se-yo. siboil-e runs together as SI-bo-i-re.",
+      "variations": [
+        {
+          "display": "Sibiwol siboil-e gaseyo.",
+          "script": "십이월 십오일에 가세요.",
+          "cue": "Go on the fifteenth of December.",
+          "changed": "the twelfth month, where sip and i fuse into sibi exactly as sibo does"
+        },
+        {
+          "display": "Samwol siboil-e sincheongseo-reul sseojuseyo.",
+          "script": "삼월 십오일에 신청서를 써주세요.",
+          "cue": "Please fill in the form on the fifteenth of March.",
+          "changed": "the date in front of the module's own instruction"
+        }
+      ],
+      "mistake": {
+        "display": "Siboil samwol-e gaseyo.",
+        "script": "십오일 삼월에 가세요.",
+        "why": "Korean goes big to small, and the particle sits on the day: Samwol siboil-e gaseyo."
+      },
+      "usage": "A deadline given at a counter, and a date you read back.",
+      "register": "formal",
+      "mnemonic": "Month, day, then -e."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M8-C01",
+      "display": "Sajangnim-kkeseo malsseumhasyeosseoyo.",
+      "script": "사장님께서 말씀하셨어요.",
+      "cue": "The company head said so."
+    },
+    {
+      "id": "L3-M8-C02",
+      "display": "Seonsaengnim-kkeseo eonje osyeosseoyo?",
+      "script": "선생님께서 언제 오셨어요?",
+      "cue": "When did the teacher arrive?"
+    },
+    {
+      "id": "L3-M8-C03",
+      "display": "Yeogi-e seongham-eul sseojuseyo.",
+      "script": "여기에 성함을 써주세요.",
+      "cue": "Please write your name here."
+    },
+    {
+      "id": "L3-M8-C04",
+      "display": "Wolse-ga samman won-ieyo.",
+      "script": "월세가 삼만 원이에요.",
+      "cue": "The rent is thirty thousand won."
+    },
+    {
+      "id": "L3-M8-C05",
+      "display": "Wolse-hago gwallibi-ga eolmayeyo?",
+      "script": "월세하고 관리비가 얼마예요?",
+      "cue": "How much are the rent and the charges?"
+    },
+    {
+      "id": "L3-M8-C06",
+      "display": "Yeongsujeung-eul juseyo.",
+      "script": "영수증을 주세요.",
+      "cue": "Could I have the receipt?"
+    },
+    {
+      "id": "L3-M8-C07",
+      "display": "Sinbunjeung-i isseoyo?",
+      "script": "신분증이 있어요?",
+      "cue": "Do you have ID?"
+    },
+    {
+      "id": "L3-M8-C08",
+      "display": "Sincheongseo-reul sseojuseyo.",
+      "script": "신청서를 써주세요.",
+      "cue": "Please fill in the application form."
+    },
+    {
+      "id": "L3-M8-C09",
+      "display": "Yeogi-e sain-eul haseyo.",
+      "script": "여기에 사인을 하세요.",
+      "cue": "Please sign here."
+    },
+    {
+      "id": "L3-M8-C10",
+      "display": "Eunhaeng-eseo gyejwa-reul mandeureoyo.",
+      "script": "은행에서 계좌를 만들어요.",
+      "cue": "I'm opening an account at the bank."
+    },
+    {
+      "id": "L3-M8-C11",
+      "display": "Kadeu-ro halgeyo.",
+      "script": "카드로 할게요.",
+      "cue": "I'll pay by card."
+    },
+    {
+      "id": "L3-M8-C12",
+      "display": "Samwol siboil-e eunhaeng-e gaseyo.",
+      "script": "삼월 십오일에 은행에 가세요.",
+      "cue": "Go to the bank on the fifteenth of March."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

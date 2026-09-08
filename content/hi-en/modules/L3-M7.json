@@ -1,0 +1,630 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M7",
+  "title": "Body and health",
+  "job": "Say what hurts, and where",
+  "prerequisites": ["L3-M6"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": ["present_simple", "present_continuous", "present_perfect", "simple_past"],
+    "allowedPatterns": [
+      "My + <body part> + hurts",
+      "I've had + <symptom> + for + <duration>",
+      "I've had + <symptom> + since + <point>",
+      "I have a + <symptom>",
+      "You should see a doctor"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "for और since दोनों का हिंदी में एक ही जोड़ीदार है — से — और यही वजह है कि ये आपस में बदल जाते हैं. for के बाद वक़्त की लंबाई आती है: for three days, for a week, for two hours. since के बाद वह बिंदु आता है जहाँ से बात शुरू हुई: since Monday, since yesterday. तीन दिन से → for three days; सोमवार से → since Monday."
+    },
+    {
+      "tag": "delta",
+      "text": "जो तकलीफ़ अब भी बनी हुई है उसे present perfect में कहते हैं — have या has के साथ तीसरा रूप: I have had a cough for three days. खाँसी अभी है, इसलिए यह वाक्य आज तक खिंचा हुआ है. L2-M8 वाला नियम यहाँ भी चलता है: इस काल के साथ बीता-और-ख़त्म वक़्त नहीं आता. I have had a cough last Monday ग़लत है; वहाँ सीधा past चाहिए — I had a cough last Monday."
+    },
+    {
+      "tag": "free",
+      "text": "अंग्रेज़ी शरीर के अंग के आगे my, your, his लगाती है, the नहीं: My head hurts, not The head hurts. एक ही बात कहने के तीन रास्ते हैं और तीनों चलते हैं: My head hurts (क्रिया), I have a headache (संज्ञा), My head is aching (जारी). ache जारी रूप में आ सकता है क्योंकि यह हालत नहीं, चलती हुई तकलीफ़ है."
+    },
+    {
+      "tag": "interference",
+      "text": "ज़्यादातर लक्षण गिने जाते हैं और उनके आगे a या an ज़रूरी है: a cough, a cold, a fever, a headache, a temperature. दो अपवाद याद रखने लायक़ हैं — flu के आगे the आता है (I have the flu) और pain आम मतलब में गिना नहीं जाता (a lot of pain, न कि a lot of pains)."
+    },
+    {
+      "tag": "free",
+      "text": "दवाख़ाने और डॉक्टर के पास काम आने वाले दो वाक्य रट लीजिए: Do you have anything for a cough? और You should see a doctor. पहला दुकान पर बिना दवा का नाम जाने चलता है, दूसरा किसी को सलाह देने का सबसे सीधा और भला तरीक़ा है."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M7-S01",
+      "display": "My head hurts. I have a headache.",
+      "cue": "मेरे सिर में दर्द है. मुझे सिरदर्द है.",
+      "literal": "मेरा सिर दुखता. मैं रखता एक सिरदर्द.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "head",
+            "cue": "सिर",
+            "tag": "free",
+            "forms": ["head", "heads"],
+            "note": "अंग के आगे my या your आता है, the नहीं: My head hurts. headache इसी से बना है."
+          },
+          {
+            "display": "hurts",
+            "cue": "दुखना · दर्द होना",
+            "tag": "delta",
+            "forms": ["hurt", "hurts"],
+            "note": "अंग ख़ुद कर्ता बनता है: My head hurts. बीता हुआ रूप भी hurt ही रहता है — My head hurt yesterday."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "The head hurts अस्पताल की किताब जैसा लगता है. अपने अंग के आगे हमेशा my.",
+      "sound": "hurts में र दबी हुई है — हर्ट्स, हुर्ट्स नहीं.",
+      "variations": [
+        {
+          "display": "My back hurts.",
+          "cue": "मेरी पीठ में दर्द है.",
+          "changed": "दूसरा अंग"
+        },
+        {
+          "display": "My head hurt yesterday.",
+          "cue": "कल मेरे सिर में दर्द था.",
+          "changed": "बीता हुआ, रूप वही"
+        },
+        {
+          "display": "I have a bad headache today.",
+          "cue": "आज मुझे तेज़ सिरदर्द है.",
+          "changed": "संज्ञा वाला रास्ता"
+        }
+      ],
+      "mistake": {
+        "display": "The head is hurting to me",
+        "why": "अंग के आगे my और क्रिया सीधी: My head hurts."
+      },
+      "usage": "घर पर या दफ़्तर में तकलीफ़ बताने की सबसे छोटी लाइन.",
+      "register": "neutral",
+      "mnemonic": "my head, न कि the head."
+    },
+    {
+      "id": "L3-M7-S02",
+      "display": "I have had a cough for three days.",
+      "cue": "मुझे तीन दिन से खाँसी है.",
+      "literal": "मैं रखता रखा एक खाँसी के-लिए तीन दिन.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cough",
+            "cue": "खाँसी",
+            "tag": "free",
+            "forms": ["cough", "coughs"],
+            "note": "गिना जाता है, इसलिए a ज़रूरी: I have a cough. यही शब्द क्रिया भी है — I cough at night."
+          },
+          {
+            "display": "for",
+            "cue": "के लिए · इतनी देर से",
+            "tag": "interference",
+            "forms": ["for"],
+            "note": "इसके बाद वक़्त की लंबाई आती है: for three days, for a week, for a long time. बिंदु के लिए since है."
+          },
+          {
+            "display": "three",
+            "cue": "तीन",
+            "tag": "free",
+            "forms": ["three"],
+            "note": "गिनती का तीन: three days, three tablets."
+          },
+          {
+            "display": "day",
+            "cue": "दिन",
+            "tag": "free",
+            "forms": ["day", "days"],
+            "note": "लंबाई नापने की सबसे आम इकाई: for three days. every day (L3-M1) इसी शब्द से बना पूरा जोड़ है."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "for three days को since three days मत बनाइए. तीन दिन लंबाई है, बिंदु नहीं.",
+      "sound": "cough का gh फ़ की तरह बोला जाता है — कॉफ़.",
+      "variations": [
+        {
+          "display": "I have had a cough for a week.",
+          "cue": "मुझे एक हफ़्ते से खाँसी है.",
+          "changed": "दूसरी लंबाई"
+        },
+        {
+          "display": "My sister has had a cough for three days.",
+          "cue": "मेरी बहन को तीन दिन से खाँसी है.",
+          "changed": "दूसरा आदमी, has"
+        },
+        {
+          "display": "I had a cough yesterday.",
+          "cue": "कल मुझे खाँसी थी.",
+          "changed": "बीता और ख़त्म, सीधा past"
+        }
+      ],
+      "mistake": {
+        "display": "I have a cough since three days",
+        "why": "लंबाई के आगे for और काल perfect: I have had a cough for three days."
+      },
+      "usage": "डॉक्टर के पहले सवाल का जवाब — कब से है.",
+      "register": "neutral",
+      "mnemonic": "for = कितनी देर."
+    },
+    {
+      "id": "L3-M7-S03",
+      "display": "I have had a fever since Monday.",
+      "cue": "मुझे सोमवार से बुख़ार है.",
+      "literal": "मैं रखता रखा एक बुख़ार से सोमवार.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fever",
+            "cue": "बुख़ार",
+            "tag": "free",
+            "forms": ["fever", "fevers"],
+            "note": "गिना जाता है: I have a fever. नापी हुई गर्मी के लिए temperature भी चलता है."
+          },
+          {
+            "display": "since",
+            "cue": "जब से · उस वक़्त से",
+            "tag": "interference",
+            "forms": ["since"],
+            "note": "इसके बाद शुरू होने का बिंदु आता है: since Monday, since yesterday, since seven. लंबाई के लिए for है."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "since के साथ काल perfect ही रहता है: I have had a fever since Monday, न कि I had.",
+      "sound": "since में स की आवाज़ दो बार — सिन्स.",
+      "variations": [
+        {
+          "display": "I have had a fever since yesterday.",
+          "cue": "मुझे कल से बुख़ार है.",
+          "changed": "दूसरा बिंदु"
+        },
+        {
+          "display": "I have had a fever for two days.",
+          "cue": "मुझे दो दिन से बुख़ार है.",
+          "changed": "बिंदु की जगह लंबाई"
+        },
+        {
+          "display": "My brother has had a fever since Monday.",
+          "cue": "मेरे भाई को सोमवार से बुख़ार है.",
+          "changed": "दूसरा आदमी"
+        }
+      ],
+      "mistake": {
+        "display": "I have a fever from Monday",
+        "why": "शुरू के बिंदु के आगे since: I have had a fever since Monday."
+      },
+      "usage": "डॉक्टर या दफ़्तर को बताना कि तकलीफ़ कब से है.",
+      "register": "neutral",
+      "mnemonic": "since = कब से."
+    },
+    {
+      "id": "L3-M7-S04",
+      "display": "I have a cold. My throat hurts.",
+      "cue": "मुझे ज़ुकाम है. मेरे गले में दर्द है.",
+      "literal": "मैं रखता एक ज़ुकाम. मेरा गला दुखता.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cold",
+            "cue": "ज़ुकाम",
+            "tag": "interference",
+            "forms": ["cold", "colds"],
+            "note": "बीमारी के मतलब में गिना जाता है: I have a cold. यही शब्द ठंडा भी है, पर वहाँ a नहीं लगता."
+          },
+          {
+            "display": "throat",
+            "cue": "गला",
+            "tag": "free",
+            "forms": ["throat", "throats"],
+            "note": "अंग है, इसलिए आगे my: My throat hurts. गले की तकलीफ़ ज़ुकाम के साथ आती है."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "I have cold में a छूट जाता है और वाक्य अधूरा लगता है. बीमारी वाला cold हमेशा a के साथ.",
+      "sound": "throat में th जीभ दाँतों के बीच — थ्रोट.",
+      "variations": [
+        {
+          "display": "I have a bad cold.",
+          "cue": "मुझे तेज़ ज़ुकाम है.",
+          "changed": "नाप जोड़ी"
+        },
+        {
+          "display": "My throat hurts today.",
+          "cue": "आज मेरे गले में दर्द है.",
+          "changed": "वक़्त जोड़ा"
+        },
+        {
+          "display": "I have had a cold since Monday.",
+          "cue": "मुझे सोमवार से ज़ुकाम है.",
+          "changed": "कब से"
+        }
+      ],
+      "mistake": {
+        "display": "I have cold and my throat is hurt",
+        "why": "a cold और सीधी क्रिया: I have a cold. My throat hurts."
+      },
+      "usage": "मौसम बदलने पर घर या दफ़्तर में हाल बताना.",
+      "register": "neutral",
+      "mnemonic": "बीमारी वाला cold, a के साथ."
+    },
+    {
+      "id": "L3-M7-S05",
+      "display": "I have a temperature. I feel ill today.",
+      "cue": "मेरा तापमान बढ़ा हुआ है. मुझे आज तबीयत ख़राब लग रही है.",
+      "literal": "मैं रखता एक तापमान. मैं महसूस-करता बीमार आज.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "temperature",
+            "cue": "बढ़ा हुआ तापमान",
+            "tag": "delta",
+            "forms": ["temperature", "temperatures"],
+            "note": "I have a temperature का मतलब सिर्फ़ तापमान नहीं, बुख़ार है. मौसम के तापमान पर the आता है."
+          },
+          {
+            "display": "ill",
+            "cue": "बीमार",
+            "tag": "free",
+            "forms": ["ill"],
+            "note": "feel या am के साथ आता है: I feel ill, I am ill. यह विशेषण है, संज्ञा नहीं."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "I have temperature सबका होता है — ज़िंदा हर आदमी का. बुख़ार बताना है तो a ज़रूरी है.",
+      "sound": "temperature में बीच वाला हिस्सा दब जाता है — टेम्प्रचर.",
+      "variations": [
+        {
+          "display": "I have a temperature and a headache.",
+          "cue": "मुझे बुख़ार और सिरदर्द है.",
+          "changed": "दो लक्षण"
+        },
+        {
+          "display": "My brother feels ill today.",
+          "cue": "मेरे भाई की आज तबीयत ख़राब है.",
+          "changed": "दूसरा आदमी"
+        },
+        {
+          "display": "I felt ill yesterday.",
+          "cue": "कल मेरी तबीयत ख़राब थी.",
+          "changed": "बीता हुआ"
+        }
+      ],
+      "mistake": {
+        "display": "I have temperature",
+        "why": "बुख़ार के लिए a चाहिए: I have a temperature."
+      },
+      "usage": "छुट्टी माँगते वक़्त या डॉक्टर को हाल बताते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "a temperature ही बुख़ार है."
+    },
+    {
+      "id": "L3-M7-S06",
+      "display": "I have the flu. I have had it for a week.",
+      "cue": "मुझे फ़्लू है. एक हफ़्ते से है.",
+      "literal": "मैं रखता वह फ़्लू. मैं रखता रखा यह के-लिए एक हफ़्ता.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "flu",
+            "cue": "फ़्लू · मौसमी बुख़ार",
+            "tag": "interference",
+            "forms": ["flu"],
+            "note": "अकेली बीमारी जो the लेती है: I have the flu, न कि a flu. बाक़ी लक्षण a के साथ चलते हैं."
+          }
+        ],
+        "rules": [0, 1, 3]
+      },
+      "trap": "a flu कहीं नहीं चलता. यह इकलौता the वाला लक्षण है, इसे अपवाद मानकर याद रखिए.",
+      "sound": "flu एक ही अक्षर में — फ़्लू.",
+      "variations": [
+        {
+          "display": "I have the flu.",
+          "cue": "मुझे फ़्लू है.",
+          "changed": "छोटा रूप"
+        },
+        {
+          "display": "I have had the flu since Monday.",
+          "cue": "मुझे सोमवार से फ़्लू है.",
+          "changed": "बिंदु के साथ since"
+        },
+        {
+          "display": "My sister has had it for three days.",
+          "cue": "मेरी बहन को तीन दिन से है.",
+          "changed": "दूसरा आदमी"
+        }
+      ],
+      "mistake": {
+        "display": "I have a flu since one week",
+        "why": "the flu और लंबाई के आगे for: I have had the flu for a week."
+      },
+      "usage": "काम से छुट्टी की वजह बताना.",
+      "register": "neutral",
+      "mnemonic": "the flu — इकलौता अपवाद."
+    },
+    {
+      "id": "L3-M7-S07",
+      "display": "My stomach hurts. My back hurts too.",
+      "cue": "मेरे पेट में दर्द है. मेरी पीठ में भी दर्द है.",
+      "literal": "मेरा पेट दुखता. मेरी पीठ दुखती भी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "stomach",
+            "cue": "पेट",
+            "tag": "free",
+            "forms": ["stomach", "stomachs"],
+            "note": "अंग है, इसलिए my के साथ: My stomach hurts. इसका ch क की तरह बोला जाता है."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "एक से ज़्यादा अंग गिनाने पर हर एक के आगे my दोहराना पड़ता है: My stomach and my back hurt.",
+      "sound": "stomach में ch क है — स्टमक, स्टमच नहीं.",
+      "variations": [
+        {
+          "display": "My stomach hurts today.",
+          "cue": "आज मेरे पेट में दर्द है.",
+          "changed": "वक़्त जोड़ा"
+        },
+        {
+          "display": "My back hurts.",
+          "cue": "मेरी पीठ में दर्द है.",
+          "changed": "दूसरा अंग"
+        },
+        {
+          "display": "My stomach has hurt since yesterday.",
+          "cue": "कल से मेरे पेट में दर्द है.",
+          "changed": "कब से"
+        }
+      ],
+      "mistake": {
+        "display": "I have pain in stomach",
+        "why": "अंग के आगे my और सीधी क्रिया: My stomach hurts."
+      },
+      "usage": "डॉक्टर को जगह बताना — कहाँ दर्द है.",
+      "register": "neutral",
+      "mnemonic": "हर अंग के आगे अपना my."
+    },
+    {
+      "id": "L3-M7-S08",
+      "display": "My head is aching. I have a lot of pain.",
+      "cue": "मेरे सिर में दर्द हो रहा है. मुझे बहुत दर्द है.",
+      "literal": "मेरा सिर है दर्द-करता. मैं रखता एक बहुत का दर्द.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ache",
+            "cue": "दर्द करना · टीस",
+            "tag": "delta",
+            "forms": ["ache", "aches", "aching"],
+            "note": "यह चलती हुई तकलीफ़ है, हालत नहीं, इसलिए -ing रूप चलता है: My head is aching. headache इसी से बना है."
+          },
+          {
+            "display": "pain",
+            "cue": "दर्द",
+            "tag": "interference",
+            "forms": ["pain", "pains"],
+            "note": "आम मतलब में गिना नहीं जाता: a lot of pain, न कि a lot of pains. इसलिए इसके आगे a नहीं आता."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "a lot of pains ग़लत है. दर्द को अंग्रेज़ी आम तौर पर गिनती नहीं.",
+      "sound": "ache में ch क है — एक, एच नहीं.",
+      "variations": [
+        {
+          "display": "My back is aching.",
+          "cue": "मेरी पीठ में दर्द हो रहा है.",
+          "changed": "दूसरा अंग"
+        },
+        {
+          "display": "My stomach aches every day.",
+          "cue": "मेरे पेट में रोज़ दर्द होता है.",
+          "changed": "आदत वाला रूप"
+        },
+        {
+          "display": "I have a lot of pain today.",
+          "cue": "मुझे आज बहुत दर्द है.",
+          "changed": "सिर्फ़ दर्द की नाप"
+        }
+      ],
+      "mistake": {
+        "display": "I have many pains in my head",
+        "why": "pain गिना नहीं जाता: I have a lot of pain."
+      },
+      "usage": "दर्द की नाप बताना, ताकि डॉक्टर समझे कितना है.",
+      "register": "neutral",
+      "mnemonic": "pain एक ढेर है, गिनती नहीं."
+    },
+    {
+      "id": "L3-M7-S09",
+      "display": "You should see a doctor. I need a prescription.",
+      "cue": "आपको डॉक्टर को दिखाना चाहिए. मुझे पर्चा चाहिए.",
+      "literal": "तुम चाहिए देखना एक डॉक्टर. मैं ज़रूरत एक पर्चा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prescription",
+            "cue": "डॉक्टर का पर्चा",
+            "tag": "free",
+            "forms": ["prescription", "prescriptions"],
+            "note": "गिना जाता है: a prescription. दवा की दुकान इसी काग़ज़ पर दवा देती है."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "see a doctor का मतलब देखना नहीं, दिखाना है — डॉक्टर के पास जाना.",
+      "sound": "prescription में शुरुआती हिस्सा दबा हुआ — प्रिस्क्रिप्शन.",
+      "variations": [
+        {
+          "display": "You should see a doctor today.",
+          "cue": "आपको आज डॉक्टर को दिखाना चाहिए.",
+          "changed": "वक़्त जोड़ा"
+        },
+        {
+          "display": "I need a prescription for my cough.",
+          "cue": "मुझे खाँसी के लिए पर्चा चाहिए.",
+          "changed": "किस चीज़ के लिए"
+        },
+        {
+          "display": "You should not go to work today.",
+          "cue": "आपको आज काम पर नहीं जाना चाहिए.",
+          "changed": "नकार वाली सलाह"
+        }
+      ],
+      "mistake": {
+        "display": "You should to see a doctor",
+        "why": "should के बाद to नहीं आता: You should see a doctor."
+      },
+      "usage": "किसी बीमार दोस्त या साथी को सलाह देना.",
+      "register": "neutral",
+      "mnemonic": "should के बाद सीधा क्रिया."
+    },
+    {
+      "id": "L3-M7-S10",
+      "display": "Do you have anything for a cough? The chemist has this medicine.",
+      "cue": "क्या आपके पास खाँसी की कोई दवा है? यह दवा दवाख़ाने पर मिलती है.",
+      "literal": "करते तुम रखना कुछ-भी के-लिए एक खाँसी? वह दवा-वाला रखता यह दवा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "anything",
+            "cue": "कुछ भी",
+            "tag": "free",
+            "forms": ["anything"],
+            "note": "सवाल और नकार में something की जगह यही आता है: Do you have anything for a cough?"
+          },
+          {
+            "display": "chemist",
+            "cue": "दवा की दुकान · दवा वाला",
+            "tag": "delta",
+            "forms": ["chemist", "chemists"],
+            "note": "ब्रिटिश अंग्रेज़ी का शब्द, भारत में भी यही चलता है. अमेरिका में इसे pharmacy कहते हैं."
+          },
+          {
+            "display": "medicine",
+            "cue": "दवा",
+            "tag": "interference",
+            "forms": ["medicine", "medicines"],
+            "note": "आम मतलब में गिना नहीं जाता: take this medicine. गिनना हो तो गोली — a tablet — कहिए."
+          },
+          {
+            "display": "tablet",
+            "cue": "गोली",
+            "tag": "free",
+            "forms": ["tablet", "tablets"],
+            "note": "गिना जाता है: two tablets a day. यही दवा का गिना-जाने वाला रूप है."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "दुकान पर दवा का नाम न पता हो तो anything for वाला साँचा काफ़ी है — नाम बताना ज़रूरी नहीं.",
+      "sound": "chemist में ch क है — केमिस्ट.",
+      "variations": [
+        {
+          "display": "Do you have anything for a cold?",
+          "cue": "क्या आपके पास ज़ुकाम की कोई दवा है?",
+          "changed": "दूसरा लक्षण"
+        },
+        {
+          "display": "I take two tablets every day.",
+          "cue": "मैं रोज़ दो गोलियाँ लेता हूँ.",
+          "changed": "गिनी जाने वाली दवा"
+        },
+        {
+          "display": "The chemist is near my office.",
+          "cue": "दवा की दुकान मेरे दफ़्तर के पास है.",
+          "changed": "जगह बताना"
+        }
+      ],
+      "mistake": {
+        "display": "Do you have any medicines for cough?",
+        "why": "एक ही साँचा काफ़ी है: Do you have anything for a cough?"
+      },
+      "usage": "दवा की दुकान पर बिना पर्चे के कुछ माँगना.",
+      "register": "neutral",
+      "mnemonic": "anything for + लक्षण."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M7-C01",
+      "display": "My head hurts. I have a headache.",
+      "cue": "मेरे सिर में दर्द है. मुझे सिरदर्द है."
+    },
+    {
+      "id": "L3-M7-C02",
+      "display": "I have had a cough for three days.",
+      "cue": "मुझे तीन दिन से खाँसी है."
+    },
+    {
+      "id": "L3-M7-C03",
+      "display": "I have had a fever since Monday.",
+      "cue": "मुझे सोमवार से बुख़ार है."
+    },
+    {
+      "id": "L3-M7-C04",
+      "display": "I have a cold. My throat hurts.",
+      "cue": "मुझे ज़ुकाम है. मेरे गले में दर्द है."
+    },
+    {
+      "id": "L3-M7-C05",
+      "display": "I have a temperature today.",
+      "cue": "आज मुझे बुख़ार है."
+    },
+    {
+      "id": "L3-M7-C06",
+      "display": "I have had the flu for a week.",
+      "cue": "मुझे एक हफ़्ते से फ़्लू है."
+    },
+    {
+      "id": "L3-M7-C07",
+      "display": "My stomach hurts. My back hurts too.",
+      "cue": "मेरे पेट में दर्द है. मेरी पीठ में भी दर्द है."
+    },
+    {
+      "id": "L3-M7-C08",
+      "display": "My head is aching.",
+      "cue": "मेरे सिर में दर्द हो रहा है."
+    },
+    {
+      "id": "L3-M7-C09",
+      "display": "I have a lot of pain today.",
+      "cue": "मुझे आज बहुत दर्द है."
+    },
+    {
+      "id": "L3-M7-C10",
+      "display": "You should see a doctor.",
+      "cue": "आपको डॉक्टर को दिखाना चाहिए."
+    },
+    {
+      "id": "L3-M7-C11",
+      "display": "Do you have anything for a cough?",
+      "cue": "क्या आपके पास खाँसी की कोई दवा है?"
+    },
+    {
+      "id": "L3-M7-C12",
+      "display": "I need a prescription. I take two tablets every day.",
+      "cue": "मुझे पर्चा चाहिए. मैं रोज़ दो गोलियाँ लेता हूँ."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

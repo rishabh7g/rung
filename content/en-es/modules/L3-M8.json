@@ -1,0 +1,468 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M8",
+  "title": "Money and paperwork",
+  "job": "Rent, bills, forms, offices",
+  "prerequisites": [
+    "L3-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "present",
+      "usted imperative"
+    ],
+    "allowedPatterns": [
+      "Aquí se + V-3sg",
+      "¿Se puede + V-inf + ?",
+      "Tengo que pagar + <N> + antes del + <date>",
+      "Necesito + <document>",
+      "Perdone + , + ¿dónde se firma?"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "IMPERSONAL se says a thing is done without saying by whom, which is exactly what a sign and a counter clerk both want: aquí se paga en efectivo, no se puede fumar, ¿dónde se firma? L2-M4 opened the bare se for the street sense; this is the same word shown at length. The written twin, the passive with ser, is L4's business and appears nowhere here."
+    },
+    {
+      "tag": "delta",
+      "text": "This module speaks USTED from the first word to the last, because a counter is the place the register decision was made for. The usted imperative L2-M1 opened is spent here: perdone, disculpe, firme, rellene, espere. For an -ar verb that cell ends in -e."
+    },
+    {
+      "tag": "interference",
+      "text": "Three ways to attach money to time, and they are not swappable. para el lunes is a DEADLINE — the thing is due by then. antes del sábado is a LIMIT — before that point. por adelantado is a MANNER — how you pay, not when. It is L3-M2's para/por split doing its second shift."
+    },
+    {
+      "tag": "delta",
+      "text": "del is de + el contracted, exactly as al is a + el. Spanish never writes de el, and the contraction happens only with el — de la, de los and de las stay apart."
+    },
+    {
+      "tag": "free",
+      "text": "The vocabulary here is what is printed on the actual paper rather than what a textbook prefers: alquiler, factura, recibo, plazo, formulario, sello, documento. Where a region says something else — el ticket, la boleta — the word's own note says so."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M8-S01",
+      "display": "Perdone, ¿dónde se firma?",
+      "cue": "Excuse me, where do I sign?",
+      "literal": "Excuse-me, where one-signs?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "se firma",
+            "cue": "one signs · signing is done",
+            "tag": "delta",
+            "forms": [],
+            "note": "¿Dónde se firma? asks where the signing happens, which is lighter on a clerk than asking where YOU should sign."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Spanish does not put you in the question at all. ¿Dónde firmo? is possible but blunter; se firma asks about the process.",
+      "usage": "usted, at a counter, from the first word. perdone is the usted form L2-M1 taught; perdona would be a friend.",
+      "register": "formal"
+    },
+    {
+      "id": "L3-M8-S02",
+      "display": "Aquí se paga en efectivo.",
+      "cue": "Payment here is in cash.",
+      "literal": "Here one-pays in cash.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "se paga",
+            "cue": "one pays · payment is made",
+            "tag": "delta",
+            "forms": [],
+            "note": "Impersonal se with pagar, and indexed whole so L2-M4's bare se keeps its own row. aquí se paga en efectivo is what a sign says, not a person."
+          },
+          {
+            "display": "efectivo",
+            "cue": "cash",
+            "tag": "free",
+            "forms": [],
+            "note": "Cash, and it lives in the frame en efectivo. dinero is money in general; this is notes and coins crossing a counter."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "This is a sign, not a person. No subject exists to look for — se is the whole of who does it.",
+      "mistake": {
+        "display": "Aquí usted paga en efectivo.",
+        "why": "That points at one customer and reads as an order. A sign speaks to everyone: aquí se paga en efectivo."
+      },
+      "usage": "Printed on a card by a till. The module speaks usted, and an impersonal sign is the register at its most neutral.",
+      "register": "formal"
+    },
+    {
+      "id": "L3-M8-S03",
+      "display": "¿Se puede pagar el alquiler aquí?",
+      "cue": "Can the rent be paid here?",
+      "literal": "One-can to-pay the rent here?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "se puede",
+            "cue": "one can · is it allowed",
+            "tag": "delta",
+            "forms": [],
+            "note": "Can, with nobody named. ¿Se puede? alone is may I come in; no se puede is a sign refusing flatly, and neither says who."
+          },
+          {
+            "display": "pagar",
+            "cue": "to pay",
+            "tag": "delta",
+            "forms": [
+              "pagar",
+              "pago",
+              "paga"
+            ],
+            "note": "To pay, and what you pay takes no preposition at all: pago el alquiler. pagar por exists but only for an exchange — what you paid FOR something."
+          },
+          {
+            "display": "alquiler",
+            "cue": "rent",
+            "tag": "free",
+            "forms": [],
+            "note": "The rent, masculine: el alquiler. It is also the renting itself, which is why coche de alquiler is a hire car."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "se puede stays singular whatever follows it, and the second verb is an infinitive: se puede pagar, never se pueden pagar here.",
+      "usage": "Asked across a counter, usted implied throughout. It is politer than ¿Puedo pagar aquí? because it asks about the rule, not about you.",
+      "register": "formal"
+    },
+    {
+      "id": "L3-M8-S04",
+      "display": "Tengo que pagar el alquiler antes del sábado.",
+      "cue": "I have to pay the rent before Saturday.",
+      "literal": "I-have that to-pay the rent before of-the Saturday.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "del",
+            "cue": "of the · from the",
+            "tag": "delta",
+            "forms": [],
+            "note": "de + el contracted, exactly as al is a + el. Spanish never writes de el, and only el contracts — de la stays apart."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "de el is never written. The two words contract into del, and Spanish does it without asking.",
+      "mistake": {
+        "display": "Tengo que pagar el alquiler antes de el sábado.",
+        "why": "The contraction is compulsory: antes del sábado. Only el contracts — antes de la reunión stays as it is."
+      },
+      "usage": "Said about your own obligation, so tengo que rather than hay que. usted is not needed when nobody is addressed.",
+      "register": "formal"
+    },
+    {
+      "id": "L3-M8-S05",
+      "display": "Necesito el formulario, un documento y un sello.",
+      "cue": "I need the form, an ID and a stamp.",
+      "literal": "I-need the form, a document and a stamp.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "formulario",
+            "cue": "form",
+            "tag": "free",
+            "forms": [],
+            "note": "The sheet you fill in, masculine: el formulario. La solicitud is the application it serves; this word is the paper itself."
+          },
+          {
+            "display": "documento",
+            "cue": "document · ID",
+            "tag": "free",
+            "forms": [
+              "documento",
+              "documentos"
+            ],
+            "note": "Any document, and in Spain the ID card too: su documento, por favor. Its formal name is el DNI."
+          },
+          {
+            "display": "sello",
+            "cue": "stamp",
+            "tag": "free",
+            "forms": [],
+            "note": "The office's rubber stamp on your form, and the postage kind as well. Without it a paper often does not count as handed in."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "documento is not the English document only — at a Spanish counter it is your ID card, and su documento means show it.",
+      "usage": "What you say when you reach the window and want to know you have everything.",
+      "register": "formal"
+    },
+    {
+      "id": "L3-M8-S06",
+      "display": "Rellene el formulario y firme aquí, por favor.",
+      "cue": "Fill in the form and sign here, please.",
+      "literal": "Fill-in the form and sign here, please.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rellene",
+            "cue": "fill in (usted)",
+            "tag": "delta",
+            "forms": [
+              "rellene",
+              "rellenar"
+            ],
+            "note": "usted imperative of rellenar, the paperwork verb. llenar alone is filling a glass; the re- is what makes it a form."
+          },
+          {
+            "display": "firme",
+            "cue": "sign (usted)",
+            "tag": "delta",
+            "forms": [
+              "firme",
+              "firmar"
+            ],
+            "note": "The usted imperative of firmar. An -ar verb takes -e for usted, which is why the cell looks like it belongs to another conjugation."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "Both verbs end in -e, and that -e is the usted imperative of an -ar verb. Rellena and firma would be tú, and out of place at a window.",
+      "sound": "re-YE-ne in most of Spain, and re-JE-ne in Argentina; the ll carries the regional accent.",
+      "usage": "What the clerk says to you, not what you say to the clerk. usted throughout, softened by por favor.",
+      "register": "formal"
+    },
+    {
+      "id": "L3-M8-S07",
+      "display": "Espere un momento, aquí tiene el recibo.",
+      "cue": "Wait a moment — here's your receipt.",
+      "literal": "Wait a moment, here you-have the receipt.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "espere",
+            "cue": "wait (usted)",
+            "tag": "delta",
+            "forms": [],
+            "note": "usted imperative of the esperar L2 already taught. Espere un momento is the standard counter phrase and is not curt."
+          },
+          {
+            "display": "recibo",
+            "cue": "receipt",
+            "tag": "free",
+            "forms": [],
+            "note": "Proof that you paid, masculine: el recibo. In much of Latin America a shop slip is el ticket or la boleta instead."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "aquí tiene is the Spanish here you are, and it is a tiene, not a tenga: the clerk states, not commands.",
+      "usage": "The counter's own two sentences, handed back to you. usted in both halves.",
+      "register": "formal"
+    },
+    {
+      "id": "L3-M8-S08",
+      "display": "Tengo que entregar la factura antes del plazo.",
+      "cue": "I have to hand in the bill before the deadline.",
+      "literal": "I-have that to-hand-in the bill before of-the deadline.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "entregar",
+            "cue": "to hand in",
+            "tag": "free",
+            "forms": [],
+            "note": "To hand something over to whoever is meant to receive it. dar is merely giving; entregar carries the obligation with it."
+          },
+          {
+            "display": "factura",
+            "cue": "bill · invoice",
+            "tag": "interference",
+            "forms": [
+              "factura",
+              "facturas"
+            ],
+            "note": "The bill for a service — electricity, water, phone. A restaurant bill is la cuenta, which L2-M5 already taught; they are not interchangeable."
+          },
+          {
+            "display": "plazo",
+            "cue": "deadline · term",
+            "tag": "free",
+            "forms": [],
+            "note": "The stretch you are given, and so the deadline at the end of it. a plazos is the same word spread out: by instalments."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          4
+        ]
+      },
+      "trap": "factura is a service bill; la cuenta is a restaurant one. Asking for la factura at a table gets you the invoice for tax purposes.",
+      "usage": "Said about your own deadline, in an office setting. The register stays formal because the setting does.",
+      "register": "formal"
+    },
+    {
+      "id": "L3-M8-S09",
+      "display": "El alquiler es mil euros. Pago por adelantado.",
+      "cue": "The rent is a thousand euros. I pay in advance.",
+      "literal": "The rent is thousand euros. I-pay for advanced.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mil",
+            "cue": "a thousand",
+            "tag": "interference",
+            "forms": [],
+            "note": "One thousand, and it never takes un in front: mil euros, not un mil euros. Counting, it does not go plural either."
+          },
+          {
+            "display": "euros",
+            "cue": "euros",
+            "tag": "free",
+            "forms": [
+              "euro",
+              "euros"
+            ],
+            "note": "The currency, kept lowercase in Spanish and written after the number: mil euros. The symbol usually follows too."
+          },
+          {
+            "display": "por adelantado",
+            "cue": "in advance",
+            "tag": "interference",
+            "forms": [],
+            "note": "In advance, and por is doing its manner job here rather than para's forward-pointing one. It says HOW you pay, not when."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "No un before mil, and por rather than para: this is how the payment is made, not what it is aimed at.",
+      "mistake": {
+        "display": "El alquiler es un mil euros. Pago para adelantado.",
+        "why": "mil stands alone, and advance payment is a manner, so por adelantado. para would point the money forward at a purpose."
+      },
+      "usage": "Stating your own terms to a landlord or an agency. Formal, because money is being named.",
+      "register": "formal"
+    },
+    {
+      "id": "L3-M8-S10",
+      "display": "Necesito una cita previa en el banco.",
+      "cue": "I need an appointment at the bank.",
+      "literal": "I-need an appointment previous in the bank.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cita previa",
+            "cue": "appointment booked in advance",
+            "tag": "free",
+            "forms": [
+              "cita previa",
+              "cita"
+            ],
+            "note": "The phrase on the door of every Spanish office. cita on its own is any appointment, a date included, so previa is what makes it official."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "previa comes after the noun, as almost every Spanish adjective does. cita previa is a fixed pair and the two words are not separated.",
+      "usage": "The phrase every office door carries, said back to the office. usted setting throughout.",
+      "register": "formal",
+      "mnemonic": "cita previa: the appointment you needed before you needed the appointment."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M8-C01",
+      "display": "Perdone, ¿dónde se firma?",
+      "cue": "Excuse me, where do I sign?"
+    },
+    {
+      "id": "L3-M8-C02",
+      "display": "Aquí se paga en efectivo.",
+      "cue": "Payment here is in cash."
+    },
+    {
+      "id": "L3-M8-C03",
+      "display": "Tengo que pagar el alquiler antes del sábado.",
+      "cue": "I have to pay the rent before Saturday."
+    },
+    {
+      "id": "L3-M8-C04",
+      "display": "Rellene el formulario y firme aquí, por favor.",
+      "cue": "Fill in the form and sign here, please."
+    },
+    {
+      "id": "L3-M8-C05",
+      "display": "Espere un momento, aquí tiene el recibo.",
+      "cue": "Wait a moment — here's your receipt."
+    },
+    {
+      "id": "L3-M8-C06",
+      "display": "Necesito una cita previa en el banco.",
+      "cue": "I need an appointment at the bank."
+    },
+    {
+      "id": "L3-M8-C07",
+      "display": "¿Se puede pagar el recibo aquí?",
+      "cue": "Can the receipt be paid here?"
+    },
+    {
+      "id": "L3-M8-C08",
+      "display": "No se puede entregar la factura hoy.",
+      "cue": "The bill can't be handed in today."
+    },
+    {
+      "id": "L3-M8-C09",
+      "display": "El alquiler es mil euros. Pago por adelantado.",
+      "cue": "The rent is a thousand euros. I pay in advance."
+    },
+    {
+      "id": "L3-M8-C10",
+      "display": "Necesito el documento y un sello.",
+      "cue": "I need the ID and a stamp."
+    },
+    {
+      "id": "L3-M8-C11",
+      "display": "Perdone, ¿dónde está el formulario?",
+      "cue": "Excuse me, where is the form?"
+    },
+    {
+      "id": "L3-M8-C12",
+      "display": "Tengo que entregar el recibo antes del plazo.",
+      "cue": "I have to hand in the receipt before the deadline."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

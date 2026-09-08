@@ -1,0 +1,650 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M5",
+  "title": "What someone said",
+  "job": "Reporting other people's words",
+  "prerequisites": [
+    "L3-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "qāla + inna + <N> + <predicate>",
+      "qāla + lī + inna + <clause>",
+      "qāla + inna-<attached pronoun> + <predicate>",
+      "akhbaranī + anna + <clause>",
+      "saʾalanī + hal / mā idhā + <clause>",
+      "saʾalanī + mādhā + V",
+      "yaqūl / aqūl + inna + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Arabic does not backshift. qāla innahu marīḍ is \"he said he is ill\", and the verb stays exactly where the speaker left it. English pulls its tense back a step — he said he WAS ill — and Arabic has nothing to pull. This is the module's delta and it is one fewer thing to do, not one more."
+    },
+    {
+      "tag": "interference",
+      "text": "Pulling the tense back does not sound old-fashioned in Arabic; it changes the meaning. qāla innahu kāna marīḍ says he was ill at some earlier time and is presumably not now. So the English habit does not merely mark you out — it reports something the speaker never said. Report the words in the shape they were said in."
+    },
+    {
+      "tag": "delta",
+      "text": "inna is anna's sentence-initial twin, and after qāla it is inna that turns up: qāla inna al-ʿamal ṣaʿb. Everything L3-M3 said about anna is true of it — a noun or an attached pronoun behind it, never a bare verb — and the accusative it imposes is exactly why innahu, innahā and innahum have to attach."
+    },
+    {
+      "tag": "free",
+      "text": "The reporting verbs are vocabulary, not grammar: L2-M10's qāla and its present yaqūl, akhbaranī (\"he told me\") and saʾalanī (\"he asked me\"). Who you told is a li- pronoun after qāla — qāla lī, aqūl lahu — and is already built into akhbaranī and saʾalanī."
+    },
+    {
+      "tag": "delta",
+      "text": "A yes/no question is reported with hal or mā idhā and NEVER with anna: saʾalanī hal ʿindī waqt, saʾalatnī mā idhā kuntu taʿbān. English says \"if\" or \"whether\" here, and a learner who reaches for \"that\" instead reports a statement rather than a question."
+    },
+    {
+      "tag": "free",
+      "text": "A wh-question keeps its own question word and needs nothing else: saʾalanī mādhā ashtarī. mādhā is L1-M9's limādhā with the li- taken off — \"what\" against \"for what\" — and the word order behind it does not move."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M5-S01",
+      "display": "qāla inna al-ʿamal ṣaʿb al-yawm",
+      "script": "قال إن العمل صعب اليوم",
+      "cue": "He said work is hard today",
+      "literal": "He-said that the-work difficult the-day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "inna",
+            "script": "إن",
+            "cue": "that (after a verb of saying)",
+            "tag": "delta",
+            "forms": [],
+            "note": "anna's twin, and the one that follows qāla: qāla inna al-ʿamal ṣaʿb. It holds a noun or an attached pronoun exactly as anna does, never a bare verb."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "English says \"he said work WAS hard\" and pulls the tense back one step. Nothing moves in Arabic: the clause is reported in the shape the speaker used.",
+      "sound": "QAA-la IN-na al-ʿA-mal — the n of inna is held doubled, the same held n as anna's, and the two words run together.",
+      "variations": [
+        {
+          "display": "qāla inna al-maṭʿam mumtāz",
+          "script": "قال إن المطعم ممتاز",
+          "cue": "He said the restaurant is excellent",
+          "changed": "what was reported, with the frame untouched"
+        },
+        {
+          "display": "qālat inna al-imtiḥān ṣaʿb",
+          "script": "قالت إن الامتحان صعب",
+          "cue": "She said the exam is hard",
+          "changed": "who spoke: qāla becomes L2-M10's qālat"
+        }
+      ],
+      "mistake": {
+        "display": "qāla inna al-ʿamal kāna ṣaʿb al-yawm",
+        "script": "قال إن العمل كان صعب اليوم",
+        "why": "This is English's backshift imported whole. In Arabic it is not a style, it is a claim: kāna says the work was hard at some past moment and no longer is."
+      },
+      "usage": "The plain report, and the sentence the rest of the module varies. inna rather than anna is what marks it as somebody else's words.",
+      "register": "neutral",
+      "mnemonic": "Report the words, not the tense you would use."
+    },
+    {
+      "id": "L3-M5-S02",
+      "display": "qāla innahu marīḍ",
+      "script": "قال إنه مريض",
+      "cue": "He said he is ill",
+      "literal": "He-said that-he ill",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "innahu",
+            "script": "إنه",
+            "cue": "that he, that it (masculine)",
+            "tag": "delta",
+            "forms": [
+              "innahu",
+              "innahā",
+              "innahum"
+            ],
+            "note": "inna with the pronoun welded on, for the same accusative reason as L3-M3's annahā: innahu (he), innahā (she), innahum (they). inna huwa does not exist."
+          },
+          {
+            "display": "marīḍ",
+            "script": "مريض",
+            "cue": "ill, sick",
+            "tag": "free",
+            "forms": [
+              "marīḍ",
+              "marīḍa"
+            ],
+            "note": "\"Ill\" — marīḍ of a man, marīḍa of a woman. The heavy ḍ at the end is the one in min faḍlika, and the long ī before it carries the stress."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "Three English words — that he is — are one Arabic word here, and none of them is \"is\". innahu is the particle and the subject together, and the sentence behind it stays verbless.",
+      "sound": "IN-na-hu ma-REEḌ — the doubled n then a light -hu, and marīḍ ends heavy and low in the mouth.",
+      "variations": [
+        {
+          "display": "qālat innahā marīḍa",
+          "script": "قالت إنها مريضة",
+          "cue": "She said she is ill",
+          "changed": "both halves turn feminine: qālat, innahā, marīḍa"
+        },
+        {
+          "display": "qāla innahu mashghūl al-yawm",
+          "script": "قال إنه مشغول اليوم",
+          "cue": "He said he is busy today",
+          "changed": "what was reported about him"
+        }
+      ],
+      "mistake": {
+        "display": "qāla innahu kāna marīḍ",
+        "script": "قال إنه كان مريض",
+        "why": "English's \"he said he was ill\" copied across. In Arabic that reports a different thing — that he had been ill earlier — so the plain report is qāla innahu marīḍ."
+      },
+      "usage": "The shortest report there is, and the one a learner will hear most: somebody passing on why another person is absent.",
+      "register": "neutral",
+      "mnemonic": "innahu carries the he; nothing else has to."
+    },
+    {
+      "id": "L3-M5-S03",
+      "display": "akhbaranī anna hind dhahabat ilā al-jāmiʿa",
+      "script": "أخبرني أن هند ذهبت إلى الجامعة",
+      "cue": "He told me that Hind went to the university",
+      "literal": "He-told-me that Hind went(f) to the-university",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "akhbaranī",
+            "script": "أخبرني",
+            "cue": "he told me",
+            "tag": "free",
+            "forms": [
+              "akhbaranī",
+              "akhbaratnī",
+              "akhbara"
+            ],
+            "note": "\"He told me\" — the -nī on the end is the me, so no separate word is needed. akhbaratnī is she told me, and khabar (\"a piece of news\") is the same root."
+          }
+        ],
+        "rules": [
+          3,
+          2
+        ]
+      },
+      "trap": "English needs a word for \"me\" and Arabic does not: it is the -nī welded onto the verb. Adding lī after akhbaranī says the me twice.",
+      "sound": "akh-BA-ra-nee — the throaty kh right after the opening a, and the -nī at the end is long and unstressed.",
+      "variations": [
+        {
+          "display": "akhbaratnī anna al-ḥisāb ghālī",
+          "script": "أخبرتني أن الحساب غالي",
+          "cue": "She told me that the bill is expensive",
+          "changed": "who spoke: akhbaranī becomes akhbaratnī"
+        },
+        {
+          "display": "akhbaranī anna hind marīḍa al-yawm",
+          "script": "أخبرني أن هند مريضة اليوم",
+          "cue": "He told me that Hind is ill today",
+          "changed": "a verbless clause reported instead of a past one"
+        }
+      ],
+      "mistake": {
+        "display": "akhbaranī lī anna hind dhahabat",
+        "script": "أخبرني لي أن هند ذهبت",
+        "why": "English's \"he told me\" has two words and this keeps both. The -nī already is the me: akhbaranī anna hind dhahabat, with nothing after the verb."
+      },
+      "usage": "How a piece of news is passed on. akhbaranī is warmer than qāla lī and is what you use for something you were told directly.",
+      "register": "neutral",
+      "mnemonic": "akhbaranī has the me inside it."
+    },
+    {
+      "id": "L3-M5-S04",
+      "display": "saʾalanī hal ʿindī waqt al-yawm",
+      "script": "سألني هل عندي وقت اليوم",
+      "cue": "He asked me whether I have time today",
+      "literal": "He-asked-me whether at-me time the-day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "saʾalanī",
+            "script": "سألني",
+            "cue": "he asked me",
+            "tag": "free",
+            "forms": [
+              "saʾalanī",
+              "saʾalatnī",
+              "saʾala",
+              "saʾalat"
+            ],
+            "note": "\"He asked me\", with the same -nī as akhbaranī. The hamza in the middle is written and heard: saʾala, a catch between the two a's."
+          },
+          {
+            "display": "waqt",
+            "script": "وقت",
+            "cue": "time",
+            "tag": "free",
+            "forms": [
+              "waqt",
+              "al-waqt"
+            ],
+            "note": "\"Time\" as an amount of it, which is what ʿindī holds: ʿindī waqt, \"I have time\". For a clock time the word is still L2-M6's as-sāʿa."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "English can report this with \"if\" — he asked me if I had time — and \"if\" in Arabic is idhā, which would make it a condition. A reported yes/no question takes hal or mā idhā and nothing else.",
+      "sound": "sa-ʾA-la-nee hal ʿIN-dee — the catch after the first sa is what separates saʾala from a word with none.",
+      "variations": [
+        {
+          "display": "saʾalanī hal ʿindī waqt ghadan",
+          "script": "سألني هل عندي وقت غدًا",
+          "cue": "He asked me whether I have time tomorrow",
+          "changed": "when: today becomes tomorrow, and nothing else moves"
+        },
+        {
+          "display": "saʾalat hind hal anā mashghūl",
+          "script": "سألت هند هل أنا مشغول",
+          "cue": "Hind asked whether I am busy",
+          "changed": "who asked, and the question behind hal turns verbless"
+        }
+      ],
+      "mistake": {
+        "display": "saʾalanī anna ʿindī waqt al-yawm",
+        "script": "سألني أن عندي وقت اليوم",
+        "why": "anna reports a STATEMENT. Put it here and the sentence says he told you that you have time, rather than asking: saʾalanī hal ʿindī waqt."
+      },
+      "usage": "The commonest reported question of all, and hal is what keeps it a question rather than a claim.",
+      "register": "neutral",
+      "mnemonic": "hal asked it; hal reports it."
+    },
+    {
+      "id": "L3-M5-S05",
+      "display": "saʾalatnī mā idhā kuntu mashghūl",
+      "script": "سألتني ما إذا كنت مشغول",
+      "cue": "She asked me whether I was busy",
+      "literal": "She-asked-me whether I-was busy",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mā idhā",
+            "script": "ما إذا",
+            "cue": "whether",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Whether\" — two words learned as one, and hal's slightly more formal twin in a reported question. The idhā inside it is not L3-M4's \"if\" and opens no condition."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "The idhā sitting inside mā idhā is the same spelling as the conditional \"if\", and it is doing a different job. The phrase is learned whole, which is why nothing here takes a past for the future.",
+      "sound": "maa i-DHAA — two long vowels in a row with a light catch between them; the phrase is said as one unit.",
+      "variations": [
+        {
+          "display": "saʾalanī mā idhā kuntu taʿbān",
+          "script": "سألني ما إذا كنت تعبان",
+          "cue": "He asked me whether I was tired",
+          "changed": "who asked, and what was asked about"
+        },
+        {
+          "display": "saʾalatnī hal anā mashghūl",
+          "script": "سألتني هل أنا مشغول",
+          "cue": "She asked me whether I am busy",
+          "changed": "mā idhā swapped for hal, which reports the same question"
+        }
+      ],
+      "mistake": {
+        "display": "saʾalatnī idhā kuntu mashghūl",
+        "script": "سألتني إذا كنت مشغول",
+        "why": "English's \"if\" pulls a learner to the conditional idhā on its own. Alone it means \"if\" and builds a condition; the reported question needs the whole phrase — mā idhā."
+      },
+      "usage": "The written and slightly more careful of the two, where hal is the everyday one. Both are correct here.",
+      "register": "neutral",
+      "mnemonic": "mā idhā is whether; idhā alone is if."
+    },
+    {
+      "id": "L3-M5-S06",
+      "display": "saʾalanī mādhā ashtarī min as-sūq",
+      "script": "سألني ماذا أشتري من السوق",
+      "cue": "He asked me what I buy from the market",
+      "literal": "He-asked-me what I-buy from the-market",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mādhā",
+            "script": "ماذا",
+            "cue": "what",
+            "tag": "free",
+            "forms": [],
+            "note": "\"What\" — L1-M9's limādhā with the li- taken off: \"for what\" against \"what\". It stands at the front of its clause and needs no hal beside it."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "Nothing turns around here. English inverts a direct question — what do I buy — and straightens it again when reporting; Arabic never inverted it in the first place.",
+      "sound": "MAA-dhaa — a long a, the soft dh of hādhā, and a long a again; limādhā is the same word with two syllables in front.",
+      "variations": [
+        {
+          "display": "saʾalatnī mādhā ashtarī",
+          "script": "سألتني ماذا أشتري",
+          "cue": "She asked me what I buy",
+          "changed": "who asked, and the market dropped"
+        },
+        {
+          "display": "saʾalanī matā adhhab ilā al-ʿamal",
+          "script": "سألني متى أذهب إلى العمل",
+          "cue": "He asked me when I go to work",
+          "changed": "the question word: mādhā becomes L1-M4's matā"
+        }
+      ],
+      "mistake": {
+        "display": "saʾalanī hal ashtarī min as-sūq",
+        "script": "سألني هل أشتري من السوق",
+        "why": "hal reports a yes/no question and this one is not: it asks WHAT. The question keeps its own word — saʾalanī mādhā ashtarī min as-sūq."
+      },
+      "usage": "A reported wh-question, which needs no machinery at all beyond the word that was already in the question.",
+      "register": "neutral",
+      "mnemonic": "mādhā asks what; limādhā asks for what."
+    },
+    {
+      "id": "L3-M5-S07",
+      "display": "yaqūl inna al-maṭʿam mumtāz",
+      "script": "يقول إن المطعم ممتاز",
+      "cue": "He says the restaurant is excellent",
+      "literal": "He-says that the-restaurant excellent",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yaqūl",
+            "script": "يقول",
+            "cue": "he says",
+            "tag": "free",
+            "forms": [
+              "yaqūl",
+              "taqūl"
+            ],
+            "note": "The present of L2-M10's qāla, on L1-M4's prefix law: ya- for he, ta- for you or for she. Its long ū is what lam would cut short."
+          }
+        ],
+        "rules": [
+          3,
+          2
+        ]
+      },
+      "trap": "A present reporting verb changes nothing behind it. yaqūl inna and qāla inna hold the same clause in the same shape, because the clause never moved for the past one either.",
+      "sound": "ya-QOOL IN-na — the long ū is held, and it is the vowel that would vanish behind lam: lam yaqul.",
+      "variations": [
+        {
+          "display": "taqūl inna al-maṭʿam ghālī",
+          "script": "تقول إن المطعم غالي",
+          "cue": "She says the restaurant is expensive",
+          "changed": "the person, still the prefix: ya- becomes ta-"
+        },
+        {
+          "display": "yaqūl innahu mashghūl dāʾiman",
+          "script": "يقول إنه مشغول دائمًا",
+          "cue": "He says he is always busy",
+          "changed": "the noun after inna becomes an attached pronoun"
+        }
+      ],
+      "mistake": {
+        "display": "yaqūl anna al-maṭʿam mumtāz",
+        "script": "يقول أن المطعم ممتاز",
+        "why": "After a verb of saying the twin used is inna, not anna. anna is what aʿtaqid and akhbaranī take: yaqūl inna al-maṭʿam mumtāz."
+      },
+      "usage": "What somebody says as a habit rather than on one occasion — a standing opinion of theirs.",
+      "register": "neutral",
+      "mnemonic": "qāla is what he said; yaqūl is what he says."
+    },
+    {
+      "id": "L3-M5-S08",
+      "display": "qāla lī inna al-ḥisāb ghālī jiddan",
+      "script": "قال لي إن الحساب غالي جدًا",
+      "cue": "He told me the bill is very expensive",
+      "literal": "He-said to-me that the-bill expensive very",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lī",
+            "script": "لي",
+            "cue": "to me",
+            "tag": "free",
+            "forms": [
+              "lī",
+              "lahu"
+            ],
+            "note": "L1-M9's li- with M1's -ī on it: \"to me\". qāla lī is \"he said to me\", and lahu is \"to him\". akhbaranī needs none of this — the me is already inside it."
+          }
+        ],
+        "rules": [
+          3,
+          2
+        ]
+      },
+      "trap": "English's \"he told me\" has the person as a bare object; Arabic's qāla reaches it through li-. Say qāla-nī and there is no such verb; the person needs the preposition.",
+      "sound": "QAA-la lee — lī is one light syllable that leans on the verb before it, not on the clause after.",
+      "variations": [
+        {
+          "display": "qāla lī inna hind dhahabat ilā al-jāmiʿa",
+          "script": "قال لي إن هند ذهبت إلى الجامعة",
+          "cue": "He told me that Hind went to the university",
+          "changed": "the clause reported, now with a past verb behind inna"
+        },
+        {
+          "display": "qālat lī inna al-ḥisāb rakhīṣ",
+          "script": "قالت لي إن الحساب رخيص",
+          "cue": "She told me the bill is cheap",
+          "changed": "who spoke and what they said about the bill"
+        }
+      ],
+      "mistake": {
+        "display": "qālanī inna al-ḥisāb ghālī",
+        "script": "قالني إن الحساب غالي",
+        "why": "This attaches the me straight to qāla the way akhbaranī does. qāla does not take it: the person is reached with li- — qāla lī."
+      },
+      "usage": "The neutral \"he told me\", and the difference from akhbaranī is one of warmth rather than of grammar.",
+      "register": "neutral",
+      "mnemonic": "qāla needs lī; akhbara already has it."
+    },
+    {
+      "id": "L3-M5-S09",
+      "display": "qālat innahā lam tanam, hādhā khabar sayyiʾ",
+      "script": "قالت إنها لم تنم، هذا خبر سيئ",
+      "cue": "She said she didn't sleep — that's bad news",
+      "literal": "She-said that-she not she-sleep, this news bad",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "khabar",
+            "script": "خبر",
+            "cue": "a piece of news",
+            "tag": "free",
+            "forms": [
+              "khabar",
+              "al-khabar"
+            ],
+            "note": "\"News\" — countable in Arabic where English's is not, so khabar sayyiʾ is one piece of bad news. It is the root inside akhbaranī, which is literally \"he newsed me\"."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "A past inside a report stays past and does not go back a further step. English has \"she said she hadn't slept\" for this and Arabic has only the one past: lam tanam, exactly as she said it.",
+      "sound": "KHA-bar — two short syllables opening on the throaty kh, and the -bar does not lengthen.",
+      "variations": [
+        {
+          "display": "qāla innahu lam yanam ams",
+          "script": "قال إنه لم ينم أمس",
+          "cue": "He said he didn't sleep yesterday",
+          "changed": "who slept, with L3-M4's yanam behind lam"
+        },
+        {
+          "display": "hādhā khabar jayyid, shukran",
+          "script": "هذا خبر جيد، شكرًا",
+          "cue": "That's good news, thank you",
+          "changed": "the judgement flips, using L3-M3's jayyid"
+        }
+      ],
+      "mistake": {
+        "display": "qālat innahā kānat lam tanam",
+        "script": "قالت إنها كانت لم تنم",
+        "why": "This is English's \"she hadn't slept\" built out of two Arabic pasts. lam tanam is already the past denial, and kānat in front of it belongs to nothing."
+      },
+      "usage": "A report with a judgement attached, which is L3-M3's opinion frame running underneath somebody else's words.",
+      "register": "neutral",
+      "mnemonic": "One khabar is one piece of news."
+    },
+    {
+      "id": "L3-M5-S10",
+      "display": "aqūl lahu inna hādhā khaṭaʾ kabīr",
+      "script": "أقول له إن هذا خطأ كبير",
+      "cue": "I tell him this is a big mistake",
+      "literal": "I-say to-him that this mistake big",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aqūl",
+            "script": "أقول",
+            "cue": "I say, I tell",
+            "tag": "free",
+            "forms": [
+              "aqūl",
+              "naqūl"
+            ],
+            "note": "L2-M10's qultu in the present, on L1-M4's a- prefix: \"I say\". naqūl is we say. The long ū is the same one yaqūl holds."
+          }
+        ],
+        "rules": [
+          3,
+          2
+        ]
+      },
+      "trap": "English chooses between \"say\" and \"tell\" by whether a person follows. Arabic uses one verb and adds the person with li-: aqūl is both, and lahu is what makes it \"tell him\".",
+      "sound": "a-QOOL la-hu — the long ū carries the stress and the -hu after it is light and quick.",
+      "variations": [
+        {
+          "display": "aqūl lahu inna hādhā ṣaḥīḥ",
+          "script": "أقول له إن هذا صحيح",
+          "cue": "I tell him this is right",
+          "changed": "the judgement reported, using L3-M3's ṣaḥīḥ"
+        },
+        {
+          "display": "naqūl inna al-imtiḥān ṣaʿb",
+          "script": "نقول إن الامتحان صعب",
+          "cue": "We say the exam is hard",
+          "changed": "the person: I becomes we, and the listener is dropped"
+        }
+      ],
+      "mistake": {
+        "display": "aqūl lahu anna hādhā khaṭaʾ kabīr",
+        "script": "أقول له أن هذا خطأ كبير",
+        "why": "anna is what a verb of thinking takes. A verb of saying takes its twin: aqūl lahu inna hādhā khaṭaʾ kabīr."
+      },
+      "usage": "Reporting your own words back, which is how a disagreement is described after it has happened.",
+      "register": "neutral",
+      "mnemonic": "One verb for say and tell; li- makes the difference."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M5-C01",
+      "display": "qāla innahu mashghūl al-yawm",
+      "script": "قال إنه مشغول اليوم",
+      "cue": "He said he is busy today"
+    },
+    {
+      "id": "L3-M5-C02",
+      "display": "qālat innahā marīḍa",
+      "script": "قالت إنها مريضة",
+      "cue": "She said she is ill"
+    },
+    {
+      "id": "L3-M5-C03",
+      "display": "akhbaranī anna al-maṭʿam mumtāz",
+      "script": "أخبرني أن المطعم ممتاز",
+      "cue": "He told me the restaurant is excellent"
+    },
+    {
+      "id": "L3-M5-C04",
+      "display": "saʾalanī hal ʿindī waqt ghadan",
+      "script": "سألني هل عندي وقت غدًا",
+      "cue": "He asked me whether I have time tomorrow"
+    },
+    {
+      "id": "L3-M5-C05",
+      "display": "saʾalatnī mā idhā kuntu taʿbān",
+      "script": "سألتني ما إذا كنت تعبان",
+      "cue": "She asked me whether I was tired"
+    },
+    {
+      "id": "L3-M5-C06",
+      "display": "saʾalanī mādhā ashtarī min as-sūq",
+      "script": "سألني ماذا أشتري من السوق",
+      "cue": "He asked me what I buy from the market"
+    },
+    {
+      "id": "L3-M5-C07",
+      "display": "yaqūl inna al-imtiḥān ṣaʿb",
+      "script": "يقول إن الامتحان صعب",
+      "cue": "He says the exam is hard"
+    },
+    {
+      "id": "L3-M5-C08",
+      "display": "qāla lī inna hind dhahabat ilā al-jāmiʿa",
+      "script": "قال لي إن هند ذهبت إلى الجامعة",
+      "cue": "He told me Hind went to the university"
+    },
+    {
+      "id": "L3-M5-C09",
+      "display": "hādhā khabar jayyid, shukran",
+      "script": "هذا خبر جيد، شكرًا",
+      "cue": "That's good news, thank you"
+    },
+    {
+      "id": "L3-M5-C10",
+      "display": "aqūl lahu inna hādhā ḍarūrī",
+      "script": "أقول له إن هذا ضروري",
+      "cue": "I tell him this is necessary"
+    },
+    {
+      "id": "L3-M5-C11",
+      "display": "akhbaratnī anna al-ḥisāb ghālī",
+      "script": "أخبرتني أن الحساب غالي",
+      "cue": "She told me the bill is expensive"
+    },
+    {
+      "id": "L3-M5-C12",
+      "display": "qāla innahu lam yanam ams",
+      "script": "قال إنه لم ينم أمس",
+      "cue": "He said he didn't sleep yesterday"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

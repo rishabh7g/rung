@@ -101,7 +101,7 @@ export const SOURCE_SANS_WEIGHTS = [400, 600, 700] as const;
  * does not (docs/04-font-notes.md §9).
  */
 export interface ScriptTarget {
-  subset: 'devanagari' | 'latin' | 'latin-ext' | 'arabic' | 'cyrillic';
+  subset: 'devanagari' | 'latin' | 'latin-ext' | 'arabic' | 'cyrillic' | 'korean';
   /** Does this codepoint belong to this target's `unicode-range`? */
   covers: (codePoint: number) => boolean;
   /** Characters included no matter what the content build shipped. */
@@ -127,7 +127,7 @@ export interface ScriptTarget {
  * one row here, one committed `@font-face` sheet, and nothing else.
  */
 export interface SubsetFace {
-  slug: 'mukta' | 'noto-naskh-arabic' | 'source-sans-3';
+  slug: 'mukta' | 'noto-naskh-arabic' | 'source-sans-3' | 'noto-sans-kr';
   /** The committed sheet whose `url()`s must match this face's outputs exactly. */
   sheet: string;
   weights: readonly number[];
@@ -188,9 +188,20 @@ export const MUKTA_TARGETS: readonly ScriptTarget[] = [
       cp === 0x200d,
     baseline: DEVANAGARI_BASELINE,
   },
+  /* U+0131 and U+0152-0153 are here, past the U+00FF the rest of this target stops at, because
+     @fontsource's own `latin` range names them and Mukta's `latin` SOURCE draws all three — while
+     its `latin-ext` source draws none of them. Leaving them to the `latin-ext` target, which their
+     block number would suggest, is how en-fr's sœur ended up with no bundled glyph at all: the
+     target claimed the codepoint, `coveredChars` kept it, and the source file it was cut from had
+     nothing to give. Found by `tools/font-coverage.test.ts`, which now reads the cmaps. */
   {
     subset: 'latin',
-    covers: (cp) => cp <= 0x00ff || (cp >= 0x2000 && cp <= 0x206f),
+    covers: (cp) =>
+      cp <= 0x00ff ||
+      cp === 0x0131 ||
+      cp === 0x0152 ||
+      cp === 0x0153 ||
+      (cp >= 0x2000 && cp <= 0x206f),
     baseline: LATIN_BASELINE,
   },
   /* #222 — the romanization's diacritics, in the face that draws the letters they belong to.
@@ -198,10 +209,17 @@ export const MUKTA_TARGETS: readonly ScriptTarget[] = [
      Latin Extended Additional carries the dot-below emphatics (ḍ ḥ ṣ ṭ) and their capitals. Both
      ranges start past U+00FF, so nothing here can claim a character the `latin` target already
      draws, and neither claims a space, a joiner or a digit — the overlap class #211 was bitten
-     by. Mukta has no glyph at U+02BE, U+02BF, U+1E92 or U+1E93: those four are Source Sans 3's. */
+     by. Mukta has no glyph at U+02BE, U+02BF, U+1E92 or U+1E93: those four are Source Sans 3's.
+
+     The three holes in Latin Extended-A are the other half of the fix above: U+0131, U+0152 and
+     U+0153 sit inside this block but inside @fontsource's `latin` FILE, so they are the `latin`
+     target's. The two targets stay disjoint, which is the invariant this comment has always
+     asserted — it is only the line that divides them that moved. */
   {
     subset: 'latin-ext',
-    covers: (cp) => (cp >= 0x0100 && cp <= 0x017f) || (cp >= 0x1e00 && cp <= 0x1e9f),
+    covers: (cp) =>
+      (cp >= 0x0100 && cp <= 0x017f && cp !== 0x0131 && cp !== 0x0152 && cp !== 0x0153) ||
+      (cp >= 0x1e00 && cp <= 0x1e9f),
     baseline: DIACRITIC_BASELINE,
   },
 ];
@@ -272,6 +290,43 @@ export const SOURCE_SANS_TARGETS: readonly ScriptTarget[] = [
   },
 ];
 
+/** No baseline at all, deliberately — the same call the two `latin-ext` cuts make. A Korean line's
+    spaces and full stops are ASCII, which this range does not claim (see the target's comment),
+    and every syllable is content-decided. A build with no Korean course emits an empty cut. */
+const HANGUL_BASELINE = '';
+
+export const NOTO_SANS_KR_WEIGHTS = [400] as const;
+
+/**
+ * Hangul for en-ko's quiet `script` line (#375). The romanized `display` is ASCII and needs no
+ * face at all (#373), so this cut serves one surface and one weight, exactly as Naskh does.
+ *
+ * The package check the ticket demanded, run rather than assumed: `@fontsource/noto-sans-kr@5.3.0`
+ * ships 2,319 files, most of them the numbered range cuts a CJK face is normally split into — but
+ * it ALSO ships `files/noto-sans-kr-korean-<weight>-normal.woff2`, the whole-Korean file, at all
+ * nine weights. So the pipeline's `<slug>-<subset>-<weight>-normal.woff2` naming holds with no
+ * special case, and the harvest does the splitting the numbered files exist to do: the source is
+ * 529 KiB and en-ko's 294 authored syllables cut to ~20 KiB, the same order as Naskh's ~10 KiB.
+ *
+ * The range is the syllable block plus the two Jamo blocks. Compatibility Jamo (U+3130-318F) is
+ * how a lone consonant is written when a course NAMES a letter — a romanization course eventually
+ * does — and the conjoining Jamo (U+1100-11FF) is what a decomposed syllable is made of, which is
+ * what NFD-normalised Korean text delivers. Neither is baseline: a range is routing, not coverage,
+ * and a codepoint the subset dropped falls through to `system-ui` rather than drawing tofu.
+ */
+export const NOTO_SANS_KR_TARGETS: readonly ScriptTarget[] = [
+  {
+    subset: 'korean',
+    covers: (cp) =>
+      (cp >= 0x1100 && cp <= 0x11ff) ||
+      (cp >= 0x3000 && cp <= 0x303f) ||
+      (cp >= 0x3130 && cp <= 0x318f) ||
+      (cp >= 0xa960 && cp <= 0xa97f) ||
+      (cp >= 0xac00 && cp <= 0xd7ff),
+    baseline: HANGUL_BASELINE,
+  },
+];
+
 export const FACES: readonly SubsetFace[] = [
   { slug: 'mukta', sheet: 'mukta.css', weights: MUKTA_WEIGHTS, targets: MUKTA_TARGETS },
   {
@@ -285,6 +340,12 @@ export const FACES: readonly SubsetFace[] = [
     sheet: 'source-sans-3.css',
     weights: SOURCE_SANS_WEIGHTS,
     targets: SOURCE_SANS_TARGETS,
+  },
+  {
+    slug: 'noto-sans-kr',
+    sheet: 'noto-sans-kr.css',
+    weights: NOTO_SANS_KR_WEIGHTS,
+    targets: NOTO_SANS_KR_TARGETS,
   },
 ];
 
@@ -354,15 +415,16 @@ export function subsetText(
 
 /* ----------------------------------------------------------------- the build */
 
-interface ContentHarvest {
+export interface ContentHarvest {
   devBuild: boolean;
   courses: string[];
   text: string;
 }
 
 /** Reads what the content build emitted — this tool runs AFTER `content:build` and subsets to
-    exactly what shipped, dev relaxations included (`courses.json` carries `devBuild: true`). */
-function harvestContent(): ContentHarvest {
+    exactly what shipped, dev relaxations included (`courses.json` carries `devBuild: true`).
+    Exported for `tools/font-coverage.test.ts`, which re-harvests to check the cuts on disk. */
+export function harvestContent(): ContentHarvest {
   const manifestPath = path.join(CONTENT_OUT, 'courses.json');
   let manifestRaw: string;
   try {

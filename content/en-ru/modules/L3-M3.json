@@ -1,0 +1,646 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M3",
+  "title": "Opinions with reasons",
+  "job": "Agree, disagree, soften — reasons attached",
+  "prerequisites": [
+    "L3-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present_imperfective",
+      "simple_future_perfective"
+    ],
+    "allowedPatterns": [
+      "Ya schitáyu, chto + <clause>",
+      "Po-móyemu + , + <clause>",
+      "<clause> + , + potomú chto + <clause>",
+      "Ya soglásen / soglásna / soglásny (+ s + <N-instrumental>)",
+      "Khotyá + <clause> + , + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE COMMA IS GRAMMAR, and this is the module where Russian punctuation stops being style. Every subordinate clause is fenced with one: Ya schitáyu, chto éhto khoroshó — and the same fence closes a khotyá clause before the main one starts. English drops both the \"that\" and the comma; Russian keeps both, always, and a missing comma here is a spelling mistake rather than a matter of taste. L1-M9 shipped chto without saying this because it never had two clauses to fence."
+    },
+    {
+      "tag": "delta",
+      "text": "An opinion OPENER is fenced too, and that is the same law seen from the other side: po-móyemu, navérnoye and a bare kázhetsya are parentheticals, so they take a comma after them at the head of a sentence, and a comma on BOTH sides if they sit inside one. The pause you hear is the punctuation you write."
+    },
+    {
+      "tag": "delta",
+      "text": "soglásen AGREES WITH THE SPEAKER, which no English adjective does: a man says ya soglásen, a woman ya soglásna, a group my soglásny. It is a SHORT-FORM adjective — the level's first — and there is no verb in the sentence at all. The long form soglásnyy exists and is not what anybody says here. uvéren and prav are built the same way, so one rule covers all three."
+    },
+    {
+      "tag": "interference",
+      "text": "potomú chto is TWO WORDS AND ONE CONJUNCTION, and the comma goes in front of the pair: ..., potomú chto ... A learner who met chto alone at L1-M9 will try to split them and write potomú, chto, which puts the pause inside the join. English writes no comma before \"because\" at all, which is the habit underneath the error."
+    },
+    {
+      "tag": "free",
+      "text": "Softening is the FRAME and not a weakening of the claim. Russian marks a view as a view at the front — po-móyemu, mne kázhetsya, ya ne uvéren, navérnoye — and then states the claim flat. Hedging inside the claim itself, the way English piles up \"might perhaps be a bit\", reads as evasive rather than polite. Neither language is the careful one; they put the care in different places."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M3-S01",
+      "display": "Ya schitáyu, chto éhto khoroshó",
+      "script": "Я считаю, что это хорошо",
+      "cue": "I think that this is good",
+      "literal": "I consider, that this good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "schitáyu",
+            "script": "считаю",
+            "cue": "I think, I reckon",
+            "tag": "delta",
+            "forms": [
+              "schitáyu",
+              "schitáyet",
+              "schitáyete"
+            ],
+            "note": "A shade firmer than L1-M9's dúmayu: it is the verb you hang a reason off. On schitáyet is the he cell, vy schitáyete the polite one."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "English deletes the \"that\" and never had a comma to delete: \"I think this is good\". Russian deletes neither — chto stays, and the comma in front of it is part of the spelling.",
+      "sound": "ya shchi-TA-yu, shto EH-ta kha-ra-SHO. The sch of schitáyu is one long soft sound, not s plus ch, and chto is said shto.",
+      "variations": [
+        {
+          "display": "On schitáyet, chto éhto plókho",
+          "script": "Он считает, что это плохо",
+          "cue": "He thinks that this is bad",
+          "changed": "another person, and the opposite verdict"
+        },
+        {
+          "display": "Ya schitáyu, chto éhta kníga khoróshaya",
+          "script": "Я считаю, что эта книга хорошая",
+          "cue": "I think that this book is good",
+          "changed": "a verdict on a thing rather than on the situation"
+        }
+      ],
+      "mistake": {
+        "display": "Ya schitáyu chto éhto khoroshó",
+        "script": "Я считаю что это хорошо",
+        "why": "The comma is gone, and in Russian that is an error rather than a style choice: every subordinate clause is fenced. Ya schitáyu, chto éhto khoroshó."
+      },
+      "usage": "Stating an opinion you are ready to back with a reason.",
+      "register": "neutral",
+      "mnemonic": "chto never arrives without its comma."
+    },
+    {
+      "id": "L3-M3-S02",
+      "display": "Po-móyemu, éhta kníga óchen' interésnaya",
+      "script": "По-моему, эта книга очень интересная",
+      "cue": "In my opinion, this book is very interesting",
+      "literal": "By-my, this book very interesting",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "po-móyemu",
+            "script": "по-моему",
+            "cue": "in my opinion",
+            "tag": "delta",
+            "forms": [
+              "po-móyemu"
+            ],
+            "note": "Three English words, one hyphenated Russian one, and no verb inside it at all. It opens the sentence and takes a comma after it."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "The hyphen is part of the spelling. Written apart, po moyemu is not the phrase — and there is no verb hiding in it, so nothing agrees with anything.",
+      "sound": "pa-MO-ye-mu, EH-ta KNI-ga O-chen' in-ti-RYES-na-ya. The stress is on the mo and everything after it is swallowed.",
+      "variations": [
+        {
+          "display": "Po-móyemu, éhtot górod óchen' interésnyy",
+          "script": "По-моему, этот город очень интересный",
+          "cue": "In my opinion, this city is very interesting",
+          "changed": "a city instead of a book, so the adjective changes ending"
+        },
+        {
+          "display": "Po-móyemu, éhta kníga óchen' dorogáya",
+          "script": "По-моему, эта книга очень дорогая",
+          "cue": "In my opinion, this book is very expensive",
+          "changed": "a different verdict on the same book"
+        }
+      ],
+      "mistake": {
+        "display": "Ya po-móyemu dúmayu, chto éhta kníga interésnaya",
+        "script": "Я по-моему думаю, что эта книга интересная",
+        "why": "po-móyemu already contains the \"I think\", so this stacks two opinion frames on one claim. Pick one: Po-móyemu, éhta kníga interésnaya."
+      },
+      "usage": "Offering a view without claiming authority — the softener a Russian actually reaches for.",
+      "register": "neutral",
+      "mnemonic": "By-my — po-móyemu — and then just say it."
+    },
+    {
+      "id": "L3-M3-S03",
+      "display": "Ya soglásen s vámi, potomú chto éhto právda",
+      "script": "Я согласен с вами, потому что это правда",
+      "cue": "I agree with you, because it's true",
+      "literal": "I agreeing with you, because-that this truth",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "soglásen",
+            "script": "согласен",
+            "cue": "agreeing (said by a man)",
+            "tag": "delta",
+            "forms": [
+              "soglásen",
+              "soglásna",
+              "soglásny"
+            ],
+            "note": "A short-form adjective, so it agrees with whoever is speaking: a man soglásen, a woman soglásna, a group soglásny. There is no verb in the sentence."
+          },
+          {
+            "display": "vámi",
+            "script": "вами",
+            "cue": "you (after s)",
+            "tag": "delta",
+            "forms": [
+              "vámi"
+            ],
+            "note": "L3-M2's instrumental doing ordinary work: after s, vy becomes vámi. The preposition is the half you expect and the ending is the half you forget."
+          },
+          {
+            "display": "právda",
+            "script": "правда",
+            "cue": "true, the truth",
+            "tag": "free",
+            "forms": [
+              "právda"
+            ],
+            "note": "A noun standing as a whole predicate: éhto právda is \"that's true\", with nothing between the two words. English needs \"is\"; Russian's present has none."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "soglásen is not a verb, so there is nothing to conjugate. What changes is its ending, and it changes with the speaker rather than with the tense.",
+      "sound": "ya sag-LA-sen s VA-mi, pa-ta-MU shto EH-ta PRAV-da. potomú chto is said as one run with one stress, on the mu.",
+      "variations": [
+        {
+          "display": "Ya soglásna s vámi, potomú chto éhto právda",
+          "script": "Я согласна с вами, потому что это правда",
+          "cue": "I agree with you, because it's true (a woman speaking)",
+          "changed": "a woman saying it, so the ending changes"
+        },
+        {
+          "display": "My soglásny s vámi",
+          "script": "Мы согласны с вами",
+          "cue": "We agree with you",
+          "changed": "a group agreeing, and no reason attached"
+        }
+      ],
+      "mistake": {
+        "display": "Ya soglásen s vy",
+        "script": "Я согласен с вы",
+        "why": "s always takes the instrumental — L3-M2's rule, unchanged. vy becomes vámi after it: Ya soglásen s vámi."
+      },
+      "usage": "Agreeing out loud, and saying why in the same breath.",
+      "register": "neutral",
+      "mnemonic": "The ending tells the room who is agreeing."
+    },
+    {
+      "id": "L3-M3-S04",
+      "display": "Ya ne soglásna, potomú chto éhto dórogo",
+      "script": "Я не согласна, потому что это дорого",
+      "cue": "I don't agree, because it's expensive",
+      "literal": "I not agreeing, because-that this expensively",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dórogo",
+            "script": "дорого",
+            "cue": "expensive (of a situation)",
+            "tag": "delta",
+            "forms": [
+              "dórogo"
+            ],
+            "note": "L2-M9's dorogóy in the -o shape Russian uses with no noun in sight: éhto dórogo, exactly like khólodno and vkúsno. It judges the situation, not a thing."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "The comma goes BEFORE potomú chto and never between its two words. English writes no comma in front of \"because\" at all, which is the habit that has to go.",
+      "sound": "ya ne sag-LAS-na, pa-ta-MU shto EH-ta DO-ra-ga. Both unstressed o's in dórogo reduce to a, so the word comes out DO-ra-ga.",
+      "variations": [
+        {
+          "display": "Ya ne soglásen, potomú chto éhto plókho",
+          "script": "Я не согласен, потому что это плохо",
+          "cue": "I don't agree, because it's bad",
+          "changed": "a man saying it, and a different reason"
+        },
+        {
+          "display": "Ya ne soglásna, potomú chto on ne prav",
+          "script": "Я не согласна, потому что он не прав",
+          "cue": "I don't agree, because he isn't right",
+          "changed": "the reason names a person rather than a price"
+        }
+      ],
+      "mistake": {
+        "display": "Ya ne soglásna potomú, chto éhto dórogo",
+        "script": "Я не согласна потому, что это дорого",
+        "why": "The pause has been put inside the conjunction. potomú chto is two words and one join, so the comma goes in front of the pair, not between them."
+      },
+      "usage": "Disagreeing politely — the reason is what makes it polite.",
+      "register": "neutral",
+      "mnemonic": "Comma first, then potomú chto whole."
+    },
+    {
+      "id": "L3-M3-S05",
+      "display": "Mne kázhetsya, chto on ustál",
+      "script": "Мне кажется, что он устал",
+      "cue": "It seems to me that he is tired",
+      "literal": "To-me it-seems, that he tired",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kázhetsya",
+            "script": "кажется",
+            "cue": "it seems",
+            "tag": "delta",
+            "forms": [
+              "kázhetsya",
+              "mne kázhetsya"
+            ],
+            "note": "\"It seems\", and with mne in front, \"it seems to me\" — the softest frame there is. The person it seems TO goes in the dative, as with L1-M9's nrávitsya."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "There is no \"I\" anywhere in this sentence. mne is \"to me\" and the verb is impersonal, which is L1-M9's mne nrávitsya built again with a different word.",
+      "sound": "mnye KA-zhy-tsa, shto on us-TAL. The -tsya is one sound, tsa, exactly as in L3-M1's prosypáyetsya.",
+      "variations": [
+        {
+          "display": "Mne kázhetsya, chto éhto dórogo",
+          "script": "Мне кажется, что это дорого",
+          "cue": "It seems to me that this is expensive",
+          "changed": "a verdict instead of a person"
+        },
+        {
+          "display": "Kázhetsya, on ustál",
+          "script": "Кажется, он устал",
+          "cue": "He seems tired",
+          "changed": "no mne and no chto — the bare opener with its comma"
+        }
+      ],
+      "mistake": {
+        "display": "Ya kázhetsya, chto on ustál",
+        "script": "Я кажусь, что он устал",
+        "why": "kázhetsya has no \"I\" to take. The speaker goes in the dative — mne kázhetsya — the way mne nrávitsya already does."
+      },
+      "usage": "Softening a claim about somebody else.",
+      "register": "neutral",
+      "mnemonic": "It seems TO me; I never seem."
+    },
+    {
+      "id": "L3-M3-S06",
+      "display": "Ya ne uvéren, chto éhto khoroshó",
+      "script": "Я не уверен, что это хорошо",
+      "cue": "I'm not sure that this is good",
+      "literal": "I not sure, that this good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "uvéren",
+            "script": "уверен",
+            "cue": "sure (said by a man)",
+            "tag": "delta",
+            "forms": [
+              "uvéren",
+              "uvérena"
+            ],
+            "note": "The module's second short-form adjective and it agrees the same way: uvéren from a man, uvérena from a woman. Not a verb, so nothing conjugates."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "Russian hedges the frame, not the claim: ya ne uvéren goes in front and the claim behind it is said flat. Piling the hedging inside the claim reads as evasive rather than modest.",
+      "sound": "ya ne u-VYE-ren, shto EH-ta kha-ra-SHO. The ve is soft — VYE, not VE — and the stress sits on it.",
+      "variations": [
+        {
+          "display": "Ya ne uvérena, chto éhto khoroshó",
+          "script": "Я не уверена, что это хорошо",
+          "cue": "I'm not sure that this is good (a woman speaking)",
+          "changed": "a woman saying it"
+        },
+        {
+          "display": "Ya uvéren, chto éhto právda",
+          "script": "Я уверен, что это правда",
+          "cue": "I'm sure that it's true",
+          "changed": "sure instead of unsure"
+        }
+      ],
+      "mistake": {
+        "display": "Ya ne uvéryu, chto éhto khoroshó",
+        "script": "Я не уверю, что это хорошо",
+        "why": "uvéren is an adjective, not a verb, so there is no -yu cell to reach for. What changes is the ending that agrees with you: uvéren or uvérena."
+      },
+      "usage": "Doubting without contradicting.",
+      "register": "neutral",
+      "mnemonic": "Sure is an adjective here, so it wears your gender."
+    },
+    {
+      "id": "L3-M3-S07",
+      "display": "Khotyá éhto dórogo, ya kuplyú knígu",
+      "script": "Хотя это дорого, я куплю книгу",
+      "cue": "Although it's expensive, I'll buy the book",
+      "literal": "Although this expensively, I will-buy book",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "khotyá",
+            "script": "хотя",
+            "cue": "although",
+            "tag": "delta",
+            "forms": [
+              "khotyá"
+            ],
+            "note": "\"Although\". It opens the clause it concedes, and the comma closes that clause before the main one starts — the same fence as chto, met from the front."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "English can write \"Although it's expensive I'll buy it\" with no comma at all. Russian cannot: the fence closes the khotyá clause every time.",
+      "sound": "kha-TYA EH-ta DO-ra-ga, ya kup-LYU KNI-gu. The stress is on the tya, and the kh is the throaty one of khoroshó.",
+      "variations": [
+        {
+          "display": "Khotyá éhto dórogo, ya kuplyú gazétu",
+          "script": "Хотя это дорого, я куплю газету",
+          "cue": "Although it's expensive, I'll buy the paper",
+          "changed": "a different thing bought"
+        },
+        {
+          "display": "Khotyá ya ustál, ya rabótayu",
+          "script": "Хотя я устал, я работаю",
+          "cue": "Although I'm tired, I'm working",
+          "changed": "a concession about the speaker rather than about a price"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto dórogo khotyá ya kuplyú knígu",
+        "script": "Это дорого хотя я куплю книгу",
+        "why": "khotyá belongs at the head of the clause it concedes, and that clause is fenced off before the main one: Khotyá éhto dórogo, ya kuplyú knígu."
+      },
+      "usage": "Conceding a point and holding your position anyway.",
+      "register": "neutral",
+      "mnemonic": "Although opens; the comma closes."
+    },
+    {
+      "id": "L3-M3-S08",
+      "display": "Navérnoye, on ne pridyót",
+      "script": "Наверное, он не придёт",
+      "cue": "He probably won't come",
+      "literal": "Probably, he not will-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "navérnoye",
+            "script": "наверное",
+            "cue": "probably",
+            "tag": "delta",
+            "forms": [
+              "navérnoye"
+            ],
+            "note": "\"Probably\", and like po-móyemu an opener with a comma after it. It hedges the sentence from outside instead of loosening anything inside the claim."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "English slides \"probably\" in beside the verb — \"he probably won't come\". Russian parks it at the front and marks it off, and inside the sentence it takes a comma on both sides.",
+      "sound": "na-VYER-na-ye, on ne pri-DYOT. Said at speed it comes out na-VYER-na, and that is what you will actually hear.",
+      "variations": [
+        {
+          "display": "Navérnoye, oná ne pridyót",
+          "script": "Наверное, она не придёт",
+          "cue": "She probably won't come",
+          "changed": "she instead of he"
+        },
+        {
+          "display": "Navérnoye, éhto dórogo",
+          "script": "Наверное, это дорого",
+          "cue": "It's probably expensive",
+          "changed": "hedging a verdict rather than an event"
+        }
+      ],
+      "mistake": {
+        "display": "Navérnoye on ne pridyót",
+        "script": "Наверное он не придёт",
+        "why": "The opener is a parenthetical and Russian fences it: the comma after navérnoye is not decoration. Set inside the sentence it needs one on each side."
+      },
+      "usage": "Guessing out loud.",
+      "register": "neutral",
+      "mnemonic": "Openers arrive with their comma."
+    },
+    {
+      "id": "L3-M3-S09",
+      "display": "Ya dúmayu, chto vy právy",
+      "script": "Я думаю, что вы правы",
+      "cue": "I think you're right",
+      "literal": "I think, that you right",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prav",
+            "script": "прав",
+            "cue": "right, correct (said of a man)",
+            "tag": "delta",
+            "forms": [
+              "prav",
+              "pravá",
+              "právy"
+            ],
+            "note": "The module's third short form: prav of a man, pravá of a woman, právy of a group or of vy. The stress moves with it — pravá, but právy."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "vy takes the PLURAL short form even when it means one person: vy právy, never vy prav. The politeness of vy is a plural the whole way down, exactly as in vy khotíte.",
+      "sound": "ya DU-ma-yu, shto vy PRA-vy. The feminine pravá is the odd one out — its stress is on the ending.",
+      "variations": [
+        {
+          "display": "Ya dúmayu, chto oná pravá",
+          "script": "Я думаю, что она права",
+          "cue": "I think she's right",
+          "changed": "one woman, so the short form and its stress both move"
+        },
+        {
+          "display": "Ya dúmayu, chto on prav",
+          "script": "Я думаю, что он прав",
+          "cue": "I think he's right",
+          "changed": "one man, and the bare short form"
+        }
+      ],
+      "mistake": {
+        "display": "Ya dúmayu, chto vy prav",
+        "script": "Я думаю, что вы прав",
+        "why": "vy is grammatically plural however few people it means, so the short form is právy — the same plural vy khotíte has carried since L1-M3."
+      },
+      "usage": "Conceding a point in a discussion.",
+      "register": "neutral",
+      "mnemonic": "vy is always plural, so vy právy."
+    },
+    {
+      "id": "L3-M3-S10",
+      "display": "Pochemú vy tak dúmayete?",
+      "script": "Почему вы так думаете?",
+      "cue": "Why do you think so?",
+      "literal": "Why you so think?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tak",
+            "script": "так",
+            "cue": "so, that way",
+            "tag": "free",
+            "forms": [
+              "tak"
+            ],
+            "note": "\"So\", in the sense of \"that way\" — it stands in for the whole opinion just stated. It goes in front of the verb, where English leaves it at the end."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "English ends the question with \"so\". Russian puts tak in front of the verb: vy tak dúmayete, never dúmayete tak.",
+      "sound": "pa-chi-MU vy tak DU-ma-ye-tye? pochemú carries the question, so the voice does not have to rise at the end.",
+      "variations": [
+        {
+          "display": "Pochemú vy tak schitáyete?",
+          "script": "Почему вы так считаете?",
+          "cue": "Why do you reckon so?",
+          "changed": "schitáyete, a shade firmer than dúmayete"
+        },
+        {
+          "display": "Vy tak dúmayete?",
+          "script": "Вы так думаете?",
+          "cue": "You think so?",
+          "changed": "no question word — the same question carried by intonation alone"
+        }
+      ],
+      "mistake": {
+        "display": "Pochemú vy dúmayete tak?",
+        "script": "Почему вы думаете так?",
+        "why": "tak wants the slot in front of the verb. Left at the end it lands like a sentence that stopped halfway rather than a question."
+      },
+      "usage": "Asking for the reason behind an opinion — which is what this module is for.",
+      "register": "neutral",
+      "mnemonic": "tak comes before the verb."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M3-C01",
+      "display": "Ya schitáyu, chto éhto právda",
+      "script": "Я считаю, что это правда",
+      "cue": "I think that it's true"
+    },
+    {
+      "id": "L3-M3-C02",
+      "display": "Po-móyemu, éhta kníga óchen' interésnaya",
+      "script": "По-моему, эта книга очень интересная",
+      "cue": "In my opinion, this book is very interesting"
+    },
+    {
+      "id": "L3-M3-C03",
+      "display": "Ya soglásen s vámi",
+      "script": "Я согласен с вами",
+      "cue": "I agree with you"
+    },
+    {
+      "id": "L3-M3-C04",
+      "display": "Ya ne soglásna, potomú chto éhto dórogo",
+      "script": "Я не согласна, потому что это дорого",
+      "cue": "I don't agree, because it's expensive"
+    },
+    {
+      "id": "L3-M3-C05",
+      "display": "Mne kázhetsya, chto on ustál",
+      "script": "Мне кажется, что он устал",
+      "cue": "It seems to me that he is tired"
+    },
+    {
+      "id": "L3-M3-C06",
+      "display": "Ya ne uvéren, chto éhto khoroshó",
+      "script": "Я не уверен, что это хорошо",
+      "cue": "I'm not sure that this is good"
+    },
+    {
+      "id": "L3-M3-C07",
+      "display": "Khotyá éhto dórogo, ya kuplyú knígu",
+      "script": "Хотя это дорого, я куплю книгу",
+      "cue": "Although it's expensive, I'll buy the book"
+    },
+    {
+      "id": "L3-M3-C08",
+      "display": "Navérnoye, on ne pridyót",
+      "script": "Наверное, он не придёт",
+      "cue": "He probably won't come"
+    },
+    {
+      "id": "L3-M3-C09",
+      "display": "Ya dúmayu, chto vy právy",
+      "script": "Я думаю, что вы правы",
+      "cue": "I think you're right"
+    },
+    {
+      "id": "L3-M3-C10",
+      "display": "Pochemú vy tak dúmayete?",
+      "script": "Почему вы так думаете?",
+      "cue": "Why do you think so?"
+    },
+    {
+      "id": "L3-M3-C11",
+      "display": "My soglásny, chto éhtot górod interésnyy",
+      "script": "Мы согласны, что этот город интересный",
+      "cue": "We agree that this city is interesting"
+    },
+    {
+      "id": "L3-M3-C12",
+      "display": "Mne kázhetsya, chto on ne prav",
+      "script": "Мне кажется, что он не прав",
+      "cue": "It seems to me that he isn't right"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

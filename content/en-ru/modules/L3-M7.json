@@ -1,0 +1,586 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M7",
+  "title": "Body and health",
+  "job": "Say what hurts, and where",
+  "prerequisites": ["L3-M6"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": ["simple_present_imperfective", "simple_past"],
+    "allowedPatterns": [
+      "U menyá bolít + <body part-nominative>",
+      "U menyá bolyát + <plural body part>",
+      "Ya idú k + <person-dative>",
+      "U menyá + <symptom>",
+      "Bolít uzhé + <duration-accusative>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE BODY PART IS THE SUBJECT, and that is the whole delta. bolít and bolyát are L2-M8's rows and nothing about them changes here — what changes is that the verb agrees with the part that hurts: u menyá bolít golová, one head, but u menyá bolyát zúby, several teeth. You are not in the sentence as a subject at all; u menyá names the owner, exactly as it names the owner of a car in L1-M4."
+    },
+    {
+      "tag": "interference",
+      "text": "English puts the sufferer first — \"I have a headache\", \"my throat hurts\" — and Russian puts the part first and the person in a corner. There is no word for \"my\" in any of these sentences: moyá golová bolít is grammatical and sounds like a medical report about a head. The everyday sentence is u menyá bolít golová, and a learner who reaches for moy here will do it for years."
+    },
+    {
+      "tag": "delta",
+      "text": "k + DATIVE is how Russian goes to a PERSON, where v and na go to a place: ya idú k vrachú but ya idú v aptéku. L2-M4 opened the accusative of motion for places and left people unnamed; this is the seat it left empty. The case itself is L2-M1's dative doing ordinary work, so what is new is one preposition and not a new set of endings."
+    },
+    {
+      "tag": "free",
+      "text": "A symptom is something you HAVE, and the sentence has no verb in it: u menyá temperatúra, u menyá káshel', u menyá násmork. This is L1-M4's possession frame — u plus the genitive of the owner — doing health, so the whole shape is already yours and the only spend is the vocabulary. Add yest' only when the point is that the thing exists at all."
+    },
+    {
+      "tag": "delta",
+      "text": "Duration takes the ACCUSATIVE with no preposition — bolít uzhé dva dnya — where English needs \"for\". uzhé (\"already\") is what carries the still-true reading, because Russian has no perfect tense whatsoever: bolít is a plain present, and \"it has been hurting for two days\" is that present plus one adverb. Nothing here is a new tense, and there is no new tense coming."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M7-S01",
+      "display": "U menyá bolít górlo",
+      "script": "У меня болит горло",
+      "cue": "My throat hurts",
+      "literal": "At me hurts throat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "górlo",
+            "script": "горло",
+            "cue": "throat",
+            "tag": "delta",
+            "forms": ["górlo"],
+            "note": "Throat — and here it is the SUBJECT of L2-M8's bolít. The part does the hurting; you are only its owner, named by u menyá at the front."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "No moyó anywhere. u menyá already says whose throat it is, and adding a possessive makes it sound like a case file.",
+      "sound": "u mi-NYA ba-LIT GOR-la. górlo is stressed on the first syllable, unlike almost everything else in this module.",
+      "variations": [
+        {
+          "display": "U menyá bolít golová",
+          "script": "У меня болит голова",
+          "cue": "I have a headache",
+          "changed": "a different part, still singular"
+        },
+        {
+          "display": "U nevó bolít górlo",
+          "script": "У него болит горло",
+          "cue": "His throat hurts",
+          "changed": "a different owner"
+        }
+      ],
+      "mistake": {
+        "display": "Ya bolít górlo",
+        "script": "Я болит горло",
+        "why": "ya cannot stand there: the throat is the subject and the verb agrees with it. The person goes into u menyá."
+      },
+      "usage": "The first line of any visit to a doctor.",
+      "register": "neutral",
+      "mnemonic": "At me — hurts — throat. The part comes last and does the work."
+    },
+    {
+      "id": "L3-M7-S02",
+      "display": "U menyá bolyát zúby",
+      "script": "У меня болят зубы",
+      "cue": "My teeth hurt",
+      "literal": "At me hurt teeth",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zúby",
+            "script": "зубы",
+            "cue": "teeth",
+            "tag": "delta",
+            "forms": ["zúby", "zub"],
+            "note": "Teeth, plural — so L2-M8's bolít becomes bolyát, agreeing with them and not with you. One tooth on its own is zub, and then the verb goes back to bolít."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "bolyát is not a new verb, it is the plural of the one L2-M8 taught. The number of the body part decides which you say.",
+      "sound": "u mi-NYA ba-LYAT ZU-by. bolít and bolyát differ only in that last vowel, and it carries the whole plural.",
+      "variations": [
+        {
+          "display": "U menyá bolít zub",
+          "script": "У меня болит зуб",
+          "cue": "I have toothache",
+          "changed": "one tooth, so the verb goes singular"
+        },
+        {
+          "display": "U neyó bolyát zúby",
+          "script": "У неё болят зубы",
+          "cue": "Her teeth hurt",
+          "changed": "a different owner"
+        }
+      ],
+      "mistake": {
+        "display": "U menyá bolít zúby",
+        "script": "У меня болит зубы",
+        "why": "Teeth are plural and the verb has to follow them: bolyát. The mistake is invisible in English, where \"hurt\" looks the same either way."
+      },
+      "usage": "Ringing a dentist, which is the sentence this module is really for.",
+      "register": "neutral",
+      "mnemonic": "One zub bolít, many zúby bolyát."
+    },
+    {
+      "id": "L3-M7-S03",
+      "display": "U menyá bolít golová uzhé dva dnya",
+      "script": "У меня болит голова уже два дня",
+      "cue": "I've had a headache for two days",
+      "literal": "At me hurts head already two of-day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dnya",
+            "script": "дня",
+            "cue": "days (counted after two, three, four)",
+            "tag": "delta",
+            "forms": ["dnya", "den'", "dney"],
+            "note": "The counted shape of den'. A stretch of time is bare — dva dnya, no preposition where English says \"for\". M8 gives this counting its rule; here it is one phrase to keep."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "There is no \"have been\" to build. bolít is an ordinary present, and uzhé is the whole of the English perfect.",
+      "sound": "u mi-NYA ba-LIT ga-la-VA u-ZHE dva DNYA. dnya is one syllable and takes the fall of the line.",
+      "variations": [
+        {
+          "display": "Bolít uzhé dva dnya",
+          "script": "Болит уже два дня",
+          "cue": "It's been hurting for two days",
+          "changed": "the part left out, as in speech"
+        },
+        {
+          "display": "U neyó bolít golová uzhé dva dnya",
+          "script": "У неё болит голова уже два дня",
+          "cue": "She's had a headache for two days",
+          "changed": "a different owner"
+        }
+      ],
+      "mistake": {
+        "display": "U menyá bolít golová za dva dnya",
+        "script": "У меня болит голова за два дня",
+        "why": "za is not \"for\" in this sense. Duration takes the bare accusative and nothing in front of it: uzhé dva dnya."
+      },
+      "usage": "Explaining that this is not new, which is what a doctor asks next.",
+      "register": "neutral",
+      "mnemonic": "uzhé plus a plain present — no perfect required."
+    },
+    {
+      "id": "L3-M7-S04",
+      "display": "Ya idú k vrachú",
+      "script": "Я иду к врачу",
+      "cue": "I'm going to the doctor",
+      "literal": "I go to doctor",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "k",
+            "script": "к",
+            "cue": "to (a person)",
+            "tag": "delta",
+            "forms": ["k", "ko"],
+            "note": "\"To\" for PEOPLE, and it takes the dative. Places keep v and na: k vrachú but v aptéku. Before some clusters it is said ko — ko mne, to my place."
+          },
+          {
+            "display": "vrachú",
+            "script": "врачу",
+            "cue": "to the doctor",
+            "tag": "delta",
+            "forms": ["vrachú"],
+            "note": "The dative of L2-M8's vrach — see that row for the word itself. Only the case is new here, and it is L2-M1's dative doing ordinary work."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "v vrachá is not a sentence. A person is never a destination with v: people take k plus the dative.",
+      "sound": "ya i-DU k vra-CHU. The k has no vowel of its own and leans onto the word after it.",
+      "variations": [
+        {
+          "display": "Mne nádo k vrachú",
+          "script": "Мне надо к врачу",
+          "cue": "I need to see a doctor",
+          "changed": "L2-M1's nádo, with the verb left out"
+        },
+        {
+          "display": "Ya idú k sestré",
+          "script": "Я иду к сестре",
+          "cue": "I'm going to my sister's",
+          "changed": "a different person"
+        }
+      ],
+      "mistake": {
+        "display": "Ya idú v vrachá",
+        "script": "Я иду в врача",
+        "why": "v is for places. To a person it is k plus the dative: k vrachú."
+      },
+      "usage": "Saying where you are off to, at work or at home.",
+      "register": "neutral",
+      "mnemonic": "k for people, v for places."
+    },
+    {
+      "id": "L3-M7-S05",
+      "display": "U menyá temperatúra",
+      "script": "У меня температура",
+      "cue": "I have a temperature",
+      "literal": "At me temperature",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "temperatúra",
+            "script": "температура",
+            "cue": "a temperature, a fever",
+            "tag": "delta",
+            "forms": ["temperatúra"],
+            "note": "A fever is something you HAVE, and the sentence needs no verb: u menyá temperatúra. In Russian the word alone already means a raised one."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "No yest' here. u menyá yest' answers whether the thing exists at all; a symptom is simply reported.",
+      "sound": "u mi-NYA tim-pi-ra-TU-ra. One stress, on the TU — the first three syllables run together.",
+      "variations": [
+        {
+          "display": "U neyó temperatúra",
+          "script": "У неё температура",
+          "cue": "She has a temperature",
+          "changed": "a different owner"
+        },
+        {
+          "display": "U menyá bylá temperatúra",
+          "script": "У меня была температура",
+          "cue": "I had a temperature",
+          "changed": "the past, agreeing with the symptom"
+        }
+      ],
+      "mistake": {
+        "display": "Ya iméyu temperatúru",
+        "script": "Я имею температуру",
+        "why": "The verb \"to have\" exists but almost nobody uses it of themselves. Health lives in u menyá."
+      },
+      "usage": "The line that keeps you at home for the day.",
+      "register": "neutral",
+      "mnemonic": "At me — a temperature. No verb needed."
+    },
+    {
+      "id": "L3-M7-S06",
+      "display": "U menyá káshel' i násmork",
+      "script": "У меня кашель и насморк",
+      "cue": "I have a cough and a runny nose",
+      "literal": "At me cough and head-cold",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "káshel'",
+            "script": "кашель",
+            "cue": "a cough",
+            "tag": "delta",
+            "forms": ["káshel'"],
+            "note": "A cough, and the stress is on the first syllable: KA-shel'. Like every symptom here it is simply had, not done — u menyá káshel'."
+          },
+          {
+            "display": "násmork",
+            "script": "насморк",
+            "cue": "a runny nose, a head cold",
+            "tag": "delta",
+            "forms": ["násmork"],
+            "note": "The blocked, running nose of an ordinary cold — one word where English needs three. Stress on the first syllable: NAS-mork."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "Both are singular nouns and neither takes an article or a verb. Two symptoms simply sit side by side with i.",
+      "sound": "u mi-NYA KA-shil i NAS-mark. Both words are front-heavy; the endings fall away to a soft a.",
+      "variations": [
+        {
+          "display": "U nevó káshel'",
+          "script": "У него кашель",
+          "cue": "He has a cough",
+          "changed": "one symptom, a different owner"
+        },
+        {
+          "display": "U menyá káshel' uzhé dva dnya",
+          "script": "У меня кашель уже два дня",
+          "cue": "I've had a cough for two days",
+          "changed": "how long it has gone on"
+        }
+      ],
+      "mistake": {
+        "display": "Ya káshel'",
+        "script": "Я кашель",
+        "why": "That says you ARE a cough. The frame is u menyá plus the symptom, and it never takes ya."
+      },
+      "usage": "The chemist's counter, and the message to your colleague.",
+      "register": "neutral",
+      "mnemonic": "KA-shel' and NAS-mork — both hit at the front."
+    },
+    {
+      "id": "L3-M7-S07",
+      "display": "Ya idú v aptéku",
+      "script": "Я иду в аптеку",
+      "cue": "I'm going to the chemist's",
+      "literal": "I go into chemist's",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aptéku",
+            "script": "аптеку",
+            "cue": "chemist's, pharmacy",
+            "tag": "delta",
+            "forms": ["aptéku", "aptéka", "aptéke"],
+            "note": "A place, so it keeps L2-M4's motion frame: v plus the accusative, aptéku. Standing in it is v aptéke, and the shop itself is aptéka."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "Set this against S04. Same verb, same trip, but a place takes v and a person takes k.",
+      "sound": "ya i-DU v ap-TYE-ku. The v is a single consonant glued to the front of aptéku.",
+      "variations": [
+        {
+          "display": "Aptéka zdes' ryádom",
+          "script": "Аптека здесь рядом",
+          "cue": "There's a chemist's right here",
+          "changed": "the plain naming form"
+        },
+        {
+          "display": "Ya idú v aptéku, potóm domóy",
+          "script": "Я иду в аптеку, потом домой",
+          "cue": "I'm going to the chemist's, then home",
+          "changed": "two stops in one line"
+        }
+      ],
+      "mistake": {
+        "display": "Ya idú k aptéke",
+        "script": "Я иду к аптеке",
+        "why": "k would mean you are heading towards the building to stand outside it. Going in is v aptéku."
+      },
+      "usage": "Everyday errands, said on the way out of the door.",
+      "register": "neutral",
+      "mnemonic": "k vrachú, v aptéku — the person and the place."
+    },
+    {
+      "id": "L3-M7-S08",
+      "display": "U menyá bolyát rúki i nógi",
+      "script": "У меня болят руки и ноги",
+      "cue": "My arms and legs ache",
+      "literal": "At me hurt arms and legs",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rúki",
+            "script": "руки",
+            "cue": "hands, arms",
+            "tag": "delta",
+            "forms": ["rúki", "ruká"],
+            "note": "One word for the whole limb, hand and arm together; nogá does the same for leg and foot. Plural subject, so the verb is bolyát again."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Russian does not split hand from arm or foot from leg. Which one is meant is left to the situation.",
+      "sound": "u mi-NYA ba-LYAT RU-ki i NO-gi. Both nouns move their stress to the front in the plural.",
+      "variations": [
+        {
+          "display": "U menyá bolít ruká",
+          "script": "У меня болит рука",
+          "cue": "My arm hurts",
+          "changed": "one limb, so bolít again"
+        },
+        {
+          "display": "U nevó bolyát nógi",
+          "script": "У него болят ноги",
+          "cue": "His legs ache",
+          "changed": "a different owner"
+        }
+      ],
+      "mistake": {
+        "display": "U menyá bolyát moí rúki",
+        "script": "У меня болят мои руки",
+        "why": "u menyá has already said they are yours. moí on top of it is one possessive too many."
+      },
+      "usage": "The end of a day of carrying things.",
+      "register": "neutral",
+      "mnemonic": "ruká alone, rúki together — and the stress jumps forward."
+    },
+    {
+      "id": "L3-M7-S09",
+      "display": "U menyá bolít spiná",
+      "script": "У меня болит спина",
+      "cue": "My back hurts",
+      "literal": "At me hurts back",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "spiná",
+            "script": "спина",
+            "cue": "back",
+            "tag": "delta",
+            "forms": ["spiná"],
+            "note": "Back, stressed on the ending like golová and ruká — the three commonest complaints in the language all stress their last syllable."
+          },
+          {
+            "display": "zhivót",
+            "script": "живот",
+            "cue": "stomach, belly",
+            "tag": "delta",
+            "forms": ["zhivót"],
+            "note": "The belly, not the organ: u menyá bolít zhivót is what a child says and what an adult says. Stress on the ending, as with spiná."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Still no possessive and still no ya. Every one of these sentences is built the same way.",
+      "sound": "u mi-NYA ba-LIT spi-NA. Four of the five syllables are unstressed and short.",
+      "variations": [
+        {
+          "display": "U menyá bolít zhivót",
+          "script": "У меня болит живот",
+          "cue": "My stomach hurts",
+          "changed": "a different part"
+        },
+        {
+          "display": "U neyó bolít spiná",
+          "script": "У неё болит спина",
+          "cue": "Her back hurts",
+          "changed": "a different owner"
+        }
+      ],
+      "mistake": {
+        "display": "Moyá spiná bolít",
+        "script": "Моя спина болит",
+        "why": "Grammatical, and it sounds like a line from a report. People say u menyá bolít spiná."
+      },
+      "usage": "What you tell a physiotherapist, and everyone else.",
+      "register": "neutral",
+      "mnemonic": "golová, ruká, spiná — the aches all stress the end."
+    },
+    {
+      "id": "L3-M7-S10",
+      "display": "Ya výpil tablétku, i mne stálo lúchshe",
+      "script": "Я выпил таблетку, и мне стало лучше",
+      "cue": "I took a tablet and felt better",
+      "literal": "I drank tablet, and to-me became better",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tablétku",
+            "script": "таблетку",
+            "cue": "a tablet, a pill",
+            "tag": "delta",
+            "forms": ["tablétku", "tablétka", "tablétki"],
+            "note": "Accusative after výpit' — Russians DRINK a tablet where English takes one. The plain form is tablétka and two or more are tablétki."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "\"I have taken a tablet\" has no separate form here. výpil is the only past there is, and it already means the job is done.",
+      "sound": "ya VY-pil tab-LYET-ku, i mnye STA-la LUCH-she. A short pause at the comma before i.",
+      "variations": [
+        {
+          "display": "Ya výpila tablétku",
+          "script": "Я выпила таблетку",
+          "cue": "I took a tablet",
+          "changed": "a woman saying it"
+        },
+        {
+          "display": "Oná výpila tablétku i poshlá na rabótu",
+          "script": "Она выпила таблетку и пошла на работу",
+          "cue": "She took a tablet and went to work",
+          "changed": "two finished steps in a row"
+        }
+      ],
+      "mistake": {
+        "display": "Ya vzyal tablétku i mne stálo lúchshe",
+        "script": "Я взял таблетку и мне стало лучше",
+        "why": "vzyal is taking it in your hand. Swallowing it is výpil, the same verb as drinking."
+      },
+      "usage": "Reporting that something worked, in one line.",
+      "register": "neutral",
+      "mnemonic": "You drink a tablet in Russian."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M7-C01",
+      "display": "U menyá bolít górlo",
+      "script": "У меня болит горло",
+      "cue": "My throat hurts"
+    },
+    {
+      "id": "L3-M7-C02",
+      "display": "U menyá bolyát zúby",
+      "script": "У меня болят зубы",
+      "cue": "My teeth hurt"
+    },
+    {
+      "id": "L3-M7-C03",
+      "display": "U menyá bolít golová uzhé dva dnya",
+      "script": "У меня болит голова уже два дня",
+      "cue": "I've had a headache for two days"
+    },
+    {
+      "id": "L3-M7-C04",
+      "display": "Ya idú k vrachú",
+      "script": "Я иду к врачу",
+      "cue": "I'm going to the doctor"
+    },
+    {
+      "id": "L3-M7-C05",
+      "display": "U menyá temperatúra",
+      "script": "У меня температура",
+      "cue": "I have a temperature"
+    },
+    {
+      "id": "L3-M7-C06",
+      "display": "U menyá káshel' i násmork",
+      "script": "У меня кашель и насморк",
+      "cue": "I have a cough and a runny nose"
+    },
+    {
+      "id": "L3-M7-C07",
+      "display": "Ya idú v aptéku",
+      "script": "Я иду в аптеку",
+      "cue": "I'm going to the chemist's"
+    },
+    {
+      "id": "L3-M7-C08",
+      "display": "U menyá bolyát rúki i nógi",
+      "script": "У меня болят руки и ноги",
+      "cue": "My arms and legs ache"
+    },
+    {
+      "id": "L3-M7-C09",
+      "display": "U menyá bolít spiná",
+      "script": "У меня болит спина",
+      "cue": "My back hurts"
+    },
+    {
+      "id": "L3-M7-C10",
+      "display": "Ya výpil tablétku, i mne stálo lúchshe",
+      "script": "Я выпил таблетку, и мне стало лучше",
+      "cue": "I took a tablet and felt better"
+    },
+    {
+      "id": "L3-M7-C11",
+      "display": "U menyá bolít zub uzhé dva dnya",
+      "script": "У меня болит зуб уже два дня",
+      "cue": "I've had toothache for two days"
+    },
+    {
+      "id": "L3-M7-C12",
+      "display": "Aptéka zdes' ryádom",
+      "script": "Аптека здесь рядом",
+      "cue": "There's a chemist's right here"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

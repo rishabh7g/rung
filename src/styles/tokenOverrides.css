@@ -55,7 +55,10 @@
      tools/font-subset.ts, declared in src/fonts/naskh.css. system-ui stays behind it: the range
      the subset does not claim (Latin letters, digits mid-sentence) still resolves the way it did
      before, and a device that somehow fails to load the face degrades to what it owns. */
-  --font-script-fallback: 'Noto Naskh Arabic', system-ui, sans-serif;
+  /* #375 adds Hangul behind it for en-ko's quiet line. Order is not preference — the two ranges
+     are disjoint, so each family draws only what its own unicode-range claims — except U+0020,
+     which Naskh claims on purpose and Noto Sans KR therefore does not. system-ui stays last. */
+  --font-script-fallback: 'Noto Naskh Arabic', 'Noto Sans KR', system-ui, sans-serif;
 
   /* The L2 face, with the romanization's diacritics finished (#222). Mukta stays FIRST and draws
      everything it can — including, since this ticket, the ā ī ū ḍ ḥ ṣ ṭ of its own latin-ext cut.

@@ -1,0 +1,608 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M9",
+  "title": "Festivals and everyday culture",
+  "job": "Talk about what is happening around you",
+  "prerequisites": ["L3-M8"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 4.5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "present — what happens every year, and what happens this week",
+      "present with the impersonal si, L3-M8's, describing what is done"
+    ],
+    "allowedPatterns": [
+      "È una festa che + <clause>",
+      "Le persone che + <clause> + V",
+      "Il + <ordinal> + <month>",
+      "A + <festival> + si + V",
+      "La domenica + V  /  Domenica + V"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "CHE IS THE RELATIVE PRONOUN, AND IT IS ONE WORD FOR ALL OF ENGLISH'S. who, which and that are all che; it does not care whether it stands for a person or a thing, nor whether that person is doing the verb or having it done to them. È una festa che mi piace · le persone che lavorano qui · il regalo che ho comprato. L1-M5 opened che for the reported clause and L3-M3 gave it the opinion job; this is the same word doing a third job, and it is the first job in the ladder that cannot be done without it."
+    },
+    {
+      "tag": "delta",
+      "text": "AFTER A PREPOSITION, CHE BECOMES CUI. la festa di cui parlo (\"the festival I am talking about\"), la persona con cui lavoro, il paese in cui vivo. English can bury the preposition at the end of the clause — \"the festival I am talking about\" — and Italian never can: the preposition goes in front, and che cannot follow it. That is the whole of the addition."
+    },
+    {
+      "tag": "interference",
+      "text": "THE ARTICLE IS THE TENSE. domenica on its own means THIS Sunday; la domenica means EVERY Sunday. Domenica vado a Roma against La domenica non lavoro. Spanish marks the same difference the same way, and English needs whole extra words — \"on Sunday\" against \"on Sundays\". The second half of the trap is that a bare day takes NO preposition at all in Italian: never a domenica, never in domenica."
+    },
+    {
+      "tag": "free",
+      "text": "A DATE IS IL PLUS THE PLAIN NUMBER PLUS THE MONTH: il quindici agosto, il venticinque dicembre. Only the first of the month takes an ordinal — il primo gennaio — and every other day is the cardinal you already know. Months and days of the week are written in LOWERCASE in Italian, which an English habit will capitalise every time."
+    },
+    {
+      "tag": "free",
+      "text": "L3-M8'S IMPERSONAL SI IS HOW A CUSTOM IS DESCRIBED, because a custom has no doer: a Natale si mangia il panettone, a Ferragosto si chiude tutto. Nothing new is opened here — it is M8's shape pointed at the calendar, which is what leaves room in this module for the months and the festivals themselves."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M9-S01",
+      "display": "È una festa che mi piace molto",
+      "cue": "It is a festival that I like a lot",
+      "literal": "It-is a festival that to-me it-pleases much",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "festa",
+            "cue": "festival, party",
+            "tag": "free",
+            "forms": ["festa", "feste"],
+            "note": "Feminine, and it covers both a public festival and a private party. fare festa is to celebrate; giorno di festa is a public holiday."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English can drop the relative word altogether — \"a festival I like a lot\" — and Italian cannot. The che is compulsory, however short the clause is.",
+      "sound": "e OO-na FES-ta ke mee PYA-che MOL-to. che is one syllable, k plus e, never ch as in church.",
+      "variations": [
+        {
+          "display": "Non è una festa che mi piace",
+          "cue": "It is not a festival that I like",
+          "changed": "negative"
+        },
+        {
+          "display": "È una festa che mi piace poco",
+          "cue": "It is a festival I do not much like",
+          "changed": "how much, using L1-M4's poco"
+        },
+        {
+          "display": "Sono feste che mi piacciono",
+          "cue": "They are festivals that I like",
+          "changed": "plural, so both verbs move"
+        }
+      ],
+      "mistake": {
+        "display": "È una festa mi piace molto",
+        "why": "Italian never drops the relative word: È una festa che mi piace molto."
+      },
+      "usage": "How you answer when somebody asks what a festival in your own country is like.",
+      "register": "neutral",
+      "mnemonic": "che is never optional in Italian."
+    },
+    {
+      "id": "L3-M9-S02",
+      "display": "Le persone che lavorano qui sono gentili",
+      "cue": "The people who work here are kind",
+      "literal": "The people that they-work here they-are kind",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "persone",
+            "cue": "people",
+            "tag": "free",
+            "forms": ["persona", "persone"],
+            "note": "Feminine and countable: due persone. L2-M10's gente means people as a mass and takes a singular verb, which persone never does."
+          },
+          {
+            "display": "lavorano",
+            "cue": "they work",
+            "tag": "free",
+            "forms": ["lavorano"],
+            "note": "The they-form of L1-M4's lavoro and lavora. The relative clause needs a plural verb here because le persone is plural."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English picks who for people and which for things. Italian does not choose: che covers both, and reaching for chi here would turn the sentence into a question.",
+      "sound": "le per-SO-ne ke la-VO-ra-no kwee SO-no jen-TEE-lee. lavorano is stressed on the VO, three syllables before the end.",
+      "variations": [
+        {
+          "display": "Le persone che lavorano qui sono poche",
+          "cue": "The people who work here are few",
+          "changed": "what is said about them"
+        },
+        {
+          "display": "La persona che lavora qui è gentile",
+          "cue": "The person who works here is kind",
+          "changed": "singular, so all three words move"
+        },
+        {
+          "display": "Le persone che vedo qui sono gentili",
+          "cue": "The people I see here are kind",
+          "changed": "che as the object of the clause instead of its subject"
+        }
+      ],
+      "mistake": {
+        "display": "Le persone chi lavorano qui sono gentili",
+        "why": "chi asks a question; the relative word is che: Le persone che lavorano qui sono gentili."
+      },
+      "usage": "An ordinary compliment about a workplace, a shop or a neighbourhood.",
+      "register": "neutral",
+      "mnemonic": "che for everybody and everything."
+    },
+    {
+      "id": "L3-M9-S03",
+      "display": "La festa di cui parlo è il quindici agosto",
+      "cue": "The festival I am talking about is on the fifteenth of August",
+      "literal": "The festival of which I-speak is the fifteen August",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cui",
+            "cue": "which, whom",
+            "tag": "delta",
+            "forms": ["cui"],
+            "note": "What che becomes after a preposition: di cui, con cui, in cui. It never stands alone and never starts a sentence."
+          },
+          {
+            "display": "agosto",
+            "cue": "August",
+            "tag": "free",
+            "forms": ["agosto"],
+            "note": "Lowercase, like every Italian month. The fifteenth of August is Ferragosto and most of the country stops for it."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "English puts the preposition at the end — \"the festival I'm talking about\" — and an Italian sentence built that way has nowhere to put the di. It goes in front of cui, always.",
+      "sound": "la FES-ta dee KOO-ee PAR-lo e eel KWEEN-dee-chee a-GOS-to. cui is two vowels run together, koo-ee.",
+      "variations": [
+        {
+          "display": "La persona con cui lavoro è gentile",
+          "cue": "The person I work with is kind",
+          "changed": "a different preposition in front of cui"
+        },
+        {
+          "display": "La festa di cui parlo è il primo gennaio",
+          "cue": "The festival I am talking about is on the first of January",
+          "changed": "the one date that takes an ordinal"
+        },
+        {
+          "display": "La festa che mi piace è il quindici agosto",
+          "cue": "The festival I like is on the fifteenth of August",
+          "changed": "no preposition, so che comes back"
+        }
+      ],
+      "mistake": {
+        "display": "La festa di che parlo è il quindici agosto",
+        "why": "che cannot follow a preposition: La festa di cui parlo è il quindici agosto."
+      },
+      "usage": "Said while explaining a festival to somebody who has never heard of it.",
+      "register": "neutral",
+      "mnemonic": "Preposition in front, and che turns into cui."
+    },
+    {
+      "id": "L3-M9-S04",
+      "display": "Il primo gennaio è Capodanno",
+      "cue": "The first of January is New Year's Day",
+      "literal": "The first January is New-Year",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gennaio",
+            "cue": "January",
+            "tag": "free",
+            "forms": ["gennaio"],
+            "note": "Lowercase. a gennaio and in gennaio both mean \"in January\" and both are said."
+          },
+          {
+            "display": "Capodanno",
+            "cue": "New Year's Day",
+            "tag": "free",
+            "forms": ["Capodanno"],
+            "note": "Literally \"head of the year\", written as one word and capitalised because it names a specific day."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "This is the single date in the month that takes an ordinal. il primo gennaio, but il due gennaio and il tre gennaio — never il secondo gennaio.",
+      "sound": "eel PREE-mo jen-NA-yo e ka-po-DAN-no. gennaio starts with a soft j and holds its double n.",
+      "variations": [
+        {
+          "display": "Il quindici agosto è Ferragosto",
+          "cue": "The fifteenth of August is Ferragosto",
+          "changed": "a plain number, because it is not the first"
+        },
+        {
+          "display": "A gennaio non c'è una festa",
+          "cue": "In January there is no festival",
+          "changed": "the month on its own, with no date"
+        },
+        {
+          "display": "Il primo gennaio non si lavora",
+          "cue": "Nobody works on the first of January",
+          "changed": "what is done, with M8's impersonal si"
+        }
+      ],
+      "mistake": {
+        "display": "Il Primo Gennaio è Capodanno",
+        "why": "Months are lowercase in Italian: Il primo gennaio è Capodanno."
+      },
+      "usage": "Explaining the calendar to somebody new, or checking a date out loud.",
+      "register": "neutral",
+      "mnemonic": "Only the first is an ordinal."
+    },
+    {
+      "id": "L3-M9-S05",
+      "display": "A Natale si mangia il panettone",
+      "cue": "At Christmas people eat panettone",
+      "literal": "At Christmas one-eats the panettone",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Natale",
+            "cue": "Christmas",
+            "tag": "free",
+            "forms": ["Natale"],
+            "note": "Capitalised, and it takes a: a Natale, the same little a as a Pasqua and a Ferragosto. Buon Natale is the greeting."
+          },
+          {
+            "display": "panettone",
+            "cue": "panettone",
+            "tag": "free",
+            "forms": ["panettone", "panettoni"],
+            "note": "The tall sweet bread of Christmas, masculine. Milan claims it; the argument with pandoro is annual and unresolved."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "English needs a subject — \"people eat\", \"we eat\", \"you eat\" — and a learner picks one, usually the wrong one. A custom has no doer, so Italian uses M8's si and names nobody.",
+      "sound": "a na-TA-le see MAN-ja eel pa-net-TO-ne. panettone holds its double t.",
+      "variations": [
+        {
+          "display": "A Pasqua si mangia bene",
+          "cue": "At Easter people eat well",
+          "changed": "a different festival"
+        },
+        {
+          "display": "A Natale non si lavora",
+          "cue": "Nobody works at Christmas",
+          "changed": "negative, and what is not done"
+        },
+        {
+          "display": "A casa mia si mangia il panettone",
+          "cue": "At my house we eat panettone",
+          "changed": "a place instead of a festival"
+        }
+      ],
+      "mistake": {
+        "display": "A Natale mangiamo il panettone tutti",
+        "why": "A custom takes the impersonal: A Natale si mangia il panettone."
+      },
+      "usage": "How anybody describes their own country's customs to a visitor.",
+      "register": "neutral",
+      "mnemonic": "A custom has no doer, so it takes si."
+    },
+    {
+      "id": "L3-M9-S06",
+      "display": "A Ferragosto si chiude tutto",
+      "cue": "At Ferragosto everything closes",
+      "literal": "At Ferragosto one-closes everything",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Ferragosto",
+            "cue": "Ferragosto",
+            "tag": "free",
+            "forms": ["Ferragosto"],
+            "note": "The fifteenth of August, and the day the country stops. Shops, offices and whole towns close, which is why it is worth a sentence of its own."
+          },
+          {
+            "display": "si chiude",
+            "cue": "closes, is closed",
+            "tag": "free",
+            "forms": ["si chiude", "si chiudono"],
+            "note": "M8's impersonal si on chiudere. One thing, si chiude; several things, si chiudono, exactly as with si vende and si vendono."
+          },
+          {
+            "display": "tutto",
+            "cue": "everything",
+            "tag": "free",
+            "forms": ["tutto"],
+            "note": "Everything, as one mass. It stays singular here, which is why the verb beside it does too."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "tutto counts as one thing, so the verb is singular — si chiude, not si chiudono. English \"everything closes\" happens to agree, but \"all the shops close\" does not, and that is where the plural is needed.",
+      "sound": "a fer-ra-GOS-to see KYOO-de TOOT-to. chiude begins with a hard k sound.",
+      "variations": [
+        {
+          "display": "A Ferragosto si chiudono le farmacie",
+          "cue": "At Ferragosto the pharmacies close",
+          "changed": "a plural thing, so the verb goes plural"
+        },
+        {
+          "display": "A Natale si chiude tutto",
+          "cue": "At Christmas everything closes",
+          "changed": "a different festival"
+        },
+        {
+          "display": "La domenica si chiude tutto",
+          "cue": "On Sundays everything closes",
+          "changed": "every Sunday instead of a festival"
+        }
+      ],
+      "mistake": {
+        "display": "A Ferragosto si chiudono tutto",
+        "why": "tutto is singular: A Ferragosto si chiude tutto."
+      },
+      "usage": "The single most useful warning you can give a visitor arriving in mid-August.",
+      "register": "neutral",
+      "mnemonic": "tutto is one thing, however much it contains."
+    },
+    {
+      "id": "L3-M9-S07",
+      "display": "La domenica non lavoro, ma domenica vado a Roma",
+      "cue": "On Sundays I do not work, but this Sunday I am going to Rome",
+      "literal": "The Sunday not I-work, but Sunday I-go to Rome",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "la domenica",
+            "cue": "on Sundays, every Sunday",
+            "tag": "interference",
+            "forms": ["la domenica"],
+            "note": "The article makes it habitual. Bare domenica, L2-M6's word, means this coming Sunday. L1-M4's il lunedì and il sabato work the same way."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "English marks the difference with a plural and a preposition — \"on Sundays\" against \"on Sunday\" — and Italian marks it with one three-letter article. There is no preposition in either half.",
+      "sound": "la do-ME-nee-ka non la-VO-ro, ma do-ME-nee-ka VA-do a RO-ma. The two domenica sound identical; only the la separates them.",
+      "variations": [
+        {
+          "display": "La domenica non si lavora",
+          "cue": "Nobody works on Sundays",
+          "changed": "the impersonal, so nobody is named"
+        },
+        {
+          "display": "Domenica vado a Roma",
+          "cue": "This Sunday I am going to Rome",
+          "changed": "only the one-off half"
+        },
+        {
+          "display": "La domenica mangiamo a casa",
+          "cue": "On Sundays we eat at home",
+          "changed": "a habit with a plural subject"
+        }
+      ],
+      "mistake": {
+        "display": "In domenica non lavoro",
+        "why": "A day of the week takes no preposition in Italian: La domenica non lavoro."
+      },
+      "usage": "The sentence that sorts out a diary — habit first, then the exception.",
+      "register": "neutral",
+      "mnemonic": "la = every; bare = this one."
+    },
+    {
+      "id": "L3-M9-S08",
+      "display": "Il mio compleanno è il quindici dicembre",
+      "cue": "My birthday is on the fifteenth of December",
+      "literal": "The my birthday is the fifteen December",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "compleanno",
+            "cue": "birthday",
+            "tag": "free",
+            "forms": ["compleanno", "compleanni"],
+            "note": "Masculine, and it keeps its article after the possessive: il mio compleanno. Buon compleanno is the greeting."
+          },
+          {
+            "display": "dicembre",
+            "cue": "December",
+            "tag": "free",
+            "forms": ["dicembre"],
+            "note": "Lowercase. The months ending in -bre are settembre, ottobre, novembre and dicembre, all stressed on the syllable before the ending."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "Italian keeps the article in front of the possessive — il mio compleanno — where English drops it. This is L2-M2's law, and a birthday is where a learner most often forgets it.",
+      "sound": "eel MEE-o kom-ple-AN-no e eel KWEEN-dee-chee dee-CHEM-bre. compleanno holds its double n.",
+      "variations": [
+        {
+          "display": "Il mio compleanno è a dicembre",
+          "cue": "My birthday is in December",
+          "changed": "the month only, with no date"
+        },
+        {
+          "display": "Il suo compleanno è il primo gennaio",
+          "cue": "His birthday is on the first of January",
+          "changed": "somebody else, and the ordinal date"
+        },
+        {
+          "display": "A Natale è anche il mio compleanno",
+          "cue": "My birthday is at Christmas too",
+          "changed": "the date given as a festival instead"
+        }
+      ],
+      "mistake": {
+        "display": "Mio compleanno è il quindici dicembre",
+        "why": "The article stays in front of the possessive: Il mio compleanno è il quindici dicembre."
+      },
+      "usage": "Asked and answered constantly, and the easiest date in the language to practise.",
+      "register": "neutral",
+      "mnemonic": "il mio, not mio."
+    },
+    {
+      "id": "L3-M9-S09",
+      "display": "In agosto c'è una sagra nel mio paese",
+      "cue": "In August there is a food festival in my village",
+      "literal": "In August there-is a food-festival in-the my village",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sagra",
+            "cue": "food festival",
+            "tag": "free",
+            "forms": ["sagra", "sagre"],
+            "note": "A village festival built around one food — la sagra del pesce, la sagra della porchetta. It is not a festa and there is no English word for it."
+          },
+          {
+            "display": "paese",
+            "cue": "village, country",
+            "tag": "free",
+            "forms": ["paese", "paesi"],
+            "note": "Two meanings in one word: the small town you are from, and the country as a whole. Context decides, and a sagra always means the first."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "sagra and festa are not interchangeable. A sagra is small, local and about eating one particular thing, and calling Ferragosto a sagra would puzzle anybody.",
+      "sound": "een a-GOS-to che OO-na SA-gra nel MEE-o pa-E-ze. paese is three syllables, stressed on the E.",
+      "variations": [
+        {
+          "display": "A Natale c'è una festa nel mio paese",
+          "cue": "At Christmas there is a festival in my village",
+          "changed": "a festival instead of a sagra"
+        },
+        {
+          "display": "In agosto ci sono due sagre",
+          "cue": "In August there are two food festivals",
+          "changed": "plural, so c'è becomes ci sono"
+        },
+        {
+          "display": "La sagra di cui parlo è in agosto",
+          "cue": "The food festival I am talking about is in August",
+          "changed": "introduced with cui"
+        }
+      ],
+      "mistake": {
+        "display": "In agosto c'è una festa nel mio paese di cibo",
+        "why": "Italian has a single word for it: In agosto c'è una sagra nel mio paese."
+      },
+      "usage": "How anybody from a small Italian town describes their summer.",
+      "register": "neutral",
+      "mnemonic": "A sagra is a festival with a menu."
+    },
+    {
+      "id": "L3-M9-S10",
+      "display": "Chi lavora a Pasqua non fa festa",
+      "cue": "Whoever works at Easter does not celebrate",
+      "literal": "Who works at Easter not makes festival",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chi",
+            "cue": "who, whoever",
+            "tag": "delta",
+            "forms": ["chi"],
+            "note": "Two jobs: the question word (chi è?) and \"whoever\", standing on its own with no noun in front. It is never the relative che."
+          },
+          {
+            "display": "Pasqua",
+            "cue": "Easter",
+            "tag": "free",
+            "forms": ["Pasqua"],
+            "note": "Capitalised, and it takes a: a Pasqua. The Monday after it is Pasquetta, and most of the country spends it outdoors."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "chi and che are the pair this module keeps apart. chi carries its own noun inside it — \"the person who\" — while che needs one in front: le persone che lavorano.",
+      "sound": "kee la-VO-ra a PAS-kwa non fa FES-ta. chi is kee, with a hard k.",
+      "variations": [
+        {
+          "display": "Chi lavora a Natale non fa festa",
+          "cue": "Whoever works at Christmas does not celebrate",
+          "changed": "a different festival"
+        },
+        {
+          "display": "Chi è quella persona?",
+          "cue": "Who is that person?",
+          "changed": "chi doing its question job"
+        },
+        {
+          "display": "Le persone che lavorano a Pasqua sono poche",
+          "cue": "Few people work at Easter",
+          "changed": "che with a noun in front of it, instead of chi"
+        }
+      ],
+      "mistake": {
+        "display": "Che lavora a Pasqua non fa festa",
+        "why": "che needs a noun in front of it; standing alone the word is chi: Chi lavora a Pasqua non fa festa."
+      },
+      "usage": "A dry observation about working over a holiday — said with sympathy, usually.",
+      "register": "neutral",
+      "mnemonic": "chi already contains its noun; che needs one."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M9-C01",
+      "display": "È una festa che mi piace molto",
+      "cue": "It is a festival that I like a lot"
+    },
+    {
+      "id": "L3-M9-C02",
+      "display": "Le persone che lavorano qui sono gentili",
+      "cue": "The people who work here are kind"
+    },
+    {
+      "id": "L3-M9-C03",
+      "display": "La festa di cui parlo è il quindici agosto",
+      "cue": "The festival I am talking about is on the fifteenth of August"
+    },
+    {
+      "id": "L3-M9-C04",
+      "display": "Il primo gennaio è Capodanno",
+      "cue": "The first of January is New Year's Day"
+    },
+    {
+      "id": "L3-M9-C05",
+      "display": "A Natale si mangia il panettone",
+      "cue": "At Christmas people eat panettone"
+    },
+    {
+      "id": "L3-M9-C06",
+      "display": "A Ferragosto si chiude tutto",
+      "cue": "At Ferragosto everything closes"
+    },
+    { "id": "L3-M9-C07", "display": "La domenica non lavoro", "cue": "On Sundays I do not work" },
+    {
+      "id": "L3-M9-C08",
+      "display": "Il mio compleanno è il quindici dicembre",
+      "cue": "My birthday is on the fifteenth of December"
+    },
+    {
+      "id": "L3-M9-C09",
+      "display": "In agosto c'è una sagra nel mio paese",
+      "cue": "In August there is a food festival in my village"
+    },
+    {
+      "id": "L3-M9-C10",
+      "display": "Chi lavora a Pasqua non fa festa",
+      "cue": "Whoever works at Easter does not celebrate"
+    },
+    { "id": "L3-M9-C11", "display": "Domenica vado a Roma", "cue": "This Sunday I am going to Rome" },
+    {
+      "id": "L3-M9-C12",
+      "display": "La persona con cui lavoro è gentile",
+      "cue": "The person I work with is kind"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

@@ -1,0 +1,32 @@
+/**
+ * Noto Sans KR, subset per course (#375) — the `@font-face` block for the file
+ * `tools/font-subset.ts` generates into `./generated/` from the content build's output (run
+ * `npm run fonts:build`; `predev`/`prebuild` both chain it after `content:build`).
+ *
+ * Why a fourth bundled face: en-ko is romanized, so its `display` line is ASCII and needs no face
+ * at all (#373). What needs one is the quiet `script` line underneath it, which is Hangul — and
+ * before this face nothing in the tree could paint it. On a phone the device usually owns a Korean
+ * face and the line rendered from that; on a stripped Linux, and on the Pi that builds this repo,
+ * it was tofu. #375 chose to bundle rather than record another honest defect, because the harvest
+ * makes it cheap: en-ko's 294 authored syllables cut to ~20 KiB out of a 529 KiB source.
+ *
+ * The face is SIL OFL 1.1 (`node_modules/@fontsource/noto-sans-kr/LICENSE`), which permits
+ * bundling and redistribution — the same licence and the same terms as Naskh's.
+ *
+ * ONE weight, 400: all five `.script` rules are `font: var(--text-body)` with the family swapped,
+ * and `src/fonts.test.ts` derives that pairing from the tokens rather than trusting this comment.
+ *
+ * The `unicode-range` is the syllable block plus both Jamo blocks and CJK punctuation. It does NOT
+ * claim U+0020: Naskh claims the space so Arabic word gaps come from the Arabic face, both
+ * families sit in the same `--font-script-fallback` stack, and only one of them can own it.
+ */
+
+/* noto-sans-kr-korean-400 */
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./generated/noto-sans-kr-korean-400.woff2') format('woff2');
+  unicode-range: U+1100-11FF, U+3000-303F, U+3130-318F, U+A960-A97F, U+AC00-D7FF;
+}

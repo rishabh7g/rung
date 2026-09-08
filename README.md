@@ -185,6 +185,34 @@ refusal scripts (M5), the -ऊ या suggestion frame (M6), the spoken continuo
 त्याने/तिने/त्यांनी that L1-M5 fenced off, in four-sentence accounts (M10). **The native gate is
 still unmet**: docs/49 ends in open questions 49–70, which now stand beside the L1 chain's own.
 
+**All nine courses reach three levels (#471–#487, #544–#558, 2026-09-08) — 270 modules, and the
+ladder is level with itself for the first time since en-es started.** The eight courses behind
+hi-mr each authored `L3-M1`…`L3-M10`, _Fluency_, against their own briefs (#462–#469, decisions in
+`docs/69`–`docs/76`) in three waves — M1–M2, M3–M5, M6–M10 — run as eight or nine parallel
+worktrees, one per course, each owning only `content/<course>/modules/`. Every module ships
+`verified: true` with its signature and its review section in the same change
+(`docs/77`–`docs/84`). A strict `npm run build` emits **30 modules on every course**, and all nine
+shown-surface baselines held: hi-mr 7, en-es 10, en-ar 6, hi-en 30, en-ru 20, en-it 17, en-fr 20,
+en-de 11, en-ko 12 — none raised.
+
+Three things the waves found that were nobody's charter:
+
+- **A key two rows of ONE module both open.** First occurrence wins, so the second row's note is
+  unreachable — a learner tapping the word is shown the other one. en-de hit it on `Antworten`,
+  the plural of `die Antwort`, which folds to exactly the infinitive `antworten`, and only en-de's
+  one-owner assertion caught it. `tools/check-shown.ts` now checks it for all nine and distinguishes
+  the defect (two notes on one key) from the deliberate repeat (one note, both rows). Sweeping the
+  shipped content with it found two in en-es L3-M1 and **31 in hi-mr L3**.
+- **Seven of nine courses were hiding finished content.** `hasContent: false` was left behind on
+  hi-mr's whole L2 *and* L3, on en-es's L2, and on four more courses' L2 — twenty modules on the
+  flagship. The flag now follows the file, and a level whose ten modules all exist has its draft
+  flag cleared.
+- **A brief is wrong about the index more often than not.** Every wave's review doc carries a seam
+  section: `yemú`/`yey` had no owner in en-ru at all, `s'il` was already inside en-fr's
+  `s'il te plaît` with a note that taught the elision, `be` had no owner anywhere in hi-en, and
+  en-ko's `joji anayo` is not how 좋지 is said. The emitted index wins over the brief, always, and
+  the correction is recorded rather than absorbed.
+
 **hi-mr reaches three levels (#452, #461, #470, #479, 2026-09-07) — the first L3 anywhere.** All
 ten L3 rungs — `L3-M1`…`L3-M10`, _Fluency_ — are authored against the briefs of #452
 (`docs/50-hi-mr-L3-brief-decisions.md`, the first level in this repo planned against a verified
@@ -1038,15 +1066,26 @@ copula is joined to its host by a hyphen and the host keeps its isolation shape 
 Without it, an agglutinative language would have left `chaek` ("book") with no row a learner could
 ever tap.
 
-**The honest defect, found before authoring rather than after (#375): the quiet Hangul `script`
-line renders from a system font.** `@fontsource/noto-sans-kr` splits Korean across ~120 numbered
-range files per weight and `tools/font-subset.ts` is built on one source file per target, so
-bundling a Hangul cut is a pipeline change and not a target addition. It was not made. Measured on
-the shipped build: the course's `script` fields carry **126 distinct Hangul syllables** and
-**0 of 126** appear in any generated cut, so `--font-script-fallback` falls through to `system-ui`.
-On a phone that is a real Korean face; on a stripped Linux it is tofu. This is the same shape of
-defect en-ar has carried since #202, with the difference that it was measured and recorded before
-the first module was written.
+**The quiet Hangul `script` line is drawn by a bundled face (#375, 2026-09-08) — and for eight
+days it was not.** The defect was recorded before authoring rather than discovered after: the
+course's `script` fields carried 126 distinct Hangul syllables, **0 of 126** appeared in any
+generated cut, and `--font-script-fallback` fell through to `system-ui` — a real Korean face on a
+phone, tofu on a stripped Linux. It was recorded because `@fontsource/noto-sans-kr` splits Korean
+across ~120 numbered range files per weight and `tools/font-subset.ts` reads one source file per
+target, so a Hangul cut looked like a pipeline change.
+
+That premise was wrong, and #375 says in terms that a drifted premise changes the answer. The same
+package **also** ships `files/noto-sans-kr-korean-<weight>-normal.woff2`, the whole-Korean file, at
+all nine weights, so the existing naming holds with no special case: 529 KiB in, en-ko's **294**
+authored syllables out at **20 KiB**, the same order as the Arabic cut. `docs/34` §10 carries the
+decision; §8 is kept, marked superseded, because its reasoning from its premise was sound. Nothing
+in the content changed — the data was always right.
+
+`tools/font-coverage.test.ts` is what stops the next one: it reads the **cmap** of every generated
+cut and fails on a harvested character that a target claims and no bundled file can draw. Writing
+it turned up a second, quieter case of the same family — en-fr's `sœur`, whose U+0153 was claimed
+by Mukta's `latin-ext` target while living in @fontsource's `latin` **file**, so it too was drawn
+by nobody (#382).
 
 Budget, reported and not gated — `COURSE_LIMIT` has not existed in `tools/payload-budget.ts` since
 #304, and `npm run budget` fails only on attribution (`unmetered` must hold zero files) and the

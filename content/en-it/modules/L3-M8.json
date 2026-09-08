@@ -1,0 +1,620 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M8",
+  "title": "Money and paperwork",
+  "job": "Rent, bills, forms, offices",
+  "prerequisites": ["L3-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 4.5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "present — the tense of every sign and every counter",
+      "present with a modal plus a bare infinitive — devo, posso, bisogna"
+    ],
+    "allowedPatterns": [
+      "Si + V-3sg + <complement>",
+      "Bisogna + V-inf",
+      "Devo pagare + <N> + entro + <date>",
+      "Dove si firma + ?",
+      "Mi serve + <N>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "IMPERSONAL SI SAYS A THING IS DONE WITHOUT SAYING WHO DOES IT, and it is printed on every sign in the country: qui si paga in contanti, non si può fumare, dove si firma? L2-M4 opened this si for the street sense and this module simply spends it at length. English has no single equivalent and swaps between \"you\", \"one\" and a passive; Italian uses the same little word for all three."
+    },
+    {
+      "tag": "interference",
+      "text": "WITH A PLURAL OBJECT THE SI VERB GOES PLURAL TOO: qui si vendono i biglietti, not qui si vende i biglietti. No English sentence gives any warning of this, because \"tickets are sold here\" hides the agreement inside a passive. The rule is mechanical — count the thing after the verb, and match it."
+    },
+    {
+      "tag": "delta",
+      "text": "BISOGNA IS AN OBLIGATION WITH NOBODY IN IT, and it takes a bare infinitive: bisogna firmare, bisogna pagare. It never conjugates and never takes a subject — there is no io bisogno. Where devo says that I must, bisogna says that it must be done, which is exactly what a form or an official tells you."
+    },
+    {
+      "tag": "delta",
+      "text": "MI SERVE RUNS BACKWARDS, LIKE MI PIACE: the thing needed is the subject and you are the mi. mi serve un documento for one, mi servono due documenti for two. L3-M6's mi dà fastidio has the same shape and L1-M1's mi piace started the family, so this is a third member rather than a new law."
+    },
+    {
+      "tag": "free",
+      "text": "THE PAPERWORK WORDS ARE WHAT IS PRINTED, not what a textbook prefers: affitto, bolletta, ricevuta, modulo, scadenza, bonifico, documento, codice fiscale. codice fiscale is the Italian tax number and it is asked for at a bank, a phone shop and a doctor's alike — there is no way to live a month in Italy without saying it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M8-S01",
+      "display": "Qui si paga in contanti",
+      "cue": "You pay in cash here",
+      "literal": "Here one-pays in cash",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "si paga",
+            "cue": "one pays",
+            "tag": "delta",
+            "forms": ["si paga"],
+            "note": "L2-M4's si, doing the impersonal job at length. Nobody is named: it is the sentence a sign uses, and the sentence you use back."
+          },
+          {
+            "display": "contanti",
+            "cue": "cash",
+            "tag": "free",
+            "forms": ["contanti"],
+            "note": "Always plural, always after in: in contanti. There is no singular contante in this sense."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English chooses between \"you pay\", \"one pays\" and \"payment is taken\", and picks a different one depending on how formal it wants to sound. Italian has one shape for all three, so there is nothing to choose.",
+      "sound": "kwee see PA-ga een kon-TAN-tee. si paga runs together; the g in paga is hard.",
+      "variations": [
+        {
+          "display": "Dove si paga?",
+          "cue": "Where do you pay?",
+          "changed": "asked as a question"
+        },
+        {
+          "display": "Non si paga qui",
+          "cue": "You do not pay here",
+          "changed": "negative"
+        },
+        {
+          "display": "Qui si paga con un bonifico",
+          "cue": "You pay by bank transfer here",
+          "changed": "a different way of paying"
+        }
+      ],
+      "mistake": {
+        "display": "Qui paghi in contanti",
+        "why": "That tells one particular person what they do. A sign speaks to nobody: Qui si paga in contanti."
+      },
+      "usage": "Read off a sign far more often than said, but saying it back is how you check.",
+      "register": "neutral",
+      "mnemonic": "si = it is done, by nobody in particular."
+    },
+    {
+      "id": "L3-M8-S02",
+      "display": "Non si può fumare in ufficio",
+      "cue": "You cannot smoke in the office",
+      "literal": "Not one-can to-smoke in office",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "si può",
+            "cue": "one can",
+            "tag": "delta",
+            "forms": ["si può"],
+            "note": "The impersonal of L2-M1's posso. It takes a bare infinitive after it, and non si può is how every prohibition in Italy is written."
+          },
+          {
+            "display": "fumare",
+            "cue": "to smoke",
+            "tag": "free",
+            "forms": ["fumare", "fumo"],
+            "note": "A regular -are verb. After si può it stays in the infinitive, exactly as it does after posso."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "The English sign says \"no smoking\" with no verb of permission at all. Translating that shape word for word produces non fumare, which is an order to one person rather than a rule of the building.",
+      "sound": "non see pwo fu-MA-re een uf-FEE-cho. può is one syllable, and the accent marks the stress.",
+      "variations": [
+        {
+          "display": "Qui non si può fumare",
+          "cue": "You cannot smoke here",
+          "changed": "where, moved to the front"
+        },
+        {
+          "display": "Si può fumare qui?",
+          "cue": "Can you smoke here?",
+          "changed": "asked as a question"
+        },
+        {
+          "display": "Non si può pagare in contanti",
+          "cue": "You cannot pay in cash",
+          "changed": "a different ban"
+        }
+      ],
+      "mistake": {
+        "display": "Non si può fuma in ufficio",
+        "why": "si può always takes the infinitive: Non si può fumare in ufficio."
+      },
+      "usage": "The exact wording on the sign, which makes it the exact wording to quote back.",
+      "register": "neutral",
+      "mnemonic": "si può + infinitive, every time."
+    },
+    {
+      "id": "L3-M8-S03",
+      "display": "Qui si vendono i biglietti",
+      "cue": "Tickets are sold here",
+      "literal": "Here one-sells the tickets",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "si vendono",
+            "cue": "are sold",
+            "tag": "interference",
+            "forms": ["si vendono", "si vende"],
+            "note": "Plural object, plural verb. One thing: qui si vende il pane. Two things: qui si vendono i biglietti. The verb counts what comes after it."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "The English passive hides the agreement completely — \"tickets are sold here\" gives no hint that an Italian verb has to move. This is the module's one purely mechanical rule, and the one most often got wrong.",
+      "sound": "kwee see VEN-do-no ee bee-LYET-tee. vendono is stressed on the VEN, well before the ending.",
+      "variations": [
+        {
+          "display": "Qui si vende il pane",
+          "cue": "Bread is sold here",
+          "changed": "one thing, so the verb goes singular"
+        },
+        {
+          "display": "Non si vendono biglietti qui",
+          "cue": "Tickets are not sold here",
+          "changed": "negative, and no article"
+        },
+        {
+          "display": "Dove si vendono i biglietti?",
+          "cue": "Where are tickets sold?",
+          "changed": "asked as a question"
+        }
+      ],
+      "mistake": {
+        "display": "Qui si vende i biglietti",
+        "why": "Plural tickets take a plural verb: Qui si vendono i biglietti."
+      },
+      "usage": "Asked at a station or a tobacconist, and read off the window of both.",
+      "register": "neutral",
+      "mnemonic": "Count what comes after the verb."
+    },
+    {
+      "id": "L3-M8-S04",
+      "display": "Dove si firma? Qui manca la firma",
+      "cue": "Where do I sign? The signature is missing here",
+      "literal": "Where one-signs? Here it-lacks the signature",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "si firma",
+            "cue": "one signs",
+            "tag": "delta",
+            "forms": ["si firma"],
+            "note": "The question you ask at every counter in Italy. Impersonal, so it asks where signing happens rather than what you personally should do."
+          },
+          {
+            "display": "firma",
+            "cue": "signature",
+            "tag": "free",
+            "forms": ["firma", "firme"],
+            "note": "The noun on the paper, feminine: la firma. Spelt exactly like the verb form in si firma, which is why the two live in separate rows here."
+          },
+          {
+            "display": "manca",
+            "cue": "is missing",
+            "tag": "delta",
+            "forms": ["manca", "mancano"],
+            "note": "Backwards like mi serve: the missing thing is the subject. manca la firma for one, mancano due documenti for two."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "English asks \"where do I sign?\" with a person in it and Italian asks with nobody in it. Dove firmo? is understood but sounds like a man asking about his own hand rather than about the form.",
+      "sound": "DO-ve see FEER-ma? kwee MAN-ka la FEER-ma. The two firma are pronounced identically.",
+      "variations": [
+        {
+          "display": "Dove si firma il modulo?",
+          "cue": "Where do I sign the form?",
+          "changed": "what is being signed"
+        },
+        {
+          "display": "Scusi, firmi qui",
+          "cue": "Excuse me, sign here",
+          "changed": "the clerk speaking, with L2-M1's polite imperative"
+        },
+        {
+          "display": "Mancano due firme",
+          "cue": "Two signatures are missing",
+          "changed": "plural, so the verb goes plural"
+        }
+      ],
+      "mistake": {
+        "display": "Qui manca il firma",
+        "why": "The noun is feminine: Qui manca la firma."
+      },
+      "usage": "The two sentences a counter exchange is actually made of, in the order they happen.",
+      "register": "formal",
+      "mnemonic": "si firma is the act; la firma is the ink."
+    },
+    {
+      "id": "L3-M8-S05",
+      "display": "Bisogna firmare i documenti e il modulo",
+      "cue": "The documents and the form have to be signed",
+      "literal": "It-is-needed to-sign the documents and the form",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bisogna",
+            "cue": "it is necessary to",
+            "tag": "delta",
+            "forms": ["bisogna"],
+            "note": "One frozen form, no subject, always followed by an infinitive. There is no io bisogno — for that you want devo."
+          },
+          {
+            "display": "firmare",
+            "cue": "to sign",
+            "tag": "free",
+            "forms": ["firmare", "firmi", "firmo"],
+            "note": "A regular -are verb. firmi is the polite imperative a clerk says to you, from L2-M1's scusi and senta family."
+          },
+          {
+            "display": "documenti",
+            "cue": "documents",
+            "tag": "free",
+            "forms": ["documento", "documenti"],
+            "note": "Masculine. In the plural it also means your identity papers: mi favorisca i documenti is what a police officer says."
+          },
+          {
+            "display": "modulo",
+            "cue": "form",
+            "tag": "free",
+            "forms": ["modulo", "moduli"],
+            "note": "The sheet you fill in, masculine. compilare un modulo is the verb that goes with it on the printed instruction."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "bisogna cannot take a person. Bisogno firmare is not a softer version of the sentence — it is not Italian at all, because bisogno is the noun \"need\".",
+      "sound": "bee-ZO-nya feer-MA-re ee do-koo-MEN-tee. The gn in bisogna is the ny of canyon.",
+      "variations": [
+        {
+          "display": "Bisogna pagare entro venerdì",
+          "cue": "It has to be paid by Friday",
+          "changed": "a different obligation, with a deadline"
+        },
+        {
+          "display": "Non bisogna firmare adesso",
+          "cue": "There is no need to sign now",
+          "changed": "negative, with M6's adesso"
+        },
+        {
+          "display": "Devo firmare i documenti",
+          "cue": "I have to sign the documents",
+          "changed": "a person put back in, so devo replaces bisogna"
+        }
+      ],
+      "mistake": {
+        "display": "Bisogno firmare i documenti",
+        "why": "bisogno is a noun. The obligation word is bisogna: Bisogna firmare i documenti."
+      },
+      "usage": "What an official says about the paperwork, and what you repeat to make sure you heard it.",
+      "register": "formal",
+      "mnemonic": "bisogna has no subject and never changes."
+    },
+    {
+      "id": "L3-M8-S06",
+      "display": "Mi serve il codice fiscale",
+      "cue": "I need the tax code",
+      "literal": "To-me it-serves the tax code",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mi serve",
+            "cue": "I need",
+            "tag": "delta",
+            "forms": ["mi serve", "ti serve", "le serve"],
+            "note": "Backwards like mi piace: the thing needed is the subject, so the verb agrees with it and never with you."
+          },
+          {
+            "display": "codice fiscale",
+            "cue": "tax code",
+            "tag": "free",
+            "forms": ["codice fiscale"],
+            "note": "The Italian tax number, asked for at banks, phone shops and doctors alike. Two words, always together, always masculine."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "The English sentence puts you first and the thing second, and Italian does the reverse behind the scenes: the mi is not a subject. Io servo il codice fiscale says you serve the tax code.",
+      "sound": "mee SER-ve eel KO-dee-che fees-KA-le. codice is stressed on the first syllable.",
+      "variations": [
+        {
+          "display": "Mi serve un documento",
+          "cue": "I need a document",
+          "changed": "a different thing needed"
+        },
+        {
+          "display": "Le serve il codice fiscale?",
+          "cue": "Do you need the tax code?",
+          "changed": "asked politely of the person at the counter"
+        },
+        {
+          "display": "Non mi serve la ricevuta",
+          "cue": "I do not need the receipt",
+          "changed": "negative"
+        }
+      ],
+      "mistake": {
+        "display": "Io servo il codice fiscale",
+        "why": "The thing needed is the subject: Mi serve il codice fiscale."
+      },
+      "usage": "The sentence that opens almost every piece of Italian bureaucracy.",
+      "register": "formal",
+      "mnemonic": "The thing serves you, not the other way round."
+    },
+    {
+      "id": "L3-M8-S07",
+      "display": "Mi servono la ricevuta e il modulo",
+      "cue": "I need the receipt and the form",
+      "literal": "To-me they-serve the receipt and the form",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mi servono",
+            "cue": "I need (plural)",
+            "tag": "delta",
+            "forms": ["mi servono", "ti servono"],
+            "note": "Two things needed, so the verb goes plural — the same move as mi piacciono and mi danno fastidio."
+          },
+          {
+            "display": "ricevuta",
+            "cue": "receipt",
+            "tag": "free",
+            "forms": ["ricevuta", "ricevute"],
+            "note": "Feminine. In a shop the printed slip is more often lo scontrino; ricevuta is the one an office issues."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "English keeps \"I need\" identical however many things follow. Italian counts them, and a single mi serve in front of two nouns is heard immediately.",
+      "sound": "mee SER-vo-no la ree-che-VOO-ta e eel MO-du-lo. servono is stressed on the SER.",
+      "variations": [
+        {
+          "display": "Mi servono due documenti",
+          "cue": "I need two documents",
+          "changed": "how many, said with a number"
+        },
+        {
+          "display": "Mi serve la ricevuta",
+          "cue": "I need the receipt",
+          "changed": "one thing, so the verb goes back to singular"
+        },
+        {
+          "display": "Ti servono i documenti?",
+          "cue": "Do you need the documents?",
+          "changed": "asked of somebody you know"
+        }
+      ],
+      "mistake": {
+        "display": "Mi serve la ricevuta e il modulo",
+        "why": "Two things, plural verb: Mi servono la ricevuta e il modulo."
+      },
+      "usage": "Said at a counter while listing what you are missing.",
+      "register": "formal",
+      "mnemonic": "Two things, mi servono."
+    },
+    {
+      "id": "L3-M8-S08",
+      "display": "Devo pagare l'affitto entro venerdì",
+      "cue": "I have to pay the rent by Friday",
+      "literal": "I-must to-pay the-rent within Friday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pagare",
+            "cue": "to pay",
+            "tag": "free",
+            "forms": ["pagare", "pago"],
+            "note": "A regular -are verb, kept in the infinitive after devo, posso and bisogna. The impersonal si paga is its own key in this module."
+          },
+          {
+            "display": "entro",
+            "cue": "by, no later than",
+            "tag": "delta",
+            "forms": ["entro"],
+            "note": "A deadline, not a place: entro venerdì is \"by Friday\". Do not read it as English \"enter\" — that verb is entrare."
+          },
+          {
+            "display": "affitto",
+            "cue": "rent",
+            "tag": "free",
+            "forms": ["affitto", "affitti", "l'affitto"],
+            "note": "Masculine, and it elides to l'affitto. pagare l'affitto is the fixed pairing."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "English \"by Friday\" and \"until Friday\" sit close together and Italian keeps them far apart: entro venerdì is the deadline, fino a venerdì is the stretch of time. Paying fino a venerdì would be a long transaction.",
+      "sound": "DE-vo pa-GA-re laf-FEET-to EN-tro ve-ner-DEE. entro is stressed on the first syllable.",
+      "variations": [
+        {
+          "display": "Devo pagare la bolletta entro martedì",
+          "cue": "I have to pay the bill by Tuesday",
+          "changed": "a different bill and a different day"
+        },
+        {
+          "display": "Bisogna pagare entro venerdì",
+          "cue": "It has to be paid by Friday",
+          "changed": "nobody named, so bisogna replaces devo"
+        },
+        {
+          "display": "Posso pagare l'affitto domani?",
+          "cue": "Can I pay the rent tomorrow?",
+          "changed": "asked as permission"
+        }
+      ],
+      "mistake": {
+        "display": "Devo pago l'affitto entro venerdì",
+        "why": "devo takes the infinitive: Devo pagare l'affitto entro venerdì."
+      },
+      "usage": "Said to a flatmate, or to yourself on the first of the month.",
+      "register": "neutral",
+      "mnemonic": "entro = the last moment it is still fine."
+    },
+    {
+      "id": "L3-M8-S09",
+      "display": "La scadenza della bolletta è il quindici",
+      "cue": "The bill is due on the fifteenth",
+      "literal": "The deadline of-the bill is the fifteen",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "scadenza",
+            "cue": "deadline, due date",
+            "tag": "free",
+            "forms": ["scadenza", "scadenze"],
+            "note": "Feminine. The word printed on a bill, a contract and a carton of milk alike — it is the date after which something stops counting."
+          },
+          {
+            "display": "bolletta",
+            "cue": "bill",
+            "tag": "free",
+            "forms": ["bolletta", "bollette"],
+            "note": "Feminine: the utility bill for gas, light or water. A restaurant bill is L2-M5's conto, never a bolletta."
+          },
+          {
+            "display": "quindici",
+            "cue": "fifteen",
+            "tag": "free",
+            "forms": ["quindici"],
+            "note": "A date is il plus the plain number: il quindici. Only the first of the month takes an ordinal, il primo."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "English has \"bill\" for both the restaurant and the electricity company, and Italian splits them: conto at the table, bolletta through the letterbox. Asking for the bolletta after dinner is a small comedy.",
+      "sound": "la ska-DEN-tsa DEL-la bol-LET-ta e eel KWEEN-dee-chee. quindici is stressed on the first syllable.",
+      "variations": [
+        {
+          "display": "La scadenza è venerdì",
+          "cue": "The deadline is Friday",
+          "changed": "a day instead of a date"
+        },
+        {
+          "display": "Devo pagare la bolletta entro il quindici",
+          "cue": "I have to pay the bill by the fifteenth",
+          "changed": "said as an obligation with entro"
+        },
+        {
+          "display": "Quando è la scadenza?",
+          "cue": "When is the deadline?",
+          "changed": "asked as a question"
+        }
+      ],
+      "mistake": {
+        "display": "La scadenza della bolletta è il quindicesimo",
+        "why": "Dates take the plain number: La scadenza della bolletta è il quindici."
+      },
+      "usage": "Read off the bill itself, and repeated to whoever shares the flat.",
+      "register": "neutral",
+      "mnemonic": "il + plain number for every date but the first."
+    },
+    {
+      "id": "L3-M8-S10",
+      "display": "Posso pagare con un bonifico?",
+      "cue": "Can I pay by bank transfer?",
+      "literal": "I-can to-pay with a transfer?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bonifico",
+            "cue": "bank transfer",
+            "tag": "free",
+            "forms": ["bonifico", "bonifici"],
+            "note": "Masculine. fare un bonifico is the verb it goes with, and it is how rent and most invoices are actually paid in Italy."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "This is the one sentence in the module with a person in it, and that is deliberate: permission for yourself is posso, while a rule of the building is si può. Swapping them changes who the sentence is about.",
+      "sound": "POS-so pa-GA-re kon oon bo-NEE-fee-ko. bonifico is stressed on the NEE.",
+      "variations": [
+        {
+          "display": "Posso pagare in contanti?",
+          "cue": "Can I pay in cash?",
+          "changed": "the other way of paying"
+        },
+        {
+          "display": "Si può pagare con un bonifico?",
+          "cue": "Can one pay by bank transfer?",
+          "changed": "asked about the rule rather than about me"
+        },
+        {
+          "display": "Devo pagare con un bonifico",
+          "cue": "I have to pay by bank transfer",
+          "changed": "an obligation instead of a question"
+        }
+      ],
+      "mistake": {
+        "display": "Posso pago con un bonifico?",
+        "why": "posso takes the infinitive: Posso pagare con un bonifico?"
+      },
+      "usage": "Asked at a counter or of a landlord, and answered yes far more often than not.",
+      "register": "formal",
+      "mnemonic": "posso is about me; si può is about the rule."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L3-M8-C01", "display": "Qui si paga in contanti", "cue": "You pay in cash here" },
+    {
+      "id": "L3-M8-C02",
+      "display": "Non si può fumare in ufficio",
+      "cue": "You cannot smoke in the office"
+    },
+    { "id": "L3-M8-C03", "display": "Qui si vendono i biglietti", "cue": "Tickets are sold here" },
+    { "id": "L3-M8-C04", "display": "Dove si firma il modulo?", "cue": "Where do I sign the form?" },
+    {
+      "id": "L3-M8-C05",
+      "display": "Bisogna firmare i documenti",
+      "cue": "The documents have to be signed"
+    },
+    { "id": "L3-M8-C06", "display": "Mi serve il codice fiscale", "cue": "I need the tax code" },
+    { "id": "L3-M8-C07", "display": "Mi servono due documenti", "cue": "I need two documents" },
+    {
+      "id": "L3-M8-C08",
+      "display": "Devo pagare l'affitto entro venerdì",
+      "cue": "I have to pay the rent by Friday"
+    },
+    {
+      "id": "L3-M8-C09",
+      "display": "La scadenza della bolletta è il quindici",
+      "cue": "The bill is due on the fifteenth"
+    },
+    {
+      "id": "L3-M8-C10",
+      "display": "Posso pagare con un bonifico?",
+      "cue": "Can I pay by bank transfer?"
+    },
+    { "id": "L3-M8-C11", "display": "Qui manca la firma", "cue": "The signature is missing here" },
+    {
+      "id": "L3-M8-C12",
+      "display": "Mi serve la ricevuta",
+      "cue": "I need the receipt"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

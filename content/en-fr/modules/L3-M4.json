@@ -1,0 +1,593 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M4",
+  "title": "If and then",
+  "job": "Conditions, wishes, advice",
+  "prerequisites": [
+    "L3-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "present",
+      "imparfait (in the si clause only)",
+      "conditionnel",
+      "infinitive after a modal"
+    ],
+    "allowedPatterns": [
+      "Si + <present> + , + <present>",
+      "Si + <imparfait> + , + <conditionnel>",
+      "À ta place + , + <conditionnel>",
+      "Tu pourrais + V-inf + ?",
+      "Tu devrais + V-inf"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "NOTHING MOVES INTO THE FUTURE AFTER si. Si tu veux, si elle est libre, s'il pleut — the present stays put, and the going-to future L1-M6 taught belongs on the other side of the comma, never inside the si clause. English agrees with French here (if it rains, not if it will rain), which makes the rule cheap; what is not cheap is the apostrophe one line down."
+    },
+    {
+      "tag": "delta",
+      "text": "si FUSES BEFORE il AND ils, AND BEFORE NOTHING ELSE. s'il pleut, s'ils sont libres — but si elle, si on, si tu, si Anne, all written out whole. This is the module's real trap: a learner who has met one elision applies it everywhere and writes s'elle or s'on, which no French text contains. L2-M1 already owns the fused word, inside s'il te plaît, and its note says why: s'il is si plus il."
+    },
+    {
+      "tag": "delta",
+      "text": "THE CONDITIONNEL IS THE FUTUR STEM PLUS THE IMPARFAIT ENDINGS, and that is the whole of it. Take the infinitive (parler, aimer, rester), keep it entire, and add L2-M10's -ais, -ait: parlerais, aimerait, resterait. A handful of verbs have a short stem instead of the infinitive — devr-, pourr-, ser-, viendr- — and those four are worth learning as words. Nobody has to learn the endings twice."
+    },
+    {
+      "tag": "delta",
+      "text": "L2-M1's je voudrais WAS THIS TENSE ALL ALONG. It shipped as a frozen politeness because it is the first conditionnel anybody needs, and now the shape underneath it is visible: voudrais, pourrais, devrais, aimerais, serait — the same ending on five stems. Nothing about je voudrais changes; it simply stops being an exception."
+    },
+    {
+      "tag": "interference",
+      "text": "ONE COUNTERFACTUAL FRAME, AND THE TENSES DO NOT SWAP: si plus the imparfait, then the conditionnel. Si j'avais le temps, je viendrais. English says if I would have said it in enough dialects that the habit travels, and si je viendrais is the result — the one order French will not take. The si j'avais eu … j'aurais … version, for a thing that already did not happen, is L4-M3's and is not taught here."
+    },
+    {
+      "tag": "delta",
+      "text": "ADVICE USES THE FORMS THIS MODULE JUST OPENED — tu devrais, tu pourrais, à ta place — and no new mood at all. English should, could and would are three words for what French does with one tense. L3-M3's il faut que is the impersonal alternative when you would rather not point at the person."
+    },
+    {
+      "tag": "delta",
+      "text": "THE ne IS STILL WRITTEN. je ne peux pas, je ne parlerais pas — speech drops it and writing keeps it, exactly as in every module before this one."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M4-S01",
+      "display": "Si tu veux, je peux venir demain",
+      "cue": "If you want, I can come tomorrow",
+      "literal": "If you want, I can to-come tomorrow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "si",
+            "cue": "if",
+            "tag": "delta",
+            "forms": [
+              "si",
+              "s'ils"
+            ],
+            "note": "It fuses with il into s'il and with ils into s'ils, and stays whole before everything else: si elle, si tu. The same si reports a yes/no question: il a demandé si tu venais."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The verb after si does not move into the future: si tu veux, never si tu voudras. English agrees, which makes this the cheap half of the module — the expensive half is one apostrophe away.",
+      "sound": "see tü vuh, zhuh puh vuh-NEER duh-MAN. si is a clean ee with no y in it.",
+      "variations": [
+        {
+          "display": "Si tu veux, je peux rester",
+          "cue": "If you want, I can stay",
+          "changed": "a different infinitive after peux"
+        },
+        {
+          "display": "Si vous voulez, je peux venir demain",
+          "cue": "If you like, I can come tomorrow",
+          "changed": "vous, so veux becomes voulez"
+        }
+      ],
+      "mistake": {
+        "display": "Si tu voudras, je peux venir demain",
+        "why": "Nothing after si moves into the future: Si tu veux, je peux venir demain."
+      },
+      "usage": "Offering something without pressing it — the si half is what leaves the other person the choice.",
+      "register": "neutral",
+      "mnemonic": "si keeps the present."
+    },
+    {
+      "id": "L3-M4-S02",
+      "display": "S'il pleut, je reste à la maison",
+      "cue": "If it rains, I'm staying home",
+      "literal": "If-it rains, I stay at the house",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pleut",
+            "cue": "it rains · it's raining",
+            "tag": "free",
+            "forms": [],
+            "note": "The present beside L2-M10's pleuvait, and the il in front of it stands for nobody — the same empty il as il y a and il faut."
+          },
+          {
+            "display": "reste",
+            "cue": "I stay · I'm staying",
+            "tag": "free",
+            "forms": [],
+            "note": "The present of L1-M6's rester. One French present covers both English ones: je reste is I stay and I am staying alike."
+          }
+        ],
+        "rules": [
+          1,
+          0
+        ]
+      },
+      "trap": "s' before il and ils, and before nothing else. s'il, s'ils — then si elle, si on, si Anne, si tu, all whole. A learner who has learnt one elision applies it everywhere and writes s'elle, which no French text contains.",
+      "sound": "seel pluh, zhuh rest a la meh-ZON. s'il is one syllable, and pleut ends in a pursed uh.",
+      "variations": [
+        {
+          "display": "S'ils sont libres, je reste ici",
+          "cue": "If they're free, I'm staying here",
+          "changed": "ils, so si fuses again — s'ils"
+        },
+        {
+          "display": "Si elle vient, je reste à la maison",
+          "cue": "If she comes, I'm staying home",
+          "changed": "elle, so si stays whole"
+        }
+      ],
+      "mistake": {
+        "display": "Si il pleut, je reste à la maison",
+        "why": "si and il fuse into one written word: S'il pleut, je reste à la maison."
+      },
+      "usage": "The everyday weather condition, and the sentence where the fusion cannot be avoided.",
+      "register": "neutral",
+      "mnemonic": "s' only ever meets an i."
+    },
+    {
+      "id": "L3-M4-S03",
+      "display": "Si elle est libre, elle vient avec nous",
+      "cue": "If she's free, she's coming with us",
+      "literal": "If she is free, she comes with us",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vient",
+            "cue": "he / she comes",
+            "tag": "free",
+            "forms": [
+              "vient",
+              "viennent"
+            ],
+            "note": "The present of L1-M10's venir. The plural doubles the n and sounds it: elle vient is nasal, elles viennent is not."
+          }
+        ],
+        "rules": [
+          1,
+          0
+        ]
+      },
+      "trap": "si elle, never s'elle. The fusion reaches il and ils and stops — elle, on, tu and every name keep their si whole, however awkward the two vowels look side by side.",
+      "sound": "see el eh LEEBR, el vyan a-vek NOO. vient is one nasal syllable, vyan.",
+      "variations": [
+        {
+          "display": "Si elle est libre, elle vient avec moi",
+          "cue": "If she's free, she's coming with me",
+          "changed": "moi rather than nous"
+        },
+        {
+          "display": "S'il est libre, il vient avec nous",
+          "cue": "If he's free, he's coming with us",
+          "changed": "il, so si fuses"
+        }
+      ],
+      "mistake": {
+        "display": "S'elle est libre, elle vient avec nous",
+        "why": "Only il and ils take the fusion: Si elle est libre, elle vient avec nous."
+      },
+      "usage": "Making a plan that hangs on somebody else being free.",
+      "register": "neutral",
+      "mnemonic": "elle keeps her si."
+    },
+    {
+      "id": "L3-M4-S04",
+      "display": "Tu devrais parler à ton patron",
+      "cue": "You should talk to your boss",
+      "literal": "You would-must to-talk to your boss",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "devrais",
+            "cue": "you should · I should",
+            "tag": "delta",
+            "forms": [
+              "devrais",
+              "devrait"
+            ],
+            "note": "L3-M2's dois in the conditionnel, on the short stem devr-. The infinitive after it still stands bare: tu devrais parler, never devrais de parler."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "There is no French word for should. French bends dois instead, and English's should, could and would all turn out to be one French tense wearing three English hats.",
+      "sound": "tü duh-VREH par-LAY a ton pa-TRON. The -ais ending is an open eh.",
+      "variations": [
+        {
+          "display": "Tu devrais rentrer tôt",
+          "cue": "You should go home early",
+          "changed": "a different infinitive after it"
+        },
+        {
+          "display": "Il devrait parler à son patron",
+          "cue": "He should talk to his boss",
+          "changed": "il, so the ending loses its s and nothing else moves"
+        }
+      ],
+      "mistake": {
+        "display": "Tu devrais de parler à ton patron",
+        "why": "Nothing goes between the conditionnel and its infinitive: Tu devrais parler à ton patron."
+      },
+      "usage": "Advice with the edge taken off — tu dois orders, tu devrais suggests.",
+      "register": "neutral",
+      "mnemonic": "should is dois with an -ais on it."
+    },
+    {
+      "id": "L3-M4-S05",
+      "display": "Tu pourrais m'aider, s'il te plaît ?",
+      "cue": "Could you help me, please?",
+      "literal": "You would-can to-help-me, if-it you pleases?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pourrais",
+            "cue": "you could · I could",
+            "tag": "delta",
+            "forms": [
+              "pourrais",
+              "pourrait"
+            ],
+            "note": "L2-M1's peux in the conditionnel, on the stem pourr-. tu peux asks whether you can; tu pourrais asks whether you would."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "The two r's are the stem and not a spelling slip: peux becomes pourr-, exactly as dois becomes devr-. Both are written double and said as one r, so only the page ever tells you.",
+      "sound": "tü poo-REH meh-DAY, seel tuh PLEH.",
+      "variations": [
+        {
+          "display": "Tu pourrais rester ici ?",
+          "cue": "Could you stay here?",
+          "changed": "a different infinitive after it"
+        },
+        {
+          "display": "Il pourrait m'aider",
+          "cue": "He could help me",
+          "changed": "il, so the ending loses its s"
+        }
+      ],
+      "mistake": {
+        "display": "Tu pourais m'aider, s'il te plaît ?",
+        "why": "The stem carries two r's: Tu pourrais m'aider, s'il te plaît ?"
+      },
+      "usage": "Asking a favour of somebody you tutoie, one step politer than tu peux.",
+      "register": "informal",
+      "mnemonic": "Two r's make it polite."
+    },
+    {
+      "id": "L3-M4-S06",
+      "display": "À ta place, je parlerais au patron",
+      "cue": "If I were you, I'd talk to the boss",
+      "literal": "At your place, I would-talk to-the boss",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "à ta place",
+            "cue": "if I were you",
+            "tag": "delta",
+            "forms": [],
+            "note": "Three frozen words doing the job of English's if I were you, and they need no verb at all. The conditionnel then carries the advice in the second half."
+          },
+          {
+            "display": "parlerais",
+            "cue": "I would talk",
+            "tag": "delta",
+            "forms": [
+              "parlerais",
+              "parlerait"
+            ],
+            "note": "L2-M7's parler with the whole infinitive kept and -ais added. Every regular -er verb builds its conditionnel this way, so one example is the rule."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "This is where the economy is visible on the page: the ending is L2-M10's imparfait, bolted onto the infinitive. Learn one set of endings and the conditionnel of every regular verb comes free.",
+      "sound": "a ta plas, zhuh par-luh-REH o pa-TRON. The e in the middle of parlerais is barely there.",
+      "variations": [
+        {
+          "display": "À ta place, je ne parlerais pas",
+          "cue": "If I were you, I wouldn't say anything",
+          "changed": "the advice reversed, with ne and pas round the conditionnel"
+        },
+        {
+          "display": "Il parlerait au patron",
+          "cue": "He would talk to the boss",
+          "changed": "il, so the ending loses its s"
+        }
+      ],
+      "mistake": {
+        "display": "À ma place, je parlerais au patron",
+        "why": "The place is the one you are advising, not your own: À ta place, je parlerais au patron."
+      },
+      "usage": "Advice given by standing in the other person's shoes — the frame French uses where English says if I were you.",
+      "register": "informal",
+      "mnemonic": "Infinitive plus the imparfait ending."
+    },
+    {
+      "id": "L3-M4-S07",
+      "display": "Si j'avais le temps, je viendrais avec toi",
+      "cue": "If I had time, I'd come with you",
+      "literal": "If I-had the time, I would-come with you",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "j'avais",
+            "cue": "I had",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M10's avais with je elided onto it and written as one word, the same fusion as j'ai and j'étais. The imparfait is what si takes whenever a conditionnel follows."
+          },
+          {
+            "display": "viendrais",
+            "cue": "I would come",
+            "tag": "delta",
+            "forms": [
+              "viendrais",
+              "viendrait"
+            ],
+            "note": "L1-M10's venir in the conditionnel, on the short stem viendr- rather than the infinitive. The ending is the same -ais as everywhere else."
+          }
+        ],
+        "rules": [
+          4,
+          2
+        ]
+      },
+      "trap": "The conditionnel goes in the SECOND half only. Si je viendrais is the English if I would showing through the French, and it is the one order the language will not take: si takes the imparfait and the wish sits after the comma.",
+      "sound": "see zha-VEH luh TAHN, zhuh vyan-DREH a-vek TWA.",
+      "variations": [
+        {
+          "display": "Si j'avais le temps, je viendrais avec vous",
+          "cue": "If I had time, I'd come with you",
+          "changed": "vous, for somebody you do not tutoie"
+        },
+        {
+          "display": "S'il avait le temps, il viendrait avec toi",
+          "cue": "If he had time, he'd come with you",
+          "changed": "il, so si fuses and both verbs lose their s"
+        }
+      ],
+      "mistake": {
+        "display": "Si je viendrais, je serais content",
+        "why": "si never takes a conditionnel: Si j'avais le temps, je viendrais avec toi."
+      },
+      "usage": "The wish that says no — a refusal with its reason folded into the first half.",
+      "register": "neutral",
+      "mnemonic": "si takes the imparfait; the wish takes the conditionnel."
+    },
+    {
+      "id": "L3-M4-S08",
+      "display": "Ce serait super, mais je ne peux pas",
+      "cue": "That would be great, but I can't",
+      "literal": "It would-be great, but I not can not",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "serait",
+            "cue": "it would be",
+            "tag": "delta",
+            "forms": [],
+            "note": "The conditionnel of est, on the stem ser-. ce serait is French's that would be, and it is the commonest polite reply the language has."
+          }
+        ],
+        "rules": [
+          2,
+          6
+        ]
+      },
+      "trap": "ce serait, not il serait. The empty ce is what points at a whole situation, exactly as it does in c'est vrai — il would have to stand for some particular thing.",
+      "sound": "suh suh-REH sü-PEHR, meh zhuh nuh puh PA.",
+      "variations": [
+        {
+          "display": "Ce serait bien",
+          "cue": "That would be nice",
+          "changed": "shorter, and warmer than super"
+        },
+        {
+          "display": "Ce serait super, mais il faut que j'aille au travail",
+          "cue": "That would be great, but I have to go to work",
+          "changed": "L3-M3's obligation supplying the reason"
+        }
+      ],
+      "mistake": {
+        "display": "Ce sera super, mais je ne peux pas",
+        "why": "The regret needs the conditionnel: Ce serait super, mais je ne peux pas."
+      },
+      "usage": "Turning something down warmly — the conditionnel is what makes it sound like a regret rather than a refusal.",
+      "register": "neutral",
+      "mnemonic": "ce serait regrets; c'est states."
+    },
+    {
+      "id": "L3-M4-S09",
+      "display": "Si tu voulais, tu pourrais venir avec nous",
+      "cue": "If you wanted to, you could come with us",
+      "literal": "If you wanted, you would-can to-come with us",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "voulais",
+            "cue": "you wanted · I wanted",
+            "tag": "delta",
+            "forms": [
+              "voulais",
+              "voulait"
+            ],
+            "note": "L1-M3's veux in the imparfait — L2-M10's ending on the voul- stem. This is the shape si takes whenever a conditionnel follows it."
+          }
+        ],
+        "rules": [
+          4,
+          2
+        ]
+      },
+      "trap": "The pair is fixed and does not swap: imparfait on the si side, conditionnel on the other. si tu voudrais puts both wishes on the same side and is the commonest error English produces here.",
+      "sound": "see tü voo-LEH, tü poo-REH vuh-NEER a-vek NOO.",
+      "variations": [
+        {
+          "display": "Si tu voulais, tu pourrais rester ici",
+          "cue": "If you wanted to, you could stay here",
+          "changed": "a different infinitive in the second half"
+        },
+        {
+          "display": "S'il voulait, il pourrait venir avec nous",
+          "cue": "If he wanted to, he could come with us",
+          "changed": "il, so si fuses and both verbs lose their s"
+        }
+      ],
+      "mistake": {
+        "display": "Si tu voudrais, tu pourrais venir avec nous",
+        "why": "si takes the imparfait: Si tu voulais, tu pourrais venir avec nous."
+      },
+      "usage": "An invitation left entirely open, which is the politest one French has.",
+      "register": "neutral",
+      "mnemonic": "Never two conditionnels."
+    },
+    {
+      "id": "L3-M4-S10",
+      "display": "J'aimerais venir, mais il faut que j'aille au travail",
+      "cue": "I'd love to come, but I have to go to work",
+      "literal": "I-would-like to-come, but it is-necessary that I-go to-the work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "j'aimerais",
+            "cue": "I'd like · I'd love to",
+            "tag": "delta",
+            "forms": [
+              "j'aimerais",
+              "aimerait"
+            ],
+            "note": "L1-M1's aime built the regular way — the whole infinitive aimer plus -ais. It is the warmer neighbour of L2-M1's je voudrais, which is the same tense."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "L2-M1 shipped je voudrais frozen, as a politeness with no explanation. This is the explanation: it is the conditionnel of veux, and j'aimerais, je pourrais and je devrais are its neighbours rather than new words.",
+      "sound": "zheh-muh-REH vuh-NEER, meh eel fo kuh ZHY o tra-VYE.",
+      "variations": [
+        {
+          "display": "Je voudrais venir, mais il faut que j'aille au travail",
+          "cue": "I'd like to come, but I have to go to work",
+          "changed": "je voudrais, which L2-M1 shipped frozen and which is this same tense"
+        },
+        {
+          "display": "J'aimerais venir avec vous",
+          "cue": "I'd love to come with you",
+          "changed": "the wish on its own, with no obligation against it"
+        }
+      ],
+      "mistake": {
+        "display": "J'aime venir, mais il faut que j'aille au travail",
+        "why": "j'aime states a habit; the wish needs the conditionnel: J'aimerais venir."
+      },
+      "usage": "Declining an invitation you would actually have accepted, which is what the conditionnel is for.",
+      "register": "neutral",
+      "mnemonic": "voudrais and aimerais are the same tense."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M4-C01",
+      "display": "S'il pleut, je ne peux pas venir",
+      "cue": "If it rains, I can't come"
+    },
+    {
+      "id": "L3-M4-C02",
+      "display": "Si tu veux, on va au cinéma",
+      "cue": "If you want, we'll go to the cinema"
+    },
+    {
+      "id": "L3-M4-C03",
+      "display": "Tu devrais parler à ta mère",
+      "cue": "You should talk to your mother"
+    },
+    {
+      "id": "L3-M4-C04",
+      "display": "Tu pourrais m'aider ?",
+      "cue": "Could you help me?"
+    },
+    {
+      "id": "L3-M4-C05",
+      "display": "À ta place, je parlerais au médecin",
+      "cue": "If I were you, I'd talk to the doctor"
+    },
+    {
+      "id": "L3-M4-C06",
+      "display": "Si j'avais le temps, je viendrais ce soir",
+      "cue": "If I had time, I'd come this evening"
+    },
+    {
+      "id": "L3-M4-C07",
+      "display": "Ce serait super, mais je dois travailler",
+      "cue": "That would be great, but I have to work"
+    },
+    {
+      "id": "L3-M4-C08",
+      "display": "Si tu voulais, tu pourrais rester ici",
+      "cue": "If you wanted to, you could stay here"
+    },
+    {
+      "id": "L3-M4-C09",
+      "display": "Si elle est libre, elle vient au restaurant",
+      "cue": "If she's free, she's coming to the restaurant"
+    },
+    {
+      "id": "L3-M4-C10",
+      "display": "J'aimerais venir, mais je ne peux pas",
+      "cue": "I'd love to come, but I can't"
+    },
+    {
+      "id": "L3-M4-C11",
+      "display": "S'ils sont libres, on va au cinéma",
+      "cue": "If they're free, we'll go to the cinema"
+    },
+    {
+      "id": "L3-M4-C12",
+      "display": "Si tu es fatigué, tu devrais rentrer",
+      "cue": "If you're tired, you should go home"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

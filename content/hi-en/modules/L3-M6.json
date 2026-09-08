@@ -1,0 +1,732 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M6",
+  "title": "Feelings in depth",
+  "job": "Nuance past good and bad",
+  "prerequisites": [
+    "L3-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "present_simple",
+      "present_continuous",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "I am + Adj-ed  /  It is + Adj-ing",
+      "I feel + Adj",
+      "I feel like + V-ing",
+      "It makes me + Adj",
+      "I'm not + Adj + , I'm just + Adj"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "-ed आपकी हालत बताता है, -ing उस चीज़ का असर. I am bored का मतलब है मैं ऊब गया हूँ; This film is boring का मतलब है यह फ़िल्म उबाऊ है. इसलिए I am boring कहने पर आप अपने बारे में कह रहे हैं कि मैं ख़ुद उबाऊ आदमी हूँ — यही इस पाठ की सबसे भारी ग़लती है. यही जोड़ी हर शब्द पर चलती है: tired · tiring, interested · interesting, confused · confusing, excited · exciting, annoyed · annoying."
+    },
+    {
+      "tag": "delta",
+      "text": "feel के बाद विशेषण सीधे आता है — I feel tired, I feel better, I feel nervous. बीच में न कोई क्रिया आती है और न myself: I feel myself tired अंग्रेज़ी में है ही नहीं. हिंदी का मुझे थकान लग रही है यहाँ एक ही शब्द feel में सिमट जाता है, और वह शब्द अपने साथ कर्ता I ले आता है, मुझे नहीं."
+    },
+    {
+      "tag": "delta",
+      "text": "feel like बिल्कुल दूसरा साँचा है: इसके बाद क्रिया में -ing लगती है — I feel like eating, I feel like sleeping. यही हिंदी के मन कर रहा है का जोड़ीदार है. feel tired और feel like eating एक-दूसरे की जगह नहीं ले सकते: पहला हालत बताता है, दूसरा इच्छा."
+    },
+    {
+      "tag": "free",
+      "text": "भावना का कारण बताना हो तो साँचा है It makes me + विशेषण: It makes me nervous, My exam makes me worried. बीच में न to आता है और न that. हिंदी का उससे मुझे घबराहट होती है साँचे में बिल्कुल अलग बैठता है — वहाँ कारण से लगता है, यहाँ कारण ही कर्ता बन जाता है."
+    },
+    {
+      "tag": "interference",
+      "text": "भावना की नाप अंग्रेज़ी शब्द बदलकर बताती है, आवाज़ ऊँची करके नहीं: annoyed (खीझा हुआ) angry (ग़ुस्सा) से हल्का है, upset (मन ख़राब) sad से भारी. नाप बताने का सबसे सीधा साँचा है not X, just Y — I am not angry, I am just annoyed."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M6-S01",
+      "display": "I am bored. This film is boring.",
+      "cue": "मैं ऊब गया हूँ. यह फ़िल्म उबाऊ है.",
+      "literal": "मैं हूँ ऊबा-हुआ. यह फ़िल्म है उबाऊ.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bored",
+            "cue": "ऊबा हुआ · उबाऊ",
+            "tag": "interference",
+            "forms": [
+              "bored",
+              "boring"
+            ],
+            "note": "-ed आप हैं, -ing वह चीज़ है: I am bored (मैं ऊब गया), This film is boring (फ़िल्म उबाऊ है). दोनों एक ही शब्द के दो काम हैं."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "I am boring कहने पर सुनने वाला समझेगा कि आप ख़ुद उबाऊ आदमी हैं. अपनी हालत के लिए हमेशा -ed चुनिए.",
+      "sound": "bored एक ही अक्षर में — बोर्ड, बो-रेड नहीं. boring दो में — बो-रिंग.",
+      "variations": [
+        {
+          "display": "I am bored. This book is boring.",
+          "cue": "मैं ऊब गया हूँ. यह किताब उबाऊ है.",
+          "changed": "दूसरी चीज़, वही जोड़ी"
+        },
+        {
+          "display": "She is bored. This work is boring.",
+          "cue": "वह ऊब गई है. यह काम उबाऊ है.",
+          "changed": "दूसरा आदमी"
+        },
+        {
+          "display": "I am not bored. This film is not boring.",
+          "cue": "मैं नहीं ऊबा. यह फ़िल्म उबाऊ नहीं है.",
+          "changed": "नकार"
+        }
+      ],
+      "mistake": {
+        "display": "I am boring",
+        "why": "यह आपकी हालत नहीं, आपका स्वभाव बता रहा है. जो ऊबा है वह bored है: I am bored."
+      },
+      "usage": "किसी फ़िल्म, कक्षा या मीटिंग के बीच में अपनी हालत बताना.",
+      "register": "neutral",
+      "mnemonic": "-ed मुझ पर, -ing उस पर."
+    },
+    {
+      "id": "L3-M6-S02",
+      "display": "I feel tired today. This work is tiring.",
+      "cue": "मुझे आज थकान लग रही है. यह काम थकाऊ है.",
+      "literal": "मैं महसूस-करता थका आज. यह काम है थकाऊ.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "feel",
+            "cue": "महसूस करना · लगना",
+            "tag": "delta",
+            "forms": [
+              "feel",
+              "feels",
+              "felt"
+            ],
+            "note": "इसके बाद विशेषण सीधे आता है: I feel tired, I feel better. myself कभी नहीं आता. बीता हुआ रूप felt है."
+          },
+          {
+            "display": "tiring",
+            "cue": "थकाऊ",
+            "tag": "interference",
+            "forms": [
+              "tiring"
+            ],
+            "note": "यह tired (L1-M2) का दूसरा रूप है: tired आप हैं, tiring वह काम है जो आपको थकाता है."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "I feel myself tired अंग्रेज़ी में नहीं है. feel अपने साथ myself नहीं लेता.",
+      "sound": "feel में ई लंबी है — फ़ील, फ़िल नहीं. यही अंतर fill से बचाता है.",
+      "variations": [
+        {
+          "display": "I feel tired. This work is very tiring.",
+          "cue": "मुझे थकान लग रही है. यह काम बहुत थकाऊ है.",
+          "changed": "ज़ोर के लिए very"
+        },
+        {
+          "display": "He feels tired today.",
+          "cue": "उसे आज थकान लग रही है.",
+          "changed": "he के साथ feels"
+        },
+        {
+          "display": "I do not feel tired today.",
+          "cue": "मुझे आज थकान नहीं लग रही.",
+          "changed": "नकार"
+        }
+      ],
+      "mistake": {
+        "display": "I am feeling myself tired",
+        "why": "feel के बाद सीधा विशेषण: I feel tired."
+      },
+      "usage": "दिन के आख़िर में या लंबी शिफ़्ट के बाद अपनी हालत बताना.",
+      "register": "neutral",
+      "mnemonic": "feel के बाद सीधा विशेषण."
+    },
+    {
+      "id": "L3-M6-S03",
+      "display": "I am interested in this book. It is very interesting.",
+      "cue": "मुझे इस किताब में दिलचस्पी है. यह बहुत दिलचस्प है.",
+      "literal": "मैं हूँ दिलचस्पी-वाला में यह किताब. यह है बहुत दिलचस्प.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "interested",
+            "cue": "दिलचस्पी रखने वाला · दिलचस्प",
+            "tag": "interference",
+            "forms": [
+              "interested",
+              "interesting"
+            ],
+            "note": "interested आप हैं और उसके बाद in आता है; interesting वह चीज़ है. I am interesting अपनी तारीफ़ बन जाता है."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "interested के बाद in ही आता है, on या about नहीं: interested in cricket.",
+      "sound": "interested में चार अक्षर नहीं, तीन बोले जाते हैं — इन्ट्रेस्टेड.",
+      "variations": [
+        {
+          "display": "I am interested in this film. It is interesting.",
+          "cue": "मुझे इस फ़िल्म में दिलचस्पी है. यह दिलचस्प है.",
+          "changed": "दूसरी चीज़"
+        },
+        {
+          "display": "My brother is interested in English.",
+          "cue": "मेरे भाई को अंग्रेज़ी में दिलचस्पी है.",
+          "changed": "दूसरा आदमी"
+        },
+        {
+          "display": "This book is not interesting.",
+          "cue": "यह किताब दिलचस्प नहीं है.",
+          "changed": "नकार, चीज़ की तरफ़"
+        }
+      ],
+      "mistake": {
+        "display": "I am interesting in this book",
+        "why": "अपनी दिलचस्पी बतानी है, इसलिए interested: I am interested in this book."
+      },
+      "usage": "पढ़ाई, नौकरी या किसी शौक़ में अपनी दिलचस्पी बताना.",
+      "register": "neutral",
+      "mnemonic": "interested हमेशा in के साथ."
+    },
+    {
+      "id": "L3-M6-S04",
+      "display": "I am confused. Your question is confusing.",
+      "cue": "मैं उलझन में हूँ. आपका सवाल उलझाने वाला है.",
+      "literal": "मैं हूँ उलझा-हुआ. तुम्हारा सवाल है उलझाऊ.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "confused",
+            "cue": "उलझन में · उलझाने वाला",
+            "tag": "interference",
+            "forms": [
+              "confused",
+              "confusing"
+            ],
+            "note": "confused आपकी हालत है, confusing उस चीज़ का असर: I am confused, This form is confusing."
+          },
+          {
+            "display": "question",
+            "cue": "सवाल",
+            "tag": "free",
+            "forms": [
+              "question",
+              "questions"
+            ],
+            "note": "गिना जाता है, इसलिए आगे a, my या your ज़रूरी: a question, your question."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "I am confusing का मतलब है आप दूसरों को उलझाते हैं. अपनी उलझन के लिए confused.",
+      "sound": "confused में ज़ोर दूसरे हिस्से पर — कन्फ़्यूज़्ड.",
+      "variations": [
+        {
+          "display": "I am confused. This work is confusing.",
+          "cue": "मैं उलझन में हूँ. यह काम उलझाने वाला है.",
+          "changed": "दूसरी चीज़"
+        },
+        {
+          "display": "Your questions are confusing.",
+          "cue": "आपके सवाल उलझाने वाले हैं.",
+          "changed": "बहुवचन"
+        },
+        {
+          "display": "I am not confused now.",
+          "cue": "अब मैं उलझन में नहीं हूँ.",
+          "changed": "नकार"
+        }
+      ],
+      "mistake": {
+        "display": "I am confusing",
+        "why": "अपनी उलझन बतानी है: I am confused."
+      },
+      "usage": "दफ़्तर या दुकान में कुछ समझ न आए तो साफ़ कहना.",
+      "register": "neutral",
+      "mnemonic": "उलझा मैं — confused."
+    },
+    {
+      "id": "L3-M6-S05",
+      "display": "I am excited about my new job. I am very glad.",
+      "cue": "मैं अपनी नई नौकरी को लेकर उत्साहित हूँ. मैं बहुत ख़ुश हूँ.",
+      "literal": "मैं हूँ उत्साहित बारे-में मेरी नई नौकरी. मैं हूँ बहुत ख़ुश.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "excited",
+            "cue": "उत्साहित · रोमांचक",
+            "tag": "interference",
+            "forms": [
+              "excited",
+              "exciting"
+            ],
+            "note": "excited आप हैं, exciting वह चीज़ है: I am excited, The film is exciting. excited के बाद about आता है."
+          },
+          {
+            "display": "about",
+            "cue": "के बारे में · को लेकर",
+            "tag": "free",
+            "forms": [
+              "about"
+            ],
+            "note": "भावना का विषय जोड़ता है: excited about, worried about. What about (L2-M6) में भी यही शब्द है."
+          },
+          {
+            "display": "glad",
+            "cue": "ख़ुश · राहत भरी ख़ुशी",
+            "tag": "delta",
+            "forms": [
+              "glad"
+            ],
+            "note": "happy से हल्का और मौक़े का: किसी ख़बर पर I am glad. यह विशेषण संज्ञा के आगे नहीं बैठता."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "excited for my job सुनाई तो देता है, पर मानक जोड़ी excited about है.",
+      "sound": "excited में शुरुआती ex इक-स की तरह — इक्साइटेड.",
+      "variations": [
+        {
+          "display": "I am excited about my new work.",
+          "cue": "मैं अपने नए काम को लेकर उत्साहित हूँ.",
+          "changed": "दूसरा शब्द, वही जोड़ी"
+        },
+        {
+          "display": "My sister is excited about the film.",
+          "cue": "मेरी बहन फ़िल्म को लेकर उत्साहित है.",
+          "changed": "दूसरा आदमी"
+        },
+        {
+          "display": "I am glad about it.",
+          "cue": "मैं इससे ख़ुश हूँ.",
+          "changed": "सिर्फ़ ख़ुशी"
+        }
+      ],
+      "mistake": {
+        "display": "I am exciting about my new job",
+        "why": "अपनी हालत बतानी है: I am excited about my new job."
+      },
+      "usage": "नई नौकरी, नया शहर या कोई अच्छी ख़बर सुनाते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "excited हमेशा about के साथ."
+    },
+    {
+      "id": "L3-M6-S06",
+      "display": "I feel like eating something sweet.",
+      "cue": "मेरा कुछ मीठा खाने का मन कर रहा है.",
+      "literal": "मैं महसूस-करता जैसा खाना कुछ मीठा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "feel like",
+            "cue": "मन करना",
+            "tag": "delta",
+            "forms": [
+              "feel like",
+              "feels like"
+            ],
+            "note": "पूरा साँचा एक इकाई है और इसके बाद क्रिया में -ing लगती है: I feel like eating. यही मन कर रहा है का जोड़ीदार है."
+          },
+          {
+            "display": "something",
+            "cue": "कुछ",
+            "tag": "free",
+            "forms": [
+              "something"
+            ],
+            "note": "एक शब्द, दो टुकड़ों में नहीं. विशेषण इसके बाद आता है: something sweet, something new."
+          },
+          {
+            "display": "sweet",
+            "cue": "मीठा",
+            "tag": "free",
+            "forms": [
+              "sweet"
+            ],
+            "note": "स्वाद बताने वाला विशेषण: sweet tea, something sweet."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "I feel like to eat ग़लत है. feel like के बाद -ing ही चलता है.",
+      "sound": "feel like में दोनों शब्द जुड़े बोले जाते हैं — फ़ील-लाइक.",
+      "variations": [
+        {
+          "display": "I feel like eating something.",
+          "cue": "मेरा कुछ खाने का मन कर रहा है.",
+          "changed": "छोटा रूप"
+        },
+        {
+          "display": "He feels like eating.",
+          "cue": "उसका खाने का मन कर रहा है.",
+          "changed": "he के साथ feels like"
+        },
+        {
+          "display": "I do not feel like eating.",
+          "cue": "मेरा खाने का मन नहीं कर रहा.",
+          "changed": "नकार"
+        }
+      ],
+      "mistake": {
+        "display": "I feel like to eat something sweet",
+        "why": "feel like के बाद -ing: I feel like eating something sweet."
+      },
+      "usage": "घर या दुकान में अपनी इच्छा बताना.",
+      "register": "informal",
+      "mnemonic": "feel like के बाद -ing."
+    },
+    {
+      "id": "L3-M6-S07",
+      "display": "My exam makes me nervous. It makes me worried.",
+      "cue": "इम्तिहान से मुझे घबराहट होती है. इससे मुझे चिंता होती है.",
+      "literal": "मेरा इम्तिहान करता मुझे घबराया. यह करता मुझे चिंतित.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "exam",
+            "cue": "इम्तिहान · परीक्षा",
+            "tag": "free",
+            "forms": [
+              "exam",
+              "exams"
+            ],
+            "note": "गिना जाता है: an exam, my exam, two exams. examination इसी का लंबा और काग़ज़ी रूप है."
+          },
+          {
+            "display": "nervous",
+            "cue": "घबराया हुआ",
+            "tag": "free",
+            "forms": [
+              "nervous"
+            ],
+            "note": "आने वाली किसी बात से पहले की घबराहट: nervous before the exam. डर के लिए afraid (L2-M8) है."
+          },
+          {
+            "display": "worried",
+            "cue": "चिंतित · फ़िक्रमंद",
+            "tag": "free",
+            "forms": [
+              "worried"
+            ],
+            "note": "टिकी हुई फ़िक्र, जो देर तक रहती है. विषय about से जुड़ता है: worried about my exam."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "It makes me to nervous या It makes that I am nervous दोनों ग़लत हैं. makes के बाद me और फिर सीधा विशेषण.",
+      "sound": "nervous का दूसरा हिस्सा हल्का — नर्वस.",
+      "variations": [
+        {
+          "display": "My work makes me nervous.",
+          "cue": "काम से मुझे घबराहट होती है.",
+          "changed": "दूसरा कारण"
+        },
+        {
+          "display": "It makes me very worried.",
+          "cue": "इससे मुझे बहुत चिंता होती है.",
+          "changed": "ज़ोर के लिए very"
+        },
+        {
+          "display": "My exam makes me tired.",
+          "cue": "इम्तिहान से मुझे थकान होती है.",
+          "changed": "दूसरा विशेषण"
+        }
+      ],
+      "mistake": {
+        "display": "My exam makes me to nervous",
+        "why": "makes me के बाद विशेषण सीधा आता है: My exam makes me nervous."
+      },
+      "usage": "किसी बात का असर बताना — इम्तिहान, इंटरव्यू, सफ़र.",
+      "register": "neutral",
+      "mnemonic": "makes me, फिर सीधा विशेषण."
+    },
+    {
+      "id": "L3-M6-S08",
+      "display": "I am not angry, I am just annoyed. This work is annoying.",
+      "cue": "मुझे ग़ुस्सा नहीं है, बस खीझ है. यह काम खिझाने वाला है.",
+      "literal": "मैं हूँ नहीं ग़ुस्सा, मैं हूँ बस खीझा. यह काम है खिझाऊ.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "annoyed",
+            "cue": "खीझा हुआ · खिझाने वाला",
+            "tag": "interference",
+            "forms": [
+              "annoyed",
+              "annoying"
+            ],
+            "note": "annoyed आप हैं, annoying वह चीज़ है. यह angry से हल्का है — छोटी-सी खीझ, पूरा ग़ुस्सा नहीं."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "annoyed को angry की जगह रखने पर बात बड़ी हो जाती है. खीझ के लिए annoyed ही सही नाप है.",
+      "sound": "annoyed में ज़ोर दूसरे हिस्से पर — अनॉयड.",
+      "variations": [
+        {
+          "display": "I am not sad, I am just annoyed.",
+          "cue": "मैं दुखी नहीं हूँ, बस खीझा हुआ हूँ.",
+          "changed": "दूसरी जोड़ी"
+        },
+        {
+          "display": "Your question is annoying.",
+          "cue": "आपका सवाल खिझाने वाला है.",
+          "changed": "चीज़ की तरफ़"
+        },
+        {
+          "display": "She is annoyed.",
+          "cue": "वह खीझी हुई है.",
+          "changed": "दूसरा आदमी"
+        }
+      ],
+      "mistake": {
+        "display": "I am not angry, I am just annoying",
+        "why": "अपनी हालत बतानी है: I am just annoyed."
+      },
+      "usage": "किसी से नाप बताकर सफ़ाई देना, ताकि बात बड़ी न लगे.",
+      "register": "informal",
+      "mnemonic": "not X, just Y — नाप का साँचा."
+    },
+    {
+      "id": "L3-M6-S09",
+      "display": "I was upset and disappointed, but now I feel relieved.",
+      "cue": "मेरा मन ख़राब था और मायूसी थी, पर अब मुझे राहत लग रही है.",
+      "literal": "मैं था मन-ख़राब और मायूस, पर अब मैं महसूस-करता राहत-भरा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "upset",
+            "cue": "मन ख़राब · दुखी और बेचैन",
+            "tag": "delta",
+            "forms": [
+              "upset"
+            ],
+            "note": "sad से भारी और angry से नरम — दुख और बेचैनी दोनों. इसका रूप बदलता नहीं: I am upset, I was upset."
+          },
+          {
+            "display": "disappointed",
+            "cue": "मायूस · निराश",
+            "tag": "interference",
+            "forms": [
+              "disappointed",
+              "disappointing"
+            ],
+            "note": "जो उम्मीद पूरी न हुई उससे मायूसी. disappointed आप हैं, disappointing वह ख़बर या नतीजा है."
+          },
+          {
+            "display": "relieved",
+            "cue": "राहत महसूस करने वाला",
+            "tag": "free",
+            "forms": [
+              "relieved"
+            ],
+            "note": "जब चिंता ख़त्म हो जाए तब की हालत: worried के ठीक बाद वाली भावना."
+          },
+          {
+            "display": "now",
+            "cue": "अब · इस वक़्त",
+            "tag": "free",
+            "forms": [
+              "now"
+            ],
+            "note": "पहले और अब का फ़र्क़ बताता है और वाक्य के शुरू या बीच में बैठ जाता है: Now I feel better."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "I was disappointing कहने पर मायूसी आपसे हुई, आपको नहीं. अपनी हालत के लिए disappointed.",
+      "sound": "disappointed में ज़ोर तीसरे हिस्से पर — डिस-अ-पॉइं-टेड.",
+      "variations": [
+        {
+          "display": "I was upset, but now I am relieved.",
+          "cue": "मेरा मन ख़राब था, पर अब राहत है.",
+          "changed": "छोटा रूप"
+        },
+        {
+          "display": "I was disappointed today.",
+          "cue": "मैं आज मायूस था.",
+          "changed": "सिर्फ़ मायूसी"
+        },
+        {
+          "display": "Now I feel better.",
+          "cue": "अब मुझे बेहतर लग रहा है.",
+          "changed": "feel के साथ better"
+        }
+      ],
+      "mistake": {
+        "display": "I was disappointing, but now I am relieving",
+        "why": "अपनी हालत के लिए -ed: I was disappointed, but now I am relieved."
+      },
+      "usage": "कोई नतीजा या ख़बर आने के बाद अपनी बदली हुई हालत बताना.",
+      "register": "neutral",
+      "mnemonic": "worried गया, relieved आया."
+    },
+    {
+      "id": "L3-M6-S10",
+      "display": "I felt embarrassed and guilty. I am not proud.",
+      "cue": "मुझे शर्मिंदगी और अपराध-बोध हुआ. मुझे गर्व नहीं है.",
+      "literal": "मैंने महसूस-किया शर्मिंदा और क़सूरवार. मैं हूँ नहीं गर्वित.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "embarrassed",
+            "cue": "शर्मिंदा · झेंपा हुआ",
+            "tag": "interference",
+            "forms": [
+              "embarrassed",
+              "embarrassing"
+            ],
+            "note": "लोगों के सामने झेंप. embarrassed आप हैं, embarrassing वह पल है: That was embarrassing."
+          },
+          {
+            "display": "guilty",
+            "cue": "क़सूरवार · अपराध-बोध वाला",
+            "tag": "free",
+            "forms": [
+              "guilty"
+            ],
+            "note": "अपनी ही किसी बात का बोझ. feel या am के साथ यह भावना है, अदालत का फ़ैसला नहीं."
+          },
+          {
+            "display": "proud",
+            "cue": "गर्वित · फ़ख़्र वाला",
+            "tag": "free",
+            "forms": [
+              "proud"
+            ],
+            "note": "जिस पर गर्व है वह of से जुड़ता है: proud of my sister. embarrassed का उल्टा."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "felt के बाद भी विशेषण सीधा आता है, कोई was बीच में नहीं: I felt embarrassed.",
+      "sound": "embarrassed में दो र नहीं बोले जाते — इम्बैरस्ट.",
+      "variations": [
+        {
+          "display": "I felt embarrassed.",
+          "cue": "मुझे शर्मिंदगी हुई.",
+          "changed": "छोटा रूप"
+        },
+        {
+          "display": "I am not proud of it.",
+          "cue": "मुझे इस पर गर्व नहीं है.",
+          "changed": "proud के साथ of"
+        },
+        {
+          "display": "She felt guilty and embarrassed.",
+          "cue": "उसे अपराध-बोध और शर्मिंदगी हुई.",
+          "changed": "दूसरा आदमी"
+        }
+      ],
+      "mistake": {
+        "display": "I felt embarrassing",
+        "why": "अपनी हालत के लिए -ed: I felt embarrassed."
+      },
+      "usage": "कोई ग़लती हो जाने के बाद अपनी बात रखना.",
+      "register": "neutral",
+      "mnemonic": "proud of, guilty about — preposition याद रखें."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M6-C01",
+      "display": "I am bored. This book is boring.",
+      "cue": "मैं ऊब गया हूँ. यह किताब उबाऊ है."
+    },
+    {
+      "id": "L3-M6-C02",
+      "display": "I feel tired today.",
+      "cue": "मुझे आज थकान लग रही है."
+    },
+    {
+      "id": "L3-M6-C03",
+      "display": "This work is tiring.",
+      "cue": "यह काम थकाऊ है."
+    },
+    {
+      "id": "L3-M6-C04",
+      "display": "I am interested in this film. It is interesting.",
+      "cue": "मुझे इस फ़िल्म में दिलचस्पी है. यह दिलचस्प है."
+    },
+    {
+      "id": "L3-M6-C05",
+      "display": "Your question is confusing. I am confused.",
+      "cue": "आपका सवाल उलझाने वाला है. मैं उलझन में हूँ."
+    },
+    {
+      "id": "L3-M6-C06",
+      "display": "I am excited about my new job.",
+      "cue": "मैं अपनी नई नौकरी को लेकर उत्साहित हूँ."
+    },
+    {
+      "id": "L3-M6-C07",
+      "display": "I feel like eating something sweet.",
+      "cue": "मेरा कुछ मीठा खाने का मन कर रहा है."
+    },
+    {
+      "id": "L3-M6-C08",
+      "display": "My exam makes me nervous.",
+      "cue": "इम्तिहान से मुझे घबराहट होती है."
+    },
+    {
+      "id": "L3-M6-C09",
+      "display": "I am not angry, I am just annoyed.",
+      "cue": "मुझे ग़ुस्सा नहीं है, बस खीझ है."
+    },
+    {
+      "id": "L3-M6-C10",
+      "display": "I was upset, but now I feel relieved.",
+      "cue": "मेरा मन ख़राब था, पर अब मुझे राहत लग रही है."
+    },
+    {
+      "id": "L3-M6-C11",
+      "display": "I felt embarrassed and guilty.",
+      "cue": "मुझे शर्मिंदगी और अपराध-बोध हुआ."
+    },
+    {
+      "id": "L3-M6-C12",
+      "display": "I am very glad. I am proud of my sister.",
+      "cue": "मैं बहुत ख़ुश हूँ. मुझे अपनी बहन पर गर्व है."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,637 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M8",
+  "title": "Money and paperwork",
+  "job": "Rent, bills, forms, offices",
+  "prerequisites": ["L3-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "present_simple",
+      "simple_past",
+      "simple_future",
+      "present_passive",
+      "future_passive",
+      "modal_passive"
+    ],
+    "allowedPatterns": [
+      "<N> + is/are + V-past-participle",
+      "The form must be + V-past-participle",
+      "I need to fill in + <N>",
+      "Where do I sign + ?",
+      "It will be sent + to you"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "काग़ज़ी अंग्रेज़ी का अपना साँचा है — be + क्रिया का तीसरा रूप, और करने वाले का नाम ग़ायब: The form is signed here. Payment is due on the first. करने वाला कौन है, यह किसी को नहीं बताना होता, इसलिए कर्ता की जगह वही चीज़ बैठ जाती है जिस पर काम हुआ. हिंदी में भी कर्मवाच्य है (जाना के साथ), पर बोलचाल में वह कम आता है; अंग्रेज़ी में दफ़्तर और फ़ॉर्म की भाषा यही है."
+    },
+    {
+      "tag": "free",
+      "text": "इस पाठ में कर्मवाच्य सिर्फ़ तीन जगह चाहिए: वर्तमान — A signature is required; भविष्य — Your card will be sent by post; और must के साथ — The form must be signed. तीनों में be का रूप बदलता है (is, will be, must be) और तीसरा रूप वैसा का वैसा रहता है. बाक़ी रूप L4 के लिए छोड़े गए हैं."
+    },
+    {
+      "tag": "interference",
+      "text": "फ़ॉर्म वाली क्रियाएँ दो शब्दों की हैं और उनका दूसरा टुकड़ा जोड़ा नहीं जा सकता: fill in a form, hand in a form, send off a form. कर्म अगर it या this हो तो वह बीच में आता है — fill it in, hand it in — और fill in it कभी नहीं. अमेरिका में fill out भी चलता है, मतलब वही है."
+    },
+    {
+      "tag": "free",
+      "text": "दफ़्तर या बैंक में लहजा सँभला हुआ रखना पड़ता है और उसके साँचे आप पहले पढ़ चुके हैं: Excuse me (L2-M1) से बात शुरू कीजिए, Could you tell me… से रास्ता या नियम पूछिए, और Would you mind… से किसी से कुछ करने को कहिए. सीधा Give me या Sign this काउंटर पर रूखा लगता है."
+    },
+    {
+      "tag": "interference",
+      "text": "काग़ज़ के शब्द आपस में उलझते हैं, इसलिए एक बार साफ़ कर लीजिए: rent हर महीने की किराया-रक़म है, deposit शुरू में जमा होने वाली और वापस मिलने वाली रक़म, bill (L2-M5) चुकाने का काग़ज़ और receipt चुका देने का सबूत. signature वह नाम है जो आप लिखते हैं, sign वह करना है."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M8-S01",
+      "display": "The form is signed here. Where do I sign?",
+      "cue": "फ़ॉर्म यहीं पर दस्तख़त होता है. मैं कहाँ दस्तख़त करूँ?",
+      "literal": "वह फ़ॉर्म है दस्तख़त-किया यहाँ. कहाँ करता मैं दस्तख़त?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "form",
+            "cue": "फ़ॉर्म · भरा जाने वाला काग़ज़",
+            "tag": "free",
+            "forms": ["form", "forms"],
+            "note": "गिना जाता है, इसलिए आगे a, the या this ज़रूरी: fill in this form, two forms."
+          },
+          {
+            "display": "sign",
+            "cue": "दस्तख़त करना",
+            "tag": "delta",
+            "forms": ["sign", "signs", "signed", "signing"],
+            "note": "यह क्रिया है, नाम नहीं. जो नाम आप लिखते हैं वह signature है. तीसरा रूप signed कर्मवाच्य में आता है."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "Where do I signature? कहीं नहीं चलता. करने के लिए sign, और लिखे हुए नाम के लिए signature.",
+      "sound": "sign में g चुप है — साइन.",
+      "variations": [
+        {
+          "display": "The form is signed at the bank.",
+          "cue": "फ़ॉर्म बैंक में दस्तख़त होता है.",
+          "changed": "दूसरी जगह"
+        },
+        {
+          "display": "Where do I sign this form?",
+          "cue": "मैं इस फ़ॉर्म पर कहाँ दस्तख़त करूँ?",
+          "changed": "कर्म जोड़ा"
+        },
+        {
+          "display": "I signed the form yesterday.",
+          "cue": "मैंने कल फ़ॉर्म पर दस्तख़त किए.",
+          "changed": "बीता हुआ, कर्तृवाच्य"
+        }
+      ],
+      "mistake": {
+        "display": "Where I do signature?",
+        "why": "सवाल में do पहले और क्रिया sign: Where do I sign?"
+      },
+      "usage": "बैंक, दफ़्तर या दुकान के काउंटर पर पहला सवाल.",
+      "register": "neutral",
+      "mnemonic": "sign करना है, signature लिखा हुआ नाम."
+    },
+    {
+      "id": "L3-M8-S02",
+      "display": "Your rent is due on the first.",
+      "cue": "आपका किराया पहली तारीख़ को देना है.",
+      "literal": "तुम्हारा किराया है देय पर वह पहली.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rent",
+            "cue": "किराया",
+            "tag": "free",
+            "forms": ["rent", "rents"],
+            "note": "हर महीने दी जाने वाली रक़म. शुरू में जमा होने वाली रक़म deposit है, दोनों अलग हैं."
+          },
+          {
+            "display": "due",
+            "cue": "देय · जिसका वक़्त आ गया",
+            "tag": "delta",
+            "forms": ["due"],
+            "note": "is के साथ आता है और तारीख़ on से जुड़ती है: The bill is due on Monday. इसके आगे a नहीं आता."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "due के आगे to लगाने पर मतलब बदल जाता है. देय तारीख़ के लिए सिर्फ़ due on.",
+      "sound": "due एक ही अक्षर — ड्यू.",
+      "variations": [
+        {
+          "display": "The bill is due on Friday.",
+          "cue": "बिल शुक्रवार को देना है.",
+          "changed": "दूसरा काग़ज़, दूसरा दिन"
+        },
+        {
+          "display": "My rent is due today.",
+          "cue": "मेरा किराया आज देना है.",
+          "changed": "आज"
+        },
+        {
+          "display": "The rent was due yesterday.",
+          "cue": "किराया कल देना था.",
+          "changed": "बीता हुआ"
+        }
+      ],
+      "mistake": {
+        "display": "Your rent is due in the first",
+        "why": "तारीख़ के आगे on: Your rent is due on the first."
+      },
+      "usage": "मकान मालिक या दफ़्तर से तारीख़ तय करना.",
+      "register": "neutral",
+      "mnemonic": "तारीख़ पर on."
+    },
+    {
+      "id": "L3-M8-S03",
+      "display": "I need to fill in this form. Please fill it in.",
+      "cue": "मुझे यह फ़ॉर्म भरना है. कृपया इसे भर दीजिए.",
+      "literal": "मैं ज़रूरत को भरना-में यह फ़ॉर्म. कृपया भरो इसे में.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fill in",
+            "cue": "फ़ॉर्म भरना",
+            "tag": "interference",
+            "forms": ["fill in", "fills in", "filled in", "fill it in"],
+            "note": "दो शब्दों की एक क्रिया. कर्म it या this हो तो बीच में आता है — fill it in — और fill in it कभी नहीं."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "fill in it अंग्रेज़ी में नहीं है. छोटा कर्म हमेशा बीच में बैठता है.",
+      "sound": "fill में इ छोटी है — फ़िल, फ़ील नहीं.",
+      "variations": [
+        {
+          "display": "I filled in the form yesterday.",
+          "cue": "मैंने कल फ़ॉर्म भरा.",
+          "changed": "बीता हुआ"
+        },
+        {
+          "display": "My brother fills in the form at the bank.",
+          "cue": "मेरा भाई बैंक में फ़ॉर्म भरता है.",
+          "changed": "दूसरा आदमी"
+        },
+        {
+          "display": "Please fill in this form and sign it.",
+          "cue": "कृपया यह फ़ॉर्म भरिए और दस्तख़त कीजिए.",
+          "changed": "दो काम एक साथ"
+        }
+      ],
+      "mistake": {
+        "display": "Please fill in it",
+        "why": "छोटा कर्म बीच में: Please fill it in."
+      },
+      "usage": "काउंटर पर काग़ज़ लेते या देते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "fill it in, कभी fill in it नहीं."
+    },
+    {
+      "id": "L3-M8-S04",
+      "display": "Your card will be sent by post.",
+      "cue": "आपका कार्ड डाक से भेजा जाएगा.",
+      "literal": "तुम्हारा कार्ड होगा भेजा-गया द्वारा डाक.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "card",
+            "cue": "कार्ड",
+            "tag": "free",
+            "forms": ["card", "cards"],
+            "note": "गिना जाता है: a card, two cards. बैंक का कार्ड और शुभकामना का कार्ड, दोनों यही शब्द."
+          },
+          {
+            "display": "send",
+            "cue": "भेजना",
+            "tag": "free",
+            "forms": ["send", "sends", "sent"],
+            "note": "तीसरा रूप sent है और कर्मवाच्य में यही आता है: will be sent, was sent."
+          },
+          {
+            "display": "post",
+            "cue": "डाक",
+            "tag": "delta",
+            "forms": ["post"],
+            "note": "by post का मतलब डाक से. यह गिना नहीं जाता, इसलिए आगे a नहीं आता. अमेरिका में mail कहते हैं."
+          },
+          {
+            "display": "be",
+            "cue": "होना (मूल रूप)",
+            "tag": "delta",
+            "forms": ["be"],
+            "note": "यह am · is · are (L1-M1) और was · were (L1-M5) का मूल रूप है. will, must या to के बाद यही आता है: will be sent, must be signed."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "will be sending और will be sent एक नहीं हैं. काग़ज़ी वाक्य में तीसरा रूप sent चाहिए.",
+      "sound": "sent और send का आख़िरी अक्षर अलग है — सेन्ट, सेन्ड.",
+      "variations": [
+        {
+          "display": "Your card will be sent to you.",
+          "cue": "आपका कार्ड आपको भेजा जाएगा.",
+          "changed": "किसे भेजा जाएगा"
+        },
+        {
+          "display": "The form was sent yesterday.",
+          "cue": "फ़ॉर्म कल भेजा गया था.",
+          "changed": "बीता हुआ कर्मवाच्य"
+        },
+        {
+          "display": "The bank will send your card.",
+          "cue": "बैंक आपका कार्ड भेजेगा.",
+          "changed": "कर्ता के साथ सीधा वाक्य"
+        }
+      ],
+      "mistake": {
+        "display": "Your card will send by post",
+        "why": "कार्ड ख़ुद नहीं भेजता: Your card will be sent by post."
+      },
+      "usage": "बैंक या दफ़्तर से पूछना कि चीज़ कैसे पहुँचेगी.",
+      "register": "formal",
+      "mnemonic": "will be + तीसरा रूप."
+    },
+    {
+      "id": "L3-M8-S05",
+      "display": "The form must be signed. A signature is required.",
+      "cue": "फ़ॉर्म पर दस्तख़त होने ही चाहिए. दस्तख़त ज़रूरी है.",
+      "literal": "वह फ़ॉर्म ज़रूर होना दस्तख़त-किया. एक दस्तख़त है ज़रूरी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "must",
+            "cue": "ज़रूर · होना ही चाहिए",
+            "tag": "delta",
+            "forms": ["must"],
+            "note": "should (L2-M8) सलाह है, must नियम. इसके बाद to नहीं आता और रूप कभी नहीं बदलता."
+          },
+          {
+            "display": "signature",
+            "cue": "दस्तख़त",
+            "tag": "free",
+            "forms": ["signature", "signatures"],
+            "note": "यह लिखा हुआ नाम है, करना नहीं. करने के लिए sign है. गिना जाता है: a signature."
+          },
+          {
+            "display": "required",
+            "cue": "ज़रूरी · माँगा गया",
+            "tag": "free",
+            "forms": ["require", "requires", "required"],
+            "note": "काग़ज़ी अंग्रेज़ी का शब्द: A signature is required. बोलचाल में यही बात You must sign है."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "must के बाद to लगाना सबसे आम ग़लती है: must be signed, न कि must to be signed.",
+      "sound": "must का t हल्का दबा हुआ — मस्ट.",
+      "variations": [
+        {
+          "display": "The form must be signed today.",
+          "cue": "फ़ॉर्म पर आज दस्तख़त होने ही चाहिए.",
+          "changed": "वक़्त जोड़ा"
+        },
+        {
+          "display": "Your signature is required here.",
+          "cue": "यहाँ आपके दस्तख़त ज़रूरी हैं.",
+          "changed": "किसका दस्तख़त"
+        },
+        {
+          "display": "You must sign this form.",
+          "cue": "आपको इस फ़ॉर्म पर दस्तख़त करने ही होंगे.",
+          "changed": "सीधा वाक्य, वही मतलब"
+        }
+      ],
+      "mistake": {
+        "display": "The form must to be sign",
+        "why": "must के बाद सीधा be और तीसरा रूप: The form must be signed."
+      },
+      "usage": "किसी को नियम बताना — दफ़्तर, स्कूल, बैंक.",
+      "register": "formal",
+      "mnemonic": "must be + तीसरा रूप."
+    },
+    {
+      "id": "L3-M8-S06",
+      "display": "I paid the deposit. Here is the receipt.",
+      "cue": "मैंने जमा रक़म दे दी. यह रही रसीद.",
+      "literal": "मैंने चुकाया वह जमा-रक़म. यहाँ है वह रसीद.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pay",
+            "cue": "चुकाना · देना",
+            "tag": "free",
+            "forms": ["pay", "pays", "paid"],
+            "note": "बीता हुआ और तीसरा रूप दोनों paid हैं: I paid the rent, The bill is paid."
+          },
+          {
+            "display": "deposit",
+            "cue": "जमा रक़म · पेशगी",
+            "tag": "delta",
+            "forms": ["deposit", "deposits"],
+            "note": "शुरू में जमा होती है और आख़िर में वापस मिल सकती है. हर महीने वाली रक़म rent है."
+          },
+          {
+            "display": "receipt",
+            "cue": "रसीद",
+            "tag": "free",
+            "forms": ["receipt", "receipts"],
+            "note": "चुका देने का सबूत. माँगने का काग़ज़ bill है, चुका देने का सबूत receipt."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "bill और receipt आपस में बदल जाते हैं. पहले bill आता है, चुकाने के बाद receipt मिलती है.",
+      "sound": "receipt में p चुप है — रिसीट.",
+      "variations": [
+        {
+          "display": "I paid the rent today.",
+          "cue": "मैंने आज किराया दे दिया.",
+          "changed": "दूसरी रक़म"
+        },
+        {
+          "display": "The bill is paid.",
+          "cue": "बिल चुका दिया गया है.",
+          "changed": "कर्मवाच्य"
+        },
+        {
+          "display": "Here is your receipt.",
+          "cue": "यह रही आपकी रसीद.",
+          "changed": "देने वाले की तरफ़ से"
+        }
+      ],
+      "mistake": {
+        "display": "I payed the deposit",
+        "why": "बीता हुआ रूप paid है: I paid the deposit."
+      },
+      "usage": "मकान, दुकान या दफ़्तर में रक़म देने के बाद.",
+      "register": "neutral",
+      "mnemonic": "bill पहले, receipt बाद में."
+    },
+    {
+      "id": "L3-M8-S07",
+      "display": "The money will be transferred to your account next month.",
+      "cue": "पैसा अगले महीने आपके खाते में भेज दिया जाएगा.",
+      "literal": "वह पैसा होगा भेजा-गया को तुम्हारा खाता अगला महीना.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "transfer",
+            "cue": "एक खाते से दूसरे में भेजना",
+            "tag": "free",
+            "forms": ["transfer", "transfers", "transferred"],
+            "note": "तीसरे रूप में r दो बार आता है: transferred. बैंक की सबसे आम क्रिया."
+          },
+          {
+            "display": "account",
+            "cue": "खाता",
+            "tag": "free",
+            "forms": ["account", "accounts"],
+            "note": "गिना जाता है: a bank account, my account. पैसा खाते में in नहीं, to जाता है."
+          },
+          {
+            "display": "month",
+            "cue": "महीना",
+            "tag": "free",
+            "forms": ["month", "months"],
+            "note": "week और year के बीच की इकाई: next month, two months, every month."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "next month के आगे न in आता है न on. वक़्त बताने वाले next वाले जोड़ खाली चलते हैं.",
+      "sound": "month में th हल्का — मन्थ.",
+      "variations": [
+        {
+          "display": "The money was transferred yesterday.",
+          "cue": "पैसा कल भेज दिया गया था.",
+          "changed": "बीता हुआ कर्मवाच्य"
+        },
+        {
+          "display": "I will transfer the money next month.",
+          "cue": "मैं अगले महीने पैसा भेज दूँगा.",
+          "changed": "कर्ता के साथ सीधा वाक्य"
+        },
+        {
+          "display": "My salary is transferred to this account.",
+          "cue": "मेरी तनख़्वाह इसी खाते में आती है.",
+          "changed": "आदत वाला कर्मवाच्य"
+        }
+      ],
+      "mistake": {
+        "display": "The money will transfer in your account",
+        "why": "पैसा ख़ुद नहीं भेजता, और खाते के आगे to: will be transferred to your account."
+      },
+      "usage": "बैंक या दफ़्तर से तनख़्वाह और रक़म की बात करना.",
+      "register": "formal",
+      "mnemonic": "transferred to, न कि in."
+    },
+    {
+      "id": "L3-M8-S08",
+      "display": "I must hand in this form on Monday.",
+      "cue": "मुझे यह फ़ॉर्म सोमवार को जमा करना ही है.",
+      "literal": "मैं ज़रूर सौंपना-में यह फ़ॉर्म पर सोमवार.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hand in",
+            "cue": "जमा करना · सौंपना",
+            "tag": "interference",
+            "forms": ["hand in", "hands in", "handed in", "hand it in"],
+            "note": "काग़ज़ किसी दफ़्तर या शिक्षक को देना. छोटा कर्म बीच में: hand it in, न कि hand in it."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "give the form सुनने में ठीक लगता है, पर दफ़्तर में जमा करने का शब्द hand in है.",
+      "sound": "hand in जुड़कर बोला जाता है — हैन्-डिन.",
+      "variations": [
+        {
+          "display": "I handed in the form yesterday.",
+          "cue": "मैंने कल फ़ॉर्म जमा कर दिया.",
+          "changed": "बीता हुआ"
+        },
+        {
+          "display": "Please hand it in at the office.",
+          "cue": "कृपया इसे दफ़्तर में जमा कर दीजिए.",
+          "changed": "छोटा कर्म बीच में"
+        },
+        {
+          "display": "The form must be handed in today.",
+          "cue": "फ़ॉर्म आज ही जमा होना चाहिए.",
+          "changed": "कर्मवाच्य"
+        }
+      ],
+      "mistake": {
+        "display": "I must to hand in this form",
+        "why": "must के बाद to नहीं: I must hand in this form."
+      },
+      "usage": "दफ़्तर, कॉलेज या सरकारी काम की आख़िरी तारीख़ बताना.",
+      "register": "neutral",
+      "mnemonic": "hand it in, कभी hand in it नहीं."
+    },
+    {
+      "id": "L3-M8-S09",
+      "display": "Excuse me, would you mind signing this form? Take your ID too.",
+      "cue": "माफ़ कीजिए, क्या आप इस फ़ॉर्म पर दस्तख़त कर देंगे? अपना पहचान-पत्र भी ले लीजिए.",
+      "literal": "माफ़ मुझे, क्या तुम बुरा-मानोगे दस्तख़त-करना यह फ़ॉर्म? लो अपना पहचान-पत्र भी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ID",
+            "cue": "पहचान-पत्र",
+            "tag": "free",
+            "forms": ["ID"],
+            "note": "identity card का छोटा रूप और काउंटर पर यही चलता है: Take your ID, Show me your ID."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "would you mind (L2-M1) के बाद क्रिया में -ing लगती है: would you mind signing, न कि to sign.",
+      "sound": "ID दोनों अक्षर अलग-अलग — आई-डी.",
+      "variations": [
+        {
+          "display": "Would you mind signing here?",
+          "cue": "क्या आप यहाँ दस्तख़त कर देंगे?",
+          "changed": "छोटा रूप"
+        },
+        {
+          "display": "Excuse me, could you tell me where I sign?",
+          "cue": "माफ़ कीजिए, बता सकते हैं मैं कहाँ दस्तख़त करूँ?",
+          "changed": "दूसरा सँभला हुआ साँचा"
+        },
+        {
+          "display": "Your ID is required at the bank.",
+          "cue": "बैंक में पहचान-पत्र ज़रूरी है.",
+          "changed": "काग़ज़ी वाक्य"
+        }
+      ],
+      "mistake": {
+        "display": "Would you mind to sign this form?",
+        "why": "would you mind के बाद -ing: Would you mind signing this form?"
+      },
+      "usage": "काउंटर पर किसी से सँभले हुए लहजे में काम कहलवाना.",
+      "register": "formal",
+      "mnemonic": "mind के बाद -ing."
+    },
+    {
+      "id": "L3-M8-S10",
+      "display": "I have to send off this form. The bill is paid.",
+      "cue": "मुझे यह फ़ॉर्म डाक से भेजना है. बिल चुका दिया गया है.",
+      "literal": "मैं रखता को भेजना-दूर यह फ़ॉर्म. वह बिल है चुकाया-गया.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "send off",
+            "cue": "डाक से रवाना करना",
+            "tag": "interference",
+            "forms": ["send off", "sends off", "sent off", "send it off"],
+            "note": "अकेला send किसी को भी भेजना है; send off ख़ास तौर पर डाक से रवाना करना. कर्म it हो तो बीच में."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "send off it ग़लत है. छोटा कर्म हमेशा दोनों टुकड़ों के बीच बैठता है.",
+      "sound": "send off जुड़कर बोला जाता है — सेन्-डॉफ़.",
+      "variations": [
+        {
+          "display": "I sent off the form yesterday.",
+          "cue": "मैंने कल फ़ॉर्म भेज दिया.",
+          "changed": "बीता हुआ"
+        },
+        {
+          "display": "Please send it off today.",
+          "cue": "कृपया इसे आज ही भेज दीजिए.",
+          "changed": "छोटा कर्म बीच में"
+        },
+        {
+          "display": "My rent is paid on the first.",
+          "cue": "मेरा किराया पहली तारीख़ को चुकाया जाता है.",
+          "changed": "आदत वाला कर्मवाच्य"
+        }
+      ],
+      "mistake": {
+        "display": "I have to send off it",
+        "why": "छोटा कर्म बीच में: I have to send it off."
+      },
+      "usage": "डाकघर या दफ़्तर का काम गिनाना.",
+      "register": "neutral",
+      "mnemonic": "send it off, कभी send off it नहीं."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M8-C01",
+      "display": "The form is signed here.",
+      "cue": "फ़ॉर्म यहीं पर दस्तख़त होता है."
+    },
+    {
+      "id": "L3-M8-C02",
+      "display": "Where do I sign this form?",
+      "cue": "मैं इस फ़ॉर्म पर कहाँ दस्तख़त करूँ?"
+    },
+    {
+      "id": "L3-M8-C03",
+      "display": "Your rent is due on the first.",
+      "cue": "आपका किराया पहली तारीख़ को देना है."
+    },
+    {
+      "id": "L3-M8-C04",
+      "display": "I need to fill in this form. Please fill it in.",
+      "cue": "मुझे यह फ़ॉर्म भरना है. कृपया इसे भर दीजिए."
+    },
+    {
+      "id": "L3-M8-C05",
+      "display": "Your card will be sent by post.",
+      "cue": "आपका कार्ड डाक से भेजा जाएगा."
+    },
+    {
+      "id": "L3-M8-C06",
+      "display": "The form must be signed today.",
+      "cue": "फ़ॉर्म पर आज दस्तख़त होने ही चाहिए."
+    },
+    {
+      "id": "L3-M8-C07",
+      "display": "A signature is required here.",
+      "cue": "यहाँ दस्तख़त ज़रूरी है."
+    },
+    {
+      "id": "L3-M8-C08",
+      "display": "I paid the deposit. Here is the receipt.",
+      "cue": "मैंने जमा रक़म दे दी. यह रही रसीद."
+    },
+    {
+      "id": "L3-M8-C09",
+      "display": "The money will be transferred to your account.",
+      "cue": "पैसा आपके खाते में भेज दिया जाएगा."
+    },
+    {
+      "id": "L3-M8-C10",
+      "display": "I must hand in this form on Monday.",
+      "cue": "मुझे यह फ़ॉर्म सोमवार को जमा करना ही है."
+    },
+    {
+      "id": "L3-M8-C11",
+      "display": "Would you mind signing this form? Take your ID.",
+      "cue": "क्या आप इस फ़ॉर्म पर दस्तख़त कर देंगे? अपना पहचान-पत्र ले लीजिए."
+    },
+    {
+      "id": "L3-M8-C12",
+      "display": "Please send it off today. The bill is paid.",
+      "cue": "कृपया इसे आज ही भेज दीजिए. बिल चुका दिया गया है."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

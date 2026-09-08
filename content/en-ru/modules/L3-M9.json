@@ -1,0 +1,602 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M9",
+  "title": "Festivals and everyday culture",
+  "job": "Talk about what is happening around you",
+  "prerequisites": ["L3-M8"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": ["simple_present_imperfective", "simple_past", "simple_future_perfective"],
+    "allowedPatterns": [
+      "<N> + , + kotóryy/kotóraya/kotóroye + <clause>",
+      "<ordinal-genitive> + <month-genitive>",
+      "V + <month-prepositional> + byváyet + <event>",
+      "Na + <festival-accusative> + my + V",
+      "Éhto prázdnik, kotóryy + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "kotóryy IS THE MODULE, and it is the most useful single word in the level: a festival nobody in your family has heard of cannot be described without a relative clause. Its law has two halves and both matter. It agrees in GENDER and NUMBER with the noun it points back at — prázdnik, kotóryy … but kníga, kotóraya … — and it takes its CASE from its own clause, not from that noun. kníga, kotóruyu ya chitál has a feminine word in the accusative because the reading, not the book, decides."
+    },
+    {
+      "tag": "delta",
+      "text": "The comma in front of kotóryy is obligatory, which is M3's law for the third time in this level. By now it should be predictable rather than surprising: Russian marks the seam between clauses with a comma every time, whether the second clause opens with chto, yésli or kotóryy, and there is no case in which leaving it out is acceptable."
+    },
+    {
+      "tag": "delta",
+      "text": "DATES take the genitive twice over: pérvogo yanvaryá, vos'mógo márta, devyátogo máya — an ordinal in the genitive and a month in the genitive, with no preposition at all where English needs \"on\" and \"of\". The naming form is different: pérvoye yanvaryá is the date as a label, and pérvogo yanvaryá is the date as a when. Months are written in lower case, which an English habit will fight."
+    },
+    {
+      "tag": "free",
+      "text": "na takes the ACCUSATIVE for a festival you go to and the prepositional for one you are already at — L2-M4's contrast, in a new field: na Nóvyy god, na den' rozhdéniya. byváyet is the other half of the module's grammar of the year: it means \"there tends to be\", the thing that happens in that month most years, and it never changes for the person because it has no person."
+    },
+    {
+      "tag": "free",
+      "text": "The festival names are learnt WHOLE, as one word each: Nóvyy god, den' rozhdéniya, Den' Pobédy. Taking them apart is a waste of effort — god on its own is a year, and den' rozhdéniya translates literally as \"day of birth\", which nobody needs to know to use it. yólka is the New Year tree, and it arrives at New Year rather than at Christmas."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M9-S01",
+      "display": "Éhto prázdnik, kotóryy ya lyublyú",
+      "script": "Это праздник, который я люблю",
+      "cue": "It's a holiday that I love",
+      "literal": "This holiday, which I love",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prázdnik",
+            "script": "праздник",
+            "cue": "a holiday, a festival",
+            "tag": "delta",
+            "forms": ["prázdnik", "prázdniki"],
+            "note": "A public holiday or a celebration, not a holiday from work — that one is ótpusk. The d is silent: PRAZ-nik."
+          },
+          {
+            "display": "kotóryy",
+            "script": "который",
+            "cue": "which, that",
+            "tag": "delta",
+            "forms": ["kotóryy", "kotórye"],
+            "note": "The relative word. Masculine here because prázdnik is masculine, and nominative because it is the subject of its own clause. Plural: kotórye."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English drops \"that\" as often as not. Russian never drops kotóryy, and never drops the comma in front of it.",
+      "sound": "EH-ta PRAZ-nik, ka-TO-ryy ya lyub-LYU. No d in prázdnik at all.",
+      "variations": [
+        {
+          "display": "Éhto prázdniki, kotórye ya lyublyú",
+          "script": "Это праздники, которые я люблю",
+          "cue": "These are holidays that I love",
+          "changed": "plural, so kotórye"
+        },
+        {
+          "display": "Éhto prázdnik, kotóryy ya ne lyublyú",
+          "script": "Это праздник, который я не люблю",
+          "cue": "It's a holiday I don't like",
+          "changed": "the clause turned negative"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto prázdnik ya lyublyú",
+        "script": "Это праздник я люблю",
+        "why": "Two clauses have been run together with nothing between them. Russian needs kotóryy and the comma before it."
+      },
+      "usage": "Explaining a date in your diary to somebody who does not know it.",
+      "register": "neutral",
+      "mnemonic": "kotóryy takes its gender from behind and its case from in front."
+    },
+    {
+      "id": "L3-M9-S02",
+      "display": "Na Nóvyy god my poydyóm v kafé",
+      "script": "На Новый год мы пойдём в кафе",
+      "cue": "At New Year we'll go to a café",
+      "literal": "On New Year we will-go into café",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Nóvyy god",
+            "script": "Новый год",
+            "cue": "New Year",
+            "tag": "delta",
+            "forms": ["Nóvyy god"],
+            "note": "The biggest holiday of the Russian year, learnt as one word. na plus the accusative is what you say for going to it — and the accusative happens to look like the plain form."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "na and not v for a festival. v Nóvyy god would put you inside the year rather than at the celebration.",
+      "sound": "na NO-vyy got my pay-DYOM f ka-FE. The d of god is said as a t, and the v of v kafé as an f.",
+      "variations": [
+        {
+          "display": "Na Nóvyy god my dóma",
+          "script": "На Новый год мы дома",
+          "cue": "At New Year we're at home",
+          "changed": "staying in, with no verb at all"
+        },
+        {
+          "display": "Na Nóvyy god my poydyóm k sestré",
+          "script": "На Новый год мы пойдём к сестре",
+          "cue": "At New Year we'll go to my sister's",
+          "changed": "M7's k plus a person"
+        }
+      ],
+      "mistake": {
+        "display": "V Nóvyy god my poydyóm v kafé",
+        "script": "В Новый год мы пойдём в кафе",
+        "why": "A festival takes na. v is for the place you walk into, which is why kafé keeps it in the same sentence."
+      },
+      "usage": "Making plans for the one night of the year everybody has plans for.",
+      "register": "neutral",
+      "mnemonic": "na the festival, v the café."
+    },
+    {
+      "id": "L3-M9-S03",
+      "display": "Pérvogo yanvaryá my dóma",
+      "script": "Первого января мы дома",
+      "cue": "On the first of January we're at home",
+      "literal": "Of-first of-January we at-home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pérvogo",
+            "script": "первого",
+            "cue": "on the first",
+            "tag": "delta",
+            "forms": ["pérvogo", "pérvoye"],
+            "note": "The genitive of the ordinal, which is how Russian says \"on the Nth\". The label form is pérvoye: pérvoye yanvaryá is the date, pérvogo yanvaryá is the day it happens on."
+          },
+          {
+            "display": "yanvaryá",
+            "script": "января",
+            "cue": "of January",
+            "tag": "delta",
+            "forms": ["yanvaryá", "yanvár'", "yanvaré"],
+            "note": "January in the genitive, which every date needs. The plain name is yanvár' and \"in January\" is v yanvaré — and it is written in lower case, always."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "No preposition anywhere. English has \"on\" and \"of\" and Russian has two genitive endings doing the work of both.",
+      "sound": "PYER-va-va yan-va-RYA my DO-ma. The -ogo ending is said -ava, as it is everywhere else.",
+      "variations": [
+        {
+          "display": "Pérvogo márta my dóma",
+          "script": "Первого марта мы дома",
+          "cue": "On the first of March we're at home",
+          "changed": "a different month, same shape"
+        },
+        {
+          "display": "Pérvoye yanvaryá — éhto prázdnik",
+          "script": "Первое января — это праздник",
+          "cue": "The first of January is a holiday",
+          "changed": "the date as a label, so pérvoye"
+        }
+      ],
+      "mistake": {
+        "display": "V pérvoye yanvár' my dóma",
+        "script": "В первое январь мы дома",
+        "why": "There is no v in a date, and both words take the genitive: pérvogo yanvaryá."
+      },
+      "usage": "Saying when something falls, which is half of every arrangement.",
+      "register": "neutral",
+      "mnemonic": "Two genitives and no preposition — that is a Russian date."
+    },
+    {
+      "id": "L3-M9-S04",
+      "display": "Vos'mógo márta ya kupíl podárok",
+      "script": "Восьмого марта я купил подарок",
+      "cue": "On the eighth of March I bought a present",
+      "literal": "Of-eighth of-March I bought present",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vos'mógo",
+            "script": "восьмого",
+            "cue": "on the eighth",
+            "tag": "delta",
+            "forms": ["vos'mógo", "vos'móye"],
+            "note": "The eighth, in the same genitive as pérvogo. Vos'móye márta is a holiday in its own right — Women's Day — and it is a day on which presents are expected."
+          },
+          {
+            "display": "márta",
+            "script": "марта",
+            "cue": "of March",
+            "tag": "delta",
+            "forms": ["márta", "mart", "márte"],
+            "note": "March in the genitive, for dates. The plain name is mart and \"in March\" is v márte. Lower case, like every month."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "podárok is L1-M6's row and has not changed. What is new here is only the date in front of it.",
+      "sound": "vas-MO-va MAR-ta ya ku-PIL pa-DA-rak. The soft sign in vos'mógo is a tiny pause, not a vowel.",
+      "variations": [
+        {
+          "display": "Vos'mógo márta ya kupíla podárok",
+          "script": "Восьмого марта я купила подарок",
+          "cue": "On the eighth of March I bought a present",
+          "changed": "a woman saying it"
+        },
+        {
+          "display": "Vos'móye márta — éhto prázdnik",
+          "script": "Восьмое марта — это праздник",
+          "cue": "The eighth of March is a holiday",
+          "changed": "the date as a label"
+        }
+      ],
+      "mistake": {
+        "display": "Vos'móye márta ya kupíl podárok",
+        "script": "Восьмое марта я купил подарок",
+        "why": "That is the label form, and it can only name the day. The day something happened on is vos'mógo."
+      },
+      "usage": "The one date in the Russian year that guarantees queues at the florist.",
+      "register": "neutral",
+      "mnemonic": "-ogo for when, -oye for what it is called."
+    },
+    {
+      "id": "L3-M9-S05",
+      "display": "V yanvaré byváyet khólodno",
+      "script": "В январе бывает холодно",
+      "cue": "It tends to be cold in January",
+      "literal": "In January tends-to-be cold",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "byváyet",
+            "script": "бывает",
+            "cue": "tends to be, happens to be",
+            "tag": "delta",
+            "forms": ["byváyet"],
+            "note": "Not \"is\" but \"is usually\" — what happens in that month most years. It has no person and never agrees with anybody; the plural of the thing makes it byváyut."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "byváyet is the habit and not the day. For the weather this morning you would say nothing at all: khólodno on its own.",
+      "sound": "v yan-va-RYE by-VA-yet KHO-lad-na. The v at the front is a single consonant on the month.",
+      "variations": [
+        {
+          "display": "V márte byváyet khólodno",
+          "script": "В марте бывает холодно",
+          "cue": "It tends to be cold in March",
+          "changed": "a different month"
+        },
+        {
+          "display": "Zdes' byváyet zhárko",
+          "script": "Здесь бывает жарко",
+          "cue": "It gets hot here",
+          "changed": "a place instead of a month"
+        }
+      ],
+      "mistake": {
+        "display": "V yanvár' byváyet khólodno",
+        "script": "В январь бывает холодно",
+        "why": "\"In a month\" takes the prepositional: v yanvaré. The plain yanvár' is only the name of it."
+      },
+      "usage": "Warning a visitor about the month they have chosen.",
+      "register": "neutral",
+      "mnemonic": "byváyet — the way it usually is, not the way it is today."
+    },
+    {
+      "id": "L3-M9-S06",
+      "display": "Éhto kníga, kotóruyu ya chitál",
+      "script": "Это книга, которую я читал",
+      "cue": "This is the book I was reading",
+      "literal": "This book, which-one I read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kotóruyu",
+            "script": "которую",
+            "cue": "which (feminine, object)",
+            "tag": "delta",
+            "forms": ["kotóruyu"],
+            "note": "Both halves of the law in one word: feminine because kníga is, accusative because it is what the reading was done to. The subject form would be kotóraya."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "The case does NOT come from kníga. It comes from the second clause, where the book is the object.",
+      "sound": "EH-ta KNI-ga, ka-TO-ru-yu ya chi-TAL. kotóruyu is four syllables and only the second is stressed.",
+      "variations": [
+        {
+          "display": "Éhto kníga, kotóruyu ya kupíl",
+          "script": "Это книга, которую я купил",
+          "cue": "This is the book I bought",
+          "changed": "a different verb in the clause"
+        },
+        {
+          "display": "Éhto gazéta, kotóruyu ya chitál",
+          "script": "Это газета, которую я читал",
+          "cue": "This is the paper I was reading",
+          "changed": "a different feminine noun"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto kníga, kotóraya ya chitál",
+        "script": "Это книга, которая я читал",
+        "why": "kotóraya is the subject form, and the book is not doing the reading. What is read takes the accusative: kotóruyu."
+      },
+      "usage": "Handing something over and saying what it is.",
+      "register": "neutral",
+      "mnemonic": "Gender from the noun behind, case from the clause ahead."
+    },
+    {
+      "id": "L3-M9-S07",
+      "display": "Éhto pis'mó, kotóroye ya napisál",
+      "script": "Это письмо, которое я написал",
+      "cue": "This is the letter I wrote",
+      "literal": "This letter, which I wrote",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kotóroye",
+            "script": "которое",
+            "cue": "which (neuter)",
+            "tag": "delta",
+            "forms": ["kotóroye"],
+            "note": "The neuter form, for words like pis'mó and soobshchéniye. Its accusative looks exactly like its nominative, which is true of every neuter noun as well."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Neuter hides the case, since the two forms are identical. The rule is still doing its work — you simply cannot see it here.",
+      "sound": "EH-ta pis-MO, ka-TO-ra-ye ya na-pi-SAL. The final -oye is said -aye.",
+      "variations": [
+        {
+          "display": "Éhto pis'mó, kotóroye ya prochitál",
+          "script": "Это письмо, которое я прочитал",
+          "cue": "This is the letter I read",
+          "changed": "a finished reading"
+        },
+        {
+          "display": "Éhto soobshchéniye, kotóroye ya napisál",
+          "script": "Это сообщение, которое я написал",
+          "cue": "This is the message I wrote",
+          "changed": "a different neuter noun"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto pis'mó, kotóryy ya napisál",
+        "script": "Это письмо, который я написал",
+        "why": "pis'mó is neuter, so the relative word has to be too: kotóroye."
+      },
+      "usage": "Showing somebody the thing you have just been talking about.",
+      "register": "neutral",
+      "mnemonic": "pis'mó is neuter, so kotóroye follows it."
+    },
+    {
+      "id": "L3-M9-S08",
+      "display": "Moy den' rozhdéniya v márte",
+      "script": "Мой день рождения в марте",
+      "cue": "My birthday is in March",
+      "literal": "My day of-birth in March",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "den' rozhdéniya",
+            "script": "день рождения",
+            "cue": "birthday",
+            "tag": "delta",
+            "forms": ["den' rozhdéniya"],
+            "note": "Two words, one item of vocabulary: keep it whole. It is masculine, because den' is, which is why it takes moy rather than moyá."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "No verb in the sentence and none missing. \"Is\" has no present tense in Russian.",
+      "sound": "moy dyen razh-DYE-ni-ya v MAR-tye. rozhdéniya runs together into three quick syllables.",
+      "variations": [
+        {
+          "display": "Moy den' rozhdéniya v yanvaré",
+          "script": "Мой день рождения в январе",
+          "cue": "My birthday is in January",
+          "changed": "a different month"
+        },
+        {
+          "display": "Na den' rozhdéniya my býli v kafé",
+          "script": "На день рождения мы были в кафе",
+          "cue": "For the birthday we were at a café",
+          "changed": "na plus the festival, in the past"
+        }
+      ],
+      "mistake": {
+        "display": "Moyá den' rozhdéniya v márte",
+        "script": "Моя день рождения в марте",
+        "why": "den' is masculine and carries the whole phrase with it, so the possessive is moy."
+      },
+      "usage": "The answer to the question every new colleague asks in the first week.",
+      "register": "neutral",
+      "mnemonic": "den' rozhdéniya — one word in two pieces, and masculine."
+    },
+    {
+      "id": "L3-M9-S09",
+      "display": "Devyátogo máya — Den' Pobédy",
+      "script": "Девятого мая — День Победы",
+      "cue": "The ninth of May is Victory Day",
+      "literal": "Of-ninth of-May — Day of-Victory",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "devyátogo",
+            "script": "девятого",
+            "cue": "on the ninth",
+            "tag": "delta",
+            "forms": ["devyátogo", "devyátoye"],
+            "note": "The ninth, in the date genitive again. The pattern is fixed by now: the ordinal ends in -ogo and the month follows it in the genitive."
+          },
+          {
+            "display": "máya",
+            "script": "мая",
+            "cue": "of May",
+            "tag": "delta",
+            "forms": ["máya"],
+            "note": "May in the genitive. The plain name is may — one syllable, and the shortest month name in the language."
+          },
+          {
+            "display": "Den' Pobédy",
+            "script": "День Победы",
+            "cue": "Victory Day",
+            "tag": "delta",
+            "forms": ["Den' Pobédy"],
+            "note": "The ninth of May, and the largest public holiday after Nóvyy god. Learnt whole, like every festival name here."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "The dash stands where English puts \"is\". It is written, and in speech it is a pause.",
+      "sound": "di-VYA-ta-va MA-ya, dyen pa-BYE-dy. A clear pause where the dash is.",
+      "variations": [
+        {
+          "display": "Devyátoye máya — éhto prázdnik",
+          "script": "Девятое мая — это праздник",
+          "cue": "The ninth of May is a holiday",
+          "changed": "the label form of the date"
+        },
+        {
+          "display": "Na Den' Pobédy my dóma",
+          "script": "На День Победы мы дома",
+          "cue": "On Victory Day we're at home",
+          "changed": "na plus the festival"
+        }
+      ],
+      "mistake": {
+        "display": "Devyátoye máya — Den' Pobédy",
+        "script": "Девятое мая — День Победы",
+        "why": "Both forms exist and this one names the date rather than placing an event on it. As a label it is fine; as \"on the ninth\" it must be devyátogo."
+      },
+      "usage": "Explaining the calendar to someone who has just arrived.",
+      "register": "neutral",
+      "mnemonic": "Ninth of May, whole and unchanged: Den' Pobédy."
+    },
+    {
+      "id": "L3-M9-S10",
+      "display": "Ya kupíl yólku",
+      "script": "Я купил ёлку",
+      "cue": "I bought a New Year tree",
+      "literal": "I bought fir-tree",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yólku",
+            "script": "ёлку",
+            "cue": "New Year tree",
+            "tag": "delta",
+            "forms": ["yólku", "yólka"],
+            "note": "The tree that goes up for Nóvyy god rather than for Christmas. Accusative after kupíl; standing in the corner it is a yólka."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "It arrives in December for the New Year. Calling it a Christmas tree misses the holiday it belongs to.",
+      "sound": "ya ku-PIL YOL-ku. The yo is always stressed — that letter is never unstressed in Russian.",
+      "variations": [
+        {
+          "display": "Ya kupíla yólku",
+          "script": "Я купила ёлку",
+          "cue": "I bought a New Year tree",
+          "changed": "a woman saying it"
+        },
+        {
+          "display": "Ya kupíl yólku i podárok",
+          "script": "Я купил ёлку и подарок",
+          "cue": "I bought a tree and a present",
+          "changed": "two things bought"
+        }
+      ],
+      "mistake": {
+        "display": "Ya kupíl yólka",
+        "script": "Я купил ёлка",
+        "why": "What is bought takes the accusative, and for a feminine noun that means -u: yólku."
+      },
+      "usage": "Late December, and the boot of the car.",
+      "register": "neutral",
+      "mnemonic": "The yo is stressed, and the tree is for the New Year."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M9-C01",
+      "display": "Éhto prázdnik, kotóryy ya lyublyú",
+      "script": "Это праздник, который я люблю",
+      "cue": "It's a holiday that I love"
+    },
+    {
+      "id": "L3-M9-C02",
+      "display": "Na Nóvyy god my poydyóm v kafé",
+      "script": "На Новый год мы пойдём в кафе",
+      "cue": "At New Year we'll go to a café"
+    },
+    {
+      "id": "L3-M9-C03",
+      "display": "Pérvogo yanvaryá my dóma",
+      "script": "Первого января мы дома",
+      "cue": "On the first of January we're at home"
+    },
+    {
+      "id": "L3-M9-C04",
+      "display": "Vos'mógo márta ya kupíl podárok",
+      "script": "Восьмого марта я купил подарок",
+      "cue": "On the eighth of March I bought a present"
+    },
+    {
+      "id": "L3-M9-C05",
+      "display": "V yanvaré byváyet khólodno",
+      "script": "В январе бывает холодно",
+      "cue": "It tends to be cold in January"
+    },
+    {
+      "id": "L3-M9-C06",
+      "display": "Éhto kníga, kotóruyu ya chitál",
+      "script": "Это книга, которую я читал",
+      "cue": "This is the book I was reading"
+    },
+    {
+      "id": "L3-M9-C07",
+      "display": "Éhto pis'mó, kotóroye ya napisál",
+      "script": "Это письмо, которое я написал",
+      "cue": "This is the letter I wrote"
+    },
+    {
+      "id": "L3-M9-C08",
+      "display": "Moy den' rozhdéniya v márte",
+      "script": "Мой день рождения в марте",
+      "cue": "My birthday is in March"
+    },
+    {
+      "id": "L3-M9-C09",
+      "display": "Devyátogo máya — Den' Pobédy",
+      "script": "Девятого мая — День Победы",
+      "cue": "The ninth of May is Victory Day"
+    },
+    {
+      "id": "L3-M9-C10",
+      "display": "Ya kupíl yólku",
+      "script": "Я купил ёлку",
+      "cue": "I bought a New Year tree"
+    },
+    {
+      "id": "L3-M9-C11",
+      "display": "Éhto gazéta, kotóruyu ya chitál",
+      "script": "Это газета, которую я читал",
+      "cue": "This is the paper I was reading"
+    },
+    {
+      "id": "L3-M9-C12",
+      "display": "Na den' rozhdéniya my býli v kafé",
+      "script": "На день рождения мы были в кафе",
+      "cue": "For the birthday we were at a café"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

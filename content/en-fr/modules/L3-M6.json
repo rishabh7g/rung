@@ -1,0 +1,628 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M6",
+  "title": "Feelings in depth",
+  "job": "Nuance past good and bad",
+  "prerequisites": [
+    "L3-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Je me sens + Adj",
+      "Je suis + Adj-e",
+      "J'ai + <noun feeling>",
+      "J'ai envie de + V-inf",
+      "Ça me + V"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "-é IS WHAT HAPPENED TO YOU, -ant OR -eux IS WHAT THE THING DOES. je suis ennuyé (I am bored) against c'est ennuyeux (it is boring); je suis fatigué against c'est fatigant; je suis intéressé against c'est intéressant. English hangs -ed and -ing on one stem and a learner maps that straight across; French uses two different words, and picking the wrong one moves the sentence from your mood to your character."
+    },
+    {
+      "tag": "delta",
+      "text": "je me sens IS L3-M1's REFLEXIVE DOING FEELINGS, AND ITS ADJECTIVE AGREES WITH YOU. je me sens fatigué, je me sens fatiguée — the me is the same me that je me lève carries, so nothing new is opened for the shape, only for the job. One verb does two jobs here: se sentir is to feel, sentir is to smell, and the bare sens is both of them."
+    },
+    {
+      "tag": "interference",
+      "text": "FRENCH HAS THE FEELING RATHER THAN BEING IT: j'ai peur, j'ai honte, j'ai envie de, j'ai hâte de. English reaches for an adjective — I am afraid, I am ashamed — and a learner who copies that writes je suis peur, which French does not have. Spanish, Italian and Arabic set the identical trap with their own have-verbs, so the habit is worth building once."
+    },
+    {
+      "tag": "delta",
+      "text": "ça me + VERB PUTS THE FEELING ON ITS CAUSE, IN THREE WORDS: ça m'énerve, ça me plaît, ça m'inquiète. The me is L2-M5's object pronoun sitting before the verb where it always sits, and it elides to m' before a vowel. English needs a clause for the same job (that annoys me, I like that), and reverses who is the subject."
+    },
+    {
+      "tag": "interference",
+      "text": "EVERY FEELING ADJECTIVE AGREES, AND HALF THE AGREEMENTS ARE SILENT. inquiet / inquiète and fier / fière are HEARD — the consonant wakes up. déçu / déçue, fâché / fâchée and gêné / gênée are not: the two forms sound identical. That silent half is docs/58's writing-only rule in a second field — you will never hear the mistake, so you have to write it right."
+    },
+    {
+      "tag": "delta",
+      "text": "j'ai envie de AND j'ai hâte de TAKE AN INFINITIVE, AND THE de IS NOT OPTIONAL. j'ai envie de partir, j'ai hâte de rentrer. It elides before a vowel — j'ai envie d'attendre — exactly as L3-M5's il m'a dit d'attendre does. English puts to there or nothing at all; French puts de there always."
+    },
+    {
+      "tag": "interference",
+      "text": "THE ne IS STILL WRITTEN. je ne suis pas fâché, ça ne me plaît pas. Speech drops it and writing keeps it, in this module as in every one before it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M6-S01",
+      "display": "Je me sens fatiguée ce matin",
+      "cue": "I feel tired this morning",
+      "literal": "I me feel tired this morning",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je me sens",
+            "cue": "I feel",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M1's reflexive doing feelings. One key, because the me belongs to the verb: se sentir is to feel, sentir is to smell, and sens is both."
+          },
+          {
+            "display": "tranquille",
+            "cue": "calm · at ease",
+            "tag": "free",
+            "forms": [],
+            "note": "One shape for a man and a woman — it already ends in -e, so nothing is added. Je me sens tranquille."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "se sentir keeps its me. Je sens fatiguée drops the pronoun and turns the verb into to smell — you have said you smell tired.",
+      "sound": "zhuh muh sahn fa-tee-GAY suh ma-TAN.",
+      "variations": [
+        {
+          "display": "Je me sens fatigué ce matin",
+          "cue": "I feel tired this morning (a man speaking)",
+          "changed": "no -e, and not a sound changes"
+        },
+        {
+          "display": "Je me sens tranquille ce matin",
+          "cue": "I feel calm this morning",
+          "changed": "tranquille, which has one shape for everyone"
+        }
+      ],
+      "mistake": {
+        "display": "Je sens fatiguée",
+        "why": "Without me the verb is sentir, to smell. Je me sens fatiguée."
+      },
+      "usage": "The honest answer to ça va when bien would be a lie.",
+      "register": "neutral",
+      "mnemonic": "The me is not decoration: drop it and you are smelling, not feeling."
+    },
+    {
+      "id": "L3-M6-S02",
+      "display": "Ce film est ennuyeux, et je suis ennuyé",
+      "cue": "That film is boring, and I am bored",
+      "literal": "This film is boring, and I am bored",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ennuyeux",
+            "cue": "boring (of a thing)",
+            "tag": "delta",
+            "forms": [],
+            "note": "What the thing does to you. A film, a book, an evening is ennuyeux; a person called ennuyeux is being called dull company."
+          },
+          {
+            "display": "ennuyé",
+            "cue": "bored (of a person)",
+            "tag": "delta",
+            "forms": [],
+            "note": "What was done to you. Je suis ennuyé is I am bored — the -é form is always the one that lands on the speaker."
+          },
+          {
+            "display": "intéressant",
+            "cue": "interesting",
+            "tag": "delta",
+            "forms": [],
+            "note": "The -ant twin of ennuyeux, same job: what the thing does. Ce film est intéressant."
+          },
+          {
+            "display": "intéressé",
+            "cue": "interested",
+            "tag": "delta",
+            "forms": [],
+            "note": "The -é twin: what happened to you. Je suis intéressé par ce film."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Je suis ennuyeux is a sentence about your personality, not your evening — it says you are boring to be with. A learner says it weekly.",
+      "sound": "suh feelm eh ahn-nwee-YUH, ay zhuh swee ahn-nwee-YAY.",
+      "variations": [
+        {
+          "display": "Ce film est intéressant, et je suis intéressé",
+          "cue": "That film is interesting, and I am interested",
+          "changed": "the other pair, built exactly the same way"
+        },
+        {
+          "display": "Ce travail est ennuyeux, et je suis ennuyé",
+          "cue": "That work is boring, and I am bored",
+          "changed": "the thing changes; the two endings do not"
+        }
+      ],
+      "mistake": {
+        "display": "Je suis ennuyeux",
+        "why": "That says you are a boring person. The mood is je suis ennuyé."
+      },
+      "usage": "Saying what an evening was like without insulting yourself.",
+      "register": "neutral",
+      "mnemonic": "-eux and -ant point outward at the thing; -é points back at you."
+    },
+    {
+      "id": "L3-M6-S03",
+      "display": "Ce travail est fatigant, mais je suis fier",
+      "cue": "That work is tiring, but I am proud",
+      "literal": "This work is tiring, but I am proud",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fatigant",
+            "cue": "tiring",
+            "tag": "delta",
+            "forms": [],
+            "note": "The -ant twin of L1-M2's fatigué, and note the spelling: fatigant loses the u that fatigué keeps."
+          },
+          {
+            "display": "fier",
+            "cue": "proud",
+            "tag": "delta",
+            "forms": [
+              "fier",
+              "fière"
+            ],
+            "note": "fier and fière are HEARD apart — the feminine wakes the r. Je suis fier, je suis fière."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Je suis fatigant says you are exhausting to be around. The thing is fatigant; the person it wore out is fatigué.",
+      "sound": "suh tra-VUY eh fa-tee-GAHN, meh zhuh swee fee-YEHR.",
+      "variations": [
+        {
+          "display": "Ce travail est fatigant, mais je suis fière",
+          "cue": "That work is tiring, but I am proud (a woman speaking)",
+          "changed": "fière, and this one you can hear"
+        },
+        {
+          "display": "Ce travail est intéressant, mais je suis fatigué",
+          "cue": "That work is interesting, but I am tired",
+          "changed": "the -ant on the job, the -é on the worker"
+        }
+      ],
+      "mistake": {
+        "display": "Je suis fatigant",
+        "why": "That says you tire other people out. Je suis fatigué is what you meant."
+      },
+      "usage": "The end of a long shift, when both halves are true.",
+      "register": "neutral",
+      "mnemonic": "fier gains an r out loud; fatigant loses a u on paper."
+    },
+    {
+      "id": "L3-M6-S04",
+      "display": "J'ai peur, mais je ne suis pas inquiet",
+      "cue": "I'm afraid, but I'm not worried",
+      "literal": "I-have fear, but I not am not worried",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "j'ai peur",
+            "cue": "I'm afraid",
+            "tag": "delta",
+            "forms": [],
+            "note": "One key, because the feeling is a noun French HAS: peur. je suis peur is not a sentence. Feminine changes nothing — a woman also says j'ai peur."
+          },
+          {
+            "display": "inquiet",
+            "cue": "worried",
+            "tag": "delta",
+            "forms": [
+              "inquiet",
+              "inquiète"
+            ],
+            "note": "inquiet and inquiète are HEARD apart — the feminine wakes the t. The verb of the same family is in S09."
+          }
+        ],
+        "rules": [
+          2,
+          4,
+          6
+        ]
+      },
+      "trap": "English is afraid with an adjective and French has fear with a noun, so nothing about je suis peur can be repaired by fixing the spelling.",
+      "sound": "zhay PUHR, meh zhuh nuh swee pa an-kee-EH.",
+      "variations": [
+        {
+          "display": "J'ai peur, mais je ne suis pas inquiète",
+          "cue": "I'm afraid, but I'm not worried (a woman speaking)",
+          "changed": "inquiète, and the t is now pronounced"
+        },
+        {
+          "display": "J'ai peur, et je suis très inquiet",
+          "cue": "I'm afraid, and I'm very worried",
+          "changed": "très, and the two feelings agree instead of contrasting"
+        }
+      ],
+      "mistake": {
+        "display": "Je suis peur",
+        "why": "French has fear rather than being it. J'ai peur."
+      },
+      "usage": "Separating a moment's fright from a standing worry.",
+      "register": "neutral",
+      "mnemonic": "Fear is something you carry, not something you are."
+    },
+    {
+      "id": "L3-M6-S05",
+      "display": "J'ai envie de rester à la maison ce soir",
+      "cue": "I feel like staying home this evening",
+      "literal": "I-have desire of to-stay at the house this evening",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "j'ai envie de",
+            "cue": "I feel like · I want to",
+            "tag": "delta",
+            "forms": [],
+            "note": "One key, de included, because the de is compulsory and elides: j'ai envie d'attendre. Another have-feeling, like j'ai peur."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "There is no bare want here. J'ai envie rester drops the de, and French will not attach an infinitive to envie without it.",
+      "sound": "zhay ahn-VEE duh res-TAY a la meh-ZON suh SWAHR.",
+      "variations": [
+        {
+          "display": "J'ai envie de partir tôt",
+          "cue": "I feel like leaving early",
+          "changed": "a different infinitive after the same de"
+        },
+        {
+          "display": "J'ai envie de dormir",
+          "cue": "I feel like sleeping",
+          "changed": "the shortest the frame gets, and the de is still there"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai envie rester à la maison",
+        "why": "The de is not optional after envie. J'ai envie de rester."
+      },
+      "usage": "Softer than je veux — it says what you fancy, not what you demand.",
+      "register": "informal",
+      "mnemonic": "envie always brings its de along."
+    },
+    {
+      "id": "L3-M6-S06",
+      "display": "J'ai hâte de te voir samedi",
+      "cue": "I can't wait to see you on Saturday",
+      "literal": "I-have haste of you to-see Saturday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "j'ai hâte",
+            "cue": "I can't wait",
+            "tag": "delta",
+            "forms": [],
+            "note": "A third have-feeling, and the warmest one. English has no noun for it, which is why the whole frame is one key here."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "English can't wait is a negative and French hâte is a positive noun — translating the not into French produces a refusal, not an eagerness.",
+      "sound": "zhay AHT duh tuh vwahr sam-DEE.",
+      "variations": [
+        {
+          "display": "J'ai hâte de rentrer chez moi",
+          "cue": "I can't wait to get home",
+          "changed": "L3-M2's chez moi after the same de"
+        },
+        {
+          "display": "J'ai hâte de partir demain",
+          "cue": "I can't wait to leave tomorrow",
+          "changed": "the infinitive moves, the frame does not"
+        }
+      ],
+      "mistake": {
+        "display": "Je suis hâte de te voir",
+        "why": "hâte is a noun you have. J'ai hâte de te voir."
+      },
+      "usage": "Closing a message to someone you like. Warm, and not formal.",
+      "register": "informal",
+      "mnemonic": "Haste is a thing you hold, not a thing you are."
+    },
+    {
+      "id": "L3-M6-S07",
+      "display": "J'ai honte, je suis très gêné",
+      "cue": "I'm ashamed, I'm very embarrassed",
+      "literal": "I-have shame, I am very embarrassed",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "j'ai honte",
+            "cue": "I'm ashamed",
+            "tag": "delta",
+            "forms": [],
+            "note": "The fourth have-feeling. Heavier than gêné: honte is real shame, gêné is the smaller social discomfort."
+          },
+          {
+            "display": "gêné",
+            "cue": "embarrassed · awkward",
+            "tag": "delta",
+            "forms": [],
+            "note": "Silent agreement: gêné and gênée sound identical, so the -e is a writing decision. Of a situation, use gênant."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "gêné is not shame. Using j'ai honte for a small awkwardness is far too strong, and French hears it as such.",
+      "sound": "zhay ONT, zhuh swee treh zheh-NAY.",
+      "variations": [
+        {
+          "display": "J'ai honte, et je suis déçu",
+          "cue": "I'm ashamed, and I'm disappointed",
+          "changed": "two feelings, one had and one been"
+        },
+        {
+          "display": "Je suis très gêné, mais je ne suis pas fâché",
+          "cue": "I'm very embarrassed, but I'm not angry",
+          "changed": "the ne written, and embarrassment kept apart from anger"
+        }
+      ],
+      "mistake": {
+        "display": "Je suis honte",
+        "why": "honte is had, not been. J'ai honte."
+      },
+      "usage": "Apologising for something you actually did, rather than for a clumsy moment.",
+      "register": "neutral",
+      "mnemonic": "honte is heavy, gêné is light — do not swap their weights."
+    },
+    {
+      "id": "L3-M6-S08",
+      "display": "Ça m'énerve quand il parle trop",
+      "cue": "It annoys me when he talks too much",
+      "literal": "That me-annoys when he talks too-much",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ça m'énerve",
+            "cue": "it annoys me · it gets on my nerves",
+            "tag": "delta",
+            "forms": [],
+            "note": "One key: ça is the subject, m' is L2-M5's me elided before the vowel, and the verb follows. English flips the subject to I."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "English says I am annoyed and puts you in charge of the feeling. French makes the cause the subject: ça m'énerve. The two are not interchangeable.",
+      "sound": "sa may-NEHRV kahn eel parl TROH.",
+      "variations": [
+        {
+          "display": "Ça m'énerve, mais je reste tranquille",
+          "cue": "It annoys me, but I stay calm",
+          "changed": "the frame on its own, with L3-M4's reste after it"
+        },
+        {
+          "display": "Ça m'énerve beaucoup",
+          "cue": "It really annoys me",
+          "changed": "beaucoup after the verb, where French puts it"
+        }
+      ],
+      "mistake": {
+        "display": "Je suis énervé quand il parle trop",
+        "why": "Not wrong, but it is a different sentence — it reports your state, not the cause. Ça m'énerve quand il parle trop."
+      },
+      "usage": "Naming what gets on your nerves without accusing the person of anything.",
+      "register": "informal",
+      "mnemonic": "Put the cause in the driving seat and the pronoun in front of the verb."
+    },
+    {
+      "id": "L3-M6-S09",
+      "display": "Ça me plaît beaucoup, mais ça m'inquiète aussi",
+      "cue": "I like it a lot, but it worries me too",
+      "literal": "That me pleases a-lot, but that me-worries also",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ça me plaît",
+            "cue": "I like it · it pleases me",
+            "tag": "delta",
+            "forms": [],
+            "note": "The same frame as ça m'énerve, with me unelided because plaît starts with a consonant. Literally it pleases me — the thing is the subject."
+          },
+          {
+            "display": "ça m'inquiète",
+            "cue": "it worries me",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb behind S04's inquiet. m' before the vowel, exactly as in ça m'énerve."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Both halves keep ça as the subject. Switching to je in the second half — mais je suis inquiet — is a different sentence and loses the cause.",
+      "sound": "sa muh pleh boh-KOO, meh sa man-kee-YET oh-SEE.",
+      "variations": [
+        {
+          "display": "Ça me plaît beaucoup",
+          "cue": "I like it a lot",
+          "changed": "the frame on its own, which is how it is usually said"
+        },
+        {
+          "display": "Ça me plaît, mais ça m'inquiète",
+          "cue": "I like it, but it worries me",
+          "changed": "the same two frames, stripped to the bone"
+        }
+      ],
+      "mistake": {
+        "display": "Ça me plaît, mais ça inquiète moi",
+        "why": "The pronoun goes before the verb, never after it. Ça m'inquiète."
+      },
+      "usage": "Agreeing to something while flagging the part that bothers you.",
+      "register": "neutral",
+      "mnemonic": "One subject, ça, doing two jobs to you in a row."
+    },
+    {
+      "id": "L3-M6-S10",
+      "display": "Je suis déçu, mais je ne suis pas fâché",
+      "cue": "I'm disappointed, but I'm not angry",
+      "literal": "I am disappointed, but I not am not angry",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "déçu",
+            "cue": "disappointed",
+            "tag": "delta",
+            "forms": [
+              "déçu",
+              "déçue"
+            ],
+            "note": "Silent agreement: déçu and déçue sound the same. Of a thing, French says décevant — the -ant twin again."
+          },
+          {
+            "display": "fâché",
+            "cue": "angry · cross",
+            "tag": "delta",
+            "forms": [
+              "fâché",
+              "fâchée"
+            ],
+            "note": "Silent agreement again. être fâché contre quelqu'un is to be cross WITH someone, not with avec."
+          },
+          {
+            "display": "soulagé",
+            "cue": "relieved",
+            "tag": "delta",
+            "forms": [
+              "soulagé",
+              "soulagée"
+            ],
+            "note": "Silent agreement too: soulagé and soulagée sound the same. The feeling after bad news turns out not to be bad."
+          }
+        ],
+        "rules": [
+          4,
+          6
+        ]
+      },
+      "trap": "Both endings are silent, so this sentence sounds identical whoever says it — the -e that makes it a woman's line exists only on paper.",
+      "sound": "zhuh swee day-SUE, meh zhuh nuh swee pa fah-SHAY.",
+      "variations": [
+        {
+          "display": "Je suis déçue, mais je ne suis pas fâchée",
+          "cue": "I'm disappointed, but I'm not angry (a woman speaking)",
+          "changed": "two -e endings, and nothing at all is heard"
+        },
+        {
+          "display": "Je suis soulagé, et je ne suis pas déçu",
+          "cue": "I'm relieved, and I'm not disappointed",
+          "changed": "soulagé, and the ne still written"
+        }
+      ],
+      "mistake": {
+        "display": "Je suis déçu, mais je suis pas fâché",
+        "why": "The ne is dropped in speech and kept in writing. je ne suis pas fâché."
+      },
+      "usage": "The sentence that keeps a disagreement from becoming a fight.",
+      "register": "neutral",
+      "mnemonic": "Nothing you hear tells you whether to write the -e. Only who is speaking does."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M6-C01",
+      "display": "Je me sens tranquille ce matin",
+      "cue": "I feel calm this morning"
+    },
+    {
+      "id": "L3-M6-C02",
+      "display": "Ce film est ennuyeux",
+      "cue": "That film is boring"
+    },
+    {
+      "id": "L3-M6-C03",
+      "display": "Je suis ennuyé",
+      "cue": "I'm bored"
+    },
+    {
+      "id": "L3-M6-C04",
+      "display": "Ce travail est fatigant",
+      "cue": "That work is tiring"
+    },
+    {
+      "id": "L3-M6-C05",
+      "display": "Je suis fière de mon fils",
+      "cue": "I'm proud of my son"
+    },
+    {
+      "id": "L3-M6-C06",
+      "display": "J'ai peur, mais je ne suis pas inquiète",
+      "cue": "I'm afraid, but I'm not worried"
+    },
+    {
+      "id": "L3-M6-C07",
+      "display": "J'ai envie de rester ici",
+      "cue": "I feel like staying here"
+    },
+    {
+      "id": "L3-M6-C08",
+      "display": "J'ai hâte de te voir",
+      "cue": "I can't wait to see you"
+    },
+    {
+      "id": "L3-M6-C09",
+      "display": "J'ai honte, je suis très gêné",
+      "cue": "I'm ashamed, I'm very embarrassed"
+    },
+    {
+      "id": "L3-M6-C10",
+      "display": "Ça m'énerve quand il parle trop",
+      "cue": "It annoys me when he talks too much"
+    },
+    {
+      "id": "L3-M6-C11",
+      "display": "Ça me plaît beaucoup",
+      "cue": "I like it a lot"
+    },
+    {
+      "id": "L3-M6-C12",
+      "display": "Je suis soulagé, je ne suis pas déçu",
+      "cue": "I'm relieved, I'm not disappointed"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

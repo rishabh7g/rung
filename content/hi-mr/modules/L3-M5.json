@@ -3,14 +3,23 @@
   "id": "L3-M5",
   "title": "What someone said",
   "job": "Reporting other people's words",
-  "prerequisites": ["L3-M1", "L3-M2", "L3-M3", "L3-M4"],
+  "prerequisites": [
+    "L3-M1",
+    "L3-M2",
+    "L3-M3",
+    "L3-M4"
+  ],
   "verified": true,
   "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
   "verifiedAt": "2026-09-07",
   "complexity": {
     "minWordsPerSentence": 3,
     "maxWordsPerSentence": 11,
-    "allowedTenses": ["simple_past", "simple_present", "future"],
+    "allowedTenses": [
+      "simple_past",
+      "simple_present",
+      "future"
+    ],
     "allowedPatterns": [
       "तो/ती + म्हणाला/म्हणाली + की + clause",
       "त्याने/तिने + सांगितलं + की + clause",
@@ -43,6 +52,14 @@
     {
       "tag": "delta",
       "text": "विचारणे is \"to ask\", and a reported question keeps its question word where the ANSWER would sit — L1-M2's law, unchanged by being reported: त्याने विचारलं की तू कुठे होतास."
+    },
+    {
+      "tag": "delta",
+      "text": "The report's law does not move with the register: त्यांनी, the plural-and-respect asker of L2-M10, still takes ने and the verb still ends neuter."
+    },
+    {
+      "tag": "delta",
+      "text": "की may be dropped, and then the words stand exactly as they were said: ती म्हणाली, \"मला उशीर झाला\" keeps मला, not तिला. The pronoun belongs to the speaker quoted, not to the one reporting."
     }
   ],
   "sentences": [
@@ -58,11 +75,16 @@
             "display": "म्हणाला",
             "cue": "कहा",
             "tag": "delta",
-            "forms": ["म्हणालो", "म्हणाली", "म्हणाले", "म्हणाला"],
+            "forms": [
+              "म्हणाला"
+            ],
             "note": "म्हणणे's past, agreeing with the speaker: तो म्हणाला. No ने — this verb never takes it, however transitive it looks."
           }
         ],
-        "rules": [1, 0]
+        "rules": [
+          1,
+          0
+        ]
       },
       "trap": "हिंदी 'उसने कहा' में ने है, इसलिए हाथ त्याने म्हणाला लिखना चाहता है. म्हणणे कभी ने नहीं लेता — तो म्हणाला, बस.",
       "sound": "म्हणाला = म्ह‑णा‑ला; शुरू का 'म्ह' मराठी की अपनी आवाज़ है, तुम्हाला वाली.",
@@ -98,11 +120,16 @@
             "display": "म्हणाली",
             "cue": "कही",
             "tag": "delta",
-            "forms": ["म्हणालो", "म्हणाली", "म्हणाले", "म्हणाला"],
+            "forms": [
+              "म्हणाली"
+            ],
             "note": "The feminine cell. It follows ती, the speaker — never the person spoken about, and never the thing said."
           }
         ],
-        "rules": [1, 0]
+        "rules": [
+          1,
+          0
+        ]
       },
       "trap": "भीतर वाला वाक्य वैसा ही रहता है जैसा उसने बोला था — 'मेरे पास वक़्त नहीं' → तिला वेळ नाही. अंग्रेज़ी की तरह काल पीछे नहीं खिसकता.",
       "sound": "म्हणाली = म्ह‑णा‑ली; तिला = ति‑ला, पहला हिस्सा छोटा.",
@@ -138,11 +165,18 @@
             "display": "सांगितलं",
             "cue": "बताया",
             "tag": "interference",
-            "forms": ["सांगितलं", "सांगितला", "सांगितली"],
+            "forms": [
+              "सांगितलं",
+              "सांगितला",
+              "सांगितली"
+            ],
             "note": "L2-M10's row, here as the contrast: सांगणे takes ने and the neuter, while म्हणणे in the very next sentence takes neither."
           }
         ],
-        "rules": [2, 0]
+        "rules": [
+          2,
+          0
+        ]
       },
       "trap": "एक ही मॉड्यूल में दो नियम साथ-साथ चलते हैं. सांगणे: त्याने … सांगितलं. म्हणणे: तो म्हणाला. दोनों 'कहा' हैं, दोनों के क़ायदे अलग.",
       "sound": "सांगितलं = सां‑गि‑तलं, आख़िर नाक से; यह रूप अनियमित है (सांगलं नहीं).",
@@ -178,11 +212,16 @@
             "display": "म्हणाले",
             "cue": "कहा (आदर/बहु.)",
             "tag": "delta",
-            "forms": ["म्हणालो", "म्हणाली", "म्हणाले", "म्हणाला"],
+            "forms": [
+              "म्हणाले"
+            ],
             "note": "The plural-and-respect cell: ते म्हणाले, and माझे वडील म्हणाले. Still no ने, even where L2-M10's सांगितलं would have taken त्यांनी."
           }
         ],
-        "rules": [1, 2]
+        "rules": [
+          1,
+          2
+        ]
       },
       "trap": "आदर यहाँ भी बहुवचन से आता है (M2, M7 की तरह) — पर ने फिर भी नहीं आता. यही म्हणणे की पहचान है.",
       "sound": "म्हणाले = म्ह‑णा‑ले, आख़िर साफ़ 'ले'.",
@@ -218,11 +257,18 @@
             "display": "विचारलं",
             "cue": "पूछा",
             "tag": "delta",
-            "forms": ["विचारलं", "विचारला", "विचारली"],
-            "note": "विचारणे, \"to ask\" — and it behaves like सांगणे: ने on the asker, neuter on the verb. The question word inside keeps its own place."
+            "forms": [
+              "विचारलं",
+              "विचारला",
+              "विचारली"
+            ],
+            "note": "विचारणे, \"to ask\" — like सांगणे: ने on the asker whatever their gender, neuter on the verb. The question word inside keeps its own place."
           }
         ],
-        "rules": [5, 2]
+        "rules": [
+          5,
+          2
+        ]
       },
       "trap": "रिपोर्ट किए गए सवाल में शब्दों का क्रम नहीं बदलता — कुठे वहीं रहता है जहाँ जवाब आता (L1-M2, L1-M7). अंग्रेज़ी वाली उलट-पलट यहाँ नहीं है.",
       "sound": "विचारलं = वि‑चा‑रलं, आख़िर नाक से.",
@@ -258,11 +304,19 @@
             "display": "असं",
             "cue": "ऐसा",
             "tag": "delta",
-            "forms": ["असा", "अशी", "असं", "तसं"],
+            "forms": [
+              "असा",
+              "अशी",
+              "असं",
+              "तसं"
+            ],
             "note": "L3-M3's असं doing its reporting job: it points back at the words just said, so the report can follow them instead of opening the sentence."
           }
         ],
-        "rules": [4, 1]
+        "rules": [
+          4,
+          1
+        ]
       },
       "trap": "मराठी में रिपोर्ट बात के बाद भी आ सकती है — 'उद्या पाऊस येईल, असं तो म्हणाला'. हिंदी में यह क्रम कम सुनाई देता है, इसलिए कान को नया लगेगा.",
       "sound": "असं = अ‑सं; उससे पहले हल्का ठहराव, जैसे बात ख़त्म हुई हो.",
@@ -298,11 +352,16 @@
             "display": "म्हणालो",
             "cue": "कहा (मैंने)",
             "tag": "delta",
-            "forms": ["म्हणालो", "म्हणाली", "म्हणाले", "म्हणाला"],
+            "forms": [
+              "म्हणालो"
+            ],
             "note": "The मी cell — म्हणालो for a man, म्हणाले for a woman. मी never takes ने anyway (L1-M5), so this verb needs no exception here."
           }
         ],
-        "rules": [1, 0]
+        "rules": [
+          1,
+          0
+        ]
       },
       "trap": "अपनी कही हुई बात भी उसी शक्ल में रहती है जैसी बोली थी — जमणार नाही, न कि 'जमणार नव्हतं'. काल पीछे नहीं खिसकता.",
       "sound": "म्हणालो = म्ह‑णा‑लो, आख़िर लंबा 'लो'.",
@@ -338,11 +397,14 @@
             "display": "विचारलं",
             "cue": "पूछा",
             "tag": "delta",
-            "forms": ["विचारलं", "विचारला", "विचारली"],
-            "note": "The same विचारलं, now with तिने: the asker takes ने whatever their gender, and the verb stays neuter because nothing named is being asked."
+            "forms": [],
+            "note": "विचारणे, \"to ask\" — like सांगणे: ने on the asker whatever their gender, neuter on the verb. The question word inside keeps its own place."
           }
         ],
-        "rules": [5, 2]
+        "rules": [
+          5,
+          2
+        ]
       },
       "trap": "पूछने वाला ने लेता है, और जिससे पूछा गया वह मला/तुला में रहता है — दो अलग ख़ाने, एक ही वाक्य में.",
       "sound": "तिने = ति‑ने; विचारलं वैसा ही जैसा S05 में.",
@@ -378,11 +440,14 @@
             "display": "म्हणाली",
             "cue": "कही",
             "tag": "delta",
-            "forms": ["म्हणालो", "म्हणाली", "म्हणाले", "म्हणाला"],
-            "note": "The same cell as S02, with the की dropped: the words stand exactly as she said them, so the inside says मला and not तिला."
+            "forms": [],
+            "note": "The feminine cell. It follows ती, the speaker — never the person spoken about, and never the thing said."
           }
         ],
-        "rules": [3, 1]
+        "rules": [
+          3,
+          1
+        ]
       },
       "trap": "की हटाते ही भीतर का सर्वनाम बदल जाता है: की के साथ तिला, बिना की के मला — क्योंकि अब वे उसके अपने शब्द हैं.",
       "sound": "म्हणाली के बाद ठहराव, फिर उसके अपने शब्द — बोलते वक़्त सुर भी बदलता है.",
@@ -418,11 +483,15 @@
             "display": "विचारलं",
             "cue": "पूछा",
             "tag": "delta",
-            "forms": ["विचारलं", "विचारला", "विचारली"],
-            "note": "With त्यांनी, the plural-and-respect asker (L2-M10). The verb still ends neuter — the report's law does not change with the register."
+            "forms": [],
+            "note": "विचारणे, \"to ask\" — like सांगणे: ने on the asker whatever their gender, neuter on the verb. The question word inside keeps its own place."
           }
         ],
-        "rules": [5, 2, 0]
+        "rules": [
+          5,
+          2,
+          0
+        ]
       },
       "trap": "आदर कर्ता में है (त्यांनी, तुम्ही), क्रिया में नहीं — विचारलं वैसा ही रहता है. रजिस्टर शब्दों में बैठता है, अंत में नहीं.",
       "sound": "त्यांनी = त्यां‑नी; बाक़ी लाइन हल्की और तेज़ बोली जाती है.",
@@ -448,7 +517,11 @@
     }
   ],
   "comprehensionPool": [
-    { "id": "L3-M5-C01", "display": "तो म्हणाला की तो उद्या येईल", "cue": "उसने कहा कि वह कल आएगा" },
+    {
+      "id": "L3-M5-C01",
+      "display": "तो म्हणाला की तो उद्या येईल",
+      "cue": "उसने कहा कि वह कल आएगा"
+    },
     {
       "id": "L3-M5-C02",
       "display": "ती म्हणाली की तिला वेळ नाही",
@@ -499,7 +572,14 @@
       "display": "काम झालं, असं तिने सांगितलं",
       "cue": "काम हो गया, ऐसा उसने बताया"
     },
-    { "id": "L3-M5-C12", "display": "तो म्हणाला की काम झालं", "cue": "उसने कहा कि काम हो गया" }
+    {
+      "id": "L3-M5-C12",
+      "display": "तो म्हणाला की काम झालं",
+      "cue": "उसने कहा कि काम हो गया"
+    }
   ],
-  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
 }

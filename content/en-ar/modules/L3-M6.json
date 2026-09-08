@@ -1,0 +1,594 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M6",
+  "title": "Feelings in depth",
+  "job": "Nuance past good and bad",
+  "prerequisites": ["L3-M5"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "ashʿuru + bi- + <N-feeling>",
+      "yuʿjibunī + <N>",
+      "ʿindī / ladayya + <N-feeling>",
+      "anā / huwa / hiya + Adj (nominative)",
+      "lastu + Adj-accusative"
+    ],
+    "newWordCap": 25
+  },
+  "exitTest": { "generateCount": 2, "comprehendCount": 3 },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A feeling hangs off the verb with bi-: ashʿuru bi-at-taʿab, word for word \"I feel with the tiredness\". The bi- is not optional and it is not new — it is L1-M2's clitic doing a fresh job. What IS new is that the feeling is a NOUN (taʿab, farḥ, qalaq, khawf) where English reaches for an adjective."
+    },
+    {
+      "tag": "delta",
+      "text": "yuʿjibunī is Arabic's backwards verb, and it is the shape to take away from this module: the thing you like is the SUBJECT and you are the object. yuʿjibunī hādhā al-kitāb is \"this book pleases me\". So the verb agrees with the THING — yuʿjibunī for a masculine one, tuʿjibunī for a feminine one — and never with you. Spanish me gusta, Italian mi piace and Marathi मला आवडतो are the same machine; English is the odd one out."
+    },
+    {
+      "tag": "delta",
+      "text": "Arabic also keeps a feeling as a POSSESSION: ʿindī khawf (\"I have a fear\"), ladayya qalaq (\"I have an anxiety\"). That is L1-M7's ʿindī doing for a state what it did for a key or a car. ladayya is its more careful twin and means the same thing here."
+    },
+    {
+      "tag": "interference",
+      "text": "A feeling adjective AGREES with whoever feels it — saʿīd / saʿīda, ḥazīn / ḥazīna, qaliq / qaliqa, mutaḥammis / mutaḥammisa, mutaʾakkid / mutaʾakkida. English adjectives never move for anybody, so the feminine -a is the habit to build. saʿīda, ḥazīna and taʿbāna were already yours from L1: this module only puts them to work."
+    },
+    {
+      "tag": "delta",
+      "text": "lastu is \"I am not\" — the first-person cell of L2-M7's laysa. The adjective after it goes ACCUSATIVE and shows it: lastu mutaʾakkidan, lastu ḥazīnan, lastu saʿīdan. Nothing else in the sentence changes, and that -an is the only case ending written on this ladder."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M6-S01",
+      "display": "ashʿuru bi-at-taʿab al-yawm",
+      "script": "أشعر بالتعب اليوم",
+      "cue": "I feel tired today",
+      "literal": "I-feel with-the-tiredness the-day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ashʿuru",
+            "script": "أشعر",
+            "cue": "I feel",
+            "tag": "delta",
+            "forms": ["ashʿuru", "tashʿuru", "yashʿuru"],
+            "note": "To feel. It takes bi- before the feeling, always: ashʿuru bi-at-taʿab. tashʿuru is you or she, yashʿuru is he."
+          },
+          {
+            "display": "taʿab",
+            "script": "تعب",
+            "cue": "tiredness",
+            "tag": "delta",
+            "forms": ["taʿab", "at-taʿab", "bi-at-taʿab"],
+            "note": "Tiredness, the NOUN behind L1-M5's adjective taʿbān. t is a sun letter, so the article assimilates: bi-at-taʿab, never bi-al-taʿab."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English says \"I feel tired\" with an adjective and nothing in between. Arabic says \"I feel with the tiredness\" — a preposition and a noun. Drop the bi- and the sentence stops making sense.",
+      "sound": "ash-ʿU-ru bit-ta-ʿAB — the bi- leans onto the noun and is never said on its own.",
+      "variations": [
+        {
+          "display": "ashʿuru bi-at-taʿab fī al-masāʾ",
+          "script": "أشعر بالتعب في المساء",
+          "cue": "I feel tired in the evening",
+          "changed": "when: al-yawm → fī al-masāʾ, L1-M4's evening"
+        },
+        {
+          "display": "tashʿuru bi-at-taʿab",
+          "script": "تشعر بالتعب",
+          "cue": "You feel tired",
+          "changed": "who feels: ashʿuru → tashʿuru"
+        }
+      ],
+      "mistake": {
+        "display": "ashʿuru taʿbān",
+        "script": "أشعر تعبان",
+        "why": "The English shape carried over whole. taʿbān is the adjective from L1-M5 and it cannot follow ashʿuru: the verb wants bi- and a noun — ashʿuru bi-at-taʿab. anā taʿbān on its own is fine, and is the shorter way to say it."
+      },
+      "usage": "The everyday answer to kayfa ḥāluka on a long day, and the frame the rest of this module hangs on.",
+      "register": "neutral",
+      "mnemonic": "You do not feel tired. You feel WITH the tiredness."
+    },
+    {
+      "id": "L3-M6-S02",
+      "display": "ashʿuru bi-al-qalaq qabla al-imtiḥān",
+      "script": "أشعر بالقلق قبل الامتحان",
+      "cue": "I feel anxious before the exam",
+      "literal": "I-feel with-the-anxiety before the-exam",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "qalaq",
+            "script": "قلق",
+            "cue": "anxiety, worry",
+            "tag": "delta",
+            "forms": ["qalaq", "al-qalaq", "bi-al-qalaq"],
+            "note": "Anxiety, the noun. q is a moon letter, so the article stays al-: bi-al-qalaq. Its adjective qaliq is one vowel away and is a different word — see S08."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "qalaq (the feeling) and qaliq (the person) are one spelling in Arabic script and two words in speech. Which one you want decides whether you need bi- or nothing at all.",
+      "sound": "QA-laq, both vowels short and flat — not qa-LAAQ.",
+      "variations": [
+        {
+          "display": "ashʿuru bi-al-qalaq qabla al-ijtimāʿ",
+          "script": "أشعر بالقلق قبل الاجتماع",
+          "cue": "I feel anxious before the meeting",
+          "changed": "before what: al-imtiḥān → al-ijtimāʿ"
+        },
+        {
+          "display": "yashʿuru bi-al-qalaq al-yawm",
+          "script": "يشعر بالقلق اليوم",
+          "cue": "He feels anxious today",
+          "changed": "who feels: ashʿuru → yashʿuru"
+        }
+      ],
+      "mistake": {
+        "display": "ashʿuru bi-al-qaliq",
+        "script": "أشعر بالقلِق",
+        "why": "qaliq is \"anxious\", the adjective for a person. After bi- you need the feeling itself: bi-al-qalaq."
+      },
+      "usage": "Said before anything with a result attached — an exam, an interview, a hospital appointment.",
+      "register": "neutral",
+      "mnemonic": "qalaq is the weather; qaliq is the person standing in it."
+    },
+    {
+      "id": "L3-M6-S03",
+      "display": "yuʿjibunī hādhā al-kitāb kathīran",
+      "script": "يعجبني هذا الكتاب كثيراً",
+      "cue": "I really like this book",
+      "literal": "Pleases-me this the-book much",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yuʿjibunī",
+            "script": "يعجبني",
+            "cue": "it pleases me, I like it",
+            "tag": "delta",
+            "forms": ["yuʿjibunī"],
+            "note": "Pleases me. The thing liked is the subject, so the verb follows IT: yuʿjibunī for a masculine thing, tuʿjibunī for a feminine one. The -nī on the end is you."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "English puts the liker first and the liked thing second. Arabic does the reverse, and the verb agrees with what an English speaker thinks is the wrong end. If you have met Spanish gusta or Marathi आवडतो you already own this shape.",
+      "sound": "yuʿ-ji-BU-nee — the ʿ is the throat catch from L1's ʿindī, not a plain a.",
+      "variations": [
+        {
+          "display": "yuʿjibunī hādhā al-maṭʿam",
+          "script": "يعجبني هذا المطعم",
+          "cue": "I like this restaurant",
+          "changed": "what pleases: al-kitāb → al-maṭʿam"
+        },
+        {
+          "display": "yuʿjibunī al-ʿamal fī hādhihi ash-sharika",
+          "script": "يعجبني العمل في هذه الشركة",
+          "cue": "I like the work at this company",
+          "changed": "what pleases: a thing → an activity, L3-M2's al-ʿamal"
+        }
+      ],
+      "mistake": {
+        "display": "anā uʿjibu hādhā al-kitāb",
+        "script": "أنا أعجب هذا الكتاب",
+        "why": "This is English word order forced onto the Arabic verb, and it says roughly \"I please this book\". The book does the pleasing: yuʿjibunī hādhā al-kitāb."
+      },
+      "usage": "The polite, unexcited way to approve of something — a book, a film, a flat, a job.",
+      "register": "neutral",
+      "mnemonic": "The book pleases me. I never please the book."
+    },
+    {
+      "id": "L3-M6-S04",
+      "display": "tuʿjibunī al-mūsīqā al-ʿarabiyya",
+      "script": "تعجبني الموسيقى العربية",
+      "cue": "I like Arabic music",
+      "literal": "Pleases-me(f) the-music the-Arabic",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tuʿjibunī",
+            "script": "تعجبني",
+            "cue": "it pleases me (feminine thing)",
+            "tag": "delta",
+            "forms": ["tuʿjibunī"],
+            "note": "S03's verb with the feminine subject prefix: al-mūsīqā is feminine, so it is tuʿjibunī. Nothing about you changed — the t- is the thing, not you."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "The t- here is not \"you\". It is the feminine of the THING. A learner who reads tuʿjibunī as \"you please me\" has the sentence inside out.",
+      "sound": "tuʿ-ji-BU-nee — same shape as S03, one letter forward.",
+      "variations": [
+        {
+          "display": "tuʿjibunī al-qahwa",
+          "script": "تعجبني القهوة",
+          "cue": "I like coffee",
+          "changed": "what pleases: al-mūsīqā → al-qahwa, also feminine"
+        },
+        {
+          "display": "tuʿjibunī al-ʿarabiyya kathīran",
+          "script": "تعجبني العربية كثيراً",
+          "cue": "I really like Arabic",
+          "changed": "what pleases: the music → the language itself"
+        }
+      ],
+      "mistake": {
+        "display": "yuʿjibunī al-mūsīqā",
+        "script": "يعجبني الموسيقى",
+        "why": "al-mūsīqā is feminine, so the verb has to be tuʿjibunī. This is the one agreement the backwards verb still asks of you, and it looks at the thing, never at you."
+      },
+      "usage": "Taste, stated plainly — the sentence that follows \"what do you listen to?\".",
+      "register": "neutral",
+      "mnemonic": "Feminine thing, feminine verb — and you are still just -nī."
+    },
+    {
+      "id": "L3-M6-S05",
+      "display": "ʿindī khawf min al-imtiḥānāt",
+      "script": "عندي خوف من الامتحانات",
+      "cue": "I have a fear of exams",
+      "literal": "At-me fear from the-exams",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "khawf",
+            "script": "خوف",
+            "cue": "fear",
+            "tag": "delta",
+            "forms": ["khawf", "al-khawf", "bi-al-khawf"],
+            "note": "Fear, as a thing you have. What you fear comes in with min: khawf min al-imtiḥānāt. L1-M7's ʿindī holds it exactly as it held a key."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "English turns fear into an adjective — \"I am afraid\". In Arabic an adjective of fear describes your CHARACTER, not your Tuesday. ʿindī khawf keeps it a state, which is what you meant.",
+      "sound": "KHAWF, one syllable, the kh scraped at the back like Scottish loch.",
+      "variations": [
+        {
+          "display": "ʿindī khawf min al-imtiḥān",
+          "script": "عندي خوف من الامتحان",
+          "cue": "I have a fear of the exam",
+          "changed": "one exam instead of exams"
+        },
+        {
+          "display": "ʿindaka khawf min al-imtiḥānāt",
+          "script": "عندك خوف من الامتحانات",
+          "cue": "You have a fear of exams",
+          "changed": "who has it: ʿindī → ʿindaka"
+        }
+      ],
+      "mistake": {
+        "display": "anā khawf",
+        "script": "أنا خوف",
+        "why": "That is \"I am fear\". A feeling noun needs a holder: ʿindī khawf, or ladayya khawf."
+      },
+      "usage": "How a state gets said without claiming it is who you are — useful with a doctor, a teacher or a friend.",
+      "register": "neutral",
+      "mnemonic": "You do not BE fear. You HAVE it, and you can put it down."
+    },
+    {
+      "id": "L3-M6-S06",
+      "display": "ladayya qalaq bi-sabab al-ʿamal",
+      "script": "لدي قلق بسبب العمل",
+      "cue": "I have anxiety because of work",
+      "literal": "At-me anxiety because-of the-work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ladayya",
+            "script": "لدي",
+            "cue": "I have",
+            "tag": "delta",
+            "forms": ["ladayya"],
+            "note": "The careful twin of L1-M7's ʿindī. Same meaning, higher register — what a doctor or a form would use. Either is correct here."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "ladayya and ʿindī are not two grammars, only two registers. Choosing between them is a matter of who you are talking to, never of what you mean.",
+      "sound": "la-DAY-ya — the doubled y is held, la-DAY-yaa.",
+      "variations": [
+        {
+          "display": "ladayya qalaq bi-sabab al-mawʿid",
+          "script": "لدي قلق بسبب الموعد",
+          "cue": "I have anxiety because of the appointment",
+          "changed": "the cause: al-ʿamal → al-mawʿid"
+        },
+        {
+          "display": "ʿindī qalaq bi-sabab al-ʿamal",
+          "script": "عندي قلق بسبب العمل",
+          "cue": "I have anxiety because of work",
+          "changed": "register: ladayya → the everyday ʿindī"
+        }
+      ],
+      "mistake": {
+        "display": "ladayya qaliq",
+        "script": "لدي قلِق",
+        "why": "You cannot HAVE an adjective. What ladayya holds is the noun: ladayya qalaq. anā qaliq is the adjective sentence, and it needs no ladayya at all."
+      },
+      "usage": "The register you would use at a counter, in a clinic, or in anything written down.",
+      "register": "formal",
+      "mnemonic": "ʿindī for a friend, ladayya for a form."
+    },
+    {
+      "id": "L3-M6-S07",
+      "display": "anā mutaḥammis jiddan al-yawm",
+      "script": "أنا متحمس جداً اليوم",
+      "cue": "I am very excited today",
+      "literal": "I excited very the-day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mutaḥammis",
+            "script": "متحمس",
+            "cue": "excited, keen",
+            "tag": "free",
+            "forms": ["mutaḥammis", "mutaḥammisa", "mutaḥammisūn"],
+            "note": "Excited. An ordinary adjective: mutaḥammisa for a woman, mutaḥammisūn for a group. Same mu- shape as L1-M7's mashghūl family."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "This one really is an adjective, so no bi- and no ʿindī. The module's three shapes are not interchangeable: noun feelings take a holder, adjectives take agreement.",
+      "sound": "mu-ta-ḤAM-mis — the ḥ is the breathy one from L1's alḥamdu lillāh.",
+      "variations": [
+        {
+          "display": "hiya mutaḥammisa jiddan",
+          "script": "هي متحمسة جداً",
+          "cue": "She is very excited",
+          "changed": "who: anā → hiya, and the adjective takes -a"
+        },
+        {
+          "display": "al-muwaẓẓafūn mutaḥammisūn al-yawm",
+          "script": "الموظفون متحمسون اليوم",
+          "cue": "The staff are excited today",
+          "changed": "who: one person → a group, and the adjective takes -ūn"
+        }
+      ],
+      "mistake": {
+        "display": "ʿindī mutaḥammis",
+        "script": "عندي متحمس",
+        "why": "ʿindī holds nouns. mutaḥammis is an adjective and simply follows anā: anā mutaḥammis."
+      },
+      "usage": "Before a trip, a first day, a wedding — the everyday positive that is not just saʿīd.",
+      "register": "neutral",
+      "mnemonic": "Adjectives agree. Nouns get held."
+    },
+    {
+      "id": "L3-M6-S08",
+      "display": "hiya qaliqa lākin anā saʿīd",
+      "script": "هي قلقة لكن أنا سعيد",
+      "cue": "She is anxious but I am happy",
+      "literal": "She anxious(f) but I happy",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "qaliq",
+            "script": "قلِق",
+            "cue": "anxious, worried",
+            "tag": "interference",
+            "forms": ["qaliq", "qaliqa", "qaliqūn"],
+            "note": "Anxious, the adjective — one vowel from S02's noun qalaq and the same letters in Arabic. Agrees: qaliqa for a woman, qaliqūn for a group."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "saʿīd and saʿīda have been yours since L1-M1, ḥazīn and ḥazīna since L1-M9. This module opens no new feminine for them: it puts an agreement you already own next to two adjectives that follow the same rule.",
+      "sound": "QA-li-qa — three light syllables, no stress at the end.",
+      "variations": [
+        {
+          "display": "huwa qaliq al-yawm",
+          "script": "هو قلِق اليوم",
+          "cue": "He is anxious today",
+          "changed": "who: hiya → huwa, and the -a goes"
+        },
+        {
+          "display": "hiya qaliqa lākin hiya saʿīda",
+          "script": "هي قلقة لكن هي سعيدة",
+          "cue": "She is anxious but she is happy",
+          "changed": "both halves feminine, so both adjectives take -a"
+        }
+      ],
+      "mistake": {
+        "display": "hiya qaliq lākin anā saʿīda",
+        "script": "هي قلِق لكن أنا سعيدة",
+        "why": "Both agreements are backwards: hiya needs qaliqa, and a male speaker needs saʿīd. The adjective looks at who it describes, and it looks every single time."
+      },
+      "usage": "The sentence that holds two people's moods in one breath — and the one that catches a missing agreement fastest.",
+      "register": "neutral",
+      "mnemonic": "Two people, two endings, one lākin between them."
+    },
+    {
+      "id": "L3-M6-S09",
+      "display": "lastu mutaʾakkidan min al-mawʿid",
+      "script": "لست متأكداً من الموعد",
+      "cue": "I am not sure about the appointment",
+      "literal": "I-am-not sure(acc) from the-appointment",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lastu",
+            "script": "لست",
+            "cue": "I am not",
+            "tag": "delta",
+            "forms": ["lastu"],
+            "note": "The \"I\" cell of L2-M7's laysa. It negates a whole adjective sentence on its own — no lā, and no separate anā needed."
+          },
+          {
+            "display": "mutaʾakkid",
+            "script": "متأكد",
+            "cue": "sure, certain",
+            "tag": "delta",
+            "forms": ["mutaʾakkid", "mutaʾakkida", "mutaʾakkidan"],
+            "note": "Sure. After lastu it goes accusative and shows -an: mutaʾakkidan. The ʾ is a hamza, a catch in the throat, not the ʿ of ʿindī."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "English negates with an extra word and leaves the adjective alone. Arabic changes the verb AND the adjective's ending — one word does the negating, and the -an is the receipt.",
+      "sound": "LAS-tu mu-ta-ʾAK-ki-dan — the hamza in the middle is a tiny stop, like the catch in \"uh-oh\".",
+      "variations": [
+        {
+          "display": "lastu mutaʾakkidan min ar-raqm",
+          "script": "لست متأكداً من الرقم",
+          "cue": "I am not sure about the number",
+          "changed": "about what: al-mawʿid → ar-raqm"
+        },
+        {
+          "display": "lastu saʿīdan al-yawm",
+          "script": "لست سعيداً اليوم",
+          "cue": "I am not happy today",
+          "changed": "which adjective — and it takes the same -an"
+        }
+      ],
+      "mistake": {
+        "display": "anā lā mutaʾakkid",
+        "script": "أنا لا متأكد",
+        "why": "lā negates verbs, not adjective sentences. For \"I am not\" plus an adjective the word is lastu, and the adjective picks up -an: lastu mutaʾakkidan."
+      },
+      "usage": "The honest hedge at a counter or on the phone, and the softest way to say no to a plan.",
+      "register": "neutral",
+      "mnemonic": "lastu takes the -an with it."
+    },
+    {
+      "id": "L3-M6-S10",
+      "display": "lastu ḥazīnan, ashʿuru bi-al-farḥ",
+      "script": "لست حزيناً، أشعر بالفرح",
+      "cue": "I am not sad — I feel joy",
+      "literal": "I-am-not sad(acc), I-feel with-the-joy",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ḥazīnan",
+            "script": "حزيناً",
+            "cue": "sad (accusative)",
+            "tag": "delta",
+            "forms": ["ḥazīnan"],
+            "note": "The accusative of L1-M9's ḥazīn — the shape it takes after lastu, and its first appearance on this ladder. Tap ḥazīn for the plain word."
+          },
+          {
+            "display": "farḥ",
+            "script": "فرح",
+            "cue": "joy",
+            "tag": "delta",
+            "forms": ["farḥ", "al-farḥ", "bi-al-farḥ"],
+            "note": "Joy, the noun. f is a moon letter, so the article stays al-: bi-al-farḥ. The bigger, warmer word next to saʿīd."
+          },
+          {
+            "display": "saʿīdan",
+            "script": "سعيداً",
+            "cue": "happy (accusative)",
+            "tag": "delta",
+            "forms": ["saʿīdan"],
+            "note": "The accusative of L1-M1's saʿīd, used after lastu — see this sentence's second variation. Tap saʿīd for the plain word."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "Two grammars in one breath: lastu takes the accusative adjective, ashʿuru takes bi- and a noun. Neither borrows the other's shape, and mixing them is this module's commonest slip.",
+      "sound": "LAS-tu ḥa-ZEE-nan — a real pause at the comma, then ash-ʿU-ru bil-FARḤ.",
+      "variations": [
+        {
+          "display": "lastu ḥazīnan al-yawm",
+          "script": "لست حزيناً اليوم",
+          "cue": "I am not sad today",
+          "changed": "the second half dropped, the -an kept"
+        },
+        {
+          "display": "lastu saʿīdan, ashʿuru bi-al-qalaq",
+          "script": "لست سعيداً، أشعر بالقلق",
+          "cue": "I am not happy — I feel anxious",
+          "changed": "both feelings flipped, both frames held"
+        }
+      ],
+      "mistake": {
+        "display": "lastu ḥazīn, ashʿuru farḥ",
+        "script": "لست حزين، أشعر فرح",
+        "why": "Two halves, two errors: the adjective after lastu needs -an, and the noun after ashʿuru needs bi-. lastu ḥazīnan, ashʿuru bi-al-farḥ."
+      },
+      "usage": "The correction you make when someone reads your quiet face wrong — and the module's whole grammar in five words.",
+      "register": "neutral",
+      "mnemonic": "-an after lastu, bi- after ashʿuru. Two doors, two keys."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M6-C01",
+      "display": "ashʿuru bi-at-taʿab al-yawm",
+      "script": "أشعر بالتعب اليوم",
+      "cue": "I feel tired today"
+    },
+    {
+      "id": "L3-M6-C02",
+      "display": "ashʿuru bi-al-qalaq qabla al-imtiḥān",
+      "script": "أشعر بالقلق قبل الامتحان",
+      "cue": "I feel anxious before the exam"
+    },
+    {
+      "id": "L3-M6-C03",
+      "display": "yuʿjibunī hādhā al-kitāb kathīran",
+      "script": "يعجبني هذا الكتاب كثيراً",
+      "cue": "I really like this book"
+    },
+    {
+      "id": "L3-M6-C04",
+      "display": "tuʿjibunī al-mūsīqā al-ʿarabiyya",
+      "script": "تعجبني الموسيقى العربية",
+      "cue": "I like Arabic music"
+    },
+    {
+      "id": "L3-M6-C05",
+      "display": "ʿindī khawf min al-imtiḥānāt",
+      "script": "عندي خوف من الامتحانات",
+      "cue": "I have a fear of exams"
+    },
+    {
+      "id": "L3-M6-C06",
+      "display": "ladayya qalaq bi-sabab al-ʿamal",
+      "script": "لدي قلق بسبب العمل",
+      "cue": "I have anxiety because of work"
+    },
+    {
+      "id": "L3-M6-C07",
+      "display": "anā mutaḥammis jiddan al-yawm",
+      "script": "أنا متحمس جداً اليوم",
+      "cue": "I am very excited today"
+    },
+    {
+      "id": "L3-M6-C08",
+      "display": "hiya qaliqa lākin anā saʿīd",
+      "script": "هي قلقة لكن أنا سعيد",
+      "cue": "She is anxious but I am happy"
+    },
+    {
+      "id": "L3-M6-C09",
+      "display": "lastu mutaʾakkidan min al-mawʿid",
+      "script": "لست متأكداً من الموعد",
+      "cue": "I am not sure about the appointment"
+    },
+    {
+      "id": "L3-M6-C10",
+      "display": "lastu ḥazīnan, ashʿuru bi-al-farḥ",
+      "script": "لست حزيناً، أشعر بالفرح",
+      "cue": "I am not sad — I feel joy"
+    },
+    {
+      "id": "L3-M6-C11",
+      "display": "yuʿjibunī al-ʿamal fī hādhihi ash-sharika",
+      "script": "يعجبني العمل في هذه الشركة",
+      "cue": "I like the work at this company"
+    },
+    {
+      "id": "L3-M6-C12",
+      "display": "tashʿuru bi-at-taʿab baʿda al-ʿamal",
+      "script": "تشعر بالتعب بعد العمل",
+      "cue": "You feel tired after work"
+    }
+  ]
+}

@@ -1,0 +1,653 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M3",
+  "title": "Opinions with reasons",
+  "job": "Agree, disagree, soften — reasons attached",
+  "prerequisites": [
+    "L3-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "aʿtaqid / aẓunn + anna + <N> + <predicate>",
+      "aʿtaqid + anna-<attached pronoun> + <predicate>",
+      "lā aʿtaqid + anna + <clause>",
+      "fī raʾyī + , + <verbless clause>",
+      "li-ʾanna + <N> + <predicate>",
+      "rubbamā + , + lākin + <clause>",
+      "anā / lastu + muwāfiq"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "anna is \"that\", and what comes straight after it is a NOUN or a pronoun welded to its back — never a verb. aʿtaqid anna al-ʿarabiyya jamīla, aʿtaqid annahā ṣaʿba, aẓunn anna hind dhahabat. English's \"that\" holds anything and can even be dropped; anna holds one thing and is never dropped."
+    },
+    {
+      "tag": "delta",
+      "text": "The reason is the ACCUSATIVE: anna and its sisters put the noun after them in that case. This course writes no case endings, so a definite noun looks unchanged on the page — L3-M1 said the same of the genitive. What you CAN see is the pronoun: the accusative is why it has to attach, so annahā and annahu are the case made visible, and anna hiya does not exist. That single cell is all of the case system this module opens."
+    },
+    {
+      "tag": "delta",
+      "text": "li-ʾanna is that same anna with L1-M9's li- glued on the front, and it keeps the identical habit: a noun or an attached pronoun behind it, never a bare verb — li-ʾanna al-ḥisāb ghālī, li-ʾannahu ghālī. One rule buys both words, and L1-M9 already paid for the second."
+    },
+    {
+      "tag": "free",
+      "text": "aʿtaqid and aẓunn are ordinary imperfect verbs on L1-M4's prefix law, with no ending on them, and both hand their clause to anna. The negative is L1-M3's lā in front of the verb — lā aʿtaqid anna hādhā ṣaḥīḥ — and the clause behind anna does not change at all."
+    },
+    {
+      "tag": "interference",
+      "text": "Softening in Arabic is a FRAME in front of the sentence, not a weakening inside it. fī raʾyī (L1-M9), rubbamā and lā aʿtaqid stand outside the claim and leave it whole. English hedges inside — \"it's sort of right\", \"it might be a bit hard\" — and doing that in Arabic sounds evasive rather than careful. Neither language is being polite better; they put the politeness in different places."
+    },
+    {
+      "tag": "delta",
+      "text": "Agreeing is an ADJECTIVE, not a verb: anā muwāfiq (L2-M6), muwāfiqa from a woman. Its negative is L2-M7's laysa in the first person, lastu muwāfiq, because a verbless sentence cannot be denied with lā. Nothing after lastu takes an ending here, exactly as L2-M7 wrote huwa laysa mawjūd."
+    },
+    {
+      "tag": "free",
+      "text": "The comparison an opinion reaches for is already yours. jayyid and sayyiʾ are new, but akbar, aghlā, arkhaṣ and the whole afʿal shape are L2-M9's and min is L1-M1's third job. This module adds no comparative and needs none."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M3-S01",
+      "display": "aʿtaqid anna al-ʿarabiyya jamīla",
+      "script": "أعتقد أن العربية جميلة",
+      "cue": "I think Arabic is beautiful",
+      "literal": "I-think that the-Arabic beautiful",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aʿtaqid",
+            "script": "أعتقد",
+            "cue": "I think, I believe",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"I think\" — an ordinary imperfect verb on L1-M4's a- prefix, with no ending on the end of it. What it thinks is handed to anna, never straight to a verb."
+          },
+          {
+            "display": "anna",
+            "script": "أن",
+            "cue": "that (introducing what is thought)",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"That\" — and a noun or an attached pronoun has to come next: anna al-ʿarabiyya, annahā. English's \"that\" can hold a verb and can be dropped; anna can do neither."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English drops \"that\" — I think Arabic is beautiful. Arabic cannot: anna is what carries the clause, and aʿtaqid al-ʿarabiyya jamīla is not a sentence at all.",
+      "sound": "aʿ-TA-qid AN-na al-ʿa-ra-BEE-ya — the n of anna is held doubled, and the ʿ in aʿtaqid is the throat-squeeze of L1-M4's ʿamal.",
+      "variations": [
+        {
+          "display": "aʿtaqid anna al-qahwa ladhīdha",
+          "script": "أعتقد أن القهوة لذيذة",
+          "cue": "I think the coffee is delicious",
+          "changed": "what is being judged: the language becomes the coffee"
+        },
+        {
+          "display": "aʿtaqid anna al-kitāb mumtāz",
+          "script": "أعتقد أن الكتاب ممتاز",
+          "cue": "I think the book is excellent",
+          "changed": "a masculine noun after anna, so the adjective loses its -a"
+        }
+      ],
+      "mistake": {
+        "display": "aʿtaqid al-ʿarabiyya jamīla",
+        "script": "أعتقد العربية جميلة",
+        "why": "English can leave \"that\" out, so an English speaker leaves anna out too. Arabic then has nothing holding the clause: aʿtaqid anna al-ʿarabiyya jamīla."
+      },
+      "usage": "The plainest way to give an opinion in Arabic, and the frame the rest of the module hangs on.",
+      "register": "neutral",
+      "mnemonic": "anna is the hinge; the door will not swing without it."
+    },
+    {
+      "id": "L3-M3-S02",
+      "display": "aʿtaqid annahā ṣaʿba, lākin muhimma",
+      "script": "أعتقد أنها صعبة، لكن مهمة",
+      "cue": "I think it's difficult, but important",
+      "literal": "I-think that-it(f) difficult, but important",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "annahā",
+            "script": "أنها",
+            "cue": "that she, that it (feminine)",
+            "tag": "delta",
+            "forms": [
+              "annahā",
+              "annahu",
+              "annaka",
+              "annaki"
+            ],
+            "note": "anna with the pronoun welded to its back: annahā (she, it-f), annahu (he, it-m), annaka (you-m), annaki (you-f). anna hiya does not exist — the pronoun must attach."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The pronoun cannot stand free after anna. English says \"that it is difficult\" in separate words; Arabic welds the pronoun on and leaves no gap to put one in.",
+      "sound": "an-na-HAA — the n is held doubled in the middle and the -hā runs long off the end; that tail is where the sentence's subject is hiding.",
+      "variations": [
+        {
+          "display": "aʿtaqid annahu mashghūl al-yawm",
+          "script": "أعتقد أنه مشغول اليوم",
+          "cue": "I think he is busy today",
+          "changed": "the attached pronoun: -hā (she) becomes -hu (he)"
+        },
+        {
+          "display": "aʿtaqid annaka mudarris mumtāz",
+          "script": "أعتقد أنك مدرس ممتاز",
+          "cue": "I think you are an excellent teacher (to a man)",
+          "changed": "the pronoun turns to face the listener: -ka"
+        }
+      ],
+      "mistake": {
+        "display": "aʿtaqid anna hiya ṣaʿba",
+        "script": "أعتقد أن هي صعبة",
+        "why": "English keeps its pronoun as its own word and this copies it across. anna will not hold a free pronoun, only a suffixed one: aʿtaqid annahā ṣaʿba."
+      },
+      "usage": "How a second thing is said about something already named, without naming it again.",
+      "register": "neutral",
+      "mnemonic": "anna never stands beside a free pronoun; it wears it."
+    },
+    {
+      "id": "L3-M3-S03",
+      "display": "fī raʾyī, hādhā ṣaḥīḥ tamāman",
+      "script": "في رأيي، هذا صحيح تمامًا",
+      "cue": "In my opinion, that's completely right",
+      "literal": "In opinion-my, this correct completely",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ṣaḥīḥ",
+            "script": "صحيح",
+            "cue": "right, correct, true",
+            "tag": "free",
+            "forms": [
+              "ṣaḥīḥ",
+              "ṣaḥīḥa"
+            ],
+            "note": "\"Right\" — ṣaḥīḥ of a masculine thing, ṣaḥīḥa of a feminine one. Heavy ṣ at the front and the breathy ḥ of ṣabāḥ in the middle."
+          },
+          {
+            "display": "tamāman",
+            "script": "تمامًا",
+            "cue": "completely, exactly",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Completely\" — the written -an of shukran and jiddan, the adverbial tail L3-M1's rule 3 named. It follows whatever it strengthens: ṣaḥīḥ tamāman."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "fī raʾyī is not a verb and adds none — L1-M9 already said so. It changes the claim's standing, not its grammar: what follows the comma is the same verbless sentence.",
+      "sound": "fee RAʾ-yee, HAA-dhaa ṣa-ḤEEḤ ta-MAA-man — the catch in raʾyī is audible between its syllables, and tamāman ends on the -an you can hear.",
+      "variations": [
+        {
+          "display": "fī raʾyī, hādhā ṣaḥīḥ",
+          "script": "في رأيي، هذا صحيح",
+          "cue": "In my opinion, that's right",
+          "changed": "tamāman dropped — the same claim, only quieter"
+        },
+        {
+          "display": "hādhā ṣaḥīḥ tamāman",
+          "script": "هذا صحيح تمامًا",
+          "cue": "That is completely right",
+          "changed": "the softener taken off the front, leaving the bare claim"
+        }
+      ],
+      "mistake": {
+        "display": "fī raʾyī, hādhā ṣaḥīḥa",
+        "script": "في رأيي، هذا صحيحة",
+        "why": "hādhā is masculine, so its adjective is ṣaḥīḥ. The -a is the feminine ending and here it agrees with nothing: fī raʾyī, hādhā ṣaḥīḥ."
+      },
+      "usage": "The everyday way to agree with something just said, with fī raʾyī marking it as yours rather than as fact.",
+      "register": "neutral",
+      "mnemonic": "tamāman is the full stop you can hear."
+    },
+    {
+      "id": "L3-M3-S04",
+      "display": "hādhihi fikra jayyida jiddan",
+      "script": "هذه فكرة جيدة جدًا",
+      "cue": "This is a very good idea",
+      "literal": "This(f) idea good(f) very",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fikra",
+            "script": "فكرة",
+            "cue": "idea, thought",
+            "tag": "free",
+            "forms": [
+              "fikra",
+              "al-fikra",
+              "afkār"
+            ],
+            "note": "\"Idea\" — feminine, so its adjectives take -a: fikra jayyida. Its plural afkār is broken and comes with the word, the way L3-M2's rawātib did."
+          },
+          {
+            "display": "jayyida",
+            "script": "جيدة",
+            "cue": "good",
+            "tag": "free",
+            "forms": [
+              "jayyid",
+              "jayyida"
+            ],
+            "note": "\"Good\" — jayyid of a masculine thing, jayyida of a feminine one. fikra is feminine, hence the -a. Its opposite, sayyiʾ, turns up later in the module."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "\"A very good idea\" needs no \"is\" and no \"a\" in Arabic. hādhihi fikra jayyida is already a whole sentence, three words long.",
+      "sound": "HAA-dhi-hi FIK-ra JAY-yi-da JID-dan — the doubled y in jayyida is held, and holding it is the only thing that separates it from a word with one.",
+      "variations": [
+        {
+          "display": "hādhihi fikra jayyida, lākin ghāliya",
+          "script": "هذه فكرة جيدة، لكن غالية",
+          "cue": "This is a good idea, but an expensive one",
+          "changed": "a second judgement hung on L1-M10's lākin"
+        },
+        {
+          "display": "hādhā kitāb jayyid jiddan",
+          "script": "هذا كتاب جيد جدًا",
+          "cue": "This is a very good book",
+          "changed": "a masculine noun, so jayyida loses its -a"
+        }
+      ],
+      "mistake": {
+        "display": "hādhihi fikra jayyid",
+        "script": "هذه فكرة جيد",
+        "why": "English has one form of \"good\" and Arabic has two. fikra is feminine, so the adjective has to be as well: hādhihi fikra jayyida."
+      },
+      "usage": "What you say when somebody proposes something — the shortest approval in the module.",
+      "register": "neutral",
+      "mnemonic": "A feminine idea takes a feminine good."
+    },
+    {
+      "id": "L3-M3-S05",
+      "display": "lastu muwāfiq, li-ʾanna hādhā ghālī jiddan",
+      "script": "لست موافق، لأن هذا غالي جدًا",
+      "cue": "I don't agree, because this is very expensive",
+      "literal": "I-am-not agreeing, because this expensive very",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lastu",
+            "script": "لست",
+            "cue": "I am not",
+            "tag": "delta",
+            "forms": [
+              "lastu",
+              "laysa",
+              "laysat"
+            ],
+            "note": "The first person of L2-M7's laysa, the negative a verbless sentence needs: lastu muwāfiq. laysa is he, laysat is she, and what follows takes no ending."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "lā will not do this job. lā denies a VERB, and anā muwāfiq has none — the sentence needs laysa, and its first person is lastu.",
+      "sound": "LAS-tu mu-WAA-fiq — lastu is one clipped syllable and a stop, and it does not lean on what comes after it.",
+      "variations": [
+        {
+          "display": "lastu muwāfiq, li-ʾannī mashghūl",
+          "script": "لست موافق، لأني مشغول",
+          "cue": "I don't agree, because I'm busy",
+          "changed": "the reason turns personal: li-ʾanna takes L1-M9's attached -ī"
+        },
+        {
+          "display": "anā muwāfiq, li-ʾanna hādhā rakhīṣ",
+          "script": "أنا موافق، لأن هذا رخيص",
+          "cue": "I agree, because this is cheap",
+          "changed": "the whole stance flips and lastu goes back to anā"
+        }
+      ],
+      "mistake": {
+        "display": "lā muwāfiq, li-ʾanna hādhā ghālī",
+        "script": "لا موافق، لأن هذا غالي",
+        "why": "lā is the negative for a verb, and muwāfiq is an adjective. A verbless sentence is denied with laysa, whose first person is lastu: lastu muwāfiq."
+      },
+      "usage": "Disagreeing without being rude — the reason hung on li-ʾanna is what keeps it civil.",
+      "register": "neutral",
+      "mnemonic": "lā for doing, lastu for being."
+    },
+    {
+      "id": "L3-M3-S06",
+      "display": "rubbamā, lākin fī raʾyī hādhā ṣaʿb",
+      "script": "ربما، لكن في رأيي هذا صعب",
+      "cue": "Maybe, but in my opinion this is hard",
+      "literal": "Perhaps, but in opinion-my this difficult",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rubbamā",
+            "script": "ربما",
+            "cue": "perhaps, maybe",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Perhaps\" — one word standing in front of what it doubts and bending nothing behind it: rubbamā yadhhab ghadan. It is not a verb and carries no person."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "English hedges inside the claim — it's kind of hard, it might be hard. Arabic puts the hedge outside it: rubbamā and fī raʾyī stand in front and leave the sentence whole.",
+      "sound": "RUB-ba-maa — the b is doubled and held, then a long -mā runs off the end of it.",
+      "variations": [
+        {
+          "display": "rubbamā yadhhab ilā as-sūq ghadan",
+          "script": "ربما يذهب إلى السوق غدًا",
+          "cue": "Perhaps he'll go to the market tomorrow",
+          "changed": "rubbamā in front of a verb, where it still bends nothing"
+        },
+        {
+          "display": "rubbamā, lākin lastu muwāfiq",
+          "script": "ربما، لكن لست موافق",
+          "cue": "Maybe, but I don't agree",
+          "changed": "the second half becomes a flat disagreement"
+        }
+      ],
+      "mistake": {
+        "display": "aʿtaqid rubbamā hādhā ṣaʿb",
+        "script": "أعتقد ربما هذا صعب",
+        "why": "English stacks its hedges — I think maybe it's hard. Arabic does not: aʿtaqid hands its clause to anna and rubbamā cannot stand between them. Pick one — rubbamā hādhā ṣaʿb, or aʿtaqid annahu ṣaʿb."
+      },
+      "usage": "The polite half-agreement: you concede the point and keep your own, which is the work lākin is doing in the middle.",
+      "register": "neutral",
+      "mnemonic": "rubbamā leans on nothing; it just stands in front."
+    },
+    {
+      "id": "L3-M3-S07",
+      "display": "aʿtaqid anna hādhā khaṭaʾ kabīr",
+      "script": "أعتقد أن هذا خطأ كبير",
+      "cue": "I think this is a big mistake",
+      "literal": "I-think that this mistake big",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "khaṭaʾ",
+            "script": "خطأ",
+            "cue": "a mistake, an error",
+            "tag": "free",
+            "forms": [],
+            "note": "\"A mistake\" — a noun, so \"a big mistake\" is khaṭaʾ kabīr with L1-M3's adjective behind it. It ends on a written hamza, heard as a catch: khaṭaʾ, not khaṭā."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "hādhā is what stands after anna here and it does not change shape for anything. The accusative anna imposes is invisible on a demonstrative — which is why rule 2 states it on the attached pronoun, where it can be seen.",
+      "sound": "kha-ṬAʾ ka-BEER — the throaty kh at the front, and the word stops dead on the hamza instead of trailing off into a long vowel.",
+      "variations": [
+        {
+          "display": "aʿtaqid anna hādhā khaṭaʾ",
+          "script": "أعتقد أن هذا خطأ",
+          "cue": "I think this is a mistake",
+          "changed": "kabīr dropped — the judgement stands without its size"
+        },
+        {
+          "display": "fī raʾyī, hādhā khaṭaʾ kabīr",
+          "script": "في رأيي، هذا خطأ كبير",
+          "cue": "In my opinion, this is a big mistake",
+          "changed": "the frame: aʿtaqid anna becomes fī raʾyī, and the clause stops needing anna"
+        }
+      ],
+      "mistake": {
+        "display": "aʿtaqid anna yakūn khaṭaʾ kabīr",
+        "script": "أعتقد أن يكون خطأ كبير",
+        "why": "English puts anything behind \"that\", a verb included. anna cannot hold one — what follows it is a noun or an attached pronoun: aʿtaqid anna hādhā khaṭaʾ kabīr."
+      },
+      "usage": "The strongest disagreement the module teaches, and it names the thing rather than the person.",
+      "register": "neutral",
+      "mnemonic": "khaṭaʾ ends on a catch — the sound of stopping short."
+    },
+    {
+      "id": "L3-M3-S08",
+      "display": "aẓunn anna hind dhahabat ilā as-sūq",
+      "script": "أظن أن هند ذهبت إلى السوق",
+      "cue": "I think Hind went to the market",
+      "literal": "I-suppose that Hind went(f) to the-market",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aẓunn",
+            "script": "أظن",
+            "cue": "I think, I suppose",
+            "tag": "free",
+            "forms": [],
+            "note": "\"I suppose\" — aʿtaqid's everyday twin, and one of anna's sisters in the same way: it hands its clause to anna. The ẓ is the heavy one, said with the tongue flat."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "An ordinary Arabic sentence may start with its verb — dhahabat hind. Behind anna it may not: the noun comes first, because the noun is what anna is holding.",
+      "sound": "a-ẒUNN — the ẓ is heavy and the n is doubled, so the word ends on a hum rather than a stop.",
+      "variations": [
+        {
+          "display": "aẓunn anna hind mudarrisa mumtāza",
+          "script": "أظن أن هند مدرسة ممتازة",
+          "cue": "I think Hind is an excellent teacher",
+          "changed": "a verbless clause behind anna instead of a past one"
+        },
+        {
+          "display": "aʿtaqid anna hind dhahabat ilā al-madrasa",
+          "script": "أعتقد أن هند ذهبت إلى المدرسة",
+          "cue": "I think Hind went to the school",
+          "changed": "aẓunn swapped for aʿtaqid, which changes nothing else"
+        }
+      ],
+      "mistake": {
+        "display": "aẓunn anna dhahabat hind ilā as-sūq",
+        "script": "أظن أن ذهبت هند إلى السوق",
+        "why": "Arabic's plain sentence can put the verb first — dhahabat hind — and a learner who has met that order tries it here. Behind anna the noun leads: anna hind dhahabat."
+      },
+      "usage": "How you report what you believe about someone else without claiming to know it.",
+      "register": "neutral",
+      "mnemonic": "anna wants a name before it wants a deed."
+    },
+    {
+      "id": "L3-M3-S09",
+      "display": "fī raʾyī, al-maṭʿam sayyiʾ li-ʾanna al-ḥisāb ghālī",
+      "script": "في رأيي، المطعم سيئ لأن الحساب غالي",
+      "cue": "In my opinion the restaurant is bad, because the bill is expensive",
+      "literal": "In opinion-my, the-restaurant bad because the-bill expensive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sayyiʾ",
+            "script": "سيئ",
+            "cue": "bad",
+            "tag": "free",
+            "forms": [
+              "sayyiʾ",
+              "sayyiʾa"
+            ],
+            "note": "\"Bad\" — sayyiʾ of a masculine thing, sayyiʾa of a feminine one, and the plain opposite of jayyid. The hamza at its end is a catch, not a long vowel."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "li-ʾanna is L1-M9's word and it behaves here exactly as it did there — a noun or an attached pronoun behind it, never a bare verb. anna and li-ʾanna are one particle with one habit.",
+      "sound": "SAY-yiʾ — the doubled y is held and the word stops on the hamza; li-ʾAN-na al-ḥi-SAAB then runs on with no pause in it.",
+      "variations": [
+        {
+          "display": "fī raʾyī, al-maṭʿam sayyiʾ li-ʾannahu ghālī",
+          "script": "في رأيي، المطعم سيئ لأنه غالي",
+          "cue": "In my opinion the restaurant is bad, because it's expensive",
+          "changed": "the reason's noun becomes an attached pronoun: -hu"
+        },
+        {
+          "display": "al-maṭʿam mumtāz, li-ʾanna al-ḥisāb rakhīṣ",
+          "script": "المطعم ممتاز، لأن الحساب رخيص",
+          "cue": "The restaurant is excellent, because the bill is cheap",
+          "changed": "both judgements flip and the frame does not move"
+        }
+      ],
+      "mistake": {
+        "display": "fī raʾyī, al-maṭʿam sayyiʾ li-ʾanna ghālī",
+        "script": "في رأيي، المطعم سيئ لأن غالي",
+        "why": "English puts \"because\" straight in front of anything, a bare adjective included. li-ʾanna needs a noun or an attached pronoun first: li-ʾanna al-ḥisāb ghālī, or li-ʾannahu ghālī."
+      },
+      "usage": "An opinion with its reason attached is the module's whole job, and this is the longest version of it.",
+      "register": "neutral",
+      "mnemonic": "li-ʾanna is anna wearing L1-M9's li-."
+    },
+    {
+      "id": "L3-M3-S10",
+      "display": "lā aʿtaqid anna hādhā ṣaḥīḥ",
+      "script": "لا أعتقد أن هذا صحيح",
+      "cue": "I don't think that's right",
+      "literal": "Not I-think that this correct",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lā aʿtaqid",
+            "script": "لا أعتقد",
+            "cue": "I don't think",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's lā in front of the verb, exactly where English puts its \"don't\". The clause behind anna is left untouched by it: lā aʿtaqid anna hādhā ṣaḥīḥ."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "Nothing behind anna moves when the front of the sentence is negated — no second lā, no different form. English behaves the same way, and this is one of the places the two languages agree.",
+      "sound": "laa aʿ-TA-qid — the lā is short and leans straight onto the verb, with the ʿayn squeezed in behind it.",
+      "variations": [
+        {
+          "display": "lā aʿtaqid anna al-imtiḥān sahl",
+          "script": "لا أعتقد أن الامتحان سهل",
+          "cue": "I don't think the exam is easy",
+          "changed": "what is doubted: a claim about something L3-M2 already taught"
+        },
+        {
+          "display": "lā aẓunn anna hādhā ṣaḥīḥ",
+          "script": "لا أظن أن هذا صحيح",
+          "cue": "I don't suppose that's right",
+          "changed": "aʿtaqid swapped for aẓunn, which the lā treats identically"
+        }
+      ],
+      "mistake": {
+        "display": "aʿtaqid lā anna hādhā ṣaḥīḥ",
+        "script": "أعتقد لا أن هذا صحيح",
+        "why": "The negative belongs on the verb, not in front of anna. Arabic denies the thinking and leaves the thought alone: lā aʿtaqid anna hādhā ṣaḥīḥ."
+      },
+      "usage": "The softest disagreement in the module — it doubts the claim rather than contradicting the person.",
+      "register": "neutral",
+      "mnemonic": "Deny the thinking, not the thought."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M3-C01",
+      "display": "aʿtaqid anna al-qahwa ladhīdha",
+      "script": "أعتقد أن القهوة لذيذة",
+      "cue": "I think the coffee is delicious"
+    },
+    {
+      "id": "L3-M3-C02",
+      "display": "fī raʾyī, hādhā al-kitāb mumtāz",
+      "script": "في رأيي، هذا الكتاب ممتاز",
+      "cue": "In my opinion, this book is excellent"
+    },
+    {
+      "id": "L3-M3-C03",
+      "display": "lastu muwāfiq, li-ʾanna al-jaww bārid",
+      "script": "لست موافق، لأن الجو بارد",
+      "cue": "I don't agree, because the weather is cold"
+    },
+    {
+      "id": "L3-M3-C04",
+      "display": "rubbamā yadhhab ilā al-madrasa ghadan",
+      "script": "ربما يذهب إلى المدرسة غدًا",
+      "cue": "Perhaps he'll go to school tomorrow"
+    },
+    {
+      "id": "L3-M3-C05",
+      "display": "aʿtaqid annahu mashghūl al-yawm",
+      "script": "أعتقد أنه مشغول اليوم",
+      "cue": "I think he is busy today"
+    },
+    {
+      "id": "L3-M3-C06",
+      "display": "hādhihi fikra jayyida",
+      "script": "هذه فكرة جيدة",
+      "cue": "This is a good idea"
+    },
+    {
+      "id": "L3-M3-C07",
+      "display": "aẓunn anna al-maṭʿam ghālī jiddan",
+      "script": "أظن أن المطعم غالي جدًا",
+      "cue": "I think the restaurant is very expensive"
+    },
+    {
+      "id": "L3-M3-C08",
+      "display": "lā aʿtaqid anna al-imtiḥān sahl",
+      "script": "لا أعتقد أن الامتحان سهل",
+      "cue": "I don't think the exam is easy"
+    },
+    {
+      "id": "L3-M3-C09",
+      "display": "fī raʾyī, al-mūsīqā jamīla jiddan",
+      "script": "في رأيي، الموسيقى جميلة جدًا",
+      "cue": "In my opinion the music is very lovely"
+    },
+    {
+      "id": "L3-M3-C10",
+      "display": "anā muwāfiq tamāman",
+      "script": "أنا موافق تمامًا",
+      "cue": "I completely agree"
+    },
+    {
+      "id": "L3-M3-C11",
+      "display": "aʿtaqid anna hind ṭāliba mumtāza",
+      "script": "أعتقد أن هند طالبة ممتازة",
+      "cue": "I think Hind is an excellent student"
+    },
+    {
+      "id": "L3-M3-C12",
+      "display": "hādhā khaṭaʾ kabīr, fī raʾyī",
+      "script": "هذا خطأ كبير، في رأيي",
+      "cue": "That's a big mistake, in my opinion"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
