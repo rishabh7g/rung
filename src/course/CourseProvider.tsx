@@ -125,16 +125,28 @@ export function CourseProvider({ children }: CourseProviderProps) {
    * This is also the SWITCH path: the provider re-boots into the chosen course, so the new
    * course is warmed while the learner is still looking at the toast that confirmed it.
    *
+   * **It is also the PASS path, which is why the effect watches `courses` and not just the
+   * course id.** The warm reaches one level past the level the learner is standing on
+   * (`src/pwa/offlineCourse.ts`), so the window has to move when they seal a level — and the
+   * store's per-course slice is the only thing that says they did. Watching the whole record
+   * re-runs the warm on a `studied` write too, one it has nothing to gain from; that is the
+   * cheap direction of the trade, because the warm skips what this page already pulled and a
+   * run with nothing to gain does no reads at all.
+   *
    * Fire and forget, and deliberately not cancelled on unmount: the fetches are for the cache,
    * not for this render, and an abandoned warm is a course that is missing files offline. It is
    * a no-op wherever there is no worker to warm into (`npm run dev`, jsdom, a first visit before
    * the worker claims the page) — `src/pwa/offlineCourse.ts` says how.
    */
   const activeCourseId = active?.id;
+  const courseStates = useAppStore((state) => state.courses);
   useEffect(() => {
     if (activeCourseId === undefined) return;
-    void warmActiveCourse(activeCourseId);
-  }, [activeCourseId]);
+    // The same projection `progressionInput` makes (`src/state/store.ts`): in state v6 a course's
+    // passed set is exactly the keys of its `modules` record.
+    const passed = new Set(Object.keys(courseStates[activeCourseId]?.modules ?? {}));
+    void warmActiveCourse(activeCourseId, passed);
+  }, [activeCourseId, courseStates]);
 
   if (boot.status === 'loading') return <BootLoadingScreen />;
   if (boot.status === 'error') return <ContentErrorScreen detail={boot.detail} />;

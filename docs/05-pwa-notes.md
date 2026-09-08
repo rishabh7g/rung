@@ -131,9 +131,9 @@ changes a course's bytes writes a new cache and drops the old one, and a build t
 re-downloads nothing. The font subsets need no revision — Vite hashes their filenames.
 
 **The warm** is `src/pwa/offlineCourse.ts`, called from `CourseProvider` the moment a course
-resolves — which is also the course-**switch** path. It fetches every file the course ships (all
-of them, not the screens the learner opened, so the ladder is browsable offline from the first
-online visit), then asks `document.fonts.load()` for every declared face using the characters
+resolves — which is also the course-**switch** path, and, since §3.1.1, the **pass** path. It
+fetches the files the course ships as far as the learner can climb (not the screens they opened,
+so the ladder is browsable offline), then asks `document.fonts.load()` for every declared face using the characters
 that content actually carries. `unicode-range` does the scoping, so nothing here branches on a
 course id (Invariant 1). One subtlety worth writing down: the sample **drops whitespace and
 format characters**, because those are in more than one face's range by design — the Naskh face
@@ -149,6 +149,47 @@ worker installs" to "the learner's own course, from the first time it is opened 
 the app, switch to a course you have never opened, and go offline before the warm finishes, and
 that course has no content — where the old worker would have had it. The learner's own course is
 warmed on every launch and re-warmed after every content change.
+
+### 3.1.1 …and then it moved again: one course, at the rung the learner is on
+
+#211 stopped charging a learner for the catalogue. It still charged them for every rung of their
+own course and for every course they had ever tried, and both of those are the same mistake at a
+smaller scale — a build-time guess about a run-time learner. Two rules narrow it:
+
+- **The window.** The warm lists a course's ladder, strings and sizes row always, and its modules
+  and word indexes for every level up to and **including one past the level the learner is
+  standing on** (`warmedLevels`). A level above that is *sealed* by `engine/progression.ts` and
+  has no screen that can open it, so downloading it is a bet on a rung the product refuses to
+  serve. Levels below the frontier stay in the window: they are passed, and passed modules are
+  what Practice draws from. Lookahead is **one** and one is deliberate — the rung after a level's
+  last rung is the first rung of the next, so a learner who seals a level offline finds it there;
+  two would be speculation, because the level above *that* stays shut until this one is passed in
+  full, which needs a rung the device already has.
+- **The eviction.** A completed warm deletes every **other** course's entries from the content
+  cache (`dropOtherCourses`). The cache is named after the content revision, not the course, so
+  before this a learner who sampled four courses carried four courses until the next content
+  build — the catalogue arriving on the device the slow way.
+
+Because the window moves, the warm has to re-run when the learner's passed set does, so
+`CourseProvider` watches the store's `courses` record rather than only the course id. A re-warm is
+cheap by construction: `WarmEnvironment.already` remembers what this document has pulled, so a run
+that gained no level does no reads at all.
+
+Measured on `dist/`, hi-mr (the heaviest course), gzip per file as `npm run budget` meters it:
+
+    modules + indexes, all 3 levels        202.4 KiB   ← what a first open used to cost
+    modules + indexes, L1 + L2             138.7 KiB   ← what a new learner now pays
+    modules + indexes, L1 alone             72.2 KiB   ← the frontier on its own
+
+63.7 KiB off a new learner's first open today, on a ladder three levels deep. The ladder is designed to be ten (PRD §4), and
+the saving is a function of that depth: at ten levels a new learner warms two of them instead of
+ten. `course:<id>` in `tools/payload-budget.ts` is unchanged and still right — it meters what a
+learner may *eventually* hold, which is the ceiling; this is about what they hold on day one.
+
+**What this trades away, plainly.** Seal two levels in one offline session and the level after
+them is not there either; one online launch fills it. Switch back to a course you left, while
+offline, and it is gone until you are online again. What is kept is the daily case: the course the
+learner practises, at the rung they are on, warmed on every launch and after every pass.
 
 ### 3.2 What the emitted worker precaches, measured
 
@@ -195,12 +236,17 @@ and therefore against a **dev-content build**, the only build that then had a mo
 > (`http://<pi>:<port>`) or a phone — the same bucket as §8's deferred items. What can be said
 > without a browser is said in §3.2 and is machine-checked: the emitted worker precaches exactly
 > the shell (`BUDGET precache … = shell ok`, gated in `scripts/verify.sh`), the two runtime routes
-> are both `CacheFirst` with no network preference, and the warm fetches every file a course ships
-> and only its own script's faces. Both of those were test assertions when this was written; both
-> tests went on 2026-08-30 (#370), and of the three claims only the precache one is still gated.
+> are both `CacheFirst` with no network preference, and the warm fetches the files a course ships
+> as far as the learner can climb (§3.1.1) and only its own script's faces. The last of those was
+> a test assertion when this was written, lost it on 2026-08-30 (#370), and has it back:
+> `src/pwa/offlineCourse.test.ts` pins the window and the eviction, which are the two rules whose
+> regression is invisible on a fast connection.
+>
 > The step of the walk this cannot stand in for is the one that matters most — a **cold** start,
 > server dead, on a course that has been opened once before. That is the acceptance test to run
-> on the next device pass.
+> on the next device pass, and §3.1.1 adds two steps to it: seal a level with the server dead and
+> confirm the next level's first rung is there, and switch away and back with the server dead and
+> confirm the course you left is *gone* (which is the eviction working, not a bug).
 
 No phone is attached to this machine, so the gate was run headlessly against Chromium 151 over
 CDP. It is stricter than airplane mode in one way that matters: **the origin server is killed
