@@ -280,3 +280,339 @@ course.
     speak Korean well*. Confirm the frame reaches an acquired ability and not only a change of
     circumstance, since the module's own rule 3 explains it as the form used when nobody decided the
     outcome, and learning a language is at least partly decided.
+
+## Wave 2 — L4-M3, L4-M4 and L4-M5 (#546)
+
+The level's RANGE modules: the past counterfactual, the argument turn, and the refusal that never
+says no. Authored against the briefs in `tools/course-briefs.ts` and reviewed, as Wave 1 was,
+against the **REAL emitted index rather than the briefs' account of it** — every ownership claim
+below is quoted from `npm run content:owner -- en-ko …`.
+
+At the start of this wave the fold read **931 surfaces over 32 modules through L4-M2, `maxSpan` 2**.
+After the three modules it reads **975 surfaces over 35 modules through L4-M5**: L4-M3 contributes
+**16** keys, L4-M4 **14** and L4-M5 **14**. **`maxSpan` holds at 2**, for Wave 1's reason and one
+more: every ending this wave teaches is written ATTACHED — `gasseumyeon`, `geuraesseoyo`,
+`bissagineun`, `itjanayo`, `joeundeyo`, `galji` — so not one of them is a whitespace token that
+could widen a span, and the only hyphens added anywhere are `iyu-ga` and `iyu-reul` on a noun this
+wave itself mints. The one two-token surface in play, L3-M3's `geot gatayo`, is reused across
+L4-M5's S04, S05 and S10 and never reopened; `gatayo` is still `free` after the wave, exactly as the
+brief asked.
+
+`npm run content:validate` reports every module `ok` — `CONTENT 315/315 ok` when this section was
+written, and the total moves as the other eight courses' waves land; all three modules are clean under
+`npm run content:shown`; `npx vitest run tools/shown-surfaces.test.ts` is 11/11 with en-ko holding at
+its baseline of 12.
+
+### L4-M3 "What might have been" — the past marked twice, and a frame that does not mean should have
+
+```
+S01  Geuttae ilchik gasseumyeon joasseul geoyeyo.
+S02  Bi-ga an wasseumyeon chukje-e gasseul geoyeyo.
+S03  Ilchik gal geol geuraesseoyo.
+S04  Geu yeonghwa-reul an bol geol geuraesseoyo.
+S05  Eoje ilchik jip-e gasseoya haesseoyo.
+S06  Yak-eul meogeosseumyeon gwaenchanasseul geoyeyo.
+S07  Jeongmal huhoehaeyo. Deo gongbuhal geol geuraesseoyo.
+S08  Geuttae yeyak-eul haesseumyeon joasseul geoyeyo.
+S09  Taeksi-reul tasseumyeon an neujeosseul geoyeyo.
+S10  Yak-eul meogeosseoya haesseoyo. Geuraeseo huhoehaeyo.
+```
+
+The module teaches the counterfactual as **doubling, not as a new ending**. L3-M4's `-(eu)myeon` is
+reused byte for byte and the only difference a learner can see is the past on both halves, which is
+why rules 0, 1 and 5 all point at the same place from three directions: the doubling itself
+(`gamyeon joayo` against `gasseumyeon joasseul geoyeyo`), the English habit of marking the AUXILIARY
+(`gal geoyeosseoyo`, which nobody says), and the fact that English *if* is one word for the open
+condition and the closed one. S02 and S09 are the pair that separates the two positions of `an`:
+S02 negates the IF-half (`an wasseumyeon`, it did not rain) and S09 negates the OUTCOME
+(`an neujeosseul geoyeyo`), and both traps say so.
+
+Beside it the regret proper. `V-(eu)l geol geuraesseoyo` gets S03, S04 and S07 and is stated as the
+UNAMBIGUOUS one; `V-eosseoya haesseoyo` gets S05 and S10 and is stated as **had to**, with S10's
+second sentence (`Geuraeseo huhoehaeyo`) doing the work of forcing the regret reading. That is the
+brief's slogan trap answered head on: the module never teaches *should have* with `-eosseoya
+haesseoyo` alone, and S03's trap says in as many words that `ilchik gasseoya haesseoyo` would be
+heard first as *I had to go early*.
+
+The one re-teach in the wave is here. S04 takes a row on `an` (L1-M3), because the module's fifth
+pattern is literally `an + V-(eu)l geol geuraesseoyo` and the position of the negative — in front of
+the modifier, never in front of `geuraesseoyo` — is the whole content of the sentence. The row's
+note points back at L1-M3 as the owner and adds only the position, and the mistake plate shows the
+sentence a learner writes instead (`bol geol an geuraesseoyo`).
+
+### L4-M4 "Persuading" — concede first, and an ending that presupposes agreement
+
+```
+S01  Jigeum sigan-i itjanayo. Cheoncheonhi gayo.
+S02  I-sikdang-i jochanayo. Yeogi-eseo meogeoyo.
+S03  Bissagineun hajiman, i-geo-ga jeongmal joayo.
+S04  Meolgineun hajiman, beoseu-ga jaju isseoyo.
+S05  Mullon jom bissayo. Geuraedo i-geo-ga deo joayo.
+S06  Hagineun hajiman, jal an dwaesseoyo.
+S07  Jigeum an bappeunikka hwaksilhi hal su isseoyo.
+S08  Sasil i-geo-neun iyu-ga isseoyo.
+S09  Mullon jochanayo. Geuraedo jom bissajanayo.
+S10  Naeil-eun an bappeujanayo. Geureomyeon gachi gal su isseoyo.
+```
+
+Three moves, layered. `-janayo` on S01, S02, S09 and S10 is taught as a **presupposition, not an
+intensifier and not a tag question**: rule 1 states the difference from English *is it not?* — the
+tag hands the floor over, `-janayo` closes the point — and S01's mistake plate is the ending with a
+question mark on it, which is the shape an English speaker writes first. Every `-janayo` sentence's
+trap names the condition on it: the listener must actually have agreed, so S10, which tells the
+listener about their own diary, only works if they really said so.
+
+The concessive gets S03, S04 and S06, always spelled in FULL (`bissagineun`, `meolgineun`,
+`hagineun`) with the contraction on the mistake plate rather than in a display. S06 is the one that
+concedes the ACTION rather than a property — *I did do it, but* — which is the shape that keeps
+credit for the effort. Then the turn-level frame: `mullon … geuraedo …` on S05 and S09, with rule 4
+and S05's mistake plate both insisting the order is fixed, because reversed the turn ends by
+conceding the point it was making. `sasil` (S08) introduces the fact the other person has not
+weighed, and `iyu` is minted with its two particle forms so that the noun can be either half of a
+sentence.
+
+The module contributes **zero re-teaches**: every row is a fresh key.
+
+### L4-M5 "Disagreeing well" — the sentence that never reaches its own verb
+
+```
+S01  I-geo-ga jeongmal joeundeyo...
+S02  Jigeum-eun jom bappeundeyo...
+S03  Jeo-neun jigeum ilhaneundeyo...
+S04  Geulsseyo, bissal geot gatayo.
+S05  Geulsseyo, naeil-eun bi-ga ol geot gatayo.
+S06  Naeil galji moreugesseoyo.
+S07  Chingu-ga olji moreugesseoyo.
+S08  Joesonghajiman, jigeum-eun sigan-i eomneundeyo...
+S09  Joesonghajiman, jeo-neun dareun geo-ga deo joeundeyo...
+S10  Sigan-i jom eoryeoul geot gatayo.
+```
+
+Four of the ten displays end in an ellipsis and nothing else, which is this course's rendering of an
+ending that lays down a background and stops. The `literal` line on each of them spells the gap out
+in words — `good-but-and-then-nothing` — because rule 0 is right that no English punctuation renders
+it, and the `cue` carries the English *but…* that the Korean deletes.
+
+The allomorphy is taught rather than assumed: S01 and S02 take the adjective's `-(eu)ndeyo`, S03
+takes the action verb's `-neundeyo`, and S08 shows `eopseoyo` siding with the action verbs and
+picking up the written assimilation (`eomneundeyo`). S03's trap says outright that swapping the two
+shapes is the commonest slip in the module.
+
+**S10 is the module.** `Sigan-i jom eoryeoul geot gatayo` is shipped as a REFUSAL, its cue carries a
+parenthetical `(No.)`, its trap says so in the plainest words the format allows, and its mistake
+plate is the present modifier `eoryeoun geot gatayo` — the reading that turns a no into a difficulty
+rating, which is exactly the misreading rule 1 calls the most expensive in the course. `geulsseyo`
+(S04, S05) is given the same treatment in its note: a whole turn on its own, and not *maybe*.
+
+The module contributes **zero re-teaches**. `geureonde` and `geunde` are pointed back at (rule 4)
+and never written, and the flat contradiction `teullyeoyo` is named in rule 7 as the thing not to
+say and never appears in a display.
+
+### The brief seams this wave had to correct, and what the index actually said
+
+**1. `iljjik` is not this course's spelling of 일찍; `ilchik` is, and L1-M4 owns it.** The M3 brief
+writes `iljjik` three times — in its worked example (`Iljjik gasseumyeon bwasseul geoyeyo`), in the
+slogan trap (`Iljjik gasseoya haesseoyo`) and in the unambiguous regret (`iljjik gal geol
+geuraesseoyo`) — and it is the standard romanization. It is not the one on disk:
+
+```
+ilchik	L1-M4
+iljjik	free
+```
+
+L1-M4 teaches 일찍 twice, in `Achim-e ilchik ireonayo` and `Bam-e ilchik jayo`, and its own `sound`
+line already concedes the pronunciation (*"The ch of ilchik tenses after the l, closer to
+il-jjik"*). Writing the brief's spelling would have minted a SECOND key for one word and left the
+L1-M4 row unreachable from every L4 sentence that used it — the level law's failure mode exactly,
+with the added insult that the level below could not be edited to fix it. All four L4-M3 sentences
+that need *early* write `ilchik`, and it costs nothing. **This is the wave's most valuable finding**
+and it generalises: a brief written from standard romanization is not a reliable guide to a course
+that settled its own (`docs/34`), and `content:owner` is the only thing that knows which spelling
+the ladder actually holds.
+
+**2. `isseunikka` is free, and the M4 brief's fourth pattern walks straight into it.** Pattern 4 is
+`clause-(eu)nikka + V-(eu)l + su + isseoyo`, and the brief's index note lists what it reuses — `su`
+L2-M1, `jom` L2-M1 — without noticing that the most natural clause to put in front of it is unowned:
+
+```
+isseunikka	free
+onikka	L3-M3
+bappeunikka	L3-M3
+eopseunikka	L4-M2
+```
+
+Three shapes of `-(eu)nikka` are owned and the *there is* one is not, so `Sigan-i isseunikka
+hwaksilhi hal su isseoyo` would have spent a fresh key on an ending the module is not chartered to
+teach. S07 was rewritten as `Jigeum an bappeunikka hwaksilhi hal su isseoyo`, which spends nothing
+on the ending and puts the whole of the sentence's budget on `hwaksilhi`. This is Wave 1's finding
+again from a third angle: **an owned ending is not an owned paradigm**.
+
+**3. `nasseoyo` is L3-M7's symptom verb, and the obvious counterfactual for medicine collides with
+it.** *If I had taken the medicine I would have got better* wants 나았을 from 낫다, which this
+course would romanize into the same neighbourhood as L3-M7's 나다:
+
+```
+nasseoyo	L3-M7   (yeol-i nayo — a fever comes out)
+nasseul	free
+naasseoyo	free
+```
+
+L3-M7's row teaches `nayo`/`nasseoyo` as *comes out · appears*, the symptom verb, so a `nasseul`
+minted here would sit one fold away from a word that means the opposite kind of thing. S06 was
+rewritten onto L2-M1's `gwaenchanayo` — `Yak-eul meogeosseumyeon gwaenchanasseul geoyeyo` — which
+spends one clean key and dodges the homograph entirely.
+
+**4. The M3 brief's two self-corrections both check out, and a third of the same kind is added.**
+`mal` is `L3-M5` as the brief says, so the prohibitive regret `V-ji mal geol geuraesseoyo` is not
+written anywhere and rule 4 teaches `an V-(eu)l geol geuraesseoyo` instead. `geuttae` and `ttae` are
+both `free` as the brief says, and written as ONE token `geuttae` donates nothing — after the wave
+`ttae` is still `free`, unspent for L4-M6. The third: `han` is `L1-M8` native ONE, and no
+counterfactual in the module is built on the `-(eu)n` of `hada`.
+
+**5. The M4 brief's `gin` ruling checks out and is load-bearing.** `gin` is `L2-M2` (LONG, from
+`gireoyo`), so `bissagin hajiman` would have folded a concessive onto an adjective. Every concessive
+ships in full and the contraction appears only on mistake plates (S03, S06). `janayo` is `free`
+before the wave and `free` after it: the ending is written attached on every one of the four
+`-janayo` sentences, so no bare key is minted.
+
+**6. The M5 brief's orthography ruling checks out, and both bare keys survive it.** `-(eu)lji` is
+written attached (`galji`, `halji`, `olji`) and `-(neu)ndeyo` likewise (`joeundeyo`, `bappeundeyo`,
+`ilhaneundeyo`, `eomneundeyo`). After the wave:
+
+```
+ji	free
+neunde	free
+deyo	free
+gatayo	free
+```
+
+`ji` is still there for L4-M6's elapsed-time bound noun, which is the seam the brief was protecting,
+and `gatayo` is still free because `geot gatayo` was matched as L3-M3's two-token key rather than
+re-minted. Rule 3 of L4-M5 states the spacing difference for the learner so that M6 can rely on it.
+
+**7. A noun that is owned does not bring its particles with it.** Wave 1 found this on verb
+paradigms; it bit again here on nouns, and cost three rewrites:
+
+```
+sukje-reul	free   [parts: sukje → L3-M2, reul → L1-M1]
+uisa-reul	free   [parts: uisa → L1-M1, reul → L1-M1]
+hoesa-e	free   [parts: hoesa → L3-M2, e → L1-M4]
+saram-i	free   [parts: saram → L1-M1, i → L1-M1]
+bangbeop-i	free   [parts: bangbeop → L4-M1, i → L1-M1]
+naeil-i	free   [parts: naeil → L1-M6, i → L1-M1]
+```
+
+`matchSurfaces` walks whole whitespace tokens, so `sukje-reul` must itself be a key — the hyphen
+parts being owned is not enough. Every sentence in the wave was written against the particle-shaped
+surfaces that already exist (`yak-eul`, `chukje-e`, `sigan-i`, `beoseu-ga`, `geo-ga`) rather than
+against the nouns behind them. An author who writes from the noun list will produce
+`SHOWN-BUT-UNTAUGHT` findings that look like typos and are not.
+
+### The ratchet
+
+`npx vitest run tools/shown-surfaces.test.ts` is **11/11**, and en-ko holds at its baseline of
+**12**. The baseline is **not lowered**, because this wave fixed none of the twelve: they remain
+
+`saram-i · chaek-i · geunyang · geuraeyo · cha-do · il · uisa-yeosseoyo · anieosseoyo · hakgyo-e ·
+oneul-do · minsu-ga · eopseoseo`
+
+and every one is still a forward reference inside L1–L3. Two of them brushed against this wave and
+neither is closed by it. `saram-i` was a candidate subject for L4-M5's `-(eu)lji` sentence and was
+rejected for exactly the reason it is on the list — S07 writes `chingu-ga` instead — so the wave
+avoids the surface rather than teaching it, and a finding owned by a module below L1-M1 cannot be
+closed from L4 anyway. `hakgyo-e` is owned by L1-M7 in the full fold, so L4-M3-S02's first variation
+and S06's first variation resolve against it cleanly; the finding belongs to a module earlier than
+L1-M7 and is untouched. Closing either is a sweep over verified L1 content and is not this wave's
+to do.
+
+**All three new modules contribute zero findings.** Every display, every variation display and every
+comprehension item in L4-M3, L4-M4 and L4-M5 resolves against the index as it stands at that module,
+which is what `npm run content:shown` reports as clean for each and what the ratchet test confirms
+by course. The single `RE-TEACH` line in the wave — L4-M3-S04's `an`, owned by L1-M3 — is
+information rather than a defect on this course, and it is kept deliberately: the sentence's whole
+subject is where the negative sits.
+
+### Open questions for the native pass
+
+The chain continues from **87**, the last number in `docs/93-en-ko-L4-brief-decisions.md` and this
+document taken together. Nothing above 87 existed before this wave, and nothing already numbered is
+renumbered.
+
+88. **`ilchik` against `iljjik`** (M3, four sentences). This wave held the L1-M4 spelling for the
+    reason in seam 1, but the standard romanization is `iljjik` and L1-M4's own `sound` line says so.
+    Rule on whether the course keeps `ilchik` for good, or whether L1-M4 should be migrated in a
+    change that is licensed to edit L1 — this wave was not, and a level may never edit a file below
+    it.
+
+89. **`geuttae` written solid** (M3-S01, S08). Confirm 그때 is one word in this course's romanization
+    and that a learner never needs to see `geu ttae`. The index consequence is that L4-M6's `ttae`
+    stays unspent, so a ruling the other way would cost M6 a key.
+
+90. **`-eosseoya haesseoyo` really is ambiguous** (M3-S05, S10, rule 3). The module's slogan trap
+    depends on it. Confirm 일찍 갔어야 했어요 is heard first as *I had to go early* by a native ear
+    with no context, and that S10's second sentence `Geuraeseo huhoehaeyo` is enough to force the
+    regret reading rather than merely allowing it.
+
+91. **The doubled past against a present outcome** (M3-S01 mistake plate). Confirm
+    그때 일찍 가면 좋았을 거예요 is genuinely wrong rather than colloquially tolerable, since the whole
+    module rests on the doubling being obligatory.
+
+92. **`gal geol` against `gasseul geol`** (M3-S03, S07 mistake plates). Confirm 갔을 걸 그랬어요 and
+    공부했을 걸 그랬어요 are errors rather than variants, and that the modifier before `geol` is always
+    the plain `-(eu)l`.
+
+93. **The negative regret's word order** (M3-S04, rule 4). Confirm 안 볼 걸 그랬어요 is the ordinary
+    shape and 볼 걸 안 그랬어요 is not said at all. Separately, confirm whether `-지 말 걸 그랬어요` is
+    in fact the commoner form in speech; it is barred here because `mal` is L3-M5's, and if it is the
+    commoner form the ban is a real pedagogical cost that L5 should pay off.
+
+94. **`gwaenchanasseul geoyeyo` for a recovery** (M3-S06). Chosen over 나았을 for the collision in
+    seam 3. Confirm 약을 먹었으면 괜찮았을 거예요 is what is actually said about a cold, and that it
+    does not read as *it would have been acceptable* rather than *I would have been better*.
+
+95. **`huhoehaeyo` in the present about a closed past** (M3-S07, S10). Confirm the present tense is
+    the ordinary one, that `huhoehaesseoyo` — shipped as a form and shown in S07's second variation —
+    is not the default, and that 후회해요 is not too heavy a word for a missed film or a late start.
+
+96. **`-janayo` and the stranger** (M4, rule 0 and every `-janayo` trap). Confirm the ending is
+    genuinely WRONG rather than merely brusque with someone you have just met, and rule on where the
+    line falls with a colleague you know only at work — the module's usage lines currently put it
+    with friends and close colleagues only.
+
+97. **`jochanayo` and the plate under it** (M4-S02). The written-aspiration law gives
+    좋잖아요 → `jochanayo`. Confirm, and confirm that the mistake a learner actually makes is
+    `joayojanayo` — the ending stuck onto a finished `-ayo` form — rather than the mis-romanization
+    `jotjanayo`, which is what the plate would show if the law were the harder thing.
+
+98. **The concessive written in full** (M4-S03, S06, rule 3). 비싸긴 and 하긴 are barred here only
+    because `gin` is L2-M2's LONG. Confirm 비싸기는 하지만 is natural in speech and not merely
+    correct in writing, and rule on whether L5 may ever write the contraction once the collision is
+    survivable.
+
+99. **`hwaksilhi` in an argument** (M4-S07). Confirm 확실히 할 수 있어요 reads as a commitment rather
+    than as boasting, and that `hwaksilhi` is the right adverb here for a colleague rather than
+    꼭 or 반드시.
+
+100. **`iyu` beside L4-M2's `ttaemune`** (M4-S08). The note distinguishes them as *the cause stated
+     inside a sentence* against *the reason as a thing you can hold*. Confirm 이거는 이유가 있어요 is
+     what is said when you are about to give one, and that it does not sound defensive.
+
+101. **`i-geo-ga` and `dareun geo-ga`** (M4-S03, S05; M5-S09). The course writes 이거가 and 다른 거가
+     where 이게 and 다른 게 are the spoken norm — a decision inherited from L1-M1 and now carried into
+     an argument module and a refusal module, where register matters more than it did in L1. Confirm
+     the uncontracted form is still acceptable there, or rule that L5 must contract.
+
+102. **The ellipsis as the rendering of a trailing ending** (M5, four displays, rule 0). Three ASCII
+     dots is this course's device for a clause that stops. Confirm a native reader does not read them
+     as a different kind of pause, and that the `literal` line's `good-but-and-then-nothing` is a
+     fair gloss rather than a joke.
+
+103. **`eomneundeyo`** (M5-S08). The written-assimilation law gives 없는데요 → `eomneundeyo`, on the
+     rule that gives `masinneun`. Confirm the romanization, and confirm 시간이 없는데요 is the shape
+     used to decline a senior's request rather than 시간이 없어서요.
+
+104. **`sigan-i jom eoryeoul geot gatayo` as a closed no** (M5-S10, rule 1). The module's law, and the
+     claim the whole course's politeness training rests on. Confirm the sentence leaves NO opening;
+     confirm the present-modifier plate 어려운 것 같아요 really does read as a difficulty rating
+     instead; and confirm that the parenthetical `(No.)` in the cue is the right way to teach a
+     pragmatic fact the words do not carry.

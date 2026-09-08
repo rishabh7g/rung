@@ -188,7 +188,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 311 — nine L1-L3 ladders, and L4 landing course by course (#528, #538-#546)', () => {
+  it('finds all 315 — nine L1-L3 ladders and L4-M1..M5 on every course (#528, #538-#546)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -223,6 +223,8 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ar/modules/L4-M1.json',
       'content/en-ar/modules/L4-M2.json',
       'content/en-ar/modules/L4-M3.json',
+      'content/en-ar/modules/L4-M4.json',
+      'content/en-ar/modules/L4-M5.json',
       'content/en-de/modules/L1-M1.json',
       'content/en-de/modules/L1-M10.json',
       'content/en-de/modules/L1-M2.json',
@@ -467,6 +469,7 @@ describe('ModuleContent against the modules that exist', () => {
       'content/hi-en/modules/L4-M2.json',
       'content/hi-en/modules/L4-M3.json',
       'content/hi-en/modules/L4-M4.json',
+      'content/hi-en/modules/L4-M5.json',
       'content/hi-mr/modules/L1-M1.json',
       'content/hi-mr/modules/L1-M10.json',
       'content/hi-mr/modules/L1-M2.json',
@@ -501,6 +504,7 @@ describe('ModuleContent against the modules that exist', () => {
       'content/hi-mr/modules/L4-M2.json',
       'content/hi-mr/modules/L4-M3.json',
       'content/hi-mr/modules/L4-M4.json',
+      'content/hi-mr/modules/L4-M5.json',
     ]);
   });
 
@@ -552,7 +556,7 @@ describe('ModuleContent against the modules that exist', () => {
   it('keeps the romanized course readable: display is the romanization, script the native line', () => {
     const romanized = MODULE_FILES.filter(([name]) => name.includes('en-ar'));
 
-    expect(romanized.length, 'the en-ar modules this rule is written for').toBe(33);
+    expect(romanized.length, 'the en-ar modules this rule is written for').toBe(35);
     for (const [file, json] of romanized) {
       const module = parseModule(json, file);
 
@@ -691,7 +695,7 @@ describe('ModuleContent against the modules that exist', () => {
       'the hi-en modules this rule is written for (#270-#272 L1; #437, #446, #455 L2; #473, #482,' +
         ' #548 L3; #531 L4). The count guards the walk BELOW it, and vitest aborts the case here —' +
         ' so a stale number silently stops every language law in this block from running at all.',
-    ).toBe(34);
+    ).toBe(35);
     for (const [file, json] of hiEn) {
       const module = parseModule(json, file);
 

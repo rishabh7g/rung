@@ -275,3 +275,357 @@ native-speaker gate is a separate and stricter bar than this review, and it is u
      so that त्यामुळे and यामुळे can do the job they exist for. Does that read as one utterance to
      a native ear, and is the full stop the right punctuation, or would a Marathi speaker write a
      comma and lose the very boundary the module is teaching across?
+
+## Wave 2 — L4-M3, L4-M4 and L4-M5 (#528)
+
+The level's RANGE modules — L4-M3 "What might have been", L4-M4 "Persuading" and L4-M5
+"Disagreeing well" — authored together on 2026-09-08 and shipped `verified: true` in the same
+change, signed `Claude Opus 5 — LLM review, authorised by repo owner`.
+
+Written, like wave 1, against the **real emitted index**: `public/content/hi-mr/index/` folded
+through `L4-M2` — `663 surfaces owned, folded over 32 modules through L4-M2`, `maxSpan 1`. Every
+ownership line quoted below is `npm run content:owner -- hi-mr …` output against that index, run
+before a word was written. `maxSpan 1` bites harder in this wave than in the last: three of the
+five shapes these modules exist to teach — `पाहिजे होतं`, `नको होतं`, `खरं तर` — are two-token
+phrases made of tokens the ladder already owns, so they own **no key at all** and live in `rules[]`
+and in each sentence's `literal`. The single most important authoring consequence is stated in
+L4-M3's `rules[2]`: tapping a word will not explain the frame, and the module says so.
+
+### L4-M3 — What might have been
+
+Regrets and past hypotheticals. Ten displays:
+
+1. `जर ती लवकर गेली असती तर तिला संधी मिळाली असती`
+2. `जर ते वेळेवर आले असते तर आम्ही सगळे भेटलो असतो`
+3. `जर त्याने आधी निरोप दिला असता तर हे काम झालं असतं`
+4. `जर मी तिथे गेलो नसतो तर मला हे समजलं नसतं`
+5. `जर काल गर्दी नसती तर मला तिकीट मिळालं असतं`
+6. `मी त्याचं ऐकायला पाहिजे होतं`
+7. `मी तिथे उगीच जायला नको होतं`
+8. `मला ती नोकरी हवी होती, पण ती संधी चुकली`
+9. `तुम्ही काल आला असता तर मला खूप आवडलं असतं`
+10. `मला त्याची आठवण येते, आणि ते सगळं मला आठवतं`
+
+What it teaches. The counterfactual widened in three directions, plus three regret frames that are
+not conditionals at all.
+
+- **Person and gender, which is the whole of §2(a).** L3-M4 shipped exactly one frame —
+  `जर मी लवकर गेलो असतो तर मी त्याला भेटलो असतो`, first person, masculine, both halves alike. S01
+  puts a feminine subject in both halves (`गेली असती … मिळाली असती`), S02 puts a **different**
+  subject in each half (`ते … आले असते` against `आम्ही … भेटलो असतो`), and S03 puts a ने clause in
+  the protasis so L2-M10's ergative law is shown surviving the counterfactual unchanged
+  (`त्याने निरोप दिला असता`, the verb agreeing with निरोप, the apodosis neuter with काम).
+  `rules[0]` states the law the brief said no shipped sentence had yet demonstrated.
+- **The negative**, on one row and one paradigm: `नसतो` with
+  `forms: ["नसतो","नसता","नसती","नसतं","नसते"]`, shown as नसतो/नसतं in S04 and नसती/नसता in S05
+  and its variations. `rules[1]` says the thing a Hindi speaker will not guess — the negative
+  **replaces** the auxiliary rather than adding a word, and `नसतं तर` is the counterfactual twin of
+  L3-M4's `नाहीतर`.
+- **The regret frames**, which are the module's real work and cost no keys at all: `-आयला पाहिजे
+  होतं` (S06), `-आयला नको होतं` (S07, shipped as `मी तिथे … जायला नको होतं` per
+  `docs/85` #100), `मला + N + हवं होतं` (S08), and `ते मला आवडलं असतं` (S09) — the one L3-M4 named
+  and deliberately did not teach.
+- **The काश hole.** `rules[4]` and S09 carry it: Hindi's काश has no everyday Marathi twin, Marathi
+  says `… असतं तर बरं झालं असतं`, and S09's first variation ships exactly that (`बरं → L1-M2`,
+  `झालं`, `असतं` all owned, so the idiom costs nothing). S09's `mistake` is the import itself,
+  `काश तुम्ही काल आला असता`.
+- **What it refuses.** `rules[5]` draws the three-way line the brief demands: `मी गेलो असतो` (this
+  module), `मी जायचो` (L4-M8's past habitual), `तो गेला असेल` (L4-M5's guess about now). The real
+  conditional stays L3-M4's and is re-shown on every page, never re-opened.
+
+Thirteen rows against a `newWordCap` of 25 — eighteen surfaces once `नसतो`'s five, `चुकलं`'s three
+and `आवडलं`'s three are counted.
+
+### L4-M4 — Persuading
+
+Make a case, concede a point, hold your ground. Ten displays:
+
+1. `पाऊस आला तरी मी येईन`
+2. `हे महाग असलं तरी चांगलं आहे`
+3. `काल खूप गर्दी होती. तरीही मला जागा मिळाली.`
+4. `खरं तर हे स्वस्त आहे, त्याचा फायदा जास्त आहे`
+5. `त्यापेक्षा हे पुस्तक स्वस्त आहे आणि जास्त चांगलं आहे`
+6. `मला हे मान्य आहे, पण तरीही मी जाणार नाही`
+7. `हे काम अवघड आहे, पण नक्कीच होईल`
+8. `त्याचा उपयोग जास्त आहे, तोटा कमी आहे`
+9. `तो लहान असला तरी त्याचं बरोबरच आहे`
+10. `हे खरंच चांगलं आहे, तरी थोडं महाग आहे`
+
+What it teaches. The concessive, which the ladder has never touched, in the brief's three shapes
+and in that order of usefulness.
+
+- **`तरी` after a clause** (S01, S10) — the spine. It sits exactly where L3-M4's `तर` sits, on the
+  same past-shaped clause, and flips *if* into *even if*. The row carries the disambiguation the
+  brief demands in one line: तरी is a different key from तर, not a form of it.
+- **`असलं तरी` for a conceded state** (S02, S09), on one row with
+  `forms: ["असलं","असला","असली"]`, agreeing with the thing conceded and appearing only in front of
+  तरी.
+- **`तरीही` opening the next sentence** (S03, S06). S03 is a two-sentence `display`, following
+  L4-M2-S06/S09's precedent so that तरीही can do the job it exists for; that decision is the open
+  question #118 this wave inherits rather than settles.
+- **The case-making markers**: `खरं तर` (S04, in `rules[4]` because both its tokens are owned),
+  `मान्य आहे` (S06), `नक्कीच` (S07), `बरोबरच` (S09), `खरंच` (S10). The last three are one clitic —
+  `-च` on `नक्की` (L1-M6), `बरोबर` (L3-M3) and `खरं` (L3-M3) — and S10's `mistake` is the three-way
+  confusion they invite (`खरं` true, `खरंच` really, `खरं तर` actually).
+- **The comparison inside an argument** (S05): `त्यापेक्षा`, with `rules[5]` saying plainly that
+  the grammar is L2-M9's and only the word is new.
+- **The interference**, which is the mirror image of L3-M4's: Hindi's हालाँकि opens the concessive
+  from the FRONT and Marathi closes it from the BACK. `rules[3]` says so, S01 is tagged
+  interference, and S01's `mistake` is `हालाँकि पाऊस आला, तरी मी येईन` — a Hindi sentence in
+  Devanagari, which is exactly what a learner produces.
+
+Twelve rows, fourteen surfaces. Nothing of L4-M5's softening appears: no कदाचित, no
+`मला वाटत नाही`, no hedged refusal.
+
+### L4-M5 — Disagreeing well
+
+Soften, hedge, save face. Ten displays:
+
+1. `मला तसं वाटत नाही, पण तुमचं म्हणणं बरोबर आहे`
+2. `मला नाही वाटत की हे शक्य आहे`
+3. `हे काम काल शक्य नव्हतं, म्हणून मी थांबलो`
+4. `तो आज घरी नसेल, बहुतेक तो ऑफिसमध्ये आहे`
+5. `कदाचित तो आता घरी असेल, तो इथे नाहीये`
+6. `माफ करा, पण मला जरा वेगळं वाटतं`
+7. `तुम्ही नंतर सांगितलं तर हरकत नाही`
+8. `तू आता तिथे जाऊ नकोस, असं करू नये`
+9. `तुमचं बरोबर असेल, पण हे नेहमी असं नसतं`
+10. `तुम्हाला काय वाटतं, माझं मत बरोबर आहे का?`
+
+What it teaches. One system seen twice, exactly as the brief frames it.
+
+- **Negation as a paradigm.** `rules[0]` states all four cells — `आहे → नाही` (L1-M2),
+  `होतं → नव्हतं`, `असतं → नसतं` (L4-M3), `असेल → नसेल` — and the module ships three of the four in
+  hero position: नव्हतं (S03), नसेल (S04), नसतं (S09). The interference gets **two** sentences and
+  two mistakes as the brief asks: S03's `शक्य नाही होतं` and S09's `असं नाही असतं`, with S04's
+  `नाही असेल` as a third for good measure.
+- **The fronted नाही** (S02), which the brief calls the module's single most useful line. `rules[1]`
+  says it is the gentler of the two, and S02's `mistake` catches the stem — the fronted नाही takes
+  bare `वाटत`, never `वाटतं`.
+- **Hedging out of owned material** (`rules[2]`): कदाचित (L3-M3), असेल (L3-M4) doing a guessing job
+  about now (S05), जरा (L2-M1) taking the edge off (S06), and `माफ करा, पण …` built from L2-M1's
+  माफ and L4-M2's पण (S06). Only बहुतेक, शक्य, नाहीये and वेगळं are new words.
+- **The prohibition scale** (S08, `rules[4]`): `जाऊ नका` (L4-M1, at तुम्ही) → `जाऊ नकोस` (at तू) →
+  `असं करू नये` (at nobody, and therefore polite). All three behind L2-M6's same -ऊ cell.
+- **Handing the turn back** (S10, `rules[5]`) — `तुम्हाला काय वाटतं?`, shipped as a hero and again
+  as a bare variation, with `मत` bought so that `तुमचं मत काय आहे?` costs one word.
+- Three sentences carry a `register` other than neutral, which no earlier hi-mr module has needed:
+  S01, S06 and S10 are `formal` (the senior-facing move), S05 and S08 `informal`.
+
+Twelve rows, fifteen surfaces.
+
+## Seams — what `content:owner` said, wave 2
+
+**Every ownership claim in all three briefs' INDEX SEAM sections held.** `जर`, `तर`, `असतं`,
+`असता`, `असती`, `असते`, `असतो`, `असेल`, `नाहीतर`, `पाहिजे` all came back `L3-M4`; `होतं`, `होता`,
+`होती`, `होते`, `वाटतं`, `वाटत`, `बरोबर`, `चूक`, `खरं`, `कदाचित`, `ना` all `L3-M3`; `हवं` and
+`नको` `L1-M3`; `गेलो` and `केलं` `L1-M5`; `भेटलो` `L2-M10`; `गेली` `L3-M10`; `जरा` and `माफ`
+`L2-M1`; `जास्त` and `कमी` `L2-M9`; `महाग` `L1-M8`; `स्वस्त` `L2-M3`; `पण` `L4-M2`; `नाही`
+`L1-M2`. L4-M4's brief warns that `पेक्षा` only *looks* owned, and the index agrees:
+
+```
+पेक्षा	free
+माझ्यापेक्षा	L2-M9
+सगळ्यात	L2-M9
+त्यापेक्षा	free
+यापेक्षा	free
+```
+
+L2-M9 bought one fused pronoun form and nothing else, exactly as `docs/50` §4 predicted and
+`docs/85` #4 recorded. Nothing needed correcting. What follows is the part a reader working from
+the briefs alone would still get wrong.
+
+### 7. The `-च` clitic is a third face of wave 1's "free key on an owned lexeme"
+
+Wave 1 §2 named the class where a free key is a new *inflection* of an owned verb. This wave found
+the same class made by a **clitic on an owned word**, three times in one module:
+
+```
+नक्की	L1-M6
+नक्कीच	free
+बरोबर	L3-M3
+बरोबरच	free
+खरं	L3-M3
+खरंच	free
+```
+
+The lexeme is owned in every case; the -च form is unowned in every case, and each is its own
+single-token key. L4-M4 buys all three, and its S10 `mistake` and `mnemonic` exist because the
+learner now has `खरं`, `खरंच` and `खरं तर` in play at once — three meanings from one root, two of
+them one character apart. A future module wanting `-च` as a *rule* rather than as three memorised
+words has to say so; nothing in the index will stop it, and nothing in the index records that these
+three are the same morpheme.
+
+### 8. `मिळालं → free` while `मिळाली → L4-M2`, one module old
+
+```
+मिळाली	L4-M2
+मिळालं	free
+मिळाला	free
+```
+
+The wave-1 §2 class at its shortest range: the module immediately before this one bought the
+feminine, and the neuter and masculine of the same past were still unspent. L4-M3-S05 buys
+`मिळालं` (for the neuter तिकीट) with a note pointing back at L4-M2's `मिळाली`; `मिळाला` is left
+unspent. The same shape holds for देणे, whose imperatives are owned two levels apart while its
+entire past was free:
+
+```
+दे	L2-M1
+द्या	L1-M8
+दिला	free
+दिलं	free
+दिली	free
+दिले	free
+```
+
+L4-M3-S03 takes `दिला` with `forms: ["दिला","दिलं","दिली"]` on one row — one purchase covering the
+three genders, so no later module can accidentally split the paradigm across two notes.
+
+### 9. `वेळेवर → free` while `वेळ → L3-M4`, and `मत → free` while `मते → L3-M3`
+
+```
+वेळ	L3-M4
+वेळेवर	free
+मते	L3-M3
+मत	free
+```
+
+Two more of the same family, and the second is the interesting direction: L3-M3 bought the
+**oblique** `मते` (inside `माझ्या मते`) and left the base noun `मत` free for thirty modules.
+L4-M5-S10 buys it. An author reading `docs/50` would assume the opposite — that a base form is
+bought before its oblique — and the index says the ladder has done it the other way at least once.
+
+### 10. `गेला → free` after thirty-two modules, and deliberately still free
+
+```
+गेलो	L1-M5
+गेली	L3-M10
+गेले	L1-M5
+गेलास	L1-M5
+गेलीस	L1-M5
+गेला	free
+```
+
+The masculine third-person singular of जाणे — the single most ordinary past-tense word in the
+language — is unowned while five other cells of the same paradigm are owned. L4-M3 needed it for
+`तो गेला असता` and did **not** buy it: the module's third-person masculine sentence is S03's
+ergative `त्याने निरोप दिला असता` instead, which teaches more. `गेला` is left for whichever module
+next needs a plain masculine "he went", and this is the note that should stop the next author
+assuming it is already there. The same is true of `काही → free` and `यापेक्षा → free`, both
+unspent at the end of this wave.
+
+### 11. The structural seam: three central shapes own no key
+
+L4-M3's brief §5 calls `पाहिजे होतं` "the first module in the course whose central shape is
+unindexable". It is, and it is not alone in this wave: `नको होतं` and L4-M4's `खरं तर` are the same
+problem. All six tokens are owned by earlier modules —
+
+```
+पाहिजे	L3-M4
+नको	L1-M3
+होतं	L3-M3
+खरं	L3-M3
+तर	L3-M4
+```
+
+— and `maxSpan` is 1 on this course, so no row and no phrase key can carry any of the three. They
+live in `L4-M3 rules[2]` and `L4-M4 rules[4]`, in each sentence's `literal`, and in the `trap` of
+every sentence that uses them. A learner tapping `पाहिजे` in L4-M3-S06 is shown L3-M4's advice
+note, which is correct as far as it goes and says nothing about the regret; the sentence's own
+`trap` is what closes that gap, and it says so explicitly.
+
+### 12. `नसतं` assigned to L4-M3, as the briefs instructed, and honoured in both directions
+
+L4-M5's brief §5 assigns `नसतं` to L4-M3 "whose counterfactual cannot be taught without it", with
+M5 re-showing and pointing back. Both halves shipped: L4-M3 owns the whole paradigm on one row
+(`नसतो` + `forms ["नसतो","नसता","नसती","नसतं","नसते"]`), and L4-M5-S09 shows `नसतं` with **no row
+of its own** — `rules[0]` names it as one cell of the negative-copula paradigm and the S09 `trap`
+points at L4-M3. `check-shown` reports no `RE-TEACH` for it, because there is nothing to re-teach.
+`नव्हतं` is L4-M5's, on one row with `forms ["नव्हतं","नव्हता","नव्हती","नव्हते"]`; L4-M8 will
+re-show it for the past state and must point back here.
+
+## The ratchet
+
+`tools/shown-surfaces.test.ts` holds hi-mr at **7**, and this wave leaves it at 7. All three new
+modules are clean:
+
+- `npm run content:shown -- hi-mr L4-M3` → `L4-M3: clean — every shown surface resolves`
+- `npm run content:shown -- hi-mr L4-M4` → `L4-M4: clean — every shown surface resolves`
+- `npm run content:shown -- hi-mr L4-M5` → `L4-M5: clean — every shown surface resolves`
+
+No `SHOWN-BUT-UNTAUGHT`, no `COLLIDES INSIDE THIS MODULE`, and **no `RE-TEACH` reported on any of
+the three** — every row in all three files opens a key no earlier module owns, and no row was
+repeated inside a module, so the deliberate-repeat exception was not needed. Thirty hero displays,
+sixty variation displays and thirty-six comprehension items all resolve in the cumulative index;
+L4-M4-S03's two-sentence display resolves on both halves.
+
+The baseline was not lowered and could not have been: all seven findings are in hi-mr L1
+(`थोडं`, `भाजी`, `पाच`, `झाले` taught later; `प्रिया`, `पुणं`, `बोललो` never taught — `docs/52`),
+and a level never edits a file below it. `बोललो` in particular is still free and this wave did not
+buy it, because buying it at L4 would not clear an L1 finding — first occurrence wins forward, not
+backward.
+
+`npm run content:validate` → `CONTENT n/n ok` (the total climbs while the nine sibling waves land;
+it read `CONTENT 313/313 ok` when these three files first passed together and `CONTENT 315/315 ok`
+at the end of this wave).
+`npx vitest run tools/shown-surfaces.test.ts` → `Tests 11 passed (11)`.
+`npx vitest run src/course/types.test.ts` read `2 failed | 332 passed (334)` when these three files
+first landed, and both failures were file-census counts belonging to other waves — the module list
+at line 192 (the parent's) and the hi-en count at line 694, which a sibling wave moved from 34 to
+35. Once those censuses caught up it read `Tests 336 passed (336)`. Every course law in that file
+passes for all three new modules.
+
+## Open questions for a native pass — hi-mr L4 wave 2
+
+Continuing the chain in `docs/85-hi-mr-L4-brief-decisions.md` and wave 1 above, whose last number
+is 118. The native-speaker gate is a separate and stricter bar than this review, and it is unmet.
+
+119. **`मी` against `मला` in the नको होतं frame, once more.** `docs/85` #100 asked it and this wave
+     shipped the brief's answer: L4-M3-S07 is `मी तिथे उगीच जायला नको होतं`. But S08 in the same
+     module ships `मला ती नोकरी हवी होती`, so a learner meets both subjects in one module and the
+     rules do not say why. Is `मला तिथे जायला नको होतं` equally ordinary, more ordinary, or wrong?
+     If it is equally ordinary the module needs a line saying so; if it is *more* ordinary, S07's
+     hero should change.
+120. **`उगीच` inside a regret.** S07 buys उगीच to make the sentence a regret rather than a report.
+     Is उगीच what a speaker reaches for here, or is it विनाकारण, फुकट, or nothing at all — with the
+     regret carried entirely by नको होतं?
+121. **`निरोप दिला असता` as the third-person masculine counterfactual.** L4-M3-S03 chose a ने
+     clause over the simpler `तो गेला असता` deliberately (see seam 10). Is
+     `जर त्याने आधी निरोप दिला असता` natural spoken Marathi, or would a speaker say
+     `जर त्याने आधी सांगितलं असतं` and leave निरोप to a written note?
+122. **`आठवण येते` against `आठवतं`.** L4-M3-S10 puts both in one display and splits them as
+     noun-plus-येणे against verb. Is `मला त्याची आठवण येते` the everyday way to say "I miss him",
+     and does putting the two in one sentence read as instructive or as a drill?
+123. **`संधी` against a borrowed `चान्स`.** S01 and S08 both turn on संधी. In spoken Pune or Mumbai
+     Marathi, is संधी what a person says about a job or an opportunity missed, or is it the written
+     word and चान्स the spoken one?
+124. **The काश hole, and whether `… तर बरं झालं असतं` fills all of it.** `rules[4]` and S09 ship it
+     as the whole answer. Is there any other everyday move — a particle, an intonation, a
+     `असतं तर!` left hanging — that a Marathi speaker uses where Hindi uses काश?
+125. **`तरीही` at the head of a new sentence, and #118 again.** L4-M4-S03 is a two-sentence display
+     precisely so तरीही can open the second. Does a native reader accept the full stop there, or is
+     `खूप गर्दी होती, तरीही मला जागा मिळाली` — one sentence, one comma — what people actually
+     write? The answer decides both this module and #118.
+126. **`तरी` after a *state* without असलं.** L4-M4-S10 ships `हे खरंच चांगलं आहे, तरी थोडं महाग
+     आहे`, with तरी following a full copular clause rather than the असलं form. Is that ordinary, or
+     does an आहे clause always need `असलं तरी` and this hero is a Hindi-shaped shortcut?
+127. **The `-च` trio bought as three words.** नक्कीच, बरोबरच and खरंच are one clitic on three owned
+     words (seam 7). Is a learner better served by three rows, as shipped, or by one rule for `-च`
+     and one row — and if the latter, is `-च` productive enough at L4 to be taught as a rule at
+     all?
+128. **`अवघड` against `कठीण`.** L4-M4-S07 buys अवघड and its mistake refuses Hindi मुश्किल. Is कठीण
+     genuinely bookish in speech, or is it as ordinary as अवघड and the module has picked one of two
+     equals?
+129. **`उपयोग आहे` against `उपयोगी आहे` / `फायदा आहे`.** L4-M4-S08 ships `त्याचा उपयोग जास्त आहे`
+     beside तोटा. Is उपयोग used with जास्त and कमी that way, or does a speaker say
+     `त्याचा फायदा जास्त आहे` and keep उपयोग for "there's no use in it" (`उपयोग नाही`)?
+130. **`नाहीये` in a `display` at all.** L4-M5-S05 puts the spoken contraction in a hero line and
+     its row says "write नाही when you write". Is a written-Marathi course right to show नाहीये as
+     a hero, or should it live only in a variation or a usage line?
+131. **`असं करू नये` — heard, or only read?** `rules[4]` sells नये as the *politest* prohibition
+     because it names nobody. Is that how it lands in conversation, or is नये a notice-board form
+     (closer to L4-M7's register) that would sound cold said to a person's face?
+132. **`हे नेहमी असं नसतं` as a refusal.** L4-M5-S09 offers "it isn't always like this" as the
+     softest way to refuse a claim. Is that a real move in Marathi argument, and is नेहमी in the
+     right slot — before असं, as shipped, or after it?

@@ -1,0 +1,638 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M5",
+  "title": "Disagreeing well",
+  "job": "Soften, hedge, save face",
+  "prerequisites": [
+    "L4-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "simple_present",
+      "future"
+    ],
+    "allowedPatterns": [
+      "lā aẓunn anna + <N-accusative> + <predicate>",
+      "qad + V-imperfect",
+      "lastu / lasta / lasti / lasnā + <predicate>",
+      "yabdū anna + <clause>",
+      "maʿaka ḥaqq + , + wa lākin + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "qad in front of a PRESENT-shaped verb means may: qad yaʾtī ghadan, he may come tomorrow. It is the same particle L3-M7 taught in front of a past, where it means already, and the verb under it does not change."
+    },
+    {
+      "tag": "interference",
+      "text": "English hedges with a modal — might, could, would — and every modal reshapes the verb behind it. Arabic has no modal at all: it hedges with a particle in front of an untouched verb, or with a whole frame."
+    },
+    {
+      "tag": "delta",
+      "text": "The laysa paradigm, finished: lastu, lasta, lasti, laysa, laysat, lasnā, laysū. It negates a nominal sentence and never a verb, and the person sits inside the negation rather than beside it."
+    },
+    {
+      "tag": "free",
+      "text": "NEGATIVE RAISING, and for once the English transfer is safe: lā aẓunn anna hādhā ṣaḥīḥ is I don't think this is right. Both languages put the negative on the verb of thinking rather than inside the clause."
+    },
+    {
+      "tag": "free",
+      "text": "yabdū anna and min al-mumkin an are frames, not verbs to conjugate. They stay in the he-form whoever is speaking, and the person appears in the clause or the verb behind them."
+    },
+    {
+      "tag": "free",
+      "text": "ka- is a clitic meaning like, written joined the way L1-M2's bi- and L4-M2's fa- are. On L3-M3's annahu it makes ka-annahu, as if he."
+    },
+    {
+      "tag": "free",
+      "text": "ḥasanan, ʿalā ayy ḥāl and taqrīban are the softeners that let a refusal land as a pause. None of them is agreement; each buys a moment before the disagreement arrives."
+    },
+    {
+      "tag": "interference",
+      "text": "Politeness here is not a verb form. This ladder has no conditional and writes no mood endings, so a soft no is built from particles and frames — never from a shape of the verb that English would use."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M5-S01",
+      "display": "lā aẓunn anna hādhā ṣaḥīḥ",
+      "script": "لا أظن أن هذا صحيح",
+      "cue": "I don't think this is right",
+      "literal": "Not I-think that this correct",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lā aẓunn anna",
+            "script": "لا أظن أن",
+            "cue": "I don't think that",
+            "tag": "free",
+            "forms": [
+              "lā aẓunn anna",
+              "lā aʿtaqid anna"
+            ],
+            "note": "L3-M3's aẓunn and aʿtaqid under a negative. The negative goes onto the thinking verb, exactly as it does in English — for once the transfer is safe."
+          }
+        ],
+        "rules": [
+          3,
+          2
+        ]
+      },
+      "trap": "The logic is I think this is not right, and both languages move the negative forward onto the thinking verb. After four levels of interference this one really is a free ride.",
+      "sound": "lā a-ẒUNN AN-na: the ẓ is the heavy dh, and the doubled nn of aẓunn is held.",
+      "variations": [
+        {
+          "display": "lā aʿtaqid anna hādhā ṣaḥīḥ",
+          "script": "لا أعتقد أن هذا صحيح",
+          "cue": "I don't believe this is right",
+          "changed": "the verb of thinking: aẓunn → aʿtaqid, with nothing else moving"
+        },
+        {
+          "display": "lā aẓunn anna al-mudīr ghāḍib",
+          "script": "لا أظن أن المدير غاضب",
+          "cue": "I don't think the manager is angry",
+          "changed": "the clause being doubted"
+        }
+      ],
+      "mistake": {
+        "display": "aẓunn anna hādhā laysa ṣaḥīḥ",
+        "script": "أظن أن هذا ليس صحيح",
+        "why": "It is grammatical and it is not what a speaker says. Arabic moves the negative forward as English does; leaving it inside the clause reads as a formal ruling."
+      },
+      "usage": "Disagreeing without contradicting — the softest no in the level.",
+      "register": "neutral",
+      "mnemonic": "Negate the thinking, not the thought."
+    },
+    {
+      "id": "L4-M5-S02",
+      "display": "qad yaʾtī al-mudīr ghadan",
+      "script": "قد يأتي المدير غدًا",
+      "cue": "The manager may come tomorrow",
+      "literal": "May he-comes the-manager tomorrow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "qad yaʾtī",
+            "script": "قد يأتي",
+            "cue": "he may come",
+            "tag": "delta",
+            "forms": [
+              "qad yaʾtī",
+              "qad yadhhab",
+              "qad takūn"
+            ],
+            "note": "The same qad L3-M7 taught in front of a past, where it means already. In front of a present-shaped verb it means may, and the verb behind it is untouched."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English needs a modal — may, might, could — and every one of them reshapes the verb after it. Arabic changes nothing: qad is dropped in front and yaʾtī keeps its ordinary present shape.",
+      "sound": "qad YAʾ-tī: the hamza inside yaʾtī is a catch in the throat between the two syllables.",
+      "variations": [
+        {
+          "display": "qad yadhhab al-mudīr ghadan",
+          "script": "قد يذهب المدير غدًا",
+          "cue": "The manager may go tomorrow",
+          "changed": "the verb under qad: coming → going"
+        },
+        {
+          "display": "qad takūn al-fikra jayyida",
+          "script": "قد تكون الفكرة جيدة",
+          "cue": "The idea may be good",
+          "changed": "a verb of being under qad, and a feminine subject with it"
+        }
+      ],
+      "mistake": {
+        "display": "rubbamā qad yaʾtī al-mudīr ghadan",
+        "script": "ربما قد يأتي المدير غدًا",
+        "why": "One hedge is enough. L3-M3's rubbamā and qad do the same job, and stacking them is the commonest over-reach once a learner owns both."
+      },
+      "usage": "Leaving a plan open without promising anything.",
+      "register": "neutral",
+      "mnemonic": "qad + past = already; qad + present = may."
+    },
+    {
+      "id": "L4-M5-S03",
+      "display": "lasta muwāfiq, wa lā baʾsa fī dhālika",
+      "script": "لست موافق، ولا بأس في ذلك",
+      "cue": "You don't agree, and there's no harm in that",
+      "literal": "Not-you agreeing, and no harm in that",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lasta",
+            "script": "لست",
+            "cue": "you are not",
+            "tag": "delta",
+            "forms": [
+              "lasta",
+              "lasti",
+              "lasnā",
+              "laysū"
+            ],
+            "note": "The rest of L2-M7's laysa: lasta you, lasti you (to a woman), lasnā we, laysū they. lastu, laysa and laysat are already yours."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "English negates with one unchanging word — you are not. Arabic conjugates the negation itself, so the person lives inside laysa rather than beside it.",
+      "sound": "LAS-ta: the -ta ending is the same you that sits on dhahabta, here riding the negation instead of a verb.",
+      "variations": [
+        {
+          "display": "lasti muwāfiqa, wa lā baʾsa fī dhālika",
+          "script": "لستِ موافقة، ولا بأس في ذلك",
+          "cue": "You don't agree, and there's no harm in that",
+          "changed": "who is addressed: a man → a woman, in the negation and in the adjective"
+        },
+        {
+          "display": "lasnā mashghūlūn al-yawm",
+          "script": "لسنا مشغولون اليوم",
+          "cue": "We aren't busy today",
+          "changed": "the person: you → we, and the predicate goes plural with it"
+        }
+      ],
+      "mistake": {
+        "display": "anta lā muwāfiq, wa lā baʾsa fī dhālika",
+        "script": "أنت لا موافق، ولا بأس في ذلك",
+        "why": "lā negates verbs. There is no verb here, so the negation is laysa and its cells, and the person moves inside it."
+      },
+      "usage": "Letting somebody off the hook for disagreeing with you.",
+      "register": "neutral",
+      "mnemonic": "The negation takes the person: las- plus the ending you already know."
+    },
+    {
+      "id": "L4-M5-S04",
+      "display": "yabdū anna al-mudīr mashghūl al-yawm",
+      "script": "يبدو أن المدير مشغول اليوم",
+      "cue": "It seems the manager is busy today",
+      "literal": "It-seems that the-manager busy the-day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yabdū anna",
+            "script": "يبدو أن",
+            "cue": "it seems that",
+            "tag": "free",
+            "forms": [
+              "yabdū anna"
+            ],
+            "note": "A frame, not a verb to conjugate: it stays in the he-form whoever is speaking, and the clause behind ʾanna carries the people."
+          }
+        ],
+        "rules": [
+          4,
+          1
+        ]
+      },
+      "trap": "English can make this personal — he seems busy. Arabic keeps the frame impersonal and puts everything into the clause behind it: yabdū anna al-mudīr mashghūl.",
+      "sound": "YAB-dū AN-na: the long -ū at the end of yabdū never takes a person ending.",
+      "variations": [
+        {
+          "display": "yabdū anna al-fikra jayyida",
+          "script": "يبدو أن الفكرة جيدة",
+          "cue": "It seems the idea is good",
+          "changed": "the clause behind the frame"
+        },
+        {
+          "display": "yabdū anna as-siʿr ghālī",
+          "script": "يبدو أن السعر غالي",
+          "cue": "It seems the price is high",
+          "changed": "what is being observed"
+        }
+      ],
+      "mistake": {
+        "display": "yabdū al-mudīr mashghūl al-yawm",
+        "script": "يبدو المدير مشغول اليوم",
+        "why": "Without ʾanna the frame has nothing to hold. The clause has to be introduced, and yabdū on its own leaves the sentence in two pieces."
+      },
+      "usage": "Reporting an impression you are not prepared to defend.",
+      "register": "neutral",
+      "mnemonic": "yabdū anna — it seems that, always in the he-form."
+    },
+    {
+      "id": "L4-M5-S05",
+      "display": "min al-mumkin an adhhab maʿaka ghadan",
+      "script": "من الممكن أن أذهب معكَ غدًا",
+      "cue": "It's possible I'll go with you tomorrow",
+      "literal": "From the-possible that I-go with-you tomorrow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "min al-mumkin an",
+            "script": "من الممكن أن",
+            "cue": "it's possible that",
+            "tag": "free",
+            "forms": [
+              "min al-mumkin an"
+            ],
+            "note": "Built like L4-M4's min al-wāḍiḥ anna, but ending in an with a present-shaped verb behind it instead of ʾanna with a clause."
+          }
+        ],
+        "rules": [
+          4,
+          1
+        ]
+      },
+      "trap": "English collapses this into a modal — I might go. Arabic keeps the frame impersonal and the verb ordinary; there is no shape of adhhab that means might go.",
+      "sound": "min al-MUM-kin an AD-hab — the an is said so lightly it almost joins the verb behind it.",
+      "variations": [
+        {
+          "display": "min al-mumkin an adhhab ghadan",
+          "script": "من الممكن أن أذهب غدًا",
+          "cue": "It's possible I'll go tomorrow",
+          "changed": "what is dropped: going with you → simply going"
+        },
+        {
+          "display": "min al-mumkin an yaʾtī al-mudīr",
+          "script": "من الممكن أن يأتي المدير",
+          "cue": "It's possible the manager will come",
+          "changed": "who: I → the manager, in the far verb"
+        }
+      ],
+      "mistake": {
+        "display": "min al-mumkin adhhab maʿaka ghadan",
+        "script": "من الممكن أذهب معكَ غدًا",
+        "why": "an is not optional here. The frame ends in an, and the verb behind it is what an takes; without it there are two halves and no join."
+      },
+      "usage": "Half-accepting an invitation, so that a no later costs nothing.",
+      "register": "neutral",
+      "mnemonic": "From the possible THAT I go."
+    },
+    {
+      "id": "L4-M5-S06",
+      "display": "ʿalā ayy ḥāl, sa-attaṣil bika ghadan",
+      "script": "على أي حال، سأتصل بك غدًا",
+      "cue": "In any case, I'll call you tomorrow",
+      "literal": "On any state, will-I-call with-you tomorrow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ʿalā ayy ḥāl",
+            "script": "على أي حال",
+            "cue": "in any case / anyway",
+            "tag": "free",
+            "forms": [
+              "ʿalā ayy ḥāl"
+            ],
+            "note": "L2-M9's ayy inside a frozen phrase, and ayy always takes an indefinite noun. It closes a subject without settling it."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "English anyway can land as dismissal. This phrase does not: it parks the disagreement and moves the conversation on, which is why it belongs in a module about saving face.",
+      "sound": "ʿa-lā AYY ḤĀL — three beats, the ayy with a doubled y and the ḥ breathy.",
+      "variations": [
+        {
+          "display": "ʿalā ayy ḥāl, sa-adhhab ghadan",
+          "script": "على أي حال، سأذهب غدًا",
+          "cue": "In any case, I'll go tomorrow",
+          "changed": "what happens next: calling you → going"
+        },
+        {
+          "display": "ʿalā ayy ḥāl, lastu mutaʾakkidan",
+          "script": "على أي حال، لست متأكداً",
+          "cue": "In any case, I'm not sure",
+          "changed": "what follows the frame: a plan → a hedge"
+        }
+      ],
+      "mistake": {
+        "display": "ʿalā ayy al-ḥāl, sa-attaṣil bika ghadan",
+        "script": "على أي الحال، سأتصل بك غدًا",
+        "why": "ayy takes an indefinite noun behind it. al-ḥāl with the article breaks a phrase that is frozen as ʿalā ayy ḥāl."
+      },
+      "usage": "Ending a disagreement without either side losing.",
+      "register": "neutral",
+      "mnemonic": "Any state at all: ʿalā ayy ḥāl."
+    },
+    {
+      "id": "L4-M5-S07",
+      "display": "ḥasanan, maʿaka ḥaqq, wa lākin lastu muwāfiq",
+      "script": "حسنًا، معكَ حق، ولكن لست موافق",
+      "cue": "All right, you have a point, but I don't agree",
+      "literal": "Well, with-you right, and but not-I agreeing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ḥasanan",
+            "script": "حسنًا",
+            "cue": "all right / okay",
+            "tag": "free",
+            "forms": [
+              "ḥasanan"
+            ],
+            "note": "The adverbial -an again (L2-M1), on the word for good. It opens a turn and buys a second before the disagreement lands."
+          }
+        ],
+        "rules": [
+          6,
+          2
+        ]
+      },
+      "trap": "English okay can itself be agreement. ḥasanan is not: it marks only that you heard, which is why the sentence is free to go on and disagree.",
+      "sound": "ḤA-sa-nan: the ḥ is the breathy one, and the -an is the ordinary adverbial ending.",
+      "variations": [
+        {
+          "display": "ḥasanan, maʿaki ḥaqq, wa lākin lastu muwāfiq",
+          "script": "حسنًا، معكِ حق، ولكن لست موافق",
+          "cue": "All right, you have a point, but I don't agree",
+          "changed": "who is answered: a man → a woman"
+        },
+        {
+          "display": "ḥasanan, lā aẓunn anna hādhā mumkin",
+          "script": "حسنًا، لا أظن أن هذا ممكن",
+          "cue": "All right, I don't think that's possible",
+          "changed": "the answer: granting a point → doubting it outright"
+        }
+      ],
+      "mistake": {
+        "display": "ḥasan, maʿaka ḥaqq, wa lākin lastu muwāfiq",
+        "script": "حسن، معكَ حق، ولكن لست موافق",
+        "why": "As an opener the word carries the -an. Bare ḥasan is the adjective good, describing a thing, and it cannot open a turn."
+      },
+      "usage": "Taking the floor politely when you are about to say no.",
+      "register": "neutral",
+      "mnemonic": "ḥasanan buys a second, not an agreement."
+    },
+    {
+      "id": "L4-M5-S08",
+      "display": "ka-annahu ghāḍib, lākin lastu mutaʾakkidan",
+      "script": "كأنه غاضب، لكن لست متأكداً",
+      "cue": "It's as if he's angry, but I'm not sure",
+      "literal": "As-that-he angry, but not-I certain",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ka-annahu",
+            "script": "كأنه",
+            "cue": "as if he",
+            "tag": "delta",
+            "forms": [
+              "ka-annahu",
+              "ka-annahā"
+            ],
+            "note": "ka- is a clitic meaning like, written joined the way L1-M2's bi- and L4-M2's fa- are. On L3-M3's annahu it makes as if he."
+          }
+        ],
+        "rules": [
+          5,
+          1
+        ]
+      },
+      "trap": "English as if is two words and takes anything after it. Arabic's ka- is one letter glued to what follows, and what follows here is ʾanna with its pronoun already attached.",
+      "sound": "ka-AN-na-hu: one word, the doubled nn held, and the ka- said so lightly it is easy to miss.",
+      "variations": [
+        {
+          "display": "ka-annahā ghāḍiba, lākin lastu mutaʾakkidan",
+          "script": "كأنها غاضبة، لكن لست متأكداً",
+          "cue": "It's as if she's angry, but I'm not sure",
+          "changed": "the person inside the frame: he → she, and the adjective with it"
+        },
+        {
+          "display": "ka-annahu mutaʿab, lākin lastu mutaʾakkidan",
+          "script": "كأنه متعب، لكن لست متأكداً",
+          "cue": "It's as if he's tired, but I'm not sure",
+          "changed": "the impression: angry → tired"
+        }
+      ],
+      "mistake": {
+        "display": "ka annahu ghāḍib, lākin lastu mutaʾakkidan",
+        "script": "ك أنه غاضب، لكن لست متأكداً",
+        "why": "ka- is never a word on its own — it is one letter joined to what follows, which is why this course hyphenates it. Standing apart it is not Arabic."
+      },
+      "usage": "Describing an impression while flagging that it is only an impression.",
+      "register": "neutral",
+      "mnemonic": "One letter for like, glued on."
+    },
+    {
+      "id": "L4-M5-S09",
+      "display": "hādhā ṣaḥīḥ taqrīban, lākin laysa tamāman",
+      "script": "هذا صحيح تقريبًا، لكن ليس تمامًا",
+      "cue": "This is almost right, but not completely",
+      "literal": "This correct approximately, but not-is completely",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "taqrīban",
+            "script": "تقريبًا",
+            "cue": "almost / approximately",
+            "tag": "free",
+            "forms": [
+              "taqrīban"
+            ],
+            "note": "The adverbial -an once more. It sits behind what it softens, in the slot L1-M3's jiddan already taught, and it is the cheapest hedge in the module."
+          }
+        ],
+        "rules": [
+          1,
+          6
+        ]
+      },
+      "trap": "English almost goes in front of what it softens. Arabic's adverb goes behind it: ṣaḥīḥ taqrīban, the same slot jiddan takes.",
+      "sound": "taq-RĪ-ban: the q is the deep k, made at the very back of the throat.",
+      "variations": [
+        {
+          "display": "hādhā ṣaḥīḥ taqrīban, lākin laysa jayyid",
+          "script": "هذا صحيح تقريبًا، لكن ليس جيد",
+          "cue": "This is almost right, but it isn't good",
+          "changed": "the objection behind the concession"
+        },
+        {
+          "display": "al-ʿamal jayyid taqrīban",
+          "script": "العمل جيد تقريبًا",
+          "cue": "The work is almost good",
+          "changed": "what is being softened, with the objection dropped"
+        }
+      ],
+      "mistake": {
+        "display": "hādhā ṣaḥīḥ taqrīban, lākin lā tamāman",
+        "script": "هذا صحيح تقريبًا، لكن لا تمامًا",
+        "why": "lā negates a verb and there is no verb here. The negation in a nominal sentence is laysa, exactly as everywhere else in this module."
+      },
+      "usage": "Half-agreeing in a way that leaves the door open.",
+      "register": "neutral",
+      "mnemonic": "The softener goes behind, like jiddan."
+    },
+    {
+      "id": "L4-M5-S10",
+      "display": "āsif, lā aẓunn anna hādhā mumkin",
+      "script": "آسف، لا أظن أن هذا ممكن",
+      "cue": "Sorry, I don't think that's possible",
+      "literal": "Sorry, not I-think that this possible",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lā aẓunn anna",
+            "script": "لا أظن أن",
+            "cue": "I don't think that",
+            "tag": "free",
+            "forms": [
+              "lā aẓunn anna",
+              "lā aʿtaqid anna"
+            ],
+            "note": "L3-M3's aẓunn and aʿtaqid under a negative. The negative goes onto the thinking verb, exactly as it does in English — for once the transfer is safe."
+          }
+        ],
+        "rules": [
+          3,
+          7
+        ]
+      },
+      "trap": "English softens a refusal with a conditional — I wouldn't think so. This ladder has no conditional to soften with: the softening is āsif in front and the negative-raised frame behind it.",
+      "sound": "Ā-sif: a long ā at the front, then a short i. The whole line is said slowly — the pause is part of the refusal.",
+      "variations": [
+        {
+          "display": "āsif, lā aẓunn anna hādhā ṣaḥīḥ",
+          "script": "آسف، لا أظن أن هذا صحيح",
+          "cue": "Sorry, I don't think that's right",
+          "changed": "what is refused: a possibility → a claim"
+        },
+        {
+          "display": "āsifa, lā aẓunn anna hādhā mumkin",
+          "script": "آسفة، لا أظن أن هذا ممكن",
+          "cue": "Sorry, I don't think that's possible",
+          "changed": "who is speaking: a man → a woman"
+        }
+      ],
+      "mistake": {
+        "display": "āsif, hādhā laysa mumkin",
+        "script": "آسف، هذا ليس ممكن",
+        "why": "It is correct Arabic and the wrong register. The flat negation lands as a ruling; this module's whole point is that the doubt goes on the thinking verb instead."
+      },
+      "usage": "Refusing outright, as gently as this level can — the sentence the module was built to reach.",
+      "register": "neutral",
+      "mnemonic": "Sorry first, doubt second, refusal never stated."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M5-C01",
+      "display": "lā aẓunn anna hādhā ṣaḥīḥ",
+      "script": "لا أظن أن هذا صحيح",
+      "cue": "I don't think this is right"
+    },
+    {
+      "id": "L4-M5-C02",
+      "display": "qad yaʾtī al-mudīr ghadan",
+      "script": "قد يأتي المدير غدًا",
+      "cue": "The manager may come tomorrow"
+    },
+    {
+      "id": "L4-M5-C03",
+      "display": "lasta muwāfiq, wa lā baʾsa fī dhālika",
+      "script": "لست موافق، ولا بأس في ذلك",
+      "cue": "You don't agree, and there's no harm in that"
+    },
+    {
+      "id": "L4-M5-C04",
+      "display": "yabdū anna al-mudīr mashghūl al-yawm",
+      "script": "يبدو أن المدير مشغول اليوم",
+      "cue": "It seems the manager is busy today"
+    },
+    {
+      "id": "L4-M5-C05",
+      "display": "min al-mumkin an adhhab maʿaka ghadan",
+      "script": "من الممكن أن أذهب معكَ غدًا",
+      "cue": "It's possible I'll go with you tomorrow"
+    },
+    {
+      "id": "L4-M5-C06",
+      "display": "ʿalā ayy ḥāl, sa-attaṣil bika ghadan",
+      "script": "على أي حال، سأتصل بك غدًا",
+      "cue": "In any case, I'll call you tomorrow"
+    },
+    {
+      "id": "L4-M5-C07",
+      "display": "ḥasanan, maʿaka ḥaqq, wa lākin lastu muwāfiq",
+      "script": "حسنًا، معكَ حق، ولكن لست موافق",
+      "cue": "All right, you have a point, but I don't agree"
+    },
+    {
+      "id": "L4-M5-C08",
+      "display": "ka-annahu ghāḍib, lākin lastu mutaʾakkidan",
+      "script": "كأنه غاضب، لكن لست متأكداً",
+      "cue": "It's as if he's angry, but I'm not sure"
+    },
+    {
+      "id": "L4-M5-C09",
+      "display": "hādhā ṣaḥīḥ taqrīban, lākin laysa tamāman",
+      "script": "هذا صحيح تقريبًا، لكن ليس تمامًا",
+      "cue": "This is almost right, but not completely"
+    },
+    {
+      "id": "L4-M5-C10",
+      "display": "āsif, lā aẓunn anna hādhā mumkin",
+      "script": "آسف، لا أظن أن هذا ممكن",
+      "cue": "Sorry, I don't think that's possible"
+    },
+    {
+      "id": "L4-M5-C11",
+      "display": "qad takūn al-fikra jayyida",
+      "script": "قد تكون الفكرة جيدة",
+      "cue": "The idea may be good"
+    },
+    {
+      "id": "L4-M5-C12",
+      "display": "lasnā mashghūlūn al-yawm",
+      "script": "لسنا مشغولون اليوم",
+      "cue": "We aren't busy today"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}
