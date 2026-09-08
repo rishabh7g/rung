@@ -1,0 +1,717 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M5",
+  "title": "Big questions",
+  "job": "Values, beliefs, abstract talk",
+  "prerequisites": [
+    "L5-M1",
+    "L5-M2",
+    "L5-M3",
+    "L5-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "présent",
+      "infinitif"
+    ],
+    "allowedPatterns": [
+      "Le + <abstract noun> + , + ce + est + <clause>",
+      "Ce qui compte + , + c'est + <noun / V-inf>",
+      "Je crois en + <noun>",
+      "Il s'agit de + <noun / V-inf>",
+      "Pour moi + , + <abstract claim> + parce que + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "AN ABSTRACT NOUN IN ITS GENERAL SENSE TAKES THE DEFINITE ARTICLE, AND THE ARTICLE DOES NOT MEAN THE. la liberté, le bonheur, l'argent, la vie, le respect. English drops the article for exactly this job — freedom, happiness, money — so this is the one reliable error of an English speaker whose grammar is otherwise sound: argent ne fait pas le bonheur. Learn it as a rule about the noun's ROLE, not as a list of six nouns: any noun used in general takes it."
+    },
+    {
+      "tag": "free",
+      "text": "THE CLEFT IS WHERE ENGLISH HELPS. what matters is → ce qui compte, c'est, almost word for word, and what I mean is → ce que je veux dire, c'est. The idea goes in front and the predicate lands after c'est. ce qui is the subject of its own little clause (ce qui compte — the thing that matters); ce que is its object (ce que je dis — the thing that I say). Very little else at this level transfers this cleanly, so use it."
+    },
+    {
+      "tag": "delta",
+      "text": "ce qui AND ce que ARE TAKEN AS TWO-TOKEN KEYS AND HERE IS WHY. Bare que has been L1-M9's since the first questions and bare qui has been L3-M9's since people; the relative pair is a different job from either, so the course indexes ce qui and ce que whole rather than re-opening words a lower level already owns. Same for ce qui compte, which is one move and is indexed as one."
+    },
+    {
+      "tag": "interference",
+      "text": "croire SPLITS WHERE ENGLISH BELIEVE IN DOES NOT. croire EN a person, a god, a cause, a future: je crois en la justice, je crois en l'avenir. croire À a claim, a story, ghosts: je crois à cette histoire. And je crois QUE + a clause is a third thing altogether — L3-M3's, indicative, and it just means I think. One English preposition, three French shapes, and the choice is about what kind of thing you are believing."
+    },
+    {
+      "tag": "free",
+      "text": "AN ELIDED NOUN IS ITS OWN WORD IN THIS COURSE. l'argent and argent are two keys, and so are l'amour and amour, l'idée and idée, l'essentiel and essentiel. That is why each row here lists both surfaces: the apostrophe is not punctuation the index can see through, and a learner tapping l'argent must not fall through to nothing. Where you see one form taught, the other is on the same row on purpose."
+    },
+    {
+      "tag": "delta",
+      "text": "THE SUBJECT OF A SENTENCE CAN BE AN IDEA, AND THAT CHANGES THE GRAMMAR RATHER THAN THE VOCABULARY. Le bonheur, c'est l'essentiel puts an idea in the subject seat and answers it with c'est, not il est. il est would ask which particular happiness; c'est makes the claim general. Every pattern in this module is a way of getting an idea into that seat without tripping over it."
+    },
+    {
+      "tag": "free",
+      "text": "SAY WHOSE OPINION IT IS. pour moi and selon moi both mark a claim as yours — pour moi is warmer and spoken, selon moi cooler and closer to writing — and au fond means when it comes down to it. French argument expects the marker; without it a general claim sounds like a fact you are asserting on everybody's behalf, which is exactly how a disagreement starts."
+    },
+    {
+      "tag": "free",
+      "text": "WHAT THIS MODULE DOES NOT OPEN. bien que and the concession clause are L5-M6's. The subjunctive after doubt is L4-M5's and is pointed back at, never reopened — je crois que here stays indicative because believing is not doubting. And no abstract noun arrives as a word list: each one turns up inside a claim somebody would actually make out loud."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M5-S01",
+      "display": "Le bonheur, c'est l'essentiel",
+      "cue": "Happiness is what matters most",
+      "literal": "The happiness, it is the essential",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bonheur",
+            "cue": "happiness",
+            "tag": "interference",
+            "forms": [
+              "bonheur"
+            ],
+            "note": "Masculine, and in its general sense it takes le: le bonheur. English happiness goes bare, which is why the article is the thing to remember."
+          },
+          {
+            "display": "essentiel",
+            "cue": "essential; the main thing",
+            "tag": "free",
+            "forms": [
+              "essentiel",
+              "l'essentiel"
+            ],
+            "note": "Adjective and noun in one. l'essentiel is the main thing — and it is a separate key from the bare word, so both surfaces sit on this row."
+          },
+          {
+            "display": "l'argent",
+            "cue": "money",
+            "tag": "interference",
+            "forms": [
+              "l'argent",
+              "argent"
+            ],
+            "note": "Masculine, and elided in its general sense: l'argent. L3-M8 glossed it in a note and never wrote it, so the word arrives here with both surfaces at once."
+          }
+        ],
+        "rules": [
+          0,
+          4,
+          5
+        ]
+      },
+      "trap": "L'argent ne fait pas le bonheur is the proverb, and both nouns carry an article. An English speaker produces argent ne fait pas bonheur — every word right, both articles gone — and it is the single most recognisable learner sentence in abstract French.",
+      "sound": "luh bo-NUR, say lay-sahn-SYEL. bonheur ends on the eu of peur; the h in the middle is silent and changes nothing.",
+      "variations": [
+        {
+          "display": "L'argent ne fait pas le bonheur",
+          "cue": "Money doesn't buy happiness",
+          "changed": "the proverb's own shape, with an article on each noun"
+        },
+        {
+          "display": "Le bonheur, c'est important",
+          "cue": "Happiness is important",
+          "changed": "an adjective after c'est, so no article at all"
+        }
+      ],
+      "mistake": {
+        "display": "Bonheur, c'est l'essentiel",
+        "why": "an abstract noun in its general sense never stands bare. Without le it reads as a label on a jar rather than a claim about happiness."
+      },
+      "usage": "The kind of claim that opens an argument at a table rather than settling one.",
+      "register": "neutral",
+      "mnemonic": "the idea, the article, then c'est."
+    },
+    {
+      "id": "L5-M5-S02",
+      "display": "Ce qui compte, c'est la liberté",
+      "cue": "What matters is freedom",
+      "literal": "That which counts, it is the freedom",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ce qui compte",
+            "cue": "what matters",
+            "tag": "free",
+            "forms": [
+              "ce qui compte"
+            ],
+            "note": "Indexed whole: ce qui is the pair below, and compte is L3-M8's counts. Together they are one move, and the c'est after them is obligatory."
+          },
+          {
+            "display": "liberté",
+            "cue": "freedom",
+            "tag": "interference",
+            "forms": [
+              "liberté",
+              "la liberté"
+            ],
+            "note": "Feminine, and in its general sense la liberté. Both surfaces are on this row because the article is part of how the word is normally said."
+          },
+          {
+            "display": "ce qui",
+            "cue": "what (as subject)",
+            "tag": "delta",
+            "forms": [
+              "ce qui"
+            ],
+            "note": "The thing that ..., where the thing is doing the verb: ce qui compte, ce qui change. Taken as a pair, because bare qui is L3-M9's."
+          },
+          {
+            "display": "ce que",
+            "cue": "what (as object)",
+            "tag": "delta",
+            "forms": [
+              "ce que"
+            ],
+            "note": "The thing that ..., where the thing has the verb done to it: ce que je dis. Taken as a pair, because bare que is L1-M9's."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "The one place English gives you the answer free: what matters is → ce qui compte, c'est. The only thing English does not have is the c'est, and it is not optional — the clause in front is a subject waiting for one.",
+      "sound": "suh kee KOHNT, say lah lee-bair-TAY. ce qui runs together as suh-kee with no pause at all.",
+      "variations": [
+        {
+          "display": "Ce qui compte, c'est le respect",
+          "cue": "What matters is respect",
+          "changed": "the value named"
+        },
+        {
+          "display": "Ce que je veux dire, c'est la liberté",
+          "cue": "What I mean is freedom",
+          "changed": "ce que, whose clause has a subject of its own"
+        }
+      ],
+      "mistake": {
+        "display": "Ce qui compte est la liberté",
+        "why": "grammatical on paper and nobody says it. The cleft exists to put the idea first and land it on c'est; without the c'est the sentence loses the very emphasis it was built for."
+      },
+      "usage": "Cutting through a long disagreement by naming the one thing you think it is really about.",
+      "register": "neutral",
+      "mnemonic": "ce qui in front, c'est in the middle, the idea at the end."
+    },
+    {
+      "id": "L5-M5-S03",
+      "display": "Je crois en la justice",
+      "cue": "I believe in justice",
+      "literal": "I believe in the justice",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je crois en",
+            "cue": "I believe in",
+            "tag": "interference",
+            "forms": [
+              "je crois en"
+            ],
+            "note": "Taken whole. en is for a person, a cause or a future you put your weight behind — and L3-M3's crois is already yours, so this row is about the preposition."
+          },
+          {
+            "display": "justice",
+            "cue": "justice",
+            "tag": "free",
+            "forms": [
+              "justice"
+            ],
+            "note": "Feminine, and in its general sense la justice. It covers both fairness and the courts, exactly as English justice does."
+          },
+          {
+            "display": "croire à",
+            "cue": "to believe in (a claim)",
+            "tag": "delta",
+            "forms": [
+              "croire à"
+            ],
+            "note": "The other preposition: croire à a story, a rumour, ghosts. Believing IN something and believing THAT it is true are two verbs in French."
+          }
+        ],
+        "rules": [
+          3,
+          0
+        ]
+      },
+      "trap": "English believe in is one thing, so a learner picks one French preposition and uses it for both. je crois à la justice is not wrong exactly — it just says you think the system works, where je crois en la justice says you put your faith in it.",
+      "sound": "zhuh krwah ahn lah zhü-STEESS. crois is one syllable, krwah, and the s is silent.",
+      "variations": [
+        {
+          "display": "Je crois en la liberté",
+          "cue": "I believe in freedom",
+          "changed": "the cause"
+        },
+        {
+          "display": "Je crois en l'amour",
+          "cue": "I believe in love",
+          "changed": "the cause, now an elided noun"
+        }
+      ],
+      "mistake": {
+        "display": "Je crois en justice",
+        "why": "the article is still needed. croire en does not swallow it the way English believe in justice does, so it is en la justice, en l'amour, en la liberté."
+      },
+      "usage": "Saying what you actually stand on, once a conversation has got past opinions.",
+      "register": "neutral",
+      "mnemonic": "en for a cause, à for a claim, que for a thought."
+    },
+    {
+      "id": "L5-M5-S04",
+      "display": "Il s'agit de respect",
+      "cue": "It's a question of respect",
+      "literal": "It concerns itself of respect",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "il s'agit de",
+            "cue": "it's a question of, it's about",
+            "tag": "delta",
+            "forms": [
+              "il s'agit de"
+            ],
+            "note": "Taken whole, and frozen on il: no other subject exists for this verb. s'agit is one elided token, so it is its own key."
+          },
+          {
+            "display": "respect",
+            "cue": "respect",
+            "tag": "free",
+            "forms": [
+              "respect"
+            ],
+            "note": "Masculine, and the final ct is silent: ress-PAY. In its general sense le respect, though after de the article drops."
+          }
+        ],
+        "rules": [
+          5,
+          0
+        ]
+      },
+      "trap": "English it's about is loose and takes any subject — this is about, the film is about. il s'agit de takes only il, always, and it cannot be attached to a noun: la question s'agit de is not French.",
+      "sound": "eel sa-ZHEE duh ress-PAY. s'agit ends on a clear ee; the t is silent.",
+      "variations": [
+        {
+          "display": "Il s'agit de justice",
+          "cue": "It's a question of justice",
+          "changed": "the value named"
+        },
+        {
+          "display": "Il s'agit de vérité",
+          "cue": "It's a question of truth",
+          "changed": "the value named"
+        }
+      ],
+      "mistake": {
+        "display": "Ça s'agit de respect",
+        "why": "the verb is frozen on il, and that il stands for nothing — it is the same empty il as in il y a. ça cannot take its place."
+      },
+      "usage": "Renaming what an argument is really about, when the other person has been talking about the surface of it.",
+      "register": "neutral",
+      "mnemonic": "always il, never anything else."
+    },
+    {
+      "id": "L5-M5-S05",
+      "display": "Pour moi, l'important, c'est le respect, parce que chacun compte",
+      "cue": "For me, the important thing is respect, because everyone counts",
+      "literal": "For me, the important, it is the respect, because each-one counts",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pour moi",
+            "cue": "for me, to my mind",
+            "tag": "free",
+            "forms": [
+              "pour moi"
+            ],
+            "note": "The warm, spoken way of marking a claim as your own. Taken as a pair: L2-M5's pour and L2-M1's moi do this one job together."
+          },
+          {
+            "display": "l'important",
+            "cue": "the important thing",
+            "tag": "free",
+            "forms": [
+              "l'important",
+              "important"
+            ],
+            "note": "The adjective used as a noun, like l'essentiel. Elided, so both surfaces sit here: l'important is the thing, important is the quality."
+          },
+          {
+            "display": "chacun",
+            "cue": "everyone, each person",
+            "tag": "free",
+            "forms": [
+              "chacun"
+            ],
+            "note": "Singular, always: chacun compte, chacun est différent. It takes no article and it is the abstract talker's word for people."
+          }
+        ],
+        "rules": [
+          6,
+          0,
+          5
+        ]
+      },
+      "trap": "English states a general claim bare and lets the room infer it is an opinion. French expects pour moi or selon moi in front, and without one the same sentence reads as a fact asserted on everyone's behalf.",
+      "sound": "poor MWAH, lam-por-TAHN, say luh ress-PAY, pars-kuh sha-kan KOHNT. chacun ends on the nasal an of un.",
+      "variations": [
+        {
+          "display": "Pour moi, l'important, c'est la liberté, parce que chacun compte",
+          "cue": "For me, the important thing is freedom, because everyone counts",
+          "changed": "the value named"
+        },
+        {
+          "display": "Selon moi, l'important, c'est le respect",
+          "cue": "To my mind, the important thing is respect",
+          "changed": "selon moi, which is cooler and closer to writing"
+        }
+      ],
+      "mistake": {
+        "display": "Pour moi, important, c'est le respect",
+        "why": "used as a noun the adjective needs its article, and here that article is elided: l'important. Bare important is still only a quality, with nothing for c'est to point back at."
+      },
+      "usage": "Putting your own view on the table and giving a reason for it in one breath, which is what parce que is doing there.",
+      "register": "neutral",
+      "mnemonic": "mark the claim, make the claim, then give the reason."
+    },
+    {
+      "id": "L5-M5-S06",
+      "display": "La liberté, c'est un droit",
+      "cue": "Freedom is a right",
+      "literal": "The freedom, it is a right",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "droit",
+            "cue": "a right; law",
+            "tag": "free",
+            "forms": [
+              "droit"
+            ],
+            "note": "Masculine. Un droit is an entitlement, le droit is the law as a field, and avoir le droit de is to be allowed to."
+          }
+        ],
+        "rules": [
+          5,
+          0
+        ]
+      },
+      "trap": "Two articles in one short sentence, doing opposite jobs: la liberté is general and the la means nothing, un droit is one of a class and the un means one. An English speaker drops the first and keeps the second, which is exactly backwards.",
+      "sound": "lah lee-bair-TAY, say an DRWAH. droit is one syllable, drwah, with the t silent.",
+      "variations": [
+        {
+          "display": "La liberté, c'est essentiel",
+          "cue": "Freedom is essential",
+          "changed": "an adjective after c'est, so no article at all"
+        },
+        {
+          "display": "La justice, c'est un droit",
+          "cue": "Justice is a right",
+          "changed": "the idea in the subject seat"
+        }
+      ],
+      "mistake": {
+        "display": "La liberté, il est un droit",
+        "why": "il est would ask about one particular freedom. A general claim answers itself with c'est, which is what rule 6 is for."
+      },
+      "usage": "The flat claim you put down before you defend it.",
+      "register": "neutral",
+      "mnemonic": "general noun takes la; one of a class takes un."
+    },
+    {
+      "id": "L5-M5-S07",
+      "display": "Ce qui compte, c'est l'amour",
+      "cue": "What matters is love",
+      "literal": "That which counts, it is the love",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "l'amour",
+            "cue": "love",
+            "tag": "interference",
+            "forms": [
+              "l'amour",
+              "amour"
+            ],
+            "note": "Masculine, and elided in its general sense. Two keys for one word, so both surfaces are on this row — the same arrangement as l'argent."
+          },
+          {
+            "display": "vérité",
+            "cue": "truth",
+            "tag": "free",
+            "forms": [
+              "vérité"
+            ],
+            "note": "Feminine, and la vérité in general. Dire la vérité is to tell the truth; en vérité is more like actually, in fact."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "The apostrophe hides the article from an English eye, so l'amour reads as one bare word and the learner then writes je crois en amour. It is le amour underneath, and the le has not gone anywhere.",
+      "sound": "suh kee KOHNT, say la-MOOR. The l of l'amour leans straight onto the a with no break.",
+      "variations": [
+        {
+          "display": "Ce qui compte, c'est la vie",
+          "cue": "What matters is life",
+          "changed": "the value named — L4-M8's vie, in its general sense"
+        },
+        {
+          "display": "Ce qui compte, c'est la vérité",
+          "cue": "What matters is truth",
+          "changed": "the value named"
+        }
+      ],
+      "mistake": {
+        "display": "Ce qui compte, c'est amour",
+        "why": "the elided article is still an article. Dropping it leaves the noun bare in a seat that requires one, and this is the same error as bonheur without le."
+      },
+      "usage": "Saying the simple thing at the end of a long conversation.",
+      "register": "neutral",
+      "mnemonic": "l' is le in disguise, and it never leaves."
+    },
+    {
+      "id": "L5-M5-S08",
+      "display": "Je crois en l'avenir",
+      "cue": "I believe in the future",
+      "literal": "I believe in the future",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "l'avenir",
+            "cue": "the future",
+            "tag": "free",
+            "forms": [
+              "l'avenir",
+              "avenir"
+            ],
+            "note": "Masculine, elided, and built from à venir — the part still to come. Both surfaces sit here for the same reason as l'amour."
+          },
+          {
+            "display": "espoir",
+            "cue": "hope",
+            "tag": "free",
+            "forms": [
+              "espoir",
+              "l'espoir"
+            ],
+            "note": "Masculine. Il y a de l'espoir is there is hope; the de l' in front of it is the partitive, a bit of hope rather than all of it."
+          },
+          {
+            "display": "au fond",
+            "cue": "deep down, when it comes down to it",
+            "tag": "free",
+            "forms": [
+              "au fond"
+            ],
+            "note": "Literally at the bottom. It marks the sentence after it as what you actually think, under everything you have just been saying."
+          }
+        ],
+        "rules": [
+          3,
+          6
+        ]
+      },
+      "trap": "English believe in the future needs the the, so this one transfers — but only here. The trap is behind it: je crois en l'avenir keeps its article, and so does je crois en la justice, where English drops it.",
+      "sound": "zhuh krwah ahn lav-NEER. avenir has three syllables and the middle e nearly disappears.",
+      "variations": [
+        {
+          "display": "Au fond, je crois en l'avenir",
+          "cue": "Deep down, I believe in the future",
+          "changed": "au fond in front, marking it as what you really think"
+        },
+        {
+          "display": "Je crois en l'avenir, il y a de l'espoir",
+          "cue": "I believe in the future, there is hope",
+          "changed": "a second clause giving the reason"
+        }
+      ],
+      "mistake": {
+        "display": "Je crois à l'avenir",
+        "why": "à is for a claim you accept as true. The future is a thing you put your weight behind, so it takes en — the same choice as en la justice and en l'amour."
+      },
+      "usage": "The optimistic half of a hard conversation, said without insisting on it.",
+      "register": "neutral",
+      "mnemonic": "en for what you stand on."
+    },
+    {
+      "id": "L5-M5-S09",
+      "display": "Il s'agit de comprendre le monde",
+      "cue": "It's about understanding the world",
+      "literal": "It concerns itself of to-understand the world",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "comprendre",
+            "cue": "to understand",
+            "tag": "free",
+            "forms": [
+              "comprendre"
+            ],
+            "note": "The infinitive behind je comprends. After de it stays an infinitive, where English would put an -ing: about understanding."
+          },
+          {
+            "display": "dire",
+            "cue": "to say, to tell",
+            "tag": "free",
+            "forms": [
+              "dire"
+            ],
+            "note": "The infinitive behind L2-M6's on dit. Dire la vérité, and ce que je veux dire — what I mean."
+          }
+        ],
+        "rules": [
+          5,
+          1
+        ]
+      },
+      "trap": "English puts an -ing after about — it's about understanding. French puts a bare infinitive after de, always, and the -ing form does not exist to reach for. de comprendre, de dire, de choisir.",
+      "sound": "eel sa-ZHEE duh kohn-PRAHN-druh luh MOHND. comprendre carries the nasal ahn in the middle and a light final ruh.",
+      "variations": [
+        {
+          "display": "Il s'agit de comprendre les gens",
+          "cue": "It's about understanding people",
+          "changed": "what is to be understood — L3-M9's gens"
+        },
+        {
+          "display": "Il s'agit de dire la vérité",
+          "cue": "It's about telling the truth",
+          "changed": "the infinitive"
+        }
+      ],
+      "mistake": {
+        "display": "Il s'agit de comprenant le monde",
+        "why": "a straight import of the English -ing. French has no gerund in this seat: after de the verb stays in the infinitive and nothing is added to it."
+      },
+      "usage": "Saying what a job, a book or an argument is actually for.",
+      "register": "neutral",
+      "mnemonic": "de + infinitive, never de + -ant."
+    },
+    {
+      "id": "L5-M5-S10",
+      "display": "Pour moi, la liberté est un droit, parce que chacun est différent",
+      "cue": "For me, freedom is a right, because everyone is different",
+      "literal": "For me, the freedom is a right, because each-one is different",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "différent",
+            "cue": "different",
+            "tag": "free",
+            "forms": [
+              "différent"
+            ],
+            "note": "Two accents, both acute, and the final t is silent. Feminine is différente, and différent de is different from — not que."
+          },
+          {
+            "display": "selon moi",
+            "cue": "to my mind, in my view",
+            "tag": "free",
+            "forms": [
+              "selon moi"
+            ],
+            "note": "The cooler twin of pour moi, and closer to writing. À mon sens is a third, more considered still, and all three do the same job."
+          }
+        ],
+        "rules": [
+          6,
+          0
+        ]
+      },
+      "trap": "Here est does the work c'est did at S06, because the subject is a named noun rather than a bare idea being pointed at. la liberté est un droit is the written shape; la liberté, c'est un droit is the spoken one, and both are correct.",
+      "sound": "poor MWAH, lah lee-bair-TAY ay tan DRWAH, pars-kuh sha-kan ay dee-fay-RAHN. est un links as ay-tan.",
+      "variations": [
+        {
+          "display": "Selon moi, la liberté est un droit",
+          "cue": "To my mind, freedom is a right",
+          "changed": "the opinion marker, and the reason dropped"
+        },
+        {
+          "display": "Pour moi, la justice est un droit, parce que chacun est différent",
+          "cue": "For me, justice is a right, because everyone is different",
+          "changed": "the value named"
+        }
+      ],
+      "mistake": {
+        "display": "Pour moi, liberté est un droit, parce que chacun est différent",
+        "why": "the article again. la liberté is the general sense and the la is obligatory; without it the noun reads as a slogan on a banner rather than a claim in an argument."
+      },
+      "usage": "The full shape of an opinion: whose it is, what it is, and why — which is as much as any one turn should carry.",
+      "register": "neutral",
+      "mnemonic": "pour moi, the claim, parce que, the reason."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M5-C01",
+      "display": "Le bonheur, c'est l'essentiel",
+      "cue": "Happiness is what matters most"
+    },
+    {
+      "id": "L5-M5-C02",
+      "display": "Ce qui compte, c'est la liberté",
+      "cue": "What matters is freedom"
+    },
+    {
+      "id": "L5-M5-C03",
+      "display": "Je crois en la justice",
+      "cue": "I believe in justice"
+    },
+    {
+      "id": "L5-M5-C04",
+      "display": "Il s'agit de respect",
+      "cue": "It's a question of respect"
+    },
+    {
+      "id": "L5-M5-C05",
+      "display": "Pour moi, l'important, c'est le respect, parce que chacun compte",
+      "cue": "For me, the important thing is respect, because everyone counts"
+    },
+    {
+      "id": "L5-M5-C06",
+      "display": "La liberté, c'est un droit",
+      "cue": "Freedom is a right"
+    },
+    {
+      "id": "L5-M5-C07",
+      "display": "Ce qui compte, c'est l'amour",
+      "cue": "What matters is love"
+    },
+    {
+      "id": "L5-M5-C08",
+      "display": "Je crois en l'avenir",
+      "cue": "I believe in the future"
+    },
+    {
+      "id": "L5-M5-C09",
+      "display": "Il s'agit de comprendre le monde",
+      "cue": "It's about understanding the world"
+    },
+    {
+      "id": "L5-M5-C10",
+      "display": "L'argent ne fait pas le bonheur",
+      "cue": "Money doesn't buy happiness"
+    },
+    {
+      "id": "L5-M5-C11",
+      "display": "Ce que je veux dire, c'est la liberté",
+      "cue": "What I mean is freedom"
+    },
+    {
+      "id": "L5-M5-C12",
+      "display": "Au fond, je crois en l'avenir",
+      "cue": "Deep down, I believe in the future"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

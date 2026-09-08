@@ -322,3 +322,351 @@ and `anch'io`/`neanch'io` by their own.
      English speaker who understates is simply not heard as joking in Italian. This is the largest
      claim in the wave and the one hardest to check from outside the language: confirm it, and give
      one exchange in which understatement WOULD be read as a joke, if such an exchange exists.
+
+## Wave 2 — L5-M3, L5-M4 and L5-M5 (#586)
+
+The level's RANGE modules: where the Italian in front of a learner comes from, what is said on the
+four occasions that have a script, and how to talk about nothing in the room. Authored against the
+briefs in `tools/course-briefs.ts` and against the REAL cumulative index, which this wave inherited
+from Wave 1 rather than from L4: `npm run content:owner -- en-it …` reported **1411 surfaces owned,
+folded over 42 modules through L5-M2**, at **`maxSpan` 4**, for every one of the ~180 lookups below.
+That is two modules deeper than the fold Wave 1 planned against, and the difference is not cosmetic
+— it is what turned two of L5-M3's "fresh, confirmed free" keys into owned ones.
+
+**`maxSpan` does not move in this wave.** L5-M1 took it from 3 to 4 and nothing here is longer than
+three tokens: `la stessa cosa`, `diamoci del tu`, `passato remoto`, `sentite condoglianze`,
+`a nome di`, `in qualità di`, `è importante che`, `è giusto che`, `è normale che`, `l'importante è`.
+Between them the three modules add **75 rows**, 25 apiece, each module exactly at its `newWordCap`.
+
+### L5-M3 "How they say it there" — the module whose output is recognition
+
+Ten displays:
+
+1. `Al nord si dice cornetto, al sud brioche`
+2. `Anguria e cocomero: la stessa cosa`
+3. `Il napoletano non è un accento, è una lingua`
+4. `Raga, che figo questo posto!`
+5. `Cioè, tipo, non capisco niente`
+6. `A Roma si dice mo', non adesso`
+7. `Il passato remoto si parla solo al sud`
+8. `Diamoci del tu, siamo amici`
+9. `Lo straniero non parla il dialetto`
+10. `Il milanese, il romano e il toscano parlano italiano`
+
+What it teaches, on the brief's three axes and in that order. **Lexical** (S01, S02): one referent
+and two standard words, `cornetto`/`brioche` and `anguria`/`cocomero`, with the verdict stated as
+*neither is wrong* rather than as a preference — `la stessa cosa` is bought whole precisely so the
+verdict has a row of its own. **Grammatical** (S07): the `passato remoto` is NAMED, as a written
+past everywhere and a spoken past in the south, and not one form of it is conjugated — those are
+L5-M9's, and this row says so in its note. **Generational** (S04, S05, S06): `raga`, `figo`, `tipo`,
+`cioè` and `mo'`, each tagged as peer speech and each carrying its own dating warning.
+
+The two interference rows are the expensive ones and they close the module. `dialetto` (S03, S09) is
+the false friend: S03 states the claim positively — *il napoletano non è un accento, è una lingua* —
+and S09 puts a `straniero` beside it, so the learner meets the word twice before being told what it
+costs. `diamoci del tu` (S08) is the address law, shipped as ONE frozen offer with the rule that you
+wait to be handed it. S10 closes on the thing all of this sits on: three regions, one standard.
+
+Recognition rather than production is asserted twice, as the brief demands — once in rule 0 (*the
+output of this module is recognition*) and once per marked row in its own `note`. No dialect line
+appears anywhere, in a display, a variation, a mistake plate or a pool item.
+
+**25 rows** against a cap of 25, `minWordsPerSentence` 5, `maxWordsPerSentence` 12.
+
+### L5-M4 "Formal occasions" — the passive, at last, and the formulas that are not built
+
+Ten displays:
+
+1. `Auguri di cuore! Evviva gli sposi!`
+2. `Congratulazioni per il premio; inoltre, è un grande onore`
+3. `Le mie sentite condoglianze, ti sono vicino`
+4. `Facciamo un brindisi! Cin cin!`
+5. `Brindiamo alla salute, cin cin!`
+6. `Il premio viene consegnato oggi, pertanto brindiamo`
+7. `Mia madre è stata premiata ieri`
+8. `Egregio signore, carissimi amici, vorrei ringraziare`
+9. `Vorrei parlare a nome di mia madre, in qualità di figlia`
+10. `Poiché è tardi, il discorso è finito`
+
+The passive is taught as a PAIR of auxiliaries with a limit welded to it. S06 gives `viene
+consegnato` — venire staging the handing-over as a process — and its own third variation is
+`Il premio è stato consegnato`, so the learner sees the two auxiliaries side by side inside one
+sentence's enrichment rather than two modules apart. Its mistake plate is the sentence the rule
+exists to stop, `Il premio è venuto consegnato`, and rule 1 says in as many words that no Italian
+will repair it because there is nothing there to repair. S07 then does the agreement: `è stata
+premiata`, two feminine endings chiming, with the masculine in a variation and the half-agreed
+`è stato premiato` on a feminine subject as the mistake.
+
+The formula set is learned whole and split by TIME, which is the brief's central interference claim:
+`auguri` for what is ahead (S01, to `gli sposi`) against `congratulazioni` for what is done (S02,
+for a `premio`), each with the other as its mistake plate. `condoglianze` (S03) ships plural-only
+with `sentite condoglianze` as a form of the same row, so the fold cannot separate the formula from
+the word, and `ti sono vicino` — three tokens all owned since L2 — is the warm alternative beside
+it. The toast is deliberately small: `un brindisi` is what you MAKE and `cin cin` is what you SAY
+(S04, whose mistake is `Facciamo un cin cin`), and `brindiamo alla salute` (S05) buys the
+preposition, because `brindare` takes `a`.
+
+The written layer is one line of letter register (S08: `Egregio` to one stranger, `carissimi` to a
+room) and the three connectives L4-M2 sent here — `inoltre` in S02, `pertanto` in S06, `poiché` in
+S10 — each introduced inside a sentence a speech would actually contain, never as a list. S09 is the
+brief's fifth pattern in full, `vorrei ringraziare … a nome di … in qualità di`, and it is the
+longest display in the module at eleven words against a bound of fifteen.
+
+**25 rows** against a cap of 25, `minWordsPerSentence` 5, `maxWordsPerSentence` 15.
+
+### L5-M5 "Big questions" — the article nobody corrects you on
+
+Ten displays:
+
+1. `La libertà è importante per la gente`
+2. `Ciò che conta è il rispetto`
+3. `È importante che ognuno abbia rispetto`
+4. `È giusto che la gente abbia una casa`
+5. `È normale che chiunque abbia paura`
+6. `Credo in questi valori: onestà e giustizia`
+7. `L'importante è la felicità, non i soldi`
+8. `Mia madre è educata, ma molto sensibile`
+9. `In fondo, quello che conta è la vita`
+10. `La società parla di fede, di religione, di morte`
+
+The article law is the module and it is drilled by repetition rather than by explanation. Every
+abstract noun in every display carries its article — `la libertà`, `il rispetto`, `la felicità`,
+`la vita`, `la società`, `la fede`, `la religione`, `la morte`, `la gente` — and S10 stacks four of
+them in one sentence so the habit is visible as a habit. Both mistake plates that matter here strip
+the article out (`Liberta è importante per gente`, `Societa parla di fede…`), and rule 0 names why
+this error survives: the sentence is otherwise perfect, so nobody stops it to mention a missing
+`la`.
+
+The three impersonal triggers (S03, S04, S05) extend an owned paradigm and open nothing: `abbia` is
+L3-M3's in all three, and each display's mistake plate is the same clause with the indicative in it.
+Their bare adjectives — `importante`, `giusto`, `normale` — ride inside the trigger rows as forms
+rather than as three rows of their own, which is what kept the module at cap; see the seam below.
+`chiunque` (S05) is deliberately paired with a trigger that already demands the mood, so the note can
+say it triggers it alone.
+
+The noun clause of abstraction ships as three surfaces with one job: `ciò che` (S02), `quello che`
+(S09) and `l'importante è` (S07), the last carrying its elision inside the token per the course law.
+`credo in` (S06) is bought as a two-token key over L3-M3's `credo`, and its trap points at
+`credere di` — L3-M3's escape hatch — rather than pushing every belief through the mood, exactly as
+the brief asks. The false friends are the two the brief names and no more: `educato` and `sensibile`
+(S08). No display takes a position on politics or religion; S10 names the topics and stops.
+
+**25 rows** against a cap of 25, `minWordsPerSentence` 6, `maxWordsPerSentence` 14.
+
+### The brief seams, checked against the emitted index
+
+**L5-M3 §5 is wrong about two of its fresh keys, and the reason is the fold, not the brief.**
+`npm run content:owner -- en-it raga tipo cioè boh mah mo' figo …` printed:
+
+```
+raga	free       tipo	free      cioè	free
+boh	L5-M1      mah	L5-M1
+mo'	free       figo	free      dialetto	free      accento	free
+```
+
+The brief lists `boh` and `mah` among "Fresh, confirmed free". They are not: **L5-M1 took both**, and
+L5-M1 shipped in Wave 1 of this same level. This is the INDEX SEAM going stale in the most literal
+way available — the brief was written against a fold that stopped at L4-M10, and two modules of the
+same level have landed since. Neither word takes a row here. Rule 3 names them and says where they
+live, and no display shows either, so nothing is re-taught and nothing is unreachable.
+
+**Everything else L5-M3 §5 claims is correct, including both of its counter-intuitive collisions.**
+
+```
+sto	L1-M2      sta	L2-M1      lei	L1-M10     bella	L2-M3
+attimo	L2-M7      un attimo	free
+adesso	L3-M6      ora	L4-M9      mo'	free
+```
+
+`sto` and `sta` are the verb `stare` from `Sto bene` and `Come sta`, so the reduced demonstrative of
+youth speech can never have a row; it is not shown at all here. `lei` is L1-M10's pronoun, which is
+the second reason — on top of the course law — that the polite third person appears in no display in
+this course, and this module writes it nowhere, not even in a rule. `mo'` is confirmed free and is
+taught as the Roman twin of an owned pair, exactly as §5 predicted.
+
+**L5-M4 §5 held completely, and then bit somewhere it did not name.**
+
+```
+venire	L4-M5     viene	free      è stato	free     è stata	free
+auguri	free      congratulazioni	free      condoglianze	free
+sentite condoglianze	free      cin cin	free      alla salute	free
+poiché	free      pertanto	free      inoltre	free      egregio	free      carissimi	free
+```
+
+Every claim in the brief's §5 is confirmed: the infinitive `venire` is L4-M5's and the third person
+`viene` is not, so `viene` opens a row here whose note points back at L4-M5 rather than re-opening
+the verb; `è stato` and `è stata` are free and ship as ONE row with two forms, because they are two
+shapes of one auxiliary and two rows would have been a second agreement lesson with nothing new in
+it. The seam the brief does NOT name is the plural of its own fresh key:
+
+```
+premio	free      premi	L4-M1
+```
+
+**`premi` is L4-M1's.** The `premio` row therefore ships with `forms: ["premio"]` and no plural at
+all — a complete-looking paradigm here would have been an unreachable row, which is the same class
+of finding as L4-M3's `sarei`/`sarebbe` hole. The participles `premiato`/`premiata` and
+`consegnato`/`consegnata` are both free and are bought as agreeing pairs, which is where this
+module's paradigm work actually belongs.
+
+**L5-M5 §5 held, including the correction it inherited.**
+
+```
+gente	L2-M10    la gente	free
+libertà	free     giustizia	free    vita	free      società	free
+verità	L4-M3     punto di vista	L4-M4  secondo me	L3-M3   dipende	L4-M5
+sia	L3-M3     abbia	L3-M3     possa	L3-M3
+in fondo	free
+```
+
+`gente` is L2-M10's and `la gente` is free, exactly as the brief warns, so the two-token key is
+bought over the owned noun and L2-M10's row is not re-opened — and the note on it does the work the
+brief wanted, naming the singular agreement. `in fondo` is confirmed **free** despite L4-M9's brief
+having listed it: the shipped L4-M9 never took it, the index is the record, and this module buys it.
+
+The seam this module found for itself is the one that made its budget work:
+
+```
+importante	free    giusto	free    normale	free    conta	free    ciò	free
+```
+
+All three bare adjectives behind the impersonal triggers are unspent after forty-two modules, and
+so is `conta`. Bought as separate rows they are four of the twenty-five; folded into the rows that
+first SHOW them — `importante` inside `è importante che`, `giusto` inside `è giusto che`, `normale`
+inside `è normale che`, `conta` beside `contare su` — they cost nothing and the module could afford
+`educato` and `sensibile`, which the brief names as compulsory. Two keys the brief lists were
+dropped for that budget and are not taught here: **`umanità` and `coscienza`**. A later module may
+still buy either; nothing in this wave shows them.
+
+**A note for the next wave, on words that look owned and are not.** Several everyday surfaces came
+back `free` after forty-two modules and therefore cannot be written into a display without a row:
+`o` (or), `tutti`, `so`, `me`, `su`, `agli`, `ai`, `degli`, `stessa`, `nella`, `nei`, `va bene`,
+`tanto`, `uguale`, `cose`, `nostro`, `speciale` — and `qualcuno`, although `qualcosa` beside it is
+L3-M7's. Three sentences in this wave were rewritten after `content:owner` refused one of these —
+`Anguria o cocomero?` became `Anguria e cocomero`, because `e` is L1-M10's and `o` is nobody's. This
+is the opposite failure mode from the one the wave law warns about: not a brief claiming a word is
+free when it is owned, but an author assuming a word must be owned because it is ordinary.
+
+### The ratchet
+
+`npm run content:shown -- en-it L5-M3`, `… L5-M4` and `… L5-M5` each print `clean — every shown
+surface resolves`, with **no RE-TEACH lines and no COLLIDES lines on any of the three**. That is
+designed rather than lucky, and two decisions bought it: every multi-word formula is indexed WHOLE
+(`la stessa cosa`, `diamoci del tu`, `sentite condoglianze`, `a nome di`, `in qualità di`, the three
+`è … che` triggers, `l'importante è`), and every new cell of an already-taught lexeme is a row of
+its own pointing back at its first teach — `parlano` back at L1-M4's `parlare`, `viene` back at
+L4-M5's `venire`, `carissimi` back at L1-M10's `caro`, `la gente` back at L2-M10's `gente`, `credo
+in` back at L3-M3's `credo`. No file below L5 was touched.
+
+`npx vitest run tools/shown-surfaces.test.ts` passes **11/11** with **en-it holding at its baseline
+of 17**. The baseline is NOT lowered in this change: the seventeen findings are pre-existing, in
+modules this wave may not touch, and these three modules add none of their own.
+
+`npm run content:validate` reports `CONTENT ok` on every module in the tree, these three included.
+The denominator moves as sibling waves land: the run that cleared this change read
+**`CONTENT 405/405 ok`**, and an earlier run in the same session read `402/402`.
+
+`npx vitest run src/course/types.test.ts` was red on exactly three assertions while this wave was
+written, and all three are module-census counts belonging to somebody else: the global
+`finds all 378`, the `en-ar` count (42 → 44) and the `hi-en` count (42 → 45). They move as sibling
+waves land and are the parent's to update; the passing total moved from 420 to 423 during this
+session without any of the three changing. Every en-it law in the file passes, including the two
+that bite here — *display is Italian, teaching fields English* (no `glossEn`, no `script`, no curly
+apostrophe in any display, form, variation or pool item, and a non-empty `note` on all 75 rows) and
+*teaches every apostrophe surface it writes*, which walks the whole ladder and finds `mo'` answered
+by its own row in L5-M3 and `l'importante` answered by `l'importante è` in L5-M5. No other
+apostrophe surface is written by this wave.
+
+### Open questions for the native pass
+
+119. **The five generational words, as a current set** (M3-S04, S05, S06). Continuing `docs/108`
+     q66. The module ships `raga`, `figo`, `tipo`, `cioè` and `mo'` and asserts each is peer speech
+     that dates the speaker. Confirm each is still said in 2026 by people under about thirty, and
+     name any that has aged into a parody of itself — `figo` is the one this reviewer is least sure
+     of.
+
+120. **`mo'` — Roman, or central-southern generally** (M3-S06). Continuing `docs/108` q67. The row
+     says *Roman and central-southern*; the display says `A Roma si dice mo'`. Confirm the wider
+     claim in the note is right, and say whether a Roman would hear `mo'` from a foreigner as
+     charming, as mockery, or as neither.
+
+121. **Where the `cornetto`/`brioche` line actually falls** (M3-S01). The module makes it north
+     against south. Confirm that is close enough to be taught, name the region where `brioche`
+     genuinely dominates, and say whether ordering the "wrong" one really passes without comment.
+
+122. **`anguria` against `cocomero`, and who says which** (M3-S02). The row puts `cocomero` in Rome
+     and Tuscany and `anguria` in the north. Confirm the split, and say whether `cocomero` is heard
+     further south than Rome or whether a third word takes over there.
+
+123. **The `passato remoto` as a SPOKEN southern past** (M3-S07). The module states it flatly:
+     `Il passato remoto si parla solo al sud`. Confirm the tense really is in ordinary spoken use in
+     the south for recent events, and say how far north the spoken use reaches before it stops.
+
+124. **`Diamoci del tu` — who offers it, and whether the wait is still real** (M3-S08). The module
+     makes waiting to be offered the `tu` a law and calls dropping it unilaterally a presumption.
+     Confirm that in 2026 this still holds outside a workplace, and say at what age gap or in what
+     setting the wait has quietly disappeared.
+
+125. **`raga` as an address only** (M3-S04). The note says it can never be the subject of a sentence
+     and is never said to anybody older. Confirm both halves, and say whether it is used to address
+     a mixed group or has stayed male.
+
+126. **The `dialetto` claim, as an Italian would state it** (M3-S03, S09). The module writes
+     `Il napoletano non è un accento, è una lingua` as a plain fact. Confirm an Italian would accept
+     that sentence without qualification, and say whether calling Neapolitan a `dialetto` in the
+     same breath would be felt as a contradiction or as normal usage.
+
+127. **`auguri` to a bride and groom, `congratulazioni` as the error** (M4-S01). Continuing
+     `docs/108` q68. The module makes `Congratulazioni agli sposi!` a mistake plate. Confirm it
+     really is felt as wrong rather than merely as unusual, and say what is said to the parents of
+     the couple, who have arguably achieved something.
+
+128. **`venire` in the passive, in actual speech** (M4-S06). Continuing `docs/108` q69. The rule that
+     `venire` forms no compound passive is not in doubt as grammar. What is in doubt is frequency:
+     confirm that `viene consegnato` is what a real ceremony or announcement says, rather than a
+     textbook's preference, and say whether `è stato consegnato` would simply be used for both.
+
+129. **`Evviva gli sposi!`** (M4-S01). Confirm this is still raised at a wedding table rather than
+     being a phrase Italians associate with old films, and if it has dated, say what has replaced
+     it.
+
+130. **The ban on improvising a condolence** (M4-S03). The module states that Italian expects
+     `le mie sentite condoglianze` and that a fresh sentence reads as not knowing what to say.
+     Confirm the strength of that claim, and say what a close friend says instead of the formula,
+     if anything, beyond `ti sono vicino`.
+
+131. **`Egregio` and `carissimi` as live openings** (M4-S08). Confirm `Egregio` is still written at
+     the top of a formal letter in 2026 rather than surviving only in templates, and confirm
+     `carissimi` is the right warm opening for a room rather than for a written circular.
+
+132. **`poiché`, `pertanto` and `inoltre` in a SPOKEN speech** (M4-S02, S06, S10). The module puts
+     all three into displays that are spoken aloud at an occasion, while its rule calls them written
+     connectives. Confirm that is the right line — that a person giving a toast really does reach
+     for them — or say which of the three would sound absurd out loud.
+
+133. **The article on the abstract noun, as obligatory** (M5-S01, S10). Continuing `docs/108` q70.
+     The module treats `La libertà è importante` as the only possibility and `Libertà è importante`
+     as not a sentence. Confirm there is no register — a headline, a slogan, a book title — in which
+     the bare noun is normal, because the module currently admits none.
+
+134. **`la gente` and its singular verb** (M5-S04). The module writes `che la gente abbia` and makes
+     `abbiano` the mistake. Confirm the plural agreement is genuinely wrong rather than merely
+     informal, since English speakers will hear it constantly in their own language.
+
+135. **`ciò che` against `quello che`** (M5-S02, S09). The module calls `quello che` the everyday
+     twin and `ciò che` slightly more written, and treats them as interchangeable in these two
+     sentences. Confirm the register split, and say whether `ciò che` in speech reads as careful or
+     as stiff.
+
+136. **`educato` and `sensibile` as the right two** (M5-S08). The module names exactly two false
+     friends and refuses a longer list. Confirm these two are the pair that costs an English speaker
+     most in abstract conversation, and if a third belongs beside them, name it and say why it beats
+     one of these.
+
+137. **`chiunque` triggering the mood by itself** (M5-S05). The note claims `chiunque` takes the
+     congiuntivo on its own, independently of `è normale che`. Confirm that, and give one ordinary
+     sentence where `chiunque` stands alone with the mood after it.
+
+138. **`L'importante è …` and how it lands** (M5-S07). The module teaches it as a neutral way of
+     naming a priority. Confirm it does not carry a whiff of lecturing the listener, and say whether
+     `L'importante è la salute` is as ordinary as this reviewer believes it to be.

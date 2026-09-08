@@ -1,0 +1,603 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M5",
+  "title": "Big questions",
+  "job": "Values, beliefs, abstract talk",
+  "prerequisites": [
+    "L5-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Für mich + ist + <abstraktes Nomen> + wichtiger + als + <Nomen>",
+      "Es ist schwer + , + <Objekt> + zu verstehen",
+      "Ich bin + davon + überzeugt + , + dass + <verb-final>",
+      "Was + bedeutet + <Nomen> + für dich + ?",
+      "Ohne + <Akk> + gibt es + keine + <Akk>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE zu-INFINITIVE, THE CLAUSE TYPE ABSTRACT TALK CANNOT BE DONE WITHOUT. Es ist schwer, das zu verstehen: comma, then the clause, then zu immediately before the infinitive, and nothing after it. The infinitive is the last word of the sentence. L3-M1 taught one member of this family — the purpose clause um … zu — and the infixed zu of separable verbs, einzukaufen, aufzustehen. The plain zu plus a simple infinitive is new here, and it is what carries every sentence in this module."
+    },
+    {
+      "tag": "interference",
+      "text": "A MODAL VERB TAKES NO zu, AND THIS IS THE ERROR AN ENGLISH SPEAKER MAKES. Ich muss gehen, Ich kann das verstehen, Ich will nichts sagen — no comma, no zu, infinitive at the end. English puts to after almost everything (I need TO go, I want TO understand), so the hand reaches for it. The rule is short: after müssen, können, wollen, sollen, dürfen and mögen the infinitive stands bare."
+    },
+    {
+      "tag": "interference",
+      "text": "glauben IS HEAVIER THAN believe. An anglophone hedges every abstract claim with I believe, and German glauben leans towards religious belief in a way English believe does not. The ordinary hedge for a position is Ich finde or Ich bin davon überzeugt, both already yours from L1-M9 and L4-M4. Keep glauben for what you actually take on faith, and the sentence stops sounding like a confession."
+    },
+    {
+      "tag": "delta",
+      "text": "EVERY zu-INFINITIVE HERE IS ONE UNIT, AND THE INDEX IS WHY. The bare zu already belongs to L1-M8, where it is the TOO of Das ist zu teuer — an entirely different word. So zu sein, zu sagen, zu verstehen are each learned and tapped whole. Read them as one piece and you will never write the too by accident."
+    },
+    {
+      "tag": "free",
+      "text": "TWO WORDS THIS MODULE WANTS AND CANNOT HAVE. Würde, dignity, is spelled identically to the unreal auxiliary würde of L3-M4 once the index folds the capital away, so this course writes Menschenwürde instead — one word, and a better one anyway. Der Glaube, faith, folds onto L1-M9's glaube, I think, so the noun here is Überzeugung, conviction. Neither is a workaround you have to remember: both are what a careful German writer would pick."
+    },
+    {
+      "tag": "free",
+      "text": "STATING A POSITION IS NOT SUSTAINING ONE. This module hands you the nouns and the clause type, and it stops there: name a value, say what it is worth to you, ask what it means to someone else. Holding a position against objections — conceding, distinguishing, coming back — is L5-M6, one rung on. An argument built here would be an argument taken from there."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M5-S01",
+      "display": "Für mich ist Freiheit wichtiger als Geld.",
+      "cue": "For me, freedom matters more than money.",
+      "literal": "For me is freedom more-important than money.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Freiheit",
+            "cue": "freedom",
+            "tag": "free",
+            "forms": [
+              "Freiheit"
+            ],
+            "note": "Feminine, die Freiheit. Every -heit noun is feminine, which is the one gender rule in this module you can rely on without looking."
+          },
+          {
+            "display": "wichtiger",
+            "cue": "more important",
+            "tag": "delta",
+            "forms": [
+              "wichtiger"
+            ],
+            "note": "The comparative of L3-M2's wichtig, first taught there as the plain adjective. German compares with -er and then als, where English switches to more."
+          }
+        ],
+        "rules": [
+          5,
+          2
+        ]
+      },
+      "trap": "English needs more for a long adjective — more important — and German never does: wichtig becomes wichtiger, interessant becomes interessanter. Writing mehr wichtig is the single most common English-shaped error in an abstract sentence.",
+      "sound": "fuer mikh ist FRY-hyt VIKH-tig-er als GELT — Freiheit is two clear diphthongs, and the -er of wichtiger is a swallowed uh.",
+      "variations": [
+        {
+          "display": "Für mich ist Gerechtigkeit wichtiger als Geld.",
+          "cue": "For me, justice matters more than money.",
+          "changed": "The value in the slot changes and nothing else moves — this frame is how the module states a position without arguing for it."
+        }
+      ],
+      "mistake": {
+        "display": "Für mich ist Freiheit mehr wichtig als Geld",
+        "why": "German has no more plus adjective. The comparative is built on the word itself: wichtiger. mehr is only for quantities — mehr Geld, mehr Zeit."
+      },
+      "usage": "Putting a value on the table as yours, at the start of a conversation rather than at the end of an argument.",
+      "register": "neutral",
+      "mnemonic": "Für mich marks it as a position, not a fact — the two words that make an abstract claim safe to make."
+    },
+    {
+      "id": "L5-M5-S02",
+      "display": "Es ist wichtig, immer ehrlich zu sein.",
+      "cue": "It is important to always be honest.",
+      "literal": "It is important, always honest to be.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "es ist wichtig",
+            "cue": "it is important",
+            "tag": "free",
+            "forms": [
+              "es ist wichtig"
+            ],
+            "note": "The frame that opens a zu-clause. es is a placeholder for the clause after the comma, and the comma is compulsory in German."
+          },
+          {
+            "display": "zu sein",
+            "cue": "to be",
+            "tag": "free",
+            "forms": [
+              "zu sein"
+            ],
+            "note": "Learned as one unit, because bare zu is already L1-M8's word for too. zu goes immediately in front of the infinitive and nothing follows it."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "English lets the infinitive sit next to the adjective: important to be honest. German pushes it to the very end behind a comma, so everything you want to say has to be lined up before zu sein arrives.",
+      "sound": "es ist VIKH-tikh, IM-er AIR-likh tsoo ZYN — the voice pauses at the comma, which is the audible half of the rule.",
+      "variations": [
+        {
+          "display": "Es ist wichtig, ehrlich zu sein.",
+          "cue": "It is important to be honest.",
+          "changed": "immer drops out. The clause is at its shortest here, which is the shape worth memorising before you start filling it."
+        }
+      ],
+      "mistake": {
+        "display": "Es ist wichtig zu immer ehrlich sein",
+        "why": "Two rules broken at once: the comma is missing and zu has been parked at the front. zu belongs immediately before the infinitive, and the infinitive ends the sentence."
+      },
+      "usage": "Stating a general principle rather than a preference — the impersonal es keeps you out of it.",
+      "register": "neutral",
+      "mnemonic": "Comma, then everything, then zu and the verb — the zu is the last thing before the last thing."
+    },
+    {
+      "id": "L5-M5-S03",
+      "display": "Es ist schwer, Menschen wirklich zu verstehen.",
+      "cue": "It is hard to really understand people.",
+      "literal": "It is hard, people really to understand.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Mensch",
+            "cue": "human being, person",
+            "tag": "free",
+            "forms": [
+              "Mensch",
+              "Menschen"
+            ],
+            "note": "Masculine, der Mensch, and it takes -en in almost every other slot: den Menschen, die Menschen. It means a person as a species member, where Leute means a crowd."
+          },
+          {
+            "display": "zu verstehen",
+            "cue": "to understand",
+            "tag": "free",
+            "forms": [
+              "zu verstehen"
+            ],
+            "note": "One unit again, on L5-M1's verstehen. Whatever is being understood — Menschen here — stands in front of it, not after."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "An English speaker puts the object after the verb and runs out of sentence: to understand people really. German has already spent the end of the sentence on zu verstehen, so the object and the adverb both go in front of it.",
+      "sound": "es ist SHVAIR, MEN-shen VEER-likh tsoo fer-SHTAY-en — verstehen carries its stress on the -steh-, and the ver- almost disappears.",
+      "variations": [
+        {
+          "display": "Es ist nicht leicht, Menschen zu verstehen.",
+          "cue": "It is not easy to understand people.",
+          "changed": "Understated instead of blunt: German prefers nicht leicht where English would say hard, and it softens the claim without hedging it."
+        }
+      ],
+      "mistake": {
+        "display": "Es ist schwer zu verstehen Menschen wirklich",
+        "why": "English word order imported whole. Nothing may follow the infinitive: the object and the adverb go between the comma and zu."
+      },
+      "usage": "Conceding a difficulty in a conversation about people, without making it about anyone present.",
+      "register": "neutral",
+      "mnemonic": "Everything queues before zu — the infinitive locks the door on the way out."
+    },
+    {
+      "id": "L5-M5-S04",
+      "display": "Ich bin davon überzeugt, dass Gerechtigkeit möglich ist.",
+      "cue": "I am convinced that justice is possible.",
+      "literal": "I am there-of convinced, that justice possible is.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Gerechtigkeit",
+            "cue": "justice",
+            "tag": "free",
+            "forms": [
+              "Gerechtigkeit"
+            ],
+            "note": "Feminine, die Gerechtigkeit, built on recht. Every -keit noun is feminine, the same rule as -heit and just as reliable."
+          },
+          {
+            "display": "möglich",
+            "cue": "possible",
+            "tag": "free",
+            "forms": [
+              "möglich"
+            ],
+            "note": "From mögen, to like or may. It stands at the end of a dass-clause in front of the verb, exactly where an adjective belongs there."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "Reaching for Ich glaube here is the module's central interference. glauben leans towards faith; Ich bin davon überzeugt is what a German says about a position they can defend, and it is the honest hedge for an abstract claim.",
+      "sound": "ikh bin da-FON ue-ber-TSOYKT, das guh-REKH-tikh-kyt MUERK-likh ist — davon puts its stress on the second syllable, which is what marks it as pointing forward.",
+      "variations": [
+        {
+          "display": "Ich bin davon überzeugt, dass Freiheit möglich ist.",
+          "cue": "I am convinced that freedom is possible.",
+          "changed": "Only the abstract noun in the dass-clause moves; davon still points forward at the clause, which is its whole job."
+        }
+      ],
+      "mistake": {
+        "display": "Ich bin davon überzeugt, dass Gerechtigkeit ist möglich",
+        "why": "dass sends the verb to the end. ist goes behind möglich, not in front of it — the same rule weil and denn already taught you."
+      },
+      "usage": "Stating a belief you would defend, as distinct from one you merely hold.",
+      "register": "neutral",
+      "mnemonic": "davon points forward at the dass-clause: convinced OF the thing that is about to arrive."
+    },
+    {
+      "id": "L5-M5-S05",
+      "display": "Was bedeutet Verantwortung für dich?",
+      "cue": "What does responsibility mean to you?",
+      "literal": "What means responsibility for you?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Verantwortung",
+            "cue": "responsibility",
+            "tag": "free",
+            "forms": [
+              "Verantwortung"
+            ],
+            "note": "Feminine, die Verantwortung, built on Antwort — the thing you have to answer for. Every -ung noun is feminine too."
+          }
+        ],
+        "rules": [
+          5,
+          2
+        ]
+      },
+      "trap": "English asks what something means TO you; German asks für dich, with für plus the accusative. bedeuten needs no preposition of its own and takes the thing meant straight.",
+      "sound": "vas buh-DOY-tet fer-ANT-vor-toong fuer dikh — Verantwortung stresses the -ant-, and the -ung ending is a soft oong.",
+      "variations": [
+        {
+          "display": "Was bedeutet Freiheit für dich?",
+          "cue": "What does freedom mean to you?",
+          "changed": "The abstract noun in the slot changes. This is the module's one question shape, and it is what turns a statement of values into a conversation."
+        }
+      ],
+      "mistake": {
+        "display": "Was bedeutet Verantwortung zu dir?",
+        "why": "zu is not the preposition here — and this zu would read as L1-M8's too as well. The phrase is für dich, and it is fixed."
+      },
+      "usage": "Handing the subject to the other person after you have stated your own position.",
+      "register": "neutral",
+      "mnemonic": "Verantwortung holds Antwort: it is what you will have to answer for."
+    },
+    {
+      "id": "L5-M5-S06",
+      "display": "Ohne Vertrauen gibt es keine Gesellschaft.",
+      "cue": "Without trust there is no society.",
+      "literal": "Without trust gives it no society.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ohne",
+            "cue": "without",
+            "tag": "free",
+            "forms": [
+              "ohne"
+            ],
+            "note": "Always takes the accusative and never an article after an abstract noun: ohne Vertrauen, ohne Hoffnung. It is the negative twin of mit."
+          },
+          {
+            "display": "Vertrauen",
+            "cue": "trust",
+            "tag": "free",
+            "forms": [
+              "Vertrauen"
+            ],
+            "note": "Neuter, das Vertrauen — a verb turned into a noun, which is why it is capitalised and has no plural."
+          },
+          {
+            "display": "Gesellschaft",
+            "cue": "society",
+            "tag": "free",
+            "forms": [
+              "Gesellschaft"
+            ],
+            "note": "Feminine, die Gesellschaft. It also means company in the sense of people around you, which is where the abstract sense came from."
+          }
+        ],
+        "rules": [
+          5,
+          2
+        ]
+      },
+      "trap": "es gibt is fixed and impersonal: there is, there are, both of them. The noun after it is accusative, which is why keine and not keiner, even though it looks like the subject in English.",
+      "sound": "OH-nuh fer-TROW-en gipt es KY-nuh guh-ZEL-shaft — ohne has a long open o, and Vertrauen's -trau- is the ow of now.",
+      "variations": [
+        {
+          "display": "Ohne Vertrauen gibt es keine Freiheit.",
+          "cue": "Without trust there is no freedom.",
+          "changed": "The second abstract noun changes. Both slots take a bare noun with no article, which is what makes this frame sound like a maxim."
+        }
+      ],
+      "mistake": {
+        "display": "Ohne das Vertrauen gibt es keine Gesellschaft",
+        "why": "Abstract nouns in this frame stand bare. das Vertrauen would mean a specific trust between named people, which turns a general claim into a report."
+      },
+      "usage": "Stating a general truth as a maxim, where naming who is involved would weaken it.",
+      "register": "neutral",
+      "mnemonic": "ohne takes nothing with it — no article, and the accusative behind it."
+    },
+    {
+      "id": "L5-M5-S07",
+      "display": "Was ist der Sinn des Lebens?",
+      "cue": "What is the meaning of life?",
+      "literal": "What is the meaning of-the life?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Sinn des Lebens",
+            "cue": "the meaning of life",
+            "tag": "free",
+            "forms": [
+              "Sinn des Lebens"
+            ],
+            "note": "Three words, learned whole: der Sinn is masculine and des Lebens is L3-M8's genitive. Lebens is the genitive of das Leben and is not taught apart from this phrase."
+          }
+        ],
+        "rules": [
+          5,
+          4
+        ]
+      },
+      "trap": "English can say life's meaning or the meaning of life. German only has the genitive here, and it goes behind: Sinn first, des Lebens after. The order never reverses.",
+      "sound": "vas ist dair ZIN des LAY-bens — Sinn is short and clipped, Lebens has a long a, and the whole phrase runs as one word.",
+      "variations": [
+        {
+          "display": "Was ist der Sinn des Lebens für dich?",
+          "cue": "What is the meaning of life to you?",
+          "changed": "für dich hangs on the end and turns the largest question there is into one somebody can actually answer."
+        }
+      ],
+      "mistake": {
+        "display": "Was ist der Sinn von das Leben?",
+        "why": "von plus dative works for many possessives and not for this one: the phrase is fixed as des Lebens. And after von it would have to be dem, never das."
+      },
+      "usage": "Asked half seriously, which is the only way it is ever asked.",
+      "register": "neutral",
+      "mnemonic": "Sinn des Lebens is one lump of German — take it whole and the genitive comes free."
+    },
+    {
+      "id": "L5-M5-S08",
+      "display": "Die Wahrheit ist manchmal schwer zu sagen.",
+      "cue": "The truth is sometimes hard to say.",
+      "literal": "The truth is sometimes hard to say.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Wahrheit",
+            "cue": "truth",
+            "tag": "free",
+            "forms": [
+              "Wahrheit"
+            ],
+            "note": "Feminine, die Wahrheit, on wahr, true. The third -heit noun in this module, and the gender rule has not failed yet."
+          },
+          {
+            "display": "zu sagen",
+            "cue": "to say",
+            "tag": "free",
+            "forms": [
+              "zu sagen"
+            ],
+            "note": "One unit on L2-M10's sagen. With schwer or leicht in front of it, no comma is needed — the clause is too short to take one."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "This is the one zu-clause with no comma, because it has no clause of its own: schwer zu sagen is a two-word tail on the adjective. Add an object and the comma comes back — es ist schwer, die Wahrheit zu sagen.",
+      "sound": "dee VAAR-hyt ist MANKH-maal shvair tsoo ZAA-gen — Wahrheit's ah is long, and manchmal has the soft ch.",
+      "variations": [
+        {
+          "display": "Die Wahrheit ist manchmal schwer zu verstehen.",
+          "cue": "The truth is sometimes hard to understand.",
+          "changed": "A different infinitive in the same tail. Both are learned whole, which is why swapping them costs nothing."
+        }
+      ],
+      "mistake": {
+        "display": "Die Wahrheit ist manchmal schwer sagen",
+        "why": "The infinitive after an adjective is not bare — that is the modal rule, and schwer is not a modal. It needs zu: schwer zu sagen."
+      },
+      "usage": "Softening what you are about to say, or explaining why you did not say it.",
+      "register": "neutral",
+      "mnemonic": "schwer zu sagen — short tail, no comma; give it an object and the comma is back."
+    },
+    {
+      "id": "L5-M5-S09",
+      "display": "Für mich ist die Menschenwürde keine Meinung, sondern ein Wert.",
+      "cue": "For me, human dignity is not an opinion but a value.",
+      "literal": "For me is the human-dignity no opinion, but-rather a value.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Menschenwürde",
+            "cue": "human dignity",
+            "tag": "free",
+            "forms": [
+              "Menschenwürde"
+            ],
+            "note": "Feminine, die Menschenwürde — one word, Mensch plus Würde. This course writes the compound, because bare Würde is spelled like L3-M4's würde."
+          },
+          {
+            "display": "Wert",
+            "cue": "value",
+            "tag": "free",
+            "forms": [
+              "Wert",
+              "Werte"
+            ],
+            "note": "Masculine, der Wert. The plural die Werte is what people mean by their values; the singular can also be a price or a measurement."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "sondern, not aber. German splits the English but in two: sondern corrects a negative (not this, but that), aber adds a contrast. After keine the word can only be sondern.",
+      "sound": "fuer mikh ist dee MEN-shen-vuer-duh KY-nuh MY-noong, ZON-dern eyn VAIRT — Menschenwürde stresses Men-, and the ü in -würde is long.",
+      "variations": [
+        {
+          "display": "Für mich ist die Menschenwürde ein Wert.",
+          "cue": "For me, human dignity is a value.",
+          "changed": "The negative half drops away and sondern goes with it — with nothing to correct, the sentence is a plain claim."
+        }
+      ],
+      "mistake": {
+        "display": "Für mich ist die Menschenwürde keine Meinung, aber ein Wert",
+        "why": "aber cannot follow a negative it is correcting. keine … sondern is the pair; keine … aber leaves the correction hanging."
+      },
+      "usage": "Marking that something is not up for negotiation, without raising your voice about it.",
+      "register": "neutral",
+      "mnemonic": "sondern comes after a no; aber comes after a yes."
+    },
+    {
+      "id": "L5-M5-S10",
+      "display": "Ohne Hoffnung und Überzeugung ist das Leben schwer.",
+      "cue": "Without hope and conviction, life is hard.",
+      "literal": "Without hope and conviction is the life hard.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Hoffnung",
+            "cue": "hope",
+            "tag": "free",
+            "forms": [
+              "Hoffnung"
+            ],
+            "note": "Feminine, die Hoffnung, on hoffen. Like Verantwortung it is an -ung noun, so the gender comes free."
+          },
+          {
+            "display": "Überzeugung",
+            "cue": "conviction, belief",
+            "tag": "free",
+            "forms": [
+              "Überzeugung"
+            ],
+            "note": "Feminine, die Überzeugung, the noun of L4-M4's überzeugt. It is what this course uses where English would say faith or belief."
+          },
+          {
+            "display": "Leben",
+            "cue": "life",
+            "tag": "free",
+            "forms": [
+              "Leben"
+            ],
+            "note": "Neuter, das Leben, and the plural is identical. A verb turned noun again, which is why it is capitalised."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "Starting a German sentence with a long phrase pushes the verb to second position and the subject behind it: ist das Leben, not das Leben ist. English keeps the subject first and an anglophone forgets the swap exactly when the opening phrase is longest.",
+      "sound": "OH-nuh HOF-noong oont ue-ber-TSOY-goong ist das LAY-ben shvair — Überzeugung opens on a long ü and stresses the -zeu-.",
+      "variations": [
+        {
+          "display": "Ohne Hoffnung ist das Leben sehr schwer.",
+          "cue": "Without hope, life is very hard.",
+          "changed": "One noun instead of two and sehr added — the same inversion, at the shortest length where the swap still has to happen."
+        }
+      ],
+      "mistake": {
+        "display": "Ohne Hoffnung und Überzeugung das Leben ist schwer",
+        "why": "The verb must be the second element. With the ohne phrase in first position, ist comes next and das Leben follows it."
+      },
+      "usage": "Closing a serious conversation with something general, which is what German does instead of an ending.",
+      "register": "neutral",
+      "mnemonic": "Long opener, verb second, subject third — the phrase took the first seat, so the subject moves back."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M5-C01",
+      "display": "Was bedeutet Freiheit für dich?",
+      "cue": "What does freedom mean to you?"
+    },
+    {
+      "id": "L5-M5-C02",
+      "display": "Es ist wichtig, ehrlich zu sein",
+      "cue": "It is important to be honest"
+    },
+    {
+      "id": "L5-M5-C03",
+      "display": "Ohne Vertrauen gibt es nichts",
+      "cue": "Without trust there is nothing"
+    },
+    {
+      "id": "L5-M5-C04",
+      "display": "Die Wahrheit ist manchmal schwer",
+      "cue": "The truth is sometimes hard"
+    },
+    {
+      "id": "L5-M5-C05",
+      "display": "Ich bin davon überzeugt",
+      "cue": "I am convinced"
+    },
+    {
+      "id": "L5-M5-C06",
+      "display": "Das ist meine Überzeugung",
+      "cue": "That is my conviction"
+    },
+    {
+      "id": "L5-M5-C07",
+      "display": "Was ist der Sinn des Lebens?",
+      "cue": "What is the meaning of life?"
+    },
+    {
+      "id": "L5-M5-C08",
+      "display": "Gerechtigkeit ist möglich",
+      "cue": "Justice is possible"
+    },
+    {
+      "id": "L5-M5-C09",
+      "display": "Für mich ist Freiheit wichtiger",
+      "cue": "For me freedom matters more"
+    },
+    {
+      "id": "L5-M5-C10",
+      "display": "Verantwortung für die Gesellschaft",
+      "cue": "Responsibility for society"
+    },
+    {
+      "id": "L5-M5-C11",
+      "display": "Ohne Hoffnung ist das Leben schwer",
+      "cue": "Without hope life is hard"
+    },
+    {
+      "id": "L5-M5-C12",
+      "display": "Die Menschenwürde ist ein Wert",
+      "cue": "Human dignity is a value"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 4
+  }
+}

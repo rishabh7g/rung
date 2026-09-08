@@ -1,0 +1,712 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M4",
+  "title": "Formal occasions",
+  "job": "Toasts, speeches, condolences, ceremonies",
+  "prerequisites": [
+    "L5-M1",
+    "L5-M2",
+    "L5-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "présent",
+      "passé composé",
+      "infinitif",
+      "impératif"
+    ],
+    "allowedPatterns": [
+      "Je tiens à + V-inf",
+      "Au nom de + <group> + , + <clause>",
+      "<subject> + a été + <participle> + par + <agent>",
+      "Toutes mes condoléances",
+      "Permettez-moi de + V-inf"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE PASSIVE, BUILT RATHER THAN FROZEN. être + past participle, and the participle AGREES with the subject the way an adjective does: le mariage a été annulé, la cérémonie a été annulée, les invités ont été prévenus. The agent, when you name one, arrives on par: annulée PAR la mairie. L4-M7 showed est annulé and sera fermé as whole announcement shapes and said the system was L5's; this is it."
+    },
+    {
+      "tag": "interference",
+      "text": "THE FORM TRANSFERS AND THAT IS THE TRAP. was cancelled is a été annulée word for word, so you will build it correctly on the first try and then use it at ENGLISH frequency. French keeps the passive for formal register and for the sentence where the doer is named or deliberately withheld. Everywhere else it says on a annulé. Built right, used everywhere, it makes you sound stiff in every room except this one."
+    },
+    {
+      "tag": "delta",
+      "text": "THREE CONSTRUCTIONS, ONE RULE FOR CHOOSING. PASSIVE when the doer is named or pointedly not named, and the register is formal: la date a été changée par la mairie. on when the doer is simply irrelevant and you are talking: on a changé la date. PRONOMINAL when the claim is about what is generally done: ça ne se fait pas, ça se dit, le vin blanc se boit frais. Given three shapes and no rule a learner picks at random, so pick by the doer."
+    },
+    {
+      "tag": "delta",
+      "text": "CONDOLENCE IS A NOUN IN FRENCH, NOT AN APOLOGY. English reaches for a verb of apology — I'm sorry for your loss — and L2-M1's je suis désolé is thin here: it is what you say for a spilt drink. The sentence is toutes mes condoléances, or, warmer and for someone you know, je suis de tout cœur avec vous. Both are handed over whole; neither is built."
+    },
+    {
+      "tag": "free",
+      "text": "cher IS L1-M8's WORD AND IT MEANS EXPENSIVE. C'est trop cher. So the opening of a formal address is taken WHOLE here — cher monsieur — because a bare cher row at this level would sit behind a price note and never be reached. Same reasoning as chère madame, whose madame is L4-M7's counter word, re-used here and never reopened."
+    },
+    {
+      "tag": "free",
+      "text": "FOUR SHAPES YOU HAND OVER RATHER THAN BUILD. je tiens à + infinitive (I should like to, and warmer than je voudrais), au nom de + group (on behalf of), permettez-moi de + infinitive (allow me to), and toutes mes condoléances. Each is indexed whole because none of them is assembled from its parts at speed, and each has one seat: a lectern, a glass, a doorway, a funeral."
+    },
+    {
+      "tag": "free",
+      "text": "REGISTER HERE IS FORMALITY WITH FEELING IN IT, WHICH IS NOT L4-M7's FORMALITY. The counter register — veuillez, prière de, guichet, au suivant — is transactional and stays L4-M7's. This module's formality is addressed to people who are moved: a wedding, a funeral, a leaving party. Same politeness, entirely different warmth, and the shapes are not interchangeable."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M4-S01",
+      "display": "Je tiens à vous remercier",
+      "cue": "I should like to thank you",
+      "literal": "I hold to you thank",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je tiens à",
+            "cue": "I should like to",
+            "tag": "delta",
+            "forms": [
+              "je tiens à"
+            ],
+            "note": "Taken whole: literally I hold to, and it means this matters to me. Warmer and more deliberate than je voudrais, and it always takes an infinitive."
+          },
+          {
+            "display": "remercier",
+            "cue": "to thank",
+            "tag": "free",
+            "forms": [
+              "remercier"
+            ],
+            "note": "The verb behind L1-M2's merci. Remercier quelqu'un — the person is a direct object, with no preposition at all."
+          }
+        ],
+        "rules": [
+          5,
+          6
+        ]
+      },
+      "trap": "English softens a thank-you at a lectern with a modal — I'd just like to thank you. je tiens à does the opposite: it says the thanks is something you are insisting on. Do not add a hedge in front of it.",
+      "sound": "zhuh tyan ah voo ruh-mair-SYAY. tiens is one nasal syllable, tyan, and the s is silent.",
+      "variations": [
+        {
+          "display": "Je tiens à vous présenter mes condoléances",
+          "cue": "I should like to offer you my condolences",
+          "changed": "the infinitive, and with it the occasion"
+        },
+        {
+          "display": "Je tiens à remercier tout le monde",
+          "cue": "I should like to thank everyone",
+          "changed": "who is thanked"
+        }
+      ],
+      "mistake": {
+        "display": "Je tiens de vous remercier",
+        "why": "the preposition is à and it never varies. je tiens de is a different verb altogether — it means I take after, as in a family resemblance."
+      },
+      "usage": "Opening the two sentences you get to say at a leaving party, a prize-giving or the end of a meal.",
+      "register": "formal",
+      "mnemonic": "je tiens à, then straight into the infinitive."
+    },
+    {
+      "id": "L5-M4-S02",
+      "display": "Au nom de l'équipe, toutes mes félicitations",
+      "cue": "On behalf of the team, congratulations",
+      "literal": "In the name of the team, all my congratulations",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "au nom de",
+            "cue": "on behalf of",
+            "tag": "free",
+            "forms": [
+              "au nom de"
+            ],
+            "note": "Taken whole: in the name of. It says you are speaking for a group, and what follows it is the group, never the occasion."
+          },
+          {
+            "display": "l'équipe",
+            "cue": "the team",
+            "tag": "free",
+            "forms": [
+              "l'équipe"
+            ],
+            "note": "Feminine, and elided: l'équipe is one token in this course, so it is its own key and the bare équipe would be another."
+          },
+          {
+            "display": "toutes mes félicitations",
+            "cue": "congratulations",
+            "tag": "delta",
+            "forms": [
+              "toutes mes félicitations"
+            ],
+            "note": "Handed over whole, and plural: French counts congratulations. The toutes mes is not emphasis, it is simply how the phrase is said."
+          }
+        ],
+        "rules": [
+          5,
+          6
+        ]
+      },
+      "trap": "English says congratulations bare. French does too — félicitations — but the version you want at a ceremony carries toutes mes, and an English speaker drops it because it reads as gushing. It is not; it is the standard length.",
+      "sound": "oh nohn duh lay-KEEP, toot may fay-lee-see-ta-SYOHN. The final -tions is syohn, never shun.",
+      "variations": [
+        {
+          "display": "Au nom de l'équipe, toutes mes condoléances",
+          "cue": "On behalf of the team, my condolences",
+          "changed": "the occasion"
+        },
+        {
+          "display": "Au nom de l'équipe, meilleurs vœux",
+          "cue": "On behalf of the team, best wishes",
+          "changed": "the formula, and with it the register — vœux is shorter and cooler"
+        }
+      ],
+      "mistake": {
+        "display": "Au nom de l'équipe, félicitation",
+        "why": "singular. The word only exists in the plural in this use, and a singular félicitation is the kind of slip that gets read out again afterwards."
+      },
+      "usage": "Speaking for a group you belong to — a team, a family, a class — when one person has to do the talking.",
+      "register": "formal",
+      "mnemonic": "au nom de + the group, then the formula."
+    },
+    {
+      "id": "L5-M4-S03",
+      "display": "La date a été changée par la mairie",
+      "cue": "The date was changed by the town hall",
+      "literal": "The date has been changed by the town hall",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "date",
+            "cue": "date",
+            "tag": "free",
+            "forms": [
+              "date"
+            ],
+            "note": "Feminine: la date. Spelt like the English word and pronounced dat, with the final e silent."
+          },
+          {
+            "display": "a été",
+            "cue": "was, has been",
+            "tag": "delta",
+            "forms": [
+              "a été"
+            ],
+            "note": "Indexed whole. été is L4-M3's participle of être; a été is the passive's engine, and ont été is the same thing for a plural subject."
+          },
+          {
+            "display": "changée",
+            "cue": "changed (feminine)",
+            "tag": "interference",
+            "forms": [
+              "changée"
+            ],
+            "note": "L4-M8's changé with the feminine e, because la date is feminine. English participles never agree, so this e is written by rule and heard by nobody."
+          },
+          {
+            "display": "par",
+            "cue": "by (the doer)",
+            "tag": "free",
+            "forms": [
+              "par"
+            ],
+            "note": "The agent marker, and free after forty modules: par accident, par conséquent and par contre were all indexed whole, so the bare preposition was never spent."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "Built correctly on the first try, because the English is word for word. Then used at English frequency, which is the real error: in conversation a French speaker says on a changé la date, and keeps this shape for the notice on the door.",
+      "sound": "lah dat ah ay-TAY shahn-ZHAY par lah may-REE. changée and changé sound identical; only the page can tell them apart.",
+      "variations": [
+        {
+          "display": "On a changé la date",
+          "cue": "They've changed the date",
+          "changed": "on instead of the passive — the doer is irrelevant and this is what you would actually say"
+        },
+        {
+          "display": "La cérémonie a été annulée par la mairie",
+          "cue": "The ceremony was cancelled by the town hall",
+          "changed": "the subject and the participle, both still feminine"
+        }
+      ],
+      "mistake": {
+        "display": "La date a été changé par la mairie",
+        "why": "the participle agrees with the subject, and la date is feminine, so it is changée. Nothing in the sound changes, which is exactly why this is the agreement English speakers drop."
+      },
+      "usage": "Reading a notice, or repeating one — the register of an announcement about something already decided.",
+      "register": "formal",
+      "mnemonic": "a été + participle, and the participle looks back at the subject."
+    },
+    {
+      "id": "L5-M4-S04",
+      "display": "Toutes mes condoléances",
+      "cue": "My deepest condolences",
+      "literal": "All my condolences",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "toutes mes condoléances",
+            "cue": "my deepest condolences",
+            "tag": "delta",
+            "forms": [
+              "toutes mes condoléances"
+            ],
+            "note": "The whole sentence, handed over whole. Nothing is added in front of it and nothing follows; saying more is what an English speaker does and it is not wanted."
+          },
+          {
+            "display": "condoléances",
+            "cue": "condolences",
+            "tag": "free",
+            "forms": [
+              "condoléances"
+            ],
+            "note": "Feminine and always plural. It also travels in sincères condoléances and in je vous présente mes condoléances, which is the written form."
+          },
+          {
+            "display": "je suis de tout cœur avec vous",
+            "cue": "my heart goes out to you",
+            "tag": "delta",
+            "forms": [
+              "je suis de tout cœur avec vous"
+            ],
+            "note": "The warm version, whole: literally I am with all heart with you. For someone you know; toutes mes condoléances is for everyone else."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "je suis désolé is L2-M1's and it is what you say for a spilt drink. Used at a funeral it is not offensive, it is simply light — and the lightness is heard. French wants the noun, not a verb of apology.",
+      "sound": "toot may kohn-doh-lay-AHNSS. Four syllables in condoléances, with the stress carried on the last.",
+      "variations": [
+        {
+          "display": "Je suis de tout cœur avec vous",
+          "cue": "My heart goes out to you",
+          "changed": "the warmer formula, for someone you know"
+        },
+        {
+          "display": "Toutes mes condoléances, madame",
+          "cue": "My deepest condolences, madam",
+          "changed": "the address added — L4-M7's madame, re-used here"
+        }
+      ],
+      "mistake": {
+        "display": "Je suis désolé pour votre perte",
+        "why": "a word-for-word import of I'm sorry for your loss. Every word is French and no French speaker says it; the sentence that exists is toutes mes condoléances."
+      },
+      "usage": "At the door, at the graveside, in the first line of a card. Said once, and not elaborated.",
+      "register": "formal",
+      "mnemonic": "the noun, not the apology."
+    },
+    {
+      "id": "L5-M4-S05",
+      "display": "Permettez-moi de vous présenter mes vœux",
+      "cue": "Allow me to offer you my best wishes",
+      "literal": "Allow me to you present my wishes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "permettez-moi",
+            "cue": "allow me",
+            "tag": "free",
+            "forms": [
+              "permettez-moi"
+            ],
+            "note": "An imperative with the pronoun hooked on behind. The hyphen makes it one word to the index, and it also buys the bare permettez."
+          },
+          {
+            "display": "présenter",
+            "cue": "to offer, to present",
+            "tag": "free",
+            "forms": [
+              "présenter"
+            ],
+            "note": "The formal verb for handing something over in words: présenter ses vœux, ses condoléances, ses excuses. Not donner, which is for objects."
+          },
+          {
+            "display": "vœux",
+            "cue": "wishes",
+            "tag": "free",
+            "forms": [
+              "vœux"
+            ],
+            "note": "Masculine, always plural, and written with the joined oe. A vœu on its own is a vow or a wish made; the plural is the greeting."
+          },
+          {
+            "display": "meilleurs vœux",
+            "cue": "best wishes",
+            "tag": "free",
+            "forms": [
+              "meilleurs vœux"
+            ],
+            "note": "The card formula, taken whole. meilleurs is L2-M9's best; the pairing is fixed and takes no article in front of it."
+          }
+        ],
+        "rules": [
+          5,
+          6
+        ]
+      },
+      "trap": "English allow me to is nearly a joke — nobody says it straight. In French permettez-moi de is unmarked at a lectern and reads as courtesy rather than performance, so an English speaker under-uses it and sounds abrupt instead.",
+      "sound": "pair-may-tay-MWAH duh voo pray-zahn-TAY may VUH. vœux is a single rounded vuh with a silent x.",
+      "variations": [
+        {
+          "display": "Permettez-moi de vous présenter mes meilleurs vœux",
+          "cue": "Allow me to offer you my very best wishes",
+          "changed": "meilleurs added, which is the card version"
+        },
+        {
+          "display": "Permettez-moi de vous remercier",
+          "cue": "Allow me to thank you",
+          "changed": "the infinitive"
+        }
+      ],
+      "mistake": {
+        "display": "Permettez-moi vous présenter mes vœux",
+        "why": "the de is not optional. permettez-moi de + infinitive is one shape, and dropping the preposition leaves two verbs colliding."
+      },
+      "usage": "The first line of a short speech, or of a New Year card — anywhere you are taking the floor briefly and on purpose.",
+      "register": "formal",
+      "mnemonic": "permettez-moi DE, then the infinitive."
+    },
+    {
+      "id": "L5-M4-S06",
+      "display": "Je tiens à remercier les invités",
+      "cue": "I should like to thank the guests",
+      "literal": "I hold to thank the invited",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "invités",
+            "cue": "guests",
+            "tag": "free",
+            "forms": [
+              "invités"
+            ],
+            "note": "Literally the invited: a past participle used as a noun. Feminine singular is invitée, and les invités covers a mixed room."
+          }
+        ],
+        "rules": [
+          5,
+          6
+        ]
+      },
+      "trap": "English guest is a noun with no verb inside it. French invités is the participle of inviter, which is why it agrees like an adjective — une invitée, des invitées — and why the room reads it as slightly formal.",
+      "sound": "zhuh tyan ah ruh-mair-SYAY lay zan-vee-TAY. The s of les links onto the vowel: lay-zan.",
+      "variations": [
+        {
+          "display": "Je tiens à remercier l'équipe",
+          "cue": "I should like to thank the team",
+          "changed": "who is thanked"
+        },
+        {
+          "display": "Je tiens à remercier les invités et la mairie",
+          "cue": "I should like to thank the guests and the town hall",
+          "changed": "a second party added to the list"
+        }
+      ],
+      "mistake": {
+        "display": "Je tiens à remercier à les invités",
+        "why": "remercier takes its person directly, with no preposition — and les invités would be aux invités anyway. The à belongs to je tiens à and is already spent."
+      },
+      "usage": "The middle of a short speech, where you name each group in turn.",
+      "register": "formal",
+      "mnemonic": "one à, at the front, and no other."
+    },
+    {
+      "id": "L5-M4-S07",
+      "display": "Au nom de tous, toutes mes condoléances",
+      "cue": "On behalf of everyone, my condolences",
+      "literal": "In the name of all, all my condolences",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tous",
+            "cue": "everyone, all of us",
+            "tag": "free",
+            "forms": [
+              "tous"
+            ],
+            "note": "Standing alone it means all of them or all of us. Here the final s is pronounced — tooss — which is the opposite of the usual French habit."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "English on behalf of all of us needs the of us. French au nom de tous does not, and adding nous back — au nom de nous tous — is heavier than the room wants.",
+      "sound": "oh nohn duh TOOSS, toot may kohn-doh-lay-AHNSS. tous pronounced tooss when it stands alone, too when a noun follows.",
+      "variations": [
+        {
+          "display": "Au nom de tous, toutes mes félicitations",
+          "cue": "On behalf of everyone, congratulations",
+          "changed": "the occasion"
+        },
+        {
+          "display": "Au nom de tous, merci beaucoup",
+          "cue": "On behalf of everyone, thank you very much",
+          "changed": "the formula, and with it the register — this one is plainer"
+        }
+      ],
+      "mistake": {
+        "display": "Au nom de tout, toutes mes condoléances",
+        "why": "tout is everything; tous is everyone. Speaking for a room, it is the people you are speaking for."
+      },
+      "usage": "Saying the one sentence a group has asked you to say for them.",
+      "register": "formal",
+      "mnemonic": "au nom de tous — and let the final s be heard."
+    },
+    {
+      "id": "L5-M4-S08",
+      "display": "Le mariage a été annulé par la mairie",
+      "cue": "The wedding was cancelled by the town hall",
+      "literal": "The wedding has been cancelled by the town hall",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mariage",
+            "cue": "wedding, marriage",
+            "tag": "free",
+            "forms": [
+              "mariage"
+            ],
+            "note": "Masculine, so the participle after it stays bare: annulé. It covers both the ceremony and the state, as English marriage does."
+          },
+          {
+            "display": "cérémonie",
+            "cue": "ceremony",
+            "tag": "free",
+            "forms": [
+              "cérémonie"
+            ],
+            "note": "Feminine, which is why the variation reads annulée. Two accents, both acute, and the stress falls on the last syllable."
+          },
+          {
+            "display": "ça ne se fait pas",
+            "cue": "that isn't done",
+            "tag": "delta",
+            "forms": [
+              "ça ne se fait pas"
+            ],
+            "note": "The pronominal, whole: no agent, no passive, and a claim about what is generally done. Its positive twin is ça se dit."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "Three ways to avoid naming a doer, and English has one. A learner who has just built the passive uses it for all three jobs — including the one where French would say ça ne se fait pas, which is not a passive at all.",
+      "sound": "luh mah-RYAZH ah ay-TAY ah-nü-LAY par lah may-REE. annulé keeps the tight u of tu in its middle.",
+      "variations": [
+        {
+          "display": "La cérémonie a été annulée par la mairie",
+          "cue": "The ceremony was cancelled by the town hall",
+          "changed": "a feminine subject, so the participle takes an e"
+        },
+        {
+          "display": "On a annulé le mariage",
+          "cue": "They've cancelled the wedding",
+          "changed": "on instead of the passive — the ordinary spoken version"
+        },
+        {
+          "display": "Ça ne se fait pas",
+          "cue": "That isn't done",
+          "changed": "the pronominal — no agent at all, and a claim about what is generally done"
+        }
+      ],
+      "mistake": {
+        "display": "Le mariage a été annulée par la mairie",
+        "why": "le mariage is masculine, so the participle is bare: annulé. The e is copied across from the feminine version, and it is the commonest slip in the whole shape."
+      },
+      "usage": "Repeating a decision somebody else made, in the register of the notice it was announced in.",
+      "register": "formal",
+      "mnemonic": "masculine subject, bare participle; feminine subject, add the e."
+    },
+    {
+      "id": "L5-M4-S09",
+      "display": "Toutes mes condoléances, cher monsieur",
+      "cue": "My deepest condolences, dear sir",
+      "literal": "All my condolences, dear sir",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cher monsieur",
+            "cue": "dear sir",
+            "tag": "interference",
+            "forms": [
+              "cher monsieur"
+            ],
+            "note": "Taken whole, because bare cher is L1-M8's expensive — c'est trop cher. In front of a person it is the address; in front of a price it is the cost."
+          },
+          {
+            "display": "monsieur",
+            "cue": "sir",
+            "tag": "free",
+            "forms": [
+              "monsieur"
+            ],
+            "note": "Free after forty modules, where madame was taken at L4-M7's counter. Pronounced muh-syuh: the n and the r are both silent."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "Dear in an English letter is worn smooth and means nothing. Cher is not: it is warm, it is chosen, and the same word priced a coat in L1-M8. Reading it as English dear is what makes a learner write cher to a stranger.",
+      "sound": "toot may kohn-doh-lay-AHNSS, shair muh-SYUH. monsieur is two syllables and neither of them is mon.",
+      "variations": [
+        {
+          "display": "Je suis de tout cœur avec vous, cher monsieur",
+          "cue": "My heart goes out to you, dear sir",
+          "changed": "the warmer formula, with the same address"
+        },
+        {
+          "display": "Toutes mes condoléances, monsieur",
+          "cue": "My deepest condolences, sir",
+          "changed": "cher dropped — plainer, and for someone you do not know"
+        }
+      ],
+      "mistake": {
+        "display": "Toutes mes condoléances, cher",
+        "why": "cher never stands alone as an address. On its own it is the adjective L1-M8 taught, so the sentence lands as my condolences, expensive."
+      },
+      "usage": "The first line of a card, or the words at a door when you know the person a little.",
+      "register": "formal",
+      "mnemonic": "cher always leans on the noun after it."
+    },
+    {
+      "id": "L5-M4-S10",
+      "display": "Permettez-moi de lever mon verre",
+      "cue": "Allow me to raise my glass",
+      "literal": "Allow me to raise my glass",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lever",
+            "cue": "to raise, to lift",
+            "tag": "free",
+            "forms": [
+              "lever"
+            ],
+            "note": "Lever son verre is the fixed move for a toast. The first e is a light uh, and the r at the end is silent: luh-VAY."
+          },
+          {
+            "display": "à votre santé",
+            "cue": "to your health, cheers",
+            "tag": "free",
+            "forms": [
+              "à votre santé"
+            ],
+            "note": "The toast itself, whole and formal. With people you are on tu terms with it is à ta santé, and among friends it shortens to santé."
+          }
+        ],
+        "rules": [
+          5,
+          6
+        ]
+      },
+      "trap": "English cheers is casual and does the whole job. French santé alone is the casual one, and at a wedding or a leaving do the room expects the full à votre santé with the glass already up.",
+      "sound": "pair-may-tay-MWAH duh luh-VAY mohn VAIR. verre is one syllable, vair, with a rolled r at each end.",
+      "variations": [
+        {
+          "display": "Permettez-moi de lever mon verre à votre santé",
+          "cue": "Allow me to raise my glass to your health",
+          "changed": "the toast said out loud at the end"
+        },
+        {
+          "display": "Permettez-moi de vous remercier au nom de tous",
+          "cue": "Allow me to thank you on behalf of everyone",
+          "changed": "the infinitive, and a group added"
+        }
+      ],
+      "mistake": {
+        "display": "Permettez-moi de lever mon verre pour votre santé",
+        "why": "the toast runs on à, not pour. pour votre santé would be for the good of your health, which is what a doctor says about vegetables."
+      },
+      "usage": "Standing up at a meal with a glass in your hand and eight seconds of everyone's attention.",
+      "register": "formal",
+      "mnemonic": "lever le verre, then à votre santé."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M4-C01",
+      "display": "Je tiens à vous remercier",
+      "cue": "I should like to thank you"
+    },
+    {
+      "id": "L5-M4-C02",
+      "display": "Au nom de l'équipe, toutes mes félicitations",
+      "cue": "On behalf of the team, congratulations"
+    },
+    {
+      "id": "L5-M4-C03",
+      "display": "La date a été changée par la mairie",
+      "cue": "The date was changed by the town hall"
+    },
+    {
+      "id": "L5-M4-C04",
+      "display": "Toutes mes condoléances",
+      "cue": "My deepest condolences"
+    },
+    {
+      "id": "L5-M4-C05",
+      "display": "Permettez-moi de vous présenter mes vœux",
+      "cue": "Allow me to offer you my best wishes"
+    },
+    {
+      "id": "L5-M4-C06",
+      "display": "Je tiens à remercier les invités",
+      "cue": "I should like to thank the guests"
+    },
+    {
+      "id": "L5-M4-C07",
+      "display": "Au nom de tous, toutes mes condoléances",
+      "cue": "On behalf of everyone, my condolences"
+    },
+    {
+      "id": "L5-M4-C08",
+      "display": "Le mariage a été annulé par la mairie",
+      "cue": "The wedding was cancelled by the town hall"
+    },
+    {
+      "id": "L5-M4-C09",
+      "display": "Toutes mes condoléances, cher monsieur",
+      "cue": "My deepest condolences, dear sir"
+    },
+    {
+      "id": "L5-M4-C10",
+      "display": "Permettez-moi de lever mon verre",
+      "cue": "Allow me to raise my glass"
+    },
+    {
+      "id": "L5-M4-C11",
+      "display": "La cérémonie a été annulée par la mairie",
+      "cue": "The ceremony was cancelled by the town hall"
+    },
+    {
+      "id": "L5-M4-C12",
+      "display": "Ça ne se fait pas",
+      "cue": "That isn't done"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

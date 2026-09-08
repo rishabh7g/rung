@@ -1,0 +1,586 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M3",
+  "title": "How they say it there",
+  "job": "Regional and generational speech; what marks an outsider",
+  "prerequisites": ["L5-M1", "L5-M2"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 9,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": ["present_simple", "present_perfect", "imperative"],
+    "allowedPatterns": [
+      "Have you ever + <past participle> + <object> + ?",
+      "I have never + <past participle> + that word + .",
+      "In Britain they say + <word> + , + in America + <word> + .",
+      "My grandmother says + <old word> + , + we say + <new word> + .",
+      "That sounds + <register adjective> + ."
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "अंग्रेज़ी एक चीज़ नहीं, कई रूपों का परिवार है — ठीक वैसे ही जैसे दिल्ली की हिंदी, भोपाल की हिंदी और पटना की हिंदी. आपकी अंग्रेज़ी भी उन्हीं रूपों में से एक है, किसी और की अंग्रेज़ी की टूटी नक़ल नहीं. यह बात इस पाठ की बुनियाद है."
+    },
+    {
+      "tag": "delta",
+      "text": "अनुभव पूछने का रूप: have you ever + क्रिया का तीसरा रूप, और उसका उलटा I have never + तीसरा रूप. इसमें समय बताया ही नहीं जाता. जैसे ही yesterday, last year या in 2019 जैसा बीता हुआ समय आता है, यह रूप टूट जाता है और सीधा भूतकाल आता है — Did you go to Delhi last year?"
+    },
+    {
+      "tag": "free",
+      "text": "एक ही चीज़ के दो शब्द या दो हिज्जे: lift / elevator, flat / apartment, film / movie, colour / color, realise / realize. इनमें कोई सही-ग़लत नहीं है — पहला रूप ब्रिटेन और भारत का, दूसरा अमेरिका का. नियम सिर्फ़ एक है, एकरूपता: एक रूप चुनिए और एक ही चिट्ठी या बात में उसी पर टिके रहिए."
+    },
+    {
+      "tag": "interference",
+      "text": "हिंदी रस्म का निशान सर्वनाम पर लगाती है — तू, तुम, आप और उनके साथ बदलती क्रिया. अंग्रेज़ी के पास सिर्फ़ एक you है, इसलिए सीखने वाला सोचता है कि अंग्रेज़ी में रस्म है ही नहीं. वह निशान शब्दों के चुनाव, वाक्य की लंबाई और कितना अनकहा छोड़ा गया — इन पर आता है. यही L2-M1 वाली शिष्टता की सीढ़ी ऊपर से देखी हुई है."
+    },
+    {
+      "tag": "free",
+      "text": "भारतीय अंग्रेज़ी अपने शब्दों और अपने नियमों वाली पूरी अंग्रेज़ी है, ग़लतियों की सूची नहीं. भारत के बाहर उसके कुछ शब्द अलग ज़रूर सुनाई देते हैं. दफ़्तरी वाले शब्द — kindly, do the needful, prepone — L4-M7 के हैं और वहीं रहेंगे. उच्चारण (accent) और इलाक़ाई बोली (dialect) की बात यहाँ बताई जाती है, माँगी नहीं जाती: इस कोर्स में आवाज़ है ही नहीं."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M3-S01",
+      "display": "Have you ever heard the word lift? In America they say elevator.",
+      "cue": "क्या आपने कभी lift शब्द सुना है? अमेरिका में लोग elevator कहते हैं.",
+      "literal": "क्या आपने कभी सुना वह शब्द lift? में अमेरिका वे कहते elevator.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "have you ever",
+            "cue": "क्या आपने कभी … है",
+            "tag": "delta",
+            "forms": ["have you ever"],
+            "note": "अनुभव पूछने का पूरा ढाँचा, तीनों शब्द एक साथ. अकेला have (L1-M4) 'रखना' है और वह अर्थ इसके भीतर नहीं बचता."
+          },
+          {
+            "display": "heard",
+            "cue": "सुना",
+            "tag": "free",
+            "forms": ["heard", "hear"],
+            "note": "hear का तीसरा रूप. hear कान में पड़ना है; कान लगाकर सुनने के लिए listen आता है."
+          },
+          {
+            "display": "word",
+            "cue": "शब्द",
+            "tag": "free",
+            "forms": ["word", "words"],
+            "note": "एक शब्द. पूरी बात के लिए sentence या line कहा जाता है, word नहीं."
+          },
+          {
+            "display": "lift",
+            "cue": "लिफ़्ट",
+            "tag": "free",
+            "forms": ["lift", "lifts"],
+            "note": "ब्रिटेन और भारत का शब्द. अमेरिका में यही चीज़ elevator है, और दोनों में कोई ग़लत नहीं."
+          },
+          {
+            "display": "America",
+            "cue": "अमेरिका",
+            "tag": "free",
+            "forms": ["America", "American"],
+            "note": "American इसी का विशेषण है — American spelling, American word."
+          },
+          {
+            "display": "elevator",
+            "cue": "लिफ़्ट (अमेरिकी शब्द)",
+            "tag": "free",
+            "forms": ["elevator", "elevators"],
+            "note": "अमेरिका का शब्द. ब्रिटेन और भारत में यही lift है; चीज़ एक ही है."
+          }
+        ],
+        "rules": [0, 1, 2]
+      },
+      "trap": "ever को have you के ठीक बाद रखिए. Have you heard ever? कहने से वाक्य टूट जाता है.",
+      "sound": "have you ever बोलने में जुड़ जाता है — हैव़्-यु-एव़र्, लगभग एक ही शब्द.",
+      "variations": [
+        {
+          "display": "Have you ever heard the word flat?",
+          "cue": "क्या आपने कभी flat शब्द सुना है?",
+          "changed": "दूसरा शब्द"
+        },
+        {
+          "display": "In Britain they say lift.",
+          "cue": "ब्रिटेन में लोग lift कहते हैं.",
+          "changed": "सिर्फ़ एक जगह"
+        },
+        {
+          "display": "I have never heard the word elevator.",
+          "cue": "मैंने elevator शब्द कभी नहीं सुना.",
+          "changed": "ना वाला रूप"
+        }
+      ],
+      "mistake": {
+        "display": "Have you ever heard the word lift yesterday?",
+        "why": "ever वाला रूप बीते हुए समय के साथ नहीं चलता. yesterday आते ही Did you hear the word lift yesterday? कहिए."
+      },
+      "usage": "जब पूछना हो कि कोई शब्द कभी सुना है या नहीं — कक्षा, दफ़्तर और आम बातचीत, हर जगह.",
+      "register": "neutral",
+      "mnemonic": "have you ever का मतलब 'ज़िंदगी में कभी' — इसमें समय बताया ही नहीं जाता."
+    },
+    {
+      "id": "L5-M3-S02",
+      "display": "A flat in Britain is an apartment in America.",
+      "cue": "ब्रिटेन का flat अमेरिका का apartment है.",
+      "literal": "एक flat में ब्रिटेन है एक apartment में अमेरिका.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "flat",
+            "cue": "फ़्लैट",
+            "tag": "free",
+            "forms": ["flat", "flats"],
+            "note": "ब्रिटेन और भारत का शब्द. अमेरिका में यही घर apartment कहलाता है."
+          },
+          {
+            "display": "apartment",
+            "cue": "फ़्लैट (अमेरिकी शब्द)",
+            "tag": "free",
+            "forms": ["apartment", "apartments"],
+            "note": "अमेरिका का शब्द. ब्रिटेन में flat; अर्थ में कोई फ़र्क़ नहीं."
+          },
+          {
+            "display": "Britain",
+            "cue": "ब्रिटेन",
+            "tag": "free",
+            "forms": ["Britain", "British"],
+            "note": "British इसी का विशेषण है — British spelling. England ब्रिटेन का एक हिस्सा है, पूरा ब्रिटेन नहीं."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "flat का एक अर्थ 'सपाट' भी है, पर अमेरिकी सुनने वाला घर के अर्थ में flat कम ही समझता है.",
+      "sound": "apartment में ज़ोर बीच वाले हिस्से पर है — अ-पार्ट्-मन्ट्.",
+      "variations": [
+        {
+          "display": "This flat is very small.",
+          "cue": "यह फ़्लैट बहुत छोटा है.",
+          "changed": "सीधा वाक्य"
+        },
+        {
+          "display": "In America they say apartment.",
+          "cue": "अमेरिका में लोग apartment कहते हैं.",
+          "changed": "सिर्फ़ अमेरिकी शब्द"
+        },
+        {
+          "display": "My flat is in the city.",
+          "cue": "मेरा फ़्लैट शहर में है.",
+          "changed": "अपनी बात"
+        }
+      ],
+      "mistake": {
+        "display": "A flat in Britain is a apartment in America.",
+        "why": "apartment स्वर की आवाज़ से शुरू होता है, इसलिए उसके आगे a नहीं an आता है."
+      },
+      "usage": "जब घर के बारे में बात हो और सुनने वाला अमेरिकी या ब्रिटिश हो.",
+      "register": "neutral",
+      "mnemonic": "flat ब्रिटेन में रहता है, apartment अमेरिका में — घर वही, नाम अलग."
+    },
+    {
+      "id": "L5-M3-S03",
+      "display": "My grandmother's generation says film, and my generation says movie.",
+      "cue": "मेरी दादी की पीढ़ी film कहती है, और मेरी पीढ़ी movie कहती है.",
+      "literal": "मेरी दादी की पीढ़ी कहती film, और मेरी पीढ़ी कहती movie.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "generation",
+            "cue": "पीढ़ी",
+            "tag": "free",
+            "forms": ["generation", "generations"],
+            "note": "एक ही समय के लोग. एकवचन है, इसलिए इसके साथ says आता है, say नहीं."
+          },
+          {
+            "display": "movie",
+            "cue": "फ़िल्म (अमेरिकी और नया शब्द)",
+            "tag": "free",
+            "forms": ["movie", "movies"],
+            "note": "अमेरिका का और नई पीढ़ी का शब्द. film (L1-M5) ब्रिटेन, भारत और बड़ी उम्र वालों का है."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "पीढ़ी का फ़र्क़ ग़लती नहीं है. दादी का film पुराना है, ग़लत नहीं; movie नया है, ज़्यादा सही नहीं.",
+      "sound": "movie का पहला हिस्सा लंबा है — मू-वी.",
+      "variations": [
+        {
+          "display": "My generation says movie.",
+          "cue": "मेरी पीढ़ी movie कहती है.",
+          "changed": "सिर्फ़ नई पीढ़ी"
+        },
+        {
+          "display": "My grandmother says film.",
+          "cue": "मेरी दादी film कहती हैं.",
+          "changed": "सिर्फ़ पुरानी पीढ़ी"
+        },
+        {
+          "display": "In America they say movie.",
+          "cue": "अमेरिका में लोग movie कहते हैं.",
+          "changed": "जगह का फ़र्क़"
+        }
+      ],
+      "mistake": {
+        "display": "My grandmother's generation say film.",
+        "why": "generation एकवचन है, इसलिए क्रिया says आएगी — लोग कई हों तब भी."
+      },
+      "usage": "जब किसी शब्द के पुराने और नए रूप की बात हो — घर में या दोस्तों के बीच.",
+      "register": "neutral",
+      "mnemonic": "एक ही चीज़, दो पीढ़ियाँ, दो शब्द."
+    },
+    {
+      "id": "L5-M3-S04",
+      "display": "That word is slang. My grandmother never says it.",
+      "cue": "वह शब्द slang है. मेरी दादी उसे कभी नहीं कहतीं.",
+      "literal": "वह शब्द है slang. मेरी दादी कभी नहीं कहती उसे.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "slang",
+            "cue": "बोलचाल का ग़ैर-रस्मी शब्द",
+            "tag": "free",
+            "forms": ["slang"],
+            "note": "दोस्तों की बोली का नया और हल्का शब्द. गिनती वाला शब्द नहीं है, इसलिए इसके आगे a नहीं आता."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "slang को गाली मत समझिए. यह सिर्फ़ ग़ैर-रस्मी शब्द है; गाली बिलकुल अलग चीज़ है.",
+      "sound": "slang में sl एक साथ बोला जाता है — स्लैंग्, 'सलैंग' नहीं.",
+      "variations": [
+        {
+          "display": "That word is very informal.",
+          "cue": "वह शब्द बहुत ग़ैर-रस्मी है.",
+          "changed": "दूसरा नाम"
+        },
+        {
+          "display": "My grandmother never says that word.",
+          "cue": "मेरी दादी वह शब्द कभी नहीं कहतीं.",
+          "changed": "पूरा शब्द"
+        },
+        {
+          "display": "This word is slang in Britain.",
+          "cue": "यह शब्द ब्रिटेन में slang है.",
+          "changed": "जगह जोड़ी"
+        }
+      ],
+      "mistake": {
+        "display": "That word is a slang.",
+        "why": "slang के आगे a नहीं आता; यह गिना नहीं जाता. एक शब्द के लिए a slang word कहिए."
+      },
+      "usage": "जब बताना हो कि कोई शब्द दोस्तों में चलता है पर दफ़्तर में नहीं.",
+      "register": "informal",
+      "mnemonic": "slang नया है, इसलिए दादी के मुँह में नहीं बैठता."
+    },
+    {
+      "id": "L5-M3-S05",
+      "display": "Have you ever been to Britain? I have never been there.",
+      "cue": "क्या आप कभी ब्रिटेन गए हैं? मैं वहाँ कभी नहीं गया.",
+      "literal": "क्या आपने कभी गया को ब्रिटेन? मैंने कभी नहीं गया वहाँ.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "have never",
+            "cue": "कभी नहीं … है",
+            "tag": "delta",
+            "forms": ["have never"],
+            "note": "have you ever का उलटा जोड़ा. दोनों शब्द एक साथ रहते हैं और बीच में कुछ नहीं आता."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "been to का अर्थ है जाकर लौट आना. gone to कहने से अर्थ बनता है कि वह अभी वहीं है.",
+      "sound": "यहाँ been छोटा बोला जाता है — बिन्, 'बीन्' नहीं.",
+      "variations": [
+        {
+          "display": "Have you ever been to America?",
+          "cue": "क्या आप कभी अमेरिका गए हैं?",
+          "changed": "दूसरी जगह"
+        },
+        {
+          "display": "I have never been to Britain.",
+          "cue": "मैं ब्रिटेन कभी नहीं गया.",
+          "changed": "सिर्फ़ ना वाला वाक्य"
+        },
+        {
+          "display": "Have you ever been there?",
+          "cue": "क्या आप कभी वहाँ गए हैं?",
+          "changed": "जगह की जगह there"
+        }
+      ],
+      "mistake": {
+        "display": "Have you ever been to Britain in 2019?",
+        "why": "in 2019 बीता हुआ समय है. समय बताते ही Did you go to Britain in 2019? कहिए."
+      },
+      "usage": "अनुभव पूछने के लिए — नई मुलाक़ात, सफ़र की बात, दफ़्तर की हल्की बातचीत.",
+      "register": "neutral",
+      "mnemonic": "समय बताया, तो ever गया."
+    },
+    {
+      "id": "L5-M3-S06",
+      "display": "The British spelling is colour. The American spelling is color.",
+      "cue": "ब्रिटिश हिज्जा colour है. अमेरिकी हिज्जा color है.",
+      "literal": "वह ब्रिटिश हिज्जा है colour. वह अमेरिकी हिज्जा है color.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "spelling",
+            "cue": "हिज्जे, वर्तनी",
+            "tag": "free",
+            "forms": ["spelling", "spellings"],
+            "note": "शब्द के अक्षर किस क्रम में लिखे जाएँ. यह उच्चारण से अलग चीज़ है."
+          },
+          {
+            "display": "colour",
+            "cue": "रंग (ब्रिटिश हिज्जा)",
+            "tag": "free",
+            "forms": ["colour", "colours"],
+            "note": "ब्रिटेन और भारत का हिज्जा, u के साथ. अमेरिका में यही शब्द color है."
+          },
+          {
+            "display": "color",
+            "cue": "रंग (अमेरिकी हिज्जा)",
+            "tag": "free",
+            "forms": ["color", "colors"],
+            "note": "अमेरिकी हिज्जा, बिना u के. बोलने में दोनों में कोई फ़र्क़ नहीं है."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "दोनों में से कोई हिज्जा ग़लत नहीं है. एक ही चिट्ठी में colour और color मिला देना ही ग़लती है.",
+      "sound": "दोनों हिज्जे एक ही तरह बोले जाते हैं — कल़र्; u सुनाई नहीं देता.",
+      "variations": [
+        {
+          "display": "The British spelling is realise.",
+          "cue": "ब्रिटिश हिज्जा realise है.",
+          "changed": "दूसरा शब्द"
+        },
+        {
+          "display": "In America they say color.",
+          "cue": "अमेरिका में लोग color कहते हैं.",
+          "changed": "जगह वाला ढाँचा"
+        },
+        {
+          "display": "This spelling is British.",
+          "cue": "यह हिज्जा ब्रिटिश है.",
+          "changed": "छोटा रूप"
+        }
+      ],
+      "mistake": {
+        "display": "The British spelling is color.",
+        "why": "u वाला हिज्जा ब्रिटिश है और बिना u वाला अमेरिकी; यहाँ दोनों उलट गए."
+      },
+      "usage": "लिखते समय, जब तय करना हो कि कौन-सा हिज्जा चुनें.",
+      "register": "neutral",
+      "mnemonic": "u ब्रिटेन में रहता है और अमेरिका नहीं जाता."
+    },
+    {
+      "id": "L5-M3-S07",
+      "display": "The same word is realise in Britain and realize in America.",
+      "cue": "वही शब्द ब्रिटेन में realise है और अमेरिका में realize.",
+      "literal": "वही शब्द है realise में ब्रिटेन और realize में अमेरिका.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "realize",
+            "cue": "समझ में आना (अमेरिकी हिज्जा)",
+            "tag": "free",
+            "forms": ["realize", "realise"],
+            "note": "realise (L4-M10) का अमेरिकी हिज्जा, z के साथ. अर्थ वही है, सिर्फ़ एक अक्षर बदलता है."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "-ise और -ize का यह जोड़ा बहुत से शब्दों में चलता है, पर हर s को z मत कर दीजिए — this और these में कुछ नहीं बदलता.",
+      "sound": "दोनों हिज्जों में आख़िरी आवाज़ z ही है — रिअलाइज़्.",
+      "variations": [
+        {
+          "display": "The same word is colour in Britain and color in America.",
+          "cue": "वही शब्द ब्रिटेन में colour है और अमेरिका में color.",
+          "changed": "दूसरा जोड़ा"
+        },
+        {
+          "display": "In America they say realize.",
+          "cue": "अमेरिका में लोग realize कहते हैं.",
+          "changed": "सिर्फ़ अमेरिकी रूप"
+        },
+        {
+          "display": "The same word is lift in Britain and elevator in America.",
+          "cue": "वही चीज़ ब्रिटेन में lift है और अमेरिका में elevator.",
+          "changed": "हिज्जे का नहीं, शब्द का जोड़ा"
+        }
+      ],
+      "mistake": {
+        "display": "The same word is realize in Britain and realise in America.",
+        "why": "z वाला हिज्जा अमेरिकी है और s वाला ब्रिटिश; यहाँ दोनों देश उलट गए."
+      },
+      "usage": "जब एक ही शब्द के दो हिज्जे दिखें और तय करना हो कि कौन कहाँ का है.",
+      "register": "neutral",
+      "mnemonic": "z अमेरिका का अक्षर है."
+    },
+    {
+      "id": "L5-M3-S08",
+      "display": "That sounds very formal. This word is more informal.",
+      "cue": "वह बहुत रस्मी लगता है. यह शब्द ज़्यादा ग़ैर-रस्मी है.",
+      "literal": "वह लगता बहुत रस्मी. यह शब्द है ज़्यादा ग़ैर-रस्मी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "formal",
+            "cue": "रस्मी, औपचारिक",
+            "tag": "free",
+            "forms": ["formal"],
+            "note": "दफ़्तर, चिट्ठी और समारोह की भाषा. sounds वाली पंक्ति L2-M6 की है और यहाँ भी सही है."
+          },
+          {
+            "display": "informal",
+            "cue": "ग़ैर-रस्मी, बोलचाल का",
+            "tag": "free",
+            "forms": ["informal"],
+            "note": "दोस्तों और घर की भाषा. formal के आगे in- लगाकर बना है."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "हिंदी आप, तुम और तू से रस्म का निशान लगाती है. अंग्रेज़ी में एक ही you है, इसलिए निशान शब्दों के चुनाव पर आता है.",
+      "sound": "formal में ज़ोर पहले हिस्से पर और informal में दूसरे पर है — फ़ॉर्-मल्, इन्-फ़ॉर्-मल्.",
+      "variations": [
+        {
+          "display": "That sounds formal.",
+          "cue": "वह रस्मी लगता है.",
+          "changed": "बिना very"
+        },
+        {
+          "display": "This word is very informal.",
+          "cue": "यह शब्द बहुत ग़ैर-रस्मी है.",
+          "changed": "दूसरा शब्द"
+        },
+        {
+          "display": "That sounds more formal.",
+          "cue": "वह ज़्यादा रस्मी लगता है.",
+          "changed": "तुलना"
+        }
+      ],
+      "mistake": {
+        "display": "That sounds very formal word.",
+        "why": "sounds के बाद सीधे विशेषण आता है. शब्द जोड़ना हो तो That word sounds very formal कहिए."
+      },
+      "usage": "जब किसी शब्द या वाक्य के लहजे पर टिप्पणी करनी हो.",
+      "register": "neutral",
+      "mnemonic": "in- लगते ही रस्म उतर जाती है."
+    },
+    {
+      "id": "L5-M3-S09",
+      "display": "Indian English is local English, and it is not wrong.",
+      "cue": "भारतीय अंग्रेज़ी स्थानीय अंग्रेज़ी है, और वह ग़लत नहीं है.",
+      "literal": "भारतीय अंग्रेज़ी है स्थानीय अंग्रेज़ी, और वह है नहीं ग़लत.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Indian",
+            "cue": "भारतीय",
+            "tag": "free",
+            "forms": ["Indian", "Indians"],
+            "note": "India (L1-M1) का विशेषण. Indian English अपने शब्दों और अपने नियमों वाली पूरी अंग्रेज़ी है."
+          },
+          {
+            "display": "local",
+            "cue": "स्थानीय, यहीं का",
+            "tag": "free",
+            "forms": ["local"],
+            "note": "किसी एक जगह का. स्थानीय शब्द बाहर वालों को अनजान लग सकता है, ग़लत नहीं होता."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "भारत के बाहर कुछ शब्द अलग ज़रूर सुनाई देते हैं, पर अलग होना और ग़लत होना एक बात नहीं है.",
+      "sound": "Indian में ज़ोर पहले हिस्से पर है — इन्-डिअन्.",
+      "variations": [
+        {
+          "display": "Indian English is not wrong.",
+          "cue": "भारतीय अंग्रेज़ी ग़लत नहीं है.",
+          "changed": "छोटा रूप"
+        },
+        {
+          "display": "This word is local.",
+          "cue": "यह शब्द स्थानीय है.",
+          "changed": "एक शब्द की बात"
+        },
+        {
+          "display": "British English is local English.",
+          "cue": "ब्रिटिश अंग्रेज़ी भी स्थानीय अंग्रेज़ी है.",
+          "changed": "दूसरी अंग्रेज़ी"
+        }
+      ],
+      "mistake": {
+        "display": "Indian English is a wrong English.",
+        "why": "English के आगे a नहीं आता, और यहाँ बात सही-ग़लत की है ही नहीं — जगह की है."
+      },
+      "usage": "जब कोई कहे कि आपकी अंग्रेज़ी 'ठीक' नहीं है — तब का सीधा जवाब.",
+      "register": "neutral",
+      "mnemonic": "हर अंग्रेज़ी कहीं-न-कहीं की है."
+    },
+    {
+      "id": "L5-M3-S10",
+      "display": "Do not mix the two spellings. That sounds wrong to an outsider.",
+      "cue": "दोनों हिज्जे मत मिलाइए. बाहर वाले को वह ग़लत लगता है.",
+      "literal": "मत मिलाइए वे दो हिज्जे. वह लगता ग़लत को एक बाहर वाला.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "outsider",
+            "cue": "बाहर वाला, अजनबी",
+            "tag": "free",
+            "forms": ["outsider", "outsiders"],
+            "note": "जो उस जगह का नहीं है. बाहर वाले का निशान दो रूप मिला देना बनता है, कोई एक रूप चुनना नहीं."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "बाहर वाला होने का निशान 'ग़लत' रूप चुनना नहीं है — निशान दो रूपों को आपस में मिला देना है.",
+      "sound": "outsider में ज़ोर पहले हिस्से पर है — आउट्-साइ-डर्.",
+      "variations": [
+        {
+          "display": "Do not mix the two spellings.",
+          "cue": "दोनों हिज्जे मत मिलाइए.",
+          "changed": "सिर्फ़ नियम"
+        },
+        {
+          "display": "That sounds wrong to an American.",
+          "cue": "अमेरिकी को वह ग़लत लगता है.",
+          "changed": "किसे ग़लत लगता है"
+        },
+        {
+          "display": "Do not mix British and American spellings.",
+          "cue": "ब्रिटिश और अमेरिकी हिज्जे मत मिलाइए.",
+          "changed": "नाम लेकर"
+        }
+      ],
+      "mistake": {
+        "display": "Do not mix the two spelling.",
+        "why": "two के बाद बहुवचन आता है, इसलिए spellings लिखिए."
+      },
+      "usage": "लिखते समय, ख़ासकर चिट्ठी, फ़ॉर्म या दफ़्तरी काग़ज़ में.",
+      "register": "neutral",
+      "mnemonic": "एक रूप चुनिए और उसी पर टिके रहिए."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L5-M3-C01", "display": "Have you ever heard that word?", "cue": "क्या आपने कभी वह शब्द सुना है?" },
+    { "id": "L5-M3-C02", "display": "I have never heard the word elevator.", "cue": "मैंने elevator शब्द कभी नहीं सुना." },
+    { "id": "L5-M3-C03", "display": "In Britain they say lift.", "cue": "ब्रिटेन में लोग lift कहते हैं." },
+    { "id": "L5-M3-C04", "display": "Have you ever been to America?", "cue": "क्या आप कभी अमेरिका गए हैं?" },
+    { "id": "L5-M3-C05", "display": "I have never been there.", "cue": "मैं वहाँ कभी नहीं गया." },
+    { "id": "L5-M3-C06", "display": "My grandmother's generation says film.", "cue": "मेरी दादी की पीढ़ी film कहती है." },
+    { "id": "L5-M3-C07", "display": "That word is slang.", "cue": "वह शब्द slang है." },
+    { "id": "L5-M3-C08", "display": "The British spelling is colour.", "cue": "ब्रिटिश हिज्जा colour है." },
+    { "id": "L5-M3-C09", "display": "The American spelling is color.", "cue": "अमेरिकी हिज्जा color है." },
+    { "id": "L5-M3-C10", "display": "That sounds very formal.", "cue": "वह बहुत रस्मी लगता है." },
+    { "id": "L5-M3-C11", "display": "Indian English is not wrong.", "cue": "भारतीय अंग्रेज़ी ग़लत नहीं है." },
+    { "id": "L5-M3-C12", "display": "Do not mix the two spellings.", "cue": "दोनों हिज्जे मत मिलाइए." }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

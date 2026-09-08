@@ -1,0 +1,701 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M4",
+  "title": "Formal occasions",
+  "job": "Toasts, speeches, condolences, ceremonies",
+  "prerequisites": [
+    "L5-M1",
+    "L5-M2",
+    "L5-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 6,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "present_simple",
+      "imperative",
+      "modal_would"
+    ],
+    "allowedPatterns": [
+      "On behalf of + <group> + , + <clause> + .",
+      "I would like to say + a few words + .",
+      "Please join me in + <verb>-ing + <object> + .",
+      "I'm so sorry for your loss + .",
+      "We are here today to + <verb> + <object> + ."
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "समारोह की अंग्रेज़ी का ढाँचा तीन हिस्सों का है और तीनों जमे हुए हैं. शुरुआत: On behalf of the family · I would like to say a few words · We are here today to … . बीच का हिस्सा: I और my की जगह we और our, पूरे नाम-वाक्य, और छोटे रूप (I'm, we're) नहीं. अंत: Please join me in … · In memory of … · Thank you all for coming."
+    },
+    {
+      "tag": "delta",
+      "text": "उलटी लगने वाली बात, और यही इस पाठ का दिल है: समारोह की अंग्रेज़ी छोटी और सादी होती है. पूरा toast दस-दस शब्दों के चार वाक्य है; शोक का संदेश दो वाक्य. क्रिया भी सादी चुनी जाती है — thank, न कि say thanks. हिंदी में लंबाई और सजावट ही रस्म का निशान है; अंग्रेज़ी में वही लंबाई सीखने वाले का निशान बन जाती है."
+    },
+    {
+      "tag": "interference",
+      "text": "हिंदी की रस्मी भाषा संस्कृतनिष्ठ शब्दों और लंबे, संतुलित वाक्यों की तरफ़ जाती है, इसलिए सीखने वाला लातीनी अंग्रेज़ी और लंबे वाक्य उठा लाता है — It is my privilege to avail this opportunity to convey my heartiest felicitations. यह ठीक वही दफ़्तरी रूप है जिसे L4-M7 ने चिह्नित किया था. असली शादी में कहा जाता है: I have known her for ten years. She is the kindest person I know."
+    },
+    {
+      "tag": "interference",
+      "text": "अंग्रेज़ी में शोक का संदेश जमा हुआ और छोटा होता है. I'm so sorry for your loss कहिए और रुक जाइए — बीमारी, अस्पताल, आख़िरी दिनों या ईश्वर की मरज़ी का ज़िक्र नहीं आता. हिंदी बोलने वाला पूरा हाल सुनाता है; अंग्रेज़ी बोलने वाला वहीं रुक जाता है. यही एक जगह छोटा रूप I'm भी चलता है, क्योंकि यह पूरा वाक्य ही जमा हुआ है."
+    },
+    {
+      "tag": "free",
+      "text": "दो शब्द जो इस पाठ में दिखाए नहीं जाते. दफ़्तरी shall — Applicants shall submit two copies — सूचना-पट्ट और नियम की भाषा है; इस कोर्स में shall की पंक्ति L2-M6 की है, जहाँ वह Shall we go? वाला सुझाव है. आशीर्वाद वाला may — May you both be very happy — भी वैसा ही है; may की पंक्ति L4-M7 की इजाज़त वाली है. दोनों को पढ़कर पहचानिए, यहाँ लिखिए नहीं."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M4-S01",
+      "display": "I would like to say a few words about my teacher.",
+      "cue": "मैं अपने शिक्षक के बारे में कुछ शब्द कहना चाहूँगा.",
+      "literal": "मैं चाहूँगा को कहना कुछ शब्द के बारे में मेरा शिक्षक.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "a few words",
+            "cue": "कुछ शब्द",
+            "tag": "free",
+            "forms": [
+              "a few words"
+            ],
+            "note": "भाषण की जमी हुई शुरुआत. इसका अर्थ सचमुच 'थोड़े शब्द' है — यह वादा है कि बात छोटी रहेगी."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "यहाँ I'd like मत कहिए. समारोह में छोटा रूप नहीं चलता, इसलिए पूरा I would like आता है.",
+      "sound": "would का l चुप है — वुड्, और उसके बाद like जुड़कर बोला जाता है.",
+      "variations": [
+        {
+          "display": "I would like to say a few words.",
+          "cue": "मैं कुछ शब्द कहना चाहूँगा.",
+          "changed": "सिर्फ़ शुरुआत"
+        },
+        {
+          "display": "We would like to say a few words.",
+          "cue": "हम कुछ शब्द कहना चाहेंगे.",
+          "changed": "सबकी ओर से"
+        },
+        {
+          "display": "I would like to say a few words about my friend.",
+          "cue": "मैं अपने दोस्त के बारे में कुछ शब्द कहना चाहूँगा.",
+          "changed": "किसके बारे में"
+        }
+      ],
+      "mistake": {
+        "display": "I would like to say few words about my teacher.",
+        "why": "यह जमा हुआ वाक्यांश a few words है. a हटाते ही अर्थ बदल जाता है — few words का मतलब बनता है कि शब्द कम ही हैं."
+      },
+      "usage": "शादी, विदाई या शोक-सभा में खड़े होकर बोलना शुरू करते समय.",
+      "register": "formal",
+      "mnemonic": "a few words — यह वादा है कि बात छोटी रहेगी."
+    },
+    {
+      "id": "L5-M4-S02",
+      "display": "We are here today to celebrate a wedding.",
+      "cue": "हम आज एक शादी मनाने के लिए यहाँ हैं.",
+      "literal": "हम हैं यहाँ आज को मनाना एक शादी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wedding",
+            "cue": "शादी का समारोह",
+            "tag": "free",
+            "forms": [
+              "wedding",
+              "weddings"
+            ],
+            "note": "शादी का दिन और समारोह. marriage उस रिश्ते का नाम है जो उसके बाद चलता है."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "We are here today to … के बाद सादा क्रिया आती है — celebrate, remember, thank. इसके बाद -ing मत लगाइए.",
+      "sound": "wedding में d दोहरा नहीं बोला जाता — वे-डिंग्.",
+      "variations": [
+        {
+          "display": "We are here today to celebrate a new school.",
+          "cue": "हम आज एक नए स्कूल का जश्न मनाने यहाँ हैं.",
+          "changed": "दूसरा मौक़ा"
+        },
+        {
+          "display": "We are here to celebrate a wedding.",
+          "cue": "हम एक शादी मनाने के लिए यहाँ हैं.",
+          "changed": "बिना today"
+        },
+        {
+          "display": "This wedding is very small.",
+          "cue": "यह शादी बहुत छोटी है.",
+          "changed": "सीधा वाक्य"
+        }
+      ],
+      "mistake": {
+        "display": "We are here today for celebrating a wedding.",
+        "why": "इस ढाँचे में to + सादी क्रिया आती है. for celebrating रस्मी नहीं, भारी और अटपटा लगता है."
+      },
+      "usage": "समारोह की शुरुआत में, जब बताना हो कि सब क्यों जमा हुए हैं.",
+      "register": "formal",
+      "mnemonic": "We are here today to — फिर एक सादी क्रिया, और बात ख़त्म."
+    },
+    {
+      "id": "L5-M4-S03",
+      "display": "Please join me in a toast. Raise a glass to the couple.",
+      "cue": "आइए, सब मिलकर एक toast करें. जोड़े के नाम पर गिलास उठाइए.",
+      "literal": "कृपया जुड़िए मुझसे में एक toast. उठाइए एक गिलास को उस जोड़े.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "please join me",
+            "cue": "आइए, मेरे साथ जुड़िए",
+            "tag": "free",
+            "forms": [
+              "please join me"
+            ],
+            "note": "toast की जमी हुई पंक्ति, तीनों शब्द एक साथ. इसके बाद in आता है और फिर -ing वाली क्रिया या सीधा नाम."
+          },
+          {
+            "display": "toast",
+            "cue": "किसी के नाम पर गिलास उठाना",
+            "tag": "free",
+            "forms": [
+              "toast",
+              "toasts"
+            ],
+            "note": "समारोह में गिलास उठाकर कही गई छोटी बात. glass (L2-M5) वाली पंक्ति यहाँ भी सही है."
+          },
+          {
+            "display": "raise",
+            "cue": "उठाना",
+            "tag": "free",
+            "forms": [
+              "raise",
+              "raising"
+            ],
+            "note": "गिलास उठाना. raising वाला रूप भी उतना ही आम है — Please join me in raising a glass."
+          },
+          {
+            "display": "couple",
+            "cue": "जोड़ा, दो लोग",
+            "tag": "free",
+            "forms": [
+              "couple",
+              "couples"
+            ],
+            "note": "दो लोग, ख़ासकर पति-पत्नी. शादी में the happy couple ही सबसे आम पंक्ति है."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "toast की बात छोटी रखिए. अंग्रेज़ी में toast चार वाक्यों का होता है, चार मिनट का नहीं.",
+      "sound": "toast एक ही हिस्से में बोला जाता है — टोस्ट्, 'टो-अस्ट' नहीं.",
+      "variations": [
+        {
+          "display": "Please join me in raising a glass.",
+          "cue": "आइए, सब मिलकर गिलास उठाएँ.",
+          "changed": "-ing वाली क्रिया"
+        },
+        {
+          "display": "Raise a glass to the happy couple.",
+          "cue": "ख़ुशनसीब जोड़े के नाम पर गिलास उठाइए.",
+          "changed": "सिर्फ़ आदेश वाला हिस्सा"
+        },
+        {
+          "display": "Please join me in a toast to my friend.",
+          "cue": "आइए, मेरे दोस्त के नाम पर सब मिलकर toast करें.",
+          "changed": "किसके नाम पर"
+        }
+      ],
+      "mistake": {
+        "display": "Please join me for a toast. Raise a glass to the couple.",
+        "why": "यह पंक्ति join me in के साथ जमी हुई है. for लगाने से वह न्योता लगता है, toast नहीं."
+      },
+      "usage": "शादी या विदाई में, गिलास उठाने से ठीक पहले.",
+      "register": "formal",
+      "mnemonic": "join me in — और फिर जो सब मिलकर करना है."
+    },
+    {
+      "id": "L5-M4-S04",
+      "display": "I'm so sorry for your loss.",
+      "cue": "आपके दुख में मैं आपके साथ हूँ.",
+      "literal": "मैं हूँ इतना दुखी के लिए आपकी क्षति.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sorry for your loss",
+            "cue": "आपके किसी अपने के चले जाने का दुख",
+            "tag": "delta",
+            "forms": [
+              "sorry for your loss"
+            ],
+            "note": "चारों शब्द एक साथ, शोक की जमी हुई पंक्ति. यहाँ sorry (L1-M10) माफ़ी नहीं, दुख है."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "इसके बाद कुछ मत जोड़िए. बीमारी, अस्पताल या ईश्वर की मरज़ी का ज़िक्र अंग्रेज़ी में नहीं आता.",
+      "sound": "so पर ज़ोर पड़ता है और वह खिंचता है — आइम् सोऽ सॉरी.",
+      "variations": [
+        {
+          "display": "I am so sorry for your loss.",
+          "cue": "आपके दुख में मैं आपके साथ हूँ.",
+          "changed": "पूरा रूप"
+        },
+        {
+          "display": "I'm so sorry.",
+          "cue": "मुझे बहुत दुख है.",
+          "changed": "और छोटा"
+        },
+        {
+          "display": "We are so sorry for your loss.",
+          "cue": "आपके दुख में हम आपके साथ हैं.",
+          "changed": "परिवार की ओर से"
+        }
+      ],
+      "mistake": {
+        "display": "I'm so sorry for your loss. What was the illness?",
+        "why": "अंग्रेज़ी में यह पंक्ति के बाद रुक जाने का रिवाज़ है. बीमारी पूछना यहाँ अपनापन नहीं, दख़ल लगता है."
+      },
+      "usage": "किसी के घर में मृत्यु के बाद — मिलने पर, फ़ोन पर और संदेश में, तीनों में यही.",
+      "register": "formal",
+      "mnemonic": "एक पंक्ति, और चुप."
+    },
+    {
+      "id": "L5-M4-S05",
+      "display": "We are here today to remember a good teacher.",
+      "cue": "हम आज एक अच्छे शिक्षक को याद करने के लिए यहाँ हैं.",
+      "literal": "हम हैं यहाँ आज को याद करना एक अच्छा शिक्षक.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "remember",
+            "cue": "याद करना, याद रखना",
+            "tag": "free",
+            "forms": [
+              "remember",
+              "remembers"
+            ],
+            "note": "शोक-सभा की सादी क्रिया. समारोह में यही चुनी जाती है, कोई भारी शब्द नहीं."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "वही ढाँचा जो शादी में था, शोक-सभा में भी चलता है. सिर्फ़ क्रिया बदलती है — celebrate की जगह remember.",
+      "sound": "remember में ज़ोर बीच वाले हिस्से पर है — रि-मेम्-बर्.",
+      "variations": [
+        {
+          "display": "We are here today to remember my grandmother.",
+          "cue": "हम आज मेरी दादी को याद करने के लिए यहाँ हैं.",
+          "changed": "किसे याद"
+        },
+        {
+          "display": "We are here to remember a good friend.",
+          "cue": "हम एक अच्छे दोस्त को याद करने यहाँ हैं.",
+          "changed": "बिना today"
+        },
+        {
+          "display": "I remember my first teacher.",
+          "cue": "मुझे अपने पहले शिक्षक याद हैं.",
+          "changed": "अपनी बात"
+        }
+      ],
+      "mistake": {
+        "display": "We are here today to remembering a good teacher.",
+        "why": "to के बाद सादी क्रिया आती है, remembering नहीं."
+      },
+      "usage": "शोक-सभा या स्मृति-सभा की शुरुआत में.",
+      "register": "formal",
+      "mnemonic": "एक ही ढाँचा, दो मौक़े — celebrate या remember."
+    },
+    {
+      "id": "L5-M4-S06",
+      "display": "This speech is in memory of my grandmother.",
+      "cue": "यह भाषण मेरी दादी की याद में है.",
+      "literal": "यह भाषण है में याद की मेरी दादी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "speech",
+            "cue": "भाषण",
+            "tag": "free",
+            "forms": [
+              "speech",
+              "speeches"
+            ],
+            "note": "समारोह में खड़े होकर कही गई बात. उसे देने के लिए make a speech या give a speech कहा जाता है."
+          },
+          {
+            "display": "in memory of",
+            "cue": "की याद में",
+            "tag": "free",
+            "forms": [
+              "in memory of"
+            ],
+            "note": "तीनों शब्द एक साथ, और इसके बाद सीधे नाम आता है. यह उन्हीं के लिए है जो अब नहीं हैं."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "in memory of सिर्फ़ चले गए लोगों के लिए है. जो जीवित हैं उनके लिए in honour of आता है.",
+      "sound": "speech में ee लंबा है — स्पीच्.",
+      "variations": [
+        {
+          "display": "This speech is in memory of a good friend.",
+          "cue": "यह भाषण एक अच्छे दोस्त की याद में है.",
+          "changed": "किसकी याद"
+        },
+        {
+          "display": "We are here today in memory of my grandmother.",
+          "cue": "हम आज मेरी दादी की याद में यहाँ हैं.",
+          "changed": "दूसरा ढाँचा"
+        },
+        {
+          "display": "This is a very small speech.",
+          "cue": "यह बहुत छोटा भाषण है.",
+          "changed": "सीधा वाक्य"
+        }
+      ],
+      "mistake": {
+        "display": "This speech is in the memory of my grandmother.",
+        "why": "यह वाक्यांश जमा हुआ है और इसमें the नहीं आता — in memory of."
+      },
+      "usage": "शोक-सभा में बोलना शुरू करते समय, या स्मृति-पट्ट पर लिखते समय.",
+      "register": "formal",
+      "mnemonic": "in memory of — बीच में the नहीं."
+    },
+    {
+      "id": "L5-M4-S07",
+      "display": "Congratulations! Our best wishes for the wedding.",
+      "cue": "बधाई हो! शादी के लिए हमारी शुभकामनाएँ.",
+      "literal": "बधाइयाँ! हमारी सबसे अच्छी शुभकामनाएँ के लिए वह शादी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Congratulations",
+            "cue": "बधाई हो",
+            "tag": "free",
+            "forms": [
+              "congratulations"
+            ],
+            "note": "हमेशा बहुवचन में, s के साथ. अकेला congratulation अंग्रेज़ी में कहा ही नहीं जाता."
+          },
+          {
+            "display": "our",
+            "cue": "हमारा, हमारी",
+            "tag": "free",
+            "forms": [
+              "our"
+            ],
+            "note": "we का अपनापन वाला रूप. समारोह में my की जगह यही आता है, क्योंकि बात पूरे समूह की ओर से है."
+          },
+          {
+            "display": "wishes",
+            "cue": "शुभकामनाएँ",
+            "tag": "delta",
+            "forms": [
+              "wishes"
+            ],
+            "note": "बहुवचन में ही चलता है — best wishes. अकेला wish (L4-M3) पछतावे वाली पंक्ति है और यहाँ का अर्थ नहीं देता."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "यहाँ I wish you a happy life मत लिखिए. अकेला wish इस कोर्स में पछतावे का शब्द है; बधाई के लिए best wishes या congratulations आता है.",
+      "sound": "Congratulations में ज़ोर चौथे हिस्से पर है और t की आवाज़ 'च' जैसी है — कन्-ग्रै-चु-ले-शन्ज़्.",
+      "variations": [
+        {
+          "display": "Congratulations! Our best wishes to you.",
+          "cue": "बधाई हो! आपको हमारी शुभकामनाएँ.",
+          "changed": "किसे"
+        },
+        {
+          "display": "Our best wishes for the wedding.",
+          "cue": "शादी के लिए हमारी शुभकामनाएँ.",
+          "changed": "बिना बधाई"
+        },
+        {
+          "display": "Congratulations on your new work.",
+          "cue": "आपके नए काम पर बधाई.",
+          "changed": "दूसरा मौक़ा"
+        }
+      ],
+      "mistake": {
+        "display": "Congratulation! Our best wish for the wedding.",
+        "why": "दोनों शब्द बहुवचन में ही चलते हैं — congratulations और best wishes."
+      },
+      "usage": "शादी, नई नौकरी या किसी सफलता पर — कार्ड, संदेश और मिलने पर.",
+      "register": "formal",
+      "mnemonic": "बधाई और शुभकामना, दोनों हमेशा बहुवचन में."
+    },
+    {
+      "id": "L5-M4-S08",
+      "display": "My condolences to you and your family.",
+      "cue": "आपको और आपके परिवार को मेरी संवेदनाएँ.",
+      "literal": "मेरी संवेदनाएँ को आप और आपका परिवार.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "condolences",
+            "cue": "संवेदनाएँ, शोक-संदेश",
+            "tag": "free",
+            "forms": [
+              "condolences",
+              "condolence"
+            ],
+            "note": "बहुवचन में ही चलता है. यह लिखी हुई या थोड़ी रस्मी पंक्ति है; बोलकर कहने में sorry for your loss ज़्यादा आम है."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "यह पंक्ति भी अकेली रहती है. इसके बाद हाल-चाल या बीमारी की बात मत जोड़िए.",
+      "sound": "condolences में ज़ोर दूसरे हिस्से पर है — कन्-डो-लन्-सिज़्.",
+      "variations": [
+        {
+          "display": "My condolences to your family.",
+          "cue": "आपके परिवार को मेरी संवेदनाएँ.",
+          "changed": "सिर्फ़ परिवार"
+        },
+        {
+          "display": "Our condolences to you and your family.",
+          "cue": "आपको और आपके परिवार को हमारी संवेदनाएँ.",
+          "changed": "सबकी ओर से"
+        },
+        {
+          "display": "I'm so sorry for your loss.",
+          "cue": "आपके दुख में मैं आपके साथ हूँ.",
+          "changed": "बोलचाल वाली पंक्ति"
+        }
+      ],
+      "mistake": {
+        "display": "My condolence to you and your family.",
+        "why": "यह शब्द बहुवचन में ही चलता है — condolences."
+      },
+      "usage": "शोक-संदेश, कार्ड या चिट्ठी में; बोलकर कहने में इससे कम आम.",
+      "register": "formal",
+      "mnemonic": "लिखो तो condolences, बोलो तो sorry for your loss."
+    },
+    {
+      "id": "L5-M4-S09",
+      "display": "It is an honour to speak on this occasion.",
+      "cue": "इस मौक़े पर बोलना मेरे लिए सम्मान की बात है.",
+      "literal": "यह है एक सम्मान को बोलना पर यह मौक़ा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "honour",
+            "cue": "सम्मान, इज़्ज़त की बात",
+            "tag": "free",
+            "forms": [
+              "honour",
+              "honor"
+            ],
+            "note": "ब्रिटिश हिज्जा honour, अमेरिकी honor — colour और color वाला ही जोड़ा (L5-M3). h सुनाई नहीं देता."
+          },
+          {
+            "display": "occasion",
+            "cue": "मौक़ा, अवसर",
+            "tag": "free",
+            "forms": [
+              "occasion",
+              "occasions"
+            ],
+            "note": "कोई ख़ास दिन या समारोह. इसके साथ on आता है — on this occasion."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "honour का h चुप है, इसलिए उसके आगे a नहीं an आता है — an honour.",
+      "sound": "honour का पहला अक्षर सुनाई नहीं देता — ऑ-नर्.",
+      "variations": [
+        {
+          "display": "It is an honour to be here today.",
+          "cue": "आज यहाँ होना सम्मान की बात है.",
+          "changed": "दूसरी क्रिया"
+        },
+        {
+          "display": "It is an honour to speak here today.",
+          "cue": "आज यहाँ बोलना सम्मान की बात है.",
+          "changed": "जगह और दिन"
+        },
+        {
+          "display": "This is a very happy occasion.",
+          "cue": "यह बहुत ख़ुशी का मौक़ा है.",
+          "changed": "सीधा वाक्य"
+        }
+      ],
+      "mistake": {
+        "display": "It is a honour to speak on this occasion.",
+        "why": "honour का h बोला नहीं जाता, इसलिए an आता है — an honour."
+      },
+      "usage": "भाषण की पहली या दूसरी पंक्ति में, जब आपको बोलने के लिए बुलाया गया हो.",
+      "register": "formal",
+      "mnemonic": "h चुप है, इसलिए an honour."
+    },
+    {
+      "id": "L5-M4-S10",
+      "display": "On behalf of the family, thank you all. We are grateful.",
+      "cue": "परिवार की ओर से, आप सबका धन्यवाद. हम आभारी हैं.",
+      "literal": "पर ओर की उस परिवार, धन्यवाद आप सब. हम हैं आभारी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "on behalf of",
+            "cue": "की ओर से",
+            "tag": "free",
+            "forms": [
+              "on behalf of"
+            ],
+            "note": "तीनों शब्द एक साथ. इसके बाद वह समूह आता है जिसकी तरफ़ से आप बोल रहे हैं — the family, the office, the school."
+          },
+          {
+            "display": "thank you all",
+            "cue": "आप सबका धन्यवाद",
+            "tag": "free",
+            "forms": [
+              "thank you all"
+            ],
+            "note": "समारोह का जमा हुआ अंत, तीनों शब्द एक साथ. इसके बाद for + -ing वाली क्रिया आती है."
+          },
+          {
+            "display": "grateful",
+            "cue": "आभारी",
+            "tag": "free",
+            "forms": [
+              "grateful"
+            ],
+            "note": "thankful से थोड़ा भारी और रस्मी. समारोह में यही चुना जाता है."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "यहीं रुक जाइए. अंग्रेज़ी का भाषण धन्यवाद पर ख़त्म होता है, उसके बाद एक और पैराग्राफ़ नहीं आता.",
+      "sound": "behalf में ज़ोर दूसरे हिस्से पर है और उसका l चुप है — बि-हाफ़्.",
+      "variations": [
+        {
+          "display": "Thank you all for coming.",
+          "cue": "आप सबका आने के लिए धन्यवाद.",
+          "changed": "सिर्फ़ धन्यवाद"
+        },
+        {
+          "display": "On behalf of the school, thank you all for coming.",
+          "cue": "स्कूल की ओर से, आप सबका आने के लिए धन्यवाद.",
+          "changed": "दूसरा समूह"
+        },
+        {
+          "display": "We are very grateful to you.",
+          "cue": "हम आपके बहुत आभारी हैं.",
+          "changed": "किसके"
+        }
+      ],
+      "mistake": {
+        "display": "In behalf of the family, thank you all.",
+        "why": "यह पंक्ति on behalf of है. in behalf of अंग्रेज़ी में नहीं चलता."
+      },
+      "usage": "किसी भी समारोह के अंत में — शादी, विदाई और शोक-सभा, तीनों में यही.",
+      "register": "formal",
+      "mnemonic": "धन्यवाद कहिए और बैठ जाइए."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M4-C01",
+      "display": "On behalf of the family, thank you all for coming.",
+      "cue": "परिवार की ओर से, आप सबका आने के लिए धन्यवाद."
+    },
+    {
+      "id": "L5-M4-C02",
+      "display": "I would like to say a few words.",
+      "cue": "मैं कुछ शब्द कहना चाहूँगा."
+    },
+    {
+      "id": "L5-M4-C03",
+      "display": "We are here today to celebrate a wedding.",
+      "cue": "हम आज एक शादी मनाने के लिए यहाँ हैं."
+    },
+    {
+      "id": "L5-M4-C04",
+      "display": "Please join me in a toast. Raise a glass to the couple.",
+      "cue": "आइए, सब मिलकर एक toast करें. जोड़े के नाम पर गिलास उठाइए."
+    },
+    {
+      "id": "L5-M4-C05",
+      "display": "I'm so sorry for your loss.",
+      "cue": "आपके दुख में मैं आपके साथ हूँ."
+    },
+    {
+      "id": "L5-M4-C06",
+      "display": "We are here today to remember a good teacher.",
+      "cue": "हम आज एक अच्छे शिक्षक को याद करने यहाँ हैं."
+    },
+    {
+      "id": "L5-M4-C07",
+      "display": "This speech is in memory of my grandmother.",
+      "cue": "यह भाषण मेरी दादी की याद में है."
+    },
+    {
+      "id": "L5-M4-C08",
+      "display": "Congratulations! Our best wishes for the wedding.",
+      "cue": "बधाई हो! शादी के लिए हमारी शुभकामनाएँ."
+    },
+    {
+      "id": "L5-M4-C09",
+      "display": "My condolences to you and your family.",
+      "cue": "आपको और आपके परिवार को मेरी संवेदनाएँ."
+    },
+    {
+      "id": "L5-M4-C10",
+      "display": "It is an honour to speak on this occasion.",
+      "cue": "इस मौक़े पर बोलना सम्मान की बात है."
+    },
+    {
+      "id": "L5-M4-C11",
+      "display": "We are very grateful.",
+      "cue": "हम बहुत आभारी हैं."
+    },
+    {
+      "id": "L5-M4-C12",
+      "display": "Our condolences to your family.",
+      "cue": "आपके परिवार को हमारी संवेदनाएँ."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

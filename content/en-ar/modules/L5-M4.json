@@ -1,0 +1,689 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M4",
+  "title": "Formal occasions",
+  "job": "Toasts, speeches, condolences, ceremonies",
+  "prerequisites": ["L5-M3"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": ["simple_present", "simple_past"],
+    "allowedPatterns": [
+      "<formula> + / + <the obligatory reply>",
+      "raḥimahu allāh",
+      "alf mabrūk + ʿalā + al- + N",
+      "sayyidātī wa sādatī + , + <opening clause>",
+      "ashkurukum + ʿalā + al- + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE OPTATIVE: a past-shaped verb used as a wish. raḥimahu allāh, bārakallāh fīk, aʿẓama allāh ajrakum and shakara allāh saʿyakum are all L1-M5's perfect doing a performative job. No new shape is being taught — the morphology is owned and only the JOB is new. This is not a fourth tense."
+    },
+    {
+      "tag": "free",
+      "text": "allāh. The course has written in shāʾ allāh since L1-M6 without ever buying the word, because that formula indexed whole; this module buys it. In every formula here it is a fixed part of the string. These are social formulae used by speakers of every background in the region, and what this course teaches is the formula, not a faith."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH SHOWS SINCERITY BY ORIGINALITY; ARABIC SHOWS IT BY SAYING THE CORRECT FORMULA. An improvised Arabic condolence does not read as heartfelt — it reads as not knowing what to say. The memorised string is the sincere one."
+    },
+    {
+      "tag": "interference",
+      "text": "ARABIC FORMULAE COME IN PAIRS. English congratulations have no obligatory reply, so a learner takes the first half and stops; the silence where the answer belongs is the actual error. Learn both halves as one item, never as two."
+    },
+    {
+      "tag": "delta",
+      "text": "The plural of politeness L4-M7 opened comes home here: ashkurukum, ajrakum, saʿyakum, tafaḍḍalū. At a formal moment the -kum is addressed to one person and to everything behind them — a family, a company, a house — and the singular narrows it in a way that is heard."
+    },
+    {
+      "tag": "free",
+      "text": "sayyidātī wa sādatī is the fixed opening of an address, ladies first, and it is never reordered. yā sayyidātī is M2's vocative at its formal end."
+    },
+    {
+      "tag": "free",
+      "text": "alf mabrūk is L3-M8's alf over L3-M9's mabrūk — a thousand congratulations — and it is stored whole. Everyday mabrūk stays L3-M9's word for a haircut or a new phone; alf mabrūk is what an occasion takes."
+    },
+    {
+      "tag": "delta",
+      "text": "at-taʿāzī, at-tahāni, an-nakhb and al-khiṭāb name what is being done rather than what is being felt. Saying the noun performs the act: at-taʿāzī on its own IS the condolence, the way English I'm sorry for your loss is."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M4-S01",
+      "display": "al-marḥūm kāna ṣadīqī, raḥimahu allāh",
+      "script": "المرحوم كان صديقي، رحمه الله",
+      "cue": "The late man was my friend, may God have mercy on him.",
+      "literal": "the-late was my-friend, had-mercy-on-him God",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-marḥūm",
+            "script": "المرحوم",
+            "cue": "the deceased, the late",
+            "tag": "free",
+            "forms": ["al-marḥūm", "marḥūm"],
+            "note": "The one who has been shown mercy — the standard way to refer to somebody who has died, and it goes before the name, not after."
+          },
+          {
+            "display": "raḥimahu",
+            "script": "رحمه",
+            "cue": "may He have mercy on him",
+            "tag": "delta",
+            "forms": ["raḥimahu", "raḥima", "raḥimahā"],
+            "note": "A perfect verb — had mercy — used as a wish. -hu is him, -hā is her. The past shape is the whole trick, and it is L1-M5's."
+          },
+          {
+            "display": "allāh",
+            "script": "الله",
+            "cue": "God",
+            "tag": "free",
+            "forms": ["allāh"],
+            "note": "The word the course has been writing inside in shāʾ allāh since L1-M6 without ever buying it alone. Here it is the subject of the wish."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English can name a dead person plainly. Arabic does not: raḥimahu allāh after the name is not decoration, and leaving it off is heard as pointed rather than neutral.",
+      "sound": "ra-ḤI-ma-hu al-LĀH: the ḥ is the breathy h from the throat, and allāh takes a dark, heavy l — the one Arabic keeps for this word.",
+      "variations": [
+        {
+          "display": "kāna ṣadīqī, raḥimahu allāh",
+          "script": "كان صديقي، رحمه الله",
+          "cue": "He was my friend, may God have mercy on him.",
+          "changed": "the title dropped — among people who already know who is meant"
+        },
+        {
+          "display": "raḥimahā allāh",
+          "script": "رحمها الله",
+          "cue": "May God have mercy on her.",
+          "changed": "the person mourned is a woman; the -hā on the verb is the entire change"
+        }
+      ],
+      "mistake": {
+        "display": "al-marḥūm kāna ṣadīqī",
+        "script": "المرحوم كان صديقي",
+        "why": "Grammatically perfect and socially wrong. The name of a dead person is not left bare; the formula goes with it every time, including the fourth time in one conversation."
+      },
+      "usage": "Any time you mention somebody who has died, in any company, however long ago it was.",
+      "register": "neutral",
+      "mnemonic": "The dead are never named bare."
+    },
+    {
+      "id": "L5-M4-S02",
+      "display": "at-taʿāzī, aʿẓama allāh ajrakum",
+      "script": "التعازي، أعظم الله أجركم",
+      "cue": "My condolences — may God make your reward great.",
+      "literal": "the-condolences, made-great God your-reward",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "at-taʿāzī",
+            "script": "التعازي",
+            "cue": "condolences",
+            "tag": "free",
+            "forms": ["at-taʿāzī", "taʿāzī", "ʿazāʾ"],
+            "note": "The plural noun that IS the act of offering condolence. ʿazāʾ, from the same root, is the mourning gathering itself."
+          },
+          {
+            "display": "aʿẓama",
+            "script": "أعظم",
+            "cue": "may He make great",
+            "tag": "delta",
+            "forms": ["aʿẓama"],
+            "note": "Another past-shaped wish: made great. The formula says what the family gains, never what they have lost."
+          },
+          {
+            "display": "ajrakum",
+            "script": "أجركم",
+            "cue": "your reward",
+            "tag": "free",
+            "forms": ["ajrakum", "ajr", "al-ajr"],
+            "note": "ajr is a reward earned by bearing something. The -kum is L4-M7's plural of politeness: it addresses the whole family through one person."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "English condolence describes the loss — I am so sorry, it must be terrible. This formula does the opposite and names a gain. Translating your English sentence produces something true, fluent and audibly foreign.",
+      "sound": "aʿ-ẒA-ma: the ʿayn squeezed low, then the heavy ẓ with the tongue flat. aj-RA-kum ends on the plural -kum.",
+      "variations": [
+        {
+          "display": "aʿẓama allāh ajrakum",
+          "script": "أعظم الله أجركم",
+          "cue": "May God make your reward great.",
+          "changed": "the formula alone, which is what is actually said at the door"
+        },
+        {
+          "display": "at-taʿāzī, yā ṣadīqī",
+          "script": "التعازي، يا صديقي",
+          "cue": "My condolences, my friend.",
+          "changed": "the vocative instead of the wish — warmer, and for somebody you know well"
+        }
+      ],
+      "mistake": {
+        "display": "aʿẓama allāh ajrak",
+        "script": "أعظم الله أجرك",
+        "why": "The singular -ak addresses the one person in front of you. Condolence is offered to a family, so the plural -kum is not politeness dressing — it is who the sentence is aimed at."
+      },
+      "usage": "At the door of a house of mourning, in the first minute, before anything else at all.",
+      "register": "formal",
+      "mnemonic": "Reward, not loss — the formula names what is gained."
+    },
+    {
+      "id": "L5-M4-S03",
+      "display": "al-baqāʾ li-llāh / shakara allāh saʿyakum",
+      "script": "البقاء لله / شكر الله سعيكم",
+      "cue": "Permanence belongs to God. — May God reward your effort.",
+      "literal": "the-permanence to-God / thanked God your-effort",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-baqāʾ li-llāh",
+            "script": "البقاء لله",
+            "cue": "permanence belongs to God",
+            "tag": "free",
+            "forms": ["al-baqāʾ li-llāh"],
+            "note": "Stored whole — nobody assembles it. baqāʾ is lasting, and the sentence says that only God does, which is the consolation."
+          },
+          {
+            "display": "shakara",
+            "script": "شكر",
+            "cue": "may He thank, may He reward",
+            "tag": "delta",
+            "forms": ["shakara"],
+            "note": "The third past-shaped wish in this module, and from the root of L1-M2's shukran. Here it is the mourner answering, not thanking."
+          },
+          {
+            "display": "saʿyakum",
+            "script": "سعيكم",
+            "cue": "your effort, your coming",
+            "tag": "free",
+            "forms": ["saʿyakum"],
+            "note": "saʿy is effort, and here it means the trouble you took to come. The -kum is again the polite plural."
+          }
+        ],
+        "rules": [3, 0]
+      },
+      "trap": "The slash is the whole lesson. An English speaker learns the first half and stops, because English congratulation and condolence have no obligatory answer. Here the second half is owed, and the silence is the error a learner actually makes.",
+      "sound": "al-ba-QĀʾ ends on a hamza, a clean catch in the throat with no vowel after it. saʿ-YA-kum has the ʿayn closing the first syllable.",
+      "variations": [
+        {
+          "display": "al-baqāʾ li-llāh",
+          "script": "البقاء لله",
+          "cue": "Permanence belongs to God.",
+          "changed": "the visitor's half alone — what you say, before you hear the answer"
+        },
+        {
+          "display": "aʿẓama allāh ajrakum / shakara allāh saʿyakum",
+          "script": "أعظم الله أجركم / شكر الله سعيكم",
+          "cue": "May God make your reward great. — May God reward your effort.",
+          "changed": "the other condolence pair, answered by the same reply"
+        }
+      ],
+      "mistake": {
+        "display": "shukran",
+        "script": "شكرًا",
+        "why": "Thank you is not the answer to a condolence. The pair has a fixed second half, and substituting the everyday thanks of L1-M2 leaves the exchange visibly unfinished."
+      },
+      "usage": "The whole exchange at a wake, in both directions — you will hear it and you will have to answer it.",
+      "register": "formal",
+      "mnemonic": "Every formula here has a second half; the slash is where it goes."
+    },
+    {
+      "id": "L5-M4-S04",
+      "display": "alf mabrūk ʿalā az-zawāj / bārakallāh fīk",
+      "script": "ألف مبروك على الزواج / بارك الله فيك",
+      "cue": "A thousand congratulations on the marriage. — May God bless you.",
+      "literal": "thousand blessed on the-marriage / blessed-God in-you",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "alf mabrūk",
+            "script": "ألف مبروك",
+            "cue": "a thousand congratulations",
+            "tag": "free",
+            "forms": ["alf mabrūk"],
+            "note": "L3-M8's alf over L3-M9's mabrūk, stored as one thing. Both words were already yours; the occasion is what is new."
+          },
+          {
+            "display": "az-zawāj",
+            "script": "الزواج",
+            "cue": "the marriage",
+            "tag": "free",
+            "forms": ["az-zawāj", "zawāj"],
+            "note": "Marriage as the institution or the event. The party itself is al-ʿurs, and congratulations go on the zawāj."
+          },
+          {
+            "display": "bārakallāh fīk",
+            "script": "بارك الله فيك",
+            "cue": "may God bless you",
+            "tag": "delta",
+            "forms": ["bārakallāh fīk"],
+            "note": "The obligatory answer to alf mabrūk. Another past-shaped wish — blessed God in you — and it is stored whole, never built."
+          }
+        ],
+        "rules": [6, 3]
+      },
+      "trap": "English congratulations end with thank you or with nothing. Here the reply is fixed, and a learner who nods and smiles has left the exchange half done in a way everybody present notices.",
+      "sound": "ALF mab-RŪK, two heavy beats. bā-ra-kal-LĀH FĪK runs together as one word in speech, which is why it is written as one here.",
+      "variations": [
+        {
+          "display": "alf mabrūk ʿalā an-najāḥ / bārakallāh fīk",
+          "script": "ألف مبروك على النجاح / بارك الله فيك",
+          "cue": "A thousand congratulations on the success. — May God bless you.",
+          "changed": "the occasion — an exam, a job, a promotion, with the same reply"
+        },
+        {
+          "display": "alf mabrūk / bārakallāh fīk",
+          "script": "ألف مبروك / بارك الله فيك",
+          "cue": "A thousand congratulations. — May God bless you.",
+          "changed": "the occasion left unnamed, when everyone in the room already knows it"
+        }
+      ],
+      "mistake": {
+        "display": "mabrūk ʿalā az-zawāj",
+        "script": "مبروك على الزواج",
+        "why": "Bare mabrūk is L3-M9's everyday word — a haircut, a new phone, a parking space. A wedding takes alf mabrūk, and the plain one reads as barely bothering."
+      },
+      "usage": "The receiving line at a wedding, and the first thing said on the phone when the news breaks.",
+      "register": "neutral",
+      "mnemonic": "A thousand for an occasion; one for a haircut."
+    },
+    {
+      "id": "L5-M4-S05",
+      "display": "at-tahāni ʿalā an-najāḥ, wa anta muwaffaq",
+      "script": "التهاني على النجاح، وأنت موفق",
+      "cue": "Congratulations on the success, and you are blessed with it.",
+      "literal": "the-congratulations on the-success, and you granted-success",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "at-tahāni",
+            "script": "التهاني",
+            "cue": "congratulations",
+            "tag": "free",
+            "forms": ["at-tahāni", "tahāni"],
+            "note": "The formal plural noun, the written twin of alf mabrūk. It belongs on a card, in a speech, and in a message to somebody senior."
+          },
+          {
+            "display": "an-najāḥ",
+            "script": "النجاح",
+            "cue": "the success",
+            "tag": "free",
+            "forms": ["an-najāḥ", "najāḥ"],
+            "note": "Success, above all in an exam. It is the default thing congratulated in the region, and it takes the article."
+          },
+          {
+            "display": "muwaffaq",
+            "script": "موفق",
+            "cue": "granted success, doing well",
+            "tag": "free",
+            "forms": ["muwaffaq", "muwaffaqa"],
+            "note": "Someone success has been given to rather than someone who seized it. Feminine muwaffaqa. It is a compliment and a small blessing at once."
+          }
+        ],
+        "rules": [7, 6]
+      },
+      "trap": "English well done credits the person. muwaffaq credits what was granted to them, and a learner who reaches for the English framing sounds like they are grading a colleague rather than congratulating one.",
+      "sound": "at-ta-HĀ-ni takes the long ā in the middle. mu-WAF-faq doubles the f, and holding it is what makes the word.",
+      "variations": [
+        {
+          "display": "at-tahāni ʿalā az-zawāj",
+          "script": "التهاني على الزواج",
+          "cue": "Congratulations on the marriage.",
+          "changed": "the occasion — the formal register works for a wedding too"
+        },
+        {
+          "display": "alf mabrūk ʿalā an-najāḥ",
+          "script": "ألف مبروك على النجاح",
+          "cue": "A thousand congratulations on the success.",
+          "changed": "the register — the spoken formula for the same news"
+        }
+      ],
+      "mistake": {
+        "display": "tahāni ʿalā najāḥ",
+        "script": "تهاني على نجاح",
+        "why": "Both nouns take the article: at-tahāni ʿalā an-najāḥ. Without it the sentence reads as some congratulations on some success, which is how nobody has ever congratulated anybody."
+      },
+      "usage": "Written — a message, a card, a line in a speech. Spoken, alf mabrūk is what comes out.",
+      "register": "formal",
+      "mnemonic": "at-tahāni is written; alf mabrūk is said."
+    },
+    {
+      "id": "L5-M4-S06",
+      "display": "sayyidātī wa sādatī, ashkurukum ʿalā hādhā ash-sharaf",
+      "script": "سيداتي وسادتي، أشكركم على هذا الشرف",
+      "cue": "Ladies and gentlemen, I thank you for this honour.",
+      "literal": "my-ladies and my-gentlemen, I-thank-you for this the-honour",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sayyidātī wa sādatī",
+            "script": "سيداتي وسادتي",
+            "cue": "ladies and gentlemen",
+            "tag": "free",
+            "forms": ["sayyidātī wa sādatī", "sayyidātī", "sādatī"],
+            "note": "The fixed opening of any address, ladies first and never reordered. The -ī on each is my, which is what makes it warm rather than stiff."
+          },
+          {
+            "display": "ashkurukum",
+            "script": "أشكركم",
+            "cue": "I thank you (plural)",
+            "tag": "delta",
+            "forms": ["ashkurukum"],
+            "note": "The verb, not L1-M2's shukran. From a podium the bare thanks is too small: the sentence has to have you in it, and -kum is that you."
+          },
+          {
+            "display": "ash-sharaf",
+            "script": "الشرف",
+            "cue": "the honour",
+            "tag": "free",
+            "forms": ["ash-sharaf", "sharaf"],
+            "note": "Honour in the sense of a privilege granted to you. hādhā ash-sharaf — this honour — is the standard thing to thank an audience for."
+          }
+        ],
+        "rules": [5, 4]
+      },
+      "trap": "English speakers open a speech by thanking a named host. Arabic opens by addressing the room, and a talk that begins with a name instead of sayyidātī wa sādatī sounds as though it started halfway through.",
+      "sound": "say-yi-DĀ-tī wa SĀ-da-tī: the first doubles the y, the second does not, and that is the only thing separating them.",
+      "variations": [
+        {
+          "display": "sayyidātī wa sādatī, tafaḍḍalū",
+          "script": "سيداتي وسادتي، تفضلوا",
+          "cue": "Ladies and gentlemen, please go ahead.",
+          "changed": "L4-M7's invitation after the opening — the same plural politeness"
+        },
+        {
+          "display": "yā sayyidātī, ashkurukum",
+          "script": "يا سيداتي، أشكركم",
+          "cue": "Ladies, I thank you.",
+          "changed": "M2's vocative at its formal end, to a room of women"
+        }
+      ],
+      "mistake": {
+        "display": "sādatī wa sayyidātī",
+        "script": "سادتي وسيداتي",
+        "why": "The order is fixed and ladies come first. Reversed, it is not a variant — it is the sound of somebody who has translated the English phrase in their head."
+      },
+      "usage": "The first four words of any speech, from a wedding toast to a conference keynote.",
+      "register": "formal",
+      "mnemonic": "Ladies first, always, and never reordered."
+    },
+    {
+      "id": "L5-M4-S07",
+      "display": "khiṭāb al-ʿurs kāna jamīl",
+      "script": "خطاب العرس كان جميل",
+      "cue": "The wedding speech was lovely.",
+      "literal": "speech the-wedding was lovely",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "khiṭāb",
+            "script": "خطاب",
+            "cue": "speech, address",
+            "tag": "free",
+            "forms": ["khiṭāb", "al-khiṭāb"],
+            "note": "A formal speech given to an audience — not a chat and not a lecture. khiṭāb al-ʿurs is the wedding speech."
+          },
+          {
+            "display": "al-ʿurs",
+            "script": "العرس",
+            "cue": "the wedding, the wedding party",
+            "tag": "free",
+            "forms": ["al-ʿurs", "ʿurs"],
+            "note": "The celebration itself, as against az-zawāj, the marriage. You are congratulated on the zawāj and you dance at the ʿurs."
+          }
+        ],
+        "rules": [7, 6]
+      },
+      "trap": "Wedding speech in English is one compound noun. Arabic makes it a possessive chain — speech of the wedding — and the first word takes no article even though the phrase is definite.",
+      "sound": "khi-ṬĀB opens on the kh of Scottish loch and lands on the heavy ṭ. al-ʿURS begins with the ʿayn.",
+      "variations": [
+        {
+          "display": "kāna al-khiṭāb jamīl",
+          "script": "كان الخطاب جميل",
+          "cue": "The speech was lovely.",
+          "changed": "the verb first, and the occasion left out"
+        },
+        {
+          "display": "khiṭāb az-zawāj kāna jamīl",
+          "script": "خطاب الزواج كان جميل",
+          "cue": "The marriage speech was lovely.",
+          "changed": "the occasion named as the marriage rather than the party"
+        }
+      ],
+      "mistake": {
+        "display": "al-khiṭāb al-ʿurs kāna jamīl",
+        "script": "الخطاب العرس كان جميل",
+        "why": "In a possessive chain only the last word takes the article: khiṭāb al-ʿurs. Two articles is the commonest structural error in a formal sentence."
+      },
+      "usage": "Afterwards, to the person who gave it, or about it to somebody who missed it.",
+      "register": "neutral",
+      "mnemonic": "Speech of the wedding — one article, at the end."
+    },
+    {
+      "id": "L5-M4-S08",
+      "display": "sayyidātī wa sādatī, nakhb al-ʿurs",
+      "script": "سيداتي وسادتي، نخب العرس",
+      "cue": "Ladies and gentlemen, a toast to the wedding.",
+      "literal": "my-ladies and my-gentlemen, toast the-wedding",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nakhb",
+            "script": "نخب",
+            "cue": "a toast",
+            "tag": "free",
+            "forms": ["nakhb", "an-nakhb"],
+            "note": "The toast itself. It heads a possessive chain — nakhb al-ʿurs, the toast of the wedding — and no verb is needed anywhere near it."
+          }
+        ],
+        "rules": [5, 7]
+      },
+      "trap": "English builds a clause: I would like to propose a toast to. Arabic needs the noun and the thing toasted, and the English scaffolding around it makes the moment longer, not more formal.",
+      "sound": "NAKHB is one syllable that ends on kh then b with nothing between them — the hardest thing in this module to say at speed.",
+      "variations": [
+        {
+          "display": "nakhb al-ʿurs",
+          "script": "نخب العرس",
+          "cue": "A toast to the wedding.",
+          "changed": "the two words alone, glass already raised"
+        },
+        {
+          "display": "nakhb an-najāḥ",
+          "script": "نخب النجاح",
+          "cue": "A toast to success.",
+          "changed": "the occasion — a promotion or an exam rather than a wedding"
+        }
+      ],
+      "mistake": {
+        "display": "nakhb ʿurs",
+        "script": "نخب عرس",
+        "why": "The thing toasted is a particular wedding, so it takes the article: nakhb al-ʿurs. Without it you are toasting weddings in general."
+      },
+      "usage": "Standing, glass up, at the point in the evening when somebody has to say something.",
+      "register": "formal",
+      "mnemonic": "nakhb plus the thing, and nothing else."
+    },
+    {
+      "id": "L5-M4-S09",
+      "display": "al-ḥuzn kabīr fī hādhihi al-janāza",
+      "script": "الحزن كبير في هذه الجنازة",
+      "cue": "The grief is great at this funeral.",
+      "literal": "the-grief great in this the-funeral",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-ḥuzn",
+            "script": "الحزن",
+            "cue": "the grief, sadness",
+            "tag": "free",
+            "forms": ["al-ḥuzn", "ḥuzn"],
+            "note": "Grief as a thing that is present in a room, which is how Arabic tends to place it — not as something a person is."
+          },
+          {
+            "display": "al-janāza",
+            "script": "الجنازة",
+            "cue": "the funeral",
+            "tag": "free",
+            "forms": ["al-janāza", "janāza"],
+            "note": "The funeral itself, the procession included. The gathering afterwards, where at-taʿāzī are said, is the ʿazāʾ."
+          }
+        ],
+        "rules": [7, 2]
+      },
+      "trap": "English says the family are grieving and puts the feeling in the people. This sentence puts it in the occasion, which is why it can be said aloud in the room without being about anybody in particular.",
+      "sound": "al-ḤUZN has the breathy ḥ and then a consonant cluster. al-ja-NĀ-za takes the stress on the long ā.",
+      "variations": [
+        {
+          "display": "al-ḥuzn kabīr",
+          "script": "الحزن كبير",
+          "cue": "The grief is great.",
+          "changed": "the occasion left out, which is what you say quietly to one person"
+        },
+        {
+          "display": "al-janāza al-yawm",
+          "script": "الجنازة اليوم",
+          "cue": "The funeral is today.",
+          "changed": "the bare arrangement — the fact, with nothing said about it"
+        }
+      ],
+      "mistake": {
+        "display": "al-ḥuzn kabīra",
+        "script": "الحزن كبيرة",
+        "why": "ḥuzn is masculine, so the adjective is kabīr. The -a ending on the noun of the second half, al-janāza, is what pulls a learner into the wrong agreement."
+      },
+      "usage": "Said quietly to somebody standing beside you, never to the family themselves.",
+      "register": "neutral",
+      "mnemonic": "The grief is in the room, not in the person."
+    },
+    {
+      "id": "L5-M4-S10",
+      "display": "ashkurukum ʿalā al-ḥuḍūr, wa hādhā sharaf lī",
+      "script": "أشكركم على الحضور، وهذا شرف لي",
+      "cue": "I thank you for coming, and this is an honour for me.",
+      "literal": "I-thank-you for the-attendance, and this honour to-me",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-ḥuḍūr",
+            "script": "الحضور",
+            "cue": "the attendance, coming",
+            "tag": "free",
+            "forms": ["al-ḥuḍūr", "ḥuḍūr"],
+            "note": "The act of being present. It is what a host thanks people for, and it also names the audience itself."
+          }
+        ],
+        "rules": [4, 5]
+      },
+      "trap": "Thanks for coming is casual in English and can end an evening. Here it opens or closes something formal, and the second clause — this is an honour for me — is expected rather than gushing.",
+      "sound": "al-ḥu-ḌŪR: the ḥ from the throat, then the heavy ḍ, then a long ū. SHA-raf is light and quick after it.",
+      "variations": [
+        {
+          "display": "ashkurukum ʿalā hādhā ash-sharaf",
+          "script": "أشكركم على هذا الشرف",
+          "cue": "I thank you for this honour.",
+          "changed": "what is being thanked for — the invitation rather than the turnout"
+        },
+        {
+          "display": "ashkurukum, wa hādhā sharaf lī",
+          "script": "أشكركم، وهذا شرف لي",
+          "cue": "I thank you, and this is an honour for me.",
+          "changed": "the reason dropped, which is what you say when you are already over time"
+        }
+      ],
+      "mistake": {
+        "display": "shukran ʿalā al-ḥuḍūr",
+        "script": "شكرًا على الحضور",
+        "why": "shukran is L1-M2's quick thanks — right at a counter, too light from a podium. The occasion wants the verb, with you inside it: ashkurukum."
+      },
+      "usage": "The last sentence of a speech, or the first, and both times to the room rather than to the host.",
+      "register": "formal",
+      "mnemonic": "From a podium, thanks needs a verb and a you."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M4-C01",
+      "display": "al-marḥūm kāna ṣadīqī, raḥimahu allāh",
+      "script": "المرحوم كان صديقي، رحمه الله",
+      "cue": "The late man was my friend, may God have mercy on him."
+    },
+    {
+      "id": "L5-M4-C02",
+      "display": "at-taʿāzī, aʿẓama allāh ajrakum",
+      "script": "التعازي، أعظم الله أجركم",
+      "cue": "My condolences — may God make your reward great."
+    },
+    {
+      "id": "L5-M4-C03",
+      "display": "al-baqāʾ li-llāh",
+      "script": "البقاء لله",
+      "cue": "Permanence belongs to God."
+    },
+    {
+      "id": "L5-M4-C04",
+      "display": "shakara allāh saʿyakum",
+      "script": "شكر الله سعيكم",
+      "cue": "May God reward your effort."
+    },
+    {
+      "id": "L5-M4-C05",
+      "display": "alf mabrūk ʿalā az-zawāj",
+      "script": "ألف مبروك على الزواج",
+      "cue": "A thousand congratulations on the marriage."
+    },
+    {
+      "id": "L5-M4-C06",
+      "display": "bārakallāh fīk",
+      "script": "بارك الله فيك",
+      "cue": "May God bless you."
+    },
+    {
+      "id": "L5-M4-C07",
+      "display": "at-tahāni ʿalā an-najāḥ",
+      "script": "التهاني على النجاح",
+      "cue": "Congratulations on the success."
+    },
+    {
+      "id": "L5-M4-C08",
+      "display": "sayyidātī wa sādatī, ashkurukum",
+      "script": "سيداتي وسادتي، أشكركم",
+      "cue": "Ladies and gentlemen, I thank you."
+    },
+    {
+      "id": "L5-M4-C09",
+      "display": "khiṭāb al-ʿurs kāna jamīl",
+      "script": "خطاب العرس كان جميل",
+      "cue": "The wedding speech was lovely."
+    },
+    {
+      "id": "L5-M4-C10",
+      "display": "nakhb al-ʿurs",
+      "script": "نخب العرس",
+      "cue": "A toast to the wedding."
+    },
+    {
+      "id": "L5-M4-C11",
+      "display": "al-ḥuzn kabīr fī hādhihi al-janāza",
+      "script": "الحزن كبير في هذه الجنازة",
+      "cue": "The grief is great at this funeral."
+    },
+    {
+      "id": "L5-M4-C12",
+      "display": "ashkurukum ʿalā al-ḥuḍūr",
+      "script": "أشكركم على الحضور",
+      "cue": "I thank you for coming."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

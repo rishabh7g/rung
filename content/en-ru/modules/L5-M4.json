@@ -1,0 +1,689 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M4",
+  "title": "Formal occasions",
+  "job": "Toasts, speeches, condolences, ceremonies",
+  "prerequisites": [
+    "L5-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 15,
+    "allowedTenses": [
+      "simple_present_imperfective",
+      "simple_future_perfective",
+      "imperative",
+      "infinitive"
+    ],
+    "allowedPatterns": [
+      "Pozdravlyáyu vas s + <N-instrumental>",
+      "Zheláyu vam + <N-genitive>",
+      "Davayte výp'yem za + <N-accusative>",
+      "Primíte moí soboléznovaniya",
+      "Uvazháyemyy + <name> + , + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE CASE OF GOOD WISHES: three frames, three different cases, and not one new case among them. pozdravlyayu s takes the INSTRUMENTAL (s dnyom rozhdeniya, s prazdnikom). zhelayu takes the GENITIVE (schast'ya, zdorov'ya, uspekhov). The toast takes za plus the ACCUSATIVE (za vas, za druzhbu). Every one of those cases is already the learner's, so the whole spend of this module is nouns."
+    },
+    {
+      "tag": "delta",
+      "text": "The genitive after zhelayu is the PARTITIVE genitive L2-M3 opened for quantity. You wish somebody SOME happiness rather than the whole of it, and that is why the case is genitive and not accusative. It is one fact rather than a memorised frame, and it is the fact that makes the frame hold."
+    },
+    {
+      "tag": "interference",
+      "text": "English congratulates ON a thing and wishes a person a thing in the plain object case, so the interference here is exactly two case errors and they are this module's two mistake plates. pozdravlyayu vas na … is built straight out of English on. zhelayu vam schast'ye is the accusative built out of I wish you happiness. Neither is a near miss; both stop the frame working."
+    },
+    {
+      "tag": "free",
+      "text": "A Russian toast is a short SPEECH and not a word: there is no one-liner that does the job. The shape is shared with English, a reason first and then the raised glass, and davayte vyp'yem za is let us drink to word for word. Because these are set pieces said to a room or to a mourner, they run on vy throughout, with the same formal chip L3-M8 and L4-M7 use."
+    },
+    {
+      "tag": "free",
+      "text": "uvazhayemyy and prisutstvuyushchiye are participles, and this module takes them as a CLOSED LIST of frozen address forms and stops there. Forming a participle from a verb is taught nowhere in this product, and docs/107 records that as a known hole rather than passing it to a module that does not exist. The plural uvazhayemye belongs to L4-M7's announcements; this module opens only the singular and edits no L4 file."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M4-S01",
+      "display": "Pozdravlyáyu vas s dnyóm rozhdéniya!",
+      "script": "Поздравляю вас с днём рождения!",
+      "cue": "Happy birthday to you!",
+      "literal": "I-congratulate you with day of-birth!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pozdravlyáyu",
+            "script": "поздравляю",
+            "cue": "I congratulate",
+            "tag": "delta",
+            "forms": [
+              "pozdravlyáyu"
+            ],
+            "note": "I congratulate. It governs s plus the instrumental: you congratulate somebody WITH the occasion and never on it, and the s is not optional."
+          },
+          {
+            "display": "s dnyóm rozhdéniya",
+            "script": "с днём рождения",
+            "cue": "happy birthday",
+            "tag": "delta",
+            "forms": [
+              "s dnyóm rozhdéniya"
+            ],
+            "note": "Three words taken whole. Bare dnyom is L1-M4's in the daytime, so tapping the greeting must not land there, and den' rozhdeniya, the birthday itself, is L3-M9's."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "English congratulates ON something, so na is the reflex and it is wrong. The frame is s plus the instrumental, and that case has been the learner's since L3-M2.",
+      "sound": "pozdravlyáyu is five syllables with the stress on the fourth, paz-drav-LYA-yu. dnyóm is one syllable, dnyom, with a soft d.",
+      "variations": [
+        {
+          "display": "Pozdravlyáyu tebyá s dnyóm rozhdéniya!",
+          "script": "Поздравляю тебя с днём рождения!",
+          "cue": "Happy birthday!",
+          "changed": "tebyá for ty, which is what you say to a friend"
+        },
+        {
+          "display": "S dnyóm rozhdéniya!",
+          "script": "С днём рождения!",
+          "cue": "Happy birthday!",
+          "changed": "the verb dropped, which is the short form on a card"
+        }
+      ],
+      "mistake": {
+        "display": "Pozdravlyáyu vas na den' rozhdéniya!",
+        "script": "Поздравляю вас на день рождения!",
+        "why": "na built straight out of English congratulate on. The Russian frame is s plus the instrumental; na plus the accusative here says nothing at all."
+      },
+      "usage": "Said to the person whose birthday it is, at the moment the room turns to them.",
+      "register": "formal",
+      "mnemonic": "You congratulate somebody WITH the day, never ON it: s, not na."
+    },
+    {
+      "id": "L5-M4-S02",
+      "display": "Pozdravlyáyu vas s prázdnikom!",
+      "script": "Поздравляю вас с праздником!",
+      "cue": "Congratulations on the holiday!",
+      "literal": "I-congratulate you with holiday!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prázdnikom",
+            "script": "праздником",
+            "cue": "holiday (instrumental)",
+            "tag": "delta",
+            "forms": [
+              "prázdnikom"
+            ],
+            "note": "The holiday word in the instrumental, which is the case this greeting frame demands. Its dictionary form prazdnik is L3-M9's row; only the ending is new here."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "This is the all-purpose congratulation. When you do not know which holiday it is, or how to name it, s prazdnikom covers every one of them.",
+      "sound": "Three syllables with the stress on the first, PRAZ-nee-kam, and the d in the middle is silent.",
+      "variations": [
+        {
+          "display": "S prázdnikom!",
+          "script": "С праздником!",
+          "cue": "Happy holiday!",
+          "changed": "the verb dropped, which is how it is said in passing"
+        },
+        {
+          "display": "Pozdravlyáyu tebyá s prázdnikom!",
+          "script": "Поздравляю тебя с праздником!",
+          "cue": "Happy holiday!",
+          "changed": "the ty form, for a friend"
+        }
+      ],
+      "mistake": {
+        "display": "Pozdravlyáyu vas s prázdnik!",
+        "script": "Поздравляю вас с праздник!",
+        "why": "the dictionary form left standing after s. s takes the instrumental and nothing else, so the noun has to move to prazdnikom."
+      },
+      "usage": "Any public holiday, said to colleagues, neighbours or a shopkeeper.",
+      "register": "formal",
+      "mnemonic": "s prázdnikom is the greeting that never needs to know which holiday it is."
+    },
+    {
+      "id": "L5-M4-S03",
+      "display": "Zheláyu vam schást'ya i zdoróv'ya.",
+      "script": "Желаю вам счастья и здоровья.",
+      "cue": "I wish you happiness and health.",
+      "literal": "I-wish to-you of-happiness and of-health.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zheláyu",
+            "script": "желаю",
+            "cue": "I wish",
+            "tag": "delta",
+            "forms": [
+              "zheláyu"
+            ],
+            "note": "I wish. The person goes in the dative and the thing wished in the GENITIVE, because it is the partitive genitive of L2-M3: you wish somebody some of a thing, not all of it."
+          },
+          {
+            "display": "schást'ya",
+            "script": "счастья",
+            "cue": "happiness (genitive)",
+            "tag": "delta",
+            "forms": [
+              "schást'ya"
+            ],
+            "note": "Happiness in the genitive zhelayu demands. This row teaches only that case, because the frame is where the word lives and the frame never puts it anywhere else."
+          },
+          {
+            "display": "zdoróv'ya",
+            "script": "здоровья",
+            "cue": "health (genitive)",
+            "tag": "delta",
+            "forms": [
+              "zdoróv'ya"
+            ],
+            "note": "Health, in the same genitive. It is the second half of the standard pair: schast'ya i zdorov'ya travel together and are rarely wished apart."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "English wishes you happiness in the plain object case, so the accusative schast'ye is the reflex. Russian wants the genitive here and always.",
+      "sound": "zheláyu is three syllables, zhe-LA-yu. schást'ya is two with the stress on the first, SHCHAST-ya.",
+      "variations": [
+        {
+          "display": "Zheláyu vam zdoróv'ya.",
+          "script": "Желаю вам здоровья.",
+          "cue": "I wish you health.",
+          "changed": "one wish alone, which is what you say to somebody who has been ill"
+        },
+        {
+          "display": "Zheláyu tebé schást'ya.",
+          "script": "Желаю тебе счастья.",
+          "cue": "I wish you happiness.",
+          "changed": "the ty dative tebé"
+        }
+      ],
+      "mistake": {
+        "display": "Zheláyu vam schást'ye i zdoróv'ye.",
+        "script": "Желаю вам счастье и здоровье.",
+        "why": "the accusative built out of English I wish you happiness. zhelayu takes the genitive, so both nouns end in -ya and not in -ye."
+      },
+      "usage": "A toast, a card, or the closing line of a formal congratulation.",
+      "register": "formal",
+      "mnemonic": "zheláyu gives you SOME of it, and some is the genitive."
+    },
+    {
+      "id": "L5-M4-S04",
+      "display": "Zheláyu vam uspékhov v rabóte.",
+      "script": "Желаю вам успехов в работе.",
+      "cue": "I wish you success in your work.",
+      "literal": "I-wish to-you of-successes in work.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "uspékhov",
+            "script": "успехов",
+            "cue": "success (genitive plural)",
+            "tag": "delta",
+            "forms": [
+              "uspékhov"
+            ],
+            "note": "Successes, genitive plural. Russian wishes success in the PLURAL where English uses a mass noun: one success would be a strangely small thing to wish anybody."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Not a singular. uspekha would be one particular success; the greeting always wishes the plural, uspekhov, however the English is phrased.",
+      "sound": "Three syllables with the stress on the second, oo-SPYE-khaf, and the final v goes to an f.",
+      "variations": [
+        {
+          "display": "Zheláyu vam uspékhov!",
+          "script": "Желаю вам успехов!",
+          "cue": "I wish you success!",
+          "changed": "the field dropped, which is the all-purpose form"
+        },
+        {
+          "display": "Zheláyu tebé uspékhov v rabóte.",
+          "script": "Желаю тебе успехов в работе.",
+          "cue": "I wish you success at work.",
+          "changed": "the ty dative"
+        }
+      ],
+      "mistake": {
+        "display": "Zheláyu vam uspékh v rabóte.",
+        "script": "Желаю вам успех в работе.",
+        "why": "the nominative left standing. zhelayu takes the genitive, and this noun goes to the genitive plural uspekhov."
+      },
+      "usage": "A leaving card, a new job, an exam: said to somebody who is starting something.",
+      "register": "formal",
+      "mnemonic": "You wish successes in the plural, because one would be stingy."
+    },
+    {
+      "id": "L5-M4-S05",
+      "display": "Davayte výp'yem za drúzhbu!",
+      "script": "Давайте выпьем за дружбу!",
+      "cue": "Let's drink to friendship!",
+      "literal": "Let-us we-drink for friendship!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "výp'yem",
+            "script": "выпьем",
+            "cue": "let's drink",
+            "tag": "delta",
+            "forms": [
+              "výp'yem"
+            ],
+            "note": "Let us drink, the perfective we-form. It follows davayte and takes za plus the accusative: you drink FOR the thing the glass is honouring."
+          },
+          {
+            "display": "drúzhbu",
+            "script": "дружбу",
+            "cue": "friendship (accusative)",
+            "tag": "free",
+            "forms": [
+              "drúzhbu",
+              "drúzhba"
+            ],
+            "note": "Friendship, in the accusative za demands. It is the safest thing at any table to toast, because it praises the room without singling anybody out."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "The za here is not the za of paying or of being in favour of something. After a toast verb it names what the drink honours, and it takes the accusative.",
+      "sound": "davayte is da-VAY-tye; výp'yem is VY-p'yem, stressed on the first syllable, with a soft p.",
+      "variations": [
+        {
+          "display": "Davayte výp'yem za vas!",
+          "script": "Давайте выпьем за вас!",
+          "cue": "Let's drink to you!",
+          "changed": "the guest of honour named instead of an abstraction"
+        },
+        {
+          "display": "Davay výp'yem za drúzhbu!",
+          "script": "Давай выпьем за дружбу!",
+          "cue": "Let's drink to friendship!",
+          "changed": "the ty form davay, for two friends at a table"
+        }
+      ],
+      "mistake": {
+        "display": "Davayte výp'yem za drúzhba!",
+        "script": "Давайте выпьем за дружба!",
+        "why": "the nominative left standing after za. The toast preposition takes the accusative, so the noun goes to druzhbu."
+      },
+      "usage": "Raising a glass at a table, once the reason for it has been said.",
+      "register": "formal",
+      "mnemonic": "za takes the accusative: you drink FOR a thing, and the thing is the object."
+    },
+    {
+      "id": "L5-M4-S06",
+      "display": "Ya khochú skazát' tost za vas.",
+      "script": "Я хочу сказать тост за вас.",
+      "cue": "I'd like to make a toast to you.",
+      "literal": "I want to-say toast for you.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tost",
+            "script": "тост",
+            "cue": "toast (the speech)",
+            "tag": "free",
+            "forms": [
+              "tost"
+            ],
+            "note": "A toast: the short speech, not the bread. Russians SAY a toast rather than making one, skazat' tost, and a Russian toast is expected to run a few sentences."
+          },
+          {
+            "display": "za vas",
+            "script": "за вас",
+            "cue": "to you (in a toast)",
+            "tag": "delta",
+            "forms": [
+              "za vas"
+            ],
+            "note": "To you, two words taken whole. Bare za is L2-M1's and vas is L1-M2's; together they are the toast's target, and that is the shape a learner needs at a table."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "tost is one word an English speaker will hear as the bread. In this frame it is only ever the speech, and the length expected of it is a paragraph rather than a phrase.",
+      "sound": "One syllable, tost, with no acute: a monosyllable carries no stress mark anywhere in this course.",
+      "variations": [
+        {
+          "display": "Ya khochú skazát' tost za drúzhbu.",
+          "script": "Я хочу сказать тост за дружбу.",
+          "cue": "I'd like to make a toast to friendship.",
+          "changed": "an abstraction toasted instead of the room"
+        },
+        {
+          "display": "Davayte výp'yem za vas!",
+          "script": "Давайте выпьем за вас!",
+          "cue": "Let's drink to you!",
+          "changed": "the announcement replaced by the toast itself"
+        }
+      ],
+      "mistake": {
+        "display": "Ya khochú sdélat' tost za vas.",
+        "script": "Я хочу сделать тост за вас.",
+        "why": "sdelat' built out of English make a toast. Russian says a toast: skazat' tost, and no other verb will do."
+      },
+      "usage": "Standing up at a table before the toast itself, so that the room stops talking.",
+      "register": "formal",
+      "mnemonic": "You SAY a toast in Russian: skazát', never sdélat'."
+    },
+    {
+      "id": "L5-M4-S07",
+      "display": "Primíte moí soboléznovaniya.",
+      "script": "Примите мои соболезнования.",
+      "cue": "Please accept my condolences.",
+      "literal": "Accept my condolences.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "primíte",
+            "script": "примите",
+            "cue": "accept (vy imperative)",
+            "tag": "delta",
+            "forms": [
+              "primíte"
+            ],
+            "note": "Accept, the vy imperative. It is not a form of prostite, which L2-M1 taught for sorry: two different verbs that only look alike, and this one never apologises."
+          },
+          {
+            "display": "moí soboléznovaniya",
+            "script": "мои соболезнования",
+            "cue": "my condolences",
+            "tag": "delta",
+            "forms": [
+              "moí soboléznovaniya"
+            ],
+            "note": "My condolences, taken as one phrase. Bare moi is L2-M2's; the two words together are the fixed object of primite and are almost never said apart."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "It is not I'm sorry. Russian has no short condolence, and izvinite would be an apology for something you did, so using it here says you caused the death.",
+      "sound": "primíte is three syllables, pree-MEE-tye. soboléznovaniya is seven, sa-ba-LYEZ-na-va-nee-ya, with the stress on the third.",
+      "variations": [
+        {
+          "display": "Primíte, pozháluysta, moí soboléznovaniya.",
+          "script": "Примите, пожалуйста, мои соболезнования.",
+          "cue": "Please accept my condolences.",
+          "changed": "pozháluysta inserted, which softens an already formal line"
+        },
+        {
+          "display": "Moí soboléznovaniya.",
+          "script": "Мои соболезнования.",
+          "cue": "My condolences.",
+          "changed": "the verb dropped, which is what is said quietly at a door"
+        }
+      ],
+      "mistake": {
+        "display": "Izviníte menyá.",
+        "script": "Извините меня.",
+        "why": "an apology offered where a condolence was needed. izvinite says the speaker did something wrong; the condolence frame is primite moi soboleznovaniya and has no shorter form."
+      },
+      "usage": "Said once, quietly, to the closest family member, and not repeated.",
+      "register": "formal",
+      "mnemonic": "primíte hands something over; prostíte asks for something back."
+    },
+    {
+      "id": "L5-M4-S08",
+      "display": "Uvazháyemyy Iván, spasíbo vam za vsyó.",
+      "script": "Уважаемый Иван, спасибо вам за всё.",
+      "cue": "Dear Ivan, thank you for everything.",
+      "literal": "Respected Ivan, thanks to-you for all.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "uvazháyemyy",
+            "script": "уважаемый",
+            "cue": "dear (to one man)",
+            "tag": "delta",
+            "forms": [
+              "uvazháyemyy"
+            ],
+            "note": "Dear, to one man: a frozen participle used as an address form. The plural uvazhayemye is L4-M7's announcement row, and this row opens only the singular."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "It is not the dear of a friendly letter. uvazhayemyy opens a speech or a formal address, and said to a friend it would sound like a summons.",
+      "sound": "Five syllables with the stress on the third, oo-va-ZHA-ye-myy, and the ending is a long y.",
+      "variations": [
+        {
+          "display": "Uvazháyemyy Iván, ya khochú skazát' tost.",
+          "script": "Уважаемый Иван, я хочу сказать тост.",
+          "cue": "Dear Ivan, I'd like to make a toast.",
+          "changed": "the address opening a toast rather than a thank-you"
+        },
+        {
+          "display": "Uvazháyemyy Iván!",
+          "script": "Уважаемый Иван!",
+          "cue": "Dear Ivan!",
+          "changed": "the address alone, which is how a speech begins before its pause"
+        }
+      ],
+      "mistake": {
+        "display": "Uvazháyemye Iván, spasíbo vam za vsyó.",
+        "script": "Уважаемые Иван, спасибо вам за всё.",
+        "why": "the plural form on one man. uvazhayemye addresses a room, which is why L4-M7 owns it; one person takes uvazhayemyy."
+      },
+      "usage": "Opening a speech, a toast or a formal thank-you addressed to one man.",
+      "register": "formal",
+      "mnemonic": "One man, one extra y: uvazháyemyy."
+    },
+    {
+      "id": "L5-M4-S09",
+      "display": "Dorogíye druz'yá i prisútstvuyushchiye, spasíbo vam.",
+      "script": "Дорогие друзья и присутствующие, спасибо вам.",
+      "cue": "Dear friends and everyone here, thank you.",
+      "literal": "Dear friends and being-present, thanks to-you.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prisútstvuyushchiye",
+            "script": "присутствующие",
+            "cue": "those present",
+            "tag": "delta",
+            "forms": [
+              "prisútstvuyushchiye"
+            ],
+            "note": "Those present: a participle frozen into a noun and used only to address a room. Learn it as a word, because this course teaches no way to build a participle from a verb."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "It is not a word you can build from a verb you already know. It sits on a closed list with uvazhayemyy, and there are no other members of that list in this product.",
+      "sound": "Six syllables with the stress on the second, pree-SOOT-stvu-yu-shchee-ye. The tstv cluster is said as it looks, with no vowel inside it.",
+      "variations": [
+        {
+          "display": "Dorogíye druz'yá, spasíbo vam.",
+          "script": "Дорогие друзья, спасибо вам.",
+          "cue": "Dear friends, thank you.",
+          "changed": "the participle dropped, which is the warmer opening"
+        },
+        {
+          "display": "Uvazháyemyy Iván i prisútstvuyushchiye!",
+          "script": "Уважаемый Иван и присутствующие!",
+          "cue": "Dear Ivan and everyone here!",
+          "changed": "one named guest put in front of the room"
+        }
+      ],
+      "mistake": {
+        "display": "Dorogíye druz'yá i prisútstvuyushchiy, spasíbo vam.",
+        "script": "Дорогие друзья и присутствующий, спасибо вам.",
+        "why": "the singular on a room. The address form exists only in the plural: nobody is a prisutstvuyushchiy on their own."
+      },
+      "usage": "Opening a speech to a room, after naming the host or instead of naming one.",
+      "register": "formal",
+      "mnemonic": "It is only ever plural: a room, never a person."
+    },
+    {
+      "id": "L5-M4-S10",
+      "display": "Závtra svád'ba, i ya dólzhen skazát' rech'.",
+      "script": "Завтра свадьба, и я должен сказать речь.",
+      "cue": "Tomorrow is the wedding, and I have to make a speech.",
+      "literal": "Tomorrow wedding, and I must to-say speech.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "svád'ba",
+            "script": "свадьба",
+            "cue": "wedding",
+            "tag": "free",
+            "forms": [
+              "svád'ba"
+            ],
+            "note": "A wedding. A guest's whole job at one is a sentence: a congratulation to the couple and, if asked, a short toast. Nothing in this module goes further than that."
+          },
+          {
+            "display": "rech'",
+            "script": "речь",
+            "cue": "speech",
+            "tag": "free",
+            "forms": [
+              "rech'"
+            ],
+            "note": "A speech, feminine and a monosyllable, so it carries no acute. Like a toast it is SAID rather than made: skazat' rech'."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "A rech' is longer than a tost. A toast is a few sentences at a table; a rech' is the set piece at a wedding or a funeral, and a guest is rarely asked for one.",
+      "sound": "One syllable, ryech, with a soft r and a soft final ch, and no stress mark, because a monosyllable never takes one here.",
+      "variations": [
+        {
+          "display": "Ya dólzhen skazát' rech'.",
+          "script": "Я должен сказать речь.",
+          "cue": "I have to make a speech.",
+          "changed": "the occasion dropped"
+        },
+        {
+          "display": "Závtra svád'ba.",
+          "script": "Завтра свадьба.",
+          "cue": "Tomorrow is the wedding.",
+          "changed": "the announcement on its own"
+        }
+      ],
+      "mistake": {
+        "display": "Závtra svád'ba, i ya dólzhen sdélat' rech'.",
+        "script": "Завтра свадьба, и я должен сделать речь.",
+        "why": "sdelat' again, out of English make a speech. Both a rech' and a tost are said in Russian: skazat'."
+      },
+      "usage": "Telling somebody why you are nervous, the day before.",
+      "register": "neutral",
+      "mnemonic": "Both a tost and a rech' are SAID, never made."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M4-C01",
+      "display": "Pozdravlyáyu vas s prázdnikom!",
+      "script": "Поздравляю вас с праздником!",
+      "cue": "Congratulations on the holiday!"
+    },
+    {
+      "id": "L5-M4-C02",
+      "display": "S dnyóm rozhdéniya!",
+      "script": "С днём рождения!",
+      "cue": "Happy birthday!"
+    },
+    {
+      "id": "L5-M4-C03",
+      "display": "Zheláyu vam schást'ya.",
+      "script": "Желаю вам счастья.",
+      "cue": "I wish you happiness."
+    },
+    {
+      "id": "L5-M4-C04",
+      "display": "Zheláyu vam zdoróv'ya i uspékhov.",
+      "script": "Желаю вам здоровья и успехов.",
+      "cue": "I wish you health and success."
+    },
+    {
+      "id": "L5-M4-C05",
+      "display": "Davayte výp'yem za drúzhbu!",
+      "script": "Давайте выпьем за дружбу!",
+      "cue": "Let's drink to friendship!"
+    },
+    {
+      "id": "L5-M4-C06",
+      "display": "Ya khochú skazát' tost.",
+      "script": "Я хочу сказать тост.",
+      "cue": "I'd like to make a toast."
+    },
+    {
+      "id": "L5-M4-C07",
+      "display": "Primíte moí soboléznovaniya.",
+      "script": "Примите мои соболезнования.",
+      "cue": "Please accept my condolences."
+    },
+    {
+      "id": "L5-M4-C08",
+      "display": "Uvazháyemyy Iván!",
+      "script": "Уважаемый Иван!",
+      "cue": "Dear Ivan!"
+    },
+    {
+      "id": "L5-M4-C09",
+      "display": "Dorogíye druz'yá i prisútstvuyushchiye!",
+      "script": "Дорогие друзья и присутствующие!",
+      "cue": "Dear friends and everyone here!"
+    },
+    {
+      "id": "L5-M4-C10",
+      "display": "Závtra svád'ba.",
+      "script": "Завтра свадьба.",
+      "cue": "Tomorrow is the wedding."
+    },
+    {
+      "id": "L5-M4-C11",
+      "display": "Ya dólzhen skazát' rech'.",
+      "script": "Я должен сказать речь.",
+      "cue": "I have to make a speech."
+    },
+    {
+      "id": "L5-M4-C12",
+      "display": "Davayte výp'yem za vas!",
+      "script": "Давайте выпьем за вас!",
+      "cue": "Let's drink to you!"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

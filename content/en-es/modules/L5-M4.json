@@ -1,0 +1,644 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M4",
+  "title": "Formal occasions",
+  "job": "Toasts, speeches, condolences, ceremonies",
+  "prerequisites": [
+    "L5-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 8,
+    "maxWordsPerSentence": 15,
+    "allowedTenses": [
+      "present",
+      "present subjunctive",
+      "imperfect",
+      "imperfect subjunctive"
+    ],
+    "allowedPatterns": [
+      "Que + <subjunctive> (Que aproveche · Que tengas suerte · Que en paz descanse)",
+      "Brindemos por + <N>",
+      "Quisiera + V-inf + , en nombre de + <N>",
+      "Le acompaño en el sentimiento",
+      "Gracias a todos por + V-inf"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Que plus a subjunctive, with NO main clause in front of it, is a wish. Que aproveche, Que tenga suerte, Que le vaya bien, Que descanse, Que en paz descanse. This is not the que that joins two clauses and not the que that means which — it is all that is left of a main verb somebody stopped saying."
+    },
+    {
+      "tag": "free",
+      "text": "The missing half is deseo que, I wish that. Naming it is the fastest way to stop hearing these as fragments: every one of them is the tail of a sentence whose head fell off centuries ago, and the subjunctive is there because a wish is not a fact."
+    },
+    {
+      "tag": "delta",
+      "text": "The first-person-plural subjunctive is an invitation: brindemos, empecemos, recordemos — let us toast, let us begin, let us remember. Same mood, no que in front, and it is how every toast and every speech in this module opens."
+    },
+    {
+      "tag": "delta",
+      "text": "L4-M3 bought ojala, which is this same job done with a borrowed Arabic word in front of it. Que plus subjunctive is the ordinary everyday shape and it is far more frequent; ojala is for the wish you doubt, que for the wish you offer."
+    },
+    {
+      "tag": "interference",
+      "text": "English condolence is short and personal — I am so sorry. Spanish is a fixed, longer formula: le acompano en el sentimiento, mi mas sentido pesame. Improvising something personal at a Spanish funeral sounds exactly like somebody who does not know the words, and the formula is the kindness."
+    },
+    {
+      "tag": "interference",
+      "text": "English may plus subjunctive survives only in frozen phrases, so Que tenga suerte reads to a learner as a sentence with its front cut off. It IS one. Saying so, and naming the missing deseo que, is the whole of learning this pattern."
+    },
+    {
+      "tag": "free",
+      "text": "Enhorabuena and felicidades do not divide the ground the way English congratulations does. Enhorabuena is for an achievement somebody earned — a job, an exam, a wedding; felicidades is for an occasion that arrived — a birthday, a saint's day, the new year. A wedding takes either."
+    },
+    {
+      "tag": "free",
+      "text": "Register: usted and the third person throughout, and this module has NO informal item at all (docs/53 §1). These are the four moments where saying nothing is a failure and improvising is worse, so the formula is safer than the sentence you would have built. Que en paz descanse is said by people of every conviction and carries no belief with it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M4-S01",
+      "display": "Que aproveche. Gracias, igualmente, y gracias por venir hoy.",
+      "cue": "Enjoy your meal. Thank you, you too, and thank you for coming today.",
+      "literal": "That it-may-profit. Thanks, equally, and thanks for to-come today.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "que aproveche",
+            "cue": "enjoy your meal · bon appetit",
+            "tag": "delta",
+            "forms": [
+              "que aproveche"
+            ],
+            "note": "Said to people who are eating, by anybody: the waiter, the host, a stranger walking past your table. Learned whole, and there is no I in it."
+          },
+          {
+            "display": "igualmente",
+            "cue": "you too · likewise",
+            "tag": "free",
+            "forms": [
+              "igualmente"
+            ],
+            "note": "The one-word answer to any wish offered to you. It returns the wish exactly, without your having to build it again."
+          },
+          {
+            "display": "venir",
+            "cue": "to come",
+            "tag": "free",
+            "forms": [
+              "venir"
+            ],
+            "note": "L4-M4 taught vengas. This is the infinitive, which is what por takes: gracias por venir, thank you for coming."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          7
+        ]
+      },
+      "trap": "Aproveche has no subject you can see. The thing doing the profiting is the meal, not the person, which is why the verb is third person and never changes.",
+      "sound": "Aproveche is a-pro-BE-che; the v is the same sound as b, and the final -che is soft, as in the English word chess.",
+      "variations": [
+        {
+          "display": "Que aproveche.",
+          "cue": "Enjoy your meal.",
+          "changed": "The formula alone, which is how it is nearly always said — three syllables in passing, with no sentence around it."
+        }
+      ],
+      "mistake": {
+        "display": "Aprovecha tu comida.",
+        "why": "That is an order to eat, not a wish. The formula is fixed and the que is not optional: dropping it turns a courtesy into an instruction."
+      },
+      "usage": "Formal or neutral, and obligatory rather than optional: walking past somebody eating without saying it is noticed in Spain. Igualmente is the only answer needed.",
+      "register": "formal",
+      "mnemonic": "Que aproveche is a wish with its head cut off — deseo que aproveche."
+    },
+    {
+      "id": "L5-M4-S02",
+      "display": "Que tenga suerte mañana, y que todo le vaya muy bien.",
+      "cue": "Good luck tomorrow, and may everything go very well for you.",
+      "literal": "That you-may-have luck tomorrow, and that all to-you it-may-go very well.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "suerte",
+            "cue": "luck",
+            "tag": "free",
+            "forms": [
+              "suerte"
+            ],
+            "note": "Feminine: la suerte. Que tenga suerte to usted and que tengas suerte to tu — the noun never changes and only the verb moves."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          5,
+          7
+        ]
+      },
+      "trap": "There is no verb to wish anywhere in this sentence. Que carries the wishing on its own, and the subjunctive is what tells you a wish is what you are hearing.",
+      "sound": "Suerte is SWER-te, two syllables: the ue is one glide and the stress is on it.",
+      "variations": [
+        {
+          "display": "Que le vaya bien.",
+          "cue": "May it go well for you.",
+          "changed": "The all-purpose leaving wish — said at a shop door, at the end of a meeting, to somebody heading to hospital."
+        }
+      ],
+      "mistake": {
+        "display": "Deseo que tenga suerte mañana.",
+        "why": "Not wrong, but nobody says it. The head clause is exactly the part Spanish drops here, and putting it back makes a warm formula sound like a letter."
+      },
+      "usage": "Formal with usted, and this is the single most useful thing in the module: que le vaya bien fits every parting where hasta luego is too flat.",
+      "register": "formal",
+      "mnemonic": "Que does the wishing; the verb only says what is wished."
+    },
+    {
+      "id": "L5-M4-S03",
+      "display": "Brindemos por los novios y por esta boda. Chinchín.",
+      "cue": "Let us drink to the couple and to this wedding. Cheers.",
+      "literal": "Let-us-toast for the newlyweds and for this wedding. Cheers.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "brindemos",
+            "cue": "let us toast · let us drink to",
+            "tag": "delta",
+            "forms": [
+              "brindemos",
+              "brindis"
+            ],
+            "note": "The nosotros subjunctive as an invitation. El brindis is the toast itself, the noun: hacer un brindis, to give a toast."
+          },
+          {
+            "display": "novios",
+            "cue": "the bride and groom · the couple",
+            "tag": "free",
+            "forms": [
+              "novios"
+            ],
+            "note": "At a wedding it is the couple getting married; outside one, los novios are just a couple going out. The occasion picks the sense."
+          },
+          {
+            "display": "boda",
+            "cue": "wedding",
+            "tag": "free",
+            "forms": [
+              "boda"
+            ],
+            "note": "Feminine: la boda. It is the whole event, ceremony and party together, not just the ceremony."
+          },
+          {
+            "display": "chinchín",
+            "cue": "cheers (clinking glasses)",
+            "tag": "free",
+            "forms": [
+              "chinchín"
+            ],
+            "note": "The sound of two glasses meeting, used as the word. It leaves salud free to go on meaning health, which is what it mostly means."
+          }
+        ],
+        "rules": [
+          2,
+          7
+        ]
+      },
+      "trap": "Brindemos is an invitation, not a statement, so it never takes a que in front of it. Que brindemos would be somebody wishing that a toast happen.",
+      "sound": "Chinchin is chin-CHIN, stress on the second, and both ch sounds are hard, as in the English word chin.",
+      "variations": [
+        {
+          "display": "Brindemos por los novios.",
+          "cue": "Let us drink to the couple.",
+          "changed": "The bare invitation with nothing after it — the shape of every toast, whatever it is being drunk to."
+        }
+      ],
+      "mistake": {
+        "display": "Brindamos por los novios.",
+        "why": "Brindamos is we toast, a statement of fact. The invitation needs the subjunctive: brindemos. One letter is the whole difference between reporting and proposing."
+      },
+      "usage": "Formal enough for a wedding and warm enough for a leaving lunch. Stand up, say brindemos por plus the reason, sit down; long toasts are not the custom.",
+      "register": "formal",
+      "mnemonic": "-emos instead of -amos turns we do into let us."
+    },
+    {
+      "id": "L5-M4-S04",
+      "display": "Quisiera decir unas palabras en nombre de mi familia.",
+      "cue": "I would like to say a few words on behalf of my family.",
+      "literal": "I-would-want to-say some words in name of my family.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quisiera",
+            "cue": "I would like",
+            "tag": "delta",
+            "forms": [
+              "quisiera"
+            ],
+            "note": "L1-M3 taught quiero. Quisiera is the softest way Spanish has of wanting something and is the standard opening of any short speech."
+          },
+          {
+            "display": "unas palabras",
+            "cue": "a few words",
+            "tag": "free",
+            "forms": [
+              "unas palabras"
+            ],
+            "note": "Fixed, and always plural and always unas. Decir unas palabras is what you announce before speaking at any occasion."
+          },
+          {
+            "display": "en nombre de",
+            "cue": "on behalf of",
+            "tag": "free",
+            "forms": [
+              "en nombre de"
+            ],
+            "note": "Takes the group you speak for: en nombre de mi familia, en nombre de todos. It is the phrase that makes a speech official rather than personal."
+          },
+          {
+            "display": "familia",
+            "cue": "family",
+            "tag": "free",
+            "forms": [
+              "familia"
+            ],
+            "note": "L1-M4 taught hermana and the rest one by one; this is the collective. Feminine and singular even when it means many people."
+          }
+        ],
+        "rules": [
+          7
+        ]
+      },
+      "trap": "Quisiera is an imperfect subjunctive being used as a courtesy, not as a past. Nothing in the sentence has happened yet.",
+      "sound": "Quisiera is ki-SYE-ra: the qu is a plain k and the u is silent, exactly as in quiero.",
+      "variations": [
+        {
+          "display": "Quisiera decir unas palabras.",
+          "cue": "I would like to say a few words.",
+          "changed": "The announcement without the group behind it, which is what you say when you are speaking only for yourself."
+        }
+      ],
+      "mistake": {
+        "display": "Quiero decir unas palabras en nombre de mi familia.",
+        "why": "Quiero is blunt at a ceremony — it announces a want rather than asking for room. Quisiera is not more polite by degree; it is the form the occasion expects."
+      },
+      "usage": "Formal. Said standing, at the start, before anything else — it is the Spanish equivalent of tapping a glass.",
+      "register": "formal",
+      "mnemonic": "Quisiera asks for the floor; quiero takes it."
+    },
+    {
+      "id": "L5-M4-S05",
+      "display": "Gracias a todos por venir hoy. Es un honor para mí.",
+      "cue": "Thank you all for coming today. It is an honour for me.",
+      "literal": "Thanks to all for to-come today. It-is an honour for me.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "todos",
+            "cue": "everybody · all of you",
+            "tag": "free",
+            "forms": [
+              "todos"
+            ],
+            "note": "L1-M8 taught todo, all of a thing. Todos is all of a group of people, and gracias a todos is how a room is thanked at once."
+          },
+          {
+            "display": "honor",
+            "cue": "honour · privilege",
+            "tag": "free",
+            "forms": [
+              "honor"
+            ],
+            "note": "Masculine: un honor. Es un honor is not grand in Spanish the way it sounds in English; it is the ordinary thing said at any small ceremony."
+          }
+        ],
+        "rules": [
+          7
+        ]
+      },
+      "trap": "Gracias por takes the infinitive, never the -ing form English uses: gracias por venir, not gracias por viniendo.",
+      "sound": "Honor has a silent h — o-NOR — and the stress is on the last syllable, unlike the English word.",
+      "variations": [
+        {
+          "display": "Gracias a todos por venir.",
+          "cue": "Thank you all for coming.",
+          "changed": "The vote of thanks with the day taken out, which makes it usable at the end as well as the start."
+        }
+      ],
+      "mistake": {
+        "display": "Gracias todos por venir.",
+        "why": "The a is not optional. Gracias a somebody is the fixed shape, and dropping it leaves the thanks with nobody to land on."
+      },
+      "usage": "Formal, and the standard close of any speech: thank the room, then say why it mattered. Es un honor para mi carries no boasting at all.",
+      "register": "formal",
+      "mnemonic": "Gracias goes TO people and FOR things: gracias a todos por venir."
+    },
+    {
+      "id": "L5-M4-S06",
+      "display": "Le acompaño en el sentimiento. Mi más sentido pésame, de verdad.",
+      "cue": "My condolences. My deepest sympathy, truly.",
+      "literal": "To-you I-accompany in the feeling. My most felt condolence, of truth.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "le acompaño",
+            "cue": "I am with you · my condolences",
+            "tag": "free",
+            "forms": [
+              "le acompaño"
+            ],
+            "note": "Literally I accompany you. The le is the bereaved person, and the whole phrase is fixed: nothing in it is chosen at the moment of saying it."
+          },
+          {
+            "display": "en el sentimiento",
+            "cue": "in the grief",
+            "tag": "free",
+            "forms": [
+              "en el sentimiento"
+            ],
+            "note": "The second half of the formula, and it is never said without the first. El sentimiento here is the grief itself, not a feeling in general."
+          },
+          {
+            "display": "sentido pésame",
+            "cue": "heartfelt condolences",
+            "tag": "free",
+            "forms": [
+              "sentido pésame",
+              "pésame"
+            ],
+            "note": "El pesame is the condolence; sentido pesame is the felt one. Mi mas sentido pesame is the written and spoken formula, three fixed words behind mi mas."
+          }
+        ],
+        "rules": [
+          4,
+          7
+        ]
+      },
+      "trap": "There is nothing personal to add and nothing is expected. English wants I am so sorry, he was a wonderful man; Spanish wants the formula, a handshake, and silence.",
+      "sound": "Pesame is PE-sa-me, stressed on the first syllable — it is one of the words a learner most often stresses wrongly.",
+      "variations": [
+        {
+          "display": "Le acompaño en el sentimiento.",
+          "cue": "My condolences.",
+          "changed": "The formula alone, which is complete on its own and is what most people say and then stop."
+        }
+      ],
+      "mistake": {
+        "display": "Lo siento mucho por su padre.",
+        "why": "Understood, and unmistakably foreign. Lo siento is for a spilled drink or a late arrival; a death takes the formula, and reaching for a personal sentence marks you as somebody who does not have one."
+      },
+      "usage": "Formal, and the only register there is here. Said once, at the door or at the graveside, with a handshake; it is not repeated and not elaborated.",
+      "register": "formal",
+      "mnemonic": "You do not say sorry in Spanish, you say you are there: le acompaño."
+    },
+    {
+      "id": "L5-M4-S07",
+      "display": "Era un hombre muy bueno y muy amable. Que en paz descanse.",
+      "cue": "He was a very good and very kind man. May he rest in peace.",
+      "literal": "He-was a man very good and very kind. That in peace he-may-rest.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "en paz descanse",
+            "cue": "rest in peace",
+            "tag": "free",
+            "forms": [
+              "en paz descanse"
+            ],
+            "note": "Always after que, and the words never move. Said by people of every conviction, believers and not; it carries no belief with it at all."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          7
+        ]
+      },
+      "trap": "The word order is fixed and inverted: en paz comes before the verb, which no ordinary Spanish sentence does. Descanse en paz exists in writing, on stones; que en paz descanse is what is said.",
+      "sound": "The whole thing runs as one word in speech, ke-em-pas-des-CAN-se, and it is often shortened in writing to q.e.p.d.",
+      "variations": [
+        {
+          "display": "Que en paz descanse.",
+          "cue": "May he rest in peace.",
+          "changed": "The formula with no sentence in front of it, which is how it closes any mention of somebody who has died."
+        }
+      ],
+      "mistake": {
+        "display": "Que descanse en paz, era un hombre muy bueno.",
+        "why": "The order is not wrong but the placement is: the formula closes the mention of the dead, it does not open it. Say what he was, then say it."
+      },
+      "usage": "Formal and universal, at a funeral and long after one, whenever the person is mentioned. Nobody will read belief into it.",
+      "register": "formal",
+      "mnemonic": "The peace comes before the rest: en paz descanse."
+    },
+    {
+      "id": "L5-M4-S08",
+      "display": "Enhorabuena por la boda, y felicidades a los dos novios.",
+      "cue": "Congratulations on the wedding, and best wishes to the couple.",
+      "literal": "Congratulations for the wedding, and felicitations to the two newlyweds.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "enhorabuena",
+            "cue": "congratulations (on something earned)",
+            "tag": "free",
+            "forms": [
+              "enhorabuena"
+            ],
+            "note": "Literally in a good hour. For an achievement: a job, an exam, a wedding, a baby. Takes por for the thing achieved."
+          },
+          {
+            "display": "felicidades",
+            "cue": "best wishes · happy (occasion)",
+            "tag": "free",
+            "forms": [
+              "felicidades"
+            ],
+            "note": "For an occasion that arrived rather than one earned: a birthday, the new year, a saint's day. Takes a for the person."
+          }
+        ],
+        "rules": [
+          6,
+          7
+        ]
+      },
+      "trap": "English congratulations covers both of these and Spanish does not. A birthday takes felicidades and never enhorabuena; a new job takes enhorabuena and sounds odd with felicidades.",
+      "sound": "Enhorabuena is one word with a silent h: en-o-ra-BWE-na, five syllables and the stress on the fourth.",
+      "variations": [
+        {
+          "display": "Enhorabuena por la boda.",
+          "cue": "Congratulations on the wedding.",
+          "changed": "One word plus por plus the achievement — the shape that works for every earned thing."
+        }
+      ],
+      "mistake": {
+        "display": "Felicidades por tu nuevo trabajo.",
+        "why": "A job is earned, so it takes enhorabuena. Felicidades here sounds like congratulating somebody on a birthday they had nothing to do with."
+      },
+      "usage": "Formal or neutral; both words work in either register. A wedding is the one occasion that genuinely takes either, because it is earned and it arrived.",
+      "register": "formal",
+      "mnemonic": "Earned takes enhorabuena; arrived takes felicidades."
+    },
+    {
+      "id": "L5-M4-S09",
+      "display": "Le agradezco mucho este discurso. Muchas gracias a todos ustedes.",
+      "cue": "I am very grateful to you for this speech. Thank you all very much.",
+      "literal": "To-you I-thank much this speech. Many thanks to all you-all.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "agradezco",
+            "cue": "I thank · I am grateful for",
+            "tag": "delta",
+            "forms": [
+              "agradezco",
+              "agradecer"
+            ],
+            "note": "Heavier than gracias and takes an object directly: le agradezco su ayuda. The -zc- appears only in the yo form; agradecer is the infinitive."
+          },
+          {
+            "display": "discurso",
+            "cue": "speech",
+            "tag": "free",
+            "forms": [
+              "discurso"
+            ],
+            "note": "Masculine: un discurso. It is the formal speech, not a chat; dar un discurso is to give one."
+          }
+        ],
+        "rules": [
+          7
+        ]
+      },
+      "trap": "Agradecer thanks somebody FOR something with no preposition at all: le agradezco el discurso. Putting por in is the English shape leaking through.",
+      "sound": "Agradezco is a-gra-DETH-co in Spain and a-gra-DES-co where seseo is spoken; the c before o is always a hard k.",
+      "variations": [
+        {
+          "display": "Le agradezco mucho este discurso.",
+          "cue": "I am very grateful for this speech.",
+          "changed": "The thanks alone, addressed to one person with usted, which is where agradecer belongs."
+        }
+      ],
+      "mistake": {
+        "display": "Le agradezco por este discurso.",
+        "why": "No por. Agradecer takes the thing thanked for as a plain object, and adding por is the commonest error an English speaker makes with this verb."
+      },
+      "usage": "Formal, and a notch above gracias: reserved for something somebody actually did for you. Ustedes here is the room, and in Spain it is what a speaker calls an audience even among friends.",
+      "register": "formal",
+      "mnemonic": "Gracias por something, but agradezco something."
+    },
+    {
+      "id": "L5-M4-S10",
+      "display": "Que descanse usted. Muchas gracias por todo, y hasta mañana.",
+      "cue": "Get some rest. Thank you very much for everything, and see you tomorrow.",
+      "literal": "That you-may-rest you. Many thanks for all, and until tomorrow.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "descanse",
+            "cue": "rest · may you rest",
+            "tag": "delta",
+            "forms": [
+              "descanse"
+            ],
+            "note": "The same verb as in que en paz descanse, and here it is a live wish to a living person: que descanse, said at the end of a long day."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          7
+        ]
+      },
+      "trap": "Que descanse and que en paz descanse are the same verb and completely different occasions. The three words in the middle are what separate a good night from a funeral.",
+      "sound": "Descanse is des-CAN-se, and the s before c is fully pronounced in America and often softened in Spain.",
+      "variations": [
+        {
+          "display": "Que descanse.",
+          "cue": "Get some rest.",
+          "changed": "Without usted, which is how it is normally said — the ending already says who."
+        }
+      ],
+      "mistake": {
+        "display": "Que descanses usted.",
+        "why": "Descanses belongs to tu. With usted the verb is descanse, and mixing the pronoun of one address with the ending of the other is the mistake this whole register punishes."
+      },
+      "usage": "Formal, and the ordinary way to leave a colleague or a host at the end of an evening. It is warmer than adios and shorter than a sentence.",
+      "register": "formal",
+      "mnemonic": "Same wish, two lives: que descanse tonight, que en paz descanse for good."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M4-C01",
+      "display": "Que aproveche. Gracias, igualmente.",
+      "cue": "Enjoy your meal. Thank you, you too."
+    },
+    {
+      "id": "L5-M4-C02",
+      "display": "Que tenga mucha suerte mañana.",
+      "cue": "The best of luck tomorrow."
+    },
+    {
+      "id": "L5-M4-C03",
+      "display": "Brindemos por los novios. Chinchín.",
+      "cue": "Let us drink to the couple. Cheers."
+    },
+    {
+      "id": "L5-M4-C04",
+      "display": "Quisiera decir unas palabras en nombre de mi familia.",
+      "cue": "I would like to say a few words on behalf of my family."
+    },
+    {
+      "id": "L5-M4-C05",
+      "display": "Gracias a todos por venir hoy.",
+      "cue": "Thank you all for coming today."
+    },
+    {
+      "id": "L5-M4-C06",
+      "display": "Le acompaño en el sentimiento.",
+      "cue": "My condolences."
+    },
+    {
+      "id": "L5-M4-C07",
+      "display": "Mi más sentido pésame.",
+      "cue": "My deepest sympathy."
+    },
+    {
+      "id": "L5-M4-C08",
+      "display": "Era un hombre muy amable. Que en paz descanse.",
+      "cue": "He was a very kind man. May he rest in peace."
+    },
+    {
+      "id": "L5-M4-C09",
+      "display": "Enhorabuena por la boda.",
+      "cue": "Congratulations on the wedding."
+    },
+    {
+      "id": "L5-M4-C10",
+      "display": "Felicidades a los dos.",
+      "cue": "Best wishes to you both."
+    },
+    {
+      "id": "L5-M4-C11",
+      "display": "Le agradezco mucho este discurso.",
+      "cue": "I am very grateful for this speech."
+    },
+    {
+      "id": "L5-M4-C12",
+      "display": "Que descanse usted, y hasta mañana.",
+      "cue": "Get some rest, and see you tomorrow."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

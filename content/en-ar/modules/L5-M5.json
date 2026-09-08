@@ -1,0 +1,665 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M5",
+  "title": "Big questions",
+  "job": "Values, beliefs, abstract talk",
+  "prerequisites": ["L5-M4"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "al- + N-abstract + <nominal predicate>",
+      "al- + N-abstract + ahamm min + al- + N-abstract",
+      "aʿtaqid anna + <clause>",
+      "ūmin bi- + al- + N-abstract",
+      "mā maʿnā + al- + N-abstract"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE GENERIC ARTICLE. al- on an abstract noun means the thing IN GENERAL: al-ḥurriyya muhimma is freedom is important, not the freedom is important. English drops its article in exactly the place Arabic demands one, so this rule has to be held in both directions at once."
+    },
+    {
+      "tag": "interference",
+      "text": "The same rule going the other way, listening. al-ʿadāla is justice itself, not a particular justice, and an English speaker over-reads the article and hears a specific one. Nothing in the sentence marks the difference — the article is doing both jobs and context is the only key."
+    },
+    {
+      "tag": "delta",
+      "text": "THE BELIEF PAIR. ūmin bi- is believe IN — faith, or a principle you hold. aʿtaqid anna is believe THAT — an opinion about how things are. English lets one verb do both jobs and Arabic does not, so the choice is forced every time. aʿtaqid is L3-M3's row coming back with its second complement, not a new word."
+    },
+    {
+      "tag": "free",
+      "text": "The nominal sentence with no copula is L1-M1's and it does all the work here: al-ʿadāla asās al-mujtamaʿ has no verb in it and never did. Abstract Arabic is structurally EASIER than a learner expects — a rare place where the delta runs in your favour."
+    },
+    {
+      "tag": "free",
+      "text": "These abstract nouns are maṣdars, the verbal nouns L3 opened, not a new class of word. English abstractions feel like actions because they are built from verbs; so are these, and the same instinct works."
+    },
+    {
+      "tag": "free",
+      "text": "The comparison machinery is L2-M9's, re-used whole: ahamm min, afḍal min. Nothing new is being taught about comparing — only about what is worth comparing."
+    },
+    {
+      "tag": "delta",
+      "text": "at-taʾrīkh is L3-M8's word, bought there as the date on a form. Abstract history is that same word doing an abstract job, not a second word: one key, one row, a note true of both."
+    },
+    {
+      "tag": "interference",
+      "text": "Hedging a claim is L4-M5's and stays there — qad with the imperfect, laysa, lā aẓunnu anna. This module STATES a value; defending one against an objection is M6. Keeping that line is what stops the two modules from becoming one."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M5-S01",
+      "display": "al-ḥurriyya muhimma, wa al-ʿadāla ahamm",
+      "script": "الحرية مهمة، والعدالة أهم",
+      "cue": "Freedom is important, and justice is more important.",
+      "literal": "the-freedom important, and the-justice more-important",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-ḥurriyya",
+            "script": "الحرية",
+            "cue": "freedom",
+            "tag": "delta",
+            "forms": ["al-ḥurriyya", "ḥurriyya", "bi-al-ḥurriyya"],
+            "note": "Freedom in general. The al- is not the of English the freedom — it is what Arabic puts on an abstraction to mean the whole of it."
+          },
+          {
+            "display": "al-ʿadāla",
+            "script": "العدالة",
+            "cue": "justice",
+            "tag": "delta",
+            "forms": ["al-ʿadāla", "ʿadāla", "bi-al-ʿadāla"],
+            "note": "Justice as such. Same article, same job. The ʿayn at the front is the throat squeeze, not the hamza's clean catch."
+          },
+          {
+            "display": "ahamm",
+            "script": "أهم",
+            "cue": "more important",
+            "tag": "free",
+            "forms": ["ahamm", "ahamm min"],
+            "note": "The comparative of L1-M9's muhimm, on L2-M9's pattern. ahamm min X is more important than X, and it never changes for gender."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "English says freedom is important with no article at all, and a learner carries that gap straight across. ḥurriyya muhimma is not a smaller version of the claim — it is not a claim, it is a fragment.",
+      "sound": "al-ḥur-RIY-ya doubles the r and then the y; both are held. a-HAMM doubles the m at the end, which is what makes it a comparative and not a noun.",
+      "variations": [
+        {
+          "display": "al-ʿadāla muhimma, wa al-ḥurriyya ahamm",
+          "script": "العدالة مهمة، والحرية أهم",
+          "cue": "Justice is important, and freedom is more important.",
+          "changed": "which of the two is put second, which is where the weight falls"
+        },
+        {
+          "display": "al-ḥurriyya muhimma",
+          "script": "الحرية مهمة",
+          "cue": "Freedom is important.",
+          "changed": "the comparison dropped — the plain claim, which is the harder one to say cleanly"
+        }
+      ],
+      "mistake": {
+        "display": "ḥurriyya muhimma",
+        "script": "حرية مهمة",
+        "why": "Without al- this is an important freedom, a thing among things, and as a sentence it does not finish. The article is what makes the noun mean the whole idea."
+      },
+      "usage": "The first move in any conversation that has left the room and gone somewhere general.",
+      "register": "neutral",
+      "mnemonic": "English drops the article where Arabic demands it."
+    },
+    {
+      "id": "L5-M5-S02",
+      "display": "al-ʿadāla asās al-mujtamaʿ",
+      "script": "العدالة أساس المجتمع",
+      "cue": "Justice is the foundation of society.",
+      "literal": "the-justice foundation the-society",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "asās",
+            "script": "أساس",
+            "cue": "foundation, basis",
+            "tag": "free",
+            "forms": ["asās", "al-asās"],
+            "note": "The base a thing stands on. It heads a possessive chain — asās al-mujtamaʿ — and so it takes no article of its own."
+          },
+          {
+            "display": "al-mujtamaʿ",
+            "script": "المجتمع",
+            "cue": "society",
+            "tag": "free",
+            "forms": ["al-mujtamaʿ", "mujtamaʿ"],
+            "note": "Society, the gathered whole — from the root of jamīʿ, all. It is always definite when you mean society in general."
+          }
+        ],
+        "rules": [3, 0]
+      },
+      "trap": "There is no verb in this sentence and none is missing. An English speaker reaches for is and finds nothing to attach it to; L1-M1's nominal sentence has been doing this since the first day of the course.",
+      "sound": "a-SĀS opens on a hamza and holds the long ā. al-muj-TA-maʿ ends on the ʿayn, which is a closing squeeze rather than a vowel.",
+      "variations": [
+        {
+          "display": "al-ʿadāla asās al-ḥayāt",
+          "script": "العدالة أساس الحياة",
+          "cue": "Justice is the foundation of life.",
+          "changed": "what it is the foundation of — L3-M10's al-ḥayāt in the same slot"
+        },
+        {
+          "display": "al-ḥurriyya asās al-mujtamaʿ",
+          "script": "الحرية أساس المجتمع",
+          "cue": "Freedom is the foundation of society.",
+          "changed": "the value — the frame takes any abstraction you like"
+        }
+      ],
+      "mistake": {
+        "display": "al-ʿadāla al-asās al-mujtamaʿ",
+        "script": "العدالة الأساس المجتمع",
+        "why": "In a possessive chain only the last word carries the article. asās al-mujtamaʿ is already definite; putting al- on asās as well breaks the chain and leaves three nouns in a row."
+      },
+      "usage": "Stating a position rather than arguing for it. The argument is M6's job.",
+      "register": "neutral",
+      "mnemonic": "Foundation of — one article, at the end."
+    },
+    {
+      "id": "L5-M5-S03",
+      "display": "aṣ-ṣadāqa ahamm min al-māl, wa as-saʿāda ahamm min al-ʿamal",
+      "script": "الصداقة أهم من المال، والسعادة أهم من العمل",
+      "cue": "Friendship is more important than money, and happiness is more important than work.",
+      "literal": "the-friendship more-important than the-money, and the-happiness more-important than the-work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aṣ-ṣadāqa",
+            "script": "الصداقة",
+            "cue": "friendship",
+            "tag": "free",
+            "forms": ["aṣ-ṣadāqa", "ṣadāqa"],
+            "note": "Friendship as an idea, from the root of ṣadīq. ṣ is a sun letter, so the article assimilates: aṣ-, not al-."
+          },
+          {
+            "display": "as-saʿāda",
+            "script": "السعادة",
+            "cue": "happiness",
+            "tag": "free",
+            "forms": ["as-saʿāda", "saʿāda"],
+            "note": "Happiness as a condition rather than a mood — closer to a good life than to a good afternoon."
+          }
+        ],
+        "rules": [5, 0]
+      },
+      "trap": "English can compare friendship and money with no articles anywhere. Arabic needs one on every abstraction in the sentence, and this line carries four of them, which is why it is the one to drill.",
+      "sound": "aṣ-ṣa-DĀ-qa doubles the heavy ṣ across the article. as-sa-ʿĀ-da puts the ʿayn in front of the long ā.",
+      "variations": [
+        {
+          "display": "aṣ-ṣadāqa ahamm min al-māl",
+          "script": "الصداقة أهم من المال",
+          "cue": "Friendship is more important than money.",
+          "changed": "one comparison instead of two, which is the ordinary length"
+        },
+        {
+          "display": "as-saʿāda ahamm min kull shayʾ",
+          "script": "السعادة أهم من كل شيء",
+          "cue": "Happiness is more important than everything.",
+          "changed": "the widest comparison the module can make"
+        }
+      ],
+      "mistake": {
+        "display": "aṣ-ṣadāqa muhimma min al-māl",
+        "script": "الصداقة مهمة من المال",
+        "why": "min needs the comparative in front of it. muhimma min is important from, which says nothing; the comparison lives in ahamm, not in min."
+      },
+      "usage": "Late in an evening, when the conversation has run out of facts and started on what matters.",
+      "register": "neutral",
+      "mnemonic": "ahamm min — the min only works after the comparative."
+    },
+    {
+      "id": "L5-M5-S04",
+      "display": "ūmin bi-al-ʿadāla, wa aʿtaqid anna al-ḥayāt ṣaʿba",
+      "script": "أومن بالعدالة، وأعتقد أن الحياة صعبة",
+      "cue": "I believe in justice, and I think that life is hard.",
+      "literal": "I-believe in-the-justice, and I-think that the-life hard",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ūmin",
+            "script": "أومن",
+            "cue": "I believe (in)",
+            "tag": "delta",
+            "forms": ["ūmin", "ūminu", "tūmin"],
+            "note": "Believe IN — faith, or a principle you hold. It always takes bi-, and it never takes anna. That is the whole split with aʿtaqid."
+          }
+        ],
+        "rules": [2, 7]
+      },
+      "trap": "English has one verb for both halves of this sentence: I believe in justice and I believe life is hard. Arabic forces the choice — ūmin bi- for the principle, aʿtaqid anna for the opinion — and using either for the other job is heard as a category error, not a slip.",
+      "sound": "Ū-min opens on a long ū with a hamza before it. bi-al-ʿa-DĀ-la runs the preposition, the article and the ʿayn together in one breath.",
+      "variations": [
+        {
+          "display": "ūmin bi-al-ḥurriyya",
+          "script": "أومن بالحرية",
+          "cue": "I believe in freedom.",
+          "changed": "the principle, with the opinion half left off"
+        },
+        {
+          "display": "aʿtaqid anna al-ḥayāt ṣaʿba",
+          "script": "أعتقد أن الحياة صعبة",
+          "cue": "I think that life is hard.",
+          "changed": "the opinion alone — no faith claim anywhere in it"
+        }
+      ],
+      "mistake": {
+        "display": "ūmin anna al-ʿadāla muhimma",
+        "script": "أومن أن العدالة مهمة",
+        "why": "ūmin cannot take anna. Believing THAT something is the case is aʿtaqid's job; ūmin needs bi- and a noun after it, never a clause."
+      },
+      "usage": "Answering a question about what you actually hold, as against what you happen to think today.",
+      "register": "neutral",
+      "mnemonic": "ūmin bi- a thing; aʿtaqid anna a clause."
+    },
+    {
+      "id": "L5-M5-S05",
+      "display": "al-īmān qīma, wa al-ʿaql qīma ukhrā",
+      "script": "الإيمان قيمة، والعقل قيمة أخرى",
+      "cue": "Faith is one value, and reason is another value.",
+      "literal": "the-faith value, and the-reason value other",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-īmān",
+            "script": "الإيمان",
+            "cue": "faith, belief",
+            "tag": "free",
+            "forms": ["al-īmān", "īmān"],
+            "note": "The noun of ūmin — what you have when you believe in something. It names a stance, and this course leaves the content of it alone."
+          },
+          {
+            "display": "al-ʿaql",
+            "script": "العقل",
+            "cue": "reason, the mind",
+            "tag": "free",
+            "forms": ["al-ʿaql", "ʿaql"],
+            "note": "The reasoning mind, not the brain and not cleverness. ʿaql and īmān are the pair this kind of conversation is usually built on."
+          },
+          {
+            "display": "al-qiyam",
+            "script": "القيم",
+            "cue": "values",
+            "tag": "free",
+            "forms": ["al-qiyam", "qiyam", "qīma", "al-qīma"],
+            "note": "qīma is one value or a price; al-qiyam is the plural, values in the moral sense. Same word doing both jobs, as English value does."
+          }
+        ],
+        "rules": [4, 3]
+      },
+      "trap": "English sets faith against reason as opponents. This sentence puts them side by side as two of a kind, and the Arabic frame — X is a value, Y is another value — carries no contest in it at all.",
+      "sound": "al-Ī-MĀN has two long vowels and no short one. al-ʿAQL ends on a q made far back in the throat, then l, with nothing between.",
+      "variations": [
+        {
+          "display": "al-īmān qīma qadīma",
+          "script": "الإيمان قيمة قديمة",
+          "cue": "Faith is an old value.",
+          "changed": "the value described rather than paired with another"
+        },
+        {
+          "display": "al-ʿaql ahamm min al-īmān",
+          "script": "العقل أهم من الإيمان",
+          "cue": "Reason is more important than faith.",
+          "changed": "the two set against each other — a position, which M6 is where you defend it"
+        }
+      ],
+      "mistake": {
+        "display": "al-īmān qiyam",
+        "script": "الإيمان قيم",
+        "why": "One thing is a qīma; qiyam is the plural. al-īmān qiyam says faith is values, which is the kind of sentence that sounds deep and means nothing."
+      },
+      "usage": "Laying two ideas out flat before anybody has to choose between them.",
+      "register": "neutral",
+      "mnemonic": "One qīma, many qiyam."
+    },
+    {
+      "id": "L5-M5-S06",
+      "display": "mā maʿnā al-ḥaqīqa fī hādhā al-ʿālam?",
+      "script": "ما معنى الحقيقة في هذا العالم؟",
+      "cue": "What does truth mean in this world?",
+      "literal": "what meaning the-truth in this the-world",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "maʿnā",
+            "script": "معنى",
+            "cue": "meaning",
+            "tag": "free",
+            "forms": ["maʿnā", "al-maʿnā", "mā maʿnā", "maʿnāhā"],
+            "note": "Meaning. mā maʿnā X is stored whole — what is the meaning of X — and it is the way this course asks after a word or an idea."
+          },
+          {
+            "display": "al-ḥaqīqa",
+            "script": "الحقيقة",
+            "cue": "truth, reality",
+            "tag": "free",
+            "forms": ["al-ḥaqīqa", "ḥaqīqa"],
+            "note": "Truth, and also the fact of a matter. fī al-ḥaqīqa means in fact, which is the everyday half of the same word."
+          },
+          {
+            "display": "al-ʿālam",
+            "script": "العالم",
+            "cue": "the world",
+            "tag": "free",
+            "forms": ["al-ʿālam", "ʿālam"],
+            "note": "The world as everything there is. Note the ʿayn — with a hamza instead it would be a different word entirely."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "English asks what does X mean with a verb. Arabic asks with two nouns and no verb: what the meaning of X. Reaching for a verb here produces a sentence nobody says.",
+      "sound": "mā MAʿ-nā ends on a long ā written with a y. al-ḥa-QĪ-qa has two q sounds made deep at the back, one on each side of the long ī.",
+      "variations": [
+        {
+          "display": "mā maʿnā al-ḥurriyya?",
+          "script": "ما معنى الحرية؟",
+          "cue": "What does freedom mean?",
+          "changed": "the value being asked after, in the same fixed frame"
+        },
+        {
+          "display": "mā maʿnā hādhā al-kalām?",
+          "script": "ما معنى هذا الكلام؟",
+          "cue": "What does this talk mean?",
+          "changed": "the question turned on something somebody has just said, with M3's al-kalām"
+        }
+      ],
+      "mistake": {
+        "display": "mā al-maʿnā al-ḥurriyya?",
+        "script": "ما المعنى الحرية؟",
+        "why": "mā maʿnā is a possessive chain and its first word takes no article. With al- on maʿnā the chain breaks, and the sentence reads as two unconnected nouns after a question word."
+      },
+      "usage": "The question that opens the conversation, or the one that stops it dead. Both happen.",
+      "register": "neutral",
+      "mnemonic": "mā maʿnā — no verb, no article on the first word."
+    },
+    {
+      "id": "L5-M5-S07",
+      "display": "aḍ-ḍamīr aṣl al-ʿadāla",
+      "script": "الضمير أصل العدالة",
+      "cue": "Conscience is the root of justice.",
+      "literal": "the-conscience root the-justice",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aḍ-ḍamīr",
+            "script": "الضمير",
+            "cue": "conscience",
+            "tag": "free",
+            "forms": ["aḍ-ḍamīr", "ḍamīr"],
+            "note": "The inner sense of right — the thing that speaks when nobody is watching. ḍ is a sun letter, so the article assimilates to aḍ-."
+          },
+          {
+            "display": "al-aṣl",
+            "script": "الأصل",
+            "cue": "the origin, the root",
+            "tag": "free",
+            "forms": ["al-aṣl", "aṣl"],
+            "note": "Where a thing comes from. It heads a possessive chain like asās does, and the two are close enough to swap in most sentences."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "Conscience in English is quietly religious for some speakers and quietly secular for others. aḍ-ḍamīr is neither: it is the ordinary word, used the same way by everybody, and it carries no position with it.",
+      "sound": "aḍ-ḍa-MĪR doubles the heavy ḍ across the article — tongue flat, sound dark. AṢL ends on the heavy ṣ and l together.",
+      "variations": [
+        {
+          "display": "aḍ-ḍamīr aṣl al-ḥurriyya",
+          "script": "الضمير أصل الحرية",
+          "cue": "Conscience is the root of freedom.",
+          "changed": "what conscience is being made the root of"
+        },
+        {
+          "display": "al-ʿadāla aṣl al-mujtamaʿ",
+          "script": "العدالة أصل المجتمع",
+          "cue": "Justice is the root of society.",
+          "changed": "both abstractions swapped — the frame holds whatever you put in it"
+        }
+      ],
+      "mistake": {
+        "display": "ḍamīr aṣl ʿadāla",
+        "script": "ضمير أصل عدالة",
+        "why": "Every abstraction in this sentence needs its article, and the last word of the chain needs one too. Stripped of all three it reads as a list of nouns rather than a claim."
+      },
+      "usage": "Said flatly, as a position. Defending it is a different module.",
+      "register": "neutral",
+      "mnemonic": "aṣl and asās both head the chain bare."
+    },
+    {
+      "id": "L5-M5-S08",
+      "display": "al-insān ahamm min al-mujtamaʿ? hādhā suʾāl qadīm",
+      "script": "الإنسان أهم من المجتمع؟ هذا سؤال قديم",
+      "cue": "Is the individual more important than society? That is an old question.",
+      "literal": "the-human more-important than the-society? this question old",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-insān",
+            "script": "الإنسان",
+            "cue": "the human being, a person",
+            "tag": "free",
+            "forms": ["al-insān", "insān"],
+            "note": "The human being in general, as against L4-M9's rajul or nās. With al- it means humanity, or any one of us, and the sentence decides which."
+          },
+          {
+            "display": "suʾāl",
+            "script": "سؤال",
+            "cue": "question",
+            "tag": "free",
+            "forms": ["suʾāl", "as-suʾāl"],
+            "note": "A question. The ʾ in the middle is a hamza, a catch between the two vowels, and it is a different letter from the ʿayn."
+          }
+        ],
+        "rules": [0, 7]
+      },
+      "trap": "English marks this as a question by inverting the verb. There is no verb to invert, so Arabic marks it with the question mark and the voice alone — and the same words, said flat, are a statement.",
+      "sound": "al-in-SĀN takes the stress on the long ā. su-ʾĀL has a small catch in the middle where the hamza sits.",
+      "variations": [
+        {
+          "display": "al-mujtamaʿ ahamm min al-insān",
+          "script": "المجتمع أهم من الإنسان",
+          "cue": "Society is more important than the individual.",
+          "changed": "the comparison turned round, and stated rather than asked"
+        },
+        {
+          "display": "hādhā suʾāl qadīm",
+          "script": "هذا سؤال قديم",
+          "cue": "That is an old question.",
+          "changed": "the comment alone, when the question is already in the air"
+        }
+      ],
+      "mistake": {
+        "display": "al-insān muhimm min al-mujtamaʿ",
+        "script": "الإنسان مهم من المجتمع",
+        "why": "Again the comparative: ahamm min, not muhimm min. This is the error that survives longest, because the sentence sounds nearly right when you say it fast."
+      },
+      "usage": "Putting a question on the table without taking a side on it.",
+      "register": "neutral",
+      "mnemonic": "No verb to invert — the question mark does the work."
+    },
+    {
+      "id": "L5-M5-S09",
+      "display": "at-taʾrīkh khulāṣa, wa laysa kull al-ḥaqīqa",
+      "script": "التاريخ خلاصة، وليس كل الحقيقة",
+      "cue": "History is a summary, and it is not the whole truth.",
+      "literal": "the-history summary, and not all the-truth",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "at-taʾrīkh",
+            "script": "التاريخ",
+            "cue": "history; the date",
+            "tag": "free",
+            "forms": ["at-taʾrīkh", "taʾrīkh"],
+            "note": "L3-M8's word for the date on a form, doing its abstract job here. One word, both senses — the tap opens L3-M8's row, and this is that row's second half."
+          },
+          {
+            "display": "al-khulāṣa",
+            "script": "الخلاصة",
+            "cue": "the summary, the gist",
+            "tag": "free",
+            "forms": ["al-khulāṣa", "khulāṣa"],
+            "note": "What is left when the rest is boiled off. al-khulāṣa on its own is the way to say so, in short, at the end of an argument."
+          }
+        ],
+        "rules": [6, 1]
+      },
+      "trap": "A learner meets taʾrīkh on a form and files it as date, then meets it here and reaches for a new word. There is not one: Arabic runs the abstract and the administrative sense through the same noun, which English happens to do too with history.",
+      "sound": "at-taʾ-RĪKH doubles the t across the article, catches on the hamza, and ends on the kh of Scottish loch. khu-LĀ-ṣa opens with that same kh.",
+      "variations": [
+        {
+          "display": "at-taʾrīkh laysa al-ḥaqīqa",
+          "script": "التاريخ ليس الحقيقة",
+          "cue": "History is not the truth.",
+          "changed": "the hedge removed — the sharp version of the same claim"
+        },
+        {
+          "display": "hādhihi al-khulāṣa",
+          "script": "هذه الخلاصة",
+          "cue": "That is the gist.",
+          "changed": "the noun alone, closing a long explanation"
+        }
+      ],
+      "mistake": {
+        "display": "at-taʾrīkh khulāṣa, wa laysa kull ḥaqīqa",
+        "script": "التاريخ خلاصة، وليس كل حقيقة",
+        "why": "kull al-ḥaqīqa is the whole of the truth; kull ḥaqīqa is every truth, one by one. The article is the difference between the two readings, and here only the first is meant."
+      },
+      "usage": "Said about a version of events that somebody has just presented as settled.",
+      "register": "neutral",
+      "mnemonic": "One word for the date and for the past it records."
+    },
+    {
+      "id": "L5-M5-S10",
+      "display": "aʿtaqid anna al-qiyam ahamm min kull shayʾ",
+      "script": "أعتقد أن القيم أهم من كل شيء",
+      "cue": "I think that values are more important than anything.",
+      "literal": "I-think that the-values more-important than all thing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "shayʾ",
+            "script": "شيء",
+            "cue": "thing",
+            "tag": "free",
+            "forms": ["shayʾ", "kull shayʾ"],
+            "note": "A thing, anything. kull shayʾ — everything — is the widest thing you can compare against, and it is stored as a pair."
+          }
+        ],
+        "rules": [2, 5]
+      },
+      "trap": "aʿtaqid anna is I believe THAT, an opinion, and it is weaker than English I believe sounds. It is not a declaration of faith; that was ūmin bi-, four sentences back, and mixing them up is the module's central error.",
+      "sound": "aʿ-TA-qid opens on the ʿayn and ends on the deep q. KULL SHAYʾ stops hard on a hamza, with no vowel after it.",
+      "variations": [
+        {
+          "display": "aʿtaqid anna al-ḥurriyya ahamm min kull shayʾ",
+          "script": "أعتقد أن الحرية أهم من كل شيء",
+          "cue": "I think that freedom is more important than anything.",
+          "changed": "the value — one abstraction in place of values in general"
+        },
+        {
+          "display": "aẓunn anna al-qiyam ahamm min al-māl",
+          "script": "أظن أن القيم أهم من المال",
+          "cue": "I suppose that values are more important than money.",
+          "changed": "L3-M3's weaker verb — I suppose rather than I hold"
+        }
+      ],
+      "mistake": {
+        "display": "aʿtaqid bi-anna al-qiyam ahamm",
+        "script": "أعتقد بأن القيم أهم",
+        "why": "The bi- belongs to ūmin, not to aʿtaqid. aʿtaqid takes anna and a clause with nothing in between, and the stray preposition is exactly the sign that the two verbs have been merged."
+      },
+      "usage": "Stating where you stand when somebody has asked you directly and a hedge would be evasive.",
+      "register": "neutral",
+      "mnemonic": "anna after aʿtaqid, bi- after ūmin, never crossed."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M5-C01",
+      "display": "al-ḥurriyya muhimma, wa al-ʿadāla ahamm",
+      "script": "الحرية مهمة، والعدالة أهم",
+      "cue": "Freedom is important, and justice is more important."
+    },
+    {
+      "id": "L5-M5-C02",
+      "display": "al-ʿadāla asās al-mujtamaʿ",
+      "script": "العدالة أساس المجتمع",
+      "cue": "Justice is the foundation of society."
+    },
+    {
+      "id": "L5-M5-C03",
+      "display": "aṣ-ṣadāqa ahamm min al-māl",
+      "script": "الصداقة أهم من المال",
+      "cue": "Friendship is more important than money."
+    },
+    {
+      "id": "L5-M5-C04",
+      "display": "ūmin bi-al-ḥurriyya",
+      "script": "أومن بالحرية",
+      "cue": "I believe in freedom."
+    },
+    {
+      "id": "L5-M5-C05",
+      "display": "aʿtaqid anna al-ḥayāt ṣaʿba",
+      "script": "أعتقد أن الحياة صعبة",
+      "cue": "I think that life is hard."
+    },
+    {
+      "id": "L5-M5-C06",
+      "display": "al-īmān qīma, wa al-ʿaql qīma ukhrā",
+      "script": "الإيمان قيمة، والعقل قيمة أخرى",
+      "cue": "Faith is one value, and reason is another value."
+    },
+    {
+      "id": "L5-M5-C07",
+      "display": "mā maʿnā al-ḥaqīqa?",
+      "script": "ما معنى الحقيقة؟",
+      "cue": "What does truth mean?"
+    },
+    {
+      "id": "L5-M5-C08",
+      "display": "aḍ-ḍamīr aṣl al-ʿadāla",
+      "script": "الضمير أصل العدالة",
+      "cue": "Conscience is the root of justice."
+    },
+    {
+      "id": "L5-M5-C09",
+      "display": "hādhā suʾāl qadīm",
+      "script": "هذا سؤال قديم",
+      "cue": "That is an old question."
+    },
+    {
+      "id": "L5-M5-C10",
+      "display": "at-taʾrīkh laysa kull al-ḥaqīqa",
+      "script": "التاريخ ليس كل الحقيقة",
+      "cue": "History is not the whole truth."
+    },
+    {
+      "id": "L5-M5-C11",
+      "display": "as-saʿāda ahamm min kull shayʾ",
+      "script": "السعادة أهم من كل شيء",
+      "cue": "Happiness is more important than anything."
+    },
+    {
+      "id": "L5-M5-C12",
+      "display": "al-insān ahamm min al-mujtamaʿ",
+      "script": "الإنسان أهم من المجتمع",
+      "cue": "The individual is more important than society."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

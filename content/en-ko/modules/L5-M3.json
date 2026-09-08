@@ -1,0 +1,752 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M3",
+  "title": "How they say it there",
+  "job": "Regional and generational speech; what marks an outsider",
+  "prerequisites": [
+    "L5-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "clause-neyo",
+      "clause-jyo?",
+      "i-ge + jeongmal + A-neyo",
+      "seonbae-nim, + clause-jyo?",
+      "seoul-eseo-neun + clause. + busan-eseo-neun + clause"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "-NEYO IS THE ENDING OF SOMETHING JUST NOTICED. It goes on what the speaker has this moment seen, tasted or realised. It is not a warmer -yo: on a fact the listener already gave you it sounds as though you had only just believed them."
+    },
+    {
+      "tag": "delta",
+      "text": "-JYO ASKS THE LISTENER TO CONFIRM. It hangs a small question on what the speaker already believes. L4-M4's -janayo TELLS the listener they agree; -jyo INVITES them to, and a learner who has only -janayo is pushy in every sentence."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH TAGS CARRY NO STANCE. Isn't it and right? attach to anything and mean nothing in particular. -neyo and -jyo are two different stances and are never interchangeable, so the English tag cannot choose between them for you."
+    },
+    {
+      "tag": "interference",
+      "text": "DANGSIN IS NOT YOU. Reaching for it is the loudest textbook mistake in the language. Address is by the name plus -ssi, by the title plus -nim, or by nothing at all — Korean drops the pronoun by default and English never does."
+    },
+    {
+      "tag": "delta",
+      "text": "EVERYONE SAYS I-GE. The uncontracted igeo-ga is written Korean read out. The contraction is not slang and not casual speech; it is the ordinary spoken shape, and the full form is one of the three things that mark an outsider."
+    },
+    {
+      "tag": "free",
+      "text": "THE DIALECT HERE IS FOR RECOGNITION ONLY. The pool carries southern shapes a learner will really hear. No sentence asks for one: this course speaks the Seoul standard, and half-learned satuori is worse than none."
+    },
+    {
+      "tag": "free",
+      "text": "A FLAT SENTENCE IS GRAMMATICAL AND STILL SOUNDS WRONG. Speech with no -neyo, no -jyo and no geureochyo reads like a form being read aloud. The tags are where a speaker's stance lives, and dropping them is the third outsider marker."
+    },
+    {
+      "tag": "free",
+      "text": "SEONBAE AND HUBAE ARE THE ONLY NEW ADDRESS. The rest of the inventory is bought already: eonni, hyeong, nuna and oppa at L2-M2, seonsaengnim, chingu and saram at L1-M1. This module spends nothing more on it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M3-S01",
+      "display": "Seoul-eseo-neun pyojunmal-eul malhaeyo. Busan-eseo-neun satuori-reul malhaeyo.",
+      "script": "서울에서는 표준말을 말해요. 부산에서는 사투리를 말해요.",
+      "cue": "In Seoul people speak the standard; in Busan they speak the dialect.",
+      "literal": "Seoul-at-TOPIC standard-OBJ speak. Busan-at-TOPIC dialect-OBJ speak",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "satuori",
+            "script": "사투리",
+            "cue": "regional speech, dialect",
+            "tag": "free",
+            "forms": [
+              "satuori",
+              "satuori-neun",
+              "satuori-reul",
+              "satuori-ga",
+              "satuori-do"
+            ],
+            "note": "Any Korean that is not the Seoul standard. A neutral word, not an insult — a speaker will use it of their own speech."
+          },
+          {
+            "display": "pyojunmal",
+            "script": "표준말",
+            "cue": "the standard language",
+            "tag": "free",
+            "forms": [
+              "pyojunmal",
+              "pyojunmal-eul",
+              "pyojunmal-do"
+            ],
+            "note": "The Seoul standard — the one Korean every module below taught, named out loud here for the first time."
+          },
+          {
+            "display": "Seoul",
+            "script": "서울",
+            "cue": "Seoul",
+            "tag": "free",
+            "forms": [
+              "Seoul",
+              "Seoul-eseo-neun"
+            ],
+            "note": "The capital, and the place the standard is named after. -eseo-neun sets it against somewhere else rather than merely locating it."
+          },
+          {
+            "display": "Busan",
+            "script": "부산",
+            "cue": "Busan",
+            "tag": "free",
+            "forms": [
+              "Busan",
+              "Busan-eseo-neun"
+            ],
+            "note": "The southern port, and the satuori a learner is likeliest to meet. Named so the sound is recognised, never so it is produced."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "Neither city is a choice a learner has to make. The course speaks the Seoul standard throughout; Busan is here to be heard.",
+      "sound": "SEO-u-re-seo-neun PYO-jun-ma-reul MA-rae-yo. BU-sa-ne-seo-neun SA-tu-ri-reul MA-rae-yo.",
+      "variations": [
+        {
+          "display": "Seoul-eseo-neun pyojunmal-eul malhaeyo.",
+          "script": "서울에서는 표준말을 말해요.",
+          "cue": "In Seoul people speak the standard.",
+          "changed": "one half of the pair, standing alone"
+        },
+        {
+          "display": "Busan-eseo-neun satuori-do malhaeyo.",
+          "script": "부산에서는 사투리도 말해요.",
+          "cue": "In Busan they speak the dialect too.",
+          "changed": "-do for -reul: the dialect added rather than contrasted"
+        }
+      ],
+      "mistake": {
+        "display": "Seoul-eseo-neun pyojunmal malhaeyo.",
+        "script": "서울에서는 표준말 말해요.",
+        "why": "The object particle has gone. Dropping -eul happens in fast speech, but the whole sentence is a contrast between two halves and the contrast needs both particles standing."
+      },
+      "usage": "Saying where the Korean you are hearing comes from.",
+      "register": "neutral",
+      "mnemonic": "Seoul standard, Busan satuori."
+    },
+    {
+      "id": "L5-M3-S02",
+      "display": "Jibang-eseo-neun mal-i jeongmal dallayo.",
+      "script": "지방에서는 말이 정말 달라요.",
+      "cue": "Outside the capital the speech is really different.",
+      "literal": "province-at-TOPIC speech-SUBJ really is-different",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jibang",
+            "script": "지방",
+            "cue": "the provinces, outside the capital",
+            "tag": "free",
+            "forms": [
+              "jibang",
+              "jibang-eseo-neun",
+              "jibang-e"
+            ],
+            "note": "Everywhere in the country that is not Seoul. It is where a learner first hears Korean nobody taught them."
+          },
+          {
+            "display": "masisseoye",
+            "script": "맛있어예",
+            "cue": "it is delicious (southern)",
+            "tag": "free",
+            "forms": [
+              "masisseoye",
+              "geuraeye",
+              "joaye"
+            ],
+            "note": "The southern polite ending -ye where Seoul says -yo. Recognise it in the pool; no sentence here asks you to say it."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "Different, not worse. English speakers already grant that accents carry identity, and Korean asks nothing more of them here.",
+      "sound": "JI-bang-e-seo-neun MA-ri JEONG-mal DAL-la-yo.",
+      "variations": [
+        {
+          "display": "Jibang-e satuori-ga isseoyo.",
+          "script": "지방에 사투리가 있어요.",
+          "cue": "The provinces have their dialects.",
+          "changed": "the plain locative, and the dialect as the subject"
+        },
+        {
+          "display": "Jibang-eseo-neun mokssori-do dallayo.",
+          "script": "지방에서는 목소리도 달라요.",
+          "cue": "Outside the capital even the voice is different.",
+          "changed": "the voice rather than the words"
+        }
+      ],
+      "mistake": {
+        "display": "Jibang-eseo-neun mal-i teullyeoyo.",
+        "script": "지방에서는 말이 틀려요.",
+        "why": "teullyeoyo says wrong, not different. A dialect is dallayo; calling it teullyeoyo says the region speaks Korean incorrectly, which is both untrue and rude."
+      },
+      "usage": "Warning a learner that the Korean they were taught is one Korean among several.",
+      "register": "neutral",
+      "mnemonic": "Jibang: different words, not wrong ones."
+    },
+    {
+      "id": "L5-M3-S03",
+      "display": "Satuori-neun mokssori-do jeongmal dallayo.",
+      "script": "사투리는 목소리도 정말 달라요.",
+      "cue": "With a dialect even the voice is really different.",
+      "literal": "dialect-TOPIC voice-ALSO really is-different",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mokssori",
+            "script": "목소리",
+            "cue": "a voice",
+            "tag": "free",
+            "forms": [
+              "mokssori",
+              "mokssori-ga",
+              "mokssori-do"
+            ],
+            "note": "A person's voice. L4-M2 already owns sori for a sound, so this is the human one and the two never overlap."
+          },
+          {
+            "display": "eoksuro",
+            "script": "억수로",
+            "cue": "very, a huge amount (southern)",
+            "tag": "free",
+            "forms": [
+              "eoksuro"
+            ],
+            "note": "The Gyeongsang word where Seoul says neomu or jeongmal. Constant in southern speech; recognise it and leave it there."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "A dialect is not only its words. The pitch and the length of the syllables carry as much of it, which is why hearing one is a skill of its own.",
+      "sound": "SA-tu-ri-neun MOK-sso-ri-do JEONG-mal DAL-la-yo.",
+      "variations": [
+        {
+          "display": "Mokssori-ga jeongmal dallayo.",
+          "script": "목소리가 정말 달라요.",
+          "cue": "The voice is really different.",
+          "changed": "the voice as the subject, the dialect left implied"
+        },
+        {
+          "display": "Satuori-neun jeongmal dallayo.",
+          "script": "사투리는 정말 달라요.",
+          "cue": "The dialect really is different.",
+          "changed": "the claim without the detail"
+        }
+      ],
+      "mistake": {
+        "display": "Satuori-neun sori-do jeongmal dallayo.",
+        "script": "사투리는 소리도 정말 달라요.",
+        "why": "sori, L4-M2's word, is a sound in the world — a bang, a noise. A person's voice is mokssori, and this sentence is about people."
+      },
+      "usage": "Explaining why a dialect is hard to follow even when you know every word.",
+      "register": "neutral",
+      "mnemonic": "Mok is the throat: mokssori is the voice from it."
+    },
+    {
+      "id": "L5-M3-S04",
+      "display": "I-ge jeongmal masinneyo!",
+      "script": "이게 정말 맛있네요!",
+      "cue": "This is really good!",
+      "literal": "this-thing really is-tasty-NOTICE",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "i-ge",
+            "script": "이게",
+            "cue": "this one, this thing",
+            "tag": "interference",
+            "forms": [
+              "i-ge"
+            ],
+            "note": "The contraction of igeo-ga that every speaker uses. The full form is not more polite, only more written, and reaching for it marks an outsider."
+          },
+          {
+            "display": "masinneyo",
+            "script": "맛있네요",
+            "cue": "it is tasty (just noticed)",
+            "tag": "delta",
+            "forms": [
+              "masinneyo",
+              "jonneyo",
+              "chumneyo"
+            ],
+            "note": "-neyo on something tasted this second. Said of a fact the listener already gave you, it sounds as if you had only just believed them."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "-neyo is not a politer -yo. masisseoyo states that the food is good; masinneyo reacts to finding out that it is, and only the second one belongs at a first mouthful.",
+      "sound": "I-ge JEONG-mal MA-sin-ne-yo!",
+      "variations": [
+        {
+          "display": "I-ge jeongmal chumneyo.",
+          "script": "이게 정말 춥네요.",
+          "cue": "This is really cold.",
+          "changed": "the same ending on a different reaction"
+        },
+        {
+          "display": "I-ge jonneyo.",
+          "script": "이게 좋네요.",
+          "cue": "Oh, this is nice.",
+          "changed": "the shortest form the ending takes"
+        }
+      ],
+      "mistake": {
+        "display": "Igeo-ga jeongmal masinneyo!",
+        "script": "이거가 정말 맛있네요!",
+        "why": "Grammatically flawless and nobody says it. The uncontracted igeo-ga at the front of a spoken sentence is a textbook read aloud; i-ge is the shape a learner should reach for every time."
+      },
+      "usage": "The first mouthful, in front of the person who cooked it.",
+      "register": "neutral",
+      "mnemonic": "I-ge, and never igeo-ga."
+    },
+    {
+      "id": "L5-M3-S05",
+      "display": "Yoseum nalssi-ga jeongmal chumneyo.",
+      "script": "요즘 날씨가 정말 춥네요.",
+      "cue": "The weather these days is really cold.",
+      "literal": "these-days weather-SUBJ really is-cold-NOTICE",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yoseum",
+            "script": "요즘",
+            "cue": "these days, lately",
+            "tag": "free",
+            "forms": [
+              "yoseum",
+              "yoseum-eun"
+            ],
+            "note": "The window a generational or seasonal remark opens with. It stretches from the last few weeks to the last few years, and the sentence says which."
+          },
+          {
+            "display": "geurayo",
+            "script": "그라요",
+            "cue": "that's right (southwestern)",
+            "tag": "free",
+            "forms": [
+              "geurayo"
+            ],
+            "note": "The Jeolla shape of L2-M6's geuraeyo. One vowel apart, and a whole region is in it. Recognition only."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "This is the safest sentence in Korean small talk and -neyo is why: it invites agreement without claiming anything about the listener.",
+      "sound": "YO-jeum NAL-ssi-ga JEONG-mal CHUM-ne-yo.",
+      "variations": [
+        {
+          "display": "Yoseum-eun nalssi-ga joayo.",
+          "script": "요즘은 날씨가 좋아요.",
+          "cue": "The weather is good these days.",
+          "changed": "yoseum topicalised, and a flat statement instead of a reaction"
+        },
+        {
+          "display": "Nalssi-ga chumneyo.",
+          "script": "날씨가 춥네요.",
+          "cue": "It's cold, isn't it.",
+          "changed": "the remark with no time frame at all"
+        }
+      ],
+      "mistake": {
+        "display": "Yoseum nalssi-ga jeongmal chuwoyoneyo.",
+        "script": "요즘 날씨가 정말 추워요네요.",
+        "why": "-neyo goes on the stem, not on a finished -yo form. chuwoyo plus neyo is two endings stacked; the ending is chumneyo and nothing else."
+      },
+      "usage": "Opening a conversation with somebody you have just met.",
+      "register": "neutral",
+      "mnemonic": "Yoseum plus -neyo: the weather, and nothing risked."
+    },
+    {
+      "id": "L5-M3-S06",
+      "display": "Seonbae-nim, yeogi jeongmal masitjyo?",
+      "script": "선배님, 여기 정말 맛있죠?",
+      "cue": "Sunbae, this place really is good, isn't it?",
+      "literal": "senior-HON, here really is-tasty-CONFIRM?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "seonbae",
+            "script": "선배",
+            "cue": "someone senior to you at school or work",
+            "tag": "free",
+            "forms": [
+              "seonbae",
+              "seonbae-nim"
+            ],
+            "note": "The person who arrived before you. -nim is added when you address them directly, and the word does the work a name would in English."
+          },
+          {
+            "display": "masitjyo",
+            "script": "맛있죠",
+            "cue": "it is good, isn't it?",
+            "tag": "delta",
+            "forms": [
+              "masitjyo",
+              "jochyo"
+            ],
+            "note": "-jyo invites the listener to confirm what you already believe. L4-M4's -janayo tells them they agree; this one asks."
+          }
+        ],
+        "rules": [
+          1,
+          7
+        ]
+      },
+      "trap": "-janayo here would be pushy: it would tell a senior what they already think. -jyo leaves the verdict with them, which is why it is the tag for talking upward.",
+      "sound": "SEON-bae-nim, YEO-gi JEONG-mal MA-sit-jyo?",
+      "variations": [
+        {
+          "display": "Seonbae-nim, yeogi jochyo?",
+          "script": "선배님, 여기 좋죠?",
+          "cue": "Sunbae, this place is nice, isn't it?",
+          "changed": "a plainer adjective in the same tag"
+        },
+        {
+          "display": "Yeogi jeongmal masitjyo?",
+          "script": "여기 정말 맛있죠?",
+          "cue": "This place really is good, isn't it?",
+          "changed": "the address dropped, as Korean drops it freely"
+        }
+      ],
+      "mistake": {
+        "display": "Dangsin, yeogi jeongmal masitjyo?",
+        "script": "당신, 여기 정말 맛있죠?",
+        "why": "dangsin in place of the title turns a friendly question into a confrontation. Address a senior as seonbae-nim, or leave the slot empty; never fill it with dangsin."
+      },
+      "usage": "Checking a shared verdict with somebody a year or two ahead of you.",
+      "register": "neutral",
+      "mnemonic": "-jyo asks; -janayo tells."
+    },
+    {
+      "id": "L5-M3-S07",
+      "display": "Hubae-do satuori-reul sseoyo, geureochyo?",
+      "script": "후배도 사투리를 써요, 그렇죠?",
+      "cue": "The junior uses the dialect too, doesn't he?",
+      "literal": "junior-ALSO dialect-OBJ uses, is-so-CONFIRM?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hubae",
+            "script": "후배",
+            "cue": "someone junior to you at school or work",
+            "tag": "free",
+            "forms": [
+              "hubae",
+              "hubae-do"
+            ],
+            "note": "The other half of seonbae: whoever arrived after you. Neither word is a rank — both are only about who came first."
+          },
+          {
+            "display": "geureochyo",
+            "script": "그렇죠",
+            "cue": "right?, that's so, isn't it",
+            "tag": "delta",
+            "forms": [
+              "geureochyo"
+            ],
+            "note": "-jyo standing on its own as a whole tag. It is the everyday checking word, and the piece of Seoul speech southern speakers keep unchanged."
+          }
+        ],
+        "rules": [
+          1,
+          6
+        ]
+      },
+      "trap": "geureochyo tacked on the end is a question, not a full stop. Said flat, with no rise, it stops asking and starts insisting.",
+      "sound": "HU-bae-do SA-tu-ri-reul SSEO-yo, GEU-reo-chyo?",
+      "variations": [
+        {
+          "display": "Hubae-do satuori-reul sseoyo.",
+          "script": "후배도 사투리를 써요.",
+          "cue": "The junior uses the dialect too.",
+          "changed": "the flat sentence, with the tag taken off"
+        },
+        {
+          "display": "Geureochyo?",
+          "script": "그렇죠?",
+          "cue": "Right?",
+          "changed": "the tag alone, as a whole turn"
+        }
+      ],
+      "mistake": {
+        "display": "Hubae-do satuori-reul sseoyo, geureoyojanayo?",
+        "script": "후배도 사투리를 써요, 그래요잖아요?",
+        "why": "-janayo cannot be a question mark. It asserts that the listener already knows, so pinning a question to it asks and insists in one breath."
+      },
+      "usage": "Checking something about a third person with somebody who knows them better.",
+      "register": "neutral",
+      "mnemonic": "Geureochyo — the whole tag in one word."
+    },
+    {
+      "id": "L5-M3-S08",
+      "display": "Dangsin-eun joeun mal-i anieyo.",
+      "script": "당신은 좋은 말이 아니에요.",
+      "cue": "Dangsin is not a good word.",
+      "literal": "dangsin-TOPIC good word-SUBJ is-not",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dangsin",
+            "script": "당신",
+            "cue": "you — and almost never say it",
+            "tag": "interference",
+            "forms": [
+              "dangsin",
+              "dangsin-eun"
+            ],
+            "note": "A dictionary offers it for you. In speech it is a challenge, or a spouse. Use the name plus -ssi, the title plus -nim, or nothing at all."
+          },
+          {
+            "display": "geosigi",
+            "script": "거시기",
+            "cue": "whatsit, thingy (southwestern)",
+            "tag": "free",
+            "forms": [
+              "geosigi"
+            ],
+            "note": "The Jeolla filler for a word that will not come. It stands in for anything, and it is the region's best-known single word."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "English needs a subject and goes looking for one; Korean has already dropped it. The empty slot is not a gap waiting for dangsin — it is the ordinary shape of the sentence.",
+      "sound": "DANG-si-neun JO-eun MA-ri A-ni-e-yo.",
+      "variations": [
+        {
+          "display": "Geu mal-eun joeun mal-i anieyo.",
+          "script": "그 말은 좋은 말이 아니에요.",
+          "cue": "That word is not a good word.",
+          "changed": "the word pointed at rather than named"
+        },
+        {
+          "display": "Joeun mal-i anieyo.",
+          "script": "좋은 말이 아니에요.",
+          "cue": "It isn't a good word.",
+          "changed": "the verdict with the word itself left out"
+        }
+      ],
+      "mistake": {
+        "display": "Dangsin-eun yoseum eotteoke jinaeseyo?",
+        "script": "당신은 요즘 어떻게 지내세요?",
+        "why": "Every word is polite and the sentence is still wrong. Aimed at the person in front of you, dangsin reads as a challenge — ask seonsaengnim, or the name plus -ssi, or nobody at all."
+      },
+      "usage": "The one sentence in the course whose job is to stop a word being said.",
+      "register": "neutral",
+      "mnemonic": "Dangsin: in the dictionary, not in the room."
+    },
+    {
+      "id": "L5-M3-S09",
+      "display": "Yoseum jeolmeun saram-eun pyojunmal-eul jal haeyo.",
+      "script": "요즘 젊은 사람은 표준말을 잘 해요.",
+      "cue": "Young people these days speak the standard well.",
+      "literal": "these-days young person-TOPIC standard-OBJ well does",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeolmeun saram",
+            "script": "젊은 사람",
+            "cue": "a young person, young people",
+            "tag": "free",
+            "forms": [
+              "jeolmeun saram",
+              "jeolmeun saram-eun"
+            ],
+            "note": "jeolmeun only ever sits in front of a noun. Korean has no bare the young, so the noun has to be there for the modifier to lean on."
+          }
+        ],
+        "rules": [
+          5,
+          6
+        ]
+      },
+      "trap": "The generational half of this module stops here. Real generational speech is banmal, and this course does not speak it; what is left is the observation, not the sound.",
+      "sound": "YO-jeum JEOL-meun SA-ra-meun PYO-jun-ma-reul JAL HAE-yo.",
+      "variations": [
+        {
+          "display": "Jeolmeun saram-eun pyojunmal-do jal haeyo.",
+          "script": "젊은 사람은 표준말도 잘 해요.",
+          "cue": "Young people speak the standard well too.",
+          "changed": "-do for -eul: the standard added to what they already speak"
+        },
+        {
+          "display": "Yoseum jeolmeun saram-eun dallayo.",
+          "script": "요즘 젊은 사람은 달라요.",
+          "cue": "Young people these days are different.",
+          "changed": "the claim with nothing named"
+        }
+      ],
+      "mistake": {
+        "display": "Yoseum jeolmeun-eun pyojunmal-eul jal haeyo.",
+        "script": "요즘 젊은은 표준말을 잘 해요.",
+        "why": "jeolmeun cannot stand alone with a particle on it. It is a modifier and needs its noun; English the young has no Korean counterpart of the same shape."
+      },
+      "usage": "Saying how the speech of a country has moved in a generation.",
+      "register": "neutral",
+      "mnemonic": "Jeolmeun leans on saram."
+    },
+    {
+      "id": "L5-M3-S10",
+      "display": "Geureochyo? Ne, manneyo.",
+      "script": "그렇죠? 네, 맞네요.",
+      "cue": "Right? — Yes, so it is.",
+      "literal": "is-so-CONFIRM? yes, is-correct-NOTICE",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "manneyo",
+            "script": "맞네요",
+            "cue": "that's right (just realised)",
+            "tag": "delta",
+            "forms": [
+              "manneyo"
+            ],
+            "note": "The -neyo answer to a -jyo question: the speaker grants the point at the moment of granting it. A bare ne leaves the exchange half finished."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          6
+        ]
+      },
+      "trap": "Both endings in two words, and they are not swappable. -jyo asks; -neyo answers. Reverse them and the asker sounds surprised at their own question.",
+      "sound": "GEU-reo-chyo? NE, MAN-ne-yo.",
+      "variations": [
+        {
+          "display": "Geureochyo? Ne, geureochyo.",
+          "script": "그렇죠? 네, 그렇죠.",
+          "cue": "Right? — Yes, right.",
+          "changed": "the tag echoed instead of the realisation"
+        },
+        {
+          "display": "Manneyo.",
+          "script": "맞네요.",
+          "cue": "So it is.",
+          "changed": "the answer standing on its own"
+        }
+      ],
+      "mistake": {
+        "display": "Geureoneyo? Ne, matjyo.",
+        "script": "그러네요? 네, 맞죠.",
+        "why": "The two endings have swapped. Asking with -neyo makes the speaker sound surprised at their own question, and answering with -jyo asks the asker to confirm their own claim."
+      },
+      "usage": "Closing a small agreement, which is most of what a conversation is.",
+      "register": "neutral",
+      "mnemonic": "-jyo asks, -neyo answers."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M3-C01",
+      "display": "Masisseoye.",
+      "script": "맛있어예.",
+      "cue": "It's delicious. (southern)"
+    },
+    {
+      "id": "L5-M3-C02",
+      "display": "Geuraeye.",
+      "script": "그래예.",
+      "cue": "That's right. (southern)"
+    },
+    {
+      "id": "L5-M3-C03",
+      "display": "Joaye.",
+      "script": "좋아예.",
+      "cue": "That's good. (southern)"
+    },
+    {
+      "id": "L5-M3-C04",
+      "display": "Eoksuro masisseoyo.",
+      "script": "억수로 맛있어요.",
+      "cue": "It's incredibly good. (southern)"
+    },
+    {
+      "id": "L5-M3-C05",
+      "display": "Geurayo.",
+      "script": "그라요.",
+      "cue": "That's right. (southwestern)"
+    },
+    {
+      "id": "L5-M3-C06",
+      "display": "Geosigi, geu sikdang jeongmal masisseoyo.",
+      "script": "거시기, 그 식당 정말 맛있어요.",
+      "cue": "Whatsit — that restaurant is really good. (southwestern)"
+    },
+    {
+      "id": "L5-M3-C07",
+      "display": "I-ge jeongmal masinneyo.",
+      "script": "이게 정말 맛있네요.",
+      "cue": "This is really good."
+    },
+    {
+      "id": "L5-M3-C08",
+      "display": "Yoseum nalssi-ga jeongmal chumneyo.",
+      "script": "요즘 날씨가 정말 춥네요.",
+      "cue": "The weather these days is really cold."
+    },
+    {
+      "id": "L5-M3-C09",
+      "display": "Geureochyo?",
+      "script": "그렇죠?",
+      "cue": "Right?"
+    },
+    {
+      "id": "L5-M3-C10",
+      "display": "Seonbae-nim, yeogi masitjyo?",
+      "script": "선배님, 여기 맛있죠?",
+      "cue": "Sunbae, this place is good, isn't it?"
+    },
+    {
+      "id": "L5-M3-C11",
+      "display": "Manneyo.",
+      "script": "맞네요.",
+      "cue": "So it is."
+    },
+    {
+      "id": "L5-M3-C12",
+      "display": "Jibang-eseo-neun mal-i dallayo.",
+      "script": "지방에서는 말이 달라요.",
+      "cue": "Outside the capital the speech is different."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 3
+  }
+}

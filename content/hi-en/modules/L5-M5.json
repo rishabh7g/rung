@@ -1,0 +1,572 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M5",
+  "title": "Big questions",
+  "job": "Values, beliefs, abstract talk",
+  "prerequisites": ["L5-M1", "L5-M2", "L5-M3", "L5-M4"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 6,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["present_simple", "simple_past"],
+    "allowedPatterns": [
+      "<abstract noun> + is + <adjective> + .",
+      "Most people + <verb> + <object> + , + but + <clause> + .",
+      "I believe + (that) + <clause> + .",
+      "It depends on + <noun phrase> + .",
+      "People tend to + <verb> + <object> + ."
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "यह इस कोर्स का तीसरा article वाला नियम है और सबसे उलटा. L1-M1 ने a / an दिया और L1-M3 ने the — दोनों उन चीज़ों पर जिन्हें उँगली से दिखाया जा सकता है. भाव और विचार बताने वाले शब्दों के आगे कुछ नहीं आता: Freedom matters · Money is not everything · People forget. the तभी आता है जब आगे आकर वर्ग को छोटा कर दिया जाए — the freedom to speak, the money you gave me."
+    },
+    {
+      "tag": "interference",
+      "text": "हिंदी में article है ही नहीं, और दख़ल उलटी दिशा से आता है. सीखने वाला the छोड़ता नहीं, ज़रूरत से ज़्यादा लगाता है — The life is difficult, The society expects too much, The money is not everything — क्योंकि चालीस पाठों की आदत कहती है कि अंग्रेज़ी के संज्ञा के आगे कुछ न कुछ चाहिए. भारतीय अंग्रेज़ी का यह सबसे पहचाना हुआ निशान है और इसी पाठ की ज़िम्मेदारी है."
+    },
+    {
+      "tag": "free",
+      "text": "आम बात को ढका हुआ कहना अंग्रेज़ी की आदत है: in general, on the whole, most people, some people, tend to, it depends. बिना ढके कही गई आम बात अंग्रेज़ी में राय नहीं, फ़तवा सुनाई देती है — और इस पाठ का हर वाक्य आम बात ही है, इसलिए ढकना यहाँ सजावट नहीं, व्याकरण जितना ज़रूरी है."
+    },
+    {
+      "tag": "interference",
+      "text": "दूसरी दख़ल कर्ता की है. हिंदी का कोई, इंसान, आदमी सीखने वाले को One should do his duty की तरफ़ खींचता है. वह वाक्य व्याकरण से ठीक है पर सौ साल पुराना लगता है. आज की अंग्रेज़ी इसके लिए you कहती है — You should keep your word — या people."
+    },
+    {
+      "tag": "free",
+      "text": "believe, know, understand और mean की पंक्ति L3-M1 की है और वह नियम पहले से बोर्ड पर है — ये क्रियाएँ -ing में नहीं जातीं, इसलिए I am believing that ग़लत है. उसे यहाँ दोहराया नहीं जा रहा, सिर्फ़ याद दिलाया जा रहा है. और यह पाठ राय रखता है और एक कारण देता है; उसी राय को किसी आपत्ति के सामने बचाना L5-M6 का काम है."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M5-S01",
+      "display": "Freedom is important, but it is not everything.",
+      "cue": "आज़ादी ज़रूरी है, पर वही सब कुछ नहीं है.",
+      "literal": "आज़ादी है ज़रूरी, पर वह है नहीं सब कुछ.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "freedom",
+            "cue": "आज़ादी",
+            "tag": "delta",
+            "forms": ["freedom"],
+            "note": "भाव बताने वाला शब्द, इसलिए इसके आगे न a आता है न the. The freedom is important कहना ग़लत है."
+          },
+          {
+            "display": "important",
+            "cue": "ज़रूरी, महत्त्वपूर्ण",
+            "tag": "free",
+            "forms": ["important"],
+            "note": "इसके साथ तुलना more important और most important से बनती है, importanter से नहीं."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "The freedom मत कहिए. the तभी आता है जब आगे कुछ जोड़कर बात छोटी कर दी जाए — the freedom to speak.",
+      "sound": "important में ज़ोर बीच वाले हिस्से पर है और पहला अक्षर दब जाता है — इम्-पॉर्-टन्ट्.",
+      "variations": [
+        {
+          "display": "The freedom to speak is important.",
+          "cue": "बोलने की आज़ादी ज़रूरी है.",
+          "changed": "the तब, जब बात छोटी की गई"
+        },
+        {
+          "display": "Freedom is not everything.",
+          "cue": "आज़ादी ही सब कुछ नहीं है.",
+          "changed": "सिर्फ़ दूसरा हिस्सा"
+        },
+        {
+          "display": "Money is important, but it is not everything.",
+          "cue": "पैसा ज़रूरी है, पर वही सब कुछ नहीं है.",
+          "changed": "दूसरा भाव"
+        }
+      ],
+      "mistake": {
+        "display": "The freedom is important, but it is not everything.",
+        "why": "भाव वाले शब्द के आगे the नहीं आता. यह भारतीय अंग्रेज़ी का सबसे आम निशान है."
+      },
+      "usage": "किसी बड़ी बात पर अपनी राय शुरू करते समय — बातचीत, कक्षा या लिखने में.",
+      "register": "neutral",
+      "mnemonic": "भाव के आगे कुछ नहीं — the तभी, जब आगे शर्त लगे."
+    },
+    {
+      "id": "L5-M5-S02",
+      "display": "Money is not happiness. Most people know that.",
+      "cue": "पैसा ख़ुशी नहीं है. ज़्यादातर लोग यह जानते हैं.",
+      "literal": "पैसा है नहीं ख़ुशी. ज़्यादातर लोग जानते वह.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "happiness",
+            "cue": "ख़ुशी",
+            "tag": "delta",
+            "forms": ["happiness"],
+            "note": "happy से बना भाववाचक शब्द. इसके आगे भी न a आता है न the, और यह गिना नहीं जाता."
+          },
+          {
+            "display": "most people",
+            "cue": "ज़्यादातर लोग",
+            "tag": "free",
+            "forms": ["most people"],
+            "note": "दोनों शब्द एक साथ, और बीच में the नहीं — most of the people नहीं, most people. यह आम बात को ढकने का सबसे सादा तरीक़ा है."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "The money is not the happiness मत कहिए. दोनों भाव वाले शब्द हैं और दोनों नंगे रहते हैं.",
+      "sound": "happiness में ज़ोर पहले हिस्से पर है — है-पि-नस्.",
+      "variations": [
+        {
+          "display": "Money is not happiness.",
+          "cue": "पैसा ख़ुशी नहीं है.",
+          "changed": "बिना ढके"
+        },
+        {
+          "display": "Most people know that money is not everything.",
+          "cue": "ज़्यादातर लोग जानते हैं कि पैसा ही सब कुछ नहीं है.",
+          "changed": "एक ही वाक्य में"
+        },
+        {
+          "display": "Some people believe that money is happiness.",
+          "cue": "कुछ लोग मानते हैं कि पैसा ही ख़ुशी है.",
+          "changed": "उलटी राय"
+        }
+      ],
+      "mistake": {
+        "display": "The money is not the happiness. Most of the people know that.",
+        "why": "तीनों जगह the फ़ालतू है. भाव वाले शब्द नंगे रहते हैं और यह पंक्ति most people है."
+      },
+      "usage": "किसी आम मानी हुई बात को कहते समय, जब उसे सबकी बात बताना हो.",
+      "register": "neutral",
+      "mnemonic": "most people — बीच में the की जगह नहीं."
+    },
+    {
+      "id": "L5-M5-S03",
+      "display": "I believe that truth matters more than money.",
+      "cue": "मैं मानता हूँ कि सच पैसे से ज़्यादा मायने रखता है.",
+      "literal": "मैं मानता कि सच मायने रखता ज़्यादा से पैसा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "believe",
+            "cue": "मानना, विश्वास करना",
+            "tag": "free",
+            "forms": ["believe", "believes"],
+            "note": "L3-M1 वाली ठहरी हुई क्रियाओं में से एक, इसलिए I am believing कभी नहीं आता."
+          },
+          {
+            "display": "truth",
+            "cue": "सच, सच्चाई",
+            "tag": "delta",
+            "forms": ["truth"],
+            "note": "true (L3-M3) से बना भाववाचक शब्द. आम अर्थ में नंगा रहता है; the truth तब, जब किसी एक बात का सच हो."
+          },
+          {
+            "display": "matters",
+            "cue": "मायने रखता है",
+            "tag": "free",
+            "forms": ["matters", "matter"],
+            "note": "यहाँ क्रिया है — 'अहमियत रखना'. It does not matter इसी का ना वाला रूप है."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "I believe the truth matters कहना भी चलता है, पर तब बात किसी एक ख़ास सच की हो जाती है, हर सच की नहीं.",
+      "sound": "truth का th जीभ दाँतों के बीच रखकर बोला जाता है — 'ट्रुथ' नहीं, थ वाली आवाज़.",
+      "variations": [
+        {
+          "display": "I believe that freedom matters.",
+          "cue": "मैं मानता हूँ कि आज़ादी मायने रखती है.",
+          "changed": "छोटा और दूसरा भाव"
+        },
+        {
+          "display": "Truth matters more than money.",
+          "cue": "सच पैसे से ज़्यादा मायने रखता है.",
+          "changed": "बिना I believe"
+        },
+        {
+          "display": "I believe that duty matters more than money.",
+          "cue": "मैं मानता हूँ कि कर्तव्य पैसे से ज़्यादा मायने रखता है.",
+          "changed": "दूसरा भाव"
+        }
+      ],
+      "mistake": {
+        "display": "I am believing that the truth matters more than the money.",
+        "why": "believe -ing में नहीं जाती (L3-M1), और दोनों भाव वाले शब्दों के आगे the फ़ालतू है."
+      },
+      "usage": "अपनी राय सीधे रखते समय — बहस, कक्षा या लिखी हुई बात में.",
+      "register": "neutral",
+      "mnemonic": "I believe that — और उसके बाद पूरा वाक्य."
+    },
+    {
+      "id": "L5-M5-S04",
+      "display": "It depends on what you value in life.",
+      "cue": "यह इस पर है कि आप ज़िंदगी में किसे अहमियत देते हैं.",
+      "literal": "यह निर्भर पर क्या आप अहमियत देते में ज़िंदगी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "it depends",
+            "cue": "यह इस पर है, कहा नहीं जा सकता",
+            "tag": "free",
+            "forms": ["it depends"],
+            "note": "दोनों शब्द एक साथ. अकेला भी पूरा जवाब है, और आगे बढ़ाना हो तो हमेशा on आता है."
+          },
+          {
+            "display": "value",
+            "cue": "अहमियत देना; मूल्य",
+            "tag": "free",
+            "forms": ["value", "values"],
+            "note": "क्रिया भी है और संज्ञा भी. बहुवचन values का अर्थ है वे बातें जो किसी को सबसे ज़रूरी लगती हैं."
+          },
+          {
+            "display": "life",
+            "cue": "ज़िंदगी",
+            "tag": "delta",
+            "forms": ["life"],
+            "note": "आम अर्थ में नंगा रहता है — Life is difficult. The life is difficult भारतीय अंग्रेज़ी का जाना-पहचाना निशान है."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "It depends को अकेला छोड़ना पूरी तरह चलता है. आगे बढ़ाना हो तो on के बाद संज्ञा या पूरा वाक्य आता है, of नहीं.",
+      "sound": "depends के आख़िर में z की आवाज़ है — डि-पेन्ड्ज़्.",
+      "variations": [
+        {
+          "display": "It depends.",
+          "cue": "कहा नहीं जा सकता.",
+          "changed": "सिर्फ़ जवाब"
+        },
+        {
+          "display": "It depends on the person.",
+          "cue": "यह आदमी पर है.",
+          "changed": "सीधा नाम"
+        },
+        {
+          "display": "Life is not fair, but it is not wrong.",
+          "cue": "ज़िंदगी इंसाफ़ नहीं करती, पर वह ग़लत नहीं है.",
+          "changed": "life बिना the"
+        }
+      ],
+      "mistake": {
+        "display": "It depends of what you value in the life.",
+        "why": "यह पंक्ति depends on है, depends of नहीं; और आम अर्थ वाली life के आगे the नहीं आता."
+      },
+      "usage": "जब सीधा हाँ या ना कहना ठीक न हो — बातचीत, दफ़्तर, कक्षा.",
+      "register": "neutral",
+      "mnemonic": "depends के बाद हमेशा on."
+    },
+    {
+      "id": "L5-M5-S05",
+      "display": "People tend to forget the past.",
+      "cue": "लोग बीती बातें भूल ही जाते हैं.",
+      "literal": "लोग रुझान रखते को भूलना वह बीता.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tend to",
+            "cue": "अक्सर ऐसा करते हैं",
+            "tag": "delta",
+            "forms": ["tend to"],
+            "note": "दोनों शब्द एक साथ, और इसके बाद सादी क्रिया आती है. यह आम बात को ढकने का तरीक़ा है, आदत बताने का नहीं."
+          },
+          {
+            "display": "forget",
+            "cue": "भूलना",
+            "tag": "free",
+            "forms": ["forget", "forgets"],
+            "note": "remember (L5-M4) का उलटा. भूत रूप forgot है, forgetted नहीं."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "People tend to कहिए, One tends to नहीं. One वाला रूप व्याकरण से ठीक है पर सौ साल पुराना लगता है.",
+      "sound": "tend to में पहला t दब जाता है — टेन्-टु.",
+      "variations": [
+        {
+          "display": "People tend to forget the truth.",
+          "cue": "लोग सच भूल ही जाते हैं.",
+          "changed": "क्या भूलते हैं"
+        },
+        {
+          "display": "Most people tend to forget the past.",
+          "cue": "ज़्यादातर लोग बीती बातें भूल ही जाते हैं.",
+          "changed": "दोहरा ढका हुआ"
+        },
+        {
+          "display": "You tend to forget the past.",
+          "cue": "आप बीती बातें भूल ही जाते हैं.",
+          "changed": "आम कर्ता you"
+        }
+      ],
+      "mistake": {
+        "display": "One tends to forget the past.",
+        "why": "यह वाक्य ग़लत नहीं, पुराना है. आज की अंग्रेज़ी people या you कहती है."
+      },
+      "usage": "इंसानों के बारे में कोई आम बात कहते समय, बिना किसी एक पर उँगली उठाए.",
+      "register": "neutral",
+      "mnemonic": "tend to = 'अक्सर ऐसा ही होता है', बिना दावे के."
+    },
+    {
+      "id": "L5-M5-S06",
+      "display": "In general, life is not fair. That is the truth.",
+      "cue": "आम तौर पर ज़िंदगी इंसाफ़ नहीं करती. यही सच है.",
+      "literal": "में आम, ज़िंदगी है नहीं इंसाफ़ वाली. वह है वह सच.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "in general",
+            "cue": "आम तौर पर",
+            "tag": "free",
+            "forms": ["in general"],
+            "note": "दोनों शब्द एक साथ और वाक्य की शुरुआत में, उसके बाद अल्पविराम. यह पूरे वाक्य को ढक देता है."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "यहाँ the truth में the सही है, क्योंकि बात किसी एक ख़ास सच की हो रही है. आम सच के लिए नंगा truth ही आता है.",
+      "sound": "general में g की आवाज़ 'ज' जैसी है — जे-न-रल्.",
+      "variations": [
+        {
+          "display": "In general, people tend to forget.",
+          "cue": "आम तौर पर लोग भूल ही जाते हैं.",
+          "changed": "दूसरा वाक्य"
+        },
+        {
+          "display": "Life is not fair.",
+          "cue": "ज़िंदगी इंसाफ़ नहीं करती.",
+          "changed": "बिना ढके"
+        },
+        {
+          "display": "In general, most people are not happy.",
+          "cue": "आम तौर पर ज़्यादातर लोग ख़ुश नहीं हैं.",
+          "changed": "दोहरा ढका हुआ"
+        }
+      ],
+      "mistake": {
+        "display": "In the general, the life is not fair.",
+        "why": "यह पंक्ति in general है और आम अर्थ वाली life के आगे the नहीं आता."
+      },
+      "usage": "कोई बड़ी और आम बात कहने से पहले, ताकि वह फ़ैसला न लगे.",
+      "register": "neutral",
+      "mnemonic": "In general पहले, बाक़ी बात बाद में."
+    },
+    {
+      "id": "L5-M5-S07",
+      "display": "On the whole, society is better than it was.",
+      "cue": "कुल मिलाकर समाज पहले से बेहतर है.",
+      "literal": "पर वह पूरा, समाज है बेहतर से वह था.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "on the whole",
+            "cue": "कुल मिलाकर",
+            "tag": "free",
+            "forms": ["on the whole"],
+            "note": "तीनों शब्द एक साथ. in general से थोड़ा भारी और तौलकर कही गई बात लगती है."
+          },
+          {
+            "display": "society",
+            "cue": "समाज",
+            "tag": "delta",
+            "forms": ["society"],
+            "note": "आम अर्थ में नंगा रहता है. The society expects too much भारतीय अंग्रेज़ी का जाना-पहचाना निशान है."
+          }
+        ],
+        "rules": [0, 1, 2]
+      },
+      "trap": "on the whole में the है, पर उसके बाद आने वाले society के आगे कोई the नहीं आता — यही जोड़ी सबसे ज़्यादा गड़बड़ाती है.",
+      "sound": "whole का w चुप है — होल्.",
+      "variations": [
+        {
+          "display": "On the whole, life is better now.",
+          "cue": "कुल मिलाकर ज़िंदगी अब बेहतर है.",
+          "changed": "दूसरा भाव"
+        },
+        {
+          "display": "Society is better than it was.",
+          "cue": "समाज पहले से बेहतर है.",
+          "changed": "बिना ढके"
+        },
+        {
+          "display": "On the whole, most people are not happy.",
+          "cue": "कुल मिलाकर ज़्यादातर लोग ख़ुश नहीं हैं.",
+          "changed": "उलटी बात"
+        }
+      ],
+      "mistake": {
+        "display": "On whole, the society is better than it was.",
+        "why": "यह पंक्ति on the whole है, और समाज वाले society के आगे the नहीं आता."
+      },
+      "usage": "जब कई बातें तौलकर एक कुल राय देनी हो.",
+      "register": "neutral",
+      "mnemonic": "on the whole में the है, society के आगे नहीं."
+    },
+    {
+      "id": "L5-M5-S08",
+      "display": "Some people say that duty is more important than happiness.",
+      "cue": "कुछ लोग कहते हैं कि कर्तव्य ख़ुशी से ज़्यादा ज़रूरी है.",
+      "literal": "कुछ लोग कहते कि कर्तव्य है ज़्यादा ज़रूरी से ख़ुशी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "some people",
+            "cue": "कुछ लोग",
+            "tag": "free",
+            "forms": ["some people"],
+            "note": "दोनों शब्द एक साथ. most people से कम दावा — इससे राय किसी और की बताई जाती है, अपनी नहीं."
+          },
+          {
+            "display": "duty",
+            "cue": "कर्तव्य, फ़र्ज़",
+            "tag": "delta",
+            "forms": ["duty", "duties"],
+            "note": "आम अर्थ में नंगा रहता है — Duty matters. किसी एक काम की बात हो तो the duty of a teacher."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "some people से बात किसी और के खाते में चली जाती है. अपनी राय के लिए I believe that कहिए.",
+      "sound": "duty में t की आवाज़ अमेरिकी बोली में 'ड' जैसी हो जाती है — ड्यू-टी या डू-डी.",
+      "variations": [
+        {
+          "display": "Some people say that money is happiness.",
+          "cue": "कुछ लोग कहते हैं कि पैसा ही ख़ुशी है.",
+          "changed": "दूसरी राय"
+        },
+        {
+          "display": "Duty is more important than happiness.",
+          "cue": "कर्तव्य ख़ुशी से ज़्यादा ज़रूरी है.",
+          "changed": "बिना ढके"
+        },
+        {
+          "display": "Most people say that freedom is important.",
+          "cue": "ज़्यादातर लोग कहते हैं कि आज़ादी ज़रूरी है.",
+          "changed": "बड़ा दावा"
+        }
+      ],
+      "mistake": {
+        "display": "Some peoples say that the duty is more important than the happiness.",
+        "why": "people अपने आप में बहुवचन है, और दोनों भाव वाले शब्दों के आगे the फ़ालतू है."
+      },
+      "usage": "किसी और की राय रखते समय, ख़ासकर जब आप उससे सहमत न हों.",
+      "register": "neutral",
+      "mnemonic": "some people = किसी और के मुँह में रखी हुई बात."
+    },
+    {
+      "id": "L5-M5-S09",
+      "display": "Human nature does not change very much.",
+      "cue": "इंसानी फ़ितरत बहुत नहीं बदलती.",
+      "literal": "इंसानी फ़ितरत करती नहीं बदलना बहुत ज़्यादा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "human",
+            "cue": "इंसानी, मनुष्य का",
+            "tag": "free",
+            "forms": ["human", "humans"],
+            "note": "विशेषण भी है और संज्ञा भी — human nature, a human. यहाँ यह nature के आगे लगकर एक जोड़ी बनाता है."
+          },
+          {
+            "display": "nature",
+            "cue": "फ़ितरत, स्वभाव; प्रकृति",
+            "tag": "delta",
+            "forms": ["nature"],
+            "note": "दो अर्थ — किसी का स्वभाव, और क़ुदरत. दोनों अर्थों में यह नंगा रहता है, the nature नहीं."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "The human nature मत कहिए. यह पूरी जोड़ी नंगी रहती है, जैसे human life और human rights.",
+      "sound": "nature में a लंबा है और आख़िर 'चर' जैसा सुनाई देता है — ने-चर्.",
+      "variations": [
+        {
+          "display": "Human nature does not change.",
+          "cue": "इंसानी फ़ितरत नहीं बदलती.",
+          "changed": "बिना very much"
+        },
+        {
+          "display": "In general, human nature does not change.",
+          "cue": "आम तौर पर इंसानी फ़ितरत नहीं बदलती.",
+          "changed": "ढका हुआ"
+        },
+        {
+          "display": "Society does not change very much.",
+          "cue": "समाज बहुत नहीं बदलता.",
+          "changed": "दूसरा कर्ता"
+        }
+      ],
+      "mistake": {
+        "display": "The human nature does not change very much.",
+        "why": "यह जोड़ी भाव बताती है, इसलिए इसके आगे the नहीं आता."
+      },
+      "usage": "इंसानों के बारे में कोई बड़ी बात कहते समय — बातचीत या लिखने में.",
+      "register": "neutral",
+      "mnemonic": "human nature — बिना the, हमेशा."
+    },
+    {
+      "id": "L5-M5-S10",
+      "display": "Some people value freedom. I value justice and duty.",
+      "cue": "कुछ लोग आज़ादी को अहमियत देते हैं. मैं इंसाफ़ और कर्तव्य को.",
+      "literal": "कुछ लोग अहमियत देते आज़ादी. मैं अहमियत देता इंसाफ़ और कर्तव्य.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "justice",
+            "cue": "इंसाफ़, न्याय",
+            "tag": "delta",
+            "forms": ["justice"],
+            "note": "भाव वाला शब्द, इसलिए नंगा रहता है और गिना नहीं जाता. fair (L4-M4) वाली पंक्ति इसी के पास है."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "यह पूरा पाठ एक साथ यहाँ है — freedom, justice और duty, तीनों बिना the, और राय some people से ढकी हुई.",
+      "sound": "justice के आख़िर में s की आवाज़ है, z की नहीं — जस्-टिस्.",
+      "variations": [
+        {
+          "display": "Some people value money. I value time.",
+          "cue": "कुछ लोग पैसे को अहमियत देते हैं. मैं वक़्त को.",
+          "changed": "दूसरी जोड़ी"
+        },
+        {
+          "display": "I value justice.",
+          "cue": "मैं इंसाफ़ को अहमियत देता हूँ.",
+          "changed": "सिर्फ़ अपनी बात"
+        },
+        {
+          "display": "Most people value freedom.",
+          "cue": "ज़्यादातर लोग आज़ादी को अहमियत देते हैं.",
+          "changed": "बड़ा दावा"
+        }
+      ],
+      "mistake": {
+        "display": "Some people value the freedom. I value the justice and the duty.",
+        "why": "तीनों भाव वाले शब्द हैं और तीनों के आगे the फ़ालतू है."
+      },
+      "usage": "अपनी राय दूसरों की राय के सामने रखते समय, बिना उन्हें ग़लत कहे.",
+      "register": "neutral",
+      "mnemonic": "भाव के आगे कुछ नहीं — तीनों बार."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L5-M5-C01", "display": "Freedom is important, but it is not everything.", "cue": "आज़ादी ज़रूरी है, पर वही सब कुछ नहीं है." },
+    { "id": "L5-M5-C02", "display": "Money is not happiness.", "cue": "पैसा ख़ुशी नहीं है." },
+    { "id": "L5-M5-C03", "display": "Most people know that.", "cue": "ज़्यादातर लोग यह जानते हैं." },
+    { "id": "L5-M5-C04", "display": "I believe that truth matters.", "cue": "मैं मानता हूँ कि सच मायने रखता है." },
+    { "id": "L5-M5-C05", "display": "It depends on what you value in life.", "cue": "यह इस पर है कि आप ज़िंदगी में किसे अहमियत देते हैं." },
+    { "id": "L5-M5-C06", "display": "People tend to forget the past.", "cue": "लोग बीती बातें भूल ही जाते हैं." },
+    { "id": "L5-M5-C07", "display": "In general, life is not fair.", "cue": "आम तौर पर ज़िंदगी इंसाफ़ नहीं करती." },
+    { "id": "L5-M5-C08", "display": "On the whole, society is better than it was.", "cue": "कुल मिलाकर समाज पहले से बेहतर है." },
+    { "id": "L5-M5-C09", "display": "Some people say that duty is important.", "cue": "कुछ लोग कहते हैं कि कर्तव्य ज़रूरी है." },
+    { "id": "L5-M5-C10", "display": "Human nature does not change very much.", "cue": "इंसानी फ़ितरत बहुत नहीं बदलती." },
+    { "id": "L5-M5-C11", "display": "I value justice and duty.", "cue": "मैं इंसाफ़ और कर्तव्य को अहमियत देता हूँ." },
+    { "id": "L5-M5-C12", "display": "The freedom to speak is important.", "cue": "बोलने की आज़ादी ज़रूरी है." }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

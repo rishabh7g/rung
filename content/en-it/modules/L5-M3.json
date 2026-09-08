@@ -1,0 +1,765 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M3",
+  "title": "How they say it there",
+  "job": "Regional and generational speech; what marks an outsider",
+  "prerequisites": [
+    "L5-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "presente, L1-M6's, which is the only tense any display here is in",
+      "the impersonal si plus a third person, L3-M8's: si dice, si parla",
+      "one frozen first-person-plural imperative, diamoci del tu",
+      "the passato remoto is NAMED and never conjugated: its forms are L5-M9's"
+    ],
+    "allowedPatterns": [
+      "<parola standard> + / + <parola regionale>",
+      "Al nord si dice + <N> + , + al sud + <N>",
+      "Raga + , + <clause>",
+      "<clause> + , + tipo + <esempio>",
+      "Diamoci del tu"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE AXIS IS STANDARD AGAINST MARKED, AND THE OUTPUT OF THIS MODULE IS RECOGNITION. Every row carries one of three verdicts. Neutral everywhere: produce it. Regional: recognise it and never produce it, because a form borrowed from a place you are not from is heard as a costume. Generational: produce it only among peers. Nothing here is a production drill — what you get is the ability to PLACE the Italian in front of you, north or south, older or younger."
+    },
+    {
+      "tag": "delta",
+      "text": "THE LEXICAL SPLIT IS ONE REFERENT AND TWO WORDS. cornetto in the north and brioche across much of the south for the same pastry; anguria in the north and cocomero in Rome and Tuscany for the same watermelon. Neither member of either pair is wrong and neither is dialect: both are standard Italian with a map behind them. Order the word the counter uses and you have said nothing about yourself; order the other and you have."
+    },
+    {
+      "tag": "delta",
+      "text": "THE GRAMMATICAL DIFFERENCE IS A TENSE, NOT AN ACCENT. The passato remoto is the WRITTEN past everywhere in Italy and a SPOKEN past in the south. A southerner telling you about yesterday in it is not speaking with an accent and cannot be heard past as one — the verb system itself has moved. This module NAMES the tense and stops there; its forms are L5-M9's and nothing here conjugates it."
+    },
+    {
+      "tag": "free",
+      "text": "THE GENERATIONAL WORDS ARE FEW AND THEY DATE. raga to address a group of mates, a clipped ragazzi; figo for cool; tipo for like, as a filler; cioè for I mean; and mo' for adesso in Rome and further south. boh and mah were taught at L5-M1 and stay there. Every one of them is peer speech: said to somebody's grandmother it lands as a child talking."
+    },
+    {
+      "tag": "interference",
+      "text": "DIALETTO IS A FALSE FRIEND AND AN EXPENSIVE ONE. An English dialect is an accent with some words in it; an Italian dialetto is a separate language with its own grammar, descended from Latin beside Italian rather than from it. Say you speak the dialect and you have claimed a great deal. This course never asks you to produce one and never shows one — not a line of Neapolitan or Venetian in any module."
+    },
+    {
+      "tag": "interference",
+      "text": "THE TELL THAT COSTS MOST IS THE ADDRESS, NOT THE ACCENT. Hold the polite third person too long and you keep a new friend at arm's length; drop it unilaterally and you have presumed. The law is that you WAIT to be offered the tu, and the offer is a sentence: Diamoci del tu. Until it comes, stay where you are — an English speaker's instinct to get informal fast is the marked move here."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M3-S01",
+      "display": "Al nord si dice cornetto, al sud brioche",
+      "cue": "In the north they say cornetto, in the south brioche",
+      "literal": "At-the north one says croissant, at-the south brioche",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al nord",
+            "cue": "in the north",
+            "tag": "delta",
+            "forms": [
+              "al nord",
+              "nord"
+            ],
+            "note": "The north as a speech region rather than a compass point. al nord frames what follows as what that half of the country says."
+          },
+          {
+            "display": "si dice",
+            "cue": "they say, one says",
+            "tag": "free",
+            "forms": [
+              "si dice"
+            ],
+            "note": "The impersonal si of L3-M8 on dire: nobody in particular says it, a place does. It is the frame this whole module is built on."
+          },
+          {
+            "display": "cornetto",
+            "cue": "croissant (northern word)",
+            "tag": "free",
+            "forms": [
+              "cornetto",
+              "cornetti"
+            ],
+            "note": "The pastry, in the north and in most of the written standard. Built from corno, a horn, but nobody hears a horn in it."
+          },
+          {
+            "display": "al sud",
+            "cue": "in the south",
+            "tag": "delta",
+            "forms": [
+              "al sud",
+              "sud"
+            ],
+            "note": "The southern half, as a speech region. Paired with al nord it makes the map sentence this module keeps returning to."
+          },
+          {
+            "display": "brioche",
+            "cue": "croissant (southern word)",
+            "tag": "free",
+            "forms": [
+              "brioche"
+            ],
+            "note": "The same pastry across much of the south. Borrowed from French and kept unchanged, so it takes no Italian plural ending."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Neither word is the wrong one. Ordering cornetto in Palermo or brioche in Milan is not an error, it is a small announcement that you are not from here.",
+      "sound": "kor-NET-to, with the double t held. brioche keeps its French shape: bree-OSH, and the final e is not sounded.",
+      "variations": [
+        {
+          "display": "Al nord si dice cornetto",
+          "cue": "In the north they say cornetto",
+          "changed": "the northern half alone"
+        },
+        {
+          "display": "Al sud si dice brioche",
+          "cue": "In the south they say brioche",
+          "changed": "the southern half alone"
+        },
+        {
+          "display": "Un cornetto, per favore",
+          "cue": "A croissant, please",
+          "changed": "ordering it, which is what you actually do with the word"
+        }
+      ],
+      "mistake": {
+        "display": "Al nord dicono cornetto, al sud dicono brioche",
+        "why": "dicono is right about people and wrong about the frame. The point is not that some people say it, it is that the PLACE says it, and si dice is what makes the sentence a map."
+      },
+      "usage": "Explaining, or being told, that one thing carries two names in two halves of the country.",
+      "register": "neutral",
+      "mnemonic": "One pastry, two passports."
+    },
+    {
+      "id": "L5-M3-S02",
+      "display": "Anguria e cocomero: la stessa cosa",
+      "cue": "Anguria and cocomero: the same thing",
+      "literal": "Watermelon and watermelon: the same thing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "anguria",
+            "cue": "watermelon (northern word)",
+            "tag": "free",
+            "forms": [
+              "anguria",
+              "angurie"
+            ],
+            "note": "The northern and most widespread word for watermelon, and feminine. Standard Italian, not a regionalism anyone avoids."
+          },
+          {
+            "display": "cocomero",
+            "cue": "watermelon (Roman and Tuscan word)",
+            "tag": "free",
+            "forms": [
+              "cocomero",
+              "cocomeri"
+            ],
+            "note": "The same fruit in Rome and Tuscany. Masculine where anguria is feminine, which is the only grammatical difference between them."
+          },
+          {
+            "display": "la stessa cosa",
+            "cue": "the same thing",
+            "tag": "free",
+            "forms": [
+              "la stessa cosa"
+            ],
+            "note": "Learned whole. It is the verdict this module keeps delivering on a pair of words: two names, one referent, no error anywhere."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Two words for one fruit is not two fruits. An English speaker hunting for a difference in meaning will not find one — the difference is in the map.",
+      "sound": "an-GOO-rya, stress on the second syllable. co-CO-me-ro, stress on the SECOND o and not the third.",
+      "variations": [
+        {
+          "display": "Anguria e cocomero",
+          "cue": "Anguria and cocomero",
+          "changed": "the pair alone, as a question of geography"
+        },
+        {
+          "display": "La stessa cosa",
+          "cue": "The same thing",
+          "changed": "the verdict alone"
+        },
+        {
+          "display": "Al nord anguria, a Roma cocomero",
+          "cue": "In the north anguria, in Rome cocomero",
+          "changed": "the map spelled out"
+        }
+      ],
+      "mistake": {
+        "display": "Anguria e cocomero non sono la stessa cosa",
+        "why": "They are. Both words name the whole fruit at any size, and reaching for a difference in meaning is the English instinct — the difference is where you are standing."
+      },
+      "usage": "Settling, or being told, that two words you have just heard for one thing are both correct.",
+      "register": "neutral",
+      "mnemonic": "Same fruit, different postcode."
+    },
+    {
+      "id": "L5-M3-S03",
+      "display": "Il napoletano non è un accento, è una lingua",
+      "cue": "Neapolitan is not an accent, it is a language",
+      "literal": "The Neapolitan not is an accent, is a language",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "napoletano",
+            "cue": "Neapolitan; a Neapolitan",
+            "tag": "free",
+            "forms": [
+              "napoletano",
+              "napoletana"
+            ],
+            "note": "Both the language of Naples and a person from it. Lower case in Italian, where English capitalises: the adjective of a place never takes a capital."
+          },
+          {
+            "display": "accento",
+            "cue": "accent",
+            "tag": "free",
+            "forms": [
+              "accento",
+              "accenti"
+            ],
+            "note": "An accent: the same language, differently pronounced. It is the small word in this sentence, and the whole point is that it is the wrong one."
+          },
+          {
+            "display": "lingua",
+            "cue": "language; tongue",
+            "tag": "free",
+            "forms": [
+              "lingua",
+              "lingue"
+            ],
+            "note": "A language, with its own grammar. Also the tongue in your mouth, exactly as in English."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "dialetto looks like dialect and is not. An Italian dialetto is a separate language, so saying you speak one claims far more than an English speaker means to claim.",
+      "sound": "na-po-le-TA-no, five syllables and the stress late. LIN-gua: gua is one syllable, not two.",
+      "variations": [
+        {
+          "display": "Il napoletano è una lingua",
+          "cue": "Neapolitan is a language",
+          "changed": "the claim alone"
+        },
+        {
+          "display": "Non è un accento",
+          "cue": "It is not an accent",
+          "changed": "the denial alone"
+        },
+        {
+          "display": "Il milanese non è un accento",
+          "cue": "Milanese is not an accent",
+          "changed": "the same verdict on the north"
+        }
+      ],
+      "mistake": {
+        "display": "Il napoletano è un dialetto italiano",
+        "why": "The word dialetto is used in Italy, but it does not mean a variety OF Italian. Naples' language descends from Latin beside Italian, not out of it."
+      },
+      "usage": "Correcting the assumption — usually your own — that the speech of a region is Italian with a twist.",
+      "register": "neutral",
+      "mnemonic": "An accent changes the sound; a language changes the grammar."
+    },
+    {
+      "id": "L5-M3-S04",
+      "display": "Raga, che figo questo posto!",
+      "cue": "Guys, this place is so cool!",
+      "literal": "Lads, what cool this place!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "raga",
+            "cue": "guys, lads",
+            "tag": "free",
+            "forms": [
+              "raga"
+            ],
+            "note": "A clipped ragazzi used to ADDRESS a group of friends. It is never the subject of a sentence and never said to anybody older than you."
+          },
+          {
+            "display": "figo",
+            "cue": "cool, great",
+            "tag": "free",
+            "forms": [
+              "figo",
+              "fighi"
+            ],
+            "note": "Cool, of a thing or a person. Peer speech with a short shelf life: it dates the speaker about as precisely as a haircut."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "raga is an address, not a noun. It cannot take an article or a verb of its own — Raga sono qui is not a sentence.",
+      "sound": "RA-ga, both a's open and the g hard. FEE-go, with the same hard g.",
+      "variations": [
+        {
+          "display": "Che figo!",
+          "cue": "So cool!",
+          "changed": "the reaction alone, which is most of its life"
+        },
+        {
+          "display": "Raga, che posto!",
+          "cue": "Guys, what a place!",
+          "changed": "the address plus the exclamation, adjective dropped"
+        },
+        {
+          "display": "Questo posto è figo",
+          "cue": "This place is cool",
+          "changed": "the full sentence, adjective after the verb"
+        }
+      ],
+      "mistake": {
+        "display": "Raga, che figo, signora",
+        "why": "The two halves belong to different rooms. raga and figo are said among peers, and a signora is precisely who they are not said to."
+      },
+      "usage": "Among friends of roughly your own age, and nowhere else.",
+      "register": "informal",
+      "mnemonic": "raga opens the sentence, figo scores it."
+    },
+    {
+      "id": "L5-M3-S05",
+      "display": "Cioè, tipo, non capisco niente",
+      "cue": "I mean, like, I don't understand anything",
+      "literal": "That-is, type, not I-understand nothing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tipo",
+            "cue": "like (filler)",
+            "tag": "free",
+            "forms": [
+              "tipo"
+            ],
+            "note": "The filler like, dropped anywhere in a sentence to approximate or soften. The same word is the noun for a type, and the filler is the newer job."
+          },
+          {
+            "display": "cioè",
+            "cue": "I mean, that is",
+            "tag": "free",
+            "forms": [
+              "cioè"
+            ],
+            "note": "Literally that is. Written, it is a precise connective; spoken by the young it is punctuation, buying a second while the sentence restarts."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "Neither is English um. They carry meaning — cioè announces a correction, tipo announces an approximation — and stacking them, as here, is itself the generational marker.",
+      "sound": "cho-EH, two syllables, stress on the second, and the accent tells you so. TEE-po.",
+      "variations": [
+        {
+          "display": "Cioè, non capisco",
+          "cue": "I mean, I don't understand",
+          "changed": "the connective alone"
+        },
+        {
+          "display": "Non capisco, tipo, niente",
+          "cue": "I don't understand, like, anything",
+          "changed": "the filler moved inside the sentence"
+        },
+        {
+          "display": "Cioè?",
+          "cue": "Meaning?",
+          "changed": "alone, as a request to explain"
+        }
+      ],
+      "mistake": {
+        "display": "Che tipo, non capisco niente",
+        "why": "With che in front of it, tipo snaps back to the noun — what a character — and the filler is gone. The filler never takes a determiner; it just sits in the sentence."
+      },
+      "usage": "Peer speech, and heard far more often than it should be produced.",
+      "register": "informal",
+      "mnemonic": "cioè restarts the sentence; tipo blurs it."
+    },
+    {
+      "id": "L5-M3-S06",
+      "display": "A Roma si dice mo', non adesso",
+      "cue": "In Rome they say mo', not adesso",
+      "literal": "At Rome one says now, not now",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mo'",
+            "cue": "now (Roman)",
+            "tag": "delta",
+            "forms": [
+              "mo'"
+            ],
+            "note": "Roman and central-southern for adesso (L3-M6) and ora (L4-M9). The apostrophe marks a cut-off word, not a possessive, and it stays in the spelling."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "Recognise it, do not produce it. mo' in a northern mouth reads as an impression of Rome rather than as Italian.",
+      "sound": "MOH, one syllable, the o open. The apostrophe is silent: it marks the missing end of the word, not a sound.",
+      "variations": [
+        {
+          "display": "Mo' arrivo",
+          "cue": "I'm coming right now",
+          "changed": "the word doing its job in two words"
+        },
+        {
+          "display": "A Roma si dice mo'",
+          "cue": "In Rome they say mo'",
+          "changed": "the frame without the contrast"
+        },
+        {
+          "display": "Adesso, non mo'",
+          "cue": "adesso, not mo'",
+          "changed": "the standard word put back in front"
+        }
+      ],
+      "mistake": {
+        "display": "A Roma si dice mo, non adesso",
+        "why": "The apostrophe is part of the word. mo without it is not a spelling anybody uses, and the mark is what tells a reader the word has been cut short."
+      },
+      "usage": "Placing a speaker, or reading a Roman message — not for producing, unless Rome is where you learned your Italian.",
+      "register": "informal",
+      "mnemonic": "Rome cuts the word in half and keeps the mark."
+    },
+    {
+      "id": "L5-M3-S07",
+      "display": "Il passato remoto si parla solo al sud",
+      "cue": "The passato remoto is only spoken in the south",
+      "literal": "The past remote one speaks only at-the south",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "passato remoto",
+            "cue": "the remote past (a tense)",
+            "tag": "delta",
+            "forms": [
+              "passato remoto"
+            ],
+            "note": "The name of a tense, learned here as a name only. Its forms are L5-M9's; this row exists so you can recognise what you are hearing."
+          },
+          {
+            "display": "si parla",
+            "cue": "is spoken, one speaks",
+            "tag": "free",
+            "forms": [
+              "si parla"
+            ],
+            "note": "The impersonal si on parlare (L1-M4), beside si dice. It puts a whole region in the subject slot without naming anybody at all."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "This is a tense, not an accent. A southerner narrating in it has a different verb system, and no amount of listening past the accent will get you to it.",
+      "sound": "pas-SA-to RE-mo-to, and remoto carries its stress on the first o. si PAR-la.",
+      "variations": [
+        {
+          "display": "Il passato remoto si parla",
+          "cue": "The passato remoto is spoken",
+          "changed": "the claim without the region"
+        },
+        {
+          "display": "Al sud si parla italiano",
+          "cue": "In the south they speak Italian",
+          "changed": "the frame carrying an ordinary object"
+        },
+        {
+          "display": "Solo al sud",
+          "cue": "Only in the south",
+          "changed": "the region alone, as an answer"
+        }
+      ],
+      "mistake": {
+        "display": "Il passato remoto si parla solo al nord",
+        "why": "The map is the other way round. In the north the tense belongs to writing; in the south it is what you say about yesterday."
+      },
+      "usage": "Explaining why a southern speaker's past tense sounds like a novel.",
+      "register": "neutral",
+      "mnemonic": "North writes it, south says it."
+    },
+    {
+      "id": "L5-M3-S08",
+      "display": "Diamoci del tu, siamo amici",
+      "cue": "Let's use tu with each other, we're friends",
+      "literal": "Let-us-give-ourselves of-the you, we-are friends",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "diamoci del tu",
+            "cue": "let's use tu with each other",
+            "tag": "interference",
+            "forms": [
+              "diamoci del tu"
+            ],
+            "note": "One frozen offer, learned whole. Literally let us give each other the tu: the pronoun is treated as a thing that gets handed over."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "Wait to be offered it. In English you drop the formality yourself; in Italian the person with the standing to offer it says so out loud, and taking it first is the presumption.",
+      "sound": "dee-A-mo-chee del TOO. The ci is chee, and the whole phrase runs together as one word.",
+      "variations": [
+        {
+          "display": "Diamoci del tu",
+          "cue": "Let's use tu",
+          "changed": "the offer alone, which is how it is usually said"
+        },
+        {
+          "display": "Diamoci del tu, per favore",
+          "cue": "Let's use tu, please",
+          "changed": "softened"
+        },
+        {
+          "display": "Siamo amici, diamoci del tu",
+          "cue": "We're friends, let's use tu",
+          "changed": "the reason put first"
+        }
+      ],
+      "mistake": {
+        "display": "Diamo del tu",
+        "why": "Without ci the phrase loses its each-other, and diamo del tu becomes something the two of you do to a third person. The ci is what makes the offer mutual."
+      },
+      "usage": "The moment a formal relationship turns friendly — offered by the older, the senior or the host.",
+      "register": "neutral",
+      "mnemonic": "The tu is a gift; wait to be handed it."
+    },
+    {
+      "id": "L5-M3-S09",
+      "display": "Lo straniero non parla il dialetto",
+      "cue": "The foreigner does not speak the dialect",
+      "literal": "The foreigner not speaks the dialect",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "straniero",
+            "cue": "foreigner; foreign",
+            "tag": "free",
+            "forms": [
+              "straniero",
+              "straniera",
+              "stranieri"
+            ],
+            "note": "A foreigner, and the adjective foreign. lo rather than il in front of it, because str- is one of the clusters that takes lo."
+          },
+          {
+            "display": "dialetto",
+            "cue": "dialect (a separate language)",
+            "tag": "interference",
+            "forms": [
+              "dialetto",
+              "dialetti"
+            ],
+            "note": "Not an accent and not a variety of Italian: a language of its own with its own grammar. Claiming to speak one claims a great deal."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "The false friend is the whole row. English dialect is a flavour of the same language; an Italian dialetto is a different language.",
+      "sound": "stra-NYEH-ro: the ni is one sound, as in canyon. dia-LET-to, with the double t held.",
+      "variations": [
+        {
+          "display": "Il dialetto non è un accento",
+          "cue": "The dialect is not an accent",
+          "changed": "the false friend named directly"
+        },
+        {
+          "display": "Lo straniero parla italiano",
+          "cue": "The foreigner speaks Italian",
+          "changed": "what an outsider does speak"
+        },
+        {
+          "display": "Non parla il dialetto",
+          "cue": "Doesn't speak the dialect",
+          "changed": "the verb alone"
+        }
+      ],
+      "mistake": {
+        "display": "Il straniero non parla il dialetto",
+        "why": "il cannot stand in front of str-. The masculine article before s plus a consonant is lo, which is why the sentence opens the way it does."
+      },
+      "usage": "Saying, or hearing, what an outsider is and is not expected to have.",
+      "register": "neutral",
+      "mnemonic": "A foreigner learns the language; a dialetto is somebody else's."
+    },
+    {
+      "id": "L5-M3-S10",
+      "display": "Il milanese, il romano e il toscano parlano italiano",
+      "cue": "The Milanese, the Roman and the Tuscan all speak Italian",
+      "literal": "The Milanese, the Roman and the Tuscan speak Italian",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "milanese",
+            "cue": "Milanese; a Milanese",
+            "tag": "free",
+            "forms": [
+              "milanese",
+              "milanesi"
+            ],
+            "note": "From Milan (L1-M6), as a person or as the city's own language. Same form for a man and a woman; only the plural moves."
+          },
+          {
+            "display": "romano",
+            "cue": "Roman; a Roman",
+            "tag": "free",
+            "forms": [
+              "romano",
+              "romana",
+              "romani"
+            ],
+            "note": "From Rome (L1-M2). Unlike milanese it has a feminine, romana, because it ends in -o rather than -e."
+          },
+          {
+            "display": "toscano",
+            "cue": "Tuscan; a Tuscan",
+            "tag": "free",
+            "forms": [
+              "toscano",
+              "toscani"
+            ],
+            "note": "From Tuscany, whose speech the written standard was built on — which is why Tuscan sounds to Italians like Italian with something extra."
+          },
+          {
+            "display": "parlano",
+            "cue": "they speak",
+            "tag": "free",
+            "forms": [
+              "parlano"
+            ],
+            "note": "The they form of parlare, first taught at L1-M4. Same verb, third person plural: -ano is the ending an -are verb takes there."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Three regions, one language. Everything this module teaches sits on top of a shared standard that every one of these speakers has.",
+      "sound": "mi-la-NE-se, ro-MA-no, to-SCA-no: all three stressed on the second-last syllable. PAR-la-no takes its stress on the FIRST.",
+      "variations": [
+        {
+          "display": "Il milanese parla italiano",
+          "cue": "The Milanese speaks Italian",
+          "changed": "one region alone"
+        },
+        {
+          "display": "Il romano e il toscano parlano italiano",
+          "cue": "The Roman and the Tuscan speak Italian",
+          "changed": "two of the three"
+        },
+        {
+          "display": "Parlano italiano",
+          "cue": "They speak Italian",
+          "changed": "the verb and its object alone"
+        }
+      ],
+      "mistake": {
+        "display": "Il Milanese e il Romano parlano Italiano",
+        "why": "Italian does not capitalise the adjective of a place or the name of a language. Three capitals in one sentence is the most visible English habit there is."
+      },
+      "usage": "Closing the topic: everything above is variation on a standard that everybody shares.",
+      "register": "neutral",
+      "mnemonic": "Three cities, one alphabet."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M3-C01",
+      "display": "Al nord si dice cornetto",
+      "cue": "In the north they say cornetto"
+    },
+    {
+      "id": "L5-M3-C02",
+      "display": "Al sud si dice brioche",
+      "cue": "In the south they say brioche"
+    },
+    {
+      "id": "L5-M3-C03",
+      "display": "Anguria e cocomero: la stessa cosa",
+      "cue": "Anguria and cocomero: the same thing"
+    },
+    {
+      "id": "L5-M3-C04",
+      "display": "Il napoletano è una lingua",
+      "cue": "Neapolitan is a language"
+    },
+    {
+      "id": "L5-M3-C05",
+      "display": "Raga, che figo!",
+      "cue": "Guys, so cool!"
+    },
+    {
+      "id": "L5-M3-C06",
+      "display": "Cioè, tipo, non capisco",
+      "cue": "I mean, like, I don't get it"
+    },
+    {
+      "id": "L5-M3-C07",
+      "display": "A Roma si dice mo'",
+      "cue": "In Rome they say mo'"
+    },
+    {
+      "id": "L5-M3-C08",
+      "display": "Il passato remoto si parla al sud",
+      "cue": "The passato remoto is spoken in the south"
+    },
+    {
+      "id": "L5-M3-C09",
+      "display": "Diamoci del tu",
+      "cue": "Let's use tu with each other"
+    },
+    {
+      "id": "L5-M3-C10",
+      "display": "Lo straniero non parla il dialetto",
+      "cue": "The foreigner does not speak the dialect"
+    },
+    {
+      "id": "L5-M3-C11",
+      "display": "Il milanese e il toscano parlano italiano",
+      "cue": "The Milanese and the Tuscan speak Italian"
+    },
+    {
+      "id": "L5-M3-C12",
+      "display": "Un accento non è un dialetto",
+      "cue": "An accent is not a dialect"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

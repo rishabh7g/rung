@@ -1,0 +1,665 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M3",
+  "title": "How they say it there",
+  "job": "Regional and generational speech; what marks an outsider",
+  "prerequisites": [
+    "L5-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 8,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "present",
+      "conditional",
+      "imperfect subjunctive"
+    ],
+    "allowedPatterns": [
+      "Vosotros + <-áis/-éis verb> + / + Ustedes + <3pl verb>",
+      "Vos + <-ás/-és verb> (vos tenés · vos sos)",
+      "<Spain word> + / + <America word> (coche · carro)",
+      "Si + <-se imperfect subjunctive> + , + <conditional>",
+      "<utterance> + , + <the same utterance in the other variety>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Spain has TWO plurals and Latin America has one. Vosotros is a group you would each call tu; ustedes is a group you would each call usted. In all of America ustedes is the only plural there is, for close friends and for strangers alike."
+    },
+    {
+      "tag": "delta",
+      "text": "The vosotros endings are their own set — -ais, -eis, -is, and sois for ser: hablais, teneis, quereis, sois, vais. Ustedes takes the third-person plural instead: hablan, tienen, quieren, son, van. Every Spain form has an America twin one row away."
+    },
+    {
+      "tag": "delta",
+      "text": "Voseo replaces tu with vos and moves the stress onto the ending: vos tenes, vos sos, vos podes. It is ordinary in Argentina, Uruguay, Paraguay and much of Central America, it has its own imperative (tene, veni), and it is a mistake nowhere."
+    },
+    {
+      "tag": "free",
+      "text": "The lexical pairs are plain vocabulary and neither half is wrong: coche/carro, ordenador/computadora, movil/celular, zumo/jugo, patata/papa, aqui/aca. Either half is understood everywhere; using one consistently is what makes you sound like somewhere."
+    },
+    {
+      "tag": "delta",
+      "text": "The imperfect subjunctive has TWO endings that mean exactly the same thing: -ara and -ase, hablara and hablase, tuviera and tuviese. -ase is the written and peninsular twin. L4-M3 named it and left it here, and it is not regional the way carro is."
+    },
+    {
+      "tag": "interference",
+      "text": "English has ONE you, for one person and for many, so this split has no hook at all in your first language and has to be built from nothing. Worse, an English speaker hears an unfamiliar variant as an error and corrects it — which is itself one of the things that marks an outsider."
+    },
+    {
+      "tag": "free",
+      "text": "The law of this module is comprehension of BOTH and production of ONE, chosen on purpose rather than drifted into. Nothing here is an accent: rung has no audio, so seseo and the peninsular c and z are described and never tested. The Spanish you have been taught so far is a neutral one that nobody speaks at home."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M3-S01",
+      "display": "¿Vosotros habláis español? En México: ¿Ustedes hablan español?",
+      "cue": "Do you all speak Spanish? In Mexico: do you all speak Spanish?",
+      "literal": "You-lot you-lot-speak Spanish? In Mexico: you-all they-speak Spanish?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vosotros",
+            "cue": "you all (Spain, informal group)",
+            "tag": "delta",
+            "forms": [
+              "vosotros",
+              "vosotras"
+            ],
+            "note": "Spain only, and only for a group you would each call tu. Vosotras when every one of them is female. Latin America never says it."
+          },
+          {
+            "display": "habláis",
+            "cue": "you all speak (Spain)",
+            "tag": "delta",
+            "forms": [
+              "habláis",
+              "hablan"
+            ],
+            "note": "L1-M6 taught hablar. -ais is the vosotros ending and hablan is what ustedes takes — one cell of the verb, two endings."
+          },
+          {
+            "display": "ustedes",
+            "cue": "you all (everywhere)",
+            "tag": "delta",
+            "forms": [
+              "ustedes"
+            ],
+            "note": "L1-M2 taught usted for one person. Ustedes is its plural in Spain and the ONLY plural in America, where it is not formal at all."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          5
+        ]
+      },
+      "trap": "Ustedes takes the SAME verb form as ellos: hablan, not hablais. The pronoun changes and the ending follows it.",
+      "sound": "Hablais is a-BLA-is, two syllables then a glide; the stress never moves off the -a-. Ustedes is us-TE-des.",
+      "variations": [
+        {
+          "display": "¿Ustedes hablan español?",
+          "cue": "Do you all speak Spanish?",
+          "changed": "The America half standing alone — and it is also correct in Spain, to a group you would call usted."
+        }
+      ],
+      "mistake": {
+        "display": "¿Ustedes habláis español?",
+        "why": "Ustedes never takes a vosotros ending. Pick the pronoun first and the ending comes with it: vosotros hablais, ustedes hablan."
+      },
+      "usage": "Neutral. In Spain the first half to friends and the second to a room of strangers; in America the second half to everybody.",
+      "register": "neutral",
+      "mnemonic": "Two plurals in Spain, one in America — and the ending always follows the pronoun."
+    },
+    {
+      "id": "L5-M3-S02",
+      "display": "¿Vosotros sois amigos? Allí dicen: ¿Ustedes son amigos?",
+      "cue": "Are you two friends? Over there they say: are you two friends?",
+      "literal": "You-lot you-lot-are friends? There they-say: you-all they-are friends?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sois",
+            "cue": "you all are (Spain)",
+            "tag": "delta",
+            "forms": [
+              "sois"
+            ],
+            "note": "L1-M2 taught eres and son. Sois is the vosotros cell of ser and the only one that does not end in -ais or -eis."
+          },
+          {
+            "display": "dicen",
+            "cue": "they say",
+            "tag": "delta",
+            "forms": [
+              "dicen",
+              "decís"
+            ],
+            "note": "L3-M5 taught dice. Dicen is they say and also ustedes say; decis is both the vosotros form and the vos form."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "Sois is irregular and has no -ais in it, so it is the one vosotros form you cannot build from the infinitive.",
+      "sound": "Sois is one syllable, SOYS, rhyming with the English word voice without the v.",
+      "variations": [
+        {
+          "display": "¿Vosotros sois de aquí?",
+          "cue": "Are you lot from here?",
+          "changed": "The same form asking origin instead of relationship — the commonest thing sois is used for."
+        }
+      ],
+      "mistake": {
+        "display": "¿Vosotros sáis amigos?",
+        "why": "There is no sais. Ser is irregular in every cell: soy, eres, es, somos, sois, son — sois is learned, not derived."
+      },
+      "usage": "Neutral and everyday. Alli here means Latin America and is the polite way this module names the other side without ranking it.",
+      "register": "neutral",
+      "mnemonic": "Sois is the odd one out: no -ais anywhere in it."
+    },
+    {
+      "id": "L5-M3-S03",
+      "display": "¿Vuestra casa está aquí? Os veo mañana en vuestro trabajo.",
+      "cue": "Is your house here? I will see you all tomorrow at your work.",
+      "literal": "Your house it-is here? You-lot I-see tomorrow in your work.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vuestro",
+            "cue": "your (of you all, Spain)",
+            "tag": "delta",
+            "forms": [
+              "vuestro",
+              "vuestra"
+            ],
+            "note": "The possessive that comes with vosotros, and it agrees with the thing owned: vuestra casa, vuestro trabajo. America says su for all of this."
+          },
+          {
+            "display": "os",
+            "cue": "you all (object, Spain)",
+            "tag": "delta",
+            "forms": [
+              "os"
+            ],
+            "note": "The object pronoun of vosotros, sitting where L2-M1 put me and te: os veo, os llamo. America says les or los."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          6
+        ]
+      },
+      "trap": "Vuestro agrees with the THING, never with the people: vuestra casa even when the owners are all men.",
+      "sound": "Vuestro is BWES-tro — the ue is one glide, not two syllables. Os is a single short os, never o-es.",
+      "variations": [
+        {
+          "display": "Os veo mañana.",
+          "cue": "See you all tomorrow.",
+          "changed": "Os alone, with no possessive — the shortest complete goodbye a Spaniard says to a group."
+        }
+      ],
+      "mistake": {
+        "display": "¿Vuestro casa está aquí?",
+        "why": "Casa is feminine, so it is vuestra casa. The possessive takes the gender of what is owned and knows nothing about who owns it."
+      },
+      "usage": "Spain only, and informal — to a group of friends or family. In America every word of this becomes su and les.",
+      "register": "informal",
+      "mnemonic": "Vosotros brings its own kit: os for the object and vuestro for the possessive."
+    },
+    {
+      "id": "L5-M3-S04",
+      "display": "Vos sos mi amigo y vos tenés razón, che.",
+      "cue": "You are my friend and you are right, mate.",
+      "literal": "You you-are my friend and you you-have reason, mate.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vos",
+            "cue": "you (one person, voseo)",
+            "tag": "delta",
+            "forms": [
+              "vos"
+            ],
+            "note": "Replaces tu entirely where it is used, and pulls its own verb endings with it. It is not old-fashioned and it is not rural."
+          },
+          {
+            "display": "sos",
+            "cue": "you are (voseo)",
+            "tag": "delta",
+            "forms": [
+              "sos"
+            ],
+            "note": "L1-M2 taught eres. Sos is the voseo cell of ser and is what you will hear all day in Buenos Aires and Montevideo."
+          },
+          {
+            "display": "tenés",
+            "cue": "you have (voseo)",
+            "tag": "delta",
+            "forms": [
+              "tenés",
+              "tené"
+            ],
+            "note": "L2-M2 taught tienes. Voseo takes the stress off the stem, so there is no ie: tenes, not tienes. Tene is its imperative."
+          },
+          {
+            "display": "che",
+            "cue": "mate · hey",
+            "tag": "free",
+            "forms": [
+              "che"
+            ],
+            "note": "A vocative filler in Argentina and Uruguay, used to open a sentence or to close it. Warm, never rude, and useless outside the region."
+          }
+        ],
+        "rules": [
+          2,
+          5,
+          6
+        ]
+      },
+      "trap": "Vos does not break the verb the way tu does: tienes has an ie because the stress lands on the stem, and tenes has none because it does not.",
+      "sound": "Tenes is te-NES, with the stress on the last syllable — that final stress is the whole sound of voseo.",
+      "variations": [
+        {
+          "display": "Vos tenés razón, che.",
+          "cue": "You are right, mate.",
+          "changed": "The half a learner hears most: agreement plus che, the two-word building block of Rioplatense talk."
+        }
+      ],
+      "mistake": {
+        "display": "Vos tienes razón.",
+        "why": "Mixing the systems. Vos takes tenes and tu takes tienes; a speaker choosing vos chooses its endings with it."
+      },
+      "usage": "Informal and completely ordinary in Argentina, Uruguay, Paraguay and much of Central America. Che marks the speaker as Rioplatense on its own.",
+      "register": "informal",
+      "mnemonic": "Vos moves the stress to the end and the stem stops breaking."
+    },
+    {
+      "id": "L5-M3-S05",
+      "display": "Vos podés hablar así allí, y tú puedes hablar así aquí.",
+      "cue": "You can talk like that over there, and you can talk like that here.",
+      "literal": "You you-can to-speak so there, and you you-can to-speak so here.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "podés",
+            "cue": "you can (voseo)",
+            "tag": "delta",
+            "forms": [
+              "podés"
+            ],
+            "note": "L2-M1 taught puedes. Same cell, stress on the ending, so the ue never appears: podes, not puedes."
+          },
+          {
+            "display": "tú",
+            "cue": "you (one person, informal)",
+            "tag": "free",
+            "forms": [
+              "tú"
+            ],
+            "note": "Spanish drops subject pronouns, so forty modules have never needed to write this one. It appears here only to stand against vos."
+          },
+          {
+            "display": "así",
+            "cue": "like this · like that",
+            "tag": "free",
+            "forms": [
+              "así"
+            ],
+            "note": "Covers both this way and that way; the pointing is done by the rest of the sentence, not by the word."
+          }
+        ],
+        "rules": [
+          2,
+          6
+        ]
+      },
+      "trap": "Writing tu out at all is already a choice. Spanish drops the subject unless it is being contrasted, and this sentence contrasts it, which is why both pronouns are on the page.",
+      "sound": "Podes is po-DES, and puedes is PWE-des — one syllable of difference and the stress in a different place.",
+      "variations": [
+        {
+          "display": "Tú puedes hablar así también.",
+          "cue": "You can talk like that too.",
+          "changed": "The tu half alone, with the pronoun kept for emphasis — you too, not just them."
+        }
+      ],
+      "mistake": {
+        "display": "Tú podés hablar así.",
+        "why": "Podes belongs to vos. Tu takes puedes, and no speaker of either system mixes the pronoun of one with the ending of the other."
+      },
+      "usage": "Neutral. The sentence is the module's argument in one line: both are Spanish, and the choice is yours to make once rather than sentence by sentence.",
+      "register": "informal",
+      "mnemonic": "Same meaning, different stress: PWE-des here, po-DES there."
+    },
+    {
+      "id": "L5-M3-S06",
+      "display": "Necesito un coche nuevo aquí; allí necesito un carro nuevo.",
+      "cue": "I need a new car here; over there I need a new car.",
+      "literal": "I-need a car new here; there I-need a car new.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "carro",
+            "cue": "car (America)",
+            "tag": "free",
+            "forms": [
+              "carro"
+            ],
+            "note": "L4-M2 taught coche, which is what Spain says. Carro is most of America; Argentina and Chile say auto. Same object, no difference in register."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "Neither word is a translation of the other. They are two names for one thing, and only the place changes.",
+      "sound": "Carro has the strong rolled rr; caro with one r means expensive. The doubled letter is the whole difference.",
+      "variations": [
+        {
+          "display": "Mi carro es nuevo.",
+          "cue": "My car is new.",
+          "changed": "The America word in a plain statement, with no contrast around it to explain it."
+        }
+      ],
+      "mistake": {
+        "display": "Necesito un caro nuevo.",
+        "why": "One r makes caro, expensive. Carro needs the rolled rr, and this is the pair where getting it wrong changes the sentence rather than the accent."
+      },
+      "usage": "Neutral everywhere. Say coche in Spain and carro in most of America and nobody notices; swap them and everybody does.",
+      "register": "neutral",
+      "mnemonic": "Two r for the car, one r for the price."
+    },
+    {
+      "id": "L5-M3-S07",
+      "display": "Mi ordenador y mi móvil aquí son mi computadora y mi celular allí.",
+      "cue": "My computer and my phone here are my computer and my phone over there.",
+      "literal": "My computer and my mobile here they-are my computer and my cellular there.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ordenador",
+            "cue": "computer (Spain)",
+            "tag": "free",
+            "forms": [
+              "ordenador"
+            ],
+            "note": "Spain took its word from French ordinateur; America took computadora from English. Neither side uses the other."
+          },
+          {
+            "display": "computadora",
+            "cue": "computer (America)",
+            "tag": "free",
+            "forms": [
+              "computadora"
+            ],
+            "note": "Feminine in most of America, computador and masculine in Chile and Colombia. Both are ordinary; ordenador is not said there at all."
+          },
+          {
+            "display": "celular",
+            "cue": "mobile phone (America)",
+            "tag": "free",
+            "forms": [
+              "celular"
+            ],
+            "note": "L4-M1 taught movil, which is Spain. Celular is all of America and is masculine: el celular."
+          }
+        ],
+        "rules": [
+          3,
+          6
+        ]
+      },
+      "trap": "This is the pair a learner is most likely to get wrong in writing, because both words look like something in English and only one is used in each place.",
+      "sound": "Ordenador is or-de-na-DOR, stress on the last syllable; computadora is com-pu-ta-DO-ra, stress on the second last.",
+      "variations": [
+        {
+          "display": "Mi celular no funciona.",
+          "cue": "My phone is not working.",
+          "changed": "One America word alone in a complaint, which is where a learner will actually need it."
+        }
+      ],
+      "mistake": {
+        "display": "Mi ordenador celular no funciona.",
+        "why": "These are two different objects, not one compound. An ordenador is a computer and a celular is a phone; the pairing is Spain against America, not word against word."
+      },
+      "usage": "Neutral. Objects like these are where a learner is heard as belonging somewhere, because they come up every day and there is no neutral option.",
+      "register": "neutral",
+      "mnemonic": "Spain orders, America computes; Spain is mobile, America is cellular."
+    },
+    {
+      "id": "L5-M3-S08",
+      "display": "¿Queréis un zumo? Acá dicen: ¿Ustedes quieren un jugo?",
+      "cue": "Would you all like a juice? Round here they say: would you all like a juice?",
+      "literal": "You-lot-want a juice? Here they-say: you-all they-want a juice?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "queréis",
+            "cue": "you all want (Spain)",
+            "tag": "delta",
+            "forms": [
+              "queréis",
+              "quieren"
+            ],
+            "note": "L1-M3 taught quieres. -eis is the vosotros ending on an -er verb, and quieren is the same cell for ustedes."
+          },
+          {
+            "display": "zumo",
+            "cue": "juice (Spain)",
+            "tag": "free",
+            "forms": [
+              "zumo"
+            ],
+            "note": "Spain only. In America zumo is understood but reads as bookish or foreign, and jugo is what is ordered."
+          },
+          {
+            "display": "jugo",
+            "cue": "juice (America)",
+            "tag": "free",
+            "forms": [
+              "jugo"
+            ],
+            "note": "All of America, and in Spain jugo is the juice that comes out of meat rather than the drink."
+          },
+          {
+            "display": "acá",
+            "cue": "here (America)",
+            "tag": "free",
+            "forms": [
+              "acá"
+            ],
+            "note": "L1-M7 taught aqui. Aca is the same place with vaguer edges and is far more frequent in America; Spain barely uses it."
+          }
+        ],
+        "rules": [
+          1,
+          3,
+          6
+        ]
+      },
+      "trap": "Aca is not a stronger aqui. It is the ordinary word for here in America, and using it in Spain is what marks you, not the meaning.",
+      "sound": "Zumo is THU-mo in Spain and SU-mo where seseo is spoken; both are written the same and rung does not test either.",
+      "variations": [
+        {
+          "display": "¿Quieren un jugo?",
+          "cue": "Would you all like a juice?",
+          "changed": "The America half with its pronoun dropped, which is how it is really said."
+        }
+      ],
+      "mistake": {
+        "display": "¿Ustedes queréis un jugo?",
+        "why": "The pronoun and the ending have to come from the same system. Quereis goes with vosotros; ustedes takes quieren."
+      },
+      "usage": "Neutral, and this is the sentence a learner meets first: ordering a drink is the earliest place the two vocabularies collide.",
+      "register": "neutral",
+      "mnemonic": "Zumo where they say vosotros, jugo where they say ustedes."
+    },
+    {
+      "id": "L5-M3-S09",
+      "display": "Si hablase o tuviese que hablar así, sería otro español.",
+      "cue": "If I spoke, or had to speak, like that, it would be a different Spanish.",
+      "literal": "If I-spoke or I-had that to-speak so, it-would-be another Spanish.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hablase",
+            "cue": "I spoke · I were to speak",
+            "tag": "delta",
+            "forms": [
+              "hablase"
+            ],
+            "note": "L3-M4 taught the si clause with hablara. Hablase is the same form with the other ending and the same meaning exactly."
+          },
+          {
+            "display": "tuviese",
+            "cue": "I had · I were to have",
+            "tag": "delta",
+            "forms": [
+              "tuviese"
+            ],
+            "note": "The -se twin of tuviera. -ase for -ar verbs, -iese for -er and -ir verbs; the pattern never varies."
+          }
+        ],
+        "rules": [
+          4,
+          6
+        ]
+      },
+      "trap": "-ase is not more formal in meaning, only in habitat: it is commoner in writing and in Spain. Nothing in the sentence changes if you swap it for -ara.",
+      "sound": "Hablase is a-BLA-se and tuviese is tu-BYE-se; the stress sits on the syllable before the ending in both.",
+      "variations": [
+        {
+          "display": "Si tuviese que hablar, hablaría así.",
+          "cue": "If I had to speak, I would speak like that.",
+          "changed": "The plain si sentence L3-M4 taught, with -ese in the slot where it taught -iera."
+        }
+      ],
+      "mistake": {
+        "display": "Si hablase así, hablase otro español.",
+        "why": "The second half of a si sentence is the conditional, not another subjunctive: si hablase, seria. L3-M4 set that shape and this module only changes the ending in the first half."
+      },
+      "usage": "Neutral, leaning written. A learner should recognise -ase everywhere and may keep producing -ara for life without anybody minding.",
+      "register": "neutral",
+      "mnemonic": "-ara and -ase are one form wearing two coats."
+    },
+    {
+      "id": "L5-M3-S10",
+      "display": "¿Vosotros vais a hablar como aquí o como allí? Es vuestro español.",
+      "cue": "Are you all going to talk like here or like over there? It is your Spanish.",
+      "literal": "You-lot you-lot-go to to-speak like here or like there? It-is your Spanish.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vais",
+            "cue": "you all go (Spain)",
+            "tag": "delta",
+            "forms": [
+              "vais",
+              "van"
+            ],
+            "note": "L1-M6 taught vas. Vais is the vosotros cell of ir and van is the ustedes one; vais a hablar is the going-to future for a group."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          6
+        ]
+      },
+      "trap": "Ir keeps its irregular stem in both cells, so vais and van are learned rather than built. There is no vayais here: that is the subjunctive and belongs elsewhere.",
+      "sound": "Vais is one syllable, BAIS, and van is one syllable too. Spanish v and b are the same sound.",
+      "variations": [
+        {
+          "display": "¿Vais a hablar español?",
+          "cue": "Are you all going to speak Spanish?",
+          "changed": "The pronoun dropped, as it usually is — the ending already says who."
+        }
+      ],
+      "mistake": {
+        "display": "¿Vosotros van a hablar así?",
+        "why": "Van belongs to ustedes and ellos. With vosotros the verb is vais, and this is the mistake a learner makes for months after meeting both plurals at once."
+      },
+      "usage": "Neutral, and this is the module asking the question out loud. Choose one Spanish and keep it; understanding the other is the skill, speaking both at once is the mistake.",
+      "register": "neutral",
+      "mnemonic": "Pick your Spanish once, not once a sentence."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M3-C01",
+      "display": "¿Vosotros habláis español?",
+      "cue": "Do you all speak Spanish?"
+    },
+    {
+      "id": "L5-M3-C02",
+      "display": "¿Ustedes hablan español también?",
+      "cue": "Do you all speak Spanish too?"
+    },
+    {
+      "id": "L5-M3-C03",
+      "display": "¿Vosotros sois de aquí?",
+      "cue": "Are you lot from here?"
+    },
+    {
+      "id": "L5-M3-C04",
+      "display": "Vos sos mi amigo, che.",
+      "cue": "You are my friend, mate."
+    },
+    {
+      "id": "L5-M3-C05",
+      "display": "Vos tenés razón, y tú tienes razón.",
+      "cue": "You are right, and you are right."
+    },
+    {
+      "id": "L5-M3-C06",
+      "display": "Vos podés hablar así.",
+      "cue": "You can talk like that."
+    },
+    {
+      "id": "L5-M3-C07",
+      "display": "Necesito un carro nuevo y un celular nuevo.",
+      "cue": "I need a new car and a new phone."
+    },
+    {
+      "id": "L5-M3-C08",
+      "display": "Mi ordenador es vuestra computadora.",
+      "cue": "My computer is your computer."
+    },
+    {
+      "id": "L5-M3-C09",
+      "display": "¿Queréis un zumo? ¿Quieren un jugo?",
+      "cue": "Would you all like a juice? Would you all like a juice?"
+    },
+    {
+      "id": "L5-M3-C10",
+      "display": "Acá dicen ustedes; aquí, vosotros.",
+      "cue": "Round here they say ustedes; here, vosotros."
+    },
+    {
+      "id": "L5-M3-C11",
+      "display": "Si hablase o tuviese que hablar, sería igual.",
+      "cue": "If I spoke, or had to speak, it would be the same."
+    },
+    {
+      "id": "L5-M3-C12",
+      "display": "¿Vosotros vais a hablar como allí?",
+      "cue": "Are you all going to talk like over there?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,721 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M5",
+  "title": "Big questions",
+  "job": "Values, beliefs, abstract talk",
+  "prerequisites": [
+    "L5-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 16,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "clause-neun + geo-ga + jungyohaeyo",
+      "N-(i)raneun + geo-seun + clause",
+      "jeo-neun + clause-dago + saenggakhaeyo",
+      "saram-mada + N-i/ga + dallayo",
+      "clause-neun + geo-reul + mideoyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "V-NEUN GEO TURNS A CLAUSE INTO A THING. The doing of it — and then it takes ordinary particles, -ga to be a subject and -reul to be an object. Abstract talk is this one move, repeated."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH HAS THREE SHAPES AND PICKS BY THE VERB. Gerund, infinitive, that-clause. Korean picks by the FRAME: -neun geo stands free, while -gi appears only inside the fixed frames L4-M1, L4-M2 and L4-M6 taught."
+    },
+    {
+      "tag": "interference",
+      "text": "KOREAN BUILDS THE SENTENCE BACK TO FRONT. English puts the abstract noun first and modifies it afterwards — the freedom to choose. Korean puts the whole modifier before the noun, so you must know the ending before you begin."
+    },
+    {
+      "tag": "delta",
+      "text": "N-(I)RANEUN GEO-SEUN OPENS A BIG QUESTION. The thing called X is... — written straight onto the noun with no hyphen, exactly as L5-M1 writes -raneun. English has no counterpart shorter than a whole clause."
+    },
+    {
+      "tag": "free",
+      "text": "-DAGO REPORTS A BELIEF WITHOUT QUOTING IT. jeo-neun ... -dago saenggakhaeyo is I think that... L3-M5's -rago quotes the words somebody said; -dago reports the thought behind them."
+    },
+    {
+      "tag": "free",
+      "text": "SARAM-MADA IS PER PERSON, NOT SOME PEOPLE. It says the thing varies with whoever you ask, and it is the ordinary way a values conversation opens without anybody having to be wrong."
+    },
+    {
+      "tag": "free",
+      "text": "THE WORD IS GACHIGWAN, NOT GACHI. gachi is L2-M6's together, and in this romanization the two are one and the same key. gachigwan is the word a conversation about values actually uses."
+    },
+    {
+      "tag": "free",
+      "text": "THIS MODULE HOLDS A BELIEF UP AND LOOKS AT IT. It does not defend one. A case made and an objection answered belong to L5-M6, and a question with no right answer is where this module stops."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M5-S01",
+      "display": "Haengbog-i jeongmal jungyohaeyo.",
+      "script": "행복이 정말 중요해요.",
+      "cue": "Happiness really matters.",
+      "literal": "happiness-SUBJ really is-important",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "haengbok",
+            "script": "행복",
+            "cue": "happiness",
+            "tag": "free",
+            "forms": [
+              "haengbok",
+              "haengbog-i",
+              "haengbog-eun",
+              "haengbogiraneun"
+            ],
+            "note": "The state rather than the mood — a life that is going well, not an afternoon that is. The k softens to g when a particle follows."
+          },
+          {
+            "display": "jungyohaeyo",
+            "script": "중요해요",
+            "cue": "is important, matters",
+            "tag": "free",
+            "forms": [
+              "jungyohaeyo",
+              "jungyohan",
+              "jungyohadago"
+            ],
+            "note": "The predicate every big question ends on. jungyohan is the form that sits in front of a noun, and jungyohadago the one a reported belief takes."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "haengbok is the abstract noun, not the feeling of a good day. Korean keeps them apart, and this word belongs to the conversation about a whole life.",
+      "sound": "HAENG-bo-gi JEONG-mal JUNG-yo-hae-yo.",
+      "variations": [
+        {
+          "display": "Haengbog-eun jeongmal jungyohaeyo.",
+          "script": "행복은 정말 중요해요.",
+          "cue": "Happiness really matters.",
+          "changed": "-eun for -i: happiness set up as the topic rather than claimed"
+        },
+        {
+          "display": "Jayu-ga jeongmal jungyohaeyo.",
+          "script": "자유가 정말 중요해요.",
+          "cue": "Freedom really matters.",
+          "changed": "a different value in the same frame"
+        }
+      ],
+      "mistake": {
+        "display": "Haengbok-i jeongmal jungyohaeyo.",
+        "script": "행복이 정말 중요해요.",
+        "why": "Written with a hard k where the sound has already softened. Once -i follows, the syllable is said haengbog-, and this course writes the romanization the way the word is said."
+      },
+      "usage": "The opening move of a conversation that is going to go somewhere.",
+      "register": "neutral",
+      "mnemonic": "Haengbog-i: the k goes soft before the particle."
+    },
+    {
+      "id": "L5-M5-S02",
+      "display": "Hanguk-e saneun geo-ga jaemiisseoyo.",
+      "script": "한국에 사는 거가 재미있어요.",
+      "cue": "Living in Korea is interesting.",
+      "literal": "Korea-in live-ADN thing-SUBJ is-interesting",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "saneun",
+            "script": "사는",
+            "cue": "living, that one lives",
+            "tag": "delta",
+            "forms": [
+              "saneun"
+            ],
+            "note": "The form a verb takes in front of geo. It is not a tense: it only says the clause is now attached to the noun that follows it."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "English can say living in Korea and stop. Korean cannot: -neun leaves the clause hanging until geo arrives to be the thing it describes, and only then can a particle attach.",
+      "sound": "HAN-gu-ge SA-neun GEO-ga JAE-mi-i-sseo-yo.",
+      "variations": [
+        {
+          "display": "Hanguk-e saneun geo-reul joahaeyo.",
+          "script": "한국에 사는 거를 좋아해요.",
+          "cue": "I like living in Korea.",
+          "changed": "-reul for -ga: the same clause as an object"
+        },
+        {
+          "display": "Saneun geo-ga jungyohaeyo.",
+          "script": "사는 거가 중요해요.",
+          "cue": "How one lives is what matters.",
+          "changed": "the place dropped, the clause bare"
+        }
+      ],
+      "mistake": {
+        "display": "Hanguk-e sarayo-ga jaemiisseoyo.",
+        "script": "한국에 살아요가 재미있어요.",
+        "why": "A finished verb cannot take a particle. The clause has to become a thing first — saneun geo — and only that thing can be the subject of the sentence."
+      },
+      "usage": "Answering what is it like, with something more than fine.",
+      "register": "neutral",
+      "mnemonic": "Verb-neun geo, and now it is a noun."
+    },
+    {
+      "id": "L5-M5-S03",
+      "display": "Jayuraneun geo-seun jeongmal jungyohaeyo.",
+      "script": "자유라는 거슨 정말 중요해요.",
+      "cue": "The thing called freedom really matters.",
+      "literal": "freedom-CALLED thing-TOPIC really is-important",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jayu",
+            "script": "자유",
+            "cue": "freedom",
+            "tag": "free",
+            "forms": [
+              "jayu",
+              "jayu-neun",
+              "jayu-ga",
+              "jayu-reul",
+              "jayuraneun"
+            ],
+            "note": "The value, and the first noun the definition frame is built on. -raneun is written straight onto it with no hyphen, exactly as L5-M1 writes it."
+          },
+          {
+            "display": "geo-seun",
+            "script": "거슨",
+            "cue": "the thing (as the topic)",
+            "tag": "delta",
+            "forms": [
+              "geo-seun"
+            ],
+            "note": "geo with the topic particle, and the second half of the definition frame. It sets the named thing up so that the rest of the sentence can say what it is."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "English has no short form of this. What we call freedom is four words to Korean's two, and a learner who drops the frame turns a definition back into an opinion.",
+      "sound": "JA-yu-ra-neun GEO-seun JEONG-mal JUNG-yo-hae-yo.",
+      "variations": [
+        {
+          "display": "Haengbogiraneun geo-seun saram-mada dallayo.",
+          "script": "행복이라는 거슨 사람마다 달라요.",
+          "cue": "The thing called happiness is different for each person.",
+          "changed": "a noun ending in a consonant, so -iraneun rather than -raneun"
+        },
+        {
+          "display": "Jayu-neun jungyohaeyo.",
+          "script": "자유는 중요해요.",
+          "cue": "Freedom matters.",
+          "changed": "the plain claim, with the definition frame taken off"
+        }
+      ],
+      "mistake": {
+        "display": "Jayu-raneun geo-seun jeongmal jungyohaeyo.",
+        "script": "자유 라는 거슨 정말 중요해요.",
+        "why": "-raneun is an ending and not a particle, so it is written onto the noun with nothing between. Hyphenating it splits one word into two and leaves raneun standing on its own."
+      },
+      "usage": "Opening a question rather than answering one.",
+      "register": "neutral",
+      "mnemonic": "X-raneun geo-seun: the thing called X."
+    },
+    {
+      "id": "L5-M5-S04",
+      "display": "Saram-mada gachigwan-i dallayo.",
+      "script": "사람마다 가치관이 달라요.",
+      "cue": "Everyone's values are different.",
+      "literal": "person-EACH values-SUBJ is-different",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "saram-mada",
+            "script": "사람마다",
+            "cue": "each person, person by person",
+            "tag": "delta",
+            "forms": [
+              "saram-mada"
+            ],
+            "note": "-mada is each, not some. It says the thing varies with whoever you ask, and nobody in the sentence is being told they are wrong."
+          },
+          {
+            "display": "gachigwan",
+            "script": "가치관",
+            "cue": "values, an outlook",
+            "tag": "free",
+            "forms": [
+              "gachigwan",
+              "gachigwan-i",
+              "gachigwan-eun"
+            ],
+            "note": "What a person weighs things by, taken whole. The shorter gachi is L2-M6's together in this romanization, so this is the word to use."
+          }
+        ],
+        "rules": [
+          5,
+          6
+        ]
+      },
+      "trap": "-mada is not some people. Some people think... invites a disagreement; saram-mada says the difference is simply the shape of the thing, which is a much softer way to open.",
+      "sound": "SA-ram-ma-da GA-chi-gwa-ni DAL-la-yo.",
+      "variations": [
+        {
+          "display": "Saram-mada haengbog-i dallayo.",
+          "script": "사람마다 행복이 달라요.",
+          "cue": "Happiness is different for everyone.",
+          "changed": "a different abstract noun in the same frame"
+        },
+        {
+          "display": "Gachigwan-i dallayo.",
+          "script": "가치관이 달라요.",
+          "cue": "Our values are different.",
+          "changed": "the frame dropped, and the sentence is now about two people"
+        }
+      ],
+      "mistake": {
+        "display": "Eoddeon saram-eun gachigwan-i dallayo.",
+        "script": "어떤 사람은 가치관이 달라요.",
+        "why": "This says some people have different values, which sets those people against the rest. saram-mada says every person has their own, and picks nobody out."
+      },
+      "usage": "Making room for a disagreement before it has happened.",
+      "register": "neutral",
+      "mnemonic": "Mada: each, one by one."
+    },
+    {
+      "id": "L5-M5-S05",
+      "display": "Insaeng-eun jjalbeun kkum-ieyo.",
+      "script": "인생은 짧은 꿈이에요.",
+      "cue": "Life is a short dream.",
+      "literal": "life-TOPIC short dream-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "insaeng",
+            "script": "인생",
+            "cue": "a life, a human life",
+            "tag": "free",
+            "forms": [
+              "insaeng",
+              "insaeng-eun",
+              "insaeng-i"
+            ],
+            "note": "A life taken as a whole span. The shorter sam shares its romanization with the number three here, so this course says insaeng and leaves sam unwritten."
+          },
+          {
+            "display": "kkum",
+            "script": "꿈",
+            "cue": "a dream",
+            "tag": "free",
+            "forms": [
+              "kkum",
+              "kkum-i",
+              "kkum-eun",
+              "kkum-ieyo"
+            ],
+            "note": "Both dreams at once, as in English: the one you have asleep and the one you are working towards. Context decides, and nothing in the word does."
+          }
+        ],
+        "rules": [
+          2,
+          7
+        ]
+      },
+      "trap": "Korean puts the modifier in front and English can put it either way, so jjalbeun has to be decided before kkum is reached. That is the whole difficulty of the module in four words.",
+      "sound": "IN-saeng-eun JJAL-beun KKU-mi-e-yo.",
+      "variations": [
+        {
+          "display": "Insaeng-i jjalbeun kkum-ieyo.",
+          "script": "인생이 짧은 꿈이에요.",
+          "cue": "Life is a short dream.",
+          "changed": "-i for -eun: the claim rather than the topic being set"
+        },
+        {
+          "display": "Kkum-i isseoyo.",
+          "script": "꿈이 있어요.",
+          "cue": "I have a dream.",
+          "changed": "the other sense of the word, standing on its own"
+        }
+      ],
+      "mistake": {
+        "display": "Insaeng-eun kkum-ieyo jjalbeun.",
+        "script": "인생은 꿈이에요 짧은.",
+        "why": "English can add the adjective afterwards for effect; Korean cannot. A modifier that arrives after its noun has arrived after the sentence has finished."
+      },
+      "usage": "The kind of thing said late in an evening, and meant.",
+      "register": "neutral",
+      "mnemonic": "The short comes before the dream."
+    },
+    {
+      "id": "L5-M5-S06",
+      "display": "Jeo-neun uimi-ga jungyohadago saenggakhaeyo.",
+      "script": "저는 의미가 중요하다고 생각해요.",
+      "cue": "I think meaning is what matters.",
+      "literal": "I-TOPIC meaning-SUBJ is-important-THAT think",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "uimi",
+            "script": "의미",
+            "cue": "meaning, the point of something",
+            "tag": "free",
+            "forms": [
+              "uimi",
+              "uimi-ga",
+              "uimi-neun"
+            ],
+            "note": "What a thing is for, rather than what it means in a dictionary. It is the noun a big question keeps coming back to."
+          }
+        ],
+        "rules": [
+          4,
+          7
+        ]
+      },
+      "trap": "-dago is not -rago. L3-M5's -rago repeats the words somebody used; -dago reports the thought, and only -dago can carry a belief of your own.",
+      "sound": "JEO-neun U-i-mi-ga JUNG-yo-ha-da-go SAENG-ga-kae-yo.",
+      "variations": [
+        {
+          "display": "Jeo-neun haengbog-i jungyohadago saenggakhaeyo.",
+          "script": "저는 행복이 중요하다고 생각해요.",
+          "cue": "I think happiness is what matters.",
+          "changed": "a different value inside the same reported belief"
+        },
+        {
+          "display": "Uimi-ga jungyohaeyo.",
+          "script": "의미가 중요해요.",
+          "cue": "Meaning matters.",
+          "changed": "the belief asserted flat, with nobody holding it"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun uimi-ga jungyohaeyorago saenggakhaeyo.",
+        "script": "저는 의미가 중요해요라고 생각해요.",
+        "why": "-rago quotes, so this reports somebody saying the words meaning matters out loud. A belief takes -dago on the stem: jungyohadago."
+      },
+      "usage": "Putting your own view into a conversation without closing it.",
+      "register": "neutral",
+      "mnemonic": "-rago quotes the words, -dago the thought."
+    },
+    {
+      "id": "L5-M5-S07",
+      "display": "Jeo-neun chingu-reul mideoyo.",
+      "script": "저는 친구를 믿어요.",
+      "cue": "I trust my friend.",
+      "literal": "I-TOPIC friend-OBJ believe",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mideoyo",
+            "script": "믿어요",
+            "cue": "believes, trusts",
+            "tag": "delta",
+            "forms": [
+              "mideoyo",
+              "mitneun"
+            ],
+            "note": "One verb for both English words. With a person it is trust, with a clause it is believe, and Korean never asks you to choose between them."
+          }
+        ],
+        "rules": [
+          0,
+          7
+        ]
+      },
+      "trap": "English splits trust a person from believe a claim and Korean does not. The object decides which one an English translation needs, and the Korean is the same word either way.",
+      "sound": "JEO-neun CHIN-gu-reul MI-deo-yo.",
+      "variations": [
+        {
+          "display": "Chingu-reul mideoyo.",
+          "script": "친구를 믿어요.",
+          "cue": "I trust my friend.",
+          "changed": "the subject dropped, as Korean drops it by default"
+        },
+        {
+          "display": "Jeo-neun jayu-reul mideoyo.",
+          "script": "저는 자유를 믿어요.",
+          "cue": "I believe in freedom.",
+          "changed": "an abstract noun where English would have to say believe in"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun chingu-reul saenggakhaeyo.",
+        "script": "저는 친구를 생각해요.",
+        "why": "saenggakhaeyo is to think about, so this says you have your friend on your mind. Trust is mideoyo, and the two verbs are not near each other in Korean."
+      },
+      "usage": "Said plainly, and heard as a bigger claim than the English sounds.",
+      "register": "neutral",
+      "mnemonic": "One verb: trust and believe together."
+    },
+    {
+      "id": "L5-M5-S08",
+      "display": "Mideum-eun saram-mada dallayo.",
+      "script": "믿음은 사람마다 달라요.",
+      "cue": "What people believe is different for each of them.",
+      "literal": "belief-TOPIC person-EACH is-different",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mideum",
+            "script": "믿음",
+            "cue": "belief, faith, trust",
+            "tag": "free",
+            "forms": [
+              "mideum",
+              "mideum-eun",
+              "mideum-i"
+            ],
+            "note": "The noun made from mideoyo. It covers a religious faith and an ordinary trust between people, and the sentence around it decides which."
+          }
+        ],
+        "rules": [
+          5,
+          7
+        ]
+      },
+      "trap": "This module names the frame and leaves the content out. mideum here is anybody's belief, and no sentence in the course says whose or what.",
+      "sound": "MI-deu-meun SA-ram-ma-da DAL-la-yo.",
+      "variations": [
+        {
+          "display": "Mideum-i jungyohaeyo.",
+          "script": "믿음이 중요해요.",
+          "cue": "Belief matters.",
+          "changed": "the noun as a subject, and a claim instead of an observation"
+        },
+        {
+          "display": "Gachigwan-eun saram-mada dallayo.",
+          "script": "가치관은 사람마다 달라요.",
+          "cue": "Values are different for each person.",
+          "changed": "a different abstract noun in the same frame"
+        }
+      ],
+      "mistake": {
+        "display": "Mideum-eun saram-mada teullyeoyo.",
+        "script": "믿음은 사람마다 틀려요.",
+        "why": "teullyeoyo says wrong. Swapping it for dallayo turns an observation that beliefs vary into a claim that everybody else's is mistaken."
+      },
+      "usage": "Stepping back from a disagreement without settling it.",
+      "register": "neutral",
+      "mnemonic": "Dallayo, never teullyeoyo."
+    },
+    {
+      "id": "L5-M5-S09",
+      "display": "Sesang-i byeonhaneun geo-reul mideoyo.",
+      "script": "세상이 변하는 거를 믿어요.",
+      "cue": "I believe the world changes.",
+      "literal": "world-SUBJ change-ADN thing-OBJ believe",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sesang",
+            "script": "세상",
+            "cue": "the world",
+            "tag": "free",
+            "forms": [
+              "sesang",
+              "sesang-i",
+              "sesang-eun"
+            ],
+            "note": "The world as people and how they live, not the planet. It is the subject a big question about change is usually built on."
+          },
+          {
+            "display": "byeonhaneun",
+            "script": "변하는",
+            "cue": "changing, that changes",
+            "tag": "free",
+            "forms": [
+              "byeonhaneun",
+              "byeonhaeyo"
+            ],
+            "note": "byeonhaeyo in the shape that goes in front of geo. The whole clause in front of geo-reul is what mideoyo is believing."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "The believing verb comes last and the belief is built entirely in front of it. English starts with I believe and works forwards; here nothing is said until the clause is finished.",
+      "sound": "SE-sang-i BYEON-ha-neun GEO-reul MI-deo-yo.",
+      "variations": [
+        {
+          "display": "Sesang-i byeonhaneun geo-reul saenggakhaeyo.",
+          "script": "세상이 변하는 거를 생각해요.",
+          "cue": "I think about how the world changes.",
+          "changed": "a different verb taking the same nominalised clause"
+        },
+        {
+          "display": "Sesang-eun byeonhaeyo.",
+          "script": "세상은 변해요.",
+          "cue": "The world changes.",
+          "changed": "the claim on its own, with nobody believing it"
+        }
+      ],
+      "mistake": {
+        "display": "Mideoyo sesang-i byeonhaneun geo-reul.",
+        "script": "믿어요 세상이 변하는 거를.",
+        "why": "This is the English order transplanted. The verb closes a Korean sentence, and the clause it takes has to be finished before it arrives."
+      },
+      "usage": "The nearest thing to a creed this course will teach.",
+      "register": "neutral",
+      "mnemonic": "Clause, geo-reul, then mideoyo."
+    },
+    {
+      "id": "L5-M5-S10",
+      "display": "Geu jilmun-e jeongdab-eun eopseoyo.",
+      "script": "그 질문에 정답은 없어요.",
+      "cue": "That question has no right answer.",
+      "literal": "that question-to right-answer-TOPIC does-not-exist",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jilmun",
+            "script": "질문",
+            "cue": "a question",
+            "tag": "free",
+            "forms": [
+              "jilmun",
+              "jilmun-e",
+              "jilmun-i"
+            ],
+            "note": "A question somebody asks, and the -e is to it rather than at it. It takes the particle even where English uses none."
+          },
+          {
+            "display": "jeongdap",
+            "script": "정답",
+            "cue": "the right answer",
+            "tag": "free",
+            "forms": [
+              "jeongdap",
+              "jeongdab-eun",
+              "jeongdab-i"
+            ],
+            "note": "Not any answer — the correct one, the one an exam has. Saying a question has none is a claim about the question, not about the asker."
+          }
+        ],
+        "rules": [
+          5,
+          7
+        ]
+      },
+      "trap": "jeongdap is the right answer, not a reply. Saying there is no jeongdap does not refuse to answer; it says the question is not that kind of question.",
+      "sound": "GEU JIL-mu-ne JEONG-da-beun EOP-sseo-yo.",
+      "variations": [
+        {
+          "display": "Jeongdab-i eopseoyo.",
+          "script": "정답이 없어요.",
+          "cue": "There is no right answer.",
+          "changed": "the verdict with the question left out"
+        },
+        {
+          "display": "Geu jilmun-e jeongdab-i isseoyo?",
+          "script": "그 질문에 정답이 있어요?",
+          "cue": "Does that question have a right answer?",
+          "changed": "the whole thing asked rather than settled"
+        }
+      ],
+      "mistake": {
+        "display": "Geu jilmun-eun jeongdab-eun eopseoyo.",
+        "script": "그 질문은 정답은 없어요.",
+        "why": "Two topics in one sentence and nothing to hold them together. The question takes -e, to it, and jeongdap is the only thing the sentence is about."
+      },
+      "usage": "Closing a conversation that was never going to be settled, and meaning it kindly.",
+      "register": "neutral",
+      "mnemonic": "No jeongdap — and that is the answer."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M5-C01",
+      "display": "Haengbog-i jeongmal jungyohaeyo.",
+      "script": "행복이 정말 중요해요.",
+      "cue": "Happiness really matters."
+    },
+    {
+      "id": "L5-M5-C02",
+      "display": "Jayuraneun geo-seun jungyohaeyo.",
+      "script": "자유라는 거슨 중요해요.",
+      "cue": "The thing called freedom matters."
+    },
+    {
+      "id": "L5-M5-C03",
+      "display": "Saram-mada gachigwan-i dallayo.",
+      "script": "사람마다 가치관이 달라요.",
+      "cue": "Everyone's values are different."
+    },
+    {
+      "id": "L5-M5-C04",
+      "display": "Insaeng-eun jjalbeun kkum-ieyo.",
+      "script": "인생은 짧은 꿈이에요.",
+      "cue": "Life is a short dream."
+    },
+    {
+      "id": "L5-M5-C05",
+      "display": "Jeo-neun uimi-ga jungyohadago saenggakhaeyo.",
+      "script": "저는 의미가 중요하다고 생각해요.",
+      "cue": "I think meaning is what matters."
+    },
+    {
+      "id": "L5-M5-C06",
+      "display": "Sesang-i byeonhaneun geo-reul mideoyo.",
+      "script": "세상이 변하는 거를 믿어요.",
+      "cue": "I believe the world changes."
+    },
+    {
+      "id": "L5-M5-C07",
+      "display": "Mideum-eun saram-mada dallayo.",
+      "script": "믿음은 사람마다 달라요.",
+      "cue": "What people believe differs from person to person."
+    },
+    {
+      "id": "L5-M5-C08",
+      "display": "Hanguk-e saneun geo-ga jaemiisseoyo.",
+      "script": "한국에 사는 거가 재미있어요.",
+      "cue": "Living in Korea is interesting."
+    },
+    {
+      "id": "L5-M5-C09",
+      "display": "Geu jilmun-e jeongdab-eun eopseoyo.",
+      "script": "그 질문에 정답은 없어요.",
+      "cue": "That question has no right answer."
+    },
+    {
+      "id": "L5-M5-C10",
+      "display": "Saneun geo-ga jungyohaeyo.",
+      "script": "사는 거가 중요해요.",
+      "cue": "How one lives is what matters."
+    },
+    {
+      "id": "L5-M5-C11",
+      "display": "Kkum-i isseoyo.",
+      "script": "꿈이 있어요.",
+      "cue": "I have a dream."
+    },
+    {
+      "id": "L5-M5-C12",
+      "display": "Jeo-neun chingu-reul mideoyo.",
+      "script": "저는 친구를 믿어요.",
+      "cue": "I trust my friend."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

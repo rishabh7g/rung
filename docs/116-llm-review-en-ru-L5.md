@@ -301,3 +301,336 @@ close one by rewriting a shipped module.
      `lyógkim`, `párom`, `vánnoy`, `shuchú`, `shútish'`, `shútka`, `obizháysya`, `smeyús'`,
      `smeyósh'sya`, `smeyótsya`, `smeyát'sya`, `dayósh'`, `dómik`, `knízhka`, `sobáka`, `sobáchka`,
      `Ványa`, `Vánechka`, `smeshnóy`, `smeshnáya`.
+
+## Wave 2 — L5-M3, L5-M4 and L5-M5 (#585)
+
+The RANGE modules of the level: where the speech is placed (M3), where the occasion is (M4), and
+where the subject is not in the room at all (M5). Authored against the briefs in
+`tools/course-briefs.ts` and the decisions in `docs/107`, in the same change that flips
+`verified: true` on all three.
+
+**The index this wave was written against.** Wave 1 above quotes the tool closing with
+`966 surfaces owned, folded over 40 modules through L4-M10`. On 2026-09-08, after wave 1 landed,
+every run in this wave closed with
+
+```
+999 surfaces owned, folded over 42 modules through L5-M2
+```
+
+so the seam moved by 33 surfaces and two modules while this level was being authored. Every claim
+below was put to `npm run content:owner -- en-ru …`; nothing here rests on a grep.
+
+### L5-M3 "How they say it there" — the words that carry no meaning and mark you anyway
+
+Ten displays:
+
+1. `Nu, ya prósto ne znáyu, chto skazát'.`
+2. `Koróche, ya ne poshlá na rabótu.`
+3. `On kupíl mne podárok, típa knígu.`
+4. `Ya kak by soglásen, no ne sovsém.`
+5. `V óbshchem, vsyó býlo khoroshó.`
+6. `Slúshay, davay poydyóm domóy.`
+7. `Privét, Ványa! Kak delá?`
+8. `V Moskvé govoryát podyézd, a v Peterbúrge — parádnaya.`
+9. `V Moskvé éhto bordyúr, a v Peterbúrge porébrik.`
+10. `V Moskvé govoryát batón i shaurmá, a v Peterbúrge búlka i shavermá.`
+
+Sixteen rows, eighteen surfaces. Six of them are the DISCOURSE PARTICLE set the brief names —
+`nu`, `koróche`, `típa`, `kak by`, `v óbshchem`, `slúshay` (with `slúshayte` in its forms) — taught
+as a class in `rules[0]`: unstressed, uninflected, attached to no case, and marking the speaker's
+relation to what is said rather than saying anything. `privét` finally gets its own row (S07), which
+is what `docs/107` question 4 asked for: L1-M2 named it in a trap and in a mistake plate and never
+opened it, so a learner had been told what not to say without being told what it was.
+
+The regional half is four pairs across S08–S10 and is deliberately a vocabulary spend, not a
+system: `podyézd`/`parádnaya`, `bordyúr`/`porébrik`, `batón`/`búlka`, `shaurmá`/`shavermá`, plus
+`Peterbúrge` as its own row. `rules[3]` says in as many words that the module reports what is said
+where and ranks nothing.
+
+Two things the module refuses. It teaches **no phonology**: S09's `usage` says outright that what a
+Russian would hear first is the vowel reduction and not the vocabulary, that this course has no
+audio and cannot teach that, and that the words are therefore where the difference is visible. And
+it does not re-open the register law — `rules[1]` states the downward drift and points at L5-M2's
+diminutive as the module that owns it, rather than restating it.
+
+### L5-M4 "Formal occasions" — three frames, three cases, no new case
+
+Ten displays:
+
+1. `Pozdravlyáyu vas s dnyóm rozhdéniya!`
+2. `Pozdravlyáyu vas s prázdnikom!`
+3. `Zheláyu vam schást'ya i zdoróv'ya.`
+4. `Zheláyu vam uspékhov v rabóte.`
+5. `Davayte výp'yem za drúzhbu!`
+6. `Ya khochú skazát' tost za vas.`
+7. `Primíte moí soboléznovaniya.`
+8. `Uvazháyemyy Iván, spasíbo vam za vsyó.`
+9. `Dorogíye druz'yá i prisútstvuyushchiye, spasíbo vam.`
+10. `Závtra svád'ba, i ya dólzhen skazát' rech'.`
+
+Seventeen rows, eighteen surfaces, and the whole spend is nouns: `pozdravlyáyu s` takes the
+instrumental, `zheláyu` the genitive, the toast `za` plus the accusative, and all three cases were
+already the learner's. `rules[1]` states the genitive after `zheláyu` as the PARTITIVE genitive
+L2-M3 opened — you wish somebody *some* happiness — so the frame is a fact rather than a list.
+
+The two mistake plates the brief asked for are S01 (`Pozdravlyáyu vas na den' rozhdéniya!`, English
+*congratulate on*) and S03 (`Zheláyu vam schást'ye i zdoróv'ye.`, the accusative out of *I wish you
+happiness*). `tost` and `rech'` are both SAID rather than made, and S06 and S10 each carry the
+`sdélat'` error as their mistake plate.
+
+`uvazháyemyy` and `prisútstvuyushchiye` are taken as a **closed list of two frozen participial
+address forms** and named as participles in `rules[4]`; nothing here forms a participle from a
+verb, and the rule says so and points at `docs/107` for the hole.
+
+### L5-M5 "Big questions" — government as meaning, not as a list
+
+Ten displays:
+
+1. `Ya véryu v spravedlívost'.`
+2. `On vérit v bóga, a éhto yevó véra.`
+3. `Ya vam véryu — u vas chístaya sóvest'.`
+4. `Éhto zavísit ot pogódy.`
+5. `Vsyó zavísit ot chelovéka.`
+6. `Kázhdyy sam dólzhen znat', chto dlya nevó vázhno.`
+7. `Glávnoye — éhto ne dén'gi, a schást'ye.`
+8. `Délo v tom, chto zhizn' — éhto ne rabóta.`
+9. `Ya ne véryu v sud'bú, ya véryu v svobódu.`
+10. `Dlya menyá éhto tsénnosti i smysl zhízni.`
+
+Eighteen rows, twenty-eight surfaces. The system is VERB GOVERNMENT taught as the thing that
+decides meaning: `vérit' v` plus the accusative (S01, S02, S09) against `vérit'` plus a bare dative
+(S03), one verb, two claims, and one English preposition for both. Beside it `zavísit ot` plus the
+genitive (S04, S05), whose preposition this course had never opened. The third device is the
+IMPERSONAL GENERALISER, which costs no new form at all: `kázhdyy sam …` in S06, `chelovék dólzhen
+…` in S06's first variation and S05's second.
+
+`rules[3]` carries the third L1 habit the brief names and the one no mistake plate can hold: an
+English speaker hedges an abstract claim until it disappears, and in Russian a flat abstract
+statement is normal and is not rudeness. The module reports beliefs and holds none — S02's `trap`
+says that in one line, and `bog` and `véra` are vocabulary.
+
+## The brief seams this wave had to correct
+
+### 8. `éto` is not this course's spelling of *this* — `éhto` is, and `éto` is free
+
+The L5-M5 brief's index seam closes its owned list with `éto -> L1-M1`. It is not:
+
+```
+éto	free
+éhto	L1-M1
+```
+
+This is exactly the class of error the wave brief warns about one line earlier for `zná` — a
+plausible romanization that the course does not use. The course writes `э` as `éh` throughout
+(`éhta`, `éhti`, `éhto`, `éhtot`, `ehkzámen`), so `éto` is a key the index has never met. Had this
+wave written the brief's spelling, six displays across M5 alone (S02, S04, S07, S08, S10 and four
+pool items) would have been `SHOWN-BUT-UNTAUGHT`, and M3's S09 with them. Every display in all
+three modules writes `éhto`, and the allowedPatterns list of L5-M5 was rewritten from the brief's
+`Éto zavísit ot + <N-genitive>` to `Éhto zavísit ot + <N-genitive>` for the same reason.
+
+### 9. Bare `v` is L1-M4's, not L1-M7's
+
+The L5-M3 brief justifies indexing `v óbshchem` whole with "since bare `v` is L1-M7's". The module
+is wrong; the reason is right:
+
+```
+v	L1-M4
+```
+
+`v óbshchem` is indexed whole regardless, and so is L5-M5's `délo v tom`. The correction matters
+only for what a note may claim: both notes now point at L1-M4.
+
+### 10. The brief's own cautionary tale about `zná` is itself wrong
+
+The wave brief's "never grep for a surface" section says of en-ru's L4-M5 brief: "The shipped
+surface is `zná`: the grep was blind to the acute." The tool says otherwise:
+
+```
+zná	free
+znat'	L4-M5
+znáyesh'	L2-M6
+znáyete	L4-M5
+```
+
+No `zná` surface is shipped at all. What is true — and what L5-M3's own brief states correctly — is
+the SPLIT: `znáyesh'` is L2-M6's and `znáyete` is L4-M5's, one paradigm across two modules. So the
+lesson survives its example: L4-M5's brief was wrong to say the verb is untaught, but it was wrong
+because L2-M6 and L4-M5 own conjugated forms, not because a bare `zná` exists. This wave adds no
+third row for the verb; M3's S01 and M5's S06 and S08 use `znáyu`, `znat'` and `ne znáyu` as
+already-taught surfaces with no row of their own.
+
+### 11. The romanization of `-ие`: `prisútstvuyushchiye`, not `prisútstvuyushchie`
+
+The L5-M4 brief's fresh-key list writes `prisútstvuyushchie`. Every `-ие` in the shipped index is
+`-iye` without exception — `khoróshiye`, `bol'shíye`, `dorogíye`, `síniye`, `krásnyye`,
+`málen'kiye`, `vysókiye` — so the brief's spelling would have forked one word into a surface the
+course's own convention cannot produce. Shipped as `prisútstvuyushchiye`. Both spellings are free,
+so nothing broke; the convention decided it, not the index.
+
+### 12. `Peterbúrge` — the acute is on the third vowel, not the fourth
+
+The L5-M3 brief says `Peterbúrge` carries "no acute on the first syllable and one on the fourth".
+The word has four vowels, `e-e-ú-e`, and the stress is on the third of them. The surface the brief
+writes is correct; only its description of it is off by one, and a wave that trusted the description
+over the spelling would have shipped `Peterburgé`.
+
+### 13. Two more paradigm holes the briefs did not name, and one they did
+
+`prázdnikom` is the greeting's instrumental and it is free, while its dictionary form is not:
+
+```
+prázdnik	L3-M9
+prázdnikom	free
+```
+
+So L5-M4's S02 row opens `prázdnikom` alone, `forms` of exactly one entry, with a note pointing
+back at L3-M9 — the same shape the brief called out for `uvazháyemyy`/`uvazháyemye`, which the tool
+confirms:
+
+```
+uvazháyemye	L4-M7
+uvazháyemyy	free
+```
+
+The second unnamed hole is `schást'ya`/`schást'ye`. L5-M4 opens the genitive `schást'ya` for the
+wish frame; L5-M5, two modules later, opens the nominative `schást'ye` for a subject. Neither row
+lists the other's form, and M5's note names M4 as the owner of the genitive. `rozhdéniya` is the
+third: it is free, `den' rozhdéniya` is L3-M9's, and this wave opens neither — only the three-token
+`s dnyóm rozhdéniya`, so a bare `dnyóm` still reaches L1-M4's daytime note, which is true of that
+word and false of the greeting.
+
+### 14. `drúzhbu` carries an acute
+
+The L5-M4 brief writes `za druzhbu` in prose. `дру́жбу` is a polysyllable, so under the en-ru stress
+law it is `drúzhbu`, and it ships that way. The brief's own closing line — that `rech'` and `tost`
+are monosyllables and carry NO acute — is the other half of the same law and is obeyed: `tost`,
+`rech'`, `bog`, `smysl`, `zhizn'`, `sam` and `ot` all ship bare.
+
+### 15. What the briefs got exactly right
+
+Everything else in all three seam lists held, verbatim: `dnyóm -> L1-M4`, `den' rozhdéniya ->
+L3-M9`, `za -> L2-M1`, `davayte`/`davay -> L2-M6`, `moí -> L2-M2`, `vam`/`vas`/`spasíbo -> L1-M2`,
+`prostíte -> L2-M1` (and `primíte` fresh and not a form of it), `vot -> L4-M10`, `govoryát ->
+L4-M7`, `Moskvé -> L1-M1`, `kak -> L1-M2`, `by -> L3-M4`, `právda -> L3-M3`, `dólzhen` and `nádo ->
+L3-M4`, `chto -> L1-M9`, `sebyá -> L3-M6`, and the two findings the briefs were proudest of:
+
+```
+ot	free
+chelovék	free
+kázhdyy	L4-M9
+kázhdyy den'	L1-M4
+```
+
+`ot` really had gone four levels unopened, and `kázhdyy` really did move out from under L1-M4's
+whole key when L4-M9 took the bare adjective — so L5-M5's S06 mistake plate is built on exactly
+that, showing a learner what `Kázhdyy den' dólzhen znat'` would mean.
+
+Three keys this wave deliberately leaves free for a later module, having shown none of them bare:
+`smysl` (only `smysl zhízni` is opened), `délo` (only `délo v tom`), and `soboléznovaniya` (only
+`moí soboléznovaniya`).
+
+## The ratchet
+
+- **maxSpan holds at 4.** Wave 1 raised it from 3 and wrote the ceiling down: no L5 module of this
+  course may write a five-token key. This wave's longest key is `s dnyóm rozhdéniya` at three
+  tokens; `moí soboléznovaniya`, `za vas`, `kak by`, `v óbshchem`, `smysl zhízni` are two and
+  `délo v tom` is three. Nothing about the resolver's walk changes.
+- **Shown surfaces: no new findings, in any of the three.**
+  `npm run content:shown -- en-ru L5-M3`, `… L5-M4` and `… L5-M5` each print
+  `clean — every shown surface resolves`, with **zero** `RE-TEACH` lines and zero
+  `COLLIDES INSIDE THIS MODULE` lines. No row of any module opens a key an earlier module owns, so
+  no note in this wave is duplicated to buy the deliberate-repeat exception.
+- **`tools/shown-surfaces.test.ts`: 11/11, en-ru held at 20.** Neither raised nor lowered. The
+  twenty are older findings and are not this wave's to move.
+- **`npm run content:validate`: `CONTENT 405/405 ok`** — every module file in `content/`, these
+  three included. The denominator moved twice during this wave, from 402 to 405, as sibling waves
+  landed in the same checkout; what matters is that it equals the numerator.
+- **`src/course/types.test.ts`: 426/426.** The en-ru lane case (#353) passes — display Latin,
+  script Cyrillic, not one Cyrillic character in a romanized or English field, every acute
+  precomposed and NFC, every sentence carrying `literal`, `sound`, `usage`, `mnemonic` and a
+  `mistake`, and every word row a `note`. Mid-wave, three cases in that file were red — the module
+  census, en-ar's count guard (44 vs 42) and hi-en's (45 vs 42) — and all three were sibling waves'
+  counts rather than en-ru's; by the final run those waves had updated them and the file is green.
+  Nothing in it was changed here.
+- **Prettier**: all three files pass `npx prettier --check`.
+- **Prerequisites**: `L5-M3` takes `["L5-M2"]`, `L5-M4` takes `["L5-M3"]`, `L5-M5` takes
+  `["L5-M4"]` — earlier in the same level, never an L4 module.
+- **Enrichment**: M3 is inside the M1–M3 band, so every one of its sentences ships all five blocks.
+  M4 and M5 ship all five anyway, because the en-ru lane case requires `sound`, `usage`, `mnemonic`
+  and `mistake.why` on every sentence and a `note` on every word regardless of module number. Every
+  `note` is inside the 200-character ceiling; the longest in the wave is 177.
+- **Nothing below L5 was touched**, and no other course was touched. The only files this wave
+  writes are the three modules and this section.
+
+## Open questions for the native pass — wave 2
+
+These continue the chain at 123 and are **not** closed by this wave. No later authoring wave may
+close one by rewriting a shipped module.
+
+124. **The four regional pairs, and whether they are still live** (M3, S08–S10). Confirm that
+     `podyézd`/`parádnaya`, `bordyúr`/`porébrik`, `batón`/`búlka` and `shaurmá`/`shavermá` still
+     split the way this module says, and in particular that `parádnaya` is current Petersburg
+     speech rather than a self-conscious performance of it. This continues question 95, which asked
+     the same of the brief's list; the module now ships the answer and it needs checking as shipped.
+125. **`búlka` outside Petersburg** (M3, S10). S10's `trap` and the `búlka` note both rest on the
+     claim that a `búlka` in Moscow may be a small sweet roll rather than a white loaf. Confirm
+     that, because it is the only place in the module where the two cities disagree about the thing
+     and not only the word.
+126. **Filler density as a claim about speech** (M3, `rules[2]`). Continuing question 94. The rule
+     asserts that Russian conversation with no `nu` in it is audibly stiff. Confirm the direction
+     and, if possible, the strength: is the absence of fillers heard as foreign, as cold, or as
+     careful?
+127. **`típa` in the quoting sense** (M3, S03). The note claims `típa` both approximates a noun and
+     quotes a speaker, on the model of English *like*. Confirm the quoting use is current and not
+     generationally narrow; if it is narrow, the note should say whose speech it is.
+128. **`slúshay` against `poslúshay`** (M3, S06). The module teaches only `slúshay`/`slúshayte`.
+     Confirm that the perfective `poslúshay` is not the more usual floor-taking form, in which case
+     a later module owes it a row rather than this one being rewritten.
+129. **`privét` to somebody older but familiar** (M3, S07). The row draws the line at `ty`.
+     Confirm the boundary case: an older colleague you are on `ty` terms with — is `privét` right,
+     or does age reassert `zdrávstvuyte`?
+130. **`uspékhov` as an obligatory plural** (M4, S04). The note claims the wish is always genitive
+     plural and never `uspékha`. Confirm, and confirm that `Zheláyu vam uspékhov!` with no field
+     named is the ordinary all-purpose form.
+131. **`Primíte moí soboléznovaniya` and its register floor** (M4, S07). Continuing question 98.
+     Confirm this is what a guest actually says rather than a written formula, and confirm the
+     module is right that Russian has no shorter spoken condolence — S07's `trap` rests entirely on
+     that, and on `izviníte` being actively wrong there rather than merely thin.
+132. **`prisútstvuyushchiye` in speech** (M4, S09). Confirm the participle is used aloud at a
+     wedding or a ceremony and is not confined to written programmes; if it is written-only, the
+     module's `usage` line overstates it.
+133. **`tost` and `rech'` and the `skazát'` verb** (M4, S06, S10). Confirm that both are SAID
+     rather than made, and that `sdélat' tost` is wrong rather than merely unidiomatic — two
+     mistake plates rest on it.
+134. **`svád'ba` and what a guest is actually asked for** (M4, S10). The `svád'ba` note claims a
+     guest's whole job is a congratulation and, if asked, a short toast. Confirm, and confirm that
+     a `rech'` is the set piece rather than what any guest may be handed a microphone for.
+135. **`vérit' v` against the bare dative** (M5, S01, S03). Continuing question 99. Confirm the two
+     frames as shipped, and in particular S03's `trap`: that `ya véryu v vas` backs somebody as a
+     cause and does not say *I believe what you just told me*.
+136. **`u vas chístaya sóvest'`** (M5, S03). Confirm the collocation is `chístaya` and not
+     `chístoye` or another adjective, and that the sentence reads as a warm acceptance rather than
+     as an ironic accusation.
+137. **`zavísit ot` and nothing else** (M5, S04). Continuing question 100. Confirm there is no live
+     frame with `na`, so that the module is right to call `zavísit na` simply not Russian rather
+     than a register slip.
+138. **`chelovék` as *anybody*** (M5, S05, `rules[2]`). Confirm that `Chelovék dólzhen …` reads as
+     a claim about people in general and not about a particular man, and that a native ear does not
+     hear it as gendered.
+139. **`smysl zhízni` and its weight** (M5, S10). The `trap` claims the phrase is ordinary
+     conversational Russian rather than literary, and that using it is not a claim to profundity.
+     Confirm — an English speaker's instinct is the opposite, and the whole `trap` rests on this.
+140. **`Glávnoye — éhto ne dén'gi, a schást'ye` as a natural sentence** (M5, S07). Confirm the
+     `ne … a` contrast is the right frame here and that `no` really is wrong rather than
+     merely weaker, which is what S07's mistake plate asserts.
+141. **A stress list, continuing questions 77, 89, 109 and 123.** Every mark this wave writes for
+     the first time, for confirmation as a block: `koróche`, `típa`, `óbshchem`, `slúshay`,
+     `slúshayte`, `privét`, `podyézd`, `parádnaya`, `Peterbúrge`, `bordyúr`, `porébrik`, `batón`,
+     `búlka`, `shaurmá`, `shavermá`, `pozdravlyáyu`, `dnyóm`, `rozhdéniya`, `prázdnikom`,
+     `zheláyu`, `schást'ya`, `zdoróv'ya`, `uspékhov`, `výp'yem`, `drúzhbu`, `primíte`,
+     `soboléznovaniya`, `uvazháyemyy`, `prisútstvuyushchiye`, `svád'ba`, `véryu`, `vérit`,
+     `vérit'`, `spravedlívost'`, `spravedlívosti`, `bóga`, `véra`, `sóvest'`, `zavísit`,
+     `zavísyat`, `chelovék`, `chelovéka`, `vázhno`, `glávnoye`, `schást'ye`, `zhízni`, `sud'bá`,
+     `sud'bú`, `svobóda`, `svobódu`, `tsénnosti`, `tsénnost'`. The monosyllables that deliberately
+     carry no mark are on the same list for the same pass: `nu`, `tost`, `rech'`, `bog`, `smysl`,
+     `zhizn'`, `sam`, `ot`.
