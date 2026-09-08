@@ -4,7 +4,7 @@
    dashed plate, the 52px reveal, the mark row and its Next — because they are one interaction
    read in two directions, and a learner should not have to re-learn it in the ritual. */
 
-.item {
+.comp-item {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -19,13 +19,13 @@
 /* The round-is-redrawing line (#318). Quiet by construction — muted, small, no rule and no fill:
    it is a fact the learner is owed, not a verdict, and the retry's whole design is that nothing
    here is loud (PRD §8 F5: no red, no shame framing, no counters). */
-.pending {
+.comp-item-pending {
   margin: 0 0 var(--space-3);
   font: var(--text-caption);
   color: var(--ink-65);
 }
 
-.plate {
+.comp-item-plate {
   position: relative;
   padding: var(--space-6) var(--space-4);
   background: var(--color-bg);
@@ -34,7 +34,7 @@
 
 /* The sentence to understand, and the loudest text on the screen: `--text-l2-card` is the ramp's
    600 26px/1.6 Mukta slot, which is exactly what the prototype writes here. */
-.display {
+.comp-item-display {
   margin: 0;
   font: var(--text-l2-card);
 }
@@ -42,7 +42,7 @@
 /* The quiet native-script line, romanized courses only (design/tokens.md §1, §2): 15px in
    `--ink-65`, in `--font-script-fallback` because Barlow draws no Arabic and Mukta is
    Devanagari. Same treatment as the reveal card's third line (#93) and the module list's (#88). */
-.script {
+.comp-item-script {
   margin: var(--space-1) 0 0;
   font: var(--text-body);
   font-family: var(--font-script-fallback);
@@ -53,7 +53,7 @@
 
 /* Centred in what is left of the screen: the reveal is the middle of the page, because working the
    meaning out before it is the whole of what is being asked. */
-.work {
+.comp-item-work {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -62,13 +62,13 @@
 
 /* The registration marks frame the reveal CTA rather than a border — the prototype's `blueprint`
    wrapper with a transparent border and its four corners. */
-.revealFrame {
+.comp-item-reveal-frame {
   position: relative;
 }
 
 /* THE filled object in this state (design/tokens.md §3), at the reveal button's own height:
    `--cta-height-lg` is 52px, the one control in the app taller than a primary CTA. */
-.reveal {
+.comp-item-reveal {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,7 +88,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.reveal:active {
+.comp-item-reveal:active {
   background: var(--color-accent-700);
   border-color: var(--color-accent-700);
 }
@@ -97,15 +97,15 @@
 
 /* The reveal itself (design/tokens.md §5): fade + a 7px rise over `--motion-reveal`, which is
    `--space-2` (6.8px) on the scale — the prototype's `rowIn .3s`. */
-.answer {
+.comp-item-answer {
   display: flex;
   flex-direction: column;
   flex: 1;
   gap: var(--space-3);
-  animation: reveal-in var(--motion-reveal) both;
+  animation: comp-item-reveal-in var(--motion-reveal) both;
 }
 
-@keyframes reveal-in {
+@keyframes comp-item-reveal-in {
   from {
     opacity: 0;
     transform: translateY(var(--space-2));
@@ -121,7 +121,7 @@
    design package's only 2px length, the same stand-in the reveal card's cue takes (#93), and the
    ink is `--color-accent-300` where the prototype writes an `accent-400` the token set does not
    carry — the reveal card's own rule makes the same substitution. Flagged on #117. */
-.model {
+.comp-item-model {
   padding-left: var(--space-3);
   border-left: var(--tick-height) solid var(--color-accent-300);
 }
@@ -130,7 +130,7 @@
    writes a 10px uppercase Barlow Condensed kicker — Devanagari has no case to raise and §2
    forbids the size. Seventh recurrence of the type wall (#86–#89, #93, #94, #100); no token
    invented, flagged on #117. */
-.modelLabel {
+.comp-item-model-label {
   margin: 0;
   font: var(--text-l2-cue);
   font-size: var(--devanagari-min-size);
@@ -138,7 +138,7 @@
 }
 
 /* The scripted answer itself — course prose, one step below the line under test. */
-.modelText {
+.comp-item-model-text {
   margin: var(--space-1) 0 0;
   font: var(--text-l2-cue);
 }
@@ -147,7 +147,7 @@
 
 /* Bottom of the screen: the mark is the last thing the learner does, and `margin-top: auto` is
    what keeps it there whatever the sentence's length (#93's row, verbatim). */
-.marks {
+.comp-item-marks {
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
@@ -156,15 +156,17 @@
 }
 
 /* Marked: the row keeps its single column — the 2:1 split it used to take existed only to make
-   room for the Next beside the segments (#313), and there is no Next now. */
-.marksMarked {
-  composes: marks;
+   room for the Next beside the segments (#313), and there is no Next now. So it has no
+   declarations of its own and never did — it was `composes: marks` and nothing else, and the
+   compiler emitted no rule for it either. The name stays because the marked state is worth seeing
+   in the DOM; the element carries `.comp-item-marks` beside it for the styling. */
+.comp-item-marks-marked {
 }
 
 /* design/tokens.md §5: reduced motion collapses every movement in the product — including the one
    the ritual is built around. The answer appears; it does not travel. */
 @media (prefers-reduced-motion: reduce) {
-  .answer {
+  .comp-item-answer {
     animation: none;
   }
 }

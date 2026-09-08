@@ -39,7 +39,7 @@ import { SelfMark, type Mark } from '../../components/SelfMark.tsx';
 import { useCommitWindow } from '../../components/useCommitWindow.ts';
 import { WhyPanel } from '../../components/WhyPanel.tsx';
 import { RegistrationMarks } from '../RegistrationMarks.tsx';
-import styles from './ComprehensionItem.module.css';
+import './comprehension-item.css';
 
 interface ComprehensionItemProps {
   /** The pool item — `{id, display, cue}` (+ `script` in romanized courses), PRD §7. */
@@ -74,7 +74,7 @@ export function ComprehensionItem({
   const { chosen, choose } = useCommitWindow<Mark>(onMark);
 
   return (
-    <section className={styles.item}>
+    <section className="comp-item">
       {/**
        * The round is already redrawing (#318) — said once, above the line under test, in the
        * course's own words. It names no count, no item and no failure: the marks that led here are
@@ -82,34 +82,34 @@ export function ComprehensionItem({
        * line wanted to (Invariant 4). It is the retry's own calm, arriving when the learner can
        * still use it rather than after they have finished working for nothing.
        */}
-      {redrawing === true && <p className={styles.pending}>{strings['retry.pending']}</p>}
+      {redrawing === true && <p className="comp-item-pending">{strings['retry.pending']}</p>}
       {/* The fresh round, announced on its first card (#402) — where a whole interstitial screen
           used to stand. One line, in the slot the pending note takes mid-round; the two never
           coincide, because a round's first card has no miss before it. */}
-      {redrawn === true && <p className={styles.pending}>{strings['retry.title']}</p>}
+      {redrawn === true && <p className="comp-item-pending">{strings['retry.title']}</p>}
 
       {/* A blueprint object: hairline, no radius, the four registration marks — the prototype's
           own frame for the line under test. */}
-      <div className={styles.plate}>
+      <div className="comp-item-plate">
         <RegistrationMarks />
-        <p className={styles.display} dir={l2?.display.dir} lang={l2?.display.lang}>
+        <p className="comp-item-display" dir={l2?.display.dir} lang={l2?.display.lang}>
           {item.display}
         </p>
         {/* Romanized courses only: recognition, never something to produce (PRD §9 [D20]). */}
         {item.script !== undefined && (
-          <p className={styles.script} dir={l2?.script.dir} lang={l2?.script.lang}>
+          <p className="comp-item-script" dir={l2?.script.dir} lang={l2?.script.lang}>
             {item.script}
           </p>
         )}
       </div>
 
       {!card.revealed && (
-        <div className={styles.work}>
-          <div className={styles.revealFrame}>
+        <div className="comp-item-work">
+          <div className="comp-item-reveal-frame">
             <RegistrationMarks />
             <button
               type="button"
-              className={styles.reveal}
+              className="comp-item-reveal"
               onClick={() => {
                 setCard({ revealed: true });
               }}
@@ -123,13 +123,13 @@ export function ComprehensionItem({
       )}
 
       {card.revealed && (
-        <div className={styles.answer}>
-          <div className={styles.model}>
+        <div className="comp-item-answer">
+          <div className="comp-item-model">
             {/* The course names its own L1 ("<language> cue"), so this label is its copy too —
                 the same one `RevealCard` writes above the L1 (#93), because it names the same
                 language. The prototype's English "MODEL ANSWER" would be a shell-owned word. */}
-            <p className={styles.modelLabel}>{strings.cueLabel}</p>
-            <p className={styles.modelText}>{item.cue}</p>
+            <p className="comp-item-model-label">{strings.cueLabel}</p>
+            <p className="comp-item-model-text">{item.cue}</p>
           </div>
 
           {/* "Why" on every reveal (#94), this one included: the panel resolves the L2 line
@@ -138,7 +138,11 @@ export function ComprehensionItem({
           <WhyPanel sentenceId={item.id} display={item.display} l2={l2} />
 
           {/* The mark, and nothing beside it: choosing commits the item (#313). */}
-          <div className={chosen === null ? styles.marks : styles.marksMarked}>
+          <div
+            className={
+              chosen === null ? 'comp-item-marks' : 'comp-item-marks-marked comp-item-marks'
+            }
+          >
             <SelfMark mark={chosen} onMark={choose} />
           </div>
         </div>
