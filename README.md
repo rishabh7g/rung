@@ -161,11 +161,11 @@ what "written unaided" is supposed to look like. The passive stays out of L3 by 
 `बोललो` stays the pinned index miss it has been since docs/15. **The native gate is still unmet**:
 docs/51 ends in open questions 71–96.
 
-**en-es starts its second level (#435, 2026-09-08) — the first L2 outside hi-mr.** `L2-M1`
-_Asking politely_ and `L2-M2` _Describing people_ are authored against the briefs of #426
+**en-es starts its second level (#435, #444, 2026-09-08) — the first L2 outside hi-mr.** `L2-M1`
+_Asking politely_ through `L2-M5` _Food and hosting_ are authored against the briefs of #426
 (`docs/53-en-es-L2-brief-decisions.md`) and carry `verified: true` on the same standing authority,
 backed by `docs/61-llm-review-en-es-L2.md`; a strict `npm run build` emits
-`en-es: 12 modules (L1-M1..M10, L2-M1..M2)` and the cumulative index runs 228 → 291 surfaces. M1
+`en-es: 15 modules (L1-M1..M10, L2-M1..M5)` and the cumulative index runs 228 → 375 surfaces. M1
 teaches the FRAME rather than the pronoun — the level's register decision, and the correction the
 briefs record, since L1-M2 had already taught `usted` on a row of its own — with `¿Me da…?` beside
 `¿Me das…?` and `¿Puede…?` beside `¿Puedes…?`, chipped `formal` and `informal` (#422); M2 teaches
@@ -174,8 +174,12 @@ split. Authoring moved one key an unexecuted brief had misassigned — the bare 
 not M5's, because `¿Me da…?` is M1's own first pattern — and both brief notes were corrected in the
 same commit. The **shown-surface ratchet (#491) caught two waves of variation-only surfaces**
 before either shipped, `por` among them, which `docs/53` keeps unowned across the whole level; the
-en-es baseline stays at 10. **The native gate is still unmet**: docs/61 ends in open questions 1–6,
-a fresh en-es L2 chain.
+en-es baseline stays at 10. **The native gate is still unmet**: docs/61 ends in open questions 1–11,
+a fresh en-es L2 chain. M3 pays the `bueno` ruling in full — the row is authored on `buenas` with
+no masculine singular, because that key is L1-M10's discourse "well, …" — M4 teaches the polite
+imperative as a recipe from the I-form and names L3's subjunctive as the system it belongs to,
+and M5 puts `para` in for a recipient and nothing else, with bare `por` still appearing nowhere in
+the level.
 
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by

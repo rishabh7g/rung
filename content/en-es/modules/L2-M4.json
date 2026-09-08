@@ -1,0 +1,687 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M4",
+  "title": "Getting around",
+  "job": "Directions, transport, asking the way",
+  "prerequisites": [
+    "L2-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "present",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "Perdone + , + ¿dónde está + el/la + N?",
+      "¿Cómo se va a + el/la + N?",
+      "Siga/Gire/Cruce + <direction>",
+      "a la derecha / a la izquierda / todo recto",
+      "Voy en + N-transport"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "hay introduces something whose existence is the news and never takes a definite article: ¿Hay una tienda cerca? está locates something both speakers already know: la tienda está cerca. Hay la tienda is the English \"there is the shop\", and it is wrong."
+    },
+    {
+      "tag": "delta",
+      "text": "The polite imperative is built from the I-form with the other vowel: sigo → siga, giro → gire, cruzo → cruce, tomo → tome. It is the shape L3's subjunctive will reuse, so it is worth noticing now."
+    },
+    {
+      "tag": "delta",
+      "text": "se plus a he-she verb says \"one\" — ¿Cómo se va a la plaza? asks how a person gets there without naming anybody. It is the same little se that hides inside se llama."
+    },
+    {
+      "tag": "free",
+      "text": "Transport takes en: voy en autobús, en metro, en tren. English's \"by\" and Spanish's en both drop the article, so the shape transfers."
+    },
+    {
+      "tag": "delta",
+      "text": "a la derecha, a la izquierda and todo recto travel as whole phrases. Learn each as one word rather than assembling it, because the a and the todo inside them are doing nothing you can reuse."
+    },
+    {
+      "tag": "interference",
+      "text": "cerca and lejos need de before a place: cerca de la plaza, lejos de aquí. On their own — está cerca — they simply mean near or far with no destination named."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M4-S01",
+      "display": "Perdone, ¿dónde está la estación?",
+      "cue": "Excuse me, where's the station?",
+      "literal": "Excuse(polite), where is the station?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "estación",
+            "cue": "station",
+            "tag": "free",
+            "forms": [
+              "estación",
+              "estaciones"
+            ],
+            "note": "Feminine despite the -ión ending looking masculine: la estación. The written accent disappears in the plural, estaciones, because the stress no longer needs marking."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "está locates something you both know exists. For asking whether one exists at all, S02 uses hay.",
+      "sound": "es-ta-SYON, stressed on the last syllable, which is why it carries an accent.",
+      "variations": [
+        {
+          "display": "Perdone, ¿dónde está la plaza?",
+          "cue": "Excuse me, where's the square?",
+          "changed": "the same question about another place"
+        },
+        {
+          "display": "Disculpe, ¿dónde está el metro?",
+          "cue": "Sorry, where's the metro?",
+          "changed": "M1's other opener, and a masculine place"
+        },
+        {
+          "display": "¿Dónde están las tiendas?",
+          "cue": "Where are the shops?",
+          "changed": "a plural subject takes están"
+        }
+      ],
+      "mistake": {
+        "display": "Perdone, ¿dónde hay la estación?",
+        "why": "hay never takes a definite article. For a place you both know exists, it is ¿dónde está…?"
+      },
+      "usage": "The first sentence of most conversations a traveller has. Perdone opens it; the question does the rest.",
+      "register": "formal",
+      "mnemonic": "está points at a known place; hay announces an unknown one."
+    },
+    {
+      "id": "L2-M4-S02",
+      "display": "¿Hay un banco cerca?",
+      "cue": "Is there a bank nearby?",
+      "literal": "There-is a bank near?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "banco",
+            "cue": "bank",
+            "tag": "free",
+            "forms": [
+              "banco",
+              "bancos"
+            ],
+            "note": "Masculine: el banco. The same word covers a bank and a park bench, and the sentence says which."
+          },
+          {
+            "display": "cerca",
+            "cue": "near · nearby",
+            "tag": "delta",
+            "forms": [],
+            "note": "On its own it means nearby with no place named. To name one it takes de: cerca de la plaza, the phrase M7 of the level below taught."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "hay is one word for \"there is\" and \"there are\" alike, and it never changes: hay una tienda, hay dos tiendas.",
+      "sound": "SER-ka in most of Spain the c before e is a th; across Latin America it is an s. Both are standard.",
+      "variations": [
+        {
+          "display": "¿Hay una tienda cerca?",
+          "cue": "Is there a shop nearby?",
+          "changed": "a feminine place, and hay does not move"
+        },
+        {
+          "display": "¿Hay dos estaciones aquí?",
+          "cue": "Are there two stations here?",
+          "changed": "more than one, and hay still does not move"
+        },
+        {
+          "display": "Sí, hay un banco muy cerca.",
+          "cue": "Yes, there's a bank very close by.",
+          "changed": "the answer, with muy in front of cerca"
+        }
+      ],
+      "mistake": {
+        "display": "¿Hay el banco cerca?",
+        "why": "hay asks whether a thing exists, so it cannot take el. Either ¿Hay un banco…? or ¿Dónde está el banco?"
+      },
+      "usage": "How you find anything in a town you do not know. The answer usually comes back as directions.",
+      "register": "neutral",
+      "mnemonic": "hay never counts and never takes the."
+    },
+    {
+      "id": "L2-M4-S03",
+      "display": "Siga todo recto, por favor.",
+      "cue": "Go straight on, please.",
+      "literal": "Continue(polite) all straight, please.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Siga",
+            "cue": "carry on (polite)",
+            "tag": "delta",
+            "forms": [
+              "siga",
+              "sigo"
+            ],
+            "note": "The polite imperative of seguir, built from the I-form sigo with the vowel swapped: sigo → siga. Every polite imperative in this module is made the same way."
+          },
+          {
+            "display": "todo recto",
+            "cue": "straight on",
+            "tag": "free",
+            "forms": [],
+            "note": "Two words that travel as one. Neither half is reusable — the todo here is not counting anything — so learn the phrase whole."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "There is no polite verb ending to add. The imperative changes its vowel and that is the whole of it.",
+      "sound": "SI-ga, with a hard g. REK-to, with the c fully said.",
+      "variations": [
+        {
+          "display": "Siga todo recto y gire a la derecha.",
+          "cue": "Go straight on and turn right.",
+          "changed": "two instructions joined by y"
+        },
+        {
+          "display": "Siga por favor, está muy cerca.",
+          "cue": "Carry on please, it's very close.",
+          "changed": "the instruction with a reassurance after it"
+        },
+        {
+          "display": "Todo recto, no está lejos.",
+          "cue": "Straight on, it isn't far.",
+          "changed": "the phrase alone, with the verb left out"
+        }
+      ],
+      "mistake": {
+        "display": "Sigue todo recto, por favor.",
+        "why": "sigue is the tú imperative. To a stranger in the street it is siga."
+      },
+      "usage": "Said to a stranger, and heard far more often than it is spoken by a learner.",
+      "register": "formal",
+      "mnemonic": "Take the I-form, swap the vowel, and you are being polite."
+    },
+    {
+      "id": "L2-M4-S04",
+      "display": "Gire a la derecha en la esquina.",
+      "cue": "Turn right at the corner.",
+      "literal": "Turn(polite) to the right at the corner.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Gire",
+            "cue": "turn (polite)",
+            "tag": "delta",
+            "forms": [
+              "gire",
+              "giro"
+            ],
+            "note": "The polite imperative of girar, from giro with the vowel swapped — the same recipe as siga."
+          },
+          {
+            "display": "a la derecha",
+            "cue": "right · to the right",
+            "tag": "free",
+            "forms": [],
+            "note": "Three words as one. The a inside it is not the a of M4's a las ocho, which is why the phrase is learnt whole."
+          },
+          {
+            "display": "esquina",
+            "cue": "corner",
+            "tag": "free",
+            "forms": [
+              "esquina",
+              "esquinas"
+            ],
+            "note": "The corner of a street. Feminine: la esquina."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "en la esquina, not a la esquina. Spanish puts you AT the corner and turns you TO the right.",
+      "sound": "HI-re, with the g before an e said as a Spanish j — a breathy h.",
+      "variations": [
+        {
+          "display": "Gire a la izquierda en la plaza.",
+          "cue": "Turn left at the square.",
+          "changed": "the other direction, at another landmark"
+        },
+        {
+          "display": "Gire a la derecha y siga todo recto.",
+          "cue": "Turn right and go straight on.",
+          "changed": "the two instructions in the other order"
+        },
+        {
+          "display": "La tienda está a la derecha.",
+          "cue": "The shop is on the right.",
+          "changed": "the phrase locating something rather than instructing"
+        }
+      ],
+      "mistake": {
+        "display": "Gire la derecha en la esquina.",
+        "why": "The phrase is a la derecha. Dropping the a leaves you turning the right itself."
+      },
+      "usage": "The commonest instruction anyone gives. Learn to hear it before you learn to say it.",
+      "register": "formal",
+      "mnemonic": "You turn TO a side and stand AT a corner."
+    },
+    {
+      "id": "L2-M4-S05",
+      "display": "La plaza está a la izquierda.",
+      "cue": "The square is on the left.",
+      "literal": "The square is to the left.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "plaza",
+            "cue": "square",
+            "tag": "free",
+            "forms": [
+              "plaza",
+              "plazas"
+            ],
+            "note": "The open square at the middle of a Spanish town, and the place most directions end at. Feminine: la plaza."
+          },
+          {
+            "display": "a la izquierda",
+            "cue": "left · on the left",
+            "tag": "free",
+            "forms": [],
+            "note": "The partner of a la derecha, and it travels whole in exactly the same way."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "The same phrase says \"turn left\" after gire and \"on the left\" after está. Spanish uses one phrase where English uses two.",
+      "sound": "is-KYER-da. The z of izquierda is the same th or s as in cerca, and the qu is a plain k.",
+      "variations": [
+        {
+          "display": "La estación está a la derecha.",
+          "cue": "The station is on the right.",
+          "changed": "the other side, the same frame"
+        },
+        {
+          "display": "El banco está a la izquierda.",
+          "cue": "The bank is on the left.",
+          "changed": "a masculine place, and nothing else moves"
+        },
+        {
+          "display": "Está a la izquierda, muy cerca.",
+          "cue": "It's on the left, very close.",
+          "changed": "the subject dropped, as Spanish does once it is known"
+        }
+      ],
+      "mistake": {
+        "display": "La plaza es a la izquierda.",
+        "why": "Where something is takes estar: está a la izquierda. ser would be claiming the square IS the left."
+      },
+      "usage": "The other half of every exchange in this module — you ask, and this is what comes back.",
+      "register": "neutral",
+      "mnemonic": "Position is always estar, whichever side it is on."
+    },
+    {
+      "id": "L2-M4-S06",
+      "display": "¿Cómo se va a la plaza?",
+      "cue": "How do you get to the square?",
+      "literal": "How one goes to the square?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "se",
+            "cue": "one · people in general",
+            "tag": "delta",
+            "forms": [],
+            "note": "Names nobody in particular. ¿Cómo se va…? asks how a person gets there. It is the same se that hides inside se llama, doing its own job for once."
+          },
+          {
+            "display": "va",
+            "cue": "goes",
+            "tag": "free",
+            "forms": [],
+            "note": "The he-she-usted form of ir, whose voy, vas and vamos M6 of the level below already taught."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "No subject at all, and the question is about you. English needs \"you\" or \"one\" and Spanish needs neither.",
+      "sound": "The whole question runs together — KO-mo-se-VA — with one stress on cómo and one on va.",
+      "variations": [
+        {
+          "display": "¿Cómo se va a la estación?",
+          "cue": "How do you get to the station?",
+          "changed": "another destination"
+        },
+        {
+          "display": "¿Cómo se va al metro?",
+          "cue": "How do you get to the metro?",
+          "changed": "a plus el fuses into al, as it always does"
+        },
+        {
+          "display": "Se va a la plaza en autobús.",
+          "cue": "You get to the square by bus.",
+          "changed": "the answer, in the same subjectless shape"
+        }
+      ],
+      "mistake": {
+        "display": "¿Cómo va a la plaza?",
+        "why": "Without se this asks how HE or SHE gets there. The se is what makes the question general."
+      },
+      "usage": "The single most useful way to ask directions, because it needs no verb form you do not already have.",
+      "register": "neutral",
+      "mnemonic": "se stands in for everybody and nobody."
+    },
+    {
+      "id": "L2-M4-S07",
+      "display": "Tome el autobús, está lejos.",
+      "cue": "Take the bus, it's far.",
+      "literal": "Take(polite) the bus, is far.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Tome",
+            "cue": "take (polite)",
+            "tag": "delta",
+            "forms": [
+              "tome",
+              "tomo"
+            ],
+            "note": "The polite imperative of tomar, from tomo. In Spain coja is commoner for catching a bus; tomar is understood everywhere and is what this course writes."
+          },
+          {
+            "display": "autobús",
+            "cue": "bus",
+            "tag": "free",
+            "forms": [
+              "autobús",
+              "autobuses"
+            ],
+            "note": "Masculine: el autobús. The accent goes when the plural adds a syllable — autobuses."
+          },
+          {
+            "display": "lejos",
+            "cue": "far",
+            "tag": "delta",
+            "forms": [],
+            "note": "The opposite of cerca and it behaves the same way: lejos on its own, lejos de la plaza to name the place. It ends in -s in the singular and never changes."
+          }
+        ],
+        "rules": [
+          1,
+          3,
+          5
+        ]
+      },
+      "trap": "lejos already ends in -s and is not a plural. There is no lejo.",
+      "sound": "ow-to-BUS with the accent on the last syllable. LE-hos, with the j said as a breathy h.",
+      "variations": [
+        {
+          "display": "Tome el metro, no está lejos.",
+          "cue": "Take the metro, it isn't far.",
+          "changed": "another way of getting there"
+        },
+        {
+          "display": "Está muy lejos de aquí.",
+          "cue": "It's very far from here.",
+          "changed": "lejos de naming what it is far from"
+        },
+        {
+          "display": "No está lejos, está muy cerca.",
+          "cue": "It isn't far, it's very close.",
+          "changed": "the two words of the module set against each other"
+        }
+      ],
+      "mistake": {
+        "display": "Tome el autobús, es lejos.",
+        "why": "Distance is a position, so it takes estar: está lejos."
+      },
+      "usage": "Given as advice rather than as an order. The second half is why you are being told.",
+      "register": "formal",
+      "mnemonic": "cerca and lejos both take estar, because both are positions."
+    },
+    {
+      "id": "L2-M4-S08",
+      "display": "El metro está cerca de aquí.",
+      "cue": "The metro is near here.",
+      "literal": "The metro is near of here.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "metro",
+            "cue": "metro · underground",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine: el metro. The same word in Madrid, Mexico City and Buenos Aires."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "cerca de, not cerca a. The de is not optional once a place is named.",
+      "sound": "ME-tro, two beats, with the tr said as one quick tap.",
+      "variations": [
+        {
+          "display": "La plaza está cerca de la estación.",
+          "cue": "The square is near the station.",
+          "changed": "two named places instead of aquí"
+        },
+        {
+          "display": "El banco está lejos de aquí.",
+          "cue": "The bank is far from here.",
+          "changed": "the opposite distance, same frame"
+        },
+        {
+          "display": "Está cerca, no está lejos.",
+          "cue": "It's close, it isn't far.",
+          "changed": "both words with no place named at all"
+        }
+      ],
+      "mistake": {
+        "display": "El metro está cerca aquí.",
+        "why": "cerca takes de before what it is near: cerca de aquí."
+      },
+      "usage": "Reassurance. It is what a local says when they can see you are worried about the distance.",
+      "register": "neutral",
+      "mnemonic": "Name the place and you owe it a de."
+    },
+    {
+      "id": "L2-M4-S09",
+      "display": "Cruce la calle y siga todo recto.",
+      "cue": "Cross the street and go straight on.",
+      "literal": "Cross(polite) the street and continue(polite) all straight.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Cruce",
+            "cue": "cross (polite)",
+            "tag": "delta",
+            "forms": [
+              "cruce",
+              "cruzo"
+            ],
+            "note": "The polite imperative of cruzar, from cruzo — and the z becomes c in front of an e, which is a spelling rule and not a sound change."
+          },
+          {
+            "display": "calle",
+            "cue": "street",
+            "tag": "free",
+            "forms": [
+              "calle",
+              "calles"
+            ],
+            "note": "Feminine: la calle. The ll is a y sound in nearly all of the Spanish-speaking world."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "cruzo has a z and cruce has a c. Spanish never writes ze, so the letter changes to keep the sound.",
+      "sound": "KRU-se, and the ll of calle is the y of \"yes\" — KA-ye.",
+      "variations": [
+        {
+          "display": "Cruce la plaza y gire a la derecha.",
+          "cue": "Cross the square and turn right.",
+          "changed": "a different thing crossed, a different turn"
+        },
+        {
+          "display": "No cruce aquí, la estación está lejos.",
+          "cue": "Don't cross here, the station is far.",
+          "changed": "the negative imperative, which needs no extra word"
+        },
+        {
+          "display": "Siga y cruce la calle.",
+          "cue": "Carry on and cross the street.",
+          "changed": "the two instructions swapped"
+        }
+      ],
+      "mistake": {
+        "display": "Cruze la calle.",
+        "why": "A z never stands before an e in Spanish: cruce. The sound is unchanged; only the letter moves."
+      },
+      "usage": "Half of any real set of directions. Notice that both verbs are polite imperatives and neither has a pronoun.",
+      "register": "formal",
+      "mnemonic": "z before e turns into c, every time."
+    },
+    {
+      "id": "L2-M4-S10",
+      "display": "Es la primera calle a la derecha.",
+      "cue": "It's the first street on the right.",
+      "literal": "Is the first street to the right.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "primera",
+            "cue": "first",
+            "tag": "delta",
+            "forms": [
+              "primera",
+              "primero",
+              "segunda",
+              "segundo"
+            ],
+            "note": "An ordinal, and it agrees like any adjective: la primera calle, el primer libro — where primero loses its -o in front of a masculine noun, exactly as grande becomes gran."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "primera goes IN FRONT of the noun, unlike almost every other adjective in this level. Ordinals and numbers are the exception.",
+      "sound": "pri-ME-ra, with one tapped r in the middle and another at the start.",
+      "variations": [
+        {
+          "display": "Es la segunda calle a la izquierda.",
+          "cue": "It's the second street on the left.",
+          "changed": "the next street along, the other side"
+        },
+        {
+          "display": "Tome la primera calle a la derecha.",
+          "cue": "Take the first street on the right.",
+          "changed": "the same information given as an instruction"
+        },
+        {
+          "display": "La primera tienda está muy cerca.",
+          "cue": "The first shop is very close.",
+          "changed": "the ordinal counting something other than a street"
+        }
+      ],
+      "mistake": {
+        "display": "Es la calle primera a la derecha.",
+        "why": "An ordinal stands in front of its noun: la primera calle."
+      },
+      "usage": "The way directions actually end. Everything before it tells you where to start.",
+      "register": "neutral",
+      "mnemonic": "Numbers go first, in both senses."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M4-C01",
+      "display": "Perdone, ¿dónde está la estación?",
+      "cue": "Excuse me, where's the station?"
+    },
+    {
+      "id": "L2-M4-C02",
+      "display": "¿Hay un banco cerca?",
+      "cue": "Is there a bank nearby?"
+    },
+    {
+      "id": "L2-M4-C03",
+      "display": "Siga todo recto, por favor.",
+      "cue": "Go straight on, please."
+    },
+    {
+      "id": "L2-M4-C04",
+      "display": "Gire a la derecha en la esquina.",
+      "cue": "Turn right at the corner."
+    },
+    {
+      "id": "L2-M4-C05",
+      "display": "La plaza está a la izquierda.",
+      "cue": "The square is on the left."
+    },
+    {
+      "id": "L2-M4-C06",
+      "display": "¿Cómo se va a la estación?",
+      "cue": "How do you get to the station?"
+    },
+    {
+      "id": "L2-M4-C07",
+      "display": "Tome el autobús, está lejos.",
+      "cue": "Take the bus, it's far."
+    },
+    {
+      "id": "L2-M4-C08",
+      "display": "El metro está cerca de aquí.",
+      "cue": "The metro is near here."
+    },
+    {
+      "id": "L2-M4-C09",
+      "display": "Cruce la calle y siga todo recto.",
+      "cue": "Cross the street and go straight on."
+    },
+    {
+      "id": "L2-M4-C10",
+      "display": "Es la primera calle a la derecha.",
+      "cue": "It's the first street on the right."
+    },
+    {
+      "id": "L2-M4-C11",
+      "display": "No está lejos, está muy cerca.",
+      "cue": "It isn't far, it's very close."
+    },
+    {
+      "id": "L2-M4-C12",
+      "display": "¿Cómo se va a la plaza en metro?",
+      "cue": "How do you get to the square by metro?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
