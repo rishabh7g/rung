@@ -1,0 +1,601 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M10",
+  "title": "Your own story",
+  "job": "An eight-sentence account, built from the whole ladder",
+  "prerequisites": ["L3-M9"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": ["simple_present", "simple_past", "future", "present_continuous"],
+    "allowedPatterns": [
+      "<eight-sentence account>",
+      "meonjeo … geu daeum-e … machimnae …",
+      "clause-(eu)nikka + clause",
+      "clause-dago + haesseoyo",
+      "V-(eu)n + N-eul/reul + V-eosseoyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "EACH ITEM IS AN ACCOUNT OF AT MOST EIGHT SENTENCES, and the word bound applies to each sentence inside it rather than to the whole. Eight is a ceiling and not a target: a five-sentence story that holds together beats an eight-sentence one padded to the number."
+    },
+    {
+      "tag": "delta",
+      "text": "THE SPEAKER IS NAMED ONCE. jeo-neun opens the account and then disappears; four sentences that each begin with it read as insistent, or as a list of unrelated facts. This is L2-M10's zero anaphora stretched from four sentences to eight."
+    },
+    {
+      "tag": "interference",
+      "text": "A NEW PARTICIPANT ARRIVES WITH -i/-ga AND COMES BACK WITH -eun/-neun. chingu-ga … then chingu-neun …. Marking every return with -i/-ga reads as though each mention were a different friend, which is L3-M1's law running across a whole paragraph rather than a pair."
+    },
+    {
+      "tag": "free",
+      "text": "THE ENDING ENVELOPE, named so an author can stay inside it: L1-M5's past, L1-M4's present, L1-M6's -l geoyeyo, L2-M7's -go isseoyo, L2-M8's an and mot, L3-M2's modifiers, L3-M4's -(eu)myeon, L3-M5's -dago, L3-M6's -gess- and -a/eo haeyo, and L3-M9's -deon with its one double past."
+    },
+    {
+      "tag": "free",
+      "text": "WHAT STAYS OUT: the past counterfactual (L4-M3), every time clause including -(eu)l ttae (L4-M6), -(seu)pnida and -(eu)psida (L4-M7), the past-habit system (L4-M8), the passive, and banmal as a written sentence anywhere at all."
+    },
+    {
+      "tag": "delta",
+      "text": "REGISTER IS CHOSEN BY THE LISTENER AND HELD FOR THE WHOLE ACCOUNT — and in this course the choice is between TWO values, not three. S05 and S06 are one story told twice: the elder version puts -kkeseo on its subject and the honorific on its verb, the friend version stays plain -yo, and neither is banmal."
+    },
+    {
+      "tag": "free",
+      "text": "A STORY HAS A SHAPE AND NOT JUST A SEQUENCE: something wanted, something in the way, how it ended. What turns a timetable into an account is a REASON (L1-M9's -aseo, or geuraeseo), a FEELING (L3-M6's), and one REPORTED line (L3-M5's -dago), which is what puts other people in it."
+    },
+    {
+      "tag": "free",
+      "text": "THE PAST OF A FEELING LANDS HERE, exactly as L3-M6 said it would. apasseoyo, joasseoyo, seulpeosseoyo, buranhaesseoyo, himdeureosseoyo are L1-M5's -eoss- on words that module kept in the present; no ending is opened, only shapes of what the ladder already owns."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M10-S01",
+      "display": "Jeo-neun eoje hoesa-eseo ilhaesseoyo. Meori-ga apasseoyo. Geuraeseo ilchik jip-e gasseoyo. Yak-eul meogeosseoyo. Jigeum-eun gwaenchanayo.",
+      "script": "저는 어제 회사에서 일했어요. 머리가 아팠어요. 그래서 일찍 집에 갔어요. 약을 먹었어요. 지금은 괜찮아요.",
+      "cue": "I worked at the office yesterday. I had a headache, so I went home early. I took some medicine. I'm fine now.",
+      "literal": "I-topic yesterday company-at worked. head-subject hurt. so early house-to went. medicine-object ate. now-topic is-fine",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "apasseoyo",
+            "script": "아팠어요",
+            "cue": "hurt · was sore",
+            "tag": "free",
+            "forms": ["apasseoyo"],
+            "note": "L2-M8's apayo with L1-M5's past on it. L3-M7 kept every ache in the present; the day it happened on is what puts it here."
+          }
+        ],
+        "rules": [1, 6, 7]
+      },
+      "trap": "jeo-neun APPEARS ONCE AND NEVER RETURNS. Every later sentence has no subject at all, and the account still says who throughout — putting jeo-neun back in front of Meori-ga apasseoyo would sound like a correction of somebody else's headache.",
+      "sound": "The five sentences run down in pitch and each ends flat; only Jigeum-eun lifts, because it is the turn from then to now.",
+      "variations": [
+        {
+          "display": "Bae-ga apasseoyo.",
+          "script": "배가 아팠어요.",
+          "cue": "I had a stomach ache.",
+          "changed": "L2-M5's bae in the second sentence, and nothing else moves"
+        },
+        {
+          "display": "Geuraeseo byeongwon-e gasseoyo.",
+          "script": "그래서 병원에 갔어요.",
+          "cue": "So I went to the hospital.",
+          "changed": "a different consequence off the same reason word"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun meori-ga apasseoyo. Jeo-neun jip-e gasseoyo.",
+        "script": "저는 머리가 아팠어요. 저는 집에 갔어요.",
+        "why": "Naming yourself in every sentence breaks the account into unrelated facts. Say jeo-neun once, at the start."
+      },
+      "usage": "Explaining an absence, the morning after.",
+      "register": "neutral",
+      "mnemonic": "Name yourself once."
+    },
+    {
+      "id": "L3-M10-S02",
+      "display": "Jeo-neun eoje chingu-reul mannasseoyo. Chingu-ga hoesa-eseo ilhaeyo. Chingu-neun jeongmal bappayo. Gachi keopi-reul masyeosseoyo. Jeongmal joasseoyo.",
+      "script": "저는 어제 친구를 만났어요. 친구가 회사에서 일해요. 친구는 정말 바빠요. 같이 커피를 마셨어요. 정말 좋았어요.",
+      "cue": "I met a friend yesterday. She works at a company and she's really busy. We had coffee together. It was lovely.",
+      "literal": "I-topic yesterday friend-object met. friend-subject company-at works. friend-topic really is-busy. together coffee-object drank. really was-good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "joasseoyo",
+            "script": "좋았어요",
+            "cue": "was good · was lovely",
+            "tag": "free",
+            "forms": ["joasseoyo"],
+            "note": "L1-M9's joayo in the past. It closes an account the way English lovely does, and it says how the whole thing felt rather than how one moment did."
+          }
+        ],
+        "rules": [2, 6, 7]
+      },
+      "trap": "chingu-ga THEN chingu-neun, AND THE ORDER MATTERS. The first mention introduces her and the second one returns to her; swapping them makes the second friend read as a different person.",
+      "sound": "chingu-ga and chingu-neun are the two beats the account turns on — the first slightly stressed, the second flat.",
+      "variations": [
+        {
+          "display": "Chingu-neun hoesa-eseo ilhaeyo.",
+          "script": "친구는 회사에서 일해요.",
+          "cue": "My friend works at a company.",
+          "changed": "the return particle used at the first mention, which is what makes it wrong in the account"
+        },
+        {
+          "display": "Gachi bibimbap-eul meogeosseoyo.",
+          "script": "같이 비빔밥을 먹었어요.",
+          "cue": "We ate bibimbap together.",
+          "changed": "L1-M3's bibimbap where the coffee was"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun chingu-reul mannasseoyo. Chingu-ga bappayo. Chingu-ga keopi-reul masyeosseoyo.",
+        "script": "저는 친구를 만났어요. 친구가 바빠요. 친구가 커피를 마셨어요.",
+        "why": "Three -ga marks read as three different friends. The second and third mentions take -neun, or no particle at all."
+      },
+      "usage": "Telling somebody how you spent an afternoon.",
+      "register": "neutral",
+      "mnemonic": "-ga introduces, -neun returns."
+    },
+    {
+      "id": "L3-M10-S03",
+      "display": "Eoje siheom-eul bwasseoyo. Jeo-neun jom buranhaesseoyo. Hajiman chingu-ga gwaenchantago haesseoyo. Geuraeseo gibun-i joasseoyo.",
+      "script": "어제 시험을 봤어요. 저는 좀 불안했어요. 하지만 친구가 괜찮다고 했어요. 그래서 기분이 좋았어요.",
+      "cue": "I sat an exam yesterday. I was a bit anxious, but a friend told me it was fine, so I felt better.",
+      "literal": "yesterday exam-object saw. I-topic a-bit was-anxious. but friend-subject fine-that said. so mood-subject was-good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gwaenchantago",
+            "script": "괜찮다고",
+            "cue": "that it was fine",
+            "tag": "delta",
+            "forms": ["gwaenchantago"],
+            "note": "L2-M1's gwaenchanayo inside L3-M5's report frame. What was said keeps its own plain shape and -dago carries it to haesseoyo."
+          },
+          {
+            "display": "buranhaesseoyo",
+            "script": "불안했어요",
+            "cue": "was anxious",
+            "tag": "free",
+            "forms": ["buranhaesseoyo"],
+            "note": "L3-M6's buranhaeyo in the past. The feeling belongs to the exam that is now over, which is exactly what the past ending says."
+          }
+        ],
+        "rules": [6, 7]
+      },
+      "trap": "THE REPORTED CLAUSE DOES NOT BECOME POLITE. gwaenchanayo-go is not Korean; the -yo is stripped and the plain gwaenchanta is what -dago attaches to, however polite the sentence around it is.",
+      "sound": "gwaenchantago is four syllables with the stress even across them; the -dago runs straight into haesseoyo.",
+      "variations": [
+        {
+          "display": "Chingu-ga gwaenchantago haesseoyo.",
+          "script": "친구가 괜찮다고 했어요.",
+          "cue": "A friend said it was fine.",
+          "changed": "the reported line on its own, out of the account"
+        },
+        {
+          "display": "Geuraeseo gibun-i joayo.",
+          "script": "그래서 기분이 좋아요.",
+          "cue": "So I feel better.",
+          "changed": "the present, which moves the good mood from that day to this one"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-ga gwaenchanayo-go haesseoyo.",
+        "script": "친구가 괜찮아요고 했어요.",
+        "why": "The -yo is dropped before -dago: Chingu-ga gwaenchantago haesseoyo."
+      },
+      "usage": "An account with somebody else's words inside it.",
+      "register": "neutral",
+      "mnemonic": "Strip the -yo, then report."
+    },
+    {
+      "id": "L3-M10-S04",
+      "display": "Yejeon-e-neun Seollal-e halmeoni-ga tteokguk-eul mandeureosseoyo. Halmeoni-ga mandeuldeon tteokguk-i jeongmal masisseoyo. Jigeum-eun je-ga mandeureoyo. Hajiman dallayo. Jom seulpeosseoyo.",
+      "script": "예전에는 설날에 할머니가 떡국을 만들었어요. 할머니가 만들던 떡국이 정말 맛있어요. 지금은 제가 만들어요. 하지만 달라요. 좀 슬펐어요.",
+      "cue": "My grandmother used to make tteokguk at Seollal. The tteokguk she used to make was really good. I make it now, but it's different. It made me a little sad.",
+      "literal": "before-topic Seollal-on grandmother-subject rice-soup-object made. grandmother-subject used-to-make rice-soup-subject really is-delicious. now-topic I-subject make. but is-different. a-bit was-sad",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "seulpeosseoyo",
+            "script": "슬펐어요",
+            "cue": "was sad · it made me sad",
+            "tag": "free",
+            "forms": ["seulpeosseoyo"],
+            "note": "L3-M6's seulpeoyo in the past. Of yourself it stays the descriptive verb; only somebody else's sadness would need the -a/eo haeyo shape."
+          }
+        ],
+        "rules": [3, 6, 7]
+      },
+      "trap": "-deon AND THE PLAIN PAST DO DIFFERENT WORK IN THE SAME PARAGRAPH. mandeureosseoyo says she made it; mandeuldeon tteokguk says the tteokguk she used to make, and only the second is looking back at a habit.",
+      "sound": "The account slows at mandeuldeon — the -deon is held, and it is what tells a listener a memory is coming.",
+      "variations": [
+        {
+          "display": "Halmeoni-ga mandeuldeon songpyeon-i masisseoyo.",
+          "script": "할머니가 만들던 송편이 맛있어요.",
+          "cue": "The songpyeon she used to make is delicious.",
+          "changed": "L3-M9's other festival food under the same remembered clause"
+        },
+        {
+          "display": "Jigeum-eun je-ga mandeureoyo.",
+          "script": "지금은 제가 만들어요.",
+          "cue": "I make it now.",
+          "changed": "the turn from then to now, standing on its own"
+        }
+      ],
+      "mistake": {
+        "display": "Jigeum-eun jeo-ga mandeureoyo.",
+        "script": "지금은 저가 만들어요.",
+        "why": "jeo becomes je in front of -ga, as L3-M2 taught: Jigeum-eun je-ga mandeureoyo."
+      },
+      "usage": "A memory told at a family table, or to somebody who asks about the food.",
+      "register": "neutral",
+      "mnemonic": "-deon looks back."
+    },
+    {
+      "id": "L3-M10-S05",
+      "display": "Eoje seonsaengnim-i hoeui-e wasseoyo. Seonsaengnim-eun jeongmal chinjeolhaeyo. Jeo-neun jom buranhaesseoyo. Hajiman seonsaengnim-i dowajwosseoyo. Jeongmal gomawoyo.",
+      "script": "어제 선생님이 회의에 왔어요. 선생님은 정말 친절해요. 저는 좀 불안했어요. 하지만 선생님이 도와줬어요. 정말 고마워요.",
+      "cue": "The teacher came to the meeting yesterday. She's really kind. I was a bit anxious, but she helped me. I'm really grateful.",
+      "literal": "yesterday teacher-subject meeting-to came. teacher-topic really is-kind. I-topic a-bit was-anxious. but teacher-subject helped. really am-grateful",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dowajwosseoyo",
+            "script": "도와줬어요",
+            "cue": "helped (me)",
+            "tag": "free",
+            "forms": ["dowajwosseoyo"],
+            "note": "L2-M1's dowajuseyo as a plain past statement. The -jwo- is the same give that makes every -a/eo juseyo request, reporting a kindness rather than asking for one."
+          }
+        ],
+        "rules": [2, 5, 7]
+      },
+      "trap": "THIS IS THE SAME STORY AS S06 AND THE REGISTER IS THE ONLY DIFFERENCE. Told to a friend, the teacher takes plain -i and the verbs stay bare; nothing here is banmal, and nothing here is honorific.",
+      "sound": "Even and unhurried; seonsaengnim-i and seonsaengnim-eun are the two beats, exactly as chingu-ga and chingu-neun were in S02.",
+      "variations": [
+        {
+          "display": "Seonsaengnim-i dowajwosseoyo.",
+          "script": "선생님이 도와줬어요.",
+          "cue": "The teacher helped me.",
+          "changed": "the kindness on its own, out of the account"
+        },
+        {
+          "display": "Chingu-ga dowajwosseoyo.",
+          "script": "친구가 도와줬어요.",
+          "cue": "A friend helped me.",
+          "changed": "a participant nobody would honour, which is why the plain form is right"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-ga seonsaengnim-eul dowajusyeosseoyo.",
+        "script": "저가 선생님을 도와주셨어요.",
+        "why": "Two faults: je-ga, not jeo-ga, and the honorific can never sit on your own verb. Je-ga seonsaengnim-eul dowajwosseoyo."
+      },
+      "usage": "Telling a friend about somebody who was good to you.",
+      "register": "neutral",
+      "mnemonic": "Same story, plain telling."
+    },
+    {
+      "id": "L3-M10-S06",
+      "display": "Eoje seonsaengnim-kkeseo hoeui-e osyeosseoyo. Seonsaengnim-eun jeongmal chinjeolhaeyo. Jeo-neun jom buranhaesseoyo. Hajiman seonsaengnim-kkeseo dowajusyeosseoyo. Jeongmal gamsahamnida.",
+      "script": "어제 선생님께서 회의에 오셨어요. 선생님은 정말 친절해요. 저는 좀 불안했어요. 하지만 선생님께서 도와주셨어요. 정말 감사합니다.",
+      "cue": "The teacher came to the meeting yesterday. She is very kind. I was a bit anxious, but she helped me. I'm very grateful.",
+      "literal": "yesterday teacher-honorific-subject meeting-to came-honorific. teacher-topic really is-kind. I-topic a-bit was-anxious. but teacher-honorific-subject helped-honorific. really thank-you",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dowajusyeosseoyo",
+            "script": "도와주셨어요",
+            "cue": "helped (me) — honorific",
+            "tag": "delta",
+            "forms": ["dowajusyeosseoyo"],
+            "note": "S05's dowajwosseoyo with L3-M8's -si- inside it. The helper is raised, never the speaker, and the same -syeoss- makes osyeosseoyo."
+          }
+        ],
+        "rules": [5, 7]
+      },
+      "trap": "THE HONORIFIC MOVES, THE SPEECH LEVEL DOES NOT. Both tellings are -yo sentences; what changes is -i to -kkeseo and the -si- inside the verb. The clerk's -(seu)pnida is still not written, and gamsahamnida is one of the four frozen phrases the course already owns.",
+      "sound": "-kkeseo is a small held beat before the verb, and osyeosseoyo carries its stress on the SYEO.",
+      "variations": [
+        {
+          "display": "Seonsaengnim-kkeseo dowajusyeosseoyo.",
+          "script": "선생님께서 도와주셨어요.",
+          "cue": "The teacher helped me.",
+          "changed": "the raised sentence on its own, beside S05's plain one"
+        },
+        {
+          "display": "Seonsaengnim-kkeseo hoeui-e osyeosseoyo.",
+          "script": "선생님께서 회의에 오셨어요.",
+          "cue": "The teacher came to the meeting.",
+          "changed": "the opening line alone, with both halves of the honorific visible"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-kkeseo hoeui-e osyeosseoyo.",
+        "script": "저께서 회의에 오셨어요.",
+        "why": "Never of yourself. Of your own arrival it is Jeo-neun hoeui-e wasseoyo."
+      },
+      "usage": "The same account, told to somebody senior to both of you.",
+      "register": "formal",
+      "mnemonic": "Raise them, never yourself."
+    },
+    {
+      "id": "L3-M10-S07",
+      "display": "Naeil-eun je saengil-ieyo. Chingu-deul-i jip-e wayo. Jeo-neun tteokguk-eul mandeul geoyeyo. Jeongmal sinnayo.",
+      "script": "내일은 제 생일이에요. 친구들이 집에 와요. 저는 떡국을 만들 거예요. 정말 신나요.",
+      "cue": "Tomorrow is my birthday. My friends are coming over. I'm going to make tteokguk. I'm really excited.",
+      "literal": "tomorrow-topic my birthday-is. friend-plural-subject house-to come. I-topic rice-soup-object will make. really am-excited",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mandeul",
+            "script": "만들",
+            "cue": "will make — the future stem",
+            "tag": "free",
+            "forms": ["mandeul"],
+            "note": "L3-M8's mandeureoyo in L1-M6's -l geoyeyo frame. The l of the stem is already there, so nothing is added in front of geoyeyo."
+          }
+        ],
+        "rules": [3, 6]
+      },
+      "trap": "sinnayo IS ABOUT NOW EVEN IN A PLAN. The excitement is the state you are in today; the party itself is what -l geoyeyo covers, and mixing them gives a sentence that is excited about being excited.",
+      "sound": "mandeul geoyeyo is two words with a clean break; the l is held before the g.",
+      "variations": [
+        {
+          "display": "Chingu-deul-i jip-e wayo.",
+          "script": "친구들이 집에 와요.",
+          "cue": "My friends are coming over.",
+          "changed": "the plain present used for a settled arrangement, as L1-M4 taught"
+        },
+        {
+          "display": "Jeo-neun songpyeon-eul mandeul geoyeyo.",
+          "script": "저는 송편을 만들 거예요.",
+          "cue": "I'm going to make songpyeon.",
+          "changed": "L3-M9's other festival food in the plan"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun tteokguk-eul mandeureul geoyeyo.",
+        "script": "저는 떡국을 만들을 거예요.",
+        "why": "The stem already ends in l, so no -eu- is added: Jeo-neun tteokguk-eul mandeul geoyeyo."
+      },
+      "usage": "Telling somebody what is happening tomorrow, and how you feel about it.",
+      "register": "neutral",
+      "mnemonic": "The plan is future, the feeling is now."
+    },
+    {
+      "id": "L3-M10-S08",
+      "display": "Jeo-neun eoje eunhaeng-e gasseoyo. Meonjeo sincheongseo-reul sseosseoyo. Geu daeum-e gyejwa-reul mandeureosseoyo. Machimnae kadeu-reul badasseoyo. Jom himdeureosseoyo.",
+      "script": "저는 어제 은행에 갔어요. 먼저 신청서를 썼어요. 그 다음에 계좌를 만들었어요. 마침내 카드를 받았어요. 좀 힘들었어요.",
+      "cue": "I went to the bank yesterday. First I filled in the form, then I opened an account, and finally I got the card. It was a bit of a slog.",
+      "literal": "I-topic yesterday bank-to went. first application-form-object wrote. that next-at account-object made. finally card-object received. a-bit was-hard",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sseosseoyo",
+            "script": "썼어요",
+            "cue": "wrote · filled in",
+            "tag": "free",
+            "forms": ["sseosseoyo"],
+            "note": "The plain past of the verb inside L2-M1's sseojuseyo. The request form asks somebody to do it; this reports that you did."
+          },
+          {
+            "display": "badasseoyo",
+            "script": "받았어요",
+            "cue": "received · got",
+            "tag": "free",
+            "forms": ["badasseoyo"],
+            "note": "L2-M3's badayo in the past. L3-M8's badeuseyo tells somebody to take a thing; this says the thing reached you."
+          }
+        ],
+        "rules": [0, 6, 7]
+      },
+      "trap": "L2-M10's THREE SEQUENCING WORDS CARRY THE WHOLE STRUCTURE. meonjeo, geu daeum-e and machimnae are all this account needs to be ordered, and no time clause is written anywhere — those belong to L4-M6.",
+      "sound": "The three sequencing words each take a small lift, and the last sentence drops away flat.",
+      "variations": [
+        {
+          "display": "Meonjeo sincheongseo-reul sseosseoyo.",
+          "script": "먼저 신청서를 썼어요.",
+          "cue": "First I filled in the form.",
+          "changed": "the first step alone, as an answer to what did you do"
+        },
+        {
+          "display": "Machimnae sinbunjeung-eul badasseoyo.",
+          "script": "마침내 신분증을 받았어요.",
+          "cue": "I finally got my ID card.",
+          "changed": "L3-M8's other document at the end of the same errand"
+        }
+      ],
+      "mistake": {
+        "display": "Meonjeo sincheongseo-reul sseosseoyo. Meonjeo gyejwa-reul mandeureosseoyo.",
+        "script": "먼저 신청서를 썼어요. 먼저 계좌를 만들었어요.",
+        "why": "Only one step can be first. The second is geu daeum-e and the last is machimnae."
+      },
+      "usage": "Reporting an errand that took longer than it should have.",
+      "register": "neutral",
+      "mnemonic": "First, then, finally."
+    },
+    {
+      "id": "L3-M10-S09",
+      "display": "Oneul-eun Chuseok-ieyo. Saram-deul-i hanbok-eul ipgo isseoyo. Jeo-neun songpyeon-eul meogeosseoyo. Jeongmal masisseoyo. Gibun-i joayo.",
+      "script": "오늘은 추석이에요. 사람들이 한복을 입고 있어요. 저는 송편을 먹었어요. 정말 맛있어요. 기분이 좋아요.",
+      "cue": "Today is Chuseok. People are wearing hanbok. I ate songpyeon — it's really good. I'm in a good mood.",
+      "literal": "today-topic Chuseok-is. person-plural-subject hanbok-object wear-and are. I-topic songpyeon-object ate. really is-delicious. mood-subject is-good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ipgo",
+            "script": "입고",
+            "cue": "wearing",
+            "tag": "interference",
+            "forms": ["ipgo"],
+            "note": "With isseoyo it is the state of having clothes on, not the act of dressing — the one verb class where -go isseoyo reads as a state. L3-M9's ipeun saram says the same thing with a clause."
+          }
+        ],
+        "rules": [3, 7]
+      },
+      "trap": "ipgo isseoyo AND ipeun saram MEAN THE SAME THING. English has one wearing for both; Korean offers the progressive and L3-M2's past modifier, and neither is more correct than the other here.",
+      "sound": "ipgo isseoyo is said as one run, IP-go-i-sseo-yo, with the p unreleased.",
+      "variations": [
+        {
+          "display": "Hanbok-eul ipeun saram-deul-i manayo.",
+          "script": "한복을 입은 사람들이 많아요.",
+          "cue": "There are a lot of people wearing hanbok.",
+          "changed": "L3-M9's clause saying the same thing with no progressive in it"
+        },
+        {
+          "display": "Jeo-neun tteokguk-eul meogeosseoyo.",
+          "script": "저는 떡국을 먹었어요.",
+          "cue": "I ate tteokguk.",
+          "changed": "the wrong festival food, and the sentence still works — it is the day that decides"
+        }
+      ],
+      "mistake": {
+        "display": "Saram-i hanbok-eul ipgo isseoyo.",
+        "script": "사람이 한복을 입고 있어요.",
+        "why": "One person, in a sentence about a crowd. Saram-deul-i hanbok-eul ipgo isseoyo."
+      },
+      "usage": "A message sent from the middle of a holiday.",
+      "register": "neutral",
+      "mnemonic": "Wearing is a state."
+    },
+    {
+      "id": "L3-M10-S10",
+      "display": "Meonjeo hangungmal-eul baewosseoyo. Jeongmal himdeureosseoyo. Hajiman chingu-ga gwaenchantago haesseoyo. Geu daeum-e maeil gongbuhaesseoyo. Machimnae siheom-eul bwasseoyo. Jigeum-eun hangungmal-eul jaju haeyo. Jeongmal gippeoyo.",
+      "script": "먼저 한국말을 배웠어요. 정말 힘들었어요. 하지만 친구가 괜찮다고 했어요. 그 다음에 매일 공부했어요. 마침내 시험을 봤어요. 지금은 한국말을 자주 해요. 정말 기뻐요.",
+      "cue": "First I learned some Korean. It was really hard, but a friend told me it was fine. Then I studied every day, and finally I sat the exam. I speak Korean often now. I'm really glad.",
+      "literal": "first Korean-object learned. really was-hard. but friend-subject fine-that said. that next-at every-day studied. finally exam-object saw. now-topic Korean-object often do. really am-glad",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "baewosseoyo",
+            "script": "배웠어요",
+            "cue": "learned",
+            "tag": "free",
+            "forms": ["baewosseoyo"],
+            "note": "L1-M9's baewoyo in the past. It is the whole ladder's own verb, and this account is the first place a learner uses it about themselves."
+          },
+          {
+            "display": "himdeureosseoyo",
+            "script": "힘들었어요",
+            "cue": "was hard going",
+            "tag": "free",
+            "forms": ["himdeureosseoyo"],
+            "note": "L3-M6's himdeureoyo in the past. It is the something-in-the-way of this story, and without it the account is a timetable."
+          }
+        ],
+        "rules": [0, 4, 6, 7]
+      },
+      "trap": "SEVEN SENTENCES AND ONE NAMED SUBJECT. jeo-neun does not appear at all here: the first clause carries no topic and the account still reads as yours from beginning to end, which is what L2-M10 was building towards.",
+      "sound": "The three sequencing words mark the shape; jigeum-eun lifts, and the last sentence is said slowly.",
+      "variations": [
+        {
+          "display": "Jigeum-eun hangungmal-eul jaju haeyo.",
+          "script": "지금은 한국말을 자주 해요.",
+          "cue": "I speak Korean often now.",
+          "changed": "the turn to now, standing on its own as an answer"
+        },
+        {
+          "display": "Yejeon-e-neun hangungmal-eul jal mot haesseoyo.",
+          "script": "예전에는 한국말을 잘 못했어요.",
+          "cue": "I couldn't speak Korean well before.",
+          "changed": "L2-M8's mot and L3-M9's yejeon-e-neun opening the same story from the other end"
+        }
+      ],
+      "mistake": {
+        "display": "Meonjeo hangungmal-eul baewosseoyo. Geu daeum-e hangungmal-eul baewosseoyo.",
+        "script": "먼저 한국말을 배웠어요. 그 다음에 한국말을 배웠어요.",
+        "why": "A sequence needs different steps, not the same one twice. An account with no obstacle in it is a timetable."
+      },
+      "usage": "The story a learner is asked for most often, and the one this course exists to hand over.",
+      "register": "neutral",
+      "mnemonic": "Wanted, in the way, ended."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M10-C01",
+      "display": "Meori-ga apasseoyo. Geuraeseo ilchik jip-e gasseoyo.",
+      "script": "머리가 아팠어요. 그래서 일찍 집에 갔어요.",
+      "cue": "I had a headache, so I went home early."
+    },
+    {
+      "id": "L3-M10-C02",
+      "display": "Jeo-neun eoje chingu-reul mannasseoyo. Chingu-neun jeongmal bappayo.",
+      "script": "저는 어제 친구를 만났어요. 친구는 정말 바빠요.",
+      "cue": "I met a friend yesterday. She's really busy."
+    },
+    {
+      "id": "L3-M10-C03",
+      "display": "Chingu-ga gwaenchantago haesseoyo.",
+      "script": "친구가 괜찮다고 했어요.",
+      "cue": "A friend said it was fine."
+    },
+    {
+      "id": "L3-M10-C04",
+      "display": "Jeo-neun jom buranhaesseoyo. Hajiman gibun-i joasseoyo.",
+      "script": "저는 좀 불안했어요. 하지만 기분이 좋았어요.",
+      "cue": "I was a bit anxious, but I felt good."
+    },
+    {
+      "id": "L3-M10-C05",
+      "display": "Halmeoni-ga mandeuldeon tteokguk-i jeongmal masisseoyo.",
+      "script": "할머니가 만들던 떡국이 정말 맛있어요.",
+      "cue": "The tteokguk my grandmother used to make is really good."
+    },
+    {
+      "id": "L3-M10-C06",
+      "display": "Seonsaengnim-i dowajwosseoyo. Jeongmal gomawoyo.",
+      "script": "선생님이 도와줬어요. 정말 고마워요.",
+      "cue": "The teacher helped me. I'm really grateful."
+    },
+    {
+      "id": "L3-M10-C07",
+      "display": "Seonsaengnim-kkeseo dowajusyeosseoyo. Jeongmal gamsahamnida.",
+      "script": "선생님께서 도와주셨어요. 정말 감사합니다.",
+      "cue": "The teacher helped me. I'm very grateful."
+    },
+    {
+      "id": "L3-M10-C08",
+      "display": "Naeil-eun je saengil-ieyo. Jeo-neun tteokguk-eul mandeul geoyeyo.",
+      "script": "내일은 제 생일이에요. 저는 떡국을 만들 거예요.",
+      "cue": "Tomorrow is my birthday. I'm going to make tteokguk."
+    },
+    {
+      "id": "L3-M10-C09",
+      "display": "Meonjeo sincheongseo-reul sseosseoyo. Machimnae kadeu-reul badasseoyo.",
+      "script": "먼저 신청서를 썼어요. 마침내 카드를 받았어요.",
+      "cue": "First I filled in the form. Finally I got the card."
+    },
+    {
+      "id": "L3-M10-C10",
+      "display": "Saram-deul-i hanbok-eul ipgo isseoyo.",
+      "script": "사람들이 한복을 입고 있어요.",
+      "cue": "People are wearing hanbok."
+    },
+    {
+      "id": "L3-M10-C11",
+      "display": "Jeongmal himdeureosseoyo. Hajiman jigeum-eun gwaenchanayo.",
+      "script": "정말 힘들었어요. 하지만 지금은 괜찮아요.",
+      "cue": "It was really hard, but I'm fine now."
+    },
+    {
+      "id": "L3-M10-C12",
+      "display": "Meonjeo hangungmal-eul baewosseoyo. Jigeum-eun jaju haeyo.",
+      "script": "먼저 한국말을 배웠어요. 지금은 자주 해요.",
+      "cue": "First I learned Korean. Now I speak it often."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 3
+  }
+}

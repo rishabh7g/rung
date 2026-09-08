@@ -1,0 +1,637 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M9",
+  "title": "Festivals and everyday culture",
+  "job": "Talk about what is happening around you",
+  "prerequisites": [
+    "L3-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "C'est une fête qui + <clause>",
+      "Les gens que + <clause> + V",
+      "Le + <cardinal> + <month>",
+      "À + <festival> + , + on + V",
+      "Le dimanche + V  /  Dimanche + V"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "qui IS THE SUBJECT OF ITS CLAUSE AND que IS THE OBJECT — WHATEVER THEY POINT AT. une fête QUI dure cinq jours (the fête does the lasting), les gens QUE j'aime (I do the loving, the gens are done to). English chooses between who and which by whether the thing is a person, which is no help at all here: French never asks that question. Look at the verb behind the word instead — if a subject is missing, it is qui."
+    },
+    {
+      "tag": "interference",
+      "text": "que ELIDES BEFORE A VOWEL AND qui NEVER DOES. les gâteaux QU'ON fait, but les gens QUI ont un cadeau — qui keeps all three letters however the next word starts. A learner who has learnt one elision rule applies it to both and writes qu'i, which is not a word. This is the half of the pair that costs marks."
+    },
+    {
+      "tag": "delta",
+      "text": "THE ARTICLE IS THE TENSE ON A DAY OF THE WEEK. dimanche is THIS Sunday, once; LE dimanche is every Sunday, as a habit. Je pars dimanche against Le dimanche je ne travaille pas. Spanish and Italian split the same way, and English needs on Sunday against on Sundays to do it."
+    },
+    {
+      "tag": "interference",
+      "text": "AND A BARE DAY TAKES NO PREPOSITION AT ALL. Je pars dimanche, not *je pars sur dimanche or *à dimanche. English's on has nothing to translate to, which is exactly why a learner reaches for one."
+    },
+    {
+      "tag": "delta",
+      "text": "A DATE IS le + THE PLAIN NUMBER + THE MONTH, AND ONLY THE FIRST IS AN ORDINAL. le quatorze juillet, le vingt-cinq décembre — but le premier mai, with L2-M4's premier. English needs the fourteenth of July and French needs the fourteen July; the of is not there either."
+    },
+    {
+      "tag": "interference",
+      "text": "MONTHS AND DAYS ARE LOWERCASE IN FRENCH: janvier, mai, juillet, août, décembre, dimanche. Only the festivals are capitalised — Noël, Pâques, le Nouvel An. English capitalises all of them, so this is a habit to unlearn rather than a rule to learn."
+    },
+    {
+      "tag": "free",
+      "text": "A CUSTOM IS DESCRIBED WITH L3-M8's IMPERSONAL on: à Noël on mange en famille, à Pâques on offre des cadeaux. It is what everybody does, with nobody named — and it is the natural voice for explaining your own culture to somebody who has never seen it. dont, the relative for de, is real and is L4's."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M9-S01",
+      "display": "C'est une fête qui dure cinq jours",
+      "cue": "It's a festival that lasts five days",
+      "literal": "It-is a festival which lasts five days",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fête",
+            "cue": "festival · celebration · party",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine. It covers a public holiday and a Saturday night alike; faire la fête is to party, and la fête nationale is in S06."
+          },
+          {
+            "display": "qui",
+            "cue": "who · which · that (subject)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The SUBJECT of the clause behind it, person or thing alike. It never elides: qui a, qui est, qui on — always four letters and never qu'."
+          },
+          {
+            "display": "durer",
+            "cue": "to last",
+            "tag": "free",
+            "forms": [
+              "durer",
+              "dure"
+            ],
+            "note": "Regular -er: une fête qui dure, deux fêtes qui durent. Not to be confused with dur, hard."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English picks who for people and which for things. French picks qui when the word is the subject of what follows, and that is a different question with a different answer.",
+      "sound": "seh oon FET kee dewr sank ZHOOR.",
+      "variations": [
+        {
+          "display": "C'est une fête qui dure deux jours",
+          "cue": "It's a festival that lasts two days",
+          "changed": "the number moves; the relative does not"
+        },
+        {
+          "display": "C'est une fête qui est pour les enfants",
+          "cue": "It's a festival that's for children",
+          "changed": "qui in front of est, still the subject"
+        }
+      ],
+      "mistake": {
+        "display": "C'est une fête que dure cinq jours",
+        "why": "dure has no subject without it, so the word is qui. C'est une fête qui dure cinq jours."
+      },
+      "usage": "Explaining a festival of your own to someone who has never heard of it.",
+      "register": "neutral",
+      "mnemonic": "If the verb behind it has lost its subject, the word is qui."
+    },
+    {
+      "id": "L3-M9-S02",
+      "display": "Les gens que j'aime sont ici",
+      "cue": "The people I love are here",
+      "literal": "The people whom I love are here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gens",
+            "cue": "people",
+            "tag": "free",
+            "forms": [],
+            "note": "Always plural, and it takes no singular — one person is une personne. les gens sont, never les gens est."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English drops the relative altogether — the people I love. French cannot: que has to be written, even when nothing in English marks it.",
+      "sound": "lay zhahn kuh zhem son tee-SEE.",
+      "variations": [
+        {
+          "display": "Les gens qui sont ici sont mes amis",
+          "cue": "The people who are here are my friends",
+          "changed": "qui now, because sont has no other subject"
+        },
+        {
+          "display": "Les gens que j'aime sont à la fête",
+          "cue": "The people I love are at the festival",
+          "changed": "the same que, a different place"
+        }
+      ],
+      "mistake": {
+        "display": "Les gens j'aime sont ici",
+        "why": "The relative is never dropped in French. Les gens que j'aime sont ici."
+      },
+      "usage": "Saying who matters to you, in a sentence English would leave half-built.",
+      "register": "neutral",
+      "mnemonic": "English can leave it out; French never can."
+    },
+    {
+      "id": "L3-M9-S03",
+      "display": "Les gâteaux qu'on fait sont pour Noël",
+      "cue": "The cakes we make are for Christmas",
+      "literal": "The cakes that-one makes are for Christmas",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "qu'on",
+            "cue": "that we · that one",
+            "tag": "delta",
+            "forms": [],
+            "note": "que elided onto on, written as one word. que on is never written — the e goes, exactly as it did in L3-M5's qu'il and qu'elle."
+          },
+          {
+            "display": "gâteaux",
+            "cue": "cakes",
+            "tag": "free",
+            "forms": [],
+            "note": "The plural of le gâteau, with the -x that -eau nouns take instead of an -s. Nothing is heard: gâteau and gâteaux sound the same."
+          },
+          {
+            "display": "Noël",
+            "cue": "Christmas",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine and capitalised, and it takes à for the occasion: à Noël on mange en famille. The tree is le sapin de Noël."
+          }
+        ],
+        "rules": [
+          1,
+          6
+        ]
+      },
+      "trap": "qu'on is one written word and two spoken ones. Writing que on marks a learner instantly, and hearing it is no help at all — the elision is silent.",
+      "sound": "lay ga-TOH kon feh son poor no-EL.",
+      "variations": [
+        {
+          "display": "Les gâteaux qu'on fait sont pour la fête",
+          "cue": "The cakes we make are for the party",
+          "changed": "the same relative, a different occasion"
+        },
+        {
+          "display": "Les gâteaux que j'aime sont ici",
+          "cue": "The cakes I like are here",
+          "changed": "que unelided, because j' is not on"
+        }
+      ],
+      "mistake": {
+        "display": "Les gâteaux que on fait sont pour Noël",
+        "why": "que loses its e in front of a vowel. Les gâteaux qu'on fait."
+      },
+      "usage": "Describing what a household actually does at a festival, rather than what a book says.",
+      "register": "neutral",
+      "mnemonic": "que meets a vowel and loses its e; qui never does."
+    },
+    {
+      "id": "L3-M9-S04",
+      "display": "À Noël on mange en famille",
+      "cue": "At Christmas we eat with family",
+      "literal": "At Christmas one eats in family",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "famille",
+            "cue": "family",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine. en famille is the set phrase — with the family, as a household — and it takes no article at all."
+          },
+          {
+            "display": "Pâques",
+            "cue": "Easter",
+            "tag": "free",
+            "forms": [],
+            "note": "Capitalised, and it carries an -s that is part of the word rather than a plural. à Pâques, exactly like à Noël."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "en famille has no article and no possessive. avec ma famille exists and means something narrower — this phrase means at home, together, the way it is done.",
+      "sound": "a no-EL on mahnzh ahn fa-MEEY.",
+      "variations": [
+        {
+          "display": "À Pâques on mange en famille",
+          "cue": "At Easter we eat with family",
+          "changed": "the other festival, the same custom"
+        },
+        {
+          "display": "À Noël on mange chez mes parents",
+          "cue": "At Christmas we eat at my parents'",
+          "changed": "L3-M2's chez, naming the house"
+        }
+      ],
+      "mistake": {
+        "display": "À Noël on mange avec la famille",
+        "why": "Understandable, but the phrase French uses is en famille. À Noël on mange en famille."
+      },
+      "usage": "Answering what do you do at Christmas? in the voice a French person would use.",
+      "register": "neutral",
+      "mnemonic": "en famille: no article, no possessive, no argument."
+    },
+    {
+      "id": "L3-M9-S05",
+      "display": "À Noël on offre des cadeaux aux enfants",
+      "cue": "At Christmas we give presents to the children",
+      "literal": "At Christmas one offers some presents to-the children",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "offrir",
+            "cue": "to give (as a gift)",
+            "tag": "free",
+            "forms": [
+              "offrir",
+              "offre"
+            ],
+            "note": "Irregular: j'offre, on offre, ils offrent. donner is to hand over; offrir is to give as a present, and it is the verb a festival uses."
+          },
+          {
+            "display": "cadeau",
+            "cue": "present · gift",
+            "tag": "free",
+            "forms": [
+              "cadeau",
+              "cadeaux"
+            ],
+            "note": "Masculine, plural in -x like gâteau. offrir un cadeau à quelqu'un — the person takes à, and aux when it is les."
+          }
+        ],
+        "rules": [
+          4,
+          6
+        ]
+      },
+      "trap": "donner un cadeau is understood and sounds like handing over a parcel. The verb for a present is offrir, and French keeps the two apart.",
+      "sound": "a no-EL on OFR day ka-DOH oh zahn-FAHN.",
+      "variations": [
+        {
+          "display": "On offre un cadeau à ma sœur",
+          "cue": "We give a present to my sister",
+          "changed": "one present, and à before a named person"
+        },
+        {
+          "display": "Il faut offrir un cadeau",
+          "cue": "You have to bring a present",
+          "changed": "L3-M8's il faut in front of the infinitive"
+        }
+      ],
+      "mistake": {
+        "display": "À Noël on donne des cadeaux",
+        "why": "A present is offert, not donné. À Noël on offre des cadeaux."
+      },
+      "usage": "The single most useful sentence about a French December.",
+      "register": "neutral",
+      "mnemonic": "You offer a present in French; you only hand over a parcel."
+    },
+    {
+      "id": "L3-M9-S06",
+      "display": "La fête nationale est le quatorze juillet",
+      "cue": "The national holiday is the fourteenth of July",
+      "literal": "The festival national is the fourteen July",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nationale",
+            "cue": "national",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine here because fête is feminine, and it follows its noun — French puts most adjectives after, where English puts them before."
+          },
+          {
+            "display": "quatorze",
+            "cue": "fourteen",
+            "tag": "free",
+            "forms": [],
+            "note": "The plain number, not an ordinal. Only the first of the month is different: le premier, with L2-M4's premier."
+          },
+          {
+            "display": "juillet",
+            "cue": "July",
+            "tag": "free",
+            "forms": [],
+            "note": "Lowercase, like every French month. Note the spelling — juillet, not *juilliet — and that juin is a different month."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "English says the fourteenth of July and needs two words French does not have: no -th, and no of. le quatorze juillet is the whole date.",
+      "sound": "la fet na-syo-NAL eh luh ka-TORZ zhwee-YEH.",
+      "variations": [
+        {
+          "display": "La fête nationale est en juillet",
+          "cue": "The national holiday is in July",
+          "changed": "en for the month alone, with no date"
+        },
+        {
+          "display": "Le quatorze juillet, c'est la fête nationale",
+          "cue": "The fourteenth of July is the national holiday",
+          "changed": "the date first, which is how it is usually said"
+        }
+      ],
+      "mistake": {
+        "display": "La fête nationale est le quatorzième de juillet",
+        "why": "No ordinal and no de. La fête nationale est le quatorze juillet."
+      },
+      "usage": "The date every conversation in France turns to in the middle of the summer.",
+      "register": "neutral",
+      "mnemonic": "Plain number, no of — only the first of the month is an ordinal."
+    },
+    {
+      "id": "L3-M9-S07",
+      "display": "Mon anniversaire est le premier mai",
+      "cue": "My birthday is the first of May",
+      "literal": "My birthday is the first May",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "anniversaire",
+            "cue": "birthday · anniversary",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine, and it does both English words. Bon anniversaire is what you say; joyeux anniversaire is what the card prints."
+          },
+          {
+            "display": "mai",
+            "cue": "May",
+            "tag": "free",
+            "forms": [],
+            "note": "Lowercase, three letters, and the shortest month name. Le premier mai is a public holiday in France."
+          },
+          {
+            "display": "août",
+            "cue": "August",
+            "tag": "free",
+            "forms": [],
+            "note": "Lowercase. Two pronunciations are both heard, oot and a-OO, and the a can be silent — nobody will correct you either way."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "le premier is the one date that takes an ordinal. Every other day of the month is the plain number, so le deuxième mai is wrong and le deux mai is right.",
+      "sound": "mon a-nee-vehr-SEHR eh luh pruh-myay MEH.",
+      "variations": [
+        {
+          "display": "Mon anniversaire est le quatorze août",
+          "cue": "My birthday is the fourteenth of August",
+          "changed": "a plain number, and a different month"
+        },
+        {
+          "display": "Son anniversaire est en janvier",
+          "cue": "Her birthday is in January",
+          "changed": "en with the month, when the day does not matter"
+        }
+      ],
+      "mistake": {
+        "display": "Mon anniversaire est le un mai",
+        "why": "The first of the month is an ordinal. Mon anniversaire est le premier mai."
+      },
+      "usage": "Answering the question every French form and every French colleague asks.",
+      "register": "neutral",
+      "mnemonic": "First is special; everything after it is just a number."
+    },
+    {
+      "id": "L3-M9-S08",
+      "display": "Le Nouvel An est le premier janvier",
+      "cue": "New Year's Day is the first of January",
+      "literal": "The New Year is the first January",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Nouvel An",
+            "cue": "New Year",
+            "tag": "free",
+            "forms": [],
+            "note": "Both words capitalised, and nouvel rather than nouveau because an begins with a vowel. The evening before is le réveillon."
+          },
+          {
+            "display": "janvier",
+            "cue": "January",
+            "tag": "free",
+            "forms": [],
+            "note": "Lowercase, like every month. en janvier for the month, le premier janvier for the day."
+          },
+          {
+            "display": "décembre",
+            "cue": "December",
+            "tag": "free",
+            "forms": [],
+            "note": "Lowercase, and the month Noël sits in: Noël est le vingt-cinq décembre."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "The month is lowercase and the festival is not: le premier janvier, but le Nouvel An. English capitalises both and gives no warning that French splits them.",
+      "sound": "luh noo-vel AHN eh luh pruh-myay zhahn-VYAY.",
+      "variations": [
+        {
+          "display": "Noël est en décembre",
+          "cue": "Christmas is in December",
+          "changed": "en with a bare month, and no date at all"
+        },
+        {
+          "display": "Le Nouvel An, on mange en famille",
+          "cue": "At New Year we eat with family",
+          "changed": "the custom sentence, with on doing the work"
+        }
+      ],
+      "mistake": {
+        "display": "Le nouvel an est le premier Janvier",
+        "why": "The capitals are the wrong way round: le Nouvel An, le premier janvier."
+      },
+      "usage": "Wishing someone well in the first week of the year.",
+      "register": "neutral",
+      "mnemonic": "Festivals get capitals; months do not."
+    },
+    {
+      "id": "L3-M9-S09",
+      "display": "Le dimanche je ne travaille pas",
+      "cue": "On Sundays I don't work",
+      "literal": "The Sunday I not work not",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "le dimanche",
+            "cue": "on Sundays · every Sunday",
+            "tag": "delta",
+            "forms": [],
+            "note": "The article makes it a habit. Without it — dimanche je ne travaille pas — it is this coming Sunday and nothing more. L2-M6 taught the bare day."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "There is no preposition here in either reading. je ne travaille pas le dimanche, never *sur le dimanche — English's on has nothing to become.",
+      "sound": "luh dee-MAHNSH zhuh nuh tra-vy PA.",
+      "variations": [
+        {
+          "display": "Dimanche je ne travaille pas",
+          "cue": "I'm not working on Sunday",
+          "changed": "the article gone, so it is one Sunday only"
+        },
+        {
+          "display": "Le dimanche on mange en famille",
+          "cue": "On Sundays we eat with family",
+          "changed": "the habit reading, with on"
+        }
+      ],
+      "mistake": {
+        "display": "Sur le dimanche je ne travaille pas",
+        "why": "A day takes no preposition. Le dimanche je ne travaille pas."
+      },
+      "usage": "Describing your week, which is where the two readings get confused.",
+      "register": "neutral",
+      "mnemonic": "Add the article and one Sunday becomes every Sunday."
+    },
+    {
+      "id": "L3-M9-S10",
+      "display": "En août, on est en vacances",
+      "cue": "In August we're on holiday",
+      "literal": "In August, one is in holidays",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vacances",
+            "cue": "holiday · holidays",
+            "tag": "free",
+            "forms": [],
+            "note": "Always plural, and it takes en: être en vacances, partir en vacances. There is no singular une vacance in this sense."
+          }
+        ],
+        "rules": [
+          5,
+          6
+        ]
+      },
+      "trap": "vacances has no singular and takes en, not sur or à. je suis en vacances is the only shape of it a learner needs and the only one French offers.",
+      "sound": "ahn OOT, on eh tahn va-KAHNS.",
+      "variations": [
+        {
+          "display": "En juillet, on est en vacances",
+          "cue": "In July we're on holiday",
+          "changed": "the other summer month, unchanged otherwise"
+        },
+        {
+          "display": "À Pâques, on est en vacances",
+          "cue": "At Easter we're on holiday",
+          "changed": "à for a festival, en for a month"
+        }
+      ],
+      "mistake": {
+        "display": "En août, on est en vacance",
+        "why": "The word is plural and stays plural. On est en vacances."
+      },
+      "usage": "Explaining why nothing in France answers the phone for four weeks.",
+      "register": "neutral",
+      "mnemonic": "à a festival, en a month — and vacances is never singular."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M9-C01",
+      "display": "C'est une fête qui dure cinq jours",
+      "cue": "It's a festival that lasts five days"
+    },
+    {
+      "id": "L3-M9-C02",
+      "display": "Les gens que j'aime sont ici",
+      "cue": "The people I love are here"
+    },
+    {
+      "id": "L3-M9-C03",
+      "display": "Les gens qui sont ici sont mes amis",
+      "cue": "The people who are here are my friends"
+    },
+    {
+      "id": "L3-M9-C04",
+      "display": "Les gâteaux qu'on fait sont pour Noël",
+      "cue": "The cakes we make are for Christmas"
+    },
+    {
+      "id": "L3-M9-C05",
+      "display": "À Noël on mange en famille",
+      "cue": "At Christmas we eat with family"
+    },
+    {
+      "id": "L3-M9-C06",
+      "display": "À Pâques on offre des cadeaux",
+      "cue": "At Easter we give presents"
+    },
+    {
+      "id": "L3-M9-C07",
+      "display": "La fête nationale est le quatorze juillet",
+      "cue": "The national holiday is the fourteenth of July"
+    },
+    {
+      "id": "L3-M9-C08",
+      "display": "Mon anniversaire est le premier mai",
+      "cue": "My birthday is the first of May"
+    },
+    {
+      "id": "L3-M9-C09",
+      "display": "Le Nouvel An est le premier janvier",
+      "cue": "New Year's Day is the first of January"
+    },
+    {
+      "id": "L3-M9-C10",
+      "display": "Noël est en décembre",
+      "cue": "Christmas is in December"
+    },
+    {
+      "id": "L3-M9-C11",
+      "display": "Le dimanche je ne travaille pas",
+      "cue": "On Sundays I don't work"
+    },
+    {
+      "id": "L3-M9-C12",
+      "display": "En août, on est en vacances",
+      "cue": "In August we're on holiday"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

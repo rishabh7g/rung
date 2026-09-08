@@ -421,3 +421,237 @@ costs seconds; the module that ships without it costs a sweep.
 30. **The backshift a speaker actually uses** (M5, rule 0). Confirm `Ha detto che era stanco` is
     what is said, and that the present is not routinely left in place in casual retelling
     (`ha detto che è stanco`) — the same honesty question rule 4 of M4 answers for conditionals.
+
+## Wave 3 — L3-M6..M10 (#551)
+
+The wave that closes the level. Authored against the briefs printed by `npm run content:kit` and,
+as in both earlier waves, against the REAL emitted index rather than against the briefs' account of
+it: **765 surfaces through L3-M5**, growing to 830 after M6, 858 after M7, 899 after M8, 925 after
+M9 and **958 after M10**. A strict `npm run content:build` emits
+`en-it: 30 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10)` with `CONTENT 214/214 ok`. `maxSpan` holds
+at **3** for the fifth wave running: the longest new keys of this wave — `mi dà fastidio`,
+`mi fanno male` — are exactly three tokens, so the span L2 paid for still covers the level.
+
+### L3-M6 "Feelings in depth" — one ending apart, and a whole different sentence
+
+The module's job is a single pair of endings, and the brief was right that it is a meaning
+difference rather than a stylistic one. `sono annoiato` is what happened to you; `è noioso` is what
+the thing is. Rule 0 states it in the terms a learner needs — **`-ato` is done TO you, `-ante` or
+`-oso` DOES it** — and S02 carries the mistake plate the brief asked for, because `Sono noioso` is a
+grammatical Italian sentence that says something a learner never means.
+
+The brief's note 5 asked whether each `-ante`/`-ato` pair is one row with both shapes in `forms` or
+two rows. The emitted index settles it as **two rows in every case**, and for a mechanical reason
+rather than a semantic one: the two shapes have **different agreement paradigms**. `interessato`
+takes four endings because it agrees with a person; `interessante` takes two because `-ante`
+adjectives do not mark gender. One row cannot hold two paradigms without implying that
+`interessanta` exists. `annoiato`/`noioso` are two words outright (`annoiare` against `noia`), and
+`stanco`/`stancante` needed only one row here because **`stanco` is already L1-M2's**.
+
+The having-and-giving family is the second half of the module and it is where the course's own
+shapes pay off: `ho paura`, `ho voglia di`, `mi fa piacere` and `mi dà fastidio` are all indexed
+WHOLE, so **bare `mi` stays L2-M5's** exactly as the brief required. `mi dà fastidio` earned rule 4
+on its own, because it agrees with the thing that annoys you (`mi danno fastidio i rumori`) and is
+therefore a third member of the `mi piace` family rather than a new law. `mi fa piacere` was taken
+whole as well, though the brief named it only in note 3 and not in the seam list: leaving bare
+`piacere` as a key would have put a noun in front of a learner who knows only the verb.
+
+### L3-M7 "Body and health" — three seams the brief got wrong, and the one it flagged
+
+This module needed more index corrections than any other in the level, and all of them were found
+before a display was written.
+
+- **`medico` is not fresh.** Note 5 lists it among the new keys; **L3-M2 owns it**. No row was
+  written and the word resolves back to M2, where a learner met it in a sentence about work.
+- **`piedi` is not fresh.** Note 5 lists it too; **L2-M8 owns both `piede` and `piedi`**. No row.
+- **`mi fa male` is not "L2-M8's row".** Note 1 says the module points back at it. There is no
+  `mi fa male` key in the index at all: the phrase resolves token by token — `mi` from L2-M5, `fa`
+  from L1-M6, `male` from L2-M8 — so pointing back means pointing at three rows in three different
+  modules. `mi fanno male` WAS free as a three-token span, and it was taken whole, which is where
+  the agreement note now lives. This is the cleanest outcome for the brief's intent: the singular is
+  genuinely not re-taught, and the plural gets the row it needs.
+- **The one conditional the brief flagged resolves to fresh.** Note 5 says `da` is new "only if the
+  emitted index still has it free". It is free: the index carries `da bambino` and `da bambina`
+  (L2-M10, whole) and no bare `da`. It got a row, and it is the module's best delta — one word for
+  English's "for" and "since", with the verb staying in the present.
+- **`giorni` had to be taught.** `da tre giorni` cannot be written without it, and L1-M4 owns only
+  the whole keys `ogni giorno` and `tutti i giorni`, never the bare noun.
+- **`destra` is not a key** — only `a destra` (L2-M4, whole). A planned variation `la gamba destra`
+  was rewritten to `la gamba da ieri`, which does more work anyway.
+
+The one place the module spends a row on grammar rather than on vocabulary is `braccio`, whose
+plural `le braccia` changes gender. It is taught as a pair to learn rather than as a rule, because
+it is not one.
+
+### L3-M8 "Money and paperwork" — the impersonal at length, and one elision that nearly cost a finding
+
+The brief's note 1 asked for `si` shown at length rather than opened a second time, and that is what
+shipped: `si paga`, `si può`, `si vendono` and `si firma` are all indexed WHOLE, so **L2-M4's bare
+`si` keeps its row**. The plural plate the brief asked for is rule 1 and S03, and it is the only
+mechanical rule in the module: `si vendono i biglietti`, because the verb counts what comes after
+it.
+
+Two seam facts are worth recording:
+
+- **`l'affitto` does not fold to `affitto`.** The elided article is part of the token, so a display
+  reading `pagare l'affitto` leaves `l'affitto` unresolved unless it is in the row's `forms`. It is
+  now. This is the same class of fact the M10 brief flagged for `all'inizio`, and it is worth
+  stating as a general one for this course: **any en-it row whose noun elides needs the elided
+  surface in `forms`.**
+- **`firma` the noun and `si firma` the impersonal do not collide**, because they fold to different
+  keys. They are therefore two rows, and `firmare`'s `forms` deliberately exclude `firma` to keep it
+  that way — listing it there would have opened the same key twice inside one module, which is the
+  defect `npm run content:shown` fails on.
+
+One small correction to notes 3 and 5: they say `devo` and `posso` "stay M2's". `devo` is L3-M2's;
+**`posso` is L2-M1's**, alongside `scusi` and `senta`. Nothing turns on it — neither took a row —
+but the brief's attribution is wrong.
+
+The module speaks the polite address throughout, per `docs/57` §1, and **`Lei` appears in no
+display**: the register is carried by `ha` rather than `hai`, by `scusi` and `firmi`, and by the
+impersonal itself. That is the course's shipped practice and this module did not need to break it.
+
+### L3-M9 "Festivals and everyday culture" — the relative clause, and where it could not be written
+
+Note 1 asks for the relative job of `che` to be "a third note on that row, not a third row". **This
+module cannot do that.** L1-M5 owns `che`, a level never edits a file below it, and a `che` row here
+would be an unreachable re-teach — the learner would be shown L1-M5's note, not this one. The law
+went into **module rule 0** instead, which names L1-M5 and L3-M3 explicitly so the three jobs read
+as one word rather than three. `cui` is the only new pronoun, exactly as the brief said.
+
+Four corrections to notes 2, 4 and 5:
+
+- **`primo` is not fresh.** Note 5 hedges it ("where they are not owned"); **L2-M4 owns it**. No
+  row. `il primo gennaio` is written from L2-M4's word and this module's `gennaio`.
+- **`quindici` is not fresh either, and the brief could not have known why:** L3-M8, two modules
+  earlier in this same wave, teaches it. M9's dates reuse it.
+- **The habitual article is not new to the course.** Note 2 presents `la domenica` against
+  `domenica` as the module's law, and it is the right law — but L1-M4 already ships **`il lunedì`
+  and `il sabato` as whole keys** (and `di mattina`, `di sera`). What is genuinely new here is the
+  minimal pair inside one sentence, which is what S07 is. `la domenica` was taken as a fresh whole
+  key; bare `domenica` stays L2-M6's.
+- **`si mangia` is not one of M8's rows.** Note 4 says to point back at M8 rather than open new
+  surfaces. M8 owns `si paga`, `si può`, `si vendono` and `si firma` — not `si mangia`. As it
+  happens `si mangia` needed **no row at all**: both tokens already resolve (`si` L2-M4, `mangia`
+  L1-M4), which is the cheapest possible way to honour the brief. `si chiude` did need one, because
+  `chiude` is untaught.
+
+The festival names each got a row rather than being left to the proper-noun exemption of #61. The
+reason is empirical: en-it's shown-but-untaught baseline of 17 **already contains proper nouns**
+(`anna` heads the list), so this course's counter does not exempt them, and four untaught festival
+names would have pushed the baseline to 21. Lowering a baseline is allowed in the commit that fixes
+the content; raising one is not.
+
+### L3-M10 "Your own story" — an account is a vocabulary problem, not a grammar one
+
+The brief is right that nothing is opened here. What it under-counts is how much of an account is
+constrained by what the course happens NOT to own, and the corrections are all of that kind.
+
+- **`alla fine` is not fresh.** Note 5 lists it among the new keys; **L2-M10 owns it whole.** No row
+  was written and it is used freely — four of the ten accounts end on it. Wave 2's review had
+  already found the neighbouring fact, that bare `alla` is untaught.
+- **`all'inizio` is fresh and is one key carrying its elision**, exactly as note 5 said. It is the
+  only prediction the brief made about this index and it was correct.
+- **`sette` is not a key.** L1-M4 owns `alle sette` whole and nothing else, so a planned
+  `il treno delle sette` became `il treno per Milano`.
+- **`abbiamo` does not exist in this course.** `siamo`, `andiamo`, `facciamo`, `mangiamo`,
+  `prendiamo`, `torniamo`, `vediamo` and `dobbiamo` are all taught; the first-person plural of
+  `avere` is not. **No account in this module may use a first-person-plural `avere` perfect**, which
+  is why every one of the ten is told in the first person singular or the third. This is the single
+  fact that shaped the module's prose most, and it is invisible from the brief.
+
+The participles are the honest spend the brief predicted, and the list was cut against the index
+rather than written from scratch. Already owned and therefore **not** re-taught: `andato`,
+`tornato`, `partito`, `rimasto`, `uscito`, `stato`, `preso`, `perso`, `dimenticato`, `lasciato`,
+`chiamato`, `chiesto`, `parlato`, `comprato`, `mangiato`, `bevuto`, `dormito`, `studiato`, and
+L3-M5's `visto` and `detto`. Genuinely new, and each because an account needed it: `arrivato`,
+`finito`, `cominciato`, `trovato`, `fatto`, `successo`, `venuto`, `capito`, `scritto`, `letto`,
+`dovuto`. The same triage applied to the imperfetto — `ero`, `era`, `avevo`, `c'era`, `faceva`,
+`andava`, `lavoravo`, `mangiava`, `pioveva`, `tornavo` and `voleva` are all L2-M10's or L3-M5's, and
+only **`aspettavo`** (which `mentre` needs) and **`stavo`** (which health needs) were opened.
+
+`mentre` against `appena` is the pair the module is built on and the brief did not name it. `mentre`
+takes the imperfetto because something must still be going on for it to be cut into; `appena` takes
+the passato prossimo because both of its events are finished. They look like the same kind of word
+and they take opposite tenses, which is rule 1 and S04's trap.
+
+### The ratchet
+
+`tools/shown-surfaces.test.ts` holds at **en-it 17** across all five modules — the level closed
+without moving it — and `npx vitest run tools/shown-surfaces.test.ts` is **11/11**.
+`npm run content:shown` reports **`clean — every shown surface resolves`** for each of M6, M7, M8,
+M9 and M10, with **zero re-teaches and zero collisions in the entire wave**. That is three
+consecutive waves on this course with no shown-but-untaught finding, and the first of the three with
+no re-teach at all.
+
+The method is wave 2's and it is now worth stating as the course's practice rather than as a happy
+result: **every display, variation and pool item was checked against the emitted index before it was
+written**, and the corrections above are what that check returned. Eight facts each of which would
+have produced a finding were caught in advance — `medico` and `piedi` being owned already,
+`mi fa male` not existing as a key, `alla fine` and `primo` being owned, `l'affitto` and `sette` not
+folding the way an author expects, and `abbiamo` not existing at all. Sixteen more were caught after
+a first draft by running `npm run content:shown` on it: `eravamo`, `destra`, `dice`, `venticinque`,
+`negozi`, `conosco`, `carta`, `senza`, `solo`, `qual`, `alla`, `cassa`, `niente`, `grave`, `strana`,
+`parlavo` and `aspettato` were all shown-but-untaught in a draft, and every one was rewritten around
+rather than taught. The check costs seconds and it is the only reason this level closed on its
+baseline.
+
+### Open questions for the native pass
+
+31. **`mi sento` against `sono`** (M6-S01, rule 1). The module presents `mi sento stanco` as the
+    everyday answer to `come stai?` when `bene` would be a lie. Confirm a speaker does not simply
+    say `sono stanco` far more often, and that the reflexive is not the marked or bookish one.
+32. **`sono annoiato` in real speech** (M6-S02). The `-ato`/`-ante` law is not in doubt; the
+    frequency is. Confirm `sono annoiato` is what an Italian actually says when bored, rather than
+    `mi annoio` — the module teaches the adjective and mentions the reflexive nowhere.
+33. **`ho voglia di` against `voglio`** (M6-S06). The module calls `ho voglia di` the softer of the
+    two and "what an Italian actually says at four in the afternoon". Confirm that softness, and
+    that `ho voglia di` is not heard as more childish rather than more polite.
+34. **`mi fa piacere` as a reply** (M6-S08). Confirm it is the natural answer to somebody's good
+    news, and that it is genuinely distinct from `mi piace` in the way the row claims rather than
+    merely more formal.
+35. **`sollevato`** (M6-S09). Confirm it is the ordinary spoken word for relieved rather than a
+    written one, and that a speaker would not reach for `meno male` instead in the same sentence.
+36. **`mi fa male` with a possessive** (M7, rule 1). The module states flatly that
+    `mi fa male la mia testa` is never said. Confirm no register or region tolerates the doubled
+    possessive, since the module tells a learner it marks them immediately.
+37. **`da tre giorni` with the present** (M7, rule 2 and S02). Confirm the present is genuinely
+    obligatory in speech, and that `mi ha fatto male da tre giorni` is heard as wrong rather than as
+    an acceptable casual variant.
+38. **`pastiglia` against `compressa` and `pasticca`** (M7-S09). The row calls `pastiglia` the word
+    a person says and names `compressa` as what the box prints. Confirm that split, and say which of
+    the three a pharmacist would use back.
+39. **`Ha qualcosa per il mal di gola?`** (M7-S08). Confirm this is the whole transaction, and that
+    a pharmacist does not expect `Vorrei qualcosa per...` or a greeting in front of it.
+40. **`si vendono` in speech** (M8, rule 1 and S03). The written rule is not in doubt. Confirm
+    speakers actually make the verb plural in ordinary spoken Italian, and that
+    `si vende i biglietti` is heard as an error rather than as unremarkable colloquial speech.
+41. **`bisogna` against `si deve`** (M8, rule 2). Confirm `bisogna` is the everyday impersonal
+    obligation rather than a slightly formal one, and say whether `si deve` would be more natural at
+    a counter.
+42. **`ricevuta` against `scontrino`** (M8-S07). The row says `scontrino` is the shop slip and
+    `ricevuta` the one an office issues. Confirm the split, and whether asking for a `ricevuta` in a
+    bar is heard as a request for a different document.
+43. **`la domenica` against `di domenica`** (M9-S07, rule 2). The module teaches only the article
+    form for the habitual. Confirm `di domenica` is not equally or more common in speech, and that
+    leaving it out is survivable at this rung.
+44. **`chi` as "whoever"** (M9-S10). The module opens `chi` in a generalising statement
+    (`Chi lavora a Pasqua non fa festa`). Confirm this reads as ordinary speech rather than as
+    proverb-register, and that a speaker would not say `le persone che lavorano` instead.
+45. **`sagra`** (M9-S09). Confirm the word is as untranslatable as the row claims, and that calling
+    a town's summer event a `festa` rather than a `sagra` would actually be corrected.
+46. **`mentre` with the passato prossimo** (M10, rule 1). The module states that `mentre` always
+    takes the imperfetto. Confirm no ordinary spoken construction puts a passato prossimo after it,
+    since the mistake plate tells a learner the sentence is simply wrong.
+47. **`stavo male` against `ero malato`** (M10-S07). The row says `ero male` is not said. Confirm
+    that, and confirm `stavo male` rather than `non stavo bene` or `ero malato` is what a colleague
+    would actually be told on the day you come back.
+48. **Participle agreement in a spoken account** (M10, rule 2). Confirm a speaker telling an
+    eight-sentence story agrees every `essere` participle out loud — `sono arrivata`, `sono
+    rimasta`, `è successa` — rather than levelling to `-o` in fast speech. This is wave 2's question
+    27 asked again at length, and it is the one claim in the module that eight sentences make
+    unavoidable.
+49. **The account a learner is actually asked for.** The ten items here are a delay, a late
+    morning, settling into a city, an arrival, a first day, a train problem, an illness, a visit, an
+    unanswered message and a month that was tight. Confirm this is the right set for somebody living
+    in Italy rather than visiting, and name the account that is missing.

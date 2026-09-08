@@ -546,3 +546,277 @@ that is a count, not a content defect, and it belongs to whoever lands the wave.
 31. **`mal` against `malsseum`** (M5-S08, S09). Confirm the swap is obligatory rather than
     preferred once the speaker is raised, that `seonsaengnim mal-eun` is heard as an error, and
     that `chingu mal-i` with no particle between the two nouns is what a speaker says.
+
+---
+
+## Wave 3 — L3-M6..M10 (#558)
+
+The five modules that close the level, authored against the briefs and reviewed against the REAL
+cumulative index rather than against the briefs' account of it: **583 surfaces through L3-M2,
+`maxSpan` 2**, growing to 601 after M6, 636 after M7, 699 after M8, 760 after M9 and **773** after
+M10. `npm run content:validate` is `CONTENT 211/211 ok`, `npm run content:shown` is clean on all
+five with **no shown-but-untaught line and no re-teach reported anywhere**, and
+`npx vitest run tools/shown-surfaces.test.ts` is 11/11 with en-ko holding at **12**.
+
+**One condition on reading the numbers.** L3-M3, L3-M4 and L3-M5 were not in this worktree when
+this wave was authored — they are a separate wave, merged by the same change — so the strict build
+here emits `en-ko: 27 modules (L1-M1..M10, L2-M1..M10, L3-M1..M2, L3-M6..M10)` rather than 30, and
+every check above was run against the index through L3-M2 plus this wave's own rows. Nothing in
+these five files depends on a key M3, M4 or M5 will own: where the brief handed a shape to one of
+them, this wave either declined the shape or took a neighbouring form the seam explicitly does not
+list, so the merge adds rows and steals none. Each case is named below. 
+
+### L3-M6 "Feelings in depth" — the feeling you can see, and the one you cannot
+
+The module is built on the one law an English speaker never guesses: **Korean will not let you
+state another person's inner state directly.** `Jeo-neun neomu gippeoyo` is right; `Chingu-neun
+gippeoyo` is not, and S02 answers it with `Chingu-ga gippeohaeyo` — the descriptive verb turned
+into something a person is visibly doing. The payoff the brief asked for is pointed at rather than
+re-taught: L1-M1's `joahaeyo` IS this rule already frozen, `joayo` being it-is-good-to-me and
+`joahaeyo` likes-it, and rule 1 says so in those words. The mistake plate on S02 and S03 is that
+sentence twice, once for the verb shape and once for the particle: a friend takes `-ga`, never
+`-neun`, because the sentence is about what they are doing.
+
+`-gess-` opens as **conjecture and not as a second future**, which is the half of it that half the
+material a learner meets gets wrong. `himdeulgesseoyo` (that must be hard), `masitgesseoyo` (that
+looks good) and `algesseoyo` (I see) share one row and one note, and rule 4 says out loud that every
+plan is still L1-M6's `-l geoyeyo`. Nuance is spent on DEGREE rather than on lexemes, exactly as the
+brief asked — `neomu` is the only intensifier bought, and `jom`, `jogeum`, L3-M1's `byeollo` and
+L2-M1's `gwaenchanayo` do the rest with no new keys at all. Every clause is present; the past of a
+feeling is handed forward to M10, and M10 takes it.
+
+Register stays **neutral throughout, and rule 6 says that is a decision.** Feelings are what friends
+talk about and every other course's M6 chips informal somewhere; en-ko cannot, because the forms
+that would earn it are banmal, which L1 banned and this level does not lift. Warmth is carried by
+`-gess-` to sympathise and `jom` to soften instead.
+
+### L3-M7 "Body and health" — the part hurts, and you do not
+
+The double subject gets its fourth and most natural outing. `Jeo-neun mok-i apayo` is as-for-me,
+the-throat-hurts, and the delta that survives four modules of practice is that **there is no
+possessive anywhere in it**: `jeo-neun` has already said whose throat it is, so `je mok-i apayo` is
+what a learner writes and is the mistake plate on S01. L2-M2's `meori` and L2-M8's `apayo` are spent
+and not re-opened — `meori` appears only in a variation, and no row in this file re-teaches either.
+
+The symptom frame is the module's best delta because English has no version of it: **a symptom comes
+out.** `Yeol-i nayo`, `Gichim-i nayo` — one verb for anything that appears on its own, with the
+symptom marked `-i/-ga` and the sick person named nowhere at all. Beside it, catching something
+inverts the English picture twice over: `Gamgi-e geollyeosseoyo` is I-got-caught-ON-a-cold, the
+illness taking `-e`, and it is said in the past about a cold you still have. `heori` and `deung` are
+authored as one English word splitting into two Korean ones, with the split not where an English
+speaker would put it.
+
+L3-M2's modifier does everyday work here, which is the whole reason it was opened at M2:
+`maeil meongneun yak`, `eoje meogeun yak`, `apeun de`. `meongneun` is also where the romanization law
+earns its keep — spelled meok-neun, written as it is said. `de` is authored as a noun that cannot
+stand alone, which is the honest fact about it and the reason M2 and M7 are one lesson in two parts.
+
+### L3-M8 "Money and paperwork" — the honorific at full stretch, and the ten-thousand
+
+This is the module the `-si-` decision was made for. L2-M1 made `-(eu)seyo` productive in the
+imperative and stopped; here `-kkeseo` replaces `-i/-ga` on an honoured subject, `-(eu)syeosseoyo`
+carries the honorific past (`osyeosseoyo`, `badeusyeosseoyo`, `malsseumhasyeosseoyo`), and the
+honorific nouns replace an ordinary word outright — `seongham` for a name, `daek` for a house,
+L3-M5's `malsseum` for speech. L2-M1's one rule that never bends is restated as rule 3 and plated on
+S01: **never of oneself.** `Jeo-kkeseo` is the mistake, and the fix is `Jeo-neun`.
+
+The numbers are L2-M5's law finally stretched. **Korean counts in ten-thousands**, so thirty
+thousand won is `samman won` and a hundred and fifty thousand is `siboman won`, and the mistake
+plate is the one an English speaker actually makes: `samsip cheon won`, thirty thousands, built the
+English way. Dates are Sino throughout, big to small, with a single `-e` on the end of the whole
+date. `-kkeseo` was genuinely unowned, exactly as the brief said — L2-M2's brief listed it in a
+pattern and no L2 sentence ever shipped it — so this module takes it cleanly.
+
+What stays out is named in rule 8 because this is the brief whose edge touches it: the clerk
+genuinely does speak `-(seu)pnida`, and this course still does not write it. `gamsahamnida` in M10
+is one of the four frozen phrases the course already owns, and nothing grows the set.
+
+### L3-M9 "Festivals and everyday culture" — the modifier leaves the office
+
+`-deon` opens as the level's fourth modifier and as ONE frame: `halmeoni-ga mandeuldeon tteokguk`,
+the tteokguk grandmother used to make. It is the only modifier in the course that carries a feeling
+as well as a tense, and S04's trap is the pair a learner will confuse — `mandeun tteokguk` is the
+one she made, `mandeuldeon tteokguk` is the one she used to make. `-eoss-eoss-` lands beside it,
+also as one frame, and rule 2 says the thing about it that matters: **two pasts do not mean longer
+ago.** `gasseosseoyo` says the habit has ended, so it answers do-you-still rather than when.
+
+L2-M7's progressive gets its second life on a crowd, which is the reading that module reserved it
+for, and L2-M3's `-deul` finally has a sentence that needs it. The culture is the vocabulary spend
+and the claims stay small: a display says what is on the street, `usage` says when the day falls,
+and nothing is asserted as universal. `ttae` takes no key anywhere in the file — a festival is
+placed with `-e`, and every time clause is L4-M6's.
+
+### L3-M10 "Your own story" — eight sentences, one named subject
+
+The job is an account built from the whole ladder, and the new-word spend is the smallest of the
+level and contains **no fresh noun at all**: twelve rows, eleven of them a past or a future shape of
+a verb the ladder already owns, plus one reported form. The lesson is the two halves of the level
+meeting. L2-M10's zero anaphora is stretched from four sentences to eight — S10 runs seven
+sentences without naming its speaker once — and L3-M1's topic-against-subject law runs across a
+paragraph, with `chingu-ga` introducing and `chingu-neun` returning. Both failures are plated: an
+account that opens every sentence with `jeo-neun`, and one that marks every return with `-i/-ga` and
+so reads as three different friends.
+
+S05 and S06 are **one story told twice**, which is what the register rule demanded. The teacher takes
+`-i` and a bare verb for a friend, `-kkeseo` and `dowajusyeosseoyo` for an elder, and the speech
+level does not move between them: both are `-yo` sentences, neither is banmal, and the choice this
+course offers is between two values rather than three. S06's mistake plate is `Jeo-kkeseo`, the same
+one M8 opened with, because M10 is the last place an author can mistake the absent informal for an
+oversight.
+
+The story shape the brief asked for is in every account that can carry it: a reason (`geuraeseo`,
+L1-M9's `-aseo`), a feeling (`apasseoyo`, `buranhaesseoyo`, `seulpeosseoyo`, `himdeureosseoyo` — the
+past of a feeling that M6 deferred to here), and one reported line.
+
+### The brief seams this wave had to correct, and what the index actually said
+
+1. **`gippeo haeyo` is one token, not two** (M6, brief note 1 and pattern 2). The brief writes the
+   third-person feeling shape with a space. The same note names L1-M1's `joahaeyo` as this rule
+   already frozen, and `joahaeyo` is ONE whitespace token in the emitted fold. A spaced form would
+   make the index read `haeyo` as a separate verb and would break the course's own law that a space
+   never sits inside a word. Shipped `gippeohaeyo`, `seulpeohaeyo`, with rule 2 saying why.
+2. **`hwaga nayo` is not written in M6** (brief note 5). The note points its `na-` verb at M7's
+   `nayo` row — but M7 is later, and a display may not show a surface a later module owns. M6 leaves
+   it out; `nayo` opens in M7, where the brief put it.
+3. **`swieuseyo` is not a form; the imperative of 쉬다 is `swiseyo`** (M7, brief note 4). The
+   `-(eu)seyo` set in the emitted fold decides it without appeal: `anjeuseyo` and `badeuseyo` carry
+   the `-eu-` because those stems end in a consonant, while `gaseyo`, `oseyo`, `taseyo`, `naeriseyo`
+   and `jinaeseyo` do not. 쉬다 ends in a vowel. Shipped `swiseyo`, with rule 6 and the mistake plate
+   on S09 stating the split, and `masimyeon` in S08 shown as the same rule on the same seam.
+4. **`masimyeon` is M7's, not M4's** (M7, brief note 5). The note assigns the `-(eu)myeon` forms to
+   M4, and M4's own seam lists them: `hamyeon`, `gamyeon`, `isseumyeon`, `eopseumyeon`, `omyeon`.
+   `masimyeon` is not among them, so M7 takes it and points back at M4's frame in the row note. No
+   key M4 will own is touched.
+5. **`sseo juseyo` is one token** (M8, pattern 4). L2-M1 shipped `sseojuseyo` joined, and its own
+   rule says every `-a/eo juseyo` form is ONE whitespace token, never hyphenated. The emitted fold
+   has `sseojuseyo`, `dowajuseyo`, `gidaryeojuseyo` and no spaced variant. Shipped joined, in the
+   romanization and in the Hangul, as L2-M1 does.
+6. **`sadeuseyo` is not written** (M8, brief note 1). The honorific of 살다 is 사세요; there is no
+   `사드세요`. Rather than ship a form this review cannot vouch for, M8 opens only the honorific PAST
+   `-(eu)syeosseoyo` and leaves the honorific present to L2-M1's `-(eu)seyo` set, which the course
+   already owns. Flagged as Q30 for the native pass rather than guessed at.
+7. **150,000 is `siboman`, not `simoman`** (M8, brief note 2). 십오 fuses to `sibo`, which the same
+   brief sentence writes correctly two words later in `siboil`. Shipped `siboman`. The `m` in the
+   brief's spelling is probably 십만 leaking in, and that word is genuinely `simman` — ㅂ before ㅁ is
+   said as ㅁ, and this course writes what is said. Both spellings are in the `man` row's forms.
+8. **`gwanribi` is `gwallibi`** (M8, brief note 3). 관리 is [괄리], and `courses.json`'s
+   `romanizationNote` names `silla` as the model for exactly this ㄴ+ㄹ → ㄹㄹ change. Shipped
+   `gwallibi`, with the mistake plate on S04 carrying the spelling-versus-sound rule.
+9. **No display writes a phone number, and `gong` is not taught** (M8, brief note 2 against brief
+   note 5). Reading digits one by one needs bare Sino `il` and `i`, and note 5 of the same brief
+   forbids both — `il` is L1-M9's WORK and `i` is L1-M1's SUBJECT PARTICLE. This wave adds a third
+   collision to that list: Sino eight is `pal`, which is now L3-M7's ARM. The digit-by-digit phone
+   number therefore cannot be written under this course's romanization at all, and it belongs to a
+   decision above this level rather than to a workaround here.
+10. **Proper nouns DO index on en-ko** (M9, brief note 4). The note says they never do. The emitted
+    fold says otherwise: `hanguk`, `kim`, `minsu` and `yuna` all have rows, and `tools/content-build.ts`
+    has no proper-noun exemption in `checkShownSurfaces` — an unindexed proper noun in a display is
+    counted as a finding and would push en-ko's ratchet above 12. `Chuseok` and `Seollal` therefore
+    take rows of their own, as the course's other proper nouns already do.
+11. **`saenggil` is `saengil`** (M9, brief note 4). 생일 is [생일]; there is no inserted ㄴ. Shipped
+    `saengil`, with the row note saying the `il` is the Sino day and is written only inside the word.
+12. **`saram-i` is left alone** (M9). It is one of the twelve shown-but-untaught surfaces the course
+    already carries, so the crowd sentences use `saram-deul-i` throughout and this module opens no
+    `saram-i` key. Fixing the surface belongs to the file that shows it, and a level never edits a
+    file below it.
+13. **No `-(eu)nikka` form is written** (M10, patterns and brief note 5). The note offers "M3's
+    `-(eu)nikka`, or L1-M9's `-aseo`" for the reason, and with M3 outside this worktree every account
+    takes the second. The pattern stays in `allowedPatterns` verbatim, because the patterns are the
+    brief's and a bound is not a requirement to use it.
+14. **The reported line is `gwaenchantago`** (M10, brief note 5). M5's seam names the forms that
+    module writes — `gandago`, `masitdago`, `haksaeng-irago`, `gajago`, `wanyago` — and this one is
+    deliberately not among them, so after the merge M10 owns a key M5 does not and no row of either
+    module is left unreachable behind the other.
+15. **One in-wave edit, recorded so it is not read as a backward one:** M8's `kadeu` row gained the
+    form `kadeu-reul` so that M10-S08's account resolves. M6..M10 are one change; no file below L3-M6
+    was opened by this wave, and nothing in L1, L2 or L3-M1..M2 was edited at all.
+
+### The ratchet
+
+`tools/shown-surfaces.test.ts` held at **en-ko 12**, unchanged, against 190 new keys across the five
+modules — 18 in M6, 35 in M7, 63 in M8, 61 in M9 and 13 in M10. There was **no finding to fix and no
+re-teach reported on any of the five runs**, which in a course where every particle is a separate
+surface is the wave-1 discipline repeated rather than luck: every particle shape a display shows was
+authored into the `forms` of the row that owns its host — `mok` with `mok-i` and `mok-eul`, `gamgi`
+with `gamgi-e`, `wolse` with four, `eunhaeng` with `-e` and `-eseo`, `saram-deul` with three,
+`yejeon` with `yejeon-e` and `yejeon-e-neun` — so the surfaces the ratchet looks for were taught in
+the same row that first showed them.
+
+Three keys in this wave are new SHAPES of older lexemes and take their own row rather than editing
+the file that first taught the word, which is the law and also what keeps the count clean:
+`jigeum-eun` in M9 (L2-M7's `jigeum`, whose bare key is untouched), `ipgo` in M10 (L3-M9's `ipeun`),
+and `dowajusyeosseoyo` in M10 beside S05's `dowajwosseoyo`, the two halves of the register pair each
+owning the key it shows.
+
+`maxSpan` holds at **2**. The level's romanization law is why: a verb ending is never hyphenated in
+this course, so `meongneun`, `mandeuldeon`, `gasseosseoyo`, `masimyeon`, `malsseumhasyeosseoyo` and
+`gwaenchantago` are each one clean token, and the only multi-token surfaces these five files rely on
+are L2's own `an dwaeyo`, `go isseoyo` and `geu daeum-e`.
+
+### Open questions for the native pass
+
+32. **The third-person feeling law** (M6, rule 0 and S02). Confirm that `Chingu-neun gippeoyo` is
+    heard as an error rather than as a poetic liberty, and that `Chingu-ga gippeohaeyo` is what a
+    speaker actually says about a friend in front of them.
+33. **`gippeohaeyo` and `seulpeohaeyo` as everyday words** (M6-S02, S03). Confirm both are ordinary
+    rather than bookish, and whether a speaker would more often reach for a describing phrase —
+    `gibun-i joa boyeoyo` and its family — than for the `-a/eo haeyo` shape.
+34. **`neomu` as plain very** (M6, rule 3 and S01). Confirm `neomu gippeoyo` is unmixed good news and
+    carries no residue of too much, and that a learner using it for every intensifier is not marked.
+35. **`-gess-` to sympathise** (M6, rule 4 and S09). Confirm `Geugeo-neun jeongmal himdeulgesseoyo`
+    is the natural answer to somebody's bad news, and that the plain `himdeureoyo` there really does
+    read as claiming to know how their week felt.
+36. **`maeum-i apayo`** (M6-S10). Confirm it is grief rather than a medical sentence, and that the
+    contrast drawn with `gibun` — today's weather against the climate — is one a speaker recognises.
+37. **`mok` for a sore throat** (M7-S01). Confirm `mok-i apayo` is what you say at a pharmacy for a
+    sore throat rather than for a stiff neck, and that nothing further is needed to tell them apart.
+38. **The symptom verb** (M7, rule 2 and S02). Confirm `yeol-i nayo` and `gichim-i nayo` are both
+    ordinary, and that there is no everyday alternative with `isseoyo` that a learner will hear and
+    conclude the rule is optional.
+39. **`gamgi-e geollyeosseoyo` in the past** (M7, rule 3 and S03). Confirm the past is what is said
+    about a cold you still have, and that a present `geollyeoyo` is wrong rather than merely rare.
+40. **`heori` against `deung`** (M7-S04). Confirm the split, and that saying `deung` of an aching
+    waist is heard as a mistake rather than as a loose usage.
+41. **`swiseyo`** (M7, rule 6 and S09). The wave's sharpest romanization correction. Confirm 쉬세요 is
+    the only imperative of 쉬다 and that `swieuseyo` is never heard, so the rule as stated — the
+    `-eu-` separates two consonants and drops after a vowel — holds without exception at this level.
+42. **`apeun de`** (M7-S06). Confirm `de` cannot stand without a modifier in front of it, and that
+    `apeun de` is what a doctor or a patient actually says rather than a textbook phrase.
+43. **The dose counters** (M7-S07). Confirm `-beon` and `-al` are what a pharmacist uses, that
+    `han beon` and `du al` are the native shapes, and that a daily frequency would ordinarily carry a
+    time word this module has not opened.
+44. **`-kkeseo` inside a `-yo` sentence** (M8, rule 0 and S01). Confirm that the honorific subject
+    particle is at home in `-yo` speech rather than pulling `-(seu)pnida` after it, and that
+    `Sajangnim-kkeseo malsseumhasyeosseoyo` is a sentence an office worker says out loud.
+45. **`seongham` and `daek`** (M8-S02). Confirm both are ordinary counter words rather than very
+    formal ones, and that a clerk asking a foreigner for a name reaches for `seongham` rather than
+    `ireum`.
+46. **`siboman` and `simman`** (M8, rule 4 and S03). Confirm both romanizations against how the
+    numbers are said, and that `samsip cheon won` is genuinely not available as a way of saying
+    thirty thousand.
+47. **The honorific present** (M8, rule 1). The brief's example was `sadeuseyo`, which this wave did
+    not ship. Confirm that the honorific present of 살다 is 사세요 and that no auxiliary 드시 attaches to
+    it — and, if a module should teach `Eodi saseyo?`, whether it belongs here or in L4-M7.
+48. **`gwallibi`** (M8-S04). Confirm the ㄴ+ㄹ assimilation is written the way this course writes
+    `silla`, and that `gwallibi` is the word on the slip rather than a longer phrase.
+49. **The date and its single particle** (M8-S10). Confirm `Samwol siboil-e` carries one `-e` on the
+    day and none on the month, and that a spoken date would not add a year in front of it here.
+50. **`-deon`** (M9, rule 0 and S04). Confirm `halmeoni-ga mandeuldeon tteokguk` carries the
+    remembering the module claims for it, and that `mandeun tteokguk` genuinely cannot.
+51. **The double past** (M9, rule 1 and S05). Confirm `gasseosseoyo` says the habit has ended rather
+    than that the going was long ago, and that a speaker would use it unprompted about a place they
+    have stopped visiting.
+52. **`sebae` and `sebaehaneun nal`** (M9-S08). Confirm the description of the bow is accurate and
+    small enough, and that `nal` with a clause in front is the ordinary way to name a day.
+53. **`chukje` against `myeongjeol`** (M9-S10, rule and trap). Confirm calling Chuseok a `chukje` is
+    heard as a mistake, and that `hyuil` is the right word for a plain day off.
+54. **`saengil`** (M9-S09). Confirm the romanization, and that a birthday sentence with nothing
+    saying whose is read as the speaker's by default.
+55. **Seven sentences and no named subject** (M10-S10). Confirm an account this long holds together
+    with the speaker named nowhere at all, and that a listener does not lose track by the fifth
+    sentence.
+56. **`gwaenchantago haesseoyo`** (M10-S03). Confirm the plain form under `-dago`, and that a friend
+    reassuring you would be reported this way rather than with a quotation.
+57. **The register pair** (M10-S05 and S06). The wave's load-bearing register claim. Confirm the two
+    tellings differ only in `-kkeseo` and `-si-`, that both are ordinary `-yo` speech, and that the
+    elder version does not in fact pull `-(seu)pnida` after it in a real conversation.

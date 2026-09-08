@@ -1,0 +1,609 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M9",
+  "title": "Festivals and everyday culture",
+  "job": "Talk about what is happening around you",
+  "prerequisites": ["L3-M8"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": ["present_simple", "simple_past"],
+    "allowedPatterns": [
+      "It's a festival + which/that + <clause>",
+      "The people + who + <clause> + V",
+      "on + <date>  /  in + <month>  /  at + <festival>",
+      "It's the day + when + <clause>",
+      "People usually + V + on that day"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "किसी चीज़ का ब्योरा उसी वाक्य के अंदर जोड़ने के लिए अंग्रेज़ी who, which और that लगाती है: लोगों के लिए who, चीज़ों के लिए which, और that दोनों के लिए — It is a festival which lasts five days. हिंदी की मशीन उलटी है: वहाँ जो पहले आता है और वह उसका जवाब देता है (जो त्योहार पाँच दिन चलता है, वह…). अंग्रेज़ी में जोड़ने वाला शब्द उसी संज्ञा के ठीक बाद बैठता है जिसका ब्योरा देना है, और कोई वह उसके जवाब में नहीं आता."
+    },
+    {
+      "tag": "interference",
+      "text": "who, which या that उसी जगह को भर देते हैं जो वाक्य में ख़ाली थी — कर्ता की या कर्म की — इसलिए वह जगह दोबारा नहीं भरी जाती. the festival which we celebrate it ग़लत है, क्योंकि which ख़ुद ही कर्म है; सही है the festival which we celebrate. हिंदी का जो … उसे साँचा यहीं धोखा देता है."
+    },
+    {
+      "tag": "delta",
+      "text": "जब जोड़ने वाला शब्द कर्म की जगह भर रहा हो तो उसे गिराया भी जा सकता है, और अंग्रेज़ी बोलचाल में गिराया ही जाता है: the sweets we make (यानी the sweets that we make), the gift I gave. कर्ता की जगह वाला शब्द कभी नहीं गिरता: the people who celebrate it में who रहना ही है."
+    },
+    {
+      "tag": "interference",
+      "text": "वक़्त के आगे on, in और at कोई नियम नहीं, एक बँधी हुई सूची है — तीनों L1-M4 में जगह के लिए आ चुके हैं और यहाँ वक़्त के लिए लौटते हैं. दिन और तारीख़ पर on: on Monday, on that day. महीना, मौसम और साल में in: in October, in winter. त्योहार और घड़ी के वक़्त पर at: at eight, at this festival."
+    },
+    {
+      "tag": "free",
+      "text": "अपने त्योहार और रस्में किसी ऐसे आदमी को समझानी हों जिसने उनका नाम भी न सुना हो, तो अंग्रेज़ी में उनका कोई शब्द है ही नहीं — और यही इस पाठ की असली ज़रूरत है. नाम बताने की जगह ब्योरा दीजिए: It is a festival which lasts five days. जोड़ने वाला वाक्य ही आपका शब्दकोश है."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M9-S01",
+      "display": "It is a festival which lasts five days.",
+      "cue": "यह एक त्योहार है जो पाँच दिन चलता है.",
+      "literal": "यह है एक त्योहार जो चलता पाँच दिन.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "festival",
+            "cue": "त्योहार",
+            "tag": "free",
+            "forms": ["festival", "festivals"],
+            "note": "गिना जाता है: a festival, two festivals. त्योहार का नाम अंग्रेज़ी में नहीं होता, इसलिए ब्योरा जोड़ना पड़ता है."
+          },
+          {
+            "display": "last",
+            "cue": "चलना · टिकना",
+            "tag": "delta",
+            "forms": ["last", "lasts", "lasted"],
+            "note": "कितनी देर चलता है, यह बताने वाली क्रिया: It lasts five days. यही शब्द पिछला भी होता है, पर वह विशेषण है."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "which के बाद दोबारा it मत डालिए. which ही कर्ता है: a festival which lasts five days.",
+      "sound": "festival में ज़ोर पहले हिस्से पर — फ़ेस्टिवल.",
+      "variations": [
+        {
+          "display": "It is a festival which lasts three days.",
+          "cue": "यह एक त्योहार है जो तीन दिन चलता है.",
+          "changed": "दूसरी लंबाई"
+        },
+        {
+          "display": "It is a holiday which we like.",
+          "cue": "यह एक छुट्टी है जो हमें पसंद है.",
+          "changed": "which कर्म की जगह पर"
+        },
+        {
+          "display": "The festival lasted five days.",
+          "cue": "त्योहार पाँच दिन चला.",
+          "changed": "बीता हुआ, बिना जोड़ के"
+        }
+      ],
+      "mistake": {
+        "display": "It is a festival which it lasts five days",
+        "why": "which ख़ुद कर्ता है: It is a festival which lasts five days."
+      },
+      "usage": "अपने त्योहार का पहला परिचय किसी बाहरी को देना.",
+      "register": "neutral",
+      "mnemonic": "संज्ञा, फिर which, फिर सीधा ब्योरा."
+    },
+    {
+      "id": "L3-M9-S02",
+      "display": "The people who celebrate it are very happy.",
+      "cue": "जो लोग इसे मनाते हैं वे बहुत ख़ुश रहते हैं.",
+      "literal": "वे लोग जो मनाते इसे हैं बहुत ख़ुश.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "people",
+            "cue": "लोग",
+            "tag": "interference",
+            "forms": ["people", "person"],
+            "note": "यह person का बहुवचन है और अपने साथ हमेशा बहुवचन क्रिया लेता है: The people are happy, न कि is."
+          },
+          {
+            "display": "who",
+            "cue": "जो (आदमियों के लिए)",
+            "tag": "delta",
+            "forms": ["who"],
+            "note": "आदमियों का ब्योरा जोड़ता है और उनके ठीक बाद बैठता है: the people who celebrate it. चीज़ों के लिए which है."
+          },
+          {
+            "display": "celebrate",
+            "cue": "मनाना",
+            "tag": "free",
+            "forms": ["celebrate", "celebrates", "celebrated"],
+            "note": "त्योहार, जन्मदिन या कोई ख़ुशी मनाना: We celebrate this festival at home."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "The peoples या The people is दोनों ग़लत हैं. people ख़ुद बहुवचन है.",
+      "sound": "people में बीच का हिस्सा दब जाता है — पी-पल.",
+      "variations": [
+        {
+          "display": "The people who work here are very kind.",
+          "cue": "जो लोग यहाँ काम करते हैं वे बहुत भले हैं.",
+          "changed": "दूसरा ब्योरा"
+        },
+        {
+          "display": "My family celebrates it at home.",
+          "cue": "मेरा परिवार इसे घर पर मनाता है.",
+          "changed": "बिना जोड़ का सीधा वाक्य"
+        },
+        {
+          "display": "The people who come are very happy.",
+          "cue": "जो लोग आते हैं वे बहुत ख़ुश होते हैं.",
+          "changed": "छोटा ब्योरा"
+        }
+      ],
+      "mistake": {
+        "display": "The people who they celebrate it are happy",
+        "why": "who ही कर्ता है, दोबारा they नहीं आता: The people who celebrate it are happy."
+      },
+      "usage": "किसी रस्म में कौन शामिल होता है, यह बताना.",
+      "register": "neutral",
+      "mnemonic": "आदमी के लिए who."
+    },
+    {
+      "id": "L3-M9-S03",
+      "display": "It is in October. The holiday is on Monday.",
+      "cue": "यह अक्तूबर में पड़ता है. छुट्टी सोमवार को है.",
+      "literal": "यह है में अक्तूबर. वह छुट्टी है पर सोमवार.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "October",
+            "cue": "अक्तूबर",
+            "tag": "free",
+            "forms": ["October"],
+            "note": "महीने का नाम हमेशा बड़े अक्षर से शुरू होता है और उसके आगे in आता है: in October."
+          },
+          {
+            "display": "holiday",
+            "cue": "छुट्टी का दिन",
+            "tag": "delta",
+            "forms": ["holiday", "holidays"],
+            "note": "गिना जाता है: a holiday. यह वह दिन है जब दफ़्तर बंद रहता है, घूमने जाना नहीं."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "on October और in Monday दोनों ग़लत हैं. महीने में in, दिन पर on.",
+      "sound": "October में ज़ोर दूसरे हिस्से पर — अक्टोबर.",
+      "variations": [
+        {
+          "display": "The festival is in October.",
+          "cue": "त्योहार अक्तूबर में है.",
+          "changed": "महीने के साथ in"
+        },
+        {
+          "display": "The holiday is on Friday.",
+          "cue": "छुट्टी शुक्रवार को है.",
+          "changed": "दूसरा दिन"
+        },
+        {
+          "display": "It is at eight in the morning.",
+          "cue": "यह सुबह आठ बजे है.",
+          "changed": "घड़ी के वक़्त पर at"
+        }
+      ],
+      "mistake": {
+        "display": "The holiday is in Monday",
+        "why": "दिन के आगे on: The holiday is on Monday."
+      },
+      "usage": "किसी को अपने कैलेंडर की तारीख़ें समझाना.",
+      "register": "neutral",
+      "mnemonic": "in महीना, on दिन, at वक़्त."
+    },
+    {
+      "id": "L3-M9-S04",
+      "display": "At this festival people decorate the house.",
+      "cue": "इस त्योहार पर लोग घर सजाते हैं.",
+      "literal": "पर यह त्योहार लोग सजाते वह घर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "decorate",
+            "cue": "सजाना",
+            "tag": "free",
+            "forms": ["decorate", "decorates", "decorated"],
+            "note": "घर, दुकान या दफ़्तर सजाना: We decorate the house. सजावट का काम, सफ़ाई का नहीं."
+          },
+          {
+            "display": "house",
+            "cue": "घर (इमारत)",
+            "tag": "delta",
+            "forms": ["house", "houses"],
+            "note": "यह इमारत है, इसलिए गिना जाता है: a house, two houses. रहने की जगह के भाव के लिए home (L1-M5) है."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "त्योहार के आगे on नहीं, at आता है: at this festival, at Diwali.",
+      "sound": "house का s ज़ की तरह नहीं, स की तरह — हाउस.",
+      "variations": [
+        {
+          "display": "At this festival people decorate the shop.",
+          "cue": "इस त्योहार पर लोग दुकान सजाते हैं.",
+          "changed": "दूसरी जगह"
+        },
+        {
+          "display": "We decorated the house on Monday.",
+          "cue": "हमने सोमवार को घर सजाया.",
+          "changed": "बीता हुआ"
+        },
+        {
+          "display": "My house is near the office.",
+          "cue": "मेरा घर दफ़्तर के पास है.",
+          "changed": "house का सीधा इस्तेमाल"
+        }
+      ],
+      "mistake": {
+        "display": "On this festival people decorate the house",
+        "why": "त्योहार के आगे at: At this festival people decorate the house."
+      },
+      "usage": "किसी को बताना कि उन दिनों लोग क्या करते हैं.",
+      "register": "neutral",
+      "mnemonic": "त्योहार पर at."
+    },
+    {
+      "id": "L3-M9-S05",
+      "display": "We make sweets at home. The sweets we make are very good.",
+      "cue": "हम घर पर मिठाई बनाते हैं. जो मिठाई हम बनाते हैं वह बहुत अच्छी होती है.",
+      "literal": "हम बनाते मिठाई पर घर. वे मिठाई हम बनाते हैं बहुत अच्छी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sweets",
+            "cue": "मिठाई",
+            "tag": "delta",
+            "forms": ["sweets"],
+            "note": "मिठाई के लिए अंग्रेज़ी बहुवचन ही बोलती है: We make sweets. sweet (L3-M6) उसी शब्द का विशेषण वाला रूप है."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "The sweets which we make them ग़लत है. जोड़ने वाला शब्द ख़ुद कर्म है, और यहाँ वह गिर भी सकता है.",
+      "sound": "sweets के आख़िर में त्स की आवाज़ — स्वीट्स.",
+      "variations": [
+        {
+          "display": "The sweets we make are very sweet.",
+          "cue": "जो मिठाई हम बनाते हैं वह बहुत मीठी होती है.",
+          "changed": "विशेषण वाला रूप भी साथ"
+        },
+        {
+          "display": "The gift we give is very good.",
+          "cue": "जो तोहफ़ा हम देते हैं वह बहुत अच्छा होता है.",
+          "changed": "दूसरा गिरा हुआ जोड़"
+        },
+        {
+          "display": "We made sweets at home yesterday.",
+          "cue": "हमने कल घर पर मिठाई बनाई.",
+          "changed": "बीता हुआ, बिना जोड़"
+        }
+      ],
+      "mistake": {
+        "display": "The sweets which we make them are very good",
+        "why": "जोड़ने वाला शब्द ही कर्म है: The sweets we make are very good."
+      },
+      "usage": "अपने घर की रस्म बताना.",
+      "register": "neutral",
+      "mnemonic": "कर्म वाला जोड़ गिर सकता है."
+    },
+    {
+      "id": "L3-M9-S06",
+      "display": "My relatives come to the house. The children like the fireworks.",
+      "cue": "मेरे रिश्तेदार घर आते हैं. बच्चों को पटाख़े पसंद हैं.",
+      "literal": "मेरे रिश्तेदार आते को वह घर. वे बच्चे पसंद-करते वे पटाख़े.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "relatives",
+            "cue": "रिश्तेदार",
+            "tag": "free",
+            "forms": ["relative", "relatives"],
+            "note": "घर के बाहर का ख़ानदान: my relatives. घर के अपने लोग family कहलाते हैं."
+          },
+          {
+            "display": "children",
+            "cue": "बच्चे",
+            "tag": "interference",
+            "forms": ["child", "children"],
+            "note": "बहुवचन में -s नहीं लगता, शब्द ही बदल जाता है: one child, two children. childrens कहीं नहीं है."
+          },
+          {
+            "display": "fireworks",
+            "cue": "पटाख़े · आतिशबाज़ी",
+            "tag": "delta",
+            "forms": ["fireworks"],
+            "note": "मिठाई की तरह यह भी बहुवचन में ही चलता है: the fireworks are very good."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "childrens और two childs दोनों ग़लत हैं. children ख़ुद बहुवचन है.",
+      "sound": "children में बीच का हिस्सा दब जाता है — चिल्ड्रन.",
+      "variations": [
+        {
+          "display": "My relatives come to the house on Monday.",
+          "cue": "मेरे रिश्तेदार सोमवार को घर आते हैं.",
+          "changed": "दिन जोड़ा"
+        },
+        {
+          "display": "The children who come are very happy.",
+          "cue": "जो बच्चे आते हैं वे बहुत ख़ुश होते हैं.",
+          "changed": "who वाला जोड़"
+        },
+        {
+          "display": "The fireworks are very good.",
+          "cue": "पटाख़े बहुत अच्छे हैं.",
+          "changed": "बहुवचन क्रिया"
+        }
+      ],
+      "mistake": {
+        "display": "My relatives comes and the childrens are happy",
+        "why": "बहुवचन क्रिया और सही बहुवचन: My relatives come and the children are happy."
+      },
+      "usage": "त्योहार पर घर में कौन आता है, यह बताना.",
+      "register": "neutral",
+      "mnemonic": "child एक, children कई."
+    },
+    {
+      "id": "L3-M9-S07",
+      "display": "We give a gift to the people who come.",
+      "cue": "जो लोग आते हैं उन्हें हम तोहफ़ा देते हैं.",
+      "literal": "हम देते एक तोहफ़ा को वे लोग जो आते.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gift",
+            "cue": "तोहफ़ा · उपहार",
+            "tag": "free",
+            "forms": ["gift", "gifts"],
+            "note": "गिना जाता है: a gift, two gifts. किसे दिया, वह to से जुड़ता है: a gift to my sister."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "the people who come them ग़लत है. who ही कर्ता है और उसके बाद जगह नहीं दोहराई जाती.",
+      "sound": "gift में g की आवाज़ भारी — गिफ़्ट.",
+      "variations": [
+        {
+          "display": "We give a gift to my relatives.",
+          "cue": "हम अपने रिश्तेदारों को तोहफ़ा देते हैं.",
+          "changed": "बिना जोड़ का वाक्य"
+        },
+        {
+          "display": "The gift we give is very good.",
+          "cue": "जो तोहफ़ा हम देते हैं वह बहुत अच्छा होता है.",
+          "changed": "गिरा हुआ जोड़"
+        },
+        {
+          "display": "We give a gift to the children on that day.",
+          "cue": "उस दिन हम बच्चों को तोहफ़ा देते हैं.",
+          "changed": "दिन जोड़ा"
+        }
+      ],
+      "mistake": {
+        "display": "We give a gift to the people who they come",
+        "why": "who के बाद they नहीं: to the people who come."
+      },
+      "usage": "त्योहार की रस्म का ब्योरा देना.",
+      "register": "neutral",
+      "mnemonic": "who के बाद सीधी क्रिया."
+    },
+    {
+      "id": "L3-M9-S08",
+      "display": "It is the day when the new year starts.",
+      "cue": "यह वह दिन है जब नया साल शुरू होता है.",
+      "literal": "यह है वह दिन जब वह नया साल शुरू होता.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "year",
+            "cue": "साल · बरस",
+            "tag": "free",
+            "forms": ["year", "years"],
+            "note": "गिना जाता है: a year, two years. साल के आगे in आता है, जैसे महीने के आगे."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "when यहाँ सवाल नहीं पूछ रहा (L2-M10 वाला काम), बल्कि दिन का ब्योरा जोड़ रहा है.",
+      "sound": "year एक ही अक्षर में — यिअर.",
+      "variations": [
+        {
+          "display": "It is the day when my relatives come.",
+          "cue": "यह वह दिन है जब मेरे रिश्तेदार आते हैं.",
+          "changed": "दूसरा ब्योरा"
+        },
+        {
+          "display": "It is the day when we decorate the house.",
+          "cue": "यह वह दिन है जब हम घर सजाते हैं.",
+          "changed": "दूसरा काम"
+        },
+        {
+          "display": "The new year starts in winter.",
+          "cue": "नया साल सर्दियों में शुरू होता है.",
+          "changed": "बिना जोड़ का वाक्य"
+        }
+      ],
+      "mistake": {
+        "display": "It is the day when the new year it starts",
+        "why": "when के बाद जगह दोबारा नहीं भरी जाती: the day when the new year starts."
+      },
+      "usage": "किसी तारीख़ का मतलब समझाना.",
+      "register": "neutral",
+      "mnemonic": "दिन का ब्योरा when से."
+    },
+    {
+      "id": "L3-M9-S09",
+      "display": "People usually eat sweets on that day. In winter people often decorate the house.",
+      "cue": "उस दिन लोग आम तौर पर मिठाई खाते हैं. सर्दियों में लोग अक्सर घर सजाते हैं.",
+      "literal": "लोग आम-तौर-पर खाते मिठाई पर वह दिन. में सर्दी लोग अक्सर सजाते वह घर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "often",
+            "cue": "अक्सर",
+            "tag": "free",
+            "forms": ["often"],
+            "note": "usually से थोड़ा कम, sometimes से ज़्यादा. जगह वही है — कर्ता के बाद, क्रिया से पहले."
+          },
+          {
+            "display": "winter",
+            "cue": "सर्दी · जाड़े का मौसम",
+            "tag": "free",
+            "forms": ["winter", "winters"],
+            "note": "मौसम के आगे in आता है: in winter. महीने और साल की तरह."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "on winter और in that day दोनों ग़लत हैं. मौसम में in, दिन पर on.",
+      "sound": "often में t अक्सर चुप रहता है — ऑफ़न.",
+      "variations": [
+        {
+          "display": "People usually eat sweets at this festival.",
+          "cue": "इस त्योहार पर लोग आम तौर पर मिठाई खाते हैं.",
+          "changed": "त्योहार पर at"
+        },
+        {
+          "display": "We often decorate the house in October.",
+          "cue": "हम अक्सर अक्तूबर में घर सजाते हैं.",
+          "changed": "महीने के साथ in"
+        },
+        {
+          "display": "The children often come on that day.",
+          "cue": "उस दिन बच्चे अक्सर आते हैं.",
+          "changed": "दूसरा कर्ता"
+        }
+      ],
+      "mistake": {
+        "display": "People eat sweets in that day",
+        "why": "दिन के आगे on: People eat sweets on that day."
+      },
+      "usage": "आम रिवाज़ बताना — कौन क्या करता है.",
+      "register": "neutral",
+      "mnemonic": "in मौसम, on दिन."
+    },
+    {
+      "id": "L3-M9-S10",
+      "display": "My family celebrates this festival at home. It is a holiday which we like.",
+      "cue": "मेरा परिवार यह त्योहार घर पर मनाता है. यह एक छुट्टी है जो हमें पसंद है.",
+      "literal": "मेरा परिवार मनाता यह त्योहार पर घर. यह है एक छुट्टी जो हम पसंद-करते.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "family",
+            "cue": "परिवार",
+            "tag": "delta",
+            "forms": ["family", "families"],
+            "note": "अंग्रेज़ी इसे एक इकाई मानती है: My family celebrates, न कि celebrate. बहुवचन में y हटकर -ies आता है."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "family के साथ अंग्रेज़ी एकवचन क्रिया लेती है, जबकि हिंदी में परिवार वाले सब बहुवचन लगते हैं.",
+      "sound": "family में बीच का हिस्सा दब जाता है — फ़ैम्ली.",
+      "variations": [
+        {
+          "display": "My family celebrates it at home.",
+          "cue": "मेरा परिवार इसे घर पर मनाता है.",
+          "changed": "छोटा रूप"
+        },
+        {
+          "display": "It is a festival which we like.",
+          "cue": "यह एक त्योहार है जो हमें पसंद है.",
+          "changed": "दूसरी संज्ञा"
+        },
+        {
+          "display": "My family celebrated it in October.",
+          "cue": "मेरे परिवार ने इसे अक्तूबर में मनाया.",
+          "changed": "बीता हुआ"
+        }
+      ],
+      "mistake": {
+        "display": "My family celebrate this festival",
+        "why": "family एक इकाई है: My family celebrates this festival."
+      },
+      "usage": "अपने घर का रिवाज़ किसी बाहरी को बताना.",
+      "register": "neutral",
+      "mnemonic": "family एक, इसलिए celebrates."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M9-C01",
+      "display": "It is a festival which lasts five days.",
+      "cue": "यह एक त्योहार है जो पाँच दिन चलता है."
+    },
+    {
+      "id": "L3-M9-C02",
+      "display": "The people who celebrate it are very happy.",
+      "cue": "जो लोग इसे मनाते हैं वे बहुत ख़ुश रहते हैं."
+    },
+    {
+      "id": "L3-M9-C03",
+      "display": "It is in October. The holiday is on Monday.",
+      "cue": "यह अक्तूबर में पड़ता है. छुट्टी सोमवार को है."
+    },
+    {
+      "id": "L3-M9-C04",
+      "display": "At this festival people decorate the house.",
+      "cue": "इस त्योहार पर लोग घर सजाते हैं."
+    },
+    {
+      "id": "L3-M9-C05",
+      "display": "The sweets we make are very good.",
+      "cue": "जो मिठाई हम बनाते हैं वह बहुत अच्छी होती है."
+    },
+    {
+      "id": "L3-M9-C06",
+      "display": "My relatives come to the house.",
+      "cue": "मेरे रिश्तेदार घर आते हैं."
+    },
+    {
+      "id": "L3-M9-C07",
+      "display": "The children like the fireworks.",
+      "cue": "बच्चों को पटाख़े पसंद हैं."
+    },
+    {
+      "id": "L3-M9-C08",
+      "display": "We give a gift to the people who come.",
+      "cue": "जो लोग आते हैं उन्हें हम तोहफ़ा देते हैं."
+    },
+    {
+      "id": "L3-M9-C09",
+      "display": "It is the day when the new year starts.",
+      "cue": "यह वह दिन है जब नया साल शुरू होता है."
+    },
+    {
+      "id": "L3-M9-C10",
+      "display": "People usually eat sweets on that day.",
+      "cue": "उस दिन लोग आम तौर पर मिठाई खाते हैं."
+    },
+    {
+      "id": "L3-M9-C11",
+      "display": "In winter people often decorate the house.",
+      "cue": "सर्दियों में लोग अक्सर घर सजाते हैं."
+    },
+    {
+      "id": "L3-M9-C12",
+      "display": "My family celebrates this festival at home.",
+      "cue": "मेरा परिवार यह त्योहार घर पर मनाता है."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

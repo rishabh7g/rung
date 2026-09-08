@@ -1,0 +1,655 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M10",
+  "title": "Your own story",
+  "job": "An eight-sentence account, built from the whole ladder",
+  "prerequisites": [
+    "L3-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "present",
+      "passé composé",
+      "imparfait",
+      "infinitive after de or à"
+    ],
+    "allowedPatterns": [
+      "<imparfait scene> + . + <passé composé step> + .",
+      "Pendant que + <imparfait> + , + <passé composé>",
+      "À la fin + <passé composé>",
+      "Il a dit que + <backshifted clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE IMPARFAIT PAINTS THE SITUATION AND THE PASSÉ COMPOSÉ MOVES THE STORY ON. il pleuvait, j'étais fatigué, le bureau était tranquille — those are the backdrop, and nothing happens in them. mon frère est arrivé, j'ai téléphoné, on est rentré — each of those is one completed step. L2-M10 opened this in four sentences; at eight it is the whole account, and swapping one pair changes WHAT HAPPENED, not just how it sounds."
+    },
+    {
+      "tag": "delta",
+      "text": "pendant que TAKES THE IMPARFAIT, AND THE THING THAT INTERRUPTS IT TAKES THE PASSÉ COMPOSÉ. Pendant que j'attendais, mon frère est arrivé — one clause is still running when the other lands in it. Two passés composés in a row would say the two things simply followed each other, which is a different story."
+    },
+    {
+      "tag": "interference",
+      "text": "quand AND dès que ARE NOT pendant que. quand je suis arrivé is when I arrived, one point; dès que je suis arrivé is the moment I arrived, and both take the passé composé for a completed step. pendant que is the only one of the three that says while, and the only one that wants the imparfait behind it."
+    },
+    {
+      "tag": "delta",
+      "text": "être TAKES THE MOVEMENT AND CHANGE-OF-STATE VERBS AND ITS PARTICIPLE AGREES WITH THE SUBJECT: elle est venue, ma sœur est venue, je suis tombé. avoir takes everything else and agrees with nothing — j'ai téléphoné, j'ai signé — except with L3-M5's direct object when that object comes first. The whole law is docs/58's, tested here at length."
+    },
+    {
+      "tag": "interference",
+      "text": "AND THAT AGREEMENT IS STILL WRITING-ONLY. venu and venue sound identical; arrivé and arrivée sound identical. Eight sentences is the only honest test of whether you have it, because in speech you can be wrong for a year and never find out."
+    },
+    {
+      "tag": "free",
+      "text": "au début AND à la fin FRAME AN ACCOUNT, AND THEY ARE NOT après AND avant. au début is at the start of the whole story, à la fin at the end of it — they order the account rather than two events, and each takes whatever tense its own clause needs."
+    },
+    {
+      "tag": "interference",
+      "text": "THE ne IS STILL WRITTEN, AND IN A WRITTEN ACCOUNT MORE THAN ANYWHERE. il n'était pas sur la table, ce n'était pas grave. This is the last module of the level and the rule has not moved since L1-M3."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M10-S01",
+      "display": "Hier j'attendais le bus. Il pleuvait beaucoup. Pendant que j'attendais, mon frère est arrivé. Il était très fatigué. Puis on est parti ensemble. À la fin, je suis rentré très tard.",
+      "cue": "Yesterday I was waiting for the bus. It was raining hard. While I was waiting, my brother arrived. He was very tired. Then we left together. In the end I got home very late.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pendant que",
+            "cue": "while",
+            "tag": "delta",
+            "forms": [],
+            "note": "One key, two words, and it always takes the imparfait behind it. pendant on its own is during and takes a noun — pendant les vacances — which is L4's."
+          },
+          {
+            "display": "j'attendais",
+            "cue": "I was waiting",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M5's attendre in the imparfait, elided onto je. The waiting is still going on when something else lands in it."
+          },
+          {
+            "display": "à la fin",
+            "cue": "in the end · at the end",
+            "tag": "free",
+            "forms": [],
+            "note": "One key. It closes an account, where enfin closes an argument — the two are not the same word and French keeps them apart."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          5
+        ]
+      },
+      "trap": "English can put a simple past on both halves — I waited and my brother arrived. French will not: the half that was still running has to be the imparfait.",
+      "sound": "The pivot: pahn-DAHN kuh zha-tahn-DEH, mon frehr eh ta-ree-VAY.",
+      "variations": [
+        {
+          "display": "Pendant que j'attendais, mon frère est arrivé",
+          "cue": "While I was waiting, my brother arrived",
+          "changed": "the pivot on its own — one running, one landing"
+        },
+        {
+          "display": "J'attendais, et puis mon frère est arrivé",
+          "cue": "I was waiting, and then my brother arrived",
+          "changed": "puis instead of pendant que, and the two clauses come apart"
+        }
+      ],
+      "mistake": {
+        "display": "Pendant que j'ai attendu, mon frère est arrivé",
+        "why": "pendant que needs the running tense. Pendant que j'attendais, mon frère est arrivé."
+      },
+      "usage": "The commonest shape of any story: a wait, and the thing that ended it.",
+      "register": "neutral",
+      "mnemonic": "One tense is still going; the other one lands."
+    },
+    {
+      "id": "L3-M10-S02",
+      "display": "Au début, je cherchais mon formulaire. Il n'était pas sur la table. Pendant que je cherchais, mon fils est venu. Il avait le formulaire. Dès que je l'ai vu, je suis parti. Je suis arrivé au bureau très tard.",
+      "cue": "At first I was looking for my form. It wasn't on the table. While I was looking, my son came in. He had the form. As soon as I saw it, I left. I got to the office very late.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "au début",
+            "cue": "at first · at the start",
+            "tag": "free",
+            "forms": [],
+            "note": "One key, and the opposite bookend to à la fin. It frames the account, not a single event — the story starts here, not the search."
+          },
+          {
+            "display": "dès que",
+            "cue": "as soon as",
+            "tag": "delta",
+            "forms": [],
+            "note": "Takes a completed step, so the passé composé: dès que je l'ai vu. Not pendant que, which would say the two overlapped."
+          },
+          {
+            "display": "cherchais",
+            "cue": "was looking for",
+            "tag": "delta",
+            "forms": [],
+            "note": "chercher in the imparfait. The verb needs no preposition: je cherchais mon formulaire, never *je cherchais pour mon formulaire."
+          },
+          {
+            "display": "venu",
+            "cue": "came",
+            "tag": "free",
+            "forms": [],
+            "note": "The participle of venir, on être: il est venu, elle est venue. Movement, so it agrees with the subject."
+          },
+          {
+            "display": "l'ai",
+            "cue": "I …ed it",
+            "tag": "free",
+            "forms": [],
+            "note": "le or la elided in front of ai. The object comes before the verb here, as L3-M5 taught, and it drags its article-shaped pronoun with it."
+          },
+          {
+            "display": "n'était",
+            "cue": "wasn't",
+            "tag": "free",
+            "forms": [],
+            "note": "ne elided onto était. Written in full in an account, however completely speech drops it."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3,
+          5,
+          6
+        ]
+      },
+      "trap": "dès que and pendant que look interchangeable and are not. dès que je cherchais would say the search itself was the trigger, which is not a sentence anyone means.",
+      "sound": "The pivot: deh kuh zhuh leh VEW, zhuh swee par-TEE.",
+      "variations": [
+        {
+          "display": "Dès que je l'ai vu, je suis parti",
+          "cue": "As soon as I saw it, I left",
+          "changed": "two completed steps, one after the other"
+        },
+        {
+          "display": "Il n'était pas sur la table",
+          "cue": "It wasn't on the table",
+          "changed": "the backdrop in the imparfait, with the ne written"
+        }
+      ],
+      "mistake": {
+        "display": "Pendant que je l'ai vu, je suis parti",
+        "why": "Seeing it was a point, not a stretch. Dès que je l'ai vu, je suis parti."
+      },
+      "usage": "Explaining a late arrival without sounding as though you are making excuses.",
+      "register": "neutral",
+      "mnemonic": "au début opens the account; à la fin closes it."
+    },
+    {
+      "id": "L3-M10-S03",
+      "display": "C'était samedi et il faisait beau. Tout le monde était content. On a mangé au restaurant. Puis on a bu un café. Pendant que j'attendais, il a commencé à pleuvoir. À la fin, on est rentré à pied.",
+      "cue": "It was Saturday and the weather was fine. Everyone was happy. We ate at a restaurant. Then we had a coffee. While I was waiting, it started to rain. In the end we walked home.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "c'était",
+            "cue": "it was",
+            "tag": "delta",
+            "forms": [],
+            "note": "ce plus L2-M10's était, written as one word. It sets a scene — c'était samedi, c'était mon anniversaire — and never moves a story forward."
+          },
+          {
+            "display": "commencé",
+            "cue": "started",
+            "tag": "free",
+            "forms": [],
+            "note": "On avoir, so no agreement: il a commencé. commencer À faire quelque chose — the à is compulsory before an infinitive."
+          },
+          {
+            "display": "pleuvoir",
+            "cue": "to rain",
+            "tag": "free",
+            "forms": [],
+            "note": "The infinitive behind L2-M10's il pleuvait. Impersonal: only il ever does it, and there is no other subject."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          3,
+          5
+        ]
+      },
+      "trap": "c'était samedi is the scene and on a mangé is the story. Writing ça a été samedi puts a frame round a day, which French does not do.",
+      "sound": "The pivot: eel a ko-mahn-SAY a pluh-VWAHR.",
+      "variations": [
+        {
+          "display": "Il a commencé à pleuvoir",
+          "cue": "It started to rain",
+          "changed": "one completed step in the middle of a scene"
+        },
+        {
+          "display": "Tout le monde était content",
+          "cue": "Everyone was happy",
+          "changed": "pure backdrop, and nothing happens in it"
+        }
+      ],
+      "mistake": {
+        "display": "C'est était samedi",
+        "why": "ce and était fuse into one word. C'était samedi."
+      },
+      "usage": "Telling someone about a good day, which is mostly scene and very little plot.",
+      "register": "neutral",
+      "mnemonic": "c'était paints; a passé composé moves."
+    },
+    {
+      "id": "L3-M10-S04",
+      "display": "J'étais malade depuis lundi. J'avais mal à la tête. Au début, je suis resté à la maison. Puis j'ai téléphoné au médecin. Il m'a dit de venir. Dès que je suis arrivé, il m'a donné une ordonnance.",
+      "cue": "I'd been ill since Monday. I had a headache. At first I stayed at home. Then I phoned the doctor. He told me to come. As soon as I got there, he gave me a prescription.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "téléphoné",
+            "cue": "phoned",
+            "tag": "free",
+            "forms": [],
+            "note": "On avoir, no agreement. téléphoner À quelqu'un — the person takes à, which is why it is j'ai téléphoné au médecin and never *j'ai téléphoné le médecin."
+          },
+          {
+            "display": "donné",
+            "cue": "gave",
+            "tag": "free",
+            "forms": [],
+            "note": "On avoir. Two objects, and the person is the indirect one: il m'a donné une ordonnance — L3-M5's me before the verb, the thing after it."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3,
+          5
+        ]
+      },
+      "trap": "j'étais malade depuis lundi keeps M7's rule: still true, so the imparfait is the past version of that present. j'ai été malade depuis lundi says it is over.",
+      "sound": "The pivot: deh kuh zhuh swee za-ree-VAY, eel ma do-nay oon or-do-NAHNS.",
+      "variations": [
+        {
+          "display": "J'ai téléphoné au médecin",
+          "cue": "I phoned the doctor",
+          "changed": "one step, on avoir, agreeing with nothing"
+        },
+        {
+          "display": "Il m'a donné une ordonnance",
+          "cue": "He gave me a prescription",
+          "changed": "the pronoun before the verb, the thing after it"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai téléphoné le médecin",
+        "why": "téléphoner reaches its person through à. J'ai téléphoné au médecin."
+      },
+      "usage": "The account you give at work on the day you come back.",
+      "register": "neutral",
+      "mnemonic": "Still true takes the imparfait, even in the past."
+    },
+    {
+      "id": "L3-M10-S05",
+      "display": "Hier soir, je travaillais encore. Le bureau était tranquille. Pendant que je travaillais, le patron a appelé. Il voulait le document. Je l'ai cherché dans le bureau. À la fin, je l'ai trouvé sur la table.",
+      "cue": "Last night I was still working. The office was quiet. While I was working, the boss rang. He wanted the document. I looked for it around the office. In the end I found it on the table.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cherché",
+            "cue": "looked for",
+            "tag": "free",
+            "forms": [],
+            "note": "On avoir. The object came first here — je L'ai cherché — so L3-M5's agreement rule applies, and it is silent."
+          },
+          {
+            "display": "trouvé",
+            "cue": "found",
+            "tag": "free",
+            "forms": [],
+            "note": "On avoir, the twin of cherché: one is the search and one is the result. je l'ai trouvé, je les ai trouvés."
+          },
+          {
+            "display": "soir",
+            "cue": "evening",
+            "tag": "free",
+            "forms": [],
+            "note": "hier soir is last night and ce soir is this evening. The word for night itself is la nuit, which is when you sleep."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          3,
+          4
+        ]
+      },
+      "trap": "je l'ai cherché carries a silent agreement with the object in front of it. If the document were a facture it would be je l'ai cherchée — and you would hear nothing at all.",
+      "sound": "The pivot: pahn-DAHN kuh zhuh tra-va-YEH, luh pa-tron a a-play.",
+      "variations": [
+        {
+          "display": "Pendant que je travaillais, le patron a appelé",
+          "cue": "While I was working, the boss rang",
+          "changed": "the pivot alone: one running, one landing"
+        },
+        {
+          "display": "Je l'ai cherché dans le bureau, et je l'ai trouvé",
+          "cue": "I looked for it in the office, and I found it",
+          "changed": "two completed steps, both with the object in front"
+        }
+      ],
+      "mistake": {
+        "display": "Pendant que j'ai travaillé, le patron a appelé",
+        "why": "The work was still going on. Pendant que je travaillais, le patron a appelé."
+      },
+      "usage": "The story of a long evening, told the next morning.",
+      "register": "neutral",
+      "mnemonic": "Search and find are two steps, not one."
+    },
+    {
+      "id": "L3-M10-S06",
+      "display": "C'était le premier janvier. Il faisait très froid. Tout le monde était en famille. Ma sœur est venue avec ses enfants. Elle avait un cadeau pour tout le monde. À la fin, tout le monde est parti très tard.",
+      "cue": "It was the first of January. It was very cold. Everyone was with family. My sister came with her children. She had a present for everybody. In the end everyone left very late.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tout le monde",
+            "cue": "everyone · everybody",
+            "tag": "free",
+            "forms": [],
+            "note": "Three words, one meaning, and a SINGULAR verb: tout le monde est parti, never sont partis. Literally all the world, and French treats it as one."
+          },
+          {
+            "display": "venue",
+            "cue": "came (of a woman)",
+            "tag": "free",
+            "forms": [],
+            "note": "elle est venue — être, so the participle agrees with the subject. venu and venue sound exactly the same."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          4,
+          5
+        ]
+      },
+      "trap": "tout le monde looks plural in every way and takes a singular verb and a singular participle. tout le monde sont partis is the single commonest agreement mistake in this module.",
+      "sound": "The pivot: ma suhr eh vuh-NEW a-vek say zahn-FAHN.",
+      "variations": [
+        {
+          "display": "Ma sœur est venue avec ses enfants",
+          "cue": "My sister came with her children",
+          "changed": "être, and the -e that agrees with elle"
+        },
+        {
+          "display": "Tout le monde était content",
+          "cue": "Everyone was happy",
+          "changed": "singular était, however plural the meaning feels"
+        }
+      ],
+      "mistake": {
+        "display": "Tout le monde sont partis très tard",
+        "why": "tout le monde is singular. Tout le monde est parti très tard."
+      },
+      "usage": "The account of a family gathering, which every course reaches eventually.",
+      "register": "neutral",
+      "mnemonic": "All the world is one person, grammatically."
+    },
+    {
+      "id": "L3-M10-S07",
+      "display": "Au début, j'étais très fatigué. Il pleuvait et je voulais rester ici. Puis mon ami a téléphoné. Il m'a dit de venir au cinéma. Dès que le film a commencé, j'étais content. À la fin, on est rentré tard dans la nuit.",
+      "cue": "At first I was very tired. It was raining and I wanted to stay in. Then my friend rang. He told me to come to the cinema. As soon as the film started, I was happy. In the end we got home late at night.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nuit",
+            "cue": "night",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine: la nuit. dans la nuit is late in the night; la nuit on its own is at night, as a habit. le soir is the evening, and the two do not overlap."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3,
+          5
+        ]
+      },
+      "trap": "j'étais content after dès que is not a step — it is the state the step put you in. A passé composé there (j'ai été content) would report the happiness as an event that finished.",
+      "sound": "The pivot: deh kuh luh feelm a ko-mahn-SAY, zhay-teh kon-TAHN.",
+      "variations": [
+        {
+          "display": "Dès que le film a commencé, j'étais content",
+          "cue": "As soon as the film started, I was happy",
+          "changed": "a step, and then the state it created"
+        },
+        {
+          "display": "On est rentré tard dans la nuit",
+          "cue": "We got home late at night",
+          "changed": "être with on, and the participle staying singular"
+        }
+      ],
+      "mistake": {
+        "display": "Dès que le film a commencé, j'ai été content",
+        "why": "The happiness was a state, not an event. Dès que le film a commencé, j'étais content."
+      },
+      "usage": "The evening you did not want and were glad of. Everyone has one.",
+      "register": "informal",
+      "mnemonic": "A step can create a state; it does not become one."
+    },
+    {
+      "id": "L3-M10-S08",
+      "display": "Je cherchais une maison depuis trois mois. C'était très fatigant. Pendant que je cherchais, une amie m'a appelé. Elle avait trouvé quelque chose. On est allé voir la maison ce soir. À la fin, j'ai signé le formulaire.",
+      "cue": "I'd been looking for a house for three months. It was exhausting. While I was looking, a friend rang me. She'd found something. We went to see the house that evening. In the end I signed the form.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "signé",
+            "cue": "signed",
+            "tag": "free",
+            "forms": [],
+            "note": "On avoir, so nothing agrees: j'ai signé, elle a signé. The infinitive and the present are L3-M8's signer and signe."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          3,
+          5
+        ]
+      },
+      "trap": "je cherchais depuis trois mois is M7's depuis in the past: still going on then, so the imparfait. English needs a pluperfect (I had been looking) and French does not.",
+      "sound": "The pivot: a la FAN, zhay see-nyay luh for-mew-LEHR.",
+      "variations": [
+        {
+          "display": "J'ai signé le formulaire ce soir",
+          "cue": "I signed the form this evening",
+          "changed": "one completed step, agreeing with nothing"
+        },
+        {
+          "display": "Pendant que je cherchais, une amie m'a appelé",
+          "cue": "While I was looking, a friend rang me",
+          "changed": "the pivot, with the search still running"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai cherché une maison depuis trois mois",
+        "why": "It was still going on, so the imparfait. Je cherchais une maison depuis trois mois."
+      },
+      "usage": "The story every person who has moved to France tells within a month.",
+      "register": "neutral",
+      "mnemonic": "depuis in the past keeps the running tense, exactly as it kept the present."
+    },
+    {
+      "id": "L3-M10-S09",
+      "display": "Hier, je suis tombé dans la rue. Il pleuvait beaucoup. J'avais mal au bras. Une femme est venue et elle m'a parlé. On est allé à la pharmacie. À la fin, ce n'était pas grave.",
+      "cue": "Yesterday I fell over in the street. It was raining hard. My arm hurt. A woman came over and spoke to me. We went to the chemist. In the end it was nothing serious.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tombé",
+            "cue": "fell",
+            "tag": "free",
+            "forms": [],
+            "note": "On être — falling is movement — so it agrees: je suis tombé, elle est tombée. English's fell down needs no down here."
+          },
+          {
+            "display": "grave",
+            "cue": "serious",
+            "tag": "free",
+            "forms": [],
+            "note": "One shape for both genders. ce n'est pas grave is also what you say to wave away an apology, and it is the commonest sentence in the language."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          4,
+          6
+        ]
+      },
+      "trap": "je suis tombé takes être and agrees; j'ai tombé is not French at all. Movement verbs do not get a choice of auxiliary, however much English suggests one.",
+      "sound": "The pivot: a la FAN, suh nay-teh pa GRAHV.",
+      "variations": [
+        {
+          "display": "Je suis tombé dans la rue",
+          "cue": "I fell over in the street",
+          "changed": "être, and the participle agreeing with je"
+        },
+        {
+          "display": "Ce n'était pas grave",
+          "cue": "It was nothing serious",
+          "changed": "the imparfait closing the account, with the ne written"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai tombé dans la rue",
+        "why": "tomber is a movement verb and takes être. Je suis tombé dans la rue."
+      },
+      "usage": "The account you give when someone notices the bruise.",
+      "register": "neutral",
+      "mnemonic": "Movement goes with être, and then it agrees."
+    },
+    {
+      "id": "L3-M10-S10",
+      "display": "C'était mon anniversaire. Il faisait chaud et tout le monde était là. Les cadeaux étaient sur la table. Ma mère avait fait des gâteaux. Pendant que je cherchais mon frère, il est arrivé. À la fin, j'étais fatigué mais content.",
+      "cue": "It was my birthday. It was warm and everyone was there. The presents were on the table. My mother had made cakes. While I was looking for my brother, he arrived. In the end I was tired but happy.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "étaient",
+            "cue": "were",
+            "tag": "free",
+            "forms": [],
+            "note": "The plural of était: les cadeaux étaient. It sounds exactly like était — only the paper knows how many there were."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4,
+          5
+        ]
+      },
+      "trap": "était and étaient are one sound and two spellings. An account with several things in its backdrop is where the difference finally has to be written down.",
+      "sound": "The pivot: lay ka-DOH ay-teh sewr la TA-bluh.",
+      "variations": [
+        {
+          "display": "Les cadeaux étaient sur la table",
+          "cue": "The presents were on the table",
+          "changed": "plural backdrop, and nothing is heard"
+        },
+        {
+          "display": "Pendant que je cherchais mon frère, il est arrivé",
+          "cue": "While I was looking for my brother, he arrived",
+          "changed": "the level's pivot one last time"
+        }
+      ],
+      "mistake": {
+        "display": "Les cadeaux était sur la table",
+        "why": "Plural subject, plural verb, even though it sounds identical. Les cadeaux étaient sur la table."
+      },
+      "usage": "The last account of the level, and the one worth writing out by hand.",
+      "register": "neutral",
+      "mnemonic": "Your ear cannot count; your pen has to."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M10-C01",
+      "display": "Pendant que j'attendais, mon frère est arrivé",
+      "cue": "While I was waiting, my brother arrived"
+    },
+    {
+      "id": "L3-M10-C02",
+      "display": "J'attendais, et puis mon frère est arrivé",
+      "cue": "I was waiting, and then my brother arrived"
+    },
+    {
+      "id": "L3-M10-C03",
+      "display": "Au début, je cherchais mon formulaire",
+      "cue": "At first I was looking for my form"
+    },
+    {
+      "id": "L3-M10-C04",
+      "display": "Dès que je l'ai vu, je suis parti",
+      "cue": "As soon as I saw it, I left"
+    },
+    {
+      "id": "L3-M10-C05",
+      "display": "C'était samedi et il faisait beau",
+      "cue": "It was Saturday and the weather was fine"
+    },
+    {
+      "id": "L3-M10-C06",
+      "display": "Il a commencé à pleuvoir",
+      "cue": "It started to rain"
+    },
+    {
+      "id": "L3-M10-C07",
+      "display": "J'ai téléphoné au médecin",
+      "cue": "I phoned the doctor"
+    },
+    {
+      "id": "L3-M10-C08",
+      "display": "Il m'a donné une ordonnance",
+      "cue": "He gave me a prescription"
+    },
+    {
+      "id": "L3-M10-C09",
+      "display": "Pendant que je travaillais, le patron a appelé",
+      "cue": "While I was working, the boss rang"
+    },
+    {
+      "id": "L3-M10-C10",
+      "display": "Ma sœur est venue avec ses enfants",
+      "cue": "My sister came with her children"
+    },
+    {
+      "id": "L3-M10-C11",
+      "display": "Tout le monde est parti très tard",
+      "cue": "Everyone left very late"
+    },
+    {
+      "id": "L3-M10-C12",
+      "display": "Je suis tombé dans la rue, mais ce n'était pas grave",
+      "cue": "I fell over in the street, but it was nothing serious"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

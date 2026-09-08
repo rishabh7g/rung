@@ -1,0 +1,628 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M8",
+  "title": "Money and paperwork",
+  "job": "Rent, bills, forms, offices",
+  "prerequisites": [
+    "L3-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "present",
+      "infinitive after il faut"
+    ],
+    "allowedPatterns": [
+      "On + V-3sg + <complement>",
+      "Il faut + V-inf",
+      "Je dois payer + <N> + avant le + <date>",
+      "Où est-ce qu'on signe + ?",
+      "J'ai besoin de + <N>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "on IS THE LANGUAGE OF A COUNTER AND A FORM, AND IT TAKES A THIRD-PERSON SINGULAR VERB. ici on paie en espèces, on ne peut pas payer ici, où est-ce qu'on signe ? L2-M6 opened on as the spoken we; this is its other reading, the impersonal one — English's you, one, or a passive. The verb never changes shape between the two readings, and nothing in the sentence tells you which is meant except the situation."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH TURNS THE SENTENCE ROUND AND FRENCH DOES NOT. Cash only becomes on paie en espèces, and Where do I sign? becomes où est-ce qu'on signe ? A learner reaching for a passive — the rent is paid — writes something French keeps for the written register and L4 will teach; at a counter, on does the whole job."
+    },
+    {
+      "tag": "delta",
+      "text": "il faut IS THE OBLIGATION WITH NOBODY IN IT, AND IT TAKES A BARE INFINITIVE. il faut remplir ce formulaire, il faut signer ici. It is L2-M4's faut and nothing about it is new; what is new is how much of an office runs on it. No de, ever — il faut de signer is not French."
+    },
+    {
+      "tag": "delta",
+      "text": "avoir besoin de IS THE PERSONAL NEED, AND ITS de IS COMPULSORY: j'ai besoin de ce document, j'ai besoin de la facture. It elides before a vowel — j'ai besoin d'un reçu, j'ai besoin d'une pièce d'identité — exactly as L3-M6's j'ai envie de does. il faut says a rule requires it; j'ai besoin de says you need it."
+    },
+    {
+      "tag": "free",
+      "text": "A COUNTER IS SPOKEN IN vous, AND NO NEW POLITENESS SHAPE IS NEEDED. excusez-moi (L2-M1), est-ce que (L2-M1) and je voudrais (L2-M1) carry every request in this module. est-ce que elides onto on and becomes est-ce qu'on — one surface, and the only place the question word changes shape."
+    },
+    {
+      "tag": "interference",
+      "text": "THE ne IS STILL WRITTEN, AND AN OFFICE IS WHERE IT MATTERS MOST. on ne peut pas payer ici, il ne faut pas signer ce document. Spoken French drops it and every printed notice keeps it — so the register you are reading in is the one that writes it."
+    },
+    {
+      "tag": "free",
+      "text": "THE PAPER HAS ITS OWN VOCABULARY AND IT IS NOT THE TEXTBOOK'S. What is printed is loyer, facture, reçu, formulaire, échéance, virement, pièce d'identité. échéance is the due date on a bill; a reçu is what you are handed and a facture is what you are billed — English blurs both into receipt and invoice, and French does not."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M8-S01",
+      "display": "Ici on paie en espèces",
+      "cue": "Cash only here",
+      "literal": "Here one pays in cash",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "payer",
+            "cue": "to pay",
+            "tag": "delta",
+            "forms": [
+              "payer",
+              "paie"
+            ],
+            "note": "on paie is the third-person singular — on always takes it, in both its readings. je paie, on paie, and the infinitive after il faut is payer."
+          },
+          {
+            "display": "espèces",
+            "cue": "cash",
+            "tag": "free",
+            "forms": [],
+            "note": "Always plural, always with en: payer en espèces. argent is money in general; espèces is notes and coins, and it is what the sign on the till says."
+          },
+          {
+            "display": "banque",
+            "cue": "bank",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine: la banque, à la banque. The building; the account inside it is le compte."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English writes this as a sign with no verb at all — Cash only. French needs the verb and puts on in front of it, so the sentence has a subject even when nobody is meant.",
+      "sound": "ee-see on peh ahn ez-PESS.",
+      "variations": [
+        {
+          "display": "Ici on paie avec une carte",
+          "cue": "You pay by card here",
+          "changed": "the means changes; on and its verb do not"
+        },
+        {
+          "display": "On paie à la banque",
+          "cue": "You pay at the bank",
+          "changed": "the place changes, and à la because banque is feminine"
+        }
+      ],
+      "mistake": {
+        "display": "Ici nous payons en espèces",
+        "why": "Not wrong, but it is not what a counter says. A notice uses on: ici on paie en espèces."
+      },
+      "usage": "Reading the sign above a till, and repeating it to someone who missed it.",
+      "register": "neutral",
+      "mnemonic": "A French notice always finds a subject: on."
+    },
+    {
+      "id": "L3-M8-S02",
+      "display": "On ne peut pas payer ici",
+      "cue": "You can't pay here",
+      "literal": "One not can not to-pay here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "carte",
+            "cue": "card",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine. La carte bancaire is the bank card, and payer avec une carte or payer par carte are both said — with avec while par waits for L4."
+          },
+          {
+            "display": "chèque",
+            "cue": "cheque",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine, and still very much alive in France for a deposit or a rent. payer par chèque is the printed phrase."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "on ne peut pas is not about you personally. It is the notice saying it cannot be done here at all — vous ne pouvez pas would be aimed at your face.",
+      "sound": "on nuh puh pa pay-YAY ee-SEE.",
+      "variations": [
+        {
+          "display": "On ne peut pas payer avant demain",
+          "cue": "You can't pay before tomorrow",
+          "changed": "a time instead of a place, and the ne still written"
+        },
+        {
+          "display": "Ici on peut payer avec une carte",
+          "cue": "You can pay by card here",
+          "changed": "the same frame without the negative"
+        }
+      ],
+      "mistake": {
+        "display": "On peut pas payer ici",
+        "why": "Speech drops the ne and writing keeps it. On ne peut pas payer ici."
+      },
+      "usage": "Being turned away at a counter, and understanding why.",
+      "register": "formal",
+      "mnemonic": "The notice says on; only a person says vous."
+    },
+    {
+      "id": "L3-M8-S03",
+      "display": "Je dois payer le loyer avant le cinq",
+      "cue": "I have to pay the rent before the fifth",
+      "literal": "I must to-pay the rent before the five",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "loyer",
+            "cue": "rent",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine: le loyer. payer le loyer is the collocation — French pays the rent, it does not pay for it."
+          },
+          {
+            "display": "avant",
+            "cue": "before",
+            "tag": "free",
+            "forms": [],
+            "note": "Of time here: avant le cinq, avant lundi. Before a verb it needs de — avant de signer — and that is L4's."
+          }
+        ],
+        "rules": [
+          2,
+          6
+        ]
+      },
+      "trap": "English pays FOR something; French pays the thing itself. payer pour le loyer is understandable and is not said.",
+      "sound": "zhuh dwah pay-yay luh lwa-YAY a-vahn luh SANK.",
+      "variations": [
+        {
+          "display": "Je dois payer la facture avant lundi",
+          "cue": "I have to pay the bill before Monday",
+          "changed": "a day instead of a date"
+        },
+        {
+          "display": "Je dois payer cette facture avant demain",
+          "cue": "I have to pay this bill by tomorrow",
+          "changed": "cette, and a deadline you can feel"
+        }
+      ],
+      "mistake": {
+        "display": "Je dois payer pour le loyer",
+        "why": "payer takes its object bare. Je dois payer le loyer."
+      },
+      "usage": "The sentence that gets a landlord off your back, said to yourself.",
+      "register": "neutral",
+      "mnemonic": "You pay the rent, not for it."
+    },
+    {
+      "id": "L3-M8-S04",
+      "display": "Où est-ce qu'on signe le formulaire ?",
+      "cue": "Where do we sign the form?",
+      "literal": "Where is-it that-one signs the form?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "est-ce qu'on",
+            "cue": "do we · does one",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M1's est-ce que with que elided onto on. It is one surface because the elision fuses two words into one written token — qu'on, never que on."
+          },
+          {
+            "display": "formulaire",
+            "cue": "form",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine: le formulaire. remplir un formulaire is to fill one in — French fills it full, English fills it in."
+          },
+          {
+            "display": "signature",
+            "cue": "signature",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine. Votre signature ici is what you will be told; the verb of the same family is in S06."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "que on is never written. The e disappears and the two words become qu'on, exactly as qu'il and qu'elle did in L3-M5.",
+      "sound": "oo ess kon SEE-nyuh luh for-mew-LEHR ?",
+      "variations": [
+        {
+          "display": "Où est-ce qu'on paie le loyer ?",
+          "cue": "Where do we pay the rent?",
+          "changed": "the same question about a different counter"
+        },
+        {
+          "display": "Où est-ce qu'on signe ?",
+          "cue": "Where do we sign?",
+          "changed": "no object at all, which is how it is usually asked"
+        }
+      ],
+      "mistake": {
+        "display": "Où est-ce que on signe ?",
+        "why": "que elides before a vowel. Où est-ce qu'on signe ?"
+      },
+      "usage": "The question you ask holding a pen over a page you have not read.",
+      "register": "formal",
+      "mnemonic": "que never survives in front of on."
+    },
+    {
+      "id": "L3-M8-S05",
+      "display": "J'ai besoin de ce document pour la banque",
+      "cue": "I need this document for the bank",
+      "literal": "I-have need of this document for the bank",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "j'ai besoin de",
+            "cue": "I need",
+            "tag": "delta",
+            "forms": [],
+            "note": "One key, de included, because the de is compulsory. It elides before a vowel: j'ai besoin d'un reçu, j'ai besoin d'une pièce d'identité."
+          },
+          {
+            "display": "document",
+            "cue": "document",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine, and the general word an office uses for any paper: un document, des documents."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "il faut and j'ai besoin de are not the same sentence. il faut un document says the rule requires one; j'ai besoin de ce document says you personally need this one.",
+      "sound": "zhay buh-zwan duh suh do-kew-MAHN poor la BAHNK.",
+      "variations": [
+        {
+          "display": "J'ai besoin de la facture",
+          "cue": "I need the bill",
+          "changed": "the de sitting in front of a definite article"
+        },
+        {
+          "display": "J'ai besoin de mon reçu",
+          "cue": "I need my receipt",
+          "changed": "a possessive after the same de"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai besoin ce document",
+        "why": "avoir besoin cannot drop its de. J'ai besoin de ce document."
+      },
+      "usage": "Explaining at a counter why you are asking for a piece of paper.",
+      "register": "formal",
+      "mnemonic": "besoin drags its de behind it, always."
+    },
+    {
+      "id": "L3-M8-S06",
+      "display": "Il faut remplir ce formulaire et le signer",
+      "cue": "You have to fill in this form and sign it",
+      "literal": "It is-necessary to-fill this form and it to-sign",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "remplir",
+            "cue": "to fill in",
+            "tag": "free",
+            "forms": [],
+            "note": "French fills a form FULL — remplir un formulaire. There is no in and no out; the preposition English needs simply is not there."
+          },
+          {
+            "display": "signer",
+            "cue": "to sign",
+            "tag": "free",
+            "forms": [
+              "signer",
+              "signe"
+            ],
+            "note": "Regular: je signe, on signe, il faut signer. The noun is la signature, in S04."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "The le in et le signer is L3-M5's object pronoun, sitting before the infinitive it belongs to rather than after it. English puts it after: and sign it.",
+      "sound": "eel foh rahm-PLEER suh for-mew-lehr ay luh see-NYAY.",
+      "variations": [
+        {
+          "display": "Il faut signer ici",
+          "cue": "You have to sign here",
+          "changed": "the shortest form of the instruction"
+        },
+        {
+          "display": "Il ne faut pas signer ce document",
+          "cue": "You mustn't sign this document",
+          "changed": "negated, with the ne written"
+        }
+      ],
+      "mistake": {
+        "display": "Il faut de remplir ce formulaire",
+        "why": "il faut takes a bare infinitive, never de. Il faut remplir ce formulaire."
+      },
+      "usage": "What the person behind the glass says while sliding paper at you.",
+      "register": "formal",
+      "mnemonic": "il faut needs no de; besoin cannot live without one."
+    },
+    {
+      "id": "L3-M8-S07",
+      "display": "Vous avez le reçu et la facture ?",
+      "cue": "Do you have the receipt and the bill?",
+      "literal": "You have the receipt and the bill?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "reçu",
+            "cue": "receipt",
+            "tag": "free",
+            "forms": [],
+            "note": "What you are HANDED after paying — le ticket in a shop, le reçu at a counter. Masculine."
+          },
+          {
+            "display": "facture",
+            "cue": "bill · invoice",
+            "tag": "free",
+            "forms": [],
+            "note": "What you are ASKED to pay: la facture d'électricité arrives before the money leaves. English calls both of these a receipt or an invoice; French does not."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "reçu and facture are not two words for one thing. One proves you have paid, the other asks you to — swapping them at a counter changes the conversation.",
+      "sound": "voo za-vay luh ruh-SUE ay la fak-TUUR ?",
+      "variations": [
+        {
+          "display": "Vous avez une pièce d'identité ?",
+          "cue": "Do you have some ID?",
+          "changed": "the other thing a counter always asks for"
+        },
+        {
+          "display": "J'ai la facture, mais je n'ai pas le reçu",
+          "cue": "I have the bill, but I don't have the receipt",
+          "changed": "the two held apart, with the ne written"
+        }
+      ],
+      "mistake": {
+        "display": "Vous avez le reçu ? — Oui, je dois payer",
+        "why": "A reçu means it is already paid. If you still owe, the paper is la facture."
+      },
+      "usage": "The exchange at the end of every administrative errand.",
+      "register": "formal",
+      "mnemonic": "facture before the money, reçu after it."
+    },
+    {
+      "id": "L3-M8-S08",
+      "display": "Il faut faire un virement avant lundi",
+      "cue": "A transfer has to be made before Monday",
+      "literal": "It is-necessary to-do a transfer before Monday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "virement",
+            "cue": "bank transfer",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine. faire un virement is the set phrase — French makes a transfer, and this is how most French bills are actually paid."
+          },
+          {
+            "display": "compte",
+            "cue": "account",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine: le compte, sur mon compte. Not to be confused with le comte, a count — the p is silent and the pair sounds identical."
+          }
+        ],
+        "rules": [
+          2,
+          6
+        ]
+      },
+      "trap": "faire un virement is fixed. envoyer un virement is a literal translation of send a transfer and is not what a French bank says.",
+      "sound": "eel foh fehr un veer-MAHN a-vahn lun-DEE.",
+      "variations": [
+        {
+          "display": "Il faut faire un virement sur ce compte",
+          "cue": "A transfer has to be made to this account",
+          "changed": "sur for the destination account"
+        },
+        {
+          "display": "J'ai besoin de mon compte pour le virement",
+          "cue": "I need my account for the transfer",
+          "changed": "the personal need instead of the rule"
+        }
+      ],
+      "mistake": {
+        "display": "Il faut envoyer un virement",
+        "why": "A transfer is made, not sent. Il faut faire un virement."
+      },
+      "usage": "Paying rent the way most tenants in France pay it.",
+      "register": "formal",
+      "mnemonic": "You do a transfer in French; you send one in English."
+    },
+    {
+      "id": "L3-M8-S09",
+      "display": "L'échéance est le cinq de ce mois",
+      "cue": "The due date is the fifth of this month",
+      "literal": "The due-date is the five of this month",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "échéance",
+            "cue": "due date · deadline",
+            "tag": "free",
+            "forms": [
+              "échéance",
+              "l'échéance"
+            ],
+            "note": "Feminine, and it elides: l'échéance. Printed on every facture — the date after which it costs you more."
+          },
+          {
+            "display": "mois",
+            "cue": "month",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine, and the same in the singular and the plural: le mois, les mois. Only the article moves."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "échéance is a date, not a length of time. Reading it as a deadline you can negotiate is an English habit; on a French bill it is the day the penalty starts.",
+      "sound": "lay-shay-AHNS eh luh sank duh suh MWAH.",
+      "variations": [
+        {
+          "display": "L'échéance est lundi",
+          "cue": "The due date is Monday",
+          "changed": "a day rather than a date"
+        },
+        {
+          "display": "Je dois payer avant l'échéance",
+          "cue": "I have to pay before the due date",
+          "changed": "avant in front of it, which is where it usually sits"
+        }
+      ],
+      "mistake": {
+        "display": "L'échéance est dans le cinq",
+        "why": "A date takes le and nothing else. L'échéance est le cinq."
+      },
+      "usage": "Reading the line on a bill that decides whether you pay a penalty.",
+      "register": "formal",
+      "mnemonic": "The date on the paper is not a suggestion."
+    },
+    {
+      "id": "L3-M8-S10",
+      "display": "Vous avez une pièce d'identité ?",
+      "cue": "Do you have some ID?",
+      "literal": "You have a piece of-identity?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pièce d'identité",
+            "cue": "identity document · ID",
+            "tag": "free",
+            "forms": [],
+            "note": "Two words, one thing, and the phrase never breaks up. A passport, a carte d'identité or a permit all answer it — French asks for the category, not the card."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "There is no French word for ID on its own. Asking for votre ID gets a blank look; the question is always the whole phrase.",
+      "sound": "voo za-vay oon pyess dee-dahn-tee-TAY ?",
+      "variations": [
+        {
+          "display": "Il faut une pièce d'identité pour signer",
+          "cue": "You need ID in order to sign",
+          "changed": "il faut in front of it, as a rule rather than a question"
+        },
+        {
+          "display": "J'ai besoin de la pièce d'identité",
+          "cue": "I need the identity document",
+          "changed": "the personal need, with de before the article"
+        }
+      ],
+      "mistake": {
+        "display": "Vous avez une identité ?",
+        "why": "That asks whether you exist. The phrase is une pièce d'identité."
+      },
+      "usage": "The first thing asked at every French counter, before anything else happens.",
+      "register": "formal",
+      "mnemonic": "France asks for a piece of your identity, not for your ID."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M8-C01",
+      "display": "Ici on paie en espèces",
+      "cue": "Cash only here"
+    },
+    {
+      "id": "L3-M8-C02",
+      "display": "On ne peut pas payer ici",
+      "cue": "You can't pay here"
+    },
+    {
+      "id": "L3-M8-C03",
+      "display": "Je dois payer le loyer avant le cinq",
+      "cue": "I have to pay the rent before the fifth"
+    },
+    {
+      "id": "L3-M8-C04",
+      "display": "Où est-ce qu'on signe ?",
+      "cue": "Where do we sign?"
+    },
+    {
+      "id": "L3-M8-C05",
+      "display": "Il faut remplir ce formulaire",
+      "cue": "You have to fill in this form"
+    },
+    {
+      "id": "L3-M8-C06",
+      "display": "J'ai besoin de ce document",
+      "cue": "I need this document"
+    },
+    {
+      "id": "L3-M8-C07",
+      "display": "Vous avez le reçu ?",
+      "cue": "Do you have the receipt?"
+    },
+    {
+      "id": "L3-M8-C08",
+      "display": "Je dois payer la facture avant lundi",
+      "cue": "I have to pay the bill before Monday"
+    },
+    {
+      "id": "L3-M8-C09",
+      "display": "Il faut faire un virement",
+      "cue": "A transfer has to be made"
+    },
+    {
+      "id": "L3-M8-C10",
+      "display": "L'échéance est le cinq de ce mois",
+      "cue": "The due date is the fifth of this month"
+    },
+    {
+      "id": "L3-M8-C11",
+      "display": "Vous avez une pièce d'identité ?",
+      "cue": "Do you have some ID?"
+    },
+    {
+      "id": "L3-M8-C12",
+      "display": "On paie à la banque",
+      "cue": "You pay at the bank"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

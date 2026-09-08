@@ -17,8 +17,12 @@
  * only has to be drawn by one of them, and which one is a routing decision the `unicode-range`s
  * make. What is forbidden is a claimed character no bundled file can draw.
  *
- * It needs `src/fonts/generated/`, which means `content:build` then `fonts:build` — the order
- * `predev`, `prebuild` and `scripts/verify.sh` all already run them in.
+ * It reads two build artefacts, `public/content/` and `src/fonts/generated/`, and compares them to
+ * each other — so it is meaningful only when the two were produced by the same run. `predev`,
+ * `prebuild` and `scripts/verify.sh` all chain `content:build` then `fonts:build`, which is what
+ * keeps them in step; a content build with no font build after it makes this red, correctly, and
+ * the fix is `npm run fonts:build`. On a clone where neither has ever run there is nothing to
+ * compare and the suite skips rather than failing on a missing file.
  */
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
@@ -60,7 +64,12 @@ const cuts = FACES.flatMap((face) =>
   ),
 );
 
-describe('the bundled cuts against the content they were cut from', () => {
+/** Both artefacts, or neither: a clone that has never built has nothing for this to check. */
+const built =
+  existsSync(path.join(GENERATED_DIR, '..', '..', '..', 'public', 'content', 'courses.json')) &&
+  existsSync(GENERATED_DIR);
+
+describe.skipIf(!built)('the bundled cuts against the content they were cut from', () => {
   const harvest = harvestContent();
   const specimen = existsSync(SPECIMEN) ? readFileSync(SPECIMEN, 'utf8') : '';
   const drawn = new Set<number>();

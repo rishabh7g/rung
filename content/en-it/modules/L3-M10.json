@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M10",
+  "title": "Your own story",
+  "job": "An eight-sentence account, built from the whole ladder",
+  "prerequisites": ["L3-M9"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 4.5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "imperfetto — the standing situation, L2-M10's tense",
+      "passato prossimo — each completed step, L1-M5's tense",
+      "present — only for the sentence that lands in now"
+    ],
+    "allowedPatterns": [
+      "<account of at most eight sentences>",
+      "<imperfetto scene> + . + <passato prossimo step> + .",
+      "Mentre + <imperfetto> + , + <passato prossimo>",
+      "Alla fine + <passato prossimo>",
+      "Ha detto che + <backshifted clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "THE IMPERFETTO PAINTS, THE PASSATO PROSSIMO MOVES. Everything that was already true when the account starts goes in the imperfetto — ero in stazione, pioveva, c'era molta gente — and every completed step that pushes the story forward goes in the passato prossimo: è arrivato, ho preso, sono tornato. L2-M10 opened this pair over four sentences; eight is where a learner finds out whether they have it. Nothing new is opened for it here."
+    },
+    {
+      "tag": "delta",
+      "text": "MENTRE ALWAYS TAKES THE IMPERFETTO, AND WHAT INTERRUPTS IT TAKES THE PASSATO PROSSIMO. Mentre aspettavo, è arrivato un collega — the waiting was going on, the arriving cut into it. Two passato prossimos in a row would say the two things simply happened one after the other, which is a different account. This is the sharpest minimal pair in the level, and the sentence a learner most often gets half right."
+    },
+    {
+      "tag": "delta",
+      "text": "ESSERE OR AVERE, AND ONLY ESSERE AGREES. Movement, change of state and reflexives take essere, and the participle then agrees with the SUBJECT: sono arrivato from a man, sono arrivata from a woman, siamo arrivati from a group. Everything else takes avere and the participle never moves: ho preso, ho fatto, ho capito, whoever is speaking. An eight-sentence account uses both a dozen times, which is why this is the module where guessing stops working."
+    },
+    {
+      "tag": "free",
+      "text": "THE CONNECTORS ARE THE WHOLE HONEST SPEND OF THIS MODULE: all'inizio (at first), poi (then, L1-M10's), mentre (while), appena (as soon as) and alla fine (in the end, L2-M10's). Five words turn a list of sentences into an account, and everything else here has already been paid for further down the ladder."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH HAS ONE PAST WHERE ITALIAN HAS TWO, so a learner picks by feel and picks the same one every time. The test is not how it sounds: swap one verb from imperfetto to passato prossimo and ask whether WHAT HAPPENED changed. Aspettavo il treno says the waiting was still going on; ho aspettato il treno says it finished. Both are correct Italian and they are different stories."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M10-S01",
+      "display": "Ieri ero in stazione. Aspettavo il treno per Milano. Mentre aspettavo, è arrivato un collega. Ho parlato con lui un po'. Poi è partito il treno. Alla fine sono tornato a casa tardi.",
+      "cue": "Yesterday I was at the station. I was waiting for the train to Milan. While I was waiting, a colleague arrived. I talked with him for a bit. Then the train left. In the end I got home late.",
+      "literal": "Yesterday I-was in station. I-was-waiting the train for Milan. While I-was-waiting, is arrived a colleague. I-have talked with him a bit. Then is left the train. At-the end I-am returned at home late.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mentre",
+            "cue": "while",
+            "tag": "delta",
+            "forms": ["mentre"],
+            "note": "Always followed by an imperfetto. What cuts into it goes in the passato prossimo — that split is the whole point of the word."
+          },
+          {
+            "display": "aspettavo",
+            "cue": "I was waiting",
+            "tag": "free",
+            "forms": ["aspettavo", "aspettava", "aspettavi"],
+            "note": "The imperfetto of L3-M5's aspettare. It says the waiting was still going on, which is why mentre can hang something off it."
+          },
+          {
+            "display": "arrivato",
+            "cue": "arrived",
+            "tag": "delta",
+            "forms": ["arrivato", "arrivata", "arrivati", "arrivate"],
+            "note": "Movement, so it takes essere and agrees with the subject: è arrivata una collega, sono arrivati due colleghi."
+          }
+        ],
+        "rules": [0, 1, 2]
+      },
+      "trap": "Ho aspettato il treno e è arrivato un collega tells a different story: the waiting finished, and then somebody turned up. mentre is what makes one thing cut into the other.",
+      "sound": "MEN-tre as-pet-TA-vo, e ar-ri-VA-to oon kol-LE-ga. mentre is two syllables, stressed on the first.",
+      "variations": [
+        {
+          "display": "Mentre aspettavo, è arrivata una collega",
+          "cue": "While I was waiting, a colleague arrived",
+          "changed": "a woman arriving, so the participle agrees"
+        },
+        {
+          "display": "Ho preso il treno e ho parlato con lui",
+          "cue": "I took the train and talked with him",
+          "changed": "two finished steps, so no mentre and no imperfetto"
+        },
+        {
+          "display": "Mentre tornavo a casa, è arrivato un messaggio",
+          "cue": "While I was going home, a message arrived",
+          "changed": "a different pair of actions"
+        }
+      ],
+      "mistake": {
+        "display": "Mentre ho aspettato, è arrivato un collega",
+        "why": "mentre takes the imperfetto: Mentre aspettavo, è arrivato un collega."
+      },
+      "usage": "The everyday shape of a small story about a delay — scene, interruption, ending.",
+      "register": "neutral",
+      "mnemonic": "mentre + imperfetto, always."
+    },
+    {
+      "id": "L3-M10-S02",
+      "display": "Stamattina pioveva. Non avevo la macchina. Ho preso l'autobus. C'era molta gente. Ho fatto tardi in ufficio. Purtroppo la riunione era finita.",
+      "cue": "This morning it was raining. I did not have the car. I took the bus. There were a lot of people. I was late to the office. Unfortunately the meeting had finished.",
+      "literal": "This-morning it-was-raining. Not I-had the car. I-have taken the-bus. There-was much people. I-have made late in office. Unfortunately the meeting was finished.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fatto",
+            "cue": "made, done",
+            "tag": "free",
+            "forms": ["fatto"],
+            "note": "The participle of fare, and irregular. It takes avere and never agrees: ho fatto, ha fatto, abbiamo fatto. fare tardi is \"to be late\"."
+          },
+          {
+            "display": "finito",
+            "cue": "finished",
+            "tag": "free",
+            "forms": ["finito", "finita", "finiti", "finite"],
+            "note": "With essere it means a thing came to an end and agrees with it: la riunione era finita. With avere it means somebody finished something: ho finito il lavoro."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "Four of these six verbs are imperfetto and two are passato prossimo, and English writes all six the same way. The rain, the missing car and the crowd were the situation; taking the bus and being late were the steps.",
+      "sound": "sta-mat-TEE-na pyo-VE-va. o FAT-to TAR-dee een uf-FEE-cho. pioveva runs as one long word.",
+      "variations": [
+        {
+          "display": "Stamattina pioveva e ho preso l'autobus",
+          "cue": "This morning it was raining and I took the bus",
+          "changed": "scene and step in one sentence"
+        },
+        {
+          "display": "Ho fatto tardi perché c'era molta gente",
+          "cue": "I was late because there were a lot of people",
+          "changed": "the reason attached with L1-M9's perché"
+        },
+        {
+          "display": "Ho finito il lavoro tardi",
+          "cue": "I finished the work late",
+          "changed": "finire with avere, so no agreement"
+        }
+      ],
+      "mistake": {
+        "display": "Stamattina ha piovuto e non ho avuto la macchina",
+        "why": "The rain and the missing car were the situation, not steps: Stamattina pioveva. Non avevo la macchina."
+      },
+      "usage": "The standard apology for arriving late, in the order an Italian tells it.",
+      "register": "neutral",
+      "mnemonic": "Situation in the imperfetto, steps in the passato prossimo."
+    },
+    {
+      "id": "L3-M10-S03",
+      "display": "All'inizio non avevo amici a Milano. Lavoravo molto e tornavo tardi. Poi ho trovato una collega simpatica. Adesso ho molti amici e Milano mi piace molto.",
+      "cue": "At first I had no friends in Milan. I worked a lot and came home late. Then I found a nice colleague. Now I have a lot of friends and I like Milan a lot.",
+      "literal": "At-the-beginning not I-had friends at Milan. I-worked much and I-returned late. Then I-have found a colleague nice. Now I-have many friends and Milan to-me it-pleases much.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "all'inizio",
+            "cue": "at first",
+            "tag": "free",
+            "forms": ["all'inizio"],
+            "note": "One word once the elision is written in, and it opens an account the way alla fine closes one. It always leads into the imperfetto."
+          },
+          {
+            "display": "trovato",
+            "cue": "found",
+            "tag": "free",
+            "forms": ["trovato"],
+            "note": "The participle of trovare, regular and taking avere, so it never agrees: ho trovato, ha trovato."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "The first two sentences are how things stood for months, so both are imperfetto. A learner who puts ho lavorato there has said the working stopped, which turns a settling-in story into a resignation.",
+      "sound": "al-lee-NEE-tsyo. The apostrophe is not a pause: all'inizio is four syllables run together.",
+      "variations": [
+        {
+          "display": "All'inizio lavoravo molto, adesso sto meglio",
+          "cue": "At first I worked a lot, now I am better",
+          "changed": "then against now, in one sentence"
+        },
+        {
+          "display": "Poi ho trovato un lavoro nuovo",
+          "cue": "Then I found a new job",
+          "changed": "a different step"
+        },
+        {
+          "display": "All'inizio ero preoccupato, alla fine sono stato bene",
+          "cue": "At first I was worried, in the end I was fine",
+          "changed": "both connectors together"
+        }
+      ],
+      "mistake": {
+        "display": "All'inizio non ho avuto amici a Milano",
+        "why": "That was the standing situation, not one event: All'inizio non avevo amici a Milano."
+      },
+      "usage": "How anybody tells the story of moving somewhere — the hard start, the turn, the now.",
+      "register": "neutral",
+      "mnemonic": "all'inizio opens, alla fine closes."
+    },
+    {
+      "id": "L3-M10-S04",
+      "display": "Appena sono arrivato a Roma, ho chiamato mia madre. Era molto contenta. Poi ho preso un caffè al bar. Faceva caldo. Sono andato a casa di mia sorella.",
+      "cue": "As soon as I arrived in Rome, I called my mother. She was very happy. Then I had a coffee at the bar. It was hot. I went to my sister's house.",
+      "literal": "As-soon-as I-am arrived at Rome, I-have called my mother. She-was very happy. Then I-have taken a coffee at-the bar. It-made hot. I-am gone at house of my sister.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "appena",
+            "cue": "as soon as",
+            "tag": "free",
+            "forms": ["appena"],
+            "note": "Unlike mentre it takes the passato prossimo, because both things are finished steps: appena sono arrivato, ho chiamato."
+          }
+        ],
+        "rules": [1, 2, 3]
+      },
+      "trap": "appena and mentre look like the same kind of word and take opposite tenses. mentre needs something still going on; appena needs two things that both finished, one right after the other.",
+      "sound": "ap-PE-na SO-no ar-ri-VA-to a RO-ma. appena holds its double p.",
+      "variations": [
+        {
+          "display": "Appena sono arrivata, ho chiamato mia madre",
+          "cue": "As soon as I arrived, I called my mother",
+          "changed": "a woman speaking, so the participle agrees"
+        },
+        {
+          "display": "Appena ho finito, sono tornato a casa",
+          "cue": "As soon as I finished, I went home",
+          "changed": "a different pair of steps"
+        },
+        {
+          "display": "Mentre aspettavo, ho preso un caffè",
+          "cue": "While I was waiting, I had a coffee",
+          "changed": "mentre instead, so the first verb goes imperfetto"
+        }
+      ],
+      "mistake": {
+        "display": "Appena arrivavo a Roma, ho chiamato mia madre",
+        "why": "appena takes the passato prossimo: Appena sono arrivato a Roma, ho chiamato mia madre."
+      },
+      "usage": "The opening of any account of a journey, and the natural way to report a chain of arrivals.",
+      "register": "neutral",
+      "mnemonic": "mentre stretches; appena snaps."
+    },
+    {
+      "id": "L3-M10-S05",
+      "display": "Ho cominciato a lavorare in una ditta nuova. Il primo giorno ero molto preoccupato. Non c'era nessuno in ufficio. Poi è arrivato il capo. Mi ha detto di aspettare. Alla fine ho lavorato tutto il giorno.",
+      "cue": "I started working at a new company. The first day I was very worried. There was nobody in the office. Then the boss arrived. He told me to wait. In the end I worked all day.",
+      "literal": "I-have begun at to-work in a company new. The first day I-was very worried. Not there-was nobody in office. Then is arrived the boss. To-me he-has said of to-wait. At-the end I-have worked all the day.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cominciato",
+            "cue": "started",
+            "tag": "free",
+            "forms": ["cominciato", "cominciata"],
+            "note": "Takes avere when somebody starts something — ho cominciato a lavorare — and the a before the infinitive is fixed."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "cominciare takes a before an infinitive where L3-M5's dire and L1-M9's pensare take di. There is no rule to derive it from; the preposition belongs to the verb.",
+      "sound": "o ko-min-CHA-to a la-vo-RA-re. The ci in cominciato is a soft ch.",
+      "variations": [
+        {
+          "display": "Ho cominciato a lavorare lunedì",
+          "cue": "I started working on Monday",
+          "changed": "when, with a bare day"
+        },
+        {
+          "display": "La riunione è cominciata tardi",
+          "cue": "The meeting started late",
+          "changed": "essere, because the meeting started by itself, so the participle agrees"
+        },
+        {
+          "display": "Mentre aspettavo, è arrivato il capo",
+          "cue": "While I was waiting, the boss arrived",
+          "changed": "the same arrival, told as an interruption"
+        }
+      ],
+      "mistake": {
+        "display": "Ho cominciato lavorare in una ditta nuova",
+        "why": "cominciare needs its a: Ho cominciato a lavorare in una ditta nuova."
+      },
+      "usage": "The first-day story, which everybody is asked for and everybody tells the same way.",
+      "register": "neutral",
+      "mnemonic": "cominciare a, pensare di."
+    },
+    {
+      "id": "L3-M10-S06",
+      "display": "Stasera è successo un problema con il treno. Aspettavo in stazione. Il treno non è arrivato. C'era molta gente e faceva freddo. Alla fine ho preso l'autobus. Sono tornato a casa alle sette.",
+      "cue": "This evening there was a problem with the train. I was waiting at the station. The train did not arrive. There were a lot of people and it was cold. In the end I took the bus. I got home at seven.",
+      "literal": "This-evening is happened a problem with the train. I-was-waiting in station. The train not is arrived. There-was much people and it-made cold. At-the end I-have taken the-bus. I-am returned at home at-the seven.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "successo",
+            "cue": "happened",
+            "tag": "delta",
+            "forms": ["successo", "successa"],
+            "note": "The participle of succedere, always with essere: è successo un problema. Che cosa è successo? is how you ask what happened."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "English \"there was a problem\" looks like a description and would tempt an imperfetto. è successo is a step: the problem arrived at a moment, and the account starts there.",
+      "sound": "e suc-CES-so oon pro-BLE-ma. successo holds its double c and its double s.",
+      "variations": [
+        {
+          "display": "Che cosa è successo?",
+          "cue": "What happened?",
+          "changed": "asked as a question"
+        },
+        {
+          "display": "Ieri è successo un problema in ufficio",
+          "cue": "Yesterday there was a problem at the office",
+          "changed": "when and where"
+        },
+        {
+          "display": "Stasera è successa una cosa",
+          "cue": "Something happened this evening",
+          "changed": "a feminine subject, so the participle agrees"
+        }
+      ],
+      "mistake": {
+        "display": "Stasera ha successo un problema con il treno",
+        "why": "succedere always takes essere: Stasera è successo un problema con il treno."
+      },
+      "usage": "The way any story about a delay or a mishap opens, before the detail.",
+      "register": "neutral",
+      "mnemonic": "Things happen with essere."
+    },
+    {
+      "id": "L3-M10-S07",
+      "display": "Lunedì stavo male. Avevo la febbre e mal di gola. Non sono andato in ufficio. Sono rimasto a casa. Ho dormito tutto il giorno. Adesso sto bene.",
+      "cue": "On Monday I was unwell. I had a fever and a sore throat. I did not go to the office. I stayed at home. I slept all day. Now I am fine.",
+      "literal": "Monday I-was bad. I-had the fever and bad of throat. Not I-am gone in office. I-am stayed at home. I-have slept all the day. Now I-am well.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "stavo",
+            "cue": "I was, I felt",
+            "tag": "free",
+            "forms": ["stavo", "stava", "stavi"],
+            "note": "The imperfetto of L1-M2's sto. Health takes stare, not essere: sto bene, stavo male — ero male is not said."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "Being unwell is stare, not essere. ero male is the sentence an English speaker builds and an Italian does not recognise; the verb for how you are is the one in come stai?",
+      "sound": "lu-ne-DEE STA-vo MA-le. stavo is stressed on the STA.",
+      "variations": [
+        {
+          "display": "Stavo male, poi sono stato meglio",
+          "cue": "I was unwell, then I got better",
+          "changed": "the turn, with the participle of stare"
+        },
+        {
+          "display": "Mio figlio stava male e sono rimasto a casa",
+          "cue": "My son was unwell and I stayed at home",
+          "changed": "somebody else unwell, and the consequence"
+        },
+        {
+          "display": "Sono rimasta a casa tutto il giorno",
+          "cue": "I stayed at home all day",
+          "changed": "a woman speaking, so the participle agrees"
+        }
+      ],
+      "mistake": {
+        "display": "Lunedì ero male",
+        "why": "Health takes stare: Lunedì stavo male."
+      },
+      "usage": "What you tell a colleague on the day you come back.",
+      "register": "neutral",
+      "mnemonic": "come stai? — so stavo male."
+    },
+    {
+      "id": "L3-M10-S08",
+      "display": "Ieri è venuto un amico a casa mia. Ha parlato molto in italiano. All'inizio non ho capito bene. Poi ho capito tutto. Alla fine sono molto contento.",
+      "cue": "Yesterday a friend came to my house. He talked a lot in Italian. At first I did not understand well. Then I understood everything. In the end I am very happy.",
+      "literal": "Yesterday is come a friend at house my. He-has talked much in Italian. At-the-beginning not I-have understood well. Then I-have understood all. At-the end I-am very happy.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "venuto",
+            "cue": "came",
+            "tag": "delta",
+            "forms": ["venuto", "venuta", "venuti", "venute"],
+            "note": "Movement, so essere and agreement with the subject: è venuta una collega. The participle is irregular; the infinitive is venire."
+          },
+          {
+            "display": "capito",
+            "cue": "understood",
+            "tag": "free",
+            "forms": ["capito"],
+            "note": "The participle of capire, taking avere and never agreeing. Ho capito on its own is the commonest \"got it\" in the language."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "venuto takes essere and capito takes avere, and both sit in the same account. The auxiliary belongs to the verb, not to the sentence, so it has to be learnt one verb at a time.",
+      "sound": "e ve-NOO-to oon a-MEE-ko. o ka-PEE-to TOOT-to. Both participles are stressed on the syllable before the ending.",
+      "variations": [
+        {
+          "display": "Ieri è venuta una collega a casa mia",
+          "cue": "Yesterday a colleague came to my house",
+          "changed": "a woman coming, so the participle agrees"
+        },
+        {
+          "display": "Non ho capito, può ripetere?",
+          "cue": "I did not understand, can you repeat that?",
+          "changed": "asked politely, with L2-M1's ripetere"
+        },
+        {
+          "display": "Appena è venuto, ho capito tutto",
+          "cue": "As soon as he came, I understood everything",
+          "changed": "the two steps chained with appena"
+        }
+      ],
+      "mistake": {
+        "display": "Ieri ha venuto un amico a casa mia",
+        "why": "venire takes essere: Ieri è venuto un amico a casa mia."
+      },
+      "usage": "A small, warm account of an evening — and the sentence Ho capito is worth having on its own.",
+      "register": "neutral",
+      "mnemonic": "venire comes with essere; capire takes avere."
+    },
+    {
+      "id": "L3-M10-S09",
+      "display": "Ieri ho scritto un messaggio a mia sorella. Non ha letto il messaggio. Ho lavorato tutto il giorno. Stasera ha chiamato. Era in ufficio. Adesso è tutto a posto.",
+      "cue": "Yesterday I wrote a message to my sister. She did not read the message. I worked all day. This evening she called. She was at the office. Now everything is fine.",
+      "literal": "Yesterday I-have written a message at my sister. Not she-has read the message. I-have worked all the day. This-evening she-has called. She-was in office. Now is all at place.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "scritto",
+            "cue": "wrote, written",
+            "tag": "free",
+            "forms": ["scritto"],
+            "note": "The irregular participle of scrivere, with avere and no agreement. The double t is what makes it audible."
+          },
+          {
+            "display": "letto",
+            "cue": "read",
+            "tag": "free",
+            "forms": ["letto"],
+            "note": "The irregular participle of leggere, with avere. Spelt exactly like the noun for a bed, which context always sorts out."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "Era in ufficio is the one imperfetto in the account and it is doing real work: it explains why she did not read, rather than adding a step. Turn it into è stata in ufficio and the explanation disappears.",
+      "sound": "o SKREET-to oon mes-SAJ-jo. non a LET-to. Both participles hold a double consonant.",
+      "variations": [
+        {
+          "display": "Ho scritto un messaggio al capo",
+          "cue": "I wrote a message to the boss",
+          "changed": "who it was written to"
+        },
+        {
+          "display": "Non ho letto il messaggio, purtroppo",
+          "cue": "I did not read the message, unfortunately"
+        ,
+          "changed": "the reader, and an apology attached"
+        },
+        {
+          "display": "Mentre lavoravo, ha chiamato mia sorella",
+          "cue": "While I was working, my sister called",
+          "changed": "told as an interruption with mentre"
+        }
+      ],
+      "mistake": {
+        "display": "Ieri ho scritto un messaggio e era in ufficio",
+        "why": "The explanation needs its own sentence, and era stays imperfetto: Non ha letto il messaggio. Era in ufficio."
+      },
+      "usage": "The everyday account of a message that went unanswered, and its harmless explanation.",
+      "register": "neutral",
+      "mnemonic": "The imperfetto explains; the passato prossimo happens."
+    },
+    {
+      "id": "L3-M10-S10",
+      "display": "Ho dovuto pagare l'affitto entro venerdì. Non avevo i soldi. Ho chiesto aiuto a mio padre. Mi ha detto di aspettare. Alla fine ho fatto un bonifico. Adesso sono tranquillo.",
+      "cue": "I had to pay the rent by Friday. I did not have the money. I asked my father for help. He told me to wait. In the end I made a bank transfer. Now I am calm.",
+      "literal": "I-have had-to to-pay the-rent within Friday. Not I-had the money. I-have asked help at my father. To-me he-has said of to-wait. At-the end I-have made a transfer. Now I-am calm.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dovuto",
+            "cue": "had to",
+            "tag": "free",
+            "forms": ["dovuto", "potuto", "voluto"],
+            "note": "The participle of devo. In the past a modal keeps its infinitive after it: ho dovuto pagare, ho potuto pagare, ho voluto pagare."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "Non avevo i soldi is the situation and every other verb here is a step. This is the level's exit test in one sentence: if that verb comes out as non ho avuto, the account has stopped explaining and started listing.",
+      "sound": "o do-VOO-to pa-GA-re laf-FEET-to. dovuto is stressed on the VOO.",
+      "variations": [
+        {
+          "display": "Ho dovuto pagare la bolletta entro martedì",
+          "cue": "I had to pay the bill by Tuesday",
+          "changed": "a different bill and a different day"
+        },
+        {
+          "display": "Non ho potuto pagare, non avevo i soldi",
+          "cue": "I could not pay, I did not have the money",
+          "changed": "potere instead of dovere"
+        },
+        {
+          "display": "Mio padre mi ha detto di aspettare",
+          "cue": "My father told me to wait",
+          "changed": "the person doing the telling named"
+        }
+      ],
+      "mistake": {
+        "display": "Ho dovuto pagato l'affitto entro venerdì",
+        "why": "A modal keeps the infinitive after it: Ho dovuto pagare l'affitto entro venerdì."
+      },
+      "usage": "The account of a month that was tight and came out fine — and the last sentence of the level.",
+      "register": "neutral",
+      "mnemonic": "ho dovuto + infinitive, never a second participle."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M10-C01",
+      "display": "Mentre aspettavo, è arrivato un collega",
+      "cue": "While I was waiting, a colleague arrived"
+    },
+    {
+      "id": "L3-M10-C02",
+      "display": "Stamattina pioveva e ho preso l'autobus",
+      "cue": "This morning it was raining and I took the bus"
+    },
+    {
+      "id": "L3-M10-C03",
+      "display": "All'inizio non avevo amici a Milano",
+      "cue": "At first I had no friends in Milan"
+    },
+    {
+      "id": "L3-M10-C04",
+      "display": "Appena sono arrivato a Roma, ho chiamato mia madre",
+      "cue": "As soon as I arrived in Rome, I called my mother"
+    },
+    {
+      "id": "L3-M10-C05",
+      "display": "Ho cominciato a lavorare in una ditta nuova",
+      "cue": "I started working at a new company"
+    },
+    {
+      "id": "L3-M10-C06",
+      "display": "Stasera è successo un problema con il treno",
+      "cue": "This evening there was a problem with the train"
+    },
+    {
+      "id": "L3-M10-C07",
+      "display": "Lunedì stavo male e sono rimasto a casa",
+      "cue": "On Monday I was unwell and stayed at home"
+    },
+    {
+      "id": "L3-M10-C08",
+      "display": "Ieri è venuto un amico a casa mia",
+      "cue": "Yesterday a friend came to my house"
+    },
+    {
+      "id": "L3-M10-C09",
+      "display": "Ho scritto un messaggio, ma non ha letto",
+      "cue": "I wrote a message, but she did not read it"
+    },
+    {
+      "id": "L3-M10-C10",
+      "display": "Ho dovuto pagare l'affitto entro venerdì",
+      "cue": "I had to pay the rent by Friday"
+    },
+    {
+      "id": "L3-M10-C11",
+      "display": "Alla fine sono tornato a casa tardi",
+      "cue": "In the end I got home late"
+    },
+    {
+      "id": "L3-M10-C12",
+      "display": "Ho fatto tardi perché c'era molta gente",
+      "cue": "I was late because there were a lot of people"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

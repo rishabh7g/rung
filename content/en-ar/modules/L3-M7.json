@@ -1,0 +1,674 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M7",
+  "title": "Body and health",
+  "job": "Say what hurts, and where",
+  "prerequisites": ["L3-M6"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": ["simple_present", "simple_past"],
+    "allowedPatterns": [
+      "yuʾlimunī + <body part>-ī",
+      "qad + V-past",
+      "ʿindī + <symptom>",
+      "mundhu + <duration>",
+      "hal + ʿindaka + dawāʾ + li- + <N>"
+    ],
+    "newWordCap": 25
+  },
+  "exitTest": { "generateCount": 2, "comprehendCount": 3 },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "yuʾlimunī is M6's backwards verb doing the job it does best: yuʾlimunī raʾsī is \"my head pains me\". The body part is the SUBJECT and it already carries the possessive -ī, so the sentence says whose head it is exactly once. Feminine parts take tuʾlimunī — tuʾlimunī rijlī — for the same reason tuʿjibunī followed al-mūsīqā."
+    },
+    {
+      "tag": "delta",
+      "text": "qad + a past verb is what has happened and still matters: qad akhadhtu ad-dawāʾ, \"I have taken the medicine\". It is a PARTICLE, not a tense — nothing about the verb changes and the particle does all the work. Health is where you meet it first, because a symptom is by definition still true."
+    },
+    {
+      "tag": "interference",
+      "text": "mundhu is \"for\" or \"since\", and the trap is the TENSE beside it: yuʾlimunī raʾsī mundhu yawmayn — a PRESENT verb where English needs a perfect, \"my head HAS hurt for two days\". Arabic reasons that it still hurts, so it is still present. This is the mirror of the qad rule, and the two do not conflict."
+    },
+    {
+      "tag": "free",
+      "text": "A symptom is a thing you have, exactly as a feeling was in M6: ʿindī ḥumma, ʿindī suʿāl, ʿindī zukām. No verb, no adjective, just L1-M7's ʿindī and the noun."
+    },
+    {
+      "tag": "free",
+      "text": "The two sentences a pharmacy needs are built from frames you already own: hal ʿindaka dawāʾ li-aṣ-ṣudāʿ? and kam marra fī al-yawm? The li- is L1-M9's, hal is L1-M2's, kam is L1-M8's. Nothing here is a new question shape."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M7-S01",
+      "display": "yuʾlimunī raʾsī",
+      "script": "يؤلمني رأسي",
+      "cue": "My head hurts",
+      "literal": "Pains-me head-my",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yuʾlimunī",
+            "script": "يؤلمني",
+            "cue": "it hurts me",
+            "tag": "delta",
+            "forms": ["yuʾlimunī", "tuʾlimunī"],
+            "note": "Pains me. Same machine as M6's yuʿjibunī: the body part is the subject, you are the -nī. tuʾlimunī for a feminine part."
+          },
+          {
+            "display": "raʾs",
+            "script": "رأس",
+            "cue": "head",
+            "tag": "free",
+            "forms": ["raʾs", "ar-raʾs"],
+            "note": "Head, the bare noun. r is a sun letter, so the article assimilates: ar-raʾs."
+          },
+          {
+            "display": "raʾsī",
+            "script": "رأسي",
+            "cue": "my head",
+            "tag": "delta",
+            "forms": ["raʾsī"],
+            "note": "My head — raʾs plus the -ī you have carried since ismī. In this frame the -ī is the only owner marker the sentence gets."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "Two words in Arabic, three in English. Do not add a second owner: raʾsī already says \"my\", so anā yuʾlimunī raʾsī is one \"my\" too many.",
+      "sound": "yuʾ-li-MU-nee RAʾ-see — the ʾ is a stop in the throat, so raʾsī is two beats, not \"rah-see\".",
+      "variations": [
+        {
+          "display": "yuʾlimunī raʾsī jiddan",
+          "script": "يؤلمني رأسي جداً",
+          "cue": "My head hurts a lot",
+          "changed": "how much: jiddan added"
+        },
+        {
+          "display": "tuʾlimunī rijlī",
+          "script": "تؤلمني رجلي",
+          "cue": "My leg hurts",
+          "changed": "which part — and rijl is feminine, so the verb turns to tuʾlimunī"
+        }
+      ],
+      "mistake": {
+        "display": "anā yuʾlimunī raʾsī",
+        "script": "أنا يؤلمني رأسي",
+        "why": "The English subject smuggled in front. The -nī inside the verb is already \"me\" and the -ī on raʾsī is already \"my\": yuʾlimunī raʾsī."
+      },
+      "usage": "The first thing you say to a doctor, a pharmacist or a host who asks why you are quiet.",
+      "register": "neutral",
+      "mnemonic": "The head does the hurting. You only receive it."
+    },
+    {
+      "id": "L3-M7-S02",
+      "display": "yuʾlimunī ẓahrī mundhu yawmayn",
+      "script": "يؤلمني ظهري منذ يومين",
+      "cue": "My back has hurt for two days",
+      "literal": "Pains-me back-my since two-days",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ẓahr",
+            "script": "ظهر",
+            "cue": "back",
+            "tag": "free",
+            "forms": ["ẓahr", "aẓ-ẓahr"],
+            "note": "Back. ẓ is a sun letter: aẓ-ẓahr. Not the ẓuhr of L2-M6's clock, which is the same letters and a different word."
+          },
+          {
+            "display": "ẓahrī",
+            "script": "ظهري",
+            "cue": "my back",
+            "tag": "delta",
+            "forms": ["ẓahrī"],
+            "note": "My back — ẓahr with the -ī of S01's raʾsī. Its own surface, because that is the form the frame actually shows."
+          },
+          {
+            "display": "mundhu",
+            "script": "منذ",
+            "cue": "for, since",
+            "tag": "interference",
+            "forms": ["mundhu"],
+            "note": "For, since. The verb beside it stays PRESENT: yuʾlimunī … mundhu yawmayn is \"has hurt for two days\", because it still hurts."
+          },
+          {
+            "display": "yawmayn",
+            "script": "يومين",
+            "cue": "two days",
+            "tag": "delta",
+            "forms": ["yawmayn"],
+            "note": "Two days — yawm in the dual, one word for the pair. Take it as vocabulary here; the dual as a system belongs to L4."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "English says \"has hurt\" and reaches for a perfect. Arabic keeps the present because the pain has not stopped. Putting a past verb here says it hurt and then stopped, which is not what you want at a clinic.",
+      "sound": "MUN-dhu yaw-MAYN — the dh is the soft one in \"this\", and yawmayn ends on a clean -ayn.",
+      "variations": [
+        {
+          "display": "yuʾlimunī raʾsī mundhu yawmayn",
+          "script": "يؤلمني رأسي منذ يومين",
+          "cue": "My head has hurt for two days",
+          "changed": "which part: ẓahrī → raʾsī"
+        },
+        {
+          "display": "yuʾlimunī baṭnī al-yawm",
+          "script": "يؤلمني بطني اليوم",
+          "cue": "My stomach hurts today",
+          "changed": "duration → a plain today"
+        }
+      ],
+      "mistake": {
+        "display": "alamanī ẓahrī mundhu yawmayn",
+        "script": "ألمني ظهري منذ يومين",
+        "why": "A past verb after mundhu closes the pain off in the past. Keep the present: yuʾlimunī ẓahrī mundhu yawmayn."
+      },
+      "usage": "The sentence that gets a doctor's attention, because it carries how long as well as where.",
+      "register": "neutral",
+      "mnemonic": "Still hurting, still present."
+    },
+    {
+      "id": "L3-M7-S03",
+      "display": "qad akhadhtu ad-dawāʾ",
+      "script": "قد أخذت الدواء",
+      "cue": "I have taken the medicine",
+      "literal": "Already I-took the-medicine",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "qad",
+            "script": "قد",
+            "cue": "already, have (with a past verb)",
+            "tag": "delta",
+            "forms": ["qad"],
+            "note": "A particle, not a tense. qad + past = it happened and it still counts. The verb does not change at all — qad does the whole job."
+          },
+          {
+            "display": "akhadhtu",
+            "script": "أخذت",
+            "cue": "I took",
+            "tag": "free",
+            "forms": ["akhadhtu", "akhadha", "akhadhat"],
+            "note": "I took — the past of L1-M9's khudh. akhadha for he, akhadhat for she, same -tu ending you know from dhahabtu."
+          },
+          {
+            "display": "dawāʾ",
+            "script": "دواء",
+            "cue": "medicine",
+            "tag": "free",
+            "forms": ["dawāʾ", "ad-dawāʾ", "adwiya"],
+            "note": "Medicine. d is a sun letter: ad-dawāʾ. The plural adwiya is what a pharmacy shelf is labelled."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "English builds the perfect out of two verbs, \"have taken\". Arabic keeps one verb and puts a small word in front of it. Nothing about akhadhtu is different from the plain past.",
+      "sound": "QAD a-KHADH-tu — qad is short and unstressed, almost leaning on the verb.",
+      "variations": [
+        {
+          "display": "qad akhadha ad-dawāʾ",
+          "script": "قد أخذ الدواء",
+          "cue": "He has taken the medicine",
+          "changed": "who: akhadhtu → akhadha"
+        },
+        {
+          "display": "qad waṣaltu ilā al-mustashfā",
+          "script": "قد وصلت إلى المستشفى",
+          "cue": "I have arrived at the hospital",
+          "changed": "which verb: L2-M10's waṣaltu takes qad the same way"
+        }
+      ],
+      "mistake": {
+        "display": "qad ākhudh ad-dawāʾ",
+        "script": "قد آخذ الدواء",
+        "why": "qad wants the PAST beside it for this meaning. With a present verb it says something much weaker, closer to \"I may take\". qad akhadhtu ad-dawāʾ."
+      },
+      "usage": "What you tell a doctor before they prescribe anything, and what you tell a worried friend.",
+      "register": "neutral",
+      "mnemonic": "qad is one small word doing what English needs two for."
+    },
+    {
+      "id": "L3-M7-S04",
+      "display": "ʿindī ḥumma wa suʿāl",
+      "script": "عندي حمى وسعال",
+      "cue": "I have a fever and a cough",
+      "literal": "At-me fever and cough",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ḥumma",
+            "script": "حمى",
+            "cue": "fever",
+            "tag": "free",
+            "forms": ["ḥumma", "al-ḥumma"],
+            "note": "Fever. ḥ is a moon letter, so the article stays al-: al-ḥumma. Held by ʿindī, exactly like M6's khawf."
+          },
+          {
+            "display": "suʿāl",
+            "script": "سعال",
+            "cue": "cough",
+            "tag": "free",
+            "forms": ["suʿāl", "as-suʿāl"],
+            "note": "Cough — a noun in Arabic, never a verb the way English uses it. s is a sun letter: as-suʿāl."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "English can say \"I am coughing\" with a verb. Arabic hands you a noun and lets ʿindī hold it, which is one less shape to learn, not one more.",
+      "sound": "ʿIN-dee ḤUM-ma wa su-ʿAAL — the wa is glued to the next word and never stressed.",
+      "variations": [
+        {
+          "display": "ʿindī ḥumma al-yawm",
+          "script": "عندي حمى اليوم",
+          "cue": "I have a fever today",
+          "changed": "one symptom instead of two"
+        },
+        {
+          "display": "ʿindaka suʿāl",
+          "script": "عندك سعال",
+          "cue": "You have a cough",
+          "changed": "who has it: ʿindī → ʿindaka"
+        }
+      ],
+      "mistake": {
+        "display": "anā ḥumma",
+        "script": "أنا حمى",
+        "why": "\"I am fever.\" A symptom is a thing you hold, not a thing you are: ʿindī ḥumma."
+      },
+      "usage": "The two-symptom sentence that gets you seen — at a clinic, a pharmacy or the front desk of a hotel.",
+      "register": "neutral",
+      "mnemonic": "Symptoms are luggage. ʿindī carries them."
+    },
+    {
+      "id": "L3-M7-S05",
+      "display": "ʿindī zukām wa lastu bi-khayr",
+      "script": "عندي زكام ولست بخير",
+      "cue": "I have a cold and I am not well",
+      "literal": "At-me cold and I-am-not in-good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zukām",
+            "script": "زكام",
+            "cue": "a cold",
+            "tag": "free",
+            "forms": ["zukām", "az-zukām"],
+            "note": "A head cold. z is a sun letter: az-zukām. Nothing to do with bārid, which is a temperature and not an illness."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "bārid is cold weather or a cold drink. The illness is zukām, a different word entirely — the English pun does not exist in Arabic.",
+      "sound": "zu-KAAM, the long ā held; wa-LAS-tu bi-KHAYR runs together as one phrase.",
+      "variations": [
+        {
+          "display": "ʿindī suʿāl wa lastu bi-khayr",
+          "script": "عندي سعال ولست بخير",
+          "cue": "I have a cough and I am not well",
+          "changed": "which symptom: zukām → suʿāl"
+        },
+        {
+          "display": "ʿindī zukām mundhu yawmayn",
+          "script": "عندي زكام منذ يومين",
+          "cue": "I have had a cold for two days",
+          "changed": "the second half → S02's duration frame"
+        }
+      ],
+      "mistake": {
+        "display": "ʿindī bārid",
+        "script": "عندي بارد",
+        "why": "That is \"I have a cold thing\" — the English word borrowed straight across. The illness is zukām: ʿindī zukām."
+      },
+      "usage": "The full answer to kayfa ḥāluka when the honest answer is not bi-khayr — and it uses M6's lastu to say so.",
+      "register": "neutral",
+      "mnemonic": "bārid is the weather; zukām is what the weather did to you."
+    },
+    {
+      "id": "L3-M7-S06",
+      "display": "hal ʿindaka dawāʾ li-aṣ-ṣudāʿ",
+      "script": "هل عندك دواء للصداع",
+      "cue": "Do you have medicine for a headache?",
+      "literal": "Question at-you medicine for-the-headache",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "li-aṣ-ṣudāʿ",
+            "script": "للصداع",
+            "cue": "for the headache",
+            "tag": "free",
+            "forms": ["li-aṣ-ṣudāʿ"],
+            "note": "L1-M9's li- on L2-M8's ṣudāʿ, its first outing as one word. ṣ is a sun letter, so the article assimilates: li-aṣ-ṣudāʿ."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "Nothing here is new grammar — hal from L1-M2, ʿindaka from L1-M7, li- from L1-M9, ṣudāʿ from L2-M8. What is new is that a whole pharmacy request falls out of four things you already own.",
+      "sound": "hal ʿIN-da-ka da-WAAʾ liṣ-ṣu-DAAʿ — the li- and the ṣ run together with no gap.",
+      "variations": [
+        {
+          "display": "hal ʿindaki dawāʾ li-aṣ-ṣudāʿ",
+          "script": "هل عندك دواء للصداع",
+          "cue": "Do you have medicine for a headache?",
+          "changed": "who you are asking: ʿindaka → ʿindaki"
+        },
+        {
+          "display": "hal ʿindaka dawāʾ",
+          "script": "هل عندك دواء",
+          "cue": "Do you have medicine?",
+          "changed": "the li- phrase dropped, when you cannot name the problem"
+        }
+      ],
+      "mistake": {
+        "display": "hal ʿindaka dawāʾ ṣudāʿ",
+        "script": "هل عندك دواء صداع",
+        "why": "Two bare nouns touching is an iḍāfa (L3-M2) and reads as \"headache medicine\" in the sense of medicine belonging to a headache. For \"for\", you need the li-: li-aṣ-ṣudāʿ."
+      },
+      "usage": "Said at a pharmacy counter, exactly as written, and the ṣ can be swapped for any symptom you have a word for.",
+      "register": "neutral",
+      "mnemonic": "li- is what \"for\" is made of."
+    },
+    {
+      "id": "L3-M7-S07",
+      "display": "kam marra fī al-yawm",
+      "script": "كم مرة في اليوم",
+      "cue": "How many times a day?",
+      "literal": "How-many time in the-day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "marra",
+            "script": "مرة",
+            "cue": "time, occasion",
+            "tag": "free",
+            "forms": ["marra", "marrāt", "marratayn"],
+            "note": "One occasion. After kam the noun stays SINGULAR — kam marra, never kam marrāt. marratayn is the dual, twice."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "English says \"how many timeS\". Arabic counts with kam and then leaves the noun singular, which feels wrong for exactly one sentence and then feels normal.",
+      "sound": "kam MAR-ra fil-YAWM — the doubled r is held for a beat.",
+      "variations": [
+        {
+          "display": "kam marra qabla an-nawm",
+          "script": "كم مرة قبل النوم",
+          "cue": "How many times before bed?",
+          "changed": "the window: fī al-yawm → qabla an-nawm"
+        },
+        {
+          "display": "marratayn fī al-yawm",
+          "script": "مرتين في اليوم",
+          "cue": "Twice a day",
+          "changed": "the question turned into its answer"
+        }
+      ],
+      "mistake": {
+        "display": "kam marrāt fī al-yawm",
+        "script": "كم مرات في اليوم",
+        "why": "kam takes the singular. The plural after it is the English habit showing: kam marra fī al-yawm."
+      },
+      "usage": "The second half of every pharmacy conversation, and the question the label answers.",
+      "register": "neutral",
+      "mnemonic": "kam counts; the noun stays one."
+    },
+    {
+      "id": "L3-M7-S08",
+      "display": "yajibu an adhhab ilā aṭ-ṭabīb",
+      "script": "يجب أن أذهب إلى الطبيب",
+      "cue": "I have to go to the doctor",
+      "literal": "It-is-necessary that I-go to the-doctor",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ṭabīb",
+            "script": "طبيب",
+            "cue": "doctor",
+            "tag": "free",
+            "forms": ["ṭabīb", "aṭ-ṭabīb", "ṭabība"],
+            "note": "Doctor. ṭ is a sun letter: aṭ-ṭabīb. ṭabība for a woman — an ordinary noun with an ordinary feminine."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "The frame is L3-M2's yajibu an, untouched. Only the destination is new, and aṭ-ṭabīb means the person, not the surgery.",
+      "sound": "YAJ-i-bu an ADH-hab i-laṭ-ṭa-BEEB — the ilā swallows into the article.",
+      "variations": [
+        {
+          "display": "yajibu an adhhab ilā al-mustashfā",
+          "script": "يجب أن أذهب إلى المستشفى",
+          "cue": "I have to go to the hospital",
+          "changed": "where: the doctor → the hospital"
+        },
+        {
+          "display": "yajibu an adhhab ilā aṣ-ṣaydaliyya",
+          "script": "يجب أن أذهب إلى الصيدلية",
+          "cue": "I have to go to the pharmacy",
+          "changed": "where: the doctor → the pharmacy"
+        }
+      ],
+      "mistake": {
+        "display": "yajibu adhhab ilā aṭ-ṭabīb",
+        "script": "يجب أذهب إلى الطبيب",
+        "why": "yajibu needs its an before the verb — that is L3-M2's rule and health does not suspend it: yajibu an adhhab."
+      },
+      "usage": "The decision said out loud, to yourself or to whoever is asking why you cancelled.",
+      "register": "neutral",
+      "mnemonic": "yajibu never travels without an."
+    },
+    {
+      "id": "L3-M7-S09",
+      "display": "aṣ-ṣaydaliyya qarība min al-mustashfā",
+      "script": "الصيدلية قريبة من المستشفى",
+      "cue": "The pharmacy is near the hospital",
+      "literal": "The-pharmacy near(f) from the-hospital",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ṣaydaliyya",
+            "script": "صيدلية",
+            "cue": "pharmacy",
+            "tag": "free",
+            "forms": ["ṣaydaliyya", "aṣ-ṣaydaliyya"],
+            "note": "Pharmacy. ṣ is a sun letter: aṣ-ṣaydaliyya. Feminine, so the adjective beside it takes -a: qarība."
+          },
+          {
+            "display": "mustashfā",
+            "script": "مستشفى",
+            "cue": "hospital",
+            "tag": "free",
+            "forms": ["mustashfā", "al-mustashfā"],
+            "note": "Hospital. m is a moon letter: al-mustashfā. The final -ā never changes, whatever the sentence does around it."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "\"Near\" is an adjective here, not a preposition, so it agrees: aṣ-ṣaydaliyya qarība, al-mustashfā qarīb. What follows it is min, not ilā.",
+      "sound": "aṣ-ṣay-da-LEEY-ya qa-REE-ba min al-mus-tash-FAA.",
+      "variations": [
+        {
+          "display": "aṣ-ṣaydaliyya qarība min al-bayt",
+          "script": "الصيدلية قريبة من البيت",
+          "cue": "The pharmacy is near the house",
+          "changed": "near what: the hospital → the house"
+        },
+        {
+          "display": "al-mustashfā qarīb min hunā",
+          "script": "المستشفى قريب من هنا",
+          "cue": "The hospital is near here",
+          "changed": "who is near what — and the adjective loses its -a"
+        }
+      ],
+      "mistake": {
+        "display": "aṣ-ṣaydaliyya qarīb min al-mustashfā",
+        "script": "الصيدلية قريب من المستشفى",
+        "why": "ṣaydaliyya is feminine, so the adjective must be qarība. The -a is not decoration; it is what tells you which noun the adjective belongs to."
+      },
+      "usage": "The answer you will be given when you ask where to fill a prescription.",
+      "register": "neutral",
+      "mnemonic": "qarīb min — near FROM, not near to."
+    },
+    {
+      "id": "L3-M7-S10",
+      "display": "yuʾlimunī baṭnī, wa yadī ayḍan",
+      "script": "يؤلمني بطني، ويدي أيضاً",
+      "cue": "My stomach hurts, and my hand too",
+      "literal": "Pains-me stomach-my, and hand-my also",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "baṭn",
+            "script": "بطن",
+            "cue": "stomach, belly",
+            "tag": "free",
+            "forms": ["baṭn", "al-baṭn"],
+            "note": "Stomach. b is a moon letter: al-baṭn. This is the belly you point at, not the digestive organ a doctor would name."
+          },
+          {
+            "display": "baṭnī",
+            "script": "بطني",
+            "cue": "my stomach",
+            "tag": "delta",
+            "forms": ["baṭnī"],
+            "note": "My stomach — baṭn with the -ī of S01's raʾsī. Its own surface, because that is the form the frame shows."
+          },
+          {
+            "display": "yad",
+            "script": "يد",
+            "cue": "hand",
+            "tag": "free",
+            "forms": ["yad", "al-yad"],
+            "note": "Hand. y is a moon letter: al-yad. Feminine, like most paired body parts, so it takes tuʾlimunī."
+          },
+          {
+            "display": "yadī",
+            "script": "يدي",
+            "cue": "my hand",
+            "tag": "delta",
+            "forms": ["yadī"],
+            "note": "My hand — yad with the same -ī. Two letters in Arabic and a whole English phrase."
+          },
+          {
+            "display": "rijl",
+            "script": "رجل",
+            "cue": "leg, foot",
+            "tag": "free",
+            "forms": ["rijl", "ar-rijl"],
+            "note": "Leg or foot — Arabic does not split them. r is a sun letter: ar-rijl. Feminine, so tuʾlimunī rijlī."
+          },
+          {
+            "display": "rijlī",
+            "script": "رجلي",
+            "cue": "my leg",
+            "tag": "delta",
+            "forms": ["rijlī"],
+            "note": "My leg — rijl with the -ī, seen in S01's second variation. Feminine, so the verb beside it is tuʾlimunī."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "The second half needs no second verb: wa yadī ayḍan borrows the yuʾlimunī in front of it. Repeating the verb is not wrong, only heavy.",
+      "sound": "yuʾ-li-MU-nee BAṬ-nee, wa ya-DEE AY-ḍan — a real pause at the comma.",
+      "variations": [
+        {
+          "display": "yuʾlimunī ẓahrī wa raʾsī ayḍan",
+          "script": "يؤلمني ظهري ورأسي أيضاً",
+          "cue": "My back hurts, and my head too",
+          "changed": "which two parts"
+        },
+        {
+          "display": "tuʾlimunī yadī mundhu yawmayn",
+          "script": "تؤلمني يدي منذ يومين",
+          "cue": "My hand has hurt for two days",
+          "changed": "yad is feminine, so tuʾlimunī — plus S02's duration"
+        }
+      ],
+      "mistake": {
+        "display": "yuʾlimunī yadī",
+        "script": "يؤلمني يدي",
+        "why": "yad is feminine, so the verb is tuʾlimunī yadī. Body parts that come in pairs are usually feminine in Arabic, and the verb notices."
+      },
+      "usage": "How you list more than one complaint without sounding like a form — and the sentence that tests the agreement hardest.",
+      "register": "neutral",
+      "mnemonic": "One verb, two aches, one comma."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M7-C01",
+      "display": "yuʾlimunī raʾsī",
+      "script": "يؤلمني رأسي",
+      "cue": "My head hurts"
+    },
+    {
+      "id": "L3-M7-C02",
+      "display": "yuʾlimunī ẓahrī mundhu yawmayn",
+      "script": "يؤلمني ظهري منذ يومين",
+      "cue": "My back has hurt for two days"
+    },
+    {
+      "id": "L3-M7-C03",
+      "display": "qad akhadhtu ad-dawāʾ",
+      "script": "قد أخذت الدواء",
+      "cue": "I have taken the medicine"
+    },
+    {
+      "id": "L3-M7-C04",
+      "display": "ʿindī ḥumma wa suʿāl",
+      "script": "عندي حمى وسعال",
+      "cue": "I have a fever and a cough"
+    },
+    {
+      "id": "L3-M7-C05",
+      "display": "ʿindī zukām wa lastu bi-khayr",
+      "script": "عندي زكام ولست بخير",
+      "cue": "I have a cold and I am not well"
+    },
+    {
+      "id": "L3-M7-C06",
+      "display": "hal ʿindaka dawāʾ li-aṣ-ṣudāʿ",
+      "script": "هل عندك دواء للصداع",
+      "cue": "Do you have medicine for a headache?"
+    },
+    {
+      "id": "L3-M7-C07",
+      "display": "kam marra fī al-yawm",
+      "script": "كم مرة في اليوم",
+      "cue": "How many times a day?"
+    },
+    {
+      "id": "L3-M7-C08",
+      "display": "yajibu an adhhab ilā aṭ-ṭabīb",
+      "script": "يجب أن أذهب إلى الطبيب",
+      "cue": "I have to go to the doctor"
+    },
+    {
+      "id": "L3-M7-C09",
+      "display": "aṣ-ṣaydaliyya qarība min al-mustashfā",
+      "script": "الصيدلية قريبة من المستشفى",
+      "cue": "The pharmacy is near the hospital"
+    },
+    {
+      "id": "L3-M7-C10",
+      "display": "yuʾlimunī baṭnī, wa yadī ayḍan",
+      "script": "يؤلمني بطني، ويدي أيضاً",
+      "cue": "My stomach hurts, and my hand too"
+    },
+    {
+      "id": "L3-M7-C11",
+      "display": "marratayn fī al-yawm",
+      "script": "مرتين في اليوم",
+      "cue": "Twice a day"
+    },
+    {
+      "id": "L3-M7-C12",
+      "display": "qad waṣaltu ilā al-mustashfā",
+      "script": "قد وصلت إلى المستشفى",
+      "cue": "I have arrived at the hospital"
+    }
+  ]
+}

@@ -1,0 +1,617 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M7",
+  "title": "Body and health",
+  "job": "Say what hurts, and where",
+  "prerequisites": [
+    "L3-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "present",
+      "infinitive after il faut"
+    ],
+    "allowedPatterns": [
+      "J'ai mal à la + <body part>",
+      "J'ai mal au + <masculine part>",
+      "J'ai + <symptom>",
+      "depuis + <duration or point>",
+      "Vous avez quelque chose contre + <N> + ?"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "à + le IS au AND à + les IS aux, ALWAYS, AND THE FUSED FORM IS THE ONLY ONE FRENCH WILL WRITE. j'ai mal à la tête keeps à la because la is feminine; j'ai mal AU dos and j'ai mal AUX dents fuse, because le dos and les dents are masculine and plural. à le and à les do not exist. Both words are already on the ladder — au is L1-M7's, aux is L2-M8's — so what is new here is the reason, not the word."
+    },
+    {
+      "tag": "interference",
+      "text": "THE BODY PART TAKES THE DEFINITE ARTICLE, NOT A POSSESSIVE. j'ai mal à la tête, never j'ai mal à ma tête. The j'ai has already said whose head it is, so French will not say it twice — the same law en-es, en-it and en-ar state in their own M7s. English needs my and hears the French as impersonal; it is not."
+    },
+    {
+      "tag": "delta",
+      "text": "depuis DOES BOTH JOBS ENGLISH SPLITS: j'ai mal depuis trois jours is for three days, j'ai mal depuis lundi is since Monday. One word, and the difference is only what follows it — a duration or a point in time."
+    },
+    {
+      "tag": "delta",
+      "text": "AND THE TENSE AFTER depuis IS THE PRESENT, BECAUSE THE PAIN IS STILL HERE. j'ai mal depuis trois jours, never j'ai eu mal depuis trois jours. English cannot do this without a perfect (I have had a headache for three days); French, like Italian and Russian, has no need of one — the present says it is still going on."
+    },
+    {
+      "tag": "delta",
+      "text": "A SYMPTOM IS SOMETHING YOU HAVE, AND THE ARTICLE IN FRONT OF IT IS NOT FREE. j'ai de la fièvre (partitive, an amount of it), j'ai un rhume (one countable cold), j'ai la grippe (the flu, the named illness). Three different articles in three neighbouring sentences, and each one is fixed by the noun rather than chosen by you."
+    },
+    {
+      "tag": "interference",
+      "text": "IN THE NEGATIVE THE PARTITIVE COLLAPSES TO de, EXACTLY AS L2-M5 TAUGHT: je n'ai pas DE fièvre, not je n'ai pas de la fièvre. la grippe and un rhume behave differently again — je n'ai pas la grippe keeps its article. And the ne is still written."
+    },
+    {
+      "tag": "free",
+      "text": "AT THE COUNTER THE QUESTION IS vous avez quelque chose contre + THE COMPLAINT. vous avez quelque chose contre le mal de tête ? — contre is against, and it is the preposition a pharmacy uses for what a medicine fights. It needs no new question shape: L2-M1's rising intonation is enough, and vous is what a counter is spoken in."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M7-S01",
+      "display": "J'ai mal à la tête depuis ce matin",
+      "cue": "I've had a headache since this morning",
+      "literal": "I-have pain at the head since this morning",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "depuis",
+            "cue": "since · for",
+            "tag": "delta",
+            "forms": [],
+            "note": "One word for both of English's: depuis lundi is since Monday, depuis trois jours is for three days. The verb after it stays in the present."
+          },
+          {
+            "display": "gorge",
+            "cue": "throat",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine, so it keeps à la: j'ai mal à la gorge. The commonest complaint after the head."
+          },
+          {
+            "display": "jours",
+            "cue": "days",
+            "tag": "free",
+            "forms": [
+              "jour",
+              "jours"
+            ],
+            "note": "depuis trois jours — a length of time. jour is the singular; L2-M6's days of the week are the named ones."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          3
+        ]
+      },
+      "trap": "j'ai mal à ma tête is the English possessive smuggled in. French has already said whose head it is with j'ai, and will not say it twice.",
+      "sound": "zhay mal a la TET duh-pwee suh ma-TAN.",
+      "variations": [
+        {
+          "display": "J'ai mal à la gorge depuis hier",
+          "cue": "I've had a sore throat since yesterday",
+          "changed": "another feminine part, so à la survives"
+        },
+        {
+          "display": "J'ai mal à la tête depuis trois jours",
+          "cue": "I've had a headache for three days",
+          "changed": "depuis with a duration instead of a point"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai eu mal à la tête depuis ce matin",
+        "why": "The pain is still here, so French keeps the present: j'ai mal depuis ce matin."
+      },
+      "usage": "The first line at a pharmacy counter, and the first line to a doctor.",
+      "register": "neutral",
+      "mnemonic": "The present tense says it has not stopped."
+    },
+    {
+      "id": "L3-M7-S02",
+      "display": "J'ai mal au dos et au bras",
+      "cue": "My back and my arm hurt",
+      "literal": "I-have pain at-the back and at-the arm",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bras",
+            "cue": "arm",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine, and spelt the same in the singular and the plural — le bras, les bras. Only the article tells you which."
+          },
+          {
+            "display": "ventre",
+            "cue": "stomach · belly",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine, so j'ai mal AU ventre. It is the everyday word; estomac is the organ and is rarer in complaints."
+          },
+          {
+            "display": "jambe",
+            "cue": "leg",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine, so it stays j'ai mal À LA jambe — the article is what decides, never the part of the body."
+          },
+          {
+            "display": "main",
+            "cue": "hand",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine despite the look of it: la main, à la main. One of the words a learner guesses masculine and gets wrong every time."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "au is not a word to memorise beside à — it IS à plus le, fused. There is no *à le dos to fall back on if you forget.",
+      "sound": "zhay mal oh DOH ay oh BRA.",
+      "variations": [
+        {
+          "display": "J'ai mal au ventre depuis hier",
+          "cue": "I've had stomach ache since yesterday",
+          "changed": "another masculine part, and depuis behind it"
+        },
+        {
+          "display": "J'ai mal à la jambe et à la main",
+          "cue": "My leg and my hand hurt",
+          "changed": "two feminine parts, so nothing fuses"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai mal à le dos",
+        "why": "à le does not exist in French. It fuses: j'ai mal au dos."
+      },
+      "usage": "Pointing at what hurts, which is most of what a doctor needs first.",
+      "register": "neutral",
+      "mnemonic": "Masculine fuses, feminine does not — the article decides, not the body."
+    },
+    {
+      "id": "L3-M7-S03",
+      "display": "J'ai mal aux dents depuis trois jours",
+      "cue": "My teeth have hurt for three days",
+      "literal": "I-have pain at-the teeth since three days",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dents",
+            "cue": "teeth",
+            "tag": "free",
+            "forms": [
+              "dent",
+              "dents"
+            ],
+            "note": "Feminine plural, and the plural is what fuses: à + les = aux. One tooth is une dent, and then it is j'ai mal à la dent."
+          },
+          {
+            "display": "dentiste",
+            "cue": "dentist",
+            "tag": "free",
+            "forms": [],
+            "note": "Le dentiste or la dentiste — one word, and the article says which. You go chez le dentiste, exactly as L3-M2's chez works."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "aux is the plural fusion and it is easy to miss because nothing is heard between aux dents and *à les dents — but only one of them is French.",
+      "sound": "zhay mal oh DAHN duh-pwee trwah ZHOOR.",
+      "variations": [
+        {
+          "display": "J'ai mal aux dents depuis lundi",
+          "cue": "My teeth have hurt since Monday",
+          "changed": "depuis with a day instead of a count"
+        },
+        {
+          "display": "Je vais chez le dentiste demain",
+          "cue": "I'm going to the dentist tomorrow",
+          "changed": "chez for the person, and no mal at all"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai mal à les dents",
+        "why": "à les fuses to aux, always. J'ai mal aux dents."
+      },
+      "usage": "Booking the appointment you have been putting off.",
+      "register": "neutral",
+      "mnemonic": "Plural pain fuses too: aux, not à les."
+    },
+    {
+      "id": "L3-M7-S04",
+      "display": "J'ai de la fièvre et j'ai mal à la gorge",
+      "cue": "I have a temperature and a sore throat",
+      "literal": "I-have of the fever and I-have pain at the throat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fièvre",
+            "cue": "fever · temperature",
+            "tag": "free",
+            "forms": [],
+            "note": "Takes the partitive: j'ai DE LA fièvre, because it is an amount rather than a countable thing. Negated it collapses to de — je n'ai pas de fièvre."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "English says a temperature with a countable article and French says de la, an amount. j'ai une fièvre is what an English speaker reaches for and it is not said.",
+      "sound": "zhay duh la fee-EV-ruh ay zhay mal a la GORZH.",
+      "variations": [
+        {
+          "display": "Je n'ai pas de fièvre",
+          "cue": "I don't have a temperature",
+          "changed": "the partitive collapses to de, and the ne is written"
+        },
+        {
+          "display": "J'ai de la fièvre depuis hier",
+          "cue": "I've had a temperature since yesterday",
+          "changed": "depuis, and the present tense holding"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai une fièvre",
+        "why": "fièvre takes the partitive, not un. J'ai de la fièvre."
+      },
+      "usage": "The two symptoms a pharmacist will ask about before anything else.",
+      "register": "neutral",
+      "mnemonic": "An amount of fever, not one fever."
+    },
+    {
+      "id": "L3-M7-S05",
+      "display": "J'ai un rhume, mais je n'ai pas la grippe",
+      "cue": "I have a cold, but I don't have flu",
+      "literal": "I-have a cold, but I not-have not the flu",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rhume",
+            "cue": "cold (the illness)",
+            "tag": "free",
+            "forms": [],
+            "note": "Countable, so it takes un: j'ai un rhume. Nothing to do with froid — that is the weather, and the two never swap."
+          },
+          {
+            "display": "grippe",
+            "cue": "flu",
+            "tag": "free",
+            "forms": [],
+            "note": "Named illness, so it takes la: j'ai la grippe. And it keeps its article under the negative — je n'ai pas la grippe."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "Three symptoms, three different articles — de la fièvre, un rhume, la grippe — and no rule of yours picks them. The noun carries its own.",
+      "sound": "zhay un ROOM, meh zhuh nay pa la GREEP.",
+      "variations": [
+        {
+          "display": "J'ai la grippe depuis trois jours",
+          "cue": "I've had flu for three days",
+          "changed": "the named illness with its la, and depuis"
+        },
+        {
+          "display": "J'ai un rhume depuis lundi",
+          "cue": "I've had a cold since Monday",
+          "changed": "the countable one, and depuis with a day"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai le rhume, mais je n'ai pas de grippe",
+        "why": "The articles are swapped. J'ai un rhume, je n'ai pas la grippe."
+      },
+      "usage": "Telling a pharmacist how bad it is, which decides what they sell you.",
+      "register": "neutral",
+      "mnemonic": "One cold, some fever, the flu — three nouns, three articles."
+    },
+    {
+      "id": "L3-M7-S06",
+      "display": "Je suis malade depuis trois jours",
+      "cue": "I've been ill for three days",
+      "literal": "I am ill since three days",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "malade",
+            "cue": "ill · sick",
+            "tag": "free",
+            "forms": [],
+            "note": "One shape for a man and a woman, like tranquille. être malade is the state; avoir mal is the pain — they are not interchangeable."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "I have been ill needs a perfect in English and the present in French. je suis malade depuis trois jours, never j'ai été malade depuis trois jours.",
+      "sound": "zhuh swee ma-LAD duh-pwee trwah ZHOOR.",
+      "variations": [
+        {
+          "display": "Je suis malade depuis lundi",
+          "cue": "I've been ill since Monday",
+          "changed": "the point in time, same word"
+        },
+        {
+          "display": "Je ne suis pas malade, je suis fatigué",
+          "cue": "I'm not ill, I'm tired",
+          "changed": "the ne written, and L3-M6's fatigué beside it"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai été malade depuis trois jours",
+        "why": "If it is still true, French uses the present. Je suis malade depuis trois jours."
+      },
+      "usage": "Explaining an absence, at work or at school.",
+      "register": "neutral",
+      "mnemonic": "Still ill means still present tense."
+    },
+    {
+      "id": "L3-M7-S07",
+      "display": "Vous avez quelque chose contre le mal de tête ?",
+      "cue": "Do you have something for a headache?",
+      "literal": "You have some thing against the pain of head?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quelque chose",
+            "cue": "something",
+            "tag": "free",
+            "forms": [],
+            "note": "Two words, one meaning, and it never changes shape. quelque chose de bon takes de before an adjective — that is L4's."
+          },
+          {
+            "display": "contre",
+            "cue": "against · for (a complaint)",
+            "tag": "free",
+            "forms": [],
+            "note": "A medicine works AGAINST the complaint in French, where English says for it. contre le rhume, contre la fièvre."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "English asks for something FOR a headache. French asks for something AGAINST it, and pour here would be understood but is not what is said.",
+      "sound": "voo za-vay kel-kuh SHOHZ kontr luh mal duh TET ?",
+      "variations": [
+        {
+          "display": "Vous avez quelque chose contre la fièvre ?",
+          "cue": "Do you have something for a temperature?",
+          "changed": "the complaint changes, the frame does not"
+        },
+        {
+          "display": "Vous avez quelque chose contre le rhume ?",
+          "cue": "Do you have something for a cold?",
+          "changed": "the same question at the same counter"
+        }
+      ],
+      "mistake": {
+        "display": "Vous avez quelque chose pour le mal de tête ?",
+        "why": "The medicine fights the complaint: contre, not pour."
+      },
+      "usage": "The whole pharmacy visit in one sentence. vous, because a counter is vous.",
+      "register": "formal",
+      "mnemonic": "Medicine is against the illness, never for it."
+    },
+    {
+      "id": "L3-M7-S08",
+      "display": "Je vais à la pharmacie ce matin",
+      "cue": "I'm going to the chemist this morning",
+      "literal": "I go at the pharmacy this morning",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pharmacie",
+            "cue": "pharmacy · chemist",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine, so à la pharmacie. In France it is where you go first — the green cross, and a pharmacist who will advise before a doctor does."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "à la pharmacie stays unfused because pharmacie is feminine, while au médecin would fuse — the same à, two spellings, decided by the noun.",
+      "sound": "zhuh veh a la far-ma-SEE suh ma-TAN.",
+      "variations": [
+        {
+          "display": "Je vais chez le médecin demain",
+          "cue": "I'm going to the doctor tomorrow",
+          "changed": "chez for a person, à for a place"
+        },
+        {
+          "display": "Je vais à la pharmacie et chez le dentiste",
+          "cue": "I'm going to the chemist and to the dentist",
+          "changed": "both prepositions in one line"
+        }
+      ],
+      "mistake": {
+        "display": "Je vais à la médecin",
+        "why": "A person takes chez, not à la. Je vais chez le médecin."
+      },
+      "usage": "Where a French illness usually starts: the counter, not the surgery.",
+      "register": "neutral",
+      "mnemonic": "chez a person, à a place."
+    },
+    {
+      "id": "L3-M7-S09",
+      "display": "Il faut prendre un comprimé le matin",
+      "cue": "You have to take one tablet in the morning",
+      "literal": "It is-necessary to-take a tablet the morning",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "comprimé",
+            "cue": "tablet · pill",
+            "tag": "free",
+            "forms": [
+              "comprimé",
+              "comprimés"
+            ],
+            "note": "What is printed on the box. cachet is the other word you will see; both mean the pressed tablet."
+          },
+          {
+            "display": "ordonnance",
+            "cue": "prescription",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine. Written by the médecin and handed to the pharmacie — the paper that connects the two."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "il faut has nobody in it. It is the impersonal instruction on the box, not advice to you personally — that would be vous devez.",
+      "sound": "eel foh prahndr un kom-pree-MAY luh ma-TAN.",
+      "variations": [
+        {
+          "display": "Il faut prendre un comprimé ce soir",
+          "cue": "You have to take one tablet this evening",
+          "changed": "the time moves; the instruction does not"
+        },
+        {
+          "display": "Il ne faut pas prendre ces comprimés",
+          "cue": "You mustn't take these tablets",
+          "changed": "negated, plural, and the ne written"
+        }
+      ],
+      "mistake": {
+        "display": "Il faut de prendre un comprimé",
+        "why": "il faut takes a bare infinitive, with no de. Il faut prendre un comprimé."
+      },
+      "usage": "Reading a box, or repeating what the pharmacist said.",
+      "register": "neutral",
+      "mnemonic": "The box speaks to nobody in particular: il faut."
+    },
+    {
+      "id": "L3-M7-S10",
+      "display": "J'ai une ordonnance pour ces comprimés",
+      "cue": "I have a prescription for these tablets",
+      "literal": "I-have a prescription for these tablets",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rendez-vous",
+            "cue": "appointment",
+            "tag": "free",
+            "forms": [],
+            "note": "One hyphenated word, and it does not change in the plural. avoir rendez-vous takes no article at all: j'ai rendez-vous à trois heures."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "avoir rendez-vous drops the article that English keeps — j'ai rendez-vous, not j'ai un rendez-vous, when you are simply saying you have one.",
+      "sound": "zhay oon or-do-NAHNS poor say kom-pree-MAY.",
+      "variations": [
+        {
+          "display": "J'ai rendez-vous chez le médecin demain",
+          "cue": "I have a doctor's appointment tomorrow",
+          "changed": "no article at all after avoir"
+        },
+        {
+          "display": "J'ai une ordonnance pour ce comprimé",
+          "cue": "I have a prescription for this tablet",
+          "changed": "singular, and ce instead of ces"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai un rendez-vous chez le médecin",
+        "why": "Understandable, but the set phrase drops the article: j'ai rendez-vous chez le médecin."
+      },
+      "usage": "Handing the paper across the counter, which ends the visit.",
+      "register": "neutral",
+      "mnemonic": "Some phrases keep their article and some throw it away."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M7-C01",
+      "display": "J'ai mal à la tête depuis ce matin",
+      "cue": "I've had a headache since this morning"
+    },
+    {
+      "id": "L3-M7-C02",
+      "display": "J'ai mal au dos depuis lundi",
+      "cue": "My back has hurt since Monday"
+    },
+    {
+      "id": "L3-M7-C03",
+      "display": "J'ai mal aux dents",
+      "cue": "My teeth hurt"
+    },
+    {
+      "id": "L3-M7-C04",
+      "display": "J'ai mal au ventre",
+      "cue": "I have stomach ache"
+    },
+    {
+      "id": "L3-M7-C05",
+      "display": "J'ai de la fièvre depuis hier",
+      "cue": "I've had a temperature since yesterday"
+    },
+    {
+      "id": "L3-M7-C06",
+      "display": "Je n'ai pas de fièvre",
+      "cue": "I don't have a temperature"
+    },
+    {
+      "id": "L3-M7-C07",
+      "display": "J'ai un rhume",
+      "cue": "I have a cold"
+    },
+    {
+      "id": "L3-M7-C08",
+      "display": "J'ai la grippe depuis trois jours",
+      "cue": "I've had flu for three days"
+    },
+    {
+      "id": "L3-M7-C09",
+      "display": "Je suis malade depuis lundi",
+      "cue": "I've been ill since Monday"
+    },
+    {
+      "id": "L3-M7-C10",
+      "display": "Vous avez quelque chose contre le rhume ?",
+      "cue": "Do you have something for a cold?"
+    },
+    {
+      "id": "L3-M7-C11",
+      "display": "Je vais à la pharmacie ce matin",
+      "cue": "I'm going to the chemist this morning"
+    },
+    {
+      "id": "L3-M7-C12",
+      "display": "J'ai rendez-vous chez le médecin demain",
+      "cue": "I have a doctor's appointment tomorrow"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

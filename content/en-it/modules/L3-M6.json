@@ -1,0 +1,615 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M6",
+  "title": "Feelings in depth",
+  "job": "Nuance past good and bad",
+  "prerequisites": ["L3-M5"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 4.5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "present — the tense of a feeling you have now",
+      "imperfetto — L2-M10's, re-used for the feeling that was standing before"
+    ],
+    "allowedPatterns": [
+      "Mi sento + Adj",
+      "Sono + Adj-o/a",
+      "Mi fa + <noun>",
+      "Ho voglia di + V-inf",
+      "Mi dà fastidio + <N>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "-ATO IS WHAT YOU FEEL, -ANTE IS WHAT DOES IT TO YOU, and the difference is meaning rather than style. sono annoiato is \"I am bored\"; è noioso is \"it is boring\". sono stanco against è stancante; sono interessato against è interessante. English hides the seam because \"I am bored\" and \"it is boring\" share one root there too, and a learner reaches for the shorter word. Sono noioso is a complete Italian sentence and it says you are a boring person — the mistake this module exists to stop."
+    },
+    {
+      "tag": "delta",
+      "text": "MI SENTO TAKES AN ADJECTIVE, AND THE ADJECTIVE AGREES WITH YOU: mi sento stanco from a man, mi sento stanca from a woman. This is L3-M1's reflexive doing feelings — the same mi that points alzarsi back at its own subject — so nothing new is opened, only pointed somewhere new. sentire and sentirsi are two jobs of one verb: bare sento is \"I hear\", mi sento is \"I feel\"."
+    },
+    {
+      "tag": "delta",
+      "text": "ITALIAN HAS SOME FEELINGS AND IS GIVEN OTHERS, where English simply is them. ho paura (\"I have fear\"), ho voglia di (\"I have desire to\"), mi fa piacere (\"it makes pleasure to me\"), mi dà fastidio (\"it gives annoyance to me\"). Translate \"I am afraid\" with an adjective and you have described your character rather than your afternoon — Spanish sets the same trap with soy miedoso."
+    },
+    {
+      "tag": "free",
+      "text": "EVERY FEELING ADJECTIVE AGREES IN GENDER AND NUMBER, which is L1's very first law finding more places to work: arrabbiato · arrabbiata · arrabbiati · arrabbiate. No new rule arrives with this module's vocabulary, only more nouns and more speakers to agree with."
+    },
+    {
+      "tag": "delta",
+      "text": "MI DÀ FASTIDIO AGREES WITH THE THING THAT ANNOYS YOU, not with you: mi dà fastidio il rumore, but mi danno fastidio i rumori. It runs backwards exactly like mi piace and mi piacciono from L1-M1, so a learner who has that pair already has this one."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M6-S01",
+      "display": "Mi sento stanco oggi",
+      "cue": "I feel tired today",
+      "literal": "To-me I-feel tired today",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mi sento",
+            "cue": "I feel",
+            "tag": "delta",
+            "forms": ["mi sento", "ti senti", "si sente", "ci sentiamo"],
+            "note": "L3-M1's reflexive mi, pointed at a feeling. The adjective after it agrees with the speaker: mi sento stanca from a woman."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "Bare sento is not this verb's feeling job — it is \"I hear\". The mi is what turns sentire into sentirsi, and dropping it changes the sentence rather than shortening it.",
+      "sound": "mee SEN-to STAN-ko OJ-jee. sento is stressed on the SEN, and mi sento runs together as one word in speech.",
+      "variations": [
+        {
+          "display": "Mi sento stanca oggi",
+          "cue": "I feel tired today",
+          "changed": "a woman is speaking, so the adjective ends in -a"
+        },
+        {
+          "display": "Ti senti stanco?",
+          "cue": "Do you feel tired?",
+          "changed": "asked of somebody else"
+        },
+        {
+          "display": "Non mi sento bene",
+          "cue": "I do not feel well",
+          "changed": "negative, and bene instead of an adjective"
+        }
+      ],
+      "mistake": {
+        "display": "Sento stanco oggi",
+        "why": "Without mi, sentire means \"hear\" and the sentence falls apart: Mi sento stanco oggi."
+      },
+      "usage": "The everyday answer to come stai? when bene would be a lie.",
+      "register": "neutral",
+      "mnemonic": "mi sento = I feel it in myself."
+    },
+    {
+      "id": "L3-M6-S02",
+      "display": "Sono annoiato, questo lavoro è noioso",
+      "cue": "I am bored, this job is boring",
+      "literal": "I-am bored, this work is boring",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "annoiato",
+            "cue": "bored",
+            "tag": "interference",
+            "forms": ["annoiato", "annoiata", "annoiati", "annoiate"],
+            "note": "What YOU feel. -ato is the ending for the person on the receiving end of the boredom, and it agrees with them."
+          },
+          {
+            "display": "noioso",
+            "cue": "boring",
+            "tag": "interference",
+            "forms": ["noioso", "noiosa", "noiosi", "noiose"],
+            "note": "What the THING is. Sono noioso says you are a boring person — a sentence about your character, not your afternoon."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "English \"I'm bored\" and \"it's boring\" are one word apart and Italian's two are a whole ending apart. Reach for the shorter one and you have insulted yourself.",
+      "sound": "SO-no an-no-YA-to, KWES-to la-VO-ro e no-YO-zo. The -oso in noioso has a z sound, not an s.",
+      "variations": [
+        {
+          "display": "Sono annoiata, questo lavoro è noioso",
+          "cue": "I am bored, this job is boring",
+          "changed": "a woman is speaking"
+        },
+        {
+          "display": "Non sono annoiato, il lavoro è interessante",
+          "cue": "I am not bored, the job is interesting",
+          "changed": "the other half of the pair"
+        },
+        {
+          "display": "Siamo annoiati, questa riunione è noiosa",
+          "cue": "We are bored, this meeting is boring",
+          "changed": "plural speakers, feminine thing"
+        }
+      ],
+      "mistake": {
+        "display": "Sono noioso, questo lavoro è annoiato",
+        "why": "Exactly backwards: you have called yourself boring and the job bored. Sono annoiato, questo lavoro è noioso."
+      },
+      "usage": "Said to a friend about work, not to the person who gave you the work.",
+      "register": "informal",
+      "mnemonic": "-ato is done TO you; -ante or -oso DOES it."
+    },
+    {
+      "id": "L3-M6-S03",
+      "display": "Questo libro è interessante e sono interessato",
+      "cue": "This book is interesting and I am interested",
+      "literal": "This book is interesting and I-am interested",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "interessante",
+            "cue": "interesting",
+            "tag": "interference",
+            "forms": ["interessante", "interessanti"],
+            "note": "What the thing is. An -ante adjective has one form for both genders and only changes for the plural: libri interessanti."
+          },
+          {
+            "display": "interessato",
+            "cue": "interested",
+            "tag": "interference",
+            "forms": ["interessato", "interessata", "interessati", "interessate"],
+            "note": "What you are. Unlike interessante it takes all four endings, because it agrees with a person."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "The two shapes come from one root and mean opposite ends of the same arrow. Sono interessante is a boast about your personality.",
+      "sound": "in-te-res-SAN-te and in-te-res-SA-to. Both stress the syllable before the ending; the double s is held.",
+      "variations": [
+        {
+          "display": "Questo libro è interessante e sono interessata",
+          "cue": "This book is interesting and I am interested",
+          "changed": "a woman is speaking"
+        },
+        {
+          "display": "Questi libri sono interessanti",
+          "cue": "These books are interesting",
+          "changed": "plural, and -ante takes its one plural"
+        },
+        {
+          "display": "Non sono interessato, è noioso",
+          "cue": "I am not interested, it is boring",
+          "changed": "the negative, with the other pair's word"
+        }
+      ],
+      "mistake": {
+        "display": "Sono interessante a questo libro",
+        "why": "That says you yourself are interesting. Sono interessato a questo libro."
+      },
+      "usage": "Saying yes to an offer without committing yet — a flat, useful sentence at work.",
+      "register": "neutral",
+      "mnemonic": "The book is interessANTE; you are interessATO."
+    },
+    {
+      "id": "L3-M6-S04",
+      "display": "La riunione è stancante, ma non sono stanco",
+      "cue": "The meeting is tiring, but I am not tired",
+      "literal": "The meeting is tiring, but not I-am tired",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "stancante",
+            "cue": "tiring",
+            "tag": "interference",
+            "forms": ["stancante", "stancanti"],
+            "note": "The -ante partner of L1-M2's stanco. The meeting is stancante; the person it tires is stanco."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "English lets \"tiring\" and \"tired\" both attach to almost anything. Italian does not: a meeting is never stanca and a person is never stancante.",
+      "sound": "stan-KAN-te against STAN-ko. The stress moves, which is the easiest way to hear which one you said.",
+      "variations": [
+        {
+          "display": "La riunione è stancante e sono molto stanco",
+          "cue": "The meeting is tiring and I am very tired",
+          "changed": "both halves true at once"
+        },
+        {
+          "display": "Il lavoro è stancante, ma mi piace",
+          "cue": "The job is tiring, but I like it",
+          "changed": "a different thing doing the tiring"
+        },
+        {
+          "display": "Le riunioni sono stancanti",
+          "cue": "Meetings are tiring",
+          "changed": "plural, so -ante takes -i"
+        }
+      ],
+      "mistake": {
+        "display": "La riunione è stanca",
+        "why": "A meeting cannot be tired. La riunione è stancante."
+      },
+      "usage": "Explaining why you look flat without complaining about the meeting itself.",
+      "register": "neutral",
+      "mnemonic": "stancANTE tires; stanco is tired."
+    },
+    {
+      "id": "L3-M6-S05",
+      "display": "Ho paura dei cani grandi",
+      "cue": "I am afraid of big dogs",
+      "literal": "I-have fear of-the dogs big",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ho paura",
+            "cue": "I am afraid",
+            "tag": "delta",
+            "forms": ["ho paura", "hai paura", "ha paura", "abbiamo paura"],
+            "note": "Italian HAS fear where English IS afraid. The whole phrase is one unit; L1-M5's ho is doing the work an adjective does in English."
+          },
+          {
+            "display": "cani",
+            "cue": "dogs",
+            "tag": "free",
+            "forms": ["cane", "cani"],
+            "note": "A masculine noun with the ordinary -e to -i plural. il cane, i cani."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "There is an adjective for frightened and this is not the moment for it. Sono pauroso describes a timid person, the way soy miedoso does in Spanish.",
+      "sound": "o pa-OO-ra day KA-nee GRAN-dee. paura is three syllables with the stress on the OO.",
+      "variations": [
+        {
+          "display": "Non ho paura dei cani",
+          "cue": "I am not afraid of dogs",
+          "changed": "negative"
+        },
+        {
+          "display": "Hai paura?",
+          "cue": "Are you afraid?",
+          "changed": "asked of somebody else"
+        },
+        {
+          "display": "Mio figlio ha paura del cane",
+          "cue": "My son is afraid of the dog",
+          "changed": "a third person, and one dog"
+        }
+      ],
+      "mistake": {
+        "display": "Sono paura dei cani",
+        "why": "paura is a noun and it needs avere, not essere: Ho paura dei cani."
+      },
+      "usage": "An ordinary admission — not dramatic in Italian, which uses this phrase for everything from spiders to exams.",
+      "register": "neutral",
+      "mnemonic": "You HAVE fear, you are not fear."
+    },
+    {
+      "id": "L3-M6-S06",
+      "display": "Ho voglia di dormire un po'",
+      "cue": "I feel like sleeping a bit",
+      "literal": "I-have desire of to-sleep a bit",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ho voglia di",
+            "cue": "I feel like",
+            "tag": "delta",
+            "forms": ["ho voglia di", "hai voglia di", "ha voglia di"],
+            "note": "Another feeling Italian HAS. The di glues an infinitive on, the same di as L1-M9's penso di and L3-M5's mi ha detto di."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "This is not voglio. voglio dormire says you want to sleep; ho voglia di dormire says you fancy it — softer, and what an Italian actually says at four in the afternoon.",
+      "sound": "o VO-lya dee dor-MEE-re oon po. The gli in voglia is one soft sound, like the lli in million.",
+      "variations": [
+        {
+          "display": "Non ho voglia di lavorare",
+          "cue": "I do not feel like working",
+          "changed": "negative, and a different infinitive"
+        },
+        {
+          "display": "Hai voglia di parlare?",
+          "cue": "Do you feel like talking?",
+          "changed": "asked of somebody else"
+        },
+        {
+          "display": "Ho voglia di un caffè",
+          "cue": "I feel like a coffee",
+          "changed": "a noun after di instead of a verb"
+        }
+      ],
+      "mistake": {
+        "display": "Ho voglia dormire un po'",
+        "why": "The di is not optional after voglia: Ho voglia di dormire un po'."
+      },
+      "usage": "Softer than voglio and therefore safer with people you have just met.",
+      "register": "informal",
+      "mnemonic": "voglia is the wish; di carries it to the verb."
+    },
+    {
+      "id": "L3-M6-S07",
+      "display": "Mi dà fastidio questo rumore",
+      "cue": "This noise annoys me",
+      "literal": "To-me it-gives annoyance this noise",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mi dà fastidio",
+            "cue": "it annoys me",
+            "tag": "delta",
+            "forms": ["mi dà fastidio", "mi danno fastidio", "ti dà fastidio"],
+            "note": "Runs backwards like mi piace: the thing is the subject. One noise, mi dà fastidio; two noises, mi danno fastidio."
+          },
+          {
+            "display": "rumore",
+            "cue": "noise",
+            "tag": "free",
+            "forms": ["rumore", "rumori"],
+            "note": "Masculine, plural in -i. il rumore, i rumori."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "The English sentence puts the noise first and you last, and Italian puts you first — mi — while still making the noise the subject. The verb agrees with the noise, never with the mi.",
+      "sound": "mee da fas-TEE-dyo KWES-to roo-MO-re. The dà carries an accent because it is the verb, not the preposition da.",
+      "variations": [
+        {
+          "display": "Mi danno fastidio questi rumori",
+          "cue": "These noises annoy me",
+          "changed": "plural, so the verb goes plural"
+        },
+        {
+          "display": "Ti dà fastidio?",
+          "cue": "Does it annoy you?",
+          "changed": "asked of somebody else"
+        },
+        {
+          "display": "Non mi dà fastidio",
+          "cue": "It does not annoy me",
+          "changed": "negative, with nothing named"
+        }
+      ],
+      "mistake": {
+        "display": "Mi do fastidio questo rumore",
+        "why": "The noise gives, not you: the verb is third person. Mi dà fastidio questo rumore."
+      },
+      "usage": "The polite way to raise a problem in a shared flat or an office — it blames the noise, not a person.",
+      "register": "neutral",
+      "mnemonic": "The noise gives; you receive."
+    },
+    {
+      "id": "L3-M6-S08",
+      "display": "Mi fa piacere, sono molto orgoglioso",
+      "cue": "That makes me happy, I am very proud",
+      "literal": "To-me it-makes pleasure, I-am very proud",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mi fa piacere",
+            "cue": "it makes me happy",
+            "tag": "delta",
+            "forms": ["mi fa piacere", "ti fa piacere"],
+            "note": "The warm twin of mi dà fastidio, built on L1-M6's fa. Not the same as mi piace: this one thanks somebody for what they did."
+          },
+          {
+            "display": "orgoglioso",
+            "cue": "proud",
+            "tag": "free",
+            "forms": ["orgoglioso", "orgogliosa", "orgogliosi", "orgogliose"],
+            "note": "An ordinary four-ending adjective. Proud OF something takes di: orgoglioso di mio figlio."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "mi fa piacere is a reply, not a description. It answers something a person has just said or done, where mi piace would rate a thing.",
+      "sound": "mee fa pya-CHE-re, SO-no MOL-to or-go-LYO-zo. The gli in orgoglioso is the same soft sound as in voglia.",
+      "variations": [
+        {
+          "display": "Mi fa piacere, grazie mille",
+          "cue": "That makes me happy, thank you very much",
+          "changed": "answered as a thank-you"
+        },
+        {
+          "display": "Ti fa piacere?",
+          "cue": "Does that make you happy?",
+          "changed": "asked of somebody else"
+        },
+        {
+          "display": "Sono orgogliosa di mio figlio",
+          "cue": "I am proud of my son",
+          "changed": "a woman speaking, and what she is proud of"
+        }
+      ],
+      "mistake": {
+        "display": "Mi piace, sono molto orgoglioso",
+        "why": "mi piace rates a thing; answering what somebody did needs mi fa piacere."
+      },
+      "usage": "The natural reply to good news about somebody you know.",
+      "register": "neutral",
+      "mnemonic": "It MAKES pleasure for me."
+    },
+    {
+      "id": "L3-M6-S09",
+      "display": "Ero preoccupato, adesso sono sollevato e tranquillo",
+      "cue": "I was worried, now I am relieved and calm",
+      "literal": "I-was worried, now I-am relieved and calm",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "preoccupato",
+            "cue": "worried",
+            "tag": "free",
+            "forms": ["preoccupato", "preoccupata", "preoccupati", "preoccupate"],
+            "note": "Worried ABOUT something takes per: preoccupato per mio padre. Four endings, agreeing with the worrier."
+          },
+          {
+            "display": "sollevato",
+            "cue": "relieved",
+            "tag": "free",
+            "forms": ["sollevato", "sollevata", "sollevati", "sollevate"],
+            "note": "The feeling after the bad news turns out fine. Four endings, agreeing with the person relieved."
+          },
+          {
+            "display": "tranquillo",
+            "cue": "calm",
+            "tag": "free",
+            "forms": ["tranquillo", "tranquilla", "tranquilli", "tranquille"],
+            "note": "Calm, of a person or of a place: una sera tranquilla. Sta tranquillo is how you tell somebody not to worry."
+          },
+          {
+            "display": "adesso",
+            "cue": "now",
+            "tag": "free",
+            "forms": ["adesso"],
+            "note": "Plain \"now\", and the word that makes a before-and-after sentence work against L2-M10's ero."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "ero is L2-M10's imperfetto and it is right here because the worry was a standing state, not one completed event. Sono stato preoccupato would put a full stop on it.",
+      "sound": "E-ro pre-oc-cu-PA-to, a-DES-so SO-no sol-le-VA-to. adesso holds its double s.",
+      "variations": [
+        {
+          "display": "Ero preoccupata, adesso sono sollevata",
+          "cue": "I was worried, now I am relieved",
+          "changed": "a woman speaking, so both adjectives end in -a"
+        },
+        {
+          "display": "Era preoccupato per mio padre",
+          "cue": "He was worried about my father",
+          "changed": "somebody else, and what the worry was about"
+        },
+        {
+          "display": "Adesso sono tranquillo",
+          "cue": "Now I am calm",
+          "changed": "only the after half"
+        }
+      ],
+      "mistake": {
+        "display": "Ero preoccupato, adesso sono sollevato e tranquilla",
+        "why": "One speaker, one gender: all three adjectives agree together. Sollevato e tranquillo."
+      },
+      "usage": "How a result is reported to family — the worry named, then closed.",
+      "register": "neutral",
+      "mnemonic": "ero for the state before, sono for the state now."
+    },
+    {
+      "id": "L3-M6-S10",
+      "display": "Sono deluso e un po' imbarazzato, ma non arrabbiato",
+      "cue": "I am disappointed and a bit embarrassed, but not angry",
+      "literal": "I-am disappointed and a bit embarrassed, but not angry",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "deluso",
+            "cue": "disappointed",
+            "tag": "free",
+            "forms": ["deluso", "delusa", "delusi", "deluse"],
+            "note": "Disappointed by a person or a result. Deluso da qualcuno names who did it."
+          },
+          {
+            "display": "imbarazzato",
+            "cue": "embarrassed",
+            "tag": "free",
+            "forms": ["imbarazzato", "imbarazzata", "imbarazzati", "imbarazzate"],
+            "note": "Embarrassed, of the person. The situation that causes it is imbarazzante, by this module's -ato and -ante law."
+          },
+          {
+            "display": "arrabbiato",
+            "cue": "angry",
+            "tag": "free",
+            "forms": ["arrabbiato", "arrabbiata", "arrabbiati", "arrabbiate"],
+            "note": "Angry. Angry WITH a person takes con: arrabbiato con il capo."
+          }
+        ],
+        "rules": [3, 0]
+      },
+      "trap": "One speaker, three adjectives, one ending. English marks none of them and Italian marks all three, so a single slip is audible across the whole sentence.",
+      "sound": "SO-no de-LOO-zo e oon po im-ba-rat-TSA-to. The zz in imbarazzato is a hard ts.",
+      "variations": [
+        {
+          "display": "Sono delusa e un po' imbarazzata",
+          "cue": "I am disappointed and a bit embarrassed",
+          "changed": "a woman speaking"
+        },
+        {
+          "display": "Siamo delusi, ma non arrabbiati",
+          "cue": "We are disappointed, but not angry",
+          "changed": "plural speakers"
+        },
+        {
+          "display": "Sono arrabbiato con il capo",
+          "cue": "I am angry with the boss",
+          "changed": "angry, and who with"
+        }
+      ],
+      "mistake": {
+        "display": "Sono deluso e un po' imbarazzata",
+        "why": "The same speaker cannot be -o then -a: Sono deluso e un po' imbarazzato."
+      },
+      "usage": "The measured version of a complaint — precise about which feeling, which is what keeps it civil.",
+      "register": "neutral",
+      "mnemonic": "One speaker, one ending, all the way along."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L3-M6-C01", "display": "Mi sento stanco oggi", "cue": "I feel tired today" },
+    {
+      "id": "L3-M6-C02",
+      "display": "Sono annoiato, questo lavoro è noioso",
+      "cue": "I am bored, this job is boring"
+    },
+    {
+      "id": "L3-M6-C03",
+      "display": "Questo libro è interessante e sono interessato",
+      "cue": "This book is interesting and I am interested"
+    },
+    {
+      "id": "L3-M6-C04",
+      "display": "La riunione è stancante, ma non sono stanco",
+      "cue": "The meeting is tiring, but I am not tired"
+    },
+    { "id": "L3-M6-C05", "display": "Ho paura dei cani grandi", "cue": "I am afraid of big dogs" },
+    {
+      "id": "L3-M6-C06",
+      "display": "Ho voglia di dormire un po'",
+      "cue": "I feel like sleeping a bit"
+    },
+    {
+      "id": "L3-M6-C07",
+      "display": "Mi dà fastidio questo rumore",
+      "cue": "This noise annoys me"
+    },
+    {
+      "id": "L3-M6-C08",
+      "display": "Mi fa piacere, sono molto orgoglioso",
+      "cue": "That makes me happy, I am very proud"
+    },
+    {
+      "id": "L3-M6-C09",
+      "display": "Ero preoccupato, adesso sono sollevato",
+      "cue": "I was worried, now I am relieved"
+    },
+    {
+      "id": "L3-M6-C10",
+      "display": "Sono deluso, ma non arrabbiato",
+      "cue": "I am disappointed, but not angry"
+    },
+    {
+      "id": "L3-M6-C11",
+      "display": "Mio figlio ha paura del cane",
+      "cue": "My son is afraid of the dog"
+    },
+    {
+      "id": "L3-M6-C12",
+      "display": "Non ho voglia di lavorare oggi",
+      "cue": "I do not feel like working today"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

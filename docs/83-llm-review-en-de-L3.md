@@ -494,3 +494,265 @@ wave and now finds 209. That list is not this wave's to edit.
     shape, and that `Er hat meine Frage geantwortet` is impossible rather than merely rare.
 32. **`Als ich klein war`** (M5-S10). Confirm this is how a speaker opens a childhood story, and that
     `Geschichten erzählen` is what a parent is said to have done rather than `vorlesen`.
+
+## Wave 3 — L3-M6..M10 (#556)
+
+The wave that closes the level, authored against the same briefs and reviewed against the REAL
+cumulative index rather than against the briefs' account of it: **560 surfaces through L3-M5**,
+growing to **588 after M6, 609 after M7, 641 after M8, 676 after M9 and 686 after M10**. A strict
+`npm run content:build` emits `en-de: 30 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10)` with
+`CONTENT 214/214 ok`, and `tools/shown-surfaces.test.ts` holds en-de at **11** with no finding in any
+of the five files. The spend is 18, 15, 21, 16 and 10 rows against a `newWordCap` of 25, which the
+wave never came near — the level's last five modules are grammar, not vocabulary, and the one module
+that wanted to be pure vocabulary (M7's body) turned out to have been paid for by L2-M8 years ago.
+
+`maxSpan` holds at **3**. The wave mints exactly one multi-token key, M10's `zum Glück` at two
+tokens, and it is indexed whole because `Glück` exists nowhere else in the ladder and the phrase is
+not usefully decomposed. Nothing here needs a fourth token.
+
+**Re-teaches: zero, across five modules and 126 new keys.** That makes the en-de L3 chain 10-for-10
+with none. `FORCED_DUPLICATES` in `src/course/types.test.ts` still has its three entries — `nicht`,
+`dienstag`, `in` — and this wave adds no fourth.
+
+### L3-M6 "Feelings in depth" — where the language keeps its emotions
+
+The module's claim is the brief's: German does not have a handful of odd reflexive verbs, it keeps
+its feelings there, and a learner without them cannot say anything about how they feel past L1-M9's
+four adjectives. Rule 0 says exactly that and points at `Ich wasche mich`, which L1-M4 shipped with a
+note already saying the pronoun belongs to the verb — so the module presents a system rather than a
+novelty, and the five patterns are five verbs of one shape.
+
+The pronoun bill is what makes it affordable, and the index confirmed every line of the brief's
+seam: `mich` is **L1-M4**'s, `dir` and `uns` are **L2-M1**'s, `mir` is **L1-M9**'s, and only `sich`
+is fresh. Its row carries all three readings on one key — third singular, third plural, and the `Sie`
+form — the treatment `docs/59`'s decision 2 gave L1-M2's `sie`, and the second key in the course to
+need it. S07 shows the third person and its variation shows the plural; the `Sie` reading is shown in
+S03's `Fühlen Sie sich besser?`, so all three readings appear in a display and none of them opens a
+second row.
+
+The DATIVE reflexive is rule 2 and it is authored as the brief asked, one minimal pair on one verb:
+S05's `Ich wasche mir die Hände` against the variation `Ich wasche mich`, with the object arriving
+and the pronoun changing case in the same breath. `Ich mache mir Sorgen um meine Tochter` (S08) is
+the same shape on a second verb, so the rule is not left standing on one example.
+
+Rule 3 is the interference entry and it does the job the brief set it: the fixed prepositions are
+taught as pairs and the module says plainly that there is no rule to reason from — `auf` and `über`
+here are NOT L2-M4's two-way prepositions choosing by motion, because the verb has already chosen.
+`gefallen` (S06) cost nothing: L2-M8's rules entry had already listed it among the dative verbs
+without a row ever being opened, so `Das Buch gefällt mir` is the row that entry was waiting for.
+
+Seven adjectives had to find seats without any of them re-teaching or riding on a display that does
+not carry them: `enttäuscht` sits on S02 with `ärgern`, `wütend` on S07 with the third person, and
+S09 and S10 carry the remaining five as ordinary lists — `Ich bin aufgeregt, stolz und sehr nervös`.
+No row in this module teaches a word its sentence does not show.
+
+### L3-M7 "Body and health" — the module L2 had already half-written
+
+The brief's first note is the important one and the index agreed with all of it: `Kopf`,
+`Kopfschmerzen`, `Bauchschmerzen`, `weh`, `Arzt`, `Ärztin`, `Hilfe`, `schlecht` and `brauchen` are
+**L2-M8**'s, `krank`, `kalt` and `warm` are **L1-M9**'s, `tut` is **L2-M1**'s and `Ihnen` is
+**L1-M2**'s. So the module opens no row for any of them, and spends what it has on `seit`, the body
+parts and the surgery.
+
+`seit` plus the PRESENT is rule 0 and the sharpest tense delta in the level. It is shown three times
+in displays — S01 `seit drei Tagen`, S06 `seit gestern`, S10 `seit einem Jahr` — because the shape
+has to be met with a stretch, with a point and outside the surgery before it stops feeling like a
+medical idiom. The mistake block on S01 is `Ich habe Kopfschmerzen für drei Tage`, which is the
+word-for-word English and which a German hears as a headache with a scheduled end.
+
+Rule 1 is M6's dative reflexive one module later, and the two modules were written to make that
+visible: S03's `Ich habe mir den Arm gebrochen` is `Ich wasche mir die Hände` with a different verb.
+The mistake block earns its place exactly where the brief said it would — `Mein Rücken tut weh` is
+not ungrammatical, and it is still not the sentence, so S02 carries it as a `mistake` rather than as
+a `trap`.
+
+Rule 3 collects the dative-experiencer family for the fourth time (`Mir ist kalt`, `Mir ist
+schlecht`, `Mir tut der Kopf weh`, `Was fehlt Ihnen?`) and says in one line that the person is never
+the subject. `fehlt` is the only genuinely new member and its row says what it means with a dative
+person. The register is `formal` on the two surgery sentences (S04, S05) and neutral elsewhere: the
+complaint itself is what you say to anyone.
+
+### L3-M8 "Money and paperwork" — two grammars in one module, and why they fit
+
+The genitive and the relative clause fit in one module for the reason the brief named: the relative
+pronoun is spelled exactly like the definite article in every cell this level needs, and `der`,
+`die`, `das`, `den` and `dem` are all **L1-M1**'s and **L1-M7**'s. **The module opens no pronoun row
+at all** and writes rules 3 and 4 instead. Only the dative plural `denen` is fresh, and it gets the
+one row (S03); `dessen` and `deren` stay out of the level.
+
+The genitive is authored in its honest version. Rule 0 gives the forms and then says that ordinary
+speech mostly says `von` plus the dative instead — which is already the learner's, because L2-M2
+taught `der Bruder von Anna` — and S01's variation writes the spoken version next to the written one
+rather than hiding it. Rule 1 carries the weak masculine class, because L2-M2 had already met its
+edge when it had to write `Herrn`; the pool's C12 shows `das Büro des Kollegen`, which is the form
+that class exists to explain.
+
+Rule 2 is the honesty entry, in the register L2-M9 used for `größer wie`: spoken German puts `wegen`
+with the DATIVE constantly, and S04's variation writes `Wegen dem Vertrag` beside the genitive
+display. Neither is presented as wrong; the genitive is presented as what the form is written in.
+
+Three genitive shapes of nouns the module does not own took their own rows, which is the law about a
+new shape of an older lexeme: `Problems` (S07) points back at **L2-M8**'s `Problem`, `Tages` (S08)
+points back at **L1-M4**'s `Tag`, and `Monat` — which nobody owned — takes a full row with `Monats`
+and `Monate` in its forms.
+
+### L3-M9 "Festivals and everyday culture" — two impersonals, one bracket
+
+`man` comes first because it is what a learner will actually produce, and rule 0 says the thing that
+makes it usable: it is completely ordinary, the stiff English `one` is not what it sounds like, and
+the verb is always singular. Two displays are built on it, two more variations and three
+pool items, so a learner meets it seven times before the module ends.
+
+The passive is rule 1 and it is deliberately not given a new diagram: `werden` in position two and
+the participle at the very END is **L2-M1**'s bracket for the fifth time in the course, and the rule
+says so instead of drawing it again. `werden` is a three-job key on one row — become, passive
+auxiliary, and the future auxiliary this course has never needed — with a note true of all three and
+a mnemonic that tells them apart by what follows: an adjective means becoming, a participle at the
+end means the passive. S08's `Es wird im Sommer sehr warm` and S02's `Das Fest wird im Dezember
+gefeiert` put both readings in displays one page apart. The past passive, the `von`-agent and the
+`sein`-passive are named in rule 3 as L4-M7's and appear nowhere.
+
+Culture is described and never explained (rule 4). No display names a festival, a country or a
+region, and the two ways the module has of saying where — `Hier` and `Bei uns`, both in S01's
+variations — are exactly what the brief asked for: they say what happens where you are standing and
+leave the rest of the map alone.
+
+### L3-M10 "Your own story" — the exit test the level was building
+
+Ten accounts of three or four sentences each, well under the eight-sentence ceiling, and every one of
+them is a collision test rather than a topic. S01 puts all three pasts in one account with each doing
+what the other two cannot: `hatte gearbeitet` first, `hat angerufen` second, `war` holding the state
+across both. S02 fronts a `weil` clause so the two verbs meet across the comma (M3's shape). S04 is
+reported speech with no backshift (M5). S05 is a condition and a piece of advice in Konjunktiv II
+(M4). S06 is a reflexive feeling (M6), S07 is `seit` and the surgery (M7), S08 is the relative clause
+and the genitive (M8), S09 is `man` and the present passive (M9), and S10 tells the same three
+sentences to a friend and — in its variation — to a stranger, `du` against `Sie`, which is where
+L2-M1 began.
+
+The register chips are the level's last statement: S10 is `informal` and its variation is the `Sie`
+version of the identical story, with nothing else moved.
+
+### The seams the briefs got wrong, and what the index actually said
+
+Every one of these was checked against the emitted index (folded through `cumulativeThrough`) and
+against `npm run content:shown` before a line was written.
+
+- **`Termin` is L3-M4's, not M7's.** M7's seam lists it as a fresh key. The index says
+  `L3-M4` owns it — Wave 2 minted it for `Ich hätte gern einen Termin`. M7 therefore opens **no row**
+  for it: S05 shows `Ich brauche einen Termin beim Arzt` and the usage line names L3-M4 as the owner.
+- **`Woche` is L3-M1's, not M8's.** M8's seam lists `Woche` among its fresh keys and M9's brief names
+  it in its vocabulary. The index says `L3-M1` minted it, on its own S01 row. No row is opened
+  in either module; M8-S08's variation uses `während der Woche` and the sentence resolves to L3-M1.
+- **`Jahr` moved from M8 to M7.** M8's seam claims `Jahr` and `Jahre`. But M7's own rule 0 is built
+  on the brief's own example `Ich wohne seit einem Jahr hier`, and en-de allows exactly one row per
+  surface, so the module that SHOWS it first has to own it. M7 opens `Jahr` with `Jahre` and `Jahren`
+  in its forms; M8 keeps `Monat` and never shows a year.
+- **`Hand` and `Hände` moved from M7 to M6.** M7's seam lists both. M6's note 3, though, requires the
+  dative-reflexive minimal pair on one verb, and the pair German actually uses is
+  `Ich wasche mich` / `Ich wasche mir die Hände`. One row can only sit in one module: **M6 opens
+  `Hände`** (with `Hand` in its forms) as part of that pair, and M7 shows `Mir tut die Hand weh` in
+  S09's variation with the note pointing back at M6. The brief's other body parts — `Rücken`, `Arm`,
+  `Bein`, `Hals` — are all M7's as written.
+- **`bei` and `beim` are minted at M7, and no seam names them.** Three of this wave's modules need
+  the word — `beim Arzt` (M7), `bei der Bank` (M8), `Bei uns` (M9-S01's variation, a pattern the M9
+  brief lists) — and none of the three seams mentions it, because each brief assumed a later module
+  would. First need wins: M7-S05 opens one row, `beim` with `bei` in its forms, and the note names
+  the `zum`/`zur` fusion L2-M2 already taught.
+- **A month had to be MINTED, because a proper noun raises the ratchet.** M9's patterns are written
+  `im + <month>` and its note 4 says festival names are proper nouns that never index (#61). On
+  en-de, though, an unindexed proper noun in a display is exactly what the shown-but-untaught count
+  counts — the standing 11 are `thomas`, `meyer` and their neighbours — so a bare `Weihnachten` or a
+  bare `Dezember` in a display would have raised the baseline this wave is forbidden to raise.
+  **No display in M9 names a festival at all**; every sentence anchors on `das Fest`, `der Feiertag`
+  or `der Geburtstag`, and `Dezember` takes an ordinary row so that `im Dezember` resolves.
+- **`vielen` is L2-M1's**, from `vielen Dank`. The first draft of M9's `viele` row listed `vielen` in
+  its forms and `npm run content:shown` reported the collision immediately; the row now lists `viele`
+  alone, which is also what the brief meant when it said `viele` is a separate key from L2-M6's
+  `viel`.
+- **M10's "ideally ZERO new words" is not reachable, and the schema is why.** `deconstruction.words`
+  has `minItems: 1`, so ten sentences need ten rows; en-de asserts one row per surface, so a row on
+  an already-taught word would be a re-teach and a defect. Ten NEW keys is therefore the floor, not
+  the target. The wave spends them on ten discourse words and **not one noun**: `alles`, `wieder`,
+  `eigentlich`, `nur`, `sofort`, `endlich`, `plötzlich`, `zum Glück`, `damals` and `früher`. Every
+  one of them is what an account needs to stop being a timetable, and `früher` is the module's only
+  `delta` row because English needs a verb (`used to`) where German needs an adverb.
+
+### The ratchet
+
+`tools/shown-surfaces.test.ts` held at **en-de 11** across all five modules and the strict build's
+report for the course is unchanged, word for word, from the one Wave 2 left. Four findings fired
+while the modules were drafts and all four were routed around rather than minted:
+
+- `beim` (M7's pool) — fixed by opening the row the three modules all needed, above.
+- `letzter`, `ausfülle`, `fülle` and `meinem` (four M8 variation displays) — `ausfülle` and `fülle`
+  were added to the `ausfüllen` row's forms, since they are that verb's own paradigm; `letzter` and
+  `meinem` were routed around, because they are adjective and possessive cells nobody has opened.
+- `Geschenken` and `isst` (M9) — `Geschenken` went into the `Geschenk` row's forms; `isst` was
+  routed around entirely, and rule 0's illustration was rewritten from `Hier isst man um zwölf` to
+  `Hier geht man um acht nach Hause` so that the rule text and the ladder agree.
+- `vielen` — the collision described above.
+
+The class Wave 2 named is still the one that fires: **a verb the ladder owns in its citation form
+and in one participle, reached for in a person-form nobody has opened.** This wave avoided
+`kauft`, `braucht`, `isst`, `arbeitet`, `musste`, `geschlafen`, `geworden` and `tat` by routing the
+sentence around them — `Jeder kommt mit einem Geschenk` rather than `Jeder kauft ein Geschenk`,
+`Ich wäre lieber zu Hause geblieben` rather than anything built on `geschlafen`. Minting a person
+form to save a sentence is how a wave spends its cap on nothing.
+
+One shared file is left untouched and is named here so it is not mistaken for a content failure:
+`src/course/types.test.ts` carries a literal list of the module files that existed before this wave
+and will be red on the census until the merge updates it. That list is not this wave's to edit, and
+neither is `content/en-de/levels.json`, whose `hasContent` flags for L3-M3..M10 the merge owns.
+
+### Open questions for the native pass
+
+33. **`sich freuen auf` against `sich freuen über`** (M6-S01). The module teaches `auf` for something
+    still coming and `über` for something that has happened. Confirm a speaker really keeps them
+    apart in conversation, and that `Ich freue mich über deine Nachricht` is what you say about a
+    message that has already arrived.
+34. **`Ich fühle mich wohl`** (M6-S03). Confirm `wohl` is comfort rather than health, that
+    `Ich fühle mich nicht wohl` is the ordinary way to say you are unwell before you would say
+    `krank`, and that `Mir ist nicht gut` has not displaced it.
+35. **`Ich mache mir Sorgen um`** (M6-S08). Confirm `um` rather than `über` with `Sorgen`, and that
+    the phrase is what a parent says rather than a written formula.
+36. **`zufrieden` against `glücklich`** (M6-S10). The module's claim is that `zufrieden` is quiet
+    contentment and that reaching for `glücklich` about a piece of work sounds much larger than an
+    English speaker means. Confirm, and confirm `zufrieden mit` takes the dative in speech.
+37. **`nervös` and `aufgeregt` together** (M6-S09). Confirm they are not the same word — that
+    `aufgeregt` can be good news and `nervös` cannot — and that listing three feelings in one
+    sentence is natural rather than literary.
+38. **`Mir tut der Rücken weh` against `Ich habe Rückenschmerzen`** (M7-S02). The module prefers the
+    dative sentence and treats `Mein Rücken tut weh` as the learner's error. Confirm the preference,
+    and say which of the two a patient actually opens with at the surgery.
+39. **`Was fehlt Ihnen?`** (M7-S04). Confirm this is the question a doctor asks rather than
+    `Was kann ich für Sie tun?`, and that `Was fehlt dir?` is what a friend says.
+40. **`Ich bin erkältet`** (M7-S07). Confirm the adjective is the everyday form and that
+    `Ich habe eine Erkältung` is the heavier one, and that `Hals` covers the sore throat a patient
+    means without `Halsschmerzen`.
+41. **`seit` with a point and with a stretch** (M7-S01, S06). Confirm `seit gestern` and
+    `seit drei Tagen` are equally ordinary, and that no speaker reaches for `für` in either.
+42. **`wegen dem` in speech** (M8-S04). The module writes the genitive in the display and the dative
+    in the variation, and says both are heard. Confirm the split is a register split rather than a
+    regional one, and that writing `wegen des Vertrags` on a form is still expected.
+43. **`überweisen` against `bezahlen`** (M8-S03, S06). Confirm `überweisen` is the ordinary verb for
+    paying a bill or a rent from an account, and that `Ich bezahle die Miete` is what a speaker says
+    about the same act when the mechanism is not the point.
+44. **`das Amt`** (M8-S04). Confirm the bare `Amt` is what people say for the office they are going
+    to, rather than the full `Bürgeramt`, and that `zum Amt gehen` is idiomatic.
+45. **`man` and its reach** (M9-S01, S10). The module's strongest register claim: that `man` is
+    completely ordinary and carries no stiffness. Confirm, and confirm `Bei uns` is heard as "where
+    I am from" rather than as "at our house".
+46. **The present passive in speech** (M9-S02, S07). Confirm `Das Fest wird im Dezember gefeiert` and
+    `Am Feiertag wird nicht gearbeitet` are said aloud rather than only written, and whether `man`
+    has taken over both in conversation.
+47. **`Geburtstag` and the wish before the day** (M9-S10). The row says congratulating anyone before
+    the day is widely avoided. Confirm that this holds across the German-speaking area, or name where
+    it does not.
+48. **`früher` for `used to`** (M10-S10). Confirm `Früher habe ich hier gearbeitet` is the natural
+    way to say it and that no speaker reaches for a construction with `pflegen`.
+49. **The account length** (M10, every item). Each display is three or four sentences where the brief
+    allows eight. Confirm that this is what somebody actually tells at a bus stop, and name the item
+    that reads as a written text rather than as speech.
+50. **`Zum Glück` and `Eigentlich` as openers** (M10-S03, S08). Confirm both are ordinary sentence
+    openers in speech, and that `eigentlich` reads as the soft contradiction the note claims rather
+    than as filler.

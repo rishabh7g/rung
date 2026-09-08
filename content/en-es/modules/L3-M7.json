@@ -1,0 +1,463 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M7",
+  "title": "Body and health",
+  "job": "Say what hurts, and where",
+  "prerequisites": [
+    "L3-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "present",
+      "perfect"
+    ],
+    "allowedPatterns": [
+      "Me duele + el/la + <body part>",
+      "Me he + V-participle",
+      "Me duele desde hace + <time>",
+      "Tengo + <symptom>",
+      "¿Puede darme algo para + <N> + ?"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE PERFECT: he, has, ha, hemos plus a participle, for something that has happened and STILL MATTERS. me he hecho daño, he perdido las llaves, ¿has ido al médico? That live consequence is the whole of the difference from the preterite the ladder already taught. In much of Latin America the preterite covers both jobs, so me hice daño is not an error there."
+    },
+    {
+      "tag": "delta",
+      "text": "The participle never agrees with anyone in this frame — hecho, perdido, ido, roto, whoever did it. roto is already yours as an adjective from L2-M8; it is the same word doing participle duty for romper."
+    },
+    {
+      "tag": "interference",
+      "text": "The body part takes a DEFINITE ARTICLE where English takes a possessive: me duele la cabeza, never me duele mi cabeza. The me has already said whose head it is, and saying it twice is what marks a learner out."
+    },
+    {
+      "tag": "delta",
+      "text": "doler is M6's gustar class out in the field, and L2-M8 shipped duele and duelen before the class had a name. The body part is the SUBJECT: one part takes duele, more than one takes duelen."
+    },
+    {
+      "tag": "delta",
+      "text": "Symptoms are nouns handed to tener, exactly as M6's feelings are: tengo fiebre, tengo tos, tengo gripe, tengo náuseas. Nothing agrees with you and no adjective appears."
+    },
+    {
+      "tag": "interference",
+      "text": "desde hace + a duration counts backwards from now, and Spanish keeps the verb in the PRESENT: me duele desde hace una semana is it HAS hurt for a week. It is the mirror of the perfect above, not a contradiction of it."
+    },
+    {
+      "tag": "free",
+      "text": "A pharmacy needs two questions and both are built from frames the ladder already owns: ¿Puede darme algo para la tos? and ¿Cada cuánto tomo la pastilla? para is doing its forward-pointing job — what the thing is FOR."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M7-S01",
+      "display": "Me duele la cabeza desde hace una semana.",
+      "cue": "My head has hurt for a week.",
+      "literal": "To-me it-hurts the head since it-makes one week.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "desde hace",
+            "cue": "for (a stretch of time)",
+            "tag": "interference",
+            "forms": [],
+            "note": "Two words, one surface, counting backwards from now: desde hace una semana. The verb in front of it stays in the present."
+          },
+          {
+            "display": "semana",
+            "cue": "week",
+            "tag": "free",
+            "forms": [
+              "semana",
+              "semanas"
+            ],
+            "note": "Week, feminine: la semana, dos semanas. fin de semana was bought whole in L2; this is the bare noun that was hiding inside it."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          5
+        ]
+      },
+      "trap": "Spanish says la cabeza, not mi cabeza, and it says duele in the PRESENT where English needs has hurt.",
+      "mistake": {
+        "display": "Mi cabeza ha dolido por una semana.",
+        "why": "Two English habits at once: the possessive and the perfect. Spanish wants me duele la cabeza desde hace una semana."
+      },
+      "usage": "What you tell a doctor or a pharmacist first. First person; no address is chosen here.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S02",
+      "display": "Me he hecho daño en la espalda.",
+      "cue": "I've hurt my back.",
+      "literal": "To-me I-have made harm in the back.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "he",
+            "cue": "I have (done)",
+            "tag": "delta",
+            "forms": [
+              "he",
+              "has",
+              "ha",
+              "hemos"
+            ],
+            "note": "The perfect auxiliary, and it carries the person: he, has, ha, hemos. It is haber, never tener — tengo hecho is not the perfect."
+          },
+          {
+            "display": "hecho",
+            "cue": "done · made",
+            "tag": "delta",
+            "forms": [],
+            "note": "The participle of hacer, irregular and unchanging. hacerse daño is the fixed frame, so me he hecho daño is the everyday I've hurt myself."
+          },
+          {
+            "display": "daño",
+            "cue": "harm · hurt",
+            "tag": "interference",
+            "forms": [],
+            "note": "Harm, as a thing you do to yourself: hacerse daño. English has a verb, to hurt; Spanish has a noun and hacer, so nothing here agrees with you."
+          },
+          {
+            "display": "espalda",
+            "cue": "back (of the body)",
+            "tag": "free",
+            "forms": [],
+            "note": "The back of a person, feminine: la espalda. The back of a room or a queue is a different word, el fondo."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "Three deltas in one short sentence: haber not tener, daño as a noun, and la espalda where English says my back.",
+      "sound": "The h is silent in he and hecho. es-PAL-da, stressed in the middle.",
+      "usage": "Said when it happened recently and still hurts — which is exactly what the perfect is for.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S03",
+      "display": "He perdido las llaves esta mañana.",
+      "cue": "I've lost my keys this morning.",
+      "literal": "I-have lost the keys this morning.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "perdido",
+            "cue": "lost",
+            "tag": "delta",
+            "forms": [],
+            "note": "The participle of perder, whose perdí the ladder already taught. he perdido las llaves says they are still lost; perdí las llaves only reports the moment."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The keys are still lost — that is why the perfect is here rather than perdí. Change to yesterday and Spain switches to perdí.",
+      "mistake": {
+        "display": "He perdido mis llaves ayer.",
+        "why": "ayer closes the stretch, so Spain takes the preterite: perdí las llaves ayer. Keep the perfect for a stretch that includes now."
+      },
+      "usage": "A first person report to whoever can help. The article does the work of my, as with body parts.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S04",
+      "display": "¿Has ido al médico hoy?",
+      "cue": "Have you been to the doctor today?",
+      "literal": "Have you gone to-the doctor today?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ido",
+            "cue": "gone",
+            "tag": "delta",
+            "forms": [],
+            "note": "The participle of ir, and it stays ido whoever went. ¿Has ido al médico? is the question a symptom invites, because the answer is still true."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Spanish uses ir where English uses to be: has ido, never has sido, for a trip you took.",
+      "usage": "Asked of a friend — has chooses tú, so this is the informal address. A pharmacist would say ¿Ha ido usted al médico?",
+      "register": "informal"
+    },
+    {
+      "id": "L3-M7-S05",
+      "display": "Tengo fiebre y me duele la garganta.",
+      "cue": "I have a temperature and a sore throat.",
+      "literal": "I-have fever and to-me it-hurts the throat.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fiebre",
+            "cue": "fever · temperature",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine despite the -e: la fiebre. Spanish says tengo fiebre — you HAVE it. It covers any raised temperature, not only a high one."
+          },
+          {
+            "display": "garganta",
+            "cue": "throat",
+            "tag": "free",
+            "forms": [],
+            "note": "Throat. me duele la garganta is the whole of a sore throat — Spanish uses no adjective here, the verb does the work."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "No article before fiebre — tengo fiebre, not tengo una fiebre. The throat, by contrast, insists on la.",
+      "usage": "The standard opening line at a pharmacy counter or a clinic. First person only.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S06",
+      "display": "Tengo gripe y me duele el estómago.",
+      "cue": "I have flu and my stomach hurts.",
+      "literal": "I-have flu and to-me it-hurts the stomach.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gripe",
+            "cue": "flu",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine: la gripe. tengo gripe is said far more loosely than the English flu, and covers a bad cold upwards."
+          },
+          {
+            "display": "estómago",
+            "cue": "stomach",
+            "tag": "free",
+            "forms": [],
+            "note": "Stressed on the second syllable: es-TÓ-ma-go. me duele el estómago covers a stomach ache of any size."
+          }
+        ],
+        "rules": [
+          3,
+          2
+        ]
+      },
+      "trap": "el estómago, not mi estómago. And gripe takes no article at all after tengo.",
+      "usage": "Said to explain an absence as much as to describe a symptom.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S07",
+      "display": "¿Puede darme algo para la tos?",
+      "cue": "Could you give me something for a cough?",
+      "literal": "Can-you give-me something for the cough?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "darme",
+            "cue": "to give me",
+            "tag": "delta",
+            "forms": [],
+            "note": "dar with me stuck on the end, because the pronoun rides on an infinitive and is written as one word. ¿Puede darme…? is the counter request."
+          },
+          {
+            "display": "tos",
+            "cue": "a cough",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine: la tos. It names the condition, not one cough — Spanish does not count them the way English can."
+          }
+        ],
+        "rules": [
+          4,
+          6
+        ]
+      },
+      "trap": "la tos, with the article, where English drops it. And the pronoun me is written onto the infinitive, not before it.",
+      "mistake": {
+        "display": "¿Puede me dar algo para la tos?",
+        "why": "A pronoun cannot stand loose in front of an infinitive. It rides on the end: darme."
+      },
+      "usage": "Straight usted — this is a counter, and the module speaks usted whenever a stranger is being asked for something.",
+      "register": "formal"
+    },
+    {
+      "id": "L3-M7-S08",
+      "display": "¿Cada cuánto tomo la pastilla?",
+      "cue": "How often do I take the tablet?",
+      "literal": "Each how-much I-take the tablet?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cada",
+            "cue": "each · every",
+            "tag": "free",
+            "forms": [],
+            "note": "Each, every, and it never changes shape. ¿Cada cuánto? is how often — the question a box of pills always raises."
+          },
+          {
+            "display": "pastilla",
+            "cue": "pill · tablet",
+            "tag": "free",
+            "forms": [
+              "pastilla",
+              "pastillas"
+            ],
+            "note": "A pill or tablet. tomar is the verb that goes with it — tomo la pastilla — and never comer."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "Spanish asks how often with cada cuánto, a two-word frame. There is no single word doing the job of often here.",
+      "usage": "The second question at any pharmacy counter, right after the first. usted is implied by the setting even though the verb is yours.",
+      "register": "formal",
+      "mnemonic": "cada cuánto asks how often; cuánto alone asks how much."
+    },
+    {
+      "id": "L3-M7-S09",
+      "display": "La farmacia está cerca de la plaza.",
+      "cue": "The pharmacy is near the square.",
+      "literal": "The pharmacy is near of the square.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "farmacia",
+            "cue": "pharmacy",
+            "tag": "free",
+            "forms": [],
+            "note": "The pharmacy, marked by a green cross. In Spain it is where you ask for something for a cough long before you ask for a doctor."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "Location is estar, always — a building's address does not make it ser. cerca keeps its de.",
+      "usage": "Directions given or received in the street. Neutral; nobody is addressed.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S10",
+      "display": "Me duelen el brazo y la pierna.",
+      "cue": "My arm and my leg hurt.",
+      "literal": "To-me they-hurt the arm and the leg.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "brazo",
+            "cue": "arm",
+            "tag": "free",
+            "forms": [
+              "brazo",
+              "brazos"
+            ],
+            "note": "Arm, masculine: el brazo. Two of them are los brazos, and then doler moves to duelen because the subject is plural."
+          },
+          {
+            "display": "pierna",
+            "cue": "leg",
+            "tag": "free",
+            "forms": [
+              "pierna",
+              "piernas"
+            ],
+            "note": "The leg of a person, feminine: la pierna. A table's leg is la pata, and so is an animal's."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "Two body parts make the subject plural, so duele becomes duelen. me does not move — it was never the subject.",
+      "mistake": {
+        "display": "Me duele mi brazo y mi pierna.",
+        "why": "Two errors in one: the possessive that me already covers, and a singular verb for two parts. Me duelen el brazo y la pierna."
+      },
+      "usage": "Said after a fall, or a long day. First person.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M7-C01",
+      "display": "Me duele la cabeza desde hace una semana.",
+      "cue": "My head has hurt for a week."
+    },
+    {
+      "id": "L3-M7-C02",
+      "display": "Me he hecho daño en la espalda.",
+      "cue": "I've hurt my back."
+    },
+    {
+      "id": "L3-M7-C03",
+      "display": "¿Has ido al médico hoy?",
+      "cue": "Have you been to the doctor today?"
+    },
+    {
+      "id": "L3-M7-C04",
+      "display": "Tengo fiebre y me duele la garganta.",
+      "cue": "I have a temperature and a sore throat."
+    },
+    {
+      "id": "L3-M7-C05",
+      "display": "¿Puede darme algo para la tos?",
+      "cue": "Could you give me something for a cough?"
+    },
+    {
+      "id": "L3-M7-C06",
+      "display": "¿Cada cuánto tomo la pastilla?",
+      "cue": "How often do I take the tablet?"
+    },
+    {
+      "id": "L3-M7-C07",
+      "display": "He perdido las llaves. ¿Puede ayudarme?",
+      "cue": "I've lost my keys. Can you help me?"
+    },
+    {
+      "id": "L3-M7-C08",
+      "display": "Me duele el brazo desde hace dos semanas.",
+      "cue": "My arm has hurt for two weeks."
+    },
+    {
+      "id": "L3-M7-C09",
+      "display": "La farmacia está cerca de la estación.",
+      "cue": "The pharmacy is near the station."
+    },
+    {
+      "id": "L3-M7-C10",
+      "display": "Tengo gripe. No he ido a trabajar.",
+      "cue": "I have flu. I haven't been to work."
+    },
+    {
+      "id": "L3-M7-C11",
+      "display": "Me duelen los pies y la espalda.",
+      "cue": "My feet and my back hurt."
+    },
+    {
+      "id": "L3-M7-C12",
+      "display": "Hemos perdido el autobús.",
+      "cue": "We've missed the bus."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

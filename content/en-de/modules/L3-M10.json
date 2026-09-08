@@ -1,0 +1,405 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M10",
+  "title": "Your own story",
+  "job": "An eight-sentence account, built from the whole ladder",
+  "prerequisites": [
+    "L3-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "present",
+      "Perfekt",
+      "Präteritum",
+      "Plusquamperfekt",
+      "Konjunktiv II (present)",
+      "present passive"
+    ],
+    "allowedPatterns": [
+      "<eight-sentence account>",
+      "Zuerst … dann … danach … schließlich …",
+      "Als + <past clause> + , + V-2 + ich",
+      "Er hat gesagt + , + dass + <clause>",
+      "Wenn ich + Konj-II + , + würde ich + V-inf"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "The format: each item here is an ACCOUNT of at most eight sentences — L2-M10's four grown up — and the word bound applies to each sentence inside it, not to the item. Eight is a ceiling, not a target; four good sentences are an account. The new-word spend is as close to nothing as the format allows, and that is the point: everything a story of yours needs has already been taught, and a sentence that wants a new noun is a sentence that wants rewriting."
+    },
+    {
+      "tag": "delta",
+      "text": "THREE PASTS NOW SHARE ONE ACCOUNT, and each has a job the other two cannot do. The PERFEKT moves the story along — auxiliary second, participle last (L2-M10). The PRÄTERITUM holds its states, and only for the verbs that prefer it: war, waren, hatte, hatten (L1-M5), konnte and wollte (L2-M10). The PLUSQUAMPERFEKT (L3-M5) is the step further back, for what had already happened when the story starts: Ich hatte schon gearbeitet, als er angerufen hat."
+    },
+    {
+      "tag": "delta",
+      "text": "WORD ORDER is the real exit test, because an account is the only place where every law in the course collides at once: the verb second under a fronted time (L1-M4, L2-M6), the bracket around a modal or an auxiliary (L2-M1, L2-M10), the verb last in every subordinate clause (L1-M9), the fronted subordinate clause with the two verbs meeting across the comma (L3-M3), and the separable prefix stranded at the end (L3-M1). Get all five right inside eight sentences and the level is passed."
+    },
+    {
+      "tag": "free",
+      "text": "The checklist of what this level lets a story carry that four sentences could not: a reason with weil (L1-M9), a concession with obwohl (L3-M3), a condition or a regret in Konjunktiv II (L3-M4), a line of what somebody said with no backshift (L3-M5), a feeling that is reflexive (L3-M6), a noun phrase with a declined adjective inside it (L3-M2), and als for the one past moment the story turns on (L2-M9's word, L3-M5's rule). That list is the difference between a timetable and a story."
+    },
+    {
+      "tag": "free",
+      "text": "What stays out, so the level ends at a known edge: the past counterfactual (wenn ich Zeit gehabt hätte) is L4-M3, the Konjunktiv I of reported speech is L4-M7, the past passive and the agent named with von are L4-M7, the narrative Präteritum beyond L1-M5's and L2-M10's handful of verbs is L4-M8, and the time clauses with bevor, während, seitdem and bis are L4-M6. Nothing here needs any of them."
+    },
+    {
+      "tag": "free",
+      "text": "The register the level ends on: tell the same story to a friend and to a stranger, du and Sie, and nothing else about it changes — the verbs, the order and the tenses all stay put. That is where L2-M1 began, and the whole ladder above it has been one address away the entire time."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M10-S01",
+      "display": "Gestern hatte ich schon gearbeitet, als mein Chef angerufen hat. Ich war müde. Trotzdem bin ich ins Büro gefahren. Schließlich habe ich alles gemacht",
+      "cue": "Yesterday I had already worked when my boss rang. I was tired. I drove to the office anyway. In the end I did everything",
+      "literal": "yesterday had I already worked, when my boss called has. I was tired. nevertheless am I into-the office driven. finally have I everything done",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "alles",
+            "cue": "everything",
+            "tag": "free",
+            "forms": [
+              "alles"
+            ],
+            "note": "alles is singular and takes a singular verb: Alles ist gut. It is the neuter partner of L3-M9's plural alle."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "All three pasts are in one account here and none of them is interchangeable: hatte gearbeitet happened first, hat angerufen second, war holds the state across both.",
+      "sound": "GES-tern HAT-uh ikh shone guh-AR-buy-tet, als mine shef AN-guh-roo-fen hat. ikh var MUE-duh. TROTS-daym bin ikh ins bue-ROH guh-FAH-ren. SHLEES-likh HAH-buh ikh AL-es guh-MAKHT.",
+      "usage": "The shape of a day recounted to a colleague the next morning.",
+      "register": "neutral",
+      "mnemonic": "Perfekt moves it, Präteritum holds it, Plusquamperfekt goes back one more."
+    },
+    {
+      "id": "L3-M10-S02",
+      "display": "Heute bin ich wieder früh aufgestanden. Danach habe ich meine Freundin angerufen. Weil sie Zeit hatte, sind wir zusammen ins Kino gegangen. Es war schön",
+      "cue": "Today I got up early again. Then I rang my friend. Because she had time, we went to the cinema together. It was lovely",
+      "literal": "today am I again early up-stood. after-that have I my friend called. because she time had, are we together into-the cinema gone. it was lovely",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wieder",
+            "cue": "again",
+            "tag": "free",
+            "forms": [
+              "wieder"
+            ],
+            "note": "wieder sits in the middle of the sentence, never at the front of the account: Ich bin wieder früh aufgestanden. Not the same as noch einmal, which is one more time."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "The weil clause is fronted, so its verb goes last and the main clause's verb comes straight after the comma: hatte, sind — two verbs meeting across it.",
+      "sound": "HOY-tuh bin ikh VEE-der frue OWF-guh-shtan-den. dah-NAKH HAH-buh ikh MY-nuh FROYN-din AN-guh-roo-fen. vile zee tsite HAT-uh, zint veer tsoo-ZAM-en ins KEE-noh guh-GANG-en. es var shoen.",
+      "usage": "The friendly version of what you did today, told to somebody who asked.",
+      "register": "informal"
+    },
+    {
+      "id": "L3-M10-S03",
+      "display": "Obwohl ich krank war, bin ich zur Arbeit gefahren. Ich wäre lieber zu Hause geblieben. Eigentlich war das nicht gut",
+      "cue": "Although I was ill, I went to work. I'd rather have stayed at home. That wasn't really a good idea",
+      "literal": "although I ill was, am I to-the work driven. I would-be rather at home stayed. actually was that not good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eigentlich",
+            "cue": "actually / really",
+            "tag": "free",
+            "forms": [
+              "eigentlich"
+            ],
+            "note": "eigentlich softens what follows and quietly says the opposite was true: Eigentlich war das nicht gut. It is a comment on the sentence, not on a word in it."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "obwohl opens a subordinate clause, so war goes to the end of it — and then the main clause starts with its own verb, bin.",
+      "sound": "op-VOLE ikh krank var, bin ikh tsoor AR-bite guh-FAH-ren. ikh VAY-ruh LEE-ber tsoo HOW-zuh guh-BLEE-ben. EYE-gent-likh var das nikht goot.",
+      "usage": "Owning up to a decision, in the register you would use with a colleague.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S04",
+      "display": "Mein Kollege hat gesagt, dass er den Vertrag unterschrieben hat. Ich habe gefragt, ob es ein Problem gibt. Er hat nur geantwortet, dass er keine Zeit hat",
+      "cue": "My colleague said he had signed the contract. I asked whether there was a problem. He only answered that he had no time",
+      "literal": "my colleague has said, that he the contract signed has. I have asked, whether it a problem gives. he has only answered, that he no time has",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nur",
+            "cue": "only",
+            "tag": "free",
+            "forms": [
+              "nur"
+            ],
+            "note": "nur stands immediately in front of what it limits: Er hat nur geantwortet (nothing more than answer). Move it and the sentence means something else."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "English backshifts the whole report — he had signed, there was a problem. German keeps what the speaker said: hat unterschrieben, gibt, hat.",
+      "sound": "mine ko-LAY-guh hat guh-ZAHKT, das air dayn fair-TRAHK oon-ter-SHREE-ben hat. ikh HAH-buh guh-FRAHKT, op es ine pro-BLAYM gipt. air hat noor guh-ANT-vor-tet, das air KY-nuh tsite hat.",
+      "usage": "Passing on an exchange at work to somebody who was not there.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S05",
+      "display": "Wenn ich mehr Zeit hätte, würde ich meine Eltern besuchen. An deiner Stelle würde ich sofort anrufen. Es wäre besser, wenn wir zusammen fahren würden",
+      "cue": "If I had more time, I'd visit my parents. In your place I'd ring straight away. It would be better if we went together",
+      "literal": "if I more time had, would I my parents visit. in your place would I immediately call. it would-be better, if we together drive would",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sofort",
+            "cue": "immediately",
+            "tag": "free",
+            "forms": [
+              "sofort"
+            ],
+            "note": "sofort is at once, with no delay at all — stronger than jetzt (L3-M4), which is only now. Ich rufe sofort an."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "Both halves carry a Konjunktiv II: hätte in the wenn clause, würde in the main one. Using the plain present in either half turns the wish into a plan.",
+      "sound": "ven ikh mair tsite HET-uh, VUER-duh ikh MY-nuh EL-tern buh-ZOO-khen. an DY-ner SHTEL-uh VUER-duh ikh zo-FORT AN-roo-fen. es VAY-ruh BES-er, ven veer tsoo-ZAM-en FAH-ren VUER-den.",
+      "usage": "Advice and a regret in the same breath — the two things L3-M4 opened.",
+      "register": "informal"
+    },
+    {
+      "id": "L3-M10-S06",
+      "display": "Endlich habe ich wieder Zeit. Ich freue mich auf das Wochenende. Meine Schwester hat mich eingeladen, und ich bin sehr aufgeregt",
+      "cue": "I finally have time again. I'm looking forward to the weekend. My sister has invited me, and I'm very excited",
+      "literal": "finally have I again time. I gladden me onto the weekend. my sister has me in-loaded, and I am very excited",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "endlich",
+            "cue": "finally / at last",
+            "tag": "free",
+            "forms": [
+              "endlich"
+            ],
+            "note": "endlich carries relief that something waited for has come. schließlich (L2-M10) only orders the events — last in the list, with no feeling in it."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "Endlich is fronted, so the verb comes second and the subject follows it: Endlich habe ich — not Endlich ich habe.",
+      "sound": "ENT-likh HAH-buh ikh VEE-der tsite. ikh FROY-uh mikh owf das VOKH-en-en-duh. MY-nuh SHVES-ter hat mikh AYN-guh-lah-den, oont ikh bin zair OWF-guh-raykt.",
+      "usage": "The good news at the start of a message to a friend.",
+      "register": "informal"
+    },
+    {
+      "id": "L3-M10-S07",
+      "display": "Ich habe seit drei Tagen Kopfschmerzen. Plötzlich hatte ich auch Fieber. Deshalb habe ich einen Termin beim Arzt gemacht. Jetzt geht es mir besser",
+      "cue": "I've had a headache for three days. Suddenly I had a fever as well. So I made an appointment with the doctor. I feel better now",
+      "literal": "I have since three days head-pains. suddenly had I also fever. therefore have I an appointment at-the doctor made. now goes it to-me better",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "plötzlich",
+            "cue": "suddenly",
+            "tag": "free",
+            "forms": [
+              "plötzlich"
+            ],
+            "note": "plötzlich marks the turn in a story and is usually fronted, which sends the verb second: Plötzlich hatte ich Fieber."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "seit keeps the present (habe), while the turn in the story takes a past (hatte). Both live in the same account without disagreeing.",
+      "sound": "ikh HAH-buh zyte dry TAH-gen KOPF-shmair-tsen. PLOETS-likh HAT-uh ikh owkh FEE-ber. DES-halp HAH-buh ikh INE-en tair-MEEN bime artst guh-MAKHT. yetst gayt es meer BES-er.",
+      "usage": "Telling somebody how an illness went, after it has gone.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S08",
+      "display": "Das ist der Vertrag, den ich unterschrieben habe. Wegen des Vertrags muss ich zum Amt gehen. Zum Glück habe ich das Formular schon ausgefüllt",
+      "cue": "That's the contract I signed. Because of the contract I have to go to the office. Luckily I've already filled in the form",
+      "literal": "that is the contract, which I signed have. because-of the contract must I to-the office go. to-the luck have I the form already out-filled",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zum Glück",
+            "cue": "luckily",
+            "tag": "free",
+            "forms": [
+              "zum Glück"
+            ],
+            "note": "A fixed phrase, two words and one meaning, and it is fronted like any other opener: Zum Glück habe ich … Leider (L2-M7) is its opposite."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "Three fronted openers in three sentences — Das, Wegen des Vertrags, Zum Glück — and the verb is second in every one of them.",
+      "sound": "das ist dair fair-TRAHK, dayn ikh oon-ter-SHREE-ben HAH-buh. VAY-gen des fair-TRAHKS moos ikh tsoom amt GAY-en. tsoom gluek HAH-buh ikh das for-moo-LAR shone OWS-guh-fuelt.",
+      "usage": "The paperwork half of a week, recounted at home.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S09",
+      "display": "Bei uns feiert man das Fest im Sommer. Damals haben wir immer zusammen gefeiert. Heute wird das Fest im Dezember gefeiert",
+      "cue": "Where I'm from people celebrate the festival in summer. Back then we always celebrated together. Today the festival is celebrated in December",
+      "literal": "with us celebrates one the festival in-the summer. back-then have we always together celebrated. today becomes the festival in-the December celebrated",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "damals",
+            "cue": "back then",
+            "tag": "free",
+            "forms": [
+              "damals"
+            ],
+            "note": "damals points at a stretch of the past you have already named; dann (L2-M10) points at what comes next. They are not interchangeable."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "The last sentence is L3-M9's present passive, not a past: wird … gefeiert. The past passive is L4-M7's and is not needed here.",
+      "sound": "by oons FY-ert man das fest im ZOM-er. DAH-mals HAH-ben veer IM-er tsoo-ZAM-en guh-FY-ert. HOY-tuh virt das fest im day-TSEM-ber guh-FY-ert.",
+      "usage": "Saying how something used to be where you are from, without claiming it for anywhere else.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S10",
+      "display": "Früher habe ich hier gearbeitet. Dann bin ich nach Berlin gefahren. Kannst du mich morgen anrufen?",
+      "cue": "I used to work here. Then I moved to Berlin. Can you ring me tomorrow?",
+      "literal": "earlier have I here worked. then am I to Berlin driven. can you me tomorrow call",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "früher",
+            "cue": "used to / earlier",
+            "tag": "delta",
+            "forms": [
+              "früher"
+            ],
+            "note": "The comparative of L1-M5's früh, and on its own it is English's used to: Früher habe ich hier gearbeitet. German has no separate verb for it."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "English needs used to work. German has no such verb — früher plus the ordinary past does the whole job.",
+      "sound": "FRUE-er HAH-buh ikh heer guh-AR-buy-tet. dan bin ikh nakh bair-LEEN guh-FAH-ren. kanst doo mikh MOR-gen AN-roo-fen?",
+      "variations": [
+        {
+          "display": "Früher habe ich hier gearbeitet. Dann bin ich nach Berlin gefahren. Können Sie mich morgen anrufen?",
+          "cue": "I used to work here. Then I moved to Berlin. Could you ring me tomorrow?",
+          "changed": "the same story to a stranger — only the address changes, du to Sie"
+        }
+      ],
+      "usage": "Your own history in three lines, which is where the level ends.",
+      "register": "informal",
+      "mnemonic": "Change the address, change nothing else."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M10-C01",
+      "display": "Gestern hatte ich schon gearbeitet, als mein Chef angerufen hat",
+      "cue": "Yesterday I had already worked when my boss rang"
+    },
+    {
+      "id": "L3-M10-C02",
+      "display": "Weil sie Zeit hatte, sind wir zusammen ins Kino gegangen",
+      "cue": "Because she had time, we went to the cinema together"
+    },
+    {
+      "id": "L3-M10-C03",
+      "display": "Obwohl ich krank war, bin ich zur Arbeit gefahren",
+      "cue": "Although I was ill, I went to work"
+    },
+    {
+      "id": "L3-M10-C04",
+      "display": "Er hat gesagt, dass er den Vertrag unterschrieben hat",
+      "cue": "He said he had signed the contract"
+    },
+    {
+      "id": "L3-M10-C05",
+      "display": "Wenn ich mehr Zeit hätte, würde ich meine Eltern besuchen",
+      "cue": "If I had more time, I'd visit my parents"
+    },
+    {
+      "id": "L3-M10-C06",
+      "display": "Endlich habe ich wieder Zeit",
+      "cue": "I finally have time again"
+    },
+    {
+      "id": "L3-M10-C07",
+      "display": "Plötzlich hatte ich auch Fieber",
+      "cue": "Suddenly I had a fever as well"
+    },
+    {
+      "id": "L3-M10-C08",
+      "display": "Zum Glück habe ich das Formular schon ausgefüllt",
+      "cue": "Luckily I've already filled in the form"
+    },
+    {
+      "id": "L3-M10-C09",
+      "display": "Damals haben wir immer zusammen gefeiert",
+      "cue": "Back then we always celebrated together"
+    },
+    {
+      "id": "L3-M10-C10",
+      "display": "Früher habe ich hier gearbeitet",
+      "cue": "I used to work here"
+    },
+    {
+      "id": "L3-M10-C11",
+      "display": "An deiner Stelle würde ich sofort anrufen",
+      "cue": "In your place I'd ring straight away"
+    },
+    {
+      "id": "L3-M10-C12",
+      "display": "Eigentlich war das nicht gut",
+      "cue": "That wasn't really a good idea"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

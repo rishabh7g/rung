@@ -395,3 +395,270 @@ each buy multi-token keys), **M4 spent 17**, **M5 spent 15**.
 29. **`quería` as a softener** (M5-S10). The note says the imperfect of `querer` is also the softest
     way to ask for something and defers that use. Confirm the two uses are not confusable in the
     sentences shipped here.
+
+---
+
+## Wave 3 — L3-M6..M10 (#544)
+
+The wave that closes the level: five modules against the briefs in `tools/course-briefs.ts`, authored
+in a worktree where **L3-M3, L3-M4 and L3-M5 do not exist** — they are being written concurrently by
+sibling agents and the parent merges the seven branches once. Two consequences run through everything
+below and neither is a defect in this content.
+
+First, the cumulative fold this wave was planned against is **505 surfaces, maxSpan 3** — L1, L2,
+L3-M1 and L3-M2 only. Nothing M3–M5 will teach was available, so anything those modules turn out to
+own becomes a **RE-TEACH** of a row here once the branches meet. On en-es a re-teach is information
+rather than a verdict (`tools/check-shown.ts` says so in its own header), and the words most likely
+to collide are named below so the merge can see them coming.
+
+Second, a strict `npm run content:build` here emits
+`en-es: 27 modules (L1-M1..M10, L2-M1..M10, L3-M1..M2, L3-M6..M10)`, not the 30 the issue asks for.
+The three missing ids are the sibling waves', not this one's; every module this wave owns is
+`verified: true` and passes the strict build, which is what the 27 proves. `prerequisites` still name
+the module below — `L3-M6` takes `["L3-M5"]`, and so on up the chain — because `tools/validate.ts`
+checks the ORDER of a prerequisite, not its existence, and the chain has to be right in the merged
+tree rather than in this one.
+
+### L3-M6 "Feelings in depth" — the verb changes the word, and six verbs turn out to be one
+
+Fifteen rows, 42 index keys. The spine is `ser` against `estar` with an adjective, and the module
+refuses the slogan the brief told it to expect: the two verbs do not sort permanence from
+temporariness, they **change what the adjective means**. `es aburrido` is boring and `está aburrido`
+is bored; `es rico` is wealthy and `está rico` is delicious. S01 and S02 are the pair, written so the
+same word appears twice in one display with only the verb moving. Rule 0 names `está muerto` as the
+sentence that kills the slogan outright.
+
+The second half is the `gustar` class, which L1 shipped as two whole surfaces (`me gusta`,
+`me gustan`) without ever saying it was a class. Naming it turns `encantar`, `molestar`, `importar`,
+`faltar` and L2-M8's `doler` into one pattern with one agreement rule, and rule 3 blocks the mistake
+that naming it invites: `encantar` already means love, so `me encanta mucho` is a learner's sentence,
+not an intensifier. `faltar` and `vergüenza` are named in rule and note text only — they cost nothing
+in the index and the module was already carrying fifteen rows.
+
+Feelings-as-nouns (`tengo miedo`, `tengo ganas de`) and the `me da` frame (`me da igual`,
+`me da pena`) are authored together because they are the two shapes one idea takes, exactly as the
+brief asked. The multi-token surfaces are indexed whole so that L2-M1's `me` and `da` keep their own
+rows and are not stolen by a frame they only partly belong to.
+
+**Register**: the module is first-person throughout and chooses no address for its own sake. Two
+places reach for a second person — S06's `tu hermano`, and pool C07's `¿Tienes ganas…?` — and the
+sentence is marked `informal` and says so in `usage`, per docs/53 §1.
+
+### L3-M7 "Body and health" — the perfect arrives where a symptom is still true
+
+Nineteen rows, 26 index keys. The perfect opens here because docs/53 §4 deferred it from L2 for this
+module, and health is the honest place for it: a symptom is by definition still true, which is the
+whole of what separates `me he hecho daño` from L1-M5's preterite. Rule 0 carries the Latin American
+qualification in words rather than pretending the split is universal — `me hice daño` is not an error
+across most of the Americas.
+
+The article rule (`me duele la cabeza`, never `me duele mi cabeza`) is stated as what it is: the `me`
+has already said whose head it is, so the possessive is a second answer to a question nobody asked.
+`doler` gets no third row — L2-M8 owns `duele` and `duelen`, and rule 3 points back at that row and
+forward at M6's class rather than opening a family here.
+
+`desde hace` is the module's sharpest delta and it is deliberately set beside the perfect rather than
+after it: Spanish uses the PRESENT for a duration reaching now (`me duele desde hace una semana`)
+where English switches to the perfect, which looks like a contradiction of rule 0 until the two are
+read together. Rule 5 says so explicitly.
+
+**Register**: the module speaks `usted` at the counter and `tú` with a friend, and each sentence says
+which. S07 and S08 are the pharmacy and are marked `formal`; S04's `¿Has ido…?` is marked `informal`
+and its `usage` gives the `usted` twin (`¿Ha ido usted al médico?`) rather than leaving the learner to
+guess.
+
+### L3-M8 "Money and paperwork" — one `se`, shown at length
+
+Twenty-one rows, 29 index keys. Impersonal `se` is the grammar and the module opens no second family
+for it: L2-M4 already owns the bare `se`, and every frame here — `se paga`, `se puede`, `se firma` —
+is indexed **whole** so that row stays where it is. The passive with `ser` is named as L4's and
+appears nowhere. Rule 0 says both things in one place.
+
+This is the module docs/53 §1's register decision was made for, and it is `usted` from S01 to S10:
+every sentence carries `"register": "formal"`. The `usted` imperative L2-M1 opened is spent here
+(`perdone`, `firme`, `rellene`, `espere`), and rule 1 explains the `-e` ending rather than leaving
+five irregular-looking cells to memory. `espere` is a new cell of the `esperar` L2 already taught and
+so gets its own row pointing back, per the level law; `firme` and `rellene` carry their infinitives as
+`forms` because nothing below them owns those.
+
+The vocabulary is what is printed on the paper rather than what a textbook prefers — `alquiler`,
+`factura`, `recibo`, `plazo`, `formulario`, `sello`, `documento` — with the regional twin in the note
+(`el ticket`, `la boleta`) and the `factura`/`cuenta` split flagged as interference, because asking
+for `la factura` at a restaurant table gets you a tax invoice. `mil euros` is the four-digit rent the
+brief asked for, bought with two rows rather than with a numeral system.
+
+### L3-M9 "Festivals and everyday culture" — the article is the tense
+
+Twenty-four rows, 30 index keys. `el domingo` against `los domingos` is the module and it is built
+twice: S01/S02 as a minimal pair a sentence apart, and S03 with both halves inside one display so the
+learner sees that nothing but the article has moved. Rule 1 carries the other half of the same trap —
+Spanish takes no preposition at all with a day — because that is the sentence an English speaker
+builds first.
+
+M8's impersonal `se` does the cultural work (`se celebra`, `se come`, `se regala`), indexed whole for
+the same reason M8's are, which kept the module cheap enough to spend on the calendar. The
+capitalisation rule is stated as the awkward thing it actually is: days, months and seasons are
+lowercase, and the named festivals are not, so an English speaker's habit is right in one place out of
+two — which is harder to unlearn than being wrong everywhere.
+
+No display claims a festival for the whole language. `feria` says in its own note that Andalusia's are
+the famous ones and that further north the same event is a `verbena`; `Navidad` says the presents
+often wait for Reyes; `Semana Santa` says processions in Spain and the coast in much of Latin America.
+
+**Register**: neutral throughout — the module describes a calendar and addresses nobody. One pool item
+(`El jueves hay una fiesta. ¿Vas?`) is `tú`, and it is a pool item rather than a sentence.
+
+### L3-M10 "Your own story" — three pasts in one account, and no `yo` anywhere
+
+Nineteen rows, 31 index keys. Each of the ten items is a six-to-eight-sentence account and the
+per-sentence bound (12) applies to each sentence inside it, checked mechanically at authoring time.
+The honest spend is the connector set — `al principio`, `mientras`, `en cuanto`, `desde entonces`,
+`cuando` — plus the imperfect cells the ladder had not bought and the one participle (`vuelto`) the
+accounts need. Everything else is re-use, which is the point of the level's exit.
+
+Rule 0 gives each past a job the other two cannot do, and S03 is the shortest demonstration:
+`Era muy tarde.` sets the scene, `Salí. Perdí el autobús. Llegué…` moves it three steps, and
+`Y desde entonces no he vuelto.` is the only line that is still true while you are saying it. S02 and
+S09 carry the `cuando` minimal pair — `cuando vivía` opening a stretch, `cuando llegué` dropping one
+moment into a state that was already running — and S07 is the `dijo que` backshift, four reported
+clauses deep.
+
+Subject dropping is tested at account length rather than at sentence length: **no display in this
+module contains `yo` at all**, across its sixty-four sentences. The over-pronouned version the brief
+wants a learner to notice could not go in the comprehension pool — `yo` is untaught and a pool display
+is scanned by the emitter — so it lives in `L3-M10-S02.mistake.display`, which is exempt by the same
+rule that exempts proper nouns (#61). That is a deliberate placement, not a shortfall.
+
+### Brief seams corrected, and what the emitted index actually said
+
+Every claim below was checked against the fold — `public/content/en-es/index/L2-M10.json` plus its
+`cumulativeThrough`, plus the L3 source files that exist — and not against the brief. Where the two
+disagreed, the index won.
+
+1. **M6 note 5 lists `listo` as a fresh key. It is not: `listo`/`lista`/`listos`/`listas` are
+   L2-M2's**, and that row's note already teaches the `ser`/`estar` meaning split ("With ser it means
+   clever. With estar it means ready"). This module opens no row for it; rule 0 uses it as its third
+   example and names L2-M2 as the owner.
+2. **M6 note 4 calls `contento` "already L2's". It is L1-M9's** — as are `triste`, `cansado` and
+   `nervioso`, which the same note places correctly as "where L1 and L2 taught them". Only the level
+   attribution was wrong; nothing had to move.
+3. **M6 note 5 assigns `parece` to M3.** M3 is not authored in this worktree, so `parece` is untaught
+   here and the module uses none of it. If M3 ships it, nothing in M6 needs to change.
+4. **M7 note 5 lists `roto` as a fresh key. It is not: `roto`/`rota`/`rotos`/`rotas` are L2-M8's**, as
+   an adjective. M7 opens no row; rule 1 names the overlap in words — the same word doing participle
+   duty for `romper` — which is the honest description and costs no key.
+5. **M7's worked duration, `me duele desde hace tres días`, was unwritable.** `tres` is untaught
+   anywhere through L3-M2, and `día`/`días` is M9's by its own brief. S01 reads `desde hace una
+   semana` instead, and M7 opens `semana` — the bare noun hiding inside L2's `fin de semana` —
+   leaving `día` to M9 as planned.
+6. **M8's `antes del día quince` was unwritable for a third reason: bare `del` is untaught.** The
+   ladder owns `al lado del`, `cerca del` and `debajo del` as multi-token keys and never the
+   contraction on its own. M8 opens `del` as a row with rule 3 behind it (`de` + `el`, exactly as `al`
+   is `a` + `el`) and writes `antes del sábado` and `antes del plazo`, leaving the date frame to M9.
+7. **M8 note 2 offers `¿Podría…?` "from M4".** M4 is not authored here, so `podría` is untaught and
+   the module asks with `¿Puede…?` and `¿Se puede…?` only — both already owned.
+8. **M8's `cita previa` needed both words.** `cita` and `previa` were each untaught, so the pair is
+   indexed whole with `cita` carried as a `form`, which is what lets M9-S03 write `una cita` without
+   opening a row of its own.
+9. **M9 note 5 lists the days as fresh "where they are not already owned", and most are owned.**
+   `domingo`/`domingos` and `viernes` are L2-M6's — and L2-M6's `domingo` note already teaches
+   `los domingos` — while `sábado`/`sábados` are L1-M6's. The genuinely fresh days are only `lunes`,
+   `martes`, `miércoles` and `jueves`, and those are the four rows the module opens.
+10. **M9 note 5 lists the ordinal `primero` as fresh. It is L2-M4's**, with `primera`. Rule 2 states
+    the date frame and points back rather than opening a row.
+11. **M9's `Estamos en + <season>` pattern was unwritable as briefed: `estamos` is untaught.** The
+    ladder owns `estoy`, `estás`, `está` and `están` but never the `we` cell. M9 opens `estamos` as
+    its own row with a note pointing back at `estar` — a new shape of an older lexeme, per the level
+    law.
+12. **`muchas` is untaught**, though `mucha`, `mucho` and `muchas gracias` are all owned. M9-S07 reads
+    `En otoño y en invierno hay fiestas.` rather than the `hay muchas fiestas` first drafted.
+13. **M9 note 5 warns that `los domingos` must not collide with L1's `todos los días` and
+    `todo el día`.** It does not: those are three-token keys, `domingos` is L2-M6's own key, and the
+    display resolves as `los` + `domingos`. Checked against the fold, not assumed.
+14. **M10 note 5 asks whether `al final` needs opening. It does not — it is L2-M10's**, confirmed in
+    the fold. `cuando`, which the same note says to check, IS still free at the end of M9, so M10
+    opens it.
+15. **M10's own worked example, `Cuando vivía en Madrid, trabajaba en un bar`, was unwritable in three
+    ways.** The imperfect on the ladder was only `era`, `eras`, `estaba`, `estabas`, `había`, `comía`
+    and `comías`; `vivía` and `trabajaba` did not exist, and neither did `Madrid` or `bar`. M10 opens
+    six imperfect cells (`vivía`, `trabajaba`, `tenía`, `quería`, `hablaba`, `estudiaba`) and sets its
+    accounts in `México` and `la India`, with `Ana` and `Rohan`, all of which the ladder owns.
+
+### The ratchet
+
+`tools/shown-surfaces.test.ts` holds at **en-es 10**, unchanged, **11/11 green**, and no baseline was
+lowered or raised. `npm run content:shown -- en-es L3-Mn` reports **clean for all five modules**, with
+**no SHOWN-BUT-UNTAUGHT and no RE-TEACH at all** — every surface in every display, variation and pool
+item either has a row in the module that shows it or was already owned upstream, checked against the
+fold rather than against the brief.
+
+That zero is a fact about THIS tree, and the merge should not read more into it than it says. The rows
+most likely to become re-teaches once L3-M3–M5 land are the ones this wave had to open because the
+fold was short: M9's `estamos`, M10's six imperfect cells, M8's `del`, and M7's `semana`. If a sibling
+module opens any of those first, first-occurrence-wins hands it the note and the row here becomes
+unreachable — which is information on en-es, not a defect, but the sentence that shows the word still
+needs it, so no row should be deleted on that ground alone.
+
+`npm run content:validate` reports `CONTENT 211/211 ok`, and the strict `npm run content:build` (no
+flags) emits `en-es: 27 modules` with every one of these five carrying `verified: true`, `verifiedBy:
+"Claude Opus 5 — LLM review, authorised by repo owner"` and `verifiedAt: "2026-09-08"` in the same
+change that authored them.
+
+### Open questions for the native pass
+
+30. **`está rico` about food, and `es rico` about a person** (M6-S02, and the `rico` note). Confirm
+    `Este café está rico` is the everyday compliment over food, and that `¡Qué rico!` at a table is
+    heard as being about the meal rather than the cook — the note makes that claim flatly and it is
+    the kind of claim a native ear settles in one sentence.
+31. **`me da igual` and tone** (M6-S05, and the `me da igual` note). The note says a warm reading hands
+    the choice over and a flat one says you have stopped caring. Confirm the split is real, and that
+    `No me importa` is genuinely friendlier than the English "I don't care" it looks like.
+32. **`estar harto` in the mouth** (M6-S10). Confirm `Estoy harto` is blunt but not rude between
+    friends, and that `enfadado` — against Latin America's `enojado` — is the right word for Spain in
+    a module that otherwise avoids claiming a region.
+33. **`orgulloso` with `ser`** (M6-S09, and the `orgulloso` note). The note says `ser orgulloso` drifts
+    towards arrogant. Confirm that, and confirm `estar orgulloso de` is what a parent or a sibling
+    actually says.
+34. **The perfect's real reach in Spain** (M7, rule 0 and S03). Confirm `He perdido las llaves esta
+    mañana` is what a Spaniard says while the morning is still running, and that `perdí las llaves
+    ayer` is the switch the plate on S03 describes — that the boundary really is the stretch of time
+    and not the speaker's mood.
+35. **`desde hace` with the present** (M7-S01). Confirm `Me duele la cabeza desde hace una semana` is
+    ordinary at a counter, and that `me ha dolido desde hace una semana` is understood-but-unsaid
+    rather than simply wrong.
+36. **The pharmacy's two questions** (M7-S07, M7-S08). Confirm `¿Puede darme algo para la tos?` and
+    `¿Cada cuánto tomo la pastilla?` are what is actually said across a Spanish counter, rather than a
+    textbook's version of it.
+37. **`¿Dónde se firma?` against `¿Dónde firmo?`** (M8-S01). The module claims the impersonal is
+    lighter on a clerk. Confirm that, or whether `¿Dónde firmo?` is simply the commoner sentence and
+    the politeness claim is invented.
+38. **`aquí tiene`** (M8-S07). Confirm `Espere un momento, aquí tiene el recibo` is the counter's own
+    phrasing, and that `tiene` rather than `tenga` is right when the clerk is handing something over.
+39. **`documento` as the ID card** (M8-S05, and its note). Confirm `su documento, por favor` is what is
+    asked for at a Spanish window, and that `documento` alone carries the ID sense without `DNI`.
+40. **`factura` against `cuenta`** (M8-S08). Confirm the note's claim that asking for `la factura` at a
+    restaurant table gets you a tax invoice rather than the bill.
+41. **`por adelantado` against `por anticipado`** (M8-S09). Confirm the module picked the everyday one
+    for a rent, and that `por` rather than `para` is not merely defensible but the only thing said.
+42. **`Estamos en verano`** (M9-S06). Confirm Spanish really does put the speaker inside the season
+    here, and that `Es verano` reads as a definition rather than as small talk.
+43. **`En Nochevieja` against a bare day** (M9-S10, and its plate). The module claims a festival takes
+    `en` while a day takes nothing. Confirm that is the rule and not an accident of the two examples
+    chosen.
+44. **`se regala`** (M9-S09). Confirm `se regala algo en Navidad` is how a custom is stated, and that
+    the sentence does not read as oddly impersonal about one's own family.
+45. **`feria` outside Andalusia** (M9-S10, and its note). Confirm `verbena` is the right northern twin,
+    and that no display in the module claims a festival for the whole language.
+46. **`todavía trabajaba` against `ya no trabajaba`** (M10-S09 and M10-S02). Confirm the two accounts
+    read as the natural opposites the module intends, and that `todavía` is the everyday word beside
+    `aún` rather than the marked one.
+47. **`conocí` as "met"** (M10-S01, S06, S08, S10, and the `conocí` note). The claim that the preterite
+    of `conocer` means MET and not KNEW is load-bearing across four accounts. Confirm a listener hears
+    the first meeting every time, with no context beyond the sentence.
+48. **Eight sentences with no `yo`** (M10, all ten accounts). The module's strongest claim about
+    ordinary speech: that an account of this length names its speaker nowhere and reads as natural
+    rather than clipped. Confirm that, and confirm the over-pronouned plate on S02 reads as insistence
+    to a native ear rather than merely as emphasis.
+49. **`Al principio … al final … y desde entonces`** (M10-S01, S05, S10). Confirm the three-part shape
+    is what a person reaches for when telling a short story, and that `desde entonces` genuinely pulls
+    the perfect after it rather than sitting equally well with a preterite.

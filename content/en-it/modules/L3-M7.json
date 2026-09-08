@@ -1,0 +1,581 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M7",
+  "title": "Body and health",
+  "job": "Say what hurts, and where",
+  "prerequisites": ["L3-M6"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 4.5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "present — including for a pain that started in the past and is still here"
+    ],
+    "allowedPatterns": [
+      "Mi fa male + il/la + <body part>",
+      "Mi fanno male + i/le + <plural part>",
+      "Ho + <symptom>",
+      "Da + <duration>",
+      "Da quando + <point>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE BODY PART IS THE SUBJECT, SO THE VERB AGREES WITH IT. mi fa male la testa is literally \"the head makes bad to me\", and two feet make the verb plural: mi fanno male i piedi. L2-M8 shipped the singular and a learner who stops there will say mi fa male i piedi at the one moment it matters, because English \"my feet hurt\" gives no warning. It is the same backwards shape as mi piace and mi piacciono."
+    },
+    {
+      "tag": "interference",
+      "text": "THE BODY PART TAKES A DEFINITE ARTICLE, NEVER A POSSESSIVE. mi fa male la testa, not mi fa male la mia testa. The mi has already said whose head it is, and saying it twice is the single loudest marker of a learner in a doctor's room. en-es states the same law with me duele la cabeza, and Arabic does the same work with its own suffix — one habit, three courses."
+    },
+    {
+      "tag": "delta",
+      "text": "DA DOES BOTH \"FOR\" AND \"SINCE\", AND THE TENSE STAYS PRESENT. mi fa male da tre giorni (\"for three days\"), mi fa male da lunedì (\"since Monday\") — one Italian word for two English ones, and no perfect anywhere. English cannot say \"it hurts for three days\" and must reach for \"it has been hurting\"; Italian simply keeps the present, because the pain is still here."
+    },
+    {
+      "tag": "free",
+      "text": "SYMPTOMS ARE THINGS YOU HAVE, AND THEY KEEP THEIR ARTICLE: ho la febbre, ho la tosse, ho il raffreddore. Beside them sits the fixed frame mal di, which takes a bare body part with no article at all — mal di testa, mal di gola, mal di stomaco. That is the phrase a pharmacy is told, and the one worth learning whole."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M7-S01",
+      "display": "Mi fanno male i piedi",
+      "cue": "My feet hurt",
+      "literal": "To-me they-make bad the feet",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mi fanno male",
+            "cue": "they hurt me",
+            "tag": "delta",
+            "forms": ["mi fanno male", "ti fanno male", "le fanno male"],
+            "note": "The plural of L2-M8's mi fa male. Two feet make the verb plural, because the feet are the subject and you are only the mi."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English \"my feet hurt\" puts the feet where a subject goes and Italian puts them last, which makes it easy to leave the verb singular. The verb counts the parts, not the person.",
+      "sound": "mee FAN-no MA-le ee PYE-dee. fanno holds its double n, and the whole thing runs as one phrase.",
+      "variations": [
+        {
+          "display": "Mi fa male il piede",
+          "cue": "My foot hurts",
+          "changed": "one foot, so the verb goes singular"
+        },
+        {
+          "display": "Ti fanno male i piedi?",
+          "cue": "Do your feet hurt?",
+          "changed": "asked of somebody else"
+        },
+        {
+          "display": "Mi fanno male le gambe",
+          "cue": "My legs hurt",
+          "changed": "a different pair"
+        }
+      ],
+      "mistake": {
+        "display": "Mi fa male i piedi",
+        "why": "Two feet, plural verb: Mi fanno male i piedi."
+      },
+      "usage": "Said after a long day, and said to a doctor exactly the same way.",
+      "register": "neutral",
+      "mnemonic": "Count the parts, not the people."
+    },
+    {
+      "id": "L3-M7-S02",
+      "display": "Mi fa male la gola da tre giorni",
+      "cue": "My throat has been hurting for three days",
+      "literal": "To-me it-makes bad the throat from three days",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gola",
+            "cue": "throat",
+            "tag": "free",
+            "forms": ["gola", "gole"],
+            "note": "Feminine: la gola. It is the part that turns up most at a pharmacy counter, in the frame mal di gola."
+          },
+          {
+            "display": "da",
+            "cue": "for, since",
+            "tag": "delta",
+            "forms": ["da"],
+            "note": "One word for both English ones: da tre giorni is \"for three days\", da lunedì is \"since Monday\". The verb in front of it stays present."
+          },
+          {
+            "display": "giorni",
+            "cue": "days",
+            "tag": "free",
+            "forms": ["giorno", "giorni"],
+            "note": "Masculine, plural in -i. L1-M4's ogni giorno and tutti i giorni are built from the singular."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "English forces a perfect here — \"has been hurting\" — and Italian forbids one. Reaching for mi ha fatto male da tre giorni says the pain finished, which is the opposite of what you mean.",
+      "sound": "mee fa MA-le la GO-la da tre JOR-nee. giorni starts with a soft j sound.",
+      "variations": [
+        {
+          "display": "Mi fa male la gola da lunedì",
+          "cue": "My throat has been hurting since Monday",
+          "changed": "a starting point instead of a length"
+        },
+        {
+          "display": "Mi fa male la testa da due giorni",
+          "cue": "My head has been hurting for two days",
+          "changed": "a different part and a different count"
+        },
+        {
+          "display": "Non mi fa male la gola",
+          "cue": "My throat does not hurt",
+          "changed": "negative, and no duration"
+        }
+      ],
+      "mistake": {
+        "display": "Mi fa male la mia gola da tre giorni",
+        "why": "The mi already says whose throat it is: Mi fa male la gola da tre giorni."
+      },
+      "usage": "The opening line at a pharmacy or a doctor's — the part, then how long.",
+      "register": "neutral",
+      "mnemonic": "da = for AND since, and the verb never moves."
+    },
+    {
+      "id": "L3-M7-S03",
+      "display": "Ho la febbre e la tosse",
+      "cue": "I have a fever and a cough",
+      "literal": "I-have the fever and the cough",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "febbre",
+            "cue": "fever",
+            "tag": "free",
+            "forms": ["febbre"],
+            "note": "Feminine, and it keeps its article: ho la febbre, where English says \"a fever\" or none at all."
+          },
+          {
+            "display": "tosse",
+            "cue": "cough",
+            "tag": "free",
+            "forms": ["tosse"],
+            "note": "Feminine, also with its article: ho la tosse. The double s is held."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "English drops the article — \"I have fever\" — and Italian keeps it. ho febbre is understood but marks you at once; the la is not optional.",
+      "sound": "o la FEB-bre e la TOS-se. Both words hold a double consonant, which is what makes them sound Italian rather than English.",
+      "variations": [
+        {
+          "display": "Ho la tosse da una settimana",
+          "cue": "I have had a cough for a week",
+          "changed": "how long it has lasted"
+        },
+        {
+          "display": "Non ho la febbre",
+          "cue": "I do not have a fever",
+          "changed": "negative"
+        },
+        {
+          "display": "Mio figlio ha la febbre",
+          "cue": "My son has a fever",
+          "changed": "somebody else has it"
+        }
+      ],
+      "mistake": {
+        "display": "Sono febbre",
+        "why": "A symptom is a noun you have, not something you are: Ho la febbre."
+      },
+      "usage": "What you say when you call in sick, in exactly this order.",
+      "register": "neutral",
+      "mnemonic": "You HAVE the fever, article and all."
+    },
+    {
+      "id": "L3-M7-S04",
+      "display": "Ho il raffreddore da lunedì",
+      "cue": "I have had a cold since Monday",
+      "literal": "I-have the cold from Monday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "raffreddore",
+            "cue": "a cold",
+            "tag": "free",
+            "forms": ["raffreddore"],
+            "note": "Masculine: ho il raffreddore. Nothing to do with freddo the temperature, though the two words look related."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "da lunedì is \"since Monday\", and the Italian verb stays in the present. English cannot manage that and reaches for \"have had\", which tempts a learner into the passato prossimo.",
+      "sound": "o eel raf-fred-DO-re da lu-ne-DEE. lunedì is stressed on the final ì, which is why it carries the accent.",
+      "variations": [
+        {
+          "display": "Ho il raffreddore da tre giorni",
+          "cue": "I have had a cold for three days",
+          "changed": "a length instead of a starting point"
+        },
+        {
+          "display": "Ho il raffreddore e mal di gola",
+          "cue": "I have a cold and a sore throat",
+          "changed": "a second symptom in the fixed frame"
+        },
+        {
+          "display": "Non ho il raffreddore, ho la tosse",
+          "cue": "I do not have a cold, I have a cough",
+          "changed": "correcting which symptom it is"
+        }
+      ],
+      "mistake": {
+        "display": "Ho avuto il raffreddore da lunedì",
+        "why": "The past says the cold is over. Still have it, so: Ho il raffreddore da lunedì."
+      },
+      "usage": "An explanation, not a complaint — the sentence that excuses a missed evening.",
+      "register": "neutral",
+      "mnemonic": "Still here, still present tense."
+    },
+    {
+      "id": "L3-M7-S05",
+      "display": "Ho mal di stomaco",
+      "cue": "I have a stomach ache",
+      "literal": "I-have bad of stomach",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mal di",
+            "cue": "ache in the",
+            "tag": "free",
+            "forms": ["mal di"],
+            "note": "A fixed frame taking a bare body part with no article: mal di testa, mal di gola, mal di stomaco. It is L2-M8's male, shortened inside this phrase only."
+          },
+          {
+            "display": "stomaco",
+            "cue": "stomach",
+            "tag": "free",
+            "forms": ["stomaco", "stomaci"],
+            "note": "Masculine, stressed on the STO. Both mal di stomaco and mi fa male lo stomaco are said."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "The article that is compulsory everywhere else is forbidden here: mal di gola, never mal di la gola. The frame swallows it.",
+      "sound": "o mal dee STO-ma-ko. stomaco is stressed on the first syllable, not the second, which English speakers reliably get wrong.",
+      "variations": [
+        {
+          "display": "Ho mal di testa",
+          "cue": "I have a headache",
+          "changed": "a different part in the same frame"
+        },
+        {
+          "display": "Ho mal di gola da tre giorni",
+          "cue": "I have had a sore throat for three days",
+          "changed": "how long it has lasted"
+        },
+        {
+          "display": "Mi fa male lo stomaco",
+          "cue": "My stomach hurts",
+          "changed": "the long way round, with the article back"
+        }
+      ],
+      "mistake": {
+        "display": "Ho mal di lo stomaco",
+        "why": "mal di takes the bare part: Ho mal di stomaco."
+      },
+      "usage": "The commonest complaint in the language, and short enough to say to a stranger.",
+      "register": "neutral",
+      "mnemonic": "mal di eats the article."
+    },
+    {
+      "id": "L3-M7-S06",
+      "display": "Mi fa male la schiena da una settimana",
+      "cue": "My back has been hurting for a week",
+      "literal": "To-me it-makes bad the back from a week",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "schiena",
+            "cue": "back",
+            "tag": "free",
+            "forms": ["schiena", "schiene"],
+            "note": "Feminine: la schiena. The sch is a hard sk sound, as in schedule spoken the American way."
+          },
+          {
+            "display": "settimana",
+            "cue": "week",
+            "tag": "free",
+            "forms": ["settimana", "settimane"],
+            "note": "Feminine. L1-M6 shipped la settimana prossima whole; this is the bare noun inside it."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "One back, so the verb is singular here — but the moment the complaint becomes le gambe or i piedi the verb has to move to fanno, and nothing in the English sentence signals that.",
+      "sound": "mee fa MA-le la SKYE-na da OO-na set-ti-MA-na. schiena begins sk, never sh.",
+      "variations": [
+        {
+          "display": "Mi fa male la schiena da ieri",
+          "cue": "My back has been hurting since yesterday",
+          "changed": "a starting point instead of a length"
+        },
+        {
+          "display": "Mi fanno male le gambe da una settimana",
+          "cue": "My legs have been hurting for a week",
+          "changed": "plural parts, so the verb goes plural"
+        },
+        {
+          "display": "Mi fa male la schiena quando lavoro",
+          "cue": "My back hurts when I work",
+          "changed": "when it hurts instead of how long"
+        }
+      ],
+      "mistake": {
+        "display": "La mia schiena fa male da una settimana",
+        "why": "Italian keeps you in the mi and the back in the article: Mi fa male la schiena da una settimana."
+      },
+      "usage": "The complaint of anybody who sits or lifts for a living — very common, and not dramatic.",
+      "register": "neutral",
+      "mnemonic": "One back, fa. Two legs, fanno."
+    },
+    {
+      "id": "L3-M7-S07",
+      "display": "Mi fa male il braccio, non la gamba",
+      "cue": "My arm hurts, not my leg",
+      "literal": "To-me it-makes bad the arm, not the leg",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "braccio",
+            "cue": "arm",
+            "tag": "delta",
+            "forms": ["braccio", "braccia"],
+            "note": "Masculine singular, but the plural le braccia is feminine — a small closed class of body parts does this. Learn the pair, not a rule."
+          },
+          {
+            "display": "gamba",
+            "cue": "leg",
+            "tag": "free",
+            "forms": ["gamba", "gambe"],
+            "note": "Feminine and entirely ordinary: la gamba, le gambe. It is the plural you will say more often."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "English repeats \"my\" in the second half — \"not my leg\" — and Italian repeats only the article. Putting mia back in is the same doubling the module's second rule warns about.",
+      "sound": "mee fa MA-le eel BRAT-cho, non la GAM-ba. The cci in braccio is a hard tch.",
+      "variations": [
+        {
+          "display": "Mi fanno male le braccia",
+          "cue": "My arms hurt",
+          "changed": "the feminine plural, and the verb with it"
+        },
+        {
+          "display": "Mi fa male la gamba da ieri",
+          "cue": "My leg has been hurting since yesterday",
+          "changed": "how long it has hurt"
+        },
+        {
+          "display": "Non mi fa male il braccio",
+          "cue": "My arm does not hurt",
+          "changed": "negative"
+        }
+      ],
+      "mistake": {
+        "display": "Mi fanno male i bracci",
+        "why": "The plural of this one is feminine: Mi fanno male le braccia."
+      },
+      "usage": "Correcting a doctor who has reached for the wrong limb — precise, and worth being precise about.",
+      "register": "neutral",
+      "mnemonic": "il braccio, le braccia — it changes sides in the plural."
+    },
+    {
+      "id": "L3-M7-S08",
+      "display": "Ha qualcosa per il mal di gola?",
+      "cue": "Do you have something for a sore throat?",
+      "literal": "You-have something for the bad of throat?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "qualcosa",
+            "cue": "something",
+            "tag": "free",
+            "forms": ["qualcosa"],
+            "note": "One word, never split. qualcosa di buono needs a di before an adjective, which is why it is worth its own row."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "The verb is ha, not hai — this is the polite address of a counter, the form L2-M1's scusi and senta belong to. Nothing about the sentence looks formal except that one letter.",
+      "sound": "a kwal-KO-za per eel mal dee GO-la. The whole question rises only at the very end.",
+      "variations": [
+        {
+          "display": "Ha qualcosa per il mal di testa?",
+          "cue": "Do you have something for a headache?",
+          "changed": "a different complaint"
+        },
+        {
+          "display": "Ha qualcosa per la tosse?",
+          "cue": "Do you have something for a cough?",
+          "changed": "a symptom instead of an ache"
+        },
+        {
+          "display": "Scusi, ha qualcosa per la febbre?",
+          "cue": "Excuse me, do you have something for a fever?",
+          "changed": "opened with L2-M1's scusi"
+        }
+      ],
+      "mistake": {
+        "display": "Hai qualcosa per il mal di gola?",
+        "why": "A pharmacist is addressed politely, so the verb is third person: Ha qualcosa per il mal di gola?"
+      },
+      "usage": "The whole pharmacy transaction in one line. Say it, and you will be handed something.",
+      "register": "formal",
+      "mnemonic": "ha, not hai — the counter takes the polite form."
+    },
+    {
+      "id": "L3-M7-S09",
+      "display": "Vado in farmacia e prendo una pastiglia",
+      "cue": "I am going to the pharmacy and taking a tablet",
+      "literal": "I-go in pharmacy and I-take a tablet",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "farmacia",
+            "cue": "pharmacy",
+            "tag": "free",
+            "forms": ["farmacia", "farmacie"],
+            "note": "Feminine, stressed on the CI: far-ma-CHEE-a. in farmacia takes no article, like in ufficio."
+          },
+          {
+            "display": "pastiglia",
+            "cue": "tablet",
+            "tag": "free",
+            "forms": ["pastiglia", "pastiglie"],
+            "note": "Feminine. The word on the box; compressa is what the box itself often prints."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "in farmacia has no article where English has \"the\". Italian drops it for places you go to for their purpose, exactly as L3-M2 does with in ufficio.",
+      "sound": "VA-do een far-ma-CHEE-a e PREN-do OO-na pas-TEE-lya. The gli in pastiglia is the soft sound from voglia.",
+      "variations": [
+        {
+          "display": "Vado in farmacia adesso",
+          "cue": "I am going to the pharmacy now",
+          "changed": "when, using M6's adesso"
+        },
+        {
+          "display": "Prendo una pastiglia per il mal di testa",
+          "cue": "I take a tablet for a headache",
+          "changed": "what the tablet is for"
+        },
+        {
+          "display": "Il medico ha detto di prendere una pastiglia",
+          "cue": "The doctor said to take a tablet",
+          "changed": "reported as an instruction, with L3-M5's di"
+        }
+      ],
+      "mistake": {
+        "display": "Vado in la farmacia",
+        "why": "in farmacia carries no article: Vado in farmacia."
+      },
+      "usage": "The ordinary next step after the pharmacy question, and how you would tell a friend what you are doing.",
+      "register": "neutral",
+      "mnemonic": "in farmacia, in ufficio — no article for the places you go for a reason."
+    },
+    {
+      "id": "L3-M7-S10",
+      "display": "Da quando hai mal di gola?",
+      "cue": "How long have you had a sore throat?",
+      "literal": "From when you-have bad of throat?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "da quando",
+            "cue": "since when, how long",
+            "tag": "delta",
+            "forms": ["da quando"],
+            "note": "The question this module's da answers. Italian asks it in the present, where English must reach for \"have you had\"."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "The English question is in a perfect and the Italian one is not. Da quando hai avuto asks when a finished illness happened, which is a different question altogether.",
+      "sound": "da KWAN-do eye mal dee GO-la. hai is one syllable, rhyming with English \"eye\".",
+      "variations": [
+        {
+          "display": "Da quando ti fa male la testa?",
+          "cue": "How long has your head been hurting?",
+          "changed": "the long frame instead of mal di"
+        },
+        {
+          "display": "Da quando hai la febbre?",
+          "cue": "How long have you had a fever?",
+          "changed": "a symptom instead of an ache"
+        },
+        {
+          "display": "Da quando ti fanno male i piedi?",
+          "cue": "How long have your feet been hurting?",
+          "changed": "plural parts, so the verb goes plural"
+        }
+      ],
+      "mistake": {
+        "display": "Da quando hai avuto mal di gola?",
+        "why": "The past asks about a sore throat that is over: Da quando hai mal di gola?"
+      },
+      "usage": "What a doctor asks first, and what you should expect to be asked.",
+      "register": "neutral",
+      "mnemonic": "da quando + present = how long so far."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L3-M7-C01", "display": "Mi fanno male i piedi", "cue": "My feet hurt" },
+    {
+      "id": "L3-M7-C02",
+      "display": "Mi fa male la gola da tre giorni",
+      "cue": "My throat has been hurting for three days"
+    },
+    { "id": "L3-M7-C03", "display": "Ho la febbre e la tosse", "cue": "I have a fever and a cough" },
+    {
+      "id": "L3-M7-C04",
+      "display": "Ho il raffreddore da lunedì",
+      "cue": "I have had a cold since Monday"
+    },
+    { "id": "L3-M7-C05", "display": "Ho mal di stomaco", "cue": "I have a stomach ache" },
+    {
+      "id": "L3-M7-C06",
+      "display": "Mi fa male la schiena da una settimana",
+      "cue": "My back has been hurting for a week"
+    },
+    { "id": "L3-M7-C07", "display": "Mi fanno male le braccia", "cue": "My arms hurt" },
+    {
+      "id": "L3-M7-C08",
+      "display": "Ha qualcosa per il mal di gola?",
+      "cue": "Do you have something for a sore throat?"
+    },
+    {
+      "id": "L3-M7-C09",
+      "display": "Vado in farmacia e prendo una pastiglia",
+      "cue": "I am going to the pharmacy and taking a tablet"
+    },
+    {
+      "id": "L3-M7-C10",
+      "display": "Da quando hai mal di gola?",
+      "cue": "How long have you had a sore throat?"
+    },
+    {
+      "id": "L3-M7-C11",
+      "display": "Mi fa male la gamba da ieri",
+      "cue": "My leg has been hurting since yesterday"
+    },
+    {
+      "id": "L3-M7-C12",
+      "display": "Mio figlio ha la febbre da ieri",
+      "cue": "My son has had a fever since yesterday"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

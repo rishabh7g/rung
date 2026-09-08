@@ -1,0 +1,563 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M6",
+  "title": "Feelings in depth",
+  "job": "Nuance past good and bad",
+  "prerequisites": [
+    "L3-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Ich freue mich auf + N-acc",
+      "Ich ärgere mich über + N-acc",
+      "Ich fühle mich + Adj",
+      "Ich wasche mir + die + N",
+      "Das gefällt mir"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "German keeps its feelings in REFLEXIVE verbs, and English keeps almost none of them there: Ich freue mich, Ich ärgere mich, Ich fühle mich wohl, Ich interessiere mich für Musik. The pronoun belongs to the verb rather than being a real object — L1-M4's Ich wasche mich already said exactly that about one verb, and this module makes it the system. English drops the pronoun (I am looking forward, I am annoyed); German never can, and a reflexive verb without it is not a sentence."
+    },
+    {
+      "tag": "free",
+      "text": "The pronouns cost you nothing, which is why the whole grammar fits in one module: mich is L1-M4's, dich, dir and uns are L2-M1's, mir is L1-M9's. Only sich is new, and it does three jobs on one key — er/sie/es, the plural sie, and the Sie form: Er ärgert sich · Sie ärgern sich · Ärgern Sie sich? One note is true of all three readings, the treatment L1-M2's sie already has."
+    },
+    {
+      "tag": "delta",
+      "text": "The DATIVE reflexive, which is the half nobody teaches: when the verb ALREADY has an object, the reflexive pronoun goes into the dative. Ich wasche mich — nothing else there, so the pronoun is accusative. Ich wasche mir die Hände — the hands are the object, so the pronoun moves to mir. The same shape carries Ich mache mir Sorgen and Ich habe mir das Bein gebrochen, and M7 uses it for the whole body one module later."
+    },
+    {
+      "tag": "interference",
+      "text": "Verbs with FIXED prepositions are memorised as pairs; there is no rule that survives contact: sich freuen auf for something still coming, sich freuen über for something that has happened, sich ärgern über, sich interessieren für, Angst haben vor, stolz sein auf, zufrieden sein mit. The preposition then fixes the case. Here is the trap: auf and über in these pairs are NOT L2-M4's two-way prepositions choosing by motion — the verb has already chosen, and reasoning from motion gets them wrong every time."
+    },
+    {
+      "tag": "free",
+      "text": "gefallen puts the person in the DATIVE and makes the thing liked the subject: Das Buch gefällt mir. L2-M8's rules entry already named gefallen in its list of dative verbs without a row ever being opened; this is that row. Das gefällt mir is the everyday I like that — mögen (L1-M8's mag) is for people and food, gefallen is for how a thing strikes you when you see it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M6-S01",
+      "display": "Ich freue mich auf das Wochenende",
+      "cue": "I'm looking forward to the weekend",
+      "literal": "I gladden me onto the weekend",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "freue",
+            "cue": "look forward / am glad",
+            "tag": "delta",
+            "forms": [
+              "freue",
+              "freuen",
+              "freut"
+            ],
+            "note": "sich freuen auf + accusative for something still coming; sich freuen über for something that has already happened. Never without its pronoun."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "English has no pronoun here at all — I am looking forward. Drop mich and the German verb is simply unfinished; there is no version of this sentence without it.",
+      "sound": "ikh FROY-uh mikh owf das VOKH-en-en-duh. The ch of ich is the soft one, close to the h in huge.",
+      "variations": [
+        {
+          "display": "Ich freue mich über deine Nachricht",
+          "cue": "I'm glad about your message",
+          "changed": "über, because the message has already arrived"
+        },
+        {
+          "display": "Wir freuen uns auf das Wochenende",
+          "cue": "We're looking forward to the weekend",
+          "changed": "the wir cell — uns is L2-M1's pronoun doing the reflexive job"
+        }
+      ],
+      "mistake": {
+        "display": "Ich freue auf das Wochenende",
+        "why": "The pronoun is not decoration. freuen without mich is not a verb a German can hear here — the pair is sich freuen auf."
+      },
+      "usage": "The everyday answer to Was machst du am Wochenende? and the safest way to sound pleased about a plan.",
+      "register": "neutral",
+      "mnemonic": "German feelings arrive with a pronoun attached."
+    },
+    {
+      "id": "L3-M6-S02",
+      "display": "Ich ärgere mich über die Rechnung und bin enttäuscht",
+      "cue": "I'm annoyed about the bill and disappointed",
+      "literal": "I annoy me over the bill and am disappointed",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ärgere",
+            "cue": "am annoyed",
+            "tag": "delta",
+            "forms": [
+              "ärgere",
+              "ärgern",
+              "ärgert"
+            ],
+            "note": "sich ärgern über + accusative — annoyed ABOUT something. The preposition is fixed to the verb: über and nothing else."
+          },
+          {
+            "display": "enttäuscht",
+            "cue": "disappointed",
+            "tag": "free",
+            "forms": [],
+            "note": "An adjective, so it goes with sein: Ich bin enttäuscht. enttäuscht von + dative names who let you down."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "über here is not L2-M4's over that chooses its case by motion. sich ärgern has already chosen: über + accusative, always.",
+      "sound": "ikh AIR-guh-ruh mikh UE-ber dee REKH-noong oont bin ent-TOYSHT. The äu of enttäuscht is the oy of boy.",
+      "variations": [
+        {
+          "display": "Er ärgert sich über den Chef",
+          "cue": "He's annoyed with the boss",
+          "changed": "the er cell, where the pronoun is sich"
+        }
+      ],
+      "mistake": {
+        "display": "Ich ärgere mich auf die Rechnung",
+        "why": "auf belongs to freuen, über to ärgern. The pairs are learned whole; there is nothing to reason out."
+      },
+      "usage": "A complaint you would make to a friend or a colleague, not to the person who sent the bill.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S03",
+      "display": "Ich fühle mich heute nicht wohl",
+      "cue": "I'm not feeling well today",
+      "literal": "I feel me today not well",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fühle",
+            "cue": "feel",
+            "tag": "delta",
+            "forms": [
+              "fühle",
+              "fühlen",
+              "fühlt"
+            ],
+            "note": "sich fühlen is how you say how you ARE, not what you touch: Ich fühle mich gut. The adjective after it never changes shape."
+          },
+          {
+            "display": "wohl",
+            "cue": "well / at ease",
+            "tag": "free",
+            "forms": [],
+            "note": "wohl is comfort rather than health — sich wohl fühlen is to feel at ease. For illness the course already has krank (L1-M9)."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English feel takes no pronoun (I feel fine) and German cannot go without one. Ich fühle gut says nothing about you at all.",
+      "sound": "ikh FEW-luh mikh HOY-tuh nikht vohl. The ü of fühle is the ee of see said with rounded lips.",
+      "variations": [
+        {
+          "display": "Fühlen Sie sich besser?",
+          "cue": "Are you feeling better?",
+          "changed": "the Sie form, verb first because it is a question — and sich again"
+        }
+      ],
+      "mistake": {
+        "display": "Ich fühle nicht wohl",
+        "why": "The pronoun is missing. fühlen needs mich exactly as freuen and ärgern do."
+      },
+      "usage": "What you say at work before you go home, and the first line of M7's visit to the doctor.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S04",
+      "display": "Ich interessiere mich für Musik",
+      "cue": "I'm interested in music",
+      "literal": "I interest me for music",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "interessiere",
+            "cue": "am interested",
+            "tag": "delta",
+            "forms": [
+              "interessiere",
+              "interessieren",
+              "interessiert"
+            ],
+            "note": "sich interessieren für + accusative. Das interessiert mich (that interests me) is the same verb without the reflexive, and both are everyday."
+          },
+          {
+            "display": "für",
+            "cue": "for",
+            "tag": "free",
+            "forms": [
+              "für"
+            ],
+            "note": "für always takes the accusative — there is no case to choose, unlike L2-M4's an, auf and in. Ein Geschenk für meinen Bruder."
+          },
+          {
+            "display": "Musik",
+            "cue": "music",
+            "tag": "free",
+            "forms": [
+              "Musik"
+            ],
+            "note": "die Musik, feminine, and used without an article when you mean music in general: Ich höre Musik."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "English is interested IN. German is interested FOR. The preposition is part of the verb and does not translate.",
+      "sound": "ikh in-ter-ess-EE-ruh mikh fuer moo-ZEEK. Musik stresses its second syllable, and für has the rounded ü.",
+      "variations": [
+        {
+          "display": "Meine Tochter interessiert sich für die Arbeit",
+          "cue": "My daughter is interested in the work",
+          "changed": "third person, so the pronoun is sich"
+        }
+      ],
+      "mistake": {
+        "display": "Ich interessiere mich in Musik",
+        "why": "English's in does not carry over. The pair is sich interessieren für, learned as one piece."
+      },
+      "usage": "Introducing yourself past your job — the sentence that follows L3-M2's Ich studiere.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S05",
+      "display": "Ich wasche mir die Hände",
+      "cue": "I'm washing my hands",
+      "literal": "I wash to-me the hands",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Hände",
+            "cue": "hands",
+            "tag": "free",
+            "forms": [
+              "Hand",
+              "Hände"
+            ],
+            "note": "die Hand, plural die Hände. With a dative pronoun in front the part keeps its article: mir die Hände, never meine Hände."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "English puts the owner on the noun — my hands. German puts the owner in the dative pronoun and leaves the noun with die.",
+      "sound": "ikh VASH-uh meer dee HEN-duh. The ä of Hände is the e of bed.",
+      "variations": [
+        {
+          "display": "Ich wasche mich",
+          "cue": "I'm washing (myself)",
+          "changed": "no other object, so the pronoun is accusative — L1-M4's own sentence"
+        }
+      ],
+      "mistake": {
+        "display": "Ich wasche meine Hände",
+        "why": "Understandable, but not what a German says. The possessor is mir and the hands take die — the shape M7 needs for every body part."
+      },
+      "usage": "Everyday, and the sentence a parent says to a child before dinner.",
+      "register": "neutral",
+      "mnemonic": "Object arrives, pronoun moves to the dative."
+    },
+    {
+      "id": "L3-M6-S06",
+      "display": "Das Buch gefällt mir sehr",
+      "cue": "I really like the book",
+      "literal": "the book pleases to-me very",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gefällt",
+            "cue": "pleases / (I) like",
+            "tag": "delta",
+            "forms": [
+              "gefällt",
+              "gefallen"
+            ],
+            "note": "The thing liked is the SUBJECT and the person sits in the dative. A plural subject takes gefallen: Die Kinder gefallen mir."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "The English sentence starts with I; the German one starts with the book. Whoever likes it is never the subject here.",
+      "sound": "das bookh guh-FELT meer zair. The ch of Buch is the hard one, from the back of the throat.",
+      "variations": [
+        {
+          "display": "Das gefällt mir",
+          "cue": "I like that",
+          "changed": "the bare das — the everyday version, and an answer on its own"
+        },
+        {
+          "display": "Die Stadt gefällt uns sehr",
+          "cue": "We really like the city",
+          "changed": "another dative person, uns"
+        }
+      ],
+      "mistake": {
+        "display": "Ich gefalle das Buch",
+        "why": "That says the book finds YOU pleasing. Turn it round: Das Buch gefällt mir."
+      },
+      "usage": "How a thing strikes you — a book, a flat, a city. For people and food the course already has mag.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S07",
+      "display": "Meine Schwester ärgert sich und mein Bruder ist wütend",
+      "cue": "My sister is annoyed and my brother is furious",
+      "literal": "my sister annoys herself and my brother is furious",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sich",
+            "cue": "himself / herself / themselves / yourself (Sie)",
+            "tag": "delta",
+            "forms": [
+              "sich"
+            ],
+            "note": "One key, three readings: er/sie/es, the plural sie, and the polite Sie. Er ärgert sich · Sie ärgern sich · Ärgern Sie sich? All of them sich."
+          },
+          {
+            "display": "wütend",
+            "cue": "furious",
+            "tag": "free",
+            "forms": [],
+            "note": "Stronger than ärgerlich or annoyed — real anger. wütend auf + accusative names the person you are angry with."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English has four words here — himself, herself, themselves, yourself — and German has one. Nothing about sich tells you who; the verb does.",
+      "sound": "MY-nuh SHVES-ter AIR-gert zikh oont mine BROO-der ist VUE-tent. The final d of wütend is said as a t.",
+      "variations": [
+        {
+          "display": "Die Kinder freuen sich",
+          "cue": "The children are pleased",
+          "changed": "plural, and still sich"
+        }
+      ],
+      "usage": "Telling someone how a third person is taking the news.",
+      "register": "neutral",
+      "mnemonic": "Third person and polite Sie share one pronoun: sich."
+    },
+    {
+      "id": "L3-M6-S08",
+      "display": "Ich mache mir Sorgen um meine Tochter",
+      "cue": "I'm worried about my daughter",
+      "literal": "I make to-me worries around my daughter",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Sorgen",
+            "cue": "worries",
+            "tag": "delta",
+            "forms": [
+              "Sorgen"
+            ],
+            "note": "sich Sorgen machen um — to worry about. Sorgen is plural and stays plural, and it is the object, which is why the pronoun is mir."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "um here is not L1-M4's clock um (um acht Uhr). The phrase fixes it, and a learner who reads it as a time hears nothing.",
+      "sound": "ikh MAKH-uh meer ZOR-gen oom MY-nuh TOKH-ter. The initial S of Sorgen is a z.",
+      "variations": [
+        {
+          "display": "Wir machen uns Sorgen um den Chef",
+          "cue": "We're worried about the boss",
+          "changed": "the wir cell — uns does both jobs, dative here"
+        }
+      ],
+      "mistake": {
+        "display": "Ich mache mich Sorgen",
+        "why": "Sorgen is already the object, so the reflexive pronoun goes into the dative: mir."
+      },
+      "usage": "Said to someone close. To a stranger it is a lot of feeling at once.",
+      "register": "informal"
+    },
+    {
+      "id": "L3-M6-S09",
+      "display": "Ich bin aufgeregt, stolz und sehr nervös",
+      "cue": "I'm excited, proud and very nervous",
+      "literal": "I am excited, proud and very nervous",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aufgeregt",
+            "cue": "excited / worked up",
+            "tag": "free",
+            "forms": [],
+            "note": "Excited in the keyed-up sense, good or bad — before an exam as readily as before a party. Not the same as freuen, which is pleasure."
+          },
+          {
+            "display": "stolz",
+            "cue": "proud",
+            "tag": "free",
+            "forms": [],
+            "note": "stolz auf + accusative: Ich bin stolz auf meinen Sohn. The preposition is fixed exactly as the reflexive verbs' are."
+          },
+          {
+            "display": "nervös",
+            "cue": "nervous",
+            "tag": "free",
+            "forms": [],
+            "note": "Said ner-VÖRS, with the stress on the second syllable. It is nerves before an event, not nervousness as a character trait."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "sound": "ikh bin OWF-guh-raykt, shtolts oont zair ner-VOERS. The st of stolz is sht, and nervös stresses its second syllable.",
+      "variations": [
+        {
+          "display": "Ich bin stolz auf meinen Sohn",
+          "cue": "I'm proud of my son",
+          "changed": "the fixed preposition auf, with the accusative after it"
+        }
+      ],
+      "mistake": {
+        "display": "Ich bin stolz für meinen Sohn",
+        "why": "für is sich interessieren's preposition. stolz takes auf, and the pair has to be learned as one."
+      },
+      "usage": "Three feelings at once, which is what a real answer to Wie geht es dir? sounds like.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S10",
+      "display": "Mein Chef ist zufrieden, aber ich bin überrascht",
+      "cue": "My boss is satisfied, but I'm surprised",
+      "literal": "my boss is satisfied, but I am surprised",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zufrieden",
+            "cue": "satisfied / content",
+            "tag": "free",
+            "forms": [],
+            "note": "zufrieden mit + dative: Ich bin zufrieden mit der Arbeit. It is quiet contentment, not happiness — glücklich (L1-M9) is the big word."
+          },
+          {
+            "display": "überrascht",
+            "cue": "surprised",
+            "tag": "free",
+            "forms": [],
+            "note": "überrascht von + dative names what surprised you. The prefix über- is unstressed here: ü-ber-RASHT."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "zufrieden is not happy. Reaching for glücklich about a piece of work sounds far larger than an English speaker means.",
+      "sound": "mine shef ist tsoo-FREE-den, AH-ber ikh bin ue-ber-RASHT. The über- of überrascht is unstressed.",
+      "variations": [
+        {
+          "display": "Ich bin zufrieden mit der Arbeit",
+          "cue": "I'm satisfied with the work",
+          "changed": "the fixed preposition mit, with the dative after it"
+        }
+      ],
+      "usage": "The measured verdict — at work, on a flat, on a meal.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M6-C01",
+      "display": "Ich freue mich auf das Wochenende",
+      "cue": "I'm looking forward to the weekend"
+    },
+    {
+      "id": "L3-M6-C02",
+      "display": "Er ärgert sich über die Arbeit",
+      "cue": "He's annoyed about the work"
+    },
+    {
+      "id": "L3-M6-C03",
+      "display": "Wie fühlen Sie sich heute?",
+      "cue": "How are you feeling today?"
+    },
+    {
+      "id": "L3-M6-C04",
+      "display": "Meine Tochter interessiert sich für Musik",
+      "cue": "My daughter is interested in music"
+    },
+    {
+      "id": "L3-M6-C05",
+      "display": "Wir waschen uns die Hände",
+      "cue": "We're washing our hands"
+    },
+    {
+      "id": "L3-M6-C06",
+      "display": "Das Buch gefällt mir sehr",
+      "cue": "I really like the book"
+    },
+    {
+      "id": "L3-M6-C07",
+      "display": "Meine Kollegin ist zufrieden",
+      "cue": "My colleague is satisfied"
+    },
+    {
+      "id": "L3-M6-C08",
+      "display": "Ich mache mir Sorgen um meinen Sohn",
+      "cue": "I'm worried about my son"
+    },
+    {
+      "id": "L3-M6-C09",
+      "display": "Er ist stolz auf seine Tochter",
+      "cue": "He's proud of his daughter"
+    },
+    {
+      "id": "L3-M6-C10",
+      "display": "Ich bin sehr nervös, aber auch froh",
+      "cue": "I'm very nervous, but glad too"
+    },
+    {
+      "id": "L3-M6-C11",
+      "display": "Sie freuen sich über die Nachricht",
+      "cue": "They're glad about the message"
+    },
+    {
+      "id": "L3-M6-C12",
+      "display": "Mein Bruder ist wütend und enttäuscht",
+      "cue": "My brother is furious and disappointed"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,626 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M10",
+  "title": "Your own story",
+  "job": "An eight-sentence account, built from the whole ladder",
+  "prerequisites": ["L3-M9"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": ["simple_past", "simple_present", "habitual_past"],
+    "allowedPatterns": [
+      "kāna + <N> + V-imperfect",
+      "<V-past> + <named subject>",
+      "lam + V-jussive",
+      "qad + V-past + , + wa + <clause>",
+      "ʿindamā / baynamā + <clause> + , + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "exitTest": { "generateCount": 2, "comprehendCount": 4 },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "kāna + an IMPERFECT verb is the habitual past — what you USED TO do, the background the plain past moves against. kuntu adrus fī al-jāmiʿa is \"I used to study at the university\"; kāna ṣadīqī yaʿmal is \"my friend used to work\". Both verbs are already yours: L1-M5 shipped kāna and L2-M10 shipped kānat. Only the pairing is new, and it is a frame, not a tense."
+    },
+    {
+      "tag": "interference",
+      "text": "A verb BEFORE its subject stays SINGULAR: dhahaba al-awlād, \"the boys went\" — never dhahabū al-awlād. Only gender agrees, so a feminine subject takes dhahabat. Once the subject moves in front, the verb agrees fully again. An account with named people cannot dodge this the way a pronoun sentence could."
+    },
+    {
+      "tag": "delta",
+      "text": "lam + the jussive is the past negative: lam adhhab, \"I did not go\"; lam yakun, \"it was not\". The verb LOOKS present and MEANS past — lam does all the tense work, exactly as M7's qad did in the other direction. Neither particle is reopened here; both are just put to work."
+    },
+    {
+      "tag": "delta",
+      "text": "ʿindamā (\"when\") and baynamā (\"while\") clip two clauses together, and both take a comma in writing: ʿindamā rajaʿtu, akalnā maʿan. baynamā sets a longer background, ʿindamā a single point in time."
+    },
+    {
+      "tag": "interference",
+      "text": "Once the subject is established, the VERB ENDING carries it and no pronoun is needed. dhahabtu … akaltu … rajaʿtu is a complete paragraph about you. Putting anā or huwa at the head of every sentence reads as insistence, not clarity — Spanish and Italian speakers will recognise the habit."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M10-S01",
+      "display": "ams, qad waṣaltu ilā al-bayt mutaʾakhkhir. kuntu mutaʿab jiddan. lam adhhab ilā al-ʿamal. nimtu fī al-masāʾ. baʿda dhālika, sharibtu al-qahwa. fī an-nihāya, qaraʾtu kitāb.",
+      "script": "أمس، قد وصلت إلى البيت متأخر. كنت متعب جداً. لم أذهب إلى العمل. نمت في المساء. بعد ذلك، شربت القهوة. في النهاية، قرأت كتاب.",
+      "cue": "Yesterday I got home late. I was very tired. I did not go to work. I slept in the evening. After that I drank coffee. In the end I read a book.",
+      "literal": "Yesterday, already I-arrived to the-house late. I-was tired very. Not I-go to the-work. I-slept in the-evening. After that, I-drank the-coffee. In the-end, I-read book.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lam",
+            "script": "لم",
+            "cue": "did not",
+            "tag": "delta",
+            "forms": ["lam"],
+            "note": "The past negative. lam + a present-looking verb means a past that did not happen: lam adhhab, I did not go. The particle carries the tense."
+          },
+          {
+            "display": "nihāya",
+            "script": "نهاية",
+            "cue": "end",
+            "tag": "free",
+            "forms": ["nihāya", "an-nihāya"],
+            "note": "End. n is a sun letter: an-nihāya. fī an-nihāya closes an account the way akhīran closes a list."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "Not one anā anywhere, and six sentences in a row about the same person. Each verb ending says who — waṣaltu, kuntu, nimtu, sharibtu, qaraʾtu — and repeating the pronoun would make the paragraph sound like an argument.",
+      "sound": "Each sentence is its own breath. The commas after ams and baʿda dhālika are real pauses, and fī an-nihāya slows down to signal the ending.",
+      "variations": [
+        {
+          "display": "ams, waṣaltu ilā al-bayt mutaʾakhkhir. kuntu mutaʿab jiddan.",
+          "script": "أمس، وصلت إلى البيت متأخر. كنت متعب جداً.",
+          "cue": "Yesterday I got home late. I was very tired.",
+          "changed": "the account cut to two sentences, and the qad dropped"
+        },
+        {
+          "display": "lam adhhab ilā al-ʿamal. nimtu fī al-masāʾ.",
+          "script": "لم أذهب إلى العمل. نمت في المساء.",
+          "cue": "I did not go to work. I slept in the evening.",
+          "changed": "the middle pair on its own, the negative next to the plain past"
+        }
+      ],
+      "mistake": {
+        "display": "lam dhahabtu ilā al-ʿamal",
+        "script": "لم ذهبت إلى العمل",
+        "why": "lam wants the present-looking jussive after it, never the past: lam adhhab. Putting the past verb there marks the tense twice and is not Arabic."
+      },
+      "usage": "The account you give of an ordinary bad day — and the shape every other item in this module follows.",
+      "register": "neutral",
+      "mnemonic": "lam looks present and means past."
+    },
+    {
+      "id": "L3-M10-S02",
+      "display": "wulidtu fī al-hind. ʿindamā kuntu ṭālib, darastu al-ʿarabiyya fī al-jāmiʿa. baʿda dhālika, intaqaltu ilā madīna jadīda. hunāka, ʿamiltu fī sharika kabīra. al-ʿamal ṣaʿb lākin al-ḥayāt jamīla.",
+      "script": "ولدت في الهند. عندما كنت طالب، درست العربية في الجامعة. بعد ذلك، انتقلت إلى مدينة جديدة. هناك، عملت في شركة كبيرة. العمل صعب لكن الحياة جميلة.",
+      "cue": "I was born in India. When I was a student, I studied Arabic at university. After that I moved to a new city. There, I worked at a big company. The work is hard but life is beautiful.",
+      "literal": "I-was-born in the-India. When I-was student, I-studied the-Arabic in the-university. After that, I-moved to city new. There, I-worked in company big. The-work hard but the-life beautiful.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wulidtu",
+            "script": "ولدت",
+            "cue": "I was born",
+            "tag": "delta",
+            "forms": ["wulidtu", "wulida", "wulidat"],
+            "note": "I was born — a passive past, learnt whole as vocabulary. wulida for he, wulidat for she. The passive as a system is L4's."
+          },
+          {
+            "display": "ʿindamā",
+            "script": "عندما",
+            "cue": "when",
+            "tag": "free",
+            "forms": ["ʿindamā"],
+            "note": "When — for a single point in time. It opens the clause and takes a comma before the second half: ʿindamā kuntu ṭālib, darastu."
+          },
+          {
+            "display": "darastu",
+            "script": "درست",
+            "cue": "I studied",
+            "tag": "free",
+            "forms": ["darastu", "darasa", "darasat"],
+            "note": "The past of L3-M2's adrus, with the -tu you know from dhahabtu. darasa for he, darasat for her."
+          },
+          {
+            "display": "intaqaltu",
+            "script": "انتقلت",
+            "cue": "I moved",
+            "tag": "free",
+            "forms": ["intaqaltu", "intaqala", "intaqalat"],
+            "note": "I moved house or city. It takes ilā for the destination, exactly as dhahabtu did."
+          },
+          {
+            "display": "ʿamiltu",
+            "script": "عملت",
+            "cue": "I worked",
+            "tag": "free",
+            "forms": ["ʿamiltu", "ʿamila", "ʿamilat"],
+            "note": "The past of L1-M9's aʿmal. Same -tu ending, same fī for the workplace."
+          },
+          {
+            "display": "madīna",
+            "script": "مدينة",
+            "cue": "city",
+            "tag": "free",
+            "forms": ["madīna", "al-madīna", "mudun"],
+            "note": "City. Feminine, so jadīda beside it. Broken plural mudun, taken as vocabulary."
+          },
+          {
+            "display": "ḥayāt",
+            "script": "حياة",
+            "cue": "life",
+            "tag": "free",
+            "forms": ["ḥayāt", "al-ḥayāt"],
+            "note": "Life. Feminine, so jamīla beside it. ḥ is a moon letter: al-ḥayāt."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "The last sentence switches to the present on purpose: the moving and the studying are over, but the work and the life are still going on. English would signal that with tense words; Arabic just changes verbs and trusts you.",
+      "sound": "wu-LID-tu fil-HIND — a full stop, then ʿin-da-MAA runs into its clause with no pause until the comma.",
+      "variations": [
+        {
+          "display": "wulidtu fī al-hind. darastu al-ʿarabiyya fī al-jāmiʿa.",
+          "script": "ولدت في الهند. درست العربية في الجامعة.",
+          "cue": "I was born in India. I studied Arabic at university.",
+          "changed": "the account cut to its two facts, the ʿindamā clause dropped"
+        },
+        {
+          "display": "ʿindamā kuntu ṭālib, ʿamiltu fī maṭʿam",
+          "script": "عندما كنت طالب، عملت في مطعم",
+          "cue": "When I was a student, I worked at a restaurant",
+          "changed": "what the ʿindamā clause leads into"
+        }
+      ],
+      "mistake": {
+        "display": "ʿindamā anā kuntu ṭālib, anā darastu al-ʿarabiyya",
+        "script": "عندما أنا كنت طالب، أنا درست العربية",
+        "why": "Two pronouns nobody needs. kuntu and darastu already say \"I\", twice over. The account reads as insistence, not clarity."
+      },
+      "usage": "The potted history you give when someone asks where you are from — and it runs on three past verbs and one present.",
+      "register": "neutral",
+      "mnemonic": "The story is past; the life is present."
+    },
+    {
+      "id": "L3-M10-S03",
+      "display": "ams, dhahaba al-awlād ilā al-madrasa. wa dhahabat al-muwaẓẓafa ayḍan. akalū fī al-maṭʿam. baʿda dhālika, rajaʿū ilā al-bayt. lam yakun al-yawm ṭawīl.",
+      "script": "أمس، ذهب الأولاد إلى المدرسة. وذهبت الموظفة أيضاً. أكلوا في المطعم. بعد ذلك، رجعوا إلى البيت. لم يكن اليوم طويل.",
+      "cue": "Yesterday the boys went to school. The clerk went too. They ate at the restaurant. After that they went back home. It was not a long day.",
+      "literal": "Yesterday, went the-boys to the-school. And went(f) the-clerk(f) also. They-ate in the-restaurant. After that, they-returned to the-house. Not it-was the-day long.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "akun",
+            "script": "أكن",
+            "cue": "I be / it be (after lam)",
+            "tag": "delta",
+            "forms": ["akun", "takun", "yakun", "nakun"],
+            "note": "The jussive of L1-M5's akūn — the short form kāna takes after lam. lam yakun is \"it was not\". Tap kāna for the plain verb."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "dhahaba al-awlād, with a plural subject and a singular verb, is correct and dhahabū al-awlād is not. But akalū, with the subject already known, takes its full plural ending. The rule is about POSITION, not about number.",
+      "sound": "dha-HA-ba al-aw-LAAD — no pause between them; the verb and its subject are said as one phrase.",
+      "variations": [
+        {
+          "display": "dhahaba al-awlād ilā al-madrasa",
+          "script": "ذهب الأولاد إلى المدرسة",
+          "cue": "The boys went to school",
+          "changed": "the account cut to the one sentence the rule lives in"
+        },
+        {
+          "display": "lam yakun al-yawm ṭawīl",
+          "script": "لم يكن اليوم طويل",
+          "cue": "It was not a long day",
+          "changed": "the closing line alone — lam plus the jussive of kāna"
+        }
+      ],
+      "mistake": {
+        "display": "dhahabū al-awlād ilā al-madrasa",
+        "script": "ذهبوا الأولاد إلى المدرسة",
+        "why": "The verb comes first, so it stays singular: dhahaba al-awlād. The -ū ending is only right when the subject is not named beside it — akalū, where \"they\" is already understood."
+      },
+      "usage": "The shape of any account with other people in it, and the sentence a learner either has or does not.",
+      "register": "neutral",
+      "mnemonic": "Verb first, verb singular."
+    },
+    {
+      "id": "L3-M10-S04",
+      "display": "qabla sanawāt, kuntu adrus fī al-jāmiʿa. kāna ṣadīqī yaʿmal fī al-maṭʿam. kuntu adhhab ilā as-sūq kull yawm. lam yakun ʿindī māl.",
+      "script": "قبل سنوات، كنت أدرس في الجامعة. كان صديقي يعمل في المطعم. كنت أذهب إلى السوق كل يوم. لم يكن عندي مال.",
+      "cue": "Years ago I used to study at university. My friend used to work at the restaurant. I used to go to the market every day. I had no money.",
+      "literal": "Before years, I-was I-study in the-university. Was friend-my he-works in the-restaurant. I-was I-go to the-market every day. Not it-was at-me money.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ṣadīq",
+            "script": "صديق",
+            "cue": "friend",
+            "tag": "free",
+            "forms": ["ṣadīq", "aṣ-ṣadīq", "aṣdiqāʾ"],
+            "note": "Friend, the bare noun behind L2-M2's ṣadīqī. ṣ is a sun letter: aṣ-ṣadīq. Broken plural aṣdiqāʾ."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "kuntu adrus is two verbs and one meaning: \"I used to study\". Neither half means it alone — kuntu is just \"I was\", and adrus on its own is \"I study\", present. The pairing is the tense.",
+      "sound": "KUN-tu AD-rus — said as one unit with no pause, which is what marks it as a frame rather than two sentences.",
+      "variations": [
+        {
+          "display": "kuntu adrus fī al-jāmiʿa",
+          "script": "كنت أدرس في الجامعة",
+          "cue": "I used to study at university",
+          "changed": "the frame alone, without the account around it"
+        },
+        {
+          "display": "kānat ummī taʿmal fī al-madrasa",
+          "script": "كانت أمي تعمل في المدرسة",
+          "cue": "My mother used to work at the school",
+          "changed": "who: kāna ṣadīqī → L2-M10's kānat with a feminine subject"
+        }
+      ],
+      "mistake": {
+        "display": "kuntu darastu fī al-jāmiʿa",
+        "script": "كنت درست في الجامعة",
+        "why": "Two past verbs stacked. The habitual frame needs the PRESENT-looking verb second: kuntu adrus. With darastu you have said \"I was, I studied\", which is not a sentence."
+      },
+      "usage": "How anyone describes the years before now — a student life, an old job, a different city.",
+      "register": "neutral",
+      "mnemonic": "kāna carries the past so the second verb does not have to."
+    },
+    {
+      "id": "L3-M10-S05",
+      "display": "baynamā kuntu fī al-jāmiʿa, taʿallamtu al-ʿarabiyya. kānat ummī taʿmal fī al-madrasa. wa kāna abī yaʿmal fī sharika. ʿindamā rajaʿtu, akalnā maʿan.",
+      "script": "بينما كنت في الجامعة، تعلمت العربية. كانت أمي تعمل في المدرسة. وكان أبي يعمل في شركة. عندما رجعت، أكلنا معاً.",
+      "cue": "While I was at university, I learned Arabic. My mother used to work at the school. And my father used to work at a company. When I came back, we ate together.",
+      "literal": "While I-was in the-university, I-learned the-Arabic. Was(f) mother-my she-works in the-school. And was father-my he-works in company. When I-returned, we-ate together.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "baynamā",
+            "script": "بينما",
+            "cue": "while",
+            "tag": "free",
+            "forms": ["baynamā"],
+            "note": "While — a stretch of time, where ʿindamā is a point in it. Both open the clause and both take a comma before the second half."
+          },
+          {
+            "display": "taʿallamtu",
+            "script": "تعلمت",
+            "cue": "I learned",
+            "tag": "free",
+            "forms": ["taʿallamtu", "taʿallama", "taʿallamat"],
+            "note": "I learned — the same root as L1's mudarris and its madrasa. taʿallama for he, taʿallamat for she."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "baynamā and ʿindamā are not interchangeable. baynamā stretches — the whole university time — while ʿindamā points at one moment, the coming back. Choose by the length of the thing, not by which English word you thought of.",
+      "sound": "bay-na-MAA … a pause at the comma, and ʿin-da-MAA takes the same shape at the end.",
+      "variations": [
+        {
+          "display": "baynamā kuntu fī al-jāmiʿa, taʿallamtu al-ʿarabiyya",
+          "script": "بينما كنت في الجامعة، تعلمت العربية",
+          "cue": "While I was at university, I learned Arabic",
+          "changed": "the opening clause pair on its own"
+        },
+        {
+          "display": "ʿindamā rajaʿtu, akalnā maʿan",
+          "script": "عندما رجعت، أكلنا معاً",
+          "cue": "When I came back, we ate together",
+          "changed": "the closing pair — ʿindamā for a single moment"
+        }
+      ],
+      "mistake": {
+        "display": "ʿindamā kuntu fī al-jāmiʿa, taʿallamtu al-ʿarabiyya",
+        "script": "عندما كنت في الجامعة، تعلمت العربية",
+        "why": "Understandable, but it points at a single moment at university rather than the whole stretch of it. For years of background, baynamā is the word."
+      },
+      "usage": "The family half of an account — two habitual frames and two clause connectors in one breath.",
+      "register": "neutral",
+      "mnemonic": "baynamā stretches, ʿindamā points."
+    },
+    {
+      "id": "L3-M10-S06",
+      "display": "qad badaʾtu ʿamal jadīd hādhā ash-shahr. al-mudīr laṭīf wa al-muwaẓẓafūn laṭīfūn. lam akun saʿīd qabla dhālika. fī an-nihāya, anā saʿīd hunā.",
+      "script": "قد بدأت عمل جديد هذا الشهر. المدير لطيف والموظفون لطيفون. لم أكن سعيد قبل ذلك. في النهاية، أنا سعيد هنا.",
+      "cue": "I have started a new job this month. The manager is kind and the staff are kind. I was not happy before that. In the end, I am happy here.",
+      "literal": "Already I-began work new this the-month. The-manager kind and the-staff kind. Not I-be happy before that. In the-end, I happy here.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "badaʾtu",
+            "script": "بدأت",
+            "cue": "I began",
+            "tag": "free",
+            "forms": ["badaʾtu", "badaʾa", "badaʾat"],
+            "note": "I began. The ʾ is a hamza, a catch in the throat: ba-DAʾ-tu. badaʾa for he, badaʾat for she."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "qad badaʾtu and lam akun sit two sentences apart and pull in opposite directions: qad says it happened and still counts, lam says it did not happen at all. Both leave the verb doing nothing about tense.",
+      "sound": "QAD ba-DAʾ-tu — qad leans on the verb, unstressed. LAM A-kun is the same shape at the other end.",
+      "variations": [
+        {
+          "display": "qad badaʾtu ʿamal jadīd hādhā ash-shahr",
+          "script": "قد بدأت عمل جديد هذا الشهر",
+          "cue": "I have started a new job this month",
+          "changed": "the opening sentence on its own"
+        },
+        {
+          "display": "lam akun saʿīd qabla dhālika",
+          "script": "لم أكن سعيد قبل ذلك",
+          "cue": "I was not happy before that",
+          "changed": "the negative alone — lam plus akun, the jussive"
+        }
+      ],
+      "mistake": {
+        "display": "lam kuntu saʿīd qabla dhālika",
+        "script": "لم كنت سعيد قبل ذلك",
+        "why": "kuntu is already past, so lam has nothing left to do. The jussive is what follows lam: lam akun."
+      },
+      "usage": "The news you give a friend you have not seen for a month, in four sentences and no wasted words.",
+      "register": "neutral",
+      "mnemonic": "qad for what happened, lam for what did not."
+    },
+    {
+      "id": "L3-M10-S07",
+      "display": "ams kāna al-yawm ṭawīl. dhahabtu ilā al-ʿamal fī aṣ-ṣabāḥ. kāna hunāka ijtimāʿ kabīr. baʿda dhālika, akaltu fī al-maṭʿam. ittaṣaltu bi-ṣadīqī. wa fī an-nihāya, rajaʿtu ilā al-bayt. nimtu mubakkiran.",
+      "script": "أمس كان اليوم طويل. ذهبت إلى العمل في الصباح. كان هناك اجتماع كبير. بعد ذلك، أكلت في المطعم. اتصلت بصديقي. وفي النهاية، رجعت إلى البيت. نمت مبكراً.",
+      "cue": "Yesterday was a long day. I went to work in the morning. There was a big meeting. After that I ate at the restaurant. I called my friend. And in the end I went home. I slept early.",
+      "literal": "Yesterday was the-day long. I-went to the-work in the-morning. Was there meeting big. After that, I-ate in the-restaurant. I-called with-friend-my. And in the-end, I-returned to the-house. I-slept early.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mubakkiran",
+            "script": "مبكراً",
+            "cue": "early",
+            "tag": "free",
+            "forms": ["mubakkiran"],
+            "note": "Early — an adverb in -an, the same ending as kathīran and jiddan. Its opposite is L2's mutaʾakhkhir, late."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "kāna hunāka is \"there was\", and the kāna comes first because the subject follows it. Same law as dhahaba al-awlād: the verb in front stays singular and lets the subject arrive afterwards.",
+      "sound": "Seven short sentences, seven breaths. The pegs — fī aṣ-ṣabāḥ, baʿda dhālika, fī an-nihāya — are where the voice slows.",
+      "variations": [
+        {
+          "display": "kāna hunāka ijtimāʿ kabīr",
+          "script": "كان هناك اجتماع كبير",
+          "cue": "There was a big meeting",
+          "changed": "one sentence out of the account — the there-was frame"
+        },
+        {
+          "display": "dhahabtu ilā al-ʿamal fī aṣ-ṣabāḥ. rajaʿtu ilā al-bayt fī al-masāʾ.",
+          "script": "ذهبت إلى العمل في الصباح. رجعت إلى البيت في المساء.",
+          "cue": "I went to work in the morning. I came home in the evening.",
+          "changed": "the account reduced to its two ends"
+        }
+      ],
+      "mistake": {
+        "display": "hunāka kāna ijtimāʿ kabīr",
+        "script": "هناك كان اجتماع كبير",
+        "why": "Understandable, but it stresses the place rather than reporting the fact. The plain narrative order is kāna hunāka ijtimāʿ kabīr."
+      },
+      "usage": "The longest item in the module, and the one that shows a whole day can run on seven verbs and no pronouns.",
+      "register": "neutral",
+      "mnemonic": "Seven sentences, one person, nought pronouns."
+    },
+    {
+      "id": "L3-M10-S08",
+      "display": "uḥibb al-ʿarabiyya. hiya lugha jamīla. darastu kull yawm. ʿindamā atakallam maʿa ṣadīq, ashʿuru bi-al-farḥ. lam yakun sahl, lākin al-ḥayāt jamīla.",
+      "script": "أحب العربية. هي لغة جميلة. درست كل يوم. عندما أتكلم مع صديق، أشعر بالفرح. لم يكن سهل، لكن الحياة جميلة.",
+      "cue": "I love Arabic. It is a beautiful language. I studied every day. When I speak with a friend, I feel joy. It was not easy, but life is beautiful.",
+      "literal": "I-love the-Arabic. She language beautiful. I-studied every day. When I-speak with friend, I-feel with-the-joy. Not it-was easy, but the-life beautiful.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lugha",
+            "script": "لغة",
+            "cue": "language",
+            "tag": "free",
+            "forms": ["lugha", "al-lugha", "lughāt"],
+            "note": "Language. Feminine, so hiya and jamīla beside it. l is a sun letter and the article merges into it: al-lugha."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "The tenses move three times in four sentences — present, past, present, past — and no word marks the change except the verbs. That is the level's whole exit exam in one item.",
+      "sound": "u-ḤIBB al-ʿa-ra-BIY-ya — the doubled b is held. Then a pause at every full stop.",
+      "variations": [
+        {
+          "display": "ʿindamā atakallam maʿa ṣadīq, ashʿuru bi-al-farḥ",
+          "script": "عندما أتكلم مع صديق، أشعر بالفرح",
+          "cue": "When I speak with a friend, I feel joy",
+          "changed": "the ʿindamā pair alone, with M6's ashʿuru bi- at the end"
+        },
+        {
+          "display": "lam yakun sahl, lākin al-ḥayāt jamīla",
+          "script": "لم يكن سهل، لكن الحياة جميلة",
+          "cue": "It was not easy, but life is beautiful",
+          "changed": "the closing pair — one past negative, one present statement"
+        }
+      ],
+      "mistake": {
+        "display": "ʿindamā atakallam maʿa ṣadīq, ashʿuru farḥ",
+        "script": "عندما أتكلم مع صديق، أشعر فرح",
+        "why": "M6's bi- has fallen off. ashʿuru always reaches its feeling through the preposition: ashʿuru bi-al-farḥ."
+      },
+      "usage": "What you say about the language itself, at the end of the level that taught it to you.",
+      "register": "neutral",
+      "mnemonic": "Four sentences, four tenses, no signposts."
+    },
+    {
+      "id": "L3-M10-S09",
+      "display": "ʿāʾilatī fī al-hind. ams, takallamnā maʿa ummī. kānat taʿmal fī al-madrasa qabla sanawāt. al-ān hiya fī al-bayt. sa-adhhab ilā al-hind fī dīsambir.",
+      "script": "عائلتي في الهند. أمس، تكلمنا مع أمي. كانت تعمل في المدرسة قبل سنوات. الآن هي في البيت. سأذهب إلى الهند في ديسمبر.",
+      "cue": "My family is in India. Yesterday we spoke with my mother. She used to work at the school years ago. Now she is at home. I will go to India in December.",
+      "literal": "Family-my in the-India. Yesterday, we-spoke with mother-my. Was(f) she-works in the-school before years. Now she in the-house. Will-I-go to the-India in December.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ʿāʾila",
+            "script": "عائلة",
+            "cue": "family",
+            "tag": "free",
+            "forms": ["ʿāʾila", "al-ʿāʾila", "ʿāʾilatī"],
+            "note": "Family, and ʿāʾilatī \"my family\". The -ī goes on after the tāʾ marbūṭa opens into a t — the same joint as sayyāratī."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "Four tenses in five sentences: present, past, habitual past, present, future. Arabic marks each on the verb alone and never says \"used to\" or \"will\" as a separate word — sa- is glued on, and kānat sits in front.",
+      "sound": "ʿAA-ʾi-la-tee fil-HIND — the hamza inside ʿāʾilatī is a real catch, so it is four beats, not three.",
+      "variations": [
+        {
+          "display": "kānat taʿmal fī al-madrasa qabla sanawāt",
+          "script": "كانت تعمل في المدرسة قبل سنوات",
+          "cue": "She used to work at the school years ago",
+          "changed": "the habitual frame alone, with L2-M10's kānat"
+        },
+        {
+          "display": "sa-adhhab ilā al-hind fī dīsambir",
+          "script": "سأذهب إلى الهند في ديسمبر",
+          "cue": "I will go to India in December",
+          "changed": "the closing line — the future, with M9's month"
+        }
+      ],
+      "mistake": {
+        "display": "kānat taʿmal fī al-madrasa al-ān",
+        "script": "كانت تعمل في المدرسة الآن",
+        "why": "kānat + the imperfect is a habit that has STOPPED. Putting al-ān beside it says she used to work there now, which contradicts itself. For the present, taʿmal on its own."
+      },
+      "usage": "The family paragraph of any account, and the one that most often needs a habitual past.",
+      "register": "neutral",
+      "mnemonic": "kānat closes the door; taʿmal alone leaves it open."
+    },
+    {
+      "id": "L3-M10-S10",
+      "display": "ismī rohān. anā min al-hind. wulidtu hunāka wa darastu fī al-jāmiʿa. qabla sanawāt, intaqaltu ilā madīna jadīda. al-ān aʿmal fī sharika kabīra. uḥibb al-ʿamal lākin huwa ṣaʿb aḥyānan. fī an-nihāya, anā saʿīd hunā. wa hādhihi qiṣṣatī.",
+      "script": "اسمي روهان. أنا من الهند. ولدت هناك ودرست في الجامعة. قبل سنوات، انتقلت إلى مدينة جديدة. الآن أعمل في شركة كبيرة. أحب العمل لكن هو صعب أحياناً. في النهاية، أنا سعيد هنا. وهذه قصتي.",
+      "cue": "My name is Rohan. I am from India. I was born there and studied at university. Years ago I moved to a new city. Now I work at a big company. I love the work but it is hard sometimes. In the end, I am happy here. And this is my story.",
+      "literal": "Name-my Rohan. I from the-India. I-was-born there and I-studied in the-university. Before years, I-moved to city new. Now I-work in company big. I-love the-work but it hard sometimes. In the-end, I happy here. And this story-my.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "qiṣṣa",
+            "script": "قصة",
+            "cue": "story",
+            "tag": "free",
+            "forms": ["qiṣṣa", "al-qiṣṣa", "qiṣṣatī", "qiṣaṣ"],
+            "note": "Story. qiṣṣatī is \"my story\", the -ī going on after the tāʾ marbūṭa opens into a t — the same joint as sayyāratī. Broken plural qiṣaṣ."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "This is the level's exit and almost every word in it was paid for earlier: ismī from L1-M1, min al-hind from L1-M1, aʿmal from L1-M9, uḥibb from L2, sharika kabīra from L3-M2. The only new spend is the story's joints.",
+      "sound": "Seven sentences, each its own breath, the two commas real pauses. Read at the speed you would introduce yourself, not faster.",
+      "variations": [
+        {
+          "display": "ismī rohān. anā min al-hind. al-ān aʿmal fī sharika kabīra.",
+          "script": "اسمي روهان. أنا من الهند. الآن أعمل في شركة كبيرة.",
+          "cue": "My name is Rohan. I am from India. Now I work at a big company.",
+          "changed": "the account cut to the three sentences a stranger needs"
+        },
+        {
+          "display": "wulidtu hunāka wa darastu fī al-jāmiʿa",
+          "script": "ولدت هناك ودرست في الجامعة",
+          "cue": "I was born there and studied at university",
+          "changed": "the two past verbs on their own, joined by wa"
+        }
+      ],
+      "mistake": {
+        "display": "ismī rohān. anā min al-hind. anā wulidtu hunāka wa anā darastu fī al-jāmiʿa.",
+        "script": "اسمي روهان. أنا من الهند. أنا ولدت هناك وأنا درست في الجامعة.",
+        "why": "The first anā is right — there is no verb in that sentence to carry it. Every one after it is wrong, because wulidtu and darastu already say who. One pronoun to open, none afterwards."
+      },
+      "usage": "The account this whole level was built for: seven sentences, said aloud, to someone who just asked who you are.",
+      "register": "neutral",
+      "mnemonic": "One anā at the start, then let the verbs talk."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M10-C01",
+      "display": "ams, qad waṣaltu ilā al-bayt mutaʾakhkhir. kuntu mutaʿab jiddan. lam adhhab ilā al-ʿamal.",
+      "script": "أمس، قد وصلت إلى البيت متأخر. كنت متعب جداً. لم أذهب إلى العمل.",
+      "cue": "Yesterday I got home late. I was very tired. I did not go to work."
+    },
+    {
+      "id": "L3-M10-C02",
+      "display": "wulidtu fī al-hind. ʿindamā kuntu ṭālib, darastu al-ʿarabiyya fī al-jāmiʿa.",
+      "script": "ولدت في الهند. عندما كنت طالب، درست العربية في الجامعة.",
+      "cue": "I was born in India. When I was a student, I studied Arabic at university."
+    },
+    {
+      "id": "L3-M10-C03",
+      "display": "ams, dhahaba al-awlād ilā al-madrasa. akalū fī al-maṭʿam. rajaʿū ilā al-bayt.",
+      "script": "أمس، ذهب الأولاد إلى المدرسة. أكلوا في المطعم. رجعوا إلى البيت.",
+      "cue": "Yesterday the boys went to school. They ate at the restaurant. They went back home."
+    },
+    {
+      "id": "L3-M10-C04",
+      "display": "qabla sanawāt, kuntu adrus fī al-jāmiʿa. kāna ṣadīqī yaʿmal fī al-maṭʿam.",
+      "script": "قبل سنوات، كنت أدرس في الجامعة. كان صديقي يعمل في المطعم.",
+      "cue": "Years ago I used to study at university. My friend used to work at the restaurant."
+    },
+    {
+      "id": "L3-M10-C05",
+      "display": "baynamā kuntu fī al-jāmiʿa, taʿallamtu al-ʿarabiyya. ʿindamā rajaʿtu, akalnā maʿan.",
+      "script": "بينما كنت في الجامعة، تعلمت العربية. عندما رجعت، أكلنا معاً.",
+      "cue": "While I was at university, I learned Arabic. When I came back, we ate together."
+    },
+    {
+      "id": "L3-M10-C06",
+      "display": "qad badaʾtu ʿamal jadīd hādhā ash-shahr. al-mudīr laṭīf wa al-muwaẓẓafūn laṭīfūn.",
+      "script": "قد بدأت عمل جديد هذا الشهر. المدير لطيف والموظفون لطيفون.",
+      "cue": "I have started a new job this month. The manager is kind and the staff are kind."
+    },
+    {
+      "id": "L3-M10-C07",
+      "display": "ams kāna al-yawm ṭawīl. kāna hunāka ijtimāʿ kabīr. ittaṣaltu bi-ṣadīqī.",
+      "script": "أمس كان اليوم طويل. كان هناك اجتماع كبير. اتصلت بصديقي.",
+      "cue": "Yesterday was a long day. There was a big meeting. I called my friend."
+    },
+    {
+      "id": "L3-M10-C08",
+      "display": "uḥibb al-ʿarabiyya. lam yakun sahl, lākin al-ḥayāt jamīla.",
+      "script": "أحب العربية. لم يكن سهل، لكن الحياة جميلة.",
+      "cue": "I love Arabic. It was not easy, but life is beautiful."
+    },
+    {
+      "id": "L3-M10-C09",
+      "display": "ʿāʾilatī fī al-hind. kānat ummī taʿmal fī al-madrasa qabla sanawāt.",
+      "script": "عائلتي في الهند. كانت أمي تعمل في المدرسة قبل سنوات.",
+      "cue": "My family is in India. My mother used to work at the school years ago."
+    },
+    {
+      "id": "L3-M10-C10",
+      "display": "ismī rohān. anā min al-hind. al-ān aʿmal fī sharika kabīra.",
+      "script": "اسمي روهان. أنا من الهند. الآن أعمل في شركة كبيرة.",
+      "cue": "My name is Rohan. I am from India. Now I work at a big company."
+    },
+    {
+      "id": "L3-M10-C11",
+      "display": "qabla sanawāt, intaqaltu ilā madīna jadīda. hunāka, ʿamiltu fī sharika kabīra.",
+      "script": "قبل سنوات، انتقلت إلى مدينة جديدة. هناك، عملت في شركة كبيرة.",
+      "cue": "Years ago I moved to a new city. There, I worked at a big company."
+    },
+    {
+      "id": "L3-M10-C12",
+      "display": "sa-adhhab ilā al-hind fī dīsambir. fī an-nihāya, anā saʿīd hunā.",
+      "script": "سأذهب إلى الهند في ديسمبر. في النهاية، أنا سعيد هنا.",
+      "cue": "I will go to India in December. In the end, I am happy here."
+    }
+  ]
+}

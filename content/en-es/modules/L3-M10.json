@@ -1,0 +1,467 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M10",
+  "title": "Your own story",
+  "job": "An eight-sentence account, built from the whole ladder",
+  "prerequisites": [
+    "L3-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "present",
+      "preterite",
+      "imperfect",
+      "perfect"
+    ],
+    "allowedPatterns": [
+      "<imperfect scene> + . + <preterite step> + . + <preterite step> + .",
+      "Al final + <preterite> + , + y + <perfect>",
+      "Cuando + <imperfect> + , + <preterite>",
+      "Dijo que + <backshifted clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THREE PASTS now share one account and each does a job the other two cannot. The IMPERFECT sets the scene and leaves it open — era tarde, vivía en México. The PRETERITE moves the story one step — salí, llegué. The PERFECT is what is still true at the moment of telling — y desde entonces no he vuelto. That third slot is what L3 added, and this module exists to show it doing something the other two cannot."
+    },
+    {
+      "tag": "interference",
+      "text": "cuando + imperfect against cuando + preterite is the sharpest pair in the level. Cuando vivía en México, trabajaba en un banco is habitual background — two open stretches. Cuando llegué, mi jefe ya no estaba is one moment landing inside a state. English uses when for both, so nothing in the L1 warns you which you have built."
+    },
+    {
+      "tag": "delta",
+      "text": "SUBJECT DROPPING carries across the WHOLE account, not one sentence. The ending already says who, so a yo at the head of every sentence reads as insistence — I, personally, as against everybody else. Name the speaker once at the start, and again only when the subject genuinely changes."
+    },
+    {
+      "tag": "delta",
+      "text": "The connectors are the honest spend of this module: al principio, mientras, en cuanto, al final (L2-M10's already) and desde entonces. Everything else here has been paid for lower down the ladder, which is the point of the level's exit."
+    },
+    {
+      "tag": "delta",
+      "text": "dijo que + a clause moves the reported verb BACK: dijo que estaba cansado, not dijo que está cansado. Spanish backshifts exactly as English does, so the trap is not the rule but forgetting it under the weight of a long account."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M10-S01",
+      "display": "Al principio no hablaba español. Vivía en la India y trabajaba en una tienda. Un día llegué a México. Conocí a mi jefe. Al final hablé español en la empresa. Y desde entonces no he vuelto.",
+      "cue": "At first I didn't speak Spanish. I lived in India and worked in a shop. One day I arrived in Mexico. I met my boss. In the end I spoke Spanish at the company. And I haven't been back since.",
+      "literal": "At-the beginning not I-used-to-speak Spanish. I-used-to-live in the India and I-used-to-work in a shop. One day I-arrived to Mexico. I-met to my boss. At-the end I-spoke Spanish in the company. And since then not I-have returned.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al principio",
+            "cue": "at first · at the start",
+            "tag": "free",
+            "forms": [],
+            "note": "At first, at the start, and it sets up the change that follows. The pair it wants at the other end is al final, which L2-M10 already taught."
+          },
+          {
+            "display": "hablaba",
+            "cue": "I / he used to speak",
+            "tag": "delta",
+            "forms": [
+              "hablaba",
+              "hablabas"
+            ],
+            "note": "The imperfect of hablar. no hablaba español describes a whole period, where no hablé would report one silence on one occasion."
+          },
+          {
+            "display": "vivía",
+            "cue": "I / he used to live",
+            "tag": "delta",
+            "forms": [
+              "vivía",
+              "vivías"
+            ],
+            "note": "The imperfect of the vivir the ladder taught as vivo. Where you used to live, with no end named — the scene, not the step."
+          },
+          {
+            "display": "conocí",
+            "cue": "I met (for the first time)",
+            "tag": "interference",
+            "forms": [
+              "conocí",
+              "conoció"
+            ],
+            "note": "The preterite of the conocer L3-M2 taught as conozco. In the preterite it means MET — the first meeting — and not knew."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "Three pasts, in order: the scene is imperfect, the two steps are preterite, and the last line is perfect because it is still true today.",
+      "usage": "An account of arriving somewhere, told to someone who asked. No yo appears anywhere and none is missed.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S02",
+      "display": "Cuando vivía en México, trabajaba en un banco. Era mi primera empresa. Cuando llegué, mi jefe ya no estaba. Hablé con otro. Me dijo que estaba enfermo. Al final trabajé bien.",
+      "cue": "When I lived in Mexico, I worked in a bank. It was my first company. When I arrived, my boss was no longer there. I spoke to another one. He told me he was ill. In the end I did well.",
+      "literal": "When I-used-to-live in Mexico, I-used-to-work in a bank. It-was my first company. When I-arrived, my boss already not was. I-spoke with another. To-me he-said that he-was ill. At-the end I-worked well.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cuando",
+            "cue": "when",
+            "tag": "interference",
+            "forms": [],
+            "note": "When, and it takes no accent unless it is asking. What follows decides everything: cuando vivía is background, cuando llegué is one moment."
+          },
+          {
+            "display": "ya",
+            "cue": "already · (with no) no longer",
+            "tag": "interference",
+            "forms": [],
+            "note": "Already on its own; with a negative it flips to no longer — ya no estaba is he was not there any more. The no is what picks the meaning."
+          },
+          {
+            "display": "trabajaba",
+            "cue": "I / he used to work",
+            "tag": "delta",
+            "forms": [
+              "trabajaba",
+              "trabajabas"
+            ],
+            "note": "The imperfect of trabajar: what you used to do, over an open stretch. trabajé closes the stretch; trabajaba leaves it running."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "The same cuando twice, and it means two different things: the first opens a stretch, the second drops one moment into a state.",
+      "mistake": {
+        "display": "Yo estudiaba mucho. Yo no hablaba español. Yo trabajaba en un café.",
+        "why": "Every ending already says yo. Repeating it at the head of each sentence reads as insistence — I, personally. Name yourself once at the start, and only again when the subject changes."
+      },
+      "usage": "Told about a job that is over. First person throughout, with one he that the ending makes clear.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S03",
+      "display": "Era muy tarde. Salí de casa. Perdí el autobús. Llegué muy tarde a la reunión. Mi jefe estaba enfadado. Y desde entonces no he vuelto.",
+      "cue": "It was very late. I left the house. I missed the bus. I got to the meeting very late. My boss was angry. And I haven't been back since.",
+      "literal": "It-was very late. I-went-out from house. I-lost the bus. I-arrived very late to the meeting. My boss was angry. And since then not I-have returned.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "salí",
+            "cue": "I went out · I left",
+            "tag": "free",
+            "forms": [
+              "salí",
+              "salió",
+              "salir"
+            ],
+            "note": "salir, to go out or to leave. salí de casa is I left the house — the de is what turns leaving into going out of somewhere."
+          },
+          {
+            "display": "desde entonces",
+            "cue": "since then",
+            "tag": "delta",
+            "forms": [],
+            "note": "Since then, and it is what pulls the perfect into an account: desde entonces no he vuelto. It names a stretch that reaches all the way to now."
+          },
+          {
+            "display": "vuelto",
+            "cue": "gone back · come back",
+            "tag": "delta",
+            "forms": [],
+            "note": "The participle of volver, and irregular. he vuelto, has vuelto — like every participle in the perfect it never changes for who went."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "era and estaba are the scene; salí, perdí and llegué are the steps; he vuelto is the consequence you are still living in.",
+      "usage": "The shape of a bad-day story, told to a friend. Six short sentences, no subject named once.",
+      "register": "informal",
+      "mnemonic": "Scene in the imperfect, steps in the preterite, the aftermath in the perfect."
+    },
+    {
+      "id": "L3-M10-S04",
+      "display": "Ayer estaba en casa. Mientras comía, llamó mi hermana. Me dijo que tenía gripe. Fui a la farmacia. Luego fui a la casa de mi madre. Al final comimos bien.",
+      "cue": "Yesterday I was at home. While I was eating, my sister called. She told me she had flu. I went to the pharmacy. Then I went to my mother's house. In the end we ate well.",
+      "literal": "Yesterday I-was in house. While I-used-to-eat, called my sister. To-me she-said that she-used-to-have flu. I-went to the pharmacy. Then I-went to the house of my mother. At-the end we-ate well.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mientras",
+            "cue": "while",
+            "tag": "delta",
+            "forms": [],
+            "note": "While — two things running at once, so the verb after it is almost always the imperfect: mientras comía. It needs no que behind it."
+          },
+          {
+            "display": "tenía",
+            "cue": "I / he used to have",
+            "tag": "delta",
+            "forms": [
+              "tenía",
+              "tenías"
+            ],
+            "note": "The imperfect of tener: a state that lasted. no tenía amigos describes a period; tuve would report one moment of getting something."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "mientras comía is the open stretch and llamó is the moment that cuts across it. Swap the tenses and the sister calls for the whole meal.",
+      "usage": "A day recounted to someone who was not there. The subject changes twice and each time the ending says so.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S05",
+      "display": "El lunes tenía una cita en el banco. Salí temprano de casa. En cuanto llegué, pude entregar la factura. No tenía el documento. Fue un problema. Al final todo fue bien. Y desde entonces siempre voy temprano.",
+      "cue": "On Monday I had an appointment at the bank. I left home early. As soon as I arrived, I was able to hand in the bill. I didn't have the ID. It was a problem. In the end everything went well. And since then I always go early.",
+      "literal": "The Monday I-used-to-have an appointment in the bank. I-went-out early from house. In as-much-as I-arrived, I-could to-hand-in the bill. Not I-used-to-have the document. It-was a problem. At-the end all it-was well. And since then always I-go early.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "en cuanto",
+            "cue": "as soon as",
+            "tag": "delta",
+            "forms": [],
+            "note": "As soon as — two words, one surface. About the past it takes the preterite: en cuanto llegué. It is not the cuánto of how much."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "en cuanto takes the preterite about the past — en cuanto llegué — while the state around it, tenía, stays imperfect.",
+      "usage": "An errand story, told plainly. The last line switches to the present because the habit it names is still running.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S06",
+      "display": "Antes vivía en México. Estudiaba español por la mañana y trabajaba por la tarde. No tenía amigos. Un día conocí a Ana. Hablamos mucho en el parque. Y ahora tengo ganas de volver.",
+      "cue": "I used to live in Mexico. I studied Spanish in the morning and worked in the afternoon. I had no friends. One day I met Ana. We talked a lot in the park. And now I feel like going back.",
+      "literal": "Before I-used-to-live in Mexico. I-used-to-study Spanish for the morning and I-used-to-work for the afternoon. Not I-used-to-have friends. One day I-met to Ana. We-spoke much in the park. And now I-have urges of to-return.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "estudiaba",
+            "cue": "I / he used to study",
+            "tag": "delta",
+            "forms": [
+              "estudiaba",
+              "estudiabas"
+            ],
+            "note": "The imperfect of estudiar, and a natural background verb: what you were doing while something else happened."
+          },
+          {
+            "display": "volví",
+            "cue": "I went back · I came back",
+            "tag": "free",
+            "forms": [
+              "volví",
+              "volvió",
+              "volver"
+            ],
+            "note": "volver, to go back or come back. It is the verb desde entonces most often reaches for, because a return is what has or has not happened yet."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "conocí is met, not knew. conocía a Ana would say I already knew her, which undoes the whole point of the sentence.",
+      "usage": "A stretch of life summed up for someone new. It ends in the present, which is what turns an account into a plan.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S07",
+      "display": "Ayer llamé a mi hermano. Dijo que estaba cansado. Dijo que trabajaba mucho. Dijo que quería salir el sábado. Al final salió con mis amigos. No fui, porque estaba enfermo.",
+      "cue": "Yesterday I called my brother. He said he was tired. He said he was working a lot. He said he wanted to go out on Saturday. In the end he went out with my friends. I didn't go, because I was ill.",
+      "literal": "Yesterday I-called to my brother. He-said that he-was tired. He-said that he-used-to-work much. He-said that he-wanted to-go-out the Saturday. At-the end he-went-out with my friends. Not I-went, because I-was ill.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quería",
+            "cue": "I / he wanted",
+            "tag": "delta",
+            "forms": [
+              "quería",
+              "querías"
+            ],
+            "note": "The imperfect of querer: a standing wish. quería salir is he wanted to go out; quiso salir would say he actually tried."
+          }
+        ],
+        "rules": [
+          4,
+          2
+        ]
+      },
+      "trap": "Every reported verb steps back: dijo que estaba, dijo que quería. Leaving them in the present makes the brother speak in your voice.",
+      "mistake": {
+        "display": "Dijo que está cansado y que quiere salir.",
+        "why": "The reporting verb is in the past, so the reported ones follow it back: dijo que estaba cansado y que quería salir."
+      },
+      "usage": "Passing on what someone told you. The subject switches between the two brothers and only the endings mark it.",
+      "register": "informal"
+    },
+    {
+      "id": "L3-M10-S08",
+      "display": "Era estudiante y vivía con mi hermana. Estudiaba mucho, pero no hablaba español. Un día fui a una fiesta. Había mucha gente. Conocí a Rohan y hablamos mucho. Al final hablé español. Y desde entonces todo ha ido bien.",
+      "cue": "I was a student and I lived with my sister. I studied a lot, but I didn't speak Spanish. One day I went to a party. There were a lot of people. I met Rohan and we talked a lot. In the end I spoke Spanish. And everything has gone well since.",
+      "literal": "I-was student and I-used-to-live with my sister. I-used-to-study much, but not I-used-to-speak Spanish. One day I-went to a party. There-was much people. I-met to Rohan and we-spoke much. At-the end I-spoke Spanish. And since then all has gone well.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gente",
+            "cue": "people",
+            "tag": "interference",
+            "forms": [],
+            "note": "People, and SINGULAR in Spanish: la gente es, había mucha gente. English's plural people is the trap, and it costs a verb ending."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "había mucha gente, singular throughout, where English says there WERE a lot of people. gente is one word for a crowd.",
+      "usage": "The eight-sentence exit account this module is for. The scene, three steps, and a perfect that reaches now.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S09",
+      "display": "Cuando estudiaba, vivía cerca de la estación. Trabajaba por la tarde en una tienda. Cuando llegó mi hermana, todavía trabajaba. Fue en primavera. Comimos en casa y hablamos mucho. Al final volvió a México. Y desde entonces no he ido.",
+      "cue": "When I was studying, I lived near the station. I worked in the afternoon in a shop. When my sister arrived, I was still working. It was in spring. We ate at home and talked a lot. In the end she went back to Mexico. And I haven't been since.",
+      "literal": "When I-used-to-study, I-used-to-live near of the station. I-used-to-work for the afternoon in a shop. When arrived my sister, still I-used-to-work. It-was in spring. We-ate in house and we-spoke much. At-the end she-returned to Mexico. And since then not I-have gone.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "todavía",
+            "cue": "still · (with no) not yet",
+            "tag": "delta",
+            "forms": [],
+            "note": "Still: todavía trabajaba is I was still working. With a negative it becomes not yet — todavía no. It is aún's everyday twin."
+          }
+        ],
+        "rules": [
+          1,
+          0
+        ]
+      },
+      "trap": "Both cuando clauses are here: the first opens a stretch, the second drops a moment into one that was already running.",
+      "usage": "A visit recounted afterwards. The subject moves between you and your sister without either being named after the first line.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S10",
+      "display": "Al principio todo era difícil. No hablaba con nadie. Mientras estudiaba, trabajaba en un café. En cuanto pude, salí con mis amigos. Conocí a Ana en una feria. Al final todo fue bien. Y desde entonces estoy tranquilo.",
+      "cue": "At first everything was difficult. I didn't speak to anyone. While I was studying, I worked in a café. As soon as I could, I went out with my friends. I met Ana at a fair. In the end everything went well. And I've been at ease ever since.",
+      "literal": "At-the beginning all it-was difficult. Not I-used-to-speak with nobody. While I-used-to-study, I-used-to-work in a café. In as-much-as I-could, I-went-out with my friends. I-met to Ana in a fair. At-the end all it-was well. And since then I-am calm.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "difícil",
+            "cue": "difficult",
+            "tag": "free",
+            "forms": [
+              "difícil",
+              "difíciles"
+            ],
+            "note": "Difficult, and an -l adjective, so it has one shape for both genders and moves only for number: difíciles."
+          }
+        ],
+        "rules": [
+          1,
+          3,
+          2
+        ]
+      },
+      "trap": "era against fue in one account: era difícil is how it felt throughout, fue bien is the verdict once it was over.",
+      "usage": "The level's closing shape — al principio at one end, al final and desde entonces at the other, and a present tense to land on.",
+      "register": "neutral",
+      "mnemonic": "al principio … al final … y desde entonces. Three words and you have a story."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M10-C01",
+      "display": "Al principio no hablaba español. Vivía en la India y trabajaba en una tienda. Un día llegué a México. Conocí a mi jefe. Al final hablé español en la empresa. Y desde entonces no he vuelto.",
+      "cue": "At first I didn't speak Spanish. I lived in India and worked in a shop. One day I arrived in Mexico. I met my boss. In the end I spoke Spanish at the company. And I haven't been back since."
+    },
+    {
+      "id": "L3-M10-C02",
+      "display": "Cuando vivía en México, trabajaba en un banco. Era mi primera empresa. Cuando llegué, mi jefe ya no estaba. Hablé con otro. Me dijo que estaba enfermo. Al final trabajé bien.",
+      "cue": "When I lived in Mexico, I worked in a bank. It was my first company. When I arrived, my boss was no longer there. I spoke to another one. He told me he was ill. In the end I did well."
+    },
+    {
+      "id": "L3-M10-C03",
+      "display": "Era muy tarde. Salí de casa. Perdí el autobús. Llegué muy tarde a la reunión. Mi jefe estaba enfadado. Y desde entonces no he vuelto.",
+      "cue": "It was very late. I left the house. I missed the bus. I got to the meeting very late. My boss was angry. And I haven't been back since."
+    },
+    {
+      "id": "L3-M10-C04",
+      "display": "El lunes tenía una cita en el banco. Salí temprano de casa. En cuanto llegué, pude entregar la factura. No tenía el documento. Fue un problema. Al final todo fue bien. Y desde entonces siempre voy temprano.",
+      "cue": "On Monday I had an appointment at the bank. I left home early. As soon as I arrived, I was able to hand in the bill. I didn't have the ID. It was a problem. In the end everything went well. And since then I always go early."
+    },
+    {
+      "id": "L3-M10-C05",
+      "display": "Ayer llamé a mi hermano. Dijo que estaba cansado. Dijo que trabajaba mucho. Dijo que quería salir el sábado. Al final salió con mis amigos. No fui, porque estaba enfermo.",
+      "cue": "Yesterday I called my brother. He said he was tired. He said he was working a lot. He said he wanted to go out on Saturday. In the end he went out with my friends. I didn't go, because I was ill."
+    },
+    {
+      "id": "L3-M10-C06",
+      "display": "Al principio todo era difícil. No hablaba con nadie. Mientras estudiaba, trabajaba en un café. En cuanto pude, salí con mis amigos. Conocí a Ana en una feria. Al final todo fue bien. Y desde entonces estoy tranquilo.",
+      "cue": "At first everything was difficult. I didn't speak to anyone. While I was studying, I worked in a café. As soon as I could, I went out with my friends. I met Ana at a fair. In the end everything went well. And I've been at ease ever since."
+    },
+    {
+      "id": "L3-M10-C07",
+      "display": "Cuando vivía en México, trabajaba en un banco.",
+      "cue": "When I lived in Mexico, I worked in a bank."
+    },
+    {
+      "id": "L3-M10-C08",
+      "display": "Mientras comía, llamó mi hermana.",
+      "cue": "While I was eating, my sister called."
+    },
+    {
+      "id": "L3-M10-C09",
+      "display": "En cuanto llegué, pude entregar la factura.",
+      "cue": "As soon as I arrived, I was able to hand in the bill."
+    },
+    {
+      "id": "L3-M10-C10",
+      "display": "Era muy tarde. Salí de casa. Perdí el autobús.",
+      "cue": "It was very late. I left the house. I missed the bus."
+    },
+    {
+      "id": "L3-M10-C11",
+      "display": "Dijo que estaba cansado. Al final no salió.",
+      "cue": "He said he was tired. In the end he didn't go out."
+    },
+    {
+      "id": "L3-M10-C12",
+      "display": "Al principio todo era difícil. Ahora estoy tranquilo.",
+      "cue": "At first everything was difficult. Now I'm at ease."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

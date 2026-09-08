@@ -413,3 +413,259 @@ by whoever lands the waves rather than three times by their authors.
     vouches for a person.
 32. **`leur` invariable as a pronoun** (M5-S10). Confirm `je leurs ai parlé` is an error natives
     make on the page, and that the pronoun/possessive split is the way to teach the two.
+
+## Wave 3 — L3-M6..M10 (#553)
+
+The wave that closes the level. Authored against the same briefs and the same `docs/74` decisions,
+and again reviewed against the REAL cumulative index rather than the briefs' account of it:
+**662 surfaces through L3-M5**, growing to 687 after M6, 710 after M7, 734 after M8, 759 after M9
+and **783 after M10**. The five deltas are 25, 23, 24, 25 and 24 — every one inside the briefs'
+`newWordCap: 25`, and the level ends with 783 surfaces against L2's 542. A strict build
+(no flags) emits `en-fr: 30 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10)` with `CONTENT 214/214 ok`,
+and `npm run content:shown` reports all five modules `clean` — no shown-but-untaught, no collision,
+and, after one row was dropped, no re-teach either.
+
+`maxSpan` stays 4 and this wave does not spend it: the longest new keys are three tokens
+(`j'ai envie de`, `j'ai besoin de`, `à la fin`). What this wave spends instead is the *elision*
+budget, and that is where almost every seam correction below comes from.
+
+### L3-M6 "Feelings in depth" — the -é / -ant pair, and four feelings French HAS
+
+The module's spine is rule 0, and it is authored as a meaning difference rather than a style one:
+`je suis ennuyé` against `c'est ennuyeux`, `je suis fatigué` against `c'est fatigant`,
+`je suis intéressé` against `c'est intéressant`. S02 puts both halves of one pair in a single
+display — `Ce film est ennuyeux, et je suis ennuyé` — because the pair is only visible side by side,
+and S03 does the same for `fatigant`. Both mistake plates are the sentence a learner actually says:
+`Je suis ennuyeux` (you are boring company) and `Je suis fatigant` (you exhaust other people).
+
+Four have-feelings get four sentences and four whole keys — `j'ai peur`, `j'ai envie de`,
+`j'ai hâte`, `j'ai honte` — each indexed whole so that L2-M5's bare `me` and L1-M5's `j'ai` keep
+their rows, exactly as the brief asked. `j'ai envie de` carries its `de` inside the key because the
+`de` is compulsory; `j'ai peur` and `j'ai honte` do not, because nothing follows them obligatorily.
+
+The `ça me` frame is three keys rather than one — `ça m'énerve`, `ça me plaît`, `ça m'inquiète` —
+for a reason recorded below. Rule 4 is the agreement rule and it is authored around the split the
+brief named: `inquiet / inquiète` and `fier / fière` are HEARD, `déçu / déçue`, `fâché / fâchée` and
+`gêné / gênée` are not, and S10's two variations differ by two silent `-e` endings and nothing else.
+
+### The M6 seam was wrong about three keys the index already owned
+
+The M6 brief's INDEX SEAM says *"content, triste and fatigué stay L1's rows and this module adds
+their feminines as forms on those rows."* Both halves fail. **The feminines are already there**:
+`fatiguée` is L1-M2's and `contente` is L1-M9's, on the emitted index, so adding them here would
+have been a re-teach of a key an L1 module already owns. And a module may not edit a file below it
+in any case, so "adds their feminines as forms on those rows" was never an available move. The
+module writes neither row; `fatiguée` appears in S01's display and resolves to L1-M2's note, which
+is the correct outcome.
+
+The same seam names **`ça me`** as a fresh key. It cannot do any work as one. `Ça m'énerve` tokenizes
+as `ça` + `m'énerve`, so a two-token key `ça me` never matches it, and in `ça me plaît` a `ça me`
+key would leave `plaît` unresolved. The three frames are therefore indexed whole, which is what the
+seam's own principle — *frames whole so bare `me` stays L2-M5's* — actually requires. This is the
+elision problem the wave hit five more times.
+
+### L3-M7 "Body and health" — a contraction the index had already paid for
+
+The M7 brief's INDEX SEAM lists **`au`, `aux`, `dos` and `médecin`** as fresh keys. None of them is:
+`au` is L1-M7's, `aux` is L2-M8's, `dos` is L2-M8's and `médecin` is L3-M2's. The correction changes
+what the module IS. The brief said the contraction "is the module's first rule and its first plate",
+and that is still true — but it is a rule and a trap here, never a row, because writing a row for
+`au` would put an unreachable note behind a key L1-M7 owns. Rule 0 says so in as many letters:
+*both words are already on the ladder — what is new here is the reason, not the word.* S02's mistake
+plate (`J'ai mal à le dos`) and S03's (`J'ai mal à les dents`) carry the plate the brief wanted.
+
+`depuis` is the module's cleanest delta and gets two rules rather than one, because it carries two
+separate facts: one word for both of English's (`depuis lundi` / `depuis trois jours`), and the
+PRESENT tense behind it. The mistake plates on S01 and S06 are both the tense, not the word —
+`J'ai eu mal à la tête depuis ce matin` and `J'ai été malade depuis trois jours` — because that is
+the half an English speaker gets wrong after they have learnt the word.
+
+The three-article symptom list is authored exactly as note 4 asked, in three neighbouring sentences:
+`j'ai de la fièvre` (S04), `j'ai un rhume` and `j'ai la grippe` (S05), with L2-M5's negated partitive
+governing `je n'ai pas de fièvre` and NOT governing `je n'ai pas la grippe`. S05's trap says the
+quiet part out loud: no rule of the learner's picks these, the noun carries its own.
+
+### L3-M8 "Money and paperwork" — where the elision broke the seam's plan
+
+The M8 brief's INDEX SEAM asks for **`on paie` and `on signe` as whole keys**, "so L2-M6's bare `on`
+keeps its row". Authored that way the module cannot ask its own headline question. `Où est-ce qu'on
+signe ?` tokenizes as `où` + `est-ce` + `qu'on` + `signe`: the `on` has fused with `que` and there is
+no `on signe` span left to match. The module therefore teaches **`payer` with forms
+`["payer", "paie"]`** and **`signer` with forms `["signer", "signe"]`**, and leaves `on` alone —
+which reaches the seam's actual goal (bare `on` still resolves to L2-M6) by a route the fold can
+follow. The affirmative `Ici on paie en espèces` and the interrogative `Où est-ce qu'on signe ?` both
+resolve, which no whole-key pair could have managed.
+
+Two more corrections on the same note. **`il faut` is not a key** — `faut` is L2-M4's and `il` is
+L1-M1's, so `il faut` resolves as two tokens and needs no row; the brief's "il faut stays L2-M4's"
+is true in spirit and the phrase was never indexed. And **`pourriez-vous` is not taught anywhere**,
+contrary to note 3's claim that it is "M4's conditional" — M4 opened `pourrais` and `voudrais`, not
+the `vous` form. The module simply does not use it: `est-ce que`, `excusez-moi` and `je voudrais`
+carry every request, which is what note 3 wanted from the frame list it got right.
+
+`est-ce qu'on` is opened here as one key, with its note pointing back at L2-M1's `est-ce que`, and it
+is the only place in the module where a question word changes shape. M9's brief claims `qu'on` for
+itself and gets it: the two keys are different folds and neither shadows the other.
+
+### L3-M9 "Festivals and everyday culture" — qui and que, and a date that is just a number
+
+The relative pair is rule 0 and it is authored against the wrong English question rather than the
+right French one: *English chooses between who and which by whether the thing is a person, which is
+no help at all here.* S01 gives `qui` its subject job (`une fête qui dure cinq jours`), S02 gives
+`que` its object job (`les gens que j'aime`), and S02's first variation puts the two in one line —
+`Les gens qui sont ici sont mes amis` — so the split is visible without a second module.
+
+`que` itself gets **no row**. It is L1-M9's key, and a row here would put the module's third note
+behind a note the learner will never reach; the fact lives in rule 0 and rule 1 instead, which are
+always shown. `qui` is fresh and gets its row; `qu'on` is fresh and gets its own, with the elision
+inside the key exactly as the seam asked. Rule 1 is the half that costs marks: `que` elides, `qui`
+never does, whatever follows it.
+
+Two seam corrections here. **`premier` is L2-M4's**, not fresh — so the ordinal rule (rule 4) names
+it and points back rather than opening a row, and S07's mistake plate (`le un mai`) does the
+teaching. And **`Nouvel An` needed no key at all on the index's own terms**: `nouvel` is L2-M3's and
+`an` is L1-M9's, so `le Nouvel An` already resolved token by token. It is opened as a two-token key
+anyway, deliberately — New Year's Day is not derivable from *new* plus *year*, and the note carries
+the capitalisation split that rule 5 states — and that is a judgement, not a correction, so it is
+recorded as one.
+
+The month names are the wave's one honest vocabulary spend: five of the twelve (`janvier`, `mai`,
+`juillet`, `août`, `décembre`) rather than all of them, chosen for the dates the module actually
+writes. The days were already L2-M6's, so `le dimanche` is opened as a two-token key for the habit
+reading and the bare day is left where it is.
+
+### L3-M10 "Your own story" — eight sentences, and the tense that cannot be heard
+
+Each item is an account of six sentences, per note 1, with the per-sentence bound applied inside it.
+The connectors are the whole declared spend — `pendant que`, `à la fin`, `au début`, `dès que` — and
+everything else in the ten accounts is a re-use, which is the point of the module.
+
+Rule 1 is the level's sharpest pair and S01 is authored as note 3 asked, as a minimal pair against
+two steps in a row: `Pendant que j'attendais, mon frère est arrivé` beside
+`J'attendais, et puis mon frère est arrivé`. Rule 2 separates the three connectors a learner blurs —
+`quand`, `dès que` and `pendant que` — and S02's mistake plate is exactly that blur
+(`Pendant que je l'ai vu, je suis parti`).
+
+The auxiliary law is tested at length, as note 4 required: `elle est venue` and `ma sœur est venue`
+agree with their subject, `je suis tombé` agrees, `j'ai téléphoné` and `j'ai signé` agree with
+nothing, and `je l'ai cherché` agrees with the object in front of it. Every one of those agreements
+is silent, which is the point of S05's trap and S10's — `était` and `étaient` are one sound and two
+spellings, and an eight-sentence account is the only place a learner is forced to choose.
+
+**`c'était` was not taught.** The M10 brief says it "stays L2-M10's separate key"; the emitted index
+has `était` (L2-M10) but not `c'était`, which is one token to the tokenizer and had never been
+written. It is opened here as its own row, with its note pointing back at L2-M10 — the sixth
+apostrophe-made-a-new-token correction of this level, after wave 2's four and M8's `est-ce qu'on`.
+The same fold explains three more of this module's rows: `l'ai`, `n'était` and `j'attendais` are all
+new tokens made out of taught words.
+
+One row was dropped after the check reported it: **`travaillais` is L2-M10's**, so the row's note
+would have been unreachable. The account keeps the word — S05's display needs it — and the learner
+is shown L2-M10's note, which says the same thing.
+
+### The seam corrections this wave made, collected
+
+| Brief | Claim | What the emitted index said |
+| --- | --- | --- |
+| M6 note 5 | `fatiguée`, `contente` to be added as forms on L1's rows | Both already owned — `fatiguée` L1-M2, `contente` L1-M9. No row written, and a level may not edit L1 anyway |
+| M6 note 5 | `ça me` a fresh key | Cannot match `ça m'énerve` (one token, `m'énerve`) and leaves `plaît` bare. Three whole frames instead |
+| M7 note 5 | `au`, `aux`, `dos`, `médecin` fresh | `au` L1-M7, `aux` L2-M8, `dos` L2-M8, `médecin` L3-M2. The contraction became a rule and two mistake plates, never a row |
+| M8 note 5 | `on paie`, `on signe` as whole keys | Broken by `est-ce qu'on signe`. `payer` and `signer` carry their 3sg in `forms` instead; bare `on` still L2-M6's |
+| M8 note 3 | `pourriez-vous` is "M4's conditional" | Not taught anywhere. M4 opened `pourrais` and `voudrais`. The module uses neither |
+| M8 note 5 | `il faut` stays L2-M4's | Never a key at all: `il` + `faut`, two taught tokens |
+| M9 note 5 | `premier` fresh | L2-M4's. Named in rule 4 and in S07's mistake plate, no row |
+| M9 note 5 | `Nouvel An` fresh | Its parts were already taught (`nouvel` L2-M3, `an` L1-M9). Opened as a key anyway, deliberately — the meaning is not the sum |
+| M10 note 5 | `c'était` stays L2-M10's | `était` is L2-M10's; `c'était` is a different token and was untaught. Opened here |
+| M10 note 1 | the participles the accounts need | `travaillais` is L2-M10's — the row was written, the check reported it, and it was dropped |
+
+Nine of the ten are the same class of thing, and six of those nine are the apostrophe: a fold makes
+one token out of two taught words, and a seam note written from the grammar rather than from the
+emitted index will miss every one. Wave 2 said this after four of them; wave 3 hit six more.
+
+### Both course laws held
+
+The `ne` is written in every display, every variation and every pool line across all five modules —
+checked by script over every line carrying `pas`, `jamais`, `rien`, `personne` or `plus`, with zero
+findings — and the spoken drop is named only in prose and on mistake plates that exist to be struck
+out (`Je suis déçu, mais je suis pas fâché` in M6-S10, `On peut pas payer ici` in M8-S02, both of
+whose `why` writes the `ne` back in). Every elided form is one key with a STRAIGHT apostrophe inside
+it: `j'ai peur`, `j'ai envie de`, `ça m'énerve`, `ça m'inquiète`, `est-ce qu'on`, `qu'on`,
+`pièce d'identité`, `l'échéance`, `c'était`, `l'ai`, `n'était`, `j'attendais`. No file in the wave
+contains a curly apostrophe, checked by script over the raw bytes of all five files.
+
+### The ratchet
+
+`tools/shown-surfaces.test.ts` held at **en-fr 20** across all five modules — `11 passed (11)` — and
+`npm run content:shown` reports `clean` for M6, M7, M8, M9 and M10 with **no shown-but-untaught, no
+collision inside any module, and no re-teach**. The one re-teach the check did find (`travaillais`,
+M10-S05) was removed in the same pass rather than argued for, which is the stricter of the two
+options the check leaves open. No baseline was lowered and none was raised.
+
+Two things outside `content/` are expected to be red on this wave and are not content defects.
+`src/course/types.test.ts` pins the module-file list, and five new files move it again; the list is
+a single shared array that every parallel authoring wave touches, so it is updated once by whoever
+lands the waves. And `content/en-fr/levels.json` still carries `hasContent: false` for L3-M6..M10 —
+also a single shared file, also landed once.
+
+### Open questions for the native pass
+
+33. **`je me sens` against a bare adjective** (M6-S01 and rule 1). Confirm `je me sens fatiguée` is
+    what a speaker says rather than `je suis fatiguée`, and that the trap's claim holds — that
+    `je sens fatiguée`, without the pronoun, really is heard as *I smell tired* rather than simply
+    as a slip.
+34. **`ennuyé` for bored** (M6-S02). The module's central lexical claim. Confirm `je suis ennuyé` is
+    the ordinary way to say you are bored, and not chiefly *annoyed* or *bothered* — several
+    reference works give both readings and the module teaches only one.
+35. **`j'ai hâte` without `de`** (M6-S06). Confirm `j'ai hâte` stands alone in a message, and that
+    `j'ai hâte de te voir` is the everyday closing rather than a written formula.
+36. **`honte` against `gêné`** (M6-S07). Confirm the weight claim: that `j'ai honte` is too strong
+    for a small social awkwardness and that `gêné` is what a speaker reaches for there.
+37. **`ça me plaît` against `j'aime`** (M6-S09). Confirm both are ordinary about the same thing, and
+    whether `ça me plaît` carries any distance or hedging that the module does not name.
+38. **`avoir mal à` with a possessive** (M7-S01 and rule 1). Confirm `j'ai mal à ma tête` is
+    genuinely not said, in any register, rather than merely marked.
+39. **`depuis` with the present** (M7, rules 2 and 3). Confirm `j'ai eu mal depuis trois jours` is
+    wrong rather than a different meaning, and that the present is obligatory whenever the state
+    continues.
+40. **The three symptom articles** (M7-S04, S05 and rule 4). Confirm `j'ai une fièvre` is not said,
+    that `j'ai la grippe` keeps its article under the negative, and that `j'ai un rhume` never takes
+    the partitive.
+41. **`vous avez quelque chose contre …`** (M7-S07). Confirm this is what is actually said at a
+    French pharmacy counter, and that `pour` in the same frame would be understood but marked.
+42. **`avoir rendez-vous` with no article** (M7-S10). Confirm the article really is dropped in the
+    bare statement, and when `un rendez-vous` comes back.
+43. **Impersonal `on` on a notice** (M8-S01, S02 and rule 0). Confirm `ici on paie en espèces` is
+    how a till sign reads, and that `nous payons` would be heard as a different, narrower claim.
+44. **`reçu` against `facture`** (M8-S07 and rule 6). The wave's strongest lexical claim: that one
+    proves payment and the other requests it, with no overlap. Confirm, including what a shop till
+    hands you (`ticket`?) and what a tradesman sends.
+45. **`échéance`** (M8-S09). Confirm it is the everyday word printed on a bill rather than an
+    administrative one, and that a speaker uses it in conversation about a deadline.
+46. **`faire un virement`** (M8-S08). Confirm the collocation, and that `envoyer un virement` is
+    wrong rather than simply rarer.
+47. **`pièce d'identité` as an unbreakable phrase** (M8-S10). Confirm the phrase never contracts in
+    speech, and what a counter actually says when asking for it.
+48. **`qui` and `que` by grammatical role** (M9, rules 0 and 1). Confirm the rule as stated is
+    complete for everything a learner at this level will write, and that no ordinary sentence needs
+    `dont` where the module offers `que`.
+49. **`le dimanche` against `dimanche`** (M9-S09 and rule 2). Confirm the habit reading is carried by
+    the article alone and that context never overrides it in speech.
+50. **`en famille`** (M9-S04). Confirm the phrase takes no article and no possessive, and that
+    `avec ma famille` really is the narrower thing the trap claims.
+51. **`offrir` against `donner` for a present** (M9-S05). Confirm `on donne des cadeaux` is marked
+    rather than merely plainer.
+52. **The date with no `de` and no ordinal** (M9-S06, S07 and rule 4). Confirm `le quatorze juillet`
+    and `le premier mai` are the only shapes, and that no spoken variant restores the `de`.
+53. **`pendant que` with the imparfait** (M10-S01 and rule 1). The level's exit claim. Confirm
+    `pendant que j'ai attendu` is impossible rather than merely odd, and that the pair really does
+    change *what happened* rather than only how it sounds.
+54. **`dès que` in the past** (M10-S02, S04 and rule 2). Confirm `dès que` takes the passé composé
+    for a completed step, and whether a speaker would ever use the imparfait behind it.
+55. **`tout le monde` with a singular verb** (M10-S06). Confirm `tout le monde sont partis` is an
+    error natives never make in writing, and whether it is heard in speech.
+56. **`ce n'était pas grave`** (M10-S09). Confirm this is how an account closes, and that the
+    present-tense `ce n'est pas grave` is the same phrase doing a different job rather than a
+    different phrase.
+57. **The six-sentence account as a unit** (M10, all items). The wave's structural claim: that these
+    read like a person talking rather than like ten exercises. This one needs a speaker to read all
+    ten aloud and say which of them nobody would ever say.
