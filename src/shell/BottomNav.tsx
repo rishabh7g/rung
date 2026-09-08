@@ -2,7 +2,7 @@
  * The bottom nav (#84) — Ladder · Practice · Settings, the app's whole top level
  * (PRD-design §4 [D8]). There is no fourth tab and no onboarding above it [D21].
  *
- * Three rules it exists to keep, all of them in `BottomNav.module.css` rather than here, because
+ * Three rules it exists to keep, all of them in `bottom-nav.css` rather than here, because
  * they are layout facts and the design contract is "tokens only, no hard-coded px" (rule 1):
  * items are `--nav-item-height` (56px, src/styles/tokenOverrides.css #244) tall inside a bar
  * padded symmetrically by `--space-1`, with the home indicator's strip ADDED beneath it —
@@ -26,7 +26,7 @@ import { NavLink } from 'react-router-dom';
 import { Pencil, Rows3, Settings } from 'lucide-react';
 import { useStrings } from '../course/strings.ts';
 import { HOME_PATH, PRACTICE_PATH, SETTINGS_PATH } from './routes.tsx';
-import styles from './BottomNav.module.css';
+import './bottom-nav.css';
 
 /**
  * Icons are Lucide only (design/tokens.md §4), sized and stroked from `--icon-ui` /
@@ -57,7 +57,7 @@ export function BottomNav({ hiddenOnPhone = false }: BottomNavProps) {
 
   return (
     <nav
-      className={hiddenOnPhone ? `${styles.nav} ${styles.phoneHidden}` : styles.nav}
+      className={hiddenOnPhone ? 'nav nav-phone-hidden' : 'nav'}
       aria-label={strings['a11y.primaryNav']}
     >
       {TABS.map(({ to, key, Icon }) => (
@@ -65,13 +65,13 @@ export function BottomNav({ hiddenOnPhone = false }: BottomNavProps) {
           key={to}
           to={to}
           end
-          className={styles.item}
+          className="nav-item"
           // Mandatory, and set at EVERY viewport — the bar hides the span below (#245).
           aria-label={strings[key]}
           title={strings[key]}
         >
-          <Icon className={styles.icon} />
-          <span className={styles.label}>{strings[key]}</span>
+          <Icon className="nav-icon" />
+          <span className="nav-label">{strings[key]}</span>
         </NavLink>
       ))}
     </nav>

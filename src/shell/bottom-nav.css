@@ -15,7 +15,7 @@
   padding-bottom: calc(var(--space-1) + env(safe-area-inset-bottom, 0px));
 }
 
-.item {
+.nav-item {
   flex: 1;
   min-width: 0;
   /* 56px (src/styles/tokenOverrides.css, #244) — above the --tap-min floor, because a bottom
@@ -35,11 +35,11 @@
 }
 
 /* The active tab, straight off NavLink's own aria-current — one state, not two. */
-.item[aria-current='page'] {
+.nav-item[aria-current='page'] {
   color: var(--color-accent-700);
 }
 
-.icon {
+.nav-icon {
   /* --icon-nav-bar (26px, src/styles/tokenOverrides.css #246), not --icon-ui: the bar is
      icon-only, so the glyph carries the tab on its own with no label beside it. */
   width: var(--icon-nav-bar);
@@ -50,7 +50,7 @@
 /* Icon-only bar (house UI standard §5, #245): the span stays in the DOM, the aria-label/title on
    the NavLink carry the accessible name — hiding it here is a purely visual change, never an a11y
    regression. Restored in the >=768px rail (#249). */
-.label {
+.nav-label {
   display: none;
   font: var(--text-kicker-sm);
   letter-spacing: var(--kicker-tracking);
@@ -65,7 +65,7 @@
    Hidden rather than unmounted, and hidden HERE rather than in the shell, because "not on a
    phone" is a viewport fact: a tablet rotated to portrait crosses the breakpoint without a route
    change, and only a media query notices. */
-.phoneHidden {
+.nav-phone-hidden {
   display: none;
 }
 
@@ -73,15 +73,15 @@
 @media (min-width: 768px) {
   /* The rail is beside the column, not under the thumb: it costs the screen nothing, so every
      screen keeps it. */
-  .phoneHidden {
+  .nav-phone-hidden {
     display: flex;
   }
 
-  .label {
+  .nav-label {
     display: block;
   }
 
-  .icon {
+  .nav-icon {
     /* --icon-ui (20px), not the bar's larger --icon-nav-bar: on the rail the label carries the
        tab beside the icon, the way it does everywhere else in the shell. */
     width: var(--icon-ui);
@@ -97,7 +97,7 @@
     border-right: var(--border-hairline);
   }
 
-  .item {
+  .nav-item {
     flex: none;
     flex-direction: row;
     justify-content: flex-start;

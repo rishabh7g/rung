@@ -3,7 +3,7 @@
    strip substitutes for the header's own top padding — a phone gets its real inset, and a desktop
    browser, where every inset resolves to 0, still gets the design's padding
    (design/pwa-checklist.md §2). The bottom bar is the other case and adds its inset instead
-   (BottomNav.module.css, #265) — max there discarded the design token on iOS. */
+   (bottom-nav.css, #265) — max there discarded the design token on iOS. */
 
 .shell-app {
   /* 100dvh, never 100vh: a mobile URL bar shrinks the viewport and 100vh does not notice
@@ -99,7 +99,7 @@
   min-height: 0;
 }
 
-/* Inside a rung the bar is gone on a phone (BottomNav.module.css), and the home indicator's strip
+/* Inside a rung the bar is gone on a phone (bottom-nav.css), and the home indicator's strip
    goes with it — so the column takes the inset the bar was carrying (#265). It is padding on the
    flex parent rather than on the scroll area, because what needs lifting is the screen's sticky
    footer: a sticky element's bottom is the SCROLLPORT's edge, which padding on `.shell-screen` would not

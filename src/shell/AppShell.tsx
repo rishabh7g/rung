@@ -25,7 +25,7 @@
  *
  * At 768px and up nothing is hidden: the nav is the left RAIL there (#249), beside the column
  * rather than under the thumb, so it costs the screen nothing on any route. That is a viewport
- * fact rather than a route fact, so it is a media query in `BottomNav.module.css` and not a second
+ * fact rather than a route fact, so it is a media query in `bottom-nav.css` and not a second
  * condition here — a tablet rotated into portrait crosses the breakpoint with no route change.
  *
  * Layout: the column is `100dvh` and never scrolls; `<main>` is the one scroll area, per screen,

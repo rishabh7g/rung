@@ -150,7 +150,7 @@ with a dead strip beneath them:
 **The rule:** a bottom inset is an OS-owned strip **added below** a fixed designed bar, never a
 substitute for the bar's own padding. That is how both native platforms build it — iOS `UITabBar`
 is 49pt of content plus a 34pt safe area beneath it, Android Material is a 56dp bar plus the
-gesture inset. So `BottomNav.module.css` pads symmetrically and sums:
+gesture inset. So `bottom-nav.css` pads symmetrically and sums:
 
 ```css
 padding: var(--space-1) var(--space-3);
@@ -263,7 +263,7 @@ package before this issue.
 `ScrollAreaContext` still publishes the same element (#88). `.body` is a column on mobile (matching
 the layout before the wrapper existed) and `row-reverse` at `@media (min-width: 768px)`, which puts
 the nav — second in DOM order — at the main-start (the left) without reordering the markup.
-`src/shell/BottomNav.module.css` gains the matching `@media (min-width: 768px)` block: the nav lays
+`src/shell/bottom-nav.css` gains the matching `@media (min-width: 768px)` block: the nav lays
 out as a column `var(--rail-width)` wide with `border-right` instead of `border-top`, the label
 goes back to `display: block`, the icon shrinks back to `--icon-ui` (20px, from the bar's 26px
 `--icon-nav-bar`, #246), and each item becomes a row — icon beside label.
@@ -306,7 +306,7 @@ The house UI standard gives the icon-only bottom bar (#245) its own icon size, l
 because with the label hidden the glyph alone has to identify the tab. `design/tokens.css` has no
 token for this — `--icon-nav-bar` did not exist in the design package before this issue.
 
-`src/styles/tokenOverrides.css` defines `--icon-nav-bar: 26px`, and `BottomNav.module.css`'s
+`src/styles/tokenOverrides.css` defines `--icon-nav-bar: 26px`, and `bottom-nav.css`'s
 `.icon` reads it instead of `--icon-ui`. `--icon-ui` is unchanged and stays in use everywhere else
 (the shell header's chevron and pause button).
 
