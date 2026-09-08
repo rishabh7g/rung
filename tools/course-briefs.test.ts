@@ -836,9 +836,9 @@ describe('en-fr L2: the decisions its briefs settle (#431)', () => {
   const all = COURSE_BRIEFS['en-fr'] ?? {};
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
 
-  it('covers exactly L1-M1..L2-M10 — two levels, twenty modules', () => {
+  it('covers exactly L1-M1..L3-M10 — three levels, thirty modules', () => {
     expect(Object.keys(all)).toEqual([
-      ...['L1', 'L2'].flatMap((level) =>
+      ...['L1', 'L2', 'L3'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -890,6 +890,60 @@ describe('en-fr L2: the decisions its briefs settle (#431)', () => {
     expect(m10).toMatch(/one is for completed actions and the other for ongoing ones/);
     expect(m10).toMatch(/être for the movement and change-of-state verbs/);
     for (const [id, brief] of l2) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+});
+
+describe('en-fr L3: the decisions its briefs settle (#467)', () => {
+  const all = COURSE_BRIEFS['en-fr'] ?? {};
+  const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
+  const notes = l3.flatMap(([, brief]) => brief.notes).join('\n');
+
+  it('climbs its bounds 10 → 11 → 12 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L3-M1', 'L3-M2', 'L3-M3']) expect(bound(id), id).toBe(10);
+    for (const id of ['L3-M4', 'L3-M5', 'L3-M6', 'L3-M7']) expect(bound(id), id).toBe(11);
+    for (const id of ['L3-M8', 'L3-M9', 'L3-M10']) expect(bound(id), id).toBe(12);
+  });
+
+  /**
+   * `docs/58` §5 named six withheld pieces. Each one L3 takes has an owner named in the notes,
+   * and what it does not take is still named where a module would reach for it.
+   */
+  it('gives the pieces it takes an owner', () => {
+    expect(all['L3-M3']?.notes.join('\n'), 'the subjunctive').toMatch(/SUBJUNCTIVE OPENS HERE/);
+    expect(all['L3-M4']?.notes.join('\n'), 'the conditional').toMatch(/CONDITIONNEL OPENS/);
+    expect(all['L3-M5']?.notes.join('\n'), 'reported speech').toMatch(/reported speech/);
+    expect(all['L3-M5']?.notes.join('\n'), 'le, la, les, lui, leur').toMatch(/OBJECT CLITICS/);
+    expect(all['L3-M9']?.notes.join('\n'), 'relative clauses').toMatch(/RELATIVE CLAUSES OPEN/);
+    // Still out and named: the plus-que-parfait counterfactual is L4-M3's.
+    expect(all['L3-M4']?.notes.join('\n')).toMatch(/L4-M3/);
+    expect(all['L3-M3']?.notes.join('\n')).toMatch(/names the system as L4/);
+  });
+
+  /**
+   * Two of this course's own laws carry into L3 and the briefs restate both, because an author
+   * only ever sees the notes: the written `ne` (docs/58 §4) and the straight apostrophe with one
+   * key per elided surface.
+   */
+  it('keeps the written ne and the elision law', () => {
+    expect(notes).toMatch(/the ne is WRITTEN|ne stays written/);
+    expect(all['L3-M1']?.notes.join('\n')).toMatch(/STRAIGHT apostrophes only/);
+    expect(notes).toMatch(/ONE key with the elision inside it/);
+  });
+
+  /**
+   * The participle agreement this level tests is a WRITING-ONLY rule — the learner hears nothing
+   * and must write it — which is what makes an eight-sentence account the only honest test of it.
+   */
+  it('keeps the writing-only agreement rule and its limit', () => {
+    expect(all['L3-M5']?.notes.join('\n')).toMatch(/WRITING-ONLY|writing-only/);
+    expect(all['L3-M10']?.notes.join('\n')).toMatch(/writing-only|WRITING-ONLY/);
+  });
+
+  it('names its seam in every module but the last', () => {
+    for (const [id, brief] of l3.filter(([id]) => id !== 'L3-M10')) {
       expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
     }
   });
