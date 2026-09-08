@@ -188,13 +188,20 @@ opposite. The per-module choices:
 | M9 Telling it your way | **14** | Narrative, as at L4-M8 and L4-M10. |
 | M10 Your own voice | **14** | Applied INSIDE the eight-sentence piece, as at L3-M10 and L4-M10. |
 
-`newWordCap` stays the PRD §5 25 everywhere except **M10, which is capped at 12** — the second brief
-in this course to argue the number down, and on the same arithmetic `docs/83` forced on L4-M10:
-`deconstruction.words` has `minItems: 1` and en-de asserts one row per surface, so ten items need TEN
-fresh keys whatever the ambition, and "ideally zero" is not reachable. Twelve is the floor plus two.
-It is lower than L4-M10's 14 because L4-M10 had to buy four dialogue verbs and this module has
-forty-nine modules of vocabulary behind it; the two spare keys go to the pivot markers and to nothing
-else. It forbids by arithmetic what a note could only ask for politely.
+`newWordCap` is **25 in every one of the ten briefs, and it cannot be anything else**:
+`tools/course-briefs.test.ts` line 64 asserts `brief.newWordCap === NEW_WORD_CAP` for every brief in
+every course, so a lower number in the FIELD fails TEST rather than tightening a module. That is why
+`docs/92` §5 records L4-M10 as "capped at 14" while `COURSE_BRIEFS['en-de']['L4-M10'].newWordCap` is
+25: the argument lives in a NOTE and the field carries the constant. **L5-M10 follows that precedent
+exactly** — its first note argues the number down to **12 as a target** and the field stays 25.
+
+The arithmetic behind the 12 is `docs/83`'s, unchanged: `deconstruction.words` has `minItems: 1` and
+en-de asserts one row per surface, so ten items need TEN fresh keys whatever the ambition, and
+"ideally zero" is not reachable. Twelve is the floor plus two. It is tighter than L4-M10's 14 because
+L4-M10 had to buy four dialogue verbs while this module has forty-nine modules of vocabulary behind
+it and every register marker its own patterns need is already owned (`So` L2-M9, `jetzt` L3-M4,
+`ehrlich gesagt` L4-M5). This is the last rung of the last level, so a key it leaves unpaid is unpaid
+forever — which is the one argument for aiming at 12 that a target can make and a field could not.
 
 Module by module — what it owns, and why it sits there:
 
@@ -246,12 +253,12 @@ This is the last level. Everything below either lands or is named as a hole.
 
 **And two holes, named as holes because there is nowhere left to pass them to:**
 
-1. **The plural `ihr` is untaught and unteachable in this course.** A learner who finishes en-de
-   cannot address a group. The cause is an index collision with L1-M2's possessive `Ihr` that only a
-   change to a shipped L1 module could fix, and a level never edits a file below it. Every L5 module
-   routes around it; that is containment, not a fix. It goes to the native gate as **Q75**, and if
-   the answer is that the gap is unacceptable it is an L1 re-authoring issue, not an L5 one.
-2. **L2-M7 shows `tschüss` where nothing teaches it, and L5 cannot help.** M3 opens the `Tschüss`
+- **The plural `ihr` is untaught and unteachable in this course.** A learner who finishes en-de
+  cannot address a group. The cause is an index collision with L1-M2's possessive `Ihr` that only a
+  change to a shipped L1 module could fix, and a level never edits a file below it. Every L5 module
+  routes around it; that is containment, not a fix. It goes to the native gate as **Q75**, and if the
+  answer is that the gap is unacceptable it is an L1 re-authoring issue, not an L5 one.
+- **L2-M7 shows `tschüss` where nothing teaches it, and L5 cannot help.** M3 opens the `Tschüss`
    row, but `checkShownSurfaces` resolves each module against the index cumulative AT that module, so
    L2-M7 is two levels below the fix and the en-de shown-surface baseline of 11 does not move. (The
    occurrence is in `mistake.display`, which #491 exempts, so the baseline is not actually charged
