@@ -1,0 +1,687 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M8",
+  "title": "Back then",
+  "job": "Habits and states in the past; then against now",
+  "prerequisites": [
+    "L4-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "habitual_past",
+      "simple_past",
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "kāna + <N> + V-imperfect",
+      "mā zāla + V-imperfect",
+      "lam yaʿud + V-imperfect",
+      "aṣbaḥa / ṣāra + <predicate>",
+      "fī al-māḍī + <clause> + , + ammā al-ān fa- + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "kāna AND ITS SISTERS are one grammatical class of four: kāna, mā zāla, aṣbaḥa and ṣāra. Each stands at the head of a sentence that would otherwise have no verb, or in front of a present-shaped verb, and each does the same structural thing. One shape, four meanings."
+    },
+    {
+      "tag": "delta",
+      "text": "THE HABITUAL PAST is kāna plus a plain PRESENT verb: kuntu adrus, I used to study. The person is written twice, once on kāna and once on the verb behind it, and both must agree."
+    },
+    {
+      "tag": "interference",
+      "text": "English marks the habitual past with used to and would. Arabic has neither: kāna alone carries it. Reaching for a past shape in the second slot — kuntu darastu — builds L4-M3's pluperfect instead, which means I HAD studied."
+    },
+    {
+      "tag": "free",
+      "text": "mā zāla, still, is the same frame with a different meaning: mā zāltu adrus, I still study. Its present-shaped twin lā yazāl says exactly the same thing and is commoner in writing."
+    },
+    {
+      "tag": "free",
+      "text": "aṣbaḥa and ṣāra mean became. They take a PREDICATE — an adjective or a noun — rather than a verb: aṣbaḥa al-jaww bārid, the weather turned cold."
+    },
+    {
+      "tag": "delta",
+      "text": "The family's negative is lam yaʿud, no longer, and it needs no new machinery: L4-M6's lam with the jussive of yaʿūd. lam aʿud adrus, I no longer study."
+    },
+    {
+      "tag": "interference",
+      "text": "English still and yet are a pair, and mā zāla has no yet inside it. The not-yet half is L4-M6's lam plus the jussive plus baʿd, and the two frames never meet."
+    },
+    {
+      "tag": "free",
+      "text": "THEN AGAINST NOW is built rather than taught: fī al-māḍī plus a kāna clause, then L4-M2's ammā al-ān fa- with a present verb. Keep it to two clauses — a three-part then/later/now is L5's."
+    },
+    {
+      "tag": "free",
+      "text": "tilka is the far demonstrative for a feminine noun or a non-human plural: tilka al-ayyām, those days. It is the phrase a past stretch of time gets told in."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M8-S01",
+      "display": "kuntu adrus fī al-jāmiʿa kull yawm",
+      "script": "كنت أدرس في الجامعة كل يوم",
+      "cue": "I used to study at the university every day",
+      "literal": "I-was I-study in the-university every day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kuntu adrus",
+            "script": "كنت أدرس",
+            "cue": "I used to study",
+            "tag": "delta",
+            "forms": [
+              "kuntu adrus",
+              "kunta tadrus",
+              "kāna yadrus"
+            ],
+            "note": "The habitual past: L1-M5's kāna carries the pastness and the second verb stays in its plain present shape. L3-M10 used this frame once; here it is the grammar."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "English has two shapes for this — used to study, would study — and neither has an Arabic equivalent. kāna alone does the work, and the verb behind it does not move.",
+      "sound": "KUN-tu AD-rus: two separate words, each with its own stress; nothing joins them.",
+      "variations": [
+        {
+          "display": "kāna yadrus fī al-jāmiʿa kull yawm",
+          "script": "كان يدرس في الجامعة كل يوم",
+          "cue": "He used to study at the university every day",
+          "changed": "the person — and it is written on BOTH verbs, kāna and yadrus"
+        },
+        {
+          "display": "kuntu adrus fī al-bayt kull yawm",
+          "script": "كنت أدرس في البيت كل يوم",
+          "cue": "I used to study at home every day",
+          "changed": "where the habit happened"
+        }
+      ],
+      "mistake": {
+        "display": "kuntu darastu fī al-jāmiʿa",
+        "script": "كنت درست في الجامعة",
+        "why": "A past verb in the second slot. That is L4-M3's pluperfect frame minus its qad, and it means I HAD studied — a different past, not a habit."
+      },
+      "usage": "Describing what your life used to look like.",
+      "register": "neutral",
+      "mnemonic": "kāna is the only word that goes back; the verb behind it stays home."
+    },
+    {
+      "id": "L4-M8-S02",
+      "display": "mā zāltu adrus al-ʿarabiyya kull yawm",
+      "script": "ما زلت أدرس العربية كل يوم",
+      "cue": "I still study Arabic every day",
+      "literal": "Not I-ceased I-study the-Arabic every day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mā zāltu",
+            "script": "ما زلت",
+            "cue": "I still",
+            "tag": "delta",
+            "forms": [
+              "mā zāltu",
+              "mā zāla",
+              "mā zālat"
+            ],
+            "note": "Still — literally I have not ceased. It is one of kāna's sisters and sits in exactly kāna's slot, in front of a plain present verb."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          6
+        ]
+      },
+      "trap": "English still is an adverb you drop in anywhere. Arabic still is a VERB at the head of the sentence, and the verb it governs stays present-shaped behind it.",
+      "sound": "mā ZĀL-tu: the zāl is long in the middle, and the -tu is the same I-ending as in kuntu.",
+      "variations": [
+        {
+          "display": "mā zāla ṣadīqī yadrus al-ʿarabiyya",
+          "script": "ما زال صديقي يدرس العربية",
+          "cue": "My friend still studies Arabic",
+          "changed": "the third person — mā zāla, with the person on the sister verb"
+        },
+        {
+          "display": "mā zālat ummī fī al-bayt",
+          "script": "ما زالت أمي في البيت",
+          "cue": "My mother is still at home",
+          "changed": "a feminine subject, and no second verb at all — just a predicate"
+        }
+      ],
+      "mistake": {
+        "display": "mā zāltu darastu al-ʿarabiyya",
+        "script": "ما زلت درست العربية",
+        "why": "A past verb behind mā zāltu. The sisters all take a present-shaped verb; a past one here says nothing at all."
+      },
+      "usage": "Saying a habit has survived into the present.",
+      "register": "neutral",
+      "mnemonic": "mā zāltu = I have not stopped, so what follows is still going."
+    },
+    {
+      "id": "L4-M8-S03",
+      "display": "lam aʿud adrus fī al-jāmiʿa",
+      "script": "لم أعد أدرس في الجامعة",
+      "cue": "I no longer study at the university",
+      "literal": "Not I-returned I-study in the-university",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lam aʿud",
+            "script": "لم أعد",
+            "cue": "I no longer",
+            "tag": "delta",
+            "forms": [
+              "lam aʿud",
+              "lam yaʿud",
+              "lam taʿud"
+            ],
+            "note": "The family's negative, and no new machinery: L4-M6's lam with the jussive of yaʿūd, to return. Literally I did not go back to studying."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          5
+        ]
+      },
+      "trap": "English no longer is two adverbs. Arabic is a negated verb of returning with the real verb behind it, which is why nothing in the English sentence tells you where to put the negative.",
+      "sound": "lam a-ʿUD: the ʿayn sits between the a and the u and squeezes them apart.",
+      "variations": [
+        {
+          "display": "lam yaʿud ṣadīqī yadrus fī al-jāmiʿa",
+          "script": "لم يعد صديقي يدرس في الجامعة",
+          "cue": "My friend no longer studies at the university",
+          "changed": "the third person, on the negated sister and not on the far verb"
+        },
+        {
+          "display": "lam aʿud adhhab ilā as-sūq kull yawm",
+          "script": "لم أعد أذهب إلى السوق كل يوم",
+          "cue": "I no longer go to the market every day",
+          "changed": "which habit stopped"
+        }
+      ],
+      "mistake": {
+        "display": "mā zāltu lā adrus fī al-jāmiʿa",
+        "script": "ما زلت لا أدرس في الجامعة",
+        "why": "Still plus a negative, built the English way. It says I still do not study — a state that never started — where lam aʿud says a habit ended."
+      },
+      "usage": "Marking the end of something you used to do.",
+      "register": "neutral",
+      "mnemonic": "no longer = did not go back: lam aʿud, then the old habit."
+    },
+    {
+      "id": "L4-M8-S04",
+      "display": "aṣbaḥa al-jaww bārid fī tilka al-ayyām",
+      "script": "أصبح الجو بارد في تلك الأيام",
+      "cue": "The weather turned cold in those days",
+      "literal": "Became the-weather cold in those the-days",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aṣbaḥa",
+            "script": "أصبح",
+            "cue": "became, turned",
+            "tag": "free",
+            "forms": [
+              "aṣbaḥa",
+              "aṣbaḥat"
+            ],
+            "note": "A third sister. It takes a predicate rather than a verb — an adjective or a noun — and reports a change into that state."
+          },
+          {
+            "display": "tilka",
+            "script": "تلك",
+            "cue": "those, that (feminine)",
+            "tag": "free",
+            "forms": [
+              "tilka",
+              "tilka al-ayyām"
+            ],
+            "note": "The far demonstrative for a feminine word or a non-human plural. tilka al-ayyām, those days, is the phrase this module lives in."
+          }
+        ],
+        "rules": [
+          0,
+          4,
+          8
+        ]
+      },
+      "trap": "English became needs a subject in front of it. Arabic puts the sister verb FIRST and the subject after, so the sentence opens on the change itself.",
+      "sound": "aṣ-BA-ḥa: the ṣ is heavy and pulls the vowel after it back, and the final ḥ is the breathy throat one.",
+      "variations": [
+        {
+          "display": "aṣbaḥa al-ʿamal ṣaʿb fī tilka al-ayyām",
+          "script": "أصبح العمل صعب في تلك الأيام",
+          "cue": "The work turned hard in those days",
+          "changed": "what changed, and into what"
+        },
+        {
+          "display": "ṣāra al-jaww bārid fī tilka al-ayyām",
+          "script": "صار الجو بارد في تلك الأيام",
+          "cue": "The weather turned cold in those days",
+          "changed": "ṣāra for aṣbaḥa — the two are near enough to swap here"
+        }
+      ],
+      "mistake": {
+        "display": "kāna al-jaww aṣbaḥa bārid",
+        "script": "كان الجو أصبح بارد",
+        "why": "Two sisters stacked. Each one already carries the whole frame, so one is always enough; stacking them is the commonest over-reach once the class is named."
+      },
+      "usage": "Setting the scene of a past stretch of time.",
+      "register": "neutral",
+      "mnemonic": "aṣbaḥa = it got to be, and what it got to be comes last."
+    },
+    {
+      "id": "L4-M8-S05",
+      "display": "ṣāra al-ʿamal ṣaʿb baʿda dhālika",
+      "script": "صار العمل صعب بعد ذلك",
+      "cue": "The work became hard after that",
+      "literal": "Became the-work hard after that",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ṣāra",
+            "script": "صار",
+            "cue": "became, came to be",
+            "tag": "free",
+            "forms": [
+              "ṣāra",
+              "ṣārat"
+            ],
+            "note": "The fourth sister, and aṣbaḥa's everyday twin. aṣbaḥa leans on a change that has settled; ṣāra is the plainer word for the same move."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "English has become, get, turn and go for this, and picks by collocation. Arabic has two words that cover the lot, and neither one is tied to a particular adjective.",
+      "sound": "ṢĀ-ra: one long heavy syllable, the ṣ made with the tongue flat and the back of the mouth open.",
+      "variations": [
+        {
+          "display": "ṣārat al-madrasa kabīra baʿda dhālika",
+          "script": "صارت المدرسة كبيرة بعد ذلك",
+          "cue": "The school became big after that",
+          "changed": "a feminine subject, so the sister takes -at and the adjective agrees"
+        },
+        {
+          "display": "aṣbaḥa al-ʿamal ṣaʿb baʿda dhālika",
+          "script": "أصبح العمل صعب بعد ذلك",
+          "cue": "The work became hard after that",
+          "changed": "aṣbaḥa for ṣāra — the swap runs both ways"
+        }
+      ],
+      "mistake": {
+        "display": "ṣāra al-ʿamal kāna ṣaʿb",
+        "script": "صار العمل كان صعب",
+        "why": "kāna behind another sister. The sisters are alternatives to one another, never a chain: whichever one is at the head of the sentence has already done the whole job."
+      },
+      "usage": "Naming the moment a state changed.",
+      "register": "neutral",
+      "mnemonic": "ṣāra and aṣbaḥa are one word with two spellings, near enough."
+    },
+    {
+      "id": "L4-M8-S06",
+      "display": "fī al-māḍī kuntu adrus kull yawm, ammā al-ān fa-adhhab ilā al-ʿamal",
+      "script": "في الماضي كنت أدرس كل يوم، أما الآن فأذهب إلى العمل",
+      "cue": "In the past I used to study every day, but now I go to work",
+      "literal": "In the-past I-was I-study every day, as-for the-now so-I-go to the-work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fī al-māḍī",
+            "script": "في الماضي",
+            "cue": "in the past, back then",
+            "tag": "free",
+            "forms": [
+              "fī al-māḍī",
+              "al-māḍī"
+            ],
+            "note": "The phrase that opens a then-against-now contrast. It is indexed whole, and it sets up the ammā clause rather than standing alone."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          7
+        ]
+      },
+      "trap": "English can leave the contrast implied — I used to study; now I work. Arabic marks BOTH halves, and the second half's fa- is not optional once ammā has opened it.",
+      "sound": "fī al-MĀ-ḍī: the ḍ is heavy and the ī after it is long, so the word ends on a low falling note.",
+      "variations": [
+        {
+          "display": "fī al-māḍī kāna yadrus, ammā al-ān fa-yadhhab ilā al-ʿamal",
+          "script": "في الماضي كان يدرس، أما الآن فيذهب إلى العمل",
+          "cue": "In the past he used to study, but now he goes to work",
+          "changed": "the person, carried through both halves"
+        },
+        {
+          "display": "al-māḍī jamīl, ammā al-ān fa-adhhab ilā al-ʿamal kull yawm",
+          "script": "الماضي جميل، أما الآن فأذهب إلى العمل كل يوم",
+          "cue": "The past is beautiful, but now I go to work every day",
+          "changed": "al-māḍī standing on its own as a noun, with no fī in front"
+        }
+      ],
+      "mistake": {
+        "display": "fī al-māḍī kuntu adrus, ammā al-ān adhhab ilā al-ʿamal",
+        "script": "في الماضي كنت أدرس، أما الآن أذهب إلى العمل",
+        "why": "ammā with no fa- behind it. L4-M2 opened the pair and it is a pair: ammā raises the topic and fa- answers it, and the answer cannot arrive bare."
+      },
+      "usage": "Setting a life you had against the life you have, in one breath.",
+      "register": "neutral",
+      "mnemonic": "ammā asks, fa- answers; kāna is on one side of the comma only."
+    },
+    {
+      "id": "L4-M8-S07",
+      "display": "sābiqan kāna al-bayt ṣaghīr",
+      "script": "سابقاً كان البيت صغير",
+      "cue": "Previously the house was small",
+      "literal": "Previously was the-house small",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sābiqan",
+            "script": "سابقاً",
+            "cue": "previously, formerly",
+            "tag": "free",
+            "forms": [
+              "sābiqan"
+            ],
+            "note": "Formerly. It carries the -an ending of L1-M4's dāʾiman and aḥyānan, and it points at a stretch that is over."
+          },
+          {
+            "display": "ṣaghīr",
+            "script": "صغير",
+            "cue": "small",
+            "tag": "free",
+            "forms": [
+              "ṣaghīr",
+              "ṣaghīra"
+            ],
+            "note": "Small — the opposite of L1-M3's kabīr, and it agrees with its noun the same way."
+          }
+        ],
+        "rules": [
+          0,
+          7
+        ]
+      },
+      "trap": "English previously can sit anywhere in the sentence. Arabic puts it at the front, and the verb still comes before the subject behind it.",
+      "sound": "SĀ-bi-qan: the q is made far back against the soft palate, deeper than an English k.",
+      "variations": [
+        {
+          "display": "sābiqan kānat al-madrasa ṣaghīra",
+          "script": "سابقاً كانت المدرسة صغيرة",
+          "cue": "Previously the school was small",
+          "changed": "a feminine subject, so both kāna and the adjective agree with it"
+        },
+        {
+          "display": "kāna al-bayt ṣaghīr fī tilka al-ayyām",
+          "script": "كان البيت صغير في تلك الأيام",
+          "cue": "The house was small in those days",
+          "changed": "the time phrase moved to the end, as tilka al-ayyām"
+        }
+      ],
+      "mistake": {
+        "display": "sābiqan al-bayt ṣaghīr",
+        "script": "سابقاً البيت صغير",
+        "why": "A nominal sentence with no kāna. Arabic's verbless sentence is PRESENT by default, so this says the house is small now — and sābiqan cannot drag it into the past on its own."
+      },
+      "usage": "Comparing how a place used to be with how it is.",
+      "register": "neutral",
+      "mnemonic": "sābiqan sets the time; kāna is still what carries the past."
+    },
+    {
+      "id": "L4-M8-S08",
+      "display": "fī aṭ-ṭufūla kuntu ṭifl saʿīd",
+      "script": "في الطفولة كنت طفل سعيد",
+      "cue": "In childhood I was a happy child",
+      "literal": "In the-childhood I-was child happy",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aṭ-ṭufūla",
+            "script": "الطفولة",
+            "cue": "childhood",
+            "tag": "free",
+            "forms": [
+              "aṭ-ṭufūla",
+              "ṭufūla"
+            ],
+            "note": "Childhood, as a stretch of time. The article assimilates to the ṭ, so it is written aṭ-ṭ- and heard as one long ṭ."
+          },
+          {
+            "display": "ṭifl",
+            "script": "طفل",
+            "cue": "a child",
+            "tag": "free",
+            "forms": [
+              "ṭifl",
+              "ṭifla"
+            ],
+            "note": "A child, younger than L2-M3's walad. Its feminine is ṭifla."
+          }
+        ],
+        "rules": [
+          0,
+          7
+        ]
+      },
+      "trap": "English says as a child and needs no verb. Arabic needs kāna: without it the sentence slides into the present and claims you are a child now.",
+      "sound": "aṭ-ṭu-FŪ-la: the doubled ṭ at the front is held, and the ū in the middle is long.",
+      "variations": [
+        {
+          "display": "fī aṭ-ṭufūla kuntu ṭifla saʿīda",
+          "script": "في الطفولة كنت طفلة سعيدة",
+          "cue": "In childhood I was a happy child (a girl speaking)",
+          "changed": "the speaker's gender, on both the noun and the adjective"
+        },
+        {
+          "display": "fī aṭ-ṭufūla kuntu adrus fī tilka al-madrasa",
+          "script": "في الطفولة كنت أدرس في تلك المدرسة",
+          "cue": "In childhood I used to study at that school",
+          "changed": "a habit instead of a state, so the frame goes back to kāna + present"
+        }
+      ],
+      "mistake": {
+        "display": "fī aṭ-ṭufūla anā ṭifl saʿīd",
+        "script": "في الطفولة أنا طفل سعيد",
+        "why": "anā where kuntu belongs. The pronoun makes a present nominal sentence; only kāna puts it in the past."
+      },
+      "usage": "Reaching back past the years you can date.",
+      "register": "neutral",
+      "mnemonic": "aṭ-ṭufūla is the ṭifl years."
+    },
+    {
+      "id": "L4-M8-S09",
+      "display": "lā yazāl al-mudīr fī al-maktab",
+      "script": "لا يزال المدير في المكتب",
+      "cue": "The manager is still at the office",
+      "literal": "Not he-ceases the-manager in the-office",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lā yazāl",
+            "script": "لا يزال",
+            "cue": "he is still",
+            "tag": "free",
+            "forms": [
+              "lā yazāl"
+            ],
+            "note": "mā zāla's present-shaped twin, and the commoner one in writing. Same sister, same slot, and here with a predicate rather than a verb behind it."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          6
+        ]
+      },
+      "trap": "English still is one word whatever the tense. Arabic has a past-shaped mā zāla and a present-shaped lā yazāl for the same idea, and neither is about time — both mean now.",
+      "sound": "lā ya-ZĀL: the negative lā is long, and yazāl carries the stress on its long ā.",
+      "variations": [
+        {
+          "display": "mā zāla al-mudīr fī al-maktab",
+          "script": "ما زال المدير في المكتب",
+          "cue": "The manager is still at the office",
+          "changed": "mā zāla for lā yazāl — the same claim in the past-shaped twin"
+        },
+        {
+          "display": "lā yazāl al-maktab maftūḥ",
+          "script": "لا يزال المكتب مفتوح",
+          "cue": "The office is still open",
+          "changed": "the predicate: L3-M8's participle instead of a place"
+        }
+      ],
+      "mistake": {
+        "display": "lam yazāl al-mudīr fī al-maktab",
+        "script": "لم يزال المدير في المكتب",
+        "why": "lam put on zāla. The family's negative is lam yaʿud, no longer; lā yazāl is already a negative on the inside and takes nothing more."
+      },
+      "usage": "Reporting that a state has not ended.",
+      "register": "neutral",
+      "mnemonic": "lā yazāl and mā zāla: two shapes, one now."
+    },
+    {
+      "id": "L4-M8-S10",
+      "display": "kuntu ṭālib sābiqan, wa al-ān aṣbaḥtu mudīr",
+      "script": "كنت طالب سابقاً، والآن أصبحت مدير",
+      "cue": "I was a student previously, and now I have become a manager",
+      "literal": "I-was student previously, and the-now I-became manager",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aṣbaḥtu",
+            "script": "أصبحت",
+            "cue": "I became",
+            "tag": "free",
+            "forms": [
+              "aṣbaḥtu"
+            ],
+            "note": "The I-cell of S04's aṣbaḥa. The sisters take the same person endings as any past verb, so kuntu and aṣbaḥtu rhyme."
+          }
+        ],
+        "rules": [
+          0,
+          4,
+          7
+        ]
+      },
+      "trap": "English marks the change with a perfect — I have become — and Arabic marks it with a plain past. Nothing in aṣbaḥtu says recently; al-ān does that.",
+      "sound": "aṣ-BAḤ-tu: the ḥ before the -tu is the breathy throat one and is not swallowed.",
+      "variations": [
+        {
+          "display": "kuntu ṭālib sābiqan, wa al-ān aṣbaḥtu muwaẓẓaf",
+          "script": "كنت طالب سابقاً، والآن أصبحت موظف",
+          "cue": "I was a student previously, and now I have become a clerk",
+          "changed": "what you became"
+        },
+        {
+          "display": "kāna ṭālib sābiqan, wa al-ān aṣbaḥa mudīr",
+          "script": "كان طالب سابقاً، والآن أصبح مدير",
+          "cue": "He was a student previously, and now he has become a manager",
+          "changed": "the person, carried across both halves"
+        }
+      ],
+      "mistake": {
+        "display": "kuntu ṭālib sābiqan, wa al-ān kuntu mudīr",
+        "script": "كنت طالب سابقاً، والآن كنت مدير",
+        "why": "kāna in the now half. kāna is the past sister; the one that reaches the present from a change is aṣbaḥa, and al-ān cannot repair the wrong verb."
+      },
+      "usage": "The one-line version of your own history.",
+      "register": "neutral",
+      "mnemonic": "kuntu then, aṣbaḥtu now — the sisters carry the whole story."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M8-C01",
+      "display": "kuntu adrus fī al-jāmiʿa kull yawm",
+      "script": "كنت أدرس في الجامعة كل يوم",
+      "cue": "I used to study at the university every day"
+    },
+    {
+      "id": "L4-M8-C02",
+      "display": "mā zāltu adrus al-ʿarabiyya kull yawm",
+      "script": "ما زلت أدرس العربية كل يوم",
+      "cue": "I still study Arabic every day"
+    },
+    {
+      "id": "L4-M8-C03",
+      "display": "lam aʿud adrus fī al-jāmiʿa",
+      "script": "لم أعد أدرس في الجامعة",
+      "cue": "I no longer study at the university"
+    },
+    {
+      "id": "L4-M8-C04",
+      "display": "aṣbaḥa al-jaww bārid fī tilka al-ayyām",
+      "script": "أصبح الجو بارد في تلك الأيام",
+      "cue": "The weather turned cold in those days"
+    },
+    {
+      "id": "L4-M8-C05",
+      "display": "ṣāra al-ʿamal ṣaʿb baʿda dhālika",
+      "script": "صار العمل صعب بعد ذلك",
+      "cue": "The work became hard after that"
+    },
+    {
+      "id": "L4-M8-C06",
+      "display": "fī al-māḍī kuntu adrus kull yawm, ammā al-ān fa-adhhab ilā al-ʿamal",
+      "script": "في الماضي كنت أدرس كل يوم، أما الآن فأذهب إلى العمل",
+      "cue": "In the past I used to study every day, but now I go to work"
+    },
+    {
+      "id": "L4-M8-C07",
+      "display": "sābiqan kāna al-bayt ṣaghīr",
+      "script": "سابقاً كان البيت صغير",
+      "cue": "Previously the house was small"
+    },
+    {
+      "id": "L4-M8-C08",
+      "display": "fī aṭ-ṭufūla kuntu ṭifl saʿīd",
+      "script": "في الطفولة كنت طفل سعيد",
+      "cue": "In childhood I was a happy child"
+    },
+    {
+      "id": "L4-M8-C09",
+      "display": "lā yazāl al-mudīr fī al-maktab",
+      "script": "لا يزال المدير في المكتب",
+      "cue": "The manager is still at the office"
+    },
+    {
+      "id": "L4-M8-C10",
+      "display": "kuntu ṭālib sābiqan, wa al-ān aṣbaḥtu mudīr",
+      "script": "كنت طالب سابقاً، والآن أصبحت مدير",
+      "cue": "I was a student previously, and now I have become a manager"
+    },
+    {
+      "id": "L4-M8-C11",
+      "display": "mā zāla ṣadīqī yadrus, wa lam yaʿud yaʿmal",
+      "script": "ما زال صديقي يدرس، ولم يعد يعمل",
+      "cue": "My friend still studies, and he no longer works"
+    },
+    {
+      "id": "L4-M8-C12",
+      "display": "fī tilka al-ayyām kāna al-bayt ṣaghīr wa jamīl",
+      "script": "في تلك الأيام كان البيت صغير وجميل",
+      "cue": "In those days the house was small and beautiful"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

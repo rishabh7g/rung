@@ -1,0 +1,537 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M7",
+  "title": "Official talk",
+  "job": "Announcements, offices and counters: the formal register you hear",
+  "prerequisites": ["L4-M1", "L4-M2", "L4-M3", "L4-M4", "L4-M5", "L4-M6"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": ["présent", "passé composé", "futur simple (recognition, 3rd person)", "infinitif"],
+    "allowedPatterns": [
+      "Veuillez + V-inf",
+      "Merci de + V-inf",
+      "Il est interdit de + V-inf",
+      "Le + <noun> + à destination de + <place> + <futur simple>",
+      "En raison de + <noun> + , + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THIS MODULE IS FOR UNDERSTANDING, NOT FOR COPYING. Everything on the left of it — the announcement, the notice, the clerk — is French spoken AT you, and the job is to recognise it fast. What you say back is on the right, and it is short and ordinary. Read the module in two columns and do not let the first one leak into your own mouth."
+    },
+    {
+      "tag": "delta",
+      "text": "OFFICIALESE HAS ITS OWN IMPERATIVE, AND IT NAMES NOBODY. L4-M1's imperative is for people talking to people; a notice uses veuillez + infinitive, prière de + infinitive, merci de + infinitive and il est interdit de + infinitive. All four are followed by the plain infinitive and none of them has a subject at all — which is exactly what makes them sound official rather than bossy."
+    },
+    {
+      "tag": "delta",
+      "text": "THE ANNOUNCEMENT TENSE IS ONE YOU ONLY HAVE TO RECOGNISE. le train partira, le guichet sera fermé, la mairie ouvrira — this is the futur simple, which this course has deliberately never taught, and it arrives here in the THIRD PERSON only, because that is where a learner meets it. Your own future stays L1-M6's aller + infinitive: je vais partir, never je partirai. Read the -ra ending; do not start making plans in it."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH OFFICIALESE SHORTENS AND FRENCH LENGTHENS. English writes no smoking and mind the gap; French writes en raison de travaux, à destination de Paris, en provenance de Lyon — a preposition, a noun, and no verb anywhere. A learner scanning the line for a verb finds a noun and gives up. Find the NOUN first: travaux, destination, provenance, retard. That is where the meaning is."
+    },
+    {
+      "tag": "delta",
+      "text": "THE SAME MEANING IN A HIGHER REGISTER IS A DIFFERENT WORD. attendre becomes patienter, and the queue's next person becomes au suivant. Neither is new grammar and neither is politer to say yourself — they are simply what the counter says, and knowing the pair is what stops you standing there parsing."
+    },
+    {
+      "tag": "delta",
+      "text": "votre AND vos ARE THE POSSESSIVE THAT MATCHES THE vous THIS COURSE SPEAKS. votre for one thing, vos for several: votre dossier, vos documents. Every notice and every clerk uses them, and thirty modules of vous had never yet needed one."
+    },
+    {
+      "tag": "interference",
+      "text": "pourriez-vous IS ONE FROZEN SURFACE, NOT AN INVITATION TO INVERT. docs/74 §2 keeps est-ce que as this course's question marker and that stands. pourriez-vous is learnt whole, like rendez-vous, because it is what you actually hear at a counter — and its hyphen is the only inversion this level admits."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M7-S01",
+      "display": "Veuillez patienter, le guichet va ouvrir",
+      "cue": "Please wait, the counter is about to open",
+      "literal": "Be-pleased to-wait, the counter goes to-open",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "veuillez",
+            "cue": "please (do this)",
+            "tag": "delta",
+            "forms": ["veuillez"],
+            "note": "The notice's please. It takes a bare infinitive and names nobody, which is why it reads as official rather than as an order from a person."
+          },
+          {
+            "display": "patienter",
+            "cue": "to wait (formal)",
+            "tag": "delta",
+            "forms": ["patienter"],
+            "note": "The counter's word for L3-M5's attendre. Same meaning, higher register — you will hear it far more often than you will need to say it."
+          },
+          {
+            "display": "guichet",
+            "cue": "counter, ticket window",
+            "tag": "free",
+            "forms": ["guichet"],
+            "note": "The window you queue at in a station, a post office or a town hall. Not a desk you sit at — that is L3-M2's bureau."
+          }
+        ],
+        "rules": [0, 1, 4]
+      },
+      "trap": "veuillez looks like a form of vouloir you should be able to conjugate. Do not: at this level it is one fixed word that opens a notice, and nothing else in the family is being taught.",
+      "sound": "vuh-YAY pah-syahn-TAY, luh gee-SHEH vah oo-VREER. veuillez is two syllables; the ill is a y sound, as in travailler.",
+      "variations": [
+        {
+          "display": "Veuillez patienter, le bureau va ouvrir",
+          "cue": "Please wait, the office is about to open",
+          "changed": "the place that is opening"
+        },
+        {
+          "display": "Veuillez signer le dossier au guichet",
+          "cue": "Please sign the file at the counter",
+          "changed": "another infinitive after veuillez"
+        }
+      ],
+      "mistake": {
+        "display": "Veuillez vous patientez, le guichet va ouvrir",
+        "why": "veuillez is already the polite form and takes a plain infinitive. Conjugating the second verb after it makes two commands in one breath."
+      },
+      "usage": "The line you hear before a counter opens, and the one printed on the sign beside it.",
+      "register": "formal",
+      "mnemonic": "veuillez, then the bare infinitive."
+    },
+    {
+      "id": "L4-M7-S02",
+      "display": "Merci de signer votre dossier au guichet",
+      "cue": "Please sign your file at the counter",
+      "literal": "Thank-you of to-sign your file at-the counter",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "merci de",
+            "cue": "please (kindly do this)",
+            "tag": "delta",
+            "forms": ["merci de"],
+            "note": "A request dressed as a thank-you, and the commonest one on a French notice. Like veuillez it takes the infinitive and names nobody."
+          },
+          {
+            "display": "votre",
+            "cue": "your",
+            "tag": "delta",
+            "forms": ["votre", "vos"],
+            "note": "The possessive that goes with the vous this course speaks. votre for one thing, vos for several: votre dossier, vos documents."
+          },
+          {
+            "display": "dossier",
+            "cue": "file, case, paperwork",
+            "tag": "free",
+            "forms": ["dossier"],
+            "note": "The whole bundle an office holds on you, not one sheet. L3-M8's formulaire is the sheet you fill in; this is what it goes into."
+          }
+        ],
+        "rules": [1, 5]
+      },
+      "trap": "Merci de looks like gratitude for something already done. It is not: on a notice it is a request, and the thing has not happened yet.",
+      "sound": "mair-SEE duh see-NYAY votr doh-SYAY oh gee-SHEH. votre loses its e before a consonant and comes out as one syllable, votr.",
+      "variations": [
+        {
+          "display": "Merci de patienter au guichet",
+          "cue": "Please wait at the counter",
+          "changed": "another infinitive, and the object drops"
+        },
+        {
+          "display": "Merci de signer votre dossier ici",
+          "cue": "Please sign your file here",
+          "changed": "the place becomes a plain here"
+        }
+      ],
+      "mistake": {
+        "display": "Merci pour signer votre dossier au guichet",
+        "why": "merci pour takes a noun — merci pour le café. In front of a verb it is always merci de, and the verb stays an infinitive."
+      },
+      "usage": "The notice taped to the glass, and what the clerk says while sliding the paper across.",
+      "register": "formal",
+      "mnemonic": "merci de + verb, merci pour + noun."
+    },
+    {
+      "id": "L4-M7-S03",
+      "display": "Il est interdit de manger ici",
+      "cue": "Eating is not allowed here",
+      "literal": "It is forbidden of to-eat here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "il est interdit de",
+            "cue": "it is forbidden to",
+            "tag": "delta",
+            "forms": ["il est interdit de"],
+            "note": "Four words and one sign. The il is nobody at all — the same empty il as il faut — and the verb after de stays an infinitive."
+          },
+          {
+            "display": "prière de",
+            "cue": "kindly, you are asked to",
+            "tag": "free",
+            "forms": ["prière de"],
+            "note": "The softer notice, one step below interdit. Same shape: prière de plus an infinitive, and no subject anywhere."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "English signs shorten to two words — no eating — so a learner looks for a French two-word equivalent and invents one. French spells the whole thing out, and the extra length is the register.",
+      "sound": "eel eh-tan-tair-DEE duh mahn-ZHAY ee-SEE. est interdit links across the t, and the final t of interdit is silent.",
+      "variations": [
+        {
+          "display": "Prière de ne pas manger ici",
+          "cue": "Kindly do not eat here",
+          "changed": "the softer notice, and the negation wraps the infinitive"
+        },
+        {
+          "display": "Il est interdit de manger dans le bureau",
+          "cue": "Eating is not allowed in the office",
+          "changed": "the place is named instead of pointed at"
+        }
+      ],
+      "mistake": {
+        "display": "Il est interdit manger ici",
+        "why": "the de is not optional. interdit needs it before the infinitive, exactly as avant does in L4-M6's avant de partir."
+      },
+      "usage": "Reading a sign on a door fast enough to stop before you have broken it.",
+      "register": "formal",
+      "mnemonic": "interdit de, then the infinitive."
+    },
+    {
+      "id": "L4-M7-S04",
+      "display": "Le train à destination de Paris partira du quai trois",
+      "cue": "The train to Paris will leave from platform three",
+      "literal": "The train at destination of Paris will-leave from-the platform three",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "à destination de",
+            "cue": "bound for, going to",
+            "tag": "interference",
+            "forms": ["à destination de"],
+            "note": "Three words where English says one to. It follows the noun, not the verb: le train à destination de Paris."
+          },
+          {
+            "display": "sera",
+            "cue": "will be",
+            "tag": "delta",
+            "forms": ["sera", "partira", "ouvrira"],
+            "note": "The announcement future, third person only: sera, partira, ouvrira. Recognise the -ra. Your own future stays L1-M6's je vais partir."
+          },
+          {
+            "display": "quai",
+            "cue": "platform",
+            "tag": "free",
+            "forms": ["quai"],
+            "note": "The platform a train leaves from, numbered on the board. It is also the word for a quayside, which is where the sense comes from."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "The English ear waits for a verb and hears à destination de as a stall. It is not a verb and never becomes one — it is a preposition, and the verb is the -ra word much further along.",
+      "sound": "luh tran ah des-tee-nah-SYON duh pah-REE par-tee-RAH dew keh trwah. The -ra of partira takes the stress, which is what makes it audible over a station tannoy.",
+      "variations": [
+        {
+          "display": "Le train à destination de Paris partira à dix heures",
+          "cue": "The train to Paris will leave at ten o'clock",
+          "changed": "a time replaces the platform"
+        },
+        {
+          "display": "Le train à destination de Paris partira du quai deux",
+          "cue": "The train to Paris will leave from platform two",
+          "changed": "the platform number"
+        }
+      ],
+      "mistake": {
+        "display": "Le train à Paris va partir du quai trois",
+        "why": "à Paris alone is where the train IS, not where it is going, and va partir is your own spoken future. An announcement says à destination de and partira."
+      },
+      "usage": "Catching the right train off a board or a tannoy, which is the only place this sentence lives.",
+      "register": "formal",
+      "mnemonic": "Hear the -ra; do not say the -rai."
+    },
+    {
+      "id": "L4-M7-S05",
+      "display": "Le train en provenance de Paris a du retard",
+      "cue": "The train from Paris is delayed",
+      "literal": "The train in provenance of Paris has of-the delay",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "en provenance de",
+            "cue": "coming from, arriving from",
+            "tag": "free",
+            "forms": ["en provenance de"],
+            "note": "The mirror of à destination de, and the pair is how a board separates arrivals from departures. Again a noun where English uses from."
+          },
+          {
+            "display": "retard",
+            "cue": "delay",
+            "tag": "free",
+            "forms": ["retard"],
+            "note": "The delay itself, as a thing you HAVE: a du retard. L4-M2's en retard is the person who is late; this is the minutes lost."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "English says the train IS delayed. French says it HAS delay — avoir, not être — and a learner reaching for est en retard has just described a person instead of a service.",
+      "sound": "luh tran ahn pro-vuh-NAHNS duh pah-REE ah dew ruh-TAR. The final d of retard is silent, and provenance carries its stress on the last syllable.",
+      "variations": [
+        {
+          "display": "Le bus en provenance de Paris a du retard",
+          "cue": "The bus from Paris is delayed",
+          "changed": "the service, not the shape"
+        },
+        {
+          "display": "Le train en provenance de Paris est arrivé",
+          "cue": "The train from Paris has arrived",
+          "changed": "the news is good, and the verb changes with it"
+        }
+      ],
+      "mistake": {
+        "display": "Le train en provenance de Paris est retard",
+        "why": "retard is a noun, so it needs a verb that can hold one: a du retard. est en retard would be said of a person, not of a train on a board."
+      },
+      "usage": "Working out from the board whether you have twenty minutes to spare or none.",
+      "register": "formal",
+      "mnemonic": "A train HAS delay; a person IS late."
+    },
+    {
+      "id": "L4-M7-S06",
+      "display": "En raison de travaux, le bureau sera fermé",
+      "cue": "Because of works, the office will be closed",
+      "literal": "In reason of works, the office will-be closed",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "en raison de",
+            "cue": "because of, owing to",
+            "tag": "interference",
+            "forms": ["en raison de"],
+            "note": "The notice's because. It takes a NOUN, never a clause — en raison de travaux — which is what makes official French so noun-heavy."
+          },
+          {
+            "display": "travaux",
+            "cue": "works, roadworks",
+            "tag": "free",
+            "forms": ["travaux"],
+            "note": "Building or repair work, always plural in this sense. It is the single commonest reason a French notice gives for anything being shut."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "L4-M2 taught parce que for because, and it takes a clause. en raison de cannot: put a subject and a verb behind it and the sentence collapses. Noun only.",
+      "sound": "ahn reh-ZOHN duh tra-VOH, luh bew-ROH suh-RAH fair-MAY. travaux ends in an oh sound with no consonant heard at all.",
+      "variations": [
+        {
+          "display": "En raison de travaux, le guichet sera fermé",
+          "cue": "Because of works, the counter will be closed",
+          "changed": "which service is shut"
+        },
+        {
+          "display": "En raison du retard, le bureau sera fermé",
+          "cue": "Because of the delay, the office will be closed",
+          "changed": "another noun as the reason"
+        }
+      ],
+      "mistake": {
+        "display": "En raison que le bureau a des travaux, il sera fermé",
+        "why": "en raison de takes a noun and stops. A clause needs parce que, which is L4-M2's — the two are not interchangeable in either direction."
+      },
+      "usage": "Understanding, in three seconds, why the door in front of you will not open.",
+      "register": "formal",
+      "mnemonic": "en raison DE a noun; parce QUE a clause."
+    },
+    {
+      "id": "L4-M7-S07",
+      "display": "La mairie ouvrira à dix heures",
+      "cue": "The town hall will open at ten",
+      "literal": "The town-hall will-open at ten hours",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mairie",
+            "cue": "town hall",
+            "tag": "free",
+            "forms": ["mairie"],
+            "note": "The town hall, and the office you go to for papers, a marriage or a birth certificate. Every French commune has one and it is where official errands start."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "ouvrira looks like a word you should be able to build from ouvrir for yourself. Leave it: this level reads the -ra and speaks je vais ouvrir.",
+      "sound": "lah meh-REE oo-vree-RAH ah dee-ZUR. mairie is two syllables, meh-ree; dix heures links across the x, heard as a z.",
+      "variations": [
+        {
+          "display": "Le bureau ouvrira à dix heures",
+          "cue": "The office will open at ten",
+          "changed": "the place, not the tense"
+        },
+        {
+          "display": "La mairie ouvrira demain à dix heures",
+          "cue": "The town hall will open tomorrow at ten",
+          "changed": "the day is added in front of the time"
+        }
+      ],
+      "mistake": {
+        "display": "La mairie va ouvrira à dix heures",
+        "why": "va ouvrir and ouvrira are two whole futures, not two halves of one. Pick the announcement's ouvrira or your own va ouvrir, never both."
+      },
+      "usage": "Reading the opening hours off a door before you waste a morning on the wrong one.",
+      "register": "formal",
+      "mnemonic": "One future at a time."
+    },
+    {
+      "id": "L4-M7-S08",
+      "display": "Bonjour madame, je viens pour un rendez-vous",
+      "cue": "Hello, I'm here for an appointment",
+      "literal": "Good-day madam, I come for an appointment",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "madame",
+            "cue": "madam",
+            "tag": "free",
+            "forms": ["madame"],
+            "note": "Said straight after bonjour to anyone behind a counter. Leaving it off is what makes a French greeting sound curt, and it costs nothing to add."
+          },
+          {
+            "display": "viens",
+            "cue": "I'm here, I've come",
+            "tag": "free",
+            "forms": ["viens"],
+            "note": "L1-M10's venir in the present. je viens pour is the whole sentence a French speaker uses to explain why they are standing there."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "This is the other column. After six sentences of officialese the temptation is to answer in it — veuillez, en raison de — and it lands as a parody. What you say back is short and plain.",
+      "sound": "bohn-ZHOOR mah-DAHM, zhuh vyan poor an rahn-day-VOO. viens is one syllable, vyan, with the n nasal and unsounded.",
+      "variations": [
+        {
+          "display": "Bonjour madame, je viens pour le dossier",
+          "cue": "Hello, I'm here about the file",
+          "changed": "the errand"
+        },
+        {
+          "display": "Bonjour madame, je viens pour un document",
+          "cue": "Hello, I'm here for a document",
+          "changed": "what you have come to collect"
+        }
+      ],
+      "mistake": {
+        "display": "Bonjour madame, je suis ici pour un rendez-vous",
+        "why": "je suis ici is understood but reads as a statement of your position. The idiom for turning up somewhere on purpose is je viens pour."
+      },
+      "usage": "The first eight words you say at any counter in France, and the ones that get you served.",
+      "register": "neutral",
+      "mnemonic": "je viens pour, and stop."
+    },
+    {
+      "id": "L4-M7-S09",
+      "display": "Pourriez-vous patienter ici, s'il vous plaît ?",
+      "cue": "Could you wait here, please?",
+      "literal": "Could-you to-wait here, if it you pleases?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pourriez-vous",
+            "cue": "could you",
+            "tag": "interference",
+            "forms": ["pourriez-vous"],
+            "note": "Learnt whole, hyphen and all, like L3-M7's rendez-vous. It is the one inversion this level admits; est-ce que stays the question marker everywhere else."
+          }
+        ],
+        "rules": [6, 4]
+      },
+      "trap": "Seeing a verb and a pronoun swap places invites a learner to do it everywhere — venez-vous, mangez-vous. Do not generalise from this one surface: docs/74 §2 keeps est-ce que, and pourriez-vous is a fixed politeness formula rather than a pattern.",
+      "sound": "poo-ryay-VOO pah-syahn-TAY ee-SEE, seel voo PLEH. The hyphen is heard as a link, not a gap: poo-ryay-voo runs as one word.",
+      "variations": [
+        {
+          "display": "Pourriez-vous ouvrir le guichet, s'il vous plaît ?",
+          "cue": "Could you open the counter, please?",
+          "changed": "what you are asking for"
+        },
+        {
+          "display": "Pourriez-vous signer ici, s'il vous plaît ?",
+          "cue": "Could you sign here, please?",
+          "changed": "another infinitive after the formula"
+        }
+      ],
+      "mistake": {
+        "display": "Pourriez-vous patientez ici, s'il vous plaît ?",
+        "why": "the second verb stays an infinitive. patientez is a command, and stacking it on pourriez-vous asks and orders in the same breath."
+      },
+      "usage": "Asking a clerk, a stranger or a queue for one small thing, in the register they will answer in.",
+      "register": "formal",
+      "mnemonic": "One frozen inversion, then the infinitive."
+    },
+    {
+      "id": "L4-M7-S10",
+      "display": "Au suivant ! Le guichet deux est ouvert",
+      "cue": "Next, please! Counter two is open",
+      "literal": "To-the following! The counter two is open",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "au suivant",
+            "cue": "next, please",
+            "tag": "free",
+            "forms": ["au suivant"],
+            "note": "What the counter calls instead of la personne suivante. Two words, no verb, and it is addressed to the queue rather than to you."
+          },
+          {
+            "display": "ouvert",
+            "cue": "open",
+            "tag": "free",
+            "forms": ["ouvert"],
+            "note": "Said of a door, a counter or an office. Its opposite, fermé, is L4-M2's — this is the row that completes the pair."
+          }
+        ],
+        "rules": [3, 0]
+      },
+      "trap": "Next! in English is aimed at a person. au suivant is aimed at the queue, which is why nobody looks up — and why you have to be counting.",
+      "sound": "oh swee-VAHN ! luh gee-SHEH duh eh oo-VEHR. suivant is two syllables with a nasal ending; the t of ouvert is heard, unlike the one in interdit.",
+      "variations": [
+        {
+          "display": "Au suivant ! Le guichet trois est ouvert",
+          "cue": "Next, please! Counter three is open",
+          "changed": "the counter number"
+        },
+        {
+          "display": "Au suivant ! Le bureau est ouvert",
+          "cue": "Next, please! The office is open",
+          "changed": "the place that has opened"
+        }
+      ],
+      "mistake": {
+        "display": "Au suivant ! Le guichet deux est ouvrir",
+        "why": "ouvrir is the infinitive, the act of opening. The state a counter is in takes the participle-adjective ouvert, as fermé does."
+      },
+      "usage": "Knowing when it is your turn, in a room where nobody will say your name.",
+      "register": "formal",
+      "mnemonic": "ouvert is a state; ouvrir is an act."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L4-M7-C01", "display": "Veuillez patienter au guichet", "cue": "Please wait at the counter" },
+    { "id": "L4-M7-C02", "display": "Merci de signer votre dossier ici", "cue": "Please sign your file here" },
+    { "id": "L4-M7-C03", "display": "Il est interdit de manger dans le bureau", "cue": "Eating is not allowed in the office" },
+    { "id": "L4-M7-C04", "display": "Prière de ne pas manger ici", "cue": "Kindly do not eat here" },
+    { "id": "L4-M7-C05", "display": "Le train à destination de Paris partira à dix heures", "cue": "The train to Paris will leave at ten" },
+    { "id": "L4-M7-C06", "display": "Le train en provenance de Paris a du retard", "cue": "The train from Paris is delayed" },
+    { "id": "L4-M7-C07", "display": "En raison de travaux, le guichet sera fermé", "cue": "Because of works, the counter will be closed" },
+    { "id": "L4-M7-C08", "display": "La mairie ouvrira demain à dix heures", "cue": "The town hall will open tomorrow at ten" },
+    { "id": "L4-M7-C09", "display": "Bonjour madame, je viens pour un rendez-vous", "cue": "Hello, I'm here for an appointment" },
+    { "id": "L4-M7-C10", "display": "Pourriez-vous patienter ici, s'il vous plaît ?", "cue": "Could you wait here, please?" },
+    { "id": "L4-M7-C11", "display": "Au suivant ! Le bureau est ouvert", "cue": "Next, please! The office is open" },
+    { "id": "L4-M7-C12", "display": "Le bureau sera fermé demain", "cue": "The office will be closed tomorrow" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

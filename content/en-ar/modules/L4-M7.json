@@ -1,0 +1,787 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M7",
+  "title": "Official talk",
+  "job": "Announcements, offices and counters: the formal register you hear",
+  "prerequisites": [
+    "L4-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past",
+      "future",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "yurjā + al- + <maṣdar>",
+      "yumnaʿ + al- + <maṣdar>",
+      "V-passive-imperfect + al- + N",
+      "yajibu ʿalā + <N> + an + V-subjunctive",
+      "V-imperative-pl + min faḍlikum"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Arabic makes a passive by changing the VOWELS INSIDE the verb, not by adding an auxiliary: kataba becomes kutiba, yaktub becomes yuktab, dafaʿa becomes dufiʿa. Because this course writes every short vowel, the passive is visible on the page."
+    },
+    {
+      "tag": "delta",
+      "text": "The Arabic passive CANNOT NAME ITS AGENT. There is no by-phrase: yumnaʿ at-tadkhīn min al-mudīr is not a sentence. If who did it matters, the sentence must go back to the active. That is a rule, not a style note."
+    },
+    {
+      "tag": "free",
+      "text": "Every passive cell is a separate surface from its active one and gets its own row here, pointing back at the verb's first-teach row — the same way L3-M4 handled its jussive cells, and for the same reason: a level never edits a file below it."
+    },
+    {
+      "tag": "free",
+      "text": "yurjā, it is requested, in front of a maṣdar is the polite public announcement: yurjā al-intiẓār. It takes a noun, never a verb, and it is aimed at everybody and nobody."
+    },
+    {
+      "tag": "free",
+      "text": "yumnaʿ, it is forbidden, is the prohibition a guard speaks. It stands BESIDE L3-M8's participle mamnūʿ rather than replacing it: the sign reads mamnūʿ at-tadkhīn and the guard says yumnaʿ at-tadkhīn."
+    },
+    {
+      "tag": "delta",
+      "text": "THE PLURAL OF POLITENESS: min faḍlikum, tafaḍḍalū and the plural imperative are what a clerk uses to ONE person. The number is deference, not arithmetic, and English has nothing that does this."
+    },
+    {
+      "tag": "interference",
+      "text": "English officialese is passive AND wordy. Arabic officialese is passive and NOMINAL: it prefers a maṣdar where English prefers a clause — at the moment of boarding, not when you board. That is L3-M1's maṣdar doing its third job."
+    },
+    {
+      "tag": "interference",
+      "text": "English politeness at a counter is interrogative — could you possibly, would you mind. Arabic politeness is impersonal: yurjā, yajibu ʿalayka. A British question translated straight into Arabic sounds evasive rather than polite."
+    },
+    {
+      "tag": "free",
+      "text": "You have already met one of these without knowing it was a system: L3-M10's wulidtu and wulida, I was born, he was born. That u-i shape is the passive, and this module is where it becomes a pattern."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M7-S01",
+      "display": "yurjā al-intiẓār fī aṭ-ṭābūr ḥattā yaʾtī ad-dawr",
+      "script": "يرجى الانتظار في الطابور حتى يأتي الدور",
+      "cue": "Please wait in the queue until your turn comes",
+      "literal": "It-is-requested the-waiting in the-queue until he-comes the-turn",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yurjā",
+            "script": "يرجى",
+            "cue": "it is requested",
+            "tag": "delta",
+            "forms": [
+              "yurjā"
+            ],
+            "note": "The announcement verb, and a passive: nobody is doing the requesting. It takes a noun behind it, never a verb."
+          },
+          {
+            "display": "al-intiẓār",
+            "script": "الانتظار",
+            "cue": "the waiting",
+            "tag": "free",
+            "forms": [
+              "al-intiẓār",
+              "intiẓār"
+            ],
+            "note": "The maṣdar of L2-M10's intaẓartu — the waiting, as a thing. This is the noun yurjā is built to take."
+          },
+          {
+            "display": "aṭ-ṭābūr",
+            "script": "الطابور",
+            "cue": "the queue, the line",
+            "tag": "free",
+            "forms": [
+              "aṭ-ṭābūr",
+              "ṭābūr"
+            ],
+            "note": "The queue at a counter. The article assimilates to the ṭ, so it is written aṭ-ṭ- and heard as one long ṭ."
+          },
+          {
+            "display": "ad-dawr",
+            "script": "الدور",
+            "cue": "the turn",
+            "tag": "free",
+            "forms": [
+              "ad-dawr",
+              "dawr"
+            ],
+            "note": "Your turn in a queue. ad-dawr ʿalayka, the turn is on you, is what a clerk says to call you forward."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3,
+          5
+        ]
+      },
+      "trap": "The English is an imperative aimed at you — please wait. The Arabic names no one at all: it is requested, and the request hangs in the air over the whole hall.",
+      "sound": "yur-JĀ: the j is the soft one of French jour in much of the Levant and the hard English j in Egypt; either is heard here.",
+      "variations": [
+        {
+          "display": "yurjā al-intiẓār hunā",
+          "script": "يرجى الانتظار هنا",
+          "cue": "Please wait here",
+          "changed": "the shortest form of the announcement, with no clause at all"
+        },
+        {
+          "display": "yurjā al-ḥajz qabla al-wuṣūl",
+          "script": "يرجى الحجز قبل الوصول",
+          "cue": "Booking is requested before arrival",
+          "changed": "a different maṣdar behind yurjā, and L3-M1's al-wuṣūl behind qabla"
+        }
+      ],
+      "mistake": {
+        "display": "hal mumkin an tantaẓir fī aṭ-ṭābūr?",
+        "script": "هل ممكن أن تنتظر في الطابور؟",
+        "why": "A British counter question. Politeness in Arabic officialese is impersonal, not interrogative — a question here sounds evasive rather than polite, as if the clerk were unsure of the rule."
+      },
+      "usage": "What a loudspeaker or a sign at a counter says to everybody at once.",
+      "register": "formal",
+      "mnemonic": "yurjā asks nobody and everybody: a verb with no doer, then a noun."
+    },
+    {
+      "id": "L4-M7-S02",
+      "display": "yumnaʿ at-tadkhīn fī al-maktab",
+      "script": "يمنع التدخين في المكتب",
+      "cue": "Smoking is forbidden in the office",
+      "literal": "It-is-forbidden the-smoking in the-office",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yumnaʿ",
+            "script": "يمنع",
+            "cue": "it is forbidden",
+            "tag": "delta",
+            "forms": [
+              "yumnaʿ"
+            ],
+            "note": "The guard's prohibition, and yurjā's opposite number. It stands beside L3-M8's mamnūʿ rather than replacing it: the sign reads mamnūʿ, the guard says yumnaʿ."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4
+        ]
+      },
+      "trap": "English can name the forbidder — smoking is forbidden BY MANAGEMENT. Arabic cannot: there is no by-phrase behind a passive, and adding min plus a person turns the sentence into nonsense.",
+      "sound": "yum-naʿ: the final ʿayn is a squeeze low in the throat that stops the word; it is not the hamza catch of yabdaʾ.",
+      "variations": [
+        {
+          "display": "mamnūʿ at-tadkhīn fī al-maktab",
+          "script": "ممنوع التدخين في المكتب",
+          "cue": "Smoking forbidden in the office",
+          "changed": "L3-M8's participle in place of the verb — what the sign shows rather than what the guard says"
+        },
+        {
+          "display": "yumnaʿ at-tadkhīn hunā",
+          "script": "يمنع التدخين هنا",
+          "cue": "Smoking is forbidden here",
+          "changed": "the place, cut to one word"
+        }
+      ],
+      "mistake": {
+        "display": "at-tadkhīn yumnaʿ min al-mudīr",
+        "script": "التدخين يمنع من المدير",
+        "why": "A by-phrase. The English passive can name its agent and the Arabic passive cannot — min al-mudīr reads as forbidden FROM the manager, which is not a sentence anybody says."
+      },
+      "usage": "A sign, a guard, or a recorded announcement setting a rule.",
+      "register": "formal",
+      "mnemonic": "mamnūʿ is painted on the wall; yumnaʿ comes out of a mouth."
+    },
+    {
+      "id": "L4-M7-S03",
+      "display": "kutiba al-ism fī al-istimāra",
+      "script": "كتب الاسم في الاستمارة",
+      "cue": "The name was written on the form",
+      "literal": "Was-written the-name in the-form",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kutiba",
+            "script": "كتب",
+            "cue": "it was written",
+            "tag": "delta",
+            "forms": [
+              "kutiba",
+              "kutibat"
+            ],
+            "note": "The passive past. Arabic makes a passive by changing the VOWELS inside the verb: kataba, he wrote, becomes kutiba, it was written."
+          },
+          {
+            "display": "yuktab",
+            "script": "يكتب",
+            "cue": "it is written",
+            "tag": "free",
+            "forms": [
+              "yuktab",
+              "tuktab"
+            ],
+            "note": "The passive present of the same verb, and the same trick one tense on: yaktub becomes yuktab."
+          },
+          {
+            "display": "al-ism",
+            "script": "الاسم",
+            "cue": "the name",
+            "tag": "free",
+            "forms": [
+              "al-ism",
+              "ism"
+            ],
+            "note": "The name. On an official form it is what goes in the first box."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          8
+        ]
+      },
+      "trap": "English builds a passive out of two words — WAS WRITTEN — so a learner looks for an auxiliary to add. Arabic adds nothing: the letters are the same and only the vowels move.",
+      "sound": "KU-ti-ba, against KA-ta-ba: three syllables either way, and the u in the first is the whole message.",
+      "variations": [
+        {
+          "display": "kutiba al-ism hunā",
+          "script": "كتب الاسم هنا",
+          "cue": "The name was written here",
+          "changed": "the place, and nothing else"
+        },
+        {
+          "display": "yuktab al-ism fī al-istimāra",
+          "script": "يكتب الاسم في الاستمارة",
+          "cue": "The name is written on the form",
+          "changed": "the present of the same passive — a standing rule rather than a finished act"
+        }
+      ],
+      "mistake": {
+        "display": "al-ism kataba fī al-istimāra",
+        "script": "الاسم كتب في الاستمارة",
+        "why": "The ACTIVE vowels with a passive meaning. kataba says the name did the writing; because this course writes every short vowel, the error is visible on the page."
+      },
+      "usage": "Reading back what an official form already contains.",
+      "register": "formal",
+      "mnemonic": "Same letters, different vowels: kataba does it, kutiba has it done."
+    },
+    {
+      "id": "L4-M7-S04",
+      "display": "tudfaʿ ar-rusūm fī ash-shubbāk",
+      "script": "تدفع الرسوم في الشباك",
+      "cue": "The fees are paid at the window",
+      "literal": "Are-paid the-fees in the-window",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tudfaʿ",
+            "script": "تدفع",
+            "cue": "they are paid",
+            "tag": "delta",
+            "forms": [
+              "tudfaʿ",
+              "yudfaʿ",
+              "dufiʿa"
+            ],
+            "note": "The passive of L3-M8's tadfaʿ, one vowel apart from it. A non-human plural takes the feminine singular verb, so rusūm takes tudfaʿ."
+          },
+          {
+            "display": "ar-rusūm",
+            "script": "الرسوم",
+            "cue": "the fees",
+            "tag": "free",
+            "forms": [
+              "ar-rusūm",
+              "rusūm"
+            ],
+            "note": "The fees or charges an office takes. It is a plural and behaves as a feminine singular for the verb."
+          },
+          {
+            "display": "ash-shubbāk",
+            "script": "الشباك",
+            "cue": "the window, the counter hatch",
+            "tag": "free",
+            "forms": [
+              "ash-shubbāk",
+              "shubbāk"
+            ],
+            "note": "The hatch you queue at. The article assimilates to the sh, so it is written ash-sh- and heard as one long sh."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "English can say WHO pays — the fees are paid by the passenger. Arabic will not: if the payer matters, the sentence has to go back to the active tadfaʿ.",
+      "sound": "TUD-faʿ: the u after the t is the passive; tadfaʿ, with an a, is the ordinary you-pay of L3-M8.",
+      "variations": [
+        {
+          "display": "yudfaʿ al-ḥajz fī ash-shubbāk",
+          "script": "يدفع الحجز في الشباك",
+          "cue": "The booking is paid for at the window",
+          "changed": "a masculine singular subject, so the passive takes the y- prefix"
+        },
+        {
+          "display": "tudfaʿ ar-rusūm hunā",
+          "script": "تدفع الرسوم هنا",
+          "cue": "The fees are paid here",
+          "changed": "the place, cut to one word"
+        }
+      ],
+      "mistake": {
+        "display": "ar-rusūm tadfaʿ fī ash-shubbāk",
+        "script": "الرسوم تدفع في الشباك",
+        "why": "L3-M8's active vowels. tadfaʿ says the fees pay something; the a and the u are the only things carrying the difference."
+      },
+      "usage": "The standing rule a counter announces about money.",
+      "register": "formal",
+      "mnemonic": "tadfaʿ pays; tudfaʿ is paid."
+    },
+    {
+      "id": "L4-M7-S05",
+      "display": "sa-yughlaq al-maktab baʿda sāʿa",
+      "script": "سيغلق المكتب بعد ساعة",
+      "cue": "The office will be closed in an hour",
+      "literal": "Will-be-closed the-office after an-hour",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sa-yughlaq",
+            "script": "سيغلق",
+            "cue": "it will be closed",
+            "tag": "delta",
+            "forms": [
+              "sa-yughlaq",
+              "yughlaq"
+            ],
+            "note": "L1-M6's sa- written joined in front of a passive present. The particle costs nothing extra: only the verb's vowels are doing the passive work."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          6
+        ]
+      },
+      "trap": "English needs three words for this — will be closed — and a learner assembles them one at a time. Arabic needs one written word, and the whole passive is inside its vowels.",
+      "sound": "sa-YUGH-laq: the gh is the gargled r of French, and the sa- in front is unstressed.",
+      "variations": [
+        {
+          "display": "yughlaq al-maktab baʿda sāʿa",
+          "script": "يغلق المكتب بعد ساعة",
+          "cue": "The office closes in an hour",
+          "changed": "without sa- — a standing fact rather than an announcement about today"
+        },
+        {
+          "display": "sa-yughlaq ash-shubbāk baʿda sāʿa",
+          "script": "سيغلق الشباك بعد ساعة",
+          "cue": "The window will be closed in an hour",
+          "changed": "what closes: the office becomes the counter hatch"
+        }
+      ],
+      "mistake": {
+        "display": "sa-yughliq al-maktab baʿda sāʿa",
+        "script": "سيغلق المكتب بعد ساعة",
+        "why": "The active vowels: yughliq means he closes something, so the office is doing the closing. Only the i for the a tells the two apart, which is why this course writes them."
+      },
+      "usage": "The last announcement before a public office shuts.",
+      "register": "formal",
+      "mnemonic": "sa- says when; the vowels say who is not doing it."
+    },
+    {
+      "id": "L4-M7-S06",
+      "display": "yuftaḥ al-maktab kull yawm",
+      "script": "يفتح المكتب كل يوم",
+      "cue": "The office is opened every day",
+      "literal": "Is-opened the-office every day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yuftaḥ",
+            "script": "يفتح",
+            "cue": "it is opened",
+            "tag": "delta",
+            "forms": [
+              "yuftaḥ",
+              "futiḥa",
+              "sa-yuftaḥ"
+            ],
+            "note": "The passive of open, and yughlaq's opposite. Its past is futiḥa, with the same u-i vowels as kutiba and dufiʿa, and its future sa-yuftaḥ."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          8
+        ]
+      },
+      "trap": "English opens is both transitive and intransitive — the office opens at eight — so no passive feels needed. Arabic makes the choice explicit and the office does not open itself.",
+      "sound": "YUF-taḥ: the final ḥ is the breathy throat h, not the light h of hunā.",
+      "variations": [
+        {
+          "display": "yuftaḥ ash-shubbāk kull yawm",
+          "script": "يفتح الشباك كل يوم",
+          "cue": "The window is opened every day",
+          "changed": "what opens"
+        },
+        {
+          "display": "al-maktab maftūḥ kull yawm",
+          "script": "المكتب مفتوح كل يوم",
+          "cue": "The office is open every day",
+          "changed": "L3-M8's participle, which reports a STATE where the passive verb reports an event"
+        }
+      ],
+      "mistake": {
+        "display": "al-maktab yaftaḥ kull yawm",
+        "script": "المكتب يفتح كل يوم",
+        "why": "The active vowels again. yaftaḥ makes the office the opener; the passive u-a pattern is what says somebody opens it."
+      },
+      "usage": "Opening hours, as an office states them.",
+      "register": "formal",
+      "mnemonic": "maftūḥ is how it stands; yuftaḥ is what is done to it."
+    },
+    {
+      "id": "L4-M7-S07",
+      "display": "yuʿlan ʿan taʾkhīr al-qiṭār fī al-maḥaṭṭa",
+      "script": "يعلن عن تأخير القطار في المحطة",
+      "cue": "The train's delay is announced at the station",
+      "literal": "Is-announced about delay the-train in the-station",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yuʿlan",
+            "script": "يعلن",
+            "cue": "it is announced",
+            "tag": "delta",
+            "forms": [
+              "yuʿlan"
+            ],
+            "note": "The loudspeaker's verb, passive like the rest. It reaches its topic through L4-M2's ʿan: announced ABOUT the delay."
+          },
+          {
+            "display": "taʾkhīr",
+            "script": "تأخير",
+            "cue": "delay",
+            "tag": "free",
+            "forms": [
+              "taʾkhīr",
+              "at-taʾkhīr"
+            ],
+            "note": "A delay, as a noun. The hamza sits on the alif in the middle and is written ʾ, never ʿ."
+          },
+          {
+            "display": "iʿlān",
+            "script": "إعلان",
+            "cue": "an announcement, a notice",
+            "tag": "free",
+            "forms": [
+              "iʿlān",
+              "al-iʿlān"
+            ],
+            "note": "The noun of the same root: the announcement itself, whether spoken or posted on a board."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          6
+        ]
+      },
+      "trap": "English says the station announced the delay and puts the doer first. Arabic officialese removes the doer entirely, which is why a translated version of the English sentence sounds like an accusation.",
+      "sound": "yuʿ-LAN: the ʿayn closes the first syllable, so the word starts with a small squeeze before the l.",
+      "variations": [
+        {
+          "display": "yuʿlan ʿan taʾkhīr al-ḥāfila fī al-maḥaṭṭa",
+          "script": "يعلن عن تأخير الحافلة في المحطة",
+          "cue": "The bus's delay is announced at the station",
+          "changed": "what is delayed"
+        },
+        {
+          "display": "kutiba al-iʿlān fī al-maḥaṭṭa",
+          "script": "كتب الإعلان في المحطة",
+          "cue": "The notice was written at the station",
+          "changed": "the noun instead of the verb, under S03's passive past"
+        }
+      ],
+      "mistake": {
+        "display": "al-maḥaṭṭa tuʿlin ʿan taʾkhīr al-qiṭār",
+        "script": "المحطة تعلن عن تأخير القطار",
+        "why": "The station named as the announcer. It is grammatical Arabic but it is not the register: an official announcement has no agent, and naming one moves the sentence into news reporting."
+      },
+      "usage": "What comes over a platform loudspeaker.",
+      "register": "formal",
+      "mnemonic": "yuʿlan announces; nobody announces."
+    },
+    {
+      "id": "L4-M7-S08",
+      "display": "yajibu ʿalayka an tadfaʿ ar-rusūm al-yawm",
+      "script": "يجب عليك أن تدفع الرسوم اليوم",
+      "cue": "You must pay the fees today",
+      "literal": "It-is-necessary on-you that you-pay the-fees today",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yajibu ʿalayka",
+            "script": "يجب عليك",
+            "cue": "you must",
+            "tag": "delta",
+            "forms": [
+              "yajibu ʿalayka",
+              "yajibu ʿalayki",
+              "ʿalayka"
+            ],
+            "note": "L3-M2's yajibu with the duty laid on a person: the frame stays in the he-form and ʿalā carries the pronoun."
+          }
+        ],
+        "rules": [
+          5,
+          6,
+          7
+        ]
+      },
+      "trap": "English puts the person first — YOU must pay. Arabic puts the obligation first and hangs the person off a preposition, so the sentence opens with a verb that agrees with nobody.",
+      "sound": "ya-JI-bu ʿa-LAY-ka: yajibu keeps its final -u because it is a frozen frame, and the stress falls on the -lay- of ʿalayka.",
+      "variations": [
+        {
+          "display": "yajibu ʿalayki an tadfaʿ ar-rusūm al-yawm",
+          "script": "يجب عليك أن تدفع الرسوم اليوم",
+          "cue": "You must pay the fees today (to a woman)",
+          "changed": "the pronoun on ʿalā, which is where the addressee lives"
+        },
+        {
+          "display": "yajibu ʿalayka an tadfaʿ ar-rusūm qabla al-ḥajz",
+          "script": "يجب عليك أن تدفع الرسوم قبل الحجز",
+          "cue": "You must pay the fees before the booking",
+          "changed": "when — L3-M1's qabla with a plain noun behind it"
+        }
+      ],
+      "mistake": {
+        "display": "yajibu anta an tadfaʿ ar-rusūm",
+        "script": "يجب أنت أن تدفع الرسوم",
+        "why": "A free pronoun where ʿalā belongs. yajibu never takes a subject; the person is only ever a pronoun stuck to ʿalā."
+      },
+      "usage": "A clerk telling you what the rule requires of you.",
+      "register": "formal",
+      "mnemonic": "The duty comes first, and you arrive on top of ʿalā."
+    },
+    {
+      "id": "L4-M7-S09",
+      "display": "min faḍlikum, tafaḍḍalū ilā ash-shubbāk",
+      "script": "من فضلكم، تفضلوا إلى الشباك",
+      "cue": "Please, come this way to the window",
+      "literal": "From your(pl)-favour, go-ahead(pl) to the-window",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "min faḍlikum",
+            "script": "من فضلكم",
+            "cue": "please (plural)",
+            "tag": "delta",
+            "forms": [
+              "min faḍlikum"
+            ],
+            "note": "The plural of politeness. A clerk says it to ONE person: the -kum is deference, not a count of how many are standing there."
+          },
+          {
+            "display": "tafaḍḍalū",
+            "script": "تفضلوا",
+            "cue": "go ahead, this way (plural)",
+            "tag": "delta",
+            "forms": [
+              "tafaḍḍalū"
+            ],
+            "note": "The plural of L2-M5's tafaḍḍal, used the same way — one customer, plural verb, because the register raises the number."
+          }
+        ],
+        "rules": [
+          5,
+          7
+        ]
+      },
+      "trap": "English marks counter politeness with softening words — if you could just — and keeps the number honest. Arabic marks it by moving one person into the plural, which an English speaker hears as a mistake.",
+      "sound": "min faḍ-LI-kum ta-faḍ-ḍa-LŪ: the doubled ḍ in tafaḍḍalū is held, and the -ū at the end is long.",
+      "variations": [
+        {
+          "display": "min faḍlikum, tafaḍḍalū ilā al-maktab",
+          "script": "من فضلكم، تفضلوا إلى المكتب",
+          "cue": "Please, come this way to the office",
+          "changed": "where you are being sent"
+        },
+        {
+          "display": "tafaḍḍalū, yurjā al-intiẓār hunā",
+          "script": "تفضلوا، يرجى الانتظار هنا",
+          "cue": "This way please, kindly wait here",
+          "changed": "the invitation followed by the announcement — the two registers in one breath"
+        }
+      ],
+      "mistake": {
+        "display": "min faḍlikum, tafaḍḍal ilā ash-shubbāk",
+        "script": "من فضلكم، تفضل إلى الشباك",
+        "why": "Half plural and half singular. Once the register lifts the addressee into the plural, every word aimed at them goes with it."
+      },
+      "usage": "A clerk or an usher moving somebody along politely.",
+      "register": "formal",
+      "mnemonic": "One customer, plural words: the number is the politeness."
+    },
+    {
+      "id": "L4-M7-S10",
+      "display": "ḥaḍratuka, hal maʿaka al-huwiyya wa al-ḥajz?",
+      "script": "حضرتك، هل معك الهوية والحجز؟",
+      "cue": "Sir, do you have the ID and the booking?",
+      "literal": "Your-honour, question with-you the-identity and the-booking?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ḥaḍratuka",
+            "script": "حضرتك",
+            "cue": "sir, you (deferential)",
+            "tag": "free",
+            "forms": [
+              "ḥaḍratuka",
+              "ḥaḍratuki"
+            ],
+            "note": "Your presence — the polite you a clerk uses instead of anta. It is a noun with a pronoun on it, so it changes for a woman: ḥaḍratuki."
+          },
+          {
+            "display": "al-huwiyya",
+            "script": "الهوية",
+            "cue": "the identity card",
+            "tag": "free",
+            "forms": [
+              "al-huwiyya",
+              "huwiyya"
+            ],
+            "note": "The ID card an office asks for. The word is identity itself, used for the card that carries it."
+          },
+          {
+            "display": "al-ḥajz",
+            "script": "الحجز",
+            "cue": "the booking, the reservation",
+            "tag": "free",
+            "forms": [
+              "al-ḥajz",
+              "ḥajz"
+            ],
+            "note": "A booking — of a seat, a room or an appointment. It is the thing yurjā asks for in S01's second variation."
+          }
+        ],
+        "rules": [
+          5,
+          7
+        ]
+      },
+      "trap": "English politeness at a counter goes into the verb — could I see, would you mind. Arabic leaves the question plain and lifts the PRONOUN instead, which has no English equivalent at all.",
+      "sound": "ḥaḍ-RA-tu-ka: the ḥ is the deep breathy one and the ḍ is heavy, so the first two syllables sit low in the mouth.",
+      "variations": [
+        {
+          "display": "ḥaḍratuki, hal maʿaki al-huwiyya wa al-ḥajz?",
+          "script": "حضرتك، هل معك الهوية والحجز؟",
+          "cue": "Madam, do you have the ID and the booking?",
+          "changed": "the whole line addressed to a woman"
+        },
+        {
+          "display": "ḥaḍratuka, yurjā al-intiẓār fī aṭ-ṭābūr",
+          "script": "حضرتك، يرجى الانتظار في الطابور",
+          "cue": "Sir, kindly wait in the queue",
+          "changed": "the polite address in front of S01's announcement"
+        }
+      ],
+      "mistake": {
+        "display": "anta, hal maʿaka al-huwiyya wa al-ḥajz?",
+        "script": "أنت، هل معك الهوية والحجز؟",
+        "why": "The bare anta at a counter. It is not rude in itself, but it drops the register the whole exchange is conducted in, and next to ḥaḍratuka it lands as brusque."
+      },
+      "usage": "The first thing a clerk says to you at a window.",
+      "register": "formal",
+      "mnemonic": "ḥaḍratuka is you with a hat on."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M7-C01",
+      "display": "yurjā al-intiẓār fī aṭ-ṭābūr",
+      "script": "يرجى الانتظار في الطابور",
+      "cue": "Please wait in the queue"
+    },
+    {
+      "id": "L4-M7-C02",
+      "display": "yumnaʿ at-tadkhīn fī al-maktab",
+      "script": "يمنع التدخين في المكتب",
+      "cue": "Smoking is forbidden in the office"
+    },
+    {
+      "id": "L4-M7-C03",
+      "display": "kutiba al-ism fī al-istimāra",
+      "script": "كتب الاسم في الاستمارة",
+      "cue": "The name was written on the form"
+    },
+    {
+      "id": "L4-M7-C04",
+      "display": "tudfaʿ ar-rusūm fī ash-shubbāk",
+      "script": "تدفع الرسوم في الشباك",
+      "cue": "The fees are paid at the window"
+    },
+    {
+      "id": "L4-M7-C05",
+      "display": "sa-yughlaq al-maktab baʿda sāʿa",
+      "script": "سيغلق المكتب بعد ساعة",
+      "cue": "The office will be closed in an hour"
+    },
+    {
+      "id": "L4-M7-C06",
+      "display": "yuftaḥ al-maktab kull yawm",
+      "script": "يفتح المكتب كل يوم",
+      "cue": "The office is opened every day"
+    },
+    {
+      "id": "L4-M7-C07",
+      "display": "yuʿlan ʿan taʾkhīr al-qiṭār fī al-maḥaṭṭa",
+      "script": "يعلن عن تأخير القطار في المحطة",
+      "cue": "The train's delay is announced at the station"
+    },
+    {
+      "id": "L4-M7-C08",
+      "display": "yajibu ʿalayka an tadfaʿ ar-rusūm al-yawm",
+      "script": "يجب عليك أن تدفع الرسوم اليوم",
+      "cue": "You must pay the fees today"
+    },
+    {
+      "id": "L4-M7-C09",
+      "display": "min faḍlikum, tafaḍḍalū ilā ash-shubbāk",
+      "script": "من فضلكم، تفضلوا إلى الشباك",
+      "cue": "Please, come this way to the window"
+    },
+    {
+      "id": "L4-M7-C10",
+      "display": "ḥaḍratuka, hal maʿaka al-huwiyya wa al-ḥajz?",
+      "script": "حضرتك، هل معك الهوية والحجز؟",
+      "cue": "Sir, do you have the ID and the booking?"
+    },
+    {
+      "id": "L4-M7-C11",
+      "display": "al-maktab mughlaq, wa sa-yuftaḥ ghadan",
+      "script": "المكتب مغلق، وسيفتح غداً",
+      "cue": "The office is closed, and it will be opened tomorrow"
+    },
+    {
+      "id": "L4-M7-C12",
+      "display": "yurjā al-ḥajz qabla al-wuṣūl ilā al-maḥaṭṭa",
+      "script": "يرجى الحجز قبل الوصول إلى المحطة",
+      "cue": "Booking is requested before arriving at the station"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

@@ -579,3 +579,402 @@ Nothing existing is renumbered. These are about the SENTENCES this wave ships.
     genuinely interchangeable at this rung, confirm the note's claim that `quizás` is commoner before
     a vowel, and say whether `tal vez` really is slightly more formal or whether that is a regional
     difference the note has mislabelled.
+
+## Wave 3 — L4-M6 through L4-M10 (#552)
+
+Five modules, fifty sentences, sixty comprehension items, and the level's exit. Written in the
+shared checkout alongside eight sibling courses; the emitted index moved twice underneath the wave
+(`837 surfaces … through L4-M5` when it opened, `885 surfaces … through L4-M7` by the time M10 was
+being drafted), which is exactly the drift the "ask `content:owner`, do not trust the brief"
+discipline exists for.
+
+### L4-M6 "Before and after" — the mood is chosen by the clock, not by the speaker
+
+The level's most productive rule and its most invisible interference in one module. A time clause
+pointing at the future takes the subjunctive; the identical clause pointing at a habit or the past
+takes the indicative. English uses the present in exactly that slot — *when I get there, I will call
+you* — so the wrong Spanish a learner produces is perfectly grammatical and means something else.
+The module is therefore built on a minimal pair (S01 against S02, S04 against S05) rather than on a
+table.
+
+| | display | register |
+| --- | --- | --- |
+| S01 | Cuando llegues a casa, llámame. | informal |
+| S02 | Cuando llego a casa, siempre llamo a mi madre. | neutral |
+| S03 | Voy a esperar hasta que termine la reunión. | neutral |
+| S04 | Antes de salir, cierra la ventana. | informal |
+| S05 | Antes de que salgas, cierra la ventana, por favor. | informal |
+| S06 | Desde que vivo aquí, ya no veo a mis amigos. | neutral |
+| S07 | Ya he perdido las llaves, pero todavía no he llamado. | neutral |
+| S08 | Después de que hables con el jefe, llámame. | informal |
+| S09 | Mientras tanto, puedes esperar aquí o volver más tarde. | informal |
+| S10 | Espere usted aquí hasta que acabe la reunión. | formal |
+
+Fifteen rows, twenty-two surfaces: `llegues`/`llegue`, `llámame`, `llego`/`llegas`/`llega`,
+`hasta que`, `termine`/`termines`, `antes de`, `antes de que`, `salgas`/`salga`, `desde que`,
+`ya no`, `todavía no`/`aún no`, `después de que`, `hables`/`hable`, `mientras tanto`,
+`acabe`/`acabes`. `cuando`, `mientras`, `ya`, `todavía` and `en cuanto` are SHOWN and not rowed —
+they are L3-M10's, and the brief's instruction that this module "extends five L3-M10 rows and opens
+no second key for any" was followed literally, which is why the module produces zero `RE-TEACH`
+lines.
+
+Three deliberate contrasts sit inside the row list rather than in prose. `hasta que` is a two-token
+key so that bare `hasta` stays available (L4-M9 buys it, as the sense *as far as*). `ya no` and
+`todavía no` are two-token keys so that L3-M10's `ya` and `todavía` keep their own. And `hables` is
+a bare one-token key alongside L4-M1's two-token `no hables`: one shape, two jobs, and the note says
+so rather than pretending the imperative is not there.
+
+### L4-M7 "Official talk" — a comprehension module that says so out loud
+
+Ten sentences, ten `formal` registers, and not one informal item — the only module in the level
+like that, per the brief. Everything in it is heard rather than said: the honest claim in the
+`usage` lines is that a learner meets this Spanish on their first morning at a station and almost
+never speaks it. The three shapes are the impersonal `se` widened from L3-M8's counter into the
+announcement, the `ser` passive as the *written* twin of that `se` rather than a replacement for it,
+and the third-person deontic future.
+
+| | display |
+| --- | --- |
+| S01 | Se ruega a los pasajeros que pasen al andén número dos. |
+| S02 | Queda prohibido fumar en la estación de autobuses. |
+| S03 | El pasajero deberá presentar el documento en la puerta de salida. |
+| S04 | La estación fue construida en primavera y abierta en verano. |
+| S05 | El tren de las ocho ha sido cancelado por una huelga. |
+| S06 | Pase a la ventanilla número dos, por favor. |
+| S07 | Atención: el tren de las nueve llega con retraso al andén dos. |
+| S08 | El siguiente, por favor. Espere un momento. |
+| S09 | Se prohíbe fumar en el andén y en la estación. |
+| S10 | Tome el billete y pase a la próxima ventanilla. |
+
+Nineteen rows, twenty-five surfaces — the cap exactly. `se ruega`, `pasajero`/`pasajeros`, `andén`,
+`queda prohibido`, `fumar`, `deberá`, `presentar`, `salida`, `construido`/`construida`,
+`abierto`/`abierta`, `ha sido`/`han sido`, `cancelado`, `pase`/`pasen`, `ventanilla`, `atención`,
+`siguiente`, `se prohíbe`, `billete`, `próximo`/`próxima`. `aguarde`, `turno`, `impreso`, `podrá`,
+`aviso` and `llegada` were all confirmed free and all declined against the cap; `turno` came back
+and was bought by L4-M10 instead, where a story needed it.
+
+`se ruega` and `se prohíbe` index WHOLE at two tokens, keeping L2-M4's bare `se`, exactly as
+L3-M8's `se paga` does. The `fue` the passive leans on is L1-M5's, bought in the course's fifth
+module and unpaid for here — the cheapest thing in the level, as the brief predicted.
+
+### L4-M8 "Back then" — the cheapest module in the level, and the brief knew it
+
+The imperfect as HABIT rather than as background, plus `soler` moved back one tense. `solía` is
+taught as L3-M1's `suelo` moved, not as a new verb, because the learner already owns the frame.
+The gift in rule 2 is real and worth stating out loud: the imperfect has three irregular verbs in
+the entire language, and the learner already has one of them.
+
+| | display | register |
+| --- | --- | --- |
+| S01 | Antes solía trabajar los sábados, ahora no trabajo nunca. | neutral |
+| S02 | De pequeño jugaba en la calle todos los días. | informal |
+| S03 | Cuando era pequeño, iba al parque con mi hermana. | informal |
+| S04 | En aquella época no había teléfono en casa. | neutral |
+| S05 | Ya no veo a mis amigos, pero antes los veía mucho. | neutral |
+| S06 | Antes hacía mucho frío en aquella casa. | neutral |
+| S07 | De joven estudiaba por la mañana y trabajaba por la tarde. | neutral |
+| S08 | Cuando era pequeña, mi abuela hacía sopa los domingos. | informal |
+| S09 | ¿Usted también trabajaba allí de joven? | formal |
+| S10 | En aquella época la gente no salía por la noche. | neutral |
+
+Eleven rows, twenty surfaces: `solía`/`solías`/`solían`, `de pequeño`, `jugaba`/`jugábamos`,
+`iba`/`ibas`/`íbamos`, `época`, `veía`/`veías`, `hacía`/`hacías`, `de joven`, `abuela`/`abuelo`,
+`allí`, `salía`/`salían`. The brief's prediction that "almost everything else this module needs is
+already owned" held: `antes`, `ahora`, `era`, `estaba`, `comía`, `trabajaba`, `vivía`, `ya`,
+`todavía`, `tenía`, `sabía`, `siempre`, `nunca`, `cada`, `suelo`, `suele`, `sueles` and
+`todos los días` were every one of them confirmed at the module the brief named. That list is the
+most accurate seam in the wave.
+
+### L4-M9 "Places and journeys" — four path prepositions that English already separates
+
+`a` the destination, `por` the route through, `hasta` as far as, `hacia` towards without arriving.
+The brief is right that this is where English helps most in the whole level: the distinction is
+already in the learner's head and only the labels are new, which is why the module can afford a
+second system — the relative `donde` — in the same ten sentences. The stranger giving directions
+speaks `usted` inside a story narrated in neutral, so the chip is per item (S07 alone is `formal`).
+
+| | display |
+| --- | --- |
+| S01 | Fuimos a la costa en coche y pasamos por la montaña. |
+| S02 | Tardamos dos horas en llegar al pueblo. |
+| S03 | Subimos hasta el río y volvimos a pie. |
+| S04 | Íbamos hacia la playa cuando nos perdimos. |
+| S05 | El pueblo donde nació mi madre está en la montaña. |
+| S06 | ¿Por dónde se va a la playa? Por esta carretera. |
+| S07 | Siga por este camino hasta la plaza y gire a la derecha. |
+| S08 | Cuando llegamos, el pueblo estaba en fiestas. |
+| S09 | Cruzamos el río a pie y volvimos al pueblo por la montaña. |
+| S10 | El viaje hacia la costa fue largo, pero el camino era fácil. |
+
+Twenty-two rows, twenty-three surfaces: `fuimos`, `costa`, `pasamos`, `montaña`, `tardamos`/`tarda`,
+`pueblo`, `llegar`, `hasta`, `subimos`, `río`, `hacia`, `playa`, `nos perdimos`, `donde`, `nació`,
+`carretera`, `camino`, `llegamos`, `cruzamos`, `a pie`, `volvimos`, `viaje`. `por` is not rowed:
+the path sense EXTENDS L3-M2's row exactly as the brief asked, and is carried by rule 0 and by three
+`trap` lines instead. No proper noun appears anywhere in the module — every place is a common noun,
+which is what keeps the ratchet where it is (see below).
+
+The `hacia` / `hacía` pair is handled as a `trap` on S04 rather than as a second row, because
+`hacía` is L4-M8's, one module earlier in this same wave. That is the module's neatest accident:
+the two words a learner most easily confuses were bought two rungs apart and can point at each
+other.
+
+### L4-M10 "A story with a twist" — nothing new grammatically, and that is the design
+
+Six-sentence narratives, the per-sentence bound applying to each sentence INSIDE the item as it did
+at L3-M10. What the module adds is discourse: the raya, the inversion in an attribution, the shift
+between direct speech and L3-M5's reported speech inside one story, and the small stock of turn
+words. Every story's last line rewrites its first.
+
+| | display | register |
+| --- | --- | --- |
+| S01 | Una vez fui a la tienda por pan. No había nadie. Por fin salió el panadero. —No queda pan —dijo. No dije nada. Resulta que era domingo. | neutral |
+| S02 | Una noche llamé a mi hermana. —Ahora no puedo hablar —contestó. Más tarde me llamó ella. Me dijo que estaba en la calle. Al final hablamos mucho. Resulta que estaba en la estación. | neutral |
+| S03 | Aquel día estaba en la playa con mi hermana. Hacía mucho frío y no había nadie. De repente llegó un coche. Salió el médico del pueblo. —¿Están bien? —preguntó. Resulta que alguien llamó por teléfono. | neutral |
+| S04 | El lunes perdí las llaves de casa. Más tarde llamé a mi madre. —Ve a la cocina —dijo ella. Y allí estaba la llave, en la mesa. No dije nada. Resulta que la dejo siempre en la cocina. | informal |
+| S05 | Una vez conocí a un médico en el tren. Hablamos dos horas de la gente del pueblo. Al final le di mi número. Nunca me llamó. Al rato llamó, muy tarde. Resulta que perdió el móvil aquel día. | neutral |
+| S06 | Trabajaba en la tienda cuando llegó el jefe. —Hay un problema —dijo. —¿Qué problema? —respondí. De pronto no había nadie en la calle. El jefe dijo que era una huelga. Al final no trabajé más aquel día. | neutral |
+| S07 | Aquella tarde fui al banco con una factura. Había mucha gente. Por fin llegó mi turno. —Esta factura no es de este banco —dijo ella. Volví a casa con la factura. Y ya no me importa. | neutral |
+| S08 | El sábado perdí el móvil en el autobús. Llamé a mi número todo el día. Nadie me contestó. Por la noche alguien llamó a la puerta. —¿Es este tu móvil? —preguntó una niña. Resulta que estaba en el autobús de las ocho. | informal |
+| S09 | Una vez llegué muy tarde a la cita con el médico. En la ventanilla no había nadie. Por fin salió una mujer. —Pase usted, por favor —dijo. Dije perdón. —No es tarde —contestó ella. | neutral |
+| S10 | Aquel verano fuimos al pueblo donde nació mi madre. La casa era muy vieja y no había agua caliente. Un día llegó una carta. —Es para ti —dijo mi madre. Resulta que era de mi abuela. Y todavía no la he abierto. | neutral |
+
+Thirteen rows, twenty-one surfaces: `una vez`, `por fin`, `queda`/`quedan`, `resulta que`,
+`panadero`, `contestó`, `ella`/`él`, `de repente`/`de pronto`, `alguien`, `más tarde`, `al rato`,
+`respondí`/`respondió`, `turno`, `niña`/`niño`, `mujer`, `carta`. S09 is the module's register
+lesson: the narration is neutral and the quoted line inside it is `formal` — L4-M7's `Pase usted`
+spoken by somebody else, inside somebody else's story.
+
+### Brief seams corrected, and what the emitted index actually said
+
+**1. `retraso` → L4-M2, not free — M7's only wrong seam.** The M7 brief's note 5 lists it among the
+thirty surfaces it reports free. `npm run content:owner` disagrees:
+
+```
+retraso          L4-M2
+```
+
+L4-M2 spent it on an excuse — *the train was late, so I was late*. S07 shows it on a departure
+board, which is the same word doing a colder job, so the sentence keeps it and the row does not
+exist; the `usage` line names the earlier seat out loud instead. Zero `RE-TEACH` lines is the result.
+
+**2. `aquel` and `aquella` → L4-M3, so `en aquella época` could not be indexed as briefed.** The M8
+brief says `aquel`, `aquella` and `en aquella época` are all free and that `en aquella época` should
+index whole. Two of the three are not free:
+
+```
+aquel            L4-M3
+aquella          L4-M3
+en aquella época free
+```
+
+A three-token whole key over `aquella` would have been a complete-looking paradigm swallowing an
+owned cell — the en-it `sarei` failure in another shape. The module therefore rows bare `época`
+only, and `en aquella época` resolves from `en` (L1-M7), `aquella` (L4-M3) and `época` (L4-M8). The
+`época` note names L4-M3 so the learner tapping the phrase is not surprised.
+
+**3. `tengas` → L4-M5, not free.** The M6 brief lists it among the seven subjunctive cells it
+reports free. It is not, and it was the sibling wave immediately before this one that took it:
+
+```
+llegues          free      tengas           L4-M5
+puedas           free      salga            free
+termine          free      acabe            free
+empiece          free
+```
+
+Nothing broke, because M6 never needed `tengas`. But the brief's list would have been the argument
+for a `forms: ["tenga", "tengas"]` row, and that row would have been unreachable.
+
+**4. `salimos`, `tren` and `coche` → L4-M2, not free.** Three of the thirty surfaces the M9 brief
+reports free:
+
+```
+salimos          L4-M2      tren             L4-M2
+coche            L4-M2
+```
+
+All three are shown in M9 and none is rowed. `salimos` is not used at all — S03 and S09 use
+`volvimos`, which is genuinely free, and the module is better for it.
+
+**5. Four surfaces the briefs assumed and nobody has ever taught.** These are the seams that cost
+this wave the most time, because a brief that says nothing about a word reads as a word you may use:
+
+```
+llegar           free      su               free
+fuimos           free      yo               free
+```
+
+`llegar` is the infinitive behind L4-M6's `llego` and `llegues` and behind the M9 brief's own
+pattern `Tardamos + <time> + en + V-inf`; it had never been bought, and M9 buys it. `fuimos` had
+never been bought either, which is startling for the preterite of *ir* in a course with `fui`,
+`fuiste` and `fue` — M9 buys that too. `su` is why M7-S03 ships as `presentar EL documento` rather
+than the brief's `presentar SU documento`: the possessive is untaught, and an official notice was
+not the place to spend a row on it. `yo` is why four drafted lines in M10 lost an emphatic *yo*
+they did not need.
+
+**6. The M8 brief's "index WHOLE" instruction for `antes vivía`, `cuando era pequeño` and
+`ya no vivo` was refused.** Every part of all three already resolves — `antes` → L1-M5,
+`vivía` → L3-M10, `era` → L1-M5, `pequeño` → L2-M3, `vivo` → L1-M4 — and `ya no` was opened by
+L4-M6 four modules earlier in this same wave:
+
+```
+ya no            free      (at the start of the wave)
+ya no            L4-M6     (after M6 landed)
+```
+
+Whole keys over parts that all resolve buy nothing and shadow rows that already work, so none was
+minted. This is the same conclusion wave 2 reached about `hubiera sabido`, on different evidence.
+
+**7. `escrito`, `sin`, `él`, `tres`, `poco` and bare `todos` are all still unowned.** Not brief
+errors — the M7 brief correctly reports `escrito` free — but worth recording, because `free` in
+`content:owner` output means *available to spend*, not *already taught*, and a draft that reads the
+column the other way ships an untaught surface. Two did slip through and `npm run content:shown`
+caught both: `poco` in an L4-M8-S07 variation and bare `todos` in L4-M8-C08, where
+`todos los días` (L1-M4, three tokens) had been shortened to `todos los domingos` and the key
+vanished. Both were rewritten rather than rowed.
+
+**8. The M10 brief's seam list is correct in every particular, including the raya.** `de repente`,
+`de pronto`, `resulta que`, `por fin`, `una vez`, `contestó`, `respondió`, `me dijo`, `más tarde`
+and `al rato` are all free; `cuando`, `mientras`, `ya`, `todavía`, `en cuanto`, `desde entonces`
+and `vivía` → L3-M10; `al final`, `dijo` and `había` → L2-M10; `entonces` and `pero` → L1-M10;
+`venía`, `vendría` and `quería` → L3-M5. Its claim about the dash was verified rather than assumed:
+`—dijo` folds to `dijo` and resolves onto L2-M10's row, so the raya costs the index nothing. The
+one thing the brief does not say is that `me dijo`, `y entonces` and `más tarde` all resolve from
+owned parts already, so only `más tarde` was rowed as a unit — it reads as one adverb — and the
+other two were left to their pieces.
+
+**9. The index moved twice under the wave, and the footer says so.** `content:owner` printed
+`837 surfaces owned, folded over 35 modules through L4-M5` when M6 was drafted and
+`885 surfaces owned, folded over 37 modules through L4-M7` by the time M10 was. Any count quoted in
+a brief is a photograph; the tool is the fold. Separately, `tools/check-shown.ts` was momentarily
+unparseable mid-wave — a sibling's in-progress edit left a stray brace at line 182 — so the shown
+check was run against a scratch copy of the committed version until the shared file compiled again,
+and then re-run against the real `npm run content:shown` for all five modules. Both agree.
+
+### The ratchet
+
+`npm run content:shown -- en-es L4-M6`, `-- en-es L4-M7`, `-- en-es L4-M8`, `-- en-es L4-M9` and
+`-- en-es L4-M10` are all **clean — every shown surface resolves**, with **zero** `RE-TEACH` lines
+and **zero** `COLLIDES INSIDE THIS MODULE` lines on all five. No deliberate repeat was needed
+anywhere, so no two rows in this wave share a note. The re-teaches this wave might have produced
+were designed out rather than accepted: `cuando`, `mientras`, `ya`, `todavía` and `en cuanto` are
+shown across four of the five modules and rowed in none of them, and `retraso`, `aquella`, `por`,
+`espere`, `había` and `dijo` are likewise shown on their earlier owners' notes.
+
+`npx vitest run tools/shown-surfaces.test.ts` is **11/11** and the `en-es` baseline **holds at 10**.
+Nothing was raised and nothing needed lowering: the five modules contribute **zero** findings of
+their own. This is the reason no proper noun appears in any of the fifty sentences or sixty pool
+items — #61 leaves proper nouns unindexed, so a single `Toledo` in L4-M9 would have pushed en-es to
+11 and failed the ratchet. Every place in M9's journeys and every person in M10's stories is a
+common noun for exactly that reason.
+
+`npm run content:validate` is `CONTENT n/n ok` — `CONTENT 350/350 ok` on the run that closed these
+five modules, and `CONTENT 355/355 ok` a few minutes later as sibling waves landed. As in waves 1
+and 2 the number is a moving one, because nine courses author L4 in the same shared checkout; what
+matters is that it is `n/n`, with no file in any course failing.
+
+`npx vitest run src/course/types.test.ts` failed **2 to 4 times** across the wave's runs, and not
+one failure ever named en-es. `finds all N — nine L1-L3 ladders, and L4 closing course by course`
+is the module census the parent updates when the wave is collected, and its expected count moved
+under this wave three times (`expected [ …(351) ] to deeply equal [ …(347) ]`, then `…(355)` against
+`…(354)`, then `…(357)` against `…(354)`) as sibling courses landed their own L4 modules. Beside it
+sat the en-ar and en-ko sibling censuses and, on one run,
+`hi-en L4-M9-S07 mnemonic … expected 'get there, arrive at, reach the place.' to match Devanagari`,
+a defect in another course's file. Every assertion that IS a course law passes on all five
+modules — the tag enum, the rule-index range, the register enum, the `ModuleContent` key check,
+and the straight-apostrophe rule (none of the five files contains a curly apostrophe or quote mark
+anywhere; the only non-ASCII characters they use are the Spanish accents, `ñ`, `¿`, the middle dot
+in `cue` fields, the ellipsis, and the raya). `npx vitest run tools/` is **190/190**, which is
+where `register.test.ts`, `delta-index.test.ts` and `course-briefs.test.ts` live. The schema's own
+checks pass too: `schemaVersion` 5, ten sentences, twelve pool items, non-empty
+`deconstruction.words` on every sentence, no note over 200 characters, `prerequisites` naming the
+module before it in the same level, and `verified: true` shipped with its signature in this same
+change.
+
+### Open questions for the native pass
+
+Continuing the en-es chain, whose last number is 96 (question 96 above; `docs/86` §8 ends at 63).
+Nothing existing is renumbered. These are about the SENTENCES this wave ships.
+
+97. **`Cuando llego a casa, siempre llamo a mi madre` as a natural habit sentence** (M6-S02). The
+    whole module rests on this being ordinary Spanish rather than a grammar-book foil for S01.
+    Confirm a speaker would say it unprompted, and confirm that `siempre` is what makes the
+    indicative comfortable rather than merely permissible.
+98. **`Voy a esperar hasta que termine la reunión`** (M6-S03). Confirm `terminar` over `acabar` here
+    for a meeting, and rule on whether `hasta que termine` or `hasta que acabe` is the commoner
+    ending — S10 ships `acabe` and the module treats them as interchangeable.
+99. **`Antes de que salgas, cierra la ventana, por favor`** (M6-S05). The `mistake` block claims
+    `antes de que` has no indicative option at all, ever. Confirm that is true in speech as well as
+    in grammars, and confirm that a native would in fact use the infinitive version (S04) far more
+    often when the subjects match.
+100. **`Desde que vivo aquí, ya no veo a mis amigos`** (M6-S06). Two claims: that Spanish keeps the
+     present where English reaches for a perfect, and that `desde que` and `ya que` really are as
+     cleanly split as the rule says. Confirm, and say whether `desde que vivo` or `desde que vine`
+     is what people actually say for this.
+101. **`Ya he perdido las llaves, pero todavía no he llamado`** (M6-S07). The trap claims
+     `todavía no` cannot be moved to the end of the clause the way English *yet* can. Confirm, and
+     rule on whether `aún no` — offered as a form on the same row — is genuinely interchangeable or
+     is more written than the note admits.
+102. **`Mientras tanto` taking no verb** (M6-S09). Confirm the module's line that `mientras` takes a
+     clause and `mientras tanto` takes a comma, and confirm that `mientras tanto` is what a
+     receptionist says rather than `entretanto` or `de momento`.
+103. **`Se ruega a los pasajeros que pasen`** (M7-S01). Confirm the singular `se ruega` with a plural
+     addressee is what signs and loudspeakers actually print, and that `se ruegan` would be heard as
+     wrong rather than merely stiff. Also confirm `pasen` over `esperen` for a platform change.
+104. **`Queda prohibido` against `Se prohíbe` against `Prohibido`** (M7-S02, S09). The module ships
+     the first two as near-equals with `se prohíbe` the commoner. Confirm that ranking, and say
+     whether bare `Prohibido fumar` — which the module does not teach — is in fact the commonest of
+     the three on a real sign, in which case a later wave should add it.
+105. **`El pasajero deberá presentar el documento`** (M7-S03). Confirm the bare article over a
+     possessive is what a notice writes, and confirm `documento` over `documentación` for what a
+     traveller is asked to show at a gate in Spain.
+106. **`La estación fue construida en primavera y abierta en verano`** (M7-S04). This is the one
+     sentence in the module a learner might write. Confirm it reads as a plaque rather than as a
+     translation, and confirm that the second participle can share the single `fue` the way it does
+     here without the sentence sounding clipped.
+107. **`El siguiente, por favor` as a complete utterance** (M7-S08). The module claims Spanish
+     official talk is shorter than English expects and that this is the whole sentence. Confirm, and
+     say what a Spanish clerk actually says most — `El siguiente`, `El que sigue`, or just a number.
+108. **`solía trabajar` and `trabajaba` as exact equivalents** (M8-S01). The module says `solía` adds
+     no strength and no extra pastness, only explicitness. Confirm, and rule on how common `soler`
+     in the imperfect really is in speech — if it is markedly less common than `trabajaba`, the
+     `usage` line needs to say so.
+109. **`De pequeño` and `de joven` as the ordinary phrases** (M8-S02, S07). Confirm both are what
+     people say rather than `cuando era pequeño` and `cuando era joven`, and confirm that `de joven`
+     genuinely does not change for a woman where `de pequeño` does.
+110. **`En aquella época`** (M8-S04, S10). Confirm it is neutral rather than literary, and rule on
+     whether `en aquellos tiempos` or `antes` is what an ordinary speaker reaches for first when
+     setting a scene twenty years back.
+111. **`la gente no salía`, singular** (M8-S10). Confirm no native would write `salían` here, and
+     say whether the plural is heard in speech anyway — if it is, the `mistake` block is too strong.
+112. **`Tardamos dos horas en llegar`** (M9-S02). The module's sharpest interference claim. Confirm
+     the `en` is compulsory and that `para llegar` would be heard as wrong rather than as a
+     different shade, and confirm `tardamos` over `nos llevó` or `nos costó` for a journey.
+113. **`Subimos hasta el río` against `Fuimos al río`** (M9-S03). Confirm that `hasta` really does
+     mark the far end of a stretch and imply not going further, and that a speaker would choose it
+     over `a` when the river was the turning point of a walk.
+114. **`Íbamos hacia la playa cuando nos perdimos`** (M9-S04). Confirm `hacia` is what carries the
+     admission that we never arrived, and rule on whether an ordinary speaker would simply say
+     `Íbamos a la playa` and let the rest of the sentence do that work — the `mistake` block says
+     the `a` version is not wrong, only less precise.
+115. **`El pueblo donde nació mi madre`** (M9-S05). Confirm `donde` over `en el que` at this rung,
+     and confirm that `nació` with no auxiliary is genuinely how a birth is reported — English
+     speakers expect a passive and the module claims Spanish has none here.
+116. **`¿Por dónde se va a la playa?`** (M9-S06). Confirm this is the question a stranger is actually
+     asked, and rule on whether `¿Cómo se va…?` is commoner, in which case the pair belongs in the
+     module rather than only `por dónde`.
+117. **The raya, twice, with no closing dash** (M10-S01, S06). The module teaches that one dash opens
+     the quoted line and a second opens the attribution, and that nothing closes either at a
+     sentence's end. Confirm that is the modern convention in Spain and in Latin America, and
+     confirm that a second speaker's line starts a new paragraph in print even though the module
+     cannot show paragraphs.
+118. **`Resulta que` taking the indicative under surprise** (M10, seven of ten items). Confirm the
+     rule holds with no exceptions a learner would meet, and confirm the module's claim that
+     surprise is not doubt — i.e. that `resulta que fuera` is not something a speaker would say.
+119. **`No queda pan` as the baker's line** (M10-S01). Confirm `no queda pan` over `no hay pan` or
+     `se ha acabado el pan` for a shop that has sold out, and confirm the whole story reads as a
+     joke told against oneself rather than as an exercise.
+120. **A story that ends in the present or the perfect** (M10-S04, S07, S10). Three of the ten
+     narratives step out of the past in their last line — `la dejo siempre`, `ya no me importa`,
+     `todavía no la he abierto`. Confirm all three land as endings rather than as tense errors, and
+     say which of the three is the most natural way a Spanish speaker closes a story of this kind.

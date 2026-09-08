@@ -1,0 +1,562 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M8",
+  "title": "Back then",
+  "job": "Habits and states in the past; then against now",
+  "prerequisites": ["L4-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["simple_past", "simple_present_imperfective"],
+    "allowedPatterns": [
+      "Ránshe ya + V-imperfective-past + , + a tepér' + <present>",
+      "Kogdá ya byl + <N-instrumental> + , + ya + V-imperfective-past",
+      "Ya stal + <N-instrumental>",
+      "Ya ból'she ne + V-present",
+      "Ya vsyó yeshchyó + V-present"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE INSTRUMENTAL PREDICATE — the third seat of the case L3-M2 opened for professions. Ya studént, in the present, has no verb and a NOMINATIVE. Kogdá ya byl studéntom has a verb and an INSTRUMENTAL. Ya stal vrachóm, becoming, is instrumental too. The rule, plainly: with byt' and stat' the complement stands in the instrumental when the state is bounded in time — and the present has no verb to trigger it, which is why L1-M5's empty present cell never showed this. The adjective follows the noun: byl málen'kim, not byl málen'kiy."
+    },
+    {
+      "tag": "delta",
+      "text": "English has THREE past habituals — I used to read, I would read, I read — and Russian has ONE imperfective past, with ránshe in front of it if the contrast needs saying. This is a simplification, not a difficulty, and it is worth naming because a learner braced for hardship invents a form to fill a gap that is not there. There is nothing to build: chitál is all three."
+    },
+    {
+      "tag": "interference",
+      "text": "Three pairs whose halves the learner already owns, and whose meaning is in the pair rather than the parts. ból'she ne is NOT ANY MORE; vsyó yeshchyó is STILL; and L4-M6's uzhé ne is also not any more, the softer of the two. Read one word at a time they give more-not, everything-still and already-not, none of which is the meaning. Learn each whole, keep the order fixed, and put it in front of the verb."
+    },
+    {
+      "tag": "delta",
+      "text": "A past STATE is not a past habit, and this module carries both. Kogdá ya byl studéntom is a stretch of life you were inside; ya mnógo chitál is what you repeatedly did in it. Both are imperfective, which is deliberate — with the aspect held still, the case ending is the only thing moving, and that is what makes the instrumental visible."
+    },
+    {
+      "tag": "free",
+      "text": "The frame itself costs nothing: ránshe … a tepér' … lines up with used to … but now … slot for slot, comma and all. The only thing to remember is that both halves keep their own tense — a past on the left, a plain present on the right — and no adverb of time is needed on the right at all."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M8-S01",
+      "display": "Ránshe ya zhil v Moskvé, a tepér' ya zhivú zdes'.",
+      "script": "Раньше я жил в Москве, а теперь я живу здесь.",
+      "cue": "I used to live in Moscow, but now I live here.",
+      "literal": "Earlier I lived in Moscow, and now I live here.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zhil",
+            "script": "жил",
+            "cue": "lived",
+            "tag": "delta",
+            "forms": ["zhil", "zhilá", "zhíli", "zhit'"],
+            "note": "Imperfective past of zhit', to live, and the past of L1-M7's zhivú. One form does used to live, would live and lived — the tense is the same whichever English you meant."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "There is no used to to translate. English marks the habit with an extra verb; Russian marks it with ránshe, an adverb, and leaves the verb an ordinary imperfective past.",
+      "sound": "zhyl — one syllable, and the i after zh is the hard back y, not the ee of English hill.",
+      "variations": [
+        {
+          "display": "Ránshe on zhil v Moskvé, a tepér' on zhivyót zdes'.",
+          "script": "Раньше он жил в Москве, а теперь он живёт здесь.",
+          "cue": "He used to live in Moscow, but now he lives here.",
+          "changed": "the third person on both sides of the contrast"
+        },
+        {
+          "display": "Ránshe my zhíli v Índii.",
+          "script": "Раньше мы жили в Индии.",
+          "cue": "We used to live in India.",
+          "changed": "the plural past, and only the then-half of the frame"
+        }
+      ],
+      "mistake": {
+        "display": "Ránshe ya zhivú v Moskvé, a tepér' ya zhivú zdes'.",
+        "script": "Раньше я живу в Москве, а теперь я живу здесь.",
+        "why": "ránshe means earlier and cannot sit on a present tense — the sentence contradicts itself. The adverb says which side of the line you are on; the verb still has to be in the right tense."
+      },
+      "usage": "Answering where are you from? when the honest answer has two parts.",
+      "register": "neutral",
+      "mnemonic": "ránshe is the whole of used to — one adverb, and the plain past does the rest."
+    },
+    {
+      "id": "L4-M8-S02",
+      "display": "Kogdá ya byl studéntom, ya mnógo chitál.",
+      "script": "Когда я был студентом, я много читал.",
+      "cue": "When I was a student, I read a lot.",
+      "literal": "When I was by-student, I much read.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "studéntom",
+            "script": "студентом",
+            "cue": "a student (after byl or stal)",
+            "tag": "delta",
+            "forms": ["studéntom"],
+            "note": "The instrumental of L1-M1's studént, and the case byl demands. It is a stretch of life you were inside, which is what the instrumental marks here."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "In the present the same idea takes no case at all: Ya studént, plain nominative, no verb. The instrumental appears only once a verb does, and byl is a verb.",
+      "sound": "stu-DYEN-tam — stress in the middle, and the final -om reduces to a flat -am.",
+      "variations": [
+        {
+          "display": "Kogdá ya byl studéntom, ya rabótal vécherom.",
+          "script": "Когда я был студентом, я работал вечером.",
+          "cue": "When I was a student, I worked evenings.",
+          "changed": "a different habit inside the same stretch"
+        },
+        {
+          "display": "Kogdá on byl studéntom, on zhil dóma.",
+          "script": "Когда он был студентом, он жил дома.",
+          "cue": "When he was a student, he lived at home.",
+          "changed": "the third person, with S01's verb in the second clause"
+        }
+      ],
+      "mistake": {
+        "display": "Kogdá ya byl studént, ya mnógo chitál.",
+        "script": "Когда я был студент, я много читал.",
+        "why": "The nominative studént is the form the verbless present takes. Once byl is there the complement moves to the instrumental — studéntom — because the state now has edges in time."
+      },
+      "usage": "Framing a stretch of your life before saying what you did in it.",
+      "register": "neutral",
+      "mnemonic": "No verb, no ending; put byl in and the noun puts -om on."
+    },
+    {
+      "id": "L4-M8-S03",
+      "display": "Moy brat stal vrachóm.",
+      "script": "Мой брат стал врачом.",
+      "cue": "My brother became a doctor.",
+      "literal": "My brother became by-doctor.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "stal",
+            "script": "стал",
+            "cue": "became",
+            "tag": "delta",
+            "forms": ["stal", "stat'"],
+            "note": "Perfective past of stat', to become, and the second verb that takes the instrumental. Its neuter stálo belongs to L3-M6, where it means a feeling arriving rather than a person changing."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English became takes a plain noun; Russian stal takes the instrumental, and always — becoming is a change of state, which is the clearest case of a state with edges.",
+      "sound": "stal — one syllable, a full open a, and the l is the hard dark l of the back of the mouth.",
+      "variations": [
+        {
+          "display": "Moy brat stal inzhenérom.",
+          "script": "Мой брат стал инженером.",
+          "cue": "My brother became an engineer.",
+          "changed": "another of L3-M2's professions in the instrumental"
+        },
+        {
+          "display": "Moy syn stal vrachóm.",
+          "script": "Мой сын стал врачом.",
+          "cue": "My son became a doctor.",
+          "changed": "a different relative doing the becoming"
+        }
+      ],
+      "mistake": {
+        "display": "Moy brat stal vrach.",
+        "script": "Мой брат стал врач.",
+        "why": "vrach is the nominative, and after stal it leaves the sentence with two subjects and no complement. Becoming something always puts that something in the instrumental."
+      },
+      "usage": "Saying what someone in your family ended up doing.",
+      "register": "neutral",
+      "mnemonic": "You become BY means of a profession — that is the instrumental's own logic, and it holds."
+    },
+    {
+      "id": "L4-M8-S04",
+      "display": "Oná stála inzhenérom, a ya ostálsya studéntom.",
+      "script": "Она стала инженером, а я остался студентом.",
+      "cue": "She became an engineer, and I stayed a student.",
+      "literal": "She became by-engineer, and I remained by-student.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "stála",
+            "script": "стала",
+            "cue": "she became",
+            "tag": "delta",
+            "forms": ["stála"],
+            "note": "The feminine of stal. Do not reach for stálo to fill the neuter cell: L3-M6 owns it for mne stálo grústno, and it will not answer for becoming anything."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "L2-M10's ostálsya, remained, belongs to the same family and takes the same case. Any verb that leaves you IN a state — being, becoming, staying — puts the state in the instrumental.",
+      "sound": "STA-la — front-stressed, and the second a is short and reduced, almost swallowed.",
+      "variations": [
+        {
+          "display": "Oná stála vrachóm.",
+          "script": "Она стала врачом.",
+          "cue": "She became a doctor.",
+          "changed": "the sentence with the contrast dropped"
+        },
+        {
+          "display": "Oná stála nachál'nikom, a ya ostálsya zdes'.",
+          "script": "Она стала начальником, а я остался здесь.",
+          "cue": "She became a boss, and I stayed here.",
+          "changed": "a place in the second half instead of a state"
+        }
+      ],
+      "mistake": {
+        "display": "Oná stálo inzhenérom, a ya ostálsya studéntom.",
+        "script": "Она стало инженером, а я остался студентом.",
+        "why": "stálo is the neuter, and L3-M6 taught it in mne stálo grústno — a feeling that came over someone. It cannot be borrowed for a woman becoming an engineer; that is stála."
+      },
+      "usage": "Comparing two lives that started at the same place.",
+      "register": "neutral",
+      "mnemonic": "stal, stála — and stálo is already spoken for, by a mood rather than a career."
+    },
+    {
+      "id": "L4-M8-S05",
+      "display": "Ya ból'she ne rabótayu tam, a tepér' otdykháyu.",
+      "script": "Я больше не работаю там, а теперь отдыхаю.",
+      "cue": "I don't work there any more — I'm taking it easy now.",
+      "literal": "I more not work there, and now rest.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ból'she ne",
+            "script": "больше не",
+            "cue": "not any more",
+            "tag": "interference",
+            "forms": ["ból'she ne"],
+            "note": "Not any more, taken whole and placed in front of the verb. L2-M9's ból'she on its own is more; here the pair is one word with a space in it."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "English puts any more at the END. Russian puts ból'she ne in FRONT of the verb, and moving it to the end turns it back into two separate words that mean something duller.",
+      "sound": "BOL-shy nye — front-stressed, the l soft against the tongue, and the pair said as one run.",
+      "variations": [
+        {
+          "display": "Ya ból'she ne zhivú tam.",
+          "script": "Я больше не живу там.",
+          "cue": "I don't live there any more.",
+          "changed": "S01's verb under the same negation"
+        },
+        {
+          "display": "On ból'she ne rabótayet zdes'.",
+          "script": "Он больше не работает здесь.",
+          "cue": "He doesn't work here any more.",
+          "changed": "the third person, and here instead of there"
+        }
+      ],
+      "mistake": {
+        "display": "Ya ne rabótayu tam ból'she.",
+        "script": "Я не работаю там больше.",
+        "why": "Word for word from English, and it comes apart: at the end ból'she goes back to meaning more, so the sentence drifts towards I don't work there much. The pair has to stay together, in front of the verb."
+      },
+      "usage": "Telling someone your situation has changed since they last asked.",
+      "register": "informal",
+      "mnemonic": "ból'she ne travels together and travels early — front of the verb, never the tail."
+    },
+    {
+      "id": "L4-M8-S06",
+      "display": "On vsyó yeshchyó rabótayet v Moskvé.",
+      "script": "Он всё ещё работает в Москве.",
+      "cue": "He still works in Moscow.",
+      "literal": "He all still works in Moscow.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vsyó yeshchyó",
+            "script": "всё ещё",
+            "cue": "still",
+            "tag": "interference",
+            "forms": ["vsyó yeshchyó"],
+            "note": "Still, built from L1-M10's vsyó and L1-M8's yeshchyó and meaning neither of them. The order never changes and the pair never comes apart."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "This is the positive twin of ból'she ne, and the two cover the whole ground between them: vsyó yeshchyó for what has not stopped, ból'she ne for what has.",
+      "sound": "fsyo yish-CHO — the v goes voiceless before the s, and both words end in the same o.",
+      "variations": [
+        {
+          "display": "Ya vsyó yeshchyó zdes'.",
+          "script": "Я всё ещё здесь.",
+          "cue": "I'm still here.",
+          "changed": "no verb at all, which the present allows"
+        },
+        {
+          "display": "Oná vsyó yeshchyó rabótayet.",
+          "script": "Она всё ещё работает.",
+          "cue": "She's still working.",
+          "changed": "the place dropped, so only the still remains"
+        }
+      ],
+      "mistake": {
+        "display": "On yeshchyó vsyó rabótayet v Moskvé.",
+        "script": "Он ещё всё работает в Москве.",
+        "why": "Reversed, the pair falls back into its parts — more and everything — and the sentence stops meaning still. The order vsyó yeshchyó is fixed, and there is nothing behind it to reason from."
+      },
+      "usage": "Bringing someone up to date on a person they have lost touch with.",
+      "register": "neutral",
+      "mnemonic": "vsyó yeshchyó — all-still, in that order, or it is not still at all."
+    },
+    {
+      "id": "L4-M8-S07",
+      "display": "V détstve ya chásto khodíl v kinó.",
+      "script": "В детстве я часто ходил в кино.",
+      "cue": "As a child I often went to the cinema.",
+      "literal": "In childhood I often went in cinema.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "détstve",
+            "script": "детстве",
+            "cue": "childhood (in)",
+            "tag": "free",
+            "forms": ["détstve", "détstvo"],
+            "note": "Childhood. v détstve, in the prepositional, is how Russian says as a child — there is no phrase built on the word for child."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "English says as a child and names the child; Russian names the childhood. There is no Russian sentence shaped like as a child I went, so learn v détstve as the frame itself.",
+      "sound": "DYET-stvye — front-stressed, and the tstv in the middle is four consonants said without a vowel between them.",
+      "variations": [
+        {
+          "display": "V détstve on chásto khodíl v kinó.",
+          "script": "В детстве он часто ходил в кино.",
+          "cue": "As a child he often went to the cinema.",
+          "changed": "somebody else's childhood"
+        },
+        {
+          "display": "V détstve my zhíli v Moskvé.",
+          "script": "В детстве мы жили в Москве.",
+          "cue": "As children we lived in Moscow.",
+          "changed": "a past state instead of a past habit"
+        }
+      ],
+      "mistake": {
+        "display": "V détstvo ya chásto khodíl v kinó.",
+        "script": "В детство я часто ходил в кино.",
+        "why": "détstvo is the dictionary form and goes with motion INTO something. Being inside a time takes the prepositional, so childhood as a setting is v détstve."
+      },
+      "usage": "Opening a story about yourself long ago.",
+      "register": "informal",
+      "mnemonic": "Russian puts you IN the childhood, not next to the child."
+    },
+    {
+      "id": "L4-M8-S08",
+      "display": "Vsyó izmenílos', no ya vsyó yeshchyó zdes'.",
+      "script": "Всё изменилось, но я всё ещё здесь.",
+      "cue": "Everything has changed, but I'm still here.",
+      "literal": "All changed-itself, but I all still here.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "izmenílos'",
+            "script": "изменилось",
+            "cue": "changed",
+            "tag": "delta",
+            "forms": ["izmenílos'"],
+            "note": "Neuter past with -sya, so nobody changed it — it changed. The agreement is with vsyó, everything, which is neuter, and that is why the ending is -los'."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "English has changed is a perfect; there is none here. The perfective past already means the change is done and the result stands, so nothing has to be added to say so.",
+      "sound": "iz-mi-NI-las — stress on the ní, and the final -los' is soft and almost whispered.",
+      "variations": [
+        {
+          "display": "Zdes' vsyó izmenílos'.",
+          "script": "Здесь всё изменилось.",
+          "cue": "Everything here has changed.",
+          "changed": "a place put in front, and the contrast dropped"
+        },
+        {
+          "display": "Vsyó izmenílos', no ya rad.",
+          "script": "Всё изменилось, но я рад.",
+          "cue": "Everything has changed, but I'm glad.",
+          "changed": "L3-M6's feeling in the second half"
+        }
+      ],
+      "mistake": {
+        "display": "Vsyó izmenílsya, no ya vsyó yeshchyó zdes'.",
+        "script": "Всё изменился, но я всё ещё здесь.",
+        "why": "izmenílsya is the masculine ending, and vsyó is neuter. The reflexive past agrees with its subject like any other past, so everything changed has to be izmenílos'."
+      },
+      "usage": "Coming back to a place after a long time.",
+      "register": "neutral",
+      "mnemonic": "vsyó is neuter, so whatever happens to it ends in -o or -os'."
+    },
+    {
+      "id": "L4-M8-S09",
+      "display": "Kogdá ya byl málen'kim, my zhíli v Índii.",
+      "script": "Когда я был маленьким, мы жили в Индии.",
+      "cue": "When I was little, we lived in India.",
+      "literal": "When I was by-little, we lived in India.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "málen'kim",
+            "script": "маленьким",
+            "cue": "little, small (after byl)",
+            "tag": "delta",
+            "forms": ["málen'kim"],
+            "note": "The instrumental of L2-M3's málen'kiy. An adjective after byl behaves exactly like a noun after it — the state has edges in time, so it takes the instrumental."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "The rule is about the verb, not the word class. It looks strange to put a case ending on small, but byl treats an adjective and a noun the same, and byl málen'kiy is not an option.",
+      "sound": "MA-lin-kim — front-stressed, the soft sign after the n keeping that n soft before the ending.",
+      "variations": [
+        {
+          "display": "Kogdá on byl málen'kim, oní zhíli v Índii.",
+          "script": "Когда он был маленьким, они жили в Индии.",
+          "cue": "When he was little, they lived in India.",
+          "changed": "somebody else's childhood, in the third person"
+        },
+        {
+          "display": "Kogdá ya byl málen'kim, my zhíli v Moskvé.",
+          "script": "Когда я был маленьким, мы жили в Москве.",
+          "cue": "When I was little, we lived in Moscow.",
+          "changed": "a different place in the second clause"
+        }
+      ],
+      "mistake": {
+        "display": "Kogdá ya byl málen'kiy, my zhíli v Índii.",
+        "script": "Когда я был маленький, мы жили в Индии.",
+        "why": "Heard in speech, and still the wrong lesson to learn: the written rule is that byl puts its complement in the instrumental, adjective or noun alike. Write málen'kim and the sentence is right everywhere."
+      },
+      "usage": "The Russian equivalent of when I was a kid, at the top of a memory.",
+      "register": "informal",
+      "mnemonic": "byl does not care whether it is a job or a size — both leave in the instrumental."
+    },
+    {
+      "id": "L4-M8-S10",
+      "display": "Ránshe on byl studéntom, a tepér' on stal nachál'nikom.",
+      "script": "Раньше он был студентом, а теперь он стал начальником.",
+      "cue": "He used to be a student, and now he's become a boss.",
+      "literal": "Earlier he was by-student, and now he became by-boss.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nachál'nikom",
+            "script": "начальником",
+            "cue": "a boss (after byl or stal)",
+            "tag": "delta",
+            "forms": ["nachál'nikom"],
+            "note": "The instrumental of L3-M2's nachál'nik. The case shape opens here because this is the first sentence that needs it; the word itself is L3-M2's."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "Both halves carry the instrumental — byl studéntom on the left, stal nachál'nikom on the right — which is the tidiest proof that the case belongs to the VERB and not to the meaning of the noun.",
+      "sound": "na-CHAL-ni-kam — stress on the second syllable, and the ending reduces to a flat -kam.",
+      "variations": [
+        {
+          "display": "Ránshe ya byl studéntom, a tepér' ya rabótayu.",
+          "script": "Раньше я был студентом, а теперь я работаю.",
+          "cue": "I used to be a student, and now I work.",
+          "changed": "a plain present verb on the right, with no case to mark"
+        },
+        {
+          "display": "On stal nachál'nikom.",
+          "script": "Он стал начальником.",
+          "cue": "He's become a boss.",
+          "changed": "only the now-half, standing on its own"
+        }
+      ],
+      "mistake": {
+        "display": "Ránshe on studént, a tepér' on nachál'nik.",
+        "script": "Раньше он студент, а теперь он начальник.",
+        "why": "The right half is fine — the present has no verb and takes the nominative. The left half is not: ránshe demands a past, the past demands byl, and byl demands studéntom."
+      },
+      "usage": "Catching someone up on a person they last saw years ago.",
+      "register": "neutral",
+      "mnemonic": "Present: no verb, no ending. Past: byl, and the -om comes with it."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M8-C01",
+      "display": "Ránshe ya zhil v Moskvé, a tepér' ya zhivú zdes'.",
+      "script": "Раньше я жил в Москве, а теперь я живу здесь.",
+      "cue": "I used to live in Moscow, but now I live here."
+    },
+    {
+      "id": "L4-M8-C02",
+      "display": "Kogdá ya byl studéntom, ya mnógo chitál.",
+      "script": "Когда я был студентом, я много читал.",
+      "cue": "When I was a student, I read a lot."
+    },
+    {
+      "id": "L4-M8-C03",
+      "display": "Moy brat stal vrachóm.",
+      "script": "Мой брат стал врачом.",
+      "cue": "My brother became a doctor."
+    },
+    {
+      "id": "L4-M8-C04",
+      "display": "Oná stála inzhenérom.",
+      "script": "Она стала инженером.",
+      "cue": "She became an engineer."
+    },
+    {
+      "id": "L4-M8-C05",
+      "display": "Ya ból'she ne rabótayu tam.",
+      "script": "Я больше не работаю там.",
+      "cue": "I don't work there any more."
+    },
+    {
+      "id": "L4-M8-C06",
+      "display": "On vsyó yeshchyó rabótayet v Moskvé.",
+      "script": "Он всё ещё работает в Москве.",
+      "cue": "He still works in Moscow."
+    },
+    {
+      "id": "L4-M8-C07",
+      "display": "V détstve ya chásto khodíl v kinó.",
+      "script": "В детстве я часто ходил в кино.",
+      "cue": "As a child I often went to the cinema."
+    },
+    {
+      "id": "L4-M8-C08",
+      "display": "Zdes' vsyó izmenílos'.",
+      "script": "Здесь всё изменилось.",
+      "cue": "Everything here has changed."
+    },
+    {
+      "id": "L4-M8-C09",
+      "display": "Kogdá ya byl málen'kim, my zhíli v Índii.",
+      "script": "Когда я был маленьким, мы жили в Индии.",
+      "cue": "When I was little, we lived in India."
+    },
+    {
+      "id": "L4-M8-C10",
+      "display": "Ránshe on byl studéntom, a tepér' on stal nachál'nikom.",
+      "script": "Раньше он был студентом, а теперь он стал начальником.",
+      "cue": "He used to be a student, and now he's become a boss."
+    },
+    {
+      "id": "L4-M8-C11",
+      "display": "Ya vsyó yeshchyó zdes', no vsyó izmenílos'.",
+      "script": "Я всё ещё здесь, но всё изменилось.",
+      "cue": "I'm still here, but everything has changed."
+    },
+    {
+      "id": "L4-M8-C12",
+      "display": "Oná stála vrachóm, a on ostálsya studéntom.",
+      "script": "Она стала врачом, а он остался студентом.",
+      "cue": "She became a doctor, and he stayed a student."
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

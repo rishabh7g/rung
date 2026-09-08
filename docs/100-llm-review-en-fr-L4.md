@@ -566,3 +566,393 @@ sentences, with all five enrichment blocks on L4-M3 as the M1–M3 rule requires
      not dated, confirm `franchement` in first position is heard as courteous rather than as a
      warning of rudeness, and confirm `disons que` takes the indicative as flatly as S10's plate
      claims.
+
+## Wave 3 — L4-M6 through L4-M10 (#560)
+
+The level's remaining RANGE modules and its exit: the first module that subordinates one event to
+another, the first module whose main skill is comprehension rather than production, the first that
+uses the imparfait for a period with no story around it, the first that puts `y` and `en` in front
+of a verb, and the account that spends the level rather than adding to it. Authored in one pass
+against `npm run content:kit`, with every claim in the five briefs' §5 re-run through
+`npm run content:owner` before a row was written. Two of those claims were wrong and are corrected
+below; a third was right but incomplete in a way that would have shipped an unreachable line.
+
+### L4-M6 "Before and after" — a constraint English does not have
+
+    S01  Avant de partir, je dois signer ce document
+    S02  Après avoir signé le document, je suis parti
+    S03  Je reste ici jusqu'à ce que le train soit prêt
+    S04  Depuis que je travaille ici, je suis plus content
+    S05  Ça fait deux ans que je travaille ici
+    S06  Tu as déjà signé le formulaire ?
+    S07  Je n'ai pas encore signé le document
+    S08  J'ai travaillé à Paris pendant deux ans
+    S09  Je suis arrivé ici il y a deux ans
+    S10  Une fois que le bureau est fermé, il faut attendre
+
+Sixteen word rows, six module rules, six patterns. The module's argument is rule 0: French sorts
+its time connectors by whether the two halves SHARE A SUBJECT, and English gives no warning at all.
+Same subject takes an infinitive (`avant de partir`, `après avoir signé`); different subjects grow a
+`que` and take a clause. Rule 1 is the past infinitive — `après avoir` + participle where English
+uses an `-ing` — and S02's plate is the sentence an English speaker assembles, `Après signer le
+document`. Rule 2 is the narrow one: of the six clause connectors only `avant que` and
+`jusqu'à ce que` bend the verb into L4-M5's subjunctive, and S10 exists to stop the mood spreading
+across the family — its plate is `Une fois que le bureau soit fermé`. Rule 3 is the three-way break
+of English *for two hours* (`pendant` finished, `depuis` running, `ça fait … que` the same fact
+turned round), which S05, S08 and S09 carry between them. Rule 4 is `ago`, and S09's plate is
+`Je suis arrivé ici depuis deux ans` — the sentence a learner writes when they cannot find a word
+for *ago* and settle for the one that means the opposite. Rule 5 seats `déjà` and `pas encore`
+between auxiliary and participle, and S07's plate is the dropped `ne`.
+
+`jusqu'à` and `jusqu'à ce que` are two rows on S03 rather than one, because they are two keys: a
+time or a place takes the short one, a clause takes the long one. `en attendant` rides on the same
+sentence as the case with no end named at all.
+
+### L4-M7 "Official talk" — the first module that says out loud it is for reading
+
+    S01  Veuillez patienter, le guichet va ouvrir
+    S02  Merci de signer votre dossier au guichet
+    S03  Il est interdit de manger ici
+    S04  Le train à destination de Paris partira du quai trois
+    S05  Le train en provenance de Paris a du retard
+    S06  En raison de travaux, le bureau sera fermé
+    S07  La mairie ouvrira à dix heures
+    S08  Bonjour madame, je viens pour un rendez-vous
+    S09  Pourriez-vous patienter ici, s'il vous plaît ?
+    S10  Au suivant ! Le guichet deux est ouvert
+
+Twenty-one word rows carrying twenty-four surfaces — the tightest module in the wave against the
+cap of 25 — and seven module rules. Rule 0 is the one brief note 1 asked for in as many words: the
+module is two columns, the officialese you read and the plain French you say back, and it says so
+before anything else. Eight of the ten sentences are `formal` and carry the register chip; S08 is
+`neutral` and is the whole of the other column, which is why its plate is `je suis ici pour un
+rendez-vous` rather than a grammar error.
+
+Rule 2 is the futur simple, admitted as RECOGNITION and in the third person only, exactly as brief
+note 2 required: one row, `sera`, whose forms list is `sera`, `partira`, `ouvrira`, and whose note
+ends *your own future stays L1-M6's je vais partir*. S07's plate — `La mairie va ouvrira` — is the
+learner who has taken the new ending as a piece to bolt onto the future they already have. Rule 3
+is the nominalisation delta (English officialese shortens, French lengthens), and S05's plate is
+`est retard`: a train HAS delay in French, and `est en retard` describes a person.
+
+`pourriez-vous` is written whole, hyphen and all, and buys bare `pourriez` as a hyphen part — the
+mechanism `rendez-vous` used in L3-M7. `puis-je` was checked and deliberately not written; see the
+seam section.
+
+### L4-M8 "Back then" — one English word, two French tenses
+
+    S01  Autrefois, j'habitais à Paris. Maintenant, j'habite ici
+    S02  À l'époque, on n'avait pas de voiture
+    S03  Quand j'étais petit, je jouais dehors
+    S04  Avant, on allait au cinéma tous les jours
+    S05  Je ne fume plus depuis deux ans
+    S06  Aujourd'hui, on ne se voit plus
+    S07  J'irais bien au cinéma, mais je dois travailler
+    S08  Avant, la vie était plus facile
+    S09  Tout a changé depuis dix ans
+    S10  À l'époque, je ne pouvais pas travailler ici
+
+Nineteen word rows over twenty-one surfaces, six module rules. Nothing is newly conjugated: rule 0
+says the endings are L2-M10's and the module does not touch them, and what is new is only that the
+tense can carry a whole PERIOD with no story around it. Rule 1 requires the now half — the contrast
+is a pair of sentences, and S01 ships the pair inside one display.
+
+Rule 3 is the module's hinge and S07 is the sentence it exists for: English *would* is a habit
+(`on allait`) and a hypothesis (`j'irais`), and S07's plate is `J'allais bien au cinéma, mais je
+dois travailler` — the habit dropped into the hypothesis's slot. Rule 4 holds `ne … plus` against
+L2-M9's comparative `plus`, and S05 and S08 are deliberately adjacent: `je ne fume plus` is *not any
+more*, `plus facile` is *more easy*, and the only difference on the page is the `ne`. S05's plate is
+the dropped `ne`, which here does not soften the sentence but reverses it.
+
+### L4-M9 "Places and journeys" — two small words that will not go where English puts them
+
+    S01  On est allés en France en train
+    S02  On y est allés en voiture
+    S03  J'y suis allé il y a deux ans
+    S04  Il y en a trois dans la valise
+    S05  On en a acheté deux au guichet
+    S06  Nous sommes allés en Espagne et au Portugal
+    S07  On a pris la route jusqu'au Portugal
+    S08  On est allés à la plage et à la montagne
+    S09  Combien de temps avant le départ ?
+    S10  Le Portugal est un pays au bord de la mer
+
+Nineteen word rows, six module rules. Rules 0 and 1 are the placement law — `y` and `en` lean LEFT,
+onto the verb — and every one of S02's, S03's, S04's and S05's plates is the same error from a
+different angle: `on est allés y`, `il y a trois en`, `on a acheté deux` with the `en` simply gone.
+Rule 2 is the preposition rule, and the point of writing it as *a fact about the noun* is that
+English offers nothing to carry across. Rule 3 is the internal interference brief note 3 called the
+most useful line in the module: `en France` and `en train` are the same two letters in one sentence,
+and S01 puts them there on purpose.
+
+Rule 4 is the seam made into a rule: bare `y` is L2-M6's and bare `en` is L2-M4's, so no pronoun has
+a row here and all four frames are indexed WHOLE. `jusqu'au` is opened beside L4-M6's `jusqu'à`
+because `à le` contracts, and S07's plate is `jusqu'à le Portugal`.
+
+### L4-M10 "A story with a twist" — the level's exit, spent on connectors
+
+    S01  Hier soir, j'ai perdu mon sac dans le train
+    S02  Tout à coup, quelqu'un m'a appelé
+    S03  Il m'a dit « votre sac est au guichet »
+    S04  Je n'ai rien dit, j'étais très content
+    S05  Sauf que le sac était vide
+    S06  Finalement, j'ai trouvé mon sac au bureau
+    S07  En fait, le voisin avait pris mon sac
+    S08  Soudain, le train est parti sans moi
+    S09  Le train est parti alors que j'étais au guichet
+    S10  J'ai répondu « merci madame » et je suis parti
+
+Twelve word rows — the cheapest module in the level, which is what an exit module should be — and
+six module rules. S01–S06 are the six-sentence account brief note 1 asked for, with the twist at S05
+and the close at S06; S07 is the coda that explains it, in L4-M3's plus-que-parfait; S08–S10 are
+three further turn shapes with the same cast. Every display but seven words of it is re-use, and
+rule 5 says so to the learner.
+
+Rule 0 is the module's reason to exist: L3-M5 taught the backshift after `il a dit que`, and inside
+guillemets NOTHING shifts. S03's plate is `Il m'a dit « votre sac était au guichet »` — the learner
+backshifting inside the quotation — and S10's plate is the other half of the same habit, a `que`
+in front of the guillemets. Rule 1 states that the guillemets and the space before `?` are
+typography rather than vocabulary; brief note 3's tokenizer claim was re-checked here and holds
+(`tokenizeSurface` over S03's display returns `il · m'a · dit · votre · sac · est · au · guichet` —
+the guillemets drop out as edge punctuation and cost no surface). Rule 4 puts `rien` in `déjà`'s
+seat with its `ne`, which makes three words on one habit: `pas`, `pas encore`, `rien`.
+
+### The seams the briefs got wrong, and what `content:owner` actually said
+
+**1. `fermé` is not free — it is L4-M2's.** L4-M7's brief note 5 lists it among the surfaces
+"content:owner reports … all free". It does not:
+
+    fermé	L4-M2
+    annulé	L4-M2
+
+Both announcement participles the brief names as "fixed announcement shapes" were spent by wave 1.
+No row was opened for either. S06 writes `le bureau sera fermé` and the line resolves through this
+module's `sera` plus L4-M2's `fermé`, which is the right outcome — a second `fermé` row would have
+been unreachable and its note never shown. `ouvert`, its opposite, IS free and is this module's,
+which is why S10's row note reads *its opposite, fermé, is L4-M2's — this is the row that completes
+the pair*.
+
+**2. `en fait` is not free — it is L4-M4's.** L4-M10's brief note 5 lists it among the free
+surfaces. `content:owner`:
+
+    en fait	L4-M4
+    tout à coup	free
+    soudain	free
+    finalement	free
+    alors que	free
+    sauf que	free
+
+Wave 2 spent it on L4-M4's concession module. S07 uses `en fait` and opens no row for it; its
+`trap` names L4-M4 as the owner instead. The other five in the brief's list are free and all five
+were taken.
+
+**3. `n'a` is free while `n'ai` is L1-M5's, and the brief's own example line depends on it.**
+L4-M10's brief note 5 writes the negator example as `il n'a rien dit`. `content:owner`:
+
+    n'a	free
+    n'ai	L1-M5
+    n'est	L2-M7
+    n'était	L3-M10
+    n'avait	free
+
+The elided third-person `n'a` has never been taught. `il n'a rien dit` could only have shipped by
+opening an `n'a` row or by indexing the whole line, and neither is worth a slot in an exit module —
+so S04 writes `Je n'ai rien dit`, which resolves through L1-M5's `n'ai`. This is the elision law in
+the brief's own §"en-fr-SPECIFIC LAW" biting the brief's own example, and it is the finding this
+wave would most want the next one to have.
+
+The same check governs L4-M8: `n'avait` is free, which is exactly why brief note 5 was right to say
+`on n'avait pas de voiture` must be indexed WHOLE. It is, on S02, and the row note says why.
+
+**4. `allait` is free and `allais` is L2-M10's — so the hole, not the whole.** L4-M8's brief note 5
+offers `on allait` as a free whole. It is, but so is the bare third person:
+
+    on allait	free
+    allait	free
+    allais	L2-M10
+    jouais	free
+    jouait	free
+    jouions	free
+
+Taking bare `allait` opens the cell L2-M10 left empty without touching the cell it filled, which is
+the en-it L4-M3 discipline (`avrei` yes, `sarei` no) applied to an imparfait paradigm. S04's row
+note says it in one line: *its first person, allais, is L2-M10's and stays there — this row opens
+only the cell that module left empty*. The `jouais` row, by contrast, has no hole at all: `jouais`,
+`jouait` and `jouions` are all free, so all three are on the forms list.
+
+**5. `avant` is L3-M8's and no second row was opened for it.** Confirmed twice, once per module:
+
+    avant	L3-M8
+    avant de	free
+    avant que	free
+    à l'époque	free
+    autrefois	free
+
+L4-M6 takes `avant de` and `avant que` as fresh whole keys beside it, exactly as brief note 5 said.
+L4-M8 wanted the same key as the bare adverb *back then*, and the brief offered a choice — accept
+L3-M8's row, or lead with `à l'époque` and `autrefois`. Both were done: the module leads with
+`autrefois` and `à l'époque`, uses bare `avant` in four displays without a row, and rule 5 records
+the double duty in the learner's own text (*That avant is the SAME word L3-M8 taught in front of a
+date … and no second row is opened for it here*).
+
+**6. `billet aller-retour` was checked, confirmed, and deliberately NOT spent.** L4-M9's brief note
+5 is right about the mechanism:
+
+    billet aller-retour	free   [parts: aller → L2-M4, retour → free]
+    aller-retour	free   [parts: aller → L2-M4, retour → free]
+    retour	free
+    états-unis	free   [parts: états → free, unis → free]
+
+The hyphen would have bought bare `retour` for nothing, which is a real bargain — but no sentence in
+the module needed it without displacing one of the four `y`/`en` frames, and those are what the
+module is for. `États-Unis` was spent and does buy its two parts. The bargain is recorded here so
+the next wave can take it rather than re-derive it.
+
+**7. The INDEX SEAM's count and module are both stale, in every brief in the level.** The L4 briefs
+speak of the fold as it stood through L3-M10. Today the last line of every `content:owner` run in
+this wave read:
+
+    886 surfaces owned, folded over 35 modules through L4-M5
+
+Thirty-five modules, not thirty; 886 surfaces, and L4-M1 through L4-M5 are inside the fold. Every
+"free" in this section was read off that run, not off the briefs.
+
+**8. Confirmed as written, and worth saying because each was checked rather than assumed.**
+`pendant` free while `pendant que` → L3-M10; `depuis` → L3-M7 and `depuis que` free; `il y a` →
+L1-M7 (so `il y a deux ans` is indexed whole, five tokens, and its note names L1-M7 openly);
+`encore` → L2-M5 (so `pas encore` is whole); `y` → L2-M6 and `en` → L2-M4 (so all four journey
+frames are whole); `plus` → L2-M9 (so `je ne fume plus` and `on ne se voit plus` are whole);
+`du coup` → L4-M2 (so `tout à coup` is whole and bare `coup` stays free); `été` → L4-M3;
+`c'était` → L3-M10, which is the correction to docs/74 §4 that L4-M8's brief already carried and
+that this wave re-confirmed; `personne` → L2-M10, not re-opened beside `quelqu'un`; `rendez-vous` →
+L3-M7 with `rendez` → L3-M7; and `votre` and `vos` genuinely free after thirty-five modules of a
+`vous`-speaking course, which was checked three times because it still does not look right.
+
+**9. `puis-je` was checked and refused.** `content:owner` says
+
+    puis-je	free   [parts: puis → L1-M10, je → L1-M1]
+
+so it buys nothing, exactly as the brief said — and writing it would seat a second meaning on top
+of L1-M10's `puis` (*then*) in a module whose whole job is recognition. `pourriez-vous` carries the
+frozen-inversion rule alone, and docs/74 §2's `est-ce que` stands untouched.
+
+**10. `m'a dit` and `j'ai répondu` are free, but their parts already resolve.** `content:owner`:
+
+    m'a dit	free
+    m'a	L3-M5
+    dit	L2-M6
+    j'ai répondu	free
+    répondu	free
+
+Neither whole was needed to make a line resolve. `il m'a dit` was nevertheless opened as a row on
+S03, and its note says plainly what it is for — *its parts are already owned … so this row exists to
+carry the no-backshift rule, not to rescue a word*. `j'ai répondu` was not: bare `répondu` is free
+and is the more useful cell, so S10 takes the bare participle.
+
+### The ratchet
+
+`npm run content:shown -- en-fr L4-M6`, `-- en-fr L4-M7`, `-- en-fr L4-M8`, `-- en-fr L4-M9` and
+`-- en-fr L4-M10` each print `clean — every shown surface resolves`, with **zero**
+`SHOWN-BUT-UNTAUGHT`, **zero** `COLLIDES INSIDE THIS MODULE` and **zero** `RE-TEACH` lines. All
+eighty-seven word rows across the five modules open a key no earlier module owns — which is the
+point of seam corrections 1, 2, 4, 5 and 9 above: each of them is a row that was NOT written because
+an earlier module already owns the cell, or because opening it would have buried an owned meaning.
+
+`npx vitest run tools/shown-surfaces.test.ts` is **11/11** and **en-fr holds at its baseline of 20**.
+Nothing was raised and nothing needed lowering. The wave adds fifty displays, a hundred
+`variations[].display` lines and five twelve-item `comprehensionPool`s, and not one of them shows a
+surface no row owns.
+
+Surface spend against the briefs' `newWordCap` of 25: M6 sixteen, M7 twenty-four (the tightest in
+the level), M8 twenty-one, M9 nineteen, M10 twelve.
+
+`npm run content:validate` reports `CONTENT 355/355 ok` on this wave's last run — the total moves
+while the other eight courses' L4 waves land in the same checkout (it read 351/351 an hour earlier);
+what matters is that `en-fr/L4-M6.json` through `en-fr/L4-M10.json` are all on the `ok` side of it.
+
+`npx vitest run src/course/types.test.ts` is **374 passed, 2 failed** on the same run, and neither
+failure is this wave's: the module census (`finds all 354`), which is the parent's, and an en-ko
+word with no `note`, which belongs to that course's wave landing beside this one. An earlier run
+during this wave also showed the en-ar module count and a hi-en English mnemonic, both of which
+those courses' waves have since fixed. `npx vitest run src/course/types.test.ts -t "en-fr"` is
+**42 passed, 334 skipped**: no `glossEn` anywhere, straight apostrophes in every L2 slot — `display`, `forms`,
+`variations[].display`, `mistake.display` and every pool item — and every `deconstruction.rules`
+index in range across all fifty sentences.
+
+### Open questions for the native pass
+
+108. **The same-subject / different-subject law as stated** (M6, rule 0). Confirm that the six
+     connectors are sorted correctly — `avant de`, `après avoir` and `sans` on the infinitive;
+     `avant que`, `jusqu'à ce que`, `depuis que`, `une fois que`, `tant que` and `lorsque` on a
+     clause — and confirm that `après que` (not shipped) really does take the indicative in current
+     usage rather than the subjunctive a lot of speakers now use.
+
+109. **`jusqu'à ce que` and `avant que` as the only two subjunctive triggers here** (M6, rule 2).
+     Confirm that `une fois que`, `tant que` and `lorsque` take the indicative flatly, and confirm
+     that `avant que` in ordinary speech does NOT need the expletive `ne` (`avant qu'il ne parte`)
+     for the module's plain form to sound right.
+
+110. **The three-way break of *for two hours*** (M6, rule 3, S05/S08/S09). Confirm that
+     `ça fait deux ans que je travaille ici` and `je travaille ici depuis deux ans` are heard as
+     interchangeable, and that `ça fait` is the one a speaker reaches for first rather than a
+     textbook alternative.
+
+111. **`Ça fait trois jours qu'il pleut`** (M6, S05 variation). Confirm the elision of `que` to
+     `qu'` before `il` is the only written form, and that no speaker would write `que il`.
+
+112. **`veuillez`, `prière de` and `merci de` as a ranked set** (M7, rule 1, S01–S03). Confirm the
+     three are ordered as this module implies — `veuillez` the announcement, `prière de` the softer
+     notice, `merci de` the commonest printed request — and that `merci de` really is read as a
+     request rather than as thanks for something already done.
+
+113. **The futur simple admitted in the third person only** (M7, rule 2). Confirm that
+     `le train partira`, `le guichet sera fermé` and `la mairie ouvrira` are what a learner actually
+     meets, and that keeping the first person on `je vais partir` for another level leaves no hole a
+     French speaker would notice.
+
+114. **`a du retard` against `est en retard`** (M7, S05 and its plate). Confirm a service HAS delay
+     and a person IS late, and that `le train est en retard` — which a French speaker does say — is
+     not so common that the plate is unfair.
+
+115. **`au suivant` as the counter's call** (M7, S10). Confirm it is current in French offices and
+     stations rather than dated or regional, and confirm `la personne suivante`, which the brief
+     names, is the form a learner is more likely to hear in some settings.
+
+116. **`pourriez-vous` as the level's only inversion** (M7, rule 6, S09). Confirm that keeping
+     `est-ce que` everywhere else leaves the learner sounding natural rather than oddly uninverted
+     at a counter, and confirm `pourriez-vous` + infinitive is the shape, not `pourriez-vous que`.
+
+117. **The `avant` double duty** (M8, rule 5, S04/S08). Confirm that bare `avant` at the head of a
+     clause reads as *back then* to a French ear as readily as it reads as *before* in front of a
+     date, and that a learner meeting one row for both will not be misled.
+
+118. **`on allait` for a habit against `j'irais` for a hypothesis** (M8, rule 3, S07). This is the
+     module's whole hinge. Confirm the split is as clean as stated, and confirm
+     `j'irais bien au cinéma` is current spoken French for *I'd quite like to go* rather than a
+     construction that reads as bookish.
+
+119. **`on ne se voit plus`** (M8, S06). Confirm the reciprocal reading (*each other*) is the only
+     one this sentence gets, and that no French speaker would hear it as *one is no longer seen*.
+
+120. **`à la montagne` singular against English *the mountains*** (M9, S08). Confirm the singular is
+     what is said of going there as a kind of place, and that `à la plage` and `à la mer` are not
+     interchangeable in the way this sentence implies.
+
+121. **`Le Portugal est un pays au bord de la mer`** (M9, S10). Confirm the article on a subject
+     country is obligatory, confirm `au bord de la mer` is idiomatic of a country rather than only
+     of a house, and confirm the plate — the bare `Portugal est` — is wrong rather than merely
+     journalistic.
+
+122. **Guillemets with no colon inside a running account** (M10, rule 1, S03/S10). Confirm that
+     `Il m'a dit « votre sac est au guichet »` without the colon is normal written French, and that
+     the space inside the guillemets is what a French keyboard produces rather than a typographic
+     nicety this course has invented.
+
+123. **`sauf que` and `en fait` as the twist pair** (M10, S05/S07). Confirm both are current spoken
+     French for taking back what the listener has just been allowed to believe, and confirm
+     `sauf que` takes the indicative as flatly as S05 claims.
+
+124. **`il n'a rien dit` is unwritable at this level** (M10, seam correction 3). The brief's own
+     example cannot ship because `n'a` is untaught. Confirm that `je n'ai rien dit` is an equally
+     natural line for the same lesson, and advise whether a later module should open bare `n'a` —
+     it is the missing cell of a paradigm three of whose four members are already owned.

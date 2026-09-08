@@ -1,0 +1,562 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M10",
+  "title": "A story with a twist",
+  "job": "A six-sentence narrative with a line of dialogue inside it",
+  "prerequisites": ["L4-M9"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["simple_past", "simple_present_imperfective", "simple_future_perfective"],
+    "allowedPatterns": [
+      "<imperfective background> + , + kogdá + <perfective step>",
+      "Vdrug + <perfective past>",
+      "— <direct speech> + , — + skazál + <subject>",
+      "Okazálos' + , + chto + <clause>",
+      "V kontsé kontsóv + <perfective past>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "DIRECT SPEECH, whose whole delta is PUNCTUATION — grammar in this course, for the fourth level running. A spoken line opens with an EM DASH standing alone, never with quotation marks. When the attribution follows, the line closes with a COMMA and a second dash, and the verb comes BEFORE its subject: — Ya ne znáyu, — skazál Iván. Nothing else changes: the speech keeps its own punctuation inside, and a question mark or exclamation stands in place of the comma."
+    },
+    {
+      "tag": "interference",
+      "text": "THE INVERSION is the interference, and it is the first thing to get right. skazál Iván, verb first, is the neutral order in this frame; Iván skazál after a dash reads as heavier and marked, the way but IVAN said reads in English. An English speaker produces the second every time, because English writes he said in that order and has no reason not to. In an attribution, put the verb first and leave it there."
+    },
+    {
+      "tag": "delta",
+      "text": "The three connectors that make a story turn, and they sit exactly where English puts its own. vdrug is suddenly, in front of a perfective past. okazálos', chto is it turned out that, and the comma before chto is L3-M3's rule unchanged. v kontsé kontsóv is in the end — three words, taken whole, and quite separate from L2-M10's v kontsé, at the end of a thing. vot is here is or that's, pointing at what comes next."
+    },
+    {
+      "tag": "free",
+      "text": "Almost everything else is already yours and costs nothing: aspect at length from L3-M10, the comma law from L3-M3, the journey from L4-M9, the time clauses from L4-M6. And L3-M5's rule that reported speech does NOT backshift means the direct and the reported version of a line carry the same words — so choosing between them is texture rather than grammar, and direct speech is what makes a told story sound told."
+    },
+    {
+      "tag": "delta",
+      "text": "A story closes on a verdict, and Russian's verdict is IMPERSONAL: éhto býlo stránno, that was strange; éhto býlo sméshno, that was funny. The word is the -o adverb, not the adjective, and the verb beside it is the neuter býlo — the same shape as L3-M6's mne stálo grústno, turned outward onto the event instead of inward onto the person."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M10-S01",
+      "display": "Vcherá ya dólgo rabótal. Vécherom pozvoníl Iván. — Ty svobóden? — sprosíl on. Ya otvétil, chto óchen' ustál. Vdrug on skazál, chto on uzhé zdes'. V kontsé kontsóv my poshlí v kafé.",
+      "script": "Вчера я долго работал. Вечером позвонил Иван. — Ты свободен? — спросил он. Я ответил, что очень устал. Вдруг он сказал, что он уже здесь. В конце концов мы пошли в кафе.",
+      "cue": "Yesterday I worked for a long time. In the evening Ivan rang. 'Are you free?' he asked. I answered that I was very tired. Suddenly he said he was already here. In the end we went to a café.",
+      "literal": "Yesterday I long worked. In-evening rang Ivan. — You free? — asked he. I answered, that very tired. Suddenly he said, that he already here. In end of-ends we went in café.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vdrug",
+            "script": "вдруг",
+            "cue": "suddenly",
+            "tag": "free",
+            "forms": ["vdrug"],
+            "note": "Suddenly, and it stands where English puts it — at the front of the sentence that turns. The verb after it is perfective, because a turn is one completed step."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "sprosíl on, not on sprosíl. Inside an attribution the verb leads and the subject follows, and putting them the English way round makes the line read as an argument rather than a story.",
+      "sound": "vdrug — one syllable, and the final g hardens to a k, so it comes out vdruk.",
+      "variations": [
+        {
+          "display": "Vécherom pozvoníl Iván. — Ty svobóden? — sprosíl on.",
+          "script": "Вечером позвонил Иван. — Ты свободен? — спросил он.",
+          "cue": "In the evening Ivan rang. 'Are you free?' he asked.",
+          "changed": "only the call and the line of speech, with the frame around it dropped"
+        },
+        {
+          "display": "Vdrug on skazál, chto on uzhé zdes'.",
+          "script": "Вдруг он сказал, что он уже здесь.",
+          "cue": "Suddenly he said he was already here.",
+          "changed": "just the turn, standing on its own"
+        }
+      ],
+      "mistake": {
+        "display": "— Ty svobóden? — on sprosíl.",
+        "script": "— Ты свободен? — он спросил.",
+        "why": "The English order, and in Russian it reads as a marked, heavy sentence — HE was the one who asked. After the second dash the verb comes first: sprosíl on."
+      },
+      "usage": "Telling a friend how an ordinary evening turned into an outing.",
+      "register": "informal",
+      "mnemonic": "Dash, speech, comma, dash, VERB, subject — the order never varies."
+    },
+    {
+      "id": "L4-M10-S02",
+      "display": "Vcherá ya poteryál klyuch. Snachála ya ne pónyal, chto sluchílos'. Potóm ya pozvoníl zhené. Okazálos', chto klyuch u neyó. Vot pochemú dver' bylá zakrýta. V kontsé kontsóv vsyó poluchílos'.",
+      "script": "Вчера я потерял ключ. Сначала я не понял, что случилось. Потом я позвонил жене. Оказалось, что ключ у неё. Вот почему дверь была закрыта. В конце концов всё получилось.",
+      "cue": "Yesterday I lost my key. At first I didn't understand what had happened. Then I rang my wife. It turned out she had the key. That's why the door was locked. In the end it all worked out.",
+      "literal": "Yesterday I lost key. At-first I not understood, what happened. Then I rang to-wife. Turned-out, that key at her. Here why door was closed. In end of-ends all worked-out.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sluchílos'",
+            "script": "случилось",
+            "cue": "happened",
+            "tag": "delta",
+            "forms": ["sluchílos'"],
+            "note": "Happened, always neuter and always with -sya: nobody makes it happen. chto sluchílos' is the whole of what's wrong? and is the question you will hear most."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "Russian has no past-in-past. I didn't understand what had HAPPENED is two plain pasts, ne pónyal and sluchílos', with the order of events carried by the connectors alone.",
+      "sound": "slu-CHI-las — stress in the middle, and the final -los' is soft and swallowed.",
+      "variations": [
+        {
+          "display": "Snachála ya ne pónyal, chto sluchílos'.",
+          "script": "Сначала я не понял, что случилось.",
+          "cue": "At first I didn't understand what had happened.",
+          "changed": "the one sentence, out of the account"
+        },
+        {
+          "display": "Vot pochemú dver' bylá zakrýta.",
+          "script": "Вот почему дверь была закрыта.",
+          "cue": "That's why the door was locked.",
+          "changed": "the explanation on its own, with L4-M7's sign word inside it"
+        }
+      ],
+      "mistake": {
+        "display": "Sluchílos', chto klyuch u neyó.",
+        "script": "Случилось, что ключ у неё.",
+        "why": "sluchílos' is an event befalling somebody; a fact coming to light is okazálos'. Nothing happened to the key — it simply turned out to be with her."
+      },
+      "usage": "Telling the story of a small domestic disaster after it is over.",
+      "register": "informal",
+      "mnemonic": "sluchílos' is what happened; okazálos' is what it turned out to be."
+    },
+    {
+      "id": "L4-M10-S03",
+      "display": "Útrom bylá khoróshaya pogóda. Ya poshyól na rabótu peshkóm. No vdrug poshyól dozhd'. — Gde zdes' metró? — sprosíl ya. Okazálos', chto metró sovsém ryádom. V kontsé kontsóv ya ne opozdál.",
+      "script": "Утром была хорошая погода. Я пошёл на работу пешком. Но вдруг пошёл дождь. — Где здесь метро? — спросил я. Оказалось, что метро совсем рядом. В конце концов я не опоздал.",
+      "cue": "In the morning the weather was fine. I set off for work on foot. But suddenly it started raining. 'Where's the metro round here?' I asked. It turned out the metro was very close. In the end I wasn't late.",
+      "literal": "In-morning was good weather. I set-off to work on-foot. But suddenly went rain. — Where here metro? — asked I. Turned-out, that metro completely near. In end of-ends I not was-late.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "okazálos'",
+            "script": "оказалось",
+            "cue": "it turned out",
+            "tag": "free",
+            "forms": ["okazálos'", "okazálsya", "okazálas'"],
+            "note": "It turned out, with a comma and chto after it. With a person as the subject it agrees: on okazálsya vrachóm, he turned out to be a doctor."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "poshyól dozhd' is the ordinary Russian for it started raining — the rain literally sets off, using L1-M5's verb of motion. There is no impersonal it and nothing to put in the subject slot.",
+      "sound": "a-ka-ZA-las — four syllables, stress on the third, and both leading o's flatten to a.",
+      "variations": [
+        {
+          "display": "No vdrug poshyól dozhd'.",
+          "script": "Но вдруг пошёл дождь.",
+          "cue": "But suddenly it started raining.",
+          "changed": "the turn on its own"
+        },
+        {
+          "display": "Okazálos', chto metró sovsém ryádom.",
+          "script": "Оказалось, что метро совсем рядом.",
+          "cue": "It turned out the metro was very close.",
+          "changed": "just the discovery, with L3-M3's comma before chto"
+        }
+      ],
+      "mistake": {
+        "display": "Okazálos' chto metró sovsém ryádom.",
+        "script": "Оказалось что метро совсем рядом.",
+        "why": "The comma before chto is not optional in Russian and never has been — L3-M3 made it a rule of the language rather than a matter of taste. Every chto clause in this module carries one."
+      },
+      "usage": "Telling a morning that went wrong and then came right.",
+      "register": "neutral",
+      "mnemonic": "okazálos' opens a discovery, and a comma always stands between it and the news."
+    },
+    {
+      "id": "L4-M10-S04",
+      "display": "Vcherá my býli v kafé. Iván zabýl telefón dóma. — Éhto probléma, — skazál on. Ánna otvétila, chto éhto ne probléma. Vot yeyó telefón na stolé. V kontsé kontsóv on pozvoníl domóy.",
+      "script": "Вчера мы были в кафе. Иван забыл телефон дома. — Это проблема, — сказал он. Анна ответила, что это не проблема. Вот её телефон на столе. В конце концов он позвонил домой.",
+      "cue": "Yesterday we were in a café. Ivan had left his phone at home. 'That's a problem,' he said. Anna answered that it wasn't a problem. Here's her phone on the table. In the end he rang home.",
+      "literal": "Yesterday we were in café. Ivan forgot phone at-home. — This problem, — said he. Anna answered, that this not problem. Here her phone on table. In end of-ends he rang home.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vot",
+            "script": "вот",
+            "cue": "here is, there you are",
+            "tag": "free",
+            "forms": ["vot"],
+            "note": "Points at what is in front of you or at what you are about to say — vot moy telefón, here's my phone; vot pochemú, that's why. It takes no verb after it."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "vot is not the word for here as a place — that is L1-M7's zdes'. vot presents something: you hand it over, or you produce it in the story, and English answers with here is or there you go.",
+      "sound": "vot — one syllable, the o full and round because it is stressed, the t hard.",
+      "variations": [
+        {
+          "display": "— Éhto probléma, — skazál on.",
+          "script": "— Это проблема, — сказал он.",
+          "cue": "'That's a problem,' he said.",
+          "changed": "the line of speech alone, with its attribution"
+        },
+        {
+          "display": "Vot yeyó telefón na stolé.",
+          "script": "Вот её телефон на столе.",
+          "cue": "Here's her phone on the table.",
+          "changed": "vot doing the pointing, with no speech around it"
+        }
+      ],
+      "mistake": {
+        "display": "— Éhto probléma, — Iván skazál.",
+        "script": "— Это проблема, — Иван сказал.",
+        "why": "The subject before the verb makes the attribution heavy, as if you were correcting someone about who spoke. Neutral Russian is skazál Iván, verb first, every time."
+      },
+      "usage": "Retelling a small evening for someone who was not there.",
+      "register": "informal",
+      "mnemonic": "vot hands something over; zdes' says where it is."
+    },
+    {
+      "id": "L4-M10-S05",
+      "display": "Vcherá Ánna ne prishlá. — Chto sluchílos'? — sprosíl ya. Oná otvétila, chto opozdála na póyezd. Okazálos', chto póyezd ushyól ráno. Vot pochemú oná ne pozvoníla. V kontsé kontsóv oná priyékhala pózdno vécherom.",
+      "script": "Вчера Анна не пришла. — Что случилось? — спросил я. Она ответила, что опоздала на поезд. Оказалось, что поезд ушёл рано. Вот почему она не позвонила. В конце концов она приехала поздно вечером.",
+      "cue": "Yesterday Anna didn't come. 'What happened?' I asked. She answered that she'd missed the train. It turned out the train had left early. That's why she didn't ring. In the end she arrived late in the evening.",
+      "literal": "Yesterday Anna not came. — What happened? — asked I. She answered, that was-late on train. Turned-out, that train left early. Here why she not rang. In end of-ends she arrived late in-evening.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "v kontsé kontsóv",
+            "script": "в конце концов",
+            "cue": "in the end, finally",
+            "tag": "delta",
+            "forms": ["v kontsé kontsóv"],
+            "note": "In the end — three words taken whole. L2-M10's v kontsé is at the end of some particular thing; this one is the storyteller's, and closes an account."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "L3-M5's rule is doing quiet work here: she said I missed the train stays a past in Russian, opozdála, with no shifting back. Direct and reported speech end up with the same words, which is why the choice between them is only texture.",
+      "sound": "f kan-TSE kan-TSOF — the v goes voiceless to f, and the final v does too.",
+      "variations": [
+        {
+          "display": "— Chto sluchílos'? — sprosíl ya.",
+          "script": "— Что случилось? — спросил я.",
+          "cue": "'What happened?' I asked.",
+          "changed": "the question and its attribution, on their own"
+        },
+        {
+          "display": "V kontsé kontsóv oná priyékhala pózdno.",
+          "script": "В конце концов она приехала поздно.",
+          "cue": "In the end she arrived late.",
+          "changed": "the closing sentence, with the evening dropped"
+        }
+      ],
+      "mistake": {
+        "display": "V kontsé oná priyékhala pózdno vécherom.",
+        "script": "В конце она приехала поздно вечером.",
+        "why": "L2-M10's v kontsé needs a thing to be at the end of — at the end of the film, of the street. The storyteller's in the end is the tripled v kontsé kontsóv, and it stands alone."
+      },
+      "usage": "Explaining somebody's lateness after they have finally turned up.",
+      "register": "neutral",
+      "mnemonic": "The end of ends is the end of the story: v kontsé kontsóv."
+    },
+    {
+      "id": "L4-M10-S06",
+      "display": "Vcherá ya poyékhal v górod na avtóbuse. Snachála vsyó býlo khoroshó. No vdrug avtóbus slomálsya. — Chto sluchílos'? — sprosíla zhená. Okazálos', chto nádo peresést' na metró. V kontsé kontsóv vsyó poluchílos' khoroshó.",
+      "script": "Вчера я поехал в город на автобусе. Сначала всё было хорошо. Но вдруг автобус сломался. — Что случилось? — спросила жена. Оказалось, что надо пересесть на метро. В конце концов всё получилось хорошо.",
+      "cue": "Yesterday I set off into town by bus. At first everything was fine. But suddenly the bus broke down. 'What happened?' my wife asked. It turned out we had to change to the metro. In the end it all worked out fine.",
+      "literal": "Yesterday I set-off in town on bus. At-first all was good. But suddenly bus broke. — What happened? — asked wife. Turned-out, that necessary to-change onto metro. In end of-ends all worked-out well.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "poluchílos'",
+            "script": "получилось",
+            "cue": "it worked out, it came off",
+            "tag": "free",
+            "forms": ["poluchílos'"],
+            "note": "It worked out — neuter and reflexive like sluchílos', and the natural close of a story that went wrong first. vsyó poluchílos' is the whole of it all came right."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "sluchílos' and poluchílos' rhyme and are opposites in tone: the first is what went wrong, the second is what came right in spite of it. A story that uses both, in that order, is a story with a twist.",
+      "sound": "pa-lu-CHI-las — four syllables, stress on the third, the same shape as sluchílos' with a syllable in front.",
+      "variations": [
+        {
+          "display": "No vdrug avtóbus slomálsya.",
+          "script": "Но вдруг автобус сломался.",
+          "cue": "But suddenly the bus broke down.",
+          "changed": "the turn on its own, with L2-M8's breakdown verb"
+        },
+        {
+          "display": "V kontsé kontsóv vsyó poluchílos' khoroshó.",
+          "script": "В конце концов всё получилось хорошо.",
+          "cue": "In the end it all worked out fine.",
+          "changed": "the closing verdict, standing alone"
+        }
+      ],
+      "mistake": {
+        "display": "Nakonéts avtóbus slomálsya.",
+        "script": "Наконец автобус сломался.",
+        "why": "L3-M1's nakonéts is at last, and carries relief — it belongs to something you were waiting for. A breakdown nobody wanted is vdrug."
+      },
+      "usage": "The story of a journey that went wrong and still ended well.",
+      "register": "neutral",
+      "mnemonic": "sluchílos' opens the trouble; poluchílos' closes it."
+    },
+    {
+      "id": "L4-M10-S07",
+      "display": "Vcherá ya poshyól v magazín. Snachála ya kupíl khleb i molokó. Potóm ya uvídel, chto zabýl dén'gi. — Ne bespokóytes', — skazáli mne v magazíne. Okazálos', chto u menyá bylá kárta. Éhto býlo stránno, no vsyó poluchílos'.",
+      "script": "Вчера я пошёл в магазин. Сначала я купил хлеб и молоко. Потом я увидел, что забыл деньги. — Не беспокойтесь, — сказали мне в магазине. Оказалось, что у меня была карта. Это было странно, но всё получилось.",
+      "cue": "Yesterday I went to the shop. First I bought bread and milk. Then I saw that I'd forgotten my money. 'Don't worry,' they told me in the shop. It turned out I had a card. It was strange, but it all worked out.",
+      "literal": "Yesterday I set-off in shop. At-first I bought bread and milk. Then I saw, that forgot money. — Not worry, — said to-me in shop. Turned-out, that at me was card. This was strange, but all worked-out.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "stránno",
+            "script": "странно",
+            "cue": "strange, oddly",
+            "tag": "delta",
+            "forms": ["stránno"],
+            "note": "The -o adverb, not an adjective, and the verb beside it is neuter: éhto býlo stránno. Same shape as L3-M6's grústno and skúchno, turned onto the event."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "The verdict is impersonal. English can say I found it strange; Russian says éhto býlo stránno and leaves the person out, exactly as L3-M6 did with mne stálo grústno.",
+      "sound": "STRAN-na — front-stressed, the double n written but said as one long n.",
+      "variations": [
+        {
+          "display": "— Ne bespokóytes', — skazáli mne v magazíne.",
+          "script": "— Не беспокойтесь, — сказали мне в магазине.",
+          "cue": "'Don't worry,' they told me in the shop.",
+          "changed": "the line of speech, attributed to L4-M7's nobody-in-particular"
+        },
+        {
+          "display": "Éhto býlo stránno, no vsyó poluchílos'.",
+          "script": "Это было странно, но всё получилось.",
+          "cue": "It was strange, but it all worked out.",
+          "changed": "the verdict and the resolution, without the story"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto býlo stránnyy, no vsyó poluchílos'.",
+        "script": "Это было странный, но всё получилось.",
+        "why": "stránnyy is the adjective and needs a masculine noun to describe. A verdict on a whole situation takes the neuter -o form, and býlo agrees with it: éhto býlo stránno."
+      },
+      "usage": "Telling a small everyday story and passing judgement on it at the end.",
+      "register": "informal",
+      "mnemonic": "Judge the situation, not a thing — so the word ends in -o and the verb is býlo."
+    },
+    {
+      "id": "L4-M10-S08",
+      "display": "Útrom pozvoníl nachál'nik. — Vy svobódny sevódnya? — sprosíl on. Ya otvétil, chto ya rabótayu. Vdrug on skazál, chto éhto ne rabóta. Okazálos', chto my prósto poydyóm v kafé. Éhto býlo sméshno.",
+      "script": "Утром позвонил начальник. — Вы свободны сегодня? — спросил он. Я ответил, что я работаю. Вдруг он сказал, что это не работа. Оказалось, что мы просто пойдём в кафе. Это было смешно.",
+      "cue": "In the morning the boss rang. 'Are you free today?' he asked. I answered that I was working. Suddenly he said it wasn't work. It turned out we were simply going to a café. It was funny.",
+      "literal": "In-morning rang boss. — You free today? — asked he. I answered, that I work. Suddenly he said, that this not work. Turned-out, that we simply will-go in café. This was funny.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sméshno",
+            "script": "смешно",
+            "cue": "funny, amusing",
+            "tag": "delta",
+            "forms": ["sméshno"],
+            "note": "The other verdict this module opens, built exactly like stránno. End-stressed all the same: smish-NO, with the e reduced almost away."
+          }
+        ],
+        "rules": [4, 3]
+      },
+      "trap": "L3-M5 said reported speech does not backshift, and this account leans on it twice: ya rabótayu and my poydyóm keep the tense they had when spoken. Shifting them back is an English habit with nothing behind it here.",
+      "sound": "smish-NO — stress right at the end, unlike stránno, which is front-stressed.",
+      "variations": [
+        {
+          "display": "— Vy svobódny sevódnya? — sprosíl on.",
+          "script": "— Вы свободны сегодня? — спросил он.",
+          "cue": "'Are you free today?' he asked.",
+          "changed": "the question alone, with a question mark where a comma would be"
+        },
+        {
+          "display": "Okazálos', chto my prósto poydyóm v kafé.",
+          "script": "Оказалось, что мы просто пойдём в кафе.",
+          "cue": "It turned out we were simply going to a café.",
+          "changed": "the discovery, with the story around it removed"
+        }
+      ],
+      "mistake": {
+        "display": "Ya otvétil, chto ya rabótal.",
+        "script": "Я ответил, что я работал.",
+        "why": "Correct Russian, and it says you had been working at some time before the answering. Russian does not shift a reported tense back: what you said was ya rabótayu, and that is exactly what you report."
+      },
+      "usage": "The story of a summons that turned out to be an invitation.",
+      "register": "neutral",
+      "mnemonic": "stránno at the front, sméshno at the back — two verdicts, opposite stresses."
+    },
+    {
+      "id": "L4-M10-S09",
+      "display": "Vcherá v metró ya poteryál súmku. Snachála ya ne pónyal, gde oná. — Vot vásha súmka, — skazáli mne na stántsii. Okazálos', chto ya zabýl yeyó tam. V kontsé kontsóv vsyó poluchílos'. Éhto bylá interésnaya istóriya.",
+      "script": "Вчера в метро я потерял сумку. Сначала я не понял, где она. — Вот ваша сумка, — сказали мне на станции. Оказалось, что я забыл её там. В конце концов всё получилось. Это была интересная история.",
+      "cue": "Yesterday I lost my bag on the metro. At first I didn't understand where it was. 'Here's your bag,' they told me at the station. It turned out I'd left it there. In the end it all worked out. It was an interesting story.",
+      "literal": "Yesterday in metro I lost bag. At-first I not understood, where it. — Here your bag, — said to-me at station. Turned-out, that I forgot it there. In end of-ends all worked-out. This was interesting story.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "istóriya",
+            "script": "история",
+            "cue": "story",
+            "tag": "free",
+            "forms": ["istóriya", "istóriyu"],
+            "note": "A story, and also history — the same word does both. Feminine, so the verdict beside it agrees: éhto bylá interésnaya istóriya."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "The verdict changes shape when it lands on a NOUN. éhto býlo stránno is neuter because it judges the situation; éhto bylá istóriya is feminine because it names a thing, and the verb follows the noun.",
+      "sound": "is-TO-ri-ya — four syllables, stress on the second, and the final -iya runs together into one glide.",
+      "variations": [
+        {
+          "display": "— Vot vásha súmka, — skazáli mne na stántsii.",
+          "script": "— Вот ваша сумка, — сказали мне на станции.",
+          "cue": "'Here's your bag,' they told me at the station.",
+          "changed": "the spoken line alone, with vot inside it"
+        },
+        {
+          "display": "Éhto bylá interésnaya istóriya.",
+          "script": "Это была интересная история.",
+          "cue": "It was an interesting story.",
+          "changed": "the closing line, on its own"
+        }
+      ],
+      "mistake": {
+        "display": "— Vot vásha súmka, — na stántsii mne skazáli.",
+        "script": "— Вот ваша сумка, — на станции мне сказали.",
+        "why": "Everything is pushed in front of the verb, and the attribution stops sounding like one. After the second dash the verb comes first — skazáli mne na stántsii — whatever else is hanging off it."
+      },
+      "usage": "Rounding off an anecdote you have just told.",
+      "register": "neutral",
+      "mnemonic": "A verdict on a THING agrees with the thing; a verdict on a situation stays neuter."
+    },
+    {
+      "id": "L4-M10-S10",
+      "display": "Poká ya rabótal, Ánna zhdalá menyá dóma. Vécherom ya poyékhal domóy. No vdrug ya uvídel, chto zabýl klyuch. — Ya dóma, — skazála oná. Okazálos', chto dver' bylá otkrýta. V kontsé kontsóv vsyó poluchílos' khoroshó.",
+      "script": "Пока я работал, Анна ждала меня дома. Вечером я поехал домой. Но вдруг я увидел, что забыл ключ. — Я дома, — сказала она. Оказалось, что дверь была открыта. В конце концов всё получилось хорошо.",
+      "cue": "While I was working, Anna was waiting for me at home. In the evening I set off home. But suddenly I saw that I'd forgotten my key. 'I'm at home,' she said. It turned out the door was unlocked. In the end it all worked out fine.",
+      "literal": "While I worked, Anna waited me at-home. In-evening I set-off homewards. But suddenly I saw, that forgot key. — I at-home, — said she. Turned-out, that door was open. In end of-ends all worked-out well.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zhdal",
+            "script": "ждал",
+            "cue": "waited, was waiting",
+            "tag": "delta",
+            "forms": ["zhdal", "zhdalá"],
+            "note": "The past of L4-M6's zhdu, which opened only the present and the infinitive. Feminine zhdalá throws the stress onto the ending, where zhdal has none to move."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "L4-M6's poká wants both clauses in the same stretch of time, so both verbs are imperfective past here — rabótal and zhdalá. A perfective on either side would close the window the sentence is holding open.",
+      "sound": "zhda-LA — the feminine past pulls the stress right onto the final a, away from the stem.",
+      "variations": [
+        {
+          "display": "Poká ya rabótal, Ánna zhdalá menyá dóma.",
+          "script": "Пока я работал, Анна ждала меня дома.",
+          "cue": "While I was working, Anna was waiting for me at home.",
+          "changed": "the opening line, with L4-M6's time clause inside it"
+        },
+        {
+          "display": "Okazálos', chto dver' bylá otkrýta.",
+          "script": "Оказалось, что дверь была открыта.",
+          "cue": "It turned out the door was unlocked.",
+          "changed": "the discovery, with L4-M7's sign word doing the work"
+        }
+      ],
+      "mistake": {
+        "display": "Poká ya rabótayu, Ánna zhdalá menyá dóma.",
+        "script": "Пока я работаю, Анна ждала меня дома.",
+        "why": "poká holds two stretches side by side, so they have to be in the same time. A present in one clause and a past in the other pulls the sentence apart, and neither half can say when it happened."
+      },
+      "usage": "The level's exit: a whole small evening, told with a turn and a spoken line.",
+      "register": "informal",
+      "mnemonic": "One window, one tense on both sides — poká will not hold a present and a past at once."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M10-C01",
+      "display": "Vcherá ya dólgo rabótal. Vécherom pozvoníl Iván. Vdrug on skazál, chto on uzhé zdes'. V kontsé kontsóv my poshlí v kafé.",
+      "script": "Вчера я долго работал. Вечером позвонил Иван. Вдруг он сказал, что он уже здесь. В конце концов мы пошли в кафе.",
+      "cue": "Yesterday I worked for a long time. In the evening Ivan rang. Suddenly he said he was already here. In the end we went to a café."
+    },
+    {
+      "id": "L4-M10-C02",
+      "display": "Vcherá ya poteryál klyuch. Okazálos', chto klyuch u neyó. Vot pochemú dver' bylá zakrýta. V kontsé kontsóv vsyó poluchílos'.",
+      "script": "Вчера я потерял ключ. Оказалось, что ключ у неё. Вот почему дверь была закрыта. В конце концов всё получилось.",
+      "cue": "Yesterday I lost my key. It turned out she had it. That's why the door was locked. In the end it all worked out."
+    },
+    {
+      "id": "L4-M10-C03",
+      "display": "Útrom bylá khoróshaya pogóda. No vdrug poshyól dozhd'. Okazálos', chto metró sovsém ryádom. V kontsé kontsóv ya ne opozdál.",
+      "script": "Утром была хорошая погода. Но вдруг пошёл дождь. Оказалось, что метро совсем рядом. В конце концов я не опоздал.",
+      "cue": "In the morning the weather was fine. But suddenly it started raining. It turned out the metro was very close. In the end I wasn't late."
+    },
+    {
+      "id": "L4-M10-C04",
+      "display": "Iván zabýl telefón dóma. — Éhto probléma, — skazál on. Vot yeyó telefón na stolé. V kontsé kontsóv on pozvoníl domóy.",
+      "script": "Иван забыл телефон дома. — Это проблема, — сказал он. Вот её телефон на столе. В конце концов он позвонил домой.",
+      "cue": "Ivan had left his phone at home. 'That's a problem,' he said. Here's her phone on the table. In the end he rang home."
+    },
+    {
+      "id": "L4-M10-C05",
+      "display": "Vcherá Ánna ne prishlá. — Chto sluchílos'? — sprosíl ya. Okazálos', chto póyezd ushyól ráno. Oná priyékhala pózdno vécherom.",
+      "script": "Вчера Анна не пришла. — Что случилось? — спросил я. Оказалось, что поезд ушёл рано. Она приехала поздно вечером.",
+      "cue": "Yesterday Anna didn't come. 'What happened?' I asked. It turned out the train had left early. She arrived late in the evening."
+    },
+    {
+      "id": "L4-M10-C06",
+      "display": "No vdrug avtóbus slomálsya. — Chto sluchílos'? — sprosíla zhená. Okazálos', chto nádo peresést' na metró. V kontsé kontsóv vsyó poluchílos'.",
+      "script": "Но вдруг автобус сломался. — Что случилось? — спросила жена. Оказалось, что надо пересесть на метро. В конце концов всё получилось.",
+      "cue": "But suddenly the bus broke down. 'What happened?' my wife asked. It turned out we had to change to the metro. In the end it all worked out."
+    },
+    {
+      "id": "L4-M10-C07",
+      "display": "Ya uvídel, chto zabýl dén'gi. — Ne bespokóytes', — skazáli mne v magazíne. Okazálos', chto u menyá bylá kárta. Éhto býlo stránno.",
+      "script": "Я увидел, что забыл деньги. — Не беспокойтесь, — сказали мне в магазине. Оказалось, что у меня была карта. Это было странно.",
+      "cue": "I saw that I'd forgotten my money. 'Don't worry,' they told me in the shop. It turned out I had a card. It was strange."
+    },
+    {
+      "id": "L4-M10-C08",
+      "display": "Útrom pozvoníl nachál'nik. — Vy svobódny sevódnya? — sprosíl on. Okazálos', chto my prósto poydyóm v kafé. Éhto býlo sméshno.",
+      "script": "Утром позвонил начальник. — Вы свободны сегодня? — спросил он. Оказалось, что мы просто пойдём в кафе. Это было смешно.",
+      "cue": "In the morning the boss rang. 'Are you free today?' he asked. It turned out we were simply going to a café. It was funny."
+    },
+    {
+      "id": "L4-M10-C09",
+      "display": "Vcherá v metró ya poteryál súmku. — Vot vásha súmka, — skazáli mne na stántsii. V kontsé kontsóv vsyó poluchílos'. Éhto bylá interésnaya istóriya.",
+      "script": "Вчера в метро я потерял сумку. — Вот ваша сумка, — сказали мне на станции. В конце концов всё получилось. Это была интересная история.",
+      "cue": "Yesterday I lost my bag on the metro. 'Here's your bag,' they told me at the station. In the end it all worked out. It was an interesting story."
+    },
+    {
+      "id": "L4-M10-C10",
+      "display": "Poká ya rabótal, Ánna zhdalá menyá dóma. No vdrug ya uvídel, chto zabýl klyuch. Okazálos', chto dver' bylá otkrýta. V kontsé kontsóv vsyó poluchílos'.",
+      "script": "Пока я работал, Анна ждала меня дома. Но вдруг я увидел, что забыл ключ. Оказалось, что дверь была открыта. В конце концов всё получилось.",
+      "cue": "While I was working, Anna was waiting for me at home. But suddenly I saw that I'd forgotten my key. It turned out the door was unlocked. In the end it all worked out."
+    },
+    {
+      "id": "L4-M10-C11",
+      "display": "Vdrug on skazál, chto uzhé pózdno. Okazálos', chto póyezd uzhé ushyól. V kontsé kontsóv my poshlí domóy peshkóm. Éhto býlo sméshno.",
+      "script": "Вдруг он сказал, что уже поздно. Оказалось, что поезд уже ушёл. В конце концов мы пошли домой пешком. Это было смешно.",
+      "cue": "Suddenly he said it was already late. It turned out the train had already gone. In the end we walked home. It was funny."
+    },
+    {
+      "id": "L4-M10-C12",
+      "display": "Ya dólgo zhdal Ánnu v kafé. — Chto sluchílos'? — sprosíl ya. Oná otvétila, chto opozdála na póyezd. Vot pochemú oná priyékhala pózdno.",
+      "script": "Я долго ждал Анну в кафе. — Что случилось? — спросил я. Она ответила, что опоздала на поезд. Вот почему она приехала поздно.",
+      "cue": "I waited a long time for Anna in the café. 'What happened?' I asked. She answered that she'd missed the train. That's why she arrived late."
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

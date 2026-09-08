@@ -1,0 +1,470 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M10",
+  "title": "A story with a twist",
+  "job": "A six-sentence narrative with a line of dialogue inside it",
+  "prerequisites": ["L4-M1", "L4-M2", "L4-M3", "L4-M4", "L4-M5", "L4-M6", "L4-M7", "L4-M8", "L4-M9"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["présent", "imparfait", "passé composé", "plus-que-parfait"],
+    "allowedPatterns": [
+      "<imparfait scene> + . + <passé composé step> + .",
+      "Tout à coup + , + <passé composé>",
+      "Il m'a dit + « + <direct speech> + »",
+      "En fait + , + <clause>",
+      "Finalement + , + <passé composé>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "QUOTED WORDS DO NOT SHIFT. L3-M5 taught reported speech — il a dit que, and the clause behind it steps back a tense. Direct speech is the opposite: the words are given exactly as they were said, and NOTHING moves. Il m'a dit « votre sac est au guichet » keeps est, because that is the word he used. A learner fresh from L3-M5 will backshift inside the quotation, and that is this module's headline error."
+    },
+    {
+      "tag": "free",
+      "text": "THE QUOTATION MARKS ARE TYPOGRAPHY, NOT VOCABULARY. French writes guillemets, « and », with a space inside them, and it puts a space before a question mark — which this course has done since L1-M2's Bonjour, ça va ? None of it is a word: the tokenizer drops guillemets and colons as edge punctuation and they cost nothing to learn. Inside a running account, prefer the form without the colon."
+    },
+    {
+      "tag": "delta",
+      "text": "THE TWIST RUNS ON THE ASPECT PAIR THE LADDER ALREADY OWNS. The imparfait holds the situation that was standing — j'étais au guichet, le sac était vide — and the passé composé takes each step forward — j'ai perdu, quelqu'un m'a appelé, j'ai trouvé. Nothing new is conjugated in this module. What is new is only that the two tenses now alternate across six sentences instead of two."
+    },
+    {
+      "tag": "delta",
+      "text": "FIVE WORDS MARK THE TURN AND EACH ONE POINTS A DIFFERENT WAY. tout à coup and soudain mark the sudden step; alors que sets one thing against another running at the same time; sauf que and en fait undo what the listener has just been allowed to believe; finalement closes. They are the whole honest spend of an exit module — connectors, not tenses."
+    },
+    {
+      "tag": "delta",
+      "text": "rien IS A NEGATOR AND CARRIES ITS ne LIKE EVERY OTHER. je n'ai rien dit, not j'ai rien dit (docs/58 §4). In the passé composé it takes déjà's seat, between the auxiliary and the participle — the same slot L4-M6 opened — so it is one habit covering three words: pas, pas encore and rien."
+    },
+    {
+      "tag": "free",
+      "text": "AN EXIT MODULE RE-USES. Almost every word in these ten sentences was taught earlier in this level or below it — the guichet and the votre are L4-M7's, the déjà is L4-M6's, the imparfait is L2-M10's. If a sentence here feels easy, that is the level reporting that it worked."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M10-S01",
+      "display": "Hier soir, j'ai perdu mon sac dans le train",
+      "cue": "Last night I lost my bag on the train",
+      "literal": "Yesterday evening, I-have lost my bag in the train",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sac",
+            "cue": "bag",
+            "tag": "free",
+            "forms": ["sac"],
+            "note": "A bag of any kind — a handbag, a rucksack, a shopping bag. Masculine, so mon sac, and the c is heard."
+          }
+        ],
+        "rules": [2, 5]
+      },
+      "trap": "English says on the train and French says dans le train — inside it. The preposition follows the container, not the English idiom, and sur le train would put you on the roof.",
+      "sound": "ee-YEHR SWAHR, zhay pair-DEW mohn sak dahn luh TRAN. hier is two syllables, ee-yehr, and the r at the end of soir is heard.",
+      "variations": [
+        {
+          "display": "Hier soir, j'ai perdu mon sac dans le bus",
+          "cue": "Last night I lost my bag on the bus",
+          "changed": "where it happened"
+        },
+        {
+          "display": "Hier soir, j'ai perdu mes clés dans le train",
+          "cue": "Last night I lost my keys on the train",
+          "changed": "what was lost, and the possessive goes plural"
+        }
+      ],
+      "mistake": {
+        "display": "Hier soir, je perdais mon sac dans le train",
+        "why": "the imparfait would make losing the bag a standing state rather than the moment the story turns on. A step in a narrative takes the passé composé."
+      },
+      "usage": "Opening a story with the thing that went wrong, before anybody asks what happened.",
+      "register": "neutral",
+      "mnemonic": "A step forward is passé composé."
+    },
+    {
+      "id": "L4-M10-S02",
+      "display": "Tout à coup, quelqu'un m'a appelé",
+      "cue": "All of a sudden, somebody called me",
+      "literal": "All at blow, someone me-has called",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tout à coup",
+            "cue": "all of a sudden",
+            "tag": "delta",
+            "forms": ["tout à coup"],
+            "note": "Three words, one meaning, learnt whole. Taking it whole leaves bare coup free and does not disturb L4-M2's du coup, which is also one key."
+          },
+          {
+            "display": "quelqu'un",
+            "cue": "somebody",
+            "tag": "free",
+            "forms": ["quelqu'un"],
+            "note": "One elided token, so it is its own key. L2-M10's personne is its negative twin — but only with a ne in front of the verb."
+          }
+        ],
+        "rules": [3, 2]
+      },
+      "trap": "tout à coup and L4-M2's du coup share the word coup and mean nothing like each other: this one is suddenly, that one is so, therefore. Read the whole phrase, never the middle of it.",
+      "sound": "too tah KOO, kel-KAN mah ah-play. tout à coup runs as three light syllables with the stress on the last; quelqu'un ends nasal.",
+      "variations": [
+        {
+          "display": "Tout à coup, quelqu'un m'a parlé",
+          "cue": "All of a sudden, somebody spoke to me",
+          "changed": "what the stranger did"
+        },
+        {
+          "display": "Tout à coup, quelqu'un a ouvert la porte",
+          "cue": "All of a sudden, somebody opened the door",
+          "changed": "the action, with an object of its own"
+        }
+      ],
+      "mistake": {
+        "display": "Du coup, quelqu'un m'a appelé",
+        "why": "du coup is L4-M2's so, therefore — it makes the call a consequence of losing the bag. The story needs suddenly, which is tout à coup."
+      },
+      "usage": "The hinge of any spoken anecdote: the moment the ordinary part stops.",
+      "register": "neutral",
+      "mnemonic": "tout à coup surprises; du coup explains."
+    },
+    {
+      "id": "L4-M10-S03",
+      "display": "Il m'a dit « votre sac est au guichet »",
+      "cue": "He said to me, \"Your bag is at the counter\"",
+      "literal": "He me-has said « your bag is at-the counter »",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "il m'a dit",
+            "cue": "he said to me",
+            "tag": "delta",
+            "forms": ["il m'a dit"],
+            "note": "The frame that opens a quotation. Its parts are already owned — m'a is L3-M5's and dit is L2-M6's — so this row exists to carry the no-backshift rule, not to rescue a word."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "L3-M5 has just trained the ear to step a reported clause back a tense. Inside guillemets nothing steps back at all — est stays est, because est is the word he actually said.",
+      "sound": "eel mah DEE votr sak eh oh gee-SHEH. The guillemets are silent; in speech the quotation is marked by a small pause and a change of voice.",
+      "variations": [
+        {
+          "display": "Il m'a dit « votre sac est ici »",
+          "cue": "He said to me, \"Your bag is here\"",
+          "changed": "the words inside the quotation"
+        },
+        {
+          "display": "Elle m'a dit « votre sac est au guichet »",
+          "cue": "She said to me, \"Your bag is at the counter\"",
+          "changed": "who spoke, and the quotation does not move"
+        }
+      ],
+      "mistake": {
+        "display": "Il m'a dit « votre sac était au guichet »",
+        "why": "était is the backshift L3-M5 teaches for il m'a dit QUE. Inside guillemets the words are quoted as spoken, so the tense stays where he left it."
+      },
+      "usage": "Repeating what somebody said in their own words, which is what people actually do when telling a story.",
+      "register": "neutral",
+      "mnemonic": "Inside the guillemets, nothing moves."
+    },
+    {
+      "id": "L4-M10-S04",
+      "display": "Je n'ai rien dit, j'étais très content",
+      "cue": "I said nothing, I was very pleased",
+      "literal": "I not-have nothing said, I-was very content",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rien",
+            "cue": "nothing",
+            "tag": "delta",
+            "forms": ["rien"],
+            "note": "A negator, so it is written with its ne: je n'ai rien dit. In the passé composé it takes déjà's seat, between the auxiliary and the participle."
+          }
+        ],
+        "rules": [4, 2]
+      },
+      "trap": "English puts nothing after the verb — I said nothing — and French puts rien in front of the participle. The two words also disagree about the ne: English needs no second negative and French always writes one.",
+      "sound": "zhuh nay ryan DEE, zhay-TEH treh kohn-TAHN. rien is one syllable, ryan, and it links straight into the participle.",
+      "variations": [
+        {
+          "display": "Je n'ai rien dit, j'étais très fatigué",
+          "cue": "I said nothing, I was very tired",
+          "changed": "the state behind the silence"
+        },
+        {
+          "display": "Je n'ai rien répondu, j'étais très content",
+          "cue": "I answered nothing, I was very pleased",
+          "changed": "another participle in the same seat"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai dit rien, j'étais très content",
+        "why": "two errors at once: the ne is missing, and rien has drifted behind the participle where English keeps nothing. It is je n'ai rien dit."
+      },
+      "usage": "Reporting your own silence, which in a story is usually the most telling thing you did.",
+      "register": "neutral",
+      "mnemonic": "rien sits where déjà sits."
+    },
+    {
+      "id": "L4-M10-S05",
+      "display": "Sauf que le sac était vide",
+      "cue": "Except that the bag was empty",
+      "literal": "Except that the bag was empty",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sauf que",
+            "cue": "except that",
+            "tag": "delta",
+            "forms": ["sauf que"],
+            "note": "Opens the clause that takes back what the listener has just been allowed to believe. It takes a plain indicative, not a subjunctive."
+          },
+          {
+            "display": "vide",
+            "cue": "empty",
+            "tag": "free",
+            "forms": ["vide"],
+            "note": "The same form for a masculine or a feminine noun, so nothing agrees. Its opposite here would be plein."
+          }
+        ],
+        "rules": [3, 2]
+      },
+      "trap": "English can start a sentence with Except and stop there. French keeps the que: sauf que is one connector in two pieces and the second one is not optional.",
+      "sound": "sohf kuh luh sak ay-TEH VEED. The f of sauf is heard, which is unusual for a final consonant; vide ends on a soft d.",
+      "variations": [
+        {
+          "display": "Sauf que le sac n'était pas là",
+          "cue": "Except that the bag wasn't there",
+          "changed": "the clause goes negative"
+        },
+        {
+          "display": "Sauf que le train était déjà parti",
+          "cue": "Except that the train had already left",
+          "changed": "what the twist is about"
+        }
+      ],
+      "mistake": {
+        "display": "Sauf le sac était vide",
+        "why": "bare sauf is a preposition and takes a noun — tout sauf ça. In front of a subject and a verb it has to be sauf que."
+      },
+      "usage": "The line that turns a story round, one sentence before the listener works it out.",
+      "register": "neutral",
+      "mnemonic": "A clause behind sauf buys a que."
+    },
+    {
+      "id": "L4-M10-S06",
+      "display": "Finalement, j'ai trouvé mon sac au bureau",
+      "cue": "In the end, I found my bag at the office",
+      "literal": "Finally, I-have found my bag at-the office",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "finalement",
+            "cue": "in the end, eventually",
+            "tag": "delta",
+            "forms": ["finalement"],
+            "note": "It closes an account. Not the English finally of a list — that is L3-M10's à la fin — but the after all this of a story's last line."
+          }
+        ],
+        "rules": [3, 2]
+      },
+      "trap": "English finally does two jobs — last in a sequence, and after all that. French splits them: à la fin for the sequence, finalement for the outcome. Using finalement to number a list reads as if the list had gone badly.",
+      "sound": "fee-nal-MAHN, zhay troo-VAY mohn sak oh bew-ROH. finalement is three syllables with the nasal at the end and no stress in the middle.",
+      "variations": [
+        {
+          "display": "Finalement, j'ai trouvé mon sac à la gare",
+          "cue": "In the end, I found my bag at the station",
+          "changed": "where it turned up"
+        },
+        {
+          "display": "Finalement, j'ai trouvé mes clés au bureau",
+          "cue": "In the end, I found my keys at the office",
+          "changed": "what was recovered"
+        }
+      ],
+      "mistake": {
+        "display": "À la fin, j'ai trouvé mon sac au bureau",
+        "why": "à la fin is L3-M10's at the end of the thing itself — at the end of the film. The outcome of a whole story is finalement."
+      },
+      "usage": "Landing a story, so that the listener knows it is over and does not wait for more.",
+      "register": "neutral",
+      "mnemonic": "à la fin of a thing; finalement of a story."
+    },
+    {
+      "id": "L4-M10-S07",
+      "display": "En fait, le voisin avait pris mon sac",
+      "cue": "Actually, the neighbour had taken my bag",
+      "literal": "In fact, the neighbour had taken my bag",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "voisin",
+            "cue": "neighbour",
+            "tag": "free",
+            "forms": ["voisin"],
+            "note": "The person next door or in the next seat. The final n is nasal and unsounded, as in quelqu'un."
+          }
+        ],
+        "rules": [3, 2]
+      },
+      "trap": "en fait is not in fact as an intensifier — it is the correction word, actually, and it always contradicts something. L4-M4 opened it and this sentence is what it is for.",
+      "sound": "ahn FEHT, luh vwah-ZAN ah-veh pree mohn SAK. Unusually the t of fait is heard in en fait, which is what separates it from il a fait.",
+      "variations": [
+        {
+          "display": "En fait, le voisin avait pris mes clés",
+          "cue": "Actually, the neighbour had taken my keys",
+          "changed": "what he took"
+        },
+        {
+          "display": "En fait, mon voisin avait pris le sac",
+          "cue": "Actually, my neighbour had taken the bag",
+          "changed": "whose neighbour it was"
+        }
+      ],
+      "mistake": {
+        "display": "En fait, le voisin a pris mon sac hier soir",
+        "why": "a pris puts the taking after the searching. It happened before all of it, which is what L4-M3's plus-que-parfait — avait pris — is for."
+      },
+      "usage": "The coda that explains the twist, once the story itself has finished.",
+      "register": "neutral",
+      "mnemonic": "Earlier than the story: avait plus the participle."
+    },
+    {
+      "id": "L4-M10-S08",
+      "display": "Soudain, le train est parti sans moi",
+      "cue": "Suddenly the train left without me",
+      "literal": "Suddenly, the train is left without me",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "soudain",
+            "cue": "suddenly",
+            "tag": "free",
+            "forms": ["soudain"],
+            "note": "One word for tout à coup, a shade more written than spoken. Either can open the same sentence and nothing else changes."
+          }
+        ],
+        "rules": [3, 2]
+      },
+      "trap": "sans takes a stressed pronoun — sans moi, not sans je. L4-M3 opened sans; the pronoun after it is L2-M1's moi, and je is impossible there.",
+      "sound": "soo-DAN, luh tran eh par-TEE sahn MWAH. soudain ends nasal; sans moi is two syllables with no consonant heard between them.",
+      "variations": [
+        {
+          "display": "Soudain, le bus est parti sans moi",
+          "cue": "Suddenly the bus left without me",
+          "changed": "the service"
+        },
+        {
+          "display": "Soudain, le train est parti sans nous",
+          "cue": "Suddenly the train left without us",
+          "changed": "who was left behind"
+        }
+      ],
+      "mistake": {
+        "display": "Soudain, le train a parti sans moi",
+        "why": "partir takes être in the passé composé, as L2-M10's list has it. a parti is the auxiliary an English speaker expects, and it is the wrong one."
+      },
+      "usage": "The other kind of story opening: the one where the bad thing happens in front of you.",
+      "register": "neutral",
+      "mnemonic": "sans moi, never sans je."
+    },
+    {
+      "id": "L4-M10-S09",
+      "display": "Le train est parti alors que j'étais au guichet",
+      "cue": "The train left while I was at the counter",
+      "literal": "The train is left while that I-was at-the counter",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "alors que",
+            "cue": "while, whereas",
+            "tag": "delta",
+            "forms": ["alors que"],
+            "note": "Sets one thing against another running at the same time, so the clause behind it is usually imparfait. L1-M10's bare alors means so and is a different word."
+          }
+        ],
+        "rules": [3, 2]
+      },
+      "trap": "alors que is not alors plus que. Bare alors is L1-M10's so, then; together with que it means while, and the contrast between the two halves is the whole point of it.",
+      "sound": "luh tran eh par-TEE ah-lor kuh zhay-TEH oh gee-SHEH. alors que runs as three quick syllables; the s of alors links into the k of que.",
+      "variations": [
+        {
+          "display": "Le bus est parti alors que j'étais au guichet",
+          "cue": "The bus left while I was at the counter",
+          "changed": "the service"
+        },
+        {
+          "display": "Le train est parti alors que j'étais à la gare",
+          "cue": "The train left while I was at the station",
+          "changed": "where you were standing"
+        }
+      ],
+      "mistake": {
+        "display": "Le train est parti alors que j'ai été au guichet",
+        "why": "j'ai été closes the standing there off as a finished event. What was going on while the train left is a standing situation: j'étais."
+      },
+      "usage": "Explaining how you managed to miss something that was right in front of you.",
+      "register": "neutral",
+      "mnemonic": "alors que, then the imparfait."
+    },
+    {
+      "id": "L4-M10-S10",
+      "display": "J'ai répondu « merci madame » et je suis parti",
+      "cue": "I answered, \"Thank you\" and left",
+      "literal": "I-have answered « thank-you madam » and I am left",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "répondu",
+            "cue": "answered, replied",
+            "tag": "free",
+            "forms": ["répondu"],
+            "note": "The participle of répondre, on avoir. It takes a quotation the same way dit does, and needs no que in front of guillemets."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "There is no que before a quotation. j'ai répondu que introduces a reported clause and would drag the backshift back in with it; before guillemets the verb simply stops and the words begin.",
+      "sound": "zhay ray-pohn-DEW mair-SEE mah-DAHM ay zhuh swee par-TEE. répondu is three syllables with the nasal in the middle.",
+      "variations": [
+        {
+          "display": "J'ai répondu « merci » et je suis parti",
+          "cue": "I answered, \"Thank you\" and left",
+          "changed": "the quotation is shortened"
+        },
+        {
+          "display": "J'ai répondu « merci madame » et je suis rentré",
+          "cue": "I answered, \"Thank you\" and went home",
+          "changed": "where you went next"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai répondu que « merci madame » et je suis parti",
+        "why": "que belongs to reported speech. Quoted words follow the verb directly, with the guillemets doing all the work the que would have done."
+      },
+      "usage": "Closing an exchange in a story with your own line, rather than summarising it.",
+      "register": "neutral",
+      "mnemonic": "No que in front of guillemets."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L4-M10-C01", "display": "Hier soir, j'ai perdu mon sac dans le train", "cue": "Last night I lost my bag on the train" },
+    { "id": "L4-M10-C02", "display": "Tout à coup, quelqu'un m'a appelé", "cue": "All of a sudden, somebody called me" },
+    { "id": "L4-M10-C03", "display": "Il m'a dit « votre sac est au guichet »", "cue": "He said to me, \"Your bag is at the counter\"" },
+    { "id": "L4-M10-C04", "display": "Je n'ai rien dit, j'étais très content", "cue": "I said nothing, I was very pleased" },
+    { "id": "L4-M10-C05", "display": "Sauf que le sac était vide", "cue": "Except that the bag was empty" },
+    { "id": "L4-M10-C06", "display": "Finalement, j'ai trouvé mon sac au bureau", "cue": "In the end, I found my bag at the office" },
+    { "id": "L4-M10-C07", "display": "En fait, le voisin avait pris mon sac", "cue": "Actually, the neighbour had taken my bag" },
+    { "id": "L4-M10-C08", "display": "Soudain, le bus est parti sans moi", "cue": "Suddenly the bus left without me" },
+    { "id": "L4-M10-C09", "display": "Le train est parti alors que j'étais au guichet", "cue": "The train left while I was at the counter" },
+    { "id": "L4-M10-C10", "display": "J'ai répondu « merci madame » et je suis parti", "cue": "I answered, \"Thank you\" and left" },
+    { "id": "L4-M10-C11", "display": "Quelqu'un a ouvert la porte", "cue": "Somebody opened the door" },
+    { "id": "L4-M10-C12", "display": "Sauf que le train était déjà parti", "cue": "Except that the train had already left" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

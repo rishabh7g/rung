@@ -515,3 +515,385 @@ These continue this course's chain from docs/92 and the Wave 1 section above, wh
 97. **`nicht wahr` against `oder`** (M5-S07). The module makes `nicht wahr` the display and `oder`
     the variation. Confirm that ordering is right for a course that teaches `Sie`, or whether
     `oder?` is so dominant in speech that it should be the display and `nicht wahr` the variation.
+
+## Wave 3 — L4-M6 through L4-M10 (#561)
+
+The level's RANGE modules, and the five that close it: the time clauses, the register that is spoken
+AT you, the tense you read rather than say, the journey told in one piece, and the story with a line
+of speech inside it. Five modules, eighty-four word rows, and a wave whose real work was arithmetic
+on the index rather than invention — the L4 briefs were all written against **686 surfaces through
+L3-M10**, and the fold today is **796 through L4-M5** before this wave starts and **924 by the time
+L4-M9 lands**. Waves 1 and 2 spent eleven of the keys these briefs still list as fresh. Every one is
+recorded below.
+
+### L4-M6 "Before and after" — the conjunctions you already own half of
+
+```
+S01  Bevor ich ins Büro gehe, trinke ich einen Kaffee
+S02  Während ich koche, kann ich nicht gleichzeitig telefonieren
+S03  Wir müssen eine Stunde warten, bis der Zug kommt
+S04  Seitdem ich hier wohne, fahre ich weniger Auto
+S05  Ich bin noch nicht fertig, aber es dauert nicht lange
+S06  Ich arbeite nicht mehr in Berlin, sondern zu Hause
+S07  Sobald ich zu Hause bin, rufe ich Sie an
+S08  Solange es regnet, bleiben wir hier
+S09  Inzwischen ist es schon halb neun
+S10  Am Ende des Tages bin ich immer müde
+```
+
+Seven rules. **Rule 0** is the module's whole shape and it is the brief's note 3 taken literally:
+English *while*, *until*, *before*, *since* each introduce a phrase OR a clause, German uses a
+different word for each half of the pair, and the learner already owns the phrase half of every one
+— `während` the preposition is L3-M8's, `seit` is L3-M7's, `bis` plus a time is L2-M6's. **Rule 1**
+is the verb-final law with six new triggers and L3-M3's comma-verb-subject fronting. **Rules 2 and
+3** are the two tense facts: `bevor` takes the same tense in both halves, `seitdem` pairs with the
+present while the state lasts. **Rule 4** is the aspect system — `schon`, `noch`, `noch nicht`,
+`nicht mehr` — as one thing rather than four. **Rule 5** is `erst`, written and not opened.
+**Rule 6** is the `bis` ruling below.
+
+Thirteen rows: `bevor`, `gleichzeitig`, `Stunde`, `seitdem`, `weniger`, the two spans `noch nicht`
+and `nicht mehr`, `dauert`, `sondern`, `sobald`, `solange`, `inzwischen`, `Ende`. `bis`, `schon`,
+`während` and `erst` are all written and none opens a row, exactly as the brief's note 5 ruled — S03
+carries the conjunction `bis` in its own deconstruction and its `trap` says out loud that a practice
+tap resolves to L2-M6's goodbye. `sondern` was added beyond the brief's list because `nicht mehr …,
+sondern …` is the sentence the negation actually produces, and the *aber*/*sondern* split is a real
+delta English does not have.
+
+### L4-M7 "Official talk" — the passive completed, and one row of Konjunktiv I
+
+```
+S01  Achtung am Gleis drei: Der Zug nach München hat Verspätung
+S02  Der Antrag wurde gestern bearbeitet
+S03  Bitte beachten Sie: Das Formular muss vollständig ausgefüllt werden
+S04  Die Tür wird um acht geschlossen
+S05  Der Schalter ist von neun bis zehn geöffnet
+S06  Der Kollege sagt, er sei heute nicht im Büro
+S07  Wir bitten um Ihr Verständnis
+S08  Ihr Ausweis wurde durch das Amt geprüft
+S09  Die nächste Kundin wird bitte am Schalter zwei bedient
+S10  Wir möchten Ihnen mitteilen, dass Ihre Anmeldung erhalten wurde
+```
+
+Seven rules. **Rule 0** is the register law the brief asked for first: these are sentences to
+RECOGNISE, and a learner who produces them sounds like a form rather than a person. **Rule 1**
+completes the passive with `wurde`/`wurden`/`worden`, and the `worden`-not-`geworden` fact is the
+one every anglophone gets wrong twice. **Rule 2** is the modal passive and its three-piece bracket.
+**Rule 3** is the event/state split — `wird geschlossen` against `ist geschlossen` — which S04 and
+S05 carry as a matched pair. **Rule 4** is `von` for a person and `durch` for a means or an office.
+**Rule 5** is the noun-heavy register plus the `bitten um` frame. **Rule 6** is Konjunktiv I as
+recognition only, with its honest limit: spoken German reports with `dass` and the indicative, which
+is what S06's variation shows.
+
+Twenty-two rows. `sei` is the module's only Konjunktiv I row and the index could not have given a
+second, exactly as the brief predicted.
+
+### L4-M8 "Back then" — the reading tense
+
+```
+S01  Früher wohnten wir in einem kleinen Dorf
+S02  Als ich klein war, spielte ich draußen und kam spät nach Hause
+S03  Es gab hier damals noch keinen Bahnhof
+S04  Mein Opa saß jeden Abend am Fenster mit der Zeitung
+S05  Im Sommer fuhren wir immer zu meiner Oma
+S06  Ich ging jeden Tag in die Stadt und sah meine Freunde
+S07  Meine Kindheit war schön, wir blieben zwanzig Jahre in dieser Stadt
+S08  Damals arbeitete ich in Berlin und musste früh aufstehen
+S09  Meine Mutter sagte immer, wir durften nicht lange draußen bleiben
+S10  Früher machte ich das jeden Tag, heute nicht mehr
+```
+
+Seven rules, and the register law is **rule 0** as the brief demanded: the Perfekt is the spoken
+past, the Präteritum is the written one, and `sein`, `haben` and the modals are the exception the
+learner has been using since L1 without being told why. **Rules 1–3** are the two classes and the
+fact that makes the tense cheap — the `ich` form and the `er` form are one written shape. **Rule 4**
+is the *used to* gap: German has an adverb and a plain past, and nothing to translate the
+construction into. **Rule 5** forbids inventing a past continuous. **Rule 6** is the southern habit,
+written as practice a learner will meet rather than as advice.
+
+Twenty-one rows, all of them verb forms plus five nouns: `wohnte`, `Dorf`, `spielte`, `kam`,
+`draußen`, the span `es gab`, `Opa`, `saß`, `Zeitung`, `fuhr`, `Oma`, `ging`, `sah`, `Kindheit`,
+`blieb`, `arbeitete`, `musste`, `aufstehen`, `sagte`, `durfte`, `machte`. `früher` and `damals` are
+written in four displays and open nothing.
+
+### L4-M9 "Places and journeys" — direction marked on the word
+
+```
+S01  Wohin fahren Sie? Wir machen einen kleinen Ausflug
+S02  Woher kommt der Zug, und in welche Richtung fährt er?
+S03  Der Zug fährt um acht ab und kommt um zehn an
+S04  Wo wollen Sie hin? Kommen Sie bitte her!
+S05  Wir fahren mit dem Bus und gehen dann zu Fuß weiter
+S06  In Berlin müssen Sie umsteigen und weiter nach München fahren
+S07  Wir waren lange unterwegs und kamen erst spät zurück
+S08  Die Reise ging über eine Brücke und einen kleinen Fluss
+S09  Von dort sind wir zu Fuß auf den Berg gegangen
+S10  Haben Sie eine Karte? Ich finde den Weg zum Meer nicht
+```
+
+Six rules. **Rule 0** is the category English does not have: `wo` / `wohin` / `woher`, three words
+where English has one. **Rule 1** is `hin` away and `her` towards, on the front of a question word or
+the back of a place word, and splitting off to the end of a clause in speech. **Rule 2** is the
+destination choice — `nach` / `zu` / `in` + accusative — written as a rule with three pointers and
+no row, because all three keys are spent. **Rule 3** is `mit` + dative for the vehicle against the
+article-less `zu Fuß`. **Rule 4** is the prefix payment. **Rule 5** says out loud that the directions
+themselves are L2-M4's and this module only joins them into one account.
+
+Twenty-one rows. S08 and S09 both lean on M8's `ging` and `gegangen` from L1-M5, which is the join
+the brief wanted: a journey told in the tense the level just gave.
+
+### L4-M10 "A story with a twist" — the last word-order fact
+
+```
+S01  Gestern saß ich am Bahnhof. Mein Kollege rief laut: „Bis später!“ Ich blieb eine Stunde
+     dort. Er kam aber nicht mehr. „Bis später“ war kein Termin.
+S02  Der Mann am Schalter fragte: „Haben Sie das Formular?“ Ich antwortete: „Nein, leider
+     nicht.“ „Kein Problem“, sagte er dann.
+S03  Wir fuhren nach München. Auf einmal blieb der Zug stehen. „Was ist das?“, fragte meine
+     Frau leise. Nach zwanzig Minuten fuhren wir weiter. Das war wirklich Glück.
+S04  Ich fragte den Kollegen: „Ist der Schalter heute geöffnet?“ Er nickte nur. Dann sagte er:
+     „Aber nur bis zwölf.“
+S05  Im Büro war es ganz leise. Der Chef fragte: „Wo sind alle?“ Ich sagte: „Heute ist
+     Samstag.“ Er lachte und ging wieder nach Hause.
+S06  Wir fuhren einmal nach Berlin und blieben eine Woche. So sagt man es im Buch. Aber ich
+     sagte es so: „Wir sind nach Berlin gefahren.“
+S07  Der Kollege fragte: „Gehen wir zusammen?“ Ich verstand nur ein Wort und sagte ja. Auf
+     einmal saß ich im Bus nach Berlin. Das wollte ich nicht.
+S08  Ich dachte, der Zug fährt um acht ab. Auf einmal war es schon neun. „Der nächste Zug
+     kommt um zehn“, sagte eine Frau leise.
+S09  Meine Oma sagte immer: „Früher war alles besser.“ Dann lachte sie laut. „Aber nicht
+     alles“, sagte mein Opa.
+S10  Am Ende fragte meine Frau: „War das schön?“ Ich verstand sie nicht und lachte nur. Dann
+     nickte sie: „Ja, es war schön.“
+```
+
+Six rules, and only one of them is new grammar. **Rule 0** is the punctuation: `„` opens low, `“`
+closes high, and the index cannot see the difference while a reader can. **Rule 1** is the
+inversion after a quote — the one place in German where the verb precedes its subject with nothing
+fronted — and **rule 2** is the colon for the other order. **Rule 3** puts the reporting verb in
+L4-M8's Präteritum and leaves the speech inside the quotes in whatever tense it was said in, which
+is L3-M5's no-backshift rule shown rather than described. **Rule 4** is the difference between an
+account and a story. **Rule 5** is the register close.
+
+Thirteen rows, three under the fourteen the brief aimed at and three over its structural floor of
+ten: `rief`, `fragte`, `antwortete`, `laut`, `leise`, the span `auf einmal`, `einmal`, `Glück`,
+`lachte`, `nickte`, `dachte`, `verstand`, `Wort`. **Not one of them is a noun the story could have
+borrowed** except `Wort` and `Glück`, and both earn their place: `Wort` is what two of the twists
+turn on, and `Glück` is the bare noun under L3-M10's fixed `zum Glück`. Three items turn on a WORD
+rather than an event, as rule 4 asks — S01's `bis`, S07's one understood word, S08's unshifted
+tense. S06 is the register item the brief's note 6 asked for: the same trip in the Präteritum a book
+writes and the Perfekt a person says, with the module's own text saying which is which.
+
+### The seams: what the briefs claimed, and what the index actually said
+
+**1. Three keys the L4 briefs still call fresh were spent by Waves 1 and 2.** The briefs were all
+computed against 686 surfaces; `npm run content:owner`, folded over the emitted index plus every
+authored L4 file, says today:
+
+```
+erst     L4-M1
+Minute   L4-M1
+lange    L4-M2
+```
+
+L4-M6's brief lists all three among its fresh keys. It opens none of them; `erst` and `lange` are
+written freely in M6 and M9, and `Minute` appears in M7 and M10 in the plural `Minuten`, which
+L4-M1's row already owns. **This is the index-seam-goes-stale failure the wave brief warns about, and
+it fired on the first module.**
+
+**2. Everything else the M6 brief corrected is still correct.** `schon L2-M2`, `während L3-M8`,
+`bis L2-M6` — all three re-checked and all three unchanged, so the module's rulings stand as written.
+
+**3. L4-M7's Konjunktiv I sentence cannot use the brief's own example.** The brief's §3 writes
+`Er sagte, er sei krank`, and that reporting verb is unavailable at M7's depth:
+
+```
+sagte    free
+```
+
+`sagte` is free through L4-M7 and L4-M8 — one rung LATER — is the module chartered to mint the
+Präteritum. So M7 reports in the PRESENT: `Der Kollege sagt, er sei heute nicht im Büro`, with
+`sagt` (L3-M5). The mood is unaffected — Konjunktiv I is what marks the words as somebody else's,
+whatever tense the reporting verb is in — but the brief's illustrative sentence is unwritable in the
+module it illustrates.
+
+**4. `sagte` is claimed by two briefs and en-de permits one row.** L4-M8's brief lists `sagte` among
+its fresh keys; L4-M10's brief lists it among "the four dialogue verbs" it should spend on. On en-de
+`src/course/types.test.ts` asserts exactly one owning row per surface, so both cannot have it.
+**L4-M8 takes it** — it is the plainest weak verb in the language and M8 is the module that teaches
+the class — and L4-M10 writes it in six of its ten narratives with no row at all. M10 therefore
+ships three dialogue-verb rows (`fragte`, `rief`, `antwortete`) plus one borrowed from the rung below.
+
+**5. A multi-token span's key is order-sensitive, and L4-M8's `es gab` nearly shipped unreachable.**
+`normalizeSurface` joins tokens in the order they appear, so `Damals gab es hier …` folds to
+`gab es`, not to `es gab`, and a span row holding only `es gab` would not have matched the fronted
+display the brief's own pattern list suggests (`Damals + gab es + <Akk>`). Both orders were checked:
+
+```
+es gab   free
+gab es   free
+```
+
+The row now holds both surfaces in `forms`, the hero display writes the pair in its base order
+(`Es gab hier damals noch keinen Bahnhof`) and the variation writes the fronted one. Bare `gab` is
+left unspent and no display in the wave shows it. **This class — a span whose display inverts it —
+is worth adding to the next brief-writing pass; nothing in the tooling would have caught it except
+`content:shown`, which reported it as a plain `SHOWN-BUT-UNTAUGHT gab`.**
+
+**6. L4-M8's `früher` and `damals` findings hold.** `früher L3-M10`, `damals L3-M10`, re-checked.
+The module opens neither and spends its whole budget on verb forms, as the brief instructed.
+
+**7. L4-M9's destination seam is exactly as the brief predicted, and it is the level's most
+expensive.**
+
+```
+nach   L2-M4
+zu     L1-M8
+in     L1-M1
+```
+
+Three words, three modules, and L1-M8's `zu` is the *too* of `zu teuer` rather than a preposition at
+all. Written as rule 2 with three pointers and no row — the L3-M5 `als`/`wenn` precedent.
+
+**8. L4-M9 pays TWO debts, not the one its brief names.** The brief charters the module to open the
+bare prefix `ab`. It does. But the sentence that forces it also forces a second key the brief did
+not see:
+
+```
+abfahren   L2-M4
+fährt      free
+```
+
+`abfahren` is owned and `fährt` — the third person of L1-M6's `fahren` — was never minted by
+anything. `Der Zug fährt um acht ab` cannot be written without it, so M9 opens a row for `fährt`
+with a note pointing back at L1-M6, which is the level law's "a new shape of an older lexeme gets
+its own row" doing exactly what it is for. A third, smaller debt turned up the same way: `steigen`
+is free, though `einsteigen`, `aussteigen` and now `umsteigen` are all owned, so the split display
+`Wir steigen um` had nothing to resolve to. The bare stem is folded into the `umsteigen` row's
+`forms` rather than given a row of its own.
+
+**9. L4-M10's seams.** `plötzlich L3-M10` and `Stimme L3-M3` both confirmed — the module writes
+neither. But one more of its "fresh" keys is gone:
+
+```
+Moment    L4-M5
+zum Glück L3-M10
+Glück     free
+```
+
+`Moment` was minted by Wave 2 and is dropped from M10's list. `zum Glück` is a two-token span, so
+the bare noun under it is still free and M10 takes it. The brief's punctuation check holds exactly
+as claimed: every word inside `„…“` resolved, and no key was spent on the quotation marks.
+
+**10. The trap that fired more often than any single seam: ownership is per-FORM, not per-lexeme.**
+Eight separate displays had to be rerouted around a form whose lemma is owned and whose inflection
+is not:
+
+```
+warten L3-M4   / warte free, wartet free
+arbeiten L1-M4 / arbeitet free
+bleiben L2-M10 / bleibt free
+ganz L4-M5     / ganzen free
+wohne L1-M1    / wohnt free
+mein L2-M2     / unser free, unsere free
+```
+
+None of these was minted; every display was rewritten to use a form the ladder already owns. The
+same applies to place names, where the wave uses only `Berlin` (L1-M1) and `München` (L2-M9) —
+`Hamburg`, `Bremen` and `Köln` are all `free`, and a proper noun in a display would have been a
+shown-but-untaught surface like any other.
+
+### The ratchet
+
+```
+npm run content:shown -- en-de L4-M6    →  L4-M6: clean — every shown surface resolves
+npm run content:shown -- en-de L4-M7    →  L4-M7: clean — every shown surface resolves
+npm run content:shown -- en-de L4-M8    →  L4-M8: clean — every shown surface resolves
+npm run content:shown -- en-de L4-M9    →  L4-M9: clean — every shown surface resolves
+npm run content:shown -- en-de L4-M10   →  L4-M10: clean — every shown surface resolves
+```
+
+No `RE-TEACH` line and no `COLLIDES INSIDE THIS MODULE` line on any of the five. On en-de a re-teach
+is a defect rather than information, so that is a result and not a nicety: all eighty-four rows of
+this wave open a key nothing below them owned, and no two rows of any module open the same folded
+key. Nothing needed the deliberate-repeat escape hatch, so no two rows share a note.
+
+`npm run content:validate` reports `CONTENT 354/354 ok`.
+
+`npx vitest run tools/shown-surfaces.test.ts` passes **11/11, and en-de holds at its baseline of 11**
+— this wave neither added a shown-but-untaught surface nor cleared one, so no baseline moved in
+either direction.
+
+`npx vitest run src/course/types.test.ts` is **375 passed, 0 failed** — the module census included,
+because by the time this wave finished every course's files were on disk. The two assertions this
+wave was most at risk from both pass: exactly one owning row per surface across the whole course,
+with `FORCED_DUPLICATES` still at its three entries (`nicht`, `dienstag`, `in`) and no fourth; and
+`sound` non-empty on every sentence of every en-de module. All fifty sentences of this wave carry a
+`sound` line, and it was run before the files were called done rather than after.
+
+### Open questions for the native pass
+
+These continue this course's chain from docs/92 and the Wave 1 and Wave 2 sections above, which
+together end at 97. Nothing above is renumbered.
+
+98. **`bis` written as a conjunction with no row of its own** (M6-S03). Wave 3 executed the brief's
+    ruling: `Wir müssen eine Stunde warten, bis der Zug kommt` ships, and a practice tap on `bis`
+    shows L2-M6's goodbye note. Confirm a learner is not actively misled by that — the two seats are
+    the same *until*, but the older note ends "it is never said to a stranger", which is false of the
+    conjunction. If it misleads, the fix is L2-M6's note and belongs to whoever may edit that file.
+
+99. **`Ich arbeite nicht mehr in Berlin, sondern zu Hause`** (M6-S06). Confirm `sondern` after
+    `nicht mehr` reads as natural rather than as a textbook contrast, and that a speaker would not
+    simply say `… sondern von zu Hause`, which is what the working world actually says.
+
+100. **`Inzwischen ist es schon halb neun`** (M6-S09). Confirm `inzwischen` in first position is the
+     ordinary spoken word for *by now* and not a shade formal against `mittlerweile`, and that the
+     sentence reads as noticing the time rather than complaining about it.
+
+101. **`Ihr Ausweis wurde durch das Amt geprüft`** (M7-S08). The one sentence in the wave the author
+     is least sure of. Rule 4 teaches `von` for a person and `durch` for a means or an office, and
+     `durch das Amt` is common Amtsdeutsch — but many prescriptivists insist an acting authority
+     takes `von` and reserve `durch` for the instrument. Confirm which a real letter writes, and
+     whether the rule as stated needs narrowing to a means only.
+
+102. **`Der Kollege sagt, er sei heute nicht im Büro`** (M7-S06). Konjunktiv I with a PRESENT
+     reporting verb, forced by seam 3 above. Confirm this is natural German — the mood is usually
+     met with `sagte`/`teilte mit` — and, if it reads oddly, whether the sentence should instead be
+     the impersonal `Es heißt, er sei …`, which needs a key this course does not have.
+
+103. **`Die nächste Kundin wird bitte am Schalter zwei bedient`** (M7-S09). Confirm a `bitte` inside
+     a passive announcement is idiomatic rather than a hypercorrection, and confirm the feminine
+     `Kundin` as the display with `Kunde` in the forms is the right way round for a course that has
+     to pick one.
+
+104. **`Meine Kindheit war schön, wir blieben zwanzig Jahre in dieser Stadt`** (M8-S07). Confirm the
+     asyndetic comma — two main clauses joined by nothing — is current written German rather than a
+     comma splice, and that `blieben` rather than `sind geblieben` is what a written memory uses.
+
+105. **The southern caveat as rule 6** (M8). The module says even written German in the south and in
+     Austria often prefers the Perfekt. Confirm that is accurate enough to teach, and confirm the
+     line that follows it — that the Präteritum of `sein`, `haben` and the modals is said everywhere
+     regardless of region — is true in Bavaria and Austria as well.
+
+106. **`Wo wollen Sie hin?` as the display and `Wohin wollen Sie?` as the variation** (M9-S04). The
+     module makes the split form the hero because it is what people say. Confirm that ordering for a
+     course that teaches `Sie`, and confirm `Kommen Sie bitte her!` is not sharper than intended —
+     `her` on its own may read as a command to a dog rather than to a person.
+
+107. **`Der Weg dorthin` and the `hin`/`dorthin`, `her`/`hierher` pairing** (M9-S04, S09). The two
+     rows carry the compounds in their `forms` rather than as rows of their own. Confirm `dorthin`
+     and `hierher` are frequent enough to be worth teaching at all, or whether spoken German has
+     already replaced them with `da hin` and `hierhin`.
+
+108. **`„Bis später“ war kein Termin`** (M10-S01). The wave's clearest twist-on-a-word, and it rests
+     on a joke about register. Confirm it lands — that a German reader hears the misunderstanding
+     rather than a flat statement — and confirm `kein Termin` is the right word for what `Bis später`
+     is not.
+
+109. **`So sagt man es im Buch. Aber ich sagte es so: …`** (M10-S06). The register item the brief
+     asked for. Confirm the frame is natural rather than metalinguistic — a speaker would more likely
+     say `So schreibt man das` — and confirm the claim underneath it, that the Präteritum here is
+     purely written, holds for a spoken anecdote about a week in Berlin.
+
+110. **`Er nickte nur` as a whole line of dialogue** (M10-S04). Rule 4 wants a line of speech in every
+     item and this one substitutes a gesture. Confirm that reads as a story beat rather than as a gap,
+     and confirm `nickte` is the verb a written German story uses rather than `nickte mit dem Kopf`.

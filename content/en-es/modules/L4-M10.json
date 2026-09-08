@@ -1,0 +1,356 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M10",
+  "title": "A story with a twist",
+  "job": "A six-sentence narrative with a line of dialogue inside it",
+  "prerequisites": ["L4-M9"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["present", "preterite", "imperfect", "perfect"],
+    "allowedPatterns": [
+      "<imperfect scene> + . + <preterite step> + . + <preterite step> + .",
+      "— + <direct speech> + —dijo + <subject> + .",
+      "De repente + <preterite>",
+      "Resulta que + <clause>",
+      "Al final + <preterite> + , y + <perfect>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Spanish marks quoted speech with the RAYA, the long dash — not with quotation marks. One dash opens the quoted line, and a second dash opens the attribution that closes it: —No queda pan —dijo el panadero. Nothing closes either dash at the end of the sentence."
+    },
+    {
+      "tag": "delta",
+      "text": "The attribution INVERTS: dijo el panadero, dijo ella, contestó mi hermana — verb first, speaker second. English does the same thing (said Ana), so the order is familiar even though the everyday default is the other way round."
+    },
+    {
+      "tag": "delta",
+      "text": "Direct speech quotes the words; L3-M5's reported speech backshifts them. —No queda pan —dijo el panadero against Dijo que no quedaba pan. A story can use both in the same paragraph, and choosing between them is a choice about how close you want the reader."
+    },
+    {
+      "tag": "free",
+      "text": "The turn words that mark where a story bends: de repente and de pronto (suddenly), resulta que (it turns out that), por fin (finally), al rato (a while later), and L2-M10's al final for the last beat. resulta que takes the indicative — it reports a fact, however surprising."
+    },
+    {
+      "tag": "interference",
+      "text": "English makes a story vivid by slipping into the present — so he says to me… Spanish narration stays in the preterite and the imperfect throughout. The historical present exists and belongs to L5; reaching for it here is the one habit this module has to break."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M10-S01",
+      "display": "Una vez fui a la tienda por pan. No había nadie. Por fin salió el panadero. —No queda pan —dijo. No dije nada. Resulta que era domingo.",
+      "cue": "Once I went to the shop for bread. There was nobody there. Finally the baker came out. \"There's no bread left,\" he said. I said nothing. It turns out it was a Sunday.",
+      "literal": "One time I-went to the shop for bread. Not there-was nobody. For end came-out the baker. Not remains bread, said. Not I-said nothing. Turns-out that it-was Sunday.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "una vez",
+            "cue": "once · one time",
+            "tag": "free",
+            "forms": ["una vez"],
+            "note": "How a small story opens, the way English uses once. It is not the fairy-tale había una vez, which is a different opening altogether."
+          },
+          {
+            "display": "por fin",
+            "cue": "finally · at last",
+            "tag": "free",
+            "forms": ["por fin"],
+            "note": "Carries relief that al final does not: por fin is after a wait, al final is simply the last thing that happened."
+          },
+          {
+            "display": "queda",
+            "cue": "there is left · remains",
+            "tag": "free",
+            "forms": ["queda", "quedan"],
+            "note": "quedar with no person named means to be left over: no queda pan, no quedan billetes. It agrees with the thing, not with anybody."
+          },
+          {
+            "display": "resulta que",
+            "cue": "it turns out that",
+            "tag": "delta",
+            "forms": ["resulta que"],
+            "note": "The twist marker, and it takes the INDICATIVE — era, not fuera. It reports a fact that surprised the speaker, and surprise is not doubt."
+          },
+          {
+            "display": "panadero",
+            "cue": "baker",
+            "tag": "free",
+            "forms": ["panadero"],
+            "note": "From pan. The shop is la panadería, and the same -ero pattern makes most trade names in Spanish."
+          }
+        ],
+        "rules": [0, 1, 3]
+      },
+      "trap": "The last line rewrites the first: on a Sunday there was never going to be bread, and the whole small disappointment was avoidable. That is what resulta que is for.",
+      "usage": "A shaggy-dog story told against yourself, at a table. Neutral, and the dash before dijo is not optional in writing.",
+      "register": "neutral",
+      "mistake": {
+        "display": "\"No queda pan\", dijo el panadero.",
+        "why": "Quotation marks and a comma are the English way of writing this. On a Spanish page it looks foreign immediately: the raya does both jobs."
+      },
+      "mnemonic": "One dash opens the words, one dash opens the speaker."
+    },
+    {
+      "id": "L4-M10-S02",
+      "display": "Una noche llamé a mi hermana. —Ahora no puedo hablar —contestó. Más tarde me llamó ella. Me dijo que estaba en la calle. Al final hablamos mucho. Resulta que estaba en la estación.",
+      "cue": "One night I rang my sister. \"I can't talk right now,\" she answered. Later she rang me. She told me she was in the street. In the end we talked for ages. It turns out she was at the station.",
+      "literal": "One night I-called to my sister. Now not I-can talk, answered. More late me called she. Me said that she-was in the street. At-the end we-talked much. Turns-out that she-was in the station.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "contestó",
+            "cue": "answered · replied",
+            "tag": "free",
+            "forms": ["contestó"],
+            "note": "The everyday alternative to dijo inside an attribution, and it is what you use for a reply rather than an opening. respondió is its slightly more formal twin."
+          },
+          {
+            "display": "ella",
+            "cue": "she · her",
+            "tag": "free",
+            "forms": ["ella", "él"],
+            "note": "Spanish drops these pronouns almost always, and puts them back exactly here — after the verb in an attribution, where the ending alone would leave the speaker unclear."
+          }
+        ],
+        "rules": [1, 2, 3]
+      },
+      "trap": "Both halves of the conversation are in the story, and each is written differently: the first is quoted with a raya, the second is reported with que and backshifted to estaba, exactly as L3-M5 taught.",
+      "usage": "A phone call retold. Neutral, and the shift from quote to report is what stops it sounding like a transcript.",
+      "register": "neutral",
+      "mistake": {
+        "display": "Me dijo que está en la calle.",
+        "why": "está has not been backshifted. Inside a story told in the past, a reported clause moves to estaba — the present would mean she is in the street right now, as you speak."
+      },
+      "mnemonic": "Quote it with a dash, report it with que."
+    },
+    {
+      "id": "L4-M10-S03",
+      "display": "Aquel día estaba en la playa con mi hermana. Hacía mucho frío y no había nadie. De repente llegó un coche. Salió el médico del pueblo. —¿Están bien? —preguntó. Resulta que alguien llamó por teléfono.",
+      "cue": "That day I was at the beach with my sister. It was very cold and there was nobody about. Suddenly a car arrived. The village doctor got out. \"Are you all right?\" he asked. It turns out somebody had phoned.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "de repente",
+            "cue": "suddenly · all at once",
+            "tag": "free",
+            "forms": ["de repente", "de pronto"],
+            "note": "Two ways of saying the same thing, both equally common, and both sit at the front of the sentence they turn. Neither ever takes a verb of its own."
+          },
+          {
+            "display": "alguien",
+            "cue": "somebody · someone",
+            "tag": "free",
+            "forms": ["alguien"],
+            "note": "The positive of nadie, and like it, one invariable word: never alguien-a, never plural. Its thing-counterpart is algo, which L2-M9 taught."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "The first two sentences are all imperfect because nothing has happened yet — they are the stage. de repente is the switch, and everything after it is preterite.",
+      "usage": "A story told to explain why you no longer swim in winter. Neutral, and the quoted question is the only line anybody speaks.",
+      "register": "neutral",
+      "mistake": {
+        "display": "Aquel día estuve en la playa con mi hermana. Hacía mucho frío.",
+        "why": "estuve closes the beach off as a finished episode before the story has started. The scene a twist happens inside is always estaba."
+      },
+      "mnemonic": "Scene in the imperfect, turn in the preterite."
+    },
+    {
+      "id": "L4-M10-S04",
+      "display": "El lunes perdí las llaves de casa. Más tarde llamé a mi madre. —Ve a la cocina —dijo ella. Y allí estaba la llave, en la mesa. No dije nada. Resulta que la dejo siempre en la cocina.",
+      "cue": "On Monday I lost my house keys. Later I rang my mother. \"Go and look in the kitchen,\" she said. And there was the key, on the table. I said nothing. It turns out I always leave it in the kitchen.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "más tarde",
+            "cue": "later · later on",
+            "tag": "free",
+            "forms": ["más tarde"],
+            "note": "Moves a story forward by an unspecified amount. al rato is the shorter version — a little while later — and luego is looser than both."
+          }
+        ],
+        "rules": [1, 3, 4]
+      },
+      "trap": "The last line is in the PRESENT and that is deliberate: la dejo siempre is a standing habit, still true, so it steps outside the story's past to deliver the twist.",
+      "usage": "Told against yourself, warmly. Informal — the mother's quoted line is a tú command, and that is what fixes the register of the whole item.",
+      "register": "informal",
+      "mistake": {
+        "display": "Resulta que la dejé siempre en la cocina.",
+        "why": "dejé makes it one occasion, which ruins the joke: the point is that this happens every time and the speaker still has not learnt."
+      },
+      "mnemonic": "A twist that is still true speaks in the present."
+    },
+    {
+      "id": "L4-M10-S05",
+      "display": "Una vez conocí a un médico en el tren. Hablamos dos horas de la gente del pueblo. Al final le di mi número. Nunca me llamó. Al rato llamó, muy tarde. Resulta que perdió el móvil aquel día.",
+      "cue": "Once I met a doctor on the train. We talked for two hours about the people in the village. In the end I gave him my number. He never rang. A while later he rang, very late. It turns out he had lost his phone that day.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al rato",
+            "cue": "a while later · after a bit",
+            "tag": "free",
+            "forms": ["al rato"],
+            "note": "A short, vague stretch — minutes or hours, never days. un rato on its own is a while, and pasar un rato is to spend some time somewhere."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "Nunca me llamó and Al rato llamó sit side by side and contradict each other on purpose. The story lets the contradiction stand for one line and then explains it, which is the shape the whole module teaches.",
+      "usage": "A story with a small kindness in it, told to somebody who asked whether you ever hear from people you meet travelling.",
+      "register": "neutral",
+      "mistake": {
+        "display": "Una vez conocía a un médico en el tren.",
+        "why": "conocía is knew, over a period. The first meeting is conocí, which L3-M10 taught, and una vez insists on it."
+      },
+      "mnemonic": "conocí is the moment; conocía is the acquaintance."
+    },
+    {
+      "id": "L4-M10-S06",
+      "display": "Trabajaba en la tienda cuando llegó el jefe. —Hay un problema —dijo. —¿Qué problema? —respondí. De pronto no había nadie en la calle. El jefe dijo que era una huelga. Al final no trabajé más aquel día.",
+      "cue": "I was working in the shop when the boss arrived. \"There's a problem,\" he said. \"What problem?\" I replied. Suddenly there was nobody in the street. The boss said it was a strike. In the end I didn't work any more that day.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "respondí",
+            "cue": "I replied · I answered",
+            "tag": "free",
+            "forms": ["respondí", "respondió"],
+            "note": "Slightly more formal than contestó and interchangeable with it in a story. In an attribution it inverts like every other verb of speaking."
+          }
+        ],
+        "rules": [0, 1, 2]
+      },
+      "trap": "Two speakers, two dashes, no quotation marks anywhere, and no closing dash on either line — the sentence's own full stop ends it. This is what a page of Spanish dialogue actually looks like.",
+      "usage": "An ordinary working day that turned. Neutral, and the boss's quoted line is as short as real speech is.",
+      "register": "neutral",
+      "mistake": {
+        "display": "Trabajaba en la tienda cuando llegaba el jefe.",
+        "why": "Two imperfects give you two backgrounds and no event. The arrival is the thing that happened, so it has to be llegó."
+      },
+      "mnemonic": "One imperfect sets the room, one preterite opens the door."
+    },
+    {
+      "id": "L4-M10-S07",
+      "display": "Aquella tarde fui al banco con una factura. Había mucha gente. Por fin llegó mi turno. —Esta factura no es de este banco —dijo ella. Volví a casa con la factura. Y ya no me importa.",
+      "cue": "That afternoon I went to the bank with a bill. There were a lot of people. Finally my turn came. \"This bill isn't from this bank,\" she said. I went home with the bill. And I don't care any more.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "turno",
+            "cue": "turn · one's place in a queue",
+            "tag": "free",
+            "forms": ["turno"],
+            "note": "What a numbered ticket buys you, and the word on the screen above a counter. llegó mi turno is my turn came, with the turn as the subject."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "The last line steps out of the story into the present — ya no me importa — and that is the twist: not a revelation, a shrug. L4-M6's ya no is what makes it land.",
+      "usage": "The bureaucratic anecdote everyone has. Neutral, and the clerk's quoted line is flat on purpose.",
+      "register": "neutral",
+      "mistake": {
+        "display": "Aquella tarde iba al banco con una factura. Por fin llegó mi turno.",
+        "why": "iba would make the going a background that never finishes. The trip is a completed step in the sequence, so it is fui."
+      },
+      "mnemonic": "A story can end in the present if the feeling is still going."
+    },
+    {
+      "id": "L4-M10-S08",
+      "display": "El sábado perdí el móvil en el autobús. Llamé a mi número todo el día. Nadie me contestó. Por la noche alguien llamó a la puerta. —¿Es este tu móvil? —preguntó una niña. Resulta que estaba en el autobús de las ocho.",
+      "cue": "On Saturday I lost my phone on the bus. I rang my own number all day. Nobody answered. In the evening somebody knocked at the door. \"Is this your phone?\" a girl asked. It turns out it was on the eight o'clock bus.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "niña",
+            "cue": "girl · little girl",
+            "tag": "free",
+            "forms": ["niña", "niño"],
+            "note": "A child, roughly up to twelve. The masculine plural niños covers a mixed group, the way padres covers both parents."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "llamó a la puerta is knocked at the door, not phoned the door. The same verb covers both, and only the thing after a tells you which.",
+      "usage": "A story about strangers being decent. Informal — tu móvil in the quoted line is a child speaking to an adult in the way children do.",
+      "register": "informal",
+      "mistake": {
+        "display": "Resulta que estuvo en el autobús de las ocho.",
+        "why": "estuvo reports the phone spending a defined stretch on the bus. What the twist needs is where it WAS all along, which is estaba."
+      },
+      "mnemonic": "Where a thing was all along is always imperfect."
+    },
+    {
+      "id": "L4-M10-S09",
+      "display": "Una vez llegué muy tarde a la cita con el médico. En la ventanilla no había nadie. Por fin salió una mujer. —Pase usted, por favor —dijo. Dije perdón. —No es tarde —contestó ella.",
+      "cue": "Once I turned up very late for my doctor's appointment. There was nobody at the counter. Finally a woman came out. \"Come through, please,\" she said. I apologised. \"You're not late,\" she replied.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mujer",
+            "cue": "woman",
+            "tag": "free",
+            "forms": ["mujer"],
+            "note": "Also wife, in exactly the way hombre is also husband: mi mujer is my wife. Which one is meant is decided entirely by the possessive in front of it."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "The narration is neutral and the quoted line is formal — Pase usted is L4-M7's clerk. A story can hold two registers at once, and the raya is what keeps them apart on the page.",
+      "usage": "Told as a small relief. The narrator speaks to a friend; the woman quoted inside speaks to a stranger.",
+      "register": "neutral",
+      "mistake": {
+        "display": "Pasa, por favor —dijo.",
+        "why": "The clerk has slipped into tú. She has never met the narrator, and the whole point of the line is the distance her usted keeps."
+      },
+      "mnemonic": "The quoted voice keeps its own register, not the narrator's."
+    },
+    {
+      "id": "L4-M10-S10",
+      "display": "Aquel verano fuimos al pueblo donde nació mi madre. La casa era muy vieja y no había agua caliente. Un día llegó una carta. —Es para ti —dijo mi madre. Resulta que era de mi abuela. Y todavía no la he abierto.",
+      "cue": "That summer we went to the village where my mother was born. The house was very old and there was no hot water. One day a letter arrived. \"It's for you,\" my mother said. It turns out it was from my grandmother. And I still haven't opened it.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "carta",
+            "cue": "letter",
+            "tag": "free",
+            "forms": ["carta"],
+            "note": "A letter on paper. It is also a menu in a restaurant and a playing card, and all three are simply la carta."
+          }
+        ],
+        "rules": [1, 3, 4]
+      },
+      "trap": "The last line is a perfect, not a preterite, and that is the whole ending: todavía no la he abierto is still true as you speak, so the story reaches out of the past and stops in the room.",
+      "usage": "The level's exit. Every tense L4 owns is in it and nothing new is, which is what it is for.",
+      "register": "neutral",
+      "mistake": {
+        "display": "Y todavía no la abrí.",
+        "why": "abrí closes the letter off in the past and the sentence stops meaning anything: not opening something is a state that is still going on, which is what the perfect carries."
+      },
+      "mnemonic": "A story that has not finished ends in the perfect."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L4-M10-C01", "display": "Una vez fui a la tienda por pan. No había nadie.", "cue": "Once I went to the shop for bread. There was nobody there." },
+    { "id": "L4-M10-C02", "display": "—No queda pan —dijo el panadero.", "cue": "\"There's no bread left,\" said the baker." },
+    { "id": "L4-M10-C03", "display": "De repente llegó un coche y salió el médico.", "cue": "Suddenly a car arrived and the doctor got out." },
+    { "id": "L4-M10-C04", "display": "Resulta que era domingo.", "cue": "It turns out it was a Sunday." },
+    { "id": "L4-M10-C05", "display": "—Ahora no puedo hablar —contestó ella.", "cue": "\"I can't talk right now,\" she replied." },
+    { "id": "L4-M10-C06", "display": "Más tarde me llamó mi hermana.", "cue": "Later my sister rang me." },
+    { "id": "L4-M10-C07", "display": "Por fin llegó mi turno en el banco.", "cue": "My turn at the bank finally came." },
+    { "id": "L4-M10-C08", "display": "Al rato llamó alguien a la puerta.", "cue": "A while later somebody knocked at the door." },
+    { "id": "L4-M10-C09", "display": "—¿Es este tu móvil? —preguntó una niña.", "cue": "\"Is this your phone?\" a girl asked." },
+    { "id": "L4-M10-C10", "display": "El jefe dijo que era una huelga.", "cue": "The boss said it was a strike." },
+    { "id": "L4-M10-C11", "display": "Un día llegó una carta de mi abuela.", "cue": "One day a letter arrived from my grandmother." },
+    { "id": "L4-M10-C12", "display": "Y todavía no la he abierto.", "cue": "And I still haven't opened it." }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

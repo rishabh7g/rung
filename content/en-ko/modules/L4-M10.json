@@ -1,0 +1,655 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M10",
+  "title": "A story with a twist",
+  "job": "A six-sentence narrative with a line of dialogue inside it",
+  "prerequisites": [
+    "L4-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "<six-sentence narrative>",
+      "<quoted -yo sentence>-rago + haesseoyo",
+      "geureonde + gapjagi + clause-eosseoyo",
+      "algo boni + clause-ieosseoyo",
+      "clause-(eu)nikka + clause-ge + dwaesseoyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A DIRECT QUOTE KEEPS THE SPEAKER'S OWN SENTENCE WHOLE and hangs -rago haesseoyo on the end of it. Korean uses the same -rago for the direct and the indirect quote, so L3-M5's ending covers both and nothing new is spent."
+    },
+    {
+      "tag": "delta",
+      "text": "THERE IS NO BACKSHIFT. The tense inside the quotation is the tense the speaker used, whatever the reporting verb does. English shifts said it is to said it was; Korean leaves the quoted sentence exactly as it was spoken."
+    },
+    {
+      "tag": "free",
+      "text": "THE ROMANIZATION SETS -rago OFF as its own word after the closing quotation mark, so it stays the single surface L3-M5 taught. The Hangul line writes it joined to the quote, which is the standard spelling."
+    },
+    {
+      "tag": "delta",
+      "text": "A TWIST IS NOT A SURPRISE STUCK ON THE END. It is a turn that makes the earlier sentences read differently once it arrives — the story has to be re-read, not merely finished."
+    },
+    {
+      "tag": "free",
+      "text": "algo boni IS THE DISCOVERY: as it turned out. Learn it whole. The two words inside it are not taught separately here, and it always opens the sentence that carries the turn."
+    },
+    {
+      "tag": "free",
+      "text": "gapjagi TURNS THE ACCOUNT and L1-M10's geureonde marks the hinge. Between them they are the whole machinery of a twist; no new connective is needed."
+    },
+    {
+      "tag": "free",
+      "text": "THE QUOTED PERSON STILL SPEAKS AT A LEVEL THIS COURSE WRITES: -yo, or L4-M7's -(seu)pnida if they are a clerk or an announcement. A quoted announcement is the safest way to get the formal level into a story."
+    },
+    {
+      "tag": "free",
+      "text": "THE ENVELOPE IS EVERYTHING ALREADY SHIPPED. L1 to L3 plus this level: purpose, causes, the counterfactual, concession, hedging, time clauses, the formal level in a quote, past habits, directionals and the experience frame. Nothing else."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M10-S01",
+      "display": "Eoje yeok-eseo jigap-eul ireobeoryeosseoyo. Gapjagi chingu-ga jeonhwahaesseoyo. \"Jigap-i yeogi isseoyo\" rago haesseoyo. Jeongmal gomawoyo.",
+      "script": "어제 역에서 지갑을 잃어버렸어요. 갑자기 친구가 전화했어요. \"지갑이 여기 있어요\"라고 했어요. 정말 고마워요.",
+      "cue": "Yesterday I lost my wallet at the station. Suddenly a friend rang. He said, \"Your wallet is here.\" I was really grateful.",
+      "literal": "yesterday station-at wallet-OBJ lost. suddenly friend-SUBJ phoned. wallet-SUBJ here exist QUOTE said. really thankful",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jigap",
+            "script": "지갑",
+            "cue": "wallet",
+            "tag": "free",
+            "forms": [
+              "jigap",
+              "jigap-eul",
+              "jigap-i"
+            ],
+            "note": "Wallet or purse. Korean drops the owner, so jigap-eul ireobeoryeosseoyo is I lost MY wallet with no my in it."
+          },
+          {
+            "display": "gapjagi",
+            "script": "갑자기",
+            "cue": "suddenly",
+            "tag": "free",
+            "forms": [
+              "gapjagi"
+            ],
+            "note": "The turn of an account. It sits in front of the clause it upsets, and it is what tells a listener the story is about to change direction."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "The quoted line stays exactly as it was said: isseoyo, not isseosseoyo. English would shift it to was; Korean never does.",
+      "sound": "EO-je YEO-ge-seo JI-ga-beul I-reo-beo-ryeo-sseo-yo. GAP-ja-gi CHIN-gu-ga JEON-hwa-hae-sseo-yo.",
+      "variations": [
+        {
+          "display": "Gapjagi chingu-ga jeonhwahaesseoyo.",
+          "script": "갑자기 친구가 전화했어요.",
+          "cue": "Suddenly a friend rang.",
+          "changed": "the turning line on its own"
+        },
+        {
+          "display": "Chingu-ga \"Jigap-i yeogi isseoyo\" rago haesseoyo.",
+          "script": "친구가 \"지갑이 여기 있어요\"라고 했어요.",
+          "cue": "My friend said, \"The wallet is here.\"",
+          "changed": "the quotation alone, with the speaker named"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-ga \"Jigap-i yeogi isseosseoyo\" rago haesseoyo.",
+        "script": "친구가 \"지갑이 여기 있었어요\"라고 했어요.",
+        "why": "The past has been pushed into the quotation to agree with haesseoyo. That is the English backshift; in Korean the quoted sentence keeps the tense the speaker actually used."
+      },
+      "usage": "Telling a small piece of good luck.",
+      "register": "neutral",
+      "mnemonic": "Quote it as it was said."
+    },
+    {
+      "id": "L4-M10-S02",
+      "display": "Chingu-ga yeonghwa-reul bwasseoyo. Yeonghwa-ga jeongmal seulpeosseoyo. Geureonde chingu-neun useosseoyo. Algo boni chingu-neun dareun yeonghwa-reul bwasseoyo.",
+      "script": "친구가 영화를 봤어요. 영화가 정말 슬펐어요. 그런데 친구는 웃었어요. 알고 보니 친구는 다른 영화를 봤어요.",
+      "cue": "My friend watched a film. The film was really sad. But my friend was laughing. As it turned out, she had been watching a different film.",
+      "literal": "friend-SUBJ film-OBJ saw. film-SUBJ really was-sad. but friend-TOP laughed. know-and see-so friend-TOP different film-OBJ saw",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "useosseoyo",
+            "script": "웃었어요",
+            "cue": "laughed, smiled",
+            "tag": "free",
+            "forms": [
+              "useosseoyo"
+            ],
+            "note": "From utda, which covers both laughing and smiling. Korean does not separate the two the way English does."
+          },
+          {
+            "display": "algo boni",
+            "script": "알고 보니",
+            "cue": "as it turned out",
+            "tag": "delta",
+            "forms": [
+              "algo boni"
+            ],
+            "note": "Two words, learnt as one. It opens the sentence that reveals the truth, and everything before it has to be re-read once it lands."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "algo boni is not therefore. It announces a discovery that contradicts what you assumed, so it cannot introduce a result you already expected.",
+      "sound": "GEU-reon-de CHIN-gu-neun U-seo-sseo-yo. AL-go BO-ni ...",
+      "variations": [
+        {
+          "display": "Algo boni chingu-neun dareun yeonghwa-reul bwasseoyo.",
+          "script": "알고 보니 친구는 다른 영화를 봤어요.",
+          "cue": "As it turned out, she had been watching a different film.",
+          "changed": "the turn alone"
+        },
+        {
+          "display": "Geureonde chingu-neun useosseoyo.",
+          "script": "그런데 친구는 웃었어요.",
+          "cue": "But my friend was laughing.",
+          "changed": "the hinge line, which sets the turn up"
+        }
+      ],
+      "mistake": {
+        "display": "Geuraeseo chingu-neun dareun yeonghwa-reul bwasseoyo.",
+        "script": "그래서 친구는 다른 영화를 봤어요.",
+        "why": "geuraeseo says so, therefore, and turns the discovery into a consequence of the sadness. The twist needs algo boni, which says the opposite: this is what was true all along."
+      },
+      "usage": "A story told against a friend, affectionately.",
+      "register": "neutral",
+      "mnemonic": "algo boni rewrites what came before."
+    },
+    {
+      "id": "L4-M10-S03",
+      "display": "Oneul achim-e neujeosseoyo. Gapjagi bi-ga wasseoyo. Hoesa-eseo sajangnim-kkeseo \"Oneul-eun hyuil-ieyo\" rago malsseumhasyeosseoyo. Jeongmal joasseoyo.",
+      "script": "오늘 아침에 늦었어요. 갑자기 비가 왔어요. 회사에서 사장님께서 \"오늘은 휴일이에요\"라고 말씀하셨어요. 정말 좋았어요.",
+      "cue": "I was late this morning. Then it suddenly rained. At the office the director said, \"Today is a holiday.\" I was delighted.",
+      "literal": "today morning-at was-late. suddenly rain-SUBJ came. company-at director-HON-SUBJ today-TOP holiday-is QUOTE said-HON",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gapjagi",
+            "script": "갑자기",
+            "cue": "suddenly",
+            "tag": "free",
+            "forms": [
+              "gapjagi"
+            ],
+            "note": "The turn of an account. It sits in front of the clause it upsets, and it is what tells a listener the story is about to change direction."
+          }
+        ],
+        "rules": [
+          0,
+          6
+        ]
+      },
+      "trap": "The reporting verb is honorific because the director is speaking, but the quoted line is his own -yo sentence. The honorific belongs to malsseumhasyeosseoyo and never leaks into the quotation.",
+      "sound": "O-neul A-chi-me NEU-jeo-sseo-yo. GAP-ja-gi BI-ga WA-sseo-yo.",
+      "variations": [
+        {
+          "display": "Sajangnim-kkeseo \"Oneul-eun hyuil-ieyo\" rago malsseumhasyeosseoyo.",
+          "script": "사장님께서 \"오늘은 휴일이에요\"라고 말씀하셨어요.",
+          "cue": "The director said, \"Today is a holiday.\"",
+          "changed": "the quotation alone"
+        },
+        {
+          "display": "Gapjagi bi-ga wasseoyo.",
+          "script": "갑자기 비가 왔어요.",
+          "cue": "It suddenly rained.",
+          "changed": "the turning line on its own"
+        }
+      ],
+      "mistake": {
+        "display": "Sajangnim-kkeseo \"Oneul-eun hyuil-isipnida\" rago malsseumhasyeosseoyo.",
+        "script": "사장님께서 \"오늘은 휴일이십니다\"라고 말씀하셨어요.",
+        "why": "The honorific has been put inside the quotation, which would have the director honouring the holiday. What he said is what goes in the quotation marks; the respect rides the reporting verb outside them."
+      },
+      "usage": "The story of a morning that turned around.",
+      "register": "neutral",
+      "mnemonic": "Honour the speaker outside the quotes."
+    },
+    {
+      "id": "L4-M10-S04",
+      "display": "Eoje sijang-e gasseoyo. Sagwa-ga jeongmal ssasseoyo. Geuraeseo mani sasseoyo. Algo boni jip-e sagwa-ga mani isseoyo.",
+      "script": "어제 시장에 갔어요. 사과가 정말 쌌어요. 그래서 많이 샀어요. 알고 보니 집에 사과가 많이 있어요.",
+      "cue": "Yesterday I went to the market. The apples were really cheap. So I bought a lot. As it turned out, there are plenty of apples at home.",
+      "literal": "yesterday market-to went. apple-SUBJ really was-cheap. so a-lot bought. know-and see-so house-at apple-SUBJ a-lot exist",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "algo boni",
+            "script": "알고 보니",
+            "cue": "as it turned out",
+            "tag": "delta",
+            "forms": [
+              "algo boni"
+            ],
+            "note": "Two words, learnt as one. It opens the sentence that reveals the truth, and everything before it has to be re-read once it lands."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "The last line is present, not past. The apples are still there, and that is why the sentence stings: algo boni looks back at a mistake whose result is right now.",
+      "sound": "EO-je SI-jang-e GA-sseo-yo. SA-gwa-ga JEONG-mal SSA-sseo-yo.",
+      "variations": [
+        {
+          "display": "Algo boni jip-e sagwa-ga mani isseoyo.",
+          "script": "알고 보니 집에 사과가 많이 있어요.",
+          "cue": "As it turned out, there are plenty of apples at home.",
+          "changed": "the turn alone"
+        },
+        {
+          "display": "Sagwa-ga jeongmal ssasseoyo. Geuraeseo mani sasseoyo.",
+          "script": "사과가 정말 쌌어요. 그래서 많이 샀어요.",
+          "cue": "The apples were really cheap, so I bought a lot.",
+          "changed": "the set-up without the turn"
+        }
+      ],
+      "mistake": {
+        "display": "Geureonde jip-e sagwa-ga mani isseoyo.",
+        "script": "그런데 집에 사과가 많이 있어요.",
+        "why": "geureonde only turns the account; it does not say that this was true all along. Without algo boni the last line reads as a second fact rather than the discovery that spoils the first three."
+      },
+      "usage": "Confessing a small piece of foolishness.",
+      "register": "neutral",
+      "mnemonic": "The twist is in the tense as much as the words."
+    },
+    {
+      "id": "L4-M10-S05",
+      "display": "Jip-eseo chaek-eul ilgeosseoyo. Gapjagi keun sori-ga deullyeosseoyo. Jeongmal nollasseoyo. Algo boni dongsaeng-i wasseoyo.",
+      "script": "집에서 책을 읽었어요. 갑자기 큰 소리가 들렸어요. 정말 놀랐어요. 알고 보니 동생이 왔어요.",
+      "cue": "I was reading at home. Suddenly there was a loud noise. I was really startled. As it turned out, my younger sibling had arrived.",
+      "literal": "house-at book-OBJ read. suddenly big sound-SUBJ was-heard. really was-startled. know-and see-so sibling-SUBJ came",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nollasseoyo",
+            "script": "놀랐어요",
+            "cue": "was startled, was surprised",
+            "tag": "free",
+            "forms": [
+              "nollasseoyo"
+            ],
+            "note": "From nollada. It is the jump, not the pleasure: a nice surprise is joasseoyo, and nollasseoyo alone says nothing about whether it was welcome."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "deullyeosseoyo is L2-M6's sound reaching you, so the noise is the subject and you are not in the sentence at all. English would say I heard a noise.",
+      "sound": "GAP-ja-gi KEUN SO-ri-ga DEUL-lyeo-sseo-yo. JEONG-mal NOL-la-sseo-yo.",
+      "variations": [
+        {
+          "display": "Gapjagi keun sori-ga deullyeosseoyo.",
+          "script": "갑자기 큰 소리가 들렸어요.",
+          "cue": "Suddenly there was a loud noise.",
+          "changed": "the turning line on its own"
+        },
+        {
+          "display": "Algo boni dongsaeng-i wasseoyo.",
+          "script": "알고 보니 동생이 왔어요.",
+          "cue": "As it turned out, my younger sibling had arrived.",
+          "changed": "the turn alone"
+        }
+      ],
+      "mistake": {
+        "display": "Gapjagi keun sori-reul deureosseoyo. Jeongmal nollasseoyo.",
+        "script": "갑자기 큰 소리를 들었어요. 정말 놀랐어요.",
+        "why": "Not wrong Korean, but it makes you the listener and the noise the object, which is the English sentence. In a story about being startled the sound is what acts, and that is deullyeosseoyo."
+      },
+      "usage": "The kind of small domestic scare people tell at dinner.",
+      "register": "neutral",
+      "mnemonic": "The sound reaches you; you do not fetch it."
+    },
+    {
+      "id": "L4-M10-S06",
+      "display": "Eoje chingu-ga jeonhwahaesseoyo. \"Oneul saengil-ieyo\" rago haesseoyo. Geuraeseo seonmul-eul sasseoyo. Algo boni je saengil-ieyo.",
+      "script": "어제 친구가 전화했어요. \"오늘 생일이에요\"라고 했어요. 그래서 선물을 샀어요. 알고 보니 제 생일이에요.",
+      "cue": "Yesterday my friend rang. She said, \"It's my birthday today.\" So I bought a present. As it turned out, it is MY birthday.",
+      "literal": "yesterday friend-SUBJ phoned. today birthday-is QUOTE said. so present-OBJ bought. know-and see-so my birthday-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "algo boni",
+            "script": "알고 보니",
+            "cue": "as it turned out",
+            "tag": "delta",
+            "forms": [
+              "algo boni"
+            ],
+            "note": "Two words, learnt as one. It opens the sentence that reveals the truth, and everything before it has to be re-read once it lands."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          4
+        ]
+      },
+      "trap": "The twist is inside the quotation. Korean drops the possessor, so saengil-ieyo says only it is a birthday — and which birthday is what the last line settles.",
+      "sound": "\"O-neul SAENG-i-ri-e-yo\" RA-go HAE-sseo-yo. AL-go BO-ni JE SAENG-i-ri-e-yo.",
+      "variations": [
+        {
+          "display": "Chingu-ga \"Oneul saengil-ieyo\" rago haesseoyo.",
+          "script": "친구가 \"오늘 생일이에요\"라고 했어요.",
+          "cue": "My friend said, \"It's a birthday today.\"",
+          "changed": "the quotation with its speaker named"
+        },
+        {
+          "display": "Algo boni je saengil-ieyo.",
+          "script": "알고 보니 제 생일이에요.",
+          "cue": "As it turned out, it is my birthday.",
+          "changed": "the turn alone"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-ga je saengil-irago haesseoyo.",
+        "script": "친구가 제 생일이라고 했어요.",
+        "why": "This is L3-M5's indirect report, and it spells out whose birthday. The whole twist depends on the quoted line leaving that out, which only the direct quote can do."
+      },
+      "usage": "The story a friend tells to make you laugh at yourself.",
+      "register": "neutral",
+      "mnemonic": "Hide the twist inside the quotation."
+    },
+    {
+      "id": "L4-M10-S07",
+      "display": "Achim-e jigap-eul ireobeoryeosseoyo. Meonjeo hoesa-eseo chajasseoyo. Geu daeum-e yeok-eseo chajasseoyo. Algo boni jigap-i jip-e isseoyo.",
+      "script": "아침에 지갑을 잃어버렸어요. 먼저 회사에서 찾았어요. 그 다음에 역에서 찾았어요. 알고 보니 지갑이 집에 있어요.",
+      "cue": "I lost my wallet in the morning. First I looked at the office. Then I looked at the station. As it turned out, the wallet is at home.",
+      "literal": "morning-at wallet-OBJ lost. first company-at looked. that next-at station-at looked. know-and see-so wallet-SUBJ house-at exist",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chajasseoyo",
+            "script": "찾았어요",
+            "cue": "looked for, found",
+            "tag": "free",
+            "forms": [
+              "chajasseoyo"
+            ],
+            "note": "chatda is both to look for and to find, and only the sentence around it decides which. Here the searching is what is meant, because the last line says it was never there."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "chajasseoyo does not by itself say the wallet was found. English needs two verbs; Korean uses one and lets the story settle it.",
+      "sound": "A-chi-me JI-ga-beul I-reo-beo-ryeo-sseo-yo. MEON-jeo HOE-sa-e-seo CHA-ja-sseo-yo.",
+      "variations": [
+        {
+          "display": "Meonjeo hoesa-eseo chajasseoyo. Geu daeum-e yeok-eseo chajasseoyo.",
+          "script": "먼저 회사에서 찾았어요. 그 다음에 역에서 찾았어요.",
+          "cue": "First I looked at the office. Then I looked at the station.",
+          "changed": "the search on its own, told with L2-M10's sequencers"
+        },
+        {
+          "display": "Algo boni jigap-i jip-e isseoyo.",
+          "script": "알고 보니 지갑이 집에 있어요.",
+          "cue": "As it turned out, the wallet is at home.",
+          "changed": "the turn alone"
+        }
+      ],
+      "mistake": {
+        "display": "Algo boni jigap-i jip-e isseosseoyo.",
+        "script": "알고 보니 지갑이 집에 있었어요.",
+        "why": "The past puts the wallet at home only in the past, which loses the point: it is there now, and it was there all along. algo boni almost always lands on a present."
+      },
+      "usage": "The end of a wasted morning.",
+      "register": "neutral",
+      "mnemonic": "One verb for looking and finding."
+    },
+    {
+      "id": "L4-M10-S08",
+      "display": "Eoje yeok-e gasseoyo. Annae bangsong-i deullyeosseoyo. \"Gicha-ga jamsi hu-e chulbalhamnida\" rago haesseoyo. Geuraeseo gapjagi ppalli gasseoyo.",
+      "script": "어제 역에 갔어요. 안내 방송이 들렸어요. \"기차가 잠시 후에 출발합니다\"라고 했어요. 그래서 갑자기 빨리 갔어요.",
+      "cue": "Yesterday I went to the station. An announcement came over the speakers. It said, \"The train departs shortly.\" So I suddenly hurried.",
+      "literal": "yesterday station-to went. guidance broadcast-SUBJ was-heard. train-SUBJ a-moment after-at departs-FORMAL QUOTE said. so suddenly quickly went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gapjagi",
+            "script": "갑자기",
+            "cue": "suddenly",
+            "tag": "free",
+            "forms": [
+              "gapjagi"
+            ],
+            "note": "The turn of an account. It sits in front of the clause it upsets, and it is what tells a listener the story is about to change direction."
+          }
+        ],
+        "rules": [
+          1,
+          6
+        ]
+      },
+      "trap": "A quoted announcement is the one place the formal level belongs inside a story. Outside the quotation marks the account is still yours, and stays at -yo.",
+      "sound": "AN-nae BANG-song-i DEUL-lyeo-sseo-yo. GI-cha-ga JAM-si HU-e CHUL-bal-ham-ni-da.",
+      "variations": [
+        {
+          "display": "Annae bangsong-i \"Gicha-ga chulbalhamnida\" rago haesseoyo.",
+          "script": "안내 방송이 \"기차가 출발합니다\"라고 했어요.",
+          "cue": "The announcement said, \"The train is departing.\"",
+          "changed": "a shorter quotation"
+        },
+        {
+          "display": "Geuraeseo gapjagi ppalli gasseoyo.",
+          "script": "그래서 갑자기 빨리 갔어요.",
+          "cue": "So I suddenly hurried.",
+          "changed": "the closing line alone"
+        }
+      ],
+      "mistake": {
+        "display": "Eoje yeok-e gasseumnida. Annae bangsong-i deullyeosseumnida.",
+        "script": "어제 역에 갔습니다. 안내 방송이 들렸습니다.",
+        "why": "The formal level has escaped the quotation and taken over the story. L4-M7's level is what the station says, not how you tell a friend about it afterwards."
+      },
+      "usage": "Explaining why you were out of breath.",
+      "register": "neutral",
+      "mnemonic": "The formal level stays inside the quotes."
+    },
+    {
+      "id": "L4-M10-S09",
+      "display": "Oneul chingu-ga jip-e wasseoyo. Keopi-reul masyeosseoyo. Chingu-ga \"Igeo-neun cha-yeyo\" rago haesseoyo. Geuraeseo mani useosseoyo.",
+      "script": "오늘 친구가 집에 왔어요. 커피를 마셨어요. 친구가 \"이거는 차예요\"라고 했어요. 그래서 많이 웃었어요.",
+      "cue": "A friend came over today. We drank coffee. My friend said, \"This is tea.\" So we laughed a lot.",
+      "literal": "today friend-SUBJ house-to came. coffee-OBJ drank. friend-SUBJ this-TOP tea-is QUOTE said. so a-lot laughed",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "useosseoyo",
+            "script": "웃었어요",
+            "cue": "laughed, smiled",
+            "tag": "free",
+            "forms": [
+              "useosseoyo"
+            ],
+            "note": "From utda, which covers both laughing and smiling. Korean does not separate the two the way English does."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "The whole story turns on one word inside the quotation. Nothing outside it says the drink was wrong, and that is what makes it a twist rather than a report.",
+      "sound": "CHIN-gu-ga \"I-geo-neun CHA-ye-yo\" RA-go HAE-sseo-yo.",
+      "variations": [
+        {
+          "display": "Chingu-ga \"Igeo-neun cha-yeyo\" rago haesseoyo.",
+          "script": "친구가 \"이거는 차예요\"라고 했어요.",
+          "cue": "My friend said, \"This is tea.\"",
+          "changed": "the quotation alone"
+        },
+        {
+          "display": "Geuraeseo mani useosseoyo.",
+          "script": "그래서 많이 웃었어요.",
+          "cue": "So we laughed a lot.",
+          "changed": "the closing line alone"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-ga cha-rago haesseoyo. Geuraeseo mani useosseoyo.",
+        "script": "친구가 차라고 했어요. 그래서 많이 웃었어요.",
+        "why": "The indirect report flattens the line into a fact and the joke disappears. A twist that lives in what somebody said needs the direct quote, with the speaker's own sentence intact."
+      },
+      "usage": "A small domestic joke retold.",
+      "register": "neutral",
+      "mnemonic": "Keep the line whole and the joke survives."
+    },
+    {
+      "id": "L4-M10-S10",
+      "display": "Yejeon-e-neun hangugeo-reul mothaesseoyo. Gapjagi chingu-ga \"Gachi gongbuhaeyo\" rago haesseoyo. Geuraeseo maeil gongbuhaesseoyo. Ijen hangugeo-reul jal hage dwaesseoyo.",
+      "script": "예전에는 한국어를 못했어요. 갑자기 친구가 \"같이 공부해요\"라고 했어요. 그래서 매일 공부했어요. 이젠 한국어를 잘 하게 됐어요.",
+      "cue": "I used to be no good at Korean. Then a friend suddenly said, \"Let's study together.\" So I studied every day. Now I have come to be good at it.",
+      "literal": "before-at-TOP Korean-OBJ could-not. suddenly friend-SUBJ together study QUOTE said. so every-day studied. now-TOP Korean-OBJ well do-BECAME",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gapjagi",
+            "script": "갑자기",
+            "cue": "suddenly",
+            "tag": "free",
+            "forms": [
+              "gapjagi"
+            ],
+            "note": "The turn of an account. It sits in front of the clause it upsets, and it is what tells a listener the story is about to change direction."
+          }
+        ],
+        "rules": [
+          0,
+          7
+        ]
+      },
+      "trap": "-ge dwaesseoyo is L4-M2's came to be, not became. It says the change happened to you rather than that you achieved it, which is why it closes a story like this one.",
+      "sound": "GAP-ja-gi CHIN-gu-ga \"GA-chi GONG-bu-hae-yo\" RA-go HAE-sseo-yo.",
+      "variations": [
+        {
+          "display": "Chingu-ga \"Gachi gongbuhaeyo\" rago haesseoyo.",
+          "script": "친구가 \"같이 공부해요\"라고 했어요.",
+          "cue": "My friend said, \"Let's study together.\"",
+          "changed": "the quotation alone"
+        },
+        {
+          "display": "Ijen hangugeo-reul jal hage dwaesseoyo.",
+          "script": "이젠 한국어를 잘 하게 됐어요.",
+          "cue": "Now I have come to be good at Korean.",
+          "changed": "the closing line alone"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-ga \"Gachi gongbuhapsida\" rago haesseoyo.",
+        "script": "친구가 \"같이 공부합시다\"라고 했어요.",
+        "why": "L4-M7's -(eu)psida proposes downward or among equals in a formal setting. Between friends the proposal is -yo or L2-M6's -(eu)llaeyo, and the formal ending here makes the friend sound like a chairman."
+      },
+      "usage": "The story of how you got better at something.",
+      "register": "neutral",
+      "mnemonic": "-ge dwaesseoyo ends a story of change."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M10-C01",
+      "display": "Gapjagi bi-ga wasseoyo.",
+      "script": "갑자기 비가 왔어요.",
+      "cue": "It suddenly rained."
+    },
+    {
+      "id": "L4-M10-C02",
+      "display": "Algo boni je saengil-ieyo.",
+      "script": "알고 보니 제 생일이에요.",
+      "cue": "As it turned out, it is my birthday."
+    },
+    {
+      "id": "L4-M10-C03",
+      "display": "Chingu-ga \"Oneul saengil-ieyo\" rago haesseoyo.",
+      "script": "친구가 \"오늘 생일이에요\"라고 했어요.",
+      "cue": "My friend said, \"It's a birthday today.\""
+    },
+    {
+      "id": "L4-M10-C04",
+      "display": "Jigap-eul ireobeoryeosseoyo. Algo boni jip-e isseoyo.",
+      "script": "지갑을 잃어버렸어요. 알고 보니 집에 있어요.",
+      "cue": "I lost my wallet. As it turned out, it is at home."
+    },
+    {
+      "id": "L4-M10-C05",
+      "display": "Keun sori-ga deullyeosseoyo. Jeongmal nollasseoyo.",
+      "script": "큰 소리가 들렸어요. 정말 놀랐어요.",
+      "cue": "There was a loud noise. I was really startled."
+    },
+    {
+      "id": "L4-M10-C06",
+      "display": "Meonjeo hoesa-eseo chajasseoyo. Geu daeum-e yeok-eseo chajasseoyo.",
+      "script": "먼저 회사에서 찾았어요. 그 다음에 역에서 찾았어요.",
+      "cue": "First I looked at the office. Then I looked at the station."
+    },
+    {
+      "id": "L4-M10-C07",
+      "display": "Geureonde chingu-neun mani useosseoyo.",
+      "script": "그런데 친구는 많이 웃었어요.",
+      "cue": "But my friend laughed a lot."
+    },
+    {
+      "id": "L4-M10-C08",
+      "display": "Sajangnim-kkeseo \"Oneul-eun hyuil-ieyo\" rago malsseumhasyeosseoyo.",
+      "script": "사장님께서 \"오늘은 휴일이에요\"라고 말씀하셨어요.",
+      "cue": "The director said, \"Today is a holiday.\""
+    },
+    {
+      "id": "L4-M10-C09",
+      "display": "Annae bangsong-i \"Gicha-ga chulbalhamnida\" rago haesseoyo.",
+      "script": "안내 방송이 \"기차가 출발합니다\"라고 했어요.",
+      "cue": "The announcement said, \"The train is departing.\""
+    },
+    {
+      "id": "L4-M10-C10",
+      "display": "Ijen hangugeo-reul jal hage dwaesseoyo.",
+      "script": "이젠 한국어를 잘 하게 됐어요.",
+      "cue": "Now I have come to be good at Korean."
+    },
+    {
+      "id": "L4-M10-C11",
+      "display": "Gapjagi dongsaeng-i wasseoyo. Jeongmal nollasseoyo.",
+      "script": "갑자기 동생이 왔어요. 정말 놀랐어요.",
+      "cue": "My younger sibling suddenly arrived. I was really startled."
+    },
+    {
+      "id": "L4-M10-C12",
+      "display": "Algo boni chingu-neun dareun yeonghwa-reul bwasseoyo.",
+      "script": "알고 보니 친구는 다른 영화를 봤어요.",
+      "cue": "As it turned out, my friend had been watching a different film."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 3
+  }
+}

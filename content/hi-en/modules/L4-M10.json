@@ -1,0 +1,595 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M10",
+  "title": "A story with a twist",
+  "job": "A six-sentence narrative with a line of dialogue inside it",
+  "prerequisites": ["L4-M9"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["simple_past", "past_continuous", "past_perfect", "present_simple"],
+    "allowedPatterns": [
+      "<past simple> + . + Suddenly + , + <past simple>",
+      "\"<direct speech>,\" he said + .",
+      "At first + <clause> + , + but then + <clause>",
+      "It turned out + (that) + <clause>",
+      "In the end + , + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "सीधी बात में अंग्रेज़ी का सारा काम विराम-चिह्न करते हैं, और उनमें से कोई भी अंदाज़े से नहीं लगता. उलटे कॉमा सिर्फ़ बोले हुए शब्दों को घेरते हैं, उनसे ज़्यादा कुछ नहीं; और बोला हुआ वाक्य हमेशा बड़े अक्षर से शुरू होता है, चाहे वह पूरे वाक्य के बीच में ही क्यों न बैठा हो."
+    },
+    {
+      "tag": "delta",
+      "text": "और यही वह नियम है जिसे सबसे ज़्यादा भुलाया जाता है: कहने वाले आधे से पहले कॉमा उलटे कॉमा के भीतर आता है — \"I will not go,\" she said. हिंदी में विराम बाहर रह जाता है, अंग्रेज़ी में वह भीतर आता है."
+    },
+    {
+      "tag": "free",
+      "text": "कहने वाला आधा पलट भी सकता है, पर सिर्फ़ पूरे नाम के साथ: said Rohan चलता है, said he कभी नहीं. सर्वनाम के साथ हमेशा वही सीधा क्रम रहता है — he said, she said, they said."
+    },
+    {
+      "tag": "interference",
+      "text": "हिंदी का कि दोनों काम करता है — सीधी बात का भी और सुनाई गई बात का भी. इसीलिए He said that \"I am coming\" जैसी मिलावट निकल आती है. अंग्रेज़ी दोनों में से एक ही लेती है: या तो उलटे कॉमा, या that — दोनों कभी नहीं. सुनाई गई बात L3-M5 की है और यहाँ सिर्फ़ दोहराई जाती है."
+    },
+    {
+      "tag": "free",
+      "text": "मोड़ के निशान: at first शुरू की हालत रखता है, but then मोड़ लाता है, it turned out असली बात खोलता है और in the end (L3-M10) क़िस्सा बंद करता है. नीचे के काल पहले से खुले हैं — रीढ़ में past simple, पीछे के दृश्य में past continuous और खुलासे में past perfect — इसलिए इस पाठ का पूरा ख़र्च उलटे कॉमा और मोड़ पर जाता है."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M10-S01",
+      "display": "At first the man did not speak. He was very quiet. He was waiting for the doctor. I asked him about the time. He did not answer. I felt a bit worried.",
+      "cue": "पहले तो वह आदमी कुछ बोला ही नहीं. वह बहुत चुप था. वह डॉक्टर का इंतज़ार कर रहा था. मैंने उससे समय के बारे में पूछा. उसने जवाब नहीं दिया. मुझे थोड़ी चिंता हुई.",
+      "literal": "पर पहले वह आदमी किया नहीं बोलना. वह था बहुत चुप. वह था इंतज़ार के लिए वह डॉक्टर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "at first",
+            "cue": "पहले तो",
+            "tag": "free",
+            "forms": ["at first"],
+            "note": "दोनों शब्द साथ चलते हैं. क़िस्से की शुरू वाली हालत रखते हैं, जिसे आगे कोई मोड़ बदलेगा."
+          },
+          {
+            "display": "man",
+            "cue": "आदमी",
+            "tag": "free",
+            "forms": ["man", "men"],
+            "note": "क़िस्से में जिसका नाम नहीं बताना, उसके लिए यही शब्द आता है. बहुवचन men है, mans नहीं."
+          },
+          {
+            "display": "quiet",
+            "cue": "चुप",
+            "tag": "free",
+            "forms": ["quiet"],
+            "note": "आदमी के लिए चुप और जगह के लिए शांत — दोनों अर्थ इसी एक शब्द में हैं."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "at first को first (L2-M10) से मत उलझाइए. first क्रम बताता है, at first सिर्फ़ शुरू वाली हालत.",
+      "sound": "at first में दोनों t जुड़ जाते हैं — अट्-फ़र्स्ट्.",
+      "variations": [
+        {
+          "display": "At first the man did not speak.",
+          "cue": "पहले तो वह आदमी कुछ बोला ही नहीं.",
+          "changed": "सिर्फ़ पहला वाक्य"
+        },
+        {
+          "display": "He was very quiet.",
+          "cue": "वह बहुत चुप था.",
+          "changed": "सिर्फ़ दूसरा वाक्य"
+        },
+        {
+          "display": "At first the man was very quiet.",
+          "cue": "पहले तो वह आदमी बहुत चुप था.",
+          "changed": "दो वाक्य एक में"
+        }
+      ],
+      "mistake": {
+        "display": "At the first the man did not speak. He was very quiet",
+        "why": "यह जोड़ा at first है; बीच में the नहीं आता."
+      },
+      "usage": "क़िस्सा शुरू करते समय, जब आगे कोई मोड़ आने वाला हो.",
+      "register": "neutral",
+      "mnemonic": "at first = शुरू में ऐसा लगा, बाद में कुछ और निकला."
+    },
+    {
+      "id": "L4-M10-S02",
+      "display": "I was working at my table. Suddenly a man shouted behind me. I got up and opened the door. The bus had stopped in the road. It was not a big problem.",
+      "cue": "मैं अपनी मेज़ पर काम कर रहा था. अचानक पीछे किसी आदमी ने ज़ोर से आवाज़ लगाई. मैं उठा और दरवाज़ा खोला. बस सड़क पर रुक गई थी. कोई बड़ी बात नहीं थी.",
+      "literal": "मैं था काम करता पर मेरी मेज़. अचानक एक आदमी चिल्लाया पीछे मुझे.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "suddenly",
+            "cue": "अचानक",
+            "tag": "free",
+            "forms": ["suddenly"],
+            "note": "वाक्य के आगे बैठकर मोड़ का इशारा देता है और आगे अक्सर कॉमा लेता है."
+          },
+          {
+            "display": "shouted",
+            "cue": "ज़ोर से आवाज़ लगाई",
+            "tag": "free",
+            "forms": ["shout", "shouted", "shouts"],
+            "note": "ज़ोर से बोलना. said का उलटा सिरा — बात वही, आवाज़ अलग."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "Suddenly को वाक्य के बीच में मत डालिए. क़िस्से में यह लगभग हमेशा आगे बैठता है.",
+      "sound": "suddenly में बीच का d दोहरा और भारी है — सड्-अन्-लि.",
+      "variations": [
+        {
+          "display": "Suddenly a man shouted behind me.",
+          "cue": "अचानक पीछे किसी आदमी ने ज़ोर से आवाज़ लगाई.",
+          "changed": "सिर्फ़ मोड़ वाला वाक्य"
+        },
+        {
+          "display": "I was working at my table.",
+          "cue": "मैं अपनी मेज़ पर काम कर रहा था.",
+          "changed": "सिर्फ़ पीछे का दृश्य"
+        },
+        {
+          "display": "Suddenly the man shouted and I got up.",
+          "cue": "अचानक उस आदमी ने आवाज़ लगाई और मैं उठ गया.",
+          "changed": "दो वाक्य एक में"
+        }
+      ],
+      "mistake": {
+        "display": "I was working at my table. A man suddenly shouted behind me loud",
+        "why": "shout में ज़ोर पहले से शामिल है; आगे loud जोड़ने की ज़रूरत नहीं."
+      },
+      "usage": "क़िस्से में अचानक कुछ हो जाने की जगह पर.",
+      "register": "neutral",
+      "mnemonic": "suddenly आगे बैठता है और मोड़ की घंटी बजाता है."
+    },
+    {
+      "id": "L4-M10-S03",
+      "display": "We waited at the station for a long time. The train did not come. At first we were angry. It turned out the train had been cancelled. The notice was on the door.",
+      "cue": "हम स्टेशन पर बहुत देर इंतज़ार करते रहे. गाड़ी नहीं आई. पहले तो हमें ग़ुस्सा आया. बाद में पता चला कि गाड़ी रद्द हो चुकी थी. सूचना दरवाज़े पर लगी थी.",
+      "literal": "हम रुके पर वह स्टेशन के लिए एक लंबा समय. वह गाड़ी किया नहीं आना.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "it turned out",
+            "cue": "पता चला कि",
+            "tag": "delta",
+            "forms": ["it turned out"],
+            "note": "तीनों शब्द साथ चलते हैं और असली बात खोलते हैं. आगे that आ सकता है और छूट भी सकता है."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "It turned out that \"the train was cancelled\" मत लिखिए. that और उलटे कॉमा एक साथ नहीं आते.",
+      "sound": "turned out में दोनों शब्द जुड़ जाते हैं — टर्न्-डाउट्.",
+      "variations": [
+        {
+          "display": "It turned out the train had been cancelled.",
+          "cue": "पता चला कि गाड़ी रद्द हो चुकी थी.",
+          "changed": "सिर्फ़ खुलासे वाला वाक्य"
+        },
+        {
+          "display": "At first we were angry.",
+          "cue": "पहले तो हमें ग़ुस्सा आया.",
+          "changed": "सिर्फ़ शुरू वाली हालत"
+        },
+        {
+          "display": "It turned out the notice was on the door.",
+          "cue": "पता चला कि सूचना दरवाज़े पर लगी थी.",
+          "changed": "खुलासा बदला"
+        }
+      ],
+      "mistake": {
+        "display": "It turned that the train had been cancelled",
+        "why": "यह जोड़ा it turned out है; out के बिना अर्थ ही नहीं बनता."
+      },
+      "usage": "क़िस्से में असली वजह खोलते समय.",
+      "register": "neutral",
+      "mnemonic": "it turned out = परदा उठा और असली बात दिखी."
+    },
+    {
+      "id": "L4-M10-S04",
+      "display": "At first I did not want to go. But then my friend called me. He said the film was very good. So I went with him. We were late, but we saw most of it.",
+      "cue": "पहले तो मेरा जाने का मन नहीं था. फिर मेरे दोस्त ने फ़ोन किया. उसने कहा कि फ़िल्म बहुत अच्छी है. तो मैं उसके साथ चला गया. हमें देर हो गई, पर ज़्यादातर हिस्सा देख लिया.",
+      "literal": "पर पहले मैं किया नहीं चाहना को जाना. पर फिर मेरा दोस्त किया फ़ोन मुझे.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "but then",
+            "cue": "पर फिर",
+            "tag": "delta",
+            "forms": ["but then"],
+            "note": "दोनों शब्द साथ चलते हैं और मोड़ लाते हैं. अकेला then (L1-M10) सिर्फ़ क्रम बताता है."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "He said that \"the film was very good\" मत लिखिए. या तो that लीजिए या उलटे कॉमा.",
+      "sound": "but then में पहला t दब जाता है — बट्-देन्.",
+      "variations": [
+        {
+          "display": "But then my friend called me.",
+          "cue": "पर फिर मेरे दोस्त ने फ़ोन किया.",
+          "changed": "सिर्फ़ मोड़ वाला वाक्य"
+        },
+        {
+          "display": "At first I did not want to go.",
+          "cue": "पहले तो मेरा जाने का मन नहीं था.",
+          "changed": "सिर्फ़ शुरू वाली हालत"
+        },
+        {
+          "display": "At first I did not want to go, but then I went.",
+          "cue": "पहले तो मन नहीं था, पर फिर मैं चला गया.",
+          "changed": "दोनों आधे एक वाक्य में"
+        }
+      ],
+      "mistake": {
+        "display": "At first I did not want to go. But then my friend called me and said that \"the film was good\"",
+        "why": "that और उलटे कॉमा एक साथ नहीं आते. एक ही चुनिए."
+      },
+      "usage": "मन बदल जाने की कहानी सुनाते समय.",
+      "register": "neutral",
+      "mnemonic": "at first एक तरफ़, but then दूसरी तरफ़."
+    },
+    {
+      "id": "L4-M10-S05",
+      "display": "The shop was closed when we got there. Luckily the chemist near the station was open. We bought the medicine and came home. It was a long day. But then we had tea and felt better.",
+      "cue": "जब हम वहाँ पहुँचे तो दुकान बंद थी. अच्छा हुआ कि स्टेशन के पास वाली दवा की दुकान खुली थी. हमने दवा ली और घर आ गए. दिन लंबा रहा. पर फिर चाय पीकर तबीयत अच्छी लगी.",
+      "literal": "वह दुकान थी बंद जब हम पहुँचे वहाँ. ख़ुशक़िस्मती से वह दवा की दुकान पास वह स्टेशन थी खुली.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "luckily",
+            "cue": "अच्छा हुआ कि",
+            "tag": "free",
+            "forms": ["luckily"],
+            "note": "वाक्य के आगे बैठता है और पूरे वाक्य पर राहत की छाया डालता है, किसी एक शब्द पर नहीं."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "Luckily को lucky मत बनाइए. lucky आदमी के लिए है, luckily पूरी बात के लिए.",
+      "sound": "luckily के तीन हिस्से हैं और ज़ोर पहले पर — लक्-इ-लि.",
+      "variations": [
+        {
+          "display": "Luckily the chemist near the station was open.",
+          "cue": "अच्छा हुआ कि स्टेशन के पास वाली दवा की दुकान खुली थी.",
+          "changed": "सिर्फ़ राहत वाला वाक्य"
+        },
+        {
+          "display": "The shop was closed when we got there.",
+          "cue": "जब हम वहाँ पहुँचे तो दुकान बंद थी.",
+          "changed": "सिर्फ़ पहला वाक्य"
+        },
+        {
+          "display": "Luckily we bought the medicine and came home.",
+          "cue": "अच्छा हुआ कि हमने दवा ली और घर आ गए.",
+          "changed": "राहत दूसरे वाक्य पर"
+        }
+      ],
+      "mistake": {
+        "display": "Lucky the chemist near the station was open",
+        "why": "पूरे वाक्य पर छाया डालनी है, इसलिए Luckily चाहिए."
+      },
+      "usage": "क़िस्से में राहत वाला मोड़ बताते समय.",
+      "register": "neutral",
+      "mnemonic": "lucky आदमी, luckily पूरी बात."
+    },
+    {
+      "id": "L4-M10-S06",
+      "display": "\"I will not go,\" she said. Her brother replied, \"Then I will go.\" At first they were angry. But then they laughed. In the end they went together.",
+      "cue": "\"मैं नहीं जाऊँगी,\" उसने कहा. उसके भाई ने जवाब दिया, \"तो मैं जाऊँगा.\" पहले तो दोनों को ग़ुस्सा आया. पर फिर दोनों हँस पड़े. आख़िर में दोनों साथ ही गए.",
+      "literal": "मैं करूँगी नहीं जाना, उसने कहा. उसका भाई जवाब दिया, तब मैं जाऊँगा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "replied",
+            "cue": "जवाब दिया",
+            "tag": "free",
+            "forms": ["reply", "replied", "replies"],
+            "note": "जवाब में कहना. said की तरह चलता है, पर इसके पीछे पहले से कोई बात कही जा चुकी होती है."
+          },
+          {
+            "display": "laughed",
+            "cue": "हँस पड़े",
+            "tag": "free",
+            "forms": ["laugh", "laughed", "laughs"],
+            "note": "हँसना. इसके आगे at आने पर अर्थ बदलकर मज़ाक़ उड़ाना हो जाता है."
+          }
+        ],
+        "rules": [0, 1, 2, 3]
+      },
+      "trap": "\"I will not go\", she said मत लिखिए. कहने वाले आधे से पहले कॉमा उलटे कॉमा के भीतर आता है.",
+      "sound": "replied में ज़ोर दूसरे हिस्से पर है — रि-प्लाइड्.",
+      "variations": [
+        {
+          "display": "\"I will not go,\" she said.",
+          "cue": "\"मैं नहीं जाऊँगी,\" उसने कहा.",
+          "changed": "सिर्फ़ पहली सीधी बात"
+        },
+        {
+          "display": "Her brother replied, \"Then I will go.\"",
+          "cue": "उसके भाई ने जवाब दिया, \"तो मैं जाऊँगा.\"",
+          "changed": "सिर्फ़ जवाब वाला आधा"
+        },
+        {
+          "display": "At first they were angry, but then they laughed.",
+          "cue": "पहले तो दोनों को ग़ुस्सा आया, पर फिर हँस पड़े.",
+          "changed": "सीधी बात हट गई, सिर्फ़ मोड़ बचा"
+        }
+      ],
+      "mistake": {
+        "display": "\"I will not go\", she said. Her brother replied that \"Then I will go\"",
+        "why": "कॉमा उलटे कॉमा के भीतर आता है, और that के साथ उलटे कॉमा नहीं आते."
+      },
+      "usage": "किसी की कही हुई बात को उसके अपने शब्दों में सुनाते समय.",
+      "register": "neutral",
+      "mnemonic": "कॉमा भीतर, that बाहर — दोनों कभी साथ नहीं."
+    },
+    {
+      "id": "L4-M10-S07",
+      "display": "I noticed a bag under the table. I told the manager about it. He opened it very carefully. It turned out the bag was my brother's.",
+      "cue": "मैंने मेज़ के नीचे एक बैग देखा. मैंने मैनेजर को उसके बारे में बताया. उन्होंने उसे बहुत सँभालकर खोला. पता चला कि बैग मेरे भाई का था.",
+      "literal": "मैंने देखा एक बैग नीचे वह मेज़. मैंने बताया वह मैनेजर के बारे में यह.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "noticed",
+            "cue": "नज़र पड़ी",
+            "tag": "delta",
+            "forms": ["noticed"],
+            "note": "अपने आप नज़र पड़ जाना. सादा notice L4-M7 की सूचना वाली पंक्ति है, इसलिए यहाँ सिर्फ़ बीता रूप खुलता है."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "noticed को saw मत बना दीजिए. saw में ध्यान खिंचना शामिल नहीं है.",
+      "sound": "noticed का आख़िरी हिस्सा t जैसा सुनाई देता है — नो-टिस्ट्.",
+      "variations": [
+        {
+          "display": "I noticed a bag under the table.",
+          "cue": "मैंने मेज़ के नीचे एक बैग देखा.",
+          "changed": "सिर्फ़ पहला वाक्य"
+        },
+        {
+          "display": "It turned out the bag was my brother's.",
+          "cue": "पता चला कि बैग मेरे भाई का था.",
+          "changed": "सिर्फ़ खुलासा"
+        },
+        {
+          "display": "I noticed a bag and told the manager about it.",
+          "cue": "मैंने एक बैग देखा और मैनेजर को बताया.",
+          "changed": "दो वाक्य एक में"
+        }
+      ],
+      "mistake": {
+        "display": "I noticed to a bag under the table",
+        "why": "notice सीधे कर्म लेता है; उसके आगे to नहीं आता."
+      },
+      "usage": "क़िस्से में वह चीज़ लाते समय जिस पर आपकी नज़र पड़ी.",
+      "register": "neutral",
+      "mnemonic": "see देखना, notice नज़र पड़ना."
+    },
+    {
+      "id": "L4-M10-S08",
+      "display": "We were talking about the film when I realised the time. It was already nine. I had to go home. At first my friends did not want to leave. But then they came with me.",
+      "cue": "हम फ़िल्म के बारे में बात कर रहे थे कि मुझे समय का ख़याल आया. नौ बज चुके थे. मुझे घर जाना था. पहले तो मेरे दोस्त जाना नहीं चाहते थे. पर फिर वे मेरे साथ आ गए.",
+      "literal": "हम थे बात करते के बारे में वह फ़िल्म जब मैंने समझा वह समय.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "realised",
+            "cue": "ख़याल आया",
+            "tag": "delta",
+            "forms": ["realise", "realised", "realises"],
+            "note": "अचानक समझ में आना. understand धीरे-धीरे समझना है; realise एक पल में."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "realised को understood मत बनाइए. understand में समय लगता है, realise एक झटके में होता है.",
+      "sound": "realised के चार हिस्से हैं और ज़ोर दूसरे पर — रि-अ-लाइज़्ड्.",
+      "variations": [
+        {
+          "display": "I realised the time.",
+          "cue": "मुझे समय का ख़याल आया.",
+          "changed": "सबसे छोटा रूप"
+        },
+        {
+          "display": "We were talking about the film when I realised the time.",
+          "cue": "हम फ़िल्म के बारे में बात कर रहे थे कि मुझे समय का ख़याल आया.",
+          "changed": "सिर्फ़ पहला वाक्य"
+        },
+        {
+          "display": "At first my friends did not want to leave.",
+          "cue": "पहले तो मेरे दोस्त जाना नहीं चाहते थे.",
+          "changed": "सिर्फ़ शुरू वाली हालत"
+        }
+      ],
+      "mistake": {
+        "display": "We were talking about the film when I realised about the time",
+        "why": "realise सीधे कर्म लेता है; उसके आगे about नहीं आता."
+      },
+      "usage": "क़िस्से में उस पल पर, जब अचानक कुछ समझ में आ जाए.",
+      "register": "neutral",
+      "mnemonic": "understand धीरे-धीरे, realise एक पल में."
+    },
+    {
+      "id": "L4-M10-S09",
+      "display": "A stranger was waiting next to me on the bus. He asked me a strange question about the market. At first I was worried. But then I felt better. He was new in the city.",
+      "cue": "बस में मेरे बग़ल में एक अनजान आदमी खड़ा था. उसने मुझसे बाज़ार के बारे में एक अजीब सवाल पूछा. पहले तो मुझे चिंता हुई. पर फिर तबीयत ठीक लगी. वह शहर में नया था.",
+      "literal": "एक अनजान था इंतज़ार करता बग़ल मुझे पर वह बस.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "stranger",
+            "cue": "अनजान आदमी",
+            "tag": "free",
+            "forms": ["stranger", "strangers"],
+            "note": "वह आदमी जिसे आप जानते नहीं. strange इसी से बना है, पर वह चीज़ों के लिए है."
+          },
+          {
+            "display": "strange",
+            "cue": "अजीब",
+            "tag": "delta",
+            "forms": ["strange"],
+            "note": "जो अटपटा या अनोखा लगे. a strange man का मतलब अजीब आदमी है, अनजान आदमी नहीं."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "a strange man और a stranger एक नहीं हैं. पहला अजीब है, दूसरा सिर्फ़ अनजान.",
+      "sound": "stranger और strange दोनों में g नरम है — स्ट्रेइन्-जर्, स्ट्रेइन्ज्.",
+      "variations": [
+        {
+          "display": "A stranger was waiting next to me on the bus.",
+          "cue": "बस में मेरे बग़ल में एक अनजान आदमी खड़ा था.",
+          "changed": "सिर्फ़ पहला वाक्य"
+        },
+        {
+          "display": "He asked me a strange question.",
+          "cue": "उसने मुझसे एक अजीब सवाल पूछा.",
+          "changed": "बाज़ार हट गया"
+        },
+        {
+          "display": "At first I was worried, but then I felt better.",
+          "cue": "पहले तो चिंता हुई, पर फिर ठीक लगा.",
+          "changed": "दो वाक्य एक में"
+        }
+      ],
+      "mistake": {
+        "display": "A strange was waiting next to me on the bus",
+        "why": "आदमी के लिए संज्ञा stranger है; strange सिर्फ़ विशेषण है."
+      },
+      "usage": "किसी अनजान से हुई मुलाक़ात सुनाते समय.",
+      "register": "neutral",
+      "mnemonic": "stranger आदमी, strange बात."
+    },
+    {
+      "id": "L4-M10-S10",
+      "display": "My cousin smiled and said, \"I have a story for you.\" At first I did not understand. He had found a wallet on the seat. It turned out the wallet was full of money. In the end he gave it back.",
+      "cue": "मेरे चचेरे भाई ने मुस्कुराकर कहा, \"तुम्हारे लिए एक क़िस्सा है.\" पहले तो मुझे समझ नहीं आया. उसे सीट पर एक बटुआ मिला था. पता चला कि बटुआ पैसों से भरा था. आख़िर में उसने वह लौटा दिया.",
+      "literal": "मेरा चचेरा भाई मुस्कुराया और कहा, मैं रखता एक क़िस्सा के लिए तुम.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "smiled",
+            "cue": "मुस्कुराया",
+            "tag": "free",
+            "forms": ["smile", "smiled", "smiles"],
+            "note": "मुस्कुराना — बिना आवाज़ के. laugh में आवाज़ होती है, smile में नहीं."
+          },
+          {
+            "display": "seat",
+            "cue": "सीट",
+            "tag": "free",
+            "forms": ["seat", "seats"],
+            "note": "बैठने की जगह. इसके साथ on आता है — on the seat, कभी in the seat नहीं."
+          }
+        ],
+        "rules": [0, 1, 4]
+      },
+      "trap": "said, \"i have a story\" मत लिखिए. उलटे कॉमा के भीतर वाला वाक्य हमेशा बड़े अक्षर से शुरू होता है.",
+      "sound": "smiled का आख़िरी हिस्सा d जैसा सुनाई देता है — स्माइल्ड्.",
+      "variations": [
+        {
+          "display": "My cousin smiled and said, \"I have a story for you.\"",
+          "cue": "मेरे चचेरे भाई ने मुस्कुराकर कहा, \"तुम्हारे लिए एक क़िस्सा है.\"",
+          "changed": "सिर्फ़ सीधी बात वाला वाक्य"
+        },
+        {
+          "display": "He had found a wallet on the seat.",
+          "cue": "उसे सीट पर एक बटुआ मिला था.",
+          "changed": "सिर्फ़ खुलासे से पहले वाला वाक्य"
+        },
+        {
+          "display": "In the end he gave it back.",
+          "cue": "आख़िर में उसने वह लौटा दिया.",
+          "changed": "सिर्फ़ आख़िरी वाक्य"
+        }
+      ],
+      "mistake": {
+        "display": "My cousin smiled and said, \"i have a story for you.\"",
+        "why": "उलटे कॉमा के भीतर वाला वाक्य बड़े अक्षर से शुरू होता है: \"I have a story for you.\""
+      },
+      "usage": "क़िस्से का आख़िरी मोड़ सुनाते समय, जब बात किसी के अपने शब्दों से खुलती हो.",
+      "register": "neutral",
+      "mnemonic": "उलटे कॉमा के भीतर पूरा वाक्य — बड़ा अक्षर और कॉमा दोनों भीतर."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M10-C01",
+      "display": "At first the man did not speak.",
+      "cue": "पहले तो वह आदमी कुछ बोला ही नहीं."
+    },
+    {
+      "id": "L4-M10-C02",
+      "display": "Suddenly a man shouted behind me.",
+      "cue": "अचानक पीछे किसी आदमी ने ज़ोर से आवाज़ लगाई."
+    },
+    {
+      "id": "L4-M10-C03",
+      "display": "It turned out the train had been cancelled.",
+      "cue": "पता चला कि गाड़ी रद्द हो चुकी थी."
+    },
+    {
+      "id": "L4-M10-C04",
+      "display": "But then my friend called me.",
+      "cue": "पर फिर मेरे दोस्त ने फ़ोन किया."
+    },
+    {
+      "id": "L4-M10-C05",
+      "display": "Luckily the chemist near the station was open.",
+      "cue": "अच्छा हुआ कि स्टेशन के पास वाली दवा की दुकान खुली थी."
+    },
+    {
+      "id": "L4-M10-C06",
+      "display": "\"I will not go,\" she said.",
+      "cue": "\"मैं नहीं जाऊँगी,\" उसने कहा."
+    },
+    {
+      "id": "L4-M10-C07",
+      "display": "Her brother replied, \"Then I will go.\"",
+      "cue": "उसके भाई ने जवाब दिया, \"तो मैं जाऊँगा.\""
+    },
+    {
+      "id": "L4-M10-C08",
+      "display": "I noticed a bag under the table.",
+      "cue": "मैंने मेज़ के नीचे एक बैग देखा."
+    },
+    {
+      "id": "L4-M10-C09",
+      "display": "We were talking about the film when I realised the time.",
+      "cue": "हम फ़िल्म के बारे में बात कर रहे थे कि मुझे समय का ख़याल आया."
+    },
+    {
+      "id": "L4-M10-C10",
+      "display": "A stranger was waiting next to me on the bus.",
+      "cue": "बस में मेरे बग़ल में एक अनजान आदमी खड़ा था."
+    },
+    {
+      "id": "L4-M10-C11",
+      "display": "He asked me a strange question about the market.",
+      "cue": "उसने मुझसे बाज़ार के बारे में एक अजीब सवाल पूछा."
+    },
+    {
+      "id": "L4-M10-C12",
+      "display": "In the end he gave it back.",
+      "cue": "आख़िर में उसने वह लौटा दिया."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

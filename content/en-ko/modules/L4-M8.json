@@ -1,0 +1,617 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M8",
+  "title": "Back then",
+  "job": "Habits and states in the past; then against now",
+  "prerequisites": ["L4-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["simple_present", "simple_past"],
+    "allowedPatterns": [
+      "V-gon + haesseoyo",
+      "eoril + ttae + clause-eosseoyo",
+      "V-deon + N",
+      "yejeon-e-neun + V-eosseosseoyo",
+      "yejeon-e-neun + clause. + jigeum-eun + clause"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "ENGLISH used to IS ONE FORM FOR FOUR KOREAN ONES, so a learner takes whichever they met first and uses it everywhere. Pick by what you mean, never by the English label: again and again, the thing that was, that state is over, or it simply happened."
+    },
+    {
+      "tag": "delta",
+      "text": "V-gon haesseoyo IS THE REPEATED HABIT — it happened again and again over a stretch of life. The -gon rides the stem with no space, and haesseoyo carries the past for the whole frame."
+    },
+    {
+      "tag": "delta",
+      "text": "-deon AGAINST -eotdeon. L3-M9's gadeon sikdang is the restaurant I used to go to and still picture; gatdeon sikdang is finished and shut. The first is unfinished or repeated, the second is done with."
+    },
+    {
+      "tag": "delta",
+      "text": "-eoss-eoss- SAYS A STATE HAS ENDED. sarasseosseoyo is I lived there and no longer do. The plain past sarasseoyo says only that it happened and leaves now alone."
+    },
+    {
+      "tag": "free",
+      "text": "THE PAST COPULA ALREADY DOES used to be. I used to be a student is haksaeng-ieosseoyo, which L1-M5 taught: half the English used-to sentences need no new grammar at all."
+    },
+    {
+      "tag": "free",
+      "text": "THEN AND NOW RUN ACROSS TWO SENTENCES: yejeon-e-neun or yennal-e-neun opens, ijen or jigeum-eun answers. The topic particle on both is what makes the pair a contrast rather than a list."
+    },
+    {
+      "tag": "free",
+      "text": "eoril ttae IS L4-M6's -(eu)l ttae, reused and not reopened. It is this module's most common opening, and haksaeng sijeol-e-neun is its formal-sounding twin."
+    },
+    {
+      "tag": "free",
+      "text": "NONE OF THIS IS THE COUNTERFACTUAL. What I used to do and what I would have done sit next to each other in English; the second is L4-M3's and never appears in these frames."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M8-S01",
+      "display": "Eoril ttae maeil hakgyo-e gagon haesseoyo.",
+      "script": "어릴 때 매일 학교에 가곤 했어요.",
+      "cue": "When I was little I used to walk to school every day.",
+      "literal": "young-MODIFIER time every-day school-to go-HABIT did",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eoril",
+            "script": "어릴",
+            "cue": "young (before ttae)",
+            "tag": "free",
+            "forms": ["eoril"],
+            "note": "From eorida, to be young. It appears almost only in eoril ttae, which is the ordinary way to say in my childhood."
+          },
+          {
+            "display": "gagon",
+            "script": "가곤",
+            "cue": "used to go (repeatedly)",
+            "tag": "delta",
+            "forms": ["gagon"],
+            "note": "The stem plus -gon, written with no space, and it needs haesseoyo after it to finish the frame. It says the going happened again and again."
+          }
+        ],
+        "rules": [1, 6]
+      },
+      "trap": "-gon cannot stand alone. gagon on its own is half a frame; the past lives on haesseoyo at the end.",
+      "sound": "EO-ril TTAE MAE-il HAK-gyo-e GA-gon HAE-sseo-yo.",
+      "variations": [
+        {
+          "display": "Eoril ttae maeil hakgyo-e gasseoyo.",
+          "script": "어릴 때 매일 학교에 갔어요.",
+          "cue": "When I was little I went to school every day.",
+          "changed": "the plain past, which reports it without the again-and-again"
+        },
+        {
+          "display": "Yennal-e-neun maeil hakgyo-e gagon haesseoyo.",
+          "script": "옛날에는 매일 학교에 가곤 했어요.",
+          "cue": "Back in the day I used to go to school every day.",
+          "changed": "a different opening for the same stretch of time"
+        }
+      ],
+      "mistake": {
+        "display": "Eoril ttae maeil hakgyo-e gagon haeyo.",
+        "script": "어릴 때 매일 학교에 가곤 해요.",
+        "why": "The frame reports a habit that is over, so haeyo contradicts eoril ttae. The past has to sit on the auxiliary: gagon haesseoyo."
+      },
+      "usage": "Answering what were you like as a child?",
+      "register": "neutral",
+      "mnemonic": "-gon leans on haesseoyo."
+    },
+    {
+      "id": "L4-M8-S02",
+      "display": "Yennal-e-neun sigol-eseo sarasseosseoyo.",
+      "script": "옛날에는 시골에서 살았었어요.",
+      "cue": "I used to live in the countryside, back in the day.",
+      "literal": "old-days-at-TOP countryside-in lived-had",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yennal",
+            "script": "옛날",
+            "cue": "the old days",
+            "tag": "free",
+            "forms": ["yennal", "yennal-e-neun", "yennal-e"],
+            "note": "Further back than L3-M9's yejeon, and a little storybook: it opens a reminiscence rather than a comparison."
+          },
+          {
+            "display": "sigol",
+            "script": "시골",
+            "cue": "the countryside",
+            "tag": "free",
+            "forms": ["sigol", "sigol-eseo", "sigol-i", "sigol-e", "sigol-eul"],
+            "note": "Not a village but the country as opposed to the city, and it carries where you are from."
+          },
+          {
+            "display": "sarasseosseoyo",
+            "script": "살았었어요",
+            "cue": "used to live (and no longer)",
+            "tag": "delta",
+            "forms": ["sarasseosseoyo"],
+            "note": "Two pasts stacked. It states that the state is finished, which the plain sarasseoyo does not: that one only says it happened."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "The doubled past is not more past. It says the state has stopped, so it would be wrong about somewhere you still live.",
+      "sound": "YEN-na-re-neun SI-go-re-seo SA-ra-sseo-sseo-yo. Both -sseo are held equally.",
+      "variations": [
+        {
+          "display": "Yennal-e sigol-eseo sarasseosseoyo.",
+          "script": "옛날에 시골에서 살았었어요.",
+          "cue": "I used to live in the countryside back then.",
+          "changed": "no topic particle, so nothing is being contrasted"
+        },
+        {
+          "display": "Yejeon-e-neun hanguk-e sarasseosseoyo.",
+          "script": "예전에는 한국에 살았었어요.",
+          "cue": "I used to live in Korea.",
+          "changed": "L3-M9's opening and a different place"
+        }
+      ],
+      "mistake": {
+        "display": "Yennal-e-neun sigol-eseo sarayo.",
+        "script": "옛날에는 시골에서 살아요.",
+        "why": "yennal-e-neun has already put the sentence in the past, and a present verb after it contradicts the frame. Korean marks the tense once, and it must agree with the time word."
+      },
+      "usage": "Explaining where you are from.",
+      "register": "neutral",
+      "mnemonic": "Two pasts mean it stopped."
+    },
+    {
+      "id": "L4-M8-S03",
+      "display": "Yejeon-e-neun jaju yeonghwa-reul bwasseoyo. Ijen an bwayo.",
+      "script": "예전에는 자주 영화를 봤어요. 이젠 안 봐요.",
+      "cue": "I used to watch films often. I do not any more.",
+      "literal": "before-at-TOP often film-OBJ saw. now-TOP not see",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ijen",
+            "script": "이젠",
+            "cue": "now (by contrast)",
+            "tag": "free",
+            "forms": ["ijen"],
+            "note": "The short spoken form of ije-neun, and the answering half of yejeon-e-neun. It always carries but not any more inside it."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "ijen is not L2-M7's jigeum. jigeum is the clock; ijen is the turn — from then to now — and it only makes sense after a then.",
+      "sound": "YE-jeo-ne-neun JA-ju YEONG-hwa-reul BWA-sseo-yo. I-jen AN BWA-yo.",
+      "variations": [
+        {
+          "display": "Yejeon-e-neun jaju yeonghwa-reul bwasseoyo. Jigeum-eun an bwayo.",
+          "script": "예전에는 자주 영화를 봤어요. 지금은 안 봐요.",
+          "cue": "I used to watch films often. Now I do not.",
+          "changed": "L3-M9's jigeum-eun, which is flatter and less spoken"
+        },
+        {
+          "display": "Yejeon-e-neun sul-eul masyeosseoyo. Ijen an masyeoyo.",
+          "script": "예전에는 술을 마셨어요. 이젠 안 마셔요.",
+          "cue": "I used to drink. I do not any more.",
+          "changed": "a different pair of habits"
+        }
+      ],
+      "mistake": {
+        "display": "Yejeon-e-neun jaju yeonghwa-reul bwayo. Ijen an bwayo.",
+        "script": "예전에는 자주 영화를 봐요. 이젠 안 봐요.",
+        "why": "The then half must be past for the contrast to exist. With both halves in the present the sentence says nothing has changed, which is the opposite of what was meant."
+      },
+      "usage": "Saying how you have changed.",
+      "register": "neutral",
+      "mnemonic": "yejeon-e-neun opens, ijen answers."
+    },
+    {
+      "id": "L4-M8-S04",
+      "display": "Jaju gatdeon sikdang-i ijen eopseoyo.",
+      "script": "자주 갔던 식당이 이젠 없어요.",
+      "cue": "The restaurant I used to go to is gone now.",
+      "literal": "often went-RETROSPECTIVE restaurant-SUBJ now not-exist",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gatdeon",
+            "script": "갔던",
+            "cue": "that I went to (and it is over)",
+            "tag": "delta",
+            "forms": ["gatdeon"],
+            "note": "The past stem plus L3-M9's -deon. It shuts the memory: I went and that is finished. gadeon, without the past, leaves it open and still colouring."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "gadeon and gatdeon are one English phrase and two Korean meanings. Choose by whether the going is a closed chapter or a picture you still carry.",
+      "sound": "JA-ju GAT-deon SIK-dang-i I-jen EOP-seo-yo. The t of gat is cut short before the d.",
+      "variations": [
+        {
+          "display": "Jaju gadeon sikdang-i ijen eopseoyo.",
+          "script": "자주 가던 식당이 이젠 없어요.",
+          "cue": "The restaurant I used to go to is gone now.",
+          "changed": "L3-M9's open -deon, which keeps the habit in view"
+        },
+        {
+          "display": "Meokdeon tteokguk-i jeongmal joasseoyo.",
+          "script": "먹던 떡국이 정말 좋았어요.",
+          "cue": "The rice-cake soup I used to eat was really good.",
+          "changed": "another L3-M9 -deon form, on food"
+        }
+      ],
+      "mistake": {
+        "display": "Jaju gasseoyo sikdang-i ijen eopseoyo.",
+        "script": "자주 갔어요 식당이 이젠 없어요.",
+        "why": "A finished -yo verb cannot sit in front of a noun. Korean turns the clause into a modifier first, and that is exactly what -deon and -eotdeon are for."
+      },
+      "usage": "Walking past somewhere that has closed.",
+      "register": "neutral",
+      "mnemonic": "-deon still colours; -eotdeon is shut."
+    },
+    {
+      "id": "L4-M8-S05",
+      "display": "Ilhaetdeon hoesa-neun mani byeonhaesseoyo.",
+      "script": "일했던 회사는 많이 변했어요.",
+      "cue": "The company I used to work at has changed a lot.",
+      "literal": "worked-RETROSPECTIVE company-TOP a-lot changed",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ilhaetdeon",
+            "script": "일했던",
+            "cue": "that I used to work at",
+            "tag": "delta",
+            "forms": ["ilhaetdeon"],
+            "note": "The same -eotdeon on ilhada. The job is over, which is why this and not ilhaneun, the company I work at now."
+          },
+          {
+            "display": "byeonhaesseoyo",
+            "script": "변했어요",
+            "cue": "changed",
+            "tag": "free",
+            "forms": ["byeonhaesseoyo"],
+            "note": "From byeonhada, said of a place or a person turning into something else. It reports the change without judging it."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "ilhaneun hoesa is where you work now. Once you have left, the modifier has to carry the past, or the sentence quietly puts you back on the payroll.",
+      "sound": "IL-hae-tdeon HOE-sa-neun MA-ni BYEON-hae-sseo-yo.",
+      "variations": [
+        {
+          "display": "Ilhaetdeon hoesa-neun ijen eopseoyo.",
+          "script": "일했던 회사는 이젠 없어요.",
+          "cue": "The company I used to work at no longer exists.",
+          "changed": "what became of it"
+        },
+        {
+          "display": "Sigol-i mani byeonhaesseoyo.",
+          "script": "시골이 많이 변했어요.",
+          "cue": "The countryside has changed a lot.",
+          "changed": "a place instead of a workplace"
+        }
+      ],
+      "mistake": {
+        "display": "Ilhaneun hoesa-neun mani byeonhaesseoyo.",
+        "script": "일하는 회사는 많이 변했어요.",
+        "why": "-neun is the present modifier, so this is the company I work at now. True of somebody still there, and wrong for a job you left."
+      },
+      "usage": "Catching up with an old colleague.",
+      "register": "neutral",
+      "mnemonic": "Left the job, past the modifier."
+    },
+    {
+      "id": "L4-M8-S06",
+      "display": "Haksaeng sijeol-e-neun maeil gongbuhagon haesseoyo.",
+      "script": "학생 시절에는 매일 공부하곤 했어요.",
+      "cue": "In my student days I used to study every day.",
+      "literal": "student era-at-TOP every-day study-HABIT did",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sijeol",
+            "script": "시절",
+            "cue": "days, era of a life",
+            "tag": "free",
+            "forms": ["sijeol", "sijeol-e-neun", "sijeol-e"],
+            "note": "A period of somebody's life, not a period of history. It follows the noun that names it: haksaeng sijeol, student days."
+          },
+          {
+            "display": "gongbuhagon",
+            "script": "공부하곤",
+            "cue": "used to study (repeatedly)",
+            "tag": "delta",
+            "forms": ["gongbuhagon"],
+            "note": "The same -gon on gongbuhada, and it still needs haesseoyo to close the frame."
+          }
+        ],
+        "rules": [1, 6]
+      },
+      "trap": "sijeol is a stretch of a life. It cannot be used for a period on a clock or a calendar, which is L2-M6's ttae and si.",
+      "sound": "HAK-saeng SI-jeo-re-neun MAE-il GONG-bu-ha-gon HAE-sseo-yo.",
+      "variations": [
+        {
+          "display": "Haksaeng sijeol-e maeil gongbuhaesseoyo.",
+          "script": "학생 시절에 매일 공부했어요.",
+          "cue": "In my student days I studied every day.",
+          "changed": "the plain past, and no contrast implied"
+        },
+        {
+          "display": "Haksaeng sijeol-e-neun jaju chingu-reul mannasseoyo.",
+          "script": "학생 시절에는 자주 친구를 만났어요.",
+          "cue": "In my student days I often met friends.",
+          "changed": "a different habit in the same stretch"
+        }
+      ],
+      "mistake": {
+        "display": "Haksaeng sijeol-e-neun maeil gongbuhagon haeyo.",
+        "script": "학생 시절에는 매일 공부하곤 해요.",
+        "why": "The same slip as S01: the auxiliary carries the tense, and a stretch of life that is over needs haesseoyo."
+      },
+      "usage": "Reminiscing at a reunion.",
+      "register": "neutral",
+      "mnemonic": "sijeol is a chapter, not a clock."
+    },
+    {
+      "id": "L4-M8-S07",
+      "display": "Geuttae-neun haksaeng-ieosseoyo. Ijen seonsaengnim-ieyo.",
+      "script": "그때는 학생이었어요. 이젠 선생님이에요.",
+      "cue": "Back then I was a student. Now I am a teacher.",
+      "literal": "that-time-at-TOP student-was. now-TOP teacher-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "geuttae-neun",
+            "script": "그때는",
+            "cue": "back then (by contrast)",
+            "tag": "free",
+            "forms": ["geuttae-neun"],
+            "note": "L2-M7's geuttae with the topic particle, which is what turns a time word into the then half of a contrast."
+          }
+        ],
+        "rules": [4, 5]
+      },
+      "trap": "English needs used to be here and Korean needs nothing new. haksaeng-ieosseoyo is L1-M5's past copula and already says it; reaching for -gon or -eotdeon would be wrong.",
+      "sound": "GEU-ttae-neun HAK-saeng-i-eo-sseo-yo. I-jen SEON-saeng-nim-i-e-yo.",
+      "variations": [
+        {
+          "display": "Geuttae-neun haksaeng-ieosseoyo.",
+          "script": "그때는 학생이었어요.",
+          "cue": "Back then I was a student.",
+          "changed": "the then half alone, leaving the now unsaid"
+        },
+        {
+          "display": "Yennal-e-neun haksaeng-ieosseoyo. Ijen seonsaengnim-ieyo.",
+          "script": "옛날에는 학생이었어요. 이젠 선생님이에요.",
+          "cue": "I used to be a student. Now I am a teacher.",
+          "changed": "a further-back opening"
+        }
+      ],
+      "mistake": {
+        "display": "Geuttae-neun haksaeng-i dwaegon haesseoyo.",
+        "script": "그때는 학생이 되곤 했어요.",
+        "why": "-gon is for something done again and again. Being a student is a state, not a repeated act, and the past copula covers it with no frame at all."
+      },
+      "usage": "Introducing yourself at a reunion.",
+      "register": "neutral",
+      "mnemonic": "used to be is just the past copula."
+    },
+    {
+      "id": "L4-M8-S08",
+      "display": "Yennal-e-neun jip-eseo yori-reul hagon haesseoyo.",
+      "script": "옛날에는 집에서 요리를 하곤 했어요.",
+      "cue": "I used to cook at home in the old days.",
+      "literal": "old-days-at-TOP house-in cooking-OBJ do-HABIT did",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hagon",
+            "script": "하곤",
+            "cue": "used to do (repeatedly)",
+            "tag": "delta",
+            "forms": ["hagon", "meokgon"],
+            "note": "-gon on hada, and on meokda it is meokgon. The ending never stands as a word of its own, which is why it is only ever written joined."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "hagon haesseoyo doubles hada on purpose. It looks like a stutter and is the ordinary shape of the frame.",
+      "sound": "YEN-na-re-neun JI-be-seo YO-ri-reul HA-gon HAE-sseo-yo.",
+      "variations": [
+        {
+          "display": "Yennal-e-neun jip-eseo bap-eul meokgon haesseoyo.",
+          "script": "옛날에는 집에서 밥을 먹곤 했어요.",
+          "cue": "I used to eat at home in the old days.",
+          "changed": "a consonant stem, which takes -gon the same way"
+        },
+        {
+          "display": "Jip-eseo yori-reul hagon haesseoyo.",
+          "script": "집에서 요리를 하곤 했어요.",
+          "cue": "I used to cook at home.",
+          "changed": "no time word, so the habit floats"
+        }
+      ],
+      "mistake": {
+        "display": "Yennal-e-neun jip-eseo yori-reul haetdeon haesseoyo.",
+        "script": "옛날에는 집에서 요리를 했던 했어요.",
+        "why": "-eotdeon modifies a NOUN and cannot sit in front of a verb. The habit frame is -gon, and the two are not interchangeable."
+      },
+      "usage": "Talking about how you used to eat.",
+      "register": "neutral",
+      "mnemonic": "-gon before a verb, -deon before a noun."
+    },
+    {
+      "id": "L4-M8-S09",
+      "display": "Yejeon-e-neun sigol-eseo ilhaesseoyo. Ijen mani dallajyeosseoyo.",
+      "script": "예전에는 시골에서 일했어요. 이젠 많이 달라졌어요.",
+      "cue": "I used to work in the countryside. Things have changed a lot now.",
+      "literal": "before-at-TOP countryside-in worked. now-TOP a-lot became-different",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dallajyeosseoyo",
+            "script": "달라졌어요",
+            "cue": "has become different",
+            "tag": "free",
+            "forms": ["dallajyeosseoyo"],
+            "note": "From dallajida, to turn out different. Beside byeonhaesseoyo it is softer: this is drift, that is a thing turning into another thing."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "dallajyeosseoyo already contains the comparison, so nothing needs to be named as what it changed from. English wants than before and Korean has it inside the verb.",
+      "sound": "YE-jeo-ne-neun SI-go-re-seo IL-hae-sseo-yo. I-jen MA-ni DAL-la-jyeo-sseo-yo.",
+      "variations": [
+        {
+          "display": "Yejeon-e-neun sigol-eseo ilhaesseoyo. Jigeum-eun hakgyo-eseo ilhaeyo.",
+          "script": "예전에는 시골에서 일했어요. 지금은 학교에서 일해요.",
+          "cue": "I used to work in the countryside. Now I work at a school.",
+          "changed": "the now half says what happens instead"
+        },
+        {
+          "display": "Sigol-i ijen mani dallajyeosseoyo.",
+          "script": "시골이 이젠 많이 달라졌어요.",
+          "cue": "The countryside has changed a lot now.",
+          "changed": "a named subject for the change"
+        }
+      ],
+      "mistake": {
+        "display": "Yejeon-e sigol-eseo ilhaesseoyo. Ijen mani dallajyeoyo.",
+        "script": "예전에 시골에서 일했어요. 이젠 많이 달라져요.",
+        "why": "A change that has already happened is reported in the past. The present says it is changing as we speak, which is a different claim."
+      },
+      "usage": "Describing a place you left.",
+      "register": "neutral",
+      "mnemonic": "dallajyeosseoyo carries than before inside it."
+    },
+    {
+      "id": "L4-M8-S10",
+      "display": "Eoril ttae saratdeon sigol-e ijen an gayo.",
+      "script": "어릴 때 살았던 시골에 이젠 안 가요.",
+      "cue": "I do not go any more to the countryside I lived in as a child.",
+      "literal": "young-MODIFIER time lived-RETROSPECTIVE countryside-to now not go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "saratdeon",
+            "script": "살았던",
+            "cue": "that I lived in (and no longer)",
+            "tag": "delta",
+            "forms": ["saratdeon"],
+            "note": "-eotdeon on salda. The living is over and shut, which is why it is not saradeon: that would keep the place still in view."
+          }
+        ],
+        "rules": [2, 6]
+      },
+      "trap": "The modifier is what carries the past here. ijen and eoril ttae only frame it; the tense of the whole sentence still sits on gayo at the end.",
+      "sound": "EO-ril TTAE SA-ra-tdeon SI-go-re I-jen AN GA-yo.",
+      "variations": [
+        {
+          "display": "Eoril ttae saratdeon sigol-i mani byeonhaesseoyo.",
+          "script": "어릴 때 살았던 시골이 많이 변했어요.",
+          "cue": "The countryside I lived in as a child has changed a lot.",
+          "changed": "what is said about the place"
+        },
+        {
+          "display": "Eoril ttae gatdeon hakgyo-e ijen an gayo.",
+          "script": "어릴 때 갔던 학교에 이젠 안 가요.",
+          "cue": "I do not go any more to the school I went to as a child.",
+          "changed": "a different verb inside the modifier"
+        }
+      ],
+      "mistake": {
+        "display": "Eoril ttae sarasseosseoyo sigol-e ijen an gayo.",
+        "script": "어릴 때 살았었어요 시골에 이젠 안 가요.",
+        "why": "A finished verb cannot modify a noun. The doubled past is a sentence ending; in front of sigol the shape has to be saratdeon."
+      },
+      "usage": "Explaining why you have not been back.",
+      "register": "neutral",
+      "mnemonic": "In front of a noun, always a modifier."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M8-C01",
+      "display": "Eoril ttae maeil hakgyo-e gagon haesseoyo.",
+      "script": "어릴 때 매일 학교에 가곤 했어요.",
+      "cue": "When I was little I used to go to school every day."
+    },
+    {
+      "id": "L4-M8-C02",
+      "display": "Yennal-e-neun sigol-eseo sarasseosseoyo.",
+      "script": "옛날에는 시골에서 살았었어요.",
+      "cue": "I used to live in the countryside."
+    },
+    {
+      "id": "L4-M8-C03",
+      "display": "Yejeon-e-neun jaju yeonghwa-reul bwasseoyo. Ijen an bwayo.",
+      "script": "예전에는 자주 영화를 봤어요. 이젠 안 봐요.",
+      "cue": "I used to watch films often. I do not any more."
+    },
+    {
+      "id": "L4-M8-C04",
+      "display": "Jaju gatdeon sikdang-i ijen eopseoyo.",
+      "script": "자주 갔던 식당이 이젠 없어요.",
+      "cue": "The restaurant I used to go to is gone now."
+    },
+    {
+      "id": "L4-M8-C05",
+      "display": "Ilhaetdeon hoesa-neun mani byeonhaesseoyo.",
+      "script": "일했던 회사는 많이 변했어요.",
+      "cue": "The company I used to work at has changed a lot."
+    },
+    {
+      "id": "L4-M8-C06",
+      "display": "Haksaeng sijeol-e-neun maeil gongbuhagon haesseoyo.",
+      "script": "학생 시절에는 매일 공부하곤 했어요.",
+      "cue": "In my student days I used to study every day."
+    },
+    {
+      "id": "L4-M8-C07",
+      "display": "Geuttae-neun haksaeng-ieosseoyo.",
+      "script": "그때는 학생이었어요.",
+      "cue": "Back then I was a student."
+    },
+    {
+      "id": "L4-M8-C08",
+      "display": "Yennal-e-neun jip-eseo bap-eul meokgon haesseoyo.",
+      "script": "옛날에는 집에서 밥을 먹곤 했어요.",
+      "cue": "I used to eat at home in the old days."
+    },
+    {
+      "id": "L4-M8-C09",
+      "display": "Sigol-i ijen mani dallajyeosseoyo.",
+      "script": "시골이 이젠 많이 달라졌어요.",
+      "cue": "The countryside has changed a lot now."
+    },
+    {
+      "id": "L4-M8-C10",
+      "display": "Eoril ttae saratdeon sigol-e ijen an gayo.",
+      "script": "어릴 때 살았던 시골에 이젠 안 가요.",
+      "cue": "I do not go any more to the countryside I lived in as a child."
+    },
+    {
+      "id": "L4-M8-C11",
+      "display": "Meokdeon tteokguk-i jeongmal joasseoyo.",
+      "script": "먹던 떡국이 정말 좋았어요.",
+      "cue": "The rice-cake soup I used to eat was really good."
+    },
+    {
+      "id": "L4-M8-C12",
+      "display": "Yejeon-e-neun sul-eul masyeosseoyo. Ijen an masyeoyo.",
+      "script": "예전에는 술을 마셨어요. 이젠 안 마셔요.",
+      "cue": "I used to drink. I do not any more."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

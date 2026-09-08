@@ -1,0 +1,584 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M9",
+  "title": "Places and journeys",
+  "job": "Tell a trip, directions and all",
+  "prerequisites": ["L4-M8"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "passato prossimo on essere, L2-M10's auxiliary law, for every step of the journey",
+      "passato prossimo on avere, L1-M5's, for what you did rather than where you went",
+      "present indicative, for the duration frame and for a departure still ahead",
+      "imperativo tu, L4-M1's, for directions given inside a story rather than at a counter"
+    ],
+    "allowedPatterns": [
+      "Siamo partiti + <tempo> + e + siamo arrivati + <tempo>",
+      "Ci vogliono + <numero> + ore",
+      "<imperativo> + , + poi + <direzione>",
+      "Ci siamo fermati + a + <luogo>",
+      "Mi sono perso + , + ma + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "MOTION VERBS ON essere, AT LENGTH. partire, arrivare, tornare, salire, scendere and the reflexive fermarsi all take essere, and their participle agrees with the SUBJECT: siamo partiti, siamo partite, mi sono fermato, mi sono persa. This is L2-M10's auxiliary law getting the workout it was written for — nothing new is being claimed, only used at length. The test is still the same one: a verb that moves you, or moves you into a state, goes on essere and its participle then behaves like an adjective."
+    },
+    {
+      "tag": "interference",
+      "text": "partire da AND partire per POINT AT OPPOSITE ENDS OF THE SAME JOURNEY. partiamo da Milano is we leave FROM Milan; partiamo per Milano is we leave FOR Milan. The preposition carries the direction and the verb carries none of it, so a learner who drops the preposition has said nothing about which end they mean. English leave does the same trick with for and from, but English can also say we left Milan with no preposition at all, and Italian cannot."
+    },
+    {
+      "tag": "delta",
+      "text": "THE DURATION FRAME, WHERE THE VERB AGREES WITH THE TIME. ci vuole un'ora, ci vogliono due ore. English it takes two hours has a dummy it for a subject; Italian's real subject is the HOURS, so the verb goes plural when they do. A learner who says ci vuole due ore has translated the dummy and left the verb behind. Same frame, same rule, for anything you can count: ci vuole un biglietto, ci vogliono due biglietti."
+    },
+    {
+      "tag": "free",
+      "text": "THE DIRECTIONS ARE ALREADY PAID FOR AND ONLY THE REGISTER MOVES. L2-M4 taught a destra, a sinistra, dritto, semaforo, ponte, angolo, strada and the rest in the Lei imperative, because there a stranger was asking a stranger. Told to a friend inside a story that is already running, the same directions come out in tu (gira a destra) or as a plain past (abbiamo girato a destra). The words do not change; the ending does, and that is the entire difference."
+    },
+    {
+      "tag": "delta",
+      "text": "WHAT THIS MODULE POINTS AT AND LEAVES ALONE. Attached pronouns of place — andarci, arrivarci, restarci — wait for L5 with the rest of clitic attachment, so a journey here says al lago and never andarci. ne as a partitive is still unowned across the whole ladder and L4 leaves it that way on purpose. And the passato remoto of travel writing waits with the rest of the written past."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M9-S01",
+      "display": "Siamo partiti presto e siamo arrivati a mezzogiorno",
+      "cue": "We left early and we arrived at midday",
+      "literal": "We-are left early and we-are arrived at midday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "siamo partiti",
+            "cue": "we left, we set off",
+            "tag": "delta",
+            "forms": ["siamo partiti", "siamo partite"],
+            "note": "partire on essere, so the participle agrees with us: partiti for a group with any man in it, partite for a group of women."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Both halves take essere and both participles agree. abbiamo partito is the single commonest error an English speaker makes with this verb.",
+      "sound": "SYA-mo par-TEE-tee PRES-to e SYA-mo ar-ree-VA-tee a med-zo-JOR-no.",
+      "variations": [
+        {
+          "display": "Siamo partiti presto e siamo arrivati tardi",
+          "cue": "We left early and we arrived late",
+          "changed": "how the day went"
+        },
+        {
+          "display": "Siamo partiti presto, ma siamo arrivati tardi",
+          "cue": "We left early, but we arrived late",
+          "changed": "ma making the point of the sentence"
+        },
+        {
+          "display": "Siamo partiti a mezzogiorno e siamo arrivati di sera",
+          "cue": "We left at midday and we arrived in the evening",
+          "changed": "the whole trip shifted later"
+        }
+      ],
+      "mistake": {
+        "display": "Abbiamo partito presto e abbiamo arrivato a mezzogiorno",
+        "why": "partire and arrivare go on essere. The auxiliary is siamo and the participle agrees with the travellers: siamo partiti, siamo arrivati."
+      },
+      "usage": "The first line of the answer to how the journey was.",
+      "register": "neutral",
+      "mnemonic": "You go on essere, so the ending follows you."
+    },
+    {
+      "id": "L4-M9-S02",
+      "display": "Ci vogliono due ore per arrivare al lago",
+      "cue": "It takes two hours to get to the lake",
+      "literal": "There want two hours for to-arrive at-the lake",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ci vogliono",
+            "cue": "it takes (plural)",
+            "tag": "delta",
+            "forms": ["ci vogliono"],
+            "note": "Plural because its subject is the HOURS. Anything countable behind it takes this form: ci vogliono due ore, ci vogliono due biglietti."
+          },
+          {
+            "display": "ore",
+            "cue": "hours",
+            "tag": "free",
+            "forms": ["ore", "ora", "un'ora"],
+            "note": "un'ora carries its elision as one word. Feminine, so due ore and not due ori, and it is what the duration frame agrees with."
+          },
+          {
+            "display": "arrivare",
+            "cue": "to arrive, to get there",
+            "tag": "free",
+            "forms": ["arrivare"],
+            "note": "The infinitive behind L3-M10's arrivati. After per it is the ordinary way of saying in order to get somewhere."
+          },
+          {
+            "display": "lago",
+            "cue": "lake",
+            "tag": "free",
+            "forms": ["lago", "laghi"],
+            "note": "The plural takes an h to keep the g hard: laghi, LA-ghee. Al lago is where you go, as al mare is."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "English it takes has a dummy subject and Italian's subject is real. Two hours is plural, so the verb is ci vogliono and never ci vuole.",
+      "sound": "chee VO-lyo-no DOO-e O-re per ar-ree-VA-re al LA-go. vogliono is stressed early, VO-lyo-no.",
+      "variations": [
+        {
+          "display": "Ci vogliono tre ore per arrivare al lago",
+          "cue": "It takes three hours to get to the lake",
+          "changed": "how long"
+        },
+        {
+          "display": "Ci vogliono due ore per arrivare al mare",
+          "cue": "It takes two hours to get to the sea",
+          "changed": "where you are going"
+        },
+        {
+          "display": "Ci vogliono due ore in macchina",
+          "cue": "It takes two hours by car",
+          "changed": "the destination dropped and the means added"
+        }
+      ],
+      "mistake": {
+        "display": "Ci vuole due ore per arrivare al lago",
+        "why": "This is the English dummy subject translated straight across. The hours are the subject in Italian, so the verb goes plural with them."
+      },
+      "usage": "Answering somebody who is deciding whether the trip is worth it.",
+      "register": "neutral",
+      "mnemonic": "The hours are the subject, so the hours pick the verb."
+    },
+    {
+      "id": "L4-M9-S03",
+      "display": "Ci vuole un'ora per arrivare in aereo",
+      "cue": "It takes an hour to get there by plane",
+      "literal": "There wants an-hour for to-arrive in plane",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ci vuole",
+            "cue": "it takes (singular)",
+            "tag": "delta",
+            "forms": ["ci vuole"],
+            "note": "Singular because one hour is singular. It is not about the traveller at all: ci vuole un'ora whether one of you goes or ten."
+          },
+          {
+            "display": "aereo",
+            "cue": "plane",
+            "tag": "free",
+            "forms": ["aereo", "aerei"],
+            "note": "In aereo, in treno, in macchina — the means of travel takes in with no article, exactly as L2-M4's in macchina does."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "The verb agrees with the time and never with the people travelling. Ten of you still say ci vuole un'ora.",
+      "sound": "chee VWO-le oo-NO-ra per ar-ree-VA-re een a-EH-re-o. aereo is four syllables, a-EH-re-o.",
+      "variations": [
+        {
+          "display": "Ci vuole un'ora per arrivare in treno",
+          "cue": "It takes an hour to get there by train",
+          "changed": "how you travel"
+        },
+        {
+          "display": "Ci vuole un'ora in macchina",
+          "cue": "It takes an hour by car",
+          "changed": "the shortest form of the same answer"
+        },
+        {
+          "display": "Ci vuole poco per arrivare in aereo",
+          "cue": "It does not take long to get there by plane",
+          "changed": "an amount instead of a count, which keeps the singular"
+        }
+      ],
+      "mistake": {
+        "display": "Ci vogliono un'ora per arrivare in aereo",
+        "why": "One hour is one thing. The plural ci vogliono is for two or more, and mixing them up is the same error as ci vuole due ore in reverse."
+      },
+      "usage": "Talking somebody out of driving.",
+      "register": "neutral",
+      "mnemonic": "One hour, one verb: ci vuole."
+    },
+    {
+      "id": "L4-M9-S04",
+      "display": "Gira a destra al semaforo, poi attraversa il ponte",
+      "cue": "Turn right at the lights, then cross the bridge",
+      "literal": "Turn at right at-the traffic-light, then cross the bridge",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "attraversa",
+            "cue": "cross (to a friend)",
+            "tag": "free",
+            "forms": ["attraversa", "attraversare", "attraversato"],
+            "note": "attraversare takes a direct object with no preposition: attraversa il ponte, attraversa la strada. English cross behaves the same way."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "L2-M4 gave these directions to a stranger, so they were giri and attraversi. Inside a story told to a friend they come out in tu, and only the ending moves.",
+      "sound": "JEE-ra a DES-tra al se-MA-fo-ro, poy at-tra-VEHR-sa eel PON-te. attraversa is stressed on the VEHR.",
+      "variations": [
+        {
+          "display": "Gira a sinistra al semaforo, poi attraversa il ponte",
+          "cue": "Turn left at the lights, then cross the bridge",
+          "changed": "which way you turn"
+        },
+        {
+          "display": "Attraversa il ponte, poi gira a destra",
+          "cue": "Cross the bridge, then turn right",
+          "changed": "the order of the two moves"
+        },
+        {
+          "display": "Gira a destra, poi attraversa il ponte",
+          "cue": "Turn right, then cross the bridge",
+          "changed": "the landmark left out, as it is when the other person knows the road"
+        }
+      ],
+      "mistake": {
+        "display": "Gira a destra al semaforo, poi attraversare il ponte",
+        "why": "Both halves are orders, so both take the imperative. attraversare is the dictionary form and cannot carry a command on its own."
+      },
+      "usage": "Telling a friend how to reach you, in the middle of a story about getting there.",
+      "register": "informal",
+      "mnemonic": "Same directions, friendlier ending."
+    },
+    {
+      "id": "L4-M9-S05",
+      "display": "Ci siamo fermati in campagna, vicino a un lago",
+      "cue": "We stopped in the countryside, near a lake",
+      "literal": "Ourselves we-are stopped in countryside, near at a lake",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ci siamo fermati",
+            "cue": "we stopped, we pulled over",
+            "tag": "delta",
+            "forms": ["ci siamo fermati", "mi sono fermato", "fermato"],
+            "note": "fermarsi is reflexive, so it goes on essere and the participle agrees. A whole block: the ci is part of the verb, not a place word."
+          },
+          {
+            "display": "campagna",
+            "cue": "countryside",
+            "tag": "free",
+            "forms": ["campagna"],
+            "note": "In campagna with no article, like al mare and in montagna. It means open country, not a political campaign."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "The ci here belongs to fermarsi and is not the ci of ci vuole. Two different jobs for the same two letters, and the verb tells you which.",
+      "sound": "chee SYA-mo fer-MA-tee een kam-PA-nya, vee-CHEE-no a oon LA-go. campagna has the ny of canyon.",
+      "variations": [
+        {
+          "display": "Ci siamo fermati in campagna per due ore",
+          "cue": "We stopped in the countryside for two hours",
+          "changed": "how long instead of where exactly"
+        },
+        {
+          "display": "Ci siamo fermati vicino al lago",
+          "cue": "We stopped near the lake",
+          "changed": "one landmark instead of two"
+        },
+        {
+          "display": "Mi sono fermato in campagna, vicino a un lago",
+          "cue": "I stopped in the countryside, near a lake",
+          "changed": "one traveller, and the participle follows"
+        }
+      ],
+      "mistake": {
+        "display": "Ci abbiamo fermato in campagna, vicino a un lago",
+        "why": "A reflexive verb goes on essere. The shape is ci siamo fermati, with the participle agreeing with us, and abbiamo cannot appear in it."
+      },
+      "usage": "The middle of a story about a drive that took longer than planned.",
+      "register": "neutral",
+      "mnemonic": "Reflexive means essere, always."
+    },
+    {
+      "id": "L4-M9-S06",
+      "display": "Mi sono perso, ma ho trovato la strada",
+      "cue": "I got lost, but I found the way",
+      "literal": "Myself I-am lost, but I-have found the road",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mi sono perso",
+            "cue": "I got lost",
+            "tag": "delta",
+            "forms": ["mi sono perso", "mi sono persa"],
+            "note": "perdersi, reflexive and therefore on essere. A woman says mi sono persa; L2-M8's perso on its own is what you do to an object."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "The two halves take two auxiliaries. perdersi is reflexive and goes on essere; trovare is ordinary and goes on avere, in the same breath.",
+      "sound": "mee SO-no PEHR-so, ma o tro-VA-to la STRA-da.",
+      "variations": [
+        {
+          "display": "Mi sono persa, ma ho trovato la strada",
+          "cue": "I got lost, but I found the way",
+          "changed": "a woman telling the same story"
+        },
+        {
+          "display": "Mi sono perso, ma ho trovato l'albergo",
+          "cue": "I got lost, but I found the hotel",
+          "changed": "what turned up in the end"
+        },
+        {
+          "display": "Mi sono perso in città",
+          "cue": "I got lost in town",
+          "changed": "the recovery left out"
+        }
+      ],
+      "mistake": {
+        "display": "Ho perso, ma ho trovato la strada",
+        "why": "ho perso means I lost something. Getting lost yourself is perdersi, and the reflexive brings essere with it: mi sono perso."
+      },
+      "usage": "Admitting it after arriving forty minutes late.",
+      "register": "informal",
+      "mnemonic": "You lose a thing with ho; you lose yourself with sono."
+    },
+    {
+      "id": "L4-M9-S07",
+      "display": "Un biglietto di andata e ritorno, per favore",
+      "cue": "A return ticket, please",
+      "literal": "A ticket of going and return, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "andata e ritorno",
+            "cue": "return, round trip",
+            "tag": "free",
+            "forms": ["andata e ritorno"],
+            "note": "One fixed block at a ticket window, and the order never changes. On its own, andata is L1-M5's participle of andare and means something else entirely."
+          },
+          {
+            "display": "ritorno",
+            "cue": "return, the way back",
+            "tag": "free",
+            "forms": ["ritorno"],
+            "note": "The journey home as a noun: il biglietto di ritorno, il ritorno è domani. The verb behind it is tornare, which is L1-M10's."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "andata e ritorno is one word for the purposes of buying a ticket, and the halves cannot be swapped. Ritorno e andata means nothing at a window.",
+      "sound": "oon bee-LYET-to dee an-DA-ta e ree-TOR-no, per fa-VO-re. biglietto has the ly of million, bee-LYET-to.",
+      "variations": [
+        {
+          "display": "Un biglietto di andata e ritorno, grazie",
+          "cue": "A return ticket, thanks",
+          "changed": "the shorter courtesy"
+        },
+        {
+          "display": "Il biglietto di ritorno è per domani",
+          "cue": "The return ticket is for tomorrow",
+          "changed": "the noun on its own, without the fixed pair"
+        },
+        {
+          "display": "Ho comprato un biglietto di andata e ritorno",
+          "cue": "I bought a return ticket",
+          "changed": "reported afterwards instead of asked for at the window"
+        }
+      ],
+      "mistake": {
+        "display": "Un biglietto di ritorno e andata, per favore",
+        "why": "The order is fixed: andata e ritorno, out and then back. Reversed, it stops being the name of a ticket and becomes a description nobody uses."
+      },
+      "usage": "At the window, with a queue behind you.",
+      "register": "neutral",
+      "mnemonic": "Out first, back second — andata e ritorno."
+    },
+    {
+      "id": "L4-M9-S08",
+      "display": "Scendi qui, l'albergo è vicino al mare",
+      "cue": "Get off here, the hotel is near the sea",
+      "literal": "Get-down here, the-hotel is near at-the sea",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "scendi",
+            "cue": "get off, go down (to a friend)",
+            "tag": "free",
+            "forms": ["scendi", "scendere", "scendiamo", "scesi"],
+            "note": "The opposite of salire, and the verb for getting off a bus or a train. On essere in the past: siamo scesi."
+          },
+          {
+            "display": "albergo",
+            "cue": "hotel",
+            "tag": "free",
+            "forms": ["albergo", "l'albergo"],
+            "note": "The elided l'albergo is its own surface and answers for nothing else. Masculine: un albergo, gli alberghi."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "The article does not vanish in front of a vowel, it elides: l'albergo. Writing albergo bare is a headline, not a sentence.",
+      "sound": "SHEN-dee kwee, lal-BEHR-go eh vee-CHEE-no al MA-re. scendi opens with the sh of ship, SHEN-dee.",
+      "variations": [
+        {
+          "display": "Scendi qui, l'albergo è vicino al ponte",
+          "cue": "Get off here, the hotel is near the bridge",
+          "changed": "the landmark"
+        },
+        {
+          "display": "Scendiamo qui, l'albergo è vicino al mare",
+          "cue": "Let us get off here, the hotel is near the sea",
+          "changed": "both of you getting off"
+        },
+        {
+          "display": "Scendi al semaforo, l'albergo è vicino",
+          "cue": "Get off at the lights, the hotel is close by",
+          "changed": "where to get off, with the destination left vague"
+        }
+      ],
+      "mistake": {
+        "display": "Scendi qui, albergo è vicino al mare",
+        "why": "Italian keeps the article and elides it in front of a vowel. The surface is l'albergo, one token, apostrophe and all."
+      },
+      "usage": "Sending somebody off a bus one stop before yours.",
+      "register": "informal",
+      "mnemonic": "l'albergo — the apostrophe is part of the word."
+    },
+    {
+      "id": "L4-M9-S09",
+      "display": "Ho fatto la valigia, partiamo verso mezzogiorno",
+      "cue": "I have packed, we are leaving around midday",
+      "literal": "I-have made the suitcase, we-leave towards midday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "valigia",
+            "cue": "suitcase",
+            "tag": "free",
+            "forms": ["valigia", "valigie"],
+            "note": "Fare la valigia is to pack — Italian MAKES the suitcase where English packs it, and the verb is always fare."
+          },
+          {
+            "display": "partiamo",
+            "cue": "we leave, we are leaving",
+            "tag": "free",
+            "forms": ["partiamo"],
+            "note": "The present used for a plan, exactly as English we are leaving does. partire da is where from and partire per is where to."
+          },
+          {
+            "display": "verso",
+            "cue": "around (a time), towards (a place)",
+            "tag": "free",
+            "forms": ["verso"],
+            "note": "Approximate: verso mezzogiorno, verso sera. For a place it means in the direction of, and it takes no article after it."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "Packing is fare la valigia, never impacchettare. And an approximate time takes verso, not circa, which counts quantities instead.",
+      "sound": "o FAT-to la va-LEE-ja, par-TYA-mo VEHR-so med-zo-JOR-no. valigia is va-LEE-ja, with the j of jam.",
+      "variations": [
+        {
+          "display": "Ho fatto la valigia, partiamo verso sera",
+          "cue": "I have packed, we are leaving around evening",
+          "changed": "when"
+        },
+        {
+          "display": "Ho fatto la valigia, partiamo domani",
+          "cue": "I have packed, we are leaving tomorrow",
+          "changed": "a day instead of an hour, so verso goes"
+        },
+        {
+          "display": "Partiamo verso mezzogiorno, ho già fatto la valigia",
+          "cue": "We are leaving around midday — I have already packed",
+          "changed": "the plan first and the packing as reassurance"
+        }
+      ],
+      "mistake": {
+        "display": "Ho fatto la valigia, partiamo circa mezzogiorno",
+        "why": "circa counts things — circa venti persone. An approximate time of day is verso mezzogiorno, and the two are not interchangeable."
+      },
+      "usage": "Texting somebody the night before a trip.",
+      "register": "informal",
+      "mnemonic": "verso a time, circa a number."
+    },
+    {
+      "id": "L4-M9-S10",
+      "display": "Che bella gita, siamo saliti in montagna a piedi",
+      "cue": "What a lovely day out — we walked up into the mountains",
+      "literal": "What beautiful outing, we-are gone-up in mountain at feet",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gita",
+            "cue": "day out, outing, excursion",
+            "tag": "free",
+            "forms": ["gita"],
+            "note": "A trip you come back from the same day, so it is not a viaggio. Fare una gita is the verb it goes with."
+          },
+          {
+            "display": "siamo saliti",
+            "cue": "we went up, we climbed",
+            "tag": "delta",
+            "forms": ["siamo saliti", "saliti", "salire", "salgo"],
+            "note": "salire on essere when it means going up somewhere, so the participle agrees with us. It is also the verb for getting ON a bus."
+          },
+          {
+            "display": "montagna",
+            "cue": "mountain, the mountains",
+            "tag": "free",
+            "forms": ["montagna"],
+            "note": "In montagna with no article, matching al mare and in campagna. It names the whole kind of place, not one peak."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "salire goes on essere here, so the participle agrees. abbiamo salito appears only when the verb takes an object, which this sentence does not give it.",
+      "sound": "ke BEL-la JEE-ta, SYA-mo sa-LEE-tee een mon-TA-nya a PYEH-dee.",
+      "variations": [
+        {
+          "display": "Che bella gita, siamo saliti in montagna in macchina",
+          "cue": "What a lovely day out — we drove up into the mountains",
+          "changed": "how you got up there"
+        },
+        {
+          "display": "Siamo saliti in montagna a piedi",
+          "cue": "We walked up into the mountains",
+          "changed": "the verdict dropped, leaving the bare account"
+        },
+        {
+          "display": "Che bella gita, siamo andati al lago",
+          "cue": "What a lovely day out — we went to the lake",
+          "changed": "where the day was spent"
+        }
+      ],
+      "mistake": {
+        "display": "Che bella gita, abbiamo salito in montagna a piedi",
+        "why": "With no object behind it, salire takes essere and its participle agrees: siamo saliti. abbiamo salito would need something climbed to be there."
+      },
+      "usage": "The line you send with the photographs on Sunday evening.",
+      "register": "informal",
+      "mnemonic": "Up on your own feet, up on essere."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L4-M9-C01", "display": "Siamo partiti presto e siamo arrivati a mezzogiorno", "cue": "We left early and we arrived at midday" },
+    { "id": "L4-M9-C02", "display": "Ci vogliono due ore per arrivare al lago", "cue": "It takes two hours to get to the lake" },
+    { "id": "L4-M9-C03", "display": "Ci vuole un'ora per arrivare in aereo", "cue": "It takes an hour to get there by plane" },
+    { "id": "L4-M9-C04", "display": "Gira a destra al semaforo, poi attraversa il ponte", "cue": "Turn right at the lights, then cross the bridge" },
+    { "id": "L4-M9-C05", "display": "Ci siamo fermati in campagna, vicino a un lago", "cue": "We stopped in the countryside, near a lake" },
+    { "id": "L4-M9-C06", "display": "Mi sono perso, ma ho trovato la strada", "cue": "I got lost, but I found the way" },
+    { "id": "L4-M9-C07", "display": "Un biglietto di andata e ritorno, per favore", "cue": "A return ticket, please" },
+    { "id": "L4-M9-C08", "display": "Scendi qui, l'albergo è vicino al mare", "cue": "Get off here, the hotel is near the sea" },
+    { "id": "L4-M9-C09", "display": "Ho fatto la valigia, partiamo verso mezzogiorno", "cue": "I have packed, we are leaving around midday" },
+    { "id": "L4-M9-C10", "display": "Che bella gita, siamo saliti in montagna a piedi", "cue": "What a lovely day out — we walked up into the mountains" },
+    { "id": "L4-M9-C11", "display": "Ci vogliono due ore in macchina", "cue": "It takes two hours by car" },
+    { "id": "L4-M9-C12", "display": "Il biglietto di ritorno è per domani", "cue": "The return ticket is for tomorrow" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

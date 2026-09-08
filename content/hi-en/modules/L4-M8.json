@@ -1,0 +1,609 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M8",
+  "title": "Back then",
+  "job": "Habits and states in the past; then against now",
+  "prerequisites": ["L4-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["simple_past", "present_simple", "past_habitual", "present_perfect"],
+    "allowedPatterns": [
+      "We would + V + every <time>",
+      "Back then + , + <past clause>",
+      "In those days + , + <clause> + but now + <clause>",
+      "We no longer + V",
+      "I do not + V + anymore"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "आदत वाला would बीते समय में बार-बार हुए काम को बताता है: In those days we would go to my grandmother's house. यह वही would है जो L2-M5 में would like था और जिसे L3-M4 ने शर्त के लिए उधार लिया. यहाँ उसी पंक्ति का तीसरा काम है — कोई नई पंक्ति नहीं खुलती, इसलिए would को उसी पुरानी जगह पर देखिए."
+    },
+    {
+      "tag": "delta",
+      "text": "और यही वह लकीर है जिसे ज़्यादातर पढ़ाई मिटा देती है: would सिर्फ़ काम बताता है, हालत नहीं. I would have a bicycle और we would be poor दोनों ग़लत हैं. हालत के लिए used to (L3-M10) या सादा past लीजिए: I had a bicycle, we were poor."
+    },
+    {
+      "tag": "interference",
+      "text": "हिंदी का करता था आदत और हालत दोनों को एक ही रूप में समेट लेता है, इसलिए इस बँटवारे का कोई इशारा हिंदी से नहीं मिलता. अंग्रेज़ी में बँटवारा असली है और यही इस पाठ की सबसे बड़ी ग़लती की जड़ है."
+    },
+    {
+      "tag": "free",
+      "text": "तब और अब का ढाँचा: एक तरफ़ back then, in those days और at that time; दूसरी तरफ़ now, these days और nowadays. यह क्रम हिंदी के पहले … अब … से हूबहू मिलता है, इसलिए यहाँ आप जाना-पहचाना पैराग्राफ़ नए पुर्ज़ों से बना रहे हैं."
+    },
+    {
+      "tag": "free",
+      "text": "आदत छोड़ने के दो रास्ते हैं और दोनों की जगह अलग है: no longer मुख्य क्रिया से पहले आता है — we no longer walk — और anymore नकार वाले वाक्य के आख़िर में — we do not walk anymore. अर्थ एक ही है."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M8-S01",
+      "display": "In those days we would go to my grandmother's house in summer.",
+      "cue": "उन दिनों हम गर्मियों में अपनी नानी के घर जाया करते थे.",
+      "literal": "में वे दिन हम जाया करते को मेरी नानी का घर में गर्मी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "in those days",
+            "cue": "उन दिनों",
+            "tag": "free",
+            "forms": ["in those days"],
+            "note": "तीनों शब्द साथ चलते हैं और वाक्य के आगे बैठते हैं; आगे कॉमा ले सकते हैं."
+          },
+          {
+            "display": "grandmother",
+            "cue": "दादी या नानी",
+            "tag": "delta",
+            "forms": ["grandmother", "grandmother's", "grandmothers"],
+            "note": "अंग्रेज़ी दादी और नानी में फ़र्क़ नहीं करती — दोनों के लिए एक ही शब्द."
+          },
+          {
+            "display": "summer",
+            "cue": "गर्मी",
+            "tag": "free",
+            "forms": ["summer", "summers"],
+            "note": "winter का जोड़ीदार. मौसम के आगे in आता है: in summer, in winter."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "We would be at my grandmother's house मत लिखिए. would काम बताता है, हालत नहीं.",
+      "sound": "would का l बिलकुल चुप है — वुड्, ठीक wood जैसा.",
+      "variations": [
+        {
+          "display": "In those days we would go to the village.",
+          "cue": "उन दिनों हम गाँव जाया करते थे.",
+          "changed": "नानी के घर की जगह गाँव"
+        },
+        {
+          "display": "We would go to my grandmother's house in summer.",
+          "cue": "हम गर्मियों में नानी के घर जाया करते थे.",
+          "changed": "in those days हट गया"
+        },
+        {
+          "display": "In those days we would go to the market.",
+          "cue": "उन दिनों हम बाज़ार जाया करते थे.",
+          "changed": "जगह और मौसम बदले"
+        }
+      ],
+      "mistake": {
+        "display": "In those days we would be at my grandmother's house",
+        "why": "would हालत नहीं बता सकता. यहाँ we were at my grandmother's house सही है."
+      },
+      "usage": "बचपन की किसी बार-बार होने वाली बात को याद करते समय.",
+      "register": "neutral",
+      "mnemonic": "would = बार-बार का काम, हालत नहीं."
+    },
+    {
+      "id": "L4-M8-S02",
+      "display": "Back then I had a bicycle, but now I take the bus.",
+      "cue": "उस ज़माने में मेरे पास साइकिल थी, पर अब मैं बस लेता हूँ.",
+      "literal": "पीछे तब मैं रखता एक साइकिल, पर अब मैं लेता वह बस.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "back then",
+            "cue": "उस ज़माने में",
+            "tag": "free",
+            "forms": ["back then"],
+            "note": "दोनों शब्द साथ चलते हैं. अकेला back (L2-M7) और अकेला then (L1-M10) इससे अलग हैं."
+          },
+          {
+            "display": "bicycle",
+            "cue": "साइकिल",
+            "tag": "free",
+            "forms": ["bicycle", "bicycles"],
+            "note": "इसके साथ have या ride आता है. रखना एक हालत है, इसलिए यहाँ had सही है."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "I would have a bicycle मत लिखिए. रखना एक हालत है और हालत के साथ had आता है.",
+      "sound": "bicycle के तीन हिस्से हैं और ज़ोर पहले पर — बाइ-सि-कल्.",
+      "variations": [
+        {
+          "display": "Back then I had a bicycle.",
+          "cue": "उस ज़माने में मेरे पास साइकिल थी.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "Back then we had one phone, but now we have three.",
+          "cue": "उस ज़माने में हमारे पास एक फ़ोन था, अब तीन हैं.",
+          "changed": "साइकिल की जगह फ़ोन"
+        },
+        {
+          "display": "I had a bicycle, but now I take the bus.",
+          "cue": "मेरे पास साइकिल थी, पर अब मैं बस लेता हूँ.",
+          "changed": "back then हट गया"
+        }
+      ],
+      "mistake": {
+        "display": "Back then I would have a bicycle, but now I take the bus",
+        "why": "would हालत के साथ नहीं आता. had लिखिए."
+      },
+      "usage": "पहले क्या था और अब क्या है, यह एक साँस में बताते समय.",
+      "register": "neutral",
+      "mnemonic": "back then का साथी हमेशा now होता है."
+    },
+    {
+      "id": "L4-M8-S03",
+      "display": "At that time we were poor, and we did not have a car.",
+      "cue": "उस समय हम ग़रीब थे, और हमारे पास गाड़ी नहीं थी.",
+      "literal": "पर वह समय हम थे ग़रीब, और हम किया नहीं रखना एक गाड़ी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "at that time",
+            "cue": "उस समय",
+            "tag": "free",
+            "forms": ["at that time"],
+            "note": "तीनों शब्द साथ चलते हैं और back then से थोड़े ज़्यादा औपचारिक हैं."
+          },
+          {
+            "display": "poor",
+            "cue": "ग़रीब",
+            "tag": "free",
+            "forms": ["poor", "poorer"],
+            "note": "यह एक हालत है, इसलिए इसके साथ were आता है — would be कभी नहीं."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "We would be poor मत लिखिए. ग़रीबी हालत है, आदत नहीं.",
+      "sound": "poor के दोनों अक्षर जुड़कर एक ही ध्वनि बनाते हैं — पुअर्.",
+      "variations": [
+        {
+          "display": "At that time we were poor.",
+          "cue": "उस समय हम ग़रीब थे.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "At that time we did not have a car.",
+          "cue": "उस समय हमारे पास गाड़ी नहीं थी.",
+          "changed": "पहला आधा हट गया"
+        },
+        {
+          "display": "We were poor, but we were happy.",
+          "cue": "हम ग़रीब थे, पर ख़ुश थे.",
+          "changed": "दूसरा आधा बदला"
+        }
+      ],
+      "mistake": {
+        "display": "At that time we would be poor, and we did not have a car",
+        "why": "हालत के लिए were चाहिए. would सिर्फ़ बार-बार के काम के लिए है."
+      },
+      "usage": "किसी बीते दौर की हालत बताते समय.",
+      "register": "neutral",
+      "mnemonic": "हालत के साथ were, आदत के साथ would."
+    },
+    {
+      "id": "L4-M8-S04",
+      "display": "We no longer walk to school. We go by bus these days.",
+      "cue": "हम अब स्कूल पैदल नहीं जाते. आजकल हम बस से जाते हैं.",
+      "literal": "हम नहीं ज़्यादा चलते को स्कूल. हम जाते से बस ये दिन.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "no longer",
+            "cue": "अब नहीं",
+            "tag": "delta",
+            "forms": ["no longer"],
+            "note": "मुख्य क्रिया से पहले बैठता है और ख़ुद ही नकार बना देता है — दूसरे not की ज़रूरत नहीं."
+          },
+          {
+            "display": "these days",
+            "cue": "आजकल",
+            "tag": "free",
+            "forms": ["these days"],
+            "note": "दोनों शब्द साथ चलते हैं और वाक्य के शुरू या आख़िर में आते हैं."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "We do not no longer walk मत लिखिए. no longer में नकार पहले से मौजूद है.",
+      "sound": "no longer में g हल्का पर मौजूद है — नो-लॉङ्-गर्.",
+      "variations": [
+        {
+          "display": "We no longer walk to school.",
+          "cue": "हम अब स्कूल पैदल नहीं जाते.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "These days we go by bus.",
+          "cue": "आजकल हम बस से जाते हैं.",
+          "changed": "पहला आधा हट गया"
+        },
+        {
+          "display": "He no longer works here.",
+          "cue": "वह अब यहाँ काम नहीं करता.",
+          "changed": "हम की जगह वह"
+        }
+      ],
+      "mistake": {
+        "display": "We do not no longer walk to school",
+        "why": "no longer में नकार पहले से है. सिर्फ़ We no longer walk लिखिए."
+      },
+      "usage": "कोई पुरानी आदत छूट गई, यह बताते समय.",
+      "register": "neutral",
+      "mnemonic": "no longer क्रिया से पहले, और अकेला ही नकार."
+    },
+    {
+      "id": "L4-M8-S05",
+      "display": "I do not go to that market anymore. The market has changed.",
+      "cue": "मैं अब उस बाज़ार नहीं जाता. बाज़ार बदल गया है.",
+      "literal": "मैं करता नहीं जाना को वह बाज़ार अब और. वह बाज़ार है बदला.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "anymore",
+            "cue": "अब और नहीं",
+            "tag": "delta",
+            "forms": ["anymore"],
+            "note": "वाक्य के आख़िर में आता है और सिर्फ़ नकार के साथ. no longer वही बात आगे बैठकर कहता है."
+          },
+          {
+            "display": "changed",
+            "cue": "बदल गया",
+            "tag": "free",
+            "forms": ["change", "changed", "changes"],
+            "note": "जगह, शहर और ज़माने के बदलने के लिए अंग्रेज़ी का सबसे आम शब्द."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "I go to that market anymore मत लिखिए. anymore बिना नकार के नहीं चलता.",
+      "sound": "anymore के तीनों हिस्से जुड़ जाते हैं — ऐ-नि-मोर्.",
+      "variations": [
+        {
+          "display": "I do not go to that market anymore.",
+          "cue": "मैं अब उस बाज़ार नहीं जाता.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "The city has changed.",
+          "cue": "शहर बदल गया है.",
+          "changed": "बाज़ार की जगह शहर"
+        },
+        {
+          "display": "We do not walk anymore.",
+          "cue": "हम अब पैदल नहीं चलते.",
+          "changed": "छोटा रूप"
+        }
+      ],
+      "mistake": {
+        "display": "I go to that market anymore. The market has changed",
+        "why": "anymore सिर्फ़ नकार के साथ आता है: I do not go to that market anymore."
+      },
+      "usage": "अब कहीं जाना छोड़ दिया, यह बताते समय.",
+      "register": "informal",
+      "mnemonic": "anymore आख़िर में, और हमेशा not के साथ."
+    },
+    {
+      "id": "L4-M8-S06",
+      "display": "My village was small. It is a busy town now.",
+      "cue": "मेरा गाँव छोटा था. अब वह एक व्यस्त क़स्बा है.",
+      "literal": "मेरा गाँव था छोटा. वह है एक व्यस्त क़स्बा अब.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "village",
+            "cue": "गाँव",
+            "tag": "free",
+            "forms": ["village", "villages"],
+            "note": "सबसे छोटी बस्ती. town उससे बड़ा है और city (L3-M10) सबसे बड़ा."
+          },
+          {
+            "display": "town",
+            "cue": "क़स्बा",
+            "tag": "delta",
+            "forms": ["town", "towns"],
+            "note": "गाँव और शहर के बीच का दर्जा. अंग्रेज़ी यह बीच वाला दर्जा अलग से गिनती है."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "हर बड़ी बस्ती को city मत कहिए. अंग्रेज़ी village, town और city तीनों को अलग गिनती है.",
+      "sound": "village में दूसरा हिस्सा दब जाता है — विल्-इज्.",
+      "variations": [
+        {
+          "display": "My village was small.",
+          "cue": "मेरा गाँव छोटा था.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "It is a busy town now.",
+          "cue": "अब वह एक व्यस्त क़स्बा है.",
+          "changed": "पहला आधा हट गया"
+        },
+        {
+          "display": "My village is a busy town these days.",
+          "cue": "आजकल मेरा गाँव एक व्यस्त क़स्बा है.",
+          "changed": "दोनों आधे एक वाक्य में"
+        }
+      ],
+      "mistake": {
+        "display": "My village were small. It is a busy town now",
+        "why": "village एकवचन है, इसलिए was आता है."
+      },
+      "usage": "अपनी जगह के बदल जाने की बात करते समय.",
+      "register": "neutral",
+      "mnemonic": "village सबसे छोटा, town बीच में, city सबसे बड़ा."
+    },
+    {
+      "id": "L4-M8-S07",
+      "display": "I grew up in a village, and my childhood was very happy.",
+      "cue": "मैं गाँव में बड़ा हुआ, और मेरा बचपन बहुत ख़ुशहाल था.",
+      "literal": "मैं बड़ा हुआ में एक गाँव, और मेरा बचपन था बहुत ख़ुश.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "grew up",
+            "cue": "बड़ा हुआ",
+            "tag": "delta",
+            "forms": ["grow up", "grew up", "grows up"],
+            "note": "दोनों शब्द साथ चलते हैं. up के बिना अर्थ सिर्फ़ लंबाई बढ़ने का रह जाता है."
+          },
+          {
+            "display": "childhood",
+            "cue": "बचपन",
+            "tag": "free",
+            "forms": ["childhood"],
+            "note": "child में hood जुड़ने से बना — hood का मतलब वह दौर या वह हालत."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "I grew in a village मत लिखिए. बड़ा होना के लिए up ज़रूरी है.",
+      "sound": "grew up बोलचाल में जुड़ जाता है — ग्रू-अप्.",
+      "variations": [
+        {
+          "display": "I grew up in a village.",
+          "cue": "मैं गाँव में बड़ा हुआ.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "I grew up in a small town.",
+          "cue": "मैं एक छोटे क़स्बे में बड़ा हुआ.",
+          "changed": "गाँव की जगह क़स्बा"
+        },
+        {
+          "display": "My childhood was very happy.",
+          "cue": "मेरा बचपन बहुत ख़ुशहाल था.",
+          "changed": "पहला आधा हट गया"
+        }
+      ],
+      "mistake": {
+        "display": "I grew in a village, and my childhood was very happy",
+        "why": "grow up एक जोड़ा है. up के बिना अर्थ लंबाई का हो जाता है."
+      },
+      "usage": "अपने बचपन की जगह बताते समय.",
+      "register": "neutral",
+      "mnemonic": "grew up = बड़ा हुआ, अकेला grew = लंबा हुआ."
+    },
+    {
+      "id": "L4-M8-S08",
+      "display": "My father is old now. In those days he would work every day.",
+      "cue": "मेरे पिता अब बूढ़े हैं. उन दिनों वे रोज़ काम किया करते थे.",
+      "literal": "मेरा पिता है बूढ़ा अब. में वे दिन वह काम करता हर दिन.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "old",
+            "cue": "बूढ़ा",
+            "tag": "free",
+            "forms": ["old", "older", "oldest"],
+            "note": "आदमी के लिए बूढ़ा और चीज़ के लिए पुराना. young (L2-M2) इसका उल्टा है."
+          }
+        ],
+        "rules": [0, 1, 3]
+      },
+      "trap": "He would be old मत लिखिए. बूढ़ा होना एक हालत है — He is old.",
+      "sound": "old में l हल्का पर मौजूद है — ओल्ड्.",
+      "variations": [
+        {
+          "display": "My father is old now.",
+          "cue": "मेरे पिता अब बूढ़े हैं.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "In those days he would work every day.",
+          "cue": "उन दिनों वे रोज़ काम किया करते थे.",
+          "changed": "पहला आधा हट गया"
+        },
+        {
+          "display": "My father would work every day.",
+          "cue": "मेरे पिता रोज़ काम किया करते थे.",
+          "changed": "in those days हट गया"
+        }
+      ],
+      "mistake": {
+        "display": "My father would be old now. In those days he would work every day",
+        "why": "would हालत के साथ नहीं आता. is old लिखिए."
+      },
+      "usage": "किसी के पुराने काम और आज की हालत को साथ रखते समय.",
+      "register": "neutral",
+      "mnemonic": "old एक हालत है — इसके साथ is, would नहीं."
+    },
+    {
+      "id": "L4-M8-S09",
+      "display": "Nowadays everything is expensive. Back then a cup of tea was cheap.",
+      "cue": "आजकल सब कुछ महँगा है. उस ज़माने में एक कप चाय सस्ती थी.",
+      "literal": "आजकल सब कुछ है महँगा. पीछे तब एक कप का चाय थी सस्ती.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nowadays",
+            "cue": "आजकल",
+            "tag": "free",
+            "forms": ["nowadays"],
+            "note": "these days का एक-शब्द रूप, थोड़ा ज़्यादा लिखने वाला. वाक्य के आगे या पीछे दोनों जगह चलता है."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "Nowadays को now मत बनाइए. now इसी पल की बात है, nowadays पूरे दौर की.",
+      "sound": "nowadays के तीन हिस्से हैं और ज़ोर पहले पर — नाउ-अ-डेज़्.",
+      "variations": [
+        {
+          "display": "Nowadays everything is expensive.",
+          "cue": "आजकल सब कुछ महँगा है.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "Back then a cup of tea was cheap.",
+          "cue": "उस ज़माने में एक कप चाय सस्ती थी.",
+          "changed": "पहला आधा हट गया"
+        },
+        {
+          "display": "These days everything is expensive.",
+          "cue": "आजकल सब कुछ महँगा है.",
+          "changed": "nowadays की जगह these days"
+        }
+      ],
+      "mistake": {
+        "display": "Now everything is expensive. Back then a cup of tea was cheap",
+        "why": "पूरे दौर की बात है, इसलिए Nowadays या These days सही है."
+      },
+      "usage": "महँगाई या ज़माने के बदलाव पर बात करते समय.",
+      "register": "neutral",
+      "mnemonic": "now इसी पल, nowadays इस दौर."
+    },
+    {
+      "id": "L4-M8-S10",
+      "display": "In my childhood we had one bicycle. These days everything has changed.",
+      "cue": "मेरे बचपन में हमारे पास एक साइकिल थी. आजकल सब कुछ बदल गया है.",
+      "literal": "में मेरा बचपन हम रखते एक साइकिल. ये दिन सब कुछ है बदला.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "everything",
+            "cue": "सब कुछ",
+            "tag": "delta",
+            "forms": ["everything"],
+            "note": "एक ही शब्द है, दो नहीं, और इसके साथ क्रिया हमेशा एकवचन में आती है: everything is, everything has."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "Everything are expensive मत लिखिए. everything अकेला माना जाता है — everything is.",
+      "sound": "everything में बीच वाला हिस्सा दब जाता है — एव्-रि-थिंग्.",
+      "variations": [
+        {
+          "display": "These days everything has changed.",
+          "cue": "आजकल सब कुछ बदल गया है.",
+          "changed": "पहला आधा हट गया"
+        },
+        {
+          "display": "In my childhood we had one bicycle.",
+          "cue": "मेरे बचपन में हमारे पास एक साइकिल थी.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "Everything is expensive these days.",
+          "cue": "आजकल सब कुछ महँगा है.",
+          "changed": "बदलाव की जगह महँगाई"
+        }
+      ],
+      "mistake": {
+        "display": "In my childhood we had one bicycle. These days everything have changed",
+        "why": "everything एकवचन है — everything has changed."
+      },
+      "usage": "पूरे बदलाव को एक वाक्य में समेटते समय.",
+      "register": "neutral",
+      "mnemonic": "everything एक है — इसके साथ is और has."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M8-C01",
+      "display": "In those days we would go to my grandmother's house.",
+      "cue": "उन दिनों हम नानी के घर जाया करते थे."
+    },
+    {
+      "id": "L4-M8-C02",
+      "display": "Back then I had a bicycle.",
+      "cue": "उस ज़माने में मेरे पास साइकिल थी."
+    },
+    {
+      "id": "L4-M8-C03",
+      "display": "At that time we were poor.",
+      "cue": "उस समय हम ग़रीब थे."
+    },
+    {
+      "id": "L4-M8-C04",
+      "display": "We no longer walk to school.",
+      "cue": "हम अब स्कूल पैदल नहीं जाते."
+    },
+    {
+      "id": "L4-M8-C05",
+      "display": "I do not go to that market anymore.",
+      "cue": "मैं अब उस बाज़ार नहीं जाता."
+    },
+    {
+      "id": "L4-M8-C06",
+      "display": "My village was small, but now it is a busy town.",
+      "cue": "मेरा गाँव छोटा था, पर अब वह एक व्यस्त क़स्बा है."
+    },
+    {
+      "id": "L4-M8-C07",
+      "display": "I grew up in a village.",
+      "cue": "मैं गाँव में बड़ा हुआ."
+    },
+    {
+      "id": "L4-M8-C08",
+      "display": "My father is old now.",
+      "cue": "मेरे पिता अब बूढ़े हैं."
+    },
+    {
+      "id": "L4-M8-C09",
+      "display": "Nowadays everything is expensive.",
+      "cue": "आजकल सब कुछ महँगा है."
+    },
+    {
+      "id": "L4-M8-C10",
+      "display": "These days we go by bus.",
+      "cue": "आजकल हम बस से जाते हैं."
+    },
+    {
+      "id": "L4-M8-C11",
+      "display": "My childhood was very happy.",
+      "cue": "मेरा बचपन बहुत ख़ुशहाल था."
+    },
+    {
+      "id": "L4-M8-C12",
+      "display": "Back then a cup of tea was cheap.",
+      "cue": "उस ज़माने में एक कप चाय सस्ती थी."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

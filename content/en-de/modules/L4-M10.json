@@ -1,0 +1,475 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M10",
+  "title": "A story with a twist",
+  "job": "A six-sentence narrative with a line of dialogue inside it",
+  "prerequisites": ["L4-M9"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["present", "Perfekt", "Präteritum"],
+    "allowedPatterns": [
+      "<six-sentence narrative>",
+      "Plötzlich + V-2(Prät) + <Subjekt>",
+      "„<direct speech>“ + , + sagte + er",
+      "Er fragte + : + „<direct speech>“",
+      "Erst danach + V-2 + ich + <rest>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "GERMAN QUOTATION MARKS ARE LOW-THEN-HIGH: „ opens at the foot of the line and “ closes at the top. English writes “like this” and German writes „so“. The word index cannot see the difference — punctuation at the edge of a token is stripped before a word is looked up — but a reader can, and English quotation marks on a German page are wrong even though nothing will flag them."
+    },
+    {
+      "tag": "delta",
+      "text": "THE REPORTING CLAUSE INVERTS AFTER A QUOTE. „Ich komme gleich“, sagte er — verb first, subject second, with nothing fronted at all. This is the one place in German where the verb comes before its subject without something occupying position one, and it is the last word-order fact this ladder has to give. er sagte after a quote is what marks a text as translated out of English."
+    },
+    {
+      "tag": "delta",
+      "text": "A COLON INTRODUCES SPEECH THAT FOLLOWS THE REPORTING CLAUSE: Er fragte: „Wo warst du?“ Reporting clause, colon, opening low quotes, the speech, closing high quotes. Put the reporting clause after the speech instead and it takes a comma and inverts, as rule 1 says. Those are the only two shapes, and every story alternates between them."
+    },
+    {
+      "tag": "delta",
+      "text": "THE REPORTING VERB IS PRÄTERITUM; THE SPEECH KEEPS ITS OWN TENSE. sagte, fragte, rief, antwortete — this is a written story, and that is L4-M8's tense. Inside the quotation marks the words stay exactly as they were spoken, in whatever tense the speaker used, because German does not shift a tense backwards when reporting. That is L3-M5's no-backshift rule, finally shown rather than described."
+    },
+    {
+      "tag": "free",
+      "text": "AN ACCOUNT IS WHAT HAPPENED; A STORY HAS A TURN IN IT. L3-M10 asked for the sequence — first, then, after that, finally. This module asks for a setup, a turn and a line of speech, in at most six sentences. Six is a ceiling, not a target, and an item that is six sentences of sequence is a timetable rather than a story. The best turn is one that rests on a WORD rather than an event: a bis that meant see you and not until, one word understood out of a whole question."
+    },
+    {
+      "tag": "delta",
+      "text": "THE TENSE YOU HAVE BEEN READING IS NOT THE TENSE YOU HAVE BEEN SPEAKING. Wir fuhren nach Berlin is what a book writes; Wir sind nach Berlin gefahren is what a person says, and both are the same past. The level closes on that split because it is the one thing a learner cannot get from a grammar table: the choice is register, not meaning."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M10-S01",
+      "display": "Gestern saß ich am Bahnhof. Mein Kollege rief laut: „Bis später!“ Ich blieb eine Stunde dort. Er kam aber nicht mehr. „Bis später“ war kein Termin.",
+      "cue": "Yesterday I was sitting at the station. My colleague called out: “See you later!” I stayed there an hour. But he did not come back. “See you later” was not an appointment.",
+      "literal": "Yesterday sat I at-the station. My colleague called loud: Until later! I stayed an hour there. He came however not more. Until later was no appointment.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rief",
+            "cue": "called, called out (past of rufen)",
+            "tag": "delta",
+            "forms": ["rief", "riefen"],
+            "note": "Strong: the u of rufen becomes ie. It is L3-M1's ruft in the past, and one of the four verbs a written story reports with."
+          },
+          {
+            "display": "laut",
+            "cue": "loud, loudly",
+            "tag": "free",
+            "forms": ["laut"],
+            "note": "One word for both the adjective and the adverb: eine laute Stimme, laut rufen. Its opposite is leise."
+          }
+        ],
+        "rules": [2, 3, 4]
+      },
+      "trap": "Bis später is L2-M6's goodbye, not the bis of a time clause. The whole turn of this story is that the narrator read the first as the second.",
+      "sound": "GES-tern zaas ikh am BAAN-hohf. myn kol-AY-guh reef LOWT: bis SHPAY-ter. ikh bleep EYE-nuh SHTOON-duh dort. air kaam AA-ber nikht mair. bis SHPAY-ter var kyn ter-MEEN.",
+      "variations": [
+        {
+          "display": "„Bis später!“, rief mein Kollege laut",
+          "cue": "“See you later!” my colleague called out",
+          "changed": "The reporting clause moved behind the quote, so it inverts: rief mein Kollege, verb before subject, with a comma in front."
+        }
+      ],
+      "mistake": {
+        "display": "„Bis später!“, mein Kollege rief laut",
+        "why": "After a quote the reporting clause inverts: rief mein Kollege. Subject before verb here is the English he said order carried straight across."
+      },
+      "usage": "A story told against yourself about a phrase you took literally.",
+      "register": "neutral",
+      "mnemonic": "Bis plus a time is goodbye; bis plus a verb is until."
+    },
+    {
+      "id": "L4-M10-S02",
+      "display": "Der Mann am Schalter fragte: „Haben Sie das Formular?“ Ich antwortete: „Nein, leider nicht.“ „Kein Problem“, sagte er dann.",
+      "cue": "The man at the counter asked: “Do you have the form?” I answered: “No, unfortunately not.” “No problem,” he said then.",
+      "literal": "The man at-the counter asked: Have you the form? I answered: No, unfortunately not. No problem, said he then.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fragte",
+            "cue": "asked (past of fragen)",
+            "tag": "delta",
+            "forms": ["fragte", "fragten"],
+            "note": "Weak: frag- plus -te. It takes a colon and a quote after it, or a comma and an inversion in front of one."
+          },
+          {
+            "display": "antwortete",
+            "cue": "answered (past of antworten)",
+            "tag": "delta",
+            "forms": ["antwortete", "antworteten"],
+            "note": "Weak with the extra e a t-stem needs, like arbeitete. Answering a PERSON takes a dative: Ich antwortete ihm."
+          }
+        ],
+        "rules": [0, 1, 2, 3]
+      },
+      "trap": "Both shapes are in this one item. A reporting clause in front takes a colon and no inversion; one behind takes a comma and inverts.",
+      "sound": "dair man am SHAL-ter FRAAK-tuh: HAA-bun zee das for-moo-LAAR? ikh ANT-vor-tuh-tuh: nyn, LY-der nikht. kyn pro-BLAYM, ZAAK-tuh air dan.",
+      "variations": [
+        {
+          "display": "„Haben Sie das Formular?“, fragte der Mann am Schalter",
+          "cue": "“Do you have the form?” asked the man at the counter",
+          "changed": "The reporting clause moved behind, so the colon becomes a comma and fragte comes before its subject."
+        }
+      ],
+      "mistake": {
+        "display": "Der Mann am Schalter fragte, „Haben Sie das Formular?“",
+        "why": "A reporting clause in FRONT of the speech takes a colon, not a comma. The comma belongs to the other shape, where the clause follows the quote."
+      },
+      "usage": "Retelling a short exchange at a counter.",
+      "register": "neutral",
+      "mnemonic": "Clause first, colon. Quote first, comma and a flip."
+    },
+    {
+      "id": "L4-M10-S03",
+      "display": "Wir fuhren nach München. Auf einmal blieb der Zug stehen. „Was ist das?“, fragte meine Frau leise. Nach zwanzig Minuten fuhren wir weiter. Das war wirklich Glück.",
+      "cue": "We were going to Munich. All at once the train stopped. “What is that?” my wife asked quietly. After twenty minutes we travelled on. That really was luck.",
+      "literal": "We travelled to Munich. On once stayed the train stand. What is that?, asked my wife quiet. After twenty minutes travelled we further. That was really luck.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "auf einmal",
+            "cue": "all at once, suddenly",
+            "tag": "free",
+            "forms": ["auf einmal"],
+            "note": "Two words, one idea, and it opens a turn in a story. plötzlich (L3-M10) is its single-word twin and is a shade sharper."
+          },
+          {
+            "display": "Glück",
+            "cue": "luck, good fortune",
+            "tag": "free",
+            "forms": ["Glück"],
+            "note": "Neuter: das Glück, and it never takes a plural. L3-M10's fixed zum Glück — luckily — is built out of this same noun."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "blieb stehen is stopped, not stayed standing. bleiben plus an infinitive is how German says something came to a halt and remained there.",
+      "sound": "veer FOO-run naakh MUEN-khun. owf EYE-mal bleep dair tsook SHTAY-un. vas ist das?, FRAAK-tuh MY-nuh frow LY-zuh. naakh TSVAN-tsikh mee-NOO-tun FOO-run veer VY-ter. das var VEER-likh GLUEK.",
+      "variations": [
+        {
+          "display": "Plötzlich blieb der Zug stehen, und alle waren ganz leise",
+          "cue": "Suddenly the train stopped, and everybody was completely quiet",
+          "changed": "plötzlich for auf einmal — the same turn in one word instead of two. plötzlich is L3-M10's row and keeps its note there."
+        }
+      ],
+      "mistake": {
+        "display": "Auf einmal der Zug blieb stehen. Das war wirklich Glück.",
+        "why": "Auf einmal fills position one, so the verb comes second: blieb der Zug. A two-word adverb counts as one first position, not as two."
+      },
+      "usage": "A travel story with a small scare in the middle of it.",
+      "register": "neutral",
+      "mnemonic": "auf einmal turns the story; the verb turns right after it."
+    },
+    {
+      "id": "L4-M10-S04",
+      "display": "Ich fragte den Kollegen: „Ist der Schalter heute geöffnet?“ Er nickte nur. Dann sagte er: „Aber nur bis zwölf.“",
+      "cue": "I asked my colleague: “Is the counter open today?” He only nodded. Then he said: “But only until twelve.”",
+      "literal": "I asked the colleague: Is the counter today opened? He nodded only. Then said he: But only until twelve.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nickte",
+            "cue": "nodded (past of nicken)",
+            "tag": "free",
+            "forms": ["nickte", "nickten"],
+            "note": "Weak, and it is what a story uses instead of a yes. A nod answers the question without a line of speech at all."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "Dann sagte er, not Dann er sagte. The reporting clause is an ordinary main clause, so a fronted adverb inverts it exactly like any other.",
+      "sound": "ikh FRAAK-tuh dayn kol-AY-gun: ist dair SHAL-ter HOY-tuh guh-URF-net? air NIK-tuh noor. dan ZAAK-tuh air: AA-ber noor bis TSVURLF.",
+      "variations": [
+        {
+          "display": "Ich fragte den Kollegen, ob der Schalter heute geöffnet ist",
+          "cue": "I asked my colleague whether the counter was open today",
+          "changed": "The quote becomes an indirect question with ob (L3-M5), so the verb goes to the end and the quotation marks disappear."
+        }
+      ],
+      "mistake": {
+        "display": "Ich fragte den Kollegen: „Ist der Schalter heute geöffnet?“ Dann er sagte: „Aber nur bis zwölf.“",
+        "why": "Dann is in first position, so the verb must be second: Dann sagte er. Being a reporting clause does not exempt it from V-2."
+      },
+      "usage": "Passing on an answer that came half in words and half in a gesture.",
+      "register": "neutral",
+      "mnemonic": "A nod is a line of dialogue with no words in it."
+    },
+    {
+      "id": "L4-M10-S05",
+      "display": "Im Büro war es ganz leise. Der Chef fragte: „Wo sind alle?“ Ich sagte: „Heute ist Samstag.“ Er lachte und ging wieder nach Hause.",
+      "cue": "It was completely quiet in the office. The boss asked: “Where is everybody?” I said: “It is Saturday today.” He laughed and went home again.",
+      "literal": "In-the office was it quite quiet. The boss asked: Where are all? I said: Today is Saturday. He laughed and went again to home.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "leise",
+            "cue": "quiet, quietly, softly",
+            "tag": "free",
+            "forms": ["leise"],
+            "note": "The opposite of laut, and like laut it does duty as adjective and adverb: eine leise Stimme, leise sagen."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "Wo sind alle? takes a plural verb: alle is treated as several people. English everybody takes a singular and German's alle does not.",
+      "sound": "im bue-ROH var es gants LY-zuh. dair shef FRAAK-tuh: voh zint AL-uh? ikh ZAAK-tuh: HOY-tuh ist ZAMS-taak. air LAKH-tuh oont ging VEE-der naakh HOW-zuh.",
+      "variations": [
+        {
+          "display": "„Wo sind alle?“, fragte der Chef ganz leise",
+          "cue": "“Where is everybody?” the boss asked very quietly",
+          "changed": "The quote first, so the clause behind it inverts: fragte der Chef. leise moves to the end as an adverb of manner."
+        }
+      ],
+      "mistake": {
+        "display": "Im Büro war es ganz leise. Der Chef fragte: „Wo ist alle?“",
+        "why": "alle is plural — all of them — so the verb is sind. ist would need alles, which means everything rather than everybody."
+      },
+      "usage": "A small office story whose whole point is the day of the week.",
+      "register": "neutral",
+      "mnemonic": "laut fills the room; leise empties it."
+    },
+    {
+      "id": "L4-M10-S06",
+      "display": "Wir fuhren einmal nach Berlin und blieben eine Woche. So sagt man es im Buch. Aber ich sagte es so: „Wir sind nach Berlin gefahren.“",
+      "cue": "We went to Berlin once and stayed a week. That is how a book says it. But I said it like this: “We went to Berlin.”",
+      "literal": "We travelled once to Berlin and stayed a week. So says one it in-the book. But I said it so: We are to Berlin travelled.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "einmal",
+            "cue": "once, one time",
+            "tag": "free",
+            "forms": ["einmal"],
+            "note": "One word: einmal is once. noch einmal is once more, and L4-M5's mal is this same word worn down to a particle."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "Both halves are the same past and neither is more correct. fuhren is the tense of the book; sind gefahren is the tense of the person telling you.",
+      "sound": "veer FOO-run EYE-mal naakh ber-LEEN oont BLEE-bun EYE-nuh VOKH-uh. zoh zakt man es im bookh. AA-ber ikh ZAAK-tuh es zoh: veer zint naakh ber-LEEN guh-FAA-run.",
+      "variations": [
+        {
+          "display": "Wir sind einmal nach Berlin gefahren und eine Woche geblieben",
+          "cue": "We went to Berlin once and stayed a week",
+          "changed": "The whole first sentence moved into the Perfekt — the spoken version, with both verbs taking sein because both are movement or state."
+        }
+      ],
+      "mistake": {
+        "display": "Wir fuhren einmal nach Berlin und sind eine Woche geblieben",
+        "why": "Not ungrammatical, but the register wobbles inside one sentence: a written Präteritum and a spoken Perfekt joined by und. Pick one and hold it."
+      },
+      "usage": "Showing somebody the same memory in the two tenses German keeps for it.",
+      "register": "neutral",
+      "mnemonic": "The book uses fuhren; the person uses sind gefahren."
+    },
+    {
+      "id": "L4-M10-S07",
+      "display": "Der Kollege fragte: „Gehen wir zusammen?“ Ich verstand nur ein Wort und sagte ja. Auf einmal saß ich im Bus nach Berlin. Das wollte ich nicht.",
+      "cue": "My colleague asked: “Shall we go together?” I understood only one word and said yes. All at once I was sitting on the bus to Berlin. That was not what I wanted.",
+      "literal": "The colleague asked: Go we together? I understood only one word and said yes. On once sat I in-the bus to Berlin. That wanted I not.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Wort",
+            "cue": "word",
+            "tag": "free",
+            "forms": ["Wort", "Worte"],
+            "note": "Neuter: das Wort. Worte are words in a speech that hang together; single words in a list are Wörter, as in Wörterbuch."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "Gehen wir zusammen? with no question word is both are we going and shall we go. German has one form; only the situation says which is meant, and this story turns on that.",
+      "sound": "dair kol-AY-guh FRAAK-tuh: GAY-un veer tsoo-ZAM-un? ikh fair-SHTANT noor yn vort oont ZAAK-tuh yaa. owf EYE-mal zaas ikh im boos naakh ber-LEEN. das VOL-tuh ikh nikht.",
+      "variations": [
+        {
+          "display": "„Gehen wir zusammen?“, fragte der Kollege",
+          "cue": "“Shall we go together?” asked my colleague",
+          "changed": "Quote first, so the reporting clause inverts and loses its colon: fragte der Kollege, after a comma."
+        }
+      ],
+      "mistake": {
+        "display": "Der Kollege fragte: „Gehen wir zusammen?“ Ich verstand nur eine Wort",
+        "why": "Wort is neuter, so the article is ein and never eine. The -t ending tempts an English ear towards a feminine that is not there."
+      },
+      "usage": "The classic story of agreeing to something you did not follow.",
+      "register": "neutral",
+      "mnemonic": "One Wort is enough to get you onto the wrong bus."
+    },
+    {
+      "id": "L4-M10-S08",
+      "display": "Ich dachte, der Zug fährt um acht ab. Auf einmal war es schon neun. „Der nächste Zug kommt um zehn“, sagte eine Frau leise.",
+      "cue": "I thought the train left at eight. All at once it was already nine. “The next train comes at ten,” a woman said quietly.",
+      "literal": "I thought, the train travels at eight off. On once was it already nine. The next train comes at ten, said a woman quiet.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dachte",
+            "cue": "thought (past of denken)",
+            "tag": "delta",
+            "forms": ["dachte", "dachten"],
+            "note": "Mixed: it takes the weak -te but changes its vowel and consonant too — denken, dachte. A handful of verbs behave this way."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "The reported clause keeps its present tense: der Zug fährt, not fuhr. German does not shift a tense back after a past reporting verb, which is L3-M5's rule.",
+      "sound": "ikh DAKH-tuh, dair tsook fairt oom akht AP. owf EYE-mal var es shone noyn. dair NAYKH-stuh tsook komt oom TSAYN, ZAAK-tuh EYE-nuh frow LY-zuh.",
+      "variations": [
+        {
+          "display": "Ich dachte, dass der Zug schon um acht kommt",
+          "cue": "I thought that the train came at eight already",
+          "changed": "With dass the reported clause becomes subordinate, so its verb goes to the very end: dass der Zug … kommt."
+        }
+      ],
+      "mistake": {
+        "display": "Ich dachte, der Zug fuhr um acht ab",
+        "why": "German keeps the tense the thought had: fährt. Shifting it back to fuhr is the English sequence of tenses, and it changes what was thought."
+      },
+      "usage": "Explaining a missed train to somebody waiting for you.",
+      "register": "neutral",
+      "mnemonic": "denken bends twice: dachte."
+    },
+    {
+      "id": "L4-M10-S09",
+      "display": "Meine Oma sagte immer: „Früher war alles besser.“ Dann lachte sie laut. „Aber nicht alles“, sagte mein Opa.",
+      "cue": "My grandmother always said: “Everything used to be better.” Then she laughed out loud. “But not everything,” my grandfather said.",
+      "literal": "My grandma said always: Earlier was everything better. Then laughed she loud. But not everything, said my grandpa.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lachte",
+            "cue": "laughed (past of lachen)",
+            "tag": "free",
+            "forms": ["lachte", "lachten"],
+            "note": "Weak: lach- plus -te. Laughing AT somebody takes über plus the accusative, not an object on its own."
+          }
+        ],
+        "rules": [1, 2, 3]
+      },
+      "trap": "Both reporting clauses invert, for different reasons: Dann lachte sie because Dann is fronted, sagte mein Opa because it follows a quote.",
+      "sound": "MY-nuh OH-maa ZAAK-tuh IM-er: FRUE-er var AL-es BES-er. dan LAKH-tuh zee lowt. AA-ber nikht AL-es, ZAAK-tuh myn OH-paa.",
+      "variations": [
+        {
+          "display": "„Früher war alles besser“, sagte meine Oma immer",
+          "cue": "“Everything used to be better,” my grandmother always said",
+          "changed": "The clause moved behind the quote, so the colon becomes a comma and sagte comes before meine Oma."
+        }
+      ],
+      "mistake": {
+        "display": "„Aber nicht alles“, mein Opa sagte",
+        "why": "After a quote the verb leads: sagte mein Opa. This is the one inversion with nothing in first position at all, and it is not optional."
+      },
+      "usage": "A family exchange remembered in three lines.",
+      "register": "neutral",
+      "mnemonic": "After the closing quote, the verb steps out first."
+    },
+    {
+      "id": "L4-M10-S10",
+      "display": "Am Ende fragte meine Frau: „War das schön?“ Ich verstand sie nicht und lachte nur. Dann nickte sie: „Ja, es war schön.“",
+      "cue": "At the end my wife asked: “Was that nice?” I did not understand her and only laughed. Then she nodded: “Yes, it was nice.”",
+      "literal": "At-the end asked my wife: Was that beautiful? I understood her not and laughed only. Then nodded she: Yes, it was beautiful.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "verstand",
+            "cue": "understood (past of verstehen)",
+            "tag": "delta",
+            "forms": ["verstand", "verstanden"],
+            "note": "Strong, and it takes no ge- in the Perfekt either — verstanden — because the unstressed ver- refuses one."
+          }
+        ],
+        "rules": [1, 2, 4]
+      },
+      "trap": "verstand is the past of understanding, not of standing. verstehen and stehen only look related; their meanings parted company long ago.",
+      "sound": "am EN-duh FRAAK-tuh MY-nuh frow: var das shurn? ikh fair-SHTANT zee nikht oont LAKH-tuh noor. dan NIK-tuh zee: yaa, es var shurn.",
+      "variations": [
+        {
+          "display": "„War das schön?“, fragte meine Frau am Ende",
+          "cue": "“Was that nice?” my wife asked at the end",
+          "changed": "Quote first, clause behind, so fragte inverts and Am Ende moves to the tail as an ordinary time phrase."
+        }
+      ],
+      "mistake": {
+        "display": "Am Ende meine Frau fragte: „War das schön?“",
+        "why": "Am Ende is in first position, so the verb takes second: Am Ende fragte meine Frau. The rule that closes this level is the one that opened it."
+      },
+      "usage": "Closing a day, and a story, on a question neither of you quite answered.",
+      "register": "neutral",
+      "mnemonic": "verstehen never stood still."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M10-C01",
+      "display": "Mein Kollege rief laut: „Bis später!“",
+      "cue": "My colleague called out: “See you later!”"
+    },
+    {
+      "id": "L4-M10-C02",
+      "display": "„Kein Problem“, sagte er dann",
+      "cue": "“No problem,” he said then"
+    },
+    {
+      "id": "L4-M10-C03",
+      "display": "Auf einmal blieb der Zug stehen",
+      "cue": "All at once the train stopped"
+    },
+    {
+      "id": "L4-M10-C04",
+      "display": "Er nickte nur und sagte nichts",
+      "cue": "He only nodded and said nothing"
+    },
+    {
+      "id": "L4-M10-C05",
+      "display": "Im Büro war es ganz leise",
+      "cue": "It was completely quiet in the office"
+    },
+    {
+      "id": "L4-M10-C06",
+      "display": "Wir fuhren einmal nach Berlin und blieben eine Woche",
+      "cue": "We went to Berlin once and stayed a week"
+    },
+    {
+      "id": "L4-M10-C07",
+      "display": "Ich verstand nur ein Wort und sagte ja",
+      "cue": "I understood only one word and said yes"
+    },
+    {
+      "id": "L4-M10-C08",
+      "display": "Ich dachte, der Zug fährt um acht ab",
+      "cue": "I thought the train left at eight"
+    },
+    {
+      "id": "L4-M10-C09",
+      "display": "„Früher war alles besser“, sagte meine Oma",
+      "cue": "“Everything used to be better,” my grandmother said"
+    },
+    {
+      "id": "L4-M10-C10",
+      "display": "Am Ende fragte meine Frau: „War das schön?“",
+      "cue": "At the end my wife asked: “Was that nice?”"
+    },
+    {
+      "id": "L4-M10-C11",
+      "display": "„Was ist das?“, fragte meine Frau leise",
+      "cue": "“What is that?” my wife asked quietly"
+    },
+    {
+      "id": "L4-M10-C12",
+      "display": "Dann lachte sie laut und ging wieder nach Hause",
+      "cue": "Then she laughed out loud and went home again"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 4 }
+}

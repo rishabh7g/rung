@@ -526,3 +526,422 @@ is 75. Nothing above is renumbered.
     does stack, but this is the only display in the course that does. Confirm it reads as natural
     hedging rather than as a learner piling on modifiers, and whether one hedge per clause is the
     safer thing to teach first.
+
+## Wave 3 — L4-M6 through L4-M10 (#555)
+
+Signed `Claude Opus 5 — LLM review, authorised by repo owner`, `2026-09-08`. These are the level's
+last five RANGE modules and they close L4: M6 opens the time clause, M7 the rest of the passive and
+the Indian-official register, M8 the habitual `would`, M9 the path preposition, M10 direct speech
+inside a narrative. All five ship with `verified: true` in the same change as the authoring, per the
+repo's one-commit rule.
+
+Every index claim in this section was produced by `npm run content:owner -- hi-en "<surface>" …` on
+2026-09-08, against **the 913-surface fold over 35 modules through `L4-M5`** — Wave 2's three
+modules are now on the board, 56 surfaces deeper than the 857 Wave 2 wrote onto. The briefs' own
+INDEX SEAM notes say they were "checked with `npm run content:owner` on 2026-09-08", and they are
+mostly right; the two places they are not are recorded below.
+
+### L4-M6 "Before and after" — the future that must not be written twice
+
+Ten displays:
+
+1. `As soon as the rain stops, I will call you.`
+2. `I will wait here until the doctor is free.`
+3. `The bank is open till five, so I will go after work.`
+4. `Have you eaten your lunch? Not yet, but I will eat at home.`
+5. `By the time I finish, the office will be closed.`
+6. `Since I came to Delhi I have not met him yet.`
+7. `During the meeting I did not speak, but I asked later.`
+8. `Whenever I go to the market, I have tea afterwards.`
+9. `So far the work is good. Meanwhile you can wait here.`
+10. `After the meeting I went home. I will call you later.`
+
+What it teaches: one rule and thirteen surfaces. The rule is NO FUTURE IN A TIME CLAUSE — English
+marks the future once, in the main clause, and leaves `when`, `until`, `after`, `as soon as` and
+`by the time` in the present — stated as the continuation of L3-M4's `if` rule and paired with it in
+`rules[0]`. `rules[1]` names the interference plainly: Hindi marks the future in both halves
+(जब मैं पहुँचूँगा तब फ़ोन करूँगा), so the learner's sentence is correct Hindi and wrong English.
+`rules[2]` is the adverb trio and its three positions — `already` mid-sentence, `yet` final and only
+in a question or a negative, `still` before the main verb and after `be` — of which only `yet` is
+opened here. `rules[3]` splits `since`: L3-M7 taught `since` + a point in time, this module teaches
+`since` + a CLAUSE with past simple inside it and the perfect outside. `rules[4]` is the free clause
+order and the comma a fronted time clause costs.
+
+The thirteen rows: `as soon as`, `until`, `till`, `not yet`, `yet`, `by the time`, `during`,
+`whenever`, `afterwards`, `so far`, `meanwhile`, `after`, `later`. Every one came back `free`.
+
+### L4-M7 "Official talk" — the register the learner already speaks
+
+Ten displays:
+
+1. `Your application has been received. Kindly wait at the counter.`
+2. `The road is being repaired, so the bus will be late.`
+3. `The train to Delhi has been delayed. Kindly see the notice.`
+4. `Passengers are requested to proceed to the counter and wait.`
+5. `You may pay at the counter. The office is open till five.`
+6. `Kindly submit a valid document at the window before five.`
+7. `Kindly do the needful and send the documents in advance.`
+8. `The class has been cancelled and the notice is on the door.`
+9. `There is a long queue at the bank. Kindly wait here.`
+10. `Kindly give attention to the announcement. The manager is not available.`
+
+What it teaches: the two passives L3-M8 deferred — the PERFECT passive (`has been` / `have been` +
+past participle) and the CONTINUOUS passive (`is being` / `are being` + past participle) — plus the
+three habits that make English sound official: AGENTLESS construction (`rules[1]`), the permission
+modal `may` (`rules[2]`), and NOMINALISATION, named and given a worked example in `rules[4]` but
+deliberately left as a recognition skill rather than a production one.
+
+`rules[3]` is the module's real content and it is written as the brief demands — as a DIALECT, never
+as an error. `kindly`, `do the needful`, `revert`, `prepone`, `out of station` are correct in India
+and read as archaic, comic or brusque elsewhere; `kindly` and `do the needful` are the two plated as
+rows, each with a `usage` and a `trap` in Devanagari saying exactly where they are Indian-only.
+
+The official `shall` is BLOCKED, as the brief instructs, and the block is stated inside `rules[2]`
+rather than left implicit: `content:owner` returns `shall  L2-M6`, the suggestion word of
+`Shall we go?`, so an official `shall` would hand the learner a "why" note that is false of the
+sentence in front of them. The module writes `may` and `are requested to` instead.
+
+Twenty-three rows, all confirmed `free` except `closed` — see the seam correction below.
+
+### L4-M8 "Back then" — the line between a habit and a state
+
+Ten displays:
+
+1. `In those days we would go to my grandmother's house in summer.`
+2. `Back then I had a bicycle, but now I take the bus.`
+3. `At that time we were poor, and we did not have a car.`
+4. `We no longer walk to school. We go by bus these days.`
+5. `I do not go to that market anymore. The market has changed.`
+6. `My village was small. It is a busy town now.`
+7. `I grew up in a village, and my childhood was very happy.`
+8. `My father is old now. In those days he would work every day.`
+9. `Nowadays everything is expensive. Back then a cup of tea was cheap.`
+10. `In my childhood we had one bicycle. These days everything has changed.`
+
+What it teaches: the HABITUAL `would`, and the line that keeps it true — `would` narrates a repeated
+ACTION and cannot carry a past STATE. `*I would have a bicycle` and `*we would be poor` are wrong;
+a state takes `used to` (L3-M10's row, pointed back at) or the plain past. That split is
+`rules[1]`, and because Hindi's करता था covers habits and states with one form (`rules[2]`), it is
+also the `mistake` block of S01, S02, S03 and S08 — four of the ten, which is the weight the brief
+asks for. `rules[3]` is the then/now frame and `rules[4]` the two retirements: `no longer` before the
+main verb, `anymore` at the end of a negative.
+
+**The habitual `would` opens no row.** `content:owner` returns `would  L2-M5` — the `would like` row,
+which L3-M4 already borrowed for the conditional — so this is the THIRD job on a row this module does
+not own. It is written into `rules[0]` with the pointer back, exactly as the brief instructs, and no
+second `would` row exists anywhere in the file. `used to` is likewise left alone at `L3-M10`.
+
+Eighteen rows, all `free`.
+
+### L4-M9 "Places and journeys" — the path lives in the preposition
+
+Ten displays:
+
+1. `We set off early and walked along the river.`
+2. `We walked past the school and then crossed the bridge.`
+3. `We went through the market and then walked towards the station.`
+4. `I reached the station at eight. My brother arrived at nine.`
+5. `The journey took a long time, but we reached the city.`
+6. `On the way we stopped at a shop in the next street.`
+7. `We got there at five and went into the office.`
+8. `The road goes up to the bridge and then down to the river.`
+9. `We were halfway across the bridge when the rain started.`
+10. `The trip was good. We waited on the platform for a long time.`
+
+What it teaches: the PATH PREPOSITION as a fact about the two languages rather than a slogan
+(`rules[0]`) — English puts the shape of the path in the preposition and leaves the verb plain, Hindi
+puts it in the verb and leaves the postposition general, so one English verb plus six prepositions
+does the work of six Hindi verbs. `rules[1]` draws the practical consequence: the preposition cannot
+be dropped or guessed. `rules[2]` is the `reach` / `arrive` / `get` plate the brief asks for, all
+three authored into one item (S04 and its variations): `I reached the station` with no `at`,
+`arrived at the station` / `arrived in Delhi`, `got there`. `rules[3]` records that bare `there` is
+this module's, and `rules[4]` that L2-M4's vocabulary transfers untouched — this module is the
+telling, not the asking.
+
+Twenty-one rows, all `free`, including the level's happiest find: bare `there`.
+
+### L4-M10 "A story with a twist" — punctuation doing grammar's work
+
+Ten displays (each an account of four to six short sentences; the per-sentence bound applies to each
+sentence inside it, as at L3-M10):
+
+1. `At first the man did not speak. He was very quiet. He was waiting for the doctor. I asked him about the time. He did not answer. I felt a bit worried.`
+2. `I was working at my table. Suddenly a man shouted behind me. I got up and opened the door. The bus had stopped in the road. It was not a big problem.`
+3. `We waited at the station for a long time. The train did not come. At first we were angry. It turned out the train had been cancelled. The notice was on the door.`
+4. `At first I did not want to go. But then my friend called me. He said the film was very good. So I went with him. We were late, but we saw most of it.`
+5. `The shop was closed when we got there. Luckily the chemist near the station was open. We bought the medicine and came home. It was a long day. But then we had tea and felt better.`
+6. `"I will not go," she said. Her brother replied, "Then I will go." At first they were angry. But then they laughed. In the end they went together.`
+7. `I noticed a bag under the table. I told the manager about it. He opened it very carefully. It turned out the bag was my brother's.`
+8. `We were talking about the film when I realised the time. It was already nine. I had to go home. At first my friends did not want to leave. But then they came with me.`
+9. `A stranger was waiting next to me on the bus. He asked me a strange question about the market. At first I was worried. But then I felt better. He was new in the city.`
+10. `My cousin smiled and said, "I have a story for you." At first I did not understand. He had found a wallet on the seat. It turned out the wallet was full of money. In the end he gave it back.`
+
+What it teaches: DIRECT SPEECH INSIDE A NARRATIVE, which in English is punctuation doing grammar's
+work. `rules[0]` gives the two conventions that are not guessable — the quotation marks enclose the
+spoken words and nothing else, and the quoted sentence takes a capital wherever it sits. `rules[1]`
+is the one most often lost: the comma goes INSIDE the closing mark before a reporting clause, where
+Hindi leaves it outside. `rules[2]` is the inversion rule — `said Rohan` yes, `*said she` never.
+`rules[3]` is the interference: कि does the work of both English shapes, so `*He said that "I am
+coming"` appears; English takes one or the other and never both. `rules[4]` names the twist markers
+and states that every narrative tense underneath is already owned, which is why the whole spend goes
+on the quotation and the turn.
+
+**Every rule about English punctuation is written in Hindi, quoting the English marks it describes**
+— the brief's §5 warns that this is the module where the language law is easiest to break, and
+`rules[1]`, whose whole subject is where a comma sits relative to a quotation mark, is the test case.
+The narrative tenses are re-used and not re-opened: past simple as the spine, past continuous for the
+setup (S02, S08, S09), past perfect for the reveal (S02, S03, S10). Reported speech stays L3-M5's;
+S04 pairs a reporting clause (`He said the film was very good`) against S06's direct line so the
+contrast is visible without being re-taught.
+
+Sixteen rows, all `free`.
+
+### Brief seams corrected, and what the emitted index actually said
+
+**Two seam claims are stale, and both are FRESH lists that name a surface an L4 sibling already
+owns.** Both were caught only because every claim was re-asked of `content:owner`; a grep would have
+found the words and told the author nothing about who holds them.
+
+**1. M6's brief lists `earlier` as fresh. It is not — L4-M3 owns it.**
+
+> `earlier  L4-M3`
+
+M6's INDEX SEAM note ends its FRESH list with "… `meanwhile`, `so far`", and `earlier` sits inside
+that same run of time adverbs. The brief was written before Wave 2 shipped, and L4-M3's
+counterfactual module spent `earlier` on `I should have called you earlier`. The fix is one line:
+M6 opens `later` and does NOT open `earlier`, and the `later` row's note carries the pointer —
+"इसका उल्टा `earlier` L4-M3 का है." Nothing else in M6's fresh list moved; the other twelve came
+back `free`:
+
+> `until  free` · `till  free` · `yet  free` · `not yet  free` · `as soon as  free` ·
+> `by the time  free` · `during  free` · `whenever  free` · `afterwards  free` · `later  free` ·
+> `meanwhile  free` · `so far  free`
+
+**2. M7's brief lists `closed` as fresh. It is not — L4-M1 owns it.**
+
+> `closed  L4-M1`
+
+Same shape of staleness, same cause: L4-M1 ("Explaining how") shipped `closed` in Wave 1. M7 does not
+open a `closed` row; the word is simply used where it is needed (and it is used in M6-S05 too,
+`the office will be closed`, resolving to L4-M1). The rest of M7's fresh list is right:
+
+> `kindly  free` · `may  free` · `counter  free` · `queue  free` · `submit  free` ·
+> `application  free` · `notice  free` · `announcement  free` · `delayed  free` ·
+> `cancelled  free` · `proceed  free` · `valid  free` · `document  free` · `documents  free` ·
+> `passengers  free` · `attention  free` · `available  free` · `in advance  free` ·
+> `do the needful  free` · `has been  free` · `have been  free` · `is being  free`
+
+**Everything the four other seam notes claim is true today.** M6's owned pointers:
+
+> `while  L3-M10` · `already  L3-M10` · `since  L3-M7` · `before  L3-M10` · `still  L3-M10` ·
+> `when  L2-M10` · `for  L3-M7` · `ago  L3-M10` · `then  L1-M10` · `just  L1-M8` · `as  L2-M9` ·
+> `time  L3-M4` · `by  L2-M4`
+
+M6's note that "four of the five words in this module's own job line are already owned" is exactly
+right, and it is the level's most useful seam: `while`, `already`, `since` and `before` are all
+spoken for, so the module's whole budget went on the tense rule and on `until`/`yet`, the two the
+job line still had. M7's owned and blocked pointers:
+
+> `please  L1-M8` · `form  L3-M8` · `required  L3-M8` · `sign  L3-M8` · `signature  L3-M8` ·
+> `receipt  L3-M8` · `card  L3-M8` · `id  L3-M8` · `pay  L3-M8` · `office  L3-M1` ·
+> `window  L2-M1` · `bank  L1-M7` · `be  L3-M8` · `must  L3-M8` · `apply  L3-M2` ·
+> `excuse me  L2-M1` · `would you mind  L2-M1` · **`shall  L2-M6`**
+
+M8's, including the two rows it is explicitly forbidden to re-open:
+
+> **`used to  L3-M10`** · **`would  L2-M5`** · `back  L2-M7` · `young  L2-M2` · `school  L1-M4` ·
+> `never  L1-M4` · `always  L1-M4` · `usually  L1-M4` · `hardly ever  L3-M1` · `every day  L3-M1` ·
+> `still  L3-M10` · `before  L3-M10`
+
+and its fresh list is right down to the last key: `back then`, `in those days`, `at that time`,
+`no longer`, `anymore`, `these days`, `nowadays`, `childhood`, `village`, `grew up`, `old` and
+`changed` all came back `free`.
+
+M9's brief is the wave's most accurate, and its headline claim holds:
+
+> `there  free`
+
+L1-M7 indexed `there is`, `there are` and `there's` WHOLE and never spent the bare key, so the place
+adverb is genuinely M9's, thirty-two modules later — the multi-token policy working exactly as
+intended. Its other fresh keys are all `free` (`along`, `across`, `past`, `through`, `towards`,
+`into`, `onto`, `up`, `down`, `trip`, `journey`, `arrive`, `reach`, `cross`, `set off`,
+`on the way`, `halfway`, `platform`, `bridge`, `river`, `street`), and its owned list is right:
+
+> `station  L2-M4` · `bus  L2-M4` · `train  L2-M4` · `ticket  L2-M4` · `road  L2-M4` ·
+> `corner  L2-M4` · `left  L2-M4` · `right  L2-M4` · `straight  L2-M4` · `far  L2-M4` ·
+> `opposite  L2-M4` · `get on  L2-M4` · `get off  L2-M4` · `turn  L2-M4` · `by  L2-M4` ·
+> `get  L2-M4` · `near  L1-M7` · `next to  L1-M7` · `took  L2-M10` · `walked  L3-M10` ·
+> `city  L3-M10` · `go  L1-M4` · `way  L4-M1`
+
+with one refinement worth recording, because it is the same class of trap: the brief says "`get`
+… → L2-M4", and `get` is indeed L2-M4's, but **`got` is L2-M2's**:
+
+> `get  L2-M4` · `got  L2-M2`
+
+M9-S07's `We got there at five` therefore rests on two different owners for what a learner reads as
+one word. Nothing needed changing — both are taught — but the module opens no `get` row, and this is
+why. M10's seam note is fully correct:
+
+> `said  L2-M10` · `told  L2-M10` · `asked  L3-M5` · `in the end  L3-M10` · `opened  L2-M10` ·
+> `phone  L2-M7` · `door  L1-M7` · `bag  L1-M7` · `sorry  L1-M10` · `finally  L2-M10` ·
+> `first  L2-M10` · `at  L1-M4`
+
+and every one of `suddenly`, `it turned out`, `at first`, `but then`, `luckily`, `shouted`,
+`replied`, `noticed`, `realised`, `stranger`, `strange` and `quiet` came back `free`.
+
+**Two authoring corrections the shown-surface check made, both worth recording:**
+
+**`notice` is a paradigm hole in M10.** M10-S07 teaches the verb `noticed`, and its forms list was
+first written as the full paradigm `["notice", "noticed", "notices"]`. `npm run content:shown` came
+straight back with `RE-TEACH L4-M10-S07 "notice": L4-M7 owns the key` and the same for `notices` —
+M7 opened the NOUN `notice` three modules earlier, in the same level. This is the en-it `sarei` case
+in an English course: a complete-looking paradigm that swallows a cell a nearer module owns. The
+forms list is now `["noticed"]` alone, and the row's note says why — "सादा `notice` L4-M7 की सूचना
+वाली पंक्ति है, इसलिए यहाँ सिर्फ़ बीता रूप खुलता है." A level never edits a file below it, and this
+is the same rule applied sideways.
+
+**`going` is untaught after thirty-nine modules.** M10-S06's direct line was first authored as the
+textbook `"I am not going," she said.` — and `content:shown` returned `SHOWN-BUT-UNTAUGHT
+L4-M10-S06: going`. `content:owner` explains it: L1-M4's `go` and `goes` are indexed, L1-M6's
+`going to` is indexed WHOLE and L4-M3 spent `gone`, but the bare present participle has never been
+spent by any of the thirty-nine modules before this one. Opening it here would have been a fresh surface bought to
+serve one quotation, in the module whose whole point is that almost nothing in it is new. The line
+is now `"I will not go," she said.`, which needs nothing untaught, keeps the contrast with the
+brother's `"Then I will go."` and shows the comma inside the closing mark just as well. `rules[1]`
+quotes the same corrected line, so the rule and the display agree.
+
+### The ratchet
+
+`npx vitest run tools/shown-surfaces.test.ts` → **11 passed (11)**. hi-en **holds at 30**, its
+baseline, and the five new modules contribute **zero** findings. (Mid-wave this run showed one
+failure, on **`en-de`** — `expected 12 to be less than or equal to 11` — a sibling course this wave
+never touched; it was green again once that course's own agent landed. Scoped to this course,
+`npx vitest run tools/shown-surfaces.test.ts -t "hi-en"` → **1 passed, 10 skipped (11)** throughout.) Every token of all fifty displays, one hundred and fifty variations and sixty comprehension
+items resolves in the fold. No baseline was lowered — this wave fixed no pre-existing finding — and
+none was raised.
+
+`npm run content:shown -- hi-en <id>` is clean for all five, with **no `RE-TEACH` and no
+`COLLIDES INSIDE THIS MODULE` left standing**:
+
+> `L4-M6: clean — every shown surface resolves` · `L4-M7: clean …` · `L4-M8: clean …` ·
+> `L4-M9: clean …` · `L4-M10: clean …`
+
+The two findings this wave DID produce — the `notice` re-teach and the `going` shown-but-untaught —
+are recorded above and were fixed in the content, not waived.
+
+`npm run content:validate` → **`CONTENT 358/358 ok`** (the denominator moves as the wave's sibling
+courses land — it read 352/352 when these five first went in; every file in it is `ok`).
+
+`npx vitest run src/course/types.test.ts` → **376 passed, 3 failed (379)**, and all three failures
+are the parent's census assertions, moving under the wave's other courses: the module list
+(`expected […(358)] to deeply equal […(354)]`), the en-ar count (`expected 40 to be 39`) and the
+en-ko count. None is hi-en's. The hi-en block itself is green —
+`npx vitest run src/course/types.test.ts -t "keeps the English course the other way round"` →
+**1 passed, 380 skipped (381)** — and its own count assertion already reads 40, so the whole hi-en
+language law (#270) ran against these five files: `display`, `mistake.display`, every `variations[].display`
+and every word `display` and `forms` entry are Devanagari-free; `cue`, `literal`, `sound`, `usage`,
+`mnemonic`, `trap`, `mistake.why`, every variation `cue` and `changed`, every word `cue` and every
+one of the ninety-one word `note`s carry Devanagari. No `glossEn` and no curly apostrophe anywhere —
+M10 uses straight `"` throughout, which matters here more than in any other module of the course.
+Every note is inside the 200-character ceiling; the longest is 104 (M6-S07, `during`). The census
+numbers in that file are the parent's and this wave did not touch them.
+
+Bounds: no display exceeds its module's `maxWordsPerSentence` (M6 and M7 peak at 12 against 13; M8
+and M9 at 13 against 14; M10 at 11 against 14, measured per inner sentence as at L3-M10).
+`minWordsPerSentence` was set from the content rather than guessed — 5, 3, 4, 4 and 3 — because M7's
+announcements and M10's narrative both chain genuinely short sentences. New-word counts are 13, 23,
+18, 21 and 16 against a `newWordCap` of 25 apiece.
+
+### Open questions for the native-speaker gate
+
+These continue the chain; the last number used before this wave was 90.
+
+91. **`Not yet` as a full turn** (M6-S04). The display answers `Have you eaten your lunch?` with a
+    two-word fragment. Confirm this is what a Hindi speaker actually wants to be given — अभी नहीं is
+    the cue — and that teaching the fragment before the full `I have not eaten yet` is the right
+    order rather than the reverse.
+
+92. **`till` taught as a separate row from `until`** (M6-S03). The note says they are the same word
+    with different registers. Confirm that a learner in India meets `till` often enough to earn its
+    own row, and that `till five` rather than `until five` is the form heard at a bank window.
+
+93. **`So far the work is good`** (M6-S09). `so far` is authored with the present simple rather than
+    the perfect that most textbooks pair it with (`So far the work has been good`). Confirm the
+    plain present reads as natural spoken English here, and whether the perfect should be the taught
+    default instead.
+
+94. **`kindly` plated as a dialect marker rather than an error** (M7, `rules[3]`, S01, S03, S06,
+    S07, S09, S10). Six of the ten displays open with `Kindly`, which is deliberate — this is the
+    register the learner will hear at a counter. Confirm the density is right and does not read as
+    the course endorsing `kindly` for use abroad, given the `trap` and `usage` fields say the
+    opposite in Devanagari.
+
+95. **`do the needful` given a whole row** (M7-S07). The brief calls it "the only honest way to index
+    an idiom whose parts mean nothing separately". Confirm a Hindi-speaking learner recognises it,
+    and that the Devanagari gloss जो ज़रूरी हो कर दीजिए is what they would say back.
+
+96. **`The manager is not available` as the office register for "he is not here"** (M7-S10). The
+    `trap` steers away from `is not there`. Confirm `not available` is what is actually said at an
+    Indian office counter rather than a textbook form.
+
+97. **`valid` glossed as चालू** (M7-S06). चालू carries other senses in Hindi. Confirm this is the
+    right gloss for a document or ticket that has not expired, or whether मान्य would land better.
+
+98. **The habitual `would` reached only through `rules[0]`** (M8, all ten items). Because `would` is
+    L2-M5's row, a learner tapping `would` in `we would go` is shown the `would like` note, not the
+    habitual one. The rule carries the teaching, but confirm that the tap experience is acceptable —
+    this is the sharpest case in the course of a rule doing a row's job.
+
+99. **`would` refused for states, in four `mistake` blocks** (M8-S01, S02, S03, S08). English usage
+    is not perfectly tidy here (`we would be poor` is at least arguable in some registers). Confirm
+    that teaching the hard line is the right call for a Hindi speaker whose करता था does not split,
+    and that the four repetitions are not one too many.
+
+100. **`town` opened as a third size between `village` and `city`** (M8-S06). Hindi क़स्बा exists but
+     is not always reached for. Confirm that the three-way distinction is worth a row, and that
+     क़स्बा is the gloss rather than a description.
+
+101. **`grandmother` glossed as दादी या नानी on one row** (M8-S01). The note says English does not
+     distinguish them. Confirm that collapsing the two is acceptable at this level, and that the
+     display's `my grandmother's house` reads as नानी का घर to a learner rather than forcing a
+     choice the English does not make.
+
+102. **`reached` with no preposition, against `arrived at` and `got to`** (M9-S04, `rules[2]`). All
+     three are authored into one item. Confirm the three-way plate is the right shape, and that
+     `I reached the station` — not `I reached at the station` — is the form worth putting first for
+     a speaker whose पहुँचना takes पर.
+
+103. **`towards` taught as direction-without-arrival** (M9-S03). The `trap` says `walked to the
+     station` and `walked towards the station` are not the same. Confirm this distinction survives
+     in ordinary spoken English, or whether it is a written-register nicety that will mislead.
+
+104. **Bare `there` opened thirty-two modules after `there is`** (M9-S07, `rules[3]`). Confirm that a
+     learner who has used `there is` since L1-M7 will read the new row as a different word rather
+     than as a correction of what they already know, and that the note's wording carries that.
+
+105. **`up` and `down` for a road's gradient** (M9-S08). `The road goes up to the bridge` uses the
+     path sense rather than the literal vertical one. Confirm this is natural, and that it does not
+     collide in a learner's head with L1's `get up` and `wake up`, which the note explicitly
+     separates.
+
+106. **The comma inside the closing quotation mark** (M10-S06, `rules[1]`). This is the single most
+     mechanical thing in the module and the one an Indian-schooled writer is most likely to have
+     been taught the other way. Confirm the rule as stated matches what is expected of the learner,
+     and that the Hindi wording — विराम भीतर आता है — is unambiguous.
+
+107. **`"I will not go," she said` in place of `"I am not going," she said`** (M10-S06). The line
+     was changed because bare `going` is untaught (see the seam section). Confirm the replacement
+     carries the same conversational force in the quoted turn, and does not read as stilted next to
+     the brother's `"Then I will go."`
+
+108. **`It turned out` glossed as पता चला कि** (M10-S03, S07, S10). Three of the ten items use it,
+     which makes it the module's spine. Confirm the gloss, and that three uses is the right weight
+     rather than one too many for a single twist marker.
+
+109. **`stranger` against `a strange man`** (M10-S09, `trap`). The pair is authored as a warning.
+     Confirm that a Hindi speaker actually reaches for `strange` when they mean अनजान, or whether
+     the trap is defending against a mistake they would not make.
+
+110. **`realised` against `understood`** (M10-S08). The note draws the line as sudden against
+     gradual. Confirm the split is real enough to teach, and that समझ में आना does not simply cover
+     both — in which case the note is inventing a distinction the learner will not feel.
