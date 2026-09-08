@@ -398,6 +398,26 @@ clitics, and **the index chooses which**: `lo`, `li`, `mi` and `ti` are teachabl
 `sporco` against `amico` instead. Four ratchet findings, all fixed by opening the row the module
 needed. **The native gate is still unmet**: docs/65 now ends in open questions 1–21.
 
+**en-it's second level closes (#457, 2026-09-08).** `L2-M6` _Making plans together_ through
+`L2-M10` _Telling what happened_ complete the ladder; `content/en-it/levels.json` drops the L2 draft
+flag and a strict `npm run build` emits `en-it: 20 modules (L1-M1..M10, L2-M1..M10)`. M6's best fact
+is that **the `noi` ending IS the suggestion** — `Andiamo!` is both "we go" and "let's go" — so
+Italian needs no word where English needs "let's"; its delta is the article on a day, `il lunedì`
+being Mondays in general against `lunedì` for the one coming up. M7 teaches `Pronto?` as the
+adjective it is and opens `stare + gerundio` with the half that matters: it is for **right now and
+nothing else**, so `Domani sto lavorando` is wrong where English says "I'm working tomorrow". M8
+builds `Mi fa male la testa` on `mi piace`, so its structural lesson costs nothing, and puts the
+clitic on the BACK of an infinitive (`aiutarmi`) — the other half of M5's rule; complaining calmly
+turns out not to be hedging at all, because the politeness lives in `Scusi` and `Purtroppo` and
+softening the claim reads as evasive. M9 carries the choice English does not have — `più … di`
+against `più … che` — at **no new function-word cost**, since `che` and `di` are already L1's, and
+keeps `migliore` apart from `meglio` where English and Spanish both merge them. M10 states the
+auxiliary law at last and kills the two-pasts slogan in the same words en-es's and en-ru's M10s use:
+what decides the tense is the ROLE the clause plays in the telling, which `Da bambino andavo sempre
+al mare` shows most clearly, being a habit rather than a duration. Sixteen ratchet findings across
+the wave, all fixed by opening the row the module needed; the en-it baseline stays at 17. **The
+native gate is still unmet**: docs/65 ends in open questions 1–35, a fresh en-it L2 chain.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on

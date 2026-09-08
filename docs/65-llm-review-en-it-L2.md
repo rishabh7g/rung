@@ -167,3 +167,75 @@ module actually needed. The en-it baseline stays at 17.
     the gentler of the two.
 21. **`della verdura`** (M5-S10). Confirm the singular is right where English is plural, and that
     `delle verdure` would mean kinds rather than quantity.
+
+## Wave 3 — L2-M6 through L2-M10 (#457)
+
+Five rungs, and the level closes. A strict build emits `en-it: 20 modules`.
+
+### What each module spends its budget on
+
+- **M6 Making plans together.** The `noi` ending IS the suggestion — `Andiamo!` is both "we go" and
+  "let's go" — so Italian needs no word where English needs "let's" and Spanish reaches for
+  `vamos a`. That is a rest point, and the module says so. Its delta is the article on a day:
+  `il lunedì` is Mondays in general and `lunedì` is the one coming up, a distinction English marks
+  with a plural instead. `meno un quarto` is deliberately not shown, because `meno` is M9's key and
+  its first note has to be the comparative one.
+- **M7 On the phone.** `Pronto?` is taught as the adjective it is, not as an unanalysable noise.
+  `stare + gerundio` opens, and the important half is what it does NOT do: `Domani sto lavorando` is
+  wrong where English says "I'm working tomorrow", and M6's plain present is the repair.
+  `più tardi` rides whole, which is what kept the bare `più` free for M9.
+- **M8 When something goes wrong.** `Mi fa male la testa` is `mi piace` with a different verb, so
+  the structural lesson costs nothing — and `mi fanno male i piedi` shows the verb counting the
+  body parts rather than the person. The clitic goes on the BACK of an infinitive (`aiutarmi`),
+  which is the other half of M5's rule. Complaining calmly is not hedging: the politeness is in
+  `Scusi` and `Purtroppo`, and softening the claim itself reads as evasive.
+- **M9 Comparing and choosing.** `più … di` against `più … che` is the choice English does not have,
+  and it costs no new function words at all — `che` is L1-M5's and `di` is L1-M1's. `migliore`
+  against `meglio` runs the opposite way from every other comparison in the level, because English
+  and Spanish both merge what Italian keeps apart. `quello` apocopates exactly as M3's `bello` does:
+  one rule, paid twice.
+- **M10 Telling what happened.** The two pasts, and the slogan killed in the same words en-es's and
+  en-ru's M10s use: what decides the tense is the ROLE the clause plays in the telling.
+  `Da bambino andavo sempre al mare` is a habit rather than a duration, which is the case that most
+  clearly breaks "ongoing". The auxiliary law is finally written down, and `rimanere` is flagged as
+  the place it has to be learnt rather than reasoned out.
+
+### Rows the briefs do not list
+
+`lunedì` bare (M6 — L1-M4 owns only `il lunedì`), `io` and `buon` and `così` (M5), `fanno` and
+`partito` (M8), `chiamato`, `quando`, `lavoravo`, `preso`, `siamo`, `tornati`, `da bambino` and
+`dov'eri` (M10). Most are participles and imperfetto cells an account cannot be told without; two
+are elisions that fuse (`dov'eri`, and `da bambino` riding whole with no article inside it).
+
+### The ratchet
+
+Sixteen findings across the wave, every one fixed by opening the row the module needed or by
+rewriting the variation. Nothing was resolved by moving a baseline. The en-it baseline stays at 17.
+
+### Open questions for the native pass
+
+22. **`Ti va di…?`** (M6-S02). Confirm it is the everyday invitation and not regional, and that the
+    `di` before a verb is compulsory.
+23. **`Facciamo alle sette e mezza`** (M6-S05). Confirm `Facciamo` is how a time gets settled rather
+    than a translation of "let's make it".
+24. **`il lunedì` against `lunedì`** (M6-S09). Confirm the article really carries "every", and that
+    a native would not also say `ogni lunedì` more often.
+25. **`Pronto?`** (M7-S01). Confirm it is universal and that regional alternatives do not displace
+    it.
+26. **`Non c'è`** (M7-S03). Confirm it is what is said of a person who is out, without a pronoun.
+27. **`Un attimo`** (M7-S07). Confirm it beats `Un momento` in speech.
+28. **`Ho dimenticato il telefono a casa`** (M8-S03). Confirm Italian uses `dimenticare` where
+    English says "left", and that `lasciare` really implies intent.
+29. **The direct complaint** (M8-S10). The module claims a hedged Italian complaint reads as
+    evasive. Confirm the strength of that, and that `Purtroppo` is the one acceptable softener.
+30. **`più … che` with two adjectives** (M9-S02). Confirm `È più bello che utile` is ordinary speech
+    rather than a textbook example.
+31. **`migliore` / `meglio`** (M9-S03, S04). Confirm natives keep them apart consistently in speech.
+32. **`Si mangia meglio qui`** (M9-S04). Confirm the impersonal is the natural way to compare two
+    places to eat.
+33. **`rimanere` taking `essere`** (M10-S03). Confirm, and confirm the module's framing — that
+    Italian counts staying as a change of state — is not misleading.
+34. **`c'era molta gente`** (M10-S07). Confirm the singular holds in speech and that
+    `c'erano molte persone` is the alternative rather than a correction.
+35. **The accounts** (M10, all ten). Confirm each reads as something a person would say, and flag
+    any that reads as a grammar exercise.

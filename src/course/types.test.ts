@@ -188,7 +188,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 155 — nine L1 ladders, hi-mr L2 and L3, the complete L2 of en-es, en-ar, hi-en and en-ru, and en-it L2-M1..M5 (#439, #448)', () => {
+  it('finds all 160 — nine L1 ladders, hi-mr L2 and L3, and the complete L2 of en-es, en-ar, hi-en, en-ru and en-it (#457)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -264,10 +264,15 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-it/modules/L1-M8.json',
       'content/en-it/modules/L1-M9.json',
       'content/en-it/modules/L2-M1.json',
+      'content/en-it/modules/L2-M10.json',
       'content/en-it/modules/L2-M2.json',
       'content/en-it/modules/L2-M3.json',
       'content/en-it/modules/L2-M4.json',
       'content/en-it/modules/L2-M5.json',
+      'content/en-it/modules/L2-M6.json',
+      'content/en-it/modules/L2-M7.json',
+      'content/en-it/modules/L2-M8.json',
+      'content/en-it/modules/L2-M9.json',
       'content/en-ko/modules/L1-M1.json',
       'content/en-ko/modules/L1-M10.json',
       'content/en-ko/modules/L1-M2.json',

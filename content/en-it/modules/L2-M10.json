@@ -1,0 +1,731 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M10",
+  "title": "Telling what happened",
+  "job": "A four-sentence account in the past",
+  "prerequisites": [
+    "L2-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "past_perfect_compound",
+      "imperfect"
+    ],
+    "allowedPatterns": [
+      "<imperfetto background> + , + <passato prossimo event>",
+      "<passato prossimo> + e + <passato prossimo>",
+      "C'era + <N> + , + poi + <passato prossimo>",
+      "Alla fine + <passato prossimo>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "TWO PASTS, TWO JOBS. The imperfetto paints the standing situation a story happens against — what was already going on, what things were like, the weather, a habit, an age. The passato prossimo moves the account forward one completed step at a time. Era tardi e non c'era nessuno. Allora ho chiamato Anna. L1-M5 shipped the second one and never taught the choice; this is where it is taught."
+    },
+    {
+      "tag": "interference",
+      "text": "THE SLOGAN TO KILL: \"one tense is for completed actions and the other for ongoing ones\". It breaks on the first real account. Ieri ho mangiato alle sette is completed. Mangiavo quando hai chiamato is not \"ongoing\" in any objective sense — it is background for the call. Da bambino andavo sempre al mare is a habit, not a duration. What decides it is the ROLE the clause plays in the telling."
+    },
+    {
+      "tag": "delta",
+      "text": "THE AUXILIARY LAW, written down at last: essere for movement and change of state — è andato, sono partiti, siamo tornati — and for reflexives, with the participle agreeing with the SUBJECT in gender and number. avere for everything else, with no agreement at all. L1 taught the agreement by example (sono andata, siamo andati); here is the rule behind it."
+    },
+    {
+      "tag": "free",
+      "text": "The sequencers are the honest new spend: prima, dopo and alla fine, joining L1-M10's poi and allora. Each account is four short sentences rather than one long one, and almost every word in them comes from L1 and from M1–M9."
+    },
+    {
+      "tag": "free",
+      "text": "Nothing new is opened. The passato remoto, the trapassato, the congiuntivo and reported speech all stay OUT and belong to L3 — which is why an account here reports what happened and never what anyone said about it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M10-S01",
+      "display": "Era tardi. Non c'era nessuno. Allora ho chiamato Anna",
+      "cue": "It was late. There was nobody. So I called Anna",
+      "literal": "Was late. Not there-was nobody. Then I-have called Anna",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "era",
+            "cue": "was (imperfetto of essere)",
+            "tag": "delta",
+            "forms": [
+              "ero",
+              "eri"
+            ],
+            "note": "The standing situation, not a step. Era tardi says what things were like; it does not move the story on."
+          },
+          {
+            "display": "c'era",
+            "cue": "there was",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M7's c'è in the imperfetto, and an elision, so ONE index key. Its plural is c'erano, for more than one thing."
+          },
+          {
+            "display": "nessuno",
+            "cue": "nobody · no one",
+            "tag": "interference",
+            "forms": [],
+            "note": "It needs the non in front of the verb: non c'era nessuno. Italian doubles its negatives where English forbids it, and dropping the non is the error."
+          },
+          {
+            "display": "chiamato",
+            "cue": "called",
+            "tag": "free",
+            "forms": [
+              "chiamare"
+            ],
+            "note": "The participle of chiamare, which L1-M1 met inside mi chiamo. With avere it does not agree — that is the easy half of the auxiliary law."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "Two imperfetti set the scene and one passato prossimo moves it. That is the whole architecture of an Italian account, and it is visible in three short sentences.",
+      "sound": "E-ra TAR-dee. non CHE-ra nes-SOO-no. c'era is two syllables with the elision joining them.",
+      "variations": [
+        {
+          "display": "Era tardi. Allora ho chiamato Anna",
+          "cue": "It was late. So I called Anna",
+          "changed": "two steps instead of three"
+        },
+        {
+          "display": "Era presto. Non c'era nessuno",
+          "cue": "It was early. There was nobody",
+          "changed": "a different situation"
+        },
+        {
+          "display": "Non c'era nessuno. Allora sono tornato a casa",
+          "cue": "There was nobody. So I went back home",
+          "changed": "movement, so essere and an agreeing participle"
+        }
+      ],
+      "mistake": {
+        "display": "Era tardi. C'era nessuno. Allora ho chiamato Anna",
+        "why": "The negative needs its non: Non c'era nessuno."
+      },
+      "usage": "Opening an account — the situation first, then what you did about it.",
+      "register": "neutral",
+      "mnemonic": "Imperfetto sets the scene. Passato prossimo moves it."
+    },
+    {
+      "id": "L2-M10-S02",
+      "display": "Mangiavo quando hai chiamato",
+      "cue": "I was eating when you called",
+      "literal": "I-was-eating when you-have called",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mangiavo",
+            "cue": "I was eating",
+            "tag": "delta",
+            "forms": [
+              "mangiava"
+            ],
+            "note": "The imperfetto of L1-M3's mangiare. It is the background the call interrupted — and it is not \"ongoing\" in any objective sense, just the frame."
+          },
+          {
+            "display": "quando",
+            "cue": "when",
+            "tag": "free",
+            "forms": [],
+            "note": "It glues the two tenses together: background before it, event after it. It also asks a question — Quando sei tornato? — and the word is the same."
+          },
+          {
+            "display": "lavoravo",
+            "cue": "I was working",
+            "tag": "free",
+            "forms": [
+              "lavorava"
+            ],
+            "note": "The imperfetto of L1-M1's lavorare. Every -are verb takes the same -avo, -avi, -ava endings, so the class is regular throughout."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The eating and the call took the same kind of time. What separates them is that one is scenery and the other is the event, which is a decision about the telling rather than about the world.",
+      "sound": "man-JA-vo KWAN-do ai kya-MA-to. The -avo ending is where every -are imperfetto lands.",
+      "variations": [
+        {
+          "display": "Lavoravo quando hai chiamato",
+          "cue": "I was working when you called",
+          "changed": "a different background"
+        },
+        {
+          "display": "Mangiavo quando è tornato",
+          "cue": "I was eating when he got back",
+          "changed": "a return, so essere and agreement"
+        },
+        {
+          "display": "Ieri ho mangiato alle sette",
+          "cue": "Yesterday I ate at seven",
+          "changed": "a completed step — the same verb, the other tense"
+        }
+      ],
+      "mistake": {
+        "display": "Ho mangiato quando hai chiamato",
+        "why": "The background clause is imperfetto: Mangiavo quando hai chiamato."
+      },
+      "usage": "Explaining what you were in the middle of.",
+      "register": "neutral",
+      "mnemonic": "Background imperfetto, event passato prossimo."
+    },
+    {
+      "id": "L2-M10-S03",
+      "display": "Ieri pioveva. Sono rimasto a casa",
+      "cue": "Yesterday it was raining. I stayed at home",
+      "literal": "Yesterday it-was-raining. I-am stayed at home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pioveva",
+            "cue": "it was raining",
+            "tag": "free",
+            "forms": [],
+            "note": "The imperfetto of L1-M9's piove. Weather is almost always imperfetto in an account, because it is the scenery rather than an event."
+          },
+          {
+            "display": "rimasto",
+            "cue": "stayed · remained",
+            "tag": "free",
+            "forms": [
+              "rimasta",
+              "rimasti",
+              "rimaste"
+            ],
+            "note": "An irregular participle, and it takes essere because staying put is a change of state in Italian's reckoning. So it agrees with the subject."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "rimanere takes essere even though nothing moves. The law is \"movement and change of state\", and Italian counts staying as the second — which is a place the rule has to be learnt rather than reasoned out.",
+      "sound": "pyo-VE-va. SO-no ree-MA-sto. The io of pioveva is one glide.",
+      "variations": [
+        {
+          "display": "Ieri pioveva. Sono rimasta a casa",
+          "cue": "Yesterday it was raining. I stayed at home",
+          "changed": "said by a woman, so the participle agrees"
+        },
+        {
+          "display": "Faceva freddo. Sono rimasto a casa",
+          "cue": "It was cold. I stayed at home",
+          "changed": "a different kind of weather"
+        },
+        {
+          "display": "Ieri pioveva. Ho preso l'autobus",
+          "cue": "Yesterday it was raining. I took the bus",
+          "changed": "avere, and no agreement at all"
+        }
+      ],
+      "mistake": {
+        "display": "Ieri pioveva. Ho rimasto a casa",
+        "why": "rimanere takes essere: Sono rimasto a casa."
+      },
+      "usage": "Explaining a day that did not go to plan.",
+      "register": "neutral",
+      "mnemonic": "Weather is scenery, so imperfetto."
+    },
+    {
+      "id": "L2-M10-S04",
+      "display": "Faceva freddo e non avevo la chiave",
+      "cue": "It was cold and I didn't have my key",
+      "literal": "It-was-making cold and not I-had the key",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "faceva",
+            "cue": "it was (of weather)",
+            "tag": "delta",
+            "forms": [],
+            "note": "Italian MAKES weather rather than being it: fa freddo, faceva caldo. L1-M6's fare in the imperfetto, doing the job English gives to \"is\"."
+          },
+          {
+            "display": "avevo",
+            "cue": "I had",
+            "tag": "free",
+            "forms": [
+              "aveva"
+            ],
+            "note": "The imperfetto of avere. Having something is a state rather than an event, so it is nearly always this tense in an account."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Both halves are imperfetto because neither is a step. Nothing has happened yet in this sentence — it is entirely scene-setting, and the account has not started to move.",
+      "sound": "fa-CHE-va FRED-do. The ce is a soft ch, and the double d is held.",
+      "variations": [
+        {
+          "display": "Faceva caldo e non avevo acqua",
+          "cue": "It was hot and I had no water",
+          "changed": "the opposite weather"
+        },
+        {
+          "display": "Faceva freddo. Sono tornato a casa",
+          "cue": "It was cold. I went back home",
+          "changed": "with a step after the scene"
+        },
+        {
+          "display": "Non avevo la chiave",
+          "cue": "I didn't have my key",
+          "changed": "the second half alone"
+        }
+      ],
+      "mistake": {
+        "display": "Era freddo e non avevo la chiave",
+        "why": "Weather is made, not been: Faceva freddo."
+      },
+      "usage": "Setting up a story that is about to go wrong.",
+      "register": "neutral",
+      "mnemonic": "Italian makes the weather."
+    },
+    {
+      "id": "L2-M10-S05",
+      "display": "Prima ho mangiato, poi sono uscito",
+      "cue": "First I ate, then I went out",
+      "literal": "Before I-have eaten, then I-am gone-out",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prima",
+            "cue": "first · beforehand",
+            "tag": "free",
+            "forms": [],
+            "note": "As an adverb it does not agree — M4's prima strada was the adjective, and this is the other job the word does."
+          },
+          {
+            "display": "uscito",
+            "cue": "gone out",
+            "tag": "free",
+            "forms": [
+              "uscita",
+              "usciti",
+              "uscite"
+            ],
+            "note": "L1-M6's uscire, and movement, so essere and agreement. A woman says sono uscita."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "One sentence, two auxiliaries: ho with mangiare and sono with uscire. Nothing about the meaning of the two events differs — only whether the verb involves movement.",
+      "sound": "PREE-ma o man-JA-to poi SO-no oo-SHEE-to. The sci of uscito is a soft sh.",
+      "variations": [
+        {
+          "display": "Prima ho mangiato, poi sono uscita",
+          "cue": "First I ate, then I went out",
+          "changed": "said by a woman"
+        },
+        {
+          "display": "Prima sono uscito, poi ho mangiato",
+          "cue": "First I went out, then I ate",
+          "changed": "the order swapped, and the auxiliaries with it"
+        },
+        {
+          "display": "Ho mangiato e poi sono uscito",
+          "cue": "I ate and then went out",
+          "changed": "joined with e rather than split"
+        }
+      ],
+      "mistake": {
+        "display": "Prima ho mangiato, poi ho uscito",
+        "why": "Movement takes essere: poi sono uscito."
+      },
+      "usage": "Telling someone the order things happened in.",
+      "register": "neutral",
+      "mnemonic": "Movement takes essere and agrees."
+    },
+    {
+      "id": "L2-M10-S06",
+      "display": "Ho perso il treno. Alla fine ho preso l'autobus",
+      "cue": "I missed the train. In the end I took the bus",
+      "literal": "I-have lost the train. At-the end I-have taken the-bus",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "alla fine",
+            "cue": "in the end · finally",
+            "tag": "free",
+            "forms": [],
+            "note": "Two words, closing an account. It marks the last step rather than merely the latest one."
+          },
+          {
+            "display": "preso",
+            "cue": "taken",
+            "tag": "free",
+            "forms": [
+              "presa",
+              "presi",
+              "prese"
+            ],
+            "note": "The irregular participle of L1-M6's prendere. Its forms exist, but after avere none of them is ever used — the cells are there for the essere verbs to borrow."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "Both verbs take avere and neither participle agrees. That is the easy half of the law — with avere nothing on the end ever moves.",
+      "sound": "AL-la FEE-ne. The double l is held, and both words are stressed on the first syllable.",
+      "variations": [
+        {
+          "display": "Ho perso il treno. Alla fine sono tornato a casa",
+          "cue": "I missed the train. In the end I went back home",
+          "changed": "movement in the second half, so essere"
+        },
+        {
+          "display": "Alla fine ho preso l'autobus",
+          "cue": "In the end I took the bus",
+          "changed": "the second half alone"
+        },
+        {
+          "display": "Ho perso il treno. Poi ho preso l'autobus",
+          "cue": "I missed the train. Then I took the bus",
+          "changed": "poi rather than alla fine — a step, not the last one"
+        }
+      ],
+      "mistake": {
+        "display": "Ho perso il treno. Alla fine ho presa l'autobus",
+        "why": "With avere the participle does not agree: ho preso l'autobus."
+      },
+      "usage": "The story of a journey that went wrong and then worked out.",
+      "register": "neutral",
+      "mnemonic": "With avere, nothing agrees."
+    },
+    {
+      "id": "L2-M10-S07",
+      "display": "C'era molta gente. Dopo siamo tornati a casa",
+      "cue": "There were a lot of people. Afterwards we went home",
+      "literal": "There-was much people. After we-are returned to home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gente",
+            "cue": "people",
+            "tag": "interference",
+            "forms": [],
+            "note": "SINGULAR in Italian — molta gente, c'era gente — where English is plural. The verb and the adjective both follow the Italian number, not the English one."
+          },
+          {
+            "display": "dopo",
+            "cue": "afterwards · after",
+            "tag": "free",
+            "forms": [],
+            "note": "M4's dopo doing a second job: there it was a place preposition, here it is a sequencer standing alone."
+          },
+          {
+            "display": "siamo",
+            "cue": "we are",
+            "tag": "free",
+            "forms": [],
+            "note": "The noi cell of essere, and here it is the auxiliary. L1-M10 showed siamo andati without ever opening the word itself."
+          },
+          {
+            "display": "tornati",
+            "cue": "returned (plural)",
+            "tag": "free",
+            "forms": [
+              "tornate"
+            ],
+            "note": "L1-M10's tornato and tornata in the plural. Movement takes essere, so the participle counts and genders the people who came back."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "gente is singular, so it is c'era and molta and not c'erano and molte. Translating the English plural gets three words wrong at once.",
+      "sound": "JEN-te. The ge is soft, and the word is two syllables.",
+      "variations": [
+        {
+          "display": "C'era molta gente. Dopo sono tornato a casa",
+          "cue": "There were a lot of people. Afterwards I went home",
+          "changed": "one person, so the participle agrees with him"
+        },
+        {
+          "display": "Non c'era molta gente",
+          "cue": "There weren't many people",
+          "changed": "negated"
+        },
+        {
+          "display": "C'era molta gente. Alla fine siamo tornati a casa",
+          "cue": "There were a lot of people. In the end we went home",
+          "changed": "the closing sequencer"
+        }
+      ],
+      "mistake": {
+        "display": "C'erano molte gente. Dopo siamo tornati a casa",
+        "why": "gente is singular: C'era molta gente."
+      },
+      "usage": "Describing a place that was crowded, and what you did about it.",
+      "register": "neutral",
+      "mnemonic": "gente counts as one."
+    },
+    {
+      "id": "L2-M10-S08",
+      "display": "Da bambino andavo sempre al mare",
+      "cue": "As a child I always went to the seaside",
+      "literal": "From child I-was-going always to-the sea",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "andavo",
+            "cue": "I used to go",
+            "tag": "delta",
+            "forms": [
+              "andava"
+            ],
+            "note": "A habit, so the imperfetto — and a habit is not a duration. English needs \"used to\" here, and Italian needs only the tense."
+          },
+          {
+            "display": "mare",
+            "cue": "sea · seaside",
+            "tag": "free",
+            "forms": [
+              "mari"
+            ],
+            "note": "Al mare means the seaside as a place to go. It is masculine, and an -e noun, so its plural is in -i."
+          },
+          {
+            "display": "da bambino",
+            "cue": "as a child",
+            "tag": "free",
+            "forms": [
+              "da bambina"
+            ],
+            "note": "One whole thing, with no article inside it. da here means \"in the state of\", which is a job it does in a handful of fixed phrases."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Nothing here is ongoing and nothing is background. It is a habit, which is the third job the imperfetto does — and the one that most clearly breaks the \"ongoing\" slogan.",
+      "sound": "da bam-BEE-no an-DA-vo. Da bambino has no article, which is what makes it \"as a child\".",
+      "variations": [
+        {
+          "display": "Da bambina andavo sempre al mare",
+          "cue": "As a child I always went to the seaside",
+          "changed": "said by a woman"
+        },
+        {
+          "display": "Da bambino mangiavo sempre a casa",
+          "cue": "As a child I always ate at home",
+          "changed": "a different habit"
+        },
+        {
+          "display": "Andavo sempre al mare",
+          "cue": "I always used to go to the seaside",
+          "changed": "without saying when"
+        }
+      ],
+      "mistake": {
+        "display": "Da bambino sono andato sempre al mare",
+        "why": "A habit takes the imperfetto: Da bambino andavo sempre al mare."
+      },
+      "usage": "Talking about childhood, which is where the imperfetto lives.",
+      "register": "neutral",
+      "mnemonic": "A habit is not a duration."
+    },
+    {
+      "id": "L2-M10-S09",
+      "display": "Era tardi. Ho chiamato Anna. Alla fine siamo usciti",
+      "cue": "It was late. I called Anna. In the end we went out",
+      "literal": "Was late. I-have called Anna. At-the end we-are gone-out",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eri",
+            "cue": "you were",
+            "tag": "free",
+            "forms": [],
+            "note": "The tu cell of the imperfetto of essere, beside ero and era. Dov'eri? is \"where were you?\" and is what an account often opens with."
+          },
+          {
+            "display": "dov'eri",
+            "cue": "where were you",
+            "tag": "free",
+            "forms": [],
+            "note": "dove plus eri, elided into ONE key — the same fusion as L1-M7's dov'è. It is the question an account is usually an answer to."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "Three sentences, one scene and two steps. The scene is imperfetto and both steps are passato prossimo — and the second one takes essere because going out is movement.",
+      "sound": "E-ra TAR-dee. o kya-MA-to AN-na. AL-la FEE-ne SYA-mo oo-SHEE-tee. Three short sentences and three clear beats.",
+      "variations": [
+        {
+          "display": "Era tardi. Ho chiamato Anna",
+          "cue": "It was late. I called Anna",
+          "changed": "two sentences instead of three"
+        },
+        {
+          "display": "Ero stanco. Alla fine sono tornato a casa",
+          "cue": "I was tired. In the end I went home",
+          "changed": "a different scene and a different ending"
+        },
+        {
+          "display": "Dov'eri ieri?",
+          "cue": "Where were you yesterday?",
+          "changed": "the question that asks for an account"
+        }
+      ],
+      "mistake": {
+        "display": "Era tardi. Ho chiamato Anna. Alla fine abbiamo usciti",
+        "why": "Movement takes essere: Alla fine siamo usciti."
+      },
+      "usage": "A whole small account — a situation, a step, an outcome.",
+      "register": "neutral",
+      "mnemonic": "Scene, step, step."
+    },
+    {
+      "id": "L2-M10-S10",
+      "display": "Ieri faceva caldo. Siamo andati al mare. Alla fine ho dormito",
+      "cue": "Yesterday it was hot. We went to the seaside. In the end I slept",
+      "literal": "Yesterday it-was-making hot. We-are gone to-the sea. At-the end I-have slept",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ero",
+            "cue": "I was",
+            "tag": "free",
+            "forms": [],
+            "note": "The io cell of the imperfetto of essere. Ero stanco, ero a casa — a state, never a step."
+          },
+          {
+            "display": "aveva",
+            "cue": "he/she had",
+            "tag": "free",
+            "forms": [],
+            "note": "The third-person cell of avevo. The whole imperfetto of avere is regular, unlike its present."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "Three verbs, three different auxiliaries or tenses, and each one is chosen by the rule rather than by the meaning: weather is scenery, going is movement, sleeping is neither.",
+      "sound": "fa-CHE-va KAL-do. SYA-mo an-DA-tee al MA-re. The participle andati agrees with a plural we.",
+      "variations": [
+        {
+          "display": "Ieri faceva caldo. Siamo andati al mare",
+          "cue": "Yesterday it was hot. We went to the seaside",
+          "changed": "two sentences"
+        },
+        {
+          "display": "Faceva caldo. Sono andato al mare",
+          "cue": "It was hot. I went to the seaside",
+          "changed": "one person, so the participle agrees with him"
+        },
+        {
+          "display": "Ero stanco. Alla fine ho dormito",
+          "cue": "I was tired. In the end I slept",
+          "changed": "a different scene, and avere on the last verb"
+        }
+      ],
+      "mistake": {
+        "display": "Ieri faceva caldo. Abbiamo andati al mare. Alla fine ho dormito",
+        "why": "Movement takes essere: Siamo andati al mare."
+      },
+      "usage": "A whole day told in three sentences, which is what an account is.",
+      "register": "neutral",
+      "mnemonic": "The rule picks the auxiliary, not the meaning."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M10-C01",
+      "display": "Era tardi. Non c'era nessuno. Allora ho chiamato Anna",
+      "cue": "It was late. There was nobody. So I called Anna"
+    },
+    {
+      "id": "L2-M10-C02",
+      "display": "Mangiavo quando hai chiamato",
+      "cue": "I was eating when you called"
+    },
+    {
+      "id": "L2-M10-C03",
+      "display": "Ieri pioveva. Sono rimasto a casa",
+      "cue": "Yesterday it was raining. I stayed at home"
+    },
+    {
+      "id": "L2-M10-C04",
+      "display": "Faceva freddo e non avevo la chiave",
+      "cue": "It was cold and I didn't have my key"
+    },
+    {
+      "id": "L2-M10-C05",
+      "display": "Prima ho mangiato, poi sono uscito",
+      "cue": "First I ate, then I went out"
+    },
+    {
+      "id": "L2-M10-C06",
+      "display": "Ho perso il treno. Alla fine ho preso l'autobus",
+      "cue": "I missed the train. In the end I took the bus"
+    },
+    {
+      "id": "L2-M10-C07",
+      "display": "C'era molta gente. Dopo siamo tornati a casa",
+      "cue": "There were a lot of people. Afterwards we went home"
+    },
+    {
+      "id": "L2-M10-C08",
+      "display": "Da bambino andavo sempre al mare",
+      "cue": "As a child I always went to the seaside"
+    },
+    {
+      "id": "L2-M10-C09",
+      "display": "Era tardi. Ho chiamato Anna. Alla fine siamo usciti",
+      "cue": "It was late. I called Anna. In the end we went out"
+    },
+    {
+      "id": "L2-M10-C10",
+      "display": "Ieri faceva caldo. Siamo andati al mare",
+      "cue": "Yesterday it was hot. We went to the seaside"
+    },
+    {
+      "id": "L2-M10-C11",
+      "display": "Ero stanco. Alla fine ho dormito",
+      "cue": "I was tired. In the end I slept"
+    },
+    {
+      "id": "L2-M10-C12",
+      "display": "Ieri ho mangiato alle sette",
+      "cue": "Yesterday I ate at seven"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,634 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M7",
+  "title": "On the phone",
+  "job": "Calls and messages — openings, closings, taking a message",
+  "prerequisites": [
+    "L2-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "present",
+      "present_continuous"
+    ],
+    "allowedPatterns": [
+      "Pronto? — Sono + <name>",
+      "Posso parlare con + <name> + ?",
+      "Non c'è + . + Vuole lasciare un messaggio?",
+      "Sto parlando con + <person>",
+      "Richiamo più tardi"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Italy answers the phone with Pronto?, which means \"ready\" — it is an adjective, not a noise, and knowing that is worth more than memorising it. The identification is Sono Rohan, \"I am Rohan\", where English says \"this is\": small, fixed, and the first thing said on every call."
+    },
+    {
+      "tag": "delta",
+      "text": "stare + GERUNDIO opens here, because a call is happening now: Sto parlando, Sta mangiando. L1 gave sto and stai and M2 added sta, so the auxiliary is already the learner's and only the -ando / -endo form is new. What matters is what it does NOT do: Italian uses the plain present far more than English uses its simple present, so the gerundio is only for what is genuinely in progress at this moment. Domani sto lavorando is wrong where English says \"I'm working tomorrow\" — M6's plain present is the repair."
+    },
+    {
+      "tag": "free",
+      "text": "This module speaks the polite third person, because you cannot see who picked up. It is also where the level's Lei ruling shows most clearly: Vuole lasciare un messaggio? has no pronoun in it at all, and that is what an Italian says. The polite object clitic La is barred from a display for the same index reason as Lei, so the frame is written without it."
+    },
+    {
+      "tag": "free",
+      "text": "Taking a message needs no new tense. Non c'è is L1-M7's c'è negated, Ha lasciato un messaggio is L1-M5's past, and Richiamo più tardi is M5's present-for-future. Reported speech — Ha detto che… — is L3's and is deliberately not reached for, which is why a message is passed on in the words it came in."
+    },
+    {
+      "tag": "interference",
+      "text": "più tardi rides as one whole thing, which keeps the bare più free for M9's comparative. That is the same protection L1-M8 gave elsewhere in this collection: a common word inside a fixed phrase is not the same as the word standing alone, and the first row to claim it decides what it means for the whole course."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M7-S01",
+      "display": "Pronto? Sono Rohan",
+      "cue": "Hello? This is Rohan",
+      "literal": "Ready? I-am Rohan",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pronto",
+            "cue": "hello (on the phone) · ready",
+            "tag": "delta",
+            "forms": [
+              "pronta",
+              "pronti",
+              "pronte"
+            ],
+            "note": "An ordinary adjective meaning \"ready\", frozen into the phone greeting. Sono pronto is \"I'm ready\", and it is the same word."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The identification is Sono, not questo è. English's \"this is\" points at a person; Italian simply says \"I am\", and a learner reaching for a demonstrative here will sound translated.",
+      "sound": "PRON-to. Two syllables, the o's short, and the question is made by the voice alone.",
+      "variations": [
+        {
+          "display": "Pronto? Sono Anna",
+          "cue": "Hello? This is Anna",
+          "changed": "a different name"
+        },
+        {
+          "display": "Pronto?",
+          "cue": "Hello?",
+          "changed": "just the answer, which is what a person picking up says"
+        },
+        {
+          "display": "Pronto? Sono io",
+          "cue": "Hello? It's me",
+          "changed": "M5's emphatic io, which is what you say to someone who knows your voice"
+        }
+      ],
+      "mistake": {
+        "display": "Pronto? Questo è Rohan",
+        "why": "Italian says Sono: Pronto? Sono Rohan."
+      },
+      "usage": "Both ends of every call in Italy start here.",
+      "register": "neutral",
+      "mnemonic": "Pronto means ready, and Sono means I am."
+    },
+    {
+      "id": "L2-M7-S02",
+      "display": "Posso parlare con Anna?",
+      "cue": "Can I speak to Anna?",
+      "literal": "Can-I to-speak with Anna?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "numero",
+            "cue": "number",
+            "tag": "free",
+            "forms": [
+              "numeri"
+            ],
+            "note": "The stress is on the first syllable — NU-me-ro — which English speakers usually put in the middle."
+          },
+          {
+            "display": "sbagliato",
+            "cue": "wrong · mistaken",
+            "tag": "free",
+            "forms": [
+              "sbagliata",
+              "sbagliati",
+              "sbagliate"
+            ],
+            "note": "Numero sbagliato is what you say when you have called the wrong person. The gli is the soft ly of figlio."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The preposition is con and not a. Italian speaks WITH a person; parlare a exists and means something closer to addressing them formally.",
+      "sound": "POS-so par-LA-re kon AN-na. The double s and double n are both held.",
+      "variations": [
+        {
+          "display": "Posso parlare con Rohan?",
+          "cue": "Can I speak to Rohan?",
+          "changed": "a different person"
+        },
+        {
+          "display": "Scusi, ho sbagliato numero",
+          "cue": "Sorry, I've got the wrong number",
+          "changed": "the call that goes nowhere"
+        },
+        {
+          "display": "Posso parlare con tuo fratello?",
+          "cue": "Can I speak to your brother?",
+          "changed": "a relative rather than a name"
+        }
+      ],
+      "mistake": {
+        "display": "Posso parlare a Anna?",
+        "why": "Speaking to someone takes con: Posso parlare con Anna?"
+      },
+      "usage": "Asking for someone when a third person answers.",
+      "register": "formal",
+      "mnemonic": "You speak WITH a person in Italian."
+    },
+    {
+      "id": "L2-M7-S03",
+      "display": "Non c'è. Vuole lasciare un messaggio?",
+      "cue": "She's not here. Would you like to leave a message?",
+      "literal": "Not there-is. Wants to-leave a message?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lasciare",
+            "cue": "to leave (something)",
+            "tag": "free",
+            "forms": [
+              "lasciato"
+            ],
+            "note": "Leaving a thing behind, not leaving a place — that is partire, L1-M6's verb. The sci is a soft sh: la-SHA-re."
+          },
+          {
+            "display": "messaggio",
+            "cue": "message",
+            "tag": "free",
+            "forms": [
+              "messaggi"
+            ],
+            "note": "The ggi is a long soft j, and the plural drops one i — messaggi — as M3's vecchio did."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "Non c'è has no subject in it. Italian says \"there isn't\" where English needs \"he isn't\" or \"she isn't\", and the sentence gives away nothing about who is missing.",
+      "sound": "non CHE. VWO-le la-SHA-re oon mes-SAJ-jo. c'è is one syllable with an open e.",
+      "variations": [
+        {
+          "display": "Non c'è. Vuole richiamare più tardi?",
+          "cue": "She's not here. Would you like to call back later?",
+          "changed": "the other offer"
+        },
+        {
+          "display": "Vuole lasciare un messaggio?",
+          "cue": "Would you like to leave a message?",
+          "changed": "the offer alone"
+        },
+        {
+          "display": "Non c'è. Ha lasciato un messaggio?",
+          "cue": "She's not here. Did she leave a message?",
+          "changed": "L1-M5's past, asking rather than offering"
+        }
+      ],
+      "mistake": {
+        "display": "Lei non c'è. Vuole lasciare un messaggio?",
+        "why": "No pronoun is needed or wanted: Non c'è. Vuole lasciare un messaggio?"
+      },
+      "usage": "Answering a call for someone who is out.",
+      "register": "formal",
+      "mnemonic": "Non c'è names nobody."
+    },
+    {
+      "id": "L2-M7-S04",
+      "display": "Sto parlando con Anna",
+      "cue": "I'm talking to Anna",
+      "literal": "I-am-doing speaking with Anna",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "parlando",
+            "cue": "speaking",
+            "tag": "delta",
+            "forms": [],
+            "note": "The gerundio of L1-M4's parlare. It only ever follows stare, and together they say something is happening at this exact moment."
+          },
+          {
+            "display": "mangiando",
+            "cue": "eating",
+            "tag": "free",
+            "forms": [],
+            "note": "The same ending on an -are verb. Verbs in -ere and -ire take -endo instead: prendendo, dormendo."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "This form is for RIGHT NOW and nothing else. Domani sto lavorando is wrong where English cheerfully says \"I'm working tomorrow\" — Italian uses the plain present for anything arranged, as M6 showed.",
+      "sound": "sto par-LAN-do. The stare and the gerundio run together as one breath.",
+      "variations": [
+        {
+          "display": "Sta mangiando",
+          "cue": "He's eating",
+          "changed": "a third person, and a different verb"
+        },
+        {
+          "display": "Sto parlando con Rohan",
+          "cue": "I'm talking to Rohan",
+          "changed": "a different person"
+        },
+        {
+          "display": "Non può, sta lavorando",
+          "cue": "He can't, he's working",
+          "changed": "the reason someone cannot come to the phone"
+        }
+      ],
+      "mistake": {
+        "display": "Domani sto lavorando",
+        "why": "Arranged things take the plain present: Domani lavoro."
+      },
+      "usage": "Saying what is going on this second — which on a phone is most of what gets said.",
+      "register": "neutral",
+      "mnemonic": "The gerundio is for now, and only now."
+    },
+    {
+      "id": "L2-M7-S05",
+      "display": "Non può, sta lavorando",
+      "cue": "He can't, he's working",
+      "literal": "Not can, is-doing working",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lavorando",
+            "cue": "working",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's lavorare in the gerundio. All three examples in this module are -are verbs, so the -ando ending covers them all."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "Two verbs with no subject between them, and neither needs one. Italian drops the subject twice here, and the endings carry both halves.",
+      "sound": "non PWO sta la-vo-RAN-do. può is one syllable and the accent says the vowel is open.",
+      "variations": [
+        {
+          "display": "Non può, sta mangiando",
+          "cue": "He can't, he's eating",
+          "changed": "a different reason"
+        },
+        {
+          "display": "Non posso, sto lavorando",
+          "cue": "I can't, I'm working",
+          "changed": "about yourself"
+        },
+        {
+          "display": "Non può, sta parlando con Anna",
+          "cue": "He can't, he's talking to Anna",
+          "changed": "a fuller reason"
+        }
+      ],
+      "mistake": {
+        "display": "Non può, lui lavorando",
+        "why": "The gerundio needs stare: Non può, sta lavorando."
+      },
+      "usage": "Explaining why the person asked for cannot come to the phone.",
+      "register": "formal",
+      "mnemonic": "No stare, no gerundio."
+    },
+    {
+      "id": "L2-M7-S06",
+      "display": "Richiamo più tardi",
+      "cue": "I'll call back later",
+      "literal": "I-call-again more late",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "richiamo",
+            "cue": "I'll call back",
+            "tag": "free",
+            "forms": [
+              "richiamare"
+            ],
+            "note": "chiamare with ri- on the front, which means \"again\" — the same prefix as in ripetere, M1's word."
+          },
+          {
+            "display": "più tardi",
+            "cue": "later",
+            "tag": "free",
+            "forms": [],
+            "note": "One whole thing. The bare più is deliberately not opened here — it is M9's comparative word, and its first note has to be that one."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "Another present doing the future's work. Richiamerò exists and would sound like a promise about next month rather than about ten minutes.",
+      "sound": "ree-KYA-mo pyoo TAR-dee. The chi is a hard k, and più is one syllable.",
+      "variations": [
+        {
+          "display": "Richiamo domani",
+          "cue": "I'll call back tomorrow",
+          "changed": "a named day"
+        },
+        {
+          "display": "Richiamo più tardi, grazie",
+          "cue": "I'll call back later, thanks",
+          "changed": "with thanks on the end"
+        },
+        {
+          "display": "Vuole richiamare più tardi?",
+          "cue": "Would you like to call back later?",
+          "changed": "the offer, with the infinitive"
+        }
+      ],
+      "mistake": {
+        "display": "Richiamerò più tardi",
+        "why": "The present handles it: Richiamo più tardi."
+      },
+      "usage": "Closing a call you could not finish.",
+      "register": "neutral",
+      "mnemonic": "ri- means again."
+    },
+    {
+      "id": "L2-M7-S07",
+      "display": "Un attimo, per favore",
+      "cue": "One moment, please",
+      "literal": "A moment, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "attimo",
+            "cue": "moment · instant",
+            "tag": "free",
+            "forms": [
+              "attimi"
+            ],
+            "note": "Shorter than momento and far more common in speech. Un attimo on its own is a complete sentence on a phone."
+          },
+          {
+            "display": "tardi",
+            "cue": "late",
+            "tag": "free",
+            "forms": [],
+            "note": "Invariable, because it is an adverb — È tardi, whoever is late. The adjective for a late train is in ritardo, a different phrase."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "attimo takes un with no apostrophe, because it is masculine and un was never uno here. M5's un'altra had one only because the feminine una loses its a.",
+      "sound": "oo-NAT-tee-mo. The double t is held, and the article runs straight into the noun.",
+      "variations": [
+        {
+          "display": "Un attimo",
+          "cue": "One moment",
+          "changed": "without please — normal, and not curt"
+        },
+        {
+          "display": "Un attimo, richiamo",
+          "cue": "One moment, I'll call back",
+          "changed": "with what happens next"
+        },
+        {
+          "display": "È tardi, richiamo domani",
+          "cue": "It's late, I'll call back tomorrow",
+          "changed": "the adverb, and a different plan"
+        }
+      ],
+      "mistake": {
+        "display": "Un'attimo, per favore",
+        "why": "The masculine takes no apostrophe: Un attimo, per favore."
+      },
+      "usage": "Holding someone while you fetch another person or a pen.",
+      "register": "neutral",
+      "mnemonic": "The apostrophe is only ever on the feminine."
+    },
+    {
+      "id": "L2-M7-S08",
+      "display": "Scusi, ho sbagliato numero",
+      "cue": "Sorry, I've got the wrong number",
+      "literal": "Excuse-yourself, I-have mistaken number",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sbagliato",
+            "cue": "got wrong · mistaken",
+            "tag": "delta",
+            "forms": [],
+            "note": "Here it is a past participle with ho — I have made a mistake with the number. As an adjective it means \"wrong\", and both are the same word."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The participle does not agree here, because the auxiliary is ho. M10 will write down why; for now, avere means nothing on the end moves.",
+      "sound": "sba-LYA-to. The sb starts the word with a buzz, and the gli is the soft ly again.",
+      "variations": [
+        {
+          "display": "Ho sbagliato numero",
+          "cue": "I've got the wrong number",
+          "changed": "without the apology"
+        },
+        {
+          "display": "Scusi, ho sbagliato",
+          "cue": "Sorry, my mistake",
+          "changed": "without saying what was wrong"
+        },
+        {
+          "display": "È il numero sbagliato",
+          "cue": "It's the wrong number",
+          "changed": "the adjective rather than the participle"
+        }
+      ],
+      "mistake": {
+        "display": "Scusi, sono sbagliato numero",
+        "why": "The auxiliary is avere: Scusi, ho sbagliato numero."
+      },
+      "usage": "The call that goes to a stranger — and it happens to everyone.",
+      "register": "formal",
+      "mnemonic": "With ho, nothing agrees."
+    },
+    {
+      "id": "L2-M7-S09",
+      "display": "Ha lasciato un messaggio?",
+      "cue": "Did she leave a message?",
+      "literal": "Has left a message?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "parlare",
+            "cue": "to speak · to talk",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's verb, and on a phone it is the one that matters. With a person it takes con; with a language it takes nothing — parlo italiano."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "This is L1-M5's past doing the whole job. Italian has no separate way of reporting what someone said at this level, and Ha detto che… belongs to L3 — so a message is passed on in the words it arrived in.",
+      "sound": "a la-SHA-to oon mes-SAJ-jo. The ha is silent at the front — the h is never sounded.",
+      "variations": [
+        {
+          "display": "Ha lasciato un numero?",
+          "cue": "Did she leave a number?",
+          "changed": "a different thing left"
+        },
+        {
+          "display": "Non ha lasciato un messaggio",
+          "cue": "She didn't leave a message",
+          "changed": "negated"
+        },
+        {
+          "display": "Vuole parlare con Anna?",
+          "cue": "Would you like to speak to Anna?",
+          "changed": "an offer instead of a question about the past"
+        }
+      ],
+      "mistake": {
+        "display": "Ha lasciata un messaggio?",
+        "why": "With avere the participle does not agree: Ha lasciato un messaggio?"
+      },
+      "usage": "Checking what happened while you were out.",
+      "register": "formal",
+      "mnemonic": "Reported speech waits for L3."
+    },
+    {
+      "id": "L2-M7-S10",
+      "display": "Grazie mille, arrivederci",
+      "cue": "Thanks very much, goodbye",
+      "literal": "Thanks thousand, goodbye",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "arrivederci",
+            "cue": "goodbye",
+            "tag": "free",
+            "forms": [],
+            "note": "Literally \"until we see each other again\" — and the ci on the end is M6's, doing the same \"each other\" job as in ci vediamo."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Ciao is for people you address as tu, and on a phone you do not know who answered. Arrivederci is the safe close, exactly as Lei is the safe address.",
+      "sound": "ar-ri-ve-DER-chee. Five syllables, the double r rolled slightly, and the stress late.",
+      "variations": [
+        {
+          "display": "Grazie, arrivederci",
+          "cue": "Thanks, goodbye",
+          "changed": "the plainer thanks"
+        },
+        {
+          "display": "Arrivederci, a domani",
+          "cue": "Goodbye, see you tomorrow",
+          "changed": "with a plan on the end"
+        },
+        {
+          "display": "Grazie mille, richiamo domani",
+          "cue": "Thanks very much, I'll call tomorrow",
+          "changed": "a promise instead of a goodbye"
+        }
+      ],
+      "mistake": {
+        "display": "Grazie mille, ciao",
+        "why": "On a formal call the close is arrivederci: Grazie mille, arrivederci."
+      },
+      "usage": "Ending a call with anyone you would address as Lei.",
+      "register": "formal",
+      "mnemonic": "The ci of arrivederci is \"each other\"."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M7-C01",
+      "display": "Pronto? Sono Rohan",
+      "cue": "Hello? This is Rohan"
+    },
+    {
+      "id": "L2-M7-C02",
+      "display": "Posso parlare con Anna?",
+      "cue": "Can I speak to Anna?"
+    },
+    {
+      "id": "L2-M7-C03",
+      "display": "Non c'è. Vuole lasciare un messaggio?",
+      "cue": "She's not here. Would you like to leave a message?"
+    },
+    {
+      "id": "L2-M7-C04",
+      "display": "Sto parlando con Anna",
+      "cue": "I'm talking to Anna"
+    },
+    {
+      "id": "L2-M7-C05",
+      "display": "Non può, sta lavorando",
+      "cue": "He can't, he's working"
+    },
+    {
+      "id": "L2-M7-C06",
+      "display": "Richiamo più tardi",
+      "cue": "I'll call back later"
+    },
+    {
+      "id": "L2-M7-C07",
+      "display": "Un attimo, per favore",
+      "cue": "One moment, please"
+    },
+    {
+      "id": "L2-M7-C08",
+      "display": "Scusi, ho sbagliato numero",
+      "cue": "Sorry, I've got the wrong number"
+    },
+    {
+      "id": "L2-M7-C09",
+      "display": "Ha lasciato un messaggio?",
+      "cue": "Did she leave a message?"
+    },
+    {
+      "id": "L2-M7-C10",
+      "display": "Grazie mille, arrivederci",
+      "cue": "Thanks very much, goodbye"
+    },
+    {
+      "id": "L2-M7-C11",
+      "display": "Sta mangiando",
+      "cue": "He's eating"
+    },
+    {
+      "id": "L2-M7-C12",
+      "display": "Vuole richiamare più tardi?",
+      "cue": "Would you like to call back later?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
