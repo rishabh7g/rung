@@ -1,0 +1,690 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M5",
+  "title": "Food and hosting",
+  "job": "Ordering, offering, refusing without offence",
+  "prerequisites": [
+    "L2-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "simple_present",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "tafaḍḍal / tafaḍḍalī",
+      "urīd + N + min faḍlika",
+      "hal turīd + al- + N?",
+      "lā shukran + , + anā shabʿān",
+      "al-ḥisāb + , + min faḍlika"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "tafaḍḍal hands something over, invites someone in, offers a seat, gives permission and says \"after you\". Five English acts, one Arabic word, and it is the most useful thing in the module."
+    },
+    {
+      "tag": "free",
+      "text": "Ordering needs nothing new: urīd from M1 of the level below, min faḍlika from M8, hal turīd from M2 and M3. Only the food is new, which is what makes the module cheap and the vocabulary worth it."
+    },
+    {
+      "tag": "interference",
+      "text": "In Arab hosting an offer is EXPECTED to be repeated, so a single lā shukran is heard as politeness rather than as a decision. The refusal that lands adds a reason: lā shukran, anā shabʿān. A host who accepts the first refusal has under-hosted."
+    },
+    {
+      "tag": "delta",
+      "text": "shabʿān is an adjective and agrees with the speaker: shabʿān from a man, shabʿāna from a woman — the same law as āsif in M1."
+    },
+    {
+      "tag": "free",
+      "text": "alḥamdu lillāh is what a guest says when the meal ends. It travels as one phrase and neither half of it is used apart in this course."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M5-S01",
+      "display": "tafaḍḍal, ishrab ash-shāy",
+      "script": "تفضل، اشرب الشاي",
+      "cue": "Please, drink the tea",
+      "literal": "Be-so-kind(you-m), drink(you-m) the-tea",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tafaḍḍal",
+            "script": "تفضل",
+            "cue": "please · here you are · go ahead",
+            "tag": "delta",
+            "forms": [
+              "tafaḍḍal",
+              "tafaḍḍalī"
+            ],
+            "note": "Hands something over, invites someone in, offers a seat, gives permission, says after you. Five English acts and one Arabic word; the feminine is tafaḍḍalī."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "It has no single English translation and looking for one wastes the word. Learn it as a gesture: it means \"go ahead, it is yours\".",
+      "sound": "ta-FAḌ-ḍal, with the ḍ emphatic and doubled — the darkest sound in the module.",
+      "variations": [
+        {
+          "display": "tafaḍḍal, kul al-khubz",
+          "script": "تفضل، كل الخبز",
+          "cue": "Please, eat the bread",
+          "changed": "the other imperative from M1"
+        },
+        {
+          "display": "tafaḍḍalī, ishrabī al-qahwa",
+          "script": "تفضلي، اشربي القهوة",
+          "cue": "Please, drink the coffee (to a woman)",
+          "changed": "both words move to the feminine"
+        },
+        {
+          "display": "tafaḍḍal, hādhā baytī",
+          "script": "تفضل، هذا بيتي",
+          "cue": "Come in, this is my house",
+          "changed": "the same word inviting someone through a door"
+        }
+      ],
+      "mistake": {
+        "display": "min faḍlika, ishrab ash-shāy",
+        "script": "من فضلك، اشرب الشاي",
+        "why": "min faḍlika asks for something; tafaḍḍal gives it. A host offering tea says tafaḍḍal."
+      },
+      "usage": "Anywhere something is being offered. It is said constantly, and a learner who leaves this module with only this word has gained more than a page of vocabulary.",
+      "register": "formal",
+      "mnemonic": "One word for every way of saying go ahead."
+    },
+    {
+      "id": "L2-M5-S02",
+      "display": "urīd laḥm wa ruzz, min faḍlika",
+      "script": "أريد لحم ورز، من فضلك",
+      "cue": "I'd like meat and rice, please",
+      "literal": "I-want meat and rice, from your-favour",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "laḥm",
+            "script": "لحم",
+            "cue": "meat",
+            "tag": "free",
+            "forms": [
+              "laḥm",
+              "al-laḥm"
+            ],
+            "note": "Masculine, and bare here because you are naming a kind rather than pointing at a portion. With al- it becomes the meat in front of you."
+          },
+          {
+            "display": "ruzz",
+            "script": "رز",
+            "cue": "rice",
+            "tag": "free",
+            "forms": [
+              "ruzz",
+              "ar-ruzz"
+            ],
+            "note": "The r is doubled and held. r is a sun letter, so al- assimilates: ar-ruzz."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "No article on either noun. Naming a kind of food leaves al- off, exactly as L1-M3's urīd shāy did.",
+      "sound": "LAḤM, one syllable with the ḥ deep in the throat. RUZZ, with the z held long.",
+      "variations": [
+        {
+          "display": "urīd samak wa khuḍār, min faḍlika",
+          "script": "أريد سمك وخضار، من فضلك",
+          "cue": "I'd like fish and vegetables, please",
+          "changed": "the module's other two foods"
+        },
+        {
+          "display": "urīd al-laḥm, min faḍlika",
+          "script": "أريد اللحم، من فضلك",
+          "cue": "I'd like the meat, please",
+          "changed": "with al-, pointing at what is on the menu"
+        },
+        {
+          "display": "lā urīd laḥm",
+          "script": "لا أريد لحم",
+          "cue": "I don't want meat",
+          "changed": "lā in front, and the article still absent"
+        }
+      ],
+      "mistake": {
+        "display": "urīd al-laḥm wa ar-ruzz min faḍlika",
+        "script": "أريد اللحم والرز من فضلك",
+        "why": "With the articles you are asking for particular ones you can see. To name a kind, leave them off."
+      },
+      "usage": "Ordering from a menu that offers a choice. The articles come back when you point at something.",
+      "register": "neutral",
+      "mnemonic": "Name a kind and drop the al-."
+    },
+    {
+      "id": "L2-M5-S03",
+      "display": "hal turīd samak?",
+      "script": "هل تريد سمك؟",
+      "cue": "Would you like fish?",
+      "literal": "Question want(you-m) fish?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "samak",
+            "script": "سمك",
+            "cue": "fish",
+            "tag": "free",
+            "forms": [
+              "samak",
+              "as-samak"
+            ],
+            "note": "A collective: samak is fish as a food and as a shoal alike. s is a sun letter, so the article assimilates: as-samak."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "This is an offer, and it will be made again. In Arab hosting a first no is not an answer, which is what S04 is about.",
+      "sound": "SA-mak, two short syllables, stressed at the front.",
+      "variations": [
+        {
+          "display": "hal turīdīn samak?",
+          "script": "هل تريدين سمك؟",
+          "cue": "Would you like fish? (to a woman)",
+          "changed": "the feminine, and the script shows it this time"
+        },
+        {
+          "display": "hal turīd al-mazīd min ash-shāy?",
+          "script": "هل تريد المزيد من الشاي؟",
+          "cue": "Would you like more tea?",
+          "changed": "S10's frame, which is the offer a host repeats"
+        },
+        {
+          "display": "hal turīd samak al-yawm?",
+          "script": "هل تريد سمك اليوم؟",
+          "cue": "Would you like fish today?",
+          "changed": "a time added, from M4 of the level below"
+        }
+      ],
+      "mistake": {
+        "display": "hal turīd as-samak?",
+        "script": "هل تريد السمك؟",
+        "why": "That asks about a particular fish you can both see. Offering the kind leaves the article off."
+      },
+      "usage": "What a host asks, and asks again. The learner's job here is to expect the second asking.",
+      "register": "neutral",
+      "mnemonic": "An offer names a kind, so it needs no al-."
+    },
+    {
+      "id": "L2-M5-S04",
+      "display": "lā shukran, anā shabʿān",
+      "script": "لا شكرا، أنا شبعان",
+      "cue": "No thanks, I'm full",
+      "literal": "No thanks, I full",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "shabʿān",
+            "script": "شبعان",
+            "cue": "full (a man speaking)",
+            "tag": "delta",
+            "forms": [
+              "shabʿān",
+              "shabʿāna"
+            ],
+            "note": "An adjective, so it agrees with the SPEAKER: shabʿāna from a woman. The ʿayn in the middle is a letter, and the word is unsayable without it."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "lā shukran on its own will not end the offer. The reason is what makes the refusal land, and in Arab hosting that is not politeness — it is how a refusal works.",
+      "sound": "shab-ʿĀN, with the ʿayn squeezing the throat between the b and the long ā.",
+      "variations": [
+        {
+          "display": "lā shukran, anā shabʿāna",
+          "script": "لا شكرا، أنا شبعانة",
+          "cue": "No thanks, I'm full (a woman speaking)",
+          "changed": "a woman speaking, so the adjective moves"
+        },
+        {
+          "display": "shukran, anā shabʿān jiddan",
+          "script": "شكرا، أنا شبعان جدا",
+          "cue": "Thank you, I'm very full",
+          "changed": "jiddan after the adjective, as M2 taught"
+        },
+        {
+          "display": "lā shukran, lā urīd al-mazīd",
+          "script": "لا شكرا، لا أريد المزيد",
+          "cue": "No thanks, I don't want any more",
+          "changed": "S10's word doing the refusing"
+        }
+      ],
+      "mistake": {
+        "display": "lā shukran, anā shabʿāna (said by a man)",
+        "script": "لا شكرا، أنا شبعانة",
+        "why": "A man says shabʿān. The adjective follows the speaker, because the speaker is the one who is full."
+      },
+      "usage": "Refusing at a table. Said warmly, and expect the offer once more anyway.",
+      "register": "neutral",
+      "mnemonic": "A refusal without a reason is only politeness."
+    },
+    {
+      "id": "L2-M5-S05",
+      "display": "al-ḥisāb, min faḍlika",
+      "script": "الحساب، من فضلك",
+      "cue": "The bill, please",
+      "literal": "The-bill, from your-favour",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-ḥisāb",
+            "script": "الحساب",
+            "cue": "the bill",
+            "tag": "free",
+            "forms": [
+              "al-ḥisāb",
+              "ḥisāb"
+            ],
+            "note": "Masculine, and definite because there is only one bill and you both know which. ḥ is a moon letter, so the l of al- is written and said."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "No verb at all, and none is missing. A noun and a min faḍlika is a complete, polite request in Arabic.",
+      "sound": "al-ḥi-SĀB, with the ḥ a hard breath and the stress on the long ā.",
+      "variations": [
+        {
+          "display": "urīd al-ḥisāb, min faḍlika",
+          "script": "أريد الحساب، من فضلك",
+          "cue": "I'd like the bill, please",
+          "changed": "with the verb, which is no politer"
+        },
+        {
+          "display": "al-ḥisāb, law samaḥta",
+          "script": "الحساب، لو سمحت",
+          "cue": "The bill, please",
+          "changed": "M1's other softener"
+        },
+        {
+          "display": "hal hādhā al-ḥisāb?",
+          "script": "هل هذا الحساب؟",
+          "cue": "Is this the bill?",
+          "changed": "asked rather than requested"
+        }
+      ],
+      "mistake": {
+        "display": "ḥisāb, min faḍlika",
+        "script": "حساب، من فضلك",
+        "why": "There is one bill and it is yours: al-ḥisāb. Without the article you have asked for a bill, any bill."
+      },
+      "usage": "The end of a meal. Two words, and it is the whole transaction.",
+      "register": "formal",
+      "mnemonic": "One bill, so it takes the."
+    },
+    {
+      "id": "L2-M5-S06",
+      "display": "tafaḍḍalī, kulī al-khuḍār",
+      "script": "تفضلي، كلي الخضار",
+      "cue": "Please, eat the vegetables",
+      "literal": "Be-so-kind(you-f), eat(you-f) the-vegetables",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-khuḍār",
+            "script": "الخضار",
+            "cue": "the vegetables",
+            "tag": "delta",
+            "forms": [
+              "al-khuḍār",
+              "khuḍār"
+            ],
+            "note": "A collective and singular in Arabic where English is plural: al-khuḍār is vegetables as a kind. kh is a moon letter, so the article is written and said in full."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "khuḍār is singular. English speakers reach for a plural because their own word only exists in one, and Arabic never needs it.",
+      "sound": "al-khu-ḌĀR, with the ḍ emphatic and the vowels around it darkened.",
+      "variations": [
+        {
+          "display": "tafaḍḍal, kul al-khuḍār",
+          "script": "تفضل، كل الخضار",
+          "cue": "Please, eat the vegetables",
+          "changed": "the masculine address, in both words"
+        },
+        {
+          "display": "urīd khuḍār, min faḍliki",
+          "script": "أريد خضار، من فضلك",
+          "cue": "I'd like vegetables, please",
+          "changed": "asked for rather than offered, and the article goes"
+        },
+        {
+          "display": "al-khuḍār jamīla wa laṭīfa",
+          "script": "الخضار جميلة ولطيفة",
+          "cue": "The vegetables are lovely",
+          "changed": "M3's law: a collective takes the feminine singular"
+        }
+      ],
+      "mistake": {
+        "display": "tafaḍḍalī, kul al-khuḍār",
+        "script": "تفضلي، كل الخضار",
+        "why": "Both words are addressed to the same person, so both take the feminine: tafaḍḍalī, kulī."
+      },
+      "usage": "A host to a guest. Notice the third variation — a collective behaves like a non-human plural, which is M3's law reaching into this module.",
+      "register": "formal",
+      "mnemonic": "Address one person and every word follows her."
+    },
+    {
+      "id": "L2-M5-S07",
+      "display": "hādhā aṭ-ṭabaq laṭīf jiddan",
+      "script": "هذا الطبق لطيف جدا",
+      "cue": "This dish is very nice",
+      "literal": "This the-dish nice very",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aṭ-ṭabaq",
+            "script": "الطبق",
+            "cue": "the dish",
+            "tag": "free",
+            "forms": [
+              "aṭ-ṭabaq",
+              "ṭabaq"
+            ],
+            "note": "The plate and what is on it alike. ṭ is a sun letter and emphatic, so al- assimilates and the ṭ is held long: aṭ-ṭabaq."
+          }
+        ],
+        "rules": []
+      },
+      "trap": "hādhā and the noun BOTH carry the definiteness: hādhā aṭ-ṭabaq. Arabic will not let a demonstrative sit in front of a bare noun.",
+      "sound": "haa-dhaṭ-ṬA-baq — the al- runs into the ṭ and the two words become one breath.",
+      "variations": [
+        {
+          "display": "hādhihi as-sayyāra jamīla",
+          "script": "هذه السيارة جميلة",
+          "cue": "This car is beautiful",
+          "changed": "a feminine thing, so the demonstrative moves"
+        },
+        {
+          "display": "aṭ-ṭabaq laṭīf",
+          "script": "الطبق لطيف",
+          "cue": "The dish is nice",
+          "changed": "without the demonstrative"
+        },
+        {
+          "display": "hādhā aṭ-ṭabaq kabīr jiddan",
+          "script": "هذا الطبق كبير جدا",
+          "cue": "This dish is very big",
+          "changed": "a different adjective, from the level below"
+        }
+      ],
+      "mistake": {
+        "display": "hādhā ṭabaq laṭīf jiddan",
+        "script": "هذا طبق لطيف جدا",
+        "why": "After hādhā the noun takes al-: hādhā aṭ-ṭabaq. Without it the phrase means \"this is a nice dish\", which is a different sentence."
+      },
+      "usage": "A compliment paid to the food, which in Arab hosting is paid to the host.",
+      "register": "neutral",
+      "mnemonic": "The demonstrative and its noun are definite together."
+    },
+    {
+      "id": "L2-M5-S08",
+      "display": "hal turīdīn al-ḥulw?",
+      "script": "هل تريدين الحلو؟",
+      "cue": "Would you like the dessert?",
+      "literal": "Question want(you-f) the-sweet?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-ḥulw",
+            "script": "الحلو",
+            "cue": "the sweet · the dessert",
+            "tag": "free",
+            "forms": [
+              "al-ḥulw",
+              "ḥulw"
+            ],
+            "note": "The adjective \"sweet\" used as a noun, which is how Arabic names a course of a meal. ḥ is a moon letter, so the article stands."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "The article is here because the dessert is the one on the table. S03's offer had none, because it named a kind — and the two questions look identical otherwise.",
+      "sound": "al-ḤULW, one syllable after the article, ending in a full w.",
+      "variations": [
+        {
+          "display": "hal turīd al-ḥulw?",
+          "script": "هل تريد الحلو؟",
+          "cue": "Would you like the dessert?",
+          "changed": "the masculine, and the script shows the difference"
+        },
+        {
+          "display": "urīd al-ḥulw, min faḍlika",
+          "script": "أريد الحلو، من فضلك",
+          "cue": "I'd like the dessert, please",
+          "changed": "the answer, in S02's frame"
+        },
+        {
+          "display": "lā shukran, anā shabʿāna",
+          "script": "لا شكرا، أنا شبعانة",
+          "cue": "No thanks, I'm full",
+          "changed": "the other answer, and the one that needs a reason"
+        }
+      ],
+      "mistake": {
+        "display": "hal turīd al-ḥulw? (said to a woman)",
+        "script": "هل تريد الحلو؟",
+        "why": "To a woman it is turīdīn, and here the Arabic line shows it — تريدين — unlike M1's samaḥta and samaḥti."
+      },
+      "usage": "The last offer of a meal, and the one most often refused. Refusing it takes S04's reason.",
+      "register": "neutral",
+      "mnemonic": "A kind takes no al-; the one in front of you does."
+    },
+    {
+      "id": "L2-M5-S09",
+      "display": "alḥamdu lillāh, kul maʿī",
+      "script": "الحمد لله، كل معي",
+      "cue": "Thank goodness, eat with me",
+      "literal": "The-praise to-God, eat(you-m) with-me",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "alḥamdu lillāh",
+            "script": "الحمد لله",
+            "cue": "thank goodness · praise be",
+            "tag": "delta",
+            "forms": [],
+            "note": "Two words travelling as one, and neither half is used apart in this course. It answers \"how are you\", ends a meal, and marks any small relief."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "It is not only religious. It is what anyone says when a meal ends, when news is good, and when kayfa ḥāluka is answered — and treating it as a prayer misses most of its uses.",
+      "sound": "al-ḤAM-du lil-LĀH, four beats, with the l of lillāh held long.",
+      "variations": [
+        {
+          "display": "alḥamdu lillāh, anā shabʿān",
+          "script": "الحمد لله، أنا شبعان",
+          "cue": "Thank goodness, I'm full",
+          "changed": "what a guest says when the meal is over"
+        },
+        {
+          "display": "kayfa ḥāluka? alḥamdu lillāh",
+          "script": "كيف حالك؟ الحمد لله",
+          "cue": "How are you? — Fine, thank goodness",
+          "changed": "M2's question from the level below, and its commonest answer"
+        },
+        {
+          "display": "alḥamdu lillāh, aṭ-ṭabaq laṭīf",
+          "script": "الحمد لله، الطبق لطيف",
+          "cue": "Thank goodness, the dish is nice",
+          "changed": "a compliment with the phrase in front"
+        }
+      ],
+      "mistake": {
+        "display": "alḥamdu li allāh, kul maʿī",
+        "script": "الحمد ل الله، كل معي",
+        "why": "The two words are written joined: lillāh. The phrase travels whole and is never taken apart."
+      },
+      "usage": "Everywhere, all day. The second variation is the one to learn first, because it answers the question every conversation opens with.",
+      "register": "neutral",
+      "mnemonic": "One phrase, and half the day's small moments have an answer."
+    },
+    {
+      "id": "L2-M5-S10",
+      "display": "hal turīd al-mazīd min ash-shāy?",
+      "script": "هل تريد المزيد من الشاي؟",
+      "cue": "Would you like more tea?",
+      "literal": "Question want(you-m) the-more from the-tea?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-mazīd",
+            "script": "المزيد",
+            "cue": "more",
+            "tag": "delta",
+            "forms": [
+              "al-mazīd",
+              "mazīd"
+            ],
+            "note": "A noun, not an adjective: literally \"the increase\". It takes min in front of what there is more of, which is why the tea keeps its article too."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "min here is neither \"from\" nor \"than\". After al-mazīd it marks what the quantity is OF, which is a third job for L1-M1's row.",
+      "sound": "al-ma-ZĪD, stressed on the long ī.",
+      "variations": [
+        {
+          "display": "hal turīd al-mazīd min al-khubz?",
+          "script": "هل تريد المزيد من الخبز؟",
+          "cue": "Would you like more bread?",
+          "changed": "something else to be offered more of"
+        },
+        {
+          "display": "lā shukran, lā urīd al-mazīd",
+          "script": "لا شكرا، لا أريد المزيد",
+          "cue": "No thanks, I don't want any more",
+          "changed": "the refusal, with al-mazīd standing alone"
+        },
+        {
+          "display": "tafaḍḍal, khudh al-mazīd",
+          "script": "تفضل، خذ المزيد",
+          "cue": "Please, take some more",
+          "changed": "M4's khudh, in the host's mouth"
+        }
+      ],
+      "mistake": {
+        "display": "hal turīd mazīd shāy?",
+        "script": "هل تريد مزيد شاي؟",
+        "why": "al-mazīd takes min: al-mazīd min ash-shāy. Both nouns keep their articles."
+      },
+      "usage": "The offer that will be made twice. In MSA this is the correct question and at a real table a host says something shorter; the note in M4's brief covers the same ground.",
+      "register": "formal",
+      "mnemonic": "More OF something, with a min in between."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M5-C01",
+      "display": "tafaḍḍal, ishrab ash-shāy",
+      "script": "تفضل، اشرب الشاي",
+      "cue": "Please, drink the tea"
+    },
+    {
+      "id": "L2-M5-C02",
+      "display": "urīd laḥm wa ruzz, min faḍlika",
+      "script": "أريد لحم ورز، من فضلك",
+      "cue": "I'd like meat and rice, please"
+    },
+    {
+      "id": "L2-M5-C03",
+      "display": "hal turīd samak?",
+      "script": "هل تريد سمك؟",
+      "cue": "Would you like fish?"
+    },
+    {
+      "id": "L2-M5-C04",
+      "display": "lā shukran, anā shabʿān",
+      "script": "لا شكرا، أنا شبعان",
+      "cue": "No thanks, I'm full"
+    },
+    {
+      "id": "L2-M5-C05",
+      "display": "al-ḥisāb, min faḍlika",
+      "script": "الحساب، من فضلك",
+      "cue": "The bill, please"
+    },
+    {
+      "id": "L2-M5-C06",
+      "display": "tafaḍḍalī, kulī al-khuḍār",
+      "script": "تفضلي، كلي الخضار",
+      "cue": "Please, eat the vegetables"
+    },
+    {
+      "id": "L2-M5-C07",
+      "display": "hādhā aṭ-ṭabaq laṭīf jiddan",
+      "script": "هذا الطبق لطيف جدا",
+      "cue": "This dish is very nice"
+    },
+    {
+      "id": "L2-M5-C08",
+      "display": "hal turīdīn al-ḥulw?",
+      "script": "هل تريدين الحلو؟",
+      "cue": "Would you like the dessert?"
+    },
+    {
+      "id": "L2-M5-C09",
+      "display": "alḥamdu lillāh, kul maʿī",
+      "script": "الحمد لله، كل معي",
+      "cue": "Thank goodness, eat with me"
+    },
+    {
+      "id": "L2-M5-C10",
+      "display": "hal turīd al-mazīd min ash-shāy?",
+      "script": "هل تريد المزيد من الشاي؟",
+      "cue": "Would you like more tea?"
+    },
+    {
+      "id": "L2-M5-C11",
+      "display": "urīd al-ḥulw, min faḍlika",
+      "script": "أريد الحلو، من فضلك",
+      "cue": "I'd like the dessert, please"
+    },
+    {
+      "id": "L2-M5-C12",
+      "display": "kayfa ḥāluka? alḥamdu lillāh",
+      "script": "كيف حالك؟ الحمد لله",
+      "cue": "How are you? — Fine, thank goodness"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,704 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M4",
+  "title": "Getting around",
+  "job": "Directions, transport, asking the way",
+  "prerequisites": [
+    "L2-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "simple_present",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "ʿafwan + , + kayfa adhhab ilā + al- + N?",
+      "V-imperative + ilā al-amām",
+      "ʿalā al-yamīn / ʿalā al-yasār",
+      "khudh + al- + N-transport",
+      "al- + N + bi-jānib + al- + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "kayfa adhhab ilā…? asks the way without conjugating anything new: kayfa is M2's, adhhab is M4's and ilā is M4's, all from the level below. Only the destination changes."
+    },
+    {
+      "tag": "delta",
+      "text": "Direction phrases hang off ʿalā: ʿalā al-yamīn, ʿalā al-yasār. The bare yamīn and yasār are the sides themselves, and the phrase is what points at them."
+    },
+    {
+      "tag": "delta",
+      "text": "bi- means \"by\" as well as \"with\" and \"for\": bi-al-ḥāfila is by bus. It is the same bi- that has been sitting inside bi-khayr since M2 and bi-kam since M8, and this is where it is finally explained."
+    },
+    {
+      "tag": "delta",
+      "text": "Elision is never written. bi-al-ḥāfila is said bil-ḥāfila and written in full, because a course that wrote both would have two words for one."
+    },
+    {
+      "tag": "interference",
+      "text": "The MSA word for a bus is al-ḥāfila, and every passenger in every Arab city says al-bāṣ. This course writes the MSA one everywhere the index can see, and names the other in words here — the only place in the module it appears."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M4-S01",
+      "display": "ʿafwan, kayfa adhhab ilā al-maḥaṭṭa?",
+      "script": "عفوا، كيف أذهب إلى المحطة؟",
+      "cue": "Excuse me, how do I get to the station?",
+      "literal": "Pardon, how I-go to the-station?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-maḥaṭṭa",
+            "script": "المحطة",
+            "cue": "the station",
+            "tag": "free",
+            "forms": [
+              "al-maḥaṭṭa",
+              "maḥaṭṭa"
+            ],
+            "note": "Feminine: al-maḥaṭṭa. The ṭ is emphatic and doubled, which is why the word sits low and long in the mouth."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The whole question is built from words the course already has. Nothing here is new except the place, which is what makes it worth memorising as a frame.",
+      "sound": "al-ma-ḤAṬ-ṭa, with the ṭ held twice as long as a single one.",
+      "variations": [
+        {
+          "display": "ʿafwan, kayfa adhhab ilā as-sūq?",
+          "script": "عفوا، كيف أذهب إلى السوق؟",
+          "cue": "Excuse me, how do I get to the market?",
+          "changed": "another destination"
+        },
+        {
+          "display": "law samaḥta, kayfa adhhab ilā al-maṭʿam?",
+          "script": "لو سمحت، كيف أذهب إلى المطعم؟",
+          "cue": "Excuse me, how do I get to the restaurant?",
+          "changed": "M1's other opener"
+        },
+        {
+          "display": "kayfa adhhab ilā al-madrasa?",
+          "script": "كيف أذهب إلى المدرسة؟",
+          "cue": "How do I get to the school?",
+          "changed": "the bare question, with no opener at all"
+        }
+      ],
+      "mistake": {
+        "display": "ʿafwan, kayfa adhhab al-maḥaṭṭa?",
+        "script": "عفوا، كيف أذهب المحطة؟",
+        "why": "Going somewhere takes ilā: adhhab ilā al-maḥaṭṭa. Arabic does not let a destination sit bare after the verb."
+      },
+      "usage": "The first thing you say in a city you do not know. ʿafwan opens it and the question does the rest.",
+      "register": "formal",
+      "mnemonic": "Everything in this question is already yours except the place."
+    },
+    {
+      "id": "L2-M4-S02",
+      "display": "idhhab ilā al-amām, min faḍlika",
+      "script": "اذهب إلى الأمام، من فضلك",
+      "cue": "Go straight ahead, please",
+      "literal": "Go(you-m) to the-front, from your-favour",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "idhhab",
+            "script": "اذهب",
+            "cue": "go! (to a man)",
+            "tag": "delta",
+            "forms": [
+              "idhhab",
+              "idhhabī"
+            ],
+            "note": "tadhhab with the prefix off and an i- in front, exactly as ishrab was built in M1. The feminine adds -ī."
+          },
+          {
+            "display": "al-amām",
+            "script": "الأمام",
+            "cue": "the front · ahead",
+            "tag": "free",
+            "forms": [],
+            "note": "The al-'d shape of M7's amām, \"in front of\", and its own index key. With ilā in front it means forward rather than in front of something."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "amām on its own needs something to be in front of. ilā al-amām needs nothing — it is a direction rather than a position.",
+      "sound": "IDH-hab, with the dh of English \"this\". al-a-MĀM, stressed on the long ā.",
+      "variations": [
+        {
+          "display": "idhhabī ilā al-amām, min faḍliki",
+          "script": "اذهبي إلى الأمام، من فضلك",
+          "cue": "Go straight ahead, please (to a woman)",
+          "changed": "the feminine, visible in the romanization and in the script"
+        },
+        {
+          "display": "idhhab ilā al-maḥaṭṭa",
+          "script": "اذهب إلى المحطة",
+          "cue": "Go to the station",
+          "changed": "a place instead of a direction"
+        },
+        {
+          "display": "idhhab ilā al-amām thumma ilā as-sūq",
+          "script": "اذهب إلى الأمام ثم إلى السوق",
+          "cue": "Go straight ahead and then to the market",
+          "changed": "thumma from M10 of the level below, chaining two steps"
+        }
+      ],
+      "mistake": {
+        "display": "tadhhab ilā al-amām, min faḍlika",
+        "script": "تذهب إلى الأمام، من فضلك",
+        "why": "tadhhab is a statement. The command drops the prefix: idhhab."
+      },
+      "usage": "Given to a stranger, and this module speaks that way throughout.",
+      "register": "formal",
+      "mnemonic": "The imperative recipe from M1, on a new verb."
+    },
+    {
+      "id": "L2-M4-S03",
+      "display": "ʿalā al-yamīn, thumma ʿalā al-yasār",
+      "script": "على اليمين، ثم على اليسار",
+      "cue": "On the right, then on the left",
+      "literal": "On the-right, then on the-left",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-yamīn",
+            "script": "اليمين",
+            "cue": "the right",
+            "tag": "free",
+            "forms": [
+              "al-yamīn",
+              "yamīn"
+            ],
+            "note": "The side itself, and ʿalā in front turns it into a direction. y is a moon letter, so the l of al- is written and said."
+          },
+          {
+            "display": "al-yasār",
+            "script": "اليسار",
+            "cue": "the left",
+            "tag": "free",
+            "forms": [
+              "al-yasār",
+              "yasār"
+            ],
+            "note": "The partner of al-yamīn, and it behaves identically. Both are nouns, not adverbs, which is why they need ʿalā."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The sides are NOUNS. English says \"turn right\" with no preposition and Arabic needs ʿalā, because it is saying \"on the right\".",
+      "sound": "ya-MĪN and ya-SĀR, both stressed on the long vowel of the second syllable.",
+      "variations": [
+        {
+          "display": "al-maṭʿam ʿalā al-yamīn",
+          "script": "المطعم على اليمين",
+          "cue": "The restaurant is on the right",
+          "changed": "the phrase locating something rather than instructing"
+        },
+        {
+          "display": "idhhab ʿalā al-yasār",
+          "script": "اذهب على اليسار",
+          "cue": "Go to the left",
+          "changed": "an imperative in front of the direction"
+        },
+        {
+          "display": "al-bayt ʿalā al-yamīn wa al-madrasa ʿalā al-yasār",
+          "script": "البيت على اليمين والمدرسة على اليسار",
+          "cue": "The house is on the right and the school is on the left",
+          "changed": "both sides in one sentence"
+        }
+      ],
+      "mistake": {
+        "display": "idhhab al-yamīn",
+        "script": "اذهب اليمين",
+        "why": "The side needs ʿalā: ʿalā al-yamīn. Without it you have told someone to go the right itself."
+      },
+      "usage": "Half of any real set of directions, and the half a learner has to be able to HEAR rather than say.",
+      "register": "formal",
+      "mnemonic": "The sides are places, so they need a preposition."
+    },
+    {
+      "id": "L2-M4-S04",
+      "display": "khudh al-ḥāfila ilā as-sūq",
+      "script": "خذ الحافلة إلى السوق",
+      "cue": "Take the bus to the market",
+      "literal": "Take(you-m) the-bus to the-market",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "khudh",
+            "script": "خذ",
+            "cue": "take! (to a man)",
+            "tag": "delta",
+            "forms": [
+              "khudh",
+              "khudhī"
+            ],
+            "note": "An imperative that loses more than its prefix — the hamza of the root goes too, leaving three letters. Learn the shape rather than deriving it."
+          },
+          {
+            "display": "al-ḥāfila",
+            "script": "الحافلة",
+            "cue": "the bus",
+            "tag": "interference",
+            "forms": [
+              "al-ḥāfila",
+              "ḥāfila",
+              "bi-al-ḥāfila"
+            ],
+            "note": "The MSA word, understood everywhere and written in every newspaper. Every passenger in every Arab city says al-bāṣ instead — that word is named here and appears in no sentence of this course."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "The word you will read and the word you will hear are different words. This module writes the first and tells you about the second, and does so exactly once.",
+      "sound": "KHUDH, one syllable, opening with the kh of Scottish \"loch\" and closing with the dh of \"this\".",
+      "variations": [
+        {
+          "display": "khudh al-qiṭār ilā al-madrasa",
+          "script": "خذ القطار إلى المدرسة",
+          "cue": "Take the train to the school",
+          "changed": "another way of getting there"
+        },
+        {
+          "display": "khudhī al-ḥāfila, min faḍliki",
+          "script": "خذي الحافلة، من فضلك",
+          "cue": "Take the bus, please (to a woman)",
+          "changed": "the feminine imperative"
+        },
+        {
+          "display": "khudh al-miftāḥ, min faḍlika",
+          "script": "خذ المفتاح، من فضلك",
+          "cue": "Take the key, please",
+          "changed": "the verb doing its ordinary job, with M7's key"
+        }
+      ],
+      "mistake": {
+        "display": "ta'khudh al-ḥāfila ilā as-sūq",
+        "script": "تأخذ الحافلة إلى السوق",
+        "why": "That is a statement — \"you take\". The imperative is khudh, and it is shorter than the rule would predict."
+      },
+      "usage": "Advice rather than an instruction. The destination after ilā is what makes it useful.",
+      "register": "formal",
+      "mnemonic": "One word you write, another you hear."
+    },
+    {
+      "id": "L2-M4-S05",
+      "display": "al-maḥaṭṭa qarība min hunā",
+      "script": "المحطة قريبة من هنا",
+      "cue": "The station is near here",
+      "literal": "The-station near(f) from here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hunā",
+            "script": "هنا",
+            "cue": "here",
+            "tag": "free",
+            "forms": [],
+            "note": "The partner of M7's hunāka, \"there\". Two words, one letter apart in the script, and the difference is the whole distance."
+          }
+        ],
+        "rules": []
+      },
+      "trap": "qarība takes min, not ilā. Arabic measures nearness FROM a place, where English measures it to one.",
+      "sound": "hu-NĀ, with the stress on the long final ā.",
+      "variations": [
+        {
+          "display": "al-maṭʿam qarīb min hunā",
+          "script": "المطعم قريب من هنا",
+          "cue": "The restaurant is near here",
+          "changed": "a masculine place, so the adjective moves"
+        },
+        {
+          "display": "al-maḥaṭṭa hunāka",
+          "script": "المحطة هناك",
+          "cue": "The station is over there",
+          "changed": "hunāka, and no adjective needed at all"
+        },
+        {
+          "display": "al-buyūt qarība min al-maḥaṭṭa",
+          "script": "البيوت قريبة من المحطة",
+          "cue": "The houses are near the station",
+          "changed": "M3's non-human plural, taking the feminine singular"
+        }
+      ],
+      "mistake": {
+        "display": "al-maḥaṭṭa qarība ilā hunā",
+        "script": "المحطة قريبة إلى هنا",
+        "why": "Nearness takes min: qarība min hunā. ilā is for going, not for being close."
+      },
+      "usage": "Reassurance, and the answer that ends most of the exchanges in this module.",
+      "register": "neutral",
+      "mnemonic": "Near FROM here, not near to it."
+    },
+    {
+      "id": "L2-M4-S06",
+      "display": "adhhab bi-al-ḥāfila kull yawm",
+      "script": "أذهب بالحافلة كل يوم",
+      "cue": "I go by bus every day",
+      "literal": "I-go by-the-bus every day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bi-al-ḥāfila",
+            "script": "بالحافلة",
+            "cue": "by the bus",
+            "tag": "delta",
+            "forms": [],
+            "note": "The bi- that has been hiding inside bi-khayr since M2 and bi-kam since M8, doing its own job at last: by, with, for. The row for al-ḥāfila is S04's."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "It is written in full and said as one: bil-ḥāfila. The course never writes the elision, because writing both spellings would give the index two words for one.",
+      "sound": "bil-ḤĀ-fi-la — the a of al- vanishes entirely in speech, and the script shows the join.",
+      "variations": [
+        {
+          "display": "adhhab bi-al-qiṭār kull yawm",
+          "script": "أذهب بالقطار كل يوم",
+          "cue": "I go by train every day",
+          "changed": "another means of travel"
+        },
+        {
+          "display": "adhhab ilā al-ʿamal bi-al-ḥāfila",
+          "script": "أذهب إلى العمل بالحافلة",
+          "cue": "I go to work by bus",
+          "changed": "a destination as well as a means"
+        },
+        {
+          "display": "hal tadhhab bi-al-ḥāfila?",
+          "script": "هل تذهب بالحافلة؟",
+          "cue": "Do you go by bus?",
+          "changed": "asked as a question, with M4's ta- form"
+        }
+      ],
+      "mistake": {
+        "display": "adhhab bil-ḥāfila kull yawm",
+        "script": "أذهب بالحافلة كل يوم",
+        "why": "The course writes the elision out: bi-al-ḥāfila. The Arabic line joins them; the romanized line does not."
+      },
+      "usage": "A daily routine, in a module about finding your way. The frame is L1-M4's and only the means is new.",
+      "register": "neutral",
+      "mnemonic": "Written apart, said together."
+    },
+    {
+      "id": "L2-M4-S07",
+      "display": "al-qiṭār sarīʿ jiddan",
+      "script": "القطار سريع جدا",
+      "cue": "The train is very fast",
+      "literal": "The-train fast very",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-qiṭār",
+            "script": "القطار",
+            "cue": "the train",
+            "tag": "free",
+            "forms": [
+              "al-qiṭār",
+              "qiṭār",
+              "bi-al-qiṭār"
+            ],
+            "note": "Masculine. The q is made at the very back of the throat and the ṭ is emphatic, so the whole word sits low."
+          },
+          {
+            "display": "sarīʿ",
+            "script": "سريع",
+            "cue": "fast",
+            "tag": "free",
+            "forms": [
+              "sarīʿ",
+              "sarīʿa"
+            ],
+            "note": "Ends in ʿayn, which is a letter and not a punctuation mark. sarīʿa for a feminine thing."
+          }
+        ],
+        "rules": []
+      },
+      "trap": "A sentence with no verb again, and by now that should feel ordinary rather than missing.",
+      "sound": "sa-RĪʿ, and the final ʿayn is a tightening of the throat after the long ī — not silence.",
+      "variations": [
+        {
+          "display": "al-ḥāfila sarīʿa",
+          "script": "الحافلة سريعة",
+          "cue": "The bus is fast",
+          "changed": "a feminine thing, so the adjective moves"
+        },
+        {
+          "display": "al-qiṭār al-jadīd sarīʿ",
+          "script": "القطار الجديد سريع",
+          "cue": "The new train is fast",
+          "changed": "M3's definiteness rule, with the attributive taking al-"
+        },
+        {
+          "display": "al-qiṭār sarīʿ wa al-ḥāfila qarība",
+          "script": "القطار سريع والحافلة قريبة",
+          "cue": "The train is fast and the bus is close",
+          "changed": "two verbless clauses joined by wa"
+        }
+      ],
+      "mistake": {
+        "display": "al-qiṭār al-sarīʿ",
+        "script": "القطار السريع",
+        "why": "With al- on both it is a phrase — \"the fast train\" — and there is no sentence. M3's rule, still binding."
+      },
+      "usage": "Why you were told to take it. The reason usually follows the advice in an Arabic direction.",
+      "register": "neutral",
+      "mnemonic": "Drop the al- and you have said is."
+    },
+    {
+      "id": "L2-M4-S08",
+      "display": "al-maṭʿam bi-jānib al-maḥaṭṭa",
+      "script": "المطعم بجانب المحطة",
+      "cue": "The restaurant is next to the station",
+      "literal": "The-restaurant by-side the-station",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bi-jānib",
+            "script": "بجانب",
+            "cue": "next to",
+            "tag": "delta",
+            "forms": [
+              "bi-jānib",
+              "jānib"
+            ],
+            "note": "Literally \"by the side of\", and the bi- is S06's. jānib is the side itself, and the two together make a preposition."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "bi-jānib takes the noun straight after it with no min and no ilā. It is already a preposition, and adding another would be doubling.",
+      "sound": "bi-JĀ-nib, with the stress on the long ā.",
+      "variations": [
+        {
+          "display": "al-bayt bi-jānib al-madrasa",
+          "script": "البيت بجانب المدرسة",
+          "cue": "The house is next to the school",
+          "changed": "another pair of places"
+        },
+        {
+          "display": "al-maṭʿam bi-jānib as-sūq",
+          "script": "المطعم بجانب السوق",
+          "cue": "The restaurant is next to the market",
+          "changed": "a landmark from the level below"
+        },
+        {
+          "display": "hunāka maṭʿam bi-jānib al-maḥaṭṭa",
+          "script": "هناك مطعم بجانب المحطة",
+          "cue": "There's a restaurant next to the station",
+          "changed": "hunāka doing existential work rather than pointing"
+        }
+      ],
+      "mistake": {
+        "display": "al-maṭʿam bi-jānib min al-maḥaṭṭa",
+        "script": "المطعم بجانب من المحطة",
+        "why": "bi-jānib is already a preposition. The noun follows it directly."
+      },
+      "usage": "How anywhere is located in Arabic: by reference to somewhere else you already know.",
+      "register": "neutral",
+      "mnemonic": "By the side of, and nothing in between."
+    },
+    {
+      "id": "L2-M4-S09",
+      "display": "hunāka maṭʿam qarīb min al-bayt",
+      "script": "هناك مطعم قريب من البيت",
+      "cue": "There's a restaurant near the house",
+      "literal": "There restaurant near from the-house",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hunāka",
+            "script": "هناك",
+            "cue": "there is · over there",
+            "tag": "interference",
+            "forms": [],
+            "note": "M7's row, doing a second job: at the head of a sentence it announces that something exists, and English's \"there is\" happens to work the same way. The pointing sense is still there too."
+          }
+        ],
+        "rules": []
+      },
+      "trap": "maṭʿam has no al-, and that is what makes the sentence an announcement rather than a location. Adding one would say \"the restaurant is there\".",
+      "sound": "hu-NĀ-ka, one syllable longer than hunā and the same word underneath.",
+      "variations": [
+        {
+          "display": "hunāka maḥaṭṭa qarība min hunā",
+          "script": "هناك محطة قريبة من هنا",
+          "cue": "There's a station near here",
+          "changed": "a feminine place, so the adjective moves"
+        },
+        {
+          "display": "al-maṭʿam hunāka",
+          "script": "المطعم هناك",
+          "cue": "The restaurant is over there",
+          "changed": "the pointing sense, with the noun definite"
+        },
+        {
+          "display": "hal hunāka maṭʿam qarīb?",
+          "script": "هل هناك مطعم قريب؟",
+          "cue": "Is there a restaurant nearby?",
+          "changed": "asked as a question, with M2's hal"
+        }
+      ],
+      "mistake": {
+        "display": "hunāka al-maṭʿam qarīb min al-bayt",
+        "script": "هناك المطعم قريب من البيت",
+        "why": "An announcement takes an indefinite noun: hunāka maṭʿam. With al- the sentence is about a restaurant you both already know."
+      },
+      "usage": "The answer to the question in the last variation, which is how you find anything anywhere.",
+      "register": "neutral",
+      "mnemonic": "No al- means it is news."
+    },
+    {
+      "id": "L2-M4-S10",
+      "display": "idhhab hunā thumma khudh al-qiṭār",
+      "script": "اذهب هنا ثم خذ القطار",
+      "cue": "Go here and then take the train",
+      "literal": "Go(you-m) here then take(you-m) the-train",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "thumma",
+            "script": "ثم",
+            "cue": "then",
+            "tag": "free",
+            "forms": [],
+            "note": "M10's row from the level below, joining two steps in order. Unlike wa it says which came first."
+          }
+        ],
+        "rules": []
+      },
+      "trap": "Nothing new. Two imperatives from this module and one joiner from the last, and that is a whole set of directions.",
+      "sound": "THUM-ma, with the th of \"think\" and the m held long.",
+      "variations": [
+        {
+          "display": "idhhab ilā al-amām thumma khudh al-ḥāfila",
+          "script": "اذهب إلى الأمام ثم خذ الحافلة",
+          "cue": "Go straight ahead and then take the bus",
+          "changed": "the module's two other frames, chained"
+        },
+        {
+          "display": "khudh al-qiṭār thumma idhhab ʿalā al-yamīn",
+          "script": "خذ القطار ثم اذهب على اليمين",
+          "cue": "Take the train and then go to the right",
+          "changed": "the two steps in the other order"
+        },
+        {
+          "display": "idhhabī hunā thumma khudhī al-qiṭār",
+          "script": "اذهبي هنا ثم خذي القطار",
+          "cue": "Go here and then take the train (to a woman)",
+          "changed": "both imperatives move to the feminine"
+        }
+      ],
+      "mistake": {
+        "display": "idhhab hunā wa thumma khudh al-qiṭār",
+        "script": "اذهب هنا وثم خذ القطار",
+        "why": "thumma already joins. Putting wa in front of it doubles the joiner."
+      },
+      "usage": "The whole module in one sentence, and it opens nothing new — which is what the last rung of a module should do.",
+      "register": "formal",
+      "mnemonic": "wa joins, thumma orders."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M4-C01",
+      "display": "ʿafwan, kayfa adhhab ilā al-maḥaṭṭa?",
+      "script": "عفوا، كيف أذهب إلى المحطة؟",
+      "cue": "Excuse me, how do I get to the station?"
+    },
+    {
+      "id": "L2-M4-C02",
+      "display": "idhhab ilā al-amām, min faḍlika",
+      "script": "اذهب إلى الأمام، من فضلك",
+      "cue": "Go straight ahead, please"
+    },
+    {
+      "id": "L2-M4-C03",
+      "display": "ʿalā al-yamīn, thumma ʿalā al-yasār",
+      "script": "على اليمين، ثم على اليسار",
+      "cue": "On the right, then on the left"
+    },
+    {
+      "id": "L2-M4-C04",
+      "display": "khudh al-ḥāfila ilā as-sūq",
+      "script": "خذ الحافلة إلى السوق",
+      "cue": "Take the bus to the market"
+    },
+    {
+      "id": "L2-M4-C05",
+      "display": "al-maḥaṭṭa qarība min hunā",
+      "script": "المحطة قريبة من هنا",
+      "cue": "The station is near here"
+    },
+    {
+      "id": "L2-M4-C06",
+      "display": "adhhab bi-al-ḥāfila kull yawm",
+      "script": "أذهب بالحافلة كل يوم",
+      "cue": "I go by bus every day"
+    },
+    {
+      "id": "L2-M4-C07",
+      "display": "al-qiṭār sarīʿ jiddan",
+      "script": "القطار سريع جدا",
+      "cue": "The train is very fast"
+    },
+    {
+      "id": "L2-M4-C08",
+      "display": "al-maṭʿam bi-jānib al-maḥaṭṭa",
+      "script": "المطعم بجانب المحطة",
+      "cue": "The restaurant is next to the station"
+    },
+    {
+      "id": "L2-M4-C09",
+      "display": "hunāka maṭʿam qarīb min al-bayt",
+      "script": "هناك مطعم قريب من البيت",
+      "cue": "There's a restaurant near the house"
+    },
+    {
+      "id": "L2-M4-C10",
+      "display": "idhhab hunā thumma khudh al-qiṭār",
+      "script": "اذهب هنا ثم خذ القطار",
+      "cue": "Go here and then take the train"
+    },
+    {
+      "id": "L2-M4-C11",
+      "display": "hal hunāka maṭʿam qarīb?",
+      "script": "هل هناك مطعم قريب؟",
+      "cue": "Is there a restaurant nearby?"
+    },
+    {
+      "id": "L2-M4-C12",
+      "display": "al-bayt bi-jānib al-madrasa",
+      "script": "البيت بجانب المدرسة",
+      "cue": "The house is next to the school"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

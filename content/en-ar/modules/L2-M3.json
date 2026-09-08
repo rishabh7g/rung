@@ -1,0 +1,725 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M3",
+  "title": "Describing things",
+  "job": "Size, colour, quality — agreement at length",
+  "prerequisites": [
+    "L2-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "al- + N + al- + Adj   (a phrase)",
+      "al- + N + Adj   (a sentence)",
+      "al- + N-pl + Adj-f-sg",
+      "N + Adj + jiddan",
+      "al- + N + aḥmar / ḥamrāʾ"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "A plural of NON-HUMAN things takes a FEMININE SINGULAR adjective: al-kutub jamīla — \"the books, she is beautiful\". Only a plural of people takes a plural adjective: al-mudarrisūn mashghūlūn. English has no such split, so \"plural noun, plural adjective\" is wrong in Arabic more often than it is right."
+    },
+    {
+      "tag": "delta",
+      "text": "One al- decides whether three words are a phrase or a sentence. al-bayt al-kabīr is \"the big house\"; al-bayt kabīr is \"the house is big\". An attributive adjective matches its noun in definiteness; a predicate does not, and the mismatch IS the verb."
+    },
+    {
+      "tag": "delta",
+      "text": "Three plural systems and none of them is predictable: sound masculine -ūn on human nouns, sound feminine -āt, and BROKEN plurals that reshape the word from inside — kitāb → kutub, bayt → buyūt, walad → awlād, lawn → alwān."
+    },
+    {
+      "tag": "delta",
+      "text": "Colours follow their own pattern: aḥmar for a masculine thing and ḥamrāʾ for a feminine one. The feminine is NOT the -a you have been writing since the first module, so the pair is learnt together."
+    },
+    {
+      "tag": "free",
+      "text": "A broken plural belongs in the forms of the row that teaches its singular, and no rule in this course claims the shape can be worked out. It cannot."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M3-S01",
+      "display": "al-bayt al-jadīd kabīr",
+      "script": "البيت الجديد كبير",
+      "cue": "The new house is big",
+      "literal": "The-house the-new big",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-jadīd",
+            "script": "الجديد",
+            "cue": "the new",
+            "tag": "delta",
+            "forms": [
+              "al-jadīd",
+              "jadīd",
+              "jadīda",
+              "al-jadīda"
+            ],
+            "note": "Carries al- because al-bayt does — an attributive adjective matches its noun in definiteness. kabīr does not, and that is what makes it the predicate."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Two adjectives, one with al- and one without, and the al- is what tells them apart. Give kabīr an al- as well and the sentence loses its verb and becomes a phrase.",
+      "sound": "al-BAYT al-ja-DĪD ka-BĪR — three stresses, and the al- of the second word is barely voiced.",
+      "variations": [
+        {
+          "display": "al-bayt al-kabīr jadīd",
+          "script": "البيت الكبير جديد",
+          "cue": "The big house is new",
+          "changed": "the two adjectives swap jobs, and only the al- moves"
+        },
+        {
+          "display": "al-bayt al-jadīd al-kabīr",
+          "script": "البيت الجديد الكبير",
+          "cue": "the big new house",
+          "changed": "both take al-, so there is no sentence left — only a phrase"
+        },
+        {
+          "display": "bayt jadīd kabīr",
+          "script": "بيت جديد كبير",
+          "cue": "a big new house",
+          "changed": "no al- anywhere, so it is an indefinite phrase"
+        }
+      ],
+      "mistake": {
+        "display": "al-bayt al-jadīd al-kabīr",
+        "script": "البيت الجديد الكبير",
+        "why": "That is a phrase, not a sentence — \"the big new house\". The predicate must go without al-: al-bayt al-jadīd kabīr."
+      },
+      "usage": "The single most useful pattern in the level: it is how Arabic says \"is\" without a verb.",
+      "register": "neutral",
+      "mnemonic": "The word without al- is the one doing the saying."
+    },
+    {
+      "id": "L2-M3-S02",
+      "display": "al-kutub jamīla jiddan",
+      "script": "الكتب جميلة جدا",
+      "cue": "The books are very beautiful",
+      "literal": "The-books beautiful(f-sg) very",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jamīla",
+            "script": "جميلة",
+            "cue": "beautiful (feminine singular)",
+            "tag": "interference",
+            "forms": [],
+            "note": "Feminine SINGULAR, because al-kutub are things and not people. Arabic treats a non-human plural as one feminine thing. The row for jamīl is M9's from the level below."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The books are plural and the adjective is singular. Every instinct an English speaker has says jamīlāt, and it is wrong here.",
+      "sound": "al-KU-tub ja-MĪ-la — and the -a of jamīla is short, not the long ā of the plural.",
+      "variations": [
+        {
+          "display": "al-buyūt kabīra",
+          "script": "البيوت كبيرة",
+          "cue": "The houses are big",
+          "changed": "another non-human plural, another feminine singular"
+        },
+        {
+          "display": "al-kutub al-jadīda jamīla",
+          "script": "الكتب الجديدة جميلة",
+          "cue": "The new books are beautiful",
+          "changed": "an attributive adjective, also feminine singular, also with al-"
+        },
+        {
+          "display": "al-kitāb jamīl",
+          "script": "الكتاب جميل",
+          "cue": "The book is beautiful",
+          "changed": "one book, and the adjective goes masculine singular"
+        }
+      ],
+      "mistake": {
+        "display": "al-kutub jamīlāt",
+        "script": "الكتب جميلات",
+        "why": "Books are not people. A non-human plural takes a feminine singular adjective: al-kutub jamīla."
+      },
+      "usage": "Everywhere. This law governs every plural sentence in the rest of the course.",
+      "register": "neutral",
+      "mnemonic": "Things in a heap are one feminine thing."
+    },
+    {
+      "id": "L2-M3-S03",
+      "display": "as-sayyārāt kabīra wa jamīla",
+      "script": "السيارات كبيرة وجميلة",
+      "cue": "The cars are big and beautiful",
+      "literal": "The-cars big(f-sg) and beautiful(f-sg)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "as-sayyārāt",
+            "script": "السيارات",
+            "cue": "the cars",
+            "tag": "delta",
+            "forms": [],
+            "note": "The al-'d shape of M8's sayyārāt, and its own key: s is a sun letter, so the article assimilates and the build sees a different word from al-sayyārāt."
+          },
+          {
+            "display": "kabīra",
+            "script": "كبيرة",
+            "cue": "big (feminine singular)",
+            "tag": "interference",
+            "forms": [],
+            "note": "The same feminine singular as jamīla, and for the same reason: cars are things. The row for kabīr is L1-M3's."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Both adjectives go feminine singular, not just the first. The rule governs every adjective in the sentence.",
+      "sound": "as-say-yā-RĀT, with the y doubled and held, and the al- swallowed into the s.",
+      "variations": [
+        {
+          "display": "as-sayyārāt jadīda",
+          "script": "السيارات جديدة",
+          "cue": "The cars are new",
+          "changed": "one adjective, same shape"
+        },
+        {
+          "display": "as-sayyāra kabīra wa jamīla",
+          "script": "السيارة كبيرة وجميلة",
+          "cue": "The car is big and beautiful",
+          "changed": "one car — and the adjectives do not change at all"
+        },
+        {
+          "display": "as-sayyārāt al-jadīda kabīra",
+          "script": "السيارات الجديدة كبيرة",
+          "cue": "The new cars are big",
+          "changed": "an attributive adjective with al-, and a predicate without"
+        }
+      ],
+      "mistake": {
+        "display": "as-sayyārāt kabīrāt",
+        "script": "السيارات كبيرات",
+        "why": "Cars are things: as-sayyārāt kabīra. The -āt plural on the noun says nothing about the adjective."
+      },
+      "usage": "Notice what the second variation shows: one car and many cars take the SAME adjective. That is the law being useful rather than merely odd.",
+      "register": "neutral",
+      "mnemonic": "One car or twenty, the adjective does not move."
+    },
+    {
+      "id": "L2-M3-S04",
+      "display": "al-mudarrisūn mashghūlūn al-yawm",
+      "script": "المدرسون مشغولون اليوم",
+      "cue": "The teachers are busy today",
+      "literal": "The-teachers busy(m-pl) the-day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-mudarrisūn",
+            "script": "المدرسون",
+            "cue": "the teachers",
+            "tag": "delta",
+            "forms": [
+              "al-mudarrisūn",
+              "mudarrisūn",
+              "al-mudarris"
+            ],
+            "note": "The sound masculine plural: -ūn on a human noun. It is the one plural in Arabic you can build rather than learn, and only people take it."
+          },
+          {
+            "display": "mashghūlūn",
+            "script": "مشغولون",
+            "cue": "busy (masculine plural)",
+            "tag": "interference",
+            "forms": [],
+            "note": "A plural adjective, because the teachers are PEOPLE. This is the other half of M3's law, and the row for mashghūl is M6's from the level below."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "This is the sentence that makes the law usable. Books take a feminine singular; teachers take a plural. What decides is whether the plural is human.",
+      "sound": "mu-dar-ri-SŪN, mash-ghū-LŪN — both stressed on the long ū of the ending.",
+      "variations": [
+        {
+          "display": "al-mudarrisūn laṭīfūn",
+          "script": "المدرسون لطيفون",
+          "cue": "The teachers are kind",
+          "changed": "another plural adjective about people"
+        },
+        {
+          "display": "al-mudarris mashghūl al-yawm",
+          "script": "المدرس مشغول اليوم",
+          "cue": "The teacher is busy today",
+          "changed": "one teacher, and both words go singular"
+        },
+        {
+          "display": "al-kutub jamīla wa al-mudarrisūn laṭīfūn",
+          "script": "الكتب جميلة والمدرسون لطيفون",
+          "cue": "The books are beautiful and the teachers are kind",
+          "changed": "both halves of the law in one sentence"
+        }
+      ],
+      "mistake": {
+        "display": "al-mudarrisūn mashghūla",
+        "script": "المدرسون مشغولة",
+        "why": "Teachers are people, so the adjective goes plural: mashghūlūn. The feminine singular is only for things."
+      },
+      "usage": "Any sentence about a group of people. The last variation is the one to reread — it holds both rules side by side.",
+      "register": "neutral",
+      "mnemonic": "People take a plural; everything else takes a she."
+    },
+    {
+      "id": "L2-M3-S05",
+      "display": "al-bayt al-kabīr aḥmar",
+      "script": "البيت الكبير أحمر",
+      "cue": "The big house is red",
+      "literal": "The-house the-big red",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aḥmar",
+            "script": "أحمر",
+            "cue": "red (masculine)",
+            "tag": "delta",
+            "forms": [
+              "aḥmar",
+              "al-aḥmar"
+            ],
+            "note": "Colours have their own shape: aḥmar for a masculine thing, ḥamrāʾ for a feminine one. Word-initial hamza is not written, so it starts with a plain a."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "aḥmar looks like the comparative shape M9 will teach — akbar, arkhaṣ — and it is not a comparison at all. The pattern is shared; the root decides the meaning.",
+      "sound": "AḤ-mar, with the ḥ a hard breath and the stress at the front.",
+      "variations": [
+        {
+          "display": "al-kitāb aḥmar",
+          "script": "الكتاب أحمر",
+          "cue": "The book is red",
+          "changed": "one adjective instead of two"
+        },
+        {
+          "display": "al-bayt al-aḥmar kabīr",
+          "script": "البيت الأحمر كبير",
+          "cue": "The red house is big",
+          "changed": "the colour takes al- and becomes the description"
+        },
+        {
+          "display": "ʿindī bayt aḥmar",
+          "script": "عندي بيت أحمر",
+          "cue": "I have a red house",
+          "changed": "indefinite, with M2's ʿindī"
+        }
+      ],
+      "mistake": {
+        "display": "al-bayt al-kabīr al-aḥmar",
+        "script": "البيت الكبير الأحمر",
+        "why": "With al- on all three it is a phrase — \"the big red house\" — and there is no sentence left."
+      },
+      "usage": "Neutral description. The definiteness rule from S01 is doing all the work here.",
+      "register": "neutral",
+      "mnemonic": "The colour pattern and the comparative pattern are the same shape, and only the root knows which."
+    },
+    {
+      "id": "L2-M3-S06",
+      "display": "as-sayyāra al-jadīda ḥamrāʾ",
+      "script": "السيارة الجديدة حمراء",
+      "cue": "The new car is red",
+      "literal": "The-car the-new red(f)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ḥamrāʾ",
+            "script": "حمراء",
+            "cue": "red (feminine)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The feminine of aḥmar, and it is nothing like the -a ending every other adjective takes. The final hamza is written ʾ, and dropping it makes a different word."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "ḥamrāʾ, not aḥmara. The colour pattern has its own feminine and it must be learnt with the masculine, as a pair.",
+      "sound": "ḥam-RĀʾ, ending in a clean catch of the throat after the long ā.",
+      "variations": [
+        {
+          "display": "as-sayyāra ḥamrāʾ",
+          "script": "السيارة حمراء",
+          "cue": "The car is red",
+          "changed": "one adjective, and the sentence is three words shorter"
+        },
+        {
+          "display": "as-sayyārāt ḥamrāʾ",
+          "script": "السيارات حمراء",
+          "cue": "The cars are red",
+          "changed": "a non-human plural, which takes the same feminine singular"
+        },
+        {
+          "display": "ʿindahā sayyāra ḥamrāʾ",
+          "script": "عندها سيارة حمراء",
+          "cue": "She has a red car",
+          "changed": "indefinite, with M2's ʿindahā"
+        }
+      ],
+      "mistake": {
+        "display": "as-sayyāra al-jadīda aḥmara",
+        "script": "السيارة الجديدة أحمرة",
+        "why": "There is no aḥmara. The feminine of aḥmar is ḥamrāʾ, a different shape entirely."
+      },
+      "usage": "The second variation is worth pausing on: the same word covers one car and many, because cars are things.",
+      "register": "neutral",
+      "mnemonic": "Colours keep their own feminine, and it is not an -a."
+    },
+    {
+      "id": "L2-M3-S07",
+      "display": "al-kitāb azraq wa al-bāb aswad",
+      "script": "الكتاب أزرق والباب أسود",
+      "cue": "The book is blue and the door is black",
+      "literal": "The-book blue and the-door black",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "azraq",
+            "script": "أزرق",
+            "cue": "blue (masculine)",
+            "tag": "free",
+            "forms": [
+              "azraq",
+              "zarqāʾ"
+            ],
+            "note": "The same pattern as aḥmar, with the feminine zarqāʾ. The q is made at the back of the throat, well behind an English k."
+          },
+          {
+            "display": "aswad",
+            "script": "أسود",
+            "cue": "black (masculine)",
+            "tag": "free",
+            "forms": [
+              "aswad",
+              "sawdāʾ"
+            ],
+            "note": "The feminine is sawdāʾ. Three colours in this module, three identical patterns, and the feminine is never predictable from the -a rule."
+          },
+          {
+            "display": "al-bāb",
+            "script": "الباب",
+            "cue": "the door",
+            "tag": "free",
+            "forms": [],
+            "note": "The al-'d shape of M7's bāb, and its own key — b is a moon letter, so the l is written and said."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "wa is written joined to the word after it — والباب — but it is a free word in the romanized line. The two lines disagree about where a word ends, and that is on purpose.",
+      "sound": "AZ-raq, AS-wad — both stressed at the front, like aḥmar.",
+      "variations": [
+        {
+          "display": "al-bāb aswad",
+          "script": "الباب أسود",
+          "cue": "The door is black",
+          "changed": "the second half alone"
+        },
+        {
+          "display": "as-sayyāra zarqāʾ",
+          "script": "السيارة زرقاء",
+          "cue": "The car is blue",
+          "changed": "the feminine of azraq"
+        },
+        {
+          "display": "al-kutub sawdāʾ",
+          "script": "الكتب سوداء",
+          "cue": "The books are black",
+          "changed": "a non-human plural, and the feminine singular again"
+        }
+      ],
+      "mistake": {
+        "display": "al-kitāb azraq wa albāb aswad",
+        "script": "الكتاب أزرق والباب أسود",
+        "why": "The article keeps its hyphen in the romanization: al-bāb. Running it into the noun would give the index a word nobody meant."
+      },
+      "usage": "Two clauses, no verb in either, joined by one letter. Arabic gets a lot said with very little.",
+      "register": "neutral",
+      "mnemonic": "wa joins in the script and stands alone in the reading."
+    },
+    {
+      "id": "L2-M3-S08",
+      "display": "ʿindī buyūt fī miṣr",
+      "script": "عندي بيوت في مصر",
+      "cue": "I have houses in Egypt",
+      "literal": "At-me houses in Egypt",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "buyūt",
+            "script": "بيوت",
+            "cue": "houses",
+            "tag": "delta",
+            "forms": [
+              "buyūt",
+              "al-buyūt"
+            ],
+            "note": "A BROKEN plural of bayt: the word is reshaped from inside rather than given an ending. kitāb → kutub does the same. No rule predicts the shape, so it is learnt with the singular."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "There is no ending to add and no ending to look for. A broken plural rebuilds the word around the same three consonants.",
+      "sound": "bu-YŪT, and the y is a full consonant between the two vowels.",
+      "variations": [
+        {
+          "display": "ʿindahā buyūt kabīra",
+          "script": "عندها بيوت كبيرة",
+          "cue": "She has big houses",
+          "changed": "the feminine singular adjective, because houses are things"
+        },
+        {
+          "display": "ʿindī kutub jamīla",
+          "script": "عندي كتب جميلة",
+          "cue": "I have beautiful books",
+          "changed": "another broken plural, from M8 of the level below"
+        },
+        {
+          "display": "al-buyūt fī miṣr kabīra",
+          "script": "البيوت في مصر كبيرة",
+          "cue": "The houses in Egypt are big",
+          "changed": "definite, with the predicate after the place"
+        }
+      ],
+      "mistake": {
+        "display": "ʿindī baytāt fī miṣr",
+        "script": "عندي بيتات في مصر",
+        "why": "bayt has a broken plural, buyūt. The -āt ending belongs to other words and cannot be added at will."
+      },
+      "usage": "The plural a learner will meet first, and the one that shows why Arabic plurals are learnt one at a time.",
+      "register": "neutral",
+      "mnemonic": "Broken plurals are rebuilt, not extended."
+    },
+    {
+      "id": "L2-M3-S09",
+      "display": "al-awlād laṭīfūn jiddan",
+      "script": "الأولاد لطيفون جدا",
+      "cue": "The children are very kind",
+      "literal": "The-children kind(m-pl) very",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-awlād",
+            "script": "الأولاد",
+            "cue": "the children · the boys",
+            "tag": "delta",
+            "forms": [
+              "al-awlād",
+              "awlād"
+            ],
+            "note": "A broken plural of walad, and it is HUMAN — so the adjective goes plural, not feminine singular. A mixed group of children takes the masculine."
+          },
+          {
+            "display": "laṭīfūn",
+            "script": "لطيفون",
+            "cue": "kind (masculine plural)",
+            "tag": "free",
+            "forms": [],
+            "note": "The sound masculine plural of M2's laṭīf, on an adjective this time. The row for laṭīf is L2-M2's."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "A BROKEN plural can still be human. It is not the shape of the plural that decides the adjective, it is what the noun refers to.",
+      "sound": "al-aw-LĀD, with the aw as in English \"how\" and the stress on the long ā.",
+      "variations": [
+        {
+          "display": "al-awlād mashghūlūn al-yawm",
+          "script": "الأولاد مشغولون اليوم",
+          "cue": "The children are busy today",
+          "changed": "another plural adjective about people"
+        },
+        {
+          "display": "al-awlād laṭīfūn wa mashghūlūn",
+          "script": "الأولاد لطيفون ومشغولون",
+          "cue": "The children are kind and busy",
+          "changed": "two plural adjectives, both about people"
+        },
+        {
+          "display": "ʿindī awlād laṭīfūn",
+          "script": "عندي أولاد لطيفون",
+          "cue": "I have kind children",
+          "changed": "indefinite, with no al- anywhere"
+        }
+      ],
+      "mistake": {
+        "display": "al-awlād laṭīfa",
+        "script": "الأولاد لطيفة",
+        "why": "Children are people, so the adjective goes plural: laṭīfūn. Being a broken plural changes nothing."
+      },
+      "usage": "The sentence that separates the two halves of the law properly: the plural's shape and the plural's humanity are different questions.",
+      "register": "neutral",
+      "mnemonic": "Ask what it IS, not what shape its plural takes."
+    },
+    {
+      "id": "L2-M3-S10",
+      "display": "al-alwān al-jadīda jamīla",
+      "script": "الألوان الجديدة جميلة",
+      "cue": "The new colours are beautiful",
+      "literal": "The-colours the-new beautiful(f-sg)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-alwān",
+            "script": "الألوان",
+            "cue": "the colours",
+            "tag": "delta",
+            "forms": [
+              "al-alwān",
+              "alwān",
+              "lawn",
+              "al-lawn"
+            ],
+            "note": "The broken plural of lawn. Its singular has not been shown in a sentence, so the row carries both — the one place in this module where the plural arrives first."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "Three words, and every one of the module's rules is in it: the broken plural, the definiteness match on al-jadīda, and the feminine singular predicate on jamīla.",
+      "sound": "al-al-WĀN, and the two al sounds are different — the first is the article, the second is part of the word.",
+      "variations": [
+        {
+          "display": "al-alwān jamīla",
+          "script": "الألوان جميلة",
+          "cue": "The colours are beautiful",
+          "changed": "without the attributive adjective in the middle"
+        },
+        {
+          "display": "al-lawn aḥmar",
+          "script": "اللون أحمر",
+          "cue": "The colour is red",
+          "changed": "the singular, and the l of al- doubling into the l of lawn"
+        },
+        {
+          "display": "al-alwān al-jadīda ḥamrāʾ",
+          "script": "الألوان الجديدة حمراء",
+          "cue": "The new colours are red",
+          "changed": "a colour as the predicate, still feminine singular"
+        }
+      ],
+      "mistake": {
+        "display": "al-alwān al-jadīda jamīlāt",
+        "script": "الألوان الجديدة جميلات",
+        "why": "Colours are things: jamīla. A whole module of the rule, and it is the last sentence that tests whether it stuck."
+      },
+      "usage": "The module's summary in three words. If this one is right, the law is learnt.",
+      "register": "neutral",
+      "mnemonic": "Every rule of the module, in three words."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M3-C01",
+      "display": "al-bayt al-jadīd kabīr",
+      "script": "البيت الجديد كبير",
+      "cue": "The new house is big"
+    },
+    {
+      "id": "L2-M3-C02",
+      "display": "al-kutub jamīla jiddan",
+      "script": "الكتب جميلة جدا",
+      "cue": "The books are very beautiful"
+    },
+    {
+      "id": "L2-M3-C03",
+      "display": "as-sayyārāt kabīra wa jamīla",
+      "script": "السيارات كبيرة وجميلة",
+      "cue": "The cars are big and beautiful"
+    },
+    {
+      "id": "L2-M3-C04",
+      "display": "al-mudarrisūn mashghūlūn al-yawm",
+      "script": "المدرسون مشغولون اليوم",
+      "cue": "The teachers are busy today"
+    },
+    {
+      "id": "L2-M3-C05",
+      "display": "al-bayt al-kabīr aḥmar",
+      "script": "البيت الكبير أحمر",
+      "cue": "The big house is red"
+    },
+    {
+      "id": "L2-M3-C06",
+      "display": "as-sayyāra al-jadīda ḥamrāʾ",
+      "script": "السيارة الجديدة حمراء",
+      "cue": "The new car is red"
+    },
+    {
+      "id": "L2-M3-C07",
+      "display": "al-kitāb azraq wa al-bāb aswad",
+      "script": "الكتاب أزرق والباب أسود",
+      "cue": "The book is blue and the door is black"
+    },
+    {
+      "id": "L2-M3-C08",
+      "display": "ʿindī buyūt fī miṣr",
+      "script": "عندي بيوت في مصر",
+      "cue": "I have houses in Egypt"
+    },
+    {
+      "id": "L2-M3-C09",
+      "display": "al-awlād laṭīfūn jiddan",
+      "script": "الأولاد لطيفون جدا",
+      "cue": "The children are very kind"
+    },
+    {
+      "id": "L2-M3-C10",
+      "display": "al-alwān al-jadīda jamīla",
+      "script": "الألوان الجديدة جميلة",
+      "cue": "The new colours are beautiful"
+    },
+    {
+      "id": "L2-M3-C11",
+      "display": "al-buyūt kabīra",
+      "script": "البيوت كبيرة",
+      "cue": "The houses are big"
+    },
+    {
+      "id": "L2-M3-C12",
+      "display": "al-mudarrisūn laṭīfūn",
+      "script": "المدرسون لطيفون",
+      "cue": "The teachers are kind"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
