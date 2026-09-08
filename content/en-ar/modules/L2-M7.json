@@ -1,0 +1,703 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M7",
+  "title": "On the phone",
+  "job": "Calls and messages — openings, closings, taking a message",
+  "prerequisites": [
+    "L2-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "simple_present",
+      "future"
+    ],
+    "allowedPatterns": [
+      "ālū + , + man maʿī?",
+      "hal + <name> + mawjūd/mawjūda?",
+      "huwa laysa mawjūd + . + <offer>",
+      "hal yumkinuka an tatruka risāla?",
+      "sa-attaṣil bika + <time>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "man is \"who\" and min is \"from\", and they differ by one short vowel. Short vowels are always written in this course for exactly this reason: min maʿī would send a learner to a note about origins."
+    },
+    {
+      "tag": "delta",
+      "text": "laysa negates a sentence that has no verb — huwa laysa mawjūd — where lā negates a verb. L1 kept it out on purpose; a phone call's whole business is absence, so this level lifts it in the third person only."
+    },
+    {
+      "tag": "free",
+      "text": "ālū is what every Arabic speaker says on picking up. It came in from the French and there is no MSA alternative anybody uses, so it is written like any other word."
+    },
+    {
+      "tag": "delta",
+      "text": "bi- takes the suffixes like any preposition: bika to a man, biki to a woman. sa-attaṣil bika is \"I will contact you\", and the verb needs the bi- to reach its object."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M7-S01",
+      "display": "ālū, man maʿī?",
+      "script": "ألو، من معي؟",
+      "cue": "Hello, who's calling?",
+      "literal": "Hello, who with-me?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ālū",
+            "script": "ألو",
+            "cue": "hello (on the phone)",
+            "tag": "free",
+            "forms": [],
+            "note": "From the French, and used on every Arabic phone. There is no MSA rival anybody says, so the course writes it like any other word."
+          },
+          {
+            "display": "man",
+            "script": "من",
+            "cue": "who",
+            "tag": "interference",
+            "forms": [],
+            "note": "One short vowel from M1's min, \"from\", and identical to it in the Arabic line — من for both. The written vowel in the romanization is the only thing keeping them apart."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "man and min are the same three letters in Arabic. This course writes every short vowel precisely so that the romanized line can tell them apart, and this is the sentence that pays for that decision.",
+      "sound": "ā-LŪ, and MAN with a short a — the vowel is the whole word.",
+      "variations": [
+        {
+          "display": "ālū, hal hind mawjūda?",
+          "script": "ألو، هل هند موجودة؟",
+          "cue": "Hello, is Hind there?",
+          "changed": "asking for someone rather than asking who called"
+        },
+        {
+          "display": "man maʿī, min faḍlika?",
+          "script": "من معي، من فضلك؟",
+          "cue": "Who's calling, please?",
+          "changed": "min and man in one sentence, a vowel apart"
+        },
+        {
+          "display": "ālū, anā rohān",
+          "script": "ألو، أنا روهان",
+          "cue": "Hello, it's Rohan",
+          "changed": "the caller identifying themselves"
+        }
+      ],
+      "mistake": {
+        "display": "ālū, min maʿī?",
+        "script": "ألو، من معي؟",
+        "why": "min is \"from\". The question is man maʿī — and the Arabic line will not warn you, because both are من."
+      },
+      "usage": "Answering a call from a number you do not know. maʿī is literally \"with me\", which is how Arabic asks who is on the line.",
+      "register": "neutral",
+      "mnemonic": "One vowel between who and from."
+    },
+    {
+      "id": "L2-M7-S02",
+      "display": "hal hind mawjūda?",
+      "script": "هل هند موجودة؟",
+      "cue": "Is Hind there?",
+      "literal": "Question Hind present(f)?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mawjūda",
+            "script": "موجودة",
+            "cue": "present · there (of a woman)",
+            "tag": "free",
+            "forms": [
+              "mawjūd",
+              "mawjūda"
+            ],
+            "note": "An adjective meaning present or available, agreeing with the person asked after. mawjūd for a man."
+          }
+        ],
+        "rules": []
+      },
+      "trap": "No verb, and no word for \"is\". Asking whether someone is in is a nominal sentence like every other one in this course.",
+      "sound": "maw-JŪ-da, with the aw as in \"how\" and the stress on the long ū.",
+      "variations": [
+        {
+          "display": "hal rohān mawjūd?",
+          "script": "هل روهان موجود؟",
+          "cue": "Is Rohan there?",
+          "changed": "a man, so the adjective drops its -a"
+        },
+        {
+          "display": "hal al-mudarris mawjūd?",
+          "script": "هل المدرس موجود؟",
+          "cue": "Is the teacher there?",
+          "changed": "a role instead of a name"
+        },
+        {
+          "display": "naʿam, hiya mawjūda",
+          "script": "نعم، هي موجودة",
+          "cue": "Yes, she's here",
+          "changed": "the answer, with M2's hiya"
+        }
+      ],
+      "mistake": {
+        "display": "hal hind mawjūd?",
+        "script": "هل هند موجود؟",
+        "why": "Hind is a woman, so the adjective is mawjūda. It agrees with the person, as every adjective in this course does."
+      },
+      "usage": "Calling a house or an office. It is the question the whole module is built around.",
+      "register": "neutral",
+      "mnemonic": "Present is an adjective, so it belongs to whoever is present."
+    },
+    {
+      "id": "L2-M7-S03",
+      "display": "huwa laysa mawjūd al-ān",
+      "script": "هو ليس موجود الآن",
+      "cue": "He isn't here right now",
+      "literal": "He is-not present now",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "laysa",
+            "script": "ليس",
+            "cue": "is not (of a man)",
+            "tag": "delta",
+            "forms": [
+              "laysa",
+              "laysat"
+            ],
+            "note": "Negates a sentence with no verb in it, which lā cannot do. This course teaches only the third person — laysa and laysat — and the rest of the paradigm waits."
+          },
+          {
+            "display": "al-ān",
+            "script": "الآن",
+            "cue": "now",
+            "tag": "free",
+            "forms": [],
+            "note": "Always written with al-, and the madda over the alif marks a long ā. It never appears without the article."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "lā will not do this job. lā negates a verb, and there is no verb here — which is exactly why L1 had no way to say it and this module needs a new word.",
+      "sound": "LAY-sa, and al-ĀN with a long open ā.",
+      "variations": [
+        {
+          "display": "hiya laysat mawjūda al-ān",
+          "script": "هي ليست موجودة الآن",
+          "cue": "She isn't here right now",
+          "changed": "the feminine, in both words"
+        },
+        {
+          "display": "huwa laysa mawjūd al-yawm",
+          "script": "هو ليس موجود اليوم",
+          "cue": "He isn't here today",
+          "changed": "a longer absence"
+        },
+        {
+          "display": "laysa mawjūd, hal turīd an tatruka risāla?",
+          "script": "ليس موجود، هل تريد أن تترك رسالة؟",
+          "cue": "He isn't here, would you like to leave a message?",
+          "changed": "the offer that follows, with the subject dropped"
+        }
+      ],
+      "mistake": {
+        "display": "huwa lā mawjūd al-ān",
+        "script": "هو لا موجود الآن",
+        "why": "lā needs a verb to negate. A sentence with none takes laysa."
+      },
+      "usage": "What an office says fifty times a day. The offer in the third variation is what should follow it.",
+      "register": "formal",
+      "mnemonic": "No verb to negate, so lā has nothing to hold on to."
+    },
+    {
+      "id": "L2-M7-S04",
+      "display": "hiya laysat mawjūda al-yawm",
+      "script": "هي ليست موجودة اليوم",
+      "cue": "She isn't here today",
+      "literal": "She is-not(f) present(f) the-day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "laysat",
+            "script": "ليست",
+            "cue": "is not (of a woman)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The feminine of laysa, and here the Arabic line SHOWS the difference — ليست against ليس — unlike M1's samaḥta and samaḥti. The row for laysa is S03's."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Two words agree with her and both change. The negator itself is one of them, which no other word in this course does.",
+      "sound": "LAY-sat, with the final t fully released.",
+      "variations": [
+        {
+          "display": "hind laysat mawjūda al-ān",
+          "script": "هند ليست موجودة الآن",
+          "cue": "Hind isn't here right now",
+          "changed": "a name instead of a pronoun"
+        },
+        {
+          "display": "hiya laysat mashghūla",
+          "script": "هي ليست مشغولة",
+          "cue": "She isn't busy",
+          "changed": "laysa negating a different adjective"
+        },
+        {
+          "display": "laysat mawjūda, sa-tadhhab ilā as-sūq",
+          "script": "ليست موجودة، ستذهب إلى السوق",
+          "cue": "She isn't here, she's going to the market",
+          "changed": "a reason, using M6's sa- from the level below"
+        }
+      ],
+      "mistake": {
+        "display": "hiya laysa mawjūda al-yawm",
+        "script": "هي ليس موجودة اليوم",
+        "why": "laysa itself agrees: laysat for a woman. It is a verb-like word, and it behaves like one."
+      },
+      "usage": "The same answer about a woman. Notice that the script distinguishes these two and did not distinguish M1's pair.",
+      "register": "formal",
+      "mnemonic": "Even the negation has a gender."
+    },
+    {
+      "id": "L2-M7-S05",
+      "display": "hal yumkinuka an tatruka risāla?",
+      "script": "هل يمكنك أن تترك رسالة؟",
+      "cue": "Could you leave a message?",
+      "literal": "Question is-possible-for-you that you-leave message?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tatruka",
+            "script": "تترك",
+            "cue": "you leave",
+            "tag": "free",
+            "forms": [
+              "tatruka",
+              "atruka"
+            ],
+            "note": "tarak, to leave something behind — not to leave a place. The ta- prefix is \"you\", the same one in tadhhab and tashrab."
+          },
+          {
+            "display": "risāla",
+            "script": "رسالة",
+            "cue": "message · letter",
+            "tag": "free",
+            "forms": [
+              "risāla",
+              "ar-risāla"
+            ],
+            "note": "Feminine. It covers a spoken message, a letter and a text alike, so the sentence says which."
+          }
+        ],
+        "rules": []
+      },
+      "trap": "M1's frame, unchanged, on a new verb. Nothing about the politeness is new — only the thing being asked.",
+      "sound": "ri-SĀ-la, with the stress on the long ā.",
+      "variations": [
+        {
+          "display": "hal yumkinuki an tatruka risāla?",
+          "script": "هل يمكنك أن تترك رسالة؟",
+          "cue": "Could you leave a message? (to a woman)",
+          "changed": "the feminine frame, invisible in the script as always"
+        },
+        {
+          "display": "hal atruka risāla?",
+          "script": "هل أترك رسالة؟",
+          "cue": "Shall I leave a message?",
+          "changed": "the caller offering rather than the office asking"
+        },
+        {
+          "display": "urīd an atruka risāla, min faḍlika",
+          "script": "أريد أن أترك رسالة، من فضلك",
+          "cue": "I'd like to leave a message, please",
+          "changed": "stated as a wish, with M3's urīd an from the level below"
+        }
+      ],
+      "mistake": {
+        "display": "hal yumkinuka tatruka risāla?",
+        "script": "هل يمكنك تترك رسالة؟",
+        "why": "an is obligatory between the two verbs. Three modules of this course have now said so."
+      },
+      "usage": "Offered by whoever answered, and the polite thing to offer when the person is out.",
+      "register": "formal",
+      "mnemonic": "M1's frame with a new verb inside it."
+    },
+    {
+      "id": "L2-M7-S06",
+      "display": "hal ʿindaka raqm al-hātif?",
+      "script": "هل عندك رقم الهاتف؟",
+      "cue": "Do you have the phone number?",
+      "literal": "Question at-you number the-telephone?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "raqm",
+            "script": "رقم",
+            "cue": "number",
+            "tag": "free",
+            "forms": [
+              "raqm",
+              "ar-raqm"
+            ],
+            "note": "The first noun of a two-noun possession, so it takes no al- even though the phrase is definite — M2's iḍāfa rule, on the phone."
+          },
+          {
+            "display": "al-hātif",
+            "script": "الهاتف",
+            "cue": "the telephone",
+            "tag": "interference",
+            "forms": [
+              "al-hātif",
+              "hātif"
+            ],
+            "note": "The MSA word for a phone. Every country has its own everyday one — mobile, jawwāl, telifūn — and this course writes al-hātif and names the others nowhere else."
+          }
+        ],
+        "rules": []
+      },
+      "trap": "raqm al-hātif is one possession, so only the second word takes al-. M2's iḍāfa rule, and this is the phrase where a learner meets it most often.",
+      "sound": "RAQM, one syllable with the q at the back. al-HĀ-tif.",
+      "variations": [
+        {
+          "display": "hal ʿindaki raqm al-hātif?",
+          "script": "هل عندك رقم الهاتف؟",
+          "cue": "Do you have the phone number? (to a woman)",
+          "changed": "the feminine address, invisible in the script"
+        },
+        {
+          "display": "ʿindī raqm al-hātif",
+          "script": "عندي رقم الهاتف",
+          "cue": "I have the phone number",
+          "changed": "the answer, in the same two-noun frame"
+        },
+        {
+          "display": "hal hādhā ar-raqm?",
+          "script": "هل هذا الرقم؟",
+          "cue": "Is this the number?",
+          "changed": "the number alone, with al- back on it"
+        }
+      ],
+      "mistake": {
+        "display": "hal ʿindaka ar-raqm al-hātif?",
+        "script": "هل عندك الرقم الهاتف؟",
+        "why": "The first noun of a possession never takes al-: raqm al-hātif. With al- on both, the phrase falls apart."
+      },
+      "usage": "Everyday. The second variation is the shape you will hear more often, with the person's own suffix on the end.",
+      "register": "neutral",
+      "mnemonic": "Only the owner takes the al-."
+    },
+    {
+      "id": "L2-M7-S07",
+      "display": "sa-attaṣil bika ghadan",
+      "script": "سأتصل بك غدا",
+      "cue": "I'll call you tomorrow",
+      "literal": "Will-I-contact with-you tomorrow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "attaṣil",
+            "script": "أتصل",
+            "cue": "I contact · I call",
+            "tag": "free",
+            "forms": [
+              "attaṣil",
+              "yattaṣil",
+              "sa-attaṣil"
+            ],
+            "note": "To make contact, and it needs bi- to reach the person contacted. sa- in front is M6's future from the level below."
+          },
+          {
+            "display": "bika",
+            "script": "بك",
+            "cue": "with you (to a man)",
+            "tag": "delta",
+            "forms": [
+              "bika",
+              "biki"
+            ],
+            "note": "M4's bi- taking the possessive suffixes, exactly as ʿind- does. biki to a woman, and the Arabic line writes both as بك."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The verb cannot reach its object without bi-. attaṣil ka is not a sentence; the preposition is part of the verb's shape.",
+      "sound": "sa-at-ta-ṢIL, with the ṣ emphatic and the t doubled.",
+      "variations": [
+        {
+          "display": "sa-attaṣil biki ghadan",
+          "script": "سأتصل بك غدا",
+          "cue": "I'll call you tomorrow (to a woman)",
+          "changed": "the feminine suffix, and the Arabic line does not move"
+        },
+        {
+          "display": "sa-attaṣil bika fī as-sāʿa al-khāmisa",
+          "script": "سأتصل بك في الساعة الخامسة",
+          "cue": "I'll call you at five o'clock",
+          "changed": "M6's clock instead of a day"
+        },
+        {
+          "display": "sa-attaṣil bika yawm as-sabt",
+          "script": "سأتصل بك يوم السبت",
+          "cue": "I'll call you on Saturday",
+          "changed": "M6's day instead of tomorrow"
+        }
+      ],
+      "mistake": {
+        "display": "sa-attaṣil ka ghadan",
+        "script": "سأتصل ك غدا",
+        "why": "The verb takes bi-: sa-attaṣil bika. And a pronoun never stands alone in Arabic — it glues on."
+      },
+      "usage": "How every Arabic phone call ends when it has not finished its business.",
+      "register": "neutral",
+      "mnemonic": "The verb reaches its person through a preposition."
+    },
+    {
+      "id": "L2-M7-S08",
+      "display": "laḥẓa min faḍlika",
+      "script": "لحظة من فضلك",
+      "cue": "One moment, please",
+      "literal": "Moment from your-favour",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "laḥẓa",
+            "script": "لحظة",
+            "cue": "moment",
+            "tag": "free",
+            "forms": [
+              "laḥẓa",
+              "al-laḥẓa"
+            ],
+            "note": "One word, and it holds the line. Both the ḥ and the ẓ are made deep — the ẓ is an emphatic dh, and the word is unmistakable because of it."
+          }
+        ],
+        "rules": []
+      },
+      "trap": "No verb, no article, and it is complete. Arabic hands over the noun and the politeness and nothing else.",
+      "sound": "LAḤ-ẓa, with the ḥ a hard breath and the ẓ dark and emphatic.",
+      "variations": [
+        {
+          "display": "laḥẓa min faḍliki",
+          "script": "لحظة من فضلك",
+          "cue": "One moment, please (to a woman)",
+          "changed": "the feminine, in the second word only"
+        },
+        {
+          "display": "laḥẓa, huwa mawjūd",
+          "script": "لحظة، هو موجود",
+          "cue": "One moment, he's here",
+          "changed": "the hold, then the good news"
+        },
+        {
+          "display": "laḥẓa, sa-attaṣil bika",
+          "script": "لحظة، سأتصل بك",
+          "cue": "One moment, I'll call you",
+          "changed": "the hold, then S07's promise"
+        }
+      ],
+      "mistake": {
+        "display": "al-laḥẓa min faḍlika",
+        "script": "اللحظة من فضلك",
+        "why": "It is any moment, not the moment: laḥẓa, with no article."
+      },
+      "usage": "On a phone, at a counter, in a doorway. It buys as much time as it needs to.",
+      "register": "neutral",
+      "mnemonic": "A moment is not a particular moment."
+    },
+    {
+      "id": "L2-M7-S09",
+      "display": "huwa mashghūl al-ān",
+      "script": "هو مشغول الآن",
+      "cue": "He's busy right now",
+      "literal": "He busy now",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mashghūl",
+            "script": "مشغول",
+            "cue": "busy",
+            "tag": "free",
+            "forms": [],
+            "note": "M6's row from the level below, and it covers a busy person and a busy line alike. The row is L1-M6's; this module only re-shows it."
+          }
+        ],
+        "rules": []
+      },
+      "trap": "The same word does the person and the line. Arabic makes no distinction English speakers expect between being busy and being engaged.",
+      "sound": "mash-GHŪL, with the gh a soft gargled g and the stress on the long ū.",
+      "variations": [
+        {
+          "display": "hiya mashghūla al-ān",
+          "script": "هي مشغولة الآن",
+          "cue": "She's busy right now",
+          "changed": "the feminine"
+        },
+        {
+          "display": "huwa mashghūl, laḥẓa min faḍlika",
+          "script": "هو مشغول، لحظة من فضلك",
+          "cue": "He's busy, one moment please",
+          "changed": "S08's hold following the reason"
+        },
+        {
+          "display": "huwa laysa mashghūl al-ān",
+          "script": "هو ليس مشغول الآن",
+          "cue": "He isn't busy right now",
+          "changed": "S03's laysa negating it"
+        }
+      ],
+      "mistake": {
+        "display": "huwa huwa mashghūl al-ān",
+        "script": "هو هو مشغول الآن",
+        "why": "There is no copula to add. Three words are the whole sentence."
+      },
+      "usage": "The other reason someone cannot come to the phone. Between this and S03 the module covers both.",
+      "register": "neutral",
+      "mnemonic": "Busy is a state, and a state needs no verb."
+    },
+    {
+      "id": "L2-M7-S10",
+      "display": "shukran, ilā al-liqāʾ",
+      "script": "شكرا، إلى اللقاء",
+      "cue": "Thank you, goodbye",
+      "literal": "Thanks, to the-meeting",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ilā al-liqāʾ",
+            "script": "إلى اللقاء",
+            "cue": "goodbye · until we meet",
+            "tag": "free",
+            "forms": [],
+            "note": "M10's phrase from the level below, and the standard way to end a call. Arabic's goodbye is about the next meeting rather than this parting."
+          }
+        ],
+        "rules": []
+      },
+      "trap": "Nothing new in the whole sentence, and that is the point of a module's last rung: it should be recombination.",
+      "sound": "i-lal-li-QĀʾ, run together, with a catch of the throat at the very end.",
+      "variations": [
+        {
+          "display": "shukran jazīlan, ilā al-liqāʾ",
+          "script": "شكرا جزيلا، إلى اللقاء",
+          "cue": "Thank you very much, goodbye",
+          "changed": "M1's fuller thanks"
+        },
+        {
+          "display": "ṭayyib, ilā al-liqāʾ",
+          "script": "طيب، إلى اللقاء",
+          "cue": "Fine, goodbye",
+          "changed": "M6's closing word instead"
+        },
+        {
+          "display": "maʿa as-salāma",
+          "script": "مع السلامة",
+          "cue": "Goodbye",
+          "changed": "M10's other goodbye, said by whoever stays"
+        }
+      ],
+      "mistake": {
+        "display": "shukran, ilā liqāʾ",
+        "script": "شكرا، إلى لقاء",
+        "why": "The phrase is frozen with its article: ilā al-liqāʾ."
+      },
+      "usage": "The end of the call. maʿa as-salāma is what the other person says back, which is why both are in the variations.",
+      "register": "neutral",
+      "mnemonic": "Every Arabic goodbye is an appointment."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M7-C01",
+      "display": "ālū, man maʿī?",
+      "script": "ألو، من معي؟",
+      "cue": "Hello, who's calling?"
+    },
+    {
+      "id": "L2-M7-C02",
+      "display": "hal hind mawjūda?",
+      "script": "هل هند موجودة؟",
+      "cue": "Is Hind there?"
+    },
+    {
+      "id": "L2-M7-C03",
+      "display": "huwa laysa mawjūd al-ān",
+      "script": "هو ليس موجود الآن",
+      "cue": "He isn't here right now"
+    },
+    {
+      "id": "L2-M7-C04",
+      "display": "hiya laysat mawjūda al-yawm",
+      "script": "هي ليست موجودة اليوم",
+      "cue": "She isn't here today"
+    },
+    {
+      "id": "L2-M7-C05",
+      "display": "hal yumkinuka an tatruka risāla?",
+      "script": "هل يمكنك أن تترك رسالة؟",
+      "cue": "Could you leave a message?"
+    },
+    {
+      "id": "L2-M7-C06",
+      "display": "hal ʿindaka raqm al-hātif?",
+      "script": "هل عندك رقم الهاتف؟",
+      "cue": "Do you have the phone number?"
+    },
+    {
+      "id": "L2-M7-C07",
+      "display": "sa-attaṣil bika ghadan",
+      "script": "سأتصل بك غدا",
+      "cue": "I'll call you tomorrow"
+    },
+    {
+      "id": "L2-M7-C08",
+      "display": "laḥẓa min faḍlika",
+      "script": "لحظة من فضلك",
+      "cue": "One moment, please"
+    },
+    {
+      "id": "L2-M7-C09",
+      "display": "huwa mashghūl al-ān",
+      "script": "هو مشغول الآن",
+      "cue": "He's busy right now"
+    },
+    {
+      "id": "L2-M7-C10",
+      "display": "shukran, ilā al-liqāʾ",
+      "script": "شكرا، إلى اللقاء",
+      "cue": "Thank you, goodbye"
+    },
+    {
+      "id": "L2-M7-C11",
+      "display": "naʿam, hiya mawjūda",
+      "script": "نعم، هي موجودة",
+      "cue": "Yes, she's here"
+    },
+    {
+      "id": "L2-M7-C12",
+      "display": "laḥẓa, sa-attaṣil bika",
+      "script": "لحظة، سأتصل بك",
+      "cue": "One moment, I'll call you"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

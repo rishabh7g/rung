@@ -1,0 +1,705 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M6",
+  "title": "Making plans together",
+  "job": "Invitations, suggestions, settling a time",
+  "prerequisites": [
+    "L2-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "simple_present",
+      "future"
+    ],
+    "allowedPatterns": [
+      "hal turīd an nadhhab ilā + al- + N?",
+      "limādhā lā nadhhab + ?",
+      "as-sāʿa + al-<ordinal>",
+      "as-sāʿa + al-<ordinal> + wa an-niṣf",
+      "muwāfiq — in shāʾ allāh"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "An invitation is an + a verb, and both are already yours: an from M3 of the level below, nadhhab from M4. The delta is the person — you ask with YOU and answer with WE, which is the shape every Arabic invitation takes."
+    },
+    {
+      "tag": "delta",
+      "text": "The clock takes ORDINALS in the feminine, agreeing with as-sāʿa: as-sāʿa ath-thāniya, ar-rābiʿa, al-khāmisa. M8 of the level below taught cardinals and their gender polarity; this is a different set of words."
+    },
+    {
+      "tag": "delta",
+      "text": "The half and the quarter join with wa: wa an-niṣf, wa ar-rubʿ. Both nouns take al-, and both articles assimilate, because n and r are sun letters."
+    },
+    {
+      "tag": "interference",
+      "text": "This module is the course's densest run of sun letters — as-sāʿa, ath-thāniya, an-niṣf, ar-rubʿ, as-sabt. The assimilation is SPELLING here, not just sound: the build reads al-sāʿa and as-sāʿa as two different words."
+    },
+    {
+      "tag": "free",
+      "text": "in shāʾ allāh (M6 of the level below) marks a future. In speech it is also how a soft no is given, so a plan sealed only with in shāʾ allāh is not sealed."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M6-S01",
+      "display": "hal turīd an nadhhab ilā as-sūq?",
+      "script": "هل تريد أن نذهب إلى السوق؟",
+      "cue": "Would you like us to go to the market?",
+      "literal": "Question want(you-m) that we-go to the-market?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nadhhab",
+            "script": "نذهب",
+            "cue": "we go",
+            "tag": "free",
+            "forms": [],
+            "note": "M4's row from the level below, and the na- prefix is \"we\". Asking with turīd and answering with nadhhab is the shape of every Arabic invitation."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Not one new word in the whole sentence. The invitation is a rearrangement of things the learner has had for two levels, which is worth noticing rather than hurrying past.",
+      "sound": "NADH-hab, with the dh of \"this\" and the stress at the front.",
+      "variations": [
+        {
+          "display": "hal turīdīn an nadhhab ilā al-maṭʿam?",
+          "script": "هل تريدين أن نذهب إلى المطعم؟",
+          "cue": "Would you like us to go to the restaurant?",
+          "changed": "the feminine, visible in both lines"
+        },
+        {
+          "display": "hal turīd an nadhhab ilā al-madrasa?",
+          "script": "هل تريد أن نذهب إلى المدرسة؟",
+          "cue": "Would you like us to go to the school?",
+          "changed": "another destination after an"
+        },
+        {
+          "display": "urīd an nadhhab ilā as-sūq",
+          "script": "أريد أن نذهب إلى السوق",
+          "cue": "I'd like us to go to the market",
+          "changed": "said as a wish rather than asked as a question"
+        }
+      ],
+      "mistake": {
+        "display": "hal turīd nadhhab ilā as-sūq?",
+        "script": "هل تريد نذهب إلى السوق؟",
+        "why": "an is obligatory between two verbs, exactly as M3 of the level below taught. Two verbs never touch."
+      },
+      "usage": "The everyday invitation. Asking about \"we\" rather than \"you\" is what makes it an invitation and not a question about their plans.",
+      "register": "neutral",
+      "mnemonic": "Ask with you, plan with we."
+    },
+    {
+      "id": "L2-M6-S02",
+      "display": "limādhā lā nadhhab ilā al-maṭʿam?",
+      "script": "لماذا لا نذهب إلى المطعم؟",
+      "cue": "Why don't we go to the restaurant?",
+      "literal": "Why not we-go to the-restaurant?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "limādhā",
+            "script": "لماذا",
+            "cue": "why",
+            "tag": "free",
+            "forms": [],
+            "note": "M9's row from the level below, doing a job it has never done: with lā after it, it stops asking for a reason and starts making a suggestion."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "It looks like a question about causes and it is an invitation. English does exactly the same thing with \"why don't we\", so the shape transfers — but the words are all old ones.",
+      "sound": "li-MĀ-dhā, with two long ā sounds and the stress on the first.",
+      "variations": [
+        {
+          "display": "limādhā lā nadhhab ilā as-sūq?",
+          "script": "لماذا لا نذهب إلى السوق؟",
+          "cue": "Why don't we go to the market?",
+          "changed": "another destination in the same frame"
+        },
+        {
+          "display": "limādhā lā tadhhab maʿī?",
+          "script": "لماذا لا تذهب معي؟",
+          "cue": "Why don't you come with me?",
+          "changed": "you instead of we, which turns it back into a real question"
+        },
+        {
+          "display": "limādhā lā nadhhab ghadan?",
+          "script": "لماذا لا نذهب غدا؟",
+          "cue": "Why don't we go tomorrow?",
+          "changed": "a time from M6 of the level below"
+        }
+      ],
+      "mistake": {
+        "display": "limādhā lam nadhhab ilā al-maṭʿam?",
+        "script": "لماذا لم نذهب إلى المطعم؟",
+        "why": "lam is a past negative and belongs to a later level. The suggestion takes lā."
+      },
+      "usage": "Warmer than S01, because it half-assumes the answer. Among friends it is the commoner of the two.",
+      "register": "neutral",
+      "mnemonic": "A question about reasons, doing the work of an invitation."
+    },
+    {
+      "id": "L2-M6-S03",
+      "display": "nadhhab fī as-sāʿa al-khāmisa",
+      "script": "نذهب في الساعة الخامسة",
+      "cue": "We'll go at five o'clock",
+      "literal": "We-go in the-hour the-fifth",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "as-sāʿa",
+            "script": "الساعة",
+            "cue": "the hour · the clock",
+            "tag": "delta",
+            "forms": [
+              "as-sāʿa",
+              "sāʿa"
+            ],
+            "note": "Feminine, which is why every clock ordinal after it is feminine too. s is a sun letter, so the article assimilates and the s is held long."
+          },
+          {
+            "display": "al-khāmisa",
+            "script": "الخامسة",
+            "cue": "the fifth",
+            "tag": "delta",
+            "forms": [],
+            "note": "An ORDINAL, not the cardinal khamsa M8 of the level below taught. Telling the time uses a different set of words, and this is the first of them."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "khamsa is five and al-khāmisa is the fifth. The clock never uses the cardinal, so the numbers a learner already has do not help here.",
+      "sound": "as-SĀ-ʿa al-KHĀ-mi-sa — the ʿayn in the middle of the first word is a letter, and the kh opens the second.",
+      "variations": [
+        {
+          "display": "nadhhab fī as-sāʿa ath-thāniya",
+          "script": "نذهب في الساعة الثانية",
+          "cue": "We'll go at two o'clock",
+          "changed": "a different ordinal, and a different sun letter"
+        },
+        {
+          "display": "nadhhab fī as-sāʿa ar-rābiʿa",
+          "script": "نذهب في الساعة الرابعة",
+          "cue": "We'll go at four o'clock",
+          "changed": "another ordinal, and another sun letter"
+        },
+        {
+          "display": "hal nadhhab fī as-sāʿa ar-rābiʿa?",
+          "script": "هل نذهب في الساعة الرابعة؟",
+          "cue": "Shall we go at four o'clock?",
+          "changed": "asked as a question, with another ordinal"
+        }
+      ],
+      "mistake": {
+        "display": "nadhhab fī as-sāʿa khamsa",
+        "script": "نذهب في الساعة خمسة",
+        "why": "The clock takes an ordinal with al-: as-sāʿa al-khāmisa. The cardinal counts things, not hours."
+      },
+      "usage": "How a time is fixed. The whole module turns on this frame and the two that follow it.",
+      "register": "neutral",
+      "mnemonic": "Five counts; the fifth tells the time."
+    },
+    {
+      "id": "L2-M6-S04",
+      "display": "as-sāʿa ath-thāniya wa an-niṣf",
+      "script": "الساعة الثانية والنصف",
+      "cue": "Half past two",
+      "literal": "The-hour the-second and the-half",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ath-thāniya",
+            "script": "الثانية",
+            "cue": "the second",
+            "tag": "delta",
+            "forms": [],
+            "note": "The ordinal for two. th is a sun letter, so al- assimilates: ath-thāniya, and the th is held long."
+          },
+          {
+            "display": "an-niṣf",
+            "script": "النصف",
+            "cue": "the half",
+            "tag": "delta",
+            "forms": [
+              "an-niṣf",
+              "niṣf"
+            ],
+            "note": "A noun, joined to the hour with wa: literally \"the second and the half\". n is a sun letter, so al- assimilates again."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "Three sun letters in four words, and every one of them changes the spelling of al-. The build reads al-thāniya and ath-thāniya as different words, so the assimilation is not optional.",
+      "sound": "ath-THĀ-ni-ya wan-NIṢF — the wa runs into the article and the whole thing is one phrase.",
+      "variations": [
+        {
+          "display": "as-sāʿa al-khāmisa wa an-niṣf",
+          "script": "الساعة الخامسة والنصف",
+          "cue": "Half past five",
+          "changed": "another hour, same half"
+        },
+        {
+          "display": "nadhhab fī as-sāʿa ath-thāniya wa an-niṣf",
+          "script": "نذهب في الساعة الثانية والنصف",
+          "cue": "We'll go at half past two",
+          "changed": "the time inside a plan"
+        },
+        {
+          "display": "as-sāʿa ath-thāniya wa ar-rubʿ",
+          "script": "الساعة الثانية والربع",
+          "cue": "Quarter past two",
+          "changed": "the quarter instead of the half"
+        }
+      ],
+      "mistake": {
+        "display": "as-sāʿa al-thāniya wa al-niṣf",
+        "script": "الساعة الثانية والنصف",
+        "why": "th and n are sun letters: ath-thāniya, an-niṣf. Writing al- unassimilated gives the index two words nobody meant."
+      },
+      "usage": "The commonest time anyone arranges anything for, in Arabic as in every other language in this repo.",
+      "register": "neutral",
+      "mnemonic": "Sun letters swallow the l, and the build is watching."
+    },
+    {
+      "id": "L2-M6-S05",
+      "display": "as-sāʿa ar-rābiʿa wa ar-rubʿ",
+      "script": "الساعة الرابعة والربع",
+      "cue": "Quarter past four",
+      "literal": "The-hour the-fourth and the-quarter",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ar-rābiʿa",
+            "script": "الرابعة",
+            "cue": "the fourth",
+            "tag": "delta",
+            "forms": [],
+            "note": "The ordinal for four. r is a sun letter, so the article assimilates and the r is held long."
+          },
+          {
+            "display": "ar-rubʿ",
+            "script": "الربع",
+            "cue": "the quarter",
+            "tag": "delta",
+            "forms": [
+              "ar-rubʿ",
+              "rubʿ"
+            ],
+            "note": "Built from the same three letters as ar-rābiʿa — r, b, ʿ — which is Arabic showing its roots. Four, fourth, quarter: one family, three shapes."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "ar-rābiʿa and ar-rubʿ share a root and are not interchangeable. Noticing the family helps the memory and does not help the grammar.",
+      "sound": "ar-RĀ-bi-ʿa war-RUBʿ, with the ʿayn ending both words and the r doubled at the start of each.",
+      "variations": [
+        {
+          "display": "as-sāʿa ath-thāniya wa ar-rubʿ",
+          "script": "الساعة الثانية والربع",
+          "cue": "Quarter past two",
+          "changed": "a different hour"
+        },
+        {
+          "display": "nadhhab fī as-sāʿa ar-rābiʿa",
+          "script": "نذهب في الساعة الرابعة",
+          "cue": "We'll go at four o'clock",
+          "changed": "on the hour, with no quarter"
+        },
+        {
+          "display": "as-sāʿa ar-rābiʿa wa an-niṣf",
+          "script": "الساعة الرابعة والنصف",
+          "cue": "Half past four",
+          "changed": "the half instead of the quarter"
+        }
+      ],
+      "mistake": {
+        "display": "as-sāʿa ar-rābiʿ wa ar-rubʿ",
+        "script": "الساعة الرابع والربع",
+        "why": "The ordinal agrees with as-sāʿa, which is feminine: ar-rābiʿa. The quarter does not, because it is its own noun."
+      },
+      "usage": "Quarter past is arranged; quarter to needs a word this course does not teach until it can be given a comparative note of its own.",
+      "register": "neutral",
+      "mnemonic": "One root, three shapes: four, fourth, quarter."
+    },
+    {
+      "id": "L2-M6-S06",
+      "display": "hal ʿindaka mawʿid yawm al-jumʿa?",
+      "script": "هل عندك موعد يوم الجمعة؟",
+      "cue": "Do you have an appointment on Friday?",
+      "literal": "Question at-you appointment day the-Friday?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mawʿid",
+            "script": "موعد",
+            "cue": "appointment · a meeting time",
+            "tag": "free",
+            "forms": [
+              "mawʿid",
+              "al-mawʿid"
+            ],
+            "note": "The arranged time itself, and the word a plan ends up being called. The ʿayn is in the middle and must be sounded."
+          },
+          {
+            "display": "al-jumʿa",
+            "script": "الجمعة",
+            "cue": "Friday",
+            "tag": "free",
+            "forms": [
+              "al-jumʿa",
+              "jumʿa"
+            ],
+            "note": "Named for the gathering, and the week's day of rest across the Arab world. j is a moon letter, so the l of al- is written and said."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "yawm goes in front of the day: yawm al-jumʿa. English says \"on Friday\" and Arabic names the day as a day.",
+      "sound": "MAW-ʿid, with the aw as in \"how\". al-JUM-ʿa, with the ʿayn between the m and the a.",
+      "variations": [
+        {
+          "display": "hal ʿindaki mawʿid yawm as-sabt?",
+          "script": "هل عندك موعد يوم السبت؟",
+          "cue": "Do you have an appointment on Saturday?",
+          "changed": "the feminine address and another day"
+        },
+        {
+          "display": "ʿindī mawʿid fī as-sāʿa al-khāmisa",
+          "script": "عندي موعد في الساعة الخامسة",
+          "cue": "I have an appointment at five o'clock",
+          "changed": "the time rather than the day"
+        },
+        {
+          "display": "ʿindī mawʿid yawm as-sabt",
+          "script": "عندي موعد يوم السبت",
+          "cue": "I have an appointment on Saturday",
+          "changed": "the answer, with another day"
+        }
+      ],
+      "mistake": {
+        "display": "hal ʿindaka mawʿid al-jumʿa?",
+        "script": "هل عندك موعد الجمعة؟",
+        "why": "The day takes yawm in front of it: yawm al-jumʿa. Without it the phrase reads as \"Friday's appointment\"."
+      },
+      "usage": "Checking whether someone is free before proposing anything. It is the polite order of business.",
+      "register": "neutral",
+      "mnemonic": "Name the day as a day."
+    },
+    {
+      "id": "L2-M6-S07",
+      "display": "muwāfiq, nadhhab ghadan",
+      "script": "موافق، نذهب غدا",
+      "cue": "Agreed, we'll go tomorrow",
+      "literal": "Agreeing, we-go tomorrow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "muwāfiq",
+            "script": "موافق",
+            "cue": "agreed (a man speaking)",
+            "tag": "delta",
+            "forms": [
+              "muwāfiq",
+              "muwāfiqa"
+            ],
+            "note": "An adjective, so it agrees with the SPEAKER: muwāfiqa from a woman. The same law as āsif in M1 and shabʿān in M5."
+          }
+        ],
+        "rules": []
+      },
+      "trap": "The plan is stated in the present and means the future. Arabic lets ghadan carry the tense, exactly as M6 of the level below let sa- do it — and here neither is needed.",
+      "sound": "mu-WĀ-fiq, stressed on the long ā in the middle.",
+      "variations": [
+        {
+          "display": "muwāfiqa, nadhhab ghadan",
+          "script": "موافقة، نذهب غدا",
+          "cue": "Agreed, we'll go tomorrow (a woman speaking)",
+          "changed": "a woman agreeing, so the adjective moves"
+        },
+        {
+          "display": "muwāfiq, sa-nadhhab fī as-sāʿa al-khāmisa",
+          "script": "موافق، سنذهب في الساعة الخامسة",
+          "cue": "Agreed, we'll go at five o'clock",
+          "changed": "sa- making the future explicit"
+        },
+        {
+          "display": "ṭayyib, muwāfiq",
+          "script": "طيب، موافق",
+          "cue": "Fine, agreed",
+          "changed": "M10's ṭayyib from the level below, in front"
+        }
+      ],
+      "mistake": {
+        "display": "muwāfiqa, nadhhab ghadan (said by a man)",
+        "script": "موافقة، نذهب غدا",
+        "why": "A man says muwāfiq. The agreement is his, so the adjective is his too."
+      },
+      "usage": "Sealing a plan. In business the fuller muwāfiq ʿalā dhālika exists; among people arranging a Friday, this is what is said.",
+      "register": "neutral",
+      "mnemonic": "Agreement is an adjective, and it belongs to whoever agrees."
+    },
+    {
+      "id": "L2-M6-S08",
+      "display": "hal nadhhab yawm as-sabt?",
+      "script": "هل نذهب يوم السبت؟",
+      "cue": "Shall we go on Saturday?",
+      "literal": "Question we-go day the-Saturday?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "as-sabt",
+            "script": "السبت",
+            "cue": "Saturday",
+            "tag": "free",
+            "forms": [
+              "as-sabt",
+              "sabt"
+            ],
+            "note": "s is a sun letter, so al- assimilates: as-sabt. The word is the same root as the Hebrew sabbath and the day it names is the working week's start in much of the region."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The bare present, asked as a question, IS the suggestion. No extra word is needed — hal and the na- prefix do all of it.",
+      "sound": "as-SABT, with the s held long and the final t fully released.",
+      "variations": [
+        {
+          "display": "hal nadhhab yawm al-jumʿa?",
+          "script": "هل نذهب يوم الجمعة؟",
+          "cue": "Shall we go on Friday?",
+          "changed": "the other day"
+        },
+        {
+          "display": "hal nadhhab ilā as-sūq yawm as-sabt?",
+          "script": "هل نذهب إلى السوق يوم السبت؟",
+          "cue": "Shall we go to the market on Saturday?",
+          "changed": "a destination as well as a day"
+        },
+        {
+          "display": "nadhhab yawm as-sabt, in shāʾ allāh",
+          "script": "نذهب يوم السبت، إن شاء الله",
+          "cue": "We'll go on Saturday, God willing",
+          "changed": "stated rather than asked, with the marker the next sentence explains"
+        }
+      ],
+      "mistake": {
+        "display": "hal nadhhab as-sabt?",
+        "script": "هل نذهب السبت؟",
+        "why": "yawm goes in front of the day, as in S06: yawm as-sabt."
+      },
+      "usage": "The shortest suggestion in the module, and among friends the commonest.",
+      "register": "neutral",
+      "mnemonic": "hal plus we is a suggestion already."
+    },
+    {
+      "id": "L2-M6-S09",
+      "display": "ṭayyib, ilā al-liqāʾ",
+      "script": "طيب، إلى اللقاء",
+      "cue": "Fine, see you",
+      "literal": "Good, to the-meeting",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ṭayyib",
+            "script": "طيب",
+            "cue": "fine · good · OK",
+            "tag": "free",
+            "forms": [],
+            "note": "M10's row from the level below, closing a plan rather than describing a thing. Its range covers OK, fine, all right and very well."
+          }
+        ],
+        "rules": []
+      },
+      "trap": "Nothing new. Both halves are the learner's already, and putting them together is what ends a conversation about a plan.",
+      "sound": "ṬAY-yib, with the y doubled and the ṭ emphatic.",
+      "variations": [
+        {
+          "display": "ṭayyib, ilā al-liqāʾ yawm as-sabt",
+          "script": "طيب، إلى اللقاء يوم السبت",
+          "cue": "Fine, see you on Saturday",
+          "changed": "the day named as you leave"
+        },
+        {
+          "display": "muwāfiq, ilā al-liqāʾ",
+          "script": "موافق، إلى اللقاء",
+          "cue": "Agreed, see you",
+          "changed": "S07's word in front instead"
+        },
+        {
+          "display": "ṭayyib, shukran jazīlan",
+          "script": "طيب، شكرا جزيلا",
+          "cue": "Fine, thank you very much",
+          "changed": "M1's thanks closing it instead"
+        }
+      ],
+      "mistake": {
+        "display": "ṭayyib, ilā al-liqāʾa",
+        "script": "طيب، إلى اللقاءة",
+        "why": "The phrase is frozen: ilā al-liqāʾ. Nothing is added to the end of it."
+      },
+      "usage": "The last line of the exchange. In Arabic the goodbye is always about the next meeting rather than this parting.",
+      "register": "neutral",
+      "mnemonic": "Goodbye in Arabic looks forward, not back."
+    },
+    {
+      "id": "L2-M6-S10",
+      "display": "in shāʾ allāh, nadhhab yawm al-aḥad",
+      "script": "إن شاء الله، نذهب يوم الأحد",
+      "cue": "God willing, we'll go on Sunday",
+      "literal": "If wills God, we-go day the-Sunday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-aḥad",
+            "script": "الأحد",
+            "cue": "Sunday",
+            "tag": "free",
+            "forms": [
+              "al-aḥad",
+              "aḥad"
+            ],
+            "note": "Named for the number one, because it is the week's first day. The hamza is written in the script and not in the romanization, since it is word-initial."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "in shāʾ allāh marks a future AND softens a refusal, and only the tone tells them apart. A plan sealed with it alone is not sealed, which is a fact about the language rather than about anyone's sincerity.",
+      "sound": "in-SHĀʾ-al-LĀH, run together as one word in speech.",
+      "variations": [
+        {
+          "display": "in shāʾ allāh, nadhhab ghadan",
+          "script": "إن شاء الله، نذهب غدا",
+          "cue": "God willing, we'll go tomorrow",
+          "changed": "a nearer time"
+        },
+        {
+          "display": "nadhhab yawm al-aḥad, in shāʾ allāh",
+          "script": "نذهب يوم الأحد، إن شاء الله",
+          "cue": "We'll go on Sunday, God willing",
+          "changed": "the marker at the end, which is where it usually sits"
+        },
+        {
+          "display": "muwāfiq, in shāʾ allāh",
+          "script": "موافق، إن شاء الله",
+          "cue": "Agreed, God willing",
+          "changed": "agreement and hedge in three words"
+        }
+      ],
+      "mistake": {
+        "display": "in shāʾ allāh, sa-nadhhab yawm al-aḥad, muwāfiq",
+        "script": "إن شاء الله، سنذهب يوم الأحد، موافق",
+        "why": "One future marker is enough. sa- and in shāʾ allāh in the same sentence say the same thing twice."
+      },
+      "usage": "On the end of nearly every plan. Hearing it as a soft no is a skill; using it as one is a later lesson.",
+      "register": "neutral",
+      "mnemonic": "The plan and the doubt in the same four syllables."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M6-C01",
+      "display": "hal turīd an nadhhab ilā as-sūq?",
+      "script": "هل تريد أن نذهب إلى السوق؟",
+      "cue": "Would you like us to go to the market?"
+    },
+    {
+      "id": "L2-M6-C02",
+      "display": "limādhā lā nadhhab ilā al-maṭʿam?",
+      "script": "لماذا لا نذهب إلى المطعم؟",
+      "cue": "Why don't we go to the restaurant?"
+    },
+    {
+      "id": "L2-M6-C03",
+      "display": "nadhhab fī as-sāʿa al-khāmisa",
+      "script": "نذهب في الساعة الخامسة",
+      "cue": "We'll go at five o'clock"
+    },
+    {
+      "id": "L2-M6-C04",
+      "display": "as-sāʿa ath-thāniya wa an-niṣf",
+      "script": "الساعة الثانية والنصف",
+      "cue": "Half past two"
+    },
+    {
+      "id": "L2-M6-C05",
+      "display": "as-sāʿa ar-rābiʿa wa ar-rubʿ",
+      "script": "الساعة الرابعة والربع",
+      "cue": "Quarter past four"
+    },
+    {
+      "id": "L2-M6-C06",
+      "display": "hal ʿindaka mawʿid yawm al-jumʿa?",
+      "script": "هل عندك موعد يوم الجمعة؟",
+      "cue": "Do you have an appointment on Friday?"
+    },
+    {
+      "id": "L2-M6-C07",
+      "display": "muwāfiq, nadhhab ghadan",
+      "script": "موافق، نذهب غدا",
+      "cue": "Agreed, we'll go tomorrow"
+    },
+    {
+      "id": "L2-M6-C08",
+      "display": "hal nadhhab yawm as-sabt?",
+      "script": "هل نذهب يوم السبت؟",
+      "cue": "Shall we go on Saturday?"
+    },
+    {
+      "id": "L2-M6-C09",
+      "display": "ṭayyib, ilā al-liqāʾ",
+      "script": "طيب، إلى اللقاء",
+      "cue": "Fine, see you"
+    },
+    {
+      "id": "L2-M6-C10",
+      "display": "in shāʾ allāh, nadhhab yawm al-aḥad",
+      "script": "إن شاء الله، نذهب يوم الأحد",
+      "cue": "God willing, we'll go on Sunday"
+    },
+    {
+      "id": "L2-M6-C11",
+      "display": "ʿindī mawʿid fī as-sāʿa al-khāmisa",
+      "script": "عندي موعد في الساعة الخامسة",
+      "cue": "I have an appointment at five o'clock"
+    },
+    {
+      "id": "L2-M6-C12",
+      "display": "hal nadhhab yawm al-jumʿa?",
+      "script": "هل نذهب يوم الجمعة؟",
+      "cue": "Shall we go on Friday?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

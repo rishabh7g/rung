@@ -1,0 +1,669 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M9",
+  "title": "Comparing and choosing",
+  "job": "More, less, better — stating a preference",
+  "prerequisites": [
+    "L2-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "A + afʿal + min + B",
+      "afʿal + N   (the superlative)",
+      "ufaḍḍil + al- + N",
+      "ayy + N + turīd?",
+      "hādhā + afʿal"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The comparative is one shape and it does NOT bend: akbar for a man, a woman, one thing or many. After nine modules in which every adjective took an -a, that is a relief rather than a burden."
+    },
+    {
+      "tag": "interference",
+      "text": "\"Than\" is min — the same word as M1's \"from\" from the level below, and this is its third job: origin, the phrase min faḍlika, and now comparison. Its row is L1-M1's and nothing here can take it."
+    },
+    {
+      "tag": "delta",
+      "text": "The superlative is the SAME afʿal, put in front of an indefinite singular: akbar bayt, \"the biggest house\". English has -er and -est; Arabic has one shape and lets the position decide."
+    },
+    {
+      "tag": "interference",
+      "text": "afʿal is a PATTERN, not a meaning. M3's aḥmar, azraq and aswad have the same shape and are colours — nothing is \"redder\" here. The root decides, and the pattern is shared."
+    },
+    {
+      "tag": "free",
+      "text": "ayy asks you to pick from a set, and it is a sibling of M7's ayna and M4's matā rather than a form of them."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M9-S01",
+      "display": "al-bayt akbar min al-madrasa",
+      "script": "البيت أكبر من المدرسة",
+      "cue": "The house is bigger than the school",
+      "literal": "The-house bigger from the-school",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "akbar",
+            "script": "أكبر",
+            "cue": "bigger",
+            "tag": "delta",
+            "forms": [
+              "akbar",
+              "al-akbar"
+            ],
+            "note": "Built from the same three letters as M3's kabīr, on the afʿal pattern. It never bends: akbar for anything at all."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "min is \"from\" everywhere else in this course. Here it is \"than\", and its row is L1-M1's — this module opens nothing and points back.",
+      "sound": "AK-bar, stressed at the front like every afʿal word.",
+      "variations": [
+        {
+          "display": "al-madrasa akbar min al-bayt",
+          "script": "المدرسة أكبر من البيت",
+          "cue": "The school is bigger than the house",
+          "changed": "the comparison turned round, and akbar does not move"
+        },
+        {
+          "display": "as-sayyāra akbar min al-ḥāfila",
+          "script": "السيارة أكبر من الحافلة",
+          "cue": "The car is bigger than the bus",
+          "changed": "two feminine nouns, and still akbar"
+        },
+        {
+          "display": "hādhā al-bayt akbar",
+          "script": "هذا البيت أكبر",
+          "cue": "This house is bigger",
+          "changed": "the second thing left unsaid"
+        }
+      ],
+      "mistake": {
+        "display": "as-sayyāra akbara min al-ḥāfila",
+        "script": "السيارة أكبرة من الحافلة",
+        "why": "There is no akbara. The comparative is invariable, which is the module's first and best news."
+      },
+      "usage": "The everyday comparison. The second variation is the one to notice: two feminine nouns and the adjective still does not move.",
+      "register": "neutral",
+      "mnemonic": "One shape for everything."
+    },
+    {
+      "id": "L2-M9-S02",
+      "display": "hiya akbar min ummī",
+      "script": "هي أكبر من أمي",
+      "cue": "She is older than my mother",
+      "literal": "She bigger from mother-my",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "min",
+            "script": "من",
+            "cue": "than",
+            "tag": "interference",
+            "forms": [
+              "min",
+              "minnī"
+            ],
+            "note": "M1's row from the level below, on its third job: origin in L1-M1, the phrase min faḍlika in L1-M8, and comparison here. First occurrence wins, so this module opens no row."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "akbar of a person is older, not bigger. The same word measures both, and the sentence says which.",
+      "sound": "MIN, one short syllable, and identical in the script to M7's man.",
+      "variations": [
+        {
+          "display": "huwa akbar min abī",
+          "script": "هو أكبر من أبي",
+          "cue": "He is older than my father",
+          "changed": "two men, and akbar again does not move"
+        },
+        {
+          "display": "ummī akbar min abī",
+          "script": "أمي أكبر من أبي",
+          "cue": "My mother is older than my father",
+          "changed": "two named people rather than a pronoun"
+        },
+        {
+          "display": "hiya akbar minnī",
+          "script": "هي أكبر مني",
+          "cue": "She is older than me",
+          "changed": "min with a suffix, which is how it takes a pronoun"
+        }
+      ],
+      "mistake": {
+        "display": "hiya akbar an ummī",
+        "script": "هي أكبر أن أمي",
+        "why": "The word for than is min. an links two verbs and has no business here."
+      },
+      "usage": "Family talk, and the commonest use of akbar there is. Age in Arabic is a matter of size.",
+      "register": "neutral",
+      "mnemonic": "Bigger and older are one word."
+    },
+    {
+      "id": "L2-M9-S03",
+      "display": "al-qiṭār asraʿ min al-ḥāfila",
+      "script": "القطار أسرع من الحافلة",
+      "cue": "The train is faster than the bus",
+      "literal": "The-train faster from the-bus",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "asraʿ",
+            "script": "أسرع",
+            "cue": "faster",
+            "tag": "free",
+            "forms": [],
+            "note": "From M4's sarīʿ, on the same afʿal pattern as akbar. Seeing the pair together is how the pattern becomes usable rather than memorised."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "sarīʿ bends and asraʿ does not. The positive agrees and the comparative never does, which is the whole shape of the module.",
+      "sound": "AS-raʿ, stressed at the front, with the ʿayn closing it.",
+      "variations": [
+        {
+          "display": "al-ḥāfila asraʿ min as-sayyāra",
+          "script": "الحافلة أسرع من السيارة",
+          "cue": "The bus is faster than the car",
+          "changed": "the comparison turned round"
+        },
+        {
+          "display": "al-qiṭār sarīʿ jiddan",
+          "script": "القطار سريع جدا",
+          "cue": "The train is very fast",
+          "changed": "M4's positive, which does agree"
+        },
+        {
+          "display": "khudh al-qiṭār, huwa asraʿ",
+          "script": "خذ القطار، هو أسرع",
+          "cue": "Take the train, it's faster",
+          "changed": "M4's advice with the reason after it"
+        }
+      ],
+      "mistake": {
+        "display": "al-qiṭār asraʿa min al-ḥāfila",
+        "script": "القطار أسرعة من الحافلة",
+        "why": "asraʿ is invariable. No comparative in Arabic takes an ending."
+      },
+      "usage": "Advice about how to get somewhere, which is M4's business finished properly.",
+      "register": "neutral",
+      "mnemonic": "The positive bends; the comparative stands still."
+    },
+    {
+      "id": "L2-M9-S04",
+      "display": "hādhā al-kitāb arkhaṣ",
+      "script": "هذا الكتاب أرخص",
+      "cue": "This book is cheaper",
+      "literal": "This the-book cheaper",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "arkhaṣ",
+            "script": "أرخص",
+            "cue": "cheaper",
+            "tag": "free",
+            "forms": [],
+            "note": "From M8's rakhīṣ in the level below, on the afʿal pattern. The kh and the ṣ are both made deep, so the word sits low in the mouth."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "The second thing is left unsaid, and Arabic is comfortable with that — the comparison is with whatever you are both looking at.",
+      "sound": "AR-khaṣ, with the kh of \"loch\" and the ṣ emphatic.",
+      "variations": [
+        {
+          "display": "hādhā al-kitāb arkhaṣ min hādhā",
+          "script": "هذا الكتاب أرخص من هذا",
+          "cue": "This book is cheaper than this one",
+          "changed": "the second thing named with min"
+        },
+        {
+          "display": "hādhihi as-sayyāra arkhaṣ",
+          "script": "هذه السيارة أرخص",
+          "cue": "This car is cheaper",
+          "changed": "a feminine thing, and arkhaṣ does not move"
+        },
+        {
+          "display": "arkhaṣ kitāb fī as-sūq",
+          "script": "أرخص كتاب في السوق",
+          "cue": "the cheapest book in the market",
+          "changed": "in front of an indefinite noun, so it becomes a superlative"
+        }
+      ],
+      "mistake": {
+        "display": "hādhā kitāb arkhaṣ",
+        "script": "هذا كتاب أرخص",
+        "why": "After hādhā the noun takes al-, as M5 taught: hādhā al-kitāb. Without it the phrase means \"this is a cheaper book\"."
+      },
+      "usage": "In a market, holding two things. The third variation is the whole of S06 in miniature.",
+      "register": "neutral",
+      "mnemonic": "Behind a definite noun it compares; in front of an indefinite one it wins."
+    },
+    {
+      "id": "L2-M9-S05",
+      "display": "hādhihi as-sayyāra aghlā",
+      "script": "هذه السيارة أغلى",
+      "cue": "This car is more expensive",
+      "literal": "This(f) the-car more-expensive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aghlā",
+            "script": "أغلى",
+            "cue": "more expensive",
+            "tag": "free",
+            "forms": [],
+            "note": "From M8's ghālī, and it ends in a long ā written with a dotless yāʾ — ى — which is a spelling a learner meets here for the first time."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The pair to hold together: arkhaṣ and aghlā, cheaper and dearer, and neither of them bends.",
+      "sound": "AGH-lā, with the gh a soft gargled g and a long open ā at the end.",
+      "variations": [
+        {
+          "display": "hādhihi as-sayyāra aghlā min al-ḥāfila",
+          "script": "هذه السيارة أغلى من الحافلة",
+          "cue": "This car is more expensive than the bus",
+          "changed": "the second thing named"
+        },
+        {
+          "display": "hādhā al-kitāb aghlā",
+          "script": "هذا الكتاب أغلى",
+          "cue": "This book is more expensive",
+          "changed": "a masculine thing, and aghlā does not move"
+        },
+        {
+          "display": "as-sayyāra ghāliya jiddan",
+          "script": "السيارة غالية جدا",
+          "cue": "The car is very expensive",
+          "changed": "M8's positive from the level below, which does agree"
+        }
+      ],
+      "mistake": {
+        "display": "hādhihi as-sayyāra aghlāʾ",
+        "script": "هذه السيارة أغلاء",
+        "why": "It ends in a plain long ā, written with the dotless yāʾ. There is no hamza on the end of it."
+      },
+      "usage": "The other half of a market conversation. Between arkhaṣ and aghlā a learner can shop.",
+      "register": "neutral",
+      "mnemonic": "Cheaper and dearer, and neither one bends."
+    },
+    {
+      "id": "L2-M9-S06",
+      "display": "hādhā akbar bayt fī as-sūq",
+      "script": "هذا أكبر بيت في السوق",
+      "cue": "This is the biggest house in the market",
+      "literal": "This biggest house in the-market",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "as-sūq",
+            "script": "السوق",
+            "cue": "the market",
+            "tag": "free",
+            "forms": [],
+            "note": "M5's row from the level below, and here it is the GROUP the superlative picks from. Arabic marks the group with fī where English uses in."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "akbar bayt has no al- anywhere and means \"THE biggest house\". A comparative in front of an indefinite singular is a superlative, and that is the only signal.",
+      "sound": "AK-bar BAYT, two stresses and no pause between them.",
+      "variations": [
+        {
+          "display": "hādhā arkhaṣ kitāb fī as-sūq",
+          "script": "هذا أرخص كتاب في السوق",
+          "cue": "This is the cheapest book in the market",
+          "changed": "S04's word doing the same job"
+        },
+        {
+          "display": "hiya akbar madrasa fī miṣr",
+          "script": "هي أكبر مدرسة في مصر",
+          "cue": "It's the biggest school in Egypt",
+          "changed": "a feminine noun, and the superlative still does not bend"
+        },
+        {
+          "display": "hādhā al-bayt al-akbar",
+          "script": "هذا البيت الأكبر",
+          "cue": "This is the bigger house",
+          "changed": "with al- and behind the noun, which makes it a description again"
+        }
+      ],
+      "mistake": {
+        "display": "hādhā al-akbar bayt fī as-sūq",
+        "script": "هذا الأكبر بيت في السوق",
+        "why": "The superlative takes no al- in front of its noun: akbar bayt. \"Add al- for the superlative\" is the rule to refuse."
+      },
+      "usage": "A claim rather than an opinion, which is what the fī-phrase adds.",
+      "register": "neutral",
+      "mnemonic": "No article, indefinite noun, and it is the best of them."
+    },
+    {
+      "id": "L2-M9-S07",
+      "display": "ufaḍḍil ash-shāy ʿalā al-qahwa",
+      "script": "أفضل الشاي على القهوة",
+      "cue": "I prefer tea to coffee",
+      "literal": "I-prefer the-tea on the-coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ufaḍḍil",
+            "script": "أفضل",
+            "cue": "I prefer",
+            "tag": "delta",
+            "forms": [
+              "ufaḍḍil",
+              "tufaḍḍil"
+            ],
+            "note": "The same three letters as min faḍlika, the phrase the learner has been saying since L1-M8: a favour and a preference are one root."
+          }
+        ],
+        "rules": []
+      },
+      "trap": "The thing preferred against takes ʿalā, \"on\". English says \"to\" and Arabic says \"on\", and neither is more logical than the other.",
+      "sound": "u-FAḌ-ḍil, with the ḍ emphatic and doubled.",
+      "variations": [
+        {
+          "display": "ufaḍḍil al-qahwa ʿalā ash-shāy",
+          "script": "أفضل القهوة على الشاي",
+          "cue": "I prefer coffee to tea",
+          "changed": "the preference turned round"
+        },
+        {
+          "display": "hal tufaḍḍil ash-shāy?",
+          "script": "هل تفضل الشاي؟",
+          "cue": "Do you prefer tea?",
+          "changed": "asked, with the second thing left off"
+        },
+        {
+          "display": "ufaḍḍil al-qiṭār ʿalā al-ḥāfila",
+          "script": "أفضل القطار على الحافلة",
+          "cue": "I prefer the train to the bus",
+          "changed": "M4's transport in the same frame"
+        }
+      ],
+      "mistake": {
+        "display": "ufaḍḍil ash-shāy min al-qahwa",
+        "script": "أفضل الشاي من القهوة",
+        "why": "min is for a comparative adjective. ufaḍḍil takes ʿalā."
+      },
+      "usage": "Answering a choice, and the root it shares with min faḍlika is worth pointing out to a learner who has said that phrase a hundred times.",
+      "register": "neutral",
+      "mnemonic": "A favour and a preference come from one root."
+    },
+    {
+      "id": "L2-M9-S08",
+      "display": "ayy kitāb turīd?",
+      "script": "أي كتاب تريد؟",
+      "cue": "Which book do you want?",
+      "literal": "Which book want(you-m)?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ayy",
+            "script": "أي",
+            "cue": "which",
+            "tag": "delta",
+            "forms": [
+              "ayy",
+              "ayya"
+            ],
+            "note": "Picks from a set both speakers can see. A sibling of M7's ayna and M4's matā rather than a form of them — they share a look and nothing else."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "The noun after ayy takes no al-. It is being picked from a set, not pointed at.",
+      "sound": "AYY, one syllable with the y doubled and held.",
+      "variations": [
+        {
+          "display": "ayy sayyāra turīdīn?",
+          "script": "أي سيارة تريدين؟",
+          "cue": "Which car do you want?",
+          "changed": "the feminine address, which the script shows"
+        },
+        {
+          "display": "ayy kitāb arkhaṣ?",
+          "script": "أي كتاب أرخص؟",
+          "cue": "Which book is cheaper?",
+          "changed": "the question and a comparative in four words"
+        },
+        {
+          "display": "ufaḍḍil hādhā al-kitāb",
+          "script": "أفضل هذا الكتاب",
+          "cue": "I prefer this book",
+          "changed": "the answer, with S07's verb"
+        }
+      ],
+      "mistake": {
+        "display": "ayy al-kitāb turīd?",
+        "script": "أي الكتاب تريد؟",
+        "why": "After ayy the noun stays indefinite: ayy kitāb."
+      },
+      "usage": "A shop, a menu, a shelf. The answer is the sentence after it.",
+      "register": "neutral",
+      "mnemonic": "Picking from a set leaves the article off."
+    },
+    {
+      "id": "L2-M9-S09",
+      "display": "urīd akthar min hādhā",
+      "script": "أريد أكثر من هذا",
+      "cue": "I want more than this",
+      "literal": "I-want more from this",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "akthar",
+            "script": "أكثر",
+            "cue": "more",
+            "tag": "free",
+            "forms": [
+              "akthar",
+              "aqall"
+            ],
+            "note": "The afʿal of kathīran, M1's \"a lot\" from the level below. Its opposite is aqall, less, and both take min."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "akthar is a comparative of quantity and al-mazīd, which M5 taught, is a noun. They mean nearly the same thing and behave completely differently.",
+      "sound": "AK-thar, with the th of \"think\" and the stress at the front.",
+      "variations": [
+        {
+          "display": "urīd aqall min hādhā",
+          "script": "أريد أقل من هذا",
+          "cue": "I want less than this",
+          "changed": "the opposite, and it works identically"
+        },
+        {
+          "display": "ʿindī akthar min sayyāra",
+          "script": "عندي أكثر من سيارة",
+          "cue": "I have more than one car",
+          "changed": "akthar min counting rather than comparing"
+        },
+        {
+          "display": "hal turīd akthar?",
+          "script": "هل تريد أكثر؟",
+          "cue": "Would you like more?",
+          "changed": "M5's offer, in this module's word"
+        }
+      ],
+      "mistake": {
+        "display": "urīd akthar hādhā",
+        "script": "أريد أكثر هذا",
+        "why": "akthar takes min, like every comparative in the module."
+      },
+      "usage": "At a table or a counter. The third variation is M5's offer said the other way round.",
+      "register": "neutral",
+      "mnemonic": "Even quantity compares with min."
+    },
+    {
+      "id": "L2-M9-S10",
+      "display": "al-bayt al-aḥmar aṣghar min al-bayt al-kabīr",
+      "script": "البيت الأحمر أصغر من البيت الكبير",
+      "cue": "The red house is smaller than the big house",
+      "literal": "The-house the-red smaller from the-house the-big",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aṣghar",
+            "script": "أصغر",
+            "cue": "smaller",
+            "tag": "free",
+            "forms": [],
+            "note": "The opposite of akbar, on the same pattern and just as invariable. Its positive, ṣaghīr, is not taught in this course, which is why the comparative arrives first."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          3
+        ]
+      },
+      "trap": "al-aḥmar and aṣghar look like the same kind of word and are not. The first is a colour, the second a comparison, and they share a pattern — which is exactly what rule 3 said.",
+      "sound": "AṢ-ghar, with the ṣ emphatic and the gh gargled.",
+      "variations": [
+        {
+          "display": "al-bayt aṣghar min al-madrasa",
+          "script": "البيت أصغر من المدرسة",
+          "cue": "The house is smaller than the school",
+          "changed": "without the colours"
+        },
+        {
+          "display": "as-sayyāra al-jadīda aṣghar",
+          "script": "السيارة الجديدة أصغر",
+          "cue": "The new car is smaller",
+          "changed": "a feminine noun, and aṣghar still does not move"
+        },
+        {
+          "display": "aṣghar bayt fī as-sūq",
+          "script": "أصغر بيت في السوق",
+          "cue": "the smallest house in the market",
+          "changed": "the superlative, in front of an indefinite noun"
+        }
+      ],
+      "mistake": {
+        "display": "al-bayt al-aḥmar aṣghar min al-bayt al-akbar",
+        "script": "البيت الأحمر أصغر من البيت الأكبر",
+        "why": "al-akbar is a comparison and not a description. The other house is simply big: al-bayt al-kabīr."
+      },
+      "usage": "The module's last sentence holds both readings of the afʿal pattern side by side, which is where rule 3 is either learnt or not.",
+      "register": "neutral",
+      "mnemonic": "Same shape, different jobs — and only the root knows which."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M9-C01",
+      "display": "al-bayt akbar min al-madrasa",
+      "script": "البيت أكبر من المدرسة",
+      "cue": "The house is bigger than the school"
+    },
+    {
+      "id": "L2-M9-C02",
+      "display": "hiya akbar min ummī",
+      "script": "هي أكبر من أمي",
+      "cue": "She is older than my mother"
+    },
+    {
+      "id": "L2-M9-C03",
+      "display": "al-qiṭār asraʿ min al-ḥāfila",
+      "script": "القطار أسرع من الحافلة",
+      "cue": "The train is faster than the bus"
+    },
+    {
+      "id": "L2-M9-C04",
+      "display": "hādhā al-kitāb arkhaṣ",
+      "script": "هذا الكتاب أرخص",
+      "cue": "This book is cheaper"
+    },
+    {
+      "id": "L2-M9-C05",
+      "display": "hādhihi as-sayyāra aghlā",
+      "script": "هذه السيارة أغلى",
+      "cue": "This car is more expensive"
+    },
+    {
+      "id": "L2-M9-C06",
+      "display": "hādhā akbar bayt fī as-sūq",
+      "script": "هذا أكبر بيت في السوق",
+      "cue": "This is the biggest house in the market"
+    },
+    {
+      "id": "L2-M9-C07",
+      "display": "ufaḍḍil ash-shāy ʿalā al-qahwa",
+      "script": "أفضل الشاي على القهوة",
+      "cue": "I prefer tea to coffee"
+    },
+    {
+      "id": "L2-M9-C08",
+      "display": "ayy kitāb turīd?",
+      "script": "أي كتاب تريد؟",
+      "cue": "Which book do you want?"
+    },
+    {
+      "id": "L2-M9-C09",
+      "display": "urīd akthar min hādhā",
+      "script": "أريد أكثر من هذا",
+      "cue": "I want more than this"
+    },
+    {
+      "id": "L2-M9-C10",
+      "display": "al-bayt al-aḥmar aṣghar min al-bayt al-kabīr",
+      "script": "البيت الأحمر أصغر من البيت الكبير",
+      "cue": "The red house is smaller than the big house"
+    },
+    {
+      "id": "L2-M9-C11",
+      "display": "khudh al-qiṭār, huwa asraʿ",
+      "script": "خذ القطار، هو أسرع",
+      "cue": "Take the train, it's faster"
+    },
+    {
+      "id": "L2-M9-C12",
+      "display": "hādhā arkhaṣ kitāb fī as-sūq",
+      "script": "هذا أرخص كتاب في السوق",
+      "cue": "This is the cheapest book in the market"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

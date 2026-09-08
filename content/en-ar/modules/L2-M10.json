@@ -1,0 +1,814 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M10",
+  "title": "Telling what happened",
+  "job": "A four-sentence account in the past",
+  "prerequisites": [
+    "L2-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "past",
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "V-perfect + <subject> + ilā + al- + N",
+      "dhahabtu ilā + al- + N + wa + V-perfect",
+      "kāna + <subject> + Adj",
+      "thumma + V-perfect + , + lākin + <statement>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A verb placed BEFORE its subject stays SINGULAR: dhahaba al-awlād ilā as-sūq, never dhahabū al-awlād. It agrees in gender only. L1 dodged this entirely by using pronoun subjects, where the question cannot arise."
+    },
+    {
+      "tag": "delta",
+      "text": "The perfect is Arabic's narrative tense and its person-suffix is written in full — dhahabtu, dhahabta, dhahabti, dhahaba, dhahabat. That is the one place the course's no-case-endings rule makes an exception, because the suffix carries the person and not the case."
+    },
+    {
+      "tag": "free",
+      "text": "kāna plus an adjective gives the standing situation: kāna al-jaww bārid. It is the whole of this level's background apparatus, and L1-M5 already taught the verb."
+    },
+    {
+      "tag": "interference",
+      "text": "The two lines part company again: نسيت, ذهبت and قلت are one spelling each for two or three persons. The romanization carries the person and the script does not, which M1 first noticed and M8 met again."
+    },
+    {
+      "tag": "free",
+      "text": "An account is joined with thumma for order, wa for addition and lākin for contrast — all three already the learner's from M10 of the level below."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M10-S01",
+      "display": "dhahabtu ilā as-sūq. kāna al-jaww bārid. ishtaraytu al-khubz. thumma dhahabtu ilā al-bayt.",
+      "script": "ذهبت إلى السوق. كان الجو باردا. اشتريت الخبز. ثم ذهبت إلى البيت.",
+      "cue": "I went to the market. The weather was cold. I bought the bread. Then I went home.",
+      "literal": "I-went to the-market. Was the-weather cold. I-bought the-bread. Then I-went to the-house.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ishtaraytu",
+            "script": "اشتريت",
+            "cue": "I bought",
+            "tag": "delta",
+            "forms": [
+              "ishtaraytu",
+              "ishtarā"
+            ],
+            "note": "The perfect of M8's ashtarī from the level below, with the -tu that says \"I\". The Arabic line writes اشتريت for I and for you alike."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          4
+        ]
+      },
+      "trap": "Four sentences and no pronoun in any of them. The suffixes carry the person, and putting anā in front of each would read as insistence.",
+      "sound": "ish-ta-RAY-tu, with the ay as in English \"eye\" and the stress before the ending.",
+      "variations": [
+        {
+          "display": "dhahabtu ilā as-sūq wa ishtaraytu al-khubz",
+          "script": "ذهبت إلى السوق واشتريت الخبز",
+          "cue": "I went to the market and bought the bread",
+          "changed": "two steps joined into one sentence"
+        },
+        {
+          "display": "kāna al-jaww bārid ams",
+          "script": "كان الجو باردا أمس",
+          "cue": "The weather was cold yesterday",
+          "changed": "the background line alone, with a time"
+        },
+        {
+          "display": "ishtaraytu al-khubz min as-sūq",
+          "script": "اشتريت الخبز من السوق",
+          "cue": "I bought the bread from the market",
+          "changed": "min doing its first job, after three modules of others"
+        }
+      ],
+      "mistake": {
+        "display": "anā dhahabtu ilā as-sūq. anā ishtaraytu al-khubz.",
+        "script": "أنا ذهبت إلى السوق. أنا اشتريت الخبز.",
+        "why": "The -tu already says who. Repeating anā in every clause is the English shape and reads as insistence."
+      },
+      "usage": "The ordinary account of a small errand. Four short sentences and one speaker, named nowhere.",
+      "register": "neutral",
+      "mnemonic": "The suffix says who; nothing else needs to."
+    },
+    {
+      "id": "L2-M10-S02",
+      "display": "ittaṣala ṣadīqī. kuntu fī al-bayt. takallamnā kathīran. kāna laṭīf.",
+      "script": "اتصل صديقي. كنت في البيت. تكلمنا كثيرا. كان لطيفا.",
+      "cue": "My friend called. I was at home. We talked a lot. It was nice.",
+      "literal": "Contacted friend-my. I-was in the-house. We-spoke much. Was nice.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ittaṣala",
+            "script": "اتصل",
+            "cue": "he called",
+            "tag": "delta",
+            "forms": [
+              "ittaṣala",
+              "ittaṣalat"
+            ],
+            "note": "The perfect of M7's attaṣil, and it comes BEFORE its subject here — which is the ordinary Arabic order and the module's rule 0."
+          },
+          {
+            "display": "takallamnā",
+            "script": "تكلمنا",
+            "cue": "we talked",
+            "tag": "delta",
+            "forms": [],
+            "note": "The perfect of M10's atakallam from the level below, with -nā for \"we\". Every person of the perfect is a suffix, and this is the one for us."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The verb stands in front of its subject and that is normal. English cannot do it at all, so a learner reading ittaṣala ṣadīqī will look for the subject in the wrong place.",
+      "sound": "it-TA-ṣa-la, with the t doubled and the ṣ emphatic.",
+      "variations": [
+        {
+          "display": "ittaṣalat ummī ams",
+          "script": "اتصلت أمي أمس",
+          "cue": "My mother called yesterday",
+          "changed": "a feminine subject, so the verb takes -at"
+        },
+        {
+          "display": "kuntu fī al-bayt wa ittaṣala ṣadīqī",
+          "script": "كنت في البيت واتصل صديقي",
+          "cue": "I was at home and my friend called",
+          "changed": "the background and the event joined with wa"
+        },
+        {
+          "display": "takallamnā kathīran wa kāna laṭīf",
+          "script": "تكلمنا كثيرا وكان لطيفا",
+          "cue": "We talked a lot and it was nice",
+          "changed": "the last two joined with wa"
+        }
+      ],
+      "mistake": {
+        "display": "ṣadīqī ittaṣala. kuntu fī al-bayt.",
+        "script": "صديقي اتصل. كنت في البيت.",
+        "why": "That is grammatical and puts the weight on the friend rather than on the call. Verb first is the neutral order for telling what happened."
+      },
+      "usage": "A phone call recounted, and the background line is what makes it a story rather than a list.",
+      "register": "neutral",
+      "mnemonic": "The verb goes first and the subject follows it in."
+    },
+    {
+      "id": "L2-M10-S03",
+      "display": "dhahaba al-awlād ilā al-madrasa. kāna al-jaww jamīl. akalū fī al-maṭʿam. rajaʿū fī as-sāʿa ath-thāniya.",
+      "script": "ذهب الأولاد إلى المدرسة. كان الجو جميلا. أكلوا في المطعم. رجعوا في الساعة الثانية.",
+      "cue": "The children went to school. The weather was lovely. They ate at the restaurant. They came back at two o'clock.",
+      "literal": "Went the-children to the-school. Was the-weather lovely. They-ate in the-restaurant. They-returned at the-hour the-second.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dhahaba",
+            "script": "ذهب",
+            "cue": "went (before its subject)",
+            "tag": "interference",
+            "forms": [
+              "dhahaba",
+              "dhahabat",
+              "dhahabū",
+              "dhahabnā"
+            ],
+            "note": "SINGULAR even though the children are plural, because the verb comes first. Once the subject has been named the later verbs go plural: akalū, rajaʿū. The row for dhahaba is L1-M5's."
+          },
+          {
+            "display": "akalū",
+            "script": "أكلوا",
+            "cue": "they ate",
+            "tag": "free",
+            "forms": [
+              "akalū",
+              "akalnā"
+            ],
+            "note": "The perfect with -ū for \"they\", on M5's verb from the level below. It follows its subject here, so it agrees in full."
+          },
+          {
+            "display": "rajaʿū",
+            "script": "رجعوا",
+            "cue": "they returned",
+            "tag": "delta",
+            "forms": [
+              "rajaʿū",
+              "rajaʿa",
+              "rajaʿat",
+              "rajaʿtu",
+              "rajaʿnā"
+            ],
+            "note": "The perfect with -ū for \"they\", used here because the subject has already been named and the verb now follows it."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "dhahaba is singular and akalū is plural, in the same account, about the same children. Position decides: a verb before its subject stays singular, and one after it agrees.",
+      "sound": "DHA-ha-ba, and ra-ja-ʿŪ with the stress on the ending.",
+      "variations": [
+        {
+          "display": "dhahaba al-awlād ilā as-sūq",
+          "script": "ذهب الأولاد إلى السوق",
+          "cue": "The children went to the market",
+          "changed": "the first line alone, with the singular verb"
+        },
+        {
+          "display": "al-awlād dhahabū ilā al-madrasa",
+          "script": "الأولاد ذهبوا إلى المدرسة",
+          "cue": "The children went to school",
+          "changed": "the subject first, so the verb goes plural"
+        },
+        {
+          "display": "rajaʿat ummī fī as-sāʿa ar-rābiʿa",
+          "script": "رجعت أمي في الساعة الرابعة",
+          "cue": "My mother came back at four o'clock",
+          "changed": "a feminine subject after the verb, so it takes -at"
+        }
+      ],
+      "mistake": {
+        "display": "dhahabū al-awlād ilā al-madrasa",
+        "script": "ذهبوا الأولاد إلى المدرسة",
+        "why": "A verb before its subject stays singular: dhahaba al-awlād. The plural belongs after the subject, as the second variation shows."
+      },
+      "usage": "The sentence the whole module is built to teach. The two variations put the rule's two halves side by side.",
+      "register": "neutral",
+      "mnemonic": "Verb first, verb singular."
+    },
+    {
+      "id": "L2-M10-S04",
+      "display": "nasītu al-miftāḥ. rajaʿtu ilā al-bayt. kāna fī as-sūq. thumma ittaṣaltu bi-ṣadīqī.",
+      "script": "نسيت المفتاح. رجعت إلى البيت. كان في السوق. ثم اتصلت بصديقي.",
+      "cue": "I forgot the key. I went back home. It was in the market. Then I called my friend.",
+      "literal": "I-forgot the-key. I-returned to the-house. Was in the-market. Then I-contacted with-friend-my.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rajaʿtu",
+            "script": "رجعت",
+            "cue": "I returned",
+            "tag": "free",
+            "forms": [],
+            "note": "The I-form of S03's rajaʿū. The row is S03's, and this is the person-suffix a first-person account needs."
+          },
+          {
+            "display": "ittaṣaltu",
+            "script": "اتصلت",
+            "cue": "I called",
+            "tag": "free",
+            "forms": [
+              "ittaṣaltu",
+              "bi-ṣadīqī"
+            ],
+            "note": "The I-form of S02's ittaṣala, still needing bi- to reach the person called. The row is S02's."
+          }
+        ],
+        "rules": [
+          1,
+          3,
+          4
+        ]
+      },
+      "trap": "Three verbs in four sentences, all first person, and the Arabic writes the first two identically to their you-forms. The romanized line is the only one that says who.",
+      "sound": "ra-JAʿ-tu and it-ta-ṢAL-tu, both stressed just before the -tu.",
+      "variations": [
+        {
+          "display": "nasītu al-miftāḥ, thumma rajaʿtu ilā al-bayt",
+          "script": "نسيت المفتاح، ثم رجعت إلى البيت",
+          "cue": "I forgot the key, then I went back home",
+          "changed": "two steps in one sentence"
+        },
+        {
+          "display": "ittaṣaltu bi-ṣadīqī ams",
+          "script": "اتصلت بصديقي أمس",
+          "cue": "I called my friend yesterday",
+          "changed": "one step, with a time"
+        },
+        {
+          "display": "rajaʿtu ilā al-bayt fī as-sāʿa al-khāmisa",
+          "script": "رجعت إلى البيت في الساعة الخامسة",
+          "cue": "I went back home at five o'clock",
+          "changed": "M6's clock inside an account"
+        }
+      ],
+      "mistake": {
+        "display": "nasītu al-miftāḥ. rajaʿ ilā al-bayt.",
+        "script": "نسيت المفتاح. رجع إلى البيت.",
+        "why": "Dropping the -tu changes the person to he. The suffix is the only thing carrying it."
+      },
+      "usage": "A bad morning in four sentences. thumma is what makes it a sequence rather than a list.",
+      "register": "neutral",
+      "mnemonic": "Change the suffix and you have changed who it happened to."
+    },
+    {
+      "id": "L2-M10-S05",
+      "display": "kāna ʿindī ṣudāʿ ams. kuntu fī al-bayt. nimtu kathīran. al-yawm anā bi-khayr.",
+      "script": "كان عندي صداع أمس. كنت في البيت. نمت كثيرا. اليوم أنا بخير.",
+      "cue": "I had a headache yesterday. I was at home. I slept a lot. Today I'm fine.",
+      "literal": "Was at-me headache yesterday. I-was in the-house. I-slept much. The-day I well.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nimtu",
+            "script": "نمت",
+            "cue": "I slept",
+            "tag": "delta",
+            "forms": [
+              "nimtu",
+              "nāma"
+            ],
+            "note": "The perfect of M9's anām from the level below, and the long ā of nāma shortens to i before the suffix — nimtu. A shape to learn rather than derive."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "kāna ʿindī is how ʿind- reaches the past, because it is a preposition and cannot conjugate. M8 said so; this is where it is used.",
+      "sound": "NIM-tu, one short syllable and the ending.",
+      "variations": [
+        {
+          "display": "kāna ʿindī ṣudāʿ, kuntu fī al-bayt",
+          "script": "كان عندي صداع، كنت في البيت",
+          "cue": "I had a headache, I was at home",
+          "changed": "the reason and the consequence in one sentence"
+        },
+        {
+          "display": "nimtu kathīran ams",
+          "script": "نمت كثيرا أمس",
+          "cue": "I slept a lot yesterday",
+          "changed": "one step, with a time"
+        },
+        {
+          "display": "al-yawm anā bi-khayr, alḥamdu lillāh",
+          "script": "اليوم أنا بخير، الحمد لله",
+          "cue": "Today I'm fine, thank goodness",
+          "changed": "M5's phrase closing the account"
+        }
+      ],
+      "mistake": {
+        "display": "ʿindī kāna ṣudāʿ ams",
+        "script": "عندي كان صداع أمس",
+        "why": "kāna comes first: kāna ʿindī ṣudāʿ. The verb heads the sentence, as rule 0 says."
+      },
+      "usage": "An account that ends in the present, which is what a story about being ill usually does.",
+      "register": "neutral",
+      "mnemonic": "ʿind- cannot conjugate, so kāna does it for them both."
+    },
+    {
+      "id": "L2-M10-S06",
+      "display": "qāla ṣadīqī: al-maṭʿam mumtāz. dhahabnā hunāka ams. akalnā samak. kāna ladhīdh.",
+      "script": "قال صديقي: المطعم ممتاز. ذهبنا هناك أمس. أكلنا سمكا. كان لذيذا.",
+      "cue": "My friend said: the restaurant is excellent. We went there yesterday. We ate fish. It was delicious.",
+      "literal": "Said friend-my: the-restaurant excellent. We-went there yesterday. We-ate fish. Was delicious.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "qāla",
+            "script": "قال",
+            "cue": "he said",
+            "tag": "delta",
+            "forms": [
+              "qāla",
+              "qālat",
+              "qultu"
+            ],
+            "note": "The perfect of \"say\", and its I-form shortens the ā the way nimtu does: qultu. Reported speech proper is a later level; here the words are simply quoted."
+          },
+          {
+            "display": "mumtāz",
+            "script": "ممتاز",
+            "cue": "excellent",
+            "tag": "free",
+            "forms": [
+              "mumtāz",
+              "mumtāza"
+            ],
+            "note": "A step above jayyid, and the ordinary word for praising anything. It agrees like any adjective."
+          },
+          {
+            "display": "ladhīdh",
+            "script": "لذيذ",
+            "cue": "delicious",
+            "tag": "free",
+            "forms": [
+              "ladhīdh",
+              "ladhīdha"
+            ],
+            "note": "Of food only, where mumtāz praises anything. Both dh sounds are the dh of \"this\"."
+          },
+          {
+            "display": "dhahabnā",
+            "script": "ذهبنا",
+            "cue": "we went",
+            "tag": "free",
+            "forms": [],
+            "note": "The -nā of takallamnā, on L1-M5's verb. The row for dhahaba is S03's."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "qāla ṣadīqī puts the verb first again, and what follows the colon is quoted rather than reported — Arabic's reported speech is a later level and this module does not touch it.",
+      "sound": "QĀ-la, with the q at the back of the throat. mum-TĀZ, stressed on the long ā.",
+      "variations": [
+        {
+          "display": "qālat ummī: al-maṭʿam mumtāz",
+          "script": "قالت أمي: المطعم ممتاز",
+          "cue": "My mother said: the restaurant is excellent",
+          "changed": "a feminine subject after the verb"
+        },
+        {
+          "display": "qultu: al-maṭʿam qarīb",
+          "script": "قلت: المطعم قريب",
+          "cue": "I said: the restaurant is near",
+          "changed": "the I-form, with its shortened vowel"
+        },
+        {
+          "display": "dhahabnā hunāka wa akalnā samak",
+          "script": "ذهبنا هناك وأكلنا سمكا",
+          "cue": "We went there and ate fish",
+          "changed": "the middle two joined with wa"
+        }
+      ],
+      "mistake": {
+        "display": "ṣadīqī qāla: al-maṭʿam mumtāz",
+        "script": "صديقي قال: المطعم ممتاز",
+        "why": "Grammatical, and it shifts the weight onto the friend. Telling what happened puts the verb first."
+      },
+      "usage": "Passing on a recommendation. The colon does the work reported speech would do in a later level.",
+      "register": "neutral",
+      "mnemonic": "Quote the words and you need no reporting grammar."
+    },
+    {
+      "id": "L2-M10-S07",
+      "display": "waṣaltu ilā al-maḥaṭṭa. kāna al-qiṭār mutaʾakhkhir. intaẓartu kathīran. thumma waṣala.",
+      "script": "وصلت إلى المحطة. كان القطار متأخرا. انتظرت كثيرا. ثم وصل.",
+      "cue": "I arrived at the station. The train was late. I waited a long time. Then it arrived.",
+      "literal": "I-arrived to the-station. Was the-train late. I-waited much. Then it-arrived.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "waṣaltu",
+            "script": "وصلت",
+            "cue": "I arrived",
+            "tag": "delta",
+            "forms": [
+              "waṣaltu",
+              "waṣala",
+              "waṣalat"
+            ],
+            "note": "Arriving takes ilā, like going. The last sentence uses the bare he-form, waṣala, because the train has already been named."
+          },
+          {
+            "display": "intaẓartu",
+            "script": "انتظرت",
+            "cue": "I waited",
+            "tag": "free",
+            "forms": [
+              "intaẓartu",
+              "intaẓara"
+            ],
+            "note": "The ẓ is emphatic and dark, and the initial i- is the same unwritten hamza as in ishrab and idhhab."
+          },
+          {
+            "display": "mutaʾakhkhir",
+            "script": "متأخر",
+            "cue": "late",
+            "tag": "free",
+            "forms": [
+              "mutaʾakhkhir",
+              "mutaʾakhkhira"
+            ],
+            "note": "Of a thing or a person that has been delayed. The medial hamza is written ʾ, as in masāʾ and qaraʾtu."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "waṣaltu and waṣala in the same account, and only the suffix separates them. The Arabic line writes وصلت for the first and وصل for the second, so here the script does help.",
+      "sound": "wa-ṢAL-tu and in-ta-ẒAR-tu, both stressed just before the ending.",
+      "variations": [
+        {
+          "display": "waṣaltu ilā al-bayt fī as-sāʿa ath-thāniya",
+          "script": "وصلت إلى البيت في الساعة الثانية",
+          "cue": "I arrived home at two o'clock",
+          "changed": "M6's clock inside the account"
+        },
+        {
+          "display": "kāna al-qiṭār mutaʾakhkhir ams",
+          "script": "كان القطار متأخرا أمس",
+          "cue": "The train was late yesterday",
+          "changed": "the background line alone"
+        },
+        {
+          "display": "intaẓartu kathīran, thumma waṣala al-qiṭār",
+          "script": "انتظرت كثيرا، ثم وصل القطار",
+          "cue": "I waited a long time, then the train arrived",
+          "changed": "the subject named at the end, with the verb still in front of it"
+        }
+      ],
+      "mistake": {
+        "display": "waṣaltu al-maḥaṭṭa",
+        "script": "وصلت المحطة",
+        "why": "Arriving takes ilā, as going does: waṣaltu ilā al-maḥaṭṭa."
+      },
+      "usage": "A journey recounted. Every verb here is a step and the one kāna sentence is the situation they happen in.",
+      "register": "neutral",
+      "mnemonic": "Arrive TO a place, not at one."
+    },
+    {
+      "id": "L2-M10-S08",
+      "display": "ishtaraytu kitāb ams. kāna ghālī lākin mumtāz. qaraʾtu kathīran. al-yawm anā saʿīd.",
+      "script": "اشتريت كتابا أمس. كان غاليا لكن ممتازا. قرأت كثيرا. اليوم أنا سعيد.",
+      "cue": "I bought a book yesterday. It was expensive but excellent. I read a lot. Today I'm happy.",
+      "literal": "I-bought book yesterday. Was expensive but excellent. I-read much. The-day I happy.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "qaraʾtu",
+            "script": "قرأت",
+            "cue": "I read",
+            "tag": "delta",
+            "forms": [
+              "qaraʾtu",
+              "qaraʾa"
+            ],
+            "note": "The medial hamza is written ʾ and never a plain apostrophe. The q is at the back of the throat and the hamza is a catch in it."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "lākin joins two things that pull against each other, and it is M10's row from the level below. Nothing else in the sentence is new.",
+      "sound": "qa-RAʾ-tu, with a clean catch of the throat before the ending.",
+      "variations": [
+        {
+          "display": "qaraʾtu al-kitāb ams",
+          "script": "قرأت الكتاب أمس",
+          "cue": "I read the book yesterday",
+          "changed": "with the article, so it is a book already mentioned"
+        },
+        {
+          "display": "kāna ghālī lākin mumtāz",
+          "script": "كان غاليا لكن ممتازا",
+          "cue": "It was expensive but excellent",
+          "changed": "the contrast alone"
+        },
+        {
+          "display": "ishtaraytu kitāb arkhaṣ",
+          "script": "اشتريت كتابا أرخص",
+          "cue": "I bought a cheaper book",
+          "changed": "M9's comparative, inside an account"
+        }
+      ],
+      "mistake": {
+        "display": "qara'tu kathīran",
+        "script": "قرأت كثيرا",
+        "why": "The medial hamza is written ʾ in this course, never a plain apostrophe: qaraʾtu. The two fold to the same key, and the display must carry one spelling."
+      },
+      "usage": "A small purchase recounted with a verdict on it, which is most of what people tell each other about.",
+      "register": "neutral",
+      "mnemonic": "Expensive but excellent — one lākin holds both."
+    },
+    {
+      "id": "L2-M10-S09",
+      "display": "dhahabat ummī ilā as-sūq. ishtarat al-fākiha. rajaʿat fī as-sāʿa ar-rābiʿa. kānat mutaʿaba.",
+      "script": "ذهبت أمي إلى السوق. اشترت الفاكهة. رجعت في الساعة الرابعة. كانت متعبة.",
+      "cue": "My mother went to the market. She bought the fruit. She came back at four o'clock. She was tired.",
+      "literal": "Went mother-my to the-market. She-bought the-fruit. She-returned at the-hour the-fourth. She-was tired.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dhahabat",
+            "script": "ذهبت",
+            "cue": "she went",
+            "tag": "delta",
+            "forms": [],
+            "note": "The feminine of dhahaba, and it comes before its subject — so it agrees in gender and stays singular. The row for dhahaba is L1-M5's."
+          },
+          {
+            "display": "kānat",
+            "script": "كانت",
+            "cue": "she was",
+            "tag": "free",
+            "forms": [],
+            "note": "The feminine of kāna, doing the same background job. The row for kāna is L1-M5's."
+          },
+          {
+            "display": "ishtarat",
+            "script": "اشترت",
+            "cue": "she bought",
+            "tag": "free",
+            "forms": [],
+            "note": "The feminine of ishtaraytu's verb, following its subject. The row for ishtaraytu is S01's."
+          },
+          {
+            "display": "mutaʿaba",
+            "script": "متعبة",
+            "cue": "tired (of a woman)",
+            "tag": "free",
+            "forms": [
+              "mutaʿab",
+              "mutaʿaba"
+            ],
+            "note": "A step beyond M5's taʿbān from the level below, and it agrees with whoever is tired."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "dhahabat before the subject, and every verb after it also feminine. Gender agreement survives the position rule; only NUMBER is suspended by it.",
+      "sound": "dha-HA-bat and KĀ-nat, both ending in a fully released t.",
+      "variations": [
+        {
+          "display": "dhahabat ummī ilā al-madrasa",
+          "script": "ذهبت أمي إلى المدرسة",
+          "cue": "My mother went to the school",
+          "changed": "a different destination"
+        },
+        {
+          "display": "kānat mutaʿaba jiddan",
+          "script": "كانت متعبة جدا",
+          "cue": "She was very tired",
+          "changed": "the last line alone, with jiddan"
+        },
+        {
+          "display": "ishtarat al-khubz wa rajaʿat",
+          "script": "اشترت الخبز ورجعت",
+          "cue": "She bought the bread and came back",
+          "changed": "two steps joined with wa"
+        }
+      ],
+      "mistake": {
+        "display": "dhahaba ummī ilā as-sūq",
+        "script": "ذهب أمي إلى السوق",
+        "why": "Gender still agrees even when number does not: dhahabat ummī. The position rule suspends only the plural."
+      },
+      "usage": "An account about someone else. Notice that not one sentence after the first names her.",
+      "register": "neutral",
+      "mnemonic": "Position kills the plural, not the gender."
+    },
+    {
+      "id": "L2-M10-S10",
+      "display": "dhahabtu ilā al-maṭʿam maʿa ṣadīqī. akalnā kathīran. kāna al-ḥisāb ghālī. lākin kāna yawm jamīl.",
+      "script": "ذهبت إلى المطعم مع صديقي. أكلنا كثيرا. كان الحساب غاليا. لكن كان يوما جميلا.",
+      "cue": "I went to the restaurant with my friend. We ate a lot. The bill was expensive. But it was a lovely day.",
+      "literal": "I-went to the-restaurant with friend-my. We-ate much. Was the-bill expensive. But was day lovely.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "akalnā",
+            "script": "أكلنا",
+            "cue": "we ate",
+            "tag": "free",
+            "forms": [
+              "akalnā",
+              "rajaʿnā"
+            ],
+            "note": "The -nā of takallamnā, on M5's verb from the level below. The row for akala is L1-M5's, and this is a cell of it."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          4
+        ]
+      },
+      "trap": "Nothing new is opened. Four sentences, three tenses' worth of work, and one new person-suffix on a verb the learner has had since L1-M5 — which is what a module's last item should look like.",
+      "sound": "a-kal-NĀ, stressed on the long ending.",
+      "variations": [
+        {
+          "display": "dhahabtu ilā al-maṭʿam maʿa ummī",
+          "script": "ذهبت إلى المطعم مع أمي",
+          "cue": "I went to the restaurant with my mother",
+          "changed": "a different companion"
+        },
+        {
+          "display": "kāna al-ḥisāb ghālī lākin kāna ladhīdh",
+          "script": "كان الحساب غاليا لكن كان لذيذا",
+          "cue": "The bill was expensive but it was delicious",
+          "changed": "the contrast made explicit on both sides"
+        },
+        {
+          "display": "akalnā kathīran wa rajaʿnā",
+          "script": "أكلنا كثيرا ورجعنا",
+          "cue": "We ate a lot and came back",
+          "changed": "two we-forms in one sentence"
+        }
+      ],
+      "mistake": {
+        "display": "anā dhahabtu, naḥnu akalnā, huwa kāna ghālī",
+        "script": "أنا ذهبت، نحن أكلنا، هو كان غاليا",
+        "why": "Every suffix already says who. Three pronouns in three clauses is the English shape and Arabic does not need one of them."
+      },
+      "usage": "The whole module in one item: an evening, four sentences, and a verdict at the end.",
+      "register": "neutral",
+      "mnemonic": "The endings carry the people; the account carries itself."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M10-C01",
+      "display": "dhahabtu ilā as-sūq wa ishtaraytu al-khubz",
+      "script": "ذهبت إلى السوق واشتريت الخبز",
+      "cue": "I went to the market and bought the bread"
+    },
+    {
+      "id": "L2-M10-C02",
+      "display": "ittaṣala ṣadīqī. kuntu fī al-bayt.",
+      "script": "اتصل صديقي. كنت في البيت.",
+      "cue": "My friend called. I was at home."
+    },
+    {
+      "id": "L2-M10-C03",
+      "display": "dhahaba al-awlād ilā al-madrasa",
+      "script": "ذهب الأولاد إلى المدرسة",
+      "cue": "The children went to school"
+    },
+    {
+      "id": "L2-M10-C04",
+      "display": "nasītu al-miftāḥ, thumma rajaʿtu ilā al-bayt",
+      "script": "نسيت المفتاح، ثم رجعت إلى البيت",
+      "cue": "I forgot the key, then I went back home"
+    },
+    {
+      "id": "L2-M10-C05",
+      "display": "kāna ʿindī ṣudāʿ, kuntu fī al-bayt",
+      "script": "كان عندي صداع، كنت في البيت",
+      "cue": "I had a headache, I was at home"
+    },
+    {
+      "id": "L2-M10-C06",
+      "display": "qāla ṣadīqī: al-maṭʿam mumtāz",
+      "script": "قال صديقي: المطعم ممتاز",
+      "cue": "My friend said: the restaurant is excellent"
+    },
+    {
+      "id": "L2-M10-C07",
+      "display": "waṣaltu ilā al-maḥaṭṭa, kāna al-qiṭār mutaʾakhkhir",
+      "script": "وصلت إلى المحطة، كان القطار متأخرا",
+      "cue": "I arrived at the station, the train was late"
+    },
+    {
+      "id": "L2-M10-C08",
+      "display": "kāna ghālī lākin mumtāz",
+      "script": "كان غاليا لكن ممتازا",
+      "cue": "It was expensive but excellent"
+    },
+    {
+      "id": "L2-M10-C09",
+      "display": "dhahabat ummī ilā as-sūq",
+      "script": "ذهبت أمي إلى السوق",
+      "cue": "My mother went to the market"
+    },
+    {
+      "id": "L2-M10-C10",
+      "display": "akalnā kathīran wa rajaʿnā",
+      "script": "أكلنا كثيرا ورجعنا",
+      "cue": "We ate a lot and came back"
+    },
+    {
+      "id": "L2-M10-C11",
+      "display": "al-awlād dhahabū ilā al-madrasa",
+      "script": "الأولاد ذهبوا إلى المدرسة",
+      "cue": "The children went to school"
+    },
+    {
+      "id": "L2-M10-C12",
+      "display": "intaẓartu kathīran, thumma waṣala al-qiṭār",
+      "script": "انتظرت كثيرا، ثم وصل القطار",
+      "cue": "I waited a long time, then the train arrived"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

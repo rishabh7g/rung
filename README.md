@@ -190,11 +190,11 @@ modules, 249 new surfaces, and the en-es baseline still at 10 — every variatio
 an untaught word was rewritten rather than baselined, and most of them were reaching for another
 cell of a verb the module already taught.
 
-**en-ar starts its second level (#436, #445, 2026-09-08).** `L2-M1` _Asking politely_ through
-`L2-M5` _Food and hosting_ are authored against the briefs of #427
+**en-ar climbs to two levels (#436, #445, #454, 2026-09-08).** All ten L2 rungs —
+`L2-M1`…`L2-M10`, _Conversations_ — are authored against the briefs of #427
 (`docs/54-en-ar-L2-brief-decisions.md`) and carry `verified: true` on the standing authority,
 backed by `docs/62-llm-review-en-ar-L2.md`; a strict `npm run build` emits
-`en-ar: 15 modules (L1-M1..M10, L2-M1..M5)`. M1 makes the imperative productive (`tashrab` →
+`en-ar: 20 modules (L1-M1..M10, L2-M1..M10)`. M1 makes the imperative productive (`tashrab` →
 `ishrab`, `taʾkul` → `kul`) and buys politeness with words rather than with a verb form Arabic does
 not have; M2 opens `huwa`/`hiya`, which L1 never needed because a verb prefix carried the person,
 and gives `ʿind-` its rule — a PREPOSITION meaning "at", which is why it takes suffixes rather than
@@ -207,7 +207,12 @@ is what makes the law usable rather than merely odd — and M4 finally explains 
 has been saying inside `bi-khayr` since L1-M2. A second finding is recorded in docs/62 as a
 discipline rather than a rule: **an `al-`'d form is its own index key**, so every en-ar word row
 lists both shapes, and the ratchet caught seven surfaces in one module before it became a habit.
-**The native gate is still unmet**: docs/62 ends in open questions 1–13, a fresh en-ar L2 chain.
+M10 teaches the law L1 could dodge with pronoun
+subjects: a verb before its subject stays SINGULAR (`dhahaba al-awlād`) and agrees in gender only,
+with `dhahabat ummī` showing that the position rule suspends the plural alone. The ratchet did a
+second job here — it surfaced a brief violation of the level's own `lam` ban in M10's first draft,
+and both sentences were rewritten rather than the ban relaxed. **The native gate is still unmet**:
+docs/62 ends in open questions 1–20, a fresh en-ar L2 chain.
 
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
