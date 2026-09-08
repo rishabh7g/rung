@@ -221,15 +221,18 @@ That is not luck; it is three constraints held while writing:
 
 ## 5. Verification
 
-- `npm run content:validate` → `CONTENT 376/376 ok`
+- `npm run content:validate` → `CONTENT 378/378 ok`. The denominator climbs while eight sibling
+  waves land in the same checkout — it read `CONTENT 376/376 ok` earlier in this pass — but it has
+  been `n/n` at every reading.
 - `npm run content:shown -- en-ko L5-M1` → `L5-M1: clean — every shown surface resolves`
 - `npm run content:shown -- en-ko L5-M2` → `L5-M2: clean — every shown surface resolves`
 - `npx vitest run tools/shown-surfaces.test.ts` → `Tests  11 passed (11)`
-- `npx vitest run src/course/types.test.ts` → `1 failed | 396 passed (397)`. The single failure is
-  the module census (`finds all 375 …`), which is the parent's to move as the nine waves land.
-  Every other assertion passes, including the en-ko decisions case: no Hangul outside `script`,
-  pure-ASCII romanization, no bare particle as its own token, no plain-style pronoun, and a
-  `script` line on every sentence, word, variation, mistake plate and pool item.
+- `npx vitest run src/course/types.test.ts` → `Tests  399 passed (399)`. Mid-pass this file was red
+  on the module census alone (`finds all 375 …`), which is the parent's counter and moved as the
+  waves landed; every other assertion was green throughout, including the en-ko decisions case —
+  no Hangul outside `script`, pure-ASCII romanization, no bare particle as its own whitespace
+  token, no plain-style pronoun, and a `script` line on every sentence, word, variation, mistake
+  plate and pool item.
 
 No build was run. `public/content/` is untouched.
 
