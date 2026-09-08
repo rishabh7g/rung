@@ -13,7 +13,7 @@
 
 /* The prototype's header row, minus the chevron the shell owns (#84): kicker and title on the
    left, the count hard right, a hairline under both. */
-.head {
+.module-head {
   display: flex;
   align-items: flex-start;
   gap: var(--space-3);
@@ -21,12 +21,12 @@
   border-bottom: var(--border-hairline);
 }
 
-.headText {
+.module-head-text {
   flex: 1;
   min-width: 0;
 }
 
-.kicker {
+.module-kicker {
   margin: 0;
   font: var(--text-kicker);
   letter-spacing: var(--kicker-tracking);
@@ -36,13 +36,13 @@
 }
 
 /* The module's own title, from its content file — the course's words, so the L2 face and size. */
-.title {
+.module-title {
   margin: var(--space-1) 0 0;
   font: var(--text-l2-cue);
   font-size: var(--devanagari-min-size);
 }
 
-.count {
+.module-count {
   flex: none;
   margin: 0;
   font: var(--text-caption);
@@ -52,7 +52,7 @@
 
 /* ---------------------------------------------------------------------- the list */
 
-.cards {
+.module-cards {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -65,7 +65,7 @@
 
 /* The one filled object on the screen (design/tokens.md §3): solid accent, ground-coloured text,
    full width, --cta-height (48px). The label is a course string, so it is set like one. */
-.practice {
+.module-practice {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,7 +84,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.practice:active {
+.module-practice:active {
   background: var(--color-accent-700);
   border-color: var(--color-accent-700);
 }

@@ -56,7 +56,7 @@ import {
   type ModuleView,
 } from './module/moduleView.ts';
 import { useProgression } from './useProgression.ts';
-import styles from './ModuleScreen.module.css';
+import './module-screen.css';
 
 /**
  * The route's component. It reads the id and hands it to a **keyed** list, so opening a different
@@ -147,7 +147,7 @@ function ModuleList({ moduleId }: ModuleListProps) {
 
   // Nothing honest to draw yet: the ladder decides whether this screen may exist at all, and the
   // module file is everything on it. The shell's frame is already up, so it waits.
-  if (!ready || module.data === null) return <section className={styles.module} aria-busy="true" />;
+  if (!ready || module.data === null) return <section className="module" aria-busy="true" />;
 
   const sentences = module.data.sentences;
   // Sentences MARKED, not marks made: the counters have no ceiling (`recordProduction` only adds),
@@ -159,23 +159,23 @@ function ModuleList({ moduleId }: ModuleListProps) {
   ).length;
 
   return (
-    <section className={styles.module}>
-      <div className={styles.head}>
-        <div className={styles.headText}>
+    <section className="module">
+      <div className="module-head">
+        <div className="module-head-text">
           {/* Structural furniture, like the Ladder's `M1 · CURRENT RUNG` — raised on #71. */}
-          <p className={styles.kicker}>{rungLabel(moduleId)} · MODULE</p>
-          <h2 className={styles.title}>{module.data.title}</h2>
+          <p className="module-kicker">{rungLabel(moduleId)} · MODULE</p>
+          <h2 className="module-title">{module.data.title}</h2>
         </div>
         {/* Counts, never time (Invariant 2): got-its across the module, out of the one per
             sentence the exit ritual asks for (`MARKS_PER_SENTENCE`, the same constant the exit
             rule reads — one since #349, so this reads `n / 10` where it read `n / 20`). Written
             by Read got-its; read here. */}
-        <p className={styles.count}>
+        <p className="module-count">
           {marked} / {sentences.length * MARKS_PER_SENTENCE}
         </p>
       </div>
 
-      <ol className={styles.cards}>
+      <ol className="module-cards">
         {sentences.map((sentence) => (
           <SentenceCard
             key={sentence.id}
@@ -189,7 +189,7 @@ function ModuleList({ moduleId }: ModuleListProps) {
       {/* The prototype closes the list with Practice, and the reason is the invariant: reading a
           module is never a gate in front of practising it. Same label as the rung card's, because
           it is the same tab. */}
-      <Link className={styles.practice} to={PRACTICE_PATH}>
+      <Link className="module-practice" to={PRACTICE_PATH}>
         {strings['rungCard.practice']}
       </Link>
     </section>
