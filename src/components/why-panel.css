@@ -11,7 +11,7 @@
 /* The prototype's two ghosts, side by side under the answer. They wrap rather than shrink: a
    ghost is `white-space: nowrap` by rule (design/tokens.md §4), and at the Devanagari floor the
    pair does not always fit a 360px card. */
-.controls {
+.why-controls {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
@@ -20,15 +20,14 @@
 /* The label is the COURSE's word for "why" — course prose, so Mukta at
    `--devanagari-min-size` (design/tokens.md §2), where the prototype writes 12px in the body
    face. Same wall, same standing answer (see why-row.css); flagged on #117. */
-.courseProse {
+.why-course-prose {
   font: var(--text-l2-card);
   font-size: var(--devanagari-min-size);
 }
 
 /* A ghost is text that acts: no border, no fill, accent ink, `--ghost-height` (36px) and
    `white-space: nowrap`, which §4 does not make optional. Same recipe as the rung card's (#87). */
-.ghost {
-  composes: courseProse;
+.why-ghost {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
@@ -46,19 +45,18 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.ghost:active {
+.why-ghost:active {
   background: color-mix(in srgb, var(--color-accent) 18%, transparent);
 }
 
-.toggle {
-  composes: ghost;
+.why-toggle {
 }
 
 /* ----------------------------------------------------------------- the expansion */
 
 /* 250ms, in place: the card grows where it stands (design/tokens.md §5 "Expand"), separated from
    the answer by the prototype's single hairline. */
-.rows {
+.why-rows {
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -66,7 +64,7 @@
   margin: var(--space-2) 0 0;
   padding: var(--space-3) 0 0;
   border-top: var(--border-hairline);
-  animation: expand-in var(--motion-expand) both;
+  animation: why-expand-in var(--motion-expand) both;
 }
 
 /**
@@ -75,11 +73,11 @@
  * plate would read as a broken app. `:empty` is exact here because the list's children are rows
  * or nothing at all.
  */
-.rows:empty {
+.why-rows:empty {
   display: none;
 }
 
-@keyframes expand-in {
+@keyframes why-expand-in {
   from {
     opacity: 0;
     transform: translateY(var(--space-2));
@@ -93,7 +91,7 @@
 
 /* design/tokens.md §5: reduced motion collapses every movement in the product. */
 @media (prefers-reduced-motion: reduce) {
-  .rows {
+  .why-rows {
     animation: none;
   }
 }

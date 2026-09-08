@@ -37,7 +37,7 @@ import type { ModuleContent, Word } from '../course/types.ts';
 import { resolveSentence, type WordRef } from '../engine/wordIndex.ts';
 import { moduleIdOf } from '../screens/sentence/sentenceId.ts';
 import { WhyRow } from './WhyRow.tsx';
-import styles from './WhyPanel.module.css';
+import './why-panel.css';
 
 interface WhyPanelProps {
   /** The revealed sentence's id — the index it resolves against, and where "open full" goes. */
@@ -55,11 +55,11 @@ export function WhyPanel({ sentenceId, display, l2 }: WhyPanelProps) {
   const panelId = `why-panel-${sentenceId}`;
 
   return (
-    <div className={styles.why}>
-      <div className={styles.controls}>
+    <div className="why">
+      <div className="why-controls">
         <button
           type="button"
-          className={styles.toggle}
+          className="why-toggle why-ghost why-course-prose"
           aria-expanded={open}
           // Only while there is one: a reference to an id no element has is a broken reference,
           // and a collapsed panel genuinely has no rows to name (the same call #88 made).
@@ -76,7 +76,7 @@ export function WhyPanel({ sentenceId, display, l2 }: WhyPanelProps) {
           id that names no module can never resolve, so it opens to exactly that — and asks for no
           file on the way. */}
       {open && (
-        <ul id={panelId} className={styles.rows}>
+        <ul id={panelId} className="why-rows">
           {moduleId !== null && <WhyRows moduleId={moduleId} display={display} l2={l2} />}
         </ul>
       )}
