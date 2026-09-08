@@ -30,7 +30,10 @@ exit table or `.verify/<stage>.log` is a five-repo change rather than a rung one
 
 ## How to verify it
 
-`scripts/verify.sh` → `TYPES ok | LINT ok | TEST 377/377 ok | CONTENT ok | FONTS ok | BUILD ok | BUDGET ok` (logs in `.verify/`, exit table in the script's header; `--fast` drops BUILD and BUDGET). Quote that line in the commit message.
+`scripts/verify.sh` → one line on success,
+`TYPES ok | LINT ok | TEST n/n ok | CONTENT ok | FONTS ok | BUILD ok | BUDGET ok`, where the TEST
+segment carries that run's own passed/total count (logs in `.verify/`, exit table in the script's
+header; `--fast` drops BUILD and BUDGET). Quote that line in the commit message.
 
 ## Deviations from the repo standards
 
