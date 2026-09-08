@@ -719,9 +719,9 @@ describe('en-it L2: the decisions its briefs settle (#430)', () => {
   const all = COURSE_BRIEFS['en-it'] ?? {};
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
 
-  it('covers exactly L1-M1..L2-M10 — two levels, twenty modules', () => {
+  it('covers exactly L1-M1..L3-M10 — three levels, thirty modules', () => {
     expect(Object.keys(all)).toEqual([
-      ...['L1', 'L2'].flatMap((level) =>
+      ...['L1', 'L2', 'L3'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -773,6 +773,60 @@ describe('en-it L2: the decisions its briefs settle (#430)', () => {
     expect(m10).toMatch(/one tense is for completed actions and the other for ongoing ones/);
     expect(m10).toMatch(/essere for movement and change of state/);
     for (const [id, brief] of l2) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+});
+
+describe('en-it L3: the decisions its briefs settle (#466)', () => {
+  const all = COURSE_BRIEFS['en-it'] ?? {};
+  const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
+  const notes = l3.flatMap(([, brief]) => brief.notes).join('\n');
+
+  it('climbs its bounds 10 → 11 → 12 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L3-M1', 'L3-M2', 'L3-M3']) expect(bound(id), id).toBe(10);
+    for (const id of ['L3-M4', 'L3-M5', 'L3-M6', 'L3-M7']) expect(bound(id), id).toBe(11);
+    for (const id of ['L3-M8', 'L3-M9', 'L3-M10']) expect(bound(id), id).toBe(12);
+  });
+
+  /**
+   * `docs/57` §4 named seven withheld pieces. The four L3 takes have owners named in the notes,
+   * and the three it does not take are still named where a module would reach for them.
+   */
+  it('gives the pieces it takes an owner, and leaves the rest named', () => {
+    expect(all['L3-M3']?.notes.join('\n'), 'the congiuntivo').toMatch(/CONGIUNTIVO OPENS HERE/);
+    expect(all['L3-M4']?.notes.join('\n'), 'the conditional').toMatch(/CONDIZIONALE OPENS/);
+    expect(all['L3-M5']?.notes.join('\n'), 'reported speech').toMatch(
+      /reported speech as L3-M5|docs\/57 named reported speech/,
+    );
+    expect(all['L3-M5']?.notes.join('\n'), 'la, le and ne').toMatch(/OBJECT CLITICS/);
+    // Still out, and named: the mood and the tense as SYSTEMS, and the passato remoto's relatives.
+    expect(all['L3-M3']?.notes.join('\n')).toMatch(/names the system as L4/);
+    expect(all['L3-M4']?.notes.join('\n')).toMatch(/L4-M3/);
+    expect(all['L3-M8']?.notes.join('\n')).toMatch(/still L4/);
+  });
+
+  /**
+   * The elision law is this course's own and L3 leans on it harder than L2 did, so every brief
+   * that writes an elided form says the surface is ONE key with the elision inside it.
+   */
+  it('keeps the elision law, one key per elided surface', () => {
+    expect(notes).toMatch(/elision inside it/);
+    expect(all['L3-M1']?.notes.join('\n')).toMatch(/STRAIGHT apostrophes only/);
+  });
+
+  /**
+   * `la` and `le` are L1-M1's ARTICLES, so M5's object clitics can only be taught as whole
+   * surfaces — the collision `docs/57` predicted, paid the way it said it would be.
+   */
+  it('pays the la / le collision with whole surfaces', () => {
+    expect(all['L3-M5']?.notes.join('\n')).toMatch(/MULTI-TOKEN surfaces/);
+    expect(all['L3-M5']?.notes.join('\n')).toMatch(/maxSpan is 3/);
+  });
+
+  it('names its seam in every module but the last', () => {
+    for (const [id, brief] of l3.filter(([id]) => id !== 'L3-M10')) {
       expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
     }
   });
