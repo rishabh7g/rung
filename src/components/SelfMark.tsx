@@ -45,7 +45,7 @@
  * once rather than per-surface.
  */
 import { useStrings } from '../course/strings.ts';
-import styles from './SelfMark.module.css';
+import './self-mark.css';
 
 /** The learner's verdict. Not a boolean at the call site, so neither value can be the default. */
 export type Mark = 'got' | 'miss';
@@ -60,10 +60,10 @@ export function SelfMark({ mark, onMark }: SelfMarkProps) {
   const strings = useStrings();
 
   return (
-    <div className={styles.group} role="group">
+    <div className="self-mark-group" role="group">
       <button
         type="button"
-        className={mark === 'miss' ? styles.optionMiss : styles.option}
+        className={mark === 'miss' ? 'self-mark-option-miss self-mark-option' : 'self-mark-option'}
         aria-pressed={mark === 'miss'}
         onClick={() => onMark('miss')}
       >
@@ -71,7 +71,7 @@ export function SelfMark({ mark, onMark }: SelfMarkProps) {
       </button>
       <button
         type="button"
-        className={mark === 'got' ? styles.optionGot : styles.option}
+        className={mark === 'got' ? 'self-mark-option-got self-mark-option' : 'self-mark-option'}
         aria-pressed={mark === 'got'}
         onClick={() => onMark('got')}
       >

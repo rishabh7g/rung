@@ -5,7 +5,7 @@
 
 /* The Industry segmented control, radius 0 like every blueprint object: one hairline round the
    pair, one between them. */
-.group {
+.self-mark-group {
   display: flex;
   flex: 1;
   min-width: 0;
@@ -22,7 +22,7 @@
  * recurrence of the same wall (#86, #87, #88, #89): §2 forbids Devanagari below the floor and a
  * caption token sets it in Barlow, which draws none. Flagged again on #117; no token invented.
  */
-.option {
+.self-mark-option {
   flex: 1;
   min-width: 0;
   display: flex;
@@ -43,34 +43,32 @@
 }
 
 /* The divider between the two, whichever of them is lit. */
-.option + .option {
+.self-mark-option + .self-mark-option {
   border-left: var(--border-hairline);
 }
 
-.option:active {
+.self-mark-option:active {
   background: color-mix(in srgb, var(--color-text) 7%, transparent);
 }
 
 /* The two sanctioned loud moments in the whole product are this pair and the unlock beat
    (PRD-design §3.6, design/tokens.md §7 rule 2). Green and red exist here and nowhere else. */
-.optionGot {
-  composes: option;
+.self-mark-option-got {
   background: var(--mark-got-bg);
   color: var(--mark-fg);
 }
 
-.optionMiss {
-  composes: option;
+.self-mark-option-miss {
   background: var(--mark-miss-bg);
   color: var(--mark-fg);
 }
 
-/* A lit segment does not tint under the finger — the fill IS the state, and `.option:active`
+/* A lit segment does not tint under the finger — the fill IS the state, and `.self-mark-option:active`
    above would otherwise mix grey into it. */
-.optionGot:active {
+.self-mark-option-got:active {
   background: var(--mark-got-bg);
 }
 
-.optionMiss:active {
+.self-mark-option-miss:active {
   background: var(--mark-miss-bg);
 }
