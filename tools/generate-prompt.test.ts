@@ -72,7 +72,10 @@ describe('foldIndex — the ladder, not the last rung (#471)', () => {
       cumulativeThrough: ['M1', 'M2', 'M3'],
       surfaceCount: 3,
     } as WordIndexFile;
-    const folded = foldIndex(shadowing, load).surfaces as Record<string, { taughtIn: string }>;
+    const folded = foldIndex(shadowing, load).surfaces as unknown as Record<
+      string,
+      { taughtIn: string }
+    >;
     expect(folded['uno']?.taughtIn).toBe('M1');
   });
 
