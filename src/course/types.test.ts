@@ -193,7 +193,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 135 — nine L1 ladders, hi-mr L2 and L3, en-es L2, the en-ar L2, and hi-en L2-M1..M5 (#437, #446)', () => {
+  it('finds all 140 — nine L1 ladders, hi-mr L2 and L3, and the complete L2 of en-es, en-ar and hi-en (#455)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -299,10 +299,15 @@ describe('ModuleContent against the modules that exist', () => {
       'content/hi-en/modules/L1-M8.json',
       'content/hi-en/modules/L1-M9.json',
       'content/hi-en/modules/L2-M1.json',
+      'content/hi-en/modules/L2-M10.json',
       'content/hi-en/modules/L2-M2.json',
       'content/hi-en/modules/L2-M3.json',
       'content/hi-en/modules/L2-M4.json',
       'content/hi-en/modules/L2-M5.json',
+      'content/hi-en/modules/L2-M6.json',
+      'content/hi-en/modules/L2-M7.json',
+      'content/hi-en/modules/L2-M8.json',
+      'content/hi-en/modules/L2-M9.json',
       'content/hi-mr/modules/L1-M1.json',
       'content/hi-mr/modules/L1-M10.json',
       'content/hi-mr/modules/L1-M2.json',
@@ -517,8 +522,8 @@ describe('ModuleContent against the modules that exist', () => {
 
     expect(
       hiEn.length,
-      'the hi-en modules this rule is written for (#270-#272 L1; #437, #446 L2)',
-    ).toBe(15);
+      'the hi-en modules this rule is written for (#270-#272 L1; #437, #446, #455 L2)',
+    ).toBe(20);
     for (const [file, json] of hiEn) {
       const module = parseModule(json, file);
 

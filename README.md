@@ -244,6 +244,28 @@ cannot be shown without. The ratchet was clean on all three at first build, the 
 to need no content fix after the check. **The native gate is still unmet**: docs/63 now ends in
 open questions 1–14.
 
+**hi-en's second level closes (#455, 2026-09-08).** `L2-M6` _Making plans together_ through
+`L2-M10` _Telling what happened_ complete the ladder; `content/hi-en/levels.json` drops the L2
+draft flag and a strict `npm run build` emits `hi-en: 20 modules (L1-M1..M10, L2-M1..M10)`. M6
+spends its budget on the time-preposition fork Hindi's single postposition has no shape for — `at`
+a clock time, `on` a day, `in` a part of the day, and then `at night`, taught as the exception it
+is. M7 teaches tag questions as things **built rather than memorised**: the auxiliary is always
+already in the sentence, and `isn't it?` as a universal tag is named in usage as ordinary Indian
+English, never written into a display and never called wrong. M8 opens the present perfect and
+nothing else, narrowly, on the present-result use, and kills the slogan that produces
+`*I've lost it yesterday` — the form is about now, which is why a finished time cannot sit in it;
+its register half states the level's sharpest law, that in English the more serious the complaint
+the softer the frame. M9 changes the adjective, which Hindi never does, and guards `than` against
+`then` — L1-M10's key, and one slip would have sent every comparison in the course to a note about
+sequence. M10 opens nothing at all. Comparative shapes went into the `forms` of their own rows
+where the level could still edit them (M2's `tall`, M3's `big`, `small`, `cheap`, `heavy`) and got
+rows of their own where L1 owns the adjective (`happier`, `busier`) — the additions-only law
+working exactly as written. Six rows the briefs omit were opened where a module could not do its
+job without them, `bad` among them: L1-M2 owns only the whole surface `not bad`, whose meaning is
+"all right", so the bare adjective had never been taught. One ratchet finding across five modules
+(`with`), fixed in content. **The native gate is still unmet**: docs/63 ends in open questions
+1–25, a fresh hi-en L2 chain.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on

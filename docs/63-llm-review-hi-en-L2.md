@@ -162,3 +162,89 @@ after the check. The hi-en baseline stays at 30.
     of that claim for both varieties.
 14. **`a piece of advice`** (M3-S07). Given as the counter for `advice`. Confirm it is still current
     speech rather than a textbook survival.
+
+## Wave 3 — L2-M6 through L2-M10 (#455)
+
+Five rungs, and the level closes. A strict build emits `hi-en: 20 modules`.
+
+### What each module actually spends its budget on
+
+- **M6 Making plans together.** Not the futures — L1-M6 settled those and this module says so in
+  rule 0. The spend is the time-preposition fork Hindi's single postposition has no shape for:
+  `at` a clock time, `on` a day, `in` a month or a part of the day, and then `at night`, which
+  breaks the pattern and is taught as the exception it is rather than smoothed over. `quarter to
+  ten` gets the trap, because a learner who reads the first word as the hour arrives an hour early.
+- **M7 On the phone.** Tag questions, built and never memorised: the auxiliary is always already in
+  the sentence, and the tag mirrors it and flips its polarity. `isn't it?` as a universal tag is
+  named in usage as ordinary Indian English and not written into a display — the mistake block shows
+  the mirrored tag instead, and no rule calls the variety wrong. `say · tell · speak · talk` is
+  taught by what follows each, not as a synonym list.
+- **M8 When something goes wrong.** The present perfect enters here and nowhere else in L2, lifted
+  narrowly to the present-result use. Rule 1 kills the slogan that produces `*I've lost it
+  yesterday`: the form is about NOW, which is exactly why a finished time expression cannot sit in
+  it. The register half is the level's sharpest: English complains indirectly, and the hedges
+  (`I'm afraid…`, `It seems…`, `Sorry to bother you, but…`) are words rather than forms, as M1
+  promised.
+- **M9 Comparing and choosing.** The comparative changes the adjective, which Hindi never does, and
+  both errors that follow get a mistake block (`*more taller`, `*tall than`). `than` vs `then` is
+  its own rule: one letter, no audible difference, and `then` is L1-M10's key, so a slip would send
+  every comparison in the course to a note about sequence.
+- **M10 Telling what happened.** Nothing new is opened. The past continuous carries the background
+  and the past simple moves the story, glued by `when`; the sequencers `first`, `after that` and
+  `finally` join L1-M10's `then`. The irregular past forms are taught as a list, because that is
+  what they are.
+
+### Where the briefs needed correcting or extending
+
+- **`help` is already L2-M1's.** The M8 seam lists it as a fresh key; M1 opened it. M8 re-shows it
+  in `Sorry to bother you, but I need help` without a row.
+- **`I've` needed a row the M8 seam does not list.** The seam names `haven't` and `hasn't` but not
+  the affirmative contraction, and L1-M10 only ever indexed `i've got` as a whole surface — so bare
+  `I've` was untaught in the module whose first display uses it. Opened as a row with `I have` in
+  its `forms`.
+- **`with` was the only ratchet finding in the wave**, on M8's `There is a problem with the phone`.
+  It became a real row rather than a rewritten variation: the frame is the module's softest
+  complaint and the word had to be taught to use it.
+- **`bus` and `train` (M4), `phone` and `him` (M7), `evening` and `night` (M6), `bad` (M9).** Rows
+  the briefs omit and the modules cannot do without — `bad` in particular, because L1-M2 owns only
+  the whole surface `not bad`, whose meaning is "all right", so the bare adjective had never been
+  taught at all.
+
+### Comparative shapes, and the additions-only law
+
+M9's brief says a comparative belongs in the `forms` of its adjective's own row where the course can
+still edit that row, and gets its own row where it cannot. That is what happened: `taller`/`tallest`
+went into M2's `tall`, and `bigger`/`biggest`, `smaller`/`smallest`, `cheaper`/`cheapest`,
+`heavier`/`heaviest` into M3's rows — all L2, all editable. `happier` and `busier` got rows of their
+own in M9-S10, because `happy` is L1-M5's and `busy` is L1-M9's and L1 is closed.
+
+### The ratchet
+
+One finding across five modules (`with`, above), fixed in content. The hi-en baseline stays at 30.
+
+### Open questions for the native pass
+
+15. **`Shall we…?`** (M6-S02). Given as current and neutral rather than dated. Confirm for both
+    varieties — American English may hear it as more marked than British.
+16. **`quarter to ten` / `half past eight`** (M6-S07, S08). Confirm the bare forms without `a` are
+    what people say, and that `nine forty five` is not now the commoner form in speech.
+17. **`That sounds good`** (M6-S05). Confirm it is the ordinary agreement token and not slightly
+    American.
+18. **`He is not in`** (M7-S04). Confirm this reading of `in` is current in an office, and that it
+    does not sound dated.
+19. **`Hold on a moment`** (M7-S06). Confirm `hold on` beats `hang on` and `just a moment` as the
+    default on a phone.
+20. **The tag-question inventory** (M7-S09). Four tags are shown: `isn't it?`, `aren't you?`,
+    `does he?`, `won't you?`. Confirm the intonation claim implicit in the usage note — that a tag
+    seeks confirmation rather than information — needs no separate teaching here.
+21. **`I'm afraid`** (M8-S06). Confirm it is not too formal for a learner at this level, and that it
+    is heard in shops and on phones and not only in offices.
+22. **`It seems there is a problem`** (M8-S08). Confirm this is natural spoken English and that
+    `There seems to be a problem` (the brief's form, avoided here because bare `there` is untaught)
+    is not so much commoner that the choice misleads.
+23. **`less expensive`** (M9-S02). Confirm `less` before an adjective is current rather than a
+    textbook form, and that `not as expensive as` is not overwhelmingly the spoken default.
+24. **`I prefer tea to coffee`** (M9-S09). Confirm the `to` frame is still ordinary speech rather
+    than written English.
+25. **The accounts** (M10, all ten). Each is three or four short sentences. Confirm they read as
+    something a person would actually say, and flag any that reads as a grammar exercise.

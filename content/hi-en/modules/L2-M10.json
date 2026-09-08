@@ -1,0 +1,643 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M10",
+  "title": "Telling what happened",
+  "job": "A four-sentence account in the past",
+  "prerequisites": [
+    "L2-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_past",
+      "past_continuous"
+    ],
+    "allowedPatterns": [
+      "First + , + <past simple> + . + Then + , + <past simple>",
+      "<past continuous> + when + <past simple>",
+      "<past simple> + because + <past simple>",
+      "After that + , + <past simple> + . + Finally + , + <past simple>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "कहानी दो पटरियों पर चलती है. जो पहले से चल रहा था वह was या were के साथ -ing में आता है, और जो बीच में हुआ वह सीधे बीते रूप में — I was waiting at the station when the phone rang. हिंदी भी रहा था से यही करती है, इसलिए यहाँ नया कुछ नहीं है; नया सिर्फ़ when है, जो दोनों पटरियों को जोड़ता है."
+    },
+    {
+      "tag": "interference",
+      "text": "did और didn't ख़ुद बीता वक़्त उठा लेते हैं, इसलिए असली क्रिया अपने सादे रूप में लौट आती है. I didn't went ग़लत है — I didn't go सही. सवाल में भी यही: Did you go?, न कि Did you went?"
+    },
+    {
+      "tag": "free",
+      "text": "क्रम बताने वाले शब्द ही इस पाठ का असली ख़र्च हैं: first, then, after that, finally. L1-M10 का then, and, but और so पहले से हैं; ये चार उनके साथ मिलकर चार वाक्यों को एक कहानी बना देते हैं."
+    },
+    {
+      "tag": "interference",
+      "text": "अंग्रेज़ी के बीते रूप नियम से नहीं बनते, एक-एक करके याद होते हैं. come → came, eat → ate, drink → drank, take → took, meet → met, say → said, tell → told, buy → bought, ring → rang. जिनमें -ed लगता है वे आसान हैं; बाक़ी सूची हैं."
+    },
+    {
+      "tag": "free",
+      "text": "यहाँ कुछ नया नहीं खुल रहा. had gone वाला और पिछला रूप, used to, कर्म-वाच्य और He said that he would call जैसी परोक्ष बात — सब L3 के हैं. M7 ने संदेश इसीलिए बिना परोक्ष बात के लिया था."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M10-S01",
+      "display": "Yesterday I got up early. First I had tea. Then I went to work. Finally I went to bed.",
+      "cue": "कल मैं जल्दी उठा. पहले मैंने चाय पी. फिर मैं काम पर गया. आख़िर में मैं सो गया.",
+      "literal": "कल मैं उठा जल्दी. पहले मैंने रखी चाय. फिर मैं गया तक काम. आख़िर में मैं गया तक बिस्तर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "first",
+            "cue": "पहले",
+            "tag": "free",
+            "forms": [],
+            "note": "कहानी का पहला क़दम. वाक्य के शुरू में बैठता है और उसके बाद अक्सर अल्पविराम आता है."
+          },
+          {
+            "display": "finally",
+            "cue": "आख़िर में",
+            "tag": "free",
+            "forms": [],
+            "note": "आख़िरी क़दम. at last भी चलता है पर उसमें राहत या झुँझलाहट का रंग होता है, finally में नहीं."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "चार छोटे वाक्य एक लंबे वाक्य से बेहतर हैं. अंग्रेज़ी कहानी टुकड़ों में चलती है और क्रम वाले शब्द उन्हें जोड़ते हैं.",
+      "sound": "finally तीन हिस्सों में — फ़ाइनली.",
+      "variations": [
+        {
+          "display": "Yesterday I got up early. Then I went to work.",
+          "cue": "कल मैं जल्दी उठा. फिर मैं काम पर गया.",
+          "changed": "छोटा किया, दो क़दम"
+        },
+        {
+          "display": "First I had tea. Then I went to work.",
+          "cue": "पहले मैंने चाय पी. फिर मैं काम पर गया.",
+          "changed": "बीच के दो क़दम"
+        },
+        {
+          "display": "Yesterday I got up early. Finally I went to bed.",
+          "cue": "कल मैं जल्दी उठा. आख़िर में मैं सो गया.",
+          "changed": "पहला और आख़िरी क़दम"
+        }
+      ],
+      "mistake": {
+        "display": "Yesterday I get up early and I go to work",
+        "why": "कल की बात बीते रूप में आती है: I got up early and I went to work."
+      },
+      "usage": "दिन भर का हाल सुनाना.",
+      "register": "neutral",
+      "mnemonic": "क्रम के तीन खूँटे — first · then · finally."
+    },
+    {
+      "id": "L2-M10-S02",
+      "display": "Yesterday my brother called me. Then he came home. Finally we ate at home.",
+      "cue": "कल मेरे भाई ने मुझे फ़ोन किया. फिर वह घर आया. आख़िर में हमने घर पर खाया.",
+      "literal": "कल मेरा भाई ने किया फ़ोन मुझे. फिर वह आया घर. आख़िर में हमने खाया पर घर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "called",
+            "cue": "फ़ोन किया",
+            "tag": "free",
+            "forms": [],
+            "note": "call का बीता रूप, और यह आसान वाला है — सिर्फ़ -ed. आदमी सीधे बाद आता है, कोई to नहीं."
+          },
+          {
+            "display": "came",
+            "cue": "आया",
+            "tag": "delta",
+            "forms": [],
+            "note": "come का बीता रूप, नियम से बाहर. तीसरा रूप फिर से come है — तीनों में बीच वाला ही अलग है."
+          },
+          {
+            "display": "ate",
+            "cue": "खाया",
+            "tag": "delta",
+            "forms": [],
+            "note": "eat का बीता रूप. आवाज़ eight जैसी है, वर्तनी अलग."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "came home में कोई to नहीं आता. home उन गिने-चुने शब्दों में है जो सीधे क्रिया के बाद बैठ जाते हैं.",
+      "sound": "ate और eight एक ही तरह बोले जाते हैं — एट.",
+      "variations": [
+        {
+          "display": "Yesterday my brother called me. Then he came home.",
+          "cue": "कल मेरे भाई ने मुझे फ़ोन किया. फिर वह घर आया.",
+          "changed": "दो क़दम"
+        },
+        {
+          "display": "Yesterday my sister called me. Then she came home.",
+          "cue": "कल मेरी बहन ने मुझे फ़ोन किया. फिर वह घर आई.",
+          "changed": "दूसरा कर्ता, रूप वही"
+        },
+        {
+          "display": "My brother came home. Finally we ate at home.",
+          "cue": "मेरा भाई घर आया. आख़िर में हमने घर पर खाया.",
+          "changed": "आख़िरी दो क़दम"
+        }
+      ],
+      "mistake": {
+        "display": "Yesterday my brother called to me",
+        "why": "call के बाद आदमी सीधे आता है: my brother called me."
+      },
+      "usage": "शाम का हाल सुनाना.",
+      "register": "neutral",
+      "mnemonic": "तीन रूप, बीच वाला अलग — come · came · come."
+    },
+    {
+      "id": "L2-M10-S03",
+      "display": "I was waiting at the station when the phone rang. Then I went home.",
+      "cue": "मैं स्टेशन पर इंतज़ार कर रहा था जब फ़ोन बजा. फिर मैं घर गया.",
+      "literal": "मैं था इंतज़ार कर रहा पर वह स्टेशन जब वह फ़ोन बजा. फिर मैं गया घर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "when",
+            "cue": "जब",
+            "tag": "delta",
+            "forms": [],
+            "note": "दो पटरियों को जोड़ता है. जो चल रहा था वह when से पहले, जो बीच में हुआ वह when के बाद."
+          },
+          {
+            "display": "rang",
+            "cue": "बजा",
+            "tag": "free",
+            "forms": [],
+            "note": "ring का बीता रूप. फ़ोन के लिए यही चलता है — the phone rang, न कि the phone was ringing, जब तक बजना ही मुख्य बात न हो."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "दोनों आधे अलग-अलग रूप में हैं और यही पूरी बात है. was waiting पीछे का पर्दा है, rang कहानी का क़दम.",
+      "sound": "rang में ng एक ही आवाज़ है — रैंग, रैन्ग नहीं.",
+      "variations": [
+        {
+          "display": "I was waiting at the shop when my brother came.",
+          "cue": "मैं दुकान पर इंतज़ार कर रहा था जब मेरा भाई आया.",
+          "changed": "दूसरी जगह, दूसरा क़दम"
+        },
+        {
+          "display": "She was waiting at the station when the phone rang.",
+          "cue": "वह स्टेशन पर इंतज़ार कर रही थी जब फ़ोन बजा.",
+          "changed": "दूसरा कर्ता"
+        },
+        {
+          "display": "I was waiting at the station. Then I went home.",
+          "cue": "मैं स्टेशन पर इंतज़ार कर रहा था. फिर मैं घर गया.",
+          "changed": "when वाला जोड़ हटा"
+        }
+      ],
+      "mistake": {
+        "display": "I waited at the station when the phone rang",
+        "why": "पीछे चल रही बात -ing में आती है: I was waiting at the station."
+      },
+      "usage": "कोई बात बीच में कैसे हुई, यह बताना.",
+      "register": "neutral",
+      "mnemonic": "पर्दा -ing में, क़दम सीधा."
+    },
+    {
+      "id": "L2-M10-S04",
+      "display": "Yesterday I met my friend. First we drank tea. After that we went to the market.",
+      "cue": "कल मैं अपने दोस्त से मिला. पहले हमने चाय पी. उसके बाद हम बाज़ार गए.",
+      "literal": "कल मैं मिला मेरा दोस्त. पहले हमने पी चाय. उसके बाद हम गए तक वह बाज़ार.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "met",
+            "cue": "मिला",
+            "tag": "delta",
+            "forms": [],
+            "note": "meet का बीता रूप, और तीसरा भी यही. आदमी सीधे बाद आता है — met my friend, कोई to या with नहीं."
+          },
+          {
+            "display": "drank",
+            "cue": "पी",
+            "tag": "delta",
+            "forms": [],
+            "note": "drink का बीता रूप. तीसरा रूप drunk है, जो इस स्तर पर नहीं आ रहा."
+          },
+          {
+            "display": "after that",
+            "cue": "उसके बाद",
+            "tag": "free",
+            "forms": [],
+            "note": "दो शब्दों का एक जोड़. then से थोड़ा भारी है और लंबी कहानी में उसकी जगह लेता है ताकि हर बार then न आए."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "met my friend में कोई जोड़ने वाला शब्द नहीं आता. हिंदी के दोस्त से मिला का से यहाँ ग़ायब है.",
+      "sound": "drank का a छोटा और खुला — ड्रैंक.",
+      "variations": [
+        {
+          "display": "Yesterday I met my friend. First we drank tea.",
+          "cue": "कल मैं अपने दोस्त से मिला. पहले हमने चाय पी.",
+          "changed": "दो क़दम"
+        },
+        {
+          "display": "We drank tea. After that we went to the market.",
+          "cue": "हमने चाय पी. उसके बाद हम बाज़ार गए.",
+          "changed": "आख़िरी दो क़दम"
+        },
+        {
+          "display": "Yesterday I met my brother. After that we went home.",
+          "cue": "कल मैं अपने भाई से मिला. उसके बाद हम घर गए.",
+          "changed": "दूसरा आदमी, दूसरी जगह"
+        }
+      ],
+      "mistake": {
+        "display": "Yesterday I met with my friend",
+        "why": "meet के बाद आदमी सीधे आता है: Yesterday I met my friend."
+      },
+      "usage": "किसी से मिलने का हाल सुनाना.",
+      "register": "neutral",
+      "mnemonic": "तीन रूप, दो एक जैसे — meet · met · met."
+    },
+    {
+      "id": "L2-M10-S05",
+      "display": "Yesterday I lost my wallet. I told my brother. Finally I found it.",
+      "cue": "कल मेरा बटुआ खो गया. मैंने अपने भाई को बताया. आख़िर में मुझे मिल गया.",
+      "literal": "कल मैंने खोया मेरा बटुआ. मैंने बताया मेरा भाई. आख़िर में मैंने पाया यह.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "told",
+            "cue": "बताया",
+            "tag": "delta",
+            "forms": [],
+            "note": "tell का बीता रूप. वही नियम चलता रहता है — आदमी सीधे बाद, कोई to नहीं: told my brother."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "यहाँ lost सीधा बीता रूप है, M8 वाला have के साथ वाला नहीं. कल की बात है, इसलिए have नहीं आया.",
+      "sound": "told में l हल्का सुनाई देता है — टोल्ड.",
+      "variations": [
+        {
+          "display": "Yesterday I lost my key. I told my brother.",
+          "cue": "कल मेरी चाबी खो गई. मैंने अपने भाई को बताया.",
+          "changed": "दूसरी चीज़, दो क़दम"
+        },
+        {
+          "display": "I told my sister. Finally I found it.",
+          "cue": "मैंने अपनी बहन को बताया. आख़िर में मुझे मिल गया.",
+          "changed": "दूसरा आदमी"
+        },
+        {
+          "display": "Yesterday I lost my wallet. Finally I found it.",
+          "cue": "कल मेरा बटुआ खो गया. आख़िर में मुझे मिल गया.",
+          "changed": "बीच का क़दम हटा"
+        }
+      ],
+      "mistake": {
+        "display": "Yesterday I told to my brother",
+        "why": "tell के बाद आदमी सीधे आता है: I told my brother."
+      },
+      "usage": "कोई चीज़ खोने और मिलने का हाल.",
+      "register": "neutral",
+      "mnemonic": "tell · told, आदमी सीधे बाद."
+    },
+    {
+      "id": "L2-M10-S06",
+      "display": "Yesterday my sister cooked rice. Then she called my mother. Finally we ate.",
+      "cue": "कल मेरी बहन ने चावल बनाए. फिर उसने मेरी माँ को फ़ोन किया. आख़िर में हमने खाया.",
+      "literal": "कल मेरी बहन ने बनाए चावल. फिर उसने किया फ़ोन मेरी माँ. आख़िर में हमने खाया.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cooked",
+            "cue": "बनाया",
+            "tag": "free",
+            "forms": [],
+            "note": "cook का बीता रूप, -ed वाला आसान रास्ता. आख़िर में t की आवाज़ आती है, d की नहीं — कुक्ट."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "-ed सब जगह एक जैसा नहीं बोला जाता. cooked में यह t है, called में d, और wanted में इड — लिखावट एक, आवाज़ें तीन.",
+      "sound": "cooked एक ही झटके में — कुक्ट.",
+      "variations": [
+        {
+          "display": "Yesterday my sister cooked rice. Then we ate.",
+          "cue": "कल मेरी बहन ने चावल बनाए. फिर हमने खाया.",
+          "changed": "दो क़दम"
+        },
+        {
+          "display": "Yesterday my brother cooked rice. Then he called my mother.",
+          "cue": "कल मेरे भाई ने चावल बनाए. फिर उसने मेरी माँ को फ़ोन किया.",
+          "changed": "दूसरा कर्ता"
+        },
+        {
+          "display": "She cooked rice. Finally we ate.",
+          "cue": "उसने चावल बनाए. आख़िर में हमने खाया.",
+          "changed": "छोटा किया"
+        }
+      ],
+      "mistake": {
+        "display": "Yesterday my sister cook rice",
+        "why": "कल की बात बीते रूप में: my sister cooked rice."
+      },
+      "usage": "घर का हाल सुनाना.",
+      "register": "neutral",
+      "mnemonic": "-ed एक, आवाज़ें तीन."
+    },
+    {
+      "id": "L2-M10-S07",
+      "display": "Yesterday I took the train to work. It was late. Then I called my friend.",
+      "cue": "कल मैंने काम के लिए रेल ली. वह देर से थी. फिर मैंने अपने दोस्त को फ़ोन किया.",
+      "literal": "कल मैंने ली वह रेल तक काम. यह थी देर. फिर मैंने किया फ़ोन मेरा दोस्त.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "took",
+            "cue": "लिया",
+            "tag": "delta",
+            "forms": [],
+            "note": "take का बीता रूप. सवारी के लिए यही चलता है — took the train, took a bus."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "took the train में the आया, पर M4 का by train बिना the था. सवारी में चढ़ने की बात हो तो the आता है, तरीक़े की बात हो तो नहीं.",
+      "sound": "took का oo छोटा है — टुक, टूक नहीं.",
+      "variations": [
+        {
+          "display": "Yesterday I took the bus to work. It was late.",
+          "cue": "कल मैंने काम के लिए बस ली. वह देर से थी.",
+          "changed": "दूसरी सवारी"
+        },
+        {
+          "display": "I took the train to work. Then I called my friend.",
+          "cue": "मैंने काम के लिए रेल ली. फिर मैंने अपने दोस्त को फ़ोन किया.",
+          "changed": "बीच का क़दम हटा"
+        },
+        {
+          "display": "She took the train to work. It was late.",
+          "cue": "उसने काम के लिए रेल ली. वह देर से थी.",
+          "changed": "दूसरा कर्ता"
+        }
+      ],
+      "mistake": {
+        "display": "Yesterday I taked the train to work",
+        "why": "take का बीता रूप took है: Yesterday I took the train to work."
+      },
+      "usage": "सफ़र में क्या हुआ, यह बताना.",
+      "register": "neutral",
+      "mnemonic": "बीता रूप याद रखिए — take · took."
+    },
+    {
+      "id": "L2-M10-S08",
+      "display": "Yesterday I wanted a new bag. First I went to the market. Then I bought it.",
+      "cue": "कल मुझे एक नया बैग चाहिए था. पहले मैं बाज़ार गया. फिर मैंने वह ख़रीद लिया.",
+      "literal": "कल मैं चाहता था एक नया बैग. पहले मैं गया तक वह बाज़ार. फिर मैंने ख़रीदा यह.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wanted",
+            "cue": "चाहता था",
+            "tag": "free",
+            "forms": [],
+            "note": "want का बीता रूप, -ed वाला. यहाँ -ed की आवाज़ इड है, क्योंकि शब्द पहले से t पर ख़त्म होता है."
+          },
+          {
+            "display": "bought",
+            "cue": "ख़रीदा",
+            "tag": "delta",
+            "forms": [],
+            "note": "buy का बीता रूप, और वर्तनी बिलकुल नहीं मिलती. gh यहाँ चुप है — बॉट."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "buy से bought तक कोई रास्ता नहीं दिखता, और यही अंग्रेज़ी के बीते रूपों की असल दिक़्क़त है. ये समझने की नहीं, याद करने की चीज़ें हैं.",
+      "sound": "bought और brought में सिर्फ़ r का फ़र्क़ है — बॉट, ब्रॉट.",
+      "variations": [
+        {
+          "display": "Yesterday I wanted a new bag. Then I bought it.",
+          "cue": "कल मुझे एक नया बैग चाहिए था. फिर मैंने वह ख़रीद लिया.",
+          "changed": "दो क़दम"
+        },
+        {
+          "display": "First I went to the market. Then I bought a new bag.",
+          "cue": "पहले मैं बाज़ार गया. फिर मैंने एक नया बैग ख़रीदा.",
+          "changed": "चीज़ आख़िर में"
+        },
+        {
+          "display": "She wanted a new bag. Finally she bought it.",
+          "cue": "उसे एक नया बैग चाहिए था. आख़िर में उसने वह ख़रीद लिया.",
+          "changed": "दूसरा कर्ता"
+        }
+      ],
+      "mistake": {
+        "display": "Yesterday I buyed a new bag",
+        "why": "buy का बीता रूप bought है: Yesterday I bought a new bag."
+      },
+      "usage": "ख़रीदारी का हाल सुनाना.",
+      "register": "neutral",
+      "mnemonic": "buy · bought, कोई तुक नहीं."
+    },
+    {
+      "id": "L2-M10-S09",
+      "display": "Yesterday my friend called me. He said okay. Then we met at the shop.",
+      "cue": "कल मेरे दोस्त ने मुझे फ़ोन किया. उसने कहा ठीक है. फिर हम दुकान पर मिले.",
+      "literal": "कल मेरा दोस्त ने किया फ़ोन मुझे. उसने कहा ठीक. फिर हम मिले पर वह दुकान.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "said",
+            "cue": "कहा",
+            "tag": "delta",
+            "forms": [],
+            "note": "say का बीता रूप, और आवाज़ say से बिलकुल नहीं मिलती — सेड. आदमी तक पहुँचाना हो तो यहाँ भी to चाहिए."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "He said okay में कही हुई बात सीधे आ गई. He said that he would come वाला रास्ता L3 का है और यहाँ जान-बूझकर नहीं लिया गया.",
+      "sound": "said की आवाज़ bed जैसी है — सेड, सेइड नहीं.",
+      "variations": [
+        {
+          "display": "Yesterday my friend called me. He said okay.",
+          "cue": "कल मेरे दोस्त ने मुझे फ़ोन किया. उसने कहा ठीक है.",
+          "changed": "दो क़दम"
+        },
+        {
+          "display": "My sister called me. She said okay.",
+          "cue": "मेरी बहन ने मुझे फ़ोन किया. उसने कहा ठीक है.",
+          "changed": "दूसरा कर्ता"
+        },
+        {
+          "display": "He said okay. Then we met at the shop.",
+          "cue": "उसने कहा ठीक है. फिर हम दुकान पर मिले.",
+          "changed": "आख़िरी दो क़दम"
+        }
+      ],
+      "mistake": {
+        "display": "Yesterday my friend said me okay",
+        "why": "say के बाद आदमी नहीं आता: my friend told me okay."
+      },
+      "usage": "फ़ोन पर तय हुई बात सुनाना.",
+      "register": "neutral",
+      "mnemonic": "say · said, आवाज़ बदल जाती है."
+    },
+    {
+      "id": "L2-M10-S10",
+      "display": "Yesterday the door didn't open. First I waited. Then my brother helped me. Finally we opened it.",
+      "cue": "कल दरवाज़ा नहीं खुला. पहले मैंने इंतज़ार किया. फिर मेरे भाई ने मेरी मदद की. आख़िर में हमने वह खोल लिया.",
+      "literal": "कल वह दरवाज़ा नहीं खुला. पहले मैंने इंतज़ार किया. फिर मेरा भाई ने की मदद मुझे. आख़िर में हमने खोला यह.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "waited",
+            "cue": "इंतज़ार किया",
+            "tag": "free",
+            "forms": [],
+            "note": "wait का बीता रूप. -ed यहाँ इड बोला जाता है, क्योंकि शब्द t पर ख़त्म होता है."
+          },
+          {
+            "display": "helped",
+            "cue": "मदद की",
+            "tag": "free",
+            "forms": [],
+            "note": "help का बीता रूप. आदमी सीधे बाद आता है — helped me, कोई to नहीं."
+          },
+          {
+            "display": "opened",
+            "cue": "खोला",
+            "tag": "free",
+            "forms": [],
+            "note": "open का बीता रूप. यहाँ -ed की आवाज़ d है — ओपन्ड."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "didn't open में open सादा है. didn't ने बीता वक़्त पहले ही उठा लिया, इसलिए क्रिया को दुबारा बदलने की ज़रूरत नहीं.",
+      "sound": "helped के आख़िर में t की आवाज़ — हेल्प्ट.",
+      "variations": [
+        {
+          "display": "Yesterday the door didn't open. First I waited.",
+          "cue": "कल दरवाज़ा नहीं खुला. पहले मैंने इंतज़ार किया.",
+          "changed": "दो क़दम"
+        },
+        {
+          "display": "My brother helped me. Finally we opened it.",
+          "cue": "मेरे भाई ने मेरी मदद की. आख़िर में हमने वह खोल लिया.",
+          "changed": "आख़िरी दो क़दम"
+        },
+        {
+          "display": "Yesterday the window didn't open. Then my sister helped me.",
+          "cue": "कल खिड़की नहीं खुली. फिर मेरी बहन ने मेरी मदद की.",
+          "changed": "दूसरी चीज़, दूसरा कर्ता"
+        }
+      ],
+      "mistake": {
+        "display": "Yesterday the door didn't opened",
+        "why": "didn't के बाद सादी क्रिया आती है: the door didn't open."
+      },
+      "usage": "कोई दिक़्क़त कैसे सुलझी, यह सुनाना.",
+      "register": "neutral",
+      "mnemonic": "didn't ने वक़्त उठा लिया."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M10-C01",
+      "display": "Yesterday I got up early. First I had tea. Then I went to work.",
+      "cue": "कल मैं जल्दी उठा. पहले मैंने चाय पी. फिर मैं काम पर गया."
+    },
+    {
+      "id": "L2-M10-C02",
+      "display": "Yesterday my brother called me. Then he came home.",
+      "cue": "कल मेरे भाई ने मुझे फ़ोन किया. फिर वह घर आया."
+    },
+    {
+      "id": "L2-M10-C03",
+      "display": "I was waiting at the station when the phone rang.",
+      "cue": "मैं स्टेशन पर इंतज़ार कर रहा था जब फ़ोन बजा."
+    },
+    {
+      "id": "L2-M10-C04",
+      "display": "Yesterday I met my friend. First we drank tea.",
+      "cue": "कल मैं अपने दोस्त से मिला. पहले हमने चाय पी."
+    },
+    {
+      "id": "L2-M10-C05",
+      "display": "Yesterday I lost my wallet. Finally I found it.",
+      "cue": "कल मेरा बटुआ खो गया. आख़िर में मुझे मिल गया."
+    },
+    {
+      "id": "L2-M10-C06",
+      "display": "Yesterday my sister cooked rice. Then we ate.",
+      "cue": "कल मेरी बहन ने चावल बनाए. फिर हमने खाया."
+    },
+    {
+      "id": "L2-M10-C07",
+      "display": "Yesterday I took the train to work. It was late.",
+      "cue": "कल मैंने काम के लिए रेल ली. वह देर से थी."
+    },
+    {
+      "id": "L2-M10-C08",
+      "display": "First I went to the market. Then I bought a new bag.",
+      "cue": "पहले मैं बाज़ार गया. फिर मैंने एक नया बैग ख़रीदा."
+    },
+    {
+      "id": "L2-M10-C09",
+      "display": "He said okay. Then we met at the shop.",
+      "cue": "उसने कहा ठीक है. फिर हम दुकान पर मिले."
+    },
+    {
+      "id": "L2-M10-C10",
+      "display": "My brother helped me. Finally we opened it.",
+      "cue": "मेरे भाई ने मेरी मदद की. आख़िर में हमने वह खोल लिया."
+    },
+    {
+      "id": "L2-M10-C11",
+      "display": "I was waiting at the shop when my brother came.",
+      "cue": "मैं दुकान पर इंतज़ार कर रहा था जब मेरा भाई आया."
+    },
+    {
+      "id": "L2-M10-C12",
+      "display": "Yesterday I wanted a new bag. Then I bought it.",
+      "cue": "कल मुझे एक नया बैग चाहिए था. फिर मैंने वह ख़रीद लिया."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

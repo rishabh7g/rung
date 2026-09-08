@@ -1,0 +1,621 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M9",
+  "title": "Comparing and choosing",
+  "job": "More, less, better — stating a preference",
+  "prerequisites": [
+    "L2-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "A + is + Adj-er + than + B",
+      "A + is + more + Adj + than + B",
+      "the + Adj-est + N   /   the most + Adj + N",
+      "A + is + as + Adj + as + B",
+      "I'd rather + V   /   I prefer + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "तुलना में अंग्रेज़ी विशेषण को बदल देती है, हिंदी कभी नहीं. राम श्याम से लंबा है में लंबा जस का तस रहता है और काम से करता है; अंग्रेज़ी कहती है Ram is taller than Shyam. इसी एक बात से दो ग़लतियाँ निकलती हैं — more taller, जहाँ तुलना दो बार लगा दी जाती है, और tall than, जहाँ विशेषण बदला ही नहीं."
+    },
+    {
+      "tag": "delta",
+      "text": "कौन-सा रूप, यह शब्द की लंबाई तय करती है. एक टुकड़े वाले शब्द -er लेते हैं — taller, cheaper, bigger. तीन या ज़्यादा टुकड़े वाले more लेते हैं — more expensive, more beautiful. दो टुकड़े वाले दोनों तरफ़ जाते हैं, पर -y पर ख़त्म होने वाले हमेशा -ier बनते हैं: happy → happier, busy → busier."
+    },
+    {
+      "tag": "interference",
+      "text": "than और then में सिर्फ़ एक अक्षर का फ़र्क़ है और बोलने में लगभग कोई नहीं. than तुलना का है, then क्रम का — L1-M10 वाला फिर. लिखते वक़्त a याद रखिए, वरना तुलना कहानी में बदल जाती है."
+    },
+    {
+      "tag": "delta",
+      "text": "सबसे ऊपर वाले रूप के आगे the हमेशा आता है — the tallest, the most expensive — जबकि तुलना वाले रूप के आगे कुछ नहीं आता. और चार रूप नियम से बाहर हैं: good → better → the best, bad → worse → the worst. better अच्छा और अच्छी तरह दोनों के लिए चलता है, इसलिए He plays better सही है और more good ग़लत."
+    },
+    {
+      "tag": "free",
+      "text": "बराबरी के लिए as … as आता है: as tall as Rohan. चुनने के लिए Which one?, I'd rather और I prefer. I'd rather के बाद सादी क्रिया आती है, और prefer के बाद चीज़ या -ing वाला रूप — prefer to going ग़लत है."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M9-S01",
+      "display": "Rohan is taller than my brother",
+      "cue": "रोहन मेरे भाई से लंबा है",
+      "literal": "रोहन है ज़्यादा-लंबा से मेरा भाई",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "than",
+            "cue": "से (तुलना में)",
+            "tag": "interference",
+            "forms": [],
+            "note": "तुलना का शब्द, और इसमें a है. then क्रम का शब्द है और इसमें e — बोलने में दोनों लगभग एक जैसे लगते हैं."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "Rohan is tall than my brother ग़लत है. हिंदी में लंबा नहीं बदलता, अंग्रेज़ी में tall को taller बनना ही पड़ता है.",
+      "sound": "than में th नरम है और a छोटा — दैन.",
+      "variations": [
+        {
+          "display": "My brother is taller than Rohan",
+          "cue": "मेरा भाई रोहन से लंबा है",
+          "changed": "तुलना उलटी"
+        },
+        {
+          "display": "Rohan is not taller than my brother",
+          "cue": "रोहन मेरे भाई से लंबा नहीं है",
+          "changed": "नकार"
+        },
+        {
+          "display": "My sister is taller than my brother",
+          "cue": "मेरी बहन मेरे भाई से लंबी है",
+          "changed": "दूसरा कर्ता, रूप वही"
+        }
+      ],
+      "mistake": {
+        "display": "Rohan is more taller than my brother",
+        "why": "तुलना एक ही बार लगती है: Rohan is taller than my brother."
+      },
+      "usage": "दो लोगों या चीज़ों को आमने-सामने रखना.",
+      "register": "neutral",
+      "mnemonic": "तुलना में a वाला than."
+    },
+    {
+      "id": "L2-M9-S02",
+      "display": "This car is more expensive than that car",
+      "cue": "यह गाड़ी उस गाड़ी से महँगी है",
+      "literal": "यह गाड़ी है ज़्यादा महँगी से वह गाड़ी",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "more",
+            "cue": "ज़्यादा",
+            "tag": "delta",
+            "forms": [],
+            "note": "लंबे विशेषणों के आगे लगता है, -er की जगह. एक ही विशेषण पर more और -er दोनों कभी नहीं आते."
+          },
+          {
+            "display": "less",
+            "cue": "कम",
+            "tag": "free",
+            "forms": [],
+            "note": "more का उल्टा, और यह भी विशेषण के आगे बैठता है. छोटे विशेषणों के साथ इसकी जगह not as … as ज़्यादा चलता है."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "expensive तीन टुकड़ों का शब्द है, इसलिए more लेता है. expensiver जैसा कोई रूप है ही नहीं.",
+      "sound": "more में r ब्रिटिश बोली में लगभग चुप — मॉ.",
+      "variations": [
+        {
+          "display": "This car is less expensive than that car",
+          "cue": "यह गाड़ी उस गाड़ी से कम महँगी है",
+          "changed": "उल्टी तुलना"
+        },
+        {
+          "display": "This bag is more expensive than that bag",
+          "cue": "यह बैग उस बैग से महँगा है",
+          "changed": "दूसरी चीज़"
+        },
+        {
+          "display": "This car is not more expensive than that car",
+          "cue": "यह गाड़ी उस गाड़ी से महँगी नहीं है",
+          "changed": "नकार"
+        }
+      ],
+      "mistake": {
+        "display": "This car is more expensiver than that car",
+        "why": "more और -er साथ नहीं आते: more expensive."
+      },
+      "usage": "दाम पर बात करना — दुकान और बाज़ार दोनों में.",
+      "register": "neutral",
+      "mnemonic": "लंबा शब्द हो तो more."
+    },
+    {
+      "id": "L2-M9-S03",
+      "display": "This is the biggest shop in the market",
+      "cue": "यह बाज़ार की सबसे बड़ी दुकान है",
+      "literal": "यह है वह सबसे-बड़ी दुकान में वह बाज़ार",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "most",
+            "cue": "सबसे ज़्यादा",
+            "tag": "delta",
+            "forms": [],
+            "note": "लंबे विशेषणों का सबसे-वाला रूप — the most expensive. इसके आगे the हमेशा आता है, जबकि more के आगे कभी नहीं."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "सबसे-वाले रूप के आगे the छूटना सबसे आम चूक है. यह गिनती नहीं, पहचान है — दुनिया में एक ही सबसे बड़ी दुकान है.",
+      "sound": "biggest में दोनों g अलग नहीं सुनाई देते — बिगिस्ट.",
+      "variations": [
+        {
+          "display": "This is the most expensive shop in the market",
+          "cue": "यह बाज़ार की सबसे महँगी दुकान है",
+          "changed": "लंबा विशेषण, इसलिए most"
+        },
+        {
+          "display": "That is the biggest shop",
+          "cue": "वह सबसे बड़ी दुकान है",
+          "changed": "जगह हटी"
+        },
+        {
+          "display": "This is the smallest shop",
+          "cue": "यह सबसे छोटी दुकान है",
+          "changed": "उल्टा विशेषण"
+        }
+      ],
+      "mistake": {
+        "display": "This is biggest shop in the market",
+        "why": "सबसे-वाले रूप के आगे the ज़रूरी है: the biggest shop."
+      },
+      "usage": "किसी चीज़ को सबसे ऊपर रखना.",
+      "register": "neutral",
+      "mnemonic": "सबसे-वाला हमेशा the के साथ."
+    },
+    {
+      "id": "L2-M9-S04",
+      "display": "This tea is better than that tea",
+      "cue": "यह चाय उस चाय से बेहतर है",
+      "literal": "यह चाय है बेहतर से वह चाय",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "better",
+            "cue": "बेहतर",
+            "tag": "interference",
+            "forms": [],
+            "note": "good का तुलना वाला रूप, और नियम से बाहर. यही शब्द well की जगह भी काम करता है — He plays better."
+          },
+          {
+            "display": "best",
+            "cue": "सबसे अच्छा",
+            "tag": "free",
+            "forms": [],
+            "note": "good का सबसे-वाला रूप, और the के साथ ही आता है: the best shop, that is the best."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "more good और goodest दोनों नहीं होते. good के तीनों रूप अलग-अलग शब्द हैं और उन्हें एक-एक करके याद करना पड़ता है.",
+      "sound": "better में अमेरिकी बोली का tt d जैसा — बेडर.",
+      "variations": [
+        {
+          "display": "This tea is the best",
+          "cue": "यह चाय सबसे अच्छी है",
+          "changed": "सबसे-वाला रूप"
+        },
+        {
+          "display": "This coffee is better than that coffee",
+          "cue": "यह कॉफ़ी उस कॉफ़ी से बेहतर है",
+          "changed": "दूसरी चीज़"
+        },
+        {
+          "display": "That is the best shop",
+          "cue": "वह सबसे अच्छी दुकान है",
+          "changed": "दुकान के लिए"
+        }
+      ],
+      "mistake": {
+        "display": "This tea is more good than that tea",
+        "why": "good का तुलना रूप better है: This tea is better than that tea."
+      },
+      "usage": "राय देना — दो चीज़ों में से एक चुनना.",
+      "register": "neutral",
+      "mnemonic": "तीन अलग शब्द — good · better · the best."
+    },
+    {
+      "id": "L2-M9-S05",
+      "display": "This film is worse than that film",
+      "cue": "यह फ़िल्म उस फ़िल्म से ख़राब है",
+      "literal": "यह फ़िल्म है ज़्यादा-ख़राब से वह फ़िल्म",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bad",
+            "cue": "ख़राब · बुरा",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2 का not bad पूरा टुकड़ा था और उसका मतलब ठीक-ठाक है. अकेला bad यहाँ पहली बार आ रहा है."
+          },
+          {
+            "display": "worse",
+            "cue": "ज़्यादा ख़राब",
+            "tag": "interference",
+            "forms": [],
+            "note": "bad का तुलना वाला रूप, नियम से बाहर. badder जैसा कोई शब्द नहीं है."
+          },
+          {
+            "display": "worst",
+            "cue": "सबसे ख़राब",
+            "tag": "free",
+            "forms": [],
+            "note": "bad का सबसे-वाला रूप, the के साथ. worse और worst में सिर्फ़ एक अक्षर का फ़र्क़ है और मतलब का बड़ा."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "worse तुलना है और worst सबसे-वाला. लिखने में एक अक्षर, बोलने में एक हल्की t — पर बात दो अलग हैं.",
+      "sound": "worse और worst दोनों में or की आवाज़ अ जैसी — वर्स, वर्स्ट.",
+      "variations": [
+        {
+          "display": "This film is the worst",
+          "cue": "यह फ़िल्म सबसे ख़राब है",
+          "changed": "सबसे-वाला रूप"
+        },
+        {
+          "display": "That film is bad",
+          "cue": "वह फ़िल्म ख़राब है",
+          "changed": "बिना तुलना"
+        },
+        {
+          "display": "This film is not worse than that film",
+          "cue": "यह फ़िल्म उस फ़िल्म से ख़राब नहीं है",
+          "changed": "नकार"
+        }
+      ],
+      "mistake": {
+        "display": "This film is more bad than that film",
+        "why": "bad का तुलना रूप worse है: This film is worse than that film."
+      },
+      "usage": "नापसंद बताना — और अंग्रेज़ी में यह अक्सर घुमाकर कहा जाता है.",
+      "register": "neutral",
+      "mnemonic": "तीन अलग शब्द — bad · worse · the worst."
+    },
+    {
+      "id": "L2-M9-S06",
+      "display": "My bag is as heavy as your bag",
+      "cue": "मेरा बैग तुम्हारे बैग जितना भारी है",
+      "literal": "मेरा बैग है जितना भारी जितना तुम्हारा बैग",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "as",
+            "cue": "जितना",
+            "tag": "delta",
+            "forms": [],
+            "note": "बराबरी के लिए दो बार आता है और बीच में विशेषण अपने सादे रूप में रहता है — as heavy as, कभी as heavier as नहीं."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "as … as में विशेषण नहीं बदलता. यह इकलौता ढाँचा है जहाँ तुलना होते हुए भी शब्द वही रहता है, इसलिए हिंदी बोलने वाले के लिए यह सबसे आसान है.",
+      "sound": "as दोनों बार हल्का बोला जाता है — अज़.",
+      "variations": [
+        {
+          "display": "My bag is as big as your bag",
+          "cue": "मेरा बैग तुम्हारे बैग जितना बड़ा है",
+          "changed": "दूसरा विशेषण"
+        },
+        {
+          "display": "My bag is not as heavy as your bag",
+          "cue": "मेरा बैग तुम्हारे बैग जितना भारी नहीं है",
+          "changed": "नकार, यानी कम भारी"
+        },
+        {
+          "display": "This box is as heavy as that box",
+          "cue": "यह डिब्बा उस डिब्बे जितना भारी है",
+          "changed": "दूसरी चीज़ें"
+        }
+      ],
+      "mistake": {
+        "display": "My bag is as heavier as your bag",
+        "why": "as के बीच सादा विशेषण आता है: as heavy as."
+      },
+      "usage": "बराबरी बताना, या नकार में हल्का फ़र्क़ बताना.",
+      "register": "neutral",
+      "mnemonic": "as के बीच कुछ नहीं बदलता."
+    },
+    {
+      "id": "L2-M9-S07",
+      "display": "Which one is cheaper?",
+      "cue": "कौन-सा सस्ता है?",
+      "literal": "कौन-सा एक है ज़्यादा-सस्ता?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "which",
+            "cue": "कौन-सा",
+            "tag": "delta",
+            "forms": [],
+            "note": "गिनी हुई चीज़ों में से चुनने का सवाल. खुला सवाल what से बनता है — which में विकल्प सामने होते हैं."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "what और which एक नहीं हैं. What is cheaper? दुनिया भर से पूछ रहा है; Which one is cheaper? सामने रखी दो चीज़ों से.",
+      "sound": "which में wh की हवा हल्की — विच.",
+      "variations": [
+        {
+          "display": "Which one is more expensive?",
+          "cue": "कौन-सा ज़्यादा महँगा है?",
+          "changed": "लंबा विशेषण"
+        },
+        {
+          "display": "Which bag is cheaper?",
+          "cue": "कौन-सा बैग सस्ता है?",
+          "changed": "चीज़ का नाम"
+        },
+        {
+          "display": "Which one is the best?",
+          "cue": "कौन-सा सबसे अच्छा है?",
+          "changed": "सबसे-वाला रूप"
+        }
+      ],
+      "mistake": {
+        "display": "What one is cheaper?",
+        "why": "सामने रखी चीज़ों में से which आता है: Which one is cheaper?"
+      },
+      "usage": "दुकान में चुनते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "विकल्प सामने हों तो which."
+    },
+    {
+      "id": "L2-M9-S08",
+      "display": "I'd rather go by train",
+      "cue": "मैं रेल से जाना पसंद करूँगा",
+      "literal": "मैं बल्कि जाऊँ से रेल",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rather",
+            "cue": "बल्कि · बेहतर होगा",
+            "tag": "delta",
+            "forms": [],
+            "note": "I'd rather के बाद सादी क्रिया आती है, to कभी नहीं. M5 का वही I'd यहाँ दूसरा काम कर रहा है — पसंद बताना, माँगना नहीं."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "I'd like और I'd rather एक ही I'd से बनते हैं पर आगे अलग चीज़ें लेते हैं: like के बाद चीज़, rather के बाद क्रिया.",
+      "sound": "rather में th नरम है — रादर.",
+      "variations": [
+        {
+          "display": "I'd rather go by bus",
+          "cue": "मैं बस से जाना पसंद करूँगा",
+          "changed": "दूसरी सवारी"
+        },
+        {
+          "display": "I'd rather eat at home",
+          "cue": "मैं घर पर खाना पसंद करूँगा",
+          "changed": "दूसरी क्रिया"
+        },
+        {
+          "display": "I'd rather not go",
+          "cue": "मैं न जाना ही पसंद करूँगा",
+          "changed": "नकार, not सीधे बाद"
+        }
+      ],
+      "mistake": {
+        "display": "I'd rather to go by train",
+        "why": "rather के बाद सादी क्रिया आती है: I'd rather go by train."
+      },
+      "usage": "अपनी पसंद नरमी से रखना — सीधे मना किए बिना.",
+      "register": "neutral",
+      "mnemonic": "rather के बाद सादी क्रिया."
+    },
+    {
+      "id": "L2-M9-S09",
+      "display": "I prefer tea to coffee",
+      "cue": "मुझे कॉफ़ी से चाय ज़्यादा पसंद है",
+      "literal": "मैं पसंद करता हूँ चाय तक कॉफ़ी",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prefer",
+            "cue": "ज़्यादा पसंद करना",
+            "tag": "interference",
+            "forms": [
+              "prefers"
+            ],
+            "note": "इसके साथ than नहीं, to आता है — prefer tea to coffee. आगे चीज़ या -ing वाला रूप बैठता है, सादी क्रिया नहीं."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "prefer के साथ than लगाना सबसे आम ग़लती है, क्योंकि बाक़ी हर तुलना than लेती है. यह अकेला to लेता है.",
+      "sound": "prefer में ज़ोर दूसरे हिस्से पर — प्रिफ़र.",
+      "variations": [
+        {
+          "display": "I prefer coffee to tea",
+          "cue": "मुझे चाय से कॉफ़ी ज़्यादा पसंद है",
+          "changed": "उलटी पसंद"
+        },
+        {
+          "display": "She prefers tea to coffee",
+          "cue": "उसे कॉफ़ी से चाय ज़्यादा पसंद है",
+          "changed": "दूसरा कर्ता, -s के साथ"
+        },
+        {
+          "display": "I prefer this bag",
+          "cue": "मुझे यह बैग ज़्यादा पसंद है",
+          "changed": "तुलना बिना कहे"
+        }
+      ],
+      "mistake": {
+        "display": "I prefer tea than coffee",
+        "why": "prefer के साथ to आता है: I prefer tea to coffee."
+      },
+      "usage": "पसंद बताना — दुकान, होटल और बातचीत में.",
+      "register": "neutral",
+      "mnemonic": "prefer को than नहीं, to चाहिए."
+    },
+    {
+      "id": "L2-M9-S10",
+      "display": "He is happier than my brother",
+      "cue": "वह मेरे भाई से ज़्यादा ख़ुश है",
+      "literal": "वह है ज़्यादा-ख़ुश से मेरा भाई",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "happier",
+            "cue": "ज़्यादा ख़ुश",
+            "tag": "delta",
+            "forms": [
+              "happiest"
+            ],
+            "note": "happy का तुलना रूप. -y वाले शब्दों में y हटकर i आता है और फिर -er लगता है — happier, न कि happyer."
+          },
+          {
+            "display": "busier",
+            "cue": "ज़्यादा मसरूफ़",
+            "tag": "free",
+            "forms": [
+              "busiest"
+            ],
+            "note": "वही नियम, L1-M9 वाले busy पर. दो टुकड़ों का शब्द है फिर भी -y की वजह से more नहीं लेता."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "दो टुकड़ों वाले शब्द आमतौर पर दोनों तरफ़ जाते हैं, पर -y पर ख़त्म होने वाले नहीं. वे हमेशा -ier बनते हैं.",
+      "sound": "happier तीन हिस्सों में — हैपिअर.",
+      "variations": [
+        {
+          "display": "He is busier than my brother",
+          "cue": "वह मेरे भाई से ज़्यादा मसरूफ़ है",
+          "changed": "दूसरा -y वाला शब्द"
+        },
+        {
+          "display": "She is happier than my sister",
+          "cue": "वह मेरी बहन से ज़्यादा ख़ुश है",
+          "changed": "दूसरा कर्ता"
+        },
+        {
+          "display": "He is not happier than my brother",
+          "cue": "वह मेरे भाई से ज़्यादा ख़ुश नहीं है",
+          "changed": "नकार"
+        }
+      ],
+      "mistake": {
+        "display": "He is more happy than my brother",
+        "why": "-y वाले शब्द -ier बनते हैं: He is happier than my brother."
+      },
+      "usage": "लोगों की हालत की तुलना — और यह अंग्रेज़ी में कम सीधा कहा जाता है.",
+      "register": "neutral",
+      "mnemonic": "y हटा, i आया, -er लगा."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M9-C01",
+      "display": "Rohan is taller than my brother",
+      "cue": "रोहन मेरे भाई से लंबा है"
+    },
+    {
+      "id": "L2-M9-C02",
+      "display": "This car is more expensive than that car",
+      "cue": "यह गाड़ी उस गाड़ी से महँगी है"
+    },
+    {
+      "id": "L2-M9-C03",
+      "display": "This is the biggest shop in the market",
+      "cue": "यह बाज़ार की सबसे बड़ी दुकान है"
+    },
+    {
+      "id": "L2-M9-C04",
+      "display": "This tea is better than that tea",
+      "cue": "यह चाय उस चाय से बेहतर है"
+    },
+    {
+      "id": "L2-M9-C05",
+      "display": "This film is worse than that film",
+      "cue": "यह फ़िल्म उस फ़िल्म से ख़राब है"
+    },
+    {
+      "id": "L2-M9-C06",
+      "display": "My bag is as heavy as your bag",
+      "cue": "मेरा बैग तुम्हारे बैग जितना भारी है"
+    },
+    {
+      "id": "L2-M9-C07",
+      "display": "Which one is cheaper?",
+      "cue": "कौन-सा सस्ता है?"
+    },
+    {
+      "id": "L2-M9-C08",
+      "display": "I'd rather go by train",
+      "cue": "मैं रेल से जाना पसंद करूँगा"
+    },
+    {
+      "id": "L2-M9-C09",
+      "display": "I prefer tea to coffee",
+      "cue": "मुझे कॉफ़ी से चाय ज़्यादा पसंद है"
+    },
+    {
+      "id": "L2-M9-C10",
+      "display": "He is happier than my brother",
+      "cue": "वह मेरे भाई से ज़्यादा ख़ुश है"
+    },
+    {
+      "id": "L2-M9-C11",
+      "display": "Which one is the best?",
+      "cue": "कौन-सा सबसे अच्छा है?"
+    },
+    {
+      "id": "L2-M9-C12",
+      "display": "This is the smallest shop",
+      "cue": "यह सबसे छोटी दुकान है"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
