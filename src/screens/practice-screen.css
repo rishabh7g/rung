@@ -6,7 +6,7 @@
 /* The whole column, so the CTA can sit at the bottom of the screen as it does in the prototype:
    the shell's `<main>` is a plain scrolling block, so `min-height: 100%` is what gives
    `margin-top: auto` something to push against (#84). `--space-6` is the prototype's 22px gutter. */
-.hub {
+.practice-hub {
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -19,7 +19,7 @@
  * Condensed, because it is course copy and hi-mr's is Devanagari (design/tokens.md §2). The same
  * type wall the rung card's labels met in #139; recorded for #117.
  */
-.title {
+.practice-title {
   margin: 0;
   font: var(--text-l2-card);
 }
@@ -30,7 +30,7 @@
    (#389). Course words, so it is Mukta at the 18px floor Devanagari needs (design/tokens.md §2).
    The hairline pair is what is left of the phase row's frame — one blueprint rule under the
    title, rather than a grid of plates describing a session that no longer has parts. */
-.count {
+.practice-count {
   margin: 0;
   padding: var(--space-3) 0;
   border-top: var(--border-hairline);
@@ -44,13 +44,13 @@
 
 /* The registration marks frame the CTA rather than a border — the prototype's `blueprint`
    wrapper with a transparent border and its four corners, held at the bottom of the column. */
-.beginFrame {
+.practice-begin-frame {
   position: relative;
   margin-top: auto;
 }
 
 /* THE filled object on the hub (design/tokens.md §3), at the primary CTA's height. */
-.begin {
+.practice-begin {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,7 +70,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.begin:active {
+.practice-begin:active {
   background: var(--color-accent-700);
   border-color: var(--color-accent-700);
 }
@@ -78,7 +78,7 @@
 /* Starting over, under Continue — the rarer and costlier of the two (it spends a session count and
    a tick of the review queue), so it is a quiet line rather than a second filled block. The
    secondary height keeps it a comfortable target all the same. */
-.fresh {
+.practice-fresh {
   display: flex;
   align-items: center;
   justify-content: center;

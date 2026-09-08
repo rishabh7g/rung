@@ -50,7 +50,7 @@ import { RegistrationMarks } from './RegistrationMarks.tsx';
 import { isResumable, resumePlan } from './practice/resume.ts';
 import { Session } from './practice/Session.tsx';
 import { useProgression } from './useProgression.ts';
-import styles from './PracticeScreen.module.css';
+import './practice-screen.css';
 
 /** What one run of the session needs: the rung it belongs to, and the cards it serves. */
 interface Run {
@@ -95,7 +95,7 @@ export default function PracticeScreen() {
 
   // Nothing honest to draw yet: every count on this screen comes from the ladder and the rung's
   // module. The shell's frame is already up, so the hub waits rather than inventing a state.
-  if (!ready) return <section className={styles.hub} aria-busy="true" />;
+  if (!ready) return <section className="practice-hub" aria-busy="true" />;
 
   const resumable = isResumable(snapshot);
   /**
@@ -133,23 +133,23 @@ export default function PracticeScreen() {
   };
 
   return (
-    <section className={styles.hub}>
-      <h2 className={styles.title}>{strings['practice.hubTitle']}</h2>
+    <section className="practice-hub">
+      <h2 className="practice-title">{strings['practice.hubTitle']}</h2>
 
       {/* A rung whose sentences are not authored yet has no session to offer, so the hub offers
           nothing: no count, no CTA, and no paragraph explaining the absence — the empty column is
           the state, the same silence the rung card keeps [D22]. */}
       {startable && (
         <>
-          <p className={styles.count}>
+          <p className="practice-count">
             {interpolate(strings['practice.hubCount'], { count: cards })}
           </p>
 
           {/* One entry into the session, at the bottom of the column where the prototype puts it.
               A resumed session takes the same slot rather than adding a second CTA beside it. */}
-          <div className={styles.beginFrame}>
+          <div className="practice-begin-frame">
             <RegistrationMarks />
-            <button type="button" className={styles.begin} onClick={resumable ? carryOn : begin}>
+            <button type="button" className="practice-begin" onClick={resumable ? carryOn : begin}>
               {resumable ? strings['practice.resumeContinue'] : strings['practice.begin']}
             </button>
           </div>
@@ -157,7 +157,7 @@ export default function PracticeScreen() {
           {/* The rarer, costlier choice — a fresh session spends a session count and a tick — so
               it is quiet rather than a second block CTA. */}
           {resumable && (
-            <button type="button" className={styles.fresh} onClick={beginFresh}>
+            <button type="button" className="practice-fresh" onClick={beginFresh}>
               {strings['practice.resumeNew']}
             </button>
           )}
