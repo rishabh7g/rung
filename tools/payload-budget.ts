@@ -82,7 +82,7 @@ const DIST = path.join(REPO_ROOT, 'dist');
  * script never prints one, so charging them to the shell would bill every learner for a face only
  * romanized courses paint.
  */
-export const COURSE_SCRIPTS = ['devanagari', 'arabic', 'latin-ext', 'cyrillic'] as const;
+export const COURSE_SCRIPTS = ['devanagari', 'arabic', 'latin-ext', 'cyrillic', 'korean'] as const;
 export type CourseScript = (typeof COURSE_SCRIPTS)[number];
 
 /** The script a romanized course's L2 line is written in whatever its native script is (#222) —
@@ -106,6 +106,9 @@ export const SCRIPT_BY_LANGUAGE_TAG: Readonly<Record<string, CourseScript>> = {
   // #325 — en-ru's display line. Cyrillic is charged to the course that paints it, exactly as
   // Devanagari is: Mukta bundles none, so the letters come from Source Sans 3's own cut.
   ru: 'cyrillic',
+  // #375 — en-ko's QUIET LINE ONLY. The romanized display is ASCII and is charged nothing; this
+  // row pays for the Hangul the `script` field repeats underneath it (#373 decided the split).
+  ko: 'korean',
 };
 
 /**
@@ -114,7 +117,12 @@ export const SCRIPT_BY_LANGUAGE_TAG: Readonly<Record<string, CourseScript>> = {
  * Sans 3 for the four marks Mukta lacks (#222). A slug list, not course ids: the shell's own faces
  * (Barlow, Barlow Condensed) are everything else, and they are the ones a first paint fetches.
  */
-export const COURSE_FACE_SLUGS = ['mukta', 'noto-naskh-arabic', 'source-sans-3'] as const;
+export const COURSE_FACE_SLUGS = [
+  'mukta',
+  'noto-naskh-arabic',
+  'source-sans-3',
+  'noto-sans-kr',
+] as const;
 
 /** One row of the emitted `dist/content/courses.json`, reduced to what the budget needs. */
 export interface ShippedCourse {
