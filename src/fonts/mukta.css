@@ -89,10 +89,12 @@
     U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* The romanization's diacritics (#222). Declared after the `latin` blocks on purpose: the two
-   ranges are disjoint in what the SUBSETS carry, but @fontsource's declared `latin` range names
-   U+0131 and U+0152-0153 — codepoints the `latin` cut has no glyph for and this one does — so the
-   later block winning them is the browser choosing the file that can actually draw them. */
+/* The romanization's diacritics (#222). The two ranges are disjoint, and the three codepoints
+   that decide where they divide are U+0131 and U+0152-0153: they sit inside Latin Extended-A but
+   inside @fontsource's `latin` FILE, and Mukta's `latin-ext` source has no glyph for any of them.
+   They therefore belong to the `latin` blocks above, in the range AND in the cut — the earlier
+   arrangement gave this block the range without the glyphs, which is how en-fr's sœur came to be
+   drawn by nobody. `tools/font-coverage.test.ts` reads the cmaps and would say so again. */
 
 /* mukta-latin-ext-400 */
 @font-face {
@@ -101,7 +103,7 @@
   font-display: swap;
   font-weight: 400;
   src: url('./generated/mukta-latin-ext-400.woff2') format('woff2');
-  unicode-range: U+0100-017F, U+1E00-1E9F;
+  unicode-range: U+0100-0130, U+0132-0151, U+0154-017F, U+1E00-1E9F;
 }
 
 /* mukta-latin-ext-600 */
@@ -111,7 +113,7 @@
   font-display: swap;
   font-weight: 600;
   src: url('./generated/mukta-latin-ext-600.woff2') format('woff2');
-  unicode-range: U+0100-017F, U+1E00-1E9F;
+  unicode-range: U+0100-0130, U+0132-0151, U+0154-017F, U+1E00-1E9F;
 }
 
 /* mukta-latin-ext-700 */
@@ -121,5 +123,5 @@
   font-display: swap;
   font-weight: 700;
   src: url('./generated/mukta-latin-ext-700.woff2') format('woff2');
-  unicode-range: U+0100-017F, U+1E00-1E9F;
+  unicode-range: U+0100-0130, U+0132-0151, U+0154-017F, U+1E00-1E9F;
 }

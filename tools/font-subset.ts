@@ -188,9 +188,20 @@ export const MUKTA_TARGETS: readonly ScriptTarget[] = [
       cp === 0x200d,
     baseline: DEVANAGARI_BASELINE,
   },
+  /* U+0131 and U+0152-0153 are here, past the U+00FF the rest of this target stops at, because
+     @fontsource's own `latin` range names them and Mukta's `latin` SOURCE draws all three — while
+     its `latin-ext` source draws none of them. Leaving them to the `latin-ext` target, which their
+     block number would suggest, is how en-fr's sœur ended up with no bundled glyph at all: the
+     target claimed the codepoint, `coveredChars` kept it, and the source file it was cut from had
+     nothing to give. Found by `tools/font-coverage.test.ts`, which now reads the cmaps. */
   {
     subset: 'latin',
-    covers: (cp) => cp <= 0x00ff || (cp >= 0x2000 && cp <= 0x206f),
+    covers: (cp) =>
+      cp <= 0x00ff ||
+      cp === 0x0131 ||
+      cp === 0x0152 ||
+      cp === 0x0153 ||
+      (cp >= 0x2000 && cp <= 0x206f),
     baseline: LATIN_BASELINE,
   },
   /* #222 — the romanization's diacritics, in the face that draws the letters they belong to.
@@ -198,10 +209,17 @@ export const MUKTA_TARGETS: readonly ScriptTarget[] = [
      Latin Extended Additional carries the dot-below emphatics (ḍ ḥ ṣ ṭ) and their capitals. Both
      ranges start past U+00FF, so nothing here can claim a character the `latin` target already
      draws, and neither claims a space, a joiner or a digit — the overlap class #211 was bitten
-     by. Mukta has no glyph at U+02BE, U+02BF, U+1E92 or U+1E93: those four are Source Sans 3's. */
+     by. Mukta has no glyph at U+02BE, U+02BF, U+1E92 or U+1E93: those four are Source Sans 3's.
+
+     The three holes in Latin Extended-A are the other half of the fix above: U+0131, U+0152 and
+     U+0153 sit inside this block but inside @fontsource's `latin` FILE, so they are the `latin`
+     target's. The two targets stay disjoint, which is the invariant this comment has always
+     asserted — it is only the line that divides them that moved. */
   {
     subset: 'latin-ext',
-    covers: (cp) => (cp >= 0x0100 && cp <= 0x017f) || (cp >= 0x1e00 && cp <= 0x1e9f),
+    covers: (cp) =>
+      (cp >= 0x0100 && cp <= 0x017f && cp !== 0x0131 && cp !== 0x0152 && cp !== 0x0153) ||
+      (cp >= 0x1e00 && cp <= 0x1e9f),
     baseline: DIACRITIC_BASELINE,
   },
 ];
@@ -397,15 +415,16 @@ export function subsetText(
 
 /* ----------------------------------------------------------------- the build */
 
-interface ContentHarvest {
+export interface ContentHarvest {
   devBuild: boolean;
   courses: string[];
   text: string;
 }
 
 /** Reads what the content build emitted — this tool runs AFTER `content:build` and subsets to
-    exactly what shipped, dev relaxations included (`courses.json` carries `devBuild: true`). */
-function harvestContent(): ContentHarvest {
+    exactly what shipped, dev relaxations included (`courses.json` carries `devBuild: true`).
+    Exported for `tools/font-coverage.test.ts`, which re-harvests to check the cuts on disk. */
+export function harvestContent(): ContentHarvest {
   const manifestPath = path.join(CONTENT_OUT, 'courses.json');
   let manifestRaw: string;
   try {
