@@ -44,7 +44,7 @@ import { emptyCourseState, persistedSlice, useAppStore } from '../../state/store
 import type { AppState, CourseState } from '../../state/types.ts';
 import { HOME_PATH, restoredBackup } from '../../shell/routes.tsx';
 import StorageLine from './StorageLine.tsx';
-import styles from './BackupSection.module.css';
+import './backup-section.css';
 
 export default function BackupSection() {
   const { courses } = useCourse();
@@ -121,24 +121,24 @@ export default function BackupSection() {
 
   if (pending !== null) {
     return (
-      <div className={styles.confirm}>
-        <p className={styles.warning}>{strings['settings.importReplace']}</p>
-        <div className={styles.compare}>
+      <div className="backup-confirm">
+        <p className="backup-warning">{strings['settings.importReplace']}</p>
+        <div className="backup-compare">
           {comparisonRows(currentCourses, pending.courses, courses).map((row) => (
-            <div key={row.id} className={styles.course}>
-              <p className={styles.courseLabel}>{row.label}</p>
-              <p className={styles.side}>
-                <span className={styles.sideLabel}>{strings['settings.backup.onDevice']}</span>
-                <span className={styles.sideCounts}>
+            <div key={row.id} className="backup-course">
+              <p className="backup-course-label">{row.label}</p>
+              <p className="backup-side">
+                <span className="backup-side-label">{strings['settings.backup.onDevice']}</span>
+                <span className="backup-side-counts">
                   {interpolate(strings['settings.backup.counts'], {
                     passed: row.now.passed,
                     sessions: row.now.sessions,
                   })}
                 </span>
               </p>
-              <p className={styles.side}>
-                <span className={styles.sideLabel}>{strings['settings.backup.inFile']}</span>
-                <span className={styles.sideCounts}>
+              <p className="backup-side">
+                <span className="backup-side-label">{strings['settings.backup.inFile']}</span>
+                <span className="backup-side-counts">
                   {interpolate(strings['settings.backup.counts'], {
                     passed: row.file.passed,
                     sessions: row.file.sessions,
@@ -148,11 +148,11 @@ export default function BackupSection() {
             </div>
           ))}
         </div>
-        <div className={styles.actions}>
-          <button type="button" className={styles.action} onClick={() => setPending(null)}>
+        <div className="backup-actions">
+          <button type="button" className="backup-action" onClick={() => setPending(null)}>
             {strings['settings.importCancel']}
           </button>
-          <button type="button" className={styles.action} onClick={confirmTap}>
+          <button type="button" className="backup-action" onClick={confirmTap}>
             {strings['settings.importConfirm']}
           </button>
         </div>
@@ -162,22 +162,22 @@ export default function BackupSection() {
 
   return (
     <>
-      <div className={styles.actions}>
+      <div className="backup-actions">
         {/* The course's two words, with the prototype's two arrows — they went the way the tick
             toggle's On/Off did (#351), and the promises around them were always the course's. */}
-        <button type="button" className={styles.action} onClick={exportTap}>
-          <Upload className={styles.icon} aria-hidden="true" />
+        <button type="button" className="backup-action" onClick={exportTap}>
+          <Upload className="backup-icon" aria-hidden="true" />
           {strings['settings.backup.export']}
         </button>
-        <button type="button" className={styles.action} onClick={importTap}>
-          <Download className={styles.icon} aria-hidden="true" />
+        <button type="button" className="backup-action" onClick={importTap}>
+          <Download className="backup-icon" aria-hidden="true" />
           {strings['settings.backup.import']}
         </button>
       </div>
       {failure !== null && (
-        <div className={styles.failure} role="alert">
-          <p className={styles.failureLead}>{strings['settings.importFailed']}</p>
-          <p className={styles.failureReason}>{failure}</p>
+        <div className="backup-failure" role="alert">
+          <p className="backup-failure-lead">{strings['settings.importFailed']}</p>
+          <p className="backup-failure-reason">{failure}</p>
         </div>
       )}
       {/* How much room there is (#393) — inside this branch on purpose, so the import
