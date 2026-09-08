@@ -316,7 +316,8 @@ export function budgets(courses: readonly ShippedCourse[]): Budget[] {
       // the app — Safari pulls the single matching image at Add-to-Home-Screen — so it is neither
       // first-paint nor precache payload. Raw bytes (PNG, like woff2, does not gzip further); the
       // row is repo hygiene — a splash set that grows past ~9 KiB per image is a drawing bug,
-      // not a brand decision. Baseline: 70.3 KiB across 11 images.
+      // not a brand decision. Baseline: 60.1 KiB across 11 images (70.3 before #502 set the
+      // wordmark in Barlow Condensed, whose narrower letterforms carry less ink).
       id: 'splash',
       matches: (file) => file.startsWith('icons/splash/'),
       measure: 'raw',
