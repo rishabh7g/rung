@@ -25,7 +25,7 @@
  * exactly this, and the entrance is `--motion-toast`, collapsed under `prefers-reduced-motion`.
  */
 import { useCallback, useEffect, useRef, useState } from 'react';
-import styles from './Toast.module.css';
+import './toast.css';
 
 /**
  * How long a message stays, from the prototype's `setToast` (design/Rung App v3.3.dc.html): long
@@ -84,8 +84,8 @@ interface ToastProps {
 /** The rendered half: a polite live region, and inside it the message when there is one. */
 export function Toast({ message }: ToastProps) {
   return (
-    <div className={styles.region} role="status" aria-live="polite">
-      {message !== null && <p className={styles.toast}>{message}</p>}
+    <div className="toast-region" role="status" aria-live="polite">
+      {message !== null && <p className="toast">{message}</p>}
     </div>
   );
 }
