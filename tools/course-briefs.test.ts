@@ -432,3 +432,68 @@ describe('hi-en L2: the decisions its briefs settle (#428)', () => {
     }
   });
 });
+
+describe('en-ru L2: the decisions its briefs settle (#429)', () => {
+  const all = COURSE_BRIEFS['en-ru'] ?? {};
+  const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
+
+  it('covers exactly L1-M1..L2-M10 — two levels, twenty modules', () => {
+    expect(Object.keys(all)).toEqual([
+      ...['L1', 'L2'].flatMap((level) =>
+        ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
+      ),
+    ]);
+  });
+
+  it('climbs its bounds 8 → 9 → 10 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L2-M1', 'L2-M2', 'L2-M3']) expect(bound(id), id).toBe(8);
+    for (const id of ['L2-M4', 'L2-M5', 'L2-M6', 'L2-M7']) expect(bound(id), id).toBe(9);
+    for (const id of ['L2-M8', 'L2-M9', 'L2-M10']) expect(bound(id), id).toBe(10);
+  });
+
+  /** Which case enters where — and the fifth one that does not, with its reason. */
+  it('places each case in the module that needs it, and keeps the instrumental out', () => {
+    expect(all['L2-M1']?.notes.join('\n')).toMatch(/dative enters here/);
+    expect(all['L2-M3']?.notes.join('\n')).toMatch(/genitive of absence/);
+    expect(all['L2-M4']?.notes.join('\n')).toMatch(/ACCUSATIVE for motion and the PREPOSITIONAL/);
+    expect(all['L2-M9']?.notes.join('\n')).toMatch(/"Than" is the GENITIVE/);
+    const m4 = all['L2-M4']?.notes.join('\n') ?? '';
+    expect(m4).toMatch(/na avtóbuse\*\* — one preposition and one case/);
+    expect(m4).toMatch(/instrumental proper is L3's/);
+  });
+
+  /** Aspect, taught twice, and the slogan it shares with en-es. */
+  it('teaches aspect at M1 and M10, and names the slogan both courses kill', () => {
+    expect(all['L2-M1']?.notes.join('\n')).toMatch(/imperative's ASPECT/);
+    expect(all['L2-M5']?.notes.join('\n')).toMatch(/host speaks in the IMPERFECTIVE/);
+    const m10 = all['L2-M10']?.notes.join('\n') ?? '';
+    expect(m10).toMatch(/perfective is completed, imperfective is ongoing/);
+    expect(m10).toMatch(/perfective has NO present tense/);
+  });
+
+  /** `vy` stays neutral, `ty` costs a module, and the switch is negotiated. */
+  it('states the register decision and the chip mapping in a NOTE', () => {
+    expect(all['L2-M1']?.notes.join('\n')).toMatch(/plain vy to a stranger stays `neutral`/);
+    const m6 = all['L2-M6']?.notes.join('\n') ?? '';
+    expect(m6).toMatch(/ty enters here/);
+    expect(m6).toMatch(/chips `informal`/);
+    expect(m6).toMatch(/NEGOTIATED out loud/);
+    expect(all['L2-M7']?.notes.join('\n')).toMatch(/vy is the default even with someone/);
+  });
+
+  it('assigns every collision an owner, in the notes', () => {
+    // `net` has three jobs across three modules and one row — L1-M2's.
+    expect(all['L2-M3']?.notes.join('\n')).toMatch(/net is L1-M2's key/);
+    expect(all['L2-M7']?.notes.join('\n')).toMatch(/net stays L1-M2's row/);
+    // `yevó`/`yeyó` carry two jobs each, and the n- rule makes two more keys.
+    expect(all['L2-M2']?.notes.join('\n')).toMatch(/TWO jobs/);
+    expect(all['L2-M2']?.notes.join('\n')).toMatch(/they take an n-/);
+    // `éhtot` is not L1-M1's `ehto`, and `lúchshe` serves two positives.
+    expect(all['L2-M9']?.notes.join('\n')).toMatch(/is NOT L1-M1's ehto/);
+    expect(all['L2-M9']?.notes.join('\n')).toMatch(/serves BOTH khoroshó/);
+    for (const [id, brief] of l2) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+});
