@@ -560,3 +560,66 @@ describe('en-it L2: the decisions its briefs settle (#430)', () => {
     }
   });
 });
+
+describe('en-fr L2: the decisions its briefs settle (#431)', () => {
+  const all = COURSE_BRIEFS['en-fr'] ?? {};
+  const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
+
+  it('covers exactly L1-M1..L2-M10 — two levels, twenty modules', () => {
+    expect(Object.keys(all)).toEqual([
+      ...['L1', 'L2'].flatMap((level) =>
+        ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
+      ),
+    ]);
+  });
+
+  it('climbs its bounds 8 → 9 → 10 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L2-M1', 'L2-M2', 'L2-M3']) expect(bound(id), id).toBe(8);
+    for (const id of ['L2-M4', 'L2-M5', 'L2-M6', 'L2-M7']) expect(bound(id), id).toBe(9);
+    for (const id of ['L2-M8', 'L2-M9', 'L2-M10']) expect(bound(id), id).toBe(10);
+  });
+
+  /** L1 promised `tu` to this level and named `je voudrais` as deferred; M1 pays both debts. */
+  it('opens the `tu` paradigm and `je voudrais` at M1, both on the record', () => {
+    const m1 = all['L2-M1']?.notes.join('\n') ?? '';
+    expect(m1).toMatch(/The paradigm opens here/);
+    expect(m1).toMatch(/tutoyer and vouvoyer/);
+    expect(m1).toMatch(/`informal`/);
+    expect(m1).toMatch(/`formal`/);
+    expect(m1).toMatch(/je voudrais enters here and ONLY as a frozen cell/);
+    expect(m1).toMatch(/L3-M4's/);
+    expect(all['L2-M6']?.notes.join('\n')).toMatch(/tu and on throughout/);
+  });
+
+  /** The rule L1 set up in two separate modules and never joined. */
+  it('states the negated partitive at M5 and the clitic ruling that follows', () => {
+    const m5 = all['L2-M5']?.notes.join('\n') ?? '';
+    expect(m5).toMatch(/After a negation every partitive collapses to de/);
+    expect(m5).toMatch(/le, la and les are L1-M1's ARTICLES/);
+    expect(m5).toMatch(/en is M4's preposition/);
+    expect(all['L2-M8']?.notes.join('\n')).toMatch(/m'aider is ONE key to the index/);
+  });
+
+  /** `ne` written everywhere, the spoken drop named once. */
+  it('writes `ne` and names the spoken drop in exactly one module', () => {
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/`ne` is written, and the spoken drop is named in prose/);
+    expect(all['L2-M7']?.notes.join('\n')).toMatch(/spoken French drops the ne/);
+    expect(all['L2-M7']?.notes.join('\n')).toMatch(/no other module carries one/);
+    // The absence that makes this M7 the mirror of en-it's.
+    expect(all['L2-M7']?.notes.join('\n')).toMatch(/French has no continuous tense/);
+  });
+
+  it('assigns every seam an owner, and pins M10 to the shared slogan', () => {
+    expect(all['L2-M2']?.notes.join('\n')).toMatch(/agrees with the THING POSSESSED/);
+    expect(all['L2-M4']?.notes.join('\n')).toMatch(/droite is "right" and tout droit/);
+    expect(all['L2-M9']?.notes.join('\n')).toMatch(/meilleur against mieux/);
+    expect(all['L2-M9']?.notes.join('\n')).toMatch(/que is L1-M9's key/);
+    const m10 = all['L2-M10']?.notes.join('\n') ?? '';
+    expect(m10).toMatch(/one is for completed actions and the other for ongoing ones/);
+    expect(m10).toMatch(/être for the movement and change-of-state verbs/);
+    for (const [id, brief] of l2) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+});
