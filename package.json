@@ -20,8 +20,8 @@
     "fonts:build": "tsx tools/font-subset.ts",
     "budget": "tsx tools/payload-budget.ts",
     "content:prompt": "tsx tools/generate-prompt.ts",
-    "icons:build": "tsx tools/make-icons.ts",
-    "splash:build": "tsx tools/make-splash.ts",
+    "icons:build": "tsx scripts/generate-icons.ts",
+    "splash:build": "tsx scripts/generate-splash.ts",
     "format": "prettier --write ."
   },
   "dependencies": {

@@ -25,12 +25,12 @@
  *
  * Since #115 the component carries the RATIFIED construction grid (design/tokens.md §6.4, the
  * formal spec #69 delivered), so these icons are the final brand set, not placeholders. The iOS
- * splash images are cut from the same source by `tools/make-splash.ts`.
+ * splash images are cut from the same source by `scripts/generate-splash.ts`.
  */
 import { mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { token } from './tokens.ts';
+import { token } from '../tools/tokens.ts';
 
 // `path.dirname(import.meta.url)`, not `new URL('..', import.meta.url)`: Vite rewrites the second
 // form into an asset URL, and this module is read by a vitest test (`tools/tokens.ts` says more).
@@ -62,9 +62,9 @@ export function readMarkSource(): string {
 /** The mark's viewBox side. Square by construction — a non-square mark would need a real parse. */
 export function markViewBox(source: string): number {
   const box = source.match(/viewBox="0 0 (\d+(?:\.\d+)?) (\d+(?:\.\d+)?)"/);
-  if (box === null) throw new Error('make-icons: RailsMark.tsx has no `viewBox="0 0 w h"`');
+  if (box === null) throw new Error('generate-icons: RailsMark.tsx has no `viewBox="0 0 w h"`');
   if (box[1] !== box[2])
-    throw new Error(`make-icons: the mark's viewBox is not square (${box[0]})`);
+    throw new Error(`generate-icons: the mark's viewBox is not square (${box[0]})`);
 
   return Number(box[1]);
 }
@@ -82,7 +82,8 @@ export function markShapes(source: string): MarkShape[] {
     ),
   }));
 
-  if (shapes.length === 0) throw new Error('make-icons: found no <line>/<rect> in RailsMark.tsx');
+  if (shapes.length === 0)
+    throw new Error('generate-icons: found no <line>/<rect> in RailsMark.tsx');
   return shapes;
 }
 
@@ -110,7 +111,7 @@ export function inkBox(shapes: readonly MarkShape[]): Box {
         : [Number(attrs['y']), Number(attrs['y']) + Number(attrs['height'])];
 
     if (xs.some(Number.isNaN) || ys.some(Number.isNaN)) {
-      throw new Error(`make-icons: <${tag}> in RailsMark.tsx is missing a coordinate`);
+      throw new Error(`generate-icons: <${tag}> in RailsMark.tsx is missing a coordinate`);
     }
 
     left = Math.min(left, ...xs.map((x) => x - grow));
@@ -143,7 +144,7 @@ function resolveColour(value: string): string {
 
 /**
  * The attributes the raster needs: presentation names, resolved colours, no React leftovers.
- * Exported for `tools/make-splash.ts`, which draws the same shapes on a transparent ground.
+ * Exported for `scripts/generate-splash.ts`, which draws the same shapes on a transparent ground.
  */
 export function shapeMarkup({ tag, attrs }: MarkShape): string {
   const drawn = Object.entries(attrs)
@@ -186,7 +187,8 @@ export function iconSvg(source: string, size: number, markHeight: number): strin
  * safe-zone answer: a mask may crop to a circle of 80% of the icon's width, so every corner of
  * the mark's box has to sit inside a radius of 0.4 × size. At half the height the box's own
  * half-diagonal is ≈ 0.289 × size — comfortably inside, with the margin a *shape* needs rather
- * than the margin a square would (`tools/make-icons.test.ts` does that arithmetic).
+ * than the margin a square would. A test did that arithmetic until the render-level suite was cut
+ * on 2026-08-30 (#362–#365); the number above is the record now.
  */
 const MARK_HEIGHT = 0.64;
 const MASKABLE_HEIGHT = 0.5;
@@ -212,7 +214,7 @@ export const ICON_SVG_FILE = 'icon.svg';
 
 async function main(): Promise<number> {
   // Imported here, not at the top: sharp is a native module, and everything above it is plain
-  // string work that `tools/make-icons.test.ts` exercises without ever loading a binary.
+  // string work, so importing this module costs no native load at all.
   const { default: sharp } = await import('sharp');
   const source = readMarkSource();
   mkdirSync(ICONS_DIR, { recursive: true });
@@ -221,7 +223,8 @@ async function main(): Promise<number> {
   // largest and least-cropped target, so the vector any future size gets cut from is exactly the
   // one a viewer already sees at 512px.
   const svgSource = ICON_SET.find((icon) => icon.file === 'icon-512.png');
-  if (svgSource === undefined) throw new Error('make-icons: ICON_SET has no icon-512.png entry');
+  if (svgSource === undefined)
+    throw new Error('generate-icons: ICON_SET has no icon-512.png entry');
   const svg = iconSvg(source, svgSource.size, svgSource.markHeight);
   const svgTarget = path.join(ICONS_DIR, ICON_SVG_FILE);
   writeFileSync(svgTarget, svg);

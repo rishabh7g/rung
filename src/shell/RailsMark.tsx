@@ -6,8 +6,8 @@
  * The geometry is the formal construction grid of `design/tokens.md` §6.4 verbatim — a 22-unit
  * square, every coordinate on the half-unit grid: rails at x 5.5/16.5 (y 1 → 21), outer rungs at
  * y 4.5/17.5, and the middle rung the ONE solid object, a 3-unit accent bar deliberately heavier
- * than the hairlines. It is not to be redrawn anywhere else: `tools/make-icons.ts` and
- * `tools/make-splash.ts` read this component's shapes to cut the app icons and the iOS splash
+ * than the hairlines. It is not to be redrawn anywhere else: `scripts/generate-icons.ts` and
+ * `scripts/generate-splash.ts` read this component's shapes to cut the app icons and the iOS splash
  * set, so this file is the mark's single copy. The only additions over the spec's SVG are a
  * `className`, so the size comes from `--brand-mark` rather than from the width/height
  * attributes it also carries, and `focusable="false"` for IE-era screen readers.

@@ -1815,7 +1815,7 @@ about versions — and `cleanupOutdatedCaches` deletes the previous build's prec
   deleted on 2026-08-30 (#370), so the two can now drift apart without a run going red. The name
   comes from `src/brand.ts`, both colours and `<meta name="theme-color">` from `design/tokens.css`
   `--color-bg` (`tools/tokens.ts`) — a manifest cannot drift from the app's own paper ground.
-- **The icons are the header mark, read not redrawn.** `tools/make-icons.ts` reads
+- **The icons are the header mark, read not redrawn.** `scripts/generate-icons.ts` reads
   `src/shell/RailsMark.tsx`, lifts its five shapes, resolves `currentColor` and the accent token
   out of `design/tokens.css`, and rasterises 192 / 512 / maskable-512 / apple-touch-180 /
   favicon-32 onto the paper ground (`npm run icons:build`; PNGs committed). The maskable safe
